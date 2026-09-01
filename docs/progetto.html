@@ -1,0 +1,635 @@
+<title>IsaacDome</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#F2EBE0;
+    --surface:#FBF7F0;
+    --surface-2:#E9E0D2;
+    --ink:#241B16;
+    --ink-2:#584A40;
+    --muted:#7C6C60;
+    --line:#DBCFBD;
+    --line-soft:#E7DDCE;
+    --accent:#9B2226;
+    --accent-soft:#9B222618;
+    --gold:#9C6F19;
+    --gold-soft:#9C6F1918;
+    --ok:#3F6B44;
+    --warn:#96631C;
+    --bad:#9B2226;
+    --shadow:0 1px 0 #00000008, 0 8px 24px -18px #241b1640;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#15100E;
+      --surface:#1E1815;
+      --surface-2:#282019;
+      --ink:#EFE5D8;
+      --ink-2:#C4B4A4;
+      --muted:#95836F;
+      --line:#352B24;
+      --line-soft:#2A221D;
+      --accent:#D9534F;
+      --accent-soft:#D9534F1F;
+      --gold:#D8A548;
+      --gold-soft:#D8A5481F;
+      --ok:#7FAE7C;
+      --warn:#D8A548;
+      --bad:#D9534F;
+      --shadow:0 1px 0 #ffffff05, 0 10px 28px -20px #000000cc;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#15100E;
+    --surface:#1E1815;
+    --surface-2:#282019;
+    --ink:#EFE5D8;
+    --ink-2:#C4B4A4;
+    --muted:#95836F;
+    --line:#352B24;
+    --line-soft:#2A221D;
+    --accent:#D9534F;
+    --accent-soft:#D9534F1F;
+    --gold:#D8A548;
+    --gold-soft:#D8A5481F;
+    --ok:#7FAE7C;
+    --warn:#D8A548;
+    --bad:#D9534F;
+    --shadow:0 1px 0 #ffffff05, 0 10px 28px -20px #000000cc;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px 96px}
+
+  header.masthead{
+    border-bottom:1px solid var(--line);
+    padding:56px 0 28px;
+    margin-bottom:44px;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .eyebrow{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);
+  }
+  h1{
+    font-family:"Zilla Slab", Georgia, serif;
+    font-weight:700;font-size:clamp(2.6rem,6vw,4rem);
+    line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.015em;
+  }
+  h1 .mark{color:var(--accent)}
+  .dek{font-size:1.1rem;color:var(--ink-2);max-width:62ch;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:6px}
+  .tag{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:11.5px;letter-spacing:.04em;
+    border:1px solid var(--line);border-radius:2px;
+    padding:4px 9px;color:var(--ink-2);background:var(--surface);
+  }
+
+  section{margin:0 0 56px}
+  h2{
+    font-family:"Zilla Slab", Georgia, serif;
+    font-weight:600;font-size:1.62rem;line-height:1.2;
+    margin:0 0 6px;text-wrap:balance;letter-spacing:-.01em;
+  }
+  .sec-head{
+    display:flex;align-items:baseline;gap:14px;
+    border-top:2px solid var(--ink);padding-top:12px;margin-bottom:20px;
+  }
+  .sec-head .num{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:12px;color:var(--accent);letter-spacing:.08em;
+    padding-top:4px;flex:none;
+  }
+  h3{
+    font-family:"Zilla Slab", Georgia, serif;
+    font-weight:600;font-size:1.12rem;margin:28px 0 8px;letter-spacing:-.005em;
+  }
+  p{margin:0 0 14px;max-width:68ch}
+  ul,ol{margin:0 0 14px;padding-left:20px;max-width:68ch}
+  li{margin-bottom:6px}
+  li::marker{color:var(--muted)}
+  strong{font-weight:600}
+  a{color:var(--accent);text-underline-offset:3px}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  code{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:.87em;background:var(--surface-2);
+    padding:1px 5px;border-radius:2px;color:var(--ink);
+  }
+  pre{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    background:var(--surface);border:1px solid var(--line);
+    border-left:3px solid var(--accent);
+    padding:16px 18px;border-radius:2px;overflow-x:auto;
+    font-size:13px;line-height:1.6;margin:0 0 16px;
+  }
+  pre code{background:none;padding:0;font-size:inherit}
+  .cm{color:var(--muted)}
+
+  .scroll{overflow-x:auto;margin:0 0 18px;border:1px solid var(--line);border-radius:2px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:640px}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+  thead th{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);background:var(--surface-2);border-bottom:1px solid var(--line);
+  }
+  tbody tr:last-child td{border-bottom:none}
+  td.num,th.num{font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono", ui-monospace, monospace;white-space:nowrap}
+
+  .chip{
+    display:inline-block;font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    padding:3px 8px;border-radius:2px;border:1px solid currentColor;white-space:nowrap;
+  }
+  .chip.solid{color:var(--ok)}
+  .chip.mid{color:var(--warn)}
+  .chip.fragile{color:var(--bad)}
+
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));margin-bottom:18px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:2px;
+    padding:16px 18px;box-shadow:var(--shadow);
+  }
+  .card h4{
+    font-family:"Zilla Slab", Georgia, serif;font-weight:600;
+    font-size:1rem;margin:0 0 6px;
+  }
+  .card p{font-size:14px;color:var(--ink-2);margin:0;max-width:none}
+
+  .ms{list-style:none;padding:0;margin:0;max-width:none}
+  .ms li{
+    display:grid;grid-template-columns:76px 1fr;gap:18px;
+    padding:16px 0;border-bottom:1px solid var(--line-soft);margin:0;
+  }
+  .ms li:last-child{border-bottom:none}
+  .ms .id{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:13px;color:var(--accent);padding-top:2px;letter-spacing:.04em;
+  }
+  .ms h4{font-family:"Zilla Slab", Georgia, serif;font-weight:600;font-size:1.05rem;margin:0 0 4px}
+  .ms p{margin:0;font-size:14.5px;color:var(--ink-2)}
+
+  .note{
+    background:var(--accent-soft);border:1px solid var(--line);
+    border-left:3px solid var(--accent);
+    padding:14px 18px;border-radius:2px;margin:0 0 18px;
+  }
+  .note p{margin:0;font-size:14.5px}
+  .note .lbl{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+    display:block;margin-bottom:4px;
+  }
+  .note.gold{background:var(--gold-soft);border-left-color:var(--gold)}
+  .note.gold .lbl{color:var(--gold)}
+
+  footer{
+    border-top:1px solid var(--line);padding-top:20px;margin-top:12px;
+    font-size:13.5px;color:var(--muted);
+  }
+  footer a{color:var(--muted)}
+  @media (max-width:640px){
+    .ms li{grid-template-columns:1fr;gap:4px}
+    header.masthead{padding-top:40px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <span class="eyebrow">Documento di progetto · v4 · M0 completata · settembre 2026</span>
+  <h1>Isaac<span class="mark">Dome</span></h1>
+  <p class="dek">App desktop distribuibile con un installer: chiunque abbia The Binding of Isaac su Steam la apre e vede i propri progressi, cosa gli manca e cosa gli conviene giocare stasera. Nessun account, nessuna telemetria, nessuna chiave API.</p>
+  <div class="meta">
+    <span class="tag">Tauri 2 + Vue 3</span>
+    <span class="tag">shadcn-vue</span>
+    <span class="tag">Parser Rust</span>
+    <span class="tag">Sola lettura</span>
+    <span class="tag">Offline</span>
+    <span class="tag">Zero credenziali</span>
+    <span class="tag">Installer Windows</span>
+    <span class="tag">Formato verificato</span>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="num">01</span><h2>Obiettivo</h2></div>
+  <p>Il gioco mostra <em>cosa hai</em>. La wiki mostra <em>cosa esiste</em>. Nessuno dei due risponde alla domanda che conta dopo qualche centinaio di ore: <strong>quale run mi avvicina di più al Dead God</strong>. IsaacDome legge il profilo salvato sul disco, lo incrocia con il grafo degli sblocchi e ordina ciò che manca per rapporto tra fatica e risultato.</p>
+  <p>Non è un tool personale: è un'app che si scarica, si installa e funziona <strong>senza configurazione</strong> su qualunque installazione Steam del gioco. Questo vincolo — "deve funzionare a casa di uno sconosciuto" — governa metà delle decisioni tecniche di questo documento.</p>
+
+  <h3>Non-obiettivi</h3>
+  <ul>
+    <li><strong>Nessuna scrittura sui salvataggi.</strong> I <code>.dat</code> si aprono in sola lettura: il checksum non viene mai ricalcolato, quindi non esiste un percorso di codice capace di corrompere il profilo di qualcun altro.</li>
+    <li><strong>Nessun account, nessun backend, nessuna telemetria.</strong> Un'app che legge i file di gioco e non parla con nessuno è anche l'unica versione di questa app di cui ci si possa fidare.</li>
+    <li><strong>Nessuna chiave API</strong> richiesta all'utente né incorporata nel binario.</li>
+    <li><strong>Nessun asset del gioco ridistribuito</strong> nell'installer: le immagini vengono dalla copia dell'utente.</li>
+    <li>Non è un overlay da streaming: quello lo fa già bene RebirthItemTracker.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">02</span><h2>Sorgenti dati</h2></div>
+  <p>Tutto quello che serve è già sul PC di chi installa l'app. Tre file locali, più due dataset scaricabili una tantum — nessuno dei due con credenziali.</p>
+
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Sorgente</th><th>Dove</th><th>Cosa dà</th><th>Solidità</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>persistentgamedata&lt;1-3&gt;.dat</code></td>
+        <td>Documents\My&nbsp;Games\<strong>Binding of Isaac Repentance+</strong>\ &mdash; con Steam Cloud attivo, Steam\userdata\&lt;id&gt;\250900\remote\<code><strong>rep+</strong>persistentgamedata&lt;n&gt;.dat</code></td>
+        <td>Marchi di completamento, achievement, collezione oggetti, sfide, carte e pillole, 523 contatori di gioco, bestiario</td>
+        <td><span class="chip solid">Verificata</span></td>
+      </tr>
+      <tr>
+        <td><code>save_backups\</code></td>
+        <td>sottocartella dei salvataggi</td>
+        <td>Backup datati che il gioco crea da solo: una serie storica del profilo, lunga mesi</td>
+        <td><span class="chip solid">Verificata</span></td>
+      </tr>
+      <tr>
+        <td><code>online_logs\</code></td>
+        <td>sottocartella dei salvataggi</td>
+        <td>Una cartella per ogni sessione co-op online: log completo della sessione e snapshot del profilo prima e dopo</td>
+        <td><span class="chip solid">Verificata</span></td>
+      </tr>
+      <tr>
+        <td><code>log.txt</code></td>
+        <td>stessa cartella del salvataggio</td>
+        <td>Run in corso e storico run: oggetti con nome, personaggio e pool, seed, piani, chi ti ha ucciso, finali</td>
+        <td><span class="chip mid">Verificata, ma fragile fra le patch</span></td>
+      </tr>
+      <tr>
+        <td>XML e sprite del gioco</td>
+        <td><code>resources-dlc3\</code>, dentro gli archivi <code>.a</code></td>
+        <td>Catalogo: ID, nomi localizzati, qualità, pool, icone degli oggetti e degli achievement</td>
+        <td><span class="chip solid">Solida</span></td>
+      </tr>
+      <tr>
+        <td><code>localconfig.vdf</code></td>
+        <td>Steam\userdata\&lt;id&gt;\config\</td>
+        <td>Ore giocate, lette in locale senza toccare nessuna API</td>
+        <td><span class="chip solid">Solida</span></td>
+      </tr>
+      <tr>
+        <td>Grafo degli sblocchi</td>
+        <td>dataset versionato con l'app, aggiornabile da GitHub</td>
+        <td>Le condizioni di sblocco, che <strong>nei file del gioco non ci sono</strong> (sezione 06)</td>
+        <td><span class="chip mid">Da mantenere</span></td>
+      </tr>
+      <tr>
+        <td>Rarità mondiale <span class="cm">(opzionale)</span></td>
+        <td>Steam <code>GetGlobalAchievementPercentagesForApp</code>, <code>gameid=250900</code></td>
+        <td>Percentuale di giocatori che ha ogni achievement. È l'unico metodo di <code>ISteamUserStats</code> che non richiede chiave</td>
+        <td><span class="chip mid">Con riserva</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note">
+    <span class="lbl">Regola di progetto</span>
+    <p>Ogni sorgente entra dietro un <em>adapter</em> con la propria versione di schema. Se una patch rompe il layout del <code>.dat</code>, l'app degrada: mostra quello che le altre sorgenti sanno ancora dare e segnala la sezione illeggibile, invece di non partire. Su un'app distribuita questa non è eleganza, è l'unica alternativa a una valanga di segnalazioni.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">03</span><h2>Il formato del salvataggio</h2></div>
+  <p>Struttura ricavata e verificata su 28 salvataggi reali di Repentance+, distribuiti su quattordici mesi. <strong>Non è quella descritta dai tool esistenti</strong>: la firma qui è <code>ISAACNGSAVE09R</code>, mentre i parser in circolazione si aspettano <code>06R</code> e si fermano prima di leggere un byte.</p>
+
+<pre><code>0x00   "ISAACNGSAVE09R  "        firma, 16 byte
+0x10   u32                       cambia a ogni salvataggio, significato ignoto
+0x14   prima intestazione di sezione
+...
+fine-4 checksum, 4 byte          CRC32 con polinomio custom, non identificato
+
+<span class="cm"># intestazione di sezione: 3 × u32 little-endian</span>
+kind    progressivo 1..10
+f2      dimensione "in memoria" = count × 4
+count   numero di voci        <span class="cm"># la dimensione su disco varia per sezione</span></code></pre>
+
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Sezione</th><th>Voci</th><th>Byte</th><th>Contenuto</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td class="num">642</td><td class="num">1</td><td>Achievement e segreti</td></tr>
+      <tr><td class="num">2</td><td class="num">523</td><td class="num">4</td><td>Contatori di gioco <strong>e marchi di completamento</strong></td></tr>
+      <tr><td class="num">3</td><td class="num">14</td><td class="num">4</td><td>Un valore per personaggio originale, da identificare</td></tr>
+      <tr><td class="num">4</td><td class="num">733</td><td class="num">1</td><td>Collezione oggetti</td></tr>
+      <tr><td class="num">5</td><td class="num">7</td><td class="num">1</td><td>Da identificare</td></tr>
+      <tr><td class="num">6</td><td class="num">104</td><td class="num">1</td><td>Carte e pillole</td></tr>
+      <tr><td class="num">7</td><td class="num">46</td><td class="num">1</td><td>Sfide</td></tr>
+      <tr><td class="num">8</td><td class="num">27</td><td class="num">4</td><td>Da identificare</td></tr>
+      <tr><td class="num">9</td><td class="num">2</td><td class="num">4</td><td>Da identificare</td></tr>
+      <tr><td class="num">10</td><td>variabile</td><td class="num">8</td><td>Bestiario: record chiave/valore, cresce nel tempo</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Il numero di voci <strong>si legge dal file, non si scrive nel codice</strong>. La prova sta nei backup: il salvataggio di giugno 2025 dichiara <strong>641</strong> achievement, quelli del 2026 ne dichiarano <strong>642</strong>. Una patch ne ha aggiunto uno, e qualunque parser con quel numero cablato si sarebbe rotto da solo.</p>
+  <p>Il checksum non è stato identificato, e non serve: l'app apre in sola lettura e non deve ricalcolarlo. È un problema che esiste solo per chi scrive.</p>
+
+  <h3>I contatori sono già documentati</h3>
+  <p>La sezione 2 corrisponde <strong>uno a uno</strong> all'enum <code>EventCounter</code> pubblicato da REPENTOGON. La verifica non lascia margini: l'indice 0 si chiama <code>NULL</code> e vale 0, l'indice 4 è <code>SUPER_SPECIAL_ROCKS_DESTROYED</code> e vale 1, l'indice 8 è <code>UNKNOWN_EVENT_8</code> e vale 0. Morti, patti col diavolo, Eden tokens, streak migliore, boss uccisi: tutto etichettato senza dedurre niente.</p>
+  <p>E soprattutto i <strong>marchi di completamento vivono lì dentro</strong>, come blocchi ordinati per boss e per personaggio. Non sono contatori ma <strong>maschere di bit</strong>: i valori osservati sono solo 0, 1, 2, 3, 5 e 7. Due bit sono i livelli del marchio; il terzo compare di rado e resta da spiegare.</p>
+
+  <div class="note gold">
+    <span class="lbl">Cosa resta aperto</span>
+    <p>I nomi documentati arrivano all'indice 284. Da lì in avanti lo schema è regolare — un blocco di 19 celle per boss, con Bethany, Jacob&nbsp;&amp; Esau e i 17 Tainted — e regge fino a Hush. Poi si interrompe: l'indice 385 è un contatore a sé e la coda 404–522 mescola almeno due famiglie diverse, dove stanno Delirium, Mother e The Beast. Sono circa ottanta celle su 523, e si chiudono raccogliendo altri salvataggi in cui quei valori cambiano. Restano da identificare anche le sezioni 3, 5, 8 e 9, tutte piccole, e la struttura interna del bestiario.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">04</span><h2>Cosa si ricava dal log</h2></div>
+  <p>Il <code>.dat</code> è una fotografia: dice <em>cosa</em> hai sbloccato, mai <em>come</em>. Lo storico delle run esiste solo se te lo costruisci, e l'unica fonte senza mod è <code>log.txt</code>, che il gioco riscrive a ogni avvio. Da qui il vincolo: <strong>l'app deve girare mentre si gioca</strong>, e persistere ogni run in un archivio locale proprio.</p>
+  <p>Il contenuto è stato verificato su un log reale, ed è più ricco del previsto:</p>
+
+<pre><code>Adding collectible 225 (Gimpy) to player 0 (Cain) from pool treasure
+RNG Start Seed: FYQ8 QQ8G (586324166) [New, 1]
+Level::Init m_Stage 2, m_StageType 1 Seed 408474304
+Game Over. Killed by (9.0) spawned by (84.0) damage flags (0)
+playing cutscene 15 (Sheol).</code></pre>
+
+  <p>Una riga sola dà <strong>ID e nome dell'oggetto, personaggio e pool</strong>; la morte dà l'entità che ti ha ucciso <em>e</em> quella che l'ha generata; il seed porta con sé il tipo di partita (nuova, ripresa, online); le cutscene identificano i finali. Il rischio più grosso segnalato nella v2 — un log troppo povero in Repentance+ — <strong>è chiuso: la sezione Run è fattibile</strong>.</p>
+  <p>Le stringhe cambiano tra le versioni, quindi i pattern stanno in un file di regole versionato, non sparsi nel codice — e possono essere aggiornati senza ricompilare l'app installata da altri.</p>
+
+  <div class="note">
+    <span class="lbl">Regalo del co-op online</span>
+    <p>Ogni sessione online lascia in <code>online_logs\</code> il proprio log completo <em>e</em> uno snapshot del profilo prima e dopo. Ne emerge anche una cosa che l'app dovrebbe mostrare: il co-op online usa un <strong>profilo condiviso separato</strong>, che parte da zero e cresce col gruppo. Nel campione analizzato è passato da 13 a 100 achievement in un'estate, mentre il profilo personale restava intatto. È una seconda barra di progressione, oggi invisibile a chi gioca.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">05</span><h2>Grafica e metadati</h2></div>
+  <p>Le risorse stanno in archivi <code>.a</code> dentro <code>resources-dlc3\packed\</code>. Una volta estratti ci trovi tutto il materiale dell'app.</p>
+
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Risorsa</th><th>Contiene</th><th>A cosa serve</th></tr></thead>
+    <tbody>
+      <tr><td><code>items.xml</code></td><td>ID, nome, qualità, tag, stat modificate dall'oggetto</td><td>Catalogo, filtri per qualità, "cosa fa alle stat"</td></tr>
+      <tr><td><code>itempools.xml</code></td><td>In quali pool compare ogni oggetto e con che peso</td><td>"Dove posso trovarlo": treasure, boss, devil, angel…</td></tr>
+      <tr><td><code>achievements.xml</code></td><td>Achievement, testo, grafica</td><td>Nomi e card della sezione Unlock</td></tr>
+      <tr><td><code>challenges.xml</code></td><td>Regole e premio di ogni sfida</td><td>Schermata Sfide</td></tr>
+      <tr><td><code>entities2.xml</code></td><td>Nemici e boss, ID e varianti</td><td>Bestiary e "chi mi uccide davvero"</td></tr>
+      <tr><td><code>stringtable</code></td><td>Nomi e descrizioni localizzati</td><td>UI nella lingua dell'utente, senza tradurre nulla a mano</td></tr>
+      <tr><td><code>gfx\items\collectibles\*.png</code></td><td>Sprite di ogni oggetto</td><td>Icone reali, niente placeholder</td></tr>
+      <tr><td><code>gfx\ui\achievement\*.png</code></td><td>Card degli achievement e marchi</td><td>Matrice del completamento, sezione Unlock</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>L'estrazione non può essere un compito dell'utente: nessuno lancerà un tool a riga di comando dopo aver installato un'app. Due strade, nell'ordine — <strong>invocare il Resource Extractor ufficiale</strong>, che è già nella cartella <code>tools\</code> dell'installazione di chiunque (da riconfermare su Rep+), oppure <strong>implementare il lettore del formato <code>.a</code> in Rust</strong>, che è semplice e toglie ogni dipendenza esterna. La seconda è più lavoro ma è quella giusta per un'app pubblica.</p>
+
+  <div class="note gold">
+    <span class="lbl">Vincolo di licenza, non solo di eleganza</span>
+    <p>Distribuire un installer significa che <strong>nessun asset di Nicalis può stare dentro il pacchetto</strong>. L'app estrae dalla copia dell'utente e costruisce una cache locale: legalmente pulita e, per inciso, anche più leggera da scaricare. Vale anche per il dataset degli sblocchi: se deriva dalla wiki, va con la sua licenza e la sua attribuzione.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">06</span><h2>Il grafo degli sblocchi</h2></div>
+  <p>Questo è il pezzo che decide se l'app è interessante o è l'ennesimo visualizzatore. <strong>Le condizioni di sblocco non esistono nei file del gioco</strong>: <code>achievements.xml</code> ha solo nome, grafica e flag "hidden", il "come si ottiene" è hardcoded nel motore. Quindi il grafo <em>"il D6 arriva da lì, e sblocca a sua volta quest'altro"</em> va costruito fuori.</p>
+  <p>Non si parte da zero: <a href="https://github.com/nerstak/IsaacUnlockFinder">IsaacUnlockFinder</a> ha già un grafo di dipendenze di circa <strong>403 achievement su 637</strong>, ricavato dalla wiki ed esportato in GraphViz <code>dot</code> → JSON. Da lì si fa il bootstrap; il resto si completa con l'<strong>API MediaWiki di <code>bindingofisaacrebirth.wiki.gg</code></strong>, che è aperta, senza chiave e senza registrazione — un comando "aggiorna dataset" al posto di ore di copia-incolla.</p>
+  <p>È l'unico dataset che il progetto deve davvero mantenere. È anche il suo vero valore: due app che leggono lo stesso save si distinguono solo per quanto sanno di ciò che il save non dice.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">07</span><h2>Unlock: faccette e ordinamenti</h2></div>
+  <p>Un filtro conta più di tutti gli altri messi insieme: <strong>"sbloccabile ora"</strong>. Il grafo sa quali achievement hanno già tutti i prerequisiti soddisfatti. Tre stati, sempre visibili: <em>fatto · sbloccabile ora · bloccato da N</em>.</p>
+
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Faccetta</th><th>Valori</th><th>Serve a</th></tr></thead>
+    <tbody>
+      <tr><td>Stato</td><td>fatto · sbloccabile ora · bloccato</td><td>La domanda di partenza</td></tr>
+      <tr><td>Cosa sblocca</td><td>oggetto passivo · attivo · trinket · carta · pillola · personaggio · sfida · tipo di stanza · pickup</td><td>"Voglio solo nuovi personaggi"</td></tr>
+      <tr><td>Personaggio richiesto</td><td>i 34 giocabili</td><td>"Stasera gioco Azazel"</td></tr>
+      <tr><td>Finale richiesto</td><td>Mom · Mom's Heart · Isaac · ??? · Satan · Lamb · Mega Satan · Hush · Delirium · Mother · The Beast</td><td>Pianificare il percorso della run</td></tr>
+      <tr><td>Modalità</td><td>normal · hard · Greed · Greedier</td><td>Isolare quello che richiede hard mode</td></tr>
+      <tr><td>Forma dello sforzo</td><td>una run · N run · streak · cumulativo · dipende dall'RNG</td><td>"Ho un'ora": escludi streak e cumulativi</td></tr>
+      <tr><td>Qualità e pool</td><td>0–4 · treasure, boss, devil, angel, shop…</td><td>Puntare agli oggetti che cambiano davvero le run</td></tr>
+      <tr><td>DLC di origine</td><td>Rebirth · Afterbirth · AB+ · Repentance · Rep+</td><td>Chi non ha tutti i DLC vede solo il suo</td></tr>
+      <tr><td>Rarità mondiale</td><td>percentuale Steam</td><td>"Il più raro che posso fare stasera"</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Gli ordinamenti che contano sono quattro: <strong>quanto sblocca a valle</strong> (il fan-out nel grafo — farlo prima è oggettivamente più efficiente), passi mancanti, rarità, qualità dell'oggetto sbloccato.</p>
+  <p class="cm"><small>Sulla rarità, un asterisco onesto: l'endpoint pubblico restituisce identificatori interni, e i nomi leggibili verrebbero da <code>GetSchemaForGame</code>, che invece la chiave la vuole. Serve quindi una tabella di mapping compilata una volta sola e distribuita col dataset. Se diventa un peso, è la prima cosa da tagliare: è un filtro bello, non essenziale.</small></p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">08</span><h2>Il piano che si aggiorna da solo</h2></div>
+  <p>Il trucco è non farne una todo list. <strong>Il piano è derivato, non digitato.</strong> L'utente aggiunge un <em>obiettivo</em> — "sbloccare Tainted Lost", "il D6" — e l'app espande i prerequisiti dal grafo in ordine topologico. La fonte di verità resta il salvataggio: a ogni rilettura del <code>.dat</code> l'app fa il diff con lo stato precedente, gli achievement nuovi si spuntano da soli, il piano si ricalcola. Non può andare fuori sincrono perché non c'è niente da tenere in sincrono.</p>
+  <p>Il pezzo che nessun tool fa, e che secondo me giustifica l'intera app: <strong>raggruppare i passi per run</strong>. Il grafo conosce i vincoli di ogni obiettivo — personaggio, modalità, finale — quindi può dire <em>"questi 4 obiettivi li chiudi nella stessa run con Azazel in hard mode arrivando a ???"</em>. È un problema di packing su vincoli, abbordabile, e trasforma una lista in un piano di serata.</p>
+  <p>Corollario gratuito: alla chiusura del gioco l'app sa esattamente cosa è cambiato, e può chiudere la sessione con un riepilogo — <em>3 passi su 7, ne restano 4</em>.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">09</span><h2>Architettura</h2></div>
+  <div class="grid">
+    <div class="card">
+      <h4>discovery <span class="cm">(Rust)</span></h4>
+      <p>Trova Steam dal registro (<code>HKCU\Software\Valve\Steam</code>), le librerie da <code>libraryfolders.vdf</code>, il gioco da <code>appmanifest_250900.acf</code>. Per i salvataggi deve coprire quattro casi reali: cartella con e senza il <code>+</code>, e prefisso <code>rep_</code> o <code>rep+</code> sotto <code>userdata</code>. Fallback manuale a ogni passo.</p>
+    </div>
+    <div class="card">
+      <h4>unpack <span class="cm">(Rust)</span></h4>
+      <p>Legge gli archivi <code>.a</code> ed estrae XML e sprite nella cache locale dell'utente. Una volta sola, con barra di avanzamento.</p>
+    </div>
+    <div class="card">
+      <h4>core-save <span class="cm">(Rust)</span></h4>
+      <p>Parser del <code>.dat</code> derivato dalla spec Kaitai. Apre in sola lettura, valida la firma, mappa le sezioni dai metadata. Nessuna funzione di scrittura nel modulo, per costruzione.</p>
+    </div>
+    <div class="card">
+      <h4>log-watch <span class="cm">(Rust)</span></h4>
+      <p>File watching con <code>notify</code> e lettura incrementale. Le regole di parsing sono dati versionati, non codice.</p>
+    </div>
+    <div class="card">
+      <h4>graph <span class="cm">(Rust)</span></h4>
+      <p>Grafo degli sblocchi: stato di ogni nodo, calcolo di "sbloccabile ora", fan-out, espansione di un obiettivo in piano, packing per run.</p>
+    </div>
+    <div class="card">
+      <h4>store <span class="cm">(SQLite)</span></h4>
+      <p>Archivio run, snapshot del profilo, catalogo normalizzato, piani dell'utente. Un file solo, nella cartella dati dell'app.</p>
+    </div>
+    <div class="card">
+      <h4>UI <span class="cm">(Vue 3 + Pinia)</span></h4>
+      <p>Dark-first, i18n dal giorno uno. Riceve dati già risolti: non conosce offset né stringhe di log.</p>
+    </div>
+  </div>
+  <p><strong>Rust fa tutto ciò che tocca il disco</strong>, Vue riceve solo JSON già interpretato. Se domani il formato cambia, cambia un modulo solo — e su un'app installata da altri questo è la differenza tra una patch e una riscrittura.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">10</span><h2>Componentistica</h2></div>
+  <p>Il criterio è uno solo: <strong>i componenti devono essere nostri</strong>. Questa app è fatta per il 90% di griglie dense, matrici e liste filtrabili, cioè roba che nessuna libreria "completa" ti dà già giusta — e un design system altrui la costringe dentro il suo look. Meglio partire da primitive accessibili e vestirle noi.</p>
+
+  <h3>Frontend</h3>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Scelta</th><th>Ruolo</th><th>Perché</th></tr></thead>
+    <tbody>
+      <tr><td><strong>shadcn-vue</strong> su <strong>Reka UI</strong></td><td>Componenti di base</td><td>I componenti li copi nel repo e diventano tuoi: nessuna dipendenza che cambia il look sotto i piedi. Stessa filosofia di react-native-reusables sull'app Steam. Attivo e aggiornato, stile <em>new-york</em>.</td></tr>
+      <tr><td><strong>Tailwind v4</strong></td><td>Stile</td><td>Supportato da shadcn-vue; i token di tema diventano il posto unico dove vive il dark-first.</td></tr>
+      <tr><td><strong>TanStack Table</strong></td><td>Unlock, Collezione, Sfide</td><td>Ordinamento, faccette e filtri headless: la logica è sua, la resa grafica resta tua. È anche il motore del Data Table di shadcn-vue, quindi arriva già integrato.</td></tr>
+      <tr><td><strong>TanStack Virtual</strong></td><td>Griglie lunghe</td><td>733 oggetti e 642 achievement con le icone vere non si montano tutti nel DOM. Senza virtualizzazione la Collezione scatta.</td></tr>
+      <tr><td><strong>Lucide</strong></td><td>Icone</td><td>È il set nativo di shadcn; le icone di gioco arrivano invece dagli sprite estratti.</td></tr>
+      <tr><td><strong>Pinia</strong> · <strong>Vue Router</strong> · <strong>vue-i18n</strong></td><td>Stato, schermate, lingue</td><td>Lo standard Vue, niente da discutere. La i18n serve dal giorno uno perché l'app è pubblica.</td></tr>
+      <tr><td>Componente <strong>Chart</strong> di shadcn-vue</td><td>I pochi grafici</td><td>Qui i grafici sono l'eccezione, non la regola: non vale una libreria dedicata finché non serve davvero.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Backend Rust</h3>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Crate</th><th>Ruolo</th></tr></thead>
+    <tbody>
+      <tr><td><code>steamlocate</code></td><td>Trova Steam, le librerie e la cartella del gioco, su tutti i sistemi. Ci risparmia di scrivere a mano il parsing di <code>libraryfolders.vdf</code> — ed è metà del modulo <code>discovery</code>.</td></tr>
+      <tr><td><code>winreg</code></td><td>Fallback su Windows quando la ricerca automatica non basta.</td></tr>
+      <tr><td><code>keyvalues-parser</code></td><td><code>localconfig.vdf</code>, per le ore giocate lette in locale.</td></tr>
+      <tr><td><code>quick-xml</code></td><td>Gli XML del gioco: oggetti, pool, sfide, entità, stringtable.</td></tr>
+      <tr><td><code>notify</code></td><td>Il watcher su <code>log.txt</code>.</td></tr>
+      <tr><td><code>rusqlite</code> (bundled)</td><td>Archivio run, snapshot, catalogo. Il database resta in Rust: il frontend non tocca mai il disco.</td></tr>
+      <tr><td><code>serde</code></td><td>Il ponte verso Vue.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note gold">
+    <span class="lbl">Una tentazione da evitare</span>
+    <p>Per leggere il <code>.dat</code> <strong>non serve un parser combinator</strong> tipo <code>nom</code>. Il formato è tre interi e una fetta di byte: <code>u32::from_le_bytes</code> e slice bastano, e il parser Python di riferimento sta in ottanta righe. Aggiungere una dipendenza qui è complessità regalata.</p>
+  </div>
+
+  <h3>Scartati, con motivo</h3>
+  <ul>
+    <li><strong>PrimeVue, Element Plus, Naive UI</strong>: ottimi se vuoi un gestionale che sembri un gestionale. Qui l'estetica è parte del prodotto e i componenti pronti andrebbero comunque riscritti.</li>
+    <li><strong>AG Grid</strong>: potentissimo, ma le funzioni che lo rendono interessante stanno dietro licenza enterprise — su un'app gratuita distribuita a chiunque non si può.</li>
+    <li><strong>Una libreria di grafici</strong> adesso: si aggiunge quando una schermata la chiede, non prima.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">11</span><h2>Schermate</h2></div>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Schermata</th><th>Risponde a</th><th>Sorgente</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Stasera</strong></td><td>Le 5 cose che conviene fare adesso, ordinate per quanto sbloccano</td><td>save + grafo</td></tr>
+      <tr><td><strong>Unlock</strong></td><td>Cosa manca, filtrabile e ordinabile su tutte le faccette della sezione 07</td><td>save + grafo + catalogo</td></tr>
+      <tr><td><strong>Piano</strong></td><td>I miei obiettivi, espansi in passi che si spuntano da soli</td><td>grafo + diff del save</td></tr>
+      <tr><td><strong>Completamento</strong></td><td>Matrice personaggi × marchi, % Dead God reale</td><td>save</td></tr>
+      <tr><td><strong>Collezione</strong></td><td>Oggetti mai toccati, per pool e qualità</td><td>save + catalogo</td></tr>
+      <tr><td><strong>Run</strong></td><td>Winrate per personaggio, piano e nemico che uccidono più spesso, streak</td><td>archivio run</td></tr>
+      <tr><td><strong>Live</strong></td><td>Cosa ho raccolto in questa run, piano corrente</td><td>log watcher</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>L'apertura è <strong>Stasera</strong>, non la collezione: se l'app apre su una griglia di oggetti ho ricostruito il menu del gioco.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">12</span><h2>Distribuzione</h2></div>
+  <p>Dal momento in cui esiste un installer, metà del lavoro non è più il parser: è tutto ciò che sta fra il doppio clic e la prima schermata utile.</p>
+  <ul>
+    <li><strong>Primo avvio guidato</strong>: trova Steam → trova il gioco → trova i salvataggi (e se sono più di uno, fa scegliere lo slot) → estrae le risorse → pronto. Ogni passo con un fallback manuale, perché ci sarà sempre l'installazione su un secondo disco o la copia non-Steam.</li>
+    <li><strong>Versioni diverse</strong>: chi ha solo Rebirth, chi si è fermato ad Afterbirth+, chi ha Repentance+. Il parser riconosce la versione e l'UI nasconde ciò che quell'utente non possiede, invece di mostrargli obiettivi inesistenti.</li>
+    <li><strong>Aggiornamenti</strong>: Tauri ha un updater che si appoggia a GitHub Releases — gratuito, statico, nessun server. Le release si firmano con la chiave dell'updater (che è una firma, non una credenziale di servizio).</li>
+    <li><strong>SmartScreen</strong>: un installer non firmato mostra l'avviso "editore sconosciuto" ai primi utenti. Un certificato di code signing costa qualche centinaio di euro l'anno. Alternativa realistica per una v1: distribuire da GitHub Releases, spiegare l'avviso nel README, valutare la firma solo se l'app prende piede.</li>
+    <li><strong>Nome e disclaimer</strong>: progetto fan-made, non affiliato a Nicalis né a Edmund McMillen, da scrivere in chiaro nell'about.</li>
+    <li><strong>Linux e macOS</strong>: Isaac c'è su entrambi e Tauri compila per entrambi. Cambia solo il modulo <code>discovery</code>. Non nella v1, ma vale la pena non scrivere codice che lo renda impossibile.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">13</span><h2>Roadmap</h2></div>
+  <ol class="ms">
+    <li>
+      <span class="id">M0 ✓</span>
+      <div>
+        <h4>Spike sul formato — fatta</h4>
+        <p>Formato decodificato e parser Python funzionante su 28 salvataggi reali. Contatori etichettati, matrice dei marchi ricostruita, log verificato. Restano da identificare quattro sezioni piccole, la coda dei contatori e il bestiario.</p>
+      </div>
+    </li>
+    <li>
+      <span class="id">M1</span>
+      <div>
+        <h4>Parser Rust, discovery, unpack</h4>
+        <p>Il nucleo che rende l'app installabile da chiunque: trovare Steam e il gioco, estrarre le risorse, leggere il save. Prima schermata: Completamento.</p>
+      </div>
+    </li>
+    <li>
+      <span class="id">M2</span>
+      <div>
+        <h4>Grafo e sezione Unlock</h4>
+        <p>Bootstrap del dataset, "sbloccabile ora", tutte le faccette e gli ordinamenti. È qui che l'app smette di essere un visualizzatore.</p>
+      </div>
+    </li>
+    <li>
+      <span class="id">M3</span>
+      <div>
+        <h4>Piano derivato</h4>
+        <p>Obiettivi, espansione in passi, diff automatico sul save, raggruppamento per run.</p>
+      </div>
+    </li>
+    <li>
+      <span class="id">M4</span>
+      <div>
+        <h4>Log watcher e archivio run</h4>
+        <p>Run live e statistiche storiche. Il valore cresce da qui in avanti senza altro lavoro.</p>
+      </div>
+    </li>
+    <li>
+      <span class="id">M5</span>
+      <div>
+        <h4>Rilascio pubblico</h4>
+        <p>Installer, updater, i18n, onboarding a prova di sconosciuto, README con l'avviso SmartScreen. Il primo utente che non sei tu è il vero test.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">14</span><h2>Rischi</h2></div>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Rischio</th><th>Impatto</th><th>Mitigazione</th></tr></thead>
+    <tbody>
+      <tr><td><s>Layout del <code>.dat</code> cambiato da Repentance+</s></td><td>Chiuso</td><td>Decodificato in M0; conteggi letti dal file, mai cablati</td></tr>
+      <tr><td><s>Log troppo povero per ricostruire le run</s></td><td>Chiuso</td><td>Verificato su log reale: oggetti, personaggio, pool, piani, uccisore e finali ci sono tutti</td></tr>
+      <tr><td>Installazioni diverse dalla tua (dischi, DLC, slot, non-Steam)</td><td>Alto</td><td>Discovery con fallback manuale a ogni passo; test su almeno una macchina non tua prima di M5</td></tr>
+      <tr><td>Patch futura che rompe parser o log</td><td>Medio</td><td>Adapter versionati, regole in file dati aggiornabili, degradazione parziale</td></tr>
+      <tr><td>Manutenzione del grafo degli sblocchi</td><td>Medio</td><td>Bootstrap da dataset esistente + aggiornamento via API MediaWiki; dataset separato dal codice</td></tr>
+      <tr><td>Avviso SmartScreen sull'installer</td><td>Medio</td><td>README esplicito in v1; certificato solo se l'app prende piede</td></tr>
+      <tr><td>Licenze: asset del gioco e contenuti wiki</td><td>Medio</td><td>Nessun asset nel pacchetto; dataset wiki con la sua licenza e attribuzione</td></tr>
+      <tr><td>Corruzione del salvataggio di un utente</td><td>Critico</td><td>Nessuna API di scrittura nel codice; apertura in sola lettura</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">15</span><h2>Prossimo passo</h2></div>
+  <p>M0 è chiusa e il parser esiste. Il passo successivo è <strong>M1</strong>: portare il parser in Rust dentro lo scheletro Tauri, aggiungere <code>discovery</code> e <code>unpack</code>, e far apparire la prima schermata — Completamento, che ormai è solo questione di disegnare una griglia che sappiamo già riempire.</p>
+  <p>Da fare in parallelo, senza fretta e senza codice: <strong>chiudere le celle rimaste</strong>. Ogni sessione giocata produce un nuovo backup datato, e ogni backup restringe il campo su Delirium, Mother, The Beast e le quattro sezioni ancora anonime.</p>
+</section>
+
+<footer>
+  Fonti tecniche: <a href="https://github.com/Zamiell/isaac-faq/blob/main/directories-and-save-files.md">isaac-faq · directories and save files</a> · <a href="https://github.com/jadenkeener/isaac-completion-fix">isaac-completion-fix</a> · <a href="https://github.com/nerstak/IsaacUnlockFinder">IsaacUnlockFinder</a> · <a href="https://github.com/Zamiell/isaac-save-viewer">isaac-save-viewer</a> · <a href="https://github.com/Hyphen-ated/RebirthItemTracker">RebirthItemTracker</a> · <a href="https://repentogon.com/PersistentGameData.html">REPENTOGON · PersistentGameData</a> · <a href="https://repentogon.com/enums/EventCounter.html">REPENTOGON · enum EventCounter</a> · <a href="https://bindingofisaacrebirth.wiki.gg/wiki/Modding_Tools">Rebirth Wiki · Modding Tools</a> · <a href="https://steamapi.xpaw.me/ISteamUserStats">ISteamUserStats</a>
+</footer>
+
+</div>
