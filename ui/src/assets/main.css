@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-mark-done: oklch(0.72 0.11 150);
+  --color-mark-partial: oklch(0.78 0.13 85);
+  --color-mark-none: oklch(0.45 0.02 260);
+  --color-mark-unknown: oklch(0.55 0.05 320);
+  --opacity-muted: 0.6;
+  --opacity-disabled: 0.4;
+
+  /* Le icone del gioco sono 32x32 native: raddoppiate restano nitide. */
+  --spacing-sprite: 4rem;
+  /* Le icone degli achievement sono immagini dipinte 263x176, non pixel art:
+     a meta' della dimensione nativa restano leggibili senza sgranare. */
+  --spacing-achievement: 5.5rem;
+}
+
+/* Gli sprite sono pixel art: l'interpolazione del browser li impasta. */
+@utility pixelated {
+  image-rendering: pixelated;
+}
