@@ -1,0 +1,11 @@
+# I blob nel repository sono a LF. Senza questa regola, con core.autocrlf=true
+# git li estrae in CRLF nella copia di lavoro, e Prettier li segnala come non
+# formattati: il cancello `pnpm format:check` diventa rosso su file che nel
+# repository sono corretti. Forzando LF anche in copia di lavoro, working tree e
+# repository coincidono e spariscono i warning "LF will be replaced by CRLF".
+* text=auto eol=lf
+
+# Binari: nessuna conversione.
+*.png binary
+*.ico binary
+*.dat binary

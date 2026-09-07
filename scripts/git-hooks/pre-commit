@@ -1,0 +1,25 @@
+#!/bin/sh
+# Pre-commit hook: only the fast checks.
+#
+# Installed with `git config core.hooksPath scripts/git-hooks` — one command, and from
+# that point on the hook travels with the repo instead of living in `.git/hooks`, which
+# doesn't get cloned. The full list (tests, clippy, typecheck) lives in `scripts/check`
+# and should be run before wrapping up a piece of work: running it in here would be too
+# slow and people would end up bypassing the hook, which is how hooks die.
+
+set -u
+cd "$(dirname "$0")/../.." || exit 1
+
+fallito=0
+
+printf 'pre-commit: cargo fmt --check\n'
+cargo fmt --check || fallito=1
+
+printf 'pre-commit: pnpm scan\n'
+pnpm scan || fallito=1
+
+if [ "$fallito" -ne 0 ]; then
+	printf '\ncommit rejected. `cargo fmt` fixes the formatting; frontend convention\n'
+	printf 'violations are documented in docs/frontend-conventions.md.\n'
+	exit 1
+fi
