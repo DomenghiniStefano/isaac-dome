@@ -10,4 +10,9 @@ export const Command = {
   AddGoal: 'add_goal',
   RemoveGoal: 'remove_goal',
   WikiEntry: 'wiki_entry',
+  Queue: 'queue',
+  QueueAdd: 'queue_add',
+  QueueRemove: 'queue_remove',
+  QueueMove: 'queue_move',
+  QueueImportGoals: 'queue_import_goals',
 } as const
