@@ -290,8 +290,11 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
 
 ### Commits
 
-- Prefix = **module** (`core-save:`, `discovery:`, `unpack:`, `app-shell:`) or **type**
-  (`docs:`, `chore:`, `fix:`). Messages in English, atomic commits.
+- Conventional Commits, **`type(scope): subject`** — `feat(core-save): …`,
+  `fix(discovery): …`, `chore(dataset): …`. The scope is the crate or package
+  (`core-save`, `discovery`, `unpack`, `ipc`, `ui`, `wiki-snapshot`, `design-export`);
+  drop the parentheses when the change is repo-wide (`docs:`, `chore:`, `build:`).
+  Messages in English, atomic commits.
 - Integration branch: **`develop`**. `master` only receives releases.
 - **Never** a `Co-Authored-By` trailer or references to Claude, in any commit, PR, or
   issue.
