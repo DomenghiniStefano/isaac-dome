@@ -1,0 +1,353 @@
+# IsaacDome
+
+Desktop app that reads the local files of *The Binding of Isaac: Repentance+* and answers
+one question: **what am I missing, and what's worth playing tonight.**
+
+It's not a personal tool. It ships with an installer and has to work with no configuration
+on any Steam install of the game. The constraint "has to work at a stranger's house"
+drives half the decisions below.
+
+The full project document is in `docs/PROJECT.md`.
+
+---
+
+## Non-negotiable constraints
+
+1. **Read-only on save files.** No write function anywhere in the module that opens the
+   `.dat`, by construction. The checksum is never recomputed. A bug here destroys a
+   stranger's profile.
+2. **No API keys**, neither asked of the user nor embedded in the binary. Only public,
+   credential-free APIs are allowed.
+3. **No game assets in the package.** Images are extracted from the user's own copy at
+   runtime. Same for datasets derived from the wiki, which ship with their own license and
+   attribution.
+4. **No accounts, no backend, no telemetry.** The app works offline; the network is only
+   for optional dataset updates.
+5. **Degrade, never fail.** If a section of the save can't be read, the app still starts,
+   shows what it knows, and flags what's missing.
+
+## Stack
+
+- **Frontend**: Vue 3 + TypeScript, Vite, **shadcn-vue** on **Reka UI**, **Tailwind v4**,
+  **TanStack Table** (filterable grids), **TanStack Virtual** (long lists: 733 items,
+  642 achievements), Pinia, Vue Router, vue-i18n, Lucide (`@lucide/vue`, **not**
+  `lucide-vue-next`, deprecated).
+  **Target stack, not today's**: `ui/` currently has only Vue, Vite, Tailwind and
+  `@tauri-apps/api` installed. The rest arrives with the design system, on purpose: adding
+  it earlier would mean guessing the tokens.
+- **Backend**: Rust inside Tauri 2. Crates: `steamlocate`, `winreg` (fallback),
+  `keyvalues-parser`, `quick-xml`, `notify`, `rusqlite` (bundled), `serde`.
+- **Tooling**: pnpm, Git Flow with `develop` as the integration branch.
+
+**Rust does everything that touches disk. Vue only ever receives resolved JSON**: the
+frontend knows nothing about offsets, file names, or log strings.
+
+**Layout.** Rust crates live in `crates/` (`core-save`, `discovery`, `unpack`, `catalog`,
+`wiki`, `wiki-snapshot`, `ipc`, `store`, `app`, `test-support`). The Tauri crate is
+`crates/app`, not `src-tauri`: every `tauri` command needs
+`--config crates/app/tauri.conf.json`, and the root scripts already do that (`pnpm dev`,
+`pnpm build`). The frontend is the pnpm workspace `ui/`; from the root, `pnpm typecheck`,
+`lint`, `scan`, `format:check` are pass-throughs to `ui/`.
+
+## Modules
+
+| Module | Responsibility |
+|---|---|
+| `discovery` | Finds Steam, the game, the saves. Manual fallback at every step. |
+| `unpack` | Extracts the game's `.a` archives into the local cache. |
+| `core-save` | Parser for the `.dat`, read-only. |
+| `log-watch` | **Doesn't exist yet (M4).** Will follow `log.txt` in append mode, patterns in a versioned rule file. |
+| `catalog` | Normalizes the game's XML files. |
+| `wiki` | Pure crate: wikitext parser, typed tree, embedded compressed dataset. Only reads `dataset/raw/`. |
+| `wiki-snapshot` | Tool, the only one that talks to the network: `pnpm wiki:fetch` / `pnpm wiki:build`. |
+| `graph` | **Doesn't exist yet (M2).** Today `ipc::graph` exposes the contracts with `{ kind: "stub" }` declared wherever the graph doesn't know yet. |
+| `ipc` | Pure crate, no I/O: turns `discovery`, `core-save`, `catalog` and `wiki` into JSON view-models. It's the only contract between Rust and Vue, hand-mirrored in `ui/src/lib/ipc/types.ts`. |
+| `app` | Tauri wiring only: commands, managed state, `settings_file.rs`. Not tested. |
+| `store` | SQLite, one file (`isaacdome.db`) with a versioned schema. Born with the Plan's goals (migration 1); snapshots and the run archive arrive as later migrations. |
+| `test-support` | Dev-dependency only. Access to `samples/` for tests on real data: every function **declares** on stderr which file it used (`sample: …`) or why it skipped (`skip: …`). No real test opens `samples/` by hand. |
+
+---
+
+## Save file format (decoded and verified)
+
+Verified against 28 real Repentance+ saves spread over 14 months.
+Reference implementation in `reference/isaac_save.py` — translate from there.
+
+```
+0x00   "ISAACNGSAVE09R  "   signature, 16 bytes   # existing tools look for 06R and fail
+0x10   u32                  changes on every save, meaning unknown
+0x14   first section header
+end-4  checksum             CRC32 with a custom polynomial, NOT identified (irrelevant)
+```
+
+Section header: three little-endian `u32`s — `kind` (sequential 1..10), `f2` (= count × 4,
+the "in-memory" size), `count`. Then the data: `count` entries, whose **on-disk** size
+depends on the section.
+
+| kind | count | bytes/entry | content |
+|---|---|---|---|
+| 1 | 642 | 1 | achievements and secrets |
+| 2 | 523 | 4 | game counters **and completion marks** |
+| 3 | 14 | 4 | one value per original character, to be identified |
+| 4 | 733 | 1 | item collection |
+| 5 | 7 | 1 | to be identified |
+| 6 | 104 | 1 | cards and pills |
+| 7 | 46 | 1 | challenges |
+| 8 | 27 | 4 | to be identified |
+| 9 | 2 | 4 | to be identified |
+| 10 | variable | 8 | bestiary, key/value records |
+
+> **The entry count is read from the file, NEVER hardcoded.** The June 2025 save declares
+> 641 achievements, the 2026 ones declare 642: a patch added one. Any hardcoded count
+> breaks itself.
+
+### Counters and marks
+
+Section 2 maps one-to-one to REPENTOGON's `EventCounter` enum. Labels in
+`reference/isaac_counters.py`. The `PROGRESSION_*` cells aren't counters but **bitmasks**:
+observed values are only 0, 1, 2, 3, 5, 7. Two bits are the mark's levels, the third is
+still unexplained — **don't compute completion percentages as if it were known**.
+
+Open: documented names reach 284; the regular pattern (19-cell blocks for Bethany,
+Jacob & Esau and the 17 Tainted) holds up to Hush, then breaks down. Index 385 is a
+counter on its own; the 404–522 tail mixes at least two families and contains Delirium,
+Mother and The Beast. This closes by collecting more saves where those values change.
+
+## log.txt
+
+Rewritten on every game launch: untracked runs are lost forever, so the app has to be
+running while you play. Verified lines:
+
+```
+Adding collectible 225 (Gimpy) to player 0 (Cain) from pool treasure
+RNG Start Seed: FYQ8 QQ8G (586324166) [New, 1]
+Level::Init m_Stage 2, m_StageType 1 Seed 408474304
+Game Over. Killed by (9.0) spawned by (84.0) damage flags (0)
+playing cutscene 15 (Sheol).
+```
+
+One line gives the item's id and name, the character, and the pool; the death line gives
+the killing entity and what spawned it. The patterns go into a versioned rule file,
+updatable without recompiling.
+
+## Real-world paths
+
+`discovery` has to cover at least these cases, all seen on real machines:
+
+```
+Documents\My Games\Binding of Isaac Repentance\        # without the +
+Documents\My Games\Binding of Isaac Repentance+\       # with the +
+Steam\userdata\<id>\250900\remote\rep_persistentgamedata<n>.dat
+Steam\userdata\<id>\250900\remote\rep+persistentgamedata<n>.dat
+```
+
+With Steam Cloud active, the save is **not** in the Documents folder. What stays there is
+`log.txt`, `options.ini`, and two useful subfolders: `save_backups\` (dated backups
+created by the game: a free historical series) and `online_logs\` (one folder per online
+co-op session, with the full log and a profile snapshot before and after).
+
+Note: online co-op uses a **separate shared profile** that grows with the group, distinct
+from the personal one. It's a second progression the game shows nowhere.
+
+---
+
+## Code rules
+
+### Rust and the IPC boundary
+
+- **Tauri commands**: `Result<T, IpcError>`, never `Result<T, String>`. The error crosses
+  the IPC boundary and the frontend has to be able to tell cases apart without parsing
+  text.
+- **Every struct that crosses the IPC** has `#[serde(rename_all = "camelCase")]`. Without
+  it, TypeScript reads `undefined` and nobody notices.
+- **Enums on the IPC**: tagged with struct variants (`#[serde(tag = "kind")]`), never
+  newtype. Enums we define ourselves use `rename_all = "camelCase"`; the ones that come
+  from domain crates (`SavePrefix`, `Edition`, `Dlc`, `Kind`) keep their own `snake_case`
+  and the TypeScript types mirror that.
+- **One of our fieldless enums isn't tagged: it's a bare camelCase string**
+  (`"passive"`, `"repentance"`), and the TypeScript type is a union of values. The tag
+  exists to distinguish variants that carry different data; without data it would add a
+  key per row and hide the fact that the field is a value, not a discriminator. The moment
+  a variant gains a field, the enum becomes tagged — and the TypeScript changes with it, so
+  the rule applies to the whole enum, not per variant. **Zero exceptions in the repo**:
+  `ItemKindView`, `OriginView`, `StepsBasis`, `CandidateSource`, `MissingReason`. A tagged
+  unit enum showing up again is a bug, not an alternative style — two conventions for the
+  same thing means a TypeScript `switch` silently falls into no branch.
+- **`rename_all` on an enum does NOT rename the fields inside its struct variants.** It
+  renames the variant names. Fields need `rename_all_fields = "camelCase"` **in addition**,
+  otherwise `Active { auto_selected }` comes out as `auto_selected` and TypeScript reads
+  `undefined` with no error at all. Same failure mode as forgetting `rename_all` on a
+  struct, and just as silent: pin it with a test on the JSON shape.
+- **Don't cross the IPC boundary**: file paths, offsets, raw bytes. Only already-resolved
+  view-models; candidate saves travel with an **opaque id**.
+- **Never `format!("{:?}")` to push a type across the IPC.** `Debug` prints *every* field,
+  including the ones the boundary forbids: a `PathBuf` in a diagnostic carries the Steam
+  account id under `userdata\` and always the Windows username. Every type that goes out
+  has to be mapped onto an enum or struct **we define ourselves**, carrying only what's
+  needed. On top of that, a `Debug` string isn't translatable, while a tagged enum is.
+- **Expected cases aren't errors.** Steam missing, game not installed, an unreadable
+  section travel in the payload as readable diagnostics. `Err` is reserved for when the
+  command can't answer at all.
+- **Never `panic!` or `unwrap()`** outside tests, on data read from disk. A malformed or
+  truncated file degrades; it doesn't kill the process.
+- **No game file is ever loaded whole into memory.** The `.a` archives are ~1.3 GB total:
+  keep the index in RAM and read an entry's bytes when needed. This applies to any new
+  source too (`log.txt` in append mode, the backups in `save_backups\`): the file size is
+  the user's choice, not ours, and "degrade, never fail" starts with not asking for a
+  gigabyte.
+- **Shared state across commands is read positionally.** Two Tauri commands can run
+  together: on a shared `File`, `seek` + `read` is a race on the cursor, so use
+  `seek_read` (Windows) / `read_at` (Unix). This applies whenever a handle lives in
+  `tauri::State` instead of inside a function.
+- **Expensive resources live in `tauri::State`, opened once** (`CatalogState`,
+  `ResourcesState`, `StoreState`). But **an expected failure is never cached**: if the game
+  turns out not to be installed, "absent" isn't cached, otherwise someone who installs the
+  game with the app open has to restart it to see their data.
+- **If a return value is worth checking, it lives in a pure crate.** The Tauri crate keeps
+  only the wiring, which isn't tested.
+- **Exhaustiveness is mandatory**: no `_ =>` arm on a closed enum. Adding a variant has to
+  break the build, not silently produce an empty result.
+
+### Frontend → `docs/frontend-conventions.md`
+
+Five non-negotiable rules, the rest is in the document:
+
+1. **No `<style>` in SFCs** — the only exceptions are `-webkit-app-region`, custom
+   `@keyframes`, scrollbar overrides. Dynamic values come from CSS variables bound by the
+   template, not from inline pixels.
+2. **No hardcoded visual constants** — no `w-[48px]`, `opacity-50`, `duration-150`, no
+   `:size="16"` on an icon: every value is a token in `@theme`, declared once in CSS
+   (Tailwind v4: no longer also in a config file). `@theme` can span multiple files
+   imported from `main.css`, one per token family; what never gets duplicated is the
+   token.
+3. **No `invoke()` in components** — only typed wrappers in `ui/src/lib/ipc/`.
+4. **No raw `<button>` / `<input>`** — use the primitives in `ui/src/components/ui/`
+   (folder still to be created, arrives with shadcn-vue), and extend them with a prop
+   instead of styling by hand.
+5. **No string unions** — `const X = { … } as const`, never `type X = 'a' | 'b'`. Also
+   applies to the wire types in `ui/src/lib/ipc/types.ts`: there the distinction between
+   value and discriminator is the *Rust* rule, which decides how it serializes, not how the
+   TypeScript is declared. The only exception is a tagged union's tag itself
+   (`b.kind === 'paragraph'`).
+
+No linter enforces these rules: `ui/scripts/scan-conventions.mjs` (`pnpm scan`) does,
+covering all five as of 2026-09-06, plus the ban on visible strings in the template.
+Exceptions live in the `ECCEZIONI` array at the top of the script, per file and with a
+reason. Every new rule has to be added there too, otherwise the document promises a check
+that never happens.
+
+### Tests
+
+- **Test-first** for code with logic. The expected value comes from the spec, **never
+  from the code's current output**.
+- A failing test is **first and foremost a hypothesis of a bug in the code**, not an
+  expectation to fix.
+- Tests on real data **skip with a note** if the sample is missing: `samples/` is
+  git-ignored and the suite has to stay green for anyone who clones the repo. Watch the
+  reverse too: an "N passed" doesn't say how many were skipped.
+- **`samples/` is only opened from the `test-support` crate**, never by hand with
+  `env!("CARGO_MANIFEST_DIR")`. Its functions always declare the outcome on stderr —
+  `sample: <file>` when there is one, `skip: …` when there isn't — because a test on real
+  data has to say **which slice of the domain it actually ran on**. This isn't theory: the
+  `unpack` tests all ran on `config.a`, the only archive the decompressor could open, and
+  the main function was broken with a green suite.
+- **"The tool isn't there" is verified by making it answer, not by checking whether the
+  command starts.** On Windows, `python` with no Python installed is a *Microsoft Store
+  alias*: it starts, prints "install from the Store" and exits with 49. An `Err` from
+  `Command::new` never comes; a test that's supposed to tell "absent" from "broken" ends up
+  saying "broken". Ask the tool to print a word of our choosing first, and only trust it if
+  it prints it.
+- **Pinned numbers are a fixture of an era, and the era belongs in the file name.** A
+  sample is named `YYYYMMDD.…`; a test that compares two eras names both. Where the
+  expected value can be read outside our own code — `od` on the header, the Python
+  reference — the comment says how it was derived.
+- **On a historical series, write properties, not values**: "the diff reports exactly the
+  bits that flip", "the progression never regresses". These hold even when the game
+  changes, and they find boundaries a pinned value can't see — that's how the 641-to-642
+  slot jump surfaced, where a slot that *didn't exist before* counts as off, not as outside
+  the comparison.
+- Before declaring anything done: **`pnpm check`** (i.e. `scripts/check`), which runs
+  `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings`, `cargo test --workspace`,
+  `pnpm typecheck`, `pnpm lint`, `pnpm format:check`, `pnpm scan`. **There's no CI**, by
+  choice: the list of commands lives in that script and nowhere else. The two fast ones also
+  run in the pre-commit hook (`git config core.hooksPath scripts/git-hooks`).
+- Skips on real data print `skip: …` on stderr and pass, but **`cargo test` alone doesn't
+  show them**: the harness hides output from passing tests. You need
+  `cargo test --workspace -- --nocapture`, which is what `scripts/check` runs before
+  counting lines. `samples/packed` is a junction to the installed game's `resources\packed`
+  folder, and without it dozens of `unpack`, `catalog` and `ipc` tests skip silently.
+- Frontend: no test runner installed. Test-first rules apply once there's logic.
+
+### Wiki dataset
+
+`dataset/raw/`, `dataset/wiki.json` and `dataset/corrections.json` are committed together:
+the `derived` test in `crates/wiki` enforces `wiki.json == build(raw, corrections)`, so the
+three can never drift without the suite noticing. The snapshot (`pnpm wiki:fetch` +
+`pnpm wiki:build`) is **one pass per release**, never from the app:
+`wiki::Dataset::embedded()` only reads the derivative embedded at build time, it never
+talks to the wiki at runtime. Source attribution (wiki, URL, license, snapshot date) lives
+in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
+
+### Commits
+
+- Prefix = **module** (`core-save:`, `discovery:`, `unpack:`, `app-shell:`) or **type**
+  (`docs:`, `chore:`, `fix:`). Messages in English, atomic commits.
+- Integration branch: **`develop`**. `master` only receives releases.
+- **Never** a `Co-Authored-By` trailer or references to Claude, in any commit, PR, or
+  issue.
+
+## Don't
+
+- Don't use `nom` for the `.dat`: it's three integers and a slice of bytes,
+  `u32::from_le_bytes` and slices are enough.
+- Don't hardcode counts of achievements, items, challenges, or characters.
+- Don't open saves in write mode, for any reason.
+- Don't introduce a "complete" component library (PrimeVue, Element Plus, AG Grid): the
+  choice is shadcn-vue precisely to keep the components in the repo.
+- Don't assume REPENTOGON is installed: it's an optional bonus, never a promised feature.
+- Don't open the screen on a grid of items — that's already the game's own menu.
+- Don't convert files to CRLF or touch `.gitattributes`: the repo forces LF in the working
+  copy on purpose, otherwise `pnpm format:check` is red on Windows for otherwise-correct
+  files.
+- Don't add a CI pipeline: **it's a decision**, not an oversight. The checks live in
+  `scripts/check` and the pre-commit hook. If that choice ever changes, that's already the
+  list a pipeline would run.
+- Don't make multi-line edits to Rust code with `perl -0777 -pe 's|…|…|'`: the `|` that
+  delimits the substitution is also the one for closures, and the result is a file to
+  restore from git. For a block of code, use a targeted text editor; regexes stay for
+  single-line substitutions.
+
+## State
+
+**The up-to-date state lives in `docs/STATO.md`**, as checkboxes: milestones, modules,
+open blockers, and a session log. What follows is just the framing.
+
+M0 closed. M1 closed on the Rust side, structural base closed on 2026-09-05: static data
+normalized and IPC contracts fixed. Next step is the handoff to design; M2 (the graph)
+proceeds in parallel without touching the types the frontend consumes.
+
+**The frontend is deliberately on hold.** `ui/` only has the verification page, and the
+real work starts with the design system: until it starts, components stay untouched and
+the IPC contract doesn't change for the convenience of a screen that doesn't exist yet
+(that's why C2 in `docs/MIGLIORIE.md` is deferred rather than done). Frontend conventions
+and their scanner already exist on purpose instead: a rule introduced before the code is
+free.
+
+The **wiki dataset** (crate `wiki`, tool `wiki-snapshot`, `dataset/`) is implemented,
+passed whole-branch review, and **merged into `develop`** on 2026-09-06.
+
+Other documents: `DESIGN-BRIEF.md` (the design system's contract, with the TypeScript
+types); `docs/MIGLIORIE.md` (quality tasks with closing criteria); `docs/BACKLOG.md`
+(registered, not-yet-started tasks). Every module follows spec → TDD plan → execution →
+report, in `docs/superpowers/specs/` and `docs/superpowers/plans/`.
+
+## Test data
+
+Put a real save in `samples/` (the folder is git-ignored) and use it as the reference for
+the parser's tests. Ideally two different dates, so the diff gets tested too — which is
+the mechanism the self-updating plan rests on.
+
+Samples are named with the date, `YYYYMMDD.rep+persistentgamedata1.dat`: the pinned
+numbers in the tests are a fixture of a known era, and a file named "live" invites
+overwriting it. A test that looks up a sample by name and doesn't find it skips with a
+note, it doesn't fail.
