@@ -12037,229 +12037,229 @@
       "key": "entity:???",
       "label": "???",
       "uses": 42,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Angel",
       "label": "Angel",
       "uses": 3,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Baby Plum",
       "label": "Baby Plum",
       "uses": 2,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Battery Bum",
       "label": "Battery Bum",
       "uses": 2,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:C.H.A.D.",
       "label": "C.H.A.D.",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Delirium",
       "label": "Delirium",
       "uses": 36,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Die",
       "label": "Die",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Gish",
       "label": "Gish",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Hell Game",
       "label": "Hell Game",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Hornfel",
       "label": "Hornfel",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Hush",
       "label": "Hush",
       "uses": 36,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Isaac",
       "label": "Isaac",
       "uses": 39,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:It Lives!",
       "label": "It Lives!",
       "uses": 27,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Krampus",
       "label": "Krampus",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Lil' Batteries",
       "label": "Lil' Batteries",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Little Horn",
       "label": "Little Horn",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Locked Chest",
       "label": "Locked Chest",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Lokii",
       "label": "Lokii",
       "uses": 2,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Mega Satan",
       "label": "Mega Satan",
       "uses": 39,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Mom",
       "label": "Mom",
       "uses": 13,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Mom's Heart",
       "label": "Mom's Heart",
       "uses": 45,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Mother",
       "label": "Mother",
       "uses": 38,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Portal",
       "label": "Portal",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Red Heart",
       "label": "Red Heart",
       "uses": 3,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Satan",
       "label": "Satan",
       "uses": 39,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Shell Game",
       "label": "Shell Game",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Shopkeeper",
       "label": "Shopkeeper",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Soul Heart",
       "label": "Soul Heart",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Steven",
       "label": "Steven",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:The Beast",
       "label": "The Beast",
       "uses": 34,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:The Lamb",
       "label": "The Lamb",
       "uses": 45,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:The Siren",
       "label": "The Siren",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Ultra Greed",
       "label": "Ultra Greed",
       "uses": 17,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Ultra Greedier",
       "label": "Ultra Greedier",
       "uses": 34,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:Ultra Pride",
       "label": "Ultra Pride",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:dying",
       "label": "dying",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:poops",
       "label": "poops",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "entity:rainbow poop",
       "label": "rainbow poop",
       "uses": 1,
-      "verdictRequired": false
+      "verdictRequired": true
     },
     {
       "key": "pickup:'stars' item tag",
