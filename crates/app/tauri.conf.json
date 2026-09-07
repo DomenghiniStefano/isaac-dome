@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "IsaacDome",
+  "version": "0.1.0",
+  "identifier": "dev.isaacdome.app",
+  "build": {
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../../ui/dist",
+    "beforeDevCommand": "pnpm --filter ui dev",
+    "beforeBuildCommand": "pnpm --filter ui build"
+  },
+  "app": {
+    "windows": [{ "title": "IsaacDome", "width": 1280, "height": 800 }],
+    "security": { "csp": null }
+  },
+  "bundle": { "active": true, "targets": "all" }
+}
