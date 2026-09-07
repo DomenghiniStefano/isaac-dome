@@ -200,8 +200,10 @@ export const OriginView = {
 } as const
 export type OriginView = (typeof OriginView)[keyof typeof OriginView]
 
+// `partial` carries no stepsMissing on purpose: with a requirement uninterpreted, or a
+// node caught in a cycle, the transitive count isn't knowable and a zero would read as
+// "nothing in the way". A node that is `partial` must never be drawn as unlockable.
 export type GraphInfo =
-  | { kind: 'stub' }
   | {
       kind: 'computed'
       availableNow: boolean
@@ -209,12 +211,24 @@ export type GraphInfo =
       fanOut: number
       stepsMissing: number
     }
+  | { kind: 'partial'; blockedBy: number; fanOut: number; unknown: number }
+
+// What a node is still missing, typed by the nature of the target: this is what the
+// screen groups by, so it can say "1 character and 2 bosses" instead of "blocked by 3".
+export type RequirementView =
+  | { kind: 'character'; id: number; name: string }
+  | { kind: 'boss'; id: number; name: string }
+  | { kind: 'challenge'; id: number; name: string }
+  | { kind: 'item'; itemKind: ItemKindView; id: number; name: string }
+  | { kind: 'gate'; label: string }
+  | { kind: 'unknown'; label: string }
 
 export interface UnlockNode {
   achievement: AchievementRef
   done: boolean
   unlocks: UnlockTarget[]
   origin: OriginView | null
+  missing: RequirementView[]
   graph: GraphInfo
 }
 
@@ -239,8 +253,9 @@ export interface UnlockView {
   diagnostics: UnlockDiagnostic[]
 }
 
-// What the steps list is ordered by. No fields: a string, like `OriginView`.
-export const StepsBasis = { Stub: 'stub', FanOut: 'fanOut' } as const
+// What the steps list is ordered by. No fields: a string, like `OriginView`. One value
+// today; the next basis (closeness, once the counters land) arrives as a value here.
+export const StepsBasis = { FanOut: 'fanOut' } as const
 export type StepsBasis = (typeof StepsBasis)[keyof typeof StepsBasis]
 
 export interface NextSteps {
