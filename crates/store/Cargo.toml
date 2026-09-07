@@ -9,6 +9,8 @@ rusqlite = { version = "0.40", features = ["bundled"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 ipc = { path = "../ipc" }
+plan = { path = "../plan" }
 
 [dev-dependencies]
+rusqlite = { version = "0.40", features = ["bundled"] }
 tempfile = "3"
