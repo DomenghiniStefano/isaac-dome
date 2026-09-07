@@ -51,6 +51,20 @@ impl Graph {
         // progress the save doesn't contain.
         let done = |id: u32| flags.get(id as usize).copied().unwrap_or(false);
 
+        // A gate the graph can't express is passed when the profile has already earned an
+        // achievement that carries it: if "beat Delirium with Isaac" is done, Delirium is
+        // reachable for this player, whatever gates it. That is evidence read from the
+        // save, not an optimistic guess, and it is what keeps the late game countable —
+        // on a real profile it takes the uninterpreted requirements from 210 to 6.
+        let mut evidence: BTreeMap<&str, u32> = BTreeMap::new();
+        for n in self.nodes() {
+            if done(n.achievement) {
+                for label in &n.unknown {
+                    *evidence.entry(label.as_str()).or_insert(0) += 1;
+                }
+            }
+        }
+
         let mut fan_out: BTreeMap<u32, u32> = BTreeMap::new();
         for n in self.nodes() {
             for &p in &n.prerequisites {
@@ -78,7 +92,12 @@ impl Graph {
             let blocked_by = n.prerequisites.iter().filter(|&&p| !done(p)).count() as u32;
             let fan = fan_out.get(&id).copied().unwrap_or(0);
             let transitive_known = missing.get(&id).and_then(|m| m.as_ref());
-            let info = match (n.unknown, transitive_known) {
+            let unproven = n
+                .unknown
+                .iter()
+                .filter(|l| !evidence.contains_key(l.as_str()))
+                .count() as u32;
+            let info = match (unproven, transitive_known) {
                 (0, Some(set)) => NodeInfo::Computed {
                     available_now: blocked_by == 0 && !done(id),
                     blocked_by,
@@ -100,6 +119,14 @@ impl Graph {
         for nodes in cycles {
             diagnostics.push(GraphDiagnostic::Cycle { nodes });
         }
+        // The inference is declared, never silent: whoever reads the screen can see that
+        // the app decided a gate was passed, and on what evidence.
+        for (label, done) in evidence {
+            diagnostics.push(GraphDiagnostic::GateSatisfiedByEvidence {
+                label: label.to_string(),
+                done,
+            });
+        }
         Eval { infos, diagnostics }
     }
 }
@@ -118,6 +145,12 @@ fn transitive(
     if let Some(hit) = memo.get(&id) {
         return hit.clone();
     }
+    // Done owes nothing. The same rule as for a done prerequisite, applied to the node
+    // itself: an achievement already earned cannot be N runs away from you.
+    if done(id) {
+        memo.insert(id, Some(BTreeSet::new()));
+        return Some(BTreeSet::new());
+    }
     if stack.contains(&id) {
         let mut nodes = stack.clone();
         nodes.push(id);
@@ -130,9 +163,14 @@ fn transitive(
     let mut knowable = true;
     if let Some(node) = g.node(id) {
         for &p in &node.prerequisites {
-            if !done(p) {
-                set.insert(p);
+            // A done prerequisite ends the walk. Whatever the graph thinks it needed is
+            // irrelevant — you already have it — and recursing anyway would count
+            // achievements the profile can never owe again. The graph is inferred, the
+            // save is fact: where they disagree, the save wins.
+            if done(p) {
+                continue;
             }
+            set.insert(p);
             match transitive(g, p, done, memo, stack, cycles) {
                 Some(inner) => set.extend(inner),
                 None => knowable = false,
