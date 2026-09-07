@@ -7,6 +7,7 @@
 //! Design: `docs/superpowers/specs/2026-09-07-unlock-graph-design.md`.
 
 pub mod build;
+pub mod evaluate;
 pub mod generate;
 pub mod model;
 pub mod resolve;
