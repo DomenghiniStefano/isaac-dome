@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "aliases": {
+    "Jacob and Esau": "Jacob & Esau"
+  },
+  "verdicts": {
+    "pickup:'stars' item tag": { "notAPrerequisite": true },
+    "pickup:7 Deadly Sins": { "alwaysAvailable": true },
+    "pickup:Angel Room items": { "notAPrerequisite": true },
+    "pickup:Angel Rooms items": { "notAPrerequisite": true },
+    "pickup:Bestiary": {
+      "unknown": { "reason": "filling the bestiary is a collection goal, not one achievement" }
+    },
+    "pickup:Blue Flies": { "notAPrerequisite": true },
+    "pickup:Cards and Runes": { "notAPrerequisite": true },
+    "pickup:Chapter 1": { "alwaysAvailable": true },
+    "pickup:Chapter 2": { "alwaysAvailable": true },
+    "pickup:Chapter 3": { "alwaysAvailable": true },
+    "pickup:Chapter 4": { "alwaysAvailable": true },
+    "pickup:Chapter 6": { "alwaysAvailable": true },
+    "pickup:Character": { "notAPrerequisite": true },
+    "pickup:Collect": {
+      "unknown": { "reason": "'collect all items' is a set, and the model can't say how many" }
+    },
+    "pickup:Coin": { "notAPrerequisite": true },
+    "pickup:Completion Mark": { "notAPrerequisite": true },
+    "pickup:Daily Challenge": { "alwaysAvailable": true },
+    "pickup:Deals with the Devil": { "alwaysAvailable": true },
+    "pickup:Gulp!": { "notAPrerequisite": true },
+    "pickup:Harbinger": { "alwaysAvailable": true },
+    "pickup:Hard mode": { "alwaysAvailable": true },
+    "pickup:Horf!": { "notAPrerequisite": true },
+    "pickup:I - The Magician": { "notAPrerequisite": true },
+    "pickup:Tinted Rock": { "notAPrerequisite": true },
+    "pickup:Victory Lap": { "alwaysAvailable": true },
+    "pickup:XIII - Death": { "notAPrerequisite": true },
+    "pickup:XIX - The Sun": { "notAPrerequisite": true },
+    "pickup:XV - The Devil?": { "notAPrerequisite": true },
+    "pickup:Yes Mother? items": { "notAPrerequisite": true },
+    "pickup:bed": { "notAPrerequisite": true },
+    "pickup:character": { "notAPrerequisite": true },
+    "pickup:collect": {
+      "unknown": { "reason": "'collect all items' is a set, and the model can't say how many" }
+    },
+    "pickup:collection": {
+      "unknown": { "reason": "the collection page is a set, not one achievement" }
+    },
+    "pickup:ending": {
+      "unknown": { "reason": "'all endings' is a set, and the model can't say how many" }
+    },
+    "pickup:familiar": { "notAPrerequisite": true },
+    "pickup:hard mode": { "alwaysAvailable": true },
+    "pickup:heart": { "notAPrerequisite": true },
+    "pickup:homing": { "notAPrerequisite": true },
+    "pickup:item": { "notAPrerequisite": true },
+    "pickup:items": { "notAPrerequisite": true },
+    "pickup:items from Devil Rooms": { "notAPrerequisite": true },
+    "pickup:pills": { "notAPrerequisite": true },
+    "pickup:rock": { "notAPrerequisite": true },
+    "pickup:tainted character": {
+      "unknown": { "reason": "any of the 17 tainted, each behind its own achievement: a disjunction" }
+    },
+    "pickup:technology": { "notAPrerequisite": true },
+    "room:Arcade": { "alwaysAvailable": true },
+    "room:Black Market": { "alwaysAvailable": true },
+    "room:Boss Rush": { "alwaysAvailable": true },
+    "room:Devil Room": { "alwaysAvailable": true },
+    "room:Sacrifice Room": { "alwaysAvailable": true },
+    "room:Secret Room": { "alwaysAvailable": true },
+    "room:Shop": { "alwaysAvailable": true },
+    "stage:Basement": { "alwaysAvailable": true },
+    "stage:Caves": { "alwaysAvailable": true },
+    "stage:Corpse": { "alwaysAvailable": true },
+    "stage:Dark Room": { "alwaysAvailable": true },
+    "stage:Depths": { "alwaysAvailable": true },
+    "stage:Downpour": { "alwaysAvailable": true },
+    "stage:Home": { "alwaysAvailable": true },
+    "stage:Mausoleum": { "alwaysAvailable": true },
+    "stage:Mines": { "alwaysAvailable": true },
+    "transformation:Beelzebub": {
+      "unknown": { "reason": "a transformation is three items, and the model can't say 'N of these'" }
+    },
+    "transformation:Guppy": {
+      "unknown": { "reason": "a transformation is three items, and the model can't say 'N of these'" }
+    }
+  }
+}
