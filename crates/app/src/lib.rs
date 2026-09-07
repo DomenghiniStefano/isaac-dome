@@ -39,6 +39,23 @@ impl CatalogState {
 /// The "game not installed" case is **not** cached: if it's missing, the next command
 /// tries again. Someone who opens the app before installing the game shouldn't have to
 /// restart it.
+/// The unlock graph, built once from the catalog and the rules compiled into the binary.
+/// Same shape as `CatalogState`: expensive to build, cheap to consult. Rules that don't
+/// parse can only be our own broken file, and they degrade like everything else — the
+/// commands answer without graph info rather than failing.
+#[derive(Default)]
+struct GraphState(OnceLock<graph::Graph>);
+
+impl GraphState {
+    fn get(&self, catalog: &catalog::Catalog) -> Option<&graph::Graph> {
+        if let Some(g) = self.0.get() {
+            return Some(g);
+        }
+        let rules = graph::rules::embedded().ok()?;
+        Some(self.0.get_or_init(|| graph::Graph::build(catalog, rules)))
+    }
+}
+
 #[derive(Default)]
 struct ResourcesState(OnceLock<ResourceSet>);
 
@@ -254,14 +271,21 @@ fn unlock(
     app: AppHandle,
     state: tauri::State<'_, CatalogState>,
     resources: tauri::State<'_, ResourcesState>,
+    graph: tauri::State<'_, GraphState>,
 ) -> Result<ipc::UnlockView, IpcError> {
     let flags = achievement_flags(&app)?;
     // Game not installed is expected: the view goes out without a catalog and says so.
     let resources = resources.get();
     let catalog = resources.and_then(|rs| state.get_or_build(rs));
-    Ok(ipc::unlock_view(catalog, flags.as_deref(), |p| {
-        resources.and_then(|rs| rs.read(p))
-    }))
+    let g = catalog.and_then(|c| graph.get(c));
+    let eval = g.map(|g| g.evaluate(flags.as_deref()));
+    Ok(ipc::unlock_view(
+        catalog,
+        flags.as_deref(),
+        g,
+        eval.as_ref(),
+        |p| resources.and_then(|rs| rs.read(p)),
+    ))
 }
 
 #[tauri::command]
@@ -269,9 +293,10 @@ fn next_steps(
     app: AppHandle,
     state: tauri::State<'_, CatalogState>,
     resources: tauri::State<'_, ResourcesState>,
+    graph: tauri::State<'_, GraphState>,
 ) -> Result<ipc::NextSteps, IpcError> {
     // The steps are a filter over the full view: same state, no extra work.
-    let view = unlock(app, state, resources)?;
+    let view = unlock(app, state, resources, graph)?;
     Ok(ipc::next_steps(&view))
 }
 
@@ -373,6 +398,7 @@ fn remove_goal(
 pub fn run() {
     tauri::Builder::default()
         .manage(CatalogState::default())
+        .manage(GraphState::default())
         .manage(StoreState::default())
         .manage(ResourcesState::default())
         .invoke_handler(tauri::generate_handler![
