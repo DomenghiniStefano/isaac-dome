@@ -76,17 +76,15 @@ around the moved row:
 - Everything else keeps its relative order and fills in around the block.
 
 **The row lands at `to_index` whenever that is possible, and as close to it as the graph
-allows when it isn't.** Dropping a row at the very top when it has three prerequisites in
-the queue asks for those three to sit above position zero, which is not a position — so the
-row lands at index three, with its three prerequisites contiguous above it. The clamp is
-therefore `to_index.clamp(prerequisites_in_queue, rows - dependents_in_queue)`, and it
-explains itself on screen: what stopped the row is sitting right there, immediately above.
+allows when it isn't.** Dropping a row at the very top when three of its prerequisites are
+queued asks for those three to sit above position zero, which is not a position — so the row
+lands just below the last of them. The floor is therefore one past the last prerequisite;
+there is no ceiling, because dependents are dragged rather than jumped over.
 
-The clamp is **symmetric**, and the first draft of this spec got that wrong. Dependents need
-somewhere below exactly as prerequisites need somewhere above: dropping a prerequisite onto
-the last row asks its dependents to sit below the end of the list. It lands one above them
-instead — and the rule this was written for still holds, visibly: move a prerequisite down,
-and what needs it follows it down.
+Moving **down** is bounded only by the list's end: the dependents come along, so there is
+nothing to jump over. A prerequisite dropped on the last row lands one above its dragged
+block — which is the rule this was written for, and it looks exactly like what you asked
+for: the parent moved, the children followed.
 
 Dependency here means the **transitive** prerequisite relation from the graph, restricted
 to rows present in the queue. A prerequisite not in the queue constrains nothing: it isn't
