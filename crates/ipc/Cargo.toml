@@ -1,0 +1,17 @@
+[package]
+name = "ipc"
+version = "0.1.0"
+edition = "2021"
+description = "View-model per l'interfaccia: da discovery e core-save a JSON già risolto"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+discovery = { path = "../discovery" }
+core-save = { path = "../core-save" }
+unpack = { path = "../unpack" }
+catalog = { path = "../catalog" }
+wiki = { path = "../wiki" }
+
+[dev-dependencies]
+test-support = { path = "../test-support" }
+serde_json = "1"
