@@ -1257,6 +1257,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "graph"
+version = "0.1.0"
+dependencies = [
+ "catalog",
+ "core-save",
+ "serde",
+ "serde_json",
+ "test-support",
+ "unpack",
+ "wiki",
+]
+
+[[package]]
 name = "gtk"
 version = "0.18.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
