@@ -86,10 +86,19 @@ pub fn requirement_with(
             .unwrap_or_else(unknown),
         // By name, never by id: the wiki's entity id is the game's entity type, ours comes
         // from `bossportraits.xml`, and the two don't line up (Gish is entity 43, boss 19).
-        Target::Entity { .. } => index
-            .boss(&label)
-            .map(|id| Requirement::Boss { id })
-            .unwrap_or_else(|| from_verdict(rules, &verdict_key, unknown)),
+        //
+        // Resolving to a boss is **not** enough to stop here. A boss the game says nothing
+        // about — Hush, Delirium, Mother, The Beast have no `achievement=` in
+        // `bossportraits.xml` — would otherwise produce no edge and no unknown, and the
+        // node would read as "nothing in the way" while Delirium sits behind The Void.
+        // Only a boss the game itself gates by an achievement short-circuits the verdict
+        // table; everything else has to be judged.
+        Target::Entity { .. } => match index.boss(&label) {
+            Some(id) if c.boss(id).and_then(|b| b.unlocked_by).is_some() => {
+                Requirement::Boss { id }
+            }
+            _ => from_verdict(rules, &verdict_key, unknown),
+        },
         Target::Challenge { number } => c
             .challenge(ChallengeId(*number))
             .map(|ch| Requirement::Challenge { id: ch.id })
