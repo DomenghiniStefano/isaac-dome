@@ -1,0 +1,14 @@
+[package]
+name = "catalog"
+version = "0.1.0"
+edition = "2021"
+description = "Normalizza gli XML del gioco in un catalogo interrogabile per id. Puro: byte in ingresso, modello in uscita."
+
+[dependencies]
+quick-xml = "0.42"
+serde = { version = "1", features = ["derive"] }
+
+[dev-dependencies]
+test-support = { path = "../test-support" }
+unpack = { path = "../unpack" }
+core-save = { path = "../core-save" }

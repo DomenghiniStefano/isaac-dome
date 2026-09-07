@@ -1,0 +1,159 @@
+//! `players.xml`: characters with a portrait. Name keys repeat (Isaac and Tainted Isaac
+//! are both `#ISAAC_NAME`): what tells them apart is the `_b` token in the portrait
+//! name (`_b.png`, `_b_dead.png`), the game's convention for Tainted forms. Verified
+//! against the real file.
+
+use crate::diagnostics::{Diagnostic, SkipReason, Source};
+use crate::ids::{AchievementId, CharacterId};
+use crate::items::normalize_root;
+use crate::sprite::SpriteRef;
+use crate::text::Text;
+use crate::xml::{elements, Element};
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct Character {
+    pub id: CharacterId,
+    pub name: Text,
+    pub portrait: SpriteRef,
+    /// The cell of `coop menu.png`; `heads` fills it in, if the map holds up.
+    pub head: Option<SpriteRef>,
+    pub tainted: bool,
+    pub unlocked_by: Option<AchievementId>,
+}
+
+pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Character> {
+    let els = match elements(bytes) {
+        Ok(els) => els,
+        Err(_) => {
+            diagnostics.push(Diagnostic::SourceUnreadable {
+                source: Source::Players,
+            });
+            return Vec::new();
+        }
+    };
+    let portraitroot = els
+        .iter()
+        .find(|e| e.name == "players")
+        .and_then(|e| e.attr("portraitroot"))
+        .map(normalize_root)
+        .filter(|r| !r.is_empty())
+        .unwrap_or_else(|| "gfx/ui/stage".to_string());
+
+    els.iter()
+        .filter(|e| e.name == "player")
+        .filter_map(|e| character_from(e, &portraitroot, diagnostics))
+        .collect()
+}
+
+/// The `_b` convention as a segment of its own, not just an immediate suffix before
+/// `.png`: the "dead" form of Tainted Lazarus Risen uses `..._b_dead.png`, verified
+/// against the real file on 2026-09-03 (id 38 of `players.xml`).
+fn is_tainted_portrait(portrait: &str) -> bool {
+    let lower = portrait.to_ascii_lowercase();
+    let stem = lower.rsplit_once('.').map_or(lower.as_str(), |(s, _)| s);
+    stem.split('_').any(|segment| segment == "b")
+}
+
+fn character_from(e: &Element, portraitroot: &str, d: &mut Vec<Diagnostic>) -> Option<Character> {
+    let skip = |id: Option<u32>, reason: SkipReason, d: &mut Vec<Diagnostic>| {
+        d.push(Diagnostic::ElementSkipped {
+            source: Source::Players,
+            id,
+            reason,
+        });
+        None
+    };
+    let Some(raw_id) = e.attr("id") else {
+        return skip(None, SkipReason::MissingId, d);
+    };
+    let Ok(id) = raw_id.parse::<u32>() else {
+        return skip(None, SkipReason::MalformedId, d);
+    };
+    let Some(portrait) = e.attr("portrait") else {
+        return skip(Some(id), SkipReason::MissingSprite, d);
+    };
+    let Some(name) = e.attr("name") else {
+        return skip(Some(id), SkipReason::MissingName, d);
+    };
+
+    Some(Character {
+        id: CharacterId(id),
+        name: Text::from_attr(name),
+        portrait: SpriteRef::whole(format!("{portraitroot}/{portrait}")),
+        head: None,
+        tainted: is_tainted_portrait(portrait),
+        unlocked_by: e
+            .attr("achievement")
+            .and_then(|a| a.parse().ok())
+            .map(AchievementId),
+    })
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const PLAYERS: &[u8] = b"<players root=\"gfx/characters/costumes/\" portraitroot=\"gfx/ui/stage/\" nameimageroot=\"gfx/ui/boss/\">
+\t<player id=\"0\" name=\"#ISAAC_NAME\" skin=\"Character_001_Isaac.png\" hp=\"6\" nameimage=\"PlayerName_01_Isaac.png\" portrait=\"PlayerPortrait_Isaac.png\" birthright=\"#ISAAC_BIRTHRIGHT\" />
+\t<player id=\"1\" name=\"#MAGDALENE_NAME\" skin=\"Character_002_Magdalene.png\" achievement=\"1\" portrait=\"PlayerPortrait_Magdalene.png\" birthright=\"#MAGDALENE_BIRTHRIGHT\" />
+\t<player id=\"21\" name=\"#ISAAC_NAME\" skin=\"Character_001b_Isaac.png\" achievement=\"474\" portrait=\"PlayerPortrait_Isaac_b.png\" birthright=\"#ISAAC_B_BIRTHRIGHT\" />
+\t<player name=\"#NO_ID\" portrait=\"x.png\" />
+\t<player id=\"9\" name=\"#NO_PORTRAIT\" />
+</players>";
+
+    fn parsed() -> (Vec<Character>, Vec<Diagnostic>) {
+        let mut d = Vec::new();
+        let c = parse(PLAYERS, &mut d);
+        (c, d)
+    }
+
+    #[test]
+    fn portrait_uses_the_declared_portraitroot() {
+        let (c, _) = parsed();
+        assert_eq!(c[0].portrait.path, "gfx/ui/stage/PlayerPortrait_Isaac.png");
+        assert!(
+            c[0].head.is_none(),
+            "the head comes from the anm2, not from here"
+        );
+    }
+
+    #[test]
+    fn tainted_is_the_b_suffix_of_the_portrait_and_keys_repeat() {
+        let (c, _) = parsed();
+        assert!(!c[0].tainted);
+        assert!(c[2].tainted);
+        assert_eq!(
+            c[0].name, c[2].name,
+            "same name, two characters: that's how it is in the file"
+        );
+        assert_eq!(c[2].id, CharacterId(21));
+        assert_eq!(c[2].unlocked_by, Some(AchievementId(474)));
+        assert_eq!(c[0].unlocked_by, None, "Isaac doesn't unlock");
+    }
+
+    #[test]
+    fn the_b_token_is_tainted_even_with_a_suffix_after_it() {
+        // Tainted Lazarus Risen (id 38 of players.xml, verified on 2026-09-03) uses
+        // "..._b_dead.png": the "_b.png" suffix alone isn't enough.
+        assert!(is_tainted_portrait("PlayerPortrait_Lazarus_b_dead.png"));
+        assert!(is_tainted_portrait("PlayerPortrait_Isaac_b.png"));
+        assert!(!is_tainted_portrait("PlayerPortrait_Bluebaby.png"));
+        assert!(!is_tainted_portrait("PlayerPortrait_Bethany.png"));
+    }
+
+    #[test]
+    fn malformed_rows_are_skipped_with_a_reason() {
+        let (c, d) = parsed();
+        assert_eq!(c.len(), 3);
+        assert!(d.contains(&Diagnostic::ElementSkipped {
+            source: Source::Players,
+            id: None,
+            reason: SkipReason::MissingId
+        }));
+        assert!(d.contains(&Diagnostic::ElementSkipped {
+            source: Source::Players,
+            id: Some(9),
+            reason: SkipReason::MissingSprite
+        }));
+    }
+}
