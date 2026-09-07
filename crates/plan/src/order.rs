@@ -30,29 +30,43 @@ impl Queue {
         let mut rows: Vec<Row> = self.rows().to_vec();
         let moved = rows.remove(from);
 
-        // A row the graph can't compute answers `false` both ways, so it lands in `free`:
-        // it is never dragged and never drags.
-        let (mut above, mut below, mut free) = (Vec::new(), Vec::new(), Vec::new());
+        // The two relations behave differently, and the asymmetry is the rule itself:
+        //
+        // **Dependents are dragged.** Move a prerequisite down and what needs it follows,
+        // gathered right below it — the case this feature was asked for.
+        //
+        // **Prerequisites are a wall.** They are never moved: one already above the row is
+        // fine where you put it, and hauling it into a block would reorder rows you had
+        // arranged by hand. They only stop the row from rising past them.
+        //
+        // A row the graph can't compute answers `false` both ways, so it neither drags nor
+        // walls: it stays exactly where it is.
+        let mut dragged = Vec::new();
+        let mut rest = Vec::new();
         for r in rows {
-            if deps.requires(achievement, r.achievement) {
-                above.push(r);
-            } else if deps.requires(r.achievement, achievement) {
-                below.push(r);
+            if deps.requires(r.achievement, achievement) {
+                dragged.push(r);
             } else {
-                free.push(r);
+                rest.push(r);
             }
         }
 
-        let total = above.len() + below.len() + free.len();
-        let landed = to.clamp(above.len(), total - below.len());
-        let free_above = landed - above.len();
+        // The floor: one past the last prerequisite left in the list. In a queue that was
+        // valid before the move every prerequisite precedes every dependent, so this is
+        // the only bound the rise has.
+        let floor = rest
+            .iter()
+            .rposition(|r| deps.requires(achievement, r.achievement))
+            .map(|i| i + 1)
+            .unwrap_or(0);
+        let landed = to.clamp(floor, rest.len());
 
-        let mut out = Vec::with_capacity(total + 1);
-        out.append(&mut above);
-        out.extend(free.drain(..free_above));
+        let mut out = Vec::with_capacity(rest.len() + dragged.len() + 1);
+        let tail = rest.split_off(landed);
+        out.append(&mut rest);
         out.push(moved);
-        out.append(&mut free);
-        out.append(&mut below);
+        out.append(&mut dragged);
+        out.extend(tail);
         *self = Queue::from_rows(out);
         landed
     }

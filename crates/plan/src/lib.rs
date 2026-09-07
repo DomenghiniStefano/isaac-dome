@@ -5,6 +5,7 @@
 //!
 //! Design: `docs/superpowers/specs/2026-09-07-plan-queue-design.md`.
 
+pub mod edit;
 pub mod model;
 pub mod order;
 

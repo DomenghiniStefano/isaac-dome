@@ -47,8 +47,7 @@ fn moving_a_prerequisite_down_drags_what_needs_it() {
     let landed = q.move_row(1, 2, &deps);
     assert_eq!(
         landed, 1,
-        "the clamp is symmetric: 3 has to stay below 1, so 1 lands as low as it can, with \
-         what stopped it directly underneath"
+        "3 comes along, so 1 lands one above its dragged block rather than on the last row"
     );
     assert_eq!(
         ids(&q),
@@ -58,7 +57,7 @@ fn moving_a_prerequisite_down_drags_what_needs_it() {
 }
 
 #[test]
-fn moving_a_dependent_up_pulls_its_prerequisites_with_it_and_clamps() {
+fn a_row_cannot_rise_above_its_prerequisites_and_they_do_not_move() {
     // 4 requires 1 and 2. Dropping 4 at the top is impossible: two rows must precede it.
     let deps = Deps(&[(4, 1), (4, 2)]);
     let mut q = queue(&[1, 2, 3, 4]);
@@ -70,7 +69,7 @@ fn moving_a_dependent_up_pulls_its_prerequisites_with_it_and_clamps() {
     assert_eq!(
         ids(&q),
         vec![1, 2, 4, 3],
-        "the prerequisites sit contiguously above: what stopped the row is visible"
+        "1 and 2 never moved: they are a wall, not cargo, and the row stopped right below them"
     );
 }
 
