@@ -35,7 +35,7 @@ fn real() -> Option<(Catalog, ResourceSet, Save)> {
 fn the_real_profile_has_379_done_637_known_and_4_unknown_slots() {
     let Some((c, rs, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
-    let v = unlock_view(Some(&c), Some(&flags), |p| rs.read(p));
+    let v = unlock_view(Some(&c), Some(&flags), None, None, |p| rs.read(p));
     // 642 flags but 641 nodes (slots 1..=641: slot 0 isn't a node); the catalog covers
     // 1..=637, so what's left beyond the catalog is 638..=641: four, not 642 - 637.
     assert_eq!(
@@ -74,7 +74,7 @@ fn the_slot_id_junction_is_pinned_by_the_items_seen_in_the_save() {
     let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let seen = s.flags(Kind::Items).expect("section 4");
-    let v = unlock_view(Some(&c), Some(&flags), |_| None);
+    let v = unlock_view(Some(&c), Some(&flags), None, None, |_| None);
     let done: BTreeSet<u32> = v
         .nodes
         .iter()
@@ -99,24 +99,38 @@ fn the_slot_id_junction_is_pinned_by_the_items_seen_in_the_save() {
 }
 
 #[test]
-fn next_steps_on_the_real_profile_are_five_not_done_known_nodes_in_slot_order() {
+fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
     let Some((c, rs, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
-    let v = unlock_view(Some(&c), Some(&flags), |p| rs.read(p));
+    let g = graph::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
+    let e = g.evaluate(Some(&flags));
+    let v = unlock_view(Some(&c), Some(&flags), Some(&g), Some(&e), |p| rs.read(p));
     let steps = next_steps(&v);
-    assert_eq!(steps.steps.len(), 5);
+    assert_eq!(steps.basis, ipc::StepsBasis::FanOut);
+    assert_eq!(steps.steps.len(), 5, "the real profile has work left to do");
     assert!(steps.steps.iter().all(|n| !n.done));
-    let ids: Vec<u32> = steps
+    let fans: Vec<u32> = steps
         .steps
         .iter()
-        .map(|n| match n.achievement {
-            AchievementRef::Known { id, .. } => id,
-            AchievementRef::Unknown { slot } => slot,
+        .map(|n| match n.graph {
+            ipc::GraphInfo::Computed {
+                available_now,
+                blocked_by,
+                fan_out,
+                ..
+            } => {
+                assert!(available_now, "a step that isn't unlockable isn't a step");
+                assert_eq!(blocked_by, 0);
+                fan_out
+            }
+            ipc::GraphInfo::Partial { .. } => {
+                panic!("a partial node can't be recommended: the graph can't vouch for it")
+            }
         })
         .collect();
     assert!(
-        ids.windows(2).all(|w| w[0] < w[1]),
-        "increasing slot order: {ids:?}"
+        fans.windows(2).all(|w| w[0] >= w[1]),
+        "fan-out descending: {fans:?}"
     );
     // Every step has a readable name and, if it unlocks an item, its icon.
     for n in &steps.steps {
