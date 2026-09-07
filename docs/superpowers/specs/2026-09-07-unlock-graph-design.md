@@ -62,7 +62,10 @@ achievements; `catalog::unlocks` derives the same relation from `items.xml`,
   because it is what section 4 of the save is indexed by.
 
 **What this buys.** 464 of 641 achievements have at least one prerequisite that reduces to
-another achievement — 140 entirely, 324 mixed — for 2,157 edges. That is the graph.
+another achievement — 140 entirely, 324 mixed. *(The first draft of this spec said "for
+2,157 edges", a number this probe measured on a different relation — how many achievements
+the wiki says unlock a thing, summed over refs without dedup. The graph as built has 459
+edges, and the report explains why that is the right number.)*
 
 ## Decision 1 — the wiki is the source of requirements, the game is the source of unlocks
 
@@ -110,7 +113,11 @@ The type carries two jobs at once. It decides **where recursion is meaningful** 
 character has an achievement behind it, Satan does not — and it is **what the screen groups
 by**, so a node can say "you're missing 1 character and 2 bosses" instead of "blocked by 3".
 
-## Decision 3 — three verdicts, and no fourth
+## Decision 3 — four verdicts, and no fifth
+
+*(Written as "three, and no fourth". Curation found the case the three couldn't say —
+`transformation:Guppy` — and the fourth was added the same day. The count in the heading
+changed; the principle didn't: one verdict per target, and no way to stay silent.)*
 
 Everything that doesn't reduce to an achievement gets exactly one hand-written verdict.
 "Doesn't reduce" includes **a boss the game itself doesn't gate**: 76 of 103 carry no
