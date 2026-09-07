@@ -13,8 +13,10 @@ const PLAYERS: &str = r#"<players root="gfx/" portraitroot="gfx/ui/stage/">
   <player id="19" name="Jacob &amp; Esau" portrait="PlayerPortrait_Jacob.png" achievement="7" />
 </players>"#;
 
+// Gish is gated by the game itself (`achievement=`, "beat the depths 20 times"); Satan
+// isn't, and never could be — which is the difference the resolver turns on.
 const BOSSES: &str = r#"<bosses root="gfx/ui/boss/">
-  <boss id="19" name="Gish" portrait="Portrait_Gish.png" />
+  <boss id="19" name="Gish" portrait="Portrait_Gish.png" achievement="18" />
   <boss id="84" name="Satan" portrait="Portrait_Satan.png" />
 </bosses>"#;
 
@@ -68,6 +70,29 @@ fn an_entity_ref_resolves_to_a_boss_by_name_not_by_id() {
         requirement(&c, &rules, &entity(43, "Gish")),
         Requirement::Boss { id: BossId(19) },
         "entity 43 is boss 19: the id spaces differ, the name is the bridge"
+    );
+}
+
+#[test]
+fn a_boss_the_game_does_not_gate_is_judged_not_assumed() {
+    // Satan resolves by name, and the game gates him with nothing. Stopping at
+    // `Requirement::Boss` here would produce no edge and no unknown, and the node would
+    // read as "nothing in the way" — which is how Delirium looked available.
+    let c = catalog();
+    let unjudged = rules(r#"{"schemaVersion":1}"#);
+    assert_eq!(
+        requirement(&c, &unjudged, &entity(84, "Satan")),
+        Requirement::Unknown {
+            label: "Satan".into()
+        },
+        "a boss with no unlocker and no verdict is unknown, never 'available'"
+    );
+    let judged =
+        rules(r#"{"schemaVersion":1,"verdicts":{"entity:Satan":{"alwaysAvailable":true}}}"#);
+    assert_eq!(
+        requirement(&c, &judged, &entity(84, "Satan")),
+        Requirement::None,
+        "judged as fought on night one: it gates nothing, and that is a decision on record"
     );
 }
 

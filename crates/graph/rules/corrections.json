@@ -4,17 +4,54 @@
     "Jacob and Esau": "Jacob & Esau"
   },
   "verdicts": {
+    "entity:???": {
+      "alwaysAvailable": true
+    },
     "entity:Angel": {
+      "alwaysAvailable": true
+    },
+    "entity:Baby Plum": {
       "alwaysAvailable": true
     },
     "entity:Battery Bum": {
       "notAPrerequisite": true
     },
+    "entity:C.H.A.D.": {
+      "behind": {
+        "achievement": 17
+      }
+    },
+    "entity:Delirium": {
+      "unknown": {
+        "reason": "lives in The Void, which opens after Hush: run progress, not an achievement"
+      }
+    },
     "entity:Die": {
       "notAPrerequisite": true
     },
+    "entity:Gish": {
+      "behind": {
+        "achievement": 18
+      }
+    },
     "entity:Hell Game": {
       "notAPrerequisite": true
+    },
+    "entity:Hornfel": {
+      "alwaysAvailable": true
+    },
+    "entity:Hush": {
+      "unknown": {
+        "reason": "the Blue Womb opens after 11 Mom’s Heart kills: a counter, not an achievement"
+      }
+    },
+    "entity:Isaac": {
+      "alwaysAvailable": true
+    },
+    "entity:It Lives!": {
+      "unknown": {
+        "reason": "replaces Mom’s Heart after 11 kills: a counter, not an achievement"
+      }
     },
     "entity:Krampus": {
       "alwaysAvailable": true
@@ -22,14 +59,37 @@
     "entity:Lil' Batteries": {
       "notAPrerequisite": true
     },
+    "entity:Little Horn": {
+      "alwaysAvailable": true
+    },
     "entity:Locked Chest": {
       "notAPrerequisite": true
+    },
+    "entity:Lokii": {
+      "alwaysAvailable": true
+    },
+    "entity:Mega Satan": {
+      "alwaysAvailable": true
+    },
+    "entity:Mom": {
+      "alwaysAvailable": true
+    },
+    "entity:Mom's Heart": {
+      "alwaysAvailable": true
+    },
+    "entity:Mother": {
+      "unknown": {
+        "reason": "end of the Repentance alt path: run progress, not an achievement"
+      }
     },
     "entity:Portal": {
       "alwaysAvailable": true
     },
     "entity:Red Heart": {
       "notAPrerequisite": true
+    },
+    "entity:Satan": {
+      "alwaysAvailable": true
     },
     "entity:Shell Game": {
       "notAPrerequisite": true
@@ -39,6 +99,30 @@
     },
     "entity:Soul Heart": {
       "notAPrerequisite": true
+    },
+    "entity:Steven": {
+      "behind": {
+        "achievement": 16
+      }
+    },
+    "entity:The Beast": {
+      "unknown": {
+        "reason": "end of the Ascent: run progress, not an achievement"
+      }
+    },
+    "entity:The Lamb": {
+      "alwaysAvailable": true
+    },
+    "entity:The Siren": {
+      "alwaysAvailable": true
+    },
+    "entity:Ultra Greed": {
+      "alwaysAvailable": true
+    },
+    "entity:Ultra Greedier": {
+      "unknown": {
+        "reason": "Greedier opens after 500 coins donated: a counter, not an achievement"
+      }
     },
     "entity:Ultra Pride": {
       "alwaysAvailable": true

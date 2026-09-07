@@ -3,19 +3,22 @@
 **Date:** 2026-09-07
 **Spec:** `docs/superpowers/specs/2026-09-07-unlock-graph-design.md`
 **Plan:** `docs/superpowers/plans/2026-09-07-unlock-graph.md`
-**Branch:** `feature/unlock-graph`, 13 commits, `pnpm check` green.
+**Branch:** `feature/unlock-graph`, 17 commits, `pnpm check` green.
 
 ## The shape of the result
 
-`crates/graph`, pure, no I/O: 42 tests. 637 nodes, **459 prerequisite edges**, 1,247
-requirements resolved from the wiki's typed refs onto the user's own catalog.
+`crates/graph`, pure, no I/O: 45 tests. 637 nodes, **459 prerequisite edges**, 1,209
+requirements read from the wiki's typed refs against the user's own catalog.
 
 | outcome | count | |
 |---|---|---|
-| resolved | 1,215 | 97.4% — boss 493, character 396, challenge 47, item 46, judged as gating nothing 189 |
-| uninterpreted | 32 | 2.6%, and **every one of them is an explicit `unknown` verdict**: nothing is uninterpreted by inattention |
+| resolved | 999 | 82.6% — character 396, judged as gating nothing 492, challenge 47, item 46, boss 33 |
+| judged inexpressible | 210 | 17.4%, and **every one traces back to a verdict somebody wrote**: nothing is uninterpreted by inattention |
 
-The uninterpreted 32 are eight labels, each judged and each recorded with its reason:
+The 210 are fourteen labels, each judged and each recorded with its reason. Six are the
+late-game bosses gated by run progress rather than by an achievement — Hush, It Lives!,
+Delirium, Mother, The Beast, Ultra Greedier, 178 requirements between them (see finding 8).
+The rest:
 `Guppy` and `Beelzebub` (a transformation is three items, and the model can't say "N of
 these"), `ending` (`all endings` is a set), `Collect`/`collect`/`collection` (the
 collection page is a set), `Bestiary`, and `tainted character` (any of the 17, each behind
@@ -28,8 +31,8 @@ summed, over every ref, how many achievements the *wiki* says unlock that thing 
 different relation, without dedup. The real graph has 459 edges, and that is correct:
 493 of 1,247 requirements are bosses, and Satan or Mom aren't unlocked by any achievement,
 so they rightly produce no edge. The plan's `edges > 1500` assertion was calibrated on the
-wrong number and was replaced by what the design actually promises: a resolution rate above
-90%, asserted as `unknown * 10 < total`.
+wrong number and was replaced — first by a resolution-rate floor, then, after finding 8,
+by the assertion that nothing is uninterpreted without somebody having judged it.
 
 **2. The inventory is 101 targets, not 75** — and it cannot be otherwise. The 75 came from
 a probe that resolved names against the catalog first; the generator has no catalog, by the
@@ -37,12 +40,11 @@ design decision that keeps `requirements.json` independent of the user's edition
 difference are entities that resolve to known bosses, for which a verdict would never be
 read.
 
-*Decision taken:* `TargetRow` gained `verdictRequired`. It is false for entities only —
-whether an entity resolves is a runtime fact — and true for stage, room, pickup and
-transformation, which can never resolve. The file-level test covers the 63 mandatory rows
-and runs on any machine; the stronger check (nothing left uninterpreted against the real
-catalog) lives in the real-data tests. The honesty chain doesn't depend on the flag: an
-entity that neither resolves nor has a verdict still ends up `Unknown`.
+*Decision taken:* `TargetRow` gained `verdictRequired`, at first false for entities — the
+reasoning being that an entity usually resolves to a boss and never reaches the table.
+**Finding 8 showed that reasoning was wrong**, and the flag is now true for every row: a
+handful of rows that are never read costs less than one silent hole. The file-level test
+covers all 101 and runs on any machine, without a game installed.
 
 **3. A fourth verdict was needed, and the spec said "three, and no fourth".** Curation hit
 `transformation:Guppy`: genuinely gated, but by three items rather than one achievement.
@@ -72,6 +74,35 @@ was visible — which is the rule the crate exists for, demonstrated on itself.
 
 **7. The workspace needed no edit.** `members = ["crates/*"]` already covers a new crate;
 the plan's step to add it was unnecessary.
+
+**8. A silent hole, found by the question "are you sure it's only 459 edges?".** The edge
+count was arithmetically consistent — 464 requirements naming something with an unlocker,
+5 duplicates collapsed, 459 edges — and semantically incomplete. A requirement resolving to
+a boss **stopped there**, and 76 of 103 bosses carry no `achievement=` in
+`bossportraits.xml`: Hush, Delirium, Mother, The Beast, Mega Satan, Ultra Greed among them.
+Those produced no edge *and no unknown*, so a node behind Delirium read as "nothing in the
+way" — the exact failure the spec's `behind` verdict was written to prevent, and which that
+verdict could never prevent, because name resolution succeeded first and short-circuited
+the table.
+
+*Fixed:* an entity only short-circuits the verdict table when it resolves to a boss **the
+game itself gates by an achievement**; every other boss has to be judged.
+`verdict_required` is now true for every inventory row, and 22 boss targets were curated —
+13 `alwaysAvailable`, 3 `behind` (Gish, Steven, C.H.A.D., which the game gates by the
+floor-clear achievements), and 6 `unknown`: Hush, It Lives!, Delirium, Mother, The Beast
+and Ultra Greedier are gated by **run progress, not by an achievement** — 11 Mom's Heart
+kills, The Void, the Ascent, 500 coins donated — which the model has no way to state.
+
+*What it cost:* uninterpreted requirements went from 32 to **210 of 1,209 (17%)**, 178 of
+them those six bosses. The edge count did not move: they never produced edges. What moved
+is honesty — the nodes behind late-game content now say `Partial` instead of claiming to be
+unlockable.
+
+*What it changed in the tests:* the "under 10% uninterpreted" assertion was replaced,
+because a ratio conflates two different things — *we identified what the ref points at*
+(Delirium: yes) and *we can state its prerequisite* (Delirium: no). The design promises the
+first. The test now asserts the thing that actually matters: **every uninterpreted
+requirement traces back to a target somebody judged**, so nothing is unknown by inattention.
 
 ## Decisions inside the contract
 

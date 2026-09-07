@@ -112,11 +112,24 @@ by**, so a node can say "you're missing 1 character and 2 bosses" instead of "bl
 
 ## Decision 3 — three verdicts, and no fourth
 
-Everything that doesn't reduce to an achievement gets exactly one hand-written verdict:
+Everything that doesn't reduce to an achievement gets exactly one hand-written verdict.
+"Doesn't reduce" includes **a boss the game itself doesn't gate**: 76 of 103 carry no
+`achievement=` in `bossportraits.xml`, and letting one stop at "it's a boss" produced no
+edge and no unknown — a node behind Delirium reading as unblocked.
 
 - `alwaysAvailable` — Satan, Mom, Isaac: fought on night one.
-- `behind` — Delirium sits behind The Void; The Beast behind the Ascent.
+- `behind` — gated by an achievement of the graph: Gish sits behind "beat the depths 20
+  times". **Only when the gate is an achievement.** Delirium sits behind The Void and The
+  Beast behind the Ascent, but neither gate is an achievement — those take `unknown`
+  (below), and writing `behind` for them was an error in this spec's first draft, corrected
+  on the same day.
 - `notAPrerequisite` — a Red Heart is a pickup that appears in the sentence.
+- `unknown { reason }` — **judged, and the answer is that the model can't say it**: gated,
+  but by something other than one achievement. Three Guppy items, "a tainted character",
+  11 Mom's Heart kills before the Blue Womb opens. At runtime it behaves exactly like no
+  verdict (the node drops to `Partial`); what it adds is the record that a person looked.
+  It is the fourth verdict, added during curation because the other three each made
+  `transformation:Guppy` lie.
 
 A target **without** a verdict does not become "no prerequisites". It stays `Unknown`, and
 the node it belongs to drops to `Partial`. That chain is what makes faking-by-inattention

@@ -48,11 +48,15 @@ fn reduces_by_id(t: &Target) -> bool {
     }
 }
 
-/// Whether a verdict is always consulted, and so must exist. False for entities: they
-/// usually resolve to a boss by name, and whether they do depends on the user's catalog,
-/// which this file knows nothing about by design. See `TargetRow::verdict_required`.
-fn verdict_required(t: &Target) -> bool {
-    !matches!(t, Target::Entity { .. })
+/// Whether a verdict is always consulted, and so must exist.
+///
+/// True for every target in the inventory, entities included. An entity only escapes the
+/// verdict table when it resolves to a boss the game itself gates by an achievement — 27
+/// of 103 bosses — and the other 76 have to be judged, or a node behind Delirium would
+/// read as "nothing in the way". Requiring a verdict for all of them costs a handful of
+/// rows that are never read; not requiring them cost a silent hole, found on 2026-09-07.
+fn verdict_required(_t: &Target) -> bool {
+    true
 }
 
 pub fn generate(d: &Dataset) -> Requirements {

@@ -118,16 +118,39 @@ fn the_graph_has_the_shape_this_era_measured() {
     }
     // Not a floor on the edge count: the spec's "2,157 edges" was measured on a different
     // relation (how many achievements unlock a thing, summed over refs without dedup) and
-    // says nothing about this graph. What the design does promise is the resolution rate —
-    // ~90% of refs land on the catalog — and that is what's asserted.
+    // says nothing about this graph.
+    //
+    // Not a ratio either. A ratio conflates two different things — "we identified what the
+    // ref points at" and "we can state its prerequisite" — and Delirium is the case that
+    // separates them: we know exactly what it is, and its gate is run progress that the
+    // model has no way to say. What the design actually promises is that **nothing is
+    // unknown by inattention**, so that is what gets asserted: every uninterpreted
+    // requirement traces back to a target somebody judged.
+    let rules = graph::rules::embedded().expect("embedded rules");
+    let judged: std::collections::BTreeSet<&str> = rules
+        .targets()
+        .iter()
+        .filter(|t| rules.verdict(&t.key).is_some())
+        .map(|t| t.label.as_str())
+        .collect();
+    let unjudged: Vec<&str> = unknown_labels
+        .keys()
+        .copied()
+        .filter(|l| !judged.contains(l))
+        .collect();
+    assert!(
+        unjudged.is_empty(),
+        "uninterpreted requirements that nobody judged: {unjudged:?} — an inventory row \
+         and a verdict are missing for each"
+    );
     let total: u32 = g
         .nodes()
         .iter()
         .map(|n| n.requirements.len() as u32)
         .sum::<u32>();
-    assert!(
-        total > 0 && unknown * 10 < total,
-        "{unknown} of {total} requirements uninterpreted: the design promises under 10%"
+    eprintln!(
+        "judged inexpressible: {unknown} of {total} requirements ({}%)",
+        unknown * 100 / total.max(1)
     );
 }
 
