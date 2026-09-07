@@ -54,6 +54,37 @@ pub enum QueueDiagnostic {
     NoCatalog,
 }
 
+/// The achievement that unlocks a saved target, if the catalog says one does.
+///
+/// The inverse of `Catalog::unlocks`, and the bridge the goals import needs: a goal is a
+/// target, a queue row is an achievement. A target nothing unlocks answers `None` and is
+/// skipped rather than guessed at.
+pub fn achievement_unlocking(c: &Catalog, key: &crate::goals::TargetKey) -> Option<u32> {
+    use crate::catalog_view::item_kind;
+    use crate::goals::TargetKey;
+    use catalog::Unlock;
+    c.achievements()
+        .find(|a| {
+            c.unlocks(a.id).iter().any(|u| match (u, key) {
+                (
+                    Unlock::Item { kind, id },
+                    TargetKey::Item {
+                        item_kind: k,
+                        id: want,
+                    },
+                ) => item_kind(*k) == *kind && id.0 == *want,
+                (Unlock::Character { id }, TargetKey::Character { id: want }) => id.0 == *want,
+                (Unlock::Boss { id }, TargetKey::Boss { id: want }) => id.0 == *want,
+                (Unlock::Challenge { id }, TargetKey::Challenge { id: want }) => id.0 == *want,
+                // A pair of enums has sixteen combinations of which four mean anything.
+                // The exhaustiveness rule bans a catch-all that hides a new variant of one
+                // closed enum; this one hides nothing — the four are written out above it.
+                _ => false,
+            })
+        })
+        .map(|a| a.id.0)
+}
+
 /// Everything `queue_view` needs. A struct rather than eight parameters: past seven
 /// `clippy::too_many_arguments` objects, and a list that long is hard to call correctly
 /// anyway.
