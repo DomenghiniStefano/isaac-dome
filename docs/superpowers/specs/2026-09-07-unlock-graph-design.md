@@ -99,6 +99,10 @@ pub enum Requirement {
     Gate      { gate: GateId },
     /// Declared, never dropped: the node knows what it doesn't know.
     Unknown   { label: String },
+    /// Judged as gating nothing — `alwaysAvailable` or `notAPrerequisite`. A variant
+    /// rather than a ref filtered away at the source, so that resolution is **total**:
+    /// every ref maps to exactly one outcome and none disappears without a name.
+    None,
 }
 ```
 
@@ -133,8 +137,17 @@ different files, and a test holds them together.
 {
   "schemaVersion": 1,
   "generatedFrom": { "snapshotAt": "2026-09-04T17:33:31Z", "maxRevid": 269057 },
-  "achievements": { "1": { "refs": [{ "kind": "entity", "id": 5, "label": "Red Heart" }] } },
-  "targets": [{ "kind": "stage", "label": "Basement", "uses": 28 }]
+  "achievements": {
+    "1": {
+      "refs": [
+        {
+          "target": { "kind": "entity", "id": 5, "variant": 10, "subtype": 1 },
+          "label": "Red Heart"
+        }
+      ]
+    }
+  },
+  "targets": [{ "key": "stage:Basement", "label": "Basement", "uses": 28 }]
 }
 ```
 
