@@ -82,9 +82,11 @@ row lands at index three, with its three prerequisites contiguous above it. The 
 therefore `to_index.clamp(prerequisites_in_queue, rows - dependents_in_queue)`, and it
 explains itself on screen: what stopped the row is sitting right there, immediately above.
 
-Moving **downward is never clamped** — dependents can always be pushed further down — which
-is the case the rule was stated for: move a prerequisite below what needs it, and what needs
-it follows.
+The clamp is **symmetric**, and the first draft of this spec got that wrong. Dependents need
+somewhere below exactly as prerequisites need somewhere above: dropping a prerequisite onto
+the last row asks its dependents to sit below the end of the list. It lands one above them
+instead — and the rule this was written for still holds, visibly: move a prerequisite down,
+and what needs it follows it down.
 
 Dependency here means the **transitive** prerequisite relation from the graph, restricted
 to rows present in the queue. A prerequisite not in the queue constrains nothing: it isn't
@@ -216,7 +218,7 @@ reason about than teaching the frontend to replay the repair.
 
 - A move puts the row at the requested index whenever the constraint allows it, and at the
   clamped index — `to.clamp(prerequisites_in_queue, rows - dependents_in_queue)` — when it
-  doesn't. Downward moves are never clamped.
+  doesn't. The clamp works in both directions.
 - Moving a prerequisite below its dependent drags the dependent below it.
 - Moving a dependent above its prerequisite pulls the prerequisite above it.
 - Yielded rows keep their relative order.
