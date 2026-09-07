@@ -1,6 +1,7 @@
 //! The contracts for the graph screens: Unlock, Next Steps, Plan. A single node shared
-//! by all three. Whatever the graph (M2) doesn't know yet travels as a declared `Stub`,
-//! never as a value that looks computed.
+//! by all three. What the graph can't interpret travels as a declared `Partial`, never as
+//! a value that looks computed — `GraphInfo::Stub` left the wire with M2, because a node
+//! saying "the graph doesn't exist" would now be lying.
 
 use serde::{Deserialize, Serialize};
 
@@ -19,8 +20,49 @@ pub struct UnlockNode {
     pub unlocks: Vec<UnlockTarget>,
     /// Origin DLC of the first item unlocked: real.
     pub origin: Option<OriginView>,
-    /// What the graph knows: `Stub` until M2 exists.
+    /// What is still in the way, typed by the nature of the target. This is what the
+    /// screen groups by: "you're missing 1 character and 2 bosses" instead of
+    /// "blocked by 3".
+    pub missing: Vec<RequirementView>,
+    /// What the graph knows.
     pub graph: GraphInfo,
+}
+
+/// What a node is still missing. Typed because the type decides both the grouping and
+/// whether there is an achievement behind it at all.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[serde(
+    tag = "kind",
+    rename_all = "camelCase",
+    rename_all_fields = "camelCase"
+)]
+pub enum RequirementView {
+    Character {
+        id: u32,
+        name: String,
+    },
+    Boss {
+        id: u32,
+        name: String,
+    },
+    Challenge {
+        id: u32,
+        name: String,
+    },
+    /// `itemKind` and not `kind`: the tag already took that name.
+    Item {
+        item_kind: ItemKindView,
+        id: u32,
+        name: String,
+    },
+    /// A curated gate — stage, room, mode. The label is what the wiki calls it.
+    Gate {
+        label: String,
+    },
+    /// Not interpreted. A node carrying one cannot claim "available now".
+    Unknown {
+        label: String,
+    },
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
@@ -47,12 +89,22 @@ pub enum AchievementRef {
     rename_all_fields = "camelCase"
 )]
 pub enum GraphInfo {
-    Stub,
     Computed {
         available_now: bool,
         blocked_by: u32,
         fan_out: u32,
         steps_missing: u32,
+    },
+    /// Requirements only partly interpreted, or a node inside a cycle. It carries no
+    /// `steps_missing` on purpose: with something uninterpreted the transitive count isn't
+    /// knowable, and a zero would be the exact lie this variant exists to prevent.
+    ///
+    /// A variant and not one more field on `Computed`, because a new variant **forces**
+    /// the TypeScript `switch` to deal with it while a field is ignored in silence.
+    Partial {
+        blocked_by: u32,
+        fan_out: u32,
+        unknown: u32,
     },
 }
 
@@ -109,12 +161,13 @@ pub struct NextSteps {
     pub basis: StepsBasis,
 }
 
-/// What the steps are ordered by. A fieldless enum: on the wire it's `"stub"` or
-/// `"fanOut"`, not a tagged object — the same rule as `ItemKindView` and `OriginView`.
+/// What the steps are ordered by. A fieldless enum: on the wire it's `"fanOut"`, not a
+/// tagged object — the same rule as `ItemKindView` and `OriginView`. One variant today,
+/// and it stays an enum because the ordering is a decision the screen reads: the next
+/// basis — closeness, once the counters land — has to arrive as a value, not a rename.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub enum StepsBasis {
-    Stub,
     FanOut,
 }
 
@@ -186,7 +239,7 @@ pub struct PlanStep {
 
 use catalog::{AchievementId, BossId, Catalog, ChallengeId, CharacterId, ItemId, Origin, Unlock};
 
-use crate::catalog_view::{item_kind, kind_view};
+use crate::catalog_view::{item_kind, kind_view, ItemKindView};
 use crate::resources::data_url;
 
 /// The Unlock view: one node per slot 1..=N of section 1 of the save. `flags[i]` is
@@ -197,9 +250,82 @@ use crate::resources::data_url;
 /// with no achievements: flattening the two cases would make the view claim the catalog
 /// has 638 more achievements than the file, which is false. `Some(&[])` stays the
 /// degenerate save, with its own diagnostic.
+/// The requirements still in the way, resolved to names. What is already satisfied is left
+/// out: a node blocked by nothing shows an empty list, and that agrees with `blocked_by`.
+/// `Requirement::None` never reaches here — it was judged as gating nothing.
+fn missing_view(c: &Catalog, node: &graph::build::Node, flags: &[bool]) -> Vec<RequirementView> {
+    let en = catalog::Language::English;
+    let done = |a: Option<AchievementId>| {
+        a.and_then(|a| flags.get(a.0 as usize).copied())
+            .unwrap_or(false)
+    };
+    let mut out = Vec::new();
+    for r in &node.requirements {
+        match r {
+            graph::model::Requirement::None => {}
+            graph::model::Requirement::Character { id } => {
+                let Some(ch) = c.character(*id) else { continue };
+                if !done(ch.unlocked_by) {
+                    out.push(RequirementView::Character {
+                        id: id.0,
+                        name: c.text(&ch.name, en).to_string(),
+                    });
+                }
+            }
+            graph::model::Requirement::Boss { id } => {
+                let Some(b) = c.boss(*id) else { continue };
+                if !done(b.unlocked_by) {
+                    out.push(RequirementView::Boss {
+                        id: id.0,
+                        name: b.name.clone(),
+                    });
+                }
+            }
+            graph::model::Requirement::Challenge { id } => {
+                let Some(ch) = c.challenge(*id) else { continue };
+                let unlocked = ch.unlocked_by.iter().any(|a| done(Some(*a)));
+                if !ch.unlocked_by.is_empty() && !unlocked {
+                    out.push(RequirementView::Challenge {
+                        id: id.0,
+                        name: ch.name.clone(),
+                    });
+                }
+            }
+            graph::model::Requirement::Item { kind, id } => {
+                let Some(i) = c.item(*kind, *id) else {
+                    continue;
+                };
+                if !done(i.unlocked_by) {
+                    out.push(RequirementView::Item {
+                        item_kind: kind_view(*kind),
+                        id: id.0,
+                        name: c.text(&i.name, en).to_string(),
+                    });
+                }
+            }
+            graph::model::Requirement::Gate { gate } => out.push(RequirementView::Gate {
+                label: gate
+                    .split_once(':')
+                    .map(|(_, l)| l)
+                    .unwrap_or(gate)
+                    .to_string(),
+            }),
+            graph::model::Requirement::Unknown { label } => out.push(RequirementView::Unknown {
+                label: label.clone(),
+            }),
+        }
+    }
+    out
+}
+
+/// `graph` and `eval` travel together or not at all: without a catalog there is no graph,
+/// and a node then carries `Partial` with one unknown — never `Computed`, which would read
+/// as "nothing is in the way".
 pub fn unlock_view(
     catalog: Option<&Catalog>,
     flags: Option<&[bool]>,
+    graph: Option<&graph::Graph>,
+    eval: Option<&graph::evaluate::Eval>,
     mut icon: impl FnMut(&str) -> Option<Vec<u8>>,
 ) -> UnlockView {
     let read = flags.unwrap_or(&[]);
@@ -237,12 +363,46 @@ pub fn unlock_view(
         if flag {
             done += 1;
         }
+        let info = match eval.and_then(|e| e.node(slot)) {
+            Some(graph::evaluate::NodeInfo::Computed {
+                available_now,
+                blocked_by,
+                fan_out,
+                steps_missing,
+            }) => GraphInfo::Computed {
+                available_now: *available_now,
+                blocked_by: *blocked_by,
+                fan_out: *fan_out,
+                steps_missing: *steps_missing,
+            },
+            Some(graph::evaluate::NodeInfo::Partial {
+                blocked_by,
+                fan_out,
+                unknown,
+            }) => GraphInfo::Partial {
+                blocked_by: *blocked_by,
+                fan_out: *fan_out,
+                unknown: *unknown,
+            },
+            // No graph for this slot: no catalog, or a slot beyond it. The graph has
+            // nothing to say, which is `Partial` with one unknown — never `Computed`.
+            None => GraphInfo::Partial {
+                blocked_by: 0,
+                fan_out: 0,
+                unknown: 1,
+            },
+        };
+        let missing = match (catalog, graph.and_then(|g| g.node(slot))) {
+            (Some(c), Some(n)) => missing_view(c, n, read),
+            _ => Vec::new(),
+        };
         nodes.push(UnlockNode {
             achievement: achievement_ref,
             done: flag,
             unlocks,
             origin,
-            graph: GraphInfo::Stub,
+            missing,
+            graph: info,
         });
     }
 
@@ -362,16 +522,39 @@ fn origin_view(o: Origin) -> OriginView {
 }
 
 /// Without a graph: the first `STEPS` not done, in slot order. `basis: Stub` declares it.
+/// The steps worth playing tonight: what is unlockable **now**, ordered by how much it
+/// opens. A node that is merely not-done isn't a step — if it's blocked, tonight can't
+/// touch it; if the graph can't say (`Partial`), suggesting it would be a guess.
+///
+/// Ties break by achievement id ascending, so two calls on the same profile give the same
+/// list: an order that shuffles reads as the app changing its mind.
 pub fn next_steps(view: &UnlockView) -> NextSteps {
+    let mut candidates: Vec<&UnlockNode> = view
+        .nodes
+        .iter()
+        .filter(|n| {
+            matches!(
+                n.graph,
+                GraphInfo::Computed {
+                    available_now: true,
+                    ..
+                }
+            )
+        })
+        .collect();
+    candidates.sort_by_key(|n| {
+        let fan = match n.graph {
+            GraphInfo::Computed { fan_out, .. } | GraphInfo::Partial { fan_out, .. } => fan_out,
+        };
+        let id = match &n.achievement {
+            AchievementRef::Known { id, .. } => *id,
+            AchievementRef::Unknown { slot } => *slot,
+        };
+        (std::cmp::Reverse(fan), id)
+    });
     NextSteps {
-        steps: view
-            .nodes
-            .iter()
-            .filter(|n| !n.done)
-            .take(STEPS)
-            .cloned()
-            .collect(),
-        basis: StepsBasis::Stub,
+        steps: candidates.into_iter().take(STEPS).cloned().collect(),
+        basis: StepsBasis::FanOut,
     }
 }
 

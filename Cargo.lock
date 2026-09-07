@@ -54,6 +54,7 @@ dependencies = [
  "catalog",
  "core-save",
  "discovery",
+ "graph",
  "ipc",
  "serde",
  "serde_json",
@@ -633,6 +634,7 @@ dependencies = [
  "catalog",
  "core-save",
  "discovery",
+ "graph",
  "ipc",
  "png 0.17.16",
  "serde",
@@ -1257,6 +1259,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "graph"
+version = "0.1.0"
+dependencies = [
+ "catalog",
+ "core-save",
+ "serde",
+ "serde_json",
+ "test-support",
+ "unpack",
+ "wiki",
+]
+
+[[package]]
 name = "gtk"
 version = "0.18.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1634,6 +1649,7 @@ dependencies = [
  "catalog",
  "core-save",
  "discovery",
+ "graph",
  "serde",
  "serde_json",
  "test-support",

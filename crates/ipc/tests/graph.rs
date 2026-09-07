@@ -18,7 +18,13 @@ fn node(done: bool) -> UnlockNode {
             name: "Magdalene".into(),
         }],
         origin: None,
-        graph: GraphInfo::Stub,
+        missing: Vec::new(),
+        graph: GraphInfo::Computed {
+            available_now: false,
+            blocked_by: 0,
+            fan_out: 0,
+            steps_missing: 0,
+        },
     }
 }
 
@@ -35,7 +41,14 @@ fn unlock_node_json_shape_is_pinned() {
     assert_eq!(v["done"], true);
     assert_eq!(v["unlocks"][0]["kind"], "character");
     assert_eq!(v["origin"], Value::Null);
-    assert_eq!(v["graph"], json!({ "kind": "stub" }));
+    assert_eq!(
+        v["graph"],
+        json!({
+            "kind": "computed", "availableNow": false, "blockedBy": 0,
+            "fanOut": 0, "stepsMissing": 0
+        })
+    );
+    assert_eq!(v["missing"], json!([]));
 }
 
 #[test]
@@ -103,12 +116,7 @@ fn views_and_diagnostics_are_pinned() {
     );
     assert_eq!(v["diagnostics"][1], json!({ "kind": "noCatalog" }));
 
-    let steps = NextSteps {
-        steps: vec![],
-        basis: StepsBasis::Stub,
-    };
     // `StepsBasis` has no fields: it's a bare string, like `itemKind` and `origin`.
-    assert_eq!(to_value(&steps).unwrap()["basis"], "stub");
     assert_eq!(
         to_value(NextSteps {
             steps: vec![],
@@ -194,7 +202,13 @@ fn catalog_with_achievements() -> Catalog {
 fn unlock_view_maps_slots_to_achievements_and_marks_the_ones_beyond_the_catalog() {
     // 6 slots: 0 unused, 1..=3 known, 4..=5 beyond the catalog.
     let flags = [false, true, false, true, true, false];
-    let v = unlock_view(Some(&catalog_with_achievements()), Some(&flags), |_| None);
+    let v = unlock_view(
+        Some(&catalog_with_achievements()),
+        Some(&flags),
+        None,
+        None,
+        |_| None,
+    );
     assert_eq!(v.nodes.len(), 5, "one per slot 1..=5");
     assert!(
         matches!(&v.nodes[0].achievement, AchievementRef::Known { id: 1, hint: Some(h), .. } if h == "c1")
@@ -221,15 +235,28 @@ fn unlock_view_maps_slots_to_achievements_and_marks_the_ones_beyond_the_catalog(
         v.diagnostics,
         vec![UnlockDiagnostic::SlotsBeyondCatalog { count: 2 }]
     );
-    assert!(v.nodes.iter().all(|n| n.graph == GraphInfo::Stub));
+    assert!(
+        v.nodes.iter().all(|n| n.graph
+            == GraphInfo::Partial {
+                blocked_by: 0,
+                fan_out: 0,
+                unknown: 1
+            }),
+        "no graph was passed: every node says so, and none claims to be computed"
+    );
+    assert!(v.nodes.iter().all(|n| n.missing.is_empty()));
 }
 
 #[test]
 fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
     let flags = [false, false, false, false];
-    let v = unlock_view(Some(&catalog_with_achievements()), Some(&flags), |p| {
-        (p == "gfx/items/collectibles/a.png").then(|| vec![0x89, b'P', b'N', b'G'])
-    });
+    let v = unlock_view(
+        Some(&catalog_with_achievements()),
+        Some(&flags),
+        None,
+        None,
+        |p| (p == "gfx/items/collectibles/a.png").then(|| vec![0x89, b'P', b'N', b'G']),
+    );
     let n1 = &v.nodes[0];
     assert_eq!(n1.unlocks.len(), 1);
     assert!(
@@ -262,6 +289,8 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
     let v = unlock_view(
         Some(&catalog_with_achievements()),
         Some(&[false, true]),
+        None,
+        None,
         |_| None,
     );
     assert_eq!(v.nodes.len(), 1);
@@ -270,7 +299,7 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
         vec![UnlockDiagnostic::CatalogBeyondSlots { count: 2 }]
     );
 
-    let v = unlock_view(None, Some(&[false, true, true]), |_| None);
+    let v = unlock_view(None, Some(&[false, true, true]), None, None, |_| None);
     assert_eq!(v.nodes.len(), 2);
     assert!(v
         .nodes
@@ -285,7 +314,9 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
 /// would be false, because nothing is known about the file.
 #[test]
 fn a_missing_achievement_section_is_declared_and_compares_nothing() {
-    let v = unlock_view(Some(&catalog_with_achievements()), None, |_| None);
+    let v = unlock_view(Some(&catalog_with_achievements()), None, None, None, |_| {
+        None
+    });
     assert!(v.nodes.is_empty());
     assert_eq!(
         v.totals,
@@ -306,7 +337,7 @@ fn a_missing_achievement_section_is_declared_and_compares_nothing() {
         json!([{ "kind": "noAchievementSection" }])
     );
     // No catalog and no section: two different pieces of news, two diagnostics.
-    let v = unlock_view(None, None, |_| None);
+    let v = unlock_view(None, None, None, None, |_| None);
     assert_eq!(
         v.diagnostics,
         vec![
@@ -320,7 +351,13 @@ fn a_missing_achievement_section_is_declared_and_compares_nothing() {
 /// says the catalog knows more than the file.
 #[test]
 fn an_empty_but_present_section_still_compares_with_the_catalog() {
-    let v = unlock_view(Some(&catalog_with_achievements()), Some(&[]), |_| None);
+    let v = unlock_view(
+        Some(&catalog_with_achievements()),
+        Some(&[]),
+        None,
+        None,
+        |_| None,
+    );
     assert!(v.nodes.is_empty());
     assert_eq!(v.totals.slots, 0);
     assert_eq!(
@@ -331,13 +368,59 @@ fn an_empty_but_present_section_still_compares_with_the_catalog() {
 }
 
 #[test]
-fn next_steps_are_the_first_not_done_in_slot_order_capped_at_steps() {
+fn without_a_graph_there_are_no_next_steps_to_suggest() {
     let mut flags = vec![false; 10];
     flags[2] = true;
     flags[5] = true;
-    let v = unlock_view(None, Some(&flags), |_| None);
+    let v = unlock_view(None, Some(&flags), None, None, |_| None);
     let s = next_steps(&v);
-    assert_eq!(s.basis, StepsBasis::Stub);
+    assert_eq!(s.basis, StepsBasis::FanOut);
+    assert!(
+        s.steps.is_empty(),
+        "not-done is not the same as unlockable: with no graph the app has nothing to \
+         recommend, and the view's NoCatalog diagnostic is what says why"
+    );
+}
+
+#[test]
+fn next_steps_take_what_is_unlockable_now_most_fan_out_first() {
+    let computed = |available_now: bool, fan_out: u32| GraphInfo::Computed {
+        available_now,
+        blocked_by: if available_now { 0 } else { 1 },
+        fan_out,
+        steps_missing: if available_now { 0 } else { 1 },
+    };
+    let mut nodes = Vec::new();
+    for (slot, info) in [
+        (1u32, computed(true, 2)),
+        (2, computed(false, 9)), // blocked: not a step, however much it opens
+        (3, computed(true, 7)),
+        (
+            4,
+            GraphInfo::Partial {
+                blocked_by: 0,
+                fan_out: 9,
+                unknown: 1,
+            },
+        ), // can't say
+        (5, computed(true, 7)),
+    ] {
+        let mut n = node(false);
+        n.achievement = AchievementRef::Unknown { slot };
+        n.graph = info;
+        nodes.push(n);
+    }
+    let v = UnlockView {
+        nodes,
+        totals: UnlockTotals {
+            slots: 6,
+            done: 0,
+            known: 0,
+            unknown: 5,
+        },
+        diagnostics: vec![],
+    };
+    let s = next_steps(&v);
     let slots: Vec<u32> = s
         .steps
         .iter()
@@ -346,8 +429,12 @@ fn next_steps_are_the_first_not_done_in_slot_order_capped_at_steps() {
             AchievementRef::Known { id, .. } => id,
         })
         .collect();
-    assert_eq!(slots, vec![1, 3, 4, 6, 7]);
-    assert_eq!(s.steps.len(), STEPS);
+    assert_eq!(
+        slots,
+        vec![3, 5, 1],
+        "fan-out descending, ties by id ascending; the blocked and the partial stay out"
+    );
+    assert!(s.steps.len() <= STEPS);
 }
 
 /// Item 2 from the test catalog: passive, name "A", sprite `gfx/items/a.png`.
@@ -491,7 +578,10 @@ fn the_computed_plan_expansion_and_its_steps_are_pinned() {
     );
     assert_eq!(v["steps"][0]["done"], false);
     assert_eq!(v["steps"][0]["node"]["achievement"]["kind"], "known");
-    assert_eq!(v["steps"][0]["node"]["graph"], json!({ "kind": "stub" }));
+    // A plan step carries a whole node, graph info included: after M2 that is real, and
+    // `stub` is gone from the wire. The plan's own `expansion` is still stubbed — that's
+    // M3, and it is a different field.
+    assert_eq!(v["steps"][0]["node"]["graph"]["kind"], "computed");
     assert_eq!(
         v["steps"][0].as_object().unwrap().len(),
         3,
@@ -515,7 +605,13 @@ fn a_challenge_target_carries_the_achievements_it_rewards() {
         "challenges.xml" => Some(ch.to_vec()),
         _ => None,
     });
-    let v = unlock_view(Some(&c), Some(&[false, false, false, false]), |_| None);
+    let v = unlock_view(
+        Some(&c),
+        Some(&[false, false, false, false]),
+        None,
+        None,
+        |_| None,
+    );
     assert_eq!(
         v.nodes[0].unlocks,
         vec![UnlockTarget::Challenge {
@@ -534,4 +630,96 @@ fn a_challenge_target_carries_the_achievements_it_rewards() {
     );
     let json = serde_json::to_value(&v.nodes[2].unlocks[0]).unwrap();
     assert_eq!(json["rewards"], serde_json::json!([]));
+}
+
+// --- M2: the graph is real, and two shapes are new on the wire ---
+
+#[test]
+fn requirement_view_shapes() {
+    use ipc::RequirementView;
+    assert_eq!(
+        to_value(RequirementView::Character {
+            id: 1,
+            name: "Magdalene".into()
+        })
+        .unwrap(),
+        json!({ "kind": "character", "id": 1, "name": "Magdalene" })
+    );
+    assert_eq!(
+        to_value(RequirementView::Item {
+            item_kind: ItemKindView::Passive,
+            id: 35,
+            name: "The Bible".into()
+        })
+        .unwrap(),
+        json!({ "kind": "item", "itemKind": "passive", "id": 35, "name": "The Bible" }),
+        "`kind` is the tag: the item's own kind is `itemKind`, and a fieldless enum is a \
+         bare string"
+    );
+    assert_eq!(
+        to_value(RequirementView::Gate {
+            label: "The Void".into()
+        })
+        .unwrap(),
+        json!({ "kind": "gate", "label": "The Void" })
+    );
+    assert_eq!(
+        to_value(RequirementView::Unknown {
+            label: "Guppy".into()
+        })
+        .unwrap(),
+        json!({ "kind": "unknown", "label": "Guppy" })
+    );
+}
+
+#[test]
+fn graph_info_shapes() {
+    assert_eq!(
+        to_value(GraphInfo::Computed {
+            available_now: true,
+            blocked_by: 0,
+            fan_out: 3,
+            steps_missing: 0
+        })
+        .unwrap(),
+        json!({
+            "kind": "computed", "availableNow": true, "blockedBy": 0,
+            "fanOut": 3, "stepsMissing": 0
+        })
+    );
+    assert_eq!(
+        to_value(GraphInfo::Partial {
+            blocked_by: 1,
+            fan_out: 2,
+            unknown: 3
+        })
+        .unwrap(),
+        json!({ "kind": "partial", "blockedBy": 1, "fanOut": 2, "unknown": 3 }),
+        "rename_all_fields is what keeps blockedBy from arriving as blocked_by; and \
+         `partial` carries no stepsMissing on purpose"
+    );
+}
+
+#[test]
+fn a_node_carries_what_it_is_missing_typed() {
+    use ipc::RequirementView;
+    let mut n = node(false);
+    n.missing = vec![
+        RequirementView::Character {
+            id: 1,
+            name: "Magdalene".into(),
+        },
+        RequirementView::Boss {
+            id: 19,
+            name: "Gish".into(),
+        },
+    ];
+    let v = to_value(&n).unwrap();
+    assert_eq!(v["missing"][0]["kind"], "character");
+    assert_eq!(v["missing"][1]["kind"], "boss");
+    assert_eq!(
+        v["missing"].as_array().map(Vec::len),
+        Some(2),
+        "the screen groups by these: 'you're missing 1 character and 1 boss'"
+    );
 }

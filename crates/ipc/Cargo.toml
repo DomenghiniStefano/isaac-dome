@@ -10,6 +10,7 @@ discovery = { path = "../discovery" }
 core-save = { path = "../core-save" }
 unpack = { path = "../unpack" }
 catalog = { path = "../catalog" }
+graph = { path = "../graph" }
 wiki = { path = "../wiki" }
 
 [dev-dependencies]

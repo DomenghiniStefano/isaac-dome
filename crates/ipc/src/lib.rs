@@ -16,7 +16,7 @@ pub use goals::{target_exists, Goal, GoalId, TargetKey, UnlockTarget};
 pub use graph::{
     next_steps, plan_view, resolve_target, target_of, unlock_view, AchievementRef, GoalView,
     GraphInfo, NextSteps, OriginView, PlanDiagnostic, PlanExpansion, PlanStep, PlanView,
-    StepsBasis, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
+    RequirementView, StepsBasis, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
 pub use marks::{
     character_for, counter_index, marks_matrix, Cell, CharacterGroup, CharacterRow, MarksMatrix,

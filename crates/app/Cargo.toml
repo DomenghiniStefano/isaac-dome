@@ -24,5 +24,6 @@ discovery = { path = "../discovery" }
 core-save = { path = "../core-save" }
 unpack = { path = "../unpack" }
 catalog = { path = "../catalog" }
+graph = { path = "../graph" }
 store = { path = "../store" }
 wiki = { path = "../wiki" }
