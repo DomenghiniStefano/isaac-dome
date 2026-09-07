@@ -6,6 +6,7 @@
 //!
 //! Design: `docs/superpowers/specs/2026-09-07-unlock-graph-design.md`.
 
+pub mod generate;
 pub mod rules;
 
 pub use rules::{target_key, Corrections, Requirements, Rules, RulesError, SCHEMA_VERSION};
