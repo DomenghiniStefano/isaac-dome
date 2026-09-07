@@ -31,9 +31,9 @@ pub fn collect_refs(inline: &[Inline], out: &mut Vec<RefRow>) {
     }
 }
 
-/// True when the target reduces to an achievement through the catalog's own `unlocked_by`
-/// links, and therefore needs no hand verdict.
-fn reduces_on_its_own(t: &Target) -> bool {
+/// True when the target is looked up in the catalog by id, and therefore never reaches
+/// the verdict table.
+fn reduces_by_id(t: &Target) -> bool {
     match t {
         Target::Item { .. }
         | Target::Trinket { .. }
@@ -48,9 +48,16 @@ fn reduces_on_its_own(t: &Target) -> bool {
     }
 }
 
+/// Whether a verdict is always consulted, and so must exist. False for entities: they
+/// usually resolve to a boss by name, and whether they do depends on the user's catalog,
+/// which this file knows nothing about by design. See `TargetRow::verdict_required`.
+fn verdict_required(t: &Target) -> bool {
+    !matches!(t, Target::Entity { .. })
+}
+
 pub fn generate(d: &Dataset) -> Requirements {
     let mut achievements = BTreeMap::new();
-    let mut uses: BTreeMap<String, (String, u32)> = BTreeMap::new();
+    let mut uses: BTreeMap<String, (String, u32, bool)> = BTreeMap::new();
     for (&id, entry) in &d.achievements {
         let Infobox::Achievement { requirements, .. } = &entry.infobox else {
             // An achievement page carrying another infobox is a wiki anomaly, not our
@@ -60,11 +67,13 @@ pub fn generate(d: &Dataset) -> Requirements {
         let mut refs = Vec::new();
         collect_refs(requirements, &mut refs);
         for r in &refs {
-            if reduces_on_its_own(&r.target) {
+            if reduces_by_id(&r.target) {
                 continue;
             }
             let key = target_key(&r.target, &r.label);
-            let e = uses.entry(key).or_insert((r.label.clone(), 0));
+            let e = uses
+                .entry(key)
+                .or_insert((r.label.clone(), 0, verdict_required(&r.target)));
             e.1 += 1;
         }
         achievements.insert(id, AchievementRefs { refs });
@@ -80,7 +89,12 @@ pub fn generate(d: &Dataset) -> Requirements {
         // makes the `derived` test mean anything.
         targets: uses
             .into_iter()
-            .map(|(key, (label, uses))| TargetRow { key, label, uses })
+            .map(|(key, (label, uses, verdict_required))| TargetRow {
+                key,
+                label,
+                uses,
+                verdict_required,
+            })
             .collect(),
     }
 }
