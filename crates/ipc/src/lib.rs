@@ -5,6 +5,7 @@ mod goals;
 mod graph;
 mod marks;
 mod profile;
+mod queue;
 mod resources;
 mod settings;
 mod summary;
@@ -27,6 +28,7 @@ pub use profile::{
     CandidateView, ChoiceReason, GameView, MissingReason, ProfileId, SetupDiagnostic, SetupState,
     SteamView,
 };
+pub use queue::{queue_view, QueueDiagnostic, QueueInputs, QueueRow, QueueView};
 pub use resources::{
     archive_views, data_url, extraction_report, ArchiveMode, ArchiveView, ExtractionReport,
     SpriteView,
