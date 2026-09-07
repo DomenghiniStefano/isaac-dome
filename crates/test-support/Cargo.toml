@@ -1,0 +1,5 @@
+[package]
+name = "test-support"
+version = "0.1.0"
+edition = "2021"
+description = "Helper condivisi dai test che leggono dati reali da samples/"
