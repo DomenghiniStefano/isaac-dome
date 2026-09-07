@@ -67,18 +67,24 @@ The four combinations each mean something, and the last one is the removal rule:
 
 ## Decision 2 — moving a row: the dragged row always wins
 
-`move(achievement, to_index)` puts that row exactly at `to_index`. It never fails, never
-refuses, never asks. Everything else yields around it:
+`move(achievement, to_index)` never fails, never refuses, never asks. Everything else yields
+around the moved row:
 
-- Rows that **depend on** the moved row and now sit above it are moved to just below it.
-- Rows the moved row **depends on** that now sit below it are moved to just above it.
-- Yielded rows keep their relative order among themselves.
-- The repair is transitive: a yielded row drags its own dependents the same way.
+- Rows that **depend on** it, transitively, are gathered into a block **immediately below**
+  it.
+- Rows it **depends on**, transitively, are gathered into a block **immediately above** it.
+- Everything else keeps its relative order and fills in around the block.
 
-That is the rule stated in one line: **the row you dragged lands where you dropped it, and
-the constraint is satisfied by moving the others.** The alternative — clamping the move to
-the nearest legal position — would put the row somewhere you didn't ask for, and the user
-would have to work out why. Moving the others is visible and explains itself.
+**The row lands at `to_index` whenever that is possible, and as close to it as the graph
+allows when it isn't.** Dropping a row at the very top when it has three prerequisites in
+the queue asks for those three to sit above position zero, which is not a position — so the
+row lands at index three, with its three prerequisites contiguous above it. The clamp is
+therefore `to_index.clamp(prerequisites_in_queue, rows - dependents_in_queue)`, and it
+explains itself on screen: what stopped the row is sitting right there, immediately above.
+
+Moving **downward is never clamped** — dependents can always be pushed further down — which
+is the case the rule was stated for: move a prerequisite below what needs it, and what needs
+it follows.
 
 Dependency here means the **transitive** prerequisite relation from the graph, restricted
 to rows present in the queue. A prerequisite not in the queue constrains nothing: it isn't
@@ -208,7 +214,9 @@ reason about than teaching the frontend to replay the repair.
 
 **The repair algorithm, on synthetic queues** — this is where the feature is proved:
 
-- A move puts the row at exactly the requested index. Always, for every index.
+- A move puts the row at the requested index whenever the constraint allows it, and at the
+  clamped index — `to.clamp(prerequisites_in_queue, rows - dependents_in_queue)` — when it
+  doesn't. Downward moves are never clamped.
 - Moving a prerequisite below its dependent drags the dependent below it.
 - Moving a dependent above its prerequisite pulls the prerequisite above it.
 - Yielded rows keep their relative order.
