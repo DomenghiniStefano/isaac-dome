@@ -5,7 +5,7 @@
 use graph::build::{Graph, GraphDiagnostic};
 use graph::evaluate::NodeInfo;
 
-fn graph(edges: &[(u32, &[u32])], unknown: &[(u32, u32)]) -> Graph {
+fn graph(edges: &[(u32, &[u32])], unknown: &[(u32, &[&str])]) -> Graph {
     Graph::from_edges_for_tests(edges, unknown)
 }
 
@@ -96,7 +96,7 @@ fn fan_out_counts_the_nodes_this_one_opens() {
 
 #[test]
 fn an_unknown_requirement_makes_the_node_partial() {
-    let g = graph(&[(1, &[])], &[(1, 2)]);
+    let g = graph(&[(1, &[])], &[(1, &["Bestiary", "Collect"])]);
     let e = g.evaluate(Some(&flags(&[], 2)));
     assert_eq!(
         e.node(1),
@@ -161,4 +161,88 @@ fn a_slot_the_save_does_not_reach_is_treated_as_not_done() {
         panic!("node 9 should be Computed");
     };
     assert!(available_now);
+}
+
+// --- a gate is satisfied when the profile has already passed it ---
+
+#[test]
+fn an_uninterpreted_gate_stops_blocking_once_something_behind_it_is_done() {
+    // Two nodes need the same thing the graph can't express — "Delirium". One of them is
+    // already done, which is proof the player can reach Delirium: the other is no longer
+    // waiting on an unknown.
+    let g = Graph::from_edges_for_tests(
+        &[(1, &[]), (2, &[])],
+        &[(1, &["Delirium"]), (2, &["Delirium"])],
+    );
+    let e = g.evaluate(Some(&flags(&[1], 3)));
+    assert_eq!(
+        e.node(2),
+        Some(&NodeInfo::Computed {
+            available_now: true,
+            blocked_by: 0,
+            fan_out: 0,
+            steps_missing: 0
+        }),
+        "the gate is passed, and the save is the proof"
+    );
+}
+
+#[test]
+fn a_gate_with_no_evidence_behind_it_still_blocks() {
+    let g = Graph::from_edges_for_tests(
+        &[(1, &[]), (2, &[])],
+        &[(1, &["Bestiary"]), (2, &["Bestiary"])],
+    );
+    let e = g.evaluate(Some(&flags(&[], 3)));
+    assert!(
+        matches!(e.node(2), Some(NodeInfo::Partial { unknown: 1, .. })),
+        "nothing done behind it: we genuinely don't know, got {:?}",
+        e.node(2)
+    );
+}
+
+#[test]
+fn evidence_is_per_gate_not_per_node() {
+    // Node 1 proves "Delirium"; node 3 waits on "Bestiary", which nobody has passed.
+    let g = Graph::from_edges_for_tests(
+        &[(1, &[]), (2, &[]), (3, &[])],
+        &[(1, &["Delirium"]), (2, &["Delirium"]), (3, &["Bestiary"])],
+    );
+    let e = g.evaluate(Some(&flags(&[1], 4)));
+    assert!(matches!(e.node(2), Some(NodeInfo::Computed { .. })));
+    assert!(
+        matches!(e.node(3), Some(NodeInfo::Partial { unknown: 1, .. })),
+        "one gate's evidence says nothing about another's"
+    );
+}
+
+#[test]
+fn a_node_waiting_on_two_gates_needs_evidence_for_both() {
+    let g = Graph::from_edges_for_tests(
+        &[(1, &[]), (2, &[])],
+        &[(1, &["Delirium"]), (2, &["Delirium", "Bestiary"])],
+    );
+    let e = g.evaluate(Some(&flags(&[1], 3)));
+    assert!(
+        matches!(e.node(2), Some(NodeInfo::Partial { unknown: 1, .. })),
+        "Delirium is proven, Bestiary isn't: one unknown left, got {:?}",
+        e.node(2)
+    );
+}
+
+#[test]
+fn the_inference_is_declared_not_silent() {
+    let g = Graph::from_edges_for_tests(
+        &[(1, &[]), (2, &[])],
+        &[(1, &["Delirium"]), (2, &["Delirium"])],
+    );
+    let e = g.evaluate(Some(&flags(&[1], 3)));
+    assert!(
+        e.diagnostics().iter().any(|d| matches!(
+            d,
+            GraphDiagnostic::GateSatisfiedByEvidence { label, done: 1 } if label == "Delirium"
+        )),
+        "the app infers something from the save: it has to say so, got {:?}",
+        e.diagnostics()
+    );
 }

@@ -76,7 +76,7 @@ fn the_graph_has_the_shape_this_era_measured() {
     let Some((g, _)) = support::real_graph_and_flags() else {
         return;
     };
-    let unknown: u32 = g.nodes().iter().map(|n| n.unknown).sum();
+    let unknown: u32 = g.nodes().iter().map(|n| n.unknown.len() as u32).sum();
     let edges: usize = g.nodes().iter().map(|n| n.prerequisites.len()).sum();
     eprintln!(
         "graph: {} nodes, {edges} edges, {unknown} unknown requirements, {} diagnostics",
@@ -178,6 +178,11 @@ fn every_resolvable_requirement_produced_its_edge() {
                 | graph::model::Requirement::None => continue,
             };
             let Some(a) = expected else { continue };
+            // A node that unlocks the very thing it names is not its own prerequisite:
+            // that edge is dropped on purpose, with a `SelfPrerequisite` diagnostic.
+            if a.0 == n.achievement {
+                continue;
+            }
             assert!(
                 n.prerequisites.contains(&a.0),
                 "node {} has requirement {r:?}, unlocked by achievement {}, and no edge for it",

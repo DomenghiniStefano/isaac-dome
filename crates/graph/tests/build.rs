@@ -59,7 +59,7 @@ fn a_character_requirement_becomes_an_edge_to_its_unlocking_achievement() {
         vec![1],
         "Magdalene is unlocked by achievement 1: that is the edge, and it comes from the game"
     );
-    assert_eq!(node.unknown, 0);
+    assert!(node.unknown.is_empty());
 }
 
 #[test]
@@ -81,7 +81,10 @@ fn content_available_from_the_start_produces_no_edge() {
         node.prerequisites.is_empty(),
         "Isaac has no unlocked_by: no edge, and that is a fact, not a gap"
     );
-    assert_eq!(node.unknown, 0, "no edge is not the same as unknown");
+    assert!(
+        node.unknown.is_empty(),
+        "no edge is not the same as unknown"
+    );
 }
 
 #[test]
@@ -98,7 +101,10 @@ fn an_uncurated_target_counts_as_unknown_on_its_node() {
             r#"{"schemaVersion":1}"#,
         ),
     );
-    assert_eq!(g.node(2).expect("node 2").unknown, 1);
+    assert_eq!(
+        g.node(2).expect("node 2").unknown,
+        vec!["Nowhere".to_string()]
+    );
 }
 
 #[test]
@@ -204,4 +210,46 @@ fn every_achievement_in_the_catalog_is_a_node_even_with_no_requirements() {
         "the graph covers the catalog, not just what the wiki wrote about"
     );
     assert!(g.node(1).is_some());
+}
+
+#[test]
+fn a_node_is_never_its_own_prerequisite() {
+    // Real case, 17 of them on the live catalog (the Tainted block, 474-489): the
+    // achievement that unlocks Tainted Isaac lists Tainted Isaac among its requirements.
+    // That is not a cycle to declare, it is an edge with no meaning — and left in, it
+    // poisons every node downstream with "not knowable".
+    let c = Catalog::build(|p| match p {
+        "players.xml" => Some(
+            br#"<players root="gfx/" portraitroot="gfx/ui/stage/">
+                  <player id="1" name="Magdalene" portrait="m.png" achievement="1" />
+                </players>"#
+                .to_vec(),
+        ),
+        "achievements.xml" => Some(ACHIEVEMENTS.as_bytes().to_vec()),
+        _ => None,
+    });
+    let g = Graph::build(
+        &c,
+        &rules(
+            &one_ref(
+                1,
+                r#"{"target":{"kind":"character","id":1},"label":"Magdalene"}"#,
+                "",
+            ),
+            r#"{"schemaVersion":1}"#,
+        ),
+    );
+    let node = g.node(1).expect("node 1");
+    assert!(
+        node.prerequisites.is_empty(),
+        "achievement 1 unlocks Magdalene and requires her: the edge is dropped, got {:?}",
+        node.prerequisites
+    );
+    assert!(
+        g.diagnostics()
+            .iter()
+            .any(|d| matches!(d, GraphDiagnostic::SelfPrerequisite { node: 1 })),
+        "dropping an edge is a decision: it gets named, got {:?}",
+        g.diagnostics()
+    );
 }
