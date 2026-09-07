@@ -1,0 +1,167 @@
+//! `achievements.xml`: 637 entries with literal English text (two quote styles, which
+//! quick-xml normalizes) and, for 283 of them, the unlock condition in the XML comment
+//! that precedes the element. The condition is data: it's kept raw, and the graph (M2)
+//! interprets it, not this crate.
+
+use crate::diagnostics::{Diagnostic, SkipReason, Source};
+use crate::ids::AchievementId;
+use crate::items::normalize_root;
+use crate::sprite::SpriteRef;
+use crate::xml::{elements, Element};
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct Achievement {
+    pub id: AchievementId,
+    /// Literal English, e.g. `You unlocked "Magdalene"`. Not a key.
+    pub text: String,
+    /// The XML comment right before the element, if there is one.
+    pub unlock_condition: Option<String>,
+    /// The `steam_description` attribute, where present (from the Afterbirth files onward).
+    /// For nine Repentance achievements it's the only place that says which challenge they
+    /// reward.
+    pub steam_description: Option<String>,
+    pub sprite: SpriteRef,
+}
+
+pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Achievement> {
+    let els = match elements(bytes) {
+        Ok(els) => els,
+        Err(_) => {
+            diagnostics.push(Diagnostic::SourceUnreadable {
+                source: Source::Achievements,
+            });
+            return Vec::new();
+        }
+    };
+    let gfxroot = els
+        .iter()
+        .find(|e| e.name == "achievements")
+        .and_then(|e| e.attr("gfxroot"))
+        .map(normalize_root)
+        .filter(|r| !r.is_empty())
+        .unwrap_or_else(|| "gfx/ui/achievement".to_string());
+
+    els.iter()
+        .filter(|e| e.name == "achievement")
+        .filter_map(|e| achievement_from(e, &gfxroot, diagnostics))
+        .collect()
+}
+
+fn achievement_from(e: &Element, gfxroot: &str, d: &mut Vec<Diagnostic>) -> Option<Achievement> {
+    let skip = |id: Option<u32>, reason: SkipReason, d: &mut Vec<Diagnostic>| {
+        d.push(Diagnostic::ElementSkipped {
+            source: Source::Achievements,
+            id,
+            reason,
+        });
+        None
+    };
+    let Some(raw_id) = e.attr("id") else {
+        return skip(None, SkipReason::MissingId, d);
+    };
+    let Ok(id) = raw_id.parse::<u32>() else {
+        return skip(None, SkipReason::MalformedId, d);
+    };
+    let Some(gfx) = e.attr("gfx") else {
+        return skip(Some(id), SkipReason::MissingSprite, d);
+    };
+
+    Some(Achievement {
+        id: AchievementId(id),
+        // Without text the achievement stays a node in the graph: an empty label beats
+        // losing it.
+        text: e.attr("text").unwrap_or("").to_string(),
+        unlock_condition: e.comment_before.clone(),
+        steam_description: e.attr("steam_description").map(str::to_string),
+        sprite: SpriteRef::whole(format!("{gfxroot}/{gfx}")),
+    })
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const ACH: &[u8] = b"<achievements gfxroot=\"gfx/ui/achievement/\">
+\t<!-- have 7 or more max red hearts at one time -->
+\t<achievement id=\"1\" text='You unlocked \"Magdalene\"' gfx=\"Achievement_Magdalene.png\" />
+\t<achievement id=\"2\" text=\"&quot;Card Against Humanity&quot; has appeared in the basement\" gfx=\"Achievement_CAH.png\" />
+\t<!-- a --><!-- b -->
+\t<achievement id=\"3\" text=\"c\" gfx=\"Achievement_C.png\" />
+\t<achievement text=\"no id\" gfx=\"x.png\" />
+\t<achievement id=\"5\" text=\"no gfx\" />
+</achievements>";
+
+    fn parsed() -> (Vec<Achievement>, Vec<Diagnostic>) {
+        let mut d = Vec::new();
+        let a = parse(ACH, &mut d);
+        (a, d)
+    }
+
+    #[test]
+    fn text_is_literal_with_either_quote_style_and_entities_resolved() {
+        let (a, _) = parsed();
+        assert_eq!(a[0].text, "You unlocked \"Magdalene\"");
+        assert_eq!(
+            a[1].text,
+            "\"Card Against Humanity\" has appeared in the basement"
+        );
+    }
+
+    #[test]
+    fn the_comment_right_before_is_the_unlock_condition_and_it_does_not_carry_over() {
+        let (a, _) = parsed();
+        assert_eq!(
+            a[0].unlock_condition.as_deref(),
+            Some("have 7 or more max red hearts at one time")
+        );
+        assert_eq!(
+            a[1].unlock_condition, None,
+            "the comment applies to a single element only"
+        );
+        assert_eq!(
+            a[2].unlock_condition.as_deref(),
+            Some("b"),
+            "the last comment before the element wins"
+        );
+    }
+
+    #[test]
+    fn sprite_uses_the_declared_gfxroot() {
+        let (a, _) = parsed();
+        assert_eq!(
+            a[0].sprite.path,
+            "gfx/ui/achievement/Achievement_Magdalene.png"
+        );
+    }
+
+    #[test]
+    fn malformed_rows_are_skipped_with_a_reason() {
+        let (a, d) = parsed();
+        assert_eq!(a.len(), 3);
+        assert!(d.contains(&Diagnostic::ElementSkipped {
+            source: Source::Achievements,
+            id: None,
+            reason: SkipReason::MissingId
+        }));
+        assert!(d.contains(&Diagnostic::ElementSkipped {
+            source: Source::Achievements,
+            id: Some(5),
+            reason: SkipReason::MissingSprite
+        }));
+    }
+
+    #[test]
+    fn steam_description_is_kept_and_absent_when_the_attribute_is_missing() {
+        let ach = b"<achievements gfxroot=\"gfx/ui/achievement/\">
+\t<achievement id=\"517\" text=\"x\" gfx=\"a.png\" steam_name=\"Dirty Mind\" steam_description=\"Complete Challenge 36.\" />
+\t<achievement id=\"1\" text=\"y\" gfx=\"b.png\" />
+</achievements>";
+        let mut d = Vec::new();
+        let a = parse(ach, &mut d);
+        assert_eq!(
+            a[0].steam_description.as_deref(),
+            Some("Complete Challenge 36.")
+        );
+        assert_eq!(a[1].steam_description, None);
+    }
+}
