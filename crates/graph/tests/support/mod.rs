@@ -1,3 +1,5 @@
+#![allow(dead_code)] // each test binary uses part of this module; the rest is not dead
+
 //! Shared setup for the real-data tests. Every function says on stderr which slice of the
 //! real domain it ran on, or why it skipped: a green suite that skipped everything is the
 //! failure mode this crate exists to prevent.
@@ -59,7 +61,10 @@ pub fn real_graph_and_flags() -> Option<(Graph, Vec<bool>)> {
 
 /// One entry per dated save, oldest first: file name, the evaluation, and the flags.
 /// Skips when fewer than two eras are present — a comparison needs two.
-pub fn series_evals() -> Option<Vec<(String, BTreeMap<u32, NodeInfo>, Vec<bool>)>> {
+/// A profile at one moment: the file it came from, its evaluation, and its flags.
+pub type Era = (String, BTreeMap<u32, NodeInfo>, Vec<bool>);
+
+pub fn series_evals() -> Option<Vec<Era>> {
     let (catalog, _rs) = real_catalog()?;
     let g = Graph::build(&catalog, embedded_rules());
     let mut out = Vec::new();
