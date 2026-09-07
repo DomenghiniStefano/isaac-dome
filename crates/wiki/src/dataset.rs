@@ -144,6 +144,13 @@ impl Dataset {
         }
     }
 
+    /// The same empty dataset, for tests in crates downstream: they need a `Dataset` to
+    /// fill one field of, and building `meta` by hand in every test would copy that block
+    /// around. Not for production code — `embedded()` and `from_json` are the ways in.
+    pub fn empty_for_tests() -> Dataset {
+        Dataset::empty()
+    }
+
     /// The boss key: the game's `id.variant.subtype` notation.
     pub fn boss_key(id: u32, variant: u32, subtype: u32) -> String {
         format!("{id}.{variant}.{subtype}")

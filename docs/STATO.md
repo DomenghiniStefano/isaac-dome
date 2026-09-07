@@ -10,7 +10,7 @@ contract, memory, test data) live in `docs/MIGLIORIE.md`, with closing criteria 
 **Wiki dataset merged** into `develop` on 2026-09-06 (`feature/wiki-dataset`, 29 commits,
 suite green on the merge result, review of the whole branch closed). The local branch was
 deleted; on origin its last published version remains.
-**Last update:** 2026-09-06
+**Last update:** 2026-09-07
 
 ---
 
@@ -20,7 +20,9 @@ deleted; on origin its last published version remains.
       `.dat` format decoded and verified on 28 real saves, working Python parser,
       counters labeled, marks matrix rebuilt, log verified.
 - [ ] **M1 — Rust parser, discovery, unpack, Completion screen** ← in progress
-- [ ] **M2 — Unlock graph and Unlock section**
+- [x] **M2 — Unlock graph** (2026-09-07). The Unlock *section* is frontend work and
+      waits for the design system; the graph behind it is done — report in
+      `docs/superpowers/plans/2026-09-07-unlock-graph-report.md`.
 - [ ] **M3 — Derived plan**
 - [ ] **M4 — Log watcher and run archive**
 - [ ] **M5 — Public release**
@@ -148,9 +150,12 @@ Pure crate, no I/O and no Tauri dependency: turns `discovery`, `core-save` and
       `UnlockNode`, for Unlock, Next Steps and Plan; four pure functions
       (`unlock_view`, `next_steps`, `plan_view`, `resolve_target`); `Goal`, opaque `GoalId`,
       `TargetKey`, `UnlockTarget`, `GoalView`.
-      Whatever the graph doesn't know yet travels as a declared `{ kind: "stub" }`, never as a
+      What the graph couldn't say travelled as a declared `{ kind: "stub" }`, never as a
       value that looks computed. JSON shape pinned, including `unknown`, `stub` and
       `itemKind` (the field is named this way because `kind` is already the tag).
+      **`stub` left the wire with M2** (2026-09-07): the graph exists, so a node saying it
+      doesn't would be lying. Its place is taken by `Partial`, which is what a node says
+      when the graph can't interpret one of its requirements.
 - [x] **The goal only persists its identity** (final review, 2026-09-05).
       `TargetKey` — `Item { itemKind, id } | Character | Boss | Challenge` — is `store`'s
       on-disk format and changes **only by adding variants**: a new field there
@@ -486,6 +491,44 @@ building the Collection screen, not before designing it.
 ---
 
 ## Session log
+
+### 2026-09-07 — M2: the unlock graph
+
+New pure crate `crates/graph`, 42 tests. Full report in
+`docs/superpowers/plans/2026-09-07-unlock-graph-report.md`; spec in
+`docs/superpowers/specs/2026-09-07-unlock-graph-design.md`. Branch
+`feature/unlock-graph`, 13 commits, `pnpm check` green with one pre-existing skip
+(the Python cross-check, on a machine with no Python).
+
+- [x] **The backlog's premise (B4) was wrong, and measuring said so before any code.**
+      B4 assumed M2 meant parsing the 283 English condition comments out of
+      `achievements.xml`. The wiki dataset we already ship carries `requirements` for
+      **641 of 641 achievements** as typed refs — the parsing was already done by
+      `crates/wiki`. What M2 actually owed was the semantic step and the recursion.
+- [x] **The two sources are split, and the split is the design.** *What is needed* comes
+      from the wiki's refs; *who unlocks what* comes from the game's own files through
+      `catalog`. The graph never invents an edge from the wiki — it reads it from the
+      user's installation, with their edition and their DLC.
+- [x] **Entity ids are not boss ids.** Gish is entity 43 and boss 19; the bridge is the
+      **name**, and it carries 468 of 488 entity refs. Six of the seven wiki/game
+      divergences are exactly this, and they are now a permanent test.
+- [x] **Result**: 637 nodes, 459 edges, **1,215 of 1,247 requirements resolved (97.4%)**,
+      and the 32 that aren't are eight labels each carrying an explicit `unknown` verdict.
+      Nothing is uninterpreted by inattention.
+- [x] **A fourth verdict, found in curation**: `unknown { reason }` — *judged, and the
+      answer is that the model can't say it*. `transformation:Guppy` is genuinely gated,
+      but by three items rather than one achievement, and the other three verdicts would
+      each have made it lie.
+- [x] **`GraphInfo::Stub` left the wire**, with `StepsBasis::Stub`. `PlanExpansion::Stub`
+      stays: that's M3.
+- [x] **Next Steps changed meaning**: from "the first five not-done in slot order" to
+      "what is unlockable now, most fan-out first". Without a catalog it is now **empty**,
+      and the view's `NoCatalog` diagnostic says why — a blocked node isn't a step, and a
+      node the graph can't vouch for isn't either.
+- [x] **The historical series earned its keep**: 31 saves, 302 → 384 achievements done,
+      and two properties that hold across every consecutive pair.
+- [ ] **Not done**: regenerating `design-export/isaacdome-design-pack/` (the generator now
+      puts real graph data in it, so the checked-in copy is a version behind).
 
 ### 2026-09-07 — B7: the repo's prose moves to English
 

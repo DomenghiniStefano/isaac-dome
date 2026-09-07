@@ -149,9 +149,21 @@ already filtered.
 
 ---
 
-## B4 — An item's unlock tree (this is M2)
+## B4 — An item's unlock tree (this is M2) ✅ closed on 2026-09-07
 
-Logged on 2026-09-05. Today the chain stops at the first step (item → achievement →
+Logged on 2026-09-05. **Closed 2026-09-07** — report in
+`docs/superpowers/plans/2026-09-07-unlock-graph-report.md`.
+
+What execution answered, that the entry below got wrong: **the 283 English conditions were
+never the source.** The wiki dataset already in the repo carries typed requirements for
+641 of 641 achievements, so there is no prose parser and no rules file full of patterns;
+the versioned rules that do exist are a generated inventory plus 79 hand-written verdicts
+for the targets that reduce to nothing on their own. The recursion is real and it reads
+its edges from the game's own `unlocked_by` links, never from the wiki.
+
+*The original entry, for the record:*
+
+Today the chain stops at the first step (item → achievement →
 condition in English). A tree requires structured parsing of the 283 conditions into a
 versioned rules file ("beat X with Y", "Beat Challenge #N", "collect N …") and the
 recursive linking condition → character/boss/challenge → their unlocks. The `graph` field
