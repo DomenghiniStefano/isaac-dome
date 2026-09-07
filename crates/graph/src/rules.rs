@@ -79,6 +79,12 @@ pub enum Verdict {
     Behind { achievement: u32 },
     /// Not a prerequisite at all: a pickup that appears in the sentence.
     NotAPrerequisite(bool),
+    /// Judged, and the answer is that the model can't say it: gated, but by something
+    /// other than one achievement — three Guppy items, "a tainted character", "all
+    /// endings". At runtime it behaves exactly like no verdict (the node drops to
+    /// `Partial`), and it exists to separate *judged and inexpressible* from *nobody
+    /// looked yet*. Without it, curation has to lie in one of two directions.
+    Unknown { reason: String },
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -148,6 +154,12 @@ impl Rules {
 
     pub fn verdict(&self, key: &str) -> Option<&Verdict> {
         self.corrections.verdicts.get(key)
+    }
+
+    /// Every key a verdict was written for. Used to catch verdicts left behind by a
+    /// snapshot that dropped their target.
+    pub fn verdict_keys(&self) -> impl Iterator<Item = &str> {
+        self.corrections.verdicts.keys().map(String::as_str)
     }
 
     pub fn targets(&self) -> &[TargetRow] {
