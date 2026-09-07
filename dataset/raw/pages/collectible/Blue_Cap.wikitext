@@ -1,0 +1,21 @@
+{{infobox passive collectible
+ | id          = 342
+ | quote       = HP + tears up + shot speed down
+ | description = Gives one full Red [[Heart container]], +0.7 [[tears]], and -0.16 [[shot speed]]. {{Dlc|r}} Heals 1 additional {{e|Red Heart}}.
+ | quality     = 3
+ | tags        = summonable mushroom tearsup offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants one full Red [[Heart container]].
+** {{Dlc|r}} Heals Isaac for 1 additional {{E|Red Heart}}.
+* +0.7 [[tears]].
+* -0.16 [[shot speed]].
+* {{transformation contribution|Fun Guy}}
+
+== In-game Footage ==
+{{#ev:youtube|9Cbjv-OoQmE}}
+
+{{nav|fun guy|mushroom|fr=Lactarius Indigo}}

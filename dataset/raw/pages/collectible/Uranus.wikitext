@@ -1,0 +1,77 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 596
+ | quote       = Ice tears
+ | description = Isaac shoots ice tears, which [[slow]] enemies and [[freeze]] monsters they kill. Frozen enemies slide away and explode into ice shards when touched.
+ | quality     = 3
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Isaac's tears become icicles that [[freeze]] enemies upon death, turning them into ice statues.
+** [[Bosses]] and [[mini-boss]]es cannot be frozen.
+* Frozen enemies can be kicked, sliding and leaving damaging creep across the room and shattering when they hit a wall, [[obstacle]] or an enemy, releasing 10 icicle tears in a circle.
+** These icicles can either [[slow]] enemies for 4 seconds or turn them into ice statues as well if they deal the lethal hit.
+* Killing an enemy by freezing them will prevent any on-death effects from occurring (i.e. splitting into other enemies, firing any post-death tears, exploding, etc.), even after shattering.
+* {{dlc|r+}} Isaac's tears have a chance to [[petrify]] enemies.
+
+== Notes ==
+* Isaac's own tears cannot apply a slowing effect on enemies. This property is only available for the icicle burst after shattering a frozen enemy.
+* The on-shatter icicles deal damage equal to <code>8 + (floor - 1)</code> which is not affected by Isaac's stats.
+** These tears do not inherit any of Isaac's tear effects.
+* The blue creep left behind ice statues while they're sliding across the room rapidly deals 2 flat damage for 11 ticks per second, resulting in 22 damage per second.
+* Ice statues have 10 health points and can be shattered if shot by 10 tears or projectiles.
+** Isaac's damage is irrelevant here and each tear shot will deal only 1 point of damage to them.
+** Enemies ignore the ice statues when targeting Isaac and they can also destroy them if shot enough times.
+** Explosions will shatter the statues immediately.
+* Enemies hit by a sliding ice statue receive 35 flat damage which is not affected by Isaac's stats or the current floor.
+* Enemies killed by hit of a sliding ice statue or the blue creep will not be frozen.
+* Frozen enemies are considered dead by the game, meaning they don't need to be shattered in order for the room to be cleared. If not shattered, they don't disappear until leaving the room.
+* Killing enemies by freezing them does not however count as a "kill" for the purposes of activating the on kill effects of certain items and trinkets. Because of this, only enemies killed by icicles from statues, bombs, familiars and other sources will count towards the on kill effects, rendering them quite difficult to use. {{dlc|rnr+}} These items and trinkets are: {{t|Bat Wing}}, {{i|Berserk!}}, {{i|Charm of the Vampire}}, {{i|Contagion}}, {{t|Eve's Bird Foot}}, {{i|Jumper Cables}}, {{i|Lusty Blood}}, {{i|Red Stew}}, {{t|Samson's Lock}}, {{t|Sigil of Baphomet}}, {{i|Toxic Shock}} and {{i|Vasculitis}}.
+** {{dlc|r+}} Aforementioned items and trinkets now properly trigger upon enemy being frozen.
+** {{i|Hungry Soul}}, {{i|Infestation 2}}, {{i|Quints}}, {{i|Urn of Souls}}, {{i|Vade Retro}} still activate their effects, immediately upon enemy being frozen.
+** {{i|Athame}} and {{i|Jar of Flies}} will only activate upon enemy's ice statue being shattered.
+** Enemies, that were gold-[[Status Effects#Petrification|petrified]] (e.g. by {{i|Midas' Touch}}), don't drop coins upon becoming ice statues.
+* Champion enemies that drop consumables won't drop anything until their ice statue is shattered.
+** As {{c|Tainted Keeper}}, enemies will drop a [[coin]] immediately when frozen.
+** As {{c|Tainted Magdalene}}, enemies killed by hug, will drop a {{e|Half Red Heart}} immediately when frozen.
+* Using this item in daily-runs is ill-advised as freezing enemies removes a large chunk of exploration bonus.
+* If a non-boss enemy dies within 10 ticks (0.33 seconds) after being hit by a freezing tear, it will be frozen regardless of what killed it.
+
+== Synergies ==
+* {{i|Athame}} / {{i|Maw Of The Void}} / {{i|Montezuma's Revenge}} / {{i|Revelation}}: The beam will freeze enemies upon death.
+* {{i|Bob's Rotten Head}}: Enemies are frozen when dying to Bob's Rotten Head.
+* {{i|Brimstone}}  / {{i|Jacob's Ladder}} / {{i|Tech.5}} / {{i|Technology}} / {{i|Technology 2}} / {{i|Tech X}}: The normally firing laser gets an icy white color and freezes enemies upon death.
+* {{dlc|rnr+}} {{i|Death's List}}: The list order isn't broken when killing enemies by freezing them off-order.
+* {{i|Dr. Fetus}} / {{i|Epic Fetus}}: Bombs will freeze enemies upon death.
+* {{i|Gello}}/{{c|Tainted Lilith}}: When the baby is launched, any enemies it kills in its trajectory will freeze and any frozen enemies the baby is launched into slide similarly to when kicked by Isaac.
+* {{i|Suplex!}}: Provides another method of shattering the ice statues.
+* {{i|Trisagion}}: Can help break statues faster due to tears hitting multiple times.
+
+== Interactions ==
+* {{I|4.5 Volt}}: Damage dealt during the killing blow doesn't provide charge.
+* {{I|120 Volt}}/{{I|Technology Zero}}: No effect on lasers.
+* {{dlc|rnr+}} {{I|Berserk!}} / {{C|Tainted Samson}}: Kills will freeze the enemies upon their death but they don't count as kills, therefore making it impossible to extend the time by killing enemies with the jawbone.
+** {{dlc|r+}} Freezing enemies properly extends effect duration.
+* {{i|Contagion}}: Enemies that are frozen are still "alive" and can create a gas explosion when they are the first ice statue broken before any other enemy in the room dies.
+* {{i|D10}}: Even though frozen enemies are considered dead by the game, rerolling them into a different enemy will bring them back to life.
+* {{i|Friendly Ball}}: Cannot be used to capture frozen enemies.
+* {{i|Shoop da Whoop!}}: The beam is unable to freeze enemies.
+
+== In-game footage ==
+{{#ev:youtube|Z4JViNUauis}}
+
+== Gallery ==
+<gallery>
+File: Items12.png|Concepts for 3 items that were originally implemented in Antibirth and later Repentance, including Uranus.
+</gallery>
+
+== Trivia ==
+* [[anti:Uranus|Uranus]] originates from the ''Antibirth'' mod. In ''Antibirth'', Uranus used to be overridden if Isaac also obtained {{i|Terra}}.
+* Uranus' effects reference the planet [[Wikipedia:Uranus|Uranus]]' nature as an [[Wikipedia:Ice giant|ice giant]], being composed mainly of water, ammonia, and methane in gas and liquid form.
+* {{dlc|rnr+}} {{i|Jar of Flies}} used to only add flies, in case enemies' ice statues were shattered by player's tears or bombs.
+** {{dlc|r+}} Statues shattered by kicking also add a fly.
+
+{{nav|astrological}}

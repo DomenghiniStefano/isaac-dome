@@ -1,0 +1,55 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 358
+ | quote       = Double wiz shot!
+ | description = Grants [[spectral]] tears. Tears simultaneously fire out of both eyes diagonally, similar to the effect of the [[R U a Wizard?]] pill.
+ | quality     = 0
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Isaac fires tears from both eyes at the same time.
+* Isaac's tears are fired diagonally outwards, similar to the effect of the [[R U a Wizard?]] pill.
+* Isaac's tears become [[Tear Effects|spectral]].
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Reap Creep}}.{{dlc-}}
+* The maximum amount of tears per volley that can be reached by combining and/or duplicating {{i|20/20}}, {{i|The Inner Eye}}, {{i|Mutant Spider}} and The Wiz is 16.
+* {{dlc|r}} The Wiz's quality is considered 1 for the purposes of {{I|Bag of Crafting}}.
+
+== Synergies ==
+* {{i|20/20|r}} / {{tf|Conjoined}}: Fires 2 tears in both diagonal directions.
+* {{dlc|nr}} {{i|Diplopia}}/{{i|Crooked Penny}}: Each additional copy of The Wiz will make Isaac fire two more tears in a wider diagonal layout.
+** {{dlc|r}} Each additional copy of The Wiz will make Isaac fire one extra tear, starting with one tear fired forwards.
+* {{I|Eye of the Occult}}: Both tears shoot much closer together and can be controlled, creating for a better double shot similar to what Tractor Beam would grant.
+* {{I|The Inner Eye|r}}/{{C|Keeper}}: Fires 2 tears to both diagonal directions with a wider spread.
+* {{i|Mutant Spider|r}} /{{C|Tainted Keeper}}: Fires 3 tears to both diagonal directions.
+* {{i|Spirit Sword}}: Beams and sword swings are fired forwards instead of diagonally. Isaac spins an additional time when doing a charged attack.
+* {{i|Technology Zero}}: Electricity arcs between both tears, damaging enemies between them.
+* {{i|Tractor Beam}}: Both tears will follow the beam, making it easier to hit enemies with them.
+** '''Tractor Beam''' + {{i|Mom's Knife}}: Knives ignore the path of the beam and remain flying diagonally.
+* {{i|Tiny Planet}}: Each shot fires two tears in opposing orbital directions. The orbit can be controlled as normal.
+
+== Interactions ==
+* {{i|Analog Stick}}: Will make one tear go forwards and the other tear fire at a 90-degree angle to the other tear.
+* {{c|Azazel}}/{{I|Brimstone}}/{{c|Tainted Azazel}}: Fires two Brimstone beams diagonally. Beams remain diagonal even if Isaac has {{i|Tractor Beam}}.
+** {{dlc|nr}} '''Azazel''' + {{i|Anti-Gravity}}: Overrides The Wiz. {{Citation needed}}
+* {{C|Cain}} / {{C|Tainted Cain}}: Makes Cain fire in the two diagonal directions instead of just his right eye as the [[R U a Wizard?]] pill does.
+* {{i|Epic Fetus}}: The crosshair is controlled diagonally as if rotated 45 degrees clockwise from usual (i.e.: the up arrow will move it in a northeast direction), and two missiles are fired, similar to the effect of {{i|20/20}}. The crosshair can be moved in the cardinal directions by pressing two arrow keys at once (e.g.: pressing the up and right arrows will move the crosshair right).
+* [[Homing tears]]: Tears are more likely to home in on enemies if enemies are coming towards Isaac diagonally. With big enough tears or a big enough enemy, homing tears are very powerful with The Wiz.
+* {{i|The Ludovico Technique}}: Small tear orbits the main tear. Tear controls rotated 45 degrees clockwise - holding up makes it move northeast and so on.
+* {{i|Marked|n}}: Fires two shots aimed diagonally from the crosshair.
+* {{i|Monstro's Lung}}: 7-8 tears are fired at each diagonal direction instead of a full burst.
+* [[R U a Wizard?]] pill: Makes Isaac fire forward with a normal fire rate and 90 degrees outwards with half fire rate.
+* {{i|Sad Bombs}}: Does not affect the number of tears when bombs explode.
+
+== In-game Footage ==
+{{#ev:youtube|3Kv1LO5AehU}}
+
+== Trivia ==
+* This item is possibly a reference to ''Nethack'', where an unidentified [https://nethackwiki.com/wiki/Conical_hat "conical hat"] can be either a [https://nethackwiki.com/wiki/Cornuthaum cornuthaum] (i.e. a "wizard hat") or a cursed [https://nethackwiki.com/wiki/Dunce_cap dunce cap]. Equipping the conical hat will identify it, but if it's a cursed dunce cap it will lower your intelligence and be difficult to remove. The Wiz has the word "DUNCE" printed in the image but is officially named after wizardry. This confusion alludes to the ambiguous identity of the conical hat.
+* This item shares its name with a [[wikipedia:The Wiz (film)|1978 musical based on ''The Wizard Of Oz'']].
+
+{{nav|fr=Bonnet d'Âne}}

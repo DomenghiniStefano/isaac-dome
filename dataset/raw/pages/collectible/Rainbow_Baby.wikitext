@@ -1,0 +1,46 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 174
+ | quote       = Random buddy
+ | description = Spawns a [[familiar]] that follows Isaac around and fires tears with random effects.
+ | quality     = 1
+ | tags        = summonable baby {{dlc|r+|monstermanual}} offensive
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Spawns a [[familiar]] that follows Isaac around and fires tears with random effects similar to other familiars.
+** {{dlc|nr}} Rainbow Baby shoots once per second.
+** {{dlc|r}} Rainbow Baby shoots 1.36 times a second.
+* The shot types and their damage are:
+** Short-range blood tear for 3 damage.
+** Plain red tear for {{dlcalt|3.5|r=6}} damage.
+** V-pattern double shot for 3.5 damage each.
+** [[Charm]]ing purple tear for 3.5 damage.
+** [[Slow]]ing black tear for 3.5 damage.
+** [[Spectral tears|Spectral]] tear for 3.5 damage.
+** Long-range [[Homing tears|homing]] violet tear for 3.5 damage.
+** Long-range [[Spectral tears|spectral]] and [[Homing tears|homing]] tear for 3.5 damage.
+** Blood tear for 4 damage.
+** Large blood tear for 5 damage.
+* {{dlc+|r}}{{transformation contribution|Conjoined}}{{dlc-}}
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Rainbow Baby having {{dlcalt|5th|r+=7th}} priority.
+
+== Synergies ==
+* {{I|Mongo Baby}}: Will copy Rainbow Baby’s random tears.
+
+== Interactions ==
+* {{I|Rainbow Baby}}: The randomization of tears shot by multiple Rainbow Babies are not in sync.
+
+== In-game Footage ==
+{{#ev:youtube|v1ld2rbDeeA}}
+
+== Trivia ==
+* This item is used in {{chal|PRIDE DAY!}}.
+* A [[wikipedia:Rainbow baby|rainbow baby]] is a healthy baby born to a family that had previously experienced the loss of an infant before, during, or shortly after birth.
+* In the ''Wrath of the Lamb'' DLC for the original game, this item was unlocked by beating {{e|Isaac}} as {{c|???}}.
+
+{{nav|conjoined|fr=Bébé Arc-En-Ciel}}

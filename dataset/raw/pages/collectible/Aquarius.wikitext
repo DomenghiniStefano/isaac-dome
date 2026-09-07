@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 308
+ | quote       = Trail of tears
+ | description = A trail of [[blue creep]] is left behind Isaac, which damages enemies. {{dlc|r}} The creep scales with [[damage]] and inherits most [[tear effect]]s.
+ | quality     = 2
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Isaac leaves a trail of [[blue creep]] where he walks that damages enemies that walk over it.
+** {{dlc|nr}} The creep deals 2 damage per tick or 6 damage per second.
+** {{dlc|r}} The creep deals 66% of Isaac's damage 10 times per second.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Lil Blub}}.{{dlc-}}
+* {{dlc|r}} The creep copies Isaac's [[tear effect]]s and changes colors based on Isaac's tears.
+** Chance for triggering the effects works like it does for tears.
+** The creep's color changes even if the items don't have an applicable tear effect.
+
+== Synergies ==
+* {{I|Apple!|r}} / {{I|Knockout Drops}} / {{I|Tough Love|r}}: Creep does not appear visually different but has a chance to inflict the respective bonus effects.
+* {{dlc|r}} [[Homing]] tears: Creep moves towards nearby enemies that are on the ground, ignoring ones that fly.
+* {{I|Ipecac|r}}: Creep becomes green and poisons enemies but does not explode.
+* {{t|Lost Cork}}: The creep is 50% larger.
+* {{I|A Lump of Coal|r}}: Creep does more damage the farther Isaac is from the enemy.
+* {{i|Proptosis|r}}: Creep deals 2x Isaac's damage instead of 66%.
+
+== Interactions ==
+* {{I|Eye of the Occult}}: Turns the creep purple but creep can't be controlled.
+* {{I|Fire Mind|dlc=r}}: Turns the creep orange and burns enemies but does not explode.
+* {{I|Godhead|r}}: Creep becomes homing as expected but does not have a larger radius.
+* {{I|Montezuma's Revenge}}: Turns the creep brown despite the item not affecting Isaac's tear color.
+* {{I|Sulfuric Acid|r}}: Occasionally turns the creep yellow but doesn't destroy obstacles.
+
+== In-game Footage ==
+{{#ev:youtube|XKNm4Xevcv4}}
+{{#ev:youtube|zb3Li_n08HI}}
+
+== Trivia ==
+* The pickup quote "Trail of Tears" is a common phrase referencing the U.S. [[wikipedia:Trail of Tears|Indian Removal Act of 1830]].
+
+{{nav|zodiac|fr=Verseau}}

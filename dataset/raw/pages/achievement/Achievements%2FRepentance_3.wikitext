@@ -1,0 +1,541 @@
+{{page dlc|r}}
+{{storage page}}
+{{infobox achievement
+ | dlc          = r
+ | name         = Swallowed M80
+ | link         = Swallowed M80
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Samson}}
+ | id           = 561
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Wicked Crown
+ | link         = Wicked Crown
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Azazel}}
+ | id           = 562
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Azazel's Stump
+ | link         = Azazel's Stump
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Azazel}}
+ | id           = 563
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Torn Pocket
+ | link         = Torn Pocket
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Lazarus}}
+ | id           = 564
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Torn Card
+ | link         = Torn Card
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Lazarus}}
+ | id           = 565
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Nuh Uh!
+ | link         = Nuh Uh!
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Eden}}
+ | id           = 566
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Modeling Clay
+ | link         = Modeling Clay
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Eden}}
+ | id           = 567
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Kid's Drawing
+ | link         = Kid's Drawing
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Lost}}
+ | id           = 568
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Crystal Key
+ | link         = Crystal Key
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Lost}}
+ | id           = 569
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Twins
+ | link         = The Twins
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Lilith}}
+ | id           = 570
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Adoption Papers
+ | link         = Adoption Papers
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Lilith}}
+ | id           = 571
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Keeper's Bargain
+ | link         = Keeper's Bargain
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Keeper}}
+ | id           = 572
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Cursed Penny
+ | link         = Cursed Penny
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Keeper}}
+ | id           = 573
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Cricket Leg
+ | link         = Cricket Leg
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Apollyon}}
+ | id           = 574
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Apollyon's Best Friend
+ | link         = Apollyon's Best Friend
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Apollyon}}
+ | id           = 575
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Polished Bone
+ | link         = Polished Bone
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Forgotten}}
+ | id           = 576
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Hollow Heart
+ | link         = Hollow Heart
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Forgotten}}
+ | id           = 577
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Expansion Pack
+ | link         = Expansion Pack
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Bethany}}
+ | id           = 578
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Beth's Essence
+ | link         = Beth's Essence
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Bethany}}
+ | id           = 579
+}} {{infobox achievement
+ | dlc          = r
+ | name         = RC Remote
+ | link         = RC Remote
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Jacob}}
+ | id           = 580
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Found Soul
+ | link         = Found Soul
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Jacob}}
+ | id           = 581
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Member Card
+ | link         = Member Card
+ | description  = Spend 40+ pennies in a single shop.
+ | requirements = Spend 40+ coins in a single {{r|Shop}}
+ | id           = 582
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Golden Razor
+ | link         = Golden Razor
+ | description  = Obtain 99 pennies. Then spend every single one of them.
+ | requirements = In a single run, obtain 99 Coins, then spend all of them
+ | id           = 583
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Spindown Dice
+ | link         = Spindown Dice
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Isaac}}
+ | id           = 584
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Hypercoagulation
+ | link         = Hypercoagulation
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Magdalene}}
+ | id           = 585
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Bag of Crafting
+ | link         = Bag of Crafting
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Cain}}
+ | id           = 586
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Dark Arts
+ | link         = Dark Arts
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Judas}}
+ | id           = 587
+}} {{infobox achievement
+ | dlc          = r
+ | name         = IBS
+ | link         = IBS
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted ???}}
+ | id           = 588
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Sumptorium
+ | link         = Sumptorium
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Eve}}
+ | id           = 589
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Berserk!
+ | link         = Berserk!
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Samson}}
+ | id           = 590
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Hemoptysis
+ | link         = Hemoptysis
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Azazel}}
+ | id           = 591
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Flip
+ | link         = Flip
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Lazarus}}
+ | id           = 592
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Corrupted Data
+ | link         = Corrupted Data
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Eden}}
+ | id           = 593
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Ghost Bombs
+ | link         = Ghost Bombs
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Lost}}
+ | id           = 594
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Gello
+ | link         = Gello
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Lilith}}
+ | id           = 595
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Keeper's Kin
+ | link         = Keeper's Kin
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Keeper}}
+ | id           = 596
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Abyss
+ | link         = Abyss
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Apollyon}}
+ | id           = 597
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Decap Attack
+ | link         = Decap Attack
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Forgotten}}
+ | id           = 598
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Lemegeton
+ | link         = Lemegeton
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Bethany}}
+ | id           = 599
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Anima Sola
+ | link         = Anima Sola
+ | description  = ???
+ | requirements = Defeat {{e|Delirium}} as {{c|Tainted Jacob}}
+ | id           = 600
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Mega Chest
+ | link         = Mega Chest
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Isaac}}
+ | id           = 601
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Queen of Hearts
+ | link         = Queen of Hearts
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Magdalene}}
+ | id           = 602
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Gold Pill
+ | link         = Pills#Gold_Pills
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Cain}}
+ | id           = 603
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Black Sack
+ | link         = Black Sack
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Judas}}
+ | id           = 604
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Charming Poop
+ | link         = Charming Poop
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted ???}}
+ | id           = 605
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Horse Pill
+ | link         = Pills#Horse_Pills
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Eve}}
+ | id           = 606
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Crane Game
+ | link         = Crane Game
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Samson}}
+ | id           = 607
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Hell Game
+ | link         = Hell Game
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Azazel}}
+ | id           = 608
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Wooden Chest
+ | link         = Wooden Chest
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Lazarus}}
+ | id           = 609
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Wild Card
+ | link         = Wild Card
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Eden}}
+ | id           = 610
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Haunted Chest
+ | link         = Haunted Chest
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Lost}}
+ | id           = 611
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Fool's Gold
+ | link         = Fool's Gold
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Lilith}}
+ | id           = 612
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Golden Penny
+ | link         = Golden Penny
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Keeper}}
+ | id           = 613
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Rotten Beggar
+ | link         = Rotten Beggar
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Apollyon}}
+ | id           = 614
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Golden Battery
+ | link         = Golden Battery
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Forgotten}}
+ | id           = 615
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Confessional
+ | link         = Confessional
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Bethany}}
+ | id           = 616
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Golden Trinket
+ | link         = Golden Trinket
+ | description  = ???
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Tainted Jacob}}
+ | id           = 617
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Isaac
+ | link         = Soul of Isaac
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Isaac}}
+ | id           = 618
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Magdalene
+ | link         = Soul of Magdalene
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Magdalene}}
+ | id           = 619
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Cain
+ | link         = Soul of Cain
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Cain}}
+ | id           = 620
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Judas
+ | link         = Soul of Judas
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Judas}}
+ | id           = 621
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of ???
+ | link         = Soul of ???
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted ???}}
+ | id           = 622
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Eve
+ | link         = Soul of Eve
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Eve}}
+ | id           = 623
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Samson
+ | link         = Soul of Samson
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Samson}}
+ | id           = 624
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Azazel
+ | link         = Soul of Azazel
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Azazel}}
+ | id           = 625
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Lazarus
+ | link         = Soul of Lazarus
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Lazarus}}
+ | id           = 626
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Eden
+ | link         = Soul of Eden
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Eden}}
+ | id           = 627
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of the Lost
+ | link         = Soul of the Lost
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Lost}}
+ | id           = 628
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Lilith
+ | link         = Soul of Lilith
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Lilith}}
+ | id           = 629
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of the Keeper
+ | link         = Soul of the Keeper
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Keeper}}
+ | id           = 630
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Apollyon
+ | link         = Soul of Apollyon
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Apollyon}}
+ | id           = 631
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of the Forgotten
+ | link         = Soul of the Forgotten
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Forgotten}}
+ | id           = 632
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Bethany
+ | link         = Soul of Bethany
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Bethany}}
+ | id           = 633
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul of Jacob and Esau
+ | link         = Soul of Jacob and Esau
+ | description  = ???
+ | requirements = Defeat {{e|Hush}} and {{r|Boss Rush}} as {{c|Tainted Jacob}}
+ | id           = 634
+}} {{infobox achievement
+ | dlc          = r
+ | name         = A Strange Door
+ | link         = A Strange Door
+ | description  = Where could it lead to?
+ | requirements = Defeat {{e|Mother}}
+ | id           = 635
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Death Certificate
+ | link         = Death Certificate
+ | description  = ...
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s for all [[character]]s, including tainted ones
+ | id           = 636
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Dead God
+ | description  =
+ | requirements = Unlock all the other achievements ({{dlc|r+}} including the 4 Repentance+ achievements) and [[Collection Page (Repentance)|collect]] every item in the game
+ | id           = 637
+}}

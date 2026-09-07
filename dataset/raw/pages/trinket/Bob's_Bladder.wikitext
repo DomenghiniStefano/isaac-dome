@@ -1,0 +1,43 @@
+{{infobox trinket
+ | dlc         = a
+ | id          = 71
+ | quote       = Creepy bombs
+ | description = Leaves a pool of [[green creep]] under all {{E|Bomb}}s Isaac places, which damages enemies that walk over it.
+ | tags        = bob
+}}
+
+{{cit|t|a}}
+
+== Effect ==
+* {{E|Bomb}}s leave [[green creep]] underneath themselves.
+* {{dlc|r}} The creep deals 23.3 damage per tick.
+* {{transformation contribution|Bob|dlc=r+|this=trinket}}
+
+== Notes ==
+* Bombs will leave a trail of creep when moved or pushed around until they explode.
+* {{dlc+|r+}} The {{A|Golden Trinket}} or the {{i|Mom's Box}} combination will not count as multiple items of the transformation.{{dlc-}}
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Creep pool is slightly larger.
+** If Isaac has both a golden trinket and the Box, the creep also lasts longer.
+* {{I|Dr. Fetus}}: Bombs from Dr. Fetus leave creep, allowing for extra damage.
+* {{I|Remote Detonator}}: Bombs will continue to leave creep until they are manually detonated. Allows for maximization of creep damage, potentially dealing more damage over time to a boss than just a singular bomb.
+* {{I|Rocket in a Jar}}: Fired Rockets leave creep.
+* {{I|Scatter Bombs}}: Tiny bombs will also create creep, allowing for a larger area of effect.
+
+== Interactions ==
+* {{I|Bob's Rotten Head}}: No effect.
+* {{I|Epic Fetus}}: No effect.
+* {{I|Mr. Mega}}: Does not produce bigger creep puddles.
+* {{e|Throwable Bomb}}s from {{E|Bomb Grimace|n}}s do not leave creep.
+
+== In-game Footage ==
+{{#ev:youtube|miqyh2RMons}}
+
+== Trivia ==
+* {{dlc|r+}} This is one of the only three trinkets that count toward a transformation, the other ones are {{t|Kid's Drawing}} and {{t|A Missing Page}}.
+
+== Bugs ==
+{{bug|dlc=rnr+| Bob's Bladder will not contribute to the {{tf|Bob}} transformation despite having the item tag.}}
+
+{{nav|bob|bomb modifier|fr=Vessie de Bob}}

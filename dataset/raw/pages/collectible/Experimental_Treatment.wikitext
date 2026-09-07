@@ -1,0 +1,49 @@
+{{infobox passive collectible
+ | id          = 240
+ | quote       = {{dlcalt|All stats up... then shuffled|r=Some stats up, some stats down}}
+ | description = {{dlc|na+}} Randomly increases and decreases some of Isaac's [[Attributes|stats]].<br>{{dlc|a+}} Increases four random [[Attributes|stats]] and decreases the other two.
+ | quality     = 1
+ | tags        = syringe offensive
+ | unlocked by = Experimental Treatment
+}}
+
+{{cit|up}}
+
+== Effects ==
+* {{dlc|na+}} Randomly increases at least 1 and decreases 1-3 of Isaac's [[Attributes|stats]]. The same stats can be increased/decreased multiple times.
+* {{dlc|a+}} Randomly increases 4 and decreases 2 of Isaac's [[Attributes|stats]].
+* Each increase or decrease for a stat will change it by a fixed value:
+** ±1 [[health]].
+** ±1 flat [[damage]].
+** {{dlc|nr}} ±0.5 [[tears]].
+** {{dlc|r}} ±0.5 [[fire rate]].
+** {{dlc|nr}} ±0.5 [[range]].
+** {{dlc|r}} ±2.5 [[range]].
+** ±0.2 [[shot speed]].
+** ±0.2 [[speed]].
+*** {{dlc|nr}} Also affects maximum speed (may never exceed 2.0).
+** ±1 [[luck]].
+* If a stat that is already at an upper or lower limit is chosen, there is no visible effect.
+* {{transformation contribution|Spun}}
+
+== Notes ==
+The stat changes are permanent and will not go away if the item is removed.
+* {{dlc|r}} This makes the item especially useful for {{c|Tainted Isaac}}, since he gets to keep the stats while having the option to switch Experimental Treatment for another item and the transformation progress isn't lost in the process.
+{{dlc|r}} The tears up from this item is allowed to go past the normal tear cap of 5.0. However if it decreases tears, the normal tear cap will also be decreased.
+
+== In-game Footage ==
+{{#ev:youtube|moX11wkpJw0}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Little Baggy }}
+
+== Trivia ==
+* Despite the item's old description, the item did not increase all stats or shuffle them.
+
+== Gallery ==
+<gallery>
+File:Ending 7 Experimental Treatment.png|Experimental Treatment in [[ending 7]].
+File:Ending 7 Experimental Treatment 2.png|Isaac using Experimental Treatment in ending 7.
+</gallery>
+
+{{nav|moms heart unlock|syringe|fr=Traitement Expérimental}}

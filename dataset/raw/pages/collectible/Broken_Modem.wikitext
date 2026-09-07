@@ -1,0 +1,47 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 514
+ | quote       = Lag!
+ | description = Enemies, enemy shots, tears, and pickups will briefly freeze in place at random intervals. The reward from clearing a room will sometimes be duplicated.
+ | quality     = 3
+ | tags        = summonable
+ | unlocked by = Broken Modem
+}}
+
+{{cit|up|a+1}}
+
+== Effects ==
+* Enemies, enemy shots, tears and pickups will briefly freeze in place at random intervals.
+** The frequency of the effect depends on Isaac's [[luck]].
+** {{dlc|r}} Frozen enemy shots will disappear, but are still able to inflict damage if touched.
+* Room clear rewards have a 25% chance to spawn a duplicate, except for [[chest]]s, [[pill]]s, or [[card]]s.
+
+== Notes ==
+* If Isaac exits the room before the glitching animation is completed on the drop, it will not be duplicated.
+* Broken Modem also affects [[friendly]] enemies and their projectiles.
+
+== Synergies ==
+* {{dlc+|r}}{{i|Magneto}} + {{i|Options?}}: If Broken Modem duplicates a chest that was spawned by Options?, using Magneto to immediately open the chest while in its glitched form will create a {{i|TMTRAINER}} item if the chest contained an item.{{dlc-}}
+
+== Interactions ==
+* {{i|Contract From Below}}: Broken Modem has an independent chance to duplicate each item spawned by Contract From Below.
+* {{i|Options?}}: Chests that were an alternative reward can be duplicated. The two chests contain different items.
+
+== In-game Footage ==
+{{#ev:youtube|vkajpE-axRk}}
+
+== Gallery ==
+<gallery>
+File:Collectible Broken Modem Booster Pack 1 icon.png|Broken Modem's appearance prior to [[Booster Pack#4]].
+</gallery>
+
+== Trivia ==
+* Broken Modem is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=839519212 this Steam Workshop item] by freeze.
+* Broken Modem is a reference to an internet modem/box. Since the internet box is broken, there is a large amount of lag, as the client (player) computer is having trouble getting the data from the host server over the stuttering internet. This shows itself in the item through the following effects:
+** The client computer has trouble getting the inputs of other players over the broken internet, meaning the other clients freeze in place and look like they aren't moving, as the computer isn't getting the inputs fast enough to show them. (slows enemies, items, and tears)
+** The client computer gets the host's or other clients' inputs twice, as the client computer can't send the acceptance trigger to the host server fast enough. (double items)
+
+== References ==
+{{reflist}}
+
+{{nav|glitch|broken|booster pack|fr=Routeur Cassé}}

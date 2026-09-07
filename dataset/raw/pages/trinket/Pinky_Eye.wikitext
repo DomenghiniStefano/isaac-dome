@@ -1,0 +1,27 @@
+{{infobox trinket
+ | name = Pinky Eye
+ | id = 30
+ | quote = Poison shots
+ | description = Adds a 10% chance to shoot a [[Poison|poison tear]], dealing damage over time when inflicted.
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Adds a chance to shoot a [[Status Effects#Effects|poison tear]], dealing damage over time when inflicted
+
+== Notes ==
+* The chance to fire a poison tear depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 10 - \left \lfloor \mathit{Luck} * 0.5  \right \rfloor}</math>
+** At base luck (0), the chance is 10%, maxing out at 100% at 18 luck.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: At base luck, having either increases the chance to 20% and having both to 33%.
+
+== Interactions ==
+* {{i|The Common Cold}}: Activation rates are individually applied to each tear, effectively allowing for higher amounts of poison tears. However at 12 Luck, this trinket will not do anything for Isaac as The Common Cold is guaranteed to make every tear poisoned at that point.
+
+== In-game Footage ==
+{{#ev:youtube|n4kDb6OWj0Y}}
+
+[[Category:Trinkets]]
+{{nav|fr=Conjonctivite}}

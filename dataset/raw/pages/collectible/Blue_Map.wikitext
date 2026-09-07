@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | id          = 246
+ | quote       = Secrets
+ | description = Reveals the locations of {{r|Secret Room}}s and {{r|Super Secret Room}}s on the map.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive lazarussharedglobal
+ | unlocked by = Blue Map
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Reveals the locations of {{r|Secret Room}}s and {{r|Super Secret Room}}s on the map.
+
+== Notes ==
+* When combined with {{i|The Compass}} and {{i|Treasure Map}}, the entire floor is revealed, identical to the effect of {{i|The Mind}}.
+* {{dlc+|r}} Blue Map does not display {{r|Ultra Secret Room}}s.{{dlc-}}
+
+== Synergies ==
+* {{i|Book of Secrets|r}}: Makes it easier to gain {{i|X-Ray Vision}} as Book of Secrets cannot give a mapping effect Isaac already has.
+* {{t|Fragmented Card}} / {{I|Luna}}: Extra {{r|Secret Room}}s / {{r|Super Secret Room}}s are revealed as well.
+
+== In-game Footage ==
+{{#ev:youtube|qXaOY_M7E8M}}
+
+== Gallery ==
+<gallery>
+File:Mapping icons.png|{{dlc|r}} Blue Map's icon (in the middle), alongside other mapping icons.
+</gallery>
+
+== Trivia ==
+* This item is used in {{chal|Cursed!}}.
+* In the original game, {{i|Treasure Map}} revealed the location of {{r|Secret Room}}s as well. In Rebirth, this effect, along with the added effect of revealing of {{r|Super Secret Room}}s, now belongs to this item instead.
+* {{dlc|r}} Under the minimap, {{i|The Mind}}'s icon will override the icon of this item.
+
+{{nav|donation machine unlock|fr=Carte Perdue}}
+[[Category:Store upgrades]]

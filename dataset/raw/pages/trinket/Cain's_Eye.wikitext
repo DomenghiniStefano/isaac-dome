@@ -1,0 +1,30 @@
+{{infobox trinket
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 59
+ | quote       = May you see your destination
+ | description = When starting a floor, 25% chance to gain the effect of {{i|The Compass}} for the duration of the floor.
+ | tags        = nogreed
+ | unlocked by = Cain's Eye
+}}
+
+''Not to be confused with {{i|Cain's Other Eye}}.''
+
+{{cit|ut}}
+
+== Effects ==
+* When starting a floor, 25% chance to gain the effect of {{i|The Compass}} for the duration of the floor.
+** {{dlc|a+}} The chance increases based on the [[Luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 4 - \left \lfloor \mathit{Luck}  \right \rfloor}</math>
+*** At base luck (0), the chance is 25%, maxing out at 100% at 3 luck.
+
+== Synergies ==
+* {{i|Book of Secrets|r}}: Can make it easier to gain {{i|X-Ray Vision}} as Book of Secrets cannot give a mapping effect Isaac already has.
+* {{I|Glowing Hourglass|r}}: Traveling back to the previous floor and going back down may trigger the Cain's Eye if it hasn’t triggered before.
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either doubles the chance to trigger The Compass effect. Having both triples the chance.
+
+== In-game Footage ==
+{{#ev:youtube|xzJMsrFR3FA}}
+
+== Trivia ==
+* Due to the existence of {{i|Cain's Other Eye}}, this trinket is implied to be {{c|Cain}}'s healthy eye.
+
+{{nav|cain unlock|blue baby boss unlock|fr=Œil de Caïn}}

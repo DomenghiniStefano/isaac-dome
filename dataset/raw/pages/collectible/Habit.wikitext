@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 156
+ | quote       = Item martyr
+ | description = When Isaac is hit, his active item gains 1 room's worth of charge.
+ | quality     = 2
+ | tags        = nolostbr summonable nocantrip
+}}
+
+{{cit|p}}
+
+== Effects ==
+* When Isaac is hit, his active item gains 1 room's worth of charge.
+
+== Synergies ==
+* {{i|Blood Rights}}/{{i|Razor Blade}} + {{i|Schoolbag}}: Damage from the item grants a point of charge to Isaac's other held active item.
+* {{i|9 Volt}} + {{i|Yum Heart}}: Isaac could potentially become invincible on early floors or with {{i|The Wafer}}, losing only half a heart per three hits taken.
+* {{i|The Battery}} + {{dlc|r}} {{i|Sharp Plug}}: Isaac gains one charge from Habit for every half-heart of damage that Sharp Plug deals, effectively granting double the charges when using Sharp Plug.
+* {{i|Dull Razor}} + {{i|Schoolbag}}: Using the Dull Razor activates the Habit, but this does not restore its charge, only that of the item in the Schoolbag.
+* {{i|Dull Razor}} + {{i|Car Battery}} + {{i|The Battery}}: Using Dull Razor activates the Habit, fully recharging Dull Razor, allowing for infinite uses of the Dull Razor, infinite invincibility frames, and infinite proccing of on-hit effects.
+* {{I|Larynx}}: Both on-hit charge effects stack, granting Larynx 2 charges per hit.
+
+== Interactions ==
+* {{dlc|r}} {{I|Glass Cannon}}: Upon taking damage, {{I|Broken Glass Cannon}} will be half-charged. However, taking damage before the last charge will break the cannon again.
+* {{I|Habit}} Duplicates: Doesn't stack; will still yield one charge per hit.
+* {{I|Eraser}}: Taking damage with Eraser in your active item slot will not charge Eraser.
+
+== In-game Footage ==
+{{#ev:youtube|bzQUw5tJkDM}}
+
+== Trivia ==
+* The Habit was significantly nerfed from the previous game. In the original game, it would restore half of Isaac's item's required charge rather than just one room's worth of charge. This could essentially make Isaac unkillable if it was used in conjunction with {{i|Yum Heart}}, {{i|The Nail}}, or {{i|Book of Revelations}} and {{i|The Wafer}} for The {{s|Womb}} and beyond.
+* This item is used in {{chal|When Life Gives You Lemons}}.
+
+{{nav|fr=Voile de Nonne}}
+[[Category:Damage-triggered items]]

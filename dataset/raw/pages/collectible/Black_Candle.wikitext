@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | id          = 260
+ | quote       = Curse immunity + evil up
+ | description = Prevents [[curse]]s. Grants one {{E|Black Heart}}. Increases the chance for a {{R|Devil Room}} or {{R|Angel Room}} to appear.
+ | quality     = 3
+ | tags        = summonable offensive lazarussharedglobal
+ | unlocked by = Black Candle
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Grants immunity to floor [[curse]]s.
+** Will immediately remove any curses on the current floor except {{curse|labyrinth}}.
+* Grants a {{E|Black Heart}} upon pickup.
+* Increases chance for a {{R|Devil Room}} / {{R|Angel Room}} to open by 15%.
+
+== Notes ==
+* Picking up this item during {{chal|Cursed!}} will not remove the {{curse|cursed}}.
+* Picking up this item during {{chal|Pitch Black}} will not remove the {{curse|darkness}} or {{curse|unknown}}.
+* {{dlc+|a+}} Picking up this item during {{chal|Ultra Hard}} will not remove '''any''' of the curses.{{dlc-}}
+* Picking up this item while under the effect of an Amnesia [[pill]] or ??? pill will remove the effect of the pill. However, the item does not negate the effects of Amnesia or ??? pills used after picking up this item.
+* Picking up this item can affect whether [[Level Generation|Floor Generation]] chooses between 2 or 3 added rooms in [[Hard mode]] which can cause room content to change for affected floors.
+* {{dlc|r}} Picking up this item does not make the second item in alt floor treasure rooms visible.
+* {{dlc|r}} Doesn't remove {{curse|darkness}} afflicted by {{p|XIX - The Sun?|n}}, no matter if Black Candle was picked up before or after using the card.
+
+== Synergies ==
+* {{t|Black Feather}}: Grants a damage boost.
+* {{dlc|a}}{{i|Cursed Eye}}: Removes teleportation effect of Cursed Eye.
+* {{T|Cursed Penny}}: Prevents the teleport effect from triggering for all coins except the still-stuck Sticky Nickel.
+
+== In-game Footage ==
+{{#ev:youtube|LfMojDoLJNA}}
+
+{{nav|donation machine unlock|fr=Bougie Noire}}
+[[Category:Store upgrades]]

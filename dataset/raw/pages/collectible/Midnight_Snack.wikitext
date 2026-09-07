@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | name        = {{dlcalt|Moldy Bread|r=Midnight Snack}}
+ | id          = 456
+ | quote       = {{dlcalt|Midnight snack!|r=HP up}}
+ | description = Grants one full Red [[Heart container]]. {{dlc|r}} Heals 1 additional {{e|Red Heart}}.
+ | quality     = 1
+ | tags        = nolostbr food
+}}
+
+{{cit|p|a+||{{dlc|r}} Midnight Snack / {{dlc|a+nr}} Moldy Bread}}
+
+== Effects ==
+* Grants one full Red [[Heart container]].
+* {{dlc|r}} Heals 1 additional {{e|Red Heart}}.
+
+== Synergies ==
+* {{i|Binge Eater}}: When Isaac picks up Midnight Snack it now grants: a permanent +1.0 [[Damage]] and +1.0 [[Luck]], a temporary +3.6 [[Damage]] (which diminishes to 0 in 30 seconds), heals 1 additional red heart, and takes a permanent -0.03 [[Speed]] reduction.
+
+== In-game Footage ==
+{{#ev:youtube|emmFSBkDAOA}}
+
+== Trivia ==
+* {{dlc|r}} This item's name was changed from Moldy Bread to Midnight Snack.
+* It is the only plain stat upgrade added in Afterbirth †, from release to the last [[Booster Pack]].
+
+{{nav|fr=Encas de Minuit}}

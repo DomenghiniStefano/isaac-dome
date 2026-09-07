@@ -1,0 +1,79 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 643
+ | quote       = Awaken your faith
+ | description = Grants [[flight]]. In addition to tears, Isaac can charge up and fire a powerful holy laser. {{dlc|nr+}} Also grants two {{E|Soul Heart}}s.
+ | quality     = 4
+ | tags        = summonable offensive angel
+ | devil price = 2
+ | unlocked by = Revelation
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Grants [[flight]].
+* {{dlc|nr+}} Grants 2 {{E|Soul Heart}}s on pickup.
+* Continuously firing for 2.35 seconds allows Isaac to fire a powerful holy laser when Isaac stops shooting, similar to the attacks used by the [[Angel]] bosses.
+** The laser deals Isaac's [[damage]] per tick (up to a maximum of 15 times) and can be aimed diagonally. It lasts for ~1.28 seconds (77 frames).
+*** With the <code>EnableMouseControl</code> enabled or an analog controller, the laser can be aimed in any direction, similarly to {{I|Analog Stick}}.
+* {{transformation contribution|Seraphim}}
+
+== Notes ==
+* Tear delay has no effect on the charge time of the laser; it is fixed at 2.35 seconds.
+* This item's effects will still work while [[Blindfolded]], which makes it extremely valuable for {{c|Lilith}} and in [[challenges]] such as {{chal|BRAINS!}} or {{chal|Hot Potato}}.
+* Many of '''Revelation''''s [[#Synergies|synergies]] are similar to {{I|Brimstone}}'s.
+* Having any charged tear effects like {{I|Monstro's Lung}} or '''Brimstone''' will lower their DPS if their charge time is under 2.35 seconds, in order to use Revelation's laser.
+
+== Synergies ==
+* Revelation, {{I|Maw Of The Void}}, {{I|Number Two}}, and {{I|Montezuma's Revenge}} all have the same charge time, allowing Isaac to easily utilize them at the same time.
+* {{I|Angelic Prism}}: When the laser hits the prism, it will split in four.
+* {{T|Brain Worm}}: The laser can bend completely to hit an enemy, effectively acting as a better form of homing on single enemies and bosses.
+* {{I|Continuum}} The laser loops around. The laser cannot hit the same enemy twice.
+* {{I|Cricket's Body}}: Spawns 4 split tears on the first enemy or obstacle the laser hits every other tick. The tears are [[Piercing]] and deal half damage of the laser. They can hit the same enemy the laser hit.
+* {{I|Eve's Mascara}} / {{I|Polyphemus}}: As the laser deals Isaac’s damage, but is not affected by tear delay, the DPS of the laser is greatly increased.
+* [[Homing tears]]: The laser will home in on enemies in a very effective way.
+* {{I|Lachryphagy}}: The laser has reduced range, but spawns a red Lachryphagy tear per tick. The tears are Piercing and deal the damage of the laser. They can hit the same enemy the laser hit.
+* {{I|Marked}}: The laser is fired automatically upon reaching full charge in the direction of the mark. Combined with charged attacks, this allows them to keep their DPS.
+* {{I|Multidimensional Baby}}: The baby can duplicate the laser.
+** Multidimensional Baby + {{I|Lachryphagy}} / {{I|Pop!}}: Lasers modified by Multidimensional Baby are no longer affected by Lachryphagy or Pop!, being normal length and not firing additional tears/eyes out the end.
+* {{I|The Parasite}}: Spawns two perpendicular lasers on the first enemy or obstacle the laser hits. The laser and its split lasers cannot hit the same enemy.
+** {{dlc|r+}} Also spawn small split tears.
+* {{I|Pop!}}: The laser has reduced range, but shoots out an eyeball per tick. The tears are Piercing and deal the damage of the laser. They can hit the same enemy the laser hit.
+* {{I|Proptosis}}: The beam deals ~2.47× Isaac's Damage at point blank range.
+* {{I|Rubber Cement}}: The laser will bounce off the walls for a short distance.
+* {{I|Tiny Planet}}: The laser will wrap around Isaac once and then shoot straight forward.
+* {{I|Jacob's Ladder}}: Upon hitting an enemy, wall or obstacle, the beam generates sparks that home in on enemies.
+
+== Interactions ==
+* {{I|Anti-Gravity}}: The laser fires in place, not following Isaac.
+* {{I|Almond Milk}}: Unlike charged attacks, the laser cannot be fired automatically. As the laser deals Isaac’s damage, but is not affected by tear delay, the DPS of the laser is greatly decreased. The laser do not gain worm trinket effects.
+* {{I|Diplopia}}: Multiple copies of Revelation have no extra effect.
+* {{I|Explosivo}} / {{I|Mucormycosis}} / {{I|Sinus Infection}}: No effect.
+* {{i|Eye of the Occult}}: No effect.
+** '''Eye of the Occult''' + {{i|Brimstone}}/{{i|Technology}}: The Revelation beam also automatically fires at the crosshair.
+* {{I|Ipecac}}: The laser will poison enemies and repeatedly explode on contact with an enemy or obstacle. Despite its high damage increase, Ipecac only adds +2 damage to the beam, similarly to {{I|Brimstone}}.
+* {{I|Kidney Stone}}: The laser can be fired as normal while the kidney stone is charging. The laser is charged and fired automatically after the kidney stone is fired.
+* [[Luck]]-based tear effects: No effect.
+* {{i|Libra}}: The laser ignores damage modification from Libra, both positive and negative: the actual unbalanced damage value is used.
+* {{I|My Reflection}}: The laser makes a thin loop in front of Isaac and then shoots straight backwards.
+* {{I|Mysterious Liquid}}: The laser leaves a creep for each enemy and obstacle the laser hits per tick.
+* {{I|Playdough Cookie}}: The laser rapidly flashes between different colors while firing, with a chance to inflict status effects.
+* {{I|Soy Milk}}: Unlike charged attacks, the laser cannot be fired automatically. As the laser deals Isaac’s damage, but is not affected by tear delay, the DPS of the laser is greatly decreased.
+* {{I|Sulfuric Acid}} / {{I|Terra}}: The laser will occasionally break obstacles.
+* {{I|Tech X}}: If the Revelation beam and the Tech X are both charged, it will sometimes fire the Revelation beam first and the Tech X ring at the end of it.
+
+== In-game footage ==
+{{#ev:youtube|SkdkxJ7JNdM}}
+
+== Trivia ==
+* This item makes Isaac resemble {{E|Uriel}} and {{E|Gabriel}}, and its ability resembles the two angels' abilities to fire a directed holy blast.
+* This item may be a reference to the [[fireemblem:Seraph Robe|Seraph Robe]] from the [[wikipedia:Fire Emblem|Fire Emblem]] video game series, which shared a similar sprite in previous installments of the game.
+* Isaac's glowing eyes with the item may be a reference to Moses in the Book of Exodus. Chapter 34 details how, after he received another set of stone tablets with the Ten Commandments from God, Moses's face started shining and became difficult to look at. Henceforth, Moses would only show his face when revealing what God had told him.
+* [[anti:Revelation|Revelation]] originates from the ''Antibirth'' mod. This item is significantly different from its ''Antibirth'' counterpart, which gave stats up and a spectral {{t|Brain Worm}} effect to Isaac's tears. It also gave Isaac two immortal hearts instead of soul hearts, which was a [[Hearts|heart pickup]] that was never transferred to ''Repentance''.
+
+== Bugs ==
+{{bug|When combined with {{I|Chocolate Milk}}, {{I|Cursed Eye}}, {{I|Monstro's Lung}}, or {{I|Tech X}}, releasing a Revelation attack may prevent a charged shot from firing at the same time as expected. The charged shot is delayed by about ~0.5 seconds. Holding a full charge for a longer time makes the delay more likely to happen.}}
+
+{{nav|seraphim|bethany unlock|mother unlock|fr=Révélation}}
+[[Category:Flight-granting items]]

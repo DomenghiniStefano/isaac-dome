@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 355
+ | quote       = Range + luck up
+ | description = {{dlc|nr}} +1.25 [[range]], +0.5 [[tear falling speed]], +1 [[luck]].<br>{{dlc|r}} +2.5 [[range]], +1 [[luck]]. Grants one {{E|Soul Heart}}.
+ | quality     = 2
+ | tags        = summonable mom offensive
+ | pool        = mom's dressing table-a+
+}} {{distinguish|Mom's Pearl}}
+
+{{cit|p|a}}
+
+== Effects ==
+* {{dlc|nr}} +1.25 [[range]].
+* {{dlc|r}} +2.5 [[range]].
+* {{dlc|nr}} +0.5 [[tear falling speed]].
+* +1 [[luck]].
+* {{dlc|r}} Grants one {{E|Soul Heart}}.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc+|a+}} This item has a 1% chance to spawn when bombing {{m|Mom's Dressing Table}}. Multiple copies can be obtained through this method.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|ObMEmBYcybU}}
+
+== Trivia ==
+* {{dlc|r}} The fact that this item gives a soul heart may be a reference to the effect of {{t|Mom's Pearl}}.
+{{nav|yes mother|mom|fr=Collier de Maman}}

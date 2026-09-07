@@ -1,0 +1,34 @@
+{{infobox passive collectible
+ | id          = 89
+ | quote       = Slow effect
+ | description = Adds a chance to shoot [[slow|slowing tears]], reducing speed of enemy movement and any projectile fired by them.
+ | quality     = 2
+ | tags        = summonable spider offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Adds a 25% chance to shoot [[slow|slowing tears]], reducing the speed of enemy movement and any projectile fired by them.
+* {{transformation contribution|Spider Baby}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Triachnid}}.{{dlc-}}
+* The slow duration is 2.5 seconds.
+* The slow effect chance depends on the [[luck]] stat. The activation rate is equal to 1/(4 - (Luck / 5)). At base luck (0), the chance is 25%, maxing out at 100% at 15 luck.
+** Due to how this formula works, increases in activation rate are only seen with every 5 points of luck, as this formula rounds down after dividing Isaac's luck by 5.
+
+== Synergies ==
+* {{i|Finger!}}: Finger can also apply the slow effect.
+* {{I|Technology}} / {{I|Technology 2}} / {{I|Tech.5}} / {{I|Tech X}} / {{i|Brimstone}}: The laser turns light pink and can slow enemies.
+
+== In-game Footage ==
+{{#ev:youtube|aTrJcDz-3pc||inline}} {{#ev:youtube|bQlMtvlZQSg||inline}}
+
+== Trivia ==
+* In the original ''Binding of Isaac'', Spider Bite was not unlocked by default and had to be unlocked by beating The Basement for the first time.
+
+== References ==
+* [https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing The Binding of Isaac Item Trigger Testing]
+
+{{nav|spider|fr=Morsure d'Araignée}}

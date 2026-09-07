@@ -1,0 +1,26 @@
+{{infobox challenge
+ | number      = 20
+ | has shops   = yes
+ | goal        = Mom's Heart
+ | unlocks     = Rune of Berkano
+ | unlocked by = Purist
+}}
+
+'''Purist''' is [[Challenges|challenge]] #20. This challenge is unique because {{c|Isaac}} starts with no items. The goal is to defeat {{E|Mom's Heart}} or {{E|It Lives!}}. This challenge is unlocked after defeating {{E|Mom}} for the first time.
+__TOC__
+
+== Difficulty ==
+Because there are no {{r|Treasure Room}}s, it is harder to find items. While this is standard for most challenges, Isaac also doesn't start with any items.
+
+== Strategy ==
+* Other [[special room]]s become much more important, with {{r|Devil Room}}s and {{r|Angel Room}}s becoming even more valuable than on an average run.
+* Cards such as {{p|Credit Card}} and items such as {{i|Diplopia}}, {{i|Coupon}} and {{i|Mr. ME!}} can be used for the {{r|Shop}} and Devil Room items, with Diplopia cloning the items, and Credit Card/Coupon allowing the item(s) to be taken for free. Neither option stops Angel Rooms from appearing.
+* {{E|Bomb}}s are much more valuable when hunting for {{r|Secret Room}}s as these can provide free items.
+* {{dlc|nr}} {{r|Curse Room}}s guarantee damage and can lower the chances of Devil Rooms. However, if Isaac has a full {{E|Soul Heart}}, {{E|Black Heart}}, or {{E|Bone Heart}}, the reward can outweigh the damage and still allow Isaac to access a Devil Room. Alternatively, wait to enter the Curse Room until after visiting the Devil Room.
+** {{dlc|r}} Damage from Curse Rooms now doesn't reduce the Devil Rooms chance, making them significantly more useful.
+* {{i|The Bible}} can be used to instantly win the boss fights against {{E|Mom}}, which can be used to preserve key health, and {{E|Mom's Heart}} / {{E|It Lives!}}, which will complete the challenge.
+
+== Reward ==
+{{achievement text | Rune of Berkano }}
+
+{{nav|mom unlock|challenge|fr=Puriste}}

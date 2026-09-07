@@ -1,0 +1,56 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 502
+ | quote       = Creep shots
+ | description = Adds a chance to fire a creep shot that deals double [[damage]] and leaves a trail of [[Status Effects#Slow|slowing]] [[Creep#White Creep|white creep]].
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* While firing, Isaac has a chance to fire an additional creep shot that deals double [[damage]], [[Status Effects#Slow|slows]] enemies, and leaves a short trail of [[Creep#White Creep|white creep]] that also [[Status Effects#Slow|slows]] enemies.
+** The chance is not affected by [[luck]].
+** The creep shots don't take on any tear effects.
+** {{Dlc|a+nr}}The creep shots are affected by [[range]] and [[shot speed]].
+*** {{Dlc|r}}The creep shots are not affected by [[range]] but affected by [[shot speed]], which determines their effective range.
+** Their tear sizes are not affected by their damage. They always retain their small size.
+** The creep shots can be fired diagonally.
+* A creep shot will also be fired in a random direction when taking damage.
+* Large Zit does not fire when {{Blindfolded}}
+
+== Synergies ==
+* {{i|Brimstone}} / {{I|Chocolate Milk}} / {{i|Epic Fetus}} / {{i|Mom's Knife}} / {{i|Monstro's Lung}} / {{I|Tech X}}: Creep shots will still be fired occasionally while holding the fire button.
+* {{i|Dr. Fetus}}: Creep shots will occasionally be fired along with bombs.
+* {{i|Ipecac}}: High tear damage from Ipecac is doubled, causing very powerful creep shots.
+* {{I|Multidimensional Baby}}: Creep shots can be duplicated.
+* {{i|Polyphemus}}: High tear damage from Polyphemus is doubled.
+* {{i|Technology Zero}}: Creep shots will be connected to other tears via electricity.
+* {{I|Urn of Souls}}: Creep shots still shoot as normal while using the urn.
+
+== Interactions ==
+* {{i|20/20}} / {{i|The Inner Eye}} / {{i|Mutant Spider}}: Isaac will still fire one creep shot.
+* {{I|Bird's Eye}} / {{I|Ghost Pepper}}: Firing creep shots does not spawn the fires.
+* {{i|Compound Fracture}} / {{i|Cricket's Body}} / {{i|The Parasite}}: Creep shots will not burst into split tears.
+* {{I|Dead Eye}}: Creep shots do not grant or reset the damage multiplier, although their damage still benefit from the multiplier.
+* {{I|Eye of Belial}}: Creep shots are not affected.
+* {{I|Eye of Greed}} / {{I|Lead Pencil}}: Creep shots are not counted for shots fired.
+* {{I|Eye of the Occult}}: Creep shots are not controlled. Creep shots will only fire in cardinal or diagonal directions unless there is a cross-hair, in which case creep shots will fire directly toward it.
+* {{i|Incubus}} / {{I|Twisted Pair}}: The familiars does not fire creep shots.
+* {{I|Immaculate Heart}}: Firing creep shots does not spawn the orbiting tear.
+* {{I|Lachryphagy}}: Creep shots are not affected from Lachryphagy, but Lachryphagy tears can feed on them.
+* {{i|The Ludovico Technique}}: Movable tear behaves as normal. Isaac will occasionally fire a creep shot while moving the tear, and creep shots will only fire in cardinal or diagonal directions.
+* {{I|A Lump of Coal}}: Creep shots are not affected.
+* {{I|My Reflection}} / {{I|Tiny Planet}} / {{I|Tractor Beam}}: Creep shots are not affected by the trajectory altering effect. Stat changes are applied as normal.
+* {{I|Pop!}}: Creep shots are not affected. Pop! tears do not bounce off of creep shots.
+* {{I|Proptosis}}: Creep shots are not affected.
+
+== In-game Footage ==
+{{#ev:youtube|X8fxquLxcAs}}
+
+== Trivia ==
+* Large Zit was originally an unofficial item which was supposed to showcase the modding capabilities of ''Afterbirth+'' in the [https://www.youtube.com/watch?v=FRR-wzTky9Q PAX 2016 livestream]. However, all items included in the demo were later added to the final game.
+
+{{nav|fr=Grosse Pustule}}
+[[Category:Damage-triggered items]]

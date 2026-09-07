@@ -1,0 +1,75 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 585
+ | quote       = A sacred offering
+ | description = Upon use, spawns three {{E|Soul Heart}}s and two {{r|Angel Room}} items and is consumed. Starts with no charges, and can only be charged by picking up 6 Soul Hearts.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive nocantrip
+ | recharge    = 12
+ | unlocked by = Alabaster Box
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* This item starts with no charges. Rather than gaining charges by clearing [[room]]s or picking up [[battery|batteries]], Alabaster Box has to be charged through {{e|Soul Heart|text=Soul}} or {{e|Black Heart|text=Black Hearts}}. Instead of being added to [[Health|Isaac's health bar]], they charge the box at a rate of one charge per half heart.
+* Both Soul or Black Hearts that are picked up, or directly added to Isaac's health will count towards Alabaster Box's charges.
+* Upon use, Alabaster Box is consumed and vanishes from Isaac's inventory, spawning three Soul Hearts and two [[item]]s from the [[Angel Room (Item Pool)|Angel Room item pool]].
+** There's a small chance for each of the spawned Soul Hearts to be replaced with an {{e|Eternal Heart}}.
+** If a [[Devil Room|Devil Deal]] was taken previously, it spawns only two Soul Hearts and one Angel Room item instead.
+
+== Notes ==
+* If Isaac takes a [[Devil Room|Devil Deal]] that requires Soul Hearts while holding a charged Alabaster Box, hearts are taken from the box before it takes from Isaac's health.
+* {{dlc|nr+}} If Isaac has a full HP bar, and he has either Soul or Black Hearts in his health pool, picking up {{e|Bone Heart}}s will take away 2 charges from Alabaster Box each, instead of replacing any Soul/Black Hearts as they normally would. Bone Hearts will only replace health if the Alabaster Box has no charges.
+** If Isaac picks up a Bone Heart at max HP while the Alabaster Box only has 1 charge, then it will take away both that 1 charge and half of a whole Soul/Black Heart (half hearts are unaffected).
+* If {{c|The Lost}} picks up a Black Heart the box will not gain any charges.
+* If the box requires two or more charges and Isaac picks up a Black Heart, the box gains charge as for a Soul Heart and the last Soul Heart (or half Soul Heart, if there is one) in Isaac's health becomes black.
+* If the box requires only one more charge and Isaac picks up a full Soul Heart or a Black Heart, then the box becomes fully charged and a half heart of the same type is added to Isaac's health.
+* If sleeping in a [[bed]] would restore Soul Hearts, they are used to charge the Alabaster Box instead. Any excess are added as Soul Hearts as normal.
+** This applies to {{c|The Lost}}, who is always in the state to recover Soul Hearts, even if usually without effect.
+* Soul hearts from {{e|Blended Heart}} can also be used to charge the box. They are, as usual, used for red health first.
+* {{e|Bulb}}s are able to drain charges from Alabaster Box.
+
+== Synergies ==
+* {{p|? Card}}: Activates Alabaster Box without consuming it, allowing for multiple uses.
+* {{c|Bethany}} / {{c|Tainted Bethany}}: Soul/blood charges count as charges for Alabaster Box.
+* {{Book of Belial synergy|description=Changes the payout to 2 {{e|Black Heart}}s and 1 item from the [[Devil Room (Item Pool)|Devil Room item pool]]. If a [[Devil Deal]] has been taken, the payout is boosted to 3 Black Hearts and 2 Devil items.}}
+* {{Book of Virtues synergy|description=Spawns up to 8 normal wisps, filling up the middle ring.}}
+* {{T|Found Soul}}: Found Soul will also activate Alabaster Box when Isaac does, doubling the rewards.
+* {{i|Guppy's Paw}} + {{i|Schoolbag}}: Heart containers converted to Soul Hearts contribute to Alabaster Box's charge instead of being added to Isaac's health. This enables a full charge for just two heart containers.
+* {{I|Metronome}}: When Metronome chooses Alabaster Box, it will immediately activate without requiring {{E|Soul Heart}}s.
+* {{i|Void}}: Can activate Alabaster Box without consuming Soul Hearts. The effect is only used by Void once.
+* {{P|Wild Card}}: Allows for multiple uses of Alabaster Box so long as no other activated item, [[card]], [[pill]] or [[rune]] has been used following the initial activation.
+
+== Interactions ==
+* {{i|4.5 Volt}} / {{i|9 Volt}} / [[48 Hour Energy]] / {{i|The Battery}} / {{i|Battery Pack}} / {{i|Car Battery}} / {{t|Charged Penny}} / {{t|Hairpin}} / {{i|Habit}} / {{i|Jumper Cables}} : No effect.
+* {{i|Abaddon}}: Red Hearts will be converted to Black Hearts, which will be used to charge the box. If Isaac would die as a result of picking up Abaddon (he only has Red health), he is given a Half Soul Heart.
+* {{m|Battery Bum}}: No effect, even though there's a cue that the item was charged.
+* {{i|Converter}}: Cannot use charges stored in Alabaster Box.
+* {{t|Devil's Crown}} / {{i|Satanic Bible}}: The extra Devil items will count as taking a deal, lowering Alabaster Box's payout.
+* {{c|Keeper}} / {{C|Tainted Keeper}}: Though Keeper cannot encounter Soul Hearts normally, it is possible to charge the Alabaster Box by having something that adds them directly to health, such as {{i|Schoolbag}} with {{i|Book of Revelations}} or {{i|Dream Catcher}}, purchasing soul hearts spawned by {{I|Keeper's Box}}, or playing in [[Co-op]] alongside someone not playing as Keeper.
+* {{c|Tainted Magdalene}}: Not recommended. If Tainted Magdalene has any soul hearts as health, then soul hearts will leak from the box, taking priority over soul health.
+* {{c|The Lost}} / {{c|Tainted Lost}}: Alabaster Box does not gain charges from Black Hearts. Soul Hearts still function as expected.
+* {{i|Magic Skin}} / {{i|Sumptorium}}: Will use Soul Hearts from the box before removing the ones in health.
+* {{t|Mother's Kiss}}: Taking this trinket as a character that can't use red hearts grants a Soul/Black Heart instead of giving it to Alabaster Box.
+* {{i|Schoolbag}}: Picked up Soul Hearts are consumed by Alabaster Box, even if it's in the second slot.
+* {{i|Sharp Plug}}: Takes up to 6 full hearts if possible without giving charge, even when having Soul Hearts.
+* {{P|XI - Strength}} and {{p|III - The Empress?}} cards apply a temporary charge on characters that can only use Soul/Black Hearts such as {{c|???}} or {{c|Tainted Judas}}.
+
+== In-game footage ==
+{{#ev:youtube|https://youtu.be/5kxbLJQYdaA}}
+
+== Trivia ==
+* [[anti:Alabaster Box|Alabaster Box]] originates from the ''Antibirth'' mod. In ''Antibirth'', the item was guaranteed to drop an eternal heart.
+* Alabaster Box is one of the three activated items, alongside {{i|Eden's Soul}} and {{i|Broken Glass Cannon}}, that:
+** Has no charges upon pickup.
+** Needs to be charged and disappears upon use.
+* Prior to patch [[v1.06.J813]], an Alabaster Box crafted from {{i|Bag of Crafting}} was immediately fully charged.
+* {{C|Tainted Eden}} can reroll into a fully-charged Alabaster Box.
+* The item is likely a reference to the anointing of Jesus - while He was in Bethany, a woman came to Him with an alabaster jar of very expensive perfume, which she poured on His head as He was reclining at the table.
+* In Biblical times, alabaster boxes were made of a rich marble-type stone called alabaster. Much like an alabaster jar or vial of perfume as mentioned in Mark 14, the perfume would be sealed inside. When the owner wished to use it, the seal or neck had to be broken so that it could be used.
+
+== Bugs ==
+{{Bug|dlc=nr+|Picking up {{e|Bone Heart}}s while at 12 hearts removes charges from the Box.}}
+
+{{nav|bethany unlock|the lamb unlock|fr=Boîte d'Albâtre}}

@@ -1,0 +1,80 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 261
+ | quote       = Short range mega tears
+ | description = Tears start out massive with high [[damage]], and then shrink down and become weaker over a short range.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+'''Proptosis''' is a passive [[item]].
+
+== Effects ==
+* {{dlc|nr}} Doubles Isaac's [[damage]] stat.
+* {{dlc|r}} +0.5 damage.
+* Tear size multiplier: 2x.
+* {{dlc|nr}} The tears shrink and lose damage the farther they travel.
+* {{dlc|r}} The tears shrink and lose damage the more time they stay airborne, starting at 3x damage at point blank range. After 0.8 seconds, they deal no damage at all.
+
+== Notes ==
+* {{dlc|nr}} Effective range of Isaac's tears now also depends on the damage, as they can shrink out of existence before their air time runs out.
+* {{dlc|r}} Since tears run out of damage after 0.8 seconds (48 frames), shot speed is the only stat that determines the effective range of Isaac's tears. Damage and range don't affect the travel distance at all.
+* {{dlc|r}} Approximately 2.08% damage is lost per frame. This means at approximately 0.53 seconds (32 frames) Isaac's tears will deal the normal amount of damage.
+* {{dlc|nr}} Tear size increasing items also increase the maximum distance before its disappearance, but the damage dealt can go below original at the extreme.
+* {{dlc|nr}} The damage decrease does not affect {{C|Azazel}}'s short-ranged {{i|Brimstone}} unless the range stat is ''extremely'' high.
+
+== Synergies ==
+* {{i|Anti-Gravity}}: The tears will not decrease in size or damage until they start moving, making this excellent against enemies that chase Isaac.
+** '''Anti-Gravity''' + {{i|Eye of the Occult}}: Lets Isaac maintain the full 3&times; damage multiplier while controlling his tears.
+** '''Anti-Gravity''' + {{i|Spoon Bender}}: Tears will move towards enemies while maintaining the full 3&times; damage multiplier, negating both the need to release tears and the power decrease with distance.
+* {{i|Brimstone}}: Retains the double damage effect without losing damage over range.
+** {{dlc|a}} Damage is doubled again for a total of 4x next to Isaac, but quickly drops further along the beam, at about 0.8x per tile of distance, reaching its minimum of 0.1 per tick roughly at 8 tiles.
+** {{dlc|r}} The beam does 6x damage at point blank range. 
+* {{i|C Section}}: Fetuses deal triple their usual damage (2.25× Isaac's damage) at point blank, but shrink and deal less damage over time.
+** '''C Section''' + {{i|Mom's Knife}}: The knives shrink along with the fetuses, but they retain their tripled damage.
+** '''C Section''' + {{i|Tech X|n}}: The rings shrink along with the fetuses, but they retain their tripled damage.
+** '''C Section''' + {{i|Technology}}: Although the laser's damage diminishes along with the fetus, it does not lose its damage over range.
+* {{i|Dr. Fetus}}/{{i|Epic Fetus}}: {{dlc|nr}} Doubles damage with no penalty for distance.
+** {{dlc|r}} Triples/quadruples damage respectively.
+* {{i|Godhead}}: The damaging halo shrinks with the tears.
+* {{i|A Lump of Coal}}: Proptosis scales with Isaac's damage while the Lump of Coal does not. At base damage, the Lump of Coal will approximately negate the damage lost over distance, but with increased damage, tears still do more damage up close.
+** '''A Lump of Coal''' + {{i|The Ludovico Technique}}: The controlled tear has full Proptosis damage buff, {{dlc|nr}} no matter how far it is from Isaac. {{dlc|r}} Very slightly decreases damage from far away.
+** {{dlc|r}} If the damage stat is extremely low through methods such as combining {{i|Soy Milk}} with {{i|20/20}}, it can cause the tear to gain Proptosis's triple damage while still having the tear grow from A Lump of Coal's effects.
+* {{i|Mom's Knife}}: The Knife damage is {{dlc|nr}} doubled ({{dlc|r}} tripled), regardless of range.
+* {{i|Polyphemus}}: Tears do massive damage and carry with leftover damage while still shrinking.
+* {{i|Technology}}/{{i|Technology 2}}: Doubles damage.
+** {{dlc|a}} The beam decreases in damage and width the farther it travels. Tears become virtually powerless across large rooms like the Boss Rush and the Hush fight, reaching its minimum of 0.1 roughly at 8 tiles.
+** {{dlc|r}} The beams do 6x damage at point blank range.
+* {{i|Tech X}}: Ring size and damage is substantially increased, but decreases as the ring travels further from Isaac.
+* {{i|Trisagion|a+nr}}: Base damage is doubled and beam damage is boosted to about 65%. Blasts lose no power as they travel further, though the tips of the blasts deal very slightly less damage.
+** {{dlc|r}} Damage slightly increased, beam damage is doubled. Blasts lose no power with distance.
+* {{I|Bird's Eye}}: Size and damage of fires is increased, but does not decrease with range.
+
+== Interactions ==
+* {{i|Athame}}/{{i|Maw Of The Void}}: The ring is much larger and deals 1.5&times; damage.
+** {{dlc|a+}} The ring deals normal damage.
+** {{dlc|r}} The ring is now normal size.
+* {{dlc|r}}{{i|Broken Watch|n}}: The speedup effect applies to tears and increases the effective range.
+* {{i|Compound Fracture}}/{{i|Cricket's Body}}/{{i|The Parasite}}: Tears will often disappear before they can burst. Tears created from bursts will also shrink, but due to their already low range, the difference may not be noticeable.
+* {{dlc|r}}[[Era Walk]] card/[[I'm Drowsy...]] pill/{{i|Stop Watch|n}}: The slowdown effect applies to tears and reduces the effective range of Proptosis.
+* {{i|Flat Stone}}: At base range and tear size, tears will bounce twice against the floor and then disappear.
+* {{I|Immaculate Heart}}: Tears that appear around Isaac disappear quickly.
+* {{i|Ipecac}}: Tears almost disappear completely but are still able to do massive damage.
+** {{dlc|r}} Tears no longer deal massive damage at the end of the arch. Damage decreases rapidly with range.
+* {{i|Isaac's Heart}} is a very good item to have, as you can run up to most enemies to deal maximum damage to them with little downside.
+* {{i|Lachryphagy}}: Tears disappear too quickly to be fed.
+* {{i|The Ludovico Technique}}: The closer the tear floats to Isaac, the larger it is. The farther away, the smaller it becomes.
+* {{i|Monstro's Lung}}/{{i|Lead Pencil}}: Tears will disappear at different distances depending on how big they were when fired.
+* {{i|My Reflection}}: Tears disappear before they can return to Isaac.
+* {{i|Pop!}}: Tears will disappear extremely quickly after being fired.
+* {{i|Saturnus}} The ring tears from Saturnus disappear nearly instantly upon entering a room.
+* {{i|Soy Milk}}: '''Very poor combination.''' Tears disappear nearly instantly in front of Isaac, decreasing his range and damage to nearly nothing.
+** {{dlc|r}} Tears no longer disappear instantly. Range is only minimally shorter.
+
+== In-game Footage ==
+{{#ev:youtube|t1FOr1HjhbU}}
+
+== Trivia ==
+* Eye proptosis is a condition resulting in forward displacement and entrapment of the eye from behind by the eyelids. The condition is also known as eye dislocation and eye luxation.
+
+{{nav}}

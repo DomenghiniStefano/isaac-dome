@@ -1,0 +1,26 @@
+{{infobox trinket
+ | name = Lucky Rock
+ | id = 15
+ | quote = There's something inside it
+ | description = {{dlc|nr}} [[Rocks]] and their variants drop 1 {{e|Penny}} when destroyed.<br/>{{dlc|r}} [[Rocks]] and their variants have a 33% chance to drop 1 {{e|Penny}} when destroyed.
+ | unlocked by = Lucky Rock
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* {{dlc|nr}} [[Rocks]] and their variants drop 1 {{e|Penny}} when destroyed.
+* {{dlc|r}} [[Rocks]] and their variants have a 33% chance to drop 1 {{e|Penny}} when destroyed.
+
+== Synergies ==
+* {{dlc|rnr+}} {{A|Golden Trinket|n}} / {{i|Mom's Box|n}}: Chance for rocks to drop pennies is multiplied.
+** {{dlc|r+}} Having either has the same chance to drop 2 pennies at once. Having both the same chance to drop 3 pennies at once.
+
+== Notes ==
+* The spawned coin is always a regular penny; it cannot be a (sticky) {{E|Nickel}}, {{E|Dime}}, or {{E|Lucky Penny}}.
+* Coins from obstacles are dropped from any source that destroys them, including enemies such as the {{E|Roundy}}.
+
+== In-game Footage ==
+{{#ev:youtube|GT06ow-Tv4Q||inline}} {{#ev:youtube|_U8NV1gUVs8||inline}}
+
+{{nav|fr=Caillou Porte-Bonheur}}

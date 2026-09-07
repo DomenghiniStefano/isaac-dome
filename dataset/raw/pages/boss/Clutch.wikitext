@@ -1,0 +1,61 @@
+{{Infobox boss
+ | dlc         = r
+ | name        = Clutch
+ | id          = 921
+ | environment = <u>Boss</u><br>{{floor|Ashpit}}<br>{{room|boss challenge}}
+ | base hp     = 500
+ | pool        = {{ip|Boss}}<br>{{dlc|r+}} {{i|Astral Projection}} (1% chance)
+}}
+
+'''Clutch''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' (update [[v1.7.8]]) that appears in the {{s|Ashpit}}.
+
+== Behavior ==
+=== Phase 1 ===
+Clutch always spawns alongside 3 {{e|Clickety Clack}}s that it utilizes in its attacks. Phase 1 uses the following pattern:
+* Randomly possesses one of the three Clickety Clacks, causing its head to spin and shoot 8 bone shots in the cardinal and ordinal directions. While possessing a Clickety Clack, Clutch is immune to all damage.
+** Clutch will swap between Clickety Clacks at random intervals, or when the Clickety Clack he is possessing is killed. It can be briefly damaged when it is flying between Clickety Clacks.
+** The possessed Clickety Clack will pursue Isaac and fire chains of bone projectiles at him when lined up in a cardinal direction, similar to a {{e|Bony}}, but will also move along a cardinal axis to stay in line with Isaac' position while shooting.
+** The other non-possessed Clickety Clacks will be shielded, akin to the shield from a {{E|Bishop}}.
+* When a Clickety Clack is killed, the bone pile it leaves behind will not regenerate. Instead, it will spawn a small purple fire that occasionally summons a bone projectile on its position before shooting it at Isaac, similarly to a {{e|Necro}}.
+* When all three Clickety Clacks are killed, Clutch will be forcefully ejected and stunned, making it open to attack.
+** After enough damage is dealt, Clutch will scream and revive all three Clickety Clacks, restarting the process.
+
+=== Phase 2 ===
+Phase 2 begins once Clutch reaches 25% health. Clutch will scream, destroy all of the Clickety Clacks, and spawn bone orbitals that orbit Clutch and block tears.
+* The bone orbitals follow Clutch loosely, dragging behind its movements.
+* Indestructible purple fires will be left in the wake of the dead Clickety Clacks.
+In this phase, Clutch will only perform the following attack:
+* Rushes to Isaac's position in the room, stops, and shoots six volleys of six purple flames, in an alternating pattern.
+** Clutch repeats this attack until its health is depleted.
+* Upon death, Clutch creates a large explosion that deals 4 ticks of 80 damage to all monsters.
+
+== Gallery ==
+<gallery>
+File:Boss Clutch Phase 2.png|Clutch in its second phase.
+File:Clickety_Clack_Clutch.png|A Clickety Clack possessed by Clutch.
+</gallery>
+
+== Notes ==
+* If  {{i|Eraser}} is used on Clickety Clacks prior to entering the boss room, the boss fight will begin directly in the second phase.
+* If all the Clickety Clack bone piles are destroyed in Clutch's first phase through items such as {{i|Euthanasia}} or {{p|Chaos Card}}, it will automatically be forced into its second phase but without the purple fire places or bone orbitals.
+* Clutch can be killed at 50% hp using {{i|Vade Retro}}.
+* {{i|Vanishing Twin}} spawns a second Clutch in its second phase as there are not enough Clickety Clacks.
+* {{I|Flush!}} will convert all Clickety Clacks into poop, immediately starting the second phase.
+* Items like {{i|Uranus}} and {{i|Freezer Baby}} allow the Clickety Clacks to be frozen and destroyed, giving an easier time with the battle.
+* The {{i|D10}} will downgrade the Clickety Clacks into Globins and start the second phase.
+* Using {{i|Meat Cleaver}} isn't recommended until the second phase of the fight, as it will also split the invulnerable Clickety Clacks.
+
+== Trivia ==
+* Clutch was originally [[Cut Content|unused content]] in the release version of Repentance. It had unfinished behavior and could not be encountered in-game, but it could be spawned using the [[Debug Console]] and had room designs. This early version of Clutch could possess more than one Clickety Clack at a time, and the Clickety Clacks were always vulnerable to damage. In its second phase, it also shot standard blood shots instead of purple flames, and did not explode upon death. The boss was finished and added into the game properly in V1.7.8.
+** Prior to release it also went by the name "The Possessor".
+* On the patch notes for the [[V1.7.8]] update, this boss was referred to as "Something Spooky."
+* Clutch shares some sound effects from {{E|Polycephalus}}, with some seeming to be altered.
+
+== Bugs ==
+{{bug|If a Clickety Clack is killed (e. g. with {{i|Euthanasia}}) just as Clutch decided to swap to it (and before the boss reaches it), Clutch will charge at the bone pile, seemingly trying to posess it. The boss will stay in this state until its health is reduced below 25% or all Clickety Clarks' bone piles are destroyed, including the one the boss is charging at.}}
+
+{{nav|boss|fr=Le Marionnettiste}}
+
+[[Category:Chapter 2.5 bosses]]
+[[Category:Ashpit bosses]]
+[[Category:Debut bosses in Repentance]]

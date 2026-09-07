@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 445
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = Bark at the moon!
+ | description = +0.3 [[damage]], +0.1 [[speed]]. Plays a howl or bark sound when entering a room with undiscovered {{R|Secret Room}}s or {{R|Crawl Space}}s.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* +0.3 [[damage]].
+* +0.1 [[speed]].
+** {{dlc|nr}} Also affects maximum speed (may never exceed 2.0).
+* When entering a room connected to an undiscovered {{R|Secret Room}} or {{R|Super Secret Room}}, a howl sound effect will play.
+* A barking sound will play if there is an undiscovered {{R|Crawl Space}} in the room.
+
+== Notes ==
+* A sound won't play in the first room of a new floor until you re-enter the room.
+* An extra Crawl Space added by {{t|Stud Finder}} will not trigger the sound.
+
+== Sounds ==
+{{sound table header}}
+{{sound table row | [[File:DogHowl.wav]] | Plays when an undiscovered (Super) Secret Room is adjacent to the current room. }}
+{{sound table row | [[File:DogBark.wav]] | Plays when an undiscovered Crawl Space is in the current room. }}
+|}
+
+== In-game Footage ==
+{{#ev:youtube|vbrxNJ3PtbQ}}
+
+== Trivia ==
+* The pickup quote appears to refer to the way the game associates Moon with secrets, with {{p|XVIII - The Moon}} teleporting to secret rooms and {{t|Fragmented Card}} being a torn Moon card that spawns extra secret rooms.
+* "Bark at the moon!" could also be a reference to the song and album made by Ozzy Osbourne.
+
+{{nav|fr=Dent de Chien}}

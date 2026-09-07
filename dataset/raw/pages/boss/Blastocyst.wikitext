@@ -1,0 +1,64 @@
+{{infobox boss
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{room|Boss Rush}}<br>{{dlc|r}}<br>{{floor|Womb}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Degraded Boss</u><br><u>Small</u><br>{{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br><u>Medium</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Chest}}{{floor|Dark Room}}<br><u>Large</u><br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = {{dlcalt|190|r=300}}
+ | id          = 74
+ | pool        = {{ip|Boss}}<br> {{i|Lil Spewer|r+}} (1% chance)
+}}
+
+'''Blastocyst''' is a [[boss]] that can appear:
+* {{dlc|nr}} In all environments of [[Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}).
+* {{dlc+|r}} Only in the {{s|Womb}} and the {{s|Scarred Womb}}.{{dlc-}}
+The large Blastocyst has {{dlc|nr}} 190 HP / {{dlc|r}} 300 HP, the medium forms have 75 HP, and the small forms have 30 HP.
+
+== Behavior ==
+Makes hops towards Isaac and can perform the following attacks:
+* If Isaac is close it, hops in place and upon landing:
+** {{Dlc|nr}} Shoots 8 projectiles in all directions.
+** {{Dlc|r}} Sends out a burst of large disorganized projectiles in all directions.
+* If Isaac is far away it, leaps off-screen and lands on Isaac's position; upon landing:
+** {{Dlc|nr}} Shoots 12 small projectiles in all directions.
+** {{Dlc|r}} Shoots 8 larger projectiles in all directions.
+* Once enough health is depleted, it splits into two medium versions of itself that continue to hop after Isaac. Medium Blastocysts only hop after Isaac if he is within a certain distance from them. Otherwise, they hop around randomly.
+** Each medium form shoots 6 projectiles in all directions by hopping in place. The orientation of the projectiles depends on Isaac's position.
+* Once enough health is depleted, each medium Blastocyst splits into two small versions. Small Blastocysts no longer hop after Isaac and only hop around randomly.
+** Each small form shoots 4 projectiles in the cardinal directions after pausing for a moment.
+* Each of these small Blastocysts leaves an {{e|Embryo}} behind upon defeat.
+Blastocyst's large and medium forms deal a whole heart of contact damage.
+
+== Gallery ==
+<gallery>
+File:Boss Blastocyst Medium ingame.png|Medium Blastocyst's appearance.
+File:Boss Blastocyst Small ingame.png|Small Blastocyst's appearance.
+File:Boss Delirium Blastocyst ingame.png|{{dlc+|a+}} Blastocyst as one of {{e|Delirium}}'s forms.{{dlc-}}
+</gallery>
+
+== Notes ==
+* Blastocyst can be encountered in groups consisting of:
+** 1 large Blastocyst and 2 small Blastocysts.
+** 1 large Blastocyst and 6 Embryos.
+** 2 medium Blastocysts and 2 small Blastocysts.
+* The medium and small Blastocysts' projectiles deal full heart damage regardless of chapter.
+
+== Trivia ==
+* Blastocyst appeared in the original ''The Binding of Isaac''.
+* An embryo is called a blastocyst when the differentiation of cells within a morula finally begins, usually 4–5 days after the fertilization of an embryo.
+* It's likely that this boss is a reference to the main character of ''Viviparous Dumpling'', one of Edmund McMillen's older games.
+* Blastocyst's behavior is very similar to {{e|Monstro}}'s.
+* As Blastocyst divides, its positive facial expressions will become less happy, losing its smile entirely when it becomes an Embryo.
+* If Blastocyst is killed on spikes, none of the smaller versions will spawn. This can also apply if a very large amount of damage is dealt very quickly to any of the phases.
+** {{dlc|na+}} This can also happen if Blastocyst is killed while still having a debuff that actively harms it (e.g. poison, fire).
+* Upon killing Blastocyst, it seems as though, for a split second, an audio clip of someone's voice can be heard. Which can be easier to make out with the music turned off.
+* {{dlc+|a+}} During the [[Afterbirth+]] expansion's release, an unfair room consisting of 8 Blastocysts with a {{e|Portal}} in the middle existed in all environments of Chapter 4 as a result of unintentionally placed full-sized ones rather than small ones. It was acknowledged by [https://twitter.com/edmundmcmillen/status/816682664312700928 Edmund McMillen on Twitter] and was fixed shortly after.{{dlc-}}
+* {{Dlc|r}} Blastocyst's intro animation where it drops in from the ceiling from the original game has been restored and it has new animations for when it divides.
+* It is the only boss whose smaller variants can be encountered long before encountering the boss, as small Blastocysts can appear as early as Chapter 1.
+
+== Bugs ==
+{{Bug|dlc=r|Blastocyst will briefly appear as the largest form before splitting into smaller ones, regardless of which form was killed.}}
+
+{{nav|boss|fr=Blastocyste}}
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

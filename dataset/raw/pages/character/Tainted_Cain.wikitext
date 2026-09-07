@@ -1,0 +1,153 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc         = r
+ | id          = 23
+ | health      = {{hearts|red=2}}
+ | damage       = 3.5 (*1.20)
+ | range        = 4.5
+ | speed       = 1.30
+ | pickups     = 1 [[key]]<br>{{i|Bag of Crafting}}
+ | unlocked by = The Hoarder
+}}
+'''Tainted Cain''' is a [[Characters|character]] added in [[The Binding of Isaac: Repentance]]. He is the alternate version of {{c|Cain}}. Tainted Cain is unlocked by reaching {{s|Home}} and using either the {{I|Red Key}} or the {{P|Cracked Key}} to access a special room in one of the walls while playing as Cain. {{P|Soul of Cain}} cannot be used due to its unlock method involving Tainted Cain. He has an identical appearance to Cain, with the exception of a giant bloody wound behind his left eyepatch.
+
+Tainted Cain starts with 2 heart containers, 1 key, and the {{i|Bag of Crafting}} in the consumable slot.
+
+== Notes ==
+* Tainted Cain can't obtain items through any means other than the Bag of Crafting, and attempting to take an item from a pedestal will reduce it to an assortment of [[pickups]].
+* The pickups dropped are dependent on what type of room the item was touched in; Items touched in {{R|Secret Room}}s will drop {{e|Bone Heart}}s, {{R|Curse Room}}s will create {{e|Rotten Heart}}s, {{R|Planetarium}}s will spawn [[File:Rune1.png]] [[Rune]]s, {{R|Devil Room}}s/{{R|Angel Room}}s will cause items to generate {{e|Black Heart}}s/{{e|Eternal Heart}}s, {{dlc|r+}} and items from {{R|Ultra Secret Room}}s will drop [[File:Pickup Cracked Key icon.png]] [[Cracked Key]]s respectively. Crafting an active item when already holding one will also transform the old active item into random consumables instead of dropping it.
+* Almost all crafting recipes are seeded and are random per run.
+* The order of the ingredients does not matter.
+* {{e|Half Red Heart}}/{{e|Half Soul Heart}} counts as one heart in terms of crafting.
+* {{e|Blended Heart}} counts as one red heart plus one soul heart.
+* {{e|Double Bomb}}s, {{e|Double Heart}}s, and {{e|Double Penny|text=Double Pennies}} count as two of the individual item rather than being distinct items.
+* {{e|Lucky Penny|text=Lucky Pennies}} and {{e|Golden Penny|text=Golden Pennies}} are distinct from both themselves and from {{e|Penny|text=Pennies}}.
+* {{e|Charged Key}}s are distinct from {{e|Key}}s.
+* If a mod is installed and enabled that adds new items in any form, the Bag of Crafting's recipes shift entirely to accommodate for their presence. This renders guides on exact recipes inaccurate.
+* Items related to story plots are not affected and can be taken as normal, including:
+** {{i|The Polaroid}}
+** {{i|The Negative}}
+** {{i|Key Piece 1}}
+** {{i|Key Piece 2}}
+** {{i|Broken Shovel 1}}
+** {{i|Broken Shovel 2}}
+** {{i|Mom's Shovel}}
+** {{i|Dad's Note}}
+** {{i|Dogma}}
+** {{i|Knife Piece 1}}
+** {{i|Knife Piece 2}}
+* Items are not removed from [[Item Pool|item pools]] upon being turned into pickups, nor from being successfully crafted. However, seeing an item still applies weight decrementation.
+* Items that cannot be crafted include:
+** {{I|Cube of Meat}}
+** {{I|Ball of Bandages}}
+** {{I|Head of Krampus}}
+** {{I|A Lump of Coal}}
+** {{I|A Pony}}
+** {{I|White Pony}}
+** {{I|Bag of Crafting}}
+** Other items that exclusively drop from specific bosses or machines.
+** {{I|Broken Glass Cannon}}
+** {{I|Recall}} and {{I|Hold}}.
+* As with his regular counterpart {{c|Cain}}, Tainted Cain can only shoot tears from his right eye, and as such shares all the same item interactions.
+
+== Strategy ==
+As Tainted Cain has "No Destiny", he must create his own with the Bag of Crafting. While it is tempting to place pickups like coins and health into the Bag of Crafting as soon as they are encountered, this will likely only lead to the creation of lower-quality items. Tainted Cain rewards players who use lower-valued pickups in a way that helps them obtain higher-valued ones in order to craft powerful items.
+* It is strongly advised to unlock most if not all [[pickups]] prior to playing Tainted Cain. High-tier items become much harder or even impossible to craft without certain unlockable pickups, such as {{e|Bone Heart}}s.
+* Many alternate ways of getting pedestal items, such as {{R|Shop}}s or {{R|Devil Room}}s, become irrelevant or outright detrimental when playing as Tainted Cain. Taking a Devil Deal only has the immediate benefit of dropping {{e|Black Heart}}s, which in general are more beneficial to find through other means, such as {{R|Curse Room}}s. As such, it is often more beneficial to skip the first Devil Room and instead potentially get free materials from a later Angel Room.
+** Shop items can still be purchased by swiping them up with the Bag of Crafting, making them a consistent source of more remarkable ingredients.
+* Cards (and pills) may want to be checked for their effects before having them put in the Bag of Crafting, as a few may be more beneficial to use as themselves than to use as part of a recipe.
+* It may be effective to leave room rewards and pedestal item drops for a later time, then return to craft items out of the more expensive materials once more are gathered.
+* Items across pits and rocks that would otherwise require resources or would be unobtainable can usually be grabbed by the Bag of Crafting's swing range.
+* It is possible, with the crafting of 4x [[R Key]]s, to get every [[Completion Marks|Completion Mark]] in a single run, except the ones for [[Greed Mode]].
+
+== Item Interactions ==
+=== Helpful Items ===
+* {{i|Abyss}} / {{i|Void}} / {{p|Black Rune}}: Allows Tainted Cain to receive immediate benefits from pedestal items by absorbing them.
+* {{i|Birthright}}: Doubles the number of pickups each pedestal item turns into, practically doubling the number of items that Tainted Cain can craft on each floor.
+** In Greed Mode, purchasing an on-sale item over and over while having Birthright results in almost infinite consumables.
+* {{I|Death Certificate}}: Tainted Cain ''is'' able to pick up items found in the abandoned rooms without causing them to explode into pickups. This allows Tainted Cain to utilize Death Certificate to its full potential.
+* {{i|D4|nr+}}: D4 allows Tainted Cain to craft items regardless of quality and, as long as he still has D4, reroll them into potentially better quality items that would have been more expensive to craft.
+** Similar item rerolling effects such as those granted by {{i|D100}} or {{r|Dice Room}}s can also be beneficial for similar reasons.
+* {{t|Safety Scissors}} can be used in conjunction with bombing Bomb Bums or farming Bombgaggers to gain infinite low-value pickups, or in the case of Bombgaggers, infinite quality 4 items.
+* {{i|Genesis}}: Tainted Cain can craft dozens of low-quality passive items and then use Genesis to gain much better items.
+* {{i|Libra}}: Allows for Tainted Cain to craft lower level stat ups, such as range and speed ups to give a small all stats boost.
+Managing to create items or finding [[trinkets]] that increase agency over pickups can greatly improve a run:
+* {{I|Duality}}: Provides much more freedom to utilize black hearts and eternal hearts as you see fit, especially when combined with {{I|Goat Head}} or {{I|Eucharist}}.
+* {{i|D20}}: Allows Tainted Cain to reroll massive amounts of pickups into more helpful ones or even into chests, which contain extra pickups.
+* {{i|Mitre}}: Makes it much more likely to find valuable soul hearts, which can be used to craft equally valuable items.
+* {{I|Moving Box}}: Permits more control over desired pickups. By putting a pedestal item in the box and placing it back down inside a special room, you can guarantee the pickup(s) associated with that room. This eliminates the need to constantly be spending resources crafting new active items, but requires a 4-room recharge between uses.
+* {{I|Options?}}: While trying to swipe both given pickups with the Bag of Crafting at the same time is impossible, Options? allows for a much greater variety of ingredients.
+* {{I|Sacred Orb}}: Makes it so you can't craft low-quality items, effectively making the creation of more valuable items easier. However, it also changes the recipes, so this might be detrimental if you have already noted down some valuable recipes.
+** {{t|NO!}}: If combined with {{I|Mom's Box}} or its [[Golden Trinket|golden]] counterpart, prevents items with 0 [[Item Quality|quality]] from being crafted. Doesn't prevent the creation of active items.
+* {{i|Portable Slot}}: Has a guaranteed crafting recipe of 8 pennies across all seeds. Can be used as a way to mill off coins in exchange for other pickups, creating a large amount of pickups in a single room for manipulation.
+** {{i|Schoolbag}}: allows for the player to carry an Active Item they intend to use, as well as an Active Item to turn into materials.
+
+This applies to items and trinkets that expand the number of pickups generated throughout the run as well:
+* {{T|Black Lipstick}} / {{t|Mom's Pearl}} / {{T|Bible Tract}}:  Increases the chance of getting Black, Soul or Eternal Hearts, granting easier access to stronger items.
+* {{T|Butter!}}: Using your active item drops it on the ground as a pedestal which can then be converted into pickups. Works well with {{i|Portable Slot}} for farming pickups in special rooms.
+* {{T|Safety Scissors}}:  Allows for more bombs to be picked up, and can be used to generate infinite bombs if a {{M|Bomb Bum}} is encountered.
+* {{I|Broken Modem}} / {{I|Contract From Below}}: Can give substantially more pickups from room clears if crafted early.
+* {{I|Diplopia}} / {{P|Jera}} / {{I|Crooked Penny}}: (Can) Double all pickups in a single room.
+** Jera can be paired with {{I|Clear Rune}} for a more sustainable method of cloning pickups.
+* {{I|D1}}: Can be used to create another variant of a pickup.
+** D1 Synergizes extremely well with battery items such as {{I|9 Volt}} or {{I|Car Battery}}, the latter of which when paired with a Battery pickup can generate infinite Batteries.
+* {{i|Scapular}}: Gives a soul heart whenever damage reduces Tainted Cain to half a heart of health. Can be used repeatedly by leaving and re-entering a room, allowing for infinite items if paired with {{i|Piggy Bank}}, {{i|Fanny Pack}}, or {{i|Old Bandage}}.
+* {{I|Sworn Protector}}: Allows for repeated generation of {{e|Eternal Heart}}s through blocking enemy projectiles, which allow crafting high quality {{R|Angel Room}} items.
+* {{i|Everything Jar}}: Produces a number of useful pickups for crafting, in particular {{e|Golden Bomb}}s, {{E|Gold Heart}}s and {{e|Golden Key}}s which are harder to find. Furthermore, the gold bombs and keys allow Tainted Cain greater access to further resources without needing to expend normal bombs and keys.
+* {{I|Glitter Bombs}}: Produces more pickups, especially if combined with {{I|Dr. Fetus}}, {{I|Epic Fetus}}, or {{I|Number Two}}.
+* {{i|Sack Head}}: Increases the amount of pickups from almost all sources.
+* '''Sacks''' (eg; {{I|Sack of Pennies}}, {{I|Mystery Sack}}, {{I|Rune Bag}}): Reliable sources of a particular pickup type.
+* {{i|Clicker}}: Transforms Tainted Cain into another tainted character. This allows for easy completion marks as {{C|Tainted Lost}}, especially since {{i|Holy Mantle}}, {{i|Dead Cat}}, and {{i|Gnawed Leaf}} can be crafted before transforming. If {{i|Lazarus' Rags}} or {{i|Ankh}} is activated while Clicker is held, it can be used to transform into non-tainted characters as well.
+* {{i|False PHD}}: Can generate Black Hearts from pills, granting easier access to stronger items.
+
+The [[Diplopia#Synergies|Diplopia synergies]] can be easy to pull off: instead of using Diplopia, Tainted Cain can simply craft an item repeatedly using the same combination of pickups.
+
+There are some items not shown on the Diplopia page that can also be useful for Tainted Cain to craft repeatedly:
+* An item that contributes to a [[Transformations|transformation]] can be crafted 3 times to complete the transformation.
+** Low-quality items such as{{i|Best Bud}} and {{i|Obsessed Fan}} will be easy to craft with low-quality pickups, making the {{tf|Beelzebub}} transformation easy to acquire.
+** The {{tf|Guppy}} transformation can be achieved by using {{e|Rotten Heart}}s to repeatedly craft a [[Curse Room (Item Pool)|curse room item]] such as {{i|Guppy's Tail}}.
+* {{i|Rosary}}: Gives 3 {{e|Soul Heart}}s and a Tears Up every time it's crafted, and it contributes to {{tf|Seraphim}}. Unlike other characters, adding {{i|The Bible}} to all item pools doesn't bother Tainted Cain at all.
+* {{i|Dad's Lost Coin}}: Generates a {{E|Lucky Penny}}, which can be used for more expensive recipes.
+* {{I|Mama Mega!}} is very expensive, but can be used to force entry into {{R|Boss Rush}} and {{s|???}}. Due to how slow and methodical Tainted Cain typically is, this item can be incredibly useful for obtaining completion marks.
+** {{e|Golden Bomb}}s are easier for Tainted Cain to obtain, possibly allowing multiple uses of the item.
+** {{dlc|r+}} {{I|Mega Bean}} acts as a reusable one-room Mama Mega!, and due to its lower quality it's much cheaper to craft.
+* {{i|R Key}}: allows for Tainted Cain to continue a run almost indefinitely if crafted repeatedly, potentially earning every Completion Mark outside of [[Greed Mode]] in a single run.
+** {{dlc|nr+}} Defeating {{E|The Beast}} or {{E|Mega Satan}} will end the game before you can use R Key (unless the Gateway to the Void spawns after the Mega Satan fight).
+** {{dlc|r+}} The Gateway to the Void is now guaranteed to spawn after defeating {{E|Mega Satan}}, making it 100% possible to earn every Completion Mark in one run, if you defeat The Beast last.
+
+=== Unfavorable Items ===
+* {{i|Bum Friend}}, {{i|Dark Bum}}, {{i|Key Bum}}, {{i|Bumbo}}: will require intense micromanagement so they don't take essential materials and foil plans. Coins, red hearts, and keys may still prove to be useful even in harder recipes.
+** That said, if red hearts are not a concern for Tainted Cain, then {{i|Dark Bum}} can be a reliable source of black hearts, allowing him to craft [[Devil Room (Item Pool)|Devil Room items]] more easily.
+* {{I|Humbleing Bundle}} and {{I|BOGO Bombs}}: May sound good for Tainted Cain in theory, but in practice will make it much harder to craft items precisely. Double pickups will yield 2 of the associated crafting ingredients, which can lead to frustrating situations if a recipe specifically calls for 1 of a particular pickup.
+** {{T|Equality!|nr+}} also somewhat suffers from this, although it may be dropped and its effects are easy to deliberately cancel.
+* {{i|Magneto}}: Can prove troublesome as it will cause pickups to coalesce and be pulled towards Tainted Cain, making it quite difficult to craft items precisely without grabbing unnecessary resources or picking them up.
+* [[Range]] up items and effects: Offset the hitbox of the Bag of Crafting's swing. Can make it easier to grab pickups from long distances, but may also make it more difficult to collect desired pickups without accidentally swiping up nearby ones.
+** {{i|Tiny Planet}} in particular will cause the Bag of Crafting's swing to occur a severe distance from Tainted Cain.
+* {{i|Magic Skin}}: Turns hearts into [[Health#Broken Hearts|broken heart container]] and some pickups, limiting your maximum health for very little reward.
+* {{i|The D6}}, {{i|Eternal D6}}, {{i|Spindown Dice}}, {{i|There's Options}}, {{i|More Options}}, {{I|Glitched Crown}}: Serves no purpose outside of multiplayer without {{i|Clicker}} due to Tainted Cain's ability (unless, in the case of the Dice items, you don't need plot items and want to turn them into pickups).
+* {{i|Little Baggy}}/{{i|Starter Deck}}: Prevents cards or pills respectively from spawning, limiting crafting options.
+* {{i|Chaos}}: May sound good for Tainted Cain in theory, but is actually useless as pickups dropped from items are defined by the room they spawn in, not the pool.
+
+== Unlockable Items ==
+{{achievement text | Gilded Key, Wheel of Fortune, Soul of Cain, Gold Pill, Bag of Crafting, Lucky Sack, Blue Key }}
+
+== Gallery ==
+<gallery>
+File:Transition Cain Tainted.png|Tainted Cain's transition screen portrait.
+File:Start_Tainted_Cain.png|The spawn floor when playing Tainted Cain.
+File: Tainted Cain Menu Icon (Locked).png|Tainted Cain's locked character icon, depicting a closet door with a large lock on it.
+</gallery>
+
+== Trivia ==
+* The achievement for unlocking Tainted Cain is "The Hoarder", a possible title for the character.
+* Tainted Cain's description of "No Destiny" on the character selection screen implies that "Destiny" is the designated items set to appear every time in a random seed.
+** This is backed by the description of {{I|The D6}}, being "Reroll your destiny".
+* Tainted Cain's inability collect items normally may reference Biblical Cain's curse that he may not "farm the land".
+* Defeating {{E|Ultra Greedier}} as Tainted Cain unlocks {{P|X - Wheel of Fortune?}}, a reversed Major Arcana card associated with increase and superfluity. This is likely a deliberate choice, as it parallels Tainted Cain's gameplay featuring a dramatic excess of pickups.
+* Tainted Cain's Bag Of Crafting was originally planned by Edmund to "collect" enemy projectiles to shoot a bigger projectile back at them, then was changed to the crafting mechanic.
+
+== Bugs ==
+{{bug|dlc=nr+|In Co-Op mode, if Tainted Cain takes an item from the boss pedestal, he will take every other unclaimed item at once.}}
+{{bug|If you have {{i|Car Battery}} and you try to use an active item while you are using the {{i|Bag of Crafting}}, Car Battery will not work.}}
+
+{{nav|character|cain unlock|tainted cain unlock|fr=Caïn Impur}}

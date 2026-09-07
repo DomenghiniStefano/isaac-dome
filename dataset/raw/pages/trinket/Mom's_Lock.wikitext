@@ -1,0 +1,26 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 153
+ | quote       = A piece of her love
+ | description = Grants the effects of a random [[Item Tags mom#Passive Collectibles|Mom item]] each room.
+ | tags        = {{dlc|nr+|mom}}
+ | unlocked by = Mom's Lock}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Has a 25% chance to grant the effects of a random passive [[Item Tags mom#Passive Collectibles|Mom item]] each room.
+
+== Notes ==
+* The trinket can't give the effect of {{i|Mom's Coin Purse}} or {{i|Mom's Purse}}.
+* The trinket can give the effect of a Mom item Isaac already has.
+* Mom's Lock doesn't count towards {{tf|Yes Mother?}}, no matter the effect.
+* The items chosen by the trinket won't grant [[health]] or spawn [[pickup]]s/consumables.
+
+== Synergies ==
+* {{a|Golden Trinket}} / {{i|Mom's Box}}: Each copy increases the chance for activation to 50%, further copies to 100%.
+
+== Bugs ==
+{{bug|dlc=nr+|Mom's Lock will not contribute to the Yes Mother? transformation nor unlocking {{i|Mom's Contacts}} despite having the item tag.}}
+
+{{nav|mom|tainted isaac unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Mèche de Maman}}

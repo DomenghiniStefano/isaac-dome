@@ -1,0 +1,46 @@
+{{infobox passive collectible
+ | dlc           = a
+ | costume scale = 1/3
+ | id            = 350
+ | quote         = Mass poison
+ | description   = Upon entering a room, [[Status Effects#Poison|poisons]] all enemies, dealing double Isaac's [[Damage|tear damage]]. Killing enemies leaves a small, short-lasting pool of [[Creep#Green Creep|green]] [[creep]] on the ground.
+ | quality       = 3
+ | tags          = summonable offensive
+}}
+{{distinguish visual|Contagion}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Upon entering a room, creates a green fog effect and all enemies are [[Status Effects#Poison|poisoned]].
+** {{dlc|nrr+}} The poison ticks 2 times.
+** {{dlc|rnr+}} The poison ticks 4 times on normal enemies and 2 times on bosses (likely a bug).
+* Killing enemies leaves a small, short-lasting pool of [[Creep#Green Creep|green]] [[creep]] on the ground.
+** The creep deals 1 damage per tick or 30 damage per second.
+
+== Notes ==
+* High tear damage will cause this item to become very powerful for rooms with a lot of enemies, since they can die instantly and render the room harmless.
+* Enemies which spawn after the first few seconds of each room are not affected by this item, e.g. Flies spawned from a {{E|Mulligan}} dying.
+* Enemies that spawn with some form of invulnerability such as {{E|Host}}s, {{E|Wizoob}}s, or {{E|Needle}}s are not affected by this item.
+* The poison effect only activates upon entering a room and not at the start of a wave. In {{R|Boss Rush}} and most of [[Greed mode]], the item will not poison enemies.
+* If Toxic Shock is picked up in the middle of a room with enemies, the mass poison will occur immediately.
+
+== Synergies ==
+* {{T|Second Hand|r}}: Extends the poison duration, allowing it to tick 6 times on normal enemies and 4 times on bosses.
+
+== Interactions ==
+* {{i|Toxic Shock}}: Doesn't stack
+* {{i|Red Stew}}: High damage stat makes {{i|Toxic Shock}} clear most rooms instantly, making Red Stew's damage up last almost indefinitely.
+* {{dlc|r}} [[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s don't leave creep.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop don't leave creep.
+* {{dlc|rnr+}} [[Freeze|Freeze Effects]]: Enemies that are frozen don't leave creep.
+** {{dlc|r+}} Frozen enemies do leave creep.
+
+== In-game Footage ==
+{{#ev:youtube|BCeRVlX4g5s}}
+
+== Trivia ==
+* {{i|Contagion}} is a recolor of its sprite.
+* [[wikipedia:Toxic shock syndrome|Toxic Shock]] is a rare, but extremely serious and deadly condition caused by [[wikipedia:Staphylococcus aureus|Staphylococcus Aureus]] bacteria releasing toxins in the bloodstream.
+
+{{nav|fr=Choc Toxique}}

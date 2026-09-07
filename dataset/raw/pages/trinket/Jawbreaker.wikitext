@@ -1,0 +1,29 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 129
+ | quote       = Don't chew on it
+ | description = Adds the chance to fire teeth that deal 3.2× damage; mechanically identical to the passive item {{i|Tough Love}}.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* Adds a chance to shoot a tooth instead of a tear, which deals ×3.2 Isaac's [[damage]].
+
+== Notes ==
+* The chance to fire a tooth depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 10 - \left \lfloor \mathit{Luck}  \right \rfloor}</math><ref>[https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing|The Binding of Isaac Item Trigger Testing]</ref>
+** At base luck (0), the chance is 10%, maxing out at 100% at 9 luck.
+* This trinket is identical in function to {{i|Tough Love}}, so all interactions with that item apply to this trinket as well.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: At base luck, having either increases the chance to 20% and having both to 33%.
+* {{i|Tough Love}}: Activation rates are individually applied to each tear, effectively allowing for higher amounts of teeth.
+
+== Trivia ==
+* [[anti:Jawbreaker|Jawbreaker]] originates from the ''Antibirth'' mod, and by extension, from the ''Community Remix'' mod for the flash version.
+** In ''Community Remix'', it was named ''The Jaw Breaker''.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Boule de Mammouth}}

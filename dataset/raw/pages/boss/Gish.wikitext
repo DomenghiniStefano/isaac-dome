@@ -1,0 +1,50 @@
+{{infobox boss
+ | id          = 43
+ | variant     = 1
+ | environment = <u>Boss</u><br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|The Void}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Degraded Boss</u><br>{{floor|Dark Room}}
+ | base hp     = 632.5
+ | pool        = {{i|Little Gish}}
+ | unlocked by = Something Sticky
+}}
+
+'''Gish''' is a [[boss]] that can appear in the {{s|Depths}} and the {{s|Dank Depths}}.
+
+== Behavior ==
+* Makes short hops towards Isaac, similar to {{e|Monstro}}.
+* Fires a black {{i|Ipecac}} shot towards Isaac, leaving a large puddle of [[Creep#Black Creep|Black Creep]] on impact.
+* Leaps off-screen and lands on Isaac's position twice in a row, similar to {{e|Monstro II}}.
+** Leaves a large puddle of Black Creep on his first landing.
+*** The Black Creep spawned by Gish's first jump will remain for the entire battle until Gish is killed.
+** Spawns two {{e|Clot}}s on his second landing.
+*** There is a maximum of 2 Clots alive at once.
+*** Gish deals a full heart of contact damage.
+
+== Notes ==
+* {{Dlc|r}} While just as common as other bosses in the Dank Depths' boss pool, Gish is only 1/4th as common as other {{R|Boss Room}} bosses in The Depths.
+** Gish is the only boss to have more than 1 boss weight besides {{e|The Matriarch}}.
+* Gish will often be accompanied by {{e|Clot}}s.
+
+== Gallery ==
+<gallery>
+File:Boss Gish attack ingame.png|Gish firing an explosive shot.
+File:Boss Delirium Gish ingame.png|{{dlc+|a+}} Gish as one of {{e|Delirium}}'s forms.{{dlc-}}
+</gallery>
+
+== Trivia ==
+* Gish appeared in the original ''The Binding of Isaac''.
+* He is a rare alternative to Monstro II.
+* The item {{I|Ball of Tar}} gives Isaac a Gish-like appearance.
+* The enemy Clots are tiny Gishes.
+* Gish is the protagonist of the 2004 PC game ''[http://store.steampowered.com/app/9500/ Gish]'', created by Edmund McMillen.
+* Gish is the only boss to be an alternate version of a posthumous boss, being Monstro II's alternative.
+* {{dlc+|a+}} Gish can be found in {{s|The Void}}, even before being unlocked.{{dlc-}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Little Gish }}
+
+{{nav|boss}}
+[[Category:Alternate bosses]]
+[[Category:Chapter 3 bosses]]
+[[Category:Depths bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Debut bosses in Rebirth]]

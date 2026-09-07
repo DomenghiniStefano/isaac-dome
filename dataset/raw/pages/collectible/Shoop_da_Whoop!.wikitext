@@ -1,0 +1,50 @@
+{{infobox activated collectible
+ | costume scale = 1/4
+ | id            = 49
+ | quote         = BLLLARRRRGGG!
+ | description   = Fires a laser from Isaac's mouth that deals twice Isaac's [[Damage|tear damage]].
+ | quality       = 2
+ | tags          = offensive
+ | recharge      = 2
+}}
+
+{{cit|a}}
+
+== Effects ==
+* When used, the next shot will fire a large, {{i|Brimstone}}-like laser in the direction Isaac shoots that deals double Isaac's [[Damage|tear damage]]. If Isaac is already shooting, the item immediately activates in that direction.
+** {{dlc|nr}} The laser hits up to 13 times.
+** {{dlc|r}} The laser hits up to 12 times.
+** {{dlc|a+}} [[Status effect]]s can be applied by the laser.
+
+== Notes ==
+* This item can drop from killing {{E|Envy}} {{dlc|na+}} or {{e|Super Envy}}. {{dlc|nr}} Envy and Super Envy can drop this item even if Isaac has already encountered/possessed it. 
+* Despite the laser looking very similar to Brimstone, it doesn't share most of the Brimstone-specific interactions.
+* Can still be used while [[blindfolded]].
+* This item synergizes extremely well with items that significantly increase damage, such as {{i|Polyphemus}} and {{i|Ipecac}}.
+
+== Synergies ==
+* {{i|4.5 Volt}}: Allows the item to be charged and used multiple times in a room, which can help with dealing extra damage in enduring fights like most endgame bosses.
+* {{i|9 Volt}}: Can be used once every room, and more frequently in {{R|Challenge Room}}s.
+* {{Book of Virtues synergy|description=Spawns white wisps in the outer ring that resemble Shoop da Whoop!. The wisps will not fire tears, but will each fire a thin Shoop da Whoop! laser whenever Isaac uses it (including the wisp that was just summoned). The lasers deal 7 damage per tick (BUG: 3.5 if Isaac has {{I|BFFS!}}), and can hit up to 10 times for a total of 70 damage.}}
+* {{t|Broken Remote}}: Since item charges aren't expended until Isaac chooses a direction to shoot, the player can teleport across the floor indefinitely.
+* {{i|Hemoptysis}}: Enemies hit by the sneeze will gain a curse that increases the power of the laser by 2× and +3 flat damage, on top of the 2× base damage already applied by Shoop da Whoop. Enemies who die to the laser under the curse will damage and spread the curse to nearby enemies.
+* {{i|Ipecac}}: Increases the damage of the beam greatly, as Ipecac's +40 flat damage boost is added straight to Shoop Da Whoop whithout any damage decrease unlike {{i|Brimstone}}. This basically allows Isaac to kill most normal bosses in 1 shot.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|kEfNi9zTXU0||inline}} {{#ev:youtube|1yo8OkZ3hf8||inline}}
+
+== Trivia ==
+* Shoop da Whoop! is a reference to an internet meme depicting an edited face of [https://dragonball.fandom.com/wiki/Cell Cell] from the anime ''Dragon Ball Z'' firing a laser from its mouth. This meme is usually accompanied by the quote "I'm-a firin' mah lazar!", followed by "BLLLARRRRGGG!", which is where the item's tooltip comes from.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Shoop Da Whoop!.png|{{plat|3DS}} The icon of Shoop da Whoop! as seen on the lower 3DS screen.
+</gallery>
+
+== Bugs ==
+{{bug|dlc=nr|Using the item at the same time that you touch a large Golden Chest (dropped by final bosses such as {{e|The Lamb}} and {{e|???}}) will freeze Isaac, and the ending won't appear. Leaving and re-entering the run will fix the bug.}}
+
+{{nav|fr=Super Laser de la Mort}}

@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 603
+ | quote       = Instant energy!
+ | description = Recharges Isaac's currently held active item and drops 2-4 batteries.
+ | quality     = 0
+ | tags        = battery offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Fully charges the current [[activated item]].
+* Spawns 2-4 random [[battery]] pickups.
+
+== Notes ==
+* Battery Pack's quality is considered 1 for the purposes of {{I|Bag of Crafting}}.
+
+== Interactions ==
+* {{I|Alabaster Box}} / {{I|Eraser}} / {{I|Notched Axe}}: No effect.
+* {{I|Mega Blast}}: Will only give 3 ticks of charge.
+
+== Trivia ==
+* [[anti:Battery Pack|Battery Pack]] is from the ''Antibirth'' mod. In ''Antibirth'', its battery pickups were not random as there was only one kind of battery pickup.
+
+{{nav|battery|fr=Batterie}}

@@ -1,0 +1,74 @@
+{{infobox boss
+ | id            = 102
+ | variant       = 1
+ | portrait name = * {{dlc|nr|Rebirth}}
+ | base hp       = 2000
+ | environment   = <u>Boss</u><br>{{floor|Chest}}<br>{{floor|The Void}}
+ | pool          = Final Boss Chest ([[Ending 14]])<br>Gateway to {{s|The Void}} ({{dlc|nr+}} 20% Chance) / ({{dlc|r+}} 100% Chance)
+}} {{disambig msg|the boss at the end of [[The Chest]]|the character|??? (Character)}}
+
+'''???''' is the [[boss]] of the {{s|Chest}}, and the final boss of [[Ending 14]].
+
+== Behavior ==
+??? lies on the ground in the middle of the room and does not begin attacking until he takes damage.
+
+During all three of ???'s phases, he performs similar attacks to Isaac, but at a faster pace. He also shoots multiple projectiles in the player's direction at fixed intervals. After taking enough damage, he begins to shoot double and triple projectiles.
+* Each projectile has a chance of having a homing effect.
+
+=== Phase 1 ===
+??? remains stationary on the ground and performs the following attacks:
+* Shoots 7-8 rapid-fire lines of projectiles in all directions that expand outwards. After taking enough damage, these lines curve while travelling.
+* Shoots 8 lines of 2 projectiles in all directions that expand outwards. Each line consists of one normal projectile and one homing projectile. After taking enough damage, these lines curve while travelling.
+* After taking enough damage, ??? summons {{e|Attack Fly|text=Attack Flies}}, {{e|Moter}}s, or {{e|Pooter}}s that orbit around himself.
+** Pooters have a farther orbit than the other flies.
+** Attack Flies spawned from Moters chase Isaac instead of orbiting ???.
+
+=== Phase 2 ===
+2 {{e|Eternal Fly|text=Eternal Flies}} that can block tears begin to circle ???, who stands up but remains stationary and performs the following attacks:
+* Continues to spawn orbiting flies.
+* Fires 4 homing projectiles in a lop-sided X pattern.
+* Fires 8 homing projectiles in all directions.
+
+=== Phase 3 ===
+??? grows a pair of angelic wings and is no longer stationary, slowly drifting towards Isaac and performing the following attacks:
+* Spawning orbiting eternal flies (with increasing frequency compared to the previous phase).
+* Teleporting to a position in front of the player - predicting their movements and attempting to cut them off. ??? will teleport directly on top of the player if the player is stationary.
+* Shooting 2 projectile patterns from the first phase.
+
+== Gallery ==
+<gallery>
+File:Boss ??? secondphase ingame.png|??? in his second phase.
+File:Boss ??? thirdphase ingame.png|??? in his third phase.
+File:Boss Delirium Blue Baby ingame.png|{{dlc+|a+}} ??? as one of {{e|Delirium}}'s forms.{{dlc-}}
+File:Boss GFuel BlueBaby Portrait.png|???'s boss portrait in the GFVELLLL seed as well as the G Fuel themed daily challenge.
+File:Boss Blue Baby GFuel.png|??? as a can of G Fuel.
+File:G fuel trophy.png|Trophy spawned after defeating G Fuel ??? in the daily challenge.
+File:Lilith_Eden_Blue Box Concept Art.png|Concept art of the ??? fight among other sketches and design notes.
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | I RULE!, Backasswards, Ultra Hard, Golden God!, The D20, Celtic Cross, Cain's Eye, The Left Hand, Fate, Sacrificial Dagger, Blood Penny, Abaddon, Store Credit, Mysterious Paper, The Body, Cambion Conception, Deep Pockets, Locust of Famine, Jaw Bone, Blessed Penny, Birthright, Something wicked this way comes!, Something wicked this way comes+!, Godhead, Mom's Lock, Holy Crown, Gilded Key, Your Soul, Dingle Berry, Strange Key, Temporary Tattoo, Wicked Crown, Torn Pocket, Nuh Uh!, Kid's Drawing, The Twins, Keeper's Bargain, Cricket Leg, Polished Bone, Expansion Pack, RC Remote }}
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage Scaling|here]].
+
+{{dlc|r+}} '''???''' has damage scaling.
+
+== Trivia ==
+* ??? was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* The music that plays during this boss fight is titled ''Ascension''.<ref>http://ridiculon.bandcamp.com/</ref> The term "ascend" is typically used in religion as the act of one's soul rising to Heaven.
+* ???, along with {{e|Isaac}}, flies away upon defeat and does not "die".
+* ??? is commonly referred to as the 'blue baby' by the Binding of Isaac community, as well as Steam Achievements.
+* {{dlc+|a}} ??? is fought as the first phase of {{e|Hush}} with identical behavior and music, only using a different sprite. The Hush version also has half the HP.{{dlc-}}
+* {{dlc+|r}} {{e|Blighted Ovum}}, {{e|Big Horn}}, {{e|Triachnid}}, {{e|Isaac}}, and ??? are the only bosses whose portraits were completely changed in ''Repentance'' (beyond simply adding more detail). Of these, only {{e|Triachnid}}, {{e|Isaac}}, and ??? didn't receive new sprites.{{dlc-}}
+** {{e|Isaac}} and ???'s portraits were changed to match the appearance of the characters on the transition screen between levels. This was also the case in the original Flash game.
+* {{dlc|r}} ??? has a unique sprite when encountered in the GFVELLLL seed as well as the limited time [[wikipedia:G Fuel|G Fuel]] themed daily challenge.
+** This sprite was added in celebration of the release of "Isaac's Tears" flavored G Fuel.
+
+== References ==
+{{reflist}}
+
+{{nav|blue baby boss unlock|isaac boss unlock|boss}}
+[[Category:Chapter 6 bosses]]
+[[Category:Final bosses]]
+[[Category:Debut bosses in Rebirth| ]]

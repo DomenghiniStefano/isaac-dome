@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 646
+ | quote       = Demon blast +5 bombs
+ | description = +5 {{e|Bomb}}s. Bombs fire four {{i|Brimstone}} lasers in the cardinal directions upon exploding.
+ | quality     = 2
+ | tags        = summonable offensive
+ | unlocked by = Brimstone Bombs
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Gives Isaac +5 {{e|Bomb}}s.
+* Upon exploding, Isaac's bombs fire 4 {{i|Brimstone}} lasers in the cardinal directions.
+** Each laser deals 8 damage per tick, and can hit up to 19 times.
+** Multiple lasers cannot hit the same enemy simultaneously.
+** The lasers cannot damage Isaac.
+
+== Notes ==
+* {{dlc+|r}} This item has a 1/7 chance to drop if {{e|Hornfel}} is killed in his second phase.{{dlc-}}
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Fallen}}.{{dlc-}}
+* The lasers created by Brimstone Bombs can push other bombs, including {{e|Troll Bomb}}s and bombs placed by Isaac.
+
+== Synergies ==
+* {{i|BBF}} / {{I|Bob's Brain}}: Inherits the effect in full, firing lasers every time they explode.
+* {{i|Dr. Fetus}} / {{i|Epic Fetus}}: Attacks have a small chance to trigger this effect. Chance goes up to 100% at 30 luck.
+* {{i|Hemoptysis}}: Enemies hit by the sneeze will gain a curse that increases the damage the Brimstone lasers deal to 19 damage per tick. Enemies who die to the Brimstone lasers under the curse will damage and spread the curse to nearby enemies.
+* {{tf|Guppy}} / {{i|The Mulligan}}: The lasers can create [[Blue Fly|Blue Flies]] when they deal damage.
+* {{I|Kamikaze!}}: Activating Kamikaze! sends Brimstone lasers in all 4 directions.
+* [[Locust|Red Locusts]] / {{i|Scatter Bombs}}: Explosions made by the red locusts and tiny bombs create thinner lasers that deal 4.8 damage per tick instead of 8.
+* {{i|Multidimensional Baby}}: Placing Multidimensional Baby in front of the beam will transform it into two black-and-white beams.
+
+== Interactions ==
+* {{i|Bomber Boy}}: Only the center explosion will fire lasers.
+* {{i|Anarchist Cookbook}}: The lasers fired by the troll bombs will push other troll bombs around, likely to the edges of the room.
+
+== In-game footage ==
+{{#ev:youtube|ijxo_5HMYgc}}
+
+{{nav|bomb modifier|bomb|fr=Bombes Sulfureuses}}

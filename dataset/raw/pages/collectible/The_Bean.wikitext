@@ -1,0 +1,39 @@
+{{infobox activated collectible
+ | id          = 111
+ | quote       = Toot on command
+ | description = Isaac farts, damaging and [[poison]]ing any enemy in close range.
+ | quality     = 0
+ | tags        = offensive
+ | recharge    = {{dlcalt|1|r+=4s}}
+}} {{disambig msg|the activated item|challenge #13|Beans!|the activated item which knocks back enemies|Butter Bean|the passive item|The Black Bean}}
+
+{{cit|a}}
+
+== Effect ==
+* Upon use, Isaac farts, dealing 5 damage and [[poison]]ing any enemies within close range for 6 ticks.
+** {{dlc|na}} The poison deals 3.5 damage per tick.
+** {{dlc|a}} The poison deals Isaac's tear damage.
+** The area of effect is 2 tiles in all directions.
+** {{dlc|r}} The fart also has knockback and deflects enemy projectiles with deflected projectiles dealing 6 damage if they would've hurt Isaac for half a heart, and 7 for a full heart.
+
+== Synergies ==
+* {{i|Bird's Eye}}/{{i|Ghost Pepper}}: Poison farts shoot a fire behind Isaac. Two flames will be shot if Isaac also has {{I|Car Battery}}.
+* {{Book of Virtues synergy|description=Spawns wisps surrounded by green stink clouds on the outer ring. The wisps deal 5 damage and poison nearby enemies when destroyed.}}
+* {{i|Car Battery}}: Deals double damage, but the [[status effect]] lasts for the same amount of time.
+* {{t|Gigante Bean}}: The fart deals 10 additional damage.
+
+== Interactions ==
+* {{t|Second Hand}}: The poison duration is not affected.
+
+== In-game Footage ==
+{{#ev:youtube|CDR4INMPf9U||inline}} {{#ev:youtube|rqx3VtZH358||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Beans!}}.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The Bean.png|{{plat|3DS}} The icon of The Bean as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|bean|fr=Haricot Blanc}}

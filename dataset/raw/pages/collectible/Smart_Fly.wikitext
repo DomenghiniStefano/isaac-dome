@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | name        = Smart Fly
+ | id          = 264
+ | quote       = Revenge fly
+ | description = Spawns an [[Familiar#Orbital familiars|orbital familiar]] that blocks enemy shots. Upon taking damage, the familiar will pursue enemies for the rest of the [[Rooms|room]], dealing damage.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable monstermanual fly
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Spawns a fly [[familiar]] that orbits Isaac, blocking enemy shots. If Isaac takes damage, this fly will seek out nearby enemies and attack them for the current [[Rooms|room]].
+** {{dlc|nr}} The fly always deals 1.5 damage per tick or 22.5 damage per second on contact with enemies.
+** {{dlc|r}} The fly always deals 1.5 damage per tick or 6.4 damage per second on contact with enemies.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Min-Min}}.{{dlc-}}
+* Smart Fly does not take up one of the three orbital slots; it floats between two of the other orbitals.
+* While behaving like an orbital, Smart Fly will break away from Isaac if he is traveling fast enough and will follow Isaac until he slows down enough to reattach. This is the only orbital item in the game that exhibits such behavior.
+
+== Interactions ==
+* {{t|Duct Tape}}: Fly will stay in place when orbiting Isaac but will still pursue enemies.
+
+== In-game Footage ==
+{{#ev:youtube|PpGmO_jQads}}
+
+{{nav|fly|fr=Mouche Maline}}
+[[Category:Damage-triggered items]]

@@ -1,0 +1,44 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 164
+ | quote       = Twice the bang!
+ | description = Placing a {{e|Bomb}} spawns an extra bomb for free.
+ | unlocked by = Ring Cap
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Whenever Isaac places a {{e|Bomb}}, an extra bomb is spawned next to the original.
+** This does not consume more than one bomb pickup.
+
+== Notes ==
+* The extra bomb spawns in a random location adjacent to the original.
+* The additional bomb is affected by any items that affect bombs.
+* Ring Cap will also work with {{E|Giga Bomb}}s collected via {{T|Safety Scissors}}.
+* Can be used to open the door to [[Bedroom]]s and the {{s|Mines}} / {{s|Ashpit}} with only one bomb.
+* This trinket has no effect on the [[Pills|Explosive Diarrhea]] pill.
+* The bombs explode simultaneously with each other, without risk of any being launched.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{I|Mom's Box}}: Places 1 extra bomb per copy.
+* {{t|Blasting Cap}}: The extra bomb also has a chance to drop a bomb pickup.
+* {{I|Nancy Bombs}}: Grants a random bomb effect to each bomb separately.
+* {{i|Rocket in a Jar}}: Fires two rockets simultaneously.
+
+== No Effect ==
+* {{I|Best Friend}}
+* {{I|Bob's Rotten Head}}
+* {{I|Dr. Fetus}}
+* {{I|Epic Fetus}}
+* {{I|IBS}}
+* {{I|Mr. Boom}}
+* {{I|Number Two}}
+* {{C|Tainted ???}}
+
+== In-game Footage ==
+{{#ev:youtube|c5oDtniJIEo}}
+
+== Trivia ==
+* Ring Cap may be a reference to [[zelda:Bomber's Ring|Bomber's Ring]] from ''The Legend of Zelda'': ''Oracle of Ages'', which allows the player to place down two bombs at once.
+{{nav|bomb modifier|bomb spawner|tainted blue baby unlock|mother unlock|fr=Amorces}}

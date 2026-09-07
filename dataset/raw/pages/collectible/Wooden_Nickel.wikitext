@@ -1,0 +1,37 @@
+{{infobox activated collectible
+ | dlc         = a
+ | id          = 349
+ | quote       = Flip a coin
+ | description = Has a roughly 50% chance to drop a {{e|Penny}}, {{e|Nickel}}, or {{e|Dime}} and a roughly 50% chance to do nothing.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = 1
+ | shop price  = {{dlcalt|15|r=1}}0
+ | unlocked by = Wooden Nickel
+}}
+
+{{cit|ua|a}}
+
+== Effects ==
+* Upon use, has a roughly 60% chance to drop a [[coin|penny, nickel, or dime]].
+** {{dlc|a+nr}} The exact chances are 50% for a penny, 5% for a nickel, 1% for a dime and 44% for nothing.
+** {{dlc|r}} The exact chances are 52% for a penny, 6% for a nickel, 2% for a dime and 40% for nothing.
+
+== Notes ==
+* This is a starting item for {{C|Keeper}} after he beats {{E|Isaac}}.
+* {{dlc|a+}} Sticky nickels and lucky pennies cannot be generated.
+* {{Dlc|r}} The item only costs 10 coins when found in a {{r|Shop}}.
+
+== Synergies ==
+* {{i|9 Volt}}: Allows for infinite generation of coins in a room with enemies.
+* {{Book of Virtues synergy|description=Spawns tiny coin wisps in the middle ring. The wisps have a 50% chance to drop a random [[coin]] when destroyed.}}
+* {{i|Car Battery}}: Two independent attempts of generating a coin, which can be of different values.
+
+== In-game Footage ==
+{{#ev:youtube|RHYEJORcdi0}}
+
+== Trivia ==
+* Wooden nickels are souvenir coins given out by some American banks. The adage "Don't take any wooden nickels" is a reminder to be cautious in one's dealings, since these coins have no monetary value.
+* The Wooden Nickel is the name of the shop in another one of Edmund's games, ''The Legend of Bumbo''.
+
+{{nav|greed machine unlock}}

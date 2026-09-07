@@ -1,0 +1,53 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 665
+ | quote       = An eye for secrets
+ | description = Shows the contents of {{E|Chest}}s, {{E|Fire Place}}s, {{E|Grab Bag|n}}s, and {{E|Shopkeeper}}s before they're opened/destroyed.
+ | quality     = 2
+ | tags        = {{dlc|r+|dead}} guppy offensive
+ | unlocked by = Guppy's Eye
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Shows the contents of {{E|Chest}}s, {{E|Fire Place}}s, {{E|Grab Bag}}s, and {{E|Shopkeeper}}s before they're opened/destroyed.
+* {{transformation contribution|Guppy}}
+
+== Notes ==
+* Guppy's Eye does not show the contents of [[tinted rock]]s, {{E|Poop}}s, and other obstacles.
+* Guppy's Eye does display enemies that can be contained within chests.
+* {{E|Chest}}s and {{E|Grab Bag}}s can only display up to four pickups at a time. If there are more than four, higher-value pickups like {{E|Bomb}}s, {{E|Key}}s, and {{E|Soul Heart}}s will have priority on the display.
+* If a {{E|Red Chest}} looks like it doesn't have anything in it, it will teleport Isaac to the floor's {{r|Devil Room}} / {{r|Angel Room}}.
+* Due to how [[Trinkets]] generate, if a Chest displays a trinket, all future Chests will also display/give that trinket until it spawns in some way, at which point all Chests will display a new trinket.
+** This means it is worthwhile opening even chests containing undesirable trinkets so that the trinket cycle advances.
+* {{E|Mimic Chest}}s will change their contents whenever their spikes pop out. The unchanged drops can still be obtained by:
+** Opening them with {{t|Flat File}} or {{i|Magneto}}.
+** Using swing attacks (such as {{c|The Forgotten}}, {{i|Notched Axe}}, {{i|Spirit Sword}}, etc.)
+* This effect works on all non-[[ending]] chests, including {{E|Mom's Chest}}.
+* This item is substantially less useful in [[Greed Mode]], due to the scarcity of chests.
+* The contents of Sacks or Chests that haven't spawned yet will still be revealed (for example, in rooms that spawn such Chests or Sacks when Isaac pressed a hidden switch, etc.).
+
+== Interactions ==
+* {{i|D1|nr+}}: When duplicating a [[chest]] with D1, the original's contents will be changed. Guppy's Eye will not immediately show the new contents, but leaving the room and returning will reveal the changes. This essentially allows rerolling the rewards within them, especially useful in {{s|Chest}} and {{s|Dark Room}}.
+** {{dlc|r+}} The contents are immediately updated upon reroll.
+* {{t|Poker Chip}}: Guppy's Eye will show which chests contain an {{e|Attack Fly}}. This allows Isaac to drop the Trinket, leave the room, and return to reset the chest's contents.
+* {{i|Sack Head}}: Sack Head rerolls pickups into {{E|Grab Bag}}s after they are spawned, making Guppy's Eye less effective on non-Grab Bag contents.
+* {{i|Guppy's Eye}}: Picking up a second copy of the item gives Isaac a unique costume with both eyes replaced. This is purely cosmetic, and it will otherwise have no effect.
+
+== In-game Footage ==
+{{#ev:youtube|r2-EYiJW1Wc||inline}} {{#ev:youtube|pA4JX1nBB4g||inline}}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | The Parasite }}
+
+== Trivia ==
+* Guppy's Eye is one of the few items that will give Isaac a unique costume when two copies are acquired, along with {{i|Brimstone}} and {{i|Glass Eye}}.
+* This item was suggested on a Reddit post<ref>https://www.reddit.com/r/bindingofisaac/comments/3x3yl6/guppys_eye/</ref> on the Binding of Isaac Subreddit.
+* This item originates from the card game ''The Binding of Isaac: Four Souls''. In it, Guppy's Eye forces all other players to play with their hands face-up on the table.
+* Its pickup text is possibly a reference to the description of the Rasmus mask from ''[[wikipedia:Hotline Miami|Hotline Miami]]''.
+
+== References ==
+{{reflist}}
+
+{{nav|guppy|cat|cain unlock|mother unlock|fr=Œil de Guppy}}

@@ -1,0 +1,72 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 705
+ | quote       = One with the shadows
+ | description = Briefly grants +1 [[speed]] and makes Isaac invulnerable and intangible. When the effect ends, destroys all projectiles and damages all enemies Isaac passed through.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge    = 6s
+ | unlocked by = Dark Arts
+}}
+
+{{cit|ua|r}} {{C|Tainted Judas}} starts with this item in his consumable slot.
+
+== Effects ==
+* When used, Isaac gains +1.0 [[speed]] and can walk through enemies/bullets for 1 second or until he shoots. If Isaac walks through an enemy or bullet during this time, it freezes until the effect ends, then takes damage equal to 2× Isaac's [[damage]] plus a flat 3.5. If there are multiple enemies/projectiles caught in the attack, each consecutive attack deals an additional flat 3.5 damage. At the end of the effect, an area of effect blast is created, dealing more damage the more enemies or bullets were pierced during the effect.
+** The damage of the blast at the end of Dark Arts is equal to the sum of all damage dealt while dashing between enemies.
+*** Bullets walked through will still count for the final blast damage calculation, even though they can't be damaged.
+
+== Notes ==
+* The invincibility can be canceled early by firing tears (and hence receive the damage bonus early with Tainted Judas or Black Judas).
+* If an enemy/bullet Isaac walks through dies or otherwise disappears before Dark Arts deactivates, they will not grant a damage bonus.
+* Orbitals that deal contact damage such as {{i|Forever alone}} will still deal damage and potentially kill an enemy, while those that block shots like [[Familiar#Orbital Familiars|Pretty Flies]] will still block and destroy projectiles.
+** Dark Arts still works on reflected bullets.
+** Explosive projectiles will explode when destroyed by Dark Arts.
+* While Dark Arts is active, Isaac:
+**Cannot pick up items or donate to {{M|Blood Donation Machine}}s or {{M|Devil Beggar}}s.
+**Cannot open [[Chests]]. Standing on {{E|Spiked Chest}}s or {{E|Mimic Chest}}s when the effect ends will safely open them without taking damage.
+**Can pass through {{r|Curse Room}} doors or over [[spikes]].
+**Can still press {{E|Pressure Plate}}s, including the button in [[Greed Mode]] without taking damage.
+* Dark Arts will trigger certain tear effects on enemies it damages, such as burning from {{I|Fire Mind}}.
+* Invincible enemies such as {{E|Stoney|text=Stonies}} and {{E|Stone Grimace}}s can still be affected and used to increase the damage.
+** {{E|Host}}s can be damaged and killed even while they are lowered and invincible.
+** Similarly, using Dark Arts on {{E|Scolex}}'s invulnerable segments will deal damage.
+* If Isaac walks through an enemy/bullet, the blast at the end of Dark Arts can destroy {{E|Shopkeeper}}s.
+
+== Synergies ==
+* {{I|9 Volt}}: Halves the time required to charge Dark Arts.
+* {{I|Backstabber}}: Tagging an enemy from behind will apply bleeding.
+* {{I|The Battery}}: Second charge can be used while Dark Arts is active.
+* {{Book of Belial synergy|description=Grants temporary damage ups for every enemy/projectile hit by Dark Arts, similarly to {{c|Tainted Judas}}. This stacks with {{c|Black Judas}}' inherent version of this, doubling the amount of damage gained.}}
+* {{Book of Virtues synergy|description=Spawns black wisps on the middle ring whenever an enemy is killed with Dark Arts. The wisps do not persist between rooms.}}
+* {{I|Camo Undies}}: The stealth mode given by Camo Undies won't be removed by activating Dark Arts. However, Dark Arts only gives +0.5 speed while Camo Undies is active.
+* {{I|Car Battery}}: Dark Arts will last twice as long, totalling at 2 seconds per use.
+* {{I|Euthanasia}}: Dark Arts can apply the Euthanasia effect.
+* {{I|Pause}}: Activating Dark Arts will not cancel the effect.
+* {{I|Taurus}}: Dark Arts' speed increase will contribute towards Taurus' activation.
+* {{c|Black Judas}} / {{c|Tainted Judas}}: For every enemy/bullet he walks through, he will gain a temporary +1 [[damage]] bonus, which wears off at a rate of -0.25 damage every half second.
+* [[Wisps]]: Wisps cannot be destroyed while Dark Arts is in effect.
+
+== Interactions ==
+* {{i|Aries}} / {{i|E. Coli}} / {{i|Midas' Touch}} / {{i|Mom's Heels}} / {{i|Serpent's Kiss}} / {{i|The Virus}}: On-touch effects won't activate while Dark Arts is active.
+** The effects will safely activate if Isaac is touching an enemy when he reappears, as there are a few frames where he is immune to damage but can still collide with enemies.
+* {{i|Blood Oath}}: Using Dark Arts will block the damage, preventing Blood Oath from activating.
+* {{I|Gnawed Leaf}}: If Isaac is stationary when Dark Arts ends, he will gain invulnerability without any downtime. Dark Arts can also be used from invulnerability without taking damage.
+* {{I|How to Jump}}: Can be used while Dark Arts is active.
+* {{i|Kamikaze!}}: Can be activated without harm while using Dark Arts.
+* {{t|Lil Clot}} / {{i|Sumptorium}}: Clots gain increased speed and are no longer able to fire, but are still vulnerable to damage while Isaac is using Dark Arts.
+* {{I|Mars}}: Isaac is able to dash while using Dark Arts.
+* {{c|Tainted Forgotten}}: Tainted Soul will gain the speed increase, but the invulnerability & attack portion of the activation will only apply to Tainted Forgotten.
+
+== In-game footage ==
+{{#ev:youtube|PrCWreQtrDI}}
+
+== Trivia ==
+* The item is a reference to a flash game Edmund McMillen created in 2005 called ''Grey-Matter''. In this game, enemies would be killed in a fashion identical to Dark Arts.
+* Before being added in game, [https://foursouls.com/cards/fsp2-dark_arts Dark Arts] was the starting item for Black Judas in ''The Binding of Isaac: Four Souls'', a card game created by Edmund McMillen.
+
+== Bugs ==
+{{bug|Using {{i|Dark Arts}} after using {{i|Doctor's Remote}} before the missile hits the ground will trap Isaac in the animation of holding the remote over his head until leaving the room or getting hit, preventing you from firing tears.}}
+{{bug|If tagged during a dash attack, certain enemies and bosses will "dash" without actually moving after Dark Arts end. This is most notable for {{e|The Cage}} - the boss will roll in place for a couple of seconds. If such an enemy gains momentum in any way (e. g. via collision with other enemies, explosions, or knockback from Isaac's tears), it will resume the dash.}}
+{{nav|tainted judas unlock|delirium unlock|fr=Arts Obscurs}}
+[[Category:Damage-preventing items]]

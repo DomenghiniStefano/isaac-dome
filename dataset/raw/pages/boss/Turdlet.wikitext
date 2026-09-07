@@ -1,0 +1,43 @@
+{{infobox boss
+ | dlc         = r
+ | name        = Turdlet
+ | id          = 918
+ | environment = <u>Boss</u><br>{{floor|Dross}}<br>{{room|boss challenge}}
+ | base hp     = 190
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Brown Nugget}} (1% chance)
+}}
+
+'''Turdlet''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in {{s|Dross}}.
+
+== Behavior ==
+=== Phase 1 ===
+Turdlet consists of 5 separate segments that travel together similar to {{e|Larry Jr.}}, and acts the following way.
+* Moves around the room loosely chasing Isaac, making wide turns and bouncing on walls.
+* After 7 seconds of normal movement, huddles its body together, then launches tail-first towards Isaac while straightening out. Its head end spins around its tail while bouncing against walls at high speeds before eventually decelerating to a full stop.
+* Turdlet leaves a trail of slippery [[Creep#Brown Creep|Brown Creep]] wherever it moves.
+
+=== Phase 2 ===
+* After dropping to 30 health or less, Turdlet splits into two parts with two segments, each continuing the same behavior.
+** The health each split Turdlet has is equal to the health the original Turdlet had when it split, plus 15.
+** While both parts are alive they coordinate the launch attack by huddling together.
+
+== Gallery ==
+<gallery>
+File:Boss Turdlet secondphase ingame.png|Turdlet in its second phase.
+</gallery>
+
+== Notes ==
+* Using the {{i|Meat Cleaver}} on Turdlet instantly skips its first phase.
+* Since the health Turdlet's split segments have scales depending on how much health the original Turdlet have when it split, if a strong attack (like a {{e|Bomb}} or {{p|II - The High Priestess}}) causes Turdlet to split, its split segments will have significantly less health. 
+
+== Trivia ==
+* Turdlet resembles a grounded {{e|Pin}}, albeit with a happier expression.
+** Alternatively, it may be a Dross-specific variant of {{e|Larry Jr.}}, seeing as how both bosses slide on the ground.
+* Turdlet uses the same scream that the {{e|Gurglings}} and the {{e|Turdlings}} use.
+* In the games files, there are unused enemies with the name of "Floater Turdlet" which resemble Drips with the color scheme of Turdlet. This implies that Turdlet may have had another phase or attack planned, but was ultimately scrapped.
+
+{{nav|boss|fr=Crottelette}}
+[[Category:Bosses]]
+[[Category:Chapter 1.5 bosses]]
+[[Category:Dross bosses]]
+[[Category:Debut bosses in Repentance]]

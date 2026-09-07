@@ -1,0 +1,81 @@
+{{Infobox boss
+ | dlc         = r
+ | name        = The Visage
+ | id          = 903
+ | environment = <u>Boss</u><br>{{floor|Gehenna}}<br>{{room|boss challenge}}
+ | base hp     = 620
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Empty Heart}} (1% chance)
+}}
+'''The Visage''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in {{s|Gehenna}}.
+
+== Behavior ==
+=== Phase 1 ===
+The Visage is bound together by a chain and cannot be damaged; the chain must first be destroyed to progress the fight, and has 150 HP. During this phase, it only has one attack:
+* The heart slowly wanders around the room, and the mask attempts to move toward Isaac, constrained by the length of its chain (which reaches up to 4 tiles outward). Occasionally, the mask charges at Isaac when he approaches it from any cardinal direction, predicting his movements. Upon colliding with a wall, the mask launches out a spray of rock projectiles before being pulled back to the heart.
+** The mask cannot charge if it’s close to Isaac.
+** The chain only extends for this attack, it's normally rigid and constrains the mask and the heart to a specific length.
+** If the mask hasn’t charged in a while, it starts pulling the heart with it in its attempt to reach Isaac.
+
+=== Phase 2 ===
+Once the chain is broken, the mask and heart are unbound from each other and their behavior changes:
+* The mask freely moves around the room, briefly speeding up and chasing Isaac if it sees him in a cardinal direction.
+** The mask has 100 HP, and can be damaged by explosions, piercing shots, or by being shot in its open back. Upon death it deactivates, which stops it from moving, dealing contact damage to Isaac, or from firing certain projectiles when used by the heart. However, it can still block Isaac's tears.
+* The heart now actively avoids Isaac, but also uses a chain to perform a variety of attacks in conjunction with the mask:
+** Launches a chain to the mask. Once attached, it directly pulls the mask in and fires a horizontal helix of {{i|Brimstone}} lasers that pushes both backwards into a wall.
+*** The lasers and pushback don’t happen if the mask is deactivated.
+** Launches a chain to the mask. Once attached, it swings the mask around in a spiral while also bringing the two closer. The mask fires red projectiles outward while being reeled in. If the mask collides with wall before it unites with the heart, it creates rock projectiles on impact and is then pulled directly to the heart.
+*** The mask doesn’t fire projectiles while being reeled in if it’s deactivated.
+** Launches a chain to the mask. Once attached, it directly pulls the mask in and then jumps onto Isaac's position, creating a burst of rock projectiles as well as 4 rock waves in the diagonal directions upon landing.
+** Launches a chain at Isaac. If the chain hits him, it pulls him into the heart, causing him to take contact damage. If the chain misses, it pulls the heart into the wall it hits, creating a burst of rocks and red projectiles. This attack can only be used if the mask is deactivated, and takes higher priority once it becomes available.
+*** Unlike all other attacks, the chain directly hitting Isaac doesn’t deal damage, only him being pulled into the heart does.
+*** If the chain hits a bomb while being launched, the bomb instantly explodes and the attack is cancelled.
+
+=== Phase 3 ===
+When the heart drops to half HP, its visual outer shell breaks, exposing the heart. The Heart's movement becomes quicker and more erratic along with an attack change:
+* Launches a large, slow-moving energy ball known as {{e|Visage Plasma}} in a diagonal direction that bounces off of walls. If this projectile touches the mask, it fires a {{i|Brimstone}} laser out its back, rapidly propelling it in the direction it was facing and creating rock projectiles and a radial burst of 8 projectiles upon collision with a wall.
+** If the mask is deactivated, Visage Plasma will automatically travel towards it, reviving it as well as causing its normal effect.
+** Visage Plasma have 50 HP, and can be destroyed by Isaac.
+** The heart always begins the phase with this attack.
+* Briefly stops moving and fires out a ring of 16 red projectiles.
+* If there are 3 Visage Plasma floating around the room, the heart sucks them in, drawing in Isaac in the process. Each Visage Plasma absorbed heals the heart a small portion of HP. After absorbing all 3, it fires out 4 tight rings of fire along with 4 short-range diagonal {{i|Brimstone}} lasers.
+** The mask deactivates during this attack, regardless of its HP. Unless the heart is on a far side of the room and Isaac is far away enough, Isaac must hide behind the mask to dodge this attack, as the rings of fire are too dense to weave through.
+Once the heart has been killed, the mask permanently deactivates.
+
+== Gallery ==
+<gallery>
+File:Boss The Visage 2Phase ingame.png|The Visage in its second phase.
+File:Boss The Visage 3phase ingame.png|The Visage's heart in its third phase.
+File:Boss The Visage Back ingame.png|The Visage's backside shown in its second and third phases.
+File:Boss The Visage Antibirth portrait.png|The Visage's old portrait in ''Antibirth''.
+Boss_The_Visage_ingame_old.png| The Visage's first phase in ''Antibirth''.
+Boss_The_Visage_2Phase_ingame_old.png| The Visage's second phase in ''Antibirth''.
+Boss_The_Visage_3phase_ingame_old.png| The Visage's heart in its third phase in ''Antibirth''.
+File:Boss The Visage Back Antibirth ingame.png|The Visage's backside shown in its second and third phases in ''Antibirth''.
+File:The Visage Concept.jpeg|Boss screen mockup of The Visage's concept. Created by artist NotYourSagittarius.
+</gallery>
+
+== Notes ==
+* The Visage's deactivated mask can be still targeted by effects such as {{i|Anima Sola}}.
+
+== Trivia ==
+* The Visage started as a boss versus screen mockup by ''Antibirth'' artist '''NotYourSagittarius''' in January 2015, alongside {{e|Reap Creep}} and a scrapped posthumous version of {{e|Dingle}} known as "The Mass".
+* The Visage appears to be a fiery variation of the {{e|Mask of Infamy}}.
+** In a way, it can be seen as the posthumous version of the Mask of Infamy.
+* The Visage in ''Antibirth'' bore a grey and purple color palette better suited for the {{s|Mausoleum}}, while the Visage in ''Repentance'' has been recolored black and red to match the {{s|Gehenna}} floor.
+** Prior to patch [[V1.7.5]], many of its attacks were still purple.
+* The back of the mask shows many small children being burned while the mask is alive.
+** This is probably a reference to the fact that in Gehenna, some kings of Judah sacrificed their children by fire.
+** In ''Antibirth'', instead of many children, there was a singular Isaac head in the back of the mask.
+** This is a reference to the original Mask of Infamy from the ''Wrath Of The Lamb'' DLC of the original flash game, as it had a small head peeking through the crack behind the boss.
+
+== Bugs ==
+{{Bug|Using the console to spawn the mask by itself (id 903.1) will crash the game. All other parts of the Visage can be spawned safely.}}
+{{Bug|If a slash from {{i|Dark Arts}} / {{p|Soul of Judas}} reduces the mask's hp to 0, it will die and despawn instead of deactivating, leaving only the heart to be fought.}}
+{{bug|If The Visage's mask is chained by {{i|Anima Sola}} down when it runs out of HP, it will outright die instead of becoming temporarily inactive, leaving only the heart to be fought.}}
+{{bug|If The Visage's mask is defeated by knockback damage from {{I|Hemoptysis}} or {{I|Knockout Drops}}, it will outright die instead of becoming temporarily inactive.}}
+
+{{nav|boss|fr=Le Visage}}
+[[Category:Bosses]]
+[[Category:Chapter 3.5 bosses]]
+[[Category:Gehenna bosses]]
+[[Category:Debut bosses in Repentance]]

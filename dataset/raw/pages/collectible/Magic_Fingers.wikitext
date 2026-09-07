@@ -1,0 +1,45 @@
+{{infobox activated collectible
+ | name        = Magic Fingers
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 295
+ | quote       = Pay to {{dlcalt|play|r=win}}
+ | description = Consumes one {{E|Penny}} to deal [[damage]] to all enemies in the [[room]].
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | recharge    = unlimited
+ | shop price  = {{dlcalt|15|r=10}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Upon use, consumes one {{E|Penny}} to deal damage to all enemies in the [[room]].
+** {{dlc|nr}} Damage dealt is equal to twice Isaac's [[damage]].
+** {{dlc|r}} Damage dealt is twice Isaac's [[damage]] +10.
+
+== Notes ==
+* {{dlc|r}} The item will cost 10 cents if found in a {{r|Shop}}.
+* This item becomes more valuable once {{R|Shop}}s stop appearing.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Also has a chance to invoke the effect of {{i|Golden Razor}}.}}
+* {{Book of Virtues synergy|description=Spawns wisps in the inner ring, looking like coins. The wisps have a chance to drop [[coin]]s when destroyed.}}
+* {{dlc+|nr}}{{i|Isaac's Heart}} + {{I|Schoolbag}} + {{i|IV Bag}}: Allows for effectively infinite uses by switching to IV Bag when low on money, with Isaac's Heart preventing it from lowering the player's [[health]]. {{dlc-}}
+* {{T|Mysterious Candy}}: Allows for effectively infinite uses with extreme patience - efficiency can be greatly increased with {{T|Petrified Poop}}.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{i|Ipecac|r}}: Damage boost is mostly ignored.
+
+== In-game Footage ==
+{{#ev:youtube|N6aChLS51w8}}
+
+== Trivia ==
+* The name is a reference to 'Magic Fingers' vibrating beds that could be found in hotels and motels during the mid-to-late 20th century. A person would insert coins into a slot on the device, which would cause pleasant vibrations in their beds for a certain amount of time. The device came to have connotations with sleaziness, as they were associated with seedy overnight locations where one-night stands and such were known to occur.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Magic Fingers.png|{{plat|3DS}} The icon of Magic Fingers as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|fr=Pot de Vin}}

@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | dlc = a+
+ | name = YO LISTEN!
+ | id = 492
+ | quote = Yo listen!
+ | description = +1 [[luck]]. Spawns a fairy [[familiar]] that points out {{R|Secret Room}}s, {{R|Crawl Space}} entrances, and [[Obstacles#Tinted Rocks|tinted rocks]].
+ | quality     = 2
+ | tags        = summonable offensive fly
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* +1 [[luck]].
+* Spawns a [[familiar]] that sporadically moves around the [[Rooms|room]].
+* Upon entering a room with a {{R|Secret Room}}/{{R|Super Secret Room}} entrance,  [[Obstacles#Tinted Rocks|tinted rock]], or a rock with a {{R|Crawl Space}} underneath, it will fly towards it.
+** If there are multiple secrets, then it will fly from one to the other.
+* {{dlc|r}} {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* The familiar will sometimes hover over a pit or a {{e|Poop}}, indicating that an unreachable crawl space has been generated there.
+** {{dlc|nr}}Although it might seem intuitive to dig the spot open with {{i|We Need To Go Deeper!}} or {{p|Ehwaz}}, their chance of spawning a crawl space is independent and not guaranteed to work.
+* An extra crawl space that is added by {{t|Stud Finder}} won't be identified by the familiar.
+
+== In-game Footage ==
+{{#ev:youtube|wFAmkCvPdAw}}
+
+== Gallery ==
+<gallery widths="180" heights="180">
+File:Yolisten.gif|YO LISTEN's appearance in [[Booster Pack 5]] (left) vs. its original Afterbirth+ sprite (right).
+</gallery>
+
+== Trivia ==
+* This item is a reference to the fairy Navi in the [[wikipedia:The Legend of Zelda: Ocarina of Time|The Legend of Zelda: Ocarina of Time]], who guides the player during the game with the catchphrase, "HEY, LISTEN."
+** The item name and description both being “Yo listen!” is a joke about how frequently Navi interrupts the player, to the point of annoyance.
+* {{I|MEAT!}}, {{I|YO LISTEN!}}, {{I|PHD}}, [[G FUEL!]] and {{I|TMTRAINER}} are the only '''ALL CAPS''' items in the game.
+
+{{nav|fr=Fée Agaçante|zh=嘿，听好！}}

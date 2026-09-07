@@ -1,0 +1,25 @@
+{{infobox trinket
+ | name = Whip Worm
+ | id = 27
+ | quote = Wooosh!
+ | description = Increases [[shot speed]] by 0.5.
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Increases [[Shot Speed]] by 0.5.
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}} or {{e|Scolex}}.{{dlc-}}
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: Each copy increase shot speed by 0.5.
+
+== In-game Footage ==
+{{#ev:youtube|ukQXkwWYrF8}}
+
+== Trivia ==
+* [[wikipedia:Trichuris trichiura|Whipworms (''Trichuris trichiura'')]] are intestinal parasites that most commonly infect dogs and humans.
+
+{{nav|worm|fr=Ver Long}}

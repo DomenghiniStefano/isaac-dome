@@ -1,0 +1,30 @@
+{{infobox challenge
+ | number    = 2
+ | item      = {{i|Number One}}<br>{{i|E. Coli}}<br>{{i|Butt Bombs}}<br>{{i|Flush!}}
+ | trinket   = {{t|Petrified Poop}}
+ | has shops = yes
+ | unlocks   = Rune of Jera
+}}
+
+'''High Brow''' is [[challenge]] #2. Isaac begins this challenge with {{i|Number One}}, {{i|E. Coli}}, {{i|Butt Bombs}}, {{i|Flush!}}, and {{t|Petrified Poop}}. The goal is to defeat {{e|Mom}}. This challenge is unlocked by default.
+__TOC__
+
+== Difficulty ==
+Starting with Number One limits Isaac's [[range]] significantly. Getting close to enemies is required to defeat them.
+
+{{dlc+|r}} The starting item set grants Isaac the {{tf|Oh Crap}} transformation, significantly increasing his survivability.{{dlc-}}
+
+== Strategy ==
+* Flush! can be powerful when dealing with a large number of enemies, such as in a 2x2 room. Turning all the enemies into poop allows for rapid clearing of rooms, and Petrified Poop increases the chance of those poops containing [[pickup]]s.
+* E. Coli can turn [[enemy|enemies]] into {{e|Poop}}. Given the short [[range]] granted by Number One, enemies will be more likely to do contact damage. Enemies that do not do contact damage ({{E|Fly}}, {{E|Mulligan}}, {{E|Host}}, etc) are valuable, as they can be transformed into poop with no drawbacks.
+** {{i|Skatole}} is a highly useful item, due to the amount of Black Flies it creates that can be transformed into poop.
+** {{I|Dirty Mind}} spawns [[friendly]] {{E|Dip}}s when a poop is broken, making E. Coli even more valuable.
+* Butt Bombs gives 5 extra {{e|Bomb}}s to start with, which can make [[item]]s or {{R|Secret Room}}s easier to find in the first 2 levels.
+* Because of Number One's synergy with {{i|Brimstone}}, it is highly recommended, despite the Health cost.
+* While it is slow, {{t|Mysterious Candy}} can be helpful if resources are scarce in a run.
+* {{dlc+|r}} Due to starting with the {{tf|Oh Crap}} transformation in ''Repentance'', it's possible to adopt a similar strategy to {{C|Tainted Magdalene}}, where Isaac touches enemies to trigger E. Coli, then breaks the resulting poop to gain health back.{{dlc-}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Rune of Jera }}
+
+{{nav|challenge|fr=Incontinence}}

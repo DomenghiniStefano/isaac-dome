@@ -1,0 +1,67 @@
+{{infobox activated collectible
+ | name = The D6
+ | id = 105
+ | quote = Reroll your destiny
+ | description = Re-rolls all items in the current [[room]] into other items, depending on the current room's [[item pool]].
+ | quality     = 4
+ | tags        = offensive nocantrip
+ | recharge = 6
+ | unlocked by = The D6
+}}
+
+{{cit|ua}}
+
+== Effect ==
+* Upon use, replaces every item in the current [[room]] (not [[pickups]] or [[trinkets]]) with other random items corresponding to the current room's [[item pool]].
+
+== Notes ==
+* {{dlc|nr}} The D6 is a [[special item]].
+* {{c|Isaac}} starts with this item once it is unlocked.
+* Since it re-rolls every item in the room, it can be more efficient to use it in rooms where multiple items are in the same room. For instance:
+** In the {{r|Shop}}, when multiple items are available for purchase.
+** In the {{r|Devil Room}}, when there are multiple deals offered.
+** In the {{r|Boss Room}} after the {{e|Mom}} fight, where both {{i|The Polaroid}} and {{i|The Negative}} can be rerolled, at the cost of the opportunity to go to the {{s|Chest}}/{{s|Dark Room}}. Once one item is picked up the other will disappear.
+** In the {{r|Angel Room}}, when there is a choice between multiple items.
+** In the {{r|Boss Rush}} Room, where all items can be rerolled at once.
+** When {{i|There's Options}} or {{i|More Options}} spawn two items.
+* Items from {{E|Chest}}s can be rerolled.
+** When an item from a chest is rerolled, the item is rolled from the current room's item pool, and not the chest's
+* When an [[item pool]] is exhausted, the pool will start to use the {{ip|Treasure Room|text=Treasure Room Pool}}.
+** When the {{ip|Treasure Room|text=Treasure Room Pool}} is exhausted, every item in it will be rerolled to {{i|Breakfast}}.
+** With {{i|Chaos}}, every fully depleted item pool will only contain {{i|Breakfast}}.
+* {{dlc|na}} If Isaac runs out of red hearts in the {{r|Devil Room}}, then rerolls, the prices of the items switch over to soul hearts.
+* {{dlc|nr}} Using the D6 on an active item yields different rerolls depending on whether you picked up the active item first.
+* Using the D6 to reroll items duplicated with {{i|Diplopia}} will reroll all the items into different items. The copied item will not be rerolled into the same one as the original item.
+* Be careful when rerolling, as it will replace the item with another item from the '''current''' room's item pool, even if the item came from a different pool, or is a set drop. This can be used as an advantage in various ways; for example, after defeating {{E|The Fallen}}, the item will be drawn from the {{ip|Devil Room|text=Devil Room item pool}}, so Isaac can safely roll the item into another from that pool. This behavior can also be an advantage in {{r|Angel Room}}s since {{I|Key Piece 1}} and {{I|Key Piece 2}} can be rerolled to get a free Angel Room item.
+** Normal rooms use the {{ip|Treasure Room|text=Treasure Room Pool}}.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a D6 wisp in the middle ring. An extra wisp is spawned per item rerolled.}}
+
+== Interactions ==
+* {{i|Car Battery}}: Re-rolls twice instantly without any benefits, doubling the speed of depleting item pools.
+* {{i|Glitched Crown}}: When the D6 is used, all 5 items will be re-rolled.
+* {{p|Soul of Isaac}}: Using the D6 re-rolls the current item and cancels alternation.
+
+== In-game Footage ==
+{{#ev:youtube|8AlO7n4aXGs}}
+
+== Trivia ==
+* {{dlc|nr}} Although the D6 is considered a [[Special Item]], it will only count as a special item if found naturally during gameplay. Starting with the D6 as {{c|Isaac}} will not cause fewer special items to appear later on. This fact also extends to {{c|Eden}}'s starting items: if Eden starts with a special item, that item will not count toward the special item total.
+* In the original ''Binding of Isaac'', the D6 had a recharge time of 3 instead of 6.
+** The D6 could not reroll special boss items in the original game, such as {{i|Little C.H.A.D.}} and {{i|Little Steven}}.
+* In the Eternal Edition of the original ''Binding of Isaac'', The D6 has a chance to delete the item instead of rerolling it when playing in hard mode.
+** {{dlc|r}} The {{i|Eternal D6|n}} has the same effect but with a 2 room charge.
+* In the original Binding of Isaac, this item was called "The Dice".
+** Like the other dice items, the D6 uses the naming scheme of dice for tabletop RPGs like ''Dungeons & Dragons,'' which were associated with devil worship during the Satanic Panic.
+* The {{i|D7}}, {{i|D8}}, {{i|D12}}, {{i|D20}}, {{i|D100}}, {{i|Spindown Dice}}, and {{i|D infinity}} has the sides displayed with numbers, while {{i|D1}}, {{i|D4}}, {{i|The D6}}, and the {{i|Eternal D6}} has sides displayed with pips.
+* The D6 is the only dice item that includes ‘The’ in its name.
+** This may be because it is ‘The’ quintessential dice item; being the first added to the game, arguably the most iconic, and the only one featured as a starting item - for Isaac himself, no less.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The D6.png|{{plat|3DS}} The icon of the D6 as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|blue baby unlock|isaac boss unlock|dice|fr=D6|zh=D6}}
+[[Category:Special items]]

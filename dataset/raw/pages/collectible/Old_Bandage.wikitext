@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | id          = 219
+ | quote       = HP up
+ | description = Grants an empty Red [[Heart container]]. Adds a chance of dropping a {{E|Red Heart}} after taking damage.
+ | quality     = 2
+ | tags        = nolostbr
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants an empty Red [[Heart container]].
+** If the character cannot hold red heart containers they will simply be given a normal HP up.
+* Adds a chance of dropping a {{E|Red Heart}} after taking damage.
+
+== Notes ==
+* {{dlc|nr}} The chance for Old Bandage to spawn a Red Heart depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\min(\frac1 { 10 - \left \lfloor \mathit{Luck} * 0.3 \right \rfloor},50\%)</math>
+** At base luck (0), the chance is 10%, maxing out at 50% at 26.67 luck.
+* {{dlc|r}} The chance for Old Bandage to spawn a Red Heart depends on the [[luck]] stat and is based on this formula: <math>20\% + (\mathit{Luck}\ * 1\%)</math>
+** This means that the chance starts at 20% at 0 luck, minimizes at 0% at -20 luck, and maximizes at 100% at 80 luck.
+
+== Synergies ==
+* {{I|Blood Oath}}: For each half heart damaged by Blood Oath, Old Bandage has a chance to drop a heart. Synergy further improves with luck.
+* {{I|IV Bag}} + {{i|Humbleing Bundle}} / {{i|Maggy's Bow}}: The damage from IV Bag has a chance to spawn 2 hearts, which can be picked up to create further coins and possibly even heal hearts with enough Luck.
+** {{dlc|r}} Humbleing Bundle only has a 50% chance to double the hearts dropped, but Old Bandage may still drop 1 heart.
+
+== In-game Footage ==
+{{#ev:youtube|sL7fsb_RiGE}}
+
+{{nav|fr=Vieux Pansement}}
+[[Category:Damage-triggered items]]

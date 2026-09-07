@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | dlc         = r
+ | costume     = Collectible Venus appearance.png
+ | id          = 591
+ | quote       = HP up + you feel pretty
+ | description = Adds one red [[Heart container]]. Heals 1 additional {{e|Red Heart}}. Enemies near Isaac become [[charm]]ed.
+ | quality     = 2
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Grants one Red [[Heart Container]].
+* Heals 1 additional {{e|Red Heart}}.
+* [[Charm]]s enemies close to Isaac. The effect wears off quickly after enemies move away from Isaac.
+
+== Interactions ==
+* {{i|2Spooky}}: Overridden by Venus.
+
+== In-game footage ==
+{{#ev:youtube|7clC6w6EUB8}}
+
+== Trivia ==
+* [[anti:Venus|Venus]] originates from the ''Antibirth'' mod.
+* Venus' effects reference the Roman goddess of love and beauty, [[wikipedia:Venus_(mythology)|Venus]].
+
+== Bugs ==
+{{bug|When using {{I|D12}} to reroll obstacles; any {{E|Movable TNT}} or [[Fire Places]] created within the charm aura will occasionally spawn as charmed for 2 seconds with only the pink tint to indicate the status effect. Corn poops created in the charm aura are unaffected however the {{E|Eternal Fly}} may also become temporarily charmed.}}
+
+{{nav|astrological}}

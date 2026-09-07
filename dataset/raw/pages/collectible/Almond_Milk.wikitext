@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 561
+ | quote       = DMG down + tears up + you feel nutty
+ | description = Quadruples [[fire rate]], with ×0.3 [[damage]] multiplier. Each tear is given a random effect that alters its movement.
+ | quality     = 1
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Quadruples [[fire rate]].
+* ×0.3 [[damage]] multiplier.
+* -0.16 tear size.
+* Each tear gains the effects of either {{T|Flat Worm}}, {{T|Pulse Worm}}, {{T|Wiggle Worm}}, {{T|Hook Worm}}, {{T|Ring Worm}}, {{T|Whip Worm}}, {{T|Lazy Worm}}, {{T|Tape Worm}}, {{T|Ouroboros Worm}}, {{T|Brain Worm}}, {{I|Rubber Cement}}, {{I|My Reflection}} or {{I|Tiny Planet}} at random.
+** Some tears may have multiple effects at once.
+** These inherit the movement, [[shot speed]], [[range]], and [[Tear Effects#Spectral|spectral]] effects, but not changes to [[tears]] or [[damage]].
+
+== Synergies ==
+* {{i|Brimstone}} / {{C|Azazel}} / {{C|Tainted Azazel}}: The beam will fire continuously as long as the fire button is held and can be aimed in any direction. It shuffles through the worm effects rapidly.
+* {{i|Chocolate Milk}} / {{i|Cursed Eye}} / {{i|Monstro's Lung}} / {{i|Tech X}}: Fires automatically upon reaching full charge.
+** Tech X overrides the worm trinket effects.
+* {{i|Tractor Beam}}: All tears now travel along the beam, improving overall accuracy and DPS.
+
+== Interactions ==
+* {{i|Soy Milk}}: Overridden by Almond Milk (no additional effect on tears or damage).
+* {{i|The Ludovico Technique}}: The tear will rapidly teleport in a small area around it, making it difficult to aim.
+
+== In-game footage ==
+{{#ev:youtube|90iKC5bTg5Y||inline}}
+
+== Trivia ==
+* [[anti:Almond Milk|Almond Milk]] is from the ''Antibirth'' mod.
+
+{{nav|fr=Lait d'Amande}}

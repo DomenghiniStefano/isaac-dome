@@ -1,0 +1,46 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 97
+ | quote       = Sick...
+ | description = When hit, there is a small chance to spawn a permanent tonsil [[familiar]] that blocks enemy shots. This can happen twice, after which the trinket is destroyed.
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* After taking {{dlc|nr+}} 12-20 / {{dlc|r+}} 6-12 hits a removed tonsil [[familiar]] starts following Isaac, blocking enemy shots.
+* The effect can happen twice, after which the trinket will be destroyed.
+* The familiar does not deal damage to enemies.
+{{clear}}
+
+== Notes ==
+{{infobox passive collectible
+ | dlc         = a+nr
+ | id          = 474
+ | quote       = Gross...
+ | description = Grants a [[familiar]] that follows Isaac and blocks enemy shots.
+}}{{dlc clear}}
+
+* When the familiar is generated, Isaac will gain the familiar permanently as a passive item. This allows Isaac to drop the trinket while keeping the familiar.
+** {{dlc|nr}} The passive Tonsil item does not exist in any item pool; thus, this is the only way to find it and make it appear in the [[Collection Page (Afterbirth †)#Page 4|Collection Page]] aside from starting with it as {{C|Eden}}.
+*** {{dlc|nr}} If Eden starts with the passive tonsil item and picks up the trinket, the trinket will spawn only one familiar before being consumed.
+* Sources of self-inflicted damage, like {{I|IV Bag}} or {{M|Blood Donation Machine}}s, can spawn a familiar.
+* Damage that is blocked by {{I|Holy Mantle}} or the {{p|Holy Card}} does not count to the number of hits that are needed for the tonsil familiar to spawn.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Tonsil having the lowest priority at 6th and thus being farther from Isaac than familiars of different priorities.
+
+== Synergies ==
+* {{dlc|r+}} {{a|Golden Trinket|n}} / {{i|Mom's Box}}: Having either can generate a 3rd tonsil before destroying the trinket. Having both can generate a 4th tonsil before destroying it.
+
+== Interactions ==
+* {{i|D4|nr}}: If a passive Tonsil item is given, this item can't be rerolled by the D4 or other items that reroll passive items.
+
+== In-game Footage ==
+{{#ev:youtube|Z1nz7c_LDl0}}
+
+== Trivia ==
+* [[wikipedia:Tonsil|Tonsil]]s are soft tissue located near the back of the throat which, in the event of inflammation to the point of obstructing the throat, can be removed without much noticeable difference.
+* {{dlc|r}} The passive item form of Tonsil is technically the only item to be removed from the game.
+** {{i|Broken Glass Cannon}} has the same ID that the passive item form of Tonsil used to have.
+
+{{nav|fr=Amygdale}}
+[[Category:Damage-triggered items]]

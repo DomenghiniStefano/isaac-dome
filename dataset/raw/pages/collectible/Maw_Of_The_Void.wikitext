@@ -1,0 +1,70 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | costume name = * {{dlc|nr|Afterbirth}}
+ | id          = 399
+ | quote       = Consume thy enemy!
+ | description = While firing, Isaac can charge and unleash a black ring that rapidly deals damage around him. {{dlc+|nr}} The ring can cause enemies to drop {{E|Black Heart}}s. +1 [[damage]].{{dlc-}}
+ | quality     = 3
+ | tags        = devil summonable offensive
+ | devil price = 2
+ | unlocked by = Maw of the Void
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* {{dlc|nr}} +1.0 [[damage]].
+* After firing tears for 2.35 seconds, if Isaac stops shooting, he unleashes a black {{i|Brimstone}} ring around Isaac that expands and contracts, dealing damage at a rapid rate to all enemies touching it.
+** The black ring deals damage equal to Isaac's current damage per tick, and ticks a total of 30 times. It lasts ~1.97 seconds (118 frames).
+** {{dlc|nr}} Enemies killed by the black ring have a 5% chance to drop {{E|Black Heart}}s.
+* {{transformation contribution|Leviathan}}
+
+== Notes ==
+* The charge is completed when a red upside-down cross appears on Isaac's forehead.
+** {{dlc|a+}} With charge bars enabled, there is also an indicator that displays the charge.
+* {{dlc|nr}} This item does not work while playing a [[blindfolded]] character, as it requires tears to charge.
+** This restriction can, however, be bypassed by picking up {{i|The Ludovico Technique}}.
+** This item's effect will not fully activate if picked up by {{c|Lilith}}; its stat ups will still apply to her {{i|Incubus}} familiar, but the ring will not appear unless she also has the Ludovico Technique.
+* {{dlc|r}} This item will still work while playing as a [[blindfolded]] character.
+* The ring will apply any tear status effects such as [[poison]] if Isaac has them.
+* This item can begin to be recharged again immediately after activating it, effectively cutting its charge time in half in situations where it may be needed again quickly.
+
+== Synergies ==
+* Maw Of The Void, {{I|Number Two}}, {{I|Montezuma's Revenge}} and {{I|Revelation}} all have the same charge time, allowing Isaac to easily utilize them at same time.
+* {{i|Dark Arts}}: Extremely powerful. Isaac will unleash a black Brimstone ring while using Dark Arts, letting Isaac do crazy damage while invincible.
+* {{tf|Guppy}}: Damaging enemies with Maw Of The Void allows flies to spawn from the Guppy transformation. Flies are spawned at a rate of approximately one fly per tick of damage for each enemy it hits. This causes a lot of flies to spawn very quickly. The spawned flies will also move to attack the nearest enemy immediately.
+* {{i|Hemoptysis}}: Enemies hit by the sneeze will gain a curse that increases the damage the black ring deals to 2x and +3 flat damage. Enemies who die to the black ring under the curse will damage and spread the curse to nearby enemies.
+* [[Homing tears]]: The ring curves towards enemies.
+* {{i|Ipecac}}: Massively increases ring damage and poisons enemies.
+** {{dlc|r}} The ring also explodes on enemy or obstacle contact.
+* {{i|Jacob's Ladder|r}}: The ring sends out electric currents when it hits something.
+* {{i|Lost Contact}}: Ring can destroy projectiles.
+* {{I|Mysterious Liquid}}: Occasionally spawns a pool of creep where the ring makes contact with an enemy.
+* {{I|Pisces}}/{{I|8 Inch Nails}}: Ring obtains knockback effect.
+* {{i|Proptosis}}: {{dlc|na+}} The ring is much larger and deals 1.5x damage per tick.
+** {{dlc|a+nr}} The ring is larger but deals normal damage.
+** {{dlc|r}} No effect.
+* {{i|Strange Attractor}}: Ring attracts pickups and enemies towards it.
+* {{t|Wiggle Worm}}: The ring has wavy edges.
+
+== Interactions ==
+* {{i|The Ludovico Technique}}: Tear must be moved before the ring activates.
+* {{i|A Lump of Coal}}: {{dlc|na+}} The ring damage is halved.
+** {{dlc|a+}} The ring deals normal damage.
+* {{i|Marked}}: {{dlc|nr}} Crosshair must be moved for 4 seconds before the ring activates.
+** {{dlc|r}} While firing, the ring charges automatically and activates immediately upon full charge.
+* {{i|Soy Milk}}: No effect on charge time but massively reduces damage.
+* {{i|Diplopia}}: Having multiple copies has no effect
+
+== In-game Footage ==
+{{#ev:youtube|uTREd9srdV8}}
+
+== Trivia ==
+* Maw Of The Void has a unique charge bar, filling with red instead of the usual green, as well as having a small swirl reminiscent of its shape in the middle of it.
+* Maw Of The Void and the {{t|Isaac's Fork}} share nearly identical item descriptions, the fork lacking an exclamation point.
+
+== Bugs ==
+{{bug|dlc=r|When combined with {{i|Chocolate Milk}}, {{i|Cursed Eye}}, {{i|Monstro's Lung}} or {{i|Tech X}}, releasing a Maw Of The Void attack may prevent a charged shot from firing at the same time as expected. The charged shot is delayed by about ~0.5 seconds. Holding a full charge for a longer time makes the delay more likely to happen.}}
+
+{{nav|leviathan|azazel unlock|hush unlock|fr=Gouffre du Néant}}

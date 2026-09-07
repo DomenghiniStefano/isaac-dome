@@ -1,0 +1,47 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 120
+ | quote       = Danger charge
+ | description = Fully recharges Isaac's active item upon entering a boss fight.
+ | tags        = nogreed
+ | unlocked by = Hairpin
+}}
+
+{{cit|ut|a+1}}
+
+== Effects ==
+* Fully recharges Isaac's active item upon entering an unexplored {{r|Boss Room}}.
+** This effect only occurs the first time a Boss Room is entered; leaving and re-entering the Boss Room will not result in more recharges.
+
+== Notes ==
+* If there are multiple Boss rooms on the same floor ({{cu|XL}}, {{s|The Void}}), the trinket's effect will trigger once for each and every Boss Room.
+** The trinket's effect also triggers during the stronger Mom's Heart fight at the end of {{s|Mausoleum}}/{{s|Gehenna}}. This allows Isaac to effectively skip both fights if he is holding the {{i|The Bible}}.
+* In [[Greed Mode]], grants a full charge only for the two boss fights on the final level.
+** {{dlc|r}} Cannot appear in Greed Mode, though will function the same if accessed through the [[Debug Console]].
+* {{dlc+|r}} Recharges twice on {{s|Corpse}} II: 1st time happens when entering the boss room, 2nd time happens when entering the {{e|Mother}} fight.{{dlc-}}
+* {{dlc+|r}} Does not fully recharge between {{e|Dogma}} and {{e|The Beast}}.{{dlc-}}
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Active item will be overcharged.
+* {{i|Jacob's Ladder}}: Increases arcing distance of sparks.
+* {{p|IV - The Emperor?}}: The currently held active item is fully charged the first time the extra boss room is teleported to. The normal boss room also charges the active item.
+
+== Interactions ==
+* {{i|The Battery}}: If the item doesn't have a full first charge level, it will be filled. If the first level is full, the second charge level will be filled.
+** {{dlc|r}} The item will gain both its charges.
+* {{i|Mega Blast}}: Mega Blast gains only 3 charge units, unlike all other 12 room recharge items, which are fully charged.
+
+== In-game Footage ==
+{{#ev:youtube|vczIdGRPkkY}}
+
+== Gallery ==
+<gallery>
+File:Trinket Hairpin Booster Pack 1 icon.png|Hairpin's original appearance prior to [[Booster Pack #4]].
+File:Trinket Hairpin Booster Pack 4 icon.png|Hairpin's appearance prior to [[Booster Pack #5]].
+</gallery>
+
+== Trivia ==
+* Hairpin is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=835885114 this Steam Workshop trinket] by zarat.us.
+* Hairpin's original description was "Poke that power outlet! Bosses charge you".
+
+{{nav|booster pack|fr=Épingle à Cheveux}}

@@ -1,0 +1,44 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 610
+ | quote       = Fat buddy
+ | description = The first time Isaac takes damage in a room, a [[familiar]] leaps on an enemy, dealing damage and releasing a rock wave. For the rest of the room, it chases enemies similar to {{i|Dead Bird}}.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = nolostbr summonable dead
+ | unlocked by = Bird Cage
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Gives Isaac a fat bird familiar that sits on Isaac's head until he takes damage.
+* Upon taking damage, it will jump off of Isaac's head and land on the nearest enemy, dealing damage and creating a rock line in a random direction. For the rest of the room, it acts like {{i|Dead Bird}}, flying around, albeit slower, and dealing contact damage to enemies.
+** Bird Cage does 45 damage to enemies it lands on and 10 damage per rock wave that hits enemies, then does 3 contact damage per tick while chasing enemies (~6.43 damage per second). The rock waves can destroy obstacles.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Cage}}.{{dlc-}}
+* If damage is taken in a room with no enemies, the familiar will directly go to the flying phase without performing the jump attack.
+* Contact damage can be dealt to nearby enemies even when the familiar jumps off of Isaac's head.
+* Bird Cage's jump can be carried over to another room mid-jump to create a rock line there instead. The direction of the line is preserved from how it would be in the original room.
+* While the familiar is sitting on Isaac's head, it can be affected by certain character appearances. For example, it will appear fully black if obtained by {{c|Tainted Judas}}.
+
+== Synergies ==
+* {{i|BFFS!}}: Spawns 4 rock waves in an X pattern and doubles contact damage. Damage of the jump and the rock waves is unaffected.
+* {{i|Sacrificial Altar}}: Can be used after the familiar has jumped.
+* {{i|Spin to Win}}: Boosts the familiar's damage while spinning, although has no effect on its speed.
+
+== Interactions ==
+* {{i|Bird Cage}}: Multiple copies of the item provide no benefit and won't make more than one familiar appear.
+* {{i|Box of Friends}}: Immediately makes the familiar jump, leaving a ghost copy on Isaac's head until he takes damage. This has no benefit to the damage dealt and will not spawn more than one familiar.
+* {{t|The Twins}}: If Bird Cage was active in a previous room and it was chosen by the trinket, it skips the jump and enters its flying phase. Behavior otherwise identical to that with Box of Friends.
+
+== In-game footage ==
+{{#ev:youtube|08OOe7pqhrE}}
+
+== Trivia ==
+* [[anti:Bird Cage|Bird Cage]] is from the ''Antibirth'' mod.
+* The item's name is a pun: the familiar resembles {{E|The Cage}}, and it functions like Dead Bird, thus making it a "Bird" version of the Cage.
+
+{{nav|eve unlock|mother unlock|fr=Gros Piaf}}
+
+[[Category:Damage-triggered items]]

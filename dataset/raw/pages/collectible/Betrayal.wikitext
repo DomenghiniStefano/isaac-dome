@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 391
+ | quote       = Turn your enemy
+ | description = {{dlc|nr}} [[Charm]]s all enemies in the room when Isaac takes damage.<br>{{dlc|r}} Enemies are able to damage each other. If an enemy is damaged by another enemy, they will attack that enemy instead of Isaac.
+ | quality     = 1
+ | tags        = offensive summonable
+ | unlocked by = Betrayal
+}}
+
+{{cit|up|a}}
+
+== Effect ==
+* {{dlc|nr}} Upon taking damage, all enemies in the room are [[charm]]ed.
+** {{dlc|a+}} It won't trigger if there are less than 2 enemies in the room.
+* {{dlc|r}} Enemies are able to damage each other with projectiles. If an enemy is damaged by another enemy, they will attack that enemy instead of Isaac.
+
+== Notes ==
+* {{dlc|nr}} This item is extremely strong against the second and third phase of {{E|???}}, as its own eternal flies become charmed and deal massive damage to the boss, often killing it after even just two uses.
+* {{dlc|r}} The initial effect only affects projectiles. Enemies will not deal contact damage to each other, unless hit by a projectile, at which point they will deal contact damage to their attacker.
+* {{dlc|r}} [[Charm|Charmed]] and [[friendly]] enemies can trigger the item.
+
+== In-game Footage ==
+{{#ev:youtube|dAPrw33fG3s}}
+
+== Trivia ==
+* This is a reference to Judas betraying Jesus after the Last Supper, leading to Jesus' death by crucifixion.
+* {{dlc|r}} Betrayal's updated behavior bears a similarity to the monster infighting mechanic from the ''Doom'' series, ''Heretic'', and ''Hexen'', which similarly causes enemies struck by another enemy's attack to prioritize attacking that monster over the player character.
+
+{{nav|judas unlock|hush unlock|fr=Trahison}}
+[[category:damage-triggered items]]

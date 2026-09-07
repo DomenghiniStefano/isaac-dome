@@ -1,0 +1,45 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 609
+ | quote       = ???
+ | description = Re-rolls all items in the room. Each item has a 25% chance to disappear instead.
+ | quality     = 3
+ | tags        = offensive nocantrip
+ | recharge    = 2
+ | unlocked by = Eternal D6
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, replaces every pedestal item in the current [[Rooms|room]] with other random items corresponding to the current room's [[Item Pool|item pool]].
+** Each pedestal item rerolled has a 25% chance to disappear.
+
+== Notes ==
+* {{c|The Lost}} starts with this item, even if it hasn't been unlocked yet.
+* Killing Florian last in an {{E|Ultra Pride}} fight has a chance to drop the Eternal D6 if unlocked.
+* In rooms with multiple item pedestals, each pedestal has a separate chance of disappearing when rerolled.
+* [[Luck]] has no effect on the item.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=50% to spawn an eternal white glowing wisp on the middle ring, which cannot be destroyed. Every use has a 50% chance to destroy all the wisps instead of spawning another. Does not affect wisps other than the ones made by this item. Rerolling items does not affect this chance.}}
+
+== Interactions ==
+* {{i|Car Battery}}: Re-rolls twice like {{i|The D6}}, but the 25% chance of the item disappearing is increased to approx 44%.
+* {{i|Crooked Penny}}: If a reroll would make an item disappear, all items on pedestals spawned by Crooked Penny will disappear.
+
+== In-game footage ==
+{{#ev:youtube|aLTKYK8im5I}}
+
+== Gallery ==
+<gallery>
+File:UnlockPaper EternalD6.png|Achievement unlock image for the Eternal D6, depicting Florian Himsl.
+</gallery>
+
+== Trivia ==
+* [[anti:Eternal D6|Eternal D6]] originates from the ''Antibirth'' mod, where it had a charge time of 3, like the Dice in the original ''Binding of Isaac''.
+* This item functions similarly to the D6 in the Eternal Edition of the original ''Binding of Isaac'', where it had a chance to delete the item instead of rerolling it when playing on hard mode.
+* This item's collectible sprite refers to it as "Florian's D6".
+** The secret popup for this item even depicts Florian Himsl lovingly rubbing said D6, as he created the Eternal Edition update for the flash game which added the Eternal D6's functionality to the D6 on Hard Mode. Florian having a chance to drop Eternal D6 in the Ultra Pride fight is also a nod to that.
+
+{{nav|dice|blue baby unlock|mother unlock|fr=D6 Éternel}}

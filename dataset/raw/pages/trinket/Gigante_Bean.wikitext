@@ -1,0 +1,25 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 134
+ | quote       = Mega farts
+ | description = Increases the size of Isaac's farts.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* Makes farts (e.g. {{I|Butter Bean}}) significantly larger.
+** {{dlc|nr+}} Also affects enemy farts.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either makes all farts gain knockback. Having both makes all farts gain knockback and inflict confusion.
+* {{I|Contagion}}: All enemies killed while infected produce a much larger gas cloud, making the spread much more effective.
+* {{i|Isaac's Heart}}: Increases the knockback amount and radius of the heart when fully charged and the heart makes farting noises when it shoots.
+* {{I|Jupiter}}: Affects all gas clouds produced, increases them in size drastically.
+* {{I|Linger Bean}}: The clouds will be larger, increasing the range drastically. The damage is unaffected.
+* {{I|Mucormycosis}}: Spore explosions count as farts, and increase in size.
+
+== Trivia ==
+* This trinket originated in ''Antibirth'', where it was originally called [[anti:Giant Bean|Giant Bean]] and had the additional effect of stunning enemies.
+
+{{nav|bean|fr=Haricot Géant (Babiole)}}

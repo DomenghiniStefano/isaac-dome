@@ -1,0 +1,90 @@
+{{Infobox boss
+ | dlc         = r
+ | name        = Rotgut
+ | id          = 911
+ | environment = <u>Boss</u><br>{{floor|Corpse}}
+ | base hp     = 1800
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Yuck Heart}} (1% chance)
+}}
+
+* '''Rotgut''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in the {{s|Corpse}}.
+
+== Behavior ==
+=== Phase 1 ===
+The first phase occurs against Rotgut's "face" in its regular boss room. Rotgut is stationary in the center of the room and performs the following attacks:
+* Spews a constant wave of projectiles that alternates above and below it in a fanning pattern.
+* Spews out waves of fluctuating spaced-out projectiles in a disorganized pattern.
+* Fires rings of 8 expanding projectiles that alternate between rotating clockwise and counter-clockwise.
+* Fires three waves of projectiles in a row:
+** A radial of tightly knit slow-moving tears.
+** A radial of spaced out fast-moving tears.
+** A burst of randomly positioned tears that hover for a moment before dropping.
+* Coughs up a horizontal burst of red projectiles to the left and right side of itself.
+* Vomits out projectiles, bones, as well as {{e|Globin}} goo, {{e|Gazing Globin}} goo, and {{e|Small Maggot}}s that rain down in a large area.
+
+=== Phase 2 ===
+Once Rotgut's first form has been defeated, it sucks Isaac, any monsters, and floating projectiles into its mouth and sends Isaac into a {{r|Crawl Space}}-like interior. The second phase consists of a large maggot that sits in the bottom right of the room and performs attacks depending on Isaac's position.
+
+If Isaac is on the platform, the maggot uses its rear end:
+* Launches a cluster of projectiles onto the platform and covers it in green poisonous gas.
+* Launches an {{i|Ipecac}} shot that bursts into arcing tears.
+* Shoots out 6 slow travelling tears that travel in a wave pattern across the entire room.
+
+If Isaac is below the platform and on the ground, the maggot uses its head:
+* Spits out a stream of arcing blood projectiles along with a few {{e|Attack Fly|text=Attack Flies}} and Small Maggots.
+* Shoots out a {{i|Brimstone}} laser.
+
+=== Phase 3 ===
+Defeating the Maggot allows passage into the next chamber, which contains Rotgut's "heart". The heart switches randomly between two modes of projectile patterns that occur for the entire duration of the fight:
+* Mode 1: shoots out half-rings of 6-7 green projectiles below it with each pulse of the heart.
+* Mode 2: drops 3 yellow projectiles in random locations with each beat of the heart. Each projectile splits into 2 arcing projectiles after hitting the ground.
+
+The heart can perform additional attacks that occur independently of its two set modes:
+* Retreats upwards and spawns {{e|Leech||Leeches}} on the end of the room furthest from Isaac. These Leeches move quickly across the screen and despawn upon reaching the edge of the screen. The final Leech spawned has a chance of being an {{e|Adult Leech}}.
+* Drops 2 large blood projectiles below it one after another. Each bursts into smaller projectiles that bounce all over the room.
+After defeating this phase, Isaac is automatically ejected out of Rotgut's insides and back into the boss room.
+
+== Gallery ==
+<gallery>
+File:Boss Rotgut 2nd form old ingame.png|Gus: the giant {{e|Maggot}} in Rotgut's second phase.
+File:Boss Rotgut thirdphase ingame.png|Rotgut's third phase.
+File:Boss Rotgut Old Portrait portrait.png|Rotgut's original splash art in Antibirth.
+File:Boss RotGut 1st form old ingame.png|Rotgut's first phase in ''Antibirth''.
+File:Boss Rotgut 3rd form old ingame.png|Rotgut's third phase in ''Antibirth''.
+File:Rotgut concept art.png|Concept art of Rotgut.
+File:Rotgut concept art old.png|Concept art of Rotgut, featuring an older design.
+File:Repentance Boss Designs 1.jpg|Concept art of Rotgut's updated design by Edmund McMillen, alongside other sketches.
+</gallery>
+
+== Notes ==
+* Dying with a respawn item (such as {{i|Dead Cat}}) in the second or final phase places Isaac in the previous phase, meaning Isaac has to fight that phase again. This does not apply to effects that revive the player in the same room such as {{i|Inner Child}}.
+* The transitions between phases count as room changes (which means the {{i|Holy Mantle}} shield will re-activate after each phase, for instance).
+* The chambers for second and third phases are not considered boss rooms for the purposes of items such as {{i|Blanket}}.
+* {{i|Vanishing Twin}} will spawn a copy of Rotgut's first phase. When either of them is defeated, the fight can be advanced to second phase without killing the remaining boss. Second and third phases are not affected except for the fact that Vanishing Twin familiar will remain with Isaac despite having transformed into a copy of Rotgut. After Isaac defeats the third phase of the boss, the familiar will spawn another Rotgut, which will instantly die and drop an item.
+
+== Trivia ==
+* Compared to ''Antibirth'', Rotgut's 1st and 3rd phases have a new visual design.
+** Rotgut's appearance change was a decision made by Edmund.
+* The maggot inside of Rotgut has been nicknamed "Gus" by the developers.
+** {{e|Tainted Spitty}}, an enemy which can appear during the [[Ascent]] to reach {{s|Home}}, bears a strong resemblance to Gus in both appearance and attack patterns.
+* Rotgut is the informal name for a grade of moonshine that is very poor quality, being poor enough to be deadly to drink.
+* Rotgut is the name of a level from ''Super Meat Boy'', one of Edmund McMillen's earlier games.
+* Rotgut's current design is supposed to be a {{e|Fatty}} that grew so big that it fused to the floor, according to developer _Kilburn.<ref>https://discord.com/channels/123641386921754625/123961790529929218/839145631779258378</ref>
+** He also speculated that Rotgut could be {{e|It Lives!}} having grown massive instead.
+** The reason for this design change was due to Edmund not liking the previous worm-like appearance.
+
+== Bugs ==
+{{Bug|If Isaac is small enough (with {{i|Pluto}} for example), he can very easily clip through the ground during the Rotgut fight at phase 2 or 3 and enter {{r|I AM ERROR}} room, consequently skipping the fight to Corpse II.
+* Dashing through the Maggot in phase 2 using items such as {{i|Mars}} or {{i|A Pony}} or standing inside of it when {{i|Dark Arts}} deactivates can also clip Isaac through the room, causing the same effect.
+* This is also possible by using {{i|Suplex!}} against its second or third phase.}}
+{{Bug|If debug 10 ("quick kill") is active, Rotgut will repeat its phase 1 death animation indefinitely, preventing Isaac from accessing phases 2 and 3, thus softlocking the game.}}
+{{Bug|If  {{i|Suplex!}} is used to kill Rotgut's first phase, the fight will fail to progress as instead of taking Isaac to the next phase touching Rotgut will hurt him.}}
+{{Bug|If Isaac has {{i|Flat Stone}}, the tears WILL NOT bounce on the floor in the crawspace-like rooms, forcing Isaac to shoot at very close range and making the third phase almost unbeatable.}}
+
+== References ==
+{{reflist}}
+
+{{nav|boss|fr=Mort-Boyaux}}
+[[Category:Chapter 4.5 bosses]]
+[[Category:Corpse bosses]]
+[[Category:Debut bosses in Repentance]]

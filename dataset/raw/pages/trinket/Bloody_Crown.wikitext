@@ -1,0 +1,35 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 111
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = Drips with blood...
+ | description = {{R|Treasure Room}}s appear in [[Chapter 4]].
+ | tags        = lazarussharedglobal nogreed
+ | unlocked by = Bloody Crown
+}}
+
+{{cit|ut|a+}}
+
+== Effect ==
+* {{R|Treasure Room}}s appear in the {{s|Womb}}, {{s|Utero}}, and {{s|Scarred Womb}}.
+* {{dlc+|r}} Treasure Rooms also appear in the {{s|Corpse}}.{{dlc-}}
+
+== Notes ==
+* This trinket must already be held upon starting the Womb/Utero/Scarred Womb floor for the effect to take place, i.e., the trinket needs to be carried over from the previous floor.
+* Bloody Crown only needs to be held when entering the floor. The Treasure Room will remain after dropping the trinket, even if it hasn't been explored yet.
+* {{Curse|XL}} floors will have 2 treasure rooms, like any other XL floor.
+* {{Dlc|r}}The Treasure Rooms that appear in Corpse will have 2 items, one behind a {{curse|blind}} like the other Alt Path floors.
+* This trinket does not work if held during a challenge run that impedes {{R|Treasure Room}}s from spawning.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Treasure rooms in the Womb have an item choice, as if Isaac had {{i|More Options}}.
+
+== In-game Footage ==
+{{#ev:youtube|DmWAhT-xtQs}}
+
+== Gallery ==
+<gallery>
+File:AB- Item Concept 2.png|Afterbirth+ trinket concepts, including Bloody Crown.
+</gallery>
+
+{{nav|samson unlock|delirium unlock|fr=Couronne Sanglante}}

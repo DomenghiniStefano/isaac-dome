@@ -1,0 +1,25 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Locust of Pestilence
+ | id = 114
+ | quote = I bring Pestilence
+ | description = Upon entering a room with enemies, spawns a [[Locust|Green Locust]] which damages and poisons enemies.
+ | unlocked by = Locust of Pestilence
+}}
+
+{{cit|ut|a+}}
+
+== Effects ==
+* Upon entering a room with enemies, spawns a [[Familiars#Locusts|Green Locust]] that deals double Isaac's damage and poisons enemies, which deals double Isaac's damage over time.
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pestilence}}.{{dlc-}}
+* The Locust will also spawn each time a wave starts in {{R|Boss Rush}} and {{dlc|r+}} {{mode|greed|greedier}} [[Greed Mode]].
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Each copy will spawn one more locust.
+
+== In-game Footage ==
+{{#ev:youtube|yu7bkE3bMkk}}
+
+{{nav|apollyon unlock|locust|satan unlock|fr=Locuste d'Épidémie}}

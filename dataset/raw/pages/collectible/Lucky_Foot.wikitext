@@ -1,0 +1,40 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 46
+ | quote       = Luck up
+ | description = +1 [[luck]]. Improves Isaac's chances at various random events (independent from the luck stat). {{dlc|r}} Converts all bad [[pill]]s into good pills, without identifying them.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +1 [[luck]].
+* Increases chances of winning at {{M|Shell Game}}, {{Machine|Hell Game}},  {{M|Slot Machine}}, {{M|Fortune Telling Machine}}, and {{M|Confessional}}.
+* Increases chances of getting a room-clearing drop (independent from the luck stat).
+* Increases the chance of a reward from a {{M|Beggar}}s or {{M|Devil Beggar}} after each of their first payouts.
+** On [[Hard mode]], reduces the minimum number of donations for each reward to 2 (from 3).
+** Does not apply to {{M|Key Master}}, {{M|Bomb Bum}}, {{M|Battery Bum}}, or {{M|Rotten Beggar}}.
+* {{dlc|r}} Converts all "bad" [[pill]]s into their "good" counterparts but doesn't affect neutral ones, like {{i|PHD}}. Pills remain unidentified.
+
+== Notes ==
+* {{C|Cain}} starts with this item by default.
+* For [[Room Clear Awards]], the Lucky Foot works by first applying a decimal multiplier to the room-clearing drop RNG, and then by raising its ''minimum'' value. All of this happens before the luck stat modifies the RNG's ''maximum'' value by adding another random number.
+** With zero luck, your chance to get '''nothing''' from a room clear is 22%; with Lucky Foot's modifiers (other than luck), it's reduced to around 13.33%. The effect on its own is similar to having 6.5 extra points of luck, though with a much lower likelihood of getting [[Chests]].
+** Lucky Foot also slightly increases the likelihood of running into Chests, though this effect is most noticeable if your luck isn't very high.
+
+== Interactions ==
+* {{i|False PHD}}: Pills can both be good or bad again. Taking a bad pill still applies the benefits from False PHD.
+* {{t|Lucky Toe}}: The extra luck-independent chance of room clearing drops from Lucky Toe applies only in a diminished form, unless at zero or negative luck. This bonus from Lucky Foot is still retained.
+
+== In-game Footage ==
+{{#ev:youtube|N4pVoGr76Bc||inline}} {{#ev:youtube|yisemJSaxNY||inline}}
+
+== Trivia ==
+* In the original ''The Binding of Isaac'', Lucky Foot had the added effect of changing "bad pills" into "good pills".
+** {{dlc|r}} This was restored in ''Repentance''.
+* {{dlc|nr}} On the Character Select Screen, this item is mistakenly called the "Luck Foot". This is a carryover from the original ''The Binding of Isaac''.
+* The Lucky Foot may be a reference to a rabbit's foot, which is carried as an amulet for good luck.
+
+{{nav}}

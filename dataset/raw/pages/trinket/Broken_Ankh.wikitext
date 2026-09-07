@@ -1,0 +1,26 @@
+{{infobox trinket
+ | id          = 28
+ | quote       = Eternal life?
+ | description = When held, Isaac has a 22.22% chance to be revived as {{c|???}} in the most recent non-hostile room. Can occur multiple times in the same run.
+ | tags        = {{dlc|r+|nochallenge}}
+ | unlocked by = Broken Ankh
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* When held, Isaac has a 22.22% chance to be revived as {{c|???}} in the previous room. Can occur multiple times in the same run.
+
+== Notes ==
+* Resurrection items activate in a [[:Category:Revival items|set order]]. Broken Ankh is {{dlc|nr}} 7th / {{dlc|r}} 9th in this order after {{p|Soul of Lazarus}}, {{i|1up!}}, {{i|Dead Cat|nr}}, {{c|Lazarus|nr}}' inherent extra life ({{dlc|r}} swap the order of the previous two), {{i|Inner Child}}, {{i|Guppy's Collar}}, {{i|Lazarus' Rags}}, and {{i|Ankh}}.
+* This trinket isn't affected by [[Luck]].
+* Unlike {{i|Guppy's Collar}}, Broken Ankh will not display an extra life and question mark next to Isaac's hearts.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either increases chance to be revived as {{c|???}} to 33%. Having both to 50%.
+* {{c|Tainted ???}}: Revived as Tainted ??? instead of ???.
+
+== In-game Footage ==
+{{#ev:youtube|bzmJ6ApTWkQ}}
+
+{{nav|lazarus unlock|satan unlock|revival|broken|fr=Ânkh Brisée}}

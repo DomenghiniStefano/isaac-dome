@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 657
+ | quote       = Clogged enemies
+ | description = Enemies explode into tears upon death, which inherit the effects of Isaac's tears.
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Upon killing an enemy, 1 - 16 blood clot tears are released from them in random directions.
+** The amount of tears released from an enemy is based on the enemy's health, and is not affected by Isaac's damage, nor the number of tears hit.
+** These tears are red in coloration, regardless of Isaac's tears, but will inherit the coloration of applied to enemy [[Status Effects|status effects]].
+* Burst tears will do set damage per floor. The formula for this is: (3.2 + 0.3 x stage).
+
+== Notes ==
+* If an enemy is killed while affected by a [[status effect]], the burst tears will inflict the corresponding effect.
+* [[Tear Effects|Homing]], [[range]] and [[shot speed]] do not affect Vasculitis.
+* Released tears can be difficult to distinguish from enemy shots, especially from enemies which split in to burst shots upon death such as {{E|Red Boom Fly}} and light blue [[Monsters|champions]].
+** {{dlc|r+}} The projectiles are now a unique shape and color to improve visibility.
+* All forms of damage will cause an enemy to release tears.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s can’t release tears.
+* [[Burn]]: Burning enemies release fire mind tears.
+* [[Poison]]: When a poisoned enemy dies, the released tears are tinted green and will poison other enemies.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop can’t release tears.
+* {{I|Fire Mind}}: Not recommended. Vasculitis' tears can explode, with great potential to harm Isaac.
+* {{dlc|r}}[[Freeze|Freeze Effects]]: Enemies that die from being frozen can’t release tears.
+** {{dlc|r+}} Frozen enemies can release tears.
+
+== In-game footage ==
+{{#ev:youtube|2zq2m9gBz4s}}
+
+== Trivia ==
+* {{dlc|rnr+}} Enemies that are [[Freeze|frozen]], actually do release tears. However, since these tears are spawned inside of enemies' ice statues, they deal damage to statues and immediately destroy themselves.
+** {{dlc|rnr+}} If enemy had high enough health, statue may be shattered instantly because of that.
+
+{{nav|fr=Vascularite}}

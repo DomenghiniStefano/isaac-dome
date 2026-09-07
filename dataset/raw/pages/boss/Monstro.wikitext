@@ -1,0 +1,52 @@
+{{infobox boss
+ | name = Monstro
+ | id = 20
+ | environment = <u>Boss</u><br>{{floor|Basement}}{{floor|Burning Basement}}<br>{{room|challenge}}{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>(With Another Monstro, {{dlc|a}}{{e|The Duke of Flies}}, {{e|Larry Jr.}}, or {{e|Fistula}})<br><u>Degraded Boss</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp = 250
+ | pool = {{ip|Boss}}<br> {{dlc|r+}} {{i|Monstro's Tooth}} (1% chance)
+}} {{disambig msg|the boss|the posthumous version|Monstro II|the enemy|Ministro|the item|Lil Monstro}}
+
+'''Monstro''' is a [[boss]] that can appear in the {{s|Basement}} and the {{s|Burning Basement}}.
+
+== Behavior ==
+* Hops towards Isaac.
+* Coughs up a large number of disorganized projectiles towards Isaac.
+* Jumps off-screen, aiming to land on top of Isaac. Create a burst of disorganized projectiles in all directions on landing.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|2}}: 15% larger and has 25% more HP (312.5). Uses projectile volleys much more often and is unable to jump off-screen.
+: {{bc|1}}: Two 20% smaller Monstros, each with 55% less HP than the original one (112.5), replace the normal Monstro.
+
+== Gallery ==
+<gallery>
+File:Boss Monstro dark grey ingame.png|Grey Champion Monstro.
+File:Boss Monstro red ingame.png|Red Champion Monstro.
+File:Boss Delirium Monstro ingame.png|Monstro as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Notes ==
+* In the boss room, Monstro can be paired with {{e|Fly|text=Flies}}, {{e|Attack Fly|text=Attack Flies}}, {{e|Gaper}}s, {{e|Hopper}}s, {{e|Frowning Gaper}}s, {{e|Mulligan}}s, {{e|Cyclopia}}s, or {{e|Ministro}}s.
+* When Monstro jumps off-screen, he is cured of all status effects.
+* {{dlc|nr}} Monstro can't hop over [[Obstacles]].
+* Larger [[Tears]] that Monstro shoots deal 1 [[Heart]] of damage, while the smaller [[Tears]] only deal half a [[Heart]] of damage.
+** If Isaac is somewhere that Monstro cannot reach, Monstro will jump in place.
+** If Isaac has flight and is over an obstacle, Monstro will essentially be unable to perform any attacks.
+*** While Monstro can hit Isaac with his tear barrage because of its tear height, it is very unlikely.
+* {{dlc|a+}} Monstro can rarely spawn in a room with two {{M|Blood Donation Machine}}s.
+
+
+== Trivia ==
+* Monstro appeared in the original ''The Binding of Isaac.''
+* He is the boss version of the {{e|Ministro}}s.
+* Monstro appears to be missing a tooth which appears as the item, {{i|Monstro's Tooth}}.
+** Monstro also has a [[wikipedia:Cleft lip and palate|cleft lip]].
+* Monstro is ''Monster'' in Portuguese.
+** "Monstro" is a somewhat common mispronunciation of the Spanish word ''monstruo''.
+** Monstro is also the name of [[Wikipedia:The Terrible Dogfish|The Terrible Dogfish]], a fish with a large mouth and many teeth from the book ''[[Wikipedia:The Adventures of Pinocchio|The Adventures of Pinocchio]]''.
+
+{{nav|boss}}
+
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Rebirth]]

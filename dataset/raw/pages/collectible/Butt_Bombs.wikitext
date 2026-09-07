@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | costume name = * back
+ | id           = 209
+ | quote        = Toxic blast +5 bombs
+ | description  = +5 {{e|Bomb}}s. Bombs now cloud up the screen, briefly damaging and [[confusion|confusing]] all enemies.
+ | quality      = {{dlcalt|2|r+=1}}
+ | tags         = poop summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Gives the player 5 {{e|Bomb}}s.
+* Bombs now cloud up the screen on detonation, briefly [[confusion|confusing]] and dealing 10 damage to all enemies in the room.
+* {{dlc+|r}} {{transformation contribution|Oh Crap}}{{dlc-}}
+
+== Notes ==
+* {{dlc+|r}} This item can be spawned by {{e|Bumbino}} if he picks up 12 cents.{{dlc-}}
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Colostomia}}.{{dlc-}}
+* {{dlc+|a}} Butt Bombs heal {{e|Turdlings}}, {{E|Dingle}}, {{E|Dangle}}, {{E|Brownie}} and {{E|Clog}} by 25% of their maximum HP.
+** {{dlc|a+}} The Butt Bomb effect on {{i|Dr. Fetus}} or {{i|Epic Fetus}} does not cause healing, but normal bombs still do.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|oKP3k-eAxNE}}
+
+== Trivia ==
+* This item is used in {{chal|High Brow}}, {{chal|Beans!}}, and {{chal|Scat Man}}.
+
+== Bugs ==
+{{bug|Although {{i|Bob's Rotten Head}} works normally with {{i|Butt Bombs}}, and {{i|Bomber Boy}} has no effect with it, their combination drops the explosion damage by 50%.}}
+
+{{nav|oh crap|bomb modifier|poop|fr=Bombes Bronze}}

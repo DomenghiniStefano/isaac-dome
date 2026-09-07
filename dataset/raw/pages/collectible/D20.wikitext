@@ -1,0 +1,59 @@
+{{infobox activated collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 166
+ | quote       = Reroll the basics
+ | description = Re-rolls all [[pickup]]s, [[chest]]s, and [[trinket]]s in the current [[room]].
+ | quality     = 2
+ | tags        = offensive
+ | recharge    = 6
+ | unlocked by = The D20
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* Upon use, re-rolls all [[pickup]]s, [[chest]]s, and [[trinket]]s in the current [[room]].
+
+== Notes ==
+* {{dlc|r}} Chests are more likely to be re-rolled into other chests.
+* {{dlc|nr}} The empty chest object that is left behind after opening any kind of chest can be re-rolled into another pickup. As empty chests disappear after leaving a room, it's better to wait until D20 is fully charged before opening chests.
+* {{dlc|nr}} D20 cannot re-roll pickups into {{E|Lil' Battery||Lil' Batteries}}, but can re-roll pickups into {{e|Grab Bag}}s which can contain Lil' Batteries.
+* {{dlc|r}} D20 can re-roll pickups into {{E|Lil' Battery||Lil' Batteries}} and other battery pickups, and can re-roll pickups into {{e|Grab Bag}}s which can contain Lil' Batteries.
+* D20 can re-roll pickups into chests or trinkets and vice versa.
+** On {{s|Chest}} and {{s|Dark Room}}, the re-rolled chests will always contain items unless they are a {{e|Red Chest}} or a {{E|Wooden Chest}}.
+** Re-rolls create trinkets far less often than pickups and chests.
+* It can re-roll pickups sold in the {{r|Shop}}.
+** {{dlc|r}} When used to reroll pickups in any shops, pickups may be rerolled into items instead.
+* Rerolling pickups duplicated by {{p|Jera}}, {{i|Diplopia}} and {{i|Crooked Penny}} will result on both the original item and the duplicate being rerolled into the exact same pickup.
+* {{A|Golden Trinket}}s rerolled by D20 will cause the resulting pickup to have the golden effect applied to it. If the trinket is rerolled into another trinket, it will lose the golden effect and act like a normal trinket, otherwise the gold effect will do nothing and will disappear upon leaving and reentering the room.
+** Additionally, items spawned by chests with the gold effect applied will be golden as well, however other pickups dropped by chests will not be.
+* {{dlc|r}} Can reroll coins dropped by {{c|Tainted Keeper}} into other pickups, but they will still disappear if not picked up quickly.
+
+== Strategy ==
+* {{dlc|a}} In [[Greed mode]], the D20 is a one-item game breaker as long as the Shop has a {{E|Lil' Battery}} available. Leave behind as many coins and pickups in the arena as possible. After using the D20, avoid opening chests until the item has been recharged. Avoid collecting things that do not spawn pickups, help buy Lil' Batteries, or help open chests. This can often be repeated indefinitely, leading to collecting coins, bombs, and many pedestal items.
+** {{dlc|r}} Due to how the D20 interacts with the {{i|Book of Virtues}}, this strategy will not work with {{C|Bethany}}, as using the D20 while playing as her will destroy all pickups in the room.
+*** However, this can be avoided by removing Book of Virtues using {{t|Butter!}}{{dlc-}}
+** {{I|D infinity|r}} can be used for this strategy if it is found.
+*** {{I|D infinity|n}} in D20 mode will also destroy all pickups while also having the {{i|Book of Virtues}}.{{dlc-}}
+
+== Synergies ==
+* {{t|Safety Scissors|r}}: Bombing a {{M|Bomb Bum}} while possessing this trinket will convert the {{e|Troll Bomb}}s he spawns into regular {{e|Bomb}}s. This process can be repeated indefinitely for unlimited {{e|Bomb}} pickups. These {{e|Bomb}} pickups can then be rerolled with the {{I|D20}}.'''{{dlc-}} <!-- I added dlc r because the bomb bum doesn't have this behavior before repentance (it can be bombed normally) -->
+
+== Interactions ==
+* {{Book of Virtues synergy|description=Spawns wisps in the middle ring. In addition to summoning its specific wisp, instead of rerolling pickups, it will <u>destroy all the pickups in the room</u> and has a chance to give a random wisp for each pickup destroyed.}}
+* {{i|Car Battery}}: Re-rolls twice instantly without any benefits.
+** {{dlc|r}} Slightly increases the probability to re-roll into chests.
+* {{I|Options?}}: Can re-roll both items created by {{I|Options?|dlc=n}}, but only one can still be taken.
+
+== In-game Footage ==
+{{#ev:youtube|0TN04t-ZdB0}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed D20.png|{{plat|3DS}} The icon of D20 as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* In the original ''The Binding of Isaac'', the D20 was unlocked by beating {{E|Isaac}} as {{c|Isaac}}.
+
+{{nav|isaac unlock|blue baby boss unlock|dice}}

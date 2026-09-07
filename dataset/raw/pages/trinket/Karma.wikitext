@@ -1,0 +1,42 @@
+{{infobox trinket
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | name        = Karma
+ | id          = 85
+ | quote       = Karma up
+ | description = Donating to a {{M|Donation Machine}}, {{M|Blood Donation Machine|r+}}, or {{M|Confessional|r+}} has a chance to heal Isaac for a full {{e|Red Heart}} or spawn a {{M|Beggar}}. Increases the chance that donating to a Donation Machine will increase Isaac's [[luck]].{{dlc|r+}} Reduces the chance of the Donation Machine jamming. Donating to a {{M|Beggar}} has a chance to heal Isaac for a full {{e|Red Heart}} or increase luck.
+ | tags        = nogreed
+ | unlocked by = Karma
+}}
+
+{{cit|ut|a}}
+
+== Effects ==
+* Donating to a {{M|Donation Machine}} has a chance to do one of the following:
+** Heal Isaac for a full {{e|Red Heart}}
+** Spawn a {{M|Beggar}}
+** Get a {{e|Penny}} back, directly added to Isaac's total
+* Increases the chance that donating to a Donation Machine will increase Isaac's [[luck]].
+* {{dlc|r+}} Reduces the chance of the Donation Machine jamming.
+* {{dlc|r+}} Donating to a {{M|Beggar}} has a chance to do one of the following:
+** Get a {{e|Penny}} back,  directly added to Isaac's total
+** Heal Isaac for a full {{e|Red Heart}}
+** Increase Isaac's [[luck]]
+* {{dlc|r+}} {{M|Blood Donation Machine}}s, {{M|Devil Beggar}}s, {{M|Confessional|n}}s, and {{M|Hell Game|n}}s have a chance to do one of the following:
+** Heal Isaac for a full {{e|Red Heart}}
+** Spawn a {{M|Beggar}}
+** Increase Isaac's [[luck]]
+* {{dlc|r+}} {{M|Shop Restock Machine}}s have a chance to increase Isaac's [[luck]].
+
+== Synergies ==
+* {{t|Karma}} / {{I|Mom's Box}} / {{A|Golden Trinket}}: The luck increase granted by Donation Machines grows with each effect/trinket copy stack granting +1 luck per stack up to +5 luck.
+
+== In-game Footage ==
+{{#ev:youtube|R1XfS4Jxkyk}}
+
+== Trivia ==
+* {{dlc|a+}} Karma's sprite was changed for [[Booster Packs|Booster Pack #5]].
+* The trinket's sprite is a [[wikipedia:Triskelion|Triskelion]], also known as a Triskele.
+** While there is no connection between the triskelion and the concept of karma itself in any culture, the Celtic Irish considered the triskelion and its three spirals a representation of the cycle of birth, life and death, which could be associated with the [[wikipedia:Karma|karmic cycle]].
+
+{{nav|keeper unlock|the lamb unlock}}

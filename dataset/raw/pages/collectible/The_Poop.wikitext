@@ -1,0 +1,61 @@
+{{infobox activated collectible
+ | name        = The Poop
+ | id          = 36
+ | quote       = Plop!
+ | description = Spawns a pile of {{e|Poop}} where Isaac is standing and [[Knock-back|knocks back]] nearby enemies. It may yield [[pickups]] like regular poop.
+ | quality     = 0
+ | tags        = poop
+ | recharge    = 1
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Upon use, spawns a pile of {{e|Poop}} where Isaac is standing and [[Knock-back|knocks back]] nearby enemies. This pile of poop may yield [[pickups]] like regular poop.
+** {{dlc|a}} Also knocks back pickups and enemy shots upon use.
+* {{transformation contribution|Oh Crap}}
+
+== Notes ==
+* {{C|???}} starts with this item by default.
+* In combination with {{t|Petrified Poop}}, this item becomes far more useful. With moderate luck, a poop pile spawned by this item may drop the trinket itself, and with a method of generating unlimited battery charge, it becomes a matter of time. With the trinket, The Poop can easily become a better source of Hearts and money than other items that require more charges, such as {{i|Book of Revelations}} or {{I|The Book of Sin}}.
+* {{dlc+|a+}} This item can spawn as a possible payout of {{I|Mystery Gift}}. Mystery Gift can drop this item even if Isaac has already encountered/possessed it.{{dlc-}}
+* {{dlc+|r}} This item can rarely drop from destroying [[Rocks#Buckets|buckets]] in {{s|Dross}}.
+** It can also be spawned by {{e|Bumbino}} if he picks up 12 cents.{{dlc-}}
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Dingle}}.{{dlc-}}
+* Poops can bridge gaps when bombed from the opposite side (the same way [[Rocks|standard rocks]] can).
+* If used on top of an obstacle while flying, it will only produce its sound effect, but no poop will be spawned.
+** {{dlc|nr}} This also applies to destroyed obstacles.
+* If Isaac has {{i|Thunder Thighs}}, {{i|Leo}}, or {{tf|Stompy}}, the poop will be destroyed beneath you as soon as it is placed.
+* {{dlc+|a+}} After defeating {{E|Ultra Greedier}}, all remaining piles of poop in the room will be converted into {{e|Golden Poop}}s.
+** {{dlc|r}} This effect is purely visual; the "golden" poop acts as regular poop despite the recolor.{{dlc-}}
+* The Poop can be used to permanently destroy {{e|Red Poop}}s while they're temporarily disabled. {{dlc|r}} The same is true of [[Spikes#Retractable Spikes|retractable spikes]] while they're retracted.
+
+== Synergies ==
+* {{I|Bird's Eye}} / {{I|Ghost Pepper}}: Fire will appear behind Isaac when The Poop is used.
+* {{Book of Virtues synergy|description=Spawns wisps on the outer ring, looking like miniature {{E|Dip}}s. Wisps' tears have a 2.5% chance to apply {{I|E. Coli}} to enemies, turning them to poop.}}
+* {{T|Brown Cap}}: The Poop may be used as a discounted {{I|Mine Crafter}}, both for utility, as well as combat.
+* {{t|Gigante Bean}}: Deals 10 flat damage to nearby enemies.
+* {{i|Hallowed Ground}}: Using The Poop will always spawn a {{E|White Poop|n}}.
+* {{t|Meconium}}: Using The Poop has chance to spawn a {{E|Black Poop|n}}.
+* {{i|Midas' Touch}}: Using The Poop has a chance to spawn {{E|Golden Poop}}.
+** The chance of this effect is 100% at {{dlc|nr}} 5 [[Luck]] / {{dlc|r}} 6.56 [[Luck]]
+* {{i|9 Volt}}: Can be used in an incomplete room to repeatedly spawn poop.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{I|Dirty Mind}}: Allows the creation of extra [[Familiar#Dips|Dip familiars]].
+
+== In-game Footage ==
+{{#ev:youtube|Kyu2JA-gtd0||inline}} {{#ev:youtube|8Z3rEsNC0Wc||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The Poop.png|{{plat|3DS}} The icon of The Poop as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* This item is used in {{chal|BRAINS!}} and {{chal|Scat Man}}.
+* In the flash version, The Poop was unlocked by defeating {{e|Mom's Heart}} 10 times.
+* {{dlc+|r}} A rare [[Closets|closet]] exists in {{s|Downpour}} and {{s|Dross}} with The Poop as a guaranteed item. If Isaac has already found The Poop, the item in the closet does not change.{{dlc-}}
+
+{{nav|oh crap|poop|fr=Tas de Caca}}

@@ -1,0 +1,93 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 397
+ | quote       = Controlled tears
+ | description = Isaac's tears are bound to a beam emitting in the direction he's firing. {{dlc|nr}} +0.5 [[Tears]], +5.25 [[Range]], +0.16 [[Shot Speed]]. {{dlc|r}} +1 [[Fire Rate]], +2.5 [[Range]], +0.16 [[Shot Speed]].
+ | quality     = 3
+ | tags        = summonable {{dlc|r+|tearsup}} offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Isaac emits a beam in the direction that his head is facing. Isaac's tears travel in the path of the beam. When Isaac moves or turns his head, tears that are mid-flight will remain within the beam.
+* {{dlc|nr}} +0.5 [[Tears]].
+* {{dlc|r}} +1.0 [[Fire Rate]].
+* {{dlc|nr}} +5.25 [[Range]].
+* {{dlc|r}} +2.5 [[Range]].
+* +0.5 [[Tear Falling Speed]].
+* +0.16 [[Shot Speed]].
+
+== Notes ==
+* This item prevents tears from being fired at angles using momentum.
+* Isaac does not automatically aim downwards after he stops firing with this item.
+
+== Synergies ==
+* {{i|20/20}}/{{tf|Bookworm}}/{{tf|Conjoined}}/{{i|The Inner Eye}}/{{c|Keeper}}/{{i|Mutant Spider}}/{{c|Tainted Keeper}}/{{i|The Wiz}}: Every extra tear will follow the beam instead of having a spread, making it easier to hit enemies with the extra tears. Essentially increases damage per second.
+* {{i|Compound Fracture}}: All split tears will follow the beam greatly increasing effective damage.
+** {{dlc|a+nr}} Bone tears will not burst into bone shards when fired at obstacles, however, bone tears will burst into bone shards when fired at enemies.
+** {{dlc|r}} Bone tears burst into bone shards when fired at obstacles.
+* {{i|Cricket's Body}}/{{i|The Parasite}}: All split tears will follow the beam greatly increasing effective damage.
+* {{i|Continuum}}: The tears will re-appear directly in front of Isaac and continue their flight path after going off screen.
+* {{i|Guillotine}}: The beam will visually follow Isaac's head as it orbits, but tears will still stay centered relative to Isaac's body making his tears easier to aim.
+* {{i|Lachryphagy}}: Tears can still be fed and will still burst. {{dlc|nr}} Burst tears will travel along the beam.
+* {{i|Monstro's Lung}}: All tears are fired along the beam but at different heights.
+* {{t|Ouroboros Worm}}: The altered patterns tears travel in is confined to the beam allowing Isaac to benefit from the stat bonus and [[spectral tears]] granted without losing accuracy.
+* {{i|Pop!}}: Tears stick along the tractor beam even when they slow down and collide, capable of creating a dense line of shots.
+* {{t|Rainbow Worm}}: The altered patterns tears travel in is confined to the beam allowing Isaac to benefit from the stat bonuses granted without losing accuracy.
+** {{dlc|r}} Many of the worm trinket effects it gives now grant spectral tears as well.
+* {{t|Ring Worm|r}}: The altered pattern tears travel in is confined to the beam allowing Isaac to benefit from its stat bonus and spectral tears without losing accuracy.
+* {{i|Rubber Cement}} / {{t|Super Ball}}: Tears will no longer be bound to the beam after bouncing off of something.
+* {{i|Sinus Infection}}: Once the booger falls off the enemy, Isaac can loosely control it by moving and firing in different directions, and make it stick to another enemy.
+* Tear copiers like {{I|Cain's Other Eye|r}} / {{i|Incubus}} / {{i|Sumptorium|n}} / {{i|Twisted Pair|n}}: Tears shot by these familiars will originate from Isaac, following the beam.
+* {{t|Wiggle Worm}}: The altered pattern tears travel in is confined to the beam allowing Isaac to benefit from its stat bonus without losing accuracy.
+** {{dlc|r}} Wiggle Worm also grants spectral tears with little downside in accuracy.
+
+== Interactions ==
+* {{i|Analog Stick|nr}}: Tears cannot be fired diagonally; however, stat effects apply.
+** {{dlc|r}} Tractor Beam can be angled diagonally or in any direction using an analog stick or mouse controls.
+* {{i|Anti-Gravity}}: Tears that are still hovering can be pushed in the direction Isaac is aiming by walking into them.
+* {{T|Brain Worm}}: Overrides Brain Worm.
+* {{i|Brimstone}} / {{i|Epic Fetus}} / {{i|The Ludovico Technique}} / {{i|Tech X}}: Overridden by Brimstone. Stat effects still apply.
+* {{i|C Section}}: Overridden by C Section. Stat effects apply.
+* {{i|Dr. Fetus}}: After firing a bomb and moving, the bomb will have a homing-style effect towards the beam, but will not stay directly on the beam. '''Not recommended''', as changing directions while firing will cause the bomb to reel back to Isaac at high speed, making self-damage very likely.
+* {{i|Euthanasia}}: Needles fired will follow beam; however, burst needles will not.
+* {{i|Evil Eye}}: Both evil eyes and tears fired by them will not be affected by the beam.
+* {{i|Explosivo|ana+}}: Explosivo's tears will become "entangled" when sticking on an enemy, causing them to jump from the tractor beam to the enemy and vice versa every frame. The tear will explode only once regardless while attached to an enemy or bound to the beam.
+* {{i|Eye of the Occult}}: Tears will only move forward while being fired, but control is otherwise overridden.
+* {{i|Eye Sore}}: No effect on the extra tears.
+* {{i|Haemolacria}}: Fired tears will travel along the beam; however, the burst tears will not.
+* [[Homing tears]]: The tears will stay in the line but will slow down when near enemies.
+* {{t|Hook Worm}}: Overridden, except for the range increase.
+** {{dlc|r}} The tears increase and spectral tears it now grants are also still in effect.
+* {{i|Immaculate Heart}}: No effect on the extra tears.
+* {{i|Incubus|nr}}: The Incubus tears aren't affected by the beam, but the beam will still be there.
+** '''Incubus''' + '''Monstro's Lung''': Incubus's tear barrage will follow the beam.
+* {{dlc+|a+nr}} {{i|Lead Pencil}}: Tear barrage will not follow the beam.{{dlc-}}
+* {{I|Loki's Horns}}: No effect on extra tears.
+* {{dlc|nr}} {{i|Marked}}: Tears will only fire in cardinal directions.
+** {{dlc|r}} The beam will point towards the marker.
+* {{dlc|nr}} {{i|Multidimensional Baby}}: The beam only affects the original tears, not the duplicated ones.
+** {{dlc|r}} The duplicated tears will follow the beam.
+* {{t|Ouroboros Worm}}: Tears will stall at points along their path; the normal spiral pattern is negated entirely, however.
+* {{i|Saturnus}}: No effect on orbital tears.
+* {{i|Spirit Sword}}: Overrides Tractor Beam. Stat effects still apply.
+* {{i|Sprinkler|nr}}: Tears fired by the sprinkler will follow Isaac's beam.
+* {{i|Tammy's Head}}: Tractor Beam does not affect the tears created by Tammy's Head.
+* {{i|Technology|nr}}: Overridden by Technology.
+** {{dlc|r}} The beam becomes unaffected by Isaac's momentum.
+* {{i|Tiny Planet}}: The orbiting effect is overridden, but Isaac still gains the Range increase and spectral tears.
+
+== In-game Footage ==
+{{#ev:youtube|dm-YPGPSzAk}}
+
+== Trivia ==
+* This item is a reference to [[wikipedia:Tractor beam|tractor beam]]s in science fiction, often depicted as beams of energy that can be used to move objects.
+
+== Bugs ==
+{{bug|Tractor Beam has unusual effects when combined with {{i|Continuum}} and {{i|Pop!}}.<ref>https://www.youtube.com/watch?v=miHh3IdfNM4</ref> While shooting, tears will appear for brief moments at the back of Isaac's head, and if he hits an enemy with one of these, that enemy will be teleported to a corner of the screen for poorly understood reasons. Isaac himself can also get teleported to a corner, resulting in a potential softlock without flight or {{i|How to Jump}}.|dlc=r}}
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Rayon Tracteur}}

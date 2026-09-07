@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | id          = 302
+ | quote       = Stompy
+ | description = Isaac can destroy [[rock]]s by walking into them.
+ | quality     = 1
+ | tags        = summonable stars
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Isaac can break [[obstacle]]s by walking into them.
+* Increases Isaac's size.
+* {{transformation contribution|Stompy}}
+
+== Notes ==
+* Walking into [[Bomb Rock]]s will cause them to explode.
+* [[Mushroom (Obstacle)|Mushrooms]] may hurt Isaac with a poison cloud if walked into.
+* [[Polyp]]s may hurt Isaac with blood shots or red creep if walked into.
+* [[Flight]] does not prevent the effect from occurring.
+* Holes in the ground can be filled if Isaac walks into adjacent rocks from the right direction, similar to bombs.
+* {{E|TNT}} Barrels will not be destroyed or explode on contact, however {{E|Movable TNT}} Barrels will explode and may deal damage to Isaac if walked into.
+* Allows Isaac to walk over and destroy {{E|Red Poop}} without taking damage. Isaac will still take damage if he is standing on it when it reforms.
+* Walking into an Angel Statue in the {{R|Angel Room}} will trigger the boss fight, and Isaac will take damage as the Angel spawns on top of him.
+* {{dlc|na+}} Nullifies effects of One Makes You Small [[pill]]s, One Makes You Larger pills, and other items which decrease size, such as {{i|Caffeine Pill}} and {{i|Binky|n}}.
+* {{Dlc|r}} [[Rocks#Spiked Rocks|Spiked Rocks]] can be destroyed, but depending on Isaac's size, angle and velocity they may still hurt him.
+* {{dlc+|r}} Isaac can crush {{e|Rock Spider}}s and {{e|Tinted Rock Spider}}s by stepping on them. Killing a Rock Spider this way ''will'' spawn a {{e|Spider}} which is extremely likely to deal damage to Isaac.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|FZT75xMDHeU}}
+
+
+{{nav|stompy|zodiac|fr=Lion}}

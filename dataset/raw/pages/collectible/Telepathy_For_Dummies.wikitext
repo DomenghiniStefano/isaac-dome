@@ -1,0 +1,45 @@
+{{infobox activated collectible
+ | id          = 192
+ | quote       = Temporary psychic shot
+ | description = Gives [[homing tears]] for the current room. {{dlc|r}} Also gives +3 [[range]].
+ | costume name = Spoon Bender
+ | quality     = 1
+ | tags        = book offensive
+ | recharge    = 2
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Grants the following effects for the current room:
+** [[Homing tears]].
+** {{dlc|r}} +3 [[range]].
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+* For any item interactions, check the corresponding sections on {{i|Spoon Bender}}'s page.
+* {{dlc|r}} The range increase does not stack with repeated uses.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns purple wisps in the middle ring. These wisps fire [[homing]] tears.}}
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+** However, this can unlock {{t|Baby-Bender}} if it isn't unlocked.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Baby-Bender }}
+
+== In-game Footage ==
+{{#ev:youtube|7h9O0WRVX-4}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Telepathy for Dummies.png|{{plat|3DS}} The icon of Telepathy For Dummies as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* Telepathy for Dummies uses the same costume as Spoon Bender.
+* Telepathy For Dummies is a reference to the ''[[wikipedia:For Dummies|For Dummies]]'' series of reference books, targeted towards beginners using non-intimidating instructions.
+
+{{nav|book|fr=La Télépathie pour les Nuls|zh=心灵感应傻瓜式教程}}

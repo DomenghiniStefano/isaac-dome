@@ -1,0 +1,74 @@
+{{header characters}}
+{{infobox character
+ | id           = 3
+ | health       = {{heart|red}}
+ | damage       = 3.5 (*1.35)
+ | pickups      = 3 [[coin]]s
+ | collectibles = {{i|The Book of Belial}}
+ | unlocked by  = Judas
+}}
+'''Judas''' is a [[character]] unlocked after beating {{E|Satan}} for the first time. He starts with 1 [[Red Heart container]], 3 {{e|Penny|text=coins}}, and {{i|The Book of Belial}}. Judas also has a 1.35x damage multiplier.
+
+__TOC__
+{{clear}}
+
+== Black Judas ==
+{{infobox character
+ | name   = Black Judas
+ | image  = collectible Judas' Shadow appearance.png
+ | id     = 12
+ | parent = Judas
+ | health = {{hearts|black=2}}
+ | damage = 3.5 (*2.00)
+ | speed  = 1.1
+}}
+
+When a character dies while having {{i|Judas' Shadow}} in their inventory, they will respawn as '''Black Judas''' (also known as '''Dark Judas'''). Black Judas spawns with two {{E|Black Heart}}s, a damage multiplier of 2x, and a base speed of 1.1. Black Judas has the highest damage multiplier of all the playable characters.
+
+{{dlc|nr}} Black Judas can still gain Red Heart containers despite starting with none.<br>
+{{dlc|r}} Black Judas cannot gain Red Heart containers; items that grant Red Heart containers (including empty ones) will give him the same amount of {{E|Black Heart}}s instead.
+
+Black Judas is considered by the game to be a separate character from Judas, but Black Judas 
+counts as Judas for the achievements and unlocks that require Judas, including his [[Completion Mark]]s. {{dlc+|r}} He will also receive {{c|Tainted Judas|r}}' bonus effects when using {{i|Dark Arts}}.{{dlc-}}
+
+== Notes ==
+* The {{i|The Book of Belial|text=Book of Belial}}'s damage increase is very powerful; it should be kept, if possible, until the player has enough damage from other sources.
+** {{dlc|na}} The Book of Belial also guarantees a {{R|Devil Room}} or {{R|Angel Room}} to open after defeating a boss while holding it.
+** {{dlc|a}} The Book of Belial increases the chance by 12.5% instead of guaranteeing one.
+* Due to Judas' low starting health, health upgrades should be prioritized. {{R|Devil Room}} deals can also be risky, if not unaffordable.
+** {{i|Dead Cat}} has effectively no downside if found early, as Judas already has one Red Heart container. It is also one of the {{tf|Guppy}} items.
+** Items that activate on low health, such as the {{i|Scapular}}, {{t|Monkey Paw}}, {{I|Glyph of Balance}}, and {{i|Whore of Babylon}}, can be triggered very easily.
+
+== Item Interactions ==
+* {{i|Birthright}}: {{I|The Book of Belial}} becomes a passive item that can be held beneath other active items, similar to {{I|Book of Virtues}}. The Book of Belial's damage boost scales with the amount of charges the active item above it has.
+** The damage boost may not work with single-use items, unlimited use items, timed recharges, or items that do not follow normal room charge rules ({{I|Isaac's Tears}}, etc). It also has special interactions with certain items — see [[The Book of Belial#Synergies|The Book of Belial]] for more information.
+** Stacks with Book of Virtues.
+** If Judas is not currently holding The Book of Belial, he receives it.
+* {{i|Blood of the Martyr}}: Synergizes with The Book of Belial for an extra 1.5x damage multiplier.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Judas' Shadow, Shadow Baby, Judas' Tongue, Guillotine, Curved Horn, The Left Hand, My Shadow, Eye of Belial, Betrayal, Brown Baby, Shade, Akeldama, Redemption, The Deceiver, Belial Baby }}
+
+== Gallery ==
+<gallery>
+File:Collectible The Book of Belial Judas appearance Rebirth.png| {{dlc|nr}} Judas' appearance while The Book of Belial is active.
+File:Collectible The Book of Belial Judas appearance.png| {{dlc|r}} Judas' appearance while The Book of Belial is active.
+File:Transition_Judas.png|Judas' transition screen portrait.
+File:Transition_Judas_Dark.png|Black Judas' transition screen portrait.
+File:Start_Judas.png|The spawn floor when playing Judas. 
+File:Judas_Menu_Icon_(Locked).png|Judas' locked character icon.
+</gallery>
+
+== Trivia ==
+* Judas appeared in the original ''Binding of Isaac'', where he was unlocked by beating {{s|Womb}} for the first time.
+* Judas is a reference to [[wikipedia:Judas Iscariot|Judas Iscariot]], the Twelfth Disciple of Jesus Christ. Judas betrayed Jesus to the Romans in exchange for thirty pieces of silver, represented by the three coins Judas starts the game with. Moreover, the coins are also believed to represent the three Abrahamic faiths: Judaism, Christianity, and Islam.
+* Contrary to popular belief, Judas' fez is not a reference to the game [[wikipedia:Fez (video game)|Fez]], created by Phil Fish. Edmund McMillen has stated that the initial statement was a joke and that he used the fez due to it being easily recognizable.
+* When reviving using Judas' Shadow, entering a miniboss fight will refer to the player as "Black Judas".
+* Judas' locked character icon is a locked box with his fez placed on it.
+** He shares the locked box design with {{C|Azazel}}, {{C|Lilith}}, and {{C|Apollyon}}.
+** Judas is the only "human" character to use this icon, with {{C|Azazel}} and {{C|Lilith}} being demons, and {{C|Apollyon}} being a living statue.<ref>https://mobile.twitter.com/edmundmcmillen/status/1318746070063534080</ref>
+
+== References ==
+<references/>
+
+{{nav|character|judas unlock|satan unlock}}

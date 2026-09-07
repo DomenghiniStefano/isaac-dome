@@ -1,0 +1,55 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 674
+ | quote       = Unfinished business
+ | description = On taking fatal damage, instead of dying, Isaac's ghost is chained to his dead body, and he can continue to fight with 1/2 of a heart, returning to life after 10 seconds. After it activates, it must be recharged by gaining a {{E|Soul Heart}} or {{E|Black Heart}} from any source.
+ | quality     = {{dlcalt|2|r+=1}}
+ | unlocked by = Spirit Shackles
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* If Isaac were to take fatal damage, rather than dying, he instead transforms into a ghostly form, resembling {{c|The Soul}}, with half a heart. The ghost has [[flight]], [[Tear Effects#Spectral|spectral tears]], and is chained to Isaac's immobile corpse. Isaac's soul returns to his corpse' position after 10 seconds, if he doesn't die while in ghost form.
+** Isaac will have invulnerability frames for 1/3rd of a second after reviving.
+** After activation, Spirit Shackles is disabled until Isaac gains a half or full {{E|Soul Heart}} or {{E|Black Heart}} from any source. HP that is used to charge Spirit Shackles will not be added to Isaac's health.
+
+== Notes ==
+* When the effect is ready, the chains on Isaac's costume are light blue. When they are drained and cannot protect from death, they are grey.
+* The Soul form functions near identically to when playing as the {{c|The Forgotten}}.
+* If Isaac has any red heart containers, the ghost form will always spawn with half a red heart. If he has no heart containers, he will always spawn with half a Soul Heart.
+** {{c|The Forgotten}} will spawn with an empty {{e|Bone Heart}}.
+** {{c|Keeper}} / {{c|Tainted Keeper}} will spawn with one coin heart container.
+* Recharging Soul Shackles will always consume a full Soul Heart if possible, even though a half Soul Heart can still charge the item.
+** {{e|Blended Heart}}s will only recharge the item if the Blended Heart would give Isaac soul health.
+** Items that add Soul/Black Hearts directly to Isaac’s [[health]] ({{i|Rosary}}, {{i|Guppy's Paw}}, {{i|Satanic Bible}} etc.) will recharge Spirit Shackles and give one less Soul Heart. 
+** Spirit Shackles can be recharged by picking up Soul Hearts while in the ghostly form, but it cannot re-activate until its effect ends.
+* If Isaac leaves the room while in ghost form, he will not be chained to anything and can move freely. He will also come back to life at his current location rather than where his body was left.
+** Isaac can be trapped if he's in the middle of a pile of rocks when this happens. This can be fixed by quitting, then continuing the run.
+* Spirit Shackles is not considered a respawn item as Isaac does not actually "die", and will activate prior to all other respawn effects.
+** If Isaac dies while in ghost form and is brought back to life by a respawn item, he will respawn, unshackled, in ghost form for the remainder of the duration.
+* Spirit Shackles cannot activate in the [[Mirrored World]], nor can the ghost form given by it be used to enter the Mirrored World.
+* Spirit Shackles will trigger if a fatal [[Devil Room#Deals with the Devil|Devil Deal]] is taken.
+
+== Synergies ==
+* {{t|Found Soul}}: Spirit Shackles activates for Found Soul, functioning as normal. However, it cannot be recharged, and can only be activated again after Found Soul dies and respawns.
+* {{C|The Lost}}: Effectively acts as a rechargeable extra life, granting additional defensive measures on top of his inherent {{i|Holy Mantle}} and granting a use to normally useless Soul Hearts.
+* {{I|Magic Skin}}: When all hearts are converted to [[Health#Broken Hearts|Broken Hearts]], Isaac will be revived with half a soul heart, allowing many more uses with low health.
+* {{I|Scapular}}: Can activate at the same time. When this happens, the soul heart granted by Scapular will immediately charge Spirit Shackles.
+
+== Interactions ==
+* {{i|Ankh}} / {{t|Broken Ankh}} / {{i|Judas' Shadow}}: Soul hearts given on respawn cannot recharge Spirit Shackles.
+* {{c|Bethany}}: Soul charges cannot be used to recharge Spirit Shackles. Picking up soul hearts recharges it as normal.
+* {{i|Damocles}} / {{I|Plan C}} / {{P|Suicide King}}: Ignores Spirit Shackles and fully kills Isaac.
+* {{c|The Forgotten}}: Spirit Shackles can activate for both characters. They can toggle between The Forgotten and The Soul as normal while it's active, and the form that didn't "die" will have their normal health. Toggling from The Forgotten to The Soul will also create another body of The Forgotten that The Soul will be chained to in addition to the original body.
+* {{c|Jacob and Esau}} / {{c|Tainted Lazarus}}: The character that has Spirit Shackles must die for it to activate; if the other character dies, it will not activate. Only the character that has Spirit Shackles can recharge it.
+** In the case of Jacob and Esau, the brother that has Spirit Shackles will be chained to their dead body, while the one that doesn't can move freely. If either brother dies while Spirit Shackles is active, the other dies with them as normal.
+* {{c|Keeper}} / {{c|Tainted Keeper}}: As Hearts cannot spawn or be collected, Spirit Shackles can only be recharged from effects that add Soul Hearts to health directly.
+* {{c|Tainted Forgotten}}: The ghost will spawn from Tainted Forgotten instead of Tainted Soul; it will be invulnerable, unable to move, and use the bone club instead of Tainted Forgotten. It can also be thrown, but will rapidly return to Tainted Forgotten due to being chained to them. Tainted Soul is unaffected, and can take damage as normal.
+* {{c|Tainted Jacob}}: will not activate during Lost Form, or when killed by {{E|Dark Esau}}.
+
+== In-game Footage ==
+{{#ev:youtube|lX7HfQthqHk}}
+
+{{nav|the forgotten unlock|the beast unlock|fr=Chaînes de l'Esprit}}
+[[Category:Damage-preventing items]]

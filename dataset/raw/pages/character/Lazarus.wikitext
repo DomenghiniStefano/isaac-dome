@@ -1,0 +1,94 @@
+{{header characters}}
+{{infobox character
+ | image name   = * {{dlc|nr|Rebirth}}
+ | id           = 8
+ | health       = {{hearts|red=3}}
+ | range        = {{dlcalt|17.75|r=4.5}}
+ | luck         = -1
+ | pickups      = 1 [[pill]]
+ | collectibles = {{dlc|a+}} {{unlockable}} {{i|Anemic}}
+ | unlocked by  = Lazarus
+}}
+'''Lazarus''' is a [[character]] unlocked by having four or more {{E|Soul Heart}}s or {{E|Black Heart}}s at once in one run. He starts with 3 [[Red Heart container]]s and an unidentified [[pill]].
+
+{{dlc|a+}} Lazarus also starts with {{i|Anemic}} after the [[Backasswards]] challenge is completed. Additionally, Lazarus Risen's Anemic effect is permanent and always active.
+
+Once per {{dlcalt|run|r=floor}}, Lazarus has the ability to revive himself as Lazarus Risen.
+
+__TOC__
+{{clear}}
+
+== Lazarus Risen ==
+{{infobox character
+ | name         = Lazarus Risen
+ | image name   = * {{dlc|nr|Rebirth}}
+ | id           = 11
+ | parent       = Lazarus
+ | health       = {{heart|red}}{{hearts|unknown=2}}
+ | damage       = 3.5 (*{{dlcalt|1.20|r=1.40}})
+ | speed        = 1.25
+ | collectibles = {{i|Anemic}} ({{dlc|a+}} {{unlockable}} permanent)
+}}
+When Lazarus (or another character with {{i|Lazarus' Rags}}) dies, they will be revived as '''Lazarus Risen'''. Unlike with most [[Death#Extra Lives|revival items]], Lazarus is revived on the spot, as opposed to the previous safe room. Each time Lazarus dies this way, he gains a permanent +0.5 damage to both forms.
+
+Upon revival, Lazarus loses {{dlcalt|all but 1|r=1}} Red Heart container. This cannot bring Lazarus below 1 Red Heart container. He gains a full Red Heart container if he does not have any upon dying.
+
+Lazarus Risen has increased speed, range, luck, and a {{dlcalt|1.2x|r=1.4x}} damage multiplier. He also gains the passive item {{i|Anemic}}. If the [[Backasswards]] challenge has been completed, Lazarus Risen's Anemic effect is permanent and always active.
+
+Lazarus Risen is considered by the game to be a separate character from Lazarus, but Lazarus Risen counts as Lazarus for the achievements and unlocks that require Lazarus, including his [[Completion Mark]]s.
+
+== Notes ==
+* Resurrection items and abilities activate in a [[:Category:Revival items|set order]]. Lazarus' inherent extra life is {{dlcalt|4th|r=3rd}} in this order after {{dlc|r|{{p|Soul of Lazarus}} and}} {{i|1up!}}.
+* {{dlc|nr}} It can be a reliable strategy to purposefully die at the beginning to become Lazarus Risen and obtain stronger stats, although it will leave Lazarus with only 1 Red Heart container. For example, attempt to complete the 2nd floor without taking any Red Heart damage, enter the {{R|Devil Room}}, and make Deals until Lazarus dies. If successfully performed, this will utilize Lazarus's 3 Red Heart containers to the most, but it also heavily relies on the player's skill and RNG.
+* {{dlc|r}} Dying on every floor to always have the stronger stats and a permanent +0.5 damage is tempting, but it will leave Lazarus with little health for {{R|Devil Room}} deals. It may be preferable to go for {{R|Angel Room}}s instead to gain health.
+* {{dlc|a+}} After beating the [[Backasswards]] challenge, Lazarus will have {{i|Anemic}} even before reviving. Anemic gives {{dlcalt|+5|r=+1.5}} range which compensates for his low base range, effectively nullifying his need for extra Range Ups like he did before.
+** Lazarus Risen will always have Anemic activated and will constantly leave blood trails. A higher speed attribute may help him spread more blood around the room.
+* {{dlc|nr}} Donating Lazarus' last heart to a {{M|Devil Beggar}} and respawning as Lazarus Risen activates the beggar an extra two times for a total of three.
+
+== Item Interactions ==
+* {{i|Birthright}}: Lazarus initially gains nothing directly from Birthright. Dying and becoming Lazarus Risen, however, or picking up Birthright when already in that form grants a +7.2 damage bonus that fades over the course of one minute. This effect triggers each time Lazarus dies.
+* {{Dlc|r}} {{I|Lazarus' Rags}}: Grants Lazarus 2 lives. Dying for the first time on a floor uses his inherent ability. Dying a second time will only boost his damage like a normal death, due to Lazarus being Lazarus Risen. Travelling to the next floor will revert his stats as per normal, but does not reset his life count to x2, nor does his ability and the item combine.
+
+=== Good Items ===
+* Any Range Up items ({{i|Mom's Heels}}, {{i|Mom's Underwear}}, etc.).
+** {{dlc|nr}} The lack of range can be compensated by a higher shot speed, via picking up items such as {{i|Cat-o-nine-tails}} or {{i|Speed Ball}}.
+* Any Luck Up items ({{i|Latch Key}}, {{i|Lucky Foot}}, etc.).
+* {{t|Lost Cork}} increases the size of Anemic's creep trail, which can be useful for Lazarus Risen, especially if his Anemic effect is permanently active after the player has completed the [[Backasswards]] challenge.
+* {{i|Plan C}} is safer to use due to Lazarus' inherent extra life.
+* {{p|Suicide King}} can be used most effectively when playing as Lazarus.
+* {{i|Damocles}} is less dangerous than for most of the characters as Lazarus already starts with an extra life.
+* After his resurrection, any Health Up items will help. {{dlc+|nr}} Lazarus Risen initially has only 1 Red Heart, therefore, it can be risky to purposefully die without having a way to immediately increase his health after ressurecting. {{dlc-}}
+* {{i|Prayer Card}} allows Lazarus to frequently gain Eternal Hearts and Red Heart containers. This effectively makes up for Lazarus' frequent heart losses and can nearly remove the drawback of reviving.
+
+=== Bad Items ===
+* Items that reduce range (such as {{i|Number One}}) {{dlc|nr|and  items that reduce shot speed (such as {{i|Eve's Mascara}} and {{i|Dead Onion}})}} can prove themselves to be negative for Lazarus. The same applies to item that require a good range stat to be effective (such as {{i|A Lump of Coal}}).
+** Note that after his resurrection, {{dlc|a+|or after receiving {{i|Anemic}},}} these problems become much less troublesome due to the increased range stat.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Missing No., Wrapped Baby, Broken Ankh, Lazarus' Rags, Pandora's Box, Store Credit, Key Bum, Plan C, Empty Vessel, Long Baby, Compound Fracture, Bethany, Tinytoma, Astral Projection, The Enigma, Dripping Baby }}
+
+== Unlockable Starting Items ==
+* {{achievement unlock|Laz Bleeds More!}} - Start with {{i|Anemic}}. Lazarus Risen will have the effect permanently.
+
+== Gallery ==
+<gallery>
+File:Transition Lazarus.png|Lazarus's transition screen portrait.
+File:Transition Lazarus Risen.png|Lazarus Risen's transition screen portrait.
+File:Start Lazarus.png|The spawn floor when playing Lazarus.
+File:Lazarus Menu Icon (Locked).png|Lazarus's locked character icon.
+</gallery>
+
+== Trivia ==
+* Lazarus is a reference to [[wikipedia:Lazarus of Bethany|Lazarus of Bethany]]. In the Bible, Lazarus of Bethany was resurrected by Jesus 4 days after his death. This is why Lazarus spawns with 1 extra life.
+* Lazarus Risen's transition screen portrait depicts him crying blood, rather than normal tears.
+* If a co-op baby joins in and takes a red heart from Lazarus, then Lazarus dies and gets revived, the co-op player can leave to grant Lazarus Risen an extra heart container.
+* If the player dies as Lazarus Risen, his signature on [[Isaac's last will]] will have blood drops on it.
+* Lazarus's locked icon shows him bound in chains.
+** He shares this trait with {{C|Magdalene}}, {{C|Cain}}, {{C|Samson}}, {{C|Eve}}, {{C|Bethany|r}}, and {{C|Jacob and Esau|r}}.
+** He incorrectly uses his pre-Repentance design on his locked icon.
+* Lazarus's locked icon, as well as Lazarus Risen being covered in rags, are references to the biblical Lazarus, who “came forth, bound hand and foot with graveclothes: and his face was bound about with a napkin” (John 11:44) when he was resurrected.
+
+== Bugs ==
+{{bug|{{c|Lazarus}} will receive a copy of {{i|Anemic}} when resurrecting. The item does nothing when stacked.|dlc=nr}}
+
+{{nav|character|lazarus unlock|fr=Lazare}}

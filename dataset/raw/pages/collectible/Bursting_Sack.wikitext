@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 377
+ | quote       = Spider love
+ | description = [[Spider]] enemies no longer target or deal contact damage to Isaac.
+ | quality     = 1
+ | tags        = summonable spider offensive
+}}
+
+{{cit|p|a}}
+
+== Effect ==
+* Certain [[spider]] enemies no longer target or deal contact damage to Isaac, nor actively spawn other enemies. Spiders that are spawned from enemies that are not affected by Bursting Sack will also remain neutral.
+** Affected spider enemies that deal no damage to Isaac whatsoever include: {{e|Baby Long Legs}}, {{e|Big Spider}}, {{e|Crazy Long Legs}}, {{e|Level 2 Spider}}, {{e|Small Baby Long Legs}}, {{e|Small Crazy Long Legs}} and {{e|Spider}}.
+*** {{dlc|r}} Also: {{e|Rock Spider|n}}, {{e|Strider|n}}, {{e|Swarm Spider|n}}, {{e|Tinted Rock Spider|n}} and {{e|Trite|n}}.
+**** Swarm Spiders don't blink yellow when Isaac has the item.
+**** Trites will still uselessly try to target Isaac.
+*** {{dlc|a+}} Spiders and Big Spiders don't blink red when Isaac has the item.
+** {{dlc|nr}} Unaffected spider enemies include: {{e|Blind Creep|n}}, {{e|Blister|n}}, {{e|Rage Creep|n}}, {{e|Ragling|n}}, {{e|Rag Man's Ragling|n}}, {{e|The Thing|n}}, {{e|Trite|n}} and {{e|Wall Creep|n}}.
+** {{dlc|r}} Affected enemies that deal no contact damage but can still damage Isaac through other methods include: {{e|Blind Creep|n}}, {{e|Blister|n}}, {{e|Migraine|n}}, {{e|Rage Creep|n}}, {{e|Ragling|n}}, {{e|Rag Man's Ragling|n}}, {{e|Soy Creep|n}}, {{e|Tainted Soy Creep|n}}, {{e|The Thing|n}}, {{e|Ticking Spider|n}}, and {{e|Wall Creep|n}}.
+*** Except for Ticking Spiders, Migraines, and Blind Creeps, all other spiders will still uselessly try to target Isaac for contact damage.
+** {{dlc|r}} {{e|Coal Spider|n}}s aren't aggressive to Isaac, but will still deal contact damage.
+** {{dlc|r}} {{e|Twitchy|n|text=Twitchies}} are not counted as "spider" enemies and are unaffected by this item.
+* {{transformation contribution|Spider Baby|dlc=r}}
+
+== Notes ==
+* {{dlc|r}} If either one of {{C|Jacob and Esau}} holds Bursting Sack, both gain the benefits.
+
+== In-game footage ==
+{{#ev:youtube|fr2uHPGMzZI}}
+
+== Trivia ==
+* This item is similar to {{i|Skatole}}, only affecting spiders instead of flies.
+* Befitting the name, this item's appearance is similar to a bursting {{e|Sack}}.
+
+== Bugs ==
+{{bug|dlc=nr|Spider enemies that are neutralized by Bursting Sack cannot be poisoned by contact via {{i|The Virus}}, {{i|Serpent's Kiss}}, or turned into gold via {{i|Midas' Touch}}. They also become immune to contact damage from {{i|My Little Unicorn}}, {{i|The Gamekid}}, and {{i|The Nail}}, but not the ''damage'' from Midas' Touch or {{i|Little Horn}}.}}
+
+{{nav|spider|fr=Cocon Éclaté}}

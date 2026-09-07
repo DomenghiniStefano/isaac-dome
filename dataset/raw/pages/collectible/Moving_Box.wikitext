@@ -1,0 +1,63 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | name        = Moving Box
+ | id          = 523
+ | quote       = Pack and unpack
+ | description = If the box is empty, picks up items and pickups in a room and stores them. If the box is not empty, places all stored items and pickups in the current room. {{dlc|r}} Can carry up to 10 items or pickups at once.
+ | quality     = 1
+ | tags        = offensive nocantrip
+ | recharge    = 4
+ | unlocked by = Moving Box
+}}
+
+''Not to be confused with {{i|Box}}.''
+
+{{cit|ua|a+2}}
+
+== Effects ==
+* If the box is empty, it picks up items and pickups in a room and stores them.
+** {{dlc|r}} Moving Box can carry up to 10 items or pickups at once, randomly picked (i.e. items are not prioritized).
+* If the box is not empty, places all stored items and pickups in the current room.
+
+== Notes ==
+* {{dlc+|r+}} Moving Box can sometimes spawn within the special bedroom created by {{i|Lil Portal}}.{{dlc-}}
+* {{dlc|nr}} There is no limit to the number of items and pickups that can be held in the box.
+* The best way to utilize Moving Box is often to absorb a large number of weaker items, then place them all into one room, and use a reroll effect to reroll them all at the same time. This is especially effective in Secret Rooms.
+* Any stored items and pickups unpacked from Moving Box will remain identical to what was originally packed; [[pills]], [[Cards and Runes|cards, and runes]] will stay the same, {{e|Sticky Nickel}}s will remain stuck to the floor, active items keep their charge in the box, and {{E|Chest}}s will have the same contents as they would if they had been opened immediately.
+* Stealing from {{r|Shop}}s and {{r|Devil Room}}s is not possible; only items on pedestals will be packed up.
+* All existing Moving Boxes share their opened/closed state. Therefore, it is not possible to carry a Moving Box that is holding items within another Moving Box as the items must be unpacked first.
+* If used in a room with a choice of multiple item pedestals, only one of the choice objects will be packed up and {{dlc|nr}} the rest will remain and behave normally / {{dlc|r}} the rest will disappear.
+** {{dlc|nr}} Both items presented by {{i|There's Options}} and {{i|More Options}} can be taken.
+** {{dlc|nr}} Both {{i|The Polaroid}} and {{i|The Negative}} can be taken.
+** {{dlc|nr}} If used in the {{r|Boss Rush}} room, one of the objects is packed up but the rush is not started. The remaining item choices start the rush as normal.
+*** {{dlc|r}} Using Moving Box to pack items in {{r|Boss Rush}} starts the challenge.
+* {{dlc|nr}} If used in a {{r|Challenge Room}} or {{r|Boss Challenge Room}} the objects within can be packed up without starting the challenge.
+** {{dlc|r}} Using Moving Box in these rooms starts the challenge.
+* {{dlc|r}} Disappearing pickups that are spawned by {{c|Tainted Magdalene}} / {{p|Soul of Magdalene|n}} or {{c|Tainted Keeper}} can't be packed into Moving Box.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a box wisp on the middle ring. Moving Box must drop a pickup/item in order for it to spawn wisps. The wisps invoke the effect of {{I|The Book of Sin}} when destroyed.}}
+* {{i|Glowing Hourglass}}: If a charged Glowing Hourglass is stored in the Moving Box, it can be unpacked and used to rewind time and regain some item charges.
+** {{dlc|nr}} Both items regain their charges, essentially allowing unlimited use.
+** {{dlc|r}} Moving Box charges are regained, but Glowing Hourglass will lose one charge.
+
+== Interactions ==
+* {{i|Car Battery|nr}}: Activation swaps the contents of the box with the contents of the room.
+** {{dlc|r}} No effect.
+* {{I|Death Certificate}}: Takes one random item from a Death Certificate room which is treated as if it was picked up causing all other items in the room to disappear and forcing Isaac to leave the area.
+* {{i|Flip}}: Moving items that are able to be swapped by Flip will still be able to be swapped after placing them down again. However, empty item pedestals that only contain the "ghostly" item cannot be moved unless flipped.
+* {{i|Options?}}: Only one of the choice pickups will be packed up and the other will disappear.
+* {{i|Void}}: This item's effect cannot be absorbed by Void. It will be treated as a passive item by the Void.
+
+== In-game Footage ==
+{{#ev:youtube|SheQr3tCYQA}}
+
+== Trivia ==
+* Moving Box is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=858673093 this Steam Workshop item] by Tim l'enchanteur.
+
+== Gallery ==
+<gallery>
+File:Collectible Moving Box Open icon.png|Moving Box opened.
+</gallery>
+
+{{nav|booster pack|fr=Carton de Déménagement}}

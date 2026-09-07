@@ -1,0 +1,52 @@
+{{infobox activated collectible
+ | id          = 137
+ | quote       = Remote bomb detonation
+ | description = {{e|Bomb}}s placed by Isaac only explode when Remote Detonator is used. Gives 5 bombs.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive nocantrip
+ | recharge    = unlimited
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Activating the Remote Detonator will cause all {{e|Bomb}}s placed by Isaac to explode.
+* Bombs will no longer explode without the usage of the detonator.
+* Gives 5 bombs when picked up. If the same instance of the item is picked up a second time in the same run, this effect will not be applied.
+
+== Notes ==
+* {{dlc+|r}} This item has a 1/7 chance to drop if {{e|Hornfel}} is killed in his second phase.{{dlc-}}
+* Remote Detonator gives Isaac five bombs for the price of three (using the bombs on the {{M|Donation Machine}} to trade for coins) when bought at a {{R|Shop}}, making its purchase a good value if the player is low on bombs.
+** {{dlc|r}} The Donation Machine explodes once bombed and while it drops many coins, it is destroyed for the rest of the run
+* Remote Detonator does not control the explosions of {{e|Troll Bomb}}s and {{e|Mega Troll Bomb}}s.
+* It does control throwable bombs spat out by {{e|Bomb Grimace}}s, once picked up. The bombs can be carried throughout rooms without ever exploding until Remote Detonator is used, making a Bomb Grimace essentially equivalent to a Golden Bomb with this item.
+* If {{E|Chub}} or {{E|Carrion Queen}} swallow a remote bomb, the bomb will be released from them after the animation unless it is detonated manually.
+
+== Synergies ==
+* {{i|Anarchist Cookbook}}/{{i|Best Friend}}/{{i|Mr. Boom}} + {{i|Schoolbag}}: The active item bombs are affected by remote detonator.
+* {{t|Broken Remote}}: Allows unlimited teleportation.
+* {{T|Bob's Bladder}}: Bombs will continue to leave creep until they are manually detonated. Allows for maximization of creep damage, potentially dealing more damage over time to a boss than just a singular bomb.
+* {{i|Bobby-Bomb}}: Bombs placed will chase after the enemy, making it easier to do massive amounts of damage to enemies.
+* {{Book of Virtues synergy|description=Spawns wisps in the inner ring when bombs placed by Isaac explode. Using Remote Detonator also causes the wisps' tears to explode, dealing 16.5 damage to enemies that are close to them (24 if Isaac has {{I|BFFS!}}).}}
+* {{i|Curse of the Tower}} / {{p|XVI - The Tower}}: The Troll Bombs generated will not explode until the Remote Detonator is used, unlike normal Troll Bombs.
+* {{i|Dr. Fetus}}: Remote Detonator can be used to detonate the fired bombs early, which can be useful against moving enemies.
+* {{i|Number Two}}: The bombs automatically dropped by No. 2 will not detonate on their own, greatly reducing the risk of accidental explosive self-damage.
+* {{I|Rocket in a Jar}}: Rockets do not explode on impact with surfaces, requiring manual detonation.
+** '''Rocket in a Jar + Dr. Fetus:''' Rockets fired with Dr. Fetus will still explode on impact, but can be manually detonated.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{i|Scatter Bombs}}: Remote Detonator can be used on the original bomb, but not on the small bombs that are spawned.
+
+== In-game Footage ==
+{{#ev:youtube|h3BF4x2_wvc||inline}} {{#ev:youtube|qDVf5HfhNR0||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Demo Man}}.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Remote Detonator.png|The icon of Remote Detonator as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|bomb modifier|fr=Détonateur Télécommandé}}

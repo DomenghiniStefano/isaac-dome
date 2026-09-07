@@ -1,0 +1,28 @@
+{{infobox passive collectible
+ | id          = 1
+ | quote       = Tears up
+ | description = +0.7 [[tears]].
+ | quality     = 3
+ | tags        = summonable tearsup offensive
+}}{{Distinguish|Dead Onion}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.7 [[tears]].
+
+== Notes ==
+* Is functionally identical to {{I|Wire Coat Hanger}}.
+
+== Interactions ==
+* {{i|Spindown Dice}}: The Sad Onion disappears upon being rerolled, as its internal ID number is 1. Leaves an empty pedestal.
+
+== In-game Footage ==
+{{#ev:youtube|L_J3jvzaZto||inline}} {{#ev:youtube|JOk1SzYBTaM||inline}}
+
+== Trivia ==
+* The Sad Onion was the first item designed by Edmund for the original game ''The Binding of Isaac'', which is probably why it has the item ID 1.
+* The item's effect is a reference to the fact that when onions are cut, they tend to make people involuntarily cry.
+
+{{nav|fr=Oignon Triste}}
+[[ru:Грустный лук]]

@@ -1,0 +1,58 @@
+{{infobox boss
+ | id          = 62
+ | variant     = 1
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{floor|Womb}}{{floor|Scarred Womb}}<br>{{floor|The Void}}
+ | base hp     = 300
+ | pool        = {{ip|Boss}}<br>{{dlc|r+}} Random worm trinket (1% chance)
+}}
+
+'''Scolex''' is a [[boss]] that can appear in the {{s|Womb}} and the {{s|Scarred Womb}}.
+
+== Behavior ==
+Scolex is only vulnerable in his blinking tail segment. He burrows into the ground before performing the following attacks:
+* Jumps out of the ground towards Isaac, burrowing back into the ground at the end of the jump.
+** If Scolex is hit by an explosion while mid-air, he will be deflected backwards.
+* Partially emerges head-first and shoots out a cluster of projectiles towards Isaac, similar to {{e|Monstro}}, but with a wider spread.
+** After performing this attack, Scolex will always jump out of the same spot he entered.
+* Partially emerges tail-first and fires cluster of 3 red {{i|Ipecac}} shots towards Isaac.
+** After performing this attack, Scolex will always jump out of the same spot he entered.
+Scolex deals a whole heart of contact damage.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18|dlc=nr}}: Scolex is 15% larger, slower, and has 25% more HP (375).
+
+== Gallery ==
+<gallery>
+Boss Scolex butt ingame.png| Scolex's tail.
+Boss Scolex dark grey ingame.png| {{dlc|nr}} Black Champion Scolex.
+Boss Scolex dark grey2 ingame.png| {{dlc|nr}} Black Champion Scolex's tail.
+Boss Delirium Scolex ingame.png|  Scolex as one of {{e|Delirium}}'s forms.
+20170218184911 1.jpg| {{dlc|a+nr}} Scolex bugged with his sprite replaced by The Frail.
+</gallery>
+
+== Notes ==
+* Sometimes, several {{e|Lump}}s, {{e|Guts}}, {{e|Para-Bite}}s, or {{e|Round Worm}}s can accompany Scolex at the start of the battle.
+
+== Trivia ==
+* Scolex appeared in the original ''The Binding of Isaac.''
+* Scolex is the only Boss to have ''lost'' access to a Champion variant in an update. Specifically in ''Repentance,'' where his dark grey counterpart is inaccessible unless using Console commands to summon it.
+* Scolex can be considered an [[edmundm:68071175738|older or younger]] version of {{e|Pin}}, but not a posthumous one (that title goes to {{e|The Frail}}).
+* A [[Wikipedia:Cestoda#Scolex|scolex]] is the name of the head of a tapeworm.
+* Compared to the original ''Binding of Isaac'', Scolex's head and tail attacks are swapped.
+** He also has 3 more body segments than in the original.
+* Scolex bears some resemblance to a mythological [http://cryptidz.wikia.com/wiki/Mongolian_Death_Worm Mongolian Death Worm], which are described as long, scaly, and blood red. It also raises half its body out of the sand and covers its prey with a lethal acidic substance, which is somewhat similar to Scolex's head attack.
+
+== Bugs ==
+{{bug|When Scolex is [[Status Effects|slowed]], some of his body parts may detach or won't even show up - they will only be visible while entering the ground (especially the tail).}}
+{{bug|If the final vulnerable segment of Scolex's tail is destroyed using the {{p|Chaos Card}}, the boss will glitch and become harder to kill. The tail will appear again if his head gets bombed or he hits Isaac.}}
+{{bug|If Scolex is [[Petrification|petrified]] (with {{i|Mom's Contacts}} or other similar items) when it is in mid-air, any segment of its body can be damaged.}}
+{{bug|dlc=a+|If Scolex is under the effects of {{i|Broken Modem}} in mid-air, his jump will be stopped and he will fall.}}
+{{bug|If Scolex is frozen with {{i|Midas' Touch}} or {{i|Dad's Ring}} and attacked, he can split into two halves, one with his head and one with his tail.}}
+
+{{nav|boss}}
+
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

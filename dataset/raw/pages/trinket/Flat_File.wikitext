@@ -1,0 +1,39 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 151
+ | quote       = No more spikes
+ | description = Causes most spikes to retract, making them harmless. This includes the door to {{R|Curse Room}}s, {{E|Spiked Chest}}s, {{E|Poky|text=Pokies}} and their variants.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* Makes all spikes retract, preventing them from dealing damage.
+** Most spikes leave behind holes or a visual cue showing where they would normally be.
+** The spikes around {{R|Curse Room}} doors are removed, allowing them to be entered and exited without taking damage.
+** Retracts damaging spikes from [[Spiked Rock]]s and {{E|Spiked Chest}}s/{{E|Mimic Chest}}s.
+** Removes the spikes from {{E|Poky|text=Pokies}}, {{E|Slide}}s, and {{E|Wall Hugger}}s.
+*** Pokies, Slides, and Wall Huggers don't immediately stop moving once they are despiked, and are still able to push Isaac without dealing damage.
+*** Has no effect on {{E|Grudge}}s, neither retracting their spikes nor despawning them.
+** Causes {{E|Spikeball}}s to despawn.
+*** Doesn't despawn or retract the spikes on {{E|Ball and Chain}}s.
+*** Doesn't cause the moveable spike balls in {{E|Singe}}'s boss room to despawn or despike.
+
+== Notes ==
+* If Flat File is dropped in a room with spikes, the spikes will not extend again unless the room is left and re-entered.
+** Spiked Rocks will not re-extend their spikes.
+* {{E|Mimic Chest}}s won't change their contents when Isaac is up close to them (visible with {{i|Guppy's Eye}}) if opened under the effect of Flat File.
+* Flat File also retracts the spikes in the center of {{R|Sacrifice Room}}s, making them unusable while the trinket is held. The spikes reappear after dropping the trinket and re-entering the room.
+** If Flat File is gulped, Isaac cannot use Sacrifice rooms for the rest of the run.
+* Flat File does not prevent {{E|The Pile}} or {{E|Mama Gurdy}} from using their spike attacks.
+* Also removes spikes from doors in the [[Cursed!]] challenge, making it significantly easier.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Bosses spike attacks, {{E|Grudge}}, and {{E|Ball and Chain}} have their spikes retracted
+* {{i|A Pound of Flesh}}: Doesn't retract spikes placed around consumables in shops.
+* {{i|Sanguine Bond}}: Retracts the spikes, making the item useless.
+
+== In-game footage ==
+{{#ev:youtube|RZ6qycB3GJk}}
+
+{{nav|fr=Lime Plate}}

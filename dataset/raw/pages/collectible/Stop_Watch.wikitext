@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | id          = 232
+ | quote       = Let's slow this down a bit...
+ | description = {{dlc|na}}+0.3 [[speed]]. Automatically inflicts [[slow]] to all enemies in every room.<br>{{dlc|anr}}+0.3 [[speed]]. Upon taking damage, inflicts [[slow]] to all enemies for the current room.<br>{{dlc|r}}+0.3 [[speed]]. Slows all enemies in every room to 80% speed.
+ | quality     = 4
+ | tags        = summonable
+ | unlocked by = Stop Watch
+}} {{disambig msg|the normal watch|the broken version of this item|Broken Watch}}
+
+{{cit|up}}
+
+== Effects ==
+* {{dlc|na}} Automatically inflicts [[slow]] to all enemies in every room, which slows them down to approximately 51.3% of their original movement and attacking speeds.
+* {{dlc|anr}} Inflicts slow to all enemies in the current room after the player is hit.
+* {{dlc|r}} Slows all enemies to 80% of their original movement speed and attacking speeds. This is separate from the [[slow]] status, and fully stacks with it. Isaac's tears and enemy shots are also slowed.
+* +0.3 [[speed]].
+
+== Notes ==
+* {{dlc|nr}} The background music is slowed down to 70% of the original speed of the music during the item's effect.
+* {{dlc+|r}} The background music is slowed down to about 90% of the original speed. The slowdown makes the music approximately 2 semitones lower.
+** If acquired through {{i|Eden's Blessing}}, the starting track will be affected as well.{{dlc-}}
+* {{dlc|nr}} Because of the slow effect, champion versions of enemies will be tinted the same color as all other enemies. This makes it much harder to distinguish certain champion types, such as those that explode upon death.
+* {{E|Poky|text=Pokies}}, {{E|Slide}}s, minecarts and {{E|Mega Troll Bomb}}s are not affected and will move in their regular speed.
+* {{dlc|na}} Stop Watch is a [[special item]].
+
+== Synergies ==
+* {{dlc|anr}} {{i|Holy Mantle}}: Blocking damage with Holy Mantle triggers the Stop Watch effect.
+* {{dlc|r}} All [[Slow]] effects: Stacks with the status resulting in enemies moving at about 41% of their original speed.
+
+== Interactions ==
+* {{i|Broken Watch|na}}: Overridden by Stop Watch; the speed up effect will not occur.
+** {{dlc|a}} Both the slow effect and the rarer speed up can trigger at the start of a room.
+*** {{dlc|nr}} This results in enemies being slowed to around 71.8% of their original speed.
+*** {{dlc|r}} This results in enemies being sped up by 12%.
+* {{i|Tech X|r}}: Unlike most shots which are slowed down by Stop Watch, Tech X laser rings move at normal speed and gain no benefit they would get from slower shots.
+
+== In-game Footage ==
+{{#ev:youtube|-FFs2P2rv_8}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Era Walk }}
+
+== Trivia ==
+* The Stop Watch is a reference to the item of the same name from the ''Castlevania'' series: upon using it, the character will slow down or outright freeze every enemy in the level for a short period of time.
+* The name is also a play on the word "stopwatch" (being a pocket-sized timer that can be quickly started or stopped via a button)
+
+{{nav|donation machine unlock|fr=Chronomètre}}
+[[Category:Store upgrades]]
+[[Category:Special items]]
+[[Category:Damage-triggered items]]

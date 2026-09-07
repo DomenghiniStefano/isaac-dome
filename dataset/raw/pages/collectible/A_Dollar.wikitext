@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | id          = 18
+ | quote       = $$$
+ | description = Gives Isaac 100 {{e|Penny|text=Pennies}}.
+ | quality     = 3
+ | tags        = offensive nocantrip
+ | pool        = slot machine
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Gives Isaac 100 {{e|Penny|text=Pennies}}.
+** This does not extend past the normal cap of 99.
+
+== Notes ==
+* A Dollar can only be found from paying out a {{M|Slot Machine}}, as a starting item for {{c|Eden}}, using {{i|Spindown Dice}} on {{i|Boom!}}, by using {{i|Death Certificate}}, or by using {{p|0 - The Fool?}} with {{i|Deep Pockets}} and at least 100 coins.
+** Multiple copies of A Dollar can be found in the same run from paying out different {{m|Slot Machine}}s.
+* Rerolling this item with the {{i|D4}}, etc., will not remove the coins acquired.
+
+== Interactions ==
+* {{i|Deep Pockets}}: Allows Isaac to gain the full 100 coins.
+* {{i|Bag of Crafting}}: The item cannot be crafted.
+
+== In-game Footage ==
+{{#ev:youtube|nT3x9wGcyEo||inline}} {{#ev:youtube|OcLRaBPni5s||inline}}
+
+== Trivia ==
+* This item is the {{e|Penny}} counterpart to {{i|Skeleton Key}} and {{i|Pyro}}.
+
+{{nav|coin modifier|coin|fr=Un Dollar}}

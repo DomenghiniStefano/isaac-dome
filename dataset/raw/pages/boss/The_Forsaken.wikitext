@@ -1,0 +1,54 @@
+{{infobox boss
+ | dlc = a
+ | name = The Forsaken
+ | id          = 403
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|The Void}}<br>{{room|Boss Rush}}<br>{{dlc|r}}<br>{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|The Void}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Degraded Boss</u><br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 220
+ | pool        = {{ip|Boss}}<br> {{i|Book of the Dead|r+}} (1% chance)
+ | unlocked by = Something wicked this way comes!
+}}
+
+'''The Forsaken''' is a [[boss]] added in ''[[The Binding of Isaac: Afterbirth]]'' that can appear:
+* {{dlc|nr}} In all environments of [[Chapter 2]] ({{s|Caves}}, {{s|Catacombs}}, {{s|Flooded Caves}}).
+* {{dlc+|r}} Only in the {{s|Catacombs}} and the {{s|Flooded Caves}}.{{dlc-}}
+
+== Behavior ==
+* Spawns a {{e|Bony}}.
+** While at least one Bony is still alive, the Forsaken becomes incorporeal and floats erratically around the room staying away from Isaac and very occasionally drifts towards Isaac attempting to pass through him.
+** Every tear shot towards the Forsaken during this phase passes through it.
+** When at around 30% HP, it spawns 2 Bonies instead.
+* When all Bonies are killed, The Forsaken moves close to the center of the room before reappearing and firing 3 {{i|Brimstone}} lasers in triangular directions with one laser always shooting in the opposite direction of Isaac. These lasers then rotate just over 180 degrees in either direction.
+** Afterwards it stays vulnerable for a few moments before spawning another Bony and repeating the process.
+* Unlike its counterparts, {{e|The Haunt}} and {{e|The Heretic}}, The Forsaken does not deal contact damage while incorporeal. Rather, if Isaac walks through The Forsaken, it spawns another Bony, briefly becoming vulnerable while doing so.
+** If this is repeated without killing any Bonies until there are 4 alive on-screen, the next time Isaac walks through The Forsaken, it performs a modified version of its {{i|Brimstone}} attack with greatly increased speed and duration, killing off all Bonies.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18|dlc=a+}}: Spawns {{e|Black Bony|text=Black Bonies}} instead of regular Bonies. The Spinning Brimstone attack is replaced with The Forsaken spawning 4 {{e|Dank Death's Head}}s and resuming invincibility for 1 second if there are no other Dank Death's Heads alive. It can not spawn any Dank Death's Heads if there is at least 1 other alive and will instead remain vulnerable for a duration before spawning another Black Bony.
+
+== Gallery ==
+<gallery>
+File:The Forsaken Brimstone.png|The Forsaken performing its Brimstone attack.
+File:Boss The Forsaken black ingame.png|The Black Champion Forsaken.
+File:Boss Delirium The Forsaken ingame.png|The Forsaken as one of {{e|Delirium}}'s forms.
+File:Afterbirth Boss Concepts.jpg|The design of what is presumably an early model of the Forsaken, along with those of other Afterbirth/[[Afterbirth †]] bosses, by Edmund McMillen.
+</gallery>
+
+== Notes ==
+* The Forsaken can be instantly killed with {{I|Vade Retro}} if it is at 50% health or below.
+
+== Trivia ==
+* It is the posthumous version of {{E|The Haunt}}.
+* When The Forsaken disappears, it covers its eyesockets with its arm-like bones. This is most likely a reference to [[Wikipedia:Boo (character)|Boos]] from the ''Mario'' franchise.
+* The Forsaken appears to be The Haunt without its ghostly exterior.
+* During the versus screen, the Forsaken's Bony-spawning sound can be heard.
+** The Forsaken is one of {{Dlc|nr}}seven/{{Dlc|r}}five bosses that can be heard during the versus screen, the other {{Dlc|nr}}six/{{Dlc|r}}four being {{e|The Stain}}, {{e|Big Horn}}, {{e|Mom}}, {{Dlc|nr}} {{e|Mom's Heart}}, {{Dlc|nr}}{{e|It Lives!}}, and {{e|Mother}}.
+* {{dlc+|a+}} The Forsaken can be found in {{s|The Void}}, even before being unlocked.{{dlc-}}
+* {{dlc|r}} The Forsaken has an alternative resurrected variation known as {{e|The Heretic}}.
+
+{{nav|blue baby boss unlock|boss|fr=L'Oublié}}
+
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Afterbirth]]

@@ -1,0 +1,37 @@
+{{infobox trinket
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | name        = Lazy Worm
+ | id          = 66
+ | quote       = Pft
+ | description =  Decreases [[shot speed]] by 0.5. {{dlc|nr}} Increases [[range]] by 4. {{dlc|r+}} Increases [[damage]] by 0.5.
+}}
+
+{{cit|t|a}}
+
+== Effects ==
+* -0.5 [[shot speed]].
+* {{dlc|r+}} +0.5 [[damage]].
+* {{dlc|nr}} +4.0 [[range]].
+* {{dlc|nr}} +2.0 [[tear falling speed]].
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}} or {{e|Scolex}}.{{dlc-}}
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}} / {{t|Lazy Worm|r}}: Each copy decrease [[shot speed]] by 0.5.
+** {{dlc+|r+}} Each copy also increases [[damage]] by 0.5.{{dlc-}}
+
+== Interactions ==
+* {{i|Godhead}}: Tears will take longer to hit enemies, increasing the damage dealt by the aura.
+* {{i|The Ludovico Technique}}: Decreased shot speed makes it harder to keep the tear on enemies.
+* {{i|Trisagion}}: Because Trisagion can hit the same enemy multiple times, lower shot speed results in a substantial DPS increase.
+* {{dlc|nr}} {{i|My Reflection}} / {{i|Pop!}} / {{i|Lachryphagy}}: Decreases effective range.
+
+== In-game Footage ==
+{{#ev:youtube|PwguW0rhnn0}}
+
+== Trivia ==
+* {{dlc|a+}} Lazy Worm's sprite was changed for [[Booster Packs|Booster Pack #5]].
+
+{{nav|worm|fr=Ver Fainéant}}

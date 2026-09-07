@@ -1,0 +1,44 @@
+{{infobox activated collectible
+ | dlc         = a
+ | name        = Mega Bean
+ | id          = 351
+ | quote       = Giga fart!
+ | description = [[Status Effects#Petrification|Petrifies]] all enemies in the current room for about 1.5 seconds, [[Status Effects#Poison|poisons]] any enemies near Isaac. {{dlc|nr+}} The fart also sends a rock wave across the room in the direction Isaac is facing. {{dlc+|r+}} The fart also creates a {{i|Mama Mega!}} explosion.{{dlc-}}
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = {{dlcalt|3|r+=6}}
+}}
+
+{{cit|a|a}}
+
+== Effects ==
+* [[Status Effects#Petrification|Petrifies]] all enemies in the current room for about 1.5 seconds.
+* Deals 5 damage and [[Status Effects#Poison|poisons]] any enemies near Isaac.
+** The poison deals Isaac's damage per tick and lasts for 6 ticks.
+* {{dlc|nr+}} Sends out a wave of rocks across the room in the direction Isaac is facing, dealing 10 damage to any enemies it comes in contact with.
+* {{dlc|r}} The fart deflects enemy projectiles which deal 6 damage if they would've hurt Isaac for half a heart, and 7 for a full heart.
+* {{dlc|r+}} The fart creates a {{i|Mama Mega!|n}} explosion that deals 100 damage.
+
+== Notes ==
+* It can be used to open {{R|Secret Room}}s.
+* {{dlc|nr+}} The rock wave can break rocks to fill in gaps.
+* {{dlc|r+}} As Mega Bean creates a {{i|Mama Mega!|n}} explosion, it can be used to open the entrances to {{r|Boss Rush}} and the {{s|???}} if they are closed.
+
+== Synergies ==
+* {{i|Bird's Eye}}/{{i|Ghost Pepper}}: Whenever Mega Bean is used, a fire will be shot out behind Isaac. Two flames will be shot if Isaac also has {{I|Car Battery}}.
+* {{Book of Virtues synergy|description=Spawns tiny magenta wisps on the middle ring. The wisps send rock waves outward when Mega Bean is used. They also [[petrify]] and [[poison]] all enemies in a large radius when destroyed.}}
+* {{i|Car Battery}}: Deals double damage, but the [[status effect]] lasts for the same amount of time.
+
+== Interactions ==
+* {{t|Second Hand}}: Doubles the petrification duration but not the poison duration.
+
+== In-game Footage ==
+{{#ev:youtube|WF3ZkavytYg}}
+
+== Trivia ==
+{{dlc|nr}} {{I|Kidney Bean}} had the same sprite as Mega Bean albeit colored red. Repentance made the sprite of Kidney Bean much smaller.
+
+== Bugs ==
+{{bug|Mega Bean can be used to push {{e|The Beast}} and the [[Harbingers (Bosses)#Ultra Harbingers|Ultra Harbingers]] into the lava while they are still in the background. This has no effect on their actual fight, only on their earlier preview. Same effect can be achieved using {{i|Mama Mega!}}. |dlc=r+}}
+
+{{nav|bean|fr=Haricot Géant}}

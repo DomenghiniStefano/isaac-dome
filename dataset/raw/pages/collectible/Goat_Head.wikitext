@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 215
+ | quote       = He accepts your offering
+ | description = A {{R|Devil Room}} / {{R|Angel Room}} will always spawn after every boss fight, excluding the first floor and floors after Chapter 4.
+ | quality     = 3
+ | tags        = summonable offensive {{dlc|r+|nogreed}} lazarussharedglobal
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Sets the [[Devil Room#Conditions to make Devil Rooms appear|Devil Room chance]] to 100% regardless of all other modifiers, guaranteeing a {{R|Devil Room}} or {{R|Angel Room}} Door will spawn whenever possible and remain open.
+
+== Notes ==
+* Even if taken after a boss is killed, Goat Head will force a Devil / Angel Room door to spawn on that floor.
+* Taking a deal with the Devil will prevent Angel Rooms from appearing, meaning Goat Head must be acquired from another source for an {{R|Angel Room}} to spawn.
+* {{dlc|anr}} Goat Head will not force a Devil / Angel Room door to open if the boss fight was in a narrow room.
+* {{dlc+|a}} Goat Head has no effect in [[Greed mode]] and is not normally available.
+** It can still be a starting item for {{c|Eden}}, a bonus item from {{i|Eden's Blessing}}, and is obtainable with {{i|Pandora's Box}} and {{i|Sacrificial Altar}}.{{dlc-}}
+* {{dlc+|r}} By touching the [[Fire Places#White Fire Place|white fire]] in {{s|Downpour}} II and {{s|Dross}} II, Isaac will temporarily become {{c|The Lost}}. After defeating the boss, Goat Head will always keep the devil deal door open, allowing the Lost to take one Devil Deal item for free.{{dlc-}}
+
+== Synergies ==
+* {{T|Black Feather}}: Grants a damage boost.
+* {{i|Duality}}: Both Angel and Devil Room doors spawn after every boss, and the selected door will never disappear.
+
+== Interactions ==
+* {{i|Eucharist}}: Overrides Goat Head.
+
+== In-game Footage ==
+{{#ev:youtube|NQgCkFruWew}}
+
+== Trivia ==
+* This item is a reference to how goats and their blood were often used as a common sacrifice proxy. This is even more evident by the pickup quote.
+* This item actually sets devil deal chance to 6660% under the hood, but the value is truncated in the HUD.
+
+{{nav|fr=Tête de Bouc}}

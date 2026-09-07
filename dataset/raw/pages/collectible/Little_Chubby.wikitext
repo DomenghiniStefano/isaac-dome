@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | name = Little Chubby
+ | id = 88
+ | quote = Attack buddy
+ | description = Spawns a {{E|Charger}} [[familiar]] that charges forward and deals contact damage to any enemies in its path.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable monstermanual offensive
+ | unlocked by = Lil' Chubby
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Spawns a {{E|Charger}} [[familiar]] that charges across the [[room]] when Isaac shoots, dealing [[damage]] to any enemies in its path until it hits an [[obstacle]] or wall.
+** {{dlc|na}} Little Chubby is fired directly from where Isaac is standing.
+** {{dlc|a}} Little Chubby is fired directly from where it is located in the chain of familiars behind Isaac.
+** The familiar deals 3.5 damage per tick.
+*** {{dlc|nr}} Deals 52.5 damage per second.
+*** {{dlc|r}} Deals 105 damage per second.
+** The familiar's attack is affected by momentum, just as tears are. Thus, it can be shot diagonally.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Chub}}.{{dlc-}}
+* For Little Chubby to recharge, it must first get back to Isaac. Therefore, running away from Little Chubby after firing it will extend the time required to recharge it.
+* The enemy {{E|Chubber}} can attack like this item, but they have limited range.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Little Chubby having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+
+== Interactions ==
+* {{t|Duct Tape}}: Familiar will stay in place relative to Isaac, however, it will still charge across the room but will always return to the spot it first returned to after charging across a room.
+* {{I|Marked|r}}: Little Chubby will charge at the direction that is marked on the floor.
+
+== In-game Footage ==
+{{#ev:youtube|sW1AKj6uChU||inline}} {{#ev:youtube|9vhb_UOrb20||inline}}
+
+== Trivia ==
+* According to Edmund McMillen, Little Chubby is a reference to one of his reoccurring comic book characters and is, in fact, a talking penis.<ref>[[edmundm:51416553970]]</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|fr=P'tit Dodu}}

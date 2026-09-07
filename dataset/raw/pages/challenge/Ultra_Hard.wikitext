@@ -1,0 +1,102 @@
+{{infobox challenge
+ | dlc                = a+
+ | number             = 34
+ | item               = {{i|Key Piece 1}}<br>{{i|Key Piece 2}}
+ | curse              = {{cu|Labyrinth}}<br>{{cu|Blind}}<br>{{cu|lost}}<br>{{cu|Maze}}
+ | has treasure rooms = yes
+ | has shops          = yes
+ | description        = All enemies spawn as champions if possible. Boss fights will be double trouble if possible. No heart pickups drop.
+ | goal               = Mega Satan
+ | unlocks            = Samson Feels Healthy!
+ | unlocked by        = Ultra Hard
+}}
+<blockquote>''"Who on the team thought the ultra hard challenge was fun?"''
+
+'''''"I never said it was fun"'''''
+
+''- Edmund McMillen''<ref>https://x.com/edmundmcmillen/status/1433311024510169094</ref></blockquote>
+'''Ultra Hard''' is [[Challenge]] #34. Isaac begins with both halves of the key for the {{E|Mega Satan}} battle and has to beat Mega Satan through the Dark Room. This challenge, like its name suggests, is ''extremely'' difficult, with various handicaps that make it arguably the hardest challenge in the game.
+
+== Modifiers ==
+* Isaac does not start with {{i|The D6}}, even if it is unlocked.
+* All enemies with champion forms, including bosses, will be [[champion]]s.
+** Champions will not drop any collectibles.
+** Ultra Hard is the only place in the game where "Rainbow" champions are not limited by time constraints and can appear early-game.
+* Every boss fight, if possible, will be double trouble.
+** Since the Basement can't have double-trouble bosses, these don't start until {{s|Caves}}.
+* The player suffers from the following curses each floor: {{cu|Labyrinth}}, {{cu|Blind}}, {{cu|lost}}, and {{cu|Maze}}.
+** These curses are ''permanent'' and cannot be stopped through the usual methods of removing curses, such as {{p|Dagaz}}, {{I|Black Candle}} or {{I|Genesis}}.
+** In addition to the four curses, the player may additionally suffer from either Curse of the Unknown or Curse of Darkness, which can be removed through usual means.
+* [[Heart]] drops of any kind (red, soul, black, eternal, bone, golden, blended and rotten hearts) do not appear on this run. Any heart drops will play their pickup sounds upon spawning, but will not physically spawn.
+** Items that add hearts directly to the player's count upon collection will work as usual (such as [[Balls of Steel]], {{i|Satanic Bible}}, {{i|Super Bandage}}, etc.) and are the only method of regaining hearts. Heal-on-kill effects also work (eg. {{i|The Gamekid}}).
+** Items and cards that normally drop hearts, such as {{p|V - The Hierophant}} tarot card or {{i|Little C.H.A.D.}}, will not drop any hearts. Using an {{p|Ace of Hearts}} card will consume all pickups in the room, and not drop any hearts.
+* Unlike in most other challenges, [[Treasure Room]]s spawn normally; two can be expected on the first three floors.
+* Only {{i|The Negative}} drops after killing {{E|Mom}}. This forces the player to progress through {{s|Sheol}} and the {{s|Dark Room}} to fight Mega Satan.
+** {{Dlc|nr}} Even though the option to proceed upward through the {{s|Cathedral}} is presented, the run will end after defeating Isaac and touching the chest will '''not''' give the player credit for completing the challenge.
+* If the player manages to defeat {{E|Hush}}, the entrances to the {{Dlc|nr}} {{s|Cathedral}}, {{s|Sheol}}, and {{s|The Void}} appear.
+** Defeating {{e|Delirium}} by traveling to The Void after defeating Hush spawns the trophy. Collecting it will still complete the challenge as normal.
+
+== Strategy ==
+With just how much is stacked against Isaac's favor, a great deal of time, determination and luck is needed to beat this challenge - builds are almost impossible to manage, every room will take very long to clear, and Isaac will be at a constant war of attrition with his health. While it is important to obtain strong items or synergies within the first few floors, and indeed it is beneficial to find as many item pedestals as possible, the permanent Curse of the Blind makes picking up certain items immediately spell the end of a run. It is also very likely that Isaac will lack either health or damage output as the run progresses, a balancing act of which is completely out of the player's control. Overall, prepare to lose a lot of progress and restart constantly.
+
+=== General Tips ===
+* Get used to how long it takes to clear even one room due to most Champions having double the health of a normal monster. Take things slow to prevent avoidable damage.
+* Remember that two Treasure Rooms will spawn on each of the first three floors. Resetting until a valuable item is found on the first floor may be worth considering. Also, since the {{ip|Treasure Room|text=Treasure Room item pool}} contains a few possibly run-ending items, such as {{i|Cursed Eye}}, Treasure Rooms may be skipped if Isaac already has a build solid enough to face Mega Satan.
+* The excess of champions means that most damage taken will be a full heart, even before reaching [[The Womb]]. This makes avoiding damage all the more important.
+* Certain champions are more problematic than others.
+** Dangerous champions include: 
+*** Light Blue/Dark Cyan (which have on-death effects)
+*** Green/Magenta (which make it difficult to maneuver)
+*** Yellow/Black/Camouflage (which make it easy to take unintended damage)
+*** Red/Dark Red/White/Large (which take significantly longer to kill).
+*** On later floors, Pulsing Red/Rainbow champions should be taken out immediately due to their effects, as they can easily cause a run to be lost.
+** Weaker champions include: 
+*** Gray (least health), Dark Blue (slower speed), and Pulsing Green (splits into two normal enemies on death). Grays should be prioritized as they can be easily killed. Pulsing Greens should be left for last as they will simply add one more monster to the room if killed early.
+* Bomb and Key use should be managed carefully, even more so than in normal playthroughs. They grant access to resources that are difficult to come by, and can help with obtaining a powerful item. 
+** Isaac's single starting [[Bomb]] can be used to clear a crowd of chasing enemies, though at the risk of losing the ability to bomb things such as bomb puzzles. 
+** If the player has a surplus of bombs, bomb [[Rocks#Tinted Rock|Tinted Rocks]] or {{R|Secret Room}} walls. Both have the potential of rewarding items, with tinted rocks having the chance of {{i|The Small Rock}} and Secret Rooms having an excellent item pool.
+*** In general, bombs can be used as a strong, consistent source of damage, as champions will still usually die in one explosion.
+** If the player only has a few bombs/keys left, it is a good idea to hold onto them until most of the rooms are clear, in order to decide what would their best use. For example, it is generally more useful to use a bomb to reach a chest instead of bombing a shopkeeper.
+* {{R|Challenge Room}}s are surprisingly the least risky combat rooms in this challenge, as all enemies spawned will not be champions. If the player happens to find themselves at max health, there is no reason not to do them for additional rewards.
+* [[Trinkets]] are very useful, as they are not affected by Curse of the Blind and can give a substantial boost to Isaac's kit. Prioritize finding one, or spend coins at a [[Fortune Telling Machine]].
+* Constantly restarting for the chance of a {{R|Library}} is a good tactic: they tend to spawn near or connected to the starting room, and their item pools do not contain many bad items. There are also good odds of getting at least two/three books from a Library, making it an easy source of the [[Bookworm]] transformation.
+* Look for [[Bedroom]]s and {{E|Rainbow Poop}}s, both of which replenish Isaac's health and let the player make more mistakes during the floor. They also let Isaac use [[Blood Donation Machine]]s or [[Devil Beggar]]s, which are usually off-limits due to the lack of heart drops.
+* [[Pill]]s are an accessible source of stat buffs or Full Health, but also hold the risk of rolling Hematemesis, which is a major problem in this challenge as it drains all your red hearts and does not give them back.
+* Do not enter {{R|Curse Room}}s and do not use {{R|Sacrifice Room}}s, as health is already very difficult to come by.
+** Curse Rooms very rarely contain a worthwhile item, and as Curse of the Blind is in permanent effect, it is impossible to tell if an item in a Curse Room contains a good item, such as {{i|Pentagram}}, or a bad item, such as {{i|Curse of the Tower}}. Enter them at your own risk.
+** Sacrifice Rooms do allow the player to potentially obtain a powerful {{R|Angel Room}} item; however, spending at least three full hearts for a chance at getting an item is almost always not worth it, especially as hearts do not naturally drop. Additionally, there is no reason to fight the angels, as the player already has both key pieces, and there is no reason to teleport early to the Dark Room and skip multiple Treasure Rooms, as the player is forced to take {{i|The Negative}} anyways.
+* Taking damage and lowering the chance for a Devil / Angel room is very common, due to no Soul hearts or Black hearts being able to spawn naturally. Items such as {{I|Book of Revelations}} or {{I|Satanic Bible}} will make it easier to access these rooms.
+* Deals found in {{R|Devil Room}}s are generally not worth taking. It may be preferable to pursue {{R|Angel Room}}s instead, as the player already has both key pieces, which greatly increases their chances of spawning.
+** One-heart deals are almost never beneficial — many one-heart deals do not pay for themselves, whether that be in health or other effects. Avoid taking one-heart deals unless you are confident that they are worth their cost.
+** Two-heart deals are very powerful, such as {{i|The Pact}} and {{i|Brimstone}}. Be wary that {{i|Abaddon}} can remove the player's red hearts, making items such as {{i|Pyromaniac}}, {{i|Yum Heart}} and {{i|Placenta}} useless until the player regains red hearts.
+*** {{t|Judas' Tongue}} and {{t|Your Soul}} will hide two-heart deals due to Curse of the Blind. Therefore, if you plan to use them, you should make sure to drop the trinket once you enter the devil room to be sure if you're actually getting a 2 heart deal.
+** {{dlc|r}} Satanic Bible now changes the {{R|Boss Room}} item into a Devil Deal, which depending on the item cost (as 2 heart deals generally provide better items), is not recommended.
+** If {{E|Red Chest}}s spawn in the Devil Room, be wary of picking up any items that they may contain. The Red Chest item pool contains powerful items such as {{i|Guppy's Collar}} but also contains potentially run-ruining items such as {{i|Cursed Eye}} and {{i|Curse of the Tower}}.
+* Should the player reach the [[Dark Room]], do not take any items from the starting room's four Red Chests. There is a low, yet possible chance of getting run-ending items such as {{i|Dead Cat}}; if you've had the luck to come as far as the door to Mega Satan, it is best not to take the risk. If the player still wants to get more items, it is better to clear rooms within the Dark Room for the chance of a chest spawning, as they will only drop items from the [[Treasure Room (Item Pool)|Treasure Room item pool]].
+* {{dlc|nr}} The [[Co-op#Special Babies 2|Colorful Baby]], which can be utilized in [[co-op]] mode, makes the Ultra Hard challenge trivial, as its healing effect can be used infinitely.
+
+=== Items and Synergies ===
+* Aside from trying to find powerful items such as {{i|Polyphemus}},{{i|Mom's Knife}}, or {{i|Tech X}}, trying to find items that grant health regeneration is invaluable.
+** Items such as {{i|Leech}}, {{i|Charm of the Vampire}}, {{T|Mom's Locket|dlc=x}} and {{i|Placenta}} allow the player to slowly regenerate health.
+** Active items such as {{i|Yum Heart}}, {{i|Yuck Heart}}, the {{i|Book of Revelations}}, and the {{i|Satanic Bible}} also allow for health regeneration.
+** Combinations of items such as {{i|Kamikaze!}} and {{i|Pyromaniac}} or {{i|Isaac's Heart|nr}} and {{i|Blood Rights}} can make the Ultra Hard challenge trivial.
+** Also attempt to look for synergies such as {{i|Blank Card}} and {{p|XIX - The Sun}} or {{i|Placebo}} and a [[Full Health]] or [[Bad Trip]] pill. These synergies can easily win the Ultra Hard challenge provided the player has means to defeat difficult bosses such as {{E|The Lamb}} and {{e|Mega Satan}}.
+* The {{i|D10}} can be surprisingly helpful; most of the time, it will reroll enemies into non-champion forms, and as the D10 can never reroll enemies into portals, it makes managing rooms with portals much easier.
+** {{dlc|r}} The D10 rerolls champion enemies into new champion enemies.  Additionally, portals no longer spawn outside of {{s|The Void}}.
+* The {{I|Glowing Hourglass}} will allow the player to retry difficult rooms, avoid detrimental items, and peek at pills without the risk of harmful effects.
+* Trinkets that drops hearts as pickups such as {{T|Bloody Penny}} or {{T|Monkey Paw}} are useless in this challenge. However, those that directly heal such as {{T|Isaac's Fork}} or {{T|Stem Cell}} will still function.
+* {{i|PHD}} is very valuable, as it reveals all pills, replaces detrimental pill effects with positive ones, and heals two red hearts upon pickup.
+* {{dlc|nr}} Items that reroll the player such as the {{i|D4}} and the {{i|D100}} can be used to amass health very quickly, as hearts generated from items are not removed if the items that granted them are rerolled.
+** {{dlc|r}} Items lost from the {{i|D4}} and the {{i|D100}} now remove associated hearts.
+* {{dlc|nr}} The {{i|Clicker}} can potentially transform Isaac into {{c|Keeper}}, allowing him to heal with coins. That said, using it will remove your most recently collected item, so it shouldn't be used if it would remove a powerful item or {{i|Key Piece 2}}.
+** {{dlc|r}} Clicker can no longer spawn in challenges.
+* {{Dlc|r}} Due to the permanent Curse of the Blind and the inability for hearts to drop, {{I|Binge Eater|n}} is an extremely powerful item as long as you can time the item swapping properly. This removes the worry of most harmful items while supplying a lot more healing and stats, and even allowing Devil Deals to be utilized to their fullest extent. The only drawback is the fact it is from the Secret Room pool, therefore making it very hard to come across. If you have the patience to farm Secret Rooms for this item, it can essentially guarantee a win.
+* {{I|Shard of Glass|r}} is a very dangerous item in this challenge, as once damaged, there are no ways to stop the health draining effect unless you find an HP up, as heart pickups of any kind cannot spawn in Ultra Hard.
+
+== Reward ==
+{{achievement text | Samson Feels Healthy! }}
+
+== Trivia ==
+* Despite being the "Ultra Hard" challenge, this challenge is actually played in Normal Mode. Although it is not as noticeable in Afterbirth+, in Repentance, it is far easier to notice due to the lowered shot speed of many enemies.
+
+{{nav|challenge|blue baby boss unlock|the lamb unlock|mega satan unlock|fr=Ultra Difficile}}

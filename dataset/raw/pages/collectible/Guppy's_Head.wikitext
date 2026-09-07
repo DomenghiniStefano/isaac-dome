@@ -1,0 +1,35 @@
+{{infobox activated collectible
+ | id          = 145
+ | quote       = Reusable fly hive
+ | description = Spawns 2-4 friendly [[Blue Fly|Blue Flies]] that damage enemies.
+ | quality     = 2
+ | tags        = dead guppy offensive
+ | recharge = 1
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Spawns 2-4 friendly [[Blue Fly|Blue Flies]].
+* {{transformation contribution|Guppy}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Summons wisps in the outer ring instead of flies. Wisps summon Blue Flies when destroyed. One wisp contains one Blue Fly.}}
+* {{i|Car Battery}}: Increases range of flies spawned to 4-8.
+* {{T|Fish Tail}}: Doubles flies spawned.
+* {{i|9 Volt}}: Guppy's Head slowly gains charge while in a hostile room.
+
+== In-game Footage ==
+{{#ev:youtube|rivwKxNTaz8||inline}} {{#ev:youtube|5hH4LAr89UU||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Guppy's Head.png|{{plat|3DS}} The icon of Guppy's Head as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* This item is used in {{chal|Cat Got Your Tongue}}.
+* The item is a reference to [[Edmund McMillen|Edmund McMillen's]] cat also named Guppy.
+* {{i|Box of Spiders}} is essentially the spider equivalent to Guppy's Head.
+
+{{nav|guppy|cat|fr=Tête de Guppy}}

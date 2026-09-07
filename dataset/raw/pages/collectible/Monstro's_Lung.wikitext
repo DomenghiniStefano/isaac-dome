@@ -1,0 +1,111 @@
+{{infobox passive collectible
+ | tear app scale = 1/5
+ | id             = 229
+ | quote          = {{dlcalt|Charged attack|r=Charged burst attack}}
+ | description    = Replaces normal tears with a charged shot that fires 14 tears in the same fashion as {{E|Monstro}}.
+ | quality        = 2
+ | tags           = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants a charged shot that fires 14 tears in the same fashion as {{E|Monstro}}.
+** The attack can be released only when fully charged.
+** Each tear deals 100% Isaac's [[damage]].
+** Each tear has a random size multiplier between 0.9x to 1.33x, but there is no effect on damage.
+* [[Tears]] down: {{Dlc|nr}}Tear Delay × 4.3 / {{Dlc|r}} Fire Rate ÷ 4.3 (roughly 0.23x).
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Monstro II}}.{{dlc-}}
+* Charge time can be found with the following equation:
+: <math>\text{time} = \frac{1}{30}(Roundup(\text{Tear Delay)}) \approx \frac{1}{\text{Fire Rate}}</math>
+* Each tear has independant chance to have [[Tear Effects]].
+* [[Tear falling speed]] ups will slightly reduce the effective range of Monstro's Lung.
+** {{dlc|rnr+}} Since range ups always add to tear falling speed, every range up reduces effective range.
+* {{dlc|r}} Multi-shot effects such as {{I|20/20}} or {{C|Keeper}} adds 2.4 tears to the barrage per tear they normally grant. The resulting amount is rounded, and is capped at 50.
+* {{dlc|r}} Reaching above 30 fire rate will release the charge automatically when full. Since this is nearly instant, it results in a constant spray of tears.
+
+== Synergies ==
+* {{I|20/20}} / {{I|The Inner Eye}} / {{I|Mutant Spider}}:
+** {{Dlc|nr}} Adds 2, 5 or 7 tears to the barrage respectively. For the latter two, greatly slows down the charge.
+** {{dlc|r}} Adds 2.4 extra tears to the barrage per extra tear added by the item, rounded down to the nearest whole number. For the latter two, greatly slows down the charge.
+* {{I|Almond Milk}} / {{I|Soy Milk|dlc=r}}: Fires automatically upon reaching full charge, regardless of fire rate.
+* {{I|Anti-Gravity}}: Hover effect is overidden, but tear delay down still applies, which greatly reduces the charge time.
+* {{I|Blood Clot}}: All tears are larger, with increased damage (as opposed to every 2nd tear like Blood Clot alone).
+** {{Dlc|a+}} Tears have a 50% chance to be Blood Clot tears.
+* {{I|Brimstone|dlc=a}}: Brimstone has priority. Does not apply Monstro's Lung's tears down. Fires 3-5 additional beams in random directions around Isaac. This effect also applies to {{C|Azazel}} and {{C|Tainted Azazel}}'s versions of Brimstone.
+** Brimstone + {{I|Eye Sore}}: Overrides this synergy with a chance to shoot 1-3 additional beams in random directions.
+* {{I|Chocolate Milk|nr}}: Reduces Isaac's tear delay by 20%, and each tear from Monstro's Lung is a charged Chocolate Milk shot, massively increasing fire rate and damage.
+** This does not apply to {{C|Lilith}}'s Incubus; picking up Chocolate Milk will significantly reduce damage and increase charge time.
+** {{Dlc|r}} The tear damage and the barrage size scale with charge amount. At 50% charge, the tear damage is 100%, the barrage size reaches 100% and is capped there. At 100% charge, the tear damage is 200%.
+*** <math>\text{Charge Time (s)} = \frac{1}{30}(Roundup(\text{Tear Delay} \times \frac{5}{2} + 1)) \approx \frac{5}{2 \times \text{Fire Rate}}</math>
+**** This makes damage per second drop to 80%.
+* {{I|Dr. Fetus|anr}}: Monstro's Lung has priority. Does not apply Dr. Fetus' tears down. Fires 6 bombs which detonate simultaneously.
+** {{dlc|r}} Monstro's Lung has priority. Does not apply Dr. Fetus' tears down. Fires 6 mini-bombs which detonate at different times. Multi-shot effects add 1 bomb to the barrage, up to 21 bombs.
+* {{I|Epic Fetus|dlc=a}}: Epic Fetus has priority. Does not apply Monstro's Lung's tears down. 2-4 extra cursors rotate around the main cursor before the missiles land.
+* {{I|Eye Sore}}: Adds a chance to fire 1-3 additional barrages in random directions.
+* {{c|The Forgotten}}: Melee swing is unaffected, but the throw attack is replaced by the burst attack with small bones instead of tears. Each additional copy of Monstro's lung adds 5 bone clubs in his melee attack, up to a limit of 16. {{c|The Soul}} behaves normally, including the tears down.
+* {{I|Flat Stone}}: All tears bounce simultaneously; the effective range is greatly increased.
+* {{I|Haemolacria}}: Monstro's Lung has priority. Applies +43 Tear Delay after Haemolacria tears down, instead of Monstro's Lung tears down. The barrage size is reduced to 4/7 (roughly 0.57), tears of which all burst.
+** The barrage size is 8 without any multi-shot effect. The resulting amount is rounded, and is capped at 29.
+* {{i|Immaculate Heart}}: Fires a large number of extra tears alongside the burst that begin orbiting Isaac once they reach the orbit range.
+* {{I|Ipecac}}: Fires Ipecac tears, with no increase in charge time.
+** {{Dlc|r}} Applies Ipecac's tears down.
+* {{I|Technology|dlc=r}}: Does not apply Monstro's Lung's tears down. Grants a charged shot, fires 12 lasers in 30° spread that arc 3-4 times. A laser can hit an enemy multiple times between their arcings.
+** <math>\text{Charge Time (s)} = \frac{1}{30}(Roundup(\frac{43}{10} (\text{Tear Delay} + 1))) \approx \frac{43}{10 \times \text{Fire Rate}}</math>
+*** This is equivalent of applying Monstro's Lung's tears down and its charge time, without actually altering tear delay.
+** Multi-shot effects add 12 lasers to the barrage, up to 128 lasers total.
+** Technology + {{I|Mysterious Liquid}}: The lasers leave creep each time they arc, resulting in a massive amount of creep.
+** Technology + {{I|Proptosis}}: The 6x damage is recovered each time they arc, nearly nullifying the distance penalty.
+* {{I|Tech X}}: Fires 3-5 extra rings in 30° spread. Extra rings deal from 50% to 100% damage of the main ring.
+** Additional copy of Monstro's Lung adds 3-5 more rings.
+** {{Dlc|nr}} Increases Tear Delay.
+** {{Dlc|r}} Fire Rate is divided by 3.1.
+* {{I|The Ludovico Technique|dlc=a}}: The Ludovico Technique has priority. Does not apply Monstro's Lung's tears down. A cluster of variably sized tears orbit the main tear.
+* {{I|Mom's Knife|dlc=a}}: Mom's Knife has priority. Does not apply Monstro's Lung's tears down. Fires additional knives depending on charge amount, each dealing 2x tear damage. Fires 3-5 knives at maximum charge.
+* {{I|Mom's Wig|nr}}: Charging an attack spawns spiders in rapid succession.
+** {{Dlc|r}} Spawns spiders upon firing, not charging. The amount of spiders spawned is dependent on luck.
+* '''Monstro's Lung''': Additional copies of this item, such as from {{I|Diplopia}} / {{I|Crooked Penny}}, add {{Dlc|nr}} 10/{{Dlc|r}} 12 tears to the barrage.
+** This effects is equivalent of adding {{Dlc|nr}} 4/{{Dlc|r}} 5 multi-shot effects. The items which have priority over Monstro's Lung or override it (e.g. {{I|Brimstone}}/{{I|C Section}}) benefit from this multi-shot effect.
+* {{I|My Reflection}}: Tears stay in the air much longer and consistently, allowing better reach and more focused blasts before the tears returning to Isaac.
+* {{I|Tractor Beam}}: All the tears follow the beam at different heights without spreading out, making it much easier for multiple tears to hit a target.
+
+== Interactions ==
+* {{I|Chemical Peel|na}}: Overridden by Monstro's Lung.
+** {{Dlc|a+}} Tears have a 50% chance to be Chemical Peel tears.
+* {{i|C Section}}: Overrides Monstro's Lung.
+* {{I|Cursed Eye}}: Overridden by Monstro's Lung.
+* {{I|Epic Fetus|dlc=na}}: Overrides Monstro's Lung.
+* {{I|Epiphora}}: Tears stat is increased properly but firing cancels the effect.
+* {{I|Isaac's Tears}} / {{I|Sad Bombs}} / {{I|Tammy's Head}}: Fires 8 normal tears.
+* {{I|Kidney Stone|na+}}: If Monstro's Lung is picked up while Kidney Stone is ready to fire, charge time for Monstro's Lung will be significantly decreased.
+** {{Dlc|a+}} Only stat effects from Kidney Stone apply.
+**Kiney Stone will work if technology has been picked up.
+* {{I|Lachryphagy}}: The tears merge into one giant tears a while after being fired, and instantly burst. Without [[piercing]], most of the damage is often wasted. Without [[spectral]], the tears often collide against obstacles due to their size.
+* {{I|Loki's Horns|nr}} / {{I|Mom's Eye}}: Adds a chance to fire single tears in the other direction(s).
+** {{Dlc|r}} Adds a chance to fire barrages in the other direction(s).
+* {{I|The Ludovico Technique|na}}: Overrides Monstro's Lung.
+* {{I|Marked|anr}}: Only stat effects from Marked apply.
+** {{Dlc|r}} Works as expected. Fires automatically upon reaching full charge.
+* {{I|Neptunus}}: Overridden by Monstro's Lung.
+* {{I|Pop!}}: The tears still fall after being fired.
+* {{I|Spirit Sword}}: Overrides Monstro's Lung.
+* {{I|Strange Attractor}}: Due to the high concentration of tears enemies will be pulled into Isaac at great force, in certain cases enough force to pull enemies through rocks.
+* {{I|Tech.5}}: Occasionally fires a linear laser while charging.
+* {{I|Technology|na}}: If picked up after Technology, Monstro's Lung has no effect. Technology will override Monstro's Lung with a very low firerate.
+** {{Dlc|anr}} Technology has priority. Does not apply Monstro's Lung's tears down. Fires extra lasers in random directions.
+* {{I|Technology 2}}: Fires a linear laser while charging.
+* {{i|Ipecac}} + {{i|Dr. Fetus}}: Removes explosion immunity.
+* {{I|The Wiz|nr}}: 7-8 tears are fired at each diagonal direction instead of a full burst.
+** {{Dlc|r}} Adds a multi-shot effect (see Notes section). Full-sized barrage on each diagonal direction.
+
+== In-game Footage ==
+{{#ev:youtube|XNYDFgE9EAM}}
+
+== Gallery ==
+<gallery>
+File:Rebirth_Item_Concept.jpg|Rebirth item concepts, including Monstro's Lung.
+</gallery>
+
+{{nav|fr=Poumon de Monstro}}

@@ -1,0 +1,40 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 493
+ | quote       = Panic = power
+ | description = Increases [[damage]] based on how many empty [[Red Heart container]]s Isaac has.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = nolostbr summonable syringe
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Gives Isaac a flat [[damage]] up based on how many empty [[Red Heart container]]s he has.
+** {{dlc|nr}} The damage up given is 0.2 for each empty Red Heart container Isaac has.
+*** {{dlc|r}} The damage up given is ((2 × MissingHearts) ^ 1.6) × 0.1, where MissingHearts is the number of full red hearts of health missing. The amount of damage gained this way is exponential, so each heart lost will provide a bigger bonus than the last.
+** Damage ups are only applied for every fully empty heart container.
+* {{transformation contribution|Spun}}
+
+== Notes ==
+* This item has no effect on characters that can't have any Red Heart containers, unless {{E|Bone Heart}}s are collected. If a Bone Heart is gone, so does the Adrenaline damage. This means that Adrenaline is only truly useless on {{C|The Lost}}.
+* This item affects both {{C|Keeper}} and {{C|Tainted Keeper}}; empty Coin Hearts increase damage.
+* As {{C|The Forgotten}}, empty Bone Hearts increase damage, but if the Bone Hearts are broken, the damage buff is lost.
+* {{dlc+|r}} The maximum damage bonus from Adrenaline is 14.05 normally, 16.15 with Bone Hearts, and 30.9 for Magdalene with {{i|Birthright}}.{{dlc-}}
+
+== Synergies ==
+* {{I|Birthright}} + {{C|Magdalene}}: Allows Magdalene to gain more damage than the other characters can because of her 6 additional heart containers.
+* {{I|Blood Oath}}: Activates the damage up effect of Adrenaline for the resulting empty heart containers at the start of each floor.
+* {{I|Empty Heart}}: Activates the damage up effect of Adrenaline if an empty heart container is granted at the beginning of each floor.
+* {{I|Rock Bottom}}: Allows Isaac to keep the damage up after refilling hearts.
+
+== In-game Footage ==
+{{#ev:youtube|dLtBdW3mpA8}}
+
+== Trivia ==
+* Before [[v1.06.0190]], Adrenaline was named Adderline.
+** Despite having its name changed, Adrenaline's item sprite is named collectibles_493_adderline in the game files.
+* [[wikipedia:Adrenaline|Adrenaline]] is a hormone produced by the body in situations of high stress that increases blood circulation, breathing, and other things in preparation for the natural flight or fight reflex.
+* Adrenaline causes characters to have an animation that makes them look like they are breathing rapidly. The more health they're missing, the more exaggerated the animation is.
+
+{{nav|syringe|fr=Adrénaline}}

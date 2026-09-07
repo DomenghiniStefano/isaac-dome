@@ -1,0 +1,77 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 131
+ | quote       = Wealth of purity
+ | description = Gives a chance to drop a {{E|Half Soul Heart|n}} when a [[Coins|coin]] is collected.
+ | unlocked by = Blessed Penny
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Gives a chance to drop a {{E|Half Soul Heart}} when [[Coins|money]] is collected. The chance is based on the coin's worth:<ref>The chance is calculated as 1-0.8334<sup>(coin_worth)</sup></ref>
+{| class="wikitable"
+ ! Coin
+ ! Chance
+ |-
+ | {{E|Penny}}
+ | 16.6%
+ |-
+ | {{E|Double Penny}}
+ | 30.5%
+ |-
+ | {{E|Nickel}}
+ | 59.7%
+ |-
+ | {{E|Dime}}
+ | 83.3%
+ |}
+
+== Notes ==
+* This trinket is very useful in [[Greed Mode]], as the constant supply of coins helps with accumulating lots of soul hearts.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Increases the chances to:
+{| class="wikitable striped"
+ ! Coin
+ ! Chance
+ |-
+ | {{E|Penny}}
+ | 25.00%
+ |-
+ | {{E|Double Penny}}
+ | 40.00%
+ |-
+ | {{E|Nickel}}
+ | 70.00%
+ |-
+ | {{E|Dime}}
+ | 90.00%
+ |}
+* {{A|Golden Trinket|r+}} + {{i|Mom's Box|r+}}: Increases the chances to:
+{| class="wikitable striped"
+ ! Coin
+ ! Chance
+ |-
+ | {{E|Penny}}
+ | 30.00%
+ |-
+ | {{E|Double Penny}}
+ | 50.00%
+ |-
+ | {{E|Nickel}}
+ | 75.00%
+ |-
+ | {{E|Dime}}
+ | 100.00%
+ |}
+ 
+== Trivia ==
+* [[anti:Blessed Penny|Blessed Penny]] originates from the ''Antibirth'' mod, and by extension, from the ''Community Remix'' mod for the flash version.
+** In ''Community Remix'', it was named ''Soul Penny''.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|coin modifier|penny|bethany unlock|blue baby boss unlock}}
+[[Category:Penny trinkets]]

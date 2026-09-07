@@ -1,0 +1,68 @@
+{{infobox challenge
+ | dlc         = a
+ | number      = 30
+ | blindfolded = yes
+ | item        = {{i|Holy Grail}}<br>{{i|Isaac's Heart}}<br>{{i|Punching Bag}}<br>{{i|Spear Of Destiny|n}}
+ | has shops   = yes
+ | description = {{I|Isaac's Heart}} will follow {{i|Punching Bag}} instead of Isaac.
+ | goal        = Mom's Heart
+ | unlocks     = Blank Rune
+ | unlocked by = The Guardian
+}}
+
+'''The Guardian''' is [[Challenge]] #30 introduced in ''[[The Binding of Isaac: Afterbirth]]''. Isaac starts [[blindfolded]], with {{i|Punching Bag}}, {{i|Isaac's Heart}}, {{i|Holy Grail}}, and {{i|Spear Of Destiny}}. The goal is to defeat {{e|Mom's Heart}} or {{E|It Lives!}}. Isaac's Heart will follow the Punching Bag instead of Isaac. Isaac also has a special hairstyle and a reskinned Spear Of Destiny. Both of these are not accessible anywhere else.
+__TOC__
+
+== Difficulty ==
+The main difficulty of this challenge stems from the fact that Isaac's health is damaged when the Punching Bag is hit for any reason (due to Isaac's Heart), and that the Punching Bag will move of its own unpredictable accord, severely hindering the player's agency in avoiding damage.
+
+Note since it's the Punching Bag who takes damage, and it doesn't have the ability of flight, the Punching Bag is '''not immune to spikes and creep''' as Isaac's Heart would be. The lack of {{R|Treasure Room}}s and tears only further compounds the difficulty, to the point where certain rooms and bosses, which can be normally completed without taking damage, may now guarantee a substantial amount of unavoidable damage. For example, Red Champion Mom is almost impossible to clear as she will always target Punching Bag.
+
+Playing this challenge in Repentance is somewhat easier yet also somewhat harder due to the changes to {{I|Isaac's Heart}}.
+
+== Strategy ==
+* The player should follow a general priority in which enemies to kill: enemies that run towards the Punching Bag, followed by exploding enemies, followed by enemies with piercing shots (i.e. Enemies that fire {{i|Brimstone}} shots), followed by enemies that fire regular shots. Remember that Isaac himself is invincible, allowing him to "body-block" shots flying towards the heart.
+* As the Spear Of Destiny is not affected by any of Isaac's stats other than damage, items such as {{i|Eve's Mascara}}, {{i|Proptosis}}, and {{i|Polyphemus}} are straight damage upgrades, while items like {{i|Soy Milk}} and {{i|Odd Mushroom (Thin)}} are damage downs.
+** {{i|Ipecac}} can be extremely powerful because of its massive damage boost and poison effect.
+* It may be better to go for Angel Rooms rather than Devil Rooms in this challenge, since they may offer invaluable items like {{i|The Bible}}, {{i|The Wafer}}, and {{i|Breath of Life}} at the cost of no health.
+* Finding or buying The Bible makes the challenge a lot easier, allowing Isaac to instantly kill both {{e|Mom}} and {{e|Mom's Heart}}.
+* As the red champion version of {{e|Mom}} is nearly impossible to get past normally, a lot of [[health]], {{I|The Wafer}}, or {{p|Chaos Card}} are necessary if Isaac doesn't have The Bible (or if it isn't fully recharged).
+* Spend as little time as possible in rooms with spikes, because there's a high chance the Punching Bag will walk into them.
+* Orbitals are extremely useful for this challenge, since most of them deal a good amount of damage on direct contact. Items such as {{i|Sacrificial Dagger}} are the best source of damage at 15 damage per tick. Health is also important to make up for unnecessary damage, as is Speed to rush towards enemies and destroy them before they can attack Isaac's Heart. Also, pick up the {{i|Humbleing Bundle}} for its double Red Hearts.
+* Isaac can use the spear's fear effect to his advantage and force bosses and mini-bosses away from Punching Bag. This is especially effective against bosses that chase Punching Bag, such as  {{E|Gemini}} or {{E|Lust}}.
+* It is possible to enter {{R|Boss Rush}} in this challenge. However, it’s not recommended to complete Boss Rush as it is very difficult without a strong set of items, but if Isaac finds any means to escape (e.g. {{P|0 - The Fool}}), trying to beat Mom in under 20 minutes can be beneficial.
+* If the player is not too concerned with time or score and just want the unlock, {{i|Placenta}} is a good item to get as well since it can regenerate Isaac's health. A much, much slower way can be done by obtaining {{t|Mysterious Candy}}, which randomly spawns Poops. Destroying poop can drop {{e|Half Red Heart}}s and {{e|Soul Heart}}s.
+* {{dlc|nr}} Breath of Life can be extremely helpful in completing this challenge. Isaac's Heart will enable the spacebar indefinitely and not take damage while doing so will make Isaac completely immune to damage. He still can be hurt while the charge bar is still depleting after entering the room, but it does make things easier, especially with bosses, and allows him to explore rooms with hazards such as spikes without having to worry that the Punching Bag will wander into them.
+** {{Dlc|r}} Breath of Life now bypasses the invulnerability, making this strategy invalid.
+* It should be noted that Isaac can transform into {{tf|Guppy}} during this challenge even though the visual change that accompanies the transformation is not shown, and he will be able to make flies.  The Spear Of Destiny does not generate flies, but familiars and items that generate tears, such as {{i|Tammy's Head}} and {{i|Incubus}}, will.
+* {{dlc|nr}} Obtaining {{i|Blood Rights}} wins the challenge as it can be spammed while annihilating everything inside (except Hosts and Cod Worms). But since there are no Treasure Rooms present, it can only be obtained via a lucky Crawl Space or room generation.
+** {{Dlc|r}} Blood Rights now bypasses the invulnerability, making this strategy invalid.
+* Having a second player join in makes the game significantly easier. A co-op baby has its Spear Of Destiny and is not blindfolded so it can shoot tears as normal. The co-op baby doesn't take damage because of Isaac's Heart.
+* {{dlc|nr}} Obtaining {{i|Athame}} allows Isaac to activate the black brimstone ring without taking damage, which would make cleaning a room a lot easier, and spawn more {{e|Black Heart}}s.
+** {{Dlc|r}} This is no longer possible in Repentance due to Athame’s new effect.
+* Obtaining {{i|The Virus}} allows Isaac to inflict poison upon enemies without taking damage and get {{e|Black Heart}}s sometimes after killing enemies.
+** The Virus and other poisoning effects are useful against enemies such as {{E|Mobile Host}}, {{E|Cod Worm}}, etc, as they can remain invulnerable to the Spear Of Destiny and still deal contact damage to the  Punching Bag.
+* [[Familiar]]s such as {{i|Lil Brimstone}}, {{i|The Relic}}, {{i|Dark Bum}}, {{i|Little C.H.A.D.}}, {{i|Incubus}}, and {{i|Succubus}} (especially when combined with {{i|BFFS!}}) will make the challenge easier.
+* [[One Makes You Small]] pills or items like the {{i|Caffeine Pill}} can make the challenge much more difficult, as the decreased hitbox makes it harder to protect the {{i|Punching Bag}} from attacks.
+** Likewise, [[One Makes You Larger]] or items like {{i|Leo}} can be used to reduce some of the difficulty.
+* {{i|Book of Shadows}} also makes the challenge significantly easier as it can be activated to prevent {{i|Isaac's Heart}} from taking any damage for 10 seconds.
+* Because of Isaac's Heart, he can enter {{R|Curse Room}}s without taking damage.
+* {{dlc|nr}} The {{i|Sacrificial Altar}} that can be found in {{R|Curse Room}}s can be used to sacrifice both Punching Bag and Isaac's Heart, which could make the challenge easier.
+** {{Dlc|r}} The Sacrificial Altar will have no effect and will not be consumed.
+* {{t|Duct Tape|nr}} also makes the challenge easier, as Isaac's Heart will follow Isaac instead, resulting in two hitboxes.
+* {{dlc|r}} Even though Isaac is blindfolded, you can still charge up Isaac's Heart. The knockback from the charge shot can be crucial to avoiding damage.
+* {{t|Flat File}} makes this challenge significantly easier by removing all spikes from every room, including entities, rocks, and floors, as long as it's carried.
+
+== Gallery ==
+<gallery>
+File:Fire Sword ingame.png|Spear Of Destiny's appearance in this challenge, referred to as "firesword" in game files.
+File:Nicelilith.png|Sprite sheet of Isaac's appearance in this challange, referred to as "nicelilith" in game files.
+</gallery>
+
+== Reward ==
+{{achievement text | Blank Rune }}
+
+== Trivia ==
+* The file name for the appearance of Isaac in this challenge is named "nicelilith", and uses {{c|Lilith}}'s ''Afterbirth'' sprites but changed to have pale skin, blond hair, no horns, and wings.
+
+{{nav|mom unlock|challenge|fr=Ange Gardien (Défi)}}

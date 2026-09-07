@@ -1,0 +1,37 @@
+{{Infobox boss
+ | dlc         = r
+ | name        = Singe
+ | id          = 915
+ | environment = <u>Boss</u><br>{{floor|Ashpit}}<br>{{room|boss challenge}}
+ | base hp     = 444
+ | pool        = {{ip|Boss}}<br> {{i|Bird's Eye|r+}} (1% chance)
+}}
+'''Singe''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in the {{s|Ashpit}}.
+__TOC__
+
+== Behavior ==
+Singe always spawns with 4 damaging {{e|Singe's Ball}}s that can be pushed around; these play an important role in his attacks. Any spiked rock caught up in an explosion launches rapidly across the room, bouncing when colliding into obstacles, walls, and each other.
+* Farts, leaving a cloud of explosive gas.
+** Spiked rocks caught in this attack will be propelled slowly.
+* Runs erratically towards Isaac or a spiked rock and creates an explosion at the end of the run.
+** If close to Isaac at the end of the run, Singe can also perform a short jump in Isaac's direction to gain extra distance, creating an explosion on landing.
+* Charges up before releasing a large explosion, launching Singe into the air and creating a small cross-shaped pit in his wake; after a few moments he lands on top of Isaac's position. This attack spawns an additional spiked rock that lands down alongside him. This attack only occurs twice during the fight and only after Singe has reached a certain amount of HP.
+** Spiked rocks are able to be launched into the pit that Singe creates. This temporarily removes it until Singe generates another explosion, which spawns it again from the ceiling.
+** Multiple spiked rocks can be removed at a time, but Singe only spawns one back at a time per each explosion.
+* After performing his second large explosion, Singe gains a new attack where he lights a match and places it in front of his butt, farting to produce a large stream of fire that follows Isaac's movement.
+* Singe's explosion upon death can also damage Isaac.
+* {{dlc|r+}} Singe's Balls can be destroyed by {{p|Hagalaz}}, greatly simplifying this fight.
+
+== Trivia ==
+* A singe is a superficial burn.
+* Along with The Beast, this is Edmund's favorite boss in ''Repentance''.
+* [https://twitter.com/oilyspoily/status/1378599708776628224 According to a Twitter AMA on April 4th 2021], the reason why Singe is so gassy is because he "eats farts". Why this is remains a mystery.
+* The [[Bestiary Repentance|bestiary]] features a unique dancing animation that doesn't play during Singe's fight.
+** The animation is referred to as "yeehaw" in the .anm2 file.
+* Singe's matchstick attack is a possible reference to the Pyro's [[teamfortress:Gas Blast|Gas Blast taunt]] in ''[[wikipedia:Team Fortress 2|Team Fortress 2]]''.
+
+{{nav|boss|fr=Roussi}}
+[[Category:Bosses]]
+[[Category:Chapter 2.5 bosses]]
+[[Category:Ashpit bosses]]
+[[Category:Debut bosses in Repentance]]

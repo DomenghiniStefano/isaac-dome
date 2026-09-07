@@ -1,0 +1,59 @@
+{{infobox activated collectible
+ | dlc         = a
+ | id          = 386
+ | quote       = Rerolls rocks
+ | description = {{dlc|nr}} Re-rolls all [[Rock]]s and [[Metal Block]]s in the current room into other random obstacles.<br>{{dlc|r}} Re-rolls most types of [[obstacle]]s in the current room into other random obstacles.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = 3
+ | shop price  = {{dlcalt|15|r+=10}}
+ | unlocked by = D12
+}}
+
+{{cit|ua|a}}
+
+== Effect ==
+* Re-rolls obstacles in the current room into other random obstacles.
+** {{Dlc|nr}} {{e|Poop}}s, {{E|TNT}}, {{e|Fire Place}}s and [[Key Block]]s cannot be re-rolled.
+* Obstacles can reroll into: [[Rock]]s, [[Tinted rock]]s, [[Cobweb]]s, Chapter-specific obstacles ([[Urn]]s, [[Mushroom]]s, [[Skull]]s, and [[Polyp]]s), [[Metal Block]]s, Trap doors, {{r|Crawl Space}}s, {{E|TNT}}, {{E|White Poop}}, {{dlc+|r}} [[Fool's Gold]] Rocks, {{E|Reward Plate}}s and {{E|Killswitch}}es{{dlc-}}.
+* {{dlc+|r}} Rerolled obstacles will only reroll into another one in this group: {{e|Poop}}s, [[Retractable Spikes]], Normal and Red {{e|Fire Place}}s, both types of {{E|TNT}}, and [[Cobweb]]s.
+** Rerolled obstacles can also reroll into {{E|Reward Plate}}s and {{E|Killswitch}}es, but will not reroll any further. They can not roll into Trap doors or {{r|Crawl Space}}s. {{dlc-}}
+
+== Notes ==
+* Destroyed obstacles will not be rerolled.
+* {{E|Rainbow Poop}}, {{E|Golden Poop}}, [[Tinted Rock]]s, Trap Doors, {{r|Crawl Space}}s, {{dlc|r}} [[Fool's Gold]] and {{E|Killswitch}}es are much less likely to be created by the D12 than all other obstacles.
+* {{dlc|r}} It is possible to reroll the spikes in a {{R|Sacrifice Room}} and render the room unusable.
+** Newly created spikes (but not retractable spikes) in {{r|Sacrifice Room}}s use separate reward counters, allowing you to get more rewards in one room.
+* Each re-roll is seeded and will produce the same result for each room that the D12 is used in.
+
+== Synergies ==
+* {{t|Lucky Rock}}, {{t|Meconium}}, {{t|Petrified Poop}}, and {{t|Stud Finder}} can provide extra value in conjunction with their associated obstacles.
+* {{i|Leo}} / {{i|Mega Mush}} / {{i|Notched Axe}} / {{i|Pyro}} / {{tf|Stompy}} / {{i|Sulfuric Acid}} / {{i|Terra}} / {{i|Thunder Thighs}} can provide Isaac a way to destroy the re-rolled obstacles.
+* {{dlc|r}} {{i|Car Battery}}: Re-rolls have a higher chance of entering the looping pool and creating obstacles that can't reroll ({{E|Reward Plate}}s, {{E|Killswitch}}es, Trap doors and {{r|Crawl Space}}s)
+* {{Book of Virtues synergy|description=Spawns blue die wisps on the middle ring. Wisps' tears have a 5% chance to reroll obstacles they hit. Poops, TNT barrels and metal blocks cannot be rerolled.}}
+* {{dlc+|r}} {{p|XVI - The Tower?}} / {{p|A Card Against Humanity}}: Created obstacles can be rerolled into more useful objects such as {{E|Rainbow Poop}} or {{E|Golden Poop}}. Rocks created from {{p|XVI - The Tower?}} will have a larger pool to pick from. {{dlc-}}
+
+== Interactions ==
+* {{dlc|nr}} {{i|Car Battery}}: Re-rolls twice instantly without any benefits.
+
+== In-game Footage ==
+{{#ev:youtube|6XI_XpJyNwY}}
+
+== Gallery ==
+<gallery>
+File:D12 giantbook.png|Splash image which appears when D12 is activated.
+</gallery>
+
+== Trivia ==
+* {{dlc|nr}} The D12 is the only way in the game to remove metal blocks.
+** {{dlc+|r}} Metal blocks can also be destroyed with {{i|Mega Mush}}.{{dlc-}}
+* The original ''Antibirth'' mod had its own [[anti:D12|D12]] that functioned similarly to this item. For obvious reasons, that item wasn't added in ''Repentance'', although the D12's effect was updated in [[V1.7.8]] to be more similar to the ''Antibirth'' version.
+** In ''Antibirth'', the pick up quote was ''Reroll your playground''.
+
+== Bugs ==
+{{bug|If {{i|D12}} creates a trap door in {{s|The Void}}, {{s|Chest}}, {{s|Dark Room}} or {{s|Home}} it will restart the floor when entered.}}
+{{bug|If {{i|D12}} creates a {{e|Reward Plate}} in the boss room on the floor where an alt door is allowed to appear (After {{a|A Secret Exit}} is unlocked), activating the button to create enemies and kill will create another one, up to 4 doors (depending on the size of the room). Exiting the boss room will leave only the original alt door. By entering a copy of the door, you can go to the alt floor and if you exit, the original door will also be open, even if you did not open it.|dlc=r}}
+{{bug|When rerolling obstacles while Isaac has {{I|2Spooky}}; any {{E|Movable TNT}} or {{e|Fire Place}}s spawned in the fear radius has a chance of being spawned momentarily feared with only the purple tint to indicate the status effect. This effect lasts even on the remains of either object after it's destroyed before the fear effect ends. Corn poops created in the radius are unaffected; however, the {{E|Eternal Fly}} may also become temporarily feared. {{I|Venus}} has the same bug with the only difference being that it is charming obstacles and {{E|Eternal Fly|text=Eternal Flies}} and turning them pink.|dlc=r}}
+{{bug|dlc=r|If Isaac has {{i|Car Battery}} and uses D12 two times or more in a quick succession (possible with {{i|The Battery}}), some obstacles may become stacked (there will be two or more obstacles in the same spot).}}
+
+{{nav|dice|cain unlock|hush unlock}}

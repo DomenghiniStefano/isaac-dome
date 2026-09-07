@@ -1,0 +1,36 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 102
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = Double moon
+ | description = Makes two {{R|Secret Room}}s spawn on each floor.
+ | tags        = lazarussharedglobal nogreed
+}}
+{{distinguish visual|Torn Card}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* Adds an extra {{r|Secret Room}} to all floors generated while holding the trinket.
+
+== Notes ==
+* Only adds a Secret Room, not a {{r|Super Secret Room}} nor an {{r|Ultra Secret Room}}.
+* Fragmented Card only needs to be held when entering the floor. The Secret Room will remain after dropping the trinket, even if it hasn't been explored yet.
+* Has no effect in [[Greed Mode]].
+** {{dlc|r}} Cannot appear in Greed Mode.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: One of the secret rooms is revealed on the map. If Isaac has both a golden trinket and the Box, both secret rooms are revealed.
+
+== Interactions ==
+* {{i|Luna}}: The effects stack, spawning two extra secret rooms on generated floors.
+* {{dlc|nr+}} {{A|Golden Trinket|n}} / {{i|Mom's Box}} / {{t|Fragmented Card}}: No effect. Only one secret room is added.
+* {{p|XVIII - The Moon}}: The Moon will always teleport to an unexplored secret room. If one has already been explored, it will teleport to the other one. If both have been explored, it will teleport randomly in one of the two.
+
+== In-game Footage ==
+{{#ev:youtube|DmWAhT-xtQs}}
+
+== Trivia ==
+* The trinket is a torn card of {{p|XVIII - The Moon}}.
+
+{{nav|broken|fr=Carte Scindée}}

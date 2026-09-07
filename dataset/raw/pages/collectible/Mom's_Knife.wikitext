@@ -1,0 +1,157 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 114
+ | quote       = Stab stab stab
+ | description = Isaac's tears are replaced by a knife that pierces enemies, can travel through obstacles, and can hurt enemies while Isaac is holding it. Holding down the fire button before firing increases its range and power.
+ | quality     = 4
+ | tags        = summonable mom offensive
+ | devil price = 2
+ | unlocked by = Mom's Knife
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Isaac's tears are replaced by a knife that pierces enemies and can travel through obstacles. Holding down the fire button increases its range and power.
+* The knife deals damage 20 times per second upon contact with enemies while Isaac is holding it.
+* {{dlc|nr}} The knife deals 2× Isaac's damage while held and 6× damage at the furthest possible point of its throw distance, regardless of the actual maximum range stat.
+* {{dlc|r}} Damage dealt by the knife depends on its charge state. The knife deals 2× Isaac's damage when held and 6× damage at about 1/3 of full charge. The knife damage quickly drops to 2× Isaac's damage when returning regardless of charge state. Further charging only increases its maximum range.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc|nr}} Mom's Knife is a [[special item]].
+* {{dlc|nr}} The knife can be held and fired diagonally with frame perfect input. This can be done easily with a controller's analog stick or with {{i|Analog Stick}}.
+* {{dlc+|r}} The knife can be held and fired diagonally as if Isaac was holding {{i|Analog Stick}}.
+** The knife can be fired in any direction if using mouse controls (enabled in options.ini).{{dlc-}}
+* The knife will not work in challenges with the [[blindfolded]] effect.
+
+== Synergies ==
+* {{i|20/20}} / {{tf|Conjoined}} / {{i|The Inner Eye}} / {{i|Mutant Spider}}: Isaac holds only one, but shoots multiple knives at their typical spread.
+* {{dlc+|r}} {{i|Apple!}} / {{i|Tough Love}}: The knife deals increased damage sometimes based on luck.{{dlc-}}
+* {{i|Brimstone}} / {{i|Sulfur}}: Shooting the knife also shoots a barrage of knives that goes across the screen, with each knife doing 80% ({{dlc|r}} 2×) of Isaac's damage; the extra knives do not return. The longer the charge, the more knives are added. This effect does not work with {{c|Azazel}}'s default mini brimstone. The brimstone-knives do not benefit from {{i|A Lump of Coal}}.
+* {{i|Compound Fracture|r}}: The knife creates bone shards while in contact with an enemy.
+* {{i|C Section}}: Fetuses hold small knives that spin around them slowly, causing extra damage.
+* {{i|Diplopia}} / {{i|Crooked Penny}}: Each additional copy of the item will grant an extra knife that fires slightly diagonally from the original one, up to a maximum of 16. Picking up more than 16 knives won't fire more knives but will still modify the angle at which they're shot.
+* {{i|Epic Fetus|a}}: Each explosion shoots 10 knives in a circle from the point of impact.
+* {{dlc+|r}}{{i|Euthanasia}} / {{i|Little Horn}}: The knife can sometimes instantly kill enemies or deal extra damage to bosses.{{dlc-}}
+* {{i|Eye Sore}}: Will occasionally release 1-3 extra knives when shooting Mom's knife.
+* {{i|Fire Mind}}: Still applies [[Status Effects#Burn|burning]], but no longer explodes.
+* {{i|Flat Stone}}: Knife bounces as it flies away from Isaac, each bounce causing Isaac's tear damage.
+* {{i|Fruit Cake}}: The benefits of Fruit Cake still occur, but are short-lived due to the high damage of Mom's Knife.
+* {{c|The Forgotten}}: +4 damage. The knife will attach to The Forgotten's bone club, forming a scythe. Increases the size of both the melee swing and the bone throw, and allows a single melee swing to deal damage to an enemy twice instead of just once.
+* {{i|Ghost Pepper|a+nr}}: The flames can shoot from Isaac while holding the fire button.
+** {{dlc|r}} The flames only shoot when the fire button is released.
+* {{dlc|nr}} {{tf|Guppy}}: Knife hits will rarely spawn a blue fly.
+** {{dlc|r}} Knife hits will frequently spawn a blue fly.
+* {{i|Holy Light|a+}}: Holy Light can trigger on both held and thrown knives.
+* {{i|Ipecac|na+r}}: Knife turns green and [[Status Effects#Poison|poisons]] monsters that hit it. Removes Ipecac's damage increase.
+** {{dlc|a+nr}} Adds a flat +4 damage instead of Ipecac's +40. Knife turns green and poison monsters that hit it.
+** {{dlc|r}} Adds a flat +2 damage and the knife explodes on contact, once per throw. Will not explode while held without throwing and while coming back to the Player after being thrown. Knife turns green and poison monsters that hit it.
+*** {{dlc|r}} '''Ipecac''' + {{i|Technology}}: Not recommended. Isaac will always take explosion damage when throwing the knife.
+* [[Invulnerability]]: Even though the knife cannot be fired, the knife will deal damage while Isaac is invincible.
+* {{i|Jacob's Ladder|r}}: The knife will sometimes generate sparks when hitting an enemy.
+* {{i|Lost Contact|nr}}: The knife will block bullets, even when held (similar to {{i|Trinity Shield}} but has a smaller blocking area).
+* {{i|The Ludovico Technique}}: Isaac controls a floating knife that does 2× Isaac's damage. Tears stat is ignored and damage is dealt at a rate equivalent of 5 tear delay.
+** '''The Ludovico Technique''' + '''any multi-shot item''': Isaac controls a floating knife surrounded by additional rotating knives.
+*** Losing The Ludovico Technique will leave the additional knives, which are no longer controlled and appear in the same spot in every room.
+** {{dlc|nr}} '''The Ludovico Technique''' + {{i|Lost Contact}}: Floating knife loses almost all ability to block bullets, with a tiny area around the hilt that can stop shots.
+** '''The Ludovico Technique''' + {{i|Loki's Horns}}: Loses Loki's Horns effect; Isaac controls only one floating knife.
+** '''The Ludovico Technique''' + {{i|Brimstone}}: Mom's Knife overrides Brimstone, leaving only the floating knife.
+* {{i|Marked|r}}: The knife fires in the direction of the crosshair, charging automatically, with charging time proportionate to the distance of the crosshair from Isaac.
+* {{i|Mom's Eye}}: Another knife is permanently behind Isaac, able to deal contact damage. The chance to fire the rear knife is still affected by luck as usual.
+* {{i|Mom's Knife|r}}: Isaac shoots one extra knife per additional copy of the item in a spread pattern.
+* {{i|Monstro's Lung|a}}: Firing a knife causes several other knives to shoot out in random directions.
+* {{i|Mysterious Liquid|a+}}: The knife leaves creep trails while fired.
+* {{i|The Parasite|r}}: The knife fires two knives in perpendicular directions from the first point of contact with an enemy. Additional knives can also fire more knives themselves.
+** '''The Parasite''' + {{i|Technology}}: Lasers will also split with the knives.
+* {{i|Pause}}: Mom's Knife will not stop the pause effect, allowing Isaac to kill or chip bosses easily by standing near them for the duration of the pause effect.
+* {{i|Proptosis|nr}}: The Knife deals double damage regardless of range.
+** {{dlc|r}} The Knife deals triple damage regardless of range.
+* {{i|Spirit Sword}}: Allows the spirit sword to be thrown during charged attacks.
+* {{i|Strange Attractor}}: Enemies are pulled towards the knife. The effect is minor while not firing and much stronger while the knife is launched.
+* {{c|Tainted Lilith|r}}: Her familiar will carry the knife. When firing once, Gello will not return back to Lilith, instead hanging around stationary. She can drag him around the room and the knife will still deal damage. Pressing any fire button again will whip out Gello, just as normal.
+* {{i|Technology|a+nr}} Both the knife and the laser fire normally.
+** {{dlc|r}} There is a connecting laser between Isaac and the knife, similar to {{c|The Forgotten}}'s club throw.
+* {{i|Tech X|a+nr}}: Both fire normally.
+** {{dlc|r}} The knife is fired with a Tech X ring around it, similarly to {{c|The Forgotten}}'s club throw.
+* {{i|The Wiz}}: Isaac holds two knives. Knives are shot diagonally.
+
+== Interactions ==
+Overridden by Mom's Knife:
+* {{c|Azazel}}'s default attack
+* {{i|Cursed Eye}}
+* {{i|Dr. Fetus|nar}}
+** {{dlc|anr}} Both the knife and the bombs fire normally.
+* {{i|Euthanasia|a+nr}}
+* {{i|Explosivo}}
+* {{I|Evil Eye}}
+* {{i|Holy Light|ana+}}
+* {{i|Kidney Stone}}
+* {{i|Lachryphagy}}
+* {{i|Little Horn|a+nr}}
+* {{i|A Lump of Coal}}, only changes knife color
+* {{i|Pop!}}
+* {{i|Pupula Duplex}}
+* {{i|Jacob's Ladder|a+nr}}
+* {{i|Monstro's Lung|na}}
+* {{i|Mysterious Liquid|na+}}
+* {{I|Neptunus}}
+* {{i|Ocular Rift}}
+* {{i|The Parasite|nr}}, only changes knife color
+* {{i|Parasitoid|a+nr+}}
+* {{i|Rubber Cement}}
+* {{i|Sinus Infection|a+}}
+* {{c|Tainted Azazel}}'s default attack
+* {{i|Technology|na+}}
+* {{i|Tech X|ana+}}
+* {{i|Tough Love|a+nr}}
+* {{i|Trisagion}}
+Only stat effects are applied; otherwise overridden by Mom's Knife:
+* {{i|Anti-Gravity}}
+* {{i|Apple!|a+nr}}
+* {{i|Compound Fracture|a+nr}}
+* {{i|Cricket's Body}}
+* {{i|Eye of Belial}}
+* {{i|Eye of the Occult}}
+* {{i|Haemolacria|r}}
+* {{i|Marked|anr}}
+* {{i|My Reflection}}
+* {{i|Sulfuric Acid|a+nr}}
+Other interactions:
+* {{dlc+|nr}}{{i|Chocolate Milk}}: Doesn't increase damage, but reduces Isaac's tear delay by 20%.{{dlc-}}
+* {{i|Epic Fetus|na}}: Overridden by Epic Fetus.{{dlc-}}
+* {{i|Guillotine}}: The knife is fired from the body, not from the head.
+* {{i|Haemolacria|a+nr}}: Both apply normally; the tears down negatively affects Mom's Knife's charge time.
+* {{i|Isaac's Tears}}:
+** {{dlc|na+}} The item fires normal tears, although it will charge nearly instantly while the attack charges.
+** {{dlc|a+nr}} Fires normal tears. Charges at the same rate as Isaac's fire rate while charging Mom's Knife.
+** {{dlc|r}} Fires normal tears. Charges when firing Mom's Knife.
+* {{i|Saturnus}}: No effect for orbiting tears.
+* {{i|Tammy's Head}}: Fires 10 knives in a circle around Isaac, doesn't add Tammy's Head's flat damage bonus.
+* {{i|Tiny Planet}}: The knife goes in a spiral around Isaac; the longer the knife is charged, the bigger the spiral. {{dlc|nr}} Not recommended, as this makes Mom's Knife almost impossible to aim.
+** {{dlc|r}} Launched knife will orbit Isaac incredibly fast with a much larger hitbox, dealing consistent damage and covering every side of Isaac.
+** Items that fire knives out in a straight line, like {{i|Brimstone}} or {{i|Monstro's Lung}}, will cause the knives to circle around Isaac once, then shoot out in the intended direction in a straight line.
+* {{I|Tractor Beam}}: The knife will snap to whichever direction Isaac is firing in after it's thrown. However, it can no longer be fired diagonally.
+
+== In-game Footage ==
+{{#ev:youtube|fveg67vz_hY}}
+
+== Trivia ==
+* This item is used in {{chal|I RULE!}}.
+* In the original ''The Binding of Isaac'', buying the item from the {{R|Devil Room}} cost 1 Red Heart container instead of 2.
+* In the original ''The Binding of Isaac'', this item gave Isaac the appearance of his mother in her dress.
+* The description of the item is a possible reference to one of the [[teamfortress:File:Sniper meleedare08.wav|Sniper's dialogue]] when performing the Huntsman taunt in ''[[wikipedia:Team Fortress 2|Team Fortress 2]]''.
+
+== Gallery ==
+<gallery>
+File:TheForgottenMomsKnifeComparison.png|A comparison between {{c|The Forgotten}}'s bone attack with and without Mom's Knife.
+</gallery>
+
+== Bugs ==
+{{Bug|{{i|Tiny Planet}} and [[Tear Effects#Homing|Homing tears]] may cause a visual bug when there is a high range. This makes it look like the knife is going in circles when it's not rotating around the body.}}
+{{Bug|With {{i|Tiny Planet}}, if Isaac releases the knife and exits the room before it returns to him, the knife will receive a significantly larger hitbox that scales with Isaac's [[Range]]. Releasing it and waiting until it returns will make it normal again.}}
+{{bug|dlc=a+nr|Using Mom's Knife and {{i|Marked}} with {{i|Haemolacria}} will cause the latter to only fire towards the center of room. Using the fire buttons will barely move the Marked crosshair, while Mom's Knife will be unusable and locked to the right.}}
+{{bug|dlc=nr|The [[Blindfolded]] condition also applies to the knives fired by {{i|Tammy's Head}}, and prevents it from working.}}
+
+{{nav|yes mother|mom|isaac unlock|satan unlock|fr=Couteau de Maman}}
+[[Category:Special items]]

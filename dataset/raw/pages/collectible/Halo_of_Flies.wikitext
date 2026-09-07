@@ -1,0 +1,52 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 10
+ | quote       = Projectile protection
+ | description = Spawns two [[Pretty Fly|Pretty Flies]] that block enemy shots and deal contact damage to flies.
+ | quality     = 2
+ | tags        = summonable {{dlc|nr+|monstermanual}} fly
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns two [[Pretty Fly|Pretty Flies]] that block enemy shots.
+** Pretty flies kill some [[fly]] enemies upon contact.
+** The orbital limit of three flies cannot be surpassed with this item, reducing its effectiveness if Isaac has two or more orbitals.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Duke of Flies}}.{{dlc-}}
+* Orbital flies can also be obtained by other means, such as {{m|Slot Machine}}s and [[pill|Pretty Fly]] pills.
+* The following types of flies are instantly killed when they come in contact with the orbitals:
+** {{e|Army Fly}}
+** {{e|Attack Fly}}
+** {{e|Dart Fly}}
+** {{e|Fly}}
+** {{e|Hush Fly}}
+** {{e|Moter}}
+** {{e|Pooter}}
+** {{e|Ring Fly}}
+** {{e|Super Pooter}}
+** {{e|Swarm}}
+* Having multiple copies of Halo of Flies, (such as by {{i|Diplopia}}) does not increase the fly cap of 3, unlike {{i|The Swarm}}.
+
+== Synergies ==
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Halo of Flies two gray locusts are created dealing half of Isaac’s damage per tick each.
+
+== Interactions ==
+* {{i|D4|nr}}: This item can't be rerolled by the D4 or other items that reroll passive items.
+
+== In-game Footage ==
+{{#ev:youtube|tHIyPNafvho||inline}} {{#ev:youtube|kYNlU1RWHfw||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Solar System}}.
+* This item is a reference<ref>Isaac lore stream https://youtu.be/kby0rXT7qYQ?t=1454</ref> to [[wikipedia:Halo of Flies (song)|Halo of Flies]], by Alice Cooper.
+* Halo of Flies was the first [[Familiar#Orbital Familiars|orbital]] item that Edmund McMillen ever implemented into The Binding of Isaac.
+* Halo of Flies shares its name with a level from Edmund's previous game [[wikipedia:Super Meat Boy|Super Meat Boy]].
+
+== References ==
+{{reflist}}
+
+{{nav|fly|fr=Couronne de Mouches}}

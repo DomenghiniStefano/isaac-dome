@@ -1,0 +1,44 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 101
+ | quote       = I think it's broken
+ | description = Provides a boost to all [[Attributes|stats]] when Isaac's active item is completely uncharged.
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* Increases all [[Attributes|stats]] while Isaac's active item is completely uncharged:
+** +0.50 [[speed]].
+** +1.50 [[range]].
+** {{dlc|nr}} +1.00 [[tear falling speed]]
+** {{dlc|nr}} +0.40 [[tears]].
+** {{dlc|r}} +0.50 [[tears]].
+** +0.30 [[shot speed]].
+** +1.5 [[damage]].
+** +2 [[luck]].
+
+== Notes ==
+* Dim Bulb is more than twice as powerful as {{t|Vibrant Bulb}}; however, its effects are active less frequently.
+** However, 1 room charge items can be used at the start of each room to effectively get the Dim Bulb's effects constantly.
+* Items that charge automatically will get only a tiny moment of benefit from the Dim Bulb before they gain more charge again.
+* {{dlc|nr}} Items with no charge bar like {{i|How to Jump}} will activate Dim Bulb's effects permanently as long as the item is held.
+* Dim Bulb has no effect when no active item is held.
+* If Isaac has 2 items (via {{i|Schoolbag}}), {{dlc|nr+}} both of them need to be empty to receive the benefits / {{dlc|r+}} only the currently held item needs to be empty to receive the benefits.
+** {{dlc|nr}} However, if one of the two active items has no charge bar (e.g. {{i|Remote Detonator}}), it can be swapped to, preserving the Bulb's effect.
+
+== Synergies ==
+* {{I|4.5 Volt}}: Dim Bulb will be active for as long as the active item has less than one bar of charge.
+* {{C|Bethany}} / {{C|Tainted Bethany}}: The effect remains active with both soul and blood charges.
+** If the active item is fully charged only with soul/blood charges and no regular charges, {{T|Vibrant Bulb}} can be active simultaneously with Dim Bulb.
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either doubles the stat increases. Having both triples them.
+* {{T|Old Capacitor}}: As long as the active item uses charges, Dim Bulb can be held active indefinitely.
+
+== Interactions ==
+* {{I|9 Volt}}: Renders Dim Bulb useless, save for 1 charge items.
+* {{dlc|r}} Dim Bulb produces no effect with active items in consumable slots, such as {{c|Tainted Apollyon}}'s {{i|Abyss|n}}, {{c|Tainted Bethany}}'s {{i|Lemegeton|n}} or {{C|Tainted Magdalene}}'s {{I|Yum Heart}}.
+
+== In-game Footage ==
+{{#ev:youtube|HyOhgEJuL-w}}
+
+{{nav|active modifier|broken|fr=Ampoule Éteinte}}

@@ -1,0 +1,87 @@
+{{infobox trinket
+ | id          = 50
+ | quote       = Wealth of chaos
+ | description = Gives a chance to drop a {{e|Bomb}} when a [[Coins|coin]] is collected.
+ | unlocked by = Burnt Penny
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* Gives a chance to drop a {{e|Bomb}} when [[Coins|money]] is collected.
+** {{dlc|nr}} 50% chance.
+** {{dlc+|r}} The chance is based on the coin's worth:<ref>The chance is calculated as 1-0.75<sup>(coin_worth)</sup></ref>
+{| class="wikitable"
+ ! Coin
+ ! Chance
+ |-
+ | {{e|Penny}}
+ | 25.00%
+ |-
+ | {{E|Double Penny}}
+ | 43.75%
+ |-
+ | {{E|Nickel}}
+ | 76.27%
+ |-
+ | {{E|Dime}}
+ | 94.37%
+ |}
+{{dlc-}}
+
+* {{dlc|nr}} {{e|Bomb}}s may be any normal type with their respective usual chances.
+* {{dlc|r}} Only regular {{e|Bomb}}s can spawn normally, but {{e|Double Bomb}}s can spawn with certain synergies.
+
+== Notes ==
+* This trinket can be found from destroying {{E|TNT}} barrels and {{E|Special Shopkeeper}}s
+** {{dlc|r}} It can also spawn in a rare room with fires found in {{S|Depths}}.
+* Can show up in the [[Beans!]] challenge, without being unlocked.
+* Can always appear in a specific room layout, even prior to unlocking it.
+
+== Synergies ==
+* {{I|BOGO Bombs}}/{{i|Humbleing Bundle|nr}}: All normal {{e|Bomb}}s spawned by the trinket become {{e|Double Bomb}}s.
+* {{dlc+|r}} {{i|Humbleing Bundle}}: All normal {{e|Bomb}}s spawned by the trinket get a 50% chance to turn into {{e|Double Bomb}}s.{{dlc-}}
+* {{C|Tainted Keeper}}: The trinket works with the temporary coins spawned from defeating enemies, effectively turning it into an infinite {{e|Bomb}} generator.
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Increases the chances to:<ref>The chance is calculated as 1-0.5<sup>(coin_worth)</sup></ref>
+{| class="wikitable striped"
+ ! Coin
+ ! Chance
+ |-
+ | {{E|Penny}}
+ | 50.00%
+ |-
+ | {{E|Double Penny}}
+ | 75.00%
+ |-
+ | {{E|Nickel}}
+ | 96.88%
+ |-
+ | {{E|Dime}}
+ | 99.90%
+ |}
+* {{A|Golden Trinket|r+}} + {{i|Mom's Box|r+}}: Increases the chances to:<ref>The chance is calculated as 1-0.25<sup>(coin_worth)</sup></ref>
+{| class="wikitable striped"
+ ! Coin
+ ! Chance
+ |-
+ | {{E|Penny}}
+ | 75.00%
+ |-
+ | {{E|Double Penny}}
+ | 93.75%
+ |-
+ | {{E|Nickel}}
+ | 99.90%
+ |-
+ | {{E|Dime}}
+ | 99.99%
+ |}
+
+== In-game Footage ==
+{{#ev:youtube|jf0K7TMA6s0}}
+
+== References ==
+{{Reflist}}
+
+{{nav|bomb modifier|coin modifier|penny|fr=Pièce Brûlée}}
+[[Category:Penny trinkets]]

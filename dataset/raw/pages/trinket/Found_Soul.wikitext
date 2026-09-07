@@ -1,0 +1,189 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 180
+ | quote       = Finally!
+ | description = Spawns a [[familiar]] that copies Isaac's movements and scales with [[damage]] and [[tears]]. If it takes damage, it will die and respawn on the next floor.
+ | unlocked by = Found Soul
+}}
+{{distinguish visual|Your Soul|Lost Soul}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Summons a [[Familiar]] that follows Isaac's exact movements, akin to {{C|Jacob and Esau}}, that flies and shoots spectral tears.
+** The ghost uses Isaac's [[speed]], [[tears]], [[range]], [[shot speed]], [[tear effects]], and [[trinkets]], and deals half of Isaac's [[damage]].
+** The familiar has collision and can be separated. Holding down the "drop" button keeps the familiar in place.
+* The familiar dies after taking any damage, and will respawn on the next floor.
+
+== Notes ==
+* When Isaac places a {{e|Bomb}}, the familiar will drop one as well at no cost.
+* The familiar can press {{E|Pressure Plate}}s.
+* If Found Soul touches a {{m|Devil Beggar}}, {{m|Blood Donation Machine}}, or {{m|Confessional}}s, it will use the machine or beggar once for free before dying.
+* Keeping Found Soul alive is crucial for exploration bonus boost in daily runs.
+* Although the familiar dies from any damage initially, it is possible for it to obtain health and survive multiple hits with help of effects such as {{t|Hollow Heart}}.
+** If Found Soul obtains an empty [[heart container]], it is possible to heal it by collecting a {{e|Red Heart}}. Isaac's heart containers must be full for this to happen.
+* {{dlc|nr+}} If Found Soul is hit, this will invalidate the conditions for spawning {{t|Perfection}}, even if Isaac hasn't been hit.
+
+== Synergies ==
+Found Soul is capable of copying the effects of most items, including but not limited to:
+{{column list | width = 15em | content =
+* {{I|Akeldama}}
+* {{I|Aquarius}}
+* {{I|Aries}}
+* {{I|Ball of Tar}}
+* {{I|Blanket}}
+* {{i|Circle of Protection}}
+* {{I|Dad's Ring}}
+* {{I|Dead Eye}}
+* {{I|Dead Tooth}}
+* {{I|Divine Intervention}}
+* {{I|Heartbreak}}
+* {{I|Holy Mantle}}
+* {{I|Jupiter}}
+* {{I|Lead Pencil}}
+* {{I|Leo}}
+* {{t|Lil Clot}}
+* {{I|Linger Bean}}
+* [[Locust]] trinkets
+* {{T|Lucky Sack}}
+* {{I|Marked}}
+* {{I|Mars}}
+* {{I|Maw Of The Void}}
+* {{I|Monstrance}}
+* {{I|Montezuma's Revenge}}
+* {{I|Night Light}}
+* {{i|Purgatory}}
+* {{I|Revelation}}
+* {{T|Ring Cap}}
+* {{I|Salvation}}
+* {{I|Saturnus}}
+* {{I|Spear Of Destiny}}
+* {{I|The Swarm}}
+* {{I|Taurus}}
+* {{I|Thunder Thighs}}
+* {{I|Tooth and Nail}}
+* {{T|Torn Card}}
+* {{I|Trinity Shield}}
+}}
+
+== Active Item Interactions ==
+In addition to copying many passive items, Found Soul can utilize the same active item as Isaac, effectively doubling them. Items that are affected by Isaac's damage will scale with Found Soul's damage instead. These include, but are not limited to the following:
+{{column list | width = 15em | content =
+* {{I|Alabaster Box}}
+* {{I|Anarchist Cookbook}}
+* {{I|The Bean}}
+* {{I|Berserk!}}
+* {{I|Black Hole}}
+* {{I|Bob's Rotten Head}}
+* {{I|The Book of Belial}}
+* {{I|Book of Shadows}}
+* {{I|The Boomerang}}
+* {{I|Butter Bean}}
+* {{I|The Candle}}
+* {{I|Crack the Sky}}
+* {{I|Decap Attack}}
+* {{I|Doctor's Remote}}
+* {{I|Eraser}}
+* {{I|Fortune Cookie}}
+* {{I|Free Lemonade}}
+* {{I|Friend Finder}}
+* {{I|Friendly Ball}}
+* {{I|The Gamekid}}
+* {{I|Gello}}
+* {{I|Glass Cannon}}
+* {{I|Head of Krampus}}
+* {{I|Isaac's Tears}}
+* {{I|Keeper's Box}}
+* {{I|Kidney Bean}}
+* {{I|Larynx}}
+* {{I|Lemon Mishap}}
+* {{I|Mega Bean}}
+* {{I|Mega Blast}}
+* {{I|Mega Mush}}
+* {{I|Mine Crafter}}
+* {{I|Mr. Boom}}
+* {{I|My Little Unicorn}}
+* {{I|The Nail}}
+* {{I|Plum Flute}}
+* {{I|The Poop}}
+* {{I|Red Candle}}
+* {{I|Sharp Straw}}
+* {{I|Shoop da Whoop!}}
+* {{I|Sulfur}}
+* {{I|Suplex!}}
+* {{I|Tammy's Head}}
+* {{I|Telekinesis}}
+* {{I|Telepathy For Dummies}}
+* {{I|Unicorn Stump}}
+* {{I|Wait What?}}
+}}
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Having either increase the soul's damage to 75% of Isaac's damage. Having both increase its damage to Isaac's damage.
+* {{C|Azazel}} / {{C|The Forgotten}} / {{C|Tainted Azazel}} / {{C|Tainted Forgotten}} / {{C|Tainted Lilith}} / {{C|Tainted Magdalene}} / {{C|Tainted Samson}}: The soul uses none of their inherent tear modifiers or special attacks.
+* {{I|120 Volt}}: Electric zaps will scale with Isaac's damage, instead of the soul's.
+* {{I|Abyss}}: Using Abyss will have the locusts orbit the soul. If the soul is dropped or dies, all locusts disappear and do not come back when picked back up or when it respawns next floor.
+* {{I|Anima Sola}}: Chains two enemies at once. Using the item again will free only one of them.
+* {{T|Baby-Bender}}: No homing on the soul.
+* {{i|Aquarius}}: The damage from creep is not halved for the soul.
+* {{I|Bag of Crafting}}: The soul will swing its own bag alongside Isaac collecting any pickups it hits resulting in pickup disappearance.
+* {{I|BFFS!}}: Does not affect the soul.
+* {{I|Book of the Dead}}: Bonies will follow the soul. The orbitals will still orbit around Isaac.
+* {{I|Breath of Life}}: No effect on the soul.
+* {{I|Brittle Bones}}: The soul does not benefit from the tears up.
+** '''Brittle Bones''' + {{t|Hollow Heart}}: Losing hearts granted to the soul by the trinket will give the soul a tears up for each heart lost.
+* {{I|Car Battery}}: Will not double any active used by the soul.
+* {{i|Dark Arts}}: The soul will use Dark Arts along with Isaac. Enemies can be marked by both Isaac and the soul. It will gain its own damage boost.
+* {{I|Dead Sea Scrolls}} / {{I|Metronome}}: The soul will double only the active effects that it can double.
+* {{I|Dream Catcher}}: The soul will receive half a soul heart for every new floor he follows Isaac to, allowing him to survive multiple hits and gather up to a maximum of 12 soul hearts. His health resets when the trinket is dropped.
+* {{I|Dull Razor}}: Allows the soul to activate items that would otherwise be useless, such as {{I|Old Bandage}}, {{I|Fanny Pack}}, {{I|Varicose Veins}} etc. It can also be used to dodge damage.
+* {{I|Empty Heart}}: The soul will receive an empty heart container every floor; however, the soul cannot collect any {{e|Red Heart}}s, but can receive them via {{I|Yum Heart}}'s multiplayer healing or if Isaac collects one while at full red hearts.
+* {{I|Everything Jar}}: Regardless of current charges, the soul will always pay out with a poop on every use of the jar.
+* {{I|Eye of Greed}}: Coin tears fired still subtract coins.
+* {{I|Gnawed Leaf}}: Invincibility is independent of Isaac's movement.
+* {{I|Guillotine}}: No head orbital is granted to the soul. Other stats still apply.
+* {{i|Glowing Hourglass}}: The soul's health will be reset (so it will die in one hit even if it obtained some health before the rewind.) It will also be revived if it died in the previous room.
+* {{I|Heartbreak}}: The ghost gains 2 extra hits per floor and every hit the soul takes will damage all enemies in the room as well. Dropping the trinket and picking it up every time in the room will restore the amount of extra hits, essentially making the Found soul immortal.
+* {{T|Hollow Heart}}: The soul receives a bone heart at the start of a floor, but only if alive when entering the floor.
+* {{I|IBS}}: The soul itself can never trigger IBS, however when Isaac receives a poop, so does the soul.
+* {{I|Isaac's Heart}}: The soul becomes immortal and can not be killed. It will also deal contact damage equal to 4x its damage stat.
+* {{I|Jar of Wisps}}: The soul will spawn a single random wisp each time, and the amount spawned do not increment with each use.
+* {{I|Lemegeton}}: The soul will get its own Lemegeton wisps orbiting it, but none of them give their respective item effect.
+** '''Lemegeton''' + {{I|Book of Virtues}}: Wisps spawned by the soul while Isaac has Book of Virtues will be buffed.
+* {{t|Maggy's Faith}}: The soul will receive an {{e|Eternal Heart}} for every new floor he follows Isaac to. The Eternal Heart will become a heart container if the soul goes to the next floor with it.
+* {{I|Magic Fingers}}: The damage is only applied from the soul's part, meaning this item will always deal less damage while the soul is carried around.
+* {{i|Montezuma's Revenge}} / {{i|Revelation}}: The beam's damage is not halved for the soul.
+* {{I|Mom's Bracelet}}: The soul can indeed pick up rocks and throw them, despite lacking sprite work.
+* {{I|Notched Axe}}: The soul can swing the axe once, then breaks permanently, unable to be recharged.
+** Picking Notched Axe from a pedestal by swapping with another active item or by dropping it with {{T|Butter!}} will refresh the Found Soul single use Notched Axe, allowing for infinite used on the floor.
+* {{I|Red Key}}: With proper placement, the soul can open another red room, for free.
+* {{i|Redemption}}: The soul will receive a cross when a {{r|Devil Room}} is entered, and will not lose it when Isaac takes an item/pickup. When Isaac goes to a new floor with the familiar having the cross, the soul will receive a damage boost (even if Isaac doesn't) and a Soul Heart, allowing it to survive multiple hits.
+* {{I|Scissors}}: The soul will spew its own blood fountain, but no extra head will spawn.
+* {{I|The Scooper}}: An extra Peeper familiar is not spawned; however, the soul will benefit from the right eye damage boost.
+* {{I|Sharp Key}}: The soul will throw its own key in tandem with Isaac. The throw still costs one key.
+* [[Status Effects]]: Damage is not halved for the soul.
+* {{I|Spirit Shackles}}: The soul will be chained next to the spot it got hit. Proceeding to not get hit again for a short time will revive the soul as normal.
+* {{i|Sumptorium|nr+}}: The soul produces a blue clot and dies. Can produce other clots if some health was obtained beforehand. The clots will disappear if the soul dies or is dropped; their damage scales with the soul's.
+* {{T|Super Magnet}}: The soul will have its own attraction field. No effect on pickups.
+* {{I|Toxic Shock}}: No effect.
+* {{I|Tractor Beam}}: The soul does not receive a beam, nor are any of its tears affected by Isaac's beam.
+* {{i|Void}} / {{p|Black Rune}}: Stat changes from them do not affect the soul.
+* {{I|Whore of Babylon}}: Will always be active on the soul.
+* {{T|Wooden Cross}}: Both Isaac and the soul will receive a temporary shield; however, when one of them loses it, so does the other.
+
+== In-game Footage ==
+{{#ev:youtube|8uxiQdfUTlU}}
+
+== Trivia ==
+* This trinket is a reference to {{i|Lost Soul}}.
+* {{a|Found Soul}} is tied with {{a|Soul of Lazarus}} for the rarest Steam achievement unlocked by a single completion mark.
+
+== Bugs ==
+{{Bug|Resuming a {{C|Jacob and Esau}} run with Found Soul equipped in Esau's trinket slot will require a controller to continue. If a controller is available and plugged in, Found Soul can be controlled like a [[Co-op]] baby and won't mimic either brother's movements. This effect won't happen if Jacob holds the trinket. If no controller is available, the run is softlocked and cannot be continued.}}
+{{Bug|When used together with {{T|Azazel's Stump}}, the soul familiar sometimes keeps {{C|Azazel}}'s properties (flight and short brimstone) for a few rooms after Isaac has transformed back to normal. {{T|Lil Clot}} also has this bug.}}
+{{bug|If {{i|Sulfur}} has been used in a room before picking up Found Soul, it will retain Brimstone until dropped/killed, even through rooms.}}
+{{bug|Entering one of the portals created by {{I|Card Reading}}, {{I|Lil Portal}}, and {{I|Ventricle Razor}} causes the familiar to become invisible until Isaac drops and picks up the trinket again. Entering a new floor sometimes also causes this bug.}}
+{{bug|It is possible for both Isaac and the soul to target the same enemy/boss with {{i|Suplex!}} (easier to do on enemies with large hitboxes such as {{e|Hush}}). In this case, the enemy/boss may become invulnerable and/or invisible after the slam. Dropping the trinket or having the soul die does not fix the situation.}}
+{{bug|If Isaac's items are rerolled (via {{i|D4}} or similar effects) while Found Soul is held, the soul will look like Isaac's detached head or his headless body. Dropping the trinket and picking it up again returns the soul its normal appearance.}}
+
+{{nav|tainted jacob unlock|mother unlock|fr=Âme Retrouvée}}

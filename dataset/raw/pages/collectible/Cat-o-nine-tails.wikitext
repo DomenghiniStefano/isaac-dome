@@ -1,0 +1,22 @@
+{{infobox passive collectible
+ | id          = 165
+ | quote       = Shot speed + damage up
+ | description = +1 [[damage]], +0.23 [[shot speed]].
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +1 [[damage]].
+* +0.23 [[shot speed]].
+
+== In-game Footage ==
+{{#ev:youtube|h4LiVvLxpAw}}
+
+== Trivia ==
+* A [[wikipedia:cat o' nine tails|Cat o' Nine Tails]] is a multi-tailed whip commonly used in physical punishment and torture.
+* Unlike in Rebirth, in the original game, Cat-o-nine-tails was merely a shot speed up and was widely considered by the community to be one of the worst items in the game.
+
+{{nav|fr=Chat à Neuf Queues}}

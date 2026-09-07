@@ -1,0 +1,29 @@
+{{infobox trinket
+ | dlc = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | name = Lil Larva
+ | id = 86
+ | quote = The poop is moving...
+ | description = Spawns a [[Familiar#Blue Flies|Blue Fly]] from every pile of {{e|Poop}} that Isaac destroys.
+}}
+
+{{cit|t|a}}
+
+== Effect ==
+* Spawns one [[Familiar#Blue Flies|Blue Fly]] from every {{e|Poop}} Isaac destroys.
+
+== Notes ==
+* This trinket has a chance to drop from destroying [[Rocks#Polyps|polyps]] in {{s|Corpse}}.
+* {{C|???|r}} has the same effect innately, which stacks with {{t|Lil Larva}}.
+* {{C|Jacob and Esau}} share the effect among both characters if at least one of them is holding it.
+
+== Synergies ==
+* {{I|Mom's Box}} / {{t|Lil Larva|r}} / {{A|Golden Trinket}}: Each effect/trinket copy stacks granting one additional blue fly from destroyed poops per stack.
+
+== In-game Footage ==
+{{#ev:youtube|bODanAkXPds}}
+
+== Trivia ==
+* {{dlc|a+}} Lil Larva's sprite was changed for [[Booster Packs|Booster Pack #5]].
+
+{{nav}}

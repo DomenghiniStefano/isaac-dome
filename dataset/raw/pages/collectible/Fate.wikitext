@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | id          = 179
+ | quote       = Flight eternal
+ | description = Grants [[flight]] and one {{E|Eternal Heart}}.
+ | quality     = 3
+ | tags        = nolostbr summonable
+ | unlocked by = Fate
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Grants [[flight]] and one {{E|Eternal Heart}}.
+
+== Notes ==
+* Taking this item as {{c|Keeper}} will grant [[Blue Fly|Blue Flies]] instead of the Eternal Heart.
+
+== In-game Footage ==
+{{#ev:youtube|E9SBBBhFs9U}}
+
+== Trivia ==
+* Fate's name, sprite and presence in the {{E|Locked Chest}} pool are an implication to Isaac's ultimate fate: to lock himself in the chest and become {{c|???}}. This is likely why Fate was left in the [[Golden Chest (Item Pool)|Locked Chest pool]] even after head-themed items were removed from the pool.
+* Isaac's winged form when he picks up Fate is similar in many aspects to the winged forms of both [[Isaac (Boss)|his boss incarnation]] and that of [[??? (Boss)|???]].
+* In ''Wrath of the Lamb'', this item was unlocked by default.
+
+{{nav|blue baby unlock|blue baby boss unlock|fr=Destin}}
+[[Category:Flight-granting items]]

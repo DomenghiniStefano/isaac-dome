@@ -1,0 +1,56 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 726
+ | quote       = Double tap sneeze
+ | description = Double-tapping a fire button causes Isaac to sneeze blood, dealing damage to enemies in front of him. Affected enemies are cursed and take more damage from {{i|Brimstone}}-like attacks.
+ | quality     = 1
+ | tags        = summonable offensive
+ | unlocked by = Hemoptysis
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Double-tapping the fire button causes Isaac to sneeze blood, dealing damage to enemies in front of him. The sneeze deals damage equal to 1.5x Isaac's damage, knocking enemies and projectiles back. Knocked back enemies take <code>10 + 2 * (floor - 1)</code> additional damage if they hit a wall or obstacle, and deal that same damage to other enemies they collide with.
+** The sneeze has a cooldown of 1 second.
+** The reflected projectiles deal 6 damage to enemies if it would have caused Isaac half a heart of damage, and 7 damage if it would have caused Isaac a full heart damage.
+* The sneeze applies a curse to enemies. Enemies under the curse will take more damage from {{I|Brimstone}}-like laser attacks and violently explode on death, damaging and spreading the curse to nearby enemies. Any enemies spawned by those under the curse will also be cursed.
+** The following attacks will deal increased damage (2x damage +3 flat damage):
+*** Brimstone attacks from {{c|Azazel}}/{{c|Tainted Azazel}}
+*** {{i|Athame}}
+*** {{i|Brimstone}}
+*** {{i|Brimstone Bombs}}
+*** {{I|Head of Krampus}}
+*** {{i|Lil Abaddon}}
+*** {{i|Lil Brimstone}}
+*** {{i|Maw Of The Void}}
+*** {{i|Montezuma's Revenge}}'s brimstone (not tears)
+*** {{i|Mega Blast}}
+*** {{I|Shoop da Whoop!}}
+*** {{i|Trisagion}}
+*** {{i|Urn of Souls}}' brimstone (while holding {{i|Birthright}} with {{c|Judas}} or {{c|Black Judas}})
+** The curse lasts for 5 seconds.
+
+== Notes ==
+* {{C|Tainted Azazel}} begins with an inherent version of Hemoptysis that allows him to deal full damage to cursed enemies.
+** The innate sneeze ability is entirely separate from Hemoptysis, and so the sneeze can be triggered twice in quick succession. However, triggering the sneeze from Hemoptysis will cancel Tainted Azazel's brimstone charge, meaning that this item is largely ineffective as this character.
+* The sneeze's range is affected by the [[shot speed]] stat, and not by the [[range]] stat itself.
+* The sneeze can push {{E|Bomb}}s, pickups and enemy shots.
+* The collision damage can be used to damage {{E|Host}}s while their skulls are lowered.
+* Brimstone lasers shot by enemies who are not charmed, such as {{e|Monstro II}}, will also do increased damage to cursed enemies.
+* {{I|Revelation}}'s charged attack will not deal increased damage to cursed enemies.
+
+== Synergies ==
+* {{I|Fire Mind}}: The sneeze will still set enemies on [[Status Effects#Burn|fire]], but not cause explosions, similar to its interaction with {{i|Brimstone}}.
+* {{I|Loki's Horns}}: Chance to sneeze in all cardinal directions.
+* {{I|Monstro's Lung}}: Multiple sneezes are applied around the character.
+* {{i|The Wiz}}: Shoots two sneezes diagonally instead of one straight forward.
+* {{i|Ipecac}}: The sneeze causes an explosion. The explosion deals additional damage equal to 3x Isaac's damage +10 and will not hurt Isaac.
+
+== In-game Footage ==
+{{#ev:youtube|ZyI5NTYca7s}}
+
+== Trivia ==
+* [[wikipedia:Hemoptysis|Hemoptysis]] is the medical term for coughing up blood.
+
+{{nav|tainted azazel unlock|delirium unlock|fr=Hémoptysie}}

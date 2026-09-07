@@ -1,0 +1,59 @@
+{{infobox boss
+ | id          = 71
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Cellar}}<br>{{room|challenge}}{{room|boss challenge}}{{room|boss rush}}<br>{{dlc|r}}<br>{{floor| Caves}}{{floor|Flooded Caves}}<br>{{room|challenge}}{{room|boss challenge}}{{room|boss rush}}<br><u>Degraded Boss</u><br><u>Main path</u><br><u>Small</u><br>{{floor|Caves}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br><u>Medium</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Chest}}<br><u>Large</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}{{floor|Sheol}}<br>{{floor|Chest}}<br><u>Alternate path</u><br><u>Large</u><br>{{floor|Corpse}}
+ | base hp     = 60
+ | pool        = {{ip|Boss}}<br> {{i|Leprosy|r+}} (1% chance)
+}}
+
+'''Fistula''' is a [[boss]] that can appear:
+* {{dlc|nr}} in the {{s|Cellar}}.
+* {{dlc+|r}} in the {{s|Caves}} and the {{s|Flooded Caves}}.{{dlc-}}
+
+The large Fistula has 60 HP, the medium forms have 15 HP, and the small forms have 8 HP.
+
+== Behavior ==
+* Moves around the room slowly, bouncing off the walls.
+* When enough health is depleted, the one large Fistula breaks into four medium Fistulas.
+** Medium forms behave identically but move slightly faster and can bounce off other enemies.
+* Each of the four medium Fistulas breaks into two small Fistulas.
+** Small forms behave identically but move very fast.
+* Each of the smallest Fistulas spawns a {{e|Charger}} with 15 health points on defeat unless they are over a pit or other obstacle.
+* Altogether, the pieces have a combined total of 184 HP (304 HP if including the 8 Chargers).
+* All stages of Fistula deal a whole heart of contact damage.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|2}}: 15% larger with 25% more HP (75). Spawns {{e|Boom Fly|text=Boom Flies}} with 15 health points instead of Chargers unless the smallest Fistula piece is over a pit or other obstacle. Each piece travels much slower and splits into three medium Fistulas as opposed to the original's four, similar to {{e|Teratoma}}.
+
+== Gallery ==
+<gallery>
+File:Fistula ingame med.png|Medium-sized Fistula.
+File:Fistula ingame small.png|Small Fistula.
+File:Boss Fistula large dark grey ingame.png|Grey Champion Fistula.
+File:Boss Fistula medium dark grey ingame.png|Medium-sized Grey Champion Fistula.
+File:Boss Fistula small dark grey ingame.png|Small Grey Champion Fistula.
+File:Mother Fistula.png|{{dlc+|r}} Fistula's appearance in the {{e|Mother}} fight and in {{s|Corpse}}.{{dlc-}}
+File:Boss Delirium Fistula ingame.png|{{dlc+|a+}} Fistula as one of {{e|Delirium}}'s forms.{{dlc-}}
+</gallery>
+
+== Trivia ==
+* Fistula appeared in the original ''The Binding of Isaac''.
+* A [[wikipedia:fistula|fistula]] is an abnormal connection between organs, intestines, and other tissues.
+* Fistula’s splittings after taking enough damage is a reference to the game ''Asteroids'', where asteroids would float in different directions and split after taking enough damage. This was confirmed by [[Edmund McMillen]]{{Citation needed}}.
+* {{dlc|nr}} Fistula used to be a {{s|Caves}} / {{s|Catacombs}} boss in the original ''The Binding of Isaac'', but as of ''Rebirth'', it was a {{s|Cellar}} boss.
+** {{dlc|r}} It has been moved back into the Caves.
+* Teratoma is the posthumous version of Fistula.
+* Unlike the original ''The Binding of Isaac'', Fistula doesn't bounce off of [[rock]]s.
+* Fistula was inspired by a boss of the same name in another Edmund McMillen game, ''C-Word''.
+* {{e|Fistuloid}} is an enemy variant of this boss combined with what looks to be a Charger or {{e|Spitty}}.
+* {{e|The Matriarch}} is a boss added in Booster Pack #5 that is simultaneously based off of a Fistuloid, {{e|Chub}}, and this boss. The Matriarch will also spawn small Fistulas throughout the battle.
+* {{dlc|r}} Fistula is one of four bosses that can be spawned by {{e|It Lives!}}, the other three being {{e|Chub}}, {{e|Polycephalus}} and Teratoma.
+* {{dlc|r}} In [[Repentance]], Fistula's sprite resembles that from the original Binding of Isaac.
+
+{{nav|boss|fr=Fistule}}
+[[Category:Chapter 1 bosses]]
+[[Category:Chapter 2 bosses]]
+[[Category:Cellar bosses]]
+[[Category:Caves bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Rebirth]]

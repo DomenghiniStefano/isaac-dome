@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 363
+ | quote       = Protective friend
+ | description = Spawns an [[orbital familiar]] which does {{dlc|nr}} 105 / {{dlc|r}} 53 damage per second and attracts and blocks enemy shots. Upon blocking 10 shots in a [[Rooms|room]], it drops an {{E|Eternal Heart}}.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable baby monstermanual
+ | unlocked by = Sworn Protector
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Spawns an [[orbital familiar]] that blocks enemy shots and deals 7 damage per tick or {{dlc|nr}} 105 / {{dlc|r}} 52.5 damage per second on contact.
+** It also attracts enemy shots to itself, making them more likely to be blocked. A shot actively being attracted can no longer damage Isaac and is essentially nullified, but if it slips outside the Protector's range, it can again deal damage.
+* Sworn Protector has a chance to drop an {{E|Eternal Heart}} upon blocking 10 shots in one [[Rooms|room]].
+** This can only happen once per room, but leaving and re-entering a room will allow another eternal heart to be dropped.
+* {{dlc|nr}} {{transformation contribution|Seraphim}}
+* {{dlc|r}} {{transformation contribution|Conjoined}}
+
+== Notes ==
+* Sworn Protector can be exploited with the help of a {{E|Constant Stone Shooter}} to spawn unlimited eternal hearts.
+
+== Synergies ==
+* {{dlc|nr}}[[Friendly]] enemies: Spawning a friendly enemy that shoots bullets allows Eternal Hearts to be farmed since the friendly enemy will fire at Isaac if no hostile enemies are in the room.
+* {{i|Sacrificial Altar}}: This familiar will also reward 2 {{e|Black Heart}}s when sacrificed.
+
+== Interactions ==
+* {{t|Extension Cord}}: Familiar and Isaac are occasionally connected by electricity, but it is very hard to notice because Sworn Protector orbits so close to Isaac.
+* {{dlc|r}}[[Friendly]] enemies: Friendly enemy tears are ignored by Sworn Protector.
+
+== In-game Footage ==
+{{#ev:youtube|mp9gSb5F6fU}}
+
+== Trivia ==
+* Sworn Protector resembles {{E|Uriel}}/{{E|Gabriel}}.
+* The name of this item is also the pickup quote for {{I|Best Bud}}.
+
+== Bugs ==
+{{bug|dlc=r|Sworn Protector is supposed to drop an {{e|Eternal Heart}} after absorbing 10 projectiles, without any randomness. However, enemy shots that hit the familiar are sometimes not registered, so the actual number of intercepted shots before the Eternal Heart is spawned may be larger.}}
+
+{{nav|conjoined|seraphim|the lost unlock|hush unlock|fr=Protecteur Dévoué}}

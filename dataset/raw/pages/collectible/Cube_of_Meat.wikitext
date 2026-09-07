@@ -1,0 +1,66 @@
+{{infobox passive collectible
+ | id          = 73
+ | quote       = Gotta meat 'em all!
+ | description = Creates an [[orbital familiar]]. Collecting additional copies gives it the ability to shoot tears, then chase enemies to deal contact damage, then deal even more contact damage.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable monstermanual
+ | pool        = The Harbingers
+ | unlocked by = A Cube of Meat
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Spawns an [[orbital familiar]] around Isaac which blocks shots and deals contact damage.
+** {{dlc|nr}} It deals 105 damage per second.
+** {{dlc|r}} It deals 52.5 damage per second.
+* Each subsequent Cube of Meat obtained is combined with the first one (increasing its 'level'), changing its characteristics:
+** Level 2: Gives the orbital the ability to shoot tears that deal 3.5 damage.
+*** {{dlc|nr}} It shoots once every second.
+*** {{dlc|r}} It shoots once every 0.73 seconds.
+** Level 3: Changes it from an orbital to a Meat Boy that chases nearby enemies dealing contact damage.
+*** {{Dlc|nr}} It deals 8.75 contact damage per second.
+*** {{dlc|r}} It deals 12.5 contact damage per second.
+** Level 4: Increases the size of the Meat Boy and increases its damage.
+*** {{Dlc|nr}} It deals 13.75 contact damage per second.
+*** {{dlc|r}} It deals 25 contact damage per second.
+** The fifth Cube of Meat will create a new Level 1 cube, and start the cycle again.
+
+== Notes ==
+* Multiple Cubes of Meat can be collected in a single run.
+* {{dlc|r}} The orbital orbits Isaac significantly faster.
+* {{e|Famine}}, {{e|Pestilence}}, {{e|War}}, and {{e|Death}} will always drop either a {{i|Ball of Bandages}} or Cube of Meat. After the first one drops, further Harbingers will only drop that same one and never the other for the duration of the run.
+* The ticking rate for Meat Boys' contact damage causes them to often deal damage twice once they touch an enemy, making their first second of DPS up to 1.5x higher than normal.
+
+== Synergies ==
+* [[Invulnerability]] and [[shield]]s are very useful with orbitals like {{i|Cube of Meat}}.
+** This is even more useful with invulnerability items which doesn't allow to do contact damages, like {{i|Unicorn Stump}}.
+* {{i|Book of Revelations}}: Ensures that [[Harbinger]]s that haven't already been defeated will replace their respective floor's boss, making it drastically easier to collect multiple Cubes of Meat.
+* {{i|Box of Friends}} / {{i|Monster Manual}}: Additional copies of Cube of Meat combine with the first, increasing its level as normal.
+* {{i|Potato Peeler}}: Consumes 1 [[Red Heart container]] in return for creating 1 Cube of Meat and increasing damage a little.
+
+== Interactions ==
+* {{t|Duct Tape}}: Familiar will stay in place relative to Isaac at levels 1 and 2. No effect at levels 3 and 4.
+* [[Pretty Fly]]: Cube of Meat will replace one if Isaac already has 3 Pretty Flies. If the Cube of Meat reaches level 3 or 4, the Pretty Fly will come back until another Cube of Meat orbital is obtained.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Super Meat Boy }}
+
+== In-game Footage ==
+{{#ev:youtube|OWBrtMZr8hw||inline}} {{#ev:youtube|h4cvfTcuCI4||inline}}
+
+== Gallery ==
+<gallery>
+File:Cube of Meat Level1.png|Level 1 Cube of Meat.
+File:Cube of Meat Level2.png|Level 2 Cube of Meat.
+File:Cube of Meat Level3.png|Level 3 Cube of Meat.
+File:Cube of Meat Level4.png|Level 4 Cube of Meat.
+</gallery>
+
+== Trivia ==
+* The Cube of Meat is a reference to the game ''[[wikipedia:Super Meat Boy|Super Meat Boy]]'', developed by [[Edmund McMillen]], creator of ''The Binding of Isaac''.
+* The pickup quote is a reference to the ''[[wikipedia:Pokémon|Pokémon]]'' series catchphrase "Gotta catch 'em all."
+* {{dlc|nr}} Cube of Meat is found in 9 item pools, the highest count amongst all items, due to the fact that it appears in all of Greed mode's item pools.
+* Cube of Meat's 3rd and 4th stage form is referred to as "Ultra Flesh Kid!" in ''The Binding of Isaac: Four Souls'', Edmund's card game.
+
+{{nav|mom unlock|fr=Cube de Viande}}

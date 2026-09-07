@@ -1,0 +1,33 @@
+{{infobox activated collectible
+ | id          = 160
+ | quote       = Holy white death
+ | description = Creates five beams of light around the room, dealing high damage to any enemies that touch them.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge    = 4
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Upon use, summons five beams of light in random locations on the ground. Each beam lasts for 0.8 seconds and deals large amounts of damage to enemies that touch them. They have a hitbox in a 3×3 cross shape.
+** Each beam can hit the same enemy up to 8 times, and deals Isaac's tear [[damage]] plus a flat 20 damage per hit.
+* {{dlc|na}} The beams tend to gravitate towards the enemies, unlike the original game.
+* {{dlc|a}} The beams have a high chance to directly target enemies.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns wisps in the middle ring. The wisps summon a beam of light when touched, dealing 12 damage to nearby enemies in addition to their normal contact damage.}}
+
+== In-game Footage ==
+{{#ev:youtube|MZsNo090iIQ}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Crack the Sky.png|The icon of Crack the Sky as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* {{E|Conquest}} and {{e|Holy Eye}}s uses this ability to damage Isaac.
+* {{E|Isaac}} also uses this ability to damage Isaac, only in a pattern and in a higher quantity of beams.
+
+{{nav|fr=Fissure Céleste}}

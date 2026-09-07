@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 371
+ | quote       = {{dlcalt|You feel cursed...|r=Embrace chaos}}
+ | description = Upon taking damage, spawns six {{e|Troll Bomb}}s around the room, similar to the effect of {{p|XVI - The Tower}}.
+ | quality     = 0
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p|a}}
+
+== Effect ==
+* Upon taking damage, spawns six {{e|Troll Bomb}}s around the room, similar to the effect of {{p|XVI - The Tower}}.
+
+== Notes ==
+* Despite appearing as Troll Bombs, the bombs are mechanically identical to player-placed bombs and will benefit from Isaac's bomb-enhancing items.
+* These bombs hurt the player as well as enemies.
+* Taking damage from the Troll Bombs spawned by Curse of the Tower or any other type of bomb, including Isaac's bombs, will not re-activate the effect.
+* {{Dlc|nr}} Picking up this item will make all health transactions more difficult. {{M|Devil Beggar}}s and {{M|Blood Donation Machine}}s will be almost impossible to use because they will very likely be destroyed by bombs.
+** {{Dlc|r}} Taking damage from {{M|Devil Beggar}}s and {{M|Blood Donation Machine}}s does not trigger the effect. {{i|IV Bag}}, however, does trigger the effect.
+* The bombs prefer to spawn near the center of the room.
+* The 6 {{e|Troll Bomb}}s are difficult to dodge in small rooms.
+
+== Synergies ==
+* {{t|Blasting Cap}}: Spawned Troll Bombs can drop extra bomb pickups.
+* {{I|Glitter Bombs}}: Each troll bomb has a chance to spawn a [[pickup]] or a [[trinket]] including [[heart]]s for repeated use.
+* {{I|The Polaroid}}: If Isaac is damaged when he has half a {{e|Red Heart}} or less, the shield will activate and protect him from the Troll Bombs.
+* {{I|Pyromaniac}}: Troll Bombs will heal Isaac instead, allowing for essentially infinite health with proper usage.
+** {{dlc|r}} Due to Pyromaniac being weakened to healing half a heart per explosion in ''Repentance'', this synergy requires {{i|The Wafer}} to continue being effective past [[Chapter 3]]/[[Chapter 3.5]].
+* {{I|Remote Detonator}}: The Troll Bombs generated will not explode until Remote Detonator is activated, unlike regular Troll Bombs.
+* {{T|Safety Scissors}}: The Troll Bombs generated will be converted into bomb pickups rather than exploding.
+
+== Interactions ==
+* {{t|Blind Rage}}: Normally, the invincibility frames will end before most of the explosions take place. However, if Isaac takes a full heart of damage (e. g. from a [[champion]]), the invincibility will protect him from all spawned Troll Bombs.
+** Damage sources that scale up from half a heart of damage to a full heart of damage starting on [[Chapter 4]] don't provide enough invincibility frames to ignore the explosions.
+* {{I|Blood Oath}}: Not recommended. Spawns 6 Troll Bombs for each {{e|Half Red Heart}} removed, making death highly likely if Isaac does not leave the room immediately after being stabbed by Blood Oath, and leaving the starting room unsafe.
+* {{i|Sharp Plug|r}}: Not recommended. Spawns 6 Troll Bombs for each {{e|Half Red Heart}} removed, making extra damage highly likely if Isaac does not leave the room immediately after using Sharp Plug.
+* {{I|Bomber Boy}}: Not recommended. The cross pattern explosion makes it very hard to avoid taking damage.
+* {{i|Mr. Mega}}: No effect.
+* {{i|Scatter Bombs|a+}}: Not recommended. Each Troll Bomb will spawn several smaller bombs upon exploding, making it very hard to avoid taking damage.
+** {{dlc|r}} No visual change can be seen with the Troll Bombs, but the smaller bombs have the sprite of the smaller normal bombs.
+
+== In-game Footage ==
+{{#ev:youtube|5C7SSJ_iQB0}}
+
+== Trivia ==
+* The item image appears to be an {{p|XVI - The Tower}} card that has been burnt.
+
+{{nav|bomb spawner|fr=Fléau de la Maison Dieu}}
+[[Category:Damage-triggered items]]

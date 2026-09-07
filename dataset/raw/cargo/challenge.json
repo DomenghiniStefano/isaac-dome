@@ -1,0 +1,362 @@
+[
+  {
+    "_pageName": "Aprils Fool",
+    "alias": "Aprils Fool",
+    "dlc": "28",
+    "number": "32",
+    "unlocked by": "Aprils fool",
+    "unlocks": "Maggy Now Holds a Pill!"
+  },
+  {
+    "_pageName": "BRAINS!",
+    "alias": "BRAINS!",
+    "dlc": "30",
+    "number": "27",
+    "unlocked by": "BRAINS!",
+    "unlocks": "Stud Finder"
+  },
+  {
+    "_pageName": "Backasswards",
+    "alias": "Backasswards",
+    "dlc": "28",
+    "number": "31",
+    "unlocked by": "Backasswards",
+    "unlocks": "Laz Bleeds More!"
+  },
+  {
+    "_pageName": "Baptism by Fire",
+    "alias": "Baptism by Fire",
+    "dlc": "24",
+    "number": "38",
+    "unlocked by": "Baptism by Fire",
+    "unlocks": "Purgatory"
+  },
+  {
+    "_pageName": "Beans!",
+    "alias": "Beans!",
+    "dlc": "31",
+    "number": "13",
+    "unlocked by": "",
+    "unlocks": "Burnt Penny"
+  },
+  {
+    "_pageName": "Bloody Mary",
+    "alias": "Bloody Mary",
+    "dlc": "24",
+    "number": "37",
+    "unlocked by": "Bloody Mary",
+    "unlocks": "Sigil of Baphomet"
+  },
+  {
+    "_pageName": "Blue Bomber",
+    "alias": "Blue Bomber",
+    "dlc": "30",
+    "number": "23",
+    "unlocked by": "Blue Bomber",
+    "unlocks": "Gold Bomb"
+  },
+  {
+    "_pageName": "Cantripped!",
+    "alias": "Cantripped!",
+    "dlc": "24",
+    "number": "43",
+    "unlocked by": "Cantripped!",
+    "unlocks": "Justice"
+  },
+  {
+    "_pageName": "Cat Got Your Tongue",
+    "alias": "Cat Got Your Tongue",
+    "dlc": "31",
+    "number": "8",
+    "unlocked by": "Cat Got Your Tongue",
+    "unlocks": "Rune of Algiz"
+  },
+  {
+    "_pageName": "Computer Savvy",
+    "alias": "Computer Savvy",
+    "dlc": "31",
+    "number": "16",
+    "unlocked by": "",
+    "unlocks": "Robo-Baby 2.0"
+  },
+  {
+    "_pageName": "Cursed!",
+    "alias": "Cursed!",
+    "dlc": "31",
+    "number": "10",
+    "unlocked by": "Cursed!",
+    "unlocks": "Credit Card"
+  },
+  {
+    "_pageName": "DELETE THIS",
+    "alias": "DELETE THIS",
+    "dlc": "24",
+    "number": "45",
+    "unlocked by": "DELETE THIS",
+    "unlocks": "Temperance"
+  },
+  {
+    "_pageName": "Darkness Falls",
+    "alias": "Darkness Falls",
+    "dlc": "31",
+    "number": "4",
+    "unlocked by": "Darkness Falls",
+    "unlocks": "Rune of Dagaz"
+  },
+  {
+    "_pageName": "Demo Man",
+    "alias": "Demo Man",
+    "dlc": "31",
+    "number": "9",
+    "unlocked by": "Demo Man",
+    "unlocks": "Chaos Card"
+  },
+  {
+    "_pageName": "Glass Cannon (Challenge)",
+    "alias": "Glass Cannon",
+    "dlc": "31",
+    "number": "11",
+    "unlocked by": "Glass Cannon",
+    "unlocks": "Rules Card"
+  },
+  {
+    "_pageName": "Have a Heart",
+    "alias": "Have a Heart",
+    "dlc": "30",
+    "number": "25",
+    "unlocked by": "Have a Heart",
+    "unlocks": "2 new pills 2"
+  },
+  {
+    "_pageName": "Head Trauma",
+    "alias": "Head Trauma",
+    "dlc": "31",
+    "number": "3",
+    "unlocked by": "",
+    "unlocks": "Rune of Ehwaz"
+  },
+  {
+    "_pageName": "High Brow",
+    "alias": "High Brow",
+    "dlc": "31",
+    "number": "2",
+    "unlocked by": "",
+    "unlocks": "Rune of Jera"
+  },
+  {
+    "_pageName": "Hot Potato",
+    "alias": "Hot Potato",
+    "dlc": "24",
+    "number": "42",
+    "unlocked by": "Hot Potato",
+    "unlocks": "The Chariot"
+  },
+  {
+    "_pageName": "I RULE!",
+    "alias": "I RULE!",
+    "dlc": "30",
+    "number": "26",
+    "unlocked by": "I RULE!",
+    "unlocks": "Poker Chip"
+  },
+  {
+    "_pageName": "Isaac's Awakening",
+    "alias": "Isaac's Awakening",
+    "dlc": "24",
+    "number": "39",
+    "unlocked by": "Isaac's Awakening",
+    "unlocks": "Spirit Sword"
+  },
+  {
+    "_pageName": "It's in the Cards",
+    "alias": "It's in the Cards",
+    "dlc": "31",
+    "number": "14",
+    "unlocked by": "",
+    "unlocks": "SMB Super Fan"
+  },
+  {
+    "_pageName": "Onan's Streak",
+    "alias": "Onan's Streak",
+    "dlc": "30",
+    "number": "29",
+    "unlocked by": "Onan's Streak",
+    "unlocks": "Kidney Stone"
+  },
+  {
+    "_pageName": "PAY TO PLAY",
+    "alias": "PAY TO PLAY",
+    "dlc": "30",
+    "number": "24",
+    "unlocked by": "PAY TO PLAY",
+    "unlocks": "2 new pills"
+  },
+  {
+    "_pageName": "PRIDE DAY!",
+    "alias": "PRIDE DAY!",
+    "dlc": "30",
+    "number": "28",
+    "unlocked by": "PRIDE DAY!",
+    "unlocks": "D8"
+  },
+  {
+    "_pageName": "Pica Run",
+    "alias": "Pica Run",
+    "dlc": "24",
+    "number": "41",
+    "unlocked by": "Pica Run",
+    "unlocks": "Ice Cube"
+  },
+  {
+    "_pageName": "Pitch Black",
+    "alias": "Pitch Black",
+    "dlc": "31",
+    "number": "1",
+    "unlocked by": "",
+    "unlocks": "Rune of Hagalaz"
+  },
+  {
+    "_pageName": "Pokey Mans",
+    "alias": "Pokey Mans",
+    "dlc": "28",
+    "number": "33",
+    "unlocked by": "Pokey Mans",
+    "unlocks": "Charged Key"
+  },
+  {
+    "_pageName": "Pong",
+    "alias": "Pong",
+    "dlc": "28",
+    "number": "35",
+    "unlocked by": "PONG",
+    "unlocks": "Greed's Gullet"
+  },
+  {
+    "_pageName": "Purist",
+    "alias": "Purist",
+    "dlc": "31",
+    "number": "20",
+    "unlocked by": "Purist",
+    "unlocks": "Rune of Berkano"
+  },
+  {
+    "_pageName": "Red Redemption",
+    "alias": "Red Redemption",
+    "dlc": "24",
+    "number": "44",
+    "unlocked by": "Red Redemption",
+    "unlocks": "The Hermit"
+  },
+  {
+    "_pageName": "SPEED!",
+    "alias": "SPEED!",
+    "dlc": "30",
+    "number": "22",
+    "unlocked by": "SPEED!",
+    "unlocks": "Get out of Jail Free Card"
+  },
+  {
+    "_pageName": "Scat Man",
+    "alias": "Scat Man",
+    "dlc": "24",
+    "number": "36",
+    "unlocked by": "",
+    "unlocks": "Dirty Mind"
+  },
+  {
+    "_pageName": "Seeing Double",
+    "alias": "Seeing Double",
+    "dlc": "24",
+    "number": "40",
+    "unlocked by": "Seeing Double",
+    "unlocks": "Broken Glasses"
+  },
+  {
+    "_pageName": "Slow Roll",
+    "alias": "Slow Roll",
+    "dlc": "31",
+    "number": "15",
+    "unlocked by": "",
+    "unlocks": "Swallowed Penny"
+  },
+  {
+    "_pageName": "Solar System",
+    "alias": "Solar System",
+    "dlc": "31",
+    "number": "6",
+    "unlocked by": "Solar System",
+    "unlocks": "Rune of Perthro"
+  },
+  {
+    "_pageName": "Suicide King (Challenge)",
+    "alias": "Suicide King",
+    "dlc": "31",
+    "number": "7",
+    "unlocked by": "Suicide King 2",
+    "unlocks": "Suicide King"
+  },
+  {
+    "_pageName": "The Family Man",
+    "alias": "The Family Man",
+    "dlc": "31",
+    "number": "19",
+    "unlocked by": "The Family Man",
+    "unlocks": "Epic Fetus"
+  },
+  {
+    "_pageName": "The Guardian",
+    "alias": "The Guardian",
+    "dlc": "30",
+    "number": "30",
+    "unlocked by": "The Guardian",
+    "unlocks": "Blank Rune"
+  },
+  {
+    "_pageName": "The Host",
+    "alias": "The Host",
+    "dlc": "31",
+    "number": "18",
+    "unlocked by": "",
+    "unlocks": "Technology .5"
+  },
+  {
+    "_pageName": "The Tank",
+    "alias": "The Tank",
+    "dlc": "31",
+    "number": "5",
+    "unlocked by": "The Tank",
+    "unlocks": "Rune of Ansuz"
+  },
+  {
+    "_pageName": "Ultra Hard",
+    "alias": "Ultra Hard",
+    "dlc": "28",
+    "number": "34",
+    "unlocked by": "Ultra Hard",
+    "unlocks": "Samson Feels Healthy!"
+  },
+  {
+    "_pageName": "Waka Waka",
+    "alias": "Waka Waka",
+    "dlc": "31",
+    "number": "17",
+    "unlocked by": "",
+    "unlocks": "Death's Touch"
+  },
+  {
+    "_pageName": "When Life Gives You Lemons",
+    "alias": "When Life Gives You Lemons",
+    "dlc": "31",
+    "number": "12",
+    "unlocked by": "",
+    "unlocks": "Card Against Humanity"
+  },
+  {
+    "_pageName": "XXXXXXXXL",
+    "alias": "XXXXXXXXL",
+    "dlc": "30",
+    "number": "21",
+    "unlocked by": "XXXXXXXXL",
+    "unlocks": "Gold Heart"
+  }
+]

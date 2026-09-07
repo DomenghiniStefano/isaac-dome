@@ -1,0 +1,26 @@
+{{infobox trinket
+ | id          = 8
+ | quote       = I remember these
+ | description = Chance to trigger {{i|The Gamekid}} effect upon taking damage.
+}}
+
+{{cit|t}}
+
+== Effect ==
+* Grants about a 5% base chance to trigger {{i|The Gamekid}} effect upon taking damage.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: Adds additional 5% chance of triggering the {{i|The Gamekid}} effect per stack upon taking damage.
+
+== Notes ==
+* The activation chance depends on the [[luck]] stat and goes up to 100% with 38 Luck.
+
+== In-game Footage ==
+{{#ev:youtube|3xox2mzfPS0}}
+
+== Trivia ==
+* The Cartridge resembles an NES (Nintendo Entertainment System) cartridge.
+* The art depicted on the cartridge is a picture of Isaac, implying that it is a copy of The Binding of Isaac in the form of an NES game.
+
+{{nav|fr=Cartouche}}
+[[Category:Damage-triggered items]]

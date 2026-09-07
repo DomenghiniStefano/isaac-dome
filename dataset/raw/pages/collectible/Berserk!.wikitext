@@ -1,0 +1,75 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 704
+ | quote       = Rip and tear
+ | description = Isaac goes berserk for 5 seconds, greatly increasing his [[speed]], [[tears]], and [[damage]], but restricting him to using a melee weapon instead of his tears. This item charges by dealing damage to enemies instead of clearing rooms.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive {{dlc|r+|devilsacrifice}}
+ | recharge    = damage
+ | unlocked by = Berserk!
+ | devil price = {{dlcalt|1|r+=0}}
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, puts Isaac in a berserk state for 5 seconds, during which the following effects apply:
+** +0.4 [[speed]].
+** +3 flat [[damage]] .
+** Tears are replaced by a jawbone melee weapon that is similar to {{C|The Forgotten}}'s bone club.
+*** The jaw bone deals 3× Isaac's damage when swung and 1.5× Isaac's damage per tick when thrown (3× Isaac's damage per second).
+*** The swung jaw bone reflects enemy shots.
+**** Reflected projectiles deal 6 damage if they would've hurt Isaac for half a heart, and 7 for a full heart.
+*** The thrown jaw bone charges very quickly compared to the Forgotten's bone club, but as berserk only lasts five seconds, it uses a noticeable amount of the effect's limited duration to charge and throw the jaw bone.
+*** The swung jaw bone can collect pickups and open [[chest]]s.
+*** A successful melee hit on an enemy makes Isaac immune to damage for roughly 0.25 seconds. This immunity doesn't protect against self-inflicted damage such as {{i|IV Bag}} or {{m|Blood Donation Machine}}.
+** While Berserking, Isaac's [[fire rate]] is halved then increased by 2. This will be a tears upgrade unless Isaac's tears is 4 or above.
+*** If playing as The Forgotten, the ×0.5 fire rate modifier isn't applied, as he already has it.
+** Killing an enemy while "Berserking" increases Berserk's current duration by 1 second.
+** Killing an enemy grants very brief invincibility, preventing damage from exploding enemies.
+** Every enemy killed will also grant +0.4 [[speed]] until the effect ends.
+** Isaac is unable to [[Death|die]] while Berserk is active. He can be reduced to 0 [[Health|hearts]], but will not die until the effect ends.
+*** This does not apply to insta-kill effects (such as {{i|Damocles}} and {{i|Plan C}}) - they will kill Isaac even if Berserk is active.
+* This item charges when Isaac deals damage to enemies rather than by clearing rooms or picking up batteries. It requires a base total of 120 damage, and increases by 40 for every next floor.
+
+== Notes ==
+* The jaw bone has all the same synergies that The Forgotten's bone club does.
+** {{I|Mom's Knife}}: This version of the attack doesn't deflect projectiles.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a pale wisp on the middle ring. The wisp has extra HP and does not shoot.}}
+* {{i|C Section}}: Replaces club throw with two swings in quick succession which fire a fetus. All fetuses fired will hold bone clubs, similar to the interaction with {{c|The Forgotten}}.
+* {{i|Scapular}}: If the fatal damage occurs during Berserk state, Scapular will trigger and grant the {{e|Soul Heart}}.
+* {{i|Suplex!}}: When used near the end of the Berserk state (any time after the second bell ring), Suplex receives a unique visual effect, and will deal massive damage to the target, while setting off a {{i|Mama Mega!}} style explosion, destroying all [[obstacle]]s in the current room and blowing open all doors. The target being Suplexed, as well as nearby enemies, will receive 300 base damage that scales with Isaac's size. All other enemies receive 200 flat damage.
+* {{c|The Lost}} / {{c|Tainted Lost}}: This can allow either variant of The Lost to survive being damaged if it happens while Berserk is active. Despite having no visible health bar, their health is normally set to a {{e|Half Soul Heart}}. If they take damage while Berserk is active, they will not die if they are able to pick up a {{e|Soul Heart}} or half soul heart before the effect ends. {{e|Black Heart}}s do not count for this.
+* {{i|The Ludovico Technique}}: While under the Berserk state, you lose control of the Ludovico Technique tear, which can now be deflected by the jaw bone swing, bouncing off nearby walls and dealing damage to enemies.
+
+== Interactions ==
+* {{I|4.5 Volt}} / {{I|9 Volt}} / {{I|Jumper Cables}}: No effect.
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Turning enemies into [[pickup]]s doesn’t count as damaging or killing them for the sake of charging this item or extending its duration.
+* {{I|Car Battery}}: Duration is only extended if no enemies are killed during the first half, thus only providing a benefit against bosses that can't spawn enemies.
+* {{i|E. Coli}} / {{i|Flush!}}: Turning enemies into poop doesn’t count as damaging or killing them for the sake of charging this item or extending its duration.
+* [[Freeze|Freeze Effects]]: Killing enemies by freezing them will not extend the timer, which can make it difficult to maintain the duration.
+** {{dlc|r+}} Frozen enemies do extend the timer.
+* {{I|Libra}}: Because of Berserk giving you +0.4 speed with every kill, Libra will instead steadily increases the damage, tears, and range stats with seemingly no limit, allowing massively high DPS, but targets are much more difficult to hit due to the range of the swing gradually extending outwards more and more with each kill.
+* {{I|Sharp Plug}}: Isaac will take damage without gaining any charges.
+
+== In-game footage ==
+{{#ev:youtube|hL5NOXddHiw}}
+
+== Trivia ==
+* This item is the active item equivalent of {{c|Tainted Samson}}'s passive ability, with the only differences being that the player can choose to activate this, and this doesn't charge upon taking damage.
+* The item's name, description, and effects are likely a reference to the Berserk power-up from the [[wikipedia:Doom (1993 video game)|''Doom'' franchise]], which forces the player to use powered-up melee attacks in some games.
+** The phrase 'rip and tear' is frequently used throughout the ''Doom'' franchise, and was first used in the 1996 ''Doom'' comic after protagonist Doomguy picked up the Berserk power-up.
+** In addition, Isaac's inability to die during the effect could be a reference to the common joke of Doomguy being "literally too angry to die", as well as his indestructible nature in the later series lore.
+** This item may also be a reference to the character Chicken from ''Nuclear Throne'' who, unlike other characters in the game, wields a katana and, upon losing all HP, instead of immediately dying, her head gets cut off and she can restore health in a short amount of time to stay alive before dying for good.
+** This item may also be a reference to the "Rage Beyond Death" ability with similar effects that Barbarians can gain in 5th edition of ''Dungeons & Dragons'', as the original ''Isaac'' characters were modeled after character classes from the game.
+* The jawbone Isaac uses is a donkey's jawbone, which is a reference to a passage from the [[wikipedia:Book of Judges|Book of Judges]] in which Samson kills one thousand Philistines using only the jawbone of a donkey.
+** It may also be a reference to the item [[anti:Donkey's Jawbone|Donkey's Jawbone]] from ''Antibirth'' that didn't make the cut for ''Repentance''.
+** This event is also referred to by the pickup message for the {{P|Soul of Samson}} — "Slay a thousand".
+* This item's special synergy with {{I|Suplex!}} was inspired by a bug in ''Repentance'''s initial release where any enemy (including final bosses like {{E|Hush}} and {{e|Delirium}}) that Suplex! was used on as Berserk!'s timer was ending would be instantly killed.
+
+== Bugs ==
+{{bug|dlc=rnr+|If Berserk wears off at 0 hearts and the player has {{i|Spirit Shackles}}, the game will crash.}}
+
+{{nav|tainted samson unlock|delirium unlock|fr=Frénésie !}}

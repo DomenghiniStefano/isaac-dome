@@ -1,0 +1,51 @@
+{{infobox activated collectible
+ | image name  = * {{dlcalt|na=Rebirth|na+=Afterbirth}}
+ | id          = 290
+ | quote       = Save your life
+ | description = When at full [[health]], up to 4 extra {{E|Red Heart}}s can be stored in The Jar. Activating drops the stored hearts on the ground.
+ | quality     = 0
+ | tags        = nolostbr nocantrip
+ | recharge    = unlimited
+ | shop price  = {{dlcalt|15|r=1}}0
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Isaac can store up to 4 extra {{E|Red Heart}}s in The Jar if there are no remaining empty [[Health#Red Heart Containers|Heart Containers]].
+* When used, all Red Hearts in the jar are dropped on the floor, rather than directly consuming them.
+
+== Notes ==
+* Red hearts are the only type of heart that can be stored. Blended Hearts do not count.
+* If used in {{R|Super Secret Room}}s that can only spawn a specific type of heart, it will spawn those types of hearts instead.
+* If a whole red heart is picked up and Isaac only heals half a heart container, the other half is placed in the jar, indicated by the jar number increasing by one. Despite the jar indicating that it picked up a whole red heart in this fashion, it will only drop half a red heart on use. When picking up a double red heart, the jar will also store the remainder not healed in the same way.
+* [[Co-op]] babies, except Magnet Baby, cannot add hearts to the jar, as they are unable to interact with pickups.
+* The short-lived half red hearts dropped by {{C|Tainted Magdalene}} can be picked up and stored.
+* {{Dlc|r}} The item only costs 10 cents when found in a {{r|Shop}}.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Instead of dropping hearts on the floor, using The Jar consumes up to one full heart in the jar at a time, giving a temporary +0.66 damage up for each half heart consumed and spawning a puddle of [[red creep]] that deals 2 damage per tick (20 damage per second).}}
+* {{Book of Virtues synergy|description=Consumes stored hearts to spawn heart wisps, rather than releasing heart pickups. Heart wisps have a chance to drop a {{e|Half Red Heart}} when destroyed.}}
+* {{dlc|nr}} {{i|Humbleing Bundle}} / {{I|Maggy's Bow}}: Spawn double the hearts put into the jar, allowing for infinite health to be spawned.
+* {{T|Mom's Locket}}: Any half red hearts stored by The Jar will be converted to full hearts when dropped on the ground. Since The Jar will store any leftover health from healing Red Heart Containers, this can allow for potentially infinite health when healing half-empty containers. Especially effective in conjunction with {{I|Cancer}} or {{I|The Wafer}}.
+
+== Interactions ==
+* {{t|Broken Remote}}: Allows for teleportation with no recharge; however, it drops the contained red hearts in the room it was used.
+* {{i|Car Battery}}: The Jar acts as usual, and doesn't double the hearts dropped upon activation.
+* {{i|Schoolbag}}: The player cannot pick up extra hearts while The Jar is in the inactive slot.
+* {{i|Shard of Glass|dlc=r}}: Storing a heart in the jar without healing does not stop the bleeding effect, despite playing the "heart collected" sound effect.
+* {{C|Keeper}}/{{C|Tainted Keeper}}: Hearts of any type turn into Blue Flies upon spawning, rendering the item useless.
+
+== In-game Footage ==
+{{#ev:youtube|zdaS-Via8K0}}
+
+== Gallery ==
+<gallery>
+File:Collectible The Jar concept.jpg|Concept drawn for The Jar.
+File:3DS Detailed The Jar.png|{{plat|3DS}} The icon of The Jar as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* The Jar is a reference to the Empty Bottles of ''The Legend of Zelda'', which ''The Binding of Isaac'' takes heavy inspiration from. In ''Zelda'', empty bottles are recurring items that are used to store a variety of items; this includes life-restoring items such as potions or fairies, which The Jar mirrors by allowing the storage of red hearts.
+* The Jar may also be a reference to an early 2010s internet meme by the same name, which included storing characters in jars.
+{{nav|fr=Bocal en Verre}}

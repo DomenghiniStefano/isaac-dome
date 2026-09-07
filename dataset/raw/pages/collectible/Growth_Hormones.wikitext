@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | id          = 70
+ | quote       = Speed + DMG up
+ | description = {{dlc|nr}} +1 [[damage]], +0.4 [[speed]].<br>{{dlc|r}} +1 [[damage]], +0.2 [[speed]].
+ | quality     = 3
+ | tags        = summonable syringe offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +1 [[damage]].
+* {{dlc|nr}} +0.4 [[speed]].
+* {{dlc|r}} +0.2 [[speed]].
+* {{transformation contribution|Spun}}
+
+== In-game Footage ==
+{{#ev:youtube|u0KhLmB57Uw||inline}} {{#ev:youtube|OfWPbGFJs6U||inline}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Little Baggy }}
+
+== Trivia ==
+* Growth hormones are used to stimulate growth, cell reproduction, and cell regeneration. People often abuse growth hormone drugs in competitions to get physically stronger.
+
+{{nav|syringe|fr=Hormones de Croissance}}

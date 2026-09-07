@@ -1,0 +1,80 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 586
+ | quote       = May you get what you came for
+ | description = Generates a ladder at the start of every floor that leads to a unique {{R|Angel Room}} shop.
+ | quality     = 3
+ | tags        = offensive nocantrip {{dlc|r+|lazarussharedglobal}}
+ | unlocked by = The Stairway
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* At the start of every floor, generates a ladder which leads to a special {{R|Angel Room}} Shop, regardless of whether a devil deal has been taken. These angel shops always contain the following:
+** Three items/pickups for sale. These items/pickups can be on sale, just like with normal {{R|Shop}}s.
+*** An item from the [[Angel Room (Item Pool)|Angel Room Item Pool]] for 15 or 30 pennies.
+*** An {{e|Eternal Heart}} for 5 pennies.
+*** A {{e|Soul Heart}} for 5 pennies.
+*** A {{e|Key}} for 5 pennies.
+*** A {{p|Holy Card}} for 5 pennies.
+** An [[Angel]] statue. The Angel can be fought for a Key Piece like normal.
+** A normal {{Machine|Beggar}} or {{Machine|Rotten Beggar}} next to the entrance.
+** A {{Machine|Confessional}}, if it has been unlocked.
+* The ladder to the angel room disappears if Isaac leaves the starting room, regardless of whether Isaac has climbed it or not.
+
+== Notes ==
+* Layouts can be found [[Angel_Room#Angel_Shops|here]].
+* The following items cost 30 coins to purchase:{{column list | width = 15em | content =
+** {{i|The Body}}
+** {{i|Book of Revelations|r+}}
+** {{i|Crown Of Light}}
+** {{i|Dead Dove}}
+** {{i|Godhead}}
+** {{i|Holy Grail}}
+** {{i|Holy Light|r+}}
+** {{i|Holy Mantle}}
+** {{i|Immaculate Heart}}
+** {{i|The Mind}}
+** {{i|Paschal Candle}}
+** {{i|Prayer Card}}
+** {{i|The Relic}}
+** {{i|Revelation}}
+** {{i|Sacred Heart}}
+** {{i|Sacred Orb}}
+** {{i|The Soul}}
+** {{i|Spirit Sword}}
+** {{i|Star of Bethlehem|r+}}
+** {{i|Trinity Shield}}
+** {{i|Trisagion|r+}}
+** {{i|The Wafer}}
+}}
+* The ladder disappears after save-quitting.
+* [[Item Pool#Weight Decrementation|Weight decrementation]] in the generated shops is the same as in regular Angel Rooms, so if an item is seen in the special shop, it won't be encountered regularly again for the rest of the run.
+* During the [[Ascent]], ladders will generate in the "starting rooms" (where light beams are located) on every floor.
+** The same does not apply during {{chal|Backasswards}}, in which the item simply has no effect.
+* The ladder will appear in the [[Mirrored World]] in the starting room, and will lead to the same shop.
+* Rerolled items in the room will be taken from the Angel Room pool.
+* Since a beggar always spawns immediately to the right of the entrance way, caution should be taken to avoid accidental donation.
+* If a run is started with The Stairway, i.e. playing as {{C|Eden}} or having collected {{I|Eden's Blessing}}, the ladder will not appear on the first floor.
+* In [[Greed mode]], the ladder does not go away when pressing the button to start the waves. This means money can be gathered from the waves before entering the Stairway shop.
+
+== Interactions ==
+* {{T|Adoption Papers}}: Does not affect the Angel shop.
+* {{i|Coupon}} / {{p|Credit Card}} / {{i|Mr. ME!}}: Can be used to obtain items for free.
+* {{I|Death Certificate}}: An additional ladder will spawn in one room of the Death Certificate area. This ladder leads to the same Angel Shop as the one in the starting room of the floor. Purchasing an item will remove Isaac from the Death Certificate area as though he had collected an item normally. Sometimes, the ladder will spawn directly on top of an item pedestal, making the Angel Shop impossible to enter without collecting that item and subsequently being removed from the area.
+* {{I|Keeper's Sack}}: Buying items grants stats, same as with other shops.
+* {{I|A Pound of Flesh}}: Makes Angel Shops cost health just like regular {{r|Shop}}s.
+* {{i|Restock}} / {{T|Store Credit}}: No effect in the Angel shop.
+* {{i|Steam Sale}}: Reduces the prices of the items on offer.
+* {{i|Glowing Hourglass}}: When used in the Angel shop, uses all three charges and removes the ladder.
+
+== In-game footage ==
+{{#ev:youtube|VCdabhPF3N8}}
+
+== Trivia ==
+* This item was originally called [[anti:Jacob's Ladder|Jacob's Ladder]] in the ''Antibirth'' mod but was changed to avoid confusion between this item and the existing {{i|Jacob's Ladder}}. In ''Antibirth'', the ladder would take Isaac to a regular Angel Room instead of a unique Angel Shop, however using the ladder prevented an Angel or Devil Room from appearing after fighting the boss. The ladder would also not disappear when Isaac left the starting room.
+** The name is a reference to The Book of Genesis from the Old Testament. In Genesis 28:10-19 Jacob rested on his journey and had a dream; in the dream, he saw a ladder that served as the connection between Heaven and Earth.
+* This item's name and its flavor text are a reference to the Led Zeppelin song "Stairway to Heaven."
+
+{{nav|jacob and esau unlock|isaac boss unlock|fr=Échelle Vers les Cieux}}

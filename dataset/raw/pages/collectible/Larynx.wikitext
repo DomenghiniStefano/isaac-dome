@@ -1,0 +1,43 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 611
+ | quote       = Hear my pain
+ | description = Isaac shouts, damaging and pushing away nearby enemies. The shout gets stronger the more charges the item has. Larynx gains 1 charge whenever Isaac takes damage, in addition to charging normally.
+ | quality     = 2
+ | recharge    = 12
+ | tags        = offensive
+ | unlocked by = Larynx
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Isaac shouts, damaging and pushing away nearby enemies. The item can be used when not fully charged, and deals more damage and has increased range the more charges it has when used.
+** The initial shout deals 20 damage + 28 per charge and destroys enemy shots, [[obstacles]], {{e|Shopkeeper}}s, {{m|Beggar}}s, and [[machines]], and opens bombable doors in range.
+** A number of extra pulses are released equal to half the charges used (rounded up) that deal 2.5 damage + 3.5 per charge.
+* Larynx gains 1 charge whenever Isaac takes damage, as well as through normal means.
+
+== Notes ==
+* Larynx only has 1 charge when initially picked up.
+* Larynx will gain charges if Isaac is hit during the {{e|Mother's Shadow}} escape sequence.
+* Obstacles destroyed by the shout don't bridge gaps.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns red wisps on the middle ring. The wisps deals contact damage equal to 30% of Isaac's damage * Charges Used. Charges Used equals the number of charges Larynx had at the time it was used. Health {{=}} <code>1 * Charges Used</code>. Tear Damage {{=}} <code>1.5 * Charges Used</code>.}}
+* {{i|Habit}}: Both on-hit charge effects stack, charging 2 points per hit.
+
+== Interactions ==
+* {{I|9 Volt}}: The first bar gains an automatic timed recharge, but the further bars will not be affected.
+* {{i|The Battery}}: Larynx can hold up to two full charges. Only up to 12 charges will be used at a time.
+* {{i|Void}}: If Larynx is absorbed, its effect is only replicated at 1 charge.
+
+== In-game footage ==
+{{#ev:youtube|yOfR1iMx_Xs}}
+
+== Trivia ==
+* Larynx is the medical term for the voice box, the organ that holds the vocal cords in mammals.
+* '''Larynx''', {{I|Everything Jar}}, {{I|Notched Axe}}, and {{I|Spin to Win}} are the only activated items that can be used when not fully charged.
+* '''Larynx''', {{i|Alabaster Box}}, {{i|Berserk!}}, {{i|Eden's Soul}}, and {{i|Everything Jar}} are the only activated items that are not fully charged on first pickup.
+
+{{nav|tainted samson unlock|the beast unlock|fr=Larynx}}
+[[Category:Damage-triggered items]]

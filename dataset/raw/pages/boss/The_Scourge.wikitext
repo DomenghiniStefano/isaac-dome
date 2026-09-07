@@ -1,0 +1,48 @@
+{{Infobox boss
+ | dlc         = r
+ | name        = The Scourge
+ | id          = 909
+ | environment = <u>Boss</u><br>{{floor|Corpse}}<br>{{room|boss challenge}}
+ | base hp     = 950
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Magic Skin}} (1% chance)
+}}
+
+'''The Scourge''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in the {{s|Corpse}}.
+
+== Behavior ==
+The Scourge floats quickly around the room, attempting to get above Isaac's position. It can perform the following attacks:
+* Shoots a large, fast cluster projectile out of its hood that homes in slightly on Isaac. When it hits a wall, it explodes into a spray of projectiles, leaving behind damaging [[Creep#Green Creep|Green Creep]] and a cluster of {{e|Small Maggot}}s.
+** If The Scourge is below half health, it instead shoots out three slower, smaller cluster projectiles from out of its hood that create fewer projectiles on impact.
+* Launches one of its tendrils towards Isaac and embeds it in a wall. It then drags the tendril along the wall, causing projectiles, creep, and Small Maggots to shoot out from the wall.
+* Launches two tendrils and embeds them into the wall, one directly at Isaac and one in the cardinal/ordinal direction opposite of him. It then starts rotating its arms around while shooting two rings of 12 projectiles outwards.
+* Launches two tendrils to either side of Isaac, embedding them into the wall and trapping him in a triangle-shaped area. It will then perform one of two attacks:
+** Fires walls of tight projectiles with gaps to pass through from its body. It follows up each wave with an additional, faster projectile aimed directly at Isaac.
+** Fires horizontally travelling projectiles randomly out from both its left and right tendrils.
+** If Isaac gets caught out of this triangle space for any reason, The Scourge will cancel this attack.
+*** The three previous attacks end if The Scourge or its tendrils take enough damage. Each tendril has a total HP of 400.
+*** The Scourge takes damage equal to 25% of the damage its tendrils take.
+*** The tendrils passively take heavy damage if they're dragged along a wall, dealing a total of 50 damage to The Scourge for each tendril dragged.
+*** The tendrils kill Small Maggots they are dragged into.
+* Moves to the center of the room and begins sucking in 2 tight streams of projectiles towards it in a spiral pattern. This spiral pattern can randomly switch directions during the attack. Additional random projectiles can appear in the gap between the two streams, further limiting the space.
+
+== Gallery ==
+<gallery>
+File:Scourge Concept.png|Concept art of the Scourge.
+</gallery>
+
+== Notes ==
+* The Scourge is instantly killed by {{I|Meat Cleaver}}.
+
+== Trivia ==
+* The Scourge gets its name from a type of [[Wikipedia:Scourge|whip]].
+* The Scourge resembles the {{e|Snapper}} monster, as they both attack using long, tendril-like whips, have a bottom row of teeth, and have an eye in the middle of their mouth.
+** It also resembles the {{e|Cultist}} monster, in terms of appearance.
+
+== Bugs ==
+{{Bug|Tendrils are made out of many separate entities resulting in items that activate upon enemies dying, such as {{i|Hungry Soul}} or {{i|Infestation 2}}, to trigger multiple times at once.}}
+
+{{nav|boss|fr=Le Fléau}}
+
+[[Category:Chapter 4.5 bosses]]
+[[Category:Corpse bosses]]
+[[Category:Debut bosses in Repentance]]

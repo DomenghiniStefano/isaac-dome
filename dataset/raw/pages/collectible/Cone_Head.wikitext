@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 457
+ | quote       = Hard headed!
+ | description = Grants a {{E|Soul Heart}}. Gives Isaac a chance to ignore any damage taken.
+ | quality     = 2
+ | tags        = summonable
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Grants a {{E|Soul Heart}}.
+* Any damage dealt to Isaac has a 20% chance to be ignored.
+** This includes damage through tears, contact, explosions, {{R|Curse Room}}, {{M|Blood Donation Machine}}s, {{M|Devil Beggar}}s, and Bad Trip [[pill]]s.
+*** Contact damage with enemies is difficult to avoid, as the damage negation does not provide invincibility frames.
+** Isaac flashes briefly blue when damage is negated. The flash can occur even while invincible from taking a hit or using an invincibility effect.
+
+== Synergies ==
+* {{i|Blood Rights}}/{{i|IV Bag}}/{{i|Kamikaze!}}/{{i|Razor Blade}}: Has a chance to block the damage inflicted, but the effects will still occur.
+* {{i|Hallowed Ground}} / {{i|Host Hat}} / {{i|Infamy}} / {{i|Belly Jelly}} / {{i|Metal Plate}} / {{i|Star of Bethlehem}}: Offers an additional chance to negate damage.
+* {{i|Holy Mantle}}: Cone Head's chance of blocking damage is applied before the Holy Mantle, allowing the Holy Mantle shield to be saved.
+
+== Interactions ==
+* {{i|Dull Razor}}: Damage prevention will prevent on-damage effects from occurring.
+
+== In-game Footage ==
+{{#ev:youtube|NBaOqLD9PaI}}
+
+== Trivia ==
+* The item is a reference to the recurring Saturday Night Live sketch, [[wikipedia:Coneheads|The Coneheads]].
+
+{{nav|fr=Crâne d'Œuf}}
+[[Category:Damage-preventing items]]

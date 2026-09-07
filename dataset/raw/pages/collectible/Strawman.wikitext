@@ -1,0 +1,110 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 667
+ | quote       = A helping hand
+ | description = Spawns a controllable {{c|Keeper}} to fight enemies alongside Isaac, functioning similarly to {{c|Jacob and Esau}}. If Keeper dies, he spawns 5 [[blue spider]]s and Strawman is removed from Isaac's inventory.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = {{dlc|r+|uniquefamiliar}} dead offensive
+ | unlocked by = Strawman
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Spawns {{c|Keeper}} as an extra character alongside Isaac, who is controlled exactly like {{c|Esau}}.
+** Keeper will have his base stats, except speed, and use coins as health.
+** He will not receive any of his starting items, such as {{i|Wooden Nickel}} or {{t|Store Key}}.
+* When Keeper dies, he spawns 5 [[blue spider]]s and Strawman is removed from Isaac's inventory.
+* Grants 1 {{e|Bomb}} upon pickup.
+
+== Notes ==
+* For calculating room drops, the room drop rate depends on the total luck of Isaac and the Keeper. Because Keeper starts with -2 luck, having Strawman makes room drops much less likely.
+* Keeper's health is displayed at all times above his head.
+** If {{Curse|unknown}} is in effect, his health bar will be hidden the same way as Isaac's.
+** Keeper will start with 2 coin hearts or 3 if the {{a|Keeper now holds... A Penny!}} achievement is unlocked.
+* Keeper is able to pick up items independently from Isaac. He has his own inventory.
+** This inventory is not displayed on the HUD.
+** When Keeper dies, the items he obtained are permanently removed.
+*** {{dlc|nr+}} This includes quest items like {{i|The Polaroid}}, potentially leaving you unable to progress.
+** {{dlc|r+}} Keeper can't pick up [[item Tags quest|quest items]].
+* Keeper is not able to pick up any active items, trinkets, or consumables.
+* Keeper cannot pick up any type of [[hearts]], except for {{E|Gold Heart}}s.
+** {{e|Eternal Heart}}s can also be picked up, but to no effect, effectively wasting them.
+* Keeper's speed syncs with Isaac's, as with {{c|Jacob and Esau}}.
+* {{dlc|nr+}} {{r|Devil Room}} items will cost money instead of health as long as Keeper is alive.
+*{{dlc|r+}} {{r|Devil Room}} Items costing red hearts can be picked up by Keeper. Items costing red heart containers will remove the corresponding amount of coin hearts from Keeper. Going to zero coins hearts will kill Keeper. Items costing any amount of soul hearts or active items costing red hearts other than {{i|Book of Virtues}} can not be interacted with by Keeper as if they were a shop item that can not be afforded. 
+*{{dlc|r+}} {{r|Devil Room}} Items that can be picked up for free via {{c|The Lost}}, {{c|Tainted Lost}}, {{c|Tainted Jacob}} in ghost form, {{p|Soul of the Lost}}, and {{e|White Fire Place}}, can be picked up by Keeper without other items disappearing. Allowing keeper to take the remaining items before Isaac picks up an item. 
+* When placing a {{e|Bomb}}, Keeper will place another at no cost.
+* Keeper can be used to play {{r|Sacrifice Room}}s at the cost of coins instead of hearts.
+* {{r|Boss Challenge Room}}s will be closed unless Keeper is also at 1 coin heart.
+* Keeper is not able to walk through doors or into {{r|Crawl Space}}, although he is able to enter the beam of light that takes Isaac to the next floor after the {{e|Mom's Heart}} / {{E|It Lives!}} fight, the one spawned by {{i|Genesis}}, as well as entering the big chest after defeating bosses in later stages.
+* Respawn items work as normal for Keeper, but never involve teleporting to the previous room (see [[#Interactions|interactions]]).
+* If Keeper plays a {{Machine|Blood Donation Machine}}, it will pay out with 0-1 coins.
+* {{c|Keeper}} unlocks cannot be earned using Strawman.
+* Similar to {{c|Jacob and Esau}}, it is possible to take both items between item choice pedestals with careful positioning.
+* Even though Keeper is considered a second character, the run ends if Isaac dies.
+* Technically, Strawman is marked as a [[familiar]] item in the game's files, although most familiar-modifying items, such as {{i|BFFS!}} don't have any effect on Keeper.
+* Unlike Jacob and Esau, invincibility frames are not shared between Keeper and Isaac.
+* If collected in a challenge where Isaac is blindfolded, Keeper will be blindfolded too.
+* Re-emerging from the part of {{s|Mines}} II where {{i|Knife Piece 2}} is hidden will cause Strawman to be regenerated from scratch. This permanently remove all items the summoned Keeper had collected up until that point.
+* If Strawman is picked up during the second lap of a [[Victory Lap]], he will become {{c|The Lost}} alongside Isaac on every subsequent lap.
+* {{dlc|nr+}} If Keeper is hit, this will invalidate the conditions for spawning {{t|Perfection}}, regardless of whether or not the main character has been hit.
+* This item boosts the exploration bonus in daily runs a lot.
+* {{dlc+|r+}} Strawman's quality is treated as 2 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+*Keeper can not be hit by {{e|Dark Esau}}, only being pushed around by Dark Esau's collision. 
+
+== Synergies ==
+* {{I|Birthright}}: If Keeper is the one picking it up, it will grant him a heart container.
+* {{i|Crooked Penny}} / {{i|Diplopia}}: Picking up multiple copies of the item will spawn additional Keepers that each have their own inventory.
+* {{t|Extension Cord}}: Beams of electricity flow between Keeper and Isaac.
+* {{i|Greed's Gullet}}: Keeper gains extra coin hearts at every 25 coin interval.
+* {{I|More Options}} / {{I|There's Options}}: With careful positioning, both item choice pedestals can be taken.
+* {{dlc|nr+}} {{I|The Polaroid}} / {{I|The Negative}}: Keeper can take the other photo not chosen by Isaac. Keeper will not directly benefit from holding the Polaroid, but the Negative will give him a damage up. Keeper can use his photo to open {{achievement|A Strange Door}}, allowing Isaac to keep his. If intending to go to {{s|Chest}} or {{s|Dark Room}}, note that the photo held by Keeper will be lost if he dies.
+* {{I|Sanguine Bond}}: A very beneficial item for both Isaac and Keeper, as it is fairly easy to snowball into infinitely playing the spikes.
+* {{i|Yum Heart}}: Because of how Yum Heart works in co-op, when Isaac uses Yum Heart, it will also restore one coin heart for Keeper.
+* {{C|Tainted Isaac}} : Items left out by Tainted Isaac can be picked up by Keeper.
+
+== Interactions ==
+* {{i|1up!}}: Upon death, Keeper revives at full health in the current room.
+* {{I|4.5 Volt}} / {{I|9 Volt}} / {{I|The Battery}} / {{I|Battery Pack}} / {{I|Car Battery}} / {{I|Habit}} / {{I|Jumper Cables}} / {{I|Sharp Plug}}: Useless on Keeper, unless {{I|Book of Virtues}} is held.
+* {{I|Ankh}} / {{I|Judas' Shadow}} / {{I|Lazarus' Rags}}: Keeper will respawn as the respective character in the current room.
+** {{I|Ankh}} + {{I|Birthright}}: Strawman ??? will get twice as much HP from health upgrades.
+** {{I|Judas' Shadow}} + {{I|Birthright}}: Strawman Black Judas can use the {{I|The Book of Belial}} acquired via Birthright as normal and the item recharges as normal. {{I|Book of Virtues}} stacks like usual.
+** {{I|Lazarus' Rags}} + {{I|Birthright}}: If Birthright was obtained prior to respawn, does nothing. If picked up after, grants its temporary damage.
+*** {{C|Keeper}}: While playing as Keeper, if Strawman respawns via any of the aforementioned items, health no longer converts to flies.
+* {{i|Astral Projection}}: Keeper gains full benefit of Astral Projection. Isaac gets no speed or fire rate bonuses during its effect, however.
+* {{t|Baby-Bender}} / {{i|BFFS!}} / {{i|Box of Friends}}: Strawman does not count as a familiar for the purpose of these items.
+* {{I|Big Fan}} / {{I|Guardian Angel}}: If Keeper is the one who picked it up, it will only buff orbital speed for him.
+* {{I|BFFS!}} / {{I|Hive Mind}}: If Keeper is the one who picked it up, it will only buff his familiars/flies and spiders and none of Isaac's.
+* {{I|Blood Bombs}}: Keeper can keep placing bombs for health after Isaac has run out.
+* {{I|Book of Virtues}}: The book can be picked up by Keeper and used as normal, making it '''the only active item''' he can use.
+** '''Book of Virtues''' + {{I|Missing No.}}: The book does not get rerolled.
+* {{I|Dead Cat}}: Keeper's maximum health is set to 1 coin. Upon death, he revives in the current room with maximum health reset to 1 coin.
+* {{i|Eden's Blessing}}: If Keeper picks up Eden's Blessing, the extra item will be awarded to Isaac at the start of the next run whether Keeper survives or not.
+* {{I|Esau Jr.}}: Switching once and back will clear any items Keeper may have had.
+* {{I|False PHD}} / {{I|PHD}}: Identifies pills, but doesn't convert them.
+* {{i|Genesis}}: Will not grant item choices for any of Keeper's collected items.
+* {{i|Guppy's Collar}}: Upon death, Keeper has a chance to revive with 1 coin of filled health in the current room.
+* {{I|Lachryphagy}}: Isaac's tears can feed Keeper's for great damage. If Isaac, however, has Lachryphagy, Keeper's tears still interact with them, although sometimes it feeds them, other times it absorbs them, without the splitting effect.
+* {{I|The Ladder}}: A ladder will spawn across gaps for the Keeper, however he cannot use it, only Isaac.
+* {{I|Spirit Shackles}}: The effect will only happen once, as Keeper cannot recharge them.
+* {{c|Tainted Cain}}: Items will not turn into pickups if Keeper takes them.
+* {{C|Tainted Lazarus}}/{{C|Dead Tainted Lazarus}}: Upon flipping, Keeper gets regenerated from scratch, meaning his health gets restored to full and all items he picked up will be permanently removed.
+* {{i|TMTRAINER}}: All items will become glitched if Keeper holds TMTRAINER. He can be killed to restore item generation to normal.
+
+== In-game footage ==
+{{#ev:youtube|uY7quzTO_5A}}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | The Parasite }}
+
+== Trivia ==
+* A [[wikipedia:Straw man|"straw man"]] (sometimes written as strawman) is a form of argument and an informal fallacy of having the impression of refuting an argument, whereas the real subject of the argument was not addressed or refuted, but instead replaced with a false one. One who engages in this fallacy is said to be "attacking a straw man". [https://rationalwiki.org/wiki/Strawman_theory "Strawman theory"] can also refer to the [https://rationalwiki.org/wiki/Pseudolaw pseudolegal] concept of every individual having two personas — the flesh-and-blood person themselves and their "legal person" — with debts, liabilities, taxes, legal responsibilities, restraining orders, etc. only being applicable to the latter, allowing the former to (supposedly) flout laws that happen to inconvenience them. The fact that the Strawman item spawns a Keeper to be controlled concurrently with your original character lends credence to this latter interpretation of the term.
+* Strawman, alongside {{I|Mom's Ring}}, is one of two items which cannot be rerolled into by {{I|Spindown Dice}}; in Strawman's case, this is because the next item by ID number is {{I|Dad's Note}}, which cannot be rerolled by any means (not even if rerolled into by Spindown Dice from {{I|Sausage}} outside of its designated room).
+
+== Bugs ==
+{{bug|dlc=nr+|{{i|Box of Friends}} will not spawn a {{i|Demon Baby}} if Isaac has no familiars while Keeper is alive.}}
+{{bug|Entering and exiting the {{i|Knife Piece 2}} sequence in {{s|Mines}}/{{s|Ashpit}} II will remove any items from Strawman.}}
+{{bug|If a Strawman picks up a Strawman of its own, and then the run is exited and re-entered, the game will think a co-op player is present and ask you to connect another controller. If you can't, then you are forced to reboot your game, and the run is unplayable. This also happens when playing {{c|Jacob and Esau}} if Esau picks up Strawman, or when playing as {{c|Tainted Lazarus}} while holding {{i|Birthright}}, and the form holding Strawman is inactive when the run is exited.}}
+
+{{nav|tainted keeper unlock|the beast unlock|fr=Gardien en Peluche}}

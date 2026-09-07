@@ -1,0 +1,28 @@
+{{infobox trinket
+ | id          = 43
+ | quote       = Cursed?
+ | description = If Isaac has less than one full {{E|Red Heart}} after taking damage, he will be immediately teleported to a random room.
+}}
+{{cit|t}}
+
+== Effects ==
+* If Isaac has less than one full {{E|Red Heart}} after taking damage, he will be immediately teleported to a random room.
+** {{dlc|a+}} The teleportation happens only at half a heart or less left, regardless of health type. Empty {{E|Bone Heart|n}}s are not counted as health even if they can absorb a hit.
+
+== Notes ==
+* Does not affect {{C|The Lost}}, as being hit with {{i|Holy Mantle}} does not count as taking damage.
+** {{dlc+|r}} It will affect Isaac with {{I|Spirit Shackles}}, teleporting the player out of the room and restoring the Holy Mantle charge.{{dlc-}}
+* It is not recommended to have this item equipped during a boss fight as the boss's health will be restored to 100% if the player is teleported out of the room and returns, placing the player at a disadvantage.
+
+== Synergies ==
+* {{a|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either teleports Isaac to a random special room instead. Having both activates if Isaac has 1 full heart or less after taking damage.
+
+== Interactions ==
+* {{I|Scapular}}: Provided Scapular can always trigger, grants effective immortality, as the soul heart is always given before the teleport takes place.
+** +{{I|The Wafer}}: Grants true immortality, plus one hit on the soul heart, allowing the player to get hit once before teleporting.
+
+== In-game Footage ==
+{{#ev:youtube|MnC_4tYiuGI}}
+
+{{nav|bone|fr=Crâne Maudit}}
+[[Category:Damage-triggered items]]

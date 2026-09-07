@@ -1,0 +1,175 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc         = r
+ | id          = 37
+ | tears       = +0.277
+ | health      = {{hearts|red=3}}
+ | pickups     = {{i|Anima Sola}}
+ | unlocked by = The Deserter
+}}
+'''Tainted Jacob''' is a [[character]] added in [[The Binding of Isaac: Repentance]]. He is the alternate version of {{c|Jacob}}. Tainted Jacob is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|1=Soul of Cain}} to access a special room in one of the walls while playing as Jacob & Esau.
+
+Tainted Jacob spawns with 3 red heart containers and {{i|Anima Sola}} in his consumable slot, which freezes the nearest enemy for 5 seconds. However, he is pursued through the entire game by Dark Esau, who will try to charge into and kill Tainted Jacob. Anima Sola always affects Dark Esau if he is on screen.
+
+If Dark Esau touches Tainted Jacob, Tainted Jacob "dies" and becomes functionally identical to {{c|The Lost}} but will not have {{i|Holy Mantle}}. While in this form, having an {{e|Eternal Heart}} in his last heart slot will block the next hit like a {{P|Holy Card}}.
+
+Upon reaching a new floor, Tainted Jacob will return to his living state.
+
+__TOC__
+{{clear}}
+
+== Dark Esau ==
+{{infobox monster
+ | dlc          = r
+ | is mini-boss = yes
+ | name         = Dark Esau
+ | id           = 866
+ | behavior     = Charges at Tainted Jacob. Upon collision, transforms him into The Lost for the remainder of the floor
+}}
+
+'''Dark Esau''' is a hostile [[mini-boss]] version of {{c|Esau}}.
+Dark Esau spawns 20 to 40 seconds after Tainted Jacob enters a new floor, emerging from a crack in the ground, in his wake creating a circle of damaging flames around him.
+
+Dark Esau continuously pursues Tainted Jacob by floating towards him, speeding up when further away and slowing down to a near standstill when within a fixed distance. If Tainted Jacob remains within that fixed distance for a short period of time, Dark Esau will perform a fiery charge attack in which he will pause for a brief moment with a sound cue before rushing towards him, damaging any enemies in his path.
+
+{{i|Anima Sola}}'s targeting always prioritizes Dark Esau. When released, Dark Esau immediately charges towards Tainted Jacob's current position.
+
+Using Anima Sola in a room with no enemies will immediately spawn Dark Esau without exhausting the item's charge, bypassing the usual wait period before spawning.
+
+Dark Esau's position at all times is determined by his position relative to the general layout of the floor, meaning he persists in the same location even when Tainted Jacob moves through rooms. Entering a new room cancels Esau's charge if he was preparing one or frees him if he was bound by Anima Sola.
+
+Dark Esau is impervious to damage and cannot be killed, but can block enemy projectiles.
+
+Dark Esau is able to damage enemies as well as Tainted Jacob in the following ways:
+
+* Creates 12 rings of 8 flames when spawning, each dealing 6 damage to enemies they hit, dealing anywhere between 6-576 damage depending on how close they are to him. These flames can be blocked by obstacles.
+* Deals 30 contact damage per tick to enemies and pushes them (60 damage per second).
+* Deals an extra 10 damage per tick to enemies and inflicts [[Status Effects#Burn|Burning]] on them when leaving a flame trail while charging at Tainted Jacob (300 damage per second).
+** Dark Esau's charge also ignores [[Damage Scaling|Boss Armor]].
+
+== Strategy ==
+Throughout the majority of a run, Tainted Jacob is harassed by Dark Esau with no intended way of permanently getting rid of him. Because of this, playing as Tainted Jacob requires the player to manage both the playable Jacob and his vengeful brother Esau.
+
+* Using {{i|Anima Sola}} is key to success for Tainted Jacob, as it can help prevent damage from Dark Esau or turn him into a powerful weapon against enemies.
+* In the {{S|Mines}}, Tainted Jacob can intentionally run into Dark Esau in order to abuse the mechanics of The Lost form (specifically Flight in an area which normally removes any previous sources of flight you may have attained) to quickly and easily acquire the {{I|Knife Piece 2}} with a rapid and flight-assisted escape if you are attempting to reach the {{S|Corpse}} to defeat {{E|Mother}}.
+** Typically, the escape path would become excessively difficult due to both {{E|Mother's Shadow}} and Dark Esau attempting to charge at you in intervals which are typically out of sync, making it very difficult to escape without taking damage or potentially dying.
+** By remaining in The Lost form, this also allows you bypass the damage which would normally be required to enter the door in order to advance to {{S|Mausoleum}} / {{S|Gehenna}}.
+** It is recommended to fully clear the floor first, as Tainted Jacob remains in The Lost form until the next floor is reached.
+* While in his Lost form, Tainted Jacob can take Devil Deals in the same way as the Lost. At the end of each floor with a Devil Deal spawn, it is possible to intentionally have Dark Esau turn Tainted Jacob into The Lost form in order to receive free Devil Deals.
+* Items and transformations that give you flight ({{tf|Guppy}}, {{tf|Beelzebub}}, {{tf|Seraphim}}, and {{tf|Leviathan}}) to be able to more easily dodge Dark Esau in rooms with pits and rocks, and/or spectral tears (quicker room clears with obstacles plus can cheese obstacle mechanics with Dark Esau) can help quickly clear rooms and avoid the brother's attacks.
+* {{t|Perfection}} is '''''not''''' lost upon getting hit by Dark Esau.
+* It can actually be quite risky to take {{i|Birthright}}. Each Dark Esau can charge in a different direction than the other, which ultimately increases your chances of getting hit by one of them.
+
+=== Dark Esau ===
+===== Defense =====
+Dark Esau himself should be respected. Being touched a single time by Dark Esau has a high chance of leading to a run's end by putting Jacob in his fragile Lost state for the remainder of a floor.
+
+* Dark Esau deals no contact damage to Jacob while chained down with Anima Sola.
+* Dark Esau's touch effect can be avoided while [[Temporary Buffs|shielded, invulnerable]], or otherwise immune to damage (such as with {{I|Holy Mantle}} or {{I|Gnawed Leaf}}).
+* Dark Esau keeps a consistent distance from Jacob, and will only charge if he is within this distance. Dark Esau will never actually be able to touch Jacob unless he starts his charge animation, charges, or Jacob runs into him.
+** As such, running from and maintaining enough distance from Dark Esau will prevent him from charging.
+** In some cases such as being next to an obstacle, Dark Esau will stop moving within the prop and will be unable to charge until Jacob moves away from it.
+** Dark Esau will only charge at Jacob once he enters his cardinal line of sight. Dark Esau will not charge at Jacob if he is positioned diagonally from him, even if Jacob is standing still.
+* Dark Esau's position at all times is determined by his position relative to the general layout of the floor, meaning he persists in the same location even when Tainted Jacob moves through rooms. Entering a new room cancels Esau's charge if he was preparing one or frees him if he was bound by Anima Sola.
+** Caution should be taken when moving between rooms where Dark Esau is near the doorway, as this may lead to a situation where Tainted Jacob immediately runs into Dark Esau.
+** Teleporting a great distance or traveling quickly through rooms with the help of special items or a high speed stat makes it harder for Dark Esau to catch up to Jacob.
+** If Dark Esau is in the process of traveling between rooms, it is possible to use Anima Sola to chain him outside of the current area Tainted Jacob is in.
+* As Dark Esau takes time to respawn after entering a new floor, the first few seconds on every floor can be used to explore rooms freely.
+* Dark Esau will not charge at Jacob if he eats a Paralysis [[Pills|Pill]].
+
+===== Offense =====
+Considering the damage Dark Esau can deal to enemies and the fact that Anima Sola can be canceled early by using it a second time, Dark Esau can become a powerful, albeit dangerous weapon to use against enemies by positioning Tainted Jacob in ways that manipulate him into charging into enemies. This is further compounded, as his charge attack ignores [[Damage Scaling|Boss Armor]].
+
+* Anima Sola can be used in an empty room to instantly summon Dark Esau in order to use him advantageously.
+** Dark Esau's charge is able to single-handedly kill most early bosses in one or two hits. He can also be held in place with Anima Sola to bait chasing enemies, as Jacob can stand behind Dark Esau and cause them to run into him.
+* In [[Greed Mode]], Anima Sola will always be charged at the beginning of a new wave. This can be taken advantage of by binding Dark Esau before a new wave begins and then letting him charge into a freshly spawned enemy group or a priority enemy like a [[Monsters#Champions|champion]]. Since releasing Dark Esau manually does not consume the item charge, the item will still be available to restrict him again immediately afterwards.
+* Dark Esau's charge will extinguish {{e|Fire Place}}s.
+* Dark Esau cannot damage [[Status Effects|friendly]] enemies.
+* When Dark Esau charges while in [[Status Effects|fear]], he charges away from Tainted Jacob.
+
+===== Co-Op Mode =====
+* Dark Esau cannot affect other players and ignores them completely.
+** {{dlc|nr+}} If multiple players are playing Tainted Jacob, then any Tainted Jacob who touches any Dark Esau will still be turned into a ghost or die. Tainted Jacob players will only be able to use Anima Sola on their own Dark Esau, and if one of the Tainted Jacobs is completely killed, both Dark Esaus will begin to target the one that is still living.
+** {{dlc|nr+}} When Tainted Jacob completely dies and is turned into a small ghost baby as a Co-Op partner, Dark Esau will still follow the ghost of Tainted Jacob if no other Tainted Jacob players are in the match, allowing them to still use him as a high damage weapon to help their teammates.
+** {{dlc|r+}} Dark Esau will no longer deal damage to enemies or charge at the ghost of Tainted Jacob until he is revived.
+* If Tainted Jacob was turned into his ghostly form by Dark Esau, then dying and being revived upon completion of the boss will have him revive as his ghostly form.
+** {{dlc|nr+}} If Tainted Jacob is dead at the start of a floor, Dark Esau will still spawn, but will target one of the living players instead. Unless they are also playing Tainted Jacob, he will never hurt them outside his spawning animation.
+** {{dlc|r+}} If Tainted Jacob is dead at the end of a floor, he will respawn at the start of the next floor.
+
+===== Notes =====
+* Dark Esau is considered a [[Bosses|boss]].
+** Like every other "boss", Dark Esau can be spawned with [[Debug Console|debug commands]]. However, if playing as someone other than Tainted Jacob, the player will be immune to his attacks.
+*** {{c|Jacob}}, even in his normal non-tainted form, is an exception. When touched by Dark Esau, he will take damage, but will not turn into a ghost. {{c|Esau}}, like most characters, is still immune to Dark Esau.
+* When the console command "<code>restart 39</code>" is loaded, the player will be spawned as a ghostly version of Tainted Jacob. The only differences is that Dark Esau never seems to spawn and that this version of Tainted Jacob has the health of {{c|The Lost}}.
+
+== Item Interactions ==
+* {{I|Birthright}}: Dark Esau splits into two. Both Esaus will always charge at the same time, and one will not charge if the other is not in position. Using {{i|Anima Sola}} chains both Dark Esaus at once and forces them together into one spot. Subsequent uses of Anima Sola release each Dark Esau one at a time. Anima Sola's recharge time is reduced to 10 seconds, and chain duration is increased to 6.67 seconds.
+* '''Health Ups''' (eg; {{i|Breakfast}}): Tainted Jacob will still receive the additional health, even in his Lost form.
+** This also applies to health down items as well, such as {{I|Dead Cat}}.
+** However, Health Down pills turn into Health Up pills while in Lost form.
+** Items that grant [[Health|broken heart containers]] such as {{i|Magic Skin}}, {{p|VI - The Lovers?}}, or {{i|Heartbreak}} will still add a broken heart container as normal, even while Jacob is in the Lost's form.
+* {{I|Dead Cat}}: If Tainted Jacob dies in the Lost form with this item, he will not regain the body back.
+* '''[[Tear Effects#Homing|Homing]]''' and most other targeting effects will not target Dark Esau despite him being an enemy. On-kill effect items will also activate if Dark Esau kills enemies.
+* {{I|Cube Baby}}: Dark Esau can also "kick" the baby into enemies.
+* {{I|Strawman}}: Dark Esau ignores and does no harm to Strawman. Strawman can also walk through Dark Esau.
+* {{I|Angry Fly}}: Will chase only Dark Esau whenever possible.
+* {{I|Car Battery}}: Anima Sola will spawn 2 sets of chains. The second set will either tie up another enemy or if no other enemies are present it will tie up Dark Esau for twice as long. Using it again will unchain whichever enemy is closer to Tainted Jacob first, adding another factor to keep track of if using Dark Esau offensively.
+
+=== Favored Items ===
+* {{I|9 Volt}}: Reduces the charge time of Anima Sola by half, giving the player much better control of Dark Esau.
+** In addition, {{I|Gello}} will be very useful in this case since it will fully charge after clearing the room and can be used in each room; allowing you to focus more on dodging rather than aiming.
+* {{I|Athame}} /{{I|Vasculitis}} /{{I|Bone Spurs}}: Killing enemies with Dark Esau also triggers the effect.
+* {{I|The Battery}}: Anima Sola will hold an extra charge making it available for use more often.
+* {{I|Belly Jelly}} /{{I|Infamy}}: The chance to avoid damage still applies to Dark Esau, potentially saving Jacob from death/being turned into the Lost.
+* {{I|Glowing Hourglass}}: Returns Jacob to his regular form if he was turned into the Lost in the actual room.
+* {{I|Gnawed Leaf}}: Allows Jacob to stand still and let Dark Esau do all of the work for him.
+* {{I|Holy Mantle}}: Block attacks from Dark Esau and also protects Tainted Jacob in his Lost form.
+* {{I|How to Jump}}: Can be used to jump over Dark Esau.
+* {{i|Pause}}: Stopping time while Dark Esau is charging through an enemy will cause him to constantly damage it via contact until the effect wears off.
+* {{I|Punching Bag}}: When Dark Esau spawns, he will aggro to the closest of Punching Bag or Jacob. So long as Anima Sola is not used, he will never re-target Jacob, making him endlessly attempt to kill the Punching Bag until the next floor, where he will target whomever is closest upon spawning.
+* {{I|Satanic Bible}}/{{t|Devil's Crown}}: Allows Jacob to intentionally turn into his Lost form to receive free Devil Room items every floor.
+* {{t|Sigil of Baphomet}}: Kills made by Dark Esau will also trigger a temporary shield.
+* {{I|Stop Watch}}: Dark Esau is slowed by this item, making him easier to dodge and outrun.
+* {{I|Unicorn Stump}}: Provides temporary invincible each room, which also provides a chance to use Anima Sola in offensive way safely.
+* {{I|Ventricle Razor}}: Entering portals created by this item while Dark Esau is charging will immediately interrupt the charge.
+* {{I|Book of Shadows}}: Makes Jacob immune to Dark Esau attacks for the duration of the shield.
+Any items part of a [[transformation]] that grants flight, like {{tf|Guppy}}, {{tf|Beelzebub}}, {{tf|Seraphim}}, and {{tf|Leviathan}}, and any items that give flight in general, like {{I|Fate}}, {{I|Dead Dove}}, or {{I|Lord of the Pit}}. This will make it easier to dodge and reduces chances of being stuck on restrictive paths.
+
+=== Disfavored Items ===
+* {{I|Book of Virtues}}: The wisps generated from {{I|Anima Sola}} will target Dark Esau, despite his invincibility.
+* {{i|Vasculitis}}: Enemies killed by Dark Esau release fire tears which can explode and deal accidental damage to Jacob.
+* {{I|Epiphora}}: Jacob will have to be constantly moving because of Dark Esau, making it near impossible to stay and fire in one direction for the increased tears.
+* {{I|Isaac's Heart}}: Dark Esau no longer kills Jacob if he touches his body, but contact with the heart will. This makes it far easier to die since both Isaac's Heart and Dark Esau's default positions are behind Jacob, causing them to collide very frequently.
+* {{I|Lost Soul}}: The soul can be killed by Dark Esau, making it very difficult to keep it alive.
+** This can be somewhat mitigated with {{I|BFFS!}}, which grants the Lost Soul a shield.
+
+== Unlockable Items ==
+{{achievement text | RC Remote, The Sun and the Moon, Soul of Jacob and Esau, Golden Trinket, Anima Sola, Found Soul, Esau Jr. }}
+
+== Gallery ==
+<gallery>
+File:Transition_Jacob_Tainted.png|Tainted Jacob's transition screen portrait.
+File:Transition_Jacob_T_DarkEsau.png|Dark Esau's transition screen portrait. (unused)
+File:Start_Tainted_Jacob.png|The spawn floor when playing Tainted Jacob.
+File:Tainted_Jacob_App2.png|Tainted Jacob's ghostly appearance.
+File:Darker_Esau.png|The second Dark Esau after he splits into two after picking up Birthright.
+File:Tainted_Jacob_Menu_Icon_(Locked).png|Tainted Jacob's locked character icon, depicting a closet doorway wrapped in chains.
+File:Tainted Jacob Concept Art.png|Concept art of Tainted Jacob and Dark Esau.
+File:Dark Esau Dev Sketches.png|Concept art of Dark Esau by Edmund McMillen.
+</gallery>
+
+== Trivia ==
+* Dark Esau may be based on a story in the Book of Genesis, in which Esau attempts to kill Jacob after both Jacob and their mother tricked their father Isaac into giving Jacob a blessing intended for Esau, resulting in Jacob fleeing from Esau's wrath.
+** This is also further backed up by Tainted Jacob's unlock achievement name, "The Deserter."
+** This is also supported by Tainted Jacob's {{i|Birthright}} effect, which benefits Dark Esau more than Jacob himself. The Birthright was originally intended for Esau.
+** Tainted Jacob unlocks both {{P|XIX - The Sun?}} and {{P|XVIII - The Moon?}}, this is a reversal of {{C|Jacob and Esau}} as his radiance disappear along with Esau's misery for no longer being Jacob's slave, as now Esau is the eternal tormentor of Jacob, Jacob fulfills both the misery of the reverse Sun and the instability and terror of the reverse Moon.
+* Dark Esau is referred to as "The Revenant" in his ''Four Souls'' card.
+** A Revenant is a spirit that has come back from the dead to enact their revenge on somebody that has wronged them. This fits as Dark Esau is a demon trying to kill Jacob for stealing his birthright and blessing from their father Isaac.
+* Anima Sola targeting Dark Esau may be referring to Genesis 27:40 where Isaac tells Esau that he will live by the sword and serve his brother, but throwing his yoke from his neck when grown restless.
+* The item description which appears when obtaining {{I|Birthright}} as Tainted Jacob may be a reference to a story in Genesis, where Esau sells Jacob his birthright for stew.
+* Dark Esau's behavior is similar to that of {{E|Mother's Shadow}}.
+* Prior to v1.7.5, Dark Esau had a health bar. Upon death, he would be dragged into a pit by {{E|Big Horn}} and create a {{i|Mama Mega!}}-like explosion that would turn Tainted Jacob into his Lost form.
+** He can now only be killed via the [[Debug Console]] and will have the effect, but this won't turn Jacob into his Lost form.
+* Dark Esau still shows that he has 250 Hp in the bestiary despite after v1.7.5 he is invulnerable and does not have any health.
+
+{{nav|character|mini-boss|jacob and esau unlock|tainted jacob unlock|fr=Jacob Impur}}

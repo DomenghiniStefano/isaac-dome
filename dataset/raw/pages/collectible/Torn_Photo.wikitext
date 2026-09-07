@@ -1,0 +1,22 @@
+{{infobox passive collectible
+ | id          = 341
+ | quote       = Tears + shot speed up
+ | description = +0.7 [[tears]], +0.16 [[shot speed]].
+ | quality     = 3
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.7 [[tears]].
+* +0.16 [[shot speed]].
+
+== In-game Footage ==
+{{#ev:youtube|EgutvjLG1fE}}
+
+== Trivia ==
+* The item sprite appears to be a picture of Isaac and his mother torn where his father is assumed to be.
+** The Torn Photo can also be seen in [[Ending]] 20.
+
+{{nav}}

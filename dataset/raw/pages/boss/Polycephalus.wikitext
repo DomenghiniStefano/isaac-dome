@@ -1,0 +1,46 @@
+{{infobox boss
+ | name        = Polycephalus
+ | id          = 269
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|challenge}}{{room|boss challenge}}{{room|Boss Rush}}<br>{{dlc|r}}<br>{{floor|Catacombs}}<br>{{room|challenge}}{{room|Boss Rush}}<br><u>Double Trouble</u><br>{{floor|Caves}}<br><u>Degraded Boss</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Corpse}}<br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 200
+ | pool        = {{ip|Boss}}<br> {{i|Giant Cell|r+}} (1% chance)
+}}
+
+'''Polycephalus''' is a [[boss]] that can appear:
+* {{Dlc|nr}} In the {{s|Catacombs}} and the {{s|Flooded Caves}}.
+* {{Dlc|r}} Only in the {{s|Catacombs}}.
+
+== Behavior ==
+Polycephalus burrows underground when Isaac is not within range. While burrowed he becomes invincible and follows Isaac's movements. When close to Isaac, he pops out and performs one of the following attacks:
+* Sprays out a cluster of projectiles towards Isaac, similar to {{e|Monstro}}, but more drawn out.
+* Fires a spread of 3 projectiles at Isaac.
+* Shoots out 8 projectiles in all directions.
+* Summons a {{e|Round Worm}}.
+He will stay vulnerable for a few moments after performing an attack before quickly burrowing underground again.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|1|dlc=a}}: Summons {{e|Para-Bite}}s instead of Round Worms. All projectile attacks are replaced with a ring of six projectiles.
+: {{bc|20|dlc=a}}: Two Polycephaluses, each with 50% HP (100), replace the normal Polycephalus. They do not spawn Round Worms.
+
+== Gallery ==
+<gallery>
+File:Boss polycephalus red ingame.png|Red Champion Polycephalus.
+File:Boss polycephalus pink ingame.png|Pink Champion Polycephalus.
+File:Boss Delirium Polycephalus ingame.png|Polycephalus as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Trivia ==
+* {{e|The Stain}} is his posthumous version, who also shows up in [[Chapters#Chapter 2|Chapter 2]]. Polycephalus is one of four bosses to have their posthumous version in the same chapter, the others being {{e|Gemini}} having {{e|Blighted Ovum}} in [[Chapter 1]], {{e|Chub}} having {{e|Carrion Queen}} in Chapter 2 and the {{e|Tuff Twins}} having {{e|The Shell}} in [[Chapters|Chapter 2.5]].
+** {{dlc|nr}} However, Polycephalus is the only one of them to have their posthumous version in the same environments as well, sharing both the {{s|Catacombs}} and the {{s|Flooded Caves}} with The Stain. The only difference is that The Stain can appear in {{s|Caves}} as well, where Polycephalus cannot.
+*** {{dlc|r}} This is no longer the case as of [[Repentance]], since Polycephalus no longer appears in the Flooded Caves while The Stain no longer appears in The Catacombs.
+**** This makes Polycephalus the only boss whose posthumous variation is more likely to be encountered than its normal variation, since it can only be encountered in the Catacombs, whereas the Stain can be encountered in the Caves and Flooded Caves.
+* [[Wikipedia:Polycephaly|Polycephaly]] is the condition of having more than one head.
+* Polycephalus shares his name with a [[Wikipedia:Echinocactus polycephalus|cactus]].
+* Polycephalus is one of the four bosses that can be spawned by {{e|It Lives!}}, the other three being {{e|Chub}}, {{Dlc|r}}{{e|Fistula}} and {{e|Teratoma}}.
+* {{dlc+|na+}} Prior to [[Booster Packs#Booster Pack #5|Booster Pack #5]], Red Champion Polycephalus could spawn {{e|Scarred Para-Bite}}s if he was fought in the {{s|Scarred Womb}}.{{dlc-}}
+
+{{nav|boss|fr=Polycéphale}}
+[[Category:Chapter 2 bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Rebirth]]

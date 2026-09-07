@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 675
+ | quote       = Shards of knowledge
+ | description = Unlocks doors and reveals a random room on the map when Isaac takes damage.
+ | quality     = 1
+ | tags        = nolostbr summonable
+ | unlocked by = Cracked Orb
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Upon taking damage, activates the following effects:
+** Unlocks all locked doors in the room (doors that need the room to be cleared are not affected).
+** Opens the {{R|Secret Room}} and the {{R|Super Secret Room}} if adjacent to the room you are in.
+** Reveals a random unmapped room on the floor.
+** Destroys all [[tinted rock]]s and rocks with {{R|Crawl Space}}s in the room.
+
+== Notes ==
+* The effect is able to reveal the {{R|Ultra Secret Room}}.
+* The unlocking effect is able to open:
+** The golden door to {{E|Mega Satan}};
+** Doors leading to {{s|Downpour}} / {{s|Mines}} / {{s|Mausoleum}};
+*** Since opening the door to {{s|Mausoleum}} requires taking damage, Cracked Orb will immediately open it, effectively halving the cost.
+** The entrance to the {{E|Mom's Heart}} fight in the {{s|Mausoleum}} and {{s|Gehenna}};
+** {{A|A Strange Door}}.
+* The effect will not open the doors to:
+** {{r|Challenge Room}} from the outside;
+** Regular doors in {{s|Chest}} / {{s|Dark Room}}.
+** {{R|Boss Rush}} / {{S|???}} doors even after the fight.
+** Greed mode
+* Taking damage while inside a {{r|Secret Room}} will open all its entrances, even if they lead to {{r|Challenge Room}}s and are barricaded after {{e|Greed}} / {{e|Super Greed}} encounter.
+
+== Synergies ==
+* {{i|Dog Tooth}} / {{t|Shiny Rock}} / {{i|YO LISTEN!}}: Makes it extremely easy to destroy tinted rocks and enter Crawl Spaces.
+* {{i|Dull Razor}}: Allows the player to benefit from the item without taking actual damage.
+* {{i|Book of Secrets}} / {{i|The Mind}} / {{i|Blue Map}} / {{i|Treasure Map}} / {{i|The Compass}}: Having more rooms already discovered makes Cracked Orb more likely to reveal the ultra secret room.
+* {{p|XIV - Temperance}}: Allows the player to spawn a source of damage, making it easier to access rooms such as the entrance to {{E|Mom's Heart}} and {{E|Mega Satan}}'s door when lacking bombs or being immune to explosive damage.
+
+{{nav|eve unlock|the beast unlock|broken|fr=Orbe Fêlé}}
+[[Category:Damage-triggered items]]

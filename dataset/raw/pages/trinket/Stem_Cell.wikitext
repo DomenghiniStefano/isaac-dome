@@ -1,0 +1,31 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 119
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = Regen!
+ | description = {{Dlc|nr}} Heals Isaac for a {{E|Half Red Heart}} upon traveling to the next floor.<br>{{Dlc|r}} Heals 50% of Isaac's empty {{E|Red Heart}} containers upon traveling to the next floor.
+ | unlocked by = Stem Cell
+}} {{disambig msg|the trinket|the item|Stem Cells}}
+
+{{cit|ut|a+}}
+
+== Effect ==
+* {{dlc|nr}} Heals for a {{E|Half Red Heart}} upon traveling to the next floor.
+* {{dlc|r}} Heals 50% of Isaac's empty {{E|Red Heart}}s and {{E|Bone Heart|n}}s (rounded down), but at minimum a half heart, upon traveling to the next floor.
+
+== Synergies ==
+* {{i|Blood Oath|n}}: The healing will occur before any health is drained, allowing for a greater stat bonus.
+* {{i|Glowing Hourglass}}: Returning to a previous floor will keep the health gained from Stem Cell, as well as granting another half-red heart after going down to the next floor again.
+* {{C|Tainted Magdalene}}: Since all red heart healing is doubled, Stem Cell will bring her to full health.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Heals all empty red hearts upon entering a new floor.
+* {{C|Tainted Bethany}}: Adds 1 blood charge.
+
+== In-game Footage ==
+{{#ev:youtube|pNejBk0KfWE}}
+
+== Trivia ==
+* A Stem Cell is an undifferentiated cell of a multicellular organism that is capable of giving rise to indefinitely more cells of the same type, and from which certain other kinds of cells arise by differentiation.
+
+{{nav|samson unlock|ultra greedier unlock|fr=Cellule Souche}}

@@ -1,0 +1,50 @@
+{{infobox activated collectible
+ | dlc         = a
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 427
+ | quote       = Booom!
+ | description = Places a {{E|Movable TNT}} barrel that can be pushed and used to destroy rocks or damage enemies. If used again in the same room while the previous TNT barrel is still intact, remotely detonates the TNT.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = 1
+}}
+
+{{cit|a|a}}
+
+== Effect ==
+* Upon use, spawns a {{E|Movable TNT}}.
+* If used a second time while the created TNT is still active, it will explode. {{dlc|nr}} This will consume a charge to remotely detonate the TNT instead of creating another TNT.
+** {{dlc|r}} The remote detonation can be used while the item is uncharged.
+
+== Notes ==
+* {{dlc|r}} The Movable TNT has a unique cubic appearance, but it functionally identical to a regular Movable TNT.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns one glowing green wisp that cannot take or deal damage in any way, and bounces around the room in a random direction, instead of following Isaac. If the wisp is shot by Isaac or his familiars, it explodes, dealing 100 damage to nearby enemies. The wisp does not persist between rooms. Explosions and enemy shots do not detonate it, and the wisps' explosions are unaffected by {{I|BFFS!}} and bomb synergies.}}
+
+== Interactions ==
+* {{i|120 Volt}}: The TNT is spawned and may be instantly hit by 120 Volt's electric shock, which usually wont detonate it unless Isaac is near some enemies.
+* {{C|Tainted Magdalene}}: Tainted Magdalene may immediately attempt to hug the TNT upon holding it up, instantly detonating it and dealing damage to her.
+* {{dlc|na+}} {{i|Car Battery}}: The TNT will be spawned and then instantly explode, dealing a full heart of damage.
+** {{dlc|a+}} Spawns two TNT barrels instead.
+* {{i|Midas' Touch}}: Occasionally spawns a golden TNT barrel which turns into a regular movable TNT after 3 seconds. While in its gold state, Isaac cannot collide with the barrel nor push it, although it can be pushed by enemies. In some cases, the golden barrel will explode immediately after spawning, dealing damage to Isaac. Apart from that, it doesn't give any benefits.
+* {{i|Spider Mod}}: The TNT can be inflicted with a random [[Status Effects|status effect]] if the spider comes into contact with it.
+
+== In-game Footage ==
+{{#ev:youtube|eCQYt2wlggc}}
+
+== Gallery ==
+<gallery>
+file:Mine Crafter TNT.png|{{dlc|r}} Mine Crafter TNT in-game.
+</gallery>
+
+== Trivia ==
+* This item's name is a reference to the game [[wikipedia:Minecraft|Minecraft]] created by Mojang.
+** [[minecraft:TNT|TNT]] is a craftable explosive block in Minecraft that is red and cubed. When lit up by the fire, fire setting objects, or certain redstone currents, it would eventually explode, damaging nearby blocks and entities. However, it doesn't share many similarities with the Mine Crafter pickup item or TNT in the Binding of Isaac.
+** {{dlc|r}} Mine Crafter also physically resembles a TNT block from ''Minecraft''.
+
+== Bugs ==
+{{bug|dlc=na+|Using this item during the {{e|Mega Satan}} fight will cause a soft lock since an exploded barrel counts as an enemy that needs to be defeated before the fight can continue.}}
+{{Bug|dlc=r|Placing the TNT under the effects of {{i|Venus}} or {{i|2Spooky}} will tint it as if it were applied the corresponding status effect. It is purely visual and will fade after a while.}}
+
+{{nav|fr=Bloc de TNT|zh=工矿炸药包}}

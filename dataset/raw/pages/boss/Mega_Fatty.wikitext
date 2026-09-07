@@ -1,0 +1,48 @@
+{{infobox boss
+ | name        = Mega Fatty
+ | image       = Boss Mega Fatty ingame.png
+ | id          = 264
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Caves}}<br>{{room|boss challenge}}{{room|boss rush}}<br>{{dlc|r}}<br>{{floor|Caves}}{{floor|Flooded Caves}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{dlc|a}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>(With [[Pin]])<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br><u>Degraded Boss</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}
+ | base hp     = 600
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Thunder Thighs}} (1% chance)
+}}
+
+'''Mega Fatty''' is a [[boss]] that can appear:
+* {{Dlc|nr}} Only in the {{s|Caves}}.
+* {{Dlc|r}} In the {{s|Caves}} and the {{s|Flooded Caves}}.
+
+== Behavior ==
+* Leaps off-screen and tries to land on Isaac's position, leaving a large puddle of [[Creep#Red Creep|Red Creep]] upon landing.
+* Slides briefly towards Isaac and performs a short-range jump, also leaving Red Creep when he lands.
+* Inhales, drawing in Isaac and any monsters towards him, before then vomiting upwards, unleashing a barrage of projectiles into the air. The projectiles will rain down for a short duration, following Isaac's movements.
+* Farts, which can damage Isaac if he's too close, and will either:
+** Summon 1-3 {{e|Dip}}s.
+** Unleash a cluster of either small or big projectiles behind him, similar to {{e|Monstro}}.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|23|dlc=a}}: Has 15% more HP (690). He will not use his vomit attack and sends out rock waves instead of leaving Red Creep upon landing when performing the long-range jump, similar to {{e|The Cage}}.
+: {{bc|1|dlc=a}}: 33% smaller and has 10% less HP (540). Shoots 6 bullets instead of leaving Red Creep upon landing. Creates {{E|Red Poop}} instead of Dips. Vomit attack sends out four projectile stream attacks in a pattern similar to {{e|Mom's Heart}}/{{e|It Lives!}}. {{dlc|nr+}} Due to the high tear height of the vomit attack projectiles, it is nearly impossible to get hit by them.
+
+== Gallery ==
+<gallery>
+File:Boss Mega Fatty brown ingame.png|Brown Champion Mega Fatty.
+File:Boss Mega Fatty red ingame.png|Red Champion Mega Fatty.
+File:Boss Delirium Mega Fatty ingame.png|Mega Fatty as one of {{e|Delirium}}'s forms.
+File:Boss Mega Fatty Unused ingame.png|An [[Cut Content#Cut Afterbirth .E2.80.A0 Content|unused]] sprite for Mega Fatty found among the Room Editor icons.
+File:Rebirth Boss Concepts.jpg|Concept art for Mega Fatty on the top middle and top right, along with other Rebirth boss concept arts.
+</gallery>
+
+== Notes ==
+* {{i|Lost Contact}} will still block all incoming projectiles from his barrage, even if they happen to go high enough to be offscreen.
+
+== Trivia ==
+* He is the boss version of the {{e|Fatty|text=Fatties}}.
+* {{E|The Cage}} is the posthumous version of Mega Fatty.
+* The picture of Mega Fatty on [[Isaac's last will]] closely resembles the unused variant.
+
+{{nav|boss|fr=Rondouillard}}
+
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Rebirth]]

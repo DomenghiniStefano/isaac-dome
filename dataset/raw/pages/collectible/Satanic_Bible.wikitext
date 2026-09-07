@@ -1,0 +1,67 @@
+{{infobox activated collectible
+ | id          = 292
+ | quote       = Reusable evil{{dlc|r|... but at what cost?}}
+ | description = Grants one {{e|Black Heart}}. {{dlc|r}} Replaces the [[Boss (Item Pool)|boss room item]] on the current [[floor]] with a [[Devil Deal]].
+ | quality     = {{dlcalt|4|r+=3}}
+ | tags        = {{dlc|nr+|nolostbr}} book {{dlc|r+|offensive}}
+ | recharge    = 6
+ | devil price = 2
+ | unlocked by = Satanic Bible
+}}
+''Not to be confused with {{I|The Book of Belial}}.''
+
+{{cit|ua}}
+
+== Effects ==
+* Gives one {{E|Black Heart}}.
+* {{dlc+|r}} Once used, the boss for the [[floor]] will drop a [[Devil Room#Deals with the Devil|Devil Deal]] instead of a {{ip|Boss|text=Boss Room item}}. This item must be paid for with hearts and will prevent {{r|Angel Room}}s from generating under most circumstances if taken, just like a normal Devil Deal.
+** This does not affect {{i|The Polaroid}}, {{i|The Negative}}, or {{i|Dad's Note}}.{{dlc-}}
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+* If taking a Deal leaves Isaac with no health remaining, he can still survive by taking the Deal and then activating Satanic Bible, which will leave him at 1 black heart. This will only work if the Deal is a passive item, as trading Satanic Bible with an active item will make you unable to use it. This does not work while picking up Satanic Bible as the devil deal.
+* {{dlc+|r}} Bosses with set drops aside from {{E|Mom}} will still drop their normal item, but at the cost of one [[Heart Container]].{{dlc-}}
+* {{dlc+|r}} On XL floors, both items will become Devil Deals, even if Satanic Bible was only used once.{{dlc-}}
+* {{dlc+|r}} {{c|The Lost}}, {{c|Tainted Lost}}, and {{c|Tainted Jacob}} in his ghost form can safely take any {{r|Boss Room}} item pedestals and it has no effect on subsequent devil deals.
+** This also applies to the Lost form granted by the white fire on {{s|Downpour}} / {{s|Dross}} II. Taking a deal in this form will not remove hearts, making the player able to get at least 2 {{r|Devil Room}} items for free on that floor.
+** This does not affect the items dropped on {{s|The Void}}.{{dlc-}}
+* {{dlc+|r}} Using the Satanic Bible changes the Boss Room's item pool to the {{ip|Devil Room|text=Devil Room item pool}} for purposes other than direct boss rewards as well. This works even if the boss does not normally drop items, such as {{E|Mom}}, {{E|Satan}}, or {{E|???}}.
+** Rerolls such as {{i|The D6}}, {{p|Perthro}}, or {{p|Soul of Isaac}} will generate {{r|Devil Room}} items.
+** Using Satanic Bible ''after'' the Boss Room item has spawned, followed by any reroll, causes the new item to be drawn from the Devil Room item pool, but it will have no heart cost. Taking this item will not prevent Angel Rooms from spawning.
+** In the {{s|The Void}}, the initial item spawn from a non-{{E|Delirium}} boss room will be from a random pool as expected, but rerolls will be drawn from the {{ip|Devil Room|text=Devil Room pool}} without any heart cost.{{dlc-}}
+* {{dlc+|r}} In True Co-op, the pedestal's additional items will also be Devil deals, but be drawn from the Boss item pool. If the Devil Deal is an active item, there will be no additional items.{{dlc-}}
+** {{dlc+|r+}} If the Devil Deal is an active item, the next item will spawn on a pedestal instead of being a Devil Deal.{{dlc-}}
+* {{dlc+|r}} Using Satanic Bible on {{s|Downpour}} / {{s|Dross}} II will affect the [[Mirrored World]] Boss drop.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns black wisps in the middle ring, looking like a red inverted cross. Each wisp increases the chances of {{R|Devil Room}} appearing by 10%.}}
+* {{i|Converter|r}}: Allows for generation of Heart Containers. ({{i|Schoolbag|r}} required)
+* {{i|Car Battery}}: Gives Isaac two black hearts.
+* {{p|Soul of the Lost}}: The Devil Deal can be taken for free.
+* {{dlc|r}} {{I|There's Options}}: 2 Devil Deals will be offered, but only one can be taken.
+* {{I|Coupon}}: The Devil Deal can be taken for free. {{I|Schoolbag|n}} is recommended.
+* {{i|Dream Catcher}}: If the floor boss is revealed to be one of the horsemen, and the player has no interest in the {{i|Cube of Meat}}, or doesn't mind paying health for it, Satanic Bible can be used early.
+
+== Interactions ==
+* {{I|Book of Revelations|r}}: The spawned {{i|Ball of Bandages}} or {{i|Cube of Meat}} will cost hearts like a normal devil deal.
+* {{I|Chaos|r}}: The item spawned will be chosen from a random [[item pool]] instead.
+* {{p|IV - The Emperor?}}: The extra boss room's reward is also transformed into a devil deal.
+* {{I|Genesis}}: The boss item is still a devil deal even after using Genesis.
+* {{I|Lemegeton}}: Will generate wisps from the [[Devil Room (Item Pool)|Devil Room item pool]] when used inside the {{r|Boss Room}} after Satanic Bible is used.
+* {{i|Redemption}}: Taking the boss's item when it's affected by {{i|Satanic Bible}} will remove the cross however the {{r|Boss Room}} can't give the cross.
+* {{I|Vanishing Twin}}: The second boss spawned will also drop an item from the [[Devil Room (Item Pool)|Devil Room item pool]] that must be paid for.
+* {{I|Vanishing Twin}} + [[Ascent]]: After using {{i|Satanic Bible}} If an Item spawned by Vanishing Twin is not bought with hearts it can be bought with coins during the Ascent.
+
+== In-game Footage ==
+{{#ev:youtube|tDyFg2_qqho}}
+
+== Trivia ==
+* The original ''[[wikipedia:Satanic Bible|Satanic Bible]]'' was written by [[wikipedia:Anton LaVey|Anton Szandor LaVey]], the founder of the Church of Satan.
+
+== Gallery ==
+<gallery>
+File:3DS_Detailed_Satanic_Bible.png|The icon of Satanic Bible as seen on the lower 3DS screen.
+File:Satanic_Bible_giantbook.png|Satanic Bible's splash image which appears when it's activated.
+</gallery>
+
+{{nav|azazel unlock|book|isaac boss unlock|fr=Bible Satanique}}

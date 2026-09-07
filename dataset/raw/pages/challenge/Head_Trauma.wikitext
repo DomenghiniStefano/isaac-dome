@@ -1,0 +1,40 @@
+{{infobox challenge
+ | number    = 3
+ | item      = {{i|Tiny Planet}}<br>{{i|Soy Milk}}<br>{{i|The Small Rock}}<br>{{i|Iron Bar}}
+ | has shops = yes
+ | unlocks   = Rune of Ehwaz
+}}
+
+'''Head Trauma''' is [[Challenges|challenge]] #3. {{c|Isaac}} starts with {{i|Tiny Planet}}, {{i|Soy Milk}}, {{i|The Small Rock}}, and {{i|Iron Bar}}. The goal is to defeat {{E|Mom}}. This challenge is unlocked by default.
+__TOC__
+
+== Difficulty ==
+* Tiny Planet and Soy Milk will make it very difficult to target enemies. Isaac will inflict only small amounts of damage, and increasing that damage will prove near impossible.
+* Iron Bar can also increase the difficulty as the unpredictable movement of confused enemies can make them harder to hit.
+* As Tiny Planet makes it impossible to predict how a tear will hit an enemy, it is much harder to prevent knocking an enemy into Isaac.
+
+== Strategy ==
+* Since targeting enemies is difficult, it may help to learn where Isaac's shots converge in front of him. Practice will be a big factor.
+* While it is possible to strike enemies directly behind Isaac, this has an increased chance of enemies being pushed towards Isaac.
+* Rapidly hitting left and right to shoot tears will cause a better spread of tears around Isaac and make it easier to hit enemies.
+* Bombs are much less effective in battle, as tears can erratically move them around the room before detonation. Bombs should not be used for any reason until all of Isaac's tears have disappeared.
+* Finding {{E|Krampus}} is highly valuable, as obtaining {{i|A Lump of Coal}} results in a significant damage increase since Isaac's tears spend a long time on screen.
+* Iron Bar can cause enemies to stop targeting Isaac while they're dazed, allowing some additional freedom of movement and extra time to improvise strategies.
+* Fear effects will make enemies much easier to target, as they will run in a straight line away from Isaac. This allows Isaac to drive them against a wall and target them as they become trapped.
+* Transforming into {{tf|Guppy}} is a great strategy due to the massive number of Blue Flies that are spawned as a result. It is possible to use this transformation to effectively triple Isaac's damage output.
+* It is possible to encounter an impossible room, due to enemies being too far away to reach with Tiny Planet. All rooms unlock by default after 2 minutes have passed.
+** {{t|Ring Worm}} causes tears to fly around uncontrollably but can make it easier to hit faraway enemies.
+* {{i|Polyphemus}} will turn tears into giant tears, effectively doubling damage without affecting Tears or Tear Speed.
+* {{i|Lost Contact}} will turn tears into massive shields that, combined with Tiny Planet, will make Isaac nearly completely invulnerable to ranged attacks.
+* {{i|Libra|nr}} will greatly boost Soy Milk's damage output.
+* {{dlc|na+}} Due to the severe damage lowering effect of Soy Milk, rerolling Isaac's passive items is a viable strategy. This makes the {{i|D4}}, the {{i|D100}}, {{i|Missing No.}} and 1 or 6 pip {{R|Dice Room}}s valuable.
+* {{i|Brimstone}} dramatically reduces the difficulty of the challenge. While overall damage is still low, it is far easier to aim, and it can be fired with no charge-up time.
+* {{i|Tractor Beam}} allows for a much greater degree of control over Isaac's tears, eliminating the difficulty provided by Tiny Planet.
+* Because of Isaac's high Tears stat, items that have a chance to cause harmful effects upon hit (such as {{i|Holy Light}}, {{i|Fire Mind}} or {{i|The Common Cold}}) are valuable.
+* {{i|Tear Detonator}} is extremely useful for this challenge. Detonating the tears around you will cause a huge amount of spiraling tears to linger around for a long time. This deals extremely high damage.
+* {{i|Technology Zero}} creates a large electric field that can quickly eliminate enemies stuck within it.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Rune of Ehwaz }}
+
+{{nav|challenge|fr=Trauma Crânien}}

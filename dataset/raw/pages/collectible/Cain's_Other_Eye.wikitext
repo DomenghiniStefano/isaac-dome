@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | id          = 319
+ | quote       = Near-sighted friend
+ | description = {{dlc|nr}} Spawns a [[familiar]] that slowly floats around the room on a zig-zag pattern and shoots normal tears in the same direction as Isaac.<br>{{dlc|r}} Spawns a [[familiar]] that follows Isaac and fires tears in random cardinal directions that copy Isaac's [[tears]] and [[tear effect]]s and scale with [[damage]].
+ | quality     = 2
+ | tags        = summonable offensive
+ | unlocked by = Cain's Other Eye
+}}
+
+''Not to be confused with {{t|Cain's Eye}}, {{i|Evil Eye}}, or {{i|Glaucoma}}.''
+
+{{cit|up}}
+
+== Effects ==
+* {{Dlc|nr}} Spawns a [[familiar]] that floats slowly around the room in a zig-zag pattern similar to {{i|The Peeper}} and shoots normal tears in the same direction as Isaac.
+** {{dlc|na}} Each tear deals 3.5 damage.
+** {{dlc|anr}} Each tear deals Isaac's damage.
+* {{Dlc|r}} Spawns a [[familiar]] that follows Isaac and copies all of his tear modifiers/stats (like {{I|Incubus|n}}), with a 25% [[damage]] reduction. It fires randomly in the cardinal directions.
+
+== Notes ==
+* Unlike {{i|The Peeper}}, Cain's Other Eye does no contact damage.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Cain's Other Eye having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+
+== Interactions ==
+* {{i|Analog Stick|r}}: The familiar will fire in completely random directions, not locked to the cardinal ones.
+* {{I|Epic Fetus|r}}: Cain's Other Eye gains a crosshair and rocket similar to Isaac's but smaller. Caution is required, as the crosshair is erratic and will constantly shake, possibly making the rocket hit Isaac.
+* {{i|Eye of the Occult}}: The familiar's tears travel a very short distance in their original direction and can be controlled afterwards.
+* {{I|King Baby|r}}: Cain's Other Eye will attempt to fire directly at enemies but only when they are on the same side as the random direction it is firing in.
+* {{i|Mom's Knife|r}}: The familiar will constantly swing its knife, trying to point it in the random direction it is firing in. When the fire button is released, the knife will travel in whatever direction it is pointing at the moment (it can be '''any''' direction, not necessarily a cardinal one).
+
+== In-game Footage ==
+{{#ev:youtube|3P6vBnDh06M}}
+
+== Trivia ==
+* This item is implied to be the damaged eye of {{C|Cain}} beneath his eyepatch.
+* Rather than deciding a random input when a tear is fired, the [[familiar]] will rapidly switch the direction it's facing at all times.
+** This effect is visible with {{c|The Forgotten}}, {{c|Tainted Forgotten}}, and other characters under the effects of {{I|Berserk!}}.
+
+{{nav|cain unlock|boss rush unlock|fr=Œil Gauche de Caïn}}

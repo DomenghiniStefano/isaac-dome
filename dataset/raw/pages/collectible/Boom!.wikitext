@@ -1,0 +1,24 @@
+{{infobox passive collectible
+ | id          = 19
+ | quality     = 0
+ | quote       = 10 bombs
+ | description = Grants 10 {{e|Bomb}}s.
+ | tags        = offensive
+ | pool        = Wrath
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants 10 {{e|Bomb}}s.
+
+== Notes ==
+* {{dlc+|r}} This item has a 1/7 chance to drop if {{e|Hornfel}} is killed in his second phase.{{dlc-}}
+* Effectively a much weaker version of {{i|Pyro}}, which grants 99 bombs instead of 10.
+* {{dlc+|r}} Can appear as a pedestal item when using the {{P|0 - The Fool?}} with 10 or more bombs in inventory. Multiple copies can spawn, depending on bomb quantity.{{dlc-}}
+* {{dlc|r}} No effect on {{C|Tainted ???}}. No extra poop pickups are granted.
+
+== In-game Footage ==
+{{#ev:youtube|wmS4CPpOseE||inline}} {{#ev:youtube|Vi3MII_ruXc||inline}}
+
+{{nav|bomb modifier|bomb|fr=Boum !}}

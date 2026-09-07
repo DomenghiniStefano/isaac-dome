@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 173
+ | quote       = {{dlcalt|You feel blessed|r=Blessing of purity}}
+ | description = Grants a chance of converting any {{E|Red Heart}} pickups that spawn into {{E|Soul Heart}}s instead. 
+ | quality     = 3
+ | tags        = summonable angel
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants {{dlcalt|50%|r=33%}} of converting any non-specific {{E|Red Heart}} pickups that spawn into {{e|Soul Heart}}, {{e|Black Heart}} or {{e|Bone Heart|n}} instead.
+* {{transformation contribution|Seraphim}}
+
+== Synergies ==
+* {{C|???}}, {{C|Tainted ???}}, {{C|Black Judas}}, {{C|Tainted Judas}}, and {{C|Tainted Forgotten}}: Decreases the chances of useless red heart drops, which these characters can't pick up.
+* {{C|Bethany}}: Sacrifices potential healing for more charges. Usefulness depends on active item.
+* {{C|Eve}}/{{I|Whore of Babylon}}: Decreases the chance of useless red heart drops when trying to maintain the half a heart (full heart on Eve) of red heart health required to keep Whore of Babylon's ability active.
+* {{C|Tainted Bethany}}: Sacrifices potential blood charges for more health. Overall, still a beneficial pickup.
+* {{C|Tainted Magdalene}}: Due to the "in your face" gameplay of Tainted Maggy, soul hearts will not be as useful up until the later floors.
+
+== Interactions ==
+* {{C|Keeper}}/{{C|Tainted Keeper}}: Nearly useless, since all hearts are converted into blue flies anyway. The only use is contributing to the Seraphim transformation.
+
+== In-game Footage ==
+{{#ev:youtube|JGHLLEt6pE8}}
+
+== Trivia ==
+* The [[wikipedia:Mitre|mitre]] is a bishop's ceremonial headdress.
+
+{{nav|seraphim}}

@@ -1,0 +1,30 @@
+{{infobox trinket
+ | dlc         = a
+ | name        = Store Key
+ | id          = 83
+ | quote       = Stores are open
+ | description = {{r|Shop}}s can be opened without using {{E|Key}}s.
+ | tags        = nogreed
+ | unlocked by = Store Key
+}}
+
+{{cit|ut|a}}
+
+== Effects ==
+* {{r|Shop}}s can be opened without using {{E|Key}}s.
+
+== Notes ==
+* Cannot appear in [[Greed Mode]].
+* {{c|Keeper}} starts with this trinket after he defeats {{e|Satan}}.
+* {{dlc|r}} This trinket is useless for {{c|Tainted Keeper}}, as all shops are always open for him.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Shops cannot be their lowest quality variants. If Isaac has both a golden trinket and the Box, shop quality is improved in general.
+
+== Interactions ==
+* {{i|Pay To Play}}: Overrides Store Key. Shops still require a coin to enter.
+
+== In-game Footage ==
+{{#ev:youtube|QjVk5lQVQoo||inline}} {{#ev:youtube|7ddld94eenY||inline}}
+
+{{nav|greed machine unlock|key|satan unlock|keeper unlock|fr=Clé du Magasin}}

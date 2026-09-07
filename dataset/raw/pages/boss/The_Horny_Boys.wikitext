@@ -1,0 +1,59 @@
+{{Infobox boss
+ | dlc         = r
+ | name        = The Horny Boys
+ | id          = 920
+ | environment = <u>Boss</u><br>{{floor|Gehenna}}<br>{{room|boss challenge}}
+ | base hp     = 707
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{t|The Twins}} (1% chance)
+}}
+'''The Horny Boys''' are a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in {{s|Gehenna}}.
+__TOC__
+== Behavior ==
+Floats randomly around the room and cycles between the following attacks in the following order:
+* Summons a {{e|Boom Fly}} orbited by 3 pink {{e|Eternal Fly Bomb}}s.
+* Juggles 3 bombs then throws them toward Isaac. Each bomb has a chance of having the {{i|Hot Bombs}} or {{i|Sad Bombs}} effect.
+* Chains together numerous consecutive tear patterns while gradually increasing the rate in which they are fired:
+** 4 cardinal projectiles.
+** 4 diagonal projectiles.
+** 4 cardinal projectiles.
+** 8 projectiles in all directions.
+** 12 projectiles in all directions.
+** 8 clusters in all directions, each contains 3 projectiles.
+** 10 projectiles in all directions, rotating counterclockwise.
+** 10 projectiles in all directions, rotating clockwise.
+** 4 diagonal projectiles.
+** 4 cardinal spreads, each contains 3 projectiles.
+** 4 diagonal spreads, each contains 3 projectiles.
+** 8 projectiles in all directions.
+** 4 diagonal spreads, each contains 5 projectiles.
+** 10 projectiles in all directions.
+** 8 projectiles in all directions.
+** 12 projectiles in all directions.
+** 12 projectiles in all directions.
+** 4 cardinal projectiles.
+** 4 diagonal projectiles.
+** This attack ends with Hornfel getting sick and vomiting out 3 fireballs that each extend in cardinal directions upon landing.
+* Teleports 3 times and throws out a short delay {{i|Brimstone Bombs}} Bomb each time.
+'''OR'''
+* Throws a {{i|Sad Bombs}} Bomb at their feet to create a smokescreen before rapidly teleporting to another location. This attack is repeated 5 times.
+
+== Trivia ==
+* They appear to be a conjoining of {{e|Hornfel}} and {{e|Loki}}.
+** Furthering this concept is that they appear to share attacks from both bosses.
+** Additionally, using {{i|Meat Cleaver}} against them splits them into their individual entities.
+*** Hornfel as a result, is in his 2nd phase, where he cries and attempts to retreat from Isaac, similar to when Isaac breaks his minecart as a {{s|Mines}} boss. He is unable to leave the boss room and may even step onto the spikes present in one of the boss arenas.
+*** Hornfel will only drop bomb pickups/items if Loki was killed first.
+** Their name in the boss VS screen also shows a bomb and a mark, representing both bosses.
+* In the [[Bestiary Repentance|Bestiary]], they are referred to as "Horny Boys".
+* According to Edmund, Hornfel and Loki are brothers.<ref>https://twitter.com/edmundmcmillen/status/1491311684144697345?t=HIqu902V3aUtJqXMP5Oz8A&s=19</ref>
+* Their name may refer to the term used for being sexually aroused, being "horny".
+* They are called "Horni Bois" in the game files.
+
+== References ==
+{{Reflist}}
+
+{{nav|boss|fr=Bis-Cornu}}
+[[Category:Bosses]]
+[[Category:Chapter 3.5 bosses]]
+[[Category:Gehenna bosses]]
+[[Category:Debut bosses in Repentance]]

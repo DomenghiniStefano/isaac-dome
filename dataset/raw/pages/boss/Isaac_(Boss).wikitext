@@ -1,0 +1,77 @@
+{{infobox boss
+ | id          = 102
+ | portrait name = * {{dlc|nr|Rebirth}}
+ | appearance  = (name:Boss_Isaac1)(name:Boss_Isaac2)(name:Boss_Isaac3)
+ | environment = <u>Boss</u><br>{{floor|Cathedral}}<br>{{floor|The Void}}
+ | base hp     = 2000
+ | pool        = Final Boss Chest ([[Endings|Ending 13]], or {{s|Chest}} if Isaac has {{i|The Polaroid}})<br>Gateway to {{s|The Void}} (15% Chance)
+}} {{disambig msg|the boss|the character|Isaac}}
+
+'''Isaac''' is the [[boss]] of the {{s|Cathedral}}, and the final boss of [[Endings|Ending 13]].
+
+== Behavior ==
+Isaac lies on the ground in the middle of the room and does not begin attacking until he takes damage.
+
+During all three of Isaac's phases, he continuously shoots multiple projectiles in the player's direction at fixed intervals when not performing other attacks. After taking enough damage, he begins to shoot double projectiles and triple projectiles.
+
+=== Phase 1 ===
+Isaac remains stationary on the ground and performs the following attacks:
+* Shoots 10 lines of projectiles in every direction.
+* Shoots 8 groups of projectiles that curve back towards him.
+* Shoots 8 groups of long-range spinning projectiles along with 10 slightly curved lines of shorter-range projectiles in every direction.
+
+=== Phase 2 ===
+Isaac stands up but remains stationary and performs the following attack:
+* Isaac alternates between two projectile patterns:
+** Shoots 4 projectiles in a cross pattern, which splits into four short-ranged projectiles after a short time, similar to {{i|Cricket's Body}}.
+** Shoots 8 projectiles in all directions.
+Independently of his projectile attack:
+* Summons {{e|Angelic Baby|text=Angelic Babies}} in a pair.
+* Summons 2 {{i|Crack the Sky}} beams at random locations.
+
+=== Phase 3 ===
+Isaac grows a pair of angelic wings and is no longer stationary, moving towards where the player is predicted to go with short dashes. During which he also performs the following attacks:
+* Teleports off-screen and summons {{i|Crack the Sky}} beams to cover the screen, starting from one of the top corners to the opposite bottom corner. After teleporting back on-screen, he shoots the 10 lines of projectiles from the first phase. He always performs this attack at the start of this phase and repeats this process every time he takes 200 damage.
+** {{dlc|r}} Shadows indicate ahead of time where the beams strike.
+* Can perform all projectile patterns from the first phase.
+
+== Gallery ==
+<gallery>
+File:Boss Isaac secondphase ingame.png|Isaac in his second phase.
+File:Boss Isaac thirdphase ingame.png|Isaac in his third phase.
+File:Boss Delirium Isaac ingame.png|Isaac as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Unlockable [[Achievements]] ==
+{{achievement text | The Polaroid, BRAINS!, PONG, Something Icky, Isaac's Tears, A Cross, A Bag of Pennies, PAY TO PLAY, Guillotine, The D6, Eve's Bird Foot, Bloody Lust, Satanic Bible, Lazarus' Rags, Blank Card, Isaac's Heart, Rune Bag, Keeper holds Wooden Nickel, Locust of Wrath, Slipped Rib, Book of Virtues, The Stairway, Godhead, Mom's Lock, Holy Crown, Gilded Key, Your Soul, Dingle Berry, Strange Key, Temporary Tattoo, Wicked Crown, Torn Pocket, Nuh Uh!, Kid's Drawing, The Twins, Keeper's Bargain, Cricket Leg, Polished Bone, Expansion Pack, RC Remote }}
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage Scaling|here]].
+
+{{dlc|r+}} '''Isaac''' has damage scaling.
+
+== Notes ==
+* Every time Isaac is defeated, the current [[Savefile Images|savefile's image]] changes until {{i|The Polaroid}} is unlocked.
+* Isaac does not begin attacking until he has been damaged. This can be exploited to make the fight much easier by dealing large amounts of damage in the first hit. Methods of doing this include saving up a large amount of tears with {{I|Anti-Gravity}}, waiting for {{I|Kidney Stone}} to activate before shooting Isaac, or placing multiple bombs and detonating them all at once with {{I|Remote Detonator}}. {{I|Glass Cannon}} can also provide a high-damage initial shot, but doing this is extremely risky due to Glass Cannon's additional effect of reducing health to one half-heart.
+** {{Dlc|r}}Glass Cannon no longer reduces health on use, so it can be used against Isaac much more effectively.
+
+== Trivia ==
+* Isaac was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* Isaac, along with {{e|???}}, teleport away upon defeat and do not "die".
+* Isaac's expression as he changes phases during the fight goes from somber and scared, to him smiling in his third phase. This could indicate that Isaac has made peace with himself.
+* The music that plays during this boss fight is titled ''Infanticide''.<ref>http://ridiculon.bandcamp.com/</ref> The term infanticide refers to the act of killing an infant or newborn.
+** In the original ''Wrath of the Lamb'' DLC, the song was ''My Innermost Apocalypse.''
+* During his first phase, Isaac makes the same crying sound as {{e|Mulligan}}s. This also applies to ???.
+* {{dlc|r}} Isaac and ???'s boss portraits were changed to match the appearance of the characters on the transition screen between levels. This was also the case in the original Flash game.
+** {{e|Blighted Ovum}}, {{e|Big Horn}}, {{e|Triachnid}}, Isaac, and ??? are the only bosses whose portraits were completely changed in ''Repentance''. Of these, only Triachnid, Isaac, and ??? didn't receive new sprites.
+
+== Bugs ==
+{{bug|dlc=a+nr|The Angelic Babies always spawn in the bottom center of the room at the same position.}}
+
+== References ==
+{{reflist}}
+
+{{nav|isaac boss unlock|boss}}
+[[Category:Chapter 5 bosses]]
+[[Category:Final bosses]]
+[[Category:Debut bosses in Rebirth]]

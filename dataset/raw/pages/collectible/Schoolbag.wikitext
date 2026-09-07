@@ -1,0 +1,62 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 534
+ | quote       = Extra active item room
+ | description = Allows Isaac to hold two active items.
+ | quality     = 3
+ | tags        = summonable offensive nocantrip
+ | unlocked by = Schoolbag
+}}
+
+{{cit|up|a+4}}
+
+== Effects ==
+* Allows Isaac to hold two active items.
+** Swap between active items by pressing the {{plat|PC}} CTRL, {{plat|PS4}} R2, {{plat|XboxOne}} RT, or {{plat|Switch}} ZR.
+
+== Notes ==
+* The button to swap between active items is the same button used to swap between cards and pills.
+* Items in the secondary slot will recharge at the same rate as the primary item.
+* Items that grant temporary effects for the room, such as {{i|The Nail}}, may deactivate if switched with an item in the secondary slot.
+* The {{p|? Card}} does not activate both active items.
+* While holding an active item that grants passive bonuses in the secondary slot, swapping the main slot item with a pedestal item may remove the bonuses. If this happens, Isaac can swap the bonus-granting item to the pedestal and pick it up again to regain them.
+* The swap key must be pressed twice if playing as {{C|The Forgotten}}.
+* This item cannot be unlocked if the player encounters more than {{dlc|nr}} one/{{dlc|r}} two {{cu|XL}} in Chapters 1-3, except by chance of finding {{t|Silver Dollar}}, {{t|Wicked Crown}}, {{t|Holy Crown}}, {{i|Forget Me Now}}, or a 5-pip {{r|Dice Room}}.
+** If ''one'' Curse of the Labyrinth is encountered, getting to {{s|???}} or {{s|Mausoleum}}/{{s|Gehenna}} II and entering the {{r|Shop}} there will unlock the Schoolbag.
+** {{dlc+|r}} If Curse of the Labyrinth was encountered twice, entering the shops in both {{s|Mausoleum}}/{{s|Gehenna}} II and {{s|???}} will unlock the Schoolbag.{{dlc-}}
+* {{dlc|r}} If {{C|Tainted Isaac}} drops Schoolbag, the 2nd active item in the player's inventory is destroyed. However, a duplicate active item spawns beside Schoolbag. Tainted Isaac's reroll ability applies to this new item, and the player can choose between the original active item or a new item. Picking up the original active item again will count as another item towards any transformation.
+* {{Dlc|r}} In "True" [[Co-op]], when a player dies with this item, they will drop one of their active items if they have two. It is unknown if this is a bug or intended interaction.
+
+== Synergies ==
+* {{i|Best Friend}}/{{i|Mr. Boom}} + {{i|Remote Detonator}}: The active item bombs are affected by Remote Detonator.
+* {{i|Blood Rights}}/{{i|Razor Blade}} + {{i|Habit}}: Damage from the item grants a point of charge to Isaac's other held active item.
+* {{dlc+|a+}} {{I|Glowing Hourglass}} + {{I|Forget Me Now}}: Using Forget Me Now will fully recharge Glowing Hourglass on the new floor, using Glowing Hourglass after that will take Isaac back to the previous room while also giving back Forget Me Now. This allows for infinite usage of Glowing Hourglass as well as infinite retries of any room as long as Forget Me Now is used before the room is cleared.{{dlc-}}
+* {{dlc|r}} {{i|Converter}} + {{i|Guppy's Paw}} : Converter turns one soul heart into 1 red heart, while Guppy's paw turns 1 red heart into 3 soul hearts. This effectively gives you infinite health for the run.
+* {{i|Kamikaze!}}: The cooldown before the player can use Kamikaze! again is eliminated when switching items. Depending on how fast the player can push the buttons, Kamikaze! can be used multiple times during Isaac's invincibility frames.
+* {{i|Mom's Box}}: If a trinket is picked up while Mom's Box is in the active slot, swapping between active items will not remove the doubled trinket effect.
+* {{i|A Pony}} / {{i|White Pony}}: Will continue to grant [[flight]] and the speed bonus while held in the secondary slot.
+
+== Interactions ==
+* {{p|? Card}}: Does not activate both active items.
+* {{i|My Little Unicorn}} / {{i|The Gamekid}} / {{i|Unicorn Stump}}: Switching items breaks the invincibility effect. This does not apply to other sources of invincibility.
+
+== In-game Footage ==
+{{#ev:youtube|ICg0LrpE0nA}}
+
+== Gallery ==
+<gallery>
+File:Collectible Schoolbag Booster Pack 4 icon.png|Schoolbag's appearance prior to [[Booster Pack #5]].
+</gallery>
+
+== Trivia ==
+* {{dlc|nr}} Schoolbag was based on the [https://isaacracing.net/ Racing+] implementation of the [[anti:Schoolbag|Schoolbag]] from the [[anti:|Antibirth]] mod, and it is the only item from Antibirth to be added to the game before Repentance.
+* This item is used in {{chal|Baptism by Fire}}.
+
+== Bugs ==
+{{bug|Removing Schoolbag using {{i|D100}}, {{i|D4}}, or through being granted the effect from {{i|Metronome|n}} and using it again, does not cause the second active item to be removed or dropped into a pedestal; Isaac will still be able to hold his second active item until he picks up another active item, which will then remove the second slot and delete the active item contained.}}
+{{bug|Re-rolling by a {{r|Dice Room}} removes the primary active item but the second one remains unchanged, allowing another active item to be picked up. Picking up another active item after this will result in the previous bug; the second slot is removed and the active item contained is deleted.}}
+{{bug|As of [[V1.06.J168]], the item inside the Schoolbag has a minor graphical glitch when picking up a third active item. For a single frame as the pickup animation ends, the item's "charged glow" status and number of bars will match the item that Isaac is picking up.}}
+{{bug|dlc=nr|When {{i|Isaac's Tears}} is in the first active item slot, the secondary item does not charge upon clearing rooms.}}
+{{Bug|If a player dies in True Co-op in the boss room, and the schoolbag drops an active item, because of the fact that boss item pedestals will spawn as many items as there are players, picking the active item back will spawn additional items up to 3. If the boss pool is gone through, it will start pulling from the treasure room. Once another Active item appears, any other items that could be gained through this method are (likely, needs more testing) unavailable.|dlc=r}}
+
+{{nav|booster pack|inventory expansion|fr=Cartable}}

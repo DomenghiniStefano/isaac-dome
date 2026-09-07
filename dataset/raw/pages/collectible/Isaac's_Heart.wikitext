@@ -1,0 +1,107 @@
+{{infobox passive collectible
+ | id          = 276
+ | quote       = Protect it
+ | description = Isaac himself is now immune to all damage, and a heart [[familiar]] follows him. If the heart is hurt, Isaac is hurt. {{dlc|r}} The heart charges up as Isaac shoots, firing 8 blood shots, knocking back enemies, and leaving a puddle of [[creep]] when released.
+ | quality     = 0
+ | tags        = uniquefamiliar nolostbr summonable
+ | unlocked by = Isaac's Heart
+}}
+
+{{cit|up}}
+
+== Effects ==
+* {{dlc|nr}} Isaac's body becomes immune to all damage.
+* {{dlc|nr}} Most enemies now target the heart instead of Isaac. {{E|Eye}}s and other similar enemies, however, will still target Isaac.
+* {{dlc|r}} Isaac's body becomes immune to all damage from enemies and the environment. This does not include interactable objects such as {{m|Blood Donation Machine}}s and {{M|Devil Beggar}}s.
+* A heart [[familiar]] appears and closely follows Isaac. If the heart is hurt, Isaac is hurt.
+* {{dlc|r}} The heart tries to position itself in the opposite direction of where Isaac is shooting.
+* {{dlc|r}} The heart charges up as Isaac fires. At full charge, upon releasing the fire button, it knocks back nearby enemies and tears, creates a small puddle of red [[creep]] on the ground, and releases blood shots in 8 directions that deal 8 damage.
+* {{dlc|r}} Enemies pushed into walls or [[obstacles]] by the knockback blast take <code>10 + 2 * (floor - 1)</code> damage.
+* {{dlc|r}} Enemies that come in contact with Isaac take 2x Isaac's current damage per tick or 4x Isaac's damage per second.
+
+== Notes ==
+* {{dlc|nr}} {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s can be used for free.
+** During {{chal|The Guardian}}, Devil Beggars and Blood Donation Machines deal damage to Isaac.
+* [[Spikes]], {{R|Curse Room}} doors and {{E|Spiked Chest}}s do no damage. {{R|Sacrifice Room}} spikes still work, though the heart has to go on the spikes instead of Isaac. {{dlc+|r}} The door to {{s|Mausoleum}} / {{s|Gehenna}} is not affected.{{dlc-}}
+* Picking up a non-orbital familiar will cause either Isaac's Heart or the other familiar to be layered over the other's sprite. This is due to the heart not taking up the spot that the other familiar follows in.
+* Co-op babies gain the immunity effect without spawning additional hearts.
+* {{dlc|na}} Enemy Brimstone shots (such as from {{E|The Bloat}}) will not do any damage to the heart.
+** {{dlc|r}} Enemy Brimstone shots will now be blocked by the body. This visually resembles the blocking effect of {{I|Divine Intervention}}.
+* The tracking lasers from {{E|Hush}} and light pillars from {{E|Isaac}} do not damage the heart.
+* Isaac will turn into {{c|The Lost}} form if either he or the heart touches a {{e|White Fire Place}}.
+
+== Tips and strategies ==
+=== Items / Trinkets ===
+* Items that activate on contact with enemies retain their ability, allowing Isaac to use them without suffering collision damage.
+* {{dlc|nr}} Items that hurt Isaac on activation, such as {{i|IV Bag}} and {{i|Blood Rights}} no longer do so, allowing infinite uses for free.
+* {{dlc|nr}}Get 5 cents as soon as possible so an {{R|Arcade}} can show up, {{M|Blood Donation Machine}}s and {{i|IV Bag}} are the best and most common ways to win Isaac's heart run.
+** {{dlc|a+}} If {{E|Lucky Penny|text=Lucky Pennies}} are unlocked, it may be beneficial to immediately try to gain 10 luck or more via the IV Bag to maximize room drops and enhance tear effects.
+* [[Speed#Items that affect speed|Speed up items]] are invaluable when having Isaac's heart since the delay between the player moving away and the heart moving as well gets drastically reduced. Avoid speed down items early in the run.
+* [[Orbital familiar]]s are invaluable as Isaac can get extremely close to the enemy without fear of contact damage.
+* [[Flight]] items are invaluable as the heart can be placed over a rock and Isaac can stick out enough to shoot at enemies without needing [[spectral tears]].
+* Angel Rooms are safer bets for items than Devil Rooms.
+
+=== Combat and Damage ===
+* Hug [[obstacle]]s to avoid taking damage. Look out for enemies that fly or can jump over rocks, and make sure enemies don't push Isaac far away from his heart to expose it.
+* When dodging, Isaac must move in semi-straight lines as the heart only follows Isaac's movements when he is at a certain distance away, for example, moving in a circle would pull the heart in and make it stay in place in the middle of the arc as Isaac would no longer be moving away from the heart. Moving in a triangle formation would allow the heart to move more.
+* If dodging requires traversing long distances, it is recommended to shoot in the opposite direction to the movement direction (e. g. shoot left when moving right). This way, the heart will be positioned very close to Isaac, making the process easier.
+* Enemies that fly and charge like {{E|One Tooth}} are extremely hard to dodge and should be killed as soon as possible, take caution since they can appear as early as {{s|Caves}} / {{s|Catacombs}}.
+* Enemies can be pushed away with Isaac's body, while not recommended, it can be used as a last resort.
+* {{Dlc|r}}To avoid taking damage from {{E|Mega Troll Bomb}}s, push into them while firing at them, instead of running away.
+
+== Synergies ==
+* {{i|120 Volt}}/{{i|Monstrance}}: These items become much safer to use offensively as they are centered around Isaac's body which no longer takes damage.
+* {{i|Blood Rights|nr}}: Blood Rights doesn't deal damage to Isaac, allowing repeated usage without penalty. {{dlc-}}
+* {{i|Box of Friends}}: Box of Friends does not duplicate the heart, making it safe to use.
+* {{i|Breath of Life|nr}}: Isaac can be infinitely invulnerable, as invincibility carries out to the heart without hurting the player. Note that the item needs to be activated for longer than one second for the invulnerability to kick in, however.
+** {{dlc|r}} Works as normal except for the fact that the damage to the heart must be blocked to spawn the 4 beams.
+* {{t|Duct Tape}}: Makes dodging significantly easier.
+* {{i|E. Coli}}: Isaac can turn enemies into poop without taking damage.
+* {{i|Holy Mantle}}: The shield effect carries over to the heart.
+* {{t|Gigante Bean}}: Makes the heart much easier to defend as it increases the knockback amount and radius of the heart when fully charged and the heart makes farting noises when it shoots.
+* Items granting [[invulnerability]] or a [[shield]]: The invincibility carries over to the heart.
+** {{dlc|r}} Due to the contact damage, {{i|Gnawed Leaf}} allows Isaac to clear most rooms without moving.
+* {{i|IV Bag|nr}}: Can be used without taking damage, resulting in an infinite amount of coins.
+* {{i|Kamikaze!}}: As long as the heart is away from the blast radius, no damage is taken. The character must be at high enough speed for this.
+* {{i|Pyromaniac}} / {{i|Host Hat}}: Explosion immunity carries over to the heart.
+** The heart must be in range of explosion for Pyromaniac to heal Isaac.
+* {{i|Razor Blade|nr}}: Isaac cannot take damage from the Razor Blade, allowing for infinite uses of the item.
+* {{i|Sacrificial Altar|a+nr}}: Can remove the Isaac's Heart familiar while the item remains, making Isaac invulnerable.
+** {{dlc|r}} Sacrificial Altar now doesn't remove Isaac's Heart.
+* {{i|Serpent's Kiss}}: Isaac can poison enemies by contact without taking damage, allowing for free black hearts.
+
+== Interactions ==
+* {{i|Aries|r}}: The invulnerability does not extend to the heart.
+* {{T|Baby-Bender}}: The heart's tears do not gain homing.
+* {{i|BFFS!|dlc=r}}: Fires additional shots in random directions, and leaves larger puddles of creep.
+* {{i|Dry Baby|nr}}: If Isaac has obtained Dry Baby in the first familiar spot ''before'' Isaac's Heart, the baby will block enemy tears before they can hit the heart. Enemies touching the heart can still do damage, and picking up the baby after the heart will cause the heart's hitbox to be checked first against shots.
+** {{dlc|r}} Isaac's Heart no longer follows Isaac in a way where Dry Baby can constantly block it from tears.
+* {{i|Farting Baby|anr}}: If Isaac has obtained Farting Baby in the first familiar spot ''before'' Isaac's Heart, the baby will block enemy tears before they can hit the heart. Enemies touching the heart can still do damage, and picking up the baby after the heart will cause the heart's hitbox to be checked first against shots.
+** {{dlc|r}} Isaac's Heart no longer follows Isaac in a way where Farting Baby can constantly block it from tears.
+* {{i|King Baby|a+nr}}: The Heart will follow King Baby. This makes it much harder to avoid damage, but also makes other synergies like {{i|Kamikaze!}} much easier to use.
+* {{I|A Pound of Flesh}}: Consumables can no longer be picked up in Shops.
+* {{i|Sharp Plug|nr}}: Sharp Plug can no longer be used.
+* {{i|The Soul}}: Isaac's body repels projectiles, but Isaac's Heart doesn't.
+* {{c|Tainted Forgotten}}: The heart follows Tainted Soul.
+
+== In-game Footage ==
+=== In ''Rebirth'' {{dlc|nr}} ===
+{{#ev:youtube|vIF66VcQ4WY}}
+
+=== In ''Repentance'' {{dlc|r}} ===
+{{#ev:youtube|gO0mDP9UKyc}}
+
+== Trivia ==
+* {{dlc|nr}}Isaac's Heart while it's following Isaac fittingly shares the same sprite as {{t|Child's Heart}}.
+* The nature of the item is similar to that of a {{E|Mask + Heart}} enemy.
+* This item is used in {{chal|The Guardian}}.
+
+== Gallery ==
+<gallery>
+File:Isaac with Isaac's Heart.png|Isaac with his heart.
+</gallery>
+
+== Bugs ==
+{{bug|When picked up by Tainted Lazarus after picking up Birthright, the character which has Isaac's Heart can be damaged even in ghost form.}}
+{{nav|the lost unlock|isaac boss unlock|fr=Cœur d'Isaac}}
+[[Category:Damage-preventing items]]

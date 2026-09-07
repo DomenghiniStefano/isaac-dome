@@ -1,0 +1,52 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 522
+ | quote       = Power of the mind
+ | description = Any enemy shots that come near Isaac for the next three seconds are held in place then fired back.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = {{dlcalt|3s|r=7s}}
+ | unlocked by = Telekinesis
+}}
+
+{{cit|ua|a+2}}
+
+== Effects ==
+* Upon use, for the next three seconds, any enemy shots that come near Isaac are held in place.
+** {{dlc|nr}} After a shot has been held for two seconds, it is fired back as a tear.
+*** Reflected tears always do 3.5 damage.
+** {{dlc|r}} When the effect is about to end, all shots are fired back.
+*** Reflected normal tears do 6 damage if they would normally do a half heart damage to Isaac.
+*** Reflected normal tears do 7 damage if they would normally do a full heart damage to Isaac.
+*** Reflected {{i|Ipecac}} shots do 50 damage, and do not harm Isaac.
+*** Reflected rocks thrown by {{e|Polty}} do 35 damage.
+* {{dlc|r}} The emanating blue pulse pushes enemies away for the duration of the item's usage.
+
+== Notes ==
+* The tears can be rammed into enemies while they're held by Telekinesis. {{dlc|nr}} They won't disappear until the effect ends but do no further damage.
+* {{dlc|nr}} As long as the item is used immediately upon recharging, Isaac is effectively immune to enemy bullets.
+* Catching shots from enemies that fire high into the air, like the {{e|Tube Worm}}, is very difficult and not beneficial; in the case of the Tube Worm, shots that are caught will just fall to the ground rather than be fired at enemies.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Tears caught by Telekinesis become blue wisps in the outer ring. The wisps are outside the range of Telekinesis, making them vulnerable to shots before they can be converted to wisps. Wisps persist between rooms.}}
+
+== Interactions ==
+* {{p|? Card}}: The cooldown applies even when used through the ? Card.
+* {{i|9 Volt|dlc=nr}}: Does not benefit from 9 Volt, unlike other auto-recharge items.
+** {{Dlc|r}} 9 Volt grants half charge on use, effectively giving Isaac immunity to enemy bullets as long as the item is used immediately upon recharging.
+* {{i|The Battery|nr}}: A {{E|Lil' Battery}} (or other [[battery]]) has to be picked up for another charge. Both charges are expended at once for a longer duration effect.
+* {{i|Car Battery|nr}}: Has no effect.
+** {{Dlc|r}} Car Battery grants 7 seconds of protection, effectively giving Isaac immunity to enemy bullets as long as the item is used immediately upon recharging.
+* {{i|Sharp Plug|nr}}: Charge gained from Sharp Plug is expended immediately and won't stop enemy shots.
+
+== In-game Footage ==
+{{#ev:youtube|nAIl3n13uwo}}
+
+== Trivia ==
+* Telekinesis is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=857187975 this Steam Workshop item] by Eufuu, originally known as Telepathy.
+* This item and the pickup sprite may be a reference to [[wikipedia:The Matrix|The Matrix]], where the protagonist [[wikipedia:Neo (The Matrix)|Neo]] can stop bullets in mid-air when they are directly in front of him, holding out his right hand exactly how it's represented in the sprite.
+
+== Bugs ==
+{{bug|dlc=r|When {{i|Pause}} is used while Telekinesis is active it creates a second ring that stays in place where Isaac used "Pause" which lasts for Telekinesis's remaining duration. Moreover both rings are flashing and the second ring can not block enemy tears for the duration. Any tears that were still caught in Telekinesis’s radius before using Pause become incredibly slowed and indefinitely follow Isaac until he shoots.}}
+
+{{nav|booster pack|fr=Télékinésie}}

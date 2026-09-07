@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | id          = 335
+ | quote       = I am all
+ | description = Grants two {{E|Soul Heart}}s. Isaac gains a pulsing aura that repels enemies and projectiles.
+ | quality     = 3
+ | tags        = summonable
+ | devil price = {{dlcalt|1|r=2}}
+ | unlocked by = The Soul
+}}
+{{disambig msg|the item|the character|The Soul (character)}}
+
+{{cit|up}}
+
+== Effects ==
+* Grants two {{E|Soul Heart}}s.
+* Isaac gains a pulsing blue aura that repels enemies and projectiles.
+** The power of the repel force alternates in strength at random, sometimes strong enough to counter a projectile well before it hits Isaac, sometimes only strong enough to slow it down.
+** Ground-based enemies will overcome the counterforce easier than flying enemies and projectiles.
+
+== Notes ==
+* {{dlc|r}} A stronger effect of this item is given temporarily by {{P|I - The Magician?|x}}.
+* {{dlc|r}} When playing as {{c|Tainted Forgotten|n}}, this item works only on the Forgotten's body and not the soul.
+* {{dlc|r}} When playing as {{C|Tainted Jacob|n}}, Dark Esau is unaffected by this item's repelling properties.
+
+== In-game Footage ==
+{{#ev:youtube|0t_cfoHLKFY}}
+
+== Gallery ==
+<gallery>
+File:The Soul deflecting shots.png|The Soul deflecting slowed projectiles from {{E|It Lives!}}.
+</gallery>
+
+== Trivia ==
+* This item, along with {{i|The Body}} and {{i|The Mind}}, are references to [[wikipedia:Alchemical symbol#Three primes|the Three Primes of Alchemy]].
+** The designs of these items appear to be that of [[Wikipedia:Triquetra|Triquetra]], a Christian symbol of the Trinity.
+* The item's description, along with those of {{i|The Body}} and {{i|The Mind}}, are references to the three attributes commonly ascribed to God in Christian theology: omniscience, omnipotence, and omnipresence. For The Soul, it is omnipotence, the ability to do anything, which follows naturally from the ability to "be all".
+
+{{nav|the lost unlock|the lamb unlock|fr=L'Âme}}

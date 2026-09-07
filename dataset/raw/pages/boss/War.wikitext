@@ -1,0 +1,61 @@
+{{infobox boss
+ | name        = War
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 65
+ | environment = <u>Boss</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|The Void}}<br>{{room|Boss Rush}}<br><u>Degraded Boss</u><br>{{floor|Cathedral}}{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 500
+ | pool        = {{i|Ball of Bandages}}<br>{{i|Cube of Meat}}<br>{{dlc|r+}} {{t|Locust of War|n}} (1% chance)
+ | unlocked by = The Harbingers
+}}
+
+'''War''' is a [[Harbinger]] that can appear in all environments of [[Chapter 3]] ({{s|Depths}}, {{s|Necropolis}}, {{s|Dank Depths}}).
+
+== Behavior ==
+=== Phase 1 ===
+* Charges either left or right off-screen and continuing on from the opposite end of the screen. Continues until he has crossed the screen three times.
+** He performs this attack more often if Isaac is to his left or right.
+* Shoots eight projectiles in all directions.
+* Ascends off-screen and summons 5 {{e|Troll Bomb}}s.
+** Returns from the side of the screen.
+
+=== Phase 2 ===
+Once his health is below half, War's horse blows up, dropping War, who performs a crying animation.
+* War charges quickly at Isaac gradually building speed and making more tighter turns.
+** Every time War loses around 1/3rd of his remaining HP in this phase, he pauses briefly to sob before restarting this process.
+War deals a whole heart of contact damage in both phases and during his charge.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|2}}: 15% larger with 25% more HP (625). Summons 2 {{e|Mega Troll Bomb}}s when he ascends off-screen and summons a single Troll Bomb behind his path when he charges through the screen. When transforming into his second phase, he shoots 6 projectiles in all directions, as well as each time he stops chasing Isaac in this phase.
+
+== Gallery ==
+<gallery>
+File:Boss War walk ingame.png|War in his second phase.
+File:Boss War rest ingame.png|War in his crying animation.
+File:Boss War phase1 dark grey ingame.png|Grey Champion War.
+File:Boss War phase2 dark grey ingame.png|Grey Champion War in his second phase.
+File:Boss Delirium War ingame.png|War as one of {{e|Delirium}}'s forms.
+File:War.png|Mini version of war summoned with the 7 seals.
+</gallery>
+
+== Unlockable [[achievement]]s ==
+{{achievement text | The Book of Revelations, 7 Seals }}
+
+== Trivia ==
+* War appeared in the original ''The Binding of Isaac.''
+* War is one of the [[wikipedia:Four Horsemen of the Apocalypse|Four Horsemen of the Apocalypse]] mentioned in the Bible.
+* In many depictions of War, he is shown [[wikipedia:Four Horsemen of the Apocalypse#Red Horse|holding a sword vertically]], corresponding with why War's battle sprite shows him holding his hobby-horse vertically.
+* Although his appearance on the vs screen shows his hobby-horse as brown, it is red in-game.
+* War's "horse" appears more akin to a bull.
+* In the original game, War's face was round.
+** {{dlc|r}} This has been somewhat reverted.
+* War can be seen wielding a {{i|Wire Coat Hanger}} as a weapon [https://pbs.twimg.com/media/Ctelz4lVIAAOkrT?format=jpg&name=4096x4096 in one of the original game's concept arts].
+* When holding {{i|Mars}}, Isaac strongly resembles {{E|War}}, referencing the Roman god of war, [[wikipedia:Mars (mythology)|Mars]].
+
+{{nav|boss|mom unlock|fr=Guerre|zh=战争骑士}}
+
+[[Category:Harbingers]]
+[[Category:Chapter 3 bosses]]
+[[Category:Depths bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Debut bosses in Rebirth]]

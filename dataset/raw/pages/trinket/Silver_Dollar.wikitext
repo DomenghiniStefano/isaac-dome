@@ -1,0 +1,36 @@
+{{infobox trinket
+ | dlc         = a+
+ | name        = Silver Dollar
+ | id          = 110
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote = Feels lucky...
+ | description = {{R|Shop}}s appear in [[Chapters|Chapter 4]].
+ | tags        = lazarussharedglobal nogreed
+ | unlocked by = Silver Dollar
+}}
+
+{{cit|ut|a+}}
+
+== Effect ==
+* {{R|Shop}}s appear in the {{s|Womb}}, {{s|Utero}}, and {{s|Scarred Womb}}.
+** {{dlc+|r}} Also spawns {{R|Shop}}s in the {{s|Corpse}}.{{dlc-}}
+* {{A|Golden Trinket}}: An upgraded Shop will appear instead
+
+== Notes ==
+* {{dlc|r}} Cannot appear in [[Greed Mode]].
+* This trinket must already be held upon starting the Womb/Utero/Scarred Womb/Corpse floor for the effect to take place, i.e. the trinket needs to be carried over from the previous floor.
+* Silver Dollar only needs to be held when entering the floor. The Shop will remain after dropping the trinket, even if it hasn't been explored yet.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: The shop will be upgraded.
+
+== In-game Footage ==
+{{#ev:youtube|DmWAhT-xtQs}}
+
+== Gallery ==
+<gallery>
+File:AB- Item Concept 2.png|AB+ Trinket Concepts, Including Silver Dollar.
+</gallery>
+
+{{nav|cain unlock|delirium unlock}}
+[[Category:Trinkets]]

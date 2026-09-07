@@ -1,0 +1,76 @@
+{{infobox passive collectible
+ | id          = 210
+ | quote       = Unbreakable
+ | description = After standing still and not shooting for a short time, Isaac turns invincible until he moves or shoots.
+ | quality     = 1
+ | tags        = summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* After standing still and not pressing the move or attack buttons for one second, Isaac will turn into an [[invulnerability|invulnerable]] statue.
+** Using bombs and active items will remove the invincibility state.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Great Gideon}}.{{dlc-}}
+* {{dlc+|a}} While invulnerable, {{E|Little Horn}}’s pitfall still affects Isaac and will teleport him throughout the room; however, the damage is not dealt.{{dlc-}}
+* With items like {{i|Cube of Meat}}, Isaac can easily, but slowly, kill most enemies and bosses without taking any damage.
+* Bombs can be placed while stationary and safely be stood on until they blow up if no other inputs are done after placing the bomb, as the invincibility state will be activated before the bomb explodes.
+** This cannot be done if Isaac is holding the item {{i|Remote Detonator}} as the bombs will not explode until Isaac uses his active item, damaging him, unless he has an item that gives him explosion immunity (Ex: {{I|Pyromaniac}})
+
+== Synergies ==
+* {{I|7 Seals}}: One of the more versatile familiars that works with Gnawed Leaf.  The varied forms and attacks of this familiar make it capable of clearing pretty much any room given time.  The locusts it produces often fly to Isaac which takes care of chasing enemies, but its damaging creep and chasing attacks can reach even the farthest enemies.
+* {{I|120 Volt}}: With enough damage, 120 Volt's zaps becomes far more efficient at killing than orbitals.
+** At 15 damage minimum, it surpasses most orbitals.
+** At 30 damage or more, it surpasses {{I|Sacrificial Dagger}}.
+* {{I|Angry Fly}}: Aggressively attacks enemies even if they're far away, but can end up harmlessly orbiting slow or stationary enemies indefinitely, or trying to attack invulnerable enemies.  It does better with slow or stationary bosses than regular enemies, diving in to attack periodically instead of harmlessly orbiting.
+* {{i|Daddy Longlegs}}: Allows Isaac to easily clear most rooms or bosses while in statue form. Daddy Longlegs cannot damage bosses like {{E|The Shell}} and won't target enemies that are a long distance from Isaac. In a pinch, {{T|Mom's Toenail}} works the same, albeit much slower.
+* {{I|Damocles}}: If Isaac is in statue form when the sword falls, he will survive.
+* {{I|Dark Arts}}: While Isaac is surrounded by enemies, he will not take damage and will safely go into the shadow state. (Even if enemies are in pointblank range.)
+* {{I|Decap Attack}}: The head can be used on stationary bosses to wither them down.
+* {{i|E. Coli}} /{{i|Midas' Touch}} /{{I|Serpent's Kiss}} / {{i|The Virus}}: Monsters touching the statue will be affected without Isaac taking collision damage.
+* {{I|Empty Vessel}}: if Empty Vessel's requirement is fulfilled, Isaac can safely wait for the shield to activate, allowing to deal damage without leaving invulnerability.
+* {{I|IBS}}: Orbitals and other things (such as 120 Volt) can trigger IBS while in statue form, however, Isaac will still be invincible. This can be really good if a Stinky Poop is held above his head.
+* {{i|Kamikaze!}}: Statue form will break, but the initial explosion will not damage Isaac, therefore granting Isaac quasi-unlimited bombs.
+* {{i|The Ludovico Technique}}: The hovering tear will still deal damage and the statue form won't break as long as the attack buttons aren't being pressed.
+** '''The Ludovico Technique''' + {{i|Strange Attractor}}: Can pull enemies in while remaining a statue, clearing out rooms easily.
+* {{i|Mom's Knife}}: The knife can damage enemies while Isaac is a statue.
+* {{Dlc|r}}{{I|Mom's Heels}}: While invincible, Isaac can still deal contact damage.
+* {{I|Monstrance}}: The aura makes quick work of chasing enemies.
+* {{i|The Pinking Shears}}: Isaac's body will attack enemies while his head is invincible.
+* {{i|Placenta}}: Isaac can safely regenerate Red Hearts in any room, making it easy to have enough health from any mistake at the cost of time.
+* {{i|Robo-Baby 2.0}}: Since it fires automatically, this familiar is one of the more effective synergies, since it will even shoot off screen as it’s knocked around.
+* {{I|Salvation}}: The aura can trigger from nearby enemies while Isaac is safely a statue, and the damaging beams when this happens can reach farther enemies.  This powerful attack can make quick work of bosses that chase Isaac.
+* {{I|Spin to Win}}: Gnawed Leaf will activate while using Spin to Win, as long as Isaac is stationary. This allows for a brief moment of high damage against enemies that chase Isaac.
+* {{i|Sprinkler}}: Can be placed upon entering a room, and will continue to fire when Isaac is invincible, meaning any room can be cleared without the risk of Isaac taking damage. This theoretically allows end-game bosses to be beaten without having to move.
+* {{t|Super Magnet}}: Pulls enemies into Isaac, can be extremely powerful if combined with orbitals that allow contact damage.
+* {{dlc|r}}{{C|Tainted Magdalene|n}}: Tainted Magdalene's "Hug" attack still triggers when in the statue state without taking damage, making short work of aggressive enemies as well as providing lots of healing.
+* {{dlc|r}}{{C|Tainted Forgotten|n}}: The Soul is invincible as long as the bone club is not used and The Forgotten is not thrown, even if The Soul is holding The Forgotten and moving around.  Combined with orbitals that deal contact damage like {{I|Cube of Meat}} or items that can trigger damage only by movement such as {{I|Purgatory|n}}, can make for a trivial method to beat any boss.
+* {{tf|Yes Mother?}}: When worst comes to worst and Isaac has no orbitals or familiars, the knife can be used to deal damage, due to how common the transformation is.
+* {{i|Tooth and Nail}}: Allows one second to act and/or reposition without taking damage. Useful in situations such as ranged combat when enemies bombard from a distance, or to attack and move to a safe distance where Isaac can safely regain statue form.
+
+== Interactions ==
+* {{I|2Spooky}}: Counterintuitive and should be avoided, as most enemies will never approach orbital range.
+* {{I|The Bible}}: Statue invulnerability will not prevent death when the Bible is activated during {{E|Satan}} fight.
+* {{i|Blood Oath}}: Standing still at the start of a level will block Blood Oath's damage, preventing it from activating.
+* {{i|Blood Rights}} / {{i|IV Bag}} / {{i|Razor Blade}}: Statue invulnerability will not prevent damage from these items when activated.
+* {{I|Book of Virtues}} / {{I|Lemegeton}}: Wisps are invincible while invulnerable.
+* {{c|Jacob and Esau}}: If Esau picks up the item, he can remain invulnerable even when Jacob is moving but not when firing.
+* {{c| Tainted Jacob}} / {{c|Jacob and Esau}}: If Tainted Jacob/Esau picks up the item, Tainted Esau/Jacob will be able to push a character into a {{R|Curse Room}} without taking damage.
+* {{i|The Gamekid}} / {{i|My Little Unicorn}} / {{i|Unicorn Stump}}: Statue form can activate while invulnerable.
+* {{T|Short Fuse}}: Bombs explode before invincibility kicks in.
+
+== In-game Footage ==
+{{#ev:youtube|iKOnwnkZrv4}}
+
+== Trivia ==
+* This item is a reference to the [[mario:Super Leaf|Super Leaf]] from ''Super Mario Bros. 3'', which grants the player the [[mario:Tanooki Suit|Tanooki suit]]. The Tanooki Suit also has a tanooki tail and the ability to turn into a statue.
+* {{dlc|r}} When paired with {{I|Midas' Touch}}, the statue gains a golden tint.
+
+== Bugs ==
+{{bug|Leaving and re-entering a run while in statue form makes Isaac continue to appear in statue form, though he is vulnerable.}}
+{{bug|Moving as Tainted Forgotten doesn't disable Gnawed Leaf. (Attacking however, does)}}
+
+{{nav|fr=Feuille Grignotée}}
+[[Category:Damage-preventing items]]

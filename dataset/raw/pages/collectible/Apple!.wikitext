@@ -1,0 +1,44 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 443
+ | quote       = Trick or treat?
+ | description = +0.3 [[tears]]. Adds a chance to fire a razor blade that deals 4× Isaac's [[damage]].
+ | quality     = 3
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Adds a chance to fire razor blades that deal quadruple Isaac's [[Damage|tear damage]].
+* +0.3 [[tears]].
+
+== Notes ==
+* The chance to fire a razor blade depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 15 - \left \lfloor \mathit{Luck}  \right \rfloor}</math>
+** At base luck (0), the chance is 6.66%, maxing out at 100% at 14 luck.
+
+== Synergies ==
+* {{i|Cricket's Body}} / {{i|Compound Fracture}} / {{i|The Parasite}}: When razors are fired, the split tears will also be razors and do quadruple damage. The Parasite's split tears look like normal tears.
+* {{i|Dr. Fetus}}: Adds a chance for the bombs to deal increased damage. See the page for the specific damage formula.
+* {{dlc|nr}} {{i|Glass Cannon}}: Adds a chance to fire a giant razor that does roughly triple damage.
+** {{dlc|r}} Adds a chance to fire a giant razor that does quadruple damage (x40 + 10 flat damage).
+* {{i|Haemolacria}}: Adds a chance for tears to do quadruple damage. Burst tears will also do quadruple damage if the main tear does quadruple damage.
+* {{i|Technology Zero}}: When razors are fired, they will connect to other tears via electricity. The electricity also does quadruple damage.
+* {{i|Lachryphagy}}: Tears can be fed to razors, increasing damage and splitting into 8 razors after a little while. If razors are fed to the tears, the razor damage doesn't apply to the tear both before and after splitting.
+
+== Interactions ==
+* {{i|Brimstone|nr}}: Each entire beam has a chance to gain the damage boost.
+** {{dlc|r}} Each tick of the beam has a chance to gain the damage boost.
+* {{i|Papa Fly}}/{{i|Pointy Rib}}/{{i|Linger Bean}}: Can benefit the damage multiplier. 
+* {{i|Tech X|nr}}: Overrides Apple!.
+** {{dlc|r}} Each tick of the laser rings have a chance to gain the damage boost.
+* {{i|Tough Love}}: With 14 luck, overrides Tough Love, as the razor blades do more damage anyways. With 13 luck, Apple and Tough Love each have about an equal chance to trigger.
+
+== In-game Footage ==
+{{#ev:youtube|rB65Hpnj6x8}}
+
+== Trivia ==
+* Both the item itself and the description is a reflection of one of Isaac's nightmares between floors that involves him finding a razor blade inside a piece of candy.
+* The item and pickup quote are a reference to the [[wikipedia:poisoned candy myths|urban legend]] of giving away candies with razor blades hidden inside of them as a way of harming people.
+
+{{nav}}

@@ -1,0 +1,24 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 194
+ | quote       = Shot speed up
+ | description = +0.16 [[shot speed]], spawns a random [[tarot card]]. {{dlc+|r}} Increases the chance of finding a {{R|Planetarium}}.{{dlc-}}
+ | quality     = 1
+ | tags        = summonable offensive stars lazarussharedglobal
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.16 [[shot speed]].
+* Upon pickup, drops a random [[tarot card]] near Isaac.
+* {{dlc+|r}} Adds an additional 15% chance for the first {{R|Planetarium}} to appear.
+** This effect doesn't stack with additional copies of the item.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|JRmBzOKaGkE}}
+
+== Trivia ==
+* Isaac appears to be wearing a fortune teller's head-dress upon picking up the item. This most likely refers to the Magic 8 Ball's association with fortune-telling or advice seeking.
+
+{{nav|fr=La Boule Magique}}

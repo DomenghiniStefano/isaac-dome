@@ -1,0 +1,22 @@
+{{infobox passive collectible
+ | id          = 183
+ | quote       = Tears + shot speed up
+ | description = +0.7 [[tears]], +0.16 [[shot speed]].
+ | quality     = 3
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.7 [[tears]].
+* +0.16 [[shot speed]].
+* Tear color becomes red.
+
+== Notes ==
+* Is functionally identical to {{I|Torn Photo}}.
+
+== In-game Footage ==
+{{#ev:youtube|nA9gCl_Sk70}}
+
+{{nav|fr=Cure-dents}}

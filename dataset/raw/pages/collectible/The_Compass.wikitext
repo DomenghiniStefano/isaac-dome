@@ -1,0 +1,52 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 21
+ | quote       = The end is near
+ | description = Reveals the locations and types of all special rooms on the map, except {{r|Secret Room}}s and {{r|Super Secret Room}}s.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive nogreed lazarussharedglobal
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Reveals the locations and types of all special rooms on the map, except {{r|Secret Room}}s and {{r|Super Secret Room}}s.
+
+== Notes ==
+* The following rooms will be revealed if they exist:{{column list | width = 15em | content =
+** {{r|Arcade}}
+** {{r|Boss Challenge Room}}
+** {{r|Boss Room}}
+** {{r|Challenge Room}}
+** {{r|Clean Bedroom}}
+** {{r|Curse Room}}
+** {{r|Dice Room}}
+** {{r|Dirty Bedroom}}
+** {{r|Library}}
+** {{r|Mini-Boss Room}}
+** {{r|Planetarium}}
+** {{r|Sacrifice Room}}
+** {{r|Shop}}
+** {{r|Treasure Room}}
+** {{r|Vault}}
+}}
+* When combined with {{i|Blue Map}} and {{i|Treasure Map}}, the entire floor is revealed, identical to the effect of {{i|The Mind}}.
+
+== Synergies ==
+* {{i|Book of Secrets|r}}: It is easier to gain {{i|X-Ray Vision}} as Book of Secrets cannot give a mapping effect Isaac already has.
+
+== In-game Footage ==
+{{#ev:youtube|OIkCWBH2Szw||inline}} {{#ev:youtube|BWO6pkf4yJ0||inline}}
+
+== Gallery ==
+<gallery>
+File:Mapping icons.png|{{dlc|r}} The Compass's icon (second from the right), alongside other mapping icons.
+</gallery>
+
+== Trivia ==
+* The compass icon is the same as the one from the the game ''[[wikipedia:The Legend of Zelda (video game)|The Legend of Zelda]]''.
+* This item is used in {{chal|Cursed!}}.
+* {{dlc|r}} Under the minimap, {{i|The Mind}}'s icon will override the icon of this item.
+* This item can be found as one of the Nintendo-themed {{r|Treasure Room}} items in the 6th of December's [[List of curated daily challenges|Daily Run]], which is an homage to the late CEO of Nintendo, Satoru Iwata.
+
+{{nav|fr=Boussole}}

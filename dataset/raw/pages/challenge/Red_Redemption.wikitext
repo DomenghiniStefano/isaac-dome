@@ -1,0 +1,69 @@
+{{infobox challenge
+ | dlc                = r
+ | number             = 44
+ | character          = Tainted Jacob
+ | item               = {{i|Dad's Key}}<br>{{i|Red Key}}
+ | has shops          = yes
+ | has treasure rooms = yes
+ | goal               = Mother
+ | unlocks            = The Hermit
+ | unlocked by        = Red Redemption
+ | description        = The starting room spawns with no rooms connected to it. Rooms spawn in clusters around the map and must be found via the {{i|Red Key}}. While the Red Key can be used an infinite number of times, it has 20 uses before {{E|Dark Esau}} spawns. Each subsequent 5 uses will spawn another Dark Esau if {{C|Tainted Jacob}} has yet to turn into his lost form. The Red Key cannot be used to open doors to {{R|I AM ERROR}} rooms.
+Each floor generates as a {{cu|labyrinth}} floor, with one shop, and two item and boss rooms, except the fourth floor, which has only one boss room. All rooms may be from any floor of the current chapter.
+}}
+
+'''Red Redemption''' is [[Challenges|challenge]] #44. {{c|Tainted Jacob}} starts with {{i|Dad's Key}} and {{i|Red Key}}. The goal is to defeat {{E|Mother}}. This challenge is unlocked by unlocking {{c|Tainted Jacob}}.
+
+Level generation in this challenge works very differently than normal. Tainted Jacob begins in a starting room without doors, and other rooms are generated in small clusters that are disconnected from each other and must be located by using the {{i|Red Key}}. Each floor generates like a {{cu|labyrinth}} floor with one {{R|Shop}}, two {{R|Boss Room}}s, and two {{R|Treasure Room}}s, each connected to a group of normal rooms. Defeating either Boss will spawn a trapdoor that leads to the next chapter. Chapter 4, however, will not have special rooms other than the single Boss room where Mother resides. All rooms may be from any floor in the current chapter (for example, in Chapter 1, [[rooms]] may be from the {{s|Basement}}, {{s|Cellar}}, {{s|Burning Basement}}, {{s|Downpour}}, or {{s|Dross}}). This applies to both pre-generated rooms and new rooms made using the Red Key.
+
+The {{i|Red Key}} also works differently than normal. It starts in Jacob's consumable slot and can be used any number of times with no recharge. The Red Key cannot be used to create a door to the {{R|I AM ERROR}} room.
+
+After using the Red Key 20 times on a single floor, {{E|Dark Esau}} will spawn. The Red Key's charge bar displays how many uses it has left until this happens, rather than the item's actual charge. Another Dark Esau will spawn every 5 additional uses of the Red Key, as long as Jacob is not in his The Lost form. If he is, no more Dark Esaus will spawn.
+
+{{R|Sacrifice Room}}s will grant Tainted Jacob rewards as usual, but they will not teleport him to the {{s|Dark Room}}.
+
+{{i|Knife Piece 1}} and {{i|Knife Piece 2}} are not required to finish the challenge, however, Knife Piece 1 can still be encountered in an item room.
+
+== Strategy ==
+* Try to avoid depleting {{i|Red Key}}'s charge without covering a lot of ground. Each red room entered will be able to check the adjacent three rooms to see if they are normal rooms, so spacing apart paths of red rooms in straight lines, at least two rooms apart, will grant the most information per use of the key.
+* This challenge is like Blackjack, as it's preferable to visit as many rooms as possible, as they give you consumables or even extra items while making sure you don't go over the allotted amount of uses of the Red Key given per floor before Dark Esau spawns.
+* Most special rooms have at least one normal room next to them that are free to go into. Mapping abilities will show you the locations of either the special rooms or the clusters of rooms where they can be found, allowing you to minimize aimless wandering and potential Dark Esau encounters.
+** {{i|The Compass}}, {{i|Crystal Ball}}, and {{i|Treasure Map}} are the most useful items for this purpose, allowing an optimal route to be planned on every floor to visit as many rooms as possible to get more items and therefore a greater chance of winning.
+** {{I|Book of Secrets}} is also useful to help find regular rooms, item rooms, shops, and boss rooms.
+** {{i|Sol}} acts like a weaker version of The Compass for the purposes of this run, as it reveals one boss room, and beating the boss will show the rest of the rooms on the floor.
+** Many [[cards]] can help reveal parts of the map, so items that increase the amount of cards found such as {{i|Deck of Cards}} are useful. Obtaining {{P|XXI - The World}} or {{P|XIX - The Sun}} will identify all rooms for a floor, while {{P|IV - The Emperor}}, {{P|IX - The Hermit}}, and {{P|XVII - The Stars}} cards will locate a specific important room via teleportation, and {{i|Blank Card}} will allow the reuse of these cards. Similar utility could be gained from {{i|Rune Bag}} to obtain {{P|Ansuz}}, but they will be considerably scarcer compared to cards.
+** It is very risky to take unidentified [[Pills]] during this challenge, as getting an [[Pills|Amnesia]] will make it much harder to find your way around.
+* Due to the fact that starting items in this challenge cannot be changed, rerolling your character through the use of the {{i|D4}}, the {{i|D100}}, or other means such as a {{R|Dice Room}} is safe to do, unlike using the {{I|Clicker}}
+* {{Curse|maze}} can be beneficial for this challenge, as it can rarely teleport you to unexplored normal rooms.
+* Any means of teleportation works surprisingly well in this challenge: random teleportation will NOT teleport you to any red room, including already opened ones. This will almost guarantee that you will teleport into either special rooms themselves (treasure, shop, boss, etc) or rooms adjacent to them, saving lots of red key charges in the progression. {{i|Teleport!}} and {{i|Teleport 2.0}} both work, while {{t|Broken Remote}} is the most efficient while in combination with certain active items that can be infinitely used (like {{i|Guppy's Paw}}).
+* {{i|Satanic Bible}} is a strong item, as it acts as a reliable source for health and {{ip|Devil Room|text=Devil Deal}} items.
+* If you are okay with Dark Esau chasing you, you can use the Red Key 5 more times before another one spawns. This will also allow for extra means of damage for the boss of the floor.
+* You do not need to fight {{E|Mother}} to finish this challenge. It is possible to enter a trapdoor, created from {{i|We Need To Go Deeper!}}, {{P|Ehwaz}}, after fighting the boss with a {{P|IV - The Emperor?}} card, or found in a {{R|Dirty Bedroom}}, to go to {{S|Sheol}} and fight {{E|Satan}}, where the challenge will end.
+* Using {{I|Mama Mega!}} is a potential full clear of a floor, but is risky if Jacob has turned into his The Lost form, especially in {{s|Caves}}, where mushroom explosions may kill you on the room instantly.
+* {{T|Crystal Key}} is very useful in this challenge because it has a chance to open red rooms after a room is completed, saving Red Key uses.
+* If possible, try not to let Dark Esau spawn on the last floor, otherwise you'll have to fight Mother while he annoys you. Since Mother is a bullet hell boss, you'll have a hard time surviving.
+* Most types of special rooms can be encountered as red rooms, so if you are willing to explore (considering the risks it implies), you might find very useful stuff such as more {{R|Treasure Room}}s, {{R|Shop}}s, etc.
+* If {{I|Anima Sola}} is used, the Red Key fully recharges, allowing infinite uses without having to worry about Dark Esau.
+* {{dlc|nr+}} The familiar {{I|Lil Portal}} proves itself to be very useful in this challenge, since making this familiar consume four pickups will make it spawn a portal to a random uncleared room of the main map, saving Red Key charges. These portals still persist at the same spot and will bring you to the same room, therefore also allowing quick travel after exploring the floor. When all main rooms of the floor are cleared, the familiar's next portals will simply throw you back out upon trying to enter them.
+** Note that the rooms which the portals take you to are determined upon their generation, so it is recommended that you clear every main room you can currently get to before creating the next one to bring you to a different part of the main map, in order to avoid creating unnecessary portals.
+* Getting {{Curse|lost}} is almost always a disaster, as the player has no way of seeing even the real rooms and it renders any mapping useless, so it is very likely for the player to waste all of the Red Key's charges on random rooms, triggering Dark Esau. As such, obtaining {{I|Black Candle}} or a {{p|Dagaz}} rune can be very beneficial.
+
+== Notes ==
+* Secret rooms of any type will not be generated in this challenge.
+* Unlike usual, The {{R|Boss Room}}s might be connected to more than one non-red room.
+* Although you cannot get {{R|Angel Room}}s or {{R|Devil Room}}s from bosses, it's still possible to encounter them as red rooms.
+* {{i|Birthright}} will split all {{E|Dark Esau}}s in two. However, it does not split {{E|Dark Esau}}s that spawned prior to pickup.
+* [[Planetarium]] can be generated in this challenge.
+* Using {{i|Teleport 2.0}} to get into {{R|I AM ERROR}} room on the Chapter 4 floor, results in a trapdoor that leads to {{s|Sheol}}. Defeating {{E|Satan}} completes the challenge.
+
+== Reward ==
+{{achievement text | The Hermit }}
+
+== Trivia ==
+* This challenge's name is a reference to the game ''[[wikipedia:Red Dead Redemption|Red Dead Redemption]]''.
+
+== Bugs ==
+{{Bug|Transforming into other characters removes the Red Key and does not allow you to open new rooms, soft-locking you.}}
+{{Bug|Exiting and continuing a run while more than one {{e|Dark Esau}} is present removes all but one. This can be repeated for every new {{e|Dark Esau}} keeping the total count at one while enabling the player to continue using the {{i|Red Key}}.}}
+
+{{nav|challenge|jacob and esau unlock|fr=Ce Cauchemar Rouge}}

@@ -1,0 +1,29 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 474
+ | quote       = You broke it!
+ | description = Begins with no charges and turns into {{i|Glass Cannon|dlc=n}} when used. Only acquired by taking damage while holding Glass Cannon.
+ | quality     = 0
+ | tags        = {{dlc|r+|noeden}}
+ | recharge    = 4
+}}
+
+{{cit|a|r}}
+
+== Effects ==
+* This item is acquired when Isaac takes damage while holding {{i|Glass Cannon}}. It begins with no charges.
+* Once fully charged, it automatically turns back into Glass Cannon.
+
+== Notes ==
+* {{dlc|nr+}} {{c|Eden}} can start with this item.
+* Charging this item does not count as using it. Items and trinkets that activate on active item use (such as {{t|Broken Remote}}) do not activate when charging this item.
+* If the player manages to obtain a usable fully charged Broken Glass Cannon, it will turn into Glass Cannon on use. This use counts as a use for items and trinkets that activate on active item use.
+** Clearing a room with this fully charged Broken Glass Cannon will also turn it into Glass Cannon. This does not count as a use.
+
+== Trivia ==
+* The item ID used to be assigned to {{t|Tonsil}}.
+* Broken Glass Cannon is one of the three activated items, alongside {{i|Alabaster Box}} and {{i|Eden's Soul}}, that:
+** Has no charges upon pickup rather than full.
+** Needs to be charged AND disappears upon use.
+
+{{nav|broken|fr=Canon de Verre Brisé}}

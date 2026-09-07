@@ -1,0 +1,43 @@
+{{infobox challenge
+ | dlc         = r
+ | number      = 40
+ | character   = Jacob
+ | has shops   = yes
+ | health      = {{hearts|red=4|soul=1}}
+ | item        = Jacob: {{i|20/20}}<br>Esau: {{i|20/20}}<br>{{i|X-Ray Vision}}
+ | goal        = Mom's Heart
+ | unlocks     = Broken Glasses
+ | unlocked by = Seeing Double
+|description=All enemies and bosses are doubled.|has treasure rooms=yes}}
+'''Seeing Double''' is [[challenge]] #40. The goal is to defeat {{E|Mom's Heart}}. This challenge is unlocked by defeating {{E|Mother}}.
+
+== Difficulty ==
+Otherwise a very standard run, the challenge comes from every enemy and boss placed naturally in rooms (as opposed to being spawned later) being doubled. Due to the high enemy density, damage may prove difficult to avoid in some rooms. It is recommended for oneself to be already familiar with the gameplay of {{C|Jacob and Esau}} prior to attempting this challenge.
+
+== Strategy ==
+* Items that synergize well with {{i|20/20}} such as {{i|Polyphemus}}, are incredibly useful in this challenge.
+* As Esau begins the challenge with {{i|X-Ray Vision}}, {{R|Secret Room}}s are instantly revealed, which may provide Jacob and Esau with helpful resources.
+* As [[Library|Libraries]] are able to spawn in this challenge, they can be a valuable resource. {{i|The Bible}} can help with protecting one of the brothers as well as instantly killing both {{E|Mom}} and {{E|Mom's Heart}}, {{i|Book of Virtues}} will create helpful wisps in combination with other books (e.g. {{i|Book of Shadows}}), and {{i|Book of Revelations}} will help sustain either brother's health.
+* It may be wise to keep {{t|Silver Dollar}} if found, as the Shops it will spawn in Chapter 4 can be incredibly useful.
+* {{i|Eraser}} is an extremely powerful item for this challenge that can be found in Shops, as permanently erasing common enemies can help tremendously.
+* Mapping effects such as {{i|The Compass}} or {{i|The Mind}} can help quickly navigate through levels and avoid unnecessary risks.
+* Teleportation items such as {{p|0 - The Fool}}, {{i|Teleport!}}, or [[Telepills]] can be used to quickly escape dangerous situations or skip rooms altogether. {{i|Glowing Hourglass}} may also be used to return to the previous room and revert any possible health loss.
+* {{i|Jacob's Ladder}} is an incredible item in this challenge, as it can deal significant amounts of damage to swarms of enemies.
+* Room clearing effects are particularly powerful in this challenge:
+** {{I|Toxic Shock}} is powerful but will only damage the original enemies in rooms; the doubled enemies that spawn will not take any damage.
+** {{i|The Necronomicon}}/{{p|XIII - Death}} will instantly clear more dangerous rooms.
+** The {{p|Ace of Hearts}} and other Ace cards will instantly clear rooms with large amounts of monsters, producing numerous pickups in the process.
+** {{p|II - The High Priestess}} can be an effective boss killer, greatly damaging or eliminating one or both bosses.
+** {{p|Chaos Card}}, if thrown correctly, can instantly kill numerous troublesome bosses and enemies in a single throw.
+* Enemies and bosses in {{R|Challenge Room}}s are not doubled, as they are not spawned when Jacob and Esau initially enters the room. This makes them worth clearing for extra pickups and items.
+* Since the duplicated enemies spawn close to the originals, {{i|Betrayal}} is extremely useful, with projectile-firing enemies and bosses often damaging or outright killing their counterparts.
+
+== Notes ==
+* {{E|Stoney|text=Stonies}}, {{E|Death's Head}}s, and {{E|Mom}} are not doubled; however, {{E|Mom's Heart}} / {{E|It Lives!}} is.
+* Encountering two {{E|Baby Plum}}s and allowing both of them to leave will grant only one {{i|Plum Flute}}.
+* Prior to [[V1.7.5|Version 1.7.5]], Treasure Rooms did not appear.
+
+== Reward ==
+{{achievement text | Broken Glasses }}
+
+{{nav|challenge|mother unlock|fr=Double Vision}}

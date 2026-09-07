@@ -1,0 +1,65 @@
+{{infobox trinket
+ | name        = Lucky Toe
+ | id          = 42
+ | quote       = Luck up!
+ | description = +1 [[Luck]]. Adds a chance to drop an extra pickup when opening a {{E|Chest}}, destroying a [[machine]], or blowing up a [[tinted rock]].
+ | unlocked by = Lucky Toe
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* +1 [[Luck]].
+* Increases chances of getting a [[Room Clear Awards|room clearing drop]] (independent of the luck stat).
+* 33% chance to drop 1 additional [[Pickup]] when opening certain [[Chests]], or destroying [[Tinted Rock]]s, certain [[Machines]], and certain [[Beggar]]s.
+** Other than {{e|Wooden Chest}}s, these can only drop the additional pickup if they drop [[coins]], [[hearts]], {{e|Bomb}}s, or {{e|Key}}s.
+*** {{e|Wooden Chest}}s can only drop the additional pickup if it drops [[pills]], [[Cards and Runes|cards, or runes]].
+** This includes: {{column list | width = 15em | content =
+*** {{E|Chest}}s
+*** {{e|Locked Chest}}s
+*** {{e|Bomb Chest}}s
+*** {{e|Eternal Chest}}s
+*** {{e|Spiked Chest}}s
+*** {{e|Mimic Chest}}s
+*** {{e|Wooden Chest}}s
+*** {{e|Mega Chest}}s
+*** {{e|Haunted Chest}}s
+*** [[Tinted Rock]]s
+*** {{M|Slot Machine}}s
+*** {{M|Fortune Telling Machine}}s
+*** {{M|Crane Game}}s
+*** {{M|Confessional}}s
+*** {{m|Beggar}}s
+*** {{dlc|nr}} {{m|Devil Beggar}}s
+*** {{m|Key Master}}s
+*** {{m|Bomb Bum}}s
+*** {{m|Battery Bum}}s
+}}
+** This excludes: {{column list | width = 15em | content =
+*** {{e|Red Chest}}s
+*** {{e|Old Chest}}s
+*** {{e|Mom's Chest}}
+*** {{m|Blood Donation Machine}}s
+*** {{m|Shop Restock Machine}}s
+*** {{m|Mom's Dressing Table}}
+*** The {{m|Donation Machine}}
+*** {{dlc|r}} {{m|Devil Beggar}}s
+*** {{m|Rotten Beggar}}s
+*** {{m|Hell Game}}s
+}}
+
+== Notes ==
+* For [[Room Clear Awards]], Lucky Toe does the exact same thing as {{i|Lucky Foot}}, except that it applies ''after'' luck has had its chance to modify the RNG. The difference in placement doesn't have much effect at all.
+** If you have zero luck, you have a 22% chance to ''not'' get a room clear drop without the Lucky Toe; regardless of your luck stat, the Lucky Toe significantly reduces that chance.
+** Lucky Toe's effect also very slightly boosts the chance to get [[Chests]] from clearing rooms, independent of luck.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}}: Having either increases [[Luck]] by 2. Having both by 3.
+
+== Interactions ==
+* {{i|Lucky Foot}}: The extra luck-independent chance of room clearing drops from Lucky Foot applies only in a diminished form, unless at zero or negative luck. This bonus from Lucky Toe is still retained.
+
+== In-game Footage ==
+{{#ev:youtube|sh7urFNkuhw}}
+
+{{nav|fr=Orteil Porte-Bonheur}}

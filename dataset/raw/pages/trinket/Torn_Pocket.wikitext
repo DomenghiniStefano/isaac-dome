@@ -1,0 +1,38 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 158
+ | quote       = A hole in your pocket
+ | description = Upon taking damage, Isaac drops 2 random [[Pickups]] from among those he's currently holding. Pickups of higher amounts have more chance to drop.
+ | unlocked by = Torn Pocket
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Upon taking damage, Isaac drops 2 random [[Pickups]] from his inventory (except [[Hearts]], [[Pills]], or [[Cards]]).
+* Pickups of higher amounts have more chance to drop.
+
+== Notes ==
+* All pickups are subjected to standard pickup spawn rules, which means that trinket's effect won't necessarily result in a net neutral.
+** [[Coins]] dropped have a chance of being replaced with a {{E|Golden Penny}}, {{E|Lucky Penny}}, {{E|Nickel}}, {{e|Sticky Nickel}} or {{E|Dime}}.
+** {{e|Bomb}} dropped have a chance of being replaced with {{e|Double Bomb}}, {{e|Golden Bomb}}, {{e|Troll Bomb}} or {{e|Mega Troll Bomb}}.
+*** When a dropped bomb is replaced with a Troll/Megatroll bomb, the game will still subtract that bomb from the total bomb count.
+*** Giga bombs, however, can't be dropped if Isaac has them, but their count will still be retained unless the bomb count reaches 0.
+** {{e|Key}}s dropped have a chance of being replaced with {{e|Golden Key}}s or {{E|Charged Key}}s.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Each copy makes Isaac drop 1 more pickup from his inventory.
+* Penny Trinkets : This can be used to generate extra pickups as long as one has a coin.
+* {{i|BOGO Bombs}}: Dropped bombs will be their doubled variants.
+* {{i|Humbleing Bundle}}: All dropped pickups have a chance to be replaced with doubled variants.
+* {{c|Keeper}} / {{c|Tainted Keeper}}: Grants a chance to drop coins upon taking damage, giving back the lost health.
+* {{i|Scapular}}: Can be used to infinitely generate pickups when down to half a Heart by re-entering a room to regenerate a Soul Heart.
+
+== Interactions ==
+* {{t|Nuh Uh!}}: Coins and Keys will be replaced with other pickups starting from [[Chapter 4]].
+* {{c|Tainted ???}}: Does not drop poop nuggets after taking damage.
+
+== In-game footage ==
+{{#ev:youtube|lRLi66HhJ_c}}
+
+{{nav|tainted lazarus unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|broken|fr=Poche Trouée}}

@@ -1,0 +1,168 @@
+{{infobox boss
+ | name        = Mom's Heart
+ | id          = 78
+ | environment = <u>Boss</u><br><u>Main Path</u><br>{{dlc|na+}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{dlc|a+}}<br>{{floor|Womb}}{{floor|Utero}}<br>{{floor|The Void}}<br><u>Alternate Path</u><br>{{floor|Mausoleum}}{{floor|Gehenna}}
+ | base hp     = 950
+ | pool        = End Chest ([[Endings|Endings 1-11]])<br>Gateway to {{s|The Void}} if unlocked (10% Chance)<br>Gateway to {{s|???}} (Time under 30:00 & Mom's Heart killed 10 times)
+ | unlocked by = The Womb
+ }}
+
+'''Mom's Heart''' is a [[boss]] that can appear on the second floor of [[Chapter 4]] ({{s|Womb}}, {{s|Utero}}), and is the final boss of [[Endings|Endings 1-11]].
+* {{dlc|na+}} Prior to [[Booster Packs|Booster Pack #5]], it could also appear in the {{s|Scarred Womb}}.
+After being killed 11 times, Mom's Heart is permanently replaced by {{e|It Lives!}}. However, even after being replaced by It Lives!, there are a few circumstances in which Mom's Heart can still be fought:
+* {{dlc|a}} It can still appear in the Nightmare Boss wave of [[Greed Chapter 4 (Bosses)|Chapter 4]] in {{mode|greed|greedier}} [[Greed Mode|Greed/Greedier Mode]].
+* {{dlc+|a+}} It has a chance to appear in one of the boss rooms in {{s|The Void}}.{{dlc-}}
+* {{dlc+|r}} After the defeat of the stronger version of {{e|Mom}} on the second floor of [[Chapter 3.5]] ({{s|Mausoleum}}, {{s|Gehenna}}), a flesh door appears, which can be opened if Isaac has collected both {{i|Knife Piece 1}} and {{i|Knife Piece 2}}. Behind it, a stronger version of Mom's Heart can be fought.{{dlc-}}
+
+== Behavior ==
+=== Phase 1 ===
+At the beginning of the fight, Mom's Heart is always accompanied by 2 {{e|Eye}}s. After awhile, Mom's Heart retreats upwards, becoming invulnerable and launching four diagonal lines of red projectiles in a spread that slowly rotates clockwise. When each original Eye is killed, another one spawns in its place near the top of the arena.
+* At any point during this sequence, if Mom's Heart's HP is brought below the threshold for her second phase, she will spawn {{e|Lump}}s instead of Eyes.
+
+After the second set of Eyes have been killed, Mom's Heart alternates between two attacks:
+
+* Lowers itself and shoots red projectiles in different patterns:
+** 10 projectiles in all directions that expand outwards either continuously or in a pulsating manner.
+** 2 streams of projectiles that spiral outwards.
+** 2 rings of ten projectiles that pulsate outwards at different intervals.
+** 8 slightly curved lines of projectiles that rotate and expand outwards slowly.
+
+* After performing one of these projectile patterns for long enough, Mom's Heart retreats upwards again, shooting the same four slow-moving lines of projectiles, and spawns a number enemies of a singular type:
+** 3 {{e|Flesh Mobile Host}}s
+** 3 {{e|Globin}}s
+** 2 {{e|Eye}}s
+*** The type of monsters spawned in each wave is determined always follows the above order.
+*** In the same manner as the original Eyes, a copy of each individual monster spawns again following the defeat of the original one.
+
+* After all enemies have been defeated, Mom's Heart lowers itself and repeats the entire process.
+
+=== Phase 2 ===
+After reaching 60% HP, Mom's Heart beats slightly faster and continues the same behavior, but includes new projectile patterns and replaces the types of monsters it spawns.
+* Its projectile patterns now include:
+** A single line of projectiles that follows Isaac.
+** 5 lines of projectiles that mimic Isaac's movements (these lines have no space between projectiles).
+** 3 pulsating curved lines of projectiles that rotate and expand outwards. This pattern can occasionally change direction of rotation.
+
+* Its spawned monsters are now:
+** 3 {{e|Lump}}s
+** 2 {{e|Swinger}}s
+** 3 {{e|Globin}}s
+
+=== Phase 3 ===
+After reaching 30% HP, Mom's Heart beats much faster and no longer retreats upwards and instead performs projectile attacks and spawns enemies simultaneously. However, after finishing each projectile pattern, if there are any monsters alive, it will not perform another pattern until they are killed. In addition, a second wave of monsters no longer spawns after the first is killed.
+* It gains one new projectile pattern:
+** 4 curved lines of projectiles that continuously rotate and expand outwards.
+* It loses the projectile patterns from the first phase except for the following 2:
+** 2 streams of projectiles that spiral outwards.
+** 8 slightly curved lines of projectiles that rotate and expand outwards slowly.
+
+* Its spawned monsters are now:
+** 4 {{e|Walking Boil}}s
+** 4 {{e|Tumor}}s
+** 4 [[Mask + Heart|Heart]]s
+
+=== Phase 4 ===
+After reaching 20% HP, Mom's Heart stops its previous attacks and shoots four diagonal {{i|Brimstone}} lasers that rotate either clockwise or counter-clockwise for a duration before stopping for a moment and then repeating the attack.
+* The direction the lasers rotate depends on which is closest to Isaac when they are fired. The closer laser will rotate after Isaac and the rest will follow.
+* The duration the beams rotate can be: 1 rotation, 1 and a half rotations, or 2 whole rotations.
+* Upon defeat, Mom's Heart fires out a ring of 14 projectiles.
+
+All of Mom's Heart's projectiles deal a whole heart of damage. The heart itself does not deal contact damage.
+
+As most of Mom's Heart's projectile attacks are synced with the rhythm of the heart's beating, as the fight progresses, the speed of each projectile attack increases.
+
+All of Mom's Heart's projectile attacks can hurt and kill spawned monsters.
+
+== {{Dlc+|r}} Behavior in Mausoleum/Gehenna ==
+=== Phase 1 ===
+The beginning of this fight is similar to one from Chapter 4, as Mom's Heart is always accompanied by two Eyes and retreats upwards after awhile, shooting the same four slow-moving lines of projectiles. However, a second pair of Eyes does not replace the first, and after both initial Eyes are killed, Mom's Heart lowers itself and no longer retreats upwards.
+* Mom's Heart begins with 3 projectile patterns it can perform:
+** 2 rings of 8 projectiles at different intervals that expand outwards overlapping on each other either continuously or in a pulsating manner.
+** 2 streams of projectiles that spiral outwards and gradually increase in density.
+** 2 rings of 8 projectiles each ring expanding and alternating between rotating clockwise and counter-clockwise.
+
+=== Phase 2 ===
+After reaching 60% HP, Mom's Heart beats slightly faster and replaces the patterns from its first phase with the following patterns:
+* 5 lines of projectiles that rotate and pulsate outwards.
+* A combined ring of 2 rings of 8 projectiles that rotate in opposite directions while expanding.
+* 16 wavy streams of projectiles that intertwine and create gaps.
+* 16 streams of projectiles that curve back towards Mom's Heart and intertwine to create gaps.
+* 5 waving lines of projectiles that rotate and expand outwards.
+
+=== Phase 3 ===
+After reaching 30% HP, Mom's Heart beats much faster, keeps the patterns from its previous phase, and gains the following patterns:
+* 6 curved lines of projectiles that rotate in opposite directions while expanding — 3 clockwise, 3 counter-clockwise.
+* A ring of 12 projectiles that expands outwards, along with 2 rings of 4 projectiles that expand outwards and rotate in opposite directions at a higher speed.
+It also regains 2 patterns from its first phase:
+* 2 streams of projectiles that spiral outwards and gradually increase in density.
+* 2 rings of 8 projectiles, each ring expanding and alternating between rotating clockwise and counter-clockwise.
+
+=== Phase 4 ===
+After reaching 10% HP, Mom's Heart stops its previous projectile attacks and fires 2 {{i|Brimstone}} lasers in opposite directions that slowly rotate either clockwise or counter-clockwise at a steady pace. During this, it also shoots 2 continuous streams of projectiles, one that follows Isaac's movements and the other mirroring the first.
+* Upon defeat, Mom's Heart fires out a ring of 14 projectiles and permanently causes the {{Cu|Darkness}} and gray-scale effect for the entire floor. This persists for a brief moment upon entering the {{s|Corpse}}. Additionally it makes all consumables, items, and shops disappear after Mom's Heart is killed.
+
+A majority of Mom's Heart's projectile attacks use large projectiles and deal a whole heart of damage; however, some attacks can be mixed with, or fully use smaller projectiles which only deal half a heart of damage. The heart's {{i|Brimstone}} lasers also only deal half a heart of damage.
+
+As most of Mom's Heart's projectile attacks are synced with the rhythm of the heart's beating, as the fight progresses, the speed of each projectile attack increases.
+{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Mom's Heart ingame.png|Mom's Heart as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Audio ==
+{{sound table header}}
+{{sound table row | [[File:Mom muffle.wav]] | Mom's Heart calling Isaac's name. }}
+{{sound table row | [[File:Filter hurt.wav]] | The sound Mom's Heart makes upon taking damage. }}
+{{sound table row | [[File:Filter evil laugh.wav]] | Mom's Heart's laugh upon landing a hit on Isaac. }}
+{{sound table row | [[File:Filter death 1.wav]] | The cry Mom's Heart makes upon death. }}
+|}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | A Halo, Eden, Rubber Cement, A Noose, Solar System, Wire Coat Hanger, Everything Is Terrible!!!, Ipecac, Experimental Treatment, A Quarter, A Fetus in a Jar, Demo Man, ???, Blue Womb, It Lives!, Darkness Falls, Suicide King 2, Pokey Mans, Blue Bomber, Burning Basement, Lost Baby, Cute Baby, Glass Baby, Shadow Baby, Dead Baby, Crow Baby, Fighting Baby, Wrapped Baby, Begotten Baby, Glitch Baby, -0- Baby, Goat Head Baby, Super Greed Baby, Smelter, Marrow, Wisp Baby, Double Baby, Godhead }}
+
+== Everything Is Terrible!!! changes ==
+{{hatnote|See also: [[Everything is Terrible 2!!!]]}}
+After beating Mom's Heart 5 times, the following playthroughs have the following changes:
+
+* Bosses drop 1 less health pickup.
+* The chance of a floor receiving a [[curses|curse]] increases.
+* {{Dlc+|r}} The {{e|Bulb}} enemy can appear.{{dlc-}}
+* {{Dlc|r}} Unlocks {{e|Half Soul Heart|n}}s.
+* {{Dlc|r}} Unlocks {{e|Micro Battery|text=Micro Batteries|n}}.
+
+== Notes ==
+* Every time Mom's Heart is defeated changes the current [[Savefile Images|savefile's image]] until It Lives! is unlocked.
+* Until It Lives! is unlocked, Mom's Heart cannot be continued past unless a {{r|Devil Room}} or an {{r|Angel Room}} appears, which allows access to {{s|Sheol}} or the {{s|Cathedral}}, respectively.
+* Just like Mom, using {{i|The Bible}} or {{p|XV - The Devil?}} against '''Mom's Heart''' will kill it instantly.
+* If {{i|Forget Me Now}} or a 5 pip {{r|Dice Room}} is used on {{S|Womb}} II / {{S|Utero}} II / {{S|Scarred Womb|na+}} II after defeating {{e|Mom's Heart}}, and Mom's Heart is again defeated on the regenerated floor, it will count as having defeated Mom's Heart 2 separate times, therefore unlocking 2 consequent [[endings]].
+* {{dlc+|r}} Erasing {{s|Mausoleum}} / {{s|Gehenna}} Mom's Heart with the {{i|Eraser}} will not open the passage to {{s|Corpse}}.{{dlc-}}
+
+== Trivia ==
+* Mom's Heart appeared in the original ''The Binding of Isaac.''
+** In the original ''Binding Of Isaac'', the only attack Mom's Heart could perform was spawning 2-4 monsters before disappearing and repeating the same move each time the wave of monsters were killed off.
+* The music that plays during this fight is titled [https://ridiculon.bandcamp.com/track/ventricide-womb-fight ''Ventricide'']. Ventricide is a made-up word formed from the word ventricle (one of the two larger chambers of the heart) and the suffix -cide, which denotes an act of killing. This theme is used in other tracks, such as Matricide, Hericide, and Infanticide.
+** Ventricide could also be a junction of the prefix ''ventr-'' (from the latin word ''venter''), which could denote "belly", "stomach", "womb" or "fetus", with the suffix ''-cide''.
+** Mom's Heart shares this theme with It Lives!.
+* {{Dlc|nr}} During the versus screen, Mom's Heart's enemy-spawning sound can be heard. Mom's Heart is one of {{Dlc|nr}} seven / {{Dlc|r}} five bosses that can be heard during the versus screen, the other {{Dlc|nr}} six / {{Dlc|r}} four being {{e|The Stain}}, {{e|The Forsaken}}, {{e|Big Horn}}, Mom, {{dlc|nr}} It Lives!, and {{e|Mother}}.
+* {{dlc|r}} The floor graphic beneath Isaac and Mom's Heart in the boss VS Screen in Mausoleum/Gehenna is of a slightly lighter shade of red than in the {{s|Womb}}.
+** In addition to this, despite having a Womb backdrop, Mom's Heart's room in the Mausoleum/Gehenna does not have the red static effect of the Womb.
+* Getting killed by the final ring of projectiles released after killing Mom's Heart will play the respective ending if there is one, and will count as a Mom's Heart kill. However, it is still considered a loss and will not count towards a win streak.
+* {{dlc+|r}} Originally in ''Antibirth'', the {{s|Mausoleum}} version of Mom's Heart could spawn enemies like {{e|Bouncer}}s and {{e|Blurb}}s.{{dlc-}}
+* Isaac consistently killing Mom's Heart, followed by the first appearances of the Ending Chest, could represent how his death hurt his mother. Considering how in the Final Ending after defeating {{E|The Beast}}, Isaac's Mom can be seen heartbroken about her son's demise.
+
+== Bugs ==
+{{bug|dlc=na+|Sometimes, if the boss intro is skipped, the game will not teleport Isaac into the center of the bottom of the room, resulting in immediate contact damage with one of the Eyes or Mom's Heart, depending on the direction of the room's entrance.}}
+
+{{nav|moms heart unlock|mom unlock|boss|fr=Le Cœur de Maman}}
+
+[[Category:Final bosses]]
+[[Category:Chapter 4 bosses|*]]
+[[Category:Womb bosses|*]]
+[[Category:Utero bosses|*]]
+[[Category:Scarred Womb bosses|*]]
+[[Category:Chapter 3.5 bosses]]
+[[Category:Mausoleum bosses]]
+[[Category:Gehenna bosses]]
+[[Category:Debut bosses in Rebirth|*]]

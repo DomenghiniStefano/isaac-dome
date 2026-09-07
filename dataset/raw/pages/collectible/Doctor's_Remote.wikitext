@@ -1,0 +1,47 @@
+{{infobox activated collectible
+ | id          = 47
+ | quote       = Reusable air strike
+ | description = Creates a crosshair on the ground that can be aimed with tear controls. A missile strikes the spot after 2 seconds, creating a heavy damage explosion.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = 2
+}}
+
+{{cit|a}}
+
+== Effect ==
+* Upon activation, a large red crosshair will appear on the ground. The crosshair can be moved using tear controls.
+* After approximately 2 seconds, a large missile will land on the red marker. The missile acts like a large bomb explosion, dealing 20 times Isaac's damage (the same as {{i|Epic Fetus}}).
+
+== Notes ==
+* The red marker works different from Epic Fetus' marker when controlled with the mouse: While pressing mouse left button, it keeps going away from Isaac, not following the mouse.
+* Activating the item again while the crosshair is on the ground will cancel the animation of Isaac holding up the remote and allow him to shoot tears sooner.
+** Activating the item again while having full charge (e.g. with {{i|The Battery}}) will also deplete the charge, wasting it.
+** {{dlc|nr}} Taking damage also cancels the animation.
+** {{dlc|nr}} The missile will still drop on the crosshair, which can no longer be controlled.
+** {{dlc|r}} This will cancel the missile drop and remove the crosshair.
+
+== Synergies ==
+* This item shares many of the synergies and interactions with {{i|Epic Fetus}}.
+* {{Book of Virtues synergy|description=Spawns grey bomb-like wisps in the middle ring. When Doctor's Remote is used, the wisps fire two inaccurate, explosive tears at the crosshair in an arc that deal 14 damage (28 with  {{I|BFFS!}}).}}
+* {{i|Car Battery|r+}}: Drops an additional missile after the first one.
+
+== Interactions ==
+* {{I|Car Battery|nr+}}: No effect.
+* {{C|Tainted Azazel}}: Shoots thin {{I|Brimstone}} beams when rocket explodes. This behavior is not shared with {{I|Epic Fetus}}, which produces no brimstone lasers.
+
+== In-game Footage ==
+{{#ev:youtube|vKTbpwbNVRc||inline}} {{#ev:youtube|FXgD5tBRjO0||inline}}
+
+== Trivia ==
+* This item is a reference to the remote Dr. Fetus uses several times throughout Super Meat Boy.
+* Epic Fetus is the endless version of this Item and, as such, uses the same attack animation.
+* The sprite of this item is identical to {{i|Teleport!}} and {{i|Teleport 2.0}}, but with a different color.
+* In the original ''The Binding of Isaac'', this item was used in the challenge "The Doctor's Revenge".
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Doctor's Remote.png|{{plat|3DS}} The icon of Doctor's Remote as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|explosive|fr=Télécommande du Docteur}}

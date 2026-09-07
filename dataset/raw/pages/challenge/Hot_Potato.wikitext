@@ -1,0 +1,65 @@
+{{infobox challenge
+ | dlc         = r
+ | number      = 42
+ | character   = Tainted Forgotten
+ | blindfolded = yes
+ | health      = {{hearts|soul=3}}
+ | has shops   = yes
+ | goal        = Satan
+ | unlocks     = The Chariot
+ | unlocked by = Hot Potato
+ | description = The Forgotten cannot fire tears and explodes every 2.5 seconds. Explosion timer resets upon entering a room or picking up an item.}}
+
+'''Hot Potato''' is [[challenge]] #42. The goal is to defeat {{E|Satan}}. This challenge is unlocked by unlocking {{C|Tainted Forgotten}}.
+
+The player starts as a [[blindfolded]] {{C|Tainted Forgotten}}. The Forgotten explodes every 2.5 seconds, capable of dealing friendly damage to The Soul. The Forgotten will always deal a static amount of 5 damage upon hitting an enemy, and 60 damage upon exploding an enemy. These damage values do not change no matter your damage stat.
+
+== Strategy ==
+* When playing on a controller, The Forgotten's throw distance can be altered by tilting the shoot (right) stick at a lower angle. Useful for closer enemies and for better aim.
+* While it requires a lot of patience, a viable strategy is to restart until a {{R|Mini-Boss Room}} with {{E|Lust}} is encountered and that it drops {{I|The Virus}}. It will dramatically increase the amount of contact damage inflicted when throwing The Forgotten, making it much easier to attack quick or regenerative enemies. As a weaker alternative, obtaining {{I|Mom's Heels}} from a {{R|Boss Room}} will work as well.
+* Obtaining {{I|Serpent's Kiss}} makes this challenge trivial, as contact with The Forgotten will apply poison damage and cause the enemies to drop black hearts on death, effectively giving you infinite health.
+** {{I|Chaos}} will be necessary to use this method, due to the fact that it is impossible to find a {{r|Treasure Room}} in this challenge.
+* While it does require some luck, visiting shops in possibility of {{I|Birthright}} and {{I|The Battery}}/{{I|Car Battery}} can grant invincibility in rooms while leading the bomb to enemies.
+* It's recommended to visit as many {{R|Curse Room}}s as possible. Tainted Forgotten can enter and exit them without taking any damage, and they can provide precious soul heart health and powerful items such as {{I|Gimpy}} and {{I|Red Key}}.
+** Hence finding or buying {{I|Voodoo Head}} is a good help in this challenge.
+* It's also beneficial to bomb any {{E|Blue Fire Place}}s or {{E|Purple Fire Place}}s the player comes across to gain as much soul heart health as possible.
+* The Forgotten will move slightly every time it explodes, unless the character has an item that grants flight. Using {{p|XII - The Hanged Man}} could prove useful for keeping The Forgotten in one spot for a [[room]].
+* Picking up {{I|Gnawed Leaf}} is an instant win, as just holding Tainted Forgotten will provide permanent invincibility and free reign over where explosions occur.
+** {{I|Chaos}} or Crawl Spaces will be necessary to use this method, due to the fact that it is impossible to find a {{r|Treasure Room}} in this challenge.
+* Items that provide invincibility (such as {{I|Book of Shadows}}) or invulnerability to explosions (such as {{I|Pyromaniac}} and {{I|Host Hat}}) are very powerful in this challenge, especially when combined with orbitals such as {{I|Sacrificial Dagger}}. Not only do they nullify self damage, they allow Tainted Soul to safely carry Tainted Forgotten as it is exploding, greatly increasing the player's control over where explosions occur. Take caution if there isn't full invincibility, though, since Tainted Forgotten's explosions can still push Tainted Soul while being carried, which could push them into enemies that survive the explosion.
+* Room clearing items such as {{I|The Necronomicon}} and {{I|Flush!}} can be useful for skipping rooms that would otherwise be difficult with Tainted Forgotten's mechanics, such as rooms with lots of fast enemies. In addition, {{I|The Negative}} will trigger every time Tainted Soul takes damage, providing a good room clearing effect for the later stages of the challenge, though this should not be relied on too much due to the health cost.
+* The timer for Tainted Forgotten's explosion resets every time a consumable is picked up/used or an active item is used. This can be used to avoid taking damage in certain situations. Items such as {{I|Converter}}, {{I|Sharp Key}}, {{I|Mom's Bracelet}}, {{I|Friendly Ball}}, and {{I|Bob's Rotten Head}} can be used to infinitely reset the explosion timer.
+* Since some bomb modifiers affect Tainted Forgotten's explosions, playing the {{M|Bomb Bum}} can be quite powerful. Getting {{i|Blood Bombs}}, {{i|Brimstone Bombs}}, {{i|Bomber Boy}}, {{i|Mr. Mega}}, or {{i|Sad Bombs}} can be quite helpful as it will greatly boost the damage inflicted by Tainted Forgotten's explosions. {{i|Glitter Bombs}} will be triggered with Tainted Forgotten's explosions, allowing to generate infinite pickups.
+* It is better to avoid {{i|Butt Bombs}}. This item can help a lot if fighting small enemies, but if you encounter the {{E|Brownie}} boss, unless you can one-shot him, you will heal him with butt bombs instead. This can cause a soft lock.
+* Visiting all libraries is recommended as a {{i|Book of Revelations}} will grant a lot of soul hearts and ensure that [[Super Meat Boy]] / [[Super Bandage Girl]] is obtained, which will provide the means to do damage to enemies without using The Forgotten.
+* It may be good to skip the {{R|Devil Room}} on the second floor to ensure an {{R|Angel Room}} spawns on future floors due to {{C|Tainted Forgotten}} being a character that can't get heart containers, making devil deals inconvenient. This will also maximize the chances of finding {{i|Monstrance}}, an extremely powerful item for this challenge. On the other hand, the Devil Room can occasionally provide black hearts as well as {{I|Empty Vessel}} or {{I|Brimstone Bombs}}, which can both prove to be very useful in this challenge.
+* {{I|How to Jump}} can be used to stall the explosions of the forgotten, as the forgotten will not move and will not explode during the jump animation. Gaining flight is not advised, as it will prevent the use of How to Jump, despite regularly being usable by characters with flight.
+* Using {{I|Notched Axe}} will allow The Forgotten to do a melee attack. This also works as it's thrown, functioning similarly to Tainted Forgotten's regular melee attack, but without the charge attack. It also allows you to delay the explosion, as each time you use it, the explosion timer will reset.
+* {{I|Maw Of The Void}} will allow The Forgotten to do a ring attack.
+* {{I|Incubus}} will give the familiar to The Forgotten, granting you another way to deal damage more easily.
+* {{i|Twisted Pair}} will allow The Forgotten to use an attack similar to the bone swing.
+* {{I|Urn of Souls}} stalls the explosion indefinitely by spamming the use button to activate and deactivate.
+* {{T|Super Magnet}} will pull enemies towards The Forgotten (and not The Soul), making them more likely to be hit with his explosions.
+* {{I|Revelation}} allows The Forgotten to do a ranged attack.
+* {{I|Mom's Bracelet}} allows the player to delay the explosion indefinitely, as The Forgotten will hold its arms up and reset its fuse.
+* Because {{C|Tainted Forgotten}} grants infinite explosion, it is recommended to destroy a maximum of obstacles to find rewards that might help. It's also a guarantee to find all {{r|Secret Room}}s among other things.
+* {{I|The Candle}} and {{I|Red Candle}} are extremely helpful in this challenge, as the player will be able to stop {{C|Tainted Forgotten}} from detonating at any time.
+* {{I|Dad's Ring}} is extremely helpful due to the ring orbiting The Forgotten and not The Soul. Throwing The Forgotten at enemies petrifies them leading to easy hits with explosions. Player can also lead enemies into the ring. This combined with {{T|Second Hand}} can make this challenge trivial, as petrify works on bosses.
+* {{I|Stitches}} will allow you to telefrag enemies killing them instantly without changing the souls position and can also be used to put The Forgotten into specific places to bomb enemies. Activating the item however will reset the explosion timer.
+* {{T|Extension Cord}} will give you another way of dealing damage. In this scenario, it's better to throw The Forgotten to the other side of the room and to keep enemies between The Forgotten and The Soul.
+* {{I|My Shadow}} allows [[friendly]] {{E|My Shadow|text=Charger}}s to spawn when The Forgotten touches an enemy, without the health depletion often required to summon them. This can be very powerful if The Forgotten comes in contact with an un-movable enemy like {{E|Mom}}'s doors, as this will rapidly spawn a large number of powerful [[friendly]] {{E|My Shadow|text=Charger}}s at no health cost.
+* Picking up {{I|Remote Detonator}} does not allow you to control when The Forgotten will explode. However, it can allow you to make an instant explosion wherever The Forgotten is by using and immediately detonating a bomb.
+
+== Notes ==
+* {{t|Short Fuse}} will not make the explosions quicker, {{dlc|r+}} nor will it increase the damage of the {{C|Tainted Forgotten}} explosions.
+* Upon death, {{C|Tainted Forgotten}} will explode like a {{E|Giga Bomb}}, making a hole in the floor.
+
+== Gallery ==
+<gallery>
+File:Tainted Forgotten Bomb.png|Tainted Forgotten's appearance in this challenge.
+</gallery>
+
+== Reward ==
+{{achievement text | The Chariot }}
+
+{{nav|challenge|the forgotten unlock}}

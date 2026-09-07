@@ -1,0 +1,28 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 130
+ | quote       = It's leaking
+ | description = Adds a chance to fire tears that [[slow]] enemies.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* Adds a chance to fire tears that [[slow]] enemies.
+
+== Notes ==
+* The chance to fire a slowing tear depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 10 - \left \lfloor \mathit{Luck} * 0.5  \right \rfloor}</math><ref>https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing</ref>
+** At base luck (0), the chance is 10%, maxing out at 100% at 18 luck.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: At base luck, having either increases the chance to 20% and having both to 30%.
+
+== Trivia ==
+* [[anti:Chewed Pen|Chewed Pen]] originates from the ''Antibirth'' mod, and by extension, from the ''Community Remix'' mod for the flash version.
+** In ''Community Remix'', it was named ''The Pen''.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+* This trinket is extremely similar to the [[enboi:Game Squid|Game Squid]] trinket found in the eternal edition of the original The Binding of Isaac, which was never added to Rebirth.
+
+== References ==
+<references />
+
+{{nav|broken|fr=Stylo Mâchouillé}}

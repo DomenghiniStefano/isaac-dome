@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | id          = 7
+ | quote       = DMG up
+ | description = +1 [[damage]]. Isaac shoots blood tears.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +1 [[damage]].
+* Isaac's tears become red.
+
+== Synergies ==
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Blood of the Martyr, it turns into a red locust dealing double Isaac’s damage per tick.
+* {{i|The Book of Belial}} / {{p|XV - The Devil}}: Applies an additional 1.5× damage multiplier.
+** The ×1.5 damage multiplier does not stack with the ×1.5 damage multiplier from {{i|Magic Mushroom}} and {{i|Cricket's Head}}.
+
+== Interactions ==
+* {{i|Blood of the Martyr}}: No further effect when multiple copies of the item are acquired.
+
+== In-game Footage ==
+{{#ev:youtube|94mmBFAC30Y||inline}} {{#ev:youtube|IMhNj45oM64||inline}}
+
+== Trivia ==
+* This item is a reference to the book of Revelations: ''And I saw the woman drunken with the blood of the saints, and with the blood of the martyrs of Jesus: and when I saw her, I wondered with great admiration. '''-Revelation 17:6''
+* This item's appearance is a reference to the [[wikipedia:crown of thorns|crown of thorns]] placed upon Jesus Christ's head during His crucifixion.
+
+{{nav|fr=Sang du Martyr}}

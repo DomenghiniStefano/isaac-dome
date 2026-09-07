@@ -1,0 +1,73 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 687
+ | quote       = Best friends forever!
+ | description = Spawns a random [[friendly]] [[monster]] that mimics Isaac's movements and attacks.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = offensive
+ | recharge    = 4
+ | unlocked by = Friend Finder
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* On use, spawns a random [[friendly]] monster that mimics Isaac's movements and attacks, similar to {{C|Jacob and Esau}}.
+* Friendly monsters can take damage from flames, spikes, and other hazards.
+
+== Notes ==
+* Currently, there are 21 monsters that can be spawned in:
+** {{E|Clotty}}
+** {{E|Clot}}
+** {{E|I.Blob}}
+** {{E|Grilled Clotty}}
+** {{E|Vis}}
+** {{E|Double Vis}}
+** {{E|Chubber}}
+** {{E|Danny}}
+** {{E|Coal Boy}}
+** {{E|Gurgle}}
+** {{E|Hive}}
+** {{E|Nest}}
+** {{E|Holy Mulligan}}
+** {{E|Drowned Hive}}
+** {{E|Bony}}
+** {{E|Black Bony}}
+** {{E|Holy Bony}}
+** {{E|Blaster}}
+** {{E|Dople}}
+** {{E|Evil Twin}}
+** {{E|Maw}}
+*** Blasters cannot attack unless Isaac presses the active item button, in which case they fire at the cursor.
+*** Gurgles can turn into {{E|Splasher}}s, which can be controlled like normal.
+*** Double Vis, Holy Mulligans and Drowned Hives seem to be very rare spawns.
+*** {{E|Vis}}es do not require charging, but they sometimes fire at Co-Op players automatically.
+*** {{E|Dople}} and {{E|Evil Twin}} will not fire opposite of Isaac, unlike what they usually do.
+* Certain enemies will have a crosshair to show where they are firing, mainly those with stringed attacks. A {{E|Black Bony}} will only keep the crosshair until it fires all three shots, but a {{E|Holy Bony}} will keep its crosshair for as long as fire keys are held.
+* Bullets fired from friendly mobs will still visibly blink as if they're an enemy bullet, and will be highlighted if Bullet Visibility is set to High, despite not harming Isaac.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a random wisp.}}
+* {{I|Car Battery}}: Doubles the amount of random [[friendly]] monsters spawned.
+* {{t|Forgotten Lullaby}}: Doubles the fire rate of spawned monsters, if they fire projectiles.
+
+== Interactions ==
+* [[Cards and Runes|Ace Cards]]: Monsters spawned by Friend Finder are still affected by Ace Cards.
+* {{i|Blood Puppy}}: Either angry version of Blood Puppy will target friendly enemies as well and can drag them along with it when it charges them. Blood Puppy cannot damage friendly enemies however friendly enemies can damage Blood Puppy despite not targeting it outright.
+* {{i|Broken Modem}}: Broken Modem also affects friendly enemies and projectiles created by them.
+* {{I|Eraser}}: If Friend Finder attempts to spawn an erased monster it will simply fail and waste the charge, instead of choosing a different monster.
+* {{I|Ghost Bombs}} / {{i|Hungry Soul}} / {{I|Purgatory}} / {{i|Vade Retro}}: Explosions from ghosts can kill friendly enemies.
+* {{I|Saturnus}}: Bullets fired from friendly enemies can still get caught in the orbit.
+* {{I|The Soul}}: Projectiles shot from charmed monsters will be repelled by the aura.
+* {{t|Tick}}: [[Friendly]] enemies start with less health if they have 60HP or more.
+
+== In-game footage ==
+{{#ev:youtube|aFvCoLkcgwQ}}
+
+== Trivia ==
+* There is a hidden multiplayer game mode for [[Co-op]] that allows a second player to control enemies and bosses in a way similar to Friend Finder, called Possessor.
+
+== Bugs ==
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room than the one he is currently in (such as the starting room of a new floor) will duplicate friendly enemies.}}
+
+{{nav|jacob and esau unlock|the beast unlock|fr=Amis Imaginaires}}

@@ -1,0 +1,83 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 360
+ | quote       = Dark friend
+ | description = Spawns a [[familiar]] who follows Isaac around and fires copies of Isaac's tears with reduced size (or width for some special attacks).
+ | quality     = 4
+ | tags        = summonable baby monstermanual offensive
+ | devil price = 2
+ | unlocked by = Incubus
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Spawns a [[familiar]] who follows Isaac around and fires copies of Isaac's tears with reduced size (or width for some special attacks).
+** {{Dlc|nr}} Incubus' tears ignore Isaac's range and shot speed.
+** {{dlc|r}} Incubus' damage is reduced by 25% when playing as characters other than {{C|Lilith}} and {{C|Tainted Lilith|n}}.
+* {{dlc+|r}} {{transformation contribution|Conjoined}}{{dlc-}}
+
+== Notes ==
+* Lilith's starting Incubus is technically not a collected item but an intrinsic part of the character, and is removed if an item such as {{i|Ankh}} or {{i|Clicker}} are used to become a different character. As such, playing as Lilith will not add Incubus to the [[collection page]], nor does her personal Incubus count towards the {{tf|Conjoined}} transformation.
+* Incubus is one of the familiars that can be spawned by {{i|Cambion Conception}}. However, receiving one in this way does not count towards Conjoined.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Incubus having 2nd priority.
+
+== Synergies ==
+* {{Dlc|nr}} {{C|Azazel}} / {{i|Brimstone}}: Fires a full-length Brimstone laser that can be charged while still firing the previous laser, allowing it to fire more rapidly than normal.
+** The laser fired by Incubus has the same width as {{i|Lil Brimstone}}'s.
+** {{Dlc|r}} When playing as {{C|Azazel}}, Incubus' Brimstone laser has the same range as him.
+** {{Dlc|r}} Multiple copies of {{I|Brimstone}} will not grant Incubus the mega brimstone effect.
+* {{Dlc+|r}} {{I|Berserk!}} / {{C|The Forgotten}} / {{I|Spirit Sword}}: Incubus will carry the respective melee weapon, using it exactly like Isaac.{{dlc-}}
+* {{i|BFFS!}}: Shoots tears that do {{Dlcalt|2x|r=1.5x (2x as {{c|Lilith}})}} Isaac's damage.
+* {{I|Cursed Eye|a+nr}}: A burst of 3 tears is fired at the regular tear delay without needing to charge.
+** {{dlc|r}} Incubus now charges and fires a burst of up to 5 tears just as Isaac would.
+* {{t|Forgotten Lullaby}}: Doubles the fire rate of Incubus. This notably makes it fire and charge-attack faster than Isaac does.
+* {{i|Immaculate Heart}}: Incubus can create its own orbiting tears, which will orbit the Incubus that created it, and not Isaac.
+* {{i|Technology 2|r}}: Incubus can fire the Technology 2 laser too.
+* {{i|Tractor Beam|r}}: The Incubus tears will follow the beam. This makes it seem as if the tears come directly from Isaac, even if blindfolded.
+** {{dlc|anr}}'''Tractor Beam''' + {{i|Monstro's Lung}}: Also allows the Incubus tears to follow the beam.
+
+== Interactions ==
+No effect on Incubus:
+* {{I|Bird's Eye}}
+* {{I|Cursed Eye|na+}}
+* {{I|Epic Fetus|nr}}
+* {{i|Evil Eye|anr}}
+* {{i|Eye of Greed|a+nr}}
+* {{i|Ghost Pepper}}
+* {{i|Large Zit}}
+* {{i|Loki's Horns|nr}}
+* {{i|Maw Of The Void|r}}
+* {{i|Mom's Eye|nr}}
+* [[R U a Wizard?]]
+* {{i|Tech.5}}
+Only stat effects are applied; otherwise no effect on Incubus:
+* {{i|Analog Stick|a+nr}}
+* {{i|Eye Drops}}
+* {{i|Marked|anr}}
+* {{i|Maw Of The Void|nr}}
+* {{i|Technology 2|nr}}
+* {{i|Tractor Beam|anr}}
+Other interactions:
+* {{dlc|nr}} {{i|Dead Eye}}: Only Isaac's tears affect the damage multiplier.
+* {{i|Dr. Fetus}}: A dangerous combination, since familiars naturally stay behind the character, and the character's movement may block the bomb, which causes self-damage easily.
+* {{dlc+|a+nr}} {{C|The Forgotten}}: Fires bone tears like {{i|Compound Fracture}} without the splitting effect. Reverts to normal tears when switching to {{c|The Soul}}.{{dlc-}}
+* {{i|Flat Stone|a+nr}}: The effective range of Incubus' tears is roughly doubled, with a single bounce in the middle of the flight.
+* {{i|Guillotine}}: Incubus will fire tears in relative position to its body depending on where Isaac's head is currently.
+* {{Dlc|nr}} {{i|Isaac's Tears}}: The item is recharged by Isaac's tears, not Incubus'. This item works with {{C|Lilith}}.
+** {{Dlc|r}} Incubus' tears contribute to the item charge.
+* {{i|Kidney Stone}}: Incubus ignores the range down from this item, and will fire the tear barrage but not the stone.
+** {{Dlc|r}} Incubus is still able to fire tears while Kidney Stone is charging.
+* {{i|The Ludovico Technique|nr}}: Incubus' tears become piercing and spectral but otherwise fires normal tears.
+* {{i|My Reflection|nr}}: Since Incubus ignores shot speed the tears turn back very quickly, greatly reducing effective range.
+* {{i|Tech X|anr}}: Incubus shoots small, fixed-size Tech X laser rings, with a very slightly longer minimum charge than Isaac.
+
+== In-game Footage ==
+{{#ev:youtube|tA0Vx6Lfitk}}
+
+== Trivia ==
+* In folklore, [[wikipedia:incubus|incubi]] are evil spirits said to descend upon sleeping people, specifically ones fabled to have sexual intercourse with women during their sleep, or, more simply put, the male version of a [[wikipedia:Succubus|succubus]].
+* If playing with a controller, you will notice the shooting deadzone for the incubus is smaller than Isaac's.
+
+{{nav|conjoined|lilith unlock|hush unlock|fr=Incube}}

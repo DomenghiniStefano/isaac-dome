@@ -1,0 +1,40 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 480
+ | quote       = Gain more friends!
+ | description = Doubles Isaac's [[Blue Fly|Blue Flies]] and [[Blue Spider]]s, or spawns one if Isaac has none. Converts pickups in the current room into Blue Flies or Blue Spiders.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | recharge    = 2
+ | shop price  = {{dlcalt|15|r=10}}
+}}
+
+{{cit|a|a+}}
+
+== Effects ==
+* Upon use, converts [[pickup]]s within the current room to [[Blue Fly|Blue Flies]] or [[Blue Spider]]s.
+* Doubles Isaac's current amount of Blue Flies and Spiders.
+** If Isaac has no Blue Flies or Spiders, spawns one Blue Fly or Spider.
+
+== Notes ==
+* {{dlc|r}} The item will cost 10 cents if found in a {{r|Shop}}
+* Does not work on {{E|Troll Bomb}}s or {{E|Mega Troll Bomb}}s.
+* One character using it does not seem to double the spiders/flies for other characters. It only seems to double the ones following the character using the item.
+* {{dlc|r}} [[Locust]]s will not be doubled by Compost. 
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a wisp in the middle ring if Compost destroys at least one pickup, and the wisp's health will be equal to the number of pickups converted to [[Blue Fly|Blue Flies]]/[[Blue Spider|Spiders]]. If Isaac hits the blue fly cap of 64 as a result of using Compost, all but one of Isaac's wisps will despawn.}}
+* {{I|Car Battery}}: Spawns 2 Blue Flies or Blue Spiders for each pickup removed, quadruples the current amount and spawns two if there is none.
+* {{T|Fish Tail}}: Isaac will gain twice as many flies per use, meaning each fly will be tripled.
+
+== In-game Footage ==
+{{#ev:youtube|j6uxhG8UhDQ}}
+
+== Trivia ==
+* Compost is organic matter that has been decomposed and recycled as fertilizer.
+
+== Bugs ==
+{{bug|plat=PC|When using the item and obtaining an item (cards/pills/items) at the same time it will make the picked-up item disappear.}}
+{{bug|The game incorrectly tracks {{c|Tainted Lazarus}}'s number of blue flies and spiders after flipping between forms. This often results in compost becoming unable to double his spiders/flies.}}
+
+{{nav}}

@@ -1,0 +1,44 @@
+{{infobox activated collectible
+ | id          = 86
+ | quote       = Summon Monstro
+ | description = A friendly {{E|Monstro}} jumps on a random enemy, dealing 120 damage in an area. Targets Isaac if used in a [[room]] without enemies.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | recharge    = 3
+ | unlocked by = Monstro's Tooth
+}}
+
+{{cit|a}}
+
+== Effect ==
+* Upon use, a friendly {{E|Monstro}} jumps on a random enemy, dealing 120 damage while destroying nearby [[obstacles]] like rocks.
+
+== Notes ==
+* {{dlc+|r}} This item can be spawned by {{e|Bumbino}} if he picks up 12 cents.{{dlc-}}
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Monstro}}.{{dlc-}}
+* This item will target Isaac if it is used in a [[room]] without monsters and can cause damage (a full heart).
+** Monstro can be dodged depending on Isaac's [[Speed]] and his movement.
+** Monstro can open {{R|Secret Room}}s or destroy [[tinted rock]]s without hurting Isaac, if timed correctly.
+* Monstro will target {{e|Shopkeeper}}s. 
+* {{Dlc|nr}} Like {{e|Mom}} and {{E|Satan}}'s stomp attacks, this attack is treated as an explosion, so {{i|Pyromaniac}} and {{i|Host Hat}} will be activated if Monstro falls on Isaac.
+* {{dlc|na}} This item does not affect the {{E|Monstro}} boss.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns wisps in the middle ring, looking like teeth. These wisps shoot 50% slower than the average wisp, but deal 12 damage per shot.}}
+* {{i|Car Battery}}: Monstro deals double damage.
+
+== In-game Footage ==
+{{#ev:youtube|RRPmFh4ElUU||inline}} {{#ev:youtube|8VqlbFDQW5I||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Monstro's Tooth.png|{{plat|3DS}} The icon of Monstro's Tooth as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* The tooth can be seen missing in {{E|Monstro}}/{{E|Monstro II}}'s mouth.
+* This item is similar to {{p|II - The High Priestess}}, but deals less damage.
+* Judging by the sprites of Monstro/Monstro II, it can be assumed that the missing tooth is an incisor tooth or canine tooth. The item physically resembles a molar tooth however.
+* This item's unlock is the most common steam achievement in the game.
+
+{{nav|fr=Dent de Monstro}}

@@ -1,0 +1,43 @@
+{{infobox boss
+ | name        = Mama Gurdy
+ | id          = 266
+ | appearance  = (scale:1)
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{dlc|r}}<br>{{floor|Womb}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{room|boss challenge}}
+ | base hp     = 750
+ | pool        = {{ip|Boss}}<br> {{i|Lil Gurdy|r+}} (1% chance)
+}}
+
+'''Mama Gurdy''' is a [[boss]] that can appear:
+* {{dlc|nr}} In all environments of [[Chapters#Chapter 4|Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}).
+* {{Dlc|r}} Only in the {{s|Womb}} and the {{s|Scarred Womb}}.
+
+== Behavior ==
+Mama Gurdy resides inside the wall at the top of the room. She has four attacks:
+* Creates temporary spikes in the boss room in random locations.
+** These spikes can spawn under Isaac but have a small delay before they can deal damage.
+* Spews a volley of large orange projectiles towards the bottom of the room, leaving slowing [[Creep#Orange Creep|Orange Creep]].
+* Shoots 3, 4, or 7 waves of 5 spread projectiles at Isaac's location.
+* Shoots a burst of disorganized projectiles at Isaac.
+* Occasionally retreats upwards off-screen before executing her spike attack. Performs her orange projectile attack immediately upon re-entering the screen.
+Mama Gurdy deals a whole heart of contact damage.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Mama Gurdy ingame.png|Mama Gurdy as one of {{e|Delirium}}'s forms.
+File:Dingle Plus Mama Gurdy Concepts.jpg|Concept sketch of Mama Gurdy along with Dingle.
+</gallery>
+
+== Trivia ==
+* Mama Gurdy appears to be the final stage of the "Gurdy" boss line, with the first stage as {{e|Gurglings}}, second as {{e|Gurdy Jr.}}, and third as {{e|Gurdy}}.
+* Mama Gurdy is the only boss with boss art that doesn't directly display them, showing only a hand.
+** She is also one of the only bosses not appearing as a degraded boss.
+* {{e|Mother}}, the final boss of {{s|Corpse}}, appears to be a postmortem version of Mama Gurdy.
+
+{{nav|boss|fr=Mama Boris}}
+
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]
+[[Category:Gurdies]]

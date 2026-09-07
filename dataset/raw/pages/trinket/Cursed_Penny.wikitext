@@ -1,0 +1,39 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 172
+ | quote       = Wealth of misery
+ | description = Picking up [[coin]]s teleports Isaac to a random room. {{dlc|r+}} The type of the coin picked up affects the teleport destination.
+ | unlocked by = Cursed Penny
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Teleports Isaac to a random room upon picking up a [[coin]].
+* {{dlc|r+}} The type of the coin picked up affects the teleport destination:
+** {{e|Penny}}: 50% chance for an unexplored combat room.
+** {{e|Double Penny}}: 50% chance for {{r|Dice Room}}, {{r|Vault}}, {{r|Clean Bedroom}} or {{r|Dirty Bedroom}}.
+** {{e|Nickel}}: 50% chance for {{r|Treasure Room}}, {{r|Shop}}, {{r|Library}}, {{r|Arcade}}, {{r|Challenge Room}} or {{r|Boss Challenge Room}}.
+** {{e|Dime}}: 25% chance for {{r|Angel Room}} or {{r|Devil Room}}. This ignores Isaac's current devil/angel deal chances and picks at random.
+** {{e|Lucky Penny}}: 50% chance for {{r|Secret Room}} or {{r|Super Secret Room}}.
+** {{e|Golden Penny}}: 10% chance for {{r|I AM ERROR}} room.
+** {{e|Sticky Nickel}}: 100% chance for {{r|Boss Room}} or {{r|Curse Room}}. This is only for the still-stuck version and the coin is still not actually picked up.
+
+== Notes ==
+* The effect can teleport Isaac to any room aside from an undiscovered {{r|Ultra Secret Room}}.
+* {{dlc|r+}} The trinket has a small chance to teleport Isaac to {{r|Black Market}} if the {{r|I AM ERROR}} room should have been the target. In this case, there will be no door exiting back to a {{r|Crawl Space}}.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: The odds for landing in a special room are increased.
+
+== Interactions ==
+* {{i|Black Candle}}: Prevents the teleport effect from triggering for all coins except the still-stuck {{e|Sticky Nickel}}.
+* {{dlc|nr+}}{{A|Golden Trinket|n}} / {{i|Mom's Box|n}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|1lV2S1EBIas}}
+
+== Bugs ==
+{{bug|The effect can teleport Isaac to the tall room with a broken minecart track in {{s|Mines}}/{{s|Ashpit}} II, if the player hasn't pressed all the yellow buttons and doesn't have a way to destroy the wooden door, the player can't do anything rendering the game softlocked.}}
+{{nav|coin modifier|penny|tainted keeper unlock|mother unlock}}
+[[Category:Penny trinkets]]

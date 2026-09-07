@@ -1,0 +1,87 @@
+{{infobox passive collectible
+ | image name     = * {{dlc|nr|Rebirth}}
+ | tear app scale = 1/2
+ | id             = 317
+ | quote          = Toxic splash damage
+ | description    = Tears leave a small, short lasting pool of [[creep]] on impact or when their range is depleted.
+ | quality        = 3
+ | tags           = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Tears leave a small, short-lasting pool of [[creep]] upon hitting an enemy or when their range is depleted.
+** The creep deals 1 damage per tick or 30 damage per second.
+** {{Dlc|r}} The creep can deal up to 25 damage.
+** Multiple creep pools can inflict damage on an enemy simultaneously.
+
+== Synergies ==
+* {{I|Compound Fracture}} / {{I|Cricket's Body}} / {{I|The Parasite}}: Each split tear leaves a creep, creating lots of creep pools.
+* {{I|Explosivo}}: Leaves an explosion-sized creep whenever the Explosivo tear goes off.
+* {{I|Flat Stone}}: Each tear bounce leaves a pool of creep.
+* {{I|The Ludovico Technique}}: Spawns creep trail under the tear on a constant time interval.
+* {{I|Mom's Knife}}: Spawns a line of creep behind the knife as it shoots towards enemies, each one left on random time interval.
+* {{I|Spirit Sword}}: The projectiles from the sword spawn creep pools, sword attacks do not.
+* {{I|Tech.5|dlc=a+}}: The lasers spawn creep pools always when it hits obstacles and occasionally on enemies.
+* {{I|Technology 2|dlc=a+}}: The lasers rapidly spawn creep pools on hitting both obstacles and enemies.
+* {{I|Tech X}}: The laser rings spawn creep pools when it hits enemies on a constant time interval.
+* {{I|Trisagion}}: The blasts leave long trails of creep pools, and a creep for each damaging tick. Since the effect stacks, they cause massive damage.
+
+== Interactions ==
+* Following items leave the creep pools:
+** {{I|Eye of Greed}}
+** {{I|Fate's Reward}}
+** {{T|Found Soul}}
+** {{I|Gello}}
+** {{I|Host Hat}}
+** {{I|Incubus}}
+** {{I|Kidney Stone}}
+** {{I|Lead Pencil}}
+** {{I|Metal Plate}}
+** {{I|Sad Bombs}}
+** {{I|Saturnus}}
+** {{I|Tammy's Head}}
+** {{I|Twisted Pair}}
+** {{I|Varicose Veins}}
+* Following items do not leave the creep pools:
+** {{I|Akeldama}}
+** {{I|Brimstone Bombs}}
+** {{I|Circle of Protection}}
+** {{I|Divine Intervention}}
+** {{I|It Hurts}}
+** {{I|Large Zit}}
+** {{I|Shard of Glass}}
+** {{I|Slipped Rib}}
+** {{I|Vasculitis}}
+* {{I|Athame}} / {{I|Maw Of The Void}}: Only creates the creep pools when damaging enemies or destroyable obstacles.
+* {{I|Brimstone}}: Overrides Mysterious Liquid.
+** {{Dlc|a}} The beam spawns pools of liquid always when it hits obstacles and enemies on a constant time interval.
+*** {{C|Azazel}}: Leaves the creep pools at the end of Azazel's shorter brimstone beam.
+* {{I|Dr. Fetus}} / {{I|Epic Fetus}} / {{I|Ipecac}}: Overrides Mysterious Liquid.
+** {{Dlc|a}} Explosions caused by these items will leave a large pool of creep.
+* {{I|Fire Mind}}: Mysterious Liquid removes explosion chance, but fire damage over time is preserved.
+** {{Dlc|a}} Tears can explode as expected. The explosions leave a large pool of creep.
+* {{I|Haemolacria}}: Only the main tear spawns creep.
+** {{Dlc|r}} All tears leave the creep pools .
+* {{I|Lachryphagy}}: Only the burst tears spawns creep.
+* {{I|Lost Contact}}: Overrides Mysterious Liquid.
+** {{Dlc|a+}} The combination works as expected, with tears spawning liquid even when stopping enemy shots.
+* {{I|The Ludovico Technique}}: Mysterious Liquid's graphical effect remains, but the tear leaves no creep.
+** {{Dlc|a}} The tear leaves a trail of creep pools on a constant time interval.
+* {{I|Montezuma's Revenge}}: Constantly creates pools of creep at the end of the beam. Corn projectiles do not spawn creep.
+* {{I|Mucormycosis}}: All tears including spores spawn creep upon burst, but not on contact with enemies.
+* {{t|Nose Goblin}} / {{I|Sinus Infection}}: Spawns creep after each tear's effect wears off and drops to the ground but not on contact with enemies.
+* [[Piercing tears]]: Tears do not leave creep pools  when they hit and pass through an enemy, and only leave creep pools when they hit an obstacle or run out of range.
+* {{I|Revelation}}: The beam spawns pools of liquid always when it hits obstacles and enemies on a constant time interval.
+* {{I|Rubber Cement}}: Tears do not create creep when they bounce off enemies or obstacles and only when they land.
+* [[Spectral tears]]: Tears only spawn creep pools after they land, not while passing through obstacles.
+* {{I|Strange Attractor}}: Overrides Mysterious Liquid.
+** {{Dlc|a+}} The combination works as expected.
+* {{I|Technology}}: Overrides Mysterious Liquid.
+** {{Dlc|a}} The laser spawns pools of liquid always when it hits obstacles and occasionally on enemies.
+
+== In-game Footage ==
+{{#ev:youtube|a3L-HnCq8uM}}
+
+{{nav|fr=Liquide Mystérieux}}

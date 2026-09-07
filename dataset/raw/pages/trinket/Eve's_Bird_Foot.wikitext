@@ -1,0 +1,33 @@
+{{infobox trinket
+ | id          = 60
+ | quote       = Revenge from beyond
+ | description = Has a chance to spawn a {{i|Dead Bird}} [[familiar]] for the current [[Rooms|room]] each time an enemy dies.
+ | unlocked by = Eve's Bird Foot
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* Chance to spawn up to 1 {{i|Dead Bird}} [[familiar]] for the current [[Rooms|room]] each time an enemy dies.
+** The Dead Bird deals 4 damage per second.
+** The chance increases with [[luck]], starting at 5% at 0 luck and reaching 100% at 8 luck.
+** The familiar spawns already activated, with no taking damage required unlike the item.
+
+== Notes ==
+* This trinket alone cannot spawn more than one Dead Bird per room. It can, however, stack with {{i|Dead Bird}} to spawn two in one room.
+* The bird familiar spawned by this trinket is transparent and has one missing leg compared to the one spawned by the actual item.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Increases chance to spawn {{i|Dead Bird}} by additional 5% per stack.
+
+== Interactions ==
+* {{dlc|r}} [[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s can’t spawn the bird familiar.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop can’t spawn the bird familiar.
+* {{I|Box of Friends}}: No effect.
+* {{i|Sacrificial Altar}}: Sacrifices the familiar, destroying the trinket and generating an item normally.
+* {{dlc|rnr+}} [[Freeze|Freeze Effects]]: Enemies that die from being frozen can’t spawn the bird familiar.
+
+== In-game Footage ==
+{{#ev:youtube|BHTo7p2pr4A}}
+
+{{nav|eve unlock|isaac boss unlock|fr=Serre de l'Oiseau d'Ève}}

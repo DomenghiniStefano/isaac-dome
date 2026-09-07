@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | costume name = Pluto
+ | dlc          = r
+ | id           = 688
+ | quote        = Let him free
+ | description  = Upon [[death]], Isaac respawns in the current room with half of a {{E|Red Heart}}, a massive size down, and +0.2 [[Speed]].
+ | quality      = 2
+ | unlocked by  = Inner Child
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Gives Isaac an extra life. Upon [[death]], Isaac respawns in the current room with half of a {{E|Red Heart}}, a massive size down, and +0.2 [[Speed]].
+** If Isaac doesn't have any [[Red Heart Container]]s, he will respawn with a {{E|Half Soul Heart}}  instead of a {{E|Half Red Heart}}.
+* When Isaac respawns as the inner child, he emits a blood explosion that deals 35 flat damage to all nearby enemies.
+
+== Notes ==
+* Resurrection items activate in a [[:Category:Revival items|set order]]. Inner Child is 5th in this order after {{p|Soul of Lazarus}}, {{i|1up!}}, {{c|Lazarus}}' inherent extra life, and {{i|Dead Cat}}.
+* Once this item has been unlocked, if the current character's [[Tainted Characters|Tainted]] version was already unlocked or the current character is a Tainted character, it is guaranteed to spawn in the hidden closet in {{s|Home}}.
+** This item will appear even if Inner Child had been obtained earlier in the run, allowing Isaac to have two copies of the item.
+** Despite being hard-coded not to appear anywhere else for him, this specific occurrence of Inner Child will still spawn for {{c|Tainted Lost}}.
+** If this item is obtained in Home, a viable strategy is to intentionally die towards the end of the fight with {{E|Dogma}}. Isaac will be respawned with the size down and Speed up, and these effects will carry over to the Beast fight along with the healing provided by {{i|Dogma}}, making Isaac much harder to hit for the fight.
+* The size down from being revived by Inner Child is the same as if Isaac had collected {{i|Pluto}}.
+
+== In-game footage ==
+{{#ev:youtube|taFAq7bRQpg}}
+
+== Trivia ==
+* [[wikipedia:Inner_child|Inner Child]] is a concept in popular psychology that there exists an "inner child" in every sub-conscious that contains memories of pain and trauma in youth.
+* Specifically, Inner Child spawning in the {{s|Home}} closet may be a reference to the trauma seen in the [[Endings#Ending 21 .28Mother Ending.29|Ending 21]] ({{E|Mother}}'s Ending) – where {{E|Mom}} throws Isaac into a closet.
+** In the reverse, perhaps the ending is also allegorical rather than historical: Mom's constant abuse "threw" Isaac's inner child into a closet.
+* This is one of the very few items without the <code>offensive</code> tag that {{c|Tainted Lost}} can obtain without the use of {{i|Spindown Dice}}.
+
+{{nav|jacob and esau unlock|revival|ultra greed unlock|fr=Enfant Intérieur}}
+[[Category:Revival items]]

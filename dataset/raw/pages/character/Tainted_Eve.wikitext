@@ -1,0 +1,195 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc = r
+ | id = 26
+ | health = {{hearts|red=2}}
+ | damage = 3.5 (×1.20)
+ | tears = -0.5; ×0.66
+ | collectibles = {{i|Sumptorium}}
+ | unlocked by = The Curdled
+}}
+'''Tainted Eve''' is a [[Characters|character]] added in [[The Binding of Isaac: Repentance]]. She is the alternate version of {{C|Eve}} with ragged hair, no bird, ruined mascara as if crying, and an occasional cosmetic blood trail. Tainted Eve is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|1=Soul of Cain}} to access a special room in one of the walls while playing as Eve.
+
+Tainted Eve starts with 2 red hearts, and possesses the lowest base fire rate of all characters in the game, even slower than most [[Familiar]]s. Unlike her normal counterpart, Tainted Eve does not start with {{I|Dead Bird}} or {{I|Whore of Babylon}}. Instead, Tainted Eve starts with {{I|Sumptorium}} in her consumable slot.
+
+== Notes ==
+After holding down the fire button for 2 seconds, a blood clot familiar that shoots tears will spawn alongside her, starting with 15 HP when spawned and slowly decaying down to their minimum stats. Each time a blood clot is spawned, half a heart is drained, and this process can be repeated until Tainted Eve has half a heart of health remaining. Using Sumptorium will transform clots back into health, with excess clots moved to the ground next to her. Clots being transformed back into health damage enemies for 3× her current [[damage]] as they pass through them.
+
+If every remaining clot is killed and Tainted Eve only has half a red heart left, she is granted a {{I|Whore of Babylon}}-like effect and begins to use Sumptorium as a weapon that functions similarly to {{I|Mom's Knife}}. Unlike a {{I|Mom's Knife}}, the sumptorium knife has no synergies with some items, such as {{i|C Section}}, {{i|Berserk!}}, {{I|Mom's Knife}}, {{i|Epic Fetus}}, {{i|Spirit Sword}}, or {{t|Found Soul}}. The effect lasts until Tainted Eve either gains health or summons a clot, though the effect will persist until the next room is entered. This effect can also be triggered if Tainted Eve summons a blood clot while having no others and is left with half a heart. While under this effect, any summoned blood clots will use a small Mom's Knife for the rest of the room.
+
+== Blood Clots ==
+Blood clots are familiars intrinsic to Tainted Eve due to her starting item, Sumptorium. Its basic effects are shown below, but can be read in further detail on its [[Sumptorium|respective page]].
+
+* While holding the Drop/Swap Item button, Tainted Eve's clots will remain where they are instead of following her, similar to {{C|Esau}}.
+* They all start with 15 HP when spawned and slowly decay down to 1 HP for red hearts and 5 HP for non-red hearts. Older clots appear darker and smaller than fresh ones.
+* Tainted Eve's clot creation follows this priority: [[Health#Golden Hearts|Golden]] > [[Health#Eternal Hearts|Eternal]] > [[Health#Rotten Hearts|Rotten]] > [[Health#Red Heart Containers|Red]] > [[Health#Soul Hearts|Soul]] > [[Health#Black Hearts|Black]] > [[Health#Bone Hearts|Bone Hearts]].
+* Each type of heart generates a different type of blood clot:
+{| class="wikitable sortable" style="text-align: center"
+ |-
+ ! class="unsortable" | Heart
+ ! class="unsortable" | Appearance
+ ! Damage
+ ! class="unsortable" | Tear effect
+ |-
+ | [[file:Red_Heart.png|30px]]
+ | [[file:Sumptorium_red_familiar.png|30px]]
+ | 35%
+ | n/a
+ |-
+ | [[file:Soul_Heart.png|30px]]
+ | [[file:Sumptorium_soul_familiar.png|30px]]
+ | 35%
+ | n/a
+ |-
+ | [[file:Black_Heart.png|30px]]
+ | [[file:Sumptorium_black_familiar.png|30px]]
+ | 43%
+ | {{i|Dark Matter}}
+ |-
+ | [[file:Eternal_Heart.png|30px]]
+ | [[file:Sumptorium_eternal_familiar.png|30px]]
+ | 52%
+ | {{i|Sacred Heart}}
+ |-
+ | [[file:Gold_Heart.png|30px]]
+ | [[file:Sumptorium_golden_familiar.png|30px]]
+ | 35%
+ | {{i|Midas' Touch}} (scales with luck)
+ |-
+ | [[file:Bone Heart.png|30px]]
+ | [[file:Sumptorium_bone_familiar.png|30px]]
+ | 35%
+ | {{i|Compound Fracture}}
+ |-
+ | [[file:Rotten_Heart.png|30px]]
+ | [[file:Sumptorium_rotten_familiar.png|30px]]
+ | 35%
+ | n/a
+ |}
+* Upon activation, Sumptorium transforms clots back into the health used to create them, with excess clots moved to the ground next to her. Freshly generated clots have full durability, even if the health you used to create them came from old, weak clots. Repeatedly generating and absorbing your clots is a good way to keep them from dying to a single enemy bullet, though this becomes less viable the more clots you have on the field.
+* Turning an Eternal Heart into a clot will prevent it from turning into a [[Health#Red Heart Containers|heart container]] if Tainted Eve goes down a floor with it as a clot.
+* Blood clots are not affected by environmental hazards such as spikes, cobwebs, or fireplaces. Cobwebs can cause the blood clots to move out of sync with Tainted Eve while she is slowed.
+* Blood clots move on the ground by default; whenever Tainted Eve gains [[flight]], her blood clots will gain flight too.
+* In Co-Op, when Tainted Eve dies and becomes a ghost baby, her clots will remain on screen and can be controlled in the normal way, but will receive the same damage debuff. If all of them die, Tainted Eve's ghost will receive Sumptorium for the rest of the time she is dead, making her a decently damaging ghost.
+* If you are about to be hit by an attack which will kill many of your blood clots, you can save them by using Sumptorium.
+* If you take in more clots than you have space for, Eve's health will fill, and any excessive clots will drop next to her.
+* The maximum number of clots that can be present at a time is 64. This can be lower if Tainted Eve has other familiars such as blue spiders/flies, as they will count towards the cap of 64.
+* Soul clots and Black clots will charge {{I|Alabaster Box}} when recalled, stopping them from returning to the health bar. As a result, Tainted Eve will keep half a soul/black heart unless bone hearts are present.
+** Additionally, when the next hearts in the health bar to be drained are soul/black hearts, Soul clots will be first drained directly from Alabaster Box, reducing its charge by one for each clot formed.
+
+== Strategy ==
+* Tainted Eve's strength is proportional to how many blood clots she has: she is required to keep them around for protection, while at the same time protecting them from harm in order to keep her offense going. Because of this, her runs can go hot and cold depending on her items and drops.
+* As she is heavily geared towards turning health into familiars, an abundance of heart drops of any sort can easily grant Tainted Eve impressive room-clearing abilities. The sheer amount of blood clots will cause her to have extreme damage (due to the amount of tears being fired) and multiple "bodyguards" to block her from enemy tears.
+* Tainted Eve loses a significant amount of staying power if she has low health and few clots: she will be forced to either use her horrendous base tears, or create a small number of blood clots that may end up dying anyway, which is usually the case during the start of a run.
+* While Tainted Eve's passive ability causes her to drain health, the player can avoid this by "tap firing" instead of holding down the fire button. This does not affect the firing speed of Tainted Eve or her clots, and also lets her keep some backup health in her heart containers in case the player is not confident about avoiding damage.
+* To make the most use of hearts, backtrack and use every remaining heart drop to create new clots once a floor is clear, and bomb objects that can potentially drop hearts, such as Blood Donation Machines.
+* If you are at full health, keep in mind to pick up/use any health-restoring items like {{i|Blood Bag}} or [[Pills|Full Health pills]] after you create clots, as it will make use of any potentially wasted heals.
+* Clots slowly lose health as they stay out, to the point they can be killed by a single enemy bullet. It is usually a good habit to absorb clots with {{I|Sumptorium}} to refresh their health, to prevent Tainted Eve from losing large amounts of clots later on. Be mindful that it will take a significant amount of time to rebuild her army of clots, so plan ahead.
+** Tainted Eve can only reabsorb as many red clots as she has heart containers; leftover clots will remain on field without their health refreshed. If she has a massive amount of red clots, this means she runs the risk of losing any clots she is unable to reabsorb.
+* Due to Tainted Eve's dependency on her clots to provide a physical wall of protection, she has a few notable weaknesses:
+** Chasing enemies that deal contact damage, especially jumping ones like {{e|Trite|text=Trites}}, are some of the earliest problems she will face, as they can walk through clots or jump directly onto Tainted Eve while she is building an offensive.
+** Enemies with piercing/area of effect abilities (such as enemy {{I|Brimstone}} beams or {{I|Ipecac}} shots) can instantly vaporize a large group of her clots or hit her when she is at half a heart. 
+** Rooms with lots of obstacles can prove to be detrimental, as it can cause the clots to separate and make them more likely to take damage, as well as reducing Tainted Eve's damage output.
+** Bullet hell enemies will slowly chip away at her clots if she is careless. Thus, endgame bosses such as {{E|Delirium}} and {{E|Hush}} will usually be her hardest challenge, since Tainted Eve will start out strong, but can become completely helpless at the end without any clots.
+* As she is able to control how many hearts she possesses in her health, Tainted Eve can: 
+** Easily make use of both types of {{r|Challenge Room}}s.
+** "Reserve" heart drops by turning them into clots, and then heal herself back up afterwards. This can allow her to use self-harm sources such as {{r|Sacrifice Room}}, {{r|Curse Room}}, and {{m|Blood Donation Machine}} more frequently.
+** Activate items that require certain amounts of health, such as {{I|Whore of Babylon}} and {{I|Empty Vessel}}, while having a backup source of health (her clots).
+* [[Greed Mode]] is difficult for Tainted Eve, as she can struggle to get momentum going on the first two floors. A strong start is one with a lot of health available. You want to generate as many clots as possible, so you can quickly kill each new enemy wave as it appears. A handful of clots with a mild Damage or Tears Up starting item is worse than a mass of clots with base stats, making items like {{i|Raw Liver}} desirable in the first Silver Treasure Room. Before starting the boss waves, consider how many clots you still have. If you're only a bit low, don't be afraid to buy Red Hearts from the shop to replenish their numbers. If you're low on health, clots, and money, it may be worth activating the powerful Whore Of Babylon effect and trying to quickly kill the bosses that way. If you can survive the first two floors, and hopefully pick up some decent offensive items, then the rest of the run tends to be easier.
+* It is generally not advised to collect {{E|Rotten Heart}}s as Tainted Eve, as any active Rotten clots will overwrite existing Red Health every time {{I|Sumptorium}} is used. Over time, This will cause you to lose all excess Red clots, substantially hindering your DPS potential.
+* If entering the abandoned area of the mines to collect {{I|Knife Piece 2}}, then the ability to create clots will still be active, but {{I|Sumptorium}} will not be available.  If you are low on health be careful not to create clots because you won't be able to absorb them until you exit.
+
+== Item Interactions ==
+=== Favored Items ===
+Any Health Up items are generally going to be good choices for Tainted Eve, as her clot generation relies on large amounts of health. Any homing effect is also particularly good as the spread of the clots are more likely to hit enemies. Finally, [[status effect]] tears are very favorable for Tainted Eve, as the sheer amount of tears fired by a group of clots makes it extremely likely for a status tear to be fired, even for those with low chances to.
+* {{I|Adrenaline}}: Since clot generation favors Red hearts over all other types, Tainted Eve can obtain a large damage bonus with every 2 clots she generates out of her red health.
+* {{I|BFFS!}} / {{T|Forgotten Lullaby}} / {{T|Baby-Bender}}: Massively increase the damage output of the clots.
+* {{I|Binge Eater}}: Allows Tainted Eve to trade disfavored items for stats and enormous amounts of health, meaning that numerous clots can be generated.
+* {{i|Birthright}}: Red Heart Clots now spawn temporary {{E|Half Red Heart}}s on death that last for two seconds before disappearing. Clots spawned from other types of hearts will not drop hearts.
+* {{T|Bloody Penny}} / {{T|Blessed Penny}}: Each penny has a chance of dropping half red/soul hearts for clot creation.
+* {{I|Book of Revelations}}: Allows Tainted Eve to generate 2 extra blue clots every 6 rooms.
+** But beware, as Famine, War and Conquest's charges, Pestilence's creep and explosive shots and War's troll bombs can easily overwhelm or outright bypass the clots and directly kill Eve with ease.
+* {{I|Candy Heart}} / {{I|Soul Locket}}: Due to the amount of time Tainted Eve will spend picking up hearts, these items are essentially a stat up for spawning clots.
+* {{I|Charm of the Vampire}}: Every 13 kills allows Tainted Eve to create one blood clot.
+* {{T|Child's Heart}}: Increases the drop rate of red hearts, and thus increases the ability to make clots.
+* {{I|The Common Cold}} / Items affected by luck: Tainted Eve and her clots fire a lot of tears, increasing the chance for a tear effect to occur. With tear effects, items such as {{I|Magic Scab}} and {{I|Lucky Foot}} are also beneficial.
+* {{I|D1}}: Allows duplicating any spare pickups on the floor, including red hearts.
+* {{I|Echo Chamber}}: Allows Tainted Eve to constantly use healing cards, such as The Lovers, The Hierophant and The Sun.
+* {{I|Empty Vessel}}: Because of how Tainted Eve works, the item's effects will always be triggered, essentially granting Tainted Eve flight and a chance to be invincible for the rest of the run.
+* {{I|Empty Heart}}: Because of how Tainted Eve works, you will more than likely end a floor with half or no red hearts, meaning that it is basically guaranteed free heart containers.
+* {{I|Evil Eye}}: When a Blood Clot creates an Evil Eye, it will mimic Eve's stats and not the Clot's, resulting in a significant damage boost.
+* {{I|Gimpy}} / {{I|Old Bandage}}: Many enemies killed will drop half hearts with Gimpy, and if non-fatal damage is taken, soul hearts and red hearts can be generated as either more clots or buffer health.
+* {{I|Glowing Hourglass}}: Can be used to prevent the loss of clots, or to avoid especially dangerous rooms.
+** Due to a bug, Glowing Hourglass can be used to duplicate clots via Isaac teleporting to the previous room with the Glowing Hourglass and then using it again.
+* {{I|Glyph of Balance}}: You can manipulate room drops either into being soul hearts by keeping your soul hearts at a maximum of one and a half while having no red heart containers (either by taking damage or draining them with Sumptorium) or into being red hearts by draining all of your red heart containers with Sumptorium (and having at least 1 key and 1 bomb, or alternatively draining all but half a red heart) before clearing the next room, allowing you to accumulate a lot of blood clots in a quick way. Note that this comes at the cost of other potential room drops, however.
+* {{I|Holy Mantle}}: Can allow Tainted Eve to create more clots comfortably, or even enter the Bloody Babylon state.
+* {{I|Humbleing Bundle}}: Has a chance to turn single red heart drops into double red hearts, allowing more clots to spawn.
+* {{T|Isaac's Fork}}: Has a chance to heal for half a heart with every cleared room, which can be used to create a clot.
+* {{I|Lachryphagy}}: Tears fired by Eve and her clots will feed into each other, making it easy to build up their damage and more powerful bursts.
+* {{I|Lead Pencil}}: Tears fired by clots count towards the barrage.
+* {{I|Leech}}: Can be used to kill weak enemies and give health for more red clots.
+* {{I|Libra}}: Balances out Tainted Eve's stats and constantly remedies her extremely low tears when picking up stat upgrades.
+* {{I|Little Horn}}: With enough clots, it is very likely to fire enough Little Horn shots that normal rooms can be trivialized, as the shots will safely delete enemies with on-death effects like {{e|Spit|text=Spits}}, or normally invincible ones like {{e|Stone Grimace|text=Stone Grimaces}}.
+* {{I|Lost Contact}}: With a sufficient amount of clots and/or a high enough Fire Rate, Tainted Eve and her clots can create an impenetrable wall of defense in the direction they are firing, protecting them from any and all enemy shots. This is particularly critical against bosses such as {{E|Mega Satan}} or {{E|Hush}}, who use bullet-intensive attacks.
+* {{I|Maggy's Bow}}: Thanks to the doubled healing, you can generate two clots from half a heart, four clots from a full heart, and eight clots from a double heart, making for less risk in creating clots and healing up in general and making for a much quicker amassing of a clot army.
+* {{T|Mom's Locket}}: Using a key heals for half a heart. It additionally has the far more useful perk of turning all half heart drops into full hearts, making every heart drop more efficient.
+* {{I|Pisces}}: Increases Tainted Eve's knockback even more than her already high knockback with the clots, reducing the risk of contact damage killing clots.
+* {{I|Placenta}}: Given enough patience, allows Tainted Eve to generate theoretically infinite blood clots.
+* {{I|Prayer Card}}: With proper play, you can have many Eternal Heart clots as well as max red hearts to get even more bang for your buck.
+* {{I|Scapular}}: Allows Tainted Eve to generate an infinite number of blood clots, by going down to a heart and a half, creating one blood clot, and then damaging yourself (via a Sacrifice Room or a similar manner). Scapular will then heal Tainted Eve back to a heart and a half, allowing the process to repeat indefinitely.
+* {{i|Shard of Glass}}: Has a 25% chance to drop a full red heart. The bleeding effect can be stopped right away when using {{I|Sumptorium}} to heal at least half a red heart.
+* {{I|Sharp Straw}}: Gives Tainted Eve a consistent method of harming an entire room of enemies. It also gives the additional benefit of potential half heart drops, which gives her some extra sustain.
+* {{I|Sol}}: Allows Tainted Eve to completely heal after a boss, allowing her to spawn many clots and make up for those who may have died to the boss.
+* {{I|Spirit Shackles}}: If Tainted Eve has atleast two soul or black clots active, it can negate a fatal hit and be instantly recharged by using {{I|Sumptorium}} at the cost of two clots. Though by doing this, the player would need to spend time respawning all the clots that were absorbed into Tainted Eve, and thus might exceed {{r|Boss Rush}}'s or {{E|Hush}}'s time limit.
+* {{I|Spirit Sword}}: Can be swung as fast as the button can be mashed, negating the downside of Tainted Eve's low Tears.
+* {{I|Tear Detonator}}: Detonates all of the clots' tears as well, filling the room with tears and potentially dealing massive damage.
+* {{I|Tractor Beam}}: Causes all tears fired by blood clots to follow the beam, making it significantly easier to hit all of their shots consistently.
+* {{I|Whore of Babylon}}: will almost always be active for Tainted Eve, increasing her speed and damage.
+* {{I|Yum Heart}} / {{I|Little C.H.A.D.}}: Allows Tainted Eve to generate extra red clots every few rooms.
+* {{I|Technology 2}}: She will suffer a loss to her already bad rate of fire, but in turn every clot you spawn gets knockback creating a wall of lasers that with any damage up destroys anything in it's path.
+* {{I|Eye of Greed}}: The clots will also have an ability to shoot and consume your coins, making your money deplete incredibly quickly. However, due to the sheer volume of Eye of Greed tears that the clots can push out, and the fact that Eye of Greed still works when you have no money, they will be constantly freezing enemies and dropping piles of money on the ground. So, don't pick up any of the coins, and once you want to buy something, pick up all of the money scattered throughout the floor.
+
+=== Disfavored Items ===
+* {{T|Apple of Sodom}}: Turns red hearts into [[Familiar|Blue Spiders]], which is much weaker than clots.
+* {{I|A Pound of Flesh}}: Makes Tainted Eve unable to gain health through shops efficiently.
+* {{I|Abaddon}}: Replaces all red heart containers with black hearts, making it much harder to consistently generate clots without soul heart generation or more health upgrades after pickup.
+* {{I|My Little Unicorn}} / {{I|Unicorn Stump}} / {{I|Taurus}} / {{I|Book of Shadows}}: Defensive items that grant invincibility are pretty terrible for Tainted Eve, since it only makes Tainted Eve invincible and not her clots.
+* {{I|Brimstone}} / {{I|Monstro's Lung}}: Combined with Tainted Eve's already low tears, without {{I|Chocolate Milk}} Tainted Eve may be forced to create a clot before the charge is finished.
+* {{i|Crown Of Light}} / {{I|Dark Prince's Crown}}: Rarely active, since firing will automatically drain red hearts.
+* {{i|Dr. Fetus}}: While Dr. Fetus can be immensely powerful with enough clots, the bombs shot by the clots can push you around, leading to unintentional self-damage.
+* {{I|Epiphora}}: Since you have to hold down the fire button to make this item work, you will necessarily also have to drain all of your HP as well to make it work.
+* {{tf|Guppy}} / {{I|The Mulligan}} / {{I|Parasitoid}}: The flies/spiders generated by these items counts towards the clots' cap of 64 and can remove clots if too many are spawned, making them detrimental if you have many clots and/or a high rate of fire.
+* {{I|IBS}}: The occasional "Explosive Diarrhea" trigger can kill a lot of your blood clots, especially in rooms with tight space.
+* {{I|Kidney Stone}}: While activated, there is no way to prevent blood clots from spawning until the effect has worn off, and will quickly drain Tainted Eve's health as the effect is active.
+* {{I|Marked}}: Tainted Eve will constantly fire unless the player presses the drop trinket button, which can unintentionally cause her to create clots even if the player does not wish to.
+* {{I|Mars}}: Useful to enter curse rooms for free to gather rotten, soul and black hearts; however the clots will not follow the dash, leaving T. Eve defenseless unless used in a combo by recalling all clots to damage enemies hit by the dash at the cost of loosing all clots unused to recover health.
+* {{I|Maw Of The Void}} / {{I|Revelation}}: Due to their fixed 2.5 second activation times, their effects cannot be activated without draining at least half a heart.
+* {{I|Proptosis}}: In order to get the most DPS, you need to be close to enemies which puts your clots more in danger of being hurt.
+* {{I|Sacred Orb}}: Removes most health ups from the boss pool, which are key for Tainted Eve.
+* {{I|Satanic Bible}}: While the extra Black Heart is tempting for more special clots, the Boss Room item will be replaced by a Devil Deal, putting a dent on Tainted Eve's total ability to create clots on the long term. However, after Womb/Corpse I it becomes very useful as no more boss items spawn past that point, essentially removing its downside.
+* {{I|Yuck Heart}}: Rotten Hearts can override the Red Hearts (1 to 2 specifically) and can interfere with DPS and survival.
+* {{I|Sacrificial Altar}}: Will sacrifice all clots for 1 coin each in addition to the 2 other familiars.
+
+== Unlockable Items ==
+{{achievement text | Strange Key, The Empress, Soul of Eve, Horse Pill, Sumptorium, Lil Clot, Heartbreak }}
+
+== Gallery ==
+<gallery>
+File:Character Tainted Eve bloodybabylon.png|Tainted Eve's demon form, referred to as "Bloody Babylon" in the game files.
+File:Transition Eve Tainted.png|Tainted Eve's transition screen portrait.
+File:Start_Tainted_Eve.png|The spawn floor when playing Tainted Eve.
+File: Tainted Eve Menu Icon (Locked).png|Tainted Eve's locked character icon, depicting a Closet doorway with several blood clots behind it.
+File: Repentance Boss Designs 1.jpg|Concept art of Tainted Eve (alongside other characters) by Edmund McMillen, featuring a different starting item.
+</gallery>
+
+== Trivia ==
+* The achievement for unlocking Tainted Eve is "The Curdled", a possible title for the character.
+** To ''curdle'' is to "separate or cause to separate into curds or lumps", representing Eve's blood clot familiars.
+* A blood clot is known by the game as a "BLOOD_BABY" in the modding API.
+* Tainted Eve's card, {{P|III - The Empress?}} means light and truth, a reference to the original sin (consuming the fruit of knowledge of good and evil), but is also associated by some to miscarriage, referenced by the clots.
+** This card is a play on the upright {{P|III - The Empress}} which summons the {{i|Whore of Babylon}} effect, her normal starting item.
+
+== Bugs ==
+{{Bug|dlc=nr+|When Tainted Eve enters a boss room which moves her to a different starting position, such as {{e|Mom}} or {{e|Gurdy}}, the clots will not move with her, potentially leaving both Eve and the clots extremely vulnerable for a moment.}}
+
+{{nav|character|eve unlock|tainted eve unlock|fr=Ève Impure}}

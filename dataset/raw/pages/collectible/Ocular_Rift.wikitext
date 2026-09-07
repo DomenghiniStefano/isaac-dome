@@ -1,0 +1,47 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 606
+ | quote       = Stare into the abyss
+ | description = Adds a chance to fire tears that create rifts where they land, which suck enemies, [[pickups]], and shots towards them and damage enemies in the area.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable offensive
+ | devil price = {{dlcalt|2|r+=1}}
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Gives Isaac a chance to fire tears that create rifts where they land, which damage nearby enemies and pull in enemies, [[pickups]], and tears/shots from all sources for 2 seconds.
+** Rifts deal half of the tear's damage twice each tick (3x its damage per second), and enemy shots pulled into the rift will damage other enemies.
+** The size of the rift increases with Isaac's damage.
+
+== Notes ==
+* The chance to fire a rift tear depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\min(\frac1 { 20 - \left \lfloor \mathit{Luck} \right \rfloor},20\%)</math><ref>https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing</ref>
+** At base Luck (0), the chance is 5%, maxing out at 20% at 15 Luck.
+
+== Tips ==
+* Rift tears can be used to move pickups that might be located behind [[spikes]].
+** Placement of the rifts is easier with items which provide a degree of control over tears, e.g. {{I|Eye of the Occult}}.
+* Because the pull of Ocular Rift affects enemy shots, it can be used defensively to dismantle the curtains of bullets that Isaac would otherwise have to dodge. This is especially useful for bosses like {{E|Hush}} and {{E|Delirium}}.
+
+== Synergies ==
+* {{i|Brimstone}}: Rifts may appear where a brimstone beam hits rock, walls or enemies.
+* {{i|The Parasite}} / {{i|Compound Fracture}}: Causes many smaller rifts to also spawn.
+* {{i|The Ludovico Technique}}: Each tick of damage has chance of creating rift, which will be slightly bigger in size.
+* {{i|Tech X}}: Rifts may appear where a laser ring hits rock, walls or enemies.
+* {{i|Technology}} / {{i|Technology 2}}: Rifts may appear where a laser hits rock, walls or enemies.
+* {{i|Trisagion}}: May spawn a line of rifts where the laser travels.
+
+== Interactions ==
+* {{i|Epic Fetus}}: Overridden by Epic Fetus.
+* {{I|Mom's Knife}}: Overridden by Mom's Knife.
+
+== Trivia ==
+* In ''Antibirth'', this item was called [[anti:Oculus Rift|Oculus Rift]], a reference to the virtual reality headset brand of the same name; this potentially was changed due to copyright issues.
+** Its tear chance would also directly scale with [[Luck]], being 100% at 13 Luck.
+* This item´s description is likely a reference to a quote by the philosopher Friedrich Nietzsche which goes "Stare long enough at the abyss and it will stare back at you"
+
+== References ==
+{{Reflist}}
+
+{{nav|magnetic|fr=Faille Oculaire}}

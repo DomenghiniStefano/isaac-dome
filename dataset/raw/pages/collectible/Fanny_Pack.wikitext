@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | id          = 204
+ | quote       = Filled with goodies
+ | description = Has a chance to drop a random [[pickup]] when Isaac takes damage.
+ | quality     = 1
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Grants a 50% chance to drop a random {{e|Penny|text=Coin}}, {{e|Bomb}}, {{e|Key}}, or {{e|Red Heart|text=Heart}} whenever Isaac takes damage.
+** The chances of the drops between each category are roughly equal.
+
+== Synergies ==
+* {{i|Fanny Pack}}: Having multiples of Fanny Pack neither increases the amount of drops, nor the drop chance.
+* {{i|Blood Oath}}: Each half-heart lost has a chance of spawning a pickup from the fanny pack.
+* {{i|Scapular}}: Allows for infinite pickups once Isaac is at half a red heart (or full red heart in [[Chapter 4]] onward) by moving between rooms to reset Scapular's effect.
+* {{i|Placenta}}: Similar to Scapular, allows for unlimited pickups provided a disregard for time.
+* {{i|Sharp Plug}}: Each half a heart lost from the use of sharp plug has a chance of spawning a picking from the fanny pack.
+* {{i|Spindown Dice}} + [[Greed Mode]]: Turns into {{i|Humbleing Bundle}} when rerolled by Spindown Dice (which is not normally obtainable in Greed Mode) and this allows penny drops from each wave a chance of turning into double pennies.
+
+== In-game Footage ==
+{{#ev:youtube|4R68wgsw-JU}}
+
+== Trivia ==
+* Fanny packs are purses that can be strapped to the stomach, usually carried by mailmen, couriers, tourists etc.
+
+{{nav|fr=Sac Banane}}
+[[Category:Damage-triggered items]]

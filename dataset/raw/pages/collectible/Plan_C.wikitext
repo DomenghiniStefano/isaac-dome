@@ -1,0 +1,59 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 475
+ | quote       = {{dlcalt|Use with caution|r=My last resort}}
+ | description = Kills all enemies in the room, then kills Isaac three seconds later.
+ | quality     = 0
+ | tags        = offensive
+ | recharge    = one time
+ | unlocked by = Plan C
+}}
+
+{{cit|ua|a+}}
+
+== Effects ==
+* Upon use, deals 9,999,999 damage to every enemy in the room, then kills Isaac 3 seconds later.
+* {{dlc+|r+}} Kills Isaac 10 seconds later in {{e|Delirium}}'s room and 11.5 seconds later in {{e|Mother}}'s room.{{dlc-}}
+
+== Notes ==
+* Plan C does not kill both or all phases of bosses like {{E|The Lamb}}, {{E|Hush}}, {{E|Ultra Greed}},  {{E|Mega Satan}}, {{E|Mother}}, and {{E|The Beast}}.
+* Some bosses have special interactions with this item:
+** {{dlc|nr+}} Attempting to use this item to kill {{E|Delirium}} or {{E|Mother}} will not work. Their death animation is much longer than the time between using Plan C and Isaac's Last Will appearing, meaning Isaac will die first and it will not count as a kill. Having extra lives that revive Isaac outside the room will not help, either; they must be fought again.
+*** However, items that revive Isaac in the same room he died in, namely {{I|Lazarus' Rags}} (or being {{C|Lazarus}}), {{I|Inner Child}}, {{P|Soul of Lazarus}}, and {{C|Tainted Lost}}'s {{I|Birthright}}, will allow Isaac to bypass this and kill them with this item. In the case of Lazarus' Rags, though, the completion mark will go toward Lazarus and not the character originally selected.
+**** Similarly, if playing as {{C|Tainted Lazarus}}, using Plan C and then using {{I|Flip}} to switch to the other form pauses the death counter until the player switches back to the form that originally used the item.
+*** It is possible to kill Delirium by carefully timing pauses after each screen static. Each screen static plays a cutscene that continues to play even while paused, so by pausing and unpausing at the right timings, Delirium's death animation can be shortened to just under 3 seconds allowing for his completion mark to be awarded.
+*** Using the effect of Plan C while Isaac is already under the timer of Plan C (such as through the use of another Plan C, {{P|? Card}}, {{P|Wild Card}}, etc.) will reset the timer each use, allowing to stall bosses with long death animations.
+** {{dlc|r}} Killing {{E|Mother|n}}'s second phase with Plan C will kill Isaac just at the end of her death animation. No completion mark is awarded.
+*** However, if Isaac is revived outside the boss room, the boss will be considered dead and the mark ''will'' be awarded. This does not work for {{C|The Lost}}, {{C|Tainted Lost}}, {{C|The Forgotten}} (when playing as The Soul), and {{C|Tainted Forgotten}} since ghost characters have a slightly shorter death animation.
+** {{mode|greedier}} Killing {{E|Ultra Greedier|n}} with Plan C will give a completion mark, with the exception of {{C|The Lost}}, {{C|Tainted Lost}}, {{C|The Forgotten}} (when playing as The Soul), and {{C|Tainted Forgotten}}. This is because ghost characters have a slightly shorter death animation, resulting in Isaac's Last Will appearing more quickly.
+** {{Dlc|r}} If used in {{E|The Beast|n}} battle, Plan C will only kill the harbinger that Isaac is fighting on screen. It won't have any effect on the other harbingers nor The Beast itself (The Beast can still be killed if Isaac is fighting it when Plan C is used, and there is enough time to earn the completion mark).
+* It is recommended not to use this item in Challenges, as even if the goal is within the bosses that dies before Isaac does, the player will likely die before the end of the rising trophy animation.
+* For the game's sake, a run is not truly over until [[Isaac's Last Will]] appears. This means that some bosses that might seem to finish their death animations after Isaac dies, such as Ultra Greed, will still be technically killed and will still give their completion marks, even if Isaac does not enter the Final Boss Chest.
+* Invulnerable enemies and closed {{E|Host}}s will not be killed by Plan C.
+* Isaac's last will shows his last damage source as the cause of death, not Plan C. If Isaac has not taken damage or lost health from any source, Isaac's face is shown.
+* Invincibility or the {{I|Holy Mantle}} shield will not save Isaac from being killed.
+* Some items that activate when Isaac reaches zero hearts, such as {{I|Heartbreak}} and {{I|Spirit Shackles}}, will not activate, killing Isaac.
+* Even if Isaac enters a trapdoor immediately after using Plan C, he will still die after arriving at the next floor.
+** Isaac will also die after accepting a [[Victory Lap]] or performing a [[RERUN]].
+* Plan C has an 80% decreased item pool weight, making it less likely to appear than other collectibles.
+** {{dlc|r}} It has a 90% decreased weight in the [[Red Chest (Item Pool)|Red Chest pool]], and normal weight in the [[Ultra Secret Room (Item Pool)|Ultra Secret Room pool]].
+* {{dlc|nr}} Plan C is found in 6 item pools, the second highest count amongst all items, behind {{I|Cube of Meat}}. Its lowered weight, however, offsets its presence.
+** {{dlc|r}} Plan C is found in 8 item pools, the highest count amongst all items. Its lowered weight, however, offsets its presence.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Respawns Judas as {{c|Black Judas}} if he has an extra life.}}
+* {{Book of Virtues synergy|description=Spawns 8 red wisps that shoot red tears at 12 damage per tear. Using Plan C will kill Isaac as expected, but wisps won't disappear if used with an item that grants an extra life.}}
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{dlc|r}} [[Co-op|Multiplayer]]: Only the player who uses Plan C dies.
+** If the user dies from other causes before the effects of Plan C can conclude, their ghost will die, resulting in a run loss, regardless of there being other players alive.
+
+== In-game Footage ==
+{{#ev:youtube|7mKauA_toC0}}
+
+== Trivia ==
+* This item is a reference to abortion pills, which are commonly given the nickname "Plan C." ("Plan A" being typical birth control methods, and "Plan B" being the so-called "morning-after pill," which prevents pregnancy in cases where contraception has failed.) The item's mechanic is a reference to abortion terminating an unborn fetus.
+* Plan C's sprite is a red-tinted {{i|Forget Me Now}}.
+
+{{nav|pill|lazarus unlock|ultra greedier unlock|fr=Suppo de Satan}}

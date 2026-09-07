@@ -1,0 +1,19 @@
+{{infobox trinket
+ | id          = 29
+ | quote       = It stinks
+ | description = Spawns a [[Blue Fly]] every time Isaac takes damage.
+}}
+
+{{cit|t}}
+
+== Effect ==
+* Spawns 1-2 [[blue flies]] every time Isaac takes damage.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}}: Spawns 2-4 [[blue flies]] on hit. Having both increases to 3-6 blue flies per hit.
+
+== In-game Footage ==
+{{#ev:youtube|RBDu_58_-pM}}
+
+{{nav|fr=Tête de Poisson}}
+[[category:damage-triggered items]]

@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | dlc = a
+ | name = Papa Fly
+ | id = 430
+ | quote = Turret follower
+ | description = Spawns a [[familiar]] that follows Isaac's movements on a 3 second delay, firing tears at nearby enemies.
+ | quality     = 1
+ | tags        = summonable monstermanual offensive fly
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Spawns a blue fly [[familiar]] that will follow Isaac's movement with a 1-second delay and fires tears at nearby enemies.
+** {{dlc|r}} Papa fly follows Isaac on a 0.66 second delay instead.
+* Papa Fly's tears deal Isaac's damage, and are fired once per second.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* Since Papa Fly's damage scales off of Isaac's own damage, any item that provides a massive damage increase (such as {{i|Ipecac}} or {{i|Polyphemus}}) will prove benefitial.
+
+== Synergies ==
+* {{dlc|r}} {{I|Multidimensional Baby}}: Papa Fly will always shoot two shots due to both of them having the same movement delay.
+
+== In-game Footage ==
+{{#ev:youtube|4gnSLUnM7vI}}
+
+== Trivia ==
+* Papa Fly is a blue tinted {{E|Pooter}}.
+
+{{nav|fly}}

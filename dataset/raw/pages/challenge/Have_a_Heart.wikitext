@@ -1,0 +1,72 @@
+{{infobox challenge
+ | dlc                = a
+ | number             = 25
+ | health             = {{heart|red}}{{heart|red|empty}}{{heart|red|empty}}{{heart|red|empty}}{{heart|red|empty}}{{heart|red|empty}}<br>{{heart|red|empty}}{{heart|red|empty}}{{heart|red|empty}}{{heart|red|empty}}{{heart|red|empty}}{{heart|red|empty}}
+ | item               = {{i|Charm of the Vampire}}
+ | has treasure rooms = yes
+ | has shops          = yes
+ | description        = {{e|Penny|text=Pennies}} drop instead of {{e|Red Heart}}s. Many items that restore {{e|Red Heart}}s have no effect.
+ | goal               = Mom's Heart
+ | unlocks            = 2 new pills 2
+ | unlocked by        = Have a Heart
+}}
+
+'''Have a Heart''' is [[Challenges|challenge]] #25. {{c|Isaac}} begins with {{i|Charm of the Vampire}} and 12 red heart containers, but only one of them is filled. Unlike in many other challenges, {{R|Treasure Room}}s and {{R|Shop}}s are available. The goal is to defeat {{e|Mom's Heart}} / {{E|It Lives!}}.
+__TOC__
+
+== Difficulty ==
+Charm of the Vampire is the main way to fill Isaac's red heart containers (see below for exceptions). All {{e|Red Heart}} pickups are replaced with {{e|Penny|text=Pennies}} ({{e|Half Red Heart}} = Penny, Red Heart (and {{E|Blended Heart}}) = {{E|Double Penny}}, {{e|Double Heart}} = {{E|Nickel}}) ({{dlc|a+}} though Blended Hearts can still spawn). HP up items (e.g.: {{i|Breakfast}}) give Red Heart containers, but do not fill HP. {{i|Placenta|n}} no longer has a chance to regenerate a {{e|Half Red Heart}} every minute. The {{p|VI - The Lovers}} card spawns Pennies instead of Red Hearts. The {{p|2 of Hearts}} card and {{i|Yum Heart}}, as well as {{i|Yuck Heart}}, create no effect. The {{t|Tick}} will still reduce a boss's health, but will not heal upon entering the {{R|Boss Room}}. {{R|Shop}}s sell coins instead of hearts. {{M|Slot Machine}}s, {{M|Blood Donation Machine}}s, the Hematemesis pill, and any of the {{M|Beggar}}s drop coins instead of hearts. Even a {{R|Super Secret Room}} which usually contains hearts will contain money instead. It is also impossible to recover health with {{i|Pyromaniac}} or {{i|Leech}}.
+{{dlc|r}} This challenge is slightly easier in Repentance, as Charm of the Vampire now gives a small damage up.
+
+== Strategy ==
+The biggest difficulty lies in acquiring health. However, with numerous Red Heart containers, there are several strategies to survive the challenge. First is finding a way to heal Red Heart damage.
+* The [[Full Health]] pill is a major boon for this challenge.
+** The [[Bad Trip]] pill can also heal fully, but only when at one heart or less.
+** When combined with these pills, the {{i|Placebo}} becomes very powerful. It can be purchased in Shops.
+* {{p|XIX - The Sun}} card also heals to full health, alongside other benefits.
+** Combined with a {{i|Blank Card}}, the challenge becomes trivial. This can be purchased from Shops.
+** {{i|Sol}}'s {{p|XIX - The Sun}} effect works, granting full health after defeating each floor's boss.
+* Obtaining the {{i|Habit}} or {{i|Sharp Plug}} from a shop allows Placebo or Blank Card to be used at will without any fear of death (though this may not be the case in ''Repentance'' due to these items being revamped).
+* {{E|Rainbow Poop}} will also give full health, but it is also very rare.
+** {{i|Bozo}} has a chance to create Rainbow Poop when Isaac takes damage, thus picking it up can make the challenge substantially easier.
+* [[Bed]]s still refill Isaac's health.
+* {{i|Adrenaline}} is very helpful, as Isaac will have multiple empty Red Heart containers.
+* Blowing up a {{e|Shopkeeper}} counts as killing an enemy.
+* Should you happen to get a summon-based boss like {{E|The Duke of Flies}} early, you can use the minions it summons to farm life, potentially giving you the equivalent of a full health pill on an early floor.
+
+Second is getting rid of excess Red Heart containers. Removing even one Red Heart container will make obtaining [[deal with the Devil|deals with the Devil]] and {{R|Angel Room}}s much easier, as the open HP spot can hold {{e|Soul Heart}}s/{{e|Black Heart}}s, providing insurance against Red Heart damage.
+* The {{R|Devil Room}} or {{R|Black Market}} deals not only give good items, but also free up space for Soul Hearts. This, naturally, comes with the downside of preventing Angel Rooms from appearing.
+** {{i|Abaddon}} can remove all Red Heart containers to be replaced by {{Dlc|nr}} six {{e|Black Heart}}s ({{Dlc|r}} twelve) , assuming no heart containers have been lost prior.
+* The [[Health Down]] pill can clear away some extra Red Heart containers to allow picking up Soul/Black Hearts. This can synergize with {{i|Placebo}} nicely.
+* {{i|Guppy's Paw}} is one of the more useful items for survival because it removes hard-to-fill Red Heart containers and replaces them with Soul Hearts.
+* {{i|Potato Peeler}} can be found in shops and easily removes excess empty Red Heart containers for {{i|Cube of Meat}}s, allowing you to easily get a couple of Meat Boys if desired.
+
+A third method involves grinding enemies to replenish Isaac's health.
+* {{E|Mulligan}}s and their variants, {{E|Sack}}s, and other spawning enemies can provide limitless sources of enemies to fill health.
+* Getting the {{i|D7}} and repeatedly clearing a room filled with easy-to-kill enemies can fill Isaac's entire HP bar.
+* The {{m|Shell Game}} can be a useful method of spawning {{E|Attack Fly|text=Attack Flies}}.
+
+Because hearts turn into coins, Shop purchases are easier to make.
+* Trinkets such as {{t|Bloody Penny}}, {{t|Burnt Penny}}, {{t|Counterfeit Penny}}, {{t|Flat Penny}}, and {{t|Rotten Penny}} are beneficial, as there is a greater chance of coins dropping when Isaac finishes a room.
+* {{i|Bumbo}} and {{i|Bum Friend}} are also more beneficial with the increase in coin drops.
+
+Some other things to note:
+* If Isaac is at full health, the boss should take priority. Health lost during the battle can be replenished from unexplored rooms.
+* Avoid using [[Hematemesis]], as it will drain you to one filled Red Heart container without spawning two to four hearts as usual.
+* If Isaac dies with a {{i|1up!}}, all Red Heart containers will be filled.
+* {{dlc|nr}} {{i|Judas' Shadow}} purges all Red Heart containers and leaves 2 Black Hearts. Additionally, {{i|Ankh}} will turn you into {{c|???}}, who has no use for red health anyways.
+** {{dlc|r}} Judas' Shadow and Ankh can no longer spawn in challenges.
+* {{dlc|r}} {{t|Missing Poster}} will revive you as {{c|The Lost}}, who has an innate Holy Mantle and does not care about health.
+* {{dlc|nr}} {{t|Mom's Locket}} refills half a heart each time a key is used.
+* Acquiring an {{e|Eternal Heart}} will allow Isaac to take an extra hit. However, no health will be granted when acquiring a second Eternal Heart or moving to the next floor.
+* {{Dlc|r}} The bleeding mechanic from {{I|Shard of Glass}} can be tricky to remove, as red heart healing can be rare. Consider skipping this item if you're having trouble healing.
+* {{p|Queen of Hearts}} spawns double pennies instead of hearts.
+* {{t|Isaac's Fork}} works normally.
+* {{t|Stem Cell|nr}} works normally.
+* {{i|Strawman}} when used will spawn the Keeper with one coin-heart and he cannot replenish his empty coin hearts by picking up coins.
+
+== Reward ==
+{{achievement text | 2 new pills 2 }}
+** The pills unlocked are ''Re-Lax'' and ''???''.
+
+{{nav|mom unlock|challenge|fr=Bourreau des Cœurs}}

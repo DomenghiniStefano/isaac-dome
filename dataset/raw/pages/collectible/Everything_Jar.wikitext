@@ -1,0 +1,66 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 720
+ | quote       = Anything is possible
+ | description = Spawns certain [[pickups]] based on how many charges it has. If fully charged, instead has one of many unique effects.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = offensive
+ | recharge    = 12
+ | unlocked by = Everything Jar
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Everything Jar can be activated while not fully charged.
+* If the item is not fully charged, it spawns a [[pickup]] based on how many charges it had:
+** 1: A {{E|Poop}}.
+** 2: A {{E|Penny}}.
+** 3: A {{E|Bomb}}.
+** 4: A {{E|Key}}.
+** 5: A full {{E|Red Heart}}.
+** 6: A [[pill]].
+** 7: A [[card]], [[Cards and Runes|rune]], or [[Cards and Runes|soul stone]].
+** 8: A {{E|Soul Heart}}.
+** 9: A {{E|Gold Heart}}.
+** 10: A {{E|Golden Key}}.
+** 11: A {{E|Golden Bomb}}.
+* If the item is fully charged, it instead has one of the following effects:
+** Spawns a random amount of various different pickups, including coins, hearts, bombs, keys, cards, pills, and trinkets.
+** Spawns a {{E|Fly}}.
+** Spawns an assortment of [[friendly]] [[dip]]s, [[blue spider]]s, and [[Familiar#Blue Flies|blue flies]].
+** Spawns random enemies in front of every door and closes the doors.
+*** Enemies also spawn in front of adjacent {{r|Secret Room}}s and {{r|Super Secret Room}}s if there are any.
+** Does nothing.
+** Spawns an [[item]] pedestal that cycles between 9 different items 30 times per second. The item selection is from the current room's item pool.
+** Spawns many colored beams of light around the room that deal damage to enemies. These beams of light varyingly scale with Isaac's damage.
+** Fills the room with {{e|Poop}}, similarly to {{P|A Card Against Humanity}}
+** Spawns 6 {{e|Troll Bomb}}s around the room, similarly to {{I|Anarchist Cookbook}}.
+** Flips all sprites to the side, gives Isaac random tear effects for the rest of the room, and permanently increases and decreases one of Isaac's stats, similarly to {{I|Dataminer|dlc=x}}.
+*** {{dlc|r+}} This also rerolls any item in the room into a glitched {{i|TMTRAINER}} item.{{dlc-}}
+** Spawns many {{E|Shopkeeper}}s around the room. These have a chance to be special/error shopkeepers.
+** Spawns a {{E|Giga Bomb}} pickup that gives Isaac a bomb and converts his next bomb into a giga-bomb that deals 300 blast damage, spawns many rock projectiles that deal 15 damage, and creates 13 holes in a diamond shape around the blast zone that deal 99 damage to enemies that were in their areas. These holes cannot spawn if they would close Isaac's path around the room.
+*** This bomb has a chance to be lit when it spawns.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a random wisp.}}
+* {{i|Hallowed Ground}}: Using the first charge will always spawn a white poop.
+* {{i|Bag of Crafting}}: Allows Isaac to consistently produce high quality pickups or specific types of pickups for use in known recipes.
+* {{i|Mama Mega!}} + {{i|Schoolbag}}: Consistent spawning of golden bombs allows for Mama Mega to be reused repeatedly.
+
+== Interactions ==
+* {{I|9 Volt}}: Fully recharges Everything Jar upon pickup. It also slowly recharges Everything Jar's first charge while Isaac is in an uncleared room.
+* {{I|Car Battery}}: Instead of doubling its effect, Everything Jar will spawn a poop alongside its normal drop.
+* {{i|Glitched Crown}} / {{p|Soul of Isaac}} / {{c|Tainted Isaac}}: The rapidly cycling item pedestal does not gain more items in its selection or slow down.
+* {{I|Void}}: Consuming the Everything Jar will cause Void to spawn a poop when used, regardless of charge level.
+
+== Notes ==
+* Everything Jar can spawn gold hearts and bombs even before they are unlocked.
+
+== In-game Footage ==
+{{#ev:youtube|zY777byWxLw}}
+
+== Trivia ==
+* '''Everything Jar''', {{I|Larynx}}, {{I|Notched Axe}}, and {{I|Spin to Win}} are the only activated items that can be used when not fully charged.
+
+{{nav|eden unlock|the beast unlock|fr=Bocal de N'Importe Quoi}}

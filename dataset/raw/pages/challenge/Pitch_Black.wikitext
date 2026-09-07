@@ -1,0 +1,26 @@
+{{infobox challenge
+ | number             = 1
+ | curse              = {{Cu|Darkness}}<br>{{Cu|Unknown}}
+ | has treasure rooms = yes
+ | unlocks            = Rune of Hagalaz
+}}
+
+'''Pitch Black''' is [[challenge]] #1. During this challenge, {{Cu|Darkness}} and {{Cu|Unknown}} will be permanently active. Unlike other challenges, {{R|Treasure Room}}s are available, but {{R|Shop}}s are not. The goal is to defeat {{e|Mom}}. This challenge is unlocked by default.
+__TOC__
+
+== Difficulty ==
+The curses inflicted are typically trivial on their own, however, they are the primary source of difficulty in this challenge due to the permanence of {{Cu|Unknown}}, making it much more difficult to keep track of Isaac's [[health]]. This also makes it especially risky when using mechanics that drain Isaac's health, such as [[Deal with the Devil|devil deals]] or {{M|Blood Donation Machine}}s. Additionally, {{Cu|Darkness}}, although mostly just thematic, does contribute to the difficulty of the challenge by making it harder to spot [[tinted rock]]s, which normally would aid Isaac's survival with {{e|Soul Heart}}s. As well as this, {{I|Black Candle}} doesn't clear any of the curses in this challenge.
+
+== Strategy ==
+While Devil deals can provide powerful items, taking one is very risky unless Isaac's health is carefully tracked. Refraining from deals can give access to {{R|Angel Room}}s, which can provide items without the need to sacrifice health.
+
+Turning the gamma setting up in the options can lessen the impact of {{Cu|Darkness}}.
+
+While entering one is not recommended, finding a door to a {{R|Boss Challenge Room}} can at least gauge Isaac's health by checking whether it's open or closed.
+
+Amnesia pills don't incur the {{Cu|Lost}}, thus being one less bad pill to worry about; with {{I|False PHD}} an amnesia pill will also drop {{e|Black Heart}} on use for free.
+
+== Unlockable [[achievement]]s ==
+{{achievement text | Rune of Hagalaz }}
+
+{{nav|challenge|fr=Défense d'y voir}}

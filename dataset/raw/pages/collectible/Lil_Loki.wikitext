@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 435
+ | quote       = 4-way buddy!
+ | description = Spawns a Loki [[familiar]] that follows Isaac and fires 4 tears in a cross pattern.
+ | quality     = 1
+ | tags        = summonable baby monstermanual offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Spawns a [[familiar]] that looks like {{E|Loki}} and follows Isaac, firing tears in all four cardinal directions that deal 3.5 damage.
+** {{dlc|nr}} Lil Loki shoots once per second.
+** {{dlc|r}} Lil Loki shoots once every 3/4ths of a second.
+* {{dlc|r}} {{transformation contribution|Conjoined}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Lokii}}.{{dlc-}}
+* If an enemy is standing inside of Lil Loki, all four shots will hit it for a total of 14 damage.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Lil Loki having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+
+== In-game Footage ==
+{{#ev:youtube|IsvdzXkd0Ps}}
+
+{{nav|conjoined|fr=P'tit Loki}}

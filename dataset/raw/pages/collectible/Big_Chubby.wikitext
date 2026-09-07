@@ -1,0 +1,34 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 473
+ | quote       = Chub chub
+ | description = Spawns a [[familiar]] that follows Isaac and charges across the [[room]] when Isaac fires, blocking shots and dealing 40.5 damage per second on contact.
+ | quality     = 1
+ | tags        = summonable monstermanual offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Spawns a [[familiar]] that follows Isaac and charges across the [[room]] when Isaac fires, dealing 2.7 damage per tick or 40.5 damage per second to enemies it comes in contact with.
+** The familiar's charging speed is very slow, unlike its counterpart {{i|Little Chubby}}.
+** The familiar blocks enemy shots.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Matriarch}}.{{dlc-}}
+* Big Chubby takes 6 seconds to travel the other end of normal-sized rooms.
+* Big Chubby will travel forward until hitting an obstacle or wall.
+* Big Chubby will continue to travel forward between rooms.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Big Chubby having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+
+== Interactions ==
+* {{t|Duct Tape}}: Big Chubby stays in place relative to Isaac until it is fired.
+
+== In-game Footage ==
+{{#ev:youtube|l5zJS2MxJbY}}
+
+== Trivia ==
+* Big Chubby was originally an unofficial item which was supposed to showcase the modding capabilities of Afterbirth+ in the [https://www.youtube.com/watch?v=FRR-wzTky9Q PAX 2016 livestream]. However, all items included in the demo were later added to the final game.
+* The way Big Chubby moves resembles Pac-man.
+
+{{nav|fr=Gros Dodu}}

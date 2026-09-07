@@ -1,0 +1,131 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 577
+ | quote       = A king's fortune... but at what cost?
+ | description = Spawns a sword above Isaac's head, which doubles all [[item]] pedestals. After Isaac takes damage, the sword can randomly fall at any point, instantly killing him.
+ | quality     = {{dlcalt|2|r+=3}}
+ | tags        = offensive nocantrip
+ | recharge    = one time
+ | devil price = 2
+ | unlocked by = Damocles
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, summons a sword that hangs directly above Isaac. As long as the sword hangs above Isaac, all [[item]] pedestals are doubled, spawning an additional free item next to them.
+** Items spawned via other means, like [[Machines]], {{M|Beggar}}s, and certain [[items]] and [[Cards and Runes|cards]], are also doubled.
+** The extra item will be pulled from the current room's item pool, even if the original item is from a different pool (ex. Beggars or items from {{I|Alabaster Box}}).
+* After Isaac gets hit once with the item activated, at any time with only a brief warning, the sword may fall, instantly killing Isaac regardless of his health. The sword has a 1/10000 chance every 4 game ticks (every 0.133 seconds) to fall, so on average, 50% of all Damocles runs will not drop the sword until after at least 15 minutes and 24 seconds have passed.
+** Self-damage (such as from a {{Machine|Blood Donation Machine}}, {{Machine|Devil Beggar}}, {{r|Curse Room}}, {{r|Sacrifice Room}}, {{e|Spiked Chest}}, Bad Trip pill, or self-damage Active Items) does not count as damage taken for Damocles, and will not give it the chance to fall.
+
+== Notes ==
+* The chance for the sword to fall does not increase beyond the first hit taken.
+* Items from {{E|Chest}}s will not be doubled, which greatly limits Damocles' benefit in [[Chapters#Chapter 6 .28Optional.29|Chapter 6]].
+** The exception to this is {{E|Mega Chest|text=Mega Chests}}, which will spawn one extra item alongside the 2 original items for a total of 3 items.
+* In scenarios that have multiple items to choose from (such as rare double {{r|Treasure Room}} layouts and {{r|Boss Rush}}), an additional set of items for Isaac to choose from spawns. Only one item from each set can be taken.
+* In alternate path treasure rooms, one item from the second set is known.
+* Having multiple Damocles active at once does not spawn additional items.
+* The only way Isaac can survive the falling sword is if he's invincible at the time it falls or, by technicality, with a respawn item. After the sword falls, extra items will no longer spawn.
+** Losing a life before the sword falls does not remove the sword or its threat.
+* Items with associated costs, like those in {{R|Devil Room}}s or {{R|Shop}}s, will not create additional items. This severely limits this item's benefit when used as {{C|Tainted Keeper}}, since most items that are normally created as pedestals are instead Shop items.
+* This can cause items that are in inaccessible spots in certain room layouts to be moved to a more convenient location due to not having space for two pedestals in that spot. It can also cause items to move to less convenient spots.
+* {{dlc+|r+}} Damocles' quality is treated as 2 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{Book of Belial synergy|description=The sword also increases Judas' damage by x1.4 then a flat +1 while it's active.}}
+* {{Book of Virtues synergy|description=Spawns a wisp on the middle ring, looking like a sword. The wisp's tears look like {{I|Spirit Sword}}'s beams, but there are no other effects.}}
+* {{i|Blanket}} / {{I|Holy Mantle}} / {{p|Holy Card}} / {{T|Wooden Cross}}: Damage blocked by the shield doesn't count as damage taken. It will not, however, protect Isaac from the falling sword.
+* {{i|Book of Shadows}} / {{i|Empty Vessel}} / {{p|Algiz}} / other items that give [[shield]]: Nullifies the instant kill of Damocles if the shield is active when the sword falls.
+* {{i|Cone Head}} / {{I|Host Hat}} / {{I|Infamy}} / {{i|Metal Plate}}: Blocked damage does not count as damage and can delay the triggering of Damocles.
+* {{I|Crooked Penny}} / {{I|Diplopia}}: An extra item is spawned per each item cloned.
+** However, duplicating Damocles itself and activating additional copies has no effect.
+* {{I|Dark Arts}}: When in the shadow state, Isaac can survive the instant kill of Damocles, though this requires precise timing and can be impossible if Dark Art's charge is empty as the sword is falling.
+* {{t|Filigree Feather}}: [[Angel]]s spawn 2 items when defeated. However, if a [[Key Piece]] spawns, a second pedestal will not appear.
+* {{i|Genesis}}: If the player acquires Damocles and uses it before all items have been collected, then each subsequent item spawned after using it will each spawn an extra item. Unlike the Genesis choices, the other extra items will not disappear upon collecting one of them, potentially allowing the player to obtain a much higher amount of items than usual.
+** Using Genesis will remove the hanging sword and its effects.
+* {{i|Gnawed Leaf}}: If in the form of the statue, Isaac will be immune to the falling sword.
+** {{I|Tooth and Nail}}'s statue form can also save Isaac, but the statue transformation time lining up with the sword falling is unlikely.
+* {{C|Lazarus}}' revival mechanic allows him to continue the run after dying to Damocles.
+** This extends to other extra-life items such as {{I|1up!}} or {{I|Dead Cat}}.
+* {{c|The Lost}} / {{c|Tainted Lost}}: Any damage the Lost would take is likely to kill him instantly, meaning that the item's downside is greatly mitigated. Dying and respawning, however, will still trigger the chance of falling.
+* {{I|Magic Skin}}: Spawns 2 items on every use instead of 1.
+* {{i|My Little Unicorn}} / {{i|Unicorn Stump}} / other items that give [[invulnerability]]: If active, will negate the sword's lethal fall, saving Isaac.
+* {{i|Mega Mush}}: When activated, protected from falling Damocles.
+* {{i|Mystery Gift}}: When Damocles is activated, a second item will be spawned with adherence to the item pool for the current room. Even if Mystery Gift "fails" and spawns either {{i|The Poop}} or {{i|A Lump of Coal}}, a second item from the room's item pool will be rewarded.
+
+== Interactions ==
+* {{i|BFFS!}}: The sword will appear larger, but will gain no actual benefits.
+* {{i|Blood Oath}}: Getting stabbed by Blood Oath does not trigger the chance of falling.
+* {{i|Car Battery}}: No effect.
+* {{i|Clicker}}: The sword cannot be removed from Isaac's inventory.
+* {{i|D4}} / {{i|D100}} / {{c|Tainted Eden}}: The sword does not get rerolled.
+* {{t|Devil's Crown}}: The Devil Room items that appear are not doubled.
+* {{I|Flip}}: The extra item will not have a "ghost" item to flip to.
+* {{i|Glitched Crown}}: Duplicated item pedestals do not reroll.
+* {{i|Holy Mantle}}: Does not protect Isaac from death when the sword falls.
+* {{i|Isaac's Heart}}: Taking damage still allows it to fall, and the sword will still kill Isaac if it falls.
+* {{C|Jacob and Esau}}: The sword only gains the chance to fall if the brother who used it takes damage.
+* {{i|Metronome}}: Can invoke the effect of Damocles, which applies permanently.
+* {{t|Panic Button}}:  '''Not recommended.''' Panic Button will activate Damocles right before Isaac takes damage, guaranteeing Damocles will fall later in the run even if Isaac hasn't activated it yet.
+* {{I|Spirit Shackles}}: Does not protect Isaac from death when the sword falls.
+* {{c|Apollyon}} / {{i|Void}}: Using Void on Damocles will activate the effect and begin hanging the sword above Isaac on the next use of Void. Subsequent uses of Void will do nothing in regards to Damocles.
+** If the player has {{i|Damocles}} and {{I|Birthright}} on {{c|Apollyon}} and after using Void, a previously destroyed item appears, Damocles will spawn an additional item.
+* {{C|Tainted Eden}}: Taking damage does not reroll an active Damocles.
+* {{c|Tainted Forgotten}}: The sword will hang over Tainted Forgotten's body but will still kill the character despite being invincible.
+* {{c|Tainted Isaac}}: Damocles does not count toward his passive item count, and cannot be removed.
+* {{C|Tainted Lazarus}} / {{i|Esau Jr.}}: The character that used Damocles must be active for double items to spawn.
+** In the case of {{r|Boss Room}}, the form of Lazarus that did not use Damocles must fight the boss for it to drop double items.
+** If the player has {{I|Birthright}} as Tainted Lazarus and the inactive form has Damocles, the sword can fall on them and kill the player, bypassing the inactive form's immunity to damage.
+* {{p|XVII - The Stars?}}: The sword will not be removed from Isaac's inventory.
+
+== Survival ==
+Given the 1/10000 chance for the sword to fall every 4 game ticks (0.133 seconds), Isaac has a ~4.4% chance to die for every minute of gameplay that passes after he takes damage with Damocles active. The following is a table for times Isaac could survive to after getting hit, along with the chances of reaching them:
+{| class="wikitable sortable" width="100%"
+ ! Time passed
+ ! Chance of Survival
+ |-
+ | 2 Minutes 20 seconds
+ | 90%
+ |-
+ | 4 Minutes, 57 seconds
+ | 80%
+ |-
+ | 7 Minutes, 55 seconds
+ | 70%
+ |-
+ | 11 Minutes, 21 seconds
+ | 60%
+ |-
+ | 15 Minutes, 24 seconds
+ | 50%
+ |-
+ | 20 Minutes, 21 seconds
+ | 40%
+ |-
+ | 26 Minutes, 45 seconds
+ | 30%
+ |-
+ | 35 Minutes, 40 seconds
+ | 20%
+ |-
+ | 51 Minutes, 9 seconds
+ | 10%
+ |}
+
+Below is a graph representing the decay rate in survival probability as time advances:
+
+[[File:Damocles survival chance graph.png|alt=Damocles survival chance graph|720px]]
+
+== In-game Footage ==
+{{#ev:youtube|ESV2LPNTFYI}}
+
+== Trivia ==
+* [[anti:Damocles|Damocles]] originates from the ''Antibirth'' mod. In ''Antibirth'', the sources of damage Damocles would ignore was very limited, only being damage that would not lower angel/devil deal chance under any circumstances. The more times Isaac would get hit, the higher the chance of Damocles falling became.
+** Damocles' doubling effect would also double all item pedestals including ones from chests, shops, and devil deals with the extra items created by Damocles being free.
+** Damocles would also appear in {{r|Secret Room}}s.
+* The item's appearance and effects are a reference to [[wikipedia:Damocles|''[the] Sword of Damocles'']], a story in which Damocles frequently praised King Dionysius's life of wealth and luxury, and is offered to switch places with Dionysius on the throne for a day to have a taste of his power. Damocles accepts, only to find that Dionysius had a sword hanging over his throne by a single horse hair to remind Damocles of the never-ending threats to both themselves and their country that a ruler must deal with during their reign, causing Damocles to beg to give the throne back to Dionysius.
+* Damocles can be seen hanging over Isaac's head on the ''Antibirth'' [https://f4.bcbits.com/img/a3590313627_16.jpg album cover].
+* There are actually two different Damocles items in the game: one (item ID <code>577</code>) is the active item that Isaac can encounter, and the other (item ID <code>656</code>) is a hidden passive item that is given when the active Damocles is used and that carries out the item's effects. The passive Damocles cannot be encountered through any normal means, even via {{I|Spindown Dice}} or {{I|Death Certificate}}, nor does it appear in the collection grid. If spawned on a pedestal via the [[Debug Console]], collecting the passive Damocles will immediately put the sword above Isaac's head as if the active Damocles were used.
+
+{{nav|jacob and esau unlock|the lamb unlock|fr=Damoclès}}

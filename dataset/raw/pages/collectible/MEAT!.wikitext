@@ -1,0 +1,25 @@
+{{infobox passive collectible
+ | id          = 193
+ | quote       = DMG + HP up
+ | description = Grants one full Red [[Heart container]], +0.3 [[damage]]. {{dlc|r}} Heals 1 additional {{E|Red Heart}}
+ | quality     = 2
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants one full Red [[Red Heart container|Heart container]].
+* +0.3 [[damage]].
+* {{Dlc|r}} Heals 1 additional {{E|Red Heart}}.
+
+== In-game Footage ==
+{{#ev:youtube|X7o4Vzap0uM}}
+
+== Trivia ==
+* This item is a reference to [[wikipedia:Bonk's Adventure|Bonk's Adventure]].
+* The throbbing vein on Isaac's head is commonly used in comics to display the emotion of anger on a character's face.
+* {{I|MEAT!}}, {{I|YO LISTEN!}}, {{I|PHD}}, [[G FUEL!]] and {{I|TMTRAINER}} are the only '''ALL CAPS''' items in the game.
+* The item functions identically to {{I|Stigmata}}.
+
+{{nav|fr=DE LA VIANDE !}}

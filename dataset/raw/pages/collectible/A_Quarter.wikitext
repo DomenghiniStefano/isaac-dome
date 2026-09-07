@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | id          = 74
+ | quote       = +25 coins
+ | description = Gives Isaac 25 {{E|Penny|text=coin}}s.
+ | quality     = 0
+ | tags        = offensive nocantrip
+ | pool        = Super Greed, urn
+ | unlocked by = A Quarter
+}}
+
+{{cit|up}}
+
+== Effect ==
+* Gives Isaac 25 {{E|Penny|text=Pennies}}.
+
+== Notes ==
+* The item has a chance to drop when destroying [[urn]]s or killing {{E|Super Greed}}.
+** {{dlc|nr}} Super Greed can drop this item even if Isaac has already encountered/possessed it. 
+** Will not spawn from Urns once picked up.
+* Rerolling this item with the  {{I|D4}},  {{I|D100}} , {{I|Missing No.}}, or a 1 or 6 pip {{R|Dice Room}} will not remove 25 coins.
+* {{dlc+|r}} Its Quality value is treated as 1 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|80YwsXBaX28||inline}} {{#ev:youtube|pg8D7K5TupY||inline}}
+
+== Trivia ==
+* {{dlc|nr}} When the [[Shop (Item Pool)|Shop item pool]] is depleted, it is possible to find The Quarter for sale in the store for 15 cents. This can also occur in the {{R|I AM ERROR}} room.
+* In the original ''The Binding of Isaac'', A Quarter was unlocked by beating {{E|Mom's Heart}} four times instead of eight.
+** It was also present in the [[Devil Room (Item Pool)|Devil Room]] item pool in the original game and in the “Antibirth” mod.
+*** {{dlc|r}} It is now part of the [[Devil Room (Item Pool)|Devil Room]] item pool again.
+
+== Gallery ==
+<gallery>
+File:Ending 8 Quarter.png|The Quarter in Ending 8.
+</gallery>
+
+{{nav|coin modifier|coin|moms heart unlock|fr=Une Petite Pièce}}

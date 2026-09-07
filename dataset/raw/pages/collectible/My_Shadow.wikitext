@@ -1,0 +1,70 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 433
+ | quote       = Me! And my shaaaadow!
+ | description = {{dlc|nr}} Inflicts [[fear]] on all enemies in the room upon taking damage and spawns black [[friendly]] {{E|Charger}}s that attack enemies.<br>{{dlc|r}}Spawns a shadow familiar that closely follows behind Isaac. It spawns a black [[friendly]] {{E|Charger}} whenever an enemy touches it.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive summonable
+ | unlocked by = My Shadow
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* {{dlc|nr}} Upon taking damage, inflicts [[fear]] on all enemies in the room.
+* {{dlc|nr}} Upon taking damage, spawns a dark [[friendly]] {{E|My Shadow|text=Charger}} which deal 5 damage per hit to enemies.
+* {{dlc|r}} Spawns a shadow [[familiar]] that mimics Isaac's movements on a very brief delay. It spawns a [[friendly]] {{E|My Shadow|text=Charger}} whenever an enemy comes into contact with it.
+** The Chargers deal 8.7 damage per hit to enemies, have 20 health, and only last for the current room. Isaac can have up to 16 Chargers at once.
+
+== Notes ==
+* {{dlc+|ana+}} If this item is triggered in the {{s|Flooded Caves}}, there is a chance that the black charger will be replaced by a {{E|Drowned Charger}}. The summoned Drowned Charger will behave like normal black chargers, and upon death will explode into 4 blood shots that do not damage the player.{{dlc-}}
+* {{dlc|nr}} Shadows of incoming attacks from above will be harder to see, as they're covered by the item's shadow initially.
+* {{dlc|nr}} This item can only spawn a maximum of 5 chargers.
+* {{dlc|r}} My Shadow's hitbox is slightly larger than Isaac's, which spawns a Charger before an enemy hits him if Isaac is standing still.
+* {{dlc|r+}} My Shadow's hitbox depends on the size of the character.
+
+== Synergies ==
+* {{dlc+|r}} {{i|Athame}}: The spawned chargers spawn Athame rings upon death.{{dlc-}}
+* {{i|Dark Arts}}: Isaac can safely drag the shadow through enemies while Dark Arts is active.
+* {{dlc+|r}} {{t|Duct Tape}}: Holds the shadow in place based on its relative position when picking up the trinket, making it easier to touch enemies with it.{{dlc-}}
+* {{dlc+|r}} {{i|Jumper Cables}}: The spawned chargers add to the Jumper Cables counter on death.
+** {{i|Book of Shadows}} / {{i|My Little Unicorn}} / {{i|Unicorn Stump}} / {{i|The Gamekid}}: The invincibility effect allows Isaac to infinitely generate chargers that give charge on death, effectively making Isaac invincible for the room.{{dlc-}}
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Friendly monsters are still affected by Ace Cards.
+* {{i|BFFS!}}: No effect.
+* {{i|Blood Puppy}}: Either angry version of Blood Puppy will target friendly Chargers as well and can drag them along with it when it charges them. Blood Puppy cannot damage friendly Chargers however friendly Chargers can damage Blood Puppy despite not targeting it outright.
+* {{i|Box of Friends}}: No effect.
+* {{i|Broken Modem}}: Broken Modem also affects friendly chargers.
+* {{I|Eraser}}: Erasing a {{E|Charger}} will prevent all newly created [[friendly]] Chargers from spawning as the item spawns a normal Charger before changing it to the special My Shadow variant.
+* {{dlc+|r}} {{I|Ghost Bombs}} / {{i|Hungry Soul}} / {{I|Purgatory}} / {{i|Vade Retro}}: Explosions from the ghosts can kill the chargers.{{dlc-}}
+{{clear}}
+
+== Friendly Charger ==
+{{infobox monster
+ | dlc         = a
+ | id          = 23
+ | subtype     = 1
+ | description = Slowly moves around the room, charging at enemies when they get in its line of sight.
+ | base hp     = 20
+ | behavior    = Charges at enemies when in its line of sight, dealing contact damage. Will always spawn friendly via {{I|My Shadow|n}}.
+}}
+The dark [[friendly]] chargers act like normal chargers and will charge at enemies when they have a chance. They will attack enemies until they run out of hp either from contact with enemies or hazards (e.g. [[spikes]] or {{e|Fire Place}}).
+
+=== Notes ===
+* The allied chargers are affected by mass slowdown effects from items such as the {{i|Stop Watch}}, granting the Shadow Chargers a disadvantage.
+* {{dlc|nr}} If Isaac has [[homing tears]], they will home in on allied chargers.
+* The allied chargers will take damage from any sort of explosion, {{dlc|a+}} except from your own general explosions, {{dlc|nr}} though certain synergies involving {{i|Scatter Bombs}} may kill the Friendly charger.
+* {{dlc|ana+}} With {{i|Punching Bag}}, the allied chargers may attack the Punching Bag instead of enemies.
+{{clear}}
+
+== In-game Footage ==
+{{#ev:youtube|M5C7Yn8knCw}}
+
+== Trivia ==
+* This item's sprite looks similar to an upside-down version of {{i|Judas' Shadow}}.
+* This item's quote is a reference to the song "Me and My Shadow" by Frank Sinatra and Sammy Davis Jr.
+* This item removes Isaac's drop shadow.
+
+{{nav|judas unlock|ultra greed unlock}}
+[[Category:Damage-triggered items]]

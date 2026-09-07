@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 701
+ | quote       = Buried memories
+ | description = Spawns an {{E|Old Chest|n}} at the start of each floor.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable offensive
+ | unlocked by = Isaac's Tomb
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Spawns an {{E|Old Chest}} at the start of each floor.
+* Old Chests are similar in appearance to {{E|Locked Chest}}s and likewise require a {{E|Key}} to unlock, but have the color of a normal Chest and a worn-down appearance. When opened, they contain one of the following:
+** 1-3 {{E|Soul Heart}}s (43% chance)
+** 3 [[trinkets]] (42% chance)
+** An [[Old Chest (Item Pool)|Old Chest item]] (10% chance)
+** An [[Angel Room (Item Pool)|Angel Room item]] (5% chance)
+
+== Notes ==
+* The chest also spawns in the mirrored floor of {{s|Downpour}} II and {{s|Dross}} II if picked up before entering.
+* During the [[Ascent]], the chest spawns in the original starting room of each floor, right above the beam of light to the floor above.
+* The chest does not spawn in {{s|Home}}.
+* Does nothing on {{C|Tainted Lazarus}} if the new floor is entered by the character without Isaac's Tomb.
+
+== Synergies ==
+* {{i|Death Certificate}} : An Old Chest will appear in the Death Certificate area, unless Death Certificate is used on the floor where Isaac's Tomb was obtained.
+
+== Interactions ==
+* {{i|Crooked Penny}} / {{i|Diplopia}}: Additional copies of Isaac's Tomb have no effect. Only one chest is spawned at the start of the floor.
+* {{t|Gilded Key}} / {{t|The Left Hand}} / {{i|Mom's Key}} / {{t|Poker Chip}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|LGLjqcCe-tg||inline}} {{#ev:youtube|B5RPyLtv7kE||inline}}
+
+== Gallery ==
+<gallery>
+File:Old Chest.png|[[Old Chest]] sprite.
+</gallery>
+
+{{nav|tainted forgotten unlock|the beast unlock|fr=Tombeau d'Isaac}}

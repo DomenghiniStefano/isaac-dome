@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 4
+ | quote       = DMG up
+ | description = Increases [[Damage]] by 0.5, and increases damage multiplier by ×1.5.
+ | quality     = 4
+ | tags        = summonable dead offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.5 [[Damage]].
+* ×1.5 Damage multiplier.
+
+== Notes ==
+* The ×1.5 damage multiplier does not stack with the ×1.5 damage multiplier from {{i|Magic Mushroom}}, from the combination of {{i|The Book of Belial}} and {{i|Blood of the Martyr}}, or itself (by using an item such as {{i|Diplopia}}, for example). However, it will stack with any other multipliers, such as {{i|Sacred Heart}}.
+
+== Synergies ==
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Cricket's Head, it turns into a larger red locust dealing {{dlc|rnr+}} triple / {{dlc|r+}} double Isaac’s damage per tick.
+
+== In-game footage ==
+{{#ev:youtube|FzGk0EaPoq0||inline}} {{#ev:youtube|vFG8yDH2oc8||inline}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Parasite }}
+
+== Trivia ==
+* In the original ''Binding of Isaac'', this item was known as "Max's Head". Max was a non-existing animal named after the rabbit of [[Edmund McMillen]]'s sister.
+** {{Dlc|nr}} The filename for the item icon in the game files still refers to it as "Max's Head".
+** According to Edmund's first post-Repentance Lore Stream,<ref>https://www.youtube.com/watch?v=kby0rXT7qYQ&t=1127s</ref> the reason for the name change is due to the fact that it 'bugged him' to name an item after an animal that did not exist in a game that was written around his life.
+* Cricket's Head is named after one of Ed's former cats who is now rehomed, Cricket.
+** According to Edmund's first post-Repentance Lore Stream, the reason for re-homing Cricket was that Cricket became increasingly moody after the death of one of Edmund's other cats named [[Guppy]], which involved getting into fights with [[Tammy's Head|Tammy]].
+* Although {{i|Cricket's Body}} and Cricket's Head are presumed to be from the same animal, Cricket's Body has darker fur color and spots than Cricket's Head.
+
+== References ==
+{{reflist}}
+
+{{nav|pet|fr=Tête de Cricket}}

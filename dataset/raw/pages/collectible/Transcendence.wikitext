@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | name        = Transcendence
+ | id          = 20
+ | quote       = We all float down here...
+ | description = Grants [[flight]].
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = nolostbr summonable
+ | unlocked by = A Noose
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Grants [[flight]].
+
+== Interactions ==
+* {{I|The Intruder}}: When the effect is activated Isaac becomes invisible.
+
+== In-game Footage ==
+{{#ev:youtube|_5MAjLuXdKM||inline}} {{#ev:youtube|Z_lbZ_kn7UQ||inline}}
+
+== Trivia ==
+* The pickup quote "We all float down here... " is a reference to the Stephen King book 'IT'.
+* According to Edmund McMillen's [https://youtu.be/kby0rXT7qYQ first post-Repentance Lore Stream], the explanation behind the visuals of Transcendence (namely the lack of a noose and more importantly, a body) is simply that McMillen found the idea of a head flying around amusing.
+* If {{i|Scissors}} are used after picking up Transcendence, Isaac will have no visible body from which to shoot tears. Only a shadow and orbitals will remain.
+** {{dlc|r}} In Repentance, however, blood gurgles will be spewing constantly from the body, making it much easier to keep track of it.
+* This item is used in {{chal|Solar System}}.
+* In the original Binding Of Isaac, Transcendence was unlocked by beating {{E|Mom's Heart}} two times instead of three.
+* The item sprite is a reference to the suicide method of one hanging themselves with a rope connected to an anchor point on top.
+** This is further supported with [[Endings#Ending 3 (Mom's Heart Ending 3)|Ending 3]]
+{{nav|moms heart unlock|fr=Transcendance}}
+[[Category:Flight-granting items]]

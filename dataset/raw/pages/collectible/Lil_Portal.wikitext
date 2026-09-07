@@ -1,0 +1,68 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 681
+ | quote       = It hungers
+ | description = Spawns a [[familiar]] that flies forward, consuming [[pickups]] in its path and dealing damage to enemies. Each pickup increases its size and damage and spawns a [[Blue Fly]]. {{dlc|nr+}} Every 4 pickups, opens a portal that leads to an unexplored room. {{dlc|r+}} After <code>1 + (stage number)</code> pickups, opens a portal which leads to a special room with contents that persist between floors.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = summonable offensive
+ | unlocked by = Lil Portal
+}}
+{{disambig msg|the item|the enemy|Portal|the chapter|The Void}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Summons a portal familiar that launches itself in the direction Isaac shoots to deal contact damage to enemies.
+** {{dlc|r+}} The portal will launch itself forward after double-tapping.
+* The portal will consume all pickups and trinkets in its path, converting them into [[blue fly|blue flies]] and causing the familiar to become larger and deal more contact damage.
+* {{dlc|nr+}} When the familiar consumes 4 pickups, it will summon a portal that leads to an unexplored room on the current floor and its damage bonus is reset.
+* {{dlc|r+}} When the familiar consumes <code>1 + (stage number)</code> pickups, it will summon a portal that leads to a unique purple {{r|Clean Bedroom}} and will disappear for the rest of the floor, respawning upon entering a new floor.
+** The room contains a random {{e|Chest}} in the top left corner, a chance for a random [[Batteries|battery]] in the bottom left corner, and a chance of {{p|Dice Shard}}, {{p|Soul of Eden}}, {{t|Butter!}}, or {{i|Moving Box}}, in the bottom right corner. In the center of the room is the portal exit, which will bring Isaac back out through the portal he entered.
+** This room, and any contents within, will remain constant for the rest of the player's run, accessible by any portal.
+* {{dlc|nr+}} Lil Portal deals damage equal to <code>2 + 2 * (consumables destroyed)</code> and ticks up to 10 times per second.
+* {{dlc|r+}} Lil Portal deals damage equal to <code>2 * (familiar size)</code> and ticks up to 10 times per second.
+** There are 4 distinct sizes, the amount of consumables required to increase size depending on the stage Isaac is in. It is not possible to reach the maximum size in earlier stages before the familiar summons a portal.
+
+== Notes ==
+* Lil Portal doesn't consume pickups or damage enemies it passes over while trailing behind Isaac; it only does so while being launched.
+* Lil Portal doesn't consume poop pickups when playing as {{c|Tainted ???}}.
+* {{dlc|nr+}} The portal cannot lead to the {{r|Devil Room}}, {{r|Angel Room}}, {{R|Ultra Secret Room}}, entrance to the alt-path, {{r|Black Market}}, {{r|I AM ERROR}} Room, or {{E|Mega Satan}} fight.
+** In the [[Mirrored World]], the {{R|Ultra Secret Room}} is accessible via the portal.
+* {{dlc|nr+}} The room portals take Isaac to is determined at the time they're created; if Isaac clears the room the portal would take him to, he will still be taken to that room if he uses it.
+* {{dlc|nr+}} If every room has been explored, portals summoned by the familiar will do nothing and Isaac will jump up and down in them. This effect appears to be cosmetic only, but it will provide brief invincibility frames equivalent to two {{i|Ventricle Razor}} portals stacked on top of one another.<ref>https://youtu.be/An0IFYflYDc</ref> Same effect occurs if a portal is summoned in rooms that don't appear on map, as Mom's Heart room in {{s|Mausoleum}}/{{s|Gehenna}} II.
+* {{dlc|nr+}} Portals can lead to {{r|Curse Room}}s, forcing Isaac to take damage in order to leave.
+* {{dlc|nr+}} {{r|Secret Room}}s and {{r|Boss Challenge Room}}s can be entered for free by making a portal after all other rooms on the floor are cleared.
+* {{dlc|r+}} A trapdoor created in the Lil Portal bedroom with {{i|We Need To Go Deeper!}} or {{p|Ehwaz}} will always lead to the {{r|I AM ERROR}} room.
+** A {{r|Crawl Space}} can be made as normal, but leaving the Crawl Space takes Isaac to the room the portal was created in, rather than the Lil Portal bedroom.
+** Unlike other changes to the room, all trapdoors will disappear on the next floor.
+* If Lil Portal consumes enough pickups to create a portal, but Isaac enters a trapdoor which leads to the next floor before the portal spawns, then Lil portal will instead spawn a portal on the next floor.
+* Portals will persist after Isaac uses them or leaves the room, and will always lead to the same room.
+** Portals do not respect pathing rules, and can spawn on single-tile walkways and in front of doors, forcing Isaac to use them and preventing him from leaving the room through that door. This can cause a softlock depending on what door it blocks and where the portal leads.
+*** As Isaac cannot enter a portal while in another animation, picking up a trinket/consumable, or taking damage will allow him to pass over the portal.
+*** Alternatively if the player has items like {{I|Pluto}} or has consumed enough "One Makes You Small" [[Pills]] then it is possible to avoid being softlocked as pushing up against walls of any kind will still allow passage through doors and with enough speed, pitfalls and obstacles as well.
+* {{dlc|rnr+}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Lil Portal having the lowest priority at 6th and thus being farther from Isaac than familiars of different priorities.
+** {{dlc|r+}} Lil Portal has the fourth-highest priority.
+* If Lil Portal consumes a {{e|Golden Penny}}, the penny will still reappear.
+
+== Interactions ==
+* {{dlc|r+}} {{I|R Key}}: The special room's contents will be reset after using R Key.
+
+== In-game Footage ==
+{{#ev:youtube|q2YLtHw8r_U}}
+
+== Trivia ==
+* The portal spawned by Lil Portal bears a close resemblance to the {{E|Lil Portal}} enemies.
+* {{dlc|r+}} Internally, the special room Lil Portal leads to is just a copy of the default starting room with customized look and contents. 
+** Lil Portal also does not 'teleport' Isaac to another room location, the special room is generated overtop of the current room.
+
+== References ==
+<references />
+
+== Bugs ==
+{{bug| dlc=nr+ |If a portal is reencountered during the [[ascent]], such as in a previously completed boss room, the game may crash if the destination the portal originally connected to no longer exists in the now altered floor layout.}}
+{{bug|dlc=nr+|A portal can be created next to a door which can block off an entire section of the map and cause a soft lock.}}
+{{bug|Entering one of the portals causes the {{T|Found Soul}} familiar to become invisible until Isaac drops and picks up the trinket again or enters a new floor.}}
+{{bug|Activating {{i|Glowing Hourglass}} twice after {{i|Lil Portal}} consumed the last forth pickup will make him drop a portal while the pickups will stay untouched in the room. If you wont move after a second {{i|Glowing Hourglass}} activation {{i|Lil Portal}} will drop a portal right at the entrance, which will block it and may cause a softlock.}}
+{{Bug| dlc=nr+ |If a portal is created during {{e|The Beast}} fight, this can cause a softlock.}}
+
+{{nav|apollyon unlock|mother unlock|fr=P'tit Vortex}}

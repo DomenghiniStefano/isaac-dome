@@ -1,0 +1,47 @@
+{{infobox passive collectible
+ | id          = 142
+ | quote       = {{dlcalt|You have been blessed|r=Pray for a miracle}}
+ | description = Once per room, when Isaac is reduced to his last half heart, he is granted one {{E|Soul Heart}}.
+ | quality     = 2
+ | tags        = nolostbr summonable angel
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Once per room, when Isaac is reduced to his last half [[heart]] (either red, soul, or black), the aura around his head temporarily vanishes and he is granted one {{E|Soul Heart}}.
+** After re-entering a room, the ability can be triggered again.
+** With {{E|Bone Heart}}s, the effect triggers on both half-filled and empty ones.
+* {{transformation contribution|Seraphim}}
+
+== Notes ==
+* If the Scapular is active and Isaac is already at his last half heart, the effect won't trigger even on fatal damage.
+** {{C|Tainted Samson}} / {{I|Berserk!}}: If fatal damage activates Tainted Samson's Berserk, or if it occurs during Berserk!'s effect, it will trigger and grant the soul heart.
+* {{dlc|a}} Scapular does not charge between waves in [[Greed mode]], though it can still be recharged by moving between rooms.
+* Does not work with {{C|The Lost}} or {{C|Keeper}}, as they cannot reach the required heart value.
+* Reaching only half a heart remaining may be more difficult in [[Chapter 4]] onwards, since all half-heart hits are upgraded to a full heart.
+* {{dlc+|r}} Damage sources that count as "health donation" no longer activate Scapular. This includes {{M|Blood Donation Machine}}, {{M|Devil Beggar}},  {{M|Hell Game}}, {{M|Confessional}}, {{i|IV Bag}}, {{i|Razor Blade}}, {{i|Blood Rights}}, {{i|Dull Razor}}, {{i|Sharp Plug}}, {{i|Shard of Glass}}, {{i|Blood Bombs}}, and {{i|Blood Oath}}. {{r|Sacrifice Room}}s and {{r|Curse Room}}s spikes still activate Scapular.
+** Scapular can still be exploited by alternating between donating half a heart and taking half a heart of damage from elsewhere.{{dlc-}}
+*{{E|Rotten Heart}}s cannot activate Scapular as the whole heart will be depleted by any damage source.
+
+==Synergies==
+* {{I|Kamikaze!}}: Damage from Kamikaze's explosions will activate Scapular, allowing Isaac to trigger on-damage effects infinitely between rooms.
+
+== Interactions ==
+* {{T|Cursed Skull}}: Provided Scapular can always trigger, grants effective immortality, as the soul heart is always given before the teleport takes place.
+** +{{I|The Wafer}}: Grants true immortality, plus one hit on the soul heart, allowing the player to get hit once before teleporting.
+
+== Strategies ==
+The Scapular allows practically free use of damage-triggered effects, as long as care is taken to keep track of the item's state and remaining health, and possibly being forced to proceed with minimal health after reaching the desired goal is acceptable. The room can be left to reactivate the item at latest when only half a red heart and half a soul heart remain; usually, this necessitates performing the actions in rooms without enemies. Examples include:
+
+* Forcing a {{R|Sacrifice Room}} to pay out.
+* Entering and leaving a {{R|Curse Room}} without net loss of health.
+* Fully charging the held active item with {{i|Habit}} by purposefully running into a hazard.
+* {{dlc|nr}} Continuously using {{i|Sharp Plug}}. As Isaac cannot take soul heart damage and red heart damage on the same hit, the single soul heart absorbs two hearts worth of damage by itself.
+* Using [[:Category:Damage-triggered items|damage-triggered items]] that pay out with resources or items such as {{i|Fanny Pack}} or {{i|Cambion Conception}}.
+
+== In-game Footage ==
+{{#ev:youtube|R7wFg3ae4wM||inline}} {{#ev:youtube|YnjdkOJxtqg||inline}}
+
+{{nav|seraphim}}
+[[Category:Damage-triggered items]]

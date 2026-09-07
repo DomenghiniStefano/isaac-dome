@@ -1,0 +1,54 @@
+{{infobox activated collectible
+ | name = The Candle
+ | id = 164
+ | quote = Reusable flames
+ | description = Throws out a blue flame that damages everything in its path, diminishing in size as it travels.
+ | quality     = 2
+ | tags        = offensive
+ | recharge = 4s
+ | unlocked by = Blue Candle
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* Upon use, Isaac raises the candle above his head. On pressing a fire button, a blue flame, similar to a {{E|Blue Fire Place}}, will fire in the chosen direction, extinguishing itself after a fixed time of approximately two seconds.
+* {{dlc|nr}} The flame deals 23 damage per damage tick.
+** {{dlc|nr}} The maximum damage dealt by a single flame is around 276, dealing damage roughly 6 times per second.
+* {{dlc|r}} The flame decreases in damage over time, starting at 23 per tick at max size, until it scales down to 11.5 per tick at minimum size.
+** {{dlc|r}} The maximum damage dealt by a single flame is around 160, dealing damage roughly 6 times per second.
+* The flame also destroys enemy shots it comes into contact with.
+
+== Notes ==
+* {{dlc|nr}} While Isaac holds the candle above his head, his movement speed is reduced.
+* {{dlc|nr}} Will block Isaac's tears, unlike {{I|Red Candle}} and won't burn him.
+* Flames do not drop any collectibles when doused.
+* The flame can destroy {{e|Shopkeeper}}s.
+* The flame projectile can pass over Pits, but can not travel through Rocks or Poop.
+* The flames from this item can put out {{e|Fire Place}}s.
+* {{dlc+|r}} The flame can ignite gas clouds such as ones found in {{s|Dross}}.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns blue wisps on the middle ring. The wisps do not persist between rooms.}}
+
+== Interactions ==
+* {{I|Car Battery}}: No effect.
+** {{dlc|r+}} Spawns a second flame that travels a shorter distance.
+
+== In-game Footage ==
+{{#ev:youtube|PUBEE6UpA5U}}
+
+== Trivia ==
+* [[wikipedia:The Legend of Zelda (video game)|''The Legend of Zelda'']], a major inspiration for ''The Binding of Isaac'', also has a [[zelda:Blue Candle|blue candle]] item that can be activated once per room to create flames for burning enemies and bushes, as well as lighting dark rooms. Unlike in Isaac however, the [[zelda:Red Candle|red candle]] is an upgrade of the blue one, which can be activated any number of times per room.
+* The {{i|Red Candle}} is a variation of this item unlocked after donating 400 coins, diminishing on damage dealt instead of time.
+* '''The Candle''' was an item in ''The Binding of Isaac: Wrath of the Lamb'' where it used to be the only auto-recharging item.
+* In the ''Wrath of the Lamb'' DLC, this item was originally unlocked by beating a challenge titled, "Dark was the Night".
+* Although this item is normally only available in the {{r|Shop}}, it can be found as one of the Nintendo-themed {{r|Treasure Room}} items in the 6th of December's [[List of curated daily challenges|Daily Run]], which is an homage to the late CEO of Nintendo, Satoru Iwata.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The Candle.png|The icon of The Candle as seen on the lower 3DS screen
+</gallery>
+
+{{nav|donation machine unlock|fr=Bougie Bleue}}
+[[Category:Store upgrades]]

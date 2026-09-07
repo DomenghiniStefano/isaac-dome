@@ -1,0 +1,28 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 171
+ | quote       = Money talks
+ | description = Adds a chance for [[Devil Room|Devil Deals]] to cost [[Coins|money]] instead of [[health]].
+ | unlocked by = Keeper's Bargain
+}}
+{{cit|ut|r}}
+
+== Effects ==
+* Adds a 50% chance for [[Devil Room|Devil Deals]], {{R|Black Market}}s, and {{I|A Pound of Flesh}} {{R|Shop}} items to cost [[Coins|money]] instead of [[health]].
+** Items that would normally cost 1 [[Health#Red Heart Containers|heart container]] will cost 15 coins, while items that would normally cost 2 heart containers will cost 30 coins.
+
+== Notes ==
+* The effects of this trinket are inherent to {{c|Keeper}} and {{c|Tainted Keeper}}, rendering the trinket useless for them.
+* Items affected by Keeper's Bargain may occasionally be discounted (30 coin item down to 15 coins, or 15 coins to 7), just like items are in a regular shop.
+* Dropping this trinket while in the room disables its effect.
+* Purchasing a [[Devil Room|Devil Deal]] with this trinket's effect will still prevent {{R|Angel Room}}s from appearing.
+* If an item that costs health is rerolled (via {{i|The D6}} or similar methods), the new item can cost coins instead. The reverse is also true.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: The chance for deals to cost money is 100%. Having both makes the deals have an increased chance to be on sale.
+
+== Interactions ==
+* {{T|Judas' Tongue}}: Does not provide any discount.
+* {{C|The Lost}}/{{C|Tainted Lost}}/{{P|Soul of the Lost}}: Purchasing items affected by this trinket will not cause the other items in the room to disappear.
+
+{{nav|tainted keeper unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Aubaine du Gardien}}

@@ -1,0 +1,66 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlcalt|na+=Afterbirth|nr=Afterbirth+}}
+ | id          = 431
+ | quote       = ydduB Buddy
+ | description = Spawns a [[familiar]] that will follow Isaac's movements on a 2.5-second delay. Tears that pass through the baby will be doubled and increase in speed.
+ | quality     = 2
+ | tags        = summonable baby {{dlc|r+|monstermanual}} offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Spawns a [[familiar]] that follows Isaac's path with a 2-second delay.
+** {{dlc|r}} The delay is 0.66 seconds instead.
+* When a friendly tear passes through Multidimensional Baby, the tear splits into two parallel tears that gain a 1.33x shot speed boost, {{dlc|nr}} x1.5 range /{{dlc|r}} x1.5 [[tear height]] (which also increases effective range), and also a visual black and white flashing effect.
+* {{dlc|r}}{{transformation contribution|Conjoined}}
+
+== Notes ==
+* It is possible to crash the game when combining this item with rapid-fire or multi-shot laser tears.
+* Duplicated tears will deal the same damage as Isaac's tears.
+* If other familiars that move with a similar pattern such as {{i|Shade}} have been collected before the Baby, it will follow them instead with further delay.
+* Standing perfectly still with the Multidimensional Baby inside of Isaac will activate its effect, as the tears will pass through it as they spawn.
+** This does not work with attacks such as Brimstone, as it is fired in front of Isaac.
+
+== Synergies ==
+* {{i|Brimstone}}: If a brimstone laser is shot through the baby, it will double the laser.
+** {{C|Azazel}}'s short-ranged Brimstone attack will also be "fired again" from the baby, increasing the range.
+* {{i|Cricket's Body}}/{{i|The Parasite}}: Tears that pass through Multidimensional Baby will duplicate and their split tears will duplicate. Half of the tears fired through Multidimensional Baby retain The Parasite's look and the other half have the flashing appearance.
+* {{t|Duct Tape}}: If properly positioned, Isaac's tears will always be doubled.
+* {{i|Haemolacria}}: Haemolacria shots will be duplicated and more burst tears will spawn. Burst tears that pass through Multidimensional Baby will also be duplicated.
+* {{dlc|r}} {{I|Papa Fly}}: Papa Fly will always shoot two shots due to both familiars having the same movement delay.
+* {{i|Revelation}}: If a revelation laser is shot through the baby, it will double the laser.
+* [[Shooting familiar]]s: Duplicates familiar's tears.
+* {{i|Sprinkler}}: Tears fired by the sprinkler can be duplicated.
+* {{i|Technology}}: When the laser passes through Multidimensional Baby, it doubles the laser.
+
+== Interactions ==
+* {{t|???'s Soul}}/{{i|Abel}}/{{i|Cain's Other Eye}}: Familiar tears will be duplicated if they pass through the baby. However, due to their independent movement pattern, it can be hard to achieve duplication.
+* {{i|Anti-Gravity}}: Multidimensional Baby will travel the same path as the Anti-Gravity tears, easily doubling any stationary shots. Any moving tears that hit it will produce a normal moving copy, however stationary tears will spawn a copy that will eventually fall to the ground even after the direction is released.
+** {{dlc|a+}} Stationary duplicated tears will release normally.
+* {{t|Baby-Bender}}: No effect as Multidimensional Baby only duplicates Isaac's tears.
+* {{i|BFFS!}}: The baby is larger, but tears shot through it will not do more damage.
+* {{i|Box of Friends}}: Each copy of Multidimensional Baby follows the previous copy with a 2-second ({{Dlc|r}}0.66-second) delay.  Tears shot through multiple babies will only be duplicated once.
+* {{i|Compound Fracture}}: Tears that pass through Multidimensional Baby will be duplicated and cosmetically look like normal tears. Bone shards will not duplicate unless they pass through Multidimensional Baby separately.
+* {{i|Dr. Fetus}} / {{i|Epic Fetus}} / {{i|Tech X}} / {{i|Trisagion}}: No effect.
+* {{I|Eye of the Occult}}: Makes it more easy to use Multidimensional Baby, as Isaac can simply stand while the familiar stays on top of him.
+* {{i|Lachryphagy}}: Duplicates tears, which tend to merge after traveling a certain distance, making it easier to feed tears. Burst tears can only be duplicated if the tear they come from didn't pass through the baby already.
+* {{i|Lil Brimstone}}/{{i|Robo-Baby 2.0}}: Familiar lasers that pass through the baby will not be duplicated.
+* {{i|The Ludovico Technique}}: Spawns another tear that will slowly follow Isaac but cannot be controlled.
+** {{dlc|r}} Spawns a stationary tear where Multidimensional Baby first appeared in the room. The tear does not follow Isaac.
+* {{i|Mom's Bracelet|nr+}}: Throwing any obstacles through Multidimensional Baby will transform it into two 40 damage tears. Throwing obstacles that can drop pickups like mushrooms through Multidimensional Baby will cease the possibility of anything dropping from such tears. Crawl spaces, though, appear right after picking up an obstacle.
+* {{Dlc|nr}}{{i|Mom's Knife}}: No effect.
+** {{Dlc|r}}Fired knife is doubled when passing through Multidimensional Baby. No effect on held knife and returning knife.
+
+== In-game Footage ==
+{{#ev:youtube|MDZG3R1vtkE}}
+
+== Trivia ==
+* The way the tear splits resembles stimulated light emission.
+* In the initial release of ''[[The Binding of Isaac: Afterbirth]]'', the flashing effect that Multidimensional Baby gave tears was much more intense, and made some players feel nauseous. This was changed in version [[v1.06.0052]].
+
+== Bugs ==
+{{bug|plat=Switch|Can double [[Best Friend]] when it passes through.}}
+
+{{nav|conjoined|fr=Bébé Interdimensionnel}}

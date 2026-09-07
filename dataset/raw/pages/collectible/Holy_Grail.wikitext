@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | id          = 184
+ | quote       = Flight + HP up
+ | description = Grants [[flight]] and one Red [[Heart container]]. {{dlc|r}} Heals 1 additional {{e|Red Heart}}.
+ | quality     = 3
+ | tags        = nolostbr summonable angel
+ | devil price = {{dlcalt|1|r=2}}
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants [[flight]] and one full Red [[Heart container]].
+* {{transformation contribution|Seraphim}}
+* {{Dlc|r}} Heals 1 additional {{e|Red Heart}}.
+
+== In-game Footage ==
+{{#ev:youtube|8NXAaWIA3ew}}
+
+== Trivia ==
+* This is based on the grail Jesus drank out of in the Last Supper, and the myth that says whoever drinks from it will be blessed.
+* This item's costume is a combination of {{i|Fate}}'s and {{i|Mitre}}'s.
+* This item is used in {{chal|The Guardian}}.
+
+{{nav|seraphim}}
+[[Category:Flight-granting items]]

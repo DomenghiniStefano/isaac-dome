@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | id          = 280
+ | quote       = She loves you
+ | description = Spawns a [[familiar]] that wanders randomly, occasionally spawning [[Blue Spider]]s. {{dlc|r}} Briefly [[charm]]s enemies on contact.
+ | quality     = 1
+ | tags        = summonable spider monstermanual offensive
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Spawns a [[familiar]] that wanders around the room and occasionally spawns friendly [[Familiar#Blue Spiders|Blue Spider]]s.
+** Blue Spiders are spawned once every 10-15 seconds, as long as there are enemies in the room.
+** Only up to 5 Blue Spiders can be spawned at a time.
+* {{Dlc|r}} [[Charm]]s enemies briefly on contact.
+* {{Dlc+|r}}{{transformation contribution|Spider Baby}}{{dlc-}}
+
+== Synergies ==
+* {{i|BFFS!}} / {{i|Hive Mind}}: Spawn delay is decreased to 7-11 seconds.
+* {{i|Mom's Wig}}: The maximum number of Blue Spiders is increased to 10.
+
+== In-game Footage ==
+{{#ev:youtube|hNWmg9PuF4A}}
+
+== Gallery ==
+<gallery>
+File:Sissy Longlegs In-game.png|Sissy Longlegs' sprite as she appears in-game.
+</gallery>
+
+{{nav|spider|fr=Sissy la Faucheuse}}
+[[Category:Familiars]]

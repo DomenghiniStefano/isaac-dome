@@ -1,0 +1,119 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 580
+ | quote       = Explore the other side
+ | description = Creates a {{r|Red Room}} adjacent to a viable wall, indicated by the outline of a door. These rooms have a 10% chance to be a [[special room]].
+ | quality     = 3
+ | tags        = offensive {{dlc|r+|nocantrip}} nogreed
+ | recharge    = 4
+ | unlocked by = Red Key
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, creates a {{r|Red Room}} next to a wall where there would be no conditions that could prevent a room from spawning there (i.e., the same conditions for a {{r|Secret Room}} to spawn). This is indicated by red door outlines on walls.
+* These rooms are most commonly normal rooms, but have a 10% chance<ref>[https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing (contains information about room type/spawn chance)]</ref> to be a [[special room]] instead, even including Red {{r|Devil Room}}s or {{r|Angel Room}}s.
+** Red special rooms of any kind can appear on every floor.
+* These rooms use a special Red Room icon on the map.
+
+== Notes ==
+* The types of special rooms that a {{r|Red Room}} can be are the following:{{column list | width = 15em | content =
+** {{r|Angel Room}}
+** {{r|Arcade}}
+** {{r|Clean Bedroom}}
+** {{r|Curse Room}}
+** {{r|Devil Room}}
+** {{r|Dice Room}}
+** {{r|Dirty Bedroom}}
+** {{r|Library}}
+** {{r|Mini-Boss Room}}
+** {{r|Planetarium}}
+** {{r|Sacrifice Room}}
+** {{r|Secret Room}}
+** {{r|Shop}}
+** {{r|Super Secret Room}}
+** {{r|Treasure Room}}
+** {{r|Vault}}
+}}
+* All rooms made by Red Key will be 1x1 rooms that can have doors available on all sides.
+* All doors within a Red Room will be unlocked or opened, regardless of the room type they lead to. This can open {{r|Secret Room}}s, and normally inaccessible {{r|Challenge Room}}s if they are adjacent to a Red Room. Red Room doors will also stay permanently open in the case of Challenge Rooms.
+* In {{s|Home}}, Isaac can create a "Red Room" on the left side of the map right under Mom's room. This room will actually be a closet containing a non-tainted character's [[Tainted Characters|Tainted]] form.
+** If the respective Tainted character has already been found or a Tainted character is played, the room will contain {{i|Inner Child}} instead. If Inner Child has not been unlocked, the room will contain a {{e|Shopkeeper}}.
+** {{dlc|r+}} In [[Online Co-Op]], each player will unlock the Tainted version of the character they are playing as, regardless of whether they are alive or not, and if they are alive, they will also see the correct character, else seeing the host's character. However, if the host is playing as a Tainted character, the room will not contain any Tainted characters even if other players have not found their respective Tainted character, and the character will not be unlocked for anyone.
+* If a door created by Red Key takes Isaac outside of the 13x13 area of the floor, he will be taken to the {{r|I AM ERROR}} room.
+** The starting room of a floor is always in the center of the 13x13 area.
+** This does not occur in {{s|Corpse}} II, {{s|Dark Room}}, {{s|Chest}}, {{s|The Void}}, or the special version of  {{s|Mausoleum}} / {{s|Gehenna}} II containing {{i|Dad's Note}}. No door outlines will appear at any boundary walls.
+*** Additionally, this doesn't work during {{Chal|Red Redemption}}.
+** The I AM ERROR room door can only be created while already inside a Red Room. Normal rooms will not show the red outline if they are at the map's boundary.
+* Special Red Rooms can be versions that aren't normally encountered without a specific item or character.
+** These include:
+*** {{c|Tainted Keeper}}'s {{r|Shop}}s, which can additionally contain items from the [[Boss (Item Pool)|Boss]] and [[Treasure Room (Item Pool)|Treasure Room pools]], and offer trinkets for sale.
+*** {{i|Voodoo Head}}'s {{r|Curse Room}}s.
+*** {{c|Cain}}'s {{i|Birthright}} {{r|Arcade}}s.
+*** {{i|More Options}}' double item {{r|Treasure Room}}s.
+*** {{t|Pay to Win}}'s {{m|Shop Restock Machine}} {{r|Treasure Room}}s.
+*** {{i|More Options}}' and {{t|Pay to Win}}'s combined double item {{r|Treasure Room}}s with a {{m|Shop Restock Machine}}.
+** These do not include:
+*** {{t|Number Magnet}}'s {{r|Devil Room}}s.
+*** {{i|The Stairway}}'s {{r|Angel Room}}s.
+*** {{t|Devil's Crown}}'s {{r|Devil Treasure Room}}s.
+* Red Key can't overwrite {{r|Secret Room}}s or {{r|Super Secret Room}}s. This can be used to discern their locations by finding walls that don't have red door outlines that would otherwise be valid Red Room spots.
+* Red Key can't create a room adjacent to the {{r|Boss Room}} on most floors, with some exceptions:
+** Red Key can create a room adjacent to {{E|Hush}}'s room in the top right where the room that leads to {{s|The Void}} usually generates. The door to this looks like a crack. This Red Room can only be created when Isaac is in another Red Room adjacent to it, i.e. from branching off one of the {{r|Treasure Room}}.
+*** Isaac can enter Hush's room from this crack, but going the other direction will lead him to the Entrance Portal room.
+*** Isaac also can't create Red Rooms adjacent to the {{r|Shop}} on this floor either.
+** Red Key can create rooms adjacent to most Boss Rooms in {{s|The Void}}, including {{e|Delirium}}'s room. This can be used to find a Boss Room door leading to what would be an empty space (though this may find {{E|Mr. Fred}} instead).
+** Red Key can create rooms adjacent to the {{r|Boss Room}} in the [[Mirrored World]] of {{S|Downpour}} / {{S|Dross}} II.
+** Red Key can create rooms adjacent to the first {{r|Boss Room}} if {{cu|Labyrinth}} takes effect on the floor.
+* When Isaac enters any Red Room adjacent to the {{r|Ultra Secret Room}}, it immediately appears on the map along with the Secret Room jingle, and its door will automatically open.
+* If Isaac encounters a Red [[special room]], all of its doors will be its special theme doors.
+** All doors in a Red {{r|Curse Room}} still feature spikes, which will damage Isaac if he decides to enter/exit.
+** A Red {{r|Vault}}'s doors or a Red {{r|Dice Room}}'s doors each require two keys to open. The door where Isaac uses Red Key will be automatically unlocked, but the other doors remain locked until Isaac goes through them from inside or unlocks them from outside.
+* Multiple Red special rooms of the same type can spawn on one floor.
+* All Red {{r|Sacrifice Room}}s will have their own independent use counters and rewards.
+* If Isaac has a teleport to a specific room ({{p|XVII - The Stars}}, {{p|IX - The Hermit}}, {{I|Teleport 2.0}}, etc.) and has created a special room such that there are multiple of a certain type on one floor, the teleport will choose randomly between each room.
+** However, if Isaac has found a Red {{r|Planetarium}}, XVII - The Stars will always teleport Isaac to it over any {{r|Treasure Room}}s.
+* It is possible to obtain {{i|Knife Piece 1}} outside of the intended method by spawning the {{r|Treasure Room}} that contains it in {{s|Downpour}} / {{s|Dross}}.
+** Red Rooms in Downpour/Dross can contain {{e|White Fire Place}}s as well.
+* Isaac is able to create Red Rooms in the [[Mirrored World]] of {{s|Downpour}} / {{s|Dross}} II. They will be reflections of the original floor's Red Rooms, and special rooms created in this way will still be empty.
+* Red Rooms can't be created around the {{r|Mine Cart Room}} of {{s|Mines}} / {{s|Ashpit}} II.
+** Red Rooms on these floors can contain the yellow buttons used to build the mine cart track; however, these ones do nothing.
+* Red Rooms in [[Chapter 3]] can contain [[Rocks#Marked Skulls|Marked Skulls]] even before the [[Ascent]] is unlocked.
+* When in {{s|Dark Room}} or {{s|Chest}}, their spawn room containing their respective chests can be created by Red Key. These will function the same way regular chests of their respective type would on Dark Room/Chest outside the starting room.
+** New {{E|Mega Satan}} doors can't be found in these rooms.
+* Red {{R|Treasure Room}}s will be present in the [[Ascent]], and will not replace regular {{R|Treasure Room}}s.
+* If a red {{R|Sacrifice Room}} appears in the {{s|Dark Room}} and Isaac teleports via the 12th or higher sacrifice, Isaac will be sent back to the starting room without restarting the floor.
+* If a red {{R|Sacrifice Room}} appears in {{s|The Void}}, then it is possible to defeat {{e|The Lamb}} after taking the path through {{s|Chest}}. This makes it possible, without the use of [[R Key]], to get up to 8 [[Completion Marks]] in the same run if playing quickly.
+* Red Key can be obtained by using {{i|Pandora's Box}} at {{s|Home}}.
+* {{e|Greed}}, {{e|Super Greed}}, and {{e|Krampus}} can spawn in red {{r|Mini-Boss Room}}s.
+* This item can be crafted from {{i|Bag of Crafting}} with eight {{p|Cracked Key}}s.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Creates a Red Key wisp in the middle ring. The wisps have a chance to create Red Rooms when Isaac enters an unexplored room.}}
+* {{t|Broken Glasses}} / {{t|Devil's Crown}} / {{i|More Options}}: Affects Red {{r|Treasure Room}}s.
+* {{t|Judas' Tongue}} / {{t|Keeper's Bargain}} / {{t|Number Magnet}} / {{i|A Pound of Flesh}} / {{i|Sanguine Bond}}: Affects Red {{r|Devil Room}}s.
+* {{i|Luna}}: Affects Red {{r|Secret Room}}s and {{r|Super Secret Room}}s.
+* {{i|Mama Mega!}}: Will trigger its effect in new Red Rooms, provided it has already been used on the floor.
+* {{i|Spelunker Hat}}: Instantly reveals the {{r|Ultra Secret Room}} if it is adjacent to the Red Room created.
+* {{t|Found Soul}}: If Found Soul is positioned against a different wall, activating the Red Key will open two red rooms at once: One near Isaac, and one near Found Soul.
+
+== Interactions ==
+* {{i|4.5 Volt}}: Usually generates fewer than 1 charge per room, as Red Rooms are always 1x1.
+* {{I|Car Battery}}: No effect.
+* {{i|Member Card}}: The trap door will always lead to the same special room as the regular {{r|Shop}}.
+* {{t|Pay to Win}}: No effect on Red {{r|Treasure Room}}s.
+
+== In-game Footage ==
+{{#ev:youtube|4_5EZwWcKBk||inline}} {{#ev:youtube|7fwRQb9FDTQ||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Red Redemption}}.
+* In the '''Antibirth''' mod, this item used to be unlocked by defeating The Witness (Now known as {{e|Mother}}) as {{c|Cain}}.
+* During the Kickstarter campaign for [https://www.kickstarter.com/projects/isaacfoursouls/the-binding-of-isaac-4-souls-requiem The Binding of Isaac: Four Souls Requiem], the Red Key was revealed to be present in Repentance by developer Kilburn.<ref>https://twitter.com/FixItVinh/status/1409960357934796803</ref>
+* Red Rooms may be a reference to ''[[wikipedia:Plagues of Egypt|the Plagues of Egypt]]'' in the Bible where the tenth and final plague, death of first-born, could be prevented by painting lambs blood on their doors, making them red.
+
+== References ==
+<references />
+
+{{nav|key|fr=Clé Rouge}}

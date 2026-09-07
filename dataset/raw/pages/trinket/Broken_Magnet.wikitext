@@ -1,0 +1,22 @@
+{{disambig msg|the Broken Magnet trinket|a related item|Magneto|a similar item|Strange Attractor|a similar trinket|Super Magnet}}
+
+{{infobox trinket
+ | id          = 6
+ | quote       = It kinda works!
+ | description = Pulls [[coin]]s towards Isaac, but ignores other [[pickup]]s.
+}}
+
+{{cit|t}}
+
+== Effect ==
+* Pulls all types of [[coin]]s towards Isaac. Ignores all other [[pickup]]s.
+** Also affects the vanishing coins of {{c|Tainted Keeper}}.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: Additionally pulls in {{e|Key}}s and {{e|Bomb}}s. [[Heart]]s are also pulled if Isaac can pick them up.
+** While playing as {{C|Tainted ???}}, poop pickups won't be attracted.
+
+== In-game Footage ==
+{{#ev:youtube|V9llZwzS5LE||inline}} {{#ev:youtube|fy3DSPoA6C8||inline}}
+
+{{nav|magnetic|broken|fr=Aimant Démagnétisé}}

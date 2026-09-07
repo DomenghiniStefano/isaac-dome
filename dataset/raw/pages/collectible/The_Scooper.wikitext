@@ -1,0 +1,27 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 605
+ | quote       = Plop!
+ | description = Summons {{I|The Peeper}} for the current room, which leaves a trail of red [[creep]].
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | recharge    = 3
+}}
+
+{{cit|a|r}}
+
+== Effects ==
+* Summons {{i|The Peeper}} for the current room, which also leaves a trail of red [[creep]].
+** The Peeper deals 12 contact damage per tick (36 per second) and the creep it trails deals 2 damage per tick (20 per second).
+** The Peeper can block enemy shots.
+** All tears shot from the right eye will deal 35% more damage, same as with {{I|The Peeper}} affecting the left eye.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns white-glowing eyeball wisps on the middle ring. They function the same as normal wisps.}}
+* {{i|Car Battery}}: Will summon 2 peepers in a bifurcated direction.
+
+== Trivia ==
+* [[anti:The Scooper|The Scooper]] originates from the ''Antibirth'' mod where it acts similarly but doesn't grant damage to all tears shot from the right eye.
+* The pickup quote for The Scooper is the same as the one for {{I|The Peeper}}.
+
+{{nav|fr=Cuillère à Glace}}

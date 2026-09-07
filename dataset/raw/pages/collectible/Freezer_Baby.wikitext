@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 608
+ | quote       = Iced iced baby
+ | description = Spawns a [[familiar]] that follows Isaac around and fires icicles have a chance to [[petrify]] enemies and [[Status Effects#Frozen|freeze]] [[monsters]] they kill.
+ | quality     = 2
+ | tags        = summonable baby monstermanual offensive
+}}
+{{distinguish|Cube Baby}}
+{{cit|p|r}}
+
+== Effects ==
+* Spawns a [[familiar]] who follows Isaac around and fires icicles once every 0.75 seconds that each do 3.5 damage and have a chance to [[petrify]] enemies they hit and [[freeze]] enemies they kill.
+** Frozen enemies will block enemy shots, and will slide away when walked into by Isaac.
+*** After colliding with an obstacle or getting sufficiently shot by Isaac, frozen enemies will explode into a ring of 10 ice tears that can [[slow]] and [[freeze]].
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Freezer Baby having {{dlcalt|5th|r+=7th}} priority.
+* If a non-boss enemy dies within 10 ticks (0.33 seconds) after being hit by a freezing tear, it will be frozen regardless of what killed it.
+
+== Synergies ==
+* {{I|Mongo Baby}}: Will copy Freezer Baby’s tears.
+
+== Trivia ==
+* [[anti:Freezer Baby|Freezer Baby]] originates from the ''Antibirth'' mod.
+* Freezer Baby's item description is a reference to "[[wikipedia:Ice Ice Baby|Ice Ice Baby]]", a song by American rapper "[[wikipedia:Vanilla Ice|Vanilla Ice]]".
+
+{{nav|conjoined|fr=Bébé Surgelé}}

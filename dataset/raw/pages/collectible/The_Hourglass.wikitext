@@ -1,0 +1,35 @@
+{{infobox activated collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 66
+ | quote       = Temporary enemy slowdown
+ | description = All enemies in the [[room]] are [[Status Effects#Slow|slowed]] for 8 seconds.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | recharge    = 2
+}} {{disambig msg|the normal hourglass|the glowing version of this item|Glowing Hourglass}}
+
+{{cit|a}}
+
+== Effects ==
+* All enemies in the [[room]] are [[Status Effects#Slow|slowed]] for 8 seconds.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns hourglass-shaped wisps on the middle ring. The wisps [[slow]] all enemies in the room for 3 seconds when destroyed. If the Hourglass is used or extra wisps are destroyed while the slow is in effect, its duration is extended.}}
+* {{i|Car Battery}}: Doubles the duration of the effect.
+
+== In-game Footage ==
+{{#ev:youtube|rNHNWHJH6pU||inline}} {{#ev:youtube|ypAJMJ4uhdo||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The Hourglass.png|{{plat|3DS}} The icon of The Hourglass as seen on the lower 3DS screen.
+File:The Hourglass giantbook.png|Splash image which appears when The Hourglass is activated.
+</gallery>
+
+== Trivia ==
+* One of {{e|Death}}'s attacks invokes The Hourglass, slowing down Isaac for a short duration. The same popup appears as well.
+
+== Bugs ==
+{{bug|dlc=na+|Upon using The Hourglass on {{e|The Hollow}}, there is a chance that when they hit the corners of the walls, they will stay there until the effect is gone. Afterwards, The Hollow will have the same moving patterns as {{e|Larry Jr.}}}}
+
+{{nav|fr=Sablier}}

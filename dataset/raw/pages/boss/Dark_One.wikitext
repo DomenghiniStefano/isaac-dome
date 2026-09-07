@@ -1,0 +1,43 @@
+{{infobox boss
+ | id          = 267
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|boss challenge}}{{room|boss rush}}<br>{{dlc|r}}<br>{{floor|Catacombs}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}<br>{{room|challenge}}<br><u>Alternate path</u><br>{{floor|Gehenna}}<br>{{room|challenge}}
+ | base hp     = 400
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Dark Matter}} (1% chance)
+}}
+
+'''Dark One''' is a [[boss]] that can appear:
+* {{Dlc|nr}} In all environments of [[Chapter 2]] ({{s|Caves}}, {{s|Catacombs}}, {{s|Flooded Caves}}).
+* {{Dlc|r}} Only in the {{s|Catacombs}}.
+
+== Behavior ==
+* Sends out a ring of 12 projectiles.
+* If Isaac is below him, fires a {{i|Brimstone}} laser downwards.
+* Charges twice across the screen, veering slowly towards Isaac while charging. When going off-screen, he reappears from the opposite end of the screen. Dark One will do this attack more often if Isaac moves to one of his sides.
+* Dims the room, causing the {{Curse|darkness}} effect for a period of time.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Dark One ingame.png|{{dlc|a+}} Dark One as one of {{e|Delirium|n}}'s forms.
+File:Rebirth Boss Concepts.jpg|Concept art of an early version of Dark One (named "Dark Boy") in the top left corner, with other concept arts of other Rebirth bosses.
+File:Dark One Concept.png|More concept art of Dark One.
+</gallery>
+
+== Notes ==
+{{plat|3DS}} If Dark One dims the room, pause the game and the dim will eventually go away while still in the pause screen.
+
+== Trivia ==
+* {{e|The Adversary}} is the posthumous version of him.
+** {{dlc|r}} One of Dark One's horns is cut off during his death animation, signifying his transformation into The Adversary.
+*** The sprite can flip horizontally, making it look like the Dark One lost his right horn, even though the Adversary's left horn is broken
+* Dark One is one of the three bosses that can dim the room (a temporary {{Curse|darkness}} effect). The other bosses are The Adversary and {{e|The Lamb}}.
+
+== Bugs ==
+{{bug|dlc=na|Upon entering the room, if the player goes toward the bottom-center of the screen and The Dark One uses his dashing attack, there is a chance that The Dark One will freeze on his dashing frame and remain in the same state for the remainder of the fight. This bug has been observed when entering from both the left and right sides of the screen.}}
+
+{{nav|boss|fr=Le Ténébreux}}
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Rebirth]]

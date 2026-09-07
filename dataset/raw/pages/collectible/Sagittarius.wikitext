@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | image name    = * {{dlc|na+|Rebirth}}
+ | tear app name = Cupid's Arrow
+ | id            = 306
+ | quote         = {{dlcalt|Penetrative shot|r=Piercing shots}} + speed up
+ | description   = Increases [[speed]] by +0.2 and grants [[piercing tears]].
+ | quality       = 3
+ | tags          = summonable offensive stars
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.2 [[speed]]
+** {{dlc|nr}} +0.2 maximum speed (may never exceed 2.0).
+* Grants [[piercing tears]].
+
+== Synergies ==
+* {{I|Lost Contact}}: Tears will pierce right through enemy projectiles, deleting them. A very strong offensive/defensive combo.
+
+== Interactions ==
+* {{i|8 Inch Nails}}: Knockback overridden by Sagittarius.
+* {{t|Blister}}: Overridden by Sagittarius.
+* {{i|Dr. Fetus}}: Bombs travel through enemies. When combined with {{I|Ipecac}}, bombs do not explode upon hitting enemies.
+** {{Dlc|r}} Bombs also deal 2.5x Isaac's damage to enemies when passing through them.
+* {{i|Pisces}}: Knockback overridden by Sagittarius.
+
+== In-game Footage ==
+{{#ev:youtube|pIkUjjnyyRo}}
+
+{{nav|zodiac}}

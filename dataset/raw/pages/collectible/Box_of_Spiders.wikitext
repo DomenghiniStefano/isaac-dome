@@ -1,0 +1,38 @@
+{{infobox activated collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 288
+ | quote       = It's a box of spiders
+ | description = Spawns {{dlc|nr}}1-4 / {{dlc|r}} 4-8 [[Blue Spider]]s where Isaac is standing.
+ | quality     = 1
+ | tags        = spider offensive
+ | recharge    = 2
+}}
+
+{{cit|a}}
+
+== Effects ==
+* {{dlc|nr}} Spawns 1-4 [[Blue Spider]]s.
+* {{dlc|r}} Spawns 4-8 [[Blue Spider]]s.
+* {{transformation contribution|Spider Baby}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Rag Man}}.{{dlc-}}
+
+== Synergies ==
+* {{i|Hive Mind}}: Doubles the spiders' damage.
+
+== Interactions ==
+* {{Book of Virtues synergy|description=Spawns wisps instead of spiders, in the outer ring. Wisps summon Blue Spiders when destroyed. One wisp contains one Blue Spider.}}
+
+== In-game Footage ==
+{{#ev:youtube|7j0KmXHnV1I}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Box of Spiders.png|{{plat|3DS}} The icon of Box of Spiders as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* A box full of spiders is an old way of getting your kids to stop misbehaving. The child is handed a box with a supposed gift inside, only to be scared by spiders as punishment.
+
+{{nav|spider|fr=Boîte d'Araignées}}

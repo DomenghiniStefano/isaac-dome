@@ -1,0 +1,112 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 477
+ | quote       = Consume
+ | description = Consumes all pedestal items in the room. Activated items will have their effects added to Void, and passive items will grant random stat upgrades.
+ | quality     = {{dlcalt|4|r+=3}}
+ | tags        = offensive nocantrip
+ | recharge    = {{dlcalt|6|r+=4}}
+ | unlocked by = Void
+}} {{disambig msg|the item|the chapter|The Void}}
+
+{{cit|ua|a+}} It is the starting item for {{c|Apollyon}}.
+
+== Effects ==
+* Upon use, destroys all pedestal items in the room. Items that require payment cannot be absorbed unless they are bought first.
+** If Void destroys an [[activated item]], it gains the activated ability of that item; whenever Void is used, it will simultaneously use all previous active items that were absorbed in the same order they were absorbed. Passive effects of absorbed active items will not apply (e.g., the passive effect of {{i|Mom's Box}}). The active item effects happen after the initial destruction of current pedestal items, and in the order that the active items were absorbed. 
+** If Void destroys a [[passive item]], Isaac gains 2 random stat boosts. Possible stat changes include:
+*** +1 flat [[Damage]]
+*** {{dlc|nr}} +0.5 [[Tears]]
+*** {{dlc|r}} +0.5 [[Fire Rate]]
+*** +0.2 [[Speed]]
+**** {{dlc|nr}} Also affects maximum speed (may never exceed 2.0)
+*** +0.2 [[Shot Speed]]
+*** +1 [[Luck]]
+*** {{dlc|nr}} +0.5 [[Range]]
+*** {{dlc|r}} +2.5 [[Range]]
+
+== Notes ==
+* {{dlc|nr}} If speed or tears are at their maximum and are chosen, there will be no visible increase.
+* {{dlc|r}} If speed is at its maximum and is chosen, there will be no visible increase.
+* {{dlc|r}} Void can exceed the normal maximum tears limit.
+* Using Void to absorb items in {{r|Boss Rush}} or {{r|Challenge Room}}s counts as taking the items and will cause waves of bosses or enemies to start spawning.
+* {{dlc|nr}} The ability of the newly absorbed active item(s) will activate even if the item has no charge. Using any multiple-use item before absorbing it with Void will effectively allow Isaac to use the item twice.
+* {{dlc+|r}} If Void is used while Isaac is holding an item above his head, it can still consume the item, allowing to immediately absorb passive items bought from {{r|Devil Room}}s, {{r|Black Market}}s, or {{r|Shop}}s. This also can be used to give Isaac a chance to see what an unknown item is before deciding if he wants to consume it, in the case of an active {{cu|Blind}} or a {{r|Treasure Room}} in {{s|Downpour}}, etc.
+** This mechanic can be used to absorb familiars granted by {{p|Soul of Lilith}}.
+** Active items can also be absorbed this way if Isaac has {{I|Schoolbag}} and is not carrying a second active item.{{dlc-}}
+* {{dlc|r}} The newly absorbed active item(s) won't be used right away, but with the next usage of Void.
+* {{dlc|r}} If Isaac absorbs items from a room with choice pedestals, it will only absorb one item, and the other item vanishes as if Isaac took it.
+* If Isaac finds another Void, such as during a [[Victory Lap]] where it is left behind in the previous lap, it will have the same active effects stored in it as the other Void.
+** Consuming a second Void will create no effect.
+* If multiple copies of an active item are absorbed, using Void will activate that effect equally many times.
+* Stat boosts upon destroying passive items are determined by the seed and are tied to the number of items destroyed, not the items themselves. If Isaac runs the same seed and chooses to consume different passive items, the same stat boosts will be gained.
+** {{dlc|r}} Void's random number generation is advanced once after each usage, so using Void will change what stat boosts are gained.
+* Stat boosts are permanent and are retained if Void is dropped (except when the player's build is rerolled, e.g. with {{i|D4}} or {{i|D100}}).
+* Using Void to absorb {{i|Key Piece 1}} and {{i|Key Piece 2}} will not permanently remove them from the run. They will continue to spawn after defeating {{e|Uriel}} or {{e|Gabriel}} no matter how many times Isaac uses Void on them, as long as he does not pick them up normally.
+
+== Synergies ==
+* {{i|Alabaster Box}}: Allows the box to be charged through normal means, rather than by absorbing soul hearts.
+* {{Book of Virtues synergy|description=Spawns the wisps of all the active items Void has absorbed. Spawns no wisps by itself. Using Void on Book of Virtues will give stat upgrades instead of its normal effect, as Book of Virtues is considered a passive item.}}
+* {{i|Breath of Life|r}}: Immediately grants invincibility frames.
+** {{T|Panic Button}}: Getting hit with Breath of Life stored inside Void will negate the damage.
+* {{i|Crooked Penny|nr}}: Using Void with the Crooked Penny absorbed will result in items in the room being absorbed as usual, but afterwards new copies of the items or one coin are spawned.
+** {{Dlc|r}} If Crooked Penny deletes the contents of the room, they will not be consumed by Void.
+* {{I|Eraser}}: Allows the Eraser to be used multiple times per floor.
+* {{i|Glass Cannon}}: Can be used without it ever breaking or causing damage to the player.
+* {{dlc|nr}} {{i|More Options}} / {{i|There's Options}}: Using Void will cause both items to be absorbed.
+* {{i|Moving Box}}: Moving Box will not be added to Void; instead, it is converted into stat boosts like a passive item.
+
+== Interactions ==
+* {{i|Abyss}}: Since consumed activated items are used before absorbing new items in a room, using Void with Abyss stored inside will destroy pedestals with Abyss' effect first, essentially overriding Void's item consumption effects. Previously consumed active items will still function as normal when using Void. Passive items can still be consumed with Void by picking them up before using Void.
+* {{i|Blank Card}} + {{p|? Card}}: Using the ? Card with an absorbed Blank Card simply activates Void. Isaac will not be teleported to the {{r|I AM ERROR}} room and Void will not be deleted.
+* {{t|Broken Remote}} / {{i|Teleport!}} / {{i|Teleport 2.0|n}} / {{i|Undefined}} / any other teleport method: Void will still consume any item pedestals in the room, after which the teleport occurs.
+* {{dlc|nr}} {{i|The D6}} / {{i|D100}}: If absorbed while there are other pedestal items in the room, it will reroll the items before absorbing them. Likewise, if The D6 or D100 was previously absorbed and Void is used, pedestal items will get rerolled before being absorbed.
+** {{dlc|r}} The D6 and D100 can't roll items while being absorbed since their effect isn't triggered the first time anymore but any subsequent Void uses will still roll items before absorbing them.
+* {{i|Death Certificate}}: Only allows the consumption of one item per Death Certificate room and the consumed item is treated as if it was picked up causing all other items in the room to disappear and forcing Isaac to leave the area.
+* {{i|D infinity|nr}}: When absorbed and Void is used, replicates the effect of a random die item.
+** {{dlc|r}} Acts as a copy of one of the 10 dice {{i|D infinity}} can replicate. This die is randomly chosen and does not change.
+* {{dlc|nr}} {{i|Diplopia}} / {{i|Forget Me Now}} / {{i|Pandora's Box}} / {{i|Mama Mega!}} / {{i|Mystery Gift}} / any single-use active item: They are used once upon being absorbed, but their effects are not absorbed and will not activate with subsequent Void uses.
+** {{dlc|r}} Single-use items won't be used upon their absorption, instead being invoked on the next usage of the Void, which allows Isaac to use the absorbed item later when needed. Their effects will still only be invoked once.
+*** {{i|Car Battery}}: As Void will be activated twice, single-use items are immediately used when absorbed.
+*** When multiple copies of a given single-use active are in Void, only half of them will be used each time Void is activated, rounded up.
+** {{i|Diplopia|r}}: On the next use, the pedestal items in the room will be consumed but another copy of the items will be spawned afterward.
+*** {{i|Diplopia|n}} + {{i|Mystery Gift|n}}: If both items are absorbed in the same room, the next use of Void will only trigger Mystery Gift, with the use afterward activating Diplopia
+* {{dlc+|r}} {{i|Everything Jar}}/{{i|Larynx}}: Will only replicate the 1-charge version of the effect.{{dlc-}}
+* {{i|Flip}}/{{i|Jar of Flies}}/{{i|The Jar}}/{{i|Stitches}}/{{i|Notched Axe}}/{{i|Esau Jr.}}: None of these items do anything when absorbed by Void.
+** When playing as {{C|Tainted Lazarus}}, and {{i|Flip}} is absorbed by the void, it will still flip the character. But it is not normally possible to obtain a second Flip, and therefore not normally possible to absorb it.
+* {{i|Genesis}}: All effects granted by absorbed items including stat ups and [[activated item]] abilities Void takes are removed without creating items to replace them. Since Void is stripped of any active item abilities it would have gained, any other Void found will also have no other active effects stored in it.
+** Void's active effects are reset even if Isaac is currently not holding it.
+* {{i|Glowing Hourglass|nr}}: Upon using Void, Isaac is sent to the previous room and most changes are reverted, nullifying many other effects that Void may have absorbed. If the Glass is absorbed in a shop, Isaac is sent back to the previous room, but the Glass will be unused in the shop on its pedestal. This allows for an infinite shop donation circle, eliminating the need for a battery to be present in the shop.
+** {{dlc|r}} Hourglass can now be used indefinitely per floor, but every use will cost the entire charge of Void. Makes most active items and Apollyon's Birthright useless.
+* {{i|How to Jump}}: If this item is activated by {{i|Void}}, it is possible to get stuck in an impassable area with no ability to escape. Exiting and resuming the run will place Isaac at whichever door he entered the room through.
+* {{i|Jar of Wisps}}: Each use will spawn only one wisp.
+* {{i|Mega Blast}} / {{i|Mega Mush}}: Allow to use it every {{dlc|nr+}} 6 or {{dlc|r+}} 4 charges instead of 12. Batteries will also full charge Void, instead of giving {{dlc|nr}} 3 or {{dlc|r}} 6 charges to Mega Blast.
+* {{i|Remote Detonator}}: Absorbing it with Void does not cause bombs to remain on the ground until Void is used, but using Void explodes all player-placed bombs as usual.
+* {{i|Sharp Key}}: Using the Void will cause Isaac to shoot a key the next time he will press the fire key. Keys are consumed as normal.
+* {{i|Spin to Win}}: A spinning top orbital will spawn every time the Void is used. The orbitals will last until Isaac leaves the room.
+* {{i|Breath of Life|nr}}: Using Void with Breath of Life will immediately grant invincibility frames, then inflict damages to Isaac every second until he leaves the room.
+* {{i|Urn of Souls}}: Although a sound effect will play, using Void will do nothing.
+
+== In-game Footage ==
+{{#ev:youtube|8-84Fwevpzk}}
+
+== Gallery ==
+<gallery>
+File:Collectible Void concept.png|Void concept art.
+</gallery>
+
+== Trivia ==
+* When this item was originally teased, it had a recharge counter of four and converted pickups into [[blue fly|blue flies]]; in its release, it was nerfed to a recharge counter of six and the ability to convert pickups to flies became the item {{i|Compost}}.
+** {{dlc|r+}} The recharge time was changed back to four in Repentance+.
+** The original effect of the item may have become a base for Void's future counterpart, {{i|Abyss}}.
+* Before the balance patch on 5 January 2017, Void synergized with single-use items such that it would trigger them upon each use of Void; this has since been removed.
+* Void is one of only five items to appear in both the [[Angel Room (Item Pool)|Angel Room]] and [[Devil Room (Item Pool)|Devil Room item pools]], the others being {{i|7 Seals}}, {{i|Lil Delirium}}, {{i|Duality}} and {{i|Purgatory}}.
+* The swirl in {{i|Abyss}}'s appearance is in the opposite direction of Void's.
+
+== Bugs ==
+{{bug|{{i|Sacrificial Altar}} is fully  absorbed, unlike other single-use active items, allowing Isaac to sacrifice [[familiars]] and obtain [[Devil Room (Item Pool)|Devil Room items]] with each activation of Void.|dlc=nr}}
+{{bug|If Isaac has overcharge from {{i|The Battery}}, using absorbed items that Isaac can "put away" (e.g. {{i|Shoop da Whoop!}}, {{i|Bob's Rotten Head}}, {{i|Eraser}}, and {{i|Notched Axe}}) will use all the overcharge, even when Isaac puts away the items. In the case of Notched Axe on its own, using Void will use all charges at once.}}
+{{Bug|Pedestal items do not vanish instantly upon Void usage, allowing for an item to be obtained despite using Void on it. While the animation when using the Void prevents picking up pedestal items, this can be circumvented by cancelling the animation (e.g. using bombs or timed damage mechanisms like {{i|Shard of Glass}}) or by having another player.}}
+
+{{nav|active modifier|apollyon unlock|delirium unlock|fr=Néant (Objet)}}

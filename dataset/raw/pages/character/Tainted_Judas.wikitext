@@ -1,0 +1,95 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc         = r
+ | id          = 24
+ | health      = {{hearts|black=2}}
+ | speed       = 1.23
+ | range       = 4.5
+ | pickups     = 3 [[Coin]]s<br>{{i|Dark Arts}}
+ | unlocked by = The Deceiver
+}}
+'''Tainted Judas''' is a [[Characters|character]] added in [[The Binding of Isaac: Repentance]]. He is the alternate version of {{C|Judas}}, and has an appearance similar to {{C|Black Judas}}. Tainted Judas is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|1=Soul of Cain}} to access a special room in one of the walls while playing as Judas.
+
+Tainted Judas starts with 2 black hearts, 3 coins, and {{i|Dark Arts}} in his consumable slot.
+
+== Notes ==
+* When used, Dark Arts gives Tainted Judas +1.0 speed and makes him invulnerable to damage for a short period of time. Any enemies touched while Dark Arts is active will be frozen until the effect ends, at which point they will take damage (x2.5 your damage + 3.5 flat damage). Any enemy projectiles touched while Dark Arts is active will be destroyed. At the end of the effect, a blast effect occurs. The total explosion damage dealt is proportional to the number of enemies touched, and each enemy killed or projectile destroyed grants Tainted Judas a temporary damage boost. The damage boost scales and lasts longer depending on the number of enemies killed and projectiles destroyed.
+
+* Tainted Judas is unable to gain {{e|Red Heart|text=Red Hearts}}. Health Ups will give him {{e|Black Heart|text=Black Hearts}} instead. If he picks up a {{e|Bone Heart}}, he will be unable to fill it with red health.
+
+== Strategy ==
+* Tainted Judas is best suited to a highly aggressive playstyle; making effective use of Dark Arts by rushing into the fray and striking as many enemies as possible, then clearing up stragglers with buffed damage. However, it shouldn't be mistaken as a purely offensive tool, as the ability to destroy projectiles gives it great defensive utility when used properly. For example, timing its activation to cross through the origin point of a nova of bullets as they spawn simultaneously removes the need to dodge and grants a massive damage boost.
+** It is vital to get a feel for how long Dark Arts remains active, as being inside an enemy or hazard when it ends will typically result in damage taken.
+** Dark Arts can nullify a lot of the harder puzzle rooms, as one can walk straight through spikes and shots while it's active. In addition, being able to safely enter every Curse Room grants a risk-free opportunity to build up soul/black hearts or find powerful items every floor.
+** Certain enemies or bosses that rapidly fire bullets, such as {{E|Soy Creep}}s, {{E|Revenant}}s, {{E|Baby Plum}}, {{E|Hush}}, etc. are a boon for Tainted Judas; as every bullet walked through contributes to the damage bonus, these can stack up extremely quickly, and as long as the enemy/boss remains alive, this can be repeated indefinitely. This can lead to obscene amounts of damage that can potentially last through an entire run.
+* Tainted Judas is extremely effective in Greed Mode, due to the quick transitions between waves allowing for repeated use of Dark Arts to continue stacking damage and getting free Curse Rooms.
+** Dark Arts can also be used to ignore the damage from the button and pause the timer for free.
+* {{dlc|nr+}} Pay extra attention when fighting in the proximity of pickups like cards, pills and runes, as Tainted Judas may pick them up inadvertently and use them instead of Dark Arts when trying to rush through enemies, resulting in taking damage.
+
+== Item Interactions ==
+* {{i|Birthright}}: The Dark Arts effect has a bigger aura, hitting enemies and projectiles from further away.
+* {{i|Judas' Shadow}}: Revives Tainted Judas as himself.
+
+=== Favored Items ===
+* See all the [[Dark Arts#Synergies|Dark Arts synergies]].
+* Due to his similar health system, many of the benefits that apply to {{C|???}} in regards to health can be applied to Tainted Judas as well.
+* Dark Arts' power scales with damage and speed, which Tainted Judas should focus on.
+* Items that rely on being in close proximity to enemies can be extremely beneficial, due to how often you will need to sprint through them to build Dark Arts effects.
+** Do however note that enemies that are killed by the effect of those items instead of Dark Arts will not contribute to the damage boost, even if they were touched while using Dark Arts.
+* {{i|Ipecac}}: Is extraordinarily effective with Dark Arts, as the damage of the Dark Arts hits scales off of the Damage stat, which is increased significantly by Ipecac — it becomes possible to easily shred bosses in a single hit, especially if multiple projectiles are tagged beforehand. However, due to Tainted Judas' low base [[range]], it is easier to hit yourself.
+* As Dark Arts encourages a risky playstyle of throwing oneself into swarms of bullets, items that can block damage while Dark Arts is inactive (such as {{i|Host Hat}}, {{i|Infamy}}, {{i|Holy Mantle}}, and {{i|Belly Jelly}}) are very effective.
+* {{I|Friend Finder}}: Spawns friendly monsters which Tainted Judas can pass through using Dark Arts to obtain the damage bonus without harming them.
+* {{I|Montezuma's Revenge}} corns: Tainted Judas can pass through them using Dark Arts to obtain the damage bonus.
+* {{I|Black Hole}}: Will group all enemies and projectiles in one place, making it much easier to tag them all with Dark Arts.
+* {{I|Rock Bottom}}: Rock Bottom will prevent your damage from decreasing, allowing you to keep the highest achieved damage bonus from Dark Arts. The speed gain when entering Dark Arts is also kept outside of the effect.
+* {{I|Converter}}: Converts one {{e|Black Heart}} into one Black Heart, triggering {{I|The Necronomicon}} effect each activation, basically making the Converter a Three Charge version of {{I|The Necronomicon}}.
+** {{t|A Missing Page}} and {{I|Missing Page 2}}: Will add each add +40 damage per activation, killing enemies and bosses up to three times faster.
+* {{I|Dead Eye}}: Has incredible synergy with Dark Arts, as their damage ups combine together, and Dark Arts can never "miss". This allows Tainted Judas to gain a massive damage boost from one cast of Dark Arts, provided he hits enough valid targets with it.
+* {{i|False PHD}}: The play style of Tainted Judas makes his tear stats (like [[shot speed]], [[range]]) less important than other characters, so a damage up can be more beneficial than other stats (except speed) down. False PHD can also gives Tainted Judas black hearts.
+* {{i|Decap Attack}}: Both head and body work with {{i|Dark Arts}}, but only the body will increase damage stat.
+* {{i|Kamikaze!}}: Allows for infinite explosions when used while the invincibility from Dark Arts is active.
+
+=== Situational Items ===
+* The decision to use projectile-destroying items ({{i|Halo of Flies}}, {{I|Psy Fly}}, etc.) is one that will need to be judged from playthrough to playthrough. For newer players or during a poor run where damage to oneself needs to be minimized, they are very useful during the downtime between Dark Arts activations. However, for more experienced players or during runs where soul/black hearts are plentiful, they can prove to be quite detrimental as they will block projectiles before Tainted Judas touches them, lowering the Dark Arts damage buff.
+* Orbitals that deal high contact damage (such as {{i|Cube of Meat}} or {{i|Sacrificial Dagger}}) work well with Dark Arts, as they deal substantial damage while passing through enemy hitboxes, often enough to negate the damage lost from nullified projectiles.
+* Depending on a player's skill level, items that reduce the size of the character's hitbox (Such as {{i|Binky}}, {{i|Mini Mush}}, and the [[Pills|"One makes you small" pill]]) may start to become less desirable picks, as they can sometimes make bullets and enemies harder to hit.
+* {{I|Shade}} will increase your damage output with {{I|Dark Arts}}, whether it’s been absorbed or not. When it hasn’t been absorbed, it may cause some confusion as to which character you are controlling, as it looks quite similar to Tainted Judas at a glance.
+* With {{I|The Ludovico Technique}}, the tear remains in the air when using Dark Arts, allowing you to deal damage while it floats. With precise movement, you can position your tear on enemies and attack them with Dark arts. This leads to large damage with other Ludovico synergies, as without them it means less use out of the damage up from Dark Arts.
+
+=== Disfavored Items ===
+* Due to his similar health system, many of the detriments that apply to {{C|???}} in regards to health can be applied to Tainted Judas as well.
+* {{I|Dead Cat}}: takes away all your black and soul hearts except for one.
+* Items that greatly decreases damage (like {{i|Soy Milk}}) or speed (like {{i|Thunder Thighs}}) should be avoided.
+* '''{{i|Libra}} should be avoided'''. The stat-equalizing effect is constantly active, and this weakens Dark Arts in two major ways:
+** It siphons most of the Speed increase during Dark Arts' activation into other stats, most of which are useless as they only benefit tears.
+** Once Dark Arts ends, the damage buff is instead fragmented into various negligible stat bonuses that fall off far too rapidly to be properly utilized.
+** In the same breath, {{I|Zodiac}} is also recommended to be avoided as it might just give you Libra at the worst possible time.
+* {{I|Lost Soul}}: Doesn't go invincible when Dark Arts is used, so it is guaranteed to die because of how Tainted Judas is meant to be played, and thus will never pay out — making it useless.
+* {{i|Broken Modem}}: May remove shots or change the pattern enemies are moving in, resulting in a damage loss.
+* {{i|Finger!}} / {{i|Pointy Rib}} / {{I|Cube of Meat}} (Level 1 and 2): If the player's damage is too high, you may not be able to get to enemies before the damage from the finger or rib kills them.
+
+== Unlockable Items ==
+{{achievement text | Your Soul, The Magician, Soul of Judas, Black Sack, Dark Arts, Number Magnet, Sanguine Bond }}
+
+== Gallery ==
+<gallery>
+File:Transition Judas Tainted.png|Tainted Judas's transition screen portrait.
+File:Start_Tainted_Judas.png|The spawn floor when playing Tainted Judas.
+File: Tainted Judas Menu Icon (Locked).png|Tainted Judas's locked character icon, depicting a closet door with a dagger sticking out of it.
+</gallery>
+
+== Trivia ==
+* The achievement for unlocking Tainted Judas, "The Deceiver", may be reference to Judas Iscariot, the disciple who betrayed Jesus Christ, it may also be a reference to the Judas Priest song "Deceiver".
+** This is also one of the meanings of his card, {{P|I - The Magician?}}, associated with manipulation and trickery.
+* The assassin-type design of Tainted Judas, together with the {{i|Dark Arts}} he holds, might be inspired by a (not widely accepted) theory considering that the biblical Judas Iscariot belongs to the ''[[wikipedia:Sicarii|Sicarii]]'', a group of Jewish cloak-and-dagger assassins who strongly opposed the Roman occupation of Judea.
+** The Sicarii, named after the word "Sicarius" which means dagger-wielder, are regarded as one of the earliest known organized assassination units of cloak and daggers. Sicarii were known to attack Romans and Roman sympathizers alike with daggers hidden in their cloak, then blending into the crowd after the deed to escape detection. The playstyle of Tainted Judas bears strong resemblance to this, while the sprite of {{i|Dark Arts}} can be a further evidence.
+* Tainted Judas uses a modified version of {{C|Black Judas}}'s sprites, with the only difference being an additional costume that consists solely of the red cross brand and fez.
+* Like all characters that start with only soul/black hearts, Tainted Judas' starting health is listed as "-I" on the character selection screen.
+* {{i|Dark Arts}} is Black Judas' starting item in ''The Binding of Isaac: Four Souls''. Tainted Judas instead starts with Ceremonial Blade.
+* The description of the unlockable {{P|Soul of Judas}} may be a reference to ''[https://www.youtube.com/watch?v=OR4N5OhcY9s Meet the Spy]'', in which the spy says, "Right behind you".
+
+== Bugs ==
+{{Bug|If Tainted Judas activates {{i|Glowing Hourglass}} right after the use of {{i|Dark Arts}}, he will be transparent like if he was using {{i|Dark Arts}} until he will use {{i|Dark Arts}} again. Other [[character]]s with {{i|Schoolbag}} also encounter this issue. This issue is purely visual.}}
+{{Bug|Tainted Judas in his {{i|Dark Arts}} state can be affected by {{i|Pause}}, this results in Tainted Judas being stuck in his shadow form whilst not being able to fire any tears as long as Pause is still in effect, this can be fixed by quitting then entering the game again. Moreover if this bug happens while Tainted Judas has {{I|Birthright}}, the dark aura around Tainted Judas will experience a visual bug from Pause that is similar to {{i|Monstrance}} with Pause.}}
+
+{{nav|character|judas unlock|tainted judas unlock|fr=Judas Impur}}

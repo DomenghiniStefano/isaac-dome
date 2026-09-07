@@ -1,0 +1,80 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 109
+ | quote       = Stuck!
+ | description = Holds Isaac's [[familiar]]s in place relative to his position.
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* [[Familiar]]s that are bound to Isaac's movement will be stuck in place relative to his position.
+** This includes [[Familiar#Orbital Familiars|orbital familiars]], [[Familiar#Shooting Familiars|shooting familiars]] and {{dlc|r}} [[Familiar#Mimicking Familiars|mimicking familiars]].
+
+== Notes ==
+* Familiars are stopped in the exact position they are when Duct Tape is picked up. Position of familiars can be changed by dropping Duct Tape and picking it up again.
+* Blue Flies and familiars that attack nearby enemies such as {{i|Gemini}} will be stuck, but will still target enemies as usual if within range.
+* [[Familiar#Throwable familiars|Throwable familiars]] such as {{i|Little Chubby}} will still charge forward and will also return to the same spot each time.
+* By dropping Duct Tape directly outside of a door, then exiting and re-entering through the same door, all familiars will be perfectly centered on Isaac's position.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Tapping the drop button will cycle familiars into various formations.
+* {{i|Ball of Bandages}} / {{i|Cube of Meat}}: No effect at level 3 and 4.
+* {{I|Dry Baby}} / {{I|Farting Baby}}: If properly positioned, it can greatly protect Isaac from projectiles.
+** This same technique can be used with {{C|Lilith}} to shoot with more accuracy.
+* {{t|Friendship Necklace}} + {{i|Spin to Win|n}}: Familiars affected by Friendship Necklace are still considered orbitals regardless of positioning allowing Isaac to use their contact damage without getting close to enemies. Duct Tape also prevents familiars that weren't already orbitals from flashing when Spin to Win is used despite still being affected by the active item.
+* {{i|Multidimensional Baby|r}}: If properly positioned, Isaac's tears will always be doubled.
+
+== No Effect ==
+The following familiars will not change their behavior:
+{{column list | width = 15em | content =
+* {{t|???'s Soul}}
+* {{i|7 Seals}}
+* {{i|Abel}}
+* {{i|Angry Fly}}
+* {{I|Bird Cage}}
+* {{i|BBF}}
+* {{I|Blood Puppy}}
+* {{i|Bumbo}}
+* {{i|Bum Friend}}
+* {{i|Cain's Other Eye|nr}}
+* {{I|Cube Baby}}
+* {{i|Daddy Longlegs}}
+* {{i|Dark Bum}}
+* {{i|Dead Bird}}
+* {{i|Finger!}}
+* {{I|Fruity Plum}}
+* {{i|Guppy's Hairball}}
+* {{I|The Intruder}}
+* {{I|Isaac's Heart|r}}
+* {{i|Key Bum}}
+* {{i|King Baby|nr}}
+* {{i|Leech}}
+* {{I|Lil Dumpy}}
+* {{i|Lil Gurdy}}
+* {{i|Lil Haunt}}
+* {{i|Lost Fly}}
+* {{I|Lost Soul}}
+* {{i|Multidimensional Baby|nr}}
+* {{i|My Shadow|nr}}
+* {{i|Obsessed Fan|nr}}
+* {{i|Papa Fly|nr}}
+* {{i|Pointy Rib}}
+* {{i|The Peeper}}
+* {{i|Punching Bag}}
+* {{I|Quints}}
+* {{i|Robo-Baby 2.0}}
+* {{i|Samson's Chains}}
+* {{i|Shade|nr}}
+* {{i|Sissy Longlegs}}
+* {{i|Spider Mod}}
+* {{i|Succubus}}
+* {{I|Twisted Pair}}
+* {{I|Worm Friend}}
+* {{i|YO LISTEN!}}
+}}
+
+== In-game Footage ==
+{{#ev:youtube|Z1nz7c_LDl0}}
+
+{{nav|familiar modifier|fr=Ruban Adhésif}}

@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | id          = 241
+ | quote       = Wealth... but at what cost?
+ | description = Doubles the number of most room clear awards, but reduces the overall chance of getting one by 1/3.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable offensive nogreed
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns ''N'' + 1 [[Room Clear Awards]], but has a (0.666<sup>''N''</sup> / 2) chance to set the number of spawned pickups to 0, where ''N'' is the number of copies of this item held.
+
+== Notes ==
+* In practice, the effect means the overall number of pickups is increased by 1/3 over the rest of the run, on average.
+* Neither effect applies to [[trinket]]s.
+* Doubled Chests will not necessarily be of the same kind.
+* {{dlc+|a}} Neither effect applies to {{e|Penny|text=Pennies}} dropped in [[Greed mode]].{{dlc-}}
+
+== Synergies ==
+* {{i|Diplopia}}: Each additional Contract increases the number of room drops by one and lowers the chance of getting nothing.
+* {{i|Guppy's Tail}}: Higher chance of double chests upon clearing a room.
+* {{i|Deep Pockets|r}}: If Contract removes the reward, spawns 1-3 random coins. Allows Deep Pockets to remain useful at high luck.
+* {{i|Options?|r}}: Spawns a second set of consumables. The "Options?" consumable is not guaranteed to be the same for each copy of the original consumable.
+
+== In-game Footage ==
+{{#ev:youtube|rMrPmwJuFrA}}
+
+== Trivia ==
+* A reference to the [http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=1147 card of the same name] from [[wikipedia:Magic: the Gathering|Magic: the Gathering]], a [[wikipedia:collectible card game|collectible card game]] [[Edmund McMillen]] played since his childhood, this is more notable in the artwork of the [https://foursouls.com/wp-content/uploads/2022/02/b-contract_from_below.png card in Four Souls] where the words written in the contract are word for word identical to the ones written in the original contract from below card.
+* Isaac's name is written at the bottom of the contract, implying that he signed the contract.
+
+{{nav|fr=Contrat des Profondeurs}}

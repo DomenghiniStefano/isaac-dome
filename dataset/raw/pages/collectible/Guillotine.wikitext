@@ -1,0 +1,63 @@
+{{infobox passive collectible
+ | id          = 206
+ | quote       = {{dlcalt|An out-of-body experience|r=DMG + tears up. An out-of-body experience!}}
+ | description = Isaac's head becomes an orbital [[familiar]] that blocks shots and deals contact damage. Tears are still fired from the rotating head. {{dlc|nr}} +1 [[damage]], -1 [[tear delay]]. {{dlc|r}} +1 [[damage]], +0.5 [[fire rate]].
+ | quality     = {{dlcalt|2|r+=0}}
+ | tags        = summonable tearsup offensive
+ | unlocked by = Guillotine
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Isaac's head becomes an orbital [[familiar]] that blocks shots and deals contact damage. Tears are still fired from the rotating head.
+* +1 [[damage]].
+* {{dlc|nr}} {{tear delay down|1}}
+* {{dlc|r}} +0.5 [[fire rate]].
+* The head orbital deals 7 damage per tick or {{dlcalt|105|r=56}} damage per second.
+
+== Notes ==
+* {{dlc|r}} Isaac's body will spew a fountain of blood like a {{E|Gusher}}. This is purely cosmetic.
+* While Isaac's actual hitbox (his body) does not change, the position of the head can obscure the body's exact position, making things such as dodging or collecting pickups more difficult.
+* Items that apply contact damage and effects ({{I|The Virus}}, {{I|Aries}}, etc.) do not apply to the head.
+* The head orbital ignores the normal three orbital cap used by items such as {{I|Cube of Meat}} and {{I|Sacrificial Dagger}}.
+* The orbital is larger than most other orbitals, making it easier to use both offensively and defensively.
+** Despite changing size with Isaac, the orbital's hitbox does not change, which can be deceptive.
+* Standing near a wall may cause the head to go inside the wall while rotating, blocking tears.
+* {{dlc+|r+}} Guillotine's quality is treated as 1 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{i|BFFS!}}: Although the head doesn't increase in size, doubles the contact damage.
+* {{I|Big Fan}}: Slows down the head orbital.
+* {{I|Diplopia}}: Additional copies provide the stat increase as well as an orbital head familiar that doesn't fire.
+* {{I|Guardian Angel}}: Does not increase the head's rotation speed.
+
+== Interactions ==
+Overrides Guillotine's firing pattern:
+* {{i|Berserk!}}
+* {{i|C Section}}
+* {{dlc|a+}} {{C|The Forgotten}}
+* {{i|Mom's Knife}}
+* {{I|Spirit Sword}}
+* {{dlc|r}} {{C|Tainted Forgotten}}
+* {{dlc|r}} {{C|Tainted Lilith}}
+* {{i|Tractor Beam}}: The beam appears to move with the head, but tears are fired from the body.
+
+Other interactions:
+* {{i|Box of Friends}} / {{t|The Twins}}: Adds another rotating head, but only the original head will fire tears.
+* {{i|Guillotine}}: Each additional copy adds another orbital and increases stats, but only the original head will fire tears.
+* {{t|Duct Tape|a+nr}}: Causes tears to be fired from far below and to the right of Isaac. This causes tears to be out of bounds unless Isaac is standing in the top-left corner of the room.
+* {{t|Duct Tape|r}}: Tears are fired from whatever position the head is stuck in.
+* {{i|The Pinking Shears}} / {{i|Transcendence}}: Removes Isaac's body aside from a small shadow. This can make Isaac's position more confusing.
+* {{i|Sacrificial Altar}}: The head orbital cannot be sacrificed.
+* {{I|Scissors|r}}: The head created by Scissors fires tears, while the head created by Guillotine only acts as an orbital.
+* {{I|Spin to Win}}: Affects the head, which boosts its damage and defense properties but makes shots harder to hit.
+* {{I|Tiny Planet|r}}: Tears fire from the head and orbit around the body.
+
+== In-game Footage ==
+{{#ev:youtube|8otZND3FgdI}}
+
+== Trivia ==
+* A guillotine is an execution device that kills by severing its victim's head. It gained notoriety during the French Revolution where it was used to kill 17,000 people during the period known as the "Reign of Terror."
+
+{{nav|judas unlock|isaac boss unlock}}

@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | dlc         = a
+ | name        = {{dlcalt|No. 2|r=Number Two}}
+ | id          = 378
+ | quote       = Uh oh...
+ | description = Continuously firing tears for 2.35 seconds causes Isaac to drop a {{i|Butt Bombs}} bomb, which damages and [[Status Effects|confuses]] all enemies in the room when it explodes.
+ | quality     = 2
+ | tags        = poop summonable offensive
+ | costume     = Collectible No. 2 appearance.png
+}}
+
+{{cit|p|a||{{dlc|r}} Number Two / {{dlc|anr}} No. 2}}
+
+== Effects ==
+* Holding any fire button/direction for 2.35 seconds causes Isaac to drop a free {{i|Butt Bombs}} bomb. This includes charging or directly controlled attacks. Only 1 Butt Bomb can be dropped per charging cycle, so it is required to stop firing and then charge again to drop another Butt Bomb. Taking damage will interrupt the cycle.
+** {{Dlc|r}} There is a visual fart effect whenever a Butt Bomb is placed.
+* {{dlc+|r}} {{transformation contribution|Oh Crap}}{{dlc-}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Turdlings}}.{{dlc-}}
+* Essentially grants unlimited bombs, as the charge time can be repeatedly reset by pressing and releasing the fire button. This allows Isaac to bomb an unlimited amounts of tinted rocks, get into every {{R|Secret Room}} and {{R|Super Secret Room}}, etc.
+* Increases difficulty of poop-themed bosses such as {{E|Dingle}}, as Butt Bombs restore 25% of maximum HP to the bosses when they explode.
+* The spawned butt bombs will be affected by bomb modifiers, excluding {{i|Mr. Mega}}.
+* This item can be great for clearing the early floors of [[Greed mode]], due to the butt bombs dealing room-wide damage every few seconds.
+
+== Interactions ==
+* Number Two, {{I|Maw Of The Void}}, {{I|Montezuma's Revenge}} and {{I|Revelation}} all have the same charge time, allowing Isaac to easily utilize them at same time.
+* {{i|Bird's Eye}}/{{i|Ghost Pepper}}: Shoots a flame behind Isaac with each fart.
+* {{I|Glitter Bombs}}: The butt bombs have a chance of spawning pickups or trinkets upon exploding.
+* {{i|Remote Detonator}}: Bombs placed by Number Two will not explode until Remote Detonator is activated.
+* {{t|Ring Cap}}: Only 1 bomb is placed by Number Two.
+* {{t|Short Fuse}}: No effect.
+* {{i|Tiny Planet}}: Orbiting tears tend to knock the bomb towards Isaac, making self damage likely.
+
+== In-game Footage ==
+{{#ev:youtube|WVwUOtWFOq8}}
+
+== Trivia ==
+* {{dlc|r}} This item's name was changed from No. 2 to Number Two.
+* This item's visual effects gets overlapped by black poops darkening one, at least pre-Repentance.
+* The item's name is a reference to a well-known euphemism for defecation.
+
+{{nav|oh crap|bomb spawner|poop|fr=Grosse Commission}}

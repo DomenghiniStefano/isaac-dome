@@ -1,0 +1,24 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 226
+ | quote       = HP up x3!
+ | description = Grants one Red [[Heart Container]], one {{E|Soul Heart}}, and one {{E|Black Heart}}.
+ | quality     = 2
+ | tags        = nolostbr
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Grants a full Red [[Heart Container]], one {{E|Soul Heart}}, and one {{E|Black Heart}}.
+* {{Dlc|r}} Heals 1 additional {{e|Red Heart}}.
+
+== In-game Footage ==
+{{#ev:youtube|7kHPSqloA9c||inline}} {{#ev:youtube|6NVmDNJEFiM||inline}}
+
+== Trivia ==
+* This is a reference to the [http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=3 iconic card of the same name] from [[wikipedia:Magic: the Gathering|Magic: the Gathering]], a [[wikipedia:collectible card game|collectible card game]] [[Edmund McMillen]] played since his childhood.
+** Its powerful effect of producing three [https://mtg.wiki/page/Mana Mana] of any color is reflected by the ingame item's effect of adding three hearts of different colors to the player's health.
+** The fact that it's one of the rarest and most expensive commercially released cards in the game might also be referenced by the fact that it's a relatively hard item to come across, being only a rare find exclusively in {{R|Secret Room}}s.
+
+{{nav|fr=Lotus Noir}}

@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 387
+ | description = Spawns a [[familiar]] which creates a circular aura that [[slow]]s down enemies and enemy shots inside.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable
+ | quote       = Peace be with you
+ | unlocked by = Censer
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Spawns a [[familiar]] projecting a circular aura that [[slow]]s enemies and enemy shots within its radius and for a short period once they exit.
+
+== Notes ==
+* The aura does not affect bosses but slows down their shots.
+** Bosses that use tight volleys of projectiles are extremely difficult to avoid without additional items to block, remove, or redirect those shots, as the slowing effect will cause their attacks to clump together.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Censer having {{dlc|nr+}} 4th / {{dlc|r+}} 6th priority.
+
+== Synergies ==
+* {{dlc+|r}}{{i|2Spooky}} / {{i|Venus}}: The slowing aura mitigates the delay between fast enemies that charge Isaac and the [[status effect]], making it much harder for Isaac to take contact damage.{{dlc-}}
+* {{dlc+|r}}{{i|Bot Fly}} / {{i|Psy Fly}}: The slowing aura allows these items to deal with the incoming projectiles more reliably.{{dlc-}}
+* {{i|The Soul}}: The slowing aura allows incoming enemies and shots to be more reliably deflected.
+
+== Interactions ==
+* {{i|BFFS!}}: The aura does not slow things from further away despite increased visual size.
+* {{i|Montezuma's Revenge}}: The corn shots are slowed by the aura.
+
+== In-game Footage ==
+{{#ev:youtube|N8GACajhbno}}
+
+== Trivia ==
+* A [[wikipedia:censer|censer]] is a container used to burn incense.
+* This item shares its pickup quote with {{i|Eucharist}}.
+
+== Gallery ==
+<gallery>
+File:Censer Halo.png|Halo created by Censer.
+</gallery>
+
+{{nav|magdalene unlock|ultra greed unlock|fr=Encensoir}}

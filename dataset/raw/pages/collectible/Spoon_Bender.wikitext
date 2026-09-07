@@ -1,0 +1,54 @@
+{{infobox passive collectible
+ | id          = 3
+ | quote       = Homing shots
+ | description = Grants Isaac [[homing tears]].
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants [[homing tears]].
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Rag Mega}}.{{dlc-}}
+* This item replaces Isaac's regular white aura with a dimmer purple one which lowers visibility in {{curse|darkness}}.
+
+== Synergies ==
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Spoon Bender it turns into a purple locust that homes in on enemies while it is charging forward.
+* {{i|Aquarius|r}}: Trail of creep is purple and homes in on enemies.
+* {{c|Azazel}} / {{i|Brimstone}} / {{c|Tainted Azazel|r}}  / {{i|Technology}} / {{i|Technology 2}} / {{i|Tech X}}: Beams curve toward enemies.
+** {{c|Azazel}} requires about 8.8 range in order for the homing effect to function.
+* {{i|Compound Fracture}} / {{i|Cricket's Body}} / {{i|The Parasite}}: Tears and split tears are homing.
+* {{i|Dr. Fetus}}: The bombs slide towards enemies.
+* {{i|Marked}}: Tears will travel in the direction of the cross-hairs until close enough to home in on an enemy.
+* {{i|Mom's Knife}}: The knife curves towards enemies.
+
+== Interactions ==
+* {{I|Anti-Gravity}}: Tears can track enemies while frozen in place, once one comes close enough.
+* {{i|Epic Fetus|a}}: Cursor slides towards enemies.
+* {{i|Eye of the Occult}}: Tears home in on enemies when not being maneuvered.
+* {{i|The Ludovico Technique}}: The tear will attempt to home towards a single target, even if it hits a different enemy on its way there, making it difficult to control.
+** {{dlc|r}} The changes to homing tears make it nearly impossible to maintain control of the shot while it's near an enemy.
+* {{i|Technology Zero}}: The electricity is unaffected.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Baby-Bender }}
+
+== In-game Footage ==
+{{#ev:youtube|05LmloM88dg||inline}} {{#ev:youtube|3eOJLD43O30||inline}}
+
+== Trivia ==
+* Edmund McMillen has stated in his first post-Repentance Isaac Lore Stream<ref>https://www.youtube.com/watch?v=kby0rXT7qYQ</ref> that Spoon Bender is directly inspired by the stage magic of illusionist [[wikipedia:Uri Geller|Uri Geller]], more specifically the act of '[[wikipedia:Spoon bending|spoon bending]]' which was one of Geller's trademark tricks.
+** McMillen describes Geller as a 'scam artist', so it can be gathered that this reference was not born out of appreciation.
+** Spoon Bender may also be a reference to ''The Matrix''.
+* This item is used in {{chal|Computer Savvy}}.
+* According to a Twitter post<ref>https://twitter.com/tyronerodriguez/status/1191537724437581828</ref> from [[Tyrone Rodriguez]], the {{i|Brimstone}} + Spoon Bender synergy was modeled after the [https://raiden.fandom.com/wiki/Plasma_Laser Plasma Laser], first introduced in the video game ''[[wikipedia:Raiden II|Raiden II]]''.
+* {{dlc|r}} Isaac's new appearance with Spoon Bender now bears more resemblance to {{e|Psychic Horf}}s and {{e|Psychic Maw}}s.
+** It also resembles Isaac's sprite from the original game.
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Cuillère Tordue}}

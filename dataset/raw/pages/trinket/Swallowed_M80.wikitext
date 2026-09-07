@@ -1,0 +1,50 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 178
+ | quote       = Bang!
+ | description = Isaac explodes upon taking damage.
+ | unlocked by = Swallowed M80
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Isaac has a 50% chance to explode when he takes damage, similarly to if he used {{i|Kamikaze!}}.
+** The explosion deals 185 damage and uses most of Isaac's bomb synergies.
+** The explosion does '''not''' cause additional damage to Isaac, as the explosion occurs during Isaac's invincibility frames.
+
+== Notes ==
+* Causes {{Machine|Devil Beggar}} and {{Machine|Hell Game}} to become essentially unplayable, as any damage that could trigger Swallowed M80 will likely cause Isaac to explode, killing them.
+* {{dlc|nr+}} Causes {{Machine|Blood Donation Machine}}s and {{Machine|Confessional}}s to act as if they were destroyed from the explosion despite surviving and functioning normally, resulting in extra coin and {{e|Red Heart|text=Heart}} drops.
+* The explosion cannot be triggered by {{R|Curse Room}} or {{R|Sacrifice Room}} spikes.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}} / {{t|Swallowed M80}}: Having either of these effects/another copy of the trinket raises the chance to trigger an explosion to 100%.
+* {{i|Pyromaniac}}: Heals half a red heart on triggered explosion, rendering Isaac invincible on earlier stages if combined with the above synergy.
+
+== Interactions ==
+* {{i|Kamikaze!}}: The damage received from Kamikaze cannot trigger the trinket, and the activation of the trinket applies a cooldown to Kamikaze (as if it was used).
+* {{c|Tainted Magdalene}}: Explosions will kill enemies before Tainted Magdalene's “hug” attack, preventing heart drops from killing enemies on contact from being guaranteed.
+
+== No Effect ==
+All bomb upgrades affect Swallowed M80 except the following:
+* {{I|Bob's Curse}}
+* {{I|Fast Bombs}}
+* {{I|Ghost Bombs}}
+* {{i|Mr. Mega}}
+* {{I|Rocket in a Jar}}
+* {{I|Scatter Bombs}}
+* {{I|Sticky Bombs}}
+
+== In-game footage ==
+{{#ev:youtube|2ccduGXeVyg}}
+
+== Trivia ==
+* This item is a reference to [[wikipedia:M-80_(explosive)|M-80 firecrackers]].
+* The inability to properly destroy {{Machine|Blood Donation Machine}}s and {{Machine|Confessional}}s with this trinket was unintended, but kept in as a feature.<ref>https://github.com/UnderscoreKilburn/repentance-issues/issues/1414</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|tainted samson unlock|mother unlock|fr=Explosifs Avalés}}
+[[Category:Damage-triggered items]]

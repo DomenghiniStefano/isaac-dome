@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | id          = 203
+ | quote       = 1+1 free 4Evar
+ | description = Transforms {{e|Bomb}}s, {{e|Key}}s, {{e|Penny|text=Pennies}}, and {{e|Red Heart}}s into their respective Double versions. {{dlc|r}} This will occur 50% of the time.
+ | quality     = 3
+ | tags        = summonable offensive nocantrip
+}}
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr}} Transforms all {{e|Bomb}}s, {{e|Key}}s, {{e|Penny|text=Pennies}}, and {{e|Red Heart}}s into their respective Double versions.
+* {{dlc|r}} All {{e|Bomb}}s, {{e|Key}}s, {{e|Penny|text=Pennies}}, and {{e|Red Heart}}s have a 50% chance to be replaced by their respective Double versions.
+
+== Notes ==
+* Only works specifically on {{e|Bomb}}s, {{e|Key}}s, {{e|Penny|text=Pennies}}, and {{e|Red Heart}}s; other variants, like {{e|Nickel}}s or {{e|Soul Heart}}s, etc., are not doubled.
+* {{dlc|nr}} By bombing {{m|Donation Machine}}s, Isaac can earn more money than is taken from the machine, giving an endless supply of coins until the machine breaks or he runs out of bombs.
+* {{dlc|nr}} When used while fighting {{e|Greed}}, {{e|Hanger}}s, or {{e|Keeper}}s, every coin knocked out of Isaac will be worth two coins, allowing Isaac to net a profit.
+* {{dlc|r}} Coins dropped when taking damage from enemies such as {{e|Greed}}, {{e|Hanger}}s, or {{e|Keeper}}s have a chance to be doubled, allowing Isaac to potentially recover all lost money or even net a profit.
+
+== Synergies ==
+* {{i|Contract From Below}}: Single pickup drops have a 2/3 chance to be doubled, which then become their doubled versions by Humbling Bundle.
+** This results in an average increase from 1.33x more pickups to {{dlcalt|2.67x|r=2x}} more.
+* {{I|IV Bag}} + {{i|Old Bandage}} + {{i|Humbleing Bundle}} / {{i|Maggy's Bow}}: The damage from IV Bag has a chance to spawn 2 hearts, which can be picked up to create further coins and possibly even heal hearts with enough Luck.
+** {{dlc|r}} Humbleing Bundle only has a 50% chance to double the hearts dropped, but Old Bandage may still drop 1 heart.
+* {{i|The Jar|nr}}: Allows for replicating hearts. Using the jar with 4 hearts inside it will cause 8 to drop, allowing Isaac to create an infinite amount of Red Hearts.
+
+== Interactions ==
+* {{i|BOGO Bombs|nr}}: No further effect.
+** {{dlc|r}} Due to Humbleing Bundle no longer guaranteeing double pickups, BOGO Bombs will ''always'' double bombs.
+* {{i|Humbleing Bundle}}: No further effect if multiple copies are obtained.
+
+== In-game Footage ==
+{{#ev:youtube|OUhR8YL_QIM}}
+
+== Trivia ==
+* The item is a reference to [[wikipedia:Humble Bundle|''Humble Bundle'']], collections of games and soundtracks that are sold online through a "pay what you want" system. The original ''The Binding of Isaac'' was represented in three humble bundles.
+* "Humbleing" is a common misspelling of the word "humbling", and may be a further pun on the reference to ''Humble Bundle''.
+** All the files related to the object, such as graphics and animations, use the correct spelling in their names.
+* The description and writing on this items graphic is a reference to picking up double bombs in the original ''The Binding of Isaac'' where the message "1+1 Free!" would pop up in the bottom right whenever picking up a double bomb.
+
+{{nav|bomb modifier|key modifier|coin modifier|fr=Offre Spéciale}}

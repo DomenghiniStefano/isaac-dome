@@ -1,0 +1,49 @@
+{{infobox passive collectible
+ | id          = 256
+ | quote       = Burning blast +5 bombs
+ | description = +5 {{E|Bomb}}s. Isaac's bombs leave behind fire that damages enemies upon contact.
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Isaac gains +5 {{e|Bomb}}s on pickup.
+* Placed bombs deal damage to enemies on contact and will leave behind a fire that damages enemies on contact upon exploding for 10 seconds.
+** {{dlc|nr}} The fire does 22 damage per tick (66 damage per second).
+** {{dlc|r}} The fire can block four shots and/or deal four ticks of contact damage before expiring. It deals 23 damage at full durability, 17.25 damage after taking one hit, and 11.5 damage otherwise for a maximum damage of 63.25 damage.
+** Fire from a Hot Bomb doesn't damage Isaac.
+** {{dlc|nr}} Bombs deal 1 point of contact damage to enemies.
+** {{dlc|r}} Bombs deal 16 contact damage to enemies.
+* {{dlc|r}} Isaac can no longer take contact damage from static fires such as {{e|Fire Place}}s or enemy fires. Fire projectiles still damage Isaac.
+
+== Notes ==
+* {{dlc+|r}} This item has a 1/7 chance to drop if {{e|Hornfel}} is killed in his second phase.{{dlc-}}
+** {{dlc+|r+}} It also has a 1% chance to drop when defeating {{e|Hornfel}}.{{dlc-}}
+* If a {{e|Hopper}} touches a Hot Bomb, it will become a {{e|Flaming Hopper}}.
+* The contact damage does not scale with Isaac's damage and is completely removed if Isaac acquires another bomb item that overrides the flaming bomb graphic such as {{i|Mr. Mega}} or {{i|Glitter Bombs}}.
+* {{e|Big Horn}} will throw Hot Bombs at Isaac that deal contact damage.
+* If eaten by a boss such as {{e|Chub}}, a Hot Bomb will continously deal damage to the boss until it explodes.
+* {{dlc|r}} Negates the damage from the floor of lava in {{e|The Beast|n}}'s chamber, but not from its fire inhalation attack.
+
+== Synergies ==
+* {{i|BBF}} / {{i|Best Friend}} / {{i|Bob's Brain}} / {{i|Bob's Rotten Head}} / {{i|Mr. Boom}}: These explosions are affected by Hot Bombs.
+* {{i|Bomber Boy}}: Bombs leave behind nine fires in a cross shaped pattern.
+* {{dlc|a}}{{i|Doctor's Remote}} / {{i|Dr. Fetus}} / {{i|Epic Fetus}}: Bombs/missiles are affected by Hot Bombs.
+* {{dlc|a+}}[[Familiars#Locusts|Red Locusts]]: Red locust explosions are affected.
+* {{I|Remote Detonator}}: Allows for maximization of contact damage, especially if an enemy gets stuck on a bomb.
+* {{dlc|anr}} {{i|Scatter Bombs|n}}: Each additional explosion creates a fire.
+** {{dlc|r}} Fires from extra bombs now start with 1 less durability.
+
+== Interactions ==
+* {{dlc|na}}{{i|Doctor's Remote}} / {{i|Dr. Fetus}} / {{i|Epic Fetus}}: Bombs/missiles are not affected by Hot Bombs.
+* {{i|Ipecac}}: Ipecac shots are unaffected.
+
+== In-game Footage ==
+{{#ev:youtube|-mdzFkXfYBg}}
+
+== Trivia ==
+* Orange champion {{e|Little Horn}} summons bombs that are identical in function, but given the {{e|Troll Bomb}} sprite and colored orange.
+
+{{nav|bomb modifier|bomb|fr=Bombes Brûlantes}}

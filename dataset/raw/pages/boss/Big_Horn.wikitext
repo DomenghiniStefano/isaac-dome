@@ -1,0 +1,66 @@
+{{infobox boss
+ | dlc           = a+
+ | portrait name = * {{dlc|nr|Afterbirth+}}
+ | image name    = * {{dlc|nr|Afterbirth+}}
+ | id            = 411
+ | environment   = <u>Boss</u><br>{{floor|Caves}}{{floor|Flooded Caves}}{{floor|Catacombs}}<br>{{room|boss challenge}}<br><u>Double Trouble</u><br>{{dlc|r}}{{floor|Depths}}{{floor|Scarred Womb}}<br>(with {{e|Little Horn}})<br><u>Degraded Boss</u><br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp       = 480
+ | pool          = {{ip|Boss}}<br> {{dlc|r+}} {{i|Little Horn}} (1% chance)
+ | unlocked by   = Something wicked this way comes+!
+}}
+
+'''Big Horn''' is a [[boss]] added in ''[[The Binding of Isaac: Afterbirth †]]'' that can appear in all environments of [[Chapter 2]] ({{s|Caves}}, {{s|Catacombs}}, {{s|Flooded Caves}}).
+
+== Behavior ==
+Big Horn alternates between attacking with his arms and his head.
+
+Big Horn spawns 2 or 3 small holes; one of his arms has a chance of appearing from each hole. Each arm can perform the following attacks either by itself or in conjunction with another arm:
+* Throws a {{e|Troll Bomb}} towards Isaac.
+* Throws 3 Troll Bombs in a spread towards Isaac.
+** Every Troll Bomb has a chance of being a {{i|Hot Bombs}} Bomb or a {{e|Mega Troll Bomb}}.
+** {{dlc|r}} If the area is Flooded, instead of Hot Bombs, he will send out {{i|Sad Bombs}}.
+* If Big Horn tosses a bomb into one of the empty holes, Big Horn’s hand appears out of that hole and tosses out the same type of bomb.
+* Quickly slaps the ground 3 times with an empty hand while traveling towards Isaac.
+** This attack can kill any Dark Balls it touches.
+* {{dlc|nr}} If a hole is empty, there is an extremely rare chance to spawn a low-health version of {{e|Little Horn}}.
+* {{dlc|r}} Holds up a Little Horn in his palm which spits out 3 small homing {{e|Dark Ball}}s in quick succession.
+** If Big Horn dies while performing this attack, Little Horn hops off the hand and continues the fight, but with low health.
+
+Big Horn's head can perform the following attacks after appearing from a large hole:
+* Spits out a large Dark Ball beneath him that homes in on Isaac.
+* Spits out two large Dark Balls beneath him that travel diagonally, bouncing when colliding with walls or Isaac's tears. These do not home.
+* Occasionally spits out 3 Dark Balls; 2 homing and 1 non-homing.
+** {{Dlc|nr}} The Dark Balls can hit and damage Big Horn, destroying themselves in the process.
+* After spawning a Dark Ball, there is a very small window where Bombs can be kicked into his mouth. If fed a Bomb, Big Horn is temporarily stunned, and plays a unique animation, during which he takes 20% more damage.
+** {{dlc|r}} Additionally, the Bomb also explodes in his mouth, dealing considerable damage.
+* Big Horn's head occasionally pauses and returns into the hole without attacking.
+** This always occurs at the start of the battle.
+
+== Gallery ==
+<gallery>
+File:Boss Big horn hand ingame.png|Big Horn's hand.
+File:Boss Delirium Big Horn ingame.png|Big Horn as one of {{e|Delirium}}'s Forms.
+File:Boss Delirium Big Horn Afterbirth+ ingame.png|{{dlc|nr}} Big Horn as one of Delirium's Forms before '''Repentance'''.
+</gallery>
+
+== Notes ==
+* The Hot Bombs ({{dlc|r}} and Sad Bombs) he throws are not affected by {{t|Safety Scissors}}.
+
+== Trivia ==
+* Big Horn appears to be an adult version of Little Horn.
+* Upon defeat, Big Horn frowns and retreats into his hole. He does not explode into blood upon defeat.
+** Big Horn's hands also have a death animation, which only plays if Big Horn is killed while they're on-screen. The hands briefly shake and retreat into the holes.
+* Big Horn had a [https://twitter.com/tyronerodriguez/status/748593859710509056 teaser on Twitter by Tyrone Rodriguez].
+* During the versus screen, Big Horn will growl despite the battle not starting yet. Big Horn is one of seven ({{dlc|r}} 5) bosses that can be heard during the versus screen, the other six ({{dlc|r}} 4) being {{e|The Stain}}, {{e|The Forsaken}}, {{e|Mom}}, {{dlc|nr}} {{e|Mom's Heart}}, {{dlc|nr}} {{e|It Lives!}}, and {{e|Mother}}.
+* {{dlc+|r}} Big Horn's hand makes an appearance in the effects of the Item {{i|Little Horn}}. His hand appears grabbing and crushing any [[monster]]s and performing the slap attack on Bosses.
+** His hand also appeared from a pit to pull down {{e|Dark Esau}} when he was killed, prior to patch [[v1.7.5]].{{dlc-}}
+* Big Horn's unique stun animation might be a reference to Nintendo's ''Punch Out'' series.
+* Similar to Little Horn, who was based on the fourth beast's "little horn" from the seventh chapter of the [[wikipedia:Book of Daniel|Book of Daniel]], it is possible that Big Horn is based on the four-horned goat's little horn from the [[wikipedia:Daniel 8|eighth chapter]] of the same book, where it mentions that the horn will grow extraordinarily into a great horn and triggers the apocalypse.
+* {{dlc|r}} {{e|Blighted Ovum}}, Big Horn, {{e|Triachnid}}, {{e|Isaac}} and {{e|???}} are the only bosses whose portraits were completely changed in ''Repentance'' (beyond simply adding more detail). Of these, only Triachnid, Isaac, and ??? didn't receive new sprites.
+
+{{nav|blue baby boss unlock|boss|fr=Grosse Corne}}
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Afterbirth+]]

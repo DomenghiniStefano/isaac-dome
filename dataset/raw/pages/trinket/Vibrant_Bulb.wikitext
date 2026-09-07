@@ -1,0 +1,41 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Vibrant Bulb
+ | id = 100
+ | quote = It needs power
+ | description = Provides a boost to all [[Attributes|stats]] when Isaac's active item is fully charged.
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* Increases all [[Attributes|stats]] while Isaac's active item is fully charged:
+** +0.25 [[speed]].
+** +0.75 [[range]].
+** {{dlc|nr}} +0.50 [[tear falling speed]].
+** +0.20 [[tears]].
+** +0.10 [[shot speed]].
+** +0.50 [[damage]].
+** +1 [[luck]].
+
+== Notes ==
+* The trinket creates no effect if Isaac has no active item.
+* {{dlc|nr}} Active items that are reusable indefinitely without a charge bar, such as {{i|How to Jump}}, will allow Vibrant Bulb's effects to be permanent (until the active item is swapped out).
+* Vibrant Bulb is slightly less than half as powerful as {{t|Dim Bulb|n}}; however, its effects are active more often.
+* {{i|Glowing Hourglass|nr}}, when used, will not make the Vibrant Bulb inactive and will still provide the bonus until it has one bar of charge.
+* Having additional charge beyond full with {{i|The Battery}} does not provide an additional bonus. It does give an advantage however, since using the fully charged item once still provides Vibrant Bulb's effect.
+* If two active items are held ({{i|Schoolbag|n}}), the one currently active must be at full charge for the trinket to take effect (the other one doesn't need to be fully charged).
+* {{dlc+|r}} Vibrant Bulb produces no effect with active items in consumable slots, e.g. {{c|Tainted Apollyon}}'s {{i|Abyss|n}} or {{c|Tainted Bethany}}'s {{i|Lemegeton}}.{{dlc-}}
+* {{dlc+|r}} If {{c|Bethany}} or {{c|Tainted Bethany}} are holding enough soul/red hearts to charge her current active item, the Vibrant Bulb will be active, even if there are no regular charges.{{dlc-}}
+** If the active item is fully charged only with soul/blood charges and no regular charges, Vibrant Bulb and Dim Bulb can be both active at the same time if Isaac holds both of the trinkets.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either doubles the stat increases. Having both triples them.
+
+== In-game Footage ==
+{{#ev:youtube|HyOhgEJuL-w}}
+
+== Bugs ==
+{{bug|Replacing Isaac's active item with another active item that doesn't have a charge bar won't immediately activate the trinket's effects. The effect will depend on whether or not the previous item had a full charge or not. Furthermore, if the effect is active due to the previous item having a full charge, picking up a different active item that currently has no charge won't disable the effect, and vice-versa.}}
+
+{{nav|active modifier|fr=Ampoule Allumée}}

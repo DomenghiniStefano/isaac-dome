@@ -1,0 +1,64 @@
+{{infobox activated collectible
+ | id          = 326
+ | image name  = * {{dlc|nr|Rebirth}}
+ | quote       = Invincibility at a cost
+ | description = Grants a brief moment of invincibility when the charge bar hits zero. Isaac begins taking damage if the item is held any longer. {{dlc|r}} Isaac creates beams of light when touching enemies while invulnerable, and creates a powerful 4-way beam if blocking damage exactly as the invincibility starts.
+ | quality     = 1
+ | tags        = nolostbr nocantrip
+ | recharge    = {{dlcalt|6s|r=3s}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Holding the active item button will deplete the charge bar. As the charge gets closer to zero, Isaac turns bluer over time.
+* Once the charge bar hits zero, Isaac will become invincible to all outside sources of damage. If the button is held for an additional second after hitting zero, Isaac will take damage for every second the button is held down.
+** Isaac loses invincibility once the active item button is released.
+** {{dlc|r}} If the button is released before the charge bar hits zero, a negative sound effect will play and the item will lose all of its charge.
+** {{dlc|r}} While Isaac is invincible, he deals 3.5 contact damage to enemies and beams of light will strike down enemies touching Isaac, dealing 15 damage.
+** {{dlc|r}} Blocking damage at the exact moment the invincibility activates will create a 4-way cardinal beam of light that deals 12 damage per tick for a total of 180 damage per beam.
+*** If an enemy is standing in the center of all the light beams, they will take a total of 720 damage.
+* The item will recharge on its own, but cannot be used again until it is fully charged (even if the charge bar wasn't fully depleted).
+
+== Notes ==
+* While not time-based, invincibility from Breath of Life is otherwise identical to damage immunity granted by the [[shield]] effect.
+* Breath of Life will prevent damage from {{M|Blood Donation Machine}}s, {{M|Devil Beggar}}s, {{M|Hell Game}}s, and {{M|Confessional}}s, allowing them to be played infinitely for free.
+* {{dlc|a+}} Once the invincibility takes effect, Isaac starts flashing rapidly.
+** {{dlc|nr}} Isaac will continue flashing for about a second even when invincibility has ended after releasing the active item button.
+* {{Dlc+|r}} Cannot be used to prevent damage from the door to the {{s|Mausoleum}}.{{dlc-}}
+* {{dlc|r}} Taking damage from holding the active item button for too long is considered self-damage for the purposes of [[Devil Room#Conditions to Make Devil Rooms Appear|Angel/Devil Deal chances]] and items such as {{i|Paschal Candle|n}}.
+
+== Synergies ==
+* {{dlc|r}} {{i|The Battery}}: Adds an extra level of charge for Breath of Life, which allows Isaac to use it twice in a row. Releasing the active item button early will use up 1 full charge, and using the item before the 2nd charge is full will remove that extra charge.
+* {{Book of Belial synergy|description=Judas leaves a damaging flame trail while the invincibility is active instead of creating beams of light. Blocking damage just as the invincibility begins activates {{i|The Necronomicon}} effect and grants Judas a temporary damage bonus.}}
+* {{Book of Virtues synergy|description=Spawns 4 regular wisps on the inner ring when the four-way beam is created. Only 4 of these wisps can exist at a time. No wisps are created otherwise.}}
+* {{dlc|nr}} {{i|Isaac's Heart}}: When held down too long, Breath of Life no longer damages Isaac, resulting in infinite invincibility.
+* {{i|Void|r}}: Using Void with Breath of Life will immediately grant invincibility frames.
+
+== Interactions ==
+* {{i|Void|nr}}: Using Void with Breath of Life will immediately grant invincibility frames, then inflict damages to Isaac every second until he leaves the room.
+* {{P|? Card}}/{{I|Car Battery}}/{{dlc|nr}}{{I|Habit}}/{{P|Wild Card}}: No effect.
+
+== In-game Footage ==
+=== In ''Rebirth'' {{dlc+|nr}} ===
+{{#ev:youtube|NmiQSQ9GgM8}}{{dlc-}}
+
+=== In ''Repentance'' {{dlc+|r}} ===
+{{#ev:youtube|y8U7vbeXEG4}}{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Collectible Breath of Life animated unused.gif|Unused Breath of Life animation.
+File:3DS Detailed Breath of Life.png|{{plat|3DS}} The icon of Breath of Life as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* The Breath of Life refers to God breathing life into the soil to create the first human.
+* Breath of Life initially had a different animation, almost exactly alike to {{I|Chocolate Milk}}'s effect. However, this animation has one frame of Isaac holding his breath that isn't found in Chocolate Milk's sprites. It even has its own .anim2 file, paralleling Chocolate Milk's. The finished effect for Breath of Life is a gradual change of Isaac's skin tone, from perky pink to hold-my-breath blue.
+* Depleting the skill's charge turns Isaac a similar color to {{C|???}}, who is implied to be Isaac after suffocating in his toy chest.
+
+== Bugs ==
+{{bug|dlc=na+|This item does not work with {{t|Broken Remote}}.}}
+{{Bug|dlc=a+|Replacing this item with another active item, switching into another active item with {{i|Schoolbag}}, or directly removing it via debug console while holding the active item key causes Isaac to take damage, even if the charge bar isn't depleted at all.}}
+
+{{nav|fr=Souffle de Vie}}

@@ -1,0 +1,66 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 429
+ | quote       = Penny tears{{dlc|nr|!}}
+ | description = Isaac's tears become coins. Hitting an enemy has a 5% chance to drop a {{e|Penny}}.
+ | quality     = 2
+ | tags        = summonable offensive
+ | pool        = Greed, Super Greed, shopkeeper
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Isaac's tears become coins. Hitting an enemy with tears has a 5% chance to drop a {{e|Penny}} at the point of impact.
+** The chance is not affected by [[Luck]].
+
+== Notes ==
+* Head of the Keeper has a 1% chance to drop from destroying normal {{e|Shopkeeper}}s.
+* {{Dlc+|r}} The only way of finding Head of the Keeper is from {{e|Shopkeeper}}s, using {{I|Spindown Dice}} on {{I|Papa Fly}}, as a starting item with {{c|Eden}}, or by using {{i|Death Certificate}}.{{dlc-}}
+* Does not produce coins other than Pennies.
+* Hitting the front side of enemies such as the {{E|Knight}} will still produce Pennies, even though the enemy does not take damage. This can be exploited to produce an infinite amount of Pennies from a single enemy. This however doesn't work with lowered {{E|Host}}s.
+** Enemies that spawn other enemies, {{E|Globin}}s, or enemies that regain health can also be farmed for infinite money.
+* {{Dlc|nr}} Head of the Keeper does not work with {{C|The Forgotten}} but will work with {{C|The Soul}}.
+* When used against {{E|Ultra Greed}}, the coins are spawned directly in front of him and will heal him very often.
+
+== Synergies ==
+* {{dlc+|r}} {{i|Brimstone}}/{{c|Azazel}}/{{c|Tainted Azazel}}/{{i|Tech X}}: The laser is yellow and each tick has a chance to drop a penny.{{dlc-}}
+* {{i|Monstro's Lung}}: Every tear in the burst of tears can spawn coins.
+* {{T|Nuh Uh!}}: From Chapter 4 and beyond, any coins spawned will be from the loot table of Nuh Uh! instead, with an occasional harmless black fly spawning.
+* {{I|Sack Head}}: Coins spawned from hitting enemies have a chance to become sacks.
+* {{i|Soy Milk}}: Due to the Soy Milk's high fire rate and low damage, enemies can be hit many more times than usual, resulting in a larger amount of coins dropping.
+* {{dlc|r}} {{i|Technology}}: The laser is yellow and has a chance to drop a penny upon damaging an enemy.
+* {{i|Technology Zero}}: Coin tears are connected via electricity. Beams of electricity can cause enemies to drop coins.
+* {{i|Technology 2}}: Due to Technology 2's constant fire rate, enemies are hit many more times than usual, resulting in a higher likelihood of coins dropping.
+* {{dlc+|r}} {{i|Trisagion}}: Each tick that hits an enemy has a chance to spawn a penny.{{dlc-}}
+
+== Interactions ==
+* {{i|Brimstone|nr}}/{{C|Azazel}}: Overrides Head of the Keeper.
+* {{i|Death's Touch}}: Tears retain Death's Touch's cosmetic effect but both items are fully active.
+* {{i|Dr. Fetus|nr}}: Overrides Head of the Keeper.
+* {{i|Epic Fetus|nr}}: Overrides Head of the Keeper.
+* {{i|Euthanasia|nr}}: Main tears can cause enemies to drop Pennies; however, burst tears do not.
+* {{i|Haemolacria|nr}}: Only the main tear retains the effect of Head of the Keeper.
+* {{i|Ipecac}}: Because Ipecac's high damage will quickly kill enemies, and because enemies will often be hit with explosions rather than tears themselves, Pennies will not drop as frequently.
+* {{i|Mom's Knife|nr}}: Overrides Head of the Keeper.
+** {{dlc|r}} Knife has a very low chance to drop coins.
+* {{i|Sulfuric Acid}}: Tears retain Head of the Keeper's cosmetic effect but both items are fully active. Which tears are acidic can no longer be visually identified.
+* {{i|Technology|nr}}: Overrides Head of the Keeper.
+* {{i|Tech X|nr}}: Overrides Head of the Keeper.
+* {{i|Trisagion|nr}}: Overrides Head of the Keeper. Coin debris will still appear after beams dissipate.
+
+== In-game Footage ==
+{{#ev:youtube|KhdVbH8JdQI}}
+
+== Trivia ==
+* The item resembles {{E|Ultra Greed}}'s head.
+* The coins fired are the same as Ultra Greed's coin projectiles.
+** {{Dlc|r}} The coins fired now use their own unique sprite, which is significantly smaller than before.
+* When picked up as {{C|Keeper}} or {{C|Tainted Keeper}}, they will begin smiling.
+
+== Gallery ==
+<gallery>
+File:Keeperwithheadofthekeeper.PNG|{{C|Keeper}} after collecting Head of the Keeper.
+</gallery>
+
+{{nav|fr=Tête du Gardien}}

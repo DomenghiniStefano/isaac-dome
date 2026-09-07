@@ -1,0 +1,52 @@
+{{infobox challenge
+ | number      = 6
+ | blindfolded = yes
+ | item        = {{i|Distant Admiration}}<br>{{i|Forever alone}}<br>{{i|Halo of Flies}}<br>{{i|Transcendence}}
+ | has shops   = yes
+ | goal        = Mom's Heart
+ | unlocks     = Rune of Perthro
+ | unlocked by = Solar System
+}}
+
+'''Solar System''' is [[Challenges|challenge]] #6. {{c|Isaac}} starts with {{i|Distant Admiration}}, {{i|Forever alone}}, {{i|Halo of Flies}}, and {{i|Transcendence}}. Isaac will also be [[blindfolded]]. The goal is to defeat {{e|Mom's Heart}} or {{E|It Lives!}}. This challenge is available after unlocking Transcendence.
+
+== Difficulty ==
+* As Isaac is [[blindfolded]], Isaac cannot use tears, and must rely entirely on Distant Admiration, Forever Alone, and bombs to deal damage.
+
+== Strategy ==
+* Because Isaac starts with 3 Fly items, he will also begin the challenge as {{tf|Beelzebub}}. This allows Isaac to amass a large number of friendly flies on the Basement floors.
+* The orbiting attack flies can be quite powerful, especially Distant Admiration when used properly. This will require optimization of Isaac's movement to maneuver into position to deal damage, as the flies are constantly moving, and avoid damage simultaneously.
+** {{t|Duct Tape}} can fix the position of the flies around Isaac, somewhat alleviating this.
+* Enemies that explode on death should only be targeted with Forever Alone, as destroying them with Distant Admiration will result in Isaac getting caught in their explosions.
+* {{i|Guppy's Head}} provides consistent per-room damage output that scales with your damage stat, and can appear in Curse Rooms.
+* Shops can carry {{i|BFFS!}} and {{i|Hive Mind}}, the former of which affects the damage of the orbiting attack flies and the latter of which affects the damage of the blue flies spawned from Beelzebub as well as the size of the orbiting attack flies.
+* {{i|Broken Watch}} and {{i|Stop Watch}} are good items to buy since they slow enemies down, although caution should be exercised with Broken Watch.
+** {{i|Broken Watch}}'s speeding up effect can be cancelled by exiting the run and continuing.
+* Obtaining {{i|Gnawed Leaf}} makes the challenge trivial as Isaac's orbiting flies still deal damage while Isaac is invulnerable. Obtaining it is highly unlikely, since there are no {{R|Treasure Room}}s present.
+* Obtaining {{i|Ball of Bandages}} or {{i|Cube of Meat}} grants a full circle of projectile-blocking orbitals around Isaac.
+** Collecting two Cubes of Meat grants a tear-firing familiar that is not affected by the blindfold.
+** Obtaining {{i|Book of Revelations}} makes [[The Harbingers]] easier to find, allowing Cube of Meat and Ball of Bandages to be amassed more easily.
+* {{Dlc|na}} It is not advised to reshuffle Isaac's items. As this will not remove Isaac's Blindfolded status, it is possible to reroll items in such a way that Isaac's orbitals are rerolled into useless items, thus making the run impossible to complete.
+* Obtaining {{P|Algiz}}, {{p|Chaos Card}}, {{P|A Card Against Humanity}}, or {{i|The Bible}} can make killing {{e|Mom}} and {{e|Mom's Heart}} / {{E|It Lives!}} much easier.
+* {{R|Devil Room}} deals such as {{i|Brimstone}}, {{i|Maw Of The Void}}, and {{i|Mom's Knife}} will be ineffective due to Isaac's [[blindfolded|blindfold]].
+** {{i|Maw Of The Void|r}} now functions despite the Blindfolded status, making this a very valuable item for the challenge.
+* {{Dlc|na}}{{i|The Boomerang}} is a useful purchase from the shop as it has a chance to freeze enemies, allowing Isaac to safely use the attack flies against them for the duration of the freeze.
+* Transcendence and other flight items are useless in this challenge as the {{tf|Beelzebub}} transformation grants flight by default.
+* Obtaining {{i|Bob's Brain}} can be handy for defeating bosses, due to its damage and poison effect. It can also be used to break poop or golden poop to gain health, coins, or bombs.
+* {{t|Extension Cord}} electrifies the orbiting flies, dealing extra damage and allowing Isaac to destroy {{e|Fire Place}}s and {{e|Poop}}s.
+* {{i|Black Powder}} helps damage non-flying enemies and bosses.
+** {{dlc|r}} Black Powder is now effective on all enemies and bosses, making it a reliable source of damage without the precision required to deal damage using Isaac's orbiting flies, provided there is room to draw closed shapes.
+* {{i|Incubus}} acts as a replacement for Isaac's tears, thus indirectly removing Isaac's Blindfolded status.
+* {{I|Revelation}} can charge and fire regardless of the Blindfolded status, providing Isaac with an easy way to deal damage.
+* {{i|Pause}} can be used to great effect as it can stop {{dlc|nr}} permanently / {{dlc|r}} for 30 seconds the movement of all enemies in every other room. Pairing this with items that help with recharging activated items, mainly {{i|9 Volt}}, can guarantee victory.
+* It is heavily advised not to use {{i|Sacrificial Altar}}, as it removes both of Isaac's damaging orbital familiars. If no alternative source of damage has been obtained by then, or rewarded by Sacrificial Altar itself, the run will be rendered impossible.
+* {{i|Abyss}} can be used on items, that solely gives stats like tears, range or shot speed, which have no use for this challenge, to create a locust familiar, that attacks normally.
+* {{i|Monstrance}} or {{i|Salvation}} can allow for large extra damage, as Isaac is already required to be in close proximity to enemies.
+
+== Unlockable [[achievement]]s ==
+{{achievement text | Rune of Perthro }}
+
+== Trivia ==
+* The challenge is a reference to the real-world [[wikipedia:Solar System|Solar System]]; Isaac represents the Sun and his flies represent planets.
+
+{{nav|challenge|moms heart unlock|fr=Système Solaire}}

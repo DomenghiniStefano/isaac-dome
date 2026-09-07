@@ -1,0 +1,57 @@
+{{infobox activated collectible
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 437
+ | quote       = {{dlcalt|Reroll Rewards!|r=Roll again}}
+ | description = Restarts the current [[room]] and respawns all [[monsters]], allowing more rewards to be acquired by completing the room.
+ | quality     = 1
+ | tags        = offensive {{dlc|r+|nogreed}}
+ | recharge    = 3
+}}
+
+{{cit|a|a}}
+
+== Effects ==
+* Upon use, it restarts the room and respawns all [[monsters]]. Normal [[Room Clear Awards|room clear awards]] are generated.
+
+== Notes ==
+* No effect in:
+** Rooms with no naturally placed enemies. This includes "trap rooms" with {{e|Poky}}-type enemies, though deactivated pokies will spawn in their original location.
+*** {{r|Challenge Room}}s and {{r|Boss Challenge Room}}s.
+*** [[Greed Mode]] main arena room.
+*** Enemies spawned by pressing [[buttons]], destroying {{e|Shopkeeper}}s, [[obstacles]] or [[Angel|Angel statues]] do not count as naturally placed.
+** {{dlc|r}} {{r|Boss Room}}s.
+** The {{e|Mega Satan}} fight.
+** {{dlc|r}} The {{e|Mother|n}} fight.
+** {{dlc|r}} {{e|The Beast|n}} fight.
+* {{dlc|nr}} Teleports Isaac in the starting room if used in {{r|Boss Room}}s, {{r|Angel Room}}s or {{r|Devil Room}}s.
+* {{dlc|nr}} Converts {{r|Secret Room}}s and {{r|Shop}}s that had a {{E|Greed}} or {{E|Super Greed}} fight into regular Secret Rooms and Shops.
+* {{dlc|r}} {{e|Krampus}} can be fought again in the Devil Room, like other [[Mini-boss]]es.
+* {{dlc|nr}} Respawned Mini-Bosses will always have the same drop.
+* When used in a room with a [[Champion]] enemy, the enemy will not respawn as a Champion.
+* Enemies respawn exactly where they first spawned, even if that's where Isaac is standing, in which case Isaac will take damage immediately upon use of the D7. Right next to doors is usually a safe place to use it.
+* {{Dlc+|r}} If used in the [[Mirrored World]] of {{s|Downpour}} or {{s|Dross}} II, the rooms will not only have their enemies respawn, but all the normal non-mirrored contents such as pickups are restored. Using it in the Shop causes it to be stocked normally, and additional uses will restock the Shop's contents, unlike normal Shops. Using it in the mirrored treasure room that does not have the knife piece in {{s|Downpour}} XL / {{s|Dross}} XL will spawn an item.{{dlc-}}
+* {{dlc+|r}} In {{s|Mines}} or {{s|Ashpit}}, the D7 cannot regenerate minecarts. Any monsters that were riding a minecart on room entry will respawn on foot. {{dlc-}}
+* {{Dlc+|r}} As {{C|Tainted Keeper}}, enemies respawned by the D7 will drop the same type of coins as they had before using the D7. This can be used to quickly generate money from enemies that dropped high-value coins or greatly increase [[Luck]] if an enemy dropped a Lucky Penny.{{dlc-}}
+* {{dlc+|r}} Enemies respawned by the D7 don't drop loot when killed if they were champions and don't grant score in daily runs.{{dlc-}}
+
+== Synergies ==
+* {{i|4.5 Volt}}: Depending on the enemies in the room, some rooms can grant enough charge to be rerolled indefinitely.
+* {{i|9 Volt}}/{{t|AAA Battery}}: Quadruple-sized or L-shaped rooms can be rerolled indefinitely. With both of them, even normal sized rooms can be rerolled indefinitely.
+* {{Book of Virtues synergy|description=Spawns a grey six-sided die wisp on the middle ring. The wisps start gray; if the wisps get hit while they’re gray, they invoke the effect of the D7 in the current room and turn blue. Damage that turns the wisps from gray to blue is negated.}}
+
+== Interactions ==
+* {{i|Car Battery|na+}}: Doubles the amount of enemies summoned, but does not give double rewards.
+
+== In-game Footage ==
+{{#ev:youtube|KdxCk8SEFjs}}
+
+== Trivia ==
+* Despite being a dice item, D7 is not an unlock.
+** This trait is shared with {{I|D10}} and {{P|Dice Shard}}.
+
+== Bugs ==
+{{bug|If used in a non-Boss Room containing {{e|Chub}}s, {{e|C.H.A.D.}}s, or {{e|Carrion Queen}}s, each segment of the boss(es) will be revived as an entire clone, tripling their number.|dlc=nr}}
+{{bug|If used in a "trap room" with {{e|Grudge}}s after all {{e|Pressure Plate}}s were pressed, all Grudges will respawn and will remain active if the room is left and re-entered.|dlc=r}}
+
+{{nav|dice}}

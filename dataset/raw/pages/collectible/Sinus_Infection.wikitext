@@ -1,0 +1,63 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 459
+ | quote       = Booger tears!
+ | description = Adds a chance to fire a booger that sticks to enemies and deals damage over time.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Adds a 20% chance to fire a booger tear that stick to the first enemy that they come in contact with and deals damage over time.
+** Each booger deals damage equal to Isaac's tear damage every second.
+** {{Dlc|nr}} The booger lasts for 60 seconds or until the enemy dies.
+** {{Dlc|r}} The booger lasts 10 seconds.
+
+== Notes ==
+* {{dlc+|r}} This item can be spawned by {{e|Bumbino}} if he picks up 12 cents.{{dlc-}}
+* The booger tear chance is not affected by [[Luck]].
+* Boogers tears cannot pierce through enemies.
+* Multiple boogers can stick to one enemy to deal extra damage.
+* Booger tears pass through fireplaces and bombs even without piercing shots.
+* Boogers cannot inflict [[status effect]]s, even if the booger's appearance changes.
+* The booger falls off the enemy after they die. If it hits another enemy before it touches the ground, it will stick to them and deal damage.
+* Sinus Infection is extremely effective against bosses. If each booger tear lasts for the full 10 seconds, this item effectively triples Isaac's DPS against bosses.
+* Jumping enemies or bosses like {{E|Monstro}} and {{E|Leaper}}s and burrowing enemies like {{E|Round Worm}}s and {{E|Lump}}s can get rid of the booger when they leap or burrow.
+** Bosses like [[The Harbingers]] or {{E|Dark One}}, or enemies like {{E|Oob}} that have dash attacks do not lose the booger when they go off-screen.
+* The tear-sticking effect is similar to {{i|Explosivo}} and {{i|Mucormycosis}}'s.
+* The {{t|Nose Goblin}} trinket's effect is almost identical to Sinus Infection, with an added [[homing tears|homing]] bonus but half the activation chance.
+** When Isaac is holding both Nose Goblin and Sinus Infection each booger tear created by the item has a 50% chance to also have homing.
+
+== Synergies ==
+* {{i|Brimstone|r}}/{{i|The Ludovico Technique}}/{{i|Tech X}}/{{i|Trisagion}}: Every tick of damage Isaac’s tears deal have a chance to attach a separate booger tear on a hit enemy.
+* {{i|Cricket's Body}}: Booger tears will split into split booger tears that can attach to enemies.
+* {{i|Explosivo}}: Explosivo tears can also be booger tears which damage the enemy over time while stuck to them before exploding.
+* {{i|Godhead}}: Shots retain their aura while stuck to an enemy, but the aura can damage only enemies other than the booger victim. If the enemy dies before the booger’s maximum duration, it will resume homing and will often stick to a second enemy.
+* {{tf|Guppy}}: Damage instances from boogers attached to enemies have a 100% ({{dlc|r}} 50%) chance to spawn a [[Blue Fly]].
+* {{i|Lachryphagy|nr}}: All tears have a chance to burst into boogers. Boogers will always burst into more boogers, though some of the boogers may incorrectly appear to be normal tears. When a booger sticks to an enemy, it will burst into 8 boogers which have a high chance of sticking again to the same enemy.
+* {{i|Lost Contact}}: Boogers that stick to enemies will block shots, and will not be destroyed in the process.
+* {{i|Polyphemus}}: Booger shots lose the Polyphemus pierce effect, but stick to enemies while dealing the full damage of the Polyphemus shot. Damage does not degrade.
+* {{i|Spirit Sword}}: Swings and projectiles have a chance to apply boogers on enemies.
+* {{I|Tech.5|r}}: The laser also has a chance to apply boogers on enemies.
+* {{i|Technology|r}}: Hit enemies have a chance for a booger to be applied to them.
+* {{I|Technology 2|r}}: The laser can also apply boogers with the laser’s chance to apply boogers being determined rapidly every tick.
+* {{I|Technology Zero}}: Boogers can be connected with electricity while being attached dealing large amounts of damage to the booger victim.
+
+== Interactions ==
+* {{i|Brimstone|nr}}/{{i|Technology}}/{{i|Tech X}}/{{i|Trisagion}}/{{i|Ipecac}}: Overrides Sinus Infection.
+** {{i|Ipecac}}: Booger tears will still appear, but will act identically to other Ipecac shots.
+* {{i|Compound Fracture}}/{{i|The Parasite}}: Booger tears will not split after killing enemies.
+* {{i|Dr. Fetus}}/{{i|Epic Fetus}}/{{i|Mom's Knife}}: Overrides Sinus Infection.
+* {{i|Holy Light}}: Holy light strikes do not activate on booger shots.
+* {{I|Immaculate Heart}}/{{I|Saturnus|n}}: Orbiting tears that stick to an enemy will return to the ring if the enemy cannot be stuck to anymore before the tear's duration ends.
+* {{i|Jacob's Ladder}}: Lightning strikes do not activate on booger shots.
+* {{i|C Section}}: Some Fetuses stick to enemies. However, they only do the Sinus Infection damage ticking and often result in dealing much less damage. 
+* {{Dlc|nr}} {{i|Tech.5}}/{{I|Technology 2}}: The laser is unaffected by Sinus Infection.
+* {{dlc|nr}}{{i|The Ludovico Technique}}: The large tear has a chance to stick to enemies. The tear cannot be controlled while it is stuck to an enemy, and cannot be removed until the enemy has died.
+
+== In-game Footage ==
+{{#ev:youtube|oYfb_ULX_MU}}
+
+{{nav|fr=Sinusite}}

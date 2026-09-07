@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 676
+ | quote       = It multiplies
+ | description = If Isaac has one red heart or fewer at the beginning of a floor, he gains an empty red [[heart container]].
+ | quality     = 1
+ | tags        = nolostbr summonable
+ | unlocked by = Empty Heart
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* If Isaac has one red heart or less at the beginning of a floor, an empty heart container is added.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Visage}}.{{dlc-}}
+* This item will have no effect for characters that cannot have red hearts: {{c|Black Judas}}, {{c|???}}, {{c|The Lost}}, {{c|Keeper}}, {{c|The Forgotten}}, {{c|The Soul}}, {{c|Tainted Judas}}, {{c|Tainted ???}}, {{c|Tainted Lost}}, {{c|Tainted Keeper}}, {{c|Tainted Forgotten}} and {{c|Tainted Bethany}}.
+* The empty heart containers will replace any other heart containers if the maximum has been reached.
+
+== Synergies ==
+* {{I|Adrenaline}}: Activates the damage up effect of Adrenaline if conditions are met to grant an empty heart container at the beginning of each floor.
+* {{T|Crow Heart}}: If no {{M|Devil Beggar}}s  or {{M|Blood Donation Machine}}s can be found, the Crow Heart trinket is a great way to guarantee red hearts are lost so long as you still have non-red health available.
+* {{I|Dark Prince's Crown}}: The heart containers are empty when granted, which allows the crown's buff to stay active when advancing floors.
+* {{I|Guppy's Paw}}: The heart containers granted by Empty Heart can be used by Guppy's Paw while staying at or below 1 red heart, granting massively increased survivability.
+* {{C|Lazarus}}: The heart containers granted by Empty Heart allows Lazarus to effectively negate the downside that removes a single heart container on death, allowing him to purposefully use his mechanic to get a +0.5 damage up per floor. (As long as he still proceeds at one red heart or less)
+* {{I|Potato Peeler}}: The heart containers granted by Empty Heart can be used by Potato Peeler while staying at or below 1 red heart, granting increased damage and a {{I|Cube of Meat}} per floor.
+
+== In-game footage ==
+{{#ev:youtube|ZOogG2PadoA}}
+
+== Bugs ==
+{{bug|If Isaac is operating only on soul hearts and manages to get 12 empty heart containers by using this item, he will die immediately upon leaving the spawn room or picking up an item.}}
+{{bug|Using Glowing Hourglass to go back to the previous floor will keep the new empty hearts that was obtained from Empty Heart.}}
+
+{{nav|samson unlock|the beast unlock|fr=Cœur Vide}}

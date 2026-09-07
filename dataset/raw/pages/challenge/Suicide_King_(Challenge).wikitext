@@ -1,0 +1,65 @@
+{{infobox challenge
+ | name        = Suicide King
+ | number      = 7
+ | character   = Lazarus
+ | item        = {{i|Ipecac}}<br>{{i|Mr. Mega}}<br>{{i|My Reflection}}
+ | pickup      = 1 random [[pill]]
+ | has shops   = yes
+ | goal        = Isaac
+ | unlocks     = Suicide King
+ | unlocked by = Suicide King 2
+}}
+
+'''Suicide King''' is [[Challenge]] #7. {{C|Lazarus}} is the default character for this challenge, and he starts with {{i|Ipecac}}, {{i|Mr. Mega}} and {{i|My Reflection}}, as well as a random [[pill]]. The goal is to defeat {{E|Isaac}}. This Challenge is unlocked once {{E|It Lives!}} and {{c|Lazarus}} are unlocked.
+
+== Difficulty ==
+* Though Ipecac and Mr. Mega would be a powerful build in a normal run, My Reflection causes tears to loop back around towards {{C|Lazarus}}, forcing him to have to avoid not only enemy tears but his own as well. This also makes aiming tears significantly harder.
+
+== Strategy ==
+* The 1 pip and 6 pip dice rooms will not reroll the starting items for this challenge but will reroll any others.
+* Lazarus has one extra life by default, granting him some survivability.
+** {{dlc|r}} {{C|Lazarus Risen}} now regains his extra life and reverts back to {{C|Lazarus}} upon entering a new floor, thus allowing for more survivability.
+* Due to My Reflection, the range is diminished. With a little practice, however, it can be easy to tell how far away the shot will travel. Lining up enemies with that distance will make it easier to score direct hits that won't come back. One way to track this is by the shadow of the Ipecac tear.
+* Ipecac's explosive tears can be used to break rocks, mushrooms, and skulls, and open secret rooms.
+* {{r|Crawl Space}}s are very valuable due to the lack of {{r|Treasure Room}}s, making the destruction of all encountered rocks a viable strategy. Most items that can be acquired this way are useful, but {{i|Pyromaniac}} and {{i|Host Hat}} are especially noteworthy for their ability to prevent all self-damage inflicted on Lazarus.
+** {{I|Gnawed Leaf}} allows Lazarus to turn into a statue just before the Ipecac tears hit him. This is only really useful for destroying objects.
+** {{i|Dr. Fetus}} makes Lazarus immune to Ipecac, making the challenge very easy.
+* Familiars such as {{i|Cube of Meat}}, {{i|Ball of Bandages}}, or any friendly fly orbital can help protect Lazarus.
+** If properly aiming the Ipecac shots while simultaneously dodging them proves too challenging, some familiars or orbitals can serve as a consistent means of dealing damage without firing tears.
+* Grouping enemies together is an effective way of clearing rooms while minimizing the amount of tears needing to be fired per room.
+* {{dlc|nr}} Because Ipecac also increases the damage of Blue Flies and Blue Spiders, obtaining an item that spawns them can be extremely useful.
+** {{r|Curse Room}}s and {{r|Devil Room}}s can spawn {{i|Guppy's Head}} and {{i|Rotten Baby}}.
+* It is possible to hit enemies without having to worry about My Reflection by moving in tandem with the Ipecac tear, making the shot faster. This method only works with a high [[Speed]] stat.
+* A higher [[Shot Speed]] stat allows the tears to fly further away from Lazarus before returning, allowing enemies to be shot from further away while reducing the risk of being caught in the blast radius.
+* A lower Range stat is advantageous. It shortens the way back to Lazarus whereas a high Range stat seems to home him.
+* {{dlc|nr}} The {{i|Magic Fingers}} item is a common shop item that is affected by Ipecac's damage increase. This makes it extremely viable as an alternative damage source to Ipecac tears, especially in runs with a large coin count.
+* If {{E|Envy}} is encountered, and it drops {{i|Shoop da Whoop!}}, it is highly advised to pick it up. Due to the item's relatively quick recharge time, and the fact that its damage is greatly increased by Ipecac, it can be used as an ace in the hole to clear challenging rooms and easily defeat bosses.
+* {{i|Mom's Knife}} can be purchased from a {{r|Devil Room}} if found with a Red Chest or using {{i|Goat Head}}, {{dlc|nr}} overriding Ipecac and making the challenge much easier.
+** {{dlc|r}} The knife now explodes with Ipecac when touching an enemy.
+* {{I|Technology}} is an immensely useful item that can be acquired from {{r|Boss Rush}}, as it overrides Ipecac, granting infinite range and no explosive damage.
+** {{dlc|r}}Technology now grants explosive damage. As it behaves unpredictably with My Reflection; it is not advised to pick it up.
+* {{I|Tech X}} is also useful, because it overrides My Reflection while keeping the explosive damage from Ipecac. This is especially good on large enemies that might take multiple hits (and thus, explosions) from Tech X.
+* {{i|Succubus|anr}} is an incredibly useful familiar, as its damage scales with Lazarus'. Succubus allows the challenge to be cleared without using tears as it only takes a few seconds for it to clear out a regular-sized room autonomously.
+* {{dlc|a}} Familiars that mimic Lazarus' tears, such as {{i|Fate's Reward}}, are not recommended for this challenge. While they do increase Lazarus' overall damage output, they are very difficult to avoid, as they are usually fired directly towards Lazarus.
+* {{i|Spirit Sword}} overrides the explosive projectiles from Ipecac if Lazarus is not at full health, making self-damage far less likely at the cost of making Lazarus into a close-range fighter.
+* {{i|Brimstone|r}} and {{i|Sulfur}} are extremely useful for clearing rooms and has an absurd synergy with worm trinkets.
+* {{i|Eye of the Occult}} makes your ipecac shots more controllable.
+* {{i|Sharp Key}} can fire a damage-boosted Ipecac shot with great accuracy, and with enough keys, can be rapidly used for mass damage.
+* {{t|Brain Worm}}, {{t|Hook Worm}} and {{t|Whip Worm}} are useful trinkets and should be collected if possible.
+** Brain Worm forces some tears to snap 90 degrees to target enemies that they may have missed.
+** Hook Worm allows tears to hit enemies more easily, while also making them easier to avoid by Lazarus.
+** Whip Worm forces tears to fly very fast and low, usually preventing enemies from dodging them. It also makes tears that hit the edge of the screen explode rather than coming back to Lazarus.
+** {{t|Ring Worm}} is a somewhat less useful alternative.
+* {{i|Euthanasia}} or any items that fires extra shots are not recommended.
+
+== Reward ==
+{{achievement text | Suicide King }}
+
+== Notes ==
+* The {{r|Devil Room}} at the end of the {{E|It Lives!}} boss fight will contain regular Deals with the Devil instead of a trap door, as the challenge requires Lazarus to go to the {{S|Cathedral}}.
+* If the player somehow manages to end up going to {{S|Sheol}} instead of {{S|Cathedral}} (i.e. through a trapdoor in {{S|Womb}} II), defeating {{E|Satan}} will successfully finish the challenge and unlock the achievement.
+
+== Bugs ==
+{{bug|plat=XboxOne|If the game crashes during the challenge and is reloaded, Lazarus will lose Ipecac and have his normal tears.}}
+
+{{nav|challenge|moms heart unlock|fr=Le Roi Suicidaire}}

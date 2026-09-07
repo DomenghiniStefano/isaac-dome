@@ -1,0 +1,21 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 301
+ | quote       = HP up + you feel protected
+ | description = Adds 3 {{E|Soul Heart}}s. Grants {{i|The Wafer}} effect for the current room after taking damage.
+ | quality     = 3
+ | tags        = nolostbr summonable stars
+}} {{disambig msg|the item|the trinket|Cancer (Trinket)}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants three {{E|Soul Heart}}s.
+* After taking damage, grants {{i|The Wafer}} effect of damage reduction for the current room.
+
+== In-game Footage ==
+{{#ev:youtube|JY1SJLcbIeU}}
+
+{{nav|zodiac}}
+
+[[category:damage-triggered items]]

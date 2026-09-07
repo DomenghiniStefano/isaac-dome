@@ -1,0 +1,48 @@
+{{infobox trinket
+ | dlc = a
+ | name = Rainbow Worm
+ | id = 64
+ | quote = Bleep Bloop Blop
+ | description = Isaac's tears gain a worm effect that changes every 3 seconds.
+}}
+
+{{cit|t|a}}
+
+== Effects ==
+* Isaac's tears gain a worm trinket effect that changes every 3 seconds of the in-game timer. The effects include:
+** {{t|Pulse Worm}}
+** {{t|Ring Worm}}
+** {{t|Tape Worm|n}}
+** {{t|Whip Worm}}
+** {{t|Wiggle Worm}}
+** {{t|Flat Worm}}
+** {{t|Hook Worm}}
+** {{t|Lazy Worm|n}}
+** {{t|Ouroboros Worm|r}}
+** {{t|Brain Worm}}
+* The order of the effects is always as above, in a cycle.
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}} or {{e|Scolex}}.{{dlc-}}
+* Rainbow Worm can't give the effects of worms that are already in effect (with {{I|Mom's Purse}} or {{I|Belly Button}}) or ones that were [[Smelter|gulped]].
+** Therefore, somehow gulping all the worm trinkets in one run makes Rainbow Worm useless.
+** {{dlc|r}} Rainbow Worm acts as giving a second copy of worms you're currently holding, usually doubling any stat increases of the worm.
+
+== Synergies ==
+* {{I|Mom's Box|anr}}: Doubles the effect of each worm.
+* {{A|Golden Trinket|r}} / {{i|Mom's Box|r}} / {{t|Rainbow Worm|r}} : Having Rainbow Worm as a Golden Trinket doubles the effect of each worm if possible whereas having Mom's Box triples them.
+** Having both quadruples the effect of each worm if possible.
+* {{i|Tractor Beam}}: The altered patterns tears travel in is confined to the beam allowing Isaac to benefit from the stat bonuses granted without losing accuracy.
+
+== In-game Footage ==
+{{#ev:youtube|lnYE_pn19LA}}
+
+== Trivia ==
+* This trinket is used in [[Challenge]] #28 ([[PRIDE DAY!]]).
+
+== Gallery ==
+<gallery>
+File:Trinket Rainbow Worm concept.png|Concept for Rainbow Worm.
+</gallery>
+
+{{nav|worm|fr=Ver Arc-En-Ciel}}

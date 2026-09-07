@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | id          = 228
+ | quote       = Fear shot {{dlc|r|+ tears up}}
+ | description = Adds a chance to shoot [[Fear|fear tears]]. {{dlc|nr}} Decreases [[tear delay]] by 1. {{dlc|r}} +0.5 [[fire rate]].
+ | quality     = 2
+ | tags        = summonable mom tearsup offensive
+ | pool        = mom's dressing table-a+
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Adds a chance to shoot [[Status Effects#Effects|fear tears]].
+* {{dlc|nr}} {{tear delay down|1}}
+* {{dlc|r}} +0.5 [[fire rate]].
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc+|a+}} This item has a 1% chance to spawn when bombing {{m|Mom's Dressing Table}}. Multiple copies can be obtained through this method.{{dlc-}}
+* Fear tear effect depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac{15}{100 - \left \lfloor \mathit{Luck} \right \rfloor}</math>
+** At base luck (0), the chance is 15%, maxing out at 100% at 85 luck.
+** {{i|Dark Matter}} is significantly better at inflicting fear than Mom's Perfume.
+
+== Synergies ==
+* {{i|Compound Fracture}} / {{i|Cricket's Body}} / {{i|Haemolacria}} / {{i|The Parasite}}: If the main tear causes fear, the split tears cause fear too.
+* {{I|Finger!}}: Finger can also apply the fear effect.
+* {{i|Lachryphagy}}: If a fear tear is fed, all burst tears cause fear. If a normal tear is fed, the burst tears cannot cause fear.
+* {{I|The Ludovico Technique}}: The tear flickers yellow, capable of inflicting fear when it does.
+
+== Interactions ==
+* {{i|Abaddon}}: The chance to inflict fear does not stack.
+* {{Dlc|nr}} '''Mom's Perfume''': Tear delay down does not stack.
+
+== In-game Footage ==
+{{#ev:youtube|Sc0T8UE9U4k}}
+
+== Gallery ==
+<gallery>
+File:Rebirth Item Concept.jpg|Rebirth item concepts, including Mom's Perfume.
+</gallery>
+
+{{nav|yes mother|mom}}

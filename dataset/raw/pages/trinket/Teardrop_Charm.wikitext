@@ -1,0 +1,25 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 139
+ | quote       = It feels lucky
+ | description = [[Luck#Luck-based tear effects|Luck-based tear effects]] have a higher chance of occurring.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* [[Luck#Luck-based tear effects|Luck-based tear effects]] (i.e. [[Status Effects|status-inflicting]] tears or other effects, such as {{i|Euthanasia}}) have a higher chance of occurring.
+** The bonus is equivalent to +4 Luck, but the other benefits of Luck do not apply.
+
+== Notes ==
+* Because the bonus is a flat +4 Luck, this trinket works best on items that require a low luck stat to trigger most often.
+** These items include {{i|Ghost Pepper}}, {{i|Bird's Eye}}, {{i|Holy Light}}, {{i|Knockout Drops}}, {{i|Lodestone}}, {{i|Mom's Eye}}, {{i|Parasitoid}}, {{i|Rotten Tomato}}, and {{i|Tough Love}}
+* The bonus only affects Isaac's tears, the [[familiar]]s that copy Isaac's tear effects (such as {{i|Incubus}}) do not benefit from the trinket.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Each copy gives an additional +2 Luck flat to the trinket.
+
+== Trivia ==
+* [[anti:Teardrop Charm|Teardrop Charm]] is from the ''Antibirth'' mod. In ''Antibirth'', the bonus was equivalent to +3 Luck.
+
+{{nav|fr=Larmulette}}

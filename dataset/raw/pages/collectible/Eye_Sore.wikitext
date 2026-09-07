@@ -1,0 +1,40 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 558
+ | quote       = More eyes
+ | description = Causes Isaac to occasionally fire extra tears in random directions while shooting.
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+{{distinguish visual|Giant Cell}}
+
+{{cit|p|r}}
+
+== Effects ==
+* When Isaac shoots, he has a chance to fire 1-3 additional tears in random directions.
+** The chance to fire extra tears is unaffected by luck.
+
+== Synergies ==
+* {{i|Brimstone}}: Gives a chance to shoot 1-3 additional Brimstone lasers in random directions.
+** '''Brimstone''' + '''Monstro's Lung''': Overrides the Monstro's Lung + Brimstone synergy.
+* {{I|Epic Fetus}}: More marks appear orbiting around where you're aiming.
+* {{I|Eye of the Occult}}: Control of all tears' direction means all of the extra shots still travel in the direction in which the fire button is held, providing a substantial increase in DPS.
+* {{i|Monstro's Lung}}: Gives a chance to shoot 1-3 additional Monstro's Lung bursts in random directions.
+* {{i|Tech X}}: Gives a chance to shoot 1-3 additional laser rings in the same general direction as the main laser ring. Extra rings randomly deviate by up to about 25 degrees from the main ring, and their size and damage also scale with the main one.
+* {{i|Technology}}: Gives a chance to fire 1-3 additional lasers in random directions.
+* {{i|Tiny Planet}}: The 1-3 additional tears orbit as Isaac's normal tears would, noticeably increasing damage.
+
+== Interactions ==
+* {{I|Dr. Fetus}}: '''Not recommended.''' When Isaac shoots, he has a chance to fire 1-3 additional bombs in random directions. Without {{i|Pyromaniac}} or {{i|Host Hat}}, self damage likely to happen.
+* {{i|The Ludovico Technique}}: Overrides Eye Sore.
+* {{i|Sprinkler}}: Sprinkler does not shoot extra tears.
+* {{i|Tractor Beam}}: Extra tears do not follow the beam.
+
+== Trivia ==
+* [[anti:Eye Sore|Eye Sore]] originates from the ''Antibirth'' mod, and by extension, from the ''Community Remix'' mod for the flash version.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+* This item is likely a reference to [[nuclearthrone:Eyes|Eyes]], a character in Nuclear Throne.
+
+== References ==
+<references />
+
+{{nav|fr=Les Yeux de la Tête}}

@@ -1,0 +1,36 @@
+{{infobox trinket
+ | name        = Mysterious Paper
+ | id          = 21
+ | quote       = ???
+ | description = Has a chance to replicate the effects of {{t|A Missing Page}}, {{i|The Polaroid}}, {{i|The Negative}}, or {{t|Missing Poster}}.
+ | tags        = {{dlc|r+|nochallenge}}
+ | unlocked by = Mysterious Paper
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* On every frame, it has a random chance to grant the effect of one of the following items/trinkets:
+** {{i|The Polaroid}}
+** {{i|The Negative}}
+*** {{dlc|r}} Does not include the +1 [[damage]] bonus.
+** {{t|A Missing Page}}
+** {{t|Missing Poster}}
+* If Isaac does not already have the item/trinket, then he will be given the item (but only for that particular frame). This means that Isaac has a chance to go to {{s|Chest}} or the {{s|Dark Room}} without {{i|The Polaroid}} or {{i|The Negative}}, he has a chance to revive as {{C|The Lost}} upon death, and so forth.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Will activate effects of both {{i|The Polaroid}} and {{i|The Negative}} OR {{t|A Missing Page}} and {{t|Missing Poster}} at the same time.
+
+== Notes ==
+* In addition to regular trinket drop sources, Mysterious Paper is guaranteed to drop from {{I|Divorce Papers}}, provided it has been unlocked.
+* If the Missing Poster effect is activated, Mysterious Paper will not be removed.
+* {{dlc|r}} This trinket cannot be used to substitute {{I|The Polaroid}} or {{I|The Negative}} to open {{achievement|A Strange Door|n}}.
+* {{dlc|r}} The {{E|Black Heart}} damage bonus of {{T|A Missing Page}} will work, provided a heart/item affected by it will trigger on the frame it's active.
+* {{dlc|a}} If it happens to grant {{t|Missing Poster}}, it can be used to unlock {{c|The Lost}} and will act as an extra life for both the Lost and the {{C|Tainted Lost}}.
+
+== In-game Footage ==
+{{#ev:youtube|nm9Ba7eZ1BY}}
+
+{{nav|eden unlock|blue baby boss unlock|fr=Papier Mystérieux}}
+[[Category:Damage-triggered items]]
+[[Category:Trinkets]]

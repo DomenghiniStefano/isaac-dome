@@ -1,0 +1,25 @@
+{{infobox trinket
+ | id          = 39
+ | quote       = Yay, cancer!
+ | description = {{dlc|nr}} -2 [[tear delay]] (effectively increases fire rate of tears).<br>{{dlc|r}} +1.0 [[fire rate]].
+}} {{disambig msg|the trinket|the item|Cancer}}
+
+{{cit|t}}
+
+== Effect ==
+* {{dlc|nr}} {{tear delay down|2|no bullet=yes}}
+* {{dlc|r}} +1.0 [[fire rate]].
+
+== Notes ==
+* Cancer's tear delay reduction scales with the current tear modifier's fire rate multiplier, the only exception being {{i|Chocolate Milk}}.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}}: Having either increases [[fire rate]] by 2.0. Having both by 3.0.
+
+== In-game Footage ==
+{{#ev:youtube|VfK-85BooD4}}
+
+== Trivia ==
+* The pickup quote is a tribute to the community of the original game. Due to the usefulness of the trinket in the original ''The Binding of Isaac,'' it became a popular joke to consider "getting cancer" as a good thing.
+
+{{nav|fr=Cancer (Babiole)|es=Cancer (baratija)}}

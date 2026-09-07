@@ -1,0 +1,43 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 156
+ | quote       = HP up
+ | description = Grants one [[Health#Red Heart Containers|heart container]].
+ | tags        = {{dlc|nr+|mom}}
+ | unlocked by = Mother's Kiss}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Grants one [[Hearts#Red Heart Containers|heart container]] while held.
+** This heart container will be filled the first time the trinket is picked up.
+
+== Notes ==
+* If the only heart container Isaac has is the one given by Mother's Kiss, the trinket will be destroyed if the heart container is traded/consumed.
+** The trinket will get destroyed even if smelted via {{i|Smelter}}, {{i|Marbles}}, or a [[Pills|Gulp! pill]].
+* If Isaac drops the trinket while he only has one heart container for health, he will have no health and die instantly.
+** This also means that using {{p|0 - The Fool?}} card will do the same, even if he has soul hearts.
+* The extra red heart container can exceed the maximum coin heart container limit of {{c|Keeper}} and {{c|Tainted Keeper}}, allowing them to obtain more than 3 or 2 [[Health#Coin Hearts|coin hearts]], respectively.
+* The heart added is a soul heart for {{c|???}} and {{c|Tainted Bethany}}, and a black heart for {{c|Black Judas}} and {{c|Tainted Judas}}.
+** Using The Fool? card as one of these characters while holding this trinket will kill you instantly, as it drops the trinket, removing the last half soul heart that you normally would remain with.
+* {{c|The Forgotten}} will always get a {{E|Bone Heart}} regardless of whether the body or the soul picked up the trinket.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}}: Adds 1 more heart container per copy.
+** If the trinket is picked up while holding '''Mom's Box''', 1 heart container will not be filled.
+* {{i|Guppy's Paw}}: The trinket will be consumed, but the soul hearts from conversion are kept.
+* {{I|Potato Peeler}}: The trinket will be consumed, but the damage and {{I|Cube of Meat}} is kept.
+
+== In-game footage ==
+{{#ev:youtube|qoxZ_PIiQ4I}}
+
+== Bugs ==
+{{bug|dlc=nr+|Mother's Kiss will not contribute to the Yes Mother? transformation nor unlocking {{i|Mom's Contacts}} despite having the item tag.}}
+{{bug|While playing as characters who cannot have red HP, if Mother's Kiss is picked up while having 12 Soul/Black Hearts, Mother's Kiss will not trigger until damage is taken. However, if only half a heart of damage is taken, Mother's Kiss will immediately restore the health back to a full 12 but believe its effect failed due to not restoring a full heart's worth, allowing it to trigger again and again until a full heart of damage is taken, after which it will cease taking effect. If combined with {{I|The Wafer}}, this makes any of the aforementioned 6 characters virtually invincible as long as their health is not reduced in any way through Devil Deals, Health Down pills, etc.<ref>https://www.youtube.com/watch?v=J_L8jJee0dM</ref>}}
+{{bug|Dropping Mom's Box will not remove the second heart container until the trinket is dropped.}}
+{{bug|Dying and respawning with {{i|Dead Cat}} will respawn you with only 1 heart container, meaning you will instantly die if you drop the trinket.}}
+
+== References ==
+{{reflist}}
+
+{{nav|mom|tainted magdalene unlock|mother unlock|fr=Bisou de Maman}}

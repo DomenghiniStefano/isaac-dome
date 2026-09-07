@@ -1,0 +1,81 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 449
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = It itches...
+ | description =  Grants one {{E|Soul Heart}}. Enemy shots have a chance to be reflected at the shooter as [[confusion|confusing]] tears.
+ | quality     = 1
+ | tags        = summonable
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Grants one {{E|Soul Heart}}.
+* Enemy shots that hit Isaac have a 25% chance to be reflected.
+** Isaac does not take damage from the reflected tears, but gets pushed a bit.
+** The reflected tears are [[homing]] and [[Status Effects#Confusion|concussive]], and use Isaac's [[Damage]] and [[Tear effects]].
+*** Projectiles that create other projectiles (e.g. {{E|Shady}}) can harm Isaac and be reflected.
+** Can reflect:
+*** {{dlc+|r}} Fireballs (e.g. from {{E|Crackle}}), but their lines of fire harm Isaac.{{dlc-}}
+*** Fire projectiles (e.g. from {{E|Mega Satan}}).
+*** {{dlc+|r}} Obstacles thrown by {{E|Polty}} or {{E|Kineti}}.{{dlc-}}
+** Does not reflect:
+*** Explosive projectiles (e.g. from {{E|Gurgle}}).
+*** Lasers or beams.
+*** {{dlc|r}}Lines of fire from fireballs.
+*** {{dlc+|r}} Projectiles from {{E|Big Bony}}, {{E|Coal Boy}}, {{E|Danny}}.{{dlc-}}
+
+== Interactions ==
+* The following items that change the property of Isaac's tears affect the reflected tears:
+** {{I|Eye of the Occult}}
+** {{I|Haemolacria}}
+** {{I|Ipecac}}
+** {{I|Lachryphagy}}
+** {{I|My Reflection}}
+** {{I|Pop!}}
+** {{I|Tiny Planet}}
+** {{I|Trisagion}}
+* The following items that modify Isaac's tears do not affect the reflected tears, aside from stat changes (if present):
+** {{I|Brimstone}}
+** {{I|Chocolate Milk}}
+** {{I|C Section}}
+** {{I|Cursed Eye}}
+** {{I|Dr. Fetus}}
+** {{I|Epic Fetus}}
+** {{I|The Ludovico Technique}}
+** {{I|Mom's Knife}}
+** {{I|Monstro's Lung}}
+** {{I|Neptunus}}
+** {{I|Spirit Sword}}
+** {{I|Technology}}
+** {{I|Tech X}}
+* {{I|20/20}} / {{C|Keeper}} and other multi-shot effects: Do not add the reflected tears.
+* {{I|Anti-Gravity}} / {{I|Tractor Beam}}: Does not affect the reflected tears, aside from stat changes.
+* {{I|Cone Head}}: Metal Plate's chance of reflecting effect is applied first.
+** This leaves Isaac 40% chance to negate tears in any way.
+* {{I|Dead Eye}}: The reflected tears grant the damage multiplier, but do not reset it even when they miss.
+* {{I|Eye of Greed}} / {{I|Lead Pencil}}: The reflected tears are not counted for shots fired.
+* {{I|Gnawed Leaf}}: Tears can be blocked while Isaac is invulnerable.
+** This leaves Isaac 62.5% chance to negate tears in any way.
+* {{I|Hallowed Ground}}: Metal Plate's chance of blocking effect is applied first.
+* {{I|Infamy}}: Infamy's chance of blocking effect is applied first. Tears blocked by Infamy are not reflected by Metal Plate.
+** This leaves Isaac 62.5% chance to negate tears in any way.
+* {{I|Isaac's Heart}}: Tears can be blocked when hitting the heart, not Isaac.
+* {{P|Holy Card}} / {{i|Holy Mantle}}: Metal Plate's chance of blocking projectiles is applied before the shield, allowing it to be saved.
+* {{I|Host Hat}}: Host Hat's chance of blocking effect is applied first. Tears blocked by Host Hat are not reflected by Metal Plate.
+** This leaves Isaac 40% chance to negate tears in any way.
+* '''Metal Plate''': Additional copies of this item, such as from {{I|Diplopia}} / {{I|Crooked Penny}}, have no effect.
+
+== In-game footage ==
+{{#ev:youtube|NBaOqLD9PaI}}
+
+== Trivia ==
+* The description of Metal Plate is a reference to ''[[wikipedia:The Texas Chainsaw Massacre 2|Texas Chainsaw Massacre 2]]''.<ref>https://twitter.com/FocketFox/status/917204265952714753</ref>
+* Metal plates are sometimes surgically implanted in people's heads, typically to cover a hole in the skull.
+
+== References ==
+{{reflist}}
+
+{{nav}}
+[[Category:Damage-preventing items]]

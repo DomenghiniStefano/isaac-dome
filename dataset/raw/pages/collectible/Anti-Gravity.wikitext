@@ -1,0 +1,64 @@
+{{infobox passive collectible
+ | id          = 222
+ | quote       = Anti-gravity tears + tears up
+ | description = Tears float in position until firing ceases, after which they will fly off in the direction they were shot in. {{dlc|nr}} -2 Tear Delay. {{dlc|r}} +1 Fire Rate.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Holding the fire buttons causes tears to hover in midair. When released, the tears will all shoot in the direction they were originally fired.
+** If the fire buttons are not released, the tears will fire on their own after 3 seconds.
+* {{dlc|nr}} {{tear delay down|2}}
+* {{dlc|r}} +1.0 [[fire rate]].
+
+== Notes ==
+* Gravitational effects, such as {{E|Mega Fatty}}'s inhalation or a {{E|Gaping Maw}} will pull floating tears toward them.
+* The [[range]] attribute only affects the lifespan of the tears after they have been released.
+* Hovering tears can damage monsters like {{E|Knight}}s or {{E|Mask of Infamy}} from the front, even if they don't have the [[piercing]] effect.
+
+== Synergies ==
+* {{I|C Section}}: Fetuses stand in place while the fire button is held. They will still home on enemies in this state. Fetuses attacking this way deal more damage.
+* {{C|The Forgotten|a+}}: Each swing of his club creates an additional hitbox in front of him that lasts for about a second before proceeding forward and disappearing. The club throw is unaffected.
+* {{i|Lachryphagy}}: Tears will float in midair, making them easier to feed. Burst tears will also float in midair before moving.
+* {{i|Proptosis}}: The tears will not decrease in size or damage until they start moving, making this excellent against enemies that chase Isaac.
+* {{C|Tainted Magdalene}}: Hug swipes float, allowing for extra hits as the swipes remain mid-air.
+* {{I|Tech.5|r}}: Creates floating laser balls that will all fire simultaneously when the fire button is released.
+* {{i|Technology Zero}}: All of the tears fired are connected by electricity, creating a series of electric fences.
+* {{i|Tiny Planet|nr}}: Tears stay in place until released, they will start to orbit around Isaac when released.
+** {{dlc|r}} Tears orbit close to Isaac when held, then snap to the edge of the orbit when released.
+
+== Interactions ==
+* {{c|Azazel}} / {{i|Brimstone}}: A red mist expands and then contracts, doing contact damage to any enemy that touches it. It then fires the original Brimstone shot before disappearing. It allows a new shot to be charged up immediately after firing without interrupting the first shot. It does not increase the range of Azazel's Brimstone beam.
+** {{dlc|nr}} '''Brimstone''' + {{tf|Conjoined}}: Fires a single laser instead of a triple laser.
+** '''Brimstone''' + {{i|Soy Milk}}: Brimstone continues firing from the position it was fired.
+* {{i|Bob's Rotten Head}}: Continues to hover in the air while the fire button is pressed after launching it.
+* {{i|Chocolate Milk}}: Overrides Anti-Gravity.
+** {{i|Chocolate Milk}} + {{i|Soy Milk}}: Tears are released immediately, despite not charging.
+* {{i|Compound Fracture}} / {{i|Cricket's Body}} / {{i|Haemolacria}} / {{i|The Parasite}}: Burst tears will not hover even if a fire button is held.
+* {{i|Cursed Eye}} / {{i|Dr. Fetus}} / {{i|Epic Fetus}} / {{i|Eye of the Occult}} / {{i|The Ludovico Technique}} / {{i|Marked}} / {{i|Mom's Knife}} / {{i|Monstro's Lung}} / {{i|Tech X}}: Only tear delay down applies.
+* {{i|Diplopia}}: No effect; -2 tears delay does not stack.
+* {{i|Euthanasia}}: If a needle tear destroys an enemy and the fire button is held, the burst needles will hover until the button is released.
+* {{i|Kidney Stone}}: When the Kidney Stone effect is activated, the tear barrage will hover until released. The stone will not hover and will travel regardless.
+** {{dlc|r}}: ('''Not recommended''') The anti-gravity effect stays in place for the whole duration of the tear barrage even if the fire button isn't held resulting in a complete loss of control of fire for as long as the barrage is active.
+* {{i|A Lump of Coal}}: Despite the visual increase in size, damage still only increases based on the distance traveled.
+** {{dlc|a+}} Tears no longer increase in size while hovering.
+* {{i|Multidimensional Baby}}: Multidimensional Baby will travel the same path as the Anti-Gravity tears, easily doubling any stationary shots. Any moving tears that hit it will produce a normal moving copy, however stationary tears will spawn a copy that will eventually fall to the ground even after the direction is released.
+** {{dlc|a+}} Stationary duplicated tears will release normally.
+* {{i|My Reflection}}: Combines both effects. Tears no longer hover in place; instead, they will weakly home in on Isaac like he is a pivot point, following as he moves. Releasing the attack buttons will launch the tears from their position as usual.
+* {{I|Notched Axe|r}}: Melee attacks will generate a hovering tear in the shape of the swing of the pickaxe.
+* {{i|Spirit Sword}}: Sword beams are affected normally by Anti-Gravity. Regular sword swipes are unaffected, but spin attacks freeze for a short time before firing.
+* {{i|Technology|nr}}: Only tear delay down applies.
+** {{dlc|r}} Creates floating laser balls that will all fire simultaneously when the fire button is released.
+
+== In-game Footage ==
+{{#ev:youtube|TlaKaypX6yg}}
+
+== Trivia ==
+* Isaac's appearance bears a strong resemblance to the character Dr. Manhattan of the graphic novel ''[[Wikipedia:Watchmen|Watchmen]].
+* After picking up Anti-Gravity, whenever Isaac picks up an item that alters the appearance of his face, his head becomes the same color as {{C|???}}'s.
+* This item is used in {{chal|Waka Waka}}.
+
+{{nav|fr=Antigravité}}

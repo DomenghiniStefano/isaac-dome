@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | id          = 91
+ | quote       = See-through doors
+ | description = Reveals type of adjacent rooms, including location for {{R|Secret Room}}s and {{R|Super Secret Room}}s. {{Dlc|r}} Reveals rooms up to 2 rooms away and blocks projectiles falling from above.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Reveals on the map what type of [[room]] all rooms adjacent to your current room are (Shop, Sacrifice Room, etc.).
+** Can also reveal {{r|Secret Room}}s, {{r|Super Secret Room}}s, and {{r|Mini-Boss Room}}s.
+** {{Dlc|r}} Reveals rooms up to 2 rooms away.
+* {{Dlc|r}} Blocks projectiles falling from above.
+** Cannot block Mom's Foot or other stomp attacks.
+
+== In-game Footage ==
+{{#ev:youtube|tNH8Pna9f8k||inline}} {{#ev:youtube|ZOHv0O5YvSs||inline}}
+
+== Trivia ==
+* The item is a reference to the game [[wikipedia:Spelunky|Spelunky]].
+* Despite being a light source such as the {{I|Night Light}}, this item does not project a beam of light.
+* In the original ''Binding of Isaac'', Spelunker Hat was not unlocked by default and had to be unlocked by beating The Caves for the first time.
+
+{{nav|fr=Casque de Spéléologue}}

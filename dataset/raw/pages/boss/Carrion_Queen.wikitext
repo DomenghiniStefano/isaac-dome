@@ -1,0 +1,59 @@
+{{infobox boss
+ | id          = 28
+ | image name  = * {{dlc|nr|Rebirth}}
+ | variant     = 2
+ | environment = <u>Boss</u><br>{{floor|Catacombs}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Chest}}{{floor|Dark Room}}<br><u>Alternate path</u><br>{{floor|Corpse}}
+ | base hp     = 350
+ | pool        = {{ip|Boss}}<br> {{i|Bone Spurs|r+}} (1% chance)
+}}
+
+'''Carrion Queen''' is a [[boss]] that can appear in the {{s|Catacombs}}.
+
+== Behavior ==
+=== Phase 1 ===
+Carrion Queen is only vulnerable in the flesh segment of her behind. She moves randomly around the room in cardinal directions and can perform the following attacks:
+* Carrion Queen charges at Isaac whenever he lines up with one of her cardinal directions.
+** Like {{e|Chub}}, Carrion Queen eats any {{e|Bomb}}s dropped in her path; stunning her for a moment before dealing considerable damage.
+* Spawns a damaging {{E|Red Poop}}, up to a maximum of 5.
+** She damages and destroys Red Poop she charges into.
+
+=== Phase 2 ===
+* When below half health, Carrion Queen begins to move diagonally, similar to {{e|The Hollow}}, but without flight. She no longer performs her previous attacks from '''Phase 1'''.
+** She will bounce off of obstacles and her own Red Poop damaging it and destroying it in the process.
+Carrion Queen deals a whole heart of contact damage in both phases.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|20}}: Carrion Queen moves slightly quicker, has 100% more HP (700), and spawns small {{E|Mask + Heart|text=Hearts}} instead of Red Poop. The hearts have 28 HP and killing them deals 40 damage to Carrion Queen. She does not bounce diagonally around the room when below half health.
+
+== Gallery ==
+<gallery>
+File:Boss Carrion Queen pink ingame.png|Pink Champion Carrion Queen.
+File:Boss Delirium Carrion Queen ingame.png|{{dlc+|a+}} Carrion Queen as one of {{e|Delirium}}'s forms.{{dlc-}}
+</gallery>
+
+== Notes ==
+* [[Piercing]] tears make the fight much easier, as tears can pass through Carrion Queen's invulnerable segments and hit her vulnerable segment.
+
+== Trivia ==
+* Carrion Queen was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* In the flash version, the Carrion Queen could also be encountered in {{s|Necropolis}}.
+* She is the posthumous version of {{e|Chub}}.
+** Since the Carrion Queen is a posthumous version of Chub, and both appear in Chapter 2, this makes Chub one of four bosses to have its poshumous version in the same chapter the others being {{e|Gemini}} having {{e|Blighted Ovum}} in [[Chapter 1]], {{e|Polycephalus}} having {{e|The Stain}} in Chapter 2 and the {{e|Tuff Twins}} having {{e|The Shell}} in [[Chapters|Chapter 2.5]].
+*** However, Chub and the Carrion Queen don't share the same environment, as Chub can appear in The {{s|Caves}} and The {{s|Flooded Caves}}, while the Carrion Queen can only appear in The {{s|Catacombs}}, where Chub cannot.
+* {{dlc+|r}} She is the boss version of the {{e|Carrion Princess|text=Carrion Princesses}}.{{dlc-}}
+* [[wikipedia:Carrion|Carrion]] is another word for the rotting flesh of a dead animal, often eaten by scavengers like vultures, coyotes, maggots, etc.
+* The name "Carrion Queen" could be inspired by a level of [[wikipedia:Super Meat Boy|Super Meat Boy]] under the name "King Carrion".
+* Despite the Carrion Queen being an invertebrate, or an animal lacking a skeleton of bones, she has a skeletal appearance.
+* {{Dlc|nr}} During the death animation, Carrion Queen's head doesn't burst into blood. Instead, it flattens and instantly disappears.
+* In the [[Bestiary]], she is referred to as "The Carrion Queen".
+
+== Bugs ==
+{{bug|dlc=na+|Sometimes when entering the boss room and skipping the cut scene, Carrion Queen will spawn in the door, dealing damage to the player.}}
+{{bug|While [[petrification|petrified]], her entire body can be damaged.}}
+{{bug|dlc=r|Each of the three segments of Carrion Queen will drop a heart instead of just one.}}
+{{bug|dlc=r|Carrion Queen's last segment can be temporarily disconnected with {{i|Anima Sola}}.}}
+
+{{nav|boss|fr=La Reine Charogne}}
+[[Category:Chapter 2 bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Debut bosses in Rebirth]]

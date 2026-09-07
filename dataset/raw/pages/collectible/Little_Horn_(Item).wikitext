@@ -1,0 +1,61 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 503
+ | quote       = {{dlcalt|Science!|r=Big brother is watching}}
+ | description = {{dlc|nr}} Adds a chance to fire a [[Tear Effects#Piercing|piercing tear]] that instantly kills any enemy that it touches.<br>{{dlc|r}} Adds a chance to fire a tear that summons [[Big Horn]]'s hand to crush the first enemy it hits, instantly killing monsters or greatly damaging bosses.
+ | quality     = 3
+ | tags        = summonable offensive
+}} {{disambig msg|the item|the boss|Little Horn}}
+
+{{cit|p|a+||Little Horn}}
+
+== Effects ==
+* {{dlc|nr}} Adds a chance to fire [[Tear Effects#Piercing|piercing tears]] which will instantly kill any non-boss enemy.
+* {{dlc|r}} Adds a chance to fire a tear that summons {{E|Big Horn}}'s hand. It will grab and crush any non-boss enemy, killing them instantly, and attacks bosses 3 times for 12 damage each hit (even {{E|Big Horn}} himself).
+** If the tear kills an enemy, it will be [[fear]]ed for a moment before being crushed.
+* Running into enemies deals 3.5 damage to them.
+** Damage is dealt up to twice per second per enemy.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Little Horn}} or {{e|Big Horn}}.{{dlc-}}
+* The chance to fire special tears depends on the [[luck]] stat, and the formula used to determine the chance is: <math>min(\frac1 { 20 - \left \lfloor \mathit{Luck}  \right \rfloor}, 20\%)</math>
+** At base luck (0), the chance is 5%, maxing out at 20% at 15 luck.
+* The special tears will kill some normally invulnerable monsters, such as {{E|Death's Head}}s, {{E|Stoney|text=Stonies}}, and {{E|Peep}}'s floating eyeballs.
+* {{dlc|nr}}The special tears can also destroy {{E|Blue Fire Place}}s and {{E|Purple Fire Place}}s.
+* The special tears can destroy the various spiked blocks ({{E|Wall Hugger}}, {{E|Slide}}, and {{E|Poky}}) as well as the variants of {{E|Stone Grimace}}. All of these won't respawn if Isaac leaves and re-enters the room.
+* {{dlc|nr}}The contact damage effect overrides the superior contact damage from {{i|Aries}}, {{i|The Gamekid}}, {{i|My Little Unicorn}} / {{p|VII - The Chariot}}, and {{i|The Nail}}. Only {{i|Midas' Touch}} still works and deals an additional 3.5 damage.
+** {{dlc|r}} The contact damage adds to other contact damage sources.
+
+== Synergies ==
+* {{i|Angelic Prism}}: Little Horn tears can be split by the prism and will be quadrupled when they pass through it.
+* {{dlc|r}} {{i|Brimstone}}/{{i|Mom's Knife}}: Each damage tick may trigger Little Horn's effect.
+* {{i|Evil Eye}}: Eyes can fire Little Horn tears. Little Horn tears won't destroy other eyes.
+* {{i|Jacob's Ladder|dlc=r}}: Enemies hit by Jacob's Ladder's arcs produced by a Little Horn tear will be hit by Big Horn's hand.
+* {{i|Kidney Stone}}: The stone can have the Little Horn effect.
+* {{i|Soy Milk}}: Due to its high tear rate, the effect will trigger very often, even with average luck stats.
+* {{i|Saturnus}}: Little Horn tears can orbit around Isaac upon entering a room.
+* {{dlc|r}}{{i|Tech.5}}/{{i|Technology}}/{{i|Tech X}}: Occasionally fires a Little Horn laser beam.
+* {{dlc|r}}{{i|Technology 2}}: The laser can also trigger Little Horn’s effect with the laser’s chance to apply the effect being determined rapidly every tick.
+
+== Interactions ==
+* {{dlc|nr}}{{i|Brimstone}}/{{i|Mom's Knife}}/{{i|Technology}}/{{i|Tech X}}: Overrides Little Horn’s tear effects.
+* {{dlc|nr}}{{i|Dr. Fetus}} / {{i|Epic Fetus}}: Overrides Little Horn’s tear effects.
+** {{dlc|r}} Black-tinted bombs can summon Big Horn's hand to instantly kill non-boss enemies or to deal damage against bosses.
+* {{i|Lachryphagy}}: If Little Horn tears are fed, they will burst into split tears with the same effect. If Little Horn tears feed normal tears, however, the effect is lost.
+* {{dlc|nr}}{{i|Tech.5}}/{{i|Technology 2}}: The laser is unaffected by Little Horn.
+* {{i|Technology Zero}}: Electricity connected to Little Horn tears will not instantly kill enemies.
+
+== In-game Footage ==
+{{#ev:youtube|iuNWwKgNjaE}}
+
+== Trivia ==
+* This item might be a reference to [[wikipedia:Cutaneous horn|Cutaneous horns]], unusual keratinous skin tumors with the appearance of horns.
+* Little Horn was originally an unofficial item which was supposed to showcase the modding capabilities of Afterbirth+ in the [https://www.youtube.com/watch?v=FRR-wzTky9Q PAX 2016 livestream]. However, all items included in the demo were later added to the final game.
+* {{dlc|r}} Little Horn's description is a reference to George Orwell's novel ''Nineteen Eighty-Four''.
+** This may imply that the boss {{E|Little Horn}} is the younger brother of {{E|Big Horn}}.
+* Little Horn is a reference to the Antichrist in the book of Daniel.
+
+== Bugs ==
+{{bug|dlc=r|The item's effect cannot be triggered on Mobile Hosts while they walk.}}
+
+{{nav|fr=P'tite Corne (Objet)}}

@@ -1,0 +1,87 @@
+{{infobox passive collectible
+ | id          = 316
+ | quote       = Cursed charge shot
+ | description = Grants charged tears that can be fired in a tight burst. Getting hit while charging will teleport Isaac to another room.
+ | quality     = 0
+ | tags        = summonable offensive
+}}
+
+{{Distinguish visual|Mom's Pearl}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants charged tears which fires a tight burst of tears. Firing mid-charge will shoot fewer tears depending on the charge time.
+** {{dlc|nr}} The full burst size is four tears.
+** {{dlc|r}} The full burst size is five tears.
+** {{dlc|nr}} Quickly tapping the fire key will result in no tears being fired.
+** Charging while a burst is currently firing will prevent the rest of the shots from being fired.
+* Taking damage while mid-charge (holding fire, but not fully charged) will teleport Isaac into another room.
+
+== Notes ==
+* This item can be counterproductive, especially while fighting bosses, as getting hit while charging a shot will reset the fight.
+* The teleport effect only occurs when taking damage while in the middle of charging, before the shot is fully charged. Having a high tears stat for faster charging will decrease the window where Isaac is vulnerable to teleporting.
+* {{dlc|a+nr}} The teleporting and charge-up effects do not apply to {{C|Lilith}}. Her Incubus will fire three projectiles with each shot without needing to charge, tripling her damage output with no downside.
+* The color of Isaac's cursed eye will indicate what state it currently is in:
+** White: Inactive
+** Black: Charging up
+** Flashing black and white: Fully charged
+* Having multiple instances of Cursed Eye grants no additional effect.
+* {{dlc|r}} When fighting {{e|The Beast|n}}, Isaac will teleport to a different part of the screen if hit while charging tears instead of leaving the room. This essentially eliminates the Cursed Eye's main drawback during the fight.
+
+== Synergies ==
+* {{i|Black Candle|a}}: Teleport effect is removed.
+* {{i|Holy Mantle|a}}: Losing Holy Mantle while charging Cursed Eye will not teleport Isaac.
+* {{i|Incubus|a+}}:
+** {{dlc|nr}} Incubus fires 3 tears for each one that normally would be fired, with no change in delay.
+** {{dlc|r}} Incubus has the same charge shots as most characters would. Getting hit while charging will have the chance to teleport, as usual.{{dlc-}}
+* {{i|Marked}}: Tears are charged and automatically fired to varying levels depending on the distance between Isaac and the reticule. The firing rate is greatly increased without affecting the tears stat, even beyond normal maximum fire rate. The teleport effect is removed.
+* {{I|Technology|r}}: Becomes a quick charging laser that shoots multiple lasers on release.
+* {{I|Epiphora|r}}: Epiphora's tear rate multiplier affects the number of tears in a burst for a total of ten shots with a full Epiphora charge.
+* {{i|Technology 2}}: Laser fires while charging Cursed Eye. Tear delay for the charge is unaffected by Tech 2. Allows {{C|Cain}} to fire normal tears.
+** {{dlc|r}} Tears are replaced with lasers, fired from the same eye of Tech 2. {{tf|Conjoined}} transformation removes the synergy.
+* {{i|Mutant Spider}} / {{i|The Inner Eye}} / {{i|20/20}} / {{i|The Wiz}} / {{tf|Conjoined}}: Isaac shoots multiple tears from each eye, the amount is item-dependent.
+* {{c|The Lost}}/{{c|Tainted Lost}}: Since The Lost dies in one hit, it is effectively immune to its teleportation effects, making this item much safer to use.
+
+== Interactions ==
+* {{i|Almond Milk}}/{{i|Kidney Stone}} (when the barrage of tears is fired)/{{I|Soy Milk}}: Cursed Eye is automatically charged and fired when the fire key is held. The charge bar of Cursed Eye becomes invisible. The teleport effect remains.
+** Having a [[tears]] stat of 30 or higher will trigger this effect as well, the above items will trigger this effect regardless of Isaac's [[tears]] stat.
+** {{C|Lilith}} + {{I|Kidney Stone}}: When the kidney stone is shot, Incubus is unable to shoot for the duration of the effect, making this a anti-synergy.
+* {{i|Anti-Gravity}}: Anti-Gravity effect cannot be used, as releasing a tear fire button also releases the Anti-Gravity Effect.
+* {{C|Azazel}}/{{i|Brimstone}}/{{i|Dr. Fetus}}/{{i|Epic Fetus}}/{{i|The Ludovico Technique}}/{{i|Mom's Knife}}/{{i|Monstro's Lung}}: Overrides Cursed Eye.
+** With {{C|Tainted Samson}}/{{C|The Forgotten}}/{{I|Berserk!}}: While charging your bone you will be teleported if hit.
+* {{I|C Section}}/{{I|Neptunus}}/{{I|Spirit Sword}}/{{C|Tainted Azazel}}: Overrides Cursed Eye.
+** With {{C|Tainted Samson}}/{{C|The Forgotten}}/{{I|Berserk!}}: While charging your bone you will be teleported if hit.
+* {{i|Chocolate Milk}}: Charged tear is followed by up to 3 minimum-power tears, depending on Cursed Eye's charge.
+** {{Dlc|r}} Cursed Eye takes longer to charge, but low damage shots can be fired rapidly. If fully charged, Isaac fires five Chocolate Milk shots.
+* {{i|Eye of the Occult}}: The tears stack on top of each other, and only move forward when holding a direction afterwards.
+* {{C|The Forgotten}}: The skeleton form's charge attack becomes a rapid barrage of hits; the amount depends on how full the charge is, up to 4.
+* {{i|Ipecac}}: At full charge, quick bursts of ipecac shots are fired.
+* {{i|Neptunus}}: Overrides Cursed Eye.
+* {{i|Sprinkler}}: Overrides Cursed Eye.
+* {{C|Tainted Lilith}}: The fetus gains the effect of Cursed Eye and the teleportation effect does not happen.
+* {{i|Technology|nr}}: Overrides Cursed Eye.
+* {{i|Tech X}}: Overrides Cursed Eye.
+* {{i|Urn of Souls}}: Opening the urn while charging will hold the charge until the urn is closed. As such, the teleport effect will always occur when hit with the opened urn.
+
+==Notes==
+*In most cases effects that override cursed eye will remove the teleporting effect. 
+**{{C|Tainted Samson}}/{{C|The Forgotten}}/{{I|Berserk!}}: While in their melee form, getting hit while charging a shot will cause the teleport effect regardless of items that normally override the effect.
+*The damage per second increase is dependent on Isaac's current [[tears]] stat, with lower tears showing a larger increase. Ranging from a ~90% increase at a tear stat of 0.96 to becoming a damage loss at tear stat of ~23 or above. <ref>https://youtu.be/vUfkIGd-W2M </ref> 
+*Having a high [[Tears]] stat around 10 or above without forms of auto firing such as {{i|Soy Milk}} or {{i|Marked}} can make it difficult to properly time charge shots, potentially leading to a damage loss. 
+== In-game Footage ==
+{{#ev:youtube|kzh8lVfSdEo}}
+
+== Trivia ==
+* This item may be a reference to Edgar Allan Poe's "The Tell-Tale Heart" where the narrator talks about murdering an old man because of his "evil eye", which is described to look like The Cursed Eye.
+** The concept of unluckiness brought about by someone's evil eye is not unique, and also appears across many different cultures.
+* {{Dlc|nr}} When {{C|Keeper}} charges up his shots his eye is reminiscent of a dollar sign. This is a pure coincidence, as he has no specific costume for Cursed Eye.<ref>https://www.reddit.com/r/bindingofisaac/comments/5qv8ac/til_when_keeper_starts_charging_cursed_eye_his/</ref>
+
+== Bugs ==
+{{bug|dlc=a+|In Greed mode, taking Red Heart damage while charging will decrease the displayed Devil Room chance on the Found HUD to 0%. It returns to 100% if the button is pressed again.}}
+
+== References ==
+{{reflist}}
+
+{{nav}}
+[[Category:Damage-triggered items]]

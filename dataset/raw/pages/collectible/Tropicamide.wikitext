@@ -1,0 +1,25 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 659
+ | quote       = Tear size + range up
+ | description = +2.5 [[Range]], Increases tear size.
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+{{distinguish visual|Eye Drops}}
+
+{{cit|p|r}}
+
+== Effects ==
+* +2.5 [[Range]].
+* +0.22 tear size.
+
+== Interactions ==
+* {{i|Brimstone}} / {{I|Dr. Fetus}} / {{I|Mom's Knife}} : No effect on projectile size.
+* {{i|Technology}}: Laser size is increased.
+* {{I|Lachryphagy}}: Tears fired will now act as if they have been fed one tear, meaning the tear will explode into 6 parts instead of 5 if undisturbed.
+
+== Trivia ==
+* [[wikipedia:Tropicamide|Tropicamide]] is a medication used to dilate the pupils.
+
+{{nav}}

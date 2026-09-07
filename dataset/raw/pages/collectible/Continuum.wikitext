@@ -1,0 +1,62 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 369
+ | quote       = Transcendent tears
+ | description = Grants [[spectral]] tears and increases [[range]]. Tears travel through walls and appear at the opposite side of the room.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Grants [[spectral]] tears.
+* When tears travel off-screen, they loop back around through the opposite wall.
+* {{dlc|nr}} +2.25 [[range]].
+* {{dlc|r}} +3 [[range]].
+* {{dlc|nr}} +1.5 [[tear falling speed]].
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Mega Maw}}.{{dlc-}}
+* {{dlc+|r}} When fighting {{E|The Beast}} tears will not loop downward identical to a {{R|Crawl Space}}.{{dlc-}}
+
+== Synergies ==
+* {{Dlc|r}}{{C|Azazel}} / {{I|Brimstone}} / {{I|Revelation|n}} / {{C|Tainted Azazel}} / {{i|Technology}}: The laser continues behind Isaac and back once again, potentially hitting enemies twice in one blast.
+* {{i|Bob's Rotten Head|nr}}: Bob's Rotten Head can travel through walls and appear out of the opposite wall.
+** {{dlc|r}} Does not travel through the wall; instead bounces off it like with {{i|Rubber Cement}}.
+* {{dlc|a+}} {{C|The Forgotten}}: The skeleton form's charge attack can loop through walls.
+* {{i|A Lump of Coal}}: Tears will continually gain damage when passing through walls.
+* {{i|Mom's Knife}}: Causes Mom's Knife to appear on the opposite wall if thrown through one. It then returns through the wall to Isaac.
+** '''Mom's Knife''' + '''Brimstone''': The barrage of knives flies across the room until it hits the wall twice.
+* {{i|My Reflection}}: When shooting through a wall, tears speed up towards Isaac rather than returning through the original wall. With enough [[shot speed]] and [[range]] the tears can loop twice.
+* {{i|Tech X}}: Laser rings will go through walls, extra distance depending on [[shot speed]].
+** {{dlc|nr}} '''Tech X''' + {{i|Incubus}}: Incubus's laser rings cannot go through walls. This applies to {{C|Lilith}} too.
+** {{Dlc|r}} '''Tech X''' + {{i|Incubus}}: Laser rings travel through walls and continue on the other side of the room.
+* {{i|Tractor Beam}}: Causes the tears to loop right back in front of Isaac after they go offscreen.
+
+== Interactions ==
+* {{dlc|nr}} {{i|Brimstone}}: Overrides Continuum, stat effects apply.
+* {{dlc+|a+nr}} {{i|Compound Fracture}}: Tears will only split when hitting obstacles or enemies but not walls.{{dlc-}}
+** {{Dlc|r}} Tears will split on contact with walls. Only one split will occur on contact with walls and objects.
+* {{i|Dr. Fetus}}: Bombs cannot go through walls, but are spectral.
+* {{i|Epic Fetus}} / {{i|Rubber Cement}}: Overrides Continuum, stat effects apply.
+* {{i|The Ludovico Technique}}: When the tear is moved offscreen, it loops back through the opposite wall.
+* {{dlc+|nr}} {{i|The Parasite}}: Tears will only split when hitting obstacles or enemies but not walls.{{dlc-}}
+** {{Dlc|r}} Tears will split on contact with walls. Only one split will occur on contact with walls and objects.
+* {{i|Proptosis}}: Tears shrink while traveling through walls and often disappear before they can reappear on the other side.
+* {{i|Technology Zero}}: Tears will travel through walls; however, the electricity will not connect the tears while they are outside the room. Once tears have passed through walls, the electric arcs connect very erratically to other tears.
+* {{i|Tiny Planet}}: Tears that travel through walls will travel until they reach Isaac and start orbiting him again.
+
+== In-game Footage ==
+{{#ev:youtube|5mrjeislkOg}}
+
+== Gallery ==
+<gallery>
+File:Collectible Continuum concept.jpg|Concept drawn for Continuum.
+</gallery>
+
+== Trivia ==
+* The tears fired by Isaac look similar to the projectiles fired during {{E|Hush}}'s fight.
+
+{{nav}}

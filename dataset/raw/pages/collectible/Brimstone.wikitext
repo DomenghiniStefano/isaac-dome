@@ -1,0 +1,253 @@
+{{infobox passive collectible
+ | image name     = * {{dlc|na+|Rebirth}}
+ | costume name = * {{dlc|nr|Rebirth}}
+ | tear app scale = 1/2
+ | id             = 118
+ | quote          = Blood laser barrage
+ | description    = Tears are replaced with a blood laser beam that pierces through all enemies and obstacles in its path and deals high damage. Can only be fired after a short charge-up period.
+ | quality        = 4
+ | tags           = devil summonable offensive
+ | devil price    = 2
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Isaac's tears are replaced with a charged blood laser beam. The beam is [[piercing]] and [[spectral]], dealing damage to all enemies and ignoring all obstacles in its path.
+** The laser deals damage equal to Isaac's damage and deals damage each tick.
+*** These ticks occur every 1/15th of a second (once every 4 frames). However, after the first damage tick, there is an additional pause for ~0.12 seconds (7 frames). Damage ticks work normally after that.
+*** {{Dlc|nr}}Brimstone ticks 13 times over the course of 0.9 seconds (54 frames).
+*** {{Dlc|r}}Brimstone ticks 9 times over the course of ~0.63 seconds (38 frames).
+** <math>\text{Charge Time (s)} = \frac{1}{30}(Roundup(\text{Tear Delay)}) \approx \frac{1}{\text{Fire Rate}}</math>
+** {{Dlc|r}}Starting from 15.00 [[fire rate]], the beam can last indefinitely as long as the fire key is held, and higher fire rate results in higher damage and larger scale.
+*** <math>\text{Damage per Tick} = \frac{6 \times \text{Damage}}{\text{Tear Delay} + 1} = \frac{\text{Damage} \times \text{Fire Rate}}{5}</math>
+* [[Tears]] down: {{Dlc|nr}} Tear Delay × 3 / {{Dlc|r}} Fire Rate ÷ 3.
+* {{transformation contribution|Leviathan}}
+
+== Notes ==
+* {{Dlc|nr}} Brimstone is a [[special item]].
+* {{C|Azazel}} starts the game with a short-ranged, slower-charging version of Brimstone. Without the long-range version, his mini-brimstone won't have enough length to use any [[homing]] items.
+** {{Dlc|a}}His Brimstone's shorter range can be increased with [[range]]-[[Range#Items That Affect Range|increasing]] items or [[pill]]s.
+* Multi-shot effects like {{I|20/20}} will increase the number of beams accordingly, with exceptions listed below.
+** Although extremely unlikely, Isaac can shoot a total of 16 blood beams at a time via multi-shot items. If the number of blood beams would exceed this number, the beams' span will instead widen.
+* {{Dlc+|r}}{{c|Tainted Azazel}} has a full-range, but thinner beam whose damage is halved unless enemies are cursed by his inherent {{I|Hemoptysis}} sneeze.{{Dlc-}}
+* The beam will apply [[Tear effect]]s and does so frequently thanks to its high tick rate.
+* Any item that grants [[homing]] tears: will cause the beam to make sharp turns and even loops to hit enemies, which is extremely powerful. {{C|Azazel}}'s mini-brimstone does not home unless he has a high range stat.
+* This item can be crafted from {{i|Bag of Crafting}} with eight {{e|Black Heart}}s.
+
+== Synergies ==
+* {{I|20/20|a}} / {{I|The Inner Eye}} / {{I|Mutant Spider}}: Fires a spread of 2/3/4 Brimstone beams.
+** Despite the fire rate penalty caused by The Inner Eye and Mutant Spider, the overall DPS increase is more significant compared to 20/20. {{Dlc|r}}However, if combined, 20/20 negates the fire rate penalty of the aforementioned items, which results in enormous damage output.
+* {{I|Almond Milk}}: Fires automatically upon reaching full charge. The beam lasts indefinitely as long as the fire key is held. The beam can change its direction while being fired, and can be aimed in any direction with joystick controls. The beam will also gain random worm trinket effects.
+** Increasing the tears stat will increase the damage and width of Brimstone as well.
+*** Damage per Tick = (Damage × Fire Rate) ÷ 5
+* {{C|Azazel}} / {{C|Tainted Azazel|r}}: Picking up Brimstone with him will give him the regular version.
+* {{I|Apple!|a+nr}} / {{I|Euthanasia|a+nr}} / {{I|Tough Love|nr}}: The beam can gain the damage multiplier from each of the items, although there is no visual difference. The bonus applies for the whole beam and not on a per-tick basis. Euthanasia loses its instant kill ability, however.
+** {{Dlc|r}}The bonus applies randomly on every tick of the beam, including the insta-kill ability from Euthanasia.
+* {{I|Anti-Gravity}}: An orb of energy expands, then shrinks while firing the beam after a delay. The orb still hurts enemies if they touch it. Isaac can start charging a new shot immediately after releasing the fire key without canceling the first shot, effectively allowing for a faster firing rate. It makes it harder to hit enemies with {{C|Azazel}} as the beam does not increase in range. {{Dlc|r}}Size and damage of the beams no longer scales with fire rate, nor is it possible to sustain a perpetual beam at above 15 fire rate.
+** {{Dlc|r}} '''Anti-Gravity''' + {{I|Soy Milk}} / {{I|Almond Milk|n}}: Allows auto-firing upon full charge, but without permanent beam uptime.
+** {{Dlc|anr}} '''Anti-Gravity''' + {{I|Incubus|n}}: Isaac will fire Brimstone orbs, while Incubus will fire regular Brimstone beams.
+*** {{Dlc|r}} Both Isaac and Incubus fire Brimstone orbs.
+* {{T|Brain Worm}}: The beam will curve 90 degrees in order to attack opponents, effectively acting as a stronger form of homing. Very strong against multi-segment bosses such as {{e|Pin}} or {{e|Mother|n}}.
+* {{i|Brimstone}}:
+** {{Dlc|nr}} Additional copies of this item, such as from {{I|Diplopia}} / {{I|Crooked Penny}}, adds another beam, with no increase in charge time.
+** {{Dlc|r}} The first additional copy of this item grants a 1.2× damage multiplier and +1 [[damage]] and doubles the beam's width. Further copies will only grant +1 [[damage]].
+*** If combined with {{C|Azazel}}'s {{I|Birthright|n}} effect, the laser beam will be 4× wider.
+*** The bigger beam granted by double Brimstone synergizes with other items as expected.
+* {{I|Chocolate Milk|dlc=r}}: Brimstone laser takes longer to fully charge, but can be released at any point. Width and damage of the laser increases with charge, from 25% damage and 50% width at minimum charge to 250% damage and 160% width at maximum charge.
+* {{I|Continuum|r}}: Brimstone laser travels through the wall and appears out the other side once.
+** '''Continuum''' + {{i|Rubber Cement|r}}: Instead of Continuum being overridden, the beam is reflected the second time it hits the wall. This results in it potentially overlapping with itself a total of three times.
+* {{I|Cricket's Body|r}}: Spawns split tears on the first enemy or obstacle the beam hits.
+* {{i|C Section}}: Shoots 4 fetus tears along with the Brimstone beam.
+** '''C Section''' + {{i|Soy Milk|r}} / {{i|Almond Milk}}: Small fetuses fire continuously alongside the beam.
+** '''C Section''' + {{i|The Ludovico Technique}}: Fetus tears no longer fire with the Brimstone circle, even on doing damage.
+* {{I|Dead Eye}}: The damage multiplier that was gained before picking up Brimstone will now be permanent. However, saving and quitting the run will result in this damage multiplier being permanently lost (which is a bug).
+* {{I|Dataminer|r}}: Dataminer can be used to underflow Isaac's tears to immediately bring it to 120, maxing out Brimstone's width and damage via tears.
+* {{I|Epic Fetus|a}}: Adds a Brimstone Sad Bombs effect: missile explosions shoot ten beams in all directions, massively increasing damage and area of effect.
+* {{I|Explosivo|r}} / {{i|Sinus Infection|n}}: The beam has a chance to stick tears to enemies on every other tick.
+* {{dlc+|r}}{{I|Eye of the Occult}}: Creates a controllable crosshair similar to {{i|Marked}}. Fires automatically upon reaching full charge. The beam curves towards the crosshair and then attempts to hit the wall Isaac is facing.{{dlc-}}
+** '''Eye of the Occult''' + {{i|Tech.5}} / {{i|Technology 2}}: Tech.5 and Technology 2 lasers are also affected by the crosshair but cannot create the crosshair on their own.
+* {{tf|Guppy}}: [[Blue Flies]] are spawned at a rate of approximately one blue fly per tick ({{Dlc|r}}every other tick) of damage for each enemy it hits, up to 13 flies. The spawned blue flies will also move to attack the targeted enemy immediately.
+* {{I|Haemolacria}}: +20 Tear Delay after Haemolacria's tears down. Tears burst into 4-7 Brimstone beams that do Isaac's damage per tick.
+** {{C|Azazel}} / {{C|Tainted Azazel|r}}: Overrides these characters' Brimstone. Tears do not burst into Brimstone beams.
+** {{Dlc|r}} Double '''Brimstone''': Grants +1 Damage but not the 1.2× damage multiplier. The width of the beams doubles.
+** '''Haemolacria''' + {{I|Chocolate Milk}}: The Brimstone beams deal full damage regardless of charge.
+** {{Dlc|r}} '''Haemolacria''' + {{I|Technology}}: The lasers coil the beams. This is purely visual and does not grant a 1.5× damage multiplier.
+* {{I|Head of the Keeper|r}}: Makes the laser yellow and each tick has a chance to drop a coin.
+* {{i|Hemoptysis}}: Enemies hit by the sneeze will gain a curse that increases the damage Brimstone deals to 2× and +3 flat damage. Enemies who die to Brimstone under the curse will damage and spread the curse to nearby enemies.
+* {{I|Holy Light|r}}: Every tick of the beam has a chance of summoning a beam of light.
+* {{T|Hook Worm}}: Beam shifts left to right while firing straight and forms angles that constantly flatten and expand, effectively increasing its width.
+* {{I|Jacob's Ladder|r}}: Upon hitting an enemy, wall, or obstacle, the beam generates sparks that home in on enemies.
+* {{I|Lead Pencil|r}}: Lead Pencil triggers approximately every 2 seconds as the beam is fired (charge time is not counted).
+* {{I|Loki's Horns}}: Adds a chance to shoot a beam from all four cardinal directions, similarly to {{I|Head of Krampus}}'s effect.
+* {{i|Lost Contact}}: Beam destroys projectiles, although only during its damage tick interval. The projectiles are not instantly destroyed when they touch the beam.
+* {{I|The Ludovico Technique}}: The Ludovico Technique has priority. The beam forms a large ring that is controllable and does not need to be charged. The damage is dealt 15 times per second, unaffected by [[Tears]]. Enemies inside the ring without touching it are not hurt.
+** '''The Ludovico Technique''' + {{I|Brimstone}} same size and damage output multiplier as 2 copies of Brimstone, but applied to the laser ring.
+** '''The Ludovico Technique''' + multi-shot effect: No effect.
+** '''The Ludovico Technique''' + {{i|Apple!}} / {{i|Holy Light}} / Other tear effects: no effect.
+** '''The Ludovico Technique''' + {{i|C Section}}: Disables C Section. Fetuses no longer spawn.
+** '''The Ludovico Technique''' + {{I|Incubus}}:
+*** {{Dlc|nr}} Incubus' Brimstone laser is not affected by Ludovico Technique.
+*** {{Dlc|r}} Adds a smaller controllable laser ring in addition to the main one.
+** {{Dlc|r}} '''The Ludovico Technique''' + {{I|Twisted Pair}}: Adds 2 even smaller controllable laser rings in addition to the main one.
+** '''The Ludovico Technique''' + {{I|A Lump of Coal}}: The ring increases in diameter when Isaac is further; 100% when he is on the center, 1.25× when he is 12.5 tiles of distance away.
+*** {{Dlc|nr}} The damage increases with distance but is reduced while Isaac is in the ring.
+*** {{Dlc|r}} The damage increases 20% per tile of distance.
+** '''The Ludovico Technique''' + {{I|Mom's Knife}}: Overrides Brimstone.
+** '''The Ludovico Technique''' + {{I|Proptosis}}: The ring deals 1.5× Isaac's Damage at its largest, and 50% at its smallest. The ring increases in diameter when Isaac is closer; 1.25× when he is on the center, 100% when he is 12.5 tiles of distance away.
+* {{I|A Lump of Coal|dlc=a}}: The beam gradually increases in size and damage the farther it travels, with the damage increasing on a multiplier that is +20% per tile of distance. This allows for a huge damage increase from longer distances.
+* {{I|Marked|r}}: Fires automatically upon reaching full charge. Fires at the direction of the crosshair.
+* {{I|Mom's Eye}}: Adds a chance to shoot a beam from the back of Isaac's head.
+* {{I|Mom's Knife}}: Mom's Knife has priority. Does not apply Brimstone's tears down. Adds a small barrage of knives after the main knife is fired, with each knife doing {{Dlc|nr}} 80% of / {{Dlc|r}} 2× Isaac's tear damage.
+** The barrage of knives goes all the way across the screen and does not return.
+** Charge amount increases the barrage size; 2-4 knives at 0%, 8-10 knives 100%.
+** This effect does not work with {{C|Azazel}} or {{C|Tainted Azazel}}'s versions of Brimstone.
+* {{I|Mom's Wig|dlc=na+}}: Holding down a fire button to charge the attack very rapidly rolls the probability to spawn [[Blue Spider]]s; releasing to fire the beam, however, does not.
+** {{dlc|a+}} The blue spiders only spawn while the beam is firing.
+* {{I|Monstro's Lung|a}}: Brimstone has priority. Does not apply Monstro's Lung's tears down. Fires 3-5 additional beams in random directions around Isaac. This effect also applies to {{C|Azazel}} and {{C|Tainted Azazel|r}}'s Brimstone.
+** {{Dlc|nr}} Charging a new Brimstone beam removes the original from in front of Isaac, but not the additional ones added by Monstro's Lung.
+* {{I|Multidimensional Baby}}: If a brimstone laser is shot through the baby, it will double the laser.
+* {{I|My Reflection|anr}}: Makes the beam curve when moving. It has the same effect on {{C|Azazel}}'s mini-brimstone but doubles the range.
+** {{Dlc|r}}Makes the beam shoot from the back. An oval beam is shot from the front instead.
+* {{I|Mucormycosis}}: The beam has 25% chance to spawn spore to enemies on every other tick.
+* {{I|Mysterious Liquid|a}}: Leaves a creep for each enemy and obstacle the beam hits, on every other tick. {{C|Azazel}}'s Brimstone leaves creeps at the end of its range.
+* {{I|Ocular Rift}}: Rifts may appear where the beam hits rocks, walls, or enemies.
+* {{T|Ouroboros Worm|dlc=r}}: The beam will make large loops on itself. The homing is present, but unreliable.
+* {{I|The Parasite|r}}: Spawns two perpendicular beams on the first enemy or obstacle the beam hits.
+** {{dlc|r+}} Also spawns small split tears.
+* {{I|Rotten Tomato}}: Each tick of the beam's damage can mark enemies.
+* {{I|Rubber Cement|a}}: Beams bounce off of walls once, creating a second beam that deals {{Dlc|nr}}half/{{Dlc|r}}full damage.
+** {{Dlc|ana+}}If {{C|Azazel}}'s mini Brimstone beam bounces off a wall, it effectively becomes a full-length Brimstone beam, but it will still only deal half damage.
+*** {{Dlc|a+}}{{C|Azazel}}'s Brimstone no longer becomes a full length beam after bouncing, instead bouncing as a regular mini-Brimstone.
+** {{i|Soy Milk}}: The Brimstone beam bounces off the wall at a perpendicular angle to where the beam was fired.
+* {{I|Sad Bombs}}: Upon exploding, bombs release ten beams in all directions.
+** {{Dlc|r}}Brimstone does not benefit from Sad Bombs' flat damage bonus.
+* {{I|Soy Milk|dlc=r}}: Fires automatically upon reaching full charge. The beam lasts indefinitely as long as the fire key is held. The beam can change its direction while being fired, and can be aimed in any direction with joystick controls.
+** Increasing tears will also increase damage.
+*** Damage per Tick = Damage × Fire Rate / 5
+** {{I|Soy Milk|dlc=r}} + {{I|Chocolate Milk}}: The beam does 25% more damage. Does not increase Isaac's damage stat itself.
+* {{I|Strange Attractor}}: Enemies are attracted towards the beam, improving its consistency. Consumables will also be moved by the beam.
+* {{I|Sulfur}}: Grants a larger beam with a 1.2× damage multiplier and +1 damage (same effect as picking up a second Brimstone).
+* {{I|Sulfuric Acid|r}} / {{I|Terra|n}}: The beam has a chance to destroy rocks every tick. The laser will not destroy sealed doors or open secret rooms.
+** {{dlc|r+}} The beam can now open doors.
+* {{I|Tammy's Head}}: Shoots ten beams in all directions. Given the item's single room charge, this makes for an extremely powerful synergy.
+** {{Dlc|r}} Brimstone does not benefit from Tammy's Head's flat damage bonus.
+* {{I|Tech.5|a}}: Tech.5 fires normally while charging Brimstone.
+* {{I|Technology|a}}: The Technology laser coils around the Brimstone beam, granting a 1.5x damage multiplier (it stacks with other similar multipliers like {{I|Cricket's Head}} or {{I|Magic Mushroom}}).
+** {{Dlc|r}}Technology's damage multiplier will be overridden if Isaac has the powered up version (from picking up Brimstone twice or using {{I|Sulfur|n}} with Brimstone); this can decrease Isaac's damage.
+* {{I|Technology 2|a}}: Both fire normally; the Technology laser fires while charging Brimstone.
+* {{I|Tech X}}: Tech X has priority. Does not apply Brimstone's tears down. Fires a Brimstone ring. This Brimstone ring is larger than the laser ring and has a much wider hitbox.
+** {{Dlc|r}} Double Brimstone: Further increases the width of the ring, and grants +1 Damage.
+** '''Tech X''' + {{C|Azazel}}:
+*** {{Dlc|na+}} Overridden by Azazel's Brimstone.
+*** {{Dlc|a+nr}} Overrides Azazel's Brimstone. This works quite well with Azazel's good initial damage stat and also negates his initial range penalty.
+*** {{Dlc|r}} Applies 35% damage penalty and fires a Brimstone ring instead of Tech X ring. If combined with Brimstone, the damage penalty is negated.
+**** The same applies to {{C|Tainted Azazel}}.
+** '''Tech X +''' Homing Shots: The ring bends itself to hit enemies if they are nearby.
+** {{Dlc|nr}} '''Tech X''' + {{I|Mom's Knife}}: Mom's Knife and a Mom's Knife + Brimstone barrage are shot alongside the rings.
+** {{Dlc|nr}} '''Tech X''' + {{I|Technology}}: The 1.5× damage multiplier from Brimstone + Technology is lost, but the laser fires while charging the Brimstone ring.
+*** {{Dlc|r}} Fires a Brimstone ring coiled by a laser. The 1.5× damage multiplier from Brimstone + Technology is retained.
+* {{I|Tiny Planet}}: The beam will wrap around Isaac once and then shoot straight forward.
+** {{dlc|r}} '''Tiny Planet''' + {{i|My Reflection}}: The beam will first wrap around Isaac, form an oval beam in a longer range, then shoot backward. Interestingly enough, the beam will look like a G clef symbol.
+* {{I|Uranus}}: The beam will freeze any enemies killed by it, so long as they are not immune to the freeze effect.
+* {{T|Wiggle Worm}}: Beam becomes wavy while firing straight, effectively increasing its width.
+
+== Interactions ==
+Overridden by Brimstone:
+* {{I|20/20|na}}
+* {{I|Cursed Eye}}
+* {{I|Evil Eye}}
+* {{I|Eye of Belial}}
+* {{I|Explosivo|anr}}
+* {{I|Flat Stone}}
+* {{I|Head of the Keeper|anr}}
+* {{I|Holy Light|anr}}
+* {{I|Jacob's Ladder|a+nr}}
+* {{I|Kidney Stone}}
+* {{I|Lachryphagy|a+nr}}
+* {{I|Lead Pencil|a+nr}}
+* {{I|Monstro's Lung|na}}
+* {{I|Mysterious Liquid|na}}
+* {{I|Neptunus}}
+* {{I|The Parasite|nr}}
+* {{I|Parasitoid|a+nr+}}
+* {{I|Pop!|a+nr}}
+* {{I|Pupula Duplex}}
+* {{I|Rubber Cement|na}}
+* {{I|Sinus Infection|a+nr}}
+* {{I|Tech.5|na}}, unless using {{C|Azazel}}, in which case it will fire normally while charging Brimstone
+* {{I|Technology|na}}
+* {{I|Technology Zero}}
+* {{I|Trisagion}}
+Only stat effects are applied; otherwise overridden by Brimstone:
+* {{I|Compound Fracture}}
+* {{I|Continuum|anr}}
+* {{I|Cricket's Body|nr}}
+* {{I|Death's Touch}}
+* {{I|Marked|anr}}
+* {{I|My Reflection|na}}
+* {{I|Sulfuric Acid|a+nr}}
+* {{I|Technology 2|na}}
+Other interactions:
+* {{I|8 Inch Nails}}: Beams gain knockback, pushing enemies away in the direction they travel but not out of their path. This increases its consistency.
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Brimstone, it turns into a larger gray locust, but otherwise acts like normal locusts created by Abyss.
+* {{I|Bird's Eye}}: Will occasionally spawn a fire when firing.
+* {{I|Chocolate Milk|dlc=nr}}: Reduces Isaac's tear delay by 20%. Does not increase damage.
+* {{I|Dr. Fetus|nar}}: Overrides Brimstone.
+** {{dlc|anr}} Isaac continuously fires bombs while charging the beam.
+* {{I|Epic Fetus|na}}: Overrides Brimstone.
+* {{I|Epiphora}}: Effect only activates when holding charge in a specific direction, and deactivates when the charge is released, effectively making Epiphora useless unless Isaac has exceedingly high tear delay.
+* {{I|Fire Mind}}: The beam will not cause explosions, but will still set enemies on [[burn|fire]].
+* {{C|The Forgotten|a+}}: The charged attack will spawn a Brimstone ball that will float in front of The Forgotten for a few seconds before disappearing. The Forgotten will still melee attack while performing this action.
+* {{I|Ghost Pepper|a+nr}}: The flames can still shoot from Isaac while holding the fire button.
+** {{Dlc|r}} Has a chance to shoot flames for every other tick while the beam is being fired.
+* {{I|Godhead}}: Homing and stat bonuses apply, but the beam does not have a damaging aura.
+* {{I|Ipecac|na+}}: Does not apply Ipecac's stat changes. The beam poisons enemies.
+** {{Dlc|a+nr}}Isaac shoots Ipecac tears while charging Brimstone. Stat changes from both items are applied as normal, meaning that Ipecac fires slower and Brimstone charges slower, but Brimstone deals drastically increased damage.
+** {{Dlc+|r}}Applies +2 flat damage, instead of Ipecac's damage up. Does not apply Ipecac's tears down. The beam explodes on the first enemy or obstacle it hits every other tick, dealing 10 + twice of Isaac's Damage. The beam gains a poison effect. The explosions do not occur when the beam narrows, meaning that they occur only twice per shot without {{I|Soy Milk}} / {{I|Almond Milk}}. The beam and its explosions poison enemies. {{I|The Ladder}}, when placed, will trigger the Ipecac-Brimstone explosions. (possibly a bug)
+*** '''Ipecac''' + {{I|Haemolacria}}: The flat damage bonus is +40 instead of +2. Tears will explode into multiple brimstone beams, each of which explodes and has a chance to hit Isaac.{{dlc-}}
+* {{I|Isaac's Tears|na+}}: Fires normal tears, but nearly instantly charges when charging Brimstone.
+** {{dlc|a+nr}}Fires normal tears. Charges at the same rate as Isaac's fire rate while charging Brimstone.
+** {{dlc|r}}Fires normal tears. Charges when firing Brimstone.
+* {{I|Knockout Drops}}: Gives the lasers high knockback.
+* {{I|Lachryphagy|r}}: Brimstone's range is lowered, but Lachryphagy tears will form at the end of the beam, which can be fed.
+* {{I|Large Zit}}: Creep shots will still be fired occasionally while holding the fire button.
+* {{I|Lodestone}}: Changes the beam to gray, can still apply the magnetized effect. The beams are not attracted to enemies with the magnetized effect.
+* {{I|Number One}}: Although Number One is otherwise purely beneficial with standard Brimstone, {{C|Azazel}}'s range is severely affected.
+* {{I|Playdough Cookie}}: Brimstone will start cycling through colors and applies the standard chance of tear-effect on hit, with the homing effect occurring intermittently.
+* {{I|Pop!|r}}: Brimstone has shorter range, a bit longer than the default range of {{C|Azazel}}'s mini-Brimstone, and it is not affected by [[range]]. The beam fires Pop! tears at the end, which are [[piercing]].
+* {{I|Proptosis|na}}: Does not apply distance penalty.
+** {{Dlc|anr}}The beam deals 2× Isaac's Damage, which is already doubled from the item's effect, at point blank-range. The damage quickly drops further along the beam, at about 0.8× per tile of distance.
+** {{Dlc|r}}The beam deals 6× Isaac's Damage at point-blank range. Decreases 13.3% of the damage per tile of distance, to the minimum of 0.1 point of damage at 7.5 tiles of distance.
+* {{I|Spirit Sword}}: Overrides Brimstone.
+* {{C|Tainted Samson|r}}: Greatly decreases attack speed for Samson's rage mode melee attack and replaces the thrown jawbone with a large laser sphere (similarly to {{C|The Forgotten}}).
+
+== In-game footage ==
+{{#ev:youtube|qakn1h7VilI||inline}} {{#ev:youtube|x-v6MzuO4Ng||inline}}
+
+== Gallery ==
+<gallery>
+File:Collectible_Brimstone_(powered-up)_appearance.png|Brimstone's costume when powered-up by duplication
+File:Azazel's_Brimstone.png|Azazel's version.
+File:Collectible Brimstone death doughnut.png|The Ludovico Technique with Brimstone.
+File:Azazeltinyplanet.png|Tiny Planet with Brimstone as Azazel.
+File:Green_star_of_hate.png|Brimstone with Tiny Planet, Common Cold and Tammy's Head.
+File:GReesRB.png|The Ludovico Technique with Brimstone and Wiggle Worm.
+File:11207945_10205874578171081_1461918262_o.jpg|Brimstone with Tiny Planet, Charm Tears and Quad Shot.
+</gallery>
+
+== Trivia ==
+* The term "brimstone" (burn stone) comes from the King James Bible's mention of burning sulfur. It is used in the phrase "fire and brimstone" to describe the torments of hell. While solid sulfur is yellow, molten sulfur is blood red.
+* Brimstone's item icon originally comes from the alchemical symbol for [[wikipedia:Alchemical symbol#Mundane elements|black sulfur]], referred to as the [[symbolism:The Leviathan Cross|Leviathan Cross]]. It was later adopted by Anton LaVey in The Satanic Bible to represent hell and is now often associated with Satanism.
+** {{Dlc+|r}} Ironically enough, prior to update [[v1.7.5]], Brimstone was changed such that it didn't contribute to the {{tf|Leviathan}} transformation.{{dlc-}}
+* {{Dlc|nr}}Brimstone has the same appearance of {{I|The Pact}}, but with big, curved horns and slightly less angry eyes.
+* Most items that change tear color will also give Brimstone an exotic appearance, but they do not combine and only one color effect is shown.
+* {{Dlc|r}}Brimstone is one of the few items that will give Isaac a unique costume when two copies are acquired, along with {{I|Guppy's Eye}} and {{I|Glass Eye}}.
+* The ram horns gained from picking up Brimstone were added as a [[teamfortress:Brimstone|cosmetic item]] to ''[[wikipedia:Team Fortress 2|Team Fortress 2]]'' to promote ''The Binding of Isaac: Rebirth''. If the game was purchased before the 10th of December, players were awarded the item in [[teamfortress:Genuine|genuine quality]].
+
+== Bugs ==
+{{bug|Picking up Brimstone before picking up {{I|Scorpio}} will not change the beam's color. Picking up Scorpio before Brimstone, however, will properly change it to green.|dlc=nr}}
+{{Bug|When having Brimstone + {{I|My Reflection}} and facing towards an east/west wall, standing directly in front of it will make Isaac shoot in reverse — the front-facing oval Brimstone beam will shoot from the back, and the back-facing beam will shoot from the front.|dlc=r}}
+
+{{nav|leviathan|fr=Soufre}}
+[[Category:Special items]]

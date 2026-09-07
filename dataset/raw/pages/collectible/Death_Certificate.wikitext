@@ -1,0 +1,74 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 628
+ | quote       = Where am I?
+ | description = Transports Isaac to an abandoned and expanded version of {{s|Home}}, which contains one copy of every item in the game. After taking an item, Isaac returns to the room he used Death Certificate in.
+ | quality     = 4
+ | tags        = offensive nocantrip
+ | recharge    = one time
+ | unlocked by = Death Certificate
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, transports Isaac to an abandoned and expanded version of {{S|Home}}, which has one copy of almost '''every''' item the player has unlocked on that save file on pedestals. After taking an item from a pedestal, Isaac returns to the room he used Death Certificate in.
+** There are also several [[pickups]] and {{E|Chest||chests}} in the area. Picking them up/opening them will not cause Isaac to leave the area.
+*** If a chest in the area contains an item, picking it up will ''not'' cause Isaac to leave the area.
+*** Items spawned through the use of pre-obtained items brought into the area, such as {{i|Eden's Soul}} or {{i|Mystery Gift}}, will also not cause Isaac to leave the area.
+
+== Notes ==
+* Items that have not been unlocked will not show up in this unique location.
+* If Death Certificate is used on a floor while {{curse|blind}} is active, the area will not be affected by the curse, meaning all items will be revealed. {{I|Chaos}} doesn't affect the area either.
+* Items that are typically only granted under special circumstances like {{i|Dogma}} and {{i|Mom's Shovel}} are present.
+* The layout of the area is randomly generated, and items will show up in order of lowest ID number to highest (starting at items in the original ''Flash'' version and working up to the ''Repentance'' items).
+** A new Death Certificate area is randomly generated on the next floor.
+** If more items are added to the game through [[modding]], the area will expand to include them, ordered after the ''Repentance'' items.
+* The only items that do not show up in the Death Certificate area are {{i|Dad's Note}}, hidden items ({{i|Recall}}, {{i|Hold}}, passive {{i|Damocles}}, passive {{i|The Book of Belial}}), Death Certificate itself, and [[G FUEL!]].
+** During a [[Challenge]], [[Daily Challenge]], or playing [[Greed Mode]] their [[Item_Tags|respective banned items]] will not appear.
+* Using Death Certificate while in the area that generates from using it consumes the item without doing anything.
+* Using this item multiple times in the same floor will always teleport to the same areas, without respawning the items that were taken or destroyed.
+** If an item is taken, it will only destroy the other ones in the current room or any other room Isaac travels to after taking an item, meaning other items present in the remaining rooms will still be available.
+** The player can be softlocked by using Death Certificate while having already taken/destroyed all items that were in the area.
+* Using this item during the fight against {{E|The Beast}} resets the fight after Isaac leaves the special area.
+* Using this item while in the {{i|Genesis}} room will teleport Isaac back into the {{i|Genesis}} room after taking an item.
+** Doing this will turn the current 3 choice pedestals into permanent ones and spawn the next set right on top of them.
+* This item can be crafted from {{i|Bag of Crafting}} with eight {{e|Bone Heart}}s.
+
+== Synergies ==
+* {{p|? Card}}: Mimics the effect of Death Certificate without consuming it.
+* {{i|Diplopia}}: Has no use inside of the Home area, as Isaac can only take 1 item. However, it can be used to duplicate the Death Certificate item, allowing Isaac to enter the area twice.
+* {{c|Jacob and Esau}}: Both characters can take an item from any given room if they're lined up correctly and take them at the same time. This can be very powerful in the case of Brimstone and Mom's Knife, as they are both close together.
+
+* {{i|Red Key}}: Using the Red Key in this area has a chance of spawning rooms with many items from the [[Treasure Room (Item Pool)|Treasure Room pool]] in them, all of which can be taken without being returned back to the floor. It can also spawn special rooms from {{s|Home}}. If Mom's bedroom is spawned and Isaac sleeps in the bed, it will behave like a normal bed, but can be slept in while at full health.
+* {{i|Schoolbag}}: Allows Isaac to hold another Active item in the area along with Death Certificate.
+* {{c|Tainted Cain}}: Unlike his modified pedestal behavior in the rest of the run, Tainted Cain can pick up an item like normal in this area, effectively allowing him to craft any specific item for the cost of 8 bone hearts (the guaranteed recipe for Death Certificate in the Bag of Crafting).
+* {{p|Wild Card}}: Will use Death Certificate if it was the item/card Isaac most recently used.
+* {{i|Metronome}}: Can invoke the effect of Death Certificate as normal, even if it is not unlocked.
+
+== Interactions ==
+* {{i|Abyss}} / {{P|Black Rune}} / {{i|Void}}: Only allows the consumption of one item per room and the consumed item is treated as if it was picked up causing all other items in the room to disappear and forcing Isaac to leave the area.
+* {{i|Binge Eater}}/{{i|Glitched Crown}}: No effect; items will not cycle through multiple items.
+* {{i|Car Battery}}: No effect.
+* {{i|Moving Box}}: Takes one random item which is treated as if it was picked up causing all other items in the room to disappear and forcing Isaac to leave the area.
+* {{i|Book of Virtues}}: Spawns a single, regular wisp with no special properties.
+* {{i|Damocles}}: No effect; Damocles doesn't duplicate the item pedestals in any room.
+* {{t|NO!}}: causes Death Certificate to no longer spawn. inside Death Certificate floor Ignores changes to item availability.
+* {{i|Sacred Orb}} / {{C|Tainted Lost}}: Ignores changes to item availability caused by characters, items.
+* {{p|IX - The Hermit?}}: When used with items present no coins are spawned and the floor exit sequence is triggered as if Isaac had taken an item.
+
+== In-game footage ==
+{{#ev:youtube|VoJWc83ab-w}}
+
+== Trivia ==
+* The item's name is likely alluding to Isaac being dead, something that is heavily implied through the game's cutscenes and confirmed by Edmund McMillen in a tweet.
+* This item is arguably the best in the game due to the fact that it gives any other item.
+* Death Certificate's effect could be a reference to developer rooms, which are spaces created by game developers that contain every item in the game for testing.
+* Death Certificate used to not limit the amount of items in its rooms which certain effects would interact with. This included the items {{i|Abyss}}, {{i|Void}}, and the pickup {{P|Black Rune}} which used to consume multiple items in a room without forcing Isaac to leave the area which had allowed him to amass a large quantity of locusts/stat upgrades. Another was {{i|Moving Box}} which had allowed an additional 10 items to be taken without forcing Isaac to leave the area.
+* {{t|NO!}}, {{i|Sacred Orb}}, and {{C|Tainted Lost}} used to have the ability to change item availability in Death Certificate rooms.
+* Rerolling items used to allow Isaac to take every rerolled item without being sent out of the area.
+
+== Bugs ==
+{{bug|Breaking the mirror in {{s|Downpour}} / {{s|Dross}} II, will cause Isaac to die of suffocation in the Death Certificate area.}}
+
+{{nav|fr=Acte de Décès}}

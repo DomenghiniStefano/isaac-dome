@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 98
+ | quote       = Soul generator
+ | description = Spawns a cross [[familiar]] that drops a {{e|Soul Heart}} after clearing enough [[room]]s.
+ | quality     = 3
+ | tags        = nolostbr summonable nocantrip
+ | devil price = {{dlcalt|1|r=2}}
+ | unlocked by = A Cross
+}}
+{{distinguish visual|Dogma (Item)}}
+
+{{cit|up}}
+
+== Effect ==
+* Spawns a small blue cross [[familiar]] that follows Isaac and drops a {{E|Soul Heart}} alternatingly:
+** {{Dlc|nr}} Every 5 or 6 [[room]]s.
+** {{Dlc|r}} Every 7 or 8 [[room]]s.
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars.
+** {{dlc|nr+}} The Relic has the lowest priority at 6th.
+** {{dlc|r+}} The Relic has the lowest priority at 8th.
+* Having multiple copies of The Relic, such as duplication through {{i|Diplopia}}, will have each copied familiar paying out with soul hearts. {{c|Lilith}} can make use of this during {{r|Boss Rush}}, having the ability to duplicate the relic using the {{i|Box of Friends}}.
+
+== Synergies ==
+* {{i|BFFS!}}: The familiar requires one less room clear to drop a soul heart.
+
+== In-game Footage ==
+{{#ev:youtube|DpZNrRyZaPk||inline}} {{#ev:youtube|UbTFWoAGiAU||inline}}
+
+== Trivia ==
+* A relic usually consists of remains of a saint or holy person, such as the tooth of Mary Magdalene.<ref>[[wikipedia:Relic#Christianity]]</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|magdalene unlock|isaac boss unlock|fr=Relique}}

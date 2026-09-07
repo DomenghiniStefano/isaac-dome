@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | id          = 157
+ | quote       = RAGE!
+ | description = Increases Isaac's [[damage]] whenever he takes damage, up to six times. The bonus resets when entering a new floor.
+ | quality     = 2
+ | tags        = nolostbr summonable {{dlc|r+|devilsacrifice}}
+ | unlocked by = Bloody Lust
+ | devil price = {{dlcalt|1|r+=0}}
+}} {{distinguish|Lusty Blood|Bloody Gust}}
+
+{{cit|up}}
+
+== Effects ==
+* [[Damage]] increases as Isaac receives damage. The damage increase stays for the whole floor, but resets upon entering a new floor.
+** {{dlc|nr}} The first three times Isaac is hit, his damage is increased by 0.5. The next three times Isaac is hit, his damage is increased by 33%.
+*** {{dlc|r}} Damage is increased by flat amounts: +0.5 for the first hit and an additional +0.2 for each hit, until +1.5 at the sixth. The maximum total is +6.0.
+** Any damage taken past the sixth hit does not further increase damage.
+* Isaac becomes redder as his damage increases.
+
+== Notes ==
+* {{C|Samson}} starts with this item by default.
+
+== Synergies ==
+* {{i|Blood Rights}} / {{i|Razor Blade}} / {{i|IV Bag}}: The damage from the items count for the stats up.
+* {{i|Birthright}} + {{C|Samson}}: Birthright allows him to gain 4 more damage boosts at the same +0.2 intervals, for a new maximum total of +14.0.
+* {{i|Dull Razor}}: Safely provides the damage boost without needing to take damage.
+
+== Interactions ==
+* '''Bloody Lust''': No effect, damage up still caps at +6 and increases at the same intervals.
+* {{I|Bloody Gust}}: Bloody Lust's "rage" effect is shared with Bloody Gust, so if Isaac picks up Bloody Gust after already getting hit with Bloody Lust (or vice versa) the boosts will automatically update to that level.
+
+== In-game Footage ==
+{{#ev:youtube|mizOdpTOv4k}}
+
+== Trivia ==
+* In the original ''Binding of Isaac'', Bloody Lust only lasted for one room and the damage increase was triggered by killing enemies.
+** {{i|Lusty Blood}} now has the effect of the original Bloody Lust.
+* On the character select screen, Samson's starting item is spelled as "Blood Lust".
+* Even if Bloody Lust is removed, Isaac will keep the same level of "rage" for the rest of the level. This means that his boosts will automatically update to that level if he picks up another Bloody Lust or a {{I|Bloody Gust}} on the same level.
+
+{{nav|samson unlock|isaac boss unlock|fr=Soif de Sang}}
+[[Category:Damage-triggered items]]

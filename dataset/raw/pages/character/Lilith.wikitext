@@ -1,0 +1,98 @@
+{{header characters}}
+{{infobox character
+ | image name   = * {{dlc|nr|Afterbirth}}
+ | id           = 13
+ | dlc          = a
+ | health       = {{hearts|red|black=2}}
+ | collectibles = {{blindfolded}}<br>{{i|Box of Friends}} (unlisted)<br>{{i|Incubus}}<br>{{i|Cambion Conception}}
+ | unlocked by  = Lilith
+}}
+'''Lilith''' is a [[character]] added in ''[[The Binding of Isaac: Afterbirth]]''. Lilith starts with one red [[heart container]] and two {{E|Black Heart}}s. Lilith's starting items are the {{i|Box of Friends}} (which is unlisted during character selection), {{i|Incubus}}, and {{i|Cambion Conception}}. Lilith is permanently [[blindfolded]], meaning she has no ability to fire tears; she instead deals damage with the {{i|Incubus}} familiar that follows her.
+
+Lilith is unlocked by completing [[Greed mode]] with {{C|Azazel}}.
+
+== Notes ==
+* Lilith's Incubus cannot be rerolled.
+** The Incubus can be found as a separate item, and picking it up will grant Lilith another Incubus familiar.
+* {{dlc|r}} The Incubus does 100% of Lilith's damage stat, while doing only 75% with other characters, except {{c|Tainted Lilith}}.
+* Lilith's Incubus familiar copies whatever tears she would fire if she weren't blindfolded. Combined with the {{i|Box of Friends}}, the basic strategy for her is to simply multiply her damage. Powerful tear modifiers such as {{i|Polyphemus}} will become even more deadly if Lilith can create several Incubi.
+* When shooting, keep in mind that Incubus lingers behind Lilith with a slight delay.
+* Incubus has reduced tear size, which makes some items harder to use ({{i|The Ludovico Technique}}, for example).
+* Due to her starter item {{i|Box of Friends}}, she strongly benefits from other [[familiar]]s and familiar enhancers like {{i|BFFS!}}.
+* All battery items (such as {{i|9 Volt}}, {{i|Car Battery}}, or {{i|4.5 Volt}}) are very useful for Lilith's {{i|Box of Friends}}. This makes money and {{r|Shop}}s more valuable as Lilith.
+* Activated Items recharge per-wave in {{mode|greed}} [[Greed Mode]] and {{R|Boss Rush}}, allowing Lilith to use the {{i|Box of Friends}} very often. Familiars like {{i|The Relic}} and {{i|Little C.H.A.D.}} can spawn an endless amount of health if used correctly.
+** Due to this, during Greed mode, it is most effective to stay within the Arena for every wave in order to maximize the amount of familiars copied have upon reaching the boss waves.
+** {{i|4.5 Volt}} replaces the per-wave charging. With only this, compared to no battery items, starting and ending fully charged, it's typically possible to use {{i|Box of Friends}} once or twice more in a full set of Greed Mode waves.
+* While other activatable items may have some form of use, it is not advised to permanently trade out the {{i|Box of Friends}}. Without it, Lilith loses what is essentially her greatest strength, as {{i|Incubus}} shooting in her place is only a positive with its usage.
+* Lilith's {{i|Cambion Conception}} benefits from Heart Containers, healing items, and Heart-generating items ({{i|Charm of the Vampire}}, {{i|Humbleing Bundle}}, etc.) to allow more hits taken, and self-damage sources and items are useful for activating the item's effect.
+** Familiars spawned with {{i|Cambion Conception}} do not count towards [[transformation]]s nor the [[collection page]].
+* If Lilith dies with an [[Death#Extra Lives|extra life item]] that changes her to a different character ({{i|Ankh}}, {{i|Lazarus' Rags}}, {{i|Judas' Shadow}}), she will lose both her blindfold and the intrinsic Incubus familiar.
+** Despite this, Lilith's Incubus still counts as an actual item.
+* {{dlc|rnr+}} If Lilith dies in True Co-op mode, she won't have the Incubus or the blindfold over her eyes, but her ghost will still be unable to fire tears.
+
+== Item Interactions ==
+* {{i|Bird's Eye}} / {{i|Ghost Pepper|n}}: Flames emerge from Lilith instead of the Incubus.
+* {{i|Birthright}}: All shooting familiars no longer follow behind Lilith. They all group towards Lilith's firing direction instead.
+* {{T|Baby-Bender}}: Affects the Incubus, as it's a familiar, identically to {{I|Spoon Bender}}.
+* {{i|Cursed Eye|nr}}: Causes the {{i|Incubus}} to fire three tears per shot with no charging, which also removes the negative effect of teleporting.
+** {{dlc|r}} The incubus will charge and Lilith can be teleported if hit.
+** {{dlc|r+}} The incubus will charge but Lilith will not be teleported if hit.
+* {{i|Epic Fetus|nr}}: Lilith can use the Epic Fetus while her Incubus still shoots regular tears.
+* {{t|Forgotten Lullaby}}: Effectively a tears up for the Incubus familiar, and can also boost any other familiars Lilith might get.
+* {{i|Hypercoagulation}}: By intentionally taking self-damage and grabbing the half-red hearts, Lilith can easily generate familiars for free.
+* {{i|King Baby}}: Unfavourable, as its effects make it harder to control Lilith's Incubus.
+* {{i|Maw Of The Void|nr}}: Obtaining {{i|The Ludovico Technique}} is necessary to utilize Maw Of The Void to its fullest, as it will allow Lilith to create the damaging black ring around her.
+* {{i|Milk!|r+}}: Generally unfavourable, as due to how [[familiar]] priority works, Milk! will be positioned between Lilith and her Incubus. This makes it harder to aim her tears unless the player goes out of the way to break Milk! each floor.
+* {{i|Mom's Knife}}: Gives Incubus a smaller version of the item with the same base range as Isaac; However, Lilith will not get this to use due to her blindfold.
+** This knife can be used with Incubus to give it contact damage with no danger to Lilith.
+* {{i|My Reflection|nr}}: Will greatly shorten Incubus' range without the possibility to increase it.
+* {{I|Spirit Sword}}: The sword is held by the Incubus and acts the same way as with other characters.
+* {{i|Technology 2|nr}} / {{i|Tech.5|nr}} / {{i|Tractor Beam|nr}}: Since Lilith is [[blindfolded]] and does not shoot tears by herself, these items do not directly affect her. However, {{i|The Ludovico Technique}} and {{i|Tractor Beam|r}} still work as they would on any other character.
+
+=== Ineffective Items ===
+These items will not affect Lilith due to her [[blindfolded]] condition and certain limitations of {{i|Incubus}}.
+
+'''Note:''' As mentioned above, certain items will apply their normal effects if Lilith obtains {{i|The Ludovico Technique}}.
+
+* {{i|Analog Stick|dlc=nr}} (Tears up is applied, but Incubus cannot fire in 360 degrees)
+* {{i|Dead Eye|dlc=nr}}
+* {{i|Dead Tooth}}
+* {{i|Epiphora|dlc=nr}}
+* {{i|Evil Eye|dlc=nr}}
+* {{I|Eye of Greed|dlc=nr}}
+* {{i|Ghost Pepper|dlc=nr}}
+* {{i|Large Zit}}
+* {{i|Lead Pencil|dlc=nr}}
+* {{i|Loki's Horns|dlc=nr}}
+* {{i|Marked|dlc=nr}} (Stat increases are applied, but the mark does not appear)
+* {{i|Maw Of The Void|dlc=nr}} (Stat increases are applied, but the ring will never be created)
+* {{i|Mom's Eye|dlc=nr}}
+* {{i|Mom's Wig|dlc=nr}}
+* {{i|The Mulligan|dlc=nr}} (The {{tf|Guppy}} transformation does work, however)
+* {{i|Tech.5|dlc=nr}}
+* {{i|Technology 2|dlc=nr}}
+* {{i|Tractor Beam|dlc=nr}}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Immaculate Conception, Goat Head Baby, Serpent's Kiss, Rune Bag, Succubus, Cambion Conception, Box of Friends, Duality, Incubus, Big Baby, Euthanasia, Blood Puppy, C Section, The Harlot, Dark Baby }}
+
+== Gallery ==
+<gallery>
+File:Transition Lilith.png|Lilith's transition screen portrait.
+File:Start_Lilith.png|The spawn floor when playing Lilith.
+File:Lilith Menu Icon (Locked).png|Lilith's locked character icon.
+File:Lilith_Eden_Blue Box Concept Art.png|Concept art of Lilith among other sketches and design notes.
+</gallery>
+
+== Trivia ==
+* Lilith is the Hebrew name for a figure in Jewish mythology, thought to be derived from Mesopotamian mythology.
+** Although Lilith is only mentioned in passing in the Biblical Book of Isaiah, later Jewish mythology expanded on her. In some stories, Lilith is the original woman God created before Eve. She refused to become subservient to Adam and left Eden; in others, she is depicted as the bane of humanity when Adam refused her, driving her to curse all of his descendants and targets children under her grudge.
+* Cambion Conception is always listed as one of Lilith's starting items, even if it has not been unlocked.
+* Lilith, as well as {{without context|{{dlc|na}}}} {{C|The Lost}} and {{C|Bethany}}, are the only non-tainted characters whose unlock conditions require a specific character.
+* {{dlc|na+}} Lilith's starting health is listed as "?" on the character selection screen.
+** {{dlc|a+}} Lilith's starting health is listed as "I" on the character selection screen, despite starting with one red heart and two black hearts.
+* Lilith's locked character icon is a locked box with her Incubus on it.
+** She shares this locked box icon with {{C|Judas}}, {{C|Azazel}}, and {{C|Apollyon}}.
+* The recharge time of Box of Friends has been changed multiple times in order to balance Lilith. On her initial release, it recharged in just 2 rooms. Then an update increased the recharge time to 4 rooms. Finally, in {{dlc|r}} ''Repentance'', its recharge time was decreased to 3 rooms.
+
+{{nav|character|azazel unlock|lilith unlock|ultra greed unlock}}

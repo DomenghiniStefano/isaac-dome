@@ -1,0 +1,39 @@
+{{infobox challenge
+ | dlc         = r
+ | number      = 36
+ | blindfolded = yes
+ | has shops   = yes
+ | health      = {{hearts|red=4}}
+ | item        = {{i|The Poop}}<br>{{i|9 Volt}}<br>{{i|Skatole}}<br>{{dlc|nr+}}{{i|E. Coli}}<br>3 {{i|Butt Bombs}}<br>{{i|BFFS!}}<br>{{i|Thunder Thighs}}<br>{{i|Dirty Mind|n}}<br>{{t|Mysterious Candy}}
+ | goal        = Mom
+ | unlocks     = Dirty Mind
+}}
+
+'''Scat Man''' is [[challenge]] #36. Isaac must use friendly {{E|Dip}}s and {{I|Butt Bombs}} to defeat enemies. The goal is to defeat {{e|Mom}}. This challenge is unlocked by default.
+
+== Strategy ==
+* The friendly {{E|Dip}}s spawned by {{I|Dirty Mind}} will be Isaac's main method of attack. It's a good idea to destroy as much poop as possible to build up a swarm, though be mindful of the limit on the Dips' number. Once the old ones start popping, save the {{e|Poop}} for later.
+* {{dlc|nr+}}Due to the {{tf|Oh Crap}} transformation and {{i|E. Coli}}, enemies can simply be walked into to convert them into {{e|Poop}}, which is immediately destroyed to heal back the contact damage and generate more Dips. This strategy will result in half a heart of damage against [[Monsters#Champions|champion enemies]], however.
+* Obtaining the {{I|Sharp Plug}} allows Isaac to use {{I|The Poop}} repeatedly to farm pickups and {{E|Dip}}s at no cost.
+* The Dips can take damage and be killed by enemy attacks as well as environmental hazards. Isaac's own {{e|Bomb}}s will also damage them.
+* Rooms with spiked rocks are very dangerous, as the Dips make no effort to avoid them. Finish and leave these rooms as quickly as possible.
+* As {{I|BFFS!}} is a starting item, picking up familiars is a good way to increase damage output.
+* [[Pills]] are potentially risky as a Bombs are Key pill may leave Isaac without sufficient {{e|Bomb}}s for emergencies.
+* Like with many challenges, buying either the {{I|The Candle}} or {{I|Red Candle}} in the shop will make the run much easier, especially since the starting {{I|9 Volt}} reduces its charge time.
+
+== Notes ==
+* As of version [[v1.06.J791]], {{E|Reap Creep}} cannot appear as a boss during this challenge.
+
+== Reward ==
+{{achievement text | Dirty Mind }}
+
+== Gallery ==
+<gallery>
+File:Sorry Scatman John.png|Chinese translation of the challenge's name, showing the text "Sorry Scatman John".
+</gallery>
+
+== Trivia ==
+* The challenge's name is a reference to the musician, [[wikipedia:Scatman John|Scatman John]], as well as the fact that "scat" is another word for feces.
+** The Chinese translation has an arrow pointing to the challenge's name with the text "Sorry Scatman John", confirming this.
+
+{{nav|challenge|fr=Médaille de Bronze}}

@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | id          = 63
+ | quote       = Stores energy
+ | description = [[Activated item]]s can be overcharged, allowing them to store up to one extra use.
+ | quality     = 2
+ | tags        = battery summonable offensive nocantrip
+}} {{disambig msg|title=Battery|the item|the pickup|Batteries}}
+
+{{cit|p}}
+
+== Effects ==
+* [[Items#Activated Collectibles|Activated items]] can be overcharged, allowing them to store up to one extra use.
+** Extra charges appear in yellow over the normal charge meter.
+
+== Notes ==
+* {{dlc|na+}} The Battery does not affect self-recharging activated items.
+* {{dlc|nr}} Picking up a {{E|Lil' Battery}} while the held activated item's main charge bar isn't full will only fill the main charge bar without adding overcharge.
+
+== Synergies ==
+* [[48 Hour Energy]] pill: A fully discharged item will be doubly charged, along with spawning 1 or 2 {{E|Lil' Battery|text=Lil'Batteries}}.
+* {{T|AAA Battery}}: If Isaac's active item would have at least one full charge upon clearing a room, it gains two charges.
+* {{I|Friendly Ball|dlc=r}}: Walking over a captured enemy will double charge the ball, allowing the enemy to be released, and allowing to catch a new one in the same room, and the process repeats. Trying to catch a new enemy while the old one hasn't spawned yet will have no effect.
+* {{dlc+|r}} {{i|Jacob's Ladder}} / {{i|120 Volt}}: Increases the amount of arcs a spark can generate.{{dlc-}}
+* {{dlc+|r}} {{i|Notched Axe}}: Causes remaining charge from the previous floor to carry over to the next one.{{dlc-}}
+
+== In-game footage ==
+{{#ev:youtube|JzCsAvhTZHw||inline}} {{#ev:youtube|Cy-hM8MGSGg||inline}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Extension Cord, Jumper Cables }}
+
+== Trivia ==
+* This item is used in {{chal|It's in the Cards}}.
+* The screws that appear in Isaac's head may be a reference to [[wikipedia:Frankenstein's Monster|Frankenstein's Monster]].
+* The effect of this item was completely changed from the original ''Binding of Isaac''.
+
+{{nav|active modifier|battery}}

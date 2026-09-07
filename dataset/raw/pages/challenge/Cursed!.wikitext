@@ -1,0 +1,44 @@
+{{infobox challenge
+ | number             = 10
+ | character          = Magdalene
+ | item               = {{i|Blue Map}}<br>{{i|The Compass}}<br>{{i|Raw Liver}}<br>{{i|Treasure Map}}<br>{{i|Yum Heart}}
+ | trinket            = {{t|Child's Heart}}
+ | curse              = {{cu|Cursed}}
+ | has treasure rooms = yes
+ | has shops          = yes
+ | unlocks            = Credit Card
+ | unlocked by        = Cursed!
+}}
+
+'''Cursed!''' is [[challenge]] #10. {{C|Magdalene}} is the starting character for this challenge, and she starts with {{i|Yum Heart}}, {{i|Raw Liver}}, {{i|The Compass}}, {{i|Treasure Map}}, {{i|Blue Map}}, and {{t|Child's Heart}}. Every floor is cursed with {{Cu|Cursed}}. The goal is to defeat {{E|Mom}}. This challenge is unlocked by unlocking {{C|Magdalene}}.
+
+== Difficulty ==
+* Curse of the Cursed changes doors between normal rooms to cursed doors, like those found in {{R|Curse Room}}s. This will cause a lot of damage to Magdalene. Despite its name, Curse of the Cursed is not a regular curse, and cannot be encountered in regular gameplay, it is unique to this challenge.
+* Flight will NOT prevent damage from the curse room doors, despite how it works in normal curse rooms.
+
+== Notes ==
+* Unlike regular curse rooms, bombs can be used to blow open cursed doors.
+* A door that looks like a normal door that doesn't get replaced by a curse door leads to a mini-boss fight.
+
+== Strategy ==
+* Maggy will begin the challenge with two extra Red Heart containers from Raw Liver. Items and trinkets which collectively increase heart drops and provide other means of healing go a long way toward survival.
+* Use of teleportation and {{E|Bomb}}s to move through {{R|Secret Room}}s, along with observing the mini-map, can significantly reduce the number of cursed doors entered.
+* It can be useful to balance procuring resources for floors ahead and moving through each floor by as short a route possible.
+* {{I|Giant Cell}} is a fantastic item to have for this challenge, as each pass through the curse doors generates one Minisaac, and all familiars will regenerate their health entirely upon every curse door contact, steadily increasing Magdalene's damage.
+* {{i|Placenta}} removes the difficulty of the challenge in exchange for time, as health can be regenerated simply by waiting. {{i|Charm of the Vampire}} doesn't make the challenge quite as trivial, but also provides for helpful passive health regeneration.
+* {{i|Black Candle}} will not prevent Curse of the Cursed, but it will prevent other curses from activating. This can be extremely helpful in cases where the Curse of the Lost would remove Maggy's mapping abilities.
+* Items that grant a large number of soul hearts, like {{i|PJs}} or {{i|Rosary}} can make it easier to obtain Devil Deals, where strongly helpful items may await.
+* ''See {{i|Holy Mantle}}, {{i|Breath of Life}}, {{i|Isaac's Heart}}, {{i|Ventricle Razor}}, {{i|Tooth and Nail}}, {{i|Stitches}}, and'' {{I|Mars}} ''seven items which can be used to repeatedly avoid damage from cursed doors.''
+* In most cases, the best idea is to head directly for the Boss Room on every floor to minimize damage taken. Avoid taking extensive routes towards Treasure Rooms if they branch out far because there's a low chance the item will be worth taking so much damage.
+* Getting {{i|Unicorn Stump}} early enough can be one of the best replacements for Yum Heart in terms of active items. Its one-room charge time allows the use of it after clearing a room to navigate the floor much more safely. Damage isn't entirely avoided from this method, however, as rooms without enemies can still be mixed in and not give it a charge.
+* {{i|Car Battery}} can make the challenge easier by doubling the effects of Yum Heart, as can {{i|The Battery}}, which allows for two charges, and {{i|9 Volt}} by making Yum Heart charge faster.
+* {{t|Flat File}} also removes the spikes from every door in the challenge.
+* [[Curse Room#Bugs|Bugs]] that apply to crossing curse room doors can be abused on the challenge to avoid damage.
+
+== Reward ==
+{{achievement text | Credit Card }}
+
+== Trivia ==
+* {{dlc|a}} The "CVRS ED" [[seed]] turns normal doors into cursed doors, and is the only way to encounter this curse outside of the challenge.
+
+{{nav|challenge|fr=Maudit !}}

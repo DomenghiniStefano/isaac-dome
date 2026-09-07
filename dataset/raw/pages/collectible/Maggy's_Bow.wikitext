@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | id          = 312
+ | quote       = HP up + you feel healthy
+ | description = Gives one [[Red Heart Container]] and doubles the healing provided by {{E|Red Heart}}s. {{dlc|r}} Also heals 1 Red Heart when obtained.
+ | quality     = 2
+ | tags        = nolostbr summonable
+ | unlocked by = Maggy's Bow
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Adds one [[Red Heart Container]].
+* {{dlc|r}} Heals 1 additional {{E|Red Heart}}
+* {{E|Red Heart}}s heal double their value. A {{E|Half Red Heart}} replenishes one Red Heart, a Red Heart or {{E|Scared Heart}} replenishes two Red Hearts, and a {{E|Double Heart}} replenishes four Red Hearts. {{E|Blended Heart}}s either replenish two Red Hearts or replenish one Red Heart and add one {{E|Soul Heart}}, depending on how many empty Red Heart Containers Isaac has.
+
+== Notes ==
+* {{dlc+|r}} Has no effect on {{E|Rotten Heart}}s.{{dlc-}}
+
+== Synergies ==
+* {{i|Candy Heart}}: Doubles the stat boosts from any picked up Heart. Half Red Hearts give two boosts, full Red Hearts give four, and Double Red Hearts give eight.
+* {{I|IV Bag}} + {{i|Old Bandage}} + {{i|Humbleing Bundle}} / {{i|Maggy's Bow}}: The damage from IV Bag has a chance to spawn 2 hearts, which can be picked up to create further coins and possibly even heal hearts with enough Luck.
+** {{dlc|r}} Humbleing Bundle only has a 50% chance to double the hearts dropped, but Old Bandage may still drop 1 heart.
+* {{C|Tainted Bethany}}: Doubles all blood charges gained from Red Hearts.
+* {{i|The Jar|nr}}: Allows for generation of infinite Red Hearts.
+
+== Interactions ==
+* {{P|0 - The Fool?}}: Due to doubled healing, extra hearts will be left on the ground to be used for later.
+* {{C|Keeper}} / {{C|Tainted Keeper}}: No effect.
+* {{i|Yum Heart}}: No effect; will still only replenish one full Red Heart.
+
+== In-game Footage ==
+{{#ev:youtube|Tb5HjjCV3l4}}
+
+{{nav|magdalene unlock|boss rush unlock|fr=Chouchou de Marie}}

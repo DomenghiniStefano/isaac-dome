@@ -1,0 +1,34 @@
+{{infobox trinket
+ | name = Swallowed Penny
+ | id = 1
+ | quote = Gulp!
+ | pool = urn, special shopkeeper
+ | description = Upon taking damage, Isaac drops a [[coin]].
+ | unlocked by = Swallowed Penny
+}}
+
+{{cit|ut}}
+
+== Effect ==
+* Spawns one [[coin]] of any type upon taking damage.
+** {{dlc|r}} When held by {{C|Keeper}} and {{C|Tainted Keeper}}, spawns 0-1 coins.
+
+== Notes ==
+* This trinket can be found by destroying [[Rocks#Urns|urns]], {{E|Special Shopkeeper}}s, and {{dlc+|r}} [[Rocks#Buckets|buckets]] in {{s|Downpour}}.{{dlc-}}
+* Though similar to the {{i|Piggy Bank}} item, the Swallowed Penny is not limited to just pennies.
+* {{dlc|anr}} Unlike {{i|Piggy Bank}}, playing as {{C|Keeper}} with this trinket always drops a coin, allowing semi-infinite life.
+** A trick for farming money when playing as Keeper is to find a room with some static hazard like spikes and taking damage, causing a coin to appear. A penny will only refill life while a nickel will give four cents, and a dime will give nine cents.
+*** This trick can also be used to survive multiple uses of a sacrifice room, healing with the dropped coin between each sacrifice.
+** {{Dlc|r}} As it can now give 0 coins when playing as the Keeper, this no longer works. The {{i|Piggy Bank}} and {{i|IV Bag}} also spawn 0-1 coins when damage is taken; with all three, though money is no longer guaranteed, if a large pool of coins is found it can be used to mitigate streaks of bad luck, allowing Keeper to farm coins almost reliably.
+
+== Synergies ==
+* {{I|Mom's Box|nr}}: Spawns two coins on hit, multiple copies don't stack.
+* {{A|Golden Trinket}} / {{I|Mom's Box|r}}: Each copy spawns one more coin on getting hit with a limit of 5 coins.
+** {{dlc|r}} This does not add another 0-1 chance as {{C|Keeper|n}} or {{C|Tainted Keeper|n}}.
+
+== In-game Footage ==
+{{#ev:youtube|xQntkBFHJio}}
+
+{{nav|coin modifier|coin|fr=Pièce Avalée}}
+[[Category:Damage-triggered items]]
+[[Category:Penny trinkets]]

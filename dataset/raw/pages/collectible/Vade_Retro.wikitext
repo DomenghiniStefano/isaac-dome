@@ -1,0 +1,73 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 653
+ | quote       = Begone!
+ | description = While held, enemies leave behind ghosts on death. Stronger enemies leave bigger ghosts. Using the item causes the ghosts to explode and damage nearby enemies, and instantly kills all ghost enemies with less than 50% HP.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive nocantrip
+ | recharge    = unlimited
+ | unlocked by = Vade Retro
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* While held, enemies leave behind small, red ghosts on death; using the item causes the ghosts to explode, dealing damage to nearby enemies and destroying nearby enemy projectiles. The explosions will not destroy obstacles, move pickups, or damage Isaac.
+** The damage exploding ghosts deal is equal to 3 + 0.04x the health of the enemy the ghost spawned from + ((floor-1)x0.5), and each explosion can hit the same enemy up to 4 times. Blast radius increases the more powerful the explosion is.
+*** Enemies with high health, such as champion enemies, minibosses, and bosses will leave behind a larger ghost that creates three explosions.
+** Isaac will also leave a ghost upon death, which deals 200 flat damage if detonated.
+* Using the item will instantly kill any enemy that has the 'ghost' tag and is at 50% or less HP, including bosses.
+
+== Notes ==
+* Ghosts can be moved very slowly by shooting at them.
+* Enemies that can be instantly killed include all entities that have the <code>ghost</code> tag in <code>entities2.xml</code>.
+** This can even be used to kill {{e|Delirium}} should it transform into a ghost boss, such as {{e|The Haunt}}, while at or below half HP.
+** The full list of enemies affected are:
+*** {{e|Candler}}
+*** {{e|Dust}}
+*** {{e|Kineti}}
+*** {{e|Lil' Haunt}}
+*** [[Cut Content#Cut Monsters|Nightwatch (unimplemented)]]
+*** {{e|Polty}}
+*** {{e|Red Ghost}}
+*** {{e|Wizoob}}
+** Plus the following bosses:
+*** {{e|Clutch}}
+*** {{e|The Forsaken}}
+*** {{e|The Haunt}}
+*** {{e|The Heretic}}
+*** {{e|The Rainmaker}}
+* Ghosts that are currently not visible on the screen (e.g. in larger rooms) will not be detonated when using the item.
+* [[Friendly]] enemies can be killed by the ghosts.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Instead of exploding on the spot, souls home in on nearby enemies and explode on contact, similarly to {{i|Purgatory}}. The souls deal 2 × Judas's damage up to 3 times and destroy projectiles.}}
+* {{Book of Virtues synergy|description=Ghosts very slowly move and shoot tears in the same direction Isaac is shooting. The ghosts' tears deal 3.5 damage, and are fired once every second.}}
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* [[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s can’t leave ghosts.
+* {{i|E. Coli}} / {{i|Flush!}}: Enemies that are turned into poop can’t leave ghosts.
+* {{i|Void}}: When absorbed, enemies no longer leave behind ghosts on death. Retains ghost instant kill effect when void is used.
+
+== In-game footage ==
+{{#ev:youtube|eJaukP5nw8A||inline}} {{#ev:youtube|sDUz3TZjdMY||inline}}
+
+== Gallery ==
+<gallery>
+File:Vade_Red_Ghost1.png|One of four possible sprites of the red ghost spawned by enemies.
+File:Vade_Red_Ghost2.png|One of four possible sprites of the red ghost spawned by enemies.
+File:Vade_Red_Ghost3.png|One of four possible sprites of the red ghost spawned by enemies.
+File:Vade_Red_Ghost4.png|One of four possible sprites of the red ghost spawned by enemies.
+</gallery>
+
+== Trivia ==
+* The item's name refers to the Latin phrase "Vade Retro Satana", a phrase commonly uttered during exorcisms which roughly translates to "Stay back, Satan."
+** This phrase (and its initials) are commonly engraved around crucifixes or the Saint Benedict Medal.
+** The item's sprite directly represents the reverse side of said medal (which carries the phrase).
+* This item's effects could be a reference to the ''Nuclear Throne'' character Melting, who has a similar activated ability.
+** This is further reinforced by the fact that more powerful enemies leave larger ghosts that explode into 3 small blasts; in ''Nuclear Throne'', larger enemies' corpses would explode in a similar fashion.
+** The ability to detonate Isaac's ghost is also similar to Melting being able to use his ability one last time after death to explode his own corpse.
+* The {{e|Exorcist}} creates red ghosts that are identical to those created by Vade Retro. These ghosts can even be blown up if Isaac has the item.
+
+{{nav|bethany unlock|ultra greedier unlock|fr=Vade Retro}}

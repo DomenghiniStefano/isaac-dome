@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 95
+ | quote       = Friends 'till the bbbbzzzt
+ | description = Spawns a [[familiar]] that shoots {{i|Technology}} lasers.
+ | quality     = 1
+ | tags        = summonable baby tech monstermanual offensive
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Spawns a [[familiar]] that shoots [[spectral tears|spectral]] {{i|Technology}} lasers that deal 3.5 damage each.
+** {{dlc|nr}} Robo-Baby shoots once per second.
+** {{dlc|r}} Robo-Baby shoots 1.36 times a second.
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars. 
+** {{dlc|nr+}} Robo-Baby has 5th priority.
+** {{dlc|r+}} Robo-Baby has 7th priority.
+
+== Synergies ==
+* {{I|Mongo Baby}}: Will copy Robo-Baby’s tears.
+
+== In-game Footage ==
+{{#ev:youtube|QmSDSEEoquk||inline}} {{#ev:youtube|b2j7yjqjoRE||inline}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Technology Zero }}
+
+{{nav|conjoined}}

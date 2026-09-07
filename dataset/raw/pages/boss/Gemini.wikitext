@@ -1,0 +1,63 @@
+{{infobox boss
+ | id          = 79
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{Dlc|nr}}<br>{{floor|Basement}}<br>{{room|boss challenge}}{{room|boss rush}}<br>{{Dlc|r}}<br>{{floor|Basement}}{{floor|Burning Basement}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>(with another Gemini or [[Rag Man]])<br><u>Degraded Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Chest}}
+ | base hp     = 280
+ | pool = {{ip|Boss}}<br> {{i|Gemini|r+}} (1% chance)
+}} {{disambig msg|the boss|the item|Gemini (Item)}}
+
+'''Gemini''' is a [[boss]] that can appear:
+* {{Dlc|nr}} Only in the {{s|Basement}}.
+* {{Dlc+|r}} In the {{s|Basement}} and the {{s|Burning Basement}}.{{dlc-}}
+
+Each twin has 140 HP. The large twin is called ''Contusion'' and the small twin is called ''Suture''.<ref name="reddit">https://www.reddit.com/r/bindingofisaac/comments/8ylum7/hey_guys_its_me_edmund_im_the_guy_that_made_this/e2cbvdf/</ref><ref name="tumblr">[[edmundm:51416553970]]</ref>
+
+== Behavior ==
+Gemini starts as a pair of bosses connected together by an umbilical cord.
+* Contusion chases Isaac and periodically charges increasing his speed, but stops to catch his breath afterwards.
+* Suture, while attached to Contusion, shoots a projectile towards Isaac if not behind an obstacle.
+* If Contusion is killed first, Suture detaches and begins charging furiously at Isaac. He has high momentum and takes extra knock-back from tears, which can cause him to gain speed.
+** If Suture is killed first, there is no change to Contusion's behavior.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|7}}: Suture shoots homing shots. Contusion will drop a {{e|Soul Heart}} if killed last.
+:* {{dlc|r}} A soul heart will be dropped, regardless which part dies last.
+: {{bc|5}}: They start separated from each other and have no difference in behavior. However, if Contusion is killed last, it will usually drop a {{e|Red Heart}} or {{e|Half Red Heart}}, but will rarely drop any other type of [[Hearts|Heart]] instead ({{e|Soul Heart||Soul}}, {{e|Bone Heart||Bone}}, {{e|Gold Heart||Gold}}, etc).
+
+== Gallery ==
+<gallery>
+File:Boss Gemini cyan ingame.png|Blue Champion Gemini.
+File:Boss Gemini green ingame.png|Green Champion Gemini.
+File:Boss Delirium Gemini ingame.png|Gemini as one of {{e|Delirium}}'s forms.
+File:Boss Delirium Gemini old ingame.png|{{dlc|nr}} Gemini as one of Delirium's forms prior to Repentance.
+</gallery>
+
+== Notes ==
+* Status effects will equally affect both Contusion and Suture even if it was only applied to one of them. This includes effects granting knockback such as {{i|Knockout Drops}}.
+** This also applies to Green Champion Gemini, despite the twins being completely separated entities.
+
+== Trivia ==
+* Gemini appeared in the original ''The Binding of Isaac.''
+* Gemini seems to be an example of a [[wikipedia:Parasitic twin|parasitic twin]], with Suture being the underdeveloped twin, dependent on Contusion.
+* {{e|Blighted Ovum}} is the posthumous version of them, and {{e|Steven}} is the alternate version.
+* The Gemini pair is named after the [[wikipedia:Gemini (astrology)|astrological sign]] of the same name; the symbol of Gemini is a pair of twins.
+* The Gemini pair was originally designed to be a boss in ''Gish'' and was called Suture Contusion, with the larger twin being Contusion for the boot-shaped dent in his head.<ref name="tumblr">[[edmundm:51416553970]]</ref>
+* Contusion is the medical name for a bruise, whereas suture is the medical name for a thread used to close gaping wounds, commonly called stitches.
+* The names of the brothers are inspired by a song by [[wikipedia:The Mars Volta|The Mars Volta]]<ref name="reddit"/>
+** The specific lyric comes from "Cicatriz ESP".
+* In the [[Bestiary]], Suture is referred to as "Gemini Baby".
+
+== Bugs ==
+{{bug|dlc=na+|{{e|Gemini}}'s cord dots are considered monsters, and each one will turn into a new monster if the {{i|D10}} is used in the room.}}
+{{bug|To unlock {{s|Cellar}}, Isaac must kill all {{s|Basement}} bosses once. Gemini, however, counts as two depending on which part is killed first.}}
+{{bug|If you [[confusion|Stun]] Suture at the same time that it tries to shoot Isaac, it will cause the sound effect to loop infinitely until Suture is killed.}}
+{{bug|dlc=na+|If Gemini's chain hits [[Red Poop]] or [[Spikes]], the chain will disappear but Contusion and Suture will still be joined.}}
+
+== References ==
+{{reflist}}
+
+{{nav|boss|fr=Gémeaux (Boss)}}
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Rebirth]]

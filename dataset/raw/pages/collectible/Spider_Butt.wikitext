@@ -1,0 +1,37 @@
+{{infobox activated collectible
+ | name = Spider Butt
+ | id = 171
+ | quote = Mass enemy slowdown + damage
+ | description = Deals 10 damage to all enemies in the room and [[Status Effects#Slow|slows]] them for 4 seconds. {{dlc|r}} Enemies killed by Spider Butt spawn [[Blue Spider]]s.
+ | quality     = 1
+ | tags        = spider offensive
+ | recharge = 2
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Deals 10 damage to all enemies in the room and [[Status Effects#Slow|slows]] them for 4 seconds.
+* {{dlc|r}} Enemies killed by Spider Butt spawn 1-3 [[Blue Spider]]s.
+* {{transformation contribution|Spider Baby}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns white wisps in the middle ring, looking like a spider. Wisps' tears have a 7.5% chance to inflict [[slow]] on enemies.}}
+
+== Interactions ==
+* {{i|Car Battery}}: Deals 10 damage to enemies twice but does not increase slow effect.
+
+== In-game Footage ==
+{{#ev:youtube|8dwAE12C1dM}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Spider Butt.png|{{plat|3DS}} The icon of Spider Butt as seen on the lower 3DS screen
+File:Spider Butt giantbook.png|Splash image which appears when Spider Butt is activated.
+</gallery>
+
+== Trivia ==
+* This item resembles the abdominal segment of a [[wikipedia:Latrodectus|Black Widow spider]].
+* This item originally in ''Wrath of the Lamb'' had to be unlocked by beating a challenge titled, "Spider Boy!".
+
+{{nav|spider|fr=Filière d'Araignée}}

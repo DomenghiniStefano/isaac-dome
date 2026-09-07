@@ -1,0 +1,101 @@
+{{header characters}}
+{{infobox character
+ | dlc          = r
+ | id           = 18
+ | health       = {{hearts|red=3}}
+ | pickups      = 4 [[Soul Heart|soul charges]]
+ | collectibles = {{i|Book of Virtues}}
+ | unlocked by  = Bethany
+}}
+'''Bethany''' is a [[character]] added in ''[[The Binding of Isaac: Repentance]]''. She is unlocked by defeating {{e|Mom's Heart}} or {{e|It Lives!}} in [[hard mode]] with {{c|Lazarus}} without [[death|losing a life]].
+
+Bethany starts with three [[Red Heart container]]s, four soul charges (2{{e|Soul Heart}}s), and {{i|Book of Virtues}}.
+
+Bethany is unable to utilize {{e|Soul Heart}}s and {{e|Black Heart}}s as health. When picked up, they instead are converted to a resource unique to Bethany called "soul charges" at the rate of one charge per half heart. The number of soul charges currently owned is listed along with the pickup counters. Soul charges can be consumed to use Bethany's activated item when the item isn't fully charged, at the rate of one soul charge per empty bar of charge.
+
+== Notes ==
+* Bethany's {{i|Book of Virtues}} starting item, combined with her unique soul and black heart usage, means that she is a character who sees significantly more Angel Deals than other characters.
+* Since Bethany can't use soul and black hearts as a buffer, Angel and Devil Deals are much harder to get. This will usually mean beating floors without taking damage.
+** Ways to allow Bethany to protect her devil deal chances include picking up an eternal, rotten, or bone heart.
+** It's recommended to maintain a large amount of wisps from the Book of Virtues to keep up a barrier around Bethany, protecting her from taking damage (and thus losing out on a Deal).
+* [[Devil Room#Deals with the Devil|Devil Deals]] are riskier to take – reducing the red heart count leaves Bethany more vulnerable than other characters.
+* An {{R|Angel Room}} will always spawn as Bethany's first deal room due to her starting item, the Book of Virtues.
+** The item also means that Bethany will continue to have a chance to spawn more Angel Rooms even if she takes a [[Devil Room|Devil Deal]] later on.
+* Even though {{i|Book of Virtues}} is Bethany's signature starting item, it is not intrinsic to her and can be removed via {{R|Dice Room}}s, {{t|Butter!}}, or {{t|'M}}.
+** However, this also means that Book of Virtues will not be removed when turned into a different character with items such as {{i|Lazarus' Rags}} or {{i|Ankh}}.
+* Bethany's intrinsic soul charge mechanic is, while almost always seen with {{i|Book of Virtues}}, entirely separate from it. In the rare event that the book is lost, she can still spend soul charges to use whatever applicable active item she has.
+* As Bethany can only ever have red heart health, {{i|The Negative}} will prove to be a more useful option overall for the +1 damage boost, if the final run target is not {{e|???}}.
+
+== Item Interactions ==
+Due to Bethany's special soul charge mechanic, and her inability to actually have soul/black hearts, certain items function differently.
+
+<!-- Do not add Book of Virtues effects here, add them to the item. This list is only for interactions that apply solely to Bethany. -->
+* Items that grant black/soul hearts gives charges instead:
+** {{I|Abaddon}}: Brings Bethany down to half a heart of health, and removes all but one of her Heart Containers. The black hearts she would have gotten are all converted to soul charges.
+** {{i|Guppy's Paw}}: Takes one heart container and gives 6 soul charges.
+** {{i|Book of Revelations}}, {{i|Satanic Bible}}, {{i|The Nail}}: Grants the corresponding amount of charges.
+* Items that do not use charges to function cannot be used via spending the soul charges:
+** {{i|Jar of Flies}}: Soul Charges cannot be used to grant flies.
+** {{i|Magic Fingers}}: Still requires money to be used.
+* {{I|Alabaster Box}}: Can be charged by soul charges that Bethany has already acquired prior to picking it up.
+* {{i|Converter}}: Unusable, as Bethany cannot hold soul/black heart containers normally.
+* {{i|Birthright}}: Activating an item using soul charges is free 50% of the time.
+
+For the many Item Interactions concerning the {{i|Book of Virtues}}, please consult that item's page.
+
+=== Favored Items ===
+* {{e|Bone Heart}}s and {{e|Rotten Heart}}s: Bethany's deal chances are always at risk due to her inability to shield them with Soul or Black hearts, but she can still obtain Bone and Rotten Hearts which won't ruin her chances upon getting hit. Although, do note that Rotten Hearts take double damage compared to Red Hearts, so it's more of a risk/reward scenario.
+* {{I|Book of Shadows}} / other sources of [[temporary buff|invulnerability/shield]]: Using the item will render Bethany as well as her wisps invulnerable, making it easier to stack up on wisps, while also transforming them into a very effective source of damage, as Bethany can freely ram every enemy in a single room without the wisps dying. A secondary positive is that soul charge makes it possible to activate the invulnerability at will, making it easier to complete a whole floor without taking damage.
+** {{i|Unicorn Stump}} is especially effective as its single room recharge can render her almost unstoppable.
+* {{I|Brittle Bones}}: Removes Bethany's red heart containers and grants her 6 bone hearts instead. Because Bethany cannot use Soul Hearts as health, the bone hearts will be greatly appreciated to protect her deal chances as much as possible. Breaking these bone hearts also gives her a permanent tears up.
+** {{I|Marrow}} is also a decent item to protect Bethany's deal chances - moreover, it spawns heart pickups to immediately fill it and grant the acquired bone heart further sustainability.
+* {{i|Charm of the Vampire}}: Allows Bethany to easily heal from killing enemies.
+* {{I|Compost}}: With just a few soul charges, allows to exponentially increase one's amount of flies.
+* {{i|Duality}}/{{i|Eucharist}}: Guarantees free Angel Rooms over costly Devil Rooms.
+* {{I|Eraser}}: Soul charges can be used to throw it, allowing Bethany to erase large categories of enemies from the run.
+* {{I|Glass Cannon}}: If broken, can be fixed instantly with soul charges.
+* {{I|Glyph of Balance}}: Will produce soul hearts every room clear when Bethany has more than 5 bombs, 5 keys, a trinket, less than 6 total Red Heart containers of any kind, and full health. This allows you to stack up hundreds of soul charges.
+* {{I|Hypercoagulation}}: Because Bethany can only ever have red health, the ejected hearts will always be of use to her. Great for farming Blood Donation Machines, Devil Beggars or similarly-themed machines with sufficient speed.
+* {{I|Mitre}}: Having a higher chance to get more {{e|Soul Heart}}s is useful because it allows Bethany to spawn more wisps. However, it will reduce the number of Hearts that can be used as health, making the item a bit risky.
+* {{i|Prayer Card}}: Immensely helpful to build up health, and can be fueled with soul charges to accomplish this even faster.
+* {{I|Tear Detonator}}: Spamming the detonator while firing results in a tremendous amount of carnage in exchange for a single soul charge per button press. This is especially helpful in [[Greed Mode|Greed / Greedier mode]], as each wave fully recharges it. Be careful, however, as spamming the detonator too aggressively may crash the game.
+* {{T|Vibrant Bulb}} Works with items that are fully charged with soul charges even if it's not completely full from room charges.
+* {{I|Void}}: Although it cannot spawn wisps by itself, it spawns the wisps of every active item it has absorbed while Bethany is holding {{I|Book of Virtues}} potentially allowing her to rapidly accrue a large amount of wisps.
+* {{i|Yum Heart}}: As Bethany relies on red hearts to stay alive, Yum Heart can be very valuable and can be fueled with stockpiled soul charges when necessary.
+
+=== Disfavored Items ===
+* {{T|Apple of Sodom}}: Has a chance to take away red hearts she could use to heal herself.
+* {{i|Book of Revelations}} / {{i|Satanic Bible}}: If used with 4 or more Soul Charges, these items result in a net charge loss without any palpable benefits: The former will replace bosses with a harbinger and negate chances for Bethany to gain precious health ups instead, while the latter replaces the boss drop with a Devil Deal item, which takes away her health as well.
+* {{i|Crown Of Light}}: Will not be constantly active if Bethany does not have full red health, which she can only use rotten hearts as a buffer for.
+* {{i|Scapular}} / {{T|Monkey Paw}}: Grants two soul charges upon dropping to half a heart of health, nullifying their defensive utility.
+
+=== Neutral Items ===
+* {{i|Dark Bum}} / {{t|Daemon's Tail}}: While it may be useful for additional soul charge generation, it also takes away from red hearts which Bethany could use to heal herself.
+* {{i|Delirious|nr+}}: Allows Bethany to summon up to 9 friendly bosses with the drawback of not being able to spawn wisps as often.
+* {{i|Yuck Heart}}: Grants a Rotten Heart upon use. While rotten hearts do not count in regards to loss of Deal chances, each individual rotten heart counts as half a heart of health, essentially halving Bethany's effective health if her health bar is exclusively comprised of them.
+
+== Unlockable [[achievement]]s ==
+{{achievement text | Beth's Faith, Wisp Baby, Book of Virtues, Urn of Souls, Blessed Penny, Alabaster Box, Soul Locket, Vade Retro, Divine Intervention, Glowing Baby, Star of Bethlehem, Revelation, Jar of Wisps, The Zealot, Hope Baby }}
+
+== Gallery ==
+<gallery>
+File:Transition Bethany.png|Bethany's transition screen portrait.
+File:Start_Bethany.png|The spawn floor when playing Bethany.
+File:Bethany Menu Icon (Locked).png|Bethany's locked character icon.
+File:BethanyConceptPt1.png|Concept and description for Bethany and her mechanics.
+File:BethanyConceptPt2.png|More concepts of Bethany, this time mechanics for her that were never implemented ingame.
+File:BethanyDora1.png|Concept art of Bethany originally envisioned by Kilburn as a college student, originally named "Dora" and intended as the main character of a co-op platformer. She was planned to use a frying pan as a weapon, and her story was based on Pandora's Box (source is a tweet by Kilburn as listed in the trivia section).
+</gallery>
+
+== Trivia ==
+* In ''Antibirth'', Bethany was unlocked by having a total number of 12 {{e|Soul Heart}}s or {{e|Black Heart}}s at once.
+* Conceptually, Bethany first began as the main character for a game envisioned by developer Kilburn as a college research project, originally named "Dora".<ref>https://twitter.com/FixItVinh/status/1394143025706713088</ref> She was added to ''The Binding of Isaac: Antibirth'' (the fan creation that would later become ''Repentance'') after Kilburn deduced that she wouldn't be out of place <ref>https://twitter.com/FixItVinh/status/1394143339759419394</ref> in the game.
+** Her name is a reference to [[wikipedia: Mary of Bethany|Mary of Bethany]]. She was the sister of {{C|Lazarus}}, and is sometimes identified as Mary Magdalene or as an anonymous sinful woman in the Gospel of Luke.
+*** [[wikipedia:Bethany|Bethany]], the village Mary lived in, was a town in the West Bank of Jerusalem. [[wikipedia:Martha|Martha]] and [[wikipedia:Lazarus of Bethany|Lazarus]] likewise lived there, and the raising of Lazarus from the dead occurred there as well.
+* Bethany's locked Icon shows her bound in chains.
+** She shares this with {{C|Magdalene}}, {{C|Cain}}, {{C|Samson}}, {{C|Eve}}, {{C|Lazarus}}, and {{C|Jacob and Esau}}.
+
+== References ==
+{{reflist}}
+
+{{nav|character|lazarus unlock|moms heart unlock|it lives unlock|bethany unlock|fr=Béthanie}}

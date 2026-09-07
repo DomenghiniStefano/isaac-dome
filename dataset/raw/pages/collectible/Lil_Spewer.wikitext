@@ -1,0 +1,61 @@
+{{infobox passive collectible
+ | dlc = a+
+ | name = Lil Spewer
+ | id = 537
+ | quote = Puking buddy
+ | description = Drops a random [[pill]], and spawns a [[familiar]] that charges up and fires [[creep]]. Using pills changes the creep type.
+ | quality     = 1
+ | tags        = summonable monstermanual offensive
+ | unlocked by = Lil Spewer
+}}
+
+{{cit|up|a+5}}
+
+== Effects ==
+* Spawns a random [[pill]].
+* Spawns a small Spewer familiar that charges up and fires different types of [[creep]].
+* The familiar and his creep change randomly when Isaac uses a pill.
+* Possible creep includes:
+** A line of damaging green creep that deals 0.4 damage per tick (12 damage per second).
+** A long line of slowing black creep.
+** A line of short-lasting, damaging red creep, with a larger puddle of creep at the end that lasts longer. The creep will deal 1.2 damage per tick (36 damage per second).
+** A short-ranged cone of damaging yellow creep that grows larger and deals more damage the further it travels. It deals 2 damage per tick at the lowest range, and increases to 15.2 damage per tick at the furthest (~6-47 damage per second, based on range).
+** A large ring of long-lasting slowing white creep.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Blastocyst}}.{{dlc-}}
+* Lil Spewer always starts with green creep.
+* The familiar does not do contact damage.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Lil Spewer having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+* The Ipecac shot created by {{t|Torn Card}} works for unlocking the Lil Spewer achievement.
+* The explosive shots from the wisps summoned by Bob's Rotten Head and the {{I|Book of Virtues}} count for the Lil Spewer achievement
+
+== Interactions ==
+* {{t|Baby-Bender|n}}: Has no effect on Lil Spewer.
+* {{i|BFFS!}}: Increases Lil Spewer's size and creep pool length (but has no effect on damage).
+* {{i|Box of Friends}}: Creates a random spewer rather than copying the current one.
+
+== In-game Footage ==
+{{#ev:youtube|74Pr50YpoXA}}
+
+== Trivia ==
+* Lil Spewer is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1108638164 this Steam Workshop item] by Strawrat and CupertinoEffect.
+* The item originates from Edmund Mcmillen's previous game of the same name, in which Spewer could consume pills to give his vomit different effects.
+* Lil Spewer was first revealed in [https://mobile.twitter.com/edmundmcmillen/status/979873591259938817 a tweet made by Edmund McMillen] as an official item for Booster Pack 5.
+* In his black form, Lil Spewer resembles {{e|Gish}}, who creates similarly-slowing black creep.
+* In his red form, Lil Spewer has a similar appearance to Super Meat Boy, from the Edmund McMillen game of the same name.  In his title, Super Meat Boy also creates blood (the intended resemblance of red creep).
+
+== Gallery ==
+<gallery>
+File:Collectible Lil Spewer mod icon.png|Lil Spewer's item sprite in the original [https://steamcommunity.com/sharedfiles/filedetails/?id=1108638164 Steam Workshop mod].
+File:Lil Spewer Familiar.png|Lil Spewer's normal appearance (green creep).
+File:Lil Spewer Familiar Yellow.png|Lil Spewer's yellow appearance.
+File:Lil Spewer Familiar White.png|Lil Spewer's white appearance.
+File:Lil Spewer Familiar Red.png|Lil Spewer's red appearance.
+File:Lil Spewer Familiar Black.png|Lil Spewer's black appearance.
+</gallery>
+
+== Bugs ==
+{{Bug|dlc=r|{{i|Trisagion}} makes {{a|Lil Spewer}} achievement impossible to obtain via a suicide with {{i|Bob's Rotten Head}} or {{i|Ipecac}}.}}
+
+{{nav|booster pack}}

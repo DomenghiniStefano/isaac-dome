@@ -1,0 +1,34 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 8
+ | quote       = Friends 'till the end
+ | description = Spawns a [[familiar]] who follows Isaac around and fires normal tears {{dlcalt|once per second|r=1.88 times a second}} that each do 3.5 damage.
+ | quality     = 1
+ | tags        = summonable baby monstermanual offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a [[familiar]] who follows Isaac around and fires normal tears {{dlcalt|once per second|r=1.88 times a second}} that each do 3.5 damage.
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* {{dlc|nr}} Brother Bobby is functionally identical to {{i|Sister Maggy}}.
+* {{dlc|r}} Brother Bobby has a higher tear rate than {{i|Sister Maggy}}, whereas Sister Maggy has increased damage.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Brother Bobby having  {{dlcalt|5th|r+=7th}} priority.
+
+== Synergies ==
+* {{I|Mongo Baby}}: Will copy Brother Bobby’s tears.
+
+== In-game Footage ==
+{{#ev:youtube|KJeqrvON2vE||inline}} {{#ev:youtube|7ubk0cbPAWk||inline}}
+
+== Trivia ==
+* '''Brother Bobby''', like {{C|???}}, is a reference to Edmund McMillen's older game ''Dead Baby Dressup''.
+** According to Edmund McMillen's [https://youtu.be/kby0rXT7qYQ first post-Repentance Lore Stream], Brother Bobby was added to the game before ???.
+* This item is named after a baby doll that Edmund had as he was a child.
+* This item is used in {{chal|The Family Man}} and {{chal|Blue Bomber}}.
+* In the original game, the item {{i|Holy Water}} will turn one of your shooting familiars into Brother Bobby until the bottle is broken.
+
+{{nav|conjoined|fr=Frère Bobby}}

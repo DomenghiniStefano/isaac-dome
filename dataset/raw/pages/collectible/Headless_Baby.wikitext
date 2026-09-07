@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | id          = 269
+ | quote       = Bloody friend
+ | description = Spawns a [[familiar]] that follows Isaac, leaving [[Creep#Red Creep|blood]] [[creep]] on the ground.
+ | quality     = 1
+ | tags        = summonable baby monstermanual offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a [[familiar]] that follows Isaac around, leaving a trail of [[red creep]] that damages enemies.
+** The creep deals 2 damage per tick or 6 damage per second to non-flying enemies.
+** {{Dlc|r}} The creep deals damage much more rapidly at 20 damage per second.
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Headless Baby having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== Synergies ==
+* {{t|Lost Cork}}: Creep trail size is bigger.
+
+== Interactions ==
+* {{i|BFFS!}}: Familiar is bigger; however, no effect on creep damage.
+
+== In-game Footage ==
+{{#ev:youtube|sHg3nDBH3aw}}
+
+{{nav|conjoined|fr=Bébé Décapité}}

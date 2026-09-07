@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 491
+ | quote       = Pills pills pills!
+ | description = Spawns a [[familiar]] that drops a random [[pill]] every {{dlc|nr}} 3 / {{dlc|r}} 7 [[room]]s. Upon using a pill, all enemies in the room are [[poison]]ed.
+ | quality     = 2
+ | tags        = summonable baby offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Spawns a [[familiar]] that drops random [[pill]]s.
+** Acid Baby drops a pill every {{dlc|nr}} 3 / {{dlc|r}} 7 cleared [[room]]s. The first drop happens after {{dlc|nr}} 2 / {{dlc|r}} 6 rooms.
+* Upon using a pill, all enemies in the room will be [[poison]]ed.
+** {{dlc|nr}} The poison lasts for 2 ticks.
+*** {{dlc|r}} The poison lasts for 6 ticks. Enemies also take 10 additional damage.
+* {{dlc|r}}{{transformation contribution|Conjoined}}
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Acid Baby having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== Synergies ==
+* {{dlc|nr}} {{i|BFFS!}}: The familiar drops pills in a repeating pattern of 2, 2 then 3 rooms. No damage increase on the poison effect.
+** {{dlc|r}} Acid Baby drops a pill every 6 cleared rooms.
+* [[Vurp!]]: If Isaac's last used pill is a Vurp! pill and Isaac finds another Vurp! pill afterward, he can infinitely generate Vurp! pills and repeatedly use them for mass poison damage.
+
+== Interactions ==
+* {{T|Second Hand}}: No effect.
+* {{i|Starter Deck}}: All pills dropped by Acid Baby will turn into cards.
+
+== In-game Footage ==
+{{#ev:youtube|QEe6dV0Wgq0}}
+
+{{nav|conjoined|fr=Bébé Drogué}}

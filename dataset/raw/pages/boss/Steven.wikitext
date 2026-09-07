@@ -1,0 +1,68 @@
+{{infobox boss
+ | id          = 79
+ | image name  = * {{dlc|nr|Rebirth}}
+ | variant     = 1
+ | environment = <u>Boss</u><br>{{Dlc|nr}}<br>{{floor|Basement}}<br>{{room|Boss Rush}}<br>{{Dlc|r}}<br>{{floor|Basement}}{{floor|Burning Basement}}<br>{{room|Boss Rush}}<br><u>Degraded Boss</u><br>{{floor|Sheol}}
+ | base hp     = 280
+ | pool        = {{i|Little Steven}} (83.4%)<br>{{i|Steven}} (16.6%)
+ | unlocked by = Something From The Future
+}}
+{{disambig msg|the boss|the damage item|Steven (Item)|the familiar item|Little Steven}}
+
+'''Steven''' is a [[boss]] that can appear:
+* {{Dlc|nr}} Only in the {{s|Basement}}.
+* {{Dlc|r}} In the {{s|Basement}} and the {{s|Burning Basement}}.
+Each Steven has 140 HP.
+
+== Behavior ==
+'''Phase 1'''
+* Big Steven chases Isaac and periodically charges increasing its speed, but stopping to catch his breath afterwards.
+* Steven Baby shoots a projectile towards Isaac if not behind an obstacle.
+
+'''Phase 2'''
+If Big Steven reaches 50% HP, they separate:
+* Big Steven continues the same patterns.
+* Steven Baby begins charging furiously at Isaac.
+* Both, when killed shoot out projectiles in all directions.
+** {{dlc|nr}} 8 projectiles each.
+** {{dlc|r}} Big Steven: Two rows of 8 slow-moving projectiles that travel over obstacles and off-screen which also deal a whole heart of damage. Small Steven: unchanged.
+Small Steven can be targeted and killed first with no change to either Steven's behavior.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Steven ingame.png|Steven as one of {{e|Delirium}}'s forms.
+File:Boss Delirium Steven Afterbirth+ ingame.png|{{dlc|nr}} Steven as one of Delirium's forms before ''Repentance''.
+</gallery>
+
+== Notes ==
+* {{Dlc|r}} Steven is much less common than his counterpart, spawning only 1/4th as often.
+* Steven's arena will always look the same as {{e|Gemini}}'s.
+* If already in possession of {{i|Steven}} or {{i|Little Steven}}, the other item will be dropped. If Isaac has both, a normal boss room reward is generated.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Little Steven }}
+
+== Trivia ==
+* Steven appeared in the original ''Binding of Isaac''.
+* He is a rare alternative to '''Gemini'''.
+* Steven originated from the 2009 flash game ''[http://www.newgrounds.com/portal/view/511754 Time Fcuk]'', which was created by Edmund McMillen.
+* {{dlc|a}} Steven can appear in [[Greed Mode]] prior to his prerequisites being completed.
+* As they appear in ''Time Fcuk'' and on the boss art, Big Steven and Steven Baby have the back of their heads attached. However, their attachment does not appear this way in-game. This is likely due to Big and Small Steven having the same function of how Contusion and Suture are conjoined, only without the long cord holding them together.
+* According to Edmund McMillen, Steven is connected to Isaac.<ref>[[edmundm:99746755255]]</ref>
+* Steven also appears in ''The End is Nigh'', another game created by Edmund McMillen.
+* One of the images that can appear before the start of a new run states: "GET IN THE BOX", which is Steven's unofficial catchphrase from ''Time Fcuk''.
+** It is also likely an allusion to both ''Time Fcuk'' and ''The Binding Of Isaac'' taking place inside some form of box.
+* {{dlc|r}} Big Steven's appearance as one of Delirium's forms shares the appearance of Ash, the main protagonist of ''The End is Nigh''.
+* {{dlc|r}} Steven Baby's projectiles have a completely unique visual design while Big Steven's death projectiles have both unique visuals and behaviour.
+** These new designs were made to coincide with Edmund's project ''Øuroboros'', which also features Steven; teased in 2016.
+* In the [[Bestiary]], Little Steven is referred to as "Steven Baby".<ref>https://www.youtube.com/watch?v=dtr7Ala5hbA</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|boss|fr=Steven (Boss)}}
+[[Category:Alternate bosses]]
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Rebirth]]

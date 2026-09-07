@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 727
+ | quote       = Spooky blast +5 bombs
+ | description = +5 {{e|Bomb}}s. Bombs become [[Tear Effects|spectral]] and spawn ghosts that deal contact damage to enemies and explode after 10 seconds.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive
+ | unlocked by = Ghost Bombs
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Gives Isaac 5 {{e|Bomb}}s.
+* Isaac's bombs create ghosts when they explode, which rapidly chase and deal contact damage to enemies.
+** The ghost deals contact damage equal to half of Isaac's [[damage]] per tick (2× Isaac's damage per second).
+* After 10 seconds, the ghost explodes, dealing 7 damage to nearby enemies up to 3 times and destroying nearby projectiles. Isaac does not take damage from the explosion.
+** If there are no enemies in the room, the ghost follows Isaac. However, it cannot follow Isaac between rooms.
+
+== Notes ==
+* [[Friendly]] enemies can be killed by the ghosts.
+
+== Synergies ==
+* {{i|Dr. Fetus}}: Has a chance to shoot a Ghost Bomb that also has spectral properties and can travel through objects.
+* {{I|Scatter Bombs}}: Split bombs create ghosts that instantly launch themselves at enemies and explode, similar to {{i|Purgatory}}. They each deal 2× Isaac's damage, up to 4 times.
+* {{I|Mr. Mega}}: Ghosts appear larger and do extra damage only upon exploding.
+
+== Interactions ==
+* {{i|Doctor's Remote}}/{{i|Epic Fetus}}: No effect.
+* {{i|Ipecac}}: The ghosts get only +1 flat damage from Ipecac, not the expected +20.
+* {{i|Libra}}: The ghosts ignore damage modification from Libra, both positive and negative: the actual unbalanced damage value is used.
+
+== In-game footage ==
+{{#ev:youtube|mCFKFTv-i9o}}
+
+== Trivia ==
+* Defeating {{e|Delirium}} as most tainted characters will unlock their gameplay characteristic. Interestingly, Tainted Lost's passive ability to reroll low quality items ({{I|Sacred Orb}}) is unlocked through defeating {{E|The Beast}} instead.
+* This item may be a reference to "Super Ghost Kamikaze Attack" from ''Dragon Ball Z''.
+
+{{nav|bomb modifier|bomb|tainted lost unlock|delirium unlock|fr=Bombes Fantômes}}
+[[Category:Bomb items]]

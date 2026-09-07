@@ -1,0 +1,47 @@
+{{infobox activated collectible
+ | id          = 35
+ | quote       = Mass room damage
+ | description = Deals 40 damage to every enemy in the [[Rooms|room]].
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = book offensive
+ | recharge    = {{dlcalt|6|r=4}}
+ | unlocked by = The Necronomicon
+}}
+
+{{cit|ua}}
+
+== Effect ==
+* Upon use, deals 40 damage to every enemy in the [[Rooms|room]].
+* {{transformation contribution|Bookworm}}
+* {{transformation contribution|Necromancer}}
+
+== Notes ==
+* Many collectibles will produce effects similar to the Necronomicon, such as depleting a {{E|Black Heart}} or blocking projectiles with {{i|Dry Baby}}.
+* The Necronomicon deals a considerable amount of damage to bosses that have multiple damageable parts, e.g. {{E|Larry Jr.}} and {{E|The Hollow}}.
+* This item also does high enough damage to instantly kill most non-boss enemies; however it is not especially useful against most bosses (with the above exceptions), which will only take minor chip damage.
+* {{dlc|a}} Damage from the Necronomicon bypasses [[damage scaling]].
+* {{dlc|r+}} With the Necromancer transformation, the Necronomicon gains a unique appearance and 10 free uses per floor. After the free charges are expended, it behaves as normal until the next floor.
+
+== Synergies ==
+* {{T|A Missing Page|r}} / {{I|Missing Page 2|r}}: Necronomicon will deal an additional +40 damage. Effects stack together and with multiple copies.
+* {{Book of Virtues synergy|description=Spawns black wisps on the inner ring. The wisps deal 40 damage to all enemies in the room when destroyed. This is not boosted by {{I|BFFS!}}, but is boosted by {{t|A Missing Page}} and {{I|Missing Page 2}}.}}
+
+== In-game Footage ==
+{{#ev:youtube|oB2aGCWNcNM||inline}} {{#ev:youtube|PJrO02qzp3U||inline}}
+
+== Trivia ==
+* ''[[wikipedia:The Necronomicon|The Necronomicon]]'' is a fictional grimoire appearing in the works of horror writer [[wikipedia:H.P.Lovecraft|H.P. Lovecraft]].
+** {{t|A Missing Page}} and {{i|Missing Page 2}} are both references to missing pages of the Necronomicon appearing in [[wikipedia:The Evil Dead (franchise)|Evil Dead]].
+* The book seems to be bound in human skin, which explains the face on its cover.
+** The face on the cover is another reference to The Evil Dead franchise, which has the same face on its Necronomicon.
+* {{dlc|r+}} This item is one of only six in the game that work towards 2 transformations ({{tf|Bookworm}} and {{tf|Necromancer}}), the other five being {{i|Magic Mushroom}}, {{i|The Bible}}, {{i|Hive Mind}}, {{i|Parasitoid|n}}, and {{i|Skatole}}.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The Necronomicon.png|{{plat|3DS}} The icon of The Necronomicon as seen on the lower 3DS screen.
+File:Collectible The Necronomicon activated.png|Picture of The Necronomicon when activated.
+File:Collectible The Necronomicon Necromancer icon.png|{{dlc|r+}} The Necronomicon appearence while having the Necromancer transformation.
+File:Collectible The Necronomicon Necromancer activated.png|{{dlc|r+}} Picture of The Necronomicon while gaining the Necromancer transformation.
+</gallery>
+
+{{nav|necromancer|book|fr=Necronomicon}}

@@ -1,0 +1,41 @@
+{{infobox boss
+ | dlc         = a+
+ | name        = Rag Mega
+ | id          = 409
+ | environment = <u>Boss</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|boss challenge}}<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}<br><u>Alternate path</u><br>{{floor|Mausoleum}}
+ | base hp     = 120
+ | pool        = {{ip|Boss}}<br> {{i|Spoon Bender|r+}} (1% chance)
+ | unlocked by = Something wicked this way comes+!
+}}
+
+'''Rag Mega''' is a [[boss]] added in ''[[The Binding of Isaac: Afterbirth †]]'' that can appear in all environments of [[Chapter 2]] ({{s|Caves}}, {{s|Catacombs}}, {{s|Flooded Caves}}).
+
+== Behavior ==
+Rag Mega spawns with 3 {{e|Purple Ball}}s which are immune to damage and block shots. They circle around him as he floats around the room while he performs the following attacks:
+* Each time Rag Mega loses around 25% HP, he breaks off a Purple Ball which starts to chase Isaac.
+* Periodically wraps his body in bandages and becomes immune to damage.
+* Spawns a {{e|Rag Man's Ragling}}. They will leave remains on the ground after death.
+* Fires 3 beams from the sky that travel outwards. If the beam hits the remains of a dead Ragling, it is revived.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Rag Mega ingame.png|Rag Mega as one of {{e|Delirium}}'s forms.
+File:Afterbirth Boss Concepts.jpg|Rag Mega's drawn design, along with those of other Afterbirth/Afterbirth† bosses, by Edmund McMillen.
+</gallery>
+
+== Notes ==
+* {{i|Little Horn|n}} shots can kill the Purple Balls.
+
+== Trivia ==
+* It appears to be an "evolved" variant of {{e|Rag Man}}.
+* Rag Mega looks and behaves similarly to {{e|The Duke of Flies}}.
+* Although it is an upgraded version of Rag Man, it has 80 less health.
+** This is likely due to the fact that Rag Mega can become invincible for extended periods and has tear-blocking Purple Balls, making him harder to damage.
+
+{{nav|blue baby boss unlock|boss|fr=Phararond}}
+[[Category:Bosses]]
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Afterbirth+]]

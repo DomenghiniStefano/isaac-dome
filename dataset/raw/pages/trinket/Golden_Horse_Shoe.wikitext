@@ -1,0 +1,29 @@
+{{infobox trinket
+ | dlc         = a
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 82
+ | quote       = Feel lucky?
+ | description = +15% chance for {{r|Treasure Room}}s to have two [[items]]. Only one item can be taken.
+ | tags        = lazarussharedglobal
+}}
+
+{{cit|t|a}}
+
+== Effect ==
+* +15% chance for a {{r|Treasure Room}} with two items to spawn on subsequent floors.
+** Only one of the two items can be taken, the other will disappear.
+
+== Notes ==
+* {{dlc|r}} Also applies to trinkets spawned in Treasure rooms during [[Pica Run]] Challenge.
+* {{dlc|r}} Also applies during [[Ascent]] to any Treasure Rooms that were not previously opened.
+
+== Synergies ==
+* {{T|Pay to Win|a+nr}}: If Golden Horse Shoe activates, both items can be taken.
+* {{T|Broken Glasses}}: The second item will always be blind if not on the alt path.
+** This doesn't apply with {{I|More Options}}.
+* {{i|Mom's Box}} / {{A|Golden Trinket|r}}: Increases the chance to 30%.
+
+== In-game Footage ==
+{{#ev:youtube|TCjLKfi1r7g}}
+
+{{nav|options|fr=Fer à Cheval Doré}}

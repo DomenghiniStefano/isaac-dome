@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 732
+ | quote       = DMG up
+ | description = +1 [[Damage]]. Drops a random [[Rune]] or [[Soul Stone]] upon pickup.
+ | quality     = 3
+ | tags        = mom offensive
+}}
+
+{{cit|p|r|v1.7.5}}
+
+== Effects ==
+* +1 [[Damage]]. 
+* Drops a random [[Rune]] or [[Soul Stone]] upon pickup.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* If no Runes or Soul Stones have been unlocked, it does not drop anything.
+
+== In-game footage ==
+{{#ev:youtube|NgR3SyWHCbk||inline}} {{#ev:youtube|faX4x0Iq-vo||inline}}
+
+== Trivia ==
+* Mom's Ring has the highest item ID of all items in the vanilla game.
+** Consequently, this item is impossible to obtain by the use of {{i|Spindown Dice}}, as there is no item with a higher ID than it without mods.
+
+{{nav|yes mother|mom|fr=Bague de Maman}}

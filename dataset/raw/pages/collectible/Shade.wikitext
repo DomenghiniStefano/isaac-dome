@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | dlc = a+
+ | name = Shade
+ | id = 468
+ | quote = It follows
+ | description = Spawns a shadow [[familiar]] that follows Isaac's movements on a 1 second delay and deals contact damage to enemies. After dealing enough damage, it is absorbed by Isaac and spawns [[friendly]] {{E|My Shadow|text=Charger|n}}s.
+ | quality     = 0
+ | tags        = summonable monstermanual offensive
+ | unlocked by = Shade
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* Grants a shadow [[familiar]] that follows Isaac's movements on a {{dlc|nr}} 1-second/{{dlc|r}} 0.66-second delay and deals {{dlc|nr}} 2/{{dlc|r}} 5 contact damage per tick, or {{dlc|nr}} 30/{{dlc|r}} 75 damage per second, to enemies.
+* Shade is absorbed by Isaac after dealing {{dlc|nr}} over 600 damage {{dlc|r}} over 666 damage.
+** The familiar disappears and turns into friendly dark {{E|My Shadow|text=Charger}}s, identical to those spawned by {{i|My Shadow}}.
+** Isaac will now do equal contact damage at the same rate as the Shade used to.
+
+== Notes ==
+* If other familiars that move with a similar pattern such as {{i|Multidimensional Baby}} have been collected before the Shade, it will follow them instead with further delay.
+* If Isaac gains a method of flight, Shade will gain wings.
+* Cannot be removed with {{i|Sacrificial Altar}}.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Friendly monsters are still affected by Ace Cards.
+* {{i|BFFS!}}: Will continue to work on Isaac even after Shade is absorbed, doubling contact damage.
+* {{i|Blood Puppy}}: Either angry version of Blood Puppy will target friendly Chargers as well and can drag them along with it when it charges them. Blood Puppy cannot damage friendly Chargers however friendly Chargers can damage Blood Puppy despite not targeting it outright.
+* {{i|Broken Modem}}: Broken Modem also affects friendly chargers.
+* {{I|Eraser}}: Erasing a {{E|Charger}} will prevent all newly created [[friendly]] Chargers from spawning as the item spawns a normal Charger before changing it to the special My Shadow variant.
+* {{dlc+|r}} {{I|Ghost Bombs}} / {{i|Hungry Soul}} / {{I|Purgatory}} / {{i|Vade Retro}}: Explosions from ghosts can kill friendly chargers.{{dlc-}}
+* {{i|Shade}}: Isaac's contact damage increases when absorbing multiple Shade familiars.
+
+== In-game Footage ==
+{{#ev:youtube|QEe6dV0Wgq0}}
+
+== Trivia ==
+* {{i|Obsessed Fan}} behaves similarly to Shade before the disappearance, but with a longer delay on following Isaac's movements.
+* If playing as {{C|Black Judas}} or {{C|Tainted Judas}}, the shade familiar will have red eyes instead of white ones.
+* Shade's pickup quote may be a reference to the horror film "It Follows".
+
+== Bugs ==
+{{bug|dlc=r|Shade will revert back to it's non-absorbed form after escaping {{E|Mother's Shadow}}.}}
+
+{{nav|judas unlock|delirium unlock|fr=Ombre}}

@@ -1,0 +1,40 @@
+{{infobox trinket
+ | name = Liberty Cap
+ | id = 32
+ | quote = Touch Fuzzy, Get Dizzy
+ | description = {{dlc|nr}} Adds a chance when entering a room to gain {{i|Mini Mush}}, {{i|Odd Mushroom (Large)}}, {{i|Odd Mushroom (Thin)}}, or {{i|The Compass}} for one room.<br>{{dlc+|r}} Adds a chance when entering a room to gain a random passive mushroom item for one room.{{dlc-}}
+ | pool = mushroom
+}}
+
+{{cit|t}}
+
+== Effect ==
+Grants a 25% chance of triggering one of the following effects for the current room upon entering it:
+* {{i|Mini Mush}}
+* {{i|Odd Mushroom (Large)}}
+* {{i|Odd Mushroom (Thin)}}
+* {{i|The Compass|nr}}
+* {{I|Blue Cap|r}}
+* {{I|God's Flesh|r}}
+* {{I|Magic Mushroom|r}}
+
+== Notes ==
+* This trinket has a chance to drop from destroying [[Rocks#Mushrooms|mushrooms]].
+* {{Dlc|nr}} If the Compass effect triggers while having the {{i|Treasure Map}}, the Compass effect is permanent for the remainder of the floor. (Other Mushroom effects will still apply in each room with their normal odds.)
+* By walking into and out of a room, Liberty Cap will change its effect.
+** {{Dlc|nr}} This can be used to easily get the Compass effect.
+** {{Dlc|r}} This can be used to easily get the Magic Mushroom effect before {{r|Boss Rush}} or {{e|Dogma|n}} (as the Dogma boss room door will only close when touching the middle of the room).
+
+== Synergies ==
+* {{a|Golden Trinket}} / {{i|Mom's Box|r}} : One boost or copy increases the chance for activation to 50%, further copies to 100%.
+
+== In-game Footage ==
+{{#ev:youtube|tIKDzGItdTw}}
+
+== Trivia ==
+* This item quote is a reference to the ''[[wikipedia:Yoshi's Island|Yoshi's Island]]'' level 1-7: ''"Touch Fuzzy Get Dizzy"''.
+* [[wikipedia:Psilocybe semilanceata|Psilocybe semilanceata]], commonly known as "Liberty Cap", is widely present in nature and is a very powerful psychedelic mushroom which contains [[wikipedia:Psilocybin|psilocybin]].
+* The Liberty Cap's ability to grant the Compass effect was a bug in the original ''Binding of Isaac'' which was carried over due to popularity with the fans.
+* The pickup quote for the Chinese translation (一摸一起躺板板) is a reference to a popular meme [https://youtu.be/3Iqir-pcjTo|meme]
+
+{{nav|mushroom|fr=Psilocybe Lancéolé}}

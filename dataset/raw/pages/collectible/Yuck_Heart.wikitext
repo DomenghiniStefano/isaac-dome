@@ -1,0 +1,31 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 639
+ | quote       = Gross!
+ | description = Grants Isaac a {{E|Rotten Heart}}.
+ | quality     = 1
+ | tags        = nolostbr
+ | recharge    = 4
+ | unlocked by = Yuck Heart
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Grants a {{e|Rotten Heart}} upon use.
+** If Isaac has an empty red heart container or empty bone heart, the rotten heart will fill it.
+** If Isaac has only filled red and/or bone hearts, it will replace the contents.
+** If Isaac has no red or bone hearts, or they all are already rotten, there is no effect.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Rotgut}}.{{dlc-}}
+* This item can be crafted from {{i|Bag of Crafting}} with six {{e|Red Heart}}s and two {{e|Rotten Heart}}s.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Creates green-glowing rotten hearts wisps on the middle ring. They spawn a [[Blue Fly]] when shooting, similar to {{i|Rotten Baby}}. The wisps also create a small green cloud when destroyed, which is purely cosmetic.}}
+
+== Trivia ==
+* [[anti:Yuck Heart|Yuck Heart]] originates from the ''Antibirth'' mod.
+* This item is a Rotten Heart variation of the {{i|Yum Heart}}.
+
+{{nav|magdalene unlock|mother unlock|fr=Cœur Moisi (Objet)}}

@@ -1,0 +1,24 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Lost Cork
+ | id = 106
+ | quote = Uncorked
+ | description = Increases the radius of any [[creep]] produced by Isaac.
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* Increases the radius of all [[creep]] produced by Isaac, his familiars, and [[friendly]] enemies.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}} / {{t|Lost Cork|r+}}: Each copy further increases creep size. However, having 4+ copies will reset creep to its default size.
+
+== Interactions ==
+* {{dlc|r}} {{i|Sticky Bombs}}: No effect on the creep size from the bomb.
+* {{i|Blood Bombs}}: No effect on the creep size from the bomb.
+
+== In-game Footage ==
+{{#ev:youtube|8XwNloLO1gc}}
+
+{{nav|fr=Bouchon de Liège}}

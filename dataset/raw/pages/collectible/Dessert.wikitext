@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | id          = 24
+ | quote       = HP up
+ | description = Grants one full Red [[Heart container]]. {{dlc|r}} Heals 1 additional {{e|Red Heart}}.
+ | quality     = 1
+ | tags        = nolostbr nocantrip food
+}}
+{{cit|p}}
+
+== Effects ==
+* Grants one full Red [[Heart container]].
+* {{Dlc|r}} Heals 1 additional {{e|Red Heart}}.
+
+== Notes ==
+* This item has a 12.6% chance to spawn from paying out a {{m|Beggar}} in addition to being in the [[Beggar (Item Pool)|Beggar item pool]]. Multiple copies can be obtained through this method.
+
+== Synergies ==
+* {{i|Binge Eater}}: When Isaac picks up Dessert it now grants: a permanent +1.0 [[Damage]] and +0.2 [[Shot Speed]], a temporary +3.6 [[Damage]] (which diminishes to 0 in 30 seconds), heals 1 additional red heart, and takes a permanent -0.03 [[Speed]] reduction.
+
+== In-game Footage ==
+{{#ev:youtube|pQNLGlvsQyY||inline}} {{#ev:youtube|VeA3MMAi6b8||inline}}
+
+== Trivia ==
+* {{dlc+|r}} Dessert’s sprites can be seen as part of {{I|Binge Eater}}.{{dlc-}}
+
+{{nav}}

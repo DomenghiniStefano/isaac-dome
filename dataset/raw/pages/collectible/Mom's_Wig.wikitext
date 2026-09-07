@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | id          = 217
+ | quote       = You feel itchy...
+ | description = Adds a chance to spawn [[Familiar#Blue Spiders|Blue Spiders]] when firing tears. Restores 1 {{e|Red Heart}}.
+ | quality     = 2
+ | tags        = summonable mom offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Isaac now spawns friendly [[Familiar#Blue Spiders|Blue Spiders]] when firing tears.
+* Heals Isaac for 1 {{e|Red Heart}} upon pickup.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc+|a+}} This item has a 1% chance to spawn when bombing {{m|Mom's Dressing Table}}. Multiple copies can be obtained through this method.{{dlc-}}
+* The blue spider spawning chance depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac{1}{20 - \left \lfloor \mathit{Luck} * 2 \right \rfloor}</math>
+** At base luck (0), the chance is 5%, maxing out at 100% at 9.5 luck.
+* The spiders are spawned when Isaac is shooting, and up to 5 spiders can be spawned at the same time. More spiders can be spawned if the previous ones died.
+* {{dlc|nr}} This item does not work for Lilith since {{i|Incubus}} tears do not count as her tears.
+* Spiders can still be spawned in rooms without enemies.
+
+== Synergies ==
+* {{dlc|na+}} {{i|Brimstone}} / {{i|Chocolate Milk}} / {{i|Cursed Eye}} / {{i|Mom's Knife}} / {{i|Monstro's Lung}} / {{i|Tech X}}: Charging an attack spawns spiders in rapid succession.
+* {{i|Epic Fetus}} / {{i|The Ludovico Technique}} / {{i|Marked}}: Moving the tear/crosshair around will spawn spiders rapidly.
+* {{t|Fish Tail}}: Doubles the total amount of spiders that can be spawned at the same time, up to a total of 10.
+* {{i|Hive Mind}}: Doubles the limit to 10 spiders, in addition to boosting the damage of spiders per the item's base effect.
+
+== In-game Footage ==
+{{#ev:youtube|vfMVnJgnJyg}}
+
+{{nav|yes mother|mom}}

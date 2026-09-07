@@ -1,0 +1,55 @@
+{{infobox challenge
+ | dlc         = a
+ | number      = 27
+ | character   = ???
+ | blindfolded = yes
+ | item        = 3 {{i|Bob's Brain}}<br>{{i|Thunder Thighs}}
+ | has shops   = yes
+ | goal        = ???
+ | unlocks     = Stud Finder
+ | unlocked by = BRAINS!
+}}
+
+'''BRAINS!''' is [[Challenge]] #27, added in ''[[The Binding of Isaac: Afterbirth]]''. This challenge is played as {{C|???}} and you start [[blindfolded]], with 3 {{i|Bob's Brain}}, {{i|Thunder Thighs}} and {{dlc|r}} the {{tf|Bob}} transformation. The goal is to defeat {{E|???}}. {{r|Treasure Room}}s do not spawn in this Challenge.
+
+== Difficulty ==
+Bob's Brain is a difficult item to use, as it is not only easy to do one full heart of self-damage when fighting enemies, it also leaves {{C|???}} exposed while waiting for the brains to respawn. Adding to the problem is that playing as {{C|???}} forbids obtaining Red Hearts. With no Treasure Rooms and having to reach {{s|Chest}}, dodging skills, careful positioning and luck are necessary to beat this challenge.
+
+== Strategy ==
+* {{i|The Polaroid}} must be taken after the fight against {{e|Mom}}. If {{i|The Negative}} is chosen instead, {{C|???}} will not go to the {{s|Chest}} after the {{s|Cathedral}}, ending the challenge '''without''' a victory.
+** {{dlc|a+}} Only The Polaroid can be taken, as The Negative won't spawn.
+* Try to space out the shots with Bob's Brain so their respawn time isn't as long. Achieving a rhythm makes it much easier to efficiently kill enemies, especially bosses, without taking as much damage.
+* Any method of damaging enemies besides Bob's Brain is incredibly helpful.
+** {{i|Sharp Straw}} can be used multiple times per room, does high amounts of damage to any enemy (including bosses), may drop Half Soul Hearts and does not require aim to use. For it to be obtained, however, one must purchase {{i|Chaos}} from a Shop, or survive until reaching {{s|Chest}}.
+** Like any blindfolded run, familiars are useful for this challenge. Not only can they safely extinguish fires (except {{i|Rotten Baby}}), they can help take care of weak or weakened enemies while the brains respawn. However, one must hold the firing keys to make them attack (excluding {{i|Succubus}}), increasing the risk of harming {{C|???}} by one of the brains exploding in close quarters. Most strong familiars are also exclusive to Devil Rooms, taking them lowers HP, making the run more difficult.
+*** Most of {{C|Lilith}}'s unlockables are especially valuable in this run; {{i|Incubus}} and Succubus are among the most powerful familiars, while {{i|Box of Friends}} can double any familiars. Taking the time to unlock these can be beneficial for this challenge.
+*** Other good familiars aside from Incubus and Succubus include {{i|Demon Baby}}, who fires on its own, {{i|Lil Brimstone}}, who can hit multiple enemies per shot, and Rotten Baby, whose flies will home in on enemies.
+** [[Creep]] from the {{tf|Bob}} transformation or {{i|Headless Baby}} can be useful, allowing chasing enemies to be killed without the risk of taking damage from Bob's Brain. However, this method more time and is useless against flying enemies.
+*** {{t|Lost Cork}} makes any creep's area larger, significantly increasing the killing potential of creep.
+** Buying {{i|The Candle}} or {{i|Red Candle}} from the Shop can make this challenge a lot easier, since both do a lot of damage and can be used in a room multiple times.
+** Orbitals, such as {{i|Cube of Meat}} and {{i|Sacrificial Dagger}}, can be a good source of damage. Make sure to not press the firing keys while orbitals do damage, as it will harm ??? if having at least one brain.
+*** Once {{i|The Polaroid}} is obtained, orbitals become more useful. Since the shield will always trigger from any damage taken, a small time frame can be used to deal great damage to any enemy near ???.
+* {{i|Pyromaniac}} and {{i|Host Hat}} make this challenge much easier, as ??? no longer takes damage from the brain's explosions.
+* {{R|Crawl Space}}s, {{r|Arcade}}s and {{r|Boss Rush}} are the only rooms that can naturally generate items from the [[Treasure_Room_(Item_Pool)|Treasure Room item pool]]. It is reccomended to visit the two former to obtain items such as {{i|Pyromaniac}}.
+** Also, keep an eye out for [[Tinted Rock]]s, as they can have valuable {{E|Soul Heart}}s, as well as pickups and items via Locked Chests. Thunder Thighs allows ??? to break them for free, so there is no reason to skip any of them. But it is not advised to pick up {{i|The Small Rock}} unless having items that depend on the damage stat, as it lowers his already low speed.
+** {{dlc|r}} [[Mushroom (Obstacle)|Mushrooms]] can be destroyed safely because the {{tf|Bob}} transformation grants poison immunity, making searching for {{i|Magic Mushroom}} safer.
+* Speed items help keep a distance from chasing enemies, making it easier to avoid taking splash damage from a brain's explosion. Since Thunder Thighs slows ??? down, at least one or two speed items are necessary to outrun most enemies.
+** {{dlc|r}} The creep generated by the Bob transformation can be used defeat ground-based, chasing enemies in close quarters, eliminating the risk of using Bob's Brain with a little patience.
+* [[flight|Flying]] is very useful to give more breathing room by preventing {{C|???}} from becoming cornered in a troublesome room layout, as well as negating the threat of [[Spikes]] or [[creep]].
+* {{p|IV - The Emperor}} can be extremely valuable, especially in the late game, because it allows skipping of difficult floors like the {{s|Cathedral}} and {{s|Chest}} to go straight to the boss, minimizing the amount of fighting required.
+* Keep an eye out for Libraries, as there are many good defensive, or health-related items that can be obtained, like {{i|Book of Revelations}} and {{i|Book of Shadows}}.
+** Book of Revelations also {{dlc|anr}}increases the chance/{{dlc|nar}}guarantees that [[The Harbingers]] appear, meaning that {{i|Cube of Meat}}/{{i|Ball of Bandages}} will drop instead of the usual Boss Room items, many of which increase stats that are useless in this challenge.
+** If ??? has a surplus of health available in an early Devil Room, {{i|Satanic Bible}} is also a viable option.
+* If damage via an enemy is unavoidable, collide with the enemy first and then blow it up with a brain while invincibility frames last. ??? will get hurt either way, but he will only lose half a heart instead of a full heart. However, this strategy does not work against Champion enemies (if it does two full hearts of damage, it is a better idea blowing it up instead) and enemies that naturally do one full heart of damage (like {{E|Chubber}}s), and ??? will always take a full heart of damage anyway starting from {{s|Womb}}.
+* ??? can bridge one-tile gaps by pushing {{E|Poop}} or Rocks into them, using Thunder Thighs or The Poop.
+* {{i|Revelation}}'s angel beam will still work just fine even though ??? is Blindfolded, and as such, grants an extremely effective method of offense outside of the main Bob's Brain attacks. It is highly recommended to aim for Angel Rooms for this item alone, given its infinite range and strong DPS, as well as being completely safe due to lack of self-damage and the added benefit of flight.
+** Similarly,{{I|Maw Of The Void}} also works while blindfolded, albeit without nearly as much range.
+* {{dlc+|r}} If {{E|Baby Plum}} is encountered early in the run, it may be beneficial to simply let her leave and obtain the {{i|Plum Flute}} as an early replacement for the Poop.{{dlc-}}
+
+== Notes ==
+* {{dlc+|a+nr}} If entering {{s|The Void}} after killing {{E|Mom}} or {{E|Mom's Heart}} / {{E|It Lives!}}, it is still possible to collect the trophy by defeating {{E|Delirium|n}}. However, this is extremely inadvisable due to the limited attack options available and offers no benefit.{{dlc-}}
+
+== Reward ==
+{{achievement text | Stud Finder }}
+
+{{nav|challenge|isaac boss unlock|fr=Cerveaux !}}

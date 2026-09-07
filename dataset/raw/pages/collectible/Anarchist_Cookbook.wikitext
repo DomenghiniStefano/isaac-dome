@@ -1,0 +1,49 @@
+{{infobox activated collectible
+ | id          = 65
+ | quote       = Summon bombs
+ | description = Spawns six {{e|Troll Bomb}}s around the [[room]].
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = book offensive
+ | recharge    = 3
+ | pool        = Pride
+}}
+
+{{cit|a}}
+
+== Effect ==
+* Spawns 6 {{e|Troll Bomb}}s, generally near the center of the [[room]].
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+* This item can drop from killing {{e|Pride}}. {{dlc|nr}} Pride can drop this item even if Isaac has already encountered/possessed it. 
+* Although visually unchanged, all passive {{e|Bomb}} effect items affect the spawned Troll Bombs unless otherwise noted.
+* The Troll Bombs created by Anarchist Cookbook spawn in one at a time; if Isaac leaves the [[room]] soon after using it, not all 6 Troll Bombs will spawn.
+* Using this item without any blast protection is not always recommended as it is very easy to be caught in the blast.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns wisps in the middle ring, looking like bombs. The wisps spawn {{e|Troll Bomb}}s when destroyed. These troll bombs will use Isaac's bomb synergies.}}
+* {{t|Blasting Cap}}: Spawned Troll Bombs can drop extra bomb pickups.
+* {{I|Car Battery}} : Spawns '''13''' troll bombs.
+* {{I|Remote Detonator}}: The Troll Bombs generated will not explode until Remote Detonator is activated, unlike regular Troll Bombs.
+
+== Interactions ==
+* {{I|Bomber Boy}}: Not recommended. The cross pattern explosion makes it very hard to avoid taking damage.
+* {{i|Mr. Mega}}: No effect.
+* {{I|Pyromaniac}}: Spawned bombs can be used for mass healing.
+* {{T|Safety Scissors}}: Spawned troll bombs become bomb pickups.
+* {{i|Scatter Bombs|a+}}: Not recommended. Each Troll Bomb will spawn several smaller bombs upon exploding, making it very hard to avoid taking damage.
+** {{dlc|r}} No visual change can be seen with the Troll Bombs, but the smaller bombs have the sprite of the smaller normal bombs.
+
+== In-game Footage ==
+{{#ev:youtube|A6BMSCG2syo||inline}} {{#ev:youtube|OzhgFV3CzNU||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Anarchist Cookbook.png|{{plat|3DS}} The icon of Anarchist Cookbook as seen on the lower 3DS screen.
+File:Anarchist Cookbook giantbook.png|Anarchist Cookbook's splash image which appears when it's activated.
+</gallery>
+
+== Trivia ==
+* This item is a reference to the [[wikipedia:The Anarchist Cookbook|book of the same name]], which explains how to make explosives, rudimentary communication devices, and other items.
+
+{{nav|bomb spawner|book|fr=Guide du Petit Anarchiste}}

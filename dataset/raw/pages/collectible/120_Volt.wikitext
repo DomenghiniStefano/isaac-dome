@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 559
+ | quote       = Zap!
+ | description = Repeatedly zaps enemies that are close to Isaac.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Repeatedly zaps enemies that are in close proximity to Isaac with electricity beams for light damage.
+** Enemies can be zapped up to five times per second, with each zap dealing 0.75× Isaac's damage.
+** Each zap can hit up to 4 enemies, if they are sufficiently close to each other.
+** If the floor is wet, such as in {{s|Downpour}}, {{s|Flooded Caves}}, some rooms in {{s|Dross}}, {{s|Scarred Womb}}, and {{S|Corpse}}, as well as under the effect of {{i|Flush!}}, the initial distance is unchanged, but enemy-to-enemy arcs reach further.
+** Trigger range appears to be approximately two tiles wide — it's possible to zap an enemy standing directly on the other side of a rock.
+
+== Notes ==
+* This item has a brief targeting delay, such that enemies can close in and touch Isaac before they start getting zapped.
+
+== Synergies ==
+* {{dlc|r}} Multiple battery-themed items have special synergies with the zaps:
+** {{I|Sharp Plug}} / {{I|Car Battery}}: Electricity deals 100% of Isaac's tear damage if he owns 1 of these items, and 150% if Isaac owns both.
+** {{I|The Battery}} / {{I|Jumper Cables}} / {{T|AAA Battery}}: Increases amount of arcs a zap can generate.
+** {{T|Old Capacitor}}: Allows zaps to arc on the same enemy multiple times.
+* {{I|Abyss}}: When Isaac uses Abyss to absorb 120 Volt, it turns into a pale blue locust. The locust can create arcs of electricity dealing 0.1 damage per tick.
+* {{i|Camo Undies}}: Enemies won't target Isaac, thus he can safely zap enemies while standing near them. However, this won't work with bosses.
+* {{i|Isaac's Heart}}: 120 Volt becomes much safer to use offensively as Isaac's body no longer takes damage.
+* Items granting [[invulnerability]] or a [[shield]]: 120 Volt zaps enemies while Isaac is invincible.
+** This includes {{i|Gnawed Leaf}}, allowing Isaac to clear most rooms without moving.
+** {{i|Dark Arts}}: Enemies and bosses will be zapped while Dark Arts' effect is active, allowing Isaac to safely deal damage while invulnerable in this way.
+* {{i|Pause}}: Zaps will not stop the pause effect allowing Isaac to kill or chip bosses easily by standing near them for the duration of the pause effect.
+* {{c|Tainted Forgotten}}: Tainted Forgotten zaps enemies, allowing {{c|Tainted Soul}} to damage enemies from a safe distance.
+
+== Interactions ==
+* {{i|Ipecac}}: The zaps get only a +2 flat damage bonus instead of +40 from Ipecac. The 0.75x-1.5x damage multiplier applies afterwards.
+* {{i|Libra}}: The zaps ignore damage modification from Libra, both positive and negative: the actual unbalanced damage value is used.
+* {{i|Mine Crafter}}: The TNT is spawned and then instantly detonated by 120 Volt's electric shock, inflicting 1 full heart of damage.
+
+== In-game footage ==
+{{#ev:youtube|Xza5MAKB1Ng||inline}}
+
+== Trivia ==
+* This item [[anti:120 Volt|originated]] in the ''Antibirth'' mod. It originally had an effect similar to {{i|Jacob's Ladder}} and a different costume.
+** The Antibirth item was very similar to the item "Box of Wires" from the Community Remix mod for the original Flash version of Isaac.
+* 120 volt is the voltage of standard household circuits in the US.
+** In the Chinese translation of ''Repentance'', the item's name is “220伏 (220 Volt)”, referencing the standard household circuit voltage in mainland China.
+
+{{nav|fr=120 Volts}}

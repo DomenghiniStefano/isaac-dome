@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | image name  = *
+ | id          = 96
+ | quote       = Gives kisses
+ | description = Spawns a [[familiar]] who drops a {{e|Half Red Heart}} every 3 rooms. The first is dropped after 2 rooms.
+ | quality     = 2
+ | tags        = nolostbr summonable nocantrip
+ | pool        = C.H.A.D.
+ | unlocked by = Little C.H.A.D.
+}}
+
+{{cit|up}}
+
+== Effect ==
+* Spawns a familiar who drops a {{e|Half Red Heart}} every three rooms.
+** The first drop happens after two rooms.
+
+== Notes ==
+* Little C.H.A.D. can drop by defeating {{e|C.H.A.D.}}
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Little C.H.A.D. having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== Synergies ==
+* {{i|BFFS!}}: The familiar drops hearts in a repeating pattern of 2, 2 then 3 rooms.
+
+== Interactions ==
+* {{C|???}}, {{C|Tainted ???|r}}, {{dlc|r}}{{C|Black Judas|dlc=r}}, {{C|Tainted Judas|r}}, {{C|Tainted Forgotten|r}}: Useless, unless {{t|Apple of Sodom}} or {{i|Dark Bum}} have been collected, since these characters can't pick up red hearts.
+* {{C|Keeper}}/{{C|Tainted Keeper}}: Will give [[Familiar#Blue Flies|Blue Flies]] instead of hearts, acting as a weaker {{i|Rotten Baby}}.
+
+== In-game Footage ==
+{{#ev:youtube|T3oMXYFSocw||inline}} {{#ev:youtube|wxDe_40JtI0||inline}}
+
+== Trivia ==
+* This item is a reference to the {{E|C.H.A.D.}} boss from Super Meat Boy, where after defeating C.H.A.D. he becomes very small and in the following cutscene will keep trying to get kisses from Meat Boy.
+* Little C.H.A.D. will blow a kiss to the camera every time a room is cleared, even if no half red heart is created.
+
+{{nav}}

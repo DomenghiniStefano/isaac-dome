@@ -1,0 +1,63 @@
+{{infobox boss
+ | name        = The Hollow
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 19
+ | variant     = 1
+ | environment = <u>Boss</u><br>{{floor|Catacombs}}<br>{{room|Boss Rush}}<br><u>Double Trouble</u><br>{{floor|Depths}}<br><u>Degraded Boss</u><br>{{floor|Catacombs}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}<br>{{floor|Chest}}<br>Spawned by {{e|Mega Satan}}
+ | base hp     = {{dlcalt|22|r=26}}
+ | pool        = {{ip|Boss}} <br> {{dlc|r+}} Random worm trinket (1% chance)
+}}
+
+'''The Hollow''' is a [[boss]] that can appear in the {{s|Catacombs}}.
+
+It has {{dlc|nr}} 22 HP / {{dlc|r}} 26 HP per segment.
+
+== Behavior ==
+The number of individual The Hollow bodies that can spawn each fight can vary from 1-4. The most common encounter with The Hollow is with 2 bodies.
+* Flies around the room diagonally, bouncing off of walls.
+** The Hollow appears to travel faster when moving at vertical angles compared to horizontal.
+** The Hollow can change direction if it collides with Isaac.
+* Occasionally spawns [[poop]] while moving.
+* The Hollow's segments can be split into smaller copies of the boss as long as the new Hollow segments are longer than 2 pieces.
+There is a chance that a {{e|Grub}} can spawn alongside a shorter Hollow (basically replacing a second Hollow).
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18}}: 15% larger, has slower movement and 25% more HP (32.5). Each segment that isn't the head spawns a {{e|Boom Fly}} when killed. Does not spawn any poop.
+:: The head will spawn a Boom Fly only if killed immediately after spawning.
+: {{bc|12}}: 15% larger and has 25% more HP (32.5) but retains the same movement speed. Each segment that isn't the head will drop a {{e|Penny}} on death.
+:: The head will drop a penny only if killed immediately after spawning.
+: {{bc|5}}: Chance for each segment that isn't the head to spawn a {{e|Charger}} on death. Occasionally stops movement to shoot 3 bullets at wherever it is facing.
+:: The head will spawn a Charger only if killed immediately after spawning.
+
+== Gallery ==
+<gallery>
+File:Boss The Hollow dark grey ingame.png|The Black Champion Hollow.
+File:Boss The Hollow gold ingame.png|The Yellow Champion Hollow.
+File:Boss The Hollow green ingame.png|The Green Champion Hollow.
+File:Boss Delirium The Hollow ingame.png|The Hollow as one of {{e|Delirium}}'s forms.
+File:WOTL Boss Sketches.jpg|Sketches for The Hollow and other bosses for the original Binding of Isaac's Wrath of the Lamb DLC.
+</gallery>
+
+== Notes ==
+* {{Dlc|nr}}Poop spawned by The Hollow will never drop pickups, even when in possession of  {{t|Petrified Poop}}.
+** {{Dlc|r}}Poops spawned by The Hollow have an incredibly low chance to spawn pickups. This chance is not affected by Petrified Poop.
+** Leaving the room and returning will make the poop generate pickups normally.
+* [[Piercing tears]] make fighting The Hollow much easier, as each tear can damage multiple segments.
+
+== Trivia ==
+* The Hollow was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* It is the posthumous version of {{e|Larry Jr.}}
+* The definition of hollow is empty on the inside or surface, which could explain the boss's paleness and complexion.
+* The Hollow is the only boss that has three Champion versions.
+** In the [[V1.7.8]] update, The Hollow's yellow Champion version was given a unique sprite that looks similar to {{e|Ultra Greedier}}.
+* The Hollow is the only regular boss that can be spawned by {{e|Mega Satan}} between thresholds.
+* {{Dlc|r}} Despite {{E|Larry Jr.}} receiving new body sprites in ''Repentance'', and despite The Hollow's body sprites simply being recolors of Larry Jr.'s sprites, The Hollow's body sprites are unchanged in Repentance.
+
+== Bugs ==
+{{bug|dlc=na+|Sometimes this boss will get stuck in the wall when [[slow]]ed.}}
+
+{{nav|boss|fr=L'Évidé}}
+
+[[Category:Chapter 2 bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Debut bosses in Rebirth]]

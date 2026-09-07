@@ -1,0 +1,22 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 186
+ | quote       = Attack buddy
+ | description = Spawns an {{i|Abyss}} locust [[familiar]] which will fly forward while Isaac shoots.
+ | unlocked by = Apollyon's Best Friend
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Spawns an attack locust [[familiar]] identical to the default ones spawned by {{i|Abyss}}. It will fly forward while Isaac is shooting and deals contact damage {{dlc|nr+}} equal to Isaac's [[damage]].
+** {{dlc|r+}} The locust is treated as a Quality 3 locust and deals 1.5x Isaac's damage.
+
+== Synergies ==
+* {{t|Apollyon's Best Friend}} / {{A|Golden Trinket}} / {{I|Mom's Box}}: Each effect/trinket copy stacks, granting an extra locust per stack.
+* {{i|BFFS!}} / {{i|Hive Mind}}: Increases the locust's damage by 25%.
+
+== Trivia ==
+* Unlike many other effects which grant a familiar lasting multiple rooms, Apollyon's Best Friend is unaffected by the duplication bug from {{i|Glowing Hourglass}}.
+
+{{nav|tainted apollyon unlock|mother unlock|locust|fr=Le Meilleur Ami d'Apollyon}}

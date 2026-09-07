@@ -1,0 +1,59 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 664
+ | quote       = All you can eat
+ | description = +1 Red [[Heart Container]] and fully heals Isaac. Item pedestals also offer a random food item. Picking up a food item temporarily grants +3.6 [[damage]] and permanently boosts 2 [[stat]]s.
+ | quality     = 4
+ | tags        = nolostbr
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Grants one Red [[Heart Container]] and fully heals Isaac.
+* Item pedestals cycle between the initial item and one of several food items.
+* Upon picking up an affected food item, in addition to their normal effects, Isaac gains a temporary +3.6 [[Damage]] boost (which fades over 30 seconds), a permanent boost to 2 [[stat]]s depending on the food item consumed, and a permanent -0.03 speed reduction.
+* Affected food items heal 3 Red Hearts instead of 2.
+
+== Notes ==
+* Food items that Binge Eater affects and can cycle between, and their bonuses, include:
+** {{i|Breakfast}}: +0.2 [[Shot Speed]], +2.5 [[Range]].
+** {{i|Dessert}}: +1.0 [[Damage]], +0.2 [[Shot Speed]].
+** {{i|Dinner}}: +0.5 [[Tears]], +0.2 [[Shot Speed]].
+** {{i|Lunch}}: +0.5 [[Tears]], +2.5 [[Range]].
+** {{i|Midnight Snack}}: +1.0 [[Damage]], +1.0 [[Luck]].
+** {{i|Rotten Meat}}: +1.0 [[Damage]], +2.5 [[Range]].
+** {{i|A Snack}}: +0.2 [[Shot Speed]], +1.0 [[Luck]].
+** {{i|Supper}}: +0.5 [[Tears]], +1.0 [[Luck]].
+* All Food items that Isaac has collected before picking up Binge Eater will provide their respective stats, including the -0.03 speed down for each item, but excluding the temporary damage up and extra healing.
+* The temporary Damage boost cannot be stacked, and picking up additional food items resets it to +3.6.
+* Has no effect on certain items that are required to progress through the game, such as {{i|The Polaroid}}, {{i|Knife Piece 1}}, or {{i|Dad's Note}}.
+* No bonuses are granted from other items alluded to be edible, such as {{i|MEAT!}}.
+* Removing collected food items or Binge Eater itself will also remove associated stat bonuses.
+* Because this affects items in {{r|Devil Room}}s and all of them cost 1 Red Heart Container, Devil Deals can be used as free stat upgrades.
+
+== Interactions ==
+* {{i|Crooked Penny}} / {{i|Diplopia}}: If an item pedestal is copied while the original item is revealed, it will create an identical cycling pedestal of the same two items. If an item pedestal is copied when the food item is revealed, it will create a non-switching pedestal of the food item only.
+* {{i|A Pound of Flesh}}: Food items in {{r|Shop}}s cost 1 Red Heart Container, much like with Devil Deals. If Isaac also has {{i|Restock}}, he is able to gain infinite stats this way.
+* {{i|Death Certificate}}: Has no effect on the items in the generated areas.
+* {{i|Glitched Crown}}: The food item is added to the end of the cycle for a total of 6 items per pedestal.
+* {{i|Sacred Orb}}: The food item is not re-rolled.
+* {{c|Jacob and Esau}}: Items will swap between the initial item and food item as normal, but only the brother who picked up Binge Eater gets the additional stat bonuses.
+* {{c|Tainted Isaac}} / {{c|Isaac}}'s {{i|Birthright}}: The food item will cycle alongside the original 2 granted by the character, resulting in a total of 3 items per pedestal.
+* {{C|Tainted Lazarus}}: In a {{r|Devil Room}}, Tainted Lazarus is effectively able to give items to his inactive form for free by picking up a food item. This will remove one heart container, and then instantly restore it. The mirrored Devil items will remain however, meaning he can use {{i|Flip}} and pick them up as his alternate form for no cost.
+* {{C|Tainted Bethany}}: On pick-up, grants 12 blood charges. Increases blood charges gained from food items from 4 to 6.
+
+== In-game footage ==
+{{#ev:youtube|hFYjhm7FhVQ}}
+
+== Trivia ==
+* The costume given by this item is identical to {{i|Bucket of Lard}} and {{i|Belly Jelly}}.
+* Binge Eater's sprite consists of (clockwise, starting on the left) {{I|Dinner}}, {{i|Dessert}}, {{i|Breakfast}}, {{i|Lunch}}, {{i|Raw Liver}} and {{i|Rotten Meat}}.
+** Among these, Raw Liver is the only item Binge Eater can't cycle into.
+* The name “Binge Eater” could be a reference to the eating disorder known as “Binge Eating Disorder”, in which a person eats an unusually large amount of food in one sitting, causing distress and a feeling of lack of control.
+
+== Bugs == 
+
+{{bug|dlc=r+|Binge Eater can affect {{i|Key Piece 1}}, {{i|Key Piece 2}}, {{i|Broken Shovel 1}}, {{i|Broken Shovel 2}}, and {{i|Mom's Shovel}}.}}
+
+{{nav|fr=Goinfrerie}}

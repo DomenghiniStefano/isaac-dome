@@ -1,0 +1,86 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 405
+ | quote       = {{dlcalt|Game breaking bug, right away!|r=Double tap glitch}}
+ | description = {{dlc|nr}} Spawns a [[familiar]] that bounces diagonally around the [[Rooms|room]], applying a random [[status effect]] to enemies it hits and has a chance to re-roll [[pickup]]s it passes over.<br>{{dlc|r}} Spawns a familiar that follows Isaac. Double tapping the fire button launches it forward, causing it to reroll the first [[monster]] or [[pickup]] it hits.
+ | quality     = 1
+ | tags        = summonable offensive
+ | unlocked by = GB Bug
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* {{dlc|nr}} Spawns a [[familiar]] that bounces diagonally around the [[Rooms|room]], deals 8 damage per tick or 120 damage per second and applies a random [[Status Effects|status effect]] to enemies it comes in contact with. The familiar also has a chance to re-roll [[pickups]] that it passes over into other pickups, {{E|Chest}}s, or [[items]], in an uncleared room only (with at least one enemy alive).
+* {{dlc|r}} Spawns a familiar that follows Isaac. Double tapping the fire button launches it forward, causing it to reroll the first [[monster]], [[Trinkets|trinket]], or [[pickup]] it hits. It respawns after clearing a room.
+** If it cannot reroll an enemy (e.g. a boss), it will deal 8 damage instead.
+** Items and opened chests cannot be rerolled.
+** Pickups have a 10% chance of becoming chests (see [[#Algorithm|the algorithm]]).
+*** If a chest is rerolled, it has a 28% chance of staying as some kind of a chest.
+
+== Notes ==
+* {{dlc|nr}} GB Bug can block projectiles.
+* {{dlc|nr}} GB Bug does more damage per second than {{i|The Peeper}}, with the added random status chance.
+* {{dlc|r}} GB Bug is able to reroll {{e|Throwable Bomb|n}}s into normal consumables. After doing so, the corresponding {{e|Bomb Grimace|n}} will generate another Throwable Bomb, making it able to generate a potentially large amount of free consumables.
+* {{dlc|r}} Rerolled [[champion]] enemies will retain their color, unless they reroll into a monster that cannot naturally spawn as a champion.
+* {{dlc+|r}} Caution is advised as GB Bug can also reroll certain entities such as the hot rock left by a dead {{e|Coal Spider}} adding another enemy to the room.{{dlc-}}
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with GB Bug having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+* {{dlc|r}} While playing {{c|Tainted Isaac|n}}, GB bug can be dropped and picked back up to respawn it, allowing for infinite rerolls.
+
+== Interactions ==
+* {{I|Blood Puppy}}: Hitting Blood Puppy with GB Bug will transform it into a random enemy and spawn a tamed Blood Puppy.
+* {{I|Guppy's Eye}} in {{S|Chest}} / {{S|Dark Room}}: Using the 28% chance to stay as a chest, allows you to reroll chests with undesired items into different items.
+* {{I|King Baby|r}}: GB Bug will only throw itself at nearby enemies automatically if a fire button is double tapped while King Baby's effect is active.
+* {{I|Marked|r}}: Does not launch itself automatically or at the crosshair while Isaac is firing.
+* {{T|The Twins}}: The familiar can be duplicated even if it hasn’t respawned; by constantly moving to new rooms, GB Bug can constantly respawn, allowing pickups to be rerolled indefinitely.
+
+== In-game footage ==
+=== In ''Rebirth'' {{dlc|nr}} ===
+{{#ev:youtube|ISNVML1s0KU}}
+
+=== In ''Repentance'' {{dlc|r}} ===
+{{#ev:youtube|zmVScVEfgvs}}
+
+== Algorithm ==
+* A reverse-engineered algorithm<ref>Researched by [[user:Blcd|Blade]]</ref> used by GB Bug to determine its rerolls is available: <syntaxhighlight lang="lua" class="mw-collapsible mw-collapsed" data-expandtext="Expand code" data-collapsetext="Hide code">
+local chestPickupVariants = {
+	PickupVariant.PICKUP_CHEST,        -- 50
+	PickupVariant.PICKUP_BOMBCHEST     -- 51
+	PickupVariant.PICKUP_SPIKEDCHEST   -- 52
+	PickupVariant.PICKUP_ETERNALCHEST  -- 53
+	PickupVariant.PICKUP_MIMICCHEST,   -- 54
+	PickupVariant.PICKUP_OLDCHEST,     -- 55
+	PickupVariant.PICKUP_WOODENCHEST,  -- 56
+	PickupVariant.PICKUP_MEGACHEST,    -- 57
+	PickupVariant.PICKUP_HAUNTEDCHEST, -- 58
+	PickupVariant.PICKUP_LOCKEDCHEST,  -- 60
+	PickupVariant.PICKUP_REDCHEST,     -- 360
+	PickupVariant.PICKUP_MOMSCHEST,    -- 390
+}
+if (
+	(contains(chestPickupVariants, pickupVariant) and (pickupSeed:Next() % 5) == 0)
+	or (pickupSeed:Next() % 10) == 0
+) then
+	local chestVariant
+	if (pickupSeed:Next() & 3) == 0 then
+		chestVariant = PickupVariant.PICKUP_LOCKEDCHEST
+	else
+		chestVariant = PickupVariant.PICKUP_CHEST
+	end
+	pickup:Morph(pickup.Type, chestVariant, 0, true, false, false)
+else
+	pickup:Morph(pickup.Type, 0, 1, true, false, false)
+end
+</syntaxhighlight>
+* An explanation of the code: rerolling something has a 10% chance of becoming a chest and 90% chance of becoming a random pickup.
+** A chest of any kind has an independent 20% extra chance of staying a chest, for a total 28% chance.
+** If something is rerolled into a chest, it is a random chest according to standard spawning rules 75% of the time, and a locked chest 25% of the time.
+
+== Trivia ==
+* The pre-''Repentance'' quote is a reference to a quote by Phil Fish in ''[[wikipedia:Indie Game: The Movie|Indie Game: The Movie]]'', where he says the same words when a bug is discovered in the game "FEZ" on the first day it is being shown at PAX.<ref>https://twitter.com/edmundmcmillen/status/666029976920043520</ref>
+* This item's in-game appearance may be a reference to "Missingno.", a famous bug occurring in the first Pokémon games.
+
+== References ==
+{{reflist}}
+
+{{nav|glitch|eden unlock|ultra greed unlock|fr=Bug}}

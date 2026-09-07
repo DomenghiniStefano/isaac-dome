@@ -1,0 +1,51 @@
+{{infobox passive collectible
+ | id          = 218
+ | quote       = Regeneration + HP up
+ | description = Grants one full Red [[Heart container]], and a chance to regenerate a {{E|Half Red Heart}} of health every minute of gameplay.
+ | quality     = 2
+ | tags        = nolostbr
+ | pool        = polyp
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants one full Red [[Heart container]] when picked up.
+* Isaac has a 50% chance to regenerate a {{E|Half Red Heart}} every time the in-game timer hits a new minute (00:01:00, 00:02:00, etc).
+* {{Dlc|r}} Heals 1 additional {{E|Red Heart}} when picked up.
+
+== Notes ==
+* This item can rarely drop from destroying [[Rocks#Polyps|polyps]] (outside of {{s|Corpse}}).
+* The regeneration can happen multiple times in the same room, so there is no need to move between rooms to continue regeneration.
+** {{dlc|nr}} However, regeneration '''does not occur''' when standing in a {{R|Crawl Space}}.
+* Regeneration will only occur when Isaac has Red Heart containers or '''something equivalent''':
+** {{c|Keeper}}'s and {{c|Tainted Keeper|r}}'s coin hearts will regenerate, one coin at a time.
+** {{E|Bone Heart}}s regenerate like red hearts.
+** Consequently, characters with no applicable health -- {{c|???}}, {{c|The Lost}}, {{c|Black Judas}}, {{c|Tainted ???}}, {{c|Tainted Bethany}}, {{c|Tainted Judas}},{{c|Tainted Forgotten}}, and {{c|Tainted Lost}}—do not benefit from the effect.
+
+== Synergies ==
+* {{i|Blood Oath}}: With enough patience, health can be safely restored each floor by waiting in the starting room.
+* {{i|Gnawed Leaf}}: Regeneration works while turned to stone, allowing Isaac to become invincible and regenerate while in any room.
+* {{i|Sanguine Bond}}: Can be used indefinitely with placenta’s regen. Also works with normal sacrifice rooms.
+* {{i|Sharp Plug}}: With enough patience, any active item can be reused indefinitely.
+* {{i|Habit}}: Like Sharp Plug, any active item can be reused indefinitely with enough patience. 
+* {{i|IV Bag}}, {{i|Piggy Bank}}, {{i|Fanny Pack}}, {{t|Swallowed Penny}}, {{i|Gimpy}}, {{i|Old Bandage}}: Can produce infinite of their respective consumables if given enough time
+*{{Machine|Blood Donation Machine}},{{machine|Devil Beggar}} & {{machine|Hell Game}}: If given enough time will always reach their item payout.
+*{{i|Razor Blade}}: Can be used to stack damage before triggering boss fights that do not automatically trigger upon room entry such as {{e|Hush}}, {{e|Mega Satan}}, or {{e|Dogma}}
+*{{t|Cracked Dice}}: Can be used to re-roll items many times in a room if a damage source is present or the player has enough bombs. 
+
+== Interactions ==
+* {{i|Maggy's Bow}}: No effect on regen.
+* {{c|Tainted Magdalene}}: Receives 1 full red heart per regen trigger.   
+
+== In-game Footage ==
+{{#ev:youtube|iCFSUSryIk8}}
+
+== Trivia ==
+* A [[wikipedia:Placenta|Placenta]] is an organ that forms from the mother's uterus during pregnancy that supports the unborn child during development until it is expelled during childbirth. In some cultures, it is a common practice for the mother and/or child to eat the expelled placenta.
+** This, like many other things Isaac does, is medically inadvisable (without proper preparation methods).
+
+== Bugs ==
+{{bug|dlc=a+nr|Going into a {{i|Ventricle Razor}} portal at the same time the effect of Placenta is triggered will cause the effect to trigger in rapid succession, effectively healing Isaac to full health.}}
+
+{{nav}}

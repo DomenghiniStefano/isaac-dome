@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | id          = 14
+ | quote       = Speed and range up
+ | description = {{dlc|nr}} +0.6 [[speed]], +5.25 [[range]], +0.5 [[tear falling speed]].<br>{{dlc+|r}} +0.3 [[speed]], +2.5 [[range]]{{dlc-}}
+ | quality     = 2
+ | tags        = summonable syringe offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr}} +0.6 [[speed]]
+* {{dlc|nr}} +5.25 [[range]]
+* {{dlc|r}} +0.3 [[speed]]
+* {{dlc|r}} +2.5 [[range]]
+* {{dlc|nr}} +0.5 [[tear falling speed]]
+* {{transformation contribution|Spun}}
+
+== Notes ==
+{{dlc|r}} Having multiple copies of {{i|Roid Rage}}, such as those duplicated by {{i|Diplopia}} will only increase the range, leaving the speed stat unaffected.
+
+== In-game Footage ==
+{{#ev:youtube|UehIsv-VALc||inline}} {{#ev:youtube|cuTNhsmlcns||inline}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Little Baggy }}
+
+== Trivia ==
+* {{i|Roid Rage}} describes the frequent anger outbursts induced by the overuse of steroids.
+* The item's name and effects is from another one of Edmund's games known as ''The C Word''.<ref>[https://web.archive.org/web/20140803181618/http://edmundm.com/post/93130816520/is-the-roid-rage-item-in-isaac-a-reference-to-that Edmund's blog which he answered a question relating to the item.]</ref>
+* Prior to Repentance, {{i|Roid Rage}} was the biggest speed upgrade in the game with the title now going to {{I|Mercurius}} with its +0.4 speed, which is still 33% smaller.
+
+== References ==
+{{reflist}}
+
+{{nav|syringe|fr=Crise d'Hormones}}

@@ -1,0 +1,40 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 189
+ | quote       = All stats up
+ | description = {{dlc|nr}} +1 [[Health#Red Heart Containers|Red Heart container]], +0.3 [[damage]], +0.2 [[tears]], +0.2 [[speed]], +0.5 [[range]], +1 [[tear falling speed]]. Fully restores all red hearts.<br>{{dlc|r}} +1 [[Health#Red Heart Containers|Red Heart container]], +0.3 [[damage]], +0.2 [[tears]], +0.2 [[speed]], +2.5 [[range]]. Fully restores all red hearts.
+ | quality     = 3
+ | tags        = summonable {{dlc|r+|tearsup}} offensive
+ | unlocked by = SMB Super Fan
+}}
+
+{{cit|up}}
+
+== Effects ==
+* +1 [[health]].
+* +0.3 [[damage]].
+* +0.2 [[tears]].
+* +0.2 [[speed]].
+* {{dlc|nr}} +0.5 [[range]].
+* {{dlc|r}} +2.5 [[range]].
+* {{dlc|nr}} +1 [[tear falling speed]].
+* Fills all Red Heart containers.
+
+== Interactions ==
+* {{C|Tainted Bethany}}: Grants 12 blood charges.
+
+== In-game Footage ==
+{{#ev:youtube|1uxjuJP6WAA}}
+
+== Trivia ==
+* This item is a reference to one of Edmund McMillen's previous games, [[Wikipedia:Super Meat Boy|Super Meat Boy]].
+** {{dlc|r}} Picking this item up as {{C|Keeper}} makes his face similar to that of [[supermeatboy:Tofu Boy|Tofu Boy]].
+* In ''Wrath of the Lamb'', this item was originally unlocked by beating a challenge titled, "Meat 4 Evar!".
+* In the Spanish language, this item was initially called "SMB super ventilador" meaning "SMB super ventilator"
+
+== Gallery ==
+<gallery>
+File:KeeperwithSMBsuperfan.png|{{dlc|r}}{{c|Keeper}} with SMB Super Fan.
+File:???withSMBsuperfan.png |{{dlc|r}}{{c|???}} <br> with SMB Super Fan.
+</gallery>
+{{nav|fr=SMB Super Fan!}}

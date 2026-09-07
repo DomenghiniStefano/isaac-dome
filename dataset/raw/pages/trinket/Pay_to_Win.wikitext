@@ -1,0 +1,37 @@
+{{infobox trinket
+ | dlc         = a+
+ | name        = Pay to Win
+ | id          = 112
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = ...
+ | description = {{M|Shop Restock Machine}}s always spawn in {{R|Treasure Room}}s.
+ | tags        = lazarussharedglobal
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* A {{M|Shop Restock Machine}} always spawns in {{R|Treasure Room}}s.
+
+== Notes ==
+* The trinket's effect applies when the floor is generated, so it will only take effect if already held when entering a new floor. This means that finding it on a floor will not change the Treasure Room on that floor, nor will dropping it remove its effect on that floor's Treasure Room if Pay to Win was held when the floor was entered.
+** {{dlc|r}} This also means that the trinket will have no effect in the [[Ascent]], since it is based on previously generated floors.
+* This trinket does not affect the two Treasure Rooms spawned in {{s|???}}.
+* In [[Greed Mode]], this affects both normal and silver types of Treasure Rooms.
+* {{dlc|r}} When brought to the alternate path floors, there is a chance of the treasure room having one extra item available to be picked up alongside the usual choice of two items.
+* {{dlc|r}} Restock boxes will not appear in the [[Mirrored World|Mirrored World's]] Treasure Room.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: The chance for Restock Machine blowing up after 4 rerolls is 1 / (1 + number of copies).
+* {{I|Bag of Crafting}}: Can be a powerful combination for when Isaac is not {{C|Tainted Cain}} as he can craft multiple item pedestals in the {{r|Treasure Room}} which can be rerolled.
+* {{i|More Options}}: {{r|Treasure Room}}s will always contain two choice items in addition to the {{m|Shop Restock Machine}}.
+** {{dlc+|r}} In {{s|Downpour}}, {{s|Dross}}, and {{s|Mines}}, Pay to Win by itself can sometimes spawn the combined Treasure Rooms, even without More Options. Having both doesn't guarantee the combined effect.
+*** For {{s|Ashpit}}, {{s|Mausoleum}}, {{s|Gehenna}}, and {{s|Corpse}}, this combination does work correctly for normal-sized Treasure Rooms, but not thin ones.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|rKsmstUjpD8}}
+
+== Trivia ==
+* The item is a reference to microtransactions, which are common in modern video games. They serve the "pay-to-win" goal by making it either impossible or extremely tedious for players to either progress through the game (with so-called "roadblocks") or earn certain features such as weapons unless they purchase their "way out."
+
+{{nav|fr=Microtransactions (Babiole)}}

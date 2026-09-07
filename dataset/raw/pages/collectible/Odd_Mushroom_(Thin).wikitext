@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | alias       = Odd Mushroom (Thin)
+ | link        = Odd Mushroom (Thin)
+ | id          = 120
+ | quote       = {{dlcalt|Fire rate up|r=Tears up + damage down}}
+ | description = {{dlc|nr+}}+1.7 [[tears]], +0.3 [[speed]], slightly reduces [[damage]].<br>{{dlc|r+}} +1.7 [[fire rate]], +0.3 [[speed]], slightly reduces [[damage]].
+ | quality     = 2
+ | tags        = summonable mushroom tearsup offensive
+}} {{disambig msg|the small odd mushroom|the larger mushroom|Odd Mushroom (Large)}}
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr+}} +1.7 [[tears]].
+** Additional copies only grant +0.7 tears.
+* {{dlc|r+}} +1.7 [[fire rate]].
+** Additional copies only grant +0.7 fire rate.
+* +0.3 [[speed]].
+* -0.4 [[damage]].
+* x0.9 total damage up multiplier.
+** This penalty is not a total damage multiplier and applies only to certain "standard" damage ups, the specific details are available in the [[Damage#The_order_that_damage_multipliers_and_flat_damage_are_applied|damage order]] list.
+* Decreases Isaac's size.
+* {{transformation contribution|Fun Guy}}
+
+== Notes ==
+* There are two collectible items in the game named [[Odd Mushroom]]; they can be told apart from the sprites.
+* This item's damage multiplier works differently than other items in the game: instead of directly multiplying the damage stat, it multiplies the total added damage from other items. As a result, flat damage upgrades aren't affected by Odd Mushroom.
+** Multiple copies of the item will grant a speed and fire rate boost with no additional decrease in damage.
+* Despite only the head part gets smaller visually, Isaac's size also gets smaller. Isaac can walk between some gaps while only the body stays the same size if enough copies of the item are taken.
+* {{dlc|r+}} Since the damage penalty doesn't apply to everything and the item grants a straight fire rate bonus instead of tears, it is often an upgrade to total damage output. Some combinations of high tears/fire rate with few or no damage ups will result in DPS down.
+
+== In-game Footage ==
+{{#ev:youtube|xRB_QEtEvsY}}
+
+{{nav|fun guy|mushroom|fr=Champignon Suspect (Fin)}}

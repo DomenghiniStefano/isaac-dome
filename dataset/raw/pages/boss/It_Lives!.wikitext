@@ -1,0 +1,66 @@
+{{infobox boss
+ | id          = 78
+ | variant     = 1
+ | environment = <u>Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}
+ | base hp     = 950
+ | pool        = Gateway to {{s|Sheol}} / {{s|Cathedral}}<br>{{dlc|a}} Gateway to {{s|???}} (Time under 30:00)<br>{{dlc|a+}} Gateway to {{s|The Void}} if unlocked (10% Chance)
+ | unlocked by = It Lives!
+}}
+
+'''It Lives!''' is a [[boss]] that can appear on the second floor of [[Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}). It is unlocked by beating {{e|Mom's Heart}} 11 times; after that, it permanently replaces it.
+
+== Behavior ==
+It Lives! behaves identically to Mom's Heart, with the exceptions of different spawns for its phases:
+* In phase 1 its order is now:
+** 2 {{e|Eye}}s
+** 3 {{e|Flesh Mobile Host}}s
+** {{e|Polycephalus}}
+** {{e|Fistula}}
+* In phase 2 its order is now:
+** 2 {{e|Knight}}s
+** 4 {{e|Walking Boil}}s
+** {{e|Teratoma}}
+** {{e|Chub}}
+* In phase 3 its order is now:
+** 3 {{e|Lump}}s
+** 3 {{e|Globin}}s
+** 4 {{e|Tumor}}s
+** 4 [[Mask + Heart|Heart]]s
+
+== Gallery ==
+<gallery>
+File:Boss Delirium It Lives! ingame.png|It Lives! as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | A Halo, Flooded Caves, Dank Depths, Scarred Womb, Lost Baby, Cute Baby, Glass Baby, Shadow Baby, Dead Baby, Crow Baby, Fighting Baby, Wrapped Baby, Begotten Baby, Glitch Baby, -0- Baby, Goat Head Baby, Super Greed Baby, Smelter, Marrow, Wisp Baby, Double Baby }}
+
+== Notes ==
+* Just like {{e|Mom}} and Mom's Heart, using {{i|The Bible}} or {{p|XV - The Devil?}} against It Lives! will kill it instantly.
+* {{dlc|a}} Isaac can encounter It Lives! in the nightmare boss wave of chapter 4 in [[Greed mode|Greed/Greedier mode]] even if it has not been unlocked.
+
+== Trivia ==
+* It Lives! appeared in the original ''The Binding of Isaac.''  Unlike its appearance in Rebirth, It Lives! had opened eyes, a simple poker face, and hung to the ceiling in a sideways position via an umbilical cord.
+* The music that plays during this fight is titled ''Ventricide''.<ref>http://ridiculon.bandcamp.com/</ref> Ventricide is a portmanteau formed from the word ventricle (chamber of the heart) and the suffix -cide, which denotes an act of killing. This theme is used in other tracks, such as Matricide, Hericide, and Infanticide.
+** Ventricide could also be a junction of the prefix ''ventr-'' (from the latin word ''venter''), which could denote "belly", "stomach", "womb" or "fetus", with the suffix ''-cide''.
+** It Lives! shares this theme with Mom's Heart, and therefore, both interpretations could co-exist.
+* It Lives!, according to the developers, takes the shape of what Isaac looked like as a fetus.
+* According to Edmund McMillen, It Lives! supposedly represents Isaac wishing that he were never born.
+* It Lives! makes the same sounds as Mom's Heart.
+** Like Mom's Heart, if Isaac takes damage from It Lives!' {{i|Brimstone}} attack, Mom's laugh can be heard.
+* Despite being a major boss, It Lives! isn't linked to any [[Endings|Ending]], instead, it opens up entrances to both {{s|Sheol}} and the {{s|Cathedral}}, as well as {{s|???}} if beaten in under 30 minutes.
+* The unlock note for It Lives! states "Your futures past awaits.", referencing ''Time Fcuk'', another game by Edmund Mcmillen.
+* {{dlc|nr}} During the versus screen, It Lives!' enemy/boss-spawning sound can be heard. It Lives! is one of {{Dlc|nr}}seven/{{Dlc|r}}five bosses that can be heard during the versus screen, the other {{Dlc|nr}}six/{{Dlc|r}}four being {{e|The Stain}}, {{e|The Forsaken}}, {{e|Big Horn}}, Mom, {{dlc|nr}} Mom's Heart and {{e|Mother}}.
+
+== Bugs ==
+{{bug|dlc=na+|Sometimes, if the boss intro is skipped, the game will not teleport Isaac into the center of the bottom of the room, resulting in immediate contact damage with one of the Eyes or It Lives!, depending on the direction of the room's entrance.}}
+
+== References ==
+{{reflist}}
+
+{{nav|it lives unlock|moms heart unlock|boss|fr=Il Est Vivant}}
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

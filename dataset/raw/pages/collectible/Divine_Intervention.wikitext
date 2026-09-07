@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 568
+ | quote       = Double tap shield
+ | description = Double tapping a fire key creates a shield that pushes away enemies and reflects enemy projectiles and lasers.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = angel
+ | unlocked by = Divine Intervention
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Double tapping a fire key creates a Divine Shield that slowly moves in the chosen direction.
+* The Divine Shield has a variety of effects.
+** Enemies are pushed back in the opposite direction, completely reversing their trajectory with some added momentum.
+*** Enemies pushed into walls or [[obstacles]] take <code>10 + 2 * (floor - 1)</code> damage and deal that same damage to other enemies they collide with.
+** Enemy tears are reflected, dealing damage back to enemies depending on the source of the tear.
+*** The reflected projectiles deal 6 damage if they would've hurt Isaac for half a heart, and 7 for a full heart.
+*** Reflected projectiles do not gain [[Tear effects]] from Isaac.
+**** Explosive projectiles (e.g. from {{E|Gurgle}}) explode as normal, dealing as much damage as they would have.
+**** Projectiles that create other projectiles (e.g. {{E|Shady}}) can harm Isaac and be reflected.
+**** Homing projectiles (e.g. from {{E|Psychic Horf}}) do not retain their homing effect after being reflected.
+*** Can reflect:
+**** Fire projectiles (e.g. from {{E|Mega Satan}}).
+**** Obstacles thrown by {{E|Polty}} or {{E|Kineti}}, dealing a flat 35 damage.
+*** Does not reflect:
+**** Lines of fire (e.g. from {{E|Dragon Fly}}), but can reflect fireballs (e.g. from {{E|Crackle}}) and their lines of fire do not harm Isaac.
+**** Projectiles from {{E|Big Bony}}, {{E|Coal Boy}}, {{E|Danny}}.
+** Enemy {{i|Brimstone}} lasers are reflected, dealing 7 damage per tick (105 damage per second) to enemies hit by the reflection. It can even deflect the colossal brimstone laser fired by {{E|The Beast}}.
+*** White beams, such as those used by {{E|Dogma}} in its second phase, are reflected into {{I|Revelation}} beams.
+* The shield lasts 1 second and has a cooldown of 3 seconds.
+* {{transformation contribution|Seraphim}}
+
+== Notes ==
+* If any charged item is obtained along with Divine Intervention e.g. {{I|Brimstone}} or Revelation, a different fire key may be pressed to put out the shield without forfeiting the charge of said item.
+* The Blindfolded status from certain challenges disables the ability to fire, which also disables the ability to double tap to fire Divine Shields.
+
+== Interactions ==
+* {{i|Divine Intervention}}: Multiple copies of this item (from effects such as {{I|Diplopia}} or {{I|Crooked Penny}}) have no effect aside from being counted for {{tf|Seraphim}}.
+
+== In-game footage ==
+{{#ev:youtube|6gVGKau0F30}}
+
+{{nav|seraphim|bethany unlock|hush unlock|fr=Intervention Divine}}

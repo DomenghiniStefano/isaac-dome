@@ -1,0 +1,57 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 230
+ | quote       = Evil + DMG up + fear shot
+ | description = {{dlc|nr}} +1.5 [[damage]], +0.2 [[speed]]. Removes all Red [[Heart container]]s, grants six {{E|Black Heart}}s, and adds a chance to shoot [[fear]] tears.<br>{{dlc|r}} +1.5 [[damage]], +0.2 [[speed]]. Grants two {{E|Black Heart}}s, converts all Red [[Heart Container]]s into Black Hearts, and adds a chance to shoot [[fear]] tears.
+ | quality     = 3
+ | tags        = devil summonable offensive
+ | devil price = 2
+ | unlocked by = Abaddon
+}}
+
+{{cit|up}}
+
+== Effects ==
+* +1.5 [[damage]].
+* +0.2 [[speed]]
+** {{dlc|nr}} Also affects maximum speed (may never exceed 2.0).
+* {{dlc|nr}} Removes all current Red [[Heart container]]s and grants 6 {{E|Black Heart}}s.
+* {{dlc|r}} Converts all current Red [[Heart container]]s into {{e|Black Heart}}s, and adds 2 additional Black Hearts.
+* {{dlc|a+}} Empties all {{E|Bone Heart|n}}s without removing them.
+* Adds a chance to shoot [[fear]] tears.
+* {{transformation contribution|Leviathan}}
+
+== Notes ==
+* Fear tear effect depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac{15}{100 - \left \lfloor \mathit{Luck} \right \rfloor}</math>
+** At base Luck (0), the chance is 15%, maxing out at 100% at 85 Luck.
+** {{i|Dark Matter}} is significantly better at inflicting fear than Abaddon.
+* Does not remove {{E|Soul Heart}}s or {{E|Eternal Heart}}s.
+* {{dlc|nr}} As it removes all Red Heart Containers, other Deals with the Devil can be taken for "free" as long as Abaddon is taken last while still having at least 1 Container.
+* Can always be taken as a deal. Even if Isaac only has one or two Soul Hearts, the Black Hearts will be granted after taking the item.
+* {{dlc|r}} Emptied {{E|Bone Heart|n}}s will not be converted to {{E|Black Heart}}s.
+
+== Synergies ==
+* {{t|Black Feather}}: Grants a damage boost.
+
+== Interactions ==
+* {{c|Bethany}}: Leaves her with half a Red Heart with her other [[Heart Container]]s removed.
+* {{i|Greed's Gullet}}: If heart containers are being granted, removes them as well as 25 cents.
+* {{dlc+|a+nr}} {{c|Keeper}}: Instantly kills him when picked up.{{dlc-}}
+* {{dlc+|r}} {{c|Keeper}}/{{c|Tainted Keeper}}: Sets [[Coin Heart]]s to 1 on pickup.{{dlc-}}
+* {{i|Mom's Perfume}}: The chance to inflict fear does not stack.
+* {{c|Tainted Bethany}}: Does not remove stored Red Hearts nor converts them into Black Hearts.
+
+== In-game Footage ==
+{{#ev:youtube|uKNAM0RI7X0}}
+
+== Trivia ==
+* In the Hebrew Bible, the name [[wikipedia:Abaddon|Abaddon]] is used as a reference to a bottomless pit, often appearing alongside the place of the dead (which is known as [[wikipedia:Sheol|Sheol]]), meaning the land of the dead. The actual Hebrew word Abaddon (אבדון - pronounced ''avadon'') means "doom".
+* Abaddon is the Hebrew equivalent of [[Apollyon]].
+* In the ''New Testament's'' ''[[wikipedia:Book of Revelation|Book of Revelation]]'', an angel called Abaddon is written as the king of an army of locusts; his name is first transcribed in Greek (Revelation 9:11 – "whose name in Hebrew Abaddon").
+* Abaddon also shares its name with a level from Edmund's previous game ''[[wikipedia:Super Meat Boy|Super Meat Boy]]''.
+* {{dlc+|r}}{{i|Lil Abaddon}} resembles this item's costume and shares a similar name, but its effects are closer to {{i|Maw Of The Void}}.{{dlc-}}
+
+== Bugs ==
+{{bug|{{dlc|na+}} If {{c|Keeper}} picks up Abaddon, it will remove all of his Coin Hearts but will not kill him until he picks up an item.<br>{{dlc|a+nr}} This still applies if Abaddon is acquired via the [[Debug Console]], but not if the item is picked up normally.}}
+
+{{nav|leviathan|azazel unlock|blue baby boss unlock}}

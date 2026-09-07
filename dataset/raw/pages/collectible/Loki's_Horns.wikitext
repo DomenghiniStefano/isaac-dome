@@ -1,0 +1,52 @@
+{{infobox passive collectible
+ | id          = 87
+ | quote       = Cross tears
+ | description = Gives a random chance for projectiles to fire in all 4 cardinal directions.
+ | quality     = 1
+ | tags        = summonable offensive
+ | unlocked by = Loki's Horns
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Adds a chance to shoot tears in four cardinal directions, similar to {{E|Loki}}.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Loki}}.{{dlc-}}
+* {{dlc|nr}} The chance to shoot extra tears depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 8 - \left \lfloor \mathit{Luck}   \right \rfloor}</math>
+** At base luck (0), the chance is 12.5%, maxing out at 100% at 7 luck.
+* {{dlc|r}} The chance to shoot extra tears depends on the [[luck]] stat and is based on this formula: <math>25\% + (5\% * \mathit{Luck})</math>
+** This means that the chance starts at 25% at 0 luck, minimizes at 0% at -5 luck, and maximizes at 100% at 15 luck.
+
+== Synergies ==
+* {{i|Mom's Eye}}: Each time Mom's Eye would activate, Loki's Horns activates instead. If Mom's Eye fails to activate, Loki's Horns' activation rate is still checked for afterwards.
+* {{i|Eye of the Occult}}: Extra tears will fire in the same direction.
+* {{i|Sprinkler}}: The sprinkler eye turns into four eyes and alternates shots between the cardinal and ordinal directions.
+* {{i|Technology 2}}: All additional tears are affected by the item but are replaced with {{i|Technology}}'s lasers, effectively dealing 100% of Isaac's damage, and with 16 [[luck]] uses 100% of Technology 2's fire rate.
+* {{i|Tiny Planet}}: Effectively grants a great tear multiplier, as on item activation the extra tears will follow the trajectory given by the Tiny Planet.
+
+== Interactions ==
+* {{i|20/20}}/{{i|The Inner Eye}}/{{i|Mutant Spider}}: No effect on the tears fired in the other 3 directions. The chance to activate is checked per shot, not for each tear fired.
+* {{i|Dr. Fetus}}: '''Not recommended without immunity.''' Adds a chance to fire four bombs in cardinal directions.
+* {{I|Epic Fetus}}: Adds a chance to spawn four crosshairs in cardinal directions. Isaac controls one and the others will mirror the movement keeping their space.
+* {{i|Incubus|anr}}: Not affected by Loki's Horns.
+* {{i|Ipecac}}: Adds a chance to fire four explosive shots in cardinal directions. Caution is advised, though it is easier to avoid damage than Dr. Fetus.
+* {{i|The Ludovico Technique|a}}: Adds a chance for 4 [[piercing]] + [[spectral]] tears to be fired in cardinal directions from the main tear. This chance scales with [[luck]] and goes up to 100% at 20 Luck.
+* {{i|Mom's Knife}}: Adds four knifes on the cardinal directions around Isaac that can be rotated but all of them will be thrown when four tears would shoot with only Loki's Horns.
+* {{i|Monstro's Lung|nr}}: Only one red tear will be fired in the other directions.
+** {{Dlc|r}} Fires 14 tears in each of the four directions.
+* {{i|Tech X}}: Overridden by Tech X.
+** {{dlc|r}} The laser rings will only fire forwards and backwards, with 2 stacked on top of each other in both directions, shooting at an angle will shoot the stacked rings at different angles.
+* {{i|Tractor Beam}}: Extra tears are not affected by Tractor Beam.
+
+== In-game Footage ==
+{{#ev:youtube|yr5onuKI1Pc}}
+
+== Trivia ==
+* This item is used in {{chal|Glass Cannon}}.
+
+== References ==
+* [https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing The Binding of Isaac Item Trigger Testing]
+
+{{nav|fr=Cornes de Loki}}

@@ -1,0 +1,62 @@
+{{infobox passive collectible
+ | id          = 2
+ | quote       = Triple shot
+ | description = Isaac shoots three tears at once with lower [[fire rate]].
+ | quality     = {{dlcalt|2|r+=3}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Isaac fires a spread of three tears at once.
+* {{Dlc|nr}} Tears down: (Delay * 2.1) + 3
+* {{Dlc|r}} Tears fired per second * 0.51.
+
+== Notes ==
+* The maximum number of tears per volley that can be reached by combining and/or duplicating {{i|20/20}}, The Inner Eye, {{i|Mutant Spider}} and {{i|The Wiz}} is 16. Additional inner eyes widen the spread of the 16 tears up to a semicircle around isaac.
+* {{dlc+|r+}} The Inner Eye's quality is treated as 2 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{dlc|anr}} {{I|20/20}}: Shoots 5 tears with no further decrease in fire rate. 
+** {{dlc|r}} Removes the fire rate penalty while reducing damage to 80%. Additional copies will add one additional tear with no further change to damage/fire rate.
+* {{I|Abyss}}: When Isaac uses Abyss to absorb The Inner Eye it creates three locusts instead of one.
+* {{i|Cursed Eye|nr}}: At full charge, fires 3 rows of 4 tears, resulting in 12 tears.
+** {{dlc|r}} At full charge, fires 3 rows of 5 tears, resulting in 15 tears.
+* {{i|Doctor's Remote}} / {{i|Epic Fetus}}: Replaces the single missile strike with a barrage of three consecutive missiles.
+* {{i|The Inner Eye|anr}}: Effects stack, resulting in 6 tears being shot with no further decrease in fire rate.
+** {{dlc|r}} Adds an additional tear with no further decrease in fire rate. This can be stacked up to 16 tears. 
+* {{i|The Ludovico Technique}}: The tear gains two orbiting tears.
+* {{i|Mom's Knife}}: 3 knives are fired.
+* {{dlc|anr}} {{i|Mutant Spider}}: Shoots 7 tears instead of 3. No further decrease in fire rate.
+** {{dlc|r}} Shoots 5 tears instead of 3. Decreases fire rate by a little.
+* {{i|Polyphemus|nr}}: Tear rate is not lowered further. Damage is increased by a flat +5 instead of a normal Polyphemus boost.
+** {{dlc|r}} Damage is increased by a flat +5 instead of a normal Polyphemus boost. Decreases fire rate by a little.
+* {{i|Tractor Beam}}: All tears are fired along the beam, but some may be hard to see as they overlap each other.
+
+== Interactions ==
+* {{i|20/20|na}}: Overridden by The Inner Eye.
+* {{i|Brimstone}}: Fires 3 beams. Affects Azazel's short-ranged '''Brimstone''' similarly.
+* {{C|The Forgotten|a+}}: Triples bones thrown and swung. Significant decrease in fire rate.
+* {{C|Keeper|anr}}: Fires 6 tears with significantly decreased fire rate.
+** {{dlc|r}} Fires 4 tears with significantly decreased fire rate.
+* {{c|Tainted Keeper|r}}: Only fires 5 tears in the volley, while still gaining significantly decreased fire rate.
+* {{i|Kidney Stone}}: Increase number of tears in tear barrage; however, only fires one stone.
+* {{i|Lead Pencil}}: The barrage will activate as normal but Isaac will sometimes fire red tears.
+* {{i|Loki's Horns}}: Only occasionally fires one tear in the other three directions.
+* {{i|Mom's Eye}}: Only occasionally fires one tear out of the back of Isaac's head.
+* {{i|Mutant Spider|na}}: Overrides The Inner Eye.
+* {{i|Monstro's Lung}}: Adds 5 tears to barrage with a significant decrease in fire rate.
+* {{i|Sad Bombs}}: Does not affect the number of tears when bombs explode.
+* {{i|Technology 2}}: The laser is not affected by The Inner Eye.
+* {{i|Varicose Veins}}: No effect on number of tears when taking damage.
+
+== In-game footage ==
+{{#ev:youtube|d15wxRrdii0||inline}} {{#ev:youtube|_2LU_y531cY||inline}}
+
+== Trivia ==
+* The Inner Eye is a reference to the concept of the '[[wikipedia:Third eye|third eye]]', an idea popular in Eastern mysticism dictating the existence of an invisible third eye usually located on a person's forehead which would allow them to see beyond normal reality.
+* {{dlc|r}} The eye on {{C|???}}'s head appears as an X, similar to this character's other eyes
+
+{{nav|fr=Troisième Œil}}
+[[ru:Внутренний глаз]]

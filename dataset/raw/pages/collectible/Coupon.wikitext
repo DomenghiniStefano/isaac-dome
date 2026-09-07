@@ -1,0 +1,38 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 521
+ | quote       = Allow 6 weeks for delivery
+ | description = While held, guarantees one item in every {{R|Shop}} will be on sale for half price. On use, makes a random item in the current room free.
+ | quality     = 2
+ | tags        = offensive nocantrip
+ | recharge    = 6
+ | pool        = shopkeeper
+ | unlocked by = Coupon
+}}
+
+{{cit|ua|a+2}}
+
+== Effects ==
+* Upon use, turns a random item in the current room that costs money or hearts into a pedestal item that can be taken for free.
+* While held, guarantees a random item or pickup from the {{r|Shop}} to be half price.
+
+== Notes ==
+* Coupon has a 1% chance to drop from destroying normal {{e|Shopkeeper}}s.
+* Using Coupon in a {{r|Devil Room}} and taking that free item does not affect or remove the chances for {{r|Angel Room}}s.
+* Using Coupon in [[Greed mode]] does not restock the taken item or consumable.
+* Using Coupon in a Shop while holding {{i|Restock}} will not respawn a new item after taking the free one.
+* {{dlc+|r}} Using Coupon as {{c|The Lost}} or {{c|Tainted Lost}} allows multiple Devil deals to be taken.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns green wisps on the middle ring. The wisps fire three tears at a time, similarly to {{i|The Inner Eye}}. However, all of these wisps are destroyed if Isaac buys something using money. Does not affect wisps other than ones made by this item.}}
+* {{i|Car Battery}}: Makes two items free upon use.
+* {{i|Satanic Bible|r}}: The Devil deal in the boss room can be acquired for free.
+* {{i|Steam Sale|nr}}: The discounts stack.
+
+== In-game Footage ==
+{{#ev:youtube|y6oahAfGbV0}}
+
+== Trivia ==
+* Coupon is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=839401874 this Steam Workshop item] by Plumbus, originally known as Cereal Cutout.
+
+{{nav|booster pack}}

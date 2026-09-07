@@ -1,0 +1,26 @@
+{{infobox trinket
+ | id          = 35
+ | quote       = DMG up
+ | description = +2 flat [[damage]].
+ | unlocked by = Curved Horn
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* +2 flat [[damage]].
+
+== Notes ==
+* Since Curved Horn grants flat damage, it is not affected by the damage up formula, which normally gives diminishing returns for each new damage up.
+* Curved Horn is affected by most damage multipliers, excluding {{i|Polyphemus}}, {{i|Mega Mush}}, and character multipliers (such as {{c|Azazel}}'s 1.5x damage multiplier).
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}}: Having either increases Damage by 4. Having both by 6.
+
+== In-game Footage ==
+{{#ev:youtube|sYCR9lIJsIw}}
+
+== Trivia ==
+* This trinket is a curved ram horn, similar to those granted by {{i|Aries}} or shown on {{E|The Lamb}}.
+
+{{nav|judas unlock|the lamb unlock|fr=Corne Tordue}}

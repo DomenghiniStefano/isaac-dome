@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 172
+ | quote       = My fate protects me
+ | description = Spawns a dagger [[orbital familiar]], blocking enemy shots and dealing a high amount of damage to enemies in contact.
+ | quality     = 2
+ | tags        = summonable
+ | unlocked by = Sacrificial Dagger
+}}
+
+{{cit|up}}
+
+== Effect ==
+* Gives Isaac a sideways dagger that [[orbital familiar|orbits]] him, dealing high damage to enemies on contact and blocking enemy shots.
+** {{dlc|nr}} The knife deals 15 damage every 1/15th of a second (every 4 frames) or 225 damage per second.
+** {{dlc|r}} The knife deals 15 damage every 2/15ths of a second (every 8 frames) or 112.5 damage per second.
+
+== Notes ==
+* The dagger orbits further away from Isaac than many other orbital familiars (minus {{i|Big Fan}}), making it easier to use both offensively and defensively.
+
+== In-game Footage ==
+{{#ev:youtube|OmOehOln9d4}}
+
+== Trivia ==
+* {{dlc|nr}} Sacrificial Dagger deals the highest amount of contact damage out of all orbitals.
+* {{dlc|r}} Prior to ''Repentance'', Sacrificial Dagger dealt the highest amount of contact damage out of all orbitals. With the changes in ''Repentance'', it is beaten by {{i|Best Bud}}.
+* In the original ''The Binding of Isaac'', Sacrificial Dagger rotated upright, while in ''Rebirth'' it now orbits on its side.
+* This item is used in {{chal|Darkness Falls}}.
+* While the in-game name and Steam achievement name says 'Sacrificial Dagger', when unlocked, the in-game text shows 'Sacrificial Knife'.
+* The Sacrificial Dagger's description is likely a reference to the Jewish story of Abraham's sacrifice of his son, Isaac (in what is known as the [[wikipedia:Binding_of_Isaac|Binding of Isaac]]). Abraham took his son Isaac to a mountain to sacrifice his son at the command of God. Despite being commanded to do so, he knew through his faith that God would not allow his son to be sacrificed.
+
+{{nav|eve unlock|blue baby boss unlock|fr=Dague Sacrificielle}}

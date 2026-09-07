@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 423
+ | quote       = Protect me from myself
+ | description = Surrounds Isaac with a large white halo that occasionally deals Isaac's [[Damage|tear damage]] to enemies inside it, and can convert enemy shots into friendly [[homing]] tears.
+ | quality     = 2
+ | tags        = summonable
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Surrounds Isaac with a large white halo.
+** Once per second, the halo deals Isaac's [[Damage]] to all enemies currently inside it.
+** Each enemy shot has a 30% chance to be reflected by the halo.
+*** The chance is predetermined, and not affected by how long it is exposed by the halo.
+*** The reflectable tears are reflected once they touch the middle line of the halo, and is converted into friendly purple [[homing]] tears that have Isaac's Damage and no other tear modifiers.
+*** {{dlc+|r}} Projectiles that create other projectiles (e.g. {{E|Shady}}) do not create the projectiles once reflected.{{dlc-}}
+*** Can reflect:
+**** Explosive projectiles (e.g. from {{E|Gurgle}}), which do not explode once reflected.
+**** {{dlc+|r}} Fireballs (e.g. from {{E|Crackle}}), which do not create lines of fire once reflected.{{dlc-}}
+**** Fire projectiles (e.g. from {{E|Mega Satan}}).
+**** {{dlc+|r}} Obstacles thrown by {{E|Polty}} or {{E|Kineti}}.{{dlc-}}
+*** Does not reflect:
+**** Lasers or beams.
+**** {{dlc|r}} Lines of fire from fireballs.
+**** {{dlc+|r}} Projectiles from {{E|Big Bony}}, {{E|Coal Boy}}, {{E|Danny}}.{{dlc-}}
+
+== Interactions ==
+* Circle of Protection: Multiple copies of this item through sources such as {{I|Diplopia}} or {{I|Crooked Penny}} has no effect.
+
+== In-game Footage ==
+{{#ev:youtube|iTAksu-4MTM}}
+
+== Trivia ==
+* Circle of Protection is based on a cycle of <u>Magic: the Gathering</u> cards of the same name, which similarly provide defensive effects to their wielder.
+* Circle of Protection's in-game icon may be based on the band A Perfect Circle's logo. The pickup quote is also similar to the lyrics of their song Pet.
+
+{{nav|fr=Cercle de Protection}}

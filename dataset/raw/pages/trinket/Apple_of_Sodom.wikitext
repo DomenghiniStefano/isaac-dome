@@ -1,0 +1,43 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 140
+ | quote       = It feels empty
+ | description = Picking up {{e|Red Heart}}s, even while at full health, can convert them into [[blue spider]]s. The effect may consume hearts needed for healing.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* Picking up a {{e|Red Heart}} has a 50% chance to consume the heart and spawn [[Blue Spider]]s, causing a fart that deals no damage.
+** Isaac can pick up hearts even while at full health. In this case, the chance goes to 100%.
+* Has no effect on {{e|Rotten Heart}}s, {{E|Blended Heart}}s, or any other type of heart.
+
+== Notes ==
+* The number of spiders spawned depends on the type of heart that was picked up:
+** {{e|Half Red Heart}}s will spawn 1-3 spiders.
+** Full {{e|Red Heart}}s will spawn 3-5 spiders.
+** {{e|Double Heart}}s will spawn 6-8 spiders.
+* The trinket allows characters that cannot use red hearts to gain value from red hearts.
+* Items that directly heal Isaac, such as {{i|Yum Heart}}, cannot produce any spiders. The hearts must be picked up off the ground.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: All types of hearts can be converted to spiders.
+* {{i|Hypercoagulation}} / {{p|Soul of Magdalene}} / {{c|Tainted Magdalene}}: Temporary hearts can be turned into blue spiders.
+* {{i|Options?}}: Converting hearts dropped by Options? will not cause the other consumable to disappear.
+
+== Interactions ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}}: No effect.
+* {{i|Candy Heart}}: Does not increase stats if the heart is converted to spiders.
+* {{i|The Jar}}: Has a 50% chance to turn a heart into a blue spider or put it in The Jar.
+
+== In-game footage ==
+{{#ev:youtube|rWfzUBcFWgo}}
+
+== Trivia ==
+* Apple of Sodom was a cut trinket from Antibirth. It was most likely going to be an unlock for the unused character [[anti:Edith|Edith]].
+* [[wikipedia:Calotropis procera|Calotropis procera]], known under the name of apple of Sodom, is a plant that produces a hollow fruit with fibers inside of it. It is named so because it supposedly grew on the land of [[wikipedia:Sodom and Gomorrah|Sodom]]. In the Hebrew Bible, the apple of Sodom is referenced metaphorically to represent something that appears good but is actually poisonous.
+
+== Bugs ==
+{{bug|Converting a heart by buying it will not consume any money. However, Isaac must have the amount of coins needed to purchase the heart.}}
+
+{{nav|fr=Pomme de Sodome}}

@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | id          = 262
+ | quote       = Evil up. Your enemies will pay!
+ | description = Grants one {{E|Black Heart}}. Upon taking damage that reduces Isaac's [[health]] to one heart or less, deals damage to all enemies in the room. {{dlc|r}} Increases the damage of {{E|Black Heart}}s and {{i|The Necronomicon}}-like effects by 40.
+ | quality     = 0
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants one {{E|Black Heart}}.
+* Activates {{i|The Necronomicon}} effect upon taking damage if Isaac's total [[health]] ({{E|Red Heart}}s, {{E|Soul Heart}}s, and Black Hearts) is at one heart or less afterwards.
+* {{dlc|r}} Adds +40 damage to {{i|The Necronomicon}} and similar effects, such as {{E|Black Heart}}s.
+* {{transformation contribution|Necromancer}}
+
+== Synergies ==
+* {{t|Black Feather}}: Counts as an 'evil' item, granting a damage up.
+* {{dlc+|r}} {{I|Blood Rights}} / {{I|Dry Baby}} / {{i|The Negative}} / {{i|Heartbreak}} / {{p|XIII - Death}} / {{p|Black Rune}}: The damage boost is applied to these items.{{dlc-}}
+* {{dlc+|r}} {{t|A Missing Page}}/{{i|Missing Page 2}}: The damage increase from the trinket/copies of Missing Page 2 stacks, adding +40 damage per stack to The Necronomicon and similar effects.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|jaHnFOTDMQg}}
+
+== Gallery ==
+<gallery>
+File:Missing Page 2 giantbook.png|Missing Page 2's splash image which appears when it's activated.
+</gallery>
+
+== Trivia ==
+* {{i|The Necronomicon}}, {{t|A Missing Page}}, and Missing Page 2 are all references to the Necronomicon and its missing pages appearing in [[wikipedia: The Evil Dead (franchise)|Evil Dead]].
+** Which, in turn, is a reference to ''[[wikipedia:The Necronomicon|The Necronomicon]]'', a fictional grimoire appearing in the works of horror writer [[wikipedia: H.P.Lovecraft|H.P. Lovecraft]].
+
+{{nav|necromancer|fr=Page Déchirée 2}}
+[[Category:Damage-triggered items]]

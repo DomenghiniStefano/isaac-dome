@@ -1,0 +1,42 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 504
+ | quote       = Friendly fly
+ | description = Spawns a stationary fly turret that lasts for the current room and fires tears at nearby enemies.
+ | quality     = 0
+ | tags        = poop offensive
+ | recharge    = 8s
+ | unlocked by = Brown Nugget
+}}
+
+{{cit|ua|a+}}
+
+== Effects ==
+* Spawns a stationary fly turret that shoots at enemies up to 3 tiles away
+* The flies are completely invulnerable and ignored by enemies.
+* The flies deal {{dlc|nr}} 2 / {{dlc|r}} 3.5 damage per shot.
+* {{dlc+|r}} {{transformation contribution|Oh Crap}}{{dlc-}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Turdlet}}.{{dlc-}}
+* A maximum of {{dlc|nr}} 35 / {{dlc|r}} 64 flies can be spawned in one room.
+* Flies spawned by Brown Nugget as {{C|Tainted Lazarus}} will disappear when flipping to his other form, and will not reappear when flipping back.
+* All flies spawned during {{e|The Beast}}'s fight (and any Ultra Harbinger fight before that) will persist at a static position on-screen and will not move as the screen scrolls.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns brown wisps on the middle ring. These wisps shoot 3 times faster with 1/3rd of the damage of an average wisp. The wisps automatically shoot at nearby enemies instead of in the direction Isaac shoots. The wisps do not persist between rooms.}}
+* {{i|Car Battery}}: Two flies will be spawned instead of one.
+* {{i|BFFS!|nr}}: Flies are larger, but do not deal increased damage.
+* {{I|BFFS!|r}}: Flies are larger and deal double damage.
+* {{i|Hive Mind|nr}}: No effect.
+* {{I|Hive Mind|r}}: Flies are larger and deal double damage.
+* {{i|Sacrificial Altar|nr}}: Spawned fly turrets count as familiars for sacrificing; although dropping the Brown Nugget will despawn the last fly turret, older ones will remain and can be sacrificed
+* {{i|Sacrificial Altar|r}}: Spawned fly turrets count as regular blue flies for sacrificing, and thus are converted to pennies.
+
+== In-game Footage ==
+{{#ev:youtube|wFAmkCvPdAw}}
+
+== Trivia ==
+* Brown Nugget was originally an unofficial item which was supposed to showcase the modding capabilities of Afterbirth+ in the [https://www.youtube.com/watch?v=FRR-wzTky9Q PAX 2016 livestream]. However, all items included in the demo were later added to the final game.
+
+{{nav|oh crap|apollyon unlock|poop|ultra greed unlock|fr=Bout de Crotte}}

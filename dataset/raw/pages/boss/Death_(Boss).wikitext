@@ -1,0 +1,63 @@
+{{infobox boss
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 66
+ | environment = <u>Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{room|Boss Rush}}<br><u>Degraded Boss</u><br>{{floor|Cathedral}}{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}<br>{{room|challenge}}
+ | base hp     = 450
+ | pool        = {{i|Ball of Bandages}}<br>{{i|Cube of Meat}}<br>{{dlc|r+}} {{t|Locust of Death|n}} (1% chance)
+ | unlocked by = The Harbingers
+}}
+
+'''Death''' is a [[Harbinger]] that can appear in all environments of [[Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}).
+
+== Behavior ==
+=== Phase 1 ===
+* Spawns four {{e|Death Scythe}}s along the walls of the room, aligned with Isaac in the cardinal directions. After a few seconds, they will accelerate towards Isaac.
+** If Isaac is close to a wall, the scythe that would normally be spawned on that wall does not spawn.
+* Spawns two Death Scythes in random positions around the room that constantly home in on Isaac until they are destroyed.
+* Uses {{i|The Hourglass}} to slow Isaac down.
+
+=== Phase 2 ===
+After enough damage is dealt, Death will dismount from his horse. The horse has 150 HP, but it will also lose health when Death is damaged. Attacking the horse does not damage Death.
+* Death occasionally spawns two {{e|Knight}}s and can have a maximum of two.
+* Death's horse continuously flies horizontally across the room going off-screen and continuing on from the opposite end of the screen.
+** Its charging patterns occur along 3 paths, starting with an upper charge into a middle charge a short distance below and finally a lower charge an identical distance below the middle path. It then restarts this process and can perform its upper charge in a new position in the room.
+*** Its first charge will always leave room below it to allow for the lower second and third charges.
+** The horse continues to charge even after Death has been defeated.
+** It deals heavy damage to any enemy it runs into, except Death.
+Both Death and his horse deal a whole heart of contact damage in both phases.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18}}: 15% larger with 25% more HP (562.5). In his first phase, he summons {{e|Kamikaze Leech|text=Kamikaze Leeches}} instead of homing Death Scythes and does not use the Hourglass. He spawns {{e|Red Maw}}s rather than Knights after he dismounts from his horse.
+
+== Gallery ==
+<gallery>
+Boss Death phase 2 ingame.png| Death in his second phase.
+Boss Death phase1 black ingame.png| Black Champion Death.
+Boss Death phase2 black ingame.png| Black Champion Death in his second phase.
+Boss Delirium Death ingame.png| Death as one of {{e|Delirium}}'s forms.
+File:Death.png|Mini version of death summoned with the 7 seals.
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Book of Revelations, 7 Seals }}
+
+== Notes ==
+* When Death uses The Hourglass, {{i|The Ludovico Technique}}'s tear is slow to respond and has a higher maximum speed, becoming difficult to control.
+
+== Trivia ==
+* Death appeared in the original ''The Binding of Isaac.''
+* {{e|Conquest}} is the alternate version of him.
+* Death is one of the [[wikipedia:Four Horsemen of the Apocalypse|Four Horsemen of the Apocalypse]].
+* Death's scythe attack is a homage to [[wikipedia:Castlevania|Castlevania]]'s recurring boss, Death. Both summon four scythes that stay put for a few seconds, then home in on the player.
+* Death's horse shares a visual similarity to a scythe, with the head's shape mimicking that of the tool's curved blade. 
+* {{dlc|nr}} Death is currently the only enemy in-game that can use a status effect against Isaac.
+* {{dlc|r}} Death is redrawn to resemble his sprite from the Flash ''Binding of Isaac'', which, in turn, resembles the "planet face" of Chapter 6: The End in ''Super Meat Boy'', another game by Edmund McMillen.
+** The redraw also makes the visual similarity of Death's horse to a scythe more apparent. However the changed texture of the handle now no longer matches those of the summoned Death Scythes. 
+
+{{nav|boss|mom unlock|fr=Mort (Boss)}}
+[[Category:Harbingers]]
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

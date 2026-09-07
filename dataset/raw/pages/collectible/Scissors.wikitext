@@ -1,0 +1,59 @@
+{{infobox activated collectible
+ | name        = Scissors
+ | id          = 325
+ | quote       = Lose your head
+ | description = Turns Isaac's head into a stationary [[familiar]] for the current [[room]] which fires tears automatically. {{dlc|r}} Isaac's body also shoots a controllable fountain of blood shots for the room.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | recharge    = {{dlcalt|6|a=2|r=4}}
+ | unlocked by = The Scissors
+}}
+{{disambig msg|the item|a similar looking item|The Pinking Shears|the trinket|Safety Scissors}}
+
+{{cit|ua}}
+
+== Effects ==
+* Detaches Isaac's head from his body and turns the head into a stationary [[familiar]] that fires tears for the current [[room]].
+** The player still controls Isaac's headless body, which also shoots tears.
+*** {{dlc|r}} The body constantly spews a controllable fountain of blood shots, dealing about 0.66x-1.01x damage.
+**** The blood fountain can be aimed in any direction like {{i|Analog Stick|n}}.
+** {{dlc|nr}} The tears fired by the head do not scale with Isaac's damage and always do 3.5 damage.
+*** {{dlc|r}} The head's tears are affected by Isaac's stats and attack modifiers.
+
+== Notes ==
+* Can spawn multiple heads if used in the same room more than once.
+** {{dlc|r}} Only the most recent head is able to fire.
+* {{Dlc|nr}} {{i|Brimstone}} and {{i|Technology}} are not fired from the stationary head.
+* If Isaac has an invisible body due to the cosmetic effect of {{i|Transcendence}}, only a shadow will be seen after using the Scissors.
+* {{dlc|nr}} If Isaac is [[Blindfolded]], the floating head can still fire tears.
+* {{dlc|r}} The floating head does nothing as {{c|Lilith}}, {{c|Tainted Lilith}}, and {{c|Tainted Forgotten}}.
+** As {{c|The Forgotten}}, the floating head will only fire tears when the Soul is active.
+** The floating head will not fire tears as {{c|Tainted Samson}} while he is enraged.
+* {{dlc|anr}} Each wave of {{R|Boss Rush}} fully recharges the item, allowing many heads to be spawned.
+* Only deaths which end runs (i.e. Isaac is not revived by a revival item such as {{i|1up!}}) count towards unlocking the Scissors.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns red wisps in the middle ring. The wisps fire 2-3 tears at a time, which are inaccurate, travel in an arc, and have variable range.}}
+* {{dlc|r}} {{I|Epic Fetus|dlc=}} / {{I|Marked|dlc=1}}: Blood fountain from the body will aim at the crosshair.
+* {{dlc|r}}{{I|1=The Ludovico Technique}}: Blood fountain from the body will aim at the controlled tear.
+
+== Interactions ==
+* {{I|The Pinking Shears}}: If Scissors and Pinking Shears are used together, control is given back to an invisible head with only a shadow visible as both the head and body are mobilized to attack.
+* {{i|BFFS!}}: The loose head won't become larger, but will deal double damage.
+* {{i|Box of Friends}}: No effect.
+* {{I|Car Battery}}: No effect.
+* {{i|C Section}}: C Section tears are fired from the body instead of the head. This makes the head do nothing, but the item still provides a benefit as the body will fire both the C Section tears and the blood fountain from Scissors.
+
+== In-game Footage ==
+{{#ev:youtube|RC5MDCL-vmA}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Scissors.png|{{plat|3DS}} The icon of Scissors as seen on the lower 3DS screen
+</gallery>
+
+== Trivia ==
+* This item is very likely a reference to the English idiom "running with scissors", which means to "willfully act in a reckless, foolish, and/or dangerous manner", alluding to the literal act of running with a pair of scissors in one's hand, which can cause severe injury, thus the item's effect and unlock condition.
+* In original flash version of ''The Binding of Isaac'', dying 100 times unlocked {{I|The Pinking Shears}}.
+
+{{nav|fr=Paire de Ciseaux}}

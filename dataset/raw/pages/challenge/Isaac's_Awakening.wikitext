@@ -1,0 +1,49 @@
+{{infobox challenge
+ | dlc                = r
+ | number             = 39
+ | has shops          = yes
+ | item               = {{i|Spirit Sword}}<br>{{i|Trinity Shield}}<br>{{i|Mom's Bracelet}}
+ | goal               = Mother
+ | unlocks            = Spirit Sword
+ | unlocked by        = Isaac's Awakening
+}}
+
+'''Isaac's Awakening''' is [[Challenges|challenge]] #39. {{c|Isaac}} starts with {{i|Spirit Sword}}, {{i|Trinity Shield}}, and {{i|Mom's Bracelet}}. The goal is to defeat {{E|Mother}}. This challenge is unlocked by defeating Mother.
+
+== Strategy ==
+Players cannot attempt this challenge until they have completed a run to {{s|Corpse}}, and should understand that the main difficulty of the run lies in completing the necessary advanced areas ({{s|Downpour}}, {{s|Mines}}, {{s|Mausoleum}}) without the benefit of {{R|Treasure Room}}s on every floor. Instead, you are given some unusual equipment to help you along: {{i|Spirit Sword}}, the {{i|Trinity Shield}}, and {{i|Mom's Bracelet}}.
+
+Isaac no longer fires tears. Instead, you can swing your sword for a powerful and very rapid melee attack. Attacking while Isaac's total health is greater than the number of his red [[heart container]]s will also launch a magical sword in the direction of his swing, allowing you to hit distant enemies (but at a much slower rate of fire than your actual sword attacks). Additionally, you can charge your sword by holding down the attack button, then release it to attack in a circle all around you. This charge attack will deflect any enemy projectiles that it hits, and will fire a magical sword regardless of Isaac's health. 
+
+The shield is more straightforward: whichever direction you are attacking is the direction Isaac blocks projectiles from. As for the bracelet, this greatly reduces your need for bombs and lets you toss around [[rocks]], pots, mushrooms, and the like without wasting resources. Throwing an item causes the bracelet to suffer a short cooldown period before it can be used again, but simply dropping the item with the active item button allows you to rapidly clear large areas of rock. While you may eventually want to replace it with something better suited for the final boss fight, it can make a huge difference early on if you find some early [[tinted rock]]s or {{R|Crawl Space}}s.
+
+Acquiring the {{t|Broken Remote}} grants you infinite teleports as long as you keep {{i|Mom's Bracelet}}. This can be used to find {{R|Secret Room}}s, enter {{R|Curse Room}}s without taking damage, enter a {{R|Shop}} without a {{E|Key}} or enter/leave {{R|Challenge Room}}s.
+
+Apart from your odd gear, this run is essentially a standard Corpse run. There are a few things to keep in mind, however:
+
+* Because the run needs a {{R|Treasure Room}} to exist for {{i|Knife Piece 1}} to be available, there ''is'' one such room in {{s|Downpour}}/{{s|Dross}} II.
+* Entering {{s|Downpour}}, {{s|Mines}}, and {{S|Mausoleum}} will not require keys, bombs, or hearts as in normal runs: you can enter them for free.
+* {{E|Rotgut}} can pose a huge threat to your run, if not end it. His 3rd phase can be difficult / nearly impossible to beat with your current setup, as the Spirit Sword struggles to reach it. Unless you have a [[familiar]] ,alternate damage sources, or a synergy that makes it easier, expect some major health loss. ''(Running off the edge and spamming the attack button can quickly be used to defeat the third phase, taking minimal damage as the shield can be used to prevent almost all tears from hitting Isaac.)''
+* Unlike all the other bosses you'll encounter, the final battle with Mother will be a long one. Simply rushing in and slashing wildly will not take her down before she kills you. Know how she attacks and how to maneuver so as to dodge them. Proper use of the shield and the sword's charge attack can help greatly against Mother's many projectiles: angling the shield correctly will completely block some attacks, and releasing a charge at the right time will deflect all projectiles in a radius around Isaac.
+* Using items that provide invincibility, such as {{i|Book of Shadows}}, which can be acquired from a {{R|Library}}, is helpful during the {{E|Mother}} boss fight.
+* Spawning a {{R|Crawl Space}} then succeeding to enter the {{R|I AM ERROR}} room will take you to {{E|Hush}}'s floor. Defeating Hush will grant the trophy as well. This can be done using {{P|Ehwaz}}.
+* Obtaining size-ups (i.e. [[Pills|One Makes You Larger]], {{P|XI - Strength}}, {{I|Mega Mush}}, etc.) will also increase the size/hitbox of the sword, allowing for Isaac to hit enemies from farther away.
+* Finding {{i|Chaos}} can make this challenge significantly easier, as Chaos gives way to items that provide useful synergies, such as {{i|Technology}}.
+
+== Reward ==
+{{achievement text | Spirit Sword }}
+
+== Trivia ==
+* This challenge's name and starting items are a reference to ''The Legend of Zelda: Link's Awakening.''
+** The challenge is similar to [[I RULE!]] in that regard.
+* In ''Antibirth'', completing this challenge would instead unlock {{I|Psy Fly}}.
+
+== Bugs ==
+{{bug|If you enter boss rush with a respawn with the Knife Pieces already used on the door to {{e|Mom's Heart}}, if you then die in {{r|Boss Rush}}, you will be teleported to the {{e|Mom}} fight with no knife and with the door sealed.}}
+{{bug|If you teleport into the {{r|I AM ERROR}} room, after using the trapdoor, you will be put back on the regular completion path.
+If this happens after Mines / Ashpit II, you will be unable to continue on the alt path.
+Upon entering Womb / Utero / Scarred Womb I, no trapdoor will spawn after defeating the boss of the floor, soft locking the player unless another error room is accessed.
+After defeating {{e|It Lives!}}, a trophy will spawn allowing the challenge to be completed.}}
+{{bug|If you enter to a {{R|Crawl Space}} that leads to a {{R|Black Market}} while running from {{E|Mother's Shadow}}, and you use the trapdoor, you will be put back on the regular completion path too.}}
+
+{{nav|mother unlock|challenge|fr=La Légende d'Isaac}}

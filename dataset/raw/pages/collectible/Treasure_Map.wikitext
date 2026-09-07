@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | name        = Treasure Map
+ | id          = 54
+ | quote       = Full visible map
+ | description = Reveals the map of each [[floor]]. It does not identify special rooms and does not reveal the locations of {{r|Secret Room}}s / {{r|Super Secret Room}}s.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive nogreed lazarussharedglobal
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Reveals the map of each [[floor]]. It does not identify special rooms and does not reveal the locations of {{r|Secret Room}}s / {{r|Super Secret Room}}s.
+
+== Notes ==
+* When combined with {{i|Blue Map}} and {{i|The Compass}}, the entire floor is revealed, identical to the effect of {{i|The Mind}}.
+* Although not explicitly revealing it, the {{R|Boss Room}} can ''usually'' be found by locating the room farthest away from the starting room.
+
+== Synergies ==
+* {{i|Book of Secrets|r}}: Can make it easier to gain {{i|X-Ray Vision}} as Book of Secrets cannot give a mapping effect Isaac already has.
+* {{t|Liberty Cap|nr}}: If Liberty Cap triggers the effect of {{i|The Compass}}, it will last for the remainder of the floor.
+
+== In-game Footage ==
+{{#ev:youtube|8yovbPZ50HI||inline}} {{#ev:youtube|-taShrkdEsg||inline}}
+
+== Gallery ==
+<gallery>
+File:Mapping icons.png|{{dlc|r}} Treasure Map's icon (on the left), alongside other mapping icons.
+</gallery>
+
+== Trivia ==
+* Treasure Map received a significant downgrade in ''Rebirth'', as it no longer reveals {{r|Secret Room}}s. That effect, along with being able to reveal {{r|Super Secret Room}}s, now belongs to the {{i|Blue Map}}.
+* This item is used in {{chal|Cursed!}}.
+* This item is likely a reference to the ''[[wikipedia:Legend Of Zelda|Legend of Zelda]]'' franchise, in which dungeon maps are commonplace.
+* {{dlc|r}} Under the minimap, {{i|The Mind}}'s icon will override the icon of this item.
+* This item can be found as one of the Nintendo-themed {{r|Treasure Room}} items in the 6th of December's [[List of curated daily challenges|Daily Run]], which is an homage to the late CEO of Nintendo, Satoru Iwata.
+
+{{nav|fr=Carte au Trésor}}

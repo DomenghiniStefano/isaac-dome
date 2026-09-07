@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | id          = 131
+ | quote       = Gives bombs
+ | description = Spawns a [[familiar]] that drops a {{e|Bomb}} every 3 rooms.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive nocantrip
+ | unlocked by = A Bag of Bombs
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Spawns a [[familiar]] that drops a {{e|Bomb}} every 3 rooms.
+** The first drop happens after 2 rooms.
+** The bomb dropped can be a  {{e|Double Bomb}}, {{e|Troll Bomb}}, {{e|Mega Troll Bomb}}, {{e|Golden Bomb}}, or a {{E|Golden Troll Bomb}}.
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Bomb Bag having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== Synergies ==
+* {{i|BFFS!}}: The familiar drops bombs in a repeating pattern of 2, 2 then 3 rooms.
+
+== In-game Footage ==
+{{#ev:youtube|0C10tfo7wgI||inline}} {{#ev:youtube|0iOnkRV3clA||inline}}
+
+== Trivia ==
+This item is the bomb counterpart to {{I|Sack of Pennies}}, {{I|Rune Bag}}, {{I|Mystery Sack}}, and {{I|Sack of Sacks}}.
+
+{{nav|cain unlock|satan unlock|fr=Sac de Bombes}}

@@ -1,0 +1,67 @@
+{{infobox boss
+ | dlc = r
+ | id          = 904
+ | environment = <u>Boss</u><br>{{floor|Mausoleum}}<br>{{room|boss challenge}}
+ | base hp     = 666
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{t|Forgotten Lullaby}} (1% chance)
+}}
+'''The Siren''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in the {{s|Mausoleum}}.
+
+== Behavior ==
+* If Isaac has any [[familiar]]s, The Siren sings, charming up to 3 familiars at a time to assist her and turning their effects against Isaac.
+** Isaac's familiars when charmed retain most of their behaviors when assisting The Siren but can now deal contact damage and block shots.
+** Charmed familiars have 60 HP and return to Isaac when killed.
+* If she has less than 3 charmed shooting familiars from Isaac, she summons up to 3 orbiting {{e|Siren Minion}}s of her own. These familiars behave identically to {{i|Brother Bobby}} but with a slower fire rate and can also be killed. She then glides around the room for a few seconds, letting her familiars use their effects against Isaac. If she has any familiars alive after this, she swipes at Isaac, launching all remaining familiars in a cluster in his direction.
+** When the cluster collides with a wall it kills all the familiars and releases a burst of radial projectiles and a cluster of disorganized projectiles.
+*** The amount of projectiles launched during this attack depends on the number of familiars that collided with the wall.
+* Swipes a short distance in Isaac's direction, releasing 5 projectiles.
+* Sinks into the floor becoming invulnerable and chases Isaac, leaving a trail of slowing [[Creep#Black Creep|black creep]]. After reappearing, she swipes at Isaac, shooting a spread of 5 projectiles.
+* Screams, emitting a consistent shockwave around her and spawning 9 pulsating rings of projectiles that expand outwards.
+** This attack pushes Isaac away like an inverted {{e|Gaping Maw}}.
+** The rings of projectiles have openings towards Isaac's general direction.
+
+Upon death, The Siren burns away, leaving behind her skull.
+
+== Gallery ==
+<gallery>
+File:Siren skull.png|The Siren's skull.
+</gallery>
+
+== Notes ==
+* Bombing the skull that the Siren leaves behind spawns and unlocks the {{t|Forgotten Lullaby}}.
+** It only spawns the {{t|Forgotten Lullaby}} the first time it is bombed.
+** Bombing the skull in subsequent runs treats it as a regular [[Rocks#Skulls|Skull]] in regards to its drops.
+** Leaving and returning to the room causes the skull to disappear.
+* {{dlc|nr+}} The Siren can charm {{C|Lilith}}'s [[Familiar]]s, including her {{I|Incubus}}, hence making Lilith a difficult character to kill The Siren with. To counter this, either bait The Siren into launching the familiars into the wall and killing them or use bombs/active items to deal damage.
+* {{dlc|nr+}} Charmed familiars with a charged attack (eg: {{i|Lil Brimstone}}) hold their charge until the Siren launches the familiars.
+* {{dlc|nr+}} Lasers from charmed {{I|Robo-Baby}} and {{i|Robo-Baby 2.0}} do not hurt Isaac.
+* {{dlc|nr+}} Charmed {{i|Lil Portal}} can still collect pickups and create a portal.
+** {{dlc|r+}} Charmed Lil Portal does nothing and has no hitbox.
+* Charmed familiars that are thrown (eg: {{i|Bob's Brain}}) do not count towards the count of 3 familiars that orbit the Siren but are included in the cluster thrown at the end of the attack.
+* Charmed {{i|Abel}} mirrors The Siren's movements and shoots at her, though these projectiles are dangerous towards Isaac and do not hurt The Siren.
+* Charmed {{i|Paschal Candle}} will still grant a tears buff while charmed.
+* Charmed {{i|Rotten Baby}} spawns {{e|Attack Fly|text=Attack Flies}} instead of Blue Flies and {{i|Sissy Longlegs}} spawns {{e|Spider}}s instead of Blue Spiders.
+* Charmed {{i|Tinytoma}} orbits The Siren but still blocks hostile projectiles and turns into friendly Blue Spiders after being destroyed. It will also not return to Isaac when destroyed and will spawn charmed again for The Siren.
+* Temporary familiars and {{i|King Baby}} cannot be charmed.
+* Charmed [[knife Piece 1|knife familiar]] cannot be damaged while it returns after a stab.
+* Charmed {{i|Angelic Prism}} will still split tears and deal contact damage to the character, but it wont work for the enemy.
+* Charmed {{i|The Peeper}} / familiar from {{i|The Scooper}} will still have the effect of increasing eye damage. The creep from {{i|The Scooper}} will damage enemies.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Forgotten Lullaby }}
+
+== Trivia ==
+* The Siren originates from the Antibirth mod. Compared to the version in Repentance, two features were cut: one was a musical note projectile attack that reversed your controls, and the other was a revival mechanic that occured when The Siren charmed an extra life familiar like {{i|1up!}} or {{i|Dead Cat}}.
+* She is based off of [[wikipedia:Siren (mythology)|Sirens]] from Greek mythology, which were dangerous creatures who lured nearby sailors with their enchanting music and singing voices.
+* The Siren is the only boss that can interact with Isaac's collected items or familiars.
+* The Siren's ring of tears and sinking in the ground attacks are references to the Gorgun boss from the game ''[[Wikipedia:Enter the Gungeon|Enter the Gungeon]]''. Moreover, both bosses leave behind remains that can be destroyed.
+* The Siren [https://twitter.com/edmundmcmillen/status/1496754922871615488 is voiced by] '''Carla Kihlstedt''', also known to be the voice of {{e|Mom}}.
+
+== Bugs ==
+{{Bug|Charmed throwable familiars (such as {{i|Bob's Brain}}) can sometimes remain charmed after the cluster of familiars explodes.}}
+
+{{nav|boss|fr=La Sirène}}
+[[Category:Bosses]]
+[[Category:Chapter 3.5 bosses]]
+[[Category:Mausoleum bosses]]
+[[Category:Debut bosses in Repentance]]

@@ -1,0 +1,40 @@
+{{infobox trinket
+ | name        = Ring Worm
+ | id          = 11
+ | quote       = Woop woop!
+ | description = Isaac fires in a fast spiraling pattern. {{dlc|r}} Also grants +0.4 [[Tears]] and [[spectral tears]].
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Isaac's tears travel in a high-speed spiral pattern.
+* {{dlc|r}} Also grants +0.4 [[Tears]] and [[spectral tears]].
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}} or {{e|Scolex}}.{{dlc-}}
+* The tear pattern slightly increases Isaac's effective range.
+* {{dlc|nr}} The trinket has no effect on any non-tear based attack, such as {{i|Brimstone}} or {{i|Mom's Knife}}.
+** {{dlc|r}} The trinket now affects all tear/non-tear modifiers, with the only exceptions being {{I|Dr. Fetus}}, {{I|Epic Fetus}} and {{I|Tech X|n}}, which don't work.
+
+== Synergies ==
+* {{A|Golden Trinket}}/{{I|Mom's Box|r}}: In addition to the further stat increase, each copy makes the spiral path larger.
+
+== Interactions ==
+* {{I|Backstabber}}: Due to the unusual tear travel, Ring Worm may be used to hit enemies in the back, without having the need to be placed behind them.
+* {{i|Tractor Beam}}: The altered pattern tears travel in is confined to the beam.
+** {{dlc|r}} Isaac can benefit from Ring Worm's stat bonus and spectral tears without losing accuracy.
+
+== In-game Footage ==
+{{#ev:youtube|PssJtQSvWEk}}
+
+== Gallery ==
+<gallery>
+File:Worm Trinkets.jpg|Concepts for Worm Trinkets, including Ring Worm.
+</gallery>
+
+== Trivia ==
+* The bullet pattern might be a reference to a power-up in the NES game ''Uncle Fester's Quest''.
+* Ring worm (or [[wikipedia:Dermatophytosis|Dermatophytosis]]) is a fungal infection very common in children and teenagers. It involves scaly rings on the skin of the scalp, chest, arms, stomach and other places, and is not caused by any sort of worm despite its name.
+
+{{nav|worm|fr=Ver Circulaire}}

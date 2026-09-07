@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 693
+ | quote       = Infest
+ | description = Spawns eight [[Familiar#Orbital Familiars|orbital]] flies, which turn into [[Blue Fly|Blue Flies]] after they block a shot. Each time a room is cleared, spawns another orbital fly.
+ | quality     = 2
+ | tags        = summonable fly
+ | unlocked by = The Swarm
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Gives eight [[Familiar#Orbital Familiars|orbital]] flies when picked up.
+* Each time a fly blocks a projectile, it will turn into a blue fly.
+* Each time a room is cleared, spawns an orbital fly.
+** The maximum number of orbital flies Isaac can have is 16.
+* {{transformation contribution|Beelzebub}}
+
+== In-game Footage ==
+{{#ev:youtube|https://youtu.be/5ldtsvN8fXg}}
+
+== Bugs ==
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room from the one he is currently in (such as by teleporting to the previous room then using it again) will duplicate orbital flies. Obtaining orbital flies by duplicating them can surpass the item's normal orbital limit.}}
+
+{{nav|fly|tainted blue baby unlock|the beast unlock|fr=La Nuée}}

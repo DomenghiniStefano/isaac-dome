@@ -1,0 +1,161 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 395
+ | quote       = Laser ring tears
+ | description = Tears are replaced with laser rings that pierce through enemies and deal damage to enemies within them. Can be charged to increase the effectiveness of the ring.
+ | quality     = 4
+ | tags        = summonable tech offensive
+}}''For all Tech items, check [[Tech (Disambiguation)]]''
+
+{{cit|p|a}}
+
+== Effects ==
+* Isaac's tears are replaced with ring-shaped lasers.
+** Shots can be charged to increase the size of the rings.
+** The rings deal damage 15 times per second. Only the outer circumference of the rings will deal damage.
+** Rings pass through obstacles and enemies. Rings have infinite range and will travel until they hit a wall.
+** {{Dlc|r}} Damage dealt is based on the amount charged, starting at around 25% Isaac's damage and approaches 100% at maximum charge.
+*** <math>\text{Charge Time} = \frac{1}{30}(Roundup(\text{Tear Delay} \times 3) + 1) \approx \frac{3}{\text{Fire Rate}}</math>
+*** <math>\text{Max Charge Damage per Tick} = \text{Damage} \times \frac{5}{4}(\text{Fire Rate} \times (Roundup(\text{Tear Delay} \times 3) + 1) - 10)</math>
+*** <math>\text{Min Charge Damage per Tick} = \text{Damage} \times \frac{5}{4}(\text{Fire Rate} \times (Roundup(\text{Tear Delay}) + 1) - 10)</math>
+*** At 30.00 fire rate or above (0 tear delay or lower), charging is no longer needed and fires 30 rings per second. Higher fire rate results in higher laser damage.
+**** <math>\text{Damage per Tick} = \text{Damage} \times \frac{5}{4}(\text{Fire Rate} - 10)</math>
+**** Damage per Tick is capped at 100% Isaac's Damage, at 90.00 fire rate.
+
+== Notes ==
+* Like normal tears, walking forward makes the rings move faster, and walking backwards makes the rings move slower. Because the ring deals damage for as long as the enemy is inside of it, walking backwards actually increases Tech X's DPS, while walking forward lowers it.
+* The rings are similar in appearance to the combination of {{I|The Ludovico Technique}} and {{I|Technology}}.
+* The laser rings will linger for a brief moment upon touching a wall, allowing more damage to be dealt to enemies closer to walls.
+* The "R U A WIZARD?" pill effect does not work with Tech X.
+* Acquiring an extra copy of Tech X will shoot an extra laser ring.
+* {{Dlc|nr}} Charging only increases size, not damage. It is useful for hard-to-hit enemies or hitting a wide area at once, but spamming small, uncharged shots will lead to much higher damage output.
+** {{Dlc|a+nr}} With the charge bars option enabled, the rings can be released immediately as the charge bar appears for easier gauging of maximum damage output.
+* {{Dlc|r}} The maximum ring size is slightly smaller in ''Repentance''.
+
+== Synergies ==
+* {{I|20/20}}: Fires two Tech X rings instead of one. {{dlc|r}}Damage down applied.
+* {{I|Apple!|r}}/{{I|Euthanasia|n}}/{{I|Holy Light|n}}/{{I|Little Horn|n}}/{{I|Mucormycosis|n}}/{{I|Tough Love|n}}: The tear effects will apply randomly at each damage tick depending on Isaac's luck stat.
+* {{C|Azazel|r}}: Azazel fires a Brimstone ring instead of Tech X ring with a 35% damage penalty. If combined with Brimstone, the damage penalty is negated.
+** The same applies to {{C|Tainted Azazel}}.
+* {{tf|Bookworm|a+}}: Can fire an additional Tech X ring with same 25% chance.
+* {{I|Brimstone}}: Fires a Brimstone ring. This Brimstone ring is larger than the laser ring and has a much wider hitbox.
+** {{Dlc|nr}}{{I|Brimstone}} + {{I|Technology}}: The damage boost from Brimstone + Technology is lost, but the laser fires while charging the Brimstone ring.
+*** {{Dlc|r}} Fires a Brimstone ring coiled by a laser. Once again increases Isaac's damage by 1.5x.
+** {{Dlc|r}} Double {{I|Brimstone}}: Further increases the width of the ring, and grants +1 Damage.
+* {{Dlc|r}} {{I|Cricket's Body}}: Shoots out smaller tears on hit.
+* {{I|C Section}}: Overrides the charging effect, but shoots a laser ring with a fetus tear in the middle. The ring's damage is half the fetus' damage.
+* {{I|Dr. Fetus}}: Overrides the charging effect, but shoots a laser ring with a bomb in the middle. The ring's damage is Isaac's Damage.
+** '''Dr. Fetus''' + {{Dlc|r}} {{I|Cricket's Body}}: Causes split tears to collide with the bomb, which is almost guaranteed to cause the bomb to move eratically when in close proximity of enemies.
+* {{I|Epic Fetus}}: Each missile shoots 10 laser beams like from {{I|Technology}} in each direction with a flat 25 damage bonus, similar to {{I|Tammy's Head}}.
+* {{I|Explosivo|r}}/{{t|Nose Goblin|n}}/{{I|Sinus Infection|n}}: Every damage tick has a chance to stick a tear of the respective effect on enemies.
+* {{I|Fruit Cake|r}}: Works on the laser rings.
+* {{I|Haemolacria}}: Haemolacria tears will burst into 3-5 Tech X rings on impact. The sizes of the rings are various, but they deal 100% Isaac's Damage.
+* [[Haemolacria]] + [[Brimstone]]: Brimstone overrides the effects of Tech X, effectively making it useless.
+* {{I|Head of the Keeper|r}}: The tears turn into the Tech X tears, but they still retain the ability for enemies to drop money, which is now based on every tick of damage, rather than with the rings themselves.
+* [[Tear Effects#Homing|Homing]]: While the rings won't home in on enemies, they will bend inwards to hit enemies within each ring, resulting in a substantial damage area increase.
+* {{I|Jacob's Ladder|r}}: The rings gain a light blue tint and generate sparks when hitting enemies or obstacles. A ring can generate only one spark per tick.
+* {{I|Lead Pencil|r}}: Every 15th laser ring fired also shoots a cluster of tears.
+* {{I|Loki's Horns|r}}: Adds a chance to fire 4 laser rings at once with 2 in front and 2 behind Isaac, each pair firing on top of each other.
+* {{I|Lost Contact}}: Tech X rings can block projectiles as they travel.
+* {{I|Mom's Eye|r}}: Isaac will now sometimes fire an additional ring from his back.
+* {{I|Mom's Knife|nr}}: Simultaneously fires the knife and laser ring(s).
+** {{Dlc|r}} The knife is fired with a Tech X ring around it, similarly to the forgotten's club throw. The ring's damage is based on the amount charged, starting at 33% Isaac's damage and 100% at maximum charge.
+* {{I|Monstro's Lung}}: Fires 3-5 extra rings in 30° spread. Extra rings deal from 50% to 100% damage of the main ring.
+** {{Dlc|r}} Fire Rate is divided by 3.1.
+* {{T|Ouroboros Worm|r}}: The ring inherits the [[homing]] chance benefit, without being affected by the pattern.
+* {{i|The Parasite|r+}}: The ring produces small tears in contact with enemies.
+* {{I|Rubber Cement|r}}: The rings bounce off walls once.
+* {{I|Sad Bombs}}: Bombs explode into {{I|Technology}} beams in all directions.
+* {{I|Strange Attractor}}: Magnetic effect pulls pickups and objects to the ring, increasing accuracy.
+* {{I|Tech.5}}: Occasionally fires a linear laser while charging Tech X.
+* {{I|Technology|nr}}: Fires a linear laser while charging Tech X.
+** {{Dlc|r}} Fires a {{I|Brimstone}} ring coiled by a laser. Despite its appearance, it does ''not'' give 1.5x damage (see {{I|Brimstone}} synergy above).
+* {{I|Technology 2}}: Fires a linear laser while charging Tech X.
+* {{T|Wiggle Worm}}: Rings take star-shape, slightly increasing its area of effect.
+
+== Interactions ==
+Overridden by Tech X:
+* {{C|Azazel|a+}}'s normal attack
+* {{T|Brain Worm}}
+* {{I|Cursed Eye}}
+* {{I|Euthanasia|nr}}
+* {{I|Evil Eye}}
+* {{I|Explosivo|nr}}
+* {{I|Flat Stone}}
+* {{I|Head of the Keeper|nr}}
+* {{I|Holy Light|nr}}
+* {{I|Lachryphagy}}
+* {{I|Lead Pencil|nr}}
+* {{I|Little Horn|nr}}
+* {{I|Loki's Horns|a+nr}}
+* {{I|The Ludovico Technique}}
+* {{I|Mom's Eye|nr}}
+* {{I|Neptunus}}
+* {{I|The Parasite|nr+}}
+* {{I|Parasitoid|a+nr+}}
+* {{I|Pop!}}
+* {{I|Pupula Duplex}}
+* {{I|Rubber Cement|nr}}
+* {{I|Technology Zero}}
+* {{I|Tough Love|nr}}
+* {{I|Trisagion}}
+
+Only stat effects are applied; otherwise overridden by Tech X:
+* {{I|Anti-Gravity}}
+* {{I|Apple!|nr}} Only tears up applies, without a chance of high-damage rings
+* {{I|Chocolate Milk|r}}
+* {{I|Compound Fracture}}
+* {{I|Cricket's Body|nr}}
+* {{I|Death's Touch}}
+* {{I|Eye of Belial}}
+* {{I|Eye of the Occult}}
+* {{T|Hook Worm}}
+* {{I|Jacob's Ladder|nr}}
+* {{I|Marked|nr}}
+* {{I|My Reflection}}
+* {{T|Ouroboros Worm|nr}}
+* {{I|Sulfuric Acid|nr}}
+* {{I|Tiny Planet}}
+* {{I|Tractor Beam}} also causes any effects previously overridden by Tractor Beam (e.g. {{I|The Wiz}}) to return
+
+Other interactions:
+* {{I|Almond Milk}}: Fires automatically upon reaching full charge. Tech X overrides most of the worm trinket effects.
+* {{C|Azazel|na+}}: Azazel's brimstone overrides Tech X.
+* {{I|Blood Clot}} / {{I|Chemical Peel}} / {{I|The Peeper|r}}: The effects have 80% chance to be applied per damage tick.
+* {{I|Chocolate Milk|nr}}: Doesn't increase damage, but reduces Isaac's tear delay by 20%.
+* {{Dlc|nr}}{{I|Continuum}} + {{I|Incubus}}: Incubus's laser rings cannot go through walls.
+** {{Dlc|r}} Works as expected.
+* {{I|Dead Eye}}: Prior to picking up Tech X, the damage multiplier is preserved to where its at, and missing shots will not remove it. Saving and quitting the game will remove the multiplier. Picking Dead Eye after Tech X has no effect.
+* {{I|Fire Mind}}: Laser rings set enemies on fire and do not explode.
+* {{C|The Forgotten}} / {{C|Tainted Forgotten}}: A laser ring forms around the bone toss attack. {{C|The Soul}} uses Tech X normally, and {{C|Tainted Soul}} cannot use it at all.
+* {{I|Fruit Cake|nr}}: Only status effects granted by Fruit Cake work on the laser rings.
+* {{I|Gello}}: The [[familiar]] charges based on the distance from the target enemy. It charges more when it is further from the enemy. It also gains the item's costume.
+* {{I|Godhead}}: Damaging halo effect lost, but retains [[Homing]] effect and stat changes.
+* {{I|Immaculate Heart}}/{{I|Saturnus}}: Normal tears orbit Isaac.
+* {{I|Incubus|nr}}: The rings fired by the Incubus have a fixed size; charging the ring will only increase the size of the player's own rings.
+** {{Dlc|r}} Works as expected.
+* {{I|Ipecac|na+}}: Overridden by Tech X. The damage bonus is lost upon entering a different room. Still poisons enemies like Ipecac does.
+** {{Dlc|a+nr}} +4 damage and poisons enemies.
+** {{Dlc|r}} Tech X ring causes an explosion on every rock or enemy it passes through. The ring will not open {{R|Secret Room}}s, though resulting explosions still will.
+** {{Dlc|r}}{{I|Ipecac}} + {{I|Almond Milk}} / {{I|Soy Milk}}: Explosion damage maintained as tears vastly increases.
+* {{I|A Lump of Coal|nr}}: Damage and size of the ring increases the further away it is from the player, but is actually roughly 2/3rds of tear damage up close. It takes a few tiles of distance to reach normal damage and go above it, with the maximum being 1.5x at roughly a room's width away.
+** {{Dlc|r}} The damage is normal at point blank range but the damage increase per tile is significantly lower.
+* {{I|Marked|r}}: The rings are now fired automatically with ring size depending on Isaac's distance from the cursor; the further he is, the larger the rings are.
+* {{I|Mom's Eyeshadow}}: All rings become pink - testing is needed to find out if all rings have charm chance
+* {{I|Proptosis}}: The ring's damage and size substantially increase, but decreases the further it travels.
+** {{Dlc|r}} The ring's damage and size is based on the distance from Isaac. The damage is 4.38x when Isaac is on the center of the ring, down to 1.5x.
+* {{T|Pulse Worm}}: The ring pulsates in size between 0.67x to 1.33x over a 2 second cycle.
+* {{I|The Scooper}} / {{I|Stye|n}}: The effects have 20% chance to be applied per damage tick.
+* {{I|Soy Milk|r}} : Fires automatically upon reaching full charge.
+* {{I|Sulfuric Acid|r}}/{{I|Terra|n}}: The ring can destroy [[Obstacles]], but it can't open doors or {{r|Secret Room}}s. Terra also greatly increases knockback.
+** {{dlc|r+}} The laser can now open doors.
+* {{I|Tammy's Head}}: Tammy's head fires regular tears.
+
+== In-game Footage ==
+{{#ev:youtube|-U5ysqsEa5Q}}
+
+== Bugs ==
+{{bug|dlc=na+|The black ring generated from the synergy of {{i|Dr. Fetus}} and Tech X behaves as a {{i|Maw Of The Void}} ring and may cause black hearts to drop.}}
+{{Bug|Having Tech X with {{I|Soy Milk}} / {{I|Almond Milk}} and {{I|Kidney Stone}} causes Isaac unable to fire laser rings when Kidney Stone is active.}}
+
+{{nav}}

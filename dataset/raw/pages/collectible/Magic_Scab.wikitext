@@ -1,0 +1,19 @@
+{{infobox passive collectible
+ | id          = 253
+ | quote       = HP + luck up
+ | description = Grants one full Red [[Heart container]], +1 [[luck]]. {{dlc|r}} Heals 1 additional {{E|Red Heart}}.
+ | quality     = 2
+ | tags        = nolostbr
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants one full Red [[Heart container]].
+* +1 [[luck]].
+* {{Dlc|r}} Heals 1 additional {{E|Red Heart}}.
+
+== In-game Footage ==
+{{#ev:youtube|EKotPXv7X_Y}}
+
+{{nav|fr=Croûte Magique}}

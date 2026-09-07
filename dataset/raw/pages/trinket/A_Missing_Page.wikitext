@@ -1,0 +1,37 @@
+{{infobox trinket
+ | id          = 48
+ | quote       = It glows with power
+ | description = 5% chance to induce {{i|The Necronomicon}}'s effect upon taking damage. {{dlc|r}} Adds +40 damage to {{E|Black Heart}}s and The Necromonicon-like effects.
+}}
+
+{{cit|t}}
+
+== Effects ==
+* When damaged, grants a chance to activate {{i|The Necronomicon}} effect, dealing 40 damage to enemies in the room.
+* {{dlc|r}} Adds +40 damage to {{i|The Necronomicon}} and similar effects, such as {{E|Black Heart}}s. This also includes its own effect.
+* {{transformation contribution|Necromancer|this=trinket}}
+
+== Notes ==
+* The activation chance depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\min(\frac1 { 20 - \left \lfloor \mathit{Luck} * 0.3 \right \rfloor},50\%)</math>
+** At base Luck (0), the chance is 5%, maxing out at 50% at 60 Luck.
+* If multiple copies of the trinket are obtained, they wont count as a Necromancer's items.
+
+== Synergies ==
+* {{dlc+|r}} {{I|Blood Rights}} / {{I|Dry Baby}} / {{i|The Negative}} / {{i|Heartbreak}} / {{p|XIII - Death}} / {{p|Black Rune}}: The damage boost is applied to these items.{{dlc-}}
+* {{A|Golden Trinket}}/{{I|Mom's Box|r}}/{{i|Missing Page 2|r}}: Each copy grants +40 damage to The Necronomicon and similar effects.
+
+== In-game Footage ==
+{{#ev:youtube|Q807qui8MlM}}
+
+== Gallery ==
+<gallery>
+A Missing Page giantbook.png| A Missing Page's splash image which appears when it's activated.
+</gallery>
+
+== Trivia ==
+* {{i|The Necronomicon}}, A Missing Page, and {{i|Missing Page 2}} are all references to the Necronomicon and its missing pages appearing in [[wikipedia: The Evil Dead (franchise)|Evil Dead]].
+** Which, in turn, is a reference to ''[[wikipedia:The Necronomicon|The Necronomicon]]'', a fictional grimoire appearing in the works of horror writer [[wikipedia: H.P.Lovecraft|H.P. Lovecraft]].
+* {{dlc|r+}} This is one of the only three trinkets that count toward a transformation, the other ones are {{t|Kid's Drawing}} and {{t|Bob's Bladder}}.
+
+{{nav|necromancer|fr=Page Déchirée}}
+[[Category:Damage-triggered items]]

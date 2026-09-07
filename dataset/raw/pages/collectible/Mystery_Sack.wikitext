@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | name = Mystery Sack
+ | id = 271
+ | quote = ?
+ | description = Spawns a [[familiar]] that drops a [[Heart]], [[coin]], {{e|Bomb}}, or {{e|Key}} every 5-6 [[rooms]].
+ | quality     = 2
+ | tags        = summonable offensive
+ | unlocked by = Mystery Sack
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Spawns a [[familiar]] that drops a [[Heart]], [[coin]], {{e|Bomb}}, or {{e|Key}} (or any of their variations) alternatively every 5 or 6 [[rooms]].
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars.
+** {{dlc|nr+}} Mystery Sack has 6th priority.
+** {{dlc|r+}} Mystery Sack has 8th priority.
+* Can spawn troll bombs.
+
+== Synergies ==
+* {{i|BFFS!}}: The familiar drops pickups alternatingly every 4 or 5 rooms.
+
+== In-game Footage ==
+{{#ev:youtube|qMayqxYCCmg}}
+
+== Trivia ==
+* Before patch 1.04, this item did not drop any items or do anything at all. Why it did not work remains a mystery.
+* This item is the only "bag" item ({{I|Sack of Pennies}}, {{I|Rune Bag}}, {{I|Bomb Bag}}, and {{I|Sack of Sacks}}), that isn't a counterpart to other existing bag items, rather being a combination of some.
+
+{{nav|eden unlock|the lamb unlock|fr=Pochon Mystère}}

@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 513
+ | quote       = Party time!
+ | description = +0.1 flat [[damage]], grants a {{E|Soul Heart}}. Enemies can randomly become briefly [[charm]]ed or [[fear]]ed. Taking damage has a chance to spawn a {{E|Rainbow Poop}}.
+ | quality     = 2
+ | tags        = nolostbr summonable
+ | unlocked by = Bozo
+}}
+
+{{cit|up|a+1}}
+
+== Effects ==
+* +0.1 flat [[damage]].
+* Grants a {{e|Soul Heart}}.
+* Enemies may randomly become briefly [[charm]]ed or [[fear]]ed.
+* Taking damage has a 5% chance to spawn {{e|Rainbow Poop}}.
+
+== Notes ==
+* None of the above effects are affected by [[luck]].
+
+== Synergies ==
+* {{I|Blood Oath}}: Each half-heart lost has a chance of spawning a rainbow poop, allowing for full red heart regeneration.
+* {{I|IV Bag}}: Each use has a chance of spawning a rainbow poop.
+* With max red hearts, {{I|The Wafer}}, and careful timing to get the maximum healing from each rainbow poop, Isaac's effective health pool could be extremely high.
+
+== In-game Footage ==
+{{#ev:youtube|vkajpE-axRk}}
+
+== Gallery ==
+<gallery>
+Collectible Bozo Booster Pack 1 icon.png | Bozo's appearance prior to [[Booster Pack#5]].
+</gallery>
+
+== Trivia ==
+* Bozo is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=840361451 this Steam Workshop item] by electoon.
+* This item is a reference to [[wikipedia:Bozo the Clown|Bozo the Clown]], a clown character whose broad popularity peaked in the 1960s.
+* The item's ability to inflict [[fear]] may be a reference to [[wikipedia:Coulrophobia|coulrophobia]], the fear of clowns.
+* {{dlc+|r}} This item shares a description with the item {{I|Free Lemonade}}.{{dlc-}}
+
+{{nav|booster pack}}
+[[Category:Damage-triggered items]]

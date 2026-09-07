@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | id          = 251
+ | quote       = Extra card room
+ | description = Isaac can hold 2 [[Cards and Runes#Cards|cards]] at once and all [[pills]] are replaced by cards.
+ | quality     = 2
+ | tags        = summonable offensive nocantrip
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Allows Isaac to carry two [[Cards and Runes|cards, runes, or soul stones]] at once. Cycle through cards by pressing {{plat|PC}} the Control key, {{plat|PS4, PS5}} R2, {{plat|XboxOne}} RT, or {{plat|Switch, 3DS}} ZR.
+* Replaces all [[pills]] with cards, runes, or soul stones. Pills already on the ground will be converted to a card, rune or soul stone upon picking up Starter Deck.
+* Spawns a random [[card]].
+
+== Notes ==
+* When picking up Starter Deck in a shop that has a pill for purchase, the pill can still be purchased and used. If the pill is dropped, it will be turned into a card.
+* Picking up 2 Starter Decks won't allow you to carry 3 cards at once.
+
+== Interactions ==
+* {{i|Acid Baby}}: Spawns cards or runes instead of pills. Using cards or runes will not trigger the room-wide poisoning effect.
+* {{Dlc|nr}} {{i|Caffeine Pill}}: A pill drops normally, but if it is picked up and dropped, or left on the ground while visiting other rooms, it becomes a card.
+* {{i|Little Baggy|nr}}: Overrides the effect of Little Baggy (switch from receiving only pills to only cards).
+** {{dlc|r}} Having both items allow both cards and pills to appear again.
+*** Picking up Little Baggy while already holding Starter Deck will turn any held cards or {{dlc|nr}}runes into pills for one time.
+* {{i|Mom's Bottle of Pills}}: Gives a card instead of a pill, essentially becoming equivalent to a {{i|Deck of Cards}}.
+* {{p|XIV - Temperance?}}: Forces Isaac to eat pills even with Starter Deck.
+
+== In-game Footage ==
+{{#ev:youtube|WPuR2s6cxX8}}
+
+== Trivia ==
+* The Starter Deck will paint a five-color pentagram on Isaac's head, which is a reference to the ''Magic: The Gathering'' logo.
+* This item is used in {{chal|It's in the Cards}}.
+* {{Dlc|r}} Starter Deck also appears in {{chal|Cantripped!|n}} with a unique function of increasing the number of item cards that {{C|Tainted Cain}} can carry at once. It replaces all {{R|Boss Room}} items in this challenge.
+
+== Gallery ==
+<gallery>
+File:Collectible Starter Deck concept.jpg|Concept drawn for Starter Deck.
+</gallery>
+
+{{nav|inventory expansion|card modifier|rune modifier|pill modifier|fr=Deck du Débutant}}

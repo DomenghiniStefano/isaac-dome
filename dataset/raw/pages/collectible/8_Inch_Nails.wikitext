@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlcalt|na+=Afterbirth|nr=Afterbirth+}}
+ | tear app name = * {{dlc|nr|Afterbirth}}
+ | quote       = Stick it to 'em!
+ | description = +1.5 [[damage]]. Replaces Isaac's tears with nails, which have increased [[knockback]].
+ | quality     = 3
+ | tags        = summonable offensive
+ | id          = 359
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* +1.5 [[damage]].
+* Isaac's tears are replaced with nails, which have increased [[knockback]].
+
+== Notes ==
+* Does not grant penetrative shots, despite the appearance of Isaac's tears.
+* Any item that normally colors Isaac's tears red will cause the nails to become bloody.
+
+== Synergies ==
+* {{i|Dr. Fetus}} / {{i|Epic Fetus}} / {{i|Ipecac}}: Explosions also gain increased knockback.
+* [[Piercing tears]]: Allows tears to knock enemies back again.
+* {{i|Brimstone}} / {{i|Tech.5}} / {{i|Technology}} / {{i|Technology 2}} / {{i|Tech X}} / {{i|Mom's Knife}} / {{i|Trisagion}}: They gain knockback. Especially powerful with Tech X, as the knockback helps keeps enemies within the ring for longer.
+
+== Interactions ==
+* {{t|Blister}}: The knockback from Blister is stronger than from 8 Inch Nails, and knockback boosts do not stack.
+
+== In-game Footage ==
+{{#ev:youtube|x_OxjQwbp54}}
+
+== Trivia ==
+* The item is a reference to the nails used to hang Jesus Christ upon the cross when he was crucified.
+* The item's name is also a reference to the band, [[wikipedia:Nine Inch Nails|Nine Inch Nails]].
+* The visual effect on Isaac may also be a reference to a line in Eminem's "My Name Is", in which he says, "Wanna see me stick Nine Inch Nails through each one of my eyelids?". This line is also a reference to the aforementioned band.
+
+{{nav|fr=Gros Clous}}

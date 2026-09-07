@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | name = Raw Liver
+ | id = 16
+ | quote = HP up
+ | description = Grants 2 [[Red Heart container]]s and completely restores [[health]].
+ | quality     = 2
+ | tags        = nolostbr
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Gives Isaac 2 Red [[Health|Heart containers]] and fully restores Isaac's [[health]].
+
+== Interactions ==
+* {{C|Tainted Bethany}}: Grants 12 blood charges.
+
+== In-game Footage ==
+{{#ev:youtube|LCNpC0oagQY||inline}} {{#ev:youtube|AacekrJ0BBQ||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Cursed!}}.
+* [[Edmund McMillen]] mentions Raw Liver on his first post-Repentance Lore Stream,<ref>https://youtu.be/kby0rXT7qYQ</ref> and relates two things without directly stating which one (if any, or if both) inspired the Raw Liver item.
+** The first thing McMillen relates is the phrase ''"I ate his liver with some fava beans and a nice Chianti",'' which is a quote from the character of [[wikipedia:Hannibal Lecter|Hannibal Lecter]], a serial killing cannibal in the 1991 film ''[[wikipedia:The Silence of the Lambs (film)|The Silence of The Lambs]]''.
+** The second statement is a personal anecdote from McMillen about abuse he suffered at the hands of his step-father while growing up at the age of six. According to Edmund, he was offered raw chicken's liver to eat by his step-father, and upon accepting and finding the taste to be unpleasant, was still forced to eat as much as he could before being taken to the bathroom and told under duress to vomit up the liver.
+* Raw Liver’s sprites can be seen as part of {{I|Binge Eater}} despite Raw Liver not being a food item affected by Binge Eater.
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Foie Cru}}

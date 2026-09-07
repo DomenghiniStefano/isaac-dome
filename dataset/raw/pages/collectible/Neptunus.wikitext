@@ -1,0 +1,58 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 597
+ | quote       = Open the floodgates
+ | description = Isaac's mouth fills with tears over time while not firing, up to a cap. Holding the fire button will release all stored tears in rapid succession.
+ | quality     = 3
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* While Isaac is not firing tears, a charge bar will start to fill up. Holding down the fire button will release the stored tears rapidly. The fire rate is greater and the bar drains faster when more full.
+* The charge time and maximum tears per charge scale with Isaac's [[tears]] stat, with higher tears charging faster and having more of them.
+
+== Notes ==
+* While at 0 charge, Isaac fires at his normal tear delay, meaning there is no downside.
+* This item has no effect for {{C|Tainted Lilith}} or {{c|Tainted Forgotten}}.
+
+== Synergies ==
+* {{i|Camo Undies}}: The passive charge of Neptunus does not disrupt Camo, and the initial burst of damage is enhanced by Neptunus.
+* {{i|Chocolate Milk}}: Neptunus' passive charge overrides Chocolate Milk's active charge. Tear damage is determined by how charged Neptunus is.
+** Once Neptunus' charge is used up, Isaac will fire uncharged Chocolate Milk tears, resulting in a much lower damage output than without Chocolate Milk.
+** '''Chocolate Milk''' + {{i|Kidney Stone}}: Isaac will not fire any tears during the Kidney Stone burst.
+* {{i|Kidney Stone}}: Tear bursts stack, firing a very large number of tears in combination with each other.
+
+== Interactions ==
+Overrides Neptunus:
+* {{C|Azazel}}/{{I|Brimstone}}
+* {{I|C Section}}
+* {{I|Dr. Fetus}}
+* {{I|Epic Fetus}}
+* {{I|The Ludovico Technique}}
+* {{I|Mom's Knife}}
+* {{I|Monstro's Lung}}
+* {{I|Spirit Sword}}
+* {{I|Technology}}
+* {{I|Tech X}}
+** However, {{I|Haemolacria}} + Tech X does work with Neptunus.
+
+Other interactions:
+* {{I|Cursed Eye}}: Overridden by Neptunus.
+* {{I|Soy Milk}}: The charge bar is not present and charged tears are released instantly.
+* {{I|Chocolate Milk}} + {{i|Marked}}: '''Not recommended.''' Isaac will not be able to fire any tears, effectively softlocking the run.
+
+== In-game Footage ==
+{{#ev:youtube|3VKKjp0LImA}}
+
+== Trivia ==
+* Neptunus, as well as {{i|Jupiter}}, was designed for the original ''Antibirth'' mod, but never actually implemented until ''Repentance''.
+* Neptunus' effects and pickup quote reference the Roman god of the sea, [[wikipedia:Neptune (mythology)|Neptune]].
+
+== Gallery ==
+<gallery>
+File:NeptunusConceptArt.png|Concept art.
+</gallery>
+
+{{nav|astrological}}

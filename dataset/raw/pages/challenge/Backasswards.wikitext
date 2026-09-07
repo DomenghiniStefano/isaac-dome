@@ -1,0 +1,54 @@
+{{infobox challenge
+ | dlc          = a+
+ | number       = 31
+ | item         = 8-10 random [[item]]s
+ | has shops    = yes
+ | description  = All chapters progress in reverse order, losing 1 item and 1 Red Heart container each floor ascended.
+ | special goal = {{s|Basement}} / {{s|Cellar}} / {{s|Burning Basement}} I
+ | unlocks      = Laz Bleeds More!
+ | unlocked by  = Backasswards
+}}
+
+'''Backasswards''' is [[challenge]] #31. Isaac starts on the {{E|Mega Satan}} boss fight with 8-10 random items and 10 Heart Containers (exact number may vary based on the items). The goal is to play the floors backwards, hence the challenge's namesake. Every floor ascended will cost one Heart Container, and the oldest item in the inventory. The player starts each floor with a boss fight (except the {{s|Dark Room}}, which can be immediately completed), and will have to find the "starting room" to ascend a beam of light to the "previous" floor, {{dlc|r}} similar to the [[Ascent]].
+
+== Difficulty ==
+Starting with a random selection of items, ''and'' starting on the {{E|Mega Satan}} boss fight makes this challenge very difficult at first. If Mega Satan and {{E|Satan}} can be defeated, the rest of the challenge becomes significantly easier. However, no bosses need to be defeated to progress - teleporting out of boss rooms can make the challenge much easier. While treasure rooms are disabled in this challenge, bosses will still offer a reward upon defeating them.
+
+== Strategy ==
+* Try to get some really powerful few-item synergies. Resetting is a perfectly good way to ensure good items.
+** Since Isaac will have at least 10 Red Heart containers from the start, {{i|Pyromaniac}} and items that grant exploding shots ({{i|Ipecac}}, {{i|Dr. Fetus}}, and {{i|Epic Fetus}}) combined is game breaking since as long as he gets caught by his explosions, he can heal indefinitely. They also do plentiful damage to enemies and can open closed doors. Isaac also can heal from Mega Satan's {{dlc|nr}} rock waves and mini-bosses spawned by him which spawn ignited {{E|Bomb}}s, {{E|Troll Bomb}}s or {{E|Mega Troll Bomb}}s.
+** Having {{i|Gnawed Leaf}} and something that can do damage while not moving, such as {{i|Daddy Longlegs}}, {{i|Dead Bird}}, or {{i|Smart Fly}}, can basically guarantee an eventual win. Damaging orbitals are also a big help. Finally, size-decreasing items, such as {{i|Pluto}} or items that block bullets, such as {{i|Trinity Shield}} will drastically reduce the difficulty of most of Mega Satan's attacks.
+** {{i|The Wafer}} is an extremely useful item to receive in this challenge as well.
+* Even without powerful items or synergies, the challenge of Mega Satan (or any other boss) can be skipped by teleporting out of the room.
+** Isaac only needs a starting item that produces a tarot card on pickup, such as {{I|Magic 8 Ball}} or {{I|Starter Deck}}. {{I|Booster Pack}} has a high chance to produce a card that can teleport Isaac since it spawns 5 random cards. {{P|0 - The Fool}}, {{P|IX - The Hermit}}, and {{P|XVIII - The Moon}} are all viable teleportation cards.
+** {{I|Cursed Eye}} also works as a method of teleportation, but can come with the downside of unwanted teleportation.
+** Teleportation through resurrection by means of items like the {{I|Ankh}} is possible but dangerous since most resurrection items revive Isaac with very low health.
+* Taking a hit from {{E|Mom's Hand}} brings Isaac to the starting room of a floor.
+* Going up a floor will remove one heart container and one passive item. {{dlc|nr}} If Isaac only has one red heart container, something as simple as leaving the floor itself will end the run.
+** For this reason, be wary of taking devil deals at low health.
+** {{I|Dead Cat}} in particular can be a run-ender, as it removes all but one red heart container on pickup. Additionally, starting with this item will make the Mega Satan fight extremely hard due to the large health reduction it causes.
+** Beware of {{i|Experimental Treatment}} too, as it has a chance to remove heart containers.
+** {{E|Soul Heart}}s and {{E|Black Heart}}s are not affected by this if Isaac has any red heart containers. Thus, {{i|Guppy's Paw}} is an extremely useful item for this run.
+* Shops spawn as normal above {{s|Womb}}.
+* {{p|Ehwaz}} and {{i|We Need To Go Deeper!}} generate closed exits to the next floor, so they cannot help Isaac skip the current floor.
+* Items to be removed first are the "first" items picked up. This is the item in the rightmost column of the lowest row. If powerful items are shown there, it is best to restart.
+* {{dlc+|nr}} If a {{M|Mom's Dressing Table}} spawns in the starting room, its icon will show up on the map even if the starting room has not been visited yet. This makes finding the passage to the previous floor significantly easier.{{dlc-}}
+* {{dlc+|r}} Items that spawn effects in the starting room of a floor (such as {{I|Card Reading}} and {{I|The Stairway}}) will have no effect in this challenge, as they disappear once Isaac is in any room other than the starting room.{{dlc-}}
+
+== Notes ==
+* Teleporting to the {{S|Dark Room}} through {{R|Sacrifice Room}} brings Isaac back to Mega Satan's fight, and all previously encountered floors will be regenerated.
+* {{i|Halo of Flies}} will take two entire floors to be removed. Only one fly will be lost per floor.
+* {{i|R Key}} will teleport Isaac back to the Mega Satan fight.
+* {{dlc+|r}} Using {{I|Genesis}} after Dark Room may softlock a run, because the exit generated in the bedroom is closed. Escaping the room is possible if any item or pickup that allows escaping is generated. (e.g. {{i|Teleport!}}, {{i|Forget Me Now}}){{dlc-}}
+* {{dlc+|r}} If {{I|Luna}} is lost when ascending to a new floor, additional secret rooms are still generated as normal for that floor. The other effects of Luna will not activate.{{dlc-}}
+* {{E|The Lamb}} cannot be encountered in the Dark Room.
+* Only {{i|The Negative}} can be picked up after defeating {{E|Mom}}.
+* Glowing Hourglass, if used in the Boss Room, will send Isaac to the starting room for the floor rather than the previous floor.
+
+== Reward ==
+{{achievement text | Laz Bleeds More! }}
+
+== Bugs ==
+{{bug|If Isaac is teleported into the I AM ERROR room on the final floor of the challenge, there will be no exit, making the run impossible to beat.}}
+
+{{nav|blue baby boss unlock|the lamb unlock|mega satan unlock|challenge|fr=À l'Envers}}

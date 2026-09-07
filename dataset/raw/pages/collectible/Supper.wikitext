@@ -1,0 +1,19 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 707
+ | quote       = HP up
+ | description = Grants one full Red [[Heart container]]. Heals 1 additional {{e|Red Heart}}.
+ | quality     = 1
+ | tags        = nolostbr food
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Gives one full Red [[Heart container]].
+* Heals 1 additional {{e|Red Heart}}.
+
+== Synergies ==
+* {{i|Binge Eater}}: When Isaac picks up Supper it now grants: a permanent +0.5 [[Tears]] and +1.0 [[Luck]], a temporary +3.6 [[Damage]] (which diminishes to 0 in 30 seconds), heals 1 additional red heart, and takes a permanent -0.03 [[Speed]] reduction.
+
+{{nav|fr=Souper}}

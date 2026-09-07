@@ -1,0 +1,63 @@
+{{infobox activated collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 93
+ | quote       = Temporary Man-Pac
+ | description = Transforms Isaac into a rainbow-colored chomping creature for 6.5 seconds. Grants [[invulnerability]], inflicts [[Status Effects#Fear|fear]] on all enemies, and has a chance of replenishing a {{e|Half Red Heart}} every time an enemy is killed.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = {{dlcalt|6|r=4}}
+ | unlocked by = A Gamekid
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* Upon use, transforms Isaac into a [[wikipedia:Pac-Man (character)|Pac-Man]]-like creature for 6.5 seconds and provides the following effects:
+** Gives [[Effects#Invulnerability|invulnerability]].
+** Inflicts [[fear]] on all enemies.
+** Removes the ability to shoot tears.
+** {{dlc|nr}} Allows Isaac to deal 40 contact damage to enemies, at the rate of 1 hit per second per enemy.
+** {{dlc|r}} Allows Isaac to deal 20 contact damage to enemies, at the rate of 2 hits per second per enemy.
+*** If an enemy is at 40 HP or less, the contact damage is increased to 40 for that enemy.
+** Each enemy that dies during the duration has a chance to replenish a {{e|Half Red Heart}} even if they weren't killed by Isaac's contact damage.
+
+== Notes ==
+* The invulnerability effect negates almost all forms of damage, including health loss from {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s.
+** This also negates damage from entering or exiting a {{r|Curse Room}}, but the effect is immediately removed upon walking through the door.
+* Does not prevent damage from the door to the {{s|Mausoleum}} / {{s|Gehenna}}.
+* Does not prevent [[Health#Red Heart Containers|Red Heart container]] loss from [[Health Down]] pills or [[Devil deal]]s.
+* This item is very similar to {{i|My Little Unicorn}}, trading the extra speed for the ability to gain health from killing enemies.
+* [[Pills|Power Pill!]] has the same effect as The Gamekid, same goes with {{T|Cartridge}} on getting hit.
+
+== Synergies ==
+* {{i|4.5 Volt}}: With some damage source while this item is active, it can be permanently invulnerable inside the room while you have enemies.
+** If combined with {{I|9 Volt}}, it will be easier to achieve invincibility.
+* {{i|???'s Only Friend}}: The fly can still be controlled while invincible.
+* {{Book of Virtues synergy|description=Spawns wisps in the inner ring, looking like little Pac-Men. Wisps' tears have the {{I|Anti-Gravity}} effect and can inflict [[fear]] on enemies.}}
+* {{i|Car Battery}}: Doubles the length of invincibility, but no effect on damage.
+* {{I|Mom's Knife}} does contact damage in the same direction it was being held at the time of using it, giving a massive amount of free damage by ramming into an enemy.
+** If you have the [[Yes Mother?]] Transformation, you can basically do the same thing using this item.
+* Damage on contact items ({{i|Aries}}, {{i|The Virus}}, etc.) and [[Orbital Familiar]]s ({{i|Cube of Meat}}, {{i|Sacrificial Dagger}}, etc.): Deals damage on top of The Gamekid's damage and invincibility.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s don’t have a chance to heal Isaac.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into {{E|Poop}} don’t have a chance to heal Isaac.
+** {{I|E. Coli}} Usually turns non-boss enemies into poop when Isaac attempts to deal contact damage making heals off of contact damage kills much harder.
+* {{dlc|rnr+}}[[Freeze|Freeze Effects]]: Effects that can still freeze enemies while the item is active do not grant the chance to heal Isaac.
+
+== In-game Footage ==
+{{#ev:youtube|gUnSu2xQfps||inline}} {{#ev:youtube|2JgSExbmTN8||inline}}
+
+== Trivia ==
+* Beating the game whilst under the effects of The Gamekid will cause the credits music to be sped up.
+* This item's name and appearance are references to the Nintendo Game Boy.
+* The pickup quote and Isaac's appearance while under the effects of The Gamekid are references to ''Pac-Man''.
+* ''Tetris'' appears to be the game being played on The Gamekid. ''Tetris'' was also the launch title for the Nintendo Game Boy.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The Gamekid.png|{{plat|3DS}} The icon of The Gamekid as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|fr=Jeu-Garçon}}
+[[Category:Damage-preventing items]]

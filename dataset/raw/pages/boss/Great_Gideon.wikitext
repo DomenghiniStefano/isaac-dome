@@ -1,0 +1,119 @@
+{{Infobox boss
+ | dlc         = r
+ | id          = 907
+ | name        = Great Gideon
+ | environment = <u>Boss</u><br>{{floor|Mines}}{{floor|Ashpit}}
+ | base hp     = N/A
+ | pool        = {{ip|Boss}}<br> {{i|Gnawed Leaf|r+}} (1% chance)
+ 
+}}
+'''Great Gideon''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in the {{s|Mines}} and the {{s|Ashpit}}.
+
+== Behavior ==
+Great Gideon is always fought in a vertical double-size room and has no health in a traditional sense. Instead, Isaac must battle 6 waves of monsters to beat him, similar to [[Greed Mode]] waves. Each wave begins once all enemies from the previous wave have been defeated.
+
+He uses the following attacks during these waves:
+* Creates a vacuum that affects the whole room, pulling in Isaac and all monsters and monster projectiles. It also pulls in additional rock projectiles. Touching Gideon while he is performing this attack damages Isaac.
+* Spits 5 projectiles in a cone shape towards Isaac. The center projectile is larger and splits into 8 projectiles in a radial burst when it lands or hits something.
+* Charges up then spits large flame projectiles down the center of the arena that can occasionally leave small fires behind.
+** Some enemies caught in this attack are turned into their flaming versions: {{e|Rock Spider}} into {{e|Coal Spider}}, {{e|Clotty}} into {{e|Grilled Clotty}} and {{e|Gyro}} into {{e|Grilled Gyro}}.
+* After the beginning of the 4th wave, Great Gideon charges up and releases a rock wave down the center of the room, breaking parts of the floor and leaving gaps.
+** There is always at least 1 gap between the trail of holes created by this attack as to not completely trap Isaac on either end of the room.
+* Gideon does not spawn the next enemy wave during the middle of any of his attacks and only progresses a wave once he has finished.
+After Isaac defeats all 6 waves of monsters, Great Gideon will deactivate, similar to a regular {{e|Stone Grimace}}.
+
+== [[Monsters]] ==
+=== {{s|Mines}} Waves ===
+{| class="wikitable mw-collapsible mw-collapsed striped sortable"
+! Name
+! ID
+{{entity row minimal|Blaster}}
+{{entity row minimal|Bouncer}}
+{{entity row minimal|Clotty}}
+{{entity row minimal|Coal Boy}}
+{{entity row minimal|Coal Spider}}
+{{entity row minimal|Danny}}
+{{entity row minimal|Dragon Fly}}
+{{entity row minimal|Dragon Fly X}}
+{{entity row minimal|Faceless}}
+{{entity row minimal|Fire Worm}}
+{{entity row minimal|Fly Bomb}}
+{{entity row minimal|Gurgle}}
+{{entity row minimal|Gyro}}
+{{entity row minimal|Hardy}}
+{{entity row minimal|Ink}}
+{{entity row minimal|Quakey}}
+{{entity row minimal|Rock Spider}}
+{{entity row minimal|Soy Creep}}
+{{entity row minimal|Sucker}}
+{{entity row minimal|Walking Gut}}
+ |}
+
+=== {{s|Ashpit}} Waves ===
+{| class="wikitable mw-collapsible mw-collapsed striped sortable"
+! Name
+! ID
+{{entity row minimal|Big Bony}}
+{{entity row minimal|Blaster}}
+{{entity row minimal|Bone Fly}}
+{{entity row minimal|Bony}}
+{{entity row minimal|Carrion Princess}}
+{{entity row minimal|Coal Boy}}
+{{entity row minimal|Coal Spider}}
+{{entity row minimal|Crackle}}
+{{entity row minimal|Danny}}
+{{entity row minimal|Dragon Fly}}
+{{entity row minimal|Dragon Fly X}}
+{{entity row minimal|Dust}}
+{{entity row minimal|Flesh Maiden}}
+{{entity row minimal|Fly Bomb}}
+{{entity row minimal|Gurgle}}
+{{entity row minimal|Hard Host}}
+{{entity row minimal|Hardy}}
+{{entity row minimal|Migraine}}
+{{entity row minimal|Necro}}
+{{entity row minimal|Pasty}}
+{{entity row minimal|Rock Spider}}
+{{entity row minimal|Splasher}}
+ |}
+
+== Gallery ==
+<gallery>
+File:Boss Great Gideon summon.png|Great Gideon summoning a wave.
+File:Boss Great Gideon rock wave.png|Great Gideon about to perform his rock wave attack.
+File:Boss Great Gideon fire.png|Great Gideon performing his fire attack.
+File:Boss Great Gideon suck.png|Great Gideon performing his vacuum attack.
+File:Boss Great Gideon deactivated.png|Great Gideon deactivated.
+File:Boss Great Gideon chaos card.png|Great Gideon being defeated by Chaos Card.
+File:The Castle Concept.png|Concept art for Great Gideon. (Referred to as "The Castle")
+File:CrawlSpace Great Gideon.png|Great Gideon's Crawl Space.
+</gallery>
+
+== Notes ==
+* Great Gideon can be instantly killed with {{p|Chaos Card}}. Doing so reveals a unique 1x2 {{r|Crawl Space}} beneath him, containing two locked chests, two items and a random key.
+** This can be done at any time, even if he has already been defeated, as his deactivated body still remains after returning to the room.
+** Defeating Great Gideon in this way plays a unique animation in which the Chaos Card gets lodged in his forehead before he explodes.
+** Pressing on a {{E|Killswitch}} in the room similarly kills Great Gideon, and reveals the unique 1x2 {{r|Crawl Space}}. This also plays the unique animation of the {{p|Chaos Card}} in his head. Doing so is possible with {{i|D12}}
+* Completing waves will not charge active items.
+* {{i|Vanishing Twin}} will duplicate Great Gideon and increase the number of waves by 2. The waves themselves contain no extra enemies.
+* Great Gideon can be fought outside the {{s|Mines}} or the {{s|Ashpit}} via using a {{p|IV - The Emperor?}} card in {{s|Downpour}} or {{s|Dross}}. If encountered outside his regular stages, he has preset waves consisting of {{e|Frowning Gaper}}s, {{e|Wall Creep}}s, {{e|Round Worm}}s, {{e|Gurgle}}s, and {{e|Sucker}}s.
+
+== Trivia ==
+* He is the boss version of {{e|Stone Grimace}}s, resembling a giant version with his left eye replaced by 7 holes arranged in a hexagonal pattern, and his left backside appears rougher with several protruding rocks.
+** When performing his rock wave attack, he grows spikes resembling a {{e|Quake Grimace}}'s.
+* Great Gideon's name likely comes from [[wikipedia:Gideon|Gideon]], an Old Testament prophet and military leader known for winning a decisive battle against an overwhelming Midianite army with only an army of 300 Israelites — explaining the large amount of enemies the boss spawns.
+* The name Gideon is said to mean “hewer” which is an individual who works in a mine breaking stone.
+* Great Gideon is one of the few bosses with a unique health bar, aside from {{e|Dogma}}.
+* The {{r|Crawl Space}} that opens up when using {{p|Chaos Card}} on Gideon is titled "Gideon's Grave" in the game's code.
+** According to artist NotYourSagittarius, this is a direct reference to ''Scott Pilgrim'', a series of graphic novels.
+
+== Bugs ==
+{{Bug|Spawning Great Gideon with the debug console will spawn him with a normal boss healthbar instead of a "waves" mechanic. When Great Gideon attempts to spawn a wave of enemies, the game crashes.}}
+{{Bug|Dealing enough damage quickly enough (e.g. with {{i|Soy Milk}}) to the monsters Great Gideon creates can cause him to spawn the next wave before all enemies in the current one are dead.}}
+
+{{nav|boss|fr=Gédéon le Grand}}
+[[Category:Bosses]]
+[[Category:Chapter 2.5 bosses]]
+[[Category:Mines bosses]]
+[[Category:Ashpit bosses]]
+[[Category:Debut bosses in Repentance]]

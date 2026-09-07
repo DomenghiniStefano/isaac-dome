@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 274
+ | quote       = Sworn protector
+ | description = When hit, spawns a quickly [[orbital familiar|orbiting]] attack fly similar to {{i|Forever alone}} for the current [[room]] that deals high damage.
+ | quality     = 0
+ | tags        = nolostbr summonable fly
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Upon taking damage, spawns a white attack fly for the duration of the current [[room]]. The fly [[orbital familiar|orbits]] Isaac at medium range, similar to {{i|Forever alone}}, but with much higher speed.
+** {{dlc|nr}} The fly deals 5 damage per tick (75 contact damage per second).
+** {{dlc|r}} The fly deals 10 damage per tick (150 contact damage per second).
+* {{transformation contribution|Beelzebub}}
+
+== Interactions ==
+* {{i|Best Bud}}: Multiple copies of Best Buds do not stack, only 1 fly can be spawned
+
+== In-game Footage ==
+{{#ev:youtube|QSjPt8vCErk}}
+
+== Trivia ==
+* {{dlc+|a}} Best Bud is very similar in appearance to {{i|Friend Zone}} and {{i|Lost Fly}}, making them difficult to distinguish.{{dlc-}}
+* The pickup quote ("Sworn protector") is also an [[Sworn Protector|Item]].
+* {{dlc|r}} Best Bud deals the most contact damage out of all Orbitals in the game (a title previously held by {{i|Sacrificial Dagger}}).
+
+{{nav|fly|fr=Meilleure Pote}}
+[[Category:Damage-triggered items]]

@@ -1,0 +1,34 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 187
+ | quote       = Double vision?
+ | description = Gives a 50% chance to add a '?' item to {{R|Treasure Room}}s. Only one item can be taken. The extra items on the alt path are revealed instead.
+ | tags        = lazarussharedglobal
+ | unlocked by = Broken Glasses
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* 50% chance of adding an extra blind item in {{r|Treasure Room}}s.
+** When one of the items is taken, the other disappears.
+** The extra blind items in {{s|Downpour}}, {{s|Dross}}, {{s|Mines}}, {{s|Ashpit}}, {{s|Mausoleum}}, and {{s|Gehenna}} (and {{s|Corpse}} if {{t|Bloody Crown}} is held) have a 50% chance to be revealed instead.
+
+== Notes ==
+* The effect includes instances where pedestal items would be replaced with something else, such as the [[Pica Run]] challenge. If there is not a blind equivalent, both items will simply be shown.
+* Its effect can work on the same floor it was picked up on if the Treasure Room hasn't been entered yet.
+* Works in both Treasure Rooms in {{mode|greed}} Greed mode.
+
+== Synergies ==
+* {{a|Golden Trinket}} / {{i|Mom's Box}}: The chance to add a blind item in Treasure rooms is now 100%. The chance to reveal the blind item in the alt path Treasure rooms is now 100%.
+* {{i|Damocles}}: An additional visible item will be generated from the blind item.
+* {{t|Devil's Crown}}: Both items can be taken, but still need to be paid for, and one will remain blind if not on the alt path.
+
+== Interactions ==
+* {{t|Golden Horse Shoe}}: The second item will always be blind if not on the alt path.
+** This doesn't apply to {{i|More Options}}.
+
+== In-game footage ==
+{{#ev:youtube|upQNjJn6kuc}}
+
+{{nav|options|broken|fr=Lunettes Cassées}}

@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | name        = Slipped Rib
+ | id          = 542
+ | quote       = Projectile shield
+ | description = Spawns a bone [[familiar]] that circles around Isaac and reflects enemy shots.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable
+ | unlocked by = Slipped Rib
+}}
+
+{{cit|up|a+5}}
+
+== Effects ==
+* Spawns a bone [[familiar]] that circles around Isaac and reflects enemy shots.
+** {{Dlc|nr}} The reflected projectiles deal 5 damage if they would've hurt Isaac for half a heart, and 10 for a full heart.
+** {{Dlc|r}} The reflected projectiles deal 6 damage if they would've hurt Isaac for half a heart, and 7 for a full heart.
+** Enemy damage modification from item effects or by stage does not affect the reflected damage.
+** Reflected projectiles do not gain [[Tear effects]] from Isaac.
+* The familiar does not deal contact damage, but kills the same types of [[flies]] on contact as [[Pretty Fly]] orbitals do.
+
+== Notes ==
+* Projectiles that create other projectiles (e.g. {{E|Shady}}) can harm Isaac and be reflected.
+* Homing projectiles (e.g. from {{E|Psychic Horf}}) do not retain their homing effect after being reflected.
+* Slipped Rib can reflect:
+** Explosive projectiles (e.g. from {{E|Gurgle}}), which explode as normal.
+** Fireballs (e.g. from {{E|Crackle}}), and their lines of fire do not harm Isaac.
+** Fire projectiles (e.g. from {{E|Mega Satan}}).
+** Obstacles thrown by {{E|Polty}} or {{E|Kineti}}, dealing a flat 35 damage.
+* Slipped Rib does not reflect:
+** Lasers or beams.
+** Lines of fire from fireballs.
+** Projectiles from {{E|Big Bony}}, {{E|Coal Boy}}, {{E|Danny}}.
+
+== Interactions ==
+* {{I|BFFS!}}: Increases its size but does not increase the hitbox or the reflected damage.
+
+== In-game footage ==
+{{#ev:youtube|ZiQMQiNbvLI}}
+
+== Trivia ==
+* This item is a reference to [https://www.healthline.com/health/slipping-rib-syndrome slipping rib syndrome].
+* This item is Edmund's favorite Booster Pack item according to _Kilburn.
+
+== Gallery ==
+<gallery>
+File:AfterbirthPlus_Booster_Pack_5_Concepts.jpg|Concept art for Slipped Rib on the right side, along with other Booster Pack items and trinkets, by Edmund McMillen.
+</gallery>
+
+{{nav|the forgotten unlock|booster pack|bone|isaac boss unlock|fr=Côte Cassée}}

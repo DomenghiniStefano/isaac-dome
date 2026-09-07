@@ -1,0 +1,43 @@
+{{infobox trinket
+ | dlc         = a
+ | id          = 80
+ | quote       = With darkness comes power
+ | description = Increases Isaac's [[Damage]] for each 'evil' [[item]] or [[trinket]] he possesses.
+ | unlocked by = Black Feather
+}}
+
+{{cit|ut|a}}
+
+== Effect ==
+* Increases Isaac's [[Damage]] by a set amount for each of the following [[item]]s or [[trinket]]s he possesses:
+** {{dlc|nr}} +0.2 Damage for each item or trinket possessed.
+** {{dlc|r}} +0.5 Damage for each item or trinket possessed.
+{{column list | width = 15em | content =
+* {{i|Abaddon}}
+* {{i|Black Candle}}
+* {{t|Black Lipstick}}
+* {{i|Ceremonial Robes}}
+* {{t|Daemon's Tail}}
+* {{i|False PHD}}
+* {{i|Goat Head}}
+* {{i|The Mark|r+}}
+* {{i|Match Book}}
+* {{i|Missing Page 2}}
+* {{i|The Pact|r+}}
+* {{i|Safety Pin}}
+}}
+
+== Notes ==
+* Having more than one of the same item (i.e. using {{i|Diplopia}} and/or, in the case of trinkets, {{i|Smelter}} or {{i|Mom's Purse}}) will increase Isaac's damage for each copy.
+
+== Synergies ==
+* {{i|Mom's Box|nr}}: Grants +0.4 damage for each evil item and trinket.
+* {{A|Golden Trinket|r}} / {{i|Mom's Box|r}}: Having either grants +1 damage for each evil item and trinket. Having both grants +1.5 damage for each.
+
+== In-game Footage ==
+{{#ev:youtube|ZWtcYo6iEks}}
+
+== Trivia ==
+* Most items that are affected by Black Feather contain the phrase "Evil up" or "Sin up" in their description. The only exception is {{i|Goat Head}}, {{dlc|r+}}{{i|The Mark}} and {{dlc|r+}}{{i|The Pact}}.
+
+{{nav|eve unlock|ultra greed unlock|fr=Plume Noire}}

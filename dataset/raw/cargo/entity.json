@@ -1,0 +1,5832 @@
+[
+  {
+    "_pageName": "??? (Boss)",
+    "alias": "???",
+    "dlc": "31",
+    "id": "102",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Angel",
+    "alias": "Uriel",
+    "dlc": "31",
+    "id": "271",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "Angels",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Angel",
+    "alias": "Gabriel",
+    "dlc": "31",
+    "id": "272",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "Angels",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Baby",
+    "alias": "Imp",
+    "dlc": "30",
+    "id": "259",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Baby",
+    "alias": "Angelic Baby",
+    "dlc": "31",
+    "id": "38",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Baby",
+    "alias": "Angelic Baby (small)",
+    "dlc": "24",
+    "id": "38",
+    "subtype": "1",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Baby",
+    "alias": "Baby",
+    "dlc": "31",
+    "id": "38",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Baby",
+    "alias": "Wrinkly Baby",
+    "dlc": "24",
+    "id": "38",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Baby",
+    "alias": "Unborn",
+    "dlc": "24",
+    "id": "860",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Baby",
+    "alias": "Baby Begotten",
+    "dlc": "24",
+    "id": "883",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Baby Long Legs",
+    "alias": "Baby Long Legs",
+    "dlc": "31",
+    "id": "206",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Baby Long Legs",
+    "alias": "Small Baby Long Legs",
+    "dlc": "31",
+    "id": "206",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Baby Plum",
+    "alias": "Baby Plum",
+    "dlc": "24",
+    "id": "908",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes+!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Ball and Chain",
+    "alias": "Spikeball",
+    "dlc": "24",
+    "id": "852",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Ball and Chain",
+    "alias": "Ball and Chain",
+    "dlc": "24",
+    "id": "893",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Ball and Chain",
+    "alias": "Singe's Ball",
+    "dlc": "24",
+    "id": "915",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Batteries",
+    "alias": "Golden Battery",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "4",
+    "type": "",
+    "unlocked by": "Golden Battery",
+    "variant": "90"
+  },
+  {
+    "_pageName": "Batteries",
+    "alias": "Lil' Battery",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "1",
+    "type": "",
+    "unlocked by": "",
+    "variant": "90"
+  },
+  {
+    "_pageName": "Batteries",
+    "alias": "Mega Battery",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "3",
+    "type": "",
+    "unlocked by": "",
+    "variant": "90"
+  },
+  {
+    "_pageName": "Batteries",
+    "alias": "Micro Battery",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "2",
+    "type": "",
+    "unlocked by": "",
+    "variant": "90"
+  },
+  {
+    "_pageName": "Beggar",
+    "alias": "Battery Bum",
+    "dlc": "24",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "13"
+  },
+  {
+    "_pageName": "Beggar",
+    "alias": "Beggar",
+    "dlc": "31",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "4"
+  },
+  {
+    "_pageName": "Beggar",
+    "alias": "Bomb Bum",
+    "dlc": "30",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "9"
+  },
+  {
+    "_pageName": "Beggar",
+    "alias": "Devil Beggar",
+    "dlc": "31",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "5"
+  },
+  {
+    "_pageName": "Beggar",
+    "alias": "Hell Game",
+    "dlc": "24",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "Hell Game",
+    "variant": "15"
+  },
+  {
+    "_pageName": "Beggar",
+    "alias": "Key Master",
+    "dlc": "31",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "7"
+  },
+  {
+    "_pageName": "Beggar",
+    "alias": "Rotten Beggar",
+    "dlc": "24",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "Rotten Beggar",
+    "variant": "18"
+  },
+  {
+    "_pageName": "Beggar",
+    "alias": "Shell Game",
+    "dlc": "31",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "6"
+  },
+  {
+    "_pageName": "Big Horn",
+    "alias": "Big Horn",
+    "dlc": "28",
+    "id": "411",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes+!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Bishop",
+    "alias": "Bishop",
+    "dlc": "24",
+    "id": "805",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Blaster",
+    "alias": "Blaster",
+    "dlc": "24",
+    "id": "821",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Blastocyst",
+    "alias": "Blastocyst",
+    "dlc": "31",
+    "id": "74",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Blighted Ovum",
+    "alias": "Blighted Ovum",
+    "dlc": "31",
+    "id": "79",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Blood Puppy",
+    "alias": "Blood Puppy",
+    "dlc": "24",
+    "id": "802",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Boil",
+    "alias": "Blue Boil",
+    "dlc": "30",
+    "id": "298",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Boil",
+    "alias": "Boil",
+    "dlc": "31",
+    "id": "30",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Boil",
+    "alias": "Gut",
+    "dlc": "31",
+    "id": "30",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Boil",
+    "alias": "Sack",
+    "dlc": "31",
+    "id": "30",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Boil",
+    "alias": "Gush",
+    "dlc": "28",
+    "id": "309",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Boil",
+    "alias": "Pustule",
+    "dlc": "24",
+    "id": "861",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Boil",
+    "alias": "Walking Boil",
+    "dlc": "31",
+    "id": "88",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Boil",
+    "alias": "Walking Gut",
+    "dlc": "31",
+    "id": "88",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Boil",
+    "alias": "Walking Sack",
+    "dlc": "31",
+    "id": "88",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Bombgagger",
+    "alias": "Bombgagger",
+    "dlc": "24",
+    "id": "844",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Bombs",
+    "alias": "Big Poop Nugget",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "1",
+    "type": "",
+    "unlocked by": "",
+    "variant": "42"
+  },
+  {
+    "_pageName": "Bombs",
+    "alias": "Bomb",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "1",
+    "type": "",
+    "unlocked by": "",
+    "variant": "40"
+  },
+  {
+    "_pageName": "Bombs",
+    "alias": "Double Bomb",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "2",
+    "type": "",
+    "unlocked by": "",
+    "variant": "40"
+  },
+  {
+    "_pageName": "Bombs",
+    "alias": "Giga Bomb",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "7",
+    "type": "",
+    "unlocked by": "",
+    "variant": "40"
+  },
+  {
+    "_pageName": "Bombs",
+    "alias": "Golden Bomb",
+    "dlc": "30",
+    "id": "5",
+    "subtype": "4",
+    "type": "",
+    "unlocked by": "Blue Bomber",
+    "variant": "40"
+  },
+  {
+    "_pageName": "Bombs",
+    "alias": "Golden Troll Bomb",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "6",
+    "type": "",
+    "unlocked by": "",
+    "variant": "40"
+  },
+  {
+    "_pageName": "Bombs",
+    "alias": "Mega Troll Bomb",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "5",
+    "type": "",
+    "unlocked by": "",
+    "variant": "40"
+  },
+  {
+    "_pageName": "Bombs",
+    "alias": "Poop Nugget",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "42"
+  },
+  {
+    "_pageName": "Bombs",
+    "alias": "Throwable Bomb",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "41"
+  },
+  {
+    "_pageName": "Bombs",
+    "alias": "Troll Bomb",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "3",
+    "type": "",
+    "unlocked by": "",
+    "variant": "40"
+  },
+  {
+    "_pageName": "Bony",
+    "alias": "Black Bony",
+    "dlc": "30",
+    "id": "227",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Bony",
+    "alias": "Bony",
+    "dlc": "31",
+    "id": "227",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Bony",
+    "alias": "Holy Bony",
+    "dlc": "24",
+    "id": "227",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Bony",
+    "alias": "Quad Revenant",
+    "dlc": "24",
+    "id": "841",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Bony",
+    "alias": "Revenant",
+    "dlc": "24",
+    "id": "841",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Bony",
+    "alias": "Maze Roamer",
+    "dlc": "24",
+    "id": "890",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Boom Fly",
+    "alias": "Bone Fly",
+    "dlc": "24",
+    "id": "25",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "4"
+  },
+  {
+    "_pageName": "Boom Fly",
+    "alias": "Boom Fly",
+    "dlc": "31",
+    "id": "25",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Boom Fly",
+    "alias": "Dragon Fly",
+    "dlc": "24",
+    "id": "25",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Boom Fly",
+    "alias": "Dragon Fly X",
+    "dlc": "24",
+    "id": "25",
+    "subtype": "1",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Boom Fly",
+    "alias": "Drowned Boom Fly",
+    "dlc": "30",
+    "id": "25",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Boom Fly",
+    "alias": "Red Boom Fly",
+    "dlc": "31",
+    "id": "25",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Boom Fly",
+    "alias": "Sick Boom Fly",
+    "dlc": "24",
+    "id": "25",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "5"
+  },
+  {
+    "_pageName": "Boom Fly",
+    "alias": "Tainted Boom Fly",
+    "dlc": "24",
+    "id": "25",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "6"
+  },
+  {
+    "_pageName": "Brain",
+    "alias": "Black Globin's Head",
+    "dlc": "30",
+    "id": "279",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Brain",
+    "alias": "Poison Mind",
+    "dlc": "28",
+    "id": "301",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "The gate is open!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Brain",
+    "alias": "Brain",
+    "dlc": "31",
+    "id": "32",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Brain",
+    "alias": "Festering Guts",
+    "dlc": "24",
+    "id": "831",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "20"
+  },
+  {
+    "_pageName": "Brain",
+    "alias": "Pon",
+    "dlc": "24",
+    "id": "840",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Brownie",
+    "alias": "Brownie",
+    "dlc": "30",
+    "id": "402",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Bumbino",
+    "alias": "Bumbino",
+    "dlc": "24",
+    "id": "916",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes+!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Buttlicker",
+    "alias": "Butt Slicker",
+    "dlc": "24",
+    "id": "878",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Buttlicker",
+    "alias": "Buttlicker",
+    "dlc": "31",
+    "id": "89",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Buttons",
+    "alias": "Brown Button",
+    "dlc": "24",
+    "id": "",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Buttons",
+    "alias": "Killswitch",
+    "dlc": "24",
+    "id": "",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Buttons",
+    "alias": "Pressure Plate",
+    "dlc": "30",
+    "id": "",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Buttons",
+    "alias": "Reward Plate",
+    "dlc": "30",
+    "id": "",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Buttons",
+    "alias": "Yellow Button",
+    "dlc": "24",
+    "id": "",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "C.H.A.D.",
+    "alias": "C.H.A.D.",
+    "dlc": "31",
+    "id": "28",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something Cute",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Candler",
+    "alias": "Candler",
+    "dlc": "24",
+    "id": "833",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Carrion Queen",
+    "alias": "Carrion Queen",
+    "dlc": "31",
+    "id": "28",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Charger",
+    "alias": "Carrion Princess",
+    "dlc": "24",
+    "id": "23",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Charger",
+    "alias": "Charger",
+    "dlc": "31",
+    "id": "23",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Charger",
+    "alias": "Dank Charger",
+    "dlc": "28",
+    "id": "23",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Charger",
+    "alias": "Drowned Charger",
+    "dlc": "30",
+    "id": "23",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Charger",
+    "alias": "Elleech",
+    "dlc": "24",
+    "id": "855",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Charger",
+    "alias": "Level 2 Charger",
+    "dlc": "24",
+    "id": "855",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Bomb Chest",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "51"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Chest",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "50"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Eternal Chest",
+    "dlc": "30",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "53"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Haunted Chest",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "Haunted Chest",
+    "variant": "58"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Locked Chest",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "60"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Mega Chest",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "Mega Chest",
+    "variant": "57"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Mimic Chest",
+    "dlc": "28",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "54"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Mom's Chest",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "390"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Old Chest",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "55"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Red Chest",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "360"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Spiked Chest",
+    "dlc": "30",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "52"
+  },
+  {
+    "_pageName": "Chests",
+    "alias": "Wooden Chest",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "Wooden Chest",
+    "variant": "56"
+  },
+  {
+    "_pageName": "Chimera",
+    "alias": "Chimera",
+    "dlc": "24",
+    "id": "910",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Chub",
+    "alias": "Chub",
+    "dlc": "31",
+    "id": "28",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Clog",
+    "alias": "Clog",
+    "dlc": "24",
+    "id": "914",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Clotty",
+    "alias": "Clot",
+    "dlc": "31",
+    "id": "15",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Clotty",
+    "alias": "Clotty",
+    "dlc": "31",
+    "id": "15",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Clotty",
+    "alias": "Grilled Clotty",
+    "dlc": "24",
+    "id": "15",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Clotty",
+    "alias": "I.Blob",
+    "dlc": "31",
+    "id": "15",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Clotty",
+    "alias": "Cloggy",
+    "dlc": "24",
+    "id": "872",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Clutch",
+    "alias": "Clutch",
+    "dlc": "24",
+    "id": "921",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Cod Worm",
+    "alias": "Cod Worm",
+    "dlc": "31",
+    "id": "221",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Cohort",
+    "alias": "Cohort",
+    "dlc": "24",
+    "id": "857",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Coins",
+    "alias": "Dime",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "3",
+    "type": "",
+    "unlocked by": "",
+    "variant": "20"
+  },
+  {
+    "_pageName": "Coins",
+    "alias": "Double Penny",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "4",
+    "type": "",
+    "unlocked by": "",
+    "variant": "20"
+  },
+  {
+    "_pageName": "Coins",
+    "alias": "Golden Penny",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "7",
+    "type": "",
+    "unlocked by": "Golden Penny",
+    "variant": "20"
+  },
+  {
+    "_pageName": "Coins",
+    "alias": "Lucky Penny",
+    "dlc": "30",
+    "id": "5",
+    "subtype": "5",
+    "type": "",
+    "unlocked by": "Lucky Penny",
+    "variant": "20"
+  },
+  {
+    "_pageName": "Coins",
+    "alias": "Nickel",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "2",
+    "type": "",
+    "unlocked by": "",
+    "variant": "20"
+  },
+  {
+    "_pageName": "Coins",
+    "alias": "Penny",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "1",
+    "type": "",
+    "unlocked by": "",
+    "variant": "20"
+  },
+  {
+    "_pageName": "Coins",
+    "alias": "Sticky Nickel",
+    "dlc": "30",
+    "id": "5",
+    "subtype": "6",
+    "type": "",
+    "unlocked by": "Sticky Nickel",
+    "variant": "20"
+  },
+  {
+    "_pageName": "Colostomia",
+    "alias": "Colostomia",
+    "dlc": "24",
+    "id": "917",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Conquest",
+    "alias": "Conquest",
+    "dlc": "31",
+    "id": "65",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "A Forgotten Horseman",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Corn Mine",
+    "alias": "Corn Mine",
+    "dlc": "30",
+    "id": "295",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Crazy Long Legs",
+    "alias": "Crazy Long Legs",
+    "dlc": "31",
+    "id": "207",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Crazy Long Legs",
+    "alias": "Small Crazy Long Legs",
+    "dlc": "31",
+    "id": "207",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Cultist",
+    "alias": "Blood Cultist",
+    "dlc": "24",
+    "id": "885",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Cultist",
+    "alias": "Cultist",
+    "dlc": "24",
+    "id": "885",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Daddy Long Legs",
+    "alias": "Daddy Long Legs",
+    "dlc": "31",
+    "id": "101",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Dangle",
+    "alias": "Dangle",
+    "dlc": "30",
+    "id": "261",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes!",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Danny",
+    "alias": "Coal Boy",
+    "dlc": "24",
+    "id": "820",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Danny",
+    "alias": "Danny",
+    "dlc": "24",
+    "id": "820",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Dark Ball",
+    "alias": "Dark Ball",
+    "dlc": "30",
+    "id": "404",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Dark Ball",
+    "alias": "Purple Ball",
+    "dlc": "28",
+    "id": "409",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Dark Ball",
+    "alias": "Visage Plasma",
+    "dlc": "24",
+    "id": "903",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "20"
+  },
+  {
+    "_pageName": "Dark Ball",
+    "alias": "Ultra Pestilence Fly Ball",
+    "dlc": "24",
+    "id": "951",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "23"
+  },
+  {
+    "_pageName": "Dark One",
+    "alias": "Dark One",
+    "dlc": "31",
+    "id": "267",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Death (Boss)",
+    "alias": "Death",
+    "dlc": "31",
+    "id": "66",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "The Harbingers",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Death Scythe",
+    "alias": "Death Scythe",
+    "dlc": "31",
+    "id": "66",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Death Scythe",
+    "alias": "Ultra Death Scythe",
+    "dlc": "24",
+    "id": "951",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "41"
+  },
+  {
+    "_pageName": "Death's Head",
+    "alias": "Brimstone Death's Head",
+    "dlc": "24",
+    "id": "212",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Death's Head",
+    "alias": "Cursed Death's Head",
+    "dlc": "24",
+    "id": "212",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Death's Head",
+    "alias": "Dank Death's Head",
+    "dlc": "30",
+    "id": "212",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Death's Head",
+    "alias": "Death's Head",
+    "dlc": "31",
+    "id": "212",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Death's Head",
+    "alias": "Redskull",
+    "dlc": "24",
+    "id": "212",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "4"
+  },
+  {
+    "_pageName": "Death's Head",
+    "alias": "Flesh Death's Head",
+    "dlc": "30",
+    "id": "286",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Death's Head",
+    "alias": "Dusty Death's Head",
+    "dlc": "24",
+    "id": "887",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Death's Head",
+    "alias": "Ultra Death Head",
+    "dlc": "24",
+    "id": "951",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "42"
+  },
+  {
+    "_pageName": "Delirium",
+    "alias": "Delirium",
+    "dlc": "28",
+    "id": "412",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Dingle",
+    "alias": "Dingle",
+    "dlc": "31",
+    "id": "261",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Dip",
+    "alias": "Big Corn",
+    "dlc": "24",
+    "id": "217",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Dip",
+    "alias": "Brownie Corn",
+    "dlc": "30",
+    "id": "217",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Dip",
+    "alias": "Corn",
+    "dlc": "30",
+    "id": "217",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Dip",
+    "alias": "Dip",
+    "dlc": "31",
+    "id": "217",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Dip",
+    "alias": "Drip",
+    "dlc": "24",
+    "id": "870",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Dogma",
+    "alias": "Dogma",
+    "dlc": "24",
+    "id": "950",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Donation Machine",
+    "alias": "Donation Machine",
+    "dlc": "31",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "8"
+  },
+  {
+    "_pageName": "Dople",
+    "alias": "Dople",
+    "dlc": "31",
+    "id": "53",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Dople",
+    "alias": "Evil Twin",
+    "dlc": "31",
+    "id": "53",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Dukie",
+    "alias": "Dukie",
+    "dlc": "30",
+    "id": "288",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Dummy",
+    "alias": "Dummy",
+    "dlc": "24",
+    "id": "964",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Dump",
+    "alias": "Dump",
+    "dlc": "24",
+    "id": "876",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Dump",
+    "alias": "Dump Head",
+    "dlc": "24",
+    "id": "876",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Dust",
+    "alias": "Dust",
+    "dlc": "24",
+    "id": "882",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Embryo",
+    "alias": "Embryo",
+    "dlc": "31",
+    "id": "77",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Envy",
+    "alias": "Envy",
+    "dlc": "31",
+    "id": "51",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Exorcist",
+    "alias": "Exorcist",
+    "dlc": "24",
+    "id": "832",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Exorcist",
+    "alias": "Fanatic",
+    "dlc": "24",
+    "id": "832",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Eye",
+    "alias": "Bloodshot Eye",
+    "dlc": "31",
+    "id": "60",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Eye",
+    "alias": "Eye",
+    "dlc": "31",
+    "id": "60",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Eye",
+    "alias": "Holy Eye",
+    "dlc": "24",
+    "id": "60",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Faceless",
+    "alias": "Faceless",
+    "dlc": "24",
+    "id": "827",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Faceless",
+    "alias": "Tainted Faceless",
+    "dlc": "24",
+    "id": "827",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Famine",
+    "alias": "Famine",
+    "dlc": "31",
+    "id": "63",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "The Harbingers",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Fatty",
+    "dlc": "31",
+    "id": "208",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Flaming Fatty",
+    "dlc": "30",
+    "id": "208",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Pale Fatty",
+    "dlc": "31",
+    "id": "208",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Fat Sack",
+    "dlc": "31",
+    "id": "209",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Blubber",
+    "dlc": "31",
+    "id": "210",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Half Sack",
+    "dlc": "31",
+    "id": "211",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Blue Conjoined Fatty",
+    "dlc": "30",
+    "id": "257",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Conjoined Fatty",
+    "dlc": "30",
+    "id": "257",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Cross Stoney",
+    "dlc": "28",
+    "id": "302",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "The gate is open!",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Stoney",
+    "dlc": "28",
+    "id": "302",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "The gate is open!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Bubbles",
+    "dlc": "24",
+    "id": "806",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Quakey",
+    "dlc": "24",
+    "id": "823",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Big Bony",
+    "dlc": "24",
+    "id": "830",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Gutted Fatty",
+    "dlc": "24",
+    "id": "831",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Gutted Fatty Eye",
+    "dlc": "24",
+    "id": "831",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Peeping Fatty",
+    "dlc": "24",
+    "id": "835",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Peeping Fatty Eye",
+    "dlc": "24",
+    "id": "835",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Bloaty",
+    "dlc": "24",
+    "id": "879",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Fetal Demon",
+    "dlc": "24",
+    "id": "886",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Vis Fatty",
+    "dlc": "24",
+    "id": "886",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fatty",
+    "alias": "Shady",
+    "dlc": "24",
+    "id": "888",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fire Places",
+    "alias": "Blue Fire Place",
+    "dlc": "31",
+    "id": "33",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Fire Places",
+    "alias": "Fire Place",
+    "dlc": "31",
+    "id": "33",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fire Places",
+    "alias": "Purple Fire Place",
+    "dlc": "31",
+    "id": "33",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Fire Places",
+    "alias": "Red Fire Place",
+    "dlc": "31",
+    "id": "33",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Fire Places",
+    "alias": "White Fire Place",
+    "dlc": "24",
+    "id": "33",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "4"
+  },
+  {
+    "_pageName": "Fissure",
+    "alias": "Fissure",
+    "dlc": "24",
+    "id": "815",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fistula",
+    "alias": "Fistula",
+    "dlc": "31",
+    "id": "71",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fistuloid",
+    "alias": "Fistuloid",
+    "dlc": "28",
+    "id": "308",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Flesh Maiden",
+    "alias": "Flesh Maiden",
+    "dlc": "24",
+    "id": "880",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Fly",
+    "dlc": "31",
+    "id": "13",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Attack Fly",
+    "dlc": "31",
+    "id": "18",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Ring Fly",
+    "dlc": "31",
+    "id": "222",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Dart Fly",
+    "dlc": "30",
+    "id": "256",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Swarm",
+    "dlc": "30",
+    "id": "281",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Hush Fly",
+    "dlc": "30",
+    "id": "296",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Moter",
+    "dlc": "31",
+    "id": "80",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Willo",
+    "dlc": "24",
+    "id": "808",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Army Fly",
+    "dlc": "24",
+    "id": "868",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Ultra Famine Fly",
+    "dlc": "24",
+    "id": "951",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "11"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Ultra Pestilence Fly",
+    "dlc": "24",
+    "id": "951",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "21"
+  },
+  {
+    "_pageName": "Fly",
+    "alias": "Eternal Fly",
+    "dlc": "31",
+    "id": "96",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly Bomb",
+    "alias": "Eternal Fly Bomb",
+    "dlc": "24",
+    "id": "819",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Fly Bomb",
+    "alias": "Fly Bomb",
+    "dlc": "24",
+    "id": "819",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fly Trap",
+    "alias": "Fly Trap",
+    "dlc": "24",
+    "id": "873",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Fred",
+    "alias": "Fred",
+    "dlc": "31",
+    "id": "59",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Flaming Gaper",
+    "dlc": "30",
+    "id": "10",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Frowning Gaper",
+    "dlc": "31",
+    "id": "10",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Gaper",
+    "dlc": "31",
+    "id": "10",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Rotten Gaper",
+    "dlc": "24",
+    "id": "10",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Nulls",
+    "dlc": "31",
+    "id": "252",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Cyclopia",
+    "dlc": "30",
+    "id": "284",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Blue Gaper",
+    "dlc": "30",
+    "id": "297",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Greed Gaper",
+    "dlc": "30",
+    "id": "299",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Wraith",
+    "dlc": "24",
+    "id": "807",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Deep Gaper",
+    "dlc": "24",
+    "id": "811",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Blurb",
+    "dlc": "24",
+    "id": "813",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Level 2 Gaper",
+    "dlc": "24",
+    "id": "850",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Twitchy",
+    "dlc": "24",
+    "id": "851",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Crackle",
+    "dlc": "24",
+    "id": "87",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Gurgle",
+    "dlc": "31",
+    "id": "87",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gaper",
+    "alias": "Dead Isaac",
+    "dlc": "24",
+    "id": "912",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "20"
+  },
+  {
+    "_pageName": "Gasbag",
+    "alias": "Gasbag",
+    "dlc": "24",
+    "id": "856",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gemini",
+    "alias": "Gemini",
+    "dlc": "31",
+    "id": "79",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gish",
+    "alias": "Gish",
+    "dlc": "31",
+    "id": "43",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something Sticky",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Globin",
+    "alias": "Cursed Globin",
+    "dlc": "24",
+    "id": "24",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Globin",
+    "alias": "Dank Globin",
+    "dlc": "30",
+    "id": "24",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Globin",
+    "alias": "Gazing Globin",
+    "dlc": "31",
+    "id": "24",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Globin",
+    "alias": "Globin",
+    "dlc": "31",
+    "id": "24",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Globin",
+    "alias": "Black Globin",
+    "dlc": "30",
+    "id": "278",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Globin",
+    "alias": "Clickety Clack",
+    "dlc": "24",
+    "id": "889",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gluttony",
+    "alias": "Gluttony",
+    "dlc": "31",
+    "id": "49",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Goat",
+    "alias": "Black Goat",
+    "dlc": "24",
+    "id": "891",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Goat",
+    "alias": "Goat",
+    "dlc": "24",
+    "id": "891",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Great Gideon",
+    "alias": "Great Gideon",
+    "dlc": "24",
+    "id": "907",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Greed",
+    "alias": "Greed",
+    "dlc": "31",
+    "id": "50",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Greed Donation Machine",
+    "alias": "Greed Donation Machine",
+    "dlc": "30",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "11"
+  },
+  {
+    "_pageName": "Grub",
+    "alias": "Grub",
+    "dlc": "31",
+    "id": "239",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gurdy",
+    "alias": "Gurdy",
+    "dlc": "31",
+    "id": "36",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gurdy Jr.",
+    "alias": "Gurdy Jr.",
+    "dlc": "31",
+    "id": "99",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gurgling (Enemy)",
+    "alias": "Gurgling",
+    "dlc": "31",
+    "id": "237",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gurglings",
+    "alias": "Gurglings",
+    "dlc": "31",
+    "id": "237",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Guts",
+    "alias": "Guts",
+    "dlc": "31",
+    "id": "40",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Guts",
+    "alias": "Scarred Guts",
+    "dlc": "30",
+    "id": "40",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Guts",
+    "alias": "Slog",
+    "dlc": "24",
+    "id": "40",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Guts",
+    "alias": "Cyst",
+    "dlc": "24",
+    "id": "862",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Gyro",
+    "alias": "Grilled Gyro",
+    "dlc": "24",
+    "id": "824",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Gyro",
+    "alias": "Gyro",
+    "dlc": "24",
+    "id": "824",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Hanger",
+    "alias": "Hanger",
+    "dlc": "31",
+    "id": "90",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Headless Horseman",
+    "alias": "Headless Horseman",
+    "dlc": "31",
+    "id": "82",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "The Harbingers",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Black Heart",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "6",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Blended Heart",
+    "dlc": "28",
+    "id": "5",
+    "subtype": "10",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Bone Heart",
+    "dlc": "28",
+    "id": "5",
+    "subtype": "11",
+    "type": "monster",
+    "unlocked by": "Bone Heart",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Double Heart",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "5",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Eternal Heart",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "4",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Gold Heart",
+    "dlc": "30",
+    "id": "5",
+    "subtype": "7",
+    "type": "monster",
+    "unlocked by": "Gold Heart",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Half Red Heart",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "2",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Half Soul Heart",
+    "dlc": "28",
+    "id": "5",
+    "subtype": "8",
+    "type": "monster",
+    "unlocked by": "Everything is Terrible!!!",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Red Heart",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "1",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Rotten Heart",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "12",
+    "type": "monster",
+    "unlocked by": "Rotten Heart",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Scared Heart",
+    "dlc": "28",
+    "id": "5",
+    "subtype": "9",
+    "type": "monster",
+    "unlocked by": "Mr. Resetter!",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Hearts",
+    "alias": "Soul Heart",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "3",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Henry",
+    "alias": "Henry",
+    "dlc": "24",
+    "id": "837",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Homunculus",
+    "alias": "Homunculus",
+    "dlc": "31",
+    "id": "228",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Homunculus",
+    "alias": "Begotten",
+    "dlc": "31",
+    "id": "251",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Hopper",
+    "alias": "Eggy",
+    "dlc": "24",
+    "id": "29",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Hopper",
+    "alias": "Hopper",
+    "dlc": "31",
+    "id": "29",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Hopper",
+    "alias": "Tainted Hopper",
+    "dlc": "24",
+    "id": "29",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Hopper",
+    "alias": "Leaper",
+    "dlc": "31",
+    "id": "34",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Hopper",
+    "alias": "Sticky Leaper",
+    "dlc": "24",
+    "id": "34",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Hopper",
+    "alias": "Flaming Hopper",
+    "dlc": "31",
+    "id": "54",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Horf",
+    "alias": "Horf",
+    "dlc": "31",
+    "id": "12",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Horf",
+    "alias": "Psychic Horf",
+    "dlc": "31",
+    "id": "248",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Horf",
+    "alias": "Sub Horf",
+    "dlc": "24",
+    "id": "812",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Horf",
+    "alias": "Tainted Sub Horf",
+    "dlc": "24",
+    "id": "812",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Horf",
+    "alias": "Necro",
+    "dlc": "24",
+    "id": "828",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Horf",
+    "alias": "Level 2 Horf",
+    "dlc": "24",
+    "id": "850",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Hornfel",
+    "alias": "Hornfel",
+    "dlc": "24",
+    "id": "906",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Host",
+    "alias": "Mobile Host",
+    "dlc": "31",
+    "id": "204",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Host",
+    "alias": "Flesh Mobile Host",
+    "dlc": "31",
+    "id": "247",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Host",
+    "alias": "Hard Host",
+    "dlc": "24",
+    "id": "27",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Host",
+    "alias": "Host",
+    "dlc": "31",
+    "id": "27",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Host",
+    "alias": "Red Host",
+    "dlc": "31",
+    "id": "27",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Host",
+    "alias": "Mushroom",
+    "dlc": "28",
+    "id": "300",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "The gate is open!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Host",
+    "alias": "Floast",
+    "dlc": "24",
+    "id": "859",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Hush",
+    "alias": "Hush",
+    "dlc": "30",
+    "id": "407",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Blue Womb",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Isaac (Boss)",
+    "alias": "Isaac",
+    "dlc": "31",
+    "id": "102",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "It Lives!",
+    "alias": "It Lives!",
+    "dlc": "31",
+    "id": "78",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "It Lives!",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Keeper (Enemy)",
+    "alias": "Keeper",
+    "dlc": "31",
+    "id": "86",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Keys",
+    "alias": "Charged Key",
+    "dlc": "28",
+    "id": "5",
+    "subtype": "4",
+    "type": "",
+    "unlocked by": "Pokey Mans",
+    "variant": "30"
+  },
+  {
+    "_pageName": "Keys",
+    "alias": "Golden Key",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "2",
+    "type": "",
+    "unlocked by": "",
+    "variant": "30"
+  },
+  {
+    "_pageName": "Keys",
+    "alias": "Key",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "1",
+    "type": "",
+    "unlocked by": "",
+    "variant": "30"
+  },
+  {
+    "_pageName": "Keys",
+    "alias": "Key Ring",
+    "dlc": "31",
+    "id": "5",
+    "subtype": "3",
+    "type": "",
+    "unlocked by": "",
+    "variant": "30"
+  },
+  {
+    "_pageName": "Knight",
+    "alias": "Floating Knight",
+    "dlc": "31",
+    "id": "254",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Knight",
+    "alias": "Bone Knight",
+    "dlc": "30",
+    "id": "283",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Knight",
+    "alias": "Black Knight",
+    "dlc": "24",
+    "id": "41",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "4"
+  },
+  {
+    "_pageName": "Knight",
+    "alias": "Brainless Knight",
+    "dlc": "24",
+    "id": "41",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Knight",
+    "alias": "Knight",
+    "dlc": "31",
+    "id": "41",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Knight",
+    "alias": "Loose Knight",
+    "dlc": "24",
+    "id": "41",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Knight",
+    "alias": "Selfless Knight",
+    "dlc": "31",
+    "id": "41",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Krampus",
+    "alias": "Krampus",
+    "dlc": "31",
+    "id": "81",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "Krampus",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Larry Jr.",
+    "alias": "Larry Jr.",
+    "dlc": "31",
+    "id": "19",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Leech (Enemy)",
+    "alias": "Holy Leech",
+    "dlc": "31",
+    "id": "55",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Leech (Enemy)",
+    "alias": "Kamikaze Leech",
+    "dlc": "31",
+    "id": "55",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Leech (Enemy)",
+    "alias": "Leech",
+    "dlc": "31",
+    "id": "55",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Leech (Enemy)",
+    "alias": "Small Leech",
+    "dlc": "24",
+    "id": "810",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Leech (Enemy)",
+    "alias": "Adult Leech",
+    "dlc": "24",
+    "id": "854",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Level 2 Fly",
+    "alias": "Level 2 Fly",
+    "dlc": "31",
+    "id": "214",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Level 2 Fly",
+    "alias": "Full Fly",
+    "dlc": "31",
+    "id": "249",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Level 2 Fly",
+    "alias": "Level 2 Willo",
+    "dlc": "24",
+    "id": "838",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Level 2 Spider",
+    "alias": "Level 2 Spider",
+    "dlc": "31",
+    "id": "215",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Level 2 Spider",
+    "alias": "Ticking Spider",
+    "dlc": "31",
+    "id": "250",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Level 2 Spider",
+    "alias": "Migraine",
+    "dlc": "24",
+    "id": "869",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Lil Blub",
+    "alias": "Lil Blub",
+    "dlc": "24",
+    "id": "901",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Lil' Haunt",
+    "alias": "Lil' Haunt",
+    "dlc": "31",
+    "id": "260",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Little Horn",
+    "alias": "Little Horn",
+    "dlc": "30",
+    "id": "404",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Loki",
+    "alias": "Loki",
+    "dlc": "31",
+    "id": "69",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Lokii",
+    "alias": "Lokii",
+    "dlc": "31",
+    "id": "69",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Lump",
+    "alias": "Tar Boy",
+    "dlc": "28",
+    "id": "307",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Lump",
+    "alias": "Lump",
+    "dlc": "31",
+    "id": "56",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Lust",
+    "alias": "Lust",
+    "dlc": "31",
+    "id": "47",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Machines",
+    "alias": "Blood Donation Machine",
+    "dlc": "31",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Machines",
+    "alias": "Confessional",
+    "dlc": "24",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "Confessional",
+    "variant": "17"
+  },
+  {
+    "_pageName": "Machines",
+    "alias": "Crane Game",
+    "dlc": "24",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "Crane Game",
+    "variant": "16"
+  },
+  {
+    "_pageName": "Machines",
+    "alias": "Fortune Telling Machine",
+    "dlc": "31",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Machines",
+    "alias": "Mom's Dressing Table",
+    "dlc": "28",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "12"
+  },
+  {
+    "_pageName": "Machines",
+    "alias": "Revive Machine",
+    "dlc": "16",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "19"
+  },
+  {
+    "_pageName": "Machines",
+    "alias": "Shop Restock Machine",
+    "dlc": "30",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Machines",
+    "alias": "Slot Machine",
+    "dlc": "31",
+    "id": "6",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Maggot",
+    "alias": "Maggot",
+    "dlc": "31",
+    "id": "21",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Maggot",
+    "alias": "Small Maggot",
+    "dlc": "24",
+    "id": "853",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mama Gurdy",
+    "alias": "Mama Gurdy",
+    "dlc": "31",
+    "id": "266",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mask + Heart",
+    "alias": "Mask + Heart",
+    "dlc": "31",
+    "id": "93",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mask + Heart",
+    "alias": "Mask II + 1/2 Heart",
+    "dlc": "24",
+    "id": "93",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Mask of Infamy",
+    "alias": "Mask of Infamy",
+    "dlc": "31",
+    "id": "97",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Maw",
+    "alias": "Maw",
+    "dlc": "31",
+    "id": "26",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Maw",
+    "alias": "Psychic Maw",
+    "dlc": "31",
+    "id": "26",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Maw",
+    "alias": "Red Maw",
+    "dlc": "31",
+    "id": "26",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Meatball",
+    "alias": "Meatball",
+    "dlc": "30",
+    "id": "290",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mega Fatty",
+    "alias": "Mega Fatty",
+    "dlc": "31",
+    "id": "264",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mega Maw",
+    "alias": "Mega Maw",
+    "dlc": "31",
+    "id": "262",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mega Satan",
+    "alias": "Mega Satan",
+    "dlc": "31",
+    "id": "274",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Angels",
+    "variant": "0"
+  },
+  {
+    "_pageName": "MemBrain",
+    "alias": "Dinga",
+    "dlc": "31",
+    "id": "223",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "MemBrain",
+    "alias": "Mega Clotty",
+    "dlc": "30",
+    "id": "282",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "MemBrain",
+    "alias": "Dead Meat",
+    "dlc": "24",
+    "id": "57",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "MemBrain",
+    "alias": "Mama Guts",
+    "dlc": "31",
+    "id": "57",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "MemBrain",
+    "alias": "MemBrain",
+    "dlc": "31",
+    "id": "57",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Min-Min",
+    "alias": "Min-Min",
+    "dlc": "24",
+    "id": "913",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Ministro",
+    "alias": "Ministro",
+    "dlc": "28",
+    "id": "305",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "The gate is open!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mole",
+    "alias": "Mole",
+    "dlc": "24",
+    "id": "829",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mole",
+    "alias": "Tainted Mole",
+    "dlc": "24",
+    "id": "829",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Mom",
+    "alias": "Mom",
+    "dlc": "31",
+    "id": "45",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mom's Hand",
+    "alias": "Mom's Hand",
+    "dlc": "31",
+    "id": "213",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mom's Hand",
+    "alias": "Mom's Dead Hand",
+    "dlc": "30",
+    "id": "287",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mom's Heart",
+    "alias": "Mom's Heart",
+    "dlc": "31",
+    "id": "78",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "The Womb",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Monstro",
+    "alias": "Monstro",
+    "dlc": "31",
+    "id": "20",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Monstro II",
+    "alias": "Monstro II",
+    "dlc": "31",
+    "id": "43",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Morningstar",
+    "alias": "Morningstar",
+    "dlc": "24",
+    "id": "863",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mother",
+    "alias": "Mother",
+    "dlc": "24",
+    "id": "912",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mother's Shadow",
+    "alias": "Mother's Shadow",
+    "dlc": "24",
+    "id": "867",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Mr. Fred",
+    "alias": "Mr. Fred",
+    "dlc": "31",
+    "id": "270",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mr. Maw",
+    "alias": "Swinger",
+    "dlc": "31",
+    "id": "216",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mr. Maw",
+    "alias": "Mr. Mine",
+    "dlc": "28",
+    "id": "311",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mr. Maw",
+    "alias": "Mr. Maw",
+    "dlc": "31",
+    "id": "35",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mr. Maw",
+    "alias": "Mr. Red Maw",
+    "dlc": "28",
+    "id": "35",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Mulliboom",
+    "dlc": "31",
+    "id": "16",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Mulligan",
+    "dlc": "31",
+    "id": "16",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Mulligoon",
+    "dlc": "31",
+    "id": "16",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Nest",
+    "dlc": "31",
+    "id": "205",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Drowned Hive",
+    "dlc": "30",
+    "id": "22",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Hive",
+    "dlc": "31",
+    "id": "22",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Holy Mulligan",
+    "dlc": "24",
+    "id": "22",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Tainted Mulligan",
+    "dlc": "24",
+    "id": "22",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Leper",
+    "dlc": "28",
+    "id": "310",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Leper Flesh",
+    "dlc": "28",
+    "id": "310",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Mullighoul",
+    "dlc": "24",
+    "id": "817",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Prey",
+    "dlc": "24",
+    "id": "817",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Bouncer",
+    "dlc": "24",
+    "id": "822",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Mulligan",
+    "alias": "Gas Dwarf",
+    "dlc": "24",
+    "id": "874",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "My Shadow",
+    "alias": "My Shadow",
+    "dlc": "30",
+    "id": "23",
+    "subtype": "1",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Needle",
+    "alias": "Needle",
+    "dlc": "24",
+    "id": "881",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Needle",
+    "alias": "Pasty",
+    "dlc": "24",
+    "id": "881",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Nerve Ending",
+    "alias": "Nerve Ending",
+    "dlc": "31",
+    "id": "231",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Nerve Ending",
+    "alias": "Nerve Ending 2",
+    "dlc": "28",
+    "id": "231",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "The gate is open!",
+    "variant": "1"
+  },
+  {
+    "_pageName": "One Tooth",
+    "alias": "One Tooth",
+    "dlc": "31",
+    "id": "234",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "One Tooth",
+    "alias": "Fat Bat",
+    "dlc": "30",
+    "id": "258",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Oob",
+    "alias": "Oob",
+    "dlc": "31",
+    "id": "224",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Oob",
+    "alias": "Black Maw",
+    "dlc": "31",
+    "id": "225",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Pacer",
+    "alias": "Gusher",
+    "dlc": "31",
+    "id": "11",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Pacer",
+    "alias": "Pacer",
+    "dlc": "31",
+    "id": "11",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Pacer",
+    "alias": "Splasher",
+    "dlc": "31",
+    "id": "238",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Pacer",
+    "alias": "Black Globin's Body",
+    "dlc": "30",
+    "id": "280",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Pacer",
+    "alias": "Level 2 Gusher",
+    "dlc": "24",
+    "id": "850",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Para-Bite",
+    "alias": "Para-Bite",
+    "dlc": "31",
+    "id": "58",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Para-Bite",
+    "alias": "Scarred Para-Bite",
+    "dlc": "30",
+    "id": "58",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Peep",
+    "alias": "Peep",
+    "dlc": "31",
+    "id": "68",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Peep Eye",
+    "alias": "Bloat Eye",
+    "dlc": "31",
+    "id": "68",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "11"
+  },
+  {
+    "_pageName": "Peep Eye",
+    "alias": "Peep Eye",
+    "dlc": "31",
+    "id": "68",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Peep Eye",
+    "alias": "Mockulus",
+    "dlc": "24",
+    "id": "864",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Pestilence",
+    "alias": "Pestilence",
+    "dlc": "31",
+    "id": "64",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "The Harbingers",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Pin",
+    "alias": "Pin",
+    "dlc": "31",
+    "id": "62",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Pitfall",
+    "alias": "Pitfall",
+    "dlc": "30",
+    "id": "291",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Pitfall",
+    "alias": "Suction Pitfall",
+    "dlc": "30",
+    "id": "291",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Pitfall",
+    "alias": "Teleport Pitfall",
+    "dlc": "30",
+    "id": "291",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Poky",
+    "alias": "Wall Hugger",
+    "dlc": "31",
+    "id": "218",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Poky",
+    "alias": "Poky",
+    "dlc": "31",
+    "id": "44",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Poky",
+    "alias": "Slide",
+    "dlc": "31",
+    "id": "44",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Poky",
+    "alias": "Grudge",
+    "dlc": "24",
+    "id": "877",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Polty",
+    "alias": "Kineti",
+    "dlc": "24",
+    "id": "816",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Polty",
+    "alias": "Polty",
+    "dlc": "24",
+    "id": "816",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Polycephalus",
+    "alias": "Polycephalus",
+    "dlc": "31",
+    "id": "269",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Poops",
+    "alias": "Black Poop",
+    "dlc": "30",
+    "id": "245",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Poops",
+    "alias": "Charming Poop",
+    "dlc": "24",
+    "id": "245",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Poops",
+    "alias": "Corny Poop",
+    "dlc": "31",
+    "id": "245",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Poops",
+    "alias": "Giant Poop",
+    "dlc": "24",
+    "id": "245",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Poops",
+    "alias": "Golden Poop",
+    "dlc": "31",
+    "id": "245",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Poops",
+    "alias": "Poop",
+    "dlc": "31",
+    "id": "245",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Poops",
+    "alias": "Rainbow Poop",
+    "dlc": "31",
+    "id": "245",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Poops",
+    "alias": "Red Poop",
+    "dlc": "31",
+    "id": "245",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Poops",
+    "alias": "White Poop",
+    "dlc": "28",
+    "id": "245",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Poot Mine",
+    "alias": "Poot Mine",
+    "dlc": "24",
+    "id": "875",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Pooter",
+    "alias": "Pooter",
+    "dlc": "31",
+    "id": "14",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Pooter",
+    "alias": "Super Pooter",
+    "dlc": "31",
+    "id": "14",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Pooter",
+    "alias": "Tainted Pooter",
+    "dlc": "24",
+    "id": "14",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Portal",
+    "alias": "Lil Portal",
+    "dlc": "24",
+    "id": "306",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Portal",
+    "alias": "Portal",
+    "dlc": "28",
+    "id": "306",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "The gate is open!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Pride",
+    "alias": "Pride",
+    "dlc": "31",
+    "id": "52",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Rag Man",
+    "alias": "Rag Man",
+    "dlc": "30",
+    "id": "405",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Rag Mega",
+    "alias": "Rag Mega",
+    "dlc": "28",
+    "id": "409",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes+!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Reap Creep",
+    "alias": "Reap Creep",
+    "dlc": "24",
+    "id": "900",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes+!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Rock Spider",
+    "alias": "Coal Spider",
+    "dlc": "24",
+    "id": "818",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Rock Spider",
+    "alias": "Rock Spider",
+    "dlc": "24",
+    "id": "818",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Rock Spider",
+    "alias": "Tinted Rock Spider",
+    "dlc": "24",
+    "id": "818",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Rotgut",
+    "alias": "Rotgut",
+    "dlc": "24",
+    "id": "911",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Round Worm",
+    "alias": "Round Worm",
+    "dlc": "31",
+    "id": "244",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Round Worm",
+    "alias": "Tainted Round Worm",
+    "dlc": "24",
+    "id": "244",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Round Worm",
+    "alias": "Tainted Tube Worm",
+    "dlc": "24",
+    "id": "244",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Round Worm",
+    "alias": "Tube Worm",
+    "dlc": "28",
+    "id": "244",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Round Worm",
+    "alias": "Night Crawler",
+    "dlc": "31",
+    "id": "255",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Round Worm",
+    "alias": "Roundy",
+    "dlc": "30",
+    "id": "276",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Round Worm",
+    "alias": "Ulcer",
+    "dlc": "30",
+    "id": "289",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Round Worm",
+    "alias": "Fire Worm",
+    "dlc": "24",
+    "id": "825",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Sacks",
+    "alias": "Black Sack",
+    "dlc": "24",
+    "id": "5",
+    "subtype": "2",
+    "type": "",
+    "unlocked by": "Black Sack",
+    "variant": "69"
+  },
+  {
+    "_pageName": "Sacks",
+    "alias": "Grab Bag",
+    "dlc": "30",
+    "id": "5",
+    "subtype": "1",
+    "type": "",
+    "unlocked by": "",
+    "variant": "69"
+  },
+  {
+    "_pageName": "Satan",
+    "alias": "Satan",
+    "dlc": "31",
+    "id": "84",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Scolex",
+    "alias": "Scolex",
+    "dlc": "31",
+    "id": "62",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Shopkeeper",
+    "alias": "Shopkeeper",
+    "dlc": "31",
+    "id": "17",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Shopkeeper",
+    "alias": "Special Shopkeeper",
+    "dlc": "30",
+    "id": "17",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "Special Shopkeepers",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Singe",
+    "alias": "Singe",
+    "dlc": "24",
+    "id": "915",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Siren Minion",
+    "alias": "Siren Minion",
+    "dlc": "24",
+    "id": "3",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "220"
+  },
+  {
+    "_pageName": "Siren Minion",
+    "alias": "Siren Helper",
+    "dlc": "24",
+    "id": "966",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Sisters Vis",
+    "alias": "Sisters Vis",
+    "dlc": "28",
+    "id": "410",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes+!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Skinny",
+    "alias": "Crispy",
+    "dlc": "28",
+    "id": "226",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Skinny",
+    "alias": "Rotty",
+    "dlc": "31",
+    "id": "226",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Skinny",
+    "alias": "Skinny",
+    "dlc": "31",
+    "id": "226",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Sloth",
+    "alias": "Sloth",
+    "dlc": "31",
+    "id": "46",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Spider",
+    "alias": "Strider",
+    "dlc": "24",
+    "id": "814",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Spider",
+    "alias": "Spider",
+    "dlc": "31",
+    "id": "85",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Spider",
+    "alias": "Swarm Spider",
+    "dlc": "24",
+    "id": "884",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Spider",
+    "alias": "Big Spider",
+    "dlc": "31",
+    "id": "94",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Spitty",
+    "alias": "Conjoined Spitty",
+    "dlc": "31",
+    "id": "243",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Spitty",
+    "alias": "Spitty",
+    "dlc": "31",
+    "id": "31",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Spitty",
+    "alias": "Tainted Spitty",
+    "dlc": "24",
+    "id": "31",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Squirt",
+    "alias": "Dank Squirt",
+    "dlc": "30",
+    "id": "220",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Squirt",
+    "alias": "Squirt",
+    "dlc": "31",
+    "id": "220",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Squirt",
+    "alias": "Hardy",
+    "dlc": "24",
+    "id": "826",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Squirt",
+    "alias": "Splurt",
+    "dlc": "24",
+    "id": "871",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Steven",
+    "alias": "Steven",
+    "dlc": "31",
+    "id": "79",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something From The Future",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Stone Grimace",
+    "alias": "Stone Eye",
+    "dlc": "31",
+    "id": "201",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Stone Grimace",
+    "alias": "Constant Stone Shooter",
+    "dlc": "31",
+    "id": "202",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Stone Grimace",
+    "alias": "Cross Stone Shooter",
+    "dlc": "28",
+    "id": "202",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Stone Grimace",
+    "alias": "Brimstone Head",
+    "dlc": "31",
+    "id": "203",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Stone Grimace",
+    "alias": "Gaping Maw",
+    "dlc": "31",
+    "id": "235",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Stone Grimace",
+    "alias": "Broken Gaping Maw",
+    "dlc": "31",
+    "id": "236",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Stone Grimace",
+    "alias": "Stone Grimace",
+    "dlc": "31",
+    "id": "42",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Stone Grimace",
+    "alias": "Triple Grimace",
+    "dlc": "24",
+    "id": "42",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Stone Grimace",
+    "alias": "Vomit Grimace",
+    "dlc": "31",
+    "id": "42",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Stone Grimace",
+    "alias": "Quake Grimace",
+    "dlc": "24",
+    "id": "804",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Stone Grimace",
+    "alias": "Bomb Grimace",
+    "dlc": "24",
+    "id": "809",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Sucker",
+    "alias": "Bloodfly",
+    "dlc": "24",
+    "id": "61",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "6"
+  },
+  {
+    "_pageName": "Sucker",
+    "alias": "Bulb",
+    "dlc": "24",
+    "id": "61",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "Everything Is Terrible!!!",
+    "variant": "5"
+  },
+  {
+    "_pageName": "Sucker",
+    "alias": "Ink",
+    "dlc": "24",
+    "id": "61",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Sucker",
+    "alias": "Mama Fly",
+    "dlc": "24",
+    "id": "61",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "4"
+  },
+  {
+    "_pageName": "Sucker",
+    "alias": "Soul Sucker",
+    "dlc": "28",
+    "id": "61",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Sucker",
+    "alias": "Spit",
+    "dlc": "31",
+    "id": "61",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Sucker",
+    "alias": "Sucker",
+    "dlc": "31",
+    "id": "61",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Sucker",
+    "alias": "Tainted Sucker",
+    "dlc": "24",
+    "id": "61",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "7"
+  },
+  {
+    "_pageName": "Super Envy",
+    "alias": "Super Envy",
+    "dlc": "31",
+    "id": "51",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Super Gluttony",
+    "alias": "Super Gluttony",
+    "dlc": "31",
+    "id": "49",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Super Greed",
+    "alias": "Super Greed",
+    "dlc": "31",
+    "id": "50",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Super Lust",
+    "alias": "Super Lust",
+    "dlc": "31",
+    "id": "47",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Super Pride",
+    "alias": "Super Pride",
+    "dlc": "31",
+    "id": "52",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Super Sloth",
+    "alias": "Super Sloth",
+    "dlc": "31",
+    "id": "46",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Super Wrath",
+    "alias": "Super Wrath",
+    "dlc": "31",
+    "id": "48",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Swarmer",
+    "alias": "Swarmer",
+    "dlc": "31",
+    "id": "91",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "TNT",
+    "alias": "TNT",
+    "dlc": "31",
+    "id": "",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "TNT",
+    "alias": "Mine Crafter TNT",
+    "dlc": "30",
+    "id": "292",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "TNT",
+    "alias": "Movable TNT",
+    "dlc": "30",
+    "id": "292",
+    "subtype": "0",
+    "type": "",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Tainted Jacob",
+    "alias": "Dark Esau",
+    "dlc": "24",
+    "id": "866",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Teratoma",
+    "alias": "Teratoma",
+    "dlc": "31",
+    "id": "71",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "The Adversary",
+    "alias": "The Adversary",
+    "dlc": "31",
+    "id": "268",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Beast",
+    "alias": "The Beast",
+    "dlc": "24",
+    "id": "951",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Bloat",
+    "alias": "The Bloat",
+    "dlc": "31",
+    "id": "68",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "The Cage",
+    "alias": "The Cage",
+    "dlc": "31",
+    "id": "265",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Duke of Flies",
+    "alias": "The Duke of Flies",
+    "dlc": "31",
+    "id": "67",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Fallen",
+    "alias": "The Fallen",
+    "dlc": "31",
+    "id": "81",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Forsaken",
+    "alias": "The Forsaken",
+    "dlc": "30",
+    "id": "403",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Frail",
+    "alias": "The Frail",
+    "dlc": "30",
+    "id": "62",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes!",
+    "variant": "2"
+  },
+  {
+    "_pageName": "The Gate",
+    "alias": "The Gate",
+    "dlc": "31",
+    "id": "263",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Haunt",
+    "alias": "The Haunt",
+    "dlc": "31",
+    "id": "260",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Heretic",
+    "alias": "The Heretic",
+    "dlc": "24",
+    "id": "905",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Hollow",
+    "alias": "The Hollow",
+    "dlc": "31",
+    "id": "19",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "The Horny Boys",
+    "alias": "The Horny Boys",
+    "dlc": "24",
+    "id": "920",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Husk",
+    "alias": "The Husk",
+    "dlc": "31",
+    "id": "67",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "The Lamb",
+    "alias": "The Lamb",
+    "dlc": "31",
+    "id": "273",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Matriarch",
+    "alias": "The Matriarch",
+    "dlc": "28",
+    "id": "413",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes+!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Pile",
+    "alias": "The Pile",
+    "dlc": "24",
+    "id": "269",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes+!",
+    "variant": "1"
+  },
+  {
+    "_pageName": "The Rainmaker",
+    "alias": "The Rainmaker",
+    "dlc": "24",
+    "id": "902",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Scourge",
+    "alias": "The Scourge",
+    "dlc": "24",
+    "id": "909",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Shell",
+    "alias": "The Shell",
+    "dlc": "24",
+    "id": "19",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "The Siren",
+    "alias": "The Siren",
+    "dlc": "24",
+    "id": "904",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Stain",
+    "alias": "The Stain",
+    "dlc": "30",
+    "id": "401",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Visage",
+    "alias": "The Visage",
+    "dlc": "24",
+    "id": "903",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "The Wretched",
+    "alias": "The Wretched",
+    "dlc": "31",
+    "id": "100",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Triachnid",
+    "alias": "Triachnid",
+    "dlc": "31",
+    "id": "101",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something Icky",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Trite",
+    "alias": "Rag Man's Ragling",
+    "dlc": "30",
+    "id": "246",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Trite",
+    "alias": "Ragling",
+    "dlc": "31",
+    "id": "246",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Trite",
+    "alias": "Trite",
+    "dlc": "31",
+    "id": "29",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Trite",
+    "alias": "Blister",
+    "dlc": "28",
+    "id": "303",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "The gate is open!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Tuff Twins",
+    "alias": "Tuff Twins",
+    "dlc": "24",
+    "id": "19",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Tumor",
+    "alias": "Planetoid",
+    "dlc": "24",
+    "id": "229",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Tumor",
+    "alias": "Tumor",
+    "dlc": "31",
+    "id": "229",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Tumor",
+    "alias": "Camillo Jr.",
+    "dlc": "31",
+    "id": "230",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Tumor",
+    "alias": "Psy Tumor",
+    "dlc": "31",
+    "id": "253",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Tumor",
+    "alias": "Poofer",
+    "dlc": "24",
+    "id": "892",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Turdlet",
+    "alias": "Turdlet",
+    "dlc": "24",
+    "id": "918",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Turdlings",
+    "alias": "Turdlings",
+    "dlc": "30",
+    "id": "237",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "Something wicked this way comes!",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Ultra Death",
+    "alias": "Ultra Death",
+    "dlc": "24",
+    "id": "951",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "40"
+  },
+  {
+    "_pageName": "Ultra Famine",
+    "alias": "Ultra Famine",
+    "dlc": "24",
+    "id": "951",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "10"
+  },
+  {
+    "_pageName": "Ultra Greed",
+    "alias": "Ultra Greed",
+    "dlc": "30",
+    "id": "406",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Ultra Greed",
+    "alias": "Ultra Greedier",
+    "dlc": "28",
+    "id": "406",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Ultra Greed Coin",
+    "alias": "Ultra Greed Coin (Bomb)",
+    "dlc": "30",
+    "id": "293",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Ultra Greed Coin",
+    "alias": "Ultra Greed Coin (Heart)",
+    "dlc": "30",
+    "id": "293",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Ultra Greed Coin",
+    "alias": "Ultra Greed Coin (Key)",
+    "dlc": "30",
+    "id": "293",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Ultra Greed Coin",
+    "alias": "Ultra Greed Coin (Spinner)",
+    "dlc": "30",
+    "id": "293",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Ultra Pestilence",
+    "alias": "Ultra Pestilence",
+    "dlc": "24",
+    "id": "951",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "20"
+  },
+  {
+    "_pageName": "Ultra Pride",
+    "alias": "Ultra Pride",
+    "dlc": "31",
+    "id": "46",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Ultra War",
+    "alias": "Ultra War",
+    "dlc": "24",
+    "id": "951",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "30"
+  },
+  {
+    "_pageName": "Vis",
+    "alias": "Chubber",
+    "dlc": "31",
+    "id": "39",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Vis",
+    "alias": "Double Vis",
+    "dlc": "31",
+    "id": "39",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Vis",
+    "alias": "Scarred Double Vis",
+    "dlc": "30",
+    "id": "39",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Vis",
+    "alias": "Vis",
+    "dlc": "31",
+    "id": "39",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Vis",
+    "alias": "Vis Versa",
+    "dlc": "24",
+    "id": "836",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Vis",
+    "alias": "Evis",
+    "dlc": "24",
+    "id": "865",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Wall Creep",
+    "alias": "Soy Creep",
+    "dlc": "24",
+    "id": "240",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Wall Creep",
+    "alias": "Tainted Soy Creep",
+    "dlc": "24",
+    "id": "240",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Wall Creep",
+    "alias": "Wall Creep",
+    "dlc": "31",
+    "id": "240",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Wall Creep",
+    "alias": "Rage Creep",
+    "dlc": "31",
+    "id": "241",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Wall Creep",
+    "alias": "Blind Creep",
+    "dlc": "31",
+    "id": "242",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Wall Creep",
+    "alias": "The Thing",
+    "dlc": "28",
+    "id": "304",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "The gate is open!",
+    "variant": "0"
+  },
+  {
+    "_pageName": "War",
+    "alias": "War",
+    "dlc": "31",
+    "id": "65",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "The Harbingers",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Whipper",
+    "alias": "Flagellant",
+    "dlc": "24",
+    "id": "834",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "2"
+  },
+  {
+    "_pageName": "Whipper",
+    "alias": "Snapper",
+    "dlc": "24",
+    "id": "834",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "1"
+  },
+  {
+    "_pageName": "Whipper",
+    "alias": "Whipper",
+    "dlc": "24",
+    "id": "834",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Widow",
+    "alias": "Widow",
+    "dlc": "31",
+    "id": "100",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Wizoob",
+    "alias": "Wizoob",
+    "dlc": "31",
+    "id": "219",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Wizoob",
+    "alias": "Red Ghost",
+    "dlc": "30",
+    "id": "285",
+    "subtype": "0",
+    "type": "monster",
+    "unlocked by": "",
+    "variant": "0"
+  },
+  {
+    "_pageName": "Wormwood",
+    "alias": "Wormwood",
+    "dlc": "24",
+    "id": "62",
+    "subtype": "0",
+    "type": "boss",
+    "unlocked by": "",
+    "variant": "3"
+  },
+  {
+    "_pageName": "Wrath",
+    "alias": "Wrath",
+    "dlc": "31",
+    "id": "48",
+    "subtype": "0",
+    "type": "mini-boss",
+    "unlocked by": "",
+    "variant": "0"
+  }
+]

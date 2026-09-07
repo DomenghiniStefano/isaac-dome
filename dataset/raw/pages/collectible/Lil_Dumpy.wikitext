@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 615
+ | quote       = Puffy buddy
+ | description = Spawns a Dumpy [[familiar]] that pushes away nearby enemies and projectiles just before Isaac is about to be hit, then falls asleep. He can be awoken by walking to him.
+ | quality     = 3
+ | tags        = summonable {{dlc|r+|monstermanual}}
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Gives Isaac a Dumpy [[familiar]], which follows behind him. When Isaac is about to take damage (as with {{t|Panic Button}}), Lil Dumpy farts, [[knock-back|knocking back]] nearby enemies and shots while also propelling itself in a random direction. Enemies that collide with obstacles or walls take <code>10 + 2 * (floor - 1)</code> damage. Pushed shots that hit an enemy deal 6 damage normally and 7 damage if they would deal a full heart of damage to Isaac.
+** Lil Dumpy has a larger, hidden secondary radius that may randomly trigger its fart effect if an enemy projectile enters it.
+* After farting, Lil Dumpy goes on cooldown and "falls asleep" until Isaac walks up to it to wake it up. Lil Dumpy resets upon entering a new room.
+* Lil Dumpy deals contact damage, which depends on its speed. If it hits an enemy right after farting, it will deal 8.33 damage.
+
+== Notes ==
+* Does not prevent damage from environmental hazards, including {{e|Spiked Chest}}s.
+* Lil Dumpy's position behind Isaac can overlap with other [[Familiar]]s or other copies of itself.
+* Dormant Lil Dumpy can come into contact with and be pushed around by enemies, but doesn't deal contact damage.
+* Lil Dumpy can get stuck over rocks and pits, becoming unreachable for the rest of the room.
+
+== Synergies ==
+* {{i|BFFS!}}: The contact damage is boosted greatly. For instance, if the familiar hits an enemy right after farting, it will now deal 33.33 damage.
+* {{t|Gigante Bean}}: Applies to Lil Dumpy and causes the fart to become much bigger and also deal 10 damage.
+* {{t|The Twins}}: Can duplicate Lil Dumpy, practically adding an extra charge to Lil Dumpy's {{i|Holy Mantle}}-like protection.
+* {{i|Box of Friends}}: Will copy Lil Dumpy for extra protection, this process can be repeated many times to make Isaac near-invincible in [[Greed mode]], [[Greedier mode]], {{R|Boss Rush}} or with {{i|4.5 Volt}}.
+* {{i|Ventricle Razor}} / Other methods of teleportation: Lil Dumpy will quickly fly to Isaac instead of teleporting, dealing damage to everything in its path.
+
+== In-game Footage ==
+{{#ev:youtube|jylhh8x3-Qs||inline}}
+
+== Trivia ==
+* [[anti:Lil Dumpy|Lil Dumpy]] is from the ''Antibirth'' mod. In ''Antibirth'', Lil Dumpy instead wandered around the room randomly and would fart when blocking a projectile, which could [[poison]] or [[confuse]] nearby enemies as well as knock them back and send Lil Dumpy flying.
+** The design of this item is also based off of [[anti:Dumpling|Dumplings]], a common enemy present in ''Antibirth'' that does not appear in ''Repentance.'' Dumplings are a creature featured in multiple of Edmund McMillen's previous Flash games, and even having a game of their own.
+* Prior to [[V1.7.8]], Lil Dumpy would instead behave like its ''Antibirth'' version.
+
+{{nav|fr=P'tit Prout}}

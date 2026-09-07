@@ -1,0 +1,53 @@
+{{infobox boss
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 65
+ | variant     = 1
+ | environment = <u>Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br><u>Degraded Boss</u><br>{{floor|Cathedral}}<br>{{floor|Chest}}{{floor|Dark Room}}<br>{{room|challenge}}
+ | base hp     = 500
+ | pool        = {{i|White Pony}}<br>{{t|Locust of Conquest|r+}} (1% chance)
+ | unlocked by = A Forgotten Horseman
+}}
+
+'''Conquest''' is a [[Harbinger]] that can appear in all environments of [[Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}).
+
+== Behavior ==
+* Charges horizontally off-screen. Reappears alongside 7-8 copies of himself from the opposite end of the screen. These copies are randomly dispersed, covering a majority of the screen and will continuing charging. After all the copies have charged off-screen, the original Conquest will charge back into the room.
+** He performs this attack more often if Isaac is to his left or right.
+** All copies of Conquest share his health bar.
+* Fires 4 homing projectiles in the cardinal directions.
+* Ascends off-screen and summons 8-10 staggered {{i|Crack the Sky}} beams in random locations.
+** Returns from the side of the screen.
+Conquest deals a whole heart of contact damage, including every summoned copy during his charge.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Conquest ingame.png|{{dlc+|a+}} Conquest as one of {{e|Delirium}}'s forms.{{dlc-}}
+File:Conquest.png|Mini version of Conquest summoned with the {{I|7 Seals}}.
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Book of Revelations, 7 Seals }}
+
+== Trivia ==
+* Conquest was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* He is an alternative of {{e|Death}}.
+** Despite being Death's alternate version, his attacks are direct variations of {{e|War}}'s first phase.
+*** His ID and room ID also both show that he is a variation of War. 
+*** In the original ''The Binding of Isaac'', this similarity with War went comically further due to [https://bindingofisaac.fandom.com/wiki/Conquest#Bugs a bug where Conquest could in-fact replace War as the Chapter 3 Harbinger fight].  
+* Conquest is one of the actual [[wikipedia:Four Horsemen of the Apocalypse|Four Horsemen of the Apocalypse]], as opposed to {{e|Pestilence}}.
+* The stitching on Conquest's stomach is an autopsy stitch, an incision in the shape of a Y.
+* {{dlc+|a+}} Conquest can be found in {{s|The Void}}, even before being unlocked.{{dlc-}}
+* {{dlc|a+}} Delirium's Conquest form's horse resembles {{e|Famine}}'s horse rather than Conquest's.
+* Conquest is the only alternate boss in both the original ''The Binding of Isaac'' and ''Rebirth'' that is not a reference to one of [[Edmund McMillen|Edmund McMillen's]] previous games.
+
+== Bugs ==
+{{bug|dlc=nr|Killing Conquest quickly while his clones are rushing across the screen and leaving one alive will cause the boss music to continue playing until leaving the room.}}
+
+{{nav|boss|mom unlock|fr=Conquête|zh=征服骑士}}
+[[Category:Harbingers]]
+[[Category:Alternate bosses]]
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

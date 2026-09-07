@@ -1,0 +1,50 @@
+{{infobox trinket
+ | dlc         = a+
+ | name        = Ouroboros Worm
+ | id          = 96
+ | quote       = Foop foop!
+ | description = Tears travel in a large spiral pattern and gain [[spectral]], with a small chance to gain [[homing]]. {{dlc|r}} Also adds +0.4 [[Tears]].
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* Tears travel in a large spiral pattern.
+* Grants [[Tear Effects#Spectral|spectral tears]].
+* {{dlc|nr}} +4.0 [[range]], +2.0 [[tear falling speed]].
+* {{dlc|r}} +1.5 [[range]], +0.4 [[tears]].
+* A [[luck]]-based chance for a [[Tear Effects#Homing|homing]] shot, reaching 100% at 9 luck.
+** The homing shots are not different in appearance.
+** The homing does not override the spiral pattern, meaning tears stay unreliable.
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}} or {{e|Scolex}}.{{dlc-}}
+* {{dlc|r}} While in the [[Mirrored World]], the spiral pattern will also be mirrored.
+** This also applies to the {{t|Ring Worm}} trinket.
+
+== Synergies ==
+* {{i|Mom's Box|nr}}: Doubles the range increase.
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: Having either makes the spiral pattern larger and doubles the stat increase. Having both makes the pattern even larger and triples the stat increase.
+* {{I|Aquarius|r}}: Creep has a chance to be homing.
+* {{i|Dr. Fetus}}: Since the bombs don't follow the spiral pattern, only the extra range, spectral bombs, and chance for a homing bomb apply.
+* {{i|Tractor Beam}}: The tears follow a straight path, ignoring the spiral pattern; the tears also stall at a specific point, giving a greater chance to land tears.
+
+== Interactions ==
+* {{dlc|nr}} {{c|Azazel}} / {{i|Brimstone}} / {{i|Technology}} / {{i|Technology 2}}: The spiral effect is overidden. All other effects still apply.
+** {{dlc|r}} The laser is shot in a spiral pattern. Homing does take effect, but is hardly noticeable.
+* {{i|The Ludovico Technique}}: The tear spirals around in a difficult to control manner, with the added homing chance further complicating things.
+* {{i|Mom's Knife|nr}}: Overrides Ouroboros Worm.
+** {{dlc|r}} Works as intended. The homing, however, is questionable.
+* {{I|Proptosis}}: The curious pattern allows dealing full damage from a safer range.
+* {{C|Tainted Azazel}}: His Brimstone laser is shot in a spiral pattern. Homing does take effect, but is hardly noticeable.
+* {{i|Tech X|nr}}: Overrides Ouroboros Worm.
+** {{dlc|r}} Tech X now inherits the homing chance benefit, without being affected by the pattern.
+
+== In-game Footage ==
+{{#ev:youtube|hN7r80D9tX0}}
+
+== Trivia ==
+* This trinket is a reference to [[ouroboros:|Øuroboros]], which was a prototype of the game "The End is Nigh" by Edmund McMillen and Tyler Glaiel.
+* The Ouroboros is an ancient symbol, showing a serpent or dragon eating its tail.
+
+{{nav|worm|fr=Ver d'Ouroboros}}

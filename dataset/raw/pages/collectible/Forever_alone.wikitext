@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 128
+ | quote       = Attack fly
+ | description = Spawns an attack fly that [[Familiar#Orbital Familiars|orbits]] a long distance from Isaac, dealing 30 damage per second.
+ | quality     = 1
+ | tags        = summonable monstermanual offensive fly
+ | pool        = Super Envy
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a blue attack fly that [[Familiar#Orbital Familiars|orbits]] a long distance from Isaac and deals 2 damage per tick or 30 damage per second on contact.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* {{dlc|a+}} This item can drop from killing {{E|Super Envy}}. {{dlc|nr}} Super Envy can drop this item even if Isaac has already encountered/possessed it. 
+
+== In-game Footage ==
+{{#ev:youtube|3wm9gcuqjiM||inline}} {{#ev:youtube|t89RPbTYbho||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Solar System}}.
+* The name of this item is a reference to the Forever Alone meme.
+
+{{nav|fly|fr=Seul à Jamais}}

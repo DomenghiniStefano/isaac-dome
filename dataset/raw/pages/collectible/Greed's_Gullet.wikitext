@@ -1,0 +1,54 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 501
+ | quote       = Money = health!
+ | description = Grants a Red [[Heart container]] for every 25 {{E|Penny|text=Coins}} Isaac has.
+ | quality     = 1
+ | tags        = nolostbr summonable
+ | unlocked by = Greed's Gullet
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* Grants an extra Red [[Heart container]] for every 25 {{E|Penny|text=Coins}} Isaac has, up to a maximum of 4 hearts at 99 coins.
+** Dropping below the number of coins required for a Red Heart container removes the Red Heart container.
+
+== Notes ==
+* The extra Red Heart container can exceed the maximum Coin Heart container limit of {{C|Keeper}}, allowing him to obtain more than {{Dlc|nr}}2 / {{Dlc|r}}3 Coin Heart containers.
+* Depending on the character used, this item only affects Red Heart containers, Soul Hearts ({{C|???}}) or Coin Heart containers ({{C|Keeper}}). It does not affect {{C|The Lost}}.
+* {{dlc|nr}} The Red Heart container gain is not retroactive - picking it up at 99 coins will not grant 4 extra Red Heart containers.
+** However, picking it up at 99 coins and then dropping below 99 coins will lose a Red Heart container, decreasing the viability of picking this item up the more coins you have.
+*** The player will die if they lose their last form of health as a result of Greed's Gullet.
+*** If Keeper drops to under 2 Coin Heart containers as a result of Greed's Gullet, or by any other means (Devil deal, etc.), he is unable to use an HP Up to increase his health back to 2 and has to regain the lost coins to do so.
+** {{dlc|nr}} If Greed's Gullet is rerolled away after gaining health, the extra health will be preserved even if the player loses the coins afterward.
+*** However, if this happens with Keeper, his health will drop back to 2 Coin Heart containers upon picking up an item, unless another Greed's Gullet is picked up.
+** {{dlc+|r}} If Greed's Gullet is lost or re-rolled by any means (including the {{e|Mother's Shadow}} chase sequence), the health will be lost. This may cause Isaac to die. After returning from the {{e|Mother's Shadow}} chase sequence, the heart containers will be re-added, but they will be empty.{{dlc-}}
+* {{dlc|r}} The Red Heart containers granted by Greed's Gullet are now retroactive - picking the item up at 99 coins will immediately grant 4 Red Heart containers. Consuming coins will still cause Isaac to lose Red Heart containers.
+* {{dlc|r}} This also applies in reverse; consuming Red Heart containers granted by Greed's Gullet through methods such as {{R|Devil Room}} items or {{i|Guppy's Paw}} will cause Isaac to lose an appropriate amount of coins.
+* {{dlc|r}} For {{C|Keeper}} specifically, Greed's Gullet in combination with {{I|Deep Pockets}} allows him to bypass the 12 heart container health limit, capping at 15 Coin Hearts at 999 coins.
+** Works the same for {{C|Tainted Keeper}} but caps at 14 Coin Hearts instead.
+** By using Health Up pills and Health Up items while having {{I|Deep Pockets|dlc=n}} the cap for {{C|Keeper}} can be raised to 54 Coin Hearts. However, additional heart containers beyond 24 will not appear on the health bar.
+*** Works the same for {{C|Tainted Keeper}} but caps at 53 Coin Hearts instead.
+* Be careful when buying items from the {{R|Shop}}, as it can remove Red Heart containers.
+* Enemies that drain Isaac's coins (such as {{E|Keeper}}s, {{E|Hanger}}s, {{E|Greed}}, or {{E|Super Greed}}) can remove Red Heart containers.
+* This item allows {{C|Keeper}} and {{C|Tainted Keeper}} to utilize Health Up pills and Health up items, as the Coin Hearts gained this way are kept even if the coins are lost once the coins lost are regained, and can bypass the 99-coin limit.
+
+== Synergies ==
+* {{dlc|r}}{{i|Deep Pockets}}: After exceeding 100 coins, Isaac gains an extra heart container for every 100 coins instead of every 25.
+* {{I|Strawman}}: The assisting Keeper may also gain extra coin hearts, and in fact will retain the extra health containers even if coin loss would otherwise drop him below the threshold. However, exiting the game and then continuing thereafter will update Keeper's health.
+
+== Interactions ==
+* {{i|Abaddon}}: Removes heart containers by removing coins in 25 cent increments.
+* {{i|Dead Cat}}: Any extra Red Heart containers granted by Greed's Gullet will be removed upon pickup. If Isaac had more than 24 coins when picking up Dead Cat, then the remaining Red Heart container will be removed if enough coins are lost.
+* {{i|A Dollar}}: Isaac will instantly gain the max amount of Red Heart containers.
+* {{I|Eye of Greed}}: Coins will be lost for every 20th tear fired, risking Red Heart container loss if Isaac has more than 24 coins.
+* {{I|Money Power}}: Isaac will gain both damage and health.
+* {{i|A Quarter}}: Isaac will gain a Red Heart container.
+
+== In-game Footage ==
+{{#ev:youtube|1iKRSx9cQT4}}
+
+== Bugs ==
+{{bug|For the Keeper characters, they gain an additional Coin heart container slot, separately from the HP gaining increments, which they can fill by getting HP ups. You gain one of these every 25 coins even with Deep pockets. You can gain an additional 39 via this bug.}}
+{{nav|fr=Gosier d'Avarice}}

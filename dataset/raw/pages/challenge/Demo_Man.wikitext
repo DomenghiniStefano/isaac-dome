@@ -1,0 +1,39 @@
+{{infobox challenge
+ | number      = 9
+ | item        = {{i|Dr. Fetus}}<br>{{i|Remote Detonator}}
+ | trinket     = {{t|Match Stick}}
+ | has shops   = yes
+ | goal        = Mom's Heart
+ | unlocks     = Chaos Card
+ | unlocked by = Demo Man
+}}
+
+'''Demo Man''' is [[Challenges|challenge]] #9. {{C|Isaac}} starts with {{i|Dr. Fetus}}, {{i|Remote Detonator}}, and the {{t|Match Stick}} [[Trinkets|trinket]]. The goal is to defeat {{e|Mom's Heart}} or {{E|It Lives!}}. This challenge is available after unlocking Dr. Fetus.
+
+== Difficulty ==
+The only weapons are {{e|Bomb}}s, which can harm Isaac if he's too close. The {{i|Remote Detonator}} works on the Dr. Fetus bombs that replace tears but does not prevent them from exploding after their fuse runs out.
+
+{{t|Match Stick}} causes more bomb drops than other drops, such as {{e|Red Heart|text=Heart}}s or {{E|Chest}}s. Since there is an unlimited supply of bombs, this can be a hindrance.
+
+== Strategy ==
+* Since every run starts with Dr. Fetus, there is a virtually infinite supply of bombs. Anything that would normally use bombs can be done by attacking.
+* While Remote Detonator does not prevent bombs from detonating, using it will still cause them to explode prematurely.
+* [[Shot speed]] will cause the bombs to launch faster and farther.
+* Flying can help with avoiding explosive damage in tight quarters. This can make {{i|Lord of the Pit}} or {{i|Spirit of the Night}} more valuable.
+* The infinite bombs allows testing every wall for {{R|Secret Room}}s and {{R|Super Secret Room}}s. They also enable Isaac to escape rooms without clearing them by blowing open the doors.
+* Acquiring explosion immunity via items such as {{i|Host Hat}} or {{i|Pyromaniac}} make this challenge significantly easier. Ipecac immunizes Isaac only to the bombs fired by Dr. Fetus, however, not their possible fragments or other explosions.
+* If one manages to acquire {{i|Rocket in a Jar}}, this challenge will be made easier, as the rockets travel linearly and explode on contact, making self-damage less likely.
+
+=== Placed Bombs ===
+* {{t|Match Stick}} causes more bomb drops than other drops. Since regular bombs are more powerful than the Dr. Fetus bombs, this can be a boon. Dr. Fetus bombs can blast obstacles and walls, allowing placed bombs to be saved for combat.
+* Combined with the {{i|Remote Detonator}}, more control can be had over placed bombs and can lay traps with them. This is especially useful during boss fights with invincibility periods, such as {{e|Mom's Heart}} and {{E|Pin}}, as multiple placed bombs can be laid near the boss's spawning point and detonated all at once.
+* If a placed bomb is misplaced, they can be moved by walking into them. Placed bombs will not explode until Remote Detonator is used, so Isaac can move out of the way of explosive damage.
+* It is possible to drop the Match Stick by using {{plat|PC}} Ctrl, {{plat|PS4}} R2, {{plat|XboxOne}} R2 + RT, or {{plat|3DS, Switch}} ZR.
+
+== Reward ==
+{{achievement text | Chaos Card }}
+
+== Trivia ==
+* This challenge is a reference to ''[[wikipedia:Team Fortress 2|Team Fortress 2]]'''s 4th class, the Demoman. In the game, the Demoman uses a sticky bomb launcher, that launches bombs which can be manually detonated, much like the combination of the two items this challenge revolves around.
+
+{{nav|challenge|moms heart unlock|fr=Le Démolisseur}}

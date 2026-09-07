@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 454
+ | quote       = Hold me!
+ | description = Allows Isaac to carry two [[cards]], [[pills]], or any combination of both. Spawns one random card, [[rune]], or pill.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Allows Isaac to carry two [[card]]s, [[pill]]s, or any combination of both.
+* Spawns one random card, [[rune]], or pill.
+
+== Interactions ==
+* {{i|Little Baggy}} / {{i|Starter Deck}}: No additional effect.
+* {{i|Deep Pockets|dlc=anr}}: No additional effect.
+
+== In-game Footage ==
+{{#ev:youtube|h06XTDnm-mw}}
+
+== Trivia ==
+* Polydactyly is a [[wikipedia:Polydactyly|birth defect]] affecting people born with extra amounts of fingers or toes than is normal.
+
+{{nav|inventory expansion|card modifier|rune modifier|pill modifier}}

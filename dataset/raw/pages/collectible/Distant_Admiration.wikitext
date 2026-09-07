@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 57
+ | quote       = Attack fly
+ | description = Spawns an attack fly that [[Familiar#Orbital Familiars|circles]] further out than {{i|Halo of Flies}}, but closer than {{i|Forever alone}}, dealing 75 damage per second.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable monstermanual offensive fly
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a red attack fly [[Familiar#Orbital Familiars|that circles around Isaac]], and deals 5 damage per tick or 75 damage per second on contact.
+** The fly circles farther out than regular orbitals, but closer than {{i|Forever alone}}.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* While most orbital familiars orbit Isaac counter-clockwise, Distant Admiration orbits clockwise. It shares this orbit ring, speed, and pattern with {{i|Bot Fly}}.
+
+== In-game Footage ==
+{{#ev:youtube|ft1I_Ry84H4||inline}} {{#ev:youtube|Pq028Jkg0qE||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Solar System}}.
+
+{{nav|fly|fr=Admiration Distante}}

@@ -1,0 +1,135 @@
+{{header characters}}
+{{infobox character
+ | id           = 9
+ | health       = [[file:Eden Hearts Animated.gif|84px|link=Eden Generation#Hearts|Random]]
+ | damage       = 3.5 ± 1.0 (*1.00)
+ | tears        = {{dlcalt|±0.75|r=+0.75 to -0.515}}
+ | shot speed   = 1 ± 0.25
+ | range        = {{dlcalt|23.75 ± 5.00|r=6.5 ± 1.5}}
+ | speed        = 1.0 ± 0.15
+ | luck         = 0 ± 1
+ | pickups      = 0-2 [[bomb]]s<br>0-1 [[key]]<br>0-5 [[coin]]s<br>0-1 [[trinket]], [[pill]], or [[card]]
+ | collectibles = Random [[active item]]<br>Random [[passive item]]
+ | unlocked by  = Eden
+}}
+'''Eden''' is a [[character]] unlocked by completing {{s|Womb}} for the first time. Uniquely, they are only playable by spending '''Eden Tokens''', which are awarded every time {{E|Mom's Heart}}, {{E|It Lives!}}, {{E|Ultra Greed}}, or {{E|The Beast}} is defeated.
+
+Each time a game is started as Eden, one token is spent and a new Eden is randomly generated based on the seed: They will have a random hairstyle, base stats, active [[item]], passive item, and either a [[trinket]], [[pill]], or [[card|card/rune]].
+
+Eden's stats are centered around Isaac's and are randomized within a set range. They will spawn with a combination of [[Red Heart container]]s and {{E|Soul Heart}}s.
+
+''For details regarding the exact generation of an Eden Run, see [[Eden Generation]].''
+
+== Notes ==
+* {{dlc|na+}} Holding R to reset doesn't work with Eden, and every time you start a new run, you use up one Eden token.
+** After starting a run and transforming into another character (using items like {{i|Ankh}} or {{i|Clicker}}), holding R to reset will work and start a new run as Eden, even if you don't have tokens.
+* {{dlc|a+}} Holding R to reset will consume an Eden Token and start a new run.
+* {{dlc|nr}} Eden can start with most items, including {{i|The Negative}} or {{i|The Polaroid}} if unlocked.
+** {{i|Key Piece 1}}, {{i|Key Piece 2}}, {{i|Broken Shovel 1}}, {{i|Broken Shovel 2}} and {{i|Mom's Shovel}} cannot be granted.
+* {{dlc+|r}} A [[Item Tags noeden|noeden item tag]] determines which items Eden cannot start with. These include {{i|Knife Piece 1}}, {{i|Knife Piece 2}}, {{i|Dogma}}, {{i|Dad's Note}}, {{i|Recall}} and {{i|Hold}}.{{dlc-}}
+** {{i|Broken Glass Cannon|r+}} cannot be granted.
+* {{dlc|a+}} Eden Tokens are not awarded for killing Mom's Heart or It Lives in {{s|The Void|n}}.
+* It is possible to achieve an ending as Eden while not getting another token if the player defeats Mom and earns a Void Portal, then defeats Delirium. This will count as a victory, but no Eden Token will be earned. This can also be achieved by using Sacrifice Rooms to teleport to the Dark Room.
+
+== Item Interactions ==
+* {{i|Birthright}}: Spawns 3 random items from random item pools. Only one can be taken.
+* {{i|Genesis}}: If Eden uses Genesis it will reroll the character as if it was a new run (new starting items, new hairstyle and new stats).
+* {{i|Glowing Hourglass}}: {{dlcalt|If Eden starts with this item and immediately uses it in the starting room, the room will be reset, and all starting items and trinkets removed|r=Instead of the starting room being reset, Eden is taken to the starting room of {{S|Home}}. If used again in this room without having entered any other rooms, the room will be reset, and all starting items and trinkets removed except Glowing Hourglass}}.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Undefined, Glitch Baby, Book of Secrets, Blank Card, Mystery Sack, Mysterious Paper, GB Bug, Metronome, Eden's Blessing, Yellow Baby, Eden's Soul, 'M, Everything Jar, The Capricious, Cracked Baby }}
+
+== Gallery ==
+<gallery>
+File:Character Eden appearance.png|Eden's default hairstyle
+File:Eden App2.png|Shaved head with a bang
+File:Eden App3.png|A bowl cut
+File:Eden App4.png|A mohawk
+File:Eden App5.png|
+File:Eden App6.png
+File:Eden App7.png
+File:Eden App8.png
+File:Eden App9.png
+File:Eden App10.png
+File:Eden App11.png
+File:Eden App12.png|[https://wikibound.info/wiki/Lucas Lucas] from ''Mother 3''
+File:Eden App13.png
+File:Eden App14.png|[http://hrwiki.org/wiki/Marzipan Marzipan] from ''Homestar Runner''
+File:Eden App15.png|[https://undertale.wiki/w/Frisk Frisk] from ''Undertale''
+File:Eden App16.png|[[Azazel]]'s pre-''Repentance'' hairstyle
+File:Eden App17.png|[[Eve]]'s hairstyle
+File:Eden App18.png|[[Lazarus]]'s hairstyle
+File:Eden App19.png|[[Lilith]]'s hairstyle
+File:Eden App20.png|[[Magdalene]]'s hairstyle
+File:Eden App21.png|[[Samson]]'s hairstyle
+File:Eden App22.png|A handlebar mustache
+File:Eden App23.png|Hair resembling a beanie cap with cat ears
+File:Eden App24.png
+File:Eden App25.png|A flattop
+File:Eden App26.png
+File:Eden App27.png
+File:Eden App28.png
+File:Eden App29.png
+File:Eden App30.png
+File:Eden App31.png
+File:Eden App32.png
+File:Eden App33.png
+File:Eden App34.png
+File:Eden App35.png|[[wikipedia:Princess Leia|Princess Leia]] from ''Star Wars''
+File:Eden App36.png
+File:Eden App37.png|A bad comb-over
+File:Eden App38.png|[[wikipedia:Elsa (Frozen)|Elsa]] from ''Frozen''
+File:Eden App39.png|An English mustache
+File:Eden App40.png|[[Cut Content#Old Man Keeper|"Old Man" Keeper]]'s hairstyle
+File:Eden App41.png
+File:Eden App42.png
+File:Eden App43.png|A Japanese-style pompadour
+File:Eden App44.png
+File:Eden App45.png|An afro
+File:Eden App46.png|A hi-top fade
+File:Eden App47.png|A bob cut
+File:Eden App48.png
+File:Eden App49.png
+File:Eden App50.png
+File:Eden App51.png|A broccoli haircut
+File:Eden App52.png
+File:Eden App53.png|[[wikipedia:Heihachi Mishima|Heihachi]] from ''Tekken''
+File:Eden App54.png
+File:Transition Eden.png|Eden's transition screen portrait.
+File:Start_Eden.png|The spawn floor when playing Eden.
+File:Unknown CharNav.png|Eden's locked character icon.
+File:Lilith_Eden_Blue Box Concept Art.png|Concept art of Eden among other sketches and design notes.
+</gallery>
+
+== {{dlc|nr}} Gallery ==
+The following hairstyles were removed and updated for ''Repentance''.
+<gallery>
+File:Eden_App17_Old.png
+File:Eden_App18_Old.png
+File:Eden_App19_Old.png
+File:Eden_App20_Old.png
+File:Eden_App21_Old.png
+</gallery>
+
+== Trivia ==
+* In the book of Genesis, the Garden of Eden was the place where Adam and Eve lived before consuming the fruit of the tree of the knowledge of good and evil, and thus being cast out by God.
+** This technically makes Eden the only character in the game out of the main characters (excluding the secret characters of {{C|???}}, {{C|The Lost}}, {{C|Keeper}}, {{C|The Forgotten}} and their tainted variants) who is named after a biblical place rather than a person, since {{C|Bethany}}'s name can refer to both Mary of Bethany and the village of Bethany.
+* According to Edmund, [https://archive.is/5CtVn Eden might not have a gender]. A quote from Edmund says “Eden is the fabled “mystery man” I’ve talked about in interviews before I had a fully realized idea of what they would become… see Eden isn’t a man, nor are they a woman.. they just are.“
+* Eden could represent Isaac's rebirth as a new person, which explains why their stats and items are always random.
+** Alternatively, Eden might represent Isaac's curiosity of experimenting with and discovering new things, which is common to virtually all children.
+* Because of how Eden's stats work, Eden can start with a [[Luck]] stat containing values in lower decimal places.
+** {{dlc|nr}} When actually used in most formulas, luck is rounded towards zero. This means Eden's effective starting luck is generally equivalent to 0.
+** {{dlc|nr}} Playing as Eden is the only way to have non-integer luck. All other characters will always have a luck value of exactly a whole integer (e.g. 0.00, 1.00, etc.), as there are no items in the game that increase or decrease luck by any other value besides a whole integer.
+* Eden's starting stats are listed as "?" on the character selection screen.
+* Eden's locked character icon is [[Ending 1|the Locked Chest from ending 1]].
+** Eden (and {{c|Tainted Eden}}) is the only character who can become locked again, returning to their locked character icon if the player runs out of tokens.
+* During development, Edmund asked fans to contribute hairstyles for Eden. [https://twitter.com/EdmundMcMillenn/status/471133375437099009]
+* On the release of ''The Binding of Isaac: Rebirth'', Eden had 5 hairstyles.
+** {{dlc|a+}} 5 more were added in [[Booster_Packs#Booster Pack #1|Booster Pack #1]], and 25 more were added in [[Booster_Packs#Booster Pack #3|Booster Pack #3]] for ''[[Afterbirth+]]'', totalling 40 hairstyles.
+** {{dlc|r+}} 14 more were added in ''[[Repentance+]]'', totalling 54 hairstyles.
+* {{dlc|a+}} Some of Eden's hairstyles added in the Booster Packs resemble the hairstyles of other playable characters, being {{C|Azazel}}, {{C|Eve}}, {{C|Lazarus}}, {{C|Lilith}}, {{C|Magdalene}}, and {{C|Samson}}.
+** {{dlc|r}} All of these hairstyles, except Azazel's, were changed in the [[V1.7.9b]] update to ''Repentance'' to reflect the updated hairstyles of each associated character.
+** {{dlc|a+}} One of Eden's hairstyles references the [[Cut Content#Old Man Keeper|pre-release appearance]] of {{c|Keeper}}.
+* {{dlc|a+}} Some of Eden's other hairstyles are pop-culture references to characters such as Elsa from ''Frozen'', Princess Leia from ''Star Wars'', Marzipan from ''Homestar Runner,'' Lucas from ''Mother 3'', and Frisk from ''Undertale.''
+
+{{nav|character|eden unlock|fr=Éden}}

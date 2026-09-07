@@ -1,0 +1,65 @@
+{{infobox challenge
+ | dlc                = a
+ | number             = 22
+ | has treasure rooms = yes
+ | has shops          = yes
+ | description        = Everything is sped up like the {{I|Broken Watch}} effect. After the game timer reaches 16 minutes, Isaac starts taking damage every 10 seconds.
+ | goal               = Mom's Heart
+ | unlocks            = Get out of Jail Free Card
+ | unlocked by        = SPEED!
+}}
+
+'''SPEED!''' is [[Challenge]] #22. In this challenge, all enemies are sped up as if under the "speed up" effect of the {{i|Broken Watch}}. Isaac also has greatly increased movement speed. The goal is to defeat {{e|Mom's Heart}} or {{E|It Lives!}} '''with a "soft" time limit of 16 minutes'''.
+
+== Difficulty ==
+This is arguably one of the hardest challenges in the game, for two major reasons. Firstly, the increased speed for both the enemies and Isaac can make most routine rooms and bosses challenging. More importantly, the 16-minute soft time limit is also very hard to beat and may force the player to forget exploring for rewards that might have helped them later on. Note that the time limit is not a "hard" one and that the game is not over when the countdown timer reaches 0; however, from that point onwards Isaac will start taking half a heart of damage every 10 seconds, or a full heart of damage starting from chapter 4.
+
+== Strategy ==
+=== General ===
+* Health is always important, but even more so in this challenge. Not only will health compensate for the damage taken, be it from the more difficult rooms/bosses or the timed damage, but it can also be used for Devil Deals to access its high DPS item pool. Items that generate health or protection thus help greatly, These include {{i|The Wafer}}, {{i|Cancer}}, {{i|Yum Heart}}, {{i|Unicorn Stump}}, {{i|Prayer Card}}, and many many more.
+* {{i|Blank Card}} is a powerful item in this run, as there are cards and runes such as {{P|IV - The Emperor}}, {{P|XIX - The Sun}}, {{P|Ansuz}}, and {{P|Ehwaz}}, all of which can enable faster progression through the game. Certain cards and runes, such as {{p|V - The Hierophant}}, {{p|VI - The Lovers}}, {{p|VII - The Chariot}}, {{p|XIX - The Sun}}, {{p|Algiz}}, and {{p|Dagaz}}, can also act as health regeneration or protection to counteract the timed damage or the increased difficulty in general.
+* Getting the {{i|Stop Watch}} will make this challenge easier, since it will slow all enemies in the room when Isaac takes damage, counteracting their increased speed.
+** {{Dlc|r}} Stop Watch no longer requires the player to take damage in order to activate the slowing effect.
+* {{i|The Ludovico Technique}} shouldn't be picked up without high shot speed, as it will move slower than most enemies.
+* Since Isaac starts with increased speed, {{i|Taurus}} can be used to start every room with the {{i|My Little Unicorn}} effect making it effective for clearing rooms quickly. The invincibility from it can also block timed damage occasionally.
+* {{i|The Bible}} can be used to instantly kill {{e|Mom}} and {{e|Mom's Heart}} / {{E|It Lives!}}, making it a more valuable item in this run. In the same vein, {{i|Plan C}} is also useful, though only against the final boss.
+* {{i|Clicker|nr}} can be used to change Isaac into a more powerful character such as {{C|Azazel}} or {{C|The Forgotten}}, allowing the player to clear rooms more quickly.
+
+=== Speed run ===
+* If the player wishes to beat the timer, it might be a good idea to cut down exploring to a minimum. Find and visit the Treasure Room, occasionally the shop, and the boss, then move on as soon as possible. {{i|The Compass}}, {{i|Blue Map}}, {{i|Crystal Ball}} and {{i|The Mind}} are very useful if this is the desired strategy, as is {{P|IV - The Emperor}} card. Floor skipping with {{i|We Need To Go Deeper!}} and such are also valuable time-savers, as long as the player is confident with their current set of items.
+* Isaac's highly increased speed is a powerful asset to rapidly completing this run but can be dangerous as the player may accidentally run over spikes or into enemies/bullets that they otherwise would not run into. It is important to be careful and adjust to the speed-up.
+* Anything that could help to clear rooms faster is going to alleviate some of the difficulty of this challenge. Damage and Tear boosting items are thus a potential priority, making Devil Deals desirable because of their DPS heavy item pool. "Room clearer" items such as {{i|Toxic Shock}} and  "Boss killer" items such as {{i|Head of Krampus}} are also very useful for speeding up progress.
+* {{i|Jacob's Ladder|dlc=r}}, after its rework, is now extremely effective in clearing out groups of enemies even if they're not hit directly. Not only does this make the item great at clearing rooms, it also compensates for the heightened difficulty in landing shots due to the general speed increase.
+* Avoid Challenge Up (i.e. {{t|Purple Heart}}, {{i|Champion Belt}}) since Champion enemies are not only much harder to kill, they will also take much longer to kill, and the player is already short on time.
+* {{R|Boss Rush}} is likely to appear on this challenge if the player is trying to beat the timer, but it should be avoided unless there is a way to teleport out of it or skip it.
+* Using {{e|Bomb}}s for damage or skipping rooms might be necessary if one wishes to beat the timer. Automatically-replenishing explosives ({{i|Ipecac}}, {{i|Dr. Fetus}}, etc.) will greatly aid the player in being to do this. However, Dr. Fetus and {{i|Epic Fetus}} may also make it more difficult to kill enemies, their timed nature making it harder to land the attack.
+* {{i|Black Candle}} is a valuable item to purchase from the shop, as it prevents Isaac from being afflicted by {{Cu|Lost}} and {{Cu|Maze}}, both of which can waste precious time. {{p|Dagaz}} will also remove curses for a single floor if used.
+* {{i|Teleport!}}, if used wisely, can save a lot of exploration time by teleporting whenever Isaac doesn't appear to be near rooms of interest. This will inevitably cut down the number of rooms that the player needs to explore.
+* {{i|Mom's Knife}}, combined with {{I|Unicorn Stump}}, can make the challenge laughable; the invincibility every room combined with the huge amount of damage the knife gives you on contact can sweep even 2x2 rooms in seconds without worrying about damage (so long as you don't run out).
+* {{i|Mercurius|r}} opens most doors, thus avoiding the need to clear rooms. This massively reduces the time spent on each floor and allows quick exploration for Special Rooms, making the challenge far easier.
+* Finding a {{r|Library}} can make or break a run, as it may contain {{i|The Bible}}, or enough books to trigger the {{tf|Bookworm}} transformation.
+
+=== Slow and Steady ===
+After 16 minutes, the periodic damage taken every 10 seconds can be counteracted by generating enough health or obtaining enough protection against said damage.
+* The timed damage can be absorbed by the {{i|Holy Mantle}}, making it an even more valuable asset since Isaac can leave the just-cleared room the way he came, re-enter it, wait until the timed damage is dealt, and proceed. By doing so, Isaac can get a 20-second buffer (10s if hit) to rinse and repeat the process without taking any damage.
+* {{i|Pyromaniac}} and explosives ({{i|Curse of the Tower|n}} or any other way to get a lot of bombs) allows Isaac to survive long after the 16-minute limit, and in the case of Pyromaniac with automatically-replenishing explosives such as {{i|Number Two|n}}, very likely the entirety of the run.
+* {{i|Guppy's Paw}} in the late game can potentially give the player up to 6 minutes of borrowed time, 12 minutes with The Wafer, and even more if the player happens to find HP upgrades in the final moments of the run.
+* {{i|Isaac's Heart}} makes Isaac '''completely immune''' to the timed damage. However, because of the increased speed of your player and enemies, beware that dodging may be more difficult.
+** {{dlc|r}} Isaac's Heart no longer provides immunity to the timed damage.
+* Several {{i|Sharp Plug}} + {{i|The Wafer}}/{{i|Cancer}} combos will also allow effectively infinite health.
+* Items that grant health or protection on hit such as {{I|Old Bandage}}, {{I|Gimpy}}, {{I|Virgo}}, and {{I|Celtic Cross}} are useful for surviving past the timer in general.
+** {{dlc|a+}} The items above are also more effective when in possession alongside {{i|Dull Razor|n}}.
+
+== Reward ==
+{{achievement text | Get out of Jail Free Card }}
+
+== Trivia ==
+* If Isaac dies to the timed damage, his will depicts a stopwatch where normally a sketch of the enemy that killed Isaac would be.
+* Before a patch, Isaac moved at normal speed while all enemies moved faster. It was changed to give Isaac increased speed, as the challenge was deemed to be unfairly difficult before.
+
+== Bugs ==
+{{Bug|During the {{e|Mom}} fight she does significantly fewer attacks, making the fight especially difficult as the only way to hurt mom is to trigger the hand attack.|dlc=r}}
+{{Bug|If you successfully complete the challenge after the soft limit, you can still fail by taking ANY timer damage while the trophy-gathering animation is taking place. Taking timer damage during the trophy-gathering animation will cause your inputs to freeze and the trophy to disappear without actually finishing the challenge. You must either die or exit & re-enter the game if this happens.|dlc=r}}
+{{Bug|Physics behave improperly during the challenge, notably increasing knockback from items such as [[Butter Bean]] or [[Knockout Drops]]. The suction force from [[Gaping Maw]] is also greatly increased. This can lead to certain rooms potentially causing unavoidable damage, or to simply be run ending without flight, as the player is unable to escape being dragged onto spikes.}}
+
+{{nav|mom unlock|challenge|fr=On se dépêche !}}

@@ -1,0 +1,28 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 541
+ | quote       = HP up?
+ | description = Grants one {{e|Bone Heart|n}} and spawns three {{e|Red Heart}}s.
+ | quality     = 1
+ | tags        = nolostbr
+ | unlocked by = Marrow
+}}
+
+{{cit|up|a+5}}
+
+== Effects ==
+* Grants one {{e|Bone Heart}}.
+* Spawns three {{e|Red Heart}}s.
+
+== In-game footage ==
+{{#ev:youtube|zI29U1hl1Fc}}
+
+== Gallery ==
+<gallery>
+File:AfterbirthPlus Booster Pack 5 Concepts.jpg|Concept for Marrow's effects on the right side, along with other Booster Pack items and trinkets, by Edmund McMillen. According to the concept design, Marrow was originally supposed to grant 2 bone hearts. Unlike the other items, Marrow doesn't have a drawn concept.
+</gallery>
+
+== Trivia ==
+* '''Marrow''' and {{I|Smelter}} are currently the only items unlocked from defeating {{e|Mom's Heart}} or {{e|It Lives!}} on {{mode|hard}} [[Hard Mode]].
+
+{{nav|the forgotten unlock|moms heart unlock|it lives unlock|booster pack|bone|fr=Moelle}}

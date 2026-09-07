@@ -1,0 +1,65 @@
+{{infobox passive collectible
+ | id          = 104
+ | quote       = Split shot
+ | description = Isaac's tears split in two when they hit something.
+ | quality     = 3
+ | tags        = summonable offensive
+ | unlocked by = The Parasite
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Tears that deal more than 1.0 damage split into two tears with half damage and half remaining range on impact with obstacles or enemies.
+** Damage less than 1.0 causes the tears to simply disappear.
+** The splitting can keep up as long as the tears have range remaining and the damage of the split tears stays above 0.5.
+** Split tears are scaled down by 0.5x from the parent one, ignoring damage based size reduction.
+
+== Synergies ==
+* {{i|Angelic Prism}}: All tears split by the prism will burst into split tears when hitting obstacles.
+* {{c|Azazel}}: Two beams that deal full damage are fired perpendicular to the main beam at the end of the laser.
+* {{i|Brimstone|r}}: Two beams that deal full damage are fired perpendicular to the main beam at the closest point of intersection with an enemy or obstacle.
+* {{i|C Section}}: Fetuses fire short-ranged tears constantly while in contact with an enemy.
+* {{i|Compound Fracture}}: Both tear split effects happen simultaneously.
+* {{i|Cricket's Body}}: Two groups of this item's four tears, creating eight additional miniature tears on every point of impact instead.
+* {{i|Flat Stone}}: Every time tears bounce, burst tears spawn.
+* {{I|Holy Light}} / Other similar tear modifiers: As the effect is applied before the split, both split tears will retain it.
+* {{i|Jacob's Ladder}}: Split tears can spawn sparks.
+* {{i|Lachryphagy}}: Fed tears split into 12 tears. When tears are minimally fed and hit an obstacle, they will split into 5 Lachryphagy burst tears and Parasite burst tears.
+* {{i|The Ludovico Technique}}: Repeatedly spawns miniature tears when on top of an enemy, greatly increasing damage.
+* {{i|Mom's Knife|r}}: Knife splits into two smaller, perpendicular knives that deal full damage on hitting an enemy.
+* {{i|My Reflection}}: Split tears boomerang back to Isaac, making it easier to hit enemies with them.
+* [[Piercing tears]]: Split tears form for each hit as the tears pass through the enemies.
+* [[Spectral tears]]: When tears pass through solid objects, like rocks, they will split, resulting in many tears shooting out from every rock the original tear passed through.
+* {{i|Technology|r}}: Laser splits into two perpendicular beams that deal full damage upon hitting an obstacle or enemy.
+* {{i|Tiny Planet}}: The split tears will continue to orbit Isaac, increasing damage potential.
+* {{i|Tractor Beam}}: The split tears will be forced directly forward, impacting whatever caused the first tear to split. This increases damage immensely.
+** If all shots connect, effective damage will be multiplied by 2 + log<sub>2</sub>(damage) rounded up, with the maximum increasing as range increases, with a max of 4x at Isaac's base range.
+* {{i|Trisagion}}: When beams hit obstacles, the beam will split; the split beams can split again when hitting other obstacles.
+
+== Interactions ==
+* {{dlc|r}} {{i|Aquarius}}: Creep trail turns dark orange but doesn't affect the creep itself.
+* {{i|Bob's Rotten Head}}: Splits into two explosive shots when it blows up on an obstacle or wall, each dealing half the explosion of the head. Doesn't split on hitting an enemy.
+* {{i|Brimstone|nr}}: Overrides The Parasite.
+* {{i|Diplopia}}: Additional copies of The Parasite have no effect.
+* {{i|Dr. Fetus|na}}: Bombs turn orange and with no other effect.
+** {{dlc|anr}} Bombs split into two bombs that deal 24 damage each upon detonation.
+** {{dlc|r}} Bombs split into two bombs that deal 40 damage each upon detonation.
+*** '''Dr. Fetus''' + {{i|Rocket in a Jar}}: Rockets split into two bombs (not rockets) upon detonation.
+* {{i|Epic Fetus}}: Overrides The Parasite.
+* {{i|Eye of the Occult}}: Split tears can be controlled similarly to normal tears, which results in a large amount of floating tears.
+* {{i|Ipecac}}: The Ipecac tear will spawn two smaller explosive tears when it collides with a solid object, but not with an enemy. These tears can spawn tears on their own as well, potentially leading to huge chain reactions. Having {{i|Host Hat}} or {{i|Pyromaniac}} is strongly recommended.
+* {{i|Kidney Stone}}: Drastically decreases range making it less likely for tears to split. The stone will not split.
+* {{i|Mom's Knife|nr}}: Knife turns orange with no other effect.
+* {{i|Rubber Cement}}: Tears only split when hitting enemies and no longer off the wall or most obstacles.
+* {{I|Sharp Key}}: Split tears from thrown keys are normal tears.
+* {{i|Soy Milk}}: Without any damage increases, Soy Milk tears deal under 1.0 damage and cannot split until the situation is rectified with other items.
+* {{i|Spirit Sword}}: No effect on swings and spins. Projectiles bursts into 2 small tears.
+* {{i|Technology|nr}}: Overrides The Parasite.
+* {{i|Tech X|nr+}}: Overrides The Parasite. Laser rings become orange.
+** {{dlc|r+}} The ring produces small tears in contact with enemies.
+
+== In-game Footage ==
+{{#ev:youtube|2So49KVELCc}}
+
+{{nav|fr=Parasite}}

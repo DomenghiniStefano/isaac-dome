@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 547
+ | quote       = Tears up + you feel empty
+ | description = Grants one {{E|Bone Heart|n}}, +0.7 [[tears]], spawns a {{T|Mysterious Paper}}.
+ | quality     = 3
+ | tags        = summonable {{dlc|r+|tearsup}} offensive
+ | unlocked by = Divorce Papers
+}}
+
+{{cit|up|a+5}}
+
+== Effects ==
+* Grants one {{e|Bone Heart}}.
+* +0.7 [[tears]].
+* Spawns {{t|Mysterious Paper}} if it has been unlocked and not previously encountered during the run.
+
+== In-game Footage ==
+{{#ev:youtube|rK5tgOwF03g}}
+
+== Trivia ==
+* The existence of this item suggests that the way Isaac’s father left his {{E|Mom}} as seen in {{s|Chest}}'s ending ([[Endings#Ending 14|Ending 14]]) could have been through a divorce.
+** [https://foursouls.com/cards/fsp2-divorce_papers/ A more detailed rendition of Divorce Papers can be found in The Binding of Isaac: Four Souls Card Game]. The papers are signed by Isaac's mother, but not his father, implying that a divorce was filed but the process was left incomplete.
+*** {{dlc|r}} The details of the split can be discerned via the dialogue that plays during [[Ascent]], as well as [[Endings#Ending 22|Ending 22]].
+
+== Gallery ==
+<gallery>
+File:AfterbirthPlus Booster Pack 5 Concepts.jpg|Concept for Divorce Papers on the right side, along with other Booster Pack items and trinkets, by Edmund McMillen.
+</gallery>
+
+{{nav|mom|dad|booster pack|the forgotten unlock|boss rush unlock|fr=Acte de Divorce}}

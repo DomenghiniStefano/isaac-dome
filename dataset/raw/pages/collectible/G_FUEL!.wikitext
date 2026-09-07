@@ -1,0 +1,71 @@
+{{NO STORAGE}}
+{{infobox passive collectible
+| dlc         = r
+| id          = -1
+| quote       = (varies depending on number obtained)
+| description = Grants various effects based on the amount of G FUEL! obtained. Only appears on certain [[Daily Challenges]] or with an [[Seeds|easter egg seed]].
+| tags        = quest
+}}
+
+'''G FUEL!''' is a promotional item appearing only during special [[Daily Challenges|daily runs]] or with an [[Seeds|easter egg seed]] (GFVE LLLL) activated. It does not exist during normal gameplay.
+
+== Effects ==
+* A can of G FUEL! is available at the start of every floor. Floors affected by {{Cu|Labyrinth}} will give two cans.
+* Some of G FUEL!'s effects depend on how many copies of the item Isaac has:
+** Replaces Isaac's tears with various "guns".
+*** The first can simply increases damage, tears, and shot speed without replacing tears.
+*** The second can replaces Isaac's tears with bullets.
+*** The third can changes the firing pattern into two accurate, rapid-fire streams of bullets. Changes Isaac's stats similarly to {{I|Soy Milk}}.
+*** The fourth can changes the attack into a buckshot shotgun, shooting a large spread of pellets which bounce on impact with obstacles.
+*** The fifth can changes the attack into a slug shotgun, shooting a single high damage projectile that bounces on impact with obstacles.
+*** The sixth can changes the attack into a minigun, rapidly shooting bullets with low accuracy. This also pushes Isaac back depending on the firing speed.
+*** The seventh can changes the attack into a rocket launcher, shooting explosive rockets that detonate on impact.
+*** The eighth can onwards gives Isaac a random weapon from the ones listed above.
+*** The ninth can onwards adds random tear effects to bullets.
+** Starting with the second copy, speeds up the game every time it's picked up.
+** Starting with the fourth copy, non-boss enemies have a chance to multiply, with further copies increasing the number of enemies.
+** Each copy increases the amount of screen shake caused by gunfire and enemy explosions.
+* Grants +0.2 [[Speed]]. Ignores the speed cap. Collecting other speed up items will also break the cap.
+** Unlike other items that change speed, G FUEL causes one of {{c|Jacob and Esau}} characters to move faster than the other.
+* All explosion sprites are replaced with stock explosion footage. Certain bosses have special explosion animations.
+* All enemies explode on death. These explosions do not deal damage and do not destroy objects.
+* All consumable spawn animations will be accompanied by explosion sprites as well.
+* Enemies grant far more [[Daily Challenges#Score|score]] on death than usual, and the amount is displayed when they die.
+* All water and blood in rooms is replaced with a light blue liquid (presumably G Fuel).
+* Pressing the "drop" button plays an airhorn sound effect.
+* Most "special floor tiles" are replaced with special G Fuel floor tiles.
+* Replaces Isaac's nightmares during floor transition with G Fuel-themed versions.
+
+== Notes ==
+* G FUEL! is not a "real" item for nearly every purpose without activating the easter egg, and has no [[Collection Page (Repentance)|collection page]] entry. It is not accessible even via [[Debug Console]].
+* G FUEL!'s tear effects cannot be copied by familiars such as {{i|Cain's Other Eye}} or {{t|Found Soul}}.
+* Item pedestals containing G FUEL! are unaffected by any attempt to reroll, duplicate, or remove them, including but not limited to {{i|The D6}}, {{i|Eternal D6}}, and {{i|Crooked Penny}}.
+
+== Gallery ==
+<gallery>
+File:GFUELISAAC.png|The real world product
+</gallery>
+
+== In-game footage ==
+{{#ev:youtube|GtpWYp3_mv0}}
+
+== Trivia ==
+* The item is the first to count as actual product integration, promoting a ''Binding of Isaac'' themed energy drink by [[wikipedia:G Fuel|G Fuel]]. Other items in the game that resemble real-world products are allusions, jokes and the like.
+** However, according to [https://twitter.com/edmundmcmillen/status/1588625178317459457 a tweet by Edmund], the item and associated daily run are NOT sponsored, and were simply added in as a joke.
+** Edmund previously had a collab with G Fuel with his other game, Super Meat Boy.
+* The various "guns" granted by G FUEL! work almost identically to certain weapons in ''Nuclear Throne'', most notably with how the shotgun pellets and slugs bounce off of obstacles.
+** The airhorn sound effect that plays when pressing the "drop" button may be a reference to a similar easter egg in ''Nuclear Throne'', where pressing the B key as the character Y.V. triggers an airhorn sound effect.
+* Internally, the item is generated on demand by enabling the effect, and inserted into the first glitch item slot which has the ID -1.
+** If Isaac has {{I|TMTRAINER}}, the G FUEL! in the starting room will not be glitched further.
+** Spawning item -1 will not create G FUEL! if it's not enabled.
+** Item -2 also gets assigned and will always be the same glitch item across separate runs.
+* When collected, the item is listed as a "temporary" {{i|Speed Ball}} in the [[Debug Console]] and can be removed as such.
+** Normal Speed Ball is still available while G FUEL! is enabled.
+** It is "temporary" in the same sense as {{i|Lemegeton}} item wisps, but has no associated wisp that could be destroyed.
+* The effect that the tears gain from the 2nd copy onward replaces the graphic for nail tears spawned by {{I|8 Inch Nails}}.
+* The real-world-product G FUEL tubs feature cameos of modded characters among the horde of enemies:
+** Isaac's Tears features [[fiendfolio:Fiend|Fiend]] from the [https://steamcommunity.com/sharedfiles/filedetails/?id=2851063440 Fiend Folio] mod.
+** Brimstone features Gomorrah from the [https://steamcommunity.com/sharedfiles/filedetails/?id=2646581513 Sodom And Gomorrah] mod.
+* {{I|MEAT!}}, {{I|YO LISTEN!}}, {{I|PHD}}, G FUEL! and {{I|TMTRAINER}} are the only '''ALL CAPS''' items in the game.
+
+{{nav}}

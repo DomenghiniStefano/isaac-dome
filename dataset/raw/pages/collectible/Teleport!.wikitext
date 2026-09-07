@@ -1,0 +1,47 @@
+{{infobox activated collectible
+ | id          = 44
+ | quote       = Teleport!
+ | description = Teleports Isaac to a random [[Rooms|room]] on the current [[Chapters|floor]], except for I AM ERROR rooms.
+ | quality     = 0
+ | tags        = offensive
+ | recharge    = 2
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Teleports Isaac to a random [[Rooms|room]] on the current [[Chapters|floor]].
+
+== Notes ==
+* It is possible to teleport to the {{R|Secret Room}} or {{R|Super Secret Room}}.
+* It is not possible to teleport to the {{R|I AM ERROR}} room.
+* It is not possible to teleport to the {{R|Crawl Space}} for the floor or the {{R|Black Market}}.
+* {{dlc|ana+}} {{mode|greed}} It is possible to teleport to a {{R|Super Secret Room}} with no doors, resulting in the player being stuck.
+
+== Strategies ==
+Possible uses include:
+* Teleporting out of dangerous situations.
+* Avoiding spiked door damage going out of a {{R|Curse Room}}.
+* Teleporting into {{R|Challenge Room}}s if you don't meet the health requirements to get in.
+* Escaping from {{R|Challenge Room}}s or {{R|Boss Rush}} after picking up a chest or collectible, avoiding the fight.
+* Escaping from {{E|Mom}}'s boss room, due to there being no exit after defeating her.
+
+== Interactions ==
+* {{Book of Virtues synergy|description=Spawns blue wisps in the middle ring. Wisps' tears have a 10% chance of teleporting non-boss enemies to a random location in the current room on hit. Wisps also temporarily vanish every 5 seconds, preventing them from blocking shots or taking/dealing damage.}}
+* {{i|Car Battery}}: No effect.
+
+== Trivia ==
+* The sprite of this item is identical to {{i|Doctor's Remote}} and {{i|Teleport 2.0}}, but with a different color.
+* This item is a nod to [[wikipedia:Spelunky|Spelunky]]'s Teleport item.
+* It is also a small nod to Dr. Fetus' many remotes in Super Meat Boy.
+* The [[V1.06.J787]] patch notes states the item 'allows the player to influence the teleport direction (using the direction Isaac is moving upon activating the item)'. This effect was never planned to be added into the game, and was put in the changelog because of a misunderstanding.
+
+== In-game Footage ==
+{{#ev:youtube|vJsgZ89ni8Q||inline}} {{#ev:youtube|TKJMneLzeqA||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Teleport.png|{{plat|3DS}} The icon of Teleport as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|fr=Téléportation !}}

@@ -1,0 +1,116 @@
+{{infobox passive collectible
+ | dlc            = a+
+ | tear app scale = 1/4
+ | id             = 533
+ | quote          = Smite thy enemy
+ | description    = Tears are replaced with [[Tear Effects#Piercing|piercing]] white blasts of light that deal less damage but can damage the same enemy multiple times.
+ | quality        = 3
+ | tags           = summonable offensive
+ | devil price    = {{dlcalt|1|r+=2}}
+ | unlocked by    = Trisagion
+}}
+
+{{cit|up|a+4}}
+
+== Effects ==
+* Tears are replaced with [[Tear Effects#Piercing|piercing]] white blasts of light.
+** Blasts deal 33% of the regular [[Damage|tear damage]], but can hit each enemy they are in contact with up to 15 times per second.
+** Blasts decrease in size until disappearing.
+*** Despite the blasts decreasing in size after passing through obstacles, this purely visual as the blast will only damage enemies adjacent to the obstacle.
+** {{dlc|nr}} Blasts do not knock back enemies.
+
+== Notes ==
+* Since the blasts can strike one enemy multiple times while they remain in contact, low shot speed can be very beneficial whereas high shot speed may lower effective damage.
+** Walking backward while firing can allow tears to move slower, making it useful for increasing damage output.
+* Items that grant a high Tears rate, such as {{I|Soy Milk}}, can cause the light beams to significantly obstruct visibility, which can further be exacerbated by items such as {{I|Fruit Cake}} causing rapid color and size change.
+* With only Trisagion, Isaac with base stats will deal about 18 damage per second on an unmoving, [[gaper]]-sized enemy, which is almost double Isaac's base DPS of 9.5. 1.32 shot speed will reduce DPS of Trisagion to about 14.
+
+== Synergies ==
+* {{i|8 Inch Nails}} / {{t|Blister}} / {{i|Pisces}}: Adds knockback to blasts, which can not only significantly repel enemies when used correctly, it can deal a high amount of damage to enemies unable to escape the knockback.
+* {{i|Chocolate Milk}}: Fully charged Trisagion blasts deal 4 times more damage, exceeding Isaac's normal damage.
+* {{I|Cricket's Body|r}}: Original blast shoots four white tears in a cross pattern during its travel time and four blast tears in a cross pattern at the end of its range. Only the original blast splits.
+* {{Dlc|r}} {{i|Euthanasia}} / {{i|Explosivo}} / {{i|Head of the Keeper}} / {{i|Holy Light}} / {{t|Nose Goblin}} / {{I|Sinus Infection}}: Beams can apply the effects on each damage tick, potentially triggering them in rapid succession.
+* {{i|Evil Eye}}: Eyes will fire beams. Occasionally causes Trisagion beams to stay static in the air for a few seconds, dealing damage to enemies that come in contact with them.
+* {{i|Godhead}}: Although the damaging aura isn't visible, it still exists and is not affected by Trisagion's damage reduction. Still grants homing effect and shot speed down which can be very beneficial.
+* {{tf|Guppy}}: As it hits multiple times, it spawns multiple flies per tear making it very strong.
+* {{i|Haemolacria|nr}}: Both Trisagion and Haemolacria fire at the same time; Isaac's tears do not keep the spectral attribute despite the sprite being changed. The tears keeps their piercing effect.
+** {{dlc|r}} Haemolacria becomes one big Trisagion beam that splits into more beams when it reaches its max range.
+* {{i|Hemoptysis}}: Enemies hit by the sneeze will gain a curse that increases the damage the blasts deal to 0.66x and +3 flat damage (instead of just x0.33). Enemies who die to the blasts under the curse will damage and spread the curse to nearby enemies. Since the flat damage ignores the multiplier, this is a huge increase to Isaac's damage.
+** Hemoptysis + {{i|Soy Milk}}/{{i|Almond Milk}}/{{dlc|r}}{{i|20/20}}: The flat damage increase ignores the multiplier reductions, which results in a massive increase in damage.
+* [[Homing tears]]: Tears slow down and stay on top of the enemy, doing continuous damage.
+* {{i|Jacob's Ladder|r}}: Small electric arcs generate from the blast every tick.
+* {{i|The Ludovico Technique}}: The beam becomes controllable, still dealing reduced damage but at a very high rate.
+* {{i|Mucormycosis}}: The spore effect can stack multiple times on the same enemy.
+* {{i|My Reflection}}: In addition to the usual effect, lengthens the Trisagion blasts into short flexible beams for a much larger damage-dealing area.
+* {{i|Mysterious Liquid}}: Causes a large trail of creep. The effect stacks, which causes heavy damage (even to {{e|Hush}}).
+* {{I|Ocular Rift}}: Creates multiple rifts as the projectile pierces enemies.
+* {{i|Pop!|r}}: Every damage tick will shoot out a Pop! tear. Trisagion shots will also hover in the air longer than normal.
+* {{dlc|nr}} {{i|Proptosis}}: Base damage is increased by the expected amount and beam damage is boosted to about 65%. Blasts lose no power as they travel further, though the tips of the blasts deal very slightly less damage.
+** {{dlc|r}} Blasts now deal 2x Isaac's damage instead of 0.33x. Damage only slightly decreases in the front of the blast.
+* {{I|Spirit Sword}}: The sword will shoot Trisagion beams instead of energy beams, with the Trisagion beams having increased damage.
+
+== Interactions ==
+Overrides Trisagion:
+* {{C|Azazel}}
+* {{i|Brimstone}}
+* {{i|C Section}}
+* {{i|Dr. Fetus}}
+* {{i|Epic Fetus}}
+* {{C|The Forgotten}}
+* {{i|Mom's Knife}}
+* {{C|Tainted Azazel}}
+* {{C|Tainted Forgotten}}
+* {{i|Tech X}}
+* {{i|Technology}}
+
+Overridden by Trisagion:
+* {{i|Dead Eye}}
+* {{Dlc|nr}}{{i|Euthanasia}}
+* {{Dlc|nr}}{{i|Explosivo}}
+* {{i|Eye of Belial}}
+* {{Dlc|nr}}{{i|Holy Light}}
+* {{Dlc|nr}}{{t|Nose Goblin}}
+* {{Dlc|nr}}{{i|Parasitoid}}
+* {{Dlc|nr}}{{I|Sinus Infection}}
+
+Other interactions:
+* {{i|Bob's Rotten Head|anr}}: '''Not recommended''' as it explodes multiple times before reaching its target, dealing explosive damage and knockback to Isaac.
+** {{dlc|r}}Shoots a white blast of light instead of the head that pierces through enemies, and causing explosions when it contacts an enemy (if not killing it at the first tick), an obstacle, or when it runs out of range. One tick of the beam deals 33% of Bob's Rotten Head's damage to enemies, but the resulting explosion every tick deals full damage.
+* {{i|Compound Fracture}}: Split blasts are not generated on hitting enemies, only on obstacles and walls.
+* {{I|Cricket's Body|nr}}: Split blasts are not generated on hitting enemies, only on obstacles, walls, and the floor.
+* {{i|Fire Mind}}: Tears still ignite enemies, but no longer have a chance to explode.
+* {{dlc|nr}}{{i|Flat Stone}}: Blasts continually disappear and reappear as they "bounce". The bounces deal 25% splash damage based on Isaac's base [[damage]], but the blasts cannot do their damage while they're disappearing, leading to an overall reduced efficiency.
+** {{dlc|r}} Blasts no longer disappear.
+* {{i|Glass Cannon}} / {{dlc|r}}{{i|Isaac's Tears}} / {{i|Tammy's Head}}: Trisagion does not gain additional damage.
+* {{i|Ipecac|nr}}: Beams will now travel through obstacles and maintain their piercing effect dealing 33% of regular damage to enemies they come in contact with, but won't explode on hit. The Ipecac explosion will happen once the beam runs out of range or hits a wall and will deal damage equal to Isaac's damage.
+** {{Dlc|r}} Keeps Ipecac's stats and shoots an exploding Trisagion beam. The beam explodes while in contact with an obstacle or an enemy that it does not kill on the first tick, resulting in an excellent synergy with {{I|Pyromaniac}} or {{I|Host Hat}}. One tick of the beam deals 33% of Ipecac's damage to enemies, but the resulting explosion every tick deals full damage.
+*** Warning: In the fight with {{e|The Beast}}, Trisagion will lose its straight shot path and go at an extreme Ipecac arc instead, which is almost guaranteed to hit any even somewhat nearby rock spire and leading to self damage, making the fight significantly more difficult.
+* {{i|Jacob's Ladder|nr}}: Electric arcs are not generated on hitting enemies, only on obstacles and walls.
+* {{i|Lachryphagy|nr}}: The blasts will slow down and float like Lachryphagy tears and eventually burst, but can not consume each other.
+** {{Dlc|r}} Blasts have greatly reduced range, but constantly generates Lachryphagy tears, with one shot alone being capable of bursting a tear.
+* {{i|A Lump of Coal}}: Nearly no effect; increases damage by around 5% when the hit is dealt by the tip of the blast. Makes the blasts absorb light, making it difficult to see anything while {{Cu|Darkness}} is present.
+** '''A Lump of Coal''' + {{I|My Reflection}}: As the beam is longer, the amount of extra damage at the tip can be up to around 50%.
+* {{i|Multidimensional Baby}}: The baby cannot duplicate Trisagion blasts.
+* {{I|The Parasite}}: Split blasts are not generated on hitting enemies, only on obstacles and walls.
+* {{i|Playdough Cookie}}: Rather than applying the effect to each individual tear, all beams will share the same color and change simultaneously every tick.
+* {{i|Pop!|nr}}: The blasts will slow down and float like Pop! tears, but will not bounce off each other.
+* {{I|Sharp Key}}: Thrown keys become Trisagion blasts and no longer cause enemies to drop chest contents on kill.
+* {{i|Technology Zero}}: Unless Isaac has shooting familiars, Technology Zero will not function. Familiars' tears will be connected to the blasts with electricity, however.
+
+== In-game Footage ==
+{{#ev:youtube|x1SCY13Q0TY}}
+
+== Trivia ==
+* Trisagion is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=894879673 this Steam Workshop item] by x Wyvern x and TRPG, originally known as Lightshot.
+* The name is a reference to one of the oldest Christian hymns.
+* The design of Trisagion appears to be that of [[Wikipedia:Borromean rings|Borromean rings]], a Christian symbol of the Trinity.
+
+== Gallery ==
+<gallery>
+File:Collectible Trisagion mod icon.png|Trisagion's appearance in the original [http://steamcommunity.com/sharedfiles/filedetails/?id=894879673 Steam Workshop mod].
+</gallery>
+
+== Bugs ==
+{{Bug|dlc=r|Trisagion makes {{a|Lil Spewer}} achievement impossible to obtain via a suicide with {{i|Bob's Rotten Head}} or {{i|Ipecac}}.}}
+
+{{nav|booster pack}}

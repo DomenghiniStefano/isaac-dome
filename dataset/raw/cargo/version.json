@@ -1,0 +1,658 @@
+[
+  {
+    "_pageName": "V0.9",
+    "date": "2014-10-29",
+    "date__precision": "1",
+    "dlc": "31",
+    "name": "",
+    "number": "v0.9"
+  },
+  {
+    "_pageName": "V1.0",
+    "date": "2014-10-31",
+    "date__precision": "1",
+    "dlc": "31",
+    "name": "",
+    "number": "v1.0"
+  },
+  {
+    "_pageName": "V1.01",
+    "date": "2014-11-07",
+    "date__precision": "1",
+    "dlc": "31",
+    "name": "",
+    "number": "v1.01"
+  },
+  {
+    "_pageName": "V1.02",
+    "date": "2014-11-11",
+    "date__precision": "1",
+    "dlc": "31",
+    "name": "",
+    "number": "v1.02"
+  },
+  {
+    "_pageName": "V1.031",
+    "date": "2014-12-10",
+    "date__precision": "1",
+    "dlc": "31",
+    "name": "",
+    "number": "v1.031"
+  },
+  {
+    "_pageName": "V1.032",
+    "date": "2014-12-11",
+    "date__precision": "1",
+    "dlc": "31",
+    "name": "",
+    "number": "v1.032"
+  },
+  {
+    "_pageName": "V1.04",
+    "date": "2014-12-24",
+    "date__precision": "1",
+    "dlc": "31",
+    "name": "",
+    "number": "v1.04"
+  },
+  {
+    "_pageName": "V1.041",
+    "date": "2014-12-29",
+    "date__precision": "1",
+    "dlc": "31",
+    "name": "",
+    "number": "v1.041"
+  },
+  {
+    "_pageName": "V1.05",
+    "date": "2015-02-06",
+    "date__precision": "1",
+    "dlc": "31",
+    "name": "",
+    "number": "v1.05"
+  },
+  {
+    "_pageName": "V1.05 Hotfix",
+    "date": "2015-02-11",
+    "date__precision": "1",
+    "dlc": "31",
+    "name": "",
+    "number": "v1.05 Hotfix"
+  },
+  {
+    "_pageName": "V1.06",
+    "date": "2015-10-30",
+    "date__precision": "1",
+    "dlc": "30",
+    "name": "The Binding of Isaac: Afterbirth",
+    "number": "v1.06"
+  },
+  {
+    "_pageName": "V1.06 Hotfix",
+    "date": "2015-10-31",
+    "date__precision": "1",
+    "dlc": "30",
+    "name": "",
+    "number": "v1.06 Hotfix"
+  },
+  {
+    "_pageName": "V1.06.0051",
+    "date": "2015-11-04",
+    "date__precision": "1",
+    "dlc": "30",
+    "name": "",
+    "number": "v1.06.0051"
+  },
+  {
+    "_pageName": "V1.06.0052",
+    "date": "2015-11-06",
+    "date__precision": "1",
+    "dlc": "30",
+    "name": "",
+    "number": "v1.06.0052"
+  },
+  {
+    "_pageName": "V1.06.0059",
+    "date": "2015-11-13",
+    "date__precision": "1",
+    "dlc": "30",
+    "name": "",
+    "number": "v1.06.0059"
+  },
+  {
+    "_pageName": "V1.06.0060",
+    "date": "2015-11-14",
+    "date__precision": "1",
+    "dlc": "30",
+    "name": "",
+    "number": "v1.06.0060"
+  },
+  {
+    "_pageName": "V1.06.0067",
+    "date": "2015-11-19",
+    "date__precision": "1",
+    "dlc": "30",
+    "name": "",
+    "number": "v1.06.0067"
+  },
+  {
+    "_pageName": "V1.06.0076",
+    "date": "2015-12-06",
+    "date__precision": "1",
+    "dlc": "30",
+    "name": "",
+    "number": "v1.06.0076"
+  },
+  {
+    "_pageName": "V1.06.0109",
+    "date": "2016-01-21",
+    "date__precision": "1",
+    "dlc": "30",
+    "name": "",
+    "number": "v1.06.0109"
+  },
+  {
+    "_pageName": "V1.06.0180",
+    "date": "2017-01-03",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "The Binding of Isaac: Afterbirth +",
+    "number": "v1.06.0180"
+  },
+  {
+    "_pageName": "V1.06.0181",
+    "date": "2017-01-04",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.0181"
+  },
+  {
+    "_pageName": "V1.06.0182",
+    "date": "2017-01-06",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.0182"
+  },
+  {
+    "_pageName": "V1.06.0183",
+    "date": "2017-01-07",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.0183"
+  },
+  {
+    "_pageName": "V1.06.0185",
+    "date": "2017-01-10",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.0185"
+  },
+  {
+    "_pageName": "V1.06.0187",
+    "date": "2017-01-12",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.0187"
+  },
+  {
+    "_pageName": "V1.06.0188",
+    "date": "2017-01-13",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.0188"
+  },
+  {
+    "_pageName": "V1.06.0190",
+    "date": "2017-01-17",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.0190"
+  },
+  {
+    "_pageName": "V1.06.0192",
+    "date": "2017-01-20",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.0192"
+  },
+  {
+    "_pageName": "V1.06.0192 (Re-release)",
+    "date": "2017-01-21",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.0192"
+  },
+  {
+    "_pageName": "V1.06.0193",
+    "date": "2017-02-06",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.0193"
+  },
+  {
+    "_pageName": "V1.06.0211",
+    "date": "2017-02-24",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.0211"
+  },
+  {
+    "_pageName": "V1.06.J103",
+    "date": "2017-07-17",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.J103"
+  },
+  {
+    "_pageName": "V1.06.J104",
+    "date": "2017-07-18",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.J104"
+  },
+  {
+    "_pageName": "V1.06.J113",
+    "date": "2017-10-10",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "Booster Pack #4",
+    "number": "v1.06.J113"
+  },
+  {
+    "_pageName": "V1.06.J114",
+    "date": "2017-10-10",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.J114"
+  },
+  {
+    "_pageName": "V1.06.J119",
+    "date": "2017-10-23",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.J119"
+  },
+  {
+    "_pageName": "V1.06.J127",
+    "date": "2017-12-14",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.J127"
+  },
+  {
+    "_pageName": "V1.06.J149",
+    "date": "2018-04-30",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "Booster Pack #5",
+    "number": "v1.06.J149"
+  },
+  {
+    "_pageName": "V1.06.J150",
+    "date": "2018-04-30",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.J150"
+  },
+  {
+    "_pageName": "V1.06.J168",
+    "date": "2018-05-11",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.J168"
+  },
+  {
+    "_pageName": "V1.06.J34",
+    "date": "2017-03-23",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "Booster Pack #1",
+    "number": "v1.06.J34"
+  },
+  {
+    "_pageName": "V1.06.J39",
+    "date": "2017-03-24",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.J39"
+  },
+  {
+    "_pageName": "V1.06.J75",
+    "date": "2017-05-12",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "Booster Pack #2",
+    "number": "v1.06.J75"
+  },
+  {
+    "_pageName": "V1.06.J787",
+    "date": "2021-03-31",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "The Binding of Isaac: Repentance",
+    "number": "v1.06.J787"
+  },
+  {
+    "_pageName": "V1.06.J791",
+    "date": "2021-04-03",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.06.J791"
+  },
+  {
+    "_pageName": "V1.06.J796",
+    "date": "2021-04-08",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.06.J796"
+  },
+  {
+    "_pageName": "V1.06.J813",
+    "date": "2021-04-24",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.06.J813"
+  },
+  {
+    "_pageName": "V1.06.J818",
+    "date": "2021-05-14",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.06.J818"
+  },
+  {
+    "_pageName": "V1.06.J820",
+    "date": "2021-05-21",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.06.J820"
+  },
+  {
+    "_pageName": "V1.06.J85",
+    "date": "2017-05-21",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "",
+    "number": "v1.06.J85"
+  },
+  {
+    "_pageName": "V1.06.J99",
+    "date": "2017-06-30",
+    "date__precision": "1",
+    "dlc": "28",
+    "name": "Booster Pack #3",
+    "number": "v1.06.J99"
+  },
+  {
+    "_pageName": "V1.7.5",
+    "date": "2021-11-10",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.7.5"
+  },
+  {
+    "_pageName": "V1.7.6",
+    "date": "2021-11-16",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.7.6"
+  },
+  {
+    "_pageName": "V1.7.7",
+    "date": "2021-12-03",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.7.7"
+  },
+  {
+    "_pageName": "V1.7.7a",
+    "date": "2021-12-06",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.7.7a"
+  },
+  {
+    "_pageName": "V1.7.8",
+    "date": "2022-03-21",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.7.8"
+  },
+  {
+    "_pageName": "V1.7.8a",
+    "date": "2022-03-25",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.7.8a"
+  },
+  {
+    "_pageName": "V1.7.9",
+    "date": "2022-11-04",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.7.9"
+  },
+  {
+    "_pageName": "V1.7.9a",
+    "date": "2022-11-11",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.7.9a"
+  },
+  {
+    "_pageName": "V1.7.9b",
+    "date": "2022-12-08",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.7.9b"
+  },
+  {
+    "_pageName": "V1.9.1",
+    "date": "2023-12-01",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.9.1"
+  },
+  {
+    "_pageName": "V1.9.2",
+    "date": "2023-12-07",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.9.2"
+  },
+  {
+    "_pageName": "V1.9.3",
+    "date": "2023-12-08",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.9.3"
+  },
+  {
+    "_pageName": "V1.9.4",
+    "date": "2023-12-14",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.9.4"
+  },
+  {
+    "_pageName": "V1.9.5",
+    "date": "2024-01-02",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.9.5"
+  },
+  {
+    "_pageName": "V1.9.6",
+    "date": "2024-01-06",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.9.6"
+  },
+  {
+    "_pageName": "V1.9.7",
+    "date": "2024-01-08",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.9.7"
+  },
+  {
+    "_pageName": "V1.9.7.1",
+    "date": "2024-02-01",
+    "date__precision": "1",
+    "dlc": "24",
+    "name": "",
+    "number": "v1.9.7.1"
+  },
+  {
+    "_pageName": "V1.9.7.10",
+    "date": "2025-02-14",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.10"
+  },
+  {
+    "_pageName": "V1.9.7.11",
+    "date": "2025-05-01",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.11"
+  },
+  {
+    "_pageName": "V1.9.7.12",
+    "date": "2025-05-03",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.12"
+  },
+  {
+    "_pageName": "V1.9.7.13",
+    "date": "2025-09-10",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.13"
+  },
+  {
+    "_pageName": "V1.9.7.14",
+    "date": "2025-09-13",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.14"
+  },
+  {
+    "_pageName": "V1.9.7.15",
+    "date": "2025-09-24",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.15"
+  },
+  {
+    "_pageName": "V1.9.7.16",
+    "date": "2026-04-11",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.16"
+  },
+  {
+    "_pageName": "V1.9.7.17",
+    "date": "2026-04-20",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.17"
+  },
+  {
+    "_pageName": "V1.9.7.4",
+    "date": "2024-11-18",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "The Binding of Isaac: Repentance+",
+    "number": "v1.9.7.4"
+  },
+  {
+    "_pageName": "V1.9.7.5",
+    "date": "2024-11-19",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.5"
+  },
+  {
+    "_pageName": "V1.9.7.6",
+    "date": "2024-11-22",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.6"
+  },
+  {
+    "_pageName": "V1.9.7.7",
+    "date": "2024-12-05",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.7"
+  },
+  {
+    "_pageName": "V1.9.7.8",
+    "date": "2024-12-16",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.8"
+  },
+  {
+    "_pageName": "V1.9.7.9",
+    "date": "2025-02-12",
+    "date__precision": "1",
+    "dlc": "16",
+    "name": "",
+    "number": "v1.9.7.9"
+  }
+]

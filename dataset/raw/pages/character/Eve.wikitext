@@ -1,0 +1,65 @@
+{{header characters}}
+{{infobox character
+ | id           = 5
+ | health       = {{hearts|red=2}}
+ | damage       = 3.5 (*0.75)<br>(*1.00 at a Red Heart)
+ | speed        = 1.23
+ | collectibles = {{i|Whore of Babylon}}<br>{{i|Dead Bird}}<br>{{unlockable}} {{dlc|a}} {{i|Razor Blade}}
+ | unlocked by  = Eve
+ | image name   = * {{dlc|nr|Rebirth}}
+}}
+'''Eve''' is a [[character]] unlocked by beating two floors in a row without collecting any heart pickups. She starts with two [[Red Heart container]]s, {{i|Whore of Babylon}}, and {{i|Dead Bird}}.
+* {{dlc+|a}} Eve will also start with {{i|Razor Blade}} after 439 [[coin]]s have been donated to the {{M|Greed Donation Machine}} {{dlc|ana+}} and {{E|Satan}} has been defeated as Eve.{{dlc-}}
+
+== Notes ==
+* Uniquely, Eve's {{i|Whore of Babylon}} and {{i|Dead Bird}} effects activate upon having one remaining {{e|Red Heart}}, instead of half a Red Heart. Eve's 0.75x damage multiplier will also change to 1.00x while at one Red Heart.
+** {{dlc|r+}} Dead Bird will remain active between rooms at a total HP of one heart or less, no matter the type of hearts remaining.
+* Eve works well while low on health; using health towards sacrifices such as {{M|Devil Beggar}}s and {{M|Blood Donation Machine}}s are good ways to activate Whore of Babylon.
+* {{R|Curse Room}}s are useful rooms to find early. Without any health upgrades, a single one will lower Eve's health into her Whore of Babylon state. They can also potentially grant {{e|Soul Heart}}s or {{e|Black Heart}}s to protect Eve after transforming.
+* {{dlc+|a}} Eve's {{i|Razor Blade}} is greatly helpful once unlocked, making it easy to activate her {{I|Whore of Babylon}} effect while also granting the damage-up of the Razor Blade, and without lowering {{R|Devil Room}} deal chance.{{dlc-}}
+* Eve has a 16.25% chance instead of the usual 10% for a {{e|Soul Heart}} to replace a Heart drop.
+* When unlocking Eve, gaining Red Heart containers or using {{I|Yum Heart}} does not count as picking up heart pickups. However, the use of {{I|Pyromaniac}} does count.
+
+== Item Interactions ==
+* {{i|Birthright}}: {{i|Whore of Babylon}} is active regardless of health and {{i|Dead Bird}} is active without taking damage. The effect will not occur if the corresponding item is removed or rerolled from Eve's inventory.
+
+=== Good Items ===
+* Items that take Red Heart containers away typically do so as a cost to counterbalance its potent benefits; for Eve, however, this supposed cost will likely be beneficial due to Whore of Babylon. Such items include {{i|Dead Cat}}, {{i|Guppy's Paw}}, and {{i|Abaddon}}.
+* Following the same logic, items that make deals with the Devil more likely will allow Eve to trade her Red Heart containers away more reliably, making it safer to gain health for the sole purpose of spending it in a Devil Room.
+* As Eve will prefer having little to no Red Hearts, she will need alternative ways to stay alive. As such, items that are conducive to spawning Soul Hearts or Black Hearts will be instrumental for Eve. Such items include {{i|Dark Bum}}, {{i|Book of Revelations}}, {{i|Satanic Bible}}, {{i|Mitre}}, and many more.
+* {{dlc|anr}} {{i|The Polaroid}} works very well with the {{i|Razor Blade}}, when Eve is at half-a-Red-Heart or less. During the period of invincibility after taking damage, the player can spam the Razor Blade quite a few times and vastly increase Eve's damage with no penalty.
+* Items that activate with low health such as {{i|Dark Prince's Crown}} work well with Eve.
+
+=== Bad Items ===
+* Any items that give Eve Red [[Heart container]]s are potentially bad since it could deactivate the Whore of Babylon effect. However, because Red Heart containers are very useful in deals with the Devil, it could also benefit Eve greatly to hold on to the containers temporarily. Thus, an understanding of Devil Room spawning occurrence and chance is essential in deciding whether or not to take such items.
+** {{dlc|a}} However, if the player has unlocked Eve’s starting {{i|Razor Blade}}, then it is always beneficial to take HP ups, so long as the player remembers to use it in rooms with enemies in them until Eve only has one [[Red Heart container]].
+* Items that heal Red Heart containers (such as {{i|Placenta}}, {{i|Charm of the Vampire}}, and the {{t|Tick}}) can (and oftentimes inevitably will) cancel the effect of Whore of Babylon, if Eve has more than one Red Heart container.
+* Items that attract pick-ups (such as {{I|Magneto}} or {{T|Super Magnet}}) can force Eve into taking Red Hearts, which will cancel the Whore of Babylon effect.
+* {{t|Child's Heart}} causes more Red Hearts to appear, something which is generally undesirable in an Eve run without {{i|Dark Bum}}, and can make more useful pickups such as bombs or keys less likely to appear.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Eve's Mascara, Crow Baby, The Razor, Eve's Bird Foot, Black Lipstick, Sacrificial Dagger, Black Feather, Crow Heart, Athame, Lil' Baby, Dull Razor, Bird Cage, Cracked Orb, The Curdled, Whore Baby }}
+
+== Unlockable Starting Items ==
+* {{achievement unlock|Eve now holds Razor Blade}} - Start with {{i|Razor Blade}}
+
+== Gallery ==
+<gallery>
+File:Collectible Whore of Babylon Eve appearance Rebirth.png| {{dlc|nr}} Eve's appearance under the effect of Whore of Babylon.
+File:Collectible Whore of Babylon Eve appearance.png| {{dlc|r}} Eve's appearance under the effect of Whore of Babylon.
+File:Transition Eve.png|Eve's transition screen portrait.
+File:Start_Eve.png|The spawn floor when playing Eve.
+File:Eve Menu Icon (Locked).png|Eve's locked character icon.
+</gallery>
+
+== Trivia ==
+* Eve appeared in the original ''The Binding of Isaac'', where she was unlocked by making two or more Devil Deals in one run.
+* According to the Bible, Eve was the first woman on earth, born of Adam's rib in the Book of Genesis.
+* In the original game, Eve had a unique effect in that she would leave a bloodstain when entering a room at half a heart remaining instead of a urine stain. This was thought to be a reference to menstruation, which was a curse upon Eve given by God. This feature was initially (intentionally or unintentionally) left out in Rebirth, but was later re-added in {{dlc|a+}} [[Booster Pack#5]].
+* Eve's hairstyle, as well as her unlocks related to self-damage ([[Razor Blade]] and [[Dull Razor]]) and cosmetics ([[Eve's Mascara]] and [[Black Lipstick]]) may reference Emo / Goth culture.
+** While a stretch, this could reference the Bible as people in these communities often feel rebellious toward their parents in a manner somewhat like Biblical Eve rebelling against the word of God.
+* Eve was confirmed to be [https://twitter.com/edmundmcmillen/status/1091127823824183296 Edmund McMillen's favorite character from ''The Binding of Isaac''] in a Twitter AMA.
+* Eve's locked icon shows her bound in chains.
+** She shares this trait with {{C|Magdalene}}, {{C|Cain}}, {{C|Samson}}, {{C|Lazarus}}, {{C|Bethany|r}}, and {{C|Jacob and Esau|r}}.
+
+{{nav|character|eve unlock|fr=Ève}}

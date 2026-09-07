@@ -1,0 +1,28 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 132
+ | quote       = Mystery medicine
+ | description = Grants a chance to gain a random [[syringe]] effect for the current room.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* When Isaac enters a new room, has a 25% chance to give the effect of any [[syringe]] for the current room.
+
+== Notes ==
+* If {{i|Experimental Treatment}} activates, it will give 3 random stat increases and decreases, as opposed to 4 stat increases and 2 decreases. Health cannot be one of the stats it selects.
+* The chance for Broken Syringe to activate is unaffected by [[luck]].
+* Syringes that have not been unlocked can still be granted as one of the effects.
+
+== Synergies ==
+* {{a|Golden Trinket}} / {{i|Mom's Box}} / {{t|Broken Syringe}}: Each copy increases the chance for activation to 50%, further copies to 100%.
+
+== Trivia ==
+* [[anti:Broken Syringe|Broken Syringe]] originates from the ''Antibirth'' mod, and by extension, from the ''Community Remix'' mod for the flash version.
+** In ''Community Remix'', it was named ''The Broken Syringe''.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+
+== References ==
+<references />
+
+{{nav|broken|fr=Seringue Cassée}}

@@ -1,0 +1,64 @@
+{{infobox boss
+ | id          = 97 
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{floor|Necropolis}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Degraded Boss</u><br>{{floor|Dark Room}}
+ | base hp     = 350
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Infamy}} (1% chance)
+}}
+
+'''Mask of Infamy''' is a [[boss]] that can appear in {{s|Necropolis}}.
+
+The Heart of Infamy has 200 HP and the Mask of Infamy the remaining 150.
+
+== Behavior ==
+=== Phase 1 ===
+In the first phase, the two constituent parts act exactly like a regular-sized {{e|Mask + Heart}}; the Heart of Infamy tries to move away from Isaac while the Mask of Infamy charges at him if he crosses her path in any cardinal direction.
+* During this phase, the mask cannot be hurt or otherwise affected by virtually any item. When the heart takes damage of any kind, the mask attempts to chase Isaac with increased speed, interrupting her current movement.
+* The heart shoots 8 bullets in all directions if Isaac gets too close to it.
+
+=== Phase 2 ===
+* Once the heart is dead, Mask of Infamy begins the second phase. A crack appears in the back of the Mask and can be shot at to deal damage to her. Its behavior remains mostly identical but with increased speed.
+** When damaged, she may interrupt her current movement and redirect at Isaac aggressively, but less often than when the heart was being attacked in the first phase.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18}}: 15% larger. The heart shoots 4 homing shots in a cross formation and has 25% more HP (250). The mask behaves like the normal version during both phases.
+
+== Gallery ==
+<gallery>
+File:Boss Mask of Infamy Mask 2 ingame.png|Mask of Infamy in her second phase.
+File:Boss Mask of Infamy Mask back ingame.png|Mask of Infamy's backside shown in her second phase.
+File:Boss Mask of Infamy black ingame.png|Black Champion Mask of Infamy.
+File:Boss Mask of Infamy Mask 2 black ingame.png|Black Champion Mask of Infamy in her second phase.
+File:Boss Mask of Infamy Mask back black ingame.png|Black Champion Mask of Infamy's backside shown in her second phase.
+File:Boss Delirium Mask of Infamy ingame.png|Mask of Infamy as one of {{e|Delirium}}'s forms.
+File:Mask of Infamy Concept.jpg|Early concept art of what is most likely the Heart of Infamy and the Mask of Infamy.
+File:Boss Mask of Infamy Heart Unused ingame.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite for the Heart of Infamy found among the Room Editor files.
+</gallery>
+
+== Notes ==
+* Even though they appear to float, both the mask and the heart can be damaged by [[Creep]] and [[spikes]].
+
+== Trivia ==
+* Mask of Infamy was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* Mask of Infamy is a tribute to Carmilla from ''Castlevania II''.
+* She is the boss version of the Mask + Hearts.
+* Mask of Infamy is confirmed to be a female.
+* It is confirmed that Isaac is peering out of the crack in the back of the mask. Isaac can also be spotted during the death animation of {{e|The Gate}}. <ref>https://twitter.com/edmundmcmillen/status/1070748619228082177?s=19</ref>
+** {{dlc|nr}} Additionally, both bosses are fought in {{s|Necropolis}}.
+* The item {{i|Infamy}} is a reference to this boss.
+* In the original game, Mask of Infamy did not have a health bar. This, coupled with the difficulty of harming her without specific upgrades, made her one of the more frustrating bosses.
+* The [[Bestiary]] states that the heart is called the Heart of Infamy.
+* When the Mask is killed, during the death animation, she flattens and instantly disappears; she doesn't explode into blood.
+* Rarely in [[Greed Mode]], The Heart can be found without the Mask.
+* The mask's design may be reminiscent of the masks of tragedy from the Greek and Roman periods.
+** This could be the reason why the boss is only encountered in Necropolis, i.e a cluster of tombs typical of the classical era.
+* {{e|The Visage}} appears to be a fiery version of her.
+
+== References ==
+{{Reflist}}
+
+{{nav|boss|fr=Le Masque d'Infamie}}
+
+[[Category:Chapter 3 bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Debut bosses in Rebirth]]

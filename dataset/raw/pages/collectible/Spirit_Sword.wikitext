@@ -1,0 +1,123 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 579
+ | quote       = Divine blade
+ | description = Instead of tears, Isaac swings a sword. Charging does a spin attack and fires a projectile, and a projectile is sometimes fired with normal swings if Isaac has no empty {{E|Red Heart|text=Red Heart Containers}}.
+ | quality     = 3
+ | tags        = summonable offensive
+ | devil price = 2
+ | unlocked by = Spirit Sword
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Replaces Isaac's tears with a sword he can swing in front of him.
+** The swing does 3x Isaac's [[damage]] +3.5 and deals knockback to both enemies and Isaac if it hits.
+** The sword can be swung as rapidly as the fire button can be tapped.
+** The sword swing can collect [[pickups]] and open chests.
+* If Isaac's total health is equal to or greater than his number of {{E|Red Heart|text=Red Heart Containers}} (same rule as regular {{R|Challenge Room}}s), the sword fires a projectile when swung.
+** The projectile deals damage equal to Isaac's damage +2, and has a cooldown equal to 2x Isaac's normal [[Tears|tear rate]].
+* Holding an attack button charges a spin attack, ready when the sword flashes, which damages all enemies around Isaac. It also deflects enemy projectiles, which can damage enemies who get hit, and launches a projectile with higher [[Shot Speed|shot speed]] regardless of Isaac's current health.
+** The circular swing deals 8x Isaac's damage +10, and the projectile created from it deals 4x Isaac's damage +4. It can also collect pickups and open chests.
+** The charge time is based on Isaac's tears stat, at ~4x Isaac's normal tear rate.
+** While charging, the sword will damage the first enemy that contacts it. This will cancel the spin attack.
+** Swinging the sword normally while performing the circular swing cancels it.
+
+== Notes ==
+* Unlike most charge attacks, the direction of the attack can't be changed by pressing and holding a different attack button then releasing the old one. Instead, it will stay pointing the same direction until all attack buttons are released, either doing nothing or using the spin attack, or the sword touches and damages an enemy, dealing sword slash damage.
+* Spirit Sword can be used to open {{E|Spiked Chest}}s and {{e|Mimic Chest}}s without taking damage.
+* Range upgrades move the hitbox of the sword forwards, including the spin attack. Enough range upgrades can leave a large blind spot directly in front of the sword.
+* Only the projectile and spin attack are affected by tear rate, not the normal sword swing, meaning that items that increase damage but decrease tear rate, such as {{i|Polyphemus}} and {{i|Eve's Mascara}}, are much more effective when only using the swing. Additionally, items that do the inverse, such as {{i|Soy Milk}} and {{i|Almond Milk}}; are not as effective when only using the swing.
+* Spirit Sword will deflect {{E|Mother}}'s Fistula attack and will send it right back at her, entering a short sequence that allows to deal bonus damage, if executed correctly; see this [[Mother#Phase 1|page]] for more details.
+* Spirit Sword is overridden by the [[Blindfolded]] effect, as seen while playing as {{c|Lilith}} or in challenges like {{chal|Cat Got Your Tongue}}.
+* Having 30 or more tear rate performs the swing attack automatically.
+
+== Synergies ==
+* {{i|20/20}}/{{C|Keeper}}/{{i|The Inner Eye}}/{{i|Mutant Spider}}/{{tf|Conjoined}}: Isaac spins one additional time for each extra tear, firing extra projectiles on each spin. No effect on the normal swing.
+* {{I|Cain's Other Eye}}: The eye holds its own sword that slashes in random directions whenever Isaac attacks.
+* {{i|C Section}}: C Section has priority. Fetuses hold small swords and perform the charged spin attack as they travel.
+* {{i|Cricket's Body}}: The fired projectile will burst into multiple swords.
+* {{i|Decap Attack}}: The body holds the sword while the head will only block projectiles.
+* {{I|Euthanasia}}: Each swing of the sword has a chance to do 3x damage and instantly kill a non-boss enemy, causing a tear explosion.
+* {{i|Evil Eye}}: The fired eyes swing a miniature Sword instead of tears.
+* {{i|Eye Sore}}: Random chance to swing extra swords in random directions.
+* {{I|Haemolacria}}: Sword becomes larger. The projectile is now fired in an arc and splits on collision with enemies and obstacles.
+** '''Haemolacria''' + {{I|Brimstone}}: Arcing sword beams burst into Brimstone lasers in random directions.
+* {{I|Holy Light}}: Both the sword swing and the projectile can trigger Holy Light.
+* [[Tears|Homing tears]] (e.g. {{I|Spoon Bender}}): The projectile will be homing.
+* {{I|Isaac's Tears}}: The item fires normal tears but can be charged as fast as the sword can be swung. Doing a spin attack will fully charge Isaac's Tears.
+* {{I|Lachryphagy}}: The fired projectiles will combine and split.
+* {{i|Loki's Horns}}: Random chance upon swinging to have a sword in all 4 cardinal directions. Performing a spin attack when this occurs results in a 4-way spin.
+* {{i|Lost Contact}}: Sword swings reflect projectiles.
+* {{I|Maw Of The Void}}: An additional ring will appear upon fully charging it. Spin is delayed by a bit.
+* {{i|Mom's Eye}}: An additional sword is added to Isaac's back, and can be swung as normal.
+* {{i|Mom's Knife}}: When doing the spin attack, Isaac throws the sword a short distance, which spins as it travels.
+** '''Mom's Knife''' + {{i|Technology}}: A technology laser connects Isaac and the sword while it's being thrown.
+** '''Mom's Knife''' + {{i|Brimstone}}: Launches a barrage of knives from Isaac's mouth after doing the spin attack.
+** '''Mom's Knife''' + {{i|Tech X}}: Full charge launches a sword surrounded by Tech X that swings back to Isaac.
+* {{I|My Reflection}}: The fired projectile will return to Isaac.
+* {{i|Pointy Rib}}/{{i|Finger!}}: When doing a spin attack, the familiar will spin with the sword.
+* {{i|Polyphemus}}: The sword and fired projectile become gigantic. Charge time is increased, but swing rate remains the same. Swings will also shake the screen.
+* {{I|Proptosis}}: The swing attack deals 9x Isaac's [[damage]] instead of 3x. Fired projectiles behave as expected.
+* {{I|Rubber Cement}}: The fired projectile bounces.
+* {{i|Technology}}: Sword becomes a lightsaber. Surrounds Isaac with a laser on every swing. Enemy projectiles are deflected by both normal and charged attacks.
+* {{i|Technology 2}}: Laser fires when the sword is being swung or charged.
+* {{i|Trisagion}}: The fired projectile is a Trisagion blast.
+* {{i|The Wiz}}: Beams and sword swings are fired straight instead of diagonally. Isaac spins an additional time on a charged attack.
+
+== Interactions ==
+Overridden by Spirit Sword:
+* {{i|Brimstone}}
+* {{i|Cursed Eye}}
+* {{i|Dr. Fetus}}
+* {{i|Epic Fetus}}
+* {{i|Kidney Stone}}
+* {{i|The Ludovico Technique}}
+* {{i|Monstro's Lung}}
+* {{i|Neptunus}}
+* {{i|Tech X}}
+Other interactions:
+* {{i|Anti-Gravity}}: Sword beams are affected normally by Anti-Gravity. Regular sword swipes are unaffected, but spin attacks freeze for a short time before firing.
+* {{i|Blood Clot}}/{{i|Chemical Peel}}: Sword swing has a 50% chance to become red and deal increased damage.
+* {{i|Chocolate Milk}}: Increased knockback when fully charged, no effect on the regular sword swings.
+* {{I|Death's Touch}}: Visual effect overridden by Spirit Sword including the ranged attack.
+* {{i|Explosivo}}: The sword swing has a chance to stick Explosivo shots to enemies it hits. The beam can stick to enemies and explode.
+* {{i|Eye of the Occult}}: The projectile can be controlled.
+* {{i|Fire Mind}}: Sword strikes and beams can [[burn]] enemies, and beams have a chance to explode.
+* {{c|The Forgotten}}: Spirit Sword will only work with The Soul, no changes to The Forgotten.
+* {{i|Gello}}/{{C|Tainted Lilith}}: The sword is held by the fetus.
+* {{I|Godhead}}: The fired projectile receives Godhead effects. No effect on the swing aside from stat changes.
+* {{i|Incubus}}: Incubus tears are replaced with a sword, identical to Isaac.
+* {{I|Ipecac}}: Sword beams are exploding shots that deal Isaac's damage. Does not apply Ipecac's +40 damage modifier to beams or sword swings.
+* {{i|Jacob's Ladder}}: Both the sword shots and sword swings create electricity.
+* {{c|Jacob and Esau}}: Knockback from the sword will separate the brother carrying the sword from the other.
+* {{I|Marked}}/{{I|Tractor Beam}}: Overridden by Spirit Sword. Stat upgrades still apply.
+* {{I|Mysterious Liquid}}: The charged sword attack spawns creep, the projectiles do not.
+* {{I|Parasitoid}}: The sword projectiles can still spawn flies and spiders, but the swings themselves won't / {{dlc|r+}} the swings can now leave slowing creep and spawn flies and spiders.
+* {{I|Playdough Cookie}}: Every sword swing gains a different color and effect based on that color.
+* {{I|Pupula Duplex}}: No effect.
+* {{i|Sinus Infection}}: The sword swing has a chance to stick boogers to enemies it hits. The beam can stick to enemies.
+* {{I|Sulfur}}: Overridden by Spirit Sword. Damage up on second and subsequent uses while in the same room still applies.
+* {{c|Tainted Forgotten}}: No effect.
+* {{I|Tech.5}}: Fires as normal while charging and swinging the sword.
+* {{i|Technology Zero}}: Sword shots are connected with electricity, swings are unaffected.
+* {{i|Terra}}/{{i|Sulfuric Acid}}: Only the sword's beams can destroy rocks.
+
+== In-game Footage ==
+{{#ev:youtube|SUkHNFIWcA0}}
+
+== Trivia ==
+* [[anti:Spirit Sword|Spirit Sword]] is from the ''Antibirth'' mod. It was available from the start.
+* The item's name is a reference to the Sword of the Spirit, one of the many armaments that make up the Armor of God. This is further supported by the fact that it is an Angel Room item.
+* The function of this item mimics the Swords in many ''The Legend of Zelda'' games, particularly those that play top-to-bottom, such as ''A Link to the Past''.
+** The sword's name is likely an homage to the Master Sword, which first appeared in ''A Link to the Past''.
+* The sword becoming a lightsaber when combined with {{I|Technology}} is a reference to ''Star Wars''.
+* This item is used in {{chal|Isaac's Awakening}}.
+* Spirit Sword is the only item in the game that can override {{i|Epic Fetus}}.
+* Although this item is normally only available in the {{r|Angel Room}}, it can be found as one of the Nintendo-themed {{r|Treasure Room}} items in the 6th of December's [[List of curated daily challenges|Daily Run]], which is an homage to the late CEO of Nintendo, Satoru Iwata.
+
+== Bugs ==
+{{Bug|When reaching 30.00 Tear Rate or higher, Spirit Sword will continuously use the spin attack, only stopped by holding down a fire key. This is likely due to the fact that starting at 30.00 Tear Rate, the internal number is "0", and begins to go negative beyond that.}}
+{{Bug|In waterlogged rooms, the reflection of the sword swings in the opposite direction of the actual sword, when it should swing in the same direction.}}
+{{nav|fr=Épée de l'Esprit}}

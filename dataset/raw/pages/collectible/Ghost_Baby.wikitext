@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 163
+ | quote       = Spectral buddy
+ | description = Spawns a [[familiar]] that follows Isaac around and fires [[spectral tears]].
+ | quality     = 1
+ | tags        = summonable baby monstermanual offensive
+ | pool = skull
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Spawns a [[familiar]] that follows Isaac around and fires [[spectral tears]] that deal 3.5 damage each.
+** {{dlc|nr}} Ghost Baby shoots once per second.
+** {{dlc|r}} Ghost Baby shoots 1.36 times a second.
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* This item can rarely drop from destroying [[Rocks#Skulls|skulls]].
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Ghost Baby having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+
+== Synergies ==
+* {{I|Mongo Baby}}: Will copy Ghost Baby’s tears.
+
+== In-game Footage ==
+{{#ev:youtube|CFthGjVVYXg}}
+
+== Trivia ==
+* There was a bug in the original game where picking up Ghost Baby for the first time could grant you the Platinum God achievement, even if you lacked other items on the collection page.
+
+{{nav|conjoined|fr=Bébé Fantôme}}

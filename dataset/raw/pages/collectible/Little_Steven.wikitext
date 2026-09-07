@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | name = Little Steven
+ | id = 100
+ | quote = Psychic friend
+ | description = Spawns a [[familiar]] who follows Isaac around and fires [[homing tears]] {{dlcalt|once per second|r=1.36 times a second}} that each do 3.5 damage.
+ | quality     = 2
+ | tags        = summonable baby monstermanual offensive
+ | pool = Steven
+ | unlocked by = Little Steven
+}} {{disambig msg|the familiar item|the boss|Steven|the stat upgrading item|Steven (Item)}}
+
+{{cit|up}}
+
+== Effect ==
+* Spawns a [[familiar]] who follows Isaac around and fires [[homing tears]] {{dlcalt|once per second|r=1.36 times a second}} that each do 3.5 damage.
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* Little Steven is the more common of the two items that can drop by defeating {{e|Steven}}.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Little Steven having {{dlcalt|5th|r+=7th}} priority.
+
+== Synergies ==
+* {{I|Mongo Baby}}: Will copy Little Steven’s tears.
+
+== In-game Footage ==
+{{#ev:youtube|VS5R9PRRe0c||inline}} {{#ev:youtube|KOErGPLC7V8||inline}}
+
+== Trivia ==
+* Little Steven originated from the 2009 flash game ''[http://www.newgrounds.com/portal/view/511754 Time Fcuk]'', which was created by Edmund McMillen.
+* In the original ''Binding of Isaac'', Little Steven could only be dropped by Steven, 80% of the time.
+
+{{nav|conjoined}}

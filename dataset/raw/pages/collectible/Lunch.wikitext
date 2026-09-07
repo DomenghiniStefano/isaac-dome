@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | name = Lunch
+ | id = 22
+ | quote = HP up
+ | description = Grants one full Red [[Heart container]]. {{dlc|r}} Heals 1 additional {{e|Red Heart}}.
+ | quality     = 1
+ | tags        = nolostbr nocantrip food
+}}
+{{disambig msg|the item|the trinket|Bag Lunch}}
+
+{{cit|p}}
+
+== Effect ==
+* Grants one full Red [[Heart container]].
+* {{Dlc|r}} Heals 1 additional {{e|Red Heart}}.
+
+== Notes ==
+* This item has a 12.6% chance to spawn from paying out a {{m|Beggar}} in addition to being in the [[Beggar (Item Pool)|Beggar item pool]]. Multiple copies can be obtained through this method.
+** Lunch can also be spawned from {{t|Bag Lunch}}.
+
+== Synergies ==
+* {{i|Binge Eater}}: When Isaac picks up Lunch it now grants: a permanent +0.5 [[Tears]] and +2.5 [[Range]], a temporary +3.6 [[Damage]] (which diminishes to 0 in 30 seconds), heals 1 additional red heart, and takes a permanent -0.03 [[Speed]] reduction.
+
+== In-game Footage ==
+{{#ev:youtube|v13VtRLvfFQ||inline}} {{#ev:youtube|LSFtaT0iuW8||inline}}
+
+== Trivia ==
+* In the original Binding Of Isaac, the dog bowl had the name "Max" carved on it. This is a reference to a dog that Edmund McMillen wanted as a child but never got, in which he wanted to name the dog Max.
+* In the first [https://youtu.be/kby0rXT7qYQ post-Repentance Lore Stream], Edmund McMillen states that Lunch is ''probably'' cat food.
+* Lunch’s sprites can be seen as part of {{I|Binge Eater}}.
+
+{{nav|fr=Déjeuner}}

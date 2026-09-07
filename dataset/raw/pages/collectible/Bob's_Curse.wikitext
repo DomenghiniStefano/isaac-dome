@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 140
+ | quote       = +5 poison bombs
+ | description = +5 {{e|Bomb}}s. Grants Isaac's bombs a [[poison]] effect. {{dlc|r}} They also leave a lingering poison cloud, and Isaac becomes immune to poison.
+ | quality     = 1
+ | tags        = bob summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants 5 {{e|Bomb}}s.
+* Grants all of Isaac's bombs a [[poison]] effect.
+* {{dlc|r}} The bombs leave a lingering green poison cloud after exploding.
+* {{dlc+|r}} Gives Isaac immunity to poison effects such as those from destroying [[Mushroom (Obstacle)|Mushrooms]] and {{E|Sick Boom Fly}}.{{dlc-}}
+* {{transformation contribution|Bob}}
+
+== Notes ==
+* This item can drop from killing {{E|Super Sloth}}. {{dlc|nr}} Super Sloth can drop this item even if Isaac has already encountered/possessed it. 
+
+== In-game Footage ==
+{{#ev:youtube|px_UcbjmQlI||inline}} {{#ev:youtube|VkdcIhKyHzw||inline}}
+
+== Trivia ==
+* Despite the item sprite for Bob's Curse having a fuse, the bombs placed lack them.
+* The bombs placed after picking up this item resemble the head of {{E|Pestilence}} or {{E|Sloth}}. Bob is also the confirmed first name of Sloth as revealed by a QnA.
+
+{{nav|bob|bomb modifier|bomb|fr=Malédiction de Bob}}

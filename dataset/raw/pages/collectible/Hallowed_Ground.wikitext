@@ -1,0 +1,66 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 543
+ | quote       = Portable sanctuary
+ | description = Spawns a white poop [[familiar]], which turns into a {{E|White Poop|n}} when Isaac is hurt. White poop has an aura that increases [[Tears|tear fire rate]] and can block enemy shots. {{dlc|r}} The aura also increases damage by 20% and gives [[homing]].
+ | quality     = 1
+ | tags        = poop nolostbr summonable
+ | unlocked by = Hallowed Ground
+}}
+
+{{cit|up|a+5}}
+
+== Effect ==
+* Spawns a white poop [[familiar]] which turns into a {{e|White Poop}} when Isaac is hurt.
+** White Poop has an aura that multiplies both [[fire rate]] and [[tear delay]] by x2.5 and has a 50% chance to ignore damage similarly to {{i|Cone Head}}, except the chance is higher.
+** {{dlc|r}} White Poop has similar durability to {{E|Golden Poop}}. The aura additionally increases [[damage]] by 20% and gives Isaac's tears a [[Tear Effects#Homing Tears|homing]] effect.
+** Hallowed Ground will not activate if the player negates the source of damage through items such as {{i|Holy Mantle}}.
+* The familiar will respawn after Isaac leaves the room.
+* {{Dlc|r}} This item belongs to the {{tf|Oh Crap}} set. Collecting three items from this set will transform Isaac into a walking pile of poop.
+
+== Notes ==
+* Aligning a white poop to drop next to a {{m|Devil Beggar}}, a {{m|Blood Donation Machine}} or a {{m|Confessional}} is a great way to save on health, as the aura will allow for frequent free plays.
+* Damage from {{r|Sacrifice Room}} spikes can be blocked by Hallowed Ground, but no payout is rewarded.
+* White Poop is impervious to enemy shots and charging attacks.
+* White Poop is not immune to explosive damage or stomping attacks.
+* {{e|Chubber}} attacks cannot destroy White Poop, but can still harm Isaac.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Hallowed Ground having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+* {{Dlc|r}} This item does not produce White Poop in {{e|The Beast|n}}'s boss arena.
+
+== Synergies ==
+* {{p|A Card Against Humanity}} / [[Re-Lax|Re-Lax pill]]: The poops created have a 33% chance to become white.
+* {{i|Blood Rights}}/{{i|IV Bag}}/{{i|Kamikaze!}}/{{i|Razor Blade}}: The aura has a chance to block the damage inflicted, but the effects will still occur.
+* {{I|Dirty Mind}}: Destroying the White Poop will spawn friendly white Dips which give off a small version of the aura.
+* {{i|Everything Jar}}: Using the first charge will always spawn a white poop.
+** Barring Everything Jar is only used at its first charge, when used along with items that grant active item charges, white poop can be spawned more than once in the same room, making this item much more powerful. If used with {{I|Habit}}, allows white poop to be spawned indefinitely rather than only on the first hit.
+* {{i|The Poop}}: Using The Poop will always spawn a white poop.
+** When used along with items that grant active item charges, white poop can be spawned more than once in the same room, making this item much more powerful. If used with {{I|Habit}}, allows white poop to be spawned indefinitely rather than only on the first hit.
+* {{I|Rock Bottom}}: Isaac will keep the stat upgrades even after leaving the aura. However, it won't keep the homing effect outside of the aura.
+
+== Interactions ==
+* {{i|BFFS!}}: Increases [[familiar]]'s size but otherwise has no effect.
+* {{i|Box of Friends}}: All poop familiars turn into white poop at the same time, and their affects are accumulative. A new poop familiar appears even if the previous poops have been used up.
+* {{i|D12}}: Does not increase the chance for rerolled obstacles to become {{E|White Poop}}.
+* {{i|Holy Mantle}} / {{c|The Lost}}: Breaking the holy mantle shield does not count as damage taken, so the white poop will not drop.
+* {{I|Immaculate Heart}}: The damage multiplier does not stack with that from a white poop.
+* {{I|Star of Bethlehem}}: The star's aura does not stack with the poop's aura.
+* {{i|Mom's Eye}} / {{i|Loki's Horns}}: '''Not recommended.'''  Backwards/cross shots from these items make it very easy to destroy the white poop by accident.
+* {{t|Meconium}}: Although Meconium cannot replace the poop {{i|Hallowed Ground}} spawns with, {{E|Black Poop}} has a chance to replace {{E|White Poop}}s that would have been created by other items which have synergies with {{i|Hallowed Ground}}.
+
+== In-game Footage ==
+{{#ev:youtube|rK5tgOwF03g}}
+
+== Trivia ==
+* This item is likely a pun on the phrase "holy shit" or "holy crap".
+* "Hallowed Ground" was also the name of the {{s|Downpour|n}} OST back in ''Antibirth''.
+* Hallowed ground is another way of calling The Holy Land.
+** As such, people thought the soil from Jerusalem and Bethlehem to be holy and brought them to sanctify the land by sprinkling it, like the famous cemetery Sedlec Ossuary, which explains why it's unlocked by{{C|The Forgotten}}.
+
+== Gallery ==
+<gallery>
+File:AfterbirthPlus Booster Pack 5 Concepts.jpg|Concept art for Hallowed Ground (labeled as "Holy Ground") on the right side, along with other Booster Pack items and trinkets, by Edmund McMillen.
+</gallery>
+
+{{nav|oh crap|the forgotten unlock|booster pack|poop|hush unlock|fr=Terre Sacrée}}
+[[Category:Damage-preventing items]]
+[[Category:Damage-triggered items]]

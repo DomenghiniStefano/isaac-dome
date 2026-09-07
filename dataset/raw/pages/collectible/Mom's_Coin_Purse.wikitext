@@ -1,0 +1,24 @@
+{{infobox passive collectible
+ | id          = 195
+ | quote       = What's all this...?
+ | description = Spawns 4 random [[pill]]s near Isaac.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = mom offensive nocantrip
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns 4 random [[pill]]s near Isaac.
+* {{transformation contribution|Yes Mother?}}
+
+== Interactions ==
+* {{i|Starter Deck}}: Drops four cards/runes rather than pills.
+
+== In-game Footage ==
+{{#ev:youtube|1pG3dei5FzU}}
+
+== Trivia ==
+* Despite the item's name, it does not grant any {{E|Penny|text=Coins}} on pickup.
+
+{{nav|yes mother|mom|pill|fr=Porte-Monnaie de Maman}}

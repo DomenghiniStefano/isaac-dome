@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 388
+ | quote       = He wants your keys!
+ | description = Spawns a [[familiar]] that follows Isaac and collects {{e|Key}}s for himself, giving random {{E|Chest}}s in return.
+ | quality     = 0
+ | tags        = summonable offensive
+ | unlocked by = Key Bum
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Spawns a familiar that follows Isaac around and collects {{e|Key}}s, dropping random {{E|Chest}}s in return.
+** Spawns almost exclusively {{e|Chest}}s, {{e|Red Chest}}s, and {{e|Locked Chest}}s, with a very slim chance to spawn another type of chest or a {{e|Grab Bag}}.
+* {{transformation contribution|Super Bum}}
+
+== Notes ==
+* Key Bum will not pick up {{e|Golden Key}}s.
+* {{dlc|a+nr}} Key Bum will pick up {{E|Charged Key|n}} without additional benefit.
+** {{dlc|r}} Key Bum will leave a {{E|Lil' Battery}} behind when picking up {{E|Charged Key|n}}.
+* {{dlc|nr}} From a scoring perspective, Keys that Key Bum picks up count towards your Schwag bonus on daily runs.
+* Key Bum does not join the line of familiars that follow behind Isaac.
+
+== Synergies ==
+* {{i|BFFS!}}: Familiar is bigger and drops chests more often.
+* {{T|Flat Penny}}: Chests frequently contain pennies, which have a chance of spawning more keys for Key Bum to pick up, possibly lead to a loop.
+* {{T|Gilded Key}} / {{T|The Left Hand}}: Works as expected.
+* {{I|Guppy's Eye}}: Allows Isaac to choose which Locked Chests are worth opening and which to pass, thus saving keys. Great for min-maxing.
+
+== In-game Footage ==
+{{#ev:youtube|xox1X7a05Pc}}
+
+== Trivia ==
+* This item is the Key Master counterpart of {{I|Bum Friend}} and {{I|Dark Bum}}.
+
+== Bugs ==
+{{bug|If {{p|Credit Card}} is used in a {{r|Shop}} with Keys, Key Bum will not be able to pick up the free keys. This can be fixed if Isaac leaves and re-enters the shop.}}
+{{bug|dlc=a+nr|{{e|Charged Key}}s do not increment Key Bum's key count when picked up.}}
+
+{{nav|super bum|bum|lazarus unlock|ultra greed unlock|fr=Cléchard}}

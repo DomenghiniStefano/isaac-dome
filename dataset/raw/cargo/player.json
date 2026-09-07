@@ -1,0 +1,282 @@
+[
+  {
+    "_pageName": "??? (Character)",
+    "alias": "???",
+    "dlc": "31",
+    "id": "4",
+    "parent": ""
+  },
+  {
+    "_pageName": "Apollyon",
+    "alias": "Apollyon",
+    "dlc": "28",
+    "id": "15",
+    "parent": ""
+  },
+  {
+    "_pageName": "Azazel",
+    "alias": "Azazel",
+    "dlc": "31",
+    "id": "7",
+    "parent": ""
+  },
+  {
+    "_pageName": "Bethany",
+    "alias": "Bethany",
+    "dlc": "24",
+    "id": "18",
+    "parent": ""
+  },
+  {
+    "_pageName": "Cain",
+    "alias": "Cain",
+    "dlc": "31",
+    "id": "2",
+    "parent": ""
+  },
+  {
+    "_pageName": "Eden",
+    "alias": "Eden",
+    "dlc": "31",
+    "id": "9",
+    "parent": ""
+  },
+  {
+    "_pageName": "Eve",
+    "alias": "Eve",
+    "dlc": "31",
+    "id": "5",
+    "parent": ""
+  },
+  {
+    "_pageName": "Isaac",
+    "alias": "Isaac",
+    "dlc": "31",
+    "id": "14",
+    "parent": ""
+  },
+  {
+    "_pageName": "Jacob & Esau",
+    "alias": "Jacob",
+    "dlc": "24",
+    "id": "",
+    "parent": ""
+  },
+  {
+    "_pageName": "Jacob & Esau",
+    "alias": "Esau",
+    "dlc": "24",
+    "id": "1",
+    "parent": "Jacob"
+  },
+  {
+    "_pageName": "Judas",
+    "alias": "Black Judas",
+    "dlc": "31",
+    "id": "12",
+    "parent": "Judas"
+  },
+  {
+    "_pageName": "Judas",
+    "alias": "Judas",
+    "dlc": "31",
+    "id": "3",
+    "parent": ""
+  },
+  {
+    "_pageName": "Keeper",
+    "alias": "Keeper",
+    "dlc": "30",
+    "id": "14",
+    "parent": ""
+  },
+  {
+    "_pageName": "Lazarus",
+    "alias": "Lazarus Risen",
+    "dlc": "31",
+    "id": "11",
+    "parent": "Lazarus"
+  },
+  {
+    "_pageName": "Lazarus",
+    "alias": "Lazarus",
+    "dlc": "31",
+    "id": "8",
+    "parent": ""
+  },
+  {
+    "_pageName": "Lilith",
+    "alias": "Lilith",
+    "dlc": "30",
+    "id": "13",
+    "parent": ""
+  },
+  {
+    "_pageName": "Magdalene",
+    "alias": "Magdalene",
+    "dlc": "31",
+    "id": "2",
+    "parent": ""
+  },
+  {
+    "_pageName": "Samson",
+    "alias": "Samson",
+    "dlc": "31",
+    "id": "6",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted ???",
+    "alias": "Tainted ???",
+    "dlc": "24",
+    "id": "25",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Apollyon",
+    "alias": "Tainted Apollyon",
+    "dlc": "24",
+    "id": "34",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Azazel",
+    "alias": "Tainted Azazel",
+    "dlc": "24",
+    "id": "28",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Bethany",
+    "alias": "Tainted Bethany",
+    "dlc": "24",
+    "id": "36",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Cain",
+    "alias": "Tainted Cain",
+    "dlc": "24",
+    "id": "23",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Eden",
+    "alias": "Tainted Eden",
+    "dlc": "24",
+    "id": "30",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Eve",
+    "alias": "Tainted Eve",
+    "dlc": "24",
+    "id": "26",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Forgotten",
+    "alias": "Tainted Forgotten",
+    "dlc": "24",
+    "id": "35",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Forgotten",
+    "alias": "Tainted Soul",
+    "dlc": "24",
+    "id": "36",
+    "parent": "Tainted Forgotten"
+  },
+  {
+    "_pageName": "Tainted Isaac",
+    "alias": "Tainted Isaac",
+    "dlc": "24",
+    "id": "21",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Jacob",
+    "alias": "Tainted Jacob",
+    "dlc": "24",
+    "id": "37",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Judas",
+    "alias": "Tainted Judas",
+    "dlc": "24",
+    "id": "24",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Keeper",
+    "alias": "Tainted Keeper",
+    "dlc": "24",
+    "id": "33",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Lazarus",
+    "alias": "Tainted Lazarus",
+    "dlc": "24",
+    "id": "29",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Lazarus",
+    "alias": "Dead Tainted Lazarus",
+    "dlc": "24",
+    "id": "30",
+    "parent": "Tainted Lazarus"
+  },
+  {
+    "_pageName": "Tainted Lilith",
+    "alias": "Tainted Lilith",
+    "dlc": "24",
+    "id": "32",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Lost",
+    "alias": "Tainted Lost",
+    "dlc": "24",
+    "id": "31",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Magdalene",
+    "alias": "Tainted Magdalene",
+    "dlc": "24",
+    "id": "22",
+    "parent": ""
+  },
+  {
+    "_pageName": "Tainted Samson",
+    "alias": "Tainted Samson",
+    "dlc": "24",
+    "id": "27",
+    "parent": ""
+  },
+  {
+    "_pageName": "The Forgotten",
+    "alias": "The Forgotten",
+    "dlc": "28",
+    "id": "16",
+    "parent": ""
+  },
+  {
+    "_pageName": "The Forgotten",
+    "alias": "The Soul",
+    "dlc": "28",
+    "id": "17",
+    "parent": "The Forgotten"
+  },
+  {
+    "_pageName": "The Lost",
+    "alias": "The Lost",
+    "dlc": "31",
+    "id": "10",
+    "parent": ""
+  }
+]

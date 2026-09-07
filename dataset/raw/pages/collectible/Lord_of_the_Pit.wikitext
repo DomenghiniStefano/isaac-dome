@@ -1,0 +1,28 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 82
+ | quote       = Demon wings
+ | description = Grants [[flight]] and +0.3 [[speed]].
+ | quality     = 3
+ | tags        = devil nolostbr summonable
+ | devil price = 2
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants [[Flight]].
+* +0.3 [[speed]] ({{dlc|na}} not applied until the next time Isaac's speed stat is updated).
+* {{transformation contribution|Leviathan|dlc=r}}
+
+== In-game Footage ==
+{{#ev:youtube|om8C3FdHaMQ||inline}} {{#ev:youtube|lyJH9wvOXdA||inline}}
+
+== Trivia ==
+* Lord of the Pit's icon resembles the Cross of St. Peter.
+* The wings granted by Lord of the Pit are identical to {{c|Azazel}}'s wings.
+* The item is a reference to a '[http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=193868 Magic: The Gathering]' card of the same name featuring a black-winged demonic creature on it, which is the appearance Isaac assumes upon picking up the item.
+* "The Lord of the Gap" is a name commonly given to [[wikipedia:Belphegor|Belphegor]], the demon of sloth and invention.
+
+{{nav|leviathan|fr=Empereur de la Fosse}}
+[[Category:Flight-granting items]]

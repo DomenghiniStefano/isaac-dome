@@ -1,0 +1,26 @@
+{{infobox trinket
+ | dlc         = a
+ | name        = Louse
+ | id          = 70
+ | quote       = Itchy, tasty...
+ | description = Occasionally spawns a [[Blue Spider]]. {{dlc|r+}} Spawns a Blue Spider when completing a combat room.
+}}
+
+{{cit|t|a}}
+
+== Effects ==
+* Occasionally spawns a [[blue spider|Blue Spider]].
+** Effect only occurs when in an uncleared room.
+** After the first spider spawns, there is a 50% chance of one spawning after 30 seconds and a guaranteed spawn a minute later.
+* {{dlc|r+}} Spawns a [[blue spider|Blue Spider]] when completing a combat room.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}} / {{t|Louse|r}} : Each copy of the effect will spawn an additional spider every time one is spawned.
+
+== In-game Footage ==
+{{#ev:youtube|ZAaKvk1ITtE}}
+
+== Trivia ==
+* The phrase "Itchy, tasty..." is a reference to the Keeper's Diary from ''Resident Evil''. The Diary describes the slow transformation of a researcher into a zombie as his entries become less and less coherent due to neural decay caused by t-Virus infection. His final entry consists of two words: "Itchy. Tasty.".
+
+{{nav|fr=Lente}}

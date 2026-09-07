@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | id          = 90
+ | quote       = {{dlcalt|DMG up|r=DMG up + speed down}}
+ | description = +1 [[damage]], +0.2 [[tears]], -0.2 [[speed]].
+ | quality     = 3
+ | tags        = summonable tearsup offensive
+ | pool        = tinted rock
+ | unlocked by = A Small Rock
+}}
+
+{{cit|up}}
+
+== Effects ==
+* +1 [[damage]].
+* -0.2 [[speed]] ({{dlc|na+}} not applied until the next time Isaac's speed stat is updated or upon taking damage).
+** {{dlc|nr}} -0.2 maximum speed.
+* +0.2 [[tears]] ({{dlc|na+}} not applied until the next time Isaac's tears stat is updated or upon taking damage).
+
+== Notes ==
+* Has a small chance to be dropped from a destroyed [[tinted rock]].
+* Normally only appears once per run, but can appear again if Isaac's items are re-rolled with {{i|D4}}, {{i|D100}}, or a {{R|Dice Room}}.
+* {{dlc|nr}} Always has a chance to spawn as long as Isaac does not currently have it. This includes the possibility of spawning and obtaining multiple copies of The Small Rock on the same floor if not picked up the first time.
+* Taking the rock in the {{R|Boss Rush}} from a tinted rock in the room will count as taking an item and consequently trigger Boss Rush. The other items do not disappear and will stay until one is picked up.
+
+== Interactions ==
+* {{i|Diplopia}}/{{I|Crooked Penny}}: Additional copies grant an additional tears up and speed down with no further increase in damage.
+
+== In-game Footage ==
+{{#ev:youtube|zCDRysTJ3B4||inline}} {{#ev:youtube|aHyWERyh6S8||inline}}
+
+== Trivia ==
+* This item is likely a reference to the biblical story of [https://en.wikipedia.org/wiki/Goliath David and Goliath], where David kills the giant known as Goliath with a small rock.
+* In the original Binding of Isaac, Isaac's tears would take on a grey color after Small Rock has been picked up. In Rebirth, however, the tears are red.
+** However, before the Halloween Update, the player’s tears were blood tears. The reasoning for the change from blood to grey is unknown.
+* This item is used in {{chal|Head Trauma}}.
+** Head Trauma is unlocked by default, despite the fact that Small Rock isn't.
+
+{{nav|fr=Gros Caillou}}

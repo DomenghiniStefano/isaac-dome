@@ -1,0 +1,152 @@
+{{infobox challenge
+ | dlc                = a
+ | number             = 29
+ | character          = Judas
+ | item               = {{i|The Book of Belial}}<br>{{i|Chocolate Milk}}
+ | has treasure rooms = yes
+ | has shops          = yes
+ | description        = Missing a shot deals damage to {{C|Judas}}.
+ | goal               = Isaac
+ | unlocks            = Kidney Stone
+ | unlocked by        = Onan's Streak
+}}
+
+'''Onan's Streak''' is [[Challenges|challenge]] #29. {{C|Judas}} starts with {{I|The Book of Belial}}, {{I|Chocolate Milk}}, and a [[damage]] bonus of +2, giving him a starting damage of 8.71. However, missing a shot causes Judas to take damage. Treasure rooms are present in this challenge. The goal is to defeat {{E|Isaac}}.
+
+== Difficulty ==
+Not hitting anything with tears causes Judas to take damage. This makes accuracy very important, as missing a few shots can deplete his health very quickly. Because of this, fast-moving enemies or enemies with erratic movement patterns can prove to be very difficult in this challenge.
+
+== Notes ==
+* {{dlc+|r}} The following items cannot be found in the challenge:
+** {{i|Brimstone}}
+** {{i|C Section}}
+** {{i|Dr. Fetus}}
+** {{i|Epic Fetus}}
+** {{i|Loki's Horns}}
+** {{i|The Ludovico Technique}}
+** {{i|Marked}}
+** {{i|Mom's Eye}}
+** {{i|Mom's Knife}}
+** {{i|Monstro's Lung}}
+** {{i|Spirit Sword}}
+** {{i|Technology}}
+** {{i|Technology 2}}
+** {{i|Tech X}}
+** {{i|Trisagion}}{{dlc-}}
+
+== Strategy ==
+* Hitting any type of poop, fire, bomb, eternal fly, white champion enemy, spike block, {{e|Stone Grimace}}, or {{dlc|r}} [[Status_Effects#Frozen|frozen]] enemies does not count as a miss.
+** Hitting any type of poop with a [[Tear Effects#Spectral|spectral tear]] counts as a miss.
+* If firing a tear and leaving the room before it touches the wall or floor, Judas will not take any damage. This is only useful if he shoots accidentally.
+* For enemies that move erratically, try and get close enough so they will close in. Once they approach, move out of the way and shoot them once they stop.
+
+=== Good Items ===
+* {{i|Isaac's Heart|nr}} completely nullifies any damage caused by missing, lowering the difficulty tremendously and turning this challenge into a standard Judas run.
+* {{i|Toxic Shock}} can help Judas bypass most of the rooms without the need to fire tears.
+* Obtaining {{i|Fate's Reward}} and charging your tears, but never firing, allows you to fire tears without fear of self-damage.
+* Items that negate damage are extremely useful. {{i|Holy Mantle}}, in particular, nullifies 1 hit of damage per room, allowing more room for error.
+** Note that temporary invulnerability — from {{i|Book of Shadows}}, {{i|Celtic Cross}}, {{I|Gnawed Leaf}}, etc. — does ''not'' protect Judas from missed tears.
+* {{dlc|nr}} Taking {{i|Technology 2}} and never releasing the fire keys, even across floors, allows Judas to engage enemies without firing any tears.
+** {{i|Tech.5}} has the same effect, {{dlc|r}}and is not blacklisted.
+* Taking {{i|Rubber Cement}} is recommended, tears hitting a wall will not damage Judas, nor upon hitting the ground if an enemy is hit first.
+** Enemies include Stone Grimaces, unkillable enemies, fireplaces, poop, and bombs.
+** {{plat|XboxOne}} Poop is not considered an enemy if it is the first object hit.
+* {{i|Proptosis}} allows Judas' shots to miss without dealing damage as long as they don't hit a wall or non-tear-destructible object (such as a rock).
+* {{i|Isaac's Tears}} do not count as a hit/miss, and it maintains Chocolate Milk's charged damage bonus when activated, making it a safe combat alternative.
+* {{i|Dead Eye}} benefits from this challenge, since the player will be focused on not missing anyways. This can allow for long streaks at high damage.
+* {{i|Tractor Beam}} keeps tears in a straight line in front of Judas, which allows him to aim his tears in midair, and is also very helpful for hitting many later enemies.
+* {{i|Ipecac}}'s explosion radius makes it much easier to hit enemies, though like in any other situation with the item, caution should be exercised.
+* [[Spectral tears]] might help, since going through a rock doesn't count as missing (but see the note on poop above; hitting poop no longer counts as a hit).
+* {{i|Pupula Duplex}} is helpful, since it gives Judas' tears a bigger hitbox, in addition to spectral tears. {{t|Flat Worm}} also gives a bigger hitbox.
+* Similarly, {{i|Polyphemus}} gives tears a bigger hitbox and allows Judas to hit many enemies with each tear. Any Polyphemus tear that continues after hitting an enemy won't damage Judas if it lands untouched afterward.
+** {{i|Continuum}} will help, giving spectral tears and allowing tears to go through the walls to get back on the other side.
+* [[Piercing]] shots could be useful since the shots won't damage Judas if at least one enemy is hit, and multiple can be hit with one shot.
+** {{i|Death's Touch}} is especially useful because it increases the size of tears significantly, making it harder to miss, in addition to piercing and higher damage.
+** {{i|Eye of Belial}} does not damage Judas as long as he hits at least one enemy, making the item very useful.
+* {{dlc+|nr}}{{i|Brimstone}}, {{i|Epic Fetus}}, {{i|Mom's Knife}}, {{i|Technology}}, and {{I|Tech X}} won't damage Judas for missing enemies.{{dlc-}}
+** {{i|Sulfur}} is not blacklisted, making it a very powerful item.
+* {{i|Mom's Wig}} will keep spawning friendly spiders until there are five of them when charging the shot.
+** The same goes for the {{tf|Guppy}} transformation or {{i|The Mulligan}}.
+*** Be careful, however, as there is the possibility of friendly spiders/flies killing a target before Judas' fired tear connects.
+** The same goes for {{i|Number Two}} and {{i|Bob's Brain}}, as spawning bombs under Judas while charging and the explosions from the brain, respectively, can easily end the run.
+* One well-timed charge of the {{i|White Pony}} could be enough to insta-kill {{E|It Lives!}} and seriously damage {{E|Isaac}}.
+* Tears that have passed through an {{i|Angelic Prism}} familiar do not deal damage to Judas even if all the split tears miss.
+* If you find {{i|Butter Bean}}, do not leave behind bomb-giving items such as {{i|Pyro}}. Placing bombs and pushing them towards the enemy with a fart is a viable alternative for shooting tears.
+** {{i|Rocket in a Jar}} works about the same way.
+* Watch out when using unidentified [[pill]]s, as [[R U a Wizard?]] can be disastrous to the run if not extremely careful and/or lucky. Check the shops for a {{i|PHD}}, just in case.
+* {{i|The Wafer}} makes the challenge much easier in {{s|Womb}} and beyond, as it halves the damage dealt from missing tears.
+* Any item that helps refill red heart containers such as the {{i|Yum Heart}}, {{i|Maggy's Bow}}, and {{i|The Jar}} will be helpful in case misses are frequent.
+* Items that grant [[homing tears]], such as {{i|Spoon Bender}} and {{i|Sacred Heart}}, can make accuracy a lot easier. However, {{i|Godhead}} is a bad item for this challenge (see below).
+* {{T|Brain Worm}} can redirect misfires back into enemies, thus being a great mistake preventer.
+* A very good strategy is to combine many different followers such as {{I|Mongo Baby}}, {{I|Rotten Baby}}, or {{T|Isaac's Head}}, and only using the tears from the followers as Judas' main source of damage. This is complimented by items such as {{I|Daddy Longlegs}}, as Judas does not have to fire tears to deal damage with these followers.
+** Because of this, {{I|BFFS!}} is a very useful item.
+* {{I|The Boomerang}} will not cause damage if it misses, making it an effective alternative to tears given Judas' high damage. It will also petrify enemies, making them much easier to hit with tears.
+* {{i|The Ludovico Technique|nr}} is an extremely valuable item since the tear never lands, thus Judas can't be hurt if it misses.
+* {{i|Lachryphagy}}'s split shots do not count as missed tears. Since your tears will always explode into split shots instead of hitting the ground, Judas will only take damage if the main Lachryphagy shot hits a wall.
+** Having Spectral tears with Lachryphagy will prevent your shots from ever hitting the floor or walls, completely removing the penalty for missing.
+* {{i|Haemolacria}} can be powerful, as only the initial tear needs to hit an enemy; the burst tears do not count, unlike for other scatter shot items.
+* {{I|Shard of Glass}}'s blood shots do not deal damage to you if they miss, making this item potentially very useful in this challenge.
+* {{i|The Intruder}}'s quad shot does not count as hits/misses, and taking damage, including damage from a missed shot, summons the more effective active familiar.
+* {{i|Stitches}} can be used to dodge damage from missed shots if timed correctly. Its teleport can also be used as damage so you don't have to risk missing shots.
+* {{i|120 Volt}} removes the need to fire tears at enemies in normal rooms, allowing Judas to destroy crowds of enemies just by walking by them.
+* {{I|Glass Cannon}} is recommended since cannon ball tears need to hit only one enemy in order to not deal damage to the player. It also shoots bigger tears than normal to due the high starting damage.
+* {{i|Mercurius}} can help move through rooms without attacking, minimizing the amount of potentially missed shots.
+* {{I|Saturnus}} is recommended since the tears created by it do not count as a miss if they fall to the floor. However, enemy tears that get in the ring do count as misses when they fall.
+* {{i|Rubber Cement}} combined with {{i|Lachryphagy}} makes it so that Judas can't be damaged by his own tears at all.
+* {{i|Continuum}} combined with {{i|Proptosis}} makes it so that Judas can't be damaged by his own tears at all.
+
+=== Bad Items ===
+* {{dlc|nr}} Taking {{i|Tammy's Head}} or {{i|Sad Bombs}} is not recommended, as they release tears which all count as hits or misses. Since they release multiple tears at a time, they will almost unavoidably cause tears to hit the ground.
+** {{dlc|r}} Tears released from Tammy's Head or Sad Bombs no longer count as misses or hits.
+** {{i|Isaac's Tears}}, however, do not.
+** The {{i|Tear Detonator}} does not count either.
+* {{dlc+|r}} {{i|Tooth and Nail}} does not protect Judas from the damage of missing. {{dlc-}}
+* Unless Judas already has piercing tears, {{i|Lost Contact}} should generally be avoided. While blocking a shot does count as a hit, without piercing, it will also destroy the tear before it can do any damage, making bullet-heavy fights such as {{E|Mom's Heart}} / {{E|It Lives!}} and {{E|Isaac}} extraordinarily difficult.
+* Shots fired by the familiar with {{i|Incubus}} / {{i|Cain's Other Eye|r}} will damage the player.
+* Taking any item that multiplies the number of tears (e.g. {{i|20/20}}, {{i|The Inner Eye}}, {{i|Mutant Spider}}, or {{i|Monstro's Lung|nr}}) is not recommended, as Judas has to hit with every tear to not take damage.
+** Similarly, taking {{i|Multidimensional Baby}}, {{i|Compound Fracture}}, {{i|Cricket's Body}}, or {{i|The Parasite}} is not recommended, as the split tears also have to hit enemies for the player to not take damage.
+** Be careful picking up too many familiars, as picking up 3 will transform Judas into {{tf|Conjoined}}, which will make him shoot 2 additional tears at an angle and damage Judas if they miss.
+** {{dlc|a+}} Be careful when picking up any active Book items, as picking up 3 will transform Judas into a {{tf|Bookworm|n}}, periodically giving him 2 shots.
+*** {{dlc|nr}} Having {{i|The Ludovico Technique}} effectively nullifies this problem.
+* {{i|Godhead}} can be dangerous, as even if the aura kills an enemy, if the shot doesn't hit an enemy or poop, it will count as a miss.
+* When using {{i|Maw Of The Void}}, keep some distance against non-boss enemies. If the ring kills an enemy before the tear hits it, it can cause Judas to miss the shot.
+* {{i|Circle of Protection}}: Judas can take damage from tears reflected by the ring.
+* {{i|Explosivo}} should be avoided. The Explosivo shot doesn't count as hitting the enemy until it blows up. If Judas kills an enemy with the Explosivo shot on them, the tear will fall to the ground and will damage him. Enemies that jump or teleport will also cause Explosivo shots to fall off. If the enemy with an Explosivo shot walks near a wall, the tear will disappear and will cause damage.
+** {{dlc|r}} Non-exploded Explosivo tears that fall to the ground no longer cause damage. Explosivo is a valuable damage upgrade now.
+* {{i|Soy Milk}} is not recommended, as it prevents charging shots (instead, firing automatically like regular tears). Judas does get a +1 damage increase after the damage reduction, but the fast fire rate will make it nearly impossible to stop tears hitting anything other than an enemy.
+** {{i|Almond Milk}} similarly prevents charging shots and adds an unpredictable worm effect.
+* Taking {{i|The Wiz}} is not recommended, as firing two tears simultaneously will almost certainly cause one tear to miss.
+* Taking {{i|My Reflection}} is not recommended, as firing a tear from a long distance causes the tear to reverse back the opposite direction and miss unless there is an enemy behind Judas.
+* {{dlc|nr}} Hitting a target while having {{i|Cursed Eye}} still damages and teleports out of the room.
+** {{dlc|r}} No damage will be taken if all tears hit a target. However, this can be difficult to achieve, so Cursed Eye is not recommended.
+** Charging shots before entering a room can kill, since it will fire {{dlc|nr}} a big tear followed by 3 little tears {{dlc|r}} 5 big tears, causing damage.
+* {{i|3 Dollar Bill}}, {{i|Fruit Cake}}, and {{t|Rainbow Worm}} are not recommended because the changing effects will make it more likely for tears to miss.
+* {{i|Libra}} will balance stats, making Judas' damage much less effective and thus necessitating more shots.
+* {{i|Bob's Rotten Head}} will harm Judas if it fails to connect, so it is not recommended unless used for combat.
+* Using {{i|Clicker}} may take away {{i|Chocolate Milk}}, making the run significantly more difficult.
+** {{dlc|r}} Clicker is now unavailable during challenges.
+* {{dlc|a+nr}} The instant kill effect of {{i|Little Horn|n}} does not count as a hit, and will hurt Judas.
+* {{i|Trisagion|nr}} will cause Judas to take damage on every shot.
+* {{i|Flat Stone}} will cause Judas to take damage on every tear's skip unless the tear hits an enemy before the next bounce.
+* {{i|Ghost Pepper|nr}} will deal damage to Judas each time the blue flame spawns.
+** {{i|Bird's Eye|nr}} has a similar effect.
+** {{dlc|r}} The flames can still kill enemies before the shots reach them, resulting in taking damage.
+* {{i|Twisted Pair}} is not recommended, as tears from each familiar count as needing to land, or else Judas will take damage.
+* {{i|Urn of Souls}} will harm Judas for each full shot fired.
+* {{i|Revelation}} is likely to kill any basic enemy it hits before the Chocolate Milk shot reaches it, making it difficult to avoid damage when firing charged shots.
+* {{i|Neptunus}} fires many shots at once, making it very easy for the player to shoot more than needed and cause self-damage.
+* {{I|Strawman}} is basically useless, as The Keeper's tears will also damage themself (not Judas), essentially killing themself in a few seconds due to The Keeper firing automatically while Judas charges up Chocolate Milk.
+* {{I|Eye of the Occult}} will generally make it harder to control your tears and will probably result in a failed run.
+* {{I|Gello}} will harm Judas with missed shots.
+
+== Reward ==
+{{achievement text | Kidney Stone }}
+
+== Trivia ==
+* The challenge's name, "Onan's Streak", and the challenge conditions are a reference to the biblical character [[wikipedia:Onan|Onan]], the son of Judah. According to Old Testament law, a man with a married, deceased brother would have the responsibility of producing an heir for his sibling. Onan knew that having this heir would prevent him from legally owning his brother's land, and so spilled his semen onto the ground. God viewed this deed as wicked and killed Onan.
+* {{dlc|nr}} Despite the challenge starring {{C|Judas}}, the challenge is only unlocked when beating {{E|Mom}}.
+
+== Bugs ==
+{{bug|If Judas misses a tear and picks up the trophy while getting hit, he will be frozen in position. Going to the main menu and continuing the run solves this.}}
+
+{{nav|mom unlock|it lives unlock|challenge|fr=Le Crime d'Onan}}

@@ -1,0 +1,59 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 461
+ | quote       = Egg tears!
+ | description = Adds a chance to fire an egg sack which creates [[slow]]ing [[creep]] and spawns 1-2 [[Blue Flies]] or [[Blue Spider]]s upon hitting an enemy.
+ | quality     = 3
+ | tags        = summonable spider offensive fly
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Adds a chance to fire an egg sack which spawns [[slow]]ing [[creep]]. If an egg sack hits an enemy, 1-2 [[Blue Flies]] or [[Blue Spider]]s are spawned.
+* Egg sack tears have {{dlc|nr}} x2 [[range]]/{{dlc|r}} x2 [[tear height]] (which also increases effective range).
+* {{dlc|r}} {{transformation contribution|Beelzebub}}
+* {{dlc|r}} {{transformation contribution|Spider Baby}}
+
+== Notes ==
+* The chance to shoot egg sacs depends on the [[luck]] stat and is based on this formula: <math>min(\frac1 { 7 - \left \lfloor \mathit{Luck}   \right \rfloor}, 50\%)</math>
+** At base luck (0), the chance is 14.29%, maxing out at 50% at 5 luck.
+* Egg sacks will also spawn blue flies or spiders if they hit {{e|Fire Place}}s or invincible enemies like {{E|Death's Head}} and {{E|Stoney}}.
+* It is possible to create a large number of Spiders and Flies by repeatedly shooting a closed {{E|Host}}.
+
+== Synergies ==
+* {{i|C Section}}: Parasitoid fetuses spawn spiders/flies and slowing creep with every hit on an enemy.
+* {{i|Compound Fracture}} / {{i|Cricket's Body}} / {{i|The Parasite}}: When egg sacks are fired, they will split into smaller egg sacks. Split egg sacks from The Parasite will not look like egg sacks.
+* {{i|Cupid's Arrow}}: Egg sacks will apply their effect to every enemy hit.
+* {{i|Fire Mind}} / {{I|Explosivo|dlc=a}} : If the explosion effect triggers on an egg sack, it will produce a much larger pool of slowing creep.
+* {{i|Hive Mind}}: Flies and spiders are bigger and deal double damage.
+* {{i|Technology 2|r+}}: Rapid damage ticks can cause a large amount of flies and spiders to spawn.
+
+== Interactions ==
+Overrides Parasitoid:
+* {{C|Azazel|nr+}}
+* {{i|Brimstone|nr+}}
+* {{i|Dr. Fetus|nr}}
+* {{i|Epic Fetus|nr+}}
+* {{i|Mom's Knife|nr+}}
+* {{i|Technology|nr+}}
+* {{i|Tech X|nr+}}
+* {{i|Trisagion|nr+}}
+Other interactions:
+* {{i|Dr. Fetus|r}}: Bomb explosions have a chance of leaving the slowing creep in a larger pool than egg sack tears, however the egg sack bombs can't spawn [[Blue fly|Blue Flies]] / [[Blue spider|Blue Spiders]].
+** {{i|Dr. Fetus|r+}} / {{i|Epic Fetus}}: Bombs can now spawn [[Blue fly|Blue Flies]] / [[Blue spider|Blue Spiders]].
+* {{t|Fish Tail}}: The duplicated flies will spawn on top of the enemy and deal damage immediately.
+* {{i|Haemolacria}}: Tears retain Haemolacria appearance and only the main tear can spawn flies or spiders when damaging enemies / {{dlc|r+}} smaller tears can now leave slowing creep and spawn flies and spiders.
+* {{i|Ipecac|nr+}}: Only extra range applies on egg sack tears and they will not spawn flies or spiders.
+* {{I|Montezuma's Revenge}}/{{i|Revelation|n}}: No effect.
+* {{I|Spirit Sword}}: The sword projectiles can still spawn flies and spiders, but the swings themselves won't / {{dlc|r+}} the swings can now leave slowing creep and spawn flies and spiders.
+* {{i|Tech.5|nr+}}/{{i|Technology 2}}: Lasers are unaffected.
+
+== In-game Footage ==
+{{#ev:youtube|6f9w_eIqCwo}}
+
+== Trivia ==
+* Parasitoid is a term for when insects' larvae live inside their hosts as a parasite before eventually killing the host.
+* {{dlc|r}} Parasitoid is one of the only five ({{dlc|r+}} six) items that count towards 2 transformations ({{tf|Beelzebub}} and {{tf|Spider Baby}}), the other ones being {{i|Magic Mushroom}}, {{i|The Bible}}, {{i|Hive Mind}}, {{I|Skatole}}, {{dlc|r+}} and {{i|The Necronomicon}}.
+
+{{nav|spider}}

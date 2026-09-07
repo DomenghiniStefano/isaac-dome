@@ -1,0 +1,64 @@
+{{infobox activated collectible
+ | id          = 78
+ | quote       = Reusable soul protection
+ | description = Increases the chance of a {{r|Devil Room}} / {{r|Angel Room}} appearing while held. Upon use, gives one {{e|Soul Heart}}, and replaces the boss of the current floor with a [[Harbinger]] if possible.
+ | quality     = 3
+ | tags        = nolostbr book lazarussharedglobal
+ | devil price = {{dlcalt|1|r+=2}}
+ | recharge    = 6
+ | unlocked by = The Book of Revelations
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* Upon use, gives one {{e|Soul Heart}}.
+* Increases chance for a {{r|Devil Room}} or {{r|Angel Room}} door to open if held while killing the final [[boss]] of the [[floor]].
+** {{dlc|na}} The chance is increased by 35%.
+** {{dlc|a}} The chance is increased by 17.5%.
+* If the Book of Revelations is used at least once on a floor, a [[Harbinger]] will replace the current floor's boss if possible.
+** {{dlc|nar}} This will always happen as long as the floor's respective Harbinger has not been encountered, the boss has not been fought yet, and a Harbinger can appear on the floor normally.
+** {{dlc|anr}} This has a high chance to happen but is not guaranteed.
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+The [[Harbinger]]s capable of appearing, and the floors they appear on, are as follows:
+# {{e|Famine}} in [[Chapter 1]]
+# {{e|Pestilence}} in [[Chapter 2]]
+# {{e|War}} in [[Chapter 3]], floor 1
+# {{e|Death}} or {{e|Conquest}} (if unlocked) in [[Chapter 4]], floor 1
+# {{e|Headless Horseman}} on any floor in [[Chapter]]s 1-4
+* Set bosses ({{e|Mom}}, {{e|Isaac}}, {{e|The Lamb}}, etc.) are unaffected by Book of Revelations.
+* Only the first boss of a floor affected by {{cu|Labyrinth}} is affected.
+* Book of Revelations won't replace the boss on double-sized {{r|Boss Room}}s, like [[Double Trouble]] rooms or if the boss is {{e|Mr. Fred}}.
+** Furthermore, if the Book of Revelations is used on the first floor of a Chapter with a Double Trouble room no Harbinger will spawn on the second floor, even if Book of Revelations is used again. If finding a Harbinger is desired, Isaac should wait until seeing the shape of the Boss Room before using it.
+* Keeping Book of Revelations until [[Chapter 4]] is one of the methods to unlock achievements related to Super Meat Boy and Super Bandage Girl, [[Unlocking Super Meat Boy & Super Bandage Girl|explained in detail here]].
+* {{dlc|na+}} This item can replace the Boss even after Isaac initiates a battle with a normal boss and then teleports out before the fight is completed.
+* {{dlc+|a+}} This item can replace {{e|The Bloat}} with a Harbinger in {{chal|Aprils Fool}}.{{dlc-}}
+* {{dlc+|r}} Bosses in {{s|Downpour}} / {{s|Mines}} / {{s|Mausoleum}} and their variants cannot be replaced with Harbingers.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Creates wisps in the inner ring, resembling tiny crosses that do not fire tears. The wisps create a Harbinger that spawns [[Locust]]s (the same ones that {{i|7 Seals}} creates) for the current room when destroyed.}}
+* {{i|Converter|r}}: Allows for generation of Heart Containers. ({{i|Schoolbag|r}} required)
+* {{i|Car Battery}}: Gives Isaac two soul hearts.
+* {{i|There's Options|r}}: Defeating a [[Harbinger]] will spawn both a regular [[Boss (Item Pool)|Boss pool]] item and either {{i|Ball of Bandages}} or {{i|Cube of Meat}}.
+* {{i|Dream Catcher}}: If the floor boss is revealed to be one of the horsemen, book of revelations can be used early as the downside is no longer relevant.
+
+== Interactions ==
+* {{I|Genesis}}: Effects on the {{R|Boss Room}} and boss item still apply to the floor even after using Genesis.
+* {{I|Satanic Bible}}: The spawned {{i|Ball of Bandages}} or {{i|Cube of Meat}} will cost hearts like a normal devil deal.
+* {{p|IV - The Emperor?}}: Does not guarantee the extra boss to be a horseman.
+
+== In-game Footage ==
+{{#ev:youtube|V7OjoYETco4||inline}} {{#ev:youtube|wVP9FyhiFyg||inline}}
+
+== Trivia ==
+* ''[[wikipedia:Book of Revelation|The Book of Revelation]]'' (note the lack of an "s") is the final book of ''[[wikipedia:Bible|The Bible]]''. It depicts the apocalypse through a vision shown to [[wikipedia:John of Patmos|John of Patmos]] and includes the Four Horsemen and themes of Hell, Satan, and The Lamb. This explains why using it causes the next boss to be a Harbinger, as well as why it increases the chances of a {{r|Devil Room}} / {{r|Angel Room}} to appear.
+
+== Gallery ==
+<gallery>
+File:3DS_Detailed_Book_of_Revelations.png|{{plat|3DS}} The icon of Book Of Revelations as seen on the lower 3DS screen.
+File:Book_of_Revelations_giantbook.png|Book of Revelations's splash image which appears when it's activated.
+</gallery>
+
+{{nav|book|fr=Livre de la Révélation}}

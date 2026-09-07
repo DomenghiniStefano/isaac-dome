@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 525
+ | quote       = You're tearing me apart!
+ | description = Taking damage grants a body part [[Familiar#Orbital Familiars|orbital]] that blocks shots and deals contact damage, up to a maximum of three. The body parts are destroyed after blocking enough damage.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = nolostbr summonable
+ | unlocked by = Leprosy
+}}
+
+{{cit|up|a+2}}
+
+== Effects ==
+* Upon taking damage, Isaac gains a body part as an [[Familiar#Orbital Familiars|orbital]], which blocks enemy shots and deals 7 damage per tick (35 damage per second) to enemies it comes in contact with.
+** A maximum of three body parts can be active at once.
+** The body parts will be destroyed after dealing 30 ticks of damage and/or blocking 3 shots.
+** The body parts persist between floors.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Fistula}}.{{dlc-}}
+* Body parts orbit on the same layer as [[Blue Fly|Blue Flies]] and [[Locusts]].
+
+== Interactions ==
+* {{i|Box of Friends}}: Will not multiply orbitals.
+
+== In-game Footage ==
+{{#ev:youtube|ZYqQomOhHzY}}
+
+== Trivia ==
+* The description "You're tearing me apart!" is a reference to the movie ''The Room'' (which Edmund has said he is a big fan of), in which Tommy Wiseau famously exclaims "''You're tearing me apart, Lisa!''".
+* Leprosy was inspired by a [https://steamcommunity.com/sharedfiles/filedetails/?id=840814967 Steam Workshop item] by Schmäxel.
+* The item used to be misspelled "Leprocy" but was corrected in a later patch.
+* [[wikipedia:Leprosy|Leprosy]] is a bacterial disease that damages nerves and can cause extremities to rot in extreme cases.
+
+== Gallery ==
+<gallery>
+File:Collectible Leprosy Forgotten appearance.png|{{C|The Forgotten}} has a unique appearance with Leprosy, making him look visually similar to [[nuclearthrone:Melting|Melting]], a playable character from the game [[wikipedia:Nuclear Throne|''Nuclear Throne'']].
+File:Leprosy_orbital_1.png
+File:Leprosy_orbital_2.png
+File:Leprosy_orbital_3.png
+File:Leprosy_orbital_4.png
+</gallery>
+
+{{nav|booster pack|fr=Lèpre}}
+[[Category:Damage-triggered items]]

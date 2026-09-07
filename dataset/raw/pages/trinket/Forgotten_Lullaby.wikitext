@@ -1,0 +1,32 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 141
+ | quote       = Sing for your friends
+ | description = Improves the fire rate of Isaac's [[familiar]]s.
+ | unlocked by = Forgotten Lullaby
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Doubles the fire rate of Isaac's [[familiar]]s.
+** Familiars with charged shots will have their charge time halved. The recovery time between shots is not affected.
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|The Siren}}.{{dlc-}}
+* Does not affect [[Familiar#Wisps|wisps]].
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Having either applies a 2.5x multiplier on the fire rate of familiars. Having both triples their fire rate.
+* {{i|Incubus}} / {{i|Twisted Pair}}: As the familiars depend on Isaac's fire rate, Incubus and Twisted Pair work normally up to moderately high fire rates around 10. Beyond that, however, Forgotten Lullaby starts to lose effect: at 27.5 fire rate e.g. achievable with {{i|Soy Milk}} there no longer is any improvement and going even higher the trinket becomes detrimental, halving the familiars' damage output at the absolute maximum of 120 fire rate.
+* {{c|Tainted Lilith}}: No effect on her special {{i|Gello}}.
+* {{i|Hushy|r+}}: No effect on Hushy.
+
+== In-game footage ==
+{{#ev:youtube|2hwCoz8PbHw}}
+
+== Trivia ==
+* This trinket was originally called [[Anti:Song of the Siren|Song of the Siren]] in ''Antibirth''.
+* "Forgotten Lullaby" is the title of the secret room theme in Mudeth's original soundtrack for the ''[[anti:The Binding of Isaac: Antibirth Wiki|Antibirth]]'' mod.
+
+{{nav|familiar modifier|fr=Berceuse Oubliée}}

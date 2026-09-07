@@ -1,0 +1,121 @@
+{{infobox activated collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 84
+ | quote       = Reusable level skip
+ | description = Creates a trapdoor to go to the next [[Chapters|floor]]. {{dlc|r}} Once per floor, using it on tiles with special graphics will instead create a {{r|Crawl Space}}.
+ | quality     = 2
+ | tags        = offensive
+ | recharge    = 6
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Spawns a trapdoor that leads to the next [[Chapters|floor]] upon activation.
+** {{Dlc|nr}} There is a 10% chance the trapdoor will instead lead into a {{R|Crawl Space}}.
+** {{Dlc+|r}} Some floor tiles will appear with a special decorative graphic (for example, grass or paper in {{s|Basement}}). Using this item on these tiles will guarantee a {{R|Crawl Space}}. Only one Crawl Space can be made per floor, as all subsequent uses will only spawn trapdoors.
+*** A list of all decoration tiles may be found here:
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align: center"
+ !Found in
+ !Notes
+ !Decorations 
+ |-
+ |{{s|Basement}}<br>{{s|Cellar}}<br>{{s|Burning Basement}}<br>{{s|Home}}<br>{{r|Shop}}<br>{{r|Arcade}}<br>{{r|Secret Room}}<br>{{r|Library}}<br>{{r|Dice Room}}<br>{{r|Clean Bedroom}}<br>{{r|Dirty Bedroom}}<br>{{r|I AM ERROR}}
+ |Some grass tiles are animated.<br>One decoration is completely invisible.<br>Also used by the entrance to Chapter 1.5 and 2.5.<br>{{Dlc|r+}}Also used by {{i|Lil Portal}}.
+ |[[File:Decorations_Basement.png|182px]]
+ |-
+ |{{s|Downpour}}
+ |
+ |[[File:Decorations_Downpour.png|104px]]
+ |-
+ |{{s|Dross}}
+ |
+ |[[File:Decorations_Dross.png|156px]]
+ |-
+ |{{s|Caves}}<br>{{s|Catacombs}}<br>{{s|Flooded Caves}}
+ |Mushrooms and some grass tiles are animated.<br>Seven decorations are completely invisible.<br>The large decoration cannot generate in Flooded Caves.
+ |[[File:Decorations_Caves.png|208px]]
+ |-
+ |{{s|Mines}}<br>{{s|Ashpit}}
+ |Mushrooms and some grass tiles are animated.<br>Seven decorations are completely invisible.
+ |[[File:Decorations_Mines.png|182px]]
+ |-
+ |{{s|Depths}}<br>{{s|Necropolis}}<br>{{s|Dank Depths}}<br>{{s|Mausoleum}}<br>{{r|Sacrifice Room}}
+ |Lit candles are animated and emit a miniscule amount of light.<br>One decoration is completely invisible.<br>Also used by the entrance to Chapter 3.5.<br>Also used by {{i|Death Certificate}}.
+ |[[File:Decorations_Depths.png|182px]]
+ |-
+ |{{s|Gehenna}}<br>{{s|Sheol}}<br>{{r|Challenge Room}}<br>{{r|Curse Room}}<br>{{r|Devil Room}}<br>{{r|Black Market}}<br>{{r|Boss Rush}}
+ |Some bones are animated, and skulls emit a miniscule amount of light.<br>One decoration is completely invisible.
+ |[[File:Decorations_Sheol.png|182px]]
+ |-
+ |{{s|Womb}}<br>{{s|Scarred Womb}}
+ |Some tiles are animated.<br>One decoration is completely invisible.
+ |[[File:Decorations_Womb.png|234px]]
+ |-
+ |{{s|Utero}}
+ |Some tiles are animated.<br>One decoration is completely invisible.
+ |[[File:Decorations_Utero.png|234px]]
+ |-
+ |{{s|???}}
+ |Some tiles are animated.<br>One decoration is completely invisible.<br>Also used by the entrance to ???.<br>Also used by {{t|Blue Key}}.
+ |[[File:Decorations_Blue_Womb.png|234px]]
+ |-
+ |{{s|Corpse}}
+ |Some tiles are animated.<br>One decoration is completely invisible.
+ |[[File:Decorations_Corpse.png|234px]]
+ |-
+ |{{s|Cathedral}}<br>{{r|Angel Room}}
+ |Some tiles are animated.<br>Two decorations are completely invisible.
+ |[[File:Decorations_Cathedral.png|182px]]
+ |-
+ |{{s|Chest}}<br>{{r|Vault}}
+ |Some gems are animated.<br>An animated tile with a glowing pair of eyes emits a miniscule amount of light.
+ |[[File:Decorations_Chest.png|182px]]
+ |-
+ |{{s|Dark Room}}<br>{{r|Planetarium}}<br>{{r|Ultra Secret Room}}
+ |Notable in that they have no decoration tiles.<br>The item cannot create Crawl Spaces when in these rooms.<br>Also applies to the [[Mega Satan]] arena.
+ |
+ |-
+ |{{s|Ultra Greed}}
+ |Some gems are animated.
+ |[[File:Decorations_Greed.png|104px]]
+ |-
+ |}{{Dlc-}}
+* {{dlc|a+}} The item may be used on the [[Dirt Patch]]es in the {{s|Dark Room}} to dig up a random type of [[Chests|chest]].
+
+== Notes ==
+* All {{R|Crawl Space}} trapdoors on a floor lead to the same {{R|Crawl Space}}.
+* It can be used in {{s|Depths}} II to access {{s|Womb}} even before defeating {{e|Mom}} and gaining the achievement which 'unlocks' the Womb.
+* If used in {{s|Womb}} II / {{s|Utero}} II / {{s|Scarred Womb}} II, the trapdoor will always lead to {{s|Sheol}}.
+* {{dlc|nr}} Has no effect in the {{s|Cathedral}}, {{s|Chest}}, {{s|Sheol}}, {{s|Dark Room}}, {{s|???}} and {{s|The Void}} (no trapdoors of any type will be generated).
+* {{dlc+|r}} It can only create crawl space trapdoors in the {{s|Cathedral}}, {{s|Chest}}, {{s|Sheol}}, {{s|Dark Room}}, {{s|???}}, {{s|The Void}}, {{s|Corpse}} II, {{i|Dad's Note}} floor, {{s|Home}}, and during the [[Ascent]]. However the chance for the crawl space trapdoor to appear does not change.{{dlc-}}
+* Using the item on the 3 tiles directly horizontal to a door, including {{R|Secret Room}} entrances, will cause the trapdoor to spawn in a random spot next to Isaac instead, making this item an indirect aid to locating Secret Rooms.
+** {{dlc|r}} If a special graphic is in these spots, the trapdoor will likely be moved to a spot that won't spawn a {{R|Crawl Space}}.
+** Spawning enough trapdoors can cause a trapdoor to spawn in these spots.
+* This item can be used to destroy [[rocks]] if used while Isaac is [[flight|flying]] over a rock.
+* If a crawlspace is spawned before activating a {{r|Challenge Room}} or {{r|Boss Challenge Room}}, the crawlspace will remain open during the fight. Entering and exiting the crawlspace skips the fights entirely.
+* {{dlc|nr}} When used on the last floor of a [[Challenges|challenge]], a trapdoor to the next floor can spawn. If it is entered, Isaac must beat the boss of that floor to spawn the ending trophy.
+* {{Dlc|r}} Trapdoors will not spawn on challenges on floors at the final destination, however certain challenges like [[Red Redemption]] may still spawn a trapdoor leading to the next floor.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a skull wisp on the middle ring that shoots bone tears.}}
+* {{I|Lil Portal|r+}}: upon entering a trap door (not a Crawl Space), inside the Lil Portal special room, Isaac will be teleported to the {{r|I AM ERROR}} Room.
+
+== Interactions ==
+* {{I|Car Battery}}: In most cases, no extra effect. When used near the entrances to a room, the item can occasionally open 2 trapdoors at once, {{Dlc|nr}} increasing the chance of opening a {{r|Crawl Space}}.
+
+== In-game footage ==
+{{#ev:youtube|j9kRi6sVuM8||inline}} {{#ev:youtube|XImWJD9dPi8||inline}}
+
+== Trivia ==
+* The name of this item is a reference to the movie ''[[wikipedia:Inception|Inception]]''.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed We Need to Go Deeper!.png|{{plat|3DS}} The icon of We Need To Go Deeper! as seen on the lower 3DS screen.
+</gallery>
+
+== Bugs ==
+{{bug|dlc=na+|If a trapdoor is spawned inside of a {{R|Black Market}} with this item and is entered, the player is trapped in the {{R|Crawl Space}} unless they go to the next floor.}}
+
+{{nav|fr=Aller au Fond des Choses|zh=我们需要深入挖掘！}}

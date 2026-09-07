@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 698
+ | quote       = Double trouble!
+ | description = Spawns two [[familiar]]s that float on either side of Isaac and fire tears that use his [[tears]], [[range]], [[shot speed]], and [[tear effects]], and scale with [[damage]].
+ | quality     = 4
+ | tags        = summonable baby monstermanual offensive
+ | devil price = 2
+ | unlocked by = Twisted Pair
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Spawns two [[familiar]]s who float by Isaac's side and fire tears that use Isaac's [[tears]], [[range]], [[shot speed]], [[tear effects]] and that each deal 0.375x his [[damage]].
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* Twisted Pair is very similar to the item {{I|Incubus}}. It provides the same total damage per second increase in the form of a familiar (familiars in this case).
+* When playing as {{c|Lilith}} or {{c|Tainted Lilith}}, the demon familiars will deal 50% of Lilith's damage each.
+* Holding the up/down + left/right attack buttons will make one demon go further behind and the other one in front of Isaac.
+* Because the demons need time to adjust their position while firing, the left/right directional buttons can be tapped to shoot more precise, straight lines of tears.
+* They don't inherit all effects and stats from the player. See Interactions below check for small oversights.
+
+== Synergies ==
+* {{i|BFFS!}}: Twisted Pair's tears deal twice as much damage.
+* {{i|Box of Friends}}/{{i|Crooked Penny}}/{{i|Diplopia}}: Each additional Twisted Pair will add two more familiars that float farther out from Isaac.
+* {{T|Forgotten Lullaby}}: Increases the fire rate of Twisted Pair.
+* {{i|Tractor Beam}}: Twisted Pair's tears follow the beam.
+* {{T|Friendship Necklace}}: Causes the Twisted Pair to orbit Isaac, allowing for a more precise firing of tears.
+
+== Interactions ==
+* {{I|Epic Fetus}}:  Each familiar will fire a missile from a two additional crosshairs. '''Not Recommended''', as the twisted pair crosshairs are not synced to Isaac's crosshair and move at a much slower rate, making self damage much more likely as the additional crosshairs will struggle to make distance from Isaac. This is likely an oversight.
+* {{i|Eye Drops}}: The familiars do not have the staggered attack, stat bonuses still apply.
+* {{I|Eye of Greed}} The two familiars will also fire coin tears which spend Isaac's coins. Their shot counter is independent from Isaac's.
+* {{i|Sacrificial Altar}}: Only 1 item pedestal is spawned for their sacrifice, unless they were spawned through {{I|Cambion Conception}}, in which case they will count for two.
+* {{i|Terra}} + {{i|Brimstone}}/{{i|Technology}}: While Terra + laser items like Brimstone or Technology don't open doors normally, Twisted Pair's lasers can open doors. This is likely an oversight.
+
+== In-game footage ==
+{{#ev:youtube|cc_VqtHoTZM}}
+
+== Trivia ==
+* "Twisted Pair" may be a reference to Neil Breen's [[wikipedia:Twisted Pair (film)|film of the same name]], or to [[wikipedia:Twisted Pair|twisted pair cabling]].
+
+{{nav|conjoined|tainted lilith unlock|the beast unlock|fr=Jumeaux Malicieux}}

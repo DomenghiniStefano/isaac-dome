@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 455
+ | quote       = I remember this...
+ | description = {{dlc|nr}}+1.5 [[range]], +1 [[tear falling speed]]. Drops a [[Coins#Lucky Penny|Lucky Penny]].<br>{{dlc|r}}+2.5 [[range]]. Drops a [[Coins#Lucky Penny|Lucky Penny]].
+ | quality     = 1
+ | tags        = summonable offensive
+ | unlocked by = Dad's Lost Coin
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* {{dlc|nr}} +1.5 [[range]].
+* {{dlc|r}} +2.5 [[range]].
+* {{dlc|nr}} +1 [[tear falling speed]]
+* Drops a {{E|Lucky Penny}}.
+
+== Notes ==
+* {{dlc|r}} Dad's Lost Coin's quality is considered 2 for the purposes of {{i|Bag of Crafting}}.
+
+== In-game Footage ==
+{{#ev:youtube|z6siwP7jFlg}}
+
+== Trivia ==
+* The item may refer to [[wikipedia:Sobriety coin|Sobriety Coins]], which are given to members of the ''Alcoholics Anonymous'' organization to commemorate how long a member has remained sober.
+** This is further supported in the item's [https://foursouls.com/cards/b2-dads_lost_coin/ The Binding of Isaac: Four Souls rendition], which closely resembles the most common design of Sobriety Coin.
+** {{dlc|r}} This is also supported by the dialogue during the [[Ascent]], where at one point Mom mentions that Dad has a drinking problem.
+** This was confirmed by Edmund in the [https://youtu.be/kby0rXT7qYQ?t=6962 Four Souls Isaac lore stream]. He went on to say it was inspired by his own father, who is a recovered alcoholic/drug addict, and gave Edmund one of his first sobriety chips as a gift.
+
+{{nav|the lost unlock|dad|ultra greedier unlock|fr=Médaille de Papa}}

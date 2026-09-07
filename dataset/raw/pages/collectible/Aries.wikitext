@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | id          = 300
+ | quote       = Ramming speed
+ | description = +0.25 [[Speed]]. Running into enemies while at a high speed will deal damage. {{dlc|r}} Prevents Isaac from taking contact damage while moving at high speed.
+ | quality     = 2
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.25 [[Speed]].
+** {{dlc|nr}} Also affects maximum speed (may never exceed 2.0).
+* Running into enemies while at a high speed will deal {{dlc|nr}} 18 / {{dlc|r}} 25 damage.
+** At least 0.85 Speed is required to be able to move quickly enough.
+*** {{dlc|r}} Moving at this speed also prevents contact damage.
+
+== Synergies ==
+* {{i|Serpent's Kiss|r}}: Allows Isaac to poison enemies without needing to take a hit, allowing for an impressive amount of {{E|Black Heart}}s to be collected.
+* {{c|Tainted Forgotten|r}}: Throwing the skeleton will deal 80 damage on contact.
+* {{c|Tainted Magdalene|r}}'s hugs stack with Aries, dealing insane combined contact damage to enemies. This also makes T. Magdalene invulnerable at high speeds, whilst still generating a decent amount of red hearts.
+
+== Interactions ==
+* {{i|Isaac's Heart|r}}: The invulnerability does not extend to the heart.
+
+== In-game Footage ==
+{{#ev:youtube|boZhQASx8-M}}
+
+== Trivia ==
+* The horns that Isaac receives after obtaining Aries are similar to {{E|The Lamb}}'s, and very similar to {{t|Curved Horn}}.
+
+{{nav|zodiac|fr=Bélier}}

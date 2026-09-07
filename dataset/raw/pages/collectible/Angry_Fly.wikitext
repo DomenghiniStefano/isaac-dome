@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 511
+ | quote       = He's violent
+ | description = Spawns a fly [[familiar]] that orbits around a random enemy and deals 30 damage per second to enemies it comes in contact with.
+ | quality     = 1
+ | tags        = summonable monstermanual offensive fly
+ | unlocked by = Angry Fly
+}}
+
+{{cit|up|a+1}}
+
+== Effects ==
+* Spawns a fly [[familiar]] that orbits around a random enemy and deals 2 damage per tick/30 damage per second to enemies it comes in contact with.
+** It will occasionally make a lunge towards the enemy it is orbiting, allowing brief contact even with smaller enemies.
+** If the enemy it is orbiting dies, it starts orbiting a different enemy.
+** If there are no enemies, it orbits Isaac.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* Angry Fly will orbit around invincible enemies such as {{e|Stone Grimace}}s without dealing damage.
+* Due to its movement pattern, its actual damage dealt per second is erratic against most enemies and groups of them.
+* {{dlc|r}} As {{c|Tainted Jacob}}, Angry Fly will orbit around {{e|Dark Esau|n}}.
+
+== In-game Footage ==
+{{#ev:youtube|ruukYnika6o}}
+
+== Gallery ==
+<gallery>
+File:Collectible Angry Fly Booster Pack 1 icon.png|Angry Fly's original appearance prior to [[Booster Pack#4]].
+</gallery>
+
+== Trivia ==
+* Angry Fly is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=835997271 this Steam Workshop item] by Custom Phase.
+
+{{nav|booster pack|fly|fr=Mouche Enragée}}

@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 447
+ | quote       = Crying makes me toot
+ | description = Constantly shooting causes Isaac to release gas clouds that can be pushed by his tears and damage nearby enemies. {{dlc|r+}} The cloud will gradually increase in size, while the damage it does gradually decreases.
+ | quality     = 0
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Firing without a pause for {{dlc|nr+}} 7.5 seconds / {{dlc|r+}} 4 seconds creates a small brown cloud that damages enemies who walk through it.
+** {{dlc|nr+}} The damage is equal to Isaac's base tear damage, dealt roughly 5 times per second.
+*** The clouds last for 15 seconds, meaning a maximum of two can be active at any given time.
+** {{dlc|r+}} The damage starts equal to Isaac's tear damage, dealt roughly 5 times per second. The damage will gradually decrease, while the cloud gradually increases in area size.
+*** Each cloud lasts for 10 seconds; the damage decreases to around 43% for the duration of the cloud.
+** The clouds can be moved by shooting them.
+** Changing firing direction is allowed, but any pause in holding a fire button or taking damage resets the timer.
+
+== Notes ==
+* {{dlc|r+}} The visual size of the cloud is not accurate, as the actual hitbox is much bigger than how it appears.
+
+== Synergies ==
+* {{T|Gigante Bean}}: The clouds will be larger, increasing the range drastically. The damage is unaffected.
+
+== In-game Footage ==
+{{#ev:youtube|ZUHb8k5MJ6A}}
+
+{{nav|bean|fr=Haricot Péteux}}

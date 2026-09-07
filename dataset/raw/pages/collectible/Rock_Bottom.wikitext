@@ -1,0 +1,71 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 562
+ | quote       = It's only up from there
+ | description = Prevents Isaac's [[attributes]] from being lowered.
+ | quality     = {{dlcalt|3|r+=4}}
+ | tags        = summonable offensive
+ | unlocked by = Rock Bottom
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Prevents Isaac's [[attributes]] from falling below their highest values reached.
+** Attributes continue to be calculated normally internally. Rather than use Isaac's current stats, items and effects will impact Isaac the same way they would as if he did not have Rock Bottom.
+
+== Notes ==
+* Health downs do not count as stat downgrades for Rock Bottom.
+* Temporary buffs work normally, though they may make reaching new best values harder after the buff has worn off.
+** For example, using {{i|The Book of Belial}} to gain +2 damage will stay in effect indefinitely, but while it's not currently activated, Isaac must earn more than +2 damage from other items to see a difference. The Book of Belial can then be used once again to stack on top of that new floor, so the damage "lost" to make up for the original temporary bonus isn't really wasted.
+** Stacking as many temporary buffs at once as possible may be helpful to reach particularly high values.
+** Temporary positive multipliers are ''not'' retained, only the values reached through them are.
+* Stat penalties are accounted for, causing increased difficulty of reaching new best values.
+** Optimally, any available increases to a particular stat should be taken before taking the item that lowers it.
+** Permanent negative multipliers, such as {{i|Soy Milk}}, work as expected: after the internal damage value is dropped to 0.2×, it would require over 5× increase in damage from other items and effects afterwards to start increasing the best value again.
+* If Rock Bottom is removed, Isaac's stats will no longer be locked and return to match his current items/effects.
+
+== Synergies ==
+Refer to the articles on [[Damage]], [[Tears]], [[Range]], [[Shot Speed]], [[Speed]], and [[Luck]] for lists of items granting otherwise temporary boosts.
+
+* {{i|20/20}} / {{i|The Inner Eye}} / {{i|Mutant Spider}} / [[Conjoined]]: Multiple tears will be shot without the source's respective stat downgrades. The damage and tear multipliers will still affect future stat ups.
+* {{t|Azazel's Stump}}: Isaac will keep Azazel’s base stats after transforming back. This includes 1.25 base speed, +0.5 tears per second, and a 1.5× damage. The tear delay multiplier will not be given, including while Isaac is Azazel.
+* {{i|Berserk!}}: +3 flat damage and +0.4 speed last indefinitely. Will also give a tears up if (½ tears fired per second + 2), unless Isaac’s tears fired per second is already 4 or higher.
+* {{i|Binge Eater}}: Speed down from picking up food items no longer applies, and all temporary stat boosts are permanent.
+* {{i|Brimstone}} / {{i|Chocolate Milk}} / {{i|Monstro's Lung}}: Charged shot can be fired at Isaac’s normal fire rate.
+* {{p|VII - The Chariot?}}: The 4x fire rate bonus from the card makes it possible to reach and keep extremely high values.
+* {{i|Clicker}}: Will keep stat bonuses from items removed, and will retain the best stats of all characters that are cycled through.
+* {{i|D8}} / {{t|Cracked Dice}}: With repeated use, 1.5-2× higher values can be applied to Isaac’s speed, tears, range, and damage.
+* {{i|Dataminer}}: If one overflows Isaac's tear rate to 120 before picking up Rock Bottom, the tear rate stays at 120.
+* {{I|Deck of Cards}} /{{t|Ace of Spades}}: Allows for more cards to spawn, which can then all be used in the same room to maximize stats gained.
+* {{i|Eve's Mascara}} / {{i|Polyphemus}}: Gives 2× damage multiplier without immediate reduction to tears or shot speed.
+* {{I|False PHD}}: When using a pill applies only the damage up with no downside.
+* {{c|The Forgotten}} / {{c|The Soul}}: Allows transfer of stat-ups between the two. For example, collecting Ipecac as The Forgotten doesn't give him the +40 damage boost, but it does give it to The Soul. Switching to the Soul, then switching back to the Forgotten prevents him from losing the +40 damage.
+* {{i|Ipecac}}: Gives Isaac a massive damage up without the tears down.
+** {{i|Ipecac}} + {{i|Brimstone}} / {{i|Tech X}}: If Ipecac is taken before Brimstone / Tech X, its full damage up is applied to the beam/ring properly, but if the order of the items is reversed, Ipecac will only give +2 damage.
+* {{c|Jacob and Esau}} / {{c|Tainted Lazarus}}: Only the character that has Rock Bottom will be immune to stat downgrades.
+* {{i|Jupiter}}: The +0.5 speed boost becomes permanent, turning Jupiter into a +0.2 speed up. Farts made while moving still must be charged by standing still.
+* {{i|Kidney Stone}}: Permanently gives Isaac a ×6 fire rate multiplier after firing a kidney stone. Accuracy penalty from firing kidney stones is unaffected.
+* {{i|Libra}}: Stat balancing applies after Rock Bottom.
+* {{i|Metronome}}: Isaac keeps any stat upgrades gained by a random temporary item as long as the item brings his stats over their highest value reached on that run. This allows Isaac to potentially accrue a large number of stat upgrades.
+* {{i|Neptunus}}: Not affected by Rock Bottom. Fire Rate will decrease normally.
+* {{t|Perfection}}: The large luck boost remains even if Perfection is lost.
+* {{I|Purity}}: Allows for all stat boosts given by Purity to stay active at the same time.
+* {{i|Red Stew}}: The +21.6 damage is permanent.
+* {{i|Razor Blade}} / {{i|Golden Razor}}: Can be used multiple times in one room for a large permanent damage boost.
+* {{i|Soy Milk}} / {{i|Almond Milk}}: Gives Isaac the full tears up while keeping his previous damage; however, the damage divider still applies to any future damage increases.
+* {{c|Tainted Eden}} + {{i|Birthright}}: If Rock Bottom is picked up before Birthright, it is protected from being rerolled, allowing Tainted Eden to retain the highest stats they have reached.
+** This reroll protection is even effective against similar reroll effects such as {{i|D4}} and {{i|Missing No.}}.
+* {{c|Tainted Isaac}}: Prevents any stat from decreasing, letting the effects of picked up items linger even after discarding them. However, raising stats beyond the values reached will be more difficult after leaving the source item, and swapping away Rock Bottom resets them to Tainted Isaac's current set. Picking it up again will not give the stats back.
+* {{I|Taurus}}: Prevents Isaac's speed from dropping whenever a room is cleared.
+
+== In-game Footage ==
+{{#ev:youtube|7zC5u8p86Gk}} {{#ev:youtube|wHPD7n4tx2o}} {{#ev:youtube|ga5iFLfrNqk}}
+
+== Trivia ==
+* [[anti:Rock Bottom|Rock Bottom]] originates from the ''Antibirth'' mod. In ''Antibirth'', Rock Bottom could also appear from [[tinted rock]]s and {{i|Experimental Treatment}} was still able to lower Isaac's stats.
+* This item is likely a reference to [[wikipedia:Baetylus#Examples|the stone]] that Jacob slept on when he dreamt of a ladder to heaven; upon awakening, he covers the stone in oil and dedicates it to the area where he had the vision, which he names Bethel. Its name is also a reference to the expression "Hitting rock bottom", which means being emotionally overwhelmed.
+* The main cosmetic difference when holding this item is that Isaac faces upward slightly and stops visually crying, which may be a play on the term "things are looking up".
+* Contrary to popular belief, Rock Bottom does ''not'' set Isaac's stats to the starting values. This was confirmed by Kilburn in the ''Binding of Isaac'' Discord server, when he stated that it doesn't do that and has never done that, even in the original release of ''Antibirth''.
+
+{{nav|jacob and esau unlock|boss rush unlock|fr=Au Fond du Trou}}

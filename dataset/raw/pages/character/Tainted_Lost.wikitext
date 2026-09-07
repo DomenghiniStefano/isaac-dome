@@ -1,0 +1,186 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc          = r
+ | id           = 31
+ | damage       = 3.50 (* 1.30)
+ | pickups      = 1 [[coin]]<br>{{p|Holy Card|n}}
+ | collectibles = [[Flight]]<br>[[Spectral tears]]
+ | unlocked by  = The Baleful
+}}
+'''Tainted Lost''' is a [[Characters|character]] added in [[The Binding of Isaac: Repentance]]. It is the alternate version of {{c|The Lost}}. Tainted Lost is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|1=Soul of Cain}} to access a special room in one of the walls while playing as the Lost.
+
+Tainted Lost is similar to The Lost, but instead of {{i|Holy Mantle}}, it starts with a {{p|Holy Card}}; it also does not start with the {{i|Eternal D6}}. Like the Lost, Tainted Lost has [[flight]] and [[spectral tears]], but no health.
+
+It also starts with a 1.3x damage multiplier, giving it higher starting damage and making most damage ups more powerful. Certain items will be automatically rerolled while playing as Tainted Lost, including most defense-oriented items (see [[Tainted Lost#Item Exclusion|Item Exclusion]]). To offset the lack of {{I|Holy Mantle}} and limited defensive options, all [[Cards and Runes|cards]] that spawn have roughly a 10% chance of being turned into a {{P|Holy Card}}.
+
+== Notes ==
+* Just as the Holy Mantle effect from the Holy Card negates damage taken in the first place, items such as {{I|Birthright}}, {{t|Missing Poster}} and {{P|Soul of Lazarus}} will revive Tainted Lost after death. This means that items that normally take effect upon taking damage will affect Tainted Lost upon death and revival.
+* Beating Delirium with {{C|The Lost}} is not required for Tainted Lost to obtain the {{P|Holy Card}}, or for Holy Cards to spawn during the run.
+* As with The Lost, {{r|Devil Room}} items and {{r|Black Market}} items can be taken for free, but will be presented as a choice. Taking one item as a deal will cause the others in the room to disappear.
+
+== Item Exclusion ==
+Tainted Lost has two mechanics that determine what items it can encounter.
+
+=== Offensive items ===
+The first mechanic makes it so that any items that are not [[Item Tags|tagged]] "<code>[[Item Tags offensive|offensive]]</code>" cannot be naturally encountered while playing as Tainted Lost. This disallows items that it can't take advantage of, similar to {{C|The Lost}}'s {{I|Birthright}}, but it also prevents many powerful defensive items, such as {{I|Dead Cat}} and {{I|Holy Mantle}}, from naturally spawning. These items will be rerolled, and items that are set drops from mini-bosses (ex. {{e|Super Pride}} dropping {{I|Dead Cat}}) will never be dropped.
+
+Disallowed items can only appear by using {{I|Spindown Dice}}, {{I|Death Certificate}}, as set drops from props (ex. {{I|Dry Baby}} from a skull) or Harbingers (ex. {{i|Ball of Bandages}}), or from {{P|Soul of Lilith}}.
+
+Not all items tagged "<code>[[Item Tags offensive|offensive]]</code>" are particularly offense-oriented items. Examples of this include {{I|Treasure Map}} and {{I|The D6}}.
+
+This mechanic seemingly does not work correctly in co-op.
+
+=== Item quality ===
+The second mechanic uses the [[item quality]] system. Items with a quality value of 2 or less have a 20% chance of being rerolled when encountered as Tainted Lost. The new item chosen is not guaranteed to have quality over 2.
+
+== Excluded Items ==
+The following items cannot be found while playing as Tainted Lost.
+
+=== Activated Collectibles ===
+{{collectible table | type = activated | no tag = offensive | collapsed = true }}
+
+=== Passive Collectibles ===
+{{collectible table | type = passive | no tag = offensive | collapsed = true }}
+
+== Strategy ==
+With only a single {{p|Holy Card}} for defense, defensive items become just as important as offensive ones, as taking more than a single hit in the entire run may prove fatal. However, because all items not marked as "offensive" will automatically be rerolled, defensive options available are less plentiful.
+
+* A good way to secure a powerful run is to visit as many {{r|Boss Challenge Room}}s as possible. It is possible for the player to use the alternate floors to their advantage by sticking to the second floor of each chapter. By visiting {{s|Downpour}} II / {{s|Dross}} II, the player can also get an extra boss item from the [[Mirrored World]]. This strategy comes with the added risk of having to fight more bosses, but provides the potential to snowball the player's stats and make later floors much easier to survive in.
+* Be careful of any {{E|Chest|text=Chests}}, which could be a {{E|Mimic Chest}} or a {{E|Haunted Chest}}.
+* [[Rocks#Skulls|Skulls]] can be a source of finding cards which in turn can be a {{P|Holy Card}}.
+* Waiting before using the {{P|Holy Card}} until after the Shop has been found in case a {{I|Blank Card}} is available for sale can prove helpful.
+* Be wary of taking items that automatically attack enemies in case they kill exploding enemies nearby. This includes items like {{I|120 Volt}}, {{I|Demon Baby}}, and items that spawn [[Familiar#Blue Flies|blue flies]].
+
+== Items Interactions ==
+=== Favored Items ===
+These items provide significant benefits to Tainted Lost.
+
+* {{t|Ace of Spades}}: Chance of changing the room drop reward to a card, and a chance of getting a card as additional rewards from certain things, indirectly increasing the chance of getting a Holy Card.
+* {{i|Birthright}}: Grants an extra life, respawning in the same room and damaging nearby enemies.
+** This extra life item is the only one that can be naturally obtained as Tainted Lost, as all others are rerolled.
+** Taking a hit and using Birthright counts as taking damage and will affect items accordingly, such as losing {{T|Perfection}}.
+** Summoning Birthright with {{i|Lemegeton}} will grant infinite lives until the wisp is destroyed.
+* {{i|Blank Card}}: Allows a four-charge reuse of the Holy Card.
+** {{I|9 Volt}} and {{T|AAA Battery}} each reduce the charge time required by one bar.
+** {{I|The Battery}} allows storing an extra use of Blank Card, useful in case you take a hit multiple times in a short period.
+* {{I|Bone Spurs}}: Especially useful against enemies that spawn bullets or other enemies on death, as they will often be instantly blocked or damaged/killed, respectively.
+* {{dlc|nr+}}{{i|Book of Shadows}}: Very powerful in combination with {{T|Panic Button}} and {{i|4.5 Volt}}.
+* {{i|Book of the Dead}}: The Bone orbitals spawned from this item can block projectiles, greatly increasing survivability.
+* {{i|Book of Virtues}} / {{i|Lemegeton}}: Rings of wisps can block a lot of projectiles.
+* {{I|Booster Pack}}: Has about a 40% chance of spawning a Holy Card.
+* {{i|Camo Undies}}: Allows Tainted Lost to be invisible upon entering a room and plan out his first attack.
+* {{i|Clear Rune}}: Can be used with protective runes like {{p|Algiz}} or {{p|Soul of Bethany}}. Similarly, {{p|Soul of the Lost}} can be used for a single-use {{I|Holy Mantle}} for the current room.
+** {{P|Soul of Lazarus}} also provides a short invincibility streak after reviving.
+* {{I|Clicker}}: Becoming Tainted Lost by using Clicker allows Tainted Lost to keep all previously collected items. This allows many useful defensive items that Tainted Lost normally can't collect.
+* {{i|Coupon}}: Allows an extra item to be taken from devil deals.
+* {{i|Cursed Eye}}: The downside of the item is inconsequential due to Tainted Lost's lack of health.
+* {{i|D1}} / {{i|D infinity}} /{{t|Dice Bag}}: Cards duplicated by D1's effect have an increased chance to be Holy Cards.
+* {{i|Damocles}}: The downside of the item is inconsequential due to Tainted Lost's lack of health.
+** The item can still kill Tainted Lost if resurrected by {{i|Birthright}} or any other acquired respawn item.
+* {{I|Dark Arts}}: Provides a powerful panic button to escape swarms of enemies and/or bullets.
+* {{i|Deck of Cards}}: Allows more chances for Holy Cards.
+* {{I|Death Certificate}}: Tainted Lost can now obtain defensive items, as Death Certificate's item generation ignores Tainted Lost's changes to item availability. This is extremely beneficial, as Tainted Lost can now obtain extra lives such as {{I|Dead Cat}} and protective items such as {{I|Holy Mantle}}.
+* {{i|Echo Chamber}}: The next three consumables used after Holy Card will grant another mantle.
+* {{T|Endless Nameless}}: Has a 25% chance to spawn another Holy Card when one is used.
+* {{t|Flat File}}: Retracts almost all spikes and allows free {{r|Curse Room}} entry.
+* {{i|The Gamekid}} / {{i|My Little Unicorn}}: On-demand invincibility with contact damage.
+* {{i|Glass Cannon}}: High damage shots that allow the removal of especially dangerous enemies fast. The downside of the item only comes into effect upon the use of a reviving item and not from consuming a Holy Card.
+* {{i|Glitter Bombs}}: Bombs may drop a Holy Card when exploding.
+* {{dlc|nr+}}{{i|Glowing Hourglass}}: Allows recovery of a Holy Card shield.
+* {{I|Guppy's Tail}}: can increase the amount of {{E|Locked Chest}}s found in a run, and thus allows more chances for Holy Cards to appear.
+* [[Tear Effects#Homing|Homing tears]]: Allows Tainted Lost to safely position himself almost anywhere in a room while still dealing damage.
+* {{I|Little Horn}} / {{i|Euthanasia}}: can destroy almost all "invulnerable" enemies (e.g. {{E|Poky}}, {{E|Stone Grimace}}) before they can hurt Tainted Lost. However, {{E|Ball and Chain}} are still invulnerable and dangerous.
+* {{i|Lost Contact}}: Blocks projectiles.
+* {{p|VI - The Lovers?}}: Can be safely used to generate items with no loss of durability or risk of death.
+* {{i|Mercurius}} / {{t|Door Stop}}: Most rooms can be checked for a safe plan of attack, or bypassed entirely.
+* {{t|Missing Poster}}: Allows a one-time revival upon death, respawning Tainted Lost in the previous room.
+** {{t|Mysterious Paper}} has a chance to trigger Missing Poster's effect each room.
+* {{t|Panic Button}}: Could save Tainted Lost from death when combined with suitable active items.
+* {{i|Paschal Candle}}: Taking a hit and consuming a Holy Mantle effect allows it to stay at maximum level.
+* {{i|Pause}}: Can be used with a damaging orbital to get lots of damage on bosses for free.
+* {{t|Perfection}}: +10 luck with no downside. Tainted Lost's lack of health makes losing it during the run less likely as only using a reviving item will consume Perfection. Luck-based tear effects such as {{i|Apple!}}, {{i|Tough Love}}, {{i|Holy Light}}, and {{i|Euthanasia}} benefit greatly from this extra luck, while also making sure Tainted Lost has a steady supply of pickups from room clear rewards.
+** {{I|Bird's Eye}} and {{i|Ghost Pepper}} are exceptionally powerful combined with high luck: at 10 luck, every tear has a 50% chance to be accompanied by a powerful flame, that in the case of Bird's Eye, blocks enemy projectiles. This becomes even more potent when both items are held, as ''all'' tears will fire one of these two flames at only 7 luck.
+* {{I|Placebo}}: Protective pills like Power Pill or Feels Like I'm Walking on Sunshine may be helpful.
+* {{i|Pluto}}: Smaller size makes Tainted Lost harder to hit.
+* {{P|Soul of Lazarus}}: Acts as a substitute to Holy Card at the cost of losing Perfection.
+* {{i|Spindown Dice}}: Allows Tainted Lost to obtain items otherwise hard-coded to not spawn for them.
+** Some very useful reroll chains for Tainted Lost include:
+*** {{i|Belly Button}} to {{i|Cone Head}}
+*** {{i|Book of Secrets}} to {{i|Blank Card}}
+*** {{i|Cricket's Body}} to {{i|Pyromaniac}}
+*** {{i|Free Lemonade}} to {{i|Damocles}}
+*** {{I|GB Bug}} to {{I|Farting Baby}}
+*** {{i|Juicy Sack}} to {{i|Dry Baby}}
+*** {{i|Magic Mushroom}} to {{i|1up!}}
+*** {{i|Meat Cleaver}} to {{i|Bot Fly}} to {{i|Death Certificate}}
+*** {{i|Restock}} to {{i|Host Hat}}
+*** {{i|Strange Attractor}} to {{i|Thunder Thighs}} to {{i|Holy Mantle}}
+*** {{i|Tech.5}} to {{i|Trinity Shield}} to {{i|Infamy}}
+*** {{i|Void}} to {{i|D1}}
+*** {{i|We Need To Go Deeper!}} to {{i|The Nail}} to {{i|Lord of the Pit}} to {{i|Dead Cat}}
+*** {{I|Lost Contact}} to {{I|Guppy's Collar}} to {{I|Spiderbaby}} to {{I|Gnawed Leaf}}
+*** {{I|Salvation|dlc=n}} to {{I|Bloody Gust|dlc=n}} to {{I|Heartbreak|dlc=n}}
+* {{i|Starter Deck}}: Increases the chances of finding Holy Cards and allows pill-generating items to spawn Holy Cards.
+* {{I|Teleport 2.0}} / Golden {{t|Broken Remote}} / Teleporting cards: allows Tainted Lost to leave {{r|Curse Room}}s safely.
+* {{i|The Stairway}}: Creates a ladder to an {{r|Angel Room}} shop at the start of every floor, with the shop potentially selling powerful [[Angel Room (Item Pool)|Angel Room Item Pool]] items and Holy Cards.
+* {{i|Telekinesis}}: Can be used to block projectiles or enemies.
+* {{i|Tooth and Nail}}: Timed invincibility allows exiting {{r|Curse Room}}s safely.
+* {{I|Uranus}}: Frozen enemies will not be able to spawn hazards (tears, explosives, other enemies) on death. Icicles from frozen enemies can also slow other enemies and potentially cause a chain reaction, freezing a whole group of enemies.
+* {{t|Wooden Cross}}: A single-use Holy Mantle per floor. Note that it does not break before Holy Card, thus it is wise to save them for when the shield from Wooden Cross is broken.
+* {{i|Genesis}}: Will remove current Holy Mantle shield on use, but will give another {{p|Holy Card}}.
+
+=== Disfavored Items ===
+These items provide significant drawbacks to Tainted Lost.
+
+* Any explosive tear effect, such as {{I|Fire Mind}} or {{I|Ipecac}}, greatly increases the chance of fatal self-damage. Since {{I|Host Hat}} and {{I|Pyromaniac}} cannot naturally appear as Tainted Lost, there are very few ways to reliably avoid explosive self-damage.
+** The same risk also applies for explosive familiars like {{I|BBF}}, {{I|Bob's Brain}}, and {{I|Lil Delirium}}.
+** {{I|3 Dollar Bill}}, {{I|Fruit Cake}}, and {{I|Playdough Cookie}} have a chance to shoot {{I|Fire Mind}} tears.
+* The [[Stompy]] effect makes firing from cover impossible – all but removing a safe method for Tainted Lost to attack non-flying enemies. Additionally, some obstacles have effects that can cause unavoidable damage if accidentally moved over, such as bomb rocks exploding or blood shots from polyps.
+* {{i|Finger!}}: May destroy [[TNT]] accidentally and without warning.
+* {{I|Little Baggy}}: Holy Cards will no longer spawn.
+* {{I|IBS}}: The effects of poop caused by damaging enemies are completely random, which can lead to an accidental death or loss of a Holy Card.
+** Butt bombs may hurt you if you are not paying attention, gas clouds from stinky poop could explode in a chain back to you if thrown at fires, and farts generate a gas cloud that will explode if you are next to a fire, leading to an untimely death.
+
+=== Neutral Items ===
+These items can provide both benefits and drawbacks to Tainted Lost.
+
+* Although items which provide temporary invincibility such as {{I|A Pony}} and {{I|Mars}} can allow Tainted Lost to negate damage, their effects are difficult to time, and could result in charging into an enemy and being damaged.
+* {{I|Buddy in a Box}}: The familiar's potential tear effects are the same as {{I|Fruit Cake}}, and as such have a small risk of carrying {{I|Fire Mind}} for a floor.
+* {{i|Dead Sea Scrolls}}: Can cause items such as {{I|Anarchist Cookbook}} to trigger, potentially causing damage, but may also spawn a Holy Card via {{I|Deck of Cards}}.
+* {{I|Experimental Treatment}}: Health is not a factor for Tainted Lost, so it may be included as one of the two stats which are reduced. However, it is more likely to be included as a stat increase, which has no effect.
+* {{I|Lemegeton}}: Can give Tainted Lost very useful items, such as {{I|Birthright}}, allowing him to have infinite lives until the wisp is destroyed, but it can also give run-ending items such as {{I|Ipecac}}.  Because Lemegeton's effect is random, this is completely out of the player's control.  If a very bad wisp is gained using Lemegeton, it is recommended to destroy it as soon as possible, but be cautious as this could result in taking damage.
+* {{I|Monster Manual}} / {{P|Soul of Lilith}}: Can spawn useful familiars, including some which Tainted Lost cannot encounter normally, such as {{I|Psy Fly}} or {{I|Sworn Protector}}. However, they can also spawn useless or even detrimental familiars, such as {{I|Bob's Brain}} or {{I|Lil Delirium}}.
+* {{I|Number One}}: Decreasing maximum range exposes Tainted Lost to danger, but increasing fire rate may make it easier to defeat enemies.
+* {{i|Sulfuric Acid}} /{{i|Terra}}: Can skip rooms entirely by breaking doors but also prevent firing from cover.
+* {{I|Teleport!}}: Can teleport Tainted Lost away from a dangerous room or before a fatal mistake is made. However, the player can teleport to a {{r|Curse Room}} (or to a Secret Room whose only opened exit is a Curse Room) which is inescapable without a Holy Card.
+
+== Unlockable Items ==
+{{achievement text | Kid's Drawing, The Fool, Soul of the Lost, Haunted Chest, Ghost Bombs, Crystal Key, Sacred Orb }}
+
+== Gallery ==
+<gallery>
+File:Transition Lost Tainted.png|Tainted Lost's transition screen portrait.
+File:Start_Tainted_Lost.png|The spawn floor when playing Tainted Lost.
+File: Tainted Lost Menu Icon (Locked).png|Tainted Lost's locked character icon, depicting a closet doorway full of cobwebs.
+</gallery>
+
+== Trivia ==
+* While items like {{i|A Dollar}}, {{i|Knife Piece 1}}, and {{i|Knife Piece 2}} are not considered items that the Tainted Lost can find, they will still appear for him if the conditions for finding them are met.
+* While [[Harbingers]] will still drop {{i|Ball of Bandages}} or {{i|Cube of Meat}}, {{E|C.H.A.D.}} will not drop {{i|Little C.H.A.D.}}.
+* If invincibility is used to play [[Blood Donation Machine]]s, they can still produce a {{i|Blood Bag}} as a reward.
+* {{i|Inner Child}} will still spawn in the hidden closet in {{s|Home}}.
+* The achievement for unlocking Tainted Lost is "The Baleful", a possible title for the character.
+** "Baleful" means "ominous" or "harmful or malignant in intent or effect", possibly referring to how Tainted Lost has higher base damage than his regular counterpart and can find better items.
+** A more archaic meaning of "Baleful" is "Something/Someone wretched or miserable", and considering how Tainted Lost is incapable of using defensive heavy builds, being constantly at the mercy of enemies and dying usually at two hits, fit with this use of the word.
+** "The Baleful" is Tainted Lost's character name in Four Souls.
+* Before the [[V1.7.5|1.7.5 update]], it was possible for Tainted Lost to find {{I|Yuck Heart}} and {{I|Best Bud}}, despite these items being useless for the character.
+** Additionally, {{I|Heartbreak}} could be found and utilized to essentially gain 4 extra lives and extra damage, but was removed from the tag list.
+* Tainted Lost's unlock drawing could be a reference to a transition nightmare Isaac can have, depicting The Lost talking to {{e|Mom}} from the attic.
+* Tainted Lost unlocks {{P|0 - The Fool?}}; the character can be linked to both the numeration and meaning of the Fool.
+** The Fool's numeration can be either 0 the lowest trump or 22 the highest trump, linked to his attributes — better items, no mantle, no health — as Tainted Lost will die in a single hit at any point, but can also build the strongest runs of any character because of those same attributes.
+** Reverse fool means apathy and nullity; this approach is often recommended to face Tainted Lost's runs because of how demanding the character is and how easy it is to lose these runs despite how powerful the character can become.
+** In a literal reversal of "the beginning of the journey" which The Fool represents, Tainted Lost represents the complete end of Isaac's existence, after [[Tainted Forgotten|his own mortal remains]] has vanished and even his own [[The Lost|soul]] erodes into dust and cobwebs along with the house and material objects that hold his last remnant memories.
+* Tainted Lost's starting health is listed as "?" on the character selection screen.
+* On death, the soul that flies away will be Tainted Lost instead of most other characters having the Lost fly away instead.
+
+{{nav|character|the lost unlock|tainted lost unlock|fr=L'Égaré Impur}}

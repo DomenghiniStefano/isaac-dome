@@ -1,0 +1,35 @@
+{{infobox trinket
+ | name = Mom's Toenail
+ | id = 16
+ | quote = ???
+ | description = {{dlc|nr+}} Once {{dlc|nr}} a minute / {{dlc|r}} every 20 seconds, Mom's foot randomly stomps down somewhere in the room. {{dlc|r+}} During combat, dropping this trinket will cause Mom's foot to stomp on its location.
+ | tags = {{dlc|nr+|mom}}
+}}
+
+{{cit|t}}
+
+== Effects ==
+* {{dlc|nr+}} Mom's foot periodically comes down.
+** {{dlc|nr}} The foot stomps every full minute (based on the in-game timer).
+** {{dlc|r}} The foot stomps every 20 seconds (based on the in-game timer).
+* The foot deals 300 damage.
+* {{dlc|r+}} During combat, dropping this trinket will cause Mom's foot to stomp on its location.
+* The foot also hurts Isaac for a full heart.
+
+== Synergies ==
+* {{dlc+|rnr+}} {{A|Golden Trinket}}/{{I|Mom's Box|n}}: Each copy lowers the time between stomps.{{dlc-}}
+** {{dlc+|r+}} Adds 1 more foot stomp per stack.{{dlc-}}
+
+== Notes ==
+* {{dlc|nr}} As the foot counts as an explosion, the damage can be avoided with {{i|Pyromaniac}} or {{i|Host Hat}}.
+* Unlike the foot spawned by {{P|II - The High Priestess}} or {{I|Mom's Shovel}}, this foot doesn't target enemies nor Isaac.
+* The impact can open doors, including {{r|Secret Room}} entrances.
+
+== In-game Footage ==
+{{#ev:youtube|rCJ4mLiCEUE||inline}} {{#ev:youtube|abRW9Q1Jugc||inline}}
+
+== Bugs ==
+{{bug|Because the position Mom's foot targets is random, it can land in the empty area of an L-shaped room.}}
+{{bug|dlc=rnr+| Mom's Toenail will not contribute to the Yes Mother? transformation nor unlocking {{i|Mom's Contacts}} despite having the item tag.}}
+
+{{nav|mom|fr=Ongle de Pied de Maman}}

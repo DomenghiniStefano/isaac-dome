@@ -1,0 +1,31 @@
+{{infobox trinket
+ | dlc         = a
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 81
+ | quote       = Blind to damage
+ | description = Increases invincibility time after getting hit.
+ | unlocked by = Blind Rage
+}}
+
+{{cit|ut|a}}
+
+== Effect ==
+* Doubles the invincibility frames Isaac gets after getting hit.
+
+== Notes ==
+* {{dlc|nr}} This item makes it possible to use the {{M|Blood Donation Machine}} twice without taking damage the second time.
+* {{dlc|nr}} This item makes it possible to use the {{M|Devil Beggar}} three times without taking damage the second and third times.
+* The invicibility frames also get doubled when effects such as {{I|Holy Mantle}} are triggered, making it very useful for {{C|The Lost}}.
+
+== Synergies ==
+* {{I|Mom's Box}} / {{A|Golden Trinket}} / {{t|Blind Rage|r}}: Each copy adds +2 seconds of invincibility frames.
+
+== In-game Footage ==
+{{#ev:youtube|stXF2TLTCoI}}
+
+== Trivia ==
+* This trinket refers to Samson being blinded after revealing his weakness to Delilah.
+
+{{nav|samson unlock|hush unlock|fr=Rage Aveugle}}
+[[Category:Damage-preventing items]]
+[[Category:Damage-triggered items]]

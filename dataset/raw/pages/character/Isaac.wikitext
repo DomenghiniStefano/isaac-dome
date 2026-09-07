@@ -1,0 +1,63 @@
+{{header characters}}
+{{infobox character
+ | id           = 14
+ | health       = {{hearts|red=3}}
+ | pickups      = 1 [[bomb]]
+ | collectibles = {{unlockable}} {{i|The D6}}
+}} {{disambig msg|the character|the boss of [[The Cathedral]]|Isaac (Boss)}}
+'''Isaac''' is the main [[character]] of the series, returning from the original ''The'' ''Binding of Isaac'' from 2011. He is the only character unlocked by default.
+
+Isaac starts with three [[Red Heart container]]s and one {{e|Bomb}}. He will also start with {{i|The D6}} once it is unlocked (after defeating {{E|Isaac}} as {{C|???}}).
+
+== Notes ==
+* Isaac is the basic character, with average stats. Unlocking {{I|The D6}} is invaluable for him as it allows him to see many more items. See The D6's article for detailed tips.
+* {{dlc|nr}} {{i|The D6}} that Isaac can start with does not increase the [[special item]] counter.
+
+== Item Interactions ==
+* {{i|Birthright}}: All new item pedestals cycle between two options. Previously seen items are unaffected.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Isaac's Head, Lost Baby, Mom's Knife, Isaac's Tears, Missing Poster, The D20, Lil' Chest, D1, Fart Baby, Cry Baby, D infinity, Meat Cleaver, Options?, The Broken, Buddy Baby }}
+
+== Unlockable Starting Items ==
+* {{achievement unlock|The D6}} - Start with {{i|The D6}}
+
+== Gallery ==
+<gallery>
+File:Binding Of Octorock.jpg|Original concept art for a character who would eventually be remodeled into Isaac.
+File:Start_Isaac.png|The spawn floor when playing Isaac.
+File:Transition Isaac.png|Isaac's transition screen portrait.
+</gallery>
+
+== Trivia ==
+* Isaac is a reference to the biblical story of the binding of Isaac, in which Abraham is commanded by God to sacrifice his only son, Isaac, to prove his loyalty and love.
+** "Then God said, 'Take your son, your only son, whom you love — Isaac — and go to the region of Moriah. Sacrifice him there as a burnt offering on a mountain I will show you.'" (Genesis 22:2)
+** Isaac's dad is also a reference to this story, as his name is Abraham.<ref>https://www.tiktok.com/t/ZT2CUoK6p/</ref>
+** Isaac's in-game ability to replace items on pedestals (via [[The D6]], [[Glitched Crown]] / [[Tainted Isaac]], or [[Birthright]]) could reference how, in the Bible, Isaac was replaced by a lamb on the sacrificial pedestal.
+* In a [https://twitter.com/edmundmcmillen/status/1235474907489689601 response to TBoI YouTuber Sinvicta] of whether there was any concept art of what Isaac's original design was, Edmund McMillen confirmed that Isaac's design was originally one of an Octorok while showing very similar features of how the gameplay would be modeled by posting an old concept art.
+* Edmund has stated that Isaac is left-handed, but in the opening cutscene, Isaac is holding a pencil with his right hand.<ref>http://4ms.me/165we0q</ref>
+** This could be a reference to the Catholic bias against left-handedness, stemming from Matthew 25:33 proclaiming that God will put those deserving to ascend to Heaven on his right-hand side and put those deserving to descend to Hell on his left-hand side. Isaac's mother could have forced him to work right-handed. The general practice of forcing left-handed people to use their right hands having also been a practice for a long time, with the acceptance of left-handed people only starting to show in 1971.
+* Contrary to previous theories made about Isaac, he does not have a sister.<ref>https://twitter.com/edmundmcmillen/status/1227014269612351488</ref>
+* Isaac is bald because his mother shaved his head. This could be a reference to the "Nazarite Vow" in Numbers 6:1–21.<ref>[[edmundm:73658340217]]</ref>
+** Isaac's natural hair color is strawberry blonde.<ref>https://archive.md/iz0ON</ref>
+* Isaac has [[wikipedia:irritable bowel syndrome|Irritable Bowel Syndrome]].<ref>https://archive.md/wrk2a</ref>
+* Isaac's dad is a handyman.<ref>https://archive.md/kFkQb</ref>
+* Isaac's full name is Isaac Moriah, and he is 5 years old.<ref>https://archive.md/nNjSg</ref>
+** This is in reference to [[wikipedia:moriah|Mount Moriah]], the place where Abraham takes his son Isaac to be sacrificed, in the Book of Genesis.
+* Isaac's racial background is White/Hispanic.<ref>https://twitter.com/edmundmcmillen/status/1486223220386582529</ref>
+* By around the events of ''The Binding of Isaac'', Isaac was already homeschooled.<ref>https://twitter.com/edmundmcmillen/status/1486232323754364930</ref>
+* Edmund McMillen confirmed that Isaac's status is deceased.<ref>https://twitter.com/edmundmcmillen/status/918669913660600320?lang=en</ref>
+* Isaac is circumcised. This was confirmed by Edmund McMillen during a YouTube stream.
+* Isaac's voiceover in ''Rebirth'' was done by [https://youtu.be/kby0rXT7qYQ?t=5910 Tallulah Bossi], Matthias Bossi (Member of Ridiculon and voice of Dad/Narrator) and Carla Kihlstedt's (Musician and voice of Mom) daughter. For <u>Repentance</u>, the voice was done by their son, [https://youtu.be/kby0rXT7qYQ?t=5969 Viggo Bossi].
+* Isaac is gender-confused and [[wikipedia:Gender fluidity|genderfluid]].<ref>https://twitter.com/edmundmcmillen/status/1336193048741466112?lang=en</ref><ref>[[edmundm:98101937665]]</ref>
+* On the Unboxing Of Isaac stream #5, Edmund McMillen stated that Isaac is at least taller than 3 apples.
+** More specifically, Isaac is 3.3 feet tall and weighs 43 pounds.<ref>https://store.nicalis.com/cdn/shop/files/MissingShirt_1024x.jpg?v=1686075855</ref>
+* Isaac has [[wikipedia:Dissociative identity disorder|Dissociative Identity Disorder]].<ref>https://x.com/edmundmcmillen/status/1816713529149522235</ref>
+* Edmund McMillen has stated that Isaac has [[wikipedia:Dyslexia|Dyslexia]] and [[wikipedia:Attention deficit hyperactivity disorder|Attention Deficit Hyperactivity Disorder]].<ref>https://www.tiktok.com/@edmundmcmillen/video/7469519798137834794</ref>
+** Edmund has also stated that Isaac also has an [[wikipedia:Anxiety disorder|Anxiety Disorder]].<ref>https://x.com/edmundmcmillen/status/1373903776071913472</ref>
+
+== References ==
+<references />
+
+{{nav|character|isaac unlock}}
+[[ru:Исаак]]

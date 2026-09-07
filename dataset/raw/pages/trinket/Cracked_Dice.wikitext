@@ -1,0 +1,34 @@
+{{infobox trinket
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 67
+ | quote       = You feel cursed... kinda.
+ | description = {{dlc|nr}} Activates {{dlc|r}} Has a chance to activate the effect of {{i|The D6}}, {{i|D8}}, {{i|D10|r}}, {{i|D12}}, or {{i|D20}} (chosen randomly) whenever Isaac takes damage.
+ | unlocked by = Cracked Dice
+}}
+{{cit|ut|a}}
+
+== Effect ==
+* Upon taking damage, randomly activates one of the following dice's effect:
+** {{i|The D6}}
+** {{i|D8}}
+** {{i|D12}}
+** {{i|D20}}
+** {{i|D10|r}}
+* {{dlc|r}} The chance to activate is 50%, and each of the 5 dice have an equal probability to be picked.
+
+== Notes ==
+* This trinket can be used in conjunction with the {{i|IV Bag}} or a {{m|Blood Donation Machine}} to generate unlimited pickups and items.
+* {{dlc|r}} Cracked Dice has a chance to re-roll the spike in the middle of a {{r|Sacrifice Room}}, making it unusable.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either increases the chance to activate a dice to 75%. Having both to 100%.
+
+== In-game Footage ==
+{{#ev:youtube|KC3xf40BzRA}}
+
+== Trivia ==
+* {{dlc|a+}} Cracked Dice's sprite was changed for [[Booster Packs|Booster Pack #5]].
+
+{{nav|blue baby unlock|ultra greed unlock|dice|broken|fr=Dé Fêlé}}
+[[Category:Damage-triggered items]]

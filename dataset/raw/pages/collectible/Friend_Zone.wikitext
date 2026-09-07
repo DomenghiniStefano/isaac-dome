@@ -1,0 +1,28 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 364
+ | quote       = Friendly fly
+ | description = Spawns a white attack fly that [[Familiar#Orbital Familiars|orbits]] somewhere between {{i|Distant Admiration}} and {{i|Forever alone}}, dealing 45 damage per second.
+ | quality     = 1
+ | tags        = summonable monstermanual offensive fly
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Spawns a white fly [[familiar]] that slowly [[Familiar#Orbital Familiars|orbits]] Isaac and deals 3 damage per tick or 45 damage per second on contact.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* This familiar orbits Isaac at a middle-length distance somewhere between {{i|Distant Admiration}} and {{i|Forever alone}}.
+
+== In-game Footage ==
+{{#ev:youtube|A7ay7_08Cb4}}
+
+== Trivia ==
+* A reference to the "friend zone", a phenomenon where one person in a platonic relationship has romantic feelings for the other person and the other one does not, seeing them as "just a friend".
+* Friend Zone is very similar in appearance to {{i|Best Bud}} and {{i|Lost Fly}}, making them difficult to distinguish.
+* {{Dlc|na+}}Friend Zone is a recolored {{I|Obsessed Fan}}.
+
+{{nav|fly|fr=Relation à Distance}}

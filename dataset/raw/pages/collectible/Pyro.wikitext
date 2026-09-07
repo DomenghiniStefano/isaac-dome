@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 190
+ | quote       = 99 bombs
+ | description = Grants 99 {{E|Bomb}}s.
+ | quality     = 3
+ | tags        = offensive nocantrip
+}} {{disambig msg|the item that grants bombs|the explosion immunity item|Pyromaniac}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants Isaac 99 {{E|Bomb}}s on pickup.
+
+== Notes ==
+* Rerolling this item with the {{i|D4}}, etc., will not remove 99 Bombs.
+* This item can appear when using the {{P|0 - The Fool?}} with 99 bombs in inventory.
+* {{dlc|r}} As {{C|Tainted ???|n}} cannot use bombs, this item has no effect. No extra poop pickups are granted.
+
+== In-game Footage ==
+{{#ev:youtube|mPhMDQ5LiS0||inline}} {{#ev:youtube|tEbgjj1lSmk||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Beans!}}.
+* Pyro is a reference to [[wikipedia:pyromania|pyromania]], a disorder characterized by an obsession with setting things on fire. In this case it's bomb fuses.
+* This item is the bomb counterpart to {{i|A Dollar}} and {{i|Skeleton Key}}.
+* This item uses a similar costume to {{i|Boom!}}.
+
+{{nav|bomb modifier|bomb}}

@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | id          = 254
+ | quote       = DMG + range up
+ | description = {{dlc|nr}}Tears fired from the left eye have +1 flat [[damage]], +5 [[range]], and +0.5 [[tear falling speed]].<br>{{dlc|r}}Tears fired from the left eye have +1 flat [[damage]] and +2.75 [[range]].
+ | quality     = 2
+ | tags        = summonable offensive
+ | pool        = polyp
+}}
+{{distinguish|Lil Clot}}
+
+{{cit|p}}
+
+== Effects ==
+''The following stats are applied to tears from Isaac's left eye only.''
+
+* +1 flat [[damage]].
+* {{dlc|nr}} +5 [[range]].
+* {{dlc|r}} +2.75 [[range]].
+* {{dlc|nr}} +0.5 [[tear falling speed]].
+
+== Notes ==
+* This item can rarely drop from destroying [[Rocks#Polyps|polyps]] (outside of {{s|Corpse}}).
+* The damage bonus is unaffected by both positive and negative damage multipliers.
+* {{C|Azazel}} has a chance to fire a beam with the damage bonus. His range is unaffected.
+* {{C|Cain}} has a 50% chance of firing a shot with the effects of Blood Clot whenever he fires since he can only shoot from his right eye.
+* {{C|The Forgotten}} has a chance for Blood Clot effects to apply to his melee or ranged attack. When Blood Clot effects are applied the bone will turn red. When throwing the bone club, his range seems to be unaffected.
+* Every other set of tears {{C|Keeper}} fires contains the Blood Clot effect.
+* {{i|Chemical Peel}} applies to the same eye and the effects stack.
+** Generally, every interaction and synergy that applies to Blood Clot also applies to Chemical Peel. See its page for a full list, with only differences listed here.
+
+== Synergies ==
+* {{I|Almond Milk}}/{{I|Soy Milk}}: The damage of Blood Clot is unaffected by the damage multiplier, significantly increasing DPS.
+* {{i|Dr. Fetus}}: Turns all bombs red and increases their damage.
+* {{i|Epic Fetus}}: Missiles have a high chance to deal 20 points more damage with a red explosion.
+* {{I|Lead Pencil}}: The tears in the Lead Pencil barrage will always have the Blood Clot effect.
+* {{I|Monstro's Lung}}: Effect is applied every time you shoot.
+* {{I|Saturnus}}: Orbiting tears will be the same as the last fired tear before leaving the previous room. To guarantee orbiting tears with the Blood Clot damage bonus, your last fired tear before leaving a room must come from the left eye.
+* {{i|Technology 2}}: As the laser from Technology 2 occupies your right eye, all tears now fired from the left eye have the statistical benefit of Blood Clot applied.
+* {{i|The Wiz}}: Blood Clot applies on both eyes, meaning the second shot from either eye will always be a Blood Clot shot. It will randomly alternate which shot of the two eyes counts for the other's Blood Clot shot if you fire multiple tears per shot like with {{i|Cursed Eye}}.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Haemolacria }}
+
+== In-game Footage ==
+{{#ev:youtube|NsAvoWgRZ6s}}
+
+== Trivia ==
+* A blood clot is a bodily process that prevents excessive bleeding by forming a clot where the immense blood flow is, but can be harmful if it blocks an important passageway to a body organ.
+
+{{nav|fr=Caillot de Sang}}

@@ -1,0 +1,28 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 682
+ | quote       = Clingy buddy
+ | description = Gives Isaac a {{E|Nerve Ending}} [[familiar]] that burrows out of the ground to grab and deal damage to enemies over time.
+ | quality     = 3
+ | tags        = summonable {{dlc|r+|monstermanual}} offensive
+ | unlocked by = Worm Friend
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Gives Isaac a {{E|Nerve Ending}} [[familiar]] that burrows out of the ground to grab enemies for 4 seconds. Grabbed enemies take damage over time, are [[slow|slowed]], and are unable to move.
+** Worm Friend deals 4 damage per tick (8 per second), for a total of 32 damage per grab.
+** Worm Friend can target and restrain bosses in addition to normal enemies, even including endgame bosses such as {{E|Ultra Greed}}.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Stain}}.{{dlc-}}
+* Enemies can avoid/escape being grabbed if they move fast enough, jump, or teleport.
+* Worm friend must wait 5 seconds after losing/killing/releasing its target before it can attack another enemy.
+* When playing as {{C|Tainted Lazarus}} / {{C|Dead Tainted Lazarus}}, entering a room with Worm Friend active and then using {{I|Flip}} to swap to the other character will keep Worm Friend active for the remainder of the room.
+* When grabbing {{e|The Beast}}, the Beast is still able to dive down and appear on the other side, though no animation will be played for either diving down or up. This can be dangerous as there will be no warning of the Beast switching sides.
+
+== In-game footage ==
+{{#ev:youtube|YqauHNWyI_w}}
+
+{{nav|apollyon unlock|the beast unlock|fr=Ver de Nerf}}

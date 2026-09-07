@@ -1,0 +1,28 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 509
+ | quote       = Bloody friend
+ | description = {{dlc|nr}} Spawns an [[orbital familiar]] that deals contact damage and fires a tear every 2 seconds.<br>{{dlc|r}} Spawns an [[orbital familiar]] that deals contact damage, blocks shots, and fires tears at enemies in its line of sight.
+ | quality     = 1
+ | tags        = summonable monstermanual
+}} {{disambig msg|the item|the enemy|Eye#Bloodshot Eye{{!}}Bloodshot Eye (Enemy)}}
+
+{{cit|p|a+}}
+
+== Effect ==
+* Summons an [[orbital familiar]] eye that deals contact damage and occasionally fires tears that deal 3.5 damage. {{dlc|r}} It also blocks enemy shots.
+** {{dlc|nr}} The eye deals 2 contact damage per tick or 30 contact damage per second. Tears are fired once every 2 seconds in the direction its currently facing.
+** {{dlc|r}} The eye deals 2 contact damage per tick or 20 contact damage per second. It shoots a tear once every 1/3rd of a second as long as an enemy is in its line of sight.
+
+== Notes ==
+* The orbital's tears can knock Isaac's {{e|Bomb}}s around.
+* {{dlc|nr}} Unlike other orbitals, the eye does not block enemy shots.
+* {{Dlc|nr}} Bloodshot Eye can override [[Pretty Fly|Pretty Flies]] without giving protection from enemy shots.
+
+== In-game Footage ==
+{{#ev:youtube|wFAmkCvPdAw}}
+
+== Trivia ==
+* Bloodshot Eye was originally an unofficial item which was supposed to showcase the modding capabilities of Afterbirth+ in the [https://www.youtube.com/watch?v=FRR-wzTky9Q PAX 2016 livestream]. However, all items included in the demo were later added to the final game.
+
+{{nav|fr=Nœnœil}}

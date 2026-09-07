@@ -1,0 +1,38 @@
+{{infobox challenge
+ | number    = 18
+ | item      = {{i|The Mulligan}}<br>{{i|Spiderbaby}}
+ | trinket   = {{t|Tick}}
+ | has shops = yes
+ | unlocks   = Technology .5
+}}
+{{disambig msg|the challenge|the enemy|Host}}
+'''The Host''' is [[Challenges|challenge]] #18. {{c|Isaac}} starts with {{i|Spiderbaby}}, {{i|The Mulligan}}, and the {{t|Tick}} [[Trinkets|trinket]]. The goal is to defeat {{e|Mom}}. This challenge is unlocked by default.
+
+== Difficulty ==
+* Isaac starts with the Tick, meaning picking up other [[trinkets]] is impossible without {{i|Mom's Purse}} or {{i|Belly Button}}.
+** {{dlc|a}} It is also removable using the {{t|Match Stick}} {{dlc|r+}} or {{t|A Lighter|dlc=x}}
+** {{dlc|a+}}{{I|Marbles|dlc=x}}, {{I|Smelter|dlc=x}} and [[Pills|Gulp!]] can be used to absorb the Tick.
+
+* The lack of Item room isn't as well compensated by the starting items when compared to the other challenges. Isaac also doesn't start with an active item.
+
+== Strategy ==
+* {{r|Shop}}s can sell Mom's Purse, allowing a second trinket or Smelter allowing the tick to be smelted and new trinkets to be picked up.
+* Shops can also sell {{i|Hive Mind}}, which will make blue flies and blue spiders bigger and stronger.
+* Isaac starts with one item each for the {{tf|Spider Baby}} transformation and the {{tf|Beelzebub}} transformation, meaning only two more items from each set will grant Isaac special abilities. While the lack of treasure rooms somewhat limits the possibility of completing either transformation, it is still possible:
+** {{i|Hive Mind}} counts for {{Dlc|r}} both transformations ({{Dlc|nr}} just the Beelzebub transformation), and is in the [[Shop (Item Pool)|Shop pool]].
+** The only other shop item that's in the Spider Baby set is {{i|Spider Mod}}.
+** {{i|Sticky Bombs}} from {{M|Bomb Bum}} is the only other possible item for the set that appears outside the [[Treasure Room (Item Pool)|Treasure Room pool]].
+** For the Beelzebub set, the only other item in the Shop pool is {{i|Jar of Flies}}, which synergizes well with {{i|Hive Mind}}.
+** {{i|Plum Flute}}, another Beelzebub set item, can be easily acquired by not attacking {{E|Baby Plum}} for about 30 seconds.
+** {{i|Skatole}}, another Beelzebub set item, can be won from {{M|Shell Game}}s, which are likely to spawn in  {{r|Arcade}}s.
+** {{M|Key Master}}s have more than a dozen fly items that contribute to the Beelzebub set that they could pay out with.
+* Isaac still produces flies when firing at lowered {{e|Host}}s, so it is possible to farm flies off of them.
+
+== Reward ==
+{{achievement text | Technology .5 }}
+
+== Trivia ==
+* A host is an organism that is infected by a parasite, which explains why Isaac has items and trinkets relating to parasites.
+* This challenge is similar to the 'Lord of the Flies' challenge in the original game.
+
+{{nav|challenge|fr=L'Hôte}}

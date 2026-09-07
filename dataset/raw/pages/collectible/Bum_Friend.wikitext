@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 144
+ | quote       = He's greedy
+ | description = Spawns a [[familiar]] that picks up {{E|Penny|text=coins}} for himself, giving random [[pickup]]s in return. {{dlc|r}} Can spawn [[item]]s from the [[Beggar (Item Pool)|Beggar item pool]].
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a familiar who follows Isaac and picks up coins on the ground.
+* After picking up 6 coins, Bum Friend will return to Isaac and drop a pickup.
+* After that, Bum Friend has a 67% chance to drop a pickup after picking up 3 coins and a 33% chance to drop a pickup after picking up 4 coins.
+* {{transformation contribution|Super Bum}}
+
+== Notes ==
+* {{dlc+|a}} Bum Friend cannot pick up {{e|Sticky Nickel}}s.{{dlc-}}
+* {{dlc+|a}} Bum Friend can pick up {{e|Lucky Penny|text=Lucky Pennies}}, but it will simply count as a regular Penny and will not grant [[luck]].{{dlc-}}
+* {{dlc|anr}} From a scoring perspective, Pennies that Bum Friend picks up count towards your [[Schwag bonus]] on daily runs.{{dlc-}}
+* Bum Friend does not join the line of familiars that follow behind Isaac.
+* Not recommended for {{c|Keeper}} as it will make it harder to regain health due to the Keeper healing via coins.
+
+== Drops ==
+* Bum Friend can drop:
+** {{e|Red Heart}}s
+** {{e|Bomb}}s
+** {{e|Key}}s
+** [[Cards and Runes]]
+** [[Pill]]s
+** [[Trinket]]s
+** {{dlc|r}} {{E|Lil' Battery|text=Lil' Batteries}}
+** {{dlc|r}} [[Item]]s from the {{ip|Beggar|text=Beggar item pool}}
+
+== Synergies ==
+* {{i|BFFS!}}: All future drops will happen every 3 coins. If the next scheduled drop at the moment of acquiring BFFS! requires more than 3 coins, the amount will not be lowered.
+* {{i|Mitre}}: {{e|Red Heart}}s that Bum drops can be converted into {{e|Soul Heart}}s.
+* {{I|Chaos|dlc=r}}: Bum Friend's item pedestals will be affected by Chaos, spawning an item from a random pool.
+
+== In-game Footage ==
+{{#ev:youtube|iMZezVdOMF0||inline}} {{#ev:youtube|XzLfDBR05N0||inline}}
+
+== Trivia ==
+* This item is the Beggar counterpart of {{I|Dark Bum}} and {{I|Key Bum}}.
+
+== Bugs ==
+{{bug|plat=3DS|If hit by an explosion before finishing collection on the room, Bum Friend may freeze in place.}}
+
+{{nav|super bum|bum|fr=Ami Mendiant}}

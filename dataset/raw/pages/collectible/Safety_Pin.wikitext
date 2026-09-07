@@ -1,0 +1,25 @@
+{{infobox passive collectible
+ | id          = 339
+ | quote       = Evil + range + shot speed up
+ | description = {{dlc|nr}} Grants one {{E|Black Heart}}, +5.25 [[range]], +0.5 [[tear falling speed]], +0.16 [[shot speed]].<br>{{dlc|r}} Grants one {{E|Black Heart}}, +2.5 [[range]], +0.16 [[shot speed]].
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+{{distinguish|Pin|Push Pin}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants 1 {{E|Black Heart}}.
+* {{dlc|nr}} +5.25 [[range]].
+* {{dlc|r}} +2.5 [[range]].
+* {{dlc|nr}} +0.5 [[tear falling speed]].
+* +0.16 [[shot speed]].
+
+== Synergies ==
+* {{T|Black Feather}}: Grants a damage boost.
+
+== Ingame Footage ==
+{{#ev:youtube|3qEZw_1q30I}}
+
+{{nav|fr=Épingle à Nourrice}}

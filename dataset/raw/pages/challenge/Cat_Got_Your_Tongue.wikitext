@@ -1,0 +1,50 @@
+{{infobox challenge
+ | number      = 8
+ | blindfolded = yes
+ | health      = {{hearts|red=3|black=3|soul=3}}
+ | item        = {{i|Guppy's Hairball}}<br>{{i|Guppy's Head}}<br>{{i|Guppy's Tail}}
+ | has shops   = yes
+ | unlocks     = Rune of Algiz
+ | unlocked by = Cat Got Your Tongue
+}}
+
+'''Cat Got Your Tongue''' is [[challenge]] #8. Isaac starts this challenge with {{i|Guppy's Head}}, {{i|Guppy's Tail}}, and {{i|Guppy's Hairball}}, as well as three {{E|Soul Heart}}s and three {{E|Black Heart}}s, as well as his usual three Red Heart containers. Isaac is also [[blindfolded]]. This challenge is unlocked by transforming into {{tf|Guppy}}. The goal is to defeat {{E|Mom}}.
+
+== Difficulty ==
+* As a result of the [[blindfolded]] status, tears cannot be used, and Isaac must rely heavily on the erratic movement of Guppy's Hairball to do damage.
+
+== Strategy ==
+* Because Isaac starts with 3 Guppy items, he begins the challenge as {{tf|Guppy}}, which grants flight (a good way of avoiding damage) and generates [[Blue Fly|Blue Flies]] when dealing damage with familiars or a [[co-op|co-op baby]].
+* Guppy's Hairball also creates blue flies when dealing damage, making it considerably stronger than normal. {{Dlc|a+nr}}This feature is unique to challenges where Isaac is blindfolded.
+* Due to this challenge requiring the player to get up close and personal to enemies, ones that explode upon defeat can pose considerable risk to the player. It's recommended to let the generated flies fight the explosive enemies for you.
+* Guppy's Hairball is very difficult to control. It would be wise to spend the first few attempts at the challenge by practicing with it before a real attempt at completing the challenge is made.
+** Anything that increases movement speed can make Guppy's Hairball somewhat easier to use. The extra speed will allow for more precise control while also increasing the range indirectly at which the Hairball can safely be swung. Conversely, any speed down will hinder control over Guppy's Hairball.
+
+
+* Buying {{i|9 Volt}}  from a Shop allows Guppy's Head to be activated multiple times within a room.
+** {{i|Car Battery}} allows more Blue Flies to be spawned by Guppy's Head at once.
+** {{i|The Battery}} can make Guppy's Head store two charges, allowing better burst damage.
+* Obtaining {{t|Fish Tail}} will double all blue flies generated.
+* {{i|Hive Mind}} doubles damage dealt by [[Blue Fly|Blue Flies]].
+
+
+* Any [[shooting familiar]] will not only deal more reliable damage but will also summon a fly if they hit an enemy.
+* Orbitals, such as {{i|Cube of Meat}} and {{i|Sacrificial Dagger}}, can be more effective than Guppy's Hairball at blocking and dealing damage at close range.
+* {{i|Incubus}} and {{I|Twisted Pair}} are notable items for easing up the challenge, as they shoot the same tears as Isaac normally would if not blindfolded.
+* {{i|Bob's Brain}}, while dangerous, can serve as a reliable massive damage dealer.
+* {{i|BFFS!}} makes all familiars bigger, as well as doubling all familiars' damage, including those of Guppy's Hairball.
+
+
+* {{i|Red Candle}} or {{i|The Candle}} can be useful alternatives to Guppy's Head, depending on the situation.
+* {{i|Spear Of Destiny}} can trivialize the challenge by providing an easy-to-use alternative for dealing damage.
+* {{i|Monstrance}} provides a large damaging aura that can be used as an alternative or in conjunction with Guppy's Hairball.
+* Because this challenge starts with Isaac having a lot of HP, restarting the challenge until getting a sacrifice room which teleports to an angel room with {{i|Revelation}} in it, or alternatively, until getting a red chest in curse room which teleports into a devil room with {{i|Maw Of The Void}}, basically guarantees a win since Isaac can use those items while blindfolded, providing an easy way to deal damage.
+
+== Reward ==
+{{achievement text | Rune of Algiz }}
+
+== Trivia ==
+* "Cat got your tongue" is an idiom for when people are speechless.
+* Aside from the obvious change in language, the Korean unlock for the challenge is notably different. Instead of a cat vomiting a hairball, it seems to depict a cat eating the hairball back.[[File:KoreanCatGotYourTongue.png|frame]]
+
+{{nav|challenge|fr=Ta Langue au Chat}}

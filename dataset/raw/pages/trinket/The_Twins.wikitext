@@ -1,0 +1,75 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 183
+ | quote       = I'm seeing double...
+ | description = Adds a chance to duplicate one of Isaac's [[familiar]]s when entering a new room.
+ | unlocked by = The Twins
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Adds a 50% chance to duplicate one of Isaac's [[familiar]]s when entering a new room.
+* If Isaac has no familiars, spawns {{i|Brother Bobby}} or {{i|Sister Maggy}} instead.
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|The Horny Boys}}.{{dlc-}}
+* The following items/trinkets cannot be duplicated:
+** {{t|???'s Soul}}
+** {{dlc|r+}} {{i|1up!}}
+** {{i|Abyss}} / {{t|Apollyon's Best Friend}}’s unique attack locusts
+** {{i|Dead Bird}}
+** {{i|Dead Cat}}
+** {{i|The Intruder}}
+** {{t|Isaac's Head}}
+** {{i|Isaac's Heart}}
+** {{i|Giant Cell}}
+** {{i|Halo of Flies}} / [[Familiar#Pretty Fly|Pretty Flies]]
+** {{I|Lost Soul}}
+** {{i|Milk!}}
+** {{i|Quints}}
+** {{i|Spin to Win}}
+** {{i|Stitches}}
+** {{i|The Swarm}}
+** {{t|Umbilical Cord}}
+** {{i|Vanishing Twin}}
+** Any temporary familiars, including those from {{i|Monster Manual}}
+* The duplication chance reoccurs when starting a room, even when starting a room by exiting to the main menu and re-entering.
+** This allows quitting to the menu to be an effective method to cycle for a specific duplicated familiar.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{I|Mom's Box}} / {{t|The Twins}}: Each copy grants an additional 50% chance to trigger the effect again. This results in another familiar doubling. This can be the same familiar that was doubled originally. The duplication chance of three or more stacks can go above 100% allowing for even more duplicate familiars or {{i|Brother Bobby}}s/{{i|Sister Maggy}}s to be created.
+* {{i|Sacrificial Altar}}: Both the duplicated familiar (if one is available) and Brother Bobby/Sister Maggy (if not available) can be sacrificed for an item reward. This does not remove the trinket, and fully retains its effect.
+
+== Interactions ==
+* [[Familiar#Mimicking Familiars|Movement-mimicking familiars]]: Duplicated familiars will follow the original on the same delay.
+** In the case of {{i|Shade}}, a copy of the familiar will spawn even if Shade was already absorbed by Isaac.
+* [[Familiar#Pickup Generation Familiars|Pickup-generating familiars]]: If they remain duplicated for enough consecutive rooms, they will give a pickup as normal. The following familiars have to be duplicated for the following number of consecutive room clears to give pickups:
+** {{i|Sack of Pennies}}: 1 room (will give a coin every time it’s duplicated)
+** {{i|Bomb Bag}} / {{i|Little C.H.A.D.}}: 2 rooms
+** {{i|Mystery Sack}} / {{i|Rune Bag}} / {{i|Sack of Sacks}}: 5 rooms
+** {{i|Acid Baby}}: 6 rooms
+** {{i|The Relic}}: 7 rooms
+*** Because {{i|Lil Chest}} and {{i|Charged Baby}}’s chances to spawn pickups are independent from the total number of rooms cleared with them, they have an extra chance to pay out in any room they’re duplicated in.
+* {{dlc|nr+}} {{i|1up!}}: Despite the fact that it can be duplicated, Isaac will not keep the 1up if he dies while it's duplicated.
+** {{dlc|r+}} No longer attempts to duplicate 1up!.
+* {{i|Bum Friend}} / {{i|Bumbo}} / {{i|Dark Bum}} / {{i|Key Bum}} / {{i|Lil Portal}}: The pickup count of duplicated familiars is not remembered when they go away.
+* {{i|Ball of Bandages}} / {{i|Cube of Meat}}: Upgrades the familiar instead of duplicating it.
+* {{i|Best Bud}} / {{i|Bird Cage}}: If the trinket tries to duplicate it, it will instead immediately activate. Taking damage does not spawn another familiar.
+** If this happens to Bird Cage as Isaac walks into a room with enemies, Bird Cage will also leap onto the enemies.
+* {{i|Blood Puppy}} / {{i|Bumbo}} / {{i|Guppy's Hairball}}: The duplicate will always be at its first stage.
+* {{i|Buddy in a Box}}: The duplicated familiar will be randomly generated instead of copying the original.
+* {{i|Cambion Conception}} / {{i|Immaculate Conception}}: Familiars given by these items can be duplicated as normal.
+* {{i|GB Bug}}: The familiar can be duplicated even if it hasn’t respawned; by constantly moving to new rooms, GB Bug can constantly respawn, allowing pickups to be rerolled indefinitely.
+* {{i|Guillotine}}: The head can be duplicated, and will give an extra damage and tears up if it is. The extra head will be unable to fire tears.
+* {{i|Hallowed Ground}}: Duplicate poops will also drop when Isaac takes damage. The bonuses from standing in the aura of multiple white poops does not stack.
+* {{dlc|nr+}} {{i|Lost Soul}} / {{i|Star of Bethlehem}} / {{i|Strawman}}: The trinket can try to make a duplicate of the familiar, but it will always fail. This reduces the odds of the trinket giving copies of other familiars or prevents it from giving Brother Bobby or Sister Maggy if Isaac has no other familiars.
+** {{dlc|r+}} The trinket will not attempt to duplicate these familiars, and will correctly spawn the default Brother Bobby/Sister Maggy if Isaac does not have other familiars.
+* {{i|Mystery Egg}}: The friendly the duplicated egg spawns depends on how many consecutive rooms cleared the duplicate persisted for.
+* {{i|Succubus}}: The damage multiplier from standing in the aura of multiple Succubi multiplicatively stacks.
+* {{i|YO LISTEN!}}: An extra +1 luck will be given for every duplicate.
+
+== References ==
+* [https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing The Binding of Isaac Item Trigger Testing]
+
+{{nav|familiar modifier|tainted lilith unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Les Jumeaux}}

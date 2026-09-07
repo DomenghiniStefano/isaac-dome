@@ -1,0 +1,63 @@
+{{infobox passive collectible
+ | dlc           = a
+ | tear app name = The Common Cold
+ | id            = 393
+ | quote         = The kiss of death
+ | description   = Tears have a chance to apply a [[poison]] effect to enemies. Isaac poisons enemies on contact. Poisoned enemies have a chance to drop a {{e|Black Heart}} when killed.
+ | quality       = 2
+ | tags          = summonable offensive
+ | unlocked by   = Serpent's Kiss
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Grants a 15% chance to fire [[poison|poison tears]], each tick dealing damage equal to Isaac's.
+** Poison from the shots will tick 2 times.
+* Inflicts [[poison]] on enemies who make contact with Isaac.
+** Contact poison will tick 6 times.
+* {{dlc|nr}} Enemies who are killed after they have been inflicted with this type of poison have a 20% chance to drop {{e|Black Heart}}s. Enemies can still drop black hearts after the poison has worn off.
+** {{dlc|r}} Enemies that make contact with Isaac have a 20% chance to drop a {{e|Black Heart}}. Enemies can still drop black hearts after the poison has worn off.
+
+== Notes ==
+* Not affected by [[luck]].
+* Enemies and bosses with multiple segments, such as Chub and Larry Jr., have a chance to drop multiple Black Hearts.
+* If a boss would have been poisoned, but negates it with status immunity, they can still drop a black heart.
+* Contact poisoning enemies that don't deal contact damage can be an easy way to generate black hearts (e.g. all variants of {{E|Pooter}}, {{E|Host}}, {{E|Boil}}, {{E|Cod Worm}}, and any of {{E|Ultra Greed}}'s non-blank coins).
+* {{dlc|nr}} Although {{E|Stoney|text=Stonies}} and {{e|Shopkeeper}}s can't be visibly poisoned, they still can drop Black Hearts if destroyed after being touched.
+
+== Synergies ==
+* {{Dlc|nr}}{{i|Dr. Fetus}} / {{i|Epic Fetus}}: Bombs and missiles may become poisonous, and enemies hit by them may drop black hearts.
+** {{Dlc|r}} Bombs no longer grant black hearts but poison bombs leave a poison cloud similar to {{i|Bob's Curse}}.
+* {{i|Gnawed Leaf}}: Standing still allows for safe kills and possibly spawn infinite black hearts.
+* {{i|Mars}}: Dashing into enemies will often both kill enemies, and cause them to drop black hearts.
+* {{Dlc|nr}}{{i|Mom's Knife}}: Enemies poisoned by the knife may drop black hearts.
+* {{c|Tainted Forgotten}}: Especially strong as you are likely to apply contact poison when attacking enemies, giving you black hearts frequently.
+* Any item or card that grants Isaac temporary invincibility lets Isaac use Serpent's Kiss on any enemy without taking damage. This includes, but is not limited to:
+** {{p|VII - The Chariot}}/{{P|VII - The Chariot?}}
+** {{i|A Pony}}/{{i|White Pony}}
+** {{i|Book of Shadows}}/{{i|Celtic Cross}}/{{i|Empty Vessel}}/{{p|Algiz}}/{{i|The Polaroid}}/{{i|Virgo}}
+** {{i|Breath of Life}}
+** {{i|Dark Arts}} using the very brief period after reappearing where Isaac is immune to damage
+** {{i|Dull Razor}}
+** {{i|Holy Mantle}}
+** {{i|My Little Unicorn}}/{{i|Unicorn Stump}}/[[Pills|Feels like I'm walking on Sunshine!]]
+** {{Dlc|r}}{{I|Aries}} (if walking speed is at least 0.85)
+** {{i|The Gamekid}}/[[Pills|Power Pill!]]
+** {{i|Ventricle Razor}} (briefly after exiting a portal)
+
+== Interactions ==
+* {{i|Godhead}}: The Godhead aura cannot inflict poison but the tears themselves may poison enemies on contact.
+* {{Dlc|nr}} The following interactions are trivial in Repentance:
+** {{i|Athame}} / {{i|Maw Of The Void}}: The black rings may poison enemies but do not generate black hearts.
+** {{i|Brimstone}}: The blood barrage may poison enemies but does not generate black hearts.
+** {{i|Tech.5}} / {{i|Tech X}} / {{i|Technology}} / {{i|Technology 2}}: The lasers may poison enemies but do not generate black hearts.
+** {{i|Trisagion}}: May poison enemies but does not generate black hearts.
+
+== In-game Footage ==
+{{#ev:youtube|WBtnNef8JTo}}
+
+== Trivia ==
+* Serpent's Kiss is most likely referencing [[wikipedia:Viper (Madame Hydra)|Viper (Madame Hydra)]] from Marvel Comics, who has green lipstick and has transmitted poison through hollow fangs or poisoned lipstick before.
+
+{{nav|lilith unlock|satan unlock|fr=Baiser du Serpent}}

@@ -1,0 +1,85 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc         = r
+ | id          = 36
+ | health      = {{hearts|soul=3}}
+ | pickups     = 6 [[Red Heart|blood charges]]<br>{{i|Lemegeton|n}}
+ | unlocked by = The Zealot
+}}
+'''Tainted Bethany''' is a [[Characters|character]] added in [[The Binding of Isaac: Repentance]]. She is the alternate version of {{c|Bethany}}. Tainted Bethany is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|1=Soul of Cain}} to access a special room in one of the walls while playing as Bethany.
+
+Tainted Bethany is unable to utilize {{E|Red Heart}}s as health and cannot obtain [[Health#Red Heart Containers|red heart containers]], similar to {{c|???}}. When picked up, red hearts instead are converted to a resource unique to Tainted Bethany called "blood charges" at the rate of one charge per half heart. The number of blood charges currently owned is listed along with the pickup counters. Blood charges can be consumed to use Tainted Bethany's activated item when the item isn't fully charged, at the rate of one blood charge per empty bar of charge.
+
+Tainted Bethany starts with 3 {{E|Soul Heart}}s, 6 blood charges, and {{i|Lemegeton|n}} in the consumable slot.
+
+== Notes ==
+* [[Speed]], [[range]], [[shot speed]], [[tears]], and [[damage]] will be reduced to 75% for any amount over their base value. [[Familiar]]s and Orbitals also deal only 75% of their usual damage.
+* For example, with 4.5 damage, it is 1 damage over the base 3.5, and the 1 damage gets reduced to 0.75, ending up with a total of 4.25 damage.
+* Fire rate multipliers change what is considered to be the base value, so with {{i|Soy Milk}}, only tears-ups above 15.00 will be reduced.
+** The only exception is {{i|Eye Drops}}, which gets a reduction to its 1.2x fire rate multiplier if it's above base.
+* Direct fire rate modifiers like {{i|Mom's Perfume}} do not get reduced.
+* Her soft tears cap is 4.43 instead of the normal 5.00.
+* Lemegeton has a 25% chance to pull from the current room's item pool when creating item wisps, and as such can be abused by Tainted Bethany to obtain large amounts of useful items by saving her blood charges until she enters a room such as {{R|Angel Room}}, {{R|Devil Room}}, {{R|Secret Room}}, {{R|Shop}}, {{R|Curse Room}}, or even a {{R|Planetarium}}.
+* {{E|Blended Heart}}s will count as red hearts and only contribute towards the red heart charge meter.
+** Blended Hearts will give Soul Hearts once Tainted Bethany gains 99 blood charges.
+* Items created by Lemegeton don't count towards [[Transformations]].
+* Items that normally grant consumables on pickup will not do so if created by Lemegeton.
+* {{dlc|r+}} {{E|Rotten Heart}}s count as one blood charge each like {{E|Half Red Heart}}s.
+
+== Interactions ==
+* {{I|<3}} / {{I|Binge Eater}} / {{I|Immaculate Heart}} / {{I|Magic Mushroom}} / {{I|PJs}} / {{I|Raw Liver}} / {{I|Red Stew}} / {{I|Sacred Heart}} / {{I|Sausage}} / {{I|SMB Super Fan}}: In addition to their usual effects, grants 12 blood charges.
+* {{I|4.5 Volt}}: Charges gained from 4.5 Volt will charge any active items in the active item slot first. If said active item is fully charged, charge will instead be added to Lemegeton.
+** {{I|Jumper Cables}}: Same effect; active item will be charged first.
+** {{E|Lil' Battery}}: Same effect; active item will be charged first. If more charges than necessary for full charge are added, remaining charges will be lost, and not be added to Lemegeton. If picked up when active item is fully charged, charges ''will'' be added to Lemegeton.
+* {{I|Birthright}}: Spawns four {{I|Lemegeton}} wisps of items with a [[Item Quality|quality]] of 3 or higher. These wisps are much larger and have much higher HP than normal wisps.
+* {{I|Blood Bag}}: Grants 10 blood charges.
+* {{i|Blood Bombs}}: Can use 1 blood charge in exchange for 1 bomb.
+* {{i|The Jar}}: Hearts will only collect in The Jar after achieving 99 blood charges.
+* {{I|Sacrificial Altar|dlc=n}}: Every wisp created by {{I|Lemegeton|dlc=n}} will be converted to a {{E|Half Soul Heart|dlc=n}}. The passive item effects granted by the familiars are retained for the duration of the floor.
+* '''Red heart restoration''': All items and effects that restore red hearts directly will instead add blood charges.
+** '''Full heal''' effects, however, do not give anything.
+
+=== Good Items ===
+* {{p|2 of Hearts}}: Doubles the amount of held blood charges.
+** '''2 of Hearts''' + {{i|Blank Card}}: Allows for the creation of infinite blood charges as long as Tainted Bethany has more than 12 blood charges.
+* {{p|Queen of Hearts}}: Spawns 1-16 full red hearts, granting a potentially very significant number of blood charges.
+** '''Queen of Hearts''' + Any item that can duplicate Queen of Hearts ({{P|Jera}} + {{I|Clear Rune}}, or '''Blank Card'''): Allows for nearly infinite blood charges.
+* {{I|Car Battery}}: Causes Lemegeton to be used twice upon activation, spawning two passive wisps on use.
+* {{I|Charm of the Vampire}}: Gives blood charges every 13 enemies killed, allowing exploitation of some enemies to farm infinite blood charges.
+* {{I|Converter}}: Grants blood charges upon use with no change to health, allowing to get a blood charge every two rooms, and two charges every three rooms.
+** With {{i|Car Battery|n}}: Consumes 3 Blood Charges and produces 4, still at no cost to Heart total, resulting in infinite Blood Charges.
+* {{I|Eraser}}: Eraser can be charged and used with blood charges, allowing multiple uses per floor.
+* {{I|The Gamekid}}: As Lemegeton familiars deal good contact damage this item allows to clear most rooms by simply running into enemies. In addition to this, eating enemies lets you gain charges for The Gamekid and {{i|Lemegeton|n}}.
+* {{I|Glowing Hourglass}}: Due to a bug, Glowing Hourglass can be used to duplicate Lemegeton's wisps via Tainted Bethany teleporting to the previous room with the Glowing Hourglass and then using it again. Duplicate wisps exceed Lemegeton's wisp limit allowing Tainted Bethany to stack copies of beneficial passive item effects.
+* {{I|Leech}}: Gives 1 blood charge per enemy killed. Can farm infinite blood charges with enough patience and {{T|Door Stop}} / {{I|Mercurius}}.
+* {{I|Little C.H.A.D.}}: Essentially grants one blood charge every three rooms.
+* {{I|Maggy's Bow}}: Doubles blood charges gained when picking up red hearts.
+* {{E|Mega Battery}}: Both Tainted Bethany's held active item and Lemegeton are overcharged.
+* {{I|Red Key}}: With her blood charges, Tainted Bethany can explore more red rooms than other characters, allowing her to gain the benefits of red special rooms easily. In turn, this allows her to use Lemegeton to gain items from those item pools in addition to their normal contents.
+* {{I|Satanic Bible}}: This item is particularly well-suited for Tainted Bethany, as blood charges may be used to repeatedly activate Satanic Bible and potentially compensate for the price of the Devil Deal that spawns in place of the boss room item pedestal.
+** Activating Lemegeton in a boss room after activating the Satanic Bible on that floor will cause it to pull from the [[Devil Room (Item Pool)|Devil Room item pool]] when creating wisps. This works even on bosses that don't normally drop a standard boss room item, such as {{E|Mom}}, {{E|Satan}}, or {{E|???}}.
+* {{I|Unicorn Stump}}: As Lemegeton familiars deal good contact damage this item allows to clear most rooms by simply running into enemies. With enough blood charges it can even be used to kill late game bosses without danger.
+
+== Unlockable Items ==
+{{achievement text | Expansion Pack, The Hierophant, Soul of Bethany, Confessional, Lemegeton, Beth's Essence, Vengeful Spirit }}
+
+== Gallery ==
+<gallery>
+File:Transition Bethany Tainted.png|Tainted Bethany's transition screen portrait.
+File:Start_Tainted_Bethany.png|The spawn floor when playing Tainted Bethany.
+File:Tainted Bethany Menu Icon (Locked).png|Tainted Bethany's locked character icon, depicting a closet door with an inverted cross and bloodstains on it.
+</gallery>
+
+== Trivia ==
+* When Tainted Bethany dies, the orb embedded in her forehead stops glowing.
+* The achievement for unlocking Tainted Bethany is "The Zealot", a possible title for the character.
+** A zealot is someone with fanatical devotion to their faith or ideals.
+** This also correlates with the meaning of her card, {{P|V - The Hierophant?}} associated with lack of adaptability (zealotry to tradition), good understanding (Lemegeton) and weakness (worse items); this is further shown with the Lemegeton's links to Judaism, the orthodox belief that fathered Christianity.
+* Like all characters that start with only soul/black hearts, Tainted Bethany's starting health is listed as "-I" on the character selection screen.
+* Tainted Bethany's design is based off of the [[Anti:Exorcist|Exorcist]] and [[Anti:Necromancer|Necromancer]] enemies from ''The Binding of Isaac: Antibirth''.
+** [https://imgur.com/jUpmzOe According to _Kilburn], Tainted Bethany is a reference to [https://web.archive.org/web/20220226230610/https://twitter.com/MrLin_AF/status/1189157928550289409 a fan character "Anti-Bethany" created by the artist Mr.Lin, the Pencil Guy.]
+
+== Bugs ==
+{{Bug|Certain items that spawn [[Familiar#Blue Flies|blue flies]] in large quantities can cause wisps to disappear.}}
+
+{{nav|character|bethany unlock|tainted bethany unlock|fr=Béthanie Impure}}

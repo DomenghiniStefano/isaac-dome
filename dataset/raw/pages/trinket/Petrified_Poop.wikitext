@@ -1,0 +1,35 @@
+{{infobox trinket
+ | name = Petrified Poop
+ | id = 2
+ | pool = poop
+ | quote = It feels lucky?
+ | description = Greatly increases the chances of a [[pickup]] dropping when destroying {{e|Poop}}.
+}}
+
+'''Petrified Poop''' is a [[Trinkets|trinket]] that has a 1/200 (0.5%) chance to drop from {{e|Poop}}.
+
+== Effects ==
+* Increases [[pickup]] drop rate from poops to 50%.
+
+== Notes ==
+* Can be used when fighting bosses that spawn poop like {{E|Larry Jr.}} or {{E|Dingle}}, although the drop rate is greatly decreased in these rooms.
+* Not affected by [[Luck]].
+* If obtained during the {{e|Mother's Shadow|n}} chase, the trinket will not spawn pickups from destroyed poops.
+
+== Synergies ==
+* {{i|E. Coli|a+}}/{{i|Flush!|n}}: Grants poops made from enemies a chance to drop pickups.
+* {{A|Golden Trinket}} / {{I|Mom's Box}}: Having one of these increases the chance to 60%. {{dlc|r}} Each copy further increases the chance for poops to drop pickups.
+* Very effective with {{p|A Card Against Humanity}}.
+
+== Interactions ==
+* {{i|E. Coli|na+}}/{{i|Flush!|n}}: Poops made from enemies do not drop pickups.
+* {{i|IBS}}/{{C|Tainted ???}}: No effect on thrown poops.
+
+== In-game Footage ==
+{{#ev:youtube|3OCsCtr4xGs||inline}} {{#ev:youtube|i1L-msRkxG8||inline}}
+
+== Trivia ==
+* This trinket is used in {{chal|High Brow}}.
+* This trinket seems to be in reference to [[wikipedia:Coprolite|Coprolites]], very old pieces of poop that have become fossilized over a very long time.
+
+{{nav|poop|fr=Caca Pétrifié}}

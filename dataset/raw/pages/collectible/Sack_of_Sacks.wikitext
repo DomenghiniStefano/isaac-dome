@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | dlc = a+
+ | name = Sack of Sacks
+ | id = 500
+ | quote = Gives sacks
+ | description = Spawns a [[familiar]] that drops a {{E|Grab Bag|n}} every few [[rooms]] cleared.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable offensive
+ | unlocked by = Sack of Sacks
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* Spawns a familiar that follows Isaac and drops a {{e|Grab Bag}} once every few [[rooms]] cleared.
+** {{dlc|nr}} The rate alternates between every 5 or 6 rooms.
+** {{dlc|r}} The rate alternates between every 7 or 8 rooms.
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Sack of Sacks having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== Synergies ==
+* {{dlc|nr}} {{i|BFFS!}}: The drop rate is improved to every 4-5 rooms.
+** {{dlc|r}} The drop rate is improved to every 6 rooms.
+
+== In-game Footage ==
+{{#ev:youtube|dLtBdW3mpA8}}
+
+== Trivia ==
+This item is the {{E|Grab Bag}} counterpart to the {{I|Sack of Pennies}}, {{I|Rune Bag}}, {{I|Mystery Sack}}, and {{I|Bomb Bag}}.
+
+{{nav|cain unlock|ultra greedier unlock}}

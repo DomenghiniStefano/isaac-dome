@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | id          = 243
+ | quote       = You feel guarded
+ | description = Isaac gains a shield that protects him from enemy shots. It aims in the direction Isaac fires from.
+ | quality     = 2
+ | tags        = summonable
+ | devil price = {{dlcalt|1|rnr+=2}}
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Isaac uses a shield to block shots.
+* The shield stays in the same direction until Isaac fires in another direction.
+
+== Notes ==
+* The shield can block diagonally by holding down 2 arrow keys at once.
+** Tears will be fired vertically while the shield is at an angle.
+* The shield can't block beams or explosions.
+* The shield can be held in any direction if you're using a joystick.
+* Many items that change the color of Isaac's tears will also change the color of the shield; this effect is purely cosmetic.
+* When using Tainted Forgotten, the shield goes on the bone pile and not the soul.
+
+== Synergies ==
+* {{i|Marked|r}}: The shield will now face the crosshair instead of facing just four cardinal directions.
+
+== Interactions ==
+* {{i|BFFS!}}: No effect.
+* {{i|Maw Of The Void}}: Trinity shield briefly stays fixed in place during the start of the effect.
+* {{dlc|nr}} {{i|Notched Axe}}: While using this item, the shield stays in place. It returns when the effect ends.
+
+== In-game Footage ==
+{{#ev:youtube|c-YtUDecgbo}}
+
+== Trivia ==
+* The item is a reference to the [[wikipedia:Shield of the Trinity|Shield of the Trinity]].
+* This item is used in {{chal|I RULE!}} and {{chal|Isaac's Awakening}}.
+* Although this item is normally only available in the {{r|Angel Room}}, it can be found as one of the Nintendo-themed {{r|Treasure Room}} items in the 6th of December's [[List of curated daily challenges|Daily Run]], which is an homage to the late CEO of Nintendo, Satoru Iwata.
+** Its appearance in this challenge references the Hylian shield from The Legend of Zelda series.
+
+== Bugs ==
+{{Bug|When {{i|Pause}} is used with Trinity Shield it creates a second shield that stays in place where Isaac used "Pause" which lasts for the active item's duration. Moreover both shields are flashing and can not block enemy tears for the duration.}}
+{{bug|{{dlc+|r}}Swapping characters using {{i|Esau Jr.}} or as {{c|Tainted Lazarus}} will leave a stationary copy of the shield until Isaac leaves the room. The stationary shield still blocks tears.{{dlc-}}}}
+
+{{nav|fr=Bouclier de la Trinité}}

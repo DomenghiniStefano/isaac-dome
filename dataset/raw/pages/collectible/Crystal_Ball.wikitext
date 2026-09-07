@@ -1,0 +1,43 @@
+{{infobox activated collectible
+ | id          = 158
+ | quote       = I see my future
+ | description = Reveals the map (except the {{R|Super Secret Room}} and {{R|Ultra Secret Room}}) and drops a {{e|Soul Heart}} or random [[Cards and Runes|card or rune]]. {{dlc+|r}} While held, increases the chance of finding a {{R|Planetarium}}.{{dlc-}}
+ | quality     = 3
+ | tags        = offensive stars lazarussharedglobal
+ | recharge    = 6
+ | pool        = fortune teller
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Upon use, reveals the [[floor]] layout and all special rooms except the {{R|Super Secret Room}} and {{R|Ultra Secret Room}} and drops either a {{e|Soul Heart}} or a random [[Cards and Runes|card or rune]]. (50% chance of either)
+* {{dlc+|r}} While held, increases the chance of finding a {{R|Planetarium}} by 15%, or 100% if a treasure room has been skipped.{{dlc-}}
+
+== Notes ==
+* Crystal Ball can be obtained by playing a {{m|Fortune Telling Machine}}.
+** It's possible to get more than one Crystal Ball from {{M|Fortune Telling Machine}}s on a single run.
+* The map revealing effect will not work if the {{cu|Lost}} is active.
+* {{dlc+|r}} The Planetarium bonus guarantees the level generation to ''attempt'' placing one, but the level layout may not have enough room. Read the article on {{r|Planetarium}}s for further details.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Wisps have much greater health than normal wisps. Tears that are fired from the wisps will auto aim towards  nearby enemies, similar to {{I|Demon Baby}}.}}
+
+== Interactions ==
+* {{t|Daemon's Tail}}: The chance to drop cards or runes will change to 90%/10% in favor of {{e|Soul Heart}}.
+
+== In-game Footage ==
+{{#ev:youtube|a63kIaUnCtI}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Planetarium }}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Crystal Ball.png|{{plat|3DS}} The icon of Crystal Ball as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* The reflection of a face can be seen on the crystal ball's surface. It is easier to make out on the 3DS lower screen icon.
+
+{{nav|fr=Boule de Cristal}}

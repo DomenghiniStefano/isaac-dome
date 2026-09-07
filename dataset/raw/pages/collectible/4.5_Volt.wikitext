@@ -1,0 +1,59 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 647
+ | quote       = Beat the juice out of them!
+ | description = Active items don't charge when clearing rooms. Instead, they're charged by dealing damage to enemies.
+ | quality     = 2
+ | tags        = battery summonable offensive nocantrip
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Causes Isaac's active item to charge when Isaac deals damage to enemies, rather than when he clears rooms.
+** Damage dealt by [[charm]]ed/[[friendly]] enemies, active items, orbitals, and familiars (including blue flies and spiders) works as well.
+* Charges are gained at a rate equal to the following formula: (40 + (20 × stage)). For example:
+** In {{s|Basement}} I / {{s|Downpour}} I, it takes 60 damage to gain 1 charge.
+** In {{s|Caves}} II / {{s|Mines}} II, it takes 120 damage.
+** In {{s|Womb}} I / {{s|Corpse}} I, it takes 180 damage.
+** In {{s|Sheol}} / {{s|Cathedral}}, it takes 240 damage.
+** In {{s|Home}}, it takes 300 damage.
+** [[Ascent]] floors use the values of their regular floors, meaning the amount of damage 4.5 Volt needs to gain charges steadily decreases during the Ascent sequence until reaching Home.
+* Multiple charges cannot be gained at once.
+* Overkill damage does not count towards a charge.
+
+== Notes ==
+* Tainted characters with active items in their pill/card slot will not have those items charged by 4.5 Volt if their active item isn't already fully charged.
+* {{C|Lilith}} can be particularly strong with 4.5 Volt during long fights such as {{e|Delirium}} and {{E|Hush}}, especially if she still has the {{i|Box of Friends}}, as the damage she deals will allow her to repeatedly duplicate her familiars, dealing many times her typical damage during a single fight.
+* {{C|Bethany}} will benefit from 4.5 Volt's effect for regular item charges while retaining her ability to use {{e|Soul Heart}}s as item charges. This applies to {{C|Tainted Bethany}} with her {{e|Red Heart}} charges as well.
+* {{C|Tainted Jacob}} will gain charges from 4.5 Volt when Dark Esau damages enemies.
+* While the two versions of {{C|Tainted Lazarus}} normally charge both their active items at the same time, 4.5 Volt will only charge when the state that holds it deals damage, and will prevent it from being charged when the other clears a room. This makes 4.5 Volt much worse while playing {{C|Tainted Lazarus}}.
+
+== Synergies ==
+* {{i|Book of Shadows}}: With sufficient damage, the Book of Shadows can be kept active indefinitely.
+** If combined with {{i|9 Volt}}, it becomes even easier to achieve invincibility.
+* {{t|Door Stop}} / {{i|Mercurius}} / any means of room resetting (infinite bombs): Provides infinite charges by clearing some enemies then leaving the room, and repeating.
+* {{i|Jumper Cables}}: Increases the rate of charge by appending its 15-kills-per-charge quality on top of 4.5 Volt's damage-based charge.
+* {{t|Old Capacitor}}: Since the 4.5 Volt also makes it so that active items don't charge when clearing rooms, this trinket can be picked up with no downside.
+* {{i|Unicorn Stump}} + {{i|Sacrificial Dagger}}: In most boss fights, charges are regenerated faster than invincibility wears off.
+* {{i|White Pony}}: Since the beam trail from the charge attack deals so much damage, if used on a boss with a high amount of health, 4.5 Volt will often completely recharge the item after each use, allowing for repeated usage while the boss is still alive.
+** For the same reason (so much damage against bosses that the active item is recharged from its use), {{I|Tammy's Head}} + {{I|Brimstone}} / {{C|Azazel}} / {{C|Tainted Azazel|r}} is also a strong synergy.
+
+== Interactions ==
+* Does not charge items which gain charge over time by default. (e.g. {{i|Sharp Straw}}, {{I|The Candle}}, {{i|Butter Bean}} etc.)
+** Items converted to charge-over-time by {{i|9 Volt}} are not affected and may gain charge in both ways.
+* {{i|Alabaster Box}}: No effect. It still must be charged with Soul Hearts.
+* {{t|Dim Bulb}}: Does not deactivate until the first charge bar is completely filled. A partial charge of the first bar will retain Dim Bulb's bonus.
+* {{i|Schoolbag}}: The item in the second slot gets charged when the first one is full. Overcharges on the first item also jump to the second one.
+
+== In-game footage ==
+{{#ev:youtube|7ejcc1_cN1Y||inline}} {{#ev:youtube|-gyx0c4G-bE||inline}}
+
+== Trivia ==
+* The game files name 4.5 Volt's icon as "''assaultbattery''", which may imply "Assault Battery" was its original name.
+** [[wikipedia:Assault and battery|Assault and battery]] is the combination of two violent crimes in common law: assault (the threat of violence) and battery (physical violence).
+
+== Bugs ==
+{{bug|With {{i|9 Volt}} and {{i|The Battery}}, the gradual charge of 4.5 Volt is separate from 9 Volt's charge on one-charge items rather than being additive.}}
+
+{{nav|active modifier|battery|fr=4.5 Volts}}

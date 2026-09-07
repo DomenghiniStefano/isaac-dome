@@ -1,0 +1,26 @@
+{{infobox challenge
+ | number    = 12
+ | item      = {{i|9 Volt}}<br>{{i|Habit}}<br>{{i|Lemon Mishap}}
+ | pickup    = 1 [[Lemon Party]] pill
+ | has shops = yes
+ | unlocks   = Card Against Humanity
+}}
+
+'''When Life Gives You Lemons''' is [[Challenges|challenge]] #12. {{c|Isaac}} is the default character for the challenge, and he starts with {{i|Lemon Mishap}}, {{i|9 Volt}}, {{i|Habit}}, and a [[Lemon Party]] pill. The goal is to defeat {{E|Mom}}. This challenge is available by default.
+
+== Difficulty ==
+The lack of {{R|Treasure Room}}s makes this challenge much more difficult than a normal run.
+
+== Strategy ==
+* Lemon Mishap has a small range, making it difficult to use. The Habit and 9 Volt will allow more frequent uses of it but their combination is more important than that. Because every run starts with 9 Volt, any activated item obtained will take less time to recharge. The Habit makes taking damage charge it faster as well. The only catch would be finding a better [[activated collectible]].
+* The {{t|Lost Cork}} is an extremely beneficial trinket in this run, expanding the area of Lemon Mishap and thus making it safer to use since Isaac doesn't need to be as close to the enemy.
+* A good item to find is {{i|Shoop da Whoop!}}, simply for being usable every room because of 9 Volt.
+
+== Reward ==
+{{achievement text | Card Against Humanity }}
+
+== Trivia ==
+* The challenge name is a reference to the proverbial phrase "When life gives you lemons, make lemonade."
+* One of the {{M|Fortune Telling Machine}}'s fortunes is "When life gives you lemons, reroll!"
+
+{{nav|challenge|fr=Délit de Fuite}}

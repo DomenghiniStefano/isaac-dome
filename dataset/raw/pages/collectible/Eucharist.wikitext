@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 499
+ | quote       = Peace be with you
+ | description = An {{R|Angel Room}} will always spawn after every boss fight, excluding the first floor and floors after Chapter 4.
+ | quality     = 3
+ | tags        = summonable offensive lazarussharedglobal
+ | unlocked by = Eucharist
+}}
+
+{{cit|up|a+}}
+
+== Effect ==
+* Sets the Angel Deal chance to 100% and the Devil Deal chance to 0% regardless of all other modifiers (except {{i|Duality}}), guaranteeing an {{R|Angel Room}} Door will spawn whenever possible and preventing it from closing.
+
+== Notes ==
+* If the Devil Room has been visited before picking up Eucharist, an Angel Room will not replace it on the current floor, despite the Angel Room chance displaying 100%. However, Eucharist will still cause the door to remain open.
+* In {{mode|greed|greedier}} [[Greed Mode]], Angel Room doors will not remain open after exiting the room.
+
+== Synergies ==
+* {{i|Duality}}: Both Angel and Devil Room doors spawn after every boss, and the selected door will never disappear.
+* {{t|Filigree Feather}}: Due to Angel Rooms being guaranteed, a large influx of items can be obtained over time.
+* {{i|Red Key}}: Devil rooms can still be spawned via the creation of red rooms.
+
+== Interactions ==
+* {{i|Goat Head}}: Overridden by Eucharist.
+
+== In-game Footage ==
+{{#ev:youtube|z6siwP7jFlg}}
+
+== Trivia ==
+* A [[wikipedia:eucharist|eucharist]] is a Christian rite in which bread and wine are transubstantiated into the body and blood of Jesus Christ on an altar and consumed thereafter.
+* "Peace be with you" is the phrase stated by a person when administering the rite of eucharist.
+
+== Gallery ==
+<gallery>
+File:AB- Item Concept.jpg|''Afterbirth+'' item concepts, including for Eucharist.
+</gallery>
+
+{{nav|magdalene unlock|delirium unlock|fr=Eucharistie}}

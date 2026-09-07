@@ -1,0 +1,58 @@
+{{infobox activated collectible
+ | dlc = a+
+ | name = Mystery Gift
+ | id = 515
+ | quote = Wrapped up nice for you!
+ | description = Spawns a random item from the current room's item pool, with a chance to spawn {{I|A Lump of Coal}} or {{I|The Poop}} instead.
+ | quality     = 3
+ | tags        = offensive nocantrip
+ | recharge = one time
+ | unlocked by = Mystery Gift
+}}
+
+{{cit|ua|a+1}}
+
+== Effects ==
+* Upon use, spawns a random item from the current room's [[Item Pool|item pool]], with a base ~17% chance to spawn {{i|A Lump of Coal}} or {{i|The Poop}} instead.
+
+== Notes ==
+* The chance to get {{i|A Lump of Coal}} or {{i|The Poop}} is determined by [[Luck]] using this formula: <math>\frac2 { 12 + \left \lfloor \mathit{Luck}  \right \rfloor}</math>
+** A table showing an example is below. There's no cap, with diminishing returns. At 88 Luck the chance drops to 2%.
+{| class="wikitable"
+|-
+! Luck !! Item Pool !! Poop/Coal
+|-
+| -10 || 0% || 100%
+|-
+| 0 || 83.3% || 16.6%
+|-
+| 8 || 90%|| 10%
+|}
+* A Lump of Coal and The Poop are fixed drops, and cannot be changed by having {{i|Chaos}}, holding {{t|NO!|n}}, and other similar effects. This also means Mystery Gift can drop copies of either item even if Isaac has already encountered/possessed them.
+* Spawning The Poop will create a [[Status Effects#Poison|poison]] cloud, as if having used {{I|The Bean}}, down to matching the former item's effects.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a random wisp. For the rest of the run, a random wisp spawns after clearing a room if the one given by the item was destroyed, including the replacement wisps given by this effect.}}
+* {{i|Damocles}}: When Damocles is activated, a second item will be spawned with adherence to the item pool for the current room. Even if Mystery Gift "fails" and spawns either {{i|The Poop}} or {{i|A Lump of Coal}}, a second item from the current room's item pool will always be rewarded.
+
+== Interactions ==
+* {{i|Car Battery|n}}: No effect, Mystery Gift will only spawn a single item.
+* {{i|Void|n}}: Like all single-use active items, this item cannot be absorbed by Void. Instead, it will consume and use the Mystery Gift.
+** {{dlc|r}} Mystery Gift will be absorbed and will spawn the item upon Void's next use.
+
+== In-game Footage ==
+{{#ev:youtube|Cs_qR7jCttM}}
+
+== Trivia ==
+* Mystery Gift is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=839883727 this Steam Workshop item] by Striped.
+* The appearance and pickup quote of the item is a reference to the game [[wikipedia:Spelunky|Spelunky]], where there is an item called "Mystery Box", with the description "Thanks! I wrapped it up nice for you!"
+* The item's name is also a reference to the ''[[wikipedia:Pokémon|Pokémon]]'' franchise's feature for distributing event Pokémon.
+* The item having a chance to give A Lump of Coal references Santa's tendency to gift coal to naughty children.
+* The item having a chance to give The Poop references one of Isaac's floor transition's dreams, in which he is gifted poop.
+
+== Gallery ==
+<gallery>
+File:Collectible Mystery Gift Booster Pack 1 icon.png|Mystery Gift's appearance prior to [[Booster Pack #2]].
+</gallery>
+
+{{nav|booster pack|fr=Cadeau Surprise}}

@@ -1,0 +1,140 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc         = r
+ | id          = 22
+ | health      = {{hearts|red=2}}{{heart|red|empty}}{{heart|red|empty}}
+ | damage      = 3.5 (*0.75)
+ | pickups     = {{i|Yum Heart}}
+ | unlocked by = The Dauntless
+}}
+'''Tainted Magdalene''' is a [[Characters|character]] added in [[The Binding of Isaac: Repentance]]. She is the alternate version of {{C|Magdalene}}. Tainted Magdalene is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|Soul of Cain}} to access a special room in one of the walls while playing as Magdalene.
+
+Tainted Magdalene starts with 2 heart containers, 2 empty heart containers, and {{i|Yum Heart}} in the consumable slot.
+
+== Notes ==
+* When Tainted Magdalene's health is above 2 {{e|Red Heart}}s, she will leave red [[creep]] on the floor and will lose health at the rate of half a heart per 10 seconds. This health loss affects all types of hearts, but prioritizes red heart health. Affected hearts on the health bar are faded and slowly pulsating.
+** {{e|Bone Heart}}s are drained, although empty ones will not be broken by the drain effect.
+** All leaking hearts, including red ones, will protect against loss of {{r|Devil Room}}/{{r|Angel Room}} chances; only non-leaky red heart damage will impose a penalty.
+** Her first two Red Heart containers as well as {{e|Rotten Heart}}s and {{e|Eternal Heart}}s are the only hearts that do not leak. When Tainted Magdalene has only {{e|Soul Heart}}s, they will continuously leak until she has half a soul heart left.
+
+* She also receives double healing from all sources except heart pickups, and all enemies have a chance of dropping a {{e|Half Red Heart}} upon death which will flicker and disappear in 2 seconds.
+
+* Tainted Magdalene has a distinctive melee attack which is automatically performed on enemies who make contact with her. The "hug" is a swing that functions similarly to {{C|The Forgotten}}'s Bone Club, and can synergize with any held items. Melee hits deal 6× damage and all enemies killed by the melee attack have a 100% chance of dropping a half red heart.
+* The Ace cards will transform the half red hearts, which would normally flicker and disappear, into normal consumables. Using them after killing a lot of enemies with the melee ability can be a good way to get a large amount of consumables. Consumables rerolled into by {{I|D20}} or {{I|GB Bug|dlc=r}} will still flicker and disappear.
+* One Rotten Heart will provide two Rotten hearts upon pickup.
+* Half red hearts affected by {{P|Jera}} will not disappear. It is unknown whether this behavior is intentional or not.
+
+== Strategy ==
+Tainted Magdalene's strength comes from having very expendable health in the early game. Her ability to regenerate {{e|Red Heart}}s from slain foes allows for simply charging into groups of enemies and killing them all with her lethal hugs. With the invincibility frames that come with taking damage, she can not only sustain but actually gain health from hugging enemies during the invincibility period. This can result in massive health gain from large groups of fragile, easily slain enemies.
+
+These advantages come at the cost of her base damage, which is significantly lower than other characters at a permanent 0.75× multiplier. Items that increase damage should be high priority, so that she may remain effective later in the run.
+
+As {{e|Soul Heart|Display=Soul}}/{{e|Black Heart}}s will drain just like Red Hearts do, they are generally less useful as Tainted Magdalene. This is compounded by the fact that her leaky red hearts already protect against the loss of a {{r|Devil Room}}/{{r|Angel Room}} chance.
+
+Whilst she excels against groups of weak enemies, Tainted Magdalene suffers against high-health enemies as well as bosses that don't summon many enemies, such as {{e|Delirium}}. Unless she can find a way to sustain her health pool for the fight, she will slowly lose health until she is down to her 2 permanent red hearts.
+
+{{curse|unknown}} can cause more trouble for Tainted Magdalene than for other characters, as knowing how much health she has is important. She stops producing red creep when she runs out of leaky red hearts, which may be a helpful indicator.
+
+== Item Interactions ==
+* {{i|Birthright}}: Provides another non-leaky red heart, for a total of three.
+** Note: This moves the threshold of what counts as true damage when accounting for Devil and Angel Room spawns as well.
+* {{t|Swallowed M80}}: Explosions will kill enemies before Tainted Magdalene's “hug” attack, preventing heart drops from killing enemies on contact from being guaranteed.
+* {{i|Yuck Heart}}: Grants 2 rotten hearts.
+* {{i|Haemolacria}}: Bloody tears will pop when Magdalene hugs enemies.
+* {{i|The Parasite}}: Tears will split into two like a {{i|Compound Fracture}}.
+=== Helpful items ===
+* Items that grant [[invulnerability]] or [[shield]]: Melee attack can be used without taking contact damage.
+* Items that grant a damaging [[familiar]] such as {{i|Cube of Meat}} or {{i|Sacrificial Dagger}}, as they can greatly increase melee damage output. Keep in mind, however, that enemies killed by the familiars do not have the guaranteed half-heart drop.
+* Items that triggers when getting hit, such as {{I|Bloody Lust}}, {{I|Bloody Gust}}, {{I|Fanny Pack}}, or {{I|Piggy Bank}}, are likely to trigger quite frequently due to Tainted Magdalene's playstyle, making her benefits from those items much more than other characters.
+* {{I|4.5 Volt}}: Greatly improves longevity in long boss fights by allowing repeated usage of Yum Heart.
+* {{i|Adrenaline}}: Gives more damage the more empty heart containers Tainted Magdalene has. Due to them draining naturally, this is an excellent item for bosses.
+* {{I|Aries}}: Running fast enough will allow the hug attack to be used without taking damage.
+* {{T|Blind Rage}}: Increased length of invincibility frames allows getting in more melee attacks from a single hit.
+* {{I|Blood Oath}}: Can be used to gain huge amounts of damage and speed, while being able to heal back up quickly. However, having low health for the first few rooms can be quite dangerous.
+* {{i|Bozo}}: The rainbow poop that spawns will be destroyed by the melee attack, refilling all red heart containers. With many heart containers, this effect can be triggered often.
+* {{i|Cambion Conception}}: Spawns demonic familiars after taking a certain amount of damage. As Tainted Magdalene gets hurt very frequently, it is very easy to quickly gain familiars from this item.
+* {{i|Candy Heart}}: Gives small stat boosts whenever red hearts are picked up, allowing a steady stream of stat increases while destroying enemies.
+* {{I|Dead Eye}}: The damage increase is guaranteed because the melee attack does not miss.
+* {{t|Equality!|nr+}}: Doubled hearts do not vanish like the half-hearts they replace.
+* {{i|Giant Cell}}: Magdalene's tendency to receive damage keeps the Mini-Isaac count high.
+* {{i|Gimpy}}: Drops extra non-disappearing half red hearts when enemies are killed and grants a chance to receive soul hearts when hit.
+* {{I|Gnawed Leaf}}: The hug attack can be used without losing invincibility.
+* {{i|Habit}}: Gives a Yum Heart charge while using the melee attack, for more sustainability.
+** With Habit and {{i|The Wafer}}, Tainted Magdalene is essentially immortal, as it takes two hearts to charge Yum Heart, the same amount it heals for.
+** Likewise, Habit and {{i|Car Battery}} also provides a measure of immortality, as it takes up to four hearts to charge Yum Heart, the same amount it heals for. This strategy does require having a high enough maximum health cap, however.
+* {{i|Hemoptysis}}: Allows Tainted Magdalene to deal additional damage to enemies close to her, and push some away if they are in the way of health drops.
+* {{i|Hypercoagulation}}: Sometimes refunds the health lost on the melee attack.
+* {{i|Immaculate Conception}}: Spawns angelic familiars after picking up a certain amount of hearts. As Tainted Magdalene can both spawn hearts and drains them naturally, it is very easy to quickly gain familiars from this item.
+* {{i|Isaac's Heart}}: Insanely powerful for Tainted Magdalene as it removes contact damage for her body, making it so she can constantly do her melee attack with no consequences.
+* {{i|It Hurts}}: Taking damage triggers a burst of tears and increases fire rate for the rest of the room.
+* {{i|IV Bag}}: Allows Tainted Magdalene to trade her plentiful red health for coins. IV Bag can also be used for the invincibility frames from self-damage to run into enemies, allowing free money while fighting provided the player’s timing is good.
+** When combined with {{i|Habit}}, allows Tainted Magdalene to farm infinite coins by refilling her Yum Heart.
+* {{i|The Jar}}: The disappearing half red hearts can be stored in the Jar. When emptied out, the spawned hearts are permanent.
+* {{i|Kamikaze!}}: Can be used to create explosions during the melee attack at no additional health cost.
+* {{i|Larynx}}: A charge is granted every time the melee attack is used.
+* {{T|Lost Cork}}: Significantly increases the size of the creep Tainted Magdalene frequently produces.
+* {{i|Maggy's Bow}}: Dropped half hearts heal for one full heart.
+* {{i|Magneto}}: Dropped half hearts are drawn to Tainted Magdalene, making them easier to retrieve.
+* {{I|Meat Cleaver}}: Multiplying enemies into weaker versions of themselves makes the melee ability more viable and generates more hearts to replenish HP.
+* {{i|Midas' Touch}}: Petrifies and damages enemies on touch, and the coins spawned when they are killed further increase the touch damage.
+* {{T|Mom's Locket}}: Dropped half hearts will be converted to full hearts.
+* {{i|Old Bandage}} / {{i|Shard of Glass}}: Hearts have a chance to drop every time damage is taken from doing the melee attack, and they won't disappear shortly after spawning.
+* {{i|Pause}}: The lethal hug ability does not cancel the paused state, unlike firing tears.
+* {{I|Proptosis}}: Increases melee attack damage greatly.
+* {{i|Razor Blade}}: Allows Tainted Magdalene to rack up high amounts of damage in rooms with lots of enemies. This can be especially useful in Greed Mode.
+* {{i|Serpent's Kiss}}: Coming in contact with enemies will poison them. Poisoned enemies have a chance to drop black hearts.
+* {{dlc|nr+}} {{i|Sharp Plug}}: Since it takes two hearts to charge and Yum Heart grants 2 full red hearts when used, it can be used infinitely without losing HP. Doing this will also prevent HP from decaying while doing this infinite combo. Additionally, the invincibility frames from the damage taken last long enough to become permanently immune to any other damage source. Tears can't be fired while doing this, but it is still possible to kill enemies with Tainted Magdalene's melee ability, basically guaranteeing a win on the spot. Binding the "use pill" key to a more accessible key, or plugging in a controller, to move around easier is recommended. This also counts as taking damage, meaning items that cause an effect upon taking damage (such as [[Piggy Bank]] or [[Cracked Orb]]) or reaching a certain health threshold (such as [[The Negative]] and [[The Polaroid]]'s half heart threshold) can be repeatedly activated to gain their benefits.
+** {{dlc|nr+}} {{i|Sharp Plug}} + {{i|Car Battery}}: Allows for infinite red health regeneration.
+** {{dlc|nr+}} {{I|Sharp Plug}} + {{I|Virgo}}: Essentially allows an on-demand charge-free {{I|Book of Shadows}}, which pairs greatly with Tainted Magdalene's hug attack.
+** {{dlc|nr+}} {{I|Sharp Plug}} + {{I|Habit}}: Repeatedly pressing the activation key will allow for infinite charge for other activated items.
+** {{dlc|r+}} Bleeding hearts now provide half the charge of a regular heart container when used with Sharp Plug. {{i|Habit}} or {{i|Car Battery}} is now required to do the infinite combo again.
+* {{i|Spirit Sword}}'s swings can collect the red hearts dropped by enemies, making it significantly easier to heal. Additionally, it's effectively a strict upgrade to the hug attack, as it has similar damage output without the requirement to take damage to use it.
+* {{I|Sumptorium}}: Steady supply of red hearts can be converted into clots, which makes it easier to kill enemies quickly and collect more hearts, making it much easier to amass an army as well as maintain health.
+* {{i|Taurus}}: Takes a while to charge, but provides invulnerability and lots of melee damage.
+* {{I|The Wafer}}: Tainted Magdalene will only take half-heart damage from champion enemies and from all damage in {{s|Womb}}/{{s|Utero}}/{{s|Scarred Womb}} and onward, allowing her to still gain her health back from hugging enemies which would normally deal a full heart and only give half back.
+* {{i|Unicorn Stump}}: Tainted Magdalene will still perform melee attacks while this is active.
+* {{i|Varicose Veins}}: Taking damage triggers a burst of tears that deals very high damage.
+* {{i|Vengeful Spirit}}: Tainted Magdalene's tendency to receive damage keeps the amount of spirits high.
+
+=== Unfavorable Items ===
+* {{i|2Spooky}} will make it more difficult to hit enemies since they will become feared upon getting near them.
+* {{i|Abaddon}} will remove all red heart containers, replacing them with black hearts. The black hearts will slowly deplete over time and are hard to replenish.
+* {{i|Brittle Bones}} will remove all red heart containers, replacing them with six {{e|Bone Heart}}s, causing Tainted Magdalene to have a lack of permanent health to fall back on.
+* {{i|Crown Of Light}} is very rarely active, as red hearts are hard to keep full.
+* {{i|Dark Prince's Crown}} is frequently inactive, as builds with only one red heart are difficult to keep up and survive.
+* {{i|Dark Bum}} can pay out more often, but the black hearts he drops are much less useful. He will also take red hearts that may be needed for healing.
+* {{i|Dead Cat}} is not recommended, as it reduces red hearts to one. Replacing them with soul hearts to compensate is also more difficult and harder to sustain.
+* {{i|E. Coli}} will take priority over the hug attack, meaning it will make the enemy turn into a poop, without providing the half red heart.
+* {{i|Flush!}} will transform enemies into poops, but they will not drop any red hearts.
+* {{i|Paschal Candle}} is not active very often.
+* {{i|Mom's Heels|dlc=r}} will deal contact damage to enemies, occasionally killing enemies before the hug attack does, without providing the half red heart.
+* {{I|Pluto}} is not recommended, because it will make taking hearts or any other pickup considerably more difficult.
+* {{i|Lost Soul}} is essentially useless, as it will almost always die moments into the floor because of how Tainted Magdalene plays.
+* {{t|Apple of Sodom}} will sometimes transform red hearts into blue spiders, limiting health regeneration.
+* {{I|Lil Dumpy}} will often mitigate the first melee attack in the room.
+
+== Unlockable Items ==
+{{achievement text | Holy Crown, The Lovers, Soul of Magdalene, Queen of Hearts, Hypercoagulation, Mother's Kiss, Belly Jelly }}
+
+== Gallery ==
+<gallery>
+File:Transition Magdalene Tainted.png|Tainted Magdalene's transition screen portrait.
+File:Start_Tainted_Magdalene.png|The spawn floor when playing Tainted Magdalene.
+File: Tainted Magdalene Menu Icon (Locked).png|Tainted Magdalene's locked character icon, depicting a Closet with Magdalene's hair and bow sticking out of it.
+</gallery>
+
+== Trivia ==
+* The achievement for unlocking Tainted Magdalene is "The Dauntless", a possible title for the character.
+** "Dauntless" means "fearless", implying that Tainted Magdalene is not afraid of (lethally) hugging enemies.
+* Tainted Magdalene is the only tainted character to have a starting item in common with their normal variant.
+* Tainted Magdalene's starting health is listed as "IIII" on the character selection screen, the last two symbols being faded out compared to the first two. This is to represent her two empty/leaking heart containers.
+* Tainted Magdalene's abilities are similar to {{E|Lust}} and {{E|Super Lust}}, with a focus on rushing towards enemies to deal contact damage and trailing red creep behind.
+* In the game's files, the image file for Tainted Magdalene's hair is named 'maggiesnotsobeautifulgoldenlocks.png'.
+** This is a reference to the image file for regular Magdalene's hair, "maggiesbeautifulgoldenlocks.png".
+* Defeating {{E|Ultra Greedier}} as Tainted Magdalene unlocks {{P|VI - The Lovers?}}, a reversed Major Arcana card associated with failure and lack of love. This is a fitting unlock, due to Tainted Magdalene's ephemeral and hard to maintain health bar.
+** Lovers? is also associated with toxic relationships, as she is hit by most things she hugs and vice versa.
+
+== Bugs ==
+{{Bug|Rotten hearts will not deplete when playing as Tainted Magdalene. Additionally, if you have more than 4 Rotten Hearts, Bone, Soul, and Black Hearts will not drain. If your pulsating heart containers are all filled with rotten hearts and and have more than one half a red heart in your permanent heart containers, your permanent red hearts will be drained.}}
+
+{{nav|character|magdalene unlock|tainted magdalene unlock|fr=Marie Impure}}

@@ -1,0 +1,332 @@
+{{infobox activated collectible
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 434
+ | quote       = {{dlcalt|Gotta catch 'em all?|r=Bug catcher}}
+ | description = Killing an enemy adds a fly to the jar, up to a maximum of 20. On use, releases [[Blue Fly|Blue Flies]] equal to the number of flies in the jar.
+ | quality     = 2
+ | tags        = offensive nocantrip fly
+ | recharge    = unlimited
+}}
+
+{{cit|a|a}}
+
+== Effects ==
+* Killing an enemy adds a fly to the jar, up to a maximum of 20.
+* Upon use, releases [[Blue Fly|Blue Flies]] equal to the number of flies in the jar.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* Kills by blue flies and locusts (including flies from the jar) and certain familiars do not add flies to the jar.
+
+{| class="wikitable mw-collapsible mw-collapsed"
+! Items that add to Jar of Flies 
+|-
+| {{i|7 Seals}} contact
+|-
+| {{i|Abyss}} locusts
+|-
+| {{i|Angry Fly}}
+|-
+| {{t|Apollyon's Best Friend}}
+|-
+| {{i|Ball of Bandages}} contact
+|-
+| {{i|BBF}}
+|-
+| {{i|Big Fan}}
+|-
+| {{i|Bloodshot Eye}} contact
+|-
+| [[Blue Spider]]s
+|-
+| {{i|Bob's Brain}}
+|-
+| {{i|Book of the Dead}} bone orbitals
+|-
+| {{i|Book of the Dead}} bony contact
+|-
+| {{i|Book of Virtues}} / {{i|Jar of Wisps}} Wisp contact
+|-
+| {{i|Bumbo}} level 4
+|-
+| {{i|Cain's Other Eye|r}}
+|-
+| {{i|Daddy Longlegs}}
+|-
+| {{i|Depression}}
+|-
+| {{i|Distant Admiration}}
+|-
+| {{i|Dry Baby}}
+|-
+| {{i|Farting Baby}}
+|-
+| {{i|Finger!}}
+|-
+| {{i|Forever alone}}
+|-
+| {{t|Found Soul}}
+|-
+| {{i|Friend Zone}}
+|-
+| [[Status Effects#Friendly|Friendly]] enemy contact
+|-
+| [[Status Effects#Friendly|Friendly]] enemy lasers
+|-
+| {{dlc|r+}} [[Frozen]] enemies
+|-
+| {{i|Fruity Plum}}
+|-
+| {{i|Gello}} tears
+|-
+| {{i|Gello|r+}} whip
+|-
+| {{i|Ghost Bombs}} ghosts
+|-
+| {{i|Guillotine}} orbital
+|-
+| {{i|Guppy's Hairball}}
+|-
+| {{i|Headless Baby}}
+|-
+| {{i|Holy Water}}
+|-
+| {{i|Hungry Soul}} ghosts
+|-
+| {{i|Hushy}}
+|-
+| {{i|Incubus|r}}
+|-
+| {{i|The Intruder}} contact
+|-
+| {{i|Leech}}
+|-
+| {{i|Lemegeton}} wisps
+|-
+| {{i|Lil Abaddon}}
+|-
+| {{i|Lil Brimstone}}
+|-
+| {{t|Lil Clot}}
+|-
+| {{i|Lil Gurdy}}
+|-
+| {{i|Lil Haunt}}
+|-
+| {{i|Lil Spewer}}
+|-
+| {{i|Lost Fly}}
+|-
+| {{i|Mom's Razor}}
+|-
+| {{i|Mongo Baby}} copying one in this list
+|-
+| {{i|My Shadow}}
+|-
+| {{i|Obsessed Fan}}
+|-
+| {{i|The Peeper}}
+|-
+| {{i|The Pinking Shears}} body
+|-
+| {{i|Pointy Rib}}
+|-
+| {{i|Quints}} babies that copy one in this list
+|-
+| {{i|Robo-Baby}}
+|-
+| {{i|Robo-Baby 2.0}}
+|-
+| {{i|Sacrificial Dagger}}
+|-
+| {{i|Samson's Chains}}
+|-
+| {{i|Scissors|r}}
+|-
+| {{i|The Scooper}}
+|-
+| {{i|Shade}}
+|-
+| {{i|Smart Fly}}
+|-
+| {{i|Spider Mod}} burn and poison
+|-
+| {{i|Sprinkler}}
+|-
+| {{i|Stitches}}
+|-
+| {{i|Succubus}}
+|-
+| {{i|Sumptorium}} clot tears
+|-
+| {{i|Tinytoma}}
+|-
+| {{i|Vengeful Spirit}} contact
+|-
+| {{i|Worm Friend}}
+|}
+
+{| class="wikitable mw-collapsible mw-collapsed"
+! Items that don't add to Jar of Flies 
+|-
+| {{i|???'s Only Friend}}
+|-
+| {{t|???'s Soul}}
+|-
+| {{i|Abel}}
+|-
+| {{i|Ball of Bandages}} tears
+|-
+| {{i|Best Bud}}
+|-
+| {{i|Big Chubby}}
+|-
+| {{i|Bird Cage}}
+|-
+| {{i|Bloodshot Eye}} tears
+|-
+| [[Blue Flies]]
+|-
+| {{i|Boiled Baby}}
+|-
+| {{i|Book of the Dead}} bony shots
+|-
+| {{i|Book of Virtues}} / {{i|Jar of Wisps}} wisp tears
+|-
+| {{i|Bot Fly}}
+|-
+| {{i|Brother Bobby}}
+|-
+| {{i|Brown Nugget}}
+|-
+| {{i|Buddy in a Box}}
+|-
+| {{i|Bumbo}} level 3 tears
+|-
+| {{i|Cain's Other Eye|nr}}
+|-
+| [[Status Effects#Charm|Charmed]] enemies
+|-
+| {{i|Cube Baby}}
+|-
+| {{i|Cube of Meat}}
+|-
+| {{i|Dead Bird}}
+|-
+| {{i|Demon Baby}}
+|-
+| {{t|Eve's Bird Foot}}
+|-
+| {{i|Fate's Reward}}
+|-
+| [[Friendly]] enemy tears
+|-
+| {{dlc|rnr+}} [[Frozen]] enemies
+|-
+| {{i|Gello|nr+}} whip
+|-
+| {{i|Gemini}}
+|-
+| {{i|Ghost Baby}}
+|-
+| {{i|Giant Cell}}
+|-
+| {{i|Guardian Angel}}
+|-
+| {{i|Halo of Flies}}
+|-
+| {{i|Harlequin Baby}}
+|-
+| {{i|Incubus|nr}}
+|-
+| {{i|The Intruder}} tears
+|-
+| {{t|Isaac's Head}}
+|-
+| {{i|Isaac's Heart}}
+|-
+| {{i|Jaw Bone}}
+|-
+| {{i|Knife Piece 1}} & {{i|Knife Piece 2}}
+|-
+| {{dlc|r}} Knockback damage (e.g. {{i|Butter Bean}})
+|-
+| {{i|Leprosy}}
+|-
+| {{i|Lil Dumpy}}
+|-
+| {{i|Lil Loki}}
+|-
+| {{i|Lil Monstro}}
+|-
+| {{i|Lil Portal}}
+|-
+| {{i|Little Chubby}}
+|-
+| {{i|Little Gish}}
+|-
+| {{i|Little Steven}}
+|-
+| {{i|Mongo Baby}}'s base tears or copying any familiar in this list
+|-
+| {{i|Papa Fly}}
+|-
+| {{i|Psy Fly}}
+|-
+| {{i|Purgatory}} ghosts
+|-
+| {{i|Quints}} babies that copy any familiar in this list
+|-
+| {{i|Rainbow Baby}}
+|-
+| {{i|Scissors|nr}} head
+|-
+| {{i|Seraphim}}
+|-
+| {{i|Sister Maggy}}
+|-
+| {{i|Slipped Rib}}
+|-
+| {{i|Spider Mod}} shrink
+|-
+| {{i|Spin to Win}} orbital
+|-
+| {{i|Sworn Protector}}
+|-
+| {{i|Vade Retro}} ghosts
+|-
+| {{i|Vengeful Spirit}} tears
+|}
+
+* Friendly enemies such as from the {{i|Friendly Ball}} add flies to the jar, but not those spawned from other enemies.
+* Batteries do not affect the number of flies in the jar.
+* Enemies must be actually ''killed'' to add a fly; transformations (such as {{E|Gaper}}s turning into {{E|Pacer}}s) or knockouts (such as incapacitating a {{E|Globin}}) do not count as kills.
+* Destroying a {{e|Shopkeeper}} will count as a kill.
+* With items that kill normally unkillable enemies, killing things like {{E|Stone Grimace}}s will add flies to the jar.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Using Jar of Flies summons wisps instead of [[Blue Fly|Blue Flies]]; the wisps do not summon the flies when destroyed. Up to five flies at a time are consumed to summon one wisp, with stacking health and damage. The damage of the wisps decreases as they take damage. Enemies killed by wisps’ tears will not add flies to the jar.}}
+* {{T|Fish Tail}}: Doubles the number of flies that spawn.
+* {{i|Hive Mind}}: Flies are bigger and deal double damage.
+* {{i|Schoolbag}}: Flies will be gained even while the Jar of Flies is in the inactive slot.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s do not grant extra flies.
+* {{i|Car Battery}}: No effect.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop do not grant extra flies.
+* {{i|Void}}: Flies will not collect when absorbed by Void, making the interaction worthless.
+* {{I|Infestation 2}}: Blue Spiders spawned by Infestation 2 grant extra flies, and Blue Flies spawned by Jar of Flies spawn Blue Spiders.
+
+== In-game Footage ==
+{{#ev:youtube|ercU7e_f1rs}}
+
+== Trivia ==
+* {{dlc|nr}} The item's pickup quote references the tagline of the [[wikipedia:Pokemon|Pokémon]] games. The quote said "Gotta catch 'em all?".
+** The updated quote is also a Pokémon reference, with Bug Catchers being common low-level trainers that appear in foresty areas in most Pokémon games.
+* {{dlc|a+}} With [[Booster Packs#Booster Pack #2|Booster Pack #2]], this item's sprite fills up with more flies depending on how many flies it contains. This is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=840463618 this Steam Workshop mod] by Stewartisme.
+
+== Bugs ==
+{{bug|dlc=nr|The synergy of {{i|The Ludovico Technique}} with {{i|Brimstone}} or {{i|Technology}} will not spawn flies.}}
+
+{{nav|fly|fr=Bocal de Mouches}}

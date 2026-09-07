@@ -1,0 +1,689 @@
+{{page dlc|a}}
+{{storage page}}
+{{infobox achievement
+ | dlc          = a
+ | name         = Fart Baby
+ | link         = Farting Baby
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Isaac}}
+ | id           = 179
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Purity
+ | link         = Purity
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Magdalene}}
+ | id           = 180
+}} {{infobox achievement
+ | dlc          = a
+ | name         = D12
+ | link         = D12
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Cain}}
+ | id           = 181
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Betrayal
+ | link         = Betrayal
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Judas}}
+ | id           = 182
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Fate's Reward
+ | link         = Fate's Reward
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|???}}
+ | id           = 183
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Athame
+ | link         = Athame
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Eve}}
+ | id           = 184
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Blind Rage
+ | link         = Blind Rage
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Samson}}
+ | id           = 185
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Maw of the Void
+ | link         = Maw Of The Void
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Azazel}}
+ | id           = 186
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Empty Vessel
+ | link         = Empty Vessel
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Lazarus}}
+ | id           = 187
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Eden's Blessing
+ | link         = Eden's Blessing
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Eden}}
+ | id           = 188
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Sworn Protector
+ | link         = Sworn Protector
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|The Lost}}
+ | id           = 189
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Incubus
+ | link         = Incubus
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Lilith}}
+ | id           = 190
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Keeper now holds... A Penny!
+ | link         = Keeper
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Keeper}}
+ | id           = 191
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Lil' Chest
+ | link         = Lil Chest
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Isaac}}
+ | id           = 192
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Censer
+ | link         = Censer
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Magdalene}}
+ | id           = 193
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Evil Eye
+ | link         = Evil Eye
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Cain}}
+ | id           = 194
+}} {{infobox achievement
+ | dlc          = a
+ | name         = My Shadow
+ | link         = My Shadow
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Judas}}
+ | id           = 195
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Cracked Dice
+ | link         = Cracked Dice
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|???}}
+ | id           = 196
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Black Feather
+ | link         = Black Feather
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Eve}}
+ | id           = 197
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Lusty Blood
+ | link         = Lusty Blood
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Samson}}
+ | id           = 198
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Lilith
+ | link         = Lilith
+ | description  = Unlocked a new character.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Azazel}}
+ | id           = 199
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Key Bum
+ | link         = Key Bum
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Lazarus}}
+ | id           = 200
+}} {{infobox achievement
+ | dlc          = a
+ | name         = GB Bug
+ | link         = GB Bug
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Eden}}
+ | id           = 201
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Zodiac
+ | link         = Zodiac
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|The Lost}}
+ | id           = 202
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Box of Friends
+ | link         = Box of Friends
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Lilith}}
+ | id           = 203
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Rib of Greed
+ | link         = Rib of Greed
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Keeper}}
+ | id           = 204
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Cry Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Isaac}}
+ | id           = 205
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Red Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Magdalene}}
+ | id           = 206
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Green Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Cain}}
+ | id           = 207
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Brown Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Judas}}
+ | id           = 208
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Blue Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|???}}
+ | id           = 209
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Lil' Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Eve}}
+ | id           = 210
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Rage Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Samson}}
+ | id           = 211
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Black Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Azazel}}
+ | id           = 212
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Long Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Lazarus}}
+ | id           = 213
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Yellow Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Eden}}
+ | id           = 214
+}} {{infobox achievement
+ | dlc          = a
+ | name         = White Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|The Lost}}
+ | id           = 215
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Big Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Lilith}}
+ | id           = 216
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Noose Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Keeper}}
+ | id           = 217
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Rune Bag
+ | link         = Rune Bag
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Lilith}}
+ | id           = 218
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Cambion Conception
+ | link         = Cambion Conception
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|Lilith}}
+ | id           = 219
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Serpent's Kiss
+ | link         = Serpent's Kiss
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|Lilith}}
+ | id           = 220
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Succubus
+ | link         = Succubus
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Lilith}}
+ | id           = 221
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Immaculate Conception
+ | link         = Immaculate Conception
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Lilith}}
+ | id           = 222
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Goat Head Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Lilith}}
+ | id           = 223
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Gold Heart
+ | link         = Hearts
+ | description  = Unlocked a new item.
+ | requirements = Complete [[XXXXXXXXL|XXXXXXXXL (challenge #21)]]
+ | id           = 224
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Get out of Jail Free Card
+ | link         = Get out of Jail Free Card
+ | description  = Unlocked a new item.
+ | requirements = Complete [[SPEED!|SPEED! (challenge #22)]]
+ | id           = 225
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Gold Bomb
+ | link         = Gold Bomb
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Blue Bomber|Blue Bomber (challenge #23)]]
+ | id           = 226
+}} {{infobox achievement
+ | dlc          = a
+ | name         = 2 new pills
+ | link         = Percs!
+ | description  = Unlocked a new item.
+ | requirements = Complete [[PAY TO PLAY|PAY TO PLAY (challenge #24)]]
+ | id           = 227
+}} {{infobox achievement
+ | dlc          = a
+ | alias        = 2 new pills 2
+ | name         = 2 new pills
+ | link         = Re-Lax
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Have a Heart|Have a Heart (challenge #25)]]
+ | id           = 228
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Poker Chip
+ | link         = Poker Chip
+ | description  = Unlocked a new item.
+ | requirements = Complete [[I RULE!|I RULE! (challenge #26)]]
+ | id           = 229
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Stud Finder
+ | link         = Stud Finder
+ | description  = Unlocked a new item.
+ | requirements = Complete [[BRAINS!|BRAINS! (challenge #27)]]
+ | id           = 230
+}} {{infobox achievement
+ | dlc          = a
+ | name         = D8
+ | link         = D8
+ | description  = Unlocked a new item.
+ | requirements = Complete [[PRIDE DAY!|PRIDE DAY! (challenge #28)]]
+ | id           = 231
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Kidney Stone
+ | link         = Kidney Stone
+ | description  = Unlocked a new item.
+ | requirements = {{dlc|na+}} Complete [[The Guardian|The Guardian (challenge #30)]]<br>{{dlc|a+}} Complete [[Onan's Streak|Onan's Streak (challenge #29)]]
+ | id           = 232
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Blank Rune
+ | link         = Blank Rune (Achievement)
+ | description  = Unlocked a new item.
+ | requirements = {{dlc|na+}} Complete [[Onan's Streak|Onan's Streak (challenge #29)]]<br>{{dlc|a+}} Complete [[The Guardian|The Guardian (challenge #30)]]
+ | id           = 233
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Blue Womb
+ | link         = Blue Womb
+ | description  = Unlocked a hidden chapter.
+ | requirements = Defeat {{e|Mom's Heart}} 10 times
+ | id           = 234
+}} {{infobox achievement
+ | dlc          = a
+ | name         = 1001%
+ | description  = Nerd x 1000000
+ | requirements = {{dlc|nr}} Unlock all Afterbirth secrets and [[ending]]s, and [[collection page|collect]] every Afterbirth item<br>{{dlc|r}} Unlock 275 random achievements and have at least 510 items in the collection page
+ | id           = 235
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Keeper holds Wooden Nickel
+ | link         = Keeper
+ | description  = Unlocked a new starting item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Keeper}}
+ | id           = 236
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Keeper holds Store Key
+ | link         = Keeper
+ | description  = Unlocked a new starting item.
+ | requirements = Defeat {{e|Satan}} as {{c|Keeper}}
+ | id           = 237
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Deep Pockets
+ | link         = Deep Pockets
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|Keeper}}
+ | id           = 238
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Karma
+ | link         = Karma
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Keeper}}
+ | id           = 239
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Sticky Nickels
+ | link         = Sticky nickel
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Keeper}}
+ | id           = 240
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Super Greed Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Keeper}}
+ | id           = 241
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Lucky Pennies
+ | link         = Lucky penny
+ | description  = Unlocked a new item.
+ | requirements = Donate 2 Coins to the {{machine|Greed Donation Machine}}
+ | id           = 242
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Special Hanging Shopkeepers
+ | link         = Special shopkeeper
+ | description  = Unlocked a secret.
+ | requirements = Donate 14 Coins to the {{machine|Greed Donation Machine}}
+ | id           = 243
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Wooden Nickel
+ | link         = Wooden Nickel
+ | description  = Unlocked a new item.
+ | requirements = Donate 33 Coins to the {{machine|Greed Donation Machine}}
+ | id           = 244
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Cain holds Paperclip
+ | link         = Cain
+ | description  = Unlocked a new starting item.
+ | requirements = Donate 68 Coins to the {{machine|Greed Donation Machine}}
+ | id           = 245
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Everything is Terrible 2!!!
+ | link         = Ultra Greed
+ | description  = Greed just got harder!
+ | requirements = Donate 111 Coins to the {{machine|Greed Donation Machine}}
+ | id           = 246
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Special Shopkeepers
+ | link         = Special shopkeeper
+ | description  = Unlocked a secret.
+ | requirements = Donate 234 Coins to the {{machine|Greed Donation Machine}}
+ | id           = 247
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Eve now holds Razor Blade
+ | link         = Eve
+ | description  = Unlocked a new starting item.
+ | requirements = Donate 439 Coins to the {{machine|Greed Donation Machine}}
+ | id           = 248
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Store Key
+ | link         = Store Key
+ | description  = Unlocked a new item.
+ | requirements = Donate 666 Coins to the {{machine|Greed Donation Machine}}
+ | id           = 249
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Lost holds Holy Mantle
+ | link         = The Lost
+ | description  = Unlocked a new starting item.
+ | requirements = Donate 879 Coins to the {{machine|Greed Donation Machine}}
+ | id           = 250
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Keeper
+ | link         = Keeper
+ | description  = Unlocked a new character.
+ | requirements = Donate 1000 Coins to the {{machine|Greed Donation Machine}}
+ | id           = 251
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Hive Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|???}}
+ | id           = 252
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Buddy Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Isaac}}
+ | id           = 253
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Colorful Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Magdalene}}
+ | id           = 254
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Whore Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Eve}}
+ | id           = 255
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Cracked Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Eden}}
+ | id           = 256
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Dripping Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Lazarus}}
+ | id           = 257
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Blinding Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Use {{i|Blank Card}} while holding {{p|XIX - The Sun}}
+ | id           = 258
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Sucky Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Azazel}}
+ | id           = 259
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Dark Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Lilith}}
+ | id           = 260
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Picky Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Cain}}
+ | id           = 261
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Revenge Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Samson}}
+ | id           = 262
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Belial Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Judas}}
+ | id           = 263
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Sale Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Keeper}}
+ | id           = 264
+}} {{infobox achievement
+ | dlc          = a
+ | name         = XXXXXXXXL
+ | link         = XXXXXXXXL
+ | description  = Unlocked Challenge #21.
+ | requirements = Defeat {{e|Mom}}
+ | id           = 265
+}} {{infobox achievement
+ | dlc          = a
+ | name         = SPEED!
+ | link         = SPEED!
+ | description  = Unlocked Challenge #22.
+ | requirements = Defeat {{e|Mom}}
+ | id           = 266
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Blue Bomber
+ | link         = Blue Bomber
+ | description  = Unlocked Challenge #23.
+ | requirements = Destroy 10 [[Tinted Rock]]s and defeat {{e|Mom's Heart}} 11 times
+ | id           = 267
+}} {{infobox achievement
+ | dlc          = a
+ | name         = PAY TO PLAY
+ | link         = PAY TO PLAY
+ | description  = Unlocked Challenge #24.
+ | requirements = Defeat {{e|Isaac}} as {{c|Cain}} {{dlc|nr+}} and destroy 10 [[Tinted Rock]]s
+ | id           = 268
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Have a Heart
+ | link         = Have a Heart
+ | description  = Unlocked Challenge #25.
+ | requirements = Defeat {{e|Mom}}
+ | id           = 269
+}} {{infobox achievement
+ | dlc          = a
+ | name         = I RULE!
+ | link         = I RULE!
+ | description  = Unlocked Challenge #26.
+ | requirements = {{dlc|na+}} Defeat {{e|???}} or {{e|The Lamb}}, defeat {{e|Satan}} as {{c|Isaac}}, and unlock {{i|The Negative}}<br>{{dlc|a+nr}} Defeat {{e|???}} or {{e|The Lamb}}, and defeat {{e|Satan}} as {{c|Isaac}}<br>{{dlc|r}} Defeat {{e|Mega Satan}} and unlock {{i|The Negative}}
+ | id           = 270
+}} {{infobox achievement
+ | dlc          = a
+ | name         = BRAINS!
+ | link         = BRAINS!
+ | description  = Unlocked Challenge #27.
+ | requirements = Defeat {{e|Isaac}} 5 times
+ | id           = 271
+}} {{infobox achievement
+ | dlc          = a
+ | name         = PRIDE DAY!
+ | link         = PRIDE DAY!
+ | description  = Unlocked Challenge #28.
+ | requirements = Defeat {{e|Mom}}
+ | id           = 272
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Onan's Streak
+ | link         = Onan's Streak
+ | description  = Unlocked Challenge #29.
+ | requirements = {{dlc|anr}} Defeat {{e|Mom}}<br>{{dlc|r}} Unlock {{c|Judas}} and {{e|It Lives!}}
+ | id           = 273
+}} {{infobox achievement
+ | dlc          = a
+ | name         = The Guardian
+ | link         = The Guardian
+ | description  = Unlocked Challenge #30.
+ | requirements = Defeat {{e|Mom}}
+ | id           = 274
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Generosity
+ | link         = Greed machine
+ | description  = If only everyone was as generous as you are...
+ | requirements = Donate 999 Coins to the {{machine|Greed Donation Machine}}
+ | id           = 275
+}} {{infobox achievement
+ | dlc          = a
+ | name         = Mega
+ | link         = Mega Blast
+ | description  = Unlocked...
+ | requirements = Defeat {{e|Mega Satan}} as every character ({{dlc|r}} except [[tainted character]]s)
+ | id           = 276
+}}

@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | id          = 31
+ | quote       = Range up
+ | description = {{dlc|nr}}+5.25 [[range]], +0.5 [[tear falling speed]].<br>{{dlc|r}} +3.75 [[range]]. Spawns a {{E|Red Heart|text=Heart}} on pickup.
+ | quality     = 1
+ | tags        = summonable mom offensive
+ | pool        = mom's dressing table-a+
+}}
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr}} +5.25 [[range]].
+* {{dlc|r}} +3.75 [[range]].
+* {{dlc|nr}} +0.5 [[tear falling speed]].
+* {{dlc|r}} Spawns one random {{E|Red Heart|text=Heart}}.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc+|a+}} This item has a 1% chance to spawn when bombing {{m|Mom's Dressing Table}}. Multiple copies can be obtained through this method.{{dlc-}}
+* As with all Heart Spawns, {{i|Mom's Lipstick}} adheres to the room's spawning conditions. For instance, the {{i|Moving Box}} could be used to transfer Mom's Lipstick to the Cathedral variation of the Super {{r|Secret Room}} to spawn an {{E|Eternal Heart}} on picking it up.
+
+== In-game Footage ==
+{{#ev:youtube|G9bQLbaG7Pc||inline}} {{#ev:youtube|qXTfmTvAJIY||inline}}
+
+== Trivia ==
+* In Edmund McMillen's [https://youtu.be/kby0rXT7qYQ first post-Repentance Lore Stream] he explained that Mom's Lipstick is red in order to resemble the lipstick worn by Edmund's own mother in real life.
+
+{{nav|yes mother|mom|fr=Rouge à Lèvres de Maman}}

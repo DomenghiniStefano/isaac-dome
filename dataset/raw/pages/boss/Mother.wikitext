@@ -1,0 +1,107 @@
+{{infobox boss
+ | dlc         = r
+ | name        = Mother
+ | id          = 912
+ | appearance  = (scale:0.666)
+ | environment = <u>Boss</u><br>{{floor|Corpse}}
+ | base hp     = 4222
+ | pool        = Final Boss Chest ([[Endings|Ending 21]])<br>{{dlc|r+}} Gateway to {{s|The Void}}
+}}
+
+{{disambig msg|the final boss of [[Corpse]]|the boss of chapter 3 and chapter 3.5|Mom}}
+
+'''Mother''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' and the only boss of the second floor of the {{s|Corpse}}, as well as the final boss of [[Endings#Ending 21 (Mother)|Ending 21]].
+
+== Behavior ==
+Upon entering the boss room in {{s|Corpse}} II, the room is empty except for a hole in its center. Walking into it drops Isaac down into the arena where Mother is fought.
+
+=== Phase 1 ===
+Mother begins the fight attached to the top of the room and is stationary, similar to {{e|Mega Satan}}. Her face and hands can all be attacked to deal damage to her, and she uses them separately in her attacks:
+* One of Mother's hands grabs a knife and throws it directly downwards. The knife emits projectiles horizontally while travelling and a burst of many projectile lines in a radius upon impacting the back wall. This attack has two variations in terms of the projectiles' paths.
+* One of Mother's arms releases trails of projectiles that move across the arena in a wave pattern, eventually homing in on Isaac.
+* One of Mother's hands slams the ground, releasing streams of projectiles in a radius and spawning {{e|Small Maggot}}s.
+** Small Maggots that land on top of Mother's hitbox do not spawn.
+* Occasionally, Mother spits out a unique {{e|Fistula}} at Isaac that bounces off walls. Mother swipes the Fistula towards Isaac whenever it travels close to one of her hands and releases 6 lines of 2 projectiles when it collides with the bottom wall. Mother repeats this several times, causing the Fistula to gradually gain speed, before slamming a hand down on the mass, crushing it and sending 3 medium Fistulas outwards. Each medium Fistula flies until it collides with a wall, sending out 2-3 small Fistulas and being destroyed in the process. These small Fistulas travel a short distance before bursting and spawning a Small Maggot.
+** This Fistula can be reflected back towards Mother through the use of a variety of melee-based attacks, each reflect causing the Fistula to glow brighter. Successfully reflecting the Fistula 6 times will cause it to be destroyed upon contact with Mother, dealing damage to and briefly stunning her. It will also burst into 8 medium Fistulas in a radius that disappear quickly, six of which deal damage to Mother; each of these can also deal damage to Isaac. Abilities that can cause this interaction include:
+*** {{i|Spirit Sword}}'s spin attack.
+*** {{c|The Forgotten}}/{{c|Tainted Forgotten}}/{{P|Soul of the Forgotten}}'s bone swing.
+*** {{c|Tainted Samson}}/{{P|Soul of Samson}}/{{i|Berserk!}}'s donkey jawbone swing.
+*** {{I|Bag of Crafting}}'s swipe.
+*** {{C|Tainted Magdalene}}'s hug attack, though it cannot be triggered by the Fistula.
+* Occasionally, Mother retreats upwards, becoming invulnerable, and summons a horde of 34 {{e|Dead Isaac}}s at the bottom of the arena that walk up towards Mother. If any are left alive to reach Mother, she swipes with a hand, killing any that are caught in the swipe, releasing a tiny burst of red projectiles, and launching their corpses towards Isaac. After a while, she ends this attack by slamming down both hands, which causes a small rock wave to appear beneath any remaining Dead Isaacs, killing them, and launching their corpses up into the air.
+
+=== Phase 2 ===
+After losing 2222 HP, Mother retracts her head and arms into her body before releasing a green {{i|Mega Blast}} laser down the middle of the arena, destroying the lower wall and expanding the area of the room to be 1x2. She then separates from the top wall, launching her head into the center of the room. From this point on, she slides slowly towards Isaac when she isn't performing one of her attacks:
+* Spins around in place, shooting out strings of wavy projectiles in all directions.
+* Inhales and draws Isaac to her as projectiles appear behind Isaac as he moves. After that, she shoots a massive ball of projectiles towards Isaac that splits into many smaller clusters when hitting a wall, which each then send out lines of projectiles when they collide with a wall or Mother.
+* Leaps upwards off-screen before charging vertically across the half of the room which Isaac is located within, then across the other half in the opposite direction. The half she charges across first is telegraphed by a splat at the top or bottom of the room. After this, she slams down in the middle of the room, sending rock waves and small strings of projectiles in all directions.
+* Faint white lines appear at set intervals along a random arena wall before a line of projectiles quickly shoots out of the wall along each line; these projectiles hover for a moment before dropping. One line of projectiles is always lined up with Isaac's position. This attack is repeated five times and follows a pattern: vertical lines, then horizontal, vertical, horizontal, horizontal (or vice versa).
+
+== Gallery ==
+<gallery>
+File:Boss Mother secondphase ingame.png|Mother in her second phase.
+File:Mother Fistula.png|Fistula's appearance in Mother's attack.
+File:Boss Mother Full portrait.png|Mother's full splash art.
+File:Boss Mother Old portrait.png|Mother's old splash art in ''Antibirth'' from when she was called "The Witness".
+File:Witness Scrapped Phases.png|Concept art of an older version of Mother back when she was called "The Witness" for Antibirth. Notably, it has a scrapped 2nd phase that neither made it in the ''Antibirth'' mod nor the ''Repentance'' DLC.
+File:Witness Later Concept.png|Later concept art of Mother (earlier known as "The Witness") transitioning from phase 1 to phase 2. This transition was adapted into both the ''Antibirth'' mod and the ''Repentance'' DLC.
+File:Ur-Gurdy Concept.jpg|Boss screen mockup of the "Ur-Gurdy", a design which would later be adapted for "The Witness" and Mother. Created by artist NotYourSagittarius.
+File:Ur-Gurdy Mockup.jpg|In-game mockup of "Ur-Gurdy's" fight. Created by artist NotYourSagittarius.
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | A Strange Door, Jacob and Esau, Seeing Double, Isaac's Awakening, Meat Cleaver, Yuck Heart, Guppy's Eye, Akeldama, Eternal D6, Bird Cage, Bloody Gust, Devil's Crown, Tinytoma, 'M, Lost Soul, Blood Puppy, Keeper's Sack, Lil Portal, Bone Spurs, Revelation, Magic Skin, Dice Bag, Mother's Kiss, Lucky Sack, Number Magnet, Ring Cap, Lil Clot, Swallowed M80, Azazel's Stump, Torn Card, Modeling Clay, Crystal Key, Adoption Papers, Cursed Penny, Apollyon's Best Friend, Hollow Heart, Beth's Essence, Found Soul, Godhead }}
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage Scaling|here]].
+
+== Notes ==
+* {{dlc|nr+}} Using {{I|Plan C}} ''will'' kill Mother in time if you have an extra life. Even though Isaac dies well before the animation is complete, the [[Isaac's Last Will|game over screen]] will pop up almost immediately after the animation ends. If Isaac has an extra life item that revives him outside the room, he will be able to enter the Final Boss Chest without fighting Mother again.
+** {{dlc|nr+}} Killing Mother in this way will ''not'' reward the completion mark for the current character if they don't have an extra life.
+** {{dlc|nr+}} Killing Mother in this way will not work for {{c|The Lost}}, {{c|Tainted Lost}}, {{c|The Forgotten}} (if used as The Soul), and {{c|Tainted Forgotten}} if the revival transports them to the previous room since their death animations are shorter than those of normal characters.
+* {{dlc|r+}} Using {{I|Plan C}} in Mother's room will now kill Isaac in 11.5 seconds, which is enough time to let Mother's death animation finish and reward the completion mark for the current character before [[Isaac's Last Will]] pops up.
+* {{i|Rotten Tomato}} or any items that inflict [[Status Effects|Charm]] can cause Mother's wavy projectiles during the first phase and second phase to target herself.
+* The ball of splitting projectiles in Mother's second phase can also collide with Mother. The player can therefore move to the opposite side of Mother after she fires to more easily dodge the attack.
+* Unlike most other bosses, Mother has no visible health bar in either of her phases, so it is impossible to tell how much damage you are dealing to her without {{I|Spider Mod}}.
+* {{I|Suplex!}} works on Mother, but in Mother's first phase, Isaac can pick up only one of her parts at a time, either her head or one of her arms, and give it a suplex.
+* {{p|II - The High Priestess}} will damage Mother even though it can be considered another form of {{e|Mom}}.
+* Using {{i|Black Hole}} will not stop Mother's wavy projectiles from proceeding once the black hole has diminished.
+
+== Strategies ==
+* {{p|Chaos Card}} works on Mother, but only kills one of her phases. If you are holding a Chaos Card, it is recommended to use it in Phase 2, since Mother's attacks are much more dangerous.
+* {{i|Curse of the Tower}} can be very useful, since {{e|Troll Bomb}}s will attempt to spawn near Mother, and bombs in ''Repentance'' will deal 100 damage and ignore the armor. Around 43 bombs would be able to kill her, which corresponds to about 6~7 times of damage. This will be affordable if you have more than 10 hearts in total.
+** Similarly, using {{I|Anarchist Cookbook}}, {{p|XVI - The Tower}}, or your own {{e|Bomb}}s will also help.
+* Her charging attack in Phase 2 can be greatly stalled by placing a bomb in front of her path, while also dealing damage to her in the process.
+* In phase 2, if the player has {{I|Gnawed Leaf}}, they can bring Mother to a complete standstill while she's charging if they enter statue form in front of her.
+** Pair this with at least one offensive familiar and the fight becomes a joke for all characters.
+* Using {{p|Ace of Hearts}} during the Dead Isaac attack will spawn 10 hearts on average, which should keep any red heart characters alive for quite some time. Using it during the hand slam attack that spawns Small Maggots will usually spawn 3-5.
+* Using {{I|Eraser}} on Mother's first phase allows phase 2 to be skipped as long she has 15 health or less.
+* With proper timing, {{p|Soul of Judas}} can one-shot Mother's second phase even with base damage. The best attack for this is the spinning attack, but it is also possible to do this right after Mother spits out the ball of projectiles. Be aware that the boss can dodge the damage by performing the charge attack.
+
+== Trivia ==
+* The Ending following this fight reveals Mother to be a grotesque, undead representation of Mom imagined by Isaac before the events of the game.
+* This boss originates from the ''Antibirth'' mod, and was originally named "[[Anti:The Witness|The Witness]]".
+** The Witness itself was first designed as a boss mockup by the name of "Ur-Gurdy". The Ur-Gurdy was a speculative posthumous version of {{e|Mama Gurdy}} which was rumored to rarely replace {{e|Satan}} in {{s|Sheol}}.
+* Between her original appearance in ''Antibirth'' and ''Repentance'', Mother’s boss fight was changed drastically, including the arena being shrunken dramatically, the replacement of several attacks with new ones, the boss theme being changed, and the boss's death animation being changed, along with the addition of Mom’s voice lines during the battle.
+** Because of how she died in ''Antibirth'' (turning to stone), it was possible to softlock the game by killing The Witness where the ending chest spawned.
+** In ''Antibirth'', the Corpse II boss room contained four golden chests with items (similar to the starting room in {{s|Chest}}). In ''Repentance'', the boss room is completely empty except for the hole leading to the fight against Mother.
+* Mother's boss theme is called "Morticide". "Morti-" stems from Latin "Mors" which means "death" or "corpse", while "-cide" means "an act of killing", so the track name effectively means "Killing the dead".
+* The back wall of the fight is actually part of Mother's model; attempting to summon her via the console will change the bottom wall of the current floor to a Corpse wall.
+* Unlike {{e|Mom}}, {{e|Mom's Heart}}, and {{e|It Lives!}}, Mother is not instantly killed by using {{i|The Bible}}.
+* Mother is one of only three bosses that don't have a visible health bar of their own. The others are {{e|Mega Satan}} and {{e|The Beast}}.
+* Faint translucent {{e|Chubber}} projectiles can be seen leading the lines of projectiles in Mother's second phase white line attack.
+* In ''Antibirth'', The Witness was immune to [[Status Effects]].
+* The interaction of {{i|Spirit Sword}} to the Fistula attack is likely a reference to the "[[zelda:Dead Man's Volley|Dead Man's Volley]]" commonly seen during boss fights in ''The Legend of Zelda''.
+* According to _Kilburn, the mega Brimstone laser when starting phase 2 is a reference to The Nuclear Throne, a boss from the game ''Nuclear Throne''.<ref>https://youtu.be/zIyyVg_7Fp4?feature=shared&t=4090</ref>
+* Mother beating up {{E|Dead Isaac}}s in one of her attacks could be alluding to how Isaac gets beaten up in life after leaving his room.
+* Mother spawning 34 {{e|Dead Isaac}}s might be a reference to there being 34 playable characters.
+
+== References ==
+{{Reflist}}
+
+{{Nav|boss|mother unlock|fr=Mère}}
+[[Category:Chapter 4.5 bosses]]
+[[Category:Corpse bosses]]
+[[Category:Final bosses]]
+[[Category:Debut bosses in Repentance]]
+[[Category:Gurdies]]

@@ -1,0 +1,83 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 642
+ | quote       = All your desires fulfilled
+ | description = Consumes one [[Health#Red Heart Containers|heart container]] or two {{e|Soul Heart}}s to spawn an [[Items|item]] and grant Isaac a [[Health#Broken Hearts|broken heart container]] that can never be filled. If Magic Skin is not held after being used, it is very likely to replace any future items.
+ | quality     = 2
+ | tags        = offensive nocantrip
+ | recharge    = 6
+ | unlocked by = Magic Skin
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, spawns an [[item]] pedestal from the current room's [[item pool]].
+* Consumes one of Isaac's [[Health#Red Heart Containers|heart containers]], one {{e|Bone Heart}}, or two {{e|Soul Heart}}s, replaced by a [[Health#Broken Hearts|broken heart container]].
+** The priority order of hearts that will be consumed is: one heart container, one bone heart, and two soul hearts.
+* After using Magic Skin, if Isaac is not currently holding it, Magic Skin has a chance to replace any item that spawns in the future.
+** The original item that was replaced is considered seen and, depending on the pool, possibly can't be found again.
+** The chance is 33% after one use, 50% after two uses, and 100% after three uses.
+** If Magic Skin is on a pedestal somewhere on the current floor, the replacement chance is reduced to 1% per use. Unpurchased Shop and Devil Deal items do not count.
+** Each new Magic Skin is fully recharged.
+* If Isaac's entire health bar is filled with broken heart containers by using Magic Skin (which kills him, but an extra life will remove one broken heart container), this item will disappear and future items won't be replaced.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Scourge}}.{{dlc-}}
+* For most characters, the limit of broken hearts before Magic Skin disappears is 12.
+** If using {{c|Magdalene}} with {{I|Birthright}}, Magic Skin will not disappear until you have 18 or more broken heart containers.
+** {{c|The Lost}} and {{c|Tainted Lost}} will be able to use the item once, after which it disappears. The item's chance of replacing later items does not trigger, making it similar to {{I|Mystery Gift}}.
+*** An extra item cannot be spawned when used with {{I|Car Battery}}.
+*** Temporary The Lost forms from the {{E|White Fire Place}} in {{S|Downpour}} II/{{S|Dross}} II, or by using the {{p|Soul of the Lost}}, have no effect. A heart container is still replaced by a broken heart container, and Magic Skin does not disappear and will still replace future pedestal items if dropped. If Isaac runs out of health in this way as The Lost, he dies immediately.
+** {{c|Keeper}} and {{c|Tainted Keeper}} gain a [[Health#Coin Hearts|broken coin container]] which are functionally identical to broken hearts. {{c|Keeper}} can use it up to 3 times, and {{c|Tainted Keeper}} can use it up to 2 times before Magic Skin disappears.
+*** If they have {{I|Deep Pockets}} and {{I|Greed's Gullet}}, or {{T|Mother's Kiss}}, they can use it more than 2~3 times.
+*** Although they can have 13 or more coin hearts under some conditions, they can only have a maximum of 12 broken coin heart containers. They will die only once all coin hearts are gone, causing Magic Skin to disappear.
+** If either {{c|The Forgotten}} or {{c|The Soul}} has 6 broken hearts by using Magic Skin, this item will disappear and they will instantly die. However, swapping characters right after one of them reaches 6 broken hearts can prevent them from dying, but permanently disable the one using it.
+* Reaching the broken heart limit by using {{P|? Card}} or {{p|Wild Card}} won't cause Magic Skin to disappear.
+* {{c|Tainted Lazarus}} is able to find Magic Skin while {{c|Dead Tainted Lazarus}} is carrying it, and vice versa.
+* {{I|Heartbreak}} or {{P|VI - The Lovers?}} will add broken hearts, lessening maximum use of Magic Skin.
+* Broken heart containers can be removed by donating to a {{M|Confessional}}.
+* In Treasure Rooms with a blind item, if the known item is Magic Skin, it is almost guaranteed the blind item is not.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Grants a permanent +0.5 damage up on use in addition to the temporary +4 damage up given to it by Birthright. This bonus is not lost if the broken hearts are removed.}}
+* {{Book of Virtues synergy|description=Spawns pink wisps in the inner ring, looking like skin. Wisps have a large amount of health and fire [[piercing]] tears.}}
+* {{I|Car Battery}}: Spawns 2 items and adds 2 broken hearts (removing 2 heart containers or 4 soul hearts) with each use. Two broken hearts are added regardless of Isaac's remaining health. If Isaac already has 11 broken hearts and uses Magic Skin, it will only be used once.
+* {{I|Damocles}}: Spawns 2 items on every use instead of 1.
+* {{I|Esau Jr.}}: Since Esau Jr.'s health is separate from Isaac's, one character can use Magic Skin at no cost to the other. Future items will still be replaced when playing as the character that hasn't used Magic Skin.
+* {{i|Schoolbag}}: Isaac can keep Magic Skin in the inactive slot to prevent its respawning while still being able to use another active item.
+* {{I|Spindown Dice}}: Using Spindown Dice on Magic Skin 6 times turns it into {{I|R Key}}.
+** '''Spindown Dice''' + '''Schoolbag''': Allows Isaac to keep Spindown Dice between runs, allowing a theoretically infinite run with enough luck.
+*** '''Restock:''' If Isaac can find a Battery in the shop, as long as one has enough coins, runs can actually be infinite.
+
+== Interactions ==
+* {{i|Alabaster Box}}: Magic Skin can use Soul hearts from the box, and will prioritize them over those in health.
+* {{I|Binge Eater}}: Will still offer a food item even if Magic Skin replaced an item.
+* {{I|Dream Catcher}}: If Magic Skin has replaced the item in the {{R|Treasure Room}}, it will be shown in the dream sequence.
+** Holding Magic Skin or having a pedestal with it on the same floor can cause the item in the Treasure Room to not be replaced by Magic Skin.
+* {{I|Genesis}}: Removes all broken hearts as well as items. Magic Skin can still replace items in the Genesis room.
+* {{I|Glowing Hourglass}}: Recovers a broken heart when used after using Magic Skin. Using Magic Skin in the same type of room will spawn the same item, it must be used in a different room type first to spawn a different item in the previous room type.
+* {{I|Lemegeton}}: Magic Skin can be spawned by Lemegeton if it has been used in the current run. As long as Isaac has this flame, Magic Skin will not respawn/replace items.
+* {{I|Metronome}}: Getting Magic Skin from Metronome has a chance to instantly apply the item replacement and spawn Magic Skin as an item pedestal.
+* {{I|Mystery Gift}}: Does not replace {{I|A Lump of Coal}} or {{I|The Poop}}.
+* {{T|NO!}}: Does not prevent Magic Skin from replacing items, despite it being an active item.
+* {{c|Tainted Eden}}: Broken hearts persist even after Magic Skin is rerolled.
+* {{I|TMTRAINER}}: Prevents Magic Skin from replacing items, since future Magic Skins will be glitched.
+* {{I|R Key}}: Magic Skin still replaces items after using R Key.
+* {{I|Void}}: Absorbing Magic Skin does not prevent future items from being replaced, including items spawned by the absorbed Magic Skin. Additional Magic Skins can be absorbed, allowing multiple items to be spawned per use at the cost of adding more broken hearts.
+
+== In-game Footage ==
+{{#ev:youtube|kktyMkp8mdE||inline}}
+{{#ev:youtube|GRWY_e0xJow||inline}}
+
+== Trivia ==
+* [[anti:Magic Skin|Magic Skin]] originates from the ''Antibirth'' mod.
+* The item is a reference to the 1831 book by French novelist [[wikipedia:Honoré de Balzac|Honoré de Balzac]] called ''[[wikipedia:La Peau de chagrin|La Peau de chagrin]]'', known in English as ''The Wild Ass's Skin''. In the story, the main character finds a talisman made of donkey skin that grants wishes, but each wish causes the talisman to become smaller, as well as his lifetime. He attempts to get rid of the skin, but it always finds a way to return to him.
+** The item's pickup quote, "All your desires fulfilled", is the first sentence written on the skin in the novel.
+* This also may be a reference to the goatskin Jacob uses to trick his father Isaac into thinking he was Esau, thus giving him his blessing along with the divine right God had promised Abraham (Isaac's father), which included inheriting the promised land and having his bloodline bring forth the Messiah.
+
+== Bugs ==
+{{bug|dlc=r+|Reviving as {{c|???}} via the {{i|Ankh}} (or {{i|1up!}} while already ???), or {{c|Black Judas}} via {{i|Judas' Shadow}} will force Isaac into their default starting health of 3 soul/2 black hearts respectively, regardless of the amount of broken hearts. If there are more than 12 total, any excess normal hearts are lost from picking up any item or activating an effect that updates Isaac's health. The extra hearts can be lost to damage as normal, however.}}
+{{Bug|Magic Skin's item-replacing effect can also apply to {{t|Modeling Clay}}. If modeling clay replicates Magic Skin, it will have no effect.}}
+
+{{nav|jacob and esau unlock|mother unlock|fr=Peau de Chagrin}}

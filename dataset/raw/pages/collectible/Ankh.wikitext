@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | id          = 161
+ | quote       = Eternal life?
+ | description = Upon [[death]], Isaac will respawn as {{c|???}} in the previous room, with 3 {{e|Soul Heart}}s.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = nolostbr nocantrip nochallenge
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Upon [[death]], Isaac will respawn as {{c|???}} in the previous room, with 3 {{E|Soul Heart}}s.
+
+== Notes ==
+* Resurrection items activate in a [[:Category:Revival items|set order]]. {{dlc|nr}} Ankh is 6th in this order after {{i|1up!}}, {{i|Dead Cat}}, {{c|Lazarus}}' inherent extra life, {{i|Guppy's Collar}}, and {{i|Lazarus' Rags}}.
+** {{dlc|r}} Ankh is 8th in this order after {{p|Soul of Lazarus}}, {{i|1up!}}, {{c|Lazarus}}' inherent extra life, {{i|Dead Cat}}, {{i|Inner Child}}, {{i|Guppy's Collar}}, and {{i|Lazarus' Rags}}.
+* Like other items that grant an extra life, but respawn Isaac as a different character, all [[completion mark]]s earned from the moment of death onward will count towards the new character, not the old.
+* {{dlc+|r}} During {{E|The Beast}} fight, Isaac respawns in the place he died.{{dlc-}}
+
+== Interactions ==
+* {{c|Tainted ???}}: Revives as himself, rather than normal ???. Effectively acts as a {{I|1up!}}.
+
+== In-game Footage ==
+{{#ev:youtube|_QsMWgrNYIE}}
+
+== Trivia ==
+* The [[wikipedia:Ankh|Ankh]] is an Egyptian hieroglyph that means "life".
+* It's possible that the resurrection as ??? is a reference to mummies, often depicted as undead in pop culture.
+* In the original The Binding of Isaac, the Ankh gave Isaac eyeshadow, like the one {{c|Eve}} wears.
+* This item shares a pickup quote with {{i|Guppy's Collar}}.
+
+== Bugs ==
+{{bug|plat=PS4|When downloading a synced file where player 2 was revived as {{c|???}} before the character is unlocked, Player 2 will become Player 1 and be loaded as {{c|Isaac}}.}}
+
+{{nav|revival|fr=Ânkh}}

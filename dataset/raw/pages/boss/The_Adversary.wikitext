@@ -1,0 +1,47 @@
+{{infobox boss
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 268
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|The Void}}<br>{{room|boss rush}}<br>{{dlc|r}}<br>{{floor|Necropolis}}<br>{{floor|The Void}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Degraded Boss</u><br>{{floor|Sheol}}<br>{{floor|Dark Room}}{{floor|Chest}}
+ | base hp     = 520
+ | pool        = {{ip|Boss}}<br> {{i|Eye of the Occult|r+}} (1% chance)
+}}
+
+'''The Adversary''' is a [[boss]] that can appear:
+* {{Dlc|nr}} In all environments of [[Chapter 3]] ({{s|Depths}}, {{s|Necropolis}}, {{s|Dank Depths}}).
+* {{Dlc|r}} Only in {{s|Necropolis}}.
+
+== Behavior ==
+* Quickly fires {{i|Brimstone}} laser towards Isaac if he is seen in any cardinal direction. The beam bends slightly, following Isaac's movement.
+* Flies off-screen into the air and plummets down on Isaac's position a few seconds later, creating a circular rock wave on impact which expands to 4 rings.
+* Summons 3 {{e|Spider}}s.
+* Dims the room, causing the {{Cu|Darkness}} effect for a period of time.
+
+== Notes ==
+* The Brimstone attack's homing effect is stronger as it gets farther away from The Adversary. It is much easier to avoid by staying close and being ready to pivot around him via quarter-circle dodges when he telegraphs the attack.
+* {{dlc|nr}} If there is a room containing two Adversaries, their Brimstone shots may be unavoidable if fired from both sides of the room simultaneously.
+** {{dlc|r}} Two Adversaries can't fire simultaneously.
+* {{i|Host Hat|nr}} and {{i|Pyromaniac}} make Isaac immune to The Adversary's rock wave attack since it is considered to be the same as explosions by the game.
+* {{plat|3DS}} If The Adversary dims the room, pause the game and the dim will eventually go away while still in the pause screen.
+
+== Gallery ==
+<gallery>
+Boss Delirium The Adversary ingame.png | {{dlc|a+}} The Adversary as one of {{e|Delirium|n}}'s forms.
+Rebirth Boss Concepts.jpg | Early concept art for The Adversary in the bottom right corner, along with other Rebirth boss concept arts.
+The Adversary Concept.png| More concept art of The Adversary.
+</gallery>
+
+== Trivia ==
+* He is the posthumous version of {{e|Dark One}}.
+* "The Adversary" is one of the ways that the original Hebrew word "ha-satan" can be translated.
+* "Adversary" is the name of a level in ''Super Meat Boy'', which Edmund, part of Team Meat at the time, worked on.
+* The Adversary appears to be a severely injured Dark One, though what caused such injuries is unknown.
+* The Adversary has a bandage on his horn in-game, but he does not on his boss portrait.
+* The Adversary is one of the three bosses that can darken the room (a temporary ''Curse of Darkness'' effect). The other bosses are Dark One and {{e|The Lamb}}.
+
+{{nav|boss|fr=L'Adversaire}}
+
+[[Category:Chapter 3 bosses]]
+[[Category:Depths bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Debut bosses in Rebirth]]

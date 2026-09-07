@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | id          = 125
+ | quote       = Homing bombs!
+ | description = +5 {{e|Bomb}}s. Bombs gain a [[Tear Effects#Homing|homing]] effect, slowly moving towards the nearest enemy.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants 5 {{e|Bomb}}s.
+* Grants homing bombs.
+
+== Notes ==
+* This item can make bombing out of rooms difficult, as the bombs may slide towards enemies and away from the door.
+
+== Synergies ==
+* {{i|Dr. Fetus}}: The bombs that Isaac fires will be homing.
+
+== Interactions ==
+* {{i|Doctor's Remote}}/{{i|Epic Fetus}}: Crosshair will not home in on enemies.
+* {{i|Bob's Rotten Head}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|LGPtv8YDn08||inline}} {{#ev:youtube|n26FJZa7M_U||inline}}
+
+== Trivia ==
+* This item is a reference to [http://www.mariowiki.com/Bob-omb Bob-ombs], enemies from the ''Mario'' franchise who self-detonate to hurt Mario.
+
+{{nav|bomb modifier|bomb|fr=Bobby Bombes}}

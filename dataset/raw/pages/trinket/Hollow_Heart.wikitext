@@ -1,0 +1,19 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 168
+ | quote       = A brittle blessing
+ | description = Grants an empty {{e|Bone Heart|n}} upon entering a new floor.
+ | unlocked by = Hollow Heart
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Grants one {{e|Bone Heart}} container upon entering a new floor.
+** If Isaac has 12 heart containers, the added bone heart will replace the rightmost {{e|Soul Heart}} (if any).
+
+== Synergies ==
+* {{I|Brittle Bones}}: Allows Isaac to sacrifice a bone heart for a fire rate increase every floor.
+* {{A|Golden Trinket}} / {{i|Mom's Box}}: Adds 2 bone heart containers instead of one.
+
+{{nav|tainted forgotten unlock|mother unlock|bone|fr=Cœur Creux}}

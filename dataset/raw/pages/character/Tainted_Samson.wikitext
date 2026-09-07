@@ -1,0 +1,98 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc         = r
+ | id          = 27
+ | health      = {{hearts|red=3}}
+ | tears       = -0.1
+ | range       = 5
+ | unlocked by = The Savage
+}}
+'''Tainted Samson''' is a [[Characters|character]] added in [[The Binding of Isaac: Repentance]]. He is the alternate version of {{C|Samson}} with his hair completely shaved off, except for a large tuft. Tainted Samson is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|1=Soul of Cain}} to access a special room in one of the walls while playing as Samson. He starts with 3 red hearts.
+
+== Notes ==
+* Whenever Tainted Samson deals or takes damage, he will grow progressively more red. After reaching a certain point, he activates {{i|Berserk!}} and gains +0.40 [[speed]], ×0.5 then +2 [[Tears|fire rate]], +3 flat [[damage]], and will be restricted to using a jawbone melee weapon instead of his tears (similarly to {{C|The Forgotten}}'s bone club) which deals 3× his damage stat with strikes, 1.5× on thrown attacks, and reflects enemy shots when swung. The berserk state only lasts for 5 seconds at start, which is shown on a timer above his head, but one second is added every time Tainted Samson kills an enemy. Killing enemies in this state also grants speed, in increments of +0.40, as well as brief invincibility to prevent damage from exploding enemies. The effect persists between rooms. If he runs out of health while in this state, he will survive with no hearts, giving the player a short time to find more hearts before dying when the timer runs out.
+* Entering the berserk state requires dealing a base total of 120 damage, and increases by 40 for every next floor. Taking damage adds 10% of the required total.
+
+== Strategy ==
+* Tainted Samson's game-plan requires management of berserk mode. He plays like a standard character until berserk activates, which can then be used to shred through rooms of enemies. Being able to make full use of berserk is key for effective use of the character.
+* Berserk's benefits are immense, as Tainted Samson gains significant boosts to his melee abilities and speed, and even allows him to survive with no hearts so long as he picks up health before berserk ends. This all comes with a significant downside: berserk forces Tainted Samson to focus on melee attacks, making his effective range very low and extremely high risk.
+* Berserk is best suited for a heavily aggressive playstyle: as it runs out in five seconds, Tainted Samson should aim to enter a room, slay as many enemies as possible, and rush into the next to keep berserk up for as long as he can.
+* Berserk mode's swings are capable of reflecting enemy tears. If a situation forces berserking Tainted Samson from attacking a long-distance target, this can be used as a method to attack back or avoid damage. Alternatively, having a high tear rate will allow Tainted Samson to simply generate a reflective wall between himself and the enemy.
+* While the thrown melee weapon charges quite fast, it still takes precious time from berserk's five second time limit. The thrown weapon should only be used if Tainted Samson cannot reach his enemy.
+* As berserk charges through damage dealt and taken, it will activate quicker if Tainted Samson has a high damage per second or constantly gets hit.
+* When clearing rooms in berserk mode, it is recommended to ignore room drops until berserk ends to make the most use of its limited timer.
+* Berserk mode's swing will knockback targets slightly, which can help keep chasing enemies at a safe distance.
+* Like the Forgotten's bone club, range ups will affect berserk's melee range, and can be used to open distant chests or pick up items across small gaps.
+* As berserk mode activates relatively easily, it can make it hard to actually use tears. Items that grant tear effects will see less effective use on Tainted Samson because of this.
+* Items that grant tears up are exceptional for Tainted Samson, as berserk already grants a high tear multiplier. A high tears will result in incredibly fast swing speed, which will shred through both enemies and tears alike.
+* If Berserk is active, Tainted Samson can take damage while in the temporary Lost form in Downpour II. Damage will be drawn from his health bar normally.
+* Samson's melee attack can collect pickups and open chests. Opening a Mimic Chest this way deals no damage. Locked Chests still require a key to open.
+
+== Interactions ==
+* Damage done by [[Familiar]]s, such as {{I|Sister Maggy}}, count towards getting Tainted Samson to his [[Berserk!|Berserk]] state.
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Turning enemies into [[pickup]]s doesn’t count as damaging or killing them for the sake of charging berserk mode or extending its duration.
+* {{i|E. Coli}}/{{i|Flush!}}: Turning enemies into poop doesn’t count as damaging or killing them for the sake of charging berserk mode or extending its duration.
+* {{I|Birthright}}: The berserk timer gains 3 seconds instead of 1 when Tainted Samson kills an enemy.
+* {{I|Suplex!}}: If Tainted Samson uses Suplex! on an enemy at the end of his berserk state, it will deal extra amounts of damage and cause a  {{I|Mama Mega!}} effect.
+
+Other berserk interactions are identical to {{C|The Forgotten}}'s bone club, and can be seen on his respective page under ''Item Interactions''.
+
+* {{I|Mom's Knife}}: This version of the attack doesn't deflect projectiles.
+* {{I|Scapular}}: If Tainted Samson takes lethal damage that triggers his Berserk state or in the middle of it, he will gain the extra Soul heart, allowing him to live if he doesn't lose it within the same room.
+
+=== Favored items ===
+* As Tainted Samson will usually find himself up close and personal, he is very likely to take contact damage. As a result, he benefits from any items that grants an effect after being hit (eg. {{I|Anemic}},{{I|Dead Bird}}), causes statuses on contact (eg. {{I|E. Coli}}, {{I|Serpent's Kiss}}), or drops items after being hit (eg. {{I|Gimpy}}, {{I|Old Bandage}}).
+* Health ups are recommended for Tainted Samson due to his preference for melee combat.
+* Orbiting [[familiar]]s that deal damage can be put to good use while Tainted Samson is berserking. Non-damaging ones that block shots are also useful as they can soak up stray shots.
+* {{I|Blood Rights}}/{{I|Razor Blade}}: Said items can be spammed to deal massive damage or give massive damage ups in one room as long as heart drops are present to make his HP above 0 before berserk state ends.
+* {{I|Candy Heart}}: Gives a small buff for each heart drop taken. Useful since Tainted Samson requires constant healing.
+* {{I|Celtic Cross}}: Grants a chance for a shield every time he is hit, which gives Tainted Samson time to rush in and melee enemies.
+* {{I|C Section}}: Quickly charges Berserk state with high sustained damage, and while in berserk state shoots bone-club wielding fetuses with every swing, giving you a ranged option in berserk state and even higher damage.
+* {{I|The Inner Eye}}/{{I|Mutant Spider}}: Each melee swing will generate multiple melee strikes. As berserk also reduces tear delay, the tear reduction of these items is negligible during berserk.
+* {{I|Kidney Stone}}: Allows Tainted Samson to flail his jawbone at horrifying speeds, shredding enemies and putting a hefty dent in bosses.
+* {{I|Libra}}: Gives a hefty all stats up while in berserk. Pairs very well with {{i|Rock Bottom}}.
+* {{I|The Ludovico Technique}}: Upon entering berserk state the floating tear teleports to Tainted Samson's location and follows him around, after which it can be thrown around by hitting it with the jawbone, greatly increasing in size then decreasing as it bounces around. At the end of the berserk state, the tear once again teleports to his location.
+* {{I|Marbles}}: As Tainted Samson is very likely to take damage, this can be used to swallow and stack trinkets.
+* {{I|The Necronomicon}}: damage and kills counts toward Berserk activation. With proper timing can be used to start Berserk and immediately enter the next room with full charge Berserk. Unless the player has {{I|4.5 Volt}}, {{I|Sharp Straw}} is a more effective option for long fights with bosses that spawn fodder mobs, the 10% extra max health damage does not appear to included in the calculations for Berserk activation.
+* {{T|Sigil of Baphomet}} is exceptionally good as Tainted Samson, as killing enemies is very easy, allowing him to not have to worry as much about taking damage once activated.
+* {{I|The Wafer}}: Reduces damage taken to half a heart, which lets Tainted Samson take twice the punishment from later floors.
+* {{dlc|r}} {{I|Cain's Other Eye}}: during Berserk, swings the jaw in a random direction, allowing for a potential upgrade to DPS as well as protection from projectiles to the side and behind.
+
+=== Unfavored items ===
+* HP downs and Devil Deals during the early floors will significantly lower Tainted Samson's survivability, especially since he usually takes a lot of punishment from being at melee range.
+* Speed downs will make it difficult to build up momentum when killing enemies, and makes it harder to escape from chasing enemies too.
+* {{dlc|nr+}} {{T|Ice Cube}}/{{i|Uranus}}: While in berserk mode, killing enemies will [[Freeze]] them and will not refill berserk mode's timer.
+* {{i|Taurus}}: Upon activating berserk state, Tainted Samson will likely also activate Taurus' effect, limiting him to exclusively contact damage, which can waste entire berserks if activated at inopportune times. Contact damage from Taurus also does not refill berserk mode's timer.
+
+== Unlockable Items ==
+{{achievement text | Temporary Tattoo, Strength, Soul of Samson, Crane Game, Berserk!, Swallowed M80, Larynx }}
+
+== Gallery ==
+<gallery>
+File:Character Tainted Samson berserk.png|Tainted Samson's appearance in his Berserk state, where his hair suddenly grows back out to its full length.
+File:Transition Samson Tainted.png|Tainted Samson's transition screen portrait.
+File:Start_Tainted_Samson.png|The spawn floor when playing Tainted Samson.
+File:UnlockPaper TheSavage TaintedSamson.png|Tainted Samson's unlock post-it note.
+File:Tainted Samson Menu Icon (Locked).png|Tainted Samson's locked character icon, depicting a bloodstained closet door.
+</gallery>
+
+== Trivia ==
+* Tainted Samson's appearance is a reference to the Book of Judges in the Bible, as Samson lost his superhuman strength when Delilah cut his hair while he was asleep.
+** His hair growing back to full length resembles how it did so before his death, as elaborated on below.
+** His eyeless sockets in his Berserk! state resembles how the Philistines blinded Samson by gouging his eyes out after he lost his strength.
+** Tainted Samson unlocks {{P|XI - Strength?}}, a card that means weakness and fall from grace, fitting Samson's demise at the temple.
+* His ability is a further reference to Judges: Samson killed an army of 1,000 Philistines using a donkey's jawbone.
+* Tainted Samson's melee looks the same as the [[anti:Donkey Jawbone|Donkey Jawbone]] from Antibirth.
+* Tainted Samson's unlock post-it note is a reference to how Samson died in the Book of Judges, as Samson broke the pillars inside the temple that the Philistines took him to, which killed everyone inside with himself.
+* Tainted Samson's ability to survive death could be a reference to Nuclear Throne's character Chicken, who upon death will lose her head and still be able to be controlled for a short time. Picking up HP brings her back to life.
+** She also has an Ultra Mutation named "Harder to Kill", which prolongs the time where you can survive after death by killing enemies, much like Tainted Samson's method of prolonging his berserk state.
+* The achievement for unlocking Tainted Samson is "The Savage", a possible title for the character.
+** <nowiki>''Savage'' means ''violent, or uncontrolled'', or ''brutal, vicious''</nowiki>. This references his ability to go berserk and gain monumental power.
+* Tainted Samson's berserk mode may be a reference to the 1999 title "Sword of the Berserk: Guts' Rage", given that in this game, berserk mode is accessed by dealing and taking damage, and gives higher attack speed, damage, and invulnerability.
+
+== Bugs ==
+{{bug|Trying to Save&Exit and then Continue when having 0 HP during {{i|Berserk!}} will instantly kill you, even if the effect didn't wear off when you returned to the game.}}
+{{bug|In multiplayer, if multiple players select Tainted Samson, they share enemy kills for their rage.}}
+{{bug|If you lose {{i|Holy Mantle}} as {{C|The Lost}} (mirror dimension,[[Soul of the Lost]], etc) then enter Berserk mode you will lose all of your health and instantly die when you stop being the lost.}}
+
+{{nav|character|samson unlock|tainted samson unlock|fr=Samson Impur}}

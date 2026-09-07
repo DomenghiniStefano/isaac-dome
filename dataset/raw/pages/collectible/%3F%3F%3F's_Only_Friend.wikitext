@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | files name  = Blue Baby's Only Friend
+ | costume name = * {{dlc|nr|Rebirth}}
+ | id          = 320
+ | quote       = Controlled friend
+ | description = Spawns a controllable [[familiar]] that deals {{dlcalt|37.5|r=15}} damage per second on touch. It can be moved using the shooting directional keys
+ | quality     = 1
+ | tags        = summonable monstermanual offensive fly
+ | unlocked by = ???'s Only Friend
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Spawns a controllable [[familiar]] that damages enemies on touch. It can be moved using the shooting directional keys, similarly to {{i|The Ludovico Technique}} and {{i|Robo-Baby 2.0}}.
+** {{dlc|nr}} ???'s Only Friend deals 2.5 damage per tick, and ticks 15 times a second, dealing a total of 37.5 damage per second.
+** {{dlc|r}} ???'s Only Friend deals 3.5 damage per tick, and ticks ~4.3 times per second, dealing a total of 15 damage per second.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* Unlike The Ludovico Technique, it cannot be controlled with the mouse, even with mouse control enabled.
+* Holding two opposite fire keys (both left and right or both up and down) at the same time will keep the familiar in place, while making Isaac fire in the direction of whichever fire key was pressed second.
+** This can help during combats with bosses who do not move a lot, as the familiar can continuously damage the boss when kept stationary.
+** On some keyboards, holding opposite fire keys may cause other keys to become unresponsive.
+
+== Synergies ==
+* {{i|BFFS!}} / {{i|Hive Mind|r+}}: Double the damage. The items don't stack.
+
+== In-game Footage ==
+{{#ev:youtube|oG11k6qDucI}}
+
+== Trivia ==
+* The sprite for the familiar resembles a {{E|Boom Fly}}, which has been resprited to fit the blue/dead nature of ??? and [[Hush]], similar to the {{E|Hush Fly}}, {{E|Blue Gaper}}, and {{I|Fate's Reward}}
+* This item is slightly faster than Robo-Baby 2.0, but is only noticeable when rapid clicking the tear button.
+
+{{nav|fly|blue baby unlock|boss rush unlock|fr=La Seule Amie de ???}}

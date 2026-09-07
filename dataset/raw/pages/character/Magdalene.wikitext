@@ -1,0 +1,77 @@
+{{header characters}}
+{{infobox character
+ | image name   = * {{dlc|nr|Rebirth}}
+ | id           = 2
+ | health       = {{hearts|red=4}}
+ | speed        = 0.85
+ | pickups      = {{dlc|a+nr}} {{unlockable}} 1 [[Speed Up]] pill<br>{{dlc|r}} {{unlockable}} 1 [[Full Health]] pill
+ | collectibles = {{i|Yum Heart}}
+ | unlocked by  = Magdalene
+}}
+'''Magdalene''', or '''Maggy''', is a [[character]] unlocked by obtaining seven or more [[Red Heart container]]s at once in a run. She starts with four Red Heart containers and {{i|Yum Heart}}.
+
+{{dlc|a+nr}} Magdalene starts with a Speed Up [[pill]] after completing the [[Aprils Fool]] [[challenge]].
+
+{{dlc|r}} Magdalene starts with a Full Health pill after completing the Aprils Fool challenge. Both Full Health and Health Up are guaranteed to be in the run’s pill rotation.
+
+== Notes ==
+* Magdalene's strength lies in her naturally high health and her starting item, {{I|Yum Heart}}.
+** With her high number of Red Heart containers, Magdalene can afford more {{R|Devil Room}} deals.
+** She has more health to spend on sacrifices, including {{M|Blood Donation Machine}}s, {{R|Sacrifice Room}}s, and items that grant effects upon taking damage like {{I|Bloody Lust}}.
+** {{dlc|r}} In [[Repentance Co-Op|co-op]], {{I|Yum Heart}} will also heal other players for half a Red Heart when used.
+** {{dlc|r}} If Magdalene is at full health, combined with a fully charged {{I|Yum Heart}} and a Full Health pill, she can step on a {{R|Sacrifice Room}} spike seven times, allowing her to potentially get two {{R|Angel Room}} items on the first floor. However, this will leave her with only a single Red Heart. Many Angel items are defensive in nature, which will often mitigate this.
+* Magdalene's biggest weakness is her low starting speed. Obtaining items that increase speed should be prioritized, as she may not be able to dodge high-speed or homing attacks.
+** {{dlc|a+nr}} Once the Aprils Fool challenge is completed, this disadvantage is removed as she will start every run with a Speed Up pill.
+
+== Item Interactions ==
+* {{i|Birthright}}: Grants +1 filled Red Heart. Increases maximum health to 18 Hearts.
+
+=== Favored Items ===
+* Items that trigger on player damage, such as {{i|Gimpy}} and {{i|The Virus}}, stand to see more action through Magdalene's high health.
+** Self-damaging items such as {{i|Razor Blade}}, {{i|Kamikaze!}} and {{i|IV Bag}} also gain in utility.
+* A single speed-boosting item such as {{i|The Belt}} will negate Magdalene's speed weakness.
+* The {{t|AAA Battery}} trinket allows the {{I|Yum Heart}} to take only 3 rooms to charge instead of 4.
+* {{i|Guppy's Paw}} allows Magdalene to turn her four initial heart containers into twelve {{E|Soul Heart}}s - the maximum number of soul hearts possible.
+* The {{i|Habit}} and {{i|9 Volt}} are blessings to Magdalene's regeneration if she still holds {{i|Yum Heart}}, as they allow the item to recharge itself much more quickly. Combined with {{i|Sharp Plug}}, the two previous items allow to get infinite pickups with items such as {{i|Piggy Bank}} or {{i|Fanny Pack}}
+* {{i|Leech}} and {{i|Charm of the Vampire}} are also useful for regenerating health upon killing enemies.
+* {{i|Old Bandage}} will have a chance to drop a heart upon being hit, which may come in handy if Magdalene's low on health.
+* {{i|Placenta}}'s regenerative abilities can further supplement Magdalene's self-healing. The same applies to {{i|Little C.H.A.D.}}'s red heart generation and other similar healing items.
+* {{i|The Wafer}} is helpful to Magdalene's health-driven play style.
+* Shielding items can be used to compensate for Magdalene's low speed. ({{i|Infamy}}, {{i|Holy Mantle}}, etc.)
+
+=== Disfavored Items ===
+* {{i|Abaddon}} removes all red heart containers, which can turn out to be a disadvantage for Magdalene.
+* {{i|Bucket of Lard}}'s heart container bonus is tempting, though it's better to avoid this item initially as it would render Magdalene's speed very low. Any other speed down items are to be avoided as well ({{i|Taurus}} may make an exception from its speed increase over time and {{i|My Little Unicorn}} effect if the speed becomes high enough).
+* {{i|Dark Bum}} eats red heart pickups, which can dampen Magdalene's regenerative play style. However, used in conjunction with her starting Yum Heart, Dark Bum can be a powerful way to turn otherwise redundant pickups to your advantage.
+* If {{i|Dead Cat}} is picked up early, it takes away Magdalene's primary strength (high health) and exacerbates her biggest weakness (low avoidance).
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Maggy's Bow, Cute Baby, Guardian Angel, A Cross, Maggy's Faith, Celtic Cross, Censer, Glyph of Balance, Purity, Red Baby, Eucharist, Yuck Heart, Candy Heart, The Dauntless, Colorful Baby }}
+
+== Unlockable Starting Items ==
+* {{achievement unlock|Maggy Now Holds a Pill!|nr}} - Start with a [[Speed Up]] pill.
+* {{achievement unlock|Maggy Now Holds a Pill!|r}} - Start with a [[Full Health]] pill. Also guarantees that both Full Health and [[Health Up]] are in the run’s pill rotation.
+
+== Gallery ==
+<gallery>
+File:Transition Magdalene.png|Magdalene's transition screen portrait.
+File:Start_Magdalene.png|The spawn floor when playing Magdalene.
+File:Magdalene_Menu_Icon_(Locked).png|Magdalene's locked character icon.
+</gallery>
+
+== Trivia ==
+* Maggy appeared in the original ''Binding of Isaac'', with the same unlock method.
+* Magdalene's name is a reference to [[wikipedia:Mary Magdalene|Mary Magdalene]], a female follower of Jesus who witnessed his death and ressurection.
+** Magdalene's unlock requirement of having seven heart containers may be a reference to the "seven demons" that were driven out of Mary Magdalene.
+* Magdalene is the name of Isaac’s mother Magdalene O. Moriah, or MOM. The last name Moriah is a reference to the biblical story of Isaac where Moriah is the name of the mountain Isaac was to be sacrificed on in the Book of Genesis.
+* The image file for Maggy's hair is named "maggiesbeautifulgoldenlocks.png".
+* Maggy's hair appears to be identical to the wig that Isaac receives in one of his mid-floor nightmares.
+** The person with gold hair in [[Ending 14]] and [[Ending 22]] has been confirmed to be Isaac wearing a wig, which furthers this idea.
+** Another piece of evidence is that the four playable female characters all have Isaac's voice.
+* Maggy's locked icon shows her bound in chains.
+** She shares this trait with {{C|Cain}}, {{C|Samson}}, {{C|Eve}}, {{C|Lazarus}}, {{C|Bethany|r}}, and {{C|Jacob and Esau|r}}.
+
+== Bugs ==
+{{bug|dlc=na+|There are some stray pixels on Maggy's "Bad Pill" animation.}}
+
+{{nav|character|fr=Marie|magdalene unlock}}

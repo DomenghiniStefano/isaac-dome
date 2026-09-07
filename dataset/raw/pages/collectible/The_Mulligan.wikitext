@@ -1,0 +1,44 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 151
+ | quote       = They grow inside
+ | description = Tears have a 16.67% chance of spawning allied [[Blue Fly|Blue Flies]] when they hit an enemy.
+ | quality     = 3
+ | tags        = summonable offensive fly
+}} {{disambig msg|the item|the enemy|Mulligan}}
+
+{{cit|p}}
+
+== Effects ==
+* Tears have a 16.67% chance of spawning allied [[Blue Fly|Blue Flies]] when they hit an enemy.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* {{dlc|nr}} Because the {{tf|Guppy}} transformation includes the guaranteed ability to spawn flies on hit, the Mulligan's effect is nullified. This means individual tears cannot spawn more than one fly per hit.
+** {{dlc|r}} The 66.67% chance of spawning a fly granted by Guppy will not stack with The Mulligan's 16.67% chance.
+* {{dlc|r}} Blue flies will only spawn if Isaac has less than 30 blue flies.
+* {{Dlc|nr}} This item does not work for {{C|Lilith}} since the {{i|Incubus}} tears do not count for her tears.
+* Items and trinkets that increase tear firing rate synergize well with the Mulligan.
+* This item is not affected by [[luck]].
+
+== Synergies ==
+* {{C|Azazel}}/{{i|Brimstone}}: Rapid damage ticks can cause large amounts of blue flies to spawn.
+* {{i|Chocolate Milk}}: The Mulligan's ability isn't affected by the charge time, meaning rapidly firing uncharged shots will generate a ton of blue flies.
+* {{i|Cricket's Body}} / {{i|The Parasite}}: Has a 16.67% chance to spawn a fly on every hit by a split shot, which boosts the spawning of flies immensely.
+* {{i|Dr. Fetus|r}}: Bombs have a chance to spawn blue flies when damaging enemies.
+* {{i|Finger!}}: Rapidly spawns blue flies when pointed at an enemy.
+* {{i|Urn of Souls}}: Fires have a chance to spawn blue flies.
+
+== Interactions ==
+* {{i|Dr. Fetus|nr}}: Overrides The Mulligan.
+* {{i|Epic Fetus}}: Overrides The Mulligan.
+* {{i|Mom's Knife|nr}}: Has a very low chance of spawning flies.
+
+== In-game Footage ==
+{{#ev:youtube|LhvGp75SFZs}}
+
+== Trivia ==
+* This item is used in {{chal|The Host}}.
+* The term "mulligan" means a second chance to perform an action, usually after the first chance went wrong through bad luck or a blunder.
+
+{{nav|fly|fr=Le Mulligan}}

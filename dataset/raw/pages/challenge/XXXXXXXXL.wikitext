@@ -1,0 +1,33 @@
+{{infobox challenge
+ | dlc                = a
+ | number             = 21
+ | has treasure rooms = yes
+ | has shops          = yes
+ | description        = Every floor is the size of an XL {{S|Womb}} floor, but does not combine the floors of each chapter.
+ | goal               = Mom's Heart
+ | unlocks            = Gold Heart
+ | unlocked by        = XXXXXXXXL
+}}
+
+'''XXXXXXXXL''' is [[Challenge]] #21. This challenge changes ''all'' floors to be the size of XL Womb but does not combine the floors of each chapter. The goal is to defeat {{E|Mom's Heart}} / {{E|It Lives!}}. Alternatively, you can defeat {{E|The Lamb}} by teleporting to {{s|Dark Room}} via a {{R|Sacrifice Room}}, or {{E|Delirium}} if the portal to {{S|The Void}} appears after defeating {{E|Mom}}.
+
+* {{dlc|r}} Teleporting to the {{s|Dark Room}} via a {{R|Sacrifice Room}} is no longer possible, since the challenge does not end in the Dark Room.
+
+== Difficulty ==
+Due to the floors being much bigger, it makes important rooms like Treasure Rooms and Shops take significantly longer to find, which can make the run difficult if Isaac has rather weak items. It also makes Secret and Super Secret Rooms much harder to find. Although all floors are the size of Womb XL, they are not technically XL, and as such there is only one treasure and boss room on each floor. On the plus side, since there are more rooms, there are more opportunities to generate pickup items.
+
+== Strategy ==
+* [[Items]] and [[pickups]] that reveal the map are very crucial, allowing easy maneuvering between [[Rooms#Special Rooms|Special Rooms]] throughout floors.
+* Items that provide benefits based on clearing rooms, like {{I|Little C.H.A.D.}}, will help Isaac significantly because of how many rooms he will go through in this challenge.
+* Teleportation [[cards]], such as The Stars and The Hermit, are very valuable, as they allow easy access to Special Rooms. The Emperor is especially powerful, as it can be used to skip the entirety of a floor.
+* Avoid items that teleport Isaac at random, such as {{t|Cursed Skull}}, as they can significantly slow down progress by potentially teleporting him to the other side of the map. Picking up the {{i|Cursed Eye}} is not recommended for the same reasons.
+* {{dlc|r}} Planetariums are very useful for this challenge. {{I|Sol}} can be used to find the boss room, {{I|Terra}} can break doors with ease, and {{I|Mercurius}} allows you to walk through rooms with ease. Considering you might skip an item room or two anyway in the interest of time, this can be a very effective way of completing the challenge.
+
+== Notes ==
+* {{Curse|Labyrinth}} can still spawn as normal, combining the two floors as normal, and causing there to be two treasure rooms and boss rooms. The size is unchanged.
+* It is very rare to start next to a treasure room in this challenge.
+
+== Reward ==
+ {{achievement text | Gold Heart }}
+
+{{nav|mom unlock|challenge}}

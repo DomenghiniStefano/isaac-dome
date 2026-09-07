@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | dlc         = a
+ | name        = Lil Gurdy
+ | id          = 384
+ | quote       = A gurd of your own!
+ | description = A {{E|Gurdy Jr.}} [[familiar]] that charges up while Isaac is firing, bouncing around the room when released and dealing contact damage based on its speed.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable monstermanual offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Spawns a [[familiar]] that can be launched in the direction that Isaac is firing after a short charge-up period.
+** {{dlc|nr}} At full charge, it initially deals 6 damage per tick or 90 damage per second, but quickly drops towards 0 the slower the familiar moves.
+** {{dlc|r}} No longer deals damage per tick, instead deals a fix amount of damage depending on charge level, at lowest being ~5 and at max being ~20.
+* It bounces off walls multiple times, much like {{E|Gurdy Jr.}}
+** {{dlc|r}} It will also bounce off enemies.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Gurglings}}, {{e|Gurdy Jr.}}, {{e|Gurdy}} or {{e|Mama Gurdy}}.{{dlc-}}
+
+== Trivia ==
+* Although Lil Gurdy's right eye is missing when facing right, its left eye is missing instead when facing left.
+* Despite being able to destroy poop, Lil Gurdy is not able to extinguish fires.
+
+== In-game Footage ==
+{{#ev:youtube|yUHFhX64qoQ}}
+
+{{nav|fr=P'tit Boris}}

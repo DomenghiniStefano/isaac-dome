@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | dlc = a
+ | name = Lil Chest
+ | id = 362
+ | quote = What's in the box?
+ | description = Spawns a chest [[familiar]] that spawns a random [[pickup]] (25% chance) or [[trinket]] (10% chance) upon clearing a [[Rooms|room]].
+ | quality     = 2
+ | tags        = summonable offensive
+ | unlocked by = Lil' Chest
+}}
+
+{{cit|up|a}}
+
+== Effect ==
+* Spawns a chest [[familiar]] that has a 25% chance to spawn a [[Pickups|pickup]] and a 10% chance to spawn a trinket after clearing a [[Rooms|room]]. The possible rewards are:
+** {{E|Red Heart|text=Hearts}}
+** {{E|Penny|text=Coins}}
+** {{E|Bomb}}s
+** {{E|Key}}s
+** [[Pills]]
+** [[Cards]]
+** [[Runes]]
+** {{E|Lil' Battery|text=Batteries}}
+** [[Trinkets]]
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Lil Chest having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== Synergies ==
+* {{i|BFFS!}}: The chance to spawn a pickup increases to 31.25%, and the chance to spawn a trinket increases to 12.5%.
+
+== In-game Footage ==
+{{#ev:youtube|0e9cj6CQam0||inline}} {{#ev:youtube|3Jpa3uYi0r8||inline}}
+
+{{nav|isaac unlock|ultra greed unlock}}

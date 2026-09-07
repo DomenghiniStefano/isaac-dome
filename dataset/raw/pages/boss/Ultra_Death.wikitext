@@ -1,0 +1,46 @@
+{{infobox boss
+ | dlc         = r
+ | name        = Ultra Death
+ | portrait    = no
+ | id          = 951
+ | variant     = 40
+ | environment = <u>Boss</u><br>{{floor|Home}}
+ | base hp     = 2000
+ | pool        = ''None''
+}}
+
+'''Ultra Death''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' and is the last of the [[Harbingers (Bosses)#Ultra Harbingers|Ultra Harbingers]] fought before {{e|The Beast}} in {{s|Home}}.
+__TOC__
+
+== Behavior ==
+Unlike the other Ultra Harbingers, Ultra Death has only one phase and has three attacks which he cycles through indefinitely:
+* Summons a rectangle of 11 {{e|Ultra Death Scythe}}s which close in towards Ultra Death's position and continue in the same direction until disappearing off screen. Ultra Death uses this attack 3 times in a succession.
+* Flies off screen, then reappears travelling slowly while summoning waves of {{e|Ultra Death Head}}s which move up and down across the screen in the same direction. At the end of the attack, the skulls freeze in place and Ultra Death summons three harmless scythes which spin outwards, destroying the skulls.
+* Immediately after the previous attack, the screen darkens and Ultra Death disappears into the darkness. Ultra Death appears next to Isaac and swings his Scythe before disappearing again, darkening the screen with each attack. This attack is repeated 4 times, afterwards, the screen returns to normal and Ultra Death reappears.
+** His position during this attack can be indicated by a faint glowing red eye.
+
+== Gallery ==
+<gallery>
+File:Boss Ultra Death before swing ingame.png|Ultra Death during the darkness attack.
+File:Ultra Death death portrait.png|Ultra Death death portrait.
+</gallery>
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage Scaling|here]].
+
+== Trivia ==
+* Ultra Death, like the other Ultra Harbingers is an upgraded version of his regular counterpart, {{e|Death}}.
+** Unlike the others, he has the greatest variation in behavior from regular Death- notably the lack of a second phase where he dismounts, while each of the Ultra Harbingers share their specific second phase transiton with their regular counterpart. (Famine losing everything except their head, Pestilence only losing their head and War losing their horse)
+**The visual similarity of Ultra Death's horse and a scythe, which the regular counterpart has, is made more apparent with the body of Ultra Death's horse having a curve (like farming scythes have) and sharing the same wood texture & colour as the handle of Ultra Death's scythe. 
+* The violin heard in the section of Revelations 13:1 that plays during Ultra Death's fight is performed by Carla Kihlstedt, the voice actor for {{e|Mom}}.
+* Ultra Death can be seen facepalming in the background after killing {{e|Ultra War}}.
+* The wave of Ultra Death Heads loosely resembles one of {{e|Conquest}}'s attack.
+** This could be compensation for Conquest's lack of appearance despite his [[Harbinger]] role.
+* Ultra Death's glowing eye during the darkness attack could be a reference to the ''[[Wikipedia:Terminator (franchise)|Terminator]]'' series, as Ultra Death bears some resemblance to the Terminators seen in those movies.
+* Ultra Death's glowing eye is actually invisible during the whole fight but active the whole time, and becomes visible when the room is darkened. Using {{p|XIX - The Sun?}} darkens the arena, making it visible.
+* Ultra Death is male.
+
+{{nav|boss|fr=Ultra Mort}}
+
+[[Category:Home bosses]]
+[[Category:Debut bosses in Repentance]]

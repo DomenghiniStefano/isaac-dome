@@ -1,0 +1,43 @@
+{{Infobox boss
+ | dlc         = r
+ | files name  = Wormwood (Downpour)
+ | id          = 62
+ | variant     = 3
+ | base hp     = 200
+ | environment = <u>Boss</u><br>{{floor|Downpour}}{{floor|Dross}}
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Leech}} (1% chance)
+}}
+
+'''Wormwood''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in {{dlc|r}} {{s|Downpour}} and {{dlc|r}} {{s|Dross}}.
+__TOC__
+
+== Behavior ==
+* Lunges from a pit towards Isaac, releasing 4 projectiles in the cardinal directions in the air. Wormwood then chases Isaac in a zig-zag pattern, before eventually returning to a pit.
+** If Wormwood lunges out of a pit and lands on top of another large pit, he returns back into that pit.
+** Eats any {{e|Bomb}}s dropped in his path same as {{e|Chub}} while chasing Isaac, stunning him for a moment before dealing considerable damage.
+* Partially emerges from a pit and fires a spray of disorganized projectiles at Isaac before re-submerging.
+* At 33% health, Wormwood pierces the ground with his tail at Isaac's location with a short delay 3-6 times. Pits are created where Wormwood pierces the ground. Afterwards, Wormwood charges out from inside the left or right wall horizontal to Isaac's location while spawning 3 {{e|Small Leech|text=Small Leeches}}. He then chases Isaac for a short duration before returning to a pit.
+** Wormwood can never create a pit in a spot that would trap Isaac.
+** Wormwood takes increasingly reduced damage after reaching 33% HP until he performs this attack and takes only 20% damage while performing this attack.
+
+== Gallery ==
+<gallery>
+File:Boss Wormwood tail ingame.png|Wormwood's tail.
+File:Boss Wormwood (Dross) portrait.png|Wormwood's splash art when encountered in Dross.
+File:Boss Wormwood (Dross) ingame.png|Wormwood's appearance in Dross.
+File:Boss Wormwood Corpse Antibirth ingame.png|Wormwood's cut appearance in the {{s|Corpse}} in ''Antibirth''.
+File:Boss Wormwood concept.png|Concept art for Wormwood.
+</gallery>
+
+== Trivia ==
+* His behavior and appearance is reminiscent to that of {{e|Pin}}, and is a variant of it.
+* When encountered in the {{s|Dross}}, the color palette of Wormwood and his attacks are altered to fit the floor. {{e|Lil Blub}} also features this.
+* His name is a reference to the Biblical [[wikipedia:Wormwood (Bible)|Wormwood]]. It is a star that, according to the [[wikipedia:Book of Revelation|Book of Revelation]], will fall on a third of the Earth's water, which will turn the water bitter and deadly to drink.
+* In the ''Antibirth'' mod, Wormwood could be encountered as a degraded boss in the {{s|Corpse}}, and would take on a red color palette.
+** The red color palette is still present in the files of Repentance, despite going unused.
+
+{{nav|boss|fr=Absinthe}}
+[[Category:Chapter 1.5 bosses]]
+[[Category:Downpour bosses]]
+[[Category:Dross bosses]]
+[[Category:Debut bosses in Repentance]]

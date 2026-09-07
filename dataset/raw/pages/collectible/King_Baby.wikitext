@@ -1,0 +1,109 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | name        = King Baby
+ | id          = 472
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote = {{dlcalt|Lord of the dead!|r=Hail to the king baby}}
+ | description = Spawns a [[familiar]] that follows Isaac and makes other familiars follow it. While firing tears, other familiars stop moving.
+ | quality     = 1
+ | tags        = summonable baby offensive
+ | unlocked by = King Baby
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* Grants a [[familiar]] that follows Isaac and always appears first in the familiar chain.
+* While firing tears, King Baby stops moving and glows white.
+* When Isaac stops firing tears, King Baby moves rapidly back towards Isaac.
+* While King Baby is stationary, other familiars remain stationary as well. {{dlc|r}} This affects every familiar that has priority in how closely it follows behind Isaac.
+** {{dlc|nr}} [[Familiar#Shooting familiars|Shooting familiars]] will fire tears in the direction Isaac is firing, while [[Familiar#Throwable familiars|Throwable familiars]] ignore King Baby.
+** {{dlc|r}} [[Familiar#Shooting familiars|Shooting familiars]] fire at nearby enemies automatically and [[Familiar#Throwable familiars|throwable familiars]] launch themselves at nearby enemies automatically.
+*** Familiars that have charged attacks will operate on similar rules to {{I|Marked}}: they will immediately fire at full charge, and variable-charged attacks will be released earlier the closer that King Baby is to the target.
+* {{dlc|r}} {{transformation contribution|Conjoined}}
+
+== Notes ==
+* King Baby will move back towards Isaac even if Isaac is still holding a fire button, if he enters a state that overrides his animation or prevents him from firing (i.e.: picking up an item, getting hurt, using most activated collectibles)
+* {{i|Abel}} will still reflect Isaac's movements, and not King Baby's.
+* {{i|Lil Delirium}}'s behavior depends on which familiar form it takes.
+* Duplicate King Babies, such as those granted from {{I|Box of Friends}}, will cause familiars to follow the last King Baby added.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with King Baby having 1st priority and thus being closer to Isaac than familiars of different priorities.
+* {{dlc+|r}} Has no effect on {{C|Tainted Eve}}'s/{{I|Sumptorium}} clots.{{dlc-}}
+* Familiars unaffected by King Baby include:{{column list | width = 15em | content =
+** {{i|???'s Only Friend}}
+** {{t|???'s Soul}}
+** {{i|7 Seals}}
+** {{i|Angelic Prism}}
+** {{i|Angry Fly}}
+** {{i|BBF}}
+** {{i|Big Chubby|nr}}
+** {{I|Bird Cage}}
+** {{I|Blood Puppy}}
+** {{dlc|nr}} {{i|Bob's Brain}}
+** {{i|Bum Friend}}
+** {{i|Bumbo}}
+** {{i|Cain's Other Eye|nr}}
+** {{I|Cube Baby}}
+** {{i|Daddy Longlegs}}
+** {{i|Dark Bum}}
+** {{i|Dead Bird}}
+** {{i|Finger!}}
+** {{i|GB Bug|nr}}
+** {{i|Gello}}
+** {{i|Gemini}}
+** {{i|Guppy's Hairball}}
+** {{dlc|r}} {{i|Isaac's Heart}}
+** {{i|Jaw Bone|nr}}
+** {{i|Key Bum}}
+** {{i|Leech}}
+** {{i|Lil Dumpy}}
+** {{i|Lil Gurdy}}
+** {{i|Lil Haunt}}
+** {{i|Little Chubby|nr}}
+** {{i|Lost Fly}}
+** {{i|Lost Soul}}
+** {{i|Multidimensional Baby}}
+** {{i|Obsessed Fan}}
+** [[Familiar#Orbital familiars|Orbital familiars]]
+** {{i|Papa Fly}}
+** {{i|The Peeper}}
+** {{i|Pointy Rib}}
+** {{i|Samson's Chains}}
+** {{i|Shade}}
+** {{i|Sissy Longlegs}}
+** {{i|Smart Fly}}
+** {{i|Spider Mod}}
+** {{I|Spin to Win}}
+** {{i|Succubus}}
+** {{i|Twisted Pair}}
+** {{tf|Super Bum}}
+** [[Familiar#Temporary familiars|Temporary familiars]]
+** {{I|Worm Friend}}
+** {{i|YO LISTEN!}}
+}}
+
+== Synergies ==
+* {{Dlc|nr}}{{i|Isaac's Heart}}: Isaac can fire tears and leave King Baby and the heart behind, and run into a group of enemies without being damaged.
+* {{i|Lil Brimstone}}: Can fire in full 360 degrees and will fire as soon as he's fully charged, making him extremely effective.
+
+== Interactions ==
+* {{i|BFFS!}}: Increases King Baby's size. No other effect.
+* {{T|Child Leash}}: Familiars stay closer to King Baby while Isaac is firing.
+* {{I|Cain's Other Eye|r}}: Cain's Other Eye will attempt to fire directly at enemies but only when they are on the same side as the random direction it is firing in.
+* {{t|Duct Tape}}: King Baby will stay in place relative to Isaac until Isaac starts firing tears. Then King Baby will remain stationary until Isaac has stopped firing and will rapidly move back to him.
+* {{T|Friendship Necklace}}: Familiars will orbit King Baby at all times instead of Isaac, even while not firing. King Baby itself is unaffected.
+* {{I|GB Bug|r}}: GB Bug will only throw itself at nearby enemies automatically if a fire button is double tapped while King Baby's effect is active.
+* {{I|Gemini}}: Suture will rest near King Baby as long as there are no enemies near Isaac. When Isaac gets near enemies, Suture will rapidly snap from King Baby toward the enemy. Functionally, King Baby has no real effect on Gemini.
+** Visually, this can result in the umbilical between Isaac and Suture getting stretched to a long length.
+* {{I|Jaw Bone|r}}: After being thrown, Jaw Bone will return to Isaac and then reappear behind King Baby.
+* {{T|RC Remote}}: Overrides King Baby's halting; familiars will mimic Isaac's movements even while firing. King Baby's auto-targeting remains active.
+
+== In-game Footage ==
+{{#ev:youtube|QEe6dV0Wgq0}}
+
+== Trivia ==
+* King Baby references the official ''Binding of Isaac'' tarot card set, in which {{C|???}} represents the Emperor.
+* The Steam achievement description for unlocking King Baby says "Unlocked a new [[Co-op|co-player baby]]," despite it being an item.
+* {{dlc|r}} King Baby's pickup quote is a reference to the film ''[[wikipedia:Army of Darkness|Army of Darkness]]'', where the protagonist Ash says "Hail to the king, baby!".  The same quote also appears in [[wikipedia:Duke Nukem 3D|Duke Nukem 3D]].
+
+{{nav|conjoined|blue baby unlock|delirium unlock|familiar modifier|fr=Bébé Roi}}

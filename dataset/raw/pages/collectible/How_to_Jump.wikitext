@@ -1,0 +1,53 @@
+{{infobox activated collectible
+ | id          = 282
+ | quote       = It's time you learned how
+ | description = Isaac jumps in the direction he is currently moving, allowing travel over [[obstacles]] and [[Monsters|enemies]].
+ | quality     = 1
+ | tags        = {{dlc|r+|nolostbr}} book {{dlc|r+|nocantrip}}
+ | recharge    = unlimited
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Upon use, Isaac jumps in the direction he is currently moving. The distance of the jump depends on how fast Isaac was moving and for how long he was holding the button when the item was activated. Jumping allows Isaac to travel over [[obstacles]] such as rocks and pits.
+* While mid-jump, [[Monsters|enemies]], projectiles, {{e|Bomb}}s, and [[spikes]] cannot damage Isaac. Isaac cannot interact with [[pickups]] or {{E|Chest||chests}} mid-jump.
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+* Standing still while jumping only grants invincibility for the first jump. Isaac has to move to regain invincibility while jumping.
+* If Isaac has [[flight]], Isaac dashes instead of jumping. This is functionally the same as jumping, but without the animation playing. Isaac will have invincibility during the dash, and the dash will only stop on terrain that can be walked on.
+** While flying above a pit, the dash distance will be very short.
+* This item can also be used to pass through otherwise impassible {{r|Crawl Space}} walls.
+* Isaac can't jump through doors, which means damage from {{r|Curse Room}} doors cannot be avoided.
+* If Isaac has a Stompy trait (from items such as {{I|Leo}} and {{I|Thunder Thighs}}), rocks won't be destroyed mid-jump.
+* When jumping in an uncleared room, it is easy to land on top of an enemy, especially one that follows Isaac's position when attacking. The damage can be avoided by immediately triggering another jump, however.
+** This can be repeated indefinitely, and it may be a good idea to keep jumping until you find a safe spot to land.
+* {{dlc|r}} How to Jump can be used to jump over [[pillar]]s and [[spiked rock]]s safely.
+* Isaac can jump over [[key block]]s. However, if he has a key, it will be spent to open the key block.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Enemies Judas jumps through take ''2 + 0.2 × floor'' contact damage and are set on fire. The burn deals damage equal to Judas' damage, and ticks up to 5 times.}}
+* {{Book of Virtues synergy|description=Spawns stationary wisps at the location jumped from which fires in the same direction as Isaac. Max of 6 wisps can be spawned at a time this way. Wisps only last for the current room.}}
+* {{T|Broken Remote}}: Isaac can teleport indefinitely, but the jump will instantly be cancelled by the teleport.
+* {{T|Panic Button}}: Makes Isaac immune to contact and projectile damage while moving.
+* Familiars that orbit Isaac (such as {{i|Sacrificial Dagger}}, {{i|Sworn Protector}}, etc.) can damage enemies when Isaac jumps over them. However, items that activate on contact (e. g. {{i|Serpent's Kiss}}, {{i|Midas' Touch}}, etc.) cannot trigger during jumps.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{i|Void}}: If this item is activated by {{i|Void}}, it is possible to get stuck in an impassable area with no ability to escape. Exiting and resuming the run will place Isaac at whichever door he entered the room through.
+
+== In-game Footage ==
+{{#ev:youtube|kPu1F0cShjE}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed How to Jump.png|{{plat|3DS}} The icon of How to Jump as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* The cover of the How to Jump book resembles the original packaging artwork of the game ''[[wikipedia:Super Mario Bros.|Super Mario Bros.]]'', and also refers to Mario's original name, "Jumpman," in the game ''[[wikipedia:Donkey Kong (video game)|Donkey Kong]]''.
+* The description of the item is also a joke referring to the fact that Isaac can't jump, and that Isaac must apparently read a book with Mario in it to learn how.
+* How to Jump is the only book in the Bookworm set that doesn't look like a book; every other book has white pages with a cover, while How to Jump has no distinct color for the pages, resulting in it looking more like a magazine or game cartridge.
+
+{{nav|book|fr=Manuel de Saut}}

@@ -1,0 +1,40 @@
+{{infobox activated collectible
+ | id          = 146
+ | quote       = Reusable eternity
+ | description = Gives Isaac an {{E|Eternal Heart}}.
+ | quality     = 3
+ | tags        = nolostbr
+ | recharge    = 6
+ | devil price = {{dlcalt|1|r=2}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Gives an {{E|Eternal Heart}} upon activation.
+
+== Notes ==
+* If used after clearing a [[floor]], before proceeding to the next one, it guarantees a new [[Heart Container]] every floor.
+* Since it adds the eternal heart directly to the health bar instead of spawning it on the floor, the item is useless for {{C|Keeper|n}} and {{c|Tainted Keeper|n}}.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns white, heart-shaped wisps in the inner ring. Wisps' tears have 0.75 shot speed. The wisps' tears effectively act as though they have {{I|Sacred Heart}}.}}
+* {{i|Car Battery}}: Grants one full Heart Container upon use.
+* {{c|Tainted Eden}}: Health ups granted by eternal hearts are not rerolled when Tainted Eden takes damage.
+
+== Interactions ==
+* {{c|Tainted Magdalene}}: Doesn't benefit from her passive ability, giving only 1 Eternal Heart as usual.
+
+== In-game Footage ==
+{{#ev:youtube|MLrM81hv_fI||inline}} {{#ev:youtube|tmWfOh2dvis||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Prayer Card.png|{{plat|3DS}} The icon of Prayer Card as seen on the lower 3DS screen
+</gallery>
+
+== Trivia ==
+* In the Christian tradition, [[wikipedia:Holy card|holy cards]] or prayer cards are small, devotional pictures mass-produced for the use of the faithful. They usually depict a religious scene or a saint in an image about the size of a playing card. The opposite side typically contains a prayer, some of which promise an indulgence for its recitation.
+* The design on the Prayer Card appears to be of the painting [[Wikipedia:Our Lady of Guadalupe|Our Lady of Guadalupe]].
+
+{{nav|fr=Carte Pieuse}}

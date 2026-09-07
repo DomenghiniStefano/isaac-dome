@@ -1,0 +1,69 @@
+{{infobox passive collectible
+ | tear app    = Boucing_tear.png
+ | id          = 221
+ | quote       = Bouncing tears
+ | description = Tears bounce off walls, [[enemy|enemies]], and [[obstacle|environmental objects]].
+ | quality     = 3
+ | tags        = summonable offensive
+ | unlocked by = Rubber Cement
+}}
+
+{{distinguish visual|Ipecac}}
+
+{{cit|up}}
+
+== Effects ==
+* Makes tears bounce off walls, [[enemy|enemies]] and [[obstacle|environmental objects]].
+** Tears that bounce off of enemies bounce in random directions, whereas tears that bounce off of walls and other objects bounce directly back.
+** When tears bounce from enemies, they become able to hit the same enemy again should they bounce off of another enemy or obstacle.
+** {{dlc|a+}} Tears bounce off bombs and are unable to push them, making {{e|Troll Bomb}}s more difficult to deal with.
+
+== Notes ==
+* Tears will bounce off of walls while fighting {{E|The Beast}}, despite the lack of visible walls.
+
+== Synergies ==
+* {{dlc|a}} {{i|Brimstone}}: The blood laser bounces off of walls, creating a second beam that deals half damage.
+** {{dlc|a}} {{C|Azazel}}'s Brimstone laser becomes a full length laser after bouncing, but will deal half of the damage.
+*** {{dlc|a+}} {{C|Azazel}}'s Brimstone no longer becomes a full length laser after bouncing, and instead bounce as a regular mini-Brimstone.
+* {{i|A Lump of Coal}}: Both effects stack, with tears that bounce off of enemies being able to hit others for more damage.
+* {{i|The Parasite}}: Tears will bounce off of walls without splitting, but split and bounce when hitting enemies. The split tears and the original one will bounce off everything.
+* {{i|Pop!}}: Significantly increases the uptime of tears, since they are not limited by range and each tear will bounce off of each other. Continuously firing tears will eventually create a positive feedback loop, as the tears will keep bouncing faster and faster while not dropping to the floor.
+** '''Pop!''' + {{i|A Lump of Coal}}: Extremely powerful combination; Lump of Coal's tear size increase will make it much easier for tears to bounce off of each other, while they increase in damage very rapidly. Given some time and enough tears, this can kill even final bosses such as {{E|Hush}} and {{E|Delirium}} quickly.
+* {{dlc|a}} {{i|Technology}} / {{i|Technology 2}} / {{I|Tech.5}}: Laser bounces off walls, creating a second beam that does half damage.
+* {{i|Tech X|r}}: The laser rings bounce off walls.
+
+== Interactions ==
+* {{dlc|na}} {{i|Brimstone}}: Overrides Rubber Cement.
+* {{i|Bob's Rotten Head}}: The bomb bounces back upon hitting an obstacle, and will not explode until it runs out of air time. '''Not recommended''', as it can make self-damage more likely in small rooms.
+* {{i|Continuum}}: Overridden by Rubber Cement; tears will still bounce off of walls and obstacles.
+* {{i|Dr. Fetus}}: Overrides Rubber Cement.
+* {{i|Epic Fetus}}: Overrides Rubber Cement.
+* {{C|The Forgotten}}: No effect on the skeleton form's attacks.
+* [[Homing tears]]: Tears will bounce off enemies and home back in, but to deal damage to that enemy again they must bounce off a different object.
+* {{i|Ipecac}}: Tears will bounce off of obstacles, but not enemies.
+* {{i|Jacob's Ladder}}: Tears don't generate arcs when hitting obstacles.
+* {{i|Lost Contact}}: Tears will bounce off of enemy tears. '''Not recommended''' unless the player's fire rate is high, as it can prove detrimental when trying to hit a shooting enemy.
+* {{i|The Ludovico Technique}}: Overrides Rubber Cement.
+* {{i|Mom's Knife}}: Overrides Rubber Cement.
+* [[Piercing tears]]: Tears that don't destroy enemies will bounce off of them instead of going straight through them. Tears can still damage enemies such as {{E|Knight}}s that are normally invulnerable from the front.
+** {{dlc|r}} Tears regain the ability to push bombs.
+* {{i|Sinus Infection}}: Boogers stick to enemies, but otherwise they bounce normally.
+* [[Spectral tears]]: Overridden by Rubber Cement.
+** {{dlc|a+}} Tears pass through obstacles but bounce off walls.
+* {{i|Sulfuric Acid}}: Overridden by Rubber Cement.
+* {{dlc|na}} {{i|Technology}} / {{i|Technology 2}}: Overrides Rubber Cement.
+* {{i|Tiny Planet}}: Tears no longer fly over obstacles but instead bounce very quickly along with them, appearing to "vibrate".
+** {{dlc|a+}} Tears pass through obstacles but coast along walls, trying to maintain the circular trajectory.
+* {{I|Trisagion}}: Tears no longer bounce off of enemies but will still bounce off of walls and obstacles.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Flat Stone }}
+
+== In-game Footage ==
+{{#ev:youtube|CleiD1XE378}}
+
+== Trivia ==
+* The item's appearance is loosely based off Elmer's Glue brand Rubber Cement.
+
+{{nav|moms heart unlock|fr=Colle Caoutchouc}}
+[[Category:Tear-modifying items]]

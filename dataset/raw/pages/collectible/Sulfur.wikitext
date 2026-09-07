@@ -1,0 +1,40 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 556
+ | quote       = Temporary demon form
+ | description = Grants {{i|Brimstone}} for the current room.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = devil offensive
+ | recharge    = 3
+}}
+
+{{cit|a|r}}
+
+== Effects ==
+* Upon activation, Isaac is turned into a demon and gains the effects of {{i|Brimstone}} for the current room.
+** If Sulfur has already been used in the current room, it instead gives Isaac a 1.2x damage multiplier, +1 damage, and increases the size of the laser for the current room.
+*** Further uses of Sulfur will increase Isaac's damage by 1.
+* {{transformation contribution|Leviathan}}
+
+== Notes ==
+* Sulfur functions identically to {{I|Brimstone}}. For a full list of interactions, see that page.
+* Sulfur is extremely powerful in [[Greed Mode]], since it can be used multiple times in the same arena.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns red wisps in the middle ring that fire a short {{I|Brimstone}} laser beam similar to {{C|Azazel}}, but significantly smaller.}}
+* {{I|Brimstone}}/{{i|Car Battery}}: Activates twice to give an additional damage bonus and wider laser.
+
+== In-game footage ==
+{{#ev:youtube|O0ctMzo7XJY}}
+
+== Trivia ==
+* [[anti:Sulfur|Sulfur]] originates from the ''Antibirth'' mod, and by extension, from the ''Community Remix'' mod for the flash version.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+** In ''Antibirth'', due to a bug, using Sulfur twice in one room would permanently grant Brimstone to Isaac instead of giving him a more powerful brimstone laser.
+* "Sulfur" and "Brimstone" were once synonyms but the word "brimstone" has fallen out of use (outside of biblical usage).
+* Sulfur's appearance is based on the [[wikipedia:Alchemical symbol|alchemical symbol]] for sulfur, although the triangle is upside-down and it lacks a small piece separating the cross from the triangle.
+* This item has the same pickup quote as {{I|The Nail}}.
+
+== References ==
+<references />
+
+{{nav|leviathan|fr=Sulfure}}

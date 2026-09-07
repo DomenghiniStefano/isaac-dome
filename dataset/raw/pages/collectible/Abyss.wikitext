@@ -1,0 +1,263 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 706
+ | quote       = Come forth from the depths
+ | description = Destroys all [[item]] pedestals in the room and gives Isaac a unique locust [[familiar]] for each item destroyed. Locusts fly forwards in the direction Isaac shoots and damage enemies hit. Destroying certain items spawns special locusts with unique effects.
+ | quality     = {{dlcalt|4|r+=3}}
+ | tags        = offensive nocantrip
+ | recharge    = 4
+ | unlocked by = Abyss
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* On use, destroys all [[item]]s on item pedestals in the room and gives a unique red locust [[familiar]] for each item destroyed.
+* These locusts are permanent once created, up to a maximum of 64, after which creating more will replace older locusts.
+** This limit is shared with [[Blue Fly|Blue Flies]] and [[Blue Spider|Spiders]].
+* The locusts loosely orbit Isaac similarly to regular Blue Flies, charging in the direction Isaac is firing until hitting an enemy, wall, or certain obstacles like key blocks.
+* {{dlc|nr+}} Locusts deal Isaac's damage unless they are a special locust (2-3 times per hit).
+* {{dlc|r+}} The damage locusts deal is a multiplier of Isaac's damage and dependent on the quality of the item destroyed (2-3 times per hit):
+** Quality 0: 0.5x damage.
+** Quality 1: 0.75x damage.
+** Quality 2: 1x damage.
+** Quality 3: 1.5x damage.
+** Quality 4: 2x damage.
+* The locusts may gain additional effects depending on the item destroyed.<ref>Unique locusts and the items that give them are defined in <code>locusts.xml</code>. Every passive item in the game is listed in the file, but only the items mentioned actually have their locusts implemented.</ref>
+
+== Notes ==
+* {{c|Tainted Apollyon}} starts with this item in the consumable slot.
+* {{dlc|r+}} Effects from some special locusts have the following consistent properties:
+** Explosions are smaller and deal 20 damage.
+** Electricity deals 25% of Isaac's damage per tick. It also does not deal damage to the enemy hit, but arcs to other nearby enemies, similar to {{i|120 Volt}}
+** {{i|Crack the Sky}} beams deal 3x the locust's damage per tick.
+** Small poison farts deal 5 damage and poison all enemies caught in it.
+** Regular large farts don’t deal damage, but push away other nearby enemies.
+** All creep function identically to that from {{i|Mysterious Liquid}} regardless of color.
+** Locusts which destroy enemy projectiles will still trigger their effect and block shots while orbiting around Isaac.
+** {{i|The Necronomicon}} effect deals 40 damage. This can be affected by the damage increase from {{t|A Missing Page}} or {{i|Missing Page 2}}.
+** The {{i|Brimstone}} vortex and subsequent laser each deal 75% of Isaac's damage per tick.
+** The {{i|Maw Of The Void}} effect deals Isaac's damage per tick.
+** Locusts that destroy rocks can also open regular doors as well as {{r|Secret Room}} entrances.
+* Using Abyss in the {{R|Shop}} or the {{R|Devil Room}} will not affect any items that have not been purchased.
+* In rooms where there are multiple items to choose from, using Abyss will give only one locust for each item choice/set.
+* If already at the maximum amount of locusts and presented with multiple non-choice item pedestals, using Abyss will only consume half of the pedestals.
+* If Abyss is used while Isaac is holding an item above his head, it can still consume the item and grant a locust.
+** This mechanic can be used to destroy bought items, unwanted blind items as well as familiars given by {{p|Soul of Lilith}}.
+* Using Abyss to destroy items in {{r|Boss Rush}} or {{r|Challenge Room}} counts as taking an item and causes waves of bosses or enemies to start spawning.
+* Locusts granted by Abyss are not taken away during the sequence to obtain the {{i|Knife Piece 2}}. {{E|Mother's Shadow|n}} cannot be harmed, but they can help destroy {{e|Fire Place}}s blocking the path faster.
+* Locusts granted by Abyss are nearly irremovable, only {{i|Genesis}} can completely remove all locusts from a character. {{i|Sacrificial Altar}} and exceeding the familiar limit can remove some locusts. Reroll effects such as {{i|D4}}, {{c|Tainted Eden}} taking damage, {{i|Missing No.}}, etc. cannot remove locusts.
+* {{dlc|r+}} Locusts that have a chance to explode can extinguish {{E|Blue Fire Place}}s.
+* In [[Repentance Co-Op]] if a player dies, any of the special locusts they have will persist, following and attacking from their ghost.
+
+== Special Locusts ==
+=== {{dlc|nr+}} ''Repentance'' ===
+* {{i|120 Volt}} / {{i|Jacob's Ladder}}: A pale blue locust with arcs of electricity that deal 0.1 damage per tick.
+* {{i|Blood of the Martyr}}: A red locust that deals double damage.
+* {{i|Brimstone}}: A gray, larger locust that is otherwise normal.
+* {{i|The Common Cold}} / {{i|Scorpio}} / {{i|The Virus}}: A green locust that poisons enemies.
+* {{i|Cricket's Head}}: A red locust that is larger and deals triple damage.
+* {{i|Fire Mind}}: An orange, burning locust that sets enemies on fire.
+* {{i|Halo of Flies}}: 2 gray locusts that deal half damage.
+* {{i|Holy Light}}:  A cyan, glowing locust that occasionally calls down beams of light onto enemies they hit that deal 3x Isaac's damage.
+* {{i|The Inner Eye}}: 3 normal locusts.
+* {{i|Ipecac}}: A large, slow, green locust that deals x1.5 Isaac's damage and poisons enemies.
+* {{i|Mutant Spider}}: 4 normal locusts.
+* {{i|Number One}}: A yellow locust that is faster, deals damage quicker, but has shorter range.
+* {{i|Spoon Bender}}: A purple locust that targets and homes in on enemies.
+
+=== {{dlc|r+}} ''Repentance+'' ===
+* {{i|20/20}} / {{i|Diplopia}} / {{i|Incubus}} / {{i|Twisted Pair}} / {{i|Damocles}}: 2 locusts.
+* {{i|3 Dollar Bill}} / {{i|Missing No.}} / {{i|Chaos}} / {{i|Dataminer}} / {{i|Playdough Cookie}} / {{i|Genesis}} / {{i|TMTRAINER}}: A glitchy locust that has a 30% chance to randomly mimic the effects of other special locusts.
+* {{i|Acid Baby}} / {{i|The Necronomicon}}: A grey locust with a red pulsing ring that has a 5% chance to trigger {{i|The Necronomicon}} effect.
+* {{i|Anemic}} / {{i|It Hurts}}: A dark red blood-dripping locust that has a 30% chance to spawn small pools of red creep.
+* {{i|Apple!}}: A pulsing yellowish red locust that has a 6% chance to deal 4x the locust's damage per tick.
+* {{i|Aquarius}}: A wet, dark-red locust that has a 50% chance to spawn small pools of damaging blue creep.
+* {{i|The Bean}} / {{i|The Black Bean}}: A gassy green locust that has a 25% chance to release small poisonous farts.
+* {{i|BFFS!}}: A large locust that deals 2x the locust's damage.
+* {{i|Big Chubby}}: A slightly larger, slightly slower locust.
+* {{i|Big Fan}}: A large, very slow, shielded cyan locust that has a 50% chance to destroy enemy projectiles.
+* {{i|Black Powder}}: A slightly larger, black locust that has a 20% chance to create a small {{i|Black Powder}} ring. The ring deals 10 damage per tick to enemies inside, up to 50 damage.
+* {{i|Blood Bombs}}: A red bomb locust that has a 30% chance to explode and/or spawn small pools of yellow creep.
+* {{i|Blood Clot}} / {{i|Stye}}: A pulsing yellowish red locust that has a 50% chance to deal 1.2x the locust's damage per tick.
+* {{i|Blue Cap}}: A locust that travels slightly slower.
+* {{i|Bobby-Bomb}}: A gray bomb locust that homes in on enemies and has a 20% chance to explode.
+* {{i|Bob's Curse}}: A yellow toxic locust that has a 20% chance to explode and/or poison enemies.
+* {{i|Bob's Rotten Head}}: A green toxic locust that has a 20% chance to explode and/or poison enemies.
+* {{i|Boom!}} / {{i|Remote Detonator}}: A grey bomb locust that has a 20% chance to explode.
+* {{i|Breath of Life}}: A glowing, holy locust that has a 30% chance to destroy enemy projectiles and/or call down {{i|Crack the Sky}} beams.
+* {{i|Brimstone}} / {{i|Mega Blast}}: A large, pitch-black locust with a red outline that has a 25% chance to create a red damaging vortex when it comes into contact with enemies. After a moment the vortex fires out a thin {{i|Brimstone}} laser in the direction the locust was shot from.
+* {{i|Brimstone Bombs}}: A pitch-black locust with a red outline that has a 10% chance to explode and/or create a red damaging vortex when it comes into contact with enemies. After a moment the vortex fires out a thin {{i|Brimstone}} laser in the direction the locust was shot from.
+* {{i|Broken Modem}}: A grey locust that has a 30% chance to petrify and/or confuse enemies.
+* {{i|Bum Friend}} / {{i|Dark Bum}} / {{i|Bumbo}} / {{i|Key Bum}} / {{i|Lil Portal}}: A grey locust that absorbs all [[pickups]] it flies into. It gains +0.25 damage for each pickup absorbed (all pickups are valued the same). The locust changes in appearance and size every 5 pickups it consumes, up to a maximum of 25 pickups, after which it will not absorb any more.
+* {{i|Butt Bombs}} / {{i|Bob's Brain}}: A green bomb locust that has a 20% chance to explode and/or poison enemies.
+* {{i|Butter Bean}}: A pale gassy locust that has a 25% chance to release large farts.
+* {{i|Cat-o-nine-tails}}: A locust that travels faster.
+* {{i|Charm of the Vampire}} / {{i|Shard of Glass}} / {{i|Backstabber}} / {{i|Mom's Razor}}: A dark red blood-dripping locust that has a 25% chance to inflict bleed on enemies.
+* {{i|Chemical Peel}}: A pulsing yellowish red locust that has a 50% chance to deal 1.1x the locust's damage per tick.
+* {{i|Chocolate Milk}}: A large locust that travels slightly slower and deals 2x the locust's damage.
+* {{i|The Common Cold}} / {{i|The Virus}} / {{i|Serpent's Kiss}} / {{i|Dead Tooth}} / {{i|Sinus Infection}} / {{i|Contagion}} / {{i|Mucormycosis}}: A toxic green locust that has a 20% chance to poison enemies.
+* {{i|Compound Fracture}} / {{i|Marrow}} / {{i|Slipped Rib}} / {{i|Pointy Rib}} / {{i|Book of the Dead}} / {{i|Jaw Bone}} / {{i|Brittle Bones}} / {{i|Bone Spurs}}: A white bone locust that has a 25% chance to release 1-3 bone tears in random directions that deal 25% of Isaac's damage.
+* {{i|Cricket's Body}}: 4 tiny locusts.
+* {{i|Cupid's Arrow}} / {{i|Sagittarius}}: A diamond-shaped, pale yellow locust that travels faster and pierces through enemies.
+* {{i|D infinity}}: A pale, red dice locust that has a 60% chance to apply the {{i|D10}} effect to enemies hit.
+* {{i|D1}}: A pale, red dice locust that has a 10% chance to apply the {{i|D10}} effect to enemies hit.
+* {{i|D10}}: A pale, red dice locust that has a 70% chance to apply the {{i|D10}} effect to enemies hit.
+* {{i|D100}}: A pale, red dice locust that has a 40% chance to apply the {{i|D10}} effect to enemies hit.
+* {{i|The D6}} / {{i|D20}} / {{i|D4}} / {{i|D12}} / {{i|D8}} / {{i|D7}} / {{i|Eternal D6}} / {{i|Spindown Dice}}: A pale red dice locust that has a 20% chance to apply the {{i|D10}} effect to enemies hit.
+* {{i|Dark Matter}} / {{i|Mom's Pad}} / {{i|Mom's Perfume}} / {{i|Abaddon}} / {{i|Lil Haunt}} / {{i|2Spooky}}: A dark-purple locust that has a 25% chance to fear enemies.
+* {{i|Dead Sea Scrolls}} / {{i|Fruit Cake}} / {{i|Metronome}} / {{i|Lil Delirium}}: A glitchy locust that has a 20% chance to randomly mimic the effects of other special locusts.
+* {{i|Dead Onion}}: A diamond-shaped, pale yellow locust that travels extremely slowly and pierces through enemies.
+* {{i|Death's Touch}}: A diamond-shaped, pale yellow locust that pierces through enemies.
+* {{i|Delirious}} / {{i|Glitched Crown}}: A glitchy locust that has a 40% chance to randomly mimic the effects of other special locusts.
+* {{i|Depression}}: A wet, dark-red locust that has a 30% chance to spawn small pools of damaging blue creep.
+* {{i|Duality}}: A half glowing-yellow, half glowing-black locust that has a 10% chance to call down a {{i|Crack the Sky}} beam and/or create a red damaging vortex when it comes into contact with enemies. After a moment the vortex fires out a thin {{i|Brimstone}} laser in the direction the locust was shot from.
+* {{i|Dr. Fetus}} / {{i|Ghost Bombs}}: A grey bomb locust that has a 50% chance to explode.
+* {{i|Dry Baby}}: A grey locust with a red pulsing ring that destroys enemy projectiles and has a 5% chance to trigger {{i|The Necronomicon}} effect.
+* {{i|E. Coli}}: A brown locust that has a 40% chance to turn an enemy into {{e|Poop}}.
+* {{i|Epic Fetus}}: A yellow locust that has an 80% chance to explode.
+* {{i|Eraser}}: A small, pale, pink and grey locust which has a 0.5% chance of applying the {{i|Eraser}} effect on an enemy.
+* {{i|Eve's Mascara}}: A large, slow locust.
+* {{i|Eye of Belial}}: A diamond-shaped, pale yellow locust that travels slowly and pierces through enemies.
+* {{i|Eye of Greed}}: A shiny gold locust that has a 30% chance to apply {{i|Midas' Touch}} on enemies.
+* {{i|Farting Baby}}: A pale gassy locust that has a 40% chance to poison enemies and/or release both large farts and small poisonous farts.
+* {{i|Fire Mind}} / {{i|The Candle}} / {{i|Red Candle}} / {{i|Ghost Pepper}} / {{i|Bird's Eye}} / {{i|Urn of Souls}}: A flaming orange locust that has a 25% chance to burn enemies.
+* {{i|Flush!}}: A brown locust that has a 20% chance to turn an enemy into {{e|Poop}} and a 5% chance to trigger {{i|The Necronomicon}} effect.
+* {{i|GB Bug}}: A glitchy locust that has a 30% chance to apply the {{i|D10}} effect to enemies hit.
+* {{i|Glass Cannon}}: A pulsing yellowish red locust that pierces enemies and has a 5% chance to deal 5x the locust's damage per tick.
+* {{i|Glitter Bombs}} / {{i|Nancy Bombs}}: A pink bomb locust that has a 20% chance to randomly mimic the effects of other special locusts, and/or explode.
+* {{i|Godhead}}: A glowing, holy locust that homes in on enemies and creates a {{i|Godhead}} aura while attacking. The aura rapidly deals 2 damage per tick to enemies inside.
+* {{i|God's Flesh}}: A blue locust that has a 20% chance to shrink enemies.
+* {{i|Hallowed Ground}}: A glowing, holy locust that has a 30% chance to turn an enemy into {{e|Poop}} or call down a {{i|Crack the Sky}} beam.
+* {{i|Halo of Flies}}: 2 shielded cyan locusts that destroy enemy projectiles.
+* {{i|Headless Baby}}: A dark red blood-dripping locust that has a 50% chance to spawn small pools of red creep.
+* {{i|Hive Mind}}: A gigantic locust that travels slower and deals 2.5x the locust's damage.
+* {{i|Holy Light}} / {{i|Crack the Sky}} / {{i|Crown Of Light}} / {{i|Trisagion}} / {{i|Revelation}} / {{i|Salvation}}: A glowing, holy locust that has a 25% chance to call down a {{i|Crack the Sky}} beam.
+* {{i|Holy Water}}: A glowing, holy locust that has a 10% chance to petrify enemies and/or call down a {{i|Crack the Sky}} beam. It also has a 30% chance to spawn small pools of damaging blue creep.
+* {{i|Hot Bombs}}: An orange bomb locust that has a 20% chance to burn enemies and/or explode.
+* {{i|The Inner Eye}}: 3 locusts.
+* {{i|Ipecac}}: A large, slow, green locust that has an 80% chance to poison enemies, explode, and/or spawn small pools of green creep.
+* {{i|Iron Bar}} / {{i|Glaucoma}} / {{i|Camo Undies}}: A confused, yellowish-grey locust that has a 25% chance to confuse enemies.
+* {{i|Jacob's Ladder}} / {{i|The Battery}} / {{i|Technology}} / {{i|Robo-Baby}} / {{i|9 Volt}} / {{i|Tech.5}} / {{i|Robo-Baby 2.0}} / {{i|Car Battery}} / {{i|Charged Baby}} / {{i|Tech X}} / {{i|Jumper Cables}} / {{i|Technology Zero}} / {{i|120 Volt}} / {{i|Battery Pack}} / {{i|4.5 Volt}}: An electric blue locust that has a 25% chance to send out sparks of electricity.
+* {{i|Jupiter}}: A gassy green locust that has a 50% chance to create small poisonous farts.
+* {{i|Knockout Drops}} / {{i|Isaac's Heart}} / {{i|Aries}} / {{i|Pisces}} / {{i|Belly Jelly}} / {{i|Hemoptysis}}: A pulsing, blue locust that has a 25% chance to knock back and confuse enemies.
+* {{i|Larynx}}: A red locust with a swirling aura that has a 25% chance to create a miniature {{i|Larynx}} scream. The AOE is smaller than using Larynx at 1 charge, and deals 30 damage per tick.
+* {{i|Lemon Mishap}} / {{i|Free Lemonade}}: A dark red yellow-dripping locust that has a 50% chance to spawn small pools of yellow creep.
+* {{i|Leo}} / {{i|Thunder Thighs}}: A rocky, grey locust that has a 30% chance to destroy rocks it flies over.
+* {{i|Lil Abaddon}}: A black locust that has a 10% chance to create a {{i|Maw Of The Void}} ring.
+* {{i|Lil Dumpy}}: A pale gassy locust that destroys enemy projectiles and has a 20% chance to release large farts.
+* {{i|Little Horn}}: A sparkling grey locust with an orange glow that has a 20% chance to trigger {{i|Little Horn}}'s effect.
+* {{i|Linger Bean}}: A gassy green locust that has a 30% chance to create small poisonous farts.
+* {{i|Lodestone}} / {{i|Magneto}} / {{i|Strange Attractor}}: An electric grey locust that has a 25% chance to [[Status Effects#Magnetized|magnetize]] enemies.
+* {{i|Lost Contact}} / {{i|Book of Shadows}} / {{i|Cube of Meat}} / {{i|My Little Unicorn}} / {{i|The Gamekid}} / {{i|The Wafer}} / {{i|Guardian Angel}} / {{i|Celtic Cross}} / {{i|Sacrificial Dagger}} / {{i|Guppy's Hairball}} / {{i|Ball of Bandages}} / {{i|Gnawed Leaf}} / {{i|Infamy}} / {{i|Trinity Shield}} / {{i|Unicorn Stump}} / {{i|Virgo}} / {{i|Holy Mantle}} / {{i|Sworn Protector}} / {{i|Host Hat}} / {{i|Empty Vessel}} / {{i|Circle of Protection}} / {{i|Milk!}} / {{i|Metal Plate}} / {{i|Cone Head}} / {{i|Leprosy}} / {{i|Divine Intervention}} / {{i|Bot Fly}} / {{i|Tinytoma}} / {{i|Tooth and Nail}}: A shielded cyan locust that destroys enemy projectiles.
+* {{i|Magic Mushroom}}: A large locust.
+* {{i|Mama Mega!}}: A large, grey bomb locust that has a 40% chance to explode.
+* {{i|Maw Of The Void}} / {{i|Athame}}: A black locust that has a 30% chance to create a {{i|Maw Of The Void}} ring.
+* {{i|Meat Cleaver}}: 2 small locusts.
+* {{i|Mega Bean}}: A green locust that has a 30% chance to poison enemies, create small poisonous farts, and/or knock them back. The locust also has a 30% chance to destroy rocks it flies over.
+* {{i|Mega Mush}}: A giant locust that deals 3x the locust's damage and has a 25% chance to destroy rocks it flies over.
+* {{i|Midas' Touch}} / {{i|Steam Sale}}: A shiny gold locust that has a 40% chance to apply {{i|Midas' Touch}} on enemies.
+* {{i|Mini Mush}}: A small, fast locust that deals 1.5x the locust's damage.
+* {{i|Mutant Spider}}: 4 small locusts.
+* {{i|Mr. Boom}} / {{i|Kamikaze!}} / {{i|Doctor's Remote}} / {{i|Anarchist Cookbook}} / {{i|Best Friend}} / {{i|Sad Bombs}} / {{i|BOGO Bombs}} / {{i|BBF}} / {{i|Curse of the Tower}} / {{i|Mine Crafter}} / {{i|Rocket in a Jar}}: A yellow locust that has a 20% chance to explode.
+* {{i|Mom's Contacts}} / {{i|Mom's Bra}} / {{i|The Boomerang}} / {{i|Pause}} / {{i|Dad's Ring}} / {{i|Anima Sola}}: A petrified grey locust that has a 25% chance to petrify enemies.
+* {{i|Mom's Knife}}: A very large locust that spins a small knife around it when attacking. The knife deals 1.5x Isaac's damage every tick. When the locust stops at an enemy or wall, the knife is destroyed, regardless of if the knife dealt damage.
+* {{i|Monstrance}}: A glowing, holy locust which creates a {{i|Godhead}} aura while attacking. The aura rapidly deals 2 damage per tick to enemies inside.
+* {{i|Monstro's Lung}}: A locust and 3 tiny locusts.
+* {{i|Mr. Mega}} / {{i|Bomber Boy}} / {{i|Fast Bombs}}: A grey bomb locust that has a 30% chance to explode.
+* {{i|Mysterious Liquid}}: A poisonous dark red locust that has a 60% chance to spawn small pools of green creep.
+* {{i|Blood Rights}} / {{i|Missing Page 2}} / {{i|Magic Fingers}} / {{i|Sharp Straw}}: A grey locust with a red pulsing ring that has a 10% chance to trigger {{i|The Necronomicon}} effect.
+* {{i|Neptunus}}: A locust that ticks damage slightly quicker.
+* {{i|Notched Axe}} / {{i|Samson's Chains}} / {{i|Mom's Bracelet}}: A rocky, grey locust that has a 20% chance to destroy rocks it flies over.
+* {{i|Number One}} / {{i|Stem Cells}} / {{i|Tooth Picks}} / {{i|Magic 8 Ball}}: A fast locust that ticks damage slightly quicker.
+* {{i|Number Two}}: A grey bomb locust that explodes on every tick.
+* {{i|Ocular Rift}} / {{i|Black Hole}}: A grey locust surrounded by a rift that has a 10% chance to create a small {{i|Ocular Rift}} rift. The rift deals 25% of Isaac's damage per tick.
+* {{i|The Parasite}}: A locust and 2 tiny locusts.
+* {{i|Pluto}}: A tiny fast locust that ticks damage slightly quicker.
+* {{i|Polyphemus}}: A very large, slow locust that deals 2.2x the locust's damage.
+* {{i|Psy Fly}}: A flaming purple locust that homes in on enemies and destroys enemy projectiles.
+* {{i|Punching Bag}}: A shielded cyan locust that has a 20% chance to destroy enemy projectiles and apply {{i|Rotten Tomato}} on enemies.
+* {{i|Pupula Duplex}}: A slightly larger locust.
+* {{i|Pyro}} / {{i|Explosivo}}: A grey bomb locust that has a 40% chance to explode.
+* {{i|A Quarter}} / {{i|Head of the Keeper}} / {{i|Keeper's Sack}}: A shiny gold locust that has a 20% chance to apply {{i|Midas' Touch}} on enemies.
+* {{i|Rotten Tomato}}: A light-red locust that has a 25% chance to apply {{i|Rotten Tomato}} on enemies.
+* {{i|Sacred Heart}}: A glowing, holy locust that homes in on enemies and has a 25% chance to call down a {{i|Crack the Sky}} beam.
+* {{i|Scatter Bombs}}: 2 smaller, grey bomb locusts that have a 20% chance to explode.
+* {{i|Scorpio}}: A green locust that poisons enemies.
+* {{i|Skatole}} / {{i|The Poop}} / {{i|Brown Nugget}} / {{i|Dirty Mind}} / {{i|Montezuma's Revenge}} / {{i|IBS}}: A brown locust that has a 20% chance to turn an enemy into {{e|Poop}}.
+* {{i|Shoop da Whoop!}} / {{i|Head of Krampus}} / {{i|Azazel's Rage}}: A pitch-black locust with a red outline that has a 10% chance to create a red damaging vortex when it comes into contact with enemies. After a moment the vortex fires out a thin {{i|Brimstone}} laser in the direction the locust was shot from.
+* {{i|Sissy Longlegs}} / {{i|Friendly Ball}}: A lovely pink locust that has a 20% chance to charm enemies.
+* {{i|The Soul}} / {{i|Telekinesis}}: A cyan locust that creates a blue aura while attacking. All enemy projectiles that touch the aura are reflected away from the locust.
+* {{i|Soy Milk}} / {{i|Almond Milk}}: A tiny, very fast locust that ticks damage extremely quickly, but only deals 20% of the locust's damage.
+* {{i|Spider Bite}} / {{i|The Hourglass}} / {{i|Little Gish}} / {{i|Ball of Tar}} / {{i|Stop Watch}} / {{i|Juicy Sack}} / {{i|Broken Watch}} / {{i|Censer}} / {{i|Night Light}} / {{i|Large Zit}} / {{i|The Intruder}}: A light grey locust that has a 25% chance to slow enemies.
+* {{i|Spider Butt}}: A grey locust with a red pulsing ring that has a 30% chance to slow enemies and a 5% chance to trigger {{i|The Necronomicon}} effect.
+* {{i|Spider Mod}}: A glitchy locust that has a 25% chance to randomly mimic the effects of other special locusts.
+* {{i|Spoon Bender}} / {{i|Little Steven}} / {{i|Telepathy For Dummies}} / {{i|Smart Fly}} / {{i|Angry Fly}}: A flaming purple locust that targets and homes in on enemies.
+* {{i|Sticky Bombs}}: A grey bomb locust that has a 20% chance to slow enemies and/or explode.
+* {{i|Succubus}}: A black locust which creates a black {{i|Godhead}} aura while attacking. The aura rapidly deals 2 damage per tick to enemies inside.
+* {{i|Sulfur}}: A pitch-black locust with a red outline that has a 20% chance to create a red damaging vortex when it comes into contact with enemies. After a moment the vortex fires out a thin {{i|Brimstone}} laser in the direction the locust was shot from.
+* {{i|Sulfuric Acid}} / {{i|The Nail}}: A rocky, grey locust that has a 25% chance to destroy rocks it flies over.
+* {{i|Suplex!}}: A pulsing, blue locust that has a 40% chance to knock back and confuse enemies.
+* {{i|The Swarm}}: 3 slightly smaller, cyan locusts that destroy enemy projectiles.
+* {{i|Teleport!}} / {{i|A Pony}} / {{i|How to Jump}} / {{i|Undefined}} / {{i|Ventricle Razor}} / {{i|Teleport 2.0}} / {{i|Mars}} / {{i|Stitches}}: An extremely fast moving locust that pierces through enemies.
+* {{i|Terra}}: A rocky, grey locust that has a 50% chance to destroy rocks it flies over.
+* {{i|Tough Love}}: A pulsing yellowish red locust that has a 7% chance to deal 3x the locust's damage per tick.
+* {{i|Toxic Shock}}: A poisonous green locust that has a 30% chance to poison enemies and/or spawn small pools of green creep.
+* {{i|Uranus}} / {{i|Freezer Baby}} / {{i|Cube Baby}}: A light-blue ice locust that has a 25% chance to freeze enemies when killed.
+* {{i|Venus}} / {{i|Mom's Eyeshadow}} / {{i|Betrayal}} / {{i|Kidney Bean}}: A lovely pink locust that has a 25% chance to charm enemies.
+* {{i|Wait What?}}: A pale gassy locust that has a 20% chance to release large farts and destroy rocks it flies over.
+* {{i|White Pony}}: An extremely fast moving, glowing, holy locust that pierces through enemies and has a 25% chance to call down a {{i|Crack the Sky}} beam.
+* {{i|Abyss}}: Spawns 16 locusts of different colors and effects:
+** A {{i|Mr. Boom}} locust.
+** A {{i|Knockout Drops}} locust.
+** A {{i|Spider Mod}} locust.
+** A {{i|Compound Fracture}} locust.
+** A {{i|Lost Contact}} locust.
+** A {{i|Fire Mind}} locust.
+** A {{i|Lodestone}} locust.
+** A {{i|Jacob's Ladder}} locust.
+** A {{i|The Common Cold}} locust.
+** A {{i|Monstrance}} locust.
+** A {{i|Spider Bite}} locust.
+** A {{i|Charm of the Vampire}} locust.
+** An {{i|Iron Bar}} locust.
+** A {{i|Holy Light}} locust.
+** A {{i|Spoon Bender}} locust.
+
+== Synergies ==
+* {{i|BFFS!}} / {{i|Hive Mind}}: Increases the locusts' size and damage by 25%.
+** These two items don't stack.
+* {{Book of Virtues synergy|description=Spawns wisps in the middle ring in the form of black-glowing flies with extra HP that do not fire tears.}}
+* {{t|Extension Cord}}: Electricity will flow between Isaac and the locusts.
+* {{tf|Guppy}} : Damage dealt by locusts can spawn blue flies.
+* {{i|Ipecac}}: Locusts gain a flat +2 damage.
+* {{c|Tainted Eden}}: Abyss can be rerolled, but the locusts are permanent.
+
+== Interactions ==
+* {{t|Baby-Bender}} / {{i|Box of Friends}}: Does not affect locusts.
+* {{i|Car Battery}}: No effect.
+* {{i|Death Certificate}}: Only allows the consumption of one item per Death Certificate room and the consumed item is treated as if it was picked up causing all other items in the room to disappear and forcing Isaac to leave the area.
+* {{i|Genesis}}: The locusts created by Abyss are removed without creating items to replace them.
+* {{i|Sacrificial Altar}}: Locusts can be sacrificed for items.
+* {{i|Void}}: If Void consumes Abyss, the latter will take priority and using Void to consume another item pedestal will generate a locust. Even consuming active items will generate a locust, and Void will not copy that active item's effect. This essentially causes Void to act identically to Abyss, {{dlc|nr+}} albeit requiring 2 more charges per use. Stats and effects of the active items absorbed prior to consuming Abyss are kept and will trigger everytime Void will be used.
+
+== In-game Footage ==
+{{#ev:youtube|VruWc6WIpyE||inline}}
+
+== Trivia ==
+* The way that Abyss works is similar to how it's described in the ''[[wikipedia:Book of Revelation|Book of Revelation]]'', where locusts emerge from the Abyss and are controlled by Apollyon.
+* The swirl in {{i|Void}}'s appearance is in the opposite direction of Abyss's.
+
+== Bugs ==
+{{bug|dlc=nr+|According to <code>locusts.xml</code>, {{i|Ipecac}} locusts are supposed to explode. This never happens in game; Ipecac only gives a locust that deals slightly more damage and poisons enemies.}}
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room than the one he is currently in (such as the starting room of a new floor) will duplicate the locusts.}}
+{{bug|dlc=r+|{{i|Shard of Glass}}, {{i|Backstabber}}, {{i|Mom's Razor}}, as well as {{i|Abyss}}' bleed locust appear to have been not updated properly for [[v1.9.7.9]] and do not have the correct color or effect to match with {{i|Charm of the Vampire}}.}}
+{{bug|dlc=r+|{{i|Mega Mush}}'s damage is inconsistent, sometimes not applying any damage multiplier. It also does not apply the rock-breaking effect which it should have.}}
+{{bug|dlc=r+|{{i|Punching Bag}}'s projectile destroying ability is not functional.}}
+{{bug|dlc=r+|The {{i|Maw Of The Void}}'s effect appears to be dealing too much damage: dealing up to 100 damage per single activation on base damage.}}
+{{bug|dlc=r+|{{i|Blood Bombs}} is likely meant to spawn red instead of yellow creep, like with {{i|Anemic}}.}}
+
+== References ==
+{{reflist}}
+
+{{nav|locust|tainted apollyon unlock|delirium unlock|fr=Abysse}}

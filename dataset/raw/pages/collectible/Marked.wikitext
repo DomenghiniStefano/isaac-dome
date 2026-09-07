@@ -1,0 +1,83 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 394
+ | quote       = Directed tears
+ | description = Isaac will automatically fire tears directed at a red target on the ground. The target can be moved with tear controls. +0.7 [[tears]], increases [[range]].
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = summonable tearsup offensive
+}} {{distinguish|The Mark}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Creates a controllable crosshair. Isaac automatically and continuously fires towards the crosshair.
+** {{dlc|r}} The crosshair will not appear in each room until Isaac fires. Pressing the "drop" key or button (Keyboard default: left Control key; Controller default: right trigger) will make the crosshair disappear and stop Isaac from firing tears until a firing key is pressed again.<ref>https://www.reddit.com/r/bindingofisaac/comments/mi3z0l/important_protip_that_could_save_your_run_from/</ref>
+** {{dlc|r}} [[Familiar#Shooting familiars|Shooting familiars]] and [[Familiar#Throwable familiars|throwable familiars]] now fire towards or launch themselves in the direction of the crosshair automatically.
+* +0.7 [[tears]].
+* {{dlc|r}} +3.0 [[range]].
+* {{dlc|nr}} +3.15 [[range]].
+* {{dlc|nr}} +0.3 [[tear falling speed]].
+
+== Notes ==
+* On PC, it is possible to control Marked with the mouse. On Windows, go to {{code|C:/Users/[username]/Documents/My Games/The Binding Of Isaac [Rebirth/Afterbirth/Afterbirth+/Repentance/Repentance+]/}} and in the options.ini file, change the line that says {{code|MouseControl{{=}}0}} to {{code|MouseControl{{=}}1}}.
+* {{dlc+|r+}} Marked's quality is treated as 1 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{dlc|r}} {{i|Brimstone}}: Automatically charges and fires in the direction of the mark. The angle the beam is shot from Isaac will correct itself when the mark or Isaac repositions to continue hitting the mark.
+* {{dlc+|a+nr}} {{i|Camo Undies}}: Isaac will stay camouflaged until the crosshair is moved. If you control Marked with the mouse (only possible on PC) Camo Undies will stay camouflaged.{{dlc-}}
+* {{i|Chocolate Milk}}: Charge and fire rate based on proximity to mark. Fully charges when farther away, charges less but fires faster when closer. Damage scales with the distance between Isaac and the crosshair.
+* {{i|Cursed Eye}}: Greatly increases the firing rate without needing to charge. The teleporting effect of the eye is removed.
+* {{dlc|r}} {{i|Lil Brimstone}}: While firing, Lil Brimstone automatically charges and fires the beam immediately upon full charge, the beam will now target the crosshair.
+* {{dlc+|r}} {{i|Maw Of The Void}}/{{i|Montezuma's Revenge}}: While firing, these items charge automatically and activate immediately upon full charge.{{dlc-}}
+* {{dlc|r}} {{i|Mom's Knife}}: Charge and fire rate based on proximity to mark. Fully charges when farther away, charges less but fires faster when closer.
+* {{dlc|r}} {{i|Monstro's Lung}}: Automatically charges and fires in the direction of the mark.
+* {{i|Pointy Rib}}: The rib familiar will aim at the crosshair.
+* {{i|Quints}}: The spawned familiars will aim at the crosshair.
+* {{i|Revelation}}: Light beams are charged and fired at the crosshair automatically at a fixed angle from Isaac.
+* {{i|Rocket in a Jar}}: Bombs placed will blast at the crosshair, and cannot be placed normally until the crosshair disappears.
+* {{dlc|r}} {{i|Tech X}}: Fires in the direction of the crosshair, with charging time proportionate to the distance of the crosshair from Isaac.
+* {{dlc|r}} {{i|Tractor Beam}}: The beam is aimed at Marked's crosshair. Moving the crosshair rotates the entire beam along with any tears inside it.
+
+== Interactions ==
+* {{C|Lilith|nr}} : Marked gives the stat upgrades but not the mark.
+* {{dlc+|r}} {{C|Tainted Lilith}} : When the baby is launched, it permanently fires at the crosshair. Pressing the "drop" key or button (Keyboard default: left Control key; Controller default: right trigger) will make the crosshair disappear and cause the baby to return to Tainted Lilith.{{dlc-}}
+* {{C|The Forgotten}} / {{C|Tainted Forgotten}} : Gives stats up without any drawbacks, and allows the bone to be angled in any direction, similar to {{i|Analog Stick}}.
+* {{i|Anti-Gravity}}: The tear hover effect is nullified, though the tear delay down is applied.
+* {{dlc|nr}} {{i|Brimstone}}/{{i|Mom's Knife}}/{{i|Monstro's Lung}}/{{i|Technology}}/{{i|Tech X}}: Overrides Marked, stat bonuses still apply.
+* {{I|Chocolate Milk}} + {{I|Neptunus}}: '''Not recommended.''' Isaac will not be able to fire any tears, effectively becoming softlocked and forcing the player to restart the game.
+* {{i|Dead Tooth}}: The green aura only activates when pressing the buttons to fire Isaac's tears.
+* {{i|Dr. Fetus|r}}: Continuously fires bombs towards the marked spot.
+* {{i|Epic Fetus}}: Continuously fires missiles at the marked spot.
+** {{dlc|r}}If the crosshair is dismissed before the next missile is dropped, it still drops in the crosshair’s last position.
+* {{i|Epiphora}}: Both items work as normal, with tear rate gradually increasing until Isaac turns his head, which can happen via him or the crosshair moving too out of parallel.
+* {{I|Eye of the Occult}}: Tears will always attempt to land on the crosshair, changing direction mid-air to do so.
+* {{I|GB Bug|r}}: Unaffected by Marked.
+* {{dlc|nr}} {{i|Gnawed Leaf}}: Tears will stop auto-firing once Isaac is invulnerable.
+** {{dlc|r}} Gnawed Leaf cannot activate while Isaac is auto-firing.
+* {{dlc|nr}} {{i|Lil Brimstone}}: Lil Brimstone only charges while moving the mark.
+* {{i|The Ludovico Technique}}: Overrides Marked, but stat bonuses still apply.
+* {{I|Mr. ME!}}: The Mr. ME! crosshair will move constantly in the direction of the Marked crosshair relative to Isaac. It will not attempt to match with where Marked is aiming, making it difficult to control. Pressing the drop button will stop the Mr. ME! crosshair.
+* {{i|My Little Unicorn}}/{{i|Unicorn Stump}}/{{i|Taurus}}: Isaac's tears will still fire, but he will be unable to move the crosshair while invincible.
+** {{dlc|r}} The crosshair can still be spawned while invincible.
+* {{dlc+|r}} {{I|Spirit Sword}}: Overrides Marked, but stat bonuses still apply, and allows the sword to be angled in any direction, similar to {{i|Analog Stick}}.{{dlc-}}
+* {{i|Sprinkler}}: No effect on the sprinkler.
+* {{dlc|nr}} {{i|Technology 2}}: Laser only fires while the crosshair is moving, and only in cardinal directions.
+* {{dlc|nr}} {{i|Tractor Beam}}: Tears are fired automatically but only in cardinal directions.
+* {{I|Tiny Planet}}: The tears' center of orbit can be slightly modified using the crosshair.
+
+== In-game Footage ==
+{{#ev:youtube|v496Cmgk08c}}
+
+== Trivia ==
+* {{dlc|nr}} This item's icon shares the same icon as {{i|Zodiac}} but red instead of white. {{C|Isaac}}'s sprite is also the same as Zodiac but red instead of black.
+* The mark on the ground is the same as used by {{i|Epic Fetus}}.
+
+== Bugs ==
+{{bug|dlc=a+nr|Mom's Knife + {{i|Haemolacria}}: Causes the crosshair to follow the camera instead of player input. In normal rooms this makes the crosshair get stuck in the middle. In larger rooms, the marker will only move when the camera moves, allowing for minimal control when aiming due to how the camera moves based on the direction Isaac is currently aiming.}}
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Ligne de Mire}}
+[[ru:Отмеченный]]

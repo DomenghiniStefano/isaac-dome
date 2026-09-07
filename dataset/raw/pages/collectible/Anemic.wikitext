@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 214
+ | quote       = Toxic blood
+ | description = After Isaac is damaged, a trail of [[red creep]] will be left behind him until he leaves the current room. {{dlc+|nr}} +5 [[range]].{{dlc-}} {{dlc+|r}} +1.5 [[range]].{{dlc-}}
+ | quality     = 1
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Upon taking damage, Isaac leaves a trail of [[red creep]] that damages enemies until he leaves the room.
+** The creep deals 2 damage per tick (6 damage per second) to enemies that walk over it.
+* {{dlc|nr}} +5 [[range]].
+* {{dlc|r}} +1.5 [[range]].
+
+== Notes ==
+* The effects of this item do not stack if multiple copies of the item or its effects are acquired; Isaac only gets the range bonus once.
+* {{C|Lazarus}}, or anyone holding {{i|Lazarus' Rags}}, is resurrected with this item upon his first death.
+** {{dlc+|a+}} After {{chal|Backasswards}} is beaten, Lazarus will start with Anemic, and Lazarus Risen will have its increased range and creep trail effect permanently active, regardless of whether he possesses the item.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|9uOuTqkaYeQ}}
+
+== Trivia ==
+* [[wikipedia:Anemia|Anemia]] is a decrease in the blood's ability to carry oxygen. This can either be caused by a decrease in hemoglobin in blood cells, or red blood cells altogether. Sensitivity towards bleeding is a symptom, hence this item's effect.
+* {{dlc+|r}} This item is used in {{chal|Bloody Mary}}.{{dlc-}}
+* {{i|Glass Cannon|dlc=r}} invokes the effects of Anemic for the current room when Isaac takes damage.
+
+{{nav|fr=Anémie}}
+[[Category:Damage-triggered items]]

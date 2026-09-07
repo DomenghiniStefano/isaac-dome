@@ -1,0 +1,23 @@
+{{infobox passive collectible
+ | id          = 138
+ | quote       = DMG + HP up
+ | description = +0.3 [[damage]], grants one full Red [[Heart container]]. {{dlc|r}} Heals 1 additional {{e|Red Heart}}.
+ | quality     = 2
+ | tags        = {{dlc|r+|nolostbr}} summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants one full Red [[Heart container]].
+* +0.3 [[damage]].
+* {{Dlc|r}} Heals 1 additional {{E|Red Heart}}.
+
+== In-game Footage ==
+{{#ev:youtube|jyDmNaqHurY||inline}} {{#ev:youtube|DfOUnkYy8Ro||inline}}
+
+== Trivia ==
+* "Stigmata" is a term used by Catholic priests to designate wounds, sores, etc. found at the same locations on the body as those Jesus sustained during his crucifixion (e.g. palms, feet).
+* This item is functionally identical to {{i|MEAT!}}.
+
+{{nav|fr=Stigmates}}

@@ -1,0 +1,23 @@
+{{infobox passive collectible
+ | id          = 176
+ | quote       = HP + shot speed up
+ | description = Grants one full Red [[Heart container]] and +0.16 [[shot speed]]. {{dlc|r}} Heals 1 additional {{E|Red Heart}}
+ | quality     = 1
+ | tags        = nolostbr
+}} {{disambig msg|the item|the trinket|Stem Cell}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants one full Red [[Heart container]].
+* +0.16 [[shot speed]].
+* {{Dlc|r}} Heals 1 additional heart of [[health]].
+
+== In-game Footage ==
+{{#ev:youtube|n_kacDju5_M}}
+
+== Trivia ==
+* The baby attached to Isaac's face is similar in appearance to {{E|It Lives!}}.
+* Stem cells are a special type of cell that can transform into any other cell and are also what makes up an embryo in the first stages of pregnancy.
+
+{{nav|fr=Cellules Souches}}

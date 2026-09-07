@@ -1,0 +1,46 @@
+{{Infobox boss
+ | dlc         = r
+ | name        = The Pile
+ | id          = 269
+ | variant     = 1
+ | environment = <u>Boss</u><br><u>Main path</u><br>{{floor|Necropolis}}<br>{{room|boss challenge}}<br><u>Alternate path</u><br>{{floor|Ashpit}}<br>{{room|boss challenge}}<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Sheol}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|challenge}}<br><u>Alternate path</u><br>{{floor|Corpse}}<br>{{room|challenge}}
+ | base hp     = 580
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Compound Fracture}} (1% chance)
+ | unlocked by = Something wicked this way comes+!
+}}
+
+'''The Pile''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in {{s|Necropolis}}, as well as in the {{s|Ashpit}} in the alternate path.
+
+== Behavior ==
+The Pile slowly slides around the room slowly and performs the following attacks:
+* Burrows underground, then quickly reemerges elsewhere in the room and fires 5 bone projectiles in a spread towards Isaac. The Pile repeats this attack 3 times in a quick succession. It will generally try to reemerge close to Isaac or directly in his path to cut him off.
+* Summons a {{e|Bony}} with a maximum of 2 alive at once.
+* Summons spikes in each of its cardinal directions which start at the edges of the room and move towards the Pile.
+* Charges in Isaac's direction and continues until it rams into a wall or an obstacle, creating two diagonal lines of rock waves away from the wall and launching a spray of bone projectiles in Isaac's direction. If it runs into an obstacle it also destroys it along with any other obstacles in a small radius.
+** The Pile gains dramatically increased knockback resistance while charging.
+
+== Gallery ==
+<gallery>
+Boss_The_Pile_ingame_old.png| The Pile's appearance in ''Antibirth''.
+</gallery>
+
+== Notes ==
+* {{t|Callus}} and {{i|Orphan Socks}} prevent Isaac from taking damage from spikes summoned by The Pile.
+** {{t|Flat File}} has no effect on these spikes.
+
+== Trivia ==
+* The Pile originates from [https://www.reddit.com/r/bindingofisaac/comments/2tp3yi/boss_fight_mockup_the_pile/ a conceptual Reddit post] by NotYourSaggitarius on the Binding of Isaac subreddit in 2015. A few days later [https://www.youtube.com/watch?v=JmQHYbIEi-s it was programmed into Rebirth] by Kilburn, before being incorporated into the Antibirth mod.
+** In Antibirth, The Pile could appear as a boss in the {{s|Mausoleum}}.
+* It is a skeletal variant of {{e|Polycephalus}} and an even further decayed version of {{e|The Stain}}.
+** This makes Polycephalus the only boss in the entire game to have more than one posthumous version.
+* In its boss art, the rightmost head lacks 2 teeth on the bottom jaw, unlike its enemy sprite.
+* The Pile is one of two bosses that can appear in both the main path and the alternate path, appearing in the {{s|Necropolis}} as well, the other being {{e|Reap Creep}}, who can appear in the {{s|Depths}} and {{s|Dank Depths}}.
+** Because of this, its battle theme will be different, depending on where it's fought. If it's fought in Necropolis, either ''Crusade'' or ''Cerebrum Dispersio'' will play, while if it's fought in the Ashpit, ''Juggernaut'' will play.
+
+{{nav|blue baby boss unlock|boss|fr=Le Vestige}}
+
+[[Category:Chapter 2.5 bosses]]
+[[Category:Chapter 3 bosses]]
+[[Category:Ashpit bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Debut bosses in Repentance]]

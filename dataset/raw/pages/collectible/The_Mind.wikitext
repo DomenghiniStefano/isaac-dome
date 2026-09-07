@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | id          = 333
+ | quote       = I know all
+ | description = Reveals the entire map, including all special rooms and {{R|Secret Room}}s.
+ | quality     = 3
+ | tags        = summonable offensive lazarussharedglobal
+ | devil price = {{dlcalt|1|r=2}}
+ | unlocked by = The Mind
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Grants the combined effects of the {{i|Blue Map}}, {{i|Treasure Map}}, and {{i|The Compass}}, revealing the floor layout and all special rooms, including {{R|Secret Room}}s and {{R|Super Secret Room}}s.
+* Picking up this item and then dropping it with {{t|Butter!}} or as {{c|Tainted Isaac}} will not remove the effect. 
+
+== Synergies ==
+* {{dlc|r}} {{I|Book of Secrets}}: Immediately gives the {{i|X-Ray Vision}} effect for the floor upon use.
+
+== In-game Footage ==
+{{#ev:youtube|39p7J9p5yLk}}
+
+== Gallery ==
+<gallery>
+File:Mapping icons.png|{{dlc|r}} The Mind's icon (on the right), alongside other mapping icons.
+</gallery>
+
+== Trivia ==
+* This item, along with {{i|The Soul}} and {{i|The Body}}, are references to the [[wikipedia:Alchemical symbol#Three primes|Three Primes of Alchemy]].
+** The designs of these items appear to be that of [[Wikipedia:Triquetra|Triquetra]], a Christian symbol of the Trinity.
+* The item's description, along with those of {{i|The Soul}} and {{i|The Body}}, are references to the three attributes commonly ascribed to God in Christian theology: omniscience, omnipotence, and omnipresence. For The Mind, it is omniscience, the ability to "know all".
+* This item might be referencing Solomon from the Bible, who became unhappy with life after gaining preposterous wisdom - which is why Isaac might look so done with everything in the item sprite.
+* {{dlc|r}} The Mind's icon under the minimap overrides the icons of other mapping effects.
+
+{{nav|the lost unlock|satan unlock|fr=L'Esprit}}

@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 211
+ | quote       = Spider revenge
+ | description = Spawns {{dlc|nr}} 1-2 / {{dlc|r}} 3-5 [[Blue Spider]]s when Isaac takes damage.
+ | quality     = 0
+ | tags        = nolostbr summonable spider
+}} {{disambig msg|the passive item|the transformation|Spider Baby (Transformation)}}
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr}} Spawns 1-2 friendly [[Blue Spider|Blue Spider(s)]] upon taking damage.
+** This has a 1500 ms cooldown.
+* {{dlc|r}} Spawns 2-5 friendly [[Blue Spider]]s upon taking damage.
+* {{transformation contribution|Spider Baby}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Widow}}.{{dlc-}}
+
+== Interactions ==
+* {{i|Hive Mind}}: Increases spider size and doubles damage.
+
+== In-game Footage ==
+{{#ev:youtube|fF07uVC71M8}}
+
+== Trivia ==
+* This item is used in {{chal|The Host}}.
+
+{{nav|spider|fr=Bébé Araignée}}
+[[Category:Damage-triggered items]]

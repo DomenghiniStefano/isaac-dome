@@ -1,0 +1,40 @@
+{{infobox boss
+ | dlc         = r
+ | name        = The Rainmaker
+ | id          = 902
+ | environment = <u>Boss</u><br>{{floor|Downpour}}<br>{{room|boss challenge}}
+ | base hp     = 240
+ | pool        = {{ip|Boss}} <br> {{dlc|r+}} {{i|Depression}} (1% chance)
+}}
+
+'''The Rainmaker''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in {{dlc|r}} {{s|Downpour}}.
+__TOC__
+
+== Behavior ==
+The Rainmaker floats slowly towards Isaac and performs the following attacks:
+* Creates two horizontal lines of 6 projectiles each on both sides of himself, then fires them towards Isaac at intervals starting from the far ends towards the center.
+* Creates a ring of 12 projectiles around himself, then fires them towards Isaac in short staggered intervals starting from 2 opposite ends of the ring.
+* Summons a large water projectile overhead, then pops it, unleashing a burst of projectiles in random directions.
+* Twirls around, following Isaac's movements while summoning projectiles around himself which hover briefly before being fired towards Isaac.
+** At the end of this attack, the Rainmaker releases 8 projectiles in a radial burst.
+The Rainmaker deals a whole heart of contact damage.
+
+== Notes ==
+* The Rainmaker can be immediately killed with {{I|Vade Retro}} if he is at 50% health or below.
+
+== Gallery ==
+<gallery>
+FIle:The Rainmaker Concept.png|Concept art for The Rainmaker.
+File:Boss The Rainmaker old portrait.png|The Rainmaker's old splash art in ''Antibirth''.
+</gallery>
+
+== Trivia ==
+* The Rainmaker's name is a reference to the traditional ritual of [[Wikipedia:Rainmaking|rainmaking]] which may involve "Rain Dances".
+* The Rainmaker was originally going to be omitted from Repentance, according to a [https://twitter.com/edmundmcmillen/status/1321662651055796224 Tweet from Edmund Mcmillen].
+** This tweet also confirms that the Rainmaker is both male and gay.
+* Defeating the Rainmaker stops the rain in the current room.
+
+{{nav|boss|fr=L'Espluie}}
+[[Category:Chapter 1.5 bosses]]
+[[Category:Downpour bosses]]
+[[Category:Debut bosses in Repentance]]

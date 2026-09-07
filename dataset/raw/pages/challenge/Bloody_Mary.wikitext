@@ -1,0 +1,118 @@
+{{infobox challenge
+ | dlc                = r
+ | number             = 37
+ | character          = Bethany
+ | name               = Bloody Mary
+ | has shops          = yes
+ | health             = {{hearts|red=4}}
+ | item               = {{i|The Book of Belial}}<br>{{i|Blood Bag}}<br>{{i|Anemic}}<br>{{i|Blood Oath|n}}
+ | trinket            = {{t|Child's Heart}}<br>
+ | pickup             = 4 [[Soul Heart|soul charges]]
+ | goal               = Satan
+ | unlocks            = Sigil of Baphomet
+ | unlocked by        = Bloody Mary
+}}
+'''Bloody Mary''' is [[challenge]] #37. {{c|Bethany}} is the starting character for this challenge, and she starts with {{i|Blood Bag}}, {{i|Blood Oath}}, {{i|Anemic}}, {{t|Child's Heart}}, and {{i|The Book of Belial}}. The goal is to defeat {{e|Satan}}. This challenge is unlocked by unlocking {{C|Bethany}}, {{i|Blood Bag}} and {{E|It Lives!}}.
+
+== Strategy ==
+At the start of each floor, {{I|Blood Oath}} sets Bethany's health to half a heart and grants increased damage and speed for each heart depleted. The key is to survive long enough to find hearts to refill her health so she won't die in one hit. As she starts with {{I|The Book of Belial}} and can charge up items with soul charges, it is possible to brute-force through most of the run with sheer damage alone much like {{C|Judas}}, especially during the early floors. However, this will not help against certain rooms that can almost guarantee being hit (such as obstacle rooms with spikes, or rooms with large amounts of {{E|Leaper}}s). The difficulty increases once Bethany progresses past {{s|Womb}}, as every hit will do a full heart of damage and can spell disaster if she is unable to gain at least two hearts consistently.
+
+Bethany is granted {{T|Child's Heart}} at the start of the run, and it is recommended to keep it instead of changing it for a different trinket, as heart drops will be significantly lower without it. It can be safely changed once Bethany is able to find a consistent source of healing. Though, it may be worth temporarily dropping it for the first floor to increase the chance of acquiring consumables.
+
+Be aware that Blood Oath triggers the effect of taking damage multiple times depending on your hearts. This has an effect on some items: {{I|Curse of the Tower}} will lead to spawning an enormous number of troll bombs on a floor start, while {{I|Fanny Pack}} will allow for massive amounts of drops with sufficient red health.
+
+{{R|Devil Room}}s and {{R|Angel Room}}s can be hard to come by, as Bethany is unable to use {{e|Soul Heart}}s or {{e|Black Heart}}s to protect herself, and any damage taken will either reduce the chance of these rooms significantly, or kill her outright due to Blood Oath's effect. As a result, these rooms will usually only spawn if Bethany takes absolutely no enemy damage at all during a floor, which is already a challenge. Both rooms have their own ups and downs:
+
+* Devil Rooms grant early offensive ability by exchanging heart containers that will usually be empty anyway. However, this prevents Bethany from gaining defensive items from Angel Rooms for the rest of the run.
+* Angel Rooms have many defensive-focused items that are very useful for such a high-risk run. However, this requires Bethany to survive two entire floors without being damaged (and denying a previous Devil Deal), which is extremely difficult; additionally, she may have to deny some powerful tears/damage up items from earlier Devil Rooms.
+
+Should Bethany have spare full heart containers or heart drops, there are a few options:
+
+* If a {{R|Sacrifice Room}} spawns on the floor, it is recommended to spend all but one heart there for the chance to get rewards. This maximizes the use of her red health, and also allows Blood Oath to weakly trigger on the next floor since it requires her to have at least one red heart. With sufficient heart drops, this can also be done before the boss fight to force an Angel Room to spawn instead.
+* Travel to the next floor and deplete as many hearts as possible to gain as high of a damage boost as Bethany can. This is risky, but makes it easier to clear a floor.
+* Empty {{e|Bone Heart}}s can protect Bethany from losing Devil/Angel Rooms for one hit. However, if Bethany starts a new floor with a Bone Heart, all red hearts will be taken by Blood Oath.
+
+Another good tactic is to constantly restart the first few floors till Bethany can find certain items:
+
+* {{I|Fanny Pack}} from a {{R|Shop}}.
+* A good item from a {{R|Curse Room}} or {{R|Secret Room}}.
+* {{I|Book of Shadows}} from a {{R|Library}}.
+* {{I|Old Bandage}} from a boss room.
+* {{I|Placenta}} from a boss room.
+* {{T|Counterfeit Penny}}, a handful of coins, and a {{M|Shell Game}}. With enough patience and luck, Bethany can turn a few coins into almost endless pickups, which can then be used to purchase items from shops.
+
+These items can give Bethany a huge head start for the run if time isn't an issue.
+
+Even though Bethany cannot use soul hearts as health, it is still a good strategy to hoard them whenever you have the chance. In Repentance, {{I|The Book of Belial}} effect now stacks an infinite amount of times (albeit with diminishing returns) so having a good stash of soul hearts during difficult encounters can make most fights trivial.
+
+Note that {{T|Stem Cell}} will not heal the damage dealt by {{I|Blood Oath}} as its healing effect is applied beforehand.
+
+== Good Items ==
+=== Defense ===
+* Any item that can be charged with Bethany's soul charges to grant red health. Consistent examples include {{I|Yum Heart}} (may be dropped by {{E|Super Lust}}), while luck-based examples include {{I|Deck of Cards}} (for {{P|VI - The Lovers}} or {{P|XIX - The Sun}}) or {{I|Mom's Bottle of Pills}} (for [[Full Health]] pills). If obtained, the {{I|Prayer Card}} can quickly allow Bethany to obtain a full rack of hearts if used with soul charges or at the end of a floor, though this value diminishes drastically once Bethany has 12 health containers and does not intend on spending them for devil deal items.
+* Cards and pills that give health and/or invincibility, such as {{P|XIX - The Sun}} and [[Power Pill]]. [[Bad Trip]] pills will turn into Full Health pills once Bethany is at one heart (which is usually the case). Keep any one of these for emergency use.
+* Any item that grants flight, such as {{I|Dead Dove}}, grants protection against accidental deaths from spikes and lets Bethany hover over objects to safely deal damage.
+* Any item that gives defense (eg.{{I|Trinity Shield}} or {{I|The Soul}}), slowdown (eg. {{I|Censer}} or{{I|Stop Watch}}), or orbitals (eg.{{I|Cube of Meat}}) will make it easier to avoid damage.
+* Any item that grants bone hearts will act like pseudo-soul hearts, protecting Bethany's chance of spawning an Angel/Devil Room. However, Blood Oath will still cause her to die in one hit if she only has one bone heart, as it will deplete all of Bethany's red health and leave her with an empty bone heart.
+* Any item or trinket that has a chance to spawn health resources upon taking damage such as {{I|Old Bandage}}, {{I|Bozo}}, or {{t|Finger Bone}} will have a chance to activate multiple times from Blood Oath at the beginning of each floor.
+* {{I|Blank Card}}/{{I|Placebo}}: Can reuse powerful healing cards and pills.
+* {{I|Book of Shadows}}: Can be activated to avoid being stabbed by Blood Oath. This does not trigger Blood Oath, so no damage and speed bonuses are received. This can also be used to protect yourself in dangerous early rooms if you haven't obtained any red heart drops after the stab.
+* {{I|Book of Virtues}}: Can be found in a {{R|Library}}. As Bethany starts with the Book of Belial, this allows her to start generating a protective circle of wisps just like her normal self.
+* {{I|Dark Arts}}: Can be used to dodge Blood Oath each floor.
+* {{I|Charm of the Vampire}}: Provides a reliable source of health regeneration via killing enemies.
+* {{I|Fanny Pack}}: Every half heart gives a 50% chance of dropping a pickup, including red hearts. This allows Bethany to make use of red health that would immediately be removed in the first room anyway and potentially heal up some health.
+* {{i|Gimpy}}: Monsters may drop half a red heart on death, and soul hearts will be dropped if Bethany is healed and can take a hit. Soul hearts can be used to charge her active item.
+* {{i|Guppy's Collar}}: Gives a set 50% chance to revive on death.
+* {{I|Glyph of Balance}}: Champion enemies' drops and room drops are modified. By clearing rooms, Bethany will only find red hearts (or rotten hearts) until she's fully healed. [[Pickup]]s generated together with the room will not be replaced, though.
+* {{I|Heartbreak}}: Allows Bethany to take fatal damage till her hearts are replaced with broken hearts, while also granting a stat boost. This may stack up tremendously and kill her in the end.
+* {{I|Holy Mantle}} / {{T|Wooden Cross}}: Can now take a hit until finding red hearts.
+* {{I|The Jar}}: Allows for collection of spare hearts to be used on the next floor.
+* {{I|Little C.H.A.D.}}: Grants half heart drops for every 3 rooms cleared.
+* {{T|Myosotis}}: Can bring your red hearts to the next floor if you have spare ones lying on the ground.
+* {{I|Orphan Socks}}: Makes Bethany immune to creep and spikes, which eliminates any accidental environmental deaths. Also grants a speed up and a few soul charges.
+* {{I|Placenta}}: In theory, Bethany can simply stand in the starting room and recover all lost health, though this will take a significant amount of time.
+* {{I|Piggy Bank}}: Generates a large amount of coin drops every time Blood Oath is triggered.
+* {{I|Restock}}: As Treasure Rooms do not spawn in this challenge, this improves the effectiveness of shops. Bethany can purchase a large variety of items so long as she has sufficient coins and a way to gain them (such as Piggy Bank).
+* {{I|Smelter}} / {{I|Belly Button}} / {{I|Mom's Purse}}: Allows Bethany to keep Child's Heart and use other trinkets.
+* {{i|The Wafer}} / {{i|Cancer}} / [[Percs]]: Can prove invaluable once in the Womb thanks to increasing her survivability.
+
+=== Offense ===
+* Any active item that requires only one charge to use (such as {{I|Guppy's Head}}), as Bethany can eventually spam said item for a powerful offense boost.
+* {{I|Immaculate Conception}}: Picking up red hearts (which there usually will be a lot of while Bethany is holding Child's Heart) will generate permanent familiars.
+* {{I|Cambion Conception}}: Blood Oath will count as taking damage, allowing her to expend her hearts each floor and generate permanent familiars.
+* {{I|Adrenaline}}: Grants a huge damage boost if Bethany has a lot of heart containers and is stabbed by Blood Oath.
+* {{I|Bloody Lust}} / {{I|Bloody Gust}}: Blood Oath will typically max these effects out at the start of each floor.
+* {{I|Dark Prince's Crown}} / {{I|Whore of Babylon}}: Grants a large stat boost if Bethany is at half a heart, which she usually is.
+* {{I|Potato Peeler}}: Allows Bethany to create multiple meat cubes/meat boys if she has spare heart containers that she is unable to fill up, or has already taken too many hits to spawn a Devil Room.
+* {{I|Candy Heart}}: Each red heart that is picked up increases Bethany's stats.
+* {{I|Vengeful Spirit}}: Provides one invincible wisp per half heart lost to Blood Oath, maxing out at 6.
+* {{I|Rock Bottom}}: Allows Bethany to keep highest damage acquired with multiple usages of Book of Belial combined with boost from Blood Oath and focus on Defense items.
+
+== Bad items ==
+* {{I|Abaddon}}: Removes all but one heart container and leaves Bethany at half a heart in exchange for an offense boost. This prevents Blood Oath from triggering if she is unable to heal up to a full heart, and makes floors past The Womb kill Bethany in one hit if she cannot obtain new heart containers.
+* {{I|Converter}}: Completely unusable for Bethany.
+* {{I|Curse of the Tower}}: Blood Oath will trigger a flood of troll bombs for each half heart removed, which will result in almost certain death.
+* {{I|Dark Bum}}: Will snatch up red heart drops. As Bethany cannot use soul or black hearts, this item is extremely detrimental.
+* {{I|Guppy's Paw}}: Removes a heart container for 6 soul charges, which is usually not beneficial.
+* {{i|Razor Blade}}: Has questionable use as it is essentially a Book of Belial that requires red health as charges. It is recommended to ignore this item.
+* {{I|Mitre}}: Not recommended as it has a high chance of converting red heart drops into soul hearts, making it far more difficult to obtain health.
+* {{I|Satanic Bible}}: Grants only a soul charge, and replaces potential health/healing items with Devil Deal items, which require expending a heart container.
+
+== Neutral Items ==
+* Any boss items that grants healing/a heart container but nothing else, such as {{I|Black Lotus}} or {{I|A Snack}}. Bethany gains a larger damage/speed boost if she has as many full hearts as possible, but if she is unable to refill those hearts anyway, they are useless apart from Devil Deals.
+* Any items that changes Bethany's tears to explosive ones ({{I|Dr. Fetus}}, {{I|Epic Fetus}}, {{I|Ipecac}}) makes her even more powerful, but significantly increases the risk of hitting Bethany and ending the run.
+* {{T|Apple of Sodom}}: At full health, changes any leftover red heart drops into blue flies if walked over. However, this can also trigger when Bethany isn't at full health, wasting the heart. It is recommended to drop the trinket each time Bethany needs to heal up.
+* {{I|Blood Puppy}}: The familiar drops red hearts for every 10 enemies killed while raging. Not recommended if Bethany does not have sufficient damage to deal with it afterwards.
+* {{I|Chaos}}: Can be found in shops and will help with finding items you otherwise usually would not, including powerful healing-focused items that only spawn in treasure rooms (IE: {{I|Yum Heart}}, {{I|Maggy's Bow}}), but also increases the amount of junk items that may appear since it pulls items from completely random pools.
+* {{I|Damocles}}: Extremely high risk, as it doubles the amount of item pedestals Bethany can find through the run, but adds yet another risk of dying at any moment. It is only recommended to take Damocles if the player is extremely confident about not getting hit, or rushes through the run before the sword has a chance of falling. Note that Damocles falling chance is not affected by Blood Oath's stab.
+* {{I|Dead Cat}}: Gives extra lives, granting a safety net if Bethany dies; however, this sets her at one heart every time she does, which will cause her to die on one hit in later floors (eg. The Womb).
+* {{i|Glowing Hourglass}}: Can be used to reverse rooms if Bethany takes any unintentional red heart damage, or enters a dead end room. This item loses a lot of effectiveness if Bethany cannot find any sources of healing, as any hit will kill her anyway and not allow her to reverse rooms. This item pairs best with {{I|Holy Mantle}} (or {{T|Wooden Cross}} supposing Bethany gulped Child's Heart or accept finding less hearts overall) as Bethany can undo breaking the mantle, guaranteeing a safer run.
+* {{i|Gnawed Leaf}}: Standing still when spawning in a new floor will negate the stab damage of Blood Oath. This does not trigger Blood Oath, so no damage and speed bonuses are received, however.
+* {{I|Shard of Glass}}: Acts similarly to Old Bandage and can spawn hearts after Blood Oath's stab. The bleed effect is more risky without the ability to gain soul hearts, however.
+* {{t|Missing Poster}}: After death, Bethany revives as {{C|The Lost}}. Transformation makes Blood Oath useless, so both risk and rewards are removed from the rest of the challenge, making it a standard run as The Lost.
+* {{T|Panic Button}}: Useful if Bethany has an activated item that grants protection (eg. {{I|Book of Shadows}}), as it will trigger before she takes damage. Otherwise, Child's Heart is more useful to hold onto.
+
+== Reward ==
+{{achievement text | Sigil of Baphomet }}
+
+{{nav|challenge|lazarus unlock|moms heart unlock|it lives unlock|fr=Sang pour Sang}}

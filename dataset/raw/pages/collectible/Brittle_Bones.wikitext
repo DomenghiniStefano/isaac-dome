@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 549
+ | quote       = Everything hurts
+ | description = Replaces all {{E|Red Heart|text=Red Heart Containers}} with 6 empty {{E|Bone Heart|n}}s. {{dlc|nr}} Upon losing a Bone Heart, Isaac fires bones in 8 directions and permanently gains a [[tears]] up. {{dlc|r}} Upon losing a Bone Heart, Isaac fires bones in 8 directions and permanently gains a [[fire rate]] up.
+ | quality     = 3
+ | unlocked by = Brittle Bones
+ | tags        = {{dlcalt|nolostbr|r+=offensive tearsup}}
+}}
+{{distinguish visual|Compound Fracture}}
+
+{{cit|up|a+5}}
+
+== Effects ==
+* Grants 6 empty {{e|Bone Heart}}s.
+* Removes all current {{E|Red Heart|text=Red Heart Containers}}. Does not remove existing Bone Hearts, but does empty them.
+* Upon losing a Bone Heart, including ones acquired from other sources, Isaac fires a ring of 8 bones that split into more bones.
+** {{dlc|nr}} Each Bone Heart lost adds a permanent +0.5 [[tears]] up.
+** {{dlc|r}} Each Bone Heart lost adds a permanent +0.4 [[fire rate]], which can break the tear fire rate cap.
+** Each bone does twice Isaac's damage plus a flat 22 damage; split bones do half this amount.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Frail}}.{{dlc-}}
+* If Brittle Bones is removed from Isaac's inventory, its tear upgrades will not be removed but losing further Bone Hearts will no longer have an effect.
+* Picking this item up as a character unable to gain Bone Hearts will grant the stats equivalent to one Bone Heart breaking.
+** {{c|Keeper}} {{dlc+|r}}(and {{c|Tainted Keeper}}){{dlc-}} will also gain 24 [[Blue Fly|Blue Flies]].
+* {{dlc+|r}} The tears up bonuses gained through this item will persist in the escape sequence of {{s|Mines}} II.{{dlc-}}
+* {{dlc|r}} Losing Bone Hearts not from taking damage (e. g. through a [[Devil Room (Item Pool)|Devil Deal]] or if a Bone Heart is replaced with a [[Broken Heart]]) will not give the tears up effect.
+
+== Synergies ==
+* {{i|Empty Vessel}}: The empty Bone Hearts will trigger Empty Vessel's effects.
+* {{p|XIX - The Sun?}}: Using the card before picking up Brittle Bones allows Isaac to keep the [[heart container]]s since they will be temporarily converted to {{e|Bone Heart}}s.
+
+== Interactions ==
+* {{i|Genesis}}: Removes the tear upgrades upon use.
+* {{t|Found Soul}}: The soul does not benefit from the tears up granted to Isaac. However, it will receive a fire rate increase if it somehow receives Bone Hearts and breaks them.
+
+== In-game Footage ==
+{{#ev:youtube|zI29U1hl1Fc}}
+
+== Gallery ==
+<gallery>
+File:AfterbirthPlus Booster Pack 5 Concepts.jpg|Concept art for Brittle Bones on the left side, along with other Booster Pack items and trinkets, by Edmund McMillen.
+</gallery>
+
+== Trivia ==
+* "Everything hurts" may be a reference to an achievement of the same name from the video game [[wikipedia:Nuclear Throne|Nuclear Throne]].
+
+{{nav|the forgotten unlock|booster pack|bone|the lamb unlock|fr=Os de Verre}}
+[[Category:Damage-triggered items]]

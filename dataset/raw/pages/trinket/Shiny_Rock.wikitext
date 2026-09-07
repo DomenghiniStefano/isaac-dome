@@ -1,0 +1,19 @@
+{{infobox trinket
+ | dlc         = a
+ | name        = Shiny Rock
+ | id          = 62
+ | quote       = It shines for its brothers
+ | description = [[Tinted rock]]s and rocks with {{r|Crawl Space}}s underneath flash white upon entering the room and every 10 seconds afterward.
+}}
+{{cit|t|a}}
+
+== Effects ==
+* [[Tinted rock]]s and rocks with {{r|Crawl Space}}s underneath flash white upon entering the room and every 10 seconds afterward.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either also makes {{r|Secret Room}} doors flash. Having both makes the gleam appears twice as often.
+
+== In-game Footage ==
+{{#ev:youtube|guGpM9LPC6k}}
+
+{{nav|fr=Caillou Étincelant}}

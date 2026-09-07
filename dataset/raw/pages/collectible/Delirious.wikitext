@@ -1,0 +1,58 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 510
+ | costume     = Collectible_Delirious_appearance.png
+ | quote       = Unleash the power!
+ | description = Spawns {{E|Delirium|n}} as a random [[friendly]] [[boss]] that fights for Isaac. {{dlc|nr+}} The boss lasts the for the current room. {{dlc|r+}} The boss persists between rooms. The charge time is based on the power of the boss summoned.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = 12
+ | unlocked by = Delirious
+}}
+
+{{cit|ua|a+}}
+
+== Effect ==
+* Upon use, spawns {{E|Delirium}} in a form of a [[friendly]] [[boss]].
+** {{dlc|nr+}} The boss lasts for the current room, or until killed.
+** {{dlc|r+}} The boss persists between rooms until killed. Using the item again will kill the current summoned boss if it is still alive. Any friendly monsters spawned by the previous boss will also be killed. Their health will deteriorate steadily and their color will slowly turn more gray until they reach 1 health.
+*** If used on a boss that has a phase change which requires the boss to die, the boss will still persist in its new phase (i.e. {{e|The Frail}} or {{e|Fistula}}). (This may be a bug as some bosses, such as {{e|Blastocyst}}, are unaffected)
+* Changes the appearance of the current room so it looks like a different [[chapter]].
+
+== Notes ==
+* {{dlc|r+}} {{e|Hush}} has an extremely low chance of spawning.
+* {{dlc|nr+}} Sometimes bosses don't spawn because of grid entities getting in the way. When this happens, the upper door appears to have friendly particles.
+* {{dlc|nr}} Unlike {{i|Mega Blast}}, this item can be charged with a single {{E|Lil' Battery}}.
+** {{E|Lil' Battery|r}} gives 6 charges.
+* Delirious has a 60% decreased item pool weight, making it less likely to appear than other collectibles.
+* Using Delirious in the {{e|Delirium}} fight is ill-advised, as it can be confusing which Delirium is the right one to attack.
+* Some bosses leave fires on the ground, such as the orange champion {{E|Little Horn}}, which can still hurt Isaac.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Generates a white wisp that resembles one random boss from this list:
+** {{e|Monstro}}: Fires an inaccurate spray of 6-10 tears, similar to {{I|Lil Monstro}} but without the charge time.
+** {{e|The Duke of Flies}}: Creates [[Blue Flies]] instead of firing tears. Each wisp can have a maximum of 3 flies at a time.
+** {{e|Loki}}: Fires four tears that alternate between cardinal and ordinal directions.
+** {{e|The Haunt}}: Fires {{I|Brimstone}} lasers. The laser does not need to be charged to be fired, and can tick up to 8 times for a total of 8 damage.}}
+
+== Interactions ==
+* {{i|Blood Puppy}}: Either angry version of Blood Puppy will target friendly bosses as well and can drag them along with it when it charges them. Blood Puppy cannot damage friendly bosses; however, friendly bosses can damage Blood Puppy despite not targeting it outright.
+* {{i|Broken Modem}}: Broken Modem also affects friendly bosses and projectiles created by them.
+* {{i|Eraser}}: The thrown Eraser can’t hit friendly bosses; however, if it erases their hostile variant, they too are erased. If Delirious attempts to spawn an erased boss, it will fail to do so, wasting a use.
+* {{dlc+|r}} {{I|Ghost Bombs}} / {{i|Hungry Soul}} / {{I|Purgatory}} / {{i|Vade Retro}}: Explosions from ghosts can harm friendly bosses.{{dlc-}}
+* {{t|Tick}}: [[Friendly]] bosses start with less health if they have over 60HP.
+
+== In-game Footage ==
+{{#ev:youtube|nmM0_7zx95g}}
+
+== Trivia ==
+* This item was most likely intended to be the "ultimate item" of ''Afterbirth †'', similar to {{i|Mega Blast}} of the ''Afterbirth'' DLC.
+
+== Bugs ==
+{{bug|dlc=nr|If {{e|Lokii}} is spawned by the item, one will have the Delirium skin and the other will have the normal Lokii skin.}}
+{{bug|dlc=nr+|If [[Polycephalus#Champion Versions|Pink Champion]] {{e|Polycephalus}} / [[The Cage#Champion Versions|Pink Champion]] {{e|The Cage}} is spawned by the item, one will have the Delirium skin and the other will have the normal skin.}}
+{{bug|dlc=nr|Using Delirious can sometimes spawn a boss without its Delirium skin.}}
+{{Bug|dlc=r|If a {{e|Mega Fatty}} is spawned by the item during {{e|The Beast|n}} fight, when the Mega Fatty inhales, it will move the sprites of the bosses in the background.}}
+{{Bug|dlc=r+|Friendly {{e|Blue Gaper}}s spawned by {{e|Hush}} may rarely get stuck in their spawn fade-in state, unable to either take or deal damage, and follow enemies or Isaac around endlessly.}}
+
+{{nav|delirium unlock|fr=Délire}}

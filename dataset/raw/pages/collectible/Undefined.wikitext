@@ -1,0 +1,54 @@
+{{infobox activated collectible
+ | name = Undefined
+ | id = 324
+ | quote = Undefined
+ | description = Teleports Isaac to the {{R|Secret Room}}, {{R|Super Secret Room}}, {{R|Treasure Room}}, or {{R|I AM ERROR}}.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge = 6
+ | unlocked by = Undefined
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* Teleports Isaac to the {{R|Treasure Room}}, the {{R|Secret Room}}, the {{R|Super Secret Room}} or {{r|I AM ERROR}}. There is also a 1% chance of teleporting into a {{R|Black Market}}.
+** The chances for each main destination are equal.
+
+== Notes ==
+* The choice is made between individual rooms, not by room type, so having multiples of a given room makes the total chance of landing in one of them higher.
+** Treasure Rooms under {{cu|Labyrinth}}.
+** {{dlc|a+}}Secret Rooms with {{t|Fragmented Card|n}}.
+** {{dlc|r}}Secret and Super Secret Rooms with {{i|Luna|n}}.
+** {{dlc|r}}Red Rooms of valid types created by {{i|Red Key|n}}.
+
+== Strategies ==
+* The {{R|I AM ERROR}} room in {{s|Cathedral}} and {{s|Sheol}} will have a beam of light/trap door leading to the next floor, even if Isaac doesn't have {{i|The Polaroid}} or {{i|The Negative}}.
+* {{dlc|na}} {{s|Chest}} and {{s|Dark Room}} are reset on exiting the I AM ERROR room, which can be done repeatedly as long as the player can gather enough charges to successfully warp to it. This can provide a ridiculous number of items from the golden chests in {{s|Chest}}.
+** This makes it possible to kill {{E|???}} or {{E|The Lamb}} multiple times. If Isaac has an item that resurrects him as a different [[Characters|character]], multiple [[achievements]] and items can be unlocked in a single run.
+** {{s|The Void}} is also reset and can be cleared repeatedly.
+* {{dlc+|r}} As no Secret Rooms or Super Secret Rooms spawn on any floor during the [[Ascent]], this item will only warp Isaac to either the Treasure Room or the I AM ERROR room. This can be a reliable method of gaining many items on the way up to {{s|Home}}, while also allowing the player to skip potentially difficult encounters.{{dlc-}}
+* {{dlc+|r}} Has no effect when used in {{s|Home}}.{{dlc-}}
+* {{dlc|nr}} Using Undefined on {{s|???}} always sends the player to the I AM ERROR room. The Error room will always contain a trap door, not a lightbeam, so it will always send the player to Sheol.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Creates blue glitched wisps on the middle ring. Wisps fire tears with {{i|Playdough Cookie}} effects.}}
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|v-u7J2_SXBI}}
+
+== Trivia ==
+* The item is a reference to a bug in the original ''The Binding of Isaac'', where exhausting an [[Item Pool]] (or rarely simply by chance) would cause an item to spawn whose name and description was listed as "Undefined", and whose sprite would rapidly cycle through the sprites of every other item in the game. Undefined by itself creates no effect, but if it was ever picked up, should the game attempt to spawn an item from an exhausted item pool, the game instead crashed, as it could no longer spawn Undefined. From ''Rebirth'' onwards, an exhausted item pool will instead spawn {{I|Breakfast}}, even if the item would normally never spawn from that item pool and/or Breakfast had already been obtained in the run.
+* In programming "Undefined" refers to an unknown value.
+* Given the Glitch theme of the item and the ability to access [[Chapters]] that have not yet been unlocked using {{R|I AM ERROR}}, along with the ability to acquire mass upgrades in The Chest and The Dark Room, it is possible that it was intentionally made into a powerful sequence-breaking item.
+* The sprite for Undefined appears to be, fittingly, a glitched and spliced version of other item sprites, with the bottom right part noticeably being the {{I|The Compass}}, the bottom left being the {{I|Blood Bag}}, and the top half being {{I|Contract From Below}}.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Undefined.png|{{plat|3DS}} The icon of Undefined as seen on the lower 3DS screen
+</gallery>
+
+{{nav|glitch|eden unlock|boss rush unlock|fr=Erreur}}

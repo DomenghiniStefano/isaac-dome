@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | id          = 129
+ | quote       = HP up
+ | description = {{dlc+|nr}} Grants two empty [[Red Heart container]]s, heals Isaac for a {{E|Half Red Heart}}, -0.2 [[speed]].{{dlc-}}<br>{{dlc+|r}} Grants two [[Red Heart container]]s, -0.2 [[speed]].{{dlc-}}
+ | quality     = 1
+ | tags        = nolostbr
+ | pool        = Gluttony, Super Gluttony
+}}
+
+''Not to be confused with {{i|Thunder Thighs}}.''
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr}} Adds 2 empty [[Red Heart container]]s.
+* {{Dlc|r}} Adds 2 full [[Red Heart container]]s.
+* -0.2 [[speed]].
+* {{dlc|nr}} Heals for a {{E|Half Red Heart}}.
+
+== Notes ==
+* This item can drop from killing {{E|Super Gluttony}}. 
+** {{dlc|nr}} Super Gluttony can drop this item even if Isaac has already encountered/possessed it.
+
+== In-game Footage ==
+{{#ev:youtube|zYhWDueWiPc||inline}} {{#ev:youtube|_Gon7hMyEG8||inline}}
+
+== Trivia ==
+* This item is used in {{chal|The Tank}}.
+* {{dlc+|r}} The costume given by this item is identical to {{i|Binge Eater}} and {{i|Belly Jelly}}.{{dlc-}}
+
+{{nav|fr=Seau de Saindoux}}

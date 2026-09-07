@@ -1,0 +1,114 @@
+{{header characters}}
+{{infobox character
+ | image name   = * {{dlc|nr|Rebirth}}
+ | id           = 7
+ | health       = {{hearts|black=3}}
+ | damage       = 3.5 (*1.50)
+ | tears        = +0.5; x0.267
+ | range        = {{dlcalt|17.75|r=4.5}}
+ | speed        = 1.25
+ | pickups      = {{p|0 - The Fool}}
+ | collectibles = Short range {{i|Brimstone}}<br>[[Flight]]
+ | unlocked by  = Azazel
+}}
+'''Azazel''' is a [[character]] unlocked by making three {{R|Devil Room}} deals in one run. He starts with 3 {{E|Black Heart}}s, {{p|0 - The Fool}}, [[flight]], and a short-ranged version of {{i|Brimstone}} that deals damage {{dlcalt|13|r=9}} times in one second.
+
+Despite starting with no [[Red Heart container]]s, Azazel is capable of gaining them.
+
+== Notes ==
+* Azazel suffers from a very short range, in return for better mobility through flight and high speed, high-power bursts of damage with his Brimstone-like attack, and a room clear upon the loss of a {{E|Black Heart}}.
+* Azazel's flight is a very powerful asset, allowing him to accomplish many tasks and save resources:
+** Due to his flight, Azazel takes damage only when leaving a {{R|Curse Room}}. He can also use his starting card, {{p|0 - The Fool}}, to avoid the cost for one room entirely.
+** Flight allows him to reach [[pickups]] across obstacles and gaps.
+** Flight helps in avoiding enemies in general.
+* Azazel's mini-Brimstone's charge is kept across rooms, saving precious charging time.
+* {{dlc+|r}} If Azazel dies in [[Repentance Co-Op|co-op]], his ghost will also fire a short Brimstone.{{dlc-}}
+
+== Item Interactions ==
+* {{i|Birthright}}: Azazel's Brimstone beam doubles in width, equal to the width of {{i|Mega Blast}}. No effect on damage.
+* {{i|Dead Eye|r}}: Damage can be gained if Azazel fires tears via items like {{i|Lead Pencil}} or {{i|Isaac's Tears}}.
+* {{i|Ipecac|r}}: The tear delay remains unchanged, and the end of the beam is explosive. No tear is fired.
+* {{i|Jacob's Ladder|r}}: The Brimstone is electrified and sparks can connect with enemies.
+* {{i|Lead Pencil|r}}: Azazel will fire a low-range Monstro's Lung-like barrage of 12 tears occasionally.
+* {{dlc|a}}{{i|Mysterious Liquid}}: Creep will spawn at the edge of the laser.
+* {{i|Technology Zero}}: Has no effect.
+
+* The following items override Azazel's short-ranged Brimstone:
+** {{i|Dr. Fetus}}
+** {{i|Epic Fetus}}
+** {{i|Haemolacria}}
+** {{i|Mom's Knife}}
+** {{i|Spirit Sword}}
+
+=== Good Items ===
+* {{i|20/20|a}}: Doubles lasers without increasing tear delay.
+* {{i|Abaddon}}: Aside from the lack of Angel Rooms, it provides no downside. As it costs 3 Soul Hearts, it will add 3 Black Hearts to his health bar, increase damage and speed, and give his Brimstone laser a fear effect.
+** {{dlc|r}} This is no longer the case, as the amount of Black Hearts given by Abaddon is now based on the amount of Red Hearts it removes.
+* {{i|Brimstone}}: Gives Azazel the long-range version. It also increases fire rate since Brimstone's fire rate multiplier is ×1/3 and Azazel's is ×0.267.
+* {{i|Chocolate Milk}}: {{dlcalt|Reduces charge time|r=His Brimstone laser takes longer to be fully charged but can be released anytime. Width and damage of the laser increases at higher charges. Width scales from 50% at minimum charge to 160% at maximum charge. damage scales from 25% at minimum charge to 250% at maximum charge. Unlike with normal tears, the tears stat does not directly affect maximum or minimum damage}}.
+* {{i|Circle of Protection}}: The circle is nearly the same size as Azazel's laser, adding extra damage.
+* {{I|Continuum|r}}: The range of Azazel's short Brimstone is increased and wraps around the screen, though without other significant range boosts, it doesn't wrap far enough to reach into the room.
+* {{I|Cricket's Body|r}}: Adds a scatter of blood tears from Azazel's Brimstone's landing point.
+* {{i|Eye of the Occult}}: Azazel's Brimstone becomes a lasso, auto-fired at a controllable target. Press Fire to start and Drop to stop.
+* {{i|Marked|dlc=r}}: Azazel's Brimstone is auto-fired in the direction of a controllable target. Press Fire to start and Drop to stop.
+* {{i|Hemoptysis}}: Enemies hit by the sneeze will gain a curse that increases the damage Azazel's beam deals to 2× and +3 flat damage. Enemies who die to his beam under the curse will explode, dealing damage and spreading the curse to nearby enemies.
+* {{i|The Inner Eye}} / {{i|Mutant Spider}}: Shoots multiple mini-Brimstone lasers with a massively increased tear delay.
+* {{i|The Ludovico Technique}}: Gives a Brimstone ring (whether Azazel has the short or long-ranged version of it) giving him the ability to damage many enemies at a time due to its size, and negates Azazel's short range, however, it halves Azazel's damage.
+* {{i|Mom's Eye}}: Allows Azazel to shoot two beams, one of which is shot behind him.
+* {{i|Monstro's Lung|a}}: Gives several additional Brimstone beams around Azazel.
+* {{i|My Reflection}}: Greatly increases the range of Azazel's mini-Brimstone.
+** {{dlc|anr}} Greatly increases the Brimstone laser's range and makes the laser curve as Azazel moves around the room.
+** {{dlc|r}} Greatly increases the Brimstone laser's range and makes the laser double back on itself to land behind Azazel.
+* {{i|Number One}}: Slightly decreases Azazel's range but significantly decreases the charge time of Azazel's Brimstone. It also turns Azazel's laser yellow.
+* {{i|The Parasite|r}}: Creates 2 short lasers upon hitting the first enemy, or a wall. The derivative lasers follow the same movement of regular parasite shots.
+* {{i|Proptosis}}: Doubles the Brimstone laser's damage without any downsides.
+** {{dlc|a}} The beam will decrease in damage the further it travels, but Proptosis still greatly increases damage at close range.
+*** {{dlc|r}} Due to an oversight, Proptosis deals way more damage than it should with lasers. At long range, it deals ×6 damage, and at close range, it can deal up to ×7.5. Base Azazel + Proptosis can deal over 350 damage in one beam, which can kill {{e|Chub}} in one laser.
+* {{i|Rubber Cement|a}}: Allows Azazel's laser to bounce off of walls. Unlike Azazel's normal mini-Brimstone, beams that bounce off walls have infinite range but deal only half of their damage.
+** {{dlc|r}} The beam will no longer turn into regular {{i|Brimstone}} upon bouncing off a wall. It will instead turn into his mini-Brimstone.
+* {{i|Sad Bombs}}: Shoots 10 short-ranged Brimstone beams around the explosion point, which deals enormous amounts of damage.
+* {{i|Tammy's Head}}: Shoots 10 short-ranged Brimstone beams around him, which deal enormous amounts of damage.
+* {{t|Tape Worm}}: Greatly increases the Brimstone laser's range.
+* {{i|Technology|a}}: Works like it does with normal Brimstone, changing the visual effect and granting the +50% damage multiplier.
+* {{i|Technology 2}}: Provides a laser while Brimstone is charging, allowing the player to do damage while the charge occurs. However, {{dlcalt|this also decreases the damage and tear rate of Azazel's Brimstone|r=this also decreases the tear rate of Azazel's Brimstone}}.
+* {{i|Tech X|r}}: Makes Azazel fire a ring-shaped Brimstone beam but decrease his damage a bit.
+* {{i|Tiny Planet}}: Changes the path of Azazel's Brimstone into a circle, giving it an area of effect. The range increase becomes especially powerful if you add a homing tears effect.
+* {{i|Varicose Veins|dlc=a+}}: Causes a short Brimstone explosion around the player upon getting damaged.
+* {{i|C Section}}: Fires 4 fetuses on top of his Brimstone.
+
+=== Bad Items ===
+* {{i|The Wiz}}: While useful in some situations, enemies such as The Thing or other Creeps will be dangerous.
+* Items that respawn Azazel as a different character, including {{i|Ankh}}, {{i|Lazarus' Rags}}, and {{i|Judas' Shadow}} will remove the ability to fly and the Brimstone laser.
+* Items that break Rocks, like {{i|Leo}} or {{i|Thunder Thighs}}, nullify part of the advantage Azazel gains from flight, as he will no longer be able to hover over rocks to avoid enemy projectiles.
+* Items that give flight will have no real effect, since Azazel has a built-in ability to fly.
+* {{i|Kidney Stone|dlc=nr}}: Only reduces Azazel's speed and shortens Brimstone's range.
+
+* The following items have their effect nullified with Azazel's short-ranged Brimstone:
+** {{i|Cursed Eye}}
+** {{i|Compound Fracture}}
+** {{i|Cupid's Arrow}}
+** {{i|Ouija Board}}
+** {{t|Pulse Worm}}
+** {{i|Pupula Duplex}}
+** {{dlc|nr}} {{i|Strange Attractor}} (Until {{i|Anti-Gravity}} is picked up)
+** {{i|Trisagion}}
+** {{i|Tropicamide}}
+** {{i|Neptunus}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Nail, Begotten Baby, Daemon's Tail, Satanic Bible, Demon Baby, Abaddon, Lilith, Bat Wing, Maw of the Void, Black Baby, Dark Prince's Crown, Devil's Crown, Lil Abaddon, The Benighted, Sucky Baby }}
+
+== Gallery ==
+<gallery>
+File:Transition Azazel.png|Azazel's transition screen portrait.
+File:Start_Azazel.png|The spawn floor when playing Azazel.
+File:Azazel_Menu_Icon_(Locked).png|Azazel's locked character icon.
+</gallery>
+
+== Trivia ==
+* In the Bible, Azazel is the name given to the goat that was cast into the wild as part of Jewish atonement rituals. However, in certain traditions of Abrahamic religions, Azazel refers to the fallen angel who taught people to make weapons and jewelry and taught women the "sinful art" of painting their faces, as mentioned in the apocryphal Book of Enoch. Azazel is referenced three times in the Bible; this may be why he spawns with three {{E|Black Heart}}s.
+* Like all characters that start with only black/soul hearts, Azazel's starting health is listed as "-I" on the character selection screen.
+* Azazel's locked character icon is a locked box with Azazel inside peeking out of it.
+** He shares this locked box design with {{C|Judas}}, {{C|Lilith}}, and {{C|Apollyon}}.
+
+{{nav|character|azazel unlock}}

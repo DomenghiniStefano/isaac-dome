@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | id          = 134
+ | quote       = Cursed?
+ | description = [[Room Clear Awards]] have a 1/3 chance of being replaced with a {{E|Chest}} and a 2/9 chance being replaced with nothing.
+ | quality     = 2
+ | tags        = summonable dead guppy offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants a 1/3 chance of replacing [[Room Clear Awards]] with a {{E|Chest}} or a {{E|Locked Chest}}, but also a 2/9 chance to replace it with nothing at all.
+* {{transformation contribution|Guppy}}
+
+== Notes ==
+* The drawback to this item is that Keys become much more scarce, while increasing the amount of Locked Chests. This makes taking Guppy's Tail a potential liability early on.
+* Due to any found Chests containing [[item]]s while in {{s|Chest}} or {{s|Dark Room}}, Guppy's Tail can be a good way to quickly stack up more upgrades before facing the final boss.
+* {{dlc|a}} The effect does not apply to {{e|Penny|text=Pennies}} dropped in [[Greed Mode]], meaning that this item has no effect in [[Greed Mode]] other than counting towards the Guppy Transformation.
+
+== Synergies ==
+* {{i|Deep Pockets|r}}: If Guppy's Tail removes the room clear drop, it is turned into coins instead.
+* {{I|Guppy's Eye}}: Makes {{e|Key}} management easier by revealing which Locked Chests are worth opening and which are not.
+* {{t|The Left Hand}}: Turns all chests into {{e|Red Chest}}s, allowing Isaac to get Red Chest items much more quickly. Useful when pursuing the {{tf|Guppy}} transformation.
+* {{i|Mom's Key}}: Increases the number of drops from Chests and counteracts the increased chance to run into Locked Chests.
+* {{i|Options?}}: Chests may be accompanied by normal room drops or other chests of a type that's easier to open, mitigating the downsides.
+* {{T|Paper Clip}}: The Key scarcity problem is completely prevented, since Paper Clip causes Locked Chests to be openable without Keys, making Guppy's Tail's only downside the chance to replace room clears with nothing at all.
+** {{dlc|a}}If {{C|Cain}} starts with the Trinket, entering {{R|Curse Room}}s and opening Red Chests in hopes of finding Guppy's Tail early is a very effective strategy.
+
+== In-game Footage ==
+{{#ev:youtube|tl7rUbv_60c||inline}} {{#ev:youtube|OI1VNcF37S0||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Cat Got Your Tongue}}.
+* The item {{I|Dead Cat}} has Guppy's tail be completely black while Guppy's Tail has a white fur on the tip of the tail.
+* In the ''Wrath of the Lamb'' DLC for the original game, this item had to be unlocked by beating a challenge titled "9 Deaths".
+
+{{nav|guppy|cat|fr=Queue de Guppy}}

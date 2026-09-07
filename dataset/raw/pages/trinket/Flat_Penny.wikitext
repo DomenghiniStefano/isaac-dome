@@ -1,0 +1,80 @@
+{{infobox trinket
+ | id          = 51
+ | quote       = Wealth of answers
+ | description = Gives a chance to drop a {{E|Key}} when a [[coin]] is collected.
+ | pool        = special shopkeeper
+}}
+
+{{cit|t}}
+
+== Effect ==
+* Gives a chance of spawning a {{E|Key}} upon collecting any [[coin]].
+** {{dlc|nr}} 50% chance.
+** {{dlc|r}} The chance is based on the coin's worth:<ref>The chance is calculated as 1-0.75<sup>(coin_worth)</sup></ref>
+{| class="wikitable"
+ ! Coin
+ ! Chance
+ |-
+ | {{E|Penny}}
+ | 25.00%
+ |-
+ | {{E|Double Penny}}
+ | 43.75%
+ |-
+ | {{E|Nickel}}
+ | 76.27%
+ |-
+ | {{E|Dime}}
+ | 94.37%
+ |}
+
+== Notes ==
+* {{dlc|a}} This trinket can be found by destroying {{E|Special Shopkeeper|n}}s.
+
+== Synergies ==
+* {{i|Humbleing Bundle|nr}}: All {{e|Key}}s spawned by the trinket become {{e|Key Ring}}s.
+* {{dlc+|r}} {{i|Humbleing Bundle}}: All normal {{e|Key}}s spawned by the trinket get a 50% chance to turn into {{e|Key Ring}}s.{{dlc-}}
+* {{C|Tainted Keeper}}: The trinket works with the temporary coins spawned from defeating enemies, effectively turning it into an infinite {{e|Key}} generator.
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Increases the chances to:<ref>The chance is calculated as 1-0.5<sup>(coin_worth)</sup></ref>
+{| class="wikitable striped"
+ ! Coin
+ ! Chance
+ |-
+ | {{E|Penny}}
+ | 50.00%
+ |-
+ | {{E|Double Penny}}
+ | 75.00%
+ |-
+ | {{E|Nickel}}
+ | 96.88%
+ |-
+ | {{E|Dime}}
+ | 99.90%
+ |}
+* {{A|Golden Trinket|r+}} + {{i|Mom's Box|r+}}: Increases the chances to:<ref>The chance is calculated as 1-0.25<sup>(coin_worth)</sup></ref>
+{| class="wikitable striped"
+ ! Coin
+ ! Chance
+ |-
+ | {{E|Penny}}
+ | 75.00%
+ |-
+ | {{E|Double Penny}}
+ | 93.75%
+ |-
+ | {{E|Nickel}}
+ | 99.90%
+ |-
+ | {{E|Dime}}
+ | 99.99%
+ |}
+
+== In-game Footage ==
+{{#ev:youtube|YpXlLTngSaU}}
+
+== References ==
+{{reflist}}
+
+{{nav|key modifier|coin modifier|penny|fr=Pièce Plate}}
+[[Category:Penny trinkets]]

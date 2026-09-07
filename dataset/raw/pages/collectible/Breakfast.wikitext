@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | id          = 25
+ | quote       = HP up
+ | description = Grants one full Red [[Heart container]]. {{dlc|r}} Heals 1 additional {{e|Red Heart}}.
+ | quality     = 1
+ | tags        = nolostbr nocantrip food
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Grants one full Red [[Heart container]].
+* {{Dlc|r}} Heals 1 additional {{e|Red Heart}}.
+
+== Notes ==
+* This item has a 12.6% chance to spawn from paying out a {{m|Beggar}} in addition to being in the [[Beggar (Item Pool)|Beggar item pool]]. Multiple copies can be obtained through this method.
+* If the [[Treasure Room (Item Pool)|Treasure Room Pool]] runs out of items, it will only contain Breakfast from that point onwards.
+** Once other [[item pool]]s run out of items, they will only contain Treasure Room Pool items. This means that if the Treasure Room Pool was also exhausted, that item pool will only contain Breakfast.
+*** {{dlc+|a}} With {{i|Chaos}}, every fully depleted item pool will only contain Breakfast.{{dlc-}}
+** Breakfast spawned via exhausted item pools cannot be rerolled into other items with a few exceptions:
+*** {{dlc+|a}} Rerolling Breakfast from an exhausted item pool while holding {{i|Chaos}} can reroll it into an item from another pool.{{dlc-}}
+**** {{dlc+|r}} This also works with {{p|Soul of Eden}}.{{dlc-}}
+*** {{dlc+|a}} Dropping {{t|NO!}} after exhausting an item pool while holding it will allow active items to spawn on pedestals again.{{dlc-}}
+*** {{dlc|a+}} Having an item spawn from a non-exhausted pool before picking up Breakfast can allow rerolls to collected passive items (e.g. {{i|D4}}) to reroll Breakfast into an item from that item pool.{{dlc-}}
+*** {{dlc+|r}} Losing {{i|Sacred Orb}} after exhausting an item pool while holding it will allow low quality items to appear again.{{dlc-}}
+
+== Synergies ==
+* {{i|Binge Eater}}: When Isaac picks up Breakfast it now grants: a permanent +0.2 [[Shot Speed]] and +2.5 [[Range]], a temporary +3.6 [[Damage]] (which diminishes to 0 in 30 seconds), heals 1 additional red heart, and takes a permanent -0.03 [[Speed]] reduction.
+
+== In-game Footage ==
+{{#ev:youtube|wc1zL3dxogo||inline}} {{#ev:youtube|JiwWysth6MI||inline}}
+
+== Trivia ==
+* In Edmund McMillen's [https://youtu.be/kby0rXT7qYQ first post-Repentance Lore Stream], he revealed that the pinkish-yellow label on the left side of the breakfast sprite is actually meant to be a portrait of Isaac, referencing the [[wikipedia:Missing-children milk carton|practice of advertising lost children on milk cartons]] that was popular in the United States during the 1980s.
+* The term used by the community when an item pool is depleted is "breakfasting."
+** In a Twitter Q&A, Edmund revealed that breakfasting was originally a bug.<ref>https://twitter.com/HenrRicci/status/1318738787971858432</ref>
+* Breakfast’s sprites can be seen as part of {{I|Binge Eater}}.
+
+== References ==
+<references />
+
+{{nav}}

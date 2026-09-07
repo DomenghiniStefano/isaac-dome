@@ -1,0 +1,79 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 569
+ | quote       = Bleed me dry
+ | description = Stabs Isaac at the beginning of each floor, draining his {{e|Red Heart}}s. Increases [[damage]] and [[speed]] for the floor based on the amount drained.
+ | quality     = 1
+ | tags        = uniquefamiliar nolostbr summonable {{dlc|r+|devilsacrifice}}
+ | devil price = {{dlcalt|1|r+=0}}
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Spawns a [[familiar]] that stabs Isaac at the beginning of each [[floor]] if Isaac has more than a {{e|Half Red Heart}}. This drains as much red health as possible without killing him, leaving a half red heart if Isaac only had red health, or none at all if Isaac has soul/black/bone hearts.
+* For the rest of the floor, Isaac gains extra damage and speed for each heart lost. The amount of damage gained this way is exponential, so each heart lost will provide a bigger bonus than the last.
+** The exact formula is about +(0.15 <!-- exactly 20/132.25 --> * HeartsLost ^ 2) [[damage]] and +(0.1 * HeartsLost) [[speed]], where HeartsLost is the total hearts of damage taken from Blood Oath (half a heart counts as 0.5).
+
+== Notes ==
+* Although the animation is only a single stab when the effect is triggered, it's treated as taking damage one time per half heart lost, leading to synergies with items that activate upon taking damage.
+* The damage from Blood Oath can be avoided with invincibility, but will not provide any damage and speed increase. That's a useful strategy for the {{chal|Bloody Mary|n}}.
+* {{e|Eternal Heart}}s give the health up before Blood Oath stabs Isaac, so the new heart is also drained.
+* {{e|Rotten Heart}}s are only counted as half a red heart each.
+* If Isaac has only {{e|Rotten Heart}}s, blood oath will leave Isaac at a{{e|Half Red Heart}}, the final rotten heart taken will still give stats equivalent to a {{e|Half Red Heart}} 
+**This effect causes {{i|Whore of Babylon}} to trigger unconditionally when Blood Oath is activated 
+* {{p|XI - Strength}} can be activated at the start of a floor before Blood Oath triggers to have one more heart counted in the bonus.
+* If Isaac has half a red heart or less, the effect will not trigger, even if Isaac has soul/black hearts.
+* Blood Oath also drains the health of {{C|Keeper}} / {{C|Tainted Keeper}}, leaving their health at one coin heart.
+* The damage caused by Blood Oath does not lower the chance for a {{R|Devil Room}} or {{R|Angel Room}} to appear.
+* While playing as {{c|The Forgotten}}, red health will not be drained if {{c|The Soul}} is being controlled when Blood Oath triggers.
+* If Blood Oath is removed (such as with {{c|Tainted Isaac}}), any existing damage and speed bonuses will remain until the next floor.
+** The damage and speed bonuses '''are''' removed after defeating {{E|The Lamb}} and refusing a [[Victory Lap]], or upon coming back from obtaining {{i|Knife Piece 2}}.
+* [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Blood Oath having the lowest priority at 6th and thus being farther from Isaac than familiars of different priorities.
+* The maximum achievable amounts of stats are +20 damage and +1.15 speed if starting the floor with 12 filled normal red hearts (of which only 11.5 are drained), or +21.8 and +1.2 if there is at least one {{e|Bone Heart}} (which allows all hearts to be drained).
+
+== Synergies ==
+* {{i|Adrenaline}}: Activates the damage up effect of Adrenaline for the resulting empty heart containers at the start of each floor.
+* {{I|BFFS!}}: Adds 2 full hearts' worth of bonuses if any health is drained at all, e.g. losing 1 heart gives the bonuses of 3 hearts. This allows for up to 14 hearts' worth of bonuses.
+** 14 hearts' bonus gives +29.6 damage and +1.4 Speed.
+* [[:Category:Damage-triggered items|Damage-triggered items]]: Activate a number of times equal to the total half hearts drained.
+** Does ''not'' activate the {{T|Panic Button}} trinket.
+** {{i|Bozo}}: Each half-heart lost has a chance of spawning a rainbow poop, allowing for full red heart regeneration.
+** {{i|Fanny Pack}}: Each half-heart lost has a chance of spawning a pickup, which can include hearts.
+** {{i|Gimpy}} / {{i|Old Bandage}} / {{i|Shard of Glass}}: Each half-heart lost has a chance of spawning a full red/soul heart, allowing Isaac to heal back some of the damage immediately if he has high luck or a large amount of hearts lost.
+** {{i|Scapular}}: Gives Isaac a soul heart if he had only red heart containers upon entering a floor.
+* {{C|Magdalene}} + {{I|Birthright}}: With full Red Health, Magdalene can achieve up to +46.3 damage and +1.75 speed, and up to +49 and +1.8 with at least one heart being a Bone Heart.
+* {{t|Myosotis}}: Can transport {{e|Red Heart}}s left on the previous floor, allowing early healing from the damage of Blood Oath.
+* {{i|The Jar}}: Red hearts can be stored for use on the next floor.
+* {{i|Placenta}}: With enough patience, health can be safely restored each floor by waiting in the starting room.
+* {{T|Stem Cell}}: The healing occurs before health is drained, allowing for a greater stat bonus.
+*{{i|Sol}}: Fills all empty heart containers upon defeating a boss, maximizing potential stat bonuses. 
+* {{i|Whore of Babylon}}: Activates the Whore of Babylon effect at the start of each floor.
+*{{I|Gnawed Leaf}} / {{i|Tooth and Nail}}: Effectively give Isaac the choice to trigger Blood Oath, by either standing still at the start of the floor or by immediately moving with {{i|Gnawed Leaf}}, or by timing going to the next floor right before {{i|Tooth and Nail}} triggers (at about the third "tick" before triggering). 
+== Interactions ==
+* {{i|Cursed Eye}}: The stab will trigger the teleport if tears are charging.
+* {{i|Curse of the Tower}}:  Not recommended. Spawns 6 troll bombs for each half heart removed, typically filling the starting room with troll bombs.
+*[[Temporary Buffs#Invulnerability|Invulnerability]], [[Temporary Buffs#Shield|Shield]], & [[Temporary Buffs#Statue|Statue]] Effects: Prevent Blood Oath from triggering, causing health to not drain and no bonuses being given 
+**Active items or consumables that trigger these effects can be triggered at the start of the floor to prevent Blood Oath from triggering if desired 
+
+* {{T|Perfection}}: The forced damage does not destroy the trinket or count against its acquisition.
+
+== In-game Footage ==
+{{#ev:youtube|NkYCcUTxg6g}}
+
+== Trivia ==
+* This item is used in {{chal|Bloody Mary}}.
+* [[anti:Blood Oath|Blood Oath]] originates from the ''Antibirth'' mod, and by extension, from the ''Community Remix'' mod for the flash version.
+** In ''Antibirth'', it was possible to prevent {{e|Red Heart}}s from being drained while still gaining the stat increases if Isaac's speed was high enough to immediately leave the starting room. Moreover any {{e|Rotten Heart}} Isaac had would cause Blood Oath to remove half of a {{e|Soul Heart}} which would kill him if he did not have one to remove, likely a bug.
+** In ''Community Remix'', it would instead immediately give a damage bonus for each red health Isaac doesn't have.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+*** It would start with giving Isaac a 1.8 damage up, and then decrease it by 0.085 for each half red heart Isaac has, meaning at 10.5 red hearts it would start to be a damage down.
+* The familiar appears much bloodier when a large amount of hearts are drained.
+
+== References ==
+<references />
+
+== Bugs ==
+{{bug|Using {{i|Glowing Hourglass}} to return to the previous floor twice will cause Blood Oath to activate an extra time, giving buffs corresponding to drained HP.}}
+{{bug|Upon coming back from obtaining Knife Piece 2 or after defeating the Lamb and refusing a victory lap, the stat boost obtained from this item at the beginning of the floor will be gone.}}
+
+{{nav|fr=Serment du Sang}}

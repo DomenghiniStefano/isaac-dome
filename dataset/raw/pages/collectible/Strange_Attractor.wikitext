@@ -1,0 +1,59 @@
+{{disambig msg|the Strange Attractor item|a similar item|Magneto|a related trinket|Broken Magnet}}
+
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 315
+ | quote       = Magnetic tears
+ | description = [[Pickup]]s, [[trinket]]s, and [[monster]]s are magnetically attracted to Isaac's tears.
+ | quality     = 0
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effect ==
+* [[Monster]]s, [[pickup]]s, and [[trinket]]s are magnetically attracted to the player character's tears.
+** {{dlc|a}} This also applies to Isaac's bombs.
+** {{dlc|r}} Tears increase in magnetization as they travel, pulling enemies and items with less force at first but becoming stronger when they land.
+** The effect may not affect certain immobile enemies; {{e|Round Worm}}s will start to vibrate in the presence of multiple magnetic tears, but will not change their position, {{e|Host}}s will only be attracted when readying to launch an attack.
+
+== Notes ==
+* Extra caution must be taken when using this item, as the attraction effect will pull small, lightweight monsters like {{E|Boom Fly|text=Boom Flies}} towards the character very fast and in an unpredictable manner, with the consequent risk of taking damage.
+
+== Synergies ==
+* {{i|Brimstone}}: Enemies and pickups are sucked towards the beam, increasing accuracy significantly.
+* {{i|Dr. Fetus}}: Enemies are sucked towards bombs, increasing accuracy and making enemies easier to kill.
+* {{i|Explosivo}}: When the shot sticks to an enemy, every enemy near it will be attracted to them.
+* {{i|Godhead}}: Enemies will be pulled into Godhead's damaging aura, increasing the aura's effectiveness at causing damage.
+* {{i|Ipecac}}: Enemies and pickups are pulled towards the shots, increasing accuracy. The color of shots and their explosive effect is a darker green.
+* {{i|The Ludovico Technique}}: Enemies, items, and even most bosses will be sucked to the single floating tear, dealing constant damage while keeping Isaac well away from harm, making this combination extremely effective in almost all scenarios.
+* {{i|Mom's Knife}}: Enemies are pulled towards the knife. The effect is minor while not firing and much stronger while the knife is launched.
+* {{t|Nose Goblin}}/{{I|Sinus Infection}}:  Attraction effect will remain on the booger shot stuck to an enemy. This can drag the enemy across the whole room until they reach one wall and get stuck on it, effectively disabling their normal movement.
+* {{dlc|r}} {{c|Tainted Forgotten}}: Tainted Forgotten attracts enemies, putting them in range of his bone club attack.
+* {{i|Technology}}/{{i|Technology 2}}/{{i|Tech.5}}: The beam will attract enemies, often sucking them into the beam and holding them there.
+* {{i|Tech X}}: Enemies and pickups are attracted to the outer ring, increasing accuracy.
+* {{i|Tractor Beam}}: The lack of random spread and momentum-based trajectories on tears makes the way enemies are pulled around more predictable.
+
+== Interactions ==
+* {{i|Anti-Gravity}}: The magnetic effect is stronger when multiple tears are stacked in the same position.
+* {{i|Cricket's Body}}/{{i|Compound Fracture}}: Since tears will split into more tears, all traveling in different directions, enemies will be randomly moved around.
+* {{i|Epic Fetus}}: Overrides Strange Attractor.
+** {{dlc|a}} Enemies get drawn towards the target mark on the ground, ensuring that the missile will hit.
+* {{i|Explosivo}}: Enemies will be pulled toward the stuck on tears, dragging them helplessly or grouping them for the explosion.
+* {{i|Haemolacria}}: Enemies and pickups are attracted to the main tear, but not burst tears.
+* {{i|Lachryphagy}}: Enemies will often get sucked into tears, making it more difficult to feed tears or let them burst.
+* {{i|Monstro's Lung}}: Due to the high concentration of tears, enemies will be pulled towards Isaac at great force; in certain cases, enough force will be generated to pull enemies through rocks. This can greatly increase accuracy but depending on enemies' movements and positions can also damage Isaac.
+* {{i|The Parasite}}: Enemies will be pulled towards both fired tears and split tears. However, because they both travel in opposite directions, the split tears' magnetic effects tend to cancel each other out.
+* {{i|Rubber Cement}}: Due to tears being reflected, enemies tend to be pulled towards Isaac with much force. Additionally, the random angle of tears being reflected results in erratic enemy movement. '''Not recommended.'''
+* {{i|Soy Milk}}: The rapid tears will pull enemies quickly and erratically around the room. '''Not recommended.'''
+* {{i|Tiny Planet}}/{{i|Immaculate Heart}}/{{i|Saturnus}}: The orbiting tears will cause enemies to be pulled towards Isaac. '''Not recommended.'''
+
+== In-game Footage ==
+{{#ev:youtube|5fKE8QE1TlM}}
+
+== Trivia ==
+* The item is most likely based on [http://www.puttyworld.com/stat.html Crazy Aaron's Magnetic Thinking Putty], which has a color of the same name and the tears resemble it.
+* [[wikipedia:Attractor#Strange attractor|Strange Attractor]] is also a mathematical concept found in dynamical linear systems.
+* This item is used in {{chal|Waka Waka}}.
+
+{{nav|magnetic|fr=Attracteur Étrange}}

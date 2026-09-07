@@ -1,0 +1,52 @@
+{{infobox passive collectible
+ | costume name = Binge Eater
+ | dlc          = r
+ | id           = 690
+ | quote        = Bounce away!
+ | description  = Causes enemies to bounce off of Isaac, dealing damage to them if they hit an enemy or obstacle. Also gives Isaac the chance to deflect enemy shots.
+ | quality      = 3
+ | tags         = summonable
+ | unlocked by  = Belly Jelly
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Enemies that touch Isaac will bounce off him and propel in the opposite direction. If they hit an obstacle or wall while bouncing, they will take damage.
+** If an enemy bounces into another enemy, the second enemy will also take damage.
+* When an enemy bounces off of Isaac, there's a 50% chance that Isaac won't receive contact damage.
+* Additionally grants a 50% chance for projectiles to bounce off of Isaac without taking damage.
+
+== Notes ==
+* The damage enemies receive when they get bounced into a wall or an obstacle is equal to <code>8 + 2 * floor</code>.
+** The same damage value applies when an enemy gets bounced into by another enemy.
+* Enemies that don't deal contact damage cannot be bounced off.
+* Since contact damage is applied rapidly, it is possible to end up taking damage and then immediately bouncing the enemy off.
+* Bounced off projectiles deal a flat damage that doesn't scale with the current floor or Isaac's stats. This damage is usually 6, but can slightly vary depending on the enemy that shot the projectile.
+** Lasers cannot be bounced off.
+* The bouncing effect also works against {{e|Fire Place}}s and spiked enemies such as {{e|Poky}}, {{e|Slide}}, and {{e|Grudge}}, granting a chance to avoid unintentional damage.
+* Isaac can also bounce off {{e|Fly Bomb}}s spawned by {{e|Blaster}}s and even deny damage from their explosion.
+* {{e|Bomb}}s and {{e|Troll Bomb}}s cannot be bounced off.
+* Belly Jelly can prevent damage from Bad Trip [[pill]]s.
+* Belly Jelly can prevent {{C|Tainted Jacob}} from being turned into his Lost form by Dark Esau.
+
+== Synergies ==
+* {{i|Aries}}: Retains the chance to bounce enemies while preventing damage simultaneously.
+* {{i|Book of Shadows}} / {{i|Unicorn Stump}}: Can be used as a powerful offensive item since Isaac can still bounce off enemies while invincible.
+* {{i|Cone Head}} / {{i|Hallowed Ground}} / {{i|Host Hat}} / {{i|Infamy}} / {{i|Metal Plate}} / {{i|Star of Bethlehem}}: Offers an additional chance to negate damage.
+* {{i|Gnawed Leaf}}: The bouncing effect works while Isaac is invincible.
+* {{i|Serpent's Kiss}}: Allows Isaac to bounce enemies and poison them at the same time, with a decent chance to get a lot more health back in the form of {{e|Black Heart}}s than originally spent.
+
+== Interactions ==
+* {{t|Panic Button}}: The active item will still be activated if Belly Jelly blocks damage.
+
+== In-game Footage ==
+{{#ev:youtube|gmlAYsJQffA||inline}} {{#ev:youtube|5pjduo7TCFo||inline}}
+
+== Trivia ==
+* This item can be considered a direct upgrade to {{i|Infamy}}, as the chances to deny projectile damage are equal, but Belly Jelly additionally works with contact damage, unlike Infamy.
+* Belly Jelly is just the brand of jelly beans Jelly Belly'''®,''' but the words are flipped. Given the game's theme, this also might be a reference to the jelly spread on the belly before an ultrasound.
+* The costume given by this item is identical to {{i|Bucket of Lard}} and {{i|Binge Eater}}.
+
+{{nav|bean|tainted magdalene unlock|the beast unlock|fr=Haricot Confit}}
+[[Category:Damage-preventing items]]

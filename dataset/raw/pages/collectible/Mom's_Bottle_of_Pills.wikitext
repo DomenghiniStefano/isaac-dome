@@ -1,0 +1,37 @@
+{{infobox activated collectible
+ | id          = 102
+ | quote       = Reusable pill generator
+ | description = Gives Isaac a random [[pill]].
+ | quality     = 1
+ | tags        = mom offensive nocantrip
+ | recharge    = 6
+ | shop price  = {{dlcalt|15|r=10}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* On use, gives Isaac a random [[pill]].
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc|r}} The item will cost 10 cents if found in a {{r|Shop}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns wisps in the inner ring, looking like pills. The wisps spawn [[pill]]s when destroyed. The wisps come in random colors (Blue, Red, White, Pink, Gray, Light Blue, and Yellow). Each color may fire tears that confuse, poison, petrify, burn, or spawn troll bombs. Each tear effect is assigned to one color of pill wisp based on the current seed. The only color pill wisp without a tear effect also spawns a hostile [[Spider]] when destroyed. For the troll bomb effect, the pill itself spawns the troll bomb instead of the tear, and the chance for it to do so is independent of whether or not its tears hit anything.}}
+
+== Interactions ==
+* {{i|Starter Deck}}: Gives [[card]]s instead.
+
+== In-game footage ==
+{{#ev:youtube|IfDnYJylSbI||inline}} {{#ev:youtube|ajbOQMP6Kkk||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Mom's Bottle of Pills.png|{{plat|3DS}} The icon of Mom's Bottle of Pills as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* In the original ''The Binding of Isaac'', this item was unlocked by donating to {{m|Blood Donation Machine}}s 20 times.
+
+{{nav|yes mother|mom|pill|fr=Flacon de Pilules de Maman}}

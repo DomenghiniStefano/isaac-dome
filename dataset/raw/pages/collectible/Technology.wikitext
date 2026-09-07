@@ -1,0 +1,157 @@
+{{infobox passive collectible
+ | tear app scale = 1/3 <!-- lowered to make it fit into the infobox -->
+ | tear app name  = * {{dlc|nr|Rebirth}}
+ | id             = 68
+ | quote          = Laser tears
+ | description    = Replaces tears with a [[Piercing tears|piercing]] laser with unlimited range.
+ | quality        = 3
+ | tags           = summonable tech offensive
+}}
+
+For all Tech Items, check [[Tech (Disambiguation)]]
+
+{{cit|p}}
+
+== Effects ==
+* Replaces tears with a laser beam with unlimited range and [[Piercing tears|piercing]]. The laser is fired from Isaac's left eye.
+
+== Notes ==
+* Laser rate of fire is determined by the [[tears]] stat. This differentiates the item from {{i|Technology 2}} which fires a continuous beam, and {{i|Tech.5}} which has a random fire rate.
+* {{dlc|r}} Laser size scales with tear size.
+** {{dlc|r}} The sound emitted by the laser will also change depending on its size. This is purely aesthetic.
+* {{dlc|r}} Lasers are affected by momentum, allowing them to be shot diagonally if fired while Isaac is moving.
+* {{dlc|r}} When directly adjacent to a wall or [[Obstacles|obstacle]] and firing in the wrong direction the obstacle may block the laser, preventing it from damaging enemies. This can happen on all sides of a given [[Rooms|room]] with the exception of the bottom wall.
+
+== Synergies ==
+* {{i|Haemolacria}}: Fires arcing Haemolacria tears that release Technology lasers in all directions upon impact.
+* {{i|Brimstone|na}}: Overrides Technology.
+** {{dlc|a}} The Technology laser coils around the Brimstone beam, granting a 1.5x damage multiplier, which can stack with other multipliers such as {{I|Magic Mushroom}}[[Magic Mushroom|'s]] 1.5x damage multiplier.
+*** {{Dlc|r}} Technology's damage multiplier will be overridden if Isaac has the powered up version (from picking up Brimstone twice or using {{I|Sulfur|n}} with Brimstone).
+* {{i|Epic Fetus|a}}: Fires lasers in all directions upon impact of a missile.
+* {{dlc+|r}}{{i|Eye of the Occult}}: The laser becomes dark purple and automatically fires at a controllable crosshair. The crosshair behaves nearly identically to the one created by {{I|Marked}} (including in its synergies and interactions with other items) with the exception that lasers often arch towards the crosshair rather than traveling towards it directly and any other projectiles affected by Eye of the Occult that are not lasers (such as from {{i|Eye of Greed}} or {{i|Fate's Reward}}) will chase the crosshair and hover above it for the remainder of their range.
+** '''Technology''' + {{i|Tech.5}}/{{i|Technology 2}}: Tech.5 and Technology 2 lasers are also affected by the crosshair but cannot create the crosshair on their own.{{dlc-}}
+* {{i|Fire Mind}}: Laser lights enemies on fire but loses the ability to explode enemies.
+* {{i|The Inner Eye}} / {{i|Mutant Spider}}: Isaac shoots multiple lasers with a decreased rate of fire.
+* {{i|Lachryphagy|r}}: Isaac shoots a short-range laser that will form a Lachryphagy tear, which has piercing.
+* {{i|The Ludovico Technique}}: The laser becomes a large ring that is controllable and looks like a {{i|Tech X}} shot. Enemies inside the ring without touching it are not hurt. The tears stat is ignored and the damage is dealt very rapidly at a rate equivalent to a 1 tear delay. {{dlc|nr}} Shot speed is ignored.
+** When {{i|Spoon Bender}} is added to this synergy, the laser ring will morph to target enemies, along with the standard homing effect.
+* {{i|Marked|r}}: Isaac can fire lasers at the crosshair.
+* {{i|Mom's Eye}}: Fires a laser from the back of Isaac's head as well as the front.
+* {{i|Monstro's Lung|anr}}: Several additional lasers fire in random directions. (One beam will always fire straight forward as normal.)
+** {{dlc|r}} Fires a barrage of small lasers.
+* {{i|Pop!|r}}: Laser loses its unlimited range, but spawns eyeball tears at the end of the laser.
+* {{i|Proptosis|na}}: Doubles damage with no damage-decreasing effect on the laser.
+** {{dlc|anr}} Doubles the damage stat, the beams deal 2x damage at point blank range but it rapidly decreases with distance, down to 0.1 from about 8 tiles away.
+** {{dlc|r}} The beams do 6x damage at point blank range but decreases to 0.1 damage at about 8 tiles away.
+* {{i|Spirit Sword}}: Sword becomes a lightsaber. Surrounds Isaac with a laser on every swing. Enemy projectiles are deflected by both normal and charged attacks.
+* {{i|Tech X|dlc=anr}}: Both fire at the same time.
+** {{dlc|r}} Fires a {{i|Brimstone}} ring coiled by a laser. Hitbox is bigger with no damage increase.
+* {{i|Technology|a}}: Adds an additional laser for every extra copy of the item up to a maximum of 16, with no downgrade to damage or tears.
+* {{i|Technology 2|nr}}: Equips two lasers that can be fired at the same time. As Technology is always fired from the right eye, it is not affected by the halved normal attack rate.
+** {{dlc|r}} Technology is affected by the fire rate multiplier. Holding {{i|Stapler}}, {{i|Lead Pencil}} or playing as {{c|Cain}} will allow Isaac to angle shots with momentum again.
+* {{i|Tiny Planet}}: Laser circles around Isaac and then continues its path forward in a straight line. The laser is also spectral.
+** {{dlc|a}} {{i|Tiny Planet}} + {{i|A Lump of Coal}}: The extra distance covered by the laser more than doubles damage right in front of Isaac, and it increases as normal further away.
+* {{i|Tough Love}} / {{i|Apple!}}: The lasers can gain the damage multiplier from each of the items, although there is no visual difference.
+
+== Interactions ==
+* {{dlc|na}} {{i|20/20}}: Overridden by Technology.
+** {{dlc|a}} Shoot 2 lasers.
+* {{dlc|nr}} {{i|Anti-Gravity}}: Tears up, but no Anti-Gravity effect.
+** {{dlc|r}} Create laser balls that fire technology lasers when released.
+* {{dlc|na}} {{C|Azazel}}: Overrides Azazel's Brimstone.
+** {{dlc|a}} Technology laser wraps around the Brimstone beam, dealing extra damage, but not increasing Brimstone range.
+* {{i|Blood Clot}} / {{I|Chemical Peel}} / {{I|The Peeper|r}}: 50% chance to apply the flat damage up/damage increase with each shot.
+* {{dlc|nr}} {{i|Chocolate Milk}}: Lasers can't be charged, but reduces Isaac's tear delay by 20%.
+** {{dlc|r}} The laser can be charged, increasing its size and damage.
+* {{i|Continuum|dlc=anr}}: Overridden by Technology.
+** {{dlc|r}} Technology lasers wrap around the screen with the Continuum effect with momentum retained.
+* {{dlc|nr}} {{i|Cursed Eye}}: Overridden by Technology.
+** {{dlc|r}} Charges a barrage of 5 lasers.
+* {{dlc|nr}} {{i|Cricket's Body}}: Tear delay down as expected, but no benefit from the splash effect.
+** {{dlc|r}} Releases a 4-way spread of tears whenever the laser hits a wall or an enemy.
+* {{i|Dead Eye}}: Prior to picking up Technology, the damage multiplier is preserved to where its at, and missing shots will not remove it.  Saving and quitting the game will remove the multiplier. Picking Dead Eye after Technology has no effect.
+* {{i|Death's Touch}}: Overridden by Technology, but still grants damage.
+* {{dlc|nar}} {{i|Dr. Fetus}}: Overrides Technology.
+** {{dlc|anr}} Fires lasers in addition to bombs.
+* {{i|Euthanasia}}: The lasers can gain the damage multiplier from Euthanasia although there is no visual difference. {{dlc|nr}} Euthanasia loses its instant kill ability, however.
+* {{i|Eye of Belial}}: Overridden by Technology.
+* {{I|Flat Stone}}: Overridden by Technology.
+* {{t|Flat Worm}} / {{t|Pulse Worm}}: No effect.
+* {{i|Godhead}}: [[Homing tears|Homing]] laser, but the halo is lost.
+* {{dlc+|anr}} {{i|Head of the Keeper}}: Overridden by Technology.{{dlc-}}
+** {{dlc|r}} The laser is recolored to a bright yellow-orange and keeps the chance to drop coins when hitting enemies.
+* {{dlc+|anr}} {{i|Holy Light}}: Holy Light shots will not activate.{{dlc-}}
+** {{dlc|r}} Holy Light shots have a chance to activate on hit as expected.
+* {{t|Hook Worm}}: Laser follows a square wave, which increases its hitbox.
+* {{i|Ipecac}}: Laser doesn't gain Ipecac's flat damage bonus or fire rate decrease, poisons targets.
+** {{dlc|a+}} Gives a flat +4 damage instead of +40, poisons targets. Fire rate is not decreased.
+** {{dlc|r}} Gives a flat +2 damage instead of +40, laser poisons and explodes on contact, dealing 10 + twice of Isaac's damage. Fire rate decrease applies.
+*** {{i|Mom's Knife|r}}: Not reccomended. Isaac will blow himself up consistently whenever he shoots the knife.
+* {{i|Isaac's Tears}}: Fires normal tears.
+* {{i|Jacob's Ladder|a+nr}}: Overridden by Technology.{{dlc-}}
+** {{dlc|r}} Fires electricity normally.
+* {{i|A Lump of Coal|na}}: No effect.
+** {{dlc|a}} Damage increases the further away the enemy is, on a multiplier that is roughly +20% per tile of distance. This allows for a huge damage increase from longer distances.
+* {{i|Marked|anr}}: Overridden by Technology, stat bonuses still apply.
+* {{i|Mom's Knife|na}}: Overrides Technology.
+** {{dlc|anr}} Both fire normally.
+*** When playing as {{C|Lilith}}, Mom's Knife overrides Technology.
+** {{Dlc|r}} The tip of Mom's Knife connects to isaac's body with a laser when launched. This effect is similar to that of {{I|Technology Zero|n}}
+** {{dlc|nr}} '''Mom's Knife''' + {{i|The Ludovico Technique}}: The laser ring becomes centered on Isaac and cannot be controlled, and the knife can not be fired. This makes some rooms impossible to do without a [[familiar]].
+* {{i|My Reflection|na}}: Overridden by Technology.
+** {{dlc|anr}} Makes the beam curve the opposite direction while Isaac is moving sideways.
+** {{dlc|r}} The laser makes a thin loop in front of Isaac, and fires the normal laser backwards.
+*** {{i|Pop!|r}}: The laser ends halfway through the loop. Spawns Eyeball tears like normal.
+* {{i|Mysterious Liquid|na}}: Overridden by Technology.
+** {{dlc|a}} The laser spawns pools of liquid always when it hits obstacles and occasionally on enemies.
+* {{i|Neptunus}}: Overridden by Technology.
+* {{i|Number One}}: Expected tears up and the laser's color turns yellow.
+* {{t|Ouroboros Worm|a+nr}}: No effect on laser.
+** {{dlc|r}} Works as intended.
+* {{i|Pupula Duplex}}: Laser becomes spectral.
+** {{dlc|r}} Laser beams are thicker in terms of width.
+* {{i|Soy Milk}}: Expected high damage down and very high tears up. {{dlc|nr}} Because Technology has no knockback like standard tears, this will generally be a good DPS increase.
+* {{i|Technology Zero}}: No effect.
+* {{i|The Parasite|nr}}: Overridden by Technology.
+** {{dlc|r}} Laser splits into two perpendicular beams upon hitting an obstacle.
+** {{dlc|r+}} Also spawn small split tears.
+* {{i|Parasitoid|a+nr+}}: Overridden by Technology.
+* {{dlc|nr}}{{T|Ring Worm}}: No effect.
+** {{Dlc|r}} Laser wraps around itself multiple times, effectively increasing hitbox.
+* {{i|Rubber Cement|na}}: Overridden by Technology.
+** {{dlc|a}} Lasers bounce off of walls.
+* {{i|Tractor Beam|dlc=anr}}: No effect.
+** {{Dlc|r}} Lasers are no longer affected by Isaac's momentum.
+* {{I|Trisagion}}: Overridden by Technology.
+* {{t|Wiggle Worm}}: Laser follows a sine wave, which increases its hitbox.
+* {{i|Compound Fracture}}: Overriden by Technology.
+
+== In-game Footage ==
+{{#ev:youtube|BprVRCBsvZc||inline}} {{#ev:youtube|OEiHWvK7eLQ||inline}}
+
+== Audio ==
+{{sound table header}}
+{{sound table row | [[File:Technology shot.wav]] | One of the sounds lasers can make. }}
+{{sound table row | [[File:Technology shot weak.wav]] | One of the sounds lasers can make when Isaac's tear size is small (or when [[damage]] is below 1.0). Lasers sound like small bolts of electricity. }}
+{{sound table row | [[File:Technology shot strong.wav]] | One of the sounds lasers can make when Isaac's tear size is large (or when [[damage]] is 11.60 or more). Lasers sound deeper and bassier. }}
+{{sound table row | [[File:Technology shot burst.wav]] | One of the sounds lasers can make when synergizing with [[Monstro's Lung]]. }}
+|}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Technology Zero }}
+
+== Trivia ==
+* This item is used in {{chal|Computer Savvy}}.
+* {{dlc|r}} Technology gains a unique, animated costume when it inherits a form of charged attack; for example, as a result of its synergies with items such as {{i|Chocolate Milk}} or {{i|Cursed Eye}}. (See 'Gallery.')
+** This does not work with items that grant a charged attack but also override Technology's costume, e.g. {{i|Monstro's Lung}}.
+** This is one of the few, rare examples of a synergy granting a unique costume - another one being the costume granted by holding multiple copies of {{i|Brimstone}} in ''Repentance''.
+
+== Gallery ==
+<gallery>
+File:Tech_%2B_choc_milk.gif|Technology's unique 'charge attack' costume. (See 'Trivia.')
+</gallery>
+
+== Bugs ==
+{{Bug|dlc=r|Having Technology, {{I|Technology 2}} and {{i|Mom's Eye}} makes the back laser fire extremely fast.}}
+
+{{nav|fr=Technologie}}

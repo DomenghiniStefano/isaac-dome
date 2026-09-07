@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 265
+ | quote       = Immortal friend
+ | description = Spawns a [[familiar]] that follows Isaac around and blocks enemy projectiles. Upon blocking a shot, it has a chance of triggering {{i|The Necronomicon}} effect.
+ | quality     = 3
+ | tags        = summonable baby monstermanual
+ | pool        = skull
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a [[familiar]] that follows Isaac around and blocks enemy projectiles. Upon blocking a shot, it has a 25% chance of triggering {{i|The Necronomicon}} effect, dealing 40 damage to all enemies in the room. This effect of the familiar has a cooldown of 150 frames.
+* {{dlc+|r}} {{transformation contribution|Conjoined}}{{dlc-}}
+
+== Notes ==
+* This item can rarely drop from destroying [[Rocks#Skulls|skulls]].
+* {{i|The Necronomicon}} effect can occur multiple times in the same room with a small delay in-between each activation.
+* It can be used to block multiple shots if positioned correctly.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars.
+** {{dlc|nr+}} Dry Baby has 4th priority.
+** {{dlc|r+}} Dry Baby has 6th priority.
+* It is possible to activate The Necronomicon effect in a different room than the one it was hit in if Isaac transitions between them quickly enough.
+
+== Synergies ==
+* {{T|A Missing Page|r}} / {{I|Missing Page 2|r}}: Dry Baby will deal an additional +40 damage. Effects stack together and with multiple copies.
+* {{T|Duct Tape}}: Picking up Duct Tape while Dry Baby has the same position as Isaac will result in Dry Baby blocking almost all projectiles that would hit him while holding the trinket.
+** This can be achieved by standing in a doorway, dropping Duct Tape, leaving the room, then re-entering the room slowly.
+
+== Interactions ==
+* {{i|BFFS!}}: No effect on damage or blocking radius; only the visual size is changed.
+* {{i|Isaac's Heart}}: {{dlcalt|If Isaac has obtained Dry Baby in the first familiar spot ''before'' Isaac's Heart, the baby will block enemy tears before they can hit the heart. Enemies touching the heart can still do damage, and picking up the baby after the heart will cause the heart's hitbox to be checked first against shots.|r=No longer follows Isaac in a way where Dry Baby can constantly block it from tears.}}
+
+== In-game Footage ==
+{{#ev:youtube|1jp2iijlUbc}}
+
+== Trivia ==
+* A baby born 24 hours after a mother's 'water' breaks is referred to as a 'dry birth'.
+* Its name and appearance may be a reference to Dry Bones from the Mario franchise, which are immortal skeletal creatures.
+* Its design is likely a posthumous version of {{i|Farting Baby}}, as well as serving the same purpose in blocking shots.
+
+{{nav|conjoined|fr=Bébé Desséché}}

@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | id          = 328
+ | quote       = Fate chosen
+ | description = If Isaac has half a red heart or no red hearts after taking damage, all enemies in the room take significant damage. Allows entrance into the {{s|Dark Room}}. {{dlc+|r}} +1 [[Damage]] and also allows access to {{s|Home}}.{{dlc-}}
+ | quality     = 2
+ | tags        = offensive lazarusshared noeden quest
+ | pool        = Mom
+ | unlocked by = The Negative
+}}
+
+{{cit|up}}
+
+== Effects ==
+* If the character has half a red heart or no red hearts after taking damage, it triggers {{i|The Necronomicon}} effect, damaging all enemies in the room.
+* Allows entrance into the {{s|Dark Room}} after beating {{E|Satan}} in {{s|Sheol}} by touching the chest.
+* {{dlc|r}} +1 [[damage]].
+* {{dlc+|r}} Opens {{A|A Strange Door|n}} in {{s|Depths}} II and its variants that leads to {{s|Mausoleum}}/{{s|Gehenna}} II.
+** Unlike with the Dark Room entrance, The Negative gets consumed by the door and vanishes from Isaac's inventory.{{dlc-}}
+
+== Notes ==
+* This item is a guaranteed drop from {{E|Mom}}, if unlocked. Will drop alongside {{i|The Polaroid}}, provided they are both unlocked. However, they are mutually exclusive: Once one of them is picked up, the other one will disappear.
+** With the use of a teleportation item and either a 5 pip {{R|Dice Room}} or a {{i|Forget Me Now}}, a {{i|Diplopia}}, a {{i|Crooked Penny}}, or  {{i|R Key}}, both The Polaroid and The Negative or multiple copies of The Polaroid or The Negative can be obtained.
+** With {{C|Jacob and Esau|r}}, proper alignment of both characters can enable picking up both The Polaroid and The Negative.
+** With frame-perfect timing and a bomb, it is possible to pick up both The Polaroid and The Negative.
+* The Negative always triggers when taking damage as characters who lack [[Red Heart container]]s, such as {{C|???}} and {{C|Tainted ???}}, {{C|Black Judas|r}} and {{C|Tainted Judas}}, {{C|The Soul}}, {{C|Tainted Forgotten}}, {{C|Tainted Bethany}} or any other character who has chosen to trade away their heart containers in [[devil deal]]s, {{R|Black Market}}s, {{i|Guppy's Paw}} or the {{i|Potato Peeler}}.
+* The Negative will be the rightmost item after defeating Mom, in case {{cu|blind}} is active.
+* {{dlc|nr}} It is possible to obtain two Negatives by obtaining one as an {{C|Eden}} starting item.
+* Obtaining multiple copies of The Negative does not cause its effect to stack.
+* As with all items crucial to story progress ({{I|Key Piece 1}} and {{I|Key Piece 2}}, {{I|Knife Piece 1}} and {{I|Knife Piece 2}}, {{I|Dad's Note}}, and {{I|Dogma}}), this item has protection from full-run rerolls. It does not, however, share the immunity {{I|Dad's Note}} has to D6-type rerolls and {{I|Void}}.
+
+== Synergies ==
+* {{T|A Missing Page|r}} / {{I|Missing Page 2|r}}: Deals an additional +40 damage. Effects stack together and with multiple copies.
+
+== In-game Footage ==
+{{#ev:youtube|KI9LM-Fb3cA}}
+
+== Trivia ==
+* '''The Negative''' allows access to the Dark Room, which is also the name of a room used to develop photos ([[wikipedia:Darkroom|Darkroom]]).
+* A [[wikipedia:Negative (photography)|negative]] is a piece of film with an image imprinted on it and developed, and light can be shone through it to imprint a positive image on photographic paper. A negative has inverted hues and luminosity.
+
+{{nav|satan unlock|fr=Le Négatif}}
+[[Category:Damage-triggered items]]

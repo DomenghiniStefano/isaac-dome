@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 649
+ | quote       = Bouncy friend
+ | description = Gives Isaac a miniature {{E|Baby Plum|n}} [[familiar]] that propels itself diagonally around the room, firing tears behind itself as it travels.
+ | quality     = 1
+ | tags        = summonable monstermanual offensive fly
+ | unlocked by = Fruity Plum
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Gives Isaac a [[familiar]] that mimics {{E|Baby Plum}}'s attack of shooting tears and propelling itself diagonally around the room. It deals 2 contact damage per tick to enemies (6 per second). It fires 15 tears per second behind itself while moving which deals 3 damage.
+** Fruity Plum will prioritize moving towards nearby enemies.
+** If there are no enemies, Fruity Plum loosely orbits Isaac.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* Since the achievement to unlock explicitly states you must merely '''defeat''' Baby Plum, regardless of the method used, sparing Baby Plum and letting her leave counts towards the unlocking of this item.
+
+== Synergies ==
+* {{T|Baby-Bender}}: The [[homing]] effect is applied as normal which drastically improves its damage output.
+* {{I|BFFS!}} / {{I|Hive Mind}}: Doubles its contact damage and tear damage. The effect does not stack.
+
+== Interactions ==
+* {{T|Child Leash}}: No effect.
+* {{T|Forgotten Lullaby}}: Does not increase its fire rate.
+* {{T|Friendship Necklace}}: No effect.
+* {{T|RC Remote}}: No effect.
+
+{{nav|fly}}

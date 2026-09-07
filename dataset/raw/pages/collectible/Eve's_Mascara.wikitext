@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | id          = 310
+ | quote       = {{dlcalt|Shot speed down + DMG up|r=DMG up, tears + shot speed down}}
+ | description = {{Dlc|nr}} Doubles [[damage]], halves [[tears]] stat, and greatly reduces [[shot speed]].<br>{{Dlc|r}}  Doubles [[damage]], 0.66x [[tears]] multiplier, and greatly reduces [[shot speed]].
+ | quality     = 3
+ | tags        = summonable offensive
+ | unlocked by = Eve's Mascara
+}}
+
+{{cit|up}}
+
+== Effects ==
+* 2x [[damage]] multiplier.
+* -0.5 [[shot speed]].
+* {{Dlc|nr}} 0.5x fire rate multiplier.<!--The previous description was confused about tears / tear delay / fire rate but seemed to suggest this.-->
+* {{Dlc|r}} 0.66x fire rate multiplier.
+
+== Notes ==
+* {{Dlc|nr}} Eve's Mascara is DPS neutral, though often the reduction of shot speed is a downgrade.
+* Combos very well with any item that scales with damage but not with fire rate, such as {{i|Rotten Baby}} or {{i|Fate's Reward}}.
+* {{Dlc|r}} Eve's Mascara is effectively a 33% increase in DPS, and the shot speed down is no longer as detrimental due to changes in how range works.
+
+== Synergies ==
+* {{i|Abyss}}: When Eve's Mascara is picked up instead of being converted into a locust, it grants all of Abyss's locusts the high damage up without suffering the fire rate reduction allowing Isaac to increase his damage rate substantially the more items he uses Abyss on.
+* {{i|Epic Fetus}}: Missiles are not affected by low shot speed and the fire rate difference is negligible, granting double damage with nearly no downside.
+* {{i|Mom's Knife}}: The Knife is not affected by shot speed. Fire rate reduction down and 2x damage multiplier still apply.
+* {{i|Trisagion}}: Beams turn black and do double damage. The low shot speed makes beams damage enemies more frequently.
+* {{i|Tech X}}: Tech X benefits from a lower shot speed due to it staying on enemies longer and is also not affected by range, giving little downsides.
+** {{Dlc|r}} The fire rate reduction can be a major downside as it takes longer to charge Tech X and shots deal less damage when not fully charged.
+
+== Interactions ==
+* {{i|Dr. Fetus}} / {{i|Ipecac}}: Shots travel a very short distance, so having {{i|Host Hat}} or {{i|Pyromaniac}} is strongly recommended.
+* {{i|Eve's Mascara}}: No further effect when stacked.
+* {{i|The Ludovico Technique}}: '''Not recommended.''' Tear travels very slowly, making it hard to kill mobile enemies.
+
+== In-game Footage ==
+{{#ev:youtube|Aq4hBvKlGeo}}
+
+{{nav|eve unlock|boss rush unlock|fr=Mascara d'Ève}}

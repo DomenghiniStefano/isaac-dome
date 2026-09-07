@@ -1,0 +1,55 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 583
+ | quote       = Rocket propulsion +5 bombs
+ | description = +5 {{e|Bomb}}s. If Isaac is currently firing, placing a bomb will instead shoot a fast-moving, explosive rocket in the direction he's facing.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Adds 5 {{e|Bomb}}s.
+* If any firing input is given when placing a bomb, a fast-moving, explosive rocket will be shot in the direction corresponding to the input.
+** The rockets accept analog firing input. This means they can be shot diagonally or in any other angle with a mouse or joystick.
+** Isaac will place a regular bomb if no firing input is received.
+
+== Notes ==
+* Rockets use Isaac's bomb synergies like his bombs normally would.
+* Rockets are unaffected by Isaac's [[shot speed]].
+* Rockets can be boosted by {{i|Brimstone}} lasers and {{I|Hemoptysis}} sneezes.
+* Bosses such as {{E|Chub}} or {{E|Carrion Queen}} can swallow the rockets just like regular bombs.
+
+== Synergies ==
+* {{t|Bob's Bladder}}: Rockets leave creep, albeit slowly.
+* {{i|Bobby-Bomb}}: Rockets become homing.
+* {{i|Dr. Fetus}}: Shoots rockets as normal tears. All synergies that would normally apply are given to the rockets.
+* {{E|Giga Bomb}}s: Fires a giant rocket that moves slower and has the same effects as a normal Giga Bomb.
+* {{t|Ring Cap}}: Fires two rockets simultaneously.
+
+== Interactions ==
+* {{i|Best Friend}}/{{i|Bob's Rotten Head}}/{{i|Epic Fetus}}/{{i|Mr. Boom}}: No effect.
+* {{t|Blasting Cap}}: Rockets can drop bomb pickups.
+* {{i|Marked}}: Rockets will fly to the location of the crosshair.
+* {{i|Sticky Bombs}}: Rockets will not stick onto enemies.
+* {{I|Remote Detonator}}: Rockets do not explode on impact with surfaces, requiring manual detonation.
+** '''Remote Detonator + Dr. Fetus:''' Rockets fired with Dr. Fetus will still explode on impact, but can be manually detonated.
+* Worm [[trinket]]s: Rocket's trajectory is unaffected.
+** {{T|Wiggle Worm}} '''+ Dr. Fetus''': Rocket will wiggle from side to side mid-flight. This is the only worm trinket that affects Rocket in a Jar.
+* {{I|My Reflection}}: No effect.
+** '''My Reflection + Dr. Fetus:''' Rockets fired with Dr. Fetus will turn back at Isaac, but will not explode in contact with the player. However, it will explode after a duration, possibly damaging Isaac.
+
+== In-game Footage ==
+{{#ev:youtube|VFn8VXmKgog}}
+
+== Gallery ==
+<gallery>
+File:Giga Rocket in a Jar bomb.png | A giga rocket.
+</gallery>
+
+== Trivia ==
+* [[anti:Rocket In A Jar|Rocket in a Jar]] originates from the ''Antibirth'' mod.
+* Rocket in a Jar resembles a missile tank upgrade from the Nintendo franchise Metroid.
+
+{{nav|bomb modifier|fr=Fusée en Bocal}}

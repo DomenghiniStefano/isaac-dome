@@ -1,0 +1,64 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Booster Pack 1}}
+ | id          = 519
+ | quote       = Delirious friend
+ | description = Grants a [[familiar]] that transforms into another random familiar every 10 seconds.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable {{dlc|r+|baby}} monstermanual offensive
+ | unlocked by = Lil Delirium
+}}
+
+{{cit|up|a+1}}
+
+== Effects ==
+* Grants a [[familiar]] that transforms into another random familiar every 10 seconds.
+** The familiars it turns into are normal familiars that look white and melted like {{e|Delirium}}.
+** Familiars deal the same damage as their normal non-Delirium counterparts.
+** Familiars will not do contact damage.
+
+== Notes ==
+* Lil Delirium can transform into the following familiars:
+** [[File:Lil Delirium Acid Baby.png|20x20px|link=Acid Baby]] [[Acid Baby]]
+** [[File:Lil Delirium BBF.png|20x20px|link=BBF]] [[BBF]]
+** [[File:Lil Delirium Bob's Brain.png|20x20px|link=Bob's Brain]] [[Bob's Brain]]
+** [[File:Lil Delirium Dry Baby.png|20x20px|link=Dry Baby]] [[Dry Baby]]
+** [[File:Lil Delirium Headless Baby.png|20x20px|link=Headless Baby]] [[Headless Baby]]
+** [[File:Lil Delirium Hushy.png|20x20px|link=Hushy]] [[Hushy]]
+** [[File:Lil Delirium Incubus.png|20x20px|link=Incubus]] [[Incubus]]
+** [[File:Lil Delirium Lil Brimstone.png|20x20px|link=Lil Brimstone]] [[Lil Brimstone]]
+** [[File:Lil Delirium Lil Gurdy.png|20x20px|link=Lil Gurdy]] [[Lil Gurdy]]
+** [[File:Lil Delirium Lil Haunt.png|20x20px|link=Lil Haunt]] [[Lil Haunt]]
+** [[File:Lil Delirium Lil Monstro.png|20x20px|link=Lil Monstro]] [[Lil Monstro]]
+** [[File:Lil Delirium Little Chubby.png|20x20px|link=Little Chubby]] [[Little Chubby]]
+** [[File:Lil Delirium Little Gish.png|20x20px|link=Little Gish]] [[Little Gish]]
+** [[File:Lil Delirium Robo-Baby 2.0.png|20x20px|link=Robo-Baby 2.0]] [[Robo-Baby 2.0]]
+** [[File:Lil Delirium Rotten Baby.png|20x20px|link=Rotten Baby]] [[Rotten Baby]]
+** [[File:Lil Delirium Seraphim.png|20x20px|link=Seraphim]] [[Seraphim]]
+** [[File:Lil Delirium Super Meat Boy.png|20px|link=Cube of Meat]] Super Meat Boy ([[Cube of Meat]]'s 4th stage)
+** {{Dlc|r}}[[File:Lil Delirium Big Chubby.png|20x20px|link=Big Chubby]] [[Big Chubby]]
+** {{Dlc|r}}[[File:Lil Delirium Farting Baby.png|20x20px]] [[Farting Baby]]
+** {{Dlc|r}}[[File:Lil Delirium Fruity Plum.png|20x20px]] [[Fruity Plum]]
+** {{Dlc|r}}[[File:Lil Delirium Isaacs Head.png|20x20px]] [[Isaac's Head]]
+** {{Dlc|r}}[[File:Lil Delirium Lil Loki.png|20x20px]] [[Lil Loki]]
+* Lil Delirium can transform into the same familiar multiple times in a row and therefore stay in the same form for more than 10 seconds.
+* Every time Lil Delirium transforms from a free-floating familiar to a follower one, it positions itself at the end of the familiar train.
+* Lil Delirium can damage Isaac when transformed into BBF or Bob's Brain.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars. Lil Delirium starts at {{dlc|nr+}} 4th / {{dlc|r+}} 6th priority regardless of the familiar it transforms into as long as it starts as a familiar that follows behind Isaac. When Lil Delirium changes out of a familiar that follows behind Isaac; its priority resets and becomes equal to its next form (e.g. having {{dlc|nr+}} 2nd / {{dlc|r+}} 3rd priority when its next form is [[File:Lil Delirium Incubus.png|20x20px|link=Incubus]]). Changing from one following familiar to another will not change priorities.
+* {{dlc|r+}} {{transformation contribution|Conjoined}}
+
+== Synergies ==
+* {{i|Box of Friends}}: The copy of Lil Delirium will be a different random familiar.
+* {{dlc+|r}} {{C|Tainted Lilith}} + {{i|Birthright}}: Lil' Delirium will only stack on top of Gello if it transforms into a familiar that does.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|ruukYnika6o}}
+
+== Trivia ==
+* Lil Delirium is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=845230668 this Steam Workshop item] by Ashkait and Scayze.
+* Lil Delirium is one of only five items to appear in both the Angel and Devil item pools, the others being {{i|7 Seals}}, {{i|Void}}, {{i|Duality}}, and {{I|Purgatory}}.
+
+== Bugs ==
+{{bug|When entering a new floor or room, Lil Delirium and a normal familiar you have can swap forms as long as Lil Delirium is currently transformed as that familiar. For example, if you have {{i|Lil Brimstone|n}} and Lil Delirium, Lil Brimstone will become Lil Delirium's form, while Lil Delirium will look normal. This persists for the other familiar, but Lil Delirium will go back to normal. This also works if you pick up the familiar Lil Delirium is transformed as.{{reconfirm}}}}
+
+{{nav|conjoined|delirium unlock|booster pack|fr=P'tit Delirium}}

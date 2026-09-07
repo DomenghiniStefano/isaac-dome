@@ -1,0 +1,55 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 55
+ | quote       = Eye in the back of your head
+ | description = Gives Isaac a chance to fire tears from the back of his head.
+ | quality     = 1
+ | tags        = summonable mom offensive
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Gives Isaac a chance to shoot a tear out of an eye on the back of his head.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc|nr}} The chance to shoot an extra tear depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 2 - \left \lfloor \mathit{Luck} * 0.5  \right \rfloor}</math>
+** At base luck (0), the chance is 50%, maxing out at 100% at 2 luck.
+* {{dlc|r}} The chance to shoot an extra tear depends on the [[luck]] stat and is based on this formula: <math>50\% + (10\% * \mathit{Luck})</math>
+** This means that the chance starts at 50% at 0 luck, minimizes at 0% at -5 luck, and maximizes at 100% at 5 luck.
+
+== Synergies ==
+* {{I|Continuum}}: Tears shot out of the back reappear on the opposite side of the screen.
+* {{I|Eye of the Occult}}: Mom's Eye tears follow the direction in which Isaac is shooting.
+* {{i|Loki's Horns}}: Any time Mom's Eye would activate, Loki's Horns activates instead.
+* {{i|Rubber Cement}}: Tears bounce around, making the backward tear more likely to hit enemies.
+* {{i|Mom's Knife}}: Another knife is permanently behind Isaac, able to deal contact damage. The fire chance is still affected by luck as usual.
+
+== Interactions ==
+* {{i|20/20}}/{{i|The Inner Eye}}/{{i|Mutant Spider}}: No effect on the tears fired out of the back of Isaac's head. The chance to activate is checked per shot, not for each tear fired.
+* {{i|Dr. Fetus}}: Occasionally shoots a bomb backward. Not recommended, as self-damage is likely.
+* {{i|Doctor's Remote}}/{{i|Epic Fetus}}: Chance for two airstrikes on opposite sides of Isaac.
+* {{i|Ipecac}}: Occasionally shoots an explosive shot backward. Not recommended, as self-damage is likely.
+* {{i|Incubus|anr}}: No effect.
+* {{i|Kidney Stone}}: Adds a chance for each tear from the barrage to fire from the front and back of Isaac. The kidney stone will only fire from the front of Isaac.
+* {{i|Lead Pencil|a+nr}}: Adds a chance for the tear barrage to be fired behind Isaac instead of in front.
+* {{i|The Ludovico Technique|a}}: Adds a chance for [[piercing]] + [[spectral]] tears to be fired in random directions from the main tear. This chance scales with [[luck]] and goes up to 100% at 10 Luck.
+* {{i|Monstro's Lung}}: Occasionally fires one red tear out the back of Isaac's head.
+* {{i|Tractor Beam}}: The backward tear is not affected by Tractor Beam.
+* {{i|The Wiz}}: The backward tear is not affected by The Wiz.
+
+== In-game Footage ==
+{{#ev:youtube|5OoQXBGY4VI||inline}} {{#ev:youtube|GOZOKvfs7Dk||inline}}
+
+== Trivia ==
+* {{dlc|a+}} Mom's Eye's appearance was changed in [[Booster Pack #5]].
+* The item is based on the adage that a mother has an eye on the back of her head, and is thus always able to see what her child is up to.
+
+== Bugs ==
+{{Bug|dlc=r|Having a Mom's Eye, {{i|Technology}} and {{I|Technology 2}} makes the back laser fire extremely fast.}}
+
+== References ==
+* [https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing The Binding of Isaac Item Trigger Testing]
+
+{{nav|yes mother|mom}}

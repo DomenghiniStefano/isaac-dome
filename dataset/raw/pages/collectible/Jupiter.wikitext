@@ -1,0 +1,40 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 594
+ | quote       = You're a gas giant!
+ | description = +2 red [[Heart container]]s, -0.3 [[speed]]. Isaac builds speed while standing still, and releases [[poison]] gas clouds when he moves afterwards.
+ | quality     = 2
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* {{dlc|nr+}} Grants two empty Red [[Heart container]]s and restores half a red heart.
+* {{dlc|r+}} Grants two full Red [[Heart container]]s.
+* -0.3 [[Speed]].
+* Standing still causes Isaac to build up [[speed]] at a rate of +0.25 per second, up to a +0.5 speed bonus.
+* Isaac charges up while standing still. Moving releases a fart cloud behind Isaac, damaging and inflicting [[Status Effects#Poison|Poison]] on enemies that pass through it and draining the speed buff at a rate of -0.25 speed per second. The fart clouds are left behind for the duration of the speed buff.
+** The fart clouds deal 0.5× Isaac's [[damage]] per tick (1.5× Isaac's damage per second), and last ~2.5 seconds.
+* Isaac is immune to Poison from enemies, such as {{E|Gasbag}} or [[Mushroom (Obstacle)|Mushrooms]].
+
+== Notes ==
+* As the speed buff requires Isaac to stand still, Jupiter is effectively a speed down.
+* The fart clouds are mechanically independent of the speed increase. Even while at max speed, the fart cloud must be charged by standing still.
+
+== Synergies ==
+* {{I|Camo Undies}}: Damaging enemies with the fart clouds will not take away Isaac's camouflage.
+* {{I|Dark Arts}}: Stays in effect even while using Dark Arts, allowing Isaac to deal more damage to nearby enemies while invulnerable.
+* {{t|Gigante Bean}}: Greatly increases size of fart clouds.
+* {{C|Tainted Forgotten}}: Gives a flat +0.20 speed boost and +2 soul hearts with no other effects.
+
+== In-game Footage ==
+{{#ev:youtube|dNp518JtGhw}}
+
+== Trivia ==
+* Jupiter, as well as {{i|Neptunus}}, was designed for the original ''Antibirth'' mod, but never actually implemented until ''Repentance''.
+* Jupiter's effects and pickup quote reference the planet [[Wikipedia:Jupiter|Jupiter]]'s nature as a [[Wikipedia:Gas giant|gas giant]], being composed mainly of hydrogen and helium in gas and liquid form.
+* The item's ability to create fart clouds after standing still and poison immunity could be a reference to ''Nuclear Throne'', where the character [[nuclearthrone:Frog|Frog]] has similar abilities.
+* {{dlc|nr+}} Jupiter is the only item that gives a half-full heart container on pickup.
+
+{{nav|astrological}}

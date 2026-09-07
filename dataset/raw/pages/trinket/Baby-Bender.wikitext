@@ -1,0 +1,37 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Baby-Bender
+ | quote = Feed them magic!
+ | id = 127
+ | description = Grants Isaac's [[familiar]]s [[Tear Effects#Homing|homing shots]].
+ | unlocked by = Baby-Bender
+}}
+
+{{cit|ut|a+5}}
+
+== Effect ==
+* Grants Isaac's [[familiar]]s [[Tear Effects#Homing|homing shots]].
+** This includes the shots fired by {{c|Lilith}} and {{C|Tainted Lilith|r}}'s attached familiar.
+
+== Notes ==
+* {{dlc|nr}} Using {{P|I - The Magician}} with {{i|Tarot Cloth}} will unlock this item.
+** {{dlc|r}} Tarot Cloth with the card has a unique effect and does not count as two uses for unlocking purposes.
+* Using {{i|Telepathy For Dummies}} twice in the same room will unlock this item.
+** Using it once with {{i|Car Battery}} will work.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either makes familiar tears gain the {{t|Brain Worm|n}} effect. Having both makes familiars gain the {{t|Tape Worm|n}} effect on top.
+* {{i|The Intruder}}: Baby-Bender applies to The Intruder's projectiles while it is still in Isaac's head.
+
+== In-game Footage ==
+{{#ev:youtube|wEnkuwkwHgQ}}
+
+== Trivia ==
+* Baby-Bender is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=925882166 this Steam Workshop item] by Ink Toodles and ajudadoraAustera.
+
+== Gallery ==
+<gallery>
+File:Trinket Baby-Bender mod icon.png|Baby-Bender's appearance in the original [https://steamcommunity.com/sharedfiles/filedetails/?id=925882166 Steam Workshop mod].
+</gallery>
+
+{{nav|booster pack|familiar modifier}}

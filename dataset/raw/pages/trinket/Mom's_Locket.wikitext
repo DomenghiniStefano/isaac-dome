@@ -1,0 +1,43 @@
+{{distinguish visual|Friendship Necklace}}{{infobox trinket
+ | dlc         = a
+ | id          = 87
+ | quote       = You feel her love
+ | description = Grants a {{e|Half Red Heart}} each time a {{e|Key}} is used. Converts {{e|Half Red Heart}} pickups into {{e|Red Heart}}s.
+ | tags        = {{dlc|nr+|mom}}
+}}
+
+{{cit|t|a}}
+
+== Effects ==
+* Grants a {{e|Half Red Heart}} each time a {{e|Key}} is used to unlock a door, {{E|Locked Chest}}, or key block.
+* Turns {{e|Half Red Heart}} pickups into {{e|Red Heart}}s. Half hearts already on the ground will also be upgraded upon re-entering the room.
+
+== Notes ==
+* Having Mom's Locket while playing {{C|Keeper}} or {{C|Tainted Keeper|r}} will restore a full health coin when a key is used.
+* Donating keys to a {{M|Key Master}} won't heal Isaac.
+* A very useful trinket for unlocking the {{A|It's the Key}} achievement, in which Isaac cannot pick up coins, bombs, and most importantly, hearts.
+* {{c|Tainted Bethany}} is granted a blood charge upon using a key.
+
+== Synergies ==
+* {{T|Equality!|nr+}}: As long as Equality is active, ''all'' red hearts will be double.
+* {{I|Humbleing Bundle}}: Humbleing Bundle cannot alter half red hearts, but Mom's Locket turns them into full red hearts, which it can double.
+* {{i|Hypercoagulation|r}} / {{p|Soul of Magdalene|r}} / {{C|Tainted Magdalene|r}}: Created temporary half hearts are now full red hearts.
+* {{i|Birthright|r}} + {{C|Tainted Eve|r}}: Blood clots drop full hearts rather than half hearts, making it possible to infinitely make two for one.
+* {{I|The Jar}}: Any half red hearts stored by The Jar will be converted to full hearts when dropped on the ground. Since The Jar will store any leftover health from healing Red Heart Containers, this can allow for potentially infinite health when healing half-empty containers. Especially effective in conjunction with {{I|Cancer}} or {{I|The Wafer}}.
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either now grants a {{e|Red Heart}} when using a key. Having both grants 1 and a half heart.
+
+== Interactions ==
+* {{e|Golden Key}} / {{i|Pay To Play}} / {{t|Paper Clip}} / {{t|Blue Key}}: Renders Mom's Locket less effective, as the trinket requires a key to be consumed by the lock in order to heal Isaac.
+
+== In-game Footage ==
+{{#ev:youtube|9GmKqPQFkSU||inline}} {{#ev:youtube|3geWFMcajvQ||inline}}<br />
+
+== Gallery ==
+<gallery>
+File:AB Item Concept.jpg|''Afterbirth'' item and trinkets concepts, including Mom's Locket.
+</gallery>
+
+== Bugs ==
+{{bug|dlc=rnr+|Mom's Locket will not contribute to the Yes Mother? transformation nor unlocking {{i|Mom's Contacts}} despite having the item tag.}}
+
+{{nav|key modifier|mom|fr=Médaillon de Maman}}

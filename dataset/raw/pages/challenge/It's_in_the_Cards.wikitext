@@ -1,0 +1,25 @@
+{{infobox challenge
+ | number    = 14
+ | item      = {{i|9 Volt}}<br>{{i|The Battery}}<br>{{i|Deck of Cards}}<br>{{i|Starter Deck}}
+ | pickup    = 2 random [[tarot card]]s
+ | has shops = yes
+ | unlocks   = SMB Super Fan
+}}
+
+'''It's in the Cards''' is [[Challenges|challenge]] #14. {{c|Isaac}} starts with {{i|Deck of Cards}}, {{i|Starter Deck}}, {{i|The Battery}}, {{i|9 Volt}}, and two random [[Cards and Runes#Major Arcana Cards|tarot card]]s. The goal is to defeat {{E|Mom}}. This challenge is available by default.
+__TOC__
+
+== Difficulty ==
+A straightforward challenge, but no {{R|Treasure Room}}s. Do not be afraid to use cards relatively frequently, as they charge fairly quickly.
+
+== Strategy ==
+* There will be access to cards throughout much of the run. Know what the cards do and use them accordingly.
+* There is no special strategy, however, it is not a bad idea to reroll until getting the {{p|Joker}} card and until getting great items in a Devil/Angel Room.
+* If one has {{P|VI - The Lovers?}} unlocked, restarting until you obtain one is a viable strategy, as one can get powerful secret room items such as {{I|Echo Chamber}} and {{I|Rock Bottom}}. With a decent amount of cards giving stats such as {{P|III - The Empress}}, {{P|VII - The Chariot?}}, {{P|XI - Strength}}, and {{P|XV - The Devil}}, one will quickly accumulate great stats.
+* Picking up {{I|Little Baggy}} can greatly influence the run, as {{dlc|nr}} the Deck of Cards will create pills instead of cards. {{dlc|r}} Pills will be allowed to spawn alongside cards.
+* Carrying {{t|Endless Nameless}} can be quite useful, as the 25% chance to duplicate a card upon use is used constantly throughout the run.
+
+== Reward ==
+{{achievement text | SMB Super Fan }}
+
+{{nav|challenge|fr=Bonne Aventure}}

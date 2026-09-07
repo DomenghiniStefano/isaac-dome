@@ -1,0 +1,40 @@
+{{infobox trinket
+ | id          = 53
+ | quote       = Well, that's not coming off
+ | description = Drains 15% health from enemies with more than 60 HP. Restores one {{E|Red Heart}} when entering an uncleared {{R|Boss Room}}. The Tick cannot be dropped or swapped for another trinket.
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Removes 15% of any enemy's health if they have 60 HP or higher.
+* Gives Isaac one {{E|Red Heart}} if he enters an unexplored {{R|Boss Room}}.
+* Once picked up, Tick can't be dropped or replaced with another trinket.
+
+== Notes ==
+* Only works on the first stage of multistage bosses.
+* {{dlc|a}}[[Friendly]] enemies are also affected by the health removal when above 60&nbsp;hp.
+* {{dlc+|anr}} This trinket's effect can be multiplied to a maximum of x2 through any combination of multiple copies and {{i|Mom's Box}}. This also includes multiplying the healing effect when entering a {{r|Boss Room}}.{{dlc-}}
+* {{dlc+|r}} This trinket's effect can be stacked via any combination of multiple copies, golden variants, and {{i|Mom's Box}} with enough stacks causing any enemy above 60&nbsp;hp to have the lowest amount of health possible with any amount of damage killing them. This also includes stacking the healing effect when entering a {{r|Boss Room}}. The HP removal stacking effect is equal to 0.85 ^ Number of Tick Instances, with golden trinkets adding on 2 to this.{{dlc-}}
+* {{dlc|r}} Has no effect on {{e|Mega Satan}}.
+* {{dlc|r}} Has no effect on the [[Harbingers (Bosses)|Ultra Harbingers]]. Works on both phases of {{e|Dogma|n}}.{{dlc-}}
+* Losing {{i|Mom's Purse}} or {{i|Belly Button}} (such as from an item re-roll) will drop Tick if it's in the second trinket slot.
+
+== Synergies ==
+* {{a|Golden Trinket}}: The golden version can be freely dropped or replaced by another trinket.
+** {{a|Golden Trinket|r+}}/{{i|Mom's Box|r+}}: Having either heals Isaac for 2 hearts when entering an unexplored Boss Room. Having both heals Isaac for 3 hearts.
+* {{dlc+|a+}} {{i|Marbles}} / {{i|Smelter}} / [[Pills|Gulp!]]: Absorbs the trinket, allowing Isaac to pick another trinket up.{{dlc-}}
+* {{dlc|a}} {{t|Match Stick}} / {{dlc+|r+}} {{t|A Lighter}}{{dlc-}}: Tick can be removed by picking up these trinkets.
+** {{dlc+|nr+}} '''Match Stick''' + {{i|Mom's Purse}} / {{i|Belly Button}}: Match Stick can no longer remove Tick, instead moving to the second trinket slot even if Isaac already holds two trinkets.{{dlc-}}
+* {{i|Mom's Box}}: Reduces enemy's health by 30%.
+
+== In-game Footage ==
+{{#ev:youtube|QXfO6y1E6Dc}}
+
+== Trivia ==
+* {{dlc|a}} Being able to replace the Tick with Match Stick is a reference to how one can remove a tick that has latched onto their skin in real life with a heated tip of a match stick; however, removing a tick like this can expose oneself to disease-causing bacteria present in the tick. It is also a feature that was carried over from the original ''The Binding of Isaac'', though it's unclear why it wasn't originally added in ''Rebirth''.
+* The Tick is the only trinket that passively changes Isaac's appearance.
+* The Tick bears similarity to a real-life deer tick.
+* This trinket is used in [[The Host]] (challenge #18).
+
+{{nav|fr=Tique}}

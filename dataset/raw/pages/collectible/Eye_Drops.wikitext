@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 600
+ | quote       = Tears up
+ | description = Increases the [[fire rate]] in Isaac's left eye, causing his eyes to fire at different rates.
+ | quality     = 3
+ | tags        = summonable tearsup offensive
+}}
+{{distinguish visual|Tropicamide}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Increases the [[fire rate]] of tears fired from Isaac's left eye by 40%.
+** The difference in fire rates causes Isaac's tears to be fired at a staggered rate.
+** The first shot in a while is always a double shot.
+
+== Notes ==
+* The listed fire rate on found hud is x1.2 fire rate excluding any items that add to fire rate directly.
+* Every type of attack that does not use both of Isaac's eyes benefits from the fire rate up, but will not have staggered attack rate. These include, for example:
+** All charged attacks such as {{i|Brimstone}} and {{i|Monstro's Lung}}.
+** All tear replacers such as {{i|Dr. Fetus}} and {{i|Technology}}.
+** All one-eyed characters and item effects, such as {{c|Cain}} and {{i|Stapler}}.
+** Attacking via familiars, such as {{i|Incubus}} and {{c|Tainted Lilith}}.
+* Multi-shot attacks such as {{i|20/20}} and {{i|Mutant Spider}}  ''do'' have staggered firing.
+
+== Synergies ==
+* {{i|Blood Clot}}/{{i|Chemical Peel}}/{{I|The Peeper}}: The bonuses these items give go to Isaac's left eye, making them more beneficial.
+
+== Interactions ==
+* {{i|Bag of Crafting}}/{{i|Crooked Penny}}/{{i|Diplopia}}: Multiple copies of Eye Drops do not stack.
+
+== Trivia ==
+* [[anti:Eye Drops|Eye Drops]] is from the ''Antibirth'' mod.
+
+{{nav|fr=Collyre}}

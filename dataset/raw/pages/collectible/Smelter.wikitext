@@ -1,0 +1,50 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 479
+ | quote       = Trinket melter!
+ | description = Consumes Isaac's currently held [[trinket]] and applies its effects permanently.
+ | quality     = 2
+ | tags        = offensive
+ | recharge    = 6
+ | unlocked by = Smelter
+}}
+
+{{cit|ua|a+}}
+
+== Effects ==
+* Upon use, any [[trinket]]s that Isaac is holding are destroyed, and their effects are permanently applied to him.
+** {{dlc|r}} Trinkets that are absorbed show up on the HUD's item tracker.
+* Increases the chance for a trinket to drop after clearing a room. (Has a 2% chance to turn the pickup variant into a trinket.)
+
+== Notes ==
+* While held, {{i|Mom's Box}} will double the effect of all absorbed trinkets (if their effects can be doubled).
+* Absorbing the {{t|Tick}} will allow Isaac to pick up other trinkets again.
+* Trinkets whose effects only activate once, such as {{t|Store Credit}}, {{t|Missing Poster}}, and {{t|Walnut}}, will still only activate once after being absorbed.
+* {{t|Perfection}} is still removed if Isaac takes damage from regular sources.
+* {{dlc+|r}} {{T|Faded Polaroid}} cannot be used to open {{A|A Strange Door}} if smelted.{{dlc-}}
+* It is possible to find previously smelted trinkets during a [[Victory Lap]], or if the trinket Item Pool is exhausted.
+* {{dlc|nr}} Picking up a copy of a trinket which was already absorbed will not duplicate that trinket's effect.
+* {{dlc|nr}} The trinket will not be absorbed if Smelter is activated during the pickup animation.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns yellow wisps on the middle ring. The wisps have a chance to spawn [[trinket]]s when destroyed.}}
+* {{I|Glyph of Balance|r}}: Allows a trinket to appear every time there's a room clear drop as long as the other room clear drop criteria aren't satisfied, as it empties the trinket slot.
+* {{C|Tainted Eden|r}}: Absorbed trinkets are not rerolled by Tainted Eden's passive effect.
+* {{C|Tainted Isaac|r}}: Absorbed trinkets do not take up an item slot.
+
+== Interactions ==
+* {{I|Car Battery}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|rae22ZR1FpA}}
+
+== Gallery ==
+<gallery>
+File:Collectible Smelter concept.png|Concept art for Smelter
+</gallery>
+
+== Trivia ==
+* Smelter, alongside {{I|Marrow}}, are currently the only items that can be unlocked specifically by defeating {{E|Mom's Heart}} or {{E|It Lives!}} on Hard Mode.
+
+{{nav|trinket modifier|apollyon unlock|moms heart unlock|it lives unlock|fr=Fondeuse}}

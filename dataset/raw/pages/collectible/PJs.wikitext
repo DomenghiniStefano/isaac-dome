@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 428
+ | quote       = You feel cozy
+ | description = Grants 4 {{E|Soul Heart}}s and fully restores Isaac's [[health]].
+ | quality     = 2
+ | tags        = nolostbr
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Grants four {{E|Soul Heart}}s.
+* Heals 12 [[Hearts]].
+
+== Interactions ==
+* {{C|Tainted Bethany}}: Grants 12 blood charges.
+
+== In-game Footage ==
+{{#ev:youtube|UI61EBd5VB4}}
+
+== Trivia ==
+* The outfit's color is similar to the outfit of [https://en.wikipedia.org/wiki/Pajama_Sam Pajama Sam], a character who also wears pajamas. Wearing the {{i|Blanket}} further matches the outfit if worn together.
+* This item is part of a set of bedtime-themed items, including {{i|Binky}}, {{i|Blanket}}, {{i|Mr. Dolly}}, and {{i|Night Light}}.
+* Picking this item up instantly unlocks {{C|Lazarus}} if he isn't unlocked, due to PJs instantly granting the 4 required Soul Hearts.
+
+{{nav|fr=Pyjama}}

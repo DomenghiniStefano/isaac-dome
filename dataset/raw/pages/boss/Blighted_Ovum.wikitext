@@ -1,0 +1,47 @@
+{{infobox boss
+ | image name    = * {{dlc|nr|Rebirth}}
+ | portrait name = * {{dlc|nr|Rebirth}}
+ | id            = 79
+ | variant       = 2
+ | environment   = <u>Boss</u><br>{{floor|Cellar}}<br>{{room|challenge}}{{room|boss challenge}}{{room|Boss Rush}}<br><u>Double Trouble</u><br>{{floor|Necropolis}}<br><u>Degraded Boss</u><br>{{floor|Cathedral}}{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp       = 140
+ | pool          = {{ip|Boss}}<br> {{i|Lost Soul|r+}} (1% chance)
+}}
+
+'''Blighted Ovum''' is a [[boss]] that can appear in the {{s|Cellar}}.
+
+== Behavior ==
+Blighted Ovum starts separated into two parts.
+* Suture, now a ghost, is invincible and slowly floats towards Isaac, firing a horizontal {{i|Brimstone}} shot whenever Isaac is to his left or right. Suture cannot be killed and will die once Contusion does.
+* Contusion constantly chases Isaac while leaving behind a trail of [[Red Creep]], and he periodically charges and gains speed. Unlike {{e|Gemini}}, he will not stop for a breath but slows down to his regular speed.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Blighted Ovum ingame.png|{{dlc+|a+}} Blighted Ovum as one of {{e|Delirium}}'s forms.{{dlc-}}
+File:WOTL Boss Sketches.jpg|Sketch of what appears to be an older concept of Blighted Ovum, along with other bosses that were to be added in the original ''The Binding of Isaac'''s ''Wrath of the Lamb'' DLC. Note that the behaviors mentioned in the concept art were never implemented in the original game onwards.
+</gallery>
+
+== Notes ==
+* {{dlc+|a+nr}} Suture can be killed by {{i|Little Horn}}.{{dlc-}}
+* If encountered in a Double Trouble boss fight, Suture's {{i|Brimstone}} laser can damage the other boss.
+
+== Trivia ==
+* Blighted Ovum was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* In the original game, Blighted Ovum could also be encountered in the {{s|Catacombs}}.
+* They are the posthumous version of [[Gemini]].
+* In medicine, a blighted ovum is a pregnancy in which the early pregnancy appears normal on an ultrasound scan, but later no visible embryo develops.
+* {{dlc|nr}} Contusion has skin on his body in the boss art, but he doesn't in-game.
+* Blighted Ovum is the only boss in [[chapter 1]] that is a posthumous version of another boss.
+** Gemini also shows up in [[chapter 1]], which makes it one of only four bosses to have its posthumous version in the same chapter, the other cases being {{e|Polycephalus}} and {{e|Chub}} having {{e|The Stain}} and {{e|Carrion Queen}}, respectively, in [[chapter 2]]; {{dlc+|r}} and the {{e|Tuff Twins}} having {{e|The Shell}} in [[Chapters|Chapter 2.5]].{{dlc-}}
+* In ''Wrath of The Lamb'', when Blighted Ovum was killed, Contusion would shoot 8 extremely fast tears in the cardinal and ordinal directions, and after a short delay, would be followed up by Suture, who would explode similarly.
+* In the [[Bestiary]], Suture is referred to as "The Blighted Ovum Baby".
+* {{dlc+|r}} Blighted Ovum, {{e|Big Horn}}, {{e|Triachnid}}, {{e|Isaac}}, and {{e|???}} are the only bosses whose portraits were completely changed in ''Repentance'' (beyond simply adding more detail). Of these, only Triachnid, Isaac, and ??? didn't receive new sprites.{{dlc-}}
+* In Rebirth, the older boss portrait had Suture smiling in it, which was the 2nd time he had a smile.
+
+== Bugs ==
+{{bug|{{dlc|na+}} The {{i|D10}} can reroll the Suture half of {{e|Blighted Ovum}}.}}
+
+{{nav|boss|fr=L'Œuf Clair}}
+[[Category:Chapter 1 bosses]]
+[[Category:Cellar bosses]]
+[[Category:Debut bosses in Rebirth]]

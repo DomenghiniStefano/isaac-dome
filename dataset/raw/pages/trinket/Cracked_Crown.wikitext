@@ -1,0 +1,39 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 92
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = Stat booster
+ | description = {{dlc|nr}} Decreases Isaac's [[tear delay]] by 20%, and improves the effectiveness of his other [[stat]] upgrades by 33%.<br>{{dlc|r}} Improves the effectiveness of stat upgrades by 20%.
+ | unlocked by = The Marathon
+}}
+
+{{cit|ut|a+}}
+
+== Effects ==
+* {{dlc|nr}} -20% [[tear delay]] (increased rate of fire)
+** Since this directly affects tear delay instead of changing the tears stat, it allows Isaac's rate of fire to go over the normal maximum rate.
+** Tear delay decreases are more noticeable and are a greater increase to DPS when the tears stat is high.
+* Boosts [[speed]], [[range]], [[shot speed]], [[damage]], and {{dlc|r}} [[tears]] if they are above their base values.
+** Affects stat bonuses from passive items, trinkets that are absorbed or in a second trinket slot, and permanent bonuses given by items such as {{i|Void}}.
+** {{dlc|nr}} The extra stat upgrades are 33% of any final stat calculations over its base value (which is equivalent to {{c|Isaac}}'s base stats), for example with 4.5 damage, it is 1 damage over the base 3.5, and the 1 damage gets buffed to 1.33, ending up with a total of 4.83 damage.
+** {{dlc+|r}} The extra stat upgrades are 20% of any final stat calculations over its base value (which is equivalent to {{c|Isaac}}'s base stats), for example with 4.5 damage, it is 1 damage over the base 3.5, and the 1 damage gets buffed to 1.2, ending up with a total of 4.7 damage.
+*** Fire rate multipliers change what is considered to be the base value, so with {{i|Soy Milk}}, only tears ups above 15.00 will gain a bonus.
+**** The only exception is {{i|Eye Drops}}, which gains a bonus to its 1.2x fire rate multiplier if it's above base.
+*** Direct fire rate modifiers like {{i|Mom's Perfume}} do not get a bonus.{{dlc-}}
+
+== Notes ==
+* The trinket does nothing for the listed boostable stats if they are at or below the base value; the boost is calculated on the ''total'' bonus, not per item.
+* [[Luck]] is not affected by Cracked Crown.
+* [[Speed]] will not exceed 2.0.
+
+== Synergies ==
+* {{i|Mom's Box|nr}}: The tear delay reduction rises to 36%, and the stat boost is increased to about 77%.
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}} / {{t|Cracked Crown|r}}: Each copy gives +20% of stat boost.
+
+== In-game Footage ==
+{{#ev:youtube|HyOhgEJuL-w}}
+
+== Trivia ==
+* {{dlc|r}} This achievement was initially bugged on release of Repentance and would not unlock correctly. Fixed as of [[V1.7.6]].
+
+{{nav|broken|fr=Couronne Fêlée}}

@@ -1,0 +1,66 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 604
+ | quote       = Mother's strength
+ | description = Lets Isaac pick up and throw [[rocks]], {{E|TNT}}, {{e|Poop}}s, [[Dirty Mind|friendly Dips]], {{e|Bomb}}s, and other [[obstacles]].
+ | quality     = 1
+ | tags        = mom offensive
+ | recharge    = 1s
+ | shop price  = 10
+}}
+
+{{cit|a|r}}
+
+== Effects ==
+* Upon use, picks up the [[Obstacles|obstacle]] in front of Isaac. The obstacle can be thrown at enemies, dealing 40 damage and breaking on impact, dropping any contents they may contain.
+** Obstacles can be carried between rooms.
+** Using it on a {{E|Host}} / {{e|Mobile Host}} will lift the shell off and transform it into a {{E|Red Host}} / {{e|Flesh Mobile Host}}. Isaac can throw the shell after picking it up.
+*** The affected hosts will still fire 3 shots instead of 5.
+** Isaac can throw bombs using this, either his bombs or {{e|Troll Bomb}}s.
+*** {{E|Golden Troll Bomb}}s grant Isaac unlimited bombs for the floor as they can be carried through rooms this way.
+** {{C|Tainted Forgotten}} can be picked up by any other player using it.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* The item will cost 10 cents if found in a {{r|Shop}}.
+* Throwing a {{E|Throwable Bomb}} or Poops and bombs created by {{c|Tainted ???}} and {{i|IBS}} counts as using the bracelet, using up a charge.
+* The item's charge will only be depleted once an object is thrown.
+** Activating the item again will drop the picked up obstacle where Isaac is standing without consuming a charge. This doesn't damage Isaac directly, but any break effects the obstacle has can still occur.
+*** This makes it easy to quickly clear paths through large amounts of rocks.
+*** While the dropped obstacle is falling toward the ground, it can be picked up again by activating Mom's Bracelet.
+**** Obstacles thrown by enemies, such as {{E|Polty|text=Polties}}, can be caught in the same way.
+* Spiked rocks cannot be picked up, even if their spikes are retracted.
+* Similarly, [[Blocks#Metal Blocks|Metal Blocks]], [[Blocks#Key Blocks|Key Blocks]] and [[Blocks#Pillars|Pillars]] also cannot be picked up.
+* Throwing a [[Poops|Giant Poop]] at an enemy deals 320 damage instead of 40.
+* Activating the item while running into a {{E|Red Poop}} will allow Isaac to chuck it and effectively remove it from the room.
+* Poops created by {{c|Tainted ???}} and {{i|IBS}} can be picked up and thrown again freely. You can carry them between rooms and using Mom's Bracelet while holding one will drop them on top of Isaac without destroying them.
+** Unlike other obstacles, dropping them under a pit will spawn them to the nearest open space available. 
+** Picking up a Corn Poop, will cause the blue flies to follow Isaac, but Corn Poop will not spawn more flies unless the ones around Isaac get used. 
+** Rapidly dropping and picking up a Stinky Poop in one spot will create a potent fart cloud, which when detonated deals a lot of damage.
+* While carrying a rock, Isaac cannot drop down a trapdoor to the next floor. This can be used as a way to get pickups close to an open trapdoor without accidentally dropping to the next floor.
+
+== Synergies ==
+* {{i|Best Friend}}: The explosive decoy can be picked up and thrown.
+* {{Book of Virtues synergy|description=Three wisps are created where thrown [[obstacle]]s land; these wisps rotate around where the obstacle was thrown and fire tears in the same direction Isaac does. The wisps do not persist between rooms. Isaac cannot have more than 8 of these wisps at one time, and wisps in Isaac's middle ring count against this limit. Wisps' tears have a 10% chance of inflicting [[confusion]] on enemies.}}
+* {{i|Cube Baby}}: Can be picked up and thrown by using the bracelet while trying to kick the Cube Baby. When thrown, Cube Baby deals around the amount of damage as a higher speed kick, but it will also leave the creep that a frozen enemy would create when kicked.
+* {{I|Dirty Mind}} / {{t|Dingle Berry}}: Friendly {{E|Dip}}s can be picked up and thrown at enemies.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{i|Multidimensional Baby}}: Rocks thrown through the baby will turn into tears, thus removing the possibility to get any rewards from rocks that spawn them.
+* [[Stompy]] transformation: Isaac will raise his hands, but be unable to pick up any rocks, effectively rendering the bracelet useless. Can still be used on {{E|Host}}s.
+
+== In-game footage ==
+{{#ev:youtube|STuUfKU4-j4}}
+
+== Trivia ==
+* [[anti:Mom's Bracelet|Mom's Bracelet]] originated from the ''Antibirth'' mod.
+* The item's design and mechanics are a direct reference to the Power Bracelet from the "Legend of Zelda" series.
+* This item is used in {{chal|Isaac's Awakening}}.
+* This item can be found as one of the Nintendo-themed {{r|Treasure Room}} items in the 6th of December's [[List of curated daily challenges|Daily Run]], which is an homage to the late CEO of Nintendo, Satoru Iwata.
+
+== Bugs ==
+{{bug|Using Mom's Bracelet to throw a tile into Multidimensional Baby will turn the tile into two tears, and any pickups (such as Soul Hearts from Tinted Rocks) will not drop.}}
+{{bug|Infinite skulls can be farmed off of Hosts even though after initially removing the skull, the Host changes into a different variant.}}
+
+{{nav|yes mother|mom|fr=Bracelet de Maman}}

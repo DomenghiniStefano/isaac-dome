@@ -1,0 +1,30 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 118
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = They are growing...
+ | description = Upon killing an enemy, has a 5% chance to grant [[flight]] for the rest of the room.
+ | tags        =
+ | unlocked by = Bat Wing
+}}
+
+{{cit|ut|a+}}
+
+== Effects ==
+* Upon killing an enemy, has a 5% chance to grant [[flight]] for the rest of the room.
+
+== Notes ==
+* Destroying a {{E|Shopkeeper}} counts as a kill.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Each copy adds 5% chance to gain flight.
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s don’t grant flight.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop don't grant flight.
+* {{dlc|r}}[[Freeze|Freeze Effects]]: Enemies that are frozen don't grant flight.
+** {{dlc|r+}} Frozen enemies can grant flight.
+
+== In-game Footage ==
+{{#ev:youtube|Z1nz7c_LDl0}}
+
+{{nav|azazel unlock|ultra greedier unlock|fr=Aile de Chauve-Souris}}
+[[Category:Flight-granting items]]

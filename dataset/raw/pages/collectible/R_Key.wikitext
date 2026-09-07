@@ -1,0 +1,64 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 636
+ | quote       = Time to start over
+ | description = Returns Isaac back to the first floor of a new run, retaining all of his stats and items.
+ | quality     = 4
+ | tags        = offensive nocantrip nochallenge nodaily
+ | recharge    = one time
+ | shop price  = 99
+ | devil price = 2
+}}
+
+{{cit|a|r}}
+
+== Effects ==
+* Returns Isaac to the beginning of the run in [[Chapter 1]], with all [[Attributes|stat]] boosts, [[items]], [[pickups]], and [[trinkets]] intact, similar to a [[Victory Lap]]. Unlike a Victory Lap, however, no effects are applied after a certain number of uses, and the timer is not reset.
+
+== Notes ==
+* {{R|Angel Room}}s once again become possible to appear even if the player has made a previous [[Devil Room|devil deal]].
+* The chance for a {{R|Planetarium}} to appear can once again be increased above 1% without a {{T|Telescope Lens}}, even if the player has previously entered a Planetarium.
+* If the {{M|Donation Machine}} was jammed before usage, it will no longer be jammed.
+* True Co-Op players can be spawned in at the first room after using the R Key.
+* If used in a run while achievements and character unlocks are enabled, they will still be enabled after use. Similarly, if these are disabled because the player is in a [[Victory Lap]] or seeded run, they will remain disabled after use.
+** Beware that using R Key during a Victory Lap will reset the lap counter to 0, as though every Victory Lap is considered part of the same run. Shops will appear as normal, and no items will be removed upon starting the next lap. However, the character will remain {{C|The Lost}} if it had been changed, and the game will remain on Hard difficulty.
+* The timer and score do ''not'' reset.
+** This means that the timer requirements to access {{R|Boss Rush}}, {{s|???}}, and {{i|Broken Shovel 1}} do NOT reset.
+* Item pools are ''not'' reset. This means that another R Key can't spawn (and neither can any other items that were already encountered).
+* The 13 pill pool does ''not'' reset, unlike with a victory lap.
+* Due to the acquisition of {{I|Key Piece 1}} and {{I|Key Piece 2}} being dependent on whether or not the items are currently in Isaac's possession, R Key may be used to revisit previous floors and collect the pieces again after already consuming them in the {{s|Chest}} or {{s|Dark Room}} to unlock {{E|Mega Satan}}'s door.
+* Since {{I|Knife Piece 1}} and {{I|Knife Piece 2}} will spawn any time their respective floors are visited, R Key may be used to revisit these floors and obtain multiple copies of the items.
+* In scenarios where R Key can be purchased, it uniquely costs 99 [[coins]] instead of 15.
+** This rule does not apply to the extra shop created by {{i|Member Card}}.
+** This rule also does not apply to devil deals spawned by {{i|A Pound of Flesh}}.
+** Despite this, using {{P|IX - The Hermit?}} on R Key will still only spawn 15 coins.
+* In Greed mode, using the item after jamming the {{M|Greed Donation Machine}} will fix the machine, while also preserving the coin total the machine had before jamming.
+* R Key cannot be obtained in the [[Daily Challenge]].
+** This includes through use of a {{i|Death Certificate}}.
+* If an achievement is obtained in the final room of a floor, e.g defeating Delirium for the first time, the achievements are awarded to the player once they complete the first floor of the new run.
+
+== Synergies ==
+* {{p|? Card}}: Activates R Key without consuming it, allowing for multiple run restarts.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{i|Dad's Note}}: Using R Key during the [[Ascent]] sequence will end it.
+
+== Gallery ==
+<gallery>
+File: Items12.png|Concepts for 3 items that were originally implemented in ''Antibirth'' and later ''Repentance'', including R Key.
+</gallery>
+
+== Trivia ==
+* [[anti:R Key|R Key]] originates from the ''Antibirth'' mod.
+* This item is a reference to how holding down the R key on PC will restart a run.
+* This item is very similar to [[enterthegungeon:Clone|Clone]] from ''Enter the Gungeon''. The only difference is that R Key is an activated item while Clone is a passive item that activates upon death.
+* Although unobtainable in challenges, if used in the [[Backasswards]] challenge, R key will send you back to {{e|Mega Satan}}.
+
+== Bugs ==
+{{bug|dlc=nr+|While difficult, it is possible to use R Key while swapping it out with another active item, allowing to bring a different active item to the restarted run.}}
+{{bug|If {{i|Sprinkler}} is used on the room the R Key is used in, the sprinkler will come with Isaac to the starting room.}}
+{{Bug|If you use the R Key then spawn in a True Co-Op player and restart the game, the Co-Op players' active item and health will disappear.}}
+{{Bug|If you use the R Key during a victory lap, then exit and re-enter the run, unlocks will be re-enabled.}}
+
+{{nav|fr=Touche R}}

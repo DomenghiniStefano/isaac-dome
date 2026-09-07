@@ -1,0 +1,67 @@
+{{infobox activated collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 323
+ | quote       = Collected tears
+ | description = Fires 8 tears around Isaac, which use his [[damage]], [[range]], [[shot speed]], and [[Tear Effects|tear effects]]. Shooting charges this item. {{dlc|r}} Tears from this item have a +5 flat damage.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = 6
+ | unlocked by = Isaac's Tears
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* Each tear shot by Isaac increases item charge by one.
+* Upon use, fires 8 tears around Isaac, which retain the [[damage]], [[range]], [[shot speed]], and most special [[Tear Effects|tear effects]] of his tears.
+** {{dlc|r}} Tears from this item have a +5 flat damage bonus.
+
+== Notes ==
+* The effect of {{i|Tammy's Head}} is similar to Isaac's Tears, but Isaac's Tears will not benefit from tear-replacing items like {{i|Brimstone}}.
+* {{dlc|na+}} It takes 1.3 seconds to use, during which time Isaac cannot shoot tears normally. Because of this it is only worth it to use Isaac's tears DPS-wise if 4 or more tears successfully land.
+** {{dlc|a+}} It takes 0.4 seconds to use, during which time Isaac cannot shoot tears normally.
+** {{dlc|r}} It takes 0.1 seconds to use, short enough that it usually will not interrupt shooting tears normally.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Fires a ring of 10 tears instead of 8, the tears are [[piercing]] and [[spectral]], and the tears deal 1.4 × Judas' damage, plus a flat 5.}}
+* {{Book of Virtues synergy|description=Summons six wisps at a time, in the middle ring. Using Isaac's Tears destroys the previous set of wisps. The wisps are automatically destroyed after three seconds.}}
+* {{I|Car Battery|r}}: The damage of tears from the item is doubled.
+
+== Interactions ==
+* {{dlc|nr}} {{i|Brimstone}} / {{i|Mom's Knife}}:
+** {{dlc|na+}} The item fires normal tears, although it will charge nearly instantly while the attack charges.
+** {{dlc|a+}} Fires normal tears. Charges at the same rate as Isaac's fire rate while charging Brimstone/Mom's Knife.
+** '''Brimstone''' + {{i|Lachryphagy}}: When tears burst, they will shoot out Brimstone lasers in a fashion similar to {{i|Tammy's Head}}.
+* {{i|Brimstone|r}}: Adds up to 4 charges for the duration of the laser. (If the player cancels the laser early, less charges will be given)
+* {{I|Car Battery|anr}}: No effect.
+* {{i|Chocolate Milk|nr}}: The size and damage of tears fired depend on how far Isaac has charged up his shot. For example, if Isaac has completely charged his shot, the tears fired by the item will be fully charged.
+* {{i|Cursed Eye}} / {{i|Neptunus}}: Adds one charge per each shot.
+* {{i|Dr. Fetus}}: Fires normal tears.
+* {{i|Epic Fetus}}:
+** {{Dlc|nr}} The item fires normal tears, but charges very quickly as the crosshairs are moved.
+** {{dlc|r}} The item charges even while the crosshair is not moving, with the speed based on Isaac's [[tears]] stat.
+* {{I|Eye of the Occult}}: Makes the tears controllable and able to be made most use of.
+* {{dlc|r}} {{i|Mom's Knife}} / {{i|Tech X}} / {{i|Chocolate Milk}}: Adds one charge per shot regardless of how much the tear was charged up.
+* {{i|The Ludovico Technique}}:
+** {{dlc|nr}} The item charges based on the tear's movement.
+** {{dlc|r}} The item charges even while the tear is not moving, with the speed based on Isaac's tears stat.
+* {{I|Spirit Sword}}: The item fires normal tears and can be charged as fast as the sword can be swung. Doing a spin attack will fully charge Isaac's Tears.
+* {{i|Technology}} / {{i|Technology 2}}: Fires normal tears.
+* {{i|Trisagion}}: Fires Trisagion beams. {{dlc|r}} Does not gain the additional +5 damage.
+
+== In-game Footage ==
+{{#ev:youtube|n1HCFxAINMs}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Isaac's Tears.png|{{plat|3DS}} The icon of Isaac's Tears as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* Isaac's Tears is unique in that it's the only activated item that charges by simply firing tears.
+
+== Bugs ==
+{{bug|dlc=na+|With {{i|Brimstone}} and {{i|Chocolate Milk}}, the attack can be charged past the fully charged point, firing massive, extremely damaging tears when Isaac's Tears is used.}}
+{{bug|dlc=a+nr|When Isaac's Tears is in the first active item slot of {{i|Schoolbag|n}}, the secondary item does not charge upon clearing rooms.}}
+
+{{nav|isaac boss unlock|isaac unlock|fr=Bocal de Larmes}}

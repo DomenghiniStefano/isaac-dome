@@ -1,0 +1,57 @@
+{{infobox activated collectible
+ | id          = 296
+ | image name  = * {{dlc|nr|Rebirth}}
+ | quote       = Convert your soul
+ | description = {{dlc|nr}} Converts two {{e|Soul Heart}}s or {{e|Black Heart}}s into one filled {{e|Red Heart}} Container.<br>{{dlc|r}} Converts one {{e|Soul Heart}} or {{e|Black Heart}} into one filled {{e|Red Heart}} Container.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = nolostbr
+ | recharge    = {{dlcalt|unlimited|r=3}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* {{dlc|nr}} Converts two {{e|Soul Heart}}s or {{e|Black Heart}}s into one filled {{e|Red Heart}} container.
+* {{dlc|r}} Converts one {{e|Soul Heart}} or {{e|Black Heart}} into one filled {{e|Red Heart}} container.
+
+== Notes ==
+* Using this item on Black Hearts will activate the Black Heart's damaging effect.
+* {{dlc|nr}} Must use with two full Soul Hearts to work. One and a half will not work.
+* {{dlc+|r+}} Converter's quality is treated as 2 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns wisps in the middle ring, looking like hearts. Wisps have slightly higher health than average. Red Heart pickups can be used to restore their health.}}
+* {{i|Book of Revelations|r}} / {{i|Satanic Bible|r}}: Allows for generation of Heart Containers. ({{i|Schoolbag|r}} required)
+** {{i|9 Volt|r}} + {{i|Habit|r}}: Allows for an easy setup to get max health as long as one has a self-damage source, such as a {{m|Blood Donation Machine}} or a {{m|Devil Beggar}}.
+* {{i|Guppy's Paw}}:
+** {{dlc|nr}} Allows Isaac to have 10 Heart Containers and 1 Soul Heart.
+** {{dlc|r}} Allows Isaac to attain up to 12 Red Heart Containers or any combination of Red Heart Containers and Soul Hearts.
+*** {{i|Potato Peeler|r}} + {{i|Sharp Plug}}: Allows Isaac to generate infinite damage upgrades and {{i|Cube of Meat||Cubes of Meat}}.
+* {{dlc|r}} {{c|???}} + {{i|Birthright}}: Removes one Soul Heart and grants two, effectively becoming a 3-room charge {{i|Book of Revelations}}.
+* {{c|Tainted Eden|r}}: Heart containers gained from Converter are kept, even after rerolling.
+* {{dlc|r}} {{c|Black Judas}} / {{c|Tainted Judas}}: Converts one Black Heart into one Black Heart, keeping Judas’ health the same as before but activates {{I|The Necronomicon}} effect regardless.
+
+== Interactions ==
+* {{c|Bethany|r}}: Bethany cannot activate the Converter whether she has soul charges or not.
+* {{i|Car Battery}}: {{dlc|r}} Consumes 2 Soul Hearts and produces 2 Red Heart Containers.
+* {{c|The Soul}}: Consumes Soul Hearts and produces {{e|Bone Heart}}s for {{c|The Forgotten}}. Does nothing when used by The Forgotten.
+* {{c|Tainted Bethany|r}}: When used while fully charged, adds 2 Blood Charges to her pool at no cost to her Heart total. When used with no charges, consumes 3 Blood Charges and produces 2, resulting in a net loss.
+** With {{i|Car Battery|n}}: Consumes 3 Blood Charges and produces 4, still at no cost to Heart total, resulting in infinite Blood Charges.
+
+== In-game Footage ==
+{{#ev:youtube|FP9mJeov9XE}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Converter.png|{{plat|3DS}} The icon of Converter as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* The Converter is a reference to a [[wikipedia:Converter|converter]], a device or system that changes the form of something.
+* According to Edmund via the Four Souls Isaac lore stream, the Converter's sprite was originally supposed to be similar to an adapter that converted US-standard power plugs for UK-standard power outlets, then he "just threw some wires on it."<ref>https://youtu.be/kby0rXT7qYQ?t=5648</ref>
+* The Converter can be seen as an opposite to {{i|Guppy's Paw}}. Where the Converter takes two Soul or Black Hearts to form a Heart container (or just one Soul or Black Heart as of ''Repentance''), Guppy's Paw takes one Heart container to form three Soul Hearts. Additionally, their flavor texts are similar.
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Adaptateur}}

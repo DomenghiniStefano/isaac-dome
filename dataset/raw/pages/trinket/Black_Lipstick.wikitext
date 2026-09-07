@@ -1,0 +1,21 @@
+{{infobox trinket
+ | id          = 17
+ | quote       = Evil Up
+ | description = Increases the chance of {{E|Black Heart}}s appearing.
+ | tags        = {{dlc|r+|nogreed}}
+ | unlocked by = Black Lipstick
+}}
+
+{{cit|ut}}
+
+== Effect ==
+* Increases the chance of {{E|Black Heart}}s appearing by 10%.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: Having either increases chance of {{E|Black Heart}}s appearing by 20%. Having both by 33%.
+* {{T|Black Feather}}: Black Feather grants a [[damage]] boost for Black Lipstick, provided that Isaac has an extra trinket slot or has {{dlc|a+}}[[Gulp|gulped]] or used {{I|Smelter}} on either of the trinkets.
+
+== In-game Footage ==
+{{#ev:youtube|fMMsIisnLJ4}}
+
+{{nav|eve unlock|the lamb unlock|fr=Noir à Lèvres}}

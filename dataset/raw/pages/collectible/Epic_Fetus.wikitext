@@ -1,0 +1,128 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | costume name = * {{dlc|nr|Rebirth}}
+ | quote       = On-demand air strike
+ | description = Instead of tears, firing creates a crosshair which can be moved freely. A missile is dropped in the location after 1.5 seconds, exploding for high damage.
+ | quality     = 4
+ | tags        = summonable offensive
+ | id          = 168
+ | unlocked by = Epic Fetus
+}}
+
+{{distinguish visual|Dr. Fetus}}
+
+{{cit|up}}
+
+== Effects ==
+* Isaac's tears are replaced with guided missiles. Pressing the fire buttons spawns a crosshair that can be moved freely, dropping a missile on its position from above 1.5 seconds later.
+** Missiles deal 20 times Isaac's damage.
+** Isaac's tear delay determines how quickly a new missile can be fired after the previous one has landed.
+
+== Notes ==
+* {{dlc|nr}} Epic Fetus is a [[special item]].
+* {{dlc|nr}} Epic Fetus overrides most items in the game and has the highest priority of all tear modifiers, over {{i|Brimstone}} and {{i|Mom's Knife}}.
+* Missiles benefit from some bomb modifier items, though at a lesser scale compared to {{i|Dr. Fetus}}.
+* Stacking multiple copies of the item causes a barrage of missiles in quick succession without resetting the crosshair's position, up to sixteen at a time.
+* Missiles deal a full heart of damage to Isaac if they deal 85 or more damage.
+
+== Synergies ==
+* {{dlc+|a}} {{i|20/20}}/{{tf|Conjoined}}{{dlc-}}/{{tf|Bookworm}}/{{i|Mutant Spider}}/{{i|The Inner Eye}}: Fires a barrage of missiles corresponding with the amount of tears.
+* {{i|Bomber Boy|r}}: Missiles explode in a large cross-shaped blast, with each explosion dealing 0.75x times damage. Unlike with regular bombs, getting hit by every separate explosion from Epic Fetus won't decrease the damage for each successive explosion, drastically increasing damage.
+* {{i|Blood Bombs}}: Every missile explosion leaves a large, lasting pool of red creep.
+* {{i|Blood Clot}}/{{i|Chemical Peel}}: Each missile has a 50% chance to deal 20 or 40 points more damage, respectively.
+* [[Status Effects#Poison|Poison tears]]: This is guaranteed by {{I|Bob's Curse}}, {{I|Ipecac}}, and {{I|Scorpio}}, and also has a chance to trigger from {{I|The Common Cold}}, {{t|Pinky Eye}} or {{I|Serpent's Kiss}}.
+** {{dlc|r}} Explosions leave behind a cloud of poison gas that will poison enemies in contact with it aside from the main target.
+* {{i|Brimstone|a}}: Missile explosions shoot ten blood lasers in all directions.
+* {{i|Brimstone Bombs}}: Missile explosions have a chance to shoot four Brimstone lasers in the cardinal directions. The chance scales with Isaac's luck.
+* {{i|Butt Bombs}}: Missile explosions will cloud up the screen, briefly [[Confusion|confusing]] and dealing 10 damage to all enemies in the room.
+* {{I|Eye Sore}}: More marks appear orbiting around where you're aiming.
+* {{i|Fire Mind}}/{{i|Hot Bombs}}: Missile explosions leave behind a fire that damage enemies on contact. Fire Mind's [[burn]] effect is overridden.
+* {{C|The Forgotten}}: The charge attack is replaced by a missile in the Forgotten's hand and a crosshair that may be moved for an indefinite amount of time. The missile is thrown at the crosshair when all attack buttons are released, with an additional melee swing in the same direction. The melee attack is unaffected.
+* {{i|Glitter Bombs}}: Missile explosions have a small chance of spawning pickups.
+* {{dlc|a}} [[Homing tears]]: The crosshair slowly slides towards enemies.
+* {{i|Host Hat}}/{{I|Pyromaniac}}: Isaac becomes immune to his own airstrikes.
+* {{i|Incubus|r}}: Incubus fires a missile alongside Isaac's.
+* {{dlc|nr}}{{i|Ipecac}}: Missiles have a poison effect, have a larger blast radius and deal drastically increased damage, as the +40 damage from Ipecac is run through the damage multiplier of Epic Fetus.
+** {{dlc|r}} Adds flat +2 damage instead of +40. Explosions leave behind a cloud of poison gas that will poison enemies in contact with it aside from the main target.
+* {{t|Lil Clot}} / {{c|Tainted Eve}}: The clots have their own targeting reticles and fire simultaneously with Isaac.
+* {{i|Mom's Knife|a}}: Missile explosions shoot a ring of ten knives.
+** {{dlc+|a}} With a second {{i|Mom's Knife}} a second missile will be shot similar to {{i|20/20}}.{{dlc-}}
+* {{i|Monstro's Lung|a}}: 2 to 4 additional crosshairs orbit the main crosshair, and missiles are fired onto each crosshair.
+* {{i|Mysterious Liquid}}: Every missile explosion leaves a small, lasting pool of creep.
+* {{i|Nancy Bombs}}: Explosions have a chance to be affected by any of the bomb-modifier effects that synergize with Epic Fetus.
+* {{i|Polyphemus}}: Increased tear delay, but massively increases the missiles' blast radius and damage, as Polyphemus' damage multiplier is run through the damage multiplier of Epic Fetus.
+* {{i|Sad Bombs}}: Missile explosions fire ten tears in all directions. The shrapnel's damage is not run through the damage multiplier of Epic Fetus.
+** {{dlc|r}} The chance for the effect to proc is dependent of Isaac's luck. Chance goes up to 100% at 30 luck.
+* {{i|Sticky Bombs}}: Missile explosions leave a puddle of slowing white creep.
+** {{dlc|r+}} Missiles also spawn [[Blue spider|Blue Spiders]] and [[Blue fly|Blue Flies]] upon damaging an enemy.
+* {{i|Strange Attractor|a}}: Enemies, pickups and trinkets get drawn towards the crosshair.
+* {{i|Technology|anr}}: Both fire normally and the missile explosions shoot ten Technology beams in all directions.
+** {{dlc|r}} Only Epic Fetus crosshairs are fired, but missile explosions still shoot ten Technology beams in all directions.
+** {{i|Ipecac|r}}: Not recommended. Technology beams explode and may end up catching you off guard.
+* {{i|Technology 2|anr}}: Both fire normally.
+** {{dlc|r}} Does not reduce missiles' damage, and both fire normally at the cost of a slightly higher delay between each crosshair appearing.
+* {{i|Tech X}}: Missile explosions shoot ten Technology beams in all directions.
+
+== Interactions ==
+Overridden by Epic Fetus:
+* {{C|Azazel}}'s default attack
+* {{i|Brimstone|na}}
+* {{i|Chocolate Milk|r}}
+* {{i|C Section}}, Epic Fetus is the only item in the game that can override it
+* {{i|Cursed Eye}}
+* {{i|Dr. Fetus}}
+** {{dlc|r}} Due to the minimum time delay between missiles, a single copy of Epic Fetus does slightly '''less''' DPS than Dr. Fetus, especially with an elevated [[tears]] stat. This is only at low-to-moderate damage stats, however, due to a change in Dr. Fetus's damage formula past a certain total.
+* {{i|Evil Eye}}
+* {{i|Godhead|na}}
+* {{dlc|na}}[[Homing tears]]
+* {{i|Jacob's Ladder}}
+* {{i|The Ludovico Technique}}
+* {{i|Mom's Knife|na}}
+* {{i|Monstro's Lung|na}}
+* {{i|Mucormycosis}}
+* {{i|Neptunus}}
+* {{i|The Parasite}}
+* {{i|Rubber Cement}}
+* {{I|Sinus Infection}}
+* {{C|Tainted Azazel|r}}'s default attack
+* {{i|Technology|na}}
+* {{i|Technology Zero}}
+* {{i|Tiny Planet}}
+* {{i|Trisagion}}
+Only stat effects are applied; otherwise overridden by Epic Fetus:
+* {{i|Anti-Gravity}}
+* {{i|Eye of the Occult}}
+* {{i|Technology 2|na}}, '''not recommended''' as the damage down multiplier is still applied, massively reducing missile damage
+Other interactions:
+* {{i|8 Inch Nails}}: Missile explosions retain the knockback boost, so enemies that survive the blast will be knocked back far.
+* {{i|Bobby-Bomb}}/{{i|Bomber Boy|anr}}/{{i|Ghost Bombs}}/{{i|Mr. Mega}}/{{i|Scatter Bombs}}: No effect.
+* {{i|Chocolate Milk|nr}}: Reduces Isaac's tear delay by 20%. Missiles can't be charged.
+* {{i|Godhead|a}}: Stat effects apply and the crosshair gains a homing effect, but missiles do not have a damaging aura.
+* {{i|Incubus|anr}}: Incubus fires normal tears while the crosshair is being aimed.
+* {{I|Isaac's Tears}}:
+** {{dlc|nr}} The item fires normal tears, but charges very quickly as the crosshairs are moved.
+** {{dlc|r}} The item charges even while the crosshair is not moving, with the speed based on Isaac's [[tears]] stat.
+* {{I|It Hurts}}/{{i|Tammy's Head}}/{{i|Varicose Veins}}: Fires only normal tears, not missiles.
+* {{I|Loki's Horns}}: Adds a chance to spawn four crosshairs in cardinal directions. Isaac controls one and the others will mirror the movement keeping their space.
+* {{i|Marked}}: Continuously fires missiles at the marked spot.
+** {{dlc|r}}If the crosshair is dismissed before the next missile is dropped, it still drops in the crosshair’s last position.
+* {{i|Soy Milk}}: '''Not recommended.''' Damage of missiles is drastically reduced, and unlike normal tears, the fire rate will not significantly increase.
+* {{i|Spirit Sword}}: Overrides Epic Fetus, making it the only item in the game that takes priority over Epic Fetus.
+* {{i|The Wiz}}: Makes two missiles drop in quick succession, and control of the crosshair is rotated 45 degrees clockwise. '''Not recommended''', as it makes controlling the crosshair harder. However, mouse control is less affected.
+* {{I|Twisted Pair}}: Each familiar will fire a missile from a two additional crosshairs. '''Not Recommended''', as the twisted pair crosshairs are not synced to Isaac's crosshair and move at a much slower rate, making self damage much more likely as the additional crosshairs will struggle to make distance from Isaac.
+
+== In-game Footage ==
+{{#ev:youtube|aYPv29vawcE}}
+
+== Trivia ==
+* This item is similar to {{i|Doctor's Remote}}, which fires one missile per use.
+* In the original game it was possible to control the crosshair with the mouse. This was removed in Rebirth.
+** {{dlc|r}} Mouse control can however be re-enabled by editing the <code>options.ini</code> file in <code>C:\Users\<username>\Documents\My Games\Binding of Isaac Afterbirth/Rebirth</code> and changing the line <code>MouseControl=0</code> into <code>MouseControl=1</code>. Also useful for {{I|The Ludovico Technique}}.
+* The {{I|Dr. Fetus}} and Epic Fetus items are based off of [[supermeatboy:Dr. Fetus|Dr. Fetus]], the main antagonist in [[wikipedia:Super Meat Boy|Super Meat Boy]] which is a game by Edmund McMillen (the creator of The ''Binding of Isaac: Rebirth'').
+* In Wrath of the Lamb, Epic Fetus could be found in both the Secret Room and Treasure Room item pools.
+** {{dlc|r}}Epic Fetus was added to the Secret Room item pool.
+* This item is used in {{chal|Glass Cannon}}.
+* In ''Wrath of the Lamb'', this item was originally unlocked by beating a challenge titled, "The Doctor's Revenge!".
+
+{{nav|fr=Super Fœtus}}
+[[Category:Special items]]

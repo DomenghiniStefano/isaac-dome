@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | id          = 108
+ | quote       = Damage resistance
+ | description = Most sources of damage that would cause more than one-half heart of damage are reduced to one-half heart instead.
+ | quality     = 4
+ | tags        = nolostbr summonable
+ | devil price = {{dlcalt|1|r=2}}
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Most damage taken is reduced to half a heart.
+
+== Notes ==
+* The damage reduction includes most sources in the game that would cause more than half a heart of damage:
+** {{E|Bomb}}s.
+** Most [[Champion]]s.
+*** The exceptions being the skull and large champions - damage from them is reduced from two full hearts to one.
+** {{R|Sacrifice Room}}s.
+** Environmental hazards such as [[Spikes]].
+** Most self-inflicting damage items (exceptions are noted).
+** Every source of damage in {{s|Womb}}/{{s|Utero}}/{{s|Scarred Womb}} and beyond, including all enemies, {{R|Curse Room}}s, {{M|Blood Donation Machine}}s, and {{M|Devil Beggar}}s.
+** The "HARD HARD" special [[Seeds|seed]].
+* {{dlc+|r}} The Wafer does not reduce damage from opening the door to {{s|Mausoleum}} / {{s|Gehenna}}.{{dlc-}} 
+* Despite The Wafer reducing damage to 1/2 a heart, this does not change the amount of invincibility frames granted from full/two heart damage sources.
+* The Wafer is substantially less useful in Greed Mode, since Chapter 4 and beyond does not increase damage taken like usual.
+
+== Interactions ==
+* {{i|Blood Oath}}: Does not reduce the damage taken.
+* {{dlc+|r}} {{i|Glass Cannon}}: The extra damage taken when the cannon breaks is not reduced.{{dlc-}}
+* {{I|Sharp Plug}}: {{dlcalt|Damage taken is reduced to half a heart.|r=Does not reduce the damage taken.}}
+* {{c|Keeper}} / {{C|Tainted Keeper}}: No effect as Coin Hearts cannot be reduced to half.
+
+== In-game Footage ==
+{{#ev:youtube|F0SrvByet8I||inline}} {{#ev:youtube|fO5dmU73a40||inline}}
+
+== Trivia ==
+* In the original ''The Binding of Isaac'', "resistance" in the pickup quote was misspelled as "''resistence''". This was corrected in Rebirth.
+* A wafer is a thin cake made of flour and is used in Christianity for various purposes, including the sacrament of the Eucharist, in which believers consume the body (represented by sacramental bread) and blood (represented by sacramental wine) of Jesus Christ.
+* In the original ''The Binding of Isaac'', The Wafer required an unlock, by beating Mom's Heart seven times.
+
+{{nav|fr=Hostie}}

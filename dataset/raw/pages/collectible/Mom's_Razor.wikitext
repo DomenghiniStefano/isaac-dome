@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | name        = Mom's Razor
+ | id          = 508
+ | quote       = It's sharp!
+ | description = Spawns an [[Familiar#Orbital Familiars|orbiting]] razor that deals contact damage and inflicts [[bleed]]ing on enemies, causing them to slowly take damage over time.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable mom
+}}
+{{disambig msg|the passive item|other uses|Mom (Disambiguation)}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Grants a razor familiar that [[Familiar#Orbital Familiars|orbits]] Isaac. Enemies that touch the razor take damage equal to 20% of Isaac's tear damage per tick or 300% of Isaac's damage per second ({{dlc|r}} 150% of Isaac's damage per second) and start to [[bleed]].
+** {{dlc|nr}} Bleeding enemies take damage equal to 10% of their maximum health every 5 seconds. Bosses cannot bleed and won't take any damage from the razor.
+** {{dlc|r}} Bleeding enemies repeatedly take <code>2.8 + (floor * 0.3)</code> damage based on how quickly they move; the faster the enemy, the more damage they take. While moving, a bleeding enemy leaves behind [[Creep#Red Creep|red creep]] that can damage other enemies.
+** {{dlc|nr}} The razor does not block enemy shots.
+** {{dlc|r}} The razor blocks enemy shots.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc|nr}}It may not always be a good idea to take Mom's Razor if Isaac has one or more [[Familiar#Pretty Fly|Pretty Flies]] as orbitals, as Mom's Razor can override Pretty Flies without giving protection from enemy shots.
+
+== Synergies ==
+* {{i|BFFS!}}: Increases razor's size and contact damage. No damage increase on bleed effect.
+
+== In-game Footage ==
+{{#ev:youtube|zGEZ0vT7nek}}
+
+{{nav|yes mother|mom|fr=Rasoir de Maman}}

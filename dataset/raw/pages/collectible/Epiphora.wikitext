@@ -1,0 +1,58 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 368
+ | quote       = Intensifying tears
+ | description = Shooting in one direction increases Isaac's [[Tear delay|rate of fire]] until the cap is reached. As soon as Isaac changes direction or stops shooting, rate of fire is reset to its normal amount.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable {{dlc|r+|tearsup}} offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* {{dlc|nr}} [[Tear delay]] gradually decreases by intervals as the player shoots in one direction. Accuracy also decreases as the fire rate increases.
+** At max "charge", it will reduce tear delay by half, rounding down.
+* {{dlc|r}} [[Fire rate]] gradually increases by intervals as the player shoots in one direction. Accuracy also decreases as the fire rate increases.
+** {{dlc|r+}} Fire rate increases smoothly instead of intervals.
+** At max "charge", it will increase fire rate by double.
+* The time required to reach max charge is {{dlc|nr+}} 9 / {{dlc|r+}} 6 seconds.
+* Rate of fire returns to its original value if Isaac stops firing, changes firing directions, uses an active item, or is hit.
+** {{dlc|a+}} Being hit, changing rooms, and using items no longer reset the Epiphora bonus.
+** {{dlc|rnr+}} Entering an unexplored boss room will reset the Epiphora bonus.
+*** During the delay when transitioning between rooms, picking up an item, or using an active item, it's possible to change the firing direction without resetting the bonus.
+
+== Notes ==
+* Epiphora technically works with items that require a charge (such as {{i|Monstro's Lung}}), but requires releasing the key or button, causing players to lose the effect.
+
+== Synergies ==
+* {{I|Analog Stick}}: Epiphora's bonus will not reset when switching fire diagonally, as long as Isaac's head doesn't turn.
+* {{i|Continuum}}: Reduces the need to change firing direction, allowing Isaac to maintain the increased rate of fire.
+* {{i|Cursed Eye|r}}: Epiphora's tear rate multiplier affects the number of tears in a burst for a total of ten shots with a full Epiphora charge.
+* {{i|Dr. Fetus}} / {{i|Ipecac}}: Firing bombs continually will decrease tear delay, although doing so is '''not recommended''' since it increases the risk of self-damage.
+* {{C|The Forgotten}}: When tapping the attack button in a single direction repeatedly, the Ephiphora effect will cause the bone swings to speed up.
+* {{i|How to Jump}}: Changing firing direction while jumping does not reset the bonus, similar to when changing rooms.
+* {{i|Incubus}}: Incubus's fire rate will match Isaac's.
+* {{i|The Ludovico Technique}}: Fire rate increases while moving the tear in one direction; it has a negligible effect during normal gameplay.
+* {{i|Marked}}: Both items work as normal, with tear rate gradually increasing until Isaac turns his head, which can happen via him or the crosshair moving too out of parallel.
+* {{i|Rubber Cement}}: Reduces the need to change firing direction allowing Isaac to maintain the increased rate of fire.
+* {{i|Rock Bottom}}: Isaac will never lose the benefits of Epiphora, even after he stops firing. This effectively makes Epiphora a substantial tears up. Fully charging Ephiphora is still needed to gain a higher tears stat if an item that would increase the tears stat is picked up.
+* {{i|Tractor Beam}}: Fire rate still increases when shooting in one direction, but will stay on the line (i.e. no loss in accuracy).
+* {{i|Loki's Horns}} / {{i|Mom's Eye}}: Allows for firing in multiple directions at once, decreasing need to change firing direction.
+
+== Interactions ==
+* Charging items such as {{i|Brimstone}}, {{i|Chocolate Milk}}, {{i|Cursed Eye|nr}}, {{i|Mom's Knife}}, {{i|Monstro's Lung}}, and {{i|Tech X}}: Effect only activates when holding charge in a specific direction, and deactivates when the charge is released, effectively making Epiphora useless unless Isaac has exceedingly low fire rate.
+** {{dlc|r}} {{i|Soy Milk}} / {{i|Almond Milk}} + {{i|Chocolate Milk}} / {{i|Cursed Eye}} / {{i|Monstro's Lung}} / {{i|Tech X}}: Due to constant firing, Epiphora's fire rate bonus can now be used.
+** {{dlc|r}} {{i|Soy Milk}} / {{i|Almond Milk}} + {{i|Brimstone}}: The Brimstone laser only gains the increased damage from higher tear rates when the laser starts firing, making Epiphora's bonus useless.
+* {{i|Epic Fetus}}: Overrides Epiphora.
+* {{C|Lilith}}: Lilith and her Incubus cannot gain extra fire rate from Epiphora.
+** {{dlc|r}} Incubus' fire rate will increase without the accuracy penalty
+* {{c|Tainted Isaac}}: If you pick up an item and drop Epiphora while holding the attack button you will keep the fire rate. The effect will disappear upon entering a new floor.
+* {{i|Bag of Crafting}}: Bag of Crafting can be used to switch directions without reducing fire rate when activated.
+
+== In-game Footage ==
+{{#ev:youtube|4Fgbh8E-D-c}}
+
+== Trivia ==
+* [[wikipedia:Epiphora (medicine)|Epiphora]] is an overflow of tears onto the face.
+
+{{nav|fr=Épiphora}}

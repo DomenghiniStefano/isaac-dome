@@ -1,0 +1,98 @@
+{{infobox activated collectible
+ | dlc = a+
+ | name = Black Hole
+ | id = 512
+ | quote = Nothing can escape
+ | description = Throws a black hole on the ground which sucks in and damages enemies and destroys nearby obstacles.
+ | quality     = 1
+ | tags        = offensive
+ | recharge = 4
+ | unlocked by = Black Hole
+}}
+
+{{cit|ua|a+1}}
+
+== Effects ==
+* Upon use, Isaac throws a black hole that lands on the ground and forcefully sucks in enemies and their shots, which lasts for about 6 seconds.
+** It deals 0.4 damage per tick very rapidly to enemies in the area, for a maximum of 6 damage per second.
+** Isaac and pickups are slightly sucked towards the black hole.
+** Nearby [[obstacle]]s are occasionally destroyed by the black hole.
+
+== Notes ==
+* Black Hole cannot free {{e|Sticky Nickel}}s, kill {{e|Shopkeeper}}s, or destroy [[Angel|Angels Statues]].
+* Black Hole has the strongest pulling effect in the game, and will override the pulling force of {{i|Strange Attractor}}, {{t|Super Magnet}}, {{i|Ocular Rift}}, and {{i|Lodestone}}.
+* Black Hole can't open {{r|Secret Room}} and {{r|Super Secret Room}}s regardless of placement, despite crushing obstacles.
+* Black Hole does not suck in stationary or invincible enemies.
+* Black Hole will not suck in the following bosses, although they can still take damage from the black hole and their shots are affected by it:{{column list | width = 20em | content =
+** {{e|???}}
+** {{e|The Adversary}}
+** {{e|The Beast}}
+** {{e|Big Horn}}
+** {{e|Blighted Ovum}} (Suture)
+** {{e|Brownie}}
+** {{e|The Cage}}
+** {{e|Chimera}}
+** {{e|Clog}}
+** {{e|Colostomia}} (second phase)
+** {{e|Daddy Long Legs}}
+** {{e|Dangle}}
+** {{e|Dark One}}
+** {{e|Delirium}}
+** {{e|Dingle}}
+** {{e|Dogma}}
+** {{e|Gabriel}}
+** {{e|The Gate}}
+** {{e|Great Gideon}}
+** {{e|Gurdy Jr.}}
+** {{e|Gurdy}}
+** {{e|Hornfel}} (in minecart)
+** {{e|Hush}}
+** {{e|Isaac}}
+** {{e|It Lives!}}
+** {{e|Mama Gurdy}}
+** {{e|The Matriarch}}
+** {{e|Mega Fatty}}
+** {{e|Mega Maw}}
+** {{e|Mega Satan}}
+** {{e|Mom's Heart}}
+** {{e|Mom}}
+** {{e|Mother}}
+** {{e|Mr. Fred}}
+** {{e|The Pile}}
+** {{e|Polycephalus}}
+** {{e|Rotgut}}
+** {{e|Satan}}
+** {{e|The Scourge}}
+** {{e|The Shell}}
+** {{e|The Siren}}
+** {{e|Sisters Vis}}
+** {{e|The Stain}}
+** {{e|Triachnid}}
+** {{e|Tuff Twins}}
+** {{e|Turdlet}}
+** {{e|Ultra Death}}
+** {{e|Ultra Famine}}
+** {{e|Ultra Greed}}
+** {{e|Ultra Pestilence}}
+** {{e|Ultra War}}
+** {{e|Uriel}}
+** {{e|The Visage}} (first phase)
+}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns black wisps on the middle ring. Wisps' tears have the {{I|Strange Attractor}} effect.}}
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{i|Gnawed Leaf}}: The black hole does not pull Isaac in while he is a statue.
+
+== In-game Footage ==
+{{#ev:youtube|dOeaDgmzt-o}}
+
+== Trivia ==
+* Black Hole is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=840640979 this Steam Workshop item] by Custom Phase.
+
+== Bugs ==
+{{bug|Falling into a {{e|Pitfall}} while the Black Hole is active will result in Isaac becoming headless, immobile and invulnerable, softlocking the run until it is quit and resumed.|dlc=nr}}
+
+{{nav|magnetic|booster pack|fr=Trou Noir}}

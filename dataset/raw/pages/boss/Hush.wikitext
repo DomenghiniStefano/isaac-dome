@@ -1,0 +1,132 @@
+{{infobox boss
+ | dlc         = a
+ | id          = 407
+ | environment = <u>Boss</u><br>{{floor|???}}
+ | base hp     = 6666
+ | pool        = Final Boss Chest ([[Endings|Ending 17]], first kill only)<br>Gateway to {{s|Sheol}} / {{s|Cathedral}} <br>{{dlc+|a+}} Entrance to {{s|The Void}} {{dlc-}}
+ | unlocked by = Blue Womb
+}}
+
+'''Hush''' is the [[boss]] of {{s|???}}, and the final boss of [[Endings|Ending 17]].
+
+== Behavior ==
+=== Phase 1 ===
+Hush begins with a fight identical to the first phase of the {{E|???}} fight, having the same attacks and behavior but with a different appearance, half of ???'s health, and longer projectile travel distance due to being fought in a 2&times;2 room.
+
+''See {{e|???}} for more details''.
+
+=== Phase 2 ===
+After Hush's first form is defeated, it reveals its large true form at the top of the room, taking the form of its splash screen portrait.
+* During this phase, Hush occasionally sinks into the ground, becoming non-attacking and invulnerable, and only returning once most of the projectiles onscreen have dissipated. It performs this move every time it loses around 20% HP and also in conjunction with some of its later attacks.
+
+==== Phase 2-1 (100-80% HP) ====
+Hush remains stationary in the top center of the room and performs the following attacks:
+* Fires barrages of yellow, blue, and green glowing projectiles in certain patterns, combining 1-3 different patterns of projectiles. These patterns include:
+** Rings of projectiles that alternate between rotating clockwise and counterclockwise as they move outwards.
+** U-shaped salvos aimed at Isaac.
+** Lines of projectiles aimed at Isaac that either gain (yellow), lose (blue), or maintain (green) momentum as they travel (these lines have spaces between them every 4-5 shots).
+** 2-4 repeating volleys of 4 projectiles, with equal spacing between each volley (the angle these volleys are shot out at rotates as the attack continues).
+The same pattern can be used multiple times in each barrage, and projectile patterns become less dense if multiple patterns are used in the same barrage.
+
+==== Phase 2-2 (80-60% HP) ====
+Hush sinks into the ground and relocates to the center of the room before resuming its attacks. It also gains the following attack patterns, in addition to attacks from the previous phase:
+* Hush's projectile barrage can include two new patterns:
+** A very dense ring of projectiles, with a gap aimed somewhere towards Isaac's general direction.
+** 3-5 spirals of projectiles, with even spacing between each spiral (projectiles from these spirals initially lose momentum, but after a few seconds they resume their normal speed while rotating counterclockwise as they move out).
+* Spawns a cluster of {{e|Hush Fly|text=Hush Flies}} that either orbit Hush, launch towards Isaac's position and fly off-screen, or actively chase Isaac. These flies have invincibility for a short time after being spawned, and alternate between forming the shapes of a circle, triangle, square, pentagon, or a 5 or 6-pointed star.
+
+==== Phase 2-3 (60-40% HP) ====
+Hush keeps its attacks from previous phase and gains two more attacks and an extra shot pattern:
+* Hush’s projectile barrage can now also include a very wide spread of projectiles that closes in on where Isaac was standing when fired.
+* Hush spawns a horde of {{e|Blue Gaper}}s, before sinking into the ground to relocate. While relocating, Hush can summon {{e|Blue Boil}}s.
+* Hush fires three rows of wavy {{i|Continuum}} projectiles in one of the cardinal directions, which warp over to the other side of the screen and increase in speed the longer they travel. Hush performs this attack 2-5 times before using a different one. These projectiles move in a set pattern and leave safe zones that last the entire barrage.
+
+==== Phase 2-4 (40-20% HP) ====
+Hush keeps its attacks from previous phases, gains an extra attack, and modifies its shot patterns:
+* Hush sinks into the ground while firing its projectile barrages, moving in a random direction or chasing Isaac as it fires, and spawning Blue Boils as it moves. Only shot patterns from phase 2-1 can be used; the patterns added in phase 2-2 and 2-3 are lost.
+* Hush creates three large red projectiles that move outward and split into 3 more projectiles multiple times. The split shots move quickly when they spawn but slow down before splitting again. Hush can start other attacks before the projectiles from this attack fully dissipate.
+* {{Dlc|rnr+}} From this point onward, the cooldown between each of Hush's attacks is drastically reduced due to a bug.
+
+==== Phase 2-5 (<20% HP) ====
+Hush keeps most of its attacks from previous phases, but loses its ability to spawn Hush Flies. However, it gains one more attack in this phase:
+* Hush fires two laser beams upward from its eyes, which creates beams on the ground that move toward Isaac and leave trails of slippery [[Creep#Blue Creep|Blue Creep]]. The speed at which the beams move is based on Isaac's speed stat, and are always possible to outmaneuver. While firing these lasers, Hush also releases five wavy, slow-moving lines of projectiles in all directions.
+* {{Dlc|nrr+}} When at <1% health, there is a greatly reduced delay between Hush's attacks.
+* {{Dlc|r}} If too much time passes without damaging Hush, it will regenerate some health. This removes the effectiveness of some very slow fight strategies (such as {{I|Gnawed Leaf}} combined with less effective familiars) that would have been successful (if slow) in previous versions.
+
+== Gallery ==
+<gallery>
+File:Boss Hush1 ingame.png|Hush's initial appearance in Phase 1.
+File:Boss Hush2 ingame.png|Hush's appearance in the second part of Phase 1.
+File:Boss Hush3 ingame.png|Hush's appearance in the third and final part of Phase 1.
+File:Burnt hush.png|Hush after defeat.
+File:Boss Delirium Hush ph1 ingame.png|Hush as one of {{e|Delirium}}'s forms. (First form)
+File:Boss Delirium Hush ingame.png|Hush as one of Delirium's forms. (True form)
+File:Boss hush skinless portrait.png|Unused and unfinished sprites for skinless Hush.
+File:Hush Beta Sprite.png|Beta design of Hush's second phase. Note the Xs for eyes, which more closely resemble {{c|???}}'s eyes.
+File:Afterbirth Boss Concepts.jpg|Concept art of Hush by Edmund McMillen, alongside other boss sketches. Notably, the fight initially featured {{e|Mom}} attacking Isaac by stabbing through her womb with a knife.
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | New Area, Fart Baby, Purity, D12, Betrayal, Fate's Reward, Athame, Blind Rage, Maw of the Void, Empty Vessel, Eden's Blessing, Sworn Protector, Incubus, Keeper now holds... A Penny!, Hushy, Hallowed Ground, Divine Intervention, Vanishing Twin, A Secret Exit, Soul of Isaac, Soul of Magdalene, Soul of Cain, Soul of Judas, Soul of ???, Soul of Eve, Soul of Samson, Soul of Azazel, Soul of Lazarus, Soul of Eden, Soul of the Lost, Soul of Lilith, Soul of the Keeper, Soul of Apollyon, Soul of the Forgotten, Soul of Bethany, Soul of Jacob and Esau, Godhead }}
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage Scaling|here]].
+
+== Notes ==
+* Using {{p|Chaos Card}} only kills one of its phases.
+** {{dlc|nr}} If it is thrown upwards during its first phase, it can kill both phases if timed correctly.
+* Using the {{p|Emergency Contact}} on Hush's second form appears to lower its damage resistance by 50% for approximately 5 seconds.
+* Upon defeating Hush, Isaac gains 2 charges for his [[Active Collectible|active item]].
+* {{p|A Card Against Humanity}} works in the Hush room. This can be done after the fight is completed to farm huge amounts of health and coins. Having {{i|Sack Head}} or {{t|Petrified Poop}} makes this strategy even more effective.
+* {{dlc+|a+nr}} If Hush is killed for the first time and {{s|The Void}} is unlocked, Isaac can exit the room and come back in, and the entrance to The Void will appear without having to fight Hush again on a new run.{{dlc-}}
+* Successfully using {{i|Eraser}} on Hush's first form prevents his second from spawning.
+
+== Strategies ==
+* Effects that cause long-lasting mass slowdown such as {{I|Stop Watch}} or the I'm Drowsy [[Pills|pill]] are very valuable, aiding the player's ability to dodge the complex tear patterns and deal with the massive spawns of enemies, which can happen in quick succession.
+** The {{I|Broken Watch}} item can also cause a mass slow, but using it may not be a good idea since it also has a chance to speed up the entire room, making the fight extremely difficult.
+** {{I|Night Light}} or {{I|Censer}} can apply tear slowdown on a smaller scale than the watch items, but their hard-to-control areas of effect may cause more confusion than benefit.
+** {{Dlc|r}} The I'm Drowsy pill should '''not''' be used against Hush. The laser beams summoned in the final phase move at a speed based on Isaac's own base speed, but the slowdown from I'm Drowsy is not accounted for. Using it during the Hush fight will make it impossible to outrun the lasers.
+* Any items that can block or deflect projectiles will be highly useful, due to the bullet-hell design of the fight. [[Orbital familiar]]s, {{i|Circle of Protection}}, {{i|The Soul}}, {{i|Trinity Shield}}, {{i|Dry Baby}}, {{i|Farting Baby}}, {{i|Host Hat}}, and {{i|Infamy}} may greatly help mitigate damage.
+** Dry Baby's {{i|The Necronomicon}} effect will trigger very often due to the amount of projectiles, allowing to easily wipe out the large waves of enemies Hush can spawn.
+** {{I|Psy Fly}} is especially helpful, as it both deflects a large number of projectiles, and only has a small cooldown after deflecting multiple.
+** {{I|Saturnus}} may help with the large amount of bullets, but the tears in the ring at the start of the room may have fallen by the time Hush's shots reach you.
+** {{I|Ocular Rift}} can trivialize most of Hush's attacks as projectiles are pulled towards the rifts and away from Isaac. However, rifts can also disrupt the projectile patterns, making dodging significantly more difficult.
+* {{i|Lost Contact}} may be beneficial or detrimental depending on the player's tears stat; in combination with a high tears stat, many Lost Contact tears may still reach Hush even after blocking Hush's shots, but if the player has a low tears stat, they may find all their Lost Contact tears fired being destroyed during Hush's bullet hell attacks before they can reach their target.
+** When the player has [[piercing tears]], however, Lost Contact can cause dodging most attacks to become trivial regardless of the player's tears stat, as the player's tears will destroy any enemy projectiles they come into contact with while remaining themselves intact.
+* {{Dlc|nr}} {{i|Serpent's Kiss}}, {{i|Maw Of The Void}}, {{i|Athame}}, or {{i|The Virus}} (in combination with defensive items like {{p|Algiz}} or {{i|Book of Shadows}}) will make Hush's summoned enemies occasionally drop black hearts, allowing the player to farm large quantities of health during the enemy-spawning attacks.
+** {{Dlc|r}} Serpent's Kiss only generates black hearts from contact damage. Maw Of The Void, Athame, and The Virus no longer generate black hearts at all.
+* {{i|Broken Modem}} is not recommended, as it will stop Hush's tears and close some escape routes, making it harder to dodge in some cases.
+** {{Dlc|r}} Tears affected by {{i|Broken Modem|n}} will be deleted rather than frozen in place, making the fight much easier.
+* {{dlc|a+}} The combination of {{i|Mysterious Liquid}} and {{i|Trisagion|n}} can kill Hush extremely quickly by spawning massive amounts of creep under his large body.
+* {{C|The Forgotten}}'s ability to swap characters into The Soul is very helpful in the Hush fight. Since nearly all of Hush's attacks are projectile-based, The Soul can hide behind the skeletal body and deal damage while staying totally safe.
+* {{dlc|r}} Magnetizing Hush using {{I|Lodestone|n}} causes many of the slower bullets to not be able to go further than Hush's own hitbox, rendering the barrage ineffective.
+* {{I|Cursed Eye}} can greatly benefit {{c|Keeper}}/{{c|Tainted Keeper}} if given the right items. They can fight Hush, and if they get damaged while charging, they teleport out of the fight and can go back to the shop area and bomb the {{M|Donation Machine}} to replenish health.
+** {{T|Cursed Skull}} also works for this.
+*** {{Dlc|r}}The {{M|Donation Machine}} can only be bombed once, after which it is destroyed for the rest of the run.
+* Hush' {{e|Blue Gaper}}s spawning attack is useful for healing when playing as {{c|Tainted Magdalene}}.
+
+== Trivia ==
+* [https://twitter.com/edmundmcmillen/status/922696151651860480 According to Edmund on Twitter], Hush represents Isaac's imminent death slowly approaching towards him, which is the reason [https://twitter.com/edmundmcmillen/status/922697189842923521 why Hush and ??? are the same thing], since ??? represents Isaac suffocating in the chest, hence the blue color of their body.
+** [https://twitter.com/edmundmcmillen/status/922698464198135808 According to Edmund on Twitter], Hush is a giant ??? pushing from the other side.
+* In its first form (the replica of the ??? fight), "Ascension" plays, while in its second form, the name of the boss theme is "Morituros".
+** Morituros in Latin is the accusative masculine plural for 'about to die', which roughly translates to "those who will die". This could also be interpreted as "death inevitable", since Isaac's unusual way of living was ought to have consequences at some point or another.
+* Hush is one of only two bosses in the game with a [[Boss Room]] scaled in a 2x2 fashion, the other being {{E|Delirium}}.
+* There is an unused file in the game named "boss_hush_skinless" which appears to be an unfinished sprite sheet for the unreleased third form of Hush. It resembles a red, fleshy head.
+** Tyrone has stated that Hush's "skinless phase" was originally [https://twitter.com/tyronerodriguez/status/1103856012816113666 intended to be his second form, having concept art ideas based on it].
+** {{dlc|a+}} It is possible to spawn it using console command. It moves but doesn't attack in any way.
+* Hush shares his name with a level from Edmund's previous game, [[wikipedia:Super Meat Boy|Super Meat Boy]].
+* As Hush loses health, the boss room grows gradually darker, and vein-like shadows begin to appear in the ceiling.
+* When defeated, Hush screams and disappears in a flash of light. The ground where it once was becomes scorched in a shape resembling a distressed face.
+* The 30-minute limit of reaching Hush's floor could be alluding to how long it took Isaac to suffocate in the chest.
+* In the card game ''The Binding of Isaac: Four Souls'', Hush's card features an original translation of Job 4:16, ''"It stood still, but I could not discern its appearance; a form was before my eyes; at first there was a hush, and then I heard a voice."'' This might be due to Job 3, a monologue where Job curses the day of his birth.
+
+== Bugs ==
+{{bug|dlc=a+|If {{i|Delirious}} is used in phase 2 of the Hush fight and Delirium is killed, ''The Calm'' (music usually played after defeating a boss) will replace ''Morituros''.}}
+{{bug|dlc=nr|Having the No Return [[seed]] enabled when going to Hush will result in no doors being available, softlocking the run.}}
+{{bug|If Hush takes too much knockback too quickly (e.g. from {{i|Knockout Drops}}), the Hush Flies it spawns may teleport around the room erratically, occasionally resulting in unavoidable damage.}}
+{{bug| Hush is not actively targeted by blue spiders}}
+
+{{nav|hush unlock|boss|moms heart unlock|fr=Murmure}}
+[[Category:Chapter 4.5 bosses]]
+[[Category:Final bosses]]
+[[Category:Debut bosses in Afterbirth| ]]

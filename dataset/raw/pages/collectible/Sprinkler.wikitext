@@ -1,0 +1,87 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 516
+ | quote       = Sprinkles.
+ | description = Creates a stationary sprinkler for the current room that rotates and fires tears in 8 directions. The tears copy Isaac's stats and most tear effects.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge    = 4
+ | unlocked by = Sprinkler
+}}
+
+{{cit|ua|a+1}}
+
+== Effects ==
+* Upon use, creates a stationary sprinkler that rotates and fires tears in 8 directions. The tears copy Isaac's stats and most tear effects.
+
+== Notes ==
+* Sprinkler's rate of fire and rotation speed depends on Isaac's [[tears]] stat.
+* Sprinkler does not do contact damage.
+* It is counted as an [[obstacle]] and will block some enemies movement, e.g.: {{e|Chub}}.
+
+== No Effect ==
+The following tear effects do not apply to/are not copied by Sprinklers, although direct stat changes are applied (probably not exhaustive; needs testing):{{column list | width = 15em | content =
+* {{i|Eye Sore}}
+* {{i|Bird's Eye}}
+* {{i|Chocolate Milk|r}}
+* {{i|Ghost Pepper}}
+* {{i|Lead Pencil|r}}
+* {{i|Marked}}
+* {{i|Technology 2}}
+* {{i|Tech.5}}
+* {{i|Tractor Beam|r}}
+}}
+
+== Synergies ==
+* {{i|20/20}} / {{i|The Inner Eye}} / {{i|Mutant Spider}}: The sprinkler fires multiple tears simultaneously.
+* {{i|Anti-Gravity}}: Sprinkler tears are affected only while Isaac is firing, and are released at the same time Isaac releases the fire button.
+* {{t|Baby-Bender}}: The sprinkler will shoot homing tears.
+* {{i|Blood Clot}} / {{i|Chemical Peel}}: The sprinkler will fire either normal tears or tears with the items' effects depending on which tear Isaac fired last.
+* {{Book of Virtues synergy|description=Spawns spinning eyeball wisps on the middle ring. The wisps fire 3 times faster than average, and fire in a spiral pattern similar to Sprinkler.}}
+* {{i|Brimstone}}/{{c|Azazel}}: The sprinkler fires somewhat short-ranged Brimstone lasers instead of tears.
+* {{I|Camo Undies}}: Isaac stays camouflaged after placing the sprinkler.
+* {{i|Car Battery}}: Spawns two sprinklers on top of each other.
+* {{i|Chocolate Milk|nr}}: The size and damage of the sprinkler's tears depend on Isaac's current charge amount.
+* {{i|Dead Eye}}: Sprinklers increase the damage multiplier when hitting an enemy, and do not reduce it when they miss.
+* {{i|Kidney Stone}}: Sprinklers will fire a barrage of tears whenever Isaac does, but will not fire the stone.
+* {{i|Lead Pencil|nr}}: Sprinkler tears count for activation of the Lead Pencil effect. The tear burst may fire from the sprinkler or Isaac.
+* {{i|Loki's Horns}}: The sprinkler has four eyes and simultaneously fires tears in four directions.
+* {{i|Mom's Eye}}: The sprinkler has two eyes and simultaneously fires tears forwards and backward.
+* {{i|Mom's Knife}}: The sprinkler fires knives instead of tears. The knives fire straight outwards, deal {{dlc|nr}} double / {{dlc|r}} 1.5x Isaac's tear damage and do not return.
+** {{dlc|r}} '''Mom's Knife''' + {{i|BFFS!}} The knives deal triple Isaac's tear damage.
+* {{i|Monstro's Lung}}: The sprinkler fires disorganized clusters of tears.
+* {{I|Star of Bethlehem}}: When Isaac is in the aura, the Sprinkler will rotate faster and its tears will be affected by the Star of Bethlehem. The Sprinkler does not need to be in the aura for this to work, just Isaac.
+* {{i|Tech X}}: The sprinkler fires laser rings that are smaller than the central spark and have a correspondingly small hit area, which deal 100% of Isaac's damage.
+* {{i|Technology}}: The sprinkler fires lasers instead of tears.
+* {{i|Tiny Planet}}: Tears will travel toward and orbit Isaac, wherever he is in the room.
+* {{i|Tractor Beam|nr}}: The sprinkler's tears will not fire from the sprinkler itself, and will simply appear within the beam.
+* {{i|Trisagion}}: Sprinklers will shoot beams.
+
+== Interactions ==
+* {{i|BFFS!}}: Sprinkler increases in size but does not do extra damage.
+* {{i|Dr. Fetus}}: The sprinkler fires bombs which can damage Isaac.
+* {{i|Epic Fetus}}: The sprinkler fires crosshairs; missiles will strike the crosshairs after a short delay. This can damage Isaac.
+* {{i|Eye of the Occult}}: Sprinkler's tears travel a very short distance in their original direction and can be controlled afterwards.
+* {{i|Ipecac}}: The sprinkler fires explosive shots which can damage Isaac.
+** '''Ipecac''' + '''Dr. Fetus''': The bombs fired by the sprinkler will not damage Isaac.
+* {{i|The Ludovico Technique}} / {{i|Spirit Sword}}: The sprinkler will not fire tears at all.
+* {{i|My Reflection}}: Tears fired from the sprinkler will boomerang towards Isaac instead of the sprinkler.
+
+== In-game Footage ==
+{{#ev:youtube|lUOLTy69Spg}}
+
+== Gallery ==
+<gallery>
+File:Collectible Sprinkler Booster Pack 1 icon.png|Sprinkler's appearance prior to [[Booster Pack #4]].
+File:Sprinkler ingame.png|A sprinkler's in-game appearance.
+File:Sprinkler Mom's Eye.png|Sprinkler's appearance with {{i|Mom's Eye}}.
+File:Sprinkler 4.png|Sprinkler's appearance with {{i|Loki's Horns}}.
+</gallery>
+
+== Trivia ==
+* Sprinkler is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=842444127 this Steam Workshop item] by Kieran and Stewartisme.
+
+== Bugs ==
+{{bug|When switching to another active item via {{i|Schoolbag}}, sprinklers in the room will disappear.|dlc=nr}}
+
+{{nav|booster pack|fr=Arroseur Automatique}}

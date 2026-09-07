@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 99
+ | quote       = Sticky friend
+ | description = Spawns a [[familiar]] that follows Isaac around and fires [[Slow|slowing tears]], impeding enemies' speed.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable monstermanual offensive
+ | pool        = Gish
+ | unlocked by = Little Gish
+}}
+
+{{cit|up}}
+
+== Effect ==
+* Spawns a [[familiar]] that follows Isaac around and fires [[slow|slowing tears]] that deal 3.5 damage.
+** {{dlc|nr}} Little Gish shoots once per second.
+** {{dlc|r}} Little Gish shoots 1.36 times a second.
+
+== Notes ==
+* Little Gish can drop by defeating {{e|Gish}}.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars. 
+** {{dlc|nr+}} Little Gish has 5th priority.
+** {{dlc|r+}} Little Gish has 7th priority.
+
+== Synergies ==
+* {{I|Mongo Baby}}: Will copy Little Gish’s tears.
+
+== In-game Footage ==
+{{#ev:youtube|Rs8E5R8EB1M||inline}} {{#ev:youtube|3O84aMs2pk8||inline}}
+
+{{nav|fr=P'tit Gish}}

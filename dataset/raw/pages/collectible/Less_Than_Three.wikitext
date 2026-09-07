@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | name        = <3
+ | files name  = Less Than Three
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 15
+ | quote       = HP up
+ | description = Grants Isaac one [[Health#Red Heart Containers|Red Heart container]] and fully restores Isaac's [[health]].
+ | quality     = 2
+ | tags        = nolostbr
+ | pool        = Gluttony
+}} {{DISPLAYTITLE:<3}}
+
+{{cit|p|||<3}}
+
+== Effects ==
+* Grants one [[Health#Red Heart Containers|Heart container]].
+* Fully restores Isaac's red [[health]]. Does not affect {{e|Soul Heart}}s and {{e|Black Heart}}s.
+
+== Notes ==
+* This item can drop from killing {{E|Gluttony}}. {{dlc|nr}} Gluttony can drop this item even if Isaac has already encountered/possessed it. 
+** {{dlc+|r}} It can also be spawned by {{e|Bumbino}} if he picks up 12 cents.{{dlc-}}
+
+== Interactions ==
+* {{C|Tainted Bethany}}: Grants 12 blood charges.
+
+== In-game Footage ==
+{{#ev:youtube|jvc6t9jTqls||inline}} {{#ev:youtube|jQW3Ujfi4z8||inline}}
+
+== Trivia ==
+* "<3" is the ASCII/Emoticon representation of a heart.
+* Although <3's is a heart, it isn't like an anatomically correct heart, nor a heart symbol, instead looking like a combination of the two.
+* According to Edmund McMillen's [https://youtu.be/kby0rXT7qYQ first post-Repentance Lore Stream], the visual appearance of this item is a reference to the movie '[[wikipedia:Raising Arizona|Raising Arizona]]' in which the character of Glen passingly remarks about an orphan child with his heart born on the outside of his chest.
+** McMillen states that this remark left a lasting impression on him when he was younger, and as such he wished to incorporate it into the game in some way.
+** This scene itself is a reference to the rare birth defect '[[wikipedia:Ectopia cordis|ectopia cordis]]' in which the child's heart is located either partially or entirely outside of their chest.
+** With Isaac canonically being 3 apples tall, the amount of body covered by the heart is fairly accurate compared to the size of an average child heart.
+
+{{nav|fr=Plus petit que trois}}

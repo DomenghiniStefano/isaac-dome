@@ -1,0 +1,63 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 138
+ | quote       = t&apos;s broken9Reroll your dest
+ | description = Using an [[activated item]] rerolls it.
+ | unlocked by = 'M
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Using an [[activated item]] rerolls it into a different one.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either will give a 10% chance that the rerolled item will be fully charged. Having both will give a 20% chance.
+
+== Notes ==
+* The item given by ‘M will always have no charges, regardless of what the previous active item was and whether or not it was overcharged. 
+* Rerolling into items counting towards transformations (e.g.{{I|Guppy's Paw}}, {{I|Jar of Flies}}, {{I|Bob's Rotten Head}}, {{I|The Bible}} etc.) will not be counted towards said transformation, regardless if Isaac puts it back down and picks it back up.
+** Having the Guppy transformation and rerolling either {{I|Guppy's Head}} or{{I|Guppy's Paw}} will remove the transformation, even if these items were acquired before using ‘M.
+* Items that have costs associated with using them (such as {{i|Magic Fingers}}, {{i|Potato Peeler}}, {{i|Converter}}, etc.) can be rerolled even if Isaac doesn't have the resources necessary to use them.
+** The only exception is {{i|Golden Razor}}: Isaac must have the 5 cents necessary to use it in order for it to be rerolled.
+* The item's charge must be expended for it to be rerolled; items that can be used without spending their charge immediately (such as {{i|Bob's Rotten Head}}, {{i|Black Hole}}, {{i|Eraser}}, {{i|Spin to Win}}, {{i|Mom's Bracelet}}, etc.) must be properly used to have their charge expended.
+* ‘M cannot reroll items into {{i|Broken Shovel 1}}, {{i|Mom's Shovel}}, {{i|Hold}} or {{i|Recall}}.
+* The items generated are fixed per seed. This means the same active item on the same seed while holding 'M will always reroll into the same other active item every time.
+* The items rerolled into will not be removed from their item pools unless Isaac puts them down and picks them up again.
+* Items can be generated multiple times, even after they have been removed from their pools.
+
+== Strategy ==
+* Once ‘M gives a good active item, it can be dropped so that it can be continually used without it getting rerolled.
+** For this reason, it is recommended to drop 'M when taking unknown pills, in case [[Gulp!]] appears, which would prevent Isaac from keeping any active item.
+* Some active items have effects that can be harmful to Isaac when used; consider if rerolling the active item is worth the risk of getting an item that can't be rerolled (either at all or without hurting the run).
+** {{i|Alabaster Box}} is especially noteworthy, as it cannot be rerolled, and will also prevent Isaac from gaining {{e|Soul Heart}}s until he uses or gets rid of it.
+
+== Interactions ==
+* '''One-time use items''': The item disappears before it can be rerolled.
+** {{i|Sacrificial Altar}}: If Isaac has no eligible familiars, the altar can be rerolled without being consumed.
+* {{i|Book of Virtues}}: If an active item is combined with the Book, only the active item is rerolled; the Book remains unchanged. If no active item is combined with the Book, the Book will be rerolled on use. ‘M also cannot give Book of Virtues, as it is considered a passive item.
+* {{i|Breath of Life}}: Breath of Life is rerolled once the charge is fully expended.
+** {{dlc|nr+}} After one second, Isaac starts getting hurt as if he was still using Breath of Life until he leaves the room.
+* {{i|Broken Glass Cannon}}: The item is rerolled instead of turning into Glass Cannon. This item can also be given by ‘M directly.
+** This only applies if you manage to obtain a charged and usable Broken Glass Cannon, as it otherwise automatically replaces itself with Glass Cannon once charged.
+* {{t|Butter!}}: The active item is rerolled before being dropped.
+* {{i|Car Battery}}: The current active item is used twice before it is rerolled.
+* {{i|Esau Jr.}}: Isaac will transform into Esau Jr. if ‘M rerolls Isaac’s active item into Esau Jr. However, he will not transform into Esau Jr. if the item itself is used.
+** As the original character will be holding ‘M, Esau Jr. must be used twice for it to be rerolled.
+* {{i|Friendly Ball}} / {{i|Moving Box}}: As the item must be used twice to have its intended effect, rerolling it on the first use will prevent it from being used to its full effect.
+** {{dlc|r+}} The contents of the items contained can be recovered by finding another Friendly Ball or Moving Box and using them.
+* {{i|Glowing Hourglass}}: Glowing Hourglass rewinds time before the reroll goes through, preventing it from happening. This is avoided when used during the Beast fight and will be rerolled into another active.
+** If Glowing Hourglass rerolls into a rechargeable item(e.g. {{I|Spin to Win}}, {{I|The Boomerang}}), The Glass will have all its charges restored, allowing for infinite rewinding.
+* {{i|Magic Skin}}: Items given by Magic Skin cannot be Magic Skin even if it’s rerolled on use. However, as Isaac will not be holding Magic Skin after using it, it will be able to replace future items after being rerolled.
+* {{i|Notched Axe}}: The item will be rerolled once it runs out of durability.
+* {{i|Schoolbag}}: Only the primary item is rerolled.
+
+== In-game Footage ==
+{{#ev:youtube|1OAXAjorzIw}}
+
+== Trivia ==
+* [[anti:'M|'M]] is from the ''Antibirth'' mod.
+* Like {{i|Missing No.}}, the name 'M is a reference to a [https://bulbapedia.bulbagarden.net/wiki/%27M_(00) glitch] from the Generation I ''Pokémon'' games, often thought of as a counterpart to MissingNo. itself. This is also referenced by its appearance, as random jumbles of pixels is very similar to the corrupted sprites you would see from a sprite error in Generation I ''Pokémon'' games.
+* The description is a combination of {{T|Broken Remote}}'s, {{I|Dataminer}}'s and {{I|The D6}}'s descriptions, "It's broken", "109", and "Reroll your destiny". This may be because it triggers when an active item is used (like Broken Remote), is a glitch-themed item (Like Dataminer) and it rerolls the active item (like D6).
+
+{{nav|glitch|eden unlock||mother unlock|active modifier|fr=M}}

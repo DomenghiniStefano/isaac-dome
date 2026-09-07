@@ -1,0 +1,41 @@
+{{infobox boss
+ | dlc         = a
+ | id          = 261
+ | variant     = 1
+ | environment = <u>Boss</u><br>{{Dlc|nr}}<br>{{floor|Basement}}<br>{{room|boss rush}}<br>{{Dlc|r}}<br>{{floor|Basement}}{{floor|Burning Basement}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Necropolis}}<br>{{floor|Womb}}<br>(with Brownie)<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>(With Turdlings)<br><u>Degraded Boss</u><br>{{floor|Chest}}
+ | base hp     = 375
+ | pool        = {{ip|Boss}}<br>{{i|Montezuma's Revenge|r+}} (1% chance)
+ | unlocked by = Something wicked this way comes!
+}}
+
+'''Dangle''' is a [[boss]] added in ''[[The Binding of Isaac: Afterbirth]]'' that can appear in the {{s|Basement}} {{Dlc+|r}} and in the {{s|Burning Basement}}{{dlc-}}.
+
+== Behavior ==
+* Fires three projectiles towards Isaac.
+* Whistles before summoning 1-3 {{e|Brownie Corn}}s and then fires 3 projectiles at Isaac.
+* Quickly performs 2 long dashes towards Isaac while bouncing off obstacles and walls, after which he pauses to catch his breath. While dashing, he leaves slippery [[Creep#Brown Creep|Brown Creep]].
+** Occasionally spawns a {{e|Corn Mine}} at the start of a dash, which immediately detonates, poisoning Dangle. If he is poisoned while dashing he leaves behind damaging [[Creep#Green Creep|Green Creep]] instead.
+** Brownie Corns caught in his dashes are knocked back a distance.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Dingle Dangle ingame.png|{{dlc+|r}} Dangle as one of {{e|Delirium}}'s forms.{{dlc-}}
+</gallery>
+
+== Notes ==
+* {{Dlc|r}} Dangle is much less common than his counterpart, {{e|Dingle}}, spawning only 1/4th as often.
+* If a {{i|Butt Bombs}} Bomb goes off in the same room as Dangle, it will heal him.
+** {{dlc|a+}} Butt Bomb effect on {{i|Dr. Fetus}} or {{i|Epic Fetus}} does not heal Dangle.
+* {{i|Flush!}} kills Dangle instantly and causes him to leave behind 6 {{e|Brownie Corn}}s.
+
+== Trivia ==
+* He is a corny variant of Dingle.
+* Upon death, {{e|Brownie}} will turn into a Dangle with lower HP.
+* Dangle has the highest health of any boss fought in [[Chapter 1]].
+* Dangle looks slightly similar to Honey Buckets from ''[[wikipedia:Gish (video game)|Gish]]'', one of Edmund McMillen's other games.
+
+{{nav|blue baby boss unlock|boss|fr=Pendille}}
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Afterbirth]]

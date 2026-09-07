@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 684
+ | quote       = Out for blood
+ | description = Enemies have a chance to spawn ghosts on death, which chase and deal contact damage to enemies and explode after a short time.
+ | quality     = 2
+ | tags        = summonable offensive
+ | unlocked by = Hungry Soul
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Grants Isaac a chance to spawn a friendly ghost upon killing an enemy, which rapidly chases down and deals contact damage to enemies.
+** The chance to spawn a ghost is 33% and is not affected by [[luck]].
+** Ghosts deal contact damage equal to half of Isaac's damage, 4 times per second (2x Isaac's damage per second).
+* After 7 seconds, the ghost explodes, dealing 7 flat damage to nearby enemies up to 3-4 times.
+** The explosion cannot damage Isaac or the environment.
+
+== Notes ==
+* Enemies killed by ghosts are unable to spawn more ghosts, except for those killed by the ghost's final explosion.
+* The ghost's explosion is capable of damaging [[friendly]] monsters, such as {{E|Bony|text=Bonies}} summoned by {{i|Book of the Dead}}.
+* Ghosts cannot be taken outside the room they spawned in.
+* The ghosts are not considered to be [[familiar]]s and as such aren't affected by any items that modify the behavior of familiars.
+** This also means that Isaac can have more than 64 ghosts at a time and this won't override other familiars.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s can’t spawn ghosts.
+* {{i|BFFS!}}: No effect.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop can’t spawn ghosts.
+* {{i|Ipecac}}: The ghosts get only +1 flat damage from Ipecac, not the expected +20.
+* {{i|Libra}}: The ghosts ignore damage modification from Libra, both positive and negative: the actual unbalanced damage value is used.
+* {{i|Sacrificial Altar}}: Ghosts cannot be sacrificed.
+
+== In-game footage ==
+{{#ev:youtube|3m5YcXNnXXU}}
+
+== Gallery ==
+<gallery>
+File:Hungry_Soul_Ingame.png|The ghost's in-game appearance
+</gallery>
+
+{{nav|the lost unlock|the beast unlock|fr=Âme Affamée}}

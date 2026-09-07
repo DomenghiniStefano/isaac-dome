@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 498
+ | quote       = You feel very balanced
+ | description = Whenever a {{R|Devil Room}} or {{R|Angel Room}} would spawn after defeating a boss, both rooms spawn. Only one can be entered.
+ | quality     = 1
+ | tags        = summonable offensive lazarussharedglobal
+ | unlocked by = Duality
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* Whenever a {{R|Devil Room}}/{{R|Angel Room}} spawns after defeating a boss, the other will also spawn.
+** Upon entering one, the other one will disappear.
+** Both rooms will spawn even if a devil deal was made before.
+** In rooms without enough accessible walls, only one of the two will spawn.
+
+== Notes ==
+* Even with {{i|Goat Head}} or {{i|Eucharist}}, both rooms will not stay open, and entering either of the rooms will make the other disappear.
+* Teleportation via a {{p|Joker}} card, a {{E|Red Chest}}, or a {{R|Sacrifice Room}} ''before'' defeating the boss and choosing a door will follow the normal rules of Devil/Angel Room generation, instead of a 50/50 chance.
+** This means that if Duality was taken as a Devil deal, or any other deal with the Devil was made in the run, teleportation will always lead to the {{R|Devil Room}}.
+** The room that was chosen this way will be the only one that opens once the boss is defeated.
+** Teleporting after choosing a door will always take you to the same room.
+** Gaining Duality during Greed/Greedier Mode will only generate one room as per normal, rendering it normally useless. However, both rooms will generate in the penultimate floor, The Shop.
+
+== Synergies ==
+* {{I|Goat Head}} / {{I|Eucharist}}: Guarantees an Angel & Devil room to spawn after every boss.
+* {{i|Glowing Hourglass|r}}: Time can be reversed while inside one deal to go into another.
+
+== In-game Footage ==
+{{#ev:youtube|z6siwP7jFlg}}
+
+== Trivia ==
+* Duality is one of only five items to appear in both the Angel and Devil item pools, the others being {{i|7 Seals}}, {{i|Lil Delirium}}, {{i|Void}}, and {{i|Purgatory}}.
+* The Duality image appears to be similar in concept to the yin and yang symbol of Ancient Chinese philosophy, as the latter represents the concept of dualism as well. However, they don't quite appear to be exact in terms of the diameter format.
+
+{{nav|lilith unlock|ultra greedier unlock|fr=Dualité}}

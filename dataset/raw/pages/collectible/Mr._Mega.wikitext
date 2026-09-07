@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | id          = 106
+ | quote       = {{dlcalt|Blast Damage|r=Bigger boom}}
+ | description = +5 {{e|Bomb}}s. Increases the size, blast radius, and damage of Isaac's bombs.
+ | quality     = 2
+ | tags        = offensive
+ | pool        = Super Wrath
+ | unlocked by = Mr. Mega
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Grants 5 {{e|Bomb}}s.
+* Gives all of Isaac's bombs increased damage and blast radius.
+** {{dlc|nr}} Mr. Mega bombs deal 110 damage instead of 60.
+** {{dlc|r}} Mr. Mega bombs deal 185 damage instead of 100.
+* When bombs explode, the screen will shake.
+
+== Notes ==
+* This item can drop from killing {{E|Super Wrath}}. {{dlc|nr}} Super Wrath can drop this item even if Isaac has already encountered/possessed it. 
+** Stacking multiple copies of Mr. Mega doesn't increase bomb damage.
+* {{dlc+|r+}} This item can be crafted by {{i|Bag of Crafting}} with eight {{e|Bomb}}s.{{dlc-}}
+
+== Synergies ==
+* {{i|Bob's Brain}}: Increases damage {{dlc|nr}} from 60 to 145 {{dlc|r}} from 100 to 150.
+* {{i|Dr. Fetus}}: Adds 25 flat damage to bomb explosions.
+* {{I|Ghost Bombs}}: Ghosts appear larger and do extra damage only upon exploding.
+
+== Interactions ==
+* {{i|Anarchist Cookbook}}: No effect.
+* {{i|Bob's Rotten Head}}: No effect.
+* {{i|Epic Fetus}}: No effect.
+* {{i|Number Two}} / {{i|Curse of the Tower}}: Not affected by Mr. Mega.
+
+== In-game Footage ==
+{{#ev:youtube|cUa3H1daNgs||inline}} {{#ev:youtube|YkreFG3atsQ||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Suicide King}} and {{chal|Blue Bomber}}.
+* The cosmetic effect that Mr. Mega gives to Isaac is similar to {{E|Wrath}}.
+
+{{nav|bomb modifier|bomb|fr=M. Méga}}

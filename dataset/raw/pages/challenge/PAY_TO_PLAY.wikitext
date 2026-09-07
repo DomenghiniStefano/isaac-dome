@@ -1,0 +1,66 @@
+{{infobox challenge
+ | dlc         = a
+ | number      = 24
+ | item        = {{i|Money Power}}<br>{{i|Sack of Pennies}}
+ | pickup      = 50 [[coin]]s
+ | has shops   = yes
+ | description = Every door costs 1 cent to enter. Isaac drops money when hit. Isaac dies if he runs out of money.
+ | goal        = Isaac
+ | unlocks     = 2 new pills
+ | unlocked by = PAY TO PLAY
+}} {{disambig msg|the challenge|the item|Pay To Play}}
+
+'''PAY TO PLAY''' is [[Challenge]] #24 and was added in ''[[The Binding of Isaac: Afterbirth]]''. In this challenge, Isaac starts with 50 [[coins]], {{i|Money Power}}, and the {{i|Sack of Pennies}}. However, every doorway is now an arcade door, and taking any damage will cause Isaac to lose more pennies than can be picked up, similar to when being attacked by {{E|Greed}}. Having 0 pennies will kill him and end the challenge. The goal is to defeat {{E|Isaac}}. This challenge is unlocked by unlocking the {{i|Sack of Pennies}} and {{i|Mr. Mega|nr+}}, done by defeating Isaac with Cain {{dlc|nr+}} and blowing up 10 [[Tinted Rock]]s, respectively.
+
+== Difficulty ==
+Needing money to continue the run causes shop purchases to become much riskier, and extra coins may have to be found in addition to hearts when getting hurt.
+
+The arcade doors in this challenge appear to be "overlaid" on the level's normal doors, even after they have been opened. In ''most'' cases, this allows Isaac to unlock and enter rooms that normally require keys (or bombs) with a coin instead. However, certain doors are still "active", and can still damage or block the player, even ''after'' being unlocked with a coin. These doors will appear to be normal open doors, despite the effects triggering when attempting to pass through them.
+* {{R|Curse Room}} doorways will still damage the player (without flight and/or shielding) after unlocking them with a coin.
+* {{r|Challenge Room}} and {{R|Boss Challenge Room}} doorways will still prevent the player from entering with too few or too many red hearts respectively.
+: Also, the doors to these rooms will appear to be the same as all the other doors on the level. It may be helpful to keep an eye on the mini-map to ensure that health (and coins) aren't needlessly lost to a Curse Room, or waste a coin on a Challenge Room he cannot enter. (Bombing into these rooms appears to leave them unaffected.)
+* Presumably because they hold 0 coins [[Co-op]] babies are killed instantly upon entering the game.
+
+== Strategy ==
+* {{i|A Quarter}} and {{i|A Dollar}} are fantastic items in this run, as they give Isaac a good amount of coins. {{p|IV - The Emperor}} card is useful in this challenge as it teleports him directly to the boss, preventing the loss of any coins.
+* {{t|Lucky Rock}} will allow Isaac to gain more coins simply by destroying rocks. Combined with a means of infinite bombs or any other way to break rocks without a cost (such as {{i|Samson's Chains}}), this trinket becomes invaluable.
+* {{t|Store Credit}}, {{P|Credit Card}}, {{i|Diplopia|n}}, {{i|Mr. ME!}}, and {{i|Coupon}} will all help Isaac obtain items from the shop for free. Similarly, the {{p|Jera}} can create free copies of shop pickups.
+* Finding a {{p|2 of Diamonds}} card early on can potentially max out the coin count, making the run much easier.
+* {{i|Blank Card}} can be used to get multiple uses out of {{p|2 of Diamonds}} or {{p|Credit Card}}.
+** {{dlc|nr}} Additionally, if the player can manage to get a {{p|Jera}}, it can be used to get infinite coins, which makes it much easier to win.
+* {{i|Rune Bag|n}} is very helpful in this challenge, especially if it produces {{p|Jera}}, {{p|Ehwaz}}, or {{p|Ansuz}}.
+* {{t|Counterfeit Penny}} can increase the value of found pennies.  This also means that when damage causes Isaac to drop coins, it is likely to have a net gain once collected. If lucky, this can result in nearly indefinite coins, making this challenge mostly trivial so long as Isaac has a steady health supply.
+* {{i|Piggy Bank}} and {{t|Swallowed Penny}} will drop extra coins when hit, likely enough to stop the issue of coin loss from being hurt.
+** While {{i|Dull Razor}} when combined with these items might seem tempting, using it will still cause you to drop coins as if you had taken actual damage and should be ignored.
+* {{i|Wooden Nickel|n}} can be used in every room to try and generate coins.
+* {{i|Contract From Below|n}} will remove rewards when clearing a room 1/3 of the time, but it otherwise doubles any rewards that do spawn after a room is cleared. If it is found in a {{R|Devil Room}}, it may be worth risking hearts for the chance of extra coins spawning after clearing rooms.
+* {{i|Eye of Greed}} can either make or break this challenge, as it can quickly chew through your money with a high-enough tear rate, but the gold tears you fire after every 20 tears will deal extra damage and can spawn more coins when killing a petrified enemy.
+** {{dlc|r}} Hitting an enemy while Isaac has money always drops a penny, which reduces the headache the item can cause for this run
+* {{i|Humbleing Bundle}} will keep the coin count at high levels by doubling the value of all pennies found. The earlier it is obtained, the better.
+** {{dlc|r}} It has a 50% chance of transforming pennies into their double version.
+* {{i|Head of the Keeper|n}} gives a chance to earn coins after hitting enemies.
+* {{i|Midas' Touch}} can be used to turn enemies into gold that splits into coins.
+* {{i|Glowing Hourglass|n}} can allow Isaac to exit dead-end rooms, earning him back the coin spent getting in.
+* {{i|BFFS!}} gives Sack of Pennies a 33% chance to drop a coin in rooms where it normally wouldn't.
+* If the player has many bombs to spare or a renewable source of explosives (such as {{i|Epic Fetus}}), bombing through and out of Secret Rooms can save some coins. Since rooms count as "unlocked" on ''all'' sides once they have been successfully entered and cleared of enemies (except for the [[Shop]], which must be exited through the main door to fully unlock), the remainder of the rooms bordering the Secret Room can be unlocked with bombs/explosives instead of coins.
+* Items like {{i|Treasure Map}} and {{i|The Compass}} can help narrow down where Isaac can go and where is likely to just be a dead-end, so they can be valuable purchases from the Shop. The boss room usually appears at a dead-end far away from the spawn point.
+* {{R|Shop}}s usually appear farther from the spawn point than a {{R|Library}}. Both can contain useful items, but the Shop generally has better items for this challenge.
+* Additionally, {{i|Guppy's Tail}} and {{i|Mom's Key}} can provide a sustainable amount of money given that each chest opened will likely contain a large amount of coins and other consumables.
+* A combination of {{t|Broken Remote}} with active items that are always charged (or have a recharge time in seconds) can prevent the loss of coins to doors, which can prove to be very effective, but may cause wasted time trying to reach the room desired.
+* When exiting {{R|Curse Room}}s, it's possible to quickly backtrack into the room to pick up the coins that dropped due to taking damage from the door frame, and then quickly exit once again, without taking damage for the second time. This allows you to conserve coins, and is possible to pull off even with Isaac's starting speed.
+* {{i|Blood Oath}} can kill Isaac by rapidly draining all of his coins.
+* {{i|Clear Rune}} can copy the effects of {{p|Jera}} and help generate coins.
+* {{T|Blue Key}} can be used to completely bypass the money requirement of moving through the floor, at the expense of having to fight twice as many rooms per floor.
+* {{I|Deep Pockets|dlc=r}} increases the coin cap to 999, allowing Money = Power to increase damage further, as well as spawning coins in rooms where a room clear drop would not occur.
+* {{dlc|r}} Unlocking [[Rocks|Fool's Gold]] rocks will help if you're willing to spare a bomb. Large clusters of them can reward you with more coins than you spent on the floor with.
+* {{dlc|r}} [[Coins|Golden Pennies]] give a variable amount of money before disappearing. If unlocked, they can be very useful, but their rarity makes their necessity for this challenge debatable.
+* {{dlc|r}} Due to {{p|0 - The Fool?}} dropping all of Isaac's pickups on the ground, using it immediately kills him.
+
+== Reward ==
+{{achievement text | 2 new pills }}
+** The pills unlocked are ''Addicted!'' and ''Percs!''
+
+== Bugs ==
+{{bug|dlc=r|Due to there being no coin-lock sprite for the door, the entrance to the Boss Rush/Hush is invisible in this challenge.}}
+
+{{nav|cain unlock|isaac boss unlock|challenge|fr=Microtransactions (Défi)}}

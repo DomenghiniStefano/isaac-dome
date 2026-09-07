@@ -1,0 +1,45 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 123
+ | quote       = Angelic spoils
+ | description = [[Angel]]s drop [[Angel Room (Item Pool)|Angel Room items]] instead of key pieces when defeated.
+ | unlocked by = Filigree Feather
+}}
+
+{{cit|ut|a+2}}
+
+== Effect ==
+* [[Angel]]s drop items from the [[Angel Room (Item Pool)|Angel Room item pool]] instead of key pieces when defeated.
+
+== Notes ==
+* Items are dropped even if both key pieces are already acquired.
+** {{dlc|r}} If one key piece was acquired before picking up Filigree Feather, the next time the angel that normally drops the key piece Isaac currently has is defeated, it will drop the other key piece even with Filigree Feather equipped. (E.g. defeating Uriel while holding Key Piece 1 and Filigree Feather will drop Key Piece 2, but defeating Gabriel with the same items will drop an angel item instead.)
+*** {{dlc|r+}} Key Piece drops are prioritized. 
+**** For example, after fighting Angels for the first time they will drop Key Pieces. If both pieces are picked up, next time Angels will drop items upon defeat.
+**** If only one Key Piece is picked up, an Angel defeated in the next room will drop another Key Piece, and the next Angel in the same room will drop an item. If a remaining Key Piece is not picked up again, an Angel fought in a third room will drop the missing Key Piece again.
+* {{Dlc|nr}} If both Angels are fought at the same time, only the last one defeated will drop an item.
+* Isaac can drop the Filigree Feather, fight the Angel, then grab the trinket again if a Key Piece is desired.
+* Only Angels that would otherwise drop a Key Piece will drop an item. This means that those who spawn during the {{e|Mega Satan}} fight, {{R|Boss Rush}} or those rarely found in [[closet]]s in the {{s|Cathedral}} do not drop items, but ones found in some {{R|Super Secret Room}}s and those summoned from {{R|Sacrifice Room}}s do.
+*Considering that {{R|Sacrifice Room}}s always spawn 2 Angels, and Isaac can get 1 Angel deal each floor, Filigree Feather can potentially generate a ludicrous 3 Angel items per floor.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Defeated angels drop a {{e|Half Soul Heart}} in addition to whatever else they drop.
+* {{i|Meat Cleaver}}: Each angel gives an item.
+** {{Dlc|r+}} Only one item will drop.
+* {{i|The Stairway}}: Allows for an extra Angel in the Angel Shop every floor.
+
+== Interactions ==
+* {{C|Jacob and Esau}}: Jacob must be the one holding Filigree Feather for the trinket to work properly.
+
+== In-game Footage ==
+{{#ev:youtube|rKsmstUjpD8}}
+
+== Trivia ==
+* Filigree is a type of ornamental art made of carefully shaped thin strips of metal, typically silver.
+
+== Gallery ==
+<gallery>
+File:Trinket Filigree Feather Booster Pack 2 icon.png|Filigree Feather's appearance prior to [[Booster Pack #5]].
+</gallery>
+
+{{nav|booster pack|fr=Plume Angélique}}

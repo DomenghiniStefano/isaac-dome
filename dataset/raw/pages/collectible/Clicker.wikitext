@@ -1,0 +1,71 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 482
+ | quote       = Change
+ | image name  = * {{dlc|nr|Booster Pack 5}}
+ | description = Transforms Isaac into another random character and has {{dlc|nr+}} 100% / {{dlc|r}} 50% chance to remove the last item collected.
+ | quality     = 0
+ | tags        = {{dlcalt|nolostbr nochallenge nodaily|r+=nolostbr nochallenge}}
+ | recharge    = 6
+}}
+
+{{cit|a|a+}}
+
+== Effect ==
+* Upon use, transforms Isaac into a random [[character]] and {{dlc|nr+}} removes the last item collected (not including Clicker) or gulped [[trinket]].
+** {{dlc|r+}} Now has a 50% chance to remove the last item collected or gulped [[trinket]].
+** All stat changes of the new character are applied.
+* {{dlc|r}} Non-tainted characters can only transform into other non-tainted characters, and tainted characters can only transform into other tainted characters.
+
+== Notes ==
+* Clicker can only transform Isaac into characters that have already been unlocked, along with {{C|Black Judas}} and {{C|Lazarus Risen}}, who are counted as separate from {{C|Judas}} and {{C|Lazarus}} respectively. {{C|The Forgotten}} and {{C|The Soul}}, {{C|Jacob and Esau}}, {{c|Tainted Lazarus}} and {{C|Dead Tainted Lazarus}}, {{C|Tainted Forgotten}} and {{C|Tainted Soul}} are all counted as inherently linked dual-characters.
+* {{i|Ankh}}, {{i|Lazarus' Rags}}, {{t|Missing Poster}}, or {{i|Judas' Shadow}} can allow a tainted character to become {{c|???}}, {{c|Lazarus}}, {{c|The Lost}}, or {{c|Black Judas}} (besides their respective tainted forms) allowing the Clicker to transform them into other non-tainted characters. There is no way for a non-tainted character to become a tainted character.
+* {{dlc|nr}} It is possible for the Clicker to choose the same character as the one that is already being played as, making it seem like the item created no effect at all.
+* Transforming into a new character does not grant Isaac the starting items of the new character unless they are inherent to the character. For example, transforming into {{C|Cain}} does not grant {{i|Lucky Foot}}.
+* Changing characters can adversely affect health.
+** All [[Red Heart container]]s will be lost, and all {{e|Bone Heart}} containers will be emptied when changing into {{C|???}}, {{dlc|r}} {{C|Black Judas}}, {{C|Tainted ???}}, {{C|Tainted Judas}}, or {{C|Tainted Forgotten}}. They will gain a {{E|Half Soul Heart}} if they would otherwise have no health.
+** All health will be lost when changing into {{C|The Lost}}. Changing from The Lost to any other character will leave them with a {{E|Half Soul Heart}}.
+** {{dlc|nr}} {{C|Keeper}} will always start with 2 [[Coin Heart]] containers. Bone and Half Soul/Black Hearts will be rounded up to 1 or 2 filled coins. Red Hearts are not rounded, which allows him to have half Coin Hearts. Changing from Keeper to any other character will turn his Coin Hearts into Red Hearts.
+*** {{dlc|r}} All Red Heart containers are converted to Coin Heart containers when transforming into Keeper, with a minimum of 2 and up to a maximum of 3. Only red hearts will determine if the coin heart containers are filled or not, and Soul/Black hearts will be converted into blue flies. One coin heart container will be filled if he would otherwise have no health. Changing from Keeper to any other character will turn his Coin Hearts into Red Hearts.
+** Changing into {{C|The Forgotten}} will not affect {{C|The Soul}}'s health. Red Hearts are converted into {{e|Bone Heart}}s. Soul/Black Hearts will be lost. He will gain an empty Bone Heart if he would otherwise have no health.
+** {{dlc|r}} All soul hearts will be converted to soul charges when changing into {{C|Bethany}}. She will gain one full Red Heart container if she would otherwise have no health. Changing from Bethany to any other character will convert her soul charges into soul hearts.
+** {{dlc|r}} Heart Containers will be divided evenly and split up when changing into {{C|Jacob and Esau}}. Changing from Jacob and Esau to any other character will leave them with Jacob and Esau's combined health.
+* Activating Clicker typically only consumes passive items, but with {{i|Schoolbag}}, it can consume the item in the other activated item slot if that item was the most recently collected.
+* Similarly to items such as {{i|Ankh}}, {{i|Lazarus' Rags}}, or {{i|Judas' Shadow}}  any [[completion mark]]s obtained will correspond with the character the Clicker turns you into.
+** {{C|Tainted Cain}} can craft the Clicker and other useful items and then use Clicker to change characters.  In this way, runs started as Tainted Cain can be useful to complete other characters' completion marks, even when Tainted Cain's own completion marks are finished.  Although Clicker will only turn tainted characters into other tainted characters, Tainted Cain can also craft {{i|Ankh}}, {{i|Lazarus' Rags}}, or {{i|Judas' Shadow}} and die to become a non-tainted character then use the Clicker to change into other non-tainted characters.
+* {{dlc|nr}} Removed items still count towards [[transformation]]s.
+* Changing into {{C|Eden}} or {{C|Tainted Eden}} will not use tokens. Additionally, both Eden's base stats will be the same as Isaac's if he wasn't the character selected at the start of the run.
+* Changing from {{C|Eden}} or {{C|Tainted Eden}} will leave the [[Luck]] stat decimal. If the character the Clicker turns you into has base luck stat different from 0, Luck will change by a whole number (e. g. turning into {{C|Keeper}} will decrease your base luck by 2 instead of setting it to -2.00).
+* Changing into {{C|Jacob and Esau}} will randomly distribute items between the two. Changing from Jacob and Esau to any other character will leave them with Jacob and Esau's combined items. Changing into Jacob and Esau will drop the currently held consumables like [[pill]]s, [[card]]s etc. on the floor, but will keep trinkets. Esau's consumables and trinkets will always be dropped on the ground when changing to a different character. Jacob's consumables and trinkets will be transferred to the new character.
+* Changing into {{c|Tainted Isaac}} will remove every passive item except the 8 oldest items Isaac holds.
+* Changing into {{c|Tainted Lazarus}} will give every passive item to only one of the forms.
+** Changing into {{c|Dead Tainted Lazarus}} will remove the auto-swap affect.
+** Changing from {{c|Tainted Lazarus}} into another character will only keep the items of the form that used Clicker.
+* {{dlc|nr}} If {{i|Dead Cat}} was the last item to be picked up, Clicker will remove individual lives instead of the entire item.
+* {{dlc|nr}} If {{i|Halo of Flies}} was the last item to be picked up, Clicker will only remove one fly at a time (including [[Pretty Fly|Pretty Flies]] obtained from [[pill]]s and {{M|Slot Machine}}s) instead of the entire item.
+* In {{mode|greed|greedier}}[[Greed Mode]], changing character using Clicker will update the Jam Chance of the [[Greed Donation Machine]] to the corresponding character chosen by Clicker.
+** This can be useful for maxing out the coin counter of the machine, and obtaining unlocks while using a single character (like {{c|Lilith}} or {{c|Judas}}) to make the process easier and faster, and only changing characters at the end of the run.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Replaces the most recently acquired item with {{i|Pentagram}} instead of removing it. Birthright's effects will also change to that of the character transformed into.}}
+* {{Book of Virtues synergy|description=Spawns a random wisp.}}
+
+== Interactions ==
+* {{i|Car Battery}}: Isaac will transform twice and have the last two picked up items removed.
+* {{I|Rock Bottom}}: Stat upgrades given by removed items are retained, and the best stats of each character you turn into are retained, possibly creating some powerful characters, like Tainted Keeper with all the Berserk stats of Tainted Samson.
+
+== In-game Footage ==
+{{#ev:youtube|rnLKAwZYWpA}}
+
+== Trivia ==
+* Clicker is a TV remote, and the static overlay when the item is used references when a channel is switched.
+
+== Bugs ==
+{{bug|dlc=nr+|If {{c|Lazarus}} dies, becomes Lazarus Risen, and then uses Clicker to become another character, the character can have Lazarus' hair and freckles. This also works with reviving items such as {{i|Ankh}}.}}
+{{bug|dlc=nr|If Clicker is used in The Soul form of {{c|The Forgotten}}, it is possible to be turned into another Forgotten. Both Forgottens have independent health bars and can be swapped between, but no Soul form exists anymore. Turning into any other character does not cause the bug.}}
+{{bug|dlc=r|If the player only had empty heart containers before changing to {{c|Bethany}}, doing so kills her instantly.}}
+{{bug|dlc=r|If Clicker is used as {{c|Tainted Lazarus}} while holding {{i|Birthright}}, the active form will click to another character, but the other form will still be in its ghostly form due to the effects of Birthright. Clearing rooms will alternate between the activity of the ghostly form, switching it's vulnerability and health from the main character, and placing clicker in the pocket item slot. Exiting and re-entering the game during this will cause a softlock unless the player has a second controller, which if not available, will make the player unable to continue the run.}}
+{{bug|dlc=r|If Clicker is used as any character that has half of red heart, then when becoming a {{c|Keeper}} / {{c|Tainted Keeper}}, it will visually seem like he has half of the coin heart. After exiting the menu, half of the coin will turn into a full coin heart. If the character had an eternal or golden heart before using the clicker, it will be fully transferred to the keepers and will work as on regular characters, with the only difference being that the eternal heart will not provide additional protection from one hit.}}
+{{bug|dlc=r+|Transforming {{c|Jacob and Esau}} to {{c|The Lost}} or {{c|Keeper}} triggers a golden heart explosion, even if there wasn't any in the health bar.}}
+
+{{nav|fr=Télécommande}}

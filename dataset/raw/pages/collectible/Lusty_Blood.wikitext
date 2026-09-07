@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 411
+ | quote       = Their blood brings rage!
+ | description = Isaac's [[damage]] increases for the current room each time he kills an enemy.
+ | quality     = 3
+ | tags        = summonable offensive
+ | devil price = {{dlcalt|1|r=2}}
+ | unlocked by = Lusty Blood
+}}
+{{distinguish|Bloody Lust}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Each time an enemy is killed, Isaac gains a [[damage]] boost for the current room.
+** Each kill increases damage by 0.5, up to a maximum of 5 damage after 10 kills.
+
+== Notes ==
+* Some summoned enemies like {{E|Rag Man's Ragling}}s do not trigger the effect when killed.
+* {{E|Mr. Maw}} does not trigger the effects of Lusty Blood, even after splitting.
+* Blowing up a {{e|Shopkeeper}} will grant Isaac a damage bonus as well.
+
+== Synergies ==
+* {{I|Meat Cleaver}}: Both of the smaller enemies produced by Meat Cleaver add to the damage bonus, allowing rooms with few enemies to grant much more damage.
+* {{T|Samson's Lock}}: Both the item and the trinket stack, granting 1 damage per kill. With 100% proc rate on the Lock, Isaac may gain up to 10 damage after 10 kills.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s don’t count towards the Lusty Blood counter.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop don't count towards the Lusty Blood counter.
+* {{dlc|r}}[[Freeze|Freeze Effects]]: Enemies that are frozen don't count towards the Lusty Blood counter.
+** Because of this interaction, when Isaac has {{i|Uranus}}, only enemies killed by icicles from statues, bombs, familiars and other sources will increment Lusty Blood's counter, thus rendering Lusty Blood quite difficult to use.
+** {{dlc|r+}} Frozen enemies do increase damage.
+
+== In-game Footage ==
+{{#ev:youtube|H2iWS_Xhzgc}}
+
+== Trivia ==
+* Lusty Blood has the same effect as {{i|Bloody Lust}} from the original ''The Binding of Isaac''.
+
+{{nav|samson unlock|ultra greed unlock}}

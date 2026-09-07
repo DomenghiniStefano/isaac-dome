@@ -1,0 +1,51 @@
+{{infobox boss
+ | name        = Min-Min
+ | dlc         = r
+ | id          = 913
+ | environment = <u>Boss</u><br>{{floor|Downpour}}<br>{{room|boss challenge}}
+ | base hp     = 280
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Smart Fly}} (1% chance)
+}}
+
+'''Min-Min''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in {{dlc|r}} {{s|Downpour}}.
+
+== Behavior ==
+=== Phase 1 ===
+Min-Min floats slowly towards Isaac and performs the following attacks:
+* Spits a {{e|Willo}} at Isaac which fires a projectile at him before returning to orbit around Min-Min. Min-Min can have a maximum of 4 orbiting her. Willos do not deal contact damage.
+** This can be done multiple times in quick succession until the limit of 4 Willos has been reached.
+** Willos orbiting Min-Min occasionally fire a projectile towards Isaac.
+* Once Min-Min has 4 orbiting Willos, she periodically causes them to fire 3 projectiles outwards. If any Willos are killed during this attack the remaining ones perform this attack uninterrupted.
+
+=== Phase 2 ===
+In this phase, Min-Min burns away the husk surrounding her, and can now have a maximum of 7 Willos orbiting her. She will continue to float slowly towards Isaac and has new attacks:
+* Min-Min spawns up to 4 Willos around herself and then causes all orbiting Willos to fire 3 projectiles outwards.
+** Willos orbiting Min-Min still occasionally fire a projectile towards Isaac.
+* Spits a Willo at Isaac which fires a projectile at him before returning to orbit around Min-Min.
+* Causes the current orbiting Willos to fire 3 projectiles outwards.
+* Sends her orbiting ring of Willos to chase Isaac. After a few seconds, they return.
+* Disappears and creates several groups of lights on the ground. One group at a time, Willos appear from the lights, fire at Isaac, and disappear.
+
+Upon Min-Min's defeat, all spawned Willos die alongside her.
+
+== Gallery ==
+<gallery>
+File:Boss Min-Min secondphase ingame.png|Min-Min in her second phase.
+File:UnusedTBOIRepentance-MaidInTheMistPortrait.png|Maid in the Mist, the cut boss that Min-Min would replace.
+File:Minmin1.png|Concept sketches of Min-Min's behaviors at phase 1.
+File:Minmin2.png|Concept sketches of Min-Min's behaviors at phase 2.
+</gallery>
+
+== Trivia ==
+* Min-Min is confirmed to be female, as shown in [https://twitter.com/edmundmcmillen/status/1378775983130435584 this tweet].
+* In her first phase, Min-Min is hiding within a drowned and bleached corpse of {{e|The Husk}}.
+** In a way, this corpse can be seen as a posthumous version of {{e|Lil Blub}}.
+* Min-Min may be named after [[wikipedia:Min Min light|Min Min lights]], a light phenomenon that has often been reported in outback Australia, where remote lights appear on the horizon and appear to follow people around.
+* Min-Min in her first phase is very similar to the {{e|Mullighoul}} monster as they both are white creatures, have a ball of light in the mouth, and shoot out Willos.
+* In the files of Repentance, there is an unused Boss Portrait for a Boss called "Maid in the Mist". Unlike the other unused Bosses, there are no files for this boss. This is likely because she was early concept for what would become Min-Min in the final game, as they are both female, share a Willo theme, and were both assigned the enemy ID '''913''' according to their file names.
+
+{{nav|boss}}
+
+[[Category:Chapter 1.5 bosses]]
+[[Category:Downpour bosses]]
+[[Category:Debut bosses in Repentance]]

@@ -1,0 +1,177 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc         = r
+ | id          = 25
+ | health      = {{hearts|soul=3}}
+ | speed       = 0.90
+ | tears       = -0.35
+ | pickups     = 3 [[Bombs#Poop|Poop bombs]]<br>{{i|Hold}}
+ | unlocked by = The Soiled
+}}
+'''Tainted ???''' is a [[Characters|character]] added in [[The Binding of Isaac: Repentance]]. He is the alternate version of {{C|???}}. Tainted ??? is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|1=Soul of Cain}} to access a special room in one of the walls while playing as ???. He starts with 3 soul hearts, 3 poops, and {{i|Hold}} in the consumable slot.
+
+== Notes ==
+* While playing as Tainted ???, bomb pickups are replaced by poop pickups, and his bomb counter is replaced by a poop counter which displays the number and effects of his poops. The order in which different types of poop are obtained is predetermined based on the seed. By default, Tainted ??? can carry a maximum of 10 poops: 9 in the poop counter and 1 in Hold.
+* Using Hold will store his leftmost poop for later use and cycle to the next poop.
+* Besides replacing bomb pickups, poop pickups also have a chance to drop from fallen enemies and from Tainted ??? by dealing damage. There are small and large variants of poop pickups: small poop pickups give one poop, and large poop pickups give three poops.
+* Most items that affect bomb count will spawn blue flies when playing as Tainted ???. For example, {{P|2 of Clubs}} and {{i|Boom!}} will spawn 2 and 10 flies, respectively.
+** {{dlc|nr+}} However, [[Bombs Are Key]] pills seem to give Tainted ??? bombs internally (assuming he had keys before using the pill), as using the pill again will give back the amount of keys that were originally carried. When bombs are obtained this way, they can be given to {{m|Bomb Bum}}s, though the number of bombs is invisible.
+* Items/effects that reroll pickups (such as {{i|D20}}, {{i|GB Bug}}, etc.) will also reroll poop pickups.
+** {{p|IX - The Hermit?}} will not convert poop pickups into coins.
+* Tainted ???'s poops cannot be used to bridge over gaps, unlike the poops from {{i|The Poop}}.
+* In Co-Op, partners can pick up poop drops if they're alive and still add them to Tainted ???'s reserve.
+* In Co-Op, a bomb counter will be displayed if one of the characters is not Tainted ???, despite him not usually being able to see it.
+* In Co-Op, Tainted ??? can infinitely use Bomb Bums without taking away bombs from the other player's reserves.
+* Tainted ??? is unable to give poop pickups to Bomb Bums in place of bombs.
+* Tainted ???'s tears are colored brown; this is purely cosmetic.
+
+== Poop Varieties ==
+Tainted ??? can acquire the following effects from poop pickups. These effects are the same as {{I|IBS}}, but are not used immediately.
+
+=== Throwable ===
+All thrown poops deal 15 damage to enemies they hit when thrown (up to 3 times in the case of stone poop).
+
+{| class="wikitable mw-collapsible striped sortable" style="text-align: center"
+ ! class="unsortable" style="width: 96px" | Icon
+ ! ID
+ ! style="width: 150px" | Name
+ ! class="unsortable" style="width: 700px" | Description
+ |-
+ | [[file:TaintedBlueBaby_Poop.png|60px|link=]]
+ | 245.0
+ | Poop
+ | A normal {{e|Poop}}, the same as those found in any run.
+Can drop pick-ups like normal and is affected by {{T|Petrified Poop}}.
+ |-
+ | [[file:TaintedBlueBaby_CornyPoop.png|60px|link=]]
+ | 245.12
+ | Corn Poop
+ | Spawns a [[Familiar#Blue Flies|blue fly]] every two seconds. Each corn poop can have up to 3 blue flies out at a time, and the blue flies will circle the corn poop while inactive. The blue flies automatically seek out enemies that are near the player; they will not automatically seek out enemies near the corn poop.
+ |-
+ | [[file:TaintedBlueBaby_BurningPoop.png|60px|link=]]
+ | 245.13
+ | Flaming Poop
+ | Leaves behind a fire that damages enemies and blocks enemy shots. The fire lasts 5 seconds and can block five shots and/or deal three ticks of contact damage before disappearing (the first hit will deal 16.5 damage, the second and third will deal 11). While held, it can be used to destroy {{e|Shopkeeper}}s by walking into or throwing the poop at them, although only in the room its used; the flame will extinguish if the room is exited.
+ |-
+ | [[file:TaintedBlueBaby_GreenPoop.png|60px|link=]]
+ | 245.14
+ | Stinky Poop
+ | Constantly emits a toxic cloud that deals 3.5 damage per tick to nearby enemies (10.5 damage per second). If an explosion or fire hits the cloud, it also explodes, dealing 15 damage to anything caught in the blast. When the poop is destroyed, it spawns a larger toxic cloud that can't explode and goes away after 5 seconds. If held, it can be used to poison enemies with the poison clouds while walking.
+ |-
+ | [[file:TaintedBlueBaby_BlackPoop.png|60px|link=]]
+ | 245.15
+ | Black Poop
+ | Continuously creates slowing black creep and, when destroyed, deals 10 damage to and confuses all enemies in the room. The poop will continue to create slowing creep even after it's destroyed.
+ |-
+ | [[file:TaintedBlueBaby_HolyPoop.png|60px|link=]]
+ | 245.16
+ | White Poop
+ | Acts the same as a poop created by {{i|Hallowed Ground}}. Tainted ??? also gains the poop's effects while holding it.
+ |-
+ | [[file:TaintedBlueBaby_GreyPoop.png|60px|link=]]
+ | 245.11
+ | Stone Poop
+ | Very resistant to damage and deals extra damage when thrown.
+ |-
+ | [[file:TaintedBlueBaby_Bomb.png|60px|link=]]
+ |
+ | Bomb
+ | Explodes after 1.5 seconds even if Tainted ??? doesn't throw it. This bomb looks like one created by {{i|Butt Bombs}}, but will not have its unique effect. It will, however, use most of Tainted ???'s bomb synergies except for {{I|Mr. Mega}}, {{I|Rocket in a Jar}}, {{T|Ring Cap}}, and {{T|Short Fuse}}.
+ |}
+
+=== Non-Throwable ===
+{| class="wikitable mw-collapsible striped sortable" style="text-align: center"
+ ! class="unsortable" style="width: 96px" | Icon
+ ! style="width: 150px" | Name
+ ! class="unsortable" style="width: 700px" | Description
+ |-
+ | [[file:TaintedBlueBaby_Fart.png|60px|link=]]
+ | Fart
+ | Deals 5 damage and poisoning nearby enemies while pushing them and their bullets back and spawning a toxic cloud. If an explosion or fire hits the cloud, it also explodes, dealing 15 damage to anything caught in the blast. Reflected bullets can damage enemies, similarly to {{I|Butter Bean}}.
+ |-
+ | [[file:TaintedBlueBaby_Diarrhea.png|60px|link=]]
+ | Explosive Diarrhea
+ | Drops 5 live bombs over time, similarly to [[Explosive Diarrhea]]. These bombs will use Tainted ???'s bomb synergies.
+ |-
+ | [[file:TaintedBlueBaby_BrownCreep.png|60px|link=]]
+ | Brown Creep
+ | Create a trail of brown creep that deals 1.5x Tainted ???'s damage to enemies per tick (15x Tainted ???'s damage per second). Standing on this creep gives Tainted ??? +1 damage, +1.5 tears fired per second, and other effects, depending on what's in contact with it. This creep persists indefinitely. So as long as any one poop remains on the trail, all previously connected effects will persist, even if the poops granting them were destroyed. Once all poops on the creep are destroyed, the creep loses any additional extra effects it granted. When in contact with:
+[[file:TaintedBlueBaby_BlackPoop.png|32px|link=]] Black Poop: the creep also slows enemies and gives Tainted ??? slowing tears.<br/>
+[[file:TaintedBlueBaby_GreenPoop.png|32px|link=]] Toxic cloud from Stinky poop: the creep poisons enemies and gives Tainted ??? poison tears.<br/>
+[[file:TaintedBlueBaby_BurningPoop.png|32px|link=]] Flaming Poop: the creep burns enemies and gives Tainted ??? {{i|Fire Mind}}.<br/>
+[[file:TaintedBlueBaby_HolyPoop.png|32px|link=]] White Poop & its Aura: the creep grants homing and triples Tainted ???'s fire rate and damage. <br/>
+[[file:TaintedBlueBaby_GreyPoop.png|32px|link=]] Stone Poop: the creep will keep all the extra effects of other poops, even if they are destroyed. <br/>
+|}
+
+== Strategy ==
+* As Tainted ??? begins with a low tears stat, it is almost required to rely on poops in the early game. The player should not be scared to use poops, as Tainted ??? will naturally create many poops as he deals damage, especially in boss battles. However, it may be best to save more powerful poops or poop synergies, such as White Poops and brown creep, for more difficult situations such as boss battles.
+** Tainted ???'s low tears also makes tears up items like {{I|Torn Photo}} very beneficial.
+* More than any other type of poop, it can be beneficial to use Hold on bomb poops for utility purposes, such as finding {{r|Secret Room}}s or reaching pickups behind rocks.
+** Alternatively, flaming poops can be used in conjunction with stinky poops/farts to blow things up without using bombs. The stinky poop/fart can be used next to what the player wants to blow up, then the flaming poop can be thrown at it to create an explosion. This can also be done by throwing stinky poops at a fire or flaming poop, though care must be taken as it is easy to get caught in the ensuing explosion if the player does not move out of the way quickly enough.
+* If playing in [[Greed Mode]], it's best to try to complete all waves in one sitting as exiting the main room will cause all poops and creep to disappear.
+* '''Almost anything''' that resembles a fire can cause toxic clouds created by farts and Stinky Poop to explode. This includes {{e|Fire Place}}s, fires shot by enemies (such as {{E|Candler}}s, {{E|Fire Worm}}s, and {{E|Revenant}}s), and fires created by Tainted ??? (such as with {{i|The Candle}}, {{I|Ghost Pepper}}, and {{I|Bird's Eye}}). Extra caution must be taken to stay away from gas clouds if playing with or around fires.
+** {{I|Urn of Souls}} is a notable exception to this.
+** Stinky Poops can intentionally be thrown at blue/purple fireplaces to blow them up for the chance to gain {{e|Soul Heart}}s. Be careful not to destroy [[Angel|Angel statues]] next to them if they’re in an {{R|Angel Room}} if you do not wish to fight the angel.
+
+== Item Interactions ==
+* {{i|Birthright}} allows Tainted ??? to hold up to 29 poops in the poop counter.
+* {{I|Ankh}} Causes Tainted ??? to respawn as himself instead of ???.
+
+=== Good Items ===
+* Items that break obstacles such as{{I|Bob's Rotten Head}}, {{I|Mr. Boom}}, or {{I|Notched Axe}} lets Tainted ??? break open tinted rocks, secret rooms, and other obstacles without needing to save a bomb poop.
+* {{t|Apple of Sodom}} turns useless red hearts into friendly spiders.
+* {{t|Blessed Penny}} can sometimes spawn half soul hearts on the collection of coins, which can occasionally be dropped by thrown poops.
+* {{t|Burnt Penny}}: Grants generated pennies a chance to drop large poop pickups.
+* {{t|Butt Penny}}: Grants generated poops a chance to drop a penny.
+* {{I|The Candle}}/{{I|Red Candle}} allows Tainted ??? to ignite gas at will and from a safe distance, making him less reliant on poop bombs and explosive diarrhea.
+* {{I|D20}} become more effective since Tainted ??? could spawn more pickups naturally.
+* With {{I|Gnawed Leaf}}, poops held above Tainted ???'s head can still damage enemies while invulnerable.
+* {{I|Dirty Mind}} benefits Tainted ??? immensely, allowing him to amass an army of [[Familiar#Dips|Dip Familiars]] for free simply by breaking his poops.
+* {{I|Mom's Bracelet}} allows Tainted ??? to pick up an already-placed poop and put it in a different spot (e.g. putting white poop in favorable spot to fight a boss).
+* {{t|Petrified Poop}} is naturally a good trinket for Tainted ???, as his heavy reliance on poop makes it easy to obtain pickups. Note that pickups will only drop from normal and corny poops, and not from other poop varieties.
+* {{I|Remote Detonator}} allows for more controlled usage of the Explosive Diarrhea poop, and allows for the player to potentially save themselves from a fart chain explosion.
+* {{I|Rock Bottom}} is extremely strong with Tainted ???, allowing him to permanently gain the stat increases gained from standing in his Brown Creep and White Poop auras.
+* {{I|Tech.5}} patches up Tainted ???'s low fire rate, as the technology laser fires around 2.5 times a second.
+* {{t|Lost Cork}} makes the Brown Creep bigger, allowing to maintain it's bonuses with slightly more maneuverability.
+* {{t|Gigante Bean}} increases the size of gas clouds and farts.
+* {{t|Lil Larva}} spawns a blue fly when a poop is destroyed.
+* [[Tear_Effects#Homing|Homing Tears]] allow you to reliably benefit from brown creep's damage and fire rate bonus as White Poop is quite rare.
+
+=== Bad Items ===
+* With {{I|Bird's Eye}} or {{I|Ghost Pepper}}, the explosion might be very hard to avoid if your current poop is farting, since farting guarantees to spawn fire. The only surefire way to not harm yourself using a fart is to move in one direction constantly while farting.
+* {{I|Finger!}} will harm special poops whenever it's pointed at them, forcing the player to take special care to not look or turn to the poop to avoid weakening them accidentally.
+* Items that directly add Red Hearts to the health bar, such as {{i|Yum Heart}}, {{i|Yuck Heart}}, or full health [[pill]]s, are useless. However, eternal hearts still act as an extra half a heart and become a full soul heart at the end of the floor, making {{I|Prayer Card}} viable.
+* Items that cause Isaac to shoot tears in different directions, such as {{i|Mom's Eye}}, makes it much harder to capitalize on corny or holy poops, as there is a high chance of them breaking if Isaac is firing near them.
+* {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s are riskier, as they deplete health that is harder to replenish.
+* {{I|Book of Virtues}} wisps may break special poops if not careful.
+* {{i|Guppy's Paw}}, since it requires Red Hearts to convert, would be a useless item to hold (but should still be picked up and swapped back to get credit towards the [[Guppy]] transformation).
+* {{i|Holy Water}} tends to destroy poops as soon as they are thrown unless the player has careful timing and aim.
+* {{t|Judas' Tongue}} doesn't lower the price of Soul Heart Devil deals.
+* {{i|Little C.H.A.D.}} is useless unless paired with {{i|Dark Bum}}, where it becomes very useful.
+* {{i|Marked}}, while allowing the player to have slightly more control over the directions that the poops are thrown, also often makes it difficult to avoid immediately breaking them. This can be especially harsh when trying to use holy poops, as the firing rate increase will almost guarantee the poop being immediately destroyed.
+* {{I|Tiny Planet}} can cause the player to accidentally break special poops while trying to fire. This becomes less impactful with items which replace tears, like {{I|Technology}}.
+
+== Unlockable Items ==
+{{achievement text | Dingle Berry, The Emperor, Soul of ???, Charming Poop, IBS, Ring Cap, The Swarm }}
+
+== Gallery ==
+<gallery>
+File:Transition BlueBaby Tainted.png|Tainted ???'s transition screen portrait.
+File:Start_Tainted_???.png|The spawn floor when playing Tainted ???.
+File: Tainted BlueBaby Menu Icon (Locked).png|Tainted ???'s locked character icon, depicting a dirty closet door with poop sticking out of it.
+</gallery>
+
+== Trivia ==
+* After death, the bowels of the deceased will loosen, causing them to defecate themselves. This is probably why Tainted ??? has a heavy focus on poop.
+** When Tainted ??? dies, he will drop all of his stored poop pickups behind him, an in-game depiction of the above.
+* When Tainted ??? has an item that makes him fire red/blood tears, his normally brown poo tears become black.  This is likely because that's the color of feces that's mixed with blood from internal bleeding.
+* The achievement for unlocking Tainted ??? is "The Soiled", a possible title for the character.
+** Soiled means dirty, which likely references how dirty Tainted ??? looks due to being covered in poop.
+** Soiling oneself is to accidentally release the bowels, leading to one defecating on themself.
+* Charming Poop, Tainted ???'s Mega Satan unlock, is the only poop type in the game that requires unlocking.
+* Tainted ??? unlocks {{P|IV - The Emperor?}}; this is a direct reference to {{I|King Baby}} and the official The Binding of Isaac tarot cards set, on which ??? represents The Emperor.
+** Besides that, some of the reversed card meanings are immaturity and lack of discipline, possibly alluding to Tainted ???'s mechanic of defecating himself while attacking.
+** This card is mostly associated with confusion and lack of direction, seen through his inherent weakness and randomness, forced to depend on an unreliable reel of random poops and being more prone to self-damage.
+* Like all characters that start with only soul/black hearts, Tainted ???'s starting health is listed as "-I" on the character selection screen.
+
+{{nav|character|blue baby unlock|tainted blue baby unlock|fr=??? Impur}}

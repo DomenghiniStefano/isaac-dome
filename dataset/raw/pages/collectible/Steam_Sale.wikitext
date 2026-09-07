@@ -1,0 +1,48 @@
+{{infobox passive collectible
+ | id          = 64
+ | quote       = 50% off
+ | description = Reduces all Shop prices by 50%, rounded down to 7 coins for an item, rounded up to 2-3 coins for a pickup.
+ | quality     = 2
+ | tags        = summonable offensive
+ | pool        = Greed, Super Greed, shopkeeper
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Halves the price of all purchasable items and pickups.
+** [[Item]]s on sale for an odd amount will have their price rounded down (ie; 15 cost items will cost 7).
+** Most [[Pickup]]s have their price reduced to 3. {{dlc+|r}} This includes {{e|Grab Bag}}s, which are normally sold for 7.{{dlc-}}
+** {{e|Red Heart}}s have their price reduced to 2.
+* {{dlc|r}} Prevents shops from having natural discounts.
+
+== Notes ==
+* This item can drop from killing {{E|Greed}}, as well as a 1% chance to drop from destroying {{e|Shopkeeper}}s.
+** It can also drop from killing {{e|Super Greed}}, if {{i|A Quarter}} is not yet unlocked.
+* {{dlc|nr}} Multiple Steam Sales can be obtained via each of the normal drop methods.
+* {{dlc|na}} Multiple Steam Sales have no effect.
+* {{dlc|anr}} After obtaining 2 Steam Sales, all shop prices are set to 0 coins.
+* {{dlc|r}} Multiple Steam Sales only further reduce prices, with each additional copy lowering prices less.
+** The price is lowered to <math>\frac{price}{n+1}</math>, where ''n'' is the number of Steam Sales. For example, an item with 3 Steam Sales would cost <math>15 \over 4</math> pennies, which is rounded up to 4.
+* {{dlc|ana+}} Steam Sale will cause the [[Deal with the Devil|Deals with the Devil]] not to convert the type of required heart automatically.
+* {{dlc+|r}} Steam Sale's quality is treated as 3 for the purposes of {{i|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{T|Adoption Papers}}: Both of the discounts stack, selling familiars for 5 cents.
+* {{I|Coupon|a+nr}}: The discounts stack.
+* {{dlc+|anr}} {{i|Diplopia}}: Can be used to create two Steam Sales, reducing the price of all items in the shop to 0.
+** '''Diplopia''' + {{i|Restock}} or [[Greed mode]]: Restock will allow shop items to replenish indefinitely, so by having multiple Steam Sales by the methods above, infinite items may be purchased. Be careful not to pick up {{i|Missing No.}}, which will remove the Steam Sales and will likely replace many items with {{i|Breakfast}}.{{dlc-}}
+** {{dlc+|r}} Each additional Steam Sale will further reduce the price of all items in the shop, down to a minimum of 1 cent.{{dlc-}}
+
+== Interactions ==
+* {{I|A Pound of Flesh}}: Devil Deals and {{r|Black Market}}s will have their price reduced. Shop items will cost the same amount of health.
+
+== In-game Footage ==
+{{#ev:youtube|kETBVQ71VuE||inline}} {{#ev:youtube|7c_x2_8ZxR8||inline}}
+
+== Trivia ==
+* This item is called '''Steamy Sale''' on the PS Vita and Xbox One versions, as well as in the card game ''[[The Binding of Isaac: Four Souls]]'', most likely due to fear of copyright issues.
+** This was also the case on the PS4 and Switch versions but was later reverted to Steam Sale in Booster Pack #5.
+* Steam Sale refers to the platform of [https://store.steampowered.com/ Steam] and its reputation for giving generous sales.
+
+{{nav|fr=Soldes}}

@@ -1,0 +1,51 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 573
+ | quote       = Halo of tears
+ | description = Adds one Red [[Heart Container]] and fully restores health. x1.2 [[damage]] multiplier. Isaac will occasionally fire extra tears that orbit around him.
+ | quality     = 3
+ | tags        = summonable offensive angel
+ | devil price = 2
+}}
+{{distinguish|Sacred Heart}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Isaac will frequently fire extra [[spectral tears]] that orbit around him until they hit the ground, similar to {{i|Tiny Planet}}. These tears mimic Isaac's in most cases.
+* x1.2 [[damage]] multiplier. This multiplier does not stack with multiple Immaculate Hearts.
+* Adds one Red [[Heart Container]] and fully replenishes Isaac's health.
+* {{transformation contribution|Seraphim}}
+
+== Notes ==
+* The tears cannot push active {{e|Bomb}}s and {{e|Troll Bomb}}s.
+* The tears can extinguish {{e|Fire Place}}s and set off {{e|TNT}}.
+
+== Synergies ==
+* {{I|Angelic Prism}}: The extra tears share the same orbit as Angelic Prism, making them very easy to split.
+* {{I|Chemical Peel}}: Some of the orbiting tears will gain Chemical Peel's 2 flat damage bonus.
+* {{i|Chocolate Milk}}: Orbiting tears' damage does not depend on the charge of Chocolate Milk, so Isaac can shoot low damage tears rapidly to produce a large number of orbiting tears which do full damage.
+* {{I|Death's Touch}}: Death's Touch tear modification will also affect the orbiting tears.
+* {{I|Eye of Belial}}: Orbiting tears get piercing and homing on nearby enemies on contact, and return orbiting after no targets left.
+* {{I|Haemolacria}}: The orbiting tears will be affected by Haemolacria but the tears created upon hit will not orbit.
+* {{I|Lachryphagy}}: Lachryphagy will affect the orbiting tears and become bigger when in contact with other tears. The Lachryphagy tears will split upon hit and the split shots will orbit around the point where the original tear had split.
+* {{I|The Ludovico Technique}}: Isaac will frequently shoot tears that orbit around him, even without pressing any fire buttons.
+* {{i|Monstro's Lung}}: Fires a large number of extra tears alongside the burst that begin orbiting Isaac once they reach the orbit range.
+* {{I|Urn of Souls}}: Each individual flame shot from the Urn has a chance to spawn an orbiting tear.
+
+== Interactions ==
+* {{I|Anti-Gravity}}: Tears will orbit very close and fast around Isaac's body, and return to normal orbit once he stops firing.
+* {{I|Brimstone}} / {{I|C Section}} / {{I|Dr. Fetus}} / {{I|Epic Fetus}} / {{I|Mom's Knife}} / {{I|Technology}} / {{I|Tech X}}: No unique interactions; regular tears are generated which orbit Isaac normally.
+* {{i|Explosivo}}/{{t|Nose Goblin}}/{{i|Sinus Infection}}: Orbiting tears that stick to an enemy will return to the ring if the enemy cannot be stuck to anymore before the tear's duration ends.
+* {{I|Eye of the Occult}}: Orbiting tears cannot be controlled.
+* {{i|Hallowed Ground}}: The damage multiplier does not stack with that from a white poop.
+* {{I|Incubus}}: The orbiting tears will orbit whoever fired it, whether it be Isaac or the Incubus.
+* {{I|Ipecac}}: Orbiting tears explode.
+* {{C|Tainted Bethany}}: On pickup, grants 12 blood charges.
+* {{I|Technology 2}}: The laser does not contribute in generating orbiting tears.
+
+== Trivia ==
+* [[anti:Immaculate Heart|Immaculate Heart]] originates from the ''Antibirth'' mod.
+* The [[wikipedia:Immaculate Heart of Mary|Immaculate Heart of Mary]] is a Catholic devotion, which represents purity, love, and compassion of Mary.
+
+{{nav|seraphim|fr=Cœur Immaculé}}

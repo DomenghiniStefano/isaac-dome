@@ -1,0 +1,68 @@
+{{infobox passive collectible
+ | id          = 331
+ | quote       = God tears
+ | description = {{dlc|nr}} Grants [[homing tears]] with a damaging halo. +0.5 [[Damage]], -0.3 [[Tears]] -0.3 [[Shot Speed]], +0.8 [[Tear Falling Speed]], and +1.2 [[Range]].<br>{{dlc|r}} Grants [[homing tears]] with a damaging halo. +0.5 [[Damage]], -0.3 [[Tears]], and -0.3 [[Shot Speed]].
+ | quality     = 4
+ | tags        = summonable offensive angel
+ | devil price = {{dlcalt|1|r=2}}
+ | unlocked by = Godhead
+}}
+
+{{cit|up}}
+
+== Effects ==
+* +0.5 [[Damage]].
+* -0.3 [[Tears]].
+* -0.3 [[Shot Speed]].
+* {{dlc|nr}} +1.2 [[Range]].
+* {{dlc|nr}} +0.8 [[Tear Falling Speed]].
+* Grants [[homing tears]].
+* Tears gain a damaging aura.
+** {{dlc|nr}} The aura deals 30% of Isaac's damage 15 times per second.
+** {{dlc|r}} The aura deals 2 damage 30 times per second.
+
+== Notes ==
+* {{dlc|nr}} Godhead is a [[special item]].
+* The hitbox of the aura is increased with the size of Isaac's tears.
+* This item can be crafted from {{i|Bag of Crafting}} with a {{e|Red Heart}}, {{e|Soul Heart}}, {{e|Gold Heart}}, and five {{e|Eternal Heart}}s.
+
+== Synergies ==
+* {{i|Bob's Rotten Head}}: Creates a Godhead aura around the head and applies homing effect when thrown.
+* {{i|Compound Fracture}}/{{i|Cricket's Body}}/{{i|The Parasite}}: Main tears and burst tears retain all effects.
+* {{i|Explosivo}}/{{i|Mucormycosis}}: Causes damaging aura to grow once attached to an enemy.
+* {{i|Euthanasia|a+nr}}: The aura of a needle tear will also do triple damage, but does not cause tear burst or instant kill.
+* {{i|Glass Cannon}}: The huge tear gains the homing ability and a much larger, more powerful damaging aura.
+* {{i|Lachryphagy}}: Fired tears and burst tears retain aura and homing effect.
+** [[Piercing tears]]: When a tear bursts, the 8 smaller tears' auras can stack, doing massive damage to enemies within.
+* {{i|The Ludovico Technique}}: Tear increases in size and gains the damaging aura effect.
+** {{dlc|r}} Tear also gains homing effect. May cause the tear to get stuck near enemies.
+* {{i|A Lump of Coal|nr}}: The size and damage of the aura increases as long as the tear is on screen.
+** {{dlc|r}} Only the size of the aura increases.
+* {{T|Pulse Worm}}: The aura increases and decreases in size.
+* {{i|Saturnus}}: The orbiting tears also have the damaging aura, but without the homing effect.
+
+== Interactions ==
+* {{i|Dr. Fetus}}: Bombs retain the homing effect, but don't receive a damaging aura.
+* {{i|Epic Fetus}}: The crosshair homes in upon enemies, but neither the crosshair nor the missiles receive the damaging aura.
+* {{i|Gello}} / {{c|Tainted Lilith}}: The cosmetic change also is applied to Gello.
+* {{i|Haemolacria}}: Main tear retains all effects, but burst tears do not.
+** {{dlc|r}} Burst tears also retain all effects.
+* {{i|Mom's Knife}}: Knife retains the homing effect, but doesn't get the damaging aura.
+* [[Piercing tears]]: Once the tear hits the enemy, the aura also ceases to do damage to that particular target.
+** {{dlc|r}} Enemies can be damaged by the aura after being pierced, but only if the tear is no longer in contact.
+* {{i|Sinus Infection}}: The aura on booger tears stuck to an enemy won't hurt that particular enemy, but still damages other enemies.
+* {{i|Technology}}/{{i|Technology 2}}/{{i|Tech.5}}/{{i|Tech X}}/{{i|Brimstone}}/{{i|Revelation}}: Lasers retain the homing effect, but don't receive the damaging aura.
+* {{i|Trisagion}}: Causes Godhead's aura to visually disappear; however, the aura is still there and can still damage enemies.
+
+== In-game Footage ==
+{{#ev:youtube|bNnBpQwZ5HA}}
+
+== Trivia ==
+* Godhead is another term for Godhood or overall divine nature.
+* Godhead bears resemblance to the [[wikipedia:Eye of Providence|Eye of Providence, Eye of God, or The Eye That Sees All]], a common Christian religious symbol. The three corners of the triangle may represent each part of the [[wikipedia:Trinity|Holy Trinity]].
+* The three corners of the triangle may also be a reference to {{i|The Mind}}, {{i|The Body}}, and {{i|The Soul}} items, as the colors of the corners match the colors of the items, that are also unlocked by The Lost.
+* This item appears in the [[Afterbirth †]] release date trailer.
+
+{{nav|seraphim|the lost unlock|fr=Œil de la Providence}}
+[[Category:Special items]]
+[[Category:Tear-modifying items]]

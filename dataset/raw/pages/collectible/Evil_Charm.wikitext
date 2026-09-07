@@ -1,0 +1,34 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 632
+ | quote       = Luck up + you feel protected
+ | description = +2 [[luck]]. Provides immunity to [[burn]], [[confusion]], [[fear]], and [[poison]]. {{dlc|r+}} Prevents slowdown from [[cobweb]]s, and allows Isaac to stand in enemy [[creep]] for 1 second before taking damage.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Gives Isaac +2.0 [[luck]].
+* Makes Isaac immune to:
+** [[Confusion]] and [[fear]] status effects.
+** [[Burn]] effects.
+*** {{dlc|r+}} And damage from {{e|Fire Place}}s, enemy fires (i.e. {{e|Candler}}), and fire projectiles (i.e. {{e|Great Gideon}}).
+** Toxic clouds (i.e. {{E|Gasbag}}s).
+*** {{dlc|r+}} This includes poison effects such as those from destroying [[Mushroom (Obstacle)|Mushrooms]].
+** The {{i|Godhead}} aura from {{E|Dogma}}'s projectiles.
+** {{dlc|r+}} Slowdown from [[cobweb]]s.
+* {{dlc|r+}} Isaac can stand in enemy [[creep]] for 1 second before taking damage.
+
+== In-game footage ==
+{{#ev:youtube|0T0scaZg_wY}}
+
+== Trivia ==
+* [[anti:Evil Charm|Evil Charm]] is from the ''Antibirth'' mod. In ''Antibirth'', it would grant a higher +3 Luck but with no other benefits.
+** Regardless, even with just +2 luck, it is the item that increases luck the most out of any item in the game, as all other luck-increasing items only increase it by +1, not including Green Baby in co-op mode and the Perfection trinket.
+* Only poison and fear are actually used by enemies in the game, but the others are also defined and guarded against by the Charm.
+* The Evil Charm looks very similar to a real life item called a [[wikipedia:Nazar (amulet)|Nazar]], which is said to ward off the curse of the [[wikipedia:Evil eye|Evil Eye]].
+* This item was supposed to have its own unlock method which was later cut from the game. The achievement popup graphic can still be found in the game's files.
+
+{{nav|fr=Pendentif Maléfique}}

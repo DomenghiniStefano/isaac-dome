@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | dlc         = r
+ | name        = Psy Fly
+ | id          = 581
+ | quote       = Flamboyant protector
+ | description = Spawns a fly [[orbital familiar]] that seeks out incoming enemy shots and destroys them.
+ | quality     = 4
+ | tags        = summonable monstermanual fly
+}}
+{{distinguish visual|Obsessed Fan}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Spawns a fly [[orbital familiar]] that chases and blocks enemy shots.
+** After a certain amount of shots are blocked, it enters a short cooldown period where it still blocks shots, but does not actively chase them.
+* Psy Fly also deals 1 contact damage to enemies per tick (15 per second).
+* Instantly kills some [[Fly]] enemies upon contact.
+** Flies affected include: {{E|Army Fly}}, {{E|Attack Fly}}, {{E|Fly}}, {{E|Ring Fly}}, {{E|Swarm}}, and {{E|Willo}}.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* While Psy Fly is an effective means of projectile protection, it is not immunity, and recklessly wading into a barrage of shots can easily result in taking damage.
+* Psy Fly will block most types of projectiles, not just red bullets. This includes the fires from {{E|Mega Satan}} phase 2, the bone projectiles {{E|Bony|text=Bonies}} throw, {{i|Ipecac}} shots from {{e|Gurgle}}s and similar enemies, or even the rocks that the {{E|Kineti}} throws at you.
+** {{i|Ipecac}} shots still explode if blocked by Psy Fly.
+
+== In-game Footage ==
+{{#ev:youtube|a8ZQHLwtezg}}
+
+== Trivia ==
+* This item originates from the Antibirth mod, but it was unobtainable due to a bug. It also had two scrapped abilities that made Attack Flies turn into Blue Flies when encountered and blocked tears home in on enemies. Psy Fly was originally unlocked by completing {{chal|Isaac's Awakening}}.
+
+== Gallery ==
+<gallery>
+File:UnusedTBOIRepentance-UnlockablePsyFly.png|An unused unlock screen for Psy Fly. In Antibirth, this item was intended to be unlockable, but the unlock requirement was bugged.
+</gallery>
+
+{{nav|fly|fr=Mouche Oracle}}

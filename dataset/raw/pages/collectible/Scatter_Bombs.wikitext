@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 366
+ | quote       = We put bombs in your bombs!
+ | description = +5 {{e|Bomb}}s. Isaac's bombs explode into 2-4 tiny bombs.
+ | bomb app    = {{dlcalt|Bomb.png|r=Collectible Scatter Bombs bomb appearance.png}}
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Gives Isaac +5 {{e|Bomb}}s.
+* {{dlc|nr}} Isaac's bombs split into 2-4 tiny bombs after exploding.
+* {{dlc|r}} Isaac's bombs split into 4-5 tiny bombs after exploding.
+* Tiny bombs deal half damage and have decreased blast radius.
+** Tiny bombs retain most of Isaac's bomb synergies.
+** {{Dlc|r}} Tiny bombs explode immediately upon landing.
+
+== Interactions ==
+* {{i|Anarchist Cookbook}}/{{i|Curse of the Tower}}/{{p|XVI - The Tower}}: Not recommended. The extra bombs makes it very hard to avoid taking damage.
+* {{dlc|r}} {{i|Anarchist Cookbook}}: No visual change can be seen with the Troll Bombs, but the smaller bombs have the sprite of the smaller normal bombs.
+* {{i|Best Friend}}: The explosion creates mini decoys.
+* {{t|Blasting Cap}}: Tiny bombs can also drop bomb pickups.
+* {{dlc+|r}} {{i|Blood Bombs}}/{{I|Bob's Curse}}: Area-of-Effects from extra explosions have decreased size but deal the same damage.{{dlc-}}
+* {{i|Bob's Rotten Head}}/{{i|Doctor's Remote}}/{{I|Epic Fetus}}: Explosions are unaffected.
+* {{t|Bob's Bladder}}: Tiny bombs will also create creep.
+* {{i|Brimstone Bombs}}/{{I|Sad Bombs}}: Lasers/tears from extra explosions deal 65% of their normal damage.
+* {{dlc|r}} {{i|Butt Bombs}}: The room damage from extra explosions deal 6.5 damage instead of 10.
+* {{i|Diplopia}}: No effect other than the +5 bombs.
+* {{i|Dr. Fetus}}/{{i|Mr. Boom}}: Explosions are affected.
+* {{i|Ghost Bombs}}: Extra explosions create ghosts that instantly launch themselves at enemies and explode, similar to {{i|Purgatory}}. They each deal 2x Isaac's damage, up to 4 times.
+* {{i|Glitter Bombs}}: Each additional explosion created has a chance to spawn a pickup or trinket.
+* {{i|Hot Bombs}}: Extra explosions create additional fires. {{dlc|r}} Fires from extra explosions start with 1 less durability.
+* {{i|Nancy Bombs}}: Extra bombs will have the same bomb modifiers as the original.
+* {{i|Rocket in a Jar}}: Rockets create normal tiny bombs when they explode.
+
+== In-game Footage ==
+{{#ev:youtube|DhcSVhz85W4}}
+
+== Trivia ==
+* The description "We put bombs in your bombs!" is a reference to the Xzibit "Yo Dawg" Internet meme.
+
+{{nav|bomb modifier|bomb spawner|bomb|fr=Bombes à Fragmentation}}

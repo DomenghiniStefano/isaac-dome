@@ -1,0 +1,34 @@
+{{infobox challenge
+ | dlc         = r
+ | number      = 38
+ | character   = Bethany
+ | blindfolded = yes
+ | has shops   = yes
+ | item        = {{i|Urn of Souls}}<br>{{i|Schoolbag}}<br>{{i|Guppy's Paw}}<br>{{t|Maggy's Faith}}
+ | goal        = Isaac
+ | unlocks     = Purgatory
+ | unlocked by = Baptism by Fire
+}}
+'''Baptism by Fire''' is [[challenge]] #38. The goal is to defeat {{E|Isaac}}. This challenge is unlocked by unlocking {{t|Maggy's Faith}} (Defeat {{e|The Lamb}} as {{c|Magdalene}}) and defeating {{E|Satan}} as {{C|Bethany}}, with 11 {{E|Mom's Heart}} kills.
+__TOC__
+
+== Strategy ==
+* Bethany starts with the {{i|Urn of Souls}} as her only method of attacking, as she is blindfolded. The item initially has no charges, but can be fueled by the 4 soul charges Bethany starts with. You must carefully destroy enemies to gain charges faster than you deplete them, with the goal of gradually building a healthy stockpile of soul charges (as the 20 charge limit of the Urn is not enough to defeat Isaac). If you do manage to run out of charges, you can gain 6 extra soul charges by sacrificing one heart container with {{i|Guppy's Paw}}, but this is by no means necessary to complete the challenge. If you find another active item that you feel will help you in your run, don't be afraid to swap away the Paw for something better.
+* Additionally, she starts with {{t|Maggy's Faith}}, providing one free {{E|Eternal Heart}} per floor. This can be used to soak one hit, or (preferably) to gain an extra heart container if you manage to clear the floor without being harmed.
+* Minimal controlled bursts, with each burst destroying at least one enemy, allows you to retain or even gain charges. Expect to make a few practice runs as you get the hang of the Urn's controls and learn to group enemies for increased efficiency.
+* A surprising number of enemies and even boss encounters can be won simply by avoiding attacks and allowing your foes to defeat themselves with explosions or environmental hazards. The early boss {{E|Little Horn}} is a perfect example of this, as well as {{E|Baby Plum}}, as simply waiting in the boss room will complete the fight.
+* When feasible, use bombs to damage bosses rather than using the urn, e.g., during Isaac's stationary first two phases.
+* Since she has no {{i|Book of Virtues}} in this challenge, Bethany is not guaranteed an {{R|Angel Room}} after the first boss encounter. This means you will encounter {{R|Devil Room}}s more often than not, and most of the items found there are useless for this challenge. Exceptions include high damage familiars such as {{I|Lil Brimstone}} or {{I|Rotten Baby}}. If {{tf|Guppy}} items are offered, these may also be worth accepting; you already start with one of the three needed items, and the transformation will cause the flames of your Urn to spawn [[Blue Fly|blue flies]], greatly enhancing offensive power.
+* {{I|Jar of Flies}} can be used as a complement to the Urn of Souls: killing enemies with the Urn adds flies to the Jar, then the flies can be unleashed upon enemies when the Urn is low on charges to restore them.
+* Shop items such as {{I|Red Candle}} or {{I|The Candle}} will allow Bethany to deal damage as an alternate/backup to the Urn. These items can also be used to safely build up charges before a boss fight.
+* Finding a {{R|Library}} is a major boon in this challenge as most of the books are quite helpful, some notable ones include:
+** {{I|Book of Virtues}} allows you to constantly generate wisps as long as you don't run out of charges in the urn.
+** {{I|Book of Revelations}} (and to a lesser extent the {{I|Satanic Bible}}) allows Bethany to Generate 2 soul charges every 6 rooms, which allows her to stock up charges in instances where the urn runs out of charges or in rooms where few enemies are found. This in turn is very helpful when entering the {{E|Isaac}} fight, as he doesn't spawn many enemies to recharge the urn with and the soul charges stocked up should help with using the urn as much as possible.
+* If found, a room with enemies that can be farmed for charges ({{E|Eggy}}, {{E|The Duke of Flies}}, etc) can be left uncleared to provide a source of Urn charges.
+* Some charging items, such as {{i|Montezuma's Revenge}} and {{i|Revelation}} can fire despite being blindfolded and can help Bethany farm Souls for her urn.
+* {{I|Immaculate Heart}} is also an excellent item, allowing a lot of tears to spawn, and allowing items with tears synergies to work.
+
+== Reward ==
+{{achievement text | Purgatory }}
+
+{{nav|challenge|moms heart unlock|bethany unlock|satan unlock|fr=Baptême de Feu}}

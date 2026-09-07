@@ -1,0 +1,69 @@
+{{infobox passive collectible
+ | id          = 304
+ | quote       = You feel balanced
+ | description = Gives 6 {{e|Penny|text=Coins}}, 6 {{e|Bomb}}s, and 6 {{e|Key}}s and balances out all [[attribute]]s.
+ | quality     = 1
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Continually balances Isaac's primary [[attribute]]s - [[damage]], [[range]], [[tears]], and [[speed]] (has no effect on [[luck]], [[shot speed]], {{dlc|nr}} or [[tear falling speed]]).
+** This effect is ''NOT'' one time only - Libra will rebalance Isaac's attributes whenever they are changed by an item, effect, etc. including temporary effects such as the {{i|The Book of Belial}}.
+* Grants 6 {{e|Penny|text=Coins}}, 6 {{e|Bomb}}s, and 6 {{e|Key}}s.
+
+== Notes ==
+* The balancing is based on [[Isaac]] as the character himself; he gains no bonuses or penalties to any stats from simply having Libra on its own.
+* The game calculates Isaac's speed, range, tear delay, and damage before using them in Libra's balancing formula. This has the following notable effects:
+** {{dlc|nr}} If Isaac's Speed or Tear delay are already at their internal soft caps (2.00 and 5 respectively), items that increase them specifically will give no stats.
+*** The only exception would be items that decrease tear delay, and then only if Isaac's tear delay isn't at the hard cap of 1.
+** {{dlc|r}} If Isaac's tears stat has reached the soft cap corresponding to 5 [[fire rate]], basic tears ups no longer add bonuses, only direct tear delay upgrades will. Likewise, direct fire rate increases have no effect if the absolute maximum of 120 has been reached.
+*** Speed adjustments, despite the stat being bounded between 0.1 and 2.0, always have an effect.
+** {{Dlc|r}} Speed and range will positively scale as they increase; the higher these stats already are upon receiving a boost to either one, the bigger the boost to the rest of Isaac's stats. Range scales especially quickly, making large range upgrades like {{I|My Reflection}} and {{I|Tiny Planet}} very powerful with Libra.
+** Items that apply multipliers to Isaac's tear delay ({{i|Mutant Spider}}, {{i|Brimstone}}, {{i|Dr. Fetus}}, etc.) can be fired more rapidly with less damage.
+** Damage upgrades become less effective. In return, speed and range upgrades now increase damage and tears.
+** Items that affect the stats of Isaac's tears after they're fired ({{i|A Lump of Coal}}, {{i|Blood Clot}}, {{i|Proptosis}}, etc.) do not go through the balancing formula and work as normal.
+* {{dlc|nr}} Libra's balancing formula values tear delay higher than the other stats and damage less than the other stats. This makes standard tears ups give more stats than a standard range or speed up, and standard damage ups give less stats than a standard range or speed up.
+* {{dlc|r}} Generally speaking, if an item increases Isaac's damage per second, Isaac will receive a stat bonus. If the item lowers fire rate and increases damage, or vice versa, in a way that results in loss of DPS, Isaac's stats will go down.
+* {{dlc|nr}} Since tear falling speed is not involved in the calculations, items such as {{i|Mini Mush}} or {{i|Kidney Stone}} that increase tear falling speed but lower range are mostly detrimental.
+* Stat upgrade [[pills]] have more utility, providing bonuses long after their stat could be usefully increased.
+** In order of effectiveness, the pills are: ''Range'', ''Tears'', then ''Speed Up''.
+** {{I|Placebo}} with stat upgrade pills provides a constant source of stat increases.
+* Damage from [[poison]] and [[burning]] status effects is based on Isaac's damage before the balancing. The same is true for temporary familiars (such as [[blue fly|blue flies]].)
+
+== Synergies ==
+* {{I|Berserk!}}: Because of Berserk giving you +0.4 speed with every kill, Libra would instead steadily increases the damage, tears, and range stat with seemingly no limit, allowing massively high DPS, but targets are much more difficult to hit as the range of the swing gradually extending outwards more and more with each kill.
+* {{I|Soy Milk}}: As tear delay is valued very highly by the formula, greatly increases all stats.
+** {{dlc|r}} Soy Milk is only a minor DPS upgrade, and as such a very minor all stats up.
+* {{I|Ipecac}}: Can be rapidly fired with decreased damage.
+* {{I|Rock Bottom}}: Stats will increase as a result of items, get locked at the highest point, and then be balanced out via Libra allowing items like Ipecac and Soy Milk to have higher damage/shot speed respectively.
+* {{I|Taurus}}: Gradually increases all stats in an incomplete room. Libra prevents Isaac from becoming invincible (unless with high stats), and stat increases will remain until the end of the fight.
+* {{T|Tape Worm}}: As range is valued very highly by the formula, greatly increases all stats. Synergizes well with {{I|Mom's Box}}.
+** {{dlc|r}} Tape Worm is a flat +3 range instead of x2, resulting in only a small all stats up.
+
+== Interactions ==
+* {{i|120 Volt}} / {{i|Ghost Bombs}} / {{i|Hungry Soul}} / {{i|Montezuma's Revenge}} / {{i|Revelation}}: The attacks from these items ignore Libra: the unbalanced damage value is used.
+* {{i|Almond Milk}}: Almond Milk is only a minor DPS upgrade, and as such a very minor all stats up.
+* {{i|Cricket's Body|nr}}: Due to how Libra values tear delay, Cricket's Body gives an overall stat downgrade or upgrade depending on Isaac's internal base tear delay: At 7 or less it increases stats, at 8 or more it decreases stats.
+* {{i|D8}}: D8's stat changes depend on which stats end up with which multipliers and their base values. Range has a high weight and is uncapped, and thus can result in a massive boost if it scores a high multiplier. Damage is also uncapped but, on the other hand, has a low weight.
+** {{dlc|r}} The changes in Libra's formula and the uncapping of speed bonuses beyond 2.0 mean D8 has a good chance of giving a strong all stats up, its magnitude depending on Isaac's other items and which stats were emphasized.
+* {{i|Dark Arts}}: Libra is extremely detrimental to how Dark Arts works, and should not be used together: The speed boost during the invincibility phase is transferred into attack bonuses (Which are useless as tears cannot be used), and afterwards, the temporary damage boost is divided across all of Isaac's stats, resulting in very negligible stat boosts.
+* {{i|Epiphora}}: The stat bonus for continuously firing in one direction applies to all stats. The accuracy penalty is unaffected.
+* {{i|Eve's Mascara}}: Gives an overall stat downgrade, due to tears being weighted heavier than damage.
+** {{dlc|r}} Eve's Mascara is a DPS up with no other relevant stats, and as such is a small all stats up.
+* {{i|Experimental Treatment}}: The greater number of stat upgrades compared to stat downgrades results in an effectively guaranteed all stats up. Health, Shot Speed, and Luck are still subject to chance.
+* {{i|Purity}}: At base stats, the tear delay and damage aura give a greater stat bonus than the range or speed aura.
+** {{dlc|r}} All the auras grant a small all stats up of similar magnitudes.
+* {{I|Succubus}}: When in the aura, affects re-balanced stats rather than just damage.
+* {{i|Technology 2|nr}}: Doubled tear delay due to firing out of only one eye is unaffected by the balancing formula.
+* {{I|Tiny Planet}}: The significant range increase results in a large stat boost to speed and tears and a small boost to damage. However, the decrease in range causes orbiting tears to no longer complete a full 360° lap around Isaac, instead dropping off at about half that.
+
+== In-game Footage ==
+{{#ev:youtube|jDWmZchX4pM}}
+
+== Trivia ==
+* The symbol of the scales is based on the Scales of Justice held by Themis, the Greek personification of divine law and custom.
+* Libra gives 6 bombs, 6 keys, and 6 coins, a potential reference to the Number of the Beast (666).
+
+{{nav|zodiac|fr=Balance}}

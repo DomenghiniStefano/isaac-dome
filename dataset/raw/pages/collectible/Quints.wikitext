@@ -1,0 +1,60 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 661
+ | quote       = They lurk inside
+ | description = The first five enemies killed in a room will spawn stationary shooting [[familiar]]s where they died.
+ | quality     = 2
+ | tags        = summonable baby offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Upon killing enemies, spawns a stationary [[familiar]] in their place for the [[Rooms|room]], up to a maximum of 5. These familiars do not follow Isaac.
+* The following familiars can spawn:
+** {{I|Abel}}
+** {{i|Boiled Baby}}
+** {{I|Brother Bobby}}
+** {{I|Demon Baby}}
+** {{I|Freezer Baby}}
+** {{I|Ghost Baby}}
+** {{I|Guardian Angel}}
+** {{I|Harlequin Baby}}
+** {{I|Lil Brimstone}}
+** {{I|Little Steven}}
+** {{I|Multidimensional Baby}}
+** {{I|Robo-Baby}}
+** {{I|Rotten Baby}}
+** {{I|Seraphim}}
+** {{I|Sister Maggy}}
+** {{I|Rainbow Baby}}
+** {{T|???'s Soul}}
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* Killing the heads thrown by {{E|Rag Man}} before they turn into a {{E|Rag Man's Ragling}} is not counted as a kill and will not spawn a baby.
+* The same familiar can spawn multiple times.
+* Despite being stationary, tear-shooting babies will still inherit Isaac's movement, angling their tears accordingly.
+* Enemies killed by {{E|Dark Esau}} count as yours and will spawn a baby.
+* During {{E|The Beast}} fight, familiars spawned by Quints stay on screen throughout the chase sequence.
+* {{dlc|nr+}} When playing as {{C|Tainted Lazarus}}, Quints will not disappear on {{i|Flip}} but instead give the ability to spawn more Quints if Flip is used again. This is very effective in Greed mode and Boss rush because the automatic flip triggers when completing a wave, giving more Quints for every other wave.
+
+== Synergies ==
+* {{T|Baby-Bender}}: All shooting familiars spawned are affected, save for Little Steven and Seraphim.
+* {{I|BFFS!}}: Affects Quints familiars, doubling their damage.
+* {{I|Quints}}: Lets you spawn an additional 5 Quints familiars per copy.
+
+== Interactions ==
+* {{i|Sacrificial Altar}}: The item will be lost, and each spawned familiar counts as one sacrifice. If Quints is sacrificed first (or is the only item available to sacrifice) and at least two familiars are summoned, two Devil Room items will be spawned while only losing one item.
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s don’t leave familiars behind.
+* {{I|Box of Friends}}: Existing Quints familiars will not be duplicated, nor more will be created. If Isaac has no other familiars, the generated Demon Baby will hover with the Quints instead of following Isaac.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop don't leave familiars behind.
+* {{I|King Baby}}: Familiars do not follow King Baby, nor are the familiars aiming independently at enemies.
+
+== In-game footage ==
+{{#ev:youtube|LyyGsFLF-UY}}
+
+== Trivia ==
+* The name of this item is a shortened form of "Quintuplets", or five babies born at the same time. This is likely why it can create up to 5 familiars.
+
+{{nav|conjoined|fr=Quintuplés}}

@@ -1,0 +1,67 @@
+{{infobox activated collectible
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 441
+ | quote       = Laser breath
+ | description = Isaac fires a giant blood laser for approximately 15 seconds. This laser deals massive damage, pushes Isaac backwards, and persists between [[room]]s and [[floor]]s.
+ | quality     = 4
+ | tags        = offensive
+ | recharge    = 12
+ | unlocked by = Mega
+}}
+
+{{cit|ua|a}}
+
+== Effects ==
+* Upon use, Isaac fires a giant, incredibly powerful {{i|Brimstone}} laser from his mouth, similar to the one used by {{e|Mega Satan}}, for 15 seconds.
+** The laser deals Isaac's current damage multiplied by 5 per tick.
+** The laser has enough power to push Isaac backward while being fired and will last between rooms, and across multiple floors.
+** The laser is not locked to the cardinal directions; it can be aimed freely.
+** While Mega Blast is being fired, Isaac cannot:
+*** Open {{E|Chest}}s.
+*** Pick up a {{E|Lil' Battery}}, collectibles, [[pill]]s, [[trinket]]s, or [[Cards and Runes|cards or runes]].
+*** Pick up the trophy or enter the chest that spawns after defeating a final boss.
+*** Sleep in a [[bed]].
+
+== Notes ==
+* {{dlc|nr}} Picking up a {{E|Lil' Battery}} with this item will add 3 to its charge, meaning that 4 batteries are required to fully recharge the item.
+** {{dlc|a+nr}} A {{E|Charged Key|n}} will only add 3 charges.
+*** {{E|Lil' Battery|r}} and Charged Key add 6 charges instead of 3.
+** {{dlc|r}} Picking up a {{E|Mega Battery|n}} will fully charge it twice.
+* Using a [[48 Hour Energy]] pill with this item will fully charge it.
+* Mega Blast has an 80% decreased [[Item Pool#Item Weight|item pool weight]], making it less likely to appear than other collectibles.
+* {{dlc+|r}} It is not recommended to use Mega Blast in fight with {{E|The Beast}}, because its laser forces you into obstacles on the level.
+** This can be mitigated to a degree with {{I|Anima Sola}}, especially with a {{I|Car Battery}} which doubles the Anima Sola's length. The Beast won't be able to spawn obstacles while chained.{{dlc-}}
+
+== Synergies ==
+All synergies and interactions pertaining to {{i|Brimstone}} pertain to Mega Blast, with the following exceptions and additions:
+* {{i|4.5 Volt}}: Item will gain charges for dealing damage, which is especially effective when fighting bosses with large health pool.
+* {{Book of Virtues synergy|description=Spawns red wisps on the middle ring that utilize a miniature Brimstone as their weapon, which requires charging and releasing as usual. Lasers can hit up to 8 times for a total of 24 damage. If Mega Blast is being used, the wisps will continuously fire their laser outward rather than in the direction Mega Blast is firing.}}
+* {{i|Car Battery|r+}} The beam lasts 50% longer, about 23 seconds.
+* {{c|Tainted Azazel}}: Enemies hit by the sneeze will gain a curse that increases the damage the laser deals to 10x and +3 flat damage (instead of just 5x). Enemies who die to the laser under the curse will damage and spread the curse to nearby enemies.
+** {{i|Hemoptysis}}: The sneeze can be activated while Mega Blast is firing.
+* {{i|Schoolbag}}: laser will continue to fire when switching to another active item. Other active items can be used while the laser is firing.
+
+== Interactions ==
+* [[Familiar]]s which copy Isaac's tears fire normal tears while Mega Blast is in use.
+* {{i|Angelic Prism}}: The laser does not split.
+* {{i|Anti-Gravity}}: No effect.
+* {{i|Car Battery|nr+}}: No effect.
+* {{T|Hairpin}} / {{I|Sol}}: Only grants 3 charges.
+
+== In-game Footage ==
+{{#ev:youtube|Gm3nr0d-g3M}}
+
+== Trivia ==
+* Mega Blast's collectible sprite is called 'Mega Satan's Breath' in the game files, which may be its initial name.
+
+== Gallery ==
+<gallery>
+File:UnlockPaper MegaBlast.png|The notification after unlocking Mega Blast.
+</gallery>
+
+== Bugs ==
+{{bug|Quitting a run and resuming it while Mega Blast was active will retain the costume and animation of Mega Blast until the item is used again, but no laser will appear.}}
+{{bug|dlc=nr|If the {{i|Glowing Hourglass}} is used while in the room Mega Blast was used in, the Mega Blast laser will still remain, but the animation will be removed, and a full charge for Mega Blast will be reobtained.}}
+
+{{nav|mega satan unlock|fr=Souffle du Diable}}

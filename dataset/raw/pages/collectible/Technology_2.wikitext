@@ -1,0 +1,104 @@
+{{infobox passive collectible
+ | tear app scale = 1/8 <!-- real scale: 1/2, lowered to make it fit into the infobox -->
+ | id             = 152
+ | quote          = {{dlcalt|Laser|r=Extra laser}}
+ | description    = Replaces the tears fired from Isaac's right eye with a rapid-firing low damage [[piercing tears|piercing]] laser. {{dlc|nr}} [[Damage]] down.
+ | quality        = 2
+ | tags           = summonable tech offensive
+}}
+
+For all Tech items, check [[Tech (Disambiguation)]]
+
+{{cit|p}}
+
+== Effects ==
+* Replaces Isaac's right eye tears with an unlimited range [[piercing tears|piercing]] laser which fires continuously, dealing damage 15 times per second.
+* {{dlc|nr}} x0.65 Damage multiplier.
+* {{dlc|nr}} The laser deals 20% of Isaac's damage per tick.
+** This compounds with the damage down for a total of 13% of Isaac's damage per tick.
+* {{dlc|r}} Only the laser deals 13% of Isaac's damage per tick.
+* {{dlc|r}} Tears fired per second * (2/3).
+* {{dlc|r}} Laser is able to knock back enemies.
+
+== Notes ==
+* Tear delay is effectively doubled, as Isaac will do a bit of the animation to fire a right eye tear, but no tear will come out.
+** {{dlc|r}} This applies to items that replace Isaac's tears, such as {{I|Mom's Knife}} and {{I|Brimstone}}.
+* Charged shots are not affected by the effective tear delay down, as they don't use the alternative left eye/right eye fire scheme.
+* {{Dlc|nr}} As {{C|Cain}} can only fire tears from his right eye, Technology 2 will replace his tears altogether unless he has {{i|Technology}} or a charged attack.
+** {{dlc+|r}} When used by Cain, or a character that is forced to fire from one eye due to the effects of {{I|Stapler}} or {{I|Lead Pencil}}, they will fire {{i|Technology}} lasers out of their right eye instead of their normal tears, as long as they have no other items that replace their tears ({{I|Neptunus}} or {{I|Number One}} lets them fire tears normally). These lasers cannot be angled with momentum.{{dlc-}}
+* {{dlc|nr}} Because {{C|Lilith}} is blindfolded and relies on her {{i|Incubus}}, the only effect gained from Technology 2 is the damage down.
+** {{Dlc|r}} Incubus can fire laser and tears as normal; stat effects apply.
+* {{dlc|r}} The blood clots spawned by {{C|Tainted Eve}} will all also fire their own individual lasers.
+* The laser can apply [[status effect]]s very efficiently due to its high tick rate.
+
+== Synergies ==
+* {{i|8 Inch Nails}} / {{t|Blister}} / {{i|Pisces}}: The laser will consistently push back enemies.
+* {{i|Blood Clot}} / {{i|Chemical Peel}}: Since Isaac's right eye is replaced by Technology 2, he can only fire tears from his left eye, which gives all his tears higher damage and range.
+* {{i|Brimstone|a}}: Laser fires continuously while Brimstone charges at normal rate.
+* {{i|Chocolate Milk}}: The laser fires while Chocolate Milk charges at normal rate.
+* {{I|Cricket's Body|r}} : The laser will rapidly split into small low damage tears upon impact with an enemy or obstacle.
+* {{i|Cursed Eye}}: The laser fires while Cursed Eye charges at normal rate, retaining the teleporting effect.
+** {{dlc|r}} Tears are replaced with lasers, fired from the same eye of Technology 2.
+* {{i|Epic Fetus}}: The laser fires while the missiles are being aimed.
+* {{dlc+|r}} {{i|Euthanasia}} / {{i|Explosivo}} / {{i|Holy Light}} / {{i|Little Horn}} / {{t|Nose Goblin}} / {{I|Sinus Infection}}: Every damage tick from the laser can also apply these tear effects and does so rapidly.{{dlc-}}
+** {{i|Explosivo}}’s 60 point explosion damage bonus is unaffected by the laser’s reduced damage making the combination incredibly effective.
+* {{dlc+|r}} {{I|Incubus}} / {{T|Lil Clot}} / {{I|Sumptorium}} / {{I|Twisted Pair}}: The familiars fire a continuous laser. {{dlc-}}
+* {{i|Ipecac}}: Laser damage increases dramatically while also gaining the poison effect.
+* {{i|Lachryphagy|r}}: Significantly shortens the range of the laser. A [[piercing]] Lachryphagy tear spawns at the end of the laser every tick, rapidly feeding off of each other and bursting when standing still. This is an extremely powerful combo that alone can provide enough damage output to challenge any boss in the game.
+** A fire rate reduction such as from {{i|The Inner Eye}} or a few [[Tears Down]] pills makes the combo even stronger, as tears will grow even larger before bursting.
+* {{i|Lead Pencil|r}}: Replaces tears with lasers similar to {{i|Technology}}. These are shot from the eye that shoots Technology 2, doing damage alongside the Technology 2 beam.
+* {{i|Loki's Horns}}: Additional tears are affected by Technology 2 but are replaced by {{i|Technology}}'s lasers, dealing 100% of Isaac's damage and with 16 [[luck]] gives you Technology 2's fire rate.
+* {{i|Lost Contact}}: The laser destroys all hostile projectiles that come into contact with it.
+* {{i|The Ludovico Technique}}: Isaac simultaneously controls a tear and fires the laser; however, Isaac will only fire the Technology 2 laser in the direction that the tear is currently facing.
+** {{dlc|r}} The Ludovico Technique also makes the laser spectral.
+* {{i|A Lump of Coal|a}}: Damage increases the further away the enemy is, on a multiplier that is roughly +20% per tile of distance.
+* {{i|Marked}}: Isaac simultaneously controls a big red target on the ground and fires the laser in the cardinal directions.
+** {{dlc|r}} The laser now continuously fires towards the crosshair along with tears.
+* {{i|Mom's Knife}}: The laser fires while the Knife charges at normal rate.
+* {{i|Monstro's Lung}}: The laser fires while Monstro's Lung charges at normal rate. No reduction in tear burst size.
+* {{i|The Parasite|r}}: Laser splits into two perpendicular beams upon hitting an obstacle.
+** {{dlc|r+}} Also spawn small split tears.
+* {{i|Rubber Cement|a}}: Laser bounces off of walls.
+* {{i|Technology|nr}}: Equips two lasers that can be fired at the same time. As Technology is always fired from the right eye, it is not affected by the halved normal attack rate.
+** {{dlc+|r}} Technology is affected by the fire rate multiplier. Holding {{I|Stapler}}, {{I|Lead Pencil}} or playing as {{C|Cain}} will allow Isaac to angle shots with momentum again.{{dlc-}}
+* {{i|Tiny Planet}}: The laser spirals around Isaac once and then goes straight again.
+* {{i|The Wiz}}: Tears are fired diagonally while the laser is fired straight forward.
+* {{I|Urn of Souls}}: Isaac can still fire the laser as normal while using the urn.
+
+== Interactions ==
+* {{i|20/20}} / {{i|The Inner Eye}} / {{i|Mutant Spider}} / {{i|Sprinkler}} / any multishot item: No effect.
+* {{C|Azazel}}: The Technology 2 continuously fires its lesser damage laser as Azazel charges his Brimstone.
+* {{i|Brimstone|na}}: Overrides Technology 2, but retains the reduced damage.
+* {{dlc+|a+nr}} {{i|Euthanasia}} / {{i|Little Horn}} / {{t|Nose Goblin}} / {{i|Sinus Infection}} / {{i|Sulfuric Acid}}: The laser is unaffected.{{dlc-}}
+* {{dlc+|anr}} {{i|Explosivo}} / {{i|Holy Light}}: The laser is unaffected.{{dlc-}}
+* {{dlc+|a+}}{{i|Eye of Belial}} / {{i|Parasitoid}}: The laser is unaffected.{{dlc-}}
+** {{i|Parasitoid|r+}}: The laser can now rapidly spawn slowing creep and spawns flies or spiders.
+* {{i|Eye of the Occult}}: Only affects the laser's color.
+** '''Eye of the Occult''' + {{i|Brimstone}} / {{i|Technology}}: The Tech 2 laser also automatically fires at the crosshair.
+* {{i|Fire Mind}}: Tears still ignite enemies, but no longer have a chance to explode.
+* {{i|Incubus|nr}}: Decreases damage of Incubus' tears; Incubus does not fire a continuous laser.
+* {{i|Isaac's Tears}}: Fires normal tears.
+* {{i|Lead Pencil|nr}}: Isaac loses the ability to fire tears from the remaining eye, identical to Cain's downside.
+* {{i|Mom's Eye}}: Occasionally shoots a laser behind Isaac. With 15+ [[Luck]], fires a new laser on every tick, dealing extremely high damage.
+* {{i|My Reflection|anr}}: Laser is bent in the opposite direction as Isaac moves sideways, then gradually becomes straight as he stands still.
+** {{dlc|r}} The laser makes a thin loop in front of Isaac, and fires the normal laser backwards.
+* {{i|Pop!|r}}: The laser has drastically reduced range, and eyeball tears are rapidly created at the end of the laser.
+* {{i|Soy Milk|nr}}: Both damage reductions are applied, along with removing one eye's worth of tears.
+* {{i|Technology 2}}: Multiple copies of the item provide no benefit.
+
+== In-game Footage ==
+{{#ev:youtube|-FQPuoYbXvY}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Technology Zero }}
+
+== Trivia ==
+* This item is used in {{chal|Computer Savvy}}.
+
+== Bugs ==
+{{bug|dlc=r|Technology 2 prevents Lead Pencil and normal tears from firing if collected with specific items.}}
+{{Bug|While playing as {{c|The Forgotten}}, holding fire as either {{c|The Forgotten}} or {{c|The Soul}} then switching to the other will create another Technology 2 laser in the direction being fired that persists until the room is left.}}
+{{Bug|dlc=r|If Isaac is holding fire and has {{i|The Ludovico Technique}} while pulling out {{i|Urn of Souls}}, another Technology 2 laser is created in the direction being fired that persists until the urn is put away or the room is left.}}
+{{Bug|dlc=r|Having Technology 2, {{I|Technology}} and {{i|Mom's Eye}} makes the back laser fire extremely fast.}}
+
+{{nav|fr=Technologie 2}}

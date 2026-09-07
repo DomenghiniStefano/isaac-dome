@@ -1,0 +1,55 @@
+{{infobox challenge
+ | dlc                = r
+ | number             = 41
+ | has shops          = yes
+ | has treasure rooms = yes
+ | item               = {{i|Mom's Box}}<br/>{{i|Marbles}}<br />{{i|Mom's Purse}}
+ | goal               = Isaac
+ | unlocks            = Ice Cube
+ | unlocked by        = Pica Run
+ | description        = All items are replaced by random trinkets.
+{{i|Marbles}} activates on every hit.}}
+
+'''Pica Run''' is [[challenge]] #41. The goal is to defeat {{E|Isaac}}. This challenge is unlocked by defeating {{E|Mom's Heart}} 11 times and unlocking {{i|Marbles}}.
+
+== Strategy ==
+The challenge is played as {{C|Isaac}}, who starts with {{i|Mom's Box}},  {{i|Marbles}}, and {{i|Mom's Purse}}, resulting in 4 random [[trinkets]] spawned on the floor in the starting room. All item pedestals, including those from {{R|Devil Room}}s, {{R|Shop}}s, the {{R|Library}}, are replaced with trinket drops (Devil rooms and {{R|Black Markets}} have a circle of spikes around a trinket, making it cost one heart of damage). It is, however, still possible to see a few item pedestals in this challenge.
+
+Unlike its usual function, Marbles now causes Isaac to swallow his held trinkets every time he takes damage, rather than having a low chance of occurring. This allows building up a large collection of trinkets, quite easily making up for the lack of regular items. However, this has its downsides - some trinkets on their own or in combination with others can have undesirable or even disastrous results, such as wild teleportation or spontaneous explosions. If there is any uncertainty, looking up the trinket before committing to it by having it swallowed is recommended.
+
+If you have a way to heal your red hearts, {{m|Devil Beggar}}s and {{M|Blood Donation Machine}}s can be extremely useful to swallow more trinkets while keeping your soul hearts and Devil room chance. {{M|Battery Bum}}s are a great way to turn many coins into charges for {{I|Mom's Box}}.
+
+Certain Trinkets are much more valuable than others at the beginning of a run, especially since {{I|Mom's Box}} doubles the effects of most Trinkets. If you are struggling to complete the challenge, it may be useful to restart until your starting trinkets include some of the following:
+
+* {{T|Cancer}} - Tears up.
+* {{T|Curved Horn}} - Damage up.
+* {{T|Crystal Key}} - Gives more opportunities to charge Mom's Box, giving you more Trinkets.
+* {{T|Isaac's Fork}} - Helps regain health lost from gulping trinkets.
+* {{T|Number Magnet}} - Makes Devil Rooms more common.
+* {{T|Mother's Kiss}} - Adds two heart containers which are normally unobtainable.
+* {{T|Maggy's Faith}} - Gives an eternal heart each floor.
+* {{T|Brain Worm}} - Grants tears an effect similar to homing.
+
+There are also a number of trinkets you may wish to avoid picking up at all, including (but not limited to):
+
+* {{T|Torn Card}} - causes you to fire an Ipecac + My Reflection tear every so often, which can easily cause you to damage yourself if not constantly tracked.
+* {{T|Apple of Sodom}} - picking up red hearts gives you a 50% chance to spawn a spider instead. You take a fair amount of intentional damage while consuming trinkets, so you'll often want the red hearts.
+* {{T|Ouroboros Worm}} - the spiral pattern is generally more bad for you than it is good, even when you get the homing effect.
+* {{T|'M}} - rerolls your active item each time it is used. Rerolling Mom's Box means you no longer double your trinket effects and is generally inadvisable.
+
+== Notes ==
+* Picking up trinkets spawned in the {{R|Boss Rush}} room or {{R|Boss Challenge Room}} will not start the waves.
+* Items created by {{t|Wish Bone}} and {{t|Bag Lunch}} are not replaced with trinkets.
+* {{dlc|nr+}}{{T|Modeling Clay}} does not display the item if it is in the item section. Keep this in mind if you chose to keep it.
+* {{T|Adoption Papers}} doesn't change the shop's selection to the [[Baby Shop (Item Pool)]], it will continue to sell only trinkets and pickups.
+* {{t|Dice Bag}} can give pocket dices. However, build rerolls are hardcoded to do nothing, so you can't reroll your build with {{i|D4}} or {{i|D100}}.
+* Trinkets that the player has not currently unlocked can appear in this challenge.
+* Rerolling the few item pedestals that can be found only turns them into trinkets.
+
+== Reward ==
+{{achievement text | Ice Cube }}
+
+== Trivia ==
+* Pica is a psychological disorder where a person experiences a compulsion to eat inedible objects and substances.
+
+{{nav|challenge|moms heart unlock|fr=Pica Sot}}

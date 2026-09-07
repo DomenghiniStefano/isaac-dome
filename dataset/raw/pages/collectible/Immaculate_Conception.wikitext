@@ -1,0 +1,47 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 413
+ | quote       = Feed them love
+ | description = Upon picking up a certain amount of [[Hearts|health]], spawn a permanent angelic [[familiar]].
+ | quality     = 1
+ | tags        = nolostbr summonable
+ | unlocked by = Immaculate Conception
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Upon picking up 15 [[Hearts|heart pickups]], Isaac gains a permanent angelic [[familiar]] and generates a {{E|Soul Heart}} drop. Possible familiars include:
+** {{i|Holy Water}}
+** {{i|Guardian Angel}}
+** {{i|Sworn Protector}}
+** {{i|The Relic}}
+** {{i|Seraphim}}
+* All five familiars will spawn in a random order.
+* Isaac will look progressively more pregnant as he collects heart pickups.
+* The familiars spawned by Immaculate Conception will not contribute to [[transformations]], such as {{Tf|Conjoined}}, nor do they count towards the [[collection page]].
+
+== Notes ==
+* After all five familiars have been spawned, a {{E|Soul Heart}} will still drop every 15 hearts collected.
+* All types of hearts except {{E|Gold Heart}}s and {{e|Blended Heart}}s count.
+* Items that directly add health such as {{i|Yum Heart}}, {{i|Book of Revelations}}, {{i|Satanic Bible}}, and {{i|The Nail}} do not count towards spawning a familiar.
+* {{C|The Lost}} can pick up Soul Hearts and Black Hearts despite having no health and thus can activate Immaculate Conception.
+* {{dlc|nr+}} {{C|Keeper|n}} and {{c|Tainted Keeper|n}} cannot encounter hearts, thus the item is useless for them.{{dlc-}}
+** {{dlc+|r+}} Healing {{c|Keeper}} and {{c|Tainted Keeper}} with coins counts for Immaculate conception.{{dlc-}}
+* As the short-lived {{E|Half Red Heart}}s dropped by {{C|Tainted Magdalene}} also count, it is an excellent choice for her since she will constantly be picking up hearts and gain all five familiars quickly.
+* Familiars spawned by the item do not affect item pools, so multiple copies of one familiar can be obtained. For example, a second Seraphim can be purchased after Immaculate Conception spawns one.
+* As with {{i|Cambion Conception}}, if this item is removed in any way (such as with a {{P|XVII - The Stars?|r}}), the familiars from Cambion Conception will be removed upon updating familiars, including picking up items that don't add familiars but update its cache, such as {{i|Brimstone}}.
+** If the item is re-obtained after being removed (e.g. by dropping the item as {{C|Tainted Isaac|r}}), any familiars that were removed will return once familiars are updated.
+
+== Interactions ==
+* {{i|Hypercoagulation}}: By intentionally taking damage with something like a fire and grabbing the half-red hearts, Isaac can easily generate powerful familiars for free.
+* {{i|The Jar}}: Hearts collected in the jar do not count towards activation.
+
+== In-game Footage ==
+{{#ev:youtube|tXQ7NdZKqpE}}
+
+== Trivia ==
+* This item is the angelic counterpart to {{I|Cambion Conception}}.
+* [[wikipedia:Immaculate Conception|Immaculate Conception]] refers to the Catholic teaching that the conception of the Virgin Mary was free from original sin.
+
+{{nav|lilith unlock|boss rush unlock|fr=Immaculée Conception}}

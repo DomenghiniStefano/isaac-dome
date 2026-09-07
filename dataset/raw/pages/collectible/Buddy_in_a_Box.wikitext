@@ -1,0 +1,88 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Booster Pack 1}}
+ | id          = 518
+ | quote       = What could it be?!
+ | description = Spawns a [[familiar]] with a random tear effect. The familiar is randomized at the start of each [[floor]].
+ | quality     = 2
+ | tags        = summonable baby {{dlc|r+|monstermanual}} offensive
+ | unlocked by = Buddy in a Box
+}}
+
+{{cit|up|a+1}}
+
+== Effects ==
+* Grants a familiar with random tear effects, fire rate, and damage.
+** The familiar's damage scales from ~2-6, and tear delay scales from ~12-30.
+** The familiar takes the appearance of a random [[co-op|co-op baby]].
+** The familiar is randomized upon entering a new [[floor]].
+* {{dlc|r}} {{transformation contribution|Conjoined}}
+
+== Notes ==
+* Each familiar has 50% chance to have tear effects. If it has tear effects, its tears always have one guaranteed effect and 1 effect with a chance.
+* The guaranteed effects are: {{column list | width = 15em | content =
+** {{i|Anti-Gravity}}
+** {{i|Compound Fracture}}
+** {{i|Continuum}}
+** {{i|Cricket's Body}}
+** {{i|Cupid's Arrow}}
+** {{t|Flat Worm}}
+** {{t|Hook Worm}}
+** {{i|Jacob's Ladder}}
+** {{i|A Lump of Coal}}
+** {{i|My Reflection}}
+** {{i|Mysterious Liquid}}
+** {{i|Ouija Board}}
+** {{t|Ouroboros Worm}}
+** {{i|The Parasite}}
+** {{i|Proptosis}}
+** {{t|Pulse Worm}}
+** {{t|Ring Worm}}
+** {{i|Rubber Cement}}
+** {{i|Spoon Bender}}
+** {{i|Strange Attractor}}
+** {{i|Tiny Planet}}
+** {{t|Wiggle Worm}}
+}}
+* The effects with a chance are: {{column list | width = 15em | content =
+** {{i|Ball of Bandages}}' level 4 tears
+** {{i|The Common Cold}}
+** {{i|Dark Matter}}
+** {{i|Euthanasia}}
+** {{i|Explosivo}}
+** {{i|Eye of Belial}}
+** {{i|Eye of Greed}}
+** {{i|Fire Mind}}
+** {{i|Glaucoma}}
+** {{i|Godhead}}
+** {{i|Head of the Keeper}}
+** {{i|Holy Light}}
+** {{i|Iron Bar}}
+** {{i|Little Horn}}
+** {{i|Mom's Contacts}}
+** {{i|Mom's Eyeshadow}}
+** {{i|Parasitoid}}
+** {{i|Sinus Infection}}
+** {{i|Spider Bite}}
+}}
+* The familiar's tear appearance isn't linked to the normal effect such tears would have.
+** For instance, [[piercing]]-looking tears might not go through enemies and {{i|Sinus Infection}} tears might not stick, while tears that do not look like {{i|Compound Fracture}} tears can still split on hit.
+* Some tear effects like {{i|Proptosis}} and {{i|Tiny Planet}} do not have their associated stat boosts and thus are very ineffective.
+* Familiars will not do contact damage.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Buddy in a Box having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+
+== Interactions ==
+* {{i|Box of Friends}}: Spawns a new randomly generated familiar.
+
+== In-game Footage ==
+{{#ev:youtube|ruukYnika6o}}
+
+== Trivia ==
+* Buddy in a Box is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=844440401 this Steam Workshop item] by Ashkait and Scayze.
+* This is the only way of seeing co-op babies in-game outside of co-op.
+* {{dlc|r}} The re-texture makes it look like a Funko Pop Figurine Box.
+
+== Bugs ==
+{{bug|dlc=r|The familiar will change upon exiting the {{i|Knife Piece 2}} area.}}
+
+{{nav|conjoined|booster pack|fr=Pote en Boîte}}

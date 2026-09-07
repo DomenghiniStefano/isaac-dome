@@ -1,0 +1,49 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 719
+ | quote       = Portable shop
+ | description = Spawns a random {{R|Shop}} [[Shop (Item Pool)|item]] or [[pickup]] which can be bought for its normal price.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge    = 4
+ | unlocked by = Keeper's Box
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, spawns a random [[pickup]] or [[item]], which must be bought for its normal {{R|Shop}} price.
+** Items generated will always be [[Shop (Item Pool)|shop items]] and pickups will only be those that can appear for sale in shops.
+*** The only exception to this is {{e|Black Sack}}s, which can replace Grab Bags despite not being able to do so in shops.
+** There is an an equal ~11.1% chance to spawn a card, pill, bomb, key, battery, item, soul heart, red heart, or sack.
+
+== Notes ==
+* The pickup/item will be surrounded by spikes/cost hearts if the box is used in a {{R|Devil Room}}, a {{R|Black Market}}, if Isaac has {{I|A Pound of Flesh}} or is in a boss room after using {{I|Satanic Bible}}.
+** While playing as {{C|Tainted Lost}} /{{C|The Lost}} pickups that would cost health are free.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns glowing coin wisps on the middle ring. Enemies killed by the wisps' tears have a 20% chance to drop a random [[coin]].}}
+* {{I|Coupon}} / {{I|Mr. ME!}} / {{I|Crooked Penny}} + {{I|Schoolbag}}: Spawned pickups/items can be made free.
+* {{I|D20}} + {{I|Schoolbag}}: Rerolled pickups have a chance to reroll into an item from the current room's [[item pool]].
+* {{I|Keeper's Sack}}: Stat upgrades from the spawned pickups/items can be gained even when shops become unavailable (Floors after the {{e|Mom}} fight excluding {{S|???}}).
+* {{I|Restock}}: Buying spawned pickup or item in {{R|Shop}} will always restock into the same thing as what's being sold in the upper left of the shop and their prices will never increase. This still works even if the top left slot was already bought before having Restock. This does not work outside of the shop. It also works in Greed and Greedier modes, respawning them as {{e|Key}}s (since the leftmost pickup is always a key).
+* {{I|Steam Sale}}: Spawned pickups/items will be on sale.
+
+== Interactions ==
+* {{T|Adoption Papers}}: Does not affect Keeper's Box items, meaning both familiars and shop items can be purchased in tandem over the course of a run.
+* {{I|Chaos}} / {{I|Sacred Orb}} / {{I|TMTRAINER}}: Affects items spawned by the box.
+* {{i|Glitched Crown}} / {{C|Tainted Isaac}}: The alternate item(s) will be from the pool of the room it is used in.
+* {{T|Store Credit}}: Cannot be used on consumables or items spawned by Keeper's Box outside of the Shop.
+* {{m|Shop Restock Machine}}: Using a Restock Machine in a {{R|Shop}} will remove every spawned pickup/item. Using the machine outside of the shop will only reroll items.
+
+== In-game footage ==
+{{#ev:youtube|GJ6tVhbC9is}}
+
+== Trivia ==
+* Keeper's Box has a similar shape to {{I|Pandora's Box}}, along with a keyhole in the same position.
+* This item is similar to {{I|Portable Slot}}, and the pickup quote (Portable shop) may be a reference to it.
+
+== Bugs ==
+{{bug|dlc=nr+|Keeper's Box can spawn hearts for sale when playing as {{c|Keeper}}/{{c|Tainted Keeper}}.}}
+
+{{nav|keeper unlock|the beast unlock|fr=Boîte du Gardien}}

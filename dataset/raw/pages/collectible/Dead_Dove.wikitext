@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | tear app name = Ouija Board
+ | id            = 185
+ | quote         = Flight + spectral tears
+ | description   = Grants [[spectral tears]] and [[flight]].
+ | quality       = 3
+ | tags          = nolostbr summonable angel
+ | devil price   = {{dlcalt|1|r=2}}
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants [[spectral tears]] and [[flight]].
+* {{transformation contribution|Seraphim}}
+
+== Notes ==
+* Because the boosts provided by Dead Dove are already innate to {{c|The Lost}} and {{C|Azazel}}, this item grants no real benefits when playing as the characters in question other than its contribution to the seraphim transformation.
+
+== In-game Footage ==
+{{#ev:youtube|YiQO1yl9Qh8}}
+
+== Trivia ==
+* It is the {{R|Angel Room}} equivalent of {{i|Spirit of the Night}}.
+* This item's appearance has the same body as {{C|The Lost}}.
+* In most Christian denominations, a dove is often used as symbolism for the Holy Spirit, the third divine Person of the Trinity. In this case, a "dead dove" could imply a dead or otherwise damaged/weakeaned God.
+* The item's name may also reference an Archive of Our Own tagging convention in which works with particularly objectionable content are tagged "Dead Dove, Do Not Eat", which is in turn a reference to the TV show Arrested Development.
+
+{{nav|seraphim|fr=Colombe Morte}}
+[[Category:Flight-granting items]]

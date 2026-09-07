@@ -1,0 +1,21 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 160
+ | quote       = Free goodies!
+ | description = Spawns a {{E|Grab Bag|n}} upon traveling to the next floor.
+ | unlocked by = Lucky Sack
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Spawns a {{E|Grab Bag}} upon traveling to the next floor.
+
+== Synergies ==
+* {{T|Found Soul}}: An extra sack will spawn next to Found Soul.
+* {{A|Golden Trinket}}/{{I|Mom's Box}}: Grants 1 extra sack every floor per copy.
+
+== Interactions ==
+* {{I|Strawman}}: Does not spawn an extra sack for the Keeper.
+
+{{nav|tainted cain unlock|mother unlock|fr=Bourse Trèfle}}

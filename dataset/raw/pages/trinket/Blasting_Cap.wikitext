@@ -1,0 +1,34 @@
+{{infobox trinket
+ | dlc         = a
+ | id          = 73
+ | quote       = Pop! Pop!
+ | description = Exploding {{e|Bomb}}s have a chance to drop another Bomb pickup.
+}}
+
+{{cit|t|a}}
+
+== Effect ==
+* Upon exploding, {{e|Bomb}}s have a 10% chance to drop a Bomb pickup.
+
+== Notes ==
+* The 10% chance to drop a bomb pickup still applies even if Isaac has a {{e|Golden Bomb}}. Because of this, it is trivial to get up to 99 bombs given enough time.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{I|Mom's Box|r}}: Having either increases the chance to 20%. Having both increases the chance to 30%.
+* {{i|Curse of the Tower}} / {{i|Anarchist Cookbook}} / {{p|XVI - The Tower}}: Spawned {{e|Troll Bomb}}s can drop bomb pickups.
+* {{t|Ring Cap}}: The extra bomb also has a chance to drop a bomb pickup.
+* {{i|Scatter Bombs}}: Tiny bombs can drop bomb pickups.
+
+== Interactions ==
+* {{i|Bomber Boy}}: The extra explosions cannot drop bomb pickups.
+* {{i|Dr. Fetus}}: Shot bombs cannot drop additional bombs.
+* {{i|Kamikaze!}}: Does not drop bomb pickups.
+* {{i|Mr. Boom}}'s Bomb can drop bomb pickups.
+* {{i|Rocket in a Jar}}: Rockets can drop bomb pickups.
+* {{e|Throwable Bomb}}s from {{e|Bomb Grimace|n}}s cannot drop bomb pickups.
+* {{e|Golden Troll Bomb}}s: Do not drop bomb pickups.
+
+== In-game Footage ==
+{{#ev:youtube|JSrN1LOm64I}}
+
+{{nav|bomb modifier|fr=Détonateur}}

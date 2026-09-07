@@ -1,0 +1,83 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 724
+ | quote       = Thick blooded
+ | description = After Isaac takes damage from an enemy or donates health, launches {{e|Red Heart}}s from Isaac that despawn after 1.5 seconds.
+ | quality     = 2
+ | tags        = nolostbr summonable
+ | unlocked by = Hypercoagulation
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* After Isaac takes damage from an enemy or donates health, he drops a {{e|Red Heart}} that despawns after 1.5 seconds.
+** The heart dropped depends on the source: half-hearts of damage taken drop {{e|Half Red Heart}}s, and full hearts of damage taken drop full hearts.
+** The hearts will get launched out of Isaac with momentum, making them difficult to pick up.
+** If Isaac is firing tears as he gets hit, the heart will get launched in that direction.
+
+== Notes ==
+* Damage sources that scale up from half a heart of damage to a full heart of damage starting on {{s|Womb}}/{{s|Corpse}} will still only cause Hypercoagulation to spawn half a heart. However, being hit by a champion enemy will still spawn a full red heart, even though all enemies do a full heart of damage by that stage.
+* Red hearts are not spawned when Isaac loses heart containers (such as through health down [[pill]]s, buying {{R|Devil Room}} items, using {{i|Guppy's Paw}}, etc), with the only exception being {{i|Potato Peeler}}.
+* Red hearts will still drop regardless of the type of heart being subtracted from damage, making the item generally useless for characters who cannot utilize red hearts.
+** However if Isaac takes damage while inside a super secret room layout with specific heart spawn, he will drop a full heart of that type instead. The full heart will drop even if Isaac takes half a heart damage.
+* The following damage sources will activate Hypercoagulation:
+** Enemy attacks
+** Normal [[spikes]]
+** [[Rocks#Spiked Rocks|Spiked rocks]]
+** {{e|Fire Place}}s
+** Explosions
+** {{M|Blood Donation Machine}}s
+** {{M|Devil Beggar}}s
+** {{M|Confessional}}s
+** {{M|Hell Game}}s
+** {{i|Razor Blade}}
+** {{i|Blood Rights}}
+** {{i|Dull Razor}} (despite it not taking health)
+** {{i|Potato Peeler}}
+** Extra damage taken from holding {{i|Glass Cannon}}
+* The following damage sources will not activate Hypercoagulation:
+** {{R|Curse Room}} doors
+** The door to {{S|Mausoleum}}
+** {{R|Sacrifice Room}} spikes
+** {{E|Spiked Chest}}s/{{E|Mimic Chest}}s
+** [[Bad Trip]] pills
+** {{E|Golden Battery}}
+** {{i|Kamikaze!}}
+** {{i|Breath of Life}}
+** {{i|A Pound of Flesh}} shop spikes
+** {{i|IV Bag}}
+** {{i|Sharp Plug}}
+** {{i|Shard of Glass}}
+** {{i|Blood Bombs}}
+** {{i|Blood Oath}}
+
+== Synergies ==
+* [[Cards and Runes#Playing Cards|Ace Cards]] / {{i|Diplopia}} / {{i|D1}} / {{P|Jera}}: Converted/duplicated hearts will not disappear.
+* {{i|Blood Rights}} / {{i|Razor Blade}}: Damage taken to use the item also spawns hearts, reducing the cost of using them. The first usage of these items each room will spawn a full red heart.
+* {{i|Cancer}} / [[Pills|Percs!]] pill / {{I|The Wafer}}: Damage sources that spawn full red hearts will still spawn a full red heart despite the cost being reduced to half a heart.
+* {{i|Dull Razor}}: Can be used to spawn full red hearts for Isaac to pick up.
+* {{T|Equality!|nr+}}: As long as Equality is active, all hearts spawned will be doubled and never disappear. Hearts remain on the ground even after the effect is no longer active.
+* {{i|Humbleing Bundle}}: {{e|Red Heart}} spawns can be converted to {{e|Double Heart}}s.
+
+== Interactions ==
+* {{i|Cambion Conception}}: By intentionally taking damage with something like a fire and grabbing the half-red hearts, Isaac can easily generate powerful familiars for free.
+* {{i|Candy Heart}} / {{i|Immaculate Conception}}: The hearts will count toward gaining stat boosts/familiars.
+* {{i|Compost}}: The temporary heart will be converted into a [[Familiar#Blue Flies|Blue Fly]][[Familiar#Blue Spiders|/Spider]].
+* {{i|D20}} / {{i|GB Bug}}: Rerolled hearts will still disappear.
+* {{t|Daemon's Tail}}: Hearts spawned do not turn into keys but simply do not spawn 80% of the time, and the 20% that do spawn will always be {{e|Black Heart}}s.
+* {{i|Glass Cannon}}: Spawns two more full red hearts when Glass Cannon breaks, regardless of how much health was lost to it.
+* {{c|Keeper}} / {{c|Tainted Keeper}}: Spawns blue flies upon getting hit, essentially granting them the same effect as {{i|Infestation}}.
+* {{p|IX - The Hermit?}}: The heart will not be converted to coins.
+* {{i|IV Bag}}: Doesn't spawn hearts.
+* {{i|Maggy's Bow}}: Doubles the healing received from the hearts spawned.
+* {{i|Magneto}} / {{t|Super Magnet}}: Will immediately start pulling the dropped hearts to Isaac, breaking their momentum and making collection much easier.
+
+== In-game footage ==
+{{#ev:youtube|JCuPEpm9IkA}}
+
+== Trivia ==
+* Hypercoagulation (otherwise known as [[wikipedia:Thrombophilia|Thrombophilia]]) is a medical condition that causes blood clots to spontaneously form in a person’s blood vessels and prevents them from dissolving properly.
+
+{{nav|tainted magdalene unlock|delirium unlock}}
+[[Category:Damage-triggered items]]

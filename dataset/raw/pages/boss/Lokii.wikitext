@@ -1,0 +1,51 @@
+{{infobox boss
+ | id          = 69
+ | variant     = 1
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Womb}}{{floor|Utero}}<br>{{floor|The Void}}<br>{{dlc|r}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{room|boss challenge}}<br><u>Degraded Boss</u><br>{{floor|Utero}}<br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 700
+ | pool        = {{ip|Boss}}<br> {{i|Lil Loki|r+}} (1% chance)
+}}
+{{distinguish|Loki}}
+
+'''Lokii''' is a [[boss]] that can appear:
+* {{dlc|nr}} In the {{s|Womb}} and the {{s|Utero}}.
+* {{dlc+|r}} In all environments of [[Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}).{{dlc-}}
+Each half of Lokii has 350 HP.
+
+== Behavior ==
+The fight against Lokii resembles fighting two individual {{e|Loki}}s. Each half of Lokii teleports to random locations in the room and has the same attacks which they perform independently of each other:
+* Shoots 4 projectiles in the four cardinal directions, followed by the four diagonal directions, and then the cardinal directions once again.
+* Spawns a {{e|Red Boom Fly}} on top of himself. Only 1 Red Boom Fly can be alive at once.
+* Shoots 8 projectiles in all directions.
+Lokii deals a whole heart of contact damage.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Lokii ingame.png|Lokii as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Loki's Horns, Glass Cannon }}
+
+== Notes ==
+* Using the {{i|Meat Cleaver}} on Loki has a unique interaction, splitting him into Lokii.
+
+== Trivia ==
+* Lokii was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* They are the posthumous version of Loki.
+* Lokii's name is a pun on the Roman numeral for two, II.
+** It can also be a reference to the Latin plural suffix "ii" such as in "radii" and "virii" which is not commonly used.
+* Lokii's battle sprite is depicted with no arms despite Lokii's sprite in-game having arms. Additionally, the boss's art is missing Lokii's mark on their foreheads.
+* Both Lokii halves have the same sprite, just flipped horizontally.
+* The only actual difference with Loki is that Lokii spawns Red Boom Flies instead of normal ones.
+** Because of this, since Red Boom flies don't explode upon death, Isaac cannot damage Lokii by killing them.
+* Lokii's design may be inspired by the [[Wikipedia:Judgement of Solomon|Judgement of Solomon]], a story from the Hebrew Bible in which King Solomon ruled between two women both claiming to be the mother of a child. King Solomon suggested that the baby should be cut in two, so the women will receive the two halves.
+
+{{nav|boss}}
+
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

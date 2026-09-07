@@ -1,0 +1,41 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Wooden Cross
+ | id = 121
+ | quote = My faith protects me
+ | description = Grants a shield that negates the first damage taken once per floor.
+ | unlocked by = Wooden Cross
+}}
+
+{{cit|ut|a+1}}
+
+== Effects ==
+* Grants a shield which nullifies a single hit once per floor.
+
+== Notes ==
+* The shield granted by Wooden Cross stacks with {{i|Holy Mantle}}, {{i|Blanket}}, and {{i|Dogma}}.
+** {{dlc|nr+}} It does not, however, stack with the {{p|Holy Card}}; both are treated as the same shield.
+** {{dlc|r+}} Shield-type items stack in the following order:
+*** {{t|Wooden Cross}}
+*** {{i|Blanket}}
+*** {{i|Holy Mantle}}
+*** {{p|Holy Card}}
+*** {{i|Dogma}}
+* The shield of Wooden Cross has a higher priority than Holy Mantle or Blanket and will be lost first when hit.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}} / {{t|Wooden Cross|r+}}: Gives Isaac two shields per floor.
+
+== In-game Footage ==
+{{#ev:youtube|pNejBk0KfWE}}
+
+== Gallery ==
+<gallery>
+File:Trinket Wooden Cross Booster Pack 1 icon.png|Wooden Cross's appearance prior to [[Booster Pack #2]].
+</gallery>
+
+== Trivia ==
+* Wooden Cross is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=841132488 this Steam Workshop trinket] by Striped and cathery.
+
+{{nav|booster pack|fr=Croix de Bois}}
+[[Category:Damage-preventing items]]

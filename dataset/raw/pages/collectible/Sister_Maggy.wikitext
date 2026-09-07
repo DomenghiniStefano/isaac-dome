@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 67
+ | quote       = Friends 'till the end
+ | description = Spawns a [[familiar]] who follows Isaac around and fires normal tears {{dlcalt|once per second that each do 3.5 damage|r=1.36 times per second that each do 6 damage}}.
+ | quality     = 1
+ | tags        = summonable baby monstermanual offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a [[familiar]] who follows Isaac around and fires normal tears {{dlcalt|once per second that each do 3.5 damage|r=1.36 times per second that each do 6 damage}}.
+** These tears appear red, but have no special effects.
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* {{dlc|nr}} Sister Maggy is functionally identical to {{i|Brother Bobby}}.
+* {{dlc|r}} Sister Maggy deals more damage than {{i|Brother Bobby}}, while Brother Bobby has a higher tear rate.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Sister Maggy having {{dlcalt|5th|r+=7th}} priority.
+
+== Synergies ==
+* {{I|Mongo Baby}}: Will copy Sister Maggy’s tears.
+
+== In-game Footage ==
+{{#ev:youtube|I_MvmHp9GpY||inline}} {{#ev:youtube|hxmjC5t9zQ0||inline}}
+
+== Trivia ==
+* This item is used in {{chal|The Family Man}}.
+* In the original game, Sister Maggy deals 5 damage.
+
+{{nav|conjoined|fr=Sœurette Marie}}

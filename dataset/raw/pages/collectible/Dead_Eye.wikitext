@@ -1,0 +1,75 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 373
+ | quote       = Accuracy brings power{{dlc|nr|!}}
+ | description = Isaac's [[damage]] increases each time an enemy is hit. Damage is reset upon missing a shot.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Isaac's [[damage]] increases for each successive tear hit on enemies.
+** The multiplier increases by 0.25x for each hit, going up to a maximum of 2x after 4 successive hits.
+** If a tear misses and hits nothing (wall/floor), there is a chance for the multiplier to be reset back to 1.
+*** The chance is 20% for the first miss, 33% for the second miss, and 50% for the third miss and beyond.
+** As the multiplier increases, Isaac's tears glow red and increase in size.
+
+== Notes ==
+* The effect is triggered by many entities aside from enemies. Shooting {{Dlc|nr}} {{E|Fire Place}}s, {{E|Poop}}, {{E|Wall Hugger}}s, and {{E|Stone Grimace}}s will count towards the multiplier. This can be used to preemptively increase damage before entering a new room.
+** {{Dlc|nr}} Because blue fires do not deteriorate when shot at with tears, maximum damage can always be achieved as long as the fire is not destroyed by an explosion.
+** Shooting {{E|Host}}s will increase the damage multiplier even if their skull is lowered down.
+* If Dead Eye is removed by re-rolling it with {{i|D4}}, {{i|D100}}, or a 1 or 6 pip {{R|Dice Room}}, the damage multiplier will be removed, but the tears will continue to glow red.
+* Tears do not have to be landed on only one enemy to build the multiplier; as long as they do not miss, Isaac gains damage.
+* {{dlc|r}} Because there are no walls or floors for tears to collide with in the fight with {{E|The Beast|n}}, the damage boost will not fade away.
+
+== Synergies ==
+* {{i|Compound Fracture}}/{{i|Haemolacria}}/{{i|Lachryphagy}}: Main tears and burst tears will contribute to damage multiplier.
+** {{i|Lachryphagy}} Firing into the floating tear won't reset the multiplier unless it hits a wall.  The burst tears never reset the multiplier.
+* {{i|Dark Arts}}: Hitting enemies/bullets successfully with Dark Arts contributes to Dead Eye's damage multiplier.
+* {{i|The Ludovico Technique}}: Damage bonus increases until it hits the max of 2x. Since the controllable tear never hits the ground or wall, the bonus cannot be lost.
+* [[Petrification]]/[[Slow]] items: Enemies will be petrified or slowed, making them easier to hit without missing.
+* {{i|Pop!}}: Tears that miss an enemy and do not hit a wall or obstacle will not fall to the ground immediately, allowing many damage-amplified tears to be fired before the damage boost is lost.
+* {{i|Proptosis}}: Tears are larger and easier to hit with at a low range. Additionally, if the tear fades out of existence instead of running out of range or hitting a wall/obstacle, it does not count as a miss.
+* {{i|Spirit Sword}}: Dead Eye will increase the damage every slash until it hits the max of 2x. The bonus can be lost if a sword projectile doesn't hit anything.
+* {{i|Tiny Planet}}: Isaac's tears no longer hit walls and stay in the air for longer, allowing many damage-amplified tears to be fired before the damage boost is lost.
+* {{i|Akeldama}}: The tears in the trail will contribute to the damage boost, making it possible to stack damage while having items that do not interact with Dead Eye on their own (such as {{i|Brimstone}}).
+
+== Interactions ==
+* {{i|Brimstone}} / {{i|Dr. Fetus}} / {{i|Epic Fetus}} / {{i|Mom's Knife}} / {{i|Technology}} / {{i|Tech X}}: Will not increase or decrease Dead Eye's bonus, resulting in it remaining as it was prior to their pickup.
+* {{i|20/20}}/{{i|The Inner Eye}}/{{i|Mutant Spider}}/{{I|Cursed Eye}}: If all tears hit, they all contribute to the damage multiplier. However, the spread shot granted by The Inner Eye and Mutant Spider may make it hard to retain the damage multiplier.
+* {{C|Azazel}}: Gains no benefit by picking up Dead Eye unless his tear effect has been replaced.
+* {{i|Cricket's Body}}/{{i|The Parasite}}: Split tears that do not hit enemies are considered misses, nearly guaranteeing the chance of losing the multiplier.
+* {{i|Flat Stone}}: Each skip counts as missing.
+* {{dlc|a+}} {{C|The Forgotten}}: The Forgotten's swing increases the multiplier when successfully hitting enemies, making it much easier to maintain the damage buff. Resets the multiplier upon swinging and missing. The multiplier changes normally when firing tears as {{C|The Soul}}, and the two forms share the same multiplier.
+** {{C|The Forgotten}} + {{I|Soy Milk}}: Damage multiplier will not reset as long as the fire key is held, and will quickly build up to the maximum value of x2. The multiplier will only reset if, upon releasing the fire button, the thrown bone does not hit any enemy.
+*{{i|Rock Bottom}} The damage multiplier stays, even if you reset the item bonus.
+* {{i|Host Hat}}: Tears fired by the Host are affected by Dead Eye.
+* {{i|Immaculate Heart}}: The tears from Immaculate Heart can add to the damage multiplier and cannot lower it by missing. This can be particularly useful with items that normally prevent the damage multiplier from increasing, such as {{i|Brimstone}}.
+* {{i|Incubus|nr}}: Incubus's tears do not affect the multiplier, but Incubus can gain damage from Isaac's normal tears increasing the multiplier. The familiar's tears do not reset the multiplier if they miss, either.
+** {{dlc|nr}} {{C|Lilith}}'s Incubus doesn't work with Dead Eye.
+** '''Incubus''' + {{i|Monstro's Lung}}: Tears fired by Incubus are now affected by Dead Eye.
+* {{i|Isaac's Tears}}: If the tears fired by Isaac's tears miss, they cause the multiplier to reset.
+* {{i|Jacob's Ladder}}: Electricity sparks do not contribute to damage multiplier.
+* {{i|Marked}}: Damage buff often lost quickly because of the constantly firing tears.
+* [[Piercing tears]]: Damage buff is halved, .125x, reaching the 2x multiplier with 8 successive hits.
+* {{i|Rubber Cement|nr}}: Tears that hit enemies may bounce off and still count as misses.
+* {{i|Sad Bombs}}: Tears spawned by sad bombs that miss will reset the multiplier.
+* {{i|Saturnus}}: Tears spawned when entering the room and enemy tears collected by the ring can add to the damage multiplier and cannot lower it by missing. This can be particularly useful with items that normally prevent the damage multiplier from increasing, such as {{i|Brimstone}}.
+* {{i|Technology 2}}: No effect from the laser itself, but the tears fired from the second eye are affected by Dead Eye.
+* {{i|Technology Zero}}: Electricity connecting tears will not increase the damage multiplier.
+* {{i|Trisagion}}: Cannot increase Dead Eye's bonus, but can lose it.
+
+== In-game Footage ==
+{{#ev:youtube|jebup44iDTk}}
+
+== Gallery ==
+<gallery>
+File:Collectible Dead Eye concept.jpg|Concept drawn for Dead Eye.
+</gallery>
+
+== Bugs ==
+{{Bug|When picking up {{i|Brimstone}}, {{i|Technology}}, {{i|Dr. Fetus}}, {{i|Epic Fetus}}, or {{i|Mom's Knife}}, the damage multiplier that was gained before picking them up will now be permanent. However, saving and quitting the run will result in this damage multiplier being permanently lost.}}
+
+{{nav}}

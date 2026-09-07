@@ -1,0 +1,34 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 173
+ | quote       = Give it to me
+ | description = Can be used to pay for a [[Devil Room|Devil deal]] without losing [[Health#Red Heart Containers|hearts]], and is then consumed.
+ | unlocked by = Your Soul
+}}
+{{distinguish visual|Found Soul|Lost Soul}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Grants 1 free [[Devil Room|Devil Deal]] item in exchange for the trinket.	
+** After a Devil Deal has been taken, the trinket is removed from Isaac's inventory.
+** Also works in {{R|Black Market}}s and all other places where [[Health#Red Heart Containers|heart containers]] can be exchanged for an item.
+
+== Notes ==
+* Your Soul has no effect on Devil Deals that cost money instead of health, such as from {{t|Keeper's Bargain}}, or playing {{c|Keeper}} and {{c|Tainted Keeper}}.
+* {{dlc|rnr+}} Using Your Soul as {{c|The Lost}} / {{c|Tainted Lost}} grants the possibility of taking two items from the Devil Deal instead of only one.
+** {{dlc|r+}} The trinket gets consumed but you still can only take a single item from devil deals.
+* Using Your Soul still counts as taking a Devil Deal for the purpose of determining {{R|Angel Room}} eligibility.
+* Taking multiple deals at the same time with {{C|Jacob and Esau}} will make both free. The trinket will still be removed.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Adds +10% chance to not be consumed per copy.
+* '''Multiple copies''': Only one Soul is consumed taking a deal, allowing other copies to be spent separately.
+
+== In-game footage ==
+{{#ev:youtube|s7Htjxk3SHo}}
+
+== Trivia ==
+* The name and mechanics of the trinket refer to "selling your soul", where a person makes a deal between themselves and {{E|Satan}} or a lesser demon.
+
+{{nav|tainted judas unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Ton Âme}}

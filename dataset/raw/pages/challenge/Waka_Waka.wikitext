@@ -1,0 +1,37 @@
+{{infobox challenge
+ | number    = 17
+ | item      = {{i|Anti-Gravity}}<br>{{i|Strange Attractor}}
+ | has shops = Yes
+ | unlocks   = Death's Touch
+}}
+
+'''Waka Waka''' is [[Challenges|challenge]] #17. {{c|Isaac}} starts off with {{i|Strange Attractor}} and {{i|Anti-Gravity}}. The goal is to defeat {{E|Mom}}. This challenge is available by default.
+
+== Difficulty ==
+Shots do not travel right away, and instead stay in place. With the added magnetic property, this can cause enemies to slingshot through tears to hit Isaac.
+
+== Strategy ==
+* Isaac can lay a trail of tears that draws enemies into each tear. However, if done carelessly, momentum will often carry them past fired tears into Isaac. Make sure there is a safe distance between him and the enemy before firing.
+* Try to be accurate - if the tears hit the enemy and disappear, the side effects of Strange Attractor are reduced, whereas if they miss, they may pull other enemies towards Isaac, increasing the risk of damage.
+* Enemies that chase Isaac such as {{E|Lust}} or {{E|Globin|text=Globins}} are particularly dangerous as firing carelessly will pull them towards him. Maintain a safe distance, fire, run away, and repeat.
+* Items that are behind gaps or spikes can be pulled towards Isaac by firing tears past them.
+* {{i|Cursed Eye}} overrides the anti-gravity tear effect while increasing your overall damage, on top of eliminating the chance for enemies to get too much momentum due to the low amount of tears on screen.
+* {{i|Tammy's Head}} is especially useful for this challenge, as it creates a stationary ball totaling ten highly damaging tears that have a very strong magnetic pull. The one-room charge time allows Isaac to clear rooms with much greater ease than by using the common method of attack with this challenge.
+* {{i|Mom's Knife}} is a useful pickup in this challenge. It retains the magnetic property of Strange Attractor but can be fired as it normally would, making this challenge, for the most part, a normal run with the item.
+* {{i|Pyro}} is a good pickup to look out for. Since Isaac's bombs are affected by the Strange Attractor, it will pull enemies towards the bomb, similar to a homing effect.
+* {{I|The Ludovico Technique}} is a good item to have since it can be controlled remotely to kill enemies while keeping Isaac safe.
+* {{i|Brimstone}} is a good item to grab. Enemies are attracted to the beam and will be damaged more often as a result.
+* Having multiple tears in one spot will cause the magnetic pull to become stronger. Use this to pull enemies out from tight spaces, or deal massive damage to one enemy.
+* If there is difficulty completing this challenge, a good tactic is to quickly tap the arrow keys to fire tears normally and mostly avoid the effects of Anti-Gravity.
+* The 1 pip and 6 pip dice rooms will not reroll the starting items for this challenge but will reroll any others.
+* {{i|Multidimensional Baby}} is a good pick up as Isaac moves around while firing tears, the baby will follow with delay and duplicate tears.
+* Items that give homing are very useful because when enemies get attracted to the tears, the tears go towards the enemies.
+* {{dlc|r}} Repentance modifies how Strange Attractor's magnetism works; it now needs to ramp up to its previous power over time, on each individual tear, so foes will be drawn more towards the ''last'' tear you've shed.
+
+== Reward ==
+{{achievement text | Death's Touch }}
+
+== Trivia ==
+* ''Waka Waka'' is the sound ''Pac-Man'' makes when eating pellets, and the enemies in this challenge follow Isaac's trail of floating tears similarly.
+
+{{nav|challenge}}

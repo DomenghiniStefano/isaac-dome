@@ -1,0 +1,23 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 28
+ | quote       = Speed up
+ | description = +0.3 [[speed]].
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effect ==
+* +0.3 [[speed]].
+
+== In-game Footage ==
+{{#ev:youtube|aqwLMRKjRQM||inline}} {{#ev:youtube|cf3c06KYovM||inline}}
+
+== Trivia ==
+* In his [https://youtu.be/kby0rXT7qYQ first post-Repentance Lore Stream], Edmund McMillen revealed that The Belt is inspired by a real belt that his step-father would crack menacingly to threaten him with.
+** The Belt granting a speed up is a nod to the act of running faster out of fear of being hit.
+** In this way, The Belt is a counterpart to {{I|Wooden Spoon}}, which is also a speed-up item based on a specific object used by McMillen's parents to abuse him.
+
+{{nav|fr=Ceinture}}

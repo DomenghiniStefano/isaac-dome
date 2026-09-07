@@ -1,0 +1,24 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 564
+ | quote       = Tears + shot speed up
+ | description = +0.5 [[Tears]], +0.2 [[Shot Speed]].
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* +0.5 [[Tears]].
+* +0.2 [[Shot Speed]].
+
+== Trivia ==
+* [[anti:A Bar of Soap|A Bar of Soap]] originates from the ''Antibirth'' mod, and by extension, from the ''Community Remix'' mod for the flash version.
+** In ''Community Remix'', it was instead called ''The Soap'', and would give a 0.2 tears up and a 0.16 shot speed up.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+* A Bar of Soap could be a reference to the uncommon practice of washing a child's mouth out with soap, most often done as punishment for profanity or verbal disrespect.
+
+== References ==
+<references />
+
+{{nav|fr=Savonnette}}

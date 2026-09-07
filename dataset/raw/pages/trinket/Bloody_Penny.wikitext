@@ -1,0 +1,83 @@
+{{infobox trinket
+ | id          = 49
+ | quote       = Wealth of health
+ | description = Gives a chance to drop a {{E|Half Red Heart}} when a [[Coins|coin]] is collected.
+ | pool        = special shopkeeper
+ | unlocked by = Blood Penny
+}}
+
+{{cit|ut}}
+
+== Effect ==
+* Gives a chance to drop a {{E|Half Red Heart}} when [[Coins|money]] is collected.
+** {{dlc|nr}} 50% chance.
+** {{dlc|r}} The chance is based on the coin's worth:<ref>The chance is calculated as 1-0.75<sup>(coin_worth)</sup></ref>
+{| class="wikitable striped"
+ ! Coin
+ ! Chance
+ |-
+ | {{E|Penny}}
+ | 25.00%
+ |-
+ | {{E|Double Penny}}
+ | 43.75%
+ |-
+ | {{E|Nickel}}
+ | 76.27%
+ |-
+ | {{E|Dime}}
+ | 94.37%
+ |}
+
+== Notes ==
+* {{dlc|a}} This trinket can be found by destroying {{E|Special Shopkeeper|n}}s.
+* {{dlc|a}} This trinket is very useful in [[Greed mode]], as the coins dropped for completing a wave now provide health.
+* {{dlc|a+}} Makes the {{E|Ultra Greedier|n}} fight trivial, as many of his attacks drop coins, thus providing free health.
+
+== Synergies ==
+* {{I|IV Bag}}: Can chain to create a large amount of coins.
+* {{C|Keeper}}: The trinket can be seen as a "better" version of {{t|Rotten Penny}}, as instead of spawning one fly per coin, it spawns multiple at the cost of it being chance-based.
+** {{C|Tainted Keeper}}: Fly production is heavily increased as most enemies drop coins on death.
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Increases the chances to:<ref>The chance is calculated as 1-0.5<sup>(coin_worth)</sup></ref>
+{| class="wikitable striped"
+ ! Coin
+ ! Chance
+ |-
+ | {{E|Penny}}
+ | 50.00%
+ |-
+ | {{E|Double Penny}}
+ | 75.00%
+ |-
+ | {{E|Nickel}}
+ | 96.88%
+ |-
+ | {{E|Dime}}
+ | 99.90%
+ |}
+* {{A|Golden Trinket|r+}} + {{i|Mom's Box|r+}}: Increases the chances to:<ref>The chance is calculated as 1-0.25<sup>(coin_worth)</sup></ref>
+{| class="wikitable striped"
+ ! Coin
+ ! Chance
+ |-
+ | {{E|Penny}}
+ | 75.00%
+ |-
+ | {{E|Double Penny}}
+ | 93.75%
+ |-
+ | {{E|Nickel}}
+ | 99.90%
+ |-
+ | {{E|Dime}}
+ | 99.99%
+ |}
+
+== In-game Footage ==
+{{#ev:youtube|b9V20ZkpWsk}}
+
+== References ==
+{{reflist}}
+
+{{nav|coin modifier|penny|samson unlock|blue baby boss unlock|fr=Pièce Sanglante}}
+[[Category:Penny trinkets]]

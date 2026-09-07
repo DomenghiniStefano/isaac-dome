@@ -1,0 +1,62 @@
+{{infobox boss
+ | dlc         = r
+ | name        = Ultra Pestilence
+ | portrait    = no
+ | id          = 951
+ | variant     = 20
+ | environment = <u>Boss</u><br>{{floor|Home}}
+ | base hp     = 1800
+ | pool        = ''None''
+}}
+
+'''Ultra Pestilence''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' and is the second of the [[Harbingers (Bosses)#Ultra Harbingers|Ultra Harbingers]] fought before {{e|The Beast}} in {{s|Home}}.
+
+== Behavior ==
+=== Phase 1 ===
+Ultra Pestilence spawns with a swarm of {{e|Ultra Pestilence Fly|text=Ultra Pestilence Flies}} that hover around himself for the entire duration of the fight. He has two attacks which he alternates between:
+* Launches a large {{i|Ipecac}} projectile at Isaac's position. Upon landing in the lava below, it creates a pillar of poisonous cloud, creates a burst of projectiles that shoot upwards from the lava, and creates 3 additional projectiles that shoot upwards from the lava on both sides of the pillar. This attack is repeated 3 times.
+* Fires a large maggot from his eye which flies across the screen, wrapping around three times. Before it completes a fourth wrap, it reverses direction, wrapping around three more times before re-entering Ultra Pestilence's eye. Where the Maggot comes from depends on how many screen wraps it has done:
+** After the first screen wrap, the maggot aims at the top third of the arena.
+** After the second, third, and fourth screen wrap (the maggot reverses directions after the third), it aims at Isaac.
+** After the fifth screen wrap, it aims at the top third of the arena again.
+** After the sixth and final screen wrap, it aims at Ultra Pestilence, re-entering his eye when he hits them.
+
+=== Phase 2 ===
+After dropping to 40% health,  Ultra Pestilence loses his head, begins to periodically spawn Ultra Pestilence Flies around himself, and uses two attacks:
+* At the start of this phase, Ultra Pestilence's steed spawns an {{e|Ultra Pestilence Fly Ball}} which follows Isaac. Attacking this ball of flies spawns additional flies. Ultra Pestilence performs this attack one more time after dropping to 20% health.
+* Fires a spray of projectiles from his empty neck, which rain down on the area in front of it.
+
+== Gallery ==
+<gallery>
+File:Boss Ultra Pestilence before Maggot attack ingame.png|Ultra Pestilence ready for its Maggot attack.
+File:Boss Headless Ultra Pestilence ingame.png|Ultra Pestilence in its second phase.
+File:Ultra Pestilence death portrait.png|Ultra Pestilence death portrait.
+</gallery>
+
+== Audio ==
+{{sound table header}}
+{{sound table row | [[File:Pestilence appear.wav]] | The noise Ultra Pestilence makes upon emerging from the background. }}
+{{sound table row | [[File:Pestilence spit blob barf 1.wav]] | One of the sounds Ultra Pestilence can make when spewing an explosive Ipecac blob. }}
+{{sound table row | [[File:Pestilence spit blob barf 2.wav]] | Another sound made when Ultra Pestilence fires an Ipecac shot. }}
+{{sound table row | [[File:Pestilence maggot shoot.wav]] | The sound of a maggot being fired from Ultra Pestilence's eye socket. }}
+{{sound table row | [[File:Pestilence headexplode.wav]] | Ultra Pestilence's head being blown off. }}
+{{sound table row | [[File:Pestilence death.wav]] | The sound Ultra Pestilence makes upon being killed. }}
+|}
+
+== Notes ==
+* {{i|Little Horn}} or {{i|Euthanasia}} can kill the maggot projectile.
+* {{i|Friendly Ball}} can be used on the maggot projectile.
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage Scaling|here]].
+
+== Trivia ==
+* Ultra Pestilence, like the other Ultra Harbingers is an upgraded version of its regular counterpart, {{e|Pestilence}}.
+* Upon death, Ultra Pestilence explodes into {{e|Small Maggot}}s that rain down harmlessly into the lava.
+* Ultra Pestilence is the only Ultra Harbinger with less than 2000 health, instead having 1800.
+** However, the Ultra Pestilence Fly Ball he summons (which has 200 HP) equates his total health to 2000.
+
+{{Nav|boss|fr=Ultra Épidémie}}
+
+[[Category:Home bosses]]
+[[Category:Debut bosses in Repentance]]

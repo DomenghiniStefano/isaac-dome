@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 598
+ | quote       = Size down
+ | description = +0.7 [[tears]]. Significantly shrinks Isaac, allowing him to squeeze between objects and makes some enemy shots pass over him.
+ | quality     = 3
+ | tags        = summonable tearsup offensive stars
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* +0.7 [[tears]]
+* Significantly shrinks Isaac, allowing him to squeeze between objects and makes some enemy shots pass over him.
+
+== Notes ==
+* With enough speed and the correct angle or being pushed by an explosion, it is possible to cross pits and pass through obstacles, allowing Isaac to reach places he usually isn't able to reach.
+* Pluto can stack with other size reduction effects.
+* May allow Isaac to squeeze through the walls and floors in {{R|Crawl Space}}s and 2nd/3rd phase of {{e|Rotgut}}. Passing through the outermost wall in an unintended direction leads to the {{R|I AM ERROR}} room.
+* The decrease in size makes dodging certain tear effects easier, most notably {{E|Hush}}'s continuum tears, and {{E|Dogma}}'s feather attacks from their respective second phases.
+
+== Interactions ==
+* {{I|Cricket's Body}}: Split tears' range is dropped drastically. Range ups do not mitigate the effect.
+* {{i|Dr. Fetus}}: Drops the bombs' range drastically despite no change in the [[range]] stat, greatly increasing chance of self-damage. Range ups do not mitigate the effect.
+
+== Trivia ==
+* [[anti:Pluto|Pluto]] originates from the ''Antibirth'' mod. In ''Antibirth'', it would also give a range down.
+* Pluto's effects reference the planetoid [[Wikipedia:Pluto|Pluto]]'s nature as a [[Wikipedia:Dwarf planet|dwarf planet]].
+
+== Bugs ==
+{{bug|It is possible to throw a shrunken {{c|Tainted Forgotten}} exactly into the room corner, making it impossible to pick him up.}}
+
+{{nav|astrological}}

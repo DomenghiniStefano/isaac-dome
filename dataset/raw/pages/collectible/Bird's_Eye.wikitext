@@ -1,0 +1,69 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 616
+ | quote       = It burns
+ | description = Gives a chance to shoot fires alongside tears that block enemy shots and deal damage to enemies that touch them.
+ | quality     = 3
+ | tags        = {{dlc|r+|summonable}} offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Gives Isaac a chance to shoot fires alongside his regular tears that block enemy shots and deal damage to enemies that touch them, similar to those shot by {{I|Red Candle}}.
+** Fires can block up to four shots and/or deal four ticks of damage before being destroyed, and last up to 10 seconds.
+** Fires deal 4× Isaac's [[damage]] at full durability, 3× Isaac's damage after taking damage once, and 2× Isaac's damage otherwise, for a max possible damage output of 11× Isaac's damage per fire.
+** Any fart-related effect that occurs will also generate a flame, like using {{I|The Poop}} or when generating a bomb with {{I|Number Two}}.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Singe}}.{{dlc-}}
+* The chance to shoot fires depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\min(\frac1 { 12 - \left \lfloor \mathit{Luck} \right \rfloor},50\%)</math><ref>https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing</ref>
+** At base luck (0), the chance is 8.33%, maxing out at 50% at 10 luck.
+* Flames will destroy {{e|Shopkeeper}}s.
+* The size of the flames depends on Isaac's tears size.
+* Converts enemies into their fire-like variations, such as a {{E|Clotty}} into a {{E|Grilled Clotty}}.
+** A Clotty won't be converted if it's in a wet room, such as those found in the Flooded Caves or the one created by an item such as {{I|Flush!}}
+
+== Synergies ==
+* {{I|Butter Bean}} / {{I|Wait What?}} /{{I|The Black Bean}} / {{I|Mega Bean}}: Spawn a fire upon activation.
+* {{i|Chocolate Milk}}: As each flame's damage is unaffected by the charge of each tear, a flame-thrower-like effect with very high damage can be achieved with a decent luck stat and rapidly fired low-charge tears.
+* {{I|Contagion}}: Creates a fire behind Isaac for each enemy that produces a gas cloud on death.
+* {{I|Farting Baby}}: Farts have a chance to spawn a fire.
+* {{i|Ghost Pepper}}: Changes the activation rate to <math>\frac1 { 8 - \left \lfloor \mathit{Luck} \right \rfloor}</math>
+** At base luck (0), the chance is 12.5%, maxing out at 100% at 7 luck. Only one type of fire can be spawned at a time; however, each flame has an equal chance of being launched.
+* {{I|Monstro's Lung}}: When releasing the tear barrage, multiple fires are fired.
+* {{I|Mucormycosis}}: When a mucormyosis spore explodes, Isaac has a chance to spawn a fire
+* {{I|The Poop}}: Creates a fire behind Isaac.
+* {{i|Proptosis}}: Size and damage of fires is increased but does not decrease with range.
+* {{I|Pupula Duplex}}: The fires and their hitbox get a lot bigger.
+* {{i|Urn of Souls}}: Causes the Urn to emit Bird's Eye's red flames in addition to its regular flames.
+* Tear-copying [[Familiar]]s like {{I|Incubus}} / {{T|Lil Clot}} / {{I|Evil Eye}}: Don't shoot fires, but make Isaac shoot fires more often.
+* {{I|Lil Dumpy}}: Every time Lil Dumpy farts, Isaac emits a flame too.
+
+== Interactions ==
+* {{I|Brimstone}}: Will occasionally spawn a fire when firing and with high luck will spawn four fires.
+* {{I|The Ludovico Technique}}: Will occasionally shoot fire from Isaac toward the floating tear.
+* {{I|20/20}}/{{I|Mutant Spider}}/{{I|The Inner Eye}}: Only one fire spawns at a time.
+* {{i|1=Bird's Eye}}: No effect. Will not boost the chances of shooting out a fire like with Ghost Pepper.
+* {{I|Dr. Fetus}} / {{I|Tech X}} / {{I|Technology}}: fires spawn when firing.
+* {{I|Epic Fetus}}: Fires spawn when moving the crosshair and are launched in the direction of the crosshair similarly to {{i|Marked}}.
+* [[Tear Effects#Homing|Homing Tears]]: Fires aren't homing.
+* {{I|IBS}}: '''Not Recommended.''' Farts caused by IBS release flames, which will automatically detonate the toxic cloud and hurt Isaac, unless he has explosion immunity. Similarly, stinky poops can explode while held by Isaac if he happens to be near flames when IBS activates
+* {{I|Ipecac}}: Fires spawn as normal, but can be hit by ipecac tears, making them especially dangerous.
+* {{I|A Lump of Coal}}: No effect on fires.
+* {{I|Mom's Knife}}: Fires spawn occasionally when fired.
+* {{I|Sprinkler}}: No effect. Sprinkler doesn't shoot fires.
+* {{i|Jupiter}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|aYPWQD9Ykgo}}
+
+== Trivia ==
+* [[anti:Bird's Eye|Bird's Eye]] is from the ''Antibirth'' mod.
+* Bird's eye chili is a chili pepper that is a cultivar of the species ''Capsicum annuum'', commonly found in Southeast Asia.
+* Proptosis used to have no effect on the fires.
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Piment Oiseau}}

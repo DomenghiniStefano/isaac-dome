@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 731
+ | quote       = DMG + range up
+ | description = Tears fired from Isaac's right eye have +28% [[Damage]], +6.5 [[Range]], and -0.3 [[Shot Speed]].
+ | quality     = 2
+ | tags        = offensive
+}}
+
+{{cit|p|r|v1.7.5}}
+
+== Effects ==
+* Tears fired from Isaac's right eye have +28% [[Damage]], +6.5 [[Range]], and -0.3 [[Shot Speed]].
+
+== Interactions ==
+* {{I|Brimstone}} / {{I|Technology 2}}: Has a 50% chance to gain the Damage boost from Stye each individual time they deal damage.
+* {{I|Stapler}} / {{C|Cain}} + {{I|Chemical Peel}} / {{I|Blood Clot}}: Each fired tear will have the effects of either Stye or Chemical Peel/Blood Clot.
+* {{I|Dr. Fetus}}: Each bomb fired has a 50% chance of gaining the damage boost, but not its Range/Shot Speed effects. Affected bombs and their explosions are tinted a pale blue.
+** The 28% damage boost is applied to Isaac's base tear damage and does not affect any ''other'' aspect of Dr. Fetus's damage calculation.
+* {{i|Stye}}: Multiple copies do not stack. Only the first Stye obtained grants stat changes.
+
+== In-game Footage ==
+{{#ev:youtube|y802JT_Vo3U||inline}} {{#ev:youtube|Ogls1R34LrI||inline}}
+
+== Trivia ==
+* This item is similar to {{i|Blood Clot}} and {{I|Chemical Peel}}, which instead affect tears fired from Isaac's left eye only.
+* A [[wikipedia:stye|stye]] is a medical condition which involves a painful swollen lump on the eye, usually on the inside of the eyelid.
+
+{{nav|fr=Orgelet}}

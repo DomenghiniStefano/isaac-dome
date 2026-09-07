@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 669
+ | quote       = All stats up
+ | description = Adds a Red [[Heart Container]], fully heals Isaac, and gives +0.2 [[Speed]], +0.5 [[Damage]], +0.5 [[Tears]], +2.5 [[Range]], +0.2 [[Shot Speed]], and +1.0 [[Luck]]. Increases the chance of encountering a {{r|Devil Room}}, {{r|Angel Room}}, and/or {{r|Planetarium}} each by 6.9%.
+ | quality     = 3
+ | tags        = summonable {{dlc|r+|tearsup}} offensive lazarussharedglobal
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Fully heals Isaac.
+* Gives Isaac one Red [[Heart Container]].
+* +0.2 [[Speed]].
+* +0.5 [[Damage]].
+* +0.5 [[Tears]].
+* +2.5 [[Range]].
+* +0.16 [[Shot Speed]].
+* +1.0 [[Luck]].
+* +6.9% {{r|Devil Room}} / {{r|Angel Room}} chance.
+* +6.9% {{r|Planetarium}} chance.
+
+== Interactions ==
+* {{i|Spindown Dice}}: Changes Sausage into {{i|Dad's Note}}, which, if picked up outside of its special {{s|Mausoleum}} / {{s|Gehenna}} {{r|Boss Room}}, simply fades the music out and does nothing. Additionally, Dad's Note cannot be further rerolled, neither via Spindown Dice or by other means of reroll.
+* {{C|Tainted Bethany}}: Grants 12 blood charges.
+* {{c|Tainted Lazarus}} / {{c|Dead Tainted Lazarus}}: Only the increased Devil/Angel Room and Planetarium encounter chance is shared between the two forms, not the stat-ups (referring to the [[Item Tags lazarussharedglobal|<code>lazarussharedglobal</code> item tag]]).
+* Additional copies of this item do not increase Devil Room / Angel Room and Planetarium chance further.
+
+== In-game Footage ==
+{{#ev:youtube|a7mGcgEF_Gg}}
+
+== Trivia ==
+* [[anti:Sausage|Sausage]] is from the ''Antibirth'' mod. In ''Antibirth'', some of the stat numbers it gave were slightly different and instead of increasing the chance for certain rooms to spawn it would increase tear height.
+* Unlike all other items described as "all stats up" such as {{i|Magic Mushroom}} and {{i|SMB Super Fan}}, Sausage legitimately does increase all stats, including [[Luck]], [[Shot Speed]], {{R|Devil Room}} chance, {{R|Angel Room}} chance, and {{R|Planetarium}} chance (which none of the other "all stats up" items increase).
+** The increase in Devil Deal, Angel Room and Planetarium chance, 6.9%, is a reference to how the number 69 can be used as a double entendre.
+* This item's sprite, costume effect, and item pool suggest that this item is also based on the double entendre of "hide the sausage".
+* In the files, the costume for Sausage is called "costume_069x_sosig.png."
+* Its ID number, 669, is also a reference to how the number 69 can be used as a double entendre.
+* The item's sprite also looks like [[wikipedia:Saucisson|saucisson]], a dry-cured thick pork sausage typical of French cuisine, Kilburn's country.
+** According to Kilburn (lead developer for ''Antibirth'' and ''Repentance''), sausages are his favorite food.
+
+{{nav|fr=Saucisson}}

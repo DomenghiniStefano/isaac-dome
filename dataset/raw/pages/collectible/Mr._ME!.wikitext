@@ -1,0 +1,70 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 527
+ | quote       = Caaan do!
+ | description = Summons a controllable ghost that can perform various tasks depending on what it targets.
+ | quality     = 3
+ | tags        = offensive
+ | recharge    = 4
+ | unlocked by = Mr. ME!
+}}
+
+{{cit|ua|a+3}}
+
+== Effects ==
+* Summons a ghost near Isaac that will follow him around, and summons a controllable blue crosshair. After a few seconds, the crosshair disappears, and the ghost will act depending on what the crosshair was targeting:
+** [[Items]] / [[Pickups]] / [[Trinkets]] / {{e|Chest}}s / {{e|Red Chest}}s / {{e|Spiked Chest}}s / {{e|Mega Chest}}s: Brings it to Isaac.
+*** Can steal from {{r|Shop}}s, {{r|Devil Room}}s, and {{r|Black Market}}s, making the item/pickup free. Stealing an item has a 33% chance to fail. If that happens, a buzzer sound will play and the ghost will disappear without doing anything.
+*** {{dlc|nr}} Stealing an item from a Shop will restock it with another item, as if Isaac had {{i|Restock}}. This does not happen in other room types.
+** {{e|Locked Chest}}s / {{e|Eternal Chest}}s / {{e|Bomb Chest}}s: Opens the chest for free.
+** {{E|Pressure Plate}}/{{E|Reward Plate}}: Presses the button. This includes the wave pause button in [[Greed Mode]].
+** [[Monsters|Enemies]]: Attacks the enemy until it dies or can no longer be targeted due to a form change or similar cause. The ghost does 3 damage per tick, for 9 damage per second.
+** [[Rooms#special rooms|Doors]]: Opens the door, even if it is locked. Functions the same as {{I|Dad's Key}} when being used in this way. This includes the door to {{e|Mega Satan}}, exiting {{e|Hush}}'s room, and exiting {{r|Boss Rush}}.
+*** {{dlc+|r}} This does not work on {{A|A Strange Door}}. However, it does work on doors leading to alternate path levels.{{dlc-}}
+*** {{dlc+|r}} This does not work on the flesh door leading to {{e|Mom's Heart}} that appears after defeating {{e|Mom}} in {{s|Mausoleum}} or {{s|Gehenna}}.{{dlc-}}
+*** {{dlc+|r}} This does not work on the hidden closet in {{s|Home}} to unlock the tainted characters.{{dlc-}}
+** {{r|Secret Room}} entrances: Explodes, opening the entrance.
+** Some destructible [[obstacles]], {{e|Shopkeeper}}s, {{M|Slot Machine}}s, {{M|Beggar}}s, and {{dlc|nr}} [[angel]] statues: Explodes and destroys them.
+*** Can't target regular [[rocks]], [[Rocks#Bomb Rocks|bomb rocks]], [[Rocks#Spiked Rocks|spiked rocks]], [[Rocks#Fool's Gold Rocks|fool's gold rocks]], [[blocks]], [[Blocks#Key Blocks|key blocks]], normal and red [[Fire Places|fire places]], any [[Poops|poop]], or {{dlc|r}} [[angel]] statues.
+** If the room has nothing to interact with, the ghost will disappear without doing anything.
+
+== Notes ==
+* If the crosshair is not targeting anything when the crosshair disappears, the ghost will interact with the object closest to the crosshair.
+* Picking up a stolen Devil deal will not prevent {{r|Angel Room}}s from appearing. {{dlc|r}} It will also not despawn the other Devil items for characters like {{c|The Lost}}.
+* The ghost cannot pick up {{e|Sticky Nickel}}s and will disappear upon touching them.
+* The ghost can open chests in {{r|Challenge Room}}s without triggering the room.
+* Unlike chests, stealing an item pedestal from a {{r|Challenge Room}} will trigger the waves to spawn upon picking up the stolen item.
+* In rooms with multiple pedestal items where only one can be taken, if the ghost is carrying a pedestal while Isaac picks up a different pedestal item, the ghost will disappear. This prevents taking both items for free.
+* {{dlc|nr}} If used in an {{R|Angel Room}} with no item pedestals, Mr. ME! will target the angel statue, blowing it up.
+* If used with <code>MouseControl=1</code> enabled, while pressing mouse left button, the blue crosshair will keep going away from the character, not following the mouse.
+** Having {{I|Marked}} make the blue crosshair follow the mouse instead.
+* If the ghost is currently out and moving, putting down Mr. ME! by any means will destroy the ghost and consume the charge.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a wisp that looks like a face in the middle ring. The wisp cannot shoot. If the current room is cleared, the wisps automatically move toward and unlock [[chest]]s (Except for  {{e|Bomb Chest}}s and {{e|Mega Chest|n}}s) and special room doors, destroying themselves in the process. The wisps can open almost any locked doors, including the ones to {{e|Mega Satan}}, the [[Ascent]], but excluding {{s|Corpse}}.}}
+
+== Interactions ==
+* {{i|BFFS!}}: Does not increase the ghost's damage when attacking enemies.
+* {{I|Car Battery}}: May sometimes glitch pedestal items, resulting in Isaac being unable to pick them up without leaving and re-entering the room. Otherwise has no effect.
+* {{i|Flip}}: Ghostly items cannot be targeted.
+* {{dlc+|r}} {{i|Restock}}: Stolen items will not be restocked, even in [[Greed Mode]].{{dlc-}}
+* {{I|Sack Head}}: If Mr. ME! successfully stole a consumable from the shop, there is a chance he will drop a sack instead.
+
+== In-game footage ==
+{{#ev:youtube|0N60R9l0jpo}}
+
+== Gallery ==
+<gallery>
+File:Mr. ME! ghost.png|The ghost summoned by Mr. ME!
+</gallery>
+
+== Trivia ==
+* Mr. ME! is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=857824006 this Steam Workshop item] by Jean-Alphonse, originally known as Mr. Meeseeks.
+* Mr. ME! is a reference to Mr. Meeseeks from [[wikipedia:Rick and Morty|Rick and Morty]], which spawn from a box and stop existing after completing their given task.
+** The pickup quote also refers to a catchphrase used by Mr. Meeseeks.
+
+== Bugs ==
+{{bug|If used while shooting with {{i|Marked}}, the crosshair will continue straight in the first direction Isaac shot at, and cannot be controlled until Marked is deactivated.}}
+{{bug|Mr. ME! is able to damage {{e|Mom}}'s doors even when no body part is sticking out of them, {{e|Mom's Heart}} and {{e|It Lives!}} while they're withdrawn, and {{e|Isaac}} and {{e|Hornfel}} while they're off-screen. He never loses them as a valid target, eventually killing the boss.}}
+	
+{{nav|booster pack|fr=Boîte à Larbin}}

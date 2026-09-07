@@ -1,0 +1,45 @@
+{{disambig msg|the Magneto item|a similar item|Strange Attractor|a related trinket|Broken Magnet}}
+
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 53
+ | quote       = Item snatcher
+ | description = Pulls [[pickup]]s towards Isaac.
+ | quality     = 1
+ | tags        = summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Pickups (e.g. hearts, coins, keys, bombs, etc.) are attracted to Isaac.
+** The attraction enables the item to pass/fly over pits or rocks, but not through Key Blocks.
+** {{e|Red Heart|text=Hearts}} are only attracted if Isaac could pick them up with his existing Red Heart containers.
+** {{E|Lil' Battery|text=Batteries}} act similarly to hearts in that they will only be attracted to Isaac if his active item isn't fully charged.
+** {{E|Chest|r}}s roughly 2 or fewer tiles away from Isaac open automatically. {{E|Spiked Chest|n}}s are opened without damaging Isaac. {{E|Locked Chest}}s and {{e|Bomb Chest}}s are not opened and still require a key/bomb, though Locked chests ''will'' be opened from a distance if Isaac possesses the {{t|Paper Clip}}.
+
+== Notes ==
+* Magneto can attract {{E|Scared Heart}}s, but they still run away from Isaac.
+* {{e|Grab Bag}}s are not attracted by Magneto.
+** {{dlc|r}} They are also not opened by Magneto.
+* {{dlc|r}} If Magneto opens the chests in {{r|Challenge Room}}s, the waves won't start spawning unless you touch the empty chests, nor will the way out be closed.
+
+== Interactions ==
+* {{I|Hypercoagulation}}: Magneto cuts the momentum of the hearts, allowing for easy pickup and, in turn, making Isaac very tough to kill.
+* {{i|Options?}}: If a chest is presented as a choice and opened by Magneto, the other reward won't disappear unless the empty chest is then touched. Chests with items disappear or make the other reward disappear, though.
+** {{dlc|r}}Options? + {{i|Broken Modem}}: If Broken Modem duplicates a chest that was spawned by Options?, using Magneto to immediately open the chest while in its glitched form will create a {{i|TMTRAINER}} item if the chest contained an item.{{dlc-}}
+* {{C|Tainted Magdalene}}/{{C|Tainted Keeper}}: Attracts hearts and coins dropped by enemies, allowing for easier survival and/or coin-gathering, respectively.
+* {{C|Tainted ???}}: Poop pickups are not attracted.
+* {{T|Paper Clip}}: Allows locked chests to be opened from a short distance.
+* {{T|Broken Magnet}}: Does not increase the pull speed of coins.
+
+== In-game Footage ==
+{{#ev:youtube|d0JZjvZA8ws||inline}} {{#ev:youtube|JdpELL8YOV8||inline}}
+
+== Trivia ==
+* The item's name may be a reference to the X-Men villain, ''[[wikipedia:Magneto (comics)|Magneto]].''
+* This item's coloration and placement on Isaac's head may be a nod to ''[[megaman:Magnet Man|Magnet Man]]'', a villain from ''Mega Man 3''.
+* Despite what the description says, Magneto will not attract passive or active items.
+* {{t|Broken Magnet}} appears to be half of this item, and indeed retains part of its function.
+
+{{nav|magnetic|fr=Gros Aimant}}

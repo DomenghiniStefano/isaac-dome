@@ -1,0 +1,48 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 424
+ | quote       = More sacks!
+ | description = Spawns a {{e|Grab Bag|n}} on pickup. {{e|Penny|text=Coin}}s, {{e|Bomb}}s, {{e|Key}}s, cards, runes and batteries have a chance to become {{e|Grab Bag|n}}s.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* {{e|Penny|text=Coin}}s have a 10% chance to be replaced with {{e|Grab Bag}}s. {{e|Bomb}}s, {{e|Key}}s, [[Card]]s, [[Rune]]s, and {{E|Lil' Battery|text=Lil' Batteries}} have a 20% chance.
+** This includes pickups spawned by most sources: room rewards, chests, slot machines, special shopkeepers, [[Greed Mode]] waves, etc.
+** {{dlc|r}} Coins bombed out of a {{M|Donation Machine}} can become sacks.
+** The exception to this are pickups spawned by Isaac himself directly, e.g. with the likes of {{i|IV Bag}} or {{i|Fanny Pack}}, and contents of other sacks.
+* Spawns a sack upon pickup.
+
+== Notes ==
+* The item does not replace hearts, pills and chests.
+* The item can also replace {{e|Troll Bomb}}s and {{e|Mega Troll Bomb}}s that are not used as attacks, i.e. generated as room rewards, chest contents and such.
+* The pickup replacement is applied retroactively when the item is collected: any appropriate pickup already existing on the current level may be replaced by a sack.
+* {{dlc|na+}} Sacks on each floor tend to have the same contents, which can be taken advantage of if cards are involved.
+* {{dlc|r}} Picking up a {{E|Golden Penny|n}} may spawn a sack instead of another Golden Penny.
+* {{p|Cracked Key}} in the [[Ascent]] can be replaced by a sack, thus it is not recommended to take the item if you're going to unlock a tainted character.
+
+== Synergies ==
+* {{t|Equality!|a+nr+}}: Sacks may drop new sacks while Equality! is active, potentially resulting in massive amounts of resources from a single sack.
+
+* {{I|Head of the Keeper}}: Coins spawned from hitting enemies have a chance to become sacks.
+* {{C|Tainted Keeper}}: The coins dropped from killing enemies have a chance to be sacks instead. The sacks do not flash and disappear.
+
+== In-game Footage ==
+{{#ev:youtube|7022hGvY9D8||inline}} {{#ev:youtube|avrdiUsZi3Q||inline}}
+
+== Trivia ==
+* The appearance given by the item is most likely based on one of the trailers for Rebirth,<ref>https://www.youtube.com/watch?v=rS6gMCE_TJQ</ref> where several naked people are wearing sacks with crying eyes, strikingly similar to Sack Head.
+* May also reference the character Sack Boy from the Little Big Planet game series.
+
+== Gallery ==
+<gallery>
+File:AB Item Concept.jpg|Afterbirth item and trinket concepts, including Sack Head.
+</gallery>
+
+{{nav}}
+
+== References ==
+{{reflist}}

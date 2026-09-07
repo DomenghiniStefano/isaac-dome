@@ -1,0 +1,41 @@
+{{infobox boss
+ | dlc = a
+ | name = Turdlings
+ | id          = 237
+ | variant     = 2
+ | environment = <u>Boss</u><br>{{Dlc|nr}}<br>{{floor|Basement}}<br>{{room|Boss Rush}}<br>{{Dlc|r}}<br>{{floor|Basement}}{{floor|Burning Basement}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Double Trouble</u><br>{{floor|Catacombs}}<br>(with the [[Gurglings]])<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>(with [[Dangle]])<br><u>Degraded Boss</u><br>{{floor|Chest}}
+ | base hp     = 50
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Number Two}} (1% chance)
+ | unlocked by = Something wicked this way comes!
+}}
+
+'''Turdlings''' are a [[boss]] added in ''[[The Binding of Isaac: Afterbirth]]'' that can appear in the {{s|Basement}} {{dlc+|r}} and the {{s|Burning Basement}}.{{dlc-}}
+
+They each have 50 HP.
+
+== Behavior ==
+The Turdlings spawn as a pair and wander around the room. Each individual Turdling has one attack in total which is performed independently of the other:
+* Rushes towards Isaac when aligned in any cardinal direction, leaving behind slippery [[Creep#Brown Creep|Brown Creep]] until it has run into a wall.
+** After rushing into a wall, it spawns 4 {{e|Brownie Corn}}s that launch out in the cardinal directions.
+** Occasionally, after rushing into a wall it will fart, knocking back Isaac and nearby Brownie Corns.
+** Its dash can be interrupted if it runs into a Brownie Corn.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Turdlings ingame.png|A Turdling as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Notes ==
+* {{Dlc|r}} The Turdlings are much less common than their counterparts, spawning only 1/4th as often.
+* {{dlc+|r+}} {{i|Flush!}} kills Turdlings instantly and causes them to leave behind 6 {{e|Dip}}s each.{{dlc-}}
+
+== Trivia ==
+* They are a corny poop-themed variant of the {{e|Gurglings}}.
+** {{Dlc|r}} Unlike the {{e|Gurglings}}, their sprite was not updated for Repentence.
+* The Turdlings and their regular variant, the Gurglings, spawn in groups of three during the Boss Rush.
+
+{{nav|blue baby boss unlock|boss|fr=Dégoulis}}
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Afterbirth]]

@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | alias       = Lil Brimstone
+ | name        = Lil{{dlc|na+|'}} Brimstone
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 275
+ | quote       = Evil friend
+ | description = Spawns a [[familiar]] who follows Isaac around and fires a thin {{I|Brimstone}} beam that charges while holding the fire button and shoots when released.
+ | quality     = 2
+ | tags        = summonable baby monstermanual offensive
+ | devil price = {{dlcalt|2|r=1}}
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Spawns a [[familiar]] who follows Isaac around and fires a thin {{I|Brimstone}} beam that deals {{dlcalt|3.5|r=3}} damage per tick and can strike an enemy up to {{dlcalt|9|r=8}} times, for a total of {{dlcalt|31.5|r=24}} damage. It needs to be charged up and will only fire when the fire button is released.
+** {{dlc|nr}} Unlike Brimstone, Lil Brimstone can start charging up a beam while still firing the previous one.
+* {{dlc+|r}} {{transformation contribution|Conjoined}}{{dlc-}}
+
+== Notes ==
+* {{dlc|na}} Lil Brimstone is a [[Special Item]].
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Lil Brimstone having {{dlcalt|3rd|r+=5th priority}}.
+
+== Synergies ==
+* {{t|Baby-Bender}}: Brimstone beams will home in on enemies.
+* {{i|BFFS!}}: The beam deals double damage.
+* {{i|Hemoptysis}}: Enemies hit by the sneeze will gain a curse that increases the damage the Brimstone beam deals to 8 damage per tick. Enemies who die to the Brimstone beam under the curse will damage and spread the curse to nearby enemies.
+** Hemoptysis + {{i|BFFS!}}: The curse causes the beam's damage to be increased to 13 damage per tick.
+* {{Dlc+|r}}{{I|King Baby}} / {{I|Marked}}: While firing, Brimstone will be charged automatically and fired immediately upon full charge, the beam will now target the nearest enemy/crosshair.{{dlc-}}
+
+== Interactions ==
+* {{i|Eye of the Occult}}: When used with a laser attack (such as {{i|Brimstone}}), Lil Brimstone will not automatically fire as it would with {{i|Marked}}.
+
+== In-game Footage ==
+{{#ev:youtube|mq2pMqYL1Ws}}
+
+{{nav|conjoined|fr=P'tit Soufre}}
+[[Category:Special items]]

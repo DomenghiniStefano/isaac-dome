@@ -1,0 +1,72 @@
+{{header characters}}
+{{infobox character
+ | image name   = * {{dlc|nr|Rebirth}}
+ | id           = 6
+ | health       = {{hearts|red=3}}
+ | tears        = -0.1
+ | shot speed   = 1.31
+ | range        = {{dlcalt|18.75|r=5.0}}
+ | speed        = 1.1
+ | pickups      = {{dlc|a+}} {{unlockable}} {{t|Child's Heart}}
+ | collectibles = {{i|Bloody Lust}}
+ | unlocked by  = Samson
+}}
+'''Samson''' is a [[character]] unlocked by beating two floors in a row without taking any damage.
+Samson starts with 3 [[Red Heart container]]s and {{i|Bloody Lust}}.
+
+{{dlc|a+}} Samson will also start with {{t|Child's Heart}} after completing the [[Ultra Hard]] challenge.
+
+== Notes ==
+* Due to Samson's starting item, {{i|Bloody Lust}}, he has a playstyle that is similar to {{C|Eve}}. Therefore, health sacrifices such as {{M|Devil Beggar}}s, {{R|Sacrifice Room}}s, and {{M|Blood Donation Machine}}s are recommended.
+** As a result, anything that lowers health is not recommended, as that will make self-damage less effective. {{R|Angel Room}}s are more valuable than {{R|Devil Room}}s, if the player comes across any.
+* {{dlc|nr}} The first three times Samson is hit, his damage is increased by 0.5. The next three times Samson is hit, his damage is increased by 33%.
+* {{dlc|r}} Damage is increased by flat amounts: +0.5 for the first hit and an additional +0.2 for each hit, until +1.5 at the sixth. This means that the maximum total is +6.0.
+* Samson's starting trinket, {{t|Child's Heart}}, is one of the more optional unlocks — the trinket itself is not too powerful, not to mention it requiring the completion of the [[Ultra Hard]] challenge.
+* When Samson dies in [[co-op]], his ghost baby maintains his level of rage from Bloody Lust, giving it a red tint. This is purely visual.
+* Dying as Samson and then respawning as another character (with {{i|Lazarus' Rags}}, {{i|Ankh}}, etc.) will make them inherit Samson's {{i|Bloody Lust}} item.
+
+== Item Interactions ==
+* {{i|Birthright}}: {{I|Bloody Lust}} can gain 4 more damage boosts at the same +0.2 intervals, for a new maximum total of +14.0.
+
+=== Favorable items ===
+* Any items that increase health so Samson can take more damage before dying.
+* Any items that increase Samson's tears stat, such as {{i|Squeezy}}, {{i|Odd Mushroom (Thin)}}, etc.
+* Any items that [[Familiar|generate Blue Flies]], like {{i|Rotten Baby}} or {{i|Guppy's Head}}, do so based on Samson's base damage and are good for early game room clearing when Samson's tears are still low.
+* Items relying on contact damage, like {{i|The Virus}} or {{i|E. Coli}}, can be beneficial in that damage is desirable with {{i|Bloody Lust}}.
+* Health regeneration items like {{i|Yum Heart}}, {{i|Pyromaniac}}, and {{i|Placenta}} allow health regeneration after taking damage, and thus allow for more damage, both stat-wise and health-wise.
+* {{I|Old Bandage}} increases Samson's health while also providing a regeneration of sorts, allowing him to take much more damage.
+* {{i|Cancer}} and {{i|The Wafer}} minimize damage taken from Sacrifice Rooms and can be incredibly useful to build a lot of damage and pickups, especially in combination with an excess of hearts. The Wafer in particular is incredibly helpful in [[Chapter 4]] and beyond, where all taken damage increases to one full heart per instance.
+* {{i|Dead Bird}}, {{i|Best Bud}}, {{i|Smart Fly}}, etc: All of these items will add to Samson's damage increase from getting hurt, although, unlike Bloody Lust, the bonus of these items only last for the duration of a room.
+* {{i|Fanny Pack}}'s chance of dropping a heart upon hit can cancel out damage to Samson while also buffing him.
+* {{i|Dull Razor}} can safely provide Samson's damage boost without needing to take damage.
+* {{i|Gimpy}} increases benefits from taking damage and feasibly adds more survivability from random soul hearts and half-heart drops.
+* {{i|Immaculate Conception}} and {{i|Cambion Conception}} will produce familiars as Samson heals or receives damage, respectively.
+* {{i|IV Bag}}, {{i|Blood Rights}}, {{i|Razor Blade}}, {{i|Sharp Plug}}, {{i|Kamikaze!}}: Activating their effects also gives Samson a boost in damage since they deal self-damage.
+* {{i|Blood Oath}} is extremely useful on Samson, as its damage up effect stacks with {{i|Bloody Lust}}, granting a significant amount of damage up upon the start of a new floor.
+
+=== Unfavorable items ===
+* Anything which lowers health, such as {{i|Dead Cat}}, can make purposeful self-damage less reliable as a damage booster. For this reason, taking items from the {{R|Devil Room}} or the {{R|Black Market}}, which cost health for every item thus taken, is not recommended for Samson.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Samson's Chains, Fighting Baby, Blood Rights, Bloody Lust, Samson's Lock, Blood Penny, Lusty Blood, Stem Cell, Blind Rage, Rage Baby, Bloody Crown, Bloody Gust, Empty Heart, The Savage, Revenge Baby }}
+
+== Unlockable Starting Items ==
+* {{achievement unlock|Samson Feels Healthy!}} - Start with {{t|Child's Heart}}
+
+== Gallery ==
+<gallery>
+File:Transition Samson.png|Samson's transition screen portrait.
+File:Start_Samson.png|The spawn floor when playing Samson.
+file:Samson_Menu_Icon_(Locked).png|Samson's locked character icon.
+</gallery>
+
+== Trivia ==
+* In the Bible, Samson was a supernaturally strong warrior who derived his power from his Nazarite vow, entitling immense strength to Samson if he did not cut his hair.
+* Samson first appeared in the ''Binding of Isaac: Wrath of the Lamb'' expansion, where he was unlocked by skipping two {{R|Treasure Room}} items and killing {{E|Mom}} in one run.
+** In that version, he had only 1 heart container and a soul heart for his starting health, and his Bloody Lust item acted as a weaker version of Afterbirth's {{I|Lusty Blood}} item.
+* Samson's locked icon shows him bound in chains.
+** He shares this trait with {{C|Magdalene}}, {{C|Cain}}, {{C|Eve}}, {{C|Lazarus}}, {{C|Bethany|r}}, and {{C|Jacob and Esau|r}}.
+* Samson's Bloody Lust item is mistakenly called "Blood Lust" in the character selection screen.
+** This is similar to Cain's {{i|Lucky Foot}} item, which is also missing its "y" and is called "Luck Foot" in his character description.
+
+{{nav|character|samson unlock}}

@@ -1,0 +1,230 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 619
+ | quote       = ???
+ | description = Grants a [[character]]-specific effect that enhances their special abilities.
+ | quality     = 3
+ | tags        = summonable offensive nocantrip
+ | unlocked by = Birthright
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Grants a passive ability that varies from character to character. The effect typically enhances/magnifies the character's special traits or helps mitigate some of their downsides.
+{| class="wikitable striped sortable mw-collapsible" data-description="Birthright Effects" style="min-width:350px; margin-right:10px;"
+ ! Character
+ ! class="unsortable" | Pickup Quote
+ ! class="unsortable" | Effect
+ |- id="Isaac"
+ | data-sort-value="Isaac" | {{c|Isaac}}
+ | ''More options''
+ | All new item pedestals cycle between two options. Previously-seen items are unaffected.
+ |- id="Tainted Isaac"
+ | data-sort-value="Tainted Isaac" | {{c|Tainted Isaac}}
+ | ''Inventory up''
+ | Allows up to 12 passive items to be carried at a time. Does not consume a slot itself.
+ |- id="Magdalene"
+ | data-sort-value="Magdalene" | {{c|Magdalene}}
+ | ''Limit breaker + HP up''
+ | Adds 1 full [[Red Heart container]]. Increases the maximum [[Health|heart]] limit to 18.
+ |- id="Tainted Magdalene"
+ | data-sort-value="Tainted Magdalene" | {{c|Tainted Magdalene}}
+ | ''HP up!''
+ | Adds 1 full red Heart Container. Increases the number of non-draining hearts to 3.
+ |- id="Cain"
+ | data-sort-value="Cain" | {{c|Cain}}
+ | ''Better arcades + luck up''
+ | +1 [[Luck]]. Every floor, except for {{s|???}}, {{s|Chest}}, {{s|Dark Room}}, {{s|The Void}}, and {{s|Home}}, has a very high chance to contain an upgraded {{r|Arcade}} that generally contains more [[Machine]]s. This includes odd-numbered floors, {{s|Cathedral}}, and {{s|Sheol}}. Arcades will appear even if Cain is not holding at least 5 Coins. Arcades will still not spawn in [[Greed Mode]].
+ |- id="Tainted Cain"
+ | data-sort-value="Tainted Cain" | {{c|Tainted Cain}}
+ | ''Salvage''
+ | The amount of pickups dropped from collecting an item is doubled.
+ |- id="Judas"
+ | data-sort-value="Judas" | {{c|Judas}}
+ | rowspan="2" | ''Belial incarnate''
+ | rowspan="2" | {{i|The Book of Belial}} becomes a passive item that can be held beneath other active items, similar to {{i|Book of Virtues}}. May stack with Book of Virtues. If Judas is not currently holding The Book of Belial, he receives it. The [[damage]] boost received from The Book of Belial scales with the amount of charges the active item above it has; may not work with one-time-use items, items with unlimited use, timed recharges, or items that do not follow normal room charge rules ({{i|Isaac's Tears}}, etc). Has special interactions with certain items — see [[The Book of Belial#Synergies|The Book of Belial]] for more information.
+ |- id="Black Judas"
+ | data-sort-value="Judas" | {{c|Black Judas}}
+ |- id="Tainted Judas"
+ | data-sort-value="Tainted Judas" | {{c|Tainted Judas}}
+ | ''Extended darkness''
+ | Increases the range in which {{i|Dark Arts}} hits enemies and tears.
+ |- id="???"
+ | data-sort-value="Blue Baby" | {{c|???}}
+ | ''Stronger spirit''
+ | Doubles the amount of {{e|Soul Heart}}s gained from HP up items.
+ |- id="Tainted ???"
+ | data-sort-value="Tainted Blue Baby" | {{c|Tainted ???}}
+ | ''Poop up''
+ | Increases the maximum number of poop pickups that can be carried to 29.
+ |- id="Eve"
+ | data-sort-value="Eve" | {{c|Eve}}
+ | ''Forever cursed''
+ | {{i|Whore of Babylon}} is active regardless of health and {{i|Dead Bird}} is active without taking damage.
+ |- id="Tainted Eve"
+ | data-sort-value="Tainted Eve" | {{c|Tainted Eve}}
+ | ''Coagulate''
+ | Red Heart Clots now spawn temporary {{E|Half Red Heart}}s on death that last for two seconds before disappearing. Clots spawned from other types of hearts will not drop hearts.
+ |- id="Samson"
+ | data-sort-value="Samson" | {{c|Samson}}
+ | ''Rage up''
+ | {{i|Bloody Lust}} can grant 4 more Damage boosts at +0.2 intervals, for a new maximum total of +14.0.
+ |- id="Tainted Samson"
+ | data-sort-value="Tainted Samson" | {{c|Tainted Samson}}
+ | ''Unstoppable force''
+ | The berserk timer gains 3 seconds instead of 1 when Tainted Samson kills an enemy.
+ |- id="Azazel"
+ | data-sort-value="Azazel" | {{c|Azazel}}
+ | ''Wide breath''
+ | Azazel's Brimstone beam becomes much wider like {{i|Mega Blast}}, with 2× larger collision area. No effect on damage.
+ |- id="Tainted Azazel"
+ | data-sort-value="Tainted Azazel" | {{c|Tainted Azazel}}
+ | ''Stronger sneeze''
+ | Doubles the size of Tainted Azazel's {{i|Hemoptysis}} sneeze attack.
+ |- id="Lazarus"
+ | data-sort-value="Lazarus" | {{c|Lazarus}}
+ | ''Come back stronger''
+ | No direct effect. The item is triggered if Lazarus dies and becomes Lazarus Risen.
+ |- id="Lazarus Risen"
+ | data-sort-value="Lazarus" | {{c|Lazarus Risen}}
+ | ''Temporary DMG up''
+ | Grants a +7.2 Damage bonus that fades by 0.12 per second. Until the effect completely fades, killing an enemy restores 0.07 damage to the bonus.
+ |- id="Tainted Lazarus"
+ | data-sort-value="Tainted Lazarus" | {{c|Tainted Lazarus}}
+ | rowspan="2" | ''Superposition''
+ | rowspan="2" | The non-active form of Tainted Lazarus and their familiars will appear in ghostly form, being completely immune to damage and dealing 25% damage (including tear effects such as {{i|Holy Light}}). Holding down the "drop" key allows the active form to move independently of the other form, similar to {{c|Jacob and Esau}}. Using {{i|Flip}} will cause the two characters to switch states while maintaining positions. Both characters receive the Birthright effect when one character collects it. Likewise both characters will benefit from passive global effects such as {{i|Restock}} or {{t|Petrified Poop}} regardless of who is the active form.
+ |- id="Dead Tainted Lazarus"
+ | data-sort-value="Lazarus" | {{c|Dead Tainted Lazarus}}
+ |- id="Eden"
+ | data-sort-value="Eden" | {{c|Eden}}
+ | ''???''
+ | Creates 3 random items from random item pools. Only one can be taken. Ignores item weight and can spawn items that have already been taken during the run. Can also spawn multiples of the same item, if they exist in multiple item pools.
+ |- id="Tainted Eden"
+ | data-sort-value="Tainted Eden" | {{c|Tainted Eden}}
+ | ''Eternal''
+ | Items gained before Birthright will not be re-rolled, neither by taking damage, nor by items such as {{i|D4}} and {{i|Missing No.}}. Items gained afterwards will still be affected.
+ |- id="The Lost"
+ | data-sort-value="Lost" | {{c|The Lost}}
+ | ''Better destiny''
+ | Prevents items with the [[Item Tags nolostbr|<code>nolostbr</code> item tag]] from appearing. This automatically re-rolls most items that aren't beneficial to The Lost, namely ones that only give [[health]], [[flight]], and/or [[Tear Effects#Spectral|spectral tears]] or [[:Category:Damage-triggered items|activate upon taking damage]].
+ |- id="Tainted Lost"
+ | data-sort-value="Tainted Lost" | {{c|Tainted Lost}}
+ | ''Extra life''
+ | Grants an [[extra life]] that revives Tainted Lost in the same room and deals 200 damage to nearby enemies. It can hit the same enemy up to 4 times.
+ |- id="Lilith"
+ | data-sort-value="Lilith" | {{c|Lilith}}
+ | ''Offensive Formation''
+ | Most familiars that normally follow Lilith, including Lilith's innate {{i|Incubus}}, will always be positioned in front of Lilith, creating a stack, facing whatever direction she was shooting. Non-attacking familiars ({{i|The Relic}}, {{i|Farting Baby}}, etc.) will follow Lilith's most recently acquired attacking familiar instead; if the most recent familiar is throwable like {{i|Holy Water}}, familiars following it will also be launched with it. If Lilith has {{i|King Baby}}, it will always be positioned directly in front of Lilith with all other affected familiars forming a semi-circle around it, and will behave normally otherwise. {{i|Dry Baby}} is considered an "attacking familiar" and will be within the stack. {{i|Lil Portal}} and {{i|Jaw Bone}} are exempt and behave normally.
+ |- id="Tainted Lilith"
+ | data-sort-value="Tainted Lilith" | {{c|Tainted Lilith}}
+ | ''Conjoined''
+ | Familiars that normally follow Tainted Lilith will instead act like and stack on top of her {{i|Gello}} familiar, disappearing inside of her while she's not firing and swinging out when she attacks. The melee attack gains a flat +3 damage bonus per familiar (regardless of damage multipliers) and if those familiars can shoot, they do so along with the Gello familiar. The Gello familiar gains the properties of {{i|King Baby}}, causing attached familiars to automatically aim and shoot at enemies. Familiars like {{i|Jaw Bone}} or {{i|Holy Water}} still function, but they are bound to the Gello familiar rather than their normal means of movement.
+ |- id="Keeper"
+ | data-sort-value="Keeper" | {{c|Keeper}}
+ | ''Coin up''
+ | Adds one [[Coin Heart]] and raises Keeper's maximum Coin Heart limit to 4.
+ |- id="Tainted Keeper"
+ | data-sort-value="Tainted Keeper" | {{c|Tainted Keeper}}
+ | ''Money money money''
+ | Strongly attracts the [[coin]]s dropped by killed enemies from a short distance. No effect on other coins.
+ |- id="Apollyon"
+ | data-sort-value="Apollyon" | {{c|Apollyon}}
+ |''Regurgitate''
+ | Using {{i|Void}} has a 10% chance to spawn one previously destroyed passive item (while keeping the bonus stats). Each absorbed passive item has an equal chance to be spawned. Spawned items can be spawned again even if they are not reabsorbed. Absorbing duplicates of the same item will make it more likely to be spawned, as each duplicate counts as a separate item and thus has its own chance to be spawned. Birthright has no effect if Void is not held.
+ |- id="Tainted Apollyon"
+ | data-sort-value="Tainted Apollyon" | {{c|Tainted Apollyon}}
+ | ''Torment''
+ | Holding down the fire button causes {{i|Abyss}} locusts to continuously damage enemies instead of returning.
+ |- id="The Forgotten"
+ | data-sort-value="Forgotten" | {{c|The Forgotten}}
+ | ''Unchained''
+ | {{c|The Soul}} is unchained and free to move. It can move to different rooms, leaving The Forgotten behind, and switching back teleports The Soul back to The Forgotten.
+ |- id="Tainted Forgotten"
+ | data-sort-value="Tainted Forgotten" | {{c|Tainted Forgotten}}
+ | ''Recall''
+ | {{c|Tainted Soul}} is given {{i|Recall}}, an unlimited-use active item, in their pocket active slot. When used, Recall pulls Tainted Forgotten into Tainted Soul's hands automatically from a distance, dealing damage to enemies as it travels.
+ |- id="Bethany"
+ | data-sort-value="Bethany" | {{c|Bethany}}
+ | ''Conserve your faith''
+ | Activating an item using Soul Charges is free 50% of the time.
+ |- id="Tainted Bethany"
+ | data-sort-value="Tainted Bethany" | {{c|Tainted Bethany}}
+ |''Artifact''
+ | Spawns four {{I|Lemegeton}} wisps of items with a [[Item Quality|quality]] of 3 or higher. These wisps are much larger and have much higher HP than normal wisps.
+ |- id="Jacob and Esau"
+ | data-sort-value="Jacob" | {{c|Jacob and Esau}}
+ | ''What's yours is mine''
+ | The character who picks up Birthright gains copies of the three most recent passive items from the other.
+ |- id="Tainted Jacob"
+ | data-sort-value="Tainted Jacob" | {{c|Tainted Jacob}}
+ |''It's not yours''
+ | {{e|Dark Esau}} splits into two. Both Esaus will always charge at the same time, and one will not charge if the other is not in position. Using {{i|Anima Sola}} chains both Dark Esaus at once and forces them together into one spot. Subsequent uses release each Dark Esau one at a time. Anima Sola's recharge time is reduced to 10 seconds, and chain duration is increased to 6.67 seconds.
+ |}
+
+== Notes ==
+* Birthright effects are stackable when playing as {{c|Tainted Lost}} and {{c|Tainted Bethany}}.
+* Each additional copy of Birthright for {{c|Magdalene}}, {{c|Tainted Magdalene}}, and {{c|Keeper}} will add another heart container; however, their respective health caps will not be raised any further. {{c|Cain}} will also gain +1 Luck for each copy of Birthright.
+* When {{c|Magdalene}} or {{C|Keeper}} enter the area in which {{I|Knife Piece 2}} can be acquired, all hearts above the usual cap are removed and are not restored upon leaving the area. Additional hearts can be regained afterwards.
+* While playing as {{c|Tainted Cain}} in Greed Mode, purchasing an on-sale item over and over while having Birthright results in almost infinite consumables.
+* If {{c|The Soul}} enters a new floor with Birthright, swapping back to {{c|The Forgotten}} will cause him to appear at The Soul's current location.
+
+== Interactions ==
+* {{i|Sacrificial Altar}} + {{c|Tainted Eve}}: Clots won't drop half red hearts after getting sacrificed.
+
+The following familiars are unaffected by {{c|Lilith}}'s and {{c|Tainted Lilith}}'s Birthrights:
+{{column list | width = 15em | content =
+* All orbitals
+* Damage-triggered familiars ({{i|Dead Bird}}, etc.)
+* Bouncing familiars ({{i|BBF}}, etc.)
+* Wandering familiars ({{i|Spider Mod}}, etc.)
+* Mimicking familiars ({{i|Papa Fly}}, etc.)
+* {{i|Lil Delirium}} when it's not in the form of an applicable familiar.
+* All familiars spawned by active items as {{i|Monster Manual}}
+* {{i|Abel}}
+* {{i|Angry Fly}}
+* {{i|Blood Puppy}}
+* {{i|Bumbo}}
+* {{i|Bum Friend}}
+* {{i|Daddy Longlegs}}
+* {{i|Dark Bum}}
+* {{i|Finger!}}
+* {{t|Found Soul}}
+* {{i|Fruity Plum}}
+* {{i|Gemini}}
+* {{i|Guppy's Hairball}}
+* {{i|Isaac's Heart}}
+* {{i|Key Bum}}
+* {{i|Lil Gurdy}}
+* {{i|Lil Haunt}}
+* {{i|Lost Soul}}
+* {{i|Pointy Rib}}
+* {{i|Quints}}
+* {{i|Robo-Baby 2.0}}
+* {{i|Samson's Chains}}
+* {{i|Star of Bethlehem}}
+* {{i|Twisted Pair}}
+* {{i|Worm Friend}}
+}}
+
+== In-game footage ==
+{{#ev:youtube|8ldv12Iq8A8}}
+
+== Trivia ==
+* [[anti:Birthright|Birthright]] is from the ''Antibirth'' mod.
+** Before ''Antibirth'' the item originated from the ''Binding of Isaac: Community Remix'' mod, where it was known as 'Soul Script'.
+* This item's name, description, and unlock requirement are a reference to the biblical story of Jacob and Esau, in which Esau trades his birthrights to Jacob in exchange for [[Red Stew|stew]].
+** When {{c|Tainted Jacob}} picks up Birthright, {{e|Dark Esau}}, a representation of his own rage, seemingly becomes only angrier and doubles in power.
+*** Birthright's effect doubling Dark Esau's power, instead of Tainted Jacob's, and the quote "it's not yours", further reflects the fact that it was originally his.
+* Prior to patch [[V1.7.6]], Tainted Jacob's Birthright pickup quote was "''There is no escape''".
+* {{c|Tainted Keeper}}'s pickup quote could be based off the song ''Money, Money, Money'', by the band ABBA.
+* {{c|Eden}}'s Birthright could be a reference to how Eden functions in the card game ''The Binding of Isaac: Four Souls,'' as Eden starts the game by drawing 3 treasure cards and selecting one to keep permanently while the other two are discarded.
+
+== Bugs ==
+{{bug|dlc=nr+|Playing as {{c|Keeper}}, having more than 3 HP, and entering the area in which {{I|Knife Piece 2}} can be acquired will remove the fourth HP (can be increased back to 4 HP after)}}
+{{Bug|Playing as {{c|Magdalene}}, having more than 12 hearts, and entering the area in which {{I|Knife Piece 2}} can be acquired will completely remove all hearts above 12.}}
+{{Bug|Playing as {{c|Tainted Lazarus}}, Picking up Birthright and using {{I|Flip}} at the same time as the other form appears will cause the other form to be in a bugged state where he acts significantly faster than intended. Restarting the game will undo the effects.}}
+
+{{nav|jacob and esau unlock|blue baby boss unlock|fr=Droit d'Aînesse}}
+[[Category:Revival items]]
+[[Category:Damage-triggered items]]

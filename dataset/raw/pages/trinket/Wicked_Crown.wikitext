@@ -1,0 +1,29 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 161
+ | quote       = Walk the path of the wicked
+ | description = A {{R|Treasure Room}} and {{R|Shop}} appear in {{s|Sheol}}.
+ | tags        = lazarussharedglobal nogreed
+ | unlocked by = Wicked Crown
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Causes a {{R|Treasure Room}} and {{R|Shop}} to generate in {{s|Sheol}}.
+
+== Notes ==
+* Cannot appear in [[Greed Mode]].
+* The spawned Treasure Room will have one of 22 unique layouts for the floor.
+* {{i|Card Reading}} will spawn a second portal if Isaac has the trinket upon entering Sheol.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Treasure rooms in Sheol have an item choice, as if Isaac had {{i|More Options}} and Shops will be upgraded. Having both reveals the locations of the treasure room and the shop on the map.
+
+== Trivia ==
+* This trinket has an angelic counterpart in {{T|Holy Crown}}.
+
+== In-game footage ==
+{{#ev:youtube|3dxztVSY1sg}}
+
+{{nav|tainted azazel unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Couronne Impure}}

@@ -1,0 +1,64 @@
+{{infobox boss
+ | dlc         = a
+ | id          = 404
+ | name        = Little Horn
+ | environment = <u>Boss</u><br>{{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Double Trouble</u><br>{{floor|Depths}}{{floor|Necropolis}}<br>(with [[Rag Man]])<br>{{floor|Dank Depths}}<br>(with [[Loki]])<br>{{floor|Womb}}{{floor|Utero}}<br>(with [[The Fallen]])<br>
+{{floor|Scarred Womb}}<br>(with [[Big Horn]])<br><u>Degraded Boss</u><br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 200
+ | pool        = {{ip|Boss}} <br> {{i|Little Horn|r+}} (1% chance)
+ | unlocked by = Something wicked this way comes!
+}}
+{{disambig msg|the boss|the item|Little Horn (Item)}}
+
+'''Little Horn''' is a [[boss]] added in ''[[The Binding of Isaac: Afterbirth]]'' that can appear in all environments of [[Chapter 1]] ({{s|Basement}}, {{s|Cellar}}, {{s|Burning Basement}}).
+
+== Behavior ==
+Little Horn constantly tries to evade Isaac by moving away from him while performing the following attacks:
+* Creates and jumps into a {{e|Pitfall}} and pops up elsewhere.
+* Creates 3 to 5 {{e|Teleport Pitfall|text=Teleport Pitfalls}} that move outwards.
+* Creates a regular Pitfall under himself that lasts for several seconds.
+* Throws a {{e|Troll Bomb}} or a {{e|Mega Troll Bomb}} into a created Pitfall underneath himself. The bomb then pops up near Isaac's position.
+* Jumps into a Pitfall and appears elsewhere while leaving a Troll Bomb in his place; repeats this process 3-5 times.
+* Spawns a {{e|Dark Ball}}.
+{{dlc|r}} Little Horn takes reduced damage (25 instead of 100) from his own bombs. Bombs from other sources still do full damage.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18|dlc=a+}}: Does not attack with Pits, Troll Bombs, or Mega Troll Bombs, but fires Dark Balls more frequently. This version can still do the chain teleport attack, but doesn't spawn any Troll Bombs.
+: {{bc|6|dlc=a+}}: Spits out an orange Troll Bomb instead of a Dark Ball. This Troll Bomb deals contact damage and leaves a patch of fire similar to {{I|Hot Bombs}} that cannot damage him. He also throws these special Troll Bombs into burning Pitfalls instead of normal ones, and spawns them during the chain teleport attack. He loses 1 HP whenever he spits out a bomb. Does not attack with Mega Troll Bombs.
+
+== Gallery ==
+<gallery>
+File:Boss Little Horn black ingame.png|Black Champion Little Horn.
+File:Dark_ball_litte_horn_black.png|Unique Dark Ball design spawned by Black Champion Little Horn.
+File:Boss Little Horn orange ingame.png|Orange Champion Little Horn.
+File:Boss_Little_Horn_Orange_Pitfall.png|Unique Pitfall design used by Orange Champion Little Horn.
+File:Hot_troll_bomb_little_horn_orange.png|Unique Hot Troll Bomb design spawned by Orange Champion Little Horn.
+File:Boss Delirium Little Horn ingame.png|Little Horn as one of {{e|Delirium}}'s forms.
+File:Collectible Little Horn concept.png|Little Horn Concept Art.
+</gallery>
+
+== Notes ==
+* The {{i|Gnawed Leaf}} can make the battle easier, as Little Horn will damage himself with his bombs over time. Isaac can still fall into the pits and be transported around the screen, and will ''appear'' to suffer damage, but no actual loss of HP will occur if he is in statue form when he falls in.
+* The Dark Balls that Little Horn spawns can appear in [[Closets]] in the {{s|Caves}} and the {{s|Flooded Caves}}. They also appear in a room with Little Horn in the {{s|Chest}}.
+* If Isaac has the {{t|Safety Scissors|n}}, he can acquire maximum bombs from the fight at fairly little risk since the bombs Little Horn spawns will turn into bomb pickups and all his hole attacks are easy to dodge.
+* Little Horn's Dark Ball is considered a monster. Killing it will activate items such as {{i|Charm of the Vampire}}, {{i|Infestation 2}}, and {{i|Jar of Flies|n}}.
+* Occasionally, a Pitfall that Little Horn summons will not vanish after defeating the boss. The Pitfall is still active and can damage Isaac, even if it does not actively chase the player.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Fast Bombs }}
+
+== Trivia ==
+* Little Horn is referred to as male by Edmund.
+* Little Horn is the name of a boss from ''[[Wikipedia:Super Meat Boy|Super Meat Boy]]'', one of Edmund McMillen's previous games.
+* Little Horn was created due to Edmund's [http://bindingofisaac.com/post/126958800209/combo-breakerafterbirth-update-20 love] for {{e|Loki}}'s design. (Despite him saying Little Horn is a Caves Boss, he is currently a Chapter 1 boss.)
+* The name "Little Horn" comes from the [[Wikipedia:The Book of Daniel|Book of Daniel]], where it refers to the Antichrist.
+* Upon defeat, Little Horn's eyes glow red, then he retreats inside his hole. He does not explode into blood.
+* Little Horn appears to be a baby version of {{e|Big Horn}}.
+** {{dlc|r}} Big Horn holds up Little Horn as part of one of his attacks.
+
+{{nav|boss|blue baby boss unlock|fr=P'tite Corne (Boss)}}
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Cellar bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Afterbirth]]

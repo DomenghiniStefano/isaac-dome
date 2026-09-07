@@ -1,0 +1,41 @@
+{{infobox boss
+ | dlc         = r
+ | name        = Ultra Famine
+ | portrait    = no
+ | id          = 951
+ | variant     = 10
+ | environment = <u>Boss</u><br>{{floor|Home}}
+ | base hp     = 2000
+ | pool        = ''None''
+}}
+
+'''Ultra Famine''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' and is the first of the [[Harbingers (Bosses)#Ultra Harbingers|Ultra Harbingers]] fought before {{e|The Beast}} in {{s|Home}}.
+
+== Behavior ==
+=== Phase 1 ===
+Ultra Famine has two attacks which it alternates between:
+* Matches Isaac's vertical position and charges off screen. Appears from a random side of a screen and fires a spread of five lines of five projectiles towards Isaac that lose speed before disappearing again. This attack is repeated five times.
+* Moves across the screen from one side of the screen to the other, oscillating between the top and bottom of the screen. Ultra Famine spawns a swarm of {{e|Ultra Famine Fly|text=Ultra Famine Flies}} behind himself as he moves. Each fly charges towards Isaac when he is close and continue to move in the same direction until disappearing off screen.
+
+=== Phase 2 ===
+After dropping to 1/3rd of his max health, Ultra Famine loses his horse and body becoming only a head. In this phase, Ultra Famine only has one attack which he performs continuously from the center of the screen:
+* Continuously fires projectiles in a counter-clockwise pattern, while simultaneously firing 6 bursts of projectiles outwards with alternating orientations.
+
+== Gallery ==
+<gallery>
+File:Boss Ultra Famine second phase attack ingame.png|Ultra Famine in his second phase.
+File:Ultra Famine death portrait.png|Ultra Famine death portrait.
+</gallery>
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage Scaling|here]].
+
+== Trivia ==
+* Ultra Famine, like the other Ultra Harbingers is an upgraded version of his regular counterpart, {{e|Famine}}.
+** Unlike his lesser counterpart, Ultra Famine has no red pupils.
+** Ultra Famine is male.
+
+{{Nav|boss}}
+
+[[Category:Home bosses]]
+[[Category:Debut bosses in Repentance]]
