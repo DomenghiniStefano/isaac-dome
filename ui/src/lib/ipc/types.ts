@@ -446,3 +446,37 @@ export type WikiInfo =
       gameNewerThanSnapshot: boolean | null
     }
   | { kind: 'missing'; reason: WikiMissingReason }
+
+// --- The plan queue ---
+
+// A queue row is an **achievement**, not a target: wanting Tainted Lost and wanting the
+// achievement that unlocks it are the same wish seen from two sides.
+export interface QueueRow {
+  // The same node the Unlock screen draws, so the two can never disagree.
+  node: UnlockNode
+  // You asked for this one, for itself.
+  wanted: boolean
+  // The wanted achievements whose chain passes through this row. Both `wanted` and a
+  // non-empty `origins` can be true at once: you asked for it *and* it serves another wish.
+  origins: number[]
+  // Prerequisites this row still needs that are not in the queue.
+  stepsNotQueued: number
+}
+
+// Every way a row can be absent, said out loud. `unreadable` and an empty queue are
+// different things, and so are `completed` and a row that just vanished.
+export type QueueDiagnostic =
+  | { kind: 'storeUnavailable'; reason: string }
+  | { kind: 'unreadable' }
+  | { kind: 'completed'; count: number; wanted: number[] }
+  | { kind: 'unresolved'; achievement: number }
+  | { kind: 'goalsPending'; count: number }
+  | { kind: 'noCatalog' }
+
+export interface QueueView {
+  rows: QueueRow[]
+  diagnostics: QueueDiagnostic[]
+  // `false` when the database won't open: the queue can't be seen or changed, and the UI
+  // says so instead of showing an empty list.
+  storeAvailable: boolean
+}

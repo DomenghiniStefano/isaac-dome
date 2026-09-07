@@ -10,7 +10,7 @@ contract, memory, test data) live in `docs/MIGLIORIE.md`, with closing criteria 
 **Wiki dataset merged** into `develop` on 2026-09-06 (`feature/wiki-dataset`, 29 commits,
 suite green on the merge result, review of the whole branch closed). The local branch was
 deleted; on origin its last published version remains.
-**Last update:** 2026-09-07
+**Last update:** 2026-09-08
 
 ---
 
@@ -23,7 +23,10 @@ deleted; on origin its last published version remains.
 - [x] **M2 — Unlock graph** (2026-09-07). The Unlock *section* is frontend work and
       waits for the design system; the graph behind it is done — report in
       `docs/superpowers/plans/2026-09-07-unlock-graph-report.md`.
-- [ ] **M3 — Derived plan**
+- [ ] **M3 — Derived plan** ← in progress. The **plan queue** is done (2026-09-08): an
+      ordered series of achievements whose order is yours and can never contradict the
+      graph. Report in `docs/superpowers/plans/2026-09-07-plan-queue-report.md`. What
+      remains of M3 is the screen, which waits for the design system.
 - [ ] **M4 — Log watcher and run archive**
 - [ ] **M5 — Public release**
 
@@ -491,6 +494,32 @@ building the Collection screen, not before designing it.
 ---
 
 ## Session log
+
+### 2026-09-08 — the plan queue
+
+New pure crate `crates/plan` (26 tests), `store` migration 2, the `ipc` view-model, five
+Tauri commands and the TypeScript mirror. Spec
+`docs/superpowers/specs/2026-09-07-plan-queue-design.md`, report
+`docs/superpowers/plans/2026-09-07-plan-queue-report.md`.
+
+- [x] **The order is an array, not a `seq` column** — the user's own proposal, and it
+      removes a class of bug: a set of sequence numbers can contradict itself, a position
+      cannot. A move is one write.
+- [x] **The move rule is asymmetric, and the spec had it wrong.** Dependents are dragged;
+      prerequisites are a **wall, not cargo** — they never move, they only stop the row
+      from rising. Gathering them into a block, as the spec first said, reorders rows the
+      user had arranged by hand. Caught by a test on a three-row queue.
+- [x] **`wanted` and `origins` are independent**, and a row that is neither is an orphan.
+      That single line is the whole removal rule: two wishes sharing a step keep it alive.
+- [x] **The unlock graph is almost flat**, and this is the finding that should reach the
+      design: across the whole historical series, the deepest missing chain is **3, for one
+      node**, and 2 for one more. Everything else is zero or one step. Auto-filling a wish's
+      chain will nearly always add zero or one row, so the queue's value is ordering many
+      wishes, not unrolling deep trees.
+- [x] **A read never writes**: the goals import is its own command, and migration 2 seeds
+      nothing — `store` has no catalog and cannot resolve a target to an achievement.
+- [ ] **Not done**: the screen. This is the backend and the contract; drag-and-drop and what
+      a row looks like belong to the design system.
 
 ### 2026-09-07 — M2: the unlock graph
 

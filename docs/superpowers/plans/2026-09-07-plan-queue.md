@@ -281,7 +281,7 @@ fn moving_a_prerequisite_down_drags_what_needs_it() {
     let deps = Deps(&[(3, 1)]);
     let mut q = queue(&[1, 2, 3]);
     let landed = q.move_row(1, 2, &deps);
-    assert_eq!(landed, 2, "downward moves are never clamped");
+    assert_eq!(landed, 1, "the clamp is symmetric: 3 has to stay below 1");
     assert_eq!(
         ids(&q),
         vec![2, 1, 3],

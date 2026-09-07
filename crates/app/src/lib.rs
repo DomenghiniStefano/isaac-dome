@@ -29,16 +29,6 @@ impl CatalogState {
     }
 }
 
-/// The game's archives, opened **only once** for the whole life of the process.
-///
-/// Opening a `ResourceSet` now costs just the index, not the data (`unpack` reads
-/// entry by entry), but it's still wasted work if repeated: `discover`, eight
-/// `File::open` calls, eight tables re-read on every single command. This is the
-/// crate's one and only call to `ResourceSet::open`.
-///
-/// The "game not installed" case is **not** cached: if it's missing, the next command
-/// tries again. Someone who opens the app before installing the game shouldn't have to
-/// restart it.
 /// The unlock graph, built once from the catalog and the rules compiled into the binary.
 /// Same shape as `CatalogState`: expensive to build, cheap to consult. Rules that don't
 /// parse can only be our own broken file, and they degrade like everything else — the
@@ -56,6 +46,16 @@ impl GraphState {
     }
 }
 
+/// The game's archives, opened **only once** for the whole life of the process.
+///
+/// Opening a `ResourceSet` now costs just the index, not the data (`unpack` reads entry by
+/// entry), but it's still wasted work if repeated: `discover`, eight `File::open` calls,
+/// eight tables re-read on every single command. This is the crate's one and only call to
+/// `ResourceSet::open`.
+///
+/// The "game not installed" case is **not** cached: if it's missing, the next command
+/// tries again. Someone who opens the app before installing the game shouldn't have to
+/// restart it.
 #[derive(Default)]
 struct ResourcesState(OnceLock<ResourceSet>);
 
@@ -315,6 +315,261 @@ fn plan_parts(
     }
 }
 
+/// "a requires b" for the queue, read from the graph's transitive prerequisites.
+///
+/// The chains are computed **once, for the rows involved**, and not per question: a move
+/// asks `requires` twice per row, and each answer would otherwise be a fresh transitive
+/// walk over the whole graph.
+///
+/// A node the graph can't compute has an empty chain, so it is never dragged and never
+/// walls — the spec's "rows the graph can't compute carry no constraints", expressed once,
+/// here.
+struct GraphDeps {
+    chains: std::collections::BTreeMap<u32, std::collections::BTreeSet<u32>>,
+}
+
+impl GraphDeps {
+    fn new(g: &graph::Graph, flags: Option<&[bool]>, rows: &[u32]) -> GraphDeps {
+        GraphDeps {
+            chains: rows
+                .iter()
+                .map(|a| (*a, g.missing_chain(*a, flags).into_iter().collect()))
+                .collect(),
+        }
+    }
+}
+
+impl plan::Dependencies for GraphDeps {
+    fn requires(&self, a: u32, b: u32) -> bool {
+        self.chains.get(&a).is_some_and(|c| c.contains(&b))
+    }
+}
+
+/// What every queue command needs, gathered once so the five read the same way.
+struct QueuePieces<'a> {
+    resources: Option<&'a ResourceSet>,
+    catalog: Option<&'a Catalog>,
+    graph: Option<&'a graph::Graph>,
+    flags: Option<Vec<bool>>,
+}
+
+fn queue_pieces<'a>(
+    app: &AppHandle,
+    catalog: &'a CatalogState,
+    resources: &'a ResourcesState,
+    graph: &'a GraphState,
+) -> Result<QueuePieces<'a>, IpcError> {
+    let rs = resources.get();
+    let c = rs.and_then(|rs| catalog.get_or_build(rs));
+    Ok(QueuePieces {
+        resources: rs,
+        catalog: c,
+        graph: c.and_then(|c| graph.get(c)),
+        flags: achievement_flags(app)?,
+    })
+}
+
+/// Reads the queue and turns it into the view. Never writes: the goals import is its own
+/// command, precisely so that a read stays a read.
+fn queue_view_now(
+    app: &AppHandle,
+    store: &StoreState,
+    pieces: &QueuePieces<'_>,
+) -> Result<ipc::QueueView, IpcError> {
+    let (queue, goals_pending, reason) = match store.lock(app) {
+        Ok(guard) => {
+            let read = guard.queue();
+            let queued: std::collections::BTreeSet<u32> = match &read {
+                Ok(Ok(q)) => q.rows().iter().map(|r| r.achievement).collect(),
+                _ => std::collections::BTreeSet::new(),
+            };
+            // A goal counts as pending while nothing in the queue stands for it. Without a
+            // catalog we can't tell, and claiming zero would be a guess: none are reported.
+            let pending = match (guard.goals(), pieces.catalog) {
+                (Ok(goals), Some(c)) => goals
+                    .goals
+                    .iter()
+                    .filter(|g| {
+                        ipc::achievement_unlocking(c, &g.target)
+                            .is_none_or(|a| !queued.contains(&a))
+                    })
+                    .count() as u32,
+                _ => 0,
+            };
+            match read {
+                Ok(inner) => (inner, pending, None),
+                Err(e) => (Ok(plan::Queue::default()), pending, Some(store_reason(e))),
+            }
+        }
+        Err(reason) => (Ok(plan::Queue::default()), 0, Some(reason)),
+    };
+    let rs = pieces.resources;
+    Ok(ipc::queue_view(
+        ipc::QueueInputs {
+            catalog: pieces.catalog,
+            flags: pieces.flags.as_deref(),
+            graph: pieces.graph,
+            eval: None,
+            queue: queue.as_ref(),
+            goals_pending,
+            store_reason: reason,
+        },
+        |p| rs.and_then(|rs| rs.read(p)),
+    ))
+}
+
+/// Reads the queue, hands it to the edit, writes it back. The only function here that
+/// writes, so "a read never writes" has exactly one place to check.
+fn queue_mutate(
+    app: &AppHandle,
+    store: &StoreState,
+    pieces: &QueuePieces<'_>,
+    edit: impl FnOnce(&mut plan::Queue, &graph::Graph, Option<&[bool]>),
+) -> Result<(), IpcError> {
+    let Some(g) = pieces.graph else {
+        // No catalog, no graph, no way to keep the order honest: the queue is left exactly
+        // as it is rather than reordered against nothing.
+        return Err(IpcError::CatalogUnavailable);
+    };
+    let guard = store
+        .lock(app)
+        .map_err(|reason| IpcError::StoreUnavailable { reason })?;
+    // A document that won't parse must not be silently replaced by an edited empty one:
+    // editing would destroy a plan written by a version that knew more than this one.
+    let mut q = match guard.queue() {
+        Ok(Ok(q)) => q,
+        Ok(Err(_)) => {
+            return Err(IpcError::StoreUnavailable {
+                reason: "coda del piano illeggibile".to_string(),
+            })
+        }
+        Err(e) => {
+            return Err(IpcError::StoreUnavailable {
+                reason: store_reason(e),
+            })
+        }
+    };
+    edit(&mut q, g, pieces.flags.as_deref());
+    guard.set_queue(&q).map_err(|e| IpcError::StoreUnavailable {
+        reason: store_reason(e),
+    })
+}
+
+/// The ids a move has to reason about: what is already queued, plus what is about to be.
+fn ids_for(q: &plan::Queue, achievement: u32, chain: &[u32]) -> Vec<u32> {
+    let mut ids: Vec<u32> = q.rows().iter().map(|r| r.achievement).collect();
+    ids.push(achievement);
+    ids.extend(chain.iter().copied());
+    ids
+}
+
+#[tauri::command]
+fn queue(
+    app: AppHandle,
+    store: tauri::State<'_, StoreState>,
+    catalog: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+    graph: tauri::State<'_, GraphState>,
+) -> Result<ipc::QueueView, IpcError> {
+    let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
+    queue_view_now(&app, &store, &pieces)
+}
+
+#[tauri::command]
+fn queue_add(
+    app: AppHandle,
+    achievement: u32,
+    store: tauri::State<'_, StoreState>,
+    catalog: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+    graph: tauri::State<'_, GraphState>,
+) -> Result<ipc::QueueView, IpcError> {
+    let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
+    queue_mutate(&app, &store, &pieces, |q, g, flags| {
+        let chain = g.missing_chain(achievement, flags);
+        let deps = GraphDeps::new(g, flags, &ids_for(q, achievement, &chain));
+        q.enqueue(achievement, &chain, &deps);
+    })?;
+    queue_view_now(&app, &store, &pieces)
+}
+
+#[tauri::command]
+fn queue_remove(
+    app: AppHandle,
+    achievement: u32,
+    store: tauri::State<'_, StoreState>,
+    catalog: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+    graph: tauri::State<'_, GraphState>,
+) -> Result<ipc::QueueView, IpcError> {
+    let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
+    queue_mutate(&app, &store, &pieces, |q, _g, _flags| q.remove(achievement))?;
+    queue_view_now(&app, &store, &pieces)
+}
+
+#[tauri::command]
+fn queue_move(
+    app: AppHandle,
+    achievement: u32,
+    to: usize,
+    store: tauri::State<'_, StoreState>,
+    catalog: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+    graph: tauri::State<'_, GraphState>,
+) -> Result<ipc::QueueView, IpcError> {
+    let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
+    queue_mutate(&app, &store, &pieces, |q, g, flags| {
+        let ids: Vec<u32> = q.rows().iter().map(|r| r.achievement).collect();
+        let deps = GraphDeps::new(g, flags, &ids);
+        q.move_row(achievement, to, &deps);
+    })?;
+    queue_view_now(&app, &store, &pieces)
+}
+
+/// The one-off move from the old goals table. A goal is a target; the queue holds
+/// achievements, so each target is resolved to the achievement that unlocks it. A target
+/// nothing unlocks is skipped rather than guessed at, and the goals table is left
+/// untouched — so the step is repeatable and reversible.
+#[tauri::command]
+fn queue_import_goals(
+    app: AppHandle,
+    store: tauri::State<'_, StoreState>,
+    catalog: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+    graph: tauri::State<'_, GraphState>,
+) -> Result<ipc::QueueView, IpcError> {
+    let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
+    let Some(c) = pieces.catalog else {
+        return Err(IpcError::CatalogUnavailable);
+    };
+    let targets: Vec<ipc::TargetKey> = match store.lock(&app) {
+        Ok(guard) => match guard.goals() {
+            Ok(read) => read.goals.into_iter().map(|g| g.target).collect(),
+            Err(_) => {
+                return Err(IpcError::StoreUnavailable {
+                    reason: "database illeggibile".to_string(),
+                })
+            }
+        },
+        Err(_) => {
+            return Err(IpcError::StoreUnavailable {
+                reason: "database illeggibile".to_string(),
+            })
+        }
+    };
+    queue_mutate(&app, &store, &pieces, |q, g, flags| {
+        for target in &targets {
+            let Some(achievement) = ipc::achievement_unlocking(c, target) else {
+                continue;
+            };
+            let chain = g.missing_chain(achievement, flags);
+            let deps = GraphDeps::new(g, flags, &ids_for(q, achievement, &chain));
+            q.enqueue(achievement, &chain, &deps);
+        }
+    })?;
+    queue_view_now(&app, &store, &pieces)
+}
+
 #[tauri::command]
 fn plan(
     app: AppHandle,
@@ -410,6 +665,11 @@ pub fn run() {
             wiki_entry,
             unlock,
             next_steps,
+            queue,
+            queue_add,
+            queue_remove,
+            queue_move,
+            queue_import_goals,
             plan,
             add_goal,
             remove_goal
