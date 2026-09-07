@@ -1,0 +1,18 @@
+samples/*
+!samples/.gitkeep
+node_modules/
+dist/
+target/
+.DS_Store
+.superpowers/
+__pycache__/
+*.pyc
+
+# Schemi ACL rigenerati da tauri-build a ogni compilazione
+crates/app/gen/schemas/
+
+# Uscita di `pnpm design:export`. La cartella del pacchetto è committata di proposito:
+# Claude Design la apre da un percorso fisso, e se cambiando branch sparisse non vedrebbe
+# più niente. Si rigenera in un comando, quindi il commit non è la fonte di verità.
+/design-export/*
+!/design-export/isaacdome-design-pack/
