@@ -246,3 +246,35 @@ fn the_inference_is_declared_not_silent() {
         e.diagnostics()
     );
 }
+
+#[test]
+fn the_missing_chain_is_what_still_stands_between_you_and_a_node() {
+    let g = graph(&[(1, &[]), (2, &[1]), (3, &[2])], &[]);
+    assert_eq!(g.missing_chain(3, Some(&flags(&[], 4))), vec![1, 2]);
+    assert_eq!(
+        g.missing_chain(3, Some(&flags(&[1], 4))),
+        vec![2],
+        "what is done is not owed again"
+    );
+    assert!(
+        g.missing_chain(1, Some(&flags(&[], 4))).is_empty(),
+        "nothing stands between you and a node with no prerequisites"
+    );
+    assert!(
+        g.missing_chain(3, None).is_empty(),
+        "without section 1 there is nothing to compute, and nothing is claimed"
+    );
+    assert!(
+        g.missing_chain(999, Some(&flags(&[], 4))).is_empty(),
+        "a node that isn't in the graph owes nothing: it is not an error"
+    );
+}
+
+#[test]
+fn a_node_in_a_cycle_has_no_knowable_chain() {
+    let g = graph(&[(1, &[2]), (2, &[1])], &[]);
+    assert!(
+        g.missing_chain(1, Some(&flags(&[], 3))).is_empty(),
+        "not knowable comes back empty, and `NodeInfo::Partial` is what says so"
+    );
+}
