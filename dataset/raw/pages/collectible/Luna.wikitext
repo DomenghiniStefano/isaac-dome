@@ -1,0 +1,53 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 589
+ | quote       = The moon's blessing shines upon you
+ | description = Adds an extra {{r|Secret Room}} and {{r|Super Secret Room}} to each floor. Secret Rooms contain a beam of light that increases [[Fire Rate]] for the current floor and gives a {{e|Half Soul Heart|n}}.
+ | quality     = {{dlcalt|2|r+=3}}
+ | tags        = summonable offensive nocantrip stars lazarussharedglobal
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Adds an extra {{r|Secret Room}} and {{r|Super Secret Room}} to each floor.
+* Reveals one random Secret Room on the map on pickup and at the start of each floor.
+* Each newly discovered Secret Room has a shining beam of light that will raise [[tears]] for the current floor and gives Isaac a {{e|Half Soul Heart}} when walked under.
+** The first light gives Isaac +1 tears fired per second, and all subsequent ones give +0.5 tears fired per second.
+** This gives a potential +2.5 tears per second for a given floor, on top of 2 soul hearts.
+** The tears up breaks the default 5 tears per second cap.
+* Once the effect is triggered for the floor, a silver-bluish shine will appear around Isaac. This light will be strengthened for every beam of light "gathered".
+** While this effect is mostly cosmetic, it also partially counteracts both the {{Curse|Darkness}} and the "dark rooms" in the {{s|Mines}}/{{s|Ashpit}}.
+
+== Notes ==
+* The beams of light appear in both Secret Room types but not in {{r|Ultra Secret Room}}s.
+** The beams of light also appear in Secret Rooms and Super Secret Rooms that appear as a result of {{I|Red Key}}.
+* The beams of light appear even in unopened Secret Rooms on the same floor the item was acquired on.
+* The effect can also be obtained in the [[Mirrored World]].
+* The tears up bonuses still apply while in the special area of {{S|Mines}}/{{s|Ashpit}} II.
+* No new Secret Rooms are added in [[Greed Mode]] or [[Chapters#Chapter 1|Chapter 1]] (if it's a starting item for {{C|Eden}}), but the beam of light is still added to current Secret Rooms.
+* No new Secret Rooms are added in {{s|???}}, The [[Ascent]], or {{s|Home}}.
+* If kept after using {{I|Birthright}} with {{C|Tainted Eden}}, upon taking damage, the additional tear rate is lost. More beams of light will have to be found or used for the tears to be regained (assuming not all of them were used).
+* If playing [[Co-op]] or as {{C|Jacob and Esau}}, characters that did not pick up Luna will still gain full benefit from stepping within the beam of light. However, this will only benefit one character.
+* {{C|Tainted Lazarus}}: The opposite form of Tainted Lazarus can stand in the beam of light and receive its benefits but the fire rate bonuses are independent of each other and does not carry over between forms. 
+* Multiple copies of Luna will not cause additional Secret Rooms or Super Secret Rooms to be generated.
+
+== Synergies ==
+* {{I|X-Ray Vision}}: Opens every Secret Room generated for free, allowing for the maximum tear bonus every floor.
+* {{T|Fragmented Card}}: The effects stack, spawning three Secret Rooms on the floor. All three Secret Rooms will contain beams of light.
+* {{I|Glowing Hourglass}}: If Glowing Hourglass is used while Isaac touches the beam of light but before the animation where he raises Luna above his head is complete, the bonuses will be granted after time is rewound, allowing the same beam of light to be used multiple times.
+* {{p|XVIII - The Moon}}: The Moon will always teleport to an unexplored secret room. If one has already been explored, it will teleport to the other one. If both have been explored, it will teleport randomly in one of the two.
+
+== In-game footage ==
+{{#ev:youtube|Dur3WJ-bMCA}}
+
+== Gallery ==
+<gallery>
+Collectible Luna active appearance.png|Isaac's appearance after Luna is active.
+</gallery>
+
+== Trivia ==
+* [[anti:Luna|Luna]] originates from the ''Antibirth'' mod. In ''Antibirth'', Luna's effect only provided extra Secret and Super Secret rooms.
+* "Luna" is the word for "[[Wikipedia:moon|moon]]" in Latin and some of its descendant languages, and is sometimes used to distinguish the Earth's Moon from other natural satellites.
+
+{{nav|astrological}}

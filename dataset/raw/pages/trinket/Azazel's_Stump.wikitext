@@ -1,0 +1,40 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 162
+ | quote       = Unleash your inner demon
+ | description = When clearing a room, adds a 33% chance to turn into {{c|Azazel}} until clearing another.
+ | unlocked by = Azazel's Stump
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Gives Isaac a 33% chance to visually turn into {{C|Azazel}} when clearing a room. Isaac keeps his hearts and items, but changes his tears to be a short range {{I|Brimstone}}, gains a x1.5 damage multiplier, a [[Speed]] increase, and the ability to [[Flight|fly]].
+** The effect lasts until clearing and leaving another room.
+** The effect can be taken to the next floor.
+** The Speed increase is equal to the difference between the current character's base speed and Azazel's (which is 1.25). For instance, {{c|Keeper}} will gain +0.35 Speed since his base speed is 0.9.
+
+== Notes ==
+* Dropping the trinket after this transformation will not reverse it until a new room is cleared.
+* The trinket only changes Isaac's appearance to be as Azazel's but doesn't change the actual character. This means that the trinket cannot be used to unlock [[achievement]]s for Azazel.
+* The effect will not change Isaac's health mechanics. For example, {{C|The Lost}} will retain his zero health and {{I|Holy Mantle}}.
+* When entering the area in {{S|Mines}} / {{S|Ashpit}} to obtain {{I|Knife Piece 2}} while in the Azazel form, flight and the Brimstone laser will remain despite visually reverting.
+** However, because picking up the Knife Piece triggers a room clear, the form will be reverted upon leaving the knife piece room, and the escape sequence will not benefit from the trinket's effect.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}} / '''multiple copies''': One boost or additional copy increases the chance of Isaac turning into Azazel to 50%. Further boosts or copies increase the chance to 100%.
+* {{i|Rock Bottom}}: Isaac retains the damage multiplier and base speed increase after the effect ends. Also removes the tear delay multiplier when transformed into Azazel.
+
+== Interactions ==
+* {{C|Azazel}}: Increases the width of his Brimstone, identical to his {{I|Birthright}} effect.
+** {{i|Birthright}} as '''Azazel''': Azazel's Stump has no further effect.
+* {{C|The Forgotten}}: Still uses his regular bone club attack while in skeleton form. The Soul will work as expected, and use the short-range Brimstone.
+* {{C|Tainted Forgotten}}: The bone pile will visually turn into Azazel, with no gameplay effects.
+
+== In-game footage ==
+{{#ev:youtube|P8A9m6foPTo}}
+
+== References ==
+* [https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit#gid=59919880 The Binding of Isaac Item Trigger Testing]
+
+{{nav|tainted azazel unlock|mother unlock|fr=Corne d'Azazel}}

@@ -1,0 +1,31 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 188
+ | quote       = Stay frosty
+ | description = Adds a chance to [[petrify]] enemies when entering the room. Killing the petrified enemy [[freeze]]s it.
+ | unlocked by = Ice Cube
+ | tags = nogreed
+}}
+{{distinguish|Cube Baby}}
+{{cit|ut|r}}
+
+== Effects ==
+* Upon entering a room, each enemy has a 20% chance to be [[Status Effects|petrified]] for 4 seconds. Enemies that have been petrified by Ice Cube are [[Status Effects#Frozen|frozen]] when killed, {{dlc|nr+}} including those killed up to 2 seconds after the petrifaction effect ends.
+** The chance for enemies to be petrified increases with [[luck]], reaching 100% at 40 Luck.
+
+== Notes ==
+* Enemies spawned in waves are not petrified.
+* Bosses can be petrified, but cannot be frozen.
+* Every room has a predetermined set of enemies that are going to be petrified. Re-entering the room will not change this, similarly to [[Champion]] enemies.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Having either increase the base chance to petrify enemies upon entering a room to 33%. Having both increase the base chance to 50%.
+* {{t|Second Hand}}: Extends the time period that allows for enemies to be frozen after the petrifaction effect ends from 2 to 6 seconds.
+
+== In-game footage ==
+{{#ev:youtube|pQ9mXvmKi-k}}
+
+== Trivia ==
+* The reason Ice Cube is unlocked by completing [[Pica Run]] is probably due to [[wikipedia:Pagophagia|pagophagia]] (the desire to eat ice), a common example of pica.
+
+{{nav|fr=Glaçon}}

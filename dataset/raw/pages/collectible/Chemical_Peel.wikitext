@@ -1,0 +1,48 @@
+{{infobox passive collectible
+ | id          = 154
+ | quote       = DMG up
+ | description = Tears fired from the left eye have +2 flat [[damage]].
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +2 flat [[damage]] to tears fired from Isaac's left eye.
+
+== Notes ==
+* The damage bonus is unaffected by both positive and negative damage multipliers.
+* {{C|Cain}} has a 50% chance of firing a shot with the effects of Chemical Peel whenever he fires.
+* {{i|Blood Clot}} applies to the same eye and the effects stack.
+** Generally every interaction and synergy that applies to Chemical Peel also applies to Blood Clot. See its page for any differences to what is listed here.
+
+== Synergies ==
+* {{i|20/20}}/{{i|The Inner Eye}}/{{i|Mutant Spider}}: Every other set of tears has the Chemical Peel effect.
+* {{i|Brimstone}}: The entire laser has a high chance to have the Chemical Peel effect, with no visual difference.
+* {{i|Dr. Fetus}}: The damage bonus applies to every bomb, with no visual difference.
+* {{i|Epic Fetus}}: The missiles have a high chance to deal 40 points extra damage, with no visual difference.
+* {{i|Lead Pencil}}: All tears in the tear barrage will gain the Chemical Peel effect.
+* {{i|The Ludovico Technique}}: The tear flashes between normal and the higher-damaging Chemical Peel tear.
+* {{i|Mom's Knife}}: Each tick of the Knife's damage has a high chance to gain the bonus, with no visual difference.
+* {{I|Soy Milk}} / {{i|Almond Milk}}: Chemical Peel is unaffected by the damage down modifier, greatly increasing DPS.
+* {{i|Tech.5}}: Chemical Peel has a chance to apply to the laser, with no visual difference.
+* {{i|Technology}}: Lasers have a high chance to gain extra damage, with no visual difference.
+* {{i|Technology 2}}: Every tear fired has Chemical Peel applied to it, but the laser is unaffected.
+
+== Interactions ==
+* {{i|Diplopia}}: No effect from additional copies.
+* {{i|Incubus}}: Has a 50% chance of firing a shot with the Chemical Peel effect.
+* {{i|Sad Bombs}}: The last type of tear fired is used for the burst.
+* {{i|Stapler}}: Gives a 50% chance of firing a Chemical Peel shot, similar to Cain.
+* {{i|Tech X}}: Overrides Chemical Peel.
+* {{i|Varicose Veins}}: The last type of tear fired is used for the burst.
+
+== In-game Footage ==
+{{#ev:youtube|_iWzjFElS0c}}
+
+== Trivia ==
+* Isaac's face looks similar to a {{E|Dople}} when this item is obtained.
+* Chemical Peel may be a reference to the DC Comics character Two-Face, who had the left side of his face burned by a chemical product in a way similar to the item costume effect.
+
+{{nav|fr=Masque à l'Acide}}

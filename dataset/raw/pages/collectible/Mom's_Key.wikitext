@@ -1,0 +1,34 @@
+{{infobox passive collectible
+ | id          = 199
+ | quote       = {{dlcalt|Less is now more|r=Better chest loot}} +2 keys
+ | description = Adds 2 keys. {{E|Chest}}s will drop additional [[pickup]]s.
+ | quality     = 3
+ | tags        = summonable mom offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Gives Isaac two {{e|Key}}s.
+* If a non-{{e|Red Chest}} spawns [[hearts]], [[coins]], {{e|Bomb}}s and/or {{e|Key}}s, causes the chest to spawn a second group of said pickups, effectively doubling the average pickup yield.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* Mom's Key cannot change the contents of a chest; it will only cause it to spawn extra pickups.
+* All other chest rewards (such as [[pill]]s, [[card]]s, [[item]]s, etc.) will not cause the chest to spawn additional pickups.
+* {{dlc|r}} Does not affect {{e|Old Chest|n}}s.
+
+== Synergies ==
+* {{i|Sharp Key}}: Doubles the amount of pickups dropped by enemies.
+
+== Interactions ==
+* {{i|Mom's Key}}: Does not further increase the amount of pickups spawned when multiple copies of the item are acquired.
+
+== In-game Footage ==
+{{#ev:youtube|mj0BVodxT4k||inline}} {{#ev:youtube|2lL7kKXxwh0||inline}}
+
+== Trivia ==
+* Mom's Key is the first item, by ID number, that was not carried over from ''Wrath of the Lamb''.
+* The appearance of Mom's Key is a reference to Bowser's boss key in Super Mario 64 as well as the Boss Key in various Legend of Zelda games.
+
+{{nav|yes mother|mom|key|fr=Clé de Maman}}

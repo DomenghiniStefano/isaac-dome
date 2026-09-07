@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 227
+ | quote       = My life savings
+ | description = Gives 3 {{E|Penny|text=Pennies}} on pick-up. Every time Isaac is damaged, he will drop one or two additional pennies.
+ | quality     = 1
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Adds 3 {{E|Penny|text=Pennies}} on pickup.
+* When Isaac takes damage, spawns 1 or 2 Pennies near him.
+
+== Notes ==
+* The coins that are dropped from Piggy Bank are not subtracted from Isaac's total.
+* Other types of coins cannot be spawned by Piggy Bank, only normal Pennies.
+
+== Interactions ==
+* {{I|Dull Razor}}: Activates Piggy Bank's effect without actually taking any damage.
+* {{dlc|a}} {{C|Keeper}}/{{C|Tainted Keeper|r}}: Drops 0-1 pennies instead.
+* {{i|Piggy Bank}}: Multiple copies will only add 3 more coins on pickup, with no additional coins dropping on taking damage.
+
+== In-game Footage ==
+{{#ev:youtube|KzFYM5oa7I4}}
+
+{{nav|fr=Tirelire Cochon}}
+[[Category:Damage-triggered items]]

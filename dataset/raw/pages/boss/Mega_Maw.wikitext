@@ -1,0 +1,50 @@
+{{infobox boss
+ | name        = Mega Maw
+ | id          = 262
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Caves}}<br>{{room|boss challenge}}{{room|boss rush}}<br>{{dlc|r}}<br>{{floor|Caves}}{{floor|Flooded Caves}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Degraded Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}
+ | base hp     = 350
+ | pool        = {{ip|Boss}}<br> {{i|Continuum|r+}} (1% chance)
+}}
+
+'''Mega Maw''' is a [[boss]] that can appear:
+* {{dlc|nr}} Only in the {{s|Caves}}.
+* {{dlc|r}} In the {{s|Caves}} and the {{s|Flooded Caves}}.
+
+== Behavior ==
+Mega Maw is stationary and will perform the following attacks:
+* Fires red projectiles at Isaac in disorganized bursts, similar to {{e|Monstro}}.
+* Releases 2 rings of 5 flames which expand outwards and rotate in opposite directions.
+* Releases one large ring of 9 flames that expands outwards.
+* Releases one large ring of 9 flames that can rotate in either direction while expanding outwards.
+* Gradually spits out a {{e|Hopper}} directly below it.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18|dlc=a}}: Spits 1-2 {{e|Spider}}s instead of Hoppers. The Spiders will be tossed directly towards Isaac instead of landing below Mega Maw. It does not use flame attacks.
+: {{bc|1|dlc=a}}: Doesn't shoot any flames or spawn monsters and has a completely different set of blood-shot attacks:
+:: Fires a ring of 9 blood shots that spiral outward.
+:: Fires 4-5 lines of 4 curving blood shots.
+:: Fires 4 lines of 7 waving blood shots.
+:: Fires 10 lines of 4 blood shots in all directions.
+:: All the attacks of the Red version do 1 heart of damage.
+
+== Gallery ==
+<gallery>
+File:Boss Mega Maw black ingame.png|Black Champion Mega Maw.
+File:Boss Mega Maw red ingame.png|Red Champion Mega Maw.
+File:Boss Delirium Mega Maw ingame.png|Mega Maw as one of {{e|Delirium}}'s forms.
+File:Mega Maw Concept.jpg|Concept art for Mega Maw (known in this sketch as "Mr. Maw Mega"), along with a scrapped variant of Pin and what is presumably an earlier version of {{e|The Gate}}.
+</gallery>
+
+== Trivia ==
+* It is the boss version of the {{e|Maw}}s.
+* {{E|The Gate}} is the posthumous version of it.
+* Despite its name, it behaves and looks more like a {{e|Horf}}, or a {{e|Psychic Horf}} than a Maw.
+* Its fire attack could be a reference to ''[[Wikipedia:Mega Man|Mega Man]]'s'' leaf shield/attack.
+* {{dlc|r}} The visual appearance of the Red Champion version may be a reference to the {{i|2Spooky}} item.
+
+{{nav|boss|fr=Grande Gueule}}
+
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Rebirth]]

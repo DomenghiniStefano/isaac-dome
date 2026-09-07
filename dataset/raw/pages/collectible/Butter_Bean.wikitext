@@ -1,0 +1,39 @@
+{{infobox activated collectible
+ | id          = 294
+ | quote       = Reusable knock-back
+ | description = Isaac farts and [[knock-back|knocks back]] nearby enemies {{dlc|a}} and projectiles. {{dlc|r}} Enemies pushed into walls or [[obstacle]]s take <code>10 + 2 * (floor - 1)</code> damage.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | recharge    = {{dlcalt|3s|r+=2s}}
+ | unlocked by = Butter Bean
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* Upon use, Isaac farts and [[knock-back|knocks back]] nearby enemies.
+** {{dlc|a}} Projectiles are also deflected.
+*** {{dlc|r}} Enemies pushed into walls or [[obstacle]]s take <code>10 + 2 * (floor - 1)</code> damage.
+*** {{dlc|r}} The deflected projectiles deal 6 damage if they would've hurt Isaac for half a heart, and 7 for a full heart.
+
+== Notes ==
+* {{dlc|a+nr}} If Isaac swaps Butter Bean for a different active item, then picks up Butter Bean again, it has a 10% chance to transform into {{i|Wait What?|n}}.
+* {{dlc|r}} When a run is started, the game has a 5% chance to replace Butter Bean with {{i|Wait What?|n}} in item pools. Both items are generally not available in the same run.
+
+== Synergies ==
+* {{i|Bird's Eye}}/{{i|Ghost Pepper}}: Shoots a flame behind Isaac upon each use of Butter Bean. Two flames will be shot if Isaac also has {{I|Car Battery|n}}.
+* {{Book of Virtues synergy|description=Spawns white wisps on the inner ring. The wisps do not shoot tears, have only 1 health each, release farts that knockback upon death, and cannot be carried across rooms.}}
+* {{t|Panic Button}}: Activates Butter Bean upon taking damage. If the damage was from a projectile that Butter Bean can knock away, it will be negated.
+
+== In-game Footage ==
+{{#ev:youtube|HOWkvVvHPeE}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Butter Bean.png|{{plat|3DS}} The icon of Butter Bean as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* Butter Bean's sprite is exactly identical to {{i|Wait What?}}, making them the two only items in the game with the same sprite.
+
+{{nav|bean|fr=Haricot Beurre}}

@@ -1,0 +1,41 @@
+{{infobox activated collectible
+ | dlc = a+
+ | name = Sharp Straw
+ | description = {{dlc|nr}} Damages all enemies in the room. Has a chance to drop a {{e|Half Red Heart}} or {{E|Half Soul Heart}} if an enemy is hit.<br>{{dlc|r}} Damages all enemies in the room. Has a chance to drop a {{e|Half Red Heart}} if an enemy is hit.
+ | quality     = 2
+ | tags        = offensive
+ | quote = More blood!
+ | id = 507
+ | recharge = 10s
+}}
+
+{{cit|a|a+}}
+
+== Effects ==
+* Damages all enemies in the room.
+** The damage dealt is equal to Isaac's current [[Damage|tear damage]] plus 10% of the enemy's max health.
+* Has a 15% chance to drop {{e|Half Red Heart}}s when it damages an enemy.
+** {{dlc|nr}} May also drop {{E|Half Soul Heart}}s. Half red hearts will always drop when Isaac has at least one red heart container; otherwise, half soul hearts will drop.
+** The amount of enemies damaged does not improve the chance.
+
+== Notes ==
+* When used on {{e|Delirium}}, this item should be used when it isn't transformed to deal the most damage, as Delirium doesn't have his [[Damage Scaling|armor]] up when in his true form.
+* For enemies that can disappear or go underground, it only affects them if they are visible.
+* The Sharp Straw works exceptionally well with {{c|Samson}}, giving the chance to collect large amounts of health per floor, allowing more damage to be taken resulting in more damage being dealt per use.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Enemies have a chance to spawn wisps in the outer ring upon use, although they sometimes extinguish instantly. Using it in a room with no enemies does not grant a wisp. Despite Sharp Straw having a timed charge, the wisps persist between rooms.}}
+* {{i|Car Battery|n}}: Damage is doubled and two half hearts may be dropped.
+
+== Interactions ==
+* {{dlc|r}} {{I|Ipecac}}: Only provides a +2 damage bonus instead of +40.
+
+== In-game Footage ==
+{{#ev:youtube|suTrWALdRnI}}
+
+== Trivia ==
+* Before [[Booster Pack #5]], Sharp Straw would instantly kill {{E|Big Horn}} if used while his hands were out due to their arbitrarily high health.
+* Sharp Straw was originally an unofficial item which was supposed to showcase the modding capabilities of ''Afterbirth+'' in the [https://youtu.be/FRR-wzTky9Q?t=1688 PAX 2016 livestream]. However, all items included in the demo were later added to the final game.
+** In the livestream, Sharp Straw had the name 'Isaacula', a different appearance, and a recharge time of six rooms.
+
+{{nav}}

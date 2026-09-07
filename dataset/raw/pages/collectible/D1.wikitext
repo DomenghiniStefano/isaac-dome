@@ -1,0 +1,59 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 476
+ | quote       = What will it be?
+ | description = Duplicates a random pickup in the room. {{dlc|r}} The new pickup may be different than the original (i.e. a different card, etc).
+ | quality     = 2
+ | tags        = offensive
+ | recharge    = 4
+ | unlocked by = D1
+}}
+
+{{cit|ua|a+}}
+
+== Effect ==
+* Upon use, duplicates one random [[pickup]] in the current room, including [[Card]]s, [[Rune]]s, {{E|Chest}}s, and [[trinket]]s.
+* {{dlc|r}} Duplicated pickups may not be identical to the original; for example, a duplicated card may be a different one than the original.
+
+== Notes ==
+* It is possible to duplicate {{r|Shop}} pickups that have not been purchased yet.
+* {{dlc|nr}} {{p|Jera}} can not be duplicated.
+* {{dlc|nr}} {{E|Mimic Chest}}s will not be duplicated until their spikes are exposed.
+* {{dlc|nr}} Opened chests will be duplicated into an unopened copy.
+* {{dlc|nr}} A normal Chest may be duplicated into a Red Chest or a Mimic Chest.
+* {{dlc|nr}} A duplicated trinket is mostly useless, as you cannot pick up two of the same trinket even with {{i|Mom's Purse}}, {{i|Belly Button|n}}, or {{i|Smelter}}.
+** However, with "consumable" trinkets such as {{t|Store Credit}} or {{t|Bag Lunch}}, it can be extremely powerful.
+* {{dlc|nr}} In combination with a [[48 Hour Energy]] pill and {{t|Paper Clip}}, the initial Locked Chests on {{s|Chest}} can be infinitely duplicated and opened.
+* {{dlc|nr}} In [[Greed mode]], if a Lil' Battery appears in the {{r|Shop}} and a {{p|2 of Diamonds}} is acquired, infinite money can be gained by duplicating the Two of Diamonds.
+* {{dlc|nr}} By dropping a card, rune, or pill in a room with no other pickups, then using D1, this item can function similarly to {{i|Blank Card}} and {{i|Placebo}}.
+** {{dlc|r}} By dropping a card, pill, or trinket in a room with no other pickups, then using D1, this item can function similarly to {{i|Deck of Cards}}, {{i|Mom's Bottle of Pills}}, or {{i|Mom's Box}} (But without the luck up or doubled trinket effects).
+* {{dlc|r}} A duplicated card has a very rare chance to turn into a {{p|Dice Shard}}, {{P|Cracked Key|n}}, or {{p|Emergency Contact}}; however, these will always duplicate as themselves instead of duplicating as a card.
+* {{dlc|r}} A duplicated [[Golden Pill]] will turn into a random Pill chosen from the Pill Pool.
+* When duplicating any type of [[chest]], the contents of the original chest will be invisibly rerolled. 
+
+== Synergies ==
+* {{i|Car Battery}}: Generates two pickups instead of just one. 
+** {{i|Car Battery}} + {{E|Lil' Battery}}: Allows for infinite generation of Lil' Batteries. {{dlc|r}} While it's still possible to generate infinite batteries with this synergy, it is slow to do so since mostly Micro Batteries will spawn. The occasional Lil' Battery or other battery spawn is needed to build up the battery pile.
+*** {{dlc|nr}} An endless supply of Lil' Batteries allows for endless duplication of all pickups, chests, and trinkets on the floor.
+*** {{dlc|r}} An endless supply of Lil' Batteries allows for an endless supply of every kind of unlocked pickups, chests, and trinkets, as long as there is at least one of the initial pickup type on the floor.
+**** [[Card]]: Allows for an infinite supply of every kind of unlocked card.
+**** [[Pill]]: Allows for an infinite supply of every kind of pill in the current run's pill pool.
+***** [[Pill]] + {{i|PHD}}: Allows for an infinite supply of beneficial pills.
+* {{Book of Virtues synergy|description=Spawns a white six-sided die wisp on the middle ring. An extra wisp spawns if no pickups are duplicated.}}
+* {{c|Tainted Lost}}: Duplicated cards have an increased chance to be {{p|Holy Card|n}}s.
+
+== Interactions ==
+* {{i|Guppy's Eye}}: Guppy's Eye can be used to see what changed when duplicating a chest. It will not immediately show the new contents, but leaving the room and returning will reveal the changes. This essentially allows rerolling the rewards within them, especially useful in {{s|Chest}} and {{s|Dark Room}}.
+** {{dlc|r+}} The contents are immediately updated upon reroll.
+
+== In-game Footage ==
+{{#ev:youtube|ojdIe86PzAE}}
+
+== Trivia ==
+* {{dlc|nr}} D1 is the only die item that doesn't re-roll anything.
+** {{dlc|r}} The D1 now creates randomized pickups, meaning that the description is more accurate to the item's effect.
+** {{dlc+|r}} As an exception, {{i|Spindown Dice}} and {{i|D10}}, although they technically do re-roll items/enemies, have a controlled and consistent result.{{dlc-}}
+* D1 is the only standard die item that doesn't have the respective number of sides as outcomes, but rather, just a D6 with all sides having singular pips. Rather, an actual D1 would be more accurately pictured as a Mobius strip, a sphere or an actual real-word “denary die” similar in form to a cyllindric object with slanted top and bottom.
+
+{{nav|isaac unlock|ultra greedier unlock|dice}}

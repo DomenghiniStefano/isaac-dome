@@ -1,0 +1,28 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 624
+ | quote       = Collect them all!
+ | description = Drops 5 random [[card]]s.
+ | quality     = 1
+ | tags        = offensive
+}} {{disambig msg|the passive item|the Afterbirth † content updates|Booster Packs}}
+
+{{cit|p|r||Booster Pack}}
+
+== Effects ==
+* Drops 5 random [[card]]s.
+
+== Notes ==
+* Of the 5 cards spawned, they will have the following chances to be a type of card.
+** 1 out of 5 cards: 93.3% [[Cards_and_Runes#Playing_Cards|playing card]], 6.67% [[special card]]
+** 4 out of 5 cards: 76.7% [[Tarot card]], 19.3% [[Cards_and_Runes#Playing_Cards|playing card]], 4% [[special card]]
+* {{p|Emergency Contact}}, {{p|Dice Shard}} and {{p|Cracked Key}} cannot be spawned by this item, as they are not considered cards.
+
+== Interactions ==
+* {{i|Little Baggy}}: Spawns 5 random [[pill]]s instead.
+
+== Trivia ==
+* The mechanic of having one guaranteed playing card is a reference to [[wikipedia:Booster pack|booster packs]] in real life. Packs are guaranteed to contain a few cards of high rarity while the rest are randomly chosen. Each card can also be of an even rarer quality, illustrated here by the small chance of obtaining a special card.
+* [[anti:Booster Pack|Booster Pack]] is from the ''Antibirth'' mod where it would drop 3 random cards instead of 5.
+
+{{nav|fr=Paquet d'extension}}

@@ -1,0 +1,31 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 133
+ | quote       = Faster explosions
+ | description = {{E|Bomb}}s placed by Isaac explode quicker. {{dlc|r+}} Bombs also deal +15 more damage.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* {{E|Bomb}}s placed by Isaac explode in 0.66 seconds instead of 1.5 seconds.
+* {{dlc|r+}} Bombs deal +15 damage.
+
+== Notes ==
+* If Isaac leaves and re-enters a room after placing a bomb, its explosion timer would not be affected by the trinket.
+
+== Synergies ==
+* {{i|Blood Bombs}}: Bombs placed by using health will explode while Isaac is still invincible.
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Isaac's bombs deal +30 damage. If Isaac has both the golden trinket and the Box, the increase is +50.
+
+== Interactions ==
+* {{i|Anarchist Cookbook}} / {{i|Best Friend}} / {{i|Bob's Brain}} / {{i|Epic Fetus}} / {{i|Kamikaze!}}: No effect.
+* {{i|Bomber Boy|r+}} / {{i|Scatter Bombs|r+}}: The +15 bonus is applied prior to the bomb damage multipliers.
+* {{i|Book of Virtues}}: None of the bomb-spawning wisps are affected.
+* {{i|Dr. Fetus}}: Bombs from Dr. Fetus also explode more quickly.
+** {{dlc|r+}} Damage is not increased. The bonus is applied only to manually placed bombs.
+
+== Trivia ==
+* This trinket originated in ''Antibirth'', where it was originally called [[anti:Exploded Firecracker|Exploded Firecracker]].
+
+{{nav|bomb modifier|fr=Pétard}}

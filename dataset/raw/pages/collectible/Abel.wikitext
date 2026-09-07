@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | id          = 188
+ | quote       = Mirrored buddy
+ | description = {{dlc|na}} Spawns a [[familiar]] that mirrors Isaac's movements and shoots in the opposite direction.<br/>{{dlc+|a}} Spawns a [[familiar]] that mirrors Isaac's movements and shoots towards him.{{dlc-}}
+ | quality     = 0
+ | tags        = summonable baby {{dlc|r+|monstermanual}} offensive
+ | unlocked by = Abel
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Spawns a [[familiar]] that mirrors Isaac's movements and shoots tears that deal 3.5 damage.
+** Abel shoots once per {{dlcalt|second|r=half-second}}.
+** {{dlc|na}} Abel shoots tears in the opposite direction of Isaac.
+** {{dlc|a}} Abel shoots tears towards Isaac regardless of which direction Isaac is shooting.
+* {{dlc+|r}} {{transformation contribution|Conjoined}}{{dlc-}}
+
+== Notes ==
+* Although it is difficult to hit enemies with Abel, he can be useful in certain situations. {{E|Dople}}s and {{E|Evil Twin}}s can be easily taken care of without risk of damage using Abel. Abel can also assist in killing slow or stationary [[monster]]s that happen to be around the center of the [[room]].
+* In symmetrical room layouts Abel can be used to clear away destructible [[obstacle]]s such as fire places and poops.
+
+== Synergies ==
+* {{C|Cain}} / {{C|Tainted Cain}}: Abel's tears are red and deal 7.5 damage.
+
+== In-game Footage ==
+{{#ev:youtube|ph3Pqzt62zM}}
+
+== Trivia ==
+* According to the Bible, Abel was one of Adam and Eve's children and was the first human to ever be murdered. He was an opposite to his murderous brother Cain, which may explain the mirrored nature of this item. Also, this item is unlocked by defeating {{E|The Lamb}} with Cain, which makes the connection with the Bible more obvious.
+* This item was originally unlocked in ''Wrath of the Lamb'' by defeating {{e|Isaac}} as Cain.
+
+{{nav|conjoined|cain unlock|the lamb unlock}}

@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | id          = 216
+ | quote       = {{dlcalt|Sin up|r=DMG + evil up}}
+ | description = Grants 3 {{e|Black Heart}}s and +1 [[damage]].
+ | quality     = 3
+ | tags        = summonable offensive
+ | devil price = {{dlcalt|1|r=2}}
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants 3 {{e|Black Heart}}s.
+* +1 [[damage]].
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Heretic}}.{{dlc-}}
+* When purchased at a {{r|Devil Room}} by {{c|???}} (or another character who has lost all Red Heart containers), this item effectively converts 3 {{e|Soul Heart}}s into 3 {{e|Black Heart}}s, increasing damage at no downside.
+
+== Synergies ==
+* {{t|Black Feather}}: Ceremonial Robes counts as an 'evil' item, granting a damage boost.
+
+== In-game Footage ==
+{{#ev:youtube|vYGR3DNEoM4||inline}} {{#ev:youtube|1XOhYNQGTH0||inline}}
+
+== Trivia ==
+** Despite this, the item has always functioned exactly the same since its initial implementation in ''Rebirth''. Previously, the damage increase went unmentioned in-game.
+** The change from 'sin up' to 'evil up' made the item consistent with others that grant Black Hearts — two examples being {{I|Match Book}} and {{I|Abaddon}}.
+
+{{nav}}

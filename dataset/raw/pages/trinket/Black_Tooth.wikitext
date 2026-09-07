@@ -1,0 +1,22 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 95
+ | quote       = It looks dead
+ | description = Adds a chance to fire a black tooth that deals double [[damage]] and [[poison]]s enemies.
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* Adds a chance to fire a black tooth that [[poison]]s enemies.
+** Black teeth deal double Isaac's normal [[Damage|tear damage]].
+** The chance to shoot teeth depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 33 - \left \lfloor \mathit{Luck}  \right \rfloor}</math>
+*** At base Luck (0), the chance is ~3%, maxing out at 100% at 32 Luck.
+
+== Interactions ==
+* {{a|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either doubles the chance to fire a black tooth. Having both triples the chance.
+
+== In-game Footage ==
+{{#ev:youtube|T9RB-SVtUeE}}
+
+{{nav|fr=Dent Noircie}}

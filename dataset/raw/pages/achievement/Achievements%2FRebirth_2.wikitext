@@ -1,0 +1,533 @@
+{{storage page}}
+{{infobox achievement
+ | name         = Rune of Ehwaz
+ | link         = Runes
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Head Trauma|Head Trauma (challenge #3)]]
+ | id           = 91
+}} {{infobox achievement
+ | name         = Rune of Dagaz
+ | link         = Runes
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Darkness Falls|Darkness Falls (challenge #4)]]
+ | id           = 92
+}} {{infobox achievement
+ | name         = Rune of Ansuz
+ | link         = Runes
+ | description  = Unlocked a new item.
+ | requirements = Complete [[The Tank|The Tank (challenge #5)]]
+ | id           = 93
+}} {{infobox achievement
+ | name         = Rune of Perthro
+ | link         = Runes
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Solar System|Solar System (challenge #6)]]
+ | id           = 94
+}} {{infobox achievement
+ | name         = Rune of Berkano
+ | link         = Runes
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Purist|Purist (challenge #20)]]
+ | id           = 95
+}} {{infobox achievement
+ | name         = Rune of Algiz
+ | link         = Runes
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Cat Got Your Tongue|Cat Got Your Tongue (challenge #8)]]
+ | id           = 96
+}} {{infobox achievement
+ | name         = Chaos Card
+ | link         = Chaos Card
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Demo Man|Demo Man (challenge #9)]]
+ | id           = 97
+}} {{infobox achievement
+ | name         = Credit Card
+ | link         = Credit Card
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Cursed!|Cursed! (challenge #10)]]
+ | id           = 98
+}} {{infobox achievement
+ | name         = Rules Card
+ | link         = Rules Card
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Glass Cannon (Challenge)|Glass Cannon (challenge #11)]]
+ | id           = 99
+}} {{infobox achievement
+ | name         = Card Against Humanity
+ | link         = A Card Against Humanity
+ | description  = Unlocked a new item.
+ | requirements = Complete [[When Life Gives You Lemons|When Life Gives You Lemons (challenge #12)]]
+ | id           = 100
+}} {{infobox achievement
+ | name         = Swallowed Penny
+ | link         = Swallowed Penny
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Slow Roll|Slow Roll (challenge #15)]]
+ | id           = 101
+}} {{infobox achievement
+ | name         = Robo-Baby 2.0
+ | link         = Robo-Baby 2.0
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Computer Savvy|Computer Savvy (challenge #16)]]
+ | id           = 102
+}} {{infobox achievement
+ | name         = Death's Touch
+ | link         = Death's Touch
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Waka Waka|Waka Waka (challenge #17)]]
+ | id           = 103
+}} {{infobox achievement
+ | name         = Technology .5
+ | link         = Tech.5
+ | description  = Unlocked a new item.
+ | requirements = Complete [[The Host|The Host (challenge #18)]]
+ | id           = 104
+}} {{infobox achievement
+ | name         = Missing No.
+ | link         = Missing No.
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Lazarus}}
+ | id           = 105
+}} {{infobox achievement
+ | name         = Isaac's Tears
+ | link         = Isaac's Tears
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Isaac}}
+ | id           = 106
+}} {{infobox achievement
+ | name         = Guillotine
+ | link         = Guillotine
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Judas}}
+ | id           = 107
+}} {{infobox achievement
+ | name         = Judas' Shadow
+ | link         = Judas' Shadow
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Judas}}
+ | id           = 108
+}} {{infobox achievement
+ | name         = Maggy's Bow
+ | link         = Maggy's Bow
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Magdalene}}
+ | id           = 109
+}} {{infobox achievement
+ | name         = Cain's Other Eye
+ | link         = Cain's Other Eye
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Cain}}
+ | id           = 110
+}} {{infobox achievement
+ | name         = Black Lipstick
+ | link         = Black Lipstick
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Eve}}
+ | id           = 111
+}} {{infobox achievement
+ | name         = Eve's Mascara
+ | link         = Eve's Mascara
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Eve}}
+ | id           = 112
+}} {{infobox achievement
+ | name         = Fate
+ | link         = Fate
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|???}}
+ | id           = 113
+}} {{infobox achievement
+ | name         = ???'s Only Friend
+ | link         = ???'s Only Friend
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|???}}
+ | id           = 114
+}} {{infobox achievement
+ | name         = Samson's Chains
+ | link         = Samson's Chains
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Samson}}
+ | id           = 115
+}} {{infobox achievement
+ | name         = Lazarus' Rags
+ | link         = Lazarus' Rags
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Lazarus}}
+ | id           = 116
+}} {{infobox achievement
+ | name         = Broken Ankh
+ | link         = Broken Ankh
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|Lazarus}}
+ | id           = 117
+}} {{infobox achievement
+ | name         = Store Credit
+ | link         = Store Credit
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|Lazarus}}
+ | id           = 118
+}} {{infobox achievement
+ | name         = Pandora's Box
+ | link         = Pandora's Box
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Lazarus}}
+ | id           = 119
+}} {{infobox achievement
+ | name         = Suicide King
+ | link         = Suicide King
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Suicide King (Challenge)|Suicide King (challenge #7)]]
+ | id           = 120
+}} {{infobox achievement
+ | name         = Blank Card
+ | link         = Blank Card
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Eden}}
+ | id           = 121
+}} {{infobox achievement
+ | name         = Book of Secrets
+ | link         = Book of Secrets
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|Eden}}
+ | id           = 122
+}} {{infobox achievement
+ | name         = Mysterious Paper
+ | link         = Mysterious Paper
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|Eden}}
+ | id           = 123
+}} {{infobox achievement
+ | name         = Mystery Sack
+ | link         = Mystery Sack
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Eden}}
+ | id           = 124
+}} {{infobox achievement
+ | name         = Undefined
+ | link         = Undefined
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Eden}}
+ | id           = 125
+}} {{infobox achievement
+ | name         = Satanic Bible
+ | link         = Satanic Bible
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Azazel}}
+ | id           = 126
+}} {{infobox achievement
+ | name         = Daemon's Tail
+ | link         = Daemon's Tail
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|Azazel}}
+ | id           = 127
+}} {{infobox achievement
+ | name         = Abaddon
+ | link         = Abaddon
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|Azazel}}
+ | id           = 128
+}} {{infobox achievement
+ | name         = Isaac's Heart
+ | link         = Isaac's Heart
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|The Lost}}
+ | id           = 129
+}} {{infobox achievement
+ | name         = The Mind
+ | link         = The Mind
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|The Lost}}
+ | id           = 130
+}} {{infobox achievement
+ | name         = The Body
+ | link         = The Body
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|The Lost}}
+ | id           = 131
+}} {{infobox achievement
+ | name         = The Soul
+ | link         = The Soul
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|The Lost}}
+ | id           = 132
+}} {{infobox achievement
+ | name         = The D100
+ | link         = D100
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|The Lost}}
+ | id           = 133
+}} {{infobox achievement
+ | name         = Blue Map
+ | link         = Blue Map
+ | description  = Unlocked a new item.
+ | requirements = Donate 10 Coins to the {{m|Donation Machine}}
+ | id           = 134
+}} {{infobox achievement
+ | name         = There's Options
+ | link         = There's Options
+ | description  = Unlocked a new item.
+ | requirements = Donate 50 Coins to the {{m|Donation Machine}}
+ | id           = 135
+}} {{infobox achievement
+ | name         = Black Candle
+ | link         = Black Candle
+ | description  = Unlocked a new item
+ | requirements = Donate 150 Coins to the {{m|Donation Machine}}
+ | id           = 136
+}} {{infobox achievement
+ | name         = Red Candle
+ | link         = Red Candle
+ | description  = Unlocked a new item.
+ | requirements = Donate 400 Coins to the {{m|Donation Machine}}
+ | id           = 137
+}} {{infobox achievement
+ | name         = Stop Watch
+ | link         = Stop Watch
+ | description  = Unlocked a new item
+ | requirements = Donate 999 Coins to the {{m|Donation Machine}}
+ | id           = 138
+}} {{infobox achievement
+ | name         = Wire Coat Hanger
+ | link         = Wire Coat Hanger
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Mom's Heart}} 4 times
+ | id           = 139
+}} {{infobox achievement
+ | name         = Ipecac
+ | link         = Ipecac
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Mom's Heart}} 6 times
+ | id           = 140
+}} {{infobox achievement
+ | name         = Experimental Treatment
+ | link         = Experimental Treatment
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Mom's Heart}} 7 times
+ | id           = 141
+}} {{infobox achievement
+ | name         = Krampus
+ | link         = Krampus
+ | description  = Unlocked another miniboss!
+ | requirements = Take 20 [[Devil Room|items from Devil Rooms]]
+ | id           = 142
+}} {{infobox achievement
+ | name         = Head of Krampus
+ | link         = Head of Krampus
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Krampus}}
+ | id           = 143
+}} {{infobox achievement
+ | name         = Super Meat Boy
+ | link         = Cube of Meat
+ | description  = Built him out of meat cubes.
+ | requirements = Make a Super Meat Boy by picking up 4 copies of {{i|Cube of Meat}} in one run
+ | notes        = See [[Unlocking Super Meat Boy & Super Bandage Girl]]
+ | id           = 144
+}} {{infobox achievement
+ | name         = Butter Bean
+ | link         = Butter Bean
+ | description  = Unlocked a new item.
+ | requirements = Destroy 100 [[poops]]
+ | id           = 145
+}} {{infobox achievement
+ | name         = Little Baggy
+ | link         = Little Baggy
+ | description  = Unlocked a new item.
+ | requirements = Pick up 2 syringe-related items in a single run
+ | notes        = {{dlc|nr}} Syringe-related items are {{i|Roid Rage}}, {{i|The Virus}}, {{i|Growth Hormones}}, {{i|Experimental Treatment}}, and {{i|Speed Ball}}<br>{{dlc|r}} Syringe-related items have the [[Item Tags syringe|'syringe' item tag]]
+ | id           = 146
+}} {{infobox achievement
+ | name         = Blood Bag
+ | link         = Blood Bag
+ | description  = Unlocked a new item.
+ | requirements = Use the {{m|Blood Donation Machine}} 30 times
+ | id           = 147
+}} {{infobox achievement
+ | name         = The D4
+ | link         = D4
+ | description  = Unlocked a new item.
+ | requirements = Blow up 30 {{m|Slot Machine}}
+ | id           = 148
+}} {{infobox achievement
+ | name         = Missing Poster
+ | link         = Missing Poster
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Isaac}}
+ | id           = 149
+}} {{infobox achievement
+ | name         = Rubber Cement
+ | link         = Rubber Cement
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Mom's Heart}} 2 times
+ | id           = 150
+}} {{infobox achievement
+ | name         = Store Upgrade lv.1
+ | link         = Shop#Layouts
+ | description  = Donated 20 pennies to the shop.
+ | requirements = Donate 20 Coins to the {{m|Donation Machine}}
+ | id           = 151
+}} {{infobox achievement
+ | name         = Store Upgrade lv.2
+ | link         = Shop#Layouts
+ | description  = Donated 100 pennies to the shop.
+ | requirements = Donate 100 Coins to the {{m|Donation Machine}}
+ | id           = 152
+}} {{infobox achievement
+ | name         = Store Upgrade lv.3
+ | link         = Shop#Layouts
+ | description  = Donated 200 pennies to the shop.
+ | requirements = Donate 200 Coins to the {{m|Donation Machine}}
+ | id           = 153
+}} {{infobox achievement
+ | name         = Store Upgrade lv.4
+ | link         = Shop#Layouts
+ | description  = Donated 600 pennies to the shop.
+ | requirements = Donate 600 Coins to the {{m|Donation Machine}}
+ | id           = 154
+}} {{infobox achievement
+ | name         = Angels
+ | link         = Angel
+ | description  = They are waiting.
+ | requirements = Complete [[Chapter 6]]
+ | id           = 155
+}} {{infobox achievement
+ | name         = Godhead
+ | link         = Godhead
+ | description  = Unlocked a new item.
+ | requirements = Earn all {{dlc|na}} 6 / {{dlc|ana+}} 9 / {{dlc|a+nr}} 10 / {{dlc|r}} 12 [[Completion Mark]]s on [[Hard mode]] as {{c|The Lost}}
+ | id           = 156
+}} {{infobox achievement
+ | name         = Darkness Falls
+ | link         = Darkness Falls
+ | description  = Unlocked Challenge #4.
+ | requirements = {{dlc|nr}} Defeat {{e|Mom's Heart}} 11 times and unlock {{c|Eve}}<br>{{dlc|r}} Defeat {{e|Mom's Heart}} 11 times and defeat {{e|???}} as {{c|Eve}}
+ | id           = 157
+}} {{infobox achievement
+ | name         = The Tank
+ | link         = The Tank
+ | description  = Unlocked Challenge #5.
+ | requirements = Have 7 or more [[Red Heart]] Containers at one time
+ | id           = 158
+}} {{infobox achievement
+ | name         = Solar System
+ | link         = Solar System
+ | description  = Unlocked Challenge #6.
+ | requirements = Defeat {{e|Mom's Heart}} 3 times
+ | id           = 159
+}} {{infobox achievement
+ | alias        = Suicide King 2
+ | name         = Suicide King
+ | link         = Suicide King (Challenge)
+ | description  = Unlocked Challenge #7.
+ | requirements = Defeat {{e|Mom's Heart}} 11 times and unlock {{c|Lazarus}}
+ | id           = 160
+}} {{infobox achievement
+ | name         = Cat Got Your Tongue
+ | link         = Cat Got Your Tongue
+ | description  = Unlocked Challenge #8.
+ | requirements = Become {{tf|Guppy}}
+ | id           = 161
+}} {{infobox achievement
+ | name         = Demo Man
+ | link         = Demo Man
+ | description  = Unlocked Challenge #9.
+ | requirements = Defeat {{e|Mom's Heart}} 9 times
+ | id           = 162
+}} {{infobox achievement
+ | name         = Cursed!
+ | link         = Cursed!
+ | description  = Unlocked Challenge #10.
+ | requirements = Have 7 or more [[Red Heart]] Containers at one time
+ | id           = 163
+}} {{infobox achievement
+ | name         = Glass Cannon
+ | link         = Glass Cannon (Challenge)
+ | description  = Unlocked Challenge #11.
+ | requirements = Beat [[The Family Man|The Family Man (challenge #19)]], defeat [[Lokii]], and unlock {{c|Judas}} and {{e|It Lives!}}
+ | id           = 164
+}} {{infobox achievement
+ | name         = The Family Man
+ | link         = The Family Man
+ | description  = Unlocked Challenge #19.
+ | requirements = Pick up both Key Pieces from the [[Angel]]s in one run
+ | id           = 165
+}} {{infobox achievement
+ | name         = Purist
+ | link         = Purist
+ | description  = Unlocked Challenge #20.
+ | requirements = Defeat {{e|Mom}}
+ | id           = 166
+}} {{infobox achievement
+ | name         = Lost Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Isaac}}
+ | id           = 167
+}} {{infobox achievement
+ | name         = Cute Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Magdalene}}
+ | id           = 168
+}} {{infobox achievement
+ | name         = Crow Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Eve}}
+ | id           = 169
+}} {{infobox achievement
+ | name         = Shadow Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Judas}}
+ | id           = 170
+}} {{infobox achievement
+ | name         = Glass Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Cain}}
+ | id           = 171
+}} {{infobox achievement
+ | name         = Wrapped Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = {{dlc|na+}} Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Azazel}}<br>{{dlc|a+}} Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Lazarus}}
+ | id           = 172
+}} {{infobox achievement
+ | name         = Begotten Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = {{dlc|na+}} Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Lazarus}}<br>{{dlc|a+}} Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Azazel}}
+ | id           = 173
+}} {{infobox achievement
+ | name         = Dead Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|???}}
+ | id           = 174
+}} {{infobox achievement
+ | name         = -0- Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|The Lost}}
+ | id           = 175
+}} {{infobox achievement
+ | name         = Glitch Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Eden}}
+ | id           = 176
+}} {{infobox achievement
+ | name         = Fighting Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Samson}}
+ | id           = 177
+}} {{infobox achievement
+ | name         = Lord of the Flies
+ | link         = Beelzebub
+ | description  = You became Lord of the Flies.
+ | requirements = Become {{tf|Beelzebub}}
+ | id           = 178
+}}

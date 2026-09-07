@@ -1,0 +1,21 @@
+{{infobox passive collectible
+ | id          = 196
+ | quote       = Tears up
+ | description = +0.4 [[tears]], spawns 2 {{E|Soul Heart}}s.
+ | quality     = 3
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.4 [[tears]].
+* Spawns two {{E|Soul Heart}}s.
+
+== In-game Footage ==
+{{#ev:youtube|jlDMa4582f8}}
+
+== Trivia ==
+* Squeezy appears to be a Panic Pete squeeze toy.
+
+{{nav|fr=Jouet Anti-Stress}}

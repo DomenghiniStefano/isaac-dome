@@ -1,0 +1,45 @@
+{{infobox trinket
+ | dlc         = a+
+ | name        = Locust of War
+ | id          = 113
+ | quote       = I bring War
+ | description = Upon entering a room with enemies for the first time, spawns a [[Locust|Red Locust]] which detonates upon impact with enemies.
+ | unlocked by = Locust of Wrath
+}}
+
+{{cit|ut|a+}}
+
+== Effects ==
+* Upon entering a room with enemies for the first time, spawns a [[Familiars#Locusts|Red Locust]] which detonates upon impact with enemies, dealing double tear damage for the impact of the Locust and 60 damage for the explosion.
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|War}}.{{dlc-}}
+* {{dlc|r}} Explosive locusts have a larger aggro range than all other locusts. They will target an enemy from further away.
+* {{dlc|nr}} This trinket can be dangerous to hold, as the locust will instantly target the nearest enemy as Isaac enters the room, which can be close enough to catch Isaac in its blast radius.
+** {{dlc|r}} The explosion from the locust is very small, on scale of a single tile, but can still hurt Isaac.
+* The Locust will also spawn each time a wave starts in {{R|Boss Rush}} and {{dlc|r+}} {{mode|greed|greedier}} [[Greed Mode]].
+* The explosion takes most bomb effects from items that Isaac has, with some exceptions.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Each copy will spawn one more locust.
+* {{I|Bomber Boy|r}}: Additional smaller explosions will spawn in a tight cross formation.
+* {{I|Brimstone Bombs}}: The locust explosions fires thinner beams, dealing 4.8 damage per tick.
+* {{I|Glitter Bombs|r}}: Locust explosions have a chance to spawn pickups or trinkets.
+* {{I|Hive Mind}}: The locusts’ impact damage is doubled and the explosion damage is increased to 85.
+* {{I|Sad Bombs}}: A ring of 10 tears is shot outward upon detonation, which are affected by Isaac's tear modifiers, and deal damage equal to 15 + 0.6x, where x is Isaac's Damage.
+
+== Interactions ==
+* {{I|Bomber Boy|nr}}: The explosion damage is halved to 30 without additional explosions.
+* {{I|Ghost Bombs}}: No ghost is spawned.
+* {{I|Glitter Bombs|nr}}: Pickups and trinkets will not spawn from locust explosions.
+* {{I|Mr. Mega}}: No additional explosion damage or radius.
+* {{I|Scatter Bombs|n}}: Mini bombs are not spawned.
+* {{I|Sticky Bombs}}: No spiders are spawned on enemy death.
+
+== In-game Footage ==
+{{#ev:youtube|yu7bkE3bMkk}}
+
+== Trivia ==
+* Before [[Booster Pack #3]], Locust of War was named Locust of Wrath. Unlike other Locusts, the name of Locust of Wrath was from one of seven Deadly Sins instead of four Harbingers. This is why the Steam achievement still reads as such.
+
+{{nav|locust|apollyon unlock|isaac boss unlock|fr=Locuste de Guerre}}

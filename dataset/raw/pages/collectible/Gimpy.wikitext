@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | id          = 225
+ | quote       = Sweet suffering
+ | description = Gives chance of spawning a {{E|Soul Heart}} when taking damage. Enemies have a chance to drop a {{E|Half Red Heart}} after being killed.
+ | quality     = 2
+ | tags        = nolostbr summonable {{dlc|r+|devilsacrifice}}
+ | devil price = {{dlcalt|1|r+=0}}
+}}
+
+{{cit|p}}
+
+== Effects ==
+* When Isaac takes damage, there is a chance that a {{E|Soul Heart}} may spawn.
+* [[Monster]]s have a chance to drop a {{E|Half Red Heart}} after being killed. Chance depends on killed monster's base health.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Sisters Vis}}.{{dlc-}}
+* {{dlc|nr}} The chance for Gimpy to spawn a Soul Heart depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\min(\frac1 { 10 - \left \lfloor \mathit{Luck} * 0.4 \right \rfloor},50\%)</math>
+** At base luck (0), the chance is 10%, maxing out at 50% at 20 luck.
+* {{dlc|r}} The chance for Gimpy to spawn a Soul Heart depends on the [[luck]] stat and is based on this formula: <math>8\% + (2\% * \mathit{Luck})</math>
+** This means that the chance starts at 8% at 0 luck, minimizes at 0% at -4 luck, and maximizes at 100% at 46 luck.
+* Monsters that have less than 10 HP have a 1% chance to drop a Half Red Heart.
+* Monsters that have 10 to 29 HP have a 5% chance to drop a Half Red Heart.
+* Monsters that have more than 30 HP have a 10% chance to drop a Half Red Heart.
+
+== Synergies ==
+* {{I|Blood Oath}}: For each half heart damaged by Blood Oath, Gimpy has a chance to drop a soul heart. Synergy further improves with luck.
+* {{i|Dark Bum}}: Dark Bum can collect the Half Red Hearts that enemies drop, which when combined with the chance to drop Soul Hearts when damaged, is a good way to generate Soul and {{E|Black Heart}}s as well as other pickups.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s can't drop hearts.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop can't drop hearts.
+
+== In-game Footage ==
+{{#ev:youtube|aflPUCXG_b0||inline}} {{#ev:youtube|mrSzqvZMUPQ||inline}}
+
+== Trivia ==
+* The "Sweet Suffering" flavor text is a reference to BDSM. Specifically, it references masochism, which is when sexual pleasure is derived from pain.
+* Much like {{E|Gish}} and {{E|Sisters Vis}}, this item could be a reference to the "Gimp" enemy in Gish, who wears a BDSM mask.
+* Gimpy is a possible reference to "the gimp" a minor character of the movie "Pulp fiction" of Quentin Tarantino
+
+{{nav|fr=Latex}}
+[[Category:Damage-triggered items]]

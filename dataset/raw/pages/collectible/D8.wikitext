@@ -1,0 +1,48 @@
+{{infobox activated collectible
+ | dlc         = a
+ | id          = 406
+ | quote       = Reroll stats
+ | description = Re-rolls Isaac's [[damage]], [[tears]], [[range]], and [[speed]].
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge    = 4
+ | unlocked by = D8
+}}
+
+{{cit|ua|a}}
+
+== Effects ==
+* Re-rolls Isaac's [[damage]], [[tears]], [[range]], and [[speed]].
+** Each stat is given a multiplier, ranging from 0.5x to 2.0x, which applies after all other adjustments.
+
+== Notes ==
+* [[Luck]], [[Shot Speed]], and {{dlc|nr}} [[Tear Falling Speed]] are unaffected.
+* The Tears multiplier can cause Isaac's tear delay to decrease beyond the normal cap of 5.
+* The Speed multiplier cannot cause Isaac's speed to decrease or increase past the normal range of 0.1 to 2.0.
+** The multiplier overrides the Speed Up effect of {{i|A Pony}} or {{i|White Pony}}, which normally raise Isaac's Speed to 1.5 if it is below that value.
+** {{dlc|nr}} The hidden maximum Speed value also gets the same multiplier, which may further cap Isaac's Speed.
+* The multipliers are chosen in a way that keeps their total product roughly the same; the item will most often increase two and decrease two of Isaac's stats, although it can increase three and decrease one or increase one and decrease three. Larger increases are balanced by larger decreases.
+* In the area where you claim {{i|Knife Piece 2}}, the multipliers granted by d8 will remain, when activated using {{i|Void}} (possible bug). This can be detrimental if there are negative multipliers to fire rate or speed.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a black glowing die wisp on the middle ring. Each wisp has a random damage and fire rate assigned to it. Wisp health is not randomized.}}
+* {{i|Libra}}: Libra's balancing applies after the D8 multipliers, making it possible to aim for a high multiplier in the most efficient stats for a large across-the-board boost.
+* {{i|Rock Bottom}}: Allows affected stats to reach high multipliers, potentially doubling them if used enough.
+
+== Interactions ==
+* {{i|Car Battery}}: Re-rolls twice instantly without any benefits.
+** {{i|Rock Bottom}}: Considers both sets of multipliers, allowing higher stats to be reached faster.
+* {{C|Jacob and Esau|r}}: Only the brother using D8 will get their stats rerolled with the exception of Speed, which is shared between both brothers.
+
+== In-game Footage ==
+{{#ev:youtube|goM0hi3Tqxk}}
+
+== Gallery ==
+<gallery>
+File:D8 giantbook.png|Splash image which appears when D8 is activated.
+</gallery>
+
+== Trivia ==
+* The sprite for D8 has an 8 and a 7 below it, but judging by how real 8-sided dice look, the 7 should be a 5 instead.
+
+{{nav|dice}}

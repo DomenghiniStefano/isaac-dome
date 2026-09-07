@@ -1,0 +1,84 @@
+{{infobox activated collectible
+ | name        = Notched Axe
+ | id          = 147
+ | quote       = Rocks don't stand a chance
+ | description = {{dlc|nr}} Isaac destroys [[obstacles]] and opens {{R|Secret Room}}s by walking into them, but cannot shoot or pick up items until it's cancelled.<br>{{dlc+|r}} Toggles between tears and the pickaxe, which can be swung to attack and break [[obstacles]]. Using it depletes the charge, and it can't be used until next [[floor]] once the charge runs out.{{dlc-}}
+ | quality     = 1
+ | tags        = offensive nocantrip
+ | recharge    = {{dlcalt|3|r=unlimited}}
+}}
+
+{{cit|a}}
+
+== Effect ==
+* {{dlc|nr}} Isaac holds the Notched Axe above his head as long as he is in that [[room]], and can break any [[obstacles]] he touches, as well as being able to break through walls that lead into {{R|Secret Room}}s.
+* {{dlc|r}} Isaac stops shooting tears and holds the Notched Axe like {{C|The Forgotten}}'s club, and can break [[obstacles]], blow open doors, and hit enemies for 3x damage by swinging it. The Notched Axe has 64 charges. Hitting rocks or opening doors depletes 1 charge for each obstacle destroyed. Hitting enemies depletes 2 charges. Isaac can toggle back and forth between tears and using the Notched Axe by pressing the Active Item button. Once the Notched Axe runs out of charges, it cannot be used for the rest of the [[floor]].
+* {{dlc+|r}} The charges on Notched Axe cannot be refilled by means other than going to a new floor or picking up {{i|Iron Bar}}. This includes {{E|Lil' Battery|text=Batteries}}, {{M|Battery Bum}}s, {{i|4.5 Volt}}, {{i|Jumper Cables}}, etc.{{dlc-}}
+
+== Notes ==
+* {{dlc|nr}} If Isaac takes damage while using the Notched Axe, his current use of the Axe will end.
+* {{dlc|nr}} Isaac cannot attack or pick up other items while using the Notched Axe.
+* {{dlc|nr}} Activating the item while it is already being used will end the effect. This does not require any charge.
+* {{Dlc|nr}} Obstacles destroyed by the Notched Axe will never fill pits.
+* {{dlc+|r}} The Notched Axe may be used to get access to the {{s|Mines}}. The door will break open with one swing.{{dlc-}}
+* {{dlc+|r}} Notched Axe shares its synergies with {{c|The Forgotten}}'s bone club. See that page for details.{{dlc-}}
+* {{dlc+|r}} Notched Axe, like {{c|The Forgotten}}'s bone club, may be used to pick up items that are just out of reach over a pit or spikes. This does not require any charge.{{dlc-}}
+* {{dlc+|r}} Notched Axe can open secret rooms, and so it can be used on walls to test for secret rooms without using charge.{{dlc-}}
+* {{dlc+|r}} Notched Axe cannot free {{E|Sticky Nickel|n}}s.{{dlc-}}
+* {{dlc+|r}} Notched Axe can provoke an Angel Statue in {{R|Angel Room}}s, triggering the boss fight.{{dlc-}}
+* {{dlc+|r}} Notched Axe can be used to destroy the {{E|Tuff Twins}} and {{E|The Shell}} bosses instead of using bombs.{{dlc-}}
+
+== Synergies ==
+* {{I|Anti-Gravity|r}}: Melee attacks will generate a hovering tear in the shape of the swing of the pickaxe.
+* {{i|The Battery|r}}: Causes remaining charge from the previous floor to carry over to the next one.
+* {{c|Bethany|r}}: Breaking Notched Axe and using a Soul Charge to activate it again will allow for a single use before immediately breaking.
+* {{Book of Belial synergy|description=The axe receives a purplish glow and receives the following upgrades:
+** '''Increased durability''': Each use of the axe has a very high chance not to use a charge.
+** '''Faster usage''': The axe can be swung up to four times per second, regardless of Judas' tears stat.
+** '''Higher knockback''': Enemies are [[knock-back|knocked back]] when hit, receiving ''8 + 0.2 × floor'' damage if they collide with a wall, obstacle, or other enemies.
+** '''Fire effect''': The axe will set enemies on fire. The burn deals damage equal to Judas' damage, and ticks up to 5 times.
+** '''Increased luck''': destroying obstacles with the axe has an increased chance to spawn pickups.
+*** Destroying {{e|Poop}}s will spawn pickups much more frequently. When combined with {{t|Petrified Poop}}, the chance becomes 100% and will often result in multiple pickups from a single poop.
+*** Destroying [[Tinted Rock]]s will drop more consumables than usual, similarly to [[Rocks#Super Special Rocks|Super Special Rocks]].
+*** Destroying [[Rocks#Urns|Props]] (such as [[Urn]]s, [[Mushroom]]s, [[Skull]]s, and [[Polyp]]s) gives the prop an extra chance to drop its rewards. This can result in a single prop giving multiple drops.
+*** Destroying [[Fool's Gold]] rocks will drop significantly more coins.}}
+* {{Book of Virtues synergy|description=When used with the Book of Virtues, breaking obstacles has a chance to generate wisps that have different effects based on the "mineral" mined, from most common to least common:
+** Dip wisp (can only be obtained from poop): Fires brown tears that deal 1.5 damage and has extremely low health.
+** Black wisp: Fires black tears that have the effect of {{I|A Lump of Coal}} and deal 2.5 damage.
+** Silver wisp: Fires metallic tears that have the effect of {{I|Iron Bar}} and deal 4 damage.
+** Gold wisp: Fires penny tears that can turn enemies gold similar to {{I|Midas' Touch}} and deal 3.5 damage.
+** Red wisp: Fires laser tears similar to the ones fired by {{I|Technology}} and deal 3.5 damage.
+** Blue wisp: Fires diamond tears similar to the ones fired by {{I|Crown Of Light}} that deal 7 damage.}}
+* {{t|Broken Padlock}}: Allows the Notched Axe to open locked chests and doors. The opening of chests does not use durability, however it will consume a key if Isaac has any.
+* {{i|Ipecac|r}}: Melee attacks will trigger an explosion when they makes contact with an enemy; unlike with the Forgotten's bone club, Isaac ''will'' take damage from these Ipecac explosions.
+* {{i|Iron Bar|r}}: Fully recharges the axe when picked up.
+* {{i|Technology|r}}: Melee attacks will cause a technology laser ring to appear around Isaac, damaging enemies.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{T|Found Soul}}: Found Soul gets a Notched Axe that breaks after a single use. If Notched Axe is dropped and picked up again, Found Soul will be able to use it again.
+
+== In-game Footage ==
+=== In ''Rebirth'' {{dlc+|nr}} ===
+{{#ev:youtube|gJaLZIgJ37k||inline}} {{#ev:youtube|n4P_BfM_ZEc||inline}}{{dlc-}}
+
+=== In ''Repentance'' {{dlc+|r}} ===
+{{#ev:youtube|_bmMN5ySfp4}}{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:3DS_Detailed_Notched_Axe.png|{{plat|3DS}} The icon of Notched Axe as seen on the lower 3DS screen
+</gallery>
+
+== Trivia ==
+* This item is a reference to Markus "Notch" Persson, the creator of ''[[wikipedia:Minecraft|Minecraft]]''.
+** It resembles an [[minecraft:Pickaxe|Iron Pickaxe]], which can be used to mine stones and ores.
+** The item durability being 64 could also be a reference the max amount of copies you could hold in a slot for most items in ''Minecraft''.
+* The item is also a reference to the Notched Pickaxe from ''The Elder Scrolls V: Skyrim'', which itself was most likely also a reference to Notch.
+* This item got significantly buffed from the original ''Binding of Isaac'', where it could not open up secret rooms and could only break 1 rock for every use, though it did only have a 1 room recharge time.
+* {{dlc|r}} The "mineral" wisps that appear when using {{i|Book of Virtues|n}} with this item follow the same scheme as they do in ''Minecraft'', giving the player black, silver, gold, blue, and red wisps, most likely corresponding to the Minecraft minerals coal, iron, gold, diamond, and redstone respectively.
+* {{dlc|r}} The new effect from {{i|The Book of Belial}} resembles an enchanted pickaxe that appears to have the following ''Minecraft'' enchantments: [[minecraft:Efficiency|Efficiency]] (quicker usage), [[minecraft:Fire Aspect|Fire Aspect]] (setting enemies on fire), [[minecraft:Fortune|Fortune]] (increased amount of drops when destroying obstacles), [[minecraft:Knockback|Knockback]] (increased knockback) and [[minecraft:Unbreaking|Unbreaking]] (increased durability).
+** The synergy as a whole references the fact that enchanted books are used to augment tools in ''Minecraft.''
+* Using {{i|Iron Bar}} to repair the item is another reference to Minecraft where you can repair Iron Pickaxes using iron and an [[minecraft:Anvil|Anvil]].
+
+{{nav|fr=Pioche en Fer|zh=残损铁镐}}

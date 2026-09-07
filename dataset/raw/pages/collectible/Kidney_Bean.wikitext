@@ -1,0 +1,33 @@
+{{infobox activated collectible
+ | dlc         = a
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 421
+ | quote       = Love toots{{dlc|nr|!}}
+ | description = Isaac farts, [[charm]]ing all nearby enemies.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | recharge    = {{dlcalt|2|r=1|r+=4s}}
+}}
+
+{{cit|a|a}}
+
+== Effects ==
+* Upon use, Isaac farts, [[charm]]ing all nearby enemies.
+** {{dlc|nr}} The cloud deals 5 damage.
+
+== Synergies ==
+* {{i|Bird's Eye}}/{{i|Ghost Pepper}}: Whenever the player creates a charming fart, a fire will be shot in a random direction.
+* {{Book of Virtues synergy|description=Spawns purple wisps on the middle ring. The wisps [[charm]] nearby enemies when destroyed.}}
+* {{t|Second Hand}}: Doubles charm duration.
+
+== Interactions ==
+* {{i|Car Battery}}: Spawns two charming farts on top of each other {{dlc|nr}} and the cloud deals double damage.
+
+== In-game Footage ==
+{{#ev:youtube|LzKN1fUsT9k}}
+
+== Trivia ==
+* The charm effect this item gives may be a reference to the fact that Kidney Beans are one of the most nutritious / healthy type of bean to eat, or the fact that it resembles a heart.
+* The sprite for Kidney Bean was much larger prior to Repentance. It was resprited to be similar in size to {{I|Butter Bean}}, {{I|The Black Bean}}, and {{I|The Bean}}.
+
+{{nav|bean|fr=Haricot Rouge}}

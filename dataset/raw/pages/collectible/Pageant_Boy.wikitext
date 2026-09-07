@@ -1,0 +1,24 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 141
+ | quote       = Ultimate grand supreme
+ | description = Spawns seven random [[coins]] around Isaac {{dlc|r+}} and a random penny trinket.
+ | quality     = 0
+ | tags        = offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns seven [[coin]]s around Isaac.
+** These coins may be any normal type with their respective usual chances: {{E|Penny|text=Pennies}}, {{E|Nickel}}s, {{E|Dime}}s, {{E|Lucky Penny|text=Lucky Pennies}}, {{E|Sticky Nickel}}s or {{E|Golden Penny|text=Golden Pennies}}.
+** Denomination of coins that spawn is not affected by [[luck]].
+* {{dlc|r+}} Spawns one of the following trinkets: {{T|Blessed Penny|n}}, {{T|Bloody Penny}}, {{T|Burnt Penny}}, {{T|Butt Penny}}, {{T|Charged Penny|n}}, {{T|Counterfeit Penny}}, {{T|Cursed Penny|n}}, {{T|Flat Penny}} and {{T|Rotten Penny|n}}.
+
+== Synergies ==
+* {{T|Nuh Uh!}}: On the low chance this item spawns in {{s|Womb}} or {{s|Corpse|n}}, coins dropped will instead be replaced by drops from Nuh Uh!'s drop table.
+
+== In-game Footage ==
+{{#ev:youtube|7amJfm2BfqM||inline}} {{#ev:youtube|DEaRn7ocxW4||inline}}
+
+{{nav|fr=Bête de Foire}}

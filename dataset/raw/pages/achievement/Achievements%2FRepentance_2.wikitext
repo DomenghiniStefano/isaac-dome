@@ -1,0 +1,563 @@
+{{page dlc|r}}
+{{storage page}}
+{{infobox achievement
+ | dlc          = r
+ | name         = The Benighted
+ | link         = Tainted Azazel
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Azazel}}
+ | id           = 481
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Enigma
+ | link         = Tainted Lazarus
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Lazarus}}
+ | id           = 482
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Capricious
+ | link         = Tainted Eden
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Eden}}
+ | id           = 483
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Baleful
+ | link         = Tainted Lost
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|The Lost}}
+ | id           = 484
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Harlot
+ | link         = Tainted Lilith
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Lilith}}
+ | id           = 485
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Miser
+ | link         = Tainted Keeper
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Keeper}}
+ | id           = 486
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Empty
+ | link         = Tainted Apollyon
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Apollyon}}
+ | id           = 487
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Fettered
+ | link         = Tainted Forgotten
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|The Forgotten}}
+ | id           = 488
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Zealot
+ | link         = Tainted Bethany
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Bethany}}
+ | id           = 489
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Deserter
+ | link         = Tainted Jacob
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Jacob and Esau}}
+ | id           = 490
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Glitched Crown
+ | link         = Glitched Crown
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Isaac}}
+ | id           = 491
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Belly Jelly
+ | link         = Belly Jelly
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Magdalene}}
+ | id           = 492
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Blue Key
+ | link         = Blue Key
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Cain}}
+ | id           = 493
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Sanguine Bond
+ | link         = Sanguine Bond
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Judas}}
+ | id           = 494
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Swarm
+ | link         = The Swarm
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted ???}}
+ | id           = 495
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Heartbreak
+ | link         = Heartbreak
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Eve}}
+ | id           = 496
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Larynx
+ | link         = Larynx
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Samson}}
+ | id           = 497
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Azazel's Rage
+ | link         = Azazel's Rage
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Azazel}}
+ | id           = 498
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Salvation
+ | link         = Salvation
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Lazarus}}
+ | id           = 499
+}} {{infobox achievement
+ | dlc          = r
+ | name         = TMTRAINER
+ | link         = TMTRAINER
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Eden}}
+ | id           = 500
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Sacred Orb
+ | link         = Sacred Orb
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Lost}}
+ | id           = 501
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Twisted Pair
+ | link         = Twisted Pair
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Lilith}}
+ | id           = 502
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Strawman
+ | link         = Strawman
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Keeper}}
+ | id           = 503
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Echo Chamber
+ | link         = Echo Chamber
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Apollyon}}
+ | id           = 504
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Isaac's Tomb
+ | link         = Isaac's Tomb
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Forgotten}}
+ | id           = 505
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Vengeful Spirit
+ | link         = Vengeful Spirit
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Bethany}}
+ | id           = 506
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Esau Jr.
+ | link         = Esau Jr.
+ | description  = ???
+ | requirements = Defeat {{e|The Beast}} as {{c|Tainted Jacob}}
+ | id           = 507
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Bloody Mary
+ | link         = Bloody Mary
+ | description  = Unlocked a new challenge.
+ | requirements = Unlock {{c|Bethany}}, {{i|Blood Bag}}, and {{e|It Lives!}}
+ | id           = 508
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Baptism by Fire
+ | link         = Baptism by Fire
+ | description  = Unlocked a new challenge.
+ | requirements = Defeat {{e|Satan}} as {{c|Bethany}}, defeat {{e|Mom's Heart}} 11 times, and unlock {{t|Maggy's Faith}}
+ | id           = 509
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Isaac's Awakening
+ | link         = Isaac's Awakening
+ | description  = Unlocked a new challenge.
+ | requirements = Defeat {{e|Mother}}
+ | id           = 510
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Seeing Double
+ | link         = Seeing Double
+ | description  = Unlocked a new challenge.
+ | requirements = Defeat {{e|Mother}}
+ | id           = 511
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Pica Run
+ | link         = Pica Run
+ | description  = Unlocked a new challenge.
+ | requirements = Defeat {{e|Mom's Heart}} 11 times and unlock {{i|Marbles}}
+ | id           = 512
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Hot Potato
+ | link         = Hot Potato
+ | description  = Unlocked a new challenge.
+ | requirements = Unlock {{c|Tainted Forgotten}}
+ | id           = 513
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Cantripped!
+ | link         = Cantripped!
+ | description  = Unlocked a new challenge.
+ | requirements = Unlock {{c|Tainted Cain}}
+ | id           = 514
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Red Redemption
+ | link         = Red Redemption
+ | description  = Unlocked a new challenge.
+ | requirements = Unlock {{c|Tainted Jacob}}
+ | id           = 515
+}} {{infobox achievement
+ | dlc          = r
+ | name         = DELETE THIS
+ | link         = DELETE THIS
+ | description  = TODO: remove this achievement
+ | requirements = Unlock {{c|Tainted Eden}}
+ | id           = 516
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Dirty Mind
+ | link         = Dirty Mind
+ | description  = Complete Challenge 36.
+ | requirements = Complete [[Scat Man|Scat Man (challenge #36)]]
+ | id           = 517
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Sigil of Baphomet
+ | link         = Sigil of Baphomet
+ | description  = Complete Challenge 37.
+ | requirements = Complete [[Bloody Mary|Bloody Mary (challenge #37)]]
+ | id           = 518
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Purgatory
+ | link         = Purgatory
+ | description  = Complete Challenge 38.
+ | requirements = Complete [[Baptism by Fire|Baptism by Fire (challenge #38)]]
+ | id           = 519
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Spirit Sword
+ | link         = Spirit Sword
+ | description  = Complete Challenge 39.
+ | requirements = Complete [[Isaac's Awakening|Isaac's Awakening (challenge #39)]]
+ | id           = 520
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Broken Glasses
+ | link         = Broken Glasses
+ | description  = Complete Challenge 40.
+ | requirements = Complete [[Seeing Double|Seeing Double (challenge #40)]]
+ | id           = 521
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Ice Cube
+ | link         = Ice Cube
+ | description  = Complete Challenge 41.
+ | requirements = Complete [[Pica Run|Pica Run (challenge #41)]]
+ | id           = 522
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Charged Penny
+ | link         = Charged Penny
+ | description  = They will charge you up... for a small fee.
+ | requirements = Donate to [[Battery Bum]]s until they pay out with an [[Battery Bum (Item Pool)|item]] 5 times
+ | id           = 523
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Fool
+ | link         = 0 - The Fool?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Lost}}
+ | id           = 524
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Magician
+ | link         = Reverse tarot cards
+ | description  = I - The Magician?
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Judas}}
+ | id           = 525
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The High Priestess
+ | link         = II - The High Priestess?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Lilith}}
+ | id           = 526
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Empress
+ | link         = III - The Empress?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Eve}}
+ | id           = 527
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Emperor
+ | link         = IV - The Emperor?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted ???}}
+ | id           = 528
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Hierophant
+ | link         = V - The Hierophant?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Bethany}}
+ | id           = 529
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Lovers
+ | link         = VI - The Lovers?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Magdalene}}
+ | id           = 530
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Chariot
+ | link         = VII - The Chariot?
+ | description  = Complete Challenge 42.
+ | requirements = Complete [[Hot Potato|Hot Potato (challenge #42)]]
+ | id           = 531
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Justice
+ | link         = VIII - Justice?
+ | description  = Complete Challenge 43.
+ | requirements = Complete [[Cantripped!|Cantripped (challenge #43)]]
+ | id           = 532
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Hermit
+ | link         = IX - The Hermit?
+ | description  = Complete Challenge 44.
+ | requirements = Complete [[Red Redemption|Red Redemption (challenge #44)]]
+ | id           = 533
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Wheel of Fortune
+ | link         = X - Wheel of Fortune?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Cain}}
+ | id           = 534
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Strength
+ | link         = XI - Strength?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Samson}}
+ | id           = 535
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Hanged Man
+ | link         = XII - The Hanged Man?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Keeper}}
+ | id           = 536
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Death
+ | link         = XIII - Death?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Forgotten}}
+ | id           = 537
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Temperance
+ | link         = XIV - Temperance?
+ | description  = ???
+ | requirements = Complete [[DELETE THIS|DELETE THIS (challenge #45)]]
+ | id           = 538
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Devil
+ | link         = XV - The Devil?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Azazel}}
+ | id           = 539
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Tower
+ | link         = XVI - The Tower?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Apollyon}}
+ | id           = 540
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Stars
+ | link         = XVII - The Stars?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Isaac}}
+ | id           = 541
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Sun and the Moon
+ | link         = XVIII - The Moon?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Jacob}}
+ | id           = 542
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Judgement
+ | link         = XX - Judgement?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Lazarus}}
+ | id           = 543
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The World
+ | link         = XXI - The World?
+ | description  = ???
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Tainted Eden}}
+ | id           = 544
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Old Capacitor
+ | link         = Old Capacitor
+ | description  = Kill 10 Battery Bums.
+ | requirements = Kill 10 [[Battery Bum]]s
+ | id           = 545
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Brimstone Bombs
+ | link         = Brimstone Bombs
+ | description  = Kill Hornfel before he escapes!
+ | requirements = After breaking {{e|Hornfel}}'s minecart, kill him before he can escape
+ | id           = 546
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Mega Mush
+ | link         = Mega Mush
+ | description  = Beat everything in Hard Mode as every character.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s for all non-Tainted [[character]]s
+ | id           = 547
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Mom's Lock
+ | link         = Mom's Lock
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Isaac}}
+ | id           = 548
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Dice Bag
+ | link         = Dice Bag
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Isaac}}
+ | id           = 549
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Holy Crown
+ | link         = Holy Crown
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Magdalene}}
+ | id           = 550
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Mother's Kiss
+ | link         = Mother's Kiss
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Magdalene}}
+ | id           = 551
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Gilded Key
+ | link         = Gilded Key
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Cain}}
+ | id           = 552
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Lucky Sack
+ | link         = Lucky Sack
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Cain}}
+ | id           = 553
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Your Soul
+ | link         = Your Soul
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Judas}}
+ | id           = 554
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Number Magnet
+ | link         = Number Magnet
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Judas}}
+ | id           = 555
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Dingle Berry
+ | link         = Dingle Berry
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted ???}}
+ | id           = 556
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Ring Cap
+ | link         = Ring Cap
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted ???}}
+ | id           = 557
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Strange Key
+ | link         = Strange Key
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Eve}}
+ | id           = 558
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Lil Clot
+ | link         = Lil Clot
+ | description  = ???
+ | requirements = Defeat {{e|Mother}} as {{c|Tainted Eve}}
+ | id           = 559
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Temporary Tattoo
+ | link         = Temporary Tattoo
+ | description  = ???
+ | requirements = Defeat {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}} as {{c|Tainted Samson}}
+ | id           = 560
+}}

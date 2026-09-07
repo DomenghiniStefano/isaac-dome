@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | dlc = a+
+ | name = Marbles
+ | id = 538
+ | quote = Choking hazard
+ | description = Spawns 3 random [[trinket]]s. Taking damage has a 5% chance to swallow Isaac's currently held trinket, gaining its effect permanently.
+ | quality     = 2
+ | tags        = summonable
+ | unlocked by = Marbles
+}}
+
+{{cit|up|a+5}}
+
+== Effect ==
+* Spawns 3 random [[trinket]]s.
+* Taking damage has a 10% chance to swallow Isaac's currently held trinket, gaining its effect permanently, similar to {{i|Smelter}}.
+
+== Notes ==
+* If activated while carrying two trinkets, both will be swallowed.
+* Trinkets swallowed via Marbles will not be removed or rerolled by items such as the {{i|D4}}.
+* {{t|Perfection}} is still lost after Isaac takes damage from regular sources.
+* {{dlc+|r}} {{T|Faded Polaroid}} cannot be used to open {{A|A Strange Door}} if swallowed.{{dlc-}}
+
+== Synergies ==
+* {{I|Glyph of Balance}}: Allows a trinket to appear every time there's a room clear drop as long as the other room clear drop criteria aren't satisfied, as it empties the trinket slot.
+* {{C|Tainted Eden|r}}: Absorbed trinkets are not rerolled by Tainted Eden's passive effect.
+* {{C|Tainted Isaac|r}}: Absorbed trinkets do not take up an item slot.
+
+== In-game footage ==
+{{#ev:youtube|74Pr50YpoXA}}
+
+== Trivia ==
+* Marbles is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=948825958 this Steam Workshop item] by FoksMachine and Bustin Blotch.
+* This item is used in {{chal|Pica Run}}.
+* This item is a reference to how marbles and small toys are sometimes swallowed by children.
+
+== Gallery ==
+<gallery>
+File:Collectible Marbles mod icon.png|Marbles' appearance in the original [https://steamcommunity.com/sharedfiles/filedetails/?id=948825958 Steam workshop mod].
+</gallery>
+
+{{nav|trinket modifier|booster pack}}
+[[Category:Damage-triggered items]]

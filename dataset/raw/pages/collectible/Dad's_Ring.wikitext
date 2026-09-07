@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 546
+ | quote       = Father's blessing
+ | description = Creates a ring of light around Isaac that [[petrification|petrifies]] enemies in contact.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable
+ | unlocked by = Dad's Ring
+}}
+
+{{cit|up|a+5}}
+
+== Effect ==
+* Creates a ring of light around Isaac that [[petrification|petrifies]] enemies on contact.
+** Normal enemies stay permanently petrified as long as they are within the ring, whereas bosses get a standard petrification effect that stays even outside the ring but isn't permanent.
+
+== Notes ==
+* Dad's Ring has no effect on the Mask of a {{e|Mask + Heart}}.
+* {{dlc+|r}} Will not affect invincible boss enemies such as {{E|Dark Esau}} or {{E|Mother's Shadow}}.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|rK5tgOwF03g}}
+
+== Gallery ==
+<gallery>
+File:AfterbirthPlus Booster Pack 5 Concepts.jpg|Concept art for Dad's Ring on the right side, along with other Booster Pack items and trinkets, by Edmund McMillen.
+</gallery>
+
+== Bugs ==
+{{bug|This item's visual appearance is overridden by some items, rendering the ring invisible. It will still behave as normal in this state.}}
+{{Bug|When {{i|Pause}} is used with Dad's Ring, it creates a second ring of light that stays in place where Isaac used "Pause" which lasts for the active item's duration. The second ring is a visual glitch and does not interact with enemies. Moreover, both rings are flashing for the duration.}}
+
+{{nav|the forgotten unlock|booster pack|dad|ultra greedier unlock|fr=Bague de Papa}}

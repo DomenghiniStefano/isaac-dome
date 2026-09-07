@@ -1,0 +1,56 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 640
+ | quote       = Unleash their sorrow
+ | description = Isaac pulls out or puts away an urn that fires a stream of damaging blue flames. It gains Soul Charges each time an enemy dies, which are used to fuel the urn.
+ | quality     = 3
+ | tags        = offensive nocantrip
+ | recharge    = unlimited
+ | unlocked by = Urn of Souls
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, Isaac pulls out (or puts away) the urn; holding a fire button when it's pulled out emits a stream of blue flames in whichever direction Isaac is aiming. Each flame deals 22.5-31.5 damage per second, depending on how far it's traveled, plus an additional 4.5 damage per second times floor number. Multiple flames can damage the same enemy simultaneously.
+** Isaac is also pushed backwards slightly while using it.
+** The flames destroy enemy projectiles, {{e|Poop}}, and other fires, but bounce off rocks.
+* Killing enemies grants a soul charge to the Urn, up to a maximum of 20. Killing bosses grants a larger boost. Charges must be used to power Urn of Souls, with each charge being equivalent to 15 flames over the course of half a second.
+
+== Notes ==
+* Can be fired diagonally, or in any direction if using a gamepad or mouse controls (the latter being enabled in <code>options.ini</code>).
+* The Urn can't be used to destroy {{e|Shopkeeper}}s, unlike {{i|The Candle}} and {{i|Red Candle}}.
+* Multiple Urns share the same charges.
+* {{c|Bethany}} can use her soul charges to fuel the Urn. Likewise, {{c|Tainted Bethany}} can use her blood charges.
+* Holding two urns with {{C|Jacob and Esau}} won't charge both at the same time, each enemy will drop the same charges as if only one urn was held.
+
+== Synergies ==
+* {{i|Angelic Prism}}: Flames can be split into four multi-colored flames.
+* {{i|Bird's Eye}} / {{i|Ghost Pepper}}: The urn can emit flames from these items. Ghost Pepper flames are indistinguishable from Urn of Souls flames, but persist on the ground for longer.
+* {{Book of Belial synergy|description=The stream of fire is replaced with a controllable {{i|Brimstone}} beam that destroys projectiles and deals more damage the longer it's active. The minimum damage is ''3.37 + 0.361 × floor'', and the maximum damage is ''4.2 + 0.45 × floor'', which it scales up to over the course of 3 seconds of continuous fire. Souls dropped from enemies are colored red, and the Urn displays a red graphic on the HUD when active.This brimstone will not be affected by any synergies, except side ones such as {{i|Angelic Prism}}, {{i|Hemoptysis}} and {{i|Marked}}.}}
+* {{Book of Virtues synergy|description=Spawns a wisp in the middle ring for every consecutive second Urn of Souls is fired. The occasional fires shot by the wisps block enemy shots, deal contact damage to enemies, and last for 3 seconds before dissipating. The flames deal 10 damage per tick for the first second they're out, scale down to 5 damage over the next second, and then stay at 5 damage until they dissipate (60-30 damage per second). The damage these fires deal does not increase with {{i|BFFS!}} or scale up on later floors.}}
+* {{I|Eye of Greed}} / {{i|Large Zit}} / {{i|Tech.5}} / {{i|Technology 2}}: Tears from these items will still shoot as normal while using the urn.
+* {{tf|Guppy}} / {{i|The Mulligan}}: Fires have a chance to spawn [[Blue Fly|Blue Flies]].
+* {{i|Immaculate Heart}}: Each individual flame has a chance to cause Immaculate Heart to generate an orbiting tear.
+* {{i|Lead Pencil}}: Every 15 flames shot out of the urn will shoot a barrage of Isaac's tears.
+* {{i|Multidimensional Baby}}: All flames shot through Multidimensional Baby are doubled, providing a burst of flashing black-and-white tears.
+* {{i|Tear Detonator}}: Each flame splits into six tears, unlike other fire effects.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s don’t grant soul charges.
+* {{i|Car Battery}}: No effect.
+* {{i|E. Coli}} / {{i|Flush!}}: Enemies that are turned into poop don't grant soul charges.
+* {{i|Kidney Stone}}: Firing the urn counts as fire time but the urn must be put away for Isaac to charge and shoot the kidney shot. Switching to the urn while auto-firing from Kidney Stone forces the urn to fire as well.
+* {{i|Void}}: No effect when absorbed by Void.
+
+== In-game footage ==
+{{#ev:youtube|KcX0LjAPKcI||inline}} {{#ev:youtube|lqeI7PGOmVM||inline}}
+
+== Trivia ==
+* [[Anti:Urn of Souls|Urn of Souls]] originates from the ''Antibirth'' mod where it was an unimplemented item with the pickup quote “Soul collector”.
+* This item is used in {{chal|Baptism by Fire}}.
+
+== Bugs ==
+{{Bug|If Isaac is holding fire and has {{i|The Ludovico Technique}} + {{i|Technology 2}} while pulling out {{i|Urn of Souls}}, another Technology 2 laser is created in the direction being fired that persists until the urn is put away or the room is left.}}
+
+{{nav|bethany unlock|satan unlock|fr=Urne d'Âmes}}

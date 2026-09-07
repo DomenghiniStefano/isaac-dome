@@ -1,0 +1,25 @@
+{{infobox passive collectible
+ | id          = 346
+ | quote       = HP up
+ | description = Grants one full Red [[Heart container]]. {{dlc|r}} Heals 1 additional {{e|Red Heart}}.
+ | quality     = 1
+ | tags        = nolostbr food
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Grants one full Red [[Heart container]].
+* {{Dlc|r}} Heals 1 additional {{e|Red Heart}}.
+
+== Synergies ==
+* {{i|Binge Eater}}: When Isaac picks up A Snack it now grants: a permanent +0.2 [[Shot Speed]], +1.0 [[Luck]], -0.03 [[Speed]] and a temporary +3.6 [[Damage]] (which diminishes to 0 in 30 seconds).
+
+== In-game Footage ==
+{{#ev:youtube|sYK7hI9BRA8||inline}} {{#ev:youtube|Ww1ueosGIgY||inline}}
+
+== Trivia ==
+* A Snack was the final item added in Rebirth.
+* A Snack appears to be a dog treat.
+
+{{nav|fr=Casse-Croûte}}

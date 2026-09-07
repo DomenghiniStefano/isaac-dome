@@ -1,0 +1,47 @@
+{{infobox boss
+ | dlc         = r
+ | name        = Colostomia
+ | id          = 917
+ | environment = <u>Boss</u><br>{{floor|Dross}}
+ | base hp     = 380
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Butt Bombs}} (1% chance)
+}}
+
+'''Colostomia''' is a [[boss]] introduced in [[The Binding of Isaac: Repentance]] that can appear in {{dlc|r}} {{s|Dross}}.
+
+== Behavior ==
+=== Phase 1 ===
+Colostomia alternates between the following attacks:
+* Hops in place and then slides toward Isaac in the closest cardinal direction, firing projectiles in both perpendicular directions as she moves and leaving trails of explosive gas.
+** The slide can be at a slight angle if Isaac isn't perfectly aligned with it.
+** Colostomia continuously performs this attack until ~40% of the room is covered in explosive gas.
+* Launches a {{i|Butt Bombs}} Bomb towards Isaac that ignites any gas clouds its explosion hits, causing a chain of explosions.
+** This is always her first attack upon spawning.
+** Unlike Isaac's Butt Bombs, these do not fog the room.
+
+=== Phase 2 ===
+After dropping to half health, the bag containing Colostomia explodes, creating explosive clouds and leaving her adhering to the floor.
+* Jumps to another nearby location, firing 8 projectiles in a radial burst and creating a puddle of harmful Brown Creep where she lands.
+** Only 2 puddles of Brown Creep can persist at once.
+* Spits two {{i|Butt Bombs}} Bombs at Isaac. The range of these bombs is dependent on how close Isaac is to her.
+* Farts, creating a ring of explosive gas around her location.
+
+== Gallery ==
+<gallery>
+File:Boss Colostomia phase 2 ingame.png|Colostomia in her second phase.
+</gallery>
+
+== Trivia ==
+* Colostomia is based on a [[wikipedia:Colostomy|Colostomy bag]], a removable, disposable bag that attaches to the exterior opening of a colostomy to permit sanitary collection and disposal of bodily wastes.
+* Colostomia's 1st phase charge attack is similar to an attack from [[anti:The Witness|The Witness]] in Antibirth.
+* Colostomia is confirmed female according to messages from NotYourSagittarius in the official Binding of Isaac Discord.<ref>https://discord.com/channels/123641386921754625/485133685881045014/831359954337136670</ref>
+* Upon death, Colostomia diffuses into the water of the arena, turning it from green to a murky brown.
+
+== References ==
+{{reflist}}
+
+{{nav|boss|fr=Colostomie}}
+[[Category:Bosses]]
+[[Category:Chapter 1.5 bosses]]
+[[Category:Dross bosses]]
+[[Category:Debut bosses in Repentance]]

@@ -1,0 +1,53 @@
+{{disambig msg|the boss|the enemy|Gurgling (Enemy)}}
+{{infobox boss
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 237
+ | variant     = 1
+ | environment = <u>Boss</u><br>{{Dlc|nr}}<br>{{floor|Basement}}<br>{{room|boss challenge}}{{room|boss rush}}<br>{{Dlc|r}}<br>{{floor|Basement}}{{floor|Burning Basement}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>(with another pair of Gurglings, [[Turdlings]], or {{dlc|r}} [[C.H.A.D.]])<br>{{dlc|r}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>(with [[Chub]], [[The Stain]], or [[Gurdy]])<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>(with Gurdy and [[Gurdy Jr.]])<br><u>Degraded Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Chest}}
+ | base hp     = {{dlcalt|90|a=60}}
+ | pool        = {{ip|Boss}}<br> {{i|Lil Gurdy|r+}} (1% chance)
+}}
+
+'''Gurglings''' are a [[boss]] that can appear:
+* {{Dlc|nr}} Only in the {{s|Basement}}.
+* {{Dlc+|r}} In the {{s|Basement}} and the {{s|Burning Basement}}.{{dlc-}}
+They each have {{dlc|na}} 90 HP / {{dlc|a}} 60 HP.
+
+== Behavior ==
+The Gurglings spawn as a pair and wander around the room. Each individual Gurgling has one attack in total which is performed independently of the other:
+* Rushes towards the player when aligned in any cardinal direction, leaving behind damaging [[Creep#Red Creep|Red Creep]] until they have run into a wall.
+** After rushing into a wall, they pause for a brief moment, and then spawn 0-2 {{e|Attack Fly|text=Attack Flies}}.
+** Their dash can be interrupted if they run into an Attack Fly.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18|dlc=a}}: Gurglings spawn {{e|Troll Bomb}}s at regular intervals instead of Red Creep when rushing towards the player. They take only 5 damage from their own bombs. They don't spawn any Attack Flies.
+:* While [[Status Effects#Petrification|petrified]], the Gurglings take full damage from their own bombs.
+: {{bc|12|dlc=a}}: Three Gurglings will appear instead of two. They are faster but do not leave any Creep. They don't spawn any Attack Flies.
+
+== Gallery ==
+<gallery>
+Boss Gurglings black ingame.png  | A Black Champion Gurgling.
+Boss Gurglings yellow ingame.png | A Yellow Champion Gurgling.
+Boss Delirium Gurglings ingame.png    | A Gurgling as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Trivia ==
+* Gurglings appear to be the first stage of the "Gurdy" boss line, with the second stage as {{e|Gurdy Jr.}}, the third as {{e|Gurdy}}, and the final as {{e|Mama Gurdy}}.
+** With the {{e|Turdlings}}, the Gurdy boss series has a total of five bosses, the second most out of any boss in the game after the Harbingers and the most out of floor-specific bosses.
+* The Gurglings and {{dlc+|a}} their poop-themed variant, the {{e|Turdlings}}{{dlc-}}, spawn in groups of three during the Boss Rush.
+* If the Gurglings' audio is slowed down, the audio reveals that it is a little kid saying "Rawr!"
+* Unlike the regular {{E|Gurgling}}, boss Gurglings have a one-second death animation.
+* In the game files, the Gurglings' feet are called hands.
+
+== Bugs ==
+{{bug|dlc=na|If the player stays close to walls, the Gurglings will not charge.}}
+{{bug|If both Gurglings charge at once, only one of the Gurgling's grunting noise file will play.}}
+{{bug|dlc=na+|When fought in the {{R|Boss Challenge Room}}, they will appear in their enemy form rather than their boss form, making them much weaker and lacking a health bar.}}
+{{bug|When the Gurglings are [[slow]]ed and attempt to charge Isaac, they can't move and constantly spawn [[Attack Fly|Attack Flies]]. Similarly, the "mini-boss" Gurglings attempting the same attack will constantly shoot 6 blood tears.}}
+
+{{nav|boss|fr=Gargouillis (Boss)}}
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Rebirth]]
+[[Category:Gurdies]]

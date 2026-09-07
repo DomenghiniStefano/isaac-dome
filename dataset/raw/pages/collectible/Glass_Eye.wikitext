@@ -1,0 +1,25 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 730
+ | quote       = DMG + luck up
+ | description = +0.75 [[damage]], +1 [[luck]].
+ | quality     = 3
+ | tags        = offensive
+}}
+
+{{cit|p|r|v1.7.5}}
+
+== Effects ==
+* +0.75 [[damage]]
+* +1 [[luck]].
+
+== Interactions ==
+* {{i|Glass Eye}}: Picking up a second copy of the item gives Isaac a unique costume with both eyes replaced. The damage up and luck up stack as expected.
+
+== In-game footage ==
+{{#ev:youtube|Z9mlznpGP0s||inline}} {{#ev:youtube|2TEmepL6mvk||inline}}
+
+== Trivia ==
+* Glass Eye is one of the few items that will give Isaac a unique costume when two copies are acquired, along with {{i|Brimstone}} and {{i|Guppy's Eye}}.
+
+{{nav|fr=Œil de Verre}}

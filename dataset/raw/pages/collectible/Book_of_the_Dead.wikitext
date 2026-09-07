@@ -1,0 +1,84 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 545
+ | quote       = Rise from the grave
+ | description = {{dlc|nr}} Creates a [[friendly]] {{E|Bony}}, {{E|Black Bony|n}}, or an orbital bone for each enemy killed in the current room.<br>{{dlc|r}} Creates a [[friendly]] {{E|Bony}}, {{E|Black Bony|n}}, {{E|Bone Fly|n}}, {{E|Revenant|n}}, {{e|Big Bony|n}}, or an orbital bone for each enemy killed in the current room.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = book offensive
+ | recharge    = {{dlcalt|4|r=6}}
+ | unlocked by = Book of the Dead
+}}
+
+{{cit|ua|a+5}}
+
+== Effects ==
+* {{dlc|nr}} When used, spawns one of the following for each enemy already killed in the current room (capped at 8):
+** 80% chance for an orbital bone familiar.
+** 20% chance for a [[friendly]] bone monster.
+*** 66% chance for a {{e|Bony}}.
+*** 33% chance for a {{e|Black Bony}}.
+* {{dlc+|r}} When used, spawns one of the following for each enemy already killed in the current room (capped at 8):
+** 80% chance for an orbital bone familiar.
+** 20% chance for a friendly bone monster.
+*** The bone monster starts as a {{e|Bony}}.
+*** The Bony has a 25% chance to become a {{e|Black Bony}}.
+*** The Bony or Black Bony has a 25% chance to become a {{e|Big Bony}} if a killed enemy has enough HP to meet the formula: <br><code>baseHP + floor * stageHP * min(floor, 10) * 0.8<ref name="floor">1 on floor 4+.</ref> > 18 + floor * 3 * min(floor, 10) * 0.8<ref name="floor"/> </code>
+*** The Bony, Black Bony, or Big Bony has a 25% chance to become a {{e|Bone Fly}}.
+*** The Bony, Black Bony, Big Bony, or Bone Fly has a 1% chance to become a {{e|Revenant}}.
+*** There is an additional 8.33% chance for the bone monster to become a Revenant on {{s|Mausoleum}} / {{s|Gehenna}} / {{s|Sheol}} / {{s|Dark Room}}.{{dlc-}}
+* {{dlc|rnr+}} Spawning an enemy other than a Bony/Black Bony is only possible after dying at least once to said enemy on the save file.
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Forsaken}}.{{dlc-}}
+* Orbital bones deal contact damage equal to Isaac's damage at the time it was spawned and repel enemies that touch them.
+** {{dlc|nr}} They block 3 shots or deal 2 ticks of contact damage before being destroyed.
+** {{dlc|r}} They block 1 shot or deal 2 ticks of contact damage before being destroyed.
+* {{dlc|nr}} Bonies deal 5 contact damage and 5 damage with thrown bones.
+* {{dlc|r}} Bonies deal 8.7 contact damage and 6 damage with thrown bones.
+* Black Bonies will explode on death, dealing 40 damage to enemies it hits. The explosion will not hurt Isaac. {{dlc|nr}} It will knock him back.
+* Internally, the book tracks up to 32 positions each enemy was killed at in the current room, and uses those locations as spawn points for bone orbitals and Bonies.
+** Using the book will always spawn at least 1, gives the rest a 66% chance for each location to spawn one, and can spawn up to 8 per use.
+*** Having more locations than 8 will effectively increase the odds to spawn each.
+*** If one of these locations doesn't spawn a bone orbital or Bony, it can still spawn one if the book is used in the same room without leaving. However, once a location spawns something, it cannot do so again.
+* Using the book in a room that had no enemies or was re-entered does nothing and expends the charge.
+* Orbital bones occupy the same area around Isaac as [[Blue Fly|Blue Flies]], meaning Isaac can have an incredibly dense ring of bone orbitals around him that nullifies most attacks.
+* Non-hostile NPCs such as friendly enemies and {{e|Shopkeeper}}s can also provide bone orbitals and Bonies when killed or destroyed.
+* {{dlc|nr}} Destroying {{e|Black Poop}} will damage the friendly monsters acquired from this item.
+* {{dlc+|r}} Frozen enemies (enemies killed by {{I|Uranus}}, {{I|Cube Baby}}, etc.) will not summon bone familiars unless their frozen bodies are shattered.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns tiny skull wisps on the inner ring. The wisps fire bones and spawn friendly Bonies when destroyed. The book will summon wisps regardless of whether or not there were enemies killed in the current room.}}
+* {{i|Car Battery}}: Gives a higher chance to spawn bone orbitals or friendly enemies, and can spawn up to 16 per use.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Friendly monsters are still affected by Ace Cards and enemies that are turned into pickups can't be animated.
+* {{t|Baby-Bender}}: No effect.
+* {{i|Blood Puppy}}: Either angry version of Blood Puppy will target friendly enemies as well and can drag them along with it when it charges them. Blood Puppy cannot damage friendly enemies however friendly enemies can damage Blood Puppy despite not targeting it outright.
+* {{i|Broken Modem}}: Broken Modem also affects friendly enemies and projectiles created by them.
+* {{dlc|nr}} {{I|Contagion}}: [[Poison]] effect can spread to and kill friendly {{E|Bony|text=Bonies}}.
+* {{i|E. Coli}} / {{i|Flush!}}: Enemies that are turned into poop can't be animated.
+* {{I|Eraser}}: Bonies erased via Eraser will never spawn again from Book of the Dead, greatly decreasing its power.
+* {{dlc+|r}} {{I|Ghost Bombs}} / {{i|Hungry Soul}} / {{I|Purgatory}} / {{i|Vade Retro}}: Explosions from ghosts can and will kill Bonies.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|X16ZLPIJ-GA}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Mystery Egg }}
+
+== Gallery ==
+<gallery>
+File:AfterbirthPlus Booster Pack 5 Concepts.jpg|Concept art for "Reanimate" (misspelled as "Reanimte"), an early version of Book of the Dead, on the right side along with other Booster Pack items and trinkets, by [[Edmund McMillen]].
+</gallery>
+
+== Trivia ==
+* The ''[[wikipedia:Book of the Dead|Book of the Dead]]'' is a collection of ancient Egyptian funerary texts made out of papyrus, consisting of magic spells intended to assist a soul's journey through the Duat (underworld) and into the afterlife.
+* The quote "Rise from the Grave" is a reference to the beginning screen of the video game ''[[wikipedia:Altered Beast|Altered Beast]]''.
+* This item's effect may be a reference to the book of the dead from NetHack, which also summons multiple undead monsters around you.
+
+== Bugs ==
+{{bug|If sufficiently many bone orbitals are created, other familiars may disappear. Collecting a new familiar or resuming the run will restore the missing familiars.}}
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room than the one he is currently in (such as the starting room of a new floor) will duplicate friendly enemies and orbital bones.}}
+
+{{nav|the forgotten unlock|delirium unlock|book|booster pack|fr=Livre des Morts}}

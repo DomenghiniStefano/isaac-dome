@@ -1,0 +1,43 @@
+{{infobox activated collectible
+ | name        = Mr. Boom
+ | id          = 37
+ | quote       = Reusable bomb buddy
+ | description = {{dlc+|nr}} Places a {{I|Mr. Mega}} {{e|Bomb}} that deals 110 damage.{{dlc-}}<br>{{dlc|r}} Places a {{I|Mr. Mega}} {{e|Bomb}} that deals 185 damage.{{dlc-}}
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = 2
+ | pool        = Wrath
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Places a large {{e|Bomb}} similar to ones produced by {{i|Mr. Mega}}.
+** {{dlc|nr}} Deals 110 damage.
+** {{dlc|r}} Deals 185 damage.
+** Despite slightly different appearance, the bomb is functionally identical to a Mr. Mega bomb, being compatible with all [[:Category:Bomb items|bomb modifiers]].
+
+== Notes ==
+* This item can drop from killing {{e|Wrath}}. {{dlc|nr}} Wrath can drop this item even if Isaac has already encountered/possessed it. 
+* {{dlc|rnr+}} This item can be crafted by {{i|Bag of Crafting|n}} with eight {{e|Bomb}}s.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns wisps in the middle ring, looking like bombs. The wisps spawn miniature homing bombs when destroyed. These miniature bombs behave the same as ones created by {{I|Scatter Bombs}}, with the exception that they deal 100 blast damage instead of 50.}}
+* {{i|Remote Detonator}} + {{i|Schoolbag}}: The Mr. Boom bomb is affected by remote detonator.
+
+== Interactions ==
+* {{t|Blasting Cap}}: Mr. Boom bombs can drop extra bomb pickups.
+* {{i|Mr. Mega}}: No further improvement in damage or blast radius.
+
+== In-game Footage ==
+{{#ev:youtube|S6BN7fAr7jI||inline}} {{#ev:youtube|vGNKkGe6nX8||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Mr. Boom.png|{{plat|3DS}} The icon of Mr. Boom as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* When used, the sprite of Mr. Boom appears to have a missing tooth, but the pedestal sprite and official artwork from Four Souls shows it has a perfect set of teeth.
+
+{{nav|bomb spawner|bomb|fr=M. Boum}}

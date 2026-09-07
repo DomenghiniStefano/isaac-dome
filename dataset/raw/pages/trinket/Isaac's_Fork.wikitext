@@ -1,0 +1,25 @@
+{{infobox trinket
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 46
+ | quote       = Consume thy enemy
+ | description = Isaac has a chance to heal for a {{E|Half Red Heart}} upon clearing a room.
+}}
+
+{{cit|t}}
+__TOC__
+
+== Effects ==
+* Grants a chance of being healed for a {{E|Half Red Heart}} upon clearing a room.
+
+== Notes ==
+* {{dlc|a}} Can be triggered upon clearing a wave in [[Greed Mode]].
+* The chance to be healed depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 10 - \left \lfloor \mathit{Luck} * 0.5  \right \rfloor}</math>
+** At base luck (0), the chance is 10%, maxing out at 100% at 18 luck.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: Having either doubles the heal to a {{E|Red Heart}}. Having both triples it to 1 and a half heart.
+
+== Ingame Footage ==
+{{#ev:youtube|v82ngaP0YhM}}
+
+{{nav|fr=Fourchette d'Isaac}}

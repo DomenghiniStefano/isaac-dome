@@ -1,0 +1,119 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 531
+ | quote       = I'm seeing red...
+ | description = Turns Isaac's tears into large blood tears fired in an arc. Upon hitting the floor, an obstacle, or an enemy, they burst into many smaller tears in all directions. Increases tear delay.
+ | quality     = 4
+ | tags        = summonable offensive
+ | unlocked by = Haemolacria
+}}
+
+{{cit|up|a+4}}
+
+== Effects ==
+* Turns Isaac's tears into large blood tears fired in an arc. Upon hitting the floor, an obstacle, or an enemy, they burst into smaller tears in all directions.
+** The number of burst tears is random between 6-11 and they have an equal chance of occurring.
+** The scattered tears deal random damage that is 50-83.33% of the main tear. On average, they deal 66% damage.
+* {{Dlc|nr}} Tear Delay × 2 + 10<!--unconfirmed whether it was different before Repentance but the page has said +10 for a long time-->
+* {{Dlc|r}} Tear Delay × 2 + 11
+** The tear delay adjustment is applied after additive fire rate modifiers (e.g. {{T|Cancer}}) and multipliers less than 1 (e.g. {{I|Polyphemus}}), and before fire rate multipliers greater than 1 (e.g. {{I|Soy Milk}}).
+** I.e. calculate tear delay from tears, then fire rate from tear delay, then apply additive modifiers and multipliers less than 1, then recalculate tear delay from fire rate, then multiply by 2 and add 11, then recalculate fire rate from tear delay, then apply fire rate multipliers greater than 1.
+* {{dlc|nr}} 1.31~× damage multiplier.
+* {{Dlc|r}} +1 damage and 1.5× damage multiplier.
+* {{Dlc|r}} Range down: 0.8× range multiplier.
+* The main tear has a roughly 1.71× size multiplier.
+
+== Notes ==
+* Higher [[shot speed]] lowers the arc of the main shot, whereas lower speed heightens it, resulting in a very minor change in effective range.
+** The split tears are affected normally by shot speed.
+* {{dlc|nr}} The [[tear falling speed]] stat is entirely ignored for both the main shot and the split tears.
+
+== Synergies ==
+* {{i|Bob's Rotten Head}}: When the head lands, tears are fired.
+* {{I|Brimstone}}: Haemolacria has priority. +20 Tear Delay after Haemolacria tears down, instead of Brimstone tears down. The main tears burst into 4-7 brimstone beams instead of smaller tears. The beams deal 100% damage per tick.
+** This does not apply to {{C|Azazel}}/{{C|Tainted Azazel}}'s default brimstone beam, which is overridden but with no special effects.
+** {{Dlc|r}} If the powered-up version is acquired through another Brimstone or through {{i|Sulfur}}, the 1.2× damage multiplier is overridden by Haemolacria's own 1.5× damage multiplier. The beams' width doubles.
+** Brimstone + {{I|Chocolate Milk}}: The brimstone beams deal 100% damage regardless the charge. Chocolate Milk allows for rapid firing of Haemolacria tears, giving Isaac the ability to flood the room with Brimstone lasers.
+** {{Dlc|r}} Brimstone + {{I|Technology}}: The lasers coil the beams, which is purely visual, and Technology does not grant 1.5× damage multiplier.
+** Dangerous when combined with {{I|Ipecac}}.
+* {{I|Berserk!}} / {{C|The Forgotten}} / {{C|Tainted Forgotten}}: Burst effect occurs on each enemy hit. It also increases the size of the club, similar to {{I|Polyphemus}}. The throw is unaffected and does not scatter blood tears.
+** {{C|The Soul}} uses Haemolacria as normal.
+* {{I|Chocolate Milk}}: Completely charged shots and their burst tears are larger and deal higher damage than normal. Chocolate Milk also allows low-damage Haemolacria shots to be fired rapidly.
+** {{Dlc|nr}} Increased tear delay.
+* {{I|Compound Fracture}} / {{I|The Parasite}}: The main tears can split as they burst upon hitting an obstacle, or an enemy, but not upon hitting the floor. The split tears can burst, but burst tears from the main tears do not split.
+* {{I|Cricket's Body}}: Main tears can split as they burst upon hitting the floor, an obstacle, or an enemy. The split tears can burst, but burst tears from the main tears do not split.
+** {{dlc|r}} Haemolacria's ×0.8 range multiplier does not stack with Cricket's Body's own ×0.8 range multiplier.
+* {{I|Dead Eye}}: Both the main tear and the burst tears can increase the damage bonus, but missing the burst tears won't reset it.
+* {{I|Dr. Fetus}}: Haemolacria has priority. +10 Tear Delay after Haemolacria tears down, instead of Dr. Fetus tears down. The main tear is reminiscent of a bomb and scatters into 3-5 bombs that explode simultaneously. The split bombs deal half of Dr. Fetus' damage calculation based on the main tear's damage.
+** {{Dlc|r}} Double Dr. Fetus: Isaac fires one additional Haemolacria tear, essentially a multi-shot effect, without stat change.
+** Dr. Fetus + {{I|Sad Bombs}}: Sad bombs from Haemolacria tears shoot 10 Haemolacria tears, which then scatter into bombs without Sad Bombs' property.
+* {{I|Ipecac}}: Tear delay is increased by 1/3 compared to either of the items on their own, but Isaac now fires Ipecac shots that release poisonous, high-damage but non-explosive split tears on impact.
+** {{dlc|r}} Haemolacria's ×0.8 range multiplier does not stack with Ipecac's own ×0.8 range multiplier. Can be dangerous when combined with {{I|Brimstone}}.
+* {{I|Lachryphagy}}: Main tears can feed on other main tears or burst tears while burst tears cannot feed. The main tears will burst into 8 tears that have Haemolacria's burst effect upon impact or being fed enough. If they impact too soon after being fired or hit an enemy, they will burst into Haemolacria's burst tears. Lachryphagy's burst tears do not benefit from Haemolacria's synergies with other items, such as {{I|Brimstone}} or {{I|Tech X}}.
+* {{I|Lead Pencil}}: Fires 12 Haemolacria tears, all of which will burst.
+* {{I|Mom's Knife}}: Haemolacria tears fire while Mom's Knife is charging.
+** {{Dlc|r}} Overridden by Mom's Knife. Stat changes still apply; however, the tears down is instead a +10 Tear Delay.
+* {{I|Monstro's Lung}}: Monstro's Lung has priority. Fire rate is reduced. Fires 8 Haemolacria tears, all of which will burst.
+* {{I|My Reflection}}: Range becomes extremely high, making Haemolacria tears follow Isaac for a long time before hitting the ground. Burst tears do not have a boomerang effect.
+* {{I|Proptosis}}: Effects combine to create large tears that bounce off each other and burst into smaller, standard tears that are not affected by Proptosis.
+* {{I|Technology}}: Haemolacria has priority. Fires arcing tears that release Technology lasers upon bursting. The lasers deal 100% of Isaac's Damage.
+** {{Dlc|r}} Double Technology: Isaac fires one additional Haemolacria tear, essentially a multi-shot effect.
+* {{I|Tech X}}: Haemolacria has priority. The tears burst into 3-5 Tech X rings on impact. The sizes of the rings are various, but they deal 100% of Isaac's Damage.
+** {{Dlc|r}} Double Tech X: Isaac fires one additional Haemolacria tear, essentially a multi-shot effect.
+* {{I|Trisagion}}: Both Trisagion and Haemolacria fire at the same time, Haemolacria does not keep spectral tears despite its tears sprite change but the arced tear keeps piercing.
+** {{Dlc|r}} Haemolacria becomes one big Trisagion beam that splits into more beams when it reaches its max range.
+
+== Interactions ==
+* {{C|Azazel}}: Haemolacria overrides Azazel's Brimstone.
+* {{i|The Book of Belial|dlc=r}} + {{i|Blood of the Martyr}}/{{I|Cricket's Head}}/{{i|Magic Mushroom}}: Haemolacria's 1.5× damage multiplier stacks with these items' own 1.5× damage multipliers as expected.
+* {{I|C Section}}: C Section has priority. +4 Tear Delay, instead of Haemolacria tears down. Fetuses explode into a burst of tears when they hit the ground.
+* {{I|Epic Fetus}}: Epic Fetus has priority. +10 Tear Delay, instead of Haemolacria tears down.
+* {{I|Flat Stone}}: At the base range, the main tear bounces once, releasing burst tears {{dlc|nr}} which do not bounce, and then burst normally. At a high range, the main tear can bounce multiple times.
+** {{dlc|r}} Burst tears also bounce.
+* {{I|Godhead}}: The main tear retains all effects, but burst tears do not.
+** {{Dlc|r}} The main tear has the damaging aura as well as the burst tears.
+* '''Haemolacria''': Additional copy of this item, such as from {{I|Diplopia}} / {{I|Crooked Penny}}, grants +1 damage instead of normal stat changes.
+* {{I|Holy Light}}: The main tear can be a holy tear and bursts normally in addition to the light beam. Burst tears have an independent chance of being holy tears.
+** {{Dlc|r}} The burst tears inherit the effect from the main tear. They do not have an independent chance.
+* {{I|Kidney Stone}}: Overridden by Haemolacria. Only stat changes apply.
+** {{Dlc|r}} Works as expected. The kidney stone also bursts when it reaches its max range.
+* {{I|The Ludovico Technique}}: Overridden by Haemolacria, provides piercing.
+* {{I|Mysterious Liquid}}: Only the main tear will leave creep.
+** {{Dlc|r}} Both main and burst tears spawn creep.
+* {{i|Number One|dlc=r}}: '''Not recommended.''' Unlike other similar items, Haemolacria's ×0.8 range multiplier does stack with Number One's own ×0.8 range multiplier, thus drastically reducing range.
+* [[Piercing tears]] / [[Spectral tears]]: The main tear gains these effects, but the burst tears don't inherit them.
+** {{Dlc|r}} Burst tears inherit these effects.
+* {{I|Polyphemus}}: Stat changes applied as normal. The main tear gains the semi-piercing ability and may not burst when hitting a weaker enemy. Burst tears do not semi-pierce.
+** {{Dlc|r}} Burst tears do semi-pierce.
+* {{I|Pop!}}: Tears no longer arc, but will still burst when hitting an obstacle or stopping and falling to the ground. Burst tears do not bounce off of each other.
+* {{I|Sharp Key}}: Split tears from thrown keys are normal tears.
+* {{I|Sinus Infection}}: If the main tear is a booger, it will get stuck and not burst on hitting an enemy. Split tears have an independent chance of being booger tears.
+** {{Dlc|r}} The burst tears inherit the effect from the main tear. They do not have an independent chance.
+* {{I|Spirit Sword}}: Spirit Sword has priority. +10 Tear Delay, instead of Haemolacria tears down. The projectiles from the sword arc and burst.
+* {{I|Technology Zero}}: Only main tears can be connected.
+** {{Dlc|r}} Main tears and bursts can be connected via electricity.
+* {{I|Tractor Beam}}: The main tear follows the beam, but the burst spreads normally.
+
+== In-game Footage ==
+{{#ev:youtube|4XS0U93Y1P4}}
+
+== Gallery ==
+<gallery>
+File:Collectible Haemolacria mod icon.png|Haemolacria's appearance in the original [http://steamcommunity.com/sharedfiles/filedetails/?id=915837573 Steam Workshop mod].
+File:Collectible Haemolacria Booster Pack 4 icon.png|Haemolacria's appearance prior to [[Booster Pack #5]].
+File:Haemolacria brim.png|Haemolacria tear appearance with {{I|Brimstone}}.
+File:Haemolacria dr.png|Haemolacria tear appearance with {{i|Dr. Fetus}}.
+</gallery>
+
+== Trivia ==
+* Haemolacria is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=915837573 this Steam Workshop item] by HiHowAreYou, originally known as Water Balloon.
+* [[wikipedia:Haemolacria|Haemolacria]] is a rare condition that causes people to produce tears that are composed of blood.
+* When {{C|Tainted ???}} uses Haemolacria, the tears will be black instead of red. This is purely cosmetic, and is probably a reference to how [[wikipedia:Human feces|stools]] containing dried blood are often black.
+* {{Dlc|r}} Haemolacria is one of the few items that still modify tear delay instead of fire rate.
+* When playing as {{C|Tainted Isaac}}, if your inventory is full, you can drop {{i|Blood Clot}} and pick it up again. Doing this would increment the amount of Blood Clot pick ups by 1 regardless of how many times you do this. By using this exploit, you could easily unlock Haemolacria without much difficulty.
+
+== Bugs ==
+{{bug|When using {{C|The Forgotten}}'s melee attack with both {{I|Jacob's Ladder}} and Haemolacria, the sparks caused by splattered tears will hurt the player. [https://imgur.com/a/i2J3hB4 (Video clip)]|dlc=nr}}
+{{bug|dlc=nr|Using {{I|Mom's Knife}} and {{I|Marked}} with Haemolacria will cause it to only fire towards the center of the room; using the fire buttons will barely move the Marked icon, while Mom's Knife will be unusable and locked to the right.}}
+
+{{nav|booster pack}}

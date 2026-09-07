@@ -1,0 +1,74 @@
+{{infobox passive collectible
+ | id          = 224
+ | quote       = {{dlcalt|Splash damage|r=Bursting shots}} + tears up
+ | description = When tears hit an object or deplete their range, they spawn 4 smaller tears, whose range and [[damage]] scale with Isaac's. {{dlc|nr}} Grants -1 tear delay and reduces [[range]]. {{dlc|r}} Grants +0.5 fire rate and reduces [[range]].
+ | quality     = 3
+ | tags        = summonable dead tearsup offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* When Isaac's normal tears disappear (either from hitting the ground or hitting something else), they spawn 4 smaller tears.
+** Each smaller tear deals half of Isaac's normal [[damage]].
+** Split tears are scaled down by 0.6x from the main ones, ignoring damage-based size reduction.
+* {{Dlc|nr}} Tear size multiplier: 1.2x.
+* {{Dlc|r}} +0.1 tear size.
+* {{dlc|nr}} {{tear delay down|1}}
+* {{dlc|r}} +0.5 [[fire rate]].
+* {{dlc|nr}} -10 [[range]].
+* {{dlc|r}} 0.8x [[range]] multiplier.
+
+== Notes ==
+* Split tears will inherit the main tear's [[status effect]], if any.
+* If Isaac has less than {{dlc|nr}}10 range/{{dlc|r}}10 [[tear height]], the split tears appear but cannot cause damage before hitting the floor.
+** {{dlc|nr}} {{c|Cain}}, {{c|Lazarus}}, and {{c|Samson}} have lower starting range and are particularly susceptible.
+** [[Tear falling speed]] ups can't mitigate this downside.
+
+== Synergies ==
+* {{i|Angelic Prism}}: All tears split by the prism will burst into split tears.
+* {{i|Bob's Rotten Head}}: Bob's Rotten Head splits into four smaller heads on detonation.
+* {{i|Compound Fracture}}: When bone tears split into bone shards after hitting an obstacle or enemy, the bone shards will split into 4 smaller bone shards after hitting the ground.
+* {{i|Explosivo}}: The explosion results in split Explosivo shots being generated. {{dlc|nr}} If the target survives, they're likely to immediately stick again. {{dlc|r}} The split tears explode when they hit an enemy or the ground.
+* {{i|Haemolacria}}: Main tears can split as they burst upon hitting the floor, an obstacle, or an enemy. The split tears can burst, but burst tears from main tears do not split.
+** Cricket's Body's x0.8 range multiplier does not stack with Haemolacria's own x0.8 range multiplier.
+* {{i|Ipecac}}: Main tear splits into four explosive splash tears. The split tears can still damage Isaac. Having {{i|Host Hat}} or {{i|Pyromaniac}} is strongly recommended.
+** {{dlc|r}} Cricket's Body's x0.8 range multiplier does not stack with Ipecac's own x0.8 range multiplier.
+* {{i|Lachryphagy}}: Fed tears split into 12 tears.
+* {{i|Lead Pencil}}/{{i|Monstro's Lung}}: All tears fired will splash after landing. Increased damage potential only noticed when firing into groups, due to the random pattern of each tear when it splashes.
+* {{i|The Parasite}}: Eight split tears instead of four.
+* {{i|Tiny Planet}}: The split tears orbit Isaac instead of spreading.
+* {{i|Tough Love}}: Teeth tears will split into 4 smaller teeth.
+* {{i|Tractor Beam}}: Main tears and split tears will travel along the beam.
+
+== Interactions ==
+* {{dlc|nr}} {{i|Brimstone}}: Overrides Cricket's Body.
+** {{dlc|r}} Small red brimstone tears will fire out upon the beam hitting a wall or enemy.
+** {{dlc|r}} '''Brimstone''' + {{i|Soy Milk}}: Brimstone tears always fire out at the end of the beam.
+* {{i|Dead Onion}}: Significantly decreases effective range, potentially preventing the split tears from causing damage.
+* {{i|Diplopia}}: No effect.
+* {{i|Dr. Fetus|na}}: Reduces range, bombs do not split.
+** {{dlc|anr}} Reduces range, the bombs fired by Dr. Fetus will split into smaller bombs, much like {{i|Scatter Bombs|n}}.
+** {{dlc|r}} Increases range, the bombs fired by Dr. Fetus will split into smaller bombs, much like {{i|Scatter Bombs|n}}.
+* {{i|Epic Fetus}}: Only tear stat change applies.
+* {{i|Euthanasia}}: Needle tears will split into 4 small needle tears upon hitting the ground or an enemy. Split tears produced have a chance to deal triple damage but will not cause tear bursts.
+* {{i|Fire Mind}}: Main tear splits into four explosive splash tears. Having {{i|Host Hat}} or {{i|Pyromaniac}} is strongly recommended.
+* {{i|Flat Stone}}: Tears will usually only bounce twice, unless Isaac has high range, and spawn burst tears when they bounce.
+* {{T|Hook Worm}}: Split tears gain a significant range increase, allowing them to potentially hit farther targets
+* {{i|Kidney Stone}}: Drastically decreases range, potentially preventing the split tears from causing damage. The stone will not split.
+* {{i|The Ludovico Technique}}: Overrides Cricket's Body except for stat effects which apply.
+* {{i|Mom's Knife}}: Range of the knife is significantly decreased.
+* {{i|Number One}}: Tears disappear '''very''' quickly after being fired, and split tears barely travel at all.
+** {{dlc|r}} '''Not recommended.''' Unlike other similar items, Cricket's Body's x0.8 range multiplier does stack with Number One's own x0.8 range multiplier, thus drastically reducing range.
+* [[Piercing]] tears: Tears will only split after landing on the ground.
+* [[Spectral]] tears: Tears will only split after landing on the ground.
+* {{dlc|nr}}{{i|Technology}}/{{i|Tech X|dlc=anr}}: Overrides Cricket's Body. Stat effects still apply.
+** {{dlc|r}} Cricket's Body tear splitting effect applies when lasers hit something.
+
+== In-game Footage ==
+{{#ev:youtube|G2hMzBh85yI}}
+
+== Trivia ==
+* Cricket's Body is named after Edmund's former cat, Cricket.
+
+{{nav|pet|fr=Corps de Cricket}}

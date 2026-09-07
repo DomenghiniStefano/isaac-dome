@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | name = Samson's Chains
+ | id = 321
+ | quote = The ol' ball and chain
+ | description = Attaches a ball and chain to Isaac that pulls behind him that damages enemies, blocks shots, and destroys most [[Obstacles]].
+ | quality     = 1
+ | tags        = summonable
+ | unlocked by = Samson's Chains
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Attaches a ball and chain to Isaac's ankle that blocks projectiles and deals 5 damage per tick (~10.7 damage per second).
+* If the ball is moving fast enough, it will destroy any destructible [[Obstacles]] it comes into contact with.
+
+== Notes ==
+* Despite its appearance, the item does not slow Isaac's movement.
+* Cannot be used to open {{R|Secret Room}}s or {{R|Super Secret Room}}s.
+* Can be used to initiate the Uriel/Gabriel fight inside Angel Rooms.
+
+== Synergies ==
+* [[Flight]]: Any method of flight makes it easier and quicker to use Samson's Chains to smash rocks, making for an efficient way to search for {{R|Crawl Space}}s.
+* {{c|Tainted Forgotten}}: The ball is chained to the Forgotten, giving throws additional damage and obstacle destruction. While the Forgotten is held by the Soul, the ball may be swung around as normal.
+
+== In-game Footage ==
+{{#ev:youtube|36PzzeLA3zg}}
+
+== Trivia ==
+* This item references the biblical story of Samson, who was chained upon losing his strength.
+* The item visually resembles "leg irons", devices historically used to restrain prisoners' feet.
+** Furthermore, the description is the phrase stereotypically associated with older men complaining about their wives, equating their relationship to these devices.
+* It is likely a reference to the Punish Ball from ''Spelunky'', which damages enemies and terrain at the cost of slowing the player.
+
+{{nav|samson unlock|boss rush unlock|fr=Boulet de Samson}}

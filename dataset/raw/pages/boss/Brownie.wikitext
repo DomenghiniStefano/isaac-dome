@@ -1,0 +1,64 @@
+{{infobox boss
+ | dlc         = a
+ | id          = 402
+ | environment = <u>Boss</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|The Void}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Degraded Boss</u><br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 400
+ | pool        = {{ip|Boss}}<br> {{i|Dirty Mind|r+}} (1% chance)
+ | unlocked by = Something wicked this way comes!
+}}
+
+'''Brownie''' is a [[boss]] added in ''[[The Binding of Isaac: Afterbirth]]'' that can appear in all environments of [[chapter 3]] ({{s|Depths}}, {{s|Necropolis}}, {{s|Dank Depths}}).
+
+== Behavior ==
+=== Phase 1 ===
+Brownie remains stationary and performs the following attacks:
+* Each time Brownie takes enough damage, he spawns a single {{e|Brownie Corn}}; if Brownie takes a lot of damage in a single instance, the Brownie Corns are spawned together in a group.
+* Occasionally spawns a group 5-8 Brownie Corns upon taking damage.
+** While moving during some attacks, he crushes any Brownie Corns in his path, regaining 3 HP for each.
+* Farts, pushing away Isaac and knocking back any Brownie Corns if they are too close.
+* Spins a short distance across the room, bouncing off walls and finishing with a fart.
+** Sometimes leaves slippery [[brown creep]] and a {{e|Corn Mine}} in his path.
+* Slides across the room, bouncing off walls, while leaving a trail of slippery Brown Creep, continuously spawning Corn Mines, and occasionally shooting corny projectiles towards Isaac. Finishes this attack with a fart.
+** The Corn Mines' corn projectiles and gas can damage and poison Brownie. While poisoned, he leaves damaging [[green creep]] instead of Brown Creep.
+* Twirls and jumps 4-6 times around the room, creating a puddle of Brown Creep every time he lands and tossing corny projectiles in random directions.
+** Brownie can sometimes directly chain into this attack from his spinning and sliding attacks instead of finishing them with farts.
+Brownie's expression when idle changes as he gets damaged by Isaac – going from happy to grumpy. This appears to have a correlation with how aggressive he is in performing attacks, chaining attacks, and how many corny projectiles are released in his attacks.
+
+=== Phase 2 ===
+* When Brownie reaches around 25% health, he degrades into a 75 HP {{e|Dangle}} that behaves regularly.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18|dlc=a+}}: Spawns up to 3 {{e|Charger}}s at once instead of Brownie Corns and creates [[black creep]] instead of Brown Creep. The Corn Mines that he spawns ({{dlc|nr}} and his corny projectiles) are also black. Brownie still leaves Green Creep when poisoned. When at low health, he becomes 2 {{e|Dank Squirt}}s instead of a weakened Dangle.
+
+== Gallery ==
+<gallery>
+File:Boss Brownie black ingame.png|{{dlc|a+}} Black Champion Brownie.
+File:Corn_mine_brownie_black.png|{{dlc|a+}} Unique design for a Corn Mine spawned by Black Champion Brownie.
+File:Boss Delirium Brownie ingame.png|{{dlc+|a+}} Brownie as one of {{e|Delirium}}'s forms.{{dlc-}}
+</gallery>
+
+== Notes ==
+* Brownie may be paired along with regular {{e|Dip}}s in a Boss Room.
+* If a {{i|Butt Bombs}} Bomb goes off in the same room as Brownie, it heals him.
+** {{dlc|a+}} Butt Bombs effect on {{i|Dr. Fetus}} or {{i|Epic Fetus}} does not heal Brownie.
+** {{dlc|r}} The skeleton version of {{c|Tainted Forgotten}} in the [[Hot Potato]] challenge <u>does</u> heal Brownie. Thus, butt bombs should be skipped to avoid a potential softlock.
+* {{i|Flush!}} kills Brownie instantly and causes him to leave behind 6 {{e|Brownie Corn}}s.
+* If Brownie is inflicted by any [[status effect]], he leaves a [[creep]] with that same effect (e.g. {{i|Spider Bite}} gives him [[white creep]] if he's affected).
+
+== Trivia ==
+* Brownie is the name of a character and boss in [[wikipedia:Super Meat Boy|Super Meat Boy]], a game by Edmund McMillen (the creator of ''The Binding of Isaac'').
+* In the versus screen, there is a smiling face next to Brownie's name.
+* The Black Champion version of Brownie acts slightly similar to the Dank Squirt and may, therefore, be a "dank" or [[wikipedia:meconium|meconium]] version of Brownie.
+* During the DLC's release, the Black Champion version of Brownie was able to spawn up to 11 {{e|Drowned Charger}}s at once instead of regular Chargers, at a higher rate. It was nerfed in an update shortly after since the damage from the large amounts of Drowned Chargers was unavoidable.
+* {{dlc+|a+}} Brownie can be found in {{s|The Void}}, even before being unlocked.{{dlc-}}
+* {{dlc+|r}} Brownie was given a "voice" in [[Repentance]] which he shares with {{e|Clog}}.{{dlc-}}
+
+== Bug ==
+{{bug|dlc=na+|Rarely, Brownie will slide around the room incredibly quickly, resulting in unavoidable damage.}}
+
+{{nav|blue baby boss unlock|boss}}
+[[Category:Chapter 3 bosses]]
+[[Category:Depths bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Debut bosses in Afterbirth]]

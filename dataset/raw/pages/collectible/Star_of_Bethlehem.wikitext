@@ -1,0 +1,63 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 651
+ | quote       = Follow the light
+ | description = Spawns a star [[familiar]] that slowly travels towards the {{R|Boss Room}}, giving an aura that increases [[damage]] and [[tears]] and grants [[Tear Effects#Homing|homing tears]].
+ | quality     = 3
+ | tags        = {{dlc|r+|uniquefamiliar}} summonable offensive nocantrip stars
+ | devil price = {{dlcalt|1|r+=2}}
+ | unlocked by = Star of Bethlehem
+}}
+{{distinguish visual|Eden's Soul}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Spawns a star [[familiar]] that slowly travels toward the {{R|Boss Room}}, fading through doors as it travels towards it. Once it reaches the boss room, the familiar stands in the center of the boss room for the rest of the floor.
+* The familiar emits an aura that, while Isaac stands inside it, gives him a {{dlc|nr+}} 1.8× / {{dlc|r+}} 1.2x damage multiplier, a 2.5× [[Tears|fire rate]] multiplier, and [[Tear Effects#Homing|homing tears]]. It also gives Isaac a 50% chance to ignore damage similarly to {{I|Cone Head}}'s effect except with a higher chance.
+
+== Notes ==
+* In {{s|The Void}}, the familiar will travel to the boss room that contains {{E|Delirium}}.
+* In [[Greed Mode]], the star will travel directly to the position where Isaac spawns upon entering a new floor.
+** On the last floor, it will move to the upper part of {{E|Ultra Greed}}'s room.
+* Once the star settles down in the boss room, the damage preventing aura can be used to play {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s for free, provided they are spawned via {{P|XIV - Temperance}} or {{P|XX - Judgement}} cards, respectively.
+* The star may travel through {{R|Secret Room}}s and {{R|Curse Room}}s on its path to the boss room.
+* The star will travel through {{R|Red Room}}s if they create an optimal path to the boss room.
+** The star can backtrack into rooms it already went into if a more optimal path is created by a Red Room.
+* During the [[Ascent]], the star will linger in the boss room of each floor, and will not progress backwards through the stage.
+* The star will travel through the hole to the {{e|Mother}} fight and be present in the fight. It will be centered on the top half of the room, and will not move when the arena expands.
+* The star will be present against {{E|Dogma}}, but does not follow for {{E|The Beast}}.
+* If the door to {{E|Mega Satan}} is opened, the Star of Bethlehem will enter it instead of the boss room containing {{E|???}} or {{E|The Lamb}}.
+** The Star will move backwards towards {{E|Mega Satan}}'s door if the door is opened later during the floor (such as by using {{i|Dad's Key}}).
+* For {{c|Tainted Forgotten}}, the bonuses from the star are only applied if Tainted Forgotten is within its aura, not {{C|Tainted Soul}}.
+* If either {{C|Tainted Lazarus}} or {{C|Dead Tainted Lazarus}} have picked up the star, the familiar will spawn in the room where the character holding it becomes active, which may not be the starting room. It will only move while the character holding it is active, effectively making it take twice as long to travel to the boss room unless Tainted Lazarus also has {{i|Birthright}}.
+* During {{chal|Backasswards}}, the star acts as usual; originating in the starting room and gradually moving towards the boss room.
+* The star will be copied in the [[Mirrored World]] and will simultaneously travel in both worlds.
+* Entering and leaving the {{i|Knife Piece 2}} area will reset the star and make it reappear in the room with the minecart.
+* The star exhibits a "rubber banding" effect in its movement. If it is in a room that is closer to the Boss Room than the one Isaac is in, it will move slower; if the opposite is true, it will move faster.
+
+== Synergies ==
+* {{i|Blood Rights}}/{{i|IV Bag}}/{{i|Kamikaze!}}/{{i|Razor Blade}}: The aura has a chance to block the damage inflicted, but the effects will still occur.
+* {{I|Rock Bottom}}: Isaac will keep the stat upgrades even after leaving the aura. However, it won't keep the homing effect outside of the aura.
+* {{I|Sprinkler}}: The tears that the Sprinkler shoots will also be buffed, along with its rotation speed.
+
+== Interactions ==
+* {{i|BFFS!}}: The star appears larger, but the aura's size does not increase and neither do the stat gains.
+* {{i|Adrenaline|nr+}}: Isaac's damage before Adrenaline's flat damage increase is increased by 1.2×, then damage after is increased by 1.5×.
+* {{i|Bloody Lust|nr+}}: Isaac's damage before Bloody Lust's flat damage increase is increased by 1.2×, then damage after is increased by 1.5×.
+* {{i|Hallowed Ground}}: The damage multiplier from the aura does not stack with white poop.
+* {{i|Immaculate Heart}}: The damage multiplier {{dlc|nr+}} is reduced to 1.5× while in the aura / {{dlc|r+}} does not stack.
+* {{i|Ipecac|nr+}}: Isaac's damage before Ipecac's flat damage increase is increased by 1.2×, then damage after is increased 1.5×.
+
+== In-game footage ==
+{{#ev:youtube|nGM4lMpLzuc}}
+
+== Trivia ==
+* This item is a reference to the ''[[wikipedia:Star of Bethlehem|Star of Bethlehem]]'', which appears in the Nativity story of the Gospel of Matthew, signifying the birth of Jesus.
+
+== Bugs ==
+{{Bug|If Isaac uses {{i|Pause}}, the light aura will be stuck in the last position before Pause was used even if the familiar continues without it. This is only a visual glitch, Isaac still has to be near the star to receive its benefits. If Pause’s effect ends the light instantly disappears and respawns back around the star again. The light will still fade when the star leaves the room.}}
+{{bug|dlc=nr+|The speed of Star of Bethlehem is increased when Isaac is in an off-grid room.}}
+
+{{nav|bethany unlock|delirium unlock|fr=Étoile de Bethléem}}
+[[Category:Damage-preventing items]]

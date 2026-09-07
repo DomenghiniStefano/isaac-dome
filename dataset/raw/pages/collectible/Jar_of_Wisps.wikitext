@@ -1,0 +1,44 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 685
+ | quote       = Your faith grows
+ | description = Spawns random wisps that shoot various tears, block shots, and deal contact damage. The number of wisps spawned increases every time the jar is used.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge    = 12
+ | unlocked by = Jar of Wisps
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Spawns a wisp that orbits Isaac, fires tears, blocks enemy shots, and deals contact damage to enemies, much like the ones spawned by {{I|Book of Virtues}}.
+** The jar initially spawns only {{dlc|nr+}} one / {{dlc|r+}} two wisps, but spawns an additional wisp each time the jar is used, up to a maximum of 12 per use. The number of wisps that will be spawned by the jar is indicated by both a counter and the jar visually filling up with wisps.
+** The wisps spawned by the jar can be ones created by any Book of Virtues synergy, although basic wisps are much more common than special variants.
+* Isaac can have up to 3 rings of wisps; an inner, counter-clockwise spinning ring of 6 wisps, a center, clockwise-spinning ring of 8 wisps, and an outer, counter-clockwise spinning ring of 12 wisps, for a total of 26.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Will only spawn {{i|Satanic Bible}} wisps that increase Judas' {{R|Devil Room}} chance by 10% for each one he has.}}
+* {{Book of Virtues synergy|description=Triples the wisps which are spawned including any special wisps spawned.}}
+* {{i|Car Battery}}: The number of wisps spawned is doubled.
+** '''Car Battery''' + {{i|Book of Virtues}}: The number of wisps spawned is multiplied by 6.
+
+== Interactions ==
+* {{i|Void}}: Will spawn only one wisp per use.
+
+== Notes ==
+* While most wisps that can be given act similarly to normal wisps, there are some with effects that can potentially harm Isaac.
+** {{i|Anarchist Cookbook}} Wisps look like bombs and spawn {{e|Troll Bomb}}s when destroyed.
+*** {{I|Mama Mega!}} wisps look like gold tinted bombs, and will spawn {{e|Golden Troll Bomb}}s.
+*** Bomb wisps with a gray tint are not dangerous; {{I|Doctor's Remote}} wisps only invoke their special effect when said item is used.
+** Wisps that look like gray cubes will invoke the effect of the {{i|D7}} when they take damage.
+** {{I|Teleport!}}/{{I|Teleport 2.0}} Wisps fade into and out of existence and have a chance to teleport non-boss enemies to a random spot in the current room when their tears hit them.
+* Switching the jar with other active items and then picking it up again does not reset the number of wisps that will be spawned on use.
+
+== Trivia ==
+* This item functions similarly to {{i|Jar of Flies}} and {{I|The Jar}}.
+
+== Bugs ==
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room from the one he is currently in (such as by teleporting to the previous room then using it again) will duplicate the wisps. Any extra wisps created from duplication on a filled ring will appear at the entrance of each room Isaac enters and shoot in the direction Isaac is currently shooting.}}
+
+{{nav|bethany unlock|the beast unlock|fr=Bocal de Feux Follets}}

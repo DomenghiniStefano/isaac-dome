@@ -1,0 +1,75 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 263
+ | quote       = Rune mimic
+ | description = Copies the effect of the [[Cards and Runes#Rune|rune]] or [[Cards and Runes#Soul Stones|soul stone]] currently held by Isaac. The recharge time is based on the power of the rune. Drops a random rune when first picked up.
+ | quality     = 2
+ | tags        = offensive nocantrip
+ | recharge    = variable
+ | unlocked by = Blank Rune <!-- this is not a mistake, same unlock as blank rune -->
+}}
+{{Distinguish|Blank Rune}}
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, copies the effects of the [[Cards and Runes#Runes|rune]] or [[Cards and Runes#Soul Stones|soul stone]] currently held by Isaac.
+* Drops one random rune upon being picked up for the first time.
+
+== Notes ==
+=== Recharge time ===
+This is a list of the following recharge times the item can have, depending on the consumable it mimicked last:
+* '''1 room''':
+** {{p|Rune Shard}}
+** {{p|Soul of Lazarus}}
+* '''2 rooms''':
+** {{p|Ansuz}}
+** {{p|Berkano|nr+}}
+** {{p|Hagalaz}}
+** {{p|Soul of Judas|r+}}
+* '''3 rooms''':
+** {{p|Blank Rune}}
+** {{p|Soul of ???}}
+** {{p|Soul of Judas|nr+}}
+** {{p|Soul of the Lost}}
+** {{p|Soul of Magdalene}}
+* '''4 rooms''':
+** {{p|Berkano|r+}}
+** {{p|Black Rune}}
+** {{p|Algiz}}
+** {{p|Ehwaz}}
+** {{p|Perthro}}
+** {{p|Soul of Eden}}
+** {{p|Soul of Eve}}
+** {{p|Soul of the Forgotten}}
+** {{p|Soul of Isaac}}
+** {{p|Soul of Jacob and Esau}}
+* '''6 rooms''':
+** {{p|Dagaz}}
+** {{p|Soul of Apollyon}}
+** {{p|Soul of Azazel}}
+** {{p|Soul of Bethany}}
+** {{p|Soul of Cain}}
+** {{p|Soul of Samson}}
+* '''12 rooms''':
+** {{p|Jera}}
+** {{p|Soul of the Keeper}}
+** {{p|Soul of Lilith}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns purple glowing rune wisps on the middle ring. The wisps spawn random [[Rune|Runes/Soul Stones]] when destroyed, and enemies killed by the wisps' tears have a 15% chance to drop a Rune/Soul Stone. A wisp is given even if Isaac is not holding a rune when the item is used.}}
+* {{i|Car Battery}}: Essentially uses the rune or soul stone twice.
+* {{p|Jera}}: Allows Isaac to copy pickups with every use. This combination can double {{E|Lil' Battery|text=Lil' Batteries}}, which can both circumvent the rune's high charge time and allow for game-breaking combos with repeated use of the synergy.
+
+== Interactions ==
+* {{i|Tarot Cloth}}: No effect.
+* {{I|Void}}: If Void absorbs both Clear Rune and a consumable-producing item like {{I|Mom's Bottle of Pills}} the latter takes effect first, shifting any held rune out of the primary consumable slot and rendering the Clear Rune effect useless.
+
+== In-game Footage ==
+{{#ev:youtube|tG9Wq3GWcNA||inline}}
+
+== Trivia ==
+* This item is a Rune counterpart to {{i|Blank Card}} and {{i|Placebo}}.
+* This item's unlock method is likely a nod to its similar functionality to Blank Card but Clear Rune being unable to follow the same naming convention due to {{p|Blank Rune}} already existing.
+* Despite being introduced in the ''Repentance'' DLC, Clear Rune's place in the Collection Menu is on Page 3, along with other ''Rebirth'' items. This is due to the item taking up a previously unused item id. This also means that this item needs to be unlocked and picked up in a normal run to get both {{a|!Platinum God!}} and {{a|The Real Platinum God}} achievements.
+
+{{nav|rune modifier|fr=Rune de Cristal}}

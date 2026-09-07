@@ -1,0 +1,65 @@
+{{Infobox boss
+ | dlc         = r
+ | id          = 906
+ | base hp     = 240
+ | environment = <u>Boss</u><br>{{floor|Mines}}
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Hot Bombs}} (1% chance)
+}}
+
+'''Hornfel''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in the {{s|Mines}}.
+
+== Behavior ==
+=== Phase 1 ===
+Hornfel appears with his own specially designed boss room: each wall has multiple boss doors with minecart tracks connecting each pair of doors. After a short delay, he appears out of a random door riding a minecart and performs one of the following attacks:
+* Occasionally, when Hornfel enters the room through a door, he is accompanied by 2 {{e|Fly Bomb}}s.
+* Throws 1-2 {{e|Bomb}}s at Isaac. Each bomb has a small chance of having the {{i|Hot Bombs}} or {{i|Sad Bombs}} effect.
+* Throws 3 {{i|Brimstone Bombs}} that resemble mines. Each bomb has a delay and detonates after a few moments.
+* Accelerates to a very high speed along one set of tracks, traveling in one direction, while frequently throwing out bombs. After multiple cycles, he slows down, gets sick, and vomits a fireball that releases fire trails in the cardinal directions upon landing.
+* Sends out 1-2 decoy dummies with 4 HP on other tracks that burst into 6 {{e|Troll Bomb}}s if killed or walked into.
+* Other minecarts occasionally appear on other tracks independent of Hornfel, carrying a {{e|Fire Place}}, {{e|TNT}}, or a variety of other enemies:
+:: {{e|Bony}}
+:: {{e|Faceless}}
+:: {{e|Danny}}
+:: {{e|Gurgle}}
+:: {{e|Quakey}}
+
+Hornfel and his decoys deal a whole heart of contact damage.
+
+=== Phase 2 ===
+Once Hornfel has taken enough damage, he falls out of his minecart and attempts to escape from the room via one of the doors surrounding the arena. He makes no attempt to attack Isaac, but he can still deal contact damage. In this phase, his contact damage is reduced to half a heart.
+
+* Other minecarts carrying other monsters and objects can still appear as usual during this phase.
+* If Hornfel escapes successfully, the fight ends as normal.
+* If Hornfel is defeated, he unlocks {{i|Brimstone Bombs}} if not already unlocked, and has a 1/7 chance of dropping either {{i|Boom!}}, {{i|Brimstone Bombs}}, {{i|Hot Bombs}}, {{i|Remote Detonator}}, or {{i|Sad Bombs}} if it hasn't been seen or collected, otherwise he drops 3 {{e|Bomb}}s.
+
+== Gallery ==
+<gallery>
+File:Boss Hornfel Without Cart ingame.png|Hornfel after losing his cart.
+File:Boss Hornfel Fleeing ingame.png|Hornfel fleeing.
+File:Boss Hornfel Decoy ingame.png|Hornfel's decoy dummy.
+File:Hornfel Concept.png|Concept art of Hornfel and his behaviors.
+</gallery>
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Brimstone Bombs }}
+
+== Trivia ==
+* Hornfel will sometimes taunt Isaac by sticking out his tongue while sending out his decoy dummies.
+* [[Wikipedia:Hornfels|Hornfels]] is the group name for a set of contact metamorphic rocks. They are known to be very hard and durable.
+* {{e|The Horny Boys}} are a stitched amalgamation of Hornfel and {{e|Loki}}.
+* Hornfel and Loki are brothers.<ref>https://twitter.com/edmundmcmillen/status/1491311684144697345?t=HIqu902V3aUtJqXMP5Oz8A&s=19</ref>
+* Hornfel is one of only 3 bosses that can be spared, with the others being {{e|Bumbino}} and {{e|Baby Plum}}.
+** Coincidentally, they all made their debut in ''Repentance''.
+** These three bosses all can drop extra additional items. In {{dlc|r+}} ''Repentance+'', only Hornfel was given a special 1% item drop as the other two were omitted.
+
+== Bugs ==
+{{Bug|If Hornfel is killed off screen, the game crashes.}}
+
+== References ==
+{{Reflist}}
+
+{{nav|boss|fr=Lucifer}}
+[[Category:Bosses]]
+[[Category:Chapter 2.5 bosses]]
+[[Category:Mines bosses]]
+[[Category:Debut bosses in Repentance]]

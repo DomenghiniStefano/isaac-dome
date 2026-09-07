@@ -1,0 +1,69 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 410
+ | quote       = Eye shot{{dlc|nr|!}}
+ | description = Adds a chance to fire a slow-moving eye that fires tears in the same direction as Isaac. The eye is destroyed when it hits an enemy or obstacle.
+ | quality     = 2
+ | tags        = summonable offensive
+ | unlocked by = Evil Eye
+}}
+
+{{distinguish visual|Cain's Eye|Cain's Other Eye}}
+
+{{cit|up|a}}
+
+== Effect ==
+* Isaac will occasionally fire a slow-moving eye with an infinite range that fires tears identical to Isaac's tears.
+* The eyes fire in the same direction as Isaac.
+
+== Notes ==
+* The chance to fire an eye tear depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\min(\frac1 {30 - \left \lfloor \mathit{Luck} \right \rfloor},10\%)</math>
+** At base Luck (0), the chance is 3.33%, maxing out at 10% at 20 Luck.
+* The eye has the same rate of fire and damage as Isaac. Its travel speed is also affected by Isaac's [[shot speed]].
+* If the eyes are spawned from {{C|The Forgotten}}'s melee attack, the eyes will pick up items off the floor in the same way The Forgotten's melee attack does.
+* The eyes are not treated as familiars and therefore will not synergize with items like {{i|BFFS!}}.
+* Eyes disappear when hitting walls, enemies, and obstacles, even if Isaac has piercing or spectral tears.
+** Familiars like {{I|Dry Baby}}, {{I|Angry Fly}} and even {{I|Finger!}} also destroy the eye on collision.
+
+== Synergies ==
+* {{I|Astral Projection}}: During the time-stop period of Astral Projection, there is a chance that the eyes fired will stop in the air instead of flying in a direction, and will last indefinitely until an enemy bump into it, greatly increase the existing time of evil eyes. Triggering of Astral Projection also greatly increase fire rate, giving a higher possibility to fire eyes.
+* {{I|Ghost Pepper}} / {{I|Bird's Eye}}: Eye tears won't shoot fires. Instead, they make Isaac shoots fire more frequently.
+* {{i|Pause}}: After using pause, eyes will remain frozen in place even after pause's effect has ran out.
+* [[Homing tears]]: Eyes will fire homing tears; however, the eye itself will not home in on enemies.
+* {{i|Mom's Eye}} / {{i|Loki's Horns}}: Evil Eye has a chance to be shot in the corresponding direction. {{dlc|r}} Eyes shot in other directions will still fire in the direction Isaac is shooting.
+* {{i|Spirit Sword}}: Eyes swing a sword with slightly reduced range in the direction Isaac is firing.
+* {{I|Tear Detonator}}: All tears generated have a chance to be eyes. Eyes themselves do not detonate into six tears.
+* {{i|Trisagion}}: Eyes will fire beams. Occasionally causes Trisagion beams to stay static in the air for a few seconds, dealing damage to enemies that come in contact with them.
+
+== Interactions ==
+* {{i|20/20}}/{{i|Cursed Eye}}/{{i|The Inner Eye}}/{{i|Mutant Spider}}: No effect; the eyes will still fire single tears.
+* {{i|Angelic Prism}}: Eyes that hit the prism will be destroyed. Tears that the eyes fire will split if they travel through the prism.
+* {{C|Azazel}}/{{i|Brimstone}}/{{i|Dr. Fetus}}/{{i|Epic Fetus}}/{{i|The Ludovico Technique}}/{{i|Mom's Knife}}/{{i|Technology}}/{{i|Tech X}}: Overrides Evil Eye.
+* {{I|Ball of Bandages}}/{{I|Cube of Meat}}/{{i|Dry Baby}}: Blocks the Evil Eye, making it hard to use.
+* {{i|Chocolate Milk}}: The tears fired by the eyes match Isaac's current charge. The eyes still have continued fire rather than charging shots.
+* {{i|Continuum}}: Eyes will still disappear when hitting walls; however, they will fire tears that can travel through walls.
+* {{i|C Section}}/{{c|Tainted Azazel}}: Overrides Evil Eye.
+* {{I|Eye of the Occult}}: The eye itself cannot be controlled, but the tears it shoots can be.
+* {{i|Incubus}}: Incubus cannot fire eyes.
+* {{i|Ipecac}}: Tears fired by eyes can damage Isaac.
+* {{i|Lead Pencil}}: Eyes will fire barrages of tears every 15 times they fire their own tears.
+* {{i|Lil Gurdy}}: Destroys eyes if it touches them.
+* {{dlc|r}}{{i|Marked}}: Tears shot from the eye shoot in the direction that Isaac is moving the marker towards, not at the marker.
+* {{i|Monstro's Lung}}: Eyes spawn more often but only fire one tear at a time.
+* {{i|Pop!}}: Eyes will fire eyeball tears but cannot be knocked around by them.
+* {{i|Sprinkler}}: Sprinkler cannot fire eyes.
+* {{i|Tech.5}}/{{i|Technology 2}}: Eyes only fire normal tears and the laser cannot fire eyes.
+* {{i|Tiny Planet}}: Eyes travel straight forward, and tears fired by eyes orbit around Isaac.
+* {{i|Tractor Beam}}: Neither the eyes nor their shots are affected by Tractor Beam.
+
+== In-game Footage ==
+{{#ev:youtube|Ac4CI7M3c1A}}
+
+== Trivia ==
+* In many different cultures, the evil eye is a curse cast upon someone, usually by a malicious glare, which can cause them injury or misfortune.
+* The design is taken from the Nazar Boncuğu (Evil Eye Bead in Turkish). Nazar Boncuğu is a talisman used to ward off evil in Turkey.
+* The blue color, milky effect, and name may be a reference to "The Tell-Tale Heart", a poem by famous Gothic poet Edgar Allan Poe.
+* Despite having evil in the name, Evil Eye is not considered evil for the damage bonuses of {{t|Black Feather}}.
+
+{{nav|cain unlock|ultra greed unlock|fr=Mauvais Œil}}

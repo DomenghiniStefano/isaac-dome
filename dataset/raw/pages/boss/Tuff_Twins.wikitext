@@ -1,0 +1,52 @@
+{{Infobox boss
+ | dlc = r
+ | name = Tuff Twins
+ | id          = 19
+ | variant     = 2
+ | environment = <u>Boss</u><br>{{floor|Mines}}<br>{{room|boss challenge}}
+ | base hp     = 35
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Tooth and Nail}} (1% chance)
+}}
+
+'''Tuff Twins''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in the {{s|Mines}}.
+
+== Behavior ==
+Tuff Twins always spawn in a pair consisting of 5 body segments and a head segment each. They are always fought in a double-sized room.
+* The Tuff Twins roam around the room randomly, like {{e|Larry Jr.}}
+* The Tuff Twins are initially covered in rock armor that gives them immunity to all non-explosive damage, but bombs and explosives can destroy their armor, making their segments vulnerable to all damage.
+** There are always at least two {{e|Bomb Grimace}}s that dispense {{e|Throwable Bomb}}s for Isaac to use against the Tuff Twins to break their armor.
+** All segments have damage resistance to explosives both before and after having their armor removed, taking only 25-14% damage based on how far away the explosion is from them.
+*** This also applies to Isaac's tears if they have an explosive effect, such as if he has {{i|Ipecac}}, {{i|Dr. Fetus}}, etc.
+** The armor absorbs up to 15 damage before breaking, and is independent of the segments' 35 HP value.
+* Head segments occasionally spit {{e|Ink}}s while protected by its rock armor.
+** Vulnerable head segments spit {{e|Sucker}}s instead.
+** Head segments will not try to spawn Inks or Suckers if there are at least 4 total in the room. However, head segments can occasionally spawn multiple in succession, bypassing this limit.
+* Vulnerable body segments spew bloody shots, similar to {{e|Boil}}s.
+* Tuff Twin segments can be split into smaller copies of the boss as long as the new Tuff Twin segments are longer than 2 pieces.
+* The Tuff Twins become faster the more rock armor they lose.
+
+== Gallery ==
+<gallery>
+File:Tufftwin noarmor.png|Tuff Twin without armor.
+File:Tuff Twins Concept.png|Concept art for Tuff Twins.
+</gallery>
+
+== Notes ==
+* {{i|Terra}}, along with any items that create rock waves like {{i|Mega Bean}} and {{i|Wait What?}} can destroy the Tuff Twins' armor.
+* {{i|Sulfuric Acid}} tears cannot destroy their armor.
+* Killing all the Bomb Grimaces with effects like {{i|Little Horn}} and {{i|Euthanasia}} can soft-lock Isaac in this fight.
+* {{I|Plan C}} cannot kill the Tuff Twins if they still have their armor.
+
+== Trivia ==
+* They appear to be a rocky variation of Larry Jr.
+* {{e|The Shell}} appears to be the posthumous version of them.
+* Tuff is the name of a type of rock formed from volcanic ash.
+
+== Bugs ==
+{{Bug|The Tuff Twins can get stuck with the Bomb Grimace in the room.}}
+
+{{nav|boss|fr=Les Vers de Pierre}}
+[[Category:Bosses]]
+[[Category:Chapter 2.5 bosses]]
+[[Category:Mines bosses]]
+[[Category:Debut bosses in Repentance]]

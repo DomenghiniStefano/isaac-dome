@@ -1,0 +1,56 @@
+{{infobox boss
+ | id          = 62
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{floor|Cellar}}<br>{{room|challenge}}{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>(with another Pin, {{dlc|a}} [[Mega Fatty]], [[Larry Jr.]], [[Chub]] or [[Blighted Ovum]])<br><u>Degraded Boss</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Chest}}
+ | base hp     = {{dlcalt|180|a=100}}
+ | pool        = {{ip|Boss}}<br>{{dlc|r+}} Random worm trinket (1% chance)
+}}
+{{distinguish|Safety Pin|Push Pin}}
+
+'''Pin''' is a [[boss]] that can appear in the {{s|Cellar}}.
+
+== Behavior ==
+Pin burrows into the ground before performing the following attacks:
+* Jumps out of the ground towards Isaac and burrowing back into the ground at the end of the jump.
+** {{dlc|nr}} Occasionally fires 4 projectiles diagonally from the last section of its body when exiting the ground and/or when burrowing back into the ground.
+** {{dlc|r}} Fires 4 projectiles diagonally depending on the length of its jump: does not fire projectiles on short jumps, fires projectiles shortly upon exiting the jump on regular/medium jumps, and fires projectiles both shortly upon exiting and after a few moments airborne on long jumps.
+* Partially emerges out of the ground to fire a red {{i|Ipecac}} shot at Isaac before returning underground.
+** After performing this attack, Pin will always jump out of the same spot it entered.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|2|dlc=r}}: 15% larger with 25% more HP. Fires a radial burst of 6 spiraling projectiles instead of an explosive projectile and fires 6 projectiles instead of 4 when jumping.
+
+== Gallery ==
+<gallery>
+File:Boss_Pin_dark_grey_ingame.png|{{dlc|r}} Grey Champion Pin.
+File:Boss Delirium Pin ingame.png|Pin as one of {{e|Delirium}}'s forms.
+File:Mega Maw Concept.jpg|Concept art of a scrapped boss named "Pin, Trio", along with Mega Maw and what appears to be The Gate.
+</gallery>
+
+== Notes ==
+* Each segment of Pin can be individually damaged, so a single piercing tear could hit Pin multiple times.
+** Moreover, if Pin is petrified (due to {{i|Mom's Contacts}} or {{i|Charged Baby}}, etc.), his individual segments can even be destroyed (though that would not necessarily deal higher damage), which will shorten the boss in its length.[[File:Shorter Pin.png|thumb|Pin with several of his segments destroyed, appearing much shorter.]]
+** {{Dlc|r}}Piercing shots no longer damage segmented enemies multiple times per attack.
+* Despite looking like it's flying above the ground, Pin is not immune to ground-based effects such as [[creep]] when doing its jumping attack. On the contrary, every segment is guaranteed to pass over the damaging area, making it more susceptible to damage.
+** Due to this, Pin also cannot jump across gaps, and will bounce backwards when attempting to cross one.
+* The segment that shoots bullets during mid-jump will continue to do so if it's suspended in mid-air with something like {{I|Anima Sola}}.
+
+== Trivia ==
+* Pin was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* {{e|The Frail}} is its posthumous version.
+* {{dlc|nr}}Prior to ''[[Repentance]]'', Pin's Champion version could never appear in-game despite existing in the original ''The Binding of Isaac''.
+* Pin is based off the [[wikipedia:Pinworm|pinworm]], an internal parasite.
+* Pin is also likely based on the [[supermeatboy:Larries|Larries]], a trio of worm bosses in Edmund McMillen's game, ''Super Meat Boy'' that would dig in and out of the ground. This is also evident from its original concept art, where Pin was conceptualized a trio of worms instead of one.
+** The other boss to reference the Larries from ''Super Meat Boy'', is {{e|Larry Jr.}}.
+* Pin is likely a reference to [[zelda:Lanmola|Lanmola]], a boss from ''The Legend of Zelda: A Link to the Past'', as nearly all of their attacks are the same.
+* {{dlc+|r}} It is the boss version of the {{e|Needle}}s. {{dlc-}}
+* {{dlc|r}} Pin is the only boss that got a new champion variant in ''Repentance''.
+
+== Bugs ==
+{{bug|If you fire immediately upon entering the Boss Room, rarely, you can damage Pin before it emerges.}}
+{{bug|dlc=a+|If Pin is under the effects of {{i|Broken Modem}} in mid-air, its jump will be stopped and it will fall.}}
+
+{{nav|boss}}
+[[Category:Chapter 1 bosses]]
+[[Category:Cellar bosses]]
+[[Category:Debut bosses in Rebirth]]

@@ -1,0 +1,44 @@
+{{infobox passive collectible
+ | id          = 182
+ | quote       = Homing shots + DMG up
+ | description = {{dlc|nr}} Adds a Red [[Heart Container]]. Grants [[homing tears]], a x2.3 [[Damage]] multiplier, +1 flat Damage, -0.4 [[Tears]], -0.25 [[Shot Speed]], and +4.125 [[Range]].<br>{{dlc+|r}} Adds a Red [[Heart Container]]. Grants [[homing tears]], a x2.3 [[Damage]] multiplier, +1 flat Damage, -0.4 [[Tears]], and -0.25 [[Shot Speed]].{{dlc-}}
+ | quality     = 4
+ | tags        = summonable offensive angel
+ | devil price = {{dlcalt|1|r=2}}
+}}
+{{distinguish|Immaculate Heart|Sacred Orb}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants one [[Red Heart Container]] and replenishes all health.
+* x2.3 [[damage]] multiplier.
+* +1 flat [[damage]].
+* -0.4 [[tears]].
+* -0.25 [[shot speed]].
+* {{dlc|nr}} +0.75 [[tear falling speed]].
+* {{dlc|nr}} +4.125 [[range]].
+* Grants [[homing tears]].
+* {{dlc|nr}} Grants homing bombs (the effect of {{i|Bobby-Bomb}}).
+* {{transformation contribution|Seraphim|dlc=r+}}
+
+== Notes ==
+* {{dlc|nr}} Sacred Heart is a [[special item]].
+* Sacred Heart has the highest damage multiplier of all passive items.
+* The flat damage gained by Sacred Heart is not affected by its [[damage]] multiplier. However, other flat damage upgrades (such as those gained by {{t|Curved Horn}} or {{i|Void}}) will be affected normally.
+* {{dlc|nr}} Although Sacred Heart increases range, the reduction of shot speed results in a slight decrease in effective range, not accounting for homing.
+* {{dlc|r}} This item can be crafted from {{i|Bag of Crafting|n}} with eight {{e|Eternal Heart}}s.
+
+== Interactions ==
+* {{I|Anti-Gravity}}: Tears will track enemies while frozen in place, once one gets close enough.
+* {{i|Sacred Heart}}: Picking up multiple copies of the item will only result in acquiring additional heart containers, while decreasing fire rate and shot speed.
+* {{C|Tainted Bethany}}: On pickup, grants 12 blood charges.
+
+== In-game Footage ==
+{{#ev:youtube|t1A7g9R4b0o}}
+
+== Trivia ==
+* The [[wikipedia:Sacred Heart|Sacred Heart]] (also known as the '''Most Sacred Heart of Jesus''') is a devotion practiced in Catholicism, which represents "the heart of Jesus Christ God, pierced on the cross", and God's "boundless and passionate love for mankind".
+
+{{nav|seraphim|fr=Sacré-Cœur}}
+[[Category:Special items]]

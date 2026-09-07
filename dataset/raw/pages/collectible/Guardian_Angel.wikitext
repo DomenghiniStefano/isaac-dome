@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 112
+ | quote       = Extra protection
+ | description = Spawns an [[orbital familiar]] that blocks enemy shots, deals 7 damage per tick on contact, and increases the speed of all orbital familiars.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable baby monstermanual
+ | unlocked by = Guardian Angel
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Spawns an [[orbital familiar]] that blocks enemy shots and deals 7 damage per tick on contact.
+** {{dlc|nr}} This deals 105 damage per second.
+** {{dlc|r}} This deals 52.5 damage per second.
+* Increases the speed that all orbital familiars rotate around Isaac at.
+* {{transformation contribution|Seraphim|dlc=anr}}
+* {{transformation contribution|Conjoined|dlc=r}}
+
+== Synergies ==
+* {{i|Sacrificial Altar}}: This familiar will also reward 2 {{e|Black Heart}}s when sacrificed.
+* {{i|Spin to Win}}: The two orbital speed boosts stack.
+
+== Interactions ==
+* {{I|Big Fan}}: Overrides Guardian Angel's speed boost. If Guardian Angel was obtained first, it will retain its own increased speed. If Big Fan was obtained first, Guardian Angel will be slower.
+
+== In-game Footage ==
+{{#ev:youtube|Dky3PEwByMs||inline}} {{#ev:youtube|DeYf2ZCnEtY||inline}}
+
+== Trivia ==
+* A guardian angel is a type of angel that is assigned to guide or protect a particular person/group.
+
+{{nav|conjoined|seraphim|familiar modifier|magdalene unlock|satan unlock|fr=Ange Gardien (Objet)}}
+[[Category:Familiars]]

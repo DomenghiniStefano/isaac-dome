@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | alias       = Money Power
+ | files name  = Money = Power
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 109
+ | quote       = $$$ = DMG
+ | description = Increases [[damage]] by 0.04 for every {{e|Penny|text=coin}} Isaac has, up to +3.96 damage at 99 coins.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Adds 0.04 [[damage]] for every {{e|Penny|text=coin}} Isaac has.
+** The damage caps at +3.96 Damage at 99 coins.
+** Though Isaac can still collect coins if he already has 99, he will not gain any damage bonus from them.
+
+== Synergies ==
+* {{dlc+|r}}{{i|Deep Pockets}}: Increases maximum damage bonus from Money = Power. The damage caps at +39.96 Damage at 999 coins.{{dlc-}}
+* {{i|A Dollar}}: Immediately maxes out damage bonus.
+* {{i|A Quarter}}: Increases damage by 1 per 25 coins.
+* {{I|Greed's Gullet}}: Isaac will gain health and damage.
+
+== Interactions ==
+* {{i|Diplopia}}: Damage bonus doesn't stack.
+* {{i|Spindown Dice}}: Turns into {{i|The Wafer}} when rerolled.
+
+== In-game Footage ==
+{{#ev:youtube|BOqjV_iVqAo||inline}} {{#ev:youtube|IBIF3AzGKVw||inline}}
+
+== Trivia ==
+* The name of the item is a reference to the popular saying "Money is power".
+* This item is used in {{chal|PAY TO PLAY}}.
+* For a few weeks, a hidden message under Money = Power's icon in the game's files read "where are you".
+** The message was part of an [https://imgur.com/V2l5TaN alternate reality game] and could be seen on the collection page, representing Isaac asking for his father.
+* In the original ''The Binding of Isaac'', Money = Power was unlocked by beating {{e|Mom's Heart}} eight times.
+
+{{nav|fr=Avidité}}

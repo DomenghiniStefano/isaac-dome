@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | dlc         = a
+ | name        = Obsessed Fan
+ | description = Spawns a [[familiar]] that follows Isaac's movements on a delay and deals 30 contact damage per second to enemies.
+ | quality     = 0
+ | tags        = summonable {{dlc|r+|monstermanual}} offensive fly
+ | quote       = Follows my every move...
+ | id          = 426
+}} {{distinguish visual|Psy Fly}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Spawns a [[familiar]] that follows Isaac's movement with a 3-second delay and deals 2 contact damage to enemies per tick (30 damage per second).
+** {{dlc|r}} The fly follows Isaac on a 0.66 second delay instead.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* If other familiars that move with a similar pattern such as {{i|Multidimensional Baby}} have been collected before the Obsessed Fan, it will follow them instead with further delay.
+
+== In-game Footage ==
+{{#ev:youtube|sa0AKu1_LJo}}
+
+== Bugs ==
+{{bug|When Isaac and Obsessed Fan are both moving and {{t|Extension Cord}} is held, the electricity will not always fully connect.|dlc=a+nr}}
+
+{{nav|fly|fr=Admiratrice Obsessionnelle}}

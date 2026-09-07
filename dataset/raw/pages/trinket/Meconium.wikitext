@@ -1,0 +1,34 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Meconium
+ | id = 91
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote = Eww
+ | description = {{E|Black Poop}}s can drop {{E|Black Heart|text=Black Hearts}} when destroyed. {{E|Poop}} has a chance to turn into {{E|Black Poop|dlc=n}}.
+ | unlocked by = Meconium
+}}
+
+{{cit|ut|a+}}
+
+== Effects ==
+* Adds a 33% chance for {{E|Poop}} to turn into {{E|Black Poop}}.
+** This includes {{E|Red Poop}}.
+* Adds a 5% chance for black poops to drop a {{E|Black Heart}} upon being destroyed.
+* The chances are not affected by [[luck]].
+
+== Synergies ==
+* {{i|D12}}: Obstacles that are rerolled into poop have a greater chance of being {{E|Black Poop|n}}.
+* {{p|A Card Against Humanity}} / {{t|Mysterious Candy}} / {{i|The Poop}} / [[Re-Lax|Re-Lax pill]] / {{i|Everything Jar}}'s 1st charge: Has chance for the poop created to be a {{E|Black Poop|n}}.
+* {{a|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either of these effects raises the chance to 66% chance for {{E|Poop}} to turn into {{E|Black Poop}} and to 7% chance for black poops to drop a {{E|Black Heart}} upon being destroyed. Having both of them raises the chance to respectively 100% and 10%.
+
+== Interactions ==
+* {{i|Hallowed Ground}}: Although {{t|Meconium}} cannot replace the poop Hallowed Ground spawns with, {{E|Black Poop}} has a chance to replace {{E|White Poop}}s that would have been created by other items which have synergies with Hallowed Ground.
+* {{t|Second Hand}}: The [[confuse]] duration from {{e|Black Poop}}s is unaffected by Second Hand.
+
+== In-game Footage ==
+{{#ev:youtube|vczIdGRPkkY}}
+
+== Trivia ==
+* [[wikipedia:Meconium|Meconium]] is the earliest stool of a mammalian infant.
+
+{{nav|blue baby unlock|ultra greedier unlock|poop|fr=Méconium}}

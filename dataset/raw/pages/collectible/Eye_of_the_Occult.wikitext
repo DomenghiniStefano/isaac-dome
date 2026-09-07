@@ -1,0 +1,85 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 572
+ | quote       = DMG up + range up + controlled tears
+ | description = +1 [[damage]], +2 [[range]], -0.16 [[shot speed]]. Isaac's tears can be controlled mid-flight with tear controls.
+ | quality     = 3
+ | tags        = devil summonable offensive
+ | devil price = 2
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Firing in a direction causes all of Isaac's tears to move in that direction. Tears will stay in place if a fire button is not being pressed.
+** The flight duration of tears is determined by the [[Range|range stat]].
+* +1 [[damage]].
+* +2.0 [[range]].
+* -0.16 [[shot speed]].
+* {{transformation contribution|Leviathan}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Adversary}}.{{dlc-}}
+* Items which use charge mechanics (like {{I|Chocolate Milk}}, {{I|Cursed Eye}} or {{I|Monstro's Lung}}) require precise input to be able to both charge the shot and then move the tears, making it significantly harder to control.
+** Beams and lasers like {{i|Brimstone}} are unaffected by this.
+* This item replaces Isaac's regular white aura with a dimmer purple one which lowers visibility in {{curse|darkness}}.
+* ''MouseControl=1'' enabled via the options.ini file does not allow the player to control the tears by mouse. Synergies which add a crosshair, however, will allow the tears to be controlled by mouse normally. (Further detail on valid synergies below)
+
+== Synergies ==
+Synergies which cause auto-fire can have the firing stopped by pressing the "drop" key or button. Pressing Fire will resume auto-firing.
+
+* {{i|Anti-Gravity}} + {{i|Proptosis}}: Tears travel and keep their initial size as long as the fire key is held, allowing for massive damage.
+* {{i|Bob's Rotten Head}}: Isaac can control the mid-flight direction of the head, however its air-time is not increased.
+* {{i|Brimstone}}/{{i|Technology}}: The laser becomes dark purple and automatically fires at a controllable crosshair. The crosshair behaves nearly identically to the one created by {{I|Marked}} (including in its synergies and interactions with other items), but the laser itself always fires in the cardinal directions and bends toward the crosshair rather than directly targeting it.
+** {{C|Azazel}}: Like Brimstone, except that his short beam becomes a lasso. The loop starts where the beam would normally end and extends out to the cross-hair.
+** '''Brimstone'''/'''Technology''' + {{i|Chocolate Milk}}: The closer the crosshair is to Isaac, the less charged the laser will be, and vice versa.
+** '''Brimstone'''/'''Technology''' + {{I|Incubus}}/{{i|Twisted Pair}}: The familiars fire a straight laser towards the crosshair.
+** '''Brimstone'''/'''Technology''' + {{I|Marked}}/{{I|Analog Stick}}: The laser more closely follows the crosshair's position relative to Isaac. In Brimstone's case, moving the crosshair while the laser is firing makes the laser bend toward it rather than changing the firing angle of the laser itself.
+** '''Brimstone'''/'''Technology''' + {{i|Montezuma's Revenge}}: The brown beam has a similar interaction as {{C|Azazel}}'s beam but cannot create the crosshair on its own. Corn shots are unaffected.
+** '''Brimstone'''/'''Technology''' + {{i|Revelation}}/{{i|Tech.5}}/{{i|Technology 2}}: The Revelation, Tech.5, and Technology 2 lasers are also affected by the crosshair but cannot create the crosshair on their own.
+* {{i|Cain's Other Eye}}/{{i|Sprinkler}}: The familiar's and sprinkler's tears travel a very short distance in their original direction and can be controlled afterwards.
+* {{tf|Conjoined}}/{{i|Eye Sore}}/{{i|Loki's Horns}}/{{i|Mom's Eye}}/{{i|The Wiz}}: Extra tears fly in the same direction making it easier to hit every shot increasing damage substantially.
+* {{I|Isaac's Tears}}/{{i|Tammy's Head}}/{{i|Tear Detonator}}/{{i|Varicose Veins}}: Generates a halo of tears that don't break their shape.
+* {{I|The Ludovico Technique}}: While holding a direction, the Ludovico tear will constantly shoot out controllable tears in random directions. The air time of these tears scales with the range stat.
+* {{i|Marked}}: Turns the Marked crosshair purple. Tears target the crosshair's exact position. Upon reaching it, tears follow and hover on top of the crosshair for their remaining airtime.
+* {{i|Technology}}: The laser becomes dark purple and automatically fires at a controllable crosshair. The crosshair behaves nearly identically to the one created by Marked (including in its synergies and interactions with other items) with the exception that lasers often arch towards the crosshair rather than traveling towards it directly and any other projectiles affected by Eye of the Occult that are not lasers (such as from {{i|Eye of Greed}} or {{i|Fate's Reward}}) will chase the crosshair and hover above it for the remainder of their range.
+* {{i|Technology Zero}}: Static beams persist between tears while moving.
+* {{I|Trisagion}}: The Trisagion beams will fire in the direction of cross-hair and after the fire button is released they stay in place until they fade away.
+
+== Interactions ==
+* {{I|Anti-Gravity}}: Overridden by Eye of the Occult. Tears up still applies.
+* {{T|Brain Worm}}: Tears will veer slightly towards enemies when travelling by, but will quickly return to player control.
+* {{I|Brimstone}} + {{I|Twisted Pair}}: Twisted pair will only fire brimstone when the crosshair is moved.
+* {{I|Brimstone}} + {{i|Taurus}}: When Taurus' effect triggers, Isaac will be unable to move the crosshair, but he'll keep firing the Brimstone laser at wherever the crosshair remained before Taurus triggered, effectively circumventing Taurus' penalty of being unable to fire during the invincibility period.
+* {{i|Chocolate Milk}}: Not Recommended. Releasing the key to fire tears will stop the tear's movement, making it difficult to shoot enemies.
+* {{i|C Section}}/{{i|Epic Fetus}}/{{i|Mom's Knife}}: Overrides Eye of the Occult, stat effects still apply.
+* {{i|Cursed Eye}}: The tears stack on top of each other, and only move forward when holding a direction afterwards.
+* {{i|Dr. Fetus}}: Bombs will now be controlled both in direction and range.
+* {{i|Evil Eye}}: Eyes cannot be controlled, but the tears they shoot can be.
+* [[Tear Effects#Homing|Homing Tears]]: Tears still home towards enemies, but controlled movement is stronger than the homing effect.
+* {{I|Immaculate Heart}}: Extra tears are not affected by Eye of the Occult. Stat changes still apply.
+* {{I|The Ludovico Technique}} + {{i|Technology}}: Overrides Eye of the Occult, stat effects still apply.
+* {{i|My Reflection}}: Causes the pull to be lessened while actively controlling the tears. Pull returns to normal when not firing.
+* {{i|Pop!}}: When being actively moved, tears can stay in the air until the fire button is let go.
+* {{I|Saturnus}}: Extra tears are only affected by Eye of the Occult when holding fire while moving between rooms causing some of the orbiting tears' spacing and shot speed to be uneven. Stat changes still apply.
+* {{i|Sprinkler}}: Sprinkler's tears travel a very short distance in their original direction and can be controlled afterwards.
+* {{i|Tech X}}: Overrides Eye of the Occult; however, the shot speed down is still beneficial for Tech X.
+* {{i|Tiny Planet}}: Not Recommended. The tears will stop moving when not shooting in the direction of their orbit, making it nearly impossible to control where they go.
+* {{i|Tractor Beam}}: Tears will only move forward while being fired, but control is otherwise overridden.
+
+== In-game Footage ==
+{{#ev:youtube|15sd8Jb1Crk||inline}}
+
+== Gallery ==
+<gallery>
+File:Isaac's Tears + Eye of the Occult.jpg|alt=Isaac's Tears + Eye of the Occult|{{I|Isaac's Tears}} activated and being driven using the Eye of the Occult. The halo is the tears formed from Isaac's Tears.
+</gallery>
+
+== Trivia ==
+* [[anti:Eye Of The Occult|Eye Of The Occult]] originates from the ''Antibirth'' mod.
+* This item's name and visual design originate from a [https://www.reddit.com/r/bindingofisaac/comments/2rklib/a_few_item_ideas/ Reddit post] on the Binding of Isaac subreddit.
+
+== Bugs ==
+{{bug|After the first {{i|Brimstone}} shot, the {{i|Twisted Pair}} familiars will be unable to fire until Isaac moves the crosshair and even then they will often only fire once or not at all. {{i|Chocolate Milk}} fixes this.}}
+
+{{nav|leviathan}}

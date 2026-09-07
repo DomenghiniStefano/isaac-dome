@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 409
+ | quote       = I reward an empty vessel
+ | description = Grants two {{e|Black Heart}}s. While Isaac has no [[Health#Red Heart Containers|red hearts]], grants [[flight]] and periodically grants an invincibility [[shield]] for a few seconds.
+ | quality     = 2
+ | tags        = summonable
+ | unlocked by = Empty Vessel
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* When Isaac has no [[Health#Red Heart Containers|Red Hearts]]:
+** Grants [[flight]].
+** Every 40 seconds since activation or pickup, when the seconds on the timer hit 00, 20, or 40, while in a room with enemies, a [[shield]] triggers, nullifying all types of damage for 10 seconds.
+* Grants 2 {{e|Black Heart}}s on pickup.
+
+== Notes ==
+* Does not affect {{C|Keeper}}/{{C|Tainted Keeper}}.
+* {{dlc|nr}}This item is difficult to use for anyone with red health, as it is impossible to have no red hearts without removing all heart containers (such as through [[Devil Room|Devil deals]]). It is best used by characters that cannot gain red health at all, such as {{C|???}}.
+* {{dlc|r}}Characters can now deplete their red health fully through sources like {{M|Blood Donation Machine}}s while having other hearts like {{e|Soul Heart}}s. As a result, this item is usable for a wider amount of characters, and has synergies with characters who prefer to have no red health (such as {{C|Eve}}).
+* {{e|Rotten Heart}}s also prevent Empty Vessel's effects.
+
+== Synergies ==
+* {{i|Brittle Bones}}: The empty {{e|Bone Heart|x}}s will trigger Empty Vessel.
+* {{I|Gnawed Leaf}}: If the player has no Red Hearts, they can stand still and wait for the shield to activate, allowing the player to deal damage without leaving invulnerability.
+
+== In-game Footage ==
+{{#ev:youtube|dhSW32CeZxY}}
+
+== Trivia ==
+* The changed texture of the player's body is the same as {{C|The Lost}}'s, but recolored.
+* "Empty vessel" is a religious term for having an open mind so God can fill it with His divine wisdom.
+
+{{nav|lazarus unlock|hush unlock|fr=Flacon Vide}}
+[[Category:Damage-preventing items]]
+[[Category:Flight-granting items]]

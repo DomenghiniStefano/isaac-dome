@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | id          = 103
+ | quote       = Poison damage
+ | description = Adds a chance to shoot [[poison|poison tears]], dealing damage over time when inflicted.
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Adds a chance to shoot [[poison|poison tears]], dealing damage over time when inflicted.
+** {{dlc|na}} The poison randomly hits either 2 or 3 times, dealing a total of 4 or 6 damage.
+** {{dlc|a}} The poison hits 2 times, dealing a total of 2x Isaac's damage.
+
+== Notes ==
+* {{dlc+|r}} This item can be spawned by {{e|Bumbino}} if he picks up 12 cents.{{dlc-}}
+* The chance to fire poison tears depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 4 - \left \lfloor \mathit{Luck} * 0.25  \right \rfloor}</math>
+** At base luck (0), the chance is 25%, maxing out at 100% at 12 luck.
+
+== Synergies ==
+* {{I|Abyss}}: When Isaac uses Abyss to absorb The Common Cold it turns into a green locust that poisons enemies.
+* {{i|Compound Fracture}}/{{i|Cricket's Body}}/{{i|Haemolacria}}/{{i|The Parasite}}: Chance for tears and split tears to be poisonous. If the main tear is poisonous, the split tears are too.
+* {{i|Dr. Fetus}}/{{i|Epic Fetus}}: Chance for bombs/explosions to become poisonous like {{i|Bob's Curse}}.
+* {{I|Finger!}}: Finger can also apply the poison effect.
+* {{i|Lachryphagy}}: If a poison tear is fed, all burst tears are poisonous. If a normal tear is fed, the burst tears are not poisonous.
+* {{i|The Ludovico Technique}}: The tear flickers green, capable of poisoning enemies when it does.
+
+== Interactions ==
+* {{i|Ipecac}}/{{i|Scorpio}}: Overrides The Common Cold.
+* {{I|Serpent's Kiss|anr}}: Both poison effects work, but poison caused by Common Cold will not cause {{e|Black Heart}} drops. There is no way to tell which poison is applied.
+* {{t|Pinky Eye}}: Activation rates are individually applied to each tear, effectively allowing for higher amounts of poison tears. However at 12 Luck, the trinket will not do anything for Isaac as The Common Cold is guaranteed to make every tear poisoned at that point.
+
+== In-game Footage ==
+{{#ev:youtube|4VLGkuDvO-k||inline}} {{#ev:youtube|sNCWN5NcC7o||inline}}
+
+== Trivia ==
+* In the original ''The Binding of Isaac'', this item also belonged to the Devil Room pool.
+* In the original game, this item was unlocked by collecting two of the following items in one run: {{i|Roid Rage}}, {{i|The Virus}}, {{i|Growth Hormones}}
+
+== References ==
+* [https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing The Binding of Isaac Item Trigger Testing]
+
+{{nav}}
+[[Category:Tear-modifying items]]

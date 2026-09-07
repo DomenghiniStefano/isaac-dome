@@ -1,0 +1,108 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 725
+ | quote       = Your stomach rumbles
+ | description = Causes Isaac to throw poop, create buffing [[creep]], or drop [[bombs]] while fighting enemies.
+ | quality     = 0
+ | tags        = {{dlc|r+|poop}} summonable offensive
+ | unlocked by = IBS
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+After dealing <math>40 + 13.33 \times (stageNumber - 1)</math> damage to an enemy, Isaac begins to flash red. Releasing the fire button gives the effect of one of {{C|Tainted ???}}'s unique poops.
+
+=== Throwable ===
+Holds up one of the following types of poop, which he can throw with the fire buttons. All thrown poops deal 15 damage to enemies they hit when thrown (up to 3 times in the case of stone poop).
+
+{| class="wikitable mw-collapsible striped sortable" style="text-align: center"
+ ! class="unsortable" style="width: 96px" | Icon
+ ! ID
+ ! style="width: 150px" | Name
+ ! class="unsortable" style="width: 700px" | Description
+ |-
+ | [[file:TaintedBlueBaby_Poop.png|60px|link=]]
+ | 245.0
+ | Poop
+ | A normal {{E|Poop}}, the same as those found in any run.
+ |-
+ | [[file:TaintedBlueBaby_CornyPoop.png|60px|link=]]
+ | 245.12
+ | Corn Poop
+ | Spawns a [[Familiar#Blue Flies|blue fly]] every two seconds. Each corn poop can have up to 3 blue flies out at a time, and the blue flies will circle the corn poop while inactive. The blue flies automatically seek out enemies that are near the player; they will not automatically seek out enemies near the corn poop.
+ |-
+ | [[file:TaintedBlueBaby_BurningPoop.png|60px|link=]]
+ | 245.13
+ | Flaming Poop
+ | Leaves behind a fire that damages enemies and blocks enemy shots. The fire lasts 5 seconds and can block five shots and/or deal three ticks of contact damage before disappearing (the first hit will deal 16.5 damage, the second and third will deal 11). While held, it can be used to destroy {{e|Shopkeeper}}s by walking into or throwing the poop at them, although only in the room its used; the flame will extinguish if the room is exited.
+ |-
+ | [[file:TaintedBlueBaby_GreenPoop.png|60px|link=]]
+ | 245.14
+ | Stinky Poop
+ | Constantly emits a toxic cloud that deals 3.5 damage per tick to nearby enemies (10.5 damage per second). If an explosion or fire hits the cloud, it also explodes, dealing 15 damage to anything caught in the blast. When the poop is destroyed, it spawns a larger toxic cloud that can't explode and goes away after 5 seconds. If held, it can be used to poison enemies with the poison clouds while walking.
+ |-
+ | [[file:TaintedBlueBaby_BlackPoop.png|60px|link=]]
+ |245.15
+ | Black Poop
+ | Continuously creates [[Status Effects#Slow|slowing]] [[Creep#Black Creep|black]] [[creep]] and, when destroyed, deals 10 damage to and [[Status Effects#Confusion|confuses]] all enemies in the room. The poop will continue to create slowing creep even after it's destroyed.
+ |-
+ | [[file:TaintedBlueBaby_HolyPoop.png|60px|link=]]
+ | 245.15
+ | White Poop
+ | Acts the same as a poop created by {{i|Hallowed Ground}}. Tainted ??? also gains the poop's effects while holding it.
+ |-
+ | [[file:TaintedBlueBaby_GreyPoop.png|60px|link=]]
+ | 245.11
+ | Stone Poop
+ | Very resistant to damage and deals extra damage when thrown. It can hit multiple enemies when thrown, unlike all other poop types. It can stand several enemy hits, serving as a wall against bullets.
+ |-
+ | [[file:TaintedBlueBaby_Bomb.png|60px|link=]]
+ |
+ | Bomb
+ | Explodes after 1.5 seconds even if Tainted ??? doesn't throw it. This bomb looks like one from {{I|Butt Bombs}}, but will not have its unique effect. It will, however, use most of Tainted ???'s bomb synergies except for {{I|Mr. Mega}}, {{I|Rocket in a Jar}}, {{T|Ring Cap}}, and {{T|Short Fuse}}.
+ |}
+
+=== Non-Throwable ===
+{| class="wikitable mw-collapsible striped sortable" style="text-align: center"
+ ! class="unsortable" style="width: 96px" | Icon
+ ! style="width: 150px" | Name
+ ! class="unsortable" style="width: 700px" | Description
+ |-
+ | [[file:TaintedBlueBaby_Fart.png|60px|link=]]
+ | Fart
+ | Deals 5 damage and [[Status Effects#Poison|poisons]] nearby enemies while pushing them and their bullets back and spawning a toxic cloud. If an explosion or fire hits the cloud, it also explodes, dealing 15 damage to anything caught in the blast. Reflected bullets can damage enemies, similarly to {{I|Butter Bean}}.
+ |-
+ | [[file:TaintedBlueBaby_Diarrhea.png|60px|link=]]
+ | Explosive Diarrhea
+ | Drop 5 live bombs over time, similarly to the [[Pills|Explosive Diarrhea pill]]. These bombs will use Tainted ???'s bomb synergies.
+ |-
+ | [[file:TaintedBlueBaby_BrownCreep.png|60px|link=]]
+ | Brown Creep
+ | Create a trail of brown [[creep]] that deals 1.5x Tainted ???'s damage to enemies per tick (15x Tainted ???'s damage per second). Standing on this creep gives Tainted ??? +1 [[damage]], +1.5 [[tears]] fired per second, and other effects, depending on what's in contact with it. This creep persists indefinitely. When in contact with:
+[[file:TaintedBlueBaby_BlackPoop.png|32px|link=]] Black Poop: the creep also slows enemies and gives Tainted ??? slowing tears.<br/>
+[[file:TaintedBlueBaby_GreenPoop.png|32px|link=]] Toxic cloud from Stinky poop: the creep poisons enemies and gives Tainted ??? poison tears.<br/>
+[[file:TaintedBlueBaby_BurningPoop.png|32px|link=]] Flaming Poop: the creep burns enemies and gives Tainted ??? {{i|Fire Mind}}.<br/>
+[[file:TaintedBlueBaby_HolyPoop.png|32px|link=]] White Poop & its Aura: the creep grants [[Tear Effects#Homing|homing]] and triples Tainted ???'s fire rate and damage.<br/>
+[[file:TaintedBlueBaby_GreyPoop.png|32px|link=]] Stone Poop: the creep will keep all the extra effects of other poops, even if they are destroyed.<br/>
+|}
+
+== Notes ==
+* The effect can only trigger once per 3 seconds.
+* If IBS triggers while Isaac is charging a shot (with items such as {{i|Brimstone}}, {{i|Monstro's Lung}}, {{i|Chocolate Milk}}, etc.), the charged shot will only fire after IBS's effect activates. In the case of thrown poops, the charged shot only fires after Isaac throws the poop IBS gives him.
+* Poops spawned by IBS can give [[pickups]].
+* If Isaac is currently holding a poop, IBS cannot activate until he throws it.
+* Isaac can carry poop he is holding between rooms.
+* If Isaac takes damage while holding a poop/bomb, he will drop it where he is standing.
+* If Isaac hits an enemy with a thrown poop, it will immediately break.
+* {{dlc|r+}} {{transformation contribution|Oh Crap}}
+
+== In-game Footage ==
+{{#ev:youtube|b6Kv02tuWXs}}
+
+== Trivia ==
+* IBS stands for Irritable Bowel Syndrome.
+* This item was added after [https://twitter.com/edmundmcmillen/status/1162808018943135744 Edmund stated on Twitter that Isaac has IBS].
+** In other tweets, Edmund has stated that he himself has IBS in real life.
+
+{{nav|oh crap|tainted blue baby unlock|delirium unlock|poop|fr=Intestin Irrité}}

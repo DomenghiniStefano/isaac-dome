@@ -1,0 +1,53 @@
+{{infobox challenge
+ | number      = 19
+ | blindfolded = yes
+ | item        = {{i|BFFS!}}<br>{{i|Brother Bobby}}<br>{{i|Dad's Key}}<br>{{i|Rotten Baby}}<br>{{i|Sister Maggy}}
+ | has shops   = yes
+ | goal        = Isaac
+ | unlocks     = Epic Fetus
+ | unlocked by = The Family Man
+}}
+
+'''The Family Man''' is [[challenge]] #19. {{c|Isaac}} starts with {{i|Brother Bobby}}, {{i|Sister Maggy}}, {{i|Rotten Baby}}, {{i|BFFS!}}, and {{i|Dad's Key}}. However, he is also [[blindfolded]] and must instead rely on [[familiar]]s to do damage. The goal is to defeat {{e|Isaac}}.
+
+{{dlc|a}} Isaac also starts with the {{tf|Conjoined}} transformation due to the familiars the player starts with, making the challenge more difficult. This is because the Conjoined transformation decreases your damage, which the blue flies from Rotten Baby rely on.
+__TOC__
+
+== Difficulty ==
+The slow fire rate of the familiars makes this challenge difficult, especially in {{s|Womb}} and {{s|Cathedral}}. The familiars can also be hard to aim, as they linger behind Isaac.
+
+{{Dlc|r}} Both Brother Bobby and Sister Maggy have been buffed, making this challenge markedly easier: Brother Bobby now has a higher fire rate; while Sister Maggy has an increased damage of 6 (with BFFS! a respectable 12)
+
+== Strategy ==
+* Dad's Key allows the player to enter {{R|Secret Room}}s and {{R|Shop}}s without using {{e|Bomb}}s or {{e|Key}}s. Saving and obtaining extra pickups via Dad's Key can be leveraged for items from {{M|Beggar}}s and {{R|Arcade}} machines to offset the challenge's lack of treasure rooms.
+** Also, Dad's Key can be used to exit the {{R|Boss Rush}} without having to fight any bosses, granting a free item if the Boss Rush is reached in time.
+* Gaining [[flight]] will allow Isaac to stay safely out of range while the familiars deal damage.
+* Damage from [[blue fly|blue flies]] scales with Isaac's damage, allowing more damage into the late game. Several items can help achieve this.
+** {{dlc|nr}} {{tf|Guppy}} spawns a fly whenever a familiar's tear hits an enemy, providing a continuous supply of extra damage.
+** {{i|Rotten Baby}}'s Blue Flies can seek enemies at range.
+** {{i|Hive Mind}} doubles all Blue Fly damage.
+** {{i|Polyphemus}} or {{i|Ipecac|nr}} will also greatly increase the damage of Blue Flies.
+* {{i|Sacrificial Dagger}} is extremely useful, because with BFFS! it deals 30 damage per tick, making it extremely useful against bosses.
+** Getting this combined with invincibility such as {{p|Algiz}} will allow a guaranteed kill on bosses.
+* Additional damage-dealing familiars can be leveraged against enemies.
+** {{i|Lil Brimstone}} is particularly useful for its significant damage, unlimited range, and attacks that pierce obstacles and enemies.
+** {{i|???'s Only Friend}} can also deal high damage and can be controlled to attack enemies anywhere in the room.
+** {{i|Bob's Brain}} can be tricky to use effectively but offers a tremendous boost to damage.
+* {{i|Spear Of Destiny}} can provide an easy-to-use alternative for dealing damage, but does not benefit from BFFS!
+* Damage-dealing active items, such as {{i|The Candle}}, {{i|Red Candle}}, or {{i|The Boomerang}} also offer a reliable amount of damage, and are all obtainable from the Shop.
+* Defensive orbitals block projectiles and some can be used to deal damage. Using {{M|Slot Machine}}s is a relatively reliable method to get 2-3 defensive flies.
+* {{dlc|na}} Re-rolling Isaac's Items with a {{R|Dice Room}}, the {{i|D4}}, the {{i|D100}}, or {{i|Missing No.}} is not recommended as it can leave Isaac without means of dealing damage.
+* {{dlc|a}} Most of {{C|Lilith}}'s unlockable items will make the challenge easier:
+** {{i|Incubus}} enables Isaac to fire as {{C|Lilith}} does, and also benefits from the [[Conjoined]] transformation.
+** {{i|Box of Friends}} doubles familiars, and therefore allows Isaac to double his tear output.
+** {{i|Cambion Conception}} and {{i|Immaculate Conception}} are reliable methods of generating new familiars.
+** {{i|Succubus}} can deal high amounts of damage and help clear rooms.
+* {{T|Baby-Bender}} gives all familiar's tears homing ability.
+* {{i|Camo Undies}}, when combined with Rotten Baby allows Isaac to snipe enemies from safety.
+* {{I|Potato Peeler}} will convert health into a {{I|Cube of Meat}} that benefit from BFFS! and the damage upgrade increases the damage of flies.
+** {{I|Book of Revelations}} will do the same in a slower rate by guaranteeing the Harbingers to spawn at the cost of leaving Dad's Key behind if you don't have {{I|Schoolbag}}.
+
+== Reward ==
+{{achievement text | Epic Fetus, Glass Cannon }}
+
+{{nav|challenge|fr=Le Père de Famille}}

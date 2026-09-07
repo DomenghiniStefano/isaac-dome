@@ -1,0 +1,28 @@
+{{infobox trinket
+ | name        = Mom's Pearl
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 38
+ | quote       = It emanates purity
+ | description = Grants a secondary 10% chance of any non-specific [[Hearts|heart drop]] turning into a {{e|Soul Heart}}, {{dlc|r+}} {{e|Black Heart}} or {{e|Bone Heart|n}}.
+ | tags        = {{dlcalt|mom|r+=nogreed}}
+}}{{distinguish visual|Cursed Eye}}{{distinguish|Mom's Pearls}}
+
+{{cit|t}}
+
+== Effect ==
+* {{dlc|nr+}} Grants a 10% chance of any non-specific [[Hearts|heart drop]] turning into a {{e|Soul Heart}}.
+* {{dlc|r+}} Grants a 10% chance of any non-specific [[Hearts|heart drop]] turning into a {{e|Soul Heart}}, {{e|Black Heart}} or {{e|Bone Heart|n}}.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}}: This chance is increased to 20%.
+
+== In-game Footage ==
+{{#ev:youtube|NhtD5Ecvvqo}}
+
+== Trivia ==
+* {{dlc|a+}} Mom's Pearl's appearance was changed in [[Booster Pack #5]].
+
+== Bugs ==
+{{bug|dlc=rnr+| Mom's Pearl will not contribute to the Yes Mother? transformation nor unlocking {{i|Mom's Contacts}} despite having the item tag.}}
+
+{{nav|mom|fr=Perle de Maman}}

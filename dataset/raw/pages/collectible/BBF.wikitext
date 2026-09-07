@@ -1,0 +1,62 @@
+{{infobox passive collectible
+ | id          = 272
+ | quote       = Big Beautiful Fly
+ | description = Spawns a [[familiar]] that flies around the room in a zig-zag pattern and explodes on contact with an enemy. Respawns after ten seconds.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = summonable monstermanual offensive fly
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a familiar that flies around the room like a {{E|Boom Fly}} and explodes on contact with an enemy.
+** {{dlc|nr}} Deals 60 damage to all enemies within its blast radius and 10 damage to the enemy it touched.
+** {{dlc|r}} Deals 100 damage to all enemies within its blast radius and 10 damage to the enemy it touched.
+* It will respawn 10 seconds after exploding, or upon entering a different room.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* Most obtained bomb modifiers are applied to BBF as well.
+* The blast can damage Isaac as a normal bomb would.
+* For the first few moments after entering a room, the familiar will do contact damage instead of exploding. This means the familiar will not blow up in Isaac's face if there is an enemy right next to the familiar's starting point. However, it may kill enemies that explode on death.
+
+== Synergies ==
+* {{i|BFFS!}} / {{I|Hive Mind}}: Doubles the contact damage to 20 and increases explosion damage by 25.
+** {{dlc|r}} Contact damage becomes 20 and explosion damage increases to 125.
+* {{i|Mr. Mega}}: The explosion damage increases by 50 points.
+
+== Interactions ==
+* Effects applied as normal:
+** {{I|Blood Bombs}}
+** {{I|Brimstone Bombs}}
+** {{I|Butt Bombs}}
+** {{I|Glitter Bombs}}
+** {{I|Hot Bombs}}
+** {{I|Nancy Bombs}}
+** {{I|Sad Bombs}}
+* No effect:
+** {{I|Bobby-Bomb}}
+** {{I|Fast Bombs}}
+** {{I|Ghost Bombs}}
+** {{I|Rocket in a Jar}}
+** {{I|Scatter Bombs}}
+** {{I|Sticky Bombs}}
+* {{I|Bob's Curse}}: The explosion applies [[poison]] effect.
+** {{Dlc+|r}}Does not leave the poison cloud.{{Dlc-}}
+* {{i|Bomber Boy|nr}}: No cross explosions. Damage from the explosion is halved against the initial target, but others caught in the blast take full damage.
+** {{dlc|r}} Explodes in a cross-shaped pattern. Damage from the main explosion deals a flat 37.5 damage, and any additional explosion deals flat 75 damage to which Bomber boy's damage reduction is not applied.
+*** Bomber Boy + {{I|BFFS!}} / {{I|Hive Mind}}: Explosion damages are increased to 1.25x, which are 46.875/93.75 each.
+*** Bomber Boy + {{I|Mr. Mega}}: Explosion damages are increased to 1.5x, which are 56.25/112.5 each.
+*** Bomber Boy + {{I|BFFS!}} / {{I|Hive Mind}} + {{I|Mr. Mega}}: Explosion damages are increased to 1.75x, which are 65.625/131.25 each.
+
+== In-game Footage ==
+{{#ev:youtube|lfT1k3u06ys}}
+
+== Trivia ==
+* The item's name is a reference to the acronym BBW, which stands for "Big Beautiful Woman".
+
+== Bugs ==
+{{bug|dlc=a+|BBF sometimes does contact damage to certain enemies without exploding. {{reconfirm}}}}
+{{bug|dlc=r|BBF can get stuck in corners in The Beast fight.}}
+
+{{nav|fly|fr=BGM}}

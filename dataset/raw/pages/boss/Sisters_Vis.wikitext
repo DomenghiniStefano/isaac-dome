@@ -1,0 +1,65 @@
+{{infobox boss
+ | dlc         = a+
+ | name        = Sisters Vis
+ | id          = 410
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{dlc|r}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|The Void}}<br>{{room|boss challenge}}<br><u>Double Trouble</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>(With [[Larry Jr.]])<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>(With [[The Husk]] or [[Lokii]])<br><u>Degraded Boss</u><br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 700
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Gimpy}} (1% chance)
+ | unlocked by = Something wicked this way comes+!
+}}
+
+'''Sisters Vis''' are a [[boss]] added in ''[[The Binding of Isaac: Afterbirth †]]'' that can appear in all environments of [[Chapter 3]] ({{s|Depths}}, {{s|Necropolis}}, {{s|Dank Depths}}) {{dlc|nr}} and [[Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}).
+
+Each sister has 350 HP.
+
+== Behavior ==
+=== Phase 1 ===
+Sisters Vis perform the following attacks in conjunction:
+* Similar to {{e|The Cage}}, Sisters Vis curl up into balls and roll around the room, bouncing off the walls and each other. One of them leaves a trail of [[Creep#Green Creep|green creep]] and begins rolling towards Isaac while the other leaves behind a trail of [[Creep#Brown Creep|brown creep]] and begins rolling away from Isaac. After a while, one sister stops rolling before the other and:
+** Fires a {{i|Mega Blast|n}} laser in the cardinal direction closest to Isaac's position.
+*** This Mega Blast laser occasionally sweeps back and forth in a wide arc.
+** Fire 2-4 lines of 3-5 projectiles in the cardinal direction closest to Isaac's position.
+The attacking Sister Vis finishes a few seconds before the other Sister Vis stops rolling.
+* The sisters leap into the air and land on each side of Isaac's position either vertically or horizontally. They then fire Mega Blast lasers towards each other. The two beams collide and stop in the middle of the sisters.
+* Together they spawn either two {{e|Vis}} or two {{e|Begotten}}s.
+** These spawns can be killed if caught in their rolling or their Mega Blast attacks.
+* If only one sister is targeted and ends up taking a lot more damage compared to the other in a short period of time, then the sister not being targeted becomes enraged for the rest of the fight, attacking and moving at a faster pace.
+
+=== Phase 2 ===
+When one of the two is killed, the other becomes enraged.
+* She no longer performs the jump attack but always performs a Mega Blast or projectile attack after rolling.
+* If the Sister Vis that leaves Green Creep dies first, the other will leave Green Creep instead of Brown Creep.
+
+== Gallery ==
+<gallery>
+Boss Delirium Sister Vis ingame.png | Sisters Vis as one of {{e|Delirium}}'s forms.
+Afterbirth Boss Concepts.jpg | A drawn design of a Sister Vis, along with those of other Afterbirth/Afterbirth† bosses, by Edmund McMillen.
+</gallery>
+
+== Notes ==
+* {{dlc|nr}} A possible encounter in [[Greed Mode#Greedier Mode|Greedier Mode]] may spawn up to 6 Sisters Vis.
+* They can be found in {{s|The Void}}, even when not unlocked.
+
+== Trivia ==
+* Sisters Vis originated from the 2004 PC game ''[[wikipedia:Gish (video game)|Gish]]'', created by Edmund McMillen.
+** In ''Gish'', they are the bosses of the 3rd area: '''The 7 Planes of Hehenna''', and went by the name "Vis Sisters" instead.
+** As the Sisters Vis are originally from ''Gish''. The designs of the Vis enemies and The Cage itself originated from them.
+* On the Sisters Vis' bodies, there is a Y-shaped mark. During an autopsy, an incision is made into the body and is stitched up afterward. The remaining Y-shaped mark is known as an autopsy stitch.
+* Sisters Vis are the only normal boss that shoots the type of laser that is shot by {{e|Mega Satan}} and the item Mega Blast.
+* There are [[Cut_Content#Sisters_Vis|unused]] textures for Sisters Vis in the base game (no DLC).
+** The unlock condition for Sisters Vis would have been to "beat {{s|Sheol}} 10 times" and would have appeared in Sheol after being unlocked. It's unknown how this would work in-game, as {{e|Satan}} acts as one of the final bosses and always appears in Sheol.
+* They appear to be wearing leather "gimp masks", which are attire used in BDSM.
+** Another appearance of this mask in-game is from the item {{i|Gimpy}}.
+** {{dlc+|r}} It is also worn by {{e|Whipper}}s and {{e|Snapper}}s while in {{s|Gehenna}}.{{dlc-}}
+
+{{nav|blue baby boss unlock|boss|fr=Les Sœurs Vis}}
+[[Category:Bosses]]
+[[Category:Chapter 3 bosses]]
+[[Category:Chapter 4 bosses]]
+[[Category:Depths bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Afterbirth+]]

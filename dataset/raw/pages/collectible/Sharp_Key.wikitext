@@ -1,0 +1,83 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 623
+ | quote       = Open your enemies
+ | description = Adds 5 {{e|Key}}s on pickup. Allows Isaac to throw his keys to deal damage to enemies, destroy [[obstacles]], and open doors.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = unlimited
+}}
+
+{{cit|a|r}}
+
+== Effects ==
+* Gives five {{e|Key}}s.
+* On use, Isaac holds a key above his head. Pressing a fire button removes one key and throws it as a [[Tear Effects#Effects|piercing]] projectile. The key damages enemies, as well as opens locked doors and {{E|Locked Chest}}s it hits.
+** The key will also break the first [[rock]] it hits, as well as [[Blocks|Key Blocks]].
+** The thrown key does damage equal to 5× Isaac's [[damage]] + 30.
+** Enemies killed by Sharp Key have a chance to spawn the contents of a chest; the contents they can drop includes the rewards of any possible chest contents, including items.
+<!--* The chance for this to occur is somewhere between 1/10 - 1/15: Proper testing or looking into the code will be necessary to determine the exact chance.-->
+
+== Notes ==
+* Sharp Key gives Isaac five keys for the price of three when bought at a {{R|Shop}}, making its purchase a good value if the player is low on keys.
+* Thrown keys follow almost the same unlocking rules as {{i|Dad's Key}}. They can open:
+** {{R|Secret Room}}s
+** The doors to access {{s|Mines}}, {{s|Mausoleum}}
+** {{E|Mega Satan}}'s door
+** {{A|A Strange Door}}
+** The flesh door to {{e|Mom's Heart}} in Mausoleum / Gehenna
+*** Unlike others, this cannot be unlocked with Dad's key.
+* The only rooms Dad's Key can open that Sharp Key cannot are {{R|Challenge Room}}s and {{R|Boss Challenge Room}}s.
+* The entrance to {{R|Boss Rush}} and the gate leading to {{e|Hush}} can both be opened from the inside by throwing a key on where the entrance was.
+* It cannot be used as a substitute for {{i|Red Key}} or to open the doors to Boss Rush or {{s|???}} past their timer.
+* Doors will be opened in one thrown key, even if they require multiple keys or bombs to open.
+* Thrown keys can also destroy [[Angel]] statues, but not {{E|Blue Fire Place}}s.
+* Thrown keys cannot pierce or destroy {{E|Stoney}}s.
+* Destroying a rock will create a bridge at the opposite side the thrown key hit the rock from.
+* Despite being a substitute to bombs, thrown keys will not destroy {{e|Shopkeeper}}s.
+* Thrown keys will open all the locked chests they move through, allowing multiple chests to be opened with a single key.
+** Only locked chests (such as {{E|Locked Chest}}s, {{E|Eternal Chest}}s, or {{E|Old Chest}}s) can be opened by Sharp Key; all other chests are unaffected.
+*** In the case of Eternal Chests, thrown keys will only count toward opening the chest one time.
+*** Despite {{e|Mega Chest}}s requiring keys to unlock, Sharp Key has no effect on it.
+** Opening locked chests with thrown keys in Challenge rooms will not cause the challenge room to start spawning enemies.
+* Thrown keys will retain Isaac's [[tear effects|tear]]/[[Status Effects|status effects]], but are unaffected by items that replace Isaac's tears (such as {{i|Dr. Fetus}}, {{i|Brimstone}}, or {{i|Mom's Knife}}).
+* Whether or not an enemy gives chest contents when killed by Sharp Key is seeded per enemy. As such, rooms can be re-entered (using Sharp Key itself or with {{t|Door Stop}} / {{i|Mercurius}} etc.) before they're fully cleared to repeatedly get rewards from the same enemy.
+* The type of chest that enemies will give the contents of is determined by standard chest generation rules. This makes the contents of standard chests more common, and prevents enemies from giving the contents of {{E|Old Chest}}s or {{e|Mom's Chest}}.
+* The pickups that enemies killed by Sharp Key can drop are affected by items/trinkets that modify chest spawns/rewards. 
+** This includes the {{s|Chest}} and {{s|Dark Room}}'s effect of causing chests to contain [[Treasure Room (Item Pool)|Treasure Room items]].
+* Sharp Key can open the chests in {{R|Challenge Room}}s without triggering them. However, picking up an item dropped from a chest will trigger them.
+
+== Synergies ==
+* {{t|Ace of Spades}} / {{t|Child's Heart}} / {{t|Lucky Toe}} / {{t|Match Stick}} / {{t|Rusted Key}} / {{t|Safety Cap}}: If an enemy drops pickups, it has a ⅓ chance to drop an extra pickup; the pickup will be the one the trinket is associated with (random in the case of Lucky Toe).
+* {{i|Angelic Prism}}: A thrown key will duplicate into 4 keys, which can be used to open multiple rooms or chests with only 1 key. If Isaac stands at the middle far left or middle far right of the first room in {{S|Chest}}, a thrown key can open all 4 chests.
+* {{Book of Belial synergy|description=Invokes the effect of {{i|Razor Blade}} without dealing damage to Judas along with the original effect.}}
+* {{Book of Virtues synergy|description=Spawns white wisps in the shape of keys, on the middle ring. Despite the wisps' appearance, they cannot unlock anything, and act as normal wisps.}}
+* {{i|Continuum}}: Thrown keys can unlock multiple doors it passes through.
+* {{t|Gilded Key}}: Enemies will only give the contents of locked chests. The pickups they can drop will also include [[Cards and Runes#Runes|runes]] and {{E|Lil' Battery|text=Batteries}}.
+* {{t|The Left Hand}}: Enemies will only give the contents of red chests.
+** As locked/red chests are able to give Items whereas normal chests cannot, the previous two trinkets also allow items to be obtained through Sharp Key more consistently.
+* {{i|Mom's Key}}: Doubles the amount of pickups dropped by enemies.
+
+== Interactions ==
+* {{I|Car Battery}}: No effect.
+* {{t|Daemon's Tail}}: Enemies are much less likely to drop hearts; these hearts will still be {{e|Black Heart}}s.
+* {{I|Dead Eye}}: Keys thrown will contribute to Dead Eye's damage modifier.
+* {{e|Golden Key}}s: Ignored by Sharp Key; it will still require and consume keys to use.
+* {{i|Guppy's Eye}}: There will be no overlay on enemies that would drop pickups on death.
+* {{I|Haemolacria}}/{{i|The Parasite}}: Split tears from thrown keys are normal tears.
+* {{i|Kidney Stone}} / {{i|Number One}} / {{i|Pluto}} / {{i|Inner Child}}'s revive: Sharp Key loses almost all of its range, and can only be improved with [[tear height]] ups.
+* {{i|The Ludovico Technique}}: No effect.
+* {{i|Multidimensional Baby}}: Keys passing through the baby turn into normal tears and loses all of its effects.
+* {{i|Pay To Play}}: The key cannot unlock doors that originally were accessible by keys, but can still open chests and open secret room doors.
+* {{t|Poker Chip}}: Enemies have a 50/50 chance to spawn extra pickups or an {{E|Attack Fly}}: The attack fly will be instantly killed by the thrown key.
+* [[Tear Effects#Spectral|Spectral Tears]]: Rocks that thrown keys pass over have a chance of being destroyed.
+* {{I|Trisagion}}: Thrown keys become Trisagion blasts and no longer cause enemies to drop chest contents on kill.
+
+== In-game Footage ==
+{{#ev:youtube|zsoryZeuAE0}}
+
+== Trivia ==
+* [[anti:Sharp Key|Sharp Key]] originates from the ''Antibirth'' mod, where it was less powerful, as killing enemies with it did not drop chest contents.
+* This item can be considered to be the Key counterpart to {{i|Blood Bombs}}. Both items can use their respective pickups at the expense of another, with Sharp Key sacrificing Keys, while Blood Bombs sacrifices health.
+
+{{Nav|key modifier|key|fr=Clé Aiguisée}}

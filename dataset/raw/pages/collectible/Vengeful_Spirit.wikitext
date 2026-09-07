@@ -1,0 +1,34 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 702
+ | quote       = Hot blooded
+ | description = After taking damage, spawns an orbital wisp that lasts for the entire floor, up to a maximum of six. They fire tears but do not block shots.
+ | quality     = 1
+ | tags        = nolostbr summonable
+ | unlocked by = Vengeful Spirit
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* When Isaac takes damage, spawns a red wisp that fires spectral tears and deals contact damage to enemies (but does not block projectiles). These red wisps last for the entire floor, and Isaac can have up to 6 red wisps at a time.
+** Wisps deal <code>3 + 0.1 * (current_floor - 1)</code> damage per tear, and fire tears once per second.
+** Wisps deal contact damage equal to 0.5x Isaac's damage per tick (15 ticks per second = 7.5x Isaac's damage).
+
+== Notes ==
+* The wisps share the first layer of {{i|Book of Virtues}} wisps, and contribute to filling its cap of 8.
+
+== Synergies ==
+* {{i|BFFS!}}: Doubles the wisps' size, on-hit and contact damage.
+* {{i|Blood Oath}}: For each half heart of damage taken at the start of the room, a wisp is spawned.
+
+== In-game footage ==
+{{#ev:youtube|MkKMPlWYAPA}}
+
+== Trivia ==
+* In mythology and folklore, a vengeful spirit is said to be the spirit of a dead person who returns from the afterlife to seek revenge for a cruel, unnatural or unjust death or an improper burial.
+
+== Bugs ==
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room from the one he is currently in (such as by teleporting to the previous room then using it again) will duplicate the wisps. Any extra wisps created from duplication on a filled ring will appear at the entrance of each room Isaac enters and shoot in the direction Isaac is currently shooting.}}
+{{nav|tainted bethany unlock|the beast unlock|fr=Esprit Vengeur}}
+[[category:damage-triggered items]]

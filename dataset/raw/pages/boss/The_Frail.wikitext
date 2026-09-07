@@ -1,0 +1,61 @@
+{{infobox boss
+ | dlc = a
+ | id          = 62
+ | variant     = 2
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|The Void}}<br>{{room|Boss Rush}}<br>{{dlc|r}}<br>{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|The Void}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Degraded Boss</u><br>{{floor|Corpse}}
+ | base hp     = 300
+ | pool        = {{ip|Boss}}<br> {{i|Brittle Bones|r+}} (1% chance)
+ | unlocked by = Something wicked this way comes!
+}}
+
+'''The Frail''' is a [[boss]] added in ''[[The Binding of Isaac: Afterbirth]]'' that can appear:
+* {{dlc|nr}} In all environments of [[Chapter 2]] ({{s|Caves}}, {{s|Catacombs}}, {{s|Flooded Caves}}).
+* {{dlc+|r}} Only in the {{s|Catacombs}} and the {{s|Flooded Caves}}.{{dlc-}}
+
+== Behavior ==
+=== Phase 1 ===
+The Frail in its first phase has 100 HP like {{e|Pin}} and behaves identically, with the only difference that The Frail is less accurate in its jumps and generally overshoots or undershoots Isaac.
+
+=== Phase 2 ===
+Upon its HP being depleted, The Frail's appearance becomes skeletal. It now has 200 HP and performs the following attacks:
+* Jumps out of the ground towards Isaac, firing 4 diagonal projectiles from the last section of its body that each split into 4 more projectiles in either cardinal or diagonal directions.
+** {{dlc|r}} Whether it fires projectiles depends on the length of its jump: does not fire projectiles on short jumps, fires projectiles shortly upon exiting the jump on regular/medium jumps, and fires projectiles both shortly upon exiting and after a few moments airborne on long jumps.
+* Partially emerges head-first and:
+** Fires a {{i|Brimstone}} laser at Isaac, rotating to follow his movements.
+** Fires a quick, non-moving {{i|Brimstone}} laser at Isaac 2 times before stopping.
+** After performing any of these attacks, The Frail will always jump out of the same spot it entered.
+* Partially emerges tail-first and fires a burst of white projectiles in all directions which leave small puddles of slowing [[Creep#White Creep|White Creep]] where they land.
+** After performing this attack, The Frail will always jump or appear head-first out of the same spot it entered.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18|dlc=a+}}: Starts in its second phase, with only 66.6% HP (200) total.
+
+== Gallery ==
+<gallery>
+File:Thefrail ingame secondphase.png|The Frail in its second phase.
+File:Thefrail ingame secondphase tail.png|The Frail's tail in its second phase.
+File:Boss The Frail black ingame.png|The Black Champion Frail.
+File:Boss The Frail black2 ingame.png|The Black Champion Frail's tail.
+File:Boss Delirium The Frail ingame.png|The Frail as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Trivia ==
+* It is the posthumous version of Pin.
+* The definition of the word frail is weak and delicate, which explains its rotting body and depressed look in The Frail's first phase.
+* The main body of The Frail's battle sprite is heavily based on {{e|Larry Jr.}}'s battle sprite.
+* {{dlc|a+}} The Frail can be found in {{s|The Void}}, even before being unlocked.
+* The name is possibly a reference to [https://www.youtube.com/watch?v=rOMcxTK7-0w the Nine Inch Nails song of the same name].
+* It is the boss version of the {{e|Pasty|text=Pasties}}.
+** Even if it is the boss version of Pasties, it precedes their addition.
+
+== Bugs ==
+{{bug|dlc=a+|The Black Champion is intended to spawn in the second phase with 30% more HP (390), but the second phase is coded to always spawn at 66.6% HP (200) total.|}}
+{{bug|dlc=a+|If The Frail is under the effects of {{i|Broken Modem}} in mid-air, its jump will be stopped and it will fall.}}
+
+{{nav|blue baby boss unlock|boss|fr=Le Frêle}}
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Afterbirth]]

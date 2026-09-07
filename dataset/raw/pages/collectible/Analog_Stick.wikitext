@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 465
+ | quote       = 360 tears!
+ | description = +0.35 [[tears]] up. Allows Isaac to fire tears diagonally.
+ | quality     = 2
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* +0.35 [[tears]] up.
+* Allows tears to be fired diagonally.
+** With a keyboard or using buttons to fire with a controller, tears can be shot at 45-degree angles by holding two buttons. This is known as eight-directional firing. For example, holding the up button and right button will shoot diagonally towards the upper right-hand corner.
+** Using a controller with a physical analog stick, its input is accepted, allowing for tears to be shot in any direction, as it shoots wherever the analog stick is pointing without being limited to 45-degree angles.
+
+== Notes ==
+* Enables full directional firing for keyboard and mouse users with the accessibility option <code>EnableMouseControl</code> enabled.
+
+== Interactions ==
+* {{I|Abyss}}: Locusts cannot attack diagonally, and will attack upwards or downwards instead.
+* {{I|Book of Virtues}}: Summoned wisps are unable to shoot diagonally, and will shoot upwards or downwards instead.
+* {{i|Cain's Other Eye|r}}: The familiar will fire in completely random directions, not locked to the cardinal ones.
+* {{i|Compound Fracture}}: When bone tears are fired diagonally, the bone shards will not always move diagonally.
+* {{i|Cricket's Body}}/{{i|The Parasite}}: When tears are fired diagonally, the split tears will also move diagonally.
+* {{i|Epic Fetus}}: No effect, as missiles will always be fired towards the landing point.
+* {{I|Epiphora}}: Tears fired diagonally can retain the bonus fire rate, as long as Isaac's head continues to face the same direction.
+* {{i|Incubus|nr}}: Incubus cannot fire in non-cardinal directions, only tears up applies.
+** {{dlc|r}} Incubus can fire diagonally in the same direction Isaac is shooting.
+* {{i|The Ludovico Technique}}: No effect; the singular tear already has this ability, being able move in any direction.
+* {{i|Marked}}: Overridden by Marked.
+* {{i|Mom's Knife}}: Only the tears up applies, since Mom's Knife already has the ability of being able to be pointed in any direction.
+* {{i|Tiny Planet}}: Overridden by Tiny Planet.
+* {{i|Tractor Beam}}: Overridden by Tractor Beam.
+** {{dlc|r}} Tractor Beam can be pointed in any direction.
+
+== In-game Footage ==
+{{#ev:youtube|XOrdRsQ2FbY}}
+
+{{nav|fr=Stick Analogique}}

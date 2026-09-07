@@ -1,0 +1,62 @@
+{{infobox activated collectible
+ | id          = 34
+ | quote       = Temporary DMG up
+ | description = {{dlc+|na}} +2 [[damage]] for the current [[Rooms|room]]. Passively guarantees a {{r|Devil Room}} or {{r|Angel Room}} will appear while held.{{dlc-}}<br>{{dlc+|a}} +2 [[damage]] for the current [[Rooms|room]]. Passively increases the chance of finding a {{r|Devil Room}} or {{r|Angel Room}} while held.{{dlc-}}
+ | costume name = * {{dlc|nr|Rebirth}}
+ | quality     = 2
+ | tags        = book offensive lazarussharedglobal
+ | recharge    = 3
+}} ''Not to be confused with {{i|Satanic Bible}}.''
+
+{{cit|a}}
+
+== Effects ==
+* Gives +2 [[damage]] for the current [[Rooms|room]].
+* {{dlc|na}} Guarantees the {{r|Devil Room}} or {{r|Angel Room}} to spawn after killing a [[boss]] while holding it.
+* {{dlc|a}} Increases the chance to open the {{r|Devil Room}} or {{r|Angel Room}} after killing a [[boss]] by 12.5% while holding it.
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+* {{C|Judas}} starts with this item by default.
+* {{dlc|nr}} While activated, switching items will end the bonus damage effect.
+* {{dlc|nr}} If the {{I|Schoolbag}} and a second activated item are held, the book must be equipped in the primary slot to receive the {{r|Devil Room}} / {{r|Angel Room}} bonus.
+* {{dlc|na}} Only guarantees Devil/Angel Rooms on floors that they can normally appear on, and, unlike {{i|Goat Head}}, picking up The Book of Belial after killing the boss will not open the Devil/Angel Room door.
+* {{dlc|nr}} The damage bonus does not stack with multiple uses in the same room or with {{p|XV - The Devil}}.
+** {{dlc|r}} Additional uses in the same room or combined with {{p|XV - The Devil}} give +1 damage per use.
+
+== Synergies ==
+* {{i|Blood of the Martyr}}: Causes The Book of Belial to apply a 1.5× damage multiplier on top of its normal effect. This multiplier cannot stack with multipliers from {{i|Cricket's Head}} or {{i|Magic Mushroom}}.
+* {{Book of Virtues synergy|description=Spawns black and red wisps in the middle ring. Wisps deal double damage compared to normal wisps.}}
+* {{i|Car Battery|r}}: Gives +3 damage for the current room.
+
+== {{dlc+|r}} Judas' Birthright Combinations ==
+While holding {{i|Birthright}} with {{c|Judas}} or {{c|Black Judas}}, The Book of Belial is able to be held alongside another active item, similarly to {{i|Book of Virtues}}. The book provides +0.66 damage for each charge of the held item. Items that do not require charges to use do not grant a damage bonus unless there is an exception listed below.
+
+Certain active items also gain additional effects, which are noted below; any items not listed have their standard effects aside from the temporary damage up Birthright gives them.
+{{Book of Belial synergy list}}
+{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|nGHrNCtnrLo||inline}} {{#ev:youtube|mQuPVN3_yso||inline}} {{#ev:youtube|lg6Vv-Nl1tk||inline}}
+
+== Gallery ==
+<gallery>
+File:Collectible The Book of Belial Judas appearance Rebirth.png| {{c|Judas|nr}}' appearance while The Book of Belial is active.
+File:Collectible The Book of Belial Judas appearance.png| {{c|Judas|r}}' appearance while The Book of Belial is active.
+File:Collectible Book of Belial activated.png|{{dlc|nr}} The Book of Belial when activated.
+File:Collectible Book of Belial unused activated.png|{{dlc|nr}} Unused image for use animation. This sprite is closer to the one used in the original game.
+File:3DS Detailed Book Of Belial.png|{{plat|3DS}} The icon of The Book of Belial as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* This item can also increase the odds of getting an {{r|Angel Room}}, despite being a Satanic book.
+* It is one of the four books in the ''[[wikipedia:The Satanic Bible|Satanic Bible]]''.
+* Belial is a name used for {{e|Satan}} in some Jewish and Christian texts.
+* {{dlc|r}} This item is used in [[Bloody Mary]] (Challenge #37).
+* {{dlc|r}} The previously unused item ID <code>59</code> is now occupied by the active/passive version of The Book of Belial, which is obtained when {{c|Judas}} or {{c|Black Judas}} has {{i|Birthright|n}}.
+** Despite this, this version of the item is not obtainable by other characters. If you use {{i|Spindown Dice}} on an item pedestal of item ID <code>60</code>, {{i|The Ladder}}, it'll skip to {{i|Book of Shadows}}.
+* {{dlc|r}} The effect of Notched Axe with {{c|Judas}}' and{{c|Black Judas}}' Birthright is a reference to [[wikipedia:Minecraft|Minecraft's]] enchanting mechanic.
+** All of its upgrades are based on existing Minecraft enchantments — Unbreaking, Fire Aspect, Knockback, Efficiency, and Fortune.
+** However, Fire Aspect and Knockback normally cannot be applied to pickaxes in ''Minecraft''.
+
+{{nav|book|fr=Livre de Bélial}}

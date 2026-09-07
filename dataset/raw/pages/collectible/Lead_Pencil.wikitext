@@ -1,0 +1,70 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 444
+ | quote       = He's a bleeder!
+ | description = After every 15 tears fired, Isaac will fire a high-damage cluster of tears.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* After every 15 tears fired, Isaac will fire a low range burst of 12 tears at once, in a similar fashion to {{i|Monstro's Lung}}.
+** Tears in the barrage inherit the majority of Isaac's tear effects.
+** {{dlc|nr}} Tears in the barrage deal double damage.
+* Tears will fire only from Isaac's right eye.
+* {{dlc|r}} Fired tears have a 50% chance to be colored red.
+
+== Notes ==
+* Lead Pencil gives characters other than {{C|Cain}} the same special properties that he has when it comes to one-eye items like {{i|Blood Clot}}.
+* {{Dlc|nr}} Tears fired from items that cause multiple tears to be fired at once e.g. {{i|20/20}}, {{i|Mutant Spider}}, etc. are counted.
+** {{dlc|r}} Each tear fired from {{i|Monstro's Lung}} still count towards triggering the barrage, but only if Isaac does not have any tear modifying items, such as {{i|Technology}}.
+
+== Synergies ==
+* {{I|Blood Clot}}: The tears from the barrage will always have the bonus damage from Blood Clot.
+* {{i|Compound Fracture}}/{{i|Cricket's Body}}/{{i|The Parasite}}: All tears from the barrage split.
+* {{i|Haemolacria}}: Fires a barrage of Haemolacria tears, all of which will burst.
+* {{i|Lachryphagy}}: Tears tend to clump together, becoming one giant tear which splits into 8 large tears. When tears burst, they can also spawn barrages of tears that can be fed.
+* {{i|Pop!}}: Causes burst tears to remain in the room for much longer, forming a soft barrier of sorts, which enemies must survive through to reach Isaac.
+* {{T|Torn Card}}: Decreases shot requirement by 1. Lead Pencil will fire every 14th shot, with Torn Card quickly following at 15th.
+* {{i|Trisagion}}: Fires a barrage of beams.
+* {{I|The Scooper}}: All tears benefit from the damage bonus granted by The Scooper.
+* {{i|Sprinkler|nr}}: Sprinkler tears count for activation of the Lead Pencil effect. The tear burst may fire from the sprinkler or Isaac.
+* {{i|Flat Stone}}: Tears fired by Lead Pencil will bounce, greatly increasing their range.
+
+== Interactions ==
+* {{i|Brimstone|nr}}: Overrides Lead Pencil.
+** {{dlc|r}} The Lead Pencil tears fire alongside the beam every 4th blast.
+* {{i|Dr. Fetus|nr}}: Overrides Lead Pencil.
+** {{dlc|r}} The Lead Pencil tears fire alongside the bombs. The tears are likely to hit the most recent bomb, launching it unpredictably.
+* {{i|Epic Fetus|nr}}: Overrides Lead Pencil.
+** {{dlc|r}} The Lead Pencil tears fire towards the cursor, locked to cardinal directions, after every 3rd missile launch.
+* {{Dlc|nr}}{{C|Lilith}}: No effect, as Lilith is inherently Blindfolded.
+** {{dlc|r}} Firing with {{I|Incubus}} will now activate Lead Pencil.
+* {{i|Loki's Horns}}: Lead Pencil can fire in any of the cardinal directions if it fires at the same time as Loki's Horns.
+* {{Dlc|nr}}{{i|The Ludovico Technique}}: The tear blinks red, but the effect is entirely cosmetic.
+** {{dlc|r}} The Lead Pencil tears fire towards the Ludovico tear, locked to cardinal directions, every 15th damage tick.
+* {{i|Incubus}}: Fires red tears like Blood Clot with Cain, but without increased damage.
+** {{dlc|r}} Incubus is capable of firing the barrage of tears like Isaac.
+* {{Dlc|nr}}{{i|Mom's Knife}}: Overrides Lead Pencil.
+** {{dlc|r}} The Lead Pencil tears fire alongside alongside the knife, every 15th throw.
+* {{i|Spirit Sword}}: The effect from Lead Pencil fires separately to {{i|Spirit Sword}} slashes.
+* {{i|Sprinkler|r}}: No effect.
+* {{I|Stye}}: The tears from the barrage will never have the bonus damage from Stye.
+* {{Dlc|nr}}{{i|Technology}}: Overrides Lead Pencil.
+** {{dlc|r}} A barrage of tears is fired alongside {{i|Technology}} every 15 shots.
+* {{Dlc|nr}}{{i|Technology 2}}: Overrides Lead Pencil and disables normal tears entirely, even if not playing as Cain.
+** {{dlc|r}} Replaces tears with lasers similar to Technology. These are shot from the eye that shoots Technology 2, dealing damage alongside the Technology 2 beam.
+* {{i|Tech X}}: Overrides Lead Pencil.
+** {{dlc|r}} Every 15th laser ring fired also shoots a cluster of tears.
+* {{i|Tiny Planet}}: The burst follows Tiny Planet's circular trajectory with minimal range, hitting the ground almost immediately.
+
+== In-game Footage ==
+{{#ev:youtube|KKKfiw3bs7c}}
+
+== Trivia ==
+* Though the pencil is in Isaac's right eye, it blocks tears from firing out of his left eye.
+
+{{nav|fr=Crayon de Papier}}

@@ -1,0 +1,72 @@
+{{infobox passive collectible
+ | id          = 273
+ | quote       = Explosive thoughts
+ | description = Spawns a [[familiar]] that charges forward when shooting tears and explodes upon contact with an enemy, damaging and [[poison]]ing them. The familiar respawns after a few seconds.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = bob summonable monstermanual offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a floating brain [[familiar]] that can be fired towards enemies as a projectile.
+** {{dlc|na}}Bob's Brain is fired directly from where Isaac is standing.
+** {{dlc|a}}Bob's Brain is fired directly from where it is located in the chain of familiars behind Isaac, making aiming it slightly more difficult.
+* If it hits an enemy, it deals 3.5 damage and explodes, further damaging and [[poison]]ing monsters.
+** {{dlc|nr}} The explosion deals 60 damage. The poison deals double Isaac's [[Damage]] over time.
+** {{dlc|r}} The explosion deals 100 damage. The poison damage is dealt 4 times, inflicting Isaac's Damage per tick.
+** {{dlc|r}} The explosion ignores armor.
+* The explosion can hurt Isaac, dealing a full heart of damage.
+** This can make picking up the item a risky choice, as Bob's Brain will always fire, regardless of whether or not Isaac will be caught in the explosion.
+* Once it explodes, it takes a few seconds to re-appear.
+* {{transformation contribution|Bob}}
+
+== Notes ==
+* Bob's Brain is affected by most bomb modifiers.
+* Bob's Brain only explodes when hitting an enemy, and does not explode upon hitting a fire, poop, or wall. It can destroy poops and fires like normal shots, however.
+* Bob's Brain never launches immediately upon entering a room unless a tear-firing key is released and pressed again, or until several seconds have passed.
+* If Isaac has multiple copies of Bob's Brain, only one familiar will be active at a given time, with another one firing immediately after the first has exploded or starts to return from a miss.
+** {{dlc|na}} Multiple copies of Bob's Brain will float in the same spot in the familiar line.
+** {{dlc|a}} Each copy takes up their spot on the familiar line, but only the first one launches out. Respawning brains may end up stacking on top of each other.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Bob's Brain having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+
+== Synergies ==
+* {{i|BFFS!}}: The impact damage is increased to 7 and the explosion deals an additional 25 damage.
+* {{i|Mr. Mega}}: The explosion deals an additional {{Dlc|nr}}85/{{Dlc|r}}50 damage.
+
+== Interactions ==
+* Effects applied as normal:
+** {{I|Blood Bombs}}
+** {{I|Brimstone Bombs}}
+** {{I|Butt Bombs}}
+** {{I|Glitter Bombs}}
+** {{I|Hot Bombs}}
+** {{I|Nancy Bombs}}
+** {{I|Sad Bombs}}
+* No effect:
+** {{I|Bobby-Bomb}}
+** {{I|Bob's Curse|dlc=nr}}
+*** {{Dlc|r}} The [[poison]] effect of Bob's curse is applied which deals only 2 ticks of damage, resulting in inflicting halved damage.
+** {{I|Fast Bombs}}
+** {{I|Ghost Bombs}}
+** {{I|Rocket in a Jar}}
+** {{I|Scatter Bombs}}
+** {{I|Sticky Bombs|anr}}
+*** {{Dlc|r}} Spiders do not spawn, however the explosion leaves behind a puddle of slowing creep.
+* {{i|Bomber Boy|nr}}: No cross explosions. Damage from the explosion is halved against the initial target, but others caught in the blast take full damage.
+** {{dlc|r}} Explodes in a cross-shaped pattern. Damage from the main explosion deals a flat 37.5 damage, and any additional explosion deals flat 75 damage to which Bomber boy's damage reduction is not applied.
+*** Bomber Boy + {{I|BFFS!}}: Explosion damages are increased to 1.25x, which are 46.875/93.75 each.
+*** Bomber Boy + {{I|Mr. Mega}}: Explosion damages are increased to 1.5x, which are 56.25/112.5 each.
+*** Bomber Boy + {{I|BFFS!}} + {{I|Mr. Mega}}: Explosion damages are increased to 1.75x, which are 65.625/131.25 each.
+* {{t|Duct Tape}}: Bob's Brain stays in place relative to Isaac until it is fired.
+* {{dlc|nr}}{{i|E. Coli}} / {{i|Flush!}}: Bob's Brain will explode upon hitting an enemy that has been turned into poop.
+** {{dlc|r}} Bob's Brain no longer explodes upon hitting poops made from enemies.
+
+== In-game Footage ==
+{{#ev:youtube|bVxb5miAxvA}}
+
+== Trivia ==
+* {{dlc+|a}} Three copies of this item are used in {{chal|BRAINS!}}.{{dlc-}}
+* In a Twitter AMA, [https://twitter.com/edmundmcmillen/status/1098183244426633218 Edmund McMillen mentioned that Bob's Brain is his favorite item from The Binding of Isaac].
+
+{{nav|bob|fr=Cerveau de Bob}}

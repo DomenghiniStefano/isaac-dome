@@ -1,0 +1,61 @@
+{{infobox boss
+ | id          = 67
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{room|challenge}}{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>(with another Duke of Flies, [[Monstro]] or [[Rag Man]])<br><u>Degraded Boss</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{floor|Chest}}
+ | base hp     = 110
+ | pool = {{ip|Boss}}<br> {{i|Halo of Flies|r+}} (1% chance)
+}}
+
+'''The Duke of Flies''' is a [[boss]] that can appear in all environments of [[Chapter 1]] ({{s|Basement}}, {{s|Cellar}}, {{s|Burning Basement}}).
+
+== Behavior ==
+The Duke of Flies constantly floats around the room in diagonal directions. Knockback from tears and other sources can cause him to change travel direction. He has three attacks that he can perform while he floats:
+* Spawns 3 {{e|Attack Fly|text=Attack Flies}} that will orbit around him, blocking shots.
+* Spawns a larger Attack Fly that will chase Isaac.
+* Sends any orbital Flies outward to chase Isaac.
+** He can only perform this attack if he has 5-6 orbiting Flies.
+*** If he has 4 orbiting Flies, he cannot perform this attack nor can he spawn more as it would exceed his limit resulting in him only spawning the larger Attack Flies.
+* The Duke of Flies will never spawn Flies if 12 already exist.
+* Upon death, all orbiting Flies will be free to chase Isaac.
+** {{dlc|r}} Spawns 6 random {{e|Fly|text=Flies}} or Attack Flies upon death.
+* Unlike regular Attack Flies, the ones spawned by The Duke of Flies can be killed if Isaac walks into them, though they will still deal contact damage before dying.
+** {{dlc|r}} This does not include the Attack Flies spawned on death.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|5}}: Spawns {{e|Moter}}s instead of the large Attack Flies and shoots blood shots in eight directions when spreading the orbiting flies. He can spread the Attack Flies at any moment instead of only performing it when having enough of them orbiting him, similar to {{e|The Husk}}.
+: {{bc|6}}: 15% larger than normal with 25% more HP (137.5) and spawns {{e|Sucker}}s instead of the large Attack Flies.
+
+== Gallery ==
+<gallery>
+File:Boss The Duke of Flies green ingame.png|The Green Champion Duke of Flies.
+File:Boss The Duke of Flies orange ingame.png|The Orange Champion Duke of Flies.
+File:Boss Delirium The Duke of Flies ingame.png|The Duke of Flies as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Notes ==
+* If Isaac has the {{tf|Beelzebub}} transformation, the Attack Flies that The Duke of Flies spawns will instantly turn into blue flies which damage him.
+
+== Trivia ==
+* The Duke of Flies appeared in the original ''The Binding of Isaac''.
+** In the original Binding of Isaac, the flies in the Duke's mouth were animated; this was removed in Rebirth but re-added in Repentance.
+* The Duke seems to be a human corpse in the bloating stage of decomposition, filled to the brim with flies. The Duke has bloated to the point that he has lost his once-human silhouette, becoming nothing more than a sphere with dangling nubs that used to be its appendages.
+* Any enemy summoned by the Duke dies immediately upon making contact with Isaac.
+* {{dlc|a}} He is the boss version of the {{e|Dukie|n}}s.
+* {{e|The Husk}} is his posthumous version.
+* The stitching under The Duke of Flies' mouth is an autopsy stitch, an incision in the shape of a Y. The incision allows passage to the cadaver's insides; when the autopsy is complete, it is stitched back up.
+* The name "Duke of Flies" is a reference to the demon Beelzebub, and an alternate name for the devil who is known by the title "Lord of the Flies".
+** The name could also be a reference to the book "<u>Lord of the Flies</u>", specifically the character named Lord of the Flies — a severed pig's head mounted on a pike, swarming with flies.
+* {{dlc|nr}} When under the effects of Curse of Darkness, a brief flash of light is seen when The Duke of Flies summons flies.
+* Edmund McMillen has confirmed The Duke Of Flies to be his favorite boss design in The Binding Of Isaac in an [https://www.reddit.com/r/IAmA/comments/8um4er/edmund_mcmillen_here_known_for_the_binding_of/ AMA thread].
+** In [https://www.reddit.com/r/bindingofisaac/comments/8ylum7/hey_guys_its_me_edmund_im_the_guy_that_made_this/ another AMA] for the Binding of Isaac subreddit, Edmund had also confirmed The Duke Of Flies to be a super old design, before Meat Boy in 2007. However, he never used the design until developing The Binding Of Isaac.
+** The Duke of Flies additionally returns in the Binding of Isaac spinoff, ''The Legend of Bum-bo,'' under the simpler name of "The Duke", which further concretes him as being special to Edmund.
+* {{dlc|r}} In [[Repentance]], The Duke Of Flies resembles his sprite from the original Binding of Isaac.
+* {{dlc|r}} Although it is difficult to tell, the Green [[Champions|Champion]] Duke of Flies visually has a Moter within his mouth, reflecting his behavior.
+* The Duke of Flies, along with {{i|Mom's Knife}} and {{c|Isaac}} himself, were chosen to appear in [https://store.steampowered.com/news/app/250900/view/681854229322661897?l=english Fortnite]. The Duke himself is an emote.
+
+{{nav|boss|fr=Le Duc des Mouches}}
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Cellar bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Rebirth]]

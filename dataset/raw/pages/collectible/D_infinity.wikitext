@@ -1,0 +1,106 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 489
+ | quote       = Reroll forever
+ | description = {{dlc|nr}} Has the effect of a random die item that changes each use.<br>{{dlc|r}} Replicates the effect of a selected die item (except Spindown Dice), and can be cycled through by pressing the drop key.
+ | quality     = 4
+ | tags        = offensive
+ | recharge    = {{dlcalt|2|r=variable}}
+ | unlocked by = D infinity
+}}
+
+{{cit|ua|a+}}
+
+== Effect ==
+* {{dlc|nr}} Upon use, grants a random [[Dice (Disambiguation)|die item]] that transforms into a different random die item.
+** Each die item has a 2 room charge.
+** D infinity is able to use all the available effects, regardless of whether the individual die mimicked by this item has been unlocked prior or not.
+* {{dlc+|r}} Upon use, acts as any [[Dice (Disambiguation)|die item]] except for {{I|Spindown Dice}}, and can be cycled through by pressing the drop key.
+** The charge time when picked up is 4, but changes to that of the last used die. Cycling does not change the charge time.
+** The table below shows charges and effects.
+{| class="wikitable mw-collapsible"
+!Name
+!Icon
+!Charge
+!Effect
+|-
+|{{I|D1}}
+|[[File:Collectible D infinity D1 icon.png]]
+|4
+|Duplicate 1 random [[pickup]] / [[trinket]] / [[chest]]
+|-
+|{{I|D4}}
+|[[File:Collectible D infinity D4 icon.png]]
+|6
+|Reroll all of Isaac's items
+|-
+|{{I|The D6}}
+|[[File:Collectible D infinity The D6 icon.png]]
+|6
+|Reroll all items in the room
+|-
+|{{I|Eternal D6}}
+|[[File:Collectible D infinity Eternal D6 icon.png]]
+|2
+|Reroll all items in the room. 25% chance for items to disappear
+|-
+|{{I|D7}}
+|[[File:Collectible D infinity D7 icon.png]]
+|3
+|Restart room and respawn all monsters
+|-
+|{{I|D8}}
+|[[File:Collectible D infinity D8 icon.png]]
+|4
+|Reroll stats (tears, damage, range, speed)
+|-
+|{{I|D10}}
+|[[File:Collectible D infinity D10 icon.png]]
+|2
+|Replace enemies into weaker versions
+|-
+|{{I|D12}}
+|[[File:Collectible D infinity D12 icon.png]]
+|3
+|Reroll obstacles (rocks etc.)
+|-
+|{{I|D20}}
+|[[File:Collectible D infinity D20 icon.png]]
+|6
+|Reroll all pickups, chests and trinkets
+|-
+|{{I|D100}}
+|[[File:Collectible D infinity D100 icon.png]]
+|6
+|Activates every dice effect (except Eternal D6 and Spindown)
+|}
+{{dlc-}}
+
+== Notes ==
+* The icon of the D infinity will change to resemble the corresponding die while being held. Putting it back on a pedestal will change its icon back to normal.
+* {{dlc+|r}} When in possession of more than one active item with the {{I|Schoolbag}}, all dice must be cycled through before the other active item can be used.
+** When playing as {{C|Tainted Isaac}} and holding D infinity as well as another active item via {{I|Schoolbag}}, if {{I|Schoolbag}} is replaced by another passive item in its slot while the other active item is held, {{I|D infinity}} will be dropped on the ground, reset to its original state. This could allow the player to use any dice item with only a 2-pip charge.{{dlc-}}
+* {{dlc+|r}} This item can be crafted from {{i|Bag of Crafting}} with eight {{p|Dice Shard||Dice Shards}}.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a normal wisp in addition to having an extra effect based on the current die selected.}}
+
+== Interactions ==
+* {{i|Car Battery|nr}}:  Activates 2 dice. The second activation die cannot be predicted.
+** {{dlc|r}} The second activation die is determined by the seed and never changes.
+* {{i|Void|nr}}: When absorbed and Void is used, replicates the effect of a random die item.
+** {{dlc|r}} Acts as a copy of one of the 10 dice D infinity can replicate. This die is randomly chosen and does not change.
+* {{p|? Card|r}}: Activates the selected die, updating the charge time and keeping the charges stored.
+
+== In-game Footage ==
+=== {{dlc|a+nr}} In ''Afterbirth+'' ===
+{{#ev:youtube|j6uxhG8UhDQ}}
+
+=== {{dlc|r}} In ''Repentance'' ===
+{{#ev:youtube|https://www.youtube.com/watch?v=ydN-p2TCxCU|||||start=494}}
+
+== Trivia ==
+* {{dlc|r}} The D infinity when transformed into another die looks similar to {{E|Delirium}}.
+
+{{nav|isaac unlock|delirium unlock|dice|fr=Dé Infini}}

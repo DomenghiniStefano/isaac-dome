@@ -1,0 +1,34 @@
+{{infobox trinket
+ | dlc         = a
+ | id          = 89
+ | quote       = Keep your friends close...
+ | description = Causes [[familiar]]s to stay closer to each other. {{dlc|r+}} Increases damage and size of all [[familiar]]s by 25%.
+}}
+
+{{cit|t|a}}
+
+== Effect ==
+* Causes Isaac's [[familiar]]s to stay closer to Isaac.
+* {{dlc|r+}} Increases damage and size of all [[familiar]]s by 25%.
+** Size increase doesn't stack with such from {{I|BFFS!}}, but damage multiplier does, resulting in 2.25x damage.
+
+== Notes ==
+* {{dlc+|a+}} This trinket affects the same familiars {{I|King Baby}} effects. For a list of the familiars unaffected by this trinket, visit King Baby's page.{{dlc-}}
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either now increases the damage of all familiars by 50%. Having both by 75%.
+
+== Interactions ==
+* {{T|Friendship Necklace}}: Familiars orbit much closer to Isaac.
+* {{I|King Baby}}: Familiars stay closer to King Baby while Isaac is firing.
+
+== In-game Footage ==
+{{#ev:youtube|sfsWeUnxUi8}}
+
+== Trivia ==
+* The pickup quote is a reference to the saying "Keep your friends close, and your enemies closer".
+
+== Bugs ==
+{{bug|Despite increasing size, does not increases damage of {{I|Cain's Other Eye}}, {{I|Gello}}, {{I|Incubus}}, {{I|Twisted Pair}} and blood clots from {{I|Sumptorium}} and {{T|Lil Clot}}.}}
+
+{{nav|familiar modifier|fr=Laisse Pour Enfants}}

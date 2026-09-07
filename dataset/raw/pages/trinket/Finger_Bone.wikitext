@@ -1,0 +1,26 @@
+{{infobox trinket
+ | dlc         = a+
+ | quote       = It looks brittle
+ | id          = 128
+ | description = Grants a chance to gain a {{e|Bone Heart}} upon taking damage.
+ | unlocked by = Finger Bone
+}}
+
+{{cit|ut|a+5}}
+
+== Effects ==
+* Grants a {{dlc|nr}} 2% / {{dlc|r}} 4% chance to gain a {{e|Bone Heart}} upon taking damage.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Each copy adds 4% more chance to gain a bone heart upon taking damage.
+
+== In-game footage ==
+{{#ev:youtube|wEnkuwkwHgQ}}
+
+== Gallery ==
+<gallery>
+AfterbirthPlus Booster Pack 5 Concepts.jpg | Concept art for Finger Bone on the left side, along with other Booster Pack items and trinkets, by Edmund McMillen.
+</gallery>
+
+{{nav|the forgotten unlock|booster pack|bone|ultra greed unlock|fr=Os de Doigt}}
+[[category:damage-triggered items]]

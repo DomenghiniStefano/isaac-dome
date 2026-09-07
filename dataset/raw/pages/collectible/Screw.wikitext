@@ -1,0 +1,18 @@
+{{infobox passive collectible
+ | id          = 255
+ | quote       = Tears + shot speed up
+ | description = +0.5 [[tears]], +0.2 [[shot speed]].
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.5 [[tears]].
+* +0.2 [[shot speed]].
+
+== In-game Footage ==
+{{#ev:youtube|WkzD22KyO6I}}
+
+{{nav|fr=Vis (Objet)}}

@@ -1,0 +1,41 @@
+{{infobox boss
+ | id          = 100
+ | environment = <u>Boss</u><br>{{floor|Cellar}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Degraded Boss</u><br>{{floor|Necropolis}}<br>{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 130
+ | pool        = {{ip|Boss}}<br> {{i|Spiderbaby|r+}} (1% chance)
+}}
+
+'''Widow''' is a [[boss]] that can appear in the {{s|Cellar}}.
+
+== Behavior ==
+Widow makes large leaps towards Isaac, at approximately double the distance of {{e|Monstro}}, and can perform the following attacks after landing:
+* Leaves a puddle of [[Creep#White|White Creep]] and spawns a {{e|Sack}}.
+** There is a maximum of 3 Sacks alive at once.
+* Spits out a {{e|Spider}}.
+* Widow can kill her own Spiders and Sacks if she jumps on top of them.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18}}: Spawns {{e|Big Spider}}s with half health instead of Sacks, [[Black Creep]] instead of White, and spits out six blood shots instead of Spiders.
+: {{bc|20}}: Spawns {{e|Boil}}s instead of Sacks and {{e|Attack Fly|text=Attack Flies}} instead of Spiders. Jumps quicker. {{dlc|r}} She is also 25% smaller and has 10% less health (117 HP).
+
+== Gallery ==
+<gallery>
+File:Boss Widow black ingame.png|Black Champion Widow.
+File:Boss Widow pink ingame.png|Pink Champion Widow.
+File:Boss Delirium Widow ingame.png|Widow as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Trivia ==
+* Widow was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* She is the boss version of the {{e|Trite}}s.
+* {{e|The Wretched}} is the posthumous version of her.
+* The name probably refers to the ''[[wikipedia: Latrodectus|Latrodectus]]'', commonly known as "black widow spider".
+* {{Dlc|r}} Widow's and The Wretched's animations and behavior have been sped up to more closely resemble their Flash counterparts.
+
+== Bugs ==
+{{bug|plat=3DS|The tint for the Pink Champion Widow does not show up as pink and looks like a normal Widow, but her attacks are the same spawns as pink.}}
+
+{{nav|boss|fr=La Veuve}}
+[[Category:Chapter 1 bosses]]
+[[Category:Cellar bosses]]
+[[Category:Debut bosses in Rebirth]]

@@ -1,0 +1,40 @@
+{{infobox passive collectible
+ | name        = Key Piece 1
+ | id          = 238
+ | quote       = ???
+ | description = Combined with {{I|Key Piece 2}}, unlocks the golden gate in the starting [[Rooms|room]] of {{S|Chest}} and {{S|Dark Room}} to fight {{E|Mega Satan}}.
+ | quality     = 0
+ | tags        = uniquefamiliar offensive lazarusshared noeden nocantrip quest
+ | pool        = Uriel
+ | unlocked by = Angels
+}}
+
+{{cit|up}}
+
+== Effect ==
+* Combined with {{i|Key Piece 2}}, unlocks the golden gate in the starting [[Rooms|room]] of {{S|Chest}} and {{S|Dark Room}} to fight {{E|Mega Satan}}.
+* Increases the chance of finding an {{R|Angel Room}}.
+* Grants a 2.5% chance of converting {{E|Red Heart}} pickups into {{E|Eternal Heart}}s.
+** This effect stacks with {{i|Key Piece 2}}.
+
+== Notes ==
+* This item is a guaranteed drop from {{E|Uriel}} if not already in possession.
+* This item, along with {{i|Key Piece 2}}, can be rerolled into any item from the [[Item Pool#Angel Room|Angel Room pool]].
+* This item also counts as a [[familiar]], meaning it takes up a familiar slot.
+* Unlocking the Golden Gate with the combined key pieces and then restarting the floor with {{i|Forget Me Now}} or an {{R|I AM ERROR}} room will waste the key, which will not respawn.
+* Will not be rerolled by {{i|D4}}, {{i|D100}}, or {{R|Dice Room}} effects.
+* Will not be doubled by {{i|Box of Friends}}
+* Picking up two copies with {{I|Diplopia}} will not double its{{E|Eternal Heart}} effect.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Key Piece 1 having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== In-game Footage ==
+{{#ev:youtube|Tw03RsEH9Bs}}
+
+== Unlockable [[achievement]]s ==
+{{achievement text | Dad's Key, The Family Man, Filigree Feather }}
+
+== Trivia ==
+* This item is used in {{chal|I RULE!}} and {{chal|Ultra Hard}}.
+* Key Piece 1 is tied with {{i|Key Piece 2}} and {{i|Card Reading}} for the item with the most item tags at 6.
+
+{{nav|key|fr=Premier Fragment de Clé}}

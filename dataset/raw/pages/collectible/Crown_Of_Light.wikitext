@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 415
+ | quote       = The untainted gain power
+ | description = +2 {{E|Soul Heart}}s. While Isaac has no empty [[Red Heart container|red hearts]], grants 2x [[damage]], -0.3 [[shot speed]], {{dlc|nr}} and increased [[range]]. Regardless of health, the crown deactivates for the current room when Isaac takes damage.
+ | quality     = 4
+ | tags        = summonable offensive
+ | devil price = {{dlcalt|1|r=2}}
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Grants 2 {{E|Soul Heart}}s.
+* Replaces normal tears with blue diamond tears while all of Isaac's [[Red Heart container]]s and {{E|Bone Heart}}s (if any) are full.
+** This includes whenever Isaac has zero Red Heart containers.
+** Containers can be filled with {{E|Rotten Heart}}s and still activate the effect.
+** The coin health containers of {{C|Keeper}} and {{C|Tainted Keeper}} count as red heart containers for the purposes of this item.
+* While the effect is active, grants the following stats:
+** 2x [[damage]].
+** {{dlc|nr}} +5.25 [[range]].
+** {{dlc|nr}}+0.5 [[tear falling speed]].
+** -0.30 [[shot speed]].
+* The crown will glow blue while active; if inactive, it will appear grey.
+* The effect will deactivate for the rest of the current room when damage is taken, regardless of Isaac's health.
+** Fighting waves in [[Greed mode]] won't reactivate the crown.
+
+== Notes ==
+* Because the effect occurs if Isaac has no Red Heart containers at all, this is an extremely beneficial item for {{C|???}}, {{C|Tainted ???}}, {{C|The Lost}}, {{C|Tainted Lost}}, {{C|Black Judas|r}}, {{C|Tainted Judas}}, {{C|Tainted Bethany}} and {{c|Tainted Forgotten}}.
+* Due to the fact that they will be at full health a larger portion of the time than most characters, this item is also very powerful for {{C|Keeper}} and {{C|Tainted Keeper}}.
+* If the damage is lost with {{C|Tainted Isaac}}, he can pick up another item in the same room and then swap it back to refresh the effect.  Holding onto pedestal generation like {{I|Mystery Gift}} will allow him to place an item inside a difficult boss room and regain the bonus damage after being hit.
+* Using {{P|XI - Strength}} when already at a maximum 12 hearts, but having taken damage (hence visually having full maximum health) will not reactivate the item.
+* Additional copies of the item will grant 2 {{E|Soul Heart}}s upon pickup, but no change in stats.
+
+== Synergies ==
+* {{i|Holy Mantle}}: This will block damage and keep Crown Of Light active.
+* {{i|Rock Bottom}}: While the diamond tear effect will disappear when Isaac is hit, the damage up will not be reverted.
+
+== In-game Footage ==
+{{#ev:youtube|u5U1Hg6Qcio}}
+
+== Trivia ==
+* {{dlc+|a+}} This item is the angelic counterpart to the {{i|Dark Prince's Crown}}.{{dlc-}}
+* Although this item is normally only available in the {{r|Angel Room}}, it can be found as one of the Nintendo-themed {{r|Treasure Room}} items in the 6th of December's [[List of curated daily challenges|Daily Run]], which is an homage to the late CEO of Nintendo, Satoru Iwata.
+
+== Bugs ==
+{{bug|dlc=a+nr|If Isaac picks up a {{e|Bone Heart}} while the crown is glowing blue and leaves the current room, the crown will continue to glow blue even though the damage boost is inactive due to the Bone Heart container being empty. Taking any damage won't make the crown turn gray until Isaac fills all of his Red Heart containers and leaves the current room to reset the effect.}}
+
+{{nav|fr=Couronne de Lumière}}

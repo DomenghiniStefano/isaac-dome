@@ -1,0 +1,25 @@
+{{infobox passive collectible
+ | id          = 29
+ | quote       = Range up
+ | description = {{dlc|nr}} +5.25 [[range]], +0.5 [[tear falling speed]].<br>{{dlc|r}} +2.5 [[range]]. Spawns 3-6 [[Blue Fly|Blue Flies]] on pickup.
+ | quality     = 1
+ | tags        = summonable mom offensive
+ | pool        = mom's dressing table-a+
+}}
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr}} +5.25 [[range]].
+* {{dlc|r}} +2.5 [[range]].
+* {{dlc|nr}} +0.5 [[tear falling speed]].
+* {{dlc|r}} Spawns 3-6 [[Blue Fly|Blue Flies]] when picked up.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc+|a+}} This item has a 1% chance to spawn when bombing {{m|Mom's Dressing Table}}. Multiple copies can be obtained through this method.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|P0RfuCmGOAA||inline}} {{#ev:youtube|AJP6lNP_r-o||inline}}
+
+{{nav|yes mother|mom|fr=Culotte de Maman}}

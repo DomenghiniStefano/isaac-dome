@@ -1,0 +1,71 @@
+{{infobox passive collectible
+ | id          = 132
+ | quote       = My Xmas present
+ | description = The more distance tears travel, the more damage they will do.
+ | quality     = 3
+ | tags        = summonable offensive
+ | pool        = Krampus
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Tears gain a flat damage bonus of about +0.5-0.6 per tile of distance traveled, unaffected by all multipliers. There is no upper limit to the bonus.
+
+== Notes ==
+* This item can be found as a drop from killing {{E|Krampus}} or a possible payout of {{I|Mystery Gift}}.
+** Both Krampus and Mystery Gift can drop this item, even if Isaac has already encountered/possessed it. 
+* The item has somewhat of an opposite effect of the item {{i|Proptosis}}, which makes Isaac deal more damage at close range. Proptosis is based on a shrinking multiplier instead of an increasing flat bonus, however.
+* Multiple instances of A Lump of Coal grants no additional effect.
+
+== Synergies ==
+* {{i|Godhead|n}}:
+** {{dlc|nr}} Tears' auras will increase in size and damage the farther they travel.
+** {{dlc|r}} Tears' auras will increase in size the farther they travel. The damage of the auras is unaffected.
+* {{t|Hook Worm}}: The movement pattern increases Coal's damage at the same effective distance.
+* {{i|The Ludovico Technique}}: Increases the tear's damage and size the farther the tear is from Isaac.
+* {{i|My Reflection}}: Hitting enemies with tears that initially missed will grant possibly considerable extra damage.
+* {{i|Pop!}}: Tears will increase their damage and size as they travel, and they are not limited by range.
+* {{i|Soy Milk}}: Coal's flat damage increase is not affected by Soy Milk's multiplier, so tears gain the full benefit from Coal.
+* {{i|Tiny Planet}}: The movement pattern allows much longer airtime and reasonably easy way to hit enemies with the powered-up tears.
+
+== Interactions ==
+* {{i|Anti-Gravity}}: Despite the tears visually growing while they hover, they will still only deal bonus damage based strictly on how far they travel. If the enemy hits the tears by running into them, Coal will add no damage.
+** {{dlc|a+}} Tears no longer grow while hovering.
+* {{i|Athame}}:
+** {{dlc|na+}} Damage of the Athame ring is halved.
+** {{dlc|a+}} The ring deals normal damage.
+* {{i|Brimstone}}:
+** {{dlc|na}} +2 flat damage.
+** {{dlc|a}} Beam will gradually increase in size and damage the farther it travels, on a multiplier that is roughly +20% per tile of distance.
+** '''Brimstone''' + {{i|The Ludovico Technique}}: Makes the Brimstone circle widen and deal damage based on how far away it is from your character. {{dlc|nr}} While Isaac is in the center of the circle, the damage is ''reduced'' to about 50% (unlike normal Coal effects).
+* {{I|C Section}}: Just as expected, fetuses deal more damage a tick the longer they travel.
+* {{i|Dr. Fetus}}: No benefit though the bombs appear darker.
+* {{i|Epic Fetus}}: No benefit.
+* {{i|Lachryphagy}}: Tears will grow until they burst, though their actual damage bonus is only based on distance traveled. Burst tears will also grow as they travel.
+* {{i|A Lump of Coal}}: No benefit from an additional Lump.
+* {{i|Maw Of The Void}}:
+** {{dlc|na+}} Damage of the Maw ring is halved.
+** {{dlc|a+}} The ring deals normal damage.
+* {{i|Mom's Knife}}: No benefit. The Knife becomes a very dark brown.
+* {{i|Proptosis}}:
+** {{dlc|nr}} The damage of the tears decreases at about the same rate it increases, resulting in them dealing approximately the same damage at any range.
+** {{dlc|r}}: Slightly increases the range and damage of Proptosis tears.
+* {{t|Ring Worm}} / {{t|Ouroboros Worm}}: The peculiar movement patterns result in overall less damage from the same effective distance.
+* {{i|Technology}} / {{i|Technology 2}}:
+** {{dlc|na}} No benefit.
+** {{dlc|a}} Damage increases the further away the enemy is, on a multiplier that is roughly +20% per tile of distance.
+* {{i|Tech X}}: The laser ring will grow as the ring distances itself from the player, but will shrink as the player approaches it. Damage increases the further away the enemy is.
+** {{dlc|r}} The damage increase per tile is significantly lower.
+* {{i|Trisagion}}: The damage of the blasts is increased by a negligible amount and will be increased further if Isaac has an item that extends the length of the beams such as {{i|My Reflection}}.
+** {{dlc|r}} The damage of the blasts will not be increased unless Isaac has an item that extends the length of the beams such as {{i|My Reflection}}.
+
+== In-game Footage ==
+{{#ev:youtube|MLVlUgh0e4U}}
+
+== Trivia ==
+* In Western culture, children are commonly told that if they behave badly during the year, they will receive a piece of coal for [[wikipedia:Christmas|Christmas]].
+** This makes A Lump of Coal a fitting item for Krampus to drop, based on his [[wikipedia:Krampus|origins]].
+
+== Bugs ==
+{{Bug|In [[Greed Mode]], if Isaac picks up{{i|A Lump of Coal}} in a Silver {{r|Treasure Room}} and then fights {{e|Krampus}},{{i|A Lump of Coal}} may still drop after the fight. Since this item's effect does not stack with itself, this will give Isaac a useless item.}}{{Nav}}

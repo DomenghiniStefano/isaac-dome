@@ -1,0 +1,52 @@
+{{infobox boss
+ | name        = Loki
+ | id          = 69
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|The Void}}<br>{{room|challenge}}{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Utero}}<br><u>Degraded Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}
+ | base hp     = 350
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Loki's Horns}} (1% chance)
+}}
+{{distinguish|Lokii}}
+
+'''Loki''' is a [[boss]] that can appear in all environments of [[Chapters#Chapter 3|Chapter 3]] ({{s|Depths}}, {{s|Necropolis}}, {{s|Dank Depths}}).
+
+== Behavior ==
+Loki teleports to random locations in the room away from Isaac and has the following attacks:
+* Shoots 4 projectiles in the four cardinal directions, followed by the four diagonal directions, and then the cardinal directions once again.
+* Spawns a {{e|Boom Fly}} on top of himself. A maximum of 4 Boom Flies can be alive at once.
+* Shoots 8 projectiles in all directions.
+Loki deals a whole heart of contact damage.
+
+A {{e|Poky}} can accompany Loki during the fight, dealing contact damage and blocking Isaac's tears.
+
+{{dlc|r}} Loki can also be accompanied by 4 {{e|Stone Grimace}}s in the corners of the room.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Loki ingame.png|Loki as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Notes ==
+* Using the {{i|Meat Cleaver}} on Loki has a unique interaction, splitting him into {{e|Lokii}}.
+
+== Trivia ==
+* Loki appeared in the original ''The Binding of Isaac.''
+* Loki has smaller eyes and different horns in his boss portrait.
+* The Poky in the room does not damage Loki's Boom Flies as it did in the original game.
+* Loki's "mark" (The numbers 666 on his forehead) is more noticeable than his appearance in the original game.
+* Lokii is the posthumous version of him.
+* Loki is based on the Norse trickster god of the same name.
+* Edmund McMillen loved Loki's design so much that he made {{e|Little Horn}}.
+* {{e|The Horny Boys}} are a stitched amalgamation of Loki and {{e|Hornfel}}.
+* Loki and Hornfel are brothers.<ref>https://twitter.com/edmundmcmillen/status/1491311684144697345?t=HIqu902V3aUtJqXMP5Oz8A&s=19</ref>
+
+== References ==
+{{Reflist}}
+
+{{nav|boss}}
+
+[[Category:Chapter 3 bosses]]
+[[Category:Depths bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Debut bosses in Rebirth]]

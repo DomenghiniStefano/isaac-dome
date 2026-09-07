@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 663
+ | quote       = You feel prickly
+ | description = Isaac periodically turns into a spiked statue, briefly becoming invulnerable and dealing contact damage.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Every 6 seconds, Isaac turns to stone and sprouts spikes for 1 second. While Isaac is in this state, he is immune to damage and deals 40 contact damage.
+** Isaac flashes white three times before turning to stone on the fourth flash. The first three flashes are accompanied by a "ticking" sound, the final one with the spike extension sound of a mimic chest.
+** Unlike {{i|Gnawed Leaf}}, Isaac can still move and shoot tears.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Tuff Twins}}.{{dlc-}}
+* {{m|Blood Donation Machine}}s and {{m|Devil Beggar}}s will still deal damage while Tooth and Nail is active.
+* With proper timing, {{r|Curse Room}}s can be both entered and exited without taking damage.
+* When invincible, {{E|Spiked Chest}}s/{{E|Mimic Chest}}s can be opened without taking damage.
+* When under the effects of the [[Pills#Paralysis|Paralysis pill]] Isaac cannot change into a statue.
+
+== Synergies ==
+* Contact damage items work great with Tooth and Nail, such as {{I|Aries}} / {{I|Mom's Heels}} / {{I|The Virus}} for extra damage, {{I|Serpent's Kiss}} for Black Heart generation, {{I|Midas' Touch}} for coin generation etc.
+** {{I|Midas' Touch}} also makes the stone turn a yellowish golden while active. Purely visual, but can help remind the player that they have both items.
+* {{I|Damocles}}: As Isaac is invincible 1/6th of the time, with some luck, Tooth and Nail may save him from the falling sword.
+* {{I|Kamikaze!}}: Allows usage without taking damage during invincibility.
+* {{C|The Lost}} can use this item to prevent additional damage from occurring after losing the {{I|Holy Mantle}} (for example, exiting a {{r|Curse Room}} after being hit), and it does not use up the Holy Mantle's 1-hit protection if it has not been lost.
+
+== In-game footage ==
+{{#ev:youtube|87iDkf2He9o}}
+
+== Bugs ==
+{{bug|If Tooth and Nail is lost while in the statue form (e.g. through losing its {{i|Lemegeton}} wisp), Isaac will indefinitely remain in the statue form until he leaves the room.}}
+{{bug|Using an active item with no cooldown repeatedly ({{i|Mom's Bracelet}}, {{i|Bag of Crafting}}, etc.) whilst in an invulnerable state will keep Isaac in that state.}}
+
+{{nav|fr=Bec et Ongles}}
+[[Category:Damage-preventing items]]

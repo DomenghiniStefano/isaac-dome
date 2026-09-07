@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | id          = 327
+ | quote       = Fate chosen
+ | description = If Isaac has half a red heart or no red hearts after taking damage, he gains a [[shield]] that nullifies all types of damage for 5 seconds. Allows entrance into {{s|Chest}}. {{dlc+|r}} Also allows access to {{s|Home}}.{{dlc-}}
+ | quality     = 2
+ | tags        = offensive lazarusshared noeden quest
+ | unlocked by = The Polaroid
+}}
+
+{{cit|up}}
+
+== Effects ==
+* If the character has half a red heart or no red hearts after taking damage, it triggers the {{i|Book of Shadows}} effect, creating a [[shield]] that nullifies all types of damage for 5 seconds.
+* Allows entrance into {{s|Chest}} after beating {{E|Isaac}} in the {{s|Cathedral}} by touching the chest.
+* {{dlc+|r}} Opens {{A|A Strange Door}} in {{s|Depths}} II and its variants that leads to {{s|Mausoleum}}/{{s|Gehenna}} II.{{dlc-}}
+** Unlike with the Chest entrance, The Polaroid gets consumed by the door and vanishes from Isaac's inventory.
+
+== Notes ==
+* This item is a guaranteed drop from {{E|Mom}}, if unlocked. Will drop alongside {{i|The Negative}}, provided they are both unlocked. However, they are mutually exclusive: Once one of them is picked up, the other one will disappear.
+** With the use of either a teleportation item and 5 pip {{R|Dice Room}}, a {{i|Forget Me Now}}, a {{i|Diplopia}}, a {{i|Crooked Penny}}, or  {{i|R Key}}, both the Polaroid and the Negative or multiple copies of the Polaroid or Negative can be obtained.
+** With {{C|Jacob and Esau|r}}, proper alignment of both characters can enable picking up both The Polaroid and The Negative.
+** With frame-perfect timing and a bomb, it is possible to pick up both The Polaroid and the Negative.
+* The Polaroid always triggers when taking damage as characters who lack [[Red Heart container]]s, such as {{C|???}} and {{C|Tainted ???}}, {{C|Black Judas|r}} and {{C|Tainted Judas}}, {{C|The Soul}}, {{C|Tainted Forgotten}}, {{C|Tainted Bethany}} or any other character who has chosen to trade away their heart containers in [[devil deal]]s, {{R|Black Market}}s, {{i|Guppy's Paw}} or the {{i|Potato Peeler}}.
+* The shield effect provided by The Polaroid can be stacked if the character takes damage multiple times. For example, using {{i|IV Bag}} 2 times provides 10 seconds of shield.
+* Although {{C|The Lost}} and {{C|Tainted Lost}} don’t have health, The Polaroid can trigger if they take non-fatal damage (e. g. take damage while {{i|Berserk!}} is active or imitate damage via {{i|Dull Razor}}).
+* The Polaroid will be the leftmost item after defeating Mom, in case {{Cu|Blind}} is active.
+* {{dlc|nr}} It is possible to obtain two Polaroids by obtaining one as an {{C|Eden}} starting item.
+* Obtaining multiple copies of The Polaroid does not cause its effect to stack.
+* As with all items crucial to story progress ({{I|Key Piece 1}} and {{I|Key Piece 2}}, {{I|Knife Piece 1}} and {{I|Knife Piece 2}}, {{I|Dad's Note}}, and {{I|Dogma}}), this item has protection from full-run rerolls. It does not, however, share the immunity {{I|Dad's Note}} has to D6-type rerolls and {{I|Void}}.
+* If Isaac took fatal damage and is revived in the same room, The Polaroid will trigger upon revival.
+
+== In-game Footage ==
+{{#ev:youtube|hGR4P4vZ-us}}
+
+== Trivia ==
+* In the original ''The Binding of Isaac'' flash game, '''The Polaroid''' [[original:The Polaroid|used to be a trinket]] that Mom would drop in addition to a regular collectible from the boss pool. When it was originally implemented, it was only available in the normal Trinket drop pool and was implemented secretively. Players were frustrated, so, with an update, [[Edmund McMillen|Edmund]] made it so it would also only drop if the player took no red heart damage against Mom, similar to the conditions for the {{r|Devil Room}} to open its path. Since players would not always receive the Polaroid and might switch it out with another trinket, [[Edmund McMillen|Edmund]] wanted to make the discovery of {{s|Chest}} (and its at-the-time new ending) something special.
+** In the game files, the sprite for The Polaroid can still be seen in the trinket sprites folder.
+* As soon as The Polaroid or {{i|The Negative}} become available, they will drop in place of the regular {{ip|Boss|text=Boss Room item}} Mom would otherwise provide, essentially providing a difficulty increase for {{s|Womb}} and beyond after either has been unlocked.
+** They can, however, be re-rolled (or converted into stat increases with {{i|Void}}) at the cost of closing off access to Chapter 6.
+
+{{nav|isaac boss unlock|fr=Le Positif}}
+[[Category:Damage-triggered items]]
+[[Category:Damage-preventing items]]

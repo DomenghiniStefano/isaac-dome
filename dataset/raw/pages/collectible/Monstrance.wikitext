@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 574
+ | quote       = Purifying light
+ | description = Isaac gains an aura that deals damage to enemies inside it.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Gives Isaac a large pulsing aura around him that deals damage to enemies inside of it.
+** The aura deals more damage the closer enemies are to Isaac, ranging from <code>0.4</code> on the edge up to <code>3.9 + 0.3 * floor</code> damage.
+** The aura deals damage up to 7.5 times per second.
+
+== Synergies ==
+* {{i|Camo Undies}}: Enemies won't target Isaac, thus he can safely damage enemies while standing near them. However, this won't work with bosses.
+* {{i|Isaac's Heart}}: Monstrance becomes much safer to use offensively as Isaac's body no longer takes damage.
+* Items granting [[invulnerability]] or a [[shield]]: Monstrance damages enemies while Isaac is invincible.
+** This includes {{i|Gnawed Leaf}} / {{p|VII - The Chariot?}} allowing Isaac to clear most rooms without moving.
+** {{i|Dark Arts}}: Enemies will still be damaged while Dark Arts' effect is active, allowing Isaac to safely deal damage while invulnerable in this way.
+* {{i|Pause}}: Monstrance will not stop the pause effect allowing Isaac to kill or chip bosses easily by standing near them for the duration of the pause effect.
+* {{c|Tainted Forgotten}}: The aura surrounds Tainted Forgotten allowing {{c|Tainted Soul}} to damage enemies from a safe distance.
+
+== In-game footage ==
+{{#ev:youtube|l2momSXS4g4}}
+
+== Trivia ==
+* [[anti:Monstrance|Monstrance]] is from the ''Antibirth'' mod. In ''Antibirth'', Monstrance would also increase {{e|Soul Heart}} drop chances.
+* A monstrance is a vessel used in many Christian practices to display another religious artifact such as the Eucharist. In other words, it is generally used as a display piece.
+
+== Bugs ==
+{{Bug|When {{i|Pause}} is used with Monstrance it creates a second aura of light that stays in place where Isaac used "Pause" which lasts for the active item's duration. The second aura is a visual glitch and does not deal damage to enemies. Moreover, both auras are flashing for the duration.}}
+
+{{nav}}

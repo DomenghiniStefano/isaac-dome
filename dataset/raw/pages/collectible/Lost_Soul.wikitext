@@ -1,0 +1,59 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 612
+ | quote       = Protect him
+ | description = Creates a ghostly [[familiar]] that closely follows behind Isaac. It dies in one hit, but respawns at the start of the next floor. Each time it survives until the next floor, it rewards Isaac with {{e|Soul Heart}}s, {{e|Eternal Heart}}s, or an [[Item]].
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = {{dlc|r+|uniquefamiliar}} summonable nocantrip
+ | unlocked by = Lost Soul
+}}
+{{distinguish visual|Found Soul|Your Soul}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Creates a ghostly [[familiar]] that closely follows behind Isaac. It dies in one hit, respawning at the start of the next floor.
+* If Lost Soul survives until the start of the next floor, it rewards Isaac with one of the following:
+** 3 {{e|Soul Heart}}s.
+** 2 {{e|Eternal Heart}}s.
+** A [[Treasure Room (Item Pool)|Treasure Room item]] or an [[Angel Room (Item Pool)|Angel Room item]].
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Blighted Ovum}}.{{dlc-}}
+* Lost Soul hides behind Isaac, opposite to the direction he is firing tears.
+** Also, if Isaac is moving to the opposite side he's shooting, then his hitbox will completely absorb Lost Soul's hitbox, making it significantly harder for enemies to hit it.
+* Floors completed during the [[Ascent]] count.
+* Waiting until after the floor is cleared before picking up Lost Soul nearly guarantees a reward payout on the next floor.
+* The ghost can take explosive damage from Isaac, e.g. via placing a {{e|Bomb}}.
+* Lost Soul's position behind Isaac can overlap with other [[Familiar]]s.
+* Leaving the {{E|Mother's Shadow}} chase sequence respawns Lost Soul.
+* Swapping the item as {{C|Tainted Isaac}} and picking it up again respawns Lost Soul.
+* [[Rocks#Spiked Rocks|Spiked Rocks]] will kill Lost Soul.
+* {{dlc|nr+}} If Lost Soul is hit, this will invalidate the conditions for spawning {{t|Perfection}}, even if Isaac hasn't been hit.
+
+== Synergies ==
+* {{i|BFFS!}}: Gives Lost Soul a once-per-room shield, similar to {{i|Holy Mantle}}.
+** If BFFS! is dropped, the shield will still remain active until taking one hit of damage, acting similarly to {{p|Holy Card}}.
+* {{i|Forget Me Now}} / {{i|R Key}}: Restarting a floor/run causes Lost Soul to give a reward if it's alive when used.
+
+== Interactions ==
+* {{i|Box of Friends}}: Cannot duplicate the ghost and won't spawn a {{i|Demon Baby}}, even when the ghost is dead.
+* {{i|Bursting Sack}} / {{i|Skatole}}: Does not provide immunity to contact damage from spiders/flies to Lost Soul.
+* {{i|Chaos}}: Items dropped by Lost Soul are drawn from a random pool.
+* {{t|Child Leash}} / {{t|Duct Tape}} / {{t|Friendship Necklace}} / {{I|King Baby}} / {{T|RC Remote}} / {{t|The Twins}}: No effect.
+* {{i|Diplopia}} / {{i|Crooked Penny}}: Picking up multiple Lost Souls has no effect, even if one died previously.
+* {{i|Missing No.}}: If a new floor is entered and {{i|Missing No.}} rerolls into this item, it will immediately give a reward.
+* {{c|Tainted Forgotten}}: The ghost follows {{c|Tainted Forgotten}}, making it very difficult to protect.
+
+== In-game footage ==
+{{#ev:youtube|O57bGgmRhWI}}
+
+== Trivia ==
+* [[anti:Lost Soul|Lost Soul]] originates from the ''Antibirth'' mod. In ''Antibirth'', multiple copies of the item would grant multiple familiars.
+
+== Bugs ==
+{{bug|If Lost Soul is killed before the segment with {{e|Mother's Shadow}}, it will respawn after Isaac returns to the normal floor.}}
+{{bug|Swapping Lost Soul for another item as {{c|Tainted Isaac}} and picking it back up again will cause it to respawn if it died previously. This can also be accomplished with {{t|Butter!}}.}}
+{{bug|Resuming a {{C|Jacob and Esau}} run with Lost Soul given to Esau will cause it to respawn if it died previously.}}
+
+{{nav|the lost unlock|mother unlock|fr=Âme Égarée}}

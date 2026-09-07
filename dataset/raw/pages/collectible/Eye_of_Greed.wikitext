@@ -1,0 +1,65 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 450
+ | quote       = Gold tears!
+ | description = Every 20 tears, Isaac loses 1 {{e|Penny}} and shoots an additional gold tear that [[Status Effects#Petrification|petrifies]] enemies and turns them into gold. Any enemy killed while in this state will drop coins.
+ | quality     = 2
+ | tags        = summonable offensive
+ | unlocked by = Eye of Greed
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* Adds a golden tear every 20 tears fired, which causes enemies to turn gold and [[Status Effects#Petrification|petrifies]] them for a few seconds (similar to {{i|Midas' Touch}}) at the cost of one {{e|Penny}}. Golden tears can still be fired if Isaac has no money.
+** Unlike other tear effects, golden tears are fired alongside regular tears rather than replacing a regular tear.
+** With multi-shot abilities, whichever tear is the 20th since previous will produce the additional golden tear.
+** {{Dlc|nr}} The golden tear does 2x normal [[damage]].
+** {{Dlc|r}} If Isaac has no money, the golden tear does normal tear damage. If Isaac does have money, the golden tear deals 1.5x normal damage +10.
+** {{Dlc|nr}} Enemies killed while golden will drop 1-4 coins.
+** {{Dlc|r}} Enemies killed while golden will drop 1-3 coins.
+** {{dlc|r}} If Isaac has money, golden tears that hit enemies will drop a {{e|Penny}}, effectively returning the cost.
+
+== Notes ==
+* Tears fired from items that cause multiple tears to be fired at once, e.g. {{i|20/20}}, {{i|Monstro's Lung}}, etc., are counted separately.
+** The gold tear is not duplicated by said items.
+* {{C|The Forgotten}} has separate tear counters for The Forgotten and Soul.
+* {{dlc+|r}} Using this item is an easy way of unlocking {{i|Golden Razor}} after obtaining 99 coins, since it drains them by just shooting and with enough patience it will reduce their count to 0.{{dlc-}}
+* {{dlc+|r}}Hitting Armored{{e|Tuff Twins}} or {{e|The Shell}} will turn them into gold, and all armored segments will drop 1-3 coins.{{dlc-}}
+
+== Synergies ==
+* {{i|Chocolate Milk}}: How much the 20th tear was charged determines the size and damage of the golden tear.
+* {{i|Compound Fracture}} / {{i|Cricket's Body}} / {{i|The Parasite}}: Golden tears will still look like coins and will still split into other golden coins when hitting obstacles.
+* {{T|Equality!}}: The coin lost when firing the tear can be quite useful for equalizing the pickup counter.
+* {{I|Humbleing Bundle|r}}: Affects coins dropped from hitting enemies, allowing Isaac to potentially farm money.
+* {{i|Lachryphagy}}: Golden tears can also be fed and will burst into split tears. Burst tears are not golden.
+* [[Piercing tears]]: The golden tear will petrify all enemies it hits, {{dlc|r}} and will drop a penny for each one.
+* {{i|Trisagion}}: Golden tears become blast that constantly drop Pennies on hit.
+* {{I|Urn of Souls}}: Golden tears still shoot as normal while using the urn.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Petrified enemies that are turned into [[pickup]]s don’t also drop coins from the petrification effect.
+* {{Dlc|nr}} {{i|Brimstone}}: Overrides Eye of Greed.
+** {{dlc|r}} Occasionally fires a coin tear with the beam.
+* {{Dlc|nr}} {{i|Dr. Fetus}}: Overrides Eye of Greed.
+** {{dlc|r}} A coin shot is fired every 20 shots, but it's very likely to hit the bomb. This makes Eye of Greed drain money over time for no benefit, unless [[Tear Effects|piercing]] is gained.
+* {{I|E. Coli}}/{{i|Flush!}}: Petrified enemies that are turned to poop don't drop coins.
+* {{Dlc|nr}} {{i|Epic Fetus}}: Overrides Eye of Greed.
+** {{dlc|r}} Occasionally fires a coin tear in the direction of the cross similarly to {{i|Marked}}.
+* {{I|Fate's Reward}}: Does not shoot coin tears.
+* {{Dlc|nr}} {{i|Flat Stone}}: No effect.
+* {{dlc|r}}[[Freeze|Freeze Effects]]: Petrified enemies that are frozen don’t drop coins.
+* {{Dlc|nr}} {{i|Incubus}}: Does not shoot coin tears.
+** {{dlc|r}} Incubus will fire coin tears in tandem with Isaac. His shot counter is independent of Isaac's. Coin tears still subtract from Isaac's pennies.
+* {{Dlc|nr}} {{i|Lost Contact}}: No effect.
+* {{Dlc|nr}} {{i|The Ludovico Technique}}: Overrides Eye of Greed.
+** {{dlc|r}} Isaac occasionally fires a coin tear towards the controlled tear.
+* {{Dlc|nr}} {{i|Mom's Knife}}: Overrides Eye of Greed.
+** {{dlc|r}} Occasionally fires a coin tear in addition to the knife.
+* {{Dlc|nr}} {{i|Technology}}/{{i|Tech X}}: Overrides Eye of Greed.
+* {{I|Twisted Pair}}: The two familiars will also fire coin tears which spend Isaac's coins. Their shot counter are independent from Isaac's.
+
+== In-game Footage ==
+{{#ev:youtube|zMcwFu2GIes}}
+
+{{nav|keeper unlock|ultra greedier unlock}}

@@ -1,0 +1,34 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 446
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = {{dlcalt|Halitosis|r=Toxic breath}}
+ | description = While firing, Isaac gains a green aura that [[Status Effects#Poison|poisons]] nearby enemies.
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* While firing, creates an aura around Isaac that [[Status Effects#Poison|poisons]] any nearby enemies for 2 ticks.
+** The poison may stack up to 6 ticks at a time.
+** The aura range is approximately two tiles.
+* Poison damage is equal to Isaac's [[damage]] stat.
+
+== Notes ==
+* {{dlc+|r}} This item can be spawned by {{e|Bumbino}} if he picks up 12 cents.{{dlc-}}
+
+== Interactions ==
+* {{C|Azazel}}/{{i|Brimstone}}/{{i|Chocolate Milk}}/{{i|Mom's Knife}}/{{i|Monstro's Lung}}/{{i|Tech X}}: The green aura only activates when Isaac's attack is charging.
+* {{i|Diplopia}}: No effect.
+* {{i|Epic Fetus}}/{{i|The Ludovico Technique}}/{{i|Marked}}: The green aura only activates when pressing the attack buttons.
+* {{C|The Forgotten}}: The green aura will activate when using melee and charging throw attack.
+* {{C|Lilith}}: No effect.
+* {{i|Mega Blast}}: The green aura will not activate while the beam is firing.
+* {{i|Sprinkler}}: Green aura will not activate if only the sprinkler is firing, and the sprinkler does not get its own green aura.
+
+== In-game Footage ==
+{{#ev:youtube|vbrxNJ3PtbQ}}
+
+{{nav|fr=Dent Pourrie}}

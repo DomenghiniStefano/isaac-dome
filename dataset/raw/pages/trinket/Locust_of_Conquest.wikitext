@@ -1,0 +1,25 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Locust of Conquest
+ | id = 117
+ | quote = I bring Conquest
+ | description = Upon entering a room with enemies, spawns 1-4 [[Locust|White Locusts]] which damage enemies.
+ | unlocked by = Locust of Conquest
+}}
+
+{{cit|ut|a+}}
+
+== Effects ==
+* Upon entering a room with enemies, spawns 1-4 [[Familiars#Locusts|White Locusts]] that deal double Isaac's damage.
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Conquest}}.{{dlc-}}
+* The Locust will also spawn each time a wave starts in {{R|Boss Rush}} and {{dlc|r+}} {{mode|greed|greedier}} [[Greed Mode]].
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either spawns 2-5 locusts. Having both spawns 3-7 locusts.
+
+== In-game Footage ==
+{{#ev:youtube|yu7bkE3bMkk}}
+
+{{nav|locust|apollyon unlock|boss rush unlock|fr=Locuste de Conquête}}

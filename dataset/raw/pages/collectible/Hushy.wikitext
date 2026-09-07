@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | description = Spawns a {{E|Hush|n}} [[familiar]] that bounces diagonally around the [[Rooms|room]] and deals contact damage. While firing tears, it stops moving. {{dlc|r+}} When stationary, Hushy will periodically fire out rings of projectiles.
+ | quality     = 0
+ | tags        = summonable monstermanual offensive
+ | quote       = Lil hush!
+ | id          = 470
+ | unlocked by = Hushy
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* Spawns a {{E|Hush}} [[familiar]] that floats and travels diagonally around the [[Rooms|room]], bouncing on walls, and deals contact damage to enemies. While firing tears, Hushy stops moving. In this state, it will:
+** Block enemy projectiles.
+** {{dlc|r+}} Fire out rings of 8 blue projectiles that deal 6 damage each, once every 1.033 seconds.
+* Hushy deals 2 contact damage per tick or 30 damage per second.
+
+== Notes ==
+* Hushy can be pushed by explosions, both while stationary and during movement (in this case, the explosion may cause the familiar to change the direction it is moving in).
+* {{dlc|r+}} Although Hushy can float over obstacles, its projectiles are not [[spectral]], meaning its shots will be blocked if it's positioned directly over a rock.
+
+== In-game Footage ==
+{{#ev:youtube|l5zJS2MxJbY}}
+
+{{nav|apollyon unlock|hush unlock|fr=P'tit Murmure}}
+[[Category:Familiars]]

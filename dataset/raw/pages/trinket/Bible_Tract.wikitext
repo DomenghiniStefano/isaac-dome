@@ -1,0 +1,25 @@
+{{infobox trinket
+ | id          = 18
+ | quote       = Faith up
+ | description = Increases the chance of {{E|Eternal Heart}}s appearing.
+ | tags        = {{dlc|r+|nogreed}}
+}}
+
+{{cit|t}}
+
+== Effect ==
+* Increases the chance of {{E|Eternal Heart}}s appearing by 3%.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: Adds additional chance for {{E|Eternal Heart}}s appearing by 3% per stack.
+
+== Notes ==
+* Despite its pickup quote, this trinket does not alter the chance of finding {{R|Angel Room}}s in any way.
+
+== In-game Footage ==
+{{#ev:youtube|UgA6aqx2mis}}
+
+== Trivia ==
+* This trinket is a reference to [[wikipedia:tract (literature)|religious tracts]]. Its sprite also resembles a Chick tract, a brand of comic-style tracts. This is further supported by Chick tract style comics being included in some physical editions of The Binding of Isaac.
+
+{{nav|fr=Brochure Religieuse}}

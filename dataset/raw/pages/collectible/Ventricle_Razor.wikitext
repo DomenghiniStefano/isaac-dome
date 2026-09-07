@@ -1,0 +1,57 @@
+{{infobox activated collectible
+ | dlc         = a
+ | image name  = * {{dlcalt|na+=Afterbirth|nr=Afterbirth+}}
+ | id          = 396
+ | quote       = Short cutter
+ | description = Creates up to two portals that remain even if Isaac leaves the room. Upon entering a portal, Isaac is teleported to the other portal.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive nocantrip
+ | recharge    = unlimited
+ | shop price  = {{dlcalt|15|r=1}}0
+}}
+
+{{cit|a|a}}
+
+== Effects ==
+* When used for the first time, Isaac creates a blue portal under where he is standing. The next time he uses the item, he creates an orange portal. Isaac can then walk over either of the portals to teleport instantly to the location of the other one.
+** Activating the item more than twice will replace the older of the two portals.
+* Upon entering a new floor, the previously placed portals will disappear.
+
+== Notes ==
+* The portals can be placed in any room. However, if a portal leads to a room with a negative grid index (i.e. {{R|Devil Room}}, {{R|Angel Room}}, {{R|I AM ERROR}} room, {{R|Crawl Space}}, {{R|Boss Rush}}, {{R|Black Market}}, {{E|Mega Satan}} room, or {{S|???}} portal room), Isaac will not be able to enter the portal.
+* {{Dlc|nr}} Upon teleportation, Isaac is granted with a short invulnerability period which can be abused to trigger the {{M|Blood Donation Machine}} and {{M|Devil Beggar}} without losing health by placing a portal just next to it, teleporting, and touching the Donation Machine or Beggar in the same move. This trick is particularly useful for {{C|The Lost}}. The teleportation trick can also be used to enter a {{R|Curse Room}} without taking damage.
+* {{dlc|r}} Upon teleportation, Isaac is granted with a short invulnerability period which can be used to enter a {{r|Curse Room}} without taking damage. However, it cannot be used to play {{M|Blood Donation Machine}}s or similar machines for free. Isaac is also unable to open chests during the animation, meaning {{e|Spiked Chest}}s cannot be opened for free.
+** When teleporting between different rooms, Isaac will briefly stay invisible at the door before moving to the portals, and can interact with chests near the door. However, opening Spiked Chests this way will still deal damage to Isaac.
+* Portals will stay even if the item is dropped or changed.
+* It is possible to stack the two portals on top of each other. Entering one will make you hop infinitely as long as you stay on the portals. It creates invincibility at the cost of mobility and almost, but not all tears.
+* If {{cu|Maze}} is active, using portals placed between different rooms may result in a random destination. Two portals in the same room work reliably.
+** If room contents are randomized by the curse, it's possible for the portals to end up completely surrounded or even inside rocks or pits. If Isaac can't move to safety, the run can be quit and resumed to be placed at a door.
+* {{Dlc+|r}} On {{S|Downpour}} II, Ventricle Razor cannot be used to teleport between the normal and mirror world.{{dlc-}}
+* {{Dlc|r}} This item can be useful to exit Mom's boss room to start the [[Ascent]], as long as you use it at least once before entering the boss room.
+* {{Dlc|r}} The item only costs 10 cents when found in a {{r|Shop}}.
+* This item can be used to steal the rewards from a {{r|Challenge Room}}, a {{r|Boss Challenge Room}} or {{r|Boss Rush}}. This can be done by placing a portal in another room, then taking the rewards from the challenge room. Then, instead of fighting the enemies, use Ventricle Razor to immediately teleport out and keep the rewards.
+* When fighting bosses that can drop pickups accompanied by other enemies, Isaac can kill only the boss for the pickups while keeping the other enemies alive, then use Ventricle Razor to teleport out and reset the room. This can be repeated to farm their loots infinitely.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a blue/orange wisp that circles the respective portal. Wisps do not fire tears. Wisps do persist if Isaac leaves the room and reenters.}}
+* {{i|Kamikaze!}}: Can be activated without harm while teleporting between portals.
+* {{c|Tainted Magdalene|r}}: She can abuse the invincibility from the stacked portals to let enemies approach her and die in her hugs<ref>https://youtu.be/vRYclaFycH0</ref>.
+
+== Interactions ==
+* {{i|Car Battery|ana+}}: Renders the item conventionally useless except for the unlimited invicibility described above.
+** {{dlc|a+}} Ventricle Razor works normally.
+
+== In-game Footage ==
+{{#ev:youtube|Sv4wMBJAGMc}}
+
+== Trivia ==
+* A ventricle is a hollow part in an organ.
+* The colors of the portals are a reference to the Portal Gun from the ''Portal'' series, whose portals share the same colors and functionality.
+
+== Bugs ==
+{{bug|dlc=r|Entering one of the portals causes the {{T|Found Soul}} familiar to become invisible until Isaac drops and picks up the trinket again or enters a new floor.}}
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Scalpel Ventriculaire}}

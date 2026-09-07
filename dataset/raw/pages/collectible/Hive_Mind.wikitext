@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | id          = 248
+ | quote       = Giant spiders and flies
+ | description = Increases the size of [[Blue Spider]]s and [[Blue Fly|Blue Flies]] and doubles the amount of damage they deal. {{dlc|r}} Also increases the effectiveness of fly and spider [[familiar]]s.
+ | quality     = 2
+ | tags        = summonable spider offensive fly
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Increases the size and doubles the damage of [[Blue Spider]]s, [[Blue Fly|Blue Flies]] and {{dlc|a+}} [[Locust]]s.
+* {{dlc|r}} Fly and spider familiars become stronger, exactly like {{i|BFFS!}}.
+* {{transformation contribution|Beelzebub}}
+* {{dlc+|r}}{{transformation contribution|Spider Baby}}{{dlc-}}
+
+== Notes ==
+* The size change is only cosmetic, the flies' hitboxes remain the same.
+* {{dlc|nr}} This item does not affect Fly familiars or orbitals.
+* No effect on flies made passive by {{I|Skatole}}.
+
+== Synergies ==
+* {{tf|Guppy}}: Doubles the damage of all Blue Flies spawned greatly increasing damage output.
+* {{I|Brown Nugget}}: Turret does 7 damage instead of 3.5
+* {{I|Mom's Wig}}: Doubles spider limit of the wig to 10 spiders.
+* {{I|Plum Flute}}: Doubles {{E|Baby Plum}}'s contact damage, but not projectile damage. Plum is also larger.
+* {{dlc|a+}}[[Familiars#Locusts|Red Locusts]]: Contact damage is doubled as normal and explosions will deal an additional 25 flat damage.
+* {{I|Sissy Longlegs}}: Increases familiar's size. Spiders spawned by Sissy are affected by Hive Mind.
+* {{i|Abyss|r+}}: Spawned locusts deal increased damage.
+
+== Interactions ==
+* {{dlc|r}} {{i|BFFS!}}: Does not give any additional benefit to fly and spider familiars.
+
+== In-game Footage ==
+{{#ev:youtube|IC_l-8SN6rM}}
+
+== Trivia ==
+* Hive mind is the concept of a large number of beings acting in the interest of the survival of the group as a whole, with little to no individuality.
+* {{dlc|r}} This item is one of the only five ({{dlc|r+}} six) that count towards 2 transformations ({{tf|Beelzebub}} and {{tf|Spider Baby}}), the other ones being {{i|Magic Mushroom}}, {{i|The Bible}}, {{i|Parasitoid}}, {{i|Skatole}}, {{dlc|r+}} and {{i|The Necronomicon}}.
+
+{{nav|spider|fly|familiar modifier|fr=Conscience Collective}}

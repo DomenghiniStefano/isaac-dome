@@ -1,0 +1,107 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 374
+ | quote       = {{dlcalt|Holy shot!|r=Holy death shot}}
+ | description = Adds a chance to fire holy tears, which will create a damaging light beam in the area if they hit an enemy.
+ | quality     = 3
+ | tags        = summonable offensive angel
+ | devil price = {{dlcalt|1|r+=2}}
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Isaac has a chance to fire a glowing blue tear that, after colliding with an enemy, spawns a damaging beam of light (similar to {{i|Crack the Sky}}).
+** {{Dlc|nr}}Each beam of light deals quadruple (4×) Isaac's tear damage.
+** {{Dlc|r}}Each beam of light deals triple (3×) Isaac's tear damage.
+** The beam of light will damage all enemies in a small radius around it.
+* {{Dlc|r}}{{transformation contribution|Seraphim}}
+
+== Notes ==
+* The chance to fire a holy tear depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\min(\frac1 { 10 - \left \lfloor \mathit{Luck} \times 0.9 \right \rfloor},50\%)</math><ref>https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing</ref>
+** At base Luck (0), the chance is 10%, maxing out at 50% at 8.89 Luck.
+* Its damage is multiplied from the tear's damage, not directly from Isaac's [[Damage]].
+** This means that, if the tears' damage has been multiplied from effects such as {{I|Proptosis}} or {{I|Tough Love}}, the beam's damage is also multiplied.
+* Light beams can destroy {{e|Shopkeeper}}s if a holy tear hits an enemy nearby.
+
+== Synergies ==
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Holy Light it turns into a glowing cyan locust. Every tick of damage it deals has a chance to call down a beam of light dealing triple Isaac’s damage.
+* {{I|Bob's Rotten Head}}: Has a chance to throw a Holy Light head that spawns a damaging beam of light dealing ({{Dlc|nr}}4×) {{dlc|r}}3× the explosion damage when it hits an enemy.
+* {{I|Compound Fracture}} / {{I|Cricket's Body}} / {{I|The Parasite}}: Holy Light tears will have split tears with Holy Light effect; normal tears will not have split tears with Holy Light effect.
+* {{I|Lachryphagy}}: If Holy Light tears feed normal tears, fed normal tears will not gain Holy Light effect; however if normal tears feed Holy Light tears, it will just increase the size of fed Holy Light tears.
+* {{I|The Ludovico Technique}}: The controlled tear will sometimes glow and trigger the beam.
+* {{I|C Section}}: Glowing shots will rapidly strike light beams on contact, making short work of most enemies.
+
+== Interactions ==
+* Following items can trigger Holy Light effect:
+** {{I|Eye of Greed}}
+** {{I|Fate's Reward}}
+** {{T|Found Soul}}
+** {{I|Gello}}
+** {{I|Host Hat}}
+** {{I|Incubus}}
+** {{I|Kidney Stone}}
+** {{I|Lead Pencil}}
+** {{I|Metal Plate}}
+** {{I|Sad Bombs}}
+** {{I|Saturnus}}
+** {{I|Tammy's Head}}
+** {{I|Twisted Pair}}
+** {{I|Varicose Veins}}
+* Following items do not trigger Holy Light effect:
+** {{I|Akeldama}}
+** {{I|Athame}}
+** {{I|Brimstone Bombs}}
+** {{I|Circle of Protection}}
+** {{I|Divine Intervention}}
+** {{I|It Hurts}}
+** {{I|Large Zit}}
+** {{I|Maw Of The Void}}
+** {{I|Montezuma's Revenge}}
+** {{I|Revelation}}
+** {{I|Shard of Glass}}
+** {{I|Slipped Rib}}
+** {{I|Vasculitis}}
+* {{I|20/20}} / {{C|Keeper}} and other multi-shot effects: Each shot can have Holy Light effect separately.
+* {{I|Brimstone}} / {{C|Azazel}} / {{C|Tainted Azazel}}: {{Dlc|nr}}Overrides Holy Light.
+** {{Dlc|r}} The Brimstone shot can create beams of light.
+* {{I|Dr. Fetus}}: {{Dlc|nr}}Overrides Holy Light.
+** {{Dlc|r}} The bombs created by Dr. Fetus can create beams of light upon exploding for each enemy hit by the explosion, although there is no visual indication that this will happen. The beams deals a flat 10.5 damage.
+* {{I|Epic Fetus}}: {{Dlc|nr}}Overrides Holy Light.
+** {{Dlc|r}} The rockets created by Epic Fetus can create beams of light upon exploding for each enemy hit by the explosion, although there is no visual indication that this will happen. The beams deals a flat 10.5 damage.
+* {{I|Euthanasia}}: Having Holy Light effect on a tear does not affect the burst tears from it. They can have Holy Light effect applied depending on Isaac's Luck.
+* {{I|Explosivo}}:
+** {{Dlc|r}}Explosivo tears can have the Holy Light effect applied to them. These tears spawn beams of light upon exploding for each enemy hit by the explosion. The beams deal a flat 10.5 damage.
+* {{C|The Forgotten}}: The melee and ranged attack can create beams of light.
+* {{I|Haemolacria}}: Occasionally fires Haemolacria tears with Holy Light effect. Only the main tear will contain the effect and not the burst tears.
+** {{Dlc|r}} If the main tear has the effect, burst tears also gain the effect.
+* '''Holy Light''': Additional copy of this item through {{I|Diplopia}} or {{I|Crooked Penny}} etc. has no effect.
+** {{Dlc|r}} Additional copy of this item is counted for {{tf|Seraphim}} set.
+* {{I|Ipecac}}: If the explosives don't kill enemies instantly, explosives with Holy Light will spawn a light beam after the explosion is over.
+** {{Dlc|r}} A beam of light with a tripled damage spawn on top of the closest enemy from the explosion, and beams with a flat 10.5 damage spawn for each enemy hit by the explosion
+* {{I|Mom's Knife}}: {{Dlc|nr}}Overrides Holy Light.
+** {{Dlc|a+}}Holy Light can trigger on both held and thrown knives.
+* {{I|Mucormycosis}}: The spores with Holy Light effect do not spawn beams of light, including the one from Isaac.
+* {{I|Multidimensional Baby}}: Duplicated tears have Holy Light effect if the tear they originated had it.
+* {{I|Sinus Infection}}: The boogers with Holy Light effect do not spawn beams of light.
+* {{I|Spirit Sword}}: Hitting an enemy with Spirit Sword has a chance to spawn a damaging beam of light.
+* {{I|Tear Detonator}}: Having Holy Light effect on a tear does not affect the burst tears from it. They can have Holy Light effect applied depending on Isaac's Luck.
+* {{T|Teardrop Charm}}: Activation rate is affected.
+* {{I|Technology}}: {{Dlc|nr}}Overrides Holy Light.
+** {{Dlc|r}} The lasers can create beams of light.
+* {{I|Technology Zero}}: Electricity connecting tears with Holy Light tears will not gain Holy Light effect.
+* {{I|Technology 2}}: Tears will occasionally have Holy Light effect.
+** {{Dlc|r}} The lasers can create beams of light.
+* {{I|Tech X}}: {{Dlc|nr}}Overrides Holy Light.
+** {{Dlc|r}} The lasers can create beams of light.
+* {{I|Trisagion}}: {{Dlc|nr}}Overrides Holy Light.
+** {{Dlc|r}} Blasts can apply Holy Light, with a light beam being generated on each damage tick, dealing Isaac's tear damage per beam (three times Trisagion's damage).
+
+== In-game Footage ==
+{{#ev:youtube|iA9MRVajal8}}
+
+== References ==
+{{reflist}}
+
+{{nav|seraphim|fr=Saint Éclat}}
+[[Category:Tear-modifying items]]

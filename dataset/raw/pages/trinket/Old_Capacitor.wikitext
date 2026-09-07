@@ -1,0 +1,34 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 143
+ | quote       = Voltage starving
+ | description = Active items don't charge when clearing rooms. Adds a chance to spawn a {{E|Lil' Battery}} when clearing a room, independent of the room's original drop.
+ | tags        = nogreed
+ | unlocked by = Old Capacitor
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Active items don't charge when clearing rooms. Adds a high chance to spawn a {{E|Lil' Battery}} when clearing a room, independent of the room's original drop.
+
+== Notes ==
+* The exact chance for a battery dropping is <math>\min(20\% + (3\% * \mathit{Luck}) , 33\%)</math>.
+** This means that the chance starts at 20% at 0 Luck, minimizes at 0% at -6.67 Luck, and maximizes at 33% at 4.34 Luck.
+* This trinket can be dropped whenever the active item needs recharging, then picked up again once the item is fully charged. For active items that aren't used every time they're recharged (such as the D6), using the trinket this way can generate many free batteries each floor.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: The chance for a battery dropping is always 33%.
+* {{i|4.5 Volt}}: Since 4.5 Volt also makes it so that active items don't charge when clearing rooms, this trinket can be picked up with no downside.
+* {{t|Dim Bulb}} : Since items do not automatically recharge upon being used, being able to hold both Old Capacitor and Dim Bulb together will allow the latter's effects to be constantly active, while the batteries allow control over when exactly to charge active items.
+* {{i|Jacob's Ladder}} / {{i|120 Volt}}: Allows zaps to arc on the same enemy multiple times.
+* {{I|Options?}}: Also offers alternate rewards for the extra batteries.
+
+== In-game Footage ==
+{{#ev:youtube|LOxTG782Pt4||inline}}
+
+== Trivia ==
+* [[anti:Old Capacitor|Old Capacitor]] is from the ''Antibirth'' mod.
+* The pickup quote is a reference to [https://www.newgrounds.com/portal/view/636730 an old joke game] by LeatherIceCream, one of the ''Antibirth'' devs, where he makes a ''Don't Starve'' dating sim which he titled "Voltage Voltage Starving".
+
+{{nav|active modifier|fr=Condensateur}}

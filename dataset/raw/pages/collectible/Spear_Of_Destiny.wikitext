@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 400
+ | quote       = Your destiny
+ | description = In addition to tears, Isaac holds a spear in front of him which deals contact damage equal to 2× his [[Damage|tear damage]], and occasionally inflicts [[fear]].
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effect ==
+* Gives Isaac a spear familiar that he holds in the direction he most recently shot.
+** The spear does twice Isaac's [[damage]] per 7 frames.
+*** In Challenge 30: The Guardian, the spear does one times Isaac's [[damage]] per 2 frames and damage range increased by 7/13.
+** Instantly inflicts the [[Status Effects|fear]] effect on any boss it comes into contact with. This is subject to the boss's resistance.
+
+== Notes ==
+* Spear Of Destiny does not replace tears.
+* The item is similar to {{I|Mom's Knife}}, although it cannot be fired.
+* {{dlc|nr}} Despite its size, the spear's hitbox is only located on the silver part and the handle, making it only effective at very close range.
+* {{dlc|nr}} The spear can kill permanently charmed enemies.
+* {{dlc|na+}} Spear Of Destiny does not work while [[Blindfolded]], except in {{chal|The Guardian}}.
+
+== Synergies ==
+* {{I|Proptosis|r}}: Triples the damage. Has no penalty with range.
+
+== Interactions ==
+* {{i|BFFS!}}: No effect on size or damage.
+* {{I|Sacrificial Altar}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|hJ5K-lOGhH0}}
+
+== Gallery ==
+<gallery>
+File:Spear Of Destiny ingame.png|Spear Of Destiny's appearance in-game.
+</gallery>
+
+== Trivia ==
+* This item is a reference to the spear that pierced the side of Jesus as He hung on the cross (also known as the Spear of Longinus), according to the Gospel/Scripture of John.
+* This item is used in {{chal|The Guardian}}, where it also has a completely unique sprite that is not used anywhere else in the game. The spear is reskinned to look like a sword, which is purely visual and does not change its effects, however.
+
+== Bugs ==
+{{bug|dlc=nr|If the Spear Of Destiny is removed from the player's items (for example, when using the {{i|D4}}), the spear will stay on in the level in the position where it was before the item was lost until Isaac moves to another room. This is purely a visual bug.}}
+{{Bug|dlc=a+|When {{i|Pause}} is used with Spear Of Destiny it creates a second spear that stays in place where Isaac used "Pause" which lasts for the active item's duration. Moreover, both spears are flashing and can not interact with enemies for the duration.}}
+{{bug|dlc=r|Swapping characters using {{i|Esau Jr.|n}} or as {{c|Tainted Lazarus}} will leave a stationary copy of the spear until Isaac leaves the room. The stationary spear is only visual, lacking collision.}}
+
+{{nav|fr=Sainte Lance}}

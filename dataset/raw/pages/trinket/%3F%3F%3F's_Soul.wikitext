@@ -1,0 +1,34 @@
+{{infobox trinket
+ | files name  = Blue Baby's Soul
+ | id          = 57
+ | quote       = Imaginary Friend
+ | description = Spawns a [[familiar]] that floats slowly around the room on a zig-zag pattern similar to {{i|The Peeper}} and fires [[spectral]] and [[homing]] tears.
+ | unlocked by = ???'s Soul
+}}
+{{disambig msg|the trinket|the soul stone|Soul of ???}}
+
+{{cit|ut}}
+
+== Effect ==
+* Spawns a [[familiar]] that floats slowly around the room on a zig-zag pattern similar to {{i|The Peeper}} and fires [[spectral]] and [[homing]] tears that deal 3.5 damage.
+** {{dlc|nr}} The familiar shoots once per second.
+** {{dlc|r}} The familiar shoots once every 3/4ths of a second.
+
+== Notes ==
+* Unlike {{i|The Peeper}}, ???'s Soul does no contact damage.
+* {{dlc|nr}} ???'s Soul is unable to shoot while flying over obstacles (which is the same behavior that {{i|Ghost Baby}} has).
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Spawns 1 more familiar, this effect stacks to a maximum of 3 familiars at a time.
+* {{i|Box of Friends}}: No effect; does not duplicate.
+* {{i|Sacrificial Altar}}: Sacrifices the familiar, destroying the trinket and generating an item normally.
+
+== In-game Footage ==
+{{#ev:youtube|PKevCENize8}}
+
+== Gallery ==
+<gallery>
+File:Blue Baby's Soul ingame.png|The ???'s Soul familiar in-game.
+</gallery>
+
+{{nav|blue baby unlock|the lamb unlock|fr=Âme de ??? (Babiole)}}

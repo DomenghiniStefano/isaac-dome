@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | id          = 234
+ | quote       = Infestation shot
+ | description = Spawns allied [[Blue Spider]]s from killed enemies.
+ | quality     = 3
+ | tags        = summonable spider offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns an allied [[Blue Spider]] from each enemy that is killed.
+* {{Dlc+|r}}{{transformation contribution|Spider Baby}}{{dlc-}}
+
+== Notes ==
+* Enemies do not spawn Blue Spiders when killed by anything not controlled by Isaac (environmental hazards, charmed enemies, death upon clearing room, etc).
+* Enemies do not spawn Blue Spiders when killed by Blue Spiders.
+* Blue Flies can also spawn Blue Spiders.
+* Enemies killed by [[familiar]]s will spawn Blue Spiders.
+* {{dlc|nr}} Destroyed {{e|Shopkeeper}}s will spawn Blue Spiders.
+* Destroying normally invulnerable enemies such as {{e|Poky}} will spawn Blue Spiders.
+* {{dlc|nr}} Killing {{E|Pin}} will give one Blue Spider for each of his segments.
+* {{E|Dark Ball}}s spawned by {{E|Little Horn}} can also drop Blue Spiders upon death.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s can’t spawn spiders.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop can’t spawn spiders.
+* {{I|Jar of Flies}}: Blue Flies spawned by Jar of Flies spawn Blue Spiders, and Blue Spiders spawned by Infestation 2 grant extra flies for Jar of Flies
+
+== In-game Footage ==
+{{#ev:youtube|OlmnCfMzwcI}}
+
+{{nav|spider}}

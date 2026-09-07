@@ -1,0 +1,23 @@
+{{infobox trinket
+ | name = Pulse Worm
+ | id = 9
+ | quote = Wub wub!
+ | description = Tears pulsate in size as they travel.
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Tears pulsate in size between 1x to 1.6x as they travel. The effect changes the hitbox of the tear but does not affect damage.
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}} or {{e|Scolex}}.{{dlc-}}
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: Each copy multiplies the maximum tear size.
+* {{i|Godhead}}: The damaging aura pulses along with the tear.
+
+== In-game Footage ==
+{{#ev:youtube|EmXOuW1D3HQ}}
+
+{{nav|worm|fr=Ver Pulsant}}

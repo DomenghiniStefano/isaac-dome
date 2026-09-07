@@ -1,0 +1,52 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 671
+ | quote       = Power of love
+ | description = Gives Isaac a permanent [[stat]] boost whenever he heals with {{e|Red Heart}} pickups.
+ | quality     = 1
+ | tags        = nolostbr summonable
+ | unlocked by = Candy Heart
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Gives Isaac one of the following [[stat]] boosts per half heart healed with {{e|Red Heart}} pickups or when gaining an extra filled heart container:
+** +0.02 [[speed]].
+** +0.05 [[tears]].
+** +0.10 flat [[damage]].
+** +0.25 [[range]].
+** +0.02 [[shot speed]].
+** +0.10 [[luck]].
+* Spawns a {{e|Red Heart}} when picked up.
+
+== Notes ==
+* Items/effects that directly heal Isaac (such as {{i|Yum Heart}}, {{p|XIX - The Sun}}, {{i|Charm of the Vampire}}, etc.) do not trigger stat boosts from Candy Heart.
+* Healing using {{e|Rotten Heart}}s triggers the stat boosts for Candy Heart.
+* Picking up an {{e|Eternal Heart}} while already having one so that a new Red Heart container is formed provides stat boosts.
+** The stat boosts are equivalent to picking up a full {{e|Red Heart}}.
+** Picking up the first {{e|Eternal Heart}} does not grant stat boosts.
+** Adding the second {{e|Eternal Heart}} to Isaac's health directly (e. g. by using {{i|Prayer Card}}) does not give stat boosts.
+* This item does not give stats when adding to {{c|Tainted Bethany}}'s blood charges.
+* This item is useless for characters that can't have red hearts (e.g. {{c|The Lost}}, {{c|Keeper}}, {{c|???}}, etc.).
+* Any healing prior to picking up Candy Heart will not provide stat boosts.
+* {{dlc|nr+}} The stat bonuses are "stored" on the Candy Heart. Dropping or losing it in any way won't immediately revert the bonuses gained, only when Isaac's stats are updated again. The respective stat changed is the one that loses the Candy Heart bonuses.
+** The bonus stats will be lost if Isaac's stats are updated by dropping out of the game or if the game crashes.
+* The stat bonuses are [[seed]]ed, meaning the same stat ups will apply in the same order in the same seed.
+* Strategy Suggestion: Leaving Soul Hearts on the ground during a level allows the player to force Red Heart damage and still offer Devil/Angel Deal protection for the next floor.
+
+== Synergies ==
+* {{i|Hypercoagulation}}:/{{C|Tainted Magdalene}}: Can provide infinite stat boosts, if the dropped hearts are caught in time.
+* {{i|Maggy's Bow}}: Increases the stat boosts given by Candy Heart, provided extra Red health was restored.
+
+== Interactions ==
+* {{T|Apple of Sodom}}: This doesn't give the stat increases when picking up hearts to make spiders.
+* {{I|Candy Heart}}: This item isn't affected by stacking.
+
+== In-game Footage ==
+{{#ev:youtube|TW8XuvLFOu8}}
+
+== Trivia ==
+* This item is the red heart equivalent to {{I|Soul Locket}}, and gives half as many stats per heart collected, comparatively.
+
+{{nav|magdalene unlock|the beast unlock|fr=Cœur Confit}}

@@ -1,0 +1,47 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 442
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = Loss is power
+ | description = {{dlc|nr}} When at exactly one {{E|Red Heart}}, +0.75 [[tears]], +1.5 [[range]], and +0.2 [[shot speed]].<br>{{dlc|r}} When at exactly one {{E|Red Heart}}, +2 [[fire rate]], +1.5 [[range]], and +0.2 [[shot speed]].
+ | quality     = 1
+ | tags        = nolostbr summonable tearsup
+ | devil price = {{dlcalt|2|r=1}}
+ | unlocked by = Dark Prince's Crown
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* When at exactly 1 {{E|Red Heart}}, some of Isaac's stats are increased.
+** {{Dlc|nr}} +0.75 [[tears]].
+** {{Dlc|r}} +2.0 [[fire rate]]. The bonus can break the soft tears cap.
+** +1.5 [[range]].
+** {{Dlc|nr}} +1 [[tear falling speed]].
+** +0.2 [[shot speed]].
+* The effect is lost any time Isaac gains or loses Red Hearts.
+** The crown will glow red while active; if inactive, it will appear black.
+
+== Notes ==
+* Full Bone Heart containers are counted towards the maximum.
+* {{E|Rotten Heart}}s count as Red Hearts.
+* This item pairs well with {{C|Eve}}, since she starts with {{i|Whore of Babylon}}, and is the only character that can gain Whore of Babylon's effect at 1 heart.
+* This item does not affect {{C|???}}, {{C|The Lost}}, {{C|The Soul}}, {{dlc|r}}{{C|Black Judas}}, {{C|Tainted Judas}}, {{C|Tainted ???}}, {{C|Tainted Lost}}, {{C|Tainted Soul}}, or {{C|Tainted Bethany}} since they cannot gain Red Hearts.
+* This item only affects {{C|Keeper}} and {{C|Tainted Keeper}} when he has only one [[Health#Coin Hearts|Coin Heart]].
+* This item only affects {{C|The Forgotten}} when he has one full Bone Heart.
+* The effect does not stack with multiple Dark Prince's Crowns.
+
+== In-game Footage ==
+{{#ev:youtube|emmFSBkDAOA}}
+
+== Gallery ==
+<gallery>
+File:Collectible Dark Princes Crown active.png|Appearance of the crown while active.
+</gallery>
+
+== Trivia ==
+* This item is the first ''Afterbirth+'' item by ID number.
+* This is the demonic counterpart of the {{i|Crown Of Light}}.
+* Prior to ''Repentance'', the item's name was ''Dark Princes Crown'', without an apostrophe.
+
+{{nav|azazel unlock|delirium unlock|fr=Couronne des Ténèbres}}

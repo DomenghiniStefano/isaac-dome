@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | id          = 334
+ | quote       = I feel all
+ | description = Adds 3 [[Red Heart Container]]s.
+ | quality     = 3
+ | tags        = nolostbr
+ | devil price = {{dlcalt|1|r=2}}
+ | unlocked by = The Body
+}}
+
+{{cit|up}}
+
+== Effect ==
+* Adds three full [[Red Heart Container]]s.
+
+== In-game Footage ==
+{{#ev:youtube|ItssibqS9m4}}
+
+== Trivia ==
+* This item, along with {{i|The Mind}} and {{i|The Soul}}, are references to the [[wikipedia:Alchemical symbol#Three primes|Three Primes of Alchemy]].
+** The designs of these items appear to be that of [[Wikipedia:Triquetra|Triquetra]], a Christian symbol of the Trinity.
+* The item's description, along with those of {{i|The Mind}} and {{i|The Soul}}, are references to the three attributes commonly ascribed to God in Christian theology: omniscience, omnipotence, and omnipresence. For The Body, it is omnipresence, the ability to be everywhere, thus to "feel all".
+* By itself (without other items/pickups), the Body grants the most amount of Red Heart Containers out of all items in the game, and is the only one that grants three Red Heart Containers.
+* Between this item, [[The Mind]], and [[The Soul]], The Body is the only one that cannot be summoned via the {{i|Lemegeton}}.
+
+{{nav|the lost unlock|blue baby boss unlock|fr=Le Corps}}

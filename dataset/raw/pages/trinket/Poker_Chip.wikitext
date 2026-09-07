@@ -1,0 +1,46 @@
+{{infobox trinket
+ | dlc         = a
+ | name        = Poker Chip
+ | id          = 76
+ | quote       = It's double down time!
+ | description = Chests have a 50% chance of paying out with extra pickups and a 50% chance of replacing all of its contents with an {{E|Attack Fly}}. {{dlc|r+}} If the chest would contain an item of [[quality]] 0-2, it is rechosen to get a +1 quality bonus. Slightly increases the payout chance from {{M|Slot Machine}}s, {{M|Fortune Telling Machine}}s, {{M|Crane Game}}s, {{M|Shell Game}}s and {{M|Shop Restock Machine}}s.
+ | unlocked by = Poker Chip
+}}
+
+{{cit|ut|a}}
+
+== Effects ==
+* If a {{E|Chest}} would contain {{e|Red Heart|text=Hearts}}, {{e|Penny|text=Coins}}, {{e|Bomb}}s, or {{e|Key}}s and [[pills]], [[Cards and Runes|cards, or runes]] (for {{e|Wooden Chest}}s), it has a 50/50 chance to either drop extra consumables or replace all of its contents with an {{E|Attack Fly}}.
+** The affected chests include:
+*** {{E|Chest}}s
+*** {{e|Locked Chest}}s
+*** {{e|Bomb Chest}}s
+*** {{e|Eternal Chest}}s
+*** {{e|Spiked Chest}}s
+*** {{e|Mimic Chest}}s
+*** {{e|Mega Chest}}s
+*** {{e|Haunted Chest}}s
+*** {{e|Wooden Chest}}s
+** This excludes:
+*** {{e|Red Chest}}s
+*** {{e|Old Chest}}s
+*** {{e|Mom's Chest}}
+* Consequently, Poker Chip has no effect in {{s|Chest}} or {{s|Dark Room}}.
+* {{dlc|r}} If opening a {{E|Mega Chest|n}} yields pickups, it can spawn 1-2 Attack Flies alongside the pickups.
+* {{dlc|r+}} If the chest would contain an item of [[quality]] 0-2, it is rechosen to get a +1 quality bonus.
+** If there are no suitable replacement items remaining in the {{ip|Golden Chest}} pool, the {{ip|Treasure Room}} pool can be used instead.
+** The quality improvement is not applied in Chest or Dark Room.
+* {{dlc|r+}} Slightly increases the payout chance from {{M|Slot Machine}}s, {{M|Fortune Telling Machine}}s, {{M|Crane Game}}s, {{M|Shell Game}}s and {{M|Shop Restock Machine}}s.
+
+== Notes ==
+* The effect of Poker Chip does not trigger when it's picked up, nor does it deactivate when it's dropped. Rather, Isaac must leave and re-enter a room for a chest's contents to update.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either doubles gambling payouts. Having both triples them.
+* {{I|Guppy's Eye}}: Provided that the Poker Chip is not smelted, it can be used in conjunction with the eye to open all chests with extra pickups, while dropping the chip for any chests containing flies, nullifying the downside of the trinket.
+* {{i|Sharp Key}}: Enemies killed by keys have a 50/50 chance to spawn extra pickups or an {{E|Attack Fly}}; the attack fly will be instantly killed by the thrown key.
+
+== In-game footage ==
+{{#ev:youtube|Ua2d_UiXti0||inline}} {{#ev:youtube|PwLOvt17emY||inline}}
+
+{{nav|fr=Jeton de Poker}}

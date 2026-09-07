@@ -1,0 +1,47 @@
+{{Infobox boss
+ | dlc         = r
+ | files name  = Lil Blub (Downpour)
+ | id          = 901
+ | variant     = 0
+ | name        = Lil Blub
+ | environment = <u>Boss</u><br>{{floor|Downpour}}{{floor|Dross}}<br>{{room|boss challenge}}
+ | base hp     = 200
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Aquarius}} (1% chance)
+}}
+
+'''Lil Blub''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in {{dlc|r}} {{s|Downpour}} and {{dlc|r}} {{s|Dross}}.
+__TOC__
+
+== Behavior ==
+Lil Blub diagonally floats around the room and performs the following attacks:
+* Spits up 2-3 {{e|Small Leech|text=Small Leeches}} that swarm around him, blocking shots.
+* Spits out a single larger Small Leech that chases Isaac instead.
+* Fires 6 streams of projectiles outwards in a radial burst. These projectiles deal a full heart of damage.
+* Jumps once towards Isaac, creating a burst of disorganized arcing projectiles upon landing.
+** Lil Blub can only use this attack when below a certain threshold of HP.
+The previous two attacks also cause any Small Leeches that are swarming around Lil Blub to start chasing Isaac. Lil Blub cannot use any of these attacks if there are 6 or more Small Leeches in the room.
+* Jumps towards Isaac 3-5 times, firing projectiles in the cardinal and diagonal directions upon landing. The cardinal shots are faster and travel further than the diagonal ones.
+** Any leeches Lil Blub lands on are instantly killed.
+** Lil Blub can only use this attack when below 25% HP, and greatly prefers using it if he can.
+
+Upon death, he spawns 2-4 Small Leeches and bursts into a fountain of projectiles that rain down for a few seconds in a wide area.
+
+== Gallery ==
+<gallery>
+File:Boss Lil Blub (Dross) portrait.png|Lil Blub's splash art when encountered in Dross.
+File:Boss Lil Blub (Dross) ingame.png|Lil Blub's appearance in Dross.
+File:Boss Lil Blub concept.png|Concept art for Lil Blub.
+</gallery>
+
+== Trivia ==
+* Lil Blub's original name in Antibirth was "[[anti:Beelzeblub|Beelzeblub]]", and he is referenced as such in the game files.
+** In pre-release content for Repentance, his name was Lil Bub, without the "L".
+* Lil Blub appears to be a drowned version of {{e|The Duke of Flies}}.
+** It is possible that the shell worn by {{e|Min-Min}} is his posthumous version, as this shell that resembles {{e|The Husk}}, the posthumous version of the Duke of Flies.
+* When encountered in the {{s|Dross}}, the color palette of Lil Blub and his attacks is altered to fit the floor. {{e|Wormwood}} also features this.
+
+{{nav|boss|fr=Bubulle}}
+[[Category:Chapter 1.5 bosses]]
+[[Category:Downpour bosses]]
+[[Category:Dross bosses]]
+[[Category:Debut bosses in Repentance]]

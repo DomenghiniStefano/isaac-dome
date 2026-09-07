@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 627
+ | quote       = ???
+ | description = Combined with {{i|Knife Piece 1|n}}, creates a knife [[familiar]] that damages enemies and can open the door to the {{s|Corpse}}.
+ | quality     = 0
+ | tags        = uniquefamiliar lazarusshared noeden quest
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Combines with {{i|Knife Piece 1}} to form a knife familiar that launches itself in the direction Isaac shoots, dealing 25 damage to and piercing enemies it hits.
+* Launching it at the red door at the end of {{s|Mausoleum}}/{{s|Gehenna}} II will open the door, destroying the knife in the process.
+
+== How to Acquire ==
+* In {{s|Mines}}/{{s|Ashpit}} II, if Isaac has {{i|Knife Piece 1}}, there is a tall room with a broken minecart track. Scattered across the floor are three yellow buttons that will repair pieces of the track. Once all buttons have been pressed, the minecart becomes rideable, which will take Isaac to an abandoned area, with Knife Piece 2 at the end. Picking up the Knife Piece will trigger a chase sequence in which {{E|Mother's Shadow}} will pursue Isaac through the corridor. Getting to the end of the area will seal it off.
+
+== Notes ==
+* Obtaining Knife Piece 2 without {{I|Knife Piece 1}} will spawn a knife blade familiar that follows Isaac but has no other effect.
+* The door to the abandoned area can be opened with two explosions or items like {{i|Dad's Key}}; however, Isaac will not be able to reach the door unless he has flight or all three buttons have been pressed anyway. If the door is already open, the minecart cannot be ridden but the path can be walked along.
+* While in the abandoned area, all of Isaac's items and consumables are removed. Extra Life items will not activate despite still visually appearing beside the health bar. However, any items with reroll protection will still function as normal. (This includes {{I|Knife Piece 1}} itself.)
+* If a character has inherent [[flight]], they will retain it in the abandoned area, making it significantly easier.
+* This room, as well as the buttons to reach it, will only be generated if Knife Piece 1 was already collected.
+* The buttons can be bypassed with flight and 2 bombs to destroy the door. Upon exiting the room, the rail pathway will be built in order to prevent softlocks from using temporary flight methods such as {{I|The Bible}}.
+* The red door can alternatively be opened using {{i|Cracked Orb}}, {{i|Sharp Key}}, or {{p|Soul of Cain}}.
+* If Isaac takes Knife Piece 2 and is somehow able to immediately leave the room before {{E|Mother's Shadow}} fully activates (usually by using {{i|Mama Mega!}} earlier in the floor), the rest of the sub-area will not have reset, and the doors leading to the exit will all be locked. This forces the player to re-enter the Knife Piece 2 room, which triggers ''another'' activation of {{E|Mother's Shadow}}, causing two instances of Mother's Shadow to pursue the player during the escape sequence.
+* It is possible to find a {{r|Crawl Space}} as normal in this area, which will be the same crawlspace as any other generated on the normal floor. Entering the crawlspace will allow Isaac to use his normal items and consumables, but Mother's Shadow will also be present. Using any teleport card or item will teleport Isaac to a random room on the abandoned area map. Any items obtained while in this crawlspace will remain upon leaving the area, but will not be able to be used while in the abandoned area.
+** It is possible to softlock the run by entering a crawlspace with the key needed to escape the room. Upon leaving the crawlspace, the key will be gone.
+** The {{r|Black Market}} or {{r|I AM ERROR}} room can potentially be entered from the crawlspace. Going through the trapdoor there will end the pursuit and lead to Depths II (or alternatives). Isaac will keep all his items, including those bought in the market.
+* The knife familiar created from both knife pieces takes 5th priority on the line of following familiars.
+* '''Knife Piece 2''' takes 6th priority on the line of following [[familiar]]s while the knife familiar created from both knife pieces takes 5th priority.
+* It's possible (though useless) to acquire another Knife Piece 2 using {{i|Forget Me Now}} or {{i|R Key}}.
+* {{C|Tainted Eve}} retains her ability to create clots, but loses access to {{I|Sumptorium}}. Caution should be used if entering with low health as clots cannot be reabsorbed until exiting.
+
+== In-game Footage ==
+{{#ev:youtube|hqL2twpQ-hM}}
+
+== Trivia ==
+* [[anti:Knife Piece 2|Knife Piece 2]] is from the ''Antibirth'' mod. In ''Antibirth'', Isaac would acquire Knife Piece 2 by pressing the right sequence of buttons in a special room instead of entering the abandoned area and being chased by Mother’s Shadow. Once the sequence was solved, Knife Piece 2 would always automatically appear in the center of the special room on subsequent runs.
+** Knife Piece 2 was also not the final piece, with 3 knife pieces being needed to be combined to make the knife familiar. Moreover, the sprites for Knife Piece 2 was only the left half of the blade, with the 3rd knife piece being the right half.
+
+{{nav|fr=2ème Morceau de Couteau}}

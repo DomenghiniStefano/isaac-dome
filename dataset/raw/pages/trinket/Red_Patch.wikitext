@@ -1,0 +1,28 @@
+{{infobox trinket
+ | name        = Red Patch
+ | id          = 40
+ | quote       = Your rage grows
+ | description = Grants a chance to gain +1.8 [[damage]] for the current room upon taking damage.
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Grants a chance of increasing [[damage]] by 1.8 for the current room upon taking damage.
+** The chance depends on the [[luck]] stat, and the formula used to determine the chance is: {{dlc|nr+}} <math>\frac1 { 5 - \left \lfloor \mathit{Luck}  \times 0.5\right \rfloor}</math>
+*** At 0 luck the chance is 20%, maxing out at 100% at {{dlc|nr+}} 8 / {{dlc|r+}} 16 luck.
+
+== Notes ==
+* Can trigger multiple times in the same room and stack with itself or {{i|Razor Blade}}, which provides a similar effect.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: At base luck, having either increases the chance to 33% and having both to 50%.
+
+== In-game Footage ==
+{{#ev:youtube|wSRBZ2uDDIs}}
+
+== Trivia ==
+* This trinket has the same flavor text as {{t|Samson's Lock}}.
+
+{{nav|fr=Lambeau de Tissu}}
+[[Category:Damage-triggered items]]

@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | id          = 201
+ | quote       = {{dlcalt|Concussive tears|r=DMG up + concussive tears}}
+ | description = +0.3 [[damage]]. Adds a chance to shoot [[Status Effects#Confusion|concussive tears]], causing enemies to walk around randomly.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.3 [[damage]].
+* Adds a chance to shoot [[Status Effects#Confusion|concussive tears]], causing enemies to walk around randomly.
+
+== Notes ==
+* Concussive tear effect depends on the [[luck]] stat, and goes up to 100% at 27 Luck.
+
+== Synergies ==
+* {{dlc+|a+nr}} {{I|Finger!}}: Finger can also apply the confusion effect.{{dlc-}}
+* {{dlc|r}} {{I|Notched Axe}}: Picking up Iron Bar will refill Notched Axe's charge bar.
+
+== In-game Footage ==
+{{#ev:youtube|u4sQfwwiims}}
+
+== Trivia ==
+* This item is used in {{chal|Head Trauma}}.
+
+{{nav|fr=Lingot de Fer}}
+[[Category:Tear-modifying items]]

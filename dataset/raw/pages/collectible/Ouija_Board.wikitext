@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | id          = 115
+ | quote       = {{dlcalt|Spectral tears|r=Spectral tears + tears up}}
+ | description = Grants [[spectral tears]] that travel through [[obstacles]] (but not enemies). {{dlc|r}} +0.5 [[tears]].
+ | quality     = 2
+ | tags        = {{dlc|nr+|nolostbr}} {{dlc|r+|offensive}} summonable {{dlc|r+|tearsup}}
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Grants [[spectral tears]] that travel through [[obstacles]] (but not enemies) instead of breaking on impact with them.
+* {{dlc|r}} +0.5 [[tears]].
+
+== Synergies ==
+* {{i|The Parasite}}: When tears pass through solid objects, they will split, resulting in many tears shooting out from every rock the original tear passed through.
+
+== Interactions ==
+* {{c|Azazel}}/{{i|Brimstone}}/{{c|Tainted Azazel}}: The beam becomes translucent, but [[spectral]] has no effect.
+* {{i|Dr. Fetus}}: Bombs will become translucent and pass through objects.
+* {{i|Epic Fetus}}: Spectral has no effect.
+* {{C|The Forgotten}}: Spectral provides no benefit for both characters, as the bone club can hit through obstacles and {{C|The Soul}} has spectral tears passively.{{dlc-}}
+** The exception is with any synergy on The Forgotten that creates normal tears.
+* {{C|The Lost|a}}: Spectral provides no benefit, as The Lost starts with spectral tears by default.
+* {{i|Mom's Knife}}: The knife becomes translucent, but [[spectral]] has no effect.
+* {{i|Technology}}/{{i|Technology 2}}: Allows the laser to go through objects.
+
+== In-game Footage ==
+{{#ev:youtube|7GsZB9ePjVg||inline}} {{#ev:youtube|ag6RRYVyn_s||inline}}
+
+== Trivia ==
+* A Ouija Board is a flat board marked with the letters of the alphabet, the numbers 0–9, the words "yes", "no", "hello" (occasionally), and "goodbye", along with various symbols and graphics. It's believed to be a "spirit communicator" allowing you to talk with spirits.
+* Isaac's expression seems to be from the film "The Ring" after a victim has been killed after 7 days.
+
+{{nav|fr=Planche de Ouija}}

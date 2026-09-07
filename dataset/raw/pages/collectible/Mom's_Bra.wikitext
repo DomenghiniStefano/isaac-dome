@@ -1,0 +1,37 @@
+{{infobox activated collectible
+ | id          = 39
+ | quote       = Mass {{dlcalt|Fear|r=paralysis}}
+ | description = [[Petrification|Petrifies]] all enemies in the current [[room]] for 4 seconds.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = mom offensive
+ | recharge    = 3
+}}
+
+{{cit|a}}
+
+== Effects ==
+* [[Petrification|Petrifies]] all enemies in the current [[room]] for 4 seconds.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc+|a+}} This item has a 1% chance to spawn when bombing {{m|Mom's Dressing Table}}. Multiple copies can be obtained through this method.{{dlc-}}
+* Isaac keeps wearing the bra until he leaves the room, even after the petrifying effect has worn off.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns red wisps in the middle ring. Wisps' tears have a 5% chance to [[petrify]] enemies.}}
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|W-VWYjjtRlQ||inline}} {{#ev:youtube|Z0IeC57gUrU||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Moms Bra.png|{{plat|3DS}} The icon of Mom's Bra as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* Isaac wearing Mom's Bra on his head may be a reference to the Gatekeeper from the movie Little Nicky (2000).
+
+{{nav|yes mother|mom|fr=Soutien-Gorge de Maman}}

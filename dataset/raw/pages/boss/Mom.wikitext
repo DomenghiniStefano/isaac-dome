@@ -1,0 +1,158 @@
+{{infobox boss
+ | id          = 45
+ | appearance  = (scale:1)
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br><u>Main path</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br><u>Alternate path</u><br>{{floor|Mausoleum}}{{floor|Gehenna}}
+ | base hp     = 645
+ | pool        = {{i|The Polaroid}} and {{i|The Negative}}<br>Random {{ip|Boss}} item if neither are unlocked<br>{{s|The Void}} Gateway if unlocked (5% Chance, requires +10 [[Damage]] or +20 Items)<br>Gateway to {{r|Boss Rush}} (Time under 20:00, {{dlc|r}} or 25:00 in Mausoleum/Gehenna)
+}} {{disambig msg|the boss|the transformation|Yes Mother (Transformation)|the final boss of [[Corpse]]|Mother}}
+
+'''Mom''' is the [[boss]] that appears on the second floor of [[Chapter 3]] ({{s|Depths}}, {{s|Necropolis}}, {{s|Dank Depths}}). She is the initial final boss of the game, and defeating her for the first time unlocks both the [[Endings|Epilogue]] ending and [[Chapter 4]] ({{s|Womb}}).
+
+* {{dlc+|r}} She also appears as a stronger version on the second floor of [[Chapter 3.5]] ({{s|Mausoleum}}, {{s|Gehenna}}).{{dlc-}}
+
+== Behavior ==
+Mom appears in a unique boss room that has a boss door in the center of all sides of the room. Mom can use these doorways to perform various attacks:
+
+* Stomps on Isaac's position, damaging nearby enemies and destroying obstacles. This attack is telegraphed by a growing shadow and her grunting.
+** She always begins the fight by stomping in the center of the room.
+** {{dlc|nr}} Stomping is considered as explosion damage.
+*** {{dlc|r}} Stomping is now considered as contact damage in [[Repentance]].
+** The foot itself does no contact damage.
+*** {{dlc|r}} Changed to deal contact damage in '''Repentance'''.
+* If Isaac is near a door, Mom reaches out from it with her hand, dealing contact damage.
+* Sticks out a piece of flesh from a door and spawns a [[Monsters|Monster]] with a maximum of 3 alive at once:
+:: {{e|Gusher}}
+:: {{e|Frowning Gaper}}
+:: {{e|Globin}}
+:: {{e|Attack Fly}}
+:: {{e|Pooter}}
+:: {{e|Mulligan}}
+:: {{e|Maggot}}
+:: {{e|Charger}}
+:: {{e|Horf}}
+:: {{e|Maw}}
+:: {{e|Red Maw}}
+:: {{e|Clotty}}
+* Sticks an eye out of a door, which does not attack but can deal contact damage.
+* All enemies spawned by Mom die alongside her, except for Globins, which collapse into piles of goo.
+Mom deals one heart of contact damage.
+
+Upon defeating Mom, all boss doors in the arena will disappear, trapping Isaac in the room unless he has a collectible or pickup effect that can teleport him out.
+
+== {{dlc+|r}} Behavior in Mausoleum/Gehenna ==
+A stronger version of Mom can be fought on the second floor of the {{s|Mausoleum}} and {{s|Gehenna}}. This version of Mom has noticeably bluer veins on her leg and stronger variations of her attacks:
+
+* Stomps 3 times on Isaac's position in rapid succession, with the third stomp releasing explosions in the cardinal directions.
+** If an eye is already attacking, only 1 stomp will be performed.
+** She always begins the fight by stomping once in the center of the room, just like in Chapter 3.
+* Sticks an eye out of a door, and if Isaac is in line of sight, it shoots 2 {{i|Brimstone}} beams in a helix pattern towards the door on the opposite side.
+** If Mom had already initiated the 3-stomp attack, the eyes opened during it won't fire the beams.
+
+* Sticks out a piece of flesh from a door and spawns a Monster:
+:: {{e|Attack Fly}}
+:: {{e|Cursed Globin}}
+:: {{e|Fetal Demon}}
+:: {{e|Rag Man's Ragling}}
+:: {{e|Sucker}}
+:: {{e|Psychic Horf}}
+* Unlike in Chapter 3, Mom never uses her hand attack.
+* All enemies spawned by Mom die alongside her, except for Cursed Globins, which collapse into 2 piles of goo.
+Mom deals a whole heart of contact damage.
+This version of Mom never spawns as a champion.
+{{dlc-}}
+
+== Champion Versions {{unlockable}} ==
+: {{bc|7}}: Has 793.4 HP (23% more), summons monsters more often, and summons a different variation of enemies that were added in the ''Wrath of The Lamb'' expansion of the original game, which are:
+:: {{e|Spider}}
+:: {{e|Big Spider}}
+:: {{e|Trite}}
+:: {{e|Buttlicker}}
+:: {{e|Keeper}}
+: {{bc|1}}: Does not summon monsters at all, and instead repeatedly uses her foot stomp, which has increased speed. Occasionally, she will pause her stomps briefly to use one or both of the following attacks:
+:* Stick an eye out from one of the doors, which shoots three blood shots in a spread formation at Isaac.
+:* Reaches in with her hand through one of the doors, dealing contact damage, if Isaac is close enough to one.
+
+== Gallery ==
+<gallery>
+File:Boss_Mom_flesh_ingame.png|Mom's flesh in-game.
+File:Boss_Mom_hand_ingame.png|Mom's hand in-game.
+File:Boss_Mom_Eye_ingame.png|Mom's eye in-game.
+File:Boss Mom foot blue ingame.png|Blue Champion Mom's leg.
+File:Boss Mom flesh blue ingame.png|Blue Champion Mom's flesh.
+File:Boss Mom hand blue ingame.png|Blue Champion Mom's hand.
+File:Boss Mom eye blue ingame.png|Blue Champion Mom's eye.
+File:Boss Mom door blue ingame.png|Blue Champion Mom's boss door.
+File:Boss Mom foot red ingame.png|Red Champion Mom's leg.
+File:Boss_mom_flesh_red.png|Red Champion Mom's flesh.
+File:Boss Mom hand red ingame.png|Red Champion Mom's hand.
+File:Boss Mom eye red ingame.png|Red Champion Mom's eye.
+File:Boss Mom door red ingame.png|Red Champion Mom's boss door.
+File:Boss Delirium Mom ingame.png|Mom as one of {{e|Delirium}}'s forms.
+File:Boss_Mom_Alternate_ingame.png|{{dlc|r}} Mom's appearance in Mausoleum and Gehenna.
+File:Boss_Mom_flesh_Rebirth_ingame.png|{{dlc|nr}} Mom's flesh in-game prior to Repentance.
+File:Boss_Mom_hand_Rebirth_ingame.png|{{dlc|nr}} Mom's hand in-game prior to Repentance.
+File:Boss_Mom_Eye_Rebirth_ingame.png|{{dlc|nr}} Mom's eye in-game prior to Repentance.
+</gallery>
+
+== Audio ==
+{{sound table header}}
+{{sound table row | [[File:Mom.wav]] | Mom calling Isaac by name. }}
+{{sound table row | [[File:Grunt.wav]] | One of the grunts Mom makes preceding her stomp attack. }}
+{{sound table row | [[File:Mom Evil laugh.wav]] | Mom laughing after landing a hit on Isaac. }}
+{{sound table row | [[File:MomDeath.wav]] | Mom wailing upon defeat. }}
+|}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | The Womb, The Harbingers, A Cube of Meat, Purist, XXXXXXXXL, SPEED!, Have a Heart, PRIDE DAY!, Onan's Streak, The Guardian, Aprils fool, A Halo, Item Descriptions }}
+
+== Notes ==
+* Defeating Mom for the first time changes the current [[Savefile Images|savefile's image]] and will allow unlocks to be obtained with mods enabled.
+* The 'Stats' section of the menu keeps a tally of "Mom kills". However, this refers to how many times you've defeated Mom completely, as in, how many times you've killed {{e|Mom's Heart}}, not just Mom.
+* Using {{i|The Bible}} or {{p|XV - The Devil?}} during the Mom boss fight kills her instantly and unlocks {{i|The Halo}}.
+* Using {{p|II - The High Priestess}} during the fight with Mom results in Isaac being targeted instead of the enemy with the highest health. However, the stomp can still damage Mom.
+* {{dlc|nr}} Mom's stomp attack counts as a bomb; this means Isaac can be immune to it with {{i|Pyromaniac}} or {{i|Host Hat}}.
+** {{dlc|nr}} With {{i|Pyromaniac}}, Isaac can be healed when stomped.
+** {{dlc|nr}} Red Champion Mom is greatly negated with {{i|Pyromaniac}} or {{i|Host Hat}}.
+** {{dlc|r}} Mom's stomp attack now deals contact damage, causing immunity to explosions to no longer avoid damage from the stomp.
+* {{i|The Polaroid}} will always spawn on the left pedestal and {{i|The Negative}} is always on the right.
+
+== Trivia ==
+* In Mom's entry in the bestiary, her "kills" value will never increase. It is unclear if this is a lore implication or a bug.
+* In [https://foursouls.com/cards/g2-credit_card/ The Binding of Isaac: Four Souls rendition] of [[Credit Card]], the name "Magdalene O. Moriah" can be seen carved in the credit card. The name was reused on [https://twitter.com/edmundmcmillen/status/1087851233585418241 the Four Souls+ rendition] of {{I|Divorce Papers}}. [[Edmund McMillen|Edmund]] has confirmed that this is indeed Mom's full name.
+** The initials spell out "M.O.M.".
+** {{dlc|r}} This is further confirmed in-game during the background conversation during the [[Ascent]], where Dad calls Mom "Maggy" as he tells her to shut up.
+** The last name "Moriah" is likely a reference to the [[wikipedia:Moriah|biblical location of the same name]]. In the Bible, it is said that Moriah is where Abraham almost sacrificed his son before God sent an angel to stop his hand.
+** The playable character {{c|Magdalene}} shares a first name with Mom, but whether or not the two of them have connections remains yet to be known.
+* According to Edmund, the [https://twitter.com/edmundmcmillen/status/1217899733005455361?s=21 occupations of Mom and Dad] are stay-at-home mom and handyman respectively.
+* Mom is voiced by '''Carla Kihlstedt'''.
+* The battle theme for this boss is "Matricide", a term for the killing of one's own mother.
+* Mom appeared in the original ''The Binding of Isaac.''
+** In the original, Mom's voice was provided by '''Michelle Schroeder-Lowrey''', an associate of Jordan Fehr, the sound designer.
+** Unlike in ''Rebirth'', Mom would shout "Isaac!" whenever she exposed her eye.
+** The battle theme in the original game was "Thine Wrath..."
+* Using {{i|The Bible}} and killing Mom instantly is a reference to how a bible hits her head in the epilogue of the game, knocking her out or killing her.
+* Mom's eye appearing out of the doors could represent Mom's peeping in Isaac's room to check on him.
+* Mom constantly screaming "Isaac" seems to suggest how Mom was desperately trying to find her son.
+* Mom is the only final boss that has Champion variants.
+* During the versus screen, the "Isaac!" line from Mom can be heard, despite the battle not starting yet. She is one of {{dlc|nr}} seven/{{dlc|r}} five bosses that can be heard during the versus screen; the other {{dlc|nr}} six/{{dlc|r}} four are {{e|Big Horn}}, {{e|The Stain}}, {{e|The Forsaken}}, {{dlc|nr}} {{e|Mom's Heart}}, {{dlc|nr}} {{e|It Lives!}}, and {{e|Mother}}.
+* The skirt she wears on her in-game sprite is difficult to see in regular play, as her leg extends past the screen. Using the {{i|Dataminer}} or the {{i|Meat Cleaver}} can make the skirt visible.
+** {{dlc|a+}} Delirium's Mom form appears to wear a pile of flesh and organs rather than a skirt.
+* A disembodied version of Mom's leg stomp attack can be summoned as part of the effects of {{p|II - The High Priestess}}, {{t|Mom's Toenail}}, {{i|Broken Shovel 1}}, and {{p|II - The High Priestess?}}.
+* {{dlc|a+}} Prior to [[Booster Packs#Booster Pack #5|Booster Pack #5]], Globins spawned by Mom could turn into {{e|Dank Globin}}s if she was fought in Dank Depths.
+* {{dlc+|r}} When she is fought in the {{s|Mausoleum}}, her leg appears to be in a much more sickly state, with many varicose veins lining it.{{dlc-}}
+** Her hand also has a unique updated sprite, despite the fact that she never uses it in this fight.
+* {{e|Mother}} could be considered as her posthumous version.
+* Mom later made appearances in The Legend of Bumbo and Mewgenics, two other games by Edmund.
+
+{{nav|mom unlock|boss|fr=Maman}}
+
+[[Category:Final bosses]]
+[[Category:Chapter 3 bosses]]
+[[Category:Chapter 3.5 bosses]]
+[[Category:Depths bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Mausoleum bosses]]
+[[Category:Gehenna bosses]]
+[[Category:Debut bosses in Rebirth]]

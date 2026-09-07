@@ -1,0 +1,34 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 169
+ | quote       = Looks familiar...
+ | description = While held, counts as one of three items needed to transform into {{tf|Guppy}}.
+ | unlocked by = Kid's Drawing
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* While held, acts as one of the three items needed for {{tf|Guppy}}.
+** The effect is lost if Kid's Drawing is dropped.
+** This includes instantly losing the transformation if dropping the trinket results in having only 2 out of 3 Guppy items required for the transformation.
+
+== Notes ==
+* If multiple copies of the trinket are obtained, they will each count as a Guppy item.
+
+== Interactions ==
+* {{A|Golden Trinket}}: Counts as holding 2 Guppy items.
+* {{i|Mom's Box}}: No effect, even with {{A|Golden Trinket}}.
+** {{dlc|r+}} The Internal Item Description claims otherwise. See [[#Bugs|bugs]].
+
+== In-game footage ==
+{{#ev:youtube|OnnLn3jmLlw}}
+
+== Trivia ==
+* Unlike {{tf|Guppy}} items, this trinket doesn't have the "Guppy" tag (in items_metadata.xml) and seems to be hard-coded to count toward the total. This may have to do with how trinkets in general, with or without an applicable tag, don't count toward transformations or unlock requirements.
+* This is the only trinket ({{dlc|r+}} one of the only three trinkets) that counts toward a transformation, {{dlc|r+}} the other ones are {{t|Bob's Bladder}} and {{t|A Missing Page}}.
+
+== Bugs ==
+* {{bug|dlc=r+|Although the trinket is supposed to count as 2 Guppy items with Mom's Box according to internal item descriptions, it still counts only as one.}}
+
+{{nav|guppy|cat|tainted lost unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Dessin d'Enfant}}

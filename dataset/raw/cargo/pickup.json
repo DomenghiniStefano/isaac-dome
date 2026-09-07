@@ -1,0 +1,681 @@
+[
+  {
+    "_pageName": "0 - The Fool",
+    "alias": "0 - The Fool",
+    "dlc": "31",
+    "id": "1",
+    "type": "card"
+  },
+  {
+    "_pageName": "0 - The Fool?",
+    "alias": "0 - The Fool?",
+    "dlc": "24",
+    "id": "56",
+    "type": "card"
+  },
+  {
+    "_pageName": "2 of Clubs",
+    "alias": "2 of Clubs",
+    "dlc": "31",
+    "id": "23",
+    "type": "card"
+  },
+  {
+    "_pageName": "2 of Diamonds",
+    "alias": "2 of Diamonds",
+    "dlc": "31",
+    "id": "24",
+    "type": "card"
+  },
+  {
+    "_pageName": "2 of Hearts",
+    "alias": "2 of Hearts",
+    "dlc": "31",
+    "id": "26",
+    "type": "card"
+  },
+  {
+    "_pageName": "2 of Spades",
+    "alias": "2 of Spades",
+    "dlc": "31",
+    "id": "25",
+    "type": "card"
+  },
+  {
+    "_pageName": "? Card",
+    "alias": "? Card",
+    "dlc": "30",
+    "id": "48",
+    "type": "special card"
+  },
+  {
+    "_pageName": "A Card Against Humanity",
+    "alias": "A Card Against Humanity",
+    "dlc": "31",
+    "id": "45",
+    "type": "special card"
+  },
+  {
+    "_pageName": "Ace of Clubs",
+    "alias": "Ace of Clubs",
+    "dlc": "28",
+    "id": "27",
+    "type": "card"
+  },
+  {
+    "_pageName": "Ace of Diamonds",
+    "alias": "Ace of Diamonds",
+    "dlc": "28",
+    "id": "28",
+    "type": "card"
+  },
+  {
+    "_pageName": "Ace of Hearts",
+    "alias": "Ace of Hearts",
+    "dlc": "28",
+    "id": "30",
+    "type": "card"
+  },
+  {
+    "_pageName": "Ace of Spades (Card)",
+    "alias": "Ace of Spades",
+    "dlc": "28",
+    "id": "29",
+    "type": "card"
+  },
+  {
+    "_pageName": "Algiz",
+    "alias": "Algiz",
+    "dlc": "31",
+    "id": "39",
+    "type": "rune"
+  },
+  {
+    "_pageName": "Ancient Recall",
+    "alias": "Ancient Recall",
+    "dlc": "28",
+    "id": "53",
+    "type": "special card"
+  },
+  {
+    "_pageName": "Ansuz",
+    "alias": "Ansuz",
+    "dlc": "31",
+    "id": "36",
+    "type": "rune"
+  },
+  {
+    "_pageName": "Berkano",
+    "alias": "Berkano",
+    "dlc": "31",
+    "id": "38",
+    "type": "rune"
+  },
+  {
+    "_pageName": "Black Rune",
+    "alias": "Black Rune",
+    "dlc": "28",
+    "id": "41",
+    "type": "rune"
+  },
+  {
+    "_pageName": "Blank Rune",
+    "alias": "Blank Rune",
+    "dlc": "30",
+    "id": "40",
+    "type": "rune"
+  },
+  {
+    "_pageName": "Chaos Card",
+    "alias": "Chaos Card",
+    "dlc": "31",
+    "id": "42",
+    "type": "special card"
+  },
+  {
+    "_pageName": "Cracked Key",
+    "alias": "Cracked Key",
+    "dlc": "24",
+    "id": "78",
+    "type": "special card"
+  },
+  {
+    "_pageName": "Credit Card",
+    "alias": "Credit Card",
+    "dlc": "31",
+    "id": "43",
+    "type": "special card"
+  },
+  {
+    "_pageName": "Dagaz",
+    "alias": "Dagaz",
+    "dlc": "31",
+    "id": "35",
+    "type": "rune"
+  },
+  {
+    "_pageName": "Dice Shard",
+    "alias": "Dice Shard",
+    "dlc": "30",
+    "id": "49",
+    "type": ""
+  },
+  {
+    "_pageName": "Ehwaz",
+    "alias": "Ehwaz",
+    "dlc": "31",
+    "id": "34",
+    "type": "rune"
+  },
+  {
+    "_pageName": "Emergency Contact",
+    "alias": "Emergency Contact",
+    "dlc": "30",
+    "id": "50",
+    "type": ""
+  },
+  {
+    "_pageName": "Era Walk",
+    "alias": "Era Walk",
+    "dlc": "28",
+    "id": "54",
+    "type": "special card"
+  },
+  {
+    "_pageName": "Get out of Jail Free Card",
+    "alias": "Get out of Jail Free Card",
+    "dlc": "30",
+    "id": "47",
+    "type": "special card"
+  },
+  {
+    "_pageName": "Hagalaz",
+    "alias": "Hagalaz",
+    "dlc": "31",
+    "id": "32",
+    "type": "rune"
+  },
+  {
+    "_pageName": "Holy Card",
+    "alias": "Holy Card",
+    "dlc": "28",
+    "id": "51",
+    "type": "special card"
+  },
+  {
+    "_pageName": "Huge Growth",
+    "alias": "Huge Growth",
+    "dlc": "28",
+    "id": "52",
+    "type": "special card"
+  },
+  {
+    "_pageName": "I - The Magician",
+    "alias": "I - The Magician",
+    "dlc": "31",
+    "id": "2",
+    "type": "card"
+  },
+  {
+    "_pageName": "I - The Magician?",
+    "alias": "I - The Magician?",
+    "dlc": "24",
+    "id": "57",
+    "type": "card"
+  },
+  {
+    "_pageName": "II - The High Priestess",
+    "alias": "II - The High Priestess",
+    "dlc": "31",
+    "id": "3",
+    "type": "card"
+  },
+  {
+    "_pageName": "II - The High Priestess?",
+    "alias": "II - The High Priestess?",
+    "dlc": "24",
+    "id": "58",
+    "type": "card"
+  },
+  {
+    "_pageName": "III - The Empress",
+    "alias": "III - The Empress",
+    "dlc": "31",
+    "id": "4",
+    "type": "card"
+  },
+  {
+    "_pageName": "III - The Empress?",
+    "alias": "III - The Empress?",
+    "dlc": "24",
+    "id": "59",
+    "type": "card"
+  },
+  {
+    "_pageName": "IV - The Emperor",
+    "alias": "IV - The Emperor",
+    "dlc": "31",
+    "id": "5",
+    "type": "card"
+  },
+  {
+    "_pageName": "IV - The Emperor?",
+    "alias": "IV - The Emperor?",
+    "dlc": "24",
+    "id": "60",
+    "type": "card"
+  },
+  {
+    "_pageName": "IX - The Hermit",
+    "alias": "IX - The Hermit",
+    "dlc": "31",
+    "id": "10",
+    "type": "card"
+  },
+  {
+    "_pageName": "IX - The Hermit?",
+    "alias": "IX - The Hermit?",
+    "dlc": "24",
+    "id": "65",
+    "type": "card"
+  },
+  {
+    "_pageName": "Jera",
+    "alias": "Jera",
+    "dlc": "31",
+    "id": "33",
+    "type": "rune"
+  },
+  {
+    "_pageName": "Joker",
+    "alias": "Joker",
+    "dlc": "31",
+    "id": "31",
+    "type": "card"
+  },
+  {
+    "_pageName": "Perthro",
+    "alias": "Perthro",
+    "dlc": "31",
+    "id": "37",
+    "type": "rune"
+  },
+  {
+    "_pageName": "Queen of Hearts",
+    "alias": "Queen of Hearts",
+    "dlc": "24",
+    "id": "79",
+    "type": "card"
+  },
+  {
+    "_pageName": "Rules Card",
+    "alias": "Rules Card",
+    "dlc": "31",
+    "id": "44",
+    "type": "special card"
+  },
+  {
+    "_pageName": "Rune Shard",
+    "alias": "Rune Shard",
+    "dlc": "24",
+    "id": "55",
+    "type": "rune"
+  },
+  {
+    "_pageName": "Soul of ???",
+    "alias": "Soul of ???",
+    "dlc": "24",
+    "id": "85",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Apollyon",
+    "alias": "Soul of Apollyon",
+    "dlc": "24",
+    "id": "94",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Azazel",
+    "alias": "Soul of Azazel",
+    "dlc": "24",
+    "id": "88",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Bethany",
+    "alias": "Soul of Bethany",
+    "dlc": "24",
+    "id": "96",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Cain",
+    "alias": "Soul of Cain",
+    "dlc": "24",
+    "id": "83",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Eden",
+    "alias": "Soul of Eden",
+    "dlc": "24",
+    "id": "90",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Eve",
+    "alias": "Soul of Eve",
+    "dlc": "24",
+    "id": "86",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Isaac",
+    "alias": "Soul of Isaac",
+    "dlc": "24",
+    "id": "81",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Jacob and Esau",
+    "alias": "Soul of Jacob and Esau",
+    "dlc": "24",
+    "id": "97",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Judas",
+    "alias": "Soul of Judas",
+    "dlc": "24",
+    "id": "84",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Lazarus",
+    "alias": "Soul of Lazarus",
+    "dlc": "24",
+    "id": "89",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Lilith",
+    "alias": "Soul of Lilith",
+    "dlc": "24",
+    "id": "92",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Magdalene",
+    "alias": "Soul of Magdalene",
+    "dlc": "24",
+    "id": "82",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of Samson",
+    "alias": "Soul of Samson",
+    "dlc": "24",
+    "id": "87",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of the Forgotten",
+    "alias": "Soul of the Forgotten",
+    "dlc": "24",
+    "id": "95",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of the Keeper",
+    "alias": "Soul of the Keeper",
+    "dlc": "24",
+    "id": "93",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Soul of the Lost",
+    "alias": "Soul of the Lost",
+    "dlc": "24",
+    "id": "91",
+    "type": "soul stone"
+  },
+  {
+    "_pageName": "Suicide King",
+    "alias": "Suicide King",
+    "dlc": "31",
+    "id": "46",
+    "type": "special card"
+  },
+  {
+    "_pageName": "V - The Hierophant",
+    "alias": "V - The Hierophant",
+    "dlc": "31",
+    "id": "6",
+    "type": "card"
+  },
+  {
+    "_pageName": "V - The Hierophant?",
+    "alias": "V - The Hierophant?",
+    "dlc": "24",
+    "id": "61",
+    "type": "card"
+  },
+  {
+    "_pageName": "VI - The Lovers",
+    "alias": "VI - The Lovers",
+    "dlc": "31",
+    "id": "7",
+    "type": "card"
+  },
+  {
+    "_pageName": "VI - The Lovers?",
+    "alias": "VI - The Lovers?",
+    "dlc": "24",
+    "id": "62",
+    "type": "card"
+  },
+  {
+    "_pageName": "VII - The Chariot",
+    "alias": "VII - The Chariot",
+    "dlc": "31",
+    "id": "8",
+    "type": "card"
+  },
+  {
+    "_pageName": "VII - The Chariot?",
+    "alias": "VII - The Chariot?",
+    "dlc": "24",
+    "id": "63",
+    "type": "card"
+  },
+  {
+    "_pageName": "VIII - Justice",
+    "alias": "VIII - Justice",
+    "dlc": "31",
+    "id": "9",
+    "type": "card"
+  },
+  {
+    "_pageName": "VIII - Justice?",
+    "alias": "VIII - Justice?",
+    "dlc": "24",
+    "id": "64",
+    "type": "card"
+  },
+  {
+    "_pageName": "Wild Card",
+    "alias": "Wild Card",
+    "dlc": "24",
+    "id": "80",
+    "type": "special card"
+  },
+  {
+    "_pageName": "X - Wheel of Fortune",
+    "alias": "X - Wheel of Fortune",
+    "dlc": "31",
+    "id": "11",
+    "type": "card"
+  },
+  {
+    "_pageName": "X - Wheel of Fortune?",
+    "alias": "X - Wheel of Fortune?",
+    "dlc": "24",
+    "id": "66",
+    "type": "card"
+  },
+  {
+    "_pageName": "XI - Strength",
+    "alias": "XI - Strength",
+    "dlc": "31",
+    "id": "12",
+    "type": "card"
+  },
+  {
+    "_pageName": "XI - Strength?",
+    "alias": "XI - Strength?",
+    "dlc": "24",
+    "id": "67",
+    "type": "card"
+  },
+  {
+    "_pageName": "XII - The Hanged Man",
+    "alias": "XII - The Hanged Man",
+    "dlc": "31",
+    "id": "13",
+    "type": "card"
+  },
+  {
+    "_pageName": "XII - The Hanged Man?",
+    "alias": "XII - The Hanged Man?",
+    "dlc": "24",
+    "id": "68",
+    "type": "card"
+  },
+  {
+    "_pageName": "XIII - Death",
+    "alias": "XIII - Death",
+    "dlc": "31",
+    "id": "14",
+    "type": "card"
+  },
+  {
+    "_pageName": "XIII - Death?",
+    "alias": "XIII - Death?",
+    "dlc": "24",
+    "id": "69",
+    "type": "card"
+  },
+  {
+    "_pageName": "XIV - Temperance",
+    "alias": "XIV - Temperance",
+    "dlc": "31",
+    "id": "15",
+    "type": "card"
+  },
+  {
+    "_pageName": "XIV - Temperance?",
+    "alias": "XIV - Temperance?",
+    "dlc": "24",
+    "id": "70",
+    "type": "card"
+  },
+  {
+    "_pageName": "XIX - The Sun",
+    "alias": "XIX - The Sun",
+    "dlc": "31",
+    "id": "20",
+    "type": "card"
+  },
+  {
+    "_pageName": "XIX - The Sun?",
+    "alias": "XIX - The Sun?",
+    "dlc": "24",
+    "id": "75",
+    "type": "card"
+  },
+  {
+    "_pageName": "XV - The Devil",
+    "alias": "XV - The Devil",
+    "dlc": "31",
+    "id": "16",
+    "type": "card"
+  },
+  {
+    "_pageName": "XV - The Devil?",
+    "alias": "XV - The Devil?",
+    "dlc": "24",
+    "id": "71",
+    "type": "card"
+  },
+  {
+    "_pageName": "XVI - The Tower",
+    "alias": "XVI - The Tower",
+    "dlc": "31",
+    "id": "17",
+    "type": "card"
+  },
+  {
+    "_pageName": "XVI - The Tower?",
+    "alias": "XVI - The Tower?",
+    "dlc": "24",
+    "id": "72",
+    "type": "card"
+  },
+  {
+    "_pageName": "XVII - The Stars",
+    "alias": "XVII - The Stars",
+    "dlc": "31",
+    "id": "18",
+    "type": "card"
+  },
+  {
+    "_pageName": "XVII - The Stars?",
+    "alias": "XVII - The Stars?",
+    "dlc": "24",
+    "id": "73",
+    "type": "card"
+  },
+  {
+    "_pageName": "XVIII - The Moon",
+    "alias": "XVIII - The Moon",
+    "dlc": "31",
+    "id": "19",
+    "type": "card"
+  },
+  {
+    "_pageName": "XVIII - The Moon?",
+    "alias": "XVIII - The Moon?",
+    "dlc": "24",
+    "id": "74",
+    "type": "card"
+  },
+  {
+    "_pageName": "XX - Judgement",
+    "alias": "XX - Judgement",
+    "dlc": "31",
+    "id": "21",
+    "type": "card"
+  },
+  {
+    "_pageName": "XX - Judgement?",
+    "alias": "XX - Judgement?",
+    "dlc": "24",
+    "id": "76",
+    "type": "card"
+  },
+  {
+    "_pageName": "XXI - The World",
+    "alias": "XXI - The World",
+    "dlc": "31",
+    "id": "22",
+    "type": "card"
+  },
+  {
+    "_pageName": "XXI - The World?",
+    "alias": "XXI - The World?",
+    "dlc": "24",
+    "id": "77",
+    "type": "card"
+  }
+]

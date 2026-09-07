@@ -1,0 +1,57 @@
+{{infobox activated collectible
+ | id          = 186
+ | quote       = Mass enemy damage at a cost
+ | description = Takes a full heart of [[health]] and deals 40 damage to all enemies in the [[room]]. {{dlc|r}} Repeated uses in the same room only take half a heart. {{dlc|r+}} Increases [[fire rate]] when used.
+ | quality     = 0
+ | tags        = nolostbr {{dlc|r+|devilsacrifice}}
+ | recharge    = unlimited
+ | unlocked by = Blood Rights
+ | devil price = {{dlcalt|1|r+=0}}
+}}
+
+{{cit|ua}}
+
+== Effect ==
+* On use, takes a full heart of [[health]] and activates {{i|The Necronomicon}}'s effect, dealing 40 damage to all enemies in the [[room]].
+** Blood Rights takes {{e|Red Heart}}s before other heart types.
+** {{dlc|r}} This bypasses [[damage scaling]].
+** {{dlc|r}} When used more than once in the same room, damage taken is lowered to half a red heart.
+* {{dlc|r+}} Increases [[fire rate]] by +0.48 for the current room for the first use in the current stage.
+** Subsequent uses in the same stage add a +0.15 to the bonus.
+
+== Notes ==
+* Using this item does not affect {{r|Devil Room}} or {{r|Angel Room}} chances.
+* Using Blood Rights grants immunity frames; this allows access to {{r|Curse Room}}s without losing soul hearts.
+* Using this item as {{C|The Lost}} or {{C|Tainted Lost}} kills The Lost, even if the protective effect from {{i|Holy Mantle}} is active.
+
+== Synergies ==
+* {{t|A Missing Page|r}} / {{I|Missing Page 2|r}}: Deals an additional +40 damage. Effects stack together and with multiple copies.
+* {{Book of Belial synergy|description=Invokes the effect of {{i|Razor Blade}} along with its original effect.}}
+* {{Book of Virtues synergy|description=Spawns red wisps in the middle ring that have higher health than average and shoot red tears.}}
+* {{dlc+|a+}} {{i|Habit}} + {{i|Schoolbag}}: Damage from Blood Rights grants a point of charge to Isaac's other held active item.{{dlc-}}
+* {{dlc|nr}} {{i|Isaac's Heart}}: Blood Rights doesn't deal damage to Isaac, allowing repeated usage without penalty.
+* {{dlc|nr}} [[Shield]]/[[Invulnerability]]: Blood Rights can be used without taking damage for the duration of the shield or invulnerability. Invincibility frames from recently taking damage will not protect against this item's damage.
+* {{i|The Wafer}}: Reduces the damage dealt to Isaac to half a heart.
+* {{i|Bloody Lust}} / {{i|Bloody Gust}}: The Blood Rights damage counts for the raise of statistics of these objects.
+* {{i|Whore of Babylon}}: As Blood Rights takes {{e|Red Heart}}s before other heart types, it can be used to get the Whore of Babylon activation's condition easier.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{dlc|r}}[[Shield]]/[[Invulnerability]]: Will not protect against this item's damage.
+
+== In-game Footage ==
+{{#ev:youtube|-8kZ9aOc35c}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Blood Rights.png|{{plat|3DS}} The icon of Blood Rights as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* The item itself is a straight-edge razor.
+* "Blood Rights" is a term that means that the inherent has the right to certain things by way of heritage.
+* This item is possibly a reference to the 2002 film Gangs of New York, which deals heavily with themes of cultural obligation passed down through heritage; shortly before his own death, the main protagonist's father entrusts his son with his straight razor after having ritualistically cut himself with it, with the admonition that "The blood stays on the blade." The protagonist then hides the razor before being incarcerated and recovers it 16 years later, effectively making it his "inheritance".
+* May also be a play on words of "Blood Rites", rituals done using one's own blood, usually with the context of summoning a demon or similar otherworldly entity.
+** It being unlocked by defeating Satan, being in the Devil Room pool, and Eve as a character relating to both demons and self-harm all support this.
+
+{{nav|samson unlock|satan unlock|fr=Droits du Sang}}

@@ -1,0 +1,44 @@
+{{infobox boss
+ | dlc         = r
+ | id          = 19
+ | variant     = 3
+ | environment = <u>Boss</u><br>{{floor|Ashpit}}<br>{{room|boss challenge}}
+ | base hp     = 35
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Akeldama}} (1% chance)
+}}
+
+'''The Shell''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in the {{s|Ashpit}}.
+
+== Behavior ==
+The Shell always spawns in a pair consisting of 4 body segments and a head segment each. They are always fought in a double-sized room.
+* Flies around the room diagonally, bouncing off of walls while dealing contact damage; behaving identically to {{e|The Hollow}}.
+** Unlike the Hollow, however, if Isaac is close to the vicinity of its head, it veers slightly in Isaac's direction.
+* Normally invincible, but bombs and explosives can destroy its bony exterior (after 15 damage per segment), making its segments vulnerable. There are always one or two {{e|Bomb Grimace}}s that dispense {{e|Throwable Bomb}}s for Isaac to use against The Shell.
+* When the armor on their body is destroyed, the exposed flesh segments lose the ability to fly, and will spawn {{e|Fly Bomb}}s if the segment is at the very end, or shoot a volley of three shots at Isaac if the segment is in the middle.
+** The Shell moves slower if there are exposed flesh segments attached to its head.
+* If a group of conjoined flesh segments have been detached from the head, they chase directly after Isaac at a very slow pace and continue to attack normally.
+** If a single flesh segment has been completely detached, it becomes stationary but continues to spawn Fly Bombs.
+* The Shell cannot split into smaller copies; when split down the middle, the side containing 3 segments with at least one of end segments having armor turns into a new copy of the boss with one of the armored body segments turning into a head segment.
+** Flesh body segments on the shorter side detach and behave normally but armored body segments are automatically destroyed.
+* The Shell's head cannot be damaged or destroyed and dies once it loses all its segments.
+
+== Gallery ==
+<gallery>
+File:Boss The Shell Segment 1 ingame.png|Body segment without armor.
+File:Boss The Shell Segment 2 ingame.png|Tail segment without armor.
+</gallery>
+
+== Notes ==
+* {{i|Terra}} can destroy the The Shell's armor, along with any items that create rock waves like {{i|Mega Bean}} and {{i|Wait What?}}.
+* {{i|Sulfuric Acid}} tears cannot destroy their armor.
+
+== Trivia ==
+* They appear to be a bony variation of The Hollow.
+* They appear to be the posthumous version of the {{e|Tuff Twins}}. This makes them one of four boss pairs to have their regular and posthumous version in the same chapter, the others being {{e|Gemini}} having {{e|Blighted Ovum}} in [[Chapter 1]], {{e|Chub}} having {{e|Carrion Queen}} in Chapter 2 and {{e|Polycephalus}} having {{e|The Stain}} in [[Chapters|Chapter 2]].
+
+{{nav|boss|fr=La Carapace}}
+[[Category:Bosses]]
+[[Category:Chapter 2.5 bosses]]
+[[Category:Mines bosses]]
+[[Category:Ashpit bosses]]
+[[Category:Debut bosses in Repentance]]

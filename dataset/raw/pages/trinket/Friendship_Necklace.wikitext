@@ -1,0 +1,79 @@
+{{distinguish visual|1=Mom's Locket}}{{infobox trinket
+ | dlc         = r
+ | id          = 148
+ | quote       = Gather round
+ | description = Causes [[familiars]] to orbit Isaac.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* [[Familiar]]s that normally follow Isaac orbit around him instead.
+** Does not affect familiars' ability to block shots: if they don't already, they still won't.
+
+== Notes ==
+* This trinket affects the same familiars {{I|King Baby}} affects.
+* Familiars unaffected by Friendship Necklace include:
+{{column list | width = 15em | content =
+* {{i|???'s Only Friend}}
+* {{t|???'s Soul}}
+* {{i|7 Seals}}
+* {{i|Angelic Prism}}
+* {{i|Angry Fly}}
+* {{i|BBF}}
+* {{i|Big Chubby}}
+* {{I|Bird Cage}}
+* {{I|Blood Puppy}}
+* {{i|Bob's Brain}}
+* {{i|Bum Friend}}
+* {{i|Bumbo}}
+* {{i|Cain's Other Eye}}
+* {{I|Cube Baby}}
+* {{i|Daddy Longlegs}}
+* {{i|Dark Bum}}
+* {{i|Dead Bird}}
+* {{i|Finger!}}
+* {{i|GB Bug}}
+* {{i|Gello}}
+* {{i|Gemini}}
+* {{i|Guppy's Hairball}}
+* {{i|Isaac's Heart}}
+* {{i|Jaw Bone}}
+* {{i|Key Bum}}
+* {{i|Leech}}
+* {{i|Lil Dumpy}}
+* {{i|Lil Gurdy}}
+* {{i|Lil Haunt}}
+* {{i|Little Chubby}}
+* {{i|Lost Fly}}
+* {{i|Lost Soul}}
+* {{i|Multidimensional Baby}}
+* {{i|Obsessed Fan}}
+* [[Familiars#Orbital familiars|Orbital familiars]]
+* {{i|Papa Fly}}
+* {{i|The Peeper}}
+* {{i|Pointy Rib}}
+* {{i|Samson's Chains}}
+* {{i|Shade}}
+* {{i|Sissy Longlegs}}
+* {{i|Smart Fly}}
+* {{i|Spider Mod}}
+* {{I|Spin to Win}}
+* {{i|Succubus}}
+* {{i|Twisted Pair}}
+* {{tf|Super Bum}}
+* [[Familiars#Temporary familiars|Temporary familiars]]
+* {{I|Worm Friend}}
+* {{i|YO LISTEN!}}
+}}
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Each copy increase the speed of orbitals.
+* {{I|Spin to Win}}: Familiars made into orbitals by Friendship Necklace can deal contact damage and block enemy shots while Spin to Win is active.
+
+== Interactions ==
+* {{T|Child Leash}}: Familiars will orbit much closer to Isaac.
+* {{I|King Baby}}: Familiars will orbit King Baby at all times instead of Isaac, even while not firing. King Baby itself is unaffected.
+* {{c|Lilith}} + {{i|Birthright}}: Lilith’s Birthright effect overrides Friendship Necklace.
+
+{{nav|familiar modifier|fr=Collier d'Amitié}}

@@ -1,0 +1,26 @@
+{{infobox trinket
+ | name        = Judas' Tongue
+ | id          = 56
+ | quote       = Payment Received
+ | description = [[Devil Deal]]s only cost 1 [[Health#Red Heart Containers|heart]]. {{e|Soul Heart}} trades still cost 3 soul hearts.
+ | unlocked by = Judas' Tongue
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* [[Devil Deal]]s only cost 1 [[Health#Red Heart Containers|heart container]].
+
+== Notes ==
+* Soul heart trades still cost 3 {{e|Soul Heart}}s, rendering this item useless for characters that can only have soul, black or bone hearts.
+** {{Dlc|r}} An exception can be made for {{C|???}} as the tongue reduces devil deal prices as normal.
+* Judas' Tongue can retroactively change the price of devil deals.
+
+== Interactions ==
+* {{I|A Pound of Flesh}} / {{T|Keeper's Bargain}} / {{C|Keeper|r}} / {{C|Tainted Keeper}}: The tongue provides no discounts for any item costing money.
+* {{a|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Also reduces the cost of soul heart items by 1 soul heart. Having both also guarantees {{r|Devil Room}} sacrifice items on the first pay (instead of 50%).
+
+== In-game Footage ==
+{{#ev:youtube|Sn9pya4eJpE}}
+
+{{nav|judas unlock|satan unlock|fr=Langue de Judas}}

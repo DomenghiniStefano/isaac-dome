@@ -1,0 +1,28 @@
+{{infobox challenge
+ | dlc         = a
+ | number      = 28
+ | item        = {{i|3 Dollar Bill}}<br>{{i|Rainbow Baby}}
+ | trinket     = {{t|Rainbow Worm|n}}
+ | has shops   = yes
+ | description = Cannot drop or replace {{T|Rainbow Worm|n}}.
+ | goal        = Mom's Heart
+ | unlocks     = D8
+ | unlocked by = PRIDE DAY!
+}}
+
+'''PRIDE DAY!''' is [[Challenges|challenge]] #28. {{c|Isaac}} starts with {{t|Rainbow Worm}}, {{i|3 Dollar Bill}}, and {{i|Rainbow Baby}}. The goal is to defeat {{E|Mom's Heart}} or {{E|It Lives!}}. The Rainbow Worm cannot be dropped in this challenge.
+__TOC__
+
+== Difficulty ==
+This is a rather casual challenge run. Many of the potential effects of the Rainbow Tears end up being beneficial overall. However, certain tears could temporarily be detrimental, such as {{i|Fire Mind}} tears causing self-damage or {{i|Proptosis}} greatly decreasing range. It is necessary to adapt to the tear trajectories given by Rainbow Worm during the run.
+
+Although you cannot drop the Rainbow Worm, you can still acquire other trinkets through use of a Gulp! pill or any items that allow you to hold two trinkets.
+
+== Reward ==
+{{achievement text | D8 }}
+
+== Trivia ==
+* The name of the challenge "Pride Day" and the rainbow-themed items of the challenge is a reference to the LGBTQIA+ Pride community and their signature rainbow flag.
+** This same signature rainbow flag appears in Mewgenics, another game by Edmund McMillen, alongside the mechanics of cats being gay, bisexual and 'Neutral' gender. When the flag was shown in a tweeted screenshot before Mewgenics released, an account asked via reply if they "would be able to disable this in the game". Edmund responded, [https://x.com/edmundmcmillen/status/1885434909680164884?lang=en in a quote tweet], "Info on your cats sexual preference is unlockable so technically yes you can disable the flag visual.. but that won’t stop the gay cats from fuckin.".
+
+{{nav|mom unlock|challenge|fr=Marche des Fiertés}}

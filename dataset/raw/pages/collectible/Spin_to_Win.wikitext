@@ -1,0 +1,61 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 655
+ | quote       = Let it rip!
+ | description = Gives +0.5 [[speed]] and greatly increases the rotation speed and damage of [[Familiar#Orbital Familiars|orbitals]] for 3 seconds. Passively gives Isaac a spinning top orbital that blocks enemy shots and deals contact damage.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = nocantrip
+ | recharge    = 3s
+}}
+
+{{cit|a|r}}
+
+== Effects ==
+* While the item is held, grants a spinning top [[Familiar#Orbital Familiars|orbital]] that blocks enemy shots and deals contact damage (3.5 per tick, or 35 per second).
+* While the item is being used, gives Isaac +0.5 [[speed]] and increases the contact damage on Isaac's [[familiar]]s, even if they do not normally deal any. Additionally, [[orbital familiar]]s spin much faster and knock back both enemies and Isaac when they deal damage.
+** The contact damage improves to (1.5 x contact damage + 6). If a familiar has no contact damage naturally, it still receives the +6.
+** Blue flies and blue spiders are also affected, and don't disappear while the item is in use.
+* The recharge timer is gradually drained over 3 seconds while the item is being used.
+** Isaac can stop using Spin to Win at any time by releasing the use item button, at which point Spin to Win starts recharging.
+** Spin to Win can be used while it is not fully charged, gradually draining however much charge there is.
+
+== Notes ==
+* Isaac's effective speed can be higher than 2.0 while the item is active, even if the stat is capped.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Generates up to eight wisps in the middle ring while charging the item, which are immediately extinguished once the charge runs out. These wisps shoot six times faster than an average wisp and deal 3 damage.}}
+** All wisps, including those produced by {{i|Lemegeton}}, become invulnerable while using Spin to Win, regardless of whether the Book of Virtues is active.
+* {{t|Duct Tape|n}}/{{t|RC Remote}}: Allows Isaac to use familiars' contact damage without getting close to enemies.
+* {{c|The Forgotten}}: While playing as {{C|The Soul}}, channeling Spin to Win will cause the Forgotten's skeleton to deal contact damage.
+* {{I|Gnawed Leaf}}: Gnawed Leaf will activate while using Spin to Win, as long as Isaac is stationary. This allows for a brief moment of high damage against enemies that chase Isaac. Activating or deactivating Spin to Win will remove Gnawed Leaf's invincibility.
+* {{i|Guardian Angel}}: The orbital speed boost from Guardian Angel can be combined with that of Spin to Win, causing all the orbital familiars to spin extremely fast around Isaac.
+* {{t|Panic Button}}: Has a chance to spawn additional wheels upon taking damage that last only for the current room. This is most likely a bug.
+* {{I|Pluto}}: The exceedingly high speed and small hitbox enables Isaac to clip into obstacles such as rocks or pits, allowing him to effectively fly over them. Isaac can potentially get stuck, which can be fixed by exiting and continuing the run.
+* {{I|Taurus}}: Spin to Win's speed boost can instantly trigger the item's invincibility effect if it puts Isaac at 2.0 speed.
+
+== Interactions ==
+* {{i|BFFS!}}: The damage bonus of BFFS! is removed while Spin to Win is active. Most notably, this means familiars without natural contact damage do not gain additional damage, and others gain less than expected. Familiars that deal over 12 damage per hit before BFFS!' damage bonus is applied will deal reduced damage with Spin to Win active.
+* {{i|Bob's Brain}} / {{i|BBF}} / {{i|Holy Water}} / {{i|GB Bug}}: While Spin to Win is active, prevents the familiar from exploding/being destroyed on enemy contact.
+** GB Bug wont reroll enemies on contact while Spin to Win is active.
+* {{i|Car Battery}}: No effect.
+* {{I|Metronome}}: When Metronome chooses Spin to Win, Isaac gains two orbitals with no other benefits of Spin to Win.
+* {{i|Mom's Razor}}: Mom's Razor deals a fixed 16.5 contact damage, instead of its usual damage-scaled value, while Spin to Win is active.
+* {{c|Tainted Forgotten}}: Unlike the non-tainted counterpart, Tainted Forgotten's body gains no extra contact damage while Spin to Win is active. Additionally, Tainted Forgotten's contact damage familiars have only 80% of their usual damage.
+* {{i|Void}}: After absorbing Spin to Win, using Void spawns a temporary, passive Spin to Win familiar for the room. It cannot be activated further for the damage and speed bonuses.
+
+== In-game footage ==
+{{#ev:youtube|_JJOtM-g9KU}}
+
+== Trivia ==
+* The term 'spin to win' is a term that is associated with RNG based games, specifically ones that utilize a game show wheel.
+** The pattern on the top is reminiscent to a multicolored game show wheel, which further cements the origin of the name.
+* Spin to Win's item description of 'Let it Rip' is the tagline for [[wikipedia:Beyblade|Beyblade]], which is a toy line and anime centered around battling tops.
+* {{I|Spin to Win}}, {{I|Larynx}}, {{I|Notched Axe}} , and {{I|Everything Jar}} are the only activated items that can be used when not fully charged.
+
+== Bugs ==
+{{bug|With {{i|Book of Virtues}}, leaving a room just before the item's charge runs out causes all wisps generated by Spin to Win to remain with Isaac, and will retain their very high fire rate.
+* The wisps will orbit at their normal speed rather than the increased speed.
+* Upon entering an uncompleted boss room, all wisps from this effect are extinguished immediately.}}
+{{bug|On mobile, Spin to Win does not work. It spins for a single frame, then deactivates.}}
+
+{{nav|familiar modifier|fr=Toupie}}

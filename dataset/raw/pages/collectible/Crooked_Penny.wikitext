@@ -1,0 +1,50 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 485
+ | quote       = 50/50
+ | description = Has a 50% chance to double all [[item]]s, {{e|Chest||chests}}, [[trinket]]s, and [[pickup]]s in the room. If the effect fails, spawns a {{e|Penny}} and the other items and pickups disappear.
+ | quality     = 2
+ | tags        = offensive
+ | recharge    = 4
+ | unlocked by = Crooked Penny
+}}
+
+{{cit|ua|a+}}
+
+== Effect ==
+* Upon use, has a 50% chance to double all [[item]]s, [[pickup]]s, [[trinket]]s, and {{e|Chest||chests}} in the current room.
+** If the effect fails, the items, pickups, and chests disappear, and a {{e|Penny}} is spawned.
+
+== Notes ==
+* If used in a {{R|Shop}} or {{R|Devil Room}}, the duplicated items and pickups can be taken for free.
+* If the effect fails in a shop that contains a {{M|Shop Restock Machine}}, then the Restock Machine can be used to refresh the Shop, bringing back new items and pickups.
+* {{dlc|nr}} If used in the {{R|Boss Rush}} room, it can duplicate the items, and all of them can be taken without affecting the originals. Successfully duplicating the items will trigger Boss Rush, and failing to duplicate them will not.
+* {{dlc|nr}} If used on {{i|The Polaroid}} and {{i|The Negative}} after defeating {{e|Mom}}, it can duplicate them, and they can both be taken without affecting the originals.
+* The 50% chance is predetermined after each use of Crooked Penny. By force quitting or using {{i|Glowing Hourglass}} after each failure, this can be exploited to generate large numbers of copies of useful items — if the penny is going to fail, then use it in a different room, recharge it, and try again.
+** {{Dlc|r}} The outcome of Crooked Penny is determined on a per-room basis, meaning that it will succeed in certain rooms and fail in others respecting the 50/50 chance. Using Crooked Penny will still advance an RNG step, however, and re-roll the outcome of the other rooms.
+* If used in {{R|Boss Rush}} and the items disappear, the boss rush cannot be started.
+* If Crooked Penny is used right after taking an item from a choice pedestal (such as those created by {{i|More Options}}), it is possible to double the other item(s) as they disappear. The copies of items will not disappear and will act normally.
+* Unlike {{i|Diplopia}}, Crooked Penny can be used to duplicate trinkets.
+
+== Synergies ==
+''See [[Diplopia#Synergies]] for info about stacking duplicate items.''
+* {{Book of Virtues synergy|description=Spawns a coin wisp on the middle ring. The wisps have a 50/50 chance to duplicate all their copies or destroy all their copies when one takes damage. Does not affect wisps other than ones made by this item. Using Crooked Penny always spawns one wisp, with no chance to affect the others.}}
+* {{dlc|nr}} {{i|Void}}: Void's item-absorbing effect activates before Crooked Penny's effect, but Crooked Penny nonetheless has a chance of doubling the absorbed items, leaving behind copies of them. Missing with Crooked Penny still results in the item being absorbed, but one penny also appears.
+** {{Dlc|r}} Void does not absorb the item if Crooked Penny fails, but one penny still appears. Void absorbs only the original item if Crooked Penny succeeds, leaving behind a copy.
+
+== Interactions ==
+* {{dlc|nr}} {{i|Car Battery}}: Activates the item twice, quadrupling all items/drops in the room at a 25% chance. However, if the first activation fails, and the second activation succeeds, a copy of the item will be created as the original disappears, and the new copy will have no cost if it were in a {{R|Shop}} or {{R|Devil Room}}. This has a 25% chance as well, leaving the overall failure chance at 50% (a success followed by a fail will have the same effect as two fails).
+** {{Dlc|r}} Activates the item twice, quadrupling all items/drops in the room at a 25% chance but having a combined 75% chance to fail. A failure followed by a success generates 2 pennies.
+
+== In-Game Footage ==
+{{#ev:youtube|yiFCDF_ZvFw}}
+
+== Trivia ==
+* This item's effect, if the coin flip succeeds, is almost identical to {{i|Diplopia}}'s.
+** {{i|Diplopia}} can be copied by this item.
+* Before [[Booster Pack #1]], it could be used on empty item pedestals to cause another item to appear.
+* This item was [https://www.reddit.com/r/bindingofisaac/comments/4dhwsv/comment/d1r8u98/ originally suggested] by Reddit User /u/CultOfTheHelixFossil in a fan item suggestion thread made by Edmund McMillen.
+* [https://www.reddit.com/r/bindingofisaac/comments/3ics6j/comment/cufj35j/?utm_source=share&utm_medium=web2x&context=3 According to the original post], the name "crooked" refers to that the item "can't be fully trusted" and is meant to differentiate it from other coin items.
+* This item was inspired in part by the playstyle of YouTuber Northernlion, and his tendency toward Risk vs Reward items. (citation needed)
+
+{{nav|keeper unlock|delirium unlock|fr=Pièce Tordue}}

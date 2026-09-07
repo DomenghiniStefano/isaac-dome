@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | id          = 117
+ | quote       = Protective buddy
+ | description = After Isaac takes damage, spawns a flying [[familiar]] that chases enemies for the current [[Rooms|room]], dealing ~4 damage per second. {{dlc|r+}} As long as Isaac's HP is at one half heart ( no matter the type of heart), '''Dead Bird''' will remain active between rooms.
+ | quality     = 0
+ | tags        = nolostbr summonable dead
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Taking damage summons a bird [[familiar]] that chases enemies for the remainder of the current [[Rooms|room]], dealing 2 damage per tick (~4.3 damage per second).
+** {{dlc|r+}} As long as Isaac's HP is at one half heart ( no matter the type of heart), '''Dead Bird''' will remain active between rooms. Upon entering a new floor, '''Dead Bird''' will be inactive, and a hit must be taken to activate it again.
+
+== Notes ==
+* {{C|Eve}} starts with this item by default.
+** {{dlc|r+}} Additionally, Dead Bird will remain active between rooms at a total HP of one heart or less.
+
+== Interactions ==
+* {{I|Birthright}} + {{C|Eve}}: Dead Bird will be active at all times.
+* {{dlc+|r+}}{{C|The Lost}} / {{C|Tainted Lost}}: Dead Bird is active at all times.{{dlc-}}
+* {{i|Box of Friends}}: Does not double Dead Bird, even if Isaac has taken damage before use.
+* {{I|Sacrificial Altar}}: The familiar can only be sacrificed while it is active.
+
+== In-game Footage ==
+{{#ev:youtube|U_51d6AHkiU||inline}} {{#ev:youtube|yM_SdTjHBMo||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Darkness Falls}}.
+* This item is a reference to an old series of comics Edmund McMillen drew called [https://www.newgrounds.com/portal/view/194056 Thicker Than Water], where the Dead Bird is said to represent his inner doubts and self-destructive nature.
+
+== Bug ==
+{{bug|dlc=a+nr|When using {{t|Extension Cord}} with Dead Bird, if Isaac and the bird are both moving sometimes the electricity does not always fully connect.}}
+
+{{nav|fr=Oiseau Mort}}
+[[Category:Damage-triggered items]]

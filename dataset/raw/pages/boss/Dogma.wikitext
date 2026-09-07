@@ -1,0 +1,120 @@
+{{disambig msg|the boss|the item|Dogma (Item)}}
+
+{{Infobox boss
+ | name       = Dogma
+ | dlc        = r
+ | id         = 950
+ | environment = <u>Boss</u><br>{{floor|Home}}
+ | pool        = ''None''
+ | base hp     = 2400
+}}
+'''Dogma''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' and is the first boss of {{s|Home}}.
+
+== Behavior ==
+=== Phase 1 ===
+In its first phase, Dogma is attached to a television. Damage can only be dealt to Dogma by damaging the television in the center of the room. Any attacks towards Dogma themself causes a shield to briefly appear and block the attack. Dogma moves slowly towards Isaac, leaving a trail of damaging [[Creep#Static Creep|Static Creep]] and has a variety of attacks:
+* Fires three consecutive radial bursts of 8 {{i|Godhead}} projectiles. If Isaac stands within the projectiles' auras for long enough, a {{i|Crack the Sky}} beam hits Isaac from above.
+* Fires four consecutive bursts of projectiles in groups of 1, 2, 3, and 4 in each of the cardinal directions, with the overall pattern resembling a star.
+** Occasionally after firing the 4th burst, Dogma greatly slows down all the projectiles mid-flight, leaving them to float around slowly for a moment before vanishing.
+*** Dogma starts using this variant after losing around 60% of its HP, and performs it more frequently the lower its HP is.
+* Fires 3 consecutive waves of 3 to 4 projectiles each in random directions. When these projectiles land, it creates thin, harmless rays that point towards Isaac and become damaging lasers after a few seconds.
+* Fires a static {{i|Brimstone}} beam that bends towards Isaac. This beam is always fired in the closest cardinal direction to Isaac and switches if Isaac moves closer to a different cardinal direction.
+
+=== Phase 2 ===
+After destroying the television, Dogma falls apart into a puddle of static, before rising out of it as an orb and growing two pairs of wings resembling a [[wikipedia:Seraph|Seraph]]. During this phase, Dogma continues to chase Isaac between attacks, but becomes vulnerable and has completely different attacks:
+* Fires a spread of disorganized feather projectiles towards Isaac if he's to its left or right.
+* Summons a ball of light overhead which creates 16 to 18 harmless rays of light that point outwards and spin around the ball in random directions. After a few seconds, the rays stop moving and become damaging thin beams, similar to the ones used by the [[Angel]]s. This pattern is repeated three times, then Dogma throws it, firing one last wave of 8 wider beams in the cardinal and ordinal directions before dissipating.
+** If the thrown ball of beams is slowed (by {{i|Stop Watch}} for instance), the 8 beams fire before being properly aligned.
+* Turns into a winged wheel resembling an [[wikipedia:Ophanim|Ophanim]] and floats off-screen before charging back towards Isaac, continuing off-screen releasing a radial burst with three layers of feather projectiles with 12 feathers each near the end of the dash. It repeats this attack a total of 6 times.
+
+As Dogma takes more and more damage during this phase, its Seraph form will occasionally flicker into various other forms; these include Isaac's head, a lamb's skull with a serpent in its eye, a fly, and a troll face with horns. They represent each one of the 4 horsemen. This is a purely visual effect.
+
+When Dogma's HP reaches zero for the second time, it is destroyed as the whole screen fades to white before turning off like an old TV. Then Isaac is automatically given {{i|Dogma}} as the cutscene that introduces {{e|The Beast}} is played.
+
+== Gallery ==
+<gallery>
+File:Boss Dogma television ingame.png|Dogma's television.
+File:Boss Dogma secondphase ingame.png|Dogma in its second phase.
+File:Boss Dogma secondphase attack ingame.png|Dogma resembling an Ophanim.
+File:Dogma_fx.png|The sprites that Dogma's second form can briefly transform into while at low health.
+File:Dogma_Concept_1.png|Early concept sketches of Home, including Dogma's boss arena for Home along with {{e|Min-Min}}.
+File:Dogma_Concept_2.png|(Continued) Early concept sketches of Dogma itself and its boss arenas for Home.
+File:Dogma Concept Art 1.jpg|Concept art of Dogma's finalized design.
+File:Dogma Concept Art 2.jpg|(Continued) Concept art of Dogma's finalized design.
+File:Dogma Cutscene Sketches.png|Concept art of Isaac's nightmare seen before the boss fight.
+File:Christian broadcasts.png|One of dogma's cards in the card game, comedically nicknamed “Christian broadcasts” in reference to the intro sequence.
+</gallery>
+
+== Audio ==
+{{sound table header}}
+{{sound table row | [[File:Dogma static cut scene v5.ogg]] | Audio for the cutscene preceding Dogma's fight. }}
+{{sound table row | [[File:Appear scream.wav]] | Dogma shrieking upon emerging from the television. }}
+{{sound table row | [[File:Preacher.wav]] | The reading of Psalm 23:1-4 that can be heard over the course of Dogma's first phase. }}
+{{sound table row | [[File:Dogma voice lines.mp3]] | Televangelists heard throughout Dogma's second phase. }}
+{{sound table row | [[File:Brimstone lazer 2.wav]] | The sound of Dogma's {{i|Brimstone}} laser. }}
+{{sound table row | [[File:Godhead tears.wav]] | One of the sounds that Dogma emits while firing {{i|Godhead}} tears. }}
+{{sound table row | [[File:Dogma tv break plus 9.wav]] | The sound of Dogma's television breaking. }}
+{{sound table row | [[File:Dogma angel transform end.wav]] | Dogma transitioning into its second phase. }}
+{{sound table row | [[File:Dogma phase 2 light appear.wav]] | Dogma preparing to fire light beams. }}
+{{sound table row | [[File:Feather spray attack 1.wav]] | Dogma spraying a barrage of feathers. }}
+{{sound table row | [[File:Phase 2 prepare to spin.wav]] | Dogma transforming and preparing to perform the spin attack. }}
+{{sound table row | [[File:Dogma death sequence.wav]] | The noise Dogma makes upon defeat. }}
+{{sound table row | [[File:Static boss light v2 jingle.ogg]] | Audio that plays after defeating Dogma. }}
+|}
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in ''The Binding of Isaac: Afterbirth'' to provide a more challenging experience to the players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[damage scaling|here]].
+
+== Notes ==
+* After the beginning cutscene, Dogma appears very close to Isaac, making it easy to immediately take damage.
+* Having a high speed is highly recommended for the second phase, as the charge attack can be almost unavoidable with low speed.
+* {{i|Censer}} makes the second phase more difficult by reducing the space between feathers during Dogma's charging attack while not slowing Dogma themself. It is not recommended for this fight.
+* If a {{i|Godhead}}-like projectile is "caught" with {{i|Telekinesis}}, it will be impossible to avoid the projectile's aura. As a result, taking damage is unavoidable.
+* As the Dogma room is not counted as a Boss room, effects like {{i|Blanket}} will not occur in this fight.
+* If Isaac has triggered the beginning cutscene, re-entering the room by any means (such as being revived outside the room as {{c|???}} with {{i|Ankh}}) will trigger the Dogma fight immediately.
+* Before beginning the fight, going out and back into the living-room repeatedly while holding a trinket like {{T|Liberty Cap}} guarantees to get the best possible effect sooner or later, which can greatly help during the fight.
+* {{i|Evil Charm}} will prevent Isaac from being affected by Dogma's {{i|Godhead}} aura projectile attack in its first phase.
+* Any effect that lasts for one room won't remain after the fight and won't carry over to the [[Harbingers (Bosses)|Ultra Harbingers]] and The Beast fight.
+* {{t|Perfection}} will spawn after defeating Dogma if the correct conditions are met, however, the trinket will be left behind when Isaac arrives to fight the Ultra Harbingers and The Beast.
+
+== Trivia ==
+* A "dogma" is most commonly defined as "A set of rules, beliefs, or opinions laid down by a group, the members of which unquestionably follow".
+** Dogma's portrayal as a being made of static tied to a television heavily implies that it represents the "Christian broadcasts" that Isaac's mother watches. This is further evidenced by the level transition that plays, showing Isaac watching the broadcasts with his mother.
+** Dogma could be interpreted as the Third Beast: [[wikipedia:The Beast (Revelation)|The Beast from the Earth]]. A popular interpretation of this beast is the "False Prophet".
+* Dogma's theme is called [[Living in the Light (vocals)|"Living in the Light"]], and is taken directly from one of the many Bible quotes heard during the fight's second phase.
+** The vocals in "Living in the Light" are performed by [[RIDICULON|Matthias Bossi and Jon Evans]].
+** The OST version of "Living in the Light" plays unique vocals before playing the vocals from the in-game version.
+** The composition of the "Living in the Light" is very similar to Matricide, and shares motifs with tracks Genesis 22:10 and Crusade.
+** The vocals from "Living in the Light" can also be heard in the cutscene that plays prior to fighting The Beast.
+
+* The majority of Dogma's sprites are actually blue in the files.
+** This is because the blue is used to indicate areas that the game should apply the static effect to. This was likely done to avoid making the sprite file animated, instead simply letting the game apply the effect to designated areas when the time comes to use them. This also results in the static effect being randomized, instead of following a repeating pattern. This same trick is also what the {{I|Dogma}} item uses.
+** This is also the case with the flickering eyes in its first phase, which are actually colored green. The flickering itself is done at random every frame in the game's code.
+
+* During Dogma's first phase, a quiet recording of Psalm 23:1-4 can be heard. At the beginning of most of Dogma's attacks, this recording is temporarily made much louder.
+* Dogma is one of the two bosses that have a unique health bar, the other one being {{e|Great Gideon}}.
+* Dogma is the only boss to have a unique level transition and a unique Versus screen sound.
+* If the player uses {{I|Lodestone}} to magnetize Dogma or its TV, the respective sprite will become fuzzy, as if it's having a signal error.
+** {{I|Salvation}} will also distort Dogma's sprite while the beam of light is charging.
+** The same can be accomplished with {{i|Hemoptysis}}.
+** Using {{p|XI - Strength?}} will cause the distortion as well.
+* If a player defeats Dogma but dies during the Beast fight on the first time fighting Dogma, a unique save file state will appear, showing a Cross similar to the one in the cutscene between the two bosses.
+** {{dlc|r+}} Another way to do this is by defeating the Beast in the [[Daily Challenges|Daily Run]] before doing so in a regular run.
+* According to one of the Repentance developers, Dogma's static {{I|Brimstone}} attack is heavily inspired by the "Brimsnapping" bug from the Flash version of the game.
+* Dogma has [[Cut Content#Dogma.27s Unused Attacks|two unused attacks]] in the games files. One would have summoned an enemy similar to {{e|Angelic Baby|text=Angelic Babies}} and the other an effect similar to {{i|Black Hole}}.
+* During the ''Repentance'' DLC's early development, Isaac was meant to fight a demonic doppelgänger of himself, who would grow larger and stronger from every hit. This boss was scrapped and replaced by Dogma.<ref>https://twitter.com/edmundmcmillen/status/1442954444115636228</ref>
+* Ridiculon, the composers of Dogma's theme, has stated that one of Dogma's quote can both be heard as "anger" and "angel" of God.
+* Edmund McMillen noted that Dogma, along with the [[Tainted Characters]] and The Beast sequence, were initially [https://twitter.com/edmundmcmillen/status/1487577680044195840 reserved for a possible Isaac sequel].
+[[File:Ridiculon reply.png|thumb|"Angel" or "Anger" of God]]
+
+== Bugs ==
+{{Bug|If the player dies at the same time as killing Dogma's second phase and has extra lives that make him respawn outside of the room, the fight will reset to the start when entering the room again. The static transitioning effect that starts at the end of the fight will remain on the screen after reviving, making it very difficult to see anything during the rematch.}}
+{{Bug|If the player has extra lives and dies during a specific frame of the transition cutscene to {{e|The Beast}} (i. e. {{p|II - The High Priestess?}}, {{i|Broken Shovel 1}} or being in {{i|Astral Projection}} form while having no life), Dogma's room will be cleared and the player will respawn in the previous room, leading to a softlock.}}
+
+== References ==
+{{Reflist}}
+
+{{nav|boss|fr=Dogma (Boss)}}
+
+[[Category:Home bosses]]
+[[Category:Debut bosses in Repentance]]

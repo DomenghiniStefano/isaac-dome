@@ -1,0 +1,75 @@
+{{infobox activated collectible
+ | id          = 291
+ | quote       = ...
+ | description = Turns all non-boss [[monsters]] in the [[room]] into {{e|Poop}}. {{dlc|a}} Instantly kills poop-themed bosses. Floods the current room.
+ | quality     = 1
+ | tags        = poop offensive
+ | recharge    = {{dlcalt|6|r=4}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Turns all non-boss [[monsters]] in the [[room]] into {{e|Poop}}.
+* {{dlc+|a}} Floods the whole room with water (same effect as seen in {{s|Flooded Caves}}).
+** Floods the room with blood if used in {{s|Womb}} and its alts.{{dlc-}}
+* {{dlc+|a}} Instantly kills most poop-themed bosses ({{E|Dingle}}, {{E|Dangle}}, {{E|Brownie}}, {{E|Clog}}, and {{e|Turdlings|r+}}).{{dlc-}}
+* {{dlc|r}} Extinguishes all Normal and Red {{e|Fire Place}}s in the room.
+* {{dlc+|r}} Turns lava-filled pits in the {{s|Mines}} into solid rock, allowing them to be walked over.{{dlc-}}
+* {{transformation contribution|Oh Crap}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Clog}}.{{dlc-}}
+* Poops created by this item are not tiles, but entities. As such, they are not grid-aligned, and behave differently:
+** The poops vanish if the room is left and then returned to.
+** Things that automatically target enemies, such as {{i|Monstro's Tooth}} and {{p|II - The High Priestess}}, will also target the poops.
+** The poops can be slowly moved by pushing them.
+** The poops cannot create a bridge if they are bombed near a pit.
+** {{dlc|na+}} The poops will flash red when hit, similar to damaging [[monster]]s.
+** {{dlc|a+}} The poops will crumble when hit, identically to regular poops.
+* {{dlc+|a}} Instead of being turned into poop, poop-themed enemies like {{e|Dip}} and {{e|Squirt}} are flushed away without leaving a poop behind.{{dlc-}}
+* Enemies that are turned into poop do not count towards on kill effects such as health regeneration from {{i|Charm of the Vampire}} or {{dlc+|r}} the damage increase from {{i|Lusty Blood}}{{dlc-}}.
+* If the Fear effect is applied, the poop will stay a dark red.
+* Does not work against any of the following:
+** {{E|Lil' Haunt}}s when fighting {{E|The Haunt}}.
+*** {{dlc|na}} The first Lil' Haunt can be flushed, but this softlocks the game.
+** {{e|Mom's Hand}}.
+** Enemies in an intangible state, such as invisible {{e|Wizoob}}s.
+** {{dlc|anr+}}{{e|Turdlings|n}}, {{E|Colostomia}}, and {{E|Turdlet}}, despite them being poop-themed.
+** Mini-bosses.
+* Using it against the [[Champion]] version of a monster will forfeit the chance to get the champion's drop.
+* {{dlc|a}} When used inside a {{r|Crawl Space}}, the ladders will be covered in water but the walls will not.
+
+== Synergies ==
+* {{dlc+|r}} {{I|120 Volt}} / {{I|Jacob's Ladder}}: Since Flush! floods the room with water, it is now considered a wet environment, which significantly increases the arcing distance of the electricity created by these items.{{dlc-}}
+* {{i|Blood Puppy}}: Instantly tames a hostile Blood Puppy and leaves behind a poop.
+* {{Book of Virtues synergy|description=Spawns brown wisps in the middle ring. An additional wisp is spawned for each enemy turned into {{e|Poop}}.}}
+* {{t|Butt Penny|a+}}/{{t|Petrified Poop}}: Grants poops made from enemies a chance to drop pickups.
+* {{i|Death's List}}: Enemies that die by being turned into poop do not disrupt the Death's List chain and clearing a room by turning all its enemies into poop still grants Isaac the Death's List reward.
+* {{i|Dirty Mind}}: Enemies that are turned into poop generate double the normal amount of Dips.
+* {{i|Midas' Touch|na+}}: Touching poops made from enemies turns them into {{E|Golden Poop}}s just before being destroyed dropping the normal {{E|Golden Poop}} pickups including {{t|Counterfeit Penny}}.
+* {{tf|Oh Crap|r}}: Isaac can heal by destroying poops created from enemies.
+
+== Interactions ==
+* {{dlc|nr}}{{i|Bob's Brain}}: Bob's Brain will explode upon hitting an enemy that has been turned into poop.
+* {{dlc|na+}} {{t|Butt Penny}}/{{t|Petrified Poop}}: Poops made from enemies still do not drop pickups.
+* {{I|Car Battery}}: No effect.
+* {{tf|Oh Crap|anr}}: Destroying poops created from enemies do not heal Isaac.
+
+== In-game Footage ==
+{{#ev:youtube|RTjvVw8wifg}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Flush!.png|{{plat|3DS}} The icon of Flush! as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* {{dlc+|r}} A rare 2x1 tall room behaving like a [[Closets|closet]] exists in {{s|Mines}} with Flush! as a guaranteed item. If Isaac has already found Flush!, the item in the closet does not change.{{dlc-}}
+* This item is used in {{chal|High Brow}}.
+* The item sprite is a toilet handle.
+
+== Bugs ==
+{{bug|dlc=na|Flush! works against Lil Haunts but it can softlock the game.}}
+
+{{nav|oh crap|poop|fr=Chasse d'Eau}}

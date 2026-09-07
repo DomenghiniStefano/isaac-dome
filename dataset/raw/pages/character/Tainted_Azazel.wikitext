@@ -1,0 +1,76 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc         = r
+ | id          = 28
+ | health      = {{hearts|black=3}}
+ | damage      = 3.5 (*1.50)
+ | tears       = +0; x1/3
+ | range       = 6.50
+ | speed       = 1.00
+ | pickups     = {{p|0 - The Fool}}
+ | unlocked by = The Benighted
+}}
+'''Tainted Azazel''' is a [[Characters|character]] added in [[The Binding of Isaac: Repentance]]. He is the alternate version of {{C|Azazel}}. His horns are broken with blood leaking from the left stump, and his wings were cut or ripped off. Tainted Azazel is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|1=Soul of Cain}} to access a special room in one of the walls while playing as Azazel.
+
+Tainted Azazel starts with 3 {{E|Black Heart}}s and has his short {{i|Brimstone}} replaced with a room-long version that is very thin, high-pitched in sound, deals only 0.5× [[damage]] per tick, and has a shorter duration.
+
+== Notes ==
+* At the start of charging the {{i|Brimstone}} attack, Azazel will fire {{i|Hemoptysis}}, causing a short-range, high-knockback "sneeze" attack that will curse enemies hit with a small Brimstone icon that hovers above its head and deal 1.5× damage. Hitting enemies with the Hemoptysis sneeze halves Brimstone's remaining charge time. Enemies will also take damage when knocked into walls or obstacles, and deal damage when colliding with other enemies.
+* Furthermore, enemies cursed by Hemoptysis will take full damage instead of half damage (and +3 flat damage after multipliers) from his Brimstone beam for approximately 5 seconds; if killed during this time with Brimstone, they will explode, dealing damage to nearby enemies and spreading the curse to them. The Brimstone curse also applies to any enemies spawned by an enemy already affected by the curse. For example, the enemies and bosses spawned by {{E|Mom's Heart}} will also have the curse if Mom's Heart had the curse at the time.
+* While the Brimstone curse appears and acts as a status effect, it can be applied infinitely to Bosses and ignores their status effect immunity cooldown.
+* Unlike Azazel, Tainted Azazel's wings are clipped and, as such, he doesn't start with [[Flight]].
+* When Tainted Azazel dies in [[Co-op]], his ghost will maintain his Brimstone and Hemoptysis abilities. The first is weakened by the damage debuff applied to ghostly players, and the second is weakened as it has a very small size when dead.
+
+== Strategy ==
+* Using the sneeze in tandem with Brimstone is vital to use Tainted Azazel properly. Doing so will at least make him attack twice as fast and at best cause massive damage to enemies, making the run's speed highly variable on how well the player administrates the attack.
+* The sneeze can be used both defensively to push enemies away and shred them with the curse from afar and rejecting projectiles, but also pushing enemies to a wall or spikes will make them suffer high damage; the player should consider if it's better for the enemy to die right away or be pushed into enemies to pass the curse on.
+* This translates into a highly offensive play style, chaining attacks started up close to enemies to charge the laser to soften enemies far away while walking closer to sneeze on them and repeat. This cycle is more evident with bosses, especially stationary ones like {{E|Gurdy}} and {{E|Hush}}.
+* Failing to connect the sneeze often means having to either charge a significantly slower and weaker Brimstone shot or be unable to start the charge waiting for the sneeze to cooldown, although a short time, can leave Tainted Azazel without self-defense options without aid from bombs or familiars and missing attacking opportunities, especially with highly mobile enemies like {{E|The Pile}} and {{e|Delirium}}.
+
+== Item interactions ==
+* Tainted Azazel's Brimstone beam has the same synergies as regular {{i|Brimstone}}. See the Brimstone page for more information.
+* {{I|Birthright}}: Doubles the size of Tainted Azazel's {{i|Hemoptysis}} attack, but doesn't increase damage.
+* {{i|Brimstone}}: Gives Tainted Azazel a regular beam. The damage bonus from the sneeze increases to ×2 and +3 flat damage.
+* {{I|Mom's Knife}}: Overrides Hemoptysis and Brimstone.
+* {{I|Spirit Sword}}: Overrides Hemoptysis and Brimstone, but sword swings will deal increased damage.
+* {{I|Tech X}}: Overrides Hemoptysis, and will fire thin Brimstone rings without the 0.5× damage multiplier.
+* {{i|Haemolacria}}: Overrides Hemoptysis and Brimstone.
+* {{I|Dr. Fetus}}: Overrides Hemoptysis and Brimstone.
+
+=== Good items ===
+* {{I|Brimstone}} and related items like {{I|Athame}}, {{I|Lil Brimstone}}, {{I|Lil Abaddon}}, {{I|Maw Of The Void}}, (more listed in the Hemoptysis page) benefit from the sneeze's curse.
+* {{I|Chocolate Milk}}: Sneezing on enemies instantly charges Tainted Azazel's brimstone by half, which combined with Chocolate Milk allows Tainted Azazel to instantly release Brimstone that deals 2x damage without the need to charge.
+* {{I|Gello}}: While Tainted Azazel is charging his Brimstone, Gello is continually sneezing and firing Brimstone. This makes it much easier to take advantage of the Brimstone curse, because Gello can sneeze close to an enemy and then Tainted Azazel can fire more than one Brimstone at the cursed enemy.
+* {{i|Ipecac}}: Sneezes are harmless to Tainted Azazel. Each sneeze inflicts a lot of damage on top of being able to bomb doors very easily.
+* {{I|Notched Axe}}: Can be used as emergency knockback if Hemoptysis fails to connect. Also will make destroying poops faster without a high tears stat.
+* {{I|Technology}}: Makes his "thin brimstone" have electricity coiled around it and applies a ×1.5 damage multiplier.
+* Tears ups are always welcomed to reduce the punishment for missing Hemoptysis shots.
+
+=== Situational items ===
+* Close-range damaging items like {{I|Dead Tooth}}, {{I|Jupiter}}, and {{I|Spear Of Destiny}} damage close enemies further in Hemoptysis range and can be a good option during cooldown, but can weaken them too much or kill them if the plan is to spread the Hemoptysis curse further, needing more planning ahead for medium-health enemies. These items are still generally strong options against bosses.
+* {{I|Eye of the Occult}}: Hemoptysis will be triggered automatically. The crosshair needs to be manually deactivated in order to time it properly.
+* {{I|Doctor's Remote}}: Shoots thin {{i|Brimstone}} beams when rocket explodes. This behavior is not shared with {{i|Epic Fetus}}, which produces no brimstone lasers.
+
+=== Bad items ===
+* {{I|2Spooky}}: The fear effect can drive enemies away, making them stay less in sneeze range.
+* {{i|Pop!}}: Greatly reduces Tainted Azazel's effective range, and the eyeballs will deal reduced damage but not benefit from Hemoptysis.
+
+== Unlockable Items ==
+{{achievement text | Wicked Crown, The Devil, Soul of Azazel, Hell Game, Hemoptysis, Azazel's Stump, Azazel's Rage }}
+
+== Gallery ==
+<gallery>
+File:Transition Azazel Tainted.png|Tainted Azazel's transition screen portrait.
+File:Start_Tainted_Azazel.png|The spawn floor when playing Tainted Azazel.
+File:Tainted Azazel Menu Icon (Locked).png|Tainted Azazel's locked character icon, depicting a beaten and battered closet door.
+</gallery>
+
+== Trivia ==
+* The achievement for unlocking Tainted Azazel is "The Benighted", a possible title for the character.
+** "Benighted" means "overtaken by darkness" or "in a state of ignorance", which may be linked to how Azazel is Isaac's inner demon.
+*** This is further referenced through his card, {{P|XV - The Devil?}}, meaning weakness and blindness; Azazel is Isaac overtaken by his inner evil, having lost his "righteous path", shown as Azazel being beaten up like {{C|Tainted Isaac}}.
+*** This weakness is also manifested in his core mechanics and way of play, needing to rely on the curse of his sneeze and projectile reflection to weaken enemies to compensate for his own lack of firepower on non-debuffed enemies.
+* Like all characters that start with only soul/black hearts, Tainted Azazel's starting health is listed as "-I" on the character selection screen.
+* Tainted Azazel's broken wings is a reference to how Heaven punished angels that rebelled against God by cutting their wings off and banishing them to Earth or Hell.
+
+{{Nav|character|azazel unlock|tainted azazel unlock|fr=Azazel Impur}}

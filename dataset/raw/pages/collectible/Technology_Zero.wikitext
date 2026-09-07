@@ -1,0 +1,65 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 524
+ | quote       = Static tears!
+ | description = Connects Isaac's tears with electricity that can damage enemies.
+ | quality     = 3
+ | tags        = summonable tech offensive
+ | unlocked by = Technology Zero
+}}''For all Tech items, check [[Tech (Disambiguation)]]''
+
+{{cit|up|a+2}}
+
+== Effects ==
+* Connects tears with electricity that damages enemies.
+** {{dlc|nr}} The electricity's damage is equal to Isaac's [[Damage]].
+** {{dlc|r}} The electricity deals 30% of Isaac's Damage, 15 times per second, for a total of 4.5 times his damage per second.
+** A tear can generate one connection. The tear does not generate another connection even after the connection is lost. However, other tears can still make connections with it.
+** Each of Isaac's tears can connect to other allied tears, including those of [[shooting familiar]]s.
+*** The number of connections is limited by the number of Isaac's tears.
+
+== Notes ==
+* When playing as {{C|Jacob and Esau}}, the tears of the brother who picked up the item will also connect to those fired by his brother. For example, if Jacob picked up the item, his tears will connect to each other as well as to those of Esau, but Esau himself will not fire any electric tears.
+
+== Synergies ==
+* {{i|Anti-Gravity}}: All of the tears fired are connected by electricity, creating a series of electric fences.
+* {{I|Apple!}} / {{I|Tough Love}}: The damage of the electricity can be multiplied by the items. This occurs independently from the tears which generated the electricity.
+* {{i|Cricket's Body}} / {{i|Compound Fracture}} / {{i|The Parasite}}: Split tears will be connected via electricity.
+* {{i|Evil Eye}}: Tears fired by eye will be connected via electricity to Isaac's tears.
+* {{i|Eye of the Occult}}: Allows you to move the electrified tears, allowing you to hit more enemies and do more damage.
+* {{i|Haemolacria|dlc=r}}: Main tears and bursts can be connected via electricity.
+* {{I|Proptosis}}: Triples the electricity damage. Has no penalty with range.
+* {{i|Sinus Infection}}/{{t|Nose Goblin}}: Boogers will have electricity flowing between them even if attached to the same enemy, dealing massive damage to bosses.
+* {{I|Sulfuric Acid}} / {{I|Terra}}: The lasers are capable of destroying terrain, but are unable to apply knockback, allowing them to easily destroy large quantities of obstacles.
+* {{i|Tiny Planet}}: Creates moving laser fields that orbit the character.
+* {{i|The Wiz}}: The diagonally-spreading tear shots will be connected by electricity, effectively making up for the item's blind spot and providing an attack with a very wide range.
+
+== Interactions ==
+* The following items override Technology Zero. Tears from other sources such as {{I|Lead Pencil}} can still generate electricity with each other.
+** {{i|Brimstone}}
+** {{i|Dr. Fetus}}
+** {{i|Epic Fetus}}
+** {{I|Mom's Knife}}
+** {{i|Technology}}
+** {{i|Tech X}}
+** {{I|Trisagion}}: Tears from other sources can be connected with the base of Trisagion's blast.
+* {{i|Continuum}}: Tears will travel through walls; however, the electricity will not connect the tears while they are outside the room. If a tear was connected before it pass through a wall, it will not be connected after passing through, limiting the efficiency of the combination.
+* {{i|Flat Stone}}: Tears lose their connection as they bounce. As such, tears cannot make connection to another tear once they bounce, but other tears can make connection to them.
+* {{I|Haemolacria|dlc=nr}}: Only main tears can be connected.
+* {{i|Lachryphagy}}: Tears will generate arcs of electricity until they burst. As the tears will hang in the air for several seconds, this significantly increases the uptime of electricity arcs. Burst tears are similarly connected to each other by electricity.
+* {{i|Pop!}}: Tears in midair and tears that knock around each other will still be connected, effectively creating electric barriers and letting the electricity hit multiple times.
+* {{i|The Ludovico Technique}} + {{i|20/20}}/{{i|The Inner Eye}}/{{i|Mutant Spider}}: Main tear and orbiting tears are connected.
+
+== In-game Footage ==
+{{#ev:youtube|hPoiZUVCVlQ}}
+
+== Gallery ==
+<gallery>
+File:Collectible Technology Zero Booster Pack 2 icon.png|Technology Zero's appearance prior to [[Booster Pack #4]].
+</gallery>
+
+== Trivia ==
+* Technology Zero is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=850840324 this Steam Workshop item] by Ashkait and Scayze.
+* Strangely, this item has the [[Item Tags tech|<code>tech</code> item tag]], and therefore contributes toward its own unlock, though this should be impossible under normal circumstances.
+
+{{nav|booster pack|fr=Technologie Zéro}}

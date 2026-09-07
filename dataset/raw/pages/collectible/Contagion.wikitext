@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 466
+ | quote       = Outbreak!
+ | description = The first enemy killed in a room releases a gas cloud that [[poison]]s nearby enemies. Affected enemies will also release gas upon death, spreading the effect.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+{{distinguish visual|Toxic Shock}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* In each room, the first enemy killed will release a gas explosion and [[poison]] nearby enemies.
+** Poisoned enemies will also release gas upon death, spreading the effect.
+*** Poisoned enemies do not need to die while the poison is still active to spread the effect.
+** The initial gas explosion deals 5 damage, and the poison deals Isaac's [[Damage|tear damage]] per tick, for 6 ticks.
+
+== Notes ==
+* The effect will also activate if a {{e|Shopkeeper}} is destroyed before killing any enemies.
+** Re-entering a room and destroying another {{e|Shopkeeper}} inside it will trigger the effect for a second time.
+* The gas explosion and poison can damage [[friendly]] enemies.
+
+== Synergies ==
+* {{t|Gigante Bean}}: Greatly increases the size of the gas explosions, making the poison spread much more effective.
+
+== Interactions ==
+* {{dlc|r}} [[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s can't create a gas explosion.
+* {{i|Dr. Fetus}}/{{i|Epic Fetus}}: Explosion damage does not apply to poison damage.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop can't create a gas explosion.
+* {{dlc|r}} [[Freeze]] effects: Enemies that are frozen are still "alive" and can create a gas explosion when they are the first ice statue broken before any other enemy in the room dies.
+* {{i|Ipecac}}: Ipecac only applies a 2x multiplier as opposed to +40 to poison damage.
+* [[Poison]] tears: No effect. Gas explosions will only be triggered by poison caused by Contagion.
+* {{t|Second Hand}}: Poison duration is not affected.
+
+== In-game Footage ==
+{{#ev:youtube|ZUHb8k5MJ6A}}
+
+== Trivia ==
+* Contagion's sprite is a recolor of {{i|Toxic Shock}}.
+
+{{nav}}

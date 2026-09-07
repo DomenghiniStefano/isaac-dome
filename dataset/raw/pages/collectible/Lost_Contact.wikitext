@@ -1,0 +1,55 @@
+{{infobox passive collectible
+ | id          = 213
+ | image name  = * {{dlc|nr|Rebirth}}
+ | quote       = Shielded tears
+ | description = Isaac's tears can hit and destroy enemy projectiles. -0.15 [[shot speed]].
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Gives Isaac's tears a shield surrounding them, allowing the player to block enemy shots.
+** Isaac's shots are destroyed upon contact with an enemy's shot.
+** {{dlc|ana+}} Affects familiar's tears.
+* -0.15 [[shot speed]].
+
+== Synergies ==
+* {{i|Anti-Gravity}}: Placing many tears around Isaac creates a safe zone, especially with larger tears.
+* {{i|Brimstone}}/{{i|Maw Of The Void}}/{{i|Technology}}/{{i|Technology 2}}: Beam/ring/laser destroys projectiles, although only during its damage tick interval. The projectiles are not instantly destroyed when they touch the beam/ring/laser.
+* {{i|Compound Fracture}}/{{i|Cricket's Body}}/{{i|The Parasite}}: Split tears will be shielded. The Parasite's split tears will not appear to have shields.
+* {{i|Eye of Belial}}: Piercing through a projectile will trigger Eye of Belial's double damage and homing effect. Belial tears will still block shots.
+* {{Dlc|r}}{{C|The Forgotten}}: Enemy shots may be reflected with melee attacks. The damage of the reflected shots depends on their size and properties, with standard enemy shots dealing 6 damage, champion and homing shots dealing 7 and explosive ones dealing 50.
+* {{I|Jacob's Ladder|dlc=r}}: Destroyed tears via shot-blocking will trigger the electric arc effect.
+* {{i|The Ludovico Technique}}: Can block an infinite amount of enemy shots if the tear is placed on top of a monster. The projectiles that they attempt to shoot will be immediately destroyed.
+* {{Dlc|nr}}{{i|Mom's Knife}}: The knife will destroy projectiles in its path without being affected.
+** {{Dlc|r}}The knife does not destroy projectiles.
+* [[Piercing tears]]: The tears can pass through multiple enemy projectiles. This means that one tear can hurt the enemy and block its projectiles.
+* {{i|Polyphemus}}: Enemy shots are treated like enemies with 10 health, which are deducted from the Polyphemus tear. If it has strength remaining afterward, it will continue.
+* {{i|Sinus Infection}}/{{I|Mucormycosis}}: Tears that stick to enemies will block shots, and will not be destroyed in the process.
+* {{i|Soy Milk}}: The constant stream of tears will cut through any complex attack patterns with ease.
+* {{i|Spirit Sword}}: Sword swings reflect projectiles.
+* {{i|Almond Milk}}: The random tear effects can allow more shots to be blocked, as effects such as {{t|Ouroboros Worm}}, {{i|My Reflection}}, and {{i|Tiny Planet}} can cause tears to wander outside of the main stream of tears. However, this, in combination with the lower fire rate of Almond Milk compared to Soy Milk, makes Almond Milk slightly less effective than Soy Milk at blocking shots in the direction Isaac is shooting.
+* {{i|Tech X|dlc=anr}}: The rings block enemy shots.
+** {{dlc|r}} The rings sometimes block enemy shots. <sup>[more testing/debugging required]</sup>
+* {{i|Trisagion}}: Beams will block shots and continue on.
+
+== Interactions ==
+* {{i|Dr. Fetus}}: Bombs will not destroy or block shots. Stat effects apply.
+* {{i|Epic Fetus}}: Missiles will not destroy or block shots. Stat effects apply.
+* {{dlc|na+}} {{i|Fire Mind}}: Lost Contact will remove the chance to explode on impact effect.
+* {{i|God's Flesh}}: Tears with the shrink effect do not appear to be shielded, but will still block enemy shots.
+* {{i|Godhead}}: Auras will not block shots but tears will.
+* {{i|Haemolacria}}: Main tears will block shots but burst tears cannot.
+* {{i|Ipecac}}: Ipecac shot will explode upon contact with an enemy's shot.
+* {{i|Lachryphagy}}: Tears often block shots before they can burst; however, burst tears can also block shots.
+* {{i|Kidney Stone}}: The stone will not block shots.
+* {{dlc|na+}} {{i|Mysterious Liquid}}: Overridden by Lost Contact.
+* {{i|Rubber Cement}}: Tears will bounce off of enemy tears and destroy them.
+* {{i|Tough Love}}: Teeth will not appear to be shielded but will still block enemy shots.
+
+== In-game Footage ==
+{{#ev:youtube|oyKbVUeU35E}}
+
+{{nav|fr=Lentille Égarée}}

@@ -1,0 +1,59 @@
+{{infobox passive collectible
+ | id          = 236
+ | quote       = Turdy touch
+ | description = Enemies that touch Isaac are transformed into {{e|Poop}}.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = poop nolostbr summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Enemies that touch Isaac are transformed into {{e|Poop}}.
+* All brown {{e|Poop}}s, including those created by E.Coli, now have a 6.25% chance to drop a [[heart]] if it normally wouldn't drop anything.
+* {{transformation contribution|Oh Crap}}
+
+== Notes ==
+* Bosses cannot be turned into poop.
+* Enemies that are turned into poop do not count towards on kill effects such as health regeneration from {{i|Charm of the Vampire}} or the damage increase from {{i|Lusty Blood}}.
+** {{dlc|r}} This is especially detrimental for {{c|Tainted Keeper}} or {{c|Tainted Magdalene}} which depend on pickups generated on enemy kills.
+* Poops created by this item are not tiles, but entities. As such, they are not grid-aligned, and behave differently:
+** The poops vanish if the room is left and then returned to.
+** Things that automatically target enemies, such as {{i|Monstro's Tooth}} and {{p|II - The High Priestess}}, will also target the poops.
+** The poops can be slowly moved by pushing them.
+** The poops cannot create a bridge if they are bombed near a pit.
+** {{dlc|na+}} The poops will flash red when hit, similar to damaging [[monster]]s.
+** {{dlc|a+}} The poops will crumble when hit, identically to regular poops.
+* Touching the middle section of a {{E|Grub}} with E. Coli will split it and create a second head (rather than destroying the Grub and spawning {{E|Maggot}}s).
+* {{dlc|nr}}{{E|Mulliboom}}s can be turned into poop without taking damage.
+* Turning [[Champion]] versions of a monster into poop will forfeit the chance to get the champion's drop.
+
+== Synergies ==
+* {{T|Brown Cap}} : The generated poops explode when destroyed.
+* {{t|Butt Penny|a+}} / {{t|Petrified Poop}}: Grants poops made from enemies a chance to drop pickups.
+* {{i|Death's List}}: Enemies that die by being turned into poop do not disrupt the Death's List chain and clearing a room by turning all its enemies into poop still grants Isaac the Death's List reward.
+* {{i|Dirty Mind}}: Enemies that are turned into poop generate double the normal amount of Dips.
+* {{i|Holy Mantle}} / {{i|Isaac's Heart}} / [[Temporary_Buffs#Invulnerability|Invulnerability]] : The effect can be applied without taking contact damage.
+* {{I|Lodestone}}: If an enemy is hit by a lodestone tear perfectly simultaneously with it being turned into poop, the resulting poop will be tinted black and have a lodestone aura that sucks in enemies. This poop will return to normal after a few seconds.
+* {{i|Midas' Touch}}: Enemies touched are turned into {{E|Golden Poop}}.
+* {{tf|Oh Crap|r}}: Isaac can heal by destroying poops created from enemies.
+* {{C|Tainted Forgotten}}: The body will turn enemies into poop on contact.
+
+== Interactions ==
+* {{i|Bob's Brain|nr}} : Bob's Brain will explode upon hitting an enemy that has been turned into poop.
+* {{t|Butt Penny|na+}} / {{t|Petrified Poop}}: Poops made from enemies still do not drop pickups.
+* {{i|Hallowed Ground}} / {{t|Meconium}}: The poop colors are not changed.
+* {{tf|Oh Crap|anr}}: Destroying poops created from enemies do not heal Isaac.
+* {{i|Serpent's Kiss}} / {{i|The Virus|anr}}: The poops won't drop Black Hearts, negating the touch effect from these items on non-bosses.
+
+== In-game Footage ==
+{{#ev:youtube|sAPMfhEg_zc}}
+
+== Trivia ==
+* [[wikipedia:Escherichia coli|Escherichia coli]] is a type of intestinal bacteria present naturally in the human intestinal system. However, some harmful strains of E. Coli can cause food poisoning.
+* This item is used in {{chal|High Brow}} and {{chal|Scat Man|nr+}}.
+
+== Bugs ==
+{{bug|Effects like {{i|Monstro's Tooth}} and {{p|II - The High Priestess}} can target poops created by the item.}}
+
+{{nav|oh crap|poop}}

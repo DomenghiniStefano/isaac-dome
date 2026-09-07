@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | costume       = Isaac App.png
+ | costume scale = 1/2
+ | id            = 71
+ | quote         = Speed + range up
+ | description   = Decreases Isaac's size, making him less likely to be hit. {{dlc|nr}}+0.3 [[speed]], +1.5 [[tear falling speed]], -4.25 [[range]] (effective range is increased). {{dlc|r}} +0.3 [[speed]], +2.5 [[range]].
+ | quality       = 2
+ | tags          = summonable mushroom offensive
+ | pool          = mushroom
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.3 [[speed]].
+* {{dlc|nr}} -4.25 [[range]].
+* {{dlc|nr}} +1.5 [[tear falling speed]].
+* {{dlc|r}} +2.5 [[range]].
+* Decreases Isaac's size, making him less likely to be hit.
+* {{transformation contribution|Fun Guy}}
+
+== Notes ==
+* This item can rarely drop from destroying [[Rocks#Mushrooms|mushrooms]].
+* {{dlc|nr}} Even though the range stat is decreased, the ''effective'' range is slightly increased due to the changes to the hidden tear falling speed attribute.
+* Unlike other size downs, the one from Mini Mush is permanent - after taking the item, Isaac's hitbox cannot be increased past 75% of its base value.
+
+== Interactions ==
+* {{dlc|nr}} {{i|Dr. Fetus}}: Effective range is decreased since tear falling speed does not affect Dr. Fetus.
+
+== In-game Footage ==
+{{#ev:youtube|o_uhZPc7S9A||inline}} {{#ev:youtube|YsQF9SvZPbw||inline}}
+
+== Trivia ==
+* This item and its effects are likely a reference to the Mini Mushroom of the [[wikipedia:Super Mario|Super Mario]] series.
+* Mini Mush, along with {{i|1up!}}, {{i|Magic Mushroom}}, {{i|Super Bandage}}, and {{i|Mega Mush}} is one of the few items that make a unique sound upon pickup.
+
+{{nav|fun guy|mushroom|fr=Mini Champi}}

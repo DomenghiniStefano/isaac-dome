@@ -1,0 +1,57 @@
+{{infobox passive collectible
+ | id          = 207
+ | quote       = Gotta lick 'em all!
+ | description = Creates an [[orbital familiar]]. Collecting additional copies gives it the ability to shoot [[Charm]] tears, then chase enemies to deal contact damage, then deal even more contact damage.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable monstermanual
+ | pool        = The Harbingers
+ | unlocked by = A Cube of Meat
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Spawns an [[orbital familiar]] that deals {{dlcalt|105|r=52.5}} contact damage per second.
+* {{dlc|na}} Unlike the {{i|Cube of Meat}}, it does not block enemy shots.
+* {{dlc|a}} Ball of Bandages blocks enemy shots.
+* Each subsequent Ball of Bandages obtained are combined with the first one (increasing its 'level'), changing its characteristics:
+** '''Level 2''': Gives the orbital the ability to shoot [[Charm]] tears once every {{dlcalt|second|r=0.73 seconds}}, with each tear dealing 3.5 damage.
+** '''Level 3''': Changes it from an orbital to a Bandage Girl that that chases nearby enemies dealing {{dlcalt|52.5|a+nr=8.75|r=12.5}} contact damage per second and fires Charm tears in the direction Isaac shoots. The tears it fires are the same as the ones fired by the Level 2 form.
+** '''Level 4''': Increases the size of the Bandage Girl and increases its contact damage to  {{dlcalt|82.5|a+nr=13.75|r=25}} per second. Enemies killed by a level 4 Bandage Girl's tears have a chance to drop full {{e|Red Heart}}s.
+** The fifth Ball of Bandages will create a new Level 1 ball, and start the cycle again.
+
+== Notes ==
+* Multiple Balls of Bandages can be collected in a single run.
+* {{dlc|r}} The orbital orbits Isaac significantly faster, making it more effective at blocking shots but less effective for dealing damage.
+* {{e|Famine}}, {{e|Pestilence}}, {{e|War}}, and {{e|Death}} will always drop either a Ball of Bandages or {{i|Cube of Meat}}. After the first one drops, further Harbingers will only drop that same one and never the other for the duration of the run.
+* The ticking rate for Bandage Girls' contact damage causes them to often deal damage twice once they touch an enemy, making their first second of DPS up to 1.5x higher than normal.
+* Level 3 and 4 Bandage Girls' tears inherit Isaac's momentum.
+
+== Synergies ==
+* {{i|Book of Revelations}}: Ensures that [[Harbinger]]s that haven't already been defeated will replace their respective floor's boss, making it drastically easier to collect multiple Balls of Bandages.
+* {{i|Box of Friends}} / {{i|Monster Manual}}: Additional copies of Ball of Bandages combine with the first, increasing its level as normal.
+* {{dlc+|r+}} {{i|Potato Peeler}}: Spawns a Ball of Bandages instead of a {{i|Cube of Meat}}. If Isaac already has a Cube of Meat, that is still spawned.{{dlc-}}
+
+== Interactions ==
+* {{t|Duct Tape}}: Familiar will stay in place relative to Isaac at levels 1 and 2. No effect at levels 3 and 4.
+* [[Pretty Fly]]: Ball of Bandages will replace one if Isaac already has 3 Pretty Flies. If the Ball of Bandages reaches level 3 or 4, the Pretty Fly will come back when a familiar is obtained, until another Ball of Bandages orbital is obtained.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | A Bandage }}
+
+== In-game Footage ==
+{{#ev:youtube|-fGGs-PdzH4}}
+
+== Gallery ==
+<gallery>
+File:Ball of Bandages Level1.png|Level 1 Ball of Bandages.
+File:Ball of Bandages Level2.png|Level 2 Ball of Bandages.
+File:Ball of Bandages Level3.png|Level 3 Ball of Bandages.
+File:Ball of Bandages Level4.png|Level 4 Ball of Bandages.
+</gallery>
+
+== Trivia ==
+* Bandage Girl is a secondary character in [[wikipedia:Super Meat Boy|''Super Meat Boy'']], a game by [[Edmund McMillen]], the creator of ''The Binding of Isaac''.
+* Ball of Bandages' item description, "Gotta Lick 'em All!", could be a reference to the "Gotta Catch 'em All!" advertising slogan used in [[wikipedia:Pokémon|Pokémon]] media.
+
+{{nav|mom unlock|fr=Boule de Pansements}}

@@ -1,0 +1,44 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 592
+ | quote       = Born to rock
+ | description = +1 [[Damage]]. Replaces tears with rocks that deal variable damage, have increased [[knockback]], and can destroy [[obstacles]].
+ | quality     = 3
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* +1 [[damage]].
+* Isaac's tears become rocks that have extra knockback and have a chance to destroy [[obstacles]] (including walls to {{R|Secret Room}}s, entrances to {{s|Mines}}/{{s|Ashpit}} and [[Bedroom]]s, and normal closed doors).
+** Rocks can be pushed onto holes to cover them as if they were bombed normally.
+* Rock tears randomly deal increased/decreased damage, ranging between ×0.5 and ×2 Isaac's damage per tear.
+
+== Notes ==
+* Despite the chance to deal lower damage per shot, the increase to the damage stat results in a higher average DPS.
+* Terra bypasses {{e|Blaster}}s' 75% damage reduction.
+* Terra can destroy the armor of {{e|Tuff Twins}} and {{e|The Shell}}.
+
+== Synergies ==
+* {{t|Broken Padlock}}: Locked doors can be opened by shooting at them.
+* {{I|Finger!}}: The finger will destroy rocks.
+* {{I|The Ludovico Technique}}: Controllable rock tear that will destroy rocks. The size of the tear changes per room.
+* {{i|Mom's Knife}}: The knife will sometimes destroy rocks. Rocks can be destroyed by walking into them.
+
+== Interactions ==
+* {{C|Azazel}}/{{i|Brimstone}}/{{i|Technology}}/{{i|Technology 2}}/{{i|Tech.5}}/{{i|Tech X}}: Lasers will sometimes destroy rocks and gains increased [[knockback]], but will not open doors or [[Secret Room]] entrances.
+** {{dlc|r+}} Lasers can now open doors.
+* {{i|Dr. Fetus}} / {{i|Epic Fetus}}: Explosions retain the extra damage and knockback, but cannot destroy Key Blocks.
+* [[Spectral tears]]: Tears continue to destroy obstacles.
+* {{i|Spirit Sword}}: Sword swings and spin attacks cannot destroy rocks, only its projectiles.
+* {{C|Tainted Lilith}}: The damage from hitting enemies with the fetus is affected by Terra's damage randomization.
+
+== In-game footage ==
+{{#ev:youtube|kodR4jm5cuM}}
+
+== Trivia ==
+* [[anti:Terra|Terra]] originates from the ''Antibirth'' mod.
+* "Terra" is the word for "[[Wikipedia:earth|earth]]" in Latin and some of its descendant languages, and is sometimes used to distinguish the Earth of the Solar System from other inhabited planets in science fiction.
+
+{{nav|astrological}}

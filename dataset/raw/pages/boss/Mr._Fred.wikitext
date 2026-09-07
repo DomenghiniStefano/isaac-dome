@@ -1,0 +1,45 @@
+{{infobox boss
+ | name        = Mr. Fred
+ | id          = 270
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Womb}}{{floor|Utero}}<br>{{floor|The Void}}<br>{{dlc|r}}<br>{{floor|Womb}}{{floor|Scarred Womb}}<br>{{floor|The Void}}
+ | base hp     = 500
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Harlequin Baby}} (1% chance)
+}}
+{{disambig msg|the boss|the enemy|Fred}}
+
+'''Mr. Fred''' is a [[boss]] that can appear:
+* {{dlc|nr}} In the {{s|Womb}} and the {{s|Utero}}.
+* {{dlc+|r}} In the {{s|Womb}} and the {{s|Scarred Womb}}.{{dlc-}}
+__TOC__
+
+== Behavior ==
+Mr. Fred stays stationary in the middle of a 1x2 or 2x1 room and performs the following attacks:
+* Breaks the chain of 1 of the 4 {{e|Homunculus|text=Homunculi}} that accompany him at the beginning of the fight.
+** Unlike other Homounculi, the ones spawned with Mr. Fred can not break free on their own and can only be unleashed by this attack.
+* Shoots 4 large long-range blood projectiles in the cardinal directions. These tears leave [[Creep#Red Creep|Red Creep]] and will burst at the end of their range into a larger pool of Creep.
+* Burrows underground briefly and pops back up in his original position, firing eight projectiles in all directions.
+* Spawns a {{e|Fred}} on his position, which immediately burrows underground.
+Mr. Fred deals a whole heart of contact damage.
+
+== Gallery ==
+<gallery>
+File:Boss Mr. Fred release ingame.png|Mr. Fred releasing a Homunculus.
+File:Boss Delirium Mr. Fred ingame.png|Mr. Fred as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Trivia ==
+* Mr. Fred is the boss version of the {{e|Fred}}s.
+* Mr. Fred resembles a large baby with a medical condition [[wikipedia:Harlequin-type ichthyosis|Harlequin Ichthyosis]]. He could, therefore, be a giant [[Harlequin Baby]].
+* Mr. Fred may be the inspiration for [https://mewgenics.wiki.gg/wiki/Throbbing_King The Throbbing King's] design.
+* {{dlc|na+}} Unlike other bosses, Mr. Fred disappears upon death instead of exploding into blood.
+* {{dlc+|a+}} Similar to Delirium's room, if Mr. Fred spawns in {{s|The Void}}, his room will be seen in the map as a 1x1 room.{{dlc-}}
+** That's why he can't be replaced by a [[harbinger]] with {{i|Book of Revelations}}
+* Mr. Fred's boss art shows the ground around him to be grey, instead of a fleshy red.
+
+{{nav|boss|fr=M. Fred}}
+
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

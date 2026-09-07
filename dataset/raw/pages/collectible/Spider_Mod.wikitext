@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | dlc         = a
+ | name        = Spider Mod
+ | id          = 403
+ | quote       = Mod buddy{{dlc|nr|!}}
+ | description = Displays Isaac's tear damage and enemy health bars. Spawns a [[familiar]] that wanders around and inflicts random [[status effect]]s on enemies it touches. Can spawn a {{E|Lil' Battery}} ({{E|Micro Battery}}) / [[Blue spider]] upon clearing a [[Rooms|room]].
+ | quality     = 1
+ | tags        = summonable spider offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Spawns a grey spider [[familiar]] that wanders around and allows Isaac to see tear damage and the health bars of all enemies.
+** The spider will inflict a random [[Effects#Status Effects|status effect]] on any enemies it comes into contact with.
+** The spider has a 10% chance to spawn a [[Blue Spider]] (2/3 chance) or drop a {{E|Lil' Battery}} ({{E|Micro Battery}}) (1/3 chance) when a [[Rooms|room]] is completed.
+* {{transformation contribution|Spider Baby}}
+
+== Notes ==
+* {{Dlc|nr}} For the sake of simplicity, all damage values shown are multiplied by 10 and rounded up to the nearest number.
+** {{Dlc|r}} Damage values are no longer multiplied or rounded.
+* {{dlc|r}} If a hit would deal 10000 or more damage, it will be displayed as 9999.
+* All status effect damage dealt by Spider Mod is based on Isaac's damage stat.
+* Spider Mod reveals {{E|Mega Satan}}'s health bar and is the only way to see his health.
+** {{Dlc|r}} In Repentance, doesn't reveal {{E|Mega Satan}}'s life bar during his second phase anymore.
+** {{Dlc+|r}} Spider Mod also reveals the health bar for {{E|Mother}}, the [[Harbingers (Bosses)#Ultra Harbingers|Ultra Harbingers]], and {{E|The Beast}}.{{dlc-}}
+* {{dlc|nr}} Spider Mod shows the health of invincible enemies, holes created by {{E|Little Horn}}, and the golden statue of {{E|Ultra Greed}}.
+* Spider Mod doesn't show if a segmented enemy has individual segment health like {{E|Larry Jr.}} or a health pool like {{E|Chub}}. Against enemies with invulnerable segments such as {{E|Carrion Queen}} and {{E|Scolex}}, its indicators will show under their head and not under the vulnerable segments.
+* Spider Mod's damage doesn't account for [[damage scaling]], {{dlc|nr}} enemy damage reduction, or invulnerability, which means that the damage indicators for some bosses, {{E|Mushroom|nr}}s, {{E|Stone Grimace|nr}}s, and similar enemies will be inaccurate.
+* {{dlc+|a+}} If Isaac transforms into {{tf|Spider Baby}}, it spawns a spider familiar who works similarly to Spider Mod.{{dlc-}}
+
+== Synergies ==
+* {{i|BFFS!}}: Makes Spider Mod bigger and increases the chance to 12.5% for Spider Mod to spawn a battery or blue spider. No effect on status effect damage.
+* {{I|Hive Mind}}: Makes Spider Mod bigger. No effect on status effect damage.
+
+== In-game Footage ==
+{{#ev:youtube|85bEbeFbOT0}}
+
+== Trivia ==
+* This item is a reference to Spidermod, a modification to the original ''The Binding of Isaac'', which was made by one of the lead ''Rebirth'' developers, Spider853. One feature of Spidermod was to show damage numbers onscreen.
+
+{{nav|spider|fr=Roboraignée|zh=蜘蛛模组}}

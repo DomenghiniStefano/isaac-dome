@@ -1,0 +1,48 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 463
+ | quote       = Acid tears!
+ | description = +0.3 [[damage]]. Adds a chance to fire acidic tears which can destroy [[obstacles]] and open doors.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* +0.3 [[damage]].
+* Adds a 25% chance to fire acidic tears that destroy [[obstacles]] and open doors (including {{R|Secret Room}} entrances) upon contact.
+
+== Notes ==
+* Tears open only ''closed'' doors, not ''locked'' doors.
+* The chance to fire an acid tear does not increase with [[luck]].
+* The acidic tears affect static objects like {{E|Bomb}}s, but with some differences:
+** They do not open {{E|Bomb Chest}}s.
+** {{dlc|nr}} They cannot bridge gaps with obstacles.
+*** {{dlc|r}} Gaps are now bridged.
+** {{dlc|nr}} Poop is not destroyed in one hit.
+** {{dlc|r}} The mirror leading to the [[Mirrored World]] cannot be destroyed.
+
+== Interactions ==
+* {{dlc|nr}} {{i|Brimstone}}/{{i|Tech.5}}/{{i|Technology}}/{{i|Technology 2}}/{{i|Tech X}}: Only the stat bonus applies to the laser.
+** {{dlc|r}} Lasers will sometimes destroy rocks, but will not open doors or secret rooms and has no color change.
+** {{dlc|r+}} Lasers can sometimes destroy rocks and doors. Still no color change.
+* {{t|Broken Padlock}}: Locked doors can be opened by shooting at them.
+* {{i|Dr. Fetus}}/{{i|Epic Fetus}}/{{i|Ipecac}}: Overrides Sulfuric Acid, stat bonus still applies.
+* {{i|Finger!}}: The finger can destroy rocks when pointing at them.
+* {{i|Spirit Sword}}: Only the energy beams can destroy rocks.
+* {{C|The Forgotten}}: Only the boomerang attack can destroy obstacles, not swings.
+* {{i|The Ludovico Technique}}: The Ludovico tear occasionally becomes acidic.
+* {{dlc|nr}} {{i|Mom's Knife}}: Overrides Sulfuric Acid, stat bonus still applies.
+** {{dlc|r}} Knife can destroy obstacles and open doors and secret rooms upon contact with no visual indicator.
+* {{i|Rubber Cement|nr}}: Acidic tears can no longer break objects and doors and just bounce.
+* {{dlc|nr}} [[Spectral tears]]: Acidic tears will no longer be able to destroy obstacles or open secret rooms.
+** {{dlc|r}} Acidic tears break rocks and open secret rooms, without being broken themselves on impact.
+
+== In-game Footage ==
+{{#ev:youtube|vbrxNJ3PtbQ}}
+
+== Trivia ==
+* Sulfuric acid is a strong, corrosive acid, commonly used as a drain cleaner.
+
+{{nav|fr=Acide Sulfurique}}

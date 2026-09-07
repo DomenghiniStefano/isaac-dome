@@ -1,0 +1,58 @@
+{{infobox boss
+ | id          = 99
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Depths}}<br><u>Degraded Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 250
+ | pool        = {{ip|Boss}}<br> {{i|Lil Gurdy|r+}} (1% chance)
+}}
+
+'''Gurdy Jr.''' is a [[boss]] that can appear in all environments of [[Chapter 2]] ({{s|Caves}}, {{s|Catacombs}}, {{s|Flooded Caves}}).
+
+== Behavior ==
+=== Phase 1 ===
+* Spawns a {{e|Pooter}}.
+* Jumps and shoots a radial of 8 tears in all directions on landing.
+* Charges towards Isaac at high speeds, sliding while bouncing off obstacles and walls, She gradually loses speed before coming to a full stop.
+** Any Pooters caught in her charge will be killed.
+** The course of her charge can be affected by Tear knockback
+** If Gurdy Jr. charges into an active bomb, she is slowed down tremendously.
+
+=== Phase 2 ===
+* When she has less than 50% health, she uses her charge attack continuously.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|7}}: Instead of one Gurdy Jr., there will be two 42% smaller ones. This version has 45% less HP than the original (137.5) and only uses the charging attack. It drops a {{e|Soul Heart}} upon death.
+: {{bc|12}}: 15% larger than the regular, with 25% more HP (312.5). She spawns {{e|Super Pooter}}s instead of regular Pooters. Does not shoot projectiles of any sort.
+
+== Gallery ==
+<gallery>
+File:Boss Gurdy Jr. blue ingame.png|Blue Champion Gurdy Jr.
+File:Boss Gurdy Jr. gold ingame.png|Yellow Champion Gurdy Jr.
+File:Boss Delirium Gurdy Jr. ingame.png|{{dlc+|a+}} Gurdy Jr. as one of {{e|Delirium}}'s forms.{{dlc-}}
+</gallery>
+
+== Notes ==
+* Slowing Gurdy Jr. will, for the most part, render her charge attack useless.
+* {{Dlc|nr}} [[Piercing tears]] lack knockback and cannot be used to divert or stop Gurdy Jr.'s charge attack.
+* If Gurdy Jr. is [[fear]]ed/[[confusion|stunned]] during her charge attack after the effect wears off, she will immediately charge at Isaac.
+* Gurdy Jr's charge attack has no telegraphing, making it very dangerous to stay close due to the lack of a warning.
+
+== Trivia ==
+* Gurdy Jr. was added in the ''Wrath of The Lamb'' DLC for the original ''The Binding of Isaac''.
+** Gurdy Jr. from ''Wrath of the Lamb'' is larger than Gurdy Jr. in Rebirth.
+** In the original game, Gurdy Jr. could be encountered in the {{s|Cellar}}.
+*** Also in the original game, in Chapter 2, Gurdy Jr. could only be encountered in The {{s|Catacombs}}, while in Rebirth, she can be encountered in all environments of Chapter 2 (in The {{s|Caves}}, The {{s|Catacombs}}, and The {{s|Flooded Caves}}).
+* Gurdy Jr. appears to be the second stage of the "Gurdy" boss line, with the first stage as {{e|Gurglings}}, third as {{e|Gurdy}}, and final as {{e|Mama Gurdy}}.
+* Gurdy Jr. is female.<ref>https://web.archive.org/web/20120831111557/http://www.formspring.me/EdmundM/q/341049925531883948</ref>
+* Edmund McMillen has referred to the double Gurdy Jr. champion room in an interview as "double Gurditration".
+
+== References ==
+{{reflist}}
+
+{{nav|boss|fr=Boris Junior}}
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Rebirth]]
+[[Category:Gurdies]]

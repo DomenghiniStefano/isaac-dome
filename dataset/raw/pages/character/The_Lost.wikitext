@@ -1,0 +1,193 @@
+{{header characters}}
+{{infobox character
+ | id           = 10
+ | pickups      = 1 [[coin]]
+ | collectibles = [[Flight]]<br>{{dlc|a}} [[Spectral tears]]<br>{{dlc|anr}} {{unlockable}} {{i|D4}}<br>{{dlc+|r}}{{i|Eternal D6}}{{dlc-}}<br>{{dlc|a}} {{unlockable}} {{i|Holy Mantle}}
+ | unlocked by  = The Lost
+}}
+'''The Lost''' is a secret [[character]].
+
+The Lost starts with no health and cannot gain health by any means. It will die from any damage taken.
+
+* The Lost starts with [[flight]].
+** {{plat|3DS}} The Lost also starts with {{i|D4}} (if unlocked).
+** {{plat|iOS}} The Lost also starts with [[spectral tears]] {{dlc|nr}} and {{I|D4}} if unlocked.
+* {{dlc+|anr}} The Lost starts with [[flight]], [[spectral tears]], {{i|D4}} (If unlocked), and the effect of {{i|Holy Mantle}} (after donating 879 coins to the {{M|Greed Donation Machine}}) {{dlc-}}
+* {{dlc+|r}} The Lost starts with [[flight]], [[spectral tears]], {{i|Eternal D6}}, and the effect of {{i|Holy Mantle}} (after donating 879 coins to the {{M|Greed Donation Machine}}). This form of Holy Mantle is inherent to the character rather than being a starting item, and as such will be present when switching to The Lost in the middle of the run through the use of {{I|Clicker}}, will not be present when switching away, and cannot be removed by any means.{{dlc-}}
+
+{{dlc|a}} The Lost can activate the button in [[Greed mode]] without taking damage, at the price of one less coin spawning in the next wave's reward.
+
+The Lost can take [[Devil Room|devil deals]] and {{R|Black Market}} items for free.
+* {{Dlc|r}} Devil deals and Black Market items are presented as choices. Taking one will despawn all other deals in the room.
+** This also applies to devil deals in the first room of the {{S|Dark Room}}; only one of the devil deals spawned by the chests can be taken, regardless of how many chests have been opened.
+
+__TOC__
+
+== Notes ==
+* Devil deals, while free, still count as making a deal with the devil and will prevent {{R|Angel Room}}s from opening. Thus, a {{p|Credit Card}} is still recommended, or getting {{i|Chaos}} to acquire angel room items (except {{i|Key Piece 1}} and {{i|Key Piece 2}}).
+* Using the {{I|IV Bag}} or a {{M|Blood Donation Machine}} kills The Lost instantly even with the Holy Mantle.
+* [[Bedroom]]s are much more common as The Lost due to its lack of health. While it cannot take advantage of the beds to heal, the guaranteed {{R|Crawl Space}}s in clean Bedrooms can give more opportunities for items.
+* {{dlc|na+}} If The Lost's Holy Mantle effect is lost while within a {{R|Curse Room}}, closing the game, starting it up, and then continuing the run will restore the Holy Mantle's charge, allowing The Lost to leave the room unharmed.
+** {{dlc|r}} The Lost can no longer restore his Holy Mantle by closing the game, starting it up, and then continuing the run.
+* {{dlc|nr}} Using the D4 at all is not recommended, as it will remove the Holy Mantle, making The Lost die in one hit.
+* {{dlc|anr}} After reaching {{s|Womb}}, The Lost becomes slightly easier to play, because the invincibility frames from {{i|Holy Mantle}} scale with the damage that would have been taken.
+** {{dlc|r}} Holy Mantle breaking only grants one second of invincibility frames, regardless of the damage source.
+* {{dlc|a+}} Isaac will be replaced by The Lost upon starting a third [[victory lap]]; however, Victory Laps do not allow the unlocking of achievements.
+** {{dlc|nr}} Since the Lost's Holy Mantle isn't intrinsic, the Victory Lap Lost will always die from one hit unless the player has explicitly found the Holy Mantle.
+* {{dlc|r}} The Lost starts with {{I|Eternal D6|x}}, even before it's unlocked.
+* {{dlc|r}} The Lost's Holy Mantle effect is intrinsic to the character once unlocked, and it can't be rerolled.
+** Picking up another one does not double the effect.
+** Being innate, this [[File:Holy Mantle hp.png|10px]] Holy Mantle effect is not shown in the pause menu.
+* {{Dlc|r}} Though Devil deals and Black Market items are normally choices, there are four ways to fully or partially bypass this and collect multiple items anyway:
+** Making the items free with {{P|Credit Card}}, {{I|Coupon}}, or {{i|Mr. ME!}}.
+** Cloning the items with {{I|Diplopia}} or {{I|Crooked Penny}} (all of the cloned items can be taken, but the original items will still be presented as a choice).
+** Making the items purchasable with pennies via {{T|Keeper's Bargain}}, {{i|Strawman}}, or {{i|A Pound of Flesh}}.
+** {{dlc|rnr+}} {{T|Your Soul|x}} can be used to take an item.
+*** {{dlc|r+}} '''Your Soul''' will be consumed but will not grant an extra item.
+* {{dlc|r}} Since {{t|Perfection}}, which grants +10 [[Luck]], is guaranteed to spawn after three floors are cleared without taking damage, it is commonly available to The Lost.
+* {{dlc|r+}} In multiplayer, if one person is playing as The Lost and another player is playing as {{c|Keeper}}, The Lost cannot pick up any free devil deals.
+
+== General Strategies ==
+{{main|The Lost (Strategy)}}
+* One of the biggest issues of having no health is that many items become completely useless: items that only give health ups, only become effective upon taking damage, or cost health to use provide no benefit to The Lost.
+** {{dlc+|r}} This is alleviated by the {{i|Eternal D6}} that The Lost starts with. Even though the Eternal D6 has a 25% chance to destroy an item instead of rerolling it, this is no loss for The Lost if the destroyed item would have been useless for it anyway.{{dlc-}}
+* Trinkets and Items like {{t|Brain Worm}} that can home-in and target enemies even at a distance are invaluable early in the game, as you do not need to place yourself directly in the enemy's attack path and {{dlc|a}}The Lost's spectral tears pass through most obstacles.
+* The Lost's flight and {{dlc|a}}spectral tears allows taking advantage of obstacles, trivializing certain rooms.
+* Anything that grants an extra life (e.g. {{i|Dead Cat}}, {{i|1up!}}) is highly useful, allowing The Lost to retry rooms that would have otherwise ended the run.
+* {{dlc|r}} Due to The Lost's ability to take 1 Devil Item for free, Devil Rooms and Angel Rooms become equally valuable, unless one is going for {{e|Mega Satan}}.
+
+== Item Interactions ==
+* {{i|Alabaster Box}}: Alabaster Box does not gain charges from Black Hearts. Soul Hearts still function as expected.
+* {{i|Birthright}}: Prevents items with the internal tag <code>[[Item Tags nolostbr|nolostbr]]</code> from spawning. In practice, this automatically rerolls most items that aren't beneficial to The Lost, namely ones that only give health, flight, and/or spectral tears or activate upon taking damage.
+* {{i|Brittle Bones}}: Picking this item up will give a one-time +0.5 tears up ({{dlc|r}} +0.4 [[fire rate]]). This bonus is retained even if the item is later lost or rerolled.
+* {{i|Habit}}: {{i|Holy Mantle}} will not activate the Habit's effect, making it almost completely useless since its only method of activation is by receiving damage, which would effectively kill the Lost or consume any available extra lives. The same is true for any other items that require taking damage.
+* {{i|Heartbreak}}: The Lost has full benefit of the item. This lets him survive 4 extra hits, each hit adding 1 damage, and the 5th is fatal.
+* {{i|Whore of Babylon}}: As the Lost has no red hearts (he has half a soul heart), Whore of Babylon is constantly in effect, effectively changing into a damage and speed upgrade.
+
+== {{dlc|a}} Unlocking The Lost in Afterbirth ==
+The Lost is unlocked by dying in a {{R|Sacrifice Room}} while holding {{t|Missing Poster}}.
+
+* In order to unlock The Lost, you need to unlock [[Missing Poster]].
+* {{t|Missing Poster}} is unlocked by defeating {{e|The Lamb}} as {{C|Isaac}}.
+
+* Looking for {{i|Mom's Box}} in shops makes finding the poster easier.
+* {{i|Glyph of Balance}}: If all of its conditions are fulfilled, it will change [[champion]] drops {{dlc|r}} and room clear rewards to trinkets as long as Isaac doesn't hold one, greatly increasing the chances of finding the Missing Poster.
+* {{i|Glitter Bombs}}, in conjunction with a large enough or infinite source of bombs (such as a {{e|Golden Bomb}}), have a small chance to drop trinkets, making it easier to find the poster.
+** {{dlc+|r}}{{i|Glitter Bombs}} now have a cap on drops per floor, making this method less efective.{{dlc-}}
+* It is possible to unlock The Lost while holding {{t|Mysterious Paper}}, although the probability is small since it only has a 1/4 chance to imitate the {{t|Missing Poster}}. {{i|Dead Cat}} and other resurrection items could be useful for extra attempts.
+** {{i|Divorce Papers}} guarantees a spawn of the {{t|Mysterious Paper}} as long as it is unlocked, and as it is part of the {{R|Boss Room}} item pool, it can be found easily.
+* If Isaac happens to teleport away from the sacrifice room right as he dies, then he won't unlock The Lost.
+** {{dlc|a}} Sacrificing health for the 12th time in a row and onward has a 50% chance to teleport you to the {{s|Dark Room}}. Make sure Isaac has no more than 11 hearts before attempting to die in the sacrifice room.
+** {{Dlc|a}}Sacrificing health for the 6th time in a row will have a 33% to teleport Isaac to the {{R|Angel Room}}. If Isaac loses his last sacrifice and gets teleported to the Angel Room, he will not unlock The Lost.
+** {{dlc|a}} Dying to ''spikes'' specifically is not required to unlock The Lost, so it is advised to use other sources of damage such as {{e|Bomb}}s in these cases.
+
+== {{dlc|na}} Unlocking The Lost in Rebirth ==
+The Lost is unlocked by dying 4 times in a row, each time with a certain character dying in a certain circumstance. Deaths '''must''' be completed consecutively in the order shown below.
+Seeds can be used on all '''but''' the final step.
+
+# {{C|Isaac}} must die to a {{E|Mulliboom}} in [[Chapters|Chapter 1]].
+# {{C|Magdalene}} must die to her own {{e|Bomb}} in [[Chapters|Chapter 2]].
+# {{C|Judas}} must die to {{e|Mom}}. Being killed by any monster spawned by Mom will spoil the entire attempt at unlocking The Lost.
+# Finally, {{C|Azazel}} must die to {{E|Satan}}. Being killed by any of the other enemies spawned by Satan or {{e|The Fallen}} will spoil the entire attempt at unlocking The Lost. Using {{i|The Bible}} on Satan does not count as death from Satan. Furthermore, you cannot be killed by Satan's stomp. You must die in his first phase, after killing The Fallen.
+
+The Lost will be unlocked after completing the steps shown above.
+
+==== Notes on unlocking The Lost ====
+* Multiple lives (for example, obtained by {{i|Dead Cat}}) must be depleted before the intended death, as deaths while having extra lives do not count as a game loss.
+* It is highly suggested you do not take items or trinkets with a chance of reviving you after dying, such as {{I|Guppy's Collar}} or {{T|Broken Ankh}}, as these can spoil your attempt if unprepared.
+* Having any mods installed that trigger the mod flag will make The Lost unobtainable. To fix this problem, all mods have to be removed.
+* The game cannot be won as any character required to unlock it when unlocking it.
+* Champion versions of monsters and bosses will count for the death criteria.
+* Runs can always be safely reset.
+* Mom's Foot's stomp counts as explosive damage, which makes {{i|Pyromaniac}} a problematic choice when trying to complete ''Step 3''.
+* Picking the wrong character while unlocking him doesn't mess up the unlocking process.<ref name="lost unlock">http://www.reddit.com/r/bindingofisaac/comments/2yog5y/indepths_analysis_on_the_lost_unlocking_process/</ref>
+* Quitting and Restarting the game in the middle of the unlocking process doesn't mess it up.<ref name="lost unlock" />
+* Picking up {{i|Lazarus' Rags}}, {{i|Judas' Shadow}}, or {{i|Ankh}} should be avoided. These items will revive the current character as a different one and therefore prevent the current unlock-step from being fulfilled.
+* Exploit: If you die during a required run, but hit the "start" button just as you die and reset before it shows [[Isaac's Last Will]], it will not count as a death that spoils the run; instead, it counts as a restart.
+* Bug: When doing the second step of the quest, it is required to switch rooms from the initial room of [[Chapters|Chapter 2]] for it to count towards the unlock. Not doing so will spoil the entire attempt and invalidate further progress with other characters. This bug is similar in nature to one with the {{i|Holy Mantle}}, in which the item doesn't activate in the starting floor of a room.
+
+=== File Manipulation ===
+By changing a file parameter, an unsuccessful try can be undone:
+
+# Backup the file <code>Options.ini</code> found in the <code>Documents\My Games\Binding of Isaac Rebirth</code> by making a copy of it in the same folder.
+
+Open the original file with Notepad and change the <code>SteamCloud</code> parameter in it to <code>0</code>. This will disable Steam Cloud gamesaves synchronization.
+
+# After an unsuccessful try, delete the original file and rename the backup copy with the name of the original file: <code>Options.ini</code>
+# Repeat steps 1 after each successful run until you unlock The Lost.
+# When finished, open the original file and restore the <code>SteamCloud</code> parameter in it to <code>1</code>. This will enable Steam Cloud gamesaves synchronization again.
+
+=== Helpful Seeds For Rebirth ===
+{{scroll box | content =
+
+==== Isaac ====
+{{plat|PC}} {{mode|normal}} GPE3 2T1H (2 Mullibooms south of starting point. Use the sacrifice room above to damage yourself first)
+{{plat|PC}}{{plat|PS4}} {{mode|normal}} JTMD EZPF (One mulliboom directly below the starting. Go left first to get weakened)
+{{plat|PC}} {{mode|hard}} 4Z93 R21B (1 down 1 right from start contains mullibooms)
+{{plat|PC}} {{mode|hard}} GH9Y FSA8 (series of rooms containing mullibooms going down)
+{{plat|PC}} {{mode|hard}} Q2V4 YZET (Cellar needs to be unlocked, 2x2 room full of mullibooms (about 6/7) when going up)
+{{plat|Vita}} {{mode|normal}} GQHN NMKN (Go left, 4+ Mullibooms)
+{{plat|3DS}} {{mode|normal}} 6Z2L AZ6J (Go left, 4+ Mullibooms)
+{{plat|3DS}} {{mode|normal}} VNSM AHHG (Go up, weaken yourself at the spikes, then go up and die from the Mulliboom)
+{{plat|3DS}} PXRT XH49 (Go up, weaken yourself with the Frowning Gapers, then go down and die to the Mulliboom)
+{{plat|ios}} 3KY7 JPBJ (Go right and weaken yourself, then go left and there are 2 mullibooms)
+
+==== Maggy ====
+{{plat|PC}} ALFA 0NTS (Recommended Normal difficulty. Pyro in the first Treasure Room, adjacent to spawn. Go left on basement 2 for we need to go deeper in the secret room.)
+{{plat|PS4}} FDRG 0CTE (Pyro in the first Treasure Room, adjacent to spawn)
+{{plat|Vita}} DXVW MQCF (Pyro in the first Treasure Room)
+{{plat|3DS}} YGDC T8SL (10 bombs in the first Treasure Room)
+{{plat|iOS}} E1NZ N3MA (bomb in second floor shop, the fires should give enough pennies to buy the bomb.)
+
+==== Judas ====
+{{plat|PC}} {{mode|normal}} YR8E YXDV (Polyphemus in the first Treasure Room. Do not take devil deals, as Trinity Shield and Sacred Heart will be available in Angel Rooms. Keep the Book of Belial to ensure they show up. Also, from the pills from Mom's Coin Purse (1st boss, Duke of Flies), take the orange (Health Up) then the white one (Full Health), ignore the blue ones (Speed Down)).
+{{plat|PC}} N0G3 VLD4 (Both modes) - Dr. Fetus on floor 1, and Ipecac on floor 2.
+{{plat|PS4}} DMTM NRD9 (Do not make a Devil Room deal in Basement II will spawn an Angel Room with Holy Grail in Caves I. Collecting everything grant huge tears.
+{{plat|3DS}} 180Y 7RDC (Lots of health early (Rosary in first Treasure room), good pickups (Mulligan is in second Treasure room, Dr. Fetus and Mr. Mega in the third and fourth). Skip the first Devil deal, as the Angel deals are Sacred Heart, Mitre, and Scapular. Remember to trigger scapular before entering the Mom fight if you take it, as the immediate foot stomp may leave you with the bonus soul heart.)
+{{plat|iOS}} 0FP1 C9JK (The first boss room gives a heart, the first devil deal gives dead cat so you can survive.)
+
+==== Azazel ====
+Using a seed on this step will '''not''' count towards unlocking The Lost.
+
+==== The Lost ====
+{{plat|PC}} HNA6 WEK7 (Dead Cat and Holy Mantle on first floor, helpful for practice runs)
+{{plat|PC}} 616S GROG (Holy Mantle right of spawn, helpful for practice runs)
+}}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | The D100, -0- Baby, The Mind, Isaac's Heart, The Soul, The Body, Zodiac, Dad's Lost Coin, Sworn Protector, White Baby, Holy Card, Lost Soul, Hungry Soul, The Baleful, Godhead }}
+
+== Unlockable Starting Items ==
+* {{achievement unlock|Lost holds Holy Mantle}} - Start with {{i|Holy Mantle}}
+* {{dlc+|anr}} {{achievement unlock|The D4}} - Start with {{i|D4}}{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Transition Lost.png|{{dlc|r}} The Lost's transition screen and boss vs. portrait.
+File:Start Lost.png|The spawn floor when playing The Lost.
+File:The Lost character select.png|The Lost on the character select screen.
+File:The Lost vs..png|{{dlc|nr}} The Lost on the boss vs. screen prior to [[Repentance]].
+File:The Lost next floor.png|{{dlc|nr}} The Lost on the next floor screen prior to [[Repentance]].
+File:Dogma cutscene The Lost.png|Isaac briefly appears as The Lost during the cutscene preceding {{e|The Beast}}.
+</gallery>
+
+== Trivia ==
+* The Lost's name and appearance hints that he is a ghost/soul/specter/spirit-type entity so lost it couldn't even find its way to the afterlife.
+** The name could also be linked to the fact that Isaac was presumed missing by his mother (as seen in [[Endings#Ending 14|Ending 14]], and the fact The Lost is unlocked using {{t|Missing Poster}}), while in fact he was actually dead (as seen in [[Endings#Ending 17|Ending 17]] and [[Endings#Ending 20|Ending 20]]).
+* When The Lost's unlock requirements were discovered through the use of data mining, Edmund McMillen and Tyrone Rodriguez both expressed their disappointment, considering it impatient and "like swallowing a hundred dollar steak in one bite".<ref>https://youtu.be/UJVuLvGjPOc?t=8201</ref>
+* Right before the start of a run, some images appear to hint to unlocking The Lost, including the {{t|Missing Poster}} and The Lost itself.
+* {{Dlc|na}}Dying in a {{R|Sacrifice Room}} while holding the {{t|Missing Poster}} would yield a puzzle piece on [[Isaac's last will]]. These puzzle pieces, when put together, created the last wills of characters dying in the method used to unlock The Lost.
+* Before version 1.02, The Lost would die if a run was exited then continued.
+* When The Lost picks up an item, tarot card, or pill, you can see its arms that do not connect to its body.
+* Internally, The Lost has half a soul heart, which is hidden behind a permanent {{cu|Unknown}}-like effect. The singular soul heart is why The Lost can "pick up" soul hearts, black hearts, and eternal hearts. There are no ways to increase this health, though, as The Lost's health is constantly reset back to half a soul heart.
+** {{Dlc|nr+}} Devil deals appear as requiring three soul hearts each, as The Lost technically only has half of an invisible soul heart. This is cosmetic only, as devil deals are still free.
+** {{Dlc|r}} The Lost's health was visible on the HUD in [[V1.7.5]] but was made invisible again in [[V1.7.6]].
+* {{dlc|a}} A loading screen (when Isaac dreams) depicts the "Voice of God" telling Isaac's Mom to kill her son as The Lost speaking to her from the attic.
+* The Lost's starting health is listed as "?" on the character selection screen.
+* As a secret character, The Lost does not appear on the character select screen until unlocked.
+** He shares this trait with {{C|???}}, {{C|Keeper|a}}, and {{C|The Forgotten|a+}}.
+
+== References ==
+{{Reflist}}
+
+{{nav|character|the lost unlock|greed machine unlock|fr=L'Égaré}}

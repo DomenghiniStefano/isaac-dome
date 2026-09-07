@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 644
+ | quote       = +1 to lowest stat
+ | description = Increases Isaac's lowest [[stat]] and drops either 3 {{e|Penny|text=Coins}}, 1 {{e|Bomb}}, or 1 {{e|Key}} depending on what Isaac has the least of.
+ | quality     = 1
+ | tags        = tearsup offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Gives Isaac one of the following stat boosts, depending on what [[attribute]] Isaac has the least of:
+** +1.0 flat [[damage]]
+** +0.5 [[fire rate]]
+** +0.2 [[speed]]
+** +2.5 [[range]]
+* Also drops either 3 {{e|Penny|text=Coins}}, 1 {{e|Bomb}}, or 1 {{e|Key}} on the ground.
+** Bombs and keys are valued at 3 coins' worth. The pickup dropped will be what Isaac has the least value of, and in case of a tie one is chosen randomly.
+* As {{C|Bethany}} and {{c|Tainted Bethany}}, one {{e|Soul Heart}} or two {{e|Red Heart}}s can also be dropped if they are low on charges.
+** Charges are valued at ''2 × Charges - 1'' coins' worth. For instance having 7 charges would be valued at 13 coins.
+
+== Notes ==
+* Pickups spawned can be variants of their type.
+* {{dlc|nr+}} As {{c|Tainted ???}}, the game still checks the bomb count instead of the poop count. Since Tainted ??? cannot get bombs normally and bombs are turned into poop pickups or troll bombs, he will receive them every time once he has at least 3 coins and a key.
+* The tears up can break the soft tears cap of 5, due to the fact that it is a fire rate modifier.
+* Cards and trinkets that grant temporary stat increases will affect the stat given by Consolation Prize (e.g. using {{P|I - The Magician}} or carrying {{T|Tape Worm}} will likely prevent the item from granting a range up,  {{P|VII - The Chariot}} or {{T|Goat Hoof}} - speed, and so on.)
+** This can be use to force the raise of a chosen stat, if the player knows that 2 of them are tied.
+* The stat up is permanent and won't go away even if the item is removed, similar to {{i|Experimental Treatment}}.
+** Because of that, {{c|Tainted Isaac}} can pick it up and freely drop it without losing anything.
+
+== Trivia ==
+* [[anti:Consolation Prize|Consolation Prize]] is from the ''Antibirth'' mod.
+* The sprite of the item is a reference to a "chocolate medal", an ironic medal designed for the places of a competition no medal is normally given for. As such, it is a consolation prize.
+
+{{nav|fr=Prix de Consolation}}

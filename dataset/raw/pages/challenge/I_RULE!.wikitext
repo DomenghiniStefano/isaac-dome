@@ -1,0 +1,38 @@
+{{infobox challenge
+ | dlc         = a
+ | number      = 26
+ | item        = {{i|The Boomerang}}<br>{{i|Key Piece 1}}<br>{{i|Key Piece 2}}<br>{{i|The Ladder}}<br>{{i|Mom's Knife}}<br>{{i|Trinity Shield}}
+ | has shops   = yes
+ | goal        = Mega Satan
+ | unlocks     = Poker Chip
+ | unlocked by = I RULE!
+}}
+
+'''I RULE!''' is [[challenge]] #26. Isaac starts off with {{i|Key Piece 1}}, {{i|Key Piece 2}}, {{i|Trinity Shield}}, {{i|Mom's Knife}}, {{i|The Ladder}}, and {{i|The Boomerang}}. The goal is to defeat {{E|Mega Satan}}. The Boss Room containing {{E|???}} or {{E|The Lamb}} does not appear. This is the only challenge in [[Hard Mode]].
+
+== Difficulty ==
+With a powerful set of items to start with, this is a rather easy challenge after getting used to Mom's Knife. The most difficult challenge here is defeating Mega Satan.
+
+== Strategy ==
+* Because Mom's Knife overrides many other items, finding powerful synergies may prove challenging.
+** {{R|Angel Room}}s/{{R|Devil Room}}s can yield items that synergize with Mom's Knife (such as {{i|Godhead}}, {{dlc|a+}}{{i|Holy Light}}, or {{i|Brimstone}}).
+** {{R|Boss Rush}} and {{s|???}} can provide additional chances at good items.
+* As a result of beginning the challenge with both Key Pieces, Angel Rooms are much more likely to appear than normal.
+* {{dlc|na+}} It is somewhat easier to beat this challenge with {{i|The Polaroid}} (which doesn't appear after the Mom fight in ''Afterbirth †'') than it is with {{i|The Negative}}, as {{E|Isaac}} is an easier fight than {{E|Satan}} in this challenge. Furthermore, the {{s|Chest}} can provide many chances at useful items that the {{s|Dark Room}} does not.
+* {{dlc|r}} The {{E|Red Chest}}s in the Dark Room now offer Devil Deals, granting powerful items at the cost of [[Health#Red Heart Containers|Red Heart Containers]].
+
+== Notes ==
+* {{Dlc|nr}} Despite being forced to take {{I|The Negative}}, the {{s|Cathedral}} can still be accessed; however, once {{E|Isaac}} is defeated and the chest is entered, the run will simply end and will not count as a completion of the challenge.
+** {{Dlc|r}} Only the path to {{s|Sheol}} will appear after defeating {{E|Mom's Heart}} / {{E|It Lives!}}.
+* {{dlc|a+nr}} If the player starts the challenge before {{I|The Polaroid}} and {{I|The Negative}} have been unlocked, then the player has to use an {{R|I AM ERROR}} room, or a {{R|Sacrifice Room}} to advance to Mega Satan.
+* {{dlc|a+}} Killing {{E|Delirium|n}} will count as completing the challenge.
+
+== Reward ==
+{{achievement text | Poker Chip }}
+
+== Trivia ==
+* This challenge is an homage to the original ''The Legend of Zelda'', which this game is inspired by.
+** The items given in this challenge are meant to replicate Link's equipment from said game.
+** The title of the challenge is a play on "Hyrule", the kingdom in which most ''Zelda'' games take place.
+
+{{nav|isaac unlock|satan unlock|blue baby boss unlock|the lamb unlock|mega satan unlock|challenge|fr=Force Trois !}}

@@ -1,0 +1,29 @@
+{{infobox trinket
+ | dlc         = a
+ | id          = 69
+ | quote       = You feel faded
+ | description = Occasionally causes Isaac to blend into the ground, which briefly [[confusion|confuses]] all enemies in the room. {{dlc+|r}} Can be used to open the [[A Strange Door|Strange Door]] in The Depths.{{dlc-}}
+}}
+
+{{cit|t|a}}
+
+== Effect ==
+* Occasionally causes Isaac to blend into the ground, which briefly [[confusion|confuses]] all enemies in the room.
+** Effect can only trigger every 10 seconds on the timer.
+* {{dlc+|r}} Can be used to open {{achievement|A Strange Door}} instead of {{I|The Polaroid}} or {{I|The Negative}}, destroying the trinket in the process.{{dlc-}}
+
+== Notes ==
+* Confusion is only applied when Isaac begins fading into the background. Any enemy that spawns while Isaac is already faded won't be confused until Isaac fades in, then out again.
+* {{dlc+|r}} Faded Polaroid has the highest priority to open the Strange Door, and will always be taken first if Isaac is holding multiple items that open it.{{dlc-}}
+* {{dlc+|r}} Faded Polaroid cannot open the Strange Door if it was consumed by [[Gulp!|"Gulp!" pill]], {{I|Marbles}}, or {{I|Smelter}}.{{dlc-}}
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{I|Mom's Box}} / {{t|Faded Polaroid|r}}: Each trinket copy stacks, lengthening the duration of the confusion and visual effect per stack.
+
+== In-game Footage ==
+{{#ev:youtube|gyq3ALeJuVE}}
+
+== Trivia ==
+* {{dlc|r}} Faded Polaroid being used to open the Strange Door is a nod to a mechanic in the original ''Binding of Isaac: Wrath of The Lamb'' flash game, where {{I|The Polaroid}} was a trinket in that game and was required to access the {{s|Chest}} after beating {{s|Cathedral}}.
+
+{{nav|fr=Positif décoloré}}

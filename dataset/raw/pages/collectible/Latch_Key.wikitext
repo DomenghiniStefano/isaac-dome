@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | id          = 343
+ | quote       = Luck up
+ | description = Grants 1 {{E|Soul Heart}} and +1 [[luck]]. Spawns 2 {{E|Key}}s.
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants 1 {{E|Soul Heart}}.
+* +1 [[luck]].
+* Spawns 2 {{E|Key}}s.
+
+== Notes ==
+* There is a chance a {{E|Golden Key}} gets spawned instead of regular Keys.
+* {{dlc|r}} Latch Key's Quality is considered 2 for the purposes of {{I|Bag of Crafting}}.
+* This item can be crafted from {{i|Bag of Crafting}} with eight {{e|Key}}s.
+
+== In-game Footage ==
+{{#ev:youtube|ho1l6cazrD4}}
+
+== Trivia ==
+* The name of the item refers to [[wikipedia:Latchkey kid|latchkey kids]], children who return from school to an empty home because one or both of their parents are at work, or who are otherwise often left at home with little parental supervision.
+
+{{nav|key|fr=Collier à Clé}}

@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlcalt|na+=Afterbirth|nr=Afterbirth+}}
+ | id          = 404
+ | quote       = He farts{{dlc|nr|!}}
+ | description = Spawns a [[familiar]] that follows Isaac and blocks enemy shots. If a shot hits Farting Baby, it has a chance to fart, which [[Status Effects#Charm|charms]], [[Status Effects#Poison|poisons]], or [[Hidden Attributes#Knockback|knocks back]] nearby enemies.
+ | quality     = 1
+ | tags        = summonable baby monstermanual
+ | unlocked by = Fart Baby
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Spawns a [[familiar]] that follows Isaac around and blocks enemy projectiles. Upon blocking a shot, it has a 25% chance of farting. Farting has a cooldown of 210 frames. There are three possible fart effects:
+** [[Charm]]s all nearby enemies.
+** [[Poison]]s all nearby enemies.
+** [[Knockback|Knocks back]] nearby enemies {{dlc|r}}and hostile tears.
+* {{dlc+|r}}{{transformation contribution|Conjoined}}{{dlc-}}
+
+== Notes ==
+* Farting Baby does no contact damage.
+* The knockback fart deals no damage.
+** {{dlc|r}} The reflected tears deal 6 damage if they would've hurt Isaac for half a heart, and 7 for a full heart.
+* The charm fart deals 5 damage.
+* The poison fart initially deals 5 damage and the poison deals 3.5.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Farting Baby having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== Interactions ==
+* {{i|BFFS!}}: No effect on damage or blocking radius; only the visual size is changed.
+
+== In-game Footage ==
+{{#ev:youtube|e38VzZIF0rM}}
+
+{{nav|conjoined|isaac unlock|hush unlock|fr=Bébé Péteur}}

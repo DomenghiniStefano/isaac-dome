@@ -1,0 +1,50 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 650
+ | quote       = Play time!
+ | description = Summons {{E|Baby Plum}} to fight for Isaac for roughly 10 seconds, dealing high damage.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive fly
+ | recharge    = 4
+ | unlocked by = Plum Flute
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* On use, summons {{E|Baby Plum}} to fight for Isaac in the current room for roughly 10 seconds.
+** Baby Plum will always twirl, jump, then spit blood and bounce around the room before waving goodbye and flying away.
+** Baby Plum does 12 contact damage per tick (24 per second), 3.5 damage per shot, and 2 damage per tick with creep (20 per second).
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* If Isaac goes enough time (about half a minute) without hurting {{E|Baby Plum}} during a boss fight, she will fly away and leave behind a Plum Flute on the Boss Room pedestal.
+** Damage done with {{I|Suplex!}} does not count as hurting Baby Plum.
+** Damage done indirectly, like losing {{e|Black Heart}}s, does not count as hurting Baby Plum.
+** Damage dealt passively by [[familiar]]s such as {{i|Demon Baby}}, {{i|Succubus}}, and {{i|Psy Fly}} does count as hurting Baby Plum.
+
+== Synergies ==
+* {{I|Angelic Prism}}: {{E|Baby Plum}}'s shots that pass through the Prism will be split into four.
+* {{Book of Virtues synergy|description=Spawns a wisp on the middle ring, resembling Baby Plum. When the {{E|Baby Plum}} spawned from using Plum Flute bounces diagonally around the room, all the wisps will bounce around the room and fire tears behind themselves as well. The wisps are invulnerable while bouncing around the room.}}
+* {{I|BFFS!}} / {{I|Hive Mind}}: Doubles {{E|Baby Plum}}'s contact damage, but not projectile damage. Plum is also larger.
+* {{I|Car Battery}}: Summons two Baby Plums, the Baby Plums start out overlapped but can sometimes split up when using different attacks.
+* {{T|Lost Cork}}: Affects Baby Plum's blood puddle.
+* {{I|Sacrificial Altar}}: Baby Plum can be sacrificed for free, instead of a familiar. Plum Flute can still be used as normal afterwards.
+
+== Interactions ==
+* {{T|Baby-Bender}}: No effect.
+* {{I|Eraser}}: Plum Flute will still function normally if the boss Baby Plum is erased.
+
+== In-game Footage ==
+{{#ev:youtube|S1znYPSerP8}}
+
+== Trivia ==
+* Plum Flute resembles the [[bulbapedia:Poké Flute|Poké Flute]], an item that appears in various Pokémon games and is used to wake sleeping Pokémon.
+
+== Bugs ==
+{{Bug|If {{e|Baby Plum}} is spawned in a {{r|Crawl Space}} or {{e|The Beast}} fight, she will not properly bounce off walls.}}
+{{Bug|If {{e|Baby Plum}} is currently active when {{c|Tainted Lazarus}} swaps forms, Baby Plum will vanish. Once Tainted Lazarus swaps forms again, Baby plum will re-appear and continue her attacks.
+If she was doing her spit attack, her and her projectiles will end up stuck in place and she will not stop attacking until the player leaves the room.}}
+{{Bug|If {{e|Baby Plum}} is charmed by {{e|The Siren}}, her animation will freeze, she will stop firing bullets, and she will only be able to deal contact damage to Isaac.}}
+
+{{nav|fr=Flute Prunelle}}

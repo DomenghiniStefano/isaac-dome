@@ -1,0 +1,56 @@
+{{infobox passive collectible
+ | id          = 13
+ | quote       = Poison touch {{dlc|r|+ speed up}}
+ | description = Isaac [[poison]]s enemies on contact. {{dlc|nr}} -0.1 [[speed]]. {{dlc|r}} +0.2 [[speed]]. {{dlc|anr}} Poisoned enemies have a chance to drop a black heart when killed.
+ | quality     = 2
+ | tags        = {{dlc|nr+|nolostbr}} summonable syringe {{dlc|r+|offensive}}
+ | pool        = Lust
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Inflicts [[poison]] on enemies who make contact with Isaac.
+** {{dlc|na}} The poison deals 2 damage per tick (3 damage per second) and lasts for 2-3 ticks.
+** {{dlc|ana+}} The poison deals Isaac's damage per tick (1.5x Isaac's damage per second) and lasts for 2-3 ticks.
+** {{dlc|a+nr}} The poison deals Isaac's damage per tick (1.5x Isaac's damage per second) and lasts for 6 ticks for [[Monsters|normal enemies]] and 3 ticks for [[bosses]].
+** {{dlc+|r}} The poison lasts for 6-7 ticks and deals damage equal to <code>(0.2*HeartContainers^2) + 2</code>, where <code>HeartContainers</code> is the total number of [[Health#Red Heart Containers|heart containers]] and {{e|Bone Heart}}s Isaac has. {{dlc-}}
+*** The poison can be continuously applied to bosses, which normally are immune to status effects for a brief time after being inflicted with one.
+* {{dlc|r}} Lets Isaac deal 12 contact damage per tick on top of applying poison (24 damage per second).
+* {{dlc|anr}} Enemies who are killed after they have been inflicted with this type of poison have a 20% chance to drop {{e|Black Heart}}s.
+* {{dlc|nr}} -0.1 [[speed]] down.
+** {{dlc|na}} This is not applied until the next time Isaac's speed stat is updated.
+* {{dlc|r}} +0.2 [[speed]] up.
+* {{transformation contribution|Spun}}
+
+== Notes ==
+* This item can drop from killing {{E|Lust}}. {{dlc|nr}} Lust can drop this item even if Isaac has already encountered/possessed it. 
+* Taking another copy of {{i|The Virus}}:
+** {{dlc|na}} results in a speed down with no benefit.
+** {{dlc|a}} does not affect Isaac.
+** {{dlc|r}} counts as two items towards the [[Spun]] transformation.
+* {{dlc|anr}} The black heart is only dropped if the poison was caused by The Virus. The item's effect doesn't extend to poison tears.
+* {{dlc|anr}} If an enemy doesn't do contact damage, The Virus can safely be applied to it for more chances at black hearts. {{E|Fly|text=Flies}}, {{E|Mulligan}}s, and {{E|Host}}s are the most common enemies this can be applied to.
+** {{dlc|anr}} With {{i|Skatole}}, {{E|Hive}}s and {{E|Swarmer}}s will constantly spawn normal Flies, meaning they can be endless sources of Black Hearts.
+** {{dlc|na+}} Although {{E|Stoney|text=Stonies}} and {{e|Shopkeeper}}s can't be visibly poisoned, they still can drop Black Hearts if destroyed after being touched.
+* Enemies won't start taking poison damage if they are pushing up against Isaac; The Virus will be constantly trying to apply poison and refreshing the ticks where poison damage would occur.
+** {{dlc|anr}} {{i|Gnawed Leaf}} and The Virus can still work if Isaac has a short-range orbital such as {{i|Cube of Meat}} or {{i|Ball of Bandages}}, as it will kill enemies pushing against Isaac that are not taking poison damage while still dropping Black Hearts.
+
+== Synergies ==
+* {{I|Abyss}}: When Isaac uses Abyss to absorb The Virus it turns into a green locust that poisons enemies.
+* [[Invulnerability]]: Contact while invincible poisons enemies.
+
+== Interactions ==
+* {{dlc|nr}} {{i|Odd Mushroom (Large)}}: The speed down from the Virus does not stack with the Odd Mushroom; if both are collected, only a total of -0.1 applies.
+
+== In-game Footage ==
+{{#ev:youtube|SoXRhbIIsRM||inline}} {{#ev:youtube|GkriUC15OHg||inline}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Little Baggy }}
+
+== Trivia ==
+* Upon picking up The Virus, Isaac looks very similar to {{E|Lust}}, which is fitting since Lust also drops The Virus.
+** As such, The Virus may be a reference to an STI.
+
+{{nav|syringe|fr=Le Virus}}

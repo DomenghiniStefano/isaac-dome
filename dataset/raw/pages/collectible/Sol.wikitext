@@ -1,0 +1,53 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 588
+ | quote       = Radiant victory
+ | description = Reveals the location of the {{R|Boss Room}}. Upon defeating a boss, activates {{p|XIX - The Sun}}, fully recharges Isaac's active item, grants bonus [[damage]] and [[luck]] for the rest of the floor, and removes [[curses]].
+ | quality     = 2
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Shows the location of the {{R|Boss Room}} on the minimap.
+* After killing the boss in the Boss room shown on the map, has the following effects:
+** Activates the effect of {{p|XIX - The Sun}}.
+** Gives Isaac +3 [[damage]] and +1 [[luck]] for the rest of the floor.
+** Fully recharges Isaac's [[active item]].
+** Removes any [[Curses]] from the current floor except the Curse of the Labyrinth.
+
+== Notes ==
+* The buffs from Sol will be active upon entering all the floors in the [[Ascent]], but it will not activate the effect of {{P|XIX - The Sun}}.
+** In {{s|Home}}, the buffs from Sol will activate after entering the TV room. The healing and the item recharge will happen after defeating {{e|Dogma}}.
+* Only damage and luck buff will be granted upon entering the boss room in the special version of {{s|Mausoleum}} II.
+* On floors with multiple bosses ({{s|The Void}}, XL floors, {{chal|Red Redemption}}), one random boss room is shown.
+** In {{s|The Void}}, only the randomly selected Boss room will grant Sol's effect.
+* Does not activate with bosses killed during {{R|Boss Rush}}.
+* Despite being on a different floor, Sol's effect persists for {{s|???}} and thus contributes to the {{E|Hush}} fight.
+* Upon defeating a multi-segment boss where all pieces die at the end (Chub, C.H.A.D, Carrion Queen, etc.), the effect activates once per segment, leading to an effective +3 luck and +9 damage until leaving the room, after which, the extra bonuses will be removed. It's probably a bug.
+* Sol will not activate upon clearing the [[Mirrored World]]'s Boss Room.
+* If Sol is obtained in [[Greed Mode]], through {{i|Spindown Dice}} or as a starting item for {{c|Eden}}, the effects will activate when entering the main room for the first time. In addition, it will activate each time a boss wave is completed.
+** Sol will not activate during the final stage in the mini-boss fight before {{E|Ultra Greed}}.
+* If Isaac manages to die at the same time he kills a boss, Sol will not save him. Instead, Isaac will die with full [[health]].
+
+== Interactions ==
+* {{i|The Battery}}: Provides an extra level of charge if the item was fully charged when the boss was defeated.
+* {{p|IV - The Emperor?}}: Clearing the extra boss room does not trigger the effect.
+* {{I|Mega Blast}}: Only grants 3 charges.
+* {{C|Tainted Lazarus}}: The item recharge, full heal, map reveal, and curse removal only occur if the character with Sol defeats the boss. If the boss is defeated by the character without Sol, the character with Sol still gets the damage and luck bonus for the rest of the floor.
+
+== In-game footage ==
+{{#ev:youtube|FH0EkJk8RdE}}
+
+== Gallery ==
+<gallery>
+Collectible Sol Active appearance.png|Isaac's appearance after Sol is active.
+</gallery>
+
+== Trivia ==
+* [[anti:Sol|Sol]] originates from the ''Antibirth'' mod.
+* "Sol" is the word for "[[Wikipedia:sun|sun]]" in Latin and some of its descendant languages, and is sometimes used to distinguish the Sun of the Solar System from other stars.
+* The item's pick up quote might be a reference to ''DotA'''s Radiant team win end screen message.
+
+{{nav|astrological|active modifier|fr=Sol}}

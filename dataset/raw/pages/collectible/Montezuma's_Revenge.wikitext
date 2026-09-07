@@ -1,0 +1,49 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 680
+ | quote       = Oh no...
+ | description = While firing, Isaac charges up a short-ranged {{i|Brimstone}}-like diarrhea beam that shoots behind him.
+ | quality     = 2
+ | tags        = poop summonable offensive
+ | unlocked by = Montezuma's Revenge
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Continuously shooting for 2.35 seconds allows Isaac to fire a short-ranged brown {{i|Brimstone}} laser and corn shots behind himself when he stops shooting.
+** The laser deals Isaac's [[damage]] per tick (15x Isaac's damage per second), ticks up to 19 times and lasts ~1.28 seconds (77 frames).
+** Corn shots deal 6 damage, and a random amount are created each blast.
+* {{transformation contribution|Oh Crap}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Dangle}}.{{dlc-}}
+
+== Synergies ==
+* Montezuma's Revenge, {{I|Number Two}}, {{I|Maw Of The Void}} and {{I|Revelation}} all have the same charge time, allowing Isaac to easily utilize them at same time.
+* {{T|Brain Worm}}: Can cause the poop beam to hook to a target anywhere in the room, potentially hitting a target far outside of its usual range.
+* {{I|Dark Arts}}: The corn Isaac poops out can be sliced, giving Isaac an insane damage up in seconds.
+* {{i|Hemoptysis}}: Enemies hit by the sneeze will gain a curse that increases the damage the poop beam deals to 2x and +3 flat damage. Enemies who die to the poop beam under the curse will damage and spread the curse to nearby enemies.
+* {{i|Ipecac}}: The poop beam gets only a +2 flat damage bonus instead of +40. The beam explodes 10 times, either on the first enemy or obstacle it hits or at the very end otherwise, dealing 10 + twice of the beam's damage.
+* {{I|Jacob's Ladder}}: The brown laser Isaac fires will produce random arcs of electricity at the end of the laser. The corn Isaac poops out does not interact with the electricity.
+* {{i|Lachryphagy}}: Spawns a large amount of tears at the end of the poop beam, heavily increasing Isaac's damage output.
+* {{I|My Reflection}}: Causes the poop beam range behind Isaac to become significantly increased as well as having a short range similar to Azazel's beam in front of him. This greatly eases the use of this item allowing for high DPS.
+* {{I|The Parasite}}: The poop beam splits into two horizontal beams meaning less risk for Isaac and a bigger area for enemies to be hit.
+
+== Interactions ==
+* {{i|Censer}}: The corn shots are slowed by the aura.
+* {{i|Eye of the Occult}}: No effect.
+** '''Eye of the Occult''' + {{i|Brimstone}}/{{i|Technology}}: The poop beam also automatically fires at the crosshair and becomes a lasso. The loop starts where the beam would normally end and extends out to the cross-hair.
+* {{i|Libra}}: The poop beam ignores damage modification from Libra, both positive and negative: the actual unbalanced damage value is used.
+
+== In-game footage ==
+{{#ev:youtube|HTmV0q-xoZw}}
+
+== Trivia ==
+* Montezuma's Revenge is a colloquial term for Traveler's Diarrhea, an intestinal infection caused by ingesting contaminated food or water. Montezuma II was the last Aztec ruler before the Spanish conquest of the Aztec civilization, and the sickness is seen as a curse afflicting tourists visiting Mexico as revenge for the Aztec massacre.
+
+== Bugs ==
+{{Bug|plat=PC|When playing as {{C|Tainted Forgotten}}, the charge attack will always come out of the left of the body regardless of the direction it or the Soul is facing.}}
+{{bug|When combined with {{i|Chocolate Milk}}, {{i|Cursed Eye}}, {{i|Monstro's Lung}} or {{i|Tech X}}, releasing a Montezuma's Revenge attack may prevent a charged shot from firing at the same time as expected. The charged shot is delayed by about ~0.5 seconds. Holding a full charge for a longer time makes the delay more likely to happen.}}
+
+{{nav|oh crap|blue baby unlock|the beast unlock|poop|fr=Tourista}}

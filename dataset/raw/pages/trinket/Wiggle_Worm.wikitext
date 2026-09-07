@@ -1,0 +1,39 @@
+{{infobox trinket
+ | name        = Wiggle Worm
+ | id          = 10
+ | quote       = Wiggle waggle!
+ | description = Isaac's tears travel in a wave-like pattern. +0.4 [[Tears]] up. {{dlc|r}} Also grants [[spectral tears]].
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Isaac's tears travel in a wave-like pattern.
+* +0.4 [[Tears]] up.
+* {{dlc|r}} Grants [[spectral tears]].
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}} or {{e|Scolex}}.{{dlc-}}
+
+== Synergies ==
+* {{i|Soy Milk}}: Tears now travel in a double helix pattern.
+* {{i|Tractor Beam}}: The altered pattern tears travel in is confined to the beam allowing Isaac to use its benefits without losing accuracy.
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: In addition to further stat increases, each copy causes the path of tears to become even wigglier.
+* {{i|Tech X}}: Rings take a star-shape, slightly increasing their area of effect.
+
+== In-game Footage ==
+{{#ev:youtube|E78NpNr-d18}}
+
+== Trivia ==
+* Wiggle Worm was a passive item in the original ''[[wikipedia:The Binding of Isaac (video game)|Binding of Isaac]]''. The likely reason for the change to a trinket is the situational usefulness of this shot pattern, along with the new ability to drop trinkets on demand. It took ItemID #59, which is now unused.
+** {{dlc|r}} ItemID #59 is now used by the passive {{I|The Book of Belial}} created by the {{I|Birthright|n}} effect from {{C|Judas}}/{{C|Black Judas}}.
+
+== Gallery ==
+<gallery>
+Worm Trinkets.jpg|Concept for Worm Trinkets, including Wiggle Worm.
+</gallery>
+
+== Bugs ==
+{{bug|The [[tears]] up is not applied until Isaac's Tears are first increased by any other method.|dlc=na+}}
+
+{{nav|worm|fr=Ver Remuant}}

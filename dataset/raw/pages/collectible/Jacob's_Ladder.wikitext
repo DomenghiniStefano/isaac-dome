@@ -1,0 +1,76 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 494
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = Electric tears
+ | description = Tears fire sparks of electricity in random directions upon hitting an obstacle or enemy.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+{{disambig msg|the Afterbirth † item granting electric tears|the renamed Antibirth item granting Angel Room shops|The Stairway}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* {{Dlc|nr}} Tears fire 1-2 sparks of electricity in random directions upon hitting an obstacle or enemy.
+* {{Dlc|r}} Tears fire 1 short-ranged spark of electricity in a random direction upon hitting an obstacle or enemy. When an arc strikes an enemy, it will strike another nearby enemy, chaining up to four times.
+* Sparks deal half of the tear's damage.
+** Sparks behave like [[Spectral tears|spectral]] and [[Piercing tears|piercing]] lasers and will arc to hit enemies that are close enough, even striking multiple ones in a row.
+** An enemy can take damage multiple times from sparks of a single chain. If an enemy take damage from a tear, it does not take any damage from the chain which the tear causes.
+** Tears that hit the floor due to running out of range do not generate arcs.
+** {{dlc+|r}} If the floor is wet, such as {{S|Downpour}}, {{S|Dross}}, {{S|Flooded Caves}}, some rooms in {{S|Scarred Womb}} and {{S|Corpse}}, and after using {{I|Flush!}}, the arcing distance is increased.{{dlc-}}
+
+== Synergies ==
+* {{dlc|r}} Multiple battery-themed items have special synergies with the sparks:
+** {{I|Sharp Plug}} / {{I|Car Battery}}: Electricity deals 75% of Isaac's tear damage if he owns 1 of these items, and 100% if Isaac owns both.
+** {{I|9 Volt}} / {{T|Watch Battery}} / {{T|Hairpin}}: Increases arcing distance of sparks.
+** {{I|The Battery}} / {{I|Jumper Cables}} / {{T|AAA Battery}}: Increases amount of arcs a spark can generate.
+** {{T|Old Capacitor|n}}: Allows sparks to arc on the same enemy multiple times.
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Jacob's Ladder it turns into a pale blue locust. The locust can create arcs of electricity dealing 0.1 damage per tick.
+* {{I|Angelic Prism}}: All of the split tears will be electrified. {{Dlc|nr}} Also, the sparks that pass through the prism will be split.
+* {{dlc|r}} {{I|Brimstone}} / {{c|Azazel}} / {{c|Tainted Azazel}}: The beam gains a light blue tint, spawning sparks at the end of the beam and near enemies hit by the beam.
+* {{I|C Section}}: Spawns the sparks for each tick they hit.
+* {{I|Little Horn}}: Enemies hit by the sparks also get hit with Big Horn's hand.
+* {{I|Lost Contact}}: Tears block enemy shots as normal and will then spawn the sparks where the shot was blocked.
+* {{I|A Lump of Coal}}: Sparks deal damage based on the tear's range, increasing with distance. No extra damage is applied by the distance covered by the spark.
+* {{dlc|r}} {{I|Mom's Knife}}: The knife will occasionally generate sparks when hitting an enemy.
+* [[Piercing tears]]: A tear will generate sparks for each enemy it hits.
+* [[Spectral tears]]: The tears can spawn sparks while passing through obstacles, and a tear can spawn sparks only once in this way.
+* {{c|Tainted Magdalene}}: Hugs cause sparks to spawn.
+* [[Tear effects]]: The tear effects will be applied over the sparks as well.
+** {{I|Serpent's Kiss}}: The poison caused by the sparks will not drop black hearts.
+** {{T|Nose Goblin}} / {{I|Sinus Infection}}: The boogers do not spawn sparks when directly hit on an enemy, but their sparks spawn the boogers for each enemy hit.
+** {{I|Euthanasia|dlc=r}}: The sparks coming off of needle shots also act as needle shots themselves, allowing entire rooms to be killed instantly.
+* {{Dlc|r}} {{I|Tech.5}} / {{I|Technology}} / {{I|Technology 2}} / {{I|Tech X}}: Lasers gain a light blue tint and generate sparks.
+* {{I|Trisagion|dlc=r}}: Spawns the sparks for each tick they hit.
+
+== Interactions ==
+* {{Dlc|nr}} {{I|Brimstone}} / {{C|Azazel}}: The beams do not spawn the sparks.
+* {{I|Backstabber}}: The sparks cannot hit the enemies' backs for the extra damage and bleeding.
+* {{I|Compound Fracture}} / {{I|Cricket's Body}} / {{I|The Parasite}}: Split tears can spawn the sparks.
+* {{I|Dr. Fetus}} / {{I|Epic Fetus}}: The bombs do not spawn the sparks.
+* {{I|Haemolacria}}:
+** {{Dlc|nr}} Only the main tear can spawn the sparks.
+** {{Dlc|r}} Burst tears can also spawn the sparks.
+* {{I|Ipecac}}: The sparks spawn only when they hit a wall.
+* {{I|The Ludovico Technique}}: The Ludovico tear spawns a large number of sparks when in contact with an enemy, but not on obstacles.
+* {{I|Mom's Knife|dlc=nr}}: The knife does not spawn the sparks.
+* {{I|Proptosis}}: The sparks will decrease in damage based on how much damage the tear has lost. The spark's damage also dereases by the distance covered by the spark.
+* {{I|Rubber Cement}}: Tears will only spawn the sparks when hitting enemies.
+* {{I|Spirit Sword}}: Both swing attacks and projectiles can spawn the sparks.
+* {{Dlc|nr}} {{I|Tech.5}} / {{I|Technology}} / {{I|Technology 2}} / {{I|Tech X}}: The lasers do not spawn the sparks.
+* {{I|Trisagion|dlc=nr}}: Only spawns the sparks when hitting obstacles.
+
+== In-game Footage ==
+{{#ev:youtube|CYGBUNd2kGo}}
+
+== Trivia ==
+* This item refers to high voltage traveling arcs, which are colloquially known as Jacob's ladders. It creates a small electric arc rising between two metal rods, as the item graphic represents.
+** The name is a reference to The Book of Genesis from the Old Testament. In Genesis 28:10-19 Jacob rested on his journey and had a dream; in the dream, he saw a ladder that served as the connection between Heaven and Earth.
+* {{Dlc+|r}} This item's new effect closely resembles {{I|120 Volt}} from ''Antibirth'', which was added to the game with a different effect.{{Dlc-}}
+* {{I|The Stairway}} was originally named Jacob's Ladder in ''Antibirth''. It was renamed when being ported to avoid a naming conflict.
+
+== Bugs ==
+{{bug|dlc=nr|When using {{c|The Forgotten}}'s melee attack with both Jacob's Ladder and {{i|Haemolacria}}, the sparks caused by splattered tears will hurt the player. This does not apply to other tear scattering items.}}
+
+{{nav|fr=Échelle de Jacob}}

@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | id          = 332
+ | quote       = Eternal life?
+ | description = {{dlc|nr}} Upon dying, resurrect as {{c|Lazarus Risen}} in the current room with one Red Heart container and {{i|Anemic}}.<br>{{dlc|r}} Upon dying, resurrect as {{c|Lazarus Risen}} in the current room with one less Red Heart container, {{i|Anemic}}, and +0.5 [[Damage]]. Transform into {{c|Lazarus}} when reaching the next floor.
+ | quality     = 1
+ | tags        = nolostbr nocantrip nochallenge
+ | unlocked by = Lazarus' Rags
+}}
+
+{{cit|up}}
+
+== Effects ==
+* {{Dlc|nr}} Upon dying, resurrect as {{c|Lazarus Risen}} in the current room with one Red Heart container and {{i|Anemic}}.
+* {{dlc|r}} Upon dying, resurrect as {{c|Lazarus Risen}} in the current room with one less Red Heart container (but no less than 1), {{i|Anemic}}, and a permanent +0.5 [[Damage]] up.
+** Going to the next floor reverts him back into {{c|Lazarus}}, with his inherent extra life effect.
+
+== Notes ==
+* Resurrection items activate in a [[:Category:Revival items|set order]]. Lazarus' Rags is {{dlc|nr}} 5th / {{dlc|r}} 7th in this order after {{p|Soul of Lazarus}}, {{i|1up!}}, {{i|Dead Cat|nr}}, {{c|Lazarus|nr}}' inherent extra life ({{dlc|r}} swap the order of the previous two), {{i|Inner Child}}, and {{i|Guppy's Collar}}.
+* Completion marks earned after being revived by this item will go toward {{c|Lazarus}}, regardless of who the original character was.
+
+== Synergies ==
+* {{c|Tainted Lazarus}} / {{c|Dead Tainted Lazarus}}: Revived as Tainted Lazarus / Dead Tainted Lazarus correspondingly instead of Lazarus Risen.
+
+== Interactions ==
+* {{I|Birthright}}: Dying and reviving as any character will ''not'' give Lazarus Risen a damage boost; however, picking up Birthright as him will.
+* {{i|Plan C}}: Isaac can use Plan C on end-game bosses (e.g. {{E|Hush|n}}, {{E|Delirium|n}}) and survive, although, if going for unlocks, he will get Lazarus's post-it notes instead.
+
+== In-game Footage ==
+{{#ev:youtube|v1TjQOl30-k}}
+
+== Gallery ==
+<gallery>
+File:Lazarusthethird.png|{{c|Tainted Forgotten}} being revived as {{c|Lazarus}}.
+</gallery>
+
+== Trivia ==
+* {{dlc+|r}} When {{c|Tainted Forgotten}} dies and respawns using this item, the resulting {{c|Lazarus Risen}} appears as a skin-colored pile of bones with Lazarus' head on top. This is purely visual and Lazarus Risen is still able to move and shoot as normal. This was originally a bug, but was left in because the developer Kilburn found it funny.<ref>https://www.youtube.com/watch?v=-yP-g4AYNuY</ref>{{dlc-}}
+** All characters, except {{c|Azazel}}, {{c|The Lost}}, and {{c|Tainted Lost}}, have this bone-pile form. They can be seen if {{i|Clicker}} is used as bone-pile Lazarus to turn into another character.
+
+== References ==
+{{reflist}}
+
+{{nav|lazarus unlock|revival|isaac boss unlock|fr=Loques de Lazare}}

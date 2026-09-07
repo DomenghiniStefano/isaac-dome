@@ -1,0 +1,40 @@
+{{infobox challenge
+ | number      = 13
+ | blindfolded = yes
+ | item        = {{i|9 Volt}}<br>{{i|The Bean}}<br>{{i|The Black Bean}}<br>{{i|Butt Bombs}}<br>{{i|Pyro}}
+ | has shops   = yes
+ | unlocks     = Burnt Penny
+}}
+
+'''Beans!''' is [[challenge]] #13. Isaac starts off with {{i|Pyro}}, {{i|The Bean}}, {{i|The Black Bean}}, {{i|9 Volt}}, and {{i|Butt Bombs}}. The goal is to defeat {{E|Mom}}. This challenge is available by default.
+
+== Difficulty ==
+* Isaac starts the challenge [[blindfolded]] so he cannot fire tears. Most enemies will be killed using [[poison]].
+* If Isaac is running out of bombs, it is advised to restart the challenge as there is a high chance of enemies spawning out of Isaac's reach of his attack.
+* {{E|Brownie}} is nearly guaranteed to end a run. He can't take [[poison]] damage and Butt Bombs will heal him.
+
+== Strategy ==
+* The Bean has a short-range and needs 15 seconds to recharge before it can be used again. This makes it rather ineffective, so exchanging it for a more effective item such as {{i|The Candle}}, {{i|Red Candle}}, {{i|The Boomerang}}, {{i|Guppy's Head}}, or {{i|Tammy's Head}} is advised.
+** {{dlc|r+}} The Bean has a 2 second cooldown, making it more effective.
+* Should {{i|Mom's Knife}} or {{i|Brimstone}} be found in a devil room, do not pick it up as it will create no effect.
+* Butt Bombs are more valuable than The Bean as a weapon since one bomb can confuse and slightly damage every enemy in the room while dealing high damage to any enemies caught in the blast. This is especially important when enemies can not be reached to damage directly.
+* Buying bombs in Shops is important. However, buying {{i|BOGO Bombs}} or the {{i|Humbleing Bundle}} will provide higher returns in the long run.
+* The {{p|2 of Clubs}} card is an extremely valuable resource as it allows a far more liberal placement of bombs. A bomb count of 49-50 will get the most out of the card's effect.
+* The [[Bombs Are Key]] pill will be a major problem for the duration of the challenge. It is possible to counter the effect by using the pill again, but it is advised not to rely on that.
+* It may also be effective to have {{i|Remote Detonator}} as it would allow Isaac to both concentrate multiple bombs to easily kill a boss and would also greatly reduce the chance of taking damage from a stray bomb.
+* If running low on bombs, it may be wise to look for [[familiar]]s, as they could help with some extra damage. {{dlc+|a}} Powerful familiars such as {{i|Incubus}} and {{i|Succubus}} can make the challenge much easier.{{dlc-}}
+* {{dlc+|a}} {{t|Safety Scissors}} are invaluable, as they will allow the player to restock on bombs by collecting defused {{E|Troll Bomb}}s. Together with {{i|Curse of the Tower}} it will ensure the player will never find themselves without bombs, as long as they can afford to take damage, while the {{i|Anarchist Cookbook}} will give a quick and steady refill of bombs thanks to 9-Volt.{{dlc-}}
+* {{dlc+|a}} Getting a {{p|Chaos Card}} or {{i|Flush!}} will allow the player to get past {{E|Brownie}} should he spawn.{{dlc-}}
+* Getting {{t|Match Stick}} will increase the chance of finding bombs.
+* Getting an orbital such as {{i|Cube of Meat}} on the first floor can provide a more reliable source of damage than the starting items.
+* If a room is too difficult or requires more than a couple of bombs to complete, it might be a good idea to bomb your way out, skipping it completely.
+
+== Synergies ==
+* {{i|Anarchist Cookbook}}: Troll Bombs spawned retain Butt Bomb damage, and item recharges every other room. While The Bean's multiple uses per room are lost, conserving bombs become much easier as the book can wipe out most enemies in a single room in one shot.
+* {{i|Bob's Brain}}: Works basically as a free combat bomb every 10 seconds, with the bonus of having poison damage. Can be fired with the blindfold on, providing a decent ranged option apart from normal Butt Bombs.
+* Items that grant bombs such as {{i|Bomb Bag}} and {{i|Boom!}} can be useful to avoid running out of bombs.
+
+== Reward ==
+{{achievement text | Burnt Penny }}
+
+{{nav|challenge|fr=Guerre et Pets}}

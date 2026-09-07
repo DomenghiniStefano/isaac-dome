@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 198
+ | quote       = Stuff
+ | description = Spawns various [[pickup]]s: 1 {{e|Penny|text=coin}}, 1 {{e|Key}}, 1 {{e|Bomb}}, 1 {{e|Red Heart|text=Heart}}, 1 [[card]]/[[rune]], 1 [[pill]] and 1 [[trinket]].
+ | quality     = 0
+ | tags        = offensive
+}}
+
+''Not to be confused with {{i|Moving Box}} or {{i|Pandora's Box}}.''
+
+{{cit|p}}
+
+== Effects ==
+* Spawns:
+** 1 {{e|Penny|text=coin}}
+** 1 {{e|Key}}
+** 1 {{e|Bomb}}
+** 1 {{e|Red Heart|text=Heart}}
+** 1 [[card]]/[[rune]]
+** 1 [[pill]]
+** 1 [[trinket]]
+
+== Notes ==
+* The Box's [[pickup]]s can be of any variety:
+** Coin: Nickel, Dime, Lucky, Sticky Nickel, Golden
+** Bomb: 1+1 Bombs, Troll Bomb, Golden Bomb
+** Heart: Double Heart, Half-Heart, Soul, Half-Soul, Black, Eternal, Gold, Bone, Rotten
+** Key: Golden, Charged Key
+** Card: Reversed Cards
+** Rune: Soul Stones
+** Pill: Horse or Golden pills
+** Trinket: [[Golden Trinket]]
+* {{dlc+|r}} Box's quality is treated as 1 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|L1b4LgSrEbk}}
+
+== Trivia ==
+* While walking to the right, Isaac's name can be seen written on the box.
+* This item was the final item added in Wrath of the Lamb. The first one is {{i|Guppy's Paw}}.
+
+{{nav|fr=Boîte}}

@@ -1,0 +1,62 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 614
+ | quote       = Bloody blast + HP up
+ | description = Grants a Red [[Heart container]] and restores 5 hearts. Bombs leave behind damaging [[red creep]]. Isaac can place {{e|Bomb}}s at the cost of half a heart if he doesn't have any.
+ | quality     = 2
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Grants one full [[Red Heart container]].
+* Restores 4 {{e|Red Heart}}s.
+* Causes Isaac's {{e|Bomb}}s to leave a pool of [[red creep]] on the ground when they explode.
+** The creep deals 2 damage per tick (20 per second) and lasts 15 seconds.
+** Leaves one large creep in the middle, and four small creeps on random direction and distance.
+*** Multiple creeps do not inflict damage on an enemy simultaneously.
+* If Isaac has no bombs, allows him to place a bomb at the cost of taking half a heart of damage. This prioritizes {{e|Red Heart}}s over {{e|Soul Heart}}s.
+
+== Notes ==
+* Placing a bomb using health counts as self-damage, and as such, does not affect the chances for a [[Devil deal]], does not trigger {{i|Damocles}}, nor does it reroll {{C|Tainted Eden}}.
+** {{C|The Lost}} / {{c|Tainted Lost}} will die if a bomb is placed this way.
+*** This includes the version of {{C|The Lost}} you turn into after touching the white fireplace in {{s|Downpour}} II.
+* {{c|Keeper}} / {{C|Tainted Keeper}} will take 1 [[Coin Heart]] of damage in exchange for 1 bomb.
+* {{C|Tainted Bethany}} can use 1 blood charge in exchange for 1 bomb.
+* You can remain at zero bombs and leave excess drops of bombs and hearts to maximize resource use for the floor.
+* Placing a bomb using health can let Isaac enter/exit a {{R|Curse Room}} without taking soul/black heart damage.
+** But be careful and remember to move quickly upon exiting the Curse room, otherwise you'll take damage from the previous bomb.
+
+== Syngergies ==
+* {{I|BBF}}/{{I|Bob's Rotten Head}}/{{I|Doctor's Remote}}/{{I|Dr. Fetus}}/{{I|Epic Fetus}}/{{I|Bomber Boy}}/{{I|Scatter Bombs}}: Leaves a pool of [[red creep]] on the ground after each explosion.
+* {{I|Pyromaniac}}: Potentially allows for infinite bombs and self-damage if Isaac has red health, since he can heal himself with the bomb he just placed.
+* Creeps from following items can inflict damage on an enemy simultaneously:
+** {{I|Holy Water}}
+** {{I|IBS}}
+** [[Lemon Party]]
+** {{I|Lil Spewer}}
+** {{I|Mysterious Liquid}}
+** {{I|Toxic Shock}}
+
+== Interactions ==
+* Creeps from following items do not inflict damage on an enemy simultaneously:
+** {{I|Anemic}}
+** {{I|Aquarius}} (overrides the damage)
+** {{T|Bob's Bladder}} (overrides the damage)
+** {{I|Depression}}
+** {{I|Isaac's Heart}}
+** {{I|The Scooper}}
+** {{I|Shard of Glass}}
+* {{T|Lost Cork}}: Does not increase the radius of creeps.
+
+== Trivia ==
+* [[anti:Blood Bomb|Blood Bombs]] originates from the ''Antibirth'' mod. In ''Antibirth'', Blood Bombs would only heal four hearts and the creep would not be produced if the bomb was eaten by bosses like {{e|Chub}}.
+* This is the only bomb-augmenting item that does not give any {{e|Bomb}}s on pickup.
+** The fact that the item gives a heart container and healing instead of bombs may be a hint for the mechanic of using health for bombs, as well as a substitute for actual bombs.
+** The fact that the item heals 5 hearts may be a reference to many bomb effect items (such as {{i|Butt Bombs}}) that gives Isaac 5 bombs.
+* The fact that the item gives a heart container and heals up to exactly 5 containers, along with the appearance, makes it very similar to {{i|Blood Bag}}.
+* A {{M|Blood Donation Machine}} will be shown as a cause of death on [[Isaac's last will]] if he dies as a result of placing a bomb and losing all health.
+
+{{nav|bomb modifier|bomb|fr=Hémoglobombes}}
+[[Category:Bomb items]]

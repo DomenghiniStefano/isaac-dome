@@ -1,0 +1,36 @@
+{{infobox trinket
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 79
+ | quote       = I'm stuck in a loop...
+ | description = Has a 25% chance of creating a duplicate of any [[pill]], [[card]], or [[rune]] Isaac uses.
+}}
+
+{{cit|t|a}}
+
+== Effect ==
+* When Isaac uses a [[HUD#Card/Pill Slots|consumable pickup]] like a pill or card, there is a 25% chance to spawn another copy of it.
+
+== Notes ==
+* Endless Nameless is especially useful when used with item multiplier [[Cards and Runes#Playing Cards|playing cards]].
+* The new consumable will spawn before the effect goes through. This means teleportation will leave the new copy in the previous room, {{dlc+|nr}} and item conversion or destruction cards like {{p|Ace of Diamonds}} and {{p|Black Rune}} will consume the new copy{{dlc-}}.
+
+== Synergies ==
+* [[Pills|Vurp!]] + {{i|D20}}: Consuming two Vurp! pills consecutively can spawn an infinite amount of Vurp! pills.
+* {{a|Gold Pill}}: A new gold pill may be spawned with each use, allowing for very easy exploitation (if Isaac has an item that removes negative effects).
+* {{a|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either of these effects raises the chance to 33%. Having both of them raises the chance to 50%.
+
+== Interactions ==
+* {{i|Blank Card}} / {{i|Placebo}} / {{i|Clear Rune}}: Consumable effects activated by the items do not generate copies of it.
+* {{i|Echo Chamber}}: Echoed effects do not spawn their corresponding consumable, only the one used will have a chance to reappear.
+* {{p|XIV - Temperance?}}: The card may only copy itself, not the pill effects it generates.
+
+== In-game Footage ==
+{{#ev:youtube|x3mtPpTOpFI}}
+
+== Trivia ==
+* {{dlc|a+}} Endless Nameless' sprite was changed for [[Booster Packs|Booster Pack #5]].
+* Endless Nameless is a reference to the hidden track of the same name on Nirvana's album, ''Nevermind''.
+* The Pickup Quote is a reference to ''[http://www.newgrounds.com/portal/view/511754 Time Fcuk]'', a 2009 flash game by [[Edmund McMillen]].
+
+{{nav|fr=Histoire sans Fin}}

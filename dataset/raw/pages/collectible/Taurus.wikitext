@@ -1,0 +1,55 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 299
+ | quote       = Speed down + rage is building
+ | description = -0.3 [[Speed]]. Isaac builds speed while in a room with enemies. At max speed, he gains the {{i|My Little Unicorn}} effect for 5 seconds.
+ | quality     = 1
+ | tags        = summonable nocantrip stars
+}}
+
+{{cit|p}}
+
+== Effects ==
+* -0.3 [[speed]].
+** {{dlc|nr}} -0.3 maximum speed.
+* When in a room with enemies, Isaac gradually gains speed at a rate of +0.065 per tick.
+** {{dlc|nr}} This speed boost will be able to go past the lowered maximum.
+* Once Isaac's speed reaches 2.0, he gains the {{i|My Little Unicorn}} effect for 5 seconds, becoming [[invulnerability|invulnerable]], and loses the speed bonus from Taurus afterward.
+
+== Notes ==
+* Isaac slowly gains a red tint that becomes more intense as he gains speed.
+* The speed boost and invulnerability effect activate only once per room.
+* The higher Isaac's base speed, the quicker the effect activates. It can activate immediately upon entering a room if his base speed is already 2.0.
+** If Isaac's base speed is 2.0, the effect will activate upon entering '''any''' room (including rooms with no enemies such as {{r|Sacrifice Room}}s) for the first time.
+* If Isaac's speed is decreased during the {{i|My Little Unicorn}} effect (e. g. by using a [[Speed Down]] pill), Isaac will continue to gain speed while the effect is active.
+* The item doesn't trigger when enemies are spawned, even if the room did not have enemies when first entered. This includes {{R|Challenge Room}}s, {{R|Sacrifice Room}}s when spawning {{E|Uriel}} or {{E|Gabriel}}, and the {{R|Boss Rush}} room.
+** {{dlc|r}}{{mode|greed|greedier}} Taurus will trigger each time the button is pressed to start a new Greed or Greedier wave. Since the invincibility allows pressing the button to stop waves for free, it can be used repeatedly without leaving the arena.
+* The item doesn't trigger in trap rooms which only contain {{E|Poky}} enemies.
+* If Isaac gets teleported out of the room by any source, the {{i|My Little Unicorn}} effect won't trigger if the room is re-entered.
+* Bombs can be placed during the charge.
+* {{dlc|r}} When playing as {{c|Jacob and Esau}}, the speed changes apply for both, but only the character that is holding Taurus gains invincibility.
+
+== Synergies ==
+* {{dlc|nr}} {{i|Blood Rights}}: While Isaac is invincible, Blood Rights can be freely used without taking damage. This trivializes many rooms, and since Taurus can activate every room, this combination can be game-changing, especially if Isaac has high base speed.
+** {{dlc|r}} Isaac will still take damage from Blood Rights during the invincibility.
+* {{I|Camo Undies}}: Isaac will be able to move around unnoticed, letting Taurus charge up.
+* {{I|Dark Arts}}: Using Dark Arts provides a temporary +1.0 speed boost, allowing Isaac to activate Taurus earlier.
+* {{I|Gnawed Leaf}}: Isaac's speed will still increase while he is invincible from Gnawed Leaf, allowing Taurus to activate with only a very small period of vulnerability when first entering a room.
+* {{I|Rock Bottom}}: Isaac keeps the maximum speed boost after reaching it once.
+* {{I|Serpent's Kiss}}/{{I|The Virus}}: Isaac will poison enemies in addition to dealing damage to them on contact.
+
+== Interactions ==
+* {{dlc|nr}} {{i|Libra}}: Isaac's [[damage]] and [[range]] increases as speed increases. However, if Isaac's base speed is not high enough, the invincibility never activates.
+** {{dlc|r}} Damage, Range, and Tear delay increase as speed increases. Speed increases much slower than normal.
+* {{i|The Ludovico Technique}}: Isaac cannot control the tear while invincible, but any enemies touching it will still take damage from it.
+* {{i|A Pony}}/{{i|White Pony}}: The lower limit for Isaac's [[speed]] is lowered from 1.50 to 1.20.
+* {{dlc+|r}}{{i|Strawman}}: Taurus will not affect Isaac's [[speed]] if it's held by the Strawman {{c|Keeper}}, effectively rendering the item useless until Isaac is at 2.00 speed naturally.
+
+== In-game Footage ==
+{{#ev:youtube|P6dBEwbS880}}
+
+== Bugs ==
+{{bug|Touching the chest after the [[??? (Boss)|???]] fight while the invulnerability is active will speed up the music during the credits. The music during Ending 14 and its "The End" screen will play as normal, however (This has not been confirmed for other endings or items that cause music to distort).}}
+
+{{nav|zodiac|fr=Taureau}}
+[[Category:Damage-preventing items]]

@@ -1,0 +1,51 @@
+{{infobox passive collectible
+ | id          = 223
+ | quote       = It hurts so good +5 bombs
+ | description = +5 [[bomb]]s. Grants immunity to explosion damage and causes explosions to heal Isaac. {{dlc|r}} Also grants immunity to fire.
+ | quality     = 4
+ | tags        = summonable
+}} {{disambig msg|the explosion immunity item|the item that grants bombs|Pyro}}
+
+{{cit|p}}
+
+== Effects ==
+* +5 {{e|Bomb}}s.
+* All explosions heal Isaac instead of damaging him. If Isaac has no [[Health#Red Heart Containers|Red Heart containers]] or full health, no damage is taken.
+** {{dlc|nr}} Explosions heal one full Red Heart.
+** {{dlc|r}} Explosions heal one half Red Heart.
+* {{dlc+|r}} Grants immunity to damage from {{e|Fire Place}}s or enemy fires, but does not heal Isaac.
+** It does not protect the player from taking damage from fire projectiles or the {{e|White Fire Place}} in {{s|Downpour}} II. {{dlc-}}
+
+== Notes ==
+* {{dlc|nr}} Pyromaniac is a [[Special Item]].
+* {{dlc|nr}} Makes the player immune to {{e|Mom}}'s, {{e|Satan}}'s, and other enemies' stomp attacks, making those fights substantially less difficult.
+** Due to the immunity to Mom's stomping attack, {{t|Mom's Toenail}} has improved usefulness.
+* {{dlc|nr}} Makes the player immune to {{e|The Cage}}'s, {{e|The Adversary}}'s, {{e|Mega Satan}}'s, and {{e|Ultra Greedier}}'s rock wave attack.
+* {{dlc|nr}} Makes the player immune to fires left behind by enemies and their hot bombs, as well as projectiles from {{e|Red Fire Place}}s and {{e|Purple Fire Place}}s, but '''not''' the fireplaces themselves.
+* The item is unable to produce {{e|Soul Heart}}s, {{e|Black Heart}}s, or {{e|Eternal Heart}}s, making Pyromaniac a little less effective if used with {{C|???}}, {{C|Black Judas}}, {{dlc|r}} {{C|Tainted Judas}}, {{C|The Lost}}, {{C|Tainted Forgotten}}, or {{C|Tainted Bethany}}. However, these characters still gain immunity to explosions, with {{C|Tainted ???}} benefiting the most out of all.
+* {{e|Ultra Greedier}} uses explosive attacks almost exclusively. As a result, Pyromaniac makes characters nearly invulnerable against him {{dlc|r}}except for his rock waves.
+* Makes Isaac immune to the lake of fire in the fight against {{e|The Beast}}, but not to her fire inhalation attack.{{dlc-}}
+* One of only two items that grant full immunity to explosive damage, the other being {{i|Host Hat}}.
+
+== Synergies ==
+* {{i|Anarchist Cookbook}}: Spawned bombs can be used for mass healing.
+* {{i|Blood Bombs}}: If the player has run out of bombs, they can spend half a heart to drop a bomb and recover it by getting caught in the explosion (it won't work on characters that can't obtain red health).
+** This allows Isaac to infinitely damage himself for items such as {{i|Fanny Pack}}.
+* {{I|Bomber Boy}}: Heals Isaac multiple times per bomb depending on the number of explosions that hit him.
+* {{i|Curse of the Tower}}: Whenever Isaac gets hit, numerous healing troll bombs fill the room, nullifying nearly any red heart damage taken.
+* {{i|Dr. Fetus}} / {{i|Epic Fetus}} / {{i|Ipecac}}: Explosions heal Isaac, essentially making him invincible as long as he has more than one red heart container and a decent rate of fire.
+* {{i|Kamikaze!}}: Provides an unlimited source of explosions which will heal.
+* {{c|Tainted Magdalene|r}}: Explosions heal a full {{E|Red Heart}} again.
+* {{T|Walnut}}: Walnut will only require 1-5 explosions to open. As Isaac is immune to explosions, he can safely open Walnut without taking any damage.
+
+== In-game Footage ==
+{{#ev:youtube|a42LkJq9B6w}}
+
+== Trivia ==
+* This item is used in {{chal|Blue Bomber}}.
+* [[wikipedia:Pyromania|Pyromania]] is an impulse control disorder in which individuals repeatedly fail to resist impulses to deliberately start fires.
+* The item description is a reference to the song Hurt So Good by John Cougar.
+
+{{nav|bomb|fr=Pyromanie}}
+[[Category:Damage-preventing items]]
+[[Category:Special items]]

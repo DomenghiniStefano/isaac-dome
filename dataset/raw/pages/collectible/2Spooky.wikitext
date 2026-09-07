@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 554
+ | quote       = 4me
+ | description = Enemies near Isaac are afflicted with [[fear]]. {{dlc|r+}} Grants +0.5 [[tears]] and +0.2 [[shot speed]].
+ | quality     = 1
+ | tags        = summonable {{dlc|r+|tearsup}}
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Applies [[fear]] to enemies in a small radius around Isaac.
+* {{dlc|r+}} +0.5 [[fire rate]].
+* {{dlc|r+}} +0.2 [[shot speed]].
+
+== Notes ==
+* 2Spooky can be used to manipulate {{e|Ultra Greed}}. Once {{e|Greed Gaper}}s spawn and Ultra Greed is in his resistance stance, the gapers will be feared when getting close, leaving the boss unable to move or damage Isaac.
+
+== Interactions ==
+* {{c|Tainted Forgotten}}: Not recommended, the fear aura makes it more difficult to hit enemies with Tainted Forgotten and does not provide protection to {{c|Tainted Soul}}.
+* {{I|Venus}}: Overrides 2Spooky.
+
+== In-game footage ==
+{{#ev:youtube|GZ91WUz8Avw}}
+
+== Trivia ==
+* [[anti:2Spooky|2Spooky]] originates from the ''Antibirth'' mod, and by extension, from the ''Community Remix'' mod for the flash version.
+** In ''Antibirth'', it also would cosmetically change Isaac's tears to red.
+** In ''Community Remix'', it would instead have a 1/10 chance to trigger a room-wide fear effect after killing an enemy.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+* The name and pickup quote are a reference to the "2spooky4me" meme. Isaac's appearance also makes him appear similar to popular internet horror images, such as Squidward's Suicide and Giygas from Earthbound.
+
+== References ==
+<references />
+
+== Bugs ==
+{{bug|When using {{I|D12}} to reroll obstacles; any {{E|Movable TNT}} or [[Fire Place]]s created within the radius will occasionally spawn as feared momentarily with only the purple tint to indicate the status effect. This effect lasts even on the remains of either object after it's destroyed before the fear effect ends. Corn poops created in the radius are unaffected however the {{E|Eternal Fly}} may also become temporarily feared.}}
+
+{{nav|fr=BOUH}}

@@ -1,0 +1,39 @@
+{{infobox trinket
+ | id          = 3
+ | quote       = Trickle charge
+ | description = Automatically recharges the last energy slot of an [[activated item]], effectively reducing recharge rates by one.
+ | tags        = battery
+}}
+
+{{cit|t}}
+
+== Effect ==
+* If an activated item would regain its second to last charge upon clearing a room, it is instead fully charged. This effectively reduces its charge time by one bar.
+
+== Notes ==
+* Does not affect items with only one bar of charge or those with automatic recharge.
+* Recharging an item by taking damage with {{i|Habit}}, the instant charge given by {{i|9 Volt}}, or any source of charge other than clearing a room, will not activate the trinket's effect.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}}: Items require one charge unit fewer to get fully charged. {{dlc|r}} This effect stacks up to 3 fewer charges.
+* {{i|9 Volt}}: If active item requires three or more charges, trinket gives an extra charge, effectively utilizing itself with 9 Volt.
+* {{i|Jacob's Ladder}} / {{i|120 Volt}}: Increases the amount of arcs a spark can generate.
+* {{i|Schoolbag}}: The trinket activates based on the primary item slot, but it grants an extra point of charge to the second item as well.
+* {{i|The Battery|r}}: If an active item would have at least one level of charge upon clearing a room, an extra point of charge is granted by the trinket.
+
+== Interactions ==
+* {{i|4.5 Volt}}: AAA Battery has no effect after picking up 4.5 Volt.
+* {{t|Watch Battery}}: Watch Battery triggering after clearing a room will also trigger AAA Battery, provided the activated item was missing exactly 3 charges prior to clearing the room.
+
+== In-game Footage ==
+{{#ev:youtube|f9G2MYwa_mY||inline}} {{#ev:youtube|hSrKddIm5T8||inline}}
+
+== Gallery ==
+<gallery>
+File:Trinket AAA Battery concept.jpg|Concept for AAA Battery.
+</gallery>
+
+== Bugs ==
+{{bug|dlc=r|AAA Battery will not contribute to unlocking {{i|Jumper Cables}} despite having the item tag.}}
+
+{{nav|battery|fr=Pile AAA}}

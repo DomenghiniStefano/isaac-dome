@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 420
+ | quote       = Spin the black circle!
+ | description = Isaac leaves a trail of black powder on the floor. Walking in a circle will spawn a pentagram symbol on the floor, which deals 10 damage per tick to any enemies inside it. {{dlc|r+}} Grants larger explosions and fireplaces will explode when extinguished.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effect ==
+* Isaac constantly leaves a trail of black powder on the floor. Drawing a circle with it spawns a pentagram symbol on the floor, which deals 10 damage per tick to enemies within it.
+** {{dlc|nr}} This does not affect flying enemies.
+* {{dlc|r+}} Grants larger bomb explosions similar to {{I|Mr. Mega}}.
+** It doesn't stack with Mr. Mega itself though.
+* {{dlc|r+}} Destroying {{e|Fire Place}}s causes them to explode.
+** Explosions from destroyed fire places do not hurt Isaac.
+
+== Notes ==
+* The trail of black powder left on the floor will quickly disappear, meaning that there is an effective limit to the size of the pentagram that can be created, though bigger pentagrams can be created if the player has higher movement speed.
+* The traced pattern does not have to be perfectly circular; closed shapes such as squares or very narrow crescents will work.
+
+== Interactions ==
+* {{t|Lost Cork|a+nr}}: Although the powder trail is wider in appearance, it has no effect on how easily a valid shape is determined.
+
+== Synergies ==
+* {{I|Ventricle Razor}}: When the Ventricle Razor portals are placed on the opposite wall of a room and Isaac goes from one portal to another repeatedly, a pentagram symbol can be created which covers almost the whole room.
+* {{I|How to Jump}}: Jumping can create large pentagrams by drawing a rectangle.
+* {{i|Spin to Win}}: Faster movement speed while using spin to win allows for larger pentagrams to be created.
+
+== In-game Footage ==
+{{#ev:youtube|0QDktwQWIZ0||inline}} {{#ev:youtube|6lskHB5CH2g||inline}}
+
+== Trivia ==
+* The pickup quote may be a reference to the Pearl Jam song of the name "Spin the black circle".
+
+{{nav|bomb modifier|fr=Poudre Noire}}

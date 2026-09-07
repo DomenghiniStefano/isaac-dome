@@ -1,0 +1,48 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 414
+ | quote       = {{dlcalt|There are even more options!|r=There's options}}
+ | description = Two item pedestals are presented in every {{r|Treasure Room}}. Only one can be taken; the other will disappear.
+ | quality     = 3
+ | tags        = summonable offensive nocantrip lazarussharedglobal
+ | unlocked by = There's Options
+}}
+{{disambig msg|an item affecting Treasure Rooms|a similar item affecting Boss rewards|There's Options|a similar item affecting room clear rewards|Options?}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Two item pedestals are presented in every {{r|Treasure Room}}. Only one can be taken; the other will disappear.
+
+== Notes ==
+* {{dlc|nr}} Small {{r|Treasure Room}}s only present one item, nullifying this item's effect.
+* Having multiple copies of More Options will not have any extra effect.
+* If the Treasure Room has already been entered and the item was not taken, then picking up More Options later on the same floor will not retroactively add a second item to the room.
+** If the Treasure Room has not been entered on the same floor More Options was picked up, then it '''will''' contain two items.
+* The very rare Treasure Rooms that have either no item or two items that can ''both'' be picked up will be replaced with a one-out-of-two choice room, like other Treasure Rooms. In the latter case, this is a downgrade.
+* {{dlc+|r}} In the alternative path, Treasure Rooms will have two known items and one unknown item, instead of the usual one known and one unknown.{{dlc-}}
+* {{dlc+|r}} In {{s|Downpour}} II / {{s|Dross}} II, The Mirrored world's treasure room will '''not''' contain a second item.{{dlc-}}
+* More Options will work for Treasure Rooms during the [[Ascent]] as long as those rooms were never originally entered.
+* Neither of the items in the modified Treasure Room are guaranteed to be the same as the original item, effectively rerolling the original item while also offering a second choice.
+
+== Synergies ==
+* {{dlc+|r}} {{I|Crooked Penny}} / {{I|Diplopia}}: Both items are copied, allowing Isaac to take both copied items without the other disappearing. The original pedestals will function as normal, disappearing the other if one is collected.{{dlc-}}
+* {{t|Devil's Crown}}: Both items can be taken, although they must be paid for with hearts.
+* {{I|Glowing Hourglass}}: Entering an unexplored More Options {{r|Treasure Room}} and then using Glowing Hourglass can cause the room's layout to change rerolling the offered items. The reroll is not always guaranteed as Glowing Hourglass is causing the Treasure Room to alternate between a set number of different More Options room layouts on a given floor with repeat layouts offering the same items.
+* {{C|Jacob and Esau}}: Both brothers can take one item each if they are lined up properly.
+* {{t|Pay to Win}}: {{r|Treasure Room}}s will always contain a {{m|Shop Restock Machine}} in addition to the two choice items.
+** {{dlc+|r}} In {{s|Downpour}}, {{s|Dross}}, and {{s|Mines}}, Pay to Win by itself can sometimes spawn the combined Treasure Rooms, even without More Options. Having both doesn't guarantee the combined effect.
+*** For {{s|Ashpit}}, {{s|Mausoleum}}, {{s|Gehenna}}, and {{s|Corpse}}, this combination does work correctly for normal-sized Treasure Rooms, but not thin ones.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|omsFsVDQWPQ}}
+
+== Gallery ==
+<gallery>
+File:Collectible More Options concept.png|Concept drawn for More Options.
+</gallery>
+
+== Trivia ==
+* {{dlc|r}} {{I|There's Options}}' description is "More options". For this item, it's the other way around.
+
+{{nav|options|fr=Plus d'Options}}

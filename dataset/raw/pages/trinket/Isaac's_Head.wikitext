@@ -1,0 +1,34 @@
+{{infobox trinket
+ | id          = 54
+ | quote       = Dead friend
+ | description = Spawns Isaac's severed head as a tear-firing [[familiar]]. Fires [[Tear Effects|piercing]] tears.
+ | unlocked by = Isaac's Head
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* Isaac's severed head will follow him as a [[familiar]] firing [[piercing tears]] that deal 3.5 [[damage]] with each shot.
+** {{dlc|nr}} The head shoots once per second.
+** {{dlc|r}} The head shoots once every 3/4ths of a second.
+
+== Notes ==
+* While holding this trinket, if there's another familiar that follows Isaac's Head, dropping this trinket will move the familiar to the first familiar slot.
+** This resets upon quitting and re-entering the game.
+** This is useful with familiars that are more effective when closer to Isaac, {{dlc|nr}} such as {{i|Lil Brimstone}} and {{i|Incubus|n}}.
+** {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Isaac's Head having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+
+== Synergies ==
+* {{a|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Tears deal Isaac's damage. Having both raises the damage to Isaac's damage x 1.5.{{dlc-}}
+* {{i|Sacrificial Altar}}: Sacrifices the familiar, destroying the trinket and generating an item normally.
+
+== Interactions ==
+* {{i|Box of Friends}}: No effect; does not duplicate.
+
+== In-game Footage ==
+{{#ev:youtube|ad5qNx9W3yU}}
+
+== Trivia ==
+* In the original ''Binding of Isaac'', Isaac's Head was unlocked by beating {{E|???}} as Isaac.
+
+{{nav|isaac unlock|boss rush unlock|fr=Tête d'Isaac}}

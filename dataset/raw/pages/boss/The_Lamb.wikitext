@@ -1,0 +1,76 @@
+{{infobox boss
+ | name        = The Lamb
+ | id          = 273
+ | environment = <u>Boss</u><br>{{floor|Dark Room}}<br>{{floor|The Void}}
+ | base hp     = 2600
+ | pool        = Final Boss Chest ([[Endings|Ending 15]])<br>Gateway to {{s|The Void}} ({{dlc|nr+}} 20% Chance) / ({{dlc|r+}} 100% Chance)
+}}
+
+'''The Lamb''' is the [[boss]] of the {{s|Dark Room}}, and the final boss of [[Endings|Ending 15]].
+
+== Behavior ==
+=== Phase 1 ===
+The Lamb floats towards Isaac and performs the following attacks:
+* Fires 6 rings of 10 projectiles outwards with one projectile always aimed in Isaac's direction. The Lamb continues to move towards Isaac but at a very slow pace while performing this attack.
+* Shoots rotating waves of 3 projectiles around himself in all directions that split apart once they make contact with any surface, similar to {{i|The Parasite}}.
+* Fires 5 rotating lines of projectiles.
+** The Lamb occasionally spawns 0-3 {{e|Attack Fly|text=Attack Flies}} during any of the 3 attacks above.
+* Fires 2-4 lines of homing projectiles in a spread that rotate to follow Isaac's movements.
+* Unleashes a burst of many small {{i|Ipecac}}-like projectiles in random directions.
+
+=== Phase 2 ===
+Once The Lamb reaches 50% HP, his body detaches from his head and falls to the ground. This phase has each part of The Lamb attacking independently of each other.
+
+The head of The Lamb continues to chase Isaac and can still perform most of the attacks from Phase 1. He loses the explosive shot attack and no longer spawns Attack Flies but gains 3 additional attacks:
+* Charges extremely quickly directly towards Isaac, stopping at the edge of the room.
+* Stops in place and fires four {{i|Brimstone}} beams in the cardinal directions. The beams can rotate 90 degrees either clockwise or counterclockwise.
+* Fires a large burst of homing projectiles towards Isaac, similar to the combination of {{i|Monstro's Lung}} and {{i|Spoon Bender}}.
+* Defeating the body first has no effect on the head's behavior.
+
+The body of the Lamb remains stationary at the position the Lamb was at the end of Phase 1. The body has one attack which it performs at random intervals but while the head is attacking:
+* Fires a large burst of disorganized projectiles in all directions and spawns up to 5 Attack Flies.
+** If the head is defeated first, the body can spawn up to 25 Attack Flies.
+* When the body is killed, a {{cu|darkness}} effect is applied for a long period of time.
+
+== Gallery ==
+<gallery>
+File:Lamb phase 2.png|The Lamb in its second phase.
+File:Boss Delirium The Lamb ingame.png|The Lamb as one of {{e|Delirium}}'s forms.
+File:The Lamb Concept.png|Concept art of The Lamb.
+</gallery>
+
+== Unlockable [[Achievements]] ==
+{{achievement text | I RULE!, Backasswards, Ultra Hard, The gate is open!, Golden God!, ZIP!, It's the Key, Once More with Feeling!, Missing Poster, Maggy's Faith, Abel, Curved Horn, ???'s Soul, Black Lipstick, Samson's Lock, Demon Baby, Pandora's Box, Mystery Sack, The Soul, Succubus, Karma, Locust of Death, Brittle Bones, Alabaster Box, Damocles, Godhead, Mom's Lock, Holy Crown, Gilded Key, Your Soul, Dingle Berry, Strange Key, Temporary Tattoo, Wicked Crown, Torn Pocket, Nuh Uh!, Kid's Drawing, The Twins, Keeper's Bargain, Cricket Leg, Polished Bone, Expansion Pack, RC Remote }}
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage Scaling|here]].
+
+{{dlc|r+}} '''The Lamb''' has damage scaling.
+
+== Notes ==
+* '''The Lamb''' can be reached before {{i|The Negative}} is unlocked by taking the trapdoor in a {{r|Black Market}} or {{r|I AM ERROR}} room from {{s|Sheol}} if one shows up.
+* {{dlc|a}} '''The Lamb''' can be reached before {{i|The Negative}} is unlocked if a {{r|Sacrifice Room}} is used 12 or more times.
+
+== Trivia ==
+* Despite Jesus Christ often being referred to as the "Lamb of God" in the Bible in the books of John and Revelation, The Lamb in this scenario most likely refers instead to the ram that was sacrificed in Isaac's place in the story of Abraham and Isaac, which this game is based upon.
+* Upon defeating The Lamb, the song that plays in the credits changes to ''Hush'' (Jesus loves uke)
+* The music that plays during this battle is titled ''The Fallen Angel''.<ref>http://ridiculon.bandcamp.com/</ref>
+* The Lamb is likely a reference to the name of the original Binding of Isaac's DLC expansion, ''Wrath of the Lamb''. Due to the absence of any mention of a Lamb in the original game, this may be the character eponymous with ''Wrath of the Lamb'' expansion pack.
+* The Lamb's battle portrait depicts him with dark grey bones, but in-game the Lamb has white bones.
+* The Lamb shares its name with a level from Edmund's previous game ''[[wikipedia:Super Meat Boy|Super Meat Boy]]''.
+* The Lamb is one of the three bosses that can dim the room (making a temporary {{cu|Darkness}} effect). The other bosses are {{e|Dark One}} and {{e|The Adversary}}.
+* During an AMA stream, Edmund McMillen confirmed that The Lamb is "Isaac, dead, as a demon," and that it represents "his evil side".<ref>https://youtu.be/xcR9TAOozww?t=2912</ref>
+* The Lamb is male.
+
+== Bugs ==
+{{bug|dlc=na|Killing the body in around 5 seconds will make the body stand inside of the chest, making you unable to reach it (and end the game). You can fix this by going in and out of the room.}}
+{{bug|With the special seed BASEMENT and coming with the last sacrifice room reward, opening The Lamb's chest makes the game crash.}}
+{{bug|If the body is hit with {{i|Little Horn|r}} effect after it is killed, it will be crushed by the {{e|Big Horn}}'s hand and "die" again, causing {{cu|darkness}} effect to be applied a second time. The body is not destroyed by the hand, so this can be repeated indefinitely. Regular tears cannot hit the body after it is defeated, a beam attack such as {{i|Brimstone}} or {{i|Technology}} is needed to cause the bug.}}
+
+== References ==
+{{reflist}}
+
+{{nav|the lamb unlock|satan unlock|boss|fr=Le Bélier}}
+[[Category:Chapter 6 bosses]]
+[[Category:Final bosses]]
+[[Category:Debut bosses in Rebirth]]

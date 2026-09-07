@@ -1,0 +1,51 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 575
+ | quote       = Invasive friend
+ | description = A [[familiar]] burrows in Isaac's head, firing 4 [[slow]]ing tears. Upon taking damage, there's a chance it will burst out of Isaac's head, spawning [[Familiar#Blue Spiders|blue spiders]] and chasing enemies for the current room.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable spider offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Gives Isaac a spider [[familiar]] that burrows in Isaac's head, firing four slowing tears in addition to Isaac's normal tears.
+** The slowing tears deal 1.5 damage each, and fired every 1.5 seconds.
+** These tears are unaffected by Isaac's damage and tears stats; they have fixed damage and fire rate.
+* Upon taking damage, there is a chance that Isaac's head will pop, spawning [[Familiar#Blue Spiders|friendly spiders]], and release the Intruder familiar, who will leap at enemies to deal contact damage, and fires four slowing tears towards nearby enemies instead of Isaac.
+** The spider familiar deals up to 4.5 contact damage depending on how fast it's moving and fires slowing tears twice as fast compared to when it's in Isaac's head.
+** The chance for activation goes up to 100% at 4 [[luck]].
+** The familiar lasts for the current room, and Isaac's head is reattached upon entering a new room.
+* {{transformation contribution|Spider Baby}}
+
+== Notes ==
+* The Intruder is treated as a familiar even while in Isaac's head, and benefits from familiar synergies while in it.
+* If The Intruder is released after {{i|The Pinking Shears}} are used, control is given back to an invisible head with only a shadow visible. This is due to both the head (the spider) and the body being mobilized to attack.
+
+== Synergies ==
+* {{t|Baby-Bender}}: The shots are homing even while in Isaac's head.
+* {{i|Box of Friends}}: Doubles the number of tears fired from Isaac's head (if both copies fire at the same time, the tears will stack perfectly so it can be difficult to tell). If The Intruder is released, then interacts normally and spawns a copy.
+* {{i|Hive Mind}}: Increases The Intruder's tear and contact damage.
+* {{I|BFFS!}}: Increases The Intruder's tear and contact damage. Does not stack with Hive Mind.
+
+== Interactions ==
+* {{C|Azazel}}: The Intruder's tears come from Azazel while charging his {{i|Brimstone}}.
+* {{i|Guillotine}}: The Intruder's tears come from Isaac's body.
+* {{C|Lilith}}: The Intruder's tears come from Lilith, despite her blindfold.
+* {{i|Sacrificial Altar}}: The Intruder can be sacrificed even while in Isaac's head.
+* {{I|Transcendence}}: When The Intruder is released, only Isaac's shadow will be visible.
+
+== In-game footage ==
+{{#ev:youtube|exR2rUGUhEQ}}
+
+== Trivia ==
+* [[anti:The Intruder|The Intruder]] is from the ''Antibirth'' mod. In ''Antibirth'', once the item was picked up it could not be rerolled.
+
+== Gallery ==
+<gallery>
+File:The Intruder Familiar.png|Spider familiar spawned after taking damage.
+</gallery>
+
+{{nav|spider|fr=L'Envahisseur}}
+[[Category:Damage-triggered items]]

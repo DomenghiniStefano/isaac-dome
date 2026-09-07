@@ -1,0 +1,29 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 167
+ | quote       = Friends from beyond
+ | description = After clearing a room, adds a 25% chance to spawn a [[friendly]] {{E|Bony}}.
+ | unlocked by = Polished Bone
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* After clearing a room, adds a 25% chance to spawn a [[friendly]] {{E|Bony}}.
+** 25% of spawned Bonies are {{E|Black Bony|text=Black Bonies}}.
+
+== Synergies ==
+* {{a|Golden Trinket}} / {{i|Mom's Box}} / '''multiple copies''': Copies and boosts increase the chance to spawn Bonies, first to 33%, 50%, then 100% at 4 copies. However, the chance becomes virtually zero with 6 or more copies due to a programming oversight. <!-- there is no bounds check on the number of copies, so the "1 in 5 minus copies" check becomes "1 in 2^32", unless the function just plain never succeeds -->
+
+== Interactions ==
+* [[Cards and Runes|Ace Cards]]: Friendly monsters are still affected by Ace Cards.
+* {{i|Blood Puppy}}: Either version of Blood Puppy will target friendly enemies and can drag them along with it when it charges them. Blood Puppy cannot damage friendly enemies; however, friendly enemies can damage Blood Puppy despite not targeting it.
+* {{i|Broken Modem}}: Broken Modem also affects friendly enemies and projectiles created by them.
+* {{I|Eraser}}: Bonies erased by Eraser will never spawn again, greatly diminishing the value of Polished Bone. If Black Bonies are also erased, Polished Bone becomes useless.
+* {{I|Ghost Bombs}} / {{i|Hungry Soul}} / {{I|Purgatory}} / {{i|Vade Retro}}: Explosions from ghosts can kill friendly enemies.
+
+== Bugs ==
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room than the one he is currently in (such as the starting room of a new floor) will duplicate friendly enemies.}}
+{{bug|dlc=r+|All Bonies spawned by the trinket in {{mode|greed|greedier}} [[Greed Mode]] will be champions.}}
+
+{{nav|bone|tainted forgotten unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Os Poli}}

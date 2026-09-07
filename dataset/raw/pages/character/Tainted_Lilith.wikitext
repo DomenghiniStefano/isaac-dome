@@ -1,0 +1,85 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc          = r
+ | id           = 32
+ | health       = {{hearts|red|black=2}}
+ | speed        = 0.85
+ | collectibles = None
+ | unlocked by  = The Harlot
+}}
+'''Tainted Lilith''' is a [[Characters|character]] added in [[The Binding of Isaac: Repentance]]. She is the alternate version of {{C|Lilith}}. Tainted Lilith is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|Soul of Cain}} to access a special room in one of the walls while playing as Lilith.
+
+She starts with one [[Health#Red Heart Containers|red heart container]] and 2 [[Health#Black Hearts|black hearts]]. Like normal Lilith, she [[Blindfolded|can't fire tears]]. Instead of tears, Tainted Lilith launches a demonic baby attached via umbilical cord out of her stomach that behaves much like the {{i|Gello}} item that can be recalled after attacking, dealing 3× damage to enemies it hits. Gello also fires tears that deal 1× damage while the fire button is held, and moves in the direction of the fire buttons; it does not deal contact damage when firing tears. Gello can be launched in all directions even without items like {{I|Analog Stick}} and automatically aims at nearby enemies. It returns to Tainted Lilith once the fire button is released. Despite its appearance, Gello cannot pick up items, but it can be used to launch or push items towards Tainted Lilith.
+
+== Strategy ==
+* Tainted Lilith's special attack method is not an item and cannot be rerolled.
+* Because of the special attack, Tainted Lilith starts with many perks that other characters would heavily benefit from: the launched baby has high starting damage, piercing, and the ability to attack through obstacles. However, this comes at the cost of Tainted Lilith's tears being much harder to use since it is tied to her baby, and the baby's umbilical cord gives its launching attack limited range.
+* Tainted Lilith's launched baby is enough to one/two-shot most starting enemies, while the tears it fires are comparatively hard to control. It is usually best to use the baby as a makeshift melee weapon for clearing rooms unless Tainted Lilith can find some useful tear modifiers.
+* When launched, Gello deals 3× damage and is capable of pushing enemies and bosses away on contact, making it handy to simply hit enemies with Gello rather than its tears. As such, a high tear rate does wonders for Tainted Lilith, as this also increases how quickly Gello can be launched from her. However, an overly high tear rate could be detrimental, as spamming the special attack causes Gello to return before it can hit any enemy.
+* If the situation calls for it, Gello's tears can be used to safely attack at a distance as an extension of Tainted Lilith. However, this does not usually have use apart from very large rooms since Gello goes through obstacles.
+* The hitbox of her special attack persists between rooms, meaning that launching Gello right before entering a room can potentially hit an enemy there.
+* For early floors, prioritize getting speed upgrades over other stats. While Gello gives Tainted Lilith strong attacking power, it has to be relaunched each time, and her problematic base speed allows chasing enemies to easily overwhelm her. Look to get items that increase speed and avoid those that lower it further.
+* During later floors, prioritize tear upgrades or range over other stats. At that point, using tears becomes a priority, since some bosses like {{e|Delirium}} are able to teleport constantly, making it hard to use Gello's launch attack on them. Tainted Lilith usually has to resort to Gello's tears to deal consistent damage to these bosses.
+* Gello cannot collect pickups, but it can knock them around. This ability can be used to dislodge pickups that would normally require you to walk over spikes to get.
+* In [[Repentance Co-Op]], if she dies, her familiar acts as normal, but still suffers the same penalties as other characters in this form.
+* Unlike other characters, {{I|Incubus}}'s damage is not reduced by 25% while playing as Tainted Lilith. {{C|Lilith}} shares this trait.
+
+== Interactions ==
+* {{I|Birthright}}: Familiars that normally follow Tainted Lilith will instead act like and stack on top of her {{i|Gello}} familiar, disappearing inside of her while she's not firing and swinging out when she attacks. The melee attack gains a flat +3 damage bonus per familiar (regardless of damage multipliers) and if those familiars can shoot, they do so along with the Gello familiar. The Gello familiar gains the properties of {{i|King Baby}}, causing attached familiars to automatically aim and shoot at enemies. Familiars like {{i|Jaw Bone}} or {{i|Holy Water}} still function, but they are bound to the Gello familiar rather than their normal means of movement. {{i|Lil Delirium}} is only affected by this when it transforms into an appropriate familiar.
+* {{I|Box of Friends}} Does not copy Gello.
+* {{I|Brimstone}}: Gello automatically charges and shoots a laser towards enemies.
+* {{T|Child Leash}}: Increases the size of the Gello familiar, but does not change the length the Gello familiar is fired. {{dlc|r+}} Also does not provide the 1.25x damage multiplier to the whip attack or the familiar's shots.
+* {{I|Chocolate Milk}}: Automatically charges and shoots Chocolate Milk shots towards enemies. Gello fires higher damage shots if farther from the enemy and lower damage shots if closer to the enemy.
+* {{I|Cursed Eye}}: Gello gains the charge effect, but the teleport effect when damaged while charging does not happen.
+* {{T|Forgotten Lullaby}}: Does not improve the fire rate of Gello.
+* {{I|The Inner Eye}}: Lowers Lilith's tear rate and doesn't triple her familiar.  However, her familiar will shoot a triple shot.
+* {{I|Ipecac}}: Greatly increases the launch damage of Gello. If the fire button is pressed ''very'' briefly, Gello can be launched without also firing an Ipecac tear, allowing the player to attack with high damage, with no risk of hurting themselves from the explosion.
+* {{I|Lead Pencil}}: Tears are fired from Lilith every 15th launch attack.
+* {{I|The Ludovico Technique}}: Spawns a Ludovico tear when Lilith launches Gello. The tear disappears when Gello returns to Lilith's belly. The tear works as normal using arrow keys, but is impossible to control precisely with mouse and not at all with the analog stick.
+* {{I|Marked}}: Gello will not return to Lilith's stomach, and will try to follow where the Mark is. Gello will return when Marked is deactivated with the Drop button.
+* {{i|Monstro's Lung}}: Gello charges up, and when released, shoots Monstro's Lung shots. Greatly increases delay between being able to launch the baby.
+* {{I|Neptunus}}: No effect.
+* {{I|Spirit Sword}}: Gello wields a sword that can be swung multiple times before returning to Lilith. If the fire button is held, the sword will deal damage once before disappearing until Gello is sent out again. The spin attack functions normally, but will immediately return Gello. The sword swing being able to collect pick-ups means that Lilith will be able to collect pick-ups and open chests from very far away.
+* {{I|Stye}}: Stye-affected tears have a chance to fire from Gello, unaffected by [[luck]].
+
+=== Good Items ===
+* {{T|Baby-Bender}}: Gello's tears become homing tears.
+* {{I|BFFS!}}: Increases the damage of Gello's tears, but the launch attack is unaffected.
+* {{I|Dead Eye}}: While tears fired from Gello affect Dead Eye, the whip attack does not. Provided your tear rate isn't too high, you can get the maximum bonus with its tears, then only use the whip attack from then on. Quickly press-and-release the fire button to ensure that Gello doesn't fire an unwanted tear.
+* {{I|Guillotine}}: Normally with Guillotine, tears originate from the rotating head, which can be difficult to aim accurately with, but with Tainted Lilith, Gello still fires from Lilith's body with the increased damage, negating the general downside from this item with other characters.
+* {{I|Lost Contact}}: In addition to shielded tears, Gello's body is able to destroy projectiles, making it an incredible defensive option.
+* {{i|Mom's Knife}}: Gello holds and auto-fires Mom's Knife towards enemies, although Gello no longer automatically returns into Tainted Lilith's stomach. The piercing of the knife allows it to deal damage multiple times per second, which, coupled with the knife's high base damage, make it an extremely powerful offensive option.
+* {{I|Proptosis}}: The whip attack gains full benefit of the 3× damage multiplier with no downside. Gello's tears behave as expected, which means they could deal much more damage at middle-long range.
+* {{I|Strange Attractor}}: Since Gello fires at a sizable distance from Lilith's body, enemies are pulled away from where they can easily hurt you and into the line of fire. The maneuverability and range also makes it easy to snag consumables through complex obstacle mazes.
+* {{I|Tech X}}: Holding down the fire button will automatically charge then shoot Tech X shots towards enemies. How fast it's charged is dependent on how far Gello is from an enemy.
+* {{I|Technology}}: Gello's shots instantly hit the nearest enemy, regardless of range.
+** {{I|Technology}} + [[Tear Effects|Spectral Tears]]: Gello's shots are no longer able to miss as long as at least one enemy is in the room.
+* {{i|Uranus}}: When Gello is launched, any enemies it kills in its trajectory will freeze and any frozen enemies the baby is launched into slide similarly to when kicked by Isaac.
+
+=== Bad Items ===
+* {{I|Epic Fetus}}: Without {{I|Incubus}} or another familiar that can fire Lilith's exact tears, the crosshair disappears whenever {{I|Gello}} retracts into the body, and the crosshair aims poorly, trying to seek enemies while also moving in the direction of the firing keys.
+* {{I|Jar of Flies}}: Killing enemies with Gello's contact damage will not add a new fly to the jar. Gello's tears still work as expected.
+* {{I|The Wiz}}: Gello will fire diagonal tears to either side of the enemy it is aiming at, making it miss frequently.
+* {{I|Tractor Beam}}: Gello will lose the ability to both fire and move in all directions, making maneuverability harder, and a large gap will be created in between her and her Gello where it will not be firing, making her vulnerable to damage.
+
+== Unlockable Items ==
+{{achievement text | The Twins, The High Priestess, Soul of Lilith, Fool's Gold, Gello, Adoption Papers, Twisted Pair }}
+
+== Gallery ==
+<gallery>
+File:Transition Lilith Tainted.png|Tainted Lilith's transition screen portrait.
+File:Start_Tainted_Lilith.png|The spawn floor when playing Tainted Lilith.
+File:Tainted Lilith Menu Icon (Locked).png|Tainted Lilith's locked character icon, depicting a closet doorway so full it's about to burst.
+</gallery>
+
+== Trivia ==
+* The achievement for unlocking Tainted Lilith is "The Harlot", a possible title for the character.
+** A "harlot" is a prostitute, or a woman who has many casual sexual encounters or relationships. This is in reference to Lilith's promiscuous tendencies to have intercourse with demons in the underworld outside the garden of Eden.
+* Written in a Middle-Age satirical book of tales titled the ''[[wikipedia:Alphabet of Sirach|Alphabet of Sirach]]'', we find information that Lilith was Adam's first wife: the evil counterpart to {{c|Eve}}. Whilst Eve promised to be forever subservient to Adam following God's demand, Lilith refused. In particular, the tale mentioned tells us that Lilith would often escape the garden of Eden in order to have intercourse with demons in the underworld — in particular, with the Devil himself. A good theory suggests that the game refers to the results of Lilith's promiscuous life in the underworld due to her appearance, according to this satirical tale.
+* In [[wikipedia:Lilith#Early Rabbinic literature|Rabbinic Literature]] and other non-satirical [[wikipedia:Lilith|tales]], we find information that Lilith was, more specifically, a generic demon that brought curses upon the newborn. This is another viable theory, given Tainted Lilith's appearance in-game.
+* The character select screen description for Tainted Lilith, "Fetal Fury", is possibly a reference to the fighting game series ''[[wikipedia:Fatal Fury|Fatal Fury]]''.
+* Defeating Greedier mode as Tainted Lilith unlocks {{P|II - The High Priestess?}}, associated with passion, strong emotions, and individual opinions; these all fit Lilith's character when she rejected God's plan in the garden of Eden to lead a promiscuous life in the underworld.
+* Tainted Lilith's starting health is listed as "I" on the character selection screen, despite starting with one red heart and two black hearts.
+* Tainted Lilith's body strongly resembles a {{e|Vis}} when {{i|Guillotine}} is equipped.
+
+{{nav|character|lilith unlock|tainted lilith unlock|fr=Lilith Impure}}

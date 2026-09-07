@@ -1,0 +1,67 @@
+{{infobox boss
+ | id          = 28
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{floor|Caves}}{{floor|Flooded Caves}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>(With [[Pin]])<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>(with another Chub or [[Gurglings]])<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|challenge}}<br><u>Alternate path</u><br>{{floor|Corpse}}<br>{{room|challenge}}
+ | base hp     = 350
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Little Chubby}} (1% chance)
+}}
+
+'''Chub''' is a [[boss]] that can appear in the {{s|Caves}} and the {{s|Flooded Caves}}.
+
+== Behavior ==
+Chub moves randomly around the room in cardinal directions and can perform the following attacks:
+* Charges at Isaac whenever she lines up with one of her cardinal directions.
+** Chub eats any {{e|Bomb}}s dropped in her path; stunning her for a moment before dealing considerable damage.
+* Spawns 1-2 {{e|Charger}}s, up to a maximum of 5 (occasionally 6 if she spawns 2 while there are 4 alive).
+** Chub's charge attack can damage and kill any Chargers.
+Chub deals a whole heart of contact damage.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|7}}: 15% larger and slower than normal, with 25% more HP (437.5). Spawns {{dlc|nr}}Black/{{dlc|r}}Orange-coloured {{e|Boil}}s instead of Chargers. Despite the different color, they behave exactly like normal Boils. (Note that this actually looks green in-game, but internally it is labeled as blue. This is because yellow mixes with blue to cause green.)
+: {{bc|6}}: 15% smaller and faster than normal, with 15% less HP (297.5). Spawns {{e|Spitty|text=Spitties}} instead of Chargers.
+
+== Gallery ==
+<gallery>
+File:Boss Chub cyan ingame.png|Blue Champion Chub.
+File:Boil chub blue.png|Unique Boil design spawned by Blue Champion Chub.
+File:Boss Chub orange ingame.png|Orange Champion Chub.
+File:Boss Delirium Chub ingame.png|{{dlc+|a+}} Chub as one of {{e|Delirium}}'s forms.{{dlc-}}
+</gallery>
+
+== Notes ==
+* Chub is often paired with Chargers in the boss room.
+** {{dlc+|a}} She can also be paired with {{e|Drowned Charger}}s.{{dlc-}}
+* When using {{i|Dr. Fetus}}' bomb combined with a shot type that passes through enemies, Chub will not eat the bomb.
+* Each segment of Chub can be individually damaged, so a single piercing tear could hit Chub multiple times.
+** {{Dlc|r}} Piercing shots no longer damage segmented enemies multiple times per attack.
+* Chub will eat {{e|Troll Bomb}}s (such as those set by other bosses) just like bombs dropped by Isaac.
+* {{i|Best Friend}} can damage Chub if eaten, similar to a bomb.
+* {{i|Meat Cleaver}} can instantly kill Chub.
+* Chub can spawn without the last segment.
+
+== Trivia ==
+* Chub appeared in the original ''Binding of Isaac.''
+** Sometimes, in the original game, Chub would spawn with only two segments, preventing her from spawning anything. This can also happen in [[Repentance]].
+* {{e|Carrion Queen}} is the posthumous version of her, and {{e|C.H.A.D.}} is the alternate version.
+* She is the boss version of the Chargers.
+* Chub is one of four bosses to have its posthumous version in the same chapter, the other cases being {{e|Gemini}} having {{e|Blighted Ovum}} in [[chapter 1]], {{dlc+|a}} {{e|Polycephalus}} having {{e|The Stain}} in [[chapter 2]]{{dlc-}} {{dlc+|r}} and the {{e|Tuff Twins}} having {{e|The Shell}} in [[Chapters|Chapter 2.5]]{{dlc-}}.
+** However, Chub doesn't appear in the same environment as Carrion Queen, who appears in the {{s|Catacombs}} while Chub appears in The Caves and the {{dlc|a}} Flooded Caves.
+* {{dlc|na+}} Prior to [[Booster Packs#Booster Pack #5|Booster Pack #5]], Chub could spawn {{e|Drowned Charger}}s if she was fought in the {{s|Flooded Caves}}. 
+* Chub is female.<ref>http://web.archive.org/web/20120627122240/http://www.formspring.me/EdmundM/q/341049925531883948</ref>
+* Chub may also be a reference to the Dodongos from ''[[wikipedia:The Legend of Zelda|The Legend of Zelda]]'', which Link had to toss bombs into their mouths to kill. This is supported by the Rules Card's display of "CHUB DISLIKES SMOKE", a reference to "DODONGO DISLIKES SMOKE" from the original ''Legend of Zelda''.
+* {{dlc+|a+}} {{e|The Matriarch}} is a boss from [[Booster Pack #5]] that is simultaneously based on Chub, {{e|Fistula}}, and {{e|Fistuloid}}. When at low HP, she will split into a medium-sized Fistula, two small Fistulas, a Fistuloid and Chub.{{dlc-}}
+** Unlike the usual pattern, if the Chub from The Matriarch eats a bomb, she'll spit it back at the player.
+* Chub is one of the four bosses that can be spawned by {{e|It Lives!}}, the other three being {{e|Fistula|r}}, {{e|Polycephalus}}, and {{e|Teratoma}}.
+
+== Bugs ==
+{{bug|dlc=na+|If Chub is killed while frozen by {{i|Mom's Contacts}}, only the part to receive the last shot will die.}}
+{{bug|dlc=r|Chub's last part can be temporarily disconnected with {{i|Anima Sola|n}}.}}
+
+== References ==
+{{reflist}}
+
+{{nav|boss|fr=Dodu}}
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Rebirth]]

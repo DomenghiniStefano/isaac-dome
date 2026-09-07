@@ -1,0 +1,25 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Used Diaper
+ | id = 93
+ | quote = You stink
+ | description = Grants the {{i|Skatole}} effect in some rooms. {{dlc|r+}} Spawns a blue fly when entering a new combat room.
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* Adds a {{dlc|nr+}} 15% / {{dlc|r+}} 33% chance to gain the {{i|Skatole}} effect in each room. This chance is seeded into the room and isn't affected by [[Luck]].
+* {{dlc|r+}} Spawns a blue fly when entering a new combat room.
+
+== Notes ==
+* For a list of what flies are affected and how, see the {{I|Skatole}} page.
+* Dropping the trinket will not revert {{E|Fly|text=Flies}}, but will undo the other benefits.
+
+== Synergies ==
+* {{a|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either spawns a second blue fly when entering a new combat room. Having both spawns a total of 3 blue flies.
+
+== In-game Footage ==
+{{#ev:youtube|vczIdGRPkkY}}
+
+{{nav|poop|fr=Couche Usagée}}

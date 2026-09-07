@@ -1,0 +1,48 @@
+{{infobox passive collectible
+ | name = Mongo Baby
+ | id = 322
+ | quote = Mongo friend
+ | description = Spawns a [[familiar]] who follows Isaac around and cycles between the tears of Isaac's other familiars.
+ | quality     = 2
+ | tags        = summonable baby monstermanual offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a [[familiar]] who follows Isaac around and cycles between the tears of Isaac's other familiars.
+** If no familiars are present, Mongo Baby will fire normal tears that each do 3.5 damage.
+** {{dlc|nr}} Mongo Baby shoots once every half second.
+** {{dlc|r}} Mongo Baby shoots at the same rate as Isaac at base [[tears]], 2.73 tears per second.
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* Mongo Baby can only copy the [[familiar]]s listed below:
+** {{i|Brother Bobby}}
+** {{i|Demon Baby}}
+** {{i|Freezer Baby}}
+** {{i|Ghost Baby}}
+** {{i|Harlequin Baby}}
+** {{i|Little Gish}}
+** {{i|Little Steven}}
+** {{i|Rainbow Baby}}
+** {{i|Robo-Baby}}
+** {{i|Rotten Baby}}
+** {{i|Sister Maggy}}
+* Mongo Baby will not copy [[familiar]]s spawned by {{I|Cambion Conception}} or {{i|Monster Manual}}.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Mongo Baby having {{dlcalt|4th|r+=6th}} priority.
+* Despite bearing similarity to previously mentioned [[familiars]], Mongo Baby will not copy the effects of:
+** {{i|Seraphim}}
+** {{i|Buddy in a Box}}
+
+== Interactions ==
+* {{i|Demon Baby}}: Mongo Baby behaves like Demon Baby, and will no longer shoot its regular tears unless Isaac has another compatible familiar. If Isaac has other familiars that Mongo Baby can mimic, its behavior alternates between Demon Baby’s and the other familiars’.
+* {{i|Lil Loki}}: Mongo Baby's tears will become red, but Mongo Baby will not fire in four directions.
+
+== Trivia ==
+* According to Edmund, this item is a bunch of babies cut up and put back together to create the "mongoest" baby.
+
+== In-game Footage ==
+{{#ev:youtube|k8XAt3eB2vA}}
+
+{{nav|conjoined|fr=Bébé Moqueur}}

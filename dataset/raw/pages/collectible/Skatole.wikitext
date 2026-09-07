@@ -1,0 +1,53 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 9
+ | quote       = Fly love
+ | description = [[Fly|Flies]] become harmless or less dangerous depending on the type.
+ | quality     = 0
+ | tags        = poop summonable {{dlc|r+|offensive}} nocantrip fly
+ | pool        = shell game beggar
+}}
+
+{{cit|p}}
+
+== Effects ==
+* This item causes many [[Fly]] enemies to alter their behavior toward Isaac.
+** The following flies transform into a neutral normal {{e|Fly}}: {{e|Attack Fly}}, {{e|Dart Fly}}, {{e|Ring Fly}}, {{e|Army Fly}}, and {{e|Swarm|r}}.
+** The following flies no longer shoot at Isaac: {{e|Pooter}}, {{e|Super Pooter}}, and {{e|Tainted Pooter}}.
+*** These don't deal contact damage, even without Skatole.
+** The following flies move slower and no longer deal contact damage: {{e|Level 2 Fly}} and {{e|Bulb}}.
+*** Bulbs will not drain active item charges if touched.
+** The following flies no longer deal contact damage, but retain their speed: {{e|Eternal Fly}}, {{e|Moter}}, {{e|Hush Fly|r}}, {{e|Ultra Famine Fly}}, {{e|Ultra Pestilence Fly}}, and {{e|Ultra Pestilence Fly Ball}}.
+*** Moters will not split into Attack Flies, and Eternal Flies will not turn into Attack Flies.
+** The following flies move slower and no longer deal contact damage, but can still damage Isaac through other means: {{e|Full Fly}}, {{e|Boom Fly|r}}, {{e|Red Boom Fly|r}}, {{e|Drowned Boom Fly|r}}, {{e|Dragon Fly}}, {{e|Dragon Fly X}}, {{e|Bone Fly}}, {{e|Sick Boom Fly}}, {{e|Bloodfly}}, and {{e|Tainted Boom Fly}}.
+*** Bone Flies will still throw bones at Isaac.
+** The following flies no longer deal contact damage, but retain their speed and can still damage Isaac through other means: {{e|Sucker|r}}, {{e|Soul Sucker|r}}, {{e|Spit|r}}, {{e|Ink}}, {{e|Level 2 Willo}}, and {{e|Mama Fly}}.
+** The following flies move slower, but will still deal contact damage: {{e|Boom Fly|nr}}, {{e|Red Boom Fly|nr}}, {{e|Drowned Boom Fly|anr}}, and {{e|Fly Bomb}}.
+** The following flies are completely unaffected, retaining their normal attacks and speed: {{e|Swarm|anr}}, {{e|Hush Fly|anr}}, {{e|Sucker|nr}}, {{e|Soul Sucker|a+nr}}, {{e|Spit|nr}}, {{e|Willo}}, {{e|Eternal Fly Bomb}}, and {{e|Tainted Sucker}}.
+*** Willos and Tainted Suckers don't deal contact damage, even without Skatole.
+
+* {{transformation contribution|Beelzebub}}
+* {{dlc+|r}} {{transformation contribution|Oh Crap}} {{dlc-}}
+
+== Notes ==
+* This item can only be naturally obtained from the {{m|Shell Game}}.
+** {{dlc+|r}} Skatole exists in an otherwise unused <code>shellGame</code> item pool. This means it can also be acquired with {{i|Chaos}} and bosses in {{s|The Void}} can drop it.{{dlc-}}
+* {{tf|Beelzebub}}'s effect overrides Skatole.
+* {{dlc|nr}} Flies spawned by {{e|The Husk}} will not become passive.
+* {{dlc|r}} Due to being quality 0, Skatole cannot be obtained from {{m|Shell Game}}s after {{i|Sacred Orb|n}} has been picked up.
+* This item makes {{e|The Duke of Flies}} a lot easier, as most of his attacks, which spawn flies, will instantly be converted. Staying out of his way while having Skatole can even make it so he ends up killing himself.
+
+== In-game footage ==
+{{#ev:youtube|a-ssBj-eANg||inline}} {{#ev:youtube|oPCzXJjsVJQ||inline}}
+
+== Trivia ==
+* [[wikipedia:Skatole|Skatole]] is a mildly toxic white crystalline organic compound that occurs naturally in feces.
+* According to Edmund McMillen's [https://youtu.be/kby0rXT7qYQ First post-Repentance Lore Stream], Skatole's visual was designed first, with McMillen then working backwards to create an appropriate effect to justify an item that puts a poop on Isaac's head.
+* Skatole was considered as a cosmetic hat for ''Team Fortress 2'', alongside tears, {{i|Brimstone}}, and {{i|Tiny Planet}}. It was dropped as Valve "... didn't want players running around with a wet piece of poop on their heads."
+* {{dlc|r}} This item is used in {{chal|Scat Man|n}}.
+* {{dlc|r}} This item is one of the only five ({{dlc|r+}} seven) that count towards 2 transformations ({{tf|Beelzebub}} and {{tf|Oh Crap}}), the other ones being {{i|Magic Mushroom}}, {{i|The Bible}}, {{I|Hive Mind}}, {{i|Parasitoid|n}}, {{dlc|r+}} {{i|The Necronomicon}}, and {{i|Seraphim}}.
+
+== Bugs ==
+{{bug|Skatole's slowdown effect also affects {{e|Tumor}}s and its variants, despite them not being flies.|dlc=nr}}
+
+{{nav|oh crap|poop|fly}}

@@ -1,0 +1,87 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 584
+ | quote       = Spiritual companionship
+ | description = Passively causes active items to spawn themed orbital wisp [[familiar]]s on use, which fire tears and block shots. Can be activated to spawn a basic wisp if Isaac has no other active item.
+ | quality     = 3
+ | tags        = book offensive lazarussharedglobal
+ | unlocked by = Book of Virtues
+ | recharge    = 4
+}}
+
+{{cit|uap|r}} It is the starting item for {{C|Bethany}}.
+
+== Effects ==
+* Upon use, spawns a wisp that orbits Isaac and fires small [[spectral]] tears alongside him. The wisps can block shots and deal contact damage to enemies, but take damage when doing so and will be destroyed when enough damage is taken.
+** When a wisp is destroyed, the sound of fire being extinguished plays.
+*** A normal wisp is white and blue, has 2 health and spectral tears which deal 3 damage, and is summoned in the middle ring.
+*** A wisp's health can be represented by its size, shrinking as its health decreases.
+*** Most wisps deal contact damage equal to 2x Isaac's [[damage]]. Doing damage this way usually destroys the wisp unless Isaac is [[invulnerability|invulnerable]].
+** Multiple wisps can exist at once. Some combinations have an upper limit of 26 wisps: an inner counterclockwise ring of 6, a middle clockwise ring with 8, and an outer counterclockwise ring of 12.
+* If another active item is picked up, Book of Virtues will become a passive item that causes active items to spawn wisps when used, often with [[Wisps.xml|special effects]].
+* While held, changes the first {{r|Devil Room}} encountered to be an {{r|Angel Room}}, and increases the chance of an Angel Room appearing by 25%.
+** Allows for Angel Rooms to appear even if a Deal with the Devil was taken before.
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+* It is the only passive item in the [[Library (Item Pool)|Library pool]].
+** If Isaac walks into a library for the first time with {{t|NO!}}, The Book of Virtues is very likely to appear.
+** Because of this, when acquired from a library, the book cannot be rerolled by use of the {{i|D4}}, {{i|D100}}, a {{r|Dice Room}}, or getting hit as {{c|Tainted Eden}}.
+* Whenever Isaac is [[invulnerability|invulnerable]], the wisps are as well, but can still deal contact damage.
+* Summoning a wisp while at the maximum will replace the most damaged wisp.
+* While having 100% chance of {{r|Angel Room}} discovery, Isaac will not get teleported to a {{r|Devil Room}} by using some items which allow it. Instead, he will be teleported to the Angel Room, keeping his 100% chance of discovering an Angel Room. This can be used to get to the Angel Room on the first floor, where Devil/Angel Rooms do not naturally spawn, and still keep the 100% chance for the next floor.
+* This item's passive effects also apply to active items in the consumable slot. (e.g. {{c|Tainted Bethany}}'s {{i|Lemegeton}}, {{c|Tainted Jacob}}'s {{i|Anima Sola}}, dice from {{t|Dice Bag}}, etc.)
+* While the item can function as both passive and active item, it is treated as a passive item by {{t|NO!}}, {{i|Void}}, and {{p|XVII - The Stars?|n}}.
+* This item is displayed in the Extra HUD as a passive item.
+** It will take up one of {{c|Tainted Isaac}}'s limited item slots.
+
+== Combinations ==
+{{Book of Virtues synergy list}}
+
+== No effect ==
+<!--Once ALL active item combos are tested, the no effect section should be removed and replaced with a note explaining there's nothing special if the item's not listed-->
+These combinations simply activate the other item, some of them also spawning a normal wisp.
+{{column list | width = 15em | content =
+* {{i|Mom's Box}}
+* {{i|R Key}}
+* {{I|Death Certificate}}
+* {{i|Mega Mush}}
+}}
+
+== Synergies ==
+* {{t|Baby-Bender}}: Wisps gain homing tears.
+* {{i|BFFS!}}: Increases the tear size and doubles the damage of wisps.
+* {{Book of Belial synergy|description=Can be stacked along with The Book of Belial, allowing you to carry 2 passive books and an activated item on top of them.}}
+* {{t|'M}}: If an active item is combined with the Book, only the active item is rerolled; the Book remains unchanged. If no active item is combined with the Book, the Book will be rerolled on use. 'M also cannot give Book of Virtues from rerolling other items, as it is considered a passive item.
+* {{i|Car Battery}}: Doubles the spawned wisps on activation.
+* {{i|Glowing Hourglass}}: Its wisps are kept between uses, allowing for wisp farming on the current floor by picking up Glowing Hourglass and using it to go back to the previous room before Glowing Hourglass was picked up.
+* {{i|Tear Detonator}}: The wisps' tears are also detonated; the resulting tears are based on Isaac's own, rather than the wisps'.
+
+== Interactions ==
+* {{i|Analog Stick}}: Wisps are unable to shoot diagonally, and will shoot orthogonally instead.
+* {{i|Lodestone}}: The wisps' tears are attracted to the magnetic enemy, making it much easier to connect all of the wisps' tears on an enemy.
+* {{t|NO!}}: Will not prevent Book of Virtues from spawning, as it's considered a passive item.
+* {{i|Void}}: Book of Virtues is considered to be a passive item, so stat boosts will be gained by using Void on it and further uses of Void will not have the Book's effects.
+* {{p|XVII - The Stars?}}: Book of Virtues will be removed if it's the oldest collected item, even if another active item is not being held.
+
+== In-game Footage ==
+{{#ev:youtube|krjxEO468pQ}}
+
+== Trivia ==
+* [[anti:Book of Virtues|Book of Virtues]] originates from the ''Antibirth'' mod, and by extension, from the ''Community Remix'' mod for the flash version.
+** In ''Antibirth'', it had a two-room charge but was purely an active item and lacked the effect where it combines with other active items.
+** Bethany used to be able to use specific types of heart pickups to create special wisps, similarly to how {{c|Tainted Eve}} can make special blood clot familiars using certain hearts.
+** Wisps would not take explosive damage and the book’s wisp limit was always 16, with wisps orbiting a first ring of 8 and then a second ring of 8 when the first was full.
+** In ''Community Remix'', it had a completely different effect where it functioned like {{i|Metronome}} but with a 6 room charge.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+* This item is likely a reference to the 9 virtues of a person living in accord with the Holy Spirit, mentioned in Galatians 5.<ref>https://www.biblegateway.com/passage/?search=Galatians%205&version=NIV</ref>
+* This is the only book item that can still appear if Isaac is holding {{t|NO!}}, due to being considered a passive item.
+* If you have {{i|Birthright}} as {{C|Judas}} and another active item, both books will be under the active item; the Book of Belial on the bottom with the Book of Virtues above it. When the active item is used, you will get the effects of both books as well.
+
+== References ==
+<references />
+
+== Bugs ==
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room from the one he is currently in (such as by teleporting to the previous room then using it again) will duplicate the wisps. Any extra wisps created from duplication on a filled ring will appear at the entrance of each room Isaac enters and shoot in the direction Isaac is currently shooting.}}
+
+{{nav|book|active modifier|bethany unlock|isaac boss unlock|fr=Livre des Vertus|zh=美德之书}}
+[[Category:Passive collectibles]]

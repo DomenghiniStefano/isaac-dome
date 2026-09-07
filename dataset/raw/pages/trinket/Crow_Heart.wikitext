@@ -1,0 +1,33 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 107
+ | quote       = Drain me
+ | description = {{e|Red Heart}} damage will be taken before {{e|Soul Heart}}, {{e|Black Heart}}, and {{e|Rotten Heart}} damage.
+ | unlocked by = Crow Heart
+}}
+
+{{cit|ut|a+}}
+
+== Effect ==
+* {{e|Red Heart}} damage will be taken before {{e|Soul Heart}}, {{e|Black Heart}}, and {{e|Rotten Heart}} damage.
+** With {{e|Bone Heart}}s, Red Hearts contained within the Bone Hearts will be taken before regular Red Heart damage.
+** If Isaac {{dlc|nr}} only has half a Red Heart left / {{dlc|r}} has no Red Hearts left, Soul and Black Heart damage will be taken, and Bone Hearts can be destroyed.
+
+== Notes ==
+* {{dlc|nr}} This is useful for getting into {{R|Boss Challenge Room}}s while maintaining Soul/Black Hearts.
+** {{dlc|r}} No longer works as Boss Challenge Rooms now require one heart in total.
+* Red Heart damage taken via the trinket affects {{R|Devil Room}}/{{R|Angel Room}} chances normally.
+** This can be used to voluntarily decrease the Angel / Devil room chance if it has already been accessed in favor of increased chance next floor.
+** If Isaac has at least one {{e|Rotten Heart}}, he does not lose deal chance from taking any red heart damage, despite rotten hearts not being taken first.
+*** This means having just a single rotten heart can be a great strategy for removing the majority of the downside of this trinket.
+* Although {{e|Gold Heart}}s are in front of the HP bar, they will shatter when red heart damage is taken through the trinket.
+* This trinket is useful when playing as {{C|The Forgotten}}, as it will preserve his Bone Hearts (and Devil/Angel Room chance) until all of his Bone Hearts are empty.
+** This trinket does nothing while controlling {{C|The Soul}}.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Adds a 25% chance that taking damage does not reduce Devil room chances. Having both brings the chance to avoid reduction to 50%.
+
+== In-game Footage ==
+{{#ev:youtube|pNejBk0KfWE}}
+
+{{nav|eve unlock|ultra greedier unlock|fr=Cœur de Corbeau}}

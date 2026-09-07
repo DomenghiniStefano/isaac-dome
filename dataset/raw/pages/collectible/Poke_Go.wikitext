@@ -1,0 +1,49 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | name        = Poke Go
+ | id          = 505
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote = Gotta catch em...
+ | description = Upon entering a room with enemies in it, has a chance to spawn a random [[friendly]] enemy that persists across rooms.
+ | quality     = 2
+ | tags        = {{dlc|r+|summonable}} offensive nocantrip {{dlc|r+|nogreed}}
+}}
+
+{{cit|p|a+}}
+
+== Effect ==
+* Adds a 20% chance to spawn a [[friendly]] enemy upon entering a room with enemies in it. The following enemies can spawn from Poke Go:
+** {{E|Attack Fly}}
+** {{E|Fat Bat}}
+** {{E|Frowning Gaper}}
+** {{E|One Tooth}}
+** {{E|Pooter}}
+** {{E|Vis}}
+
+== Notes ==
+* {{dlc|nr+}} The effect is not activated upon entering the main room of [[Greed Mode]], neither when fighting the waves, making it nearly useless.
+* Multiple friendly enemies can spawn at the same time.
+* For enemies that spawn other enemies, the spawned enemies will also be friendly.
+* Enemy variants may spawn.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Friendly monsters are still affected by Ace Cards.
+* {{i|Blood Puppy}}: Either angry version of Blood Puppy will target friendly enemies as well and can drag them along with it when it charges them. Blood Puppy cannot damage friendly enemies however friendly enemies can damage Blood Puppy despite not targeting it outright.
+* {{i|Broken Modem}}: Broken Modem also affects friendly enemies and projectiles created by them.
+* {{I|Eraser}}: Enemies erased via Eraser will never spawn again. This can be a detriment if Vises are erased, as it greatly reduces the usefulness of Poke Go.
+* {{dlc+|r}} {{I|Ghost Bombs}} / {{i|Hungry Soul}} / {{I|Purgatory}} / {{i|Vade Retro}}: Explosions from ghosts can kill friendly enemies.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|dLtBdW3mpA8}}
+
+== Trivia ==
+* The item is a reference to ''[[bulbapedia:Pokémon GO|Pokémon GO]]'': an augmented reality mobile game in which Pokémon are generated around the player as they walk around in real life.
+** The pickup quote is a shortened version of "Gotta catch 'em all!", one of the series' marketing slogans.
+** "A charmed (enemy) appears!" is a reference to the phrase "A wild Pokémon appears!" from the games.
+* Poke Go was originally an unofficial item which was supposed to showcase the modding capabilities of Afterbirth+ in the [https://www.youtube.com/watch?v=FRR-wzTky9Q PAX 2016 livestream]. However, all items included in the demo were later added to the final game.
+* Since Poke Go is simply part of Isaac's imagination, Edmund McMillen confirmed that Isaac therefore [https://twitter.com/edmundmcmillen/status/1486229380690898946 technically knew about Pokémon Go].
+
+== Bugs ==
+{{Bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room than the one he is currently in ({{dlc|nr}} such as the starting room of a new floor) will duplicate friendly enemies.}}
+
+{{nav|fr=Poké Go}}

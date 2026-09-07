@@ -1,0 +1,34 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 48
+ | quote       = Piercing shots
+ | description = Grants Isaac triangular [[piercing]] tears that travel through enemies (but not obstacles) instead of breaking on impact with them.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants [[piercing]] tears that travel through enemies (but not obstacles) instead of breaking on impact with them.
+** {{dlc|nr}} Also pierces through {{e|Poop}} and {{e|Fire Place}}s.
+** {{dlc|nr}} Tears no longer apply knockback to enemies.
+
+== Interactions ==
+* {{i|8 Inch Nails|anr}}/{{t|Blister|anr}}/{{i|Pisces|nr}}: Tears can now knock enemies back again, but the knockback effectiveness of these items is reduced.
+* {{i|Dr. Fetus}}: Bombs travel through enemies. When combined with {{I|Ipecac}}, bombs do not explode upon hitting enemies.
+** {{Dlc|r}} Bombs also deal 2.5x Isaac's damage to enemies when passing through them.
+* {{i|Fire Mind}}: Tears will continue to pierce enemies while retaining the explosion chance.
+* {{dlc|nr}}{{i|Ipecac}}: Pierces through {{e|Poop}} and {{e|Fire Place}}s, but not enemies.
+** {{dlc|r}} Doesn't pierce through {{e|Poop}}, {{e|Fire Place}}s, or enemies.
+
+== In-game Footage ==
+{{#ev:youtube|EHEuY2fyA_U||inline}} {{#ev:youtube|HUgxIn4rLFE||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Slow Roll}} and {{chal|Pong}}.
+* The item name is a reference to Valentine's Day and Cupid shooting an arrow into people's hearts to make them fall in love with someone.
+* Despite its name, it does not charm enemies.
+* The costume for this item is a reference to the headbands worn by both military and ceremonial leaders of Native American tribes.
+
+{{nav|fr=Flèche de Cupidon}}

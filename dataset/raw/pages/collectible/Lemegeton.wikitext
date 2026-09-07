@@ -1,0 +1,94 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 712
+ | quote       = Item summoner
+ | description = Spawns a destructible [[orbital familiar]] representing a random passive item, which blocks shots and deals contact damage. While the wisp is alive, Isaac gains that item's effects.
+ | quality     = 3
+ | tags        = book offensive
+ | recharge    = 6
+ | unlocked by = Lemegeton
+}}
+
+{{cit|ua|r}} It is the starting item for {{C|Tainted Bethany}}.
+
+== Effects ==
+* Upon use, Lemegeton will grant a random [[passive item]] as an orbital familiar. The item summoned has a 25% chance to be from the current room's [[Item Pool]], or from a [[#Random pool choices|random item pool]] otherwise. The item must have the [[Item Tags summonable|'<code>summonable</code>' item tag]] in order to be generated.
+** These familiars can block up to 4 shots and/or get hit by 2 explosions before being destroyed. When the familiar is destroyed, the item it granted is lost.
+*** If Isaac is [[Temporary Buffs|shielded or invulnerable]], his familiars are also immune to damage.
+** Familiars also deal contact damage to enemies equal to 2× Isaac's damage per tick (4× Isaac's damage per second). They take contact damage.
+** Isaac can have up to 26 familiars: an inner counterclockwise ring of 6, a middle clockwise ring with 8, and an outer counterclockwise ring of 12.
+*** Using Lemegeton while Isaac already has 26 causes the oldest one to be replaced.
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+* {{c|Tainted Bethany}} starts with this item in the consumable slot.
+** When playing as Tainted Bethany, picking up {{i|4.5 Volt}} will cause Lemegeton to no longer gain charges as long as her normal active item has empty charges.
+* Items given by Lemegeton are separate from the normal item pools and Isaac's current collection of items. This has the following effects:
+** Isaac can still normally find items that were previously summoned by Lemegeton.
+** Isaac can have multiple wisps of the same item.
+** Wisps cannot be rerolled by {{i|Missing No.}} or the {{i|D4}} / {{i|D100}}.
+** Wisps do not count towards [[transformation]]s.
+*** [[Super Bum]] is an exception and can be gotten from wisps.
+** Summoned items do not count towards the [[Collection Page]].
+* Items that would normally add or remove hearts/consumables (such as {{i|Boom!}}, {{i|Breakfast}}, {{i|Abaddon}}, etc.) do not do so if given by Lemegeton.
+* Summoning a {{i|Birthright}} wisp grants {{c|Tainted Lost}} infinite lives until the wisp is destroyed.
+* Wisps of mapping items only activate upon entering the next floor.
+** {{dlc|r+}} Wisps of mapping items' effect are applied immediately.
+
+== Random pool choices ==
+When Lemegeton chooses an item pool different than the current room's, the chances are as follows. In [[Greed Mode]], the mode's own pools are used except for the Planetarium. Probabilities are rounded to nearest 0.1%, so the totals may not be exactly 100%. <!-- based on the percentages, there are integer weightings: normal mode treasure pool has weight 50, boss & shop 15, angel & devil 2, secret, curse & planetarium 1 for a total weight 87; greed mode treasure 50, boss 15, shop 25, angel & devil 2, planetarium 1, total weight 95 -->
+{| class="wikitable"
+|-
+! Item pool !! Normal Mode probability !! Greed Mode probability
+|-
+| Treasure || 57.5% || 52.6%
+|-
+| Boss || 17.2% || 15.8%
+|-
+| Shop || 17.2% || 26.3%
+|-
+| Angel || 2.3% || 2.1%
+|-
+| Devil || 2.3% || 2.1%
+|-
+| Curse || 1.1% || 0%
+|-
+| Secret || 1.1% || 0%
+|-
+| Planetarium || 1.1% || 1.1%
+|}
+
+== Excluded Items ==
+The following passive items cannot be spawned by Lemegeton.
+
+=== Collectibles ===
+{{collectible table | type = passive | no tag = summonable | collapsed = true }}
+
+== Synergies ==
+* {{i|BFFS!}}: Doubles the damage of Wisps.
+* {{Book of Virtues synergy|description=Lets Lemegeton's wisps shoot homing tears once per second that deal 3 damage.}}
+** Also applies to {{c|Tainted Bethany}}'s Lemegeton, despite not being visually shown.
+* {{i|Rock Bottom}}: Stat increases remain even after its wisp has been destroyed.
+* {{i|Satanic Bible}}: Using Lemegeton in a {{r|Boss Room}} after activating the Satanic Bible on that floor will pull from the [[Devil Room (Item Pool)|Devil Room item pool]], even if the boss wouldn't normally drop an item after defeat.
+
+== Interactions ==
+* {{I|Box of Friends}}: Does not double the wisps spawned by {{I|Lemegeton}}.
+* {{i|Car Battery}}: Two wisps are created on use, only the name of the second item is displayed. If a Car Battery wisp is created, another wisp is summoned immediately.
+* {{I|Chaos}}: Item wisps will be selected from random pools, regardless of the room Isaac is in.
+* {{I|Magic Skin}}: Can be spawned by Lemegeton if it has been used in the current run.
+* {{I|Sacred Orb}}: Generated wisps are affected by Sacred Orb.
+* {{i|Sacrificial Altar}}: Every wisp will be converted to a {{E|Half Soul Heart}}. [[Familiar]]s created by Lemegeton are sacrificed normally.
+
+== In-game footage ==
+{{#ev:youtube|5zpqg3E5R70}}
+
+== Trivia ==
+* The Lemegeton is another name for the [[wikipedia:Lesser Key of Solomon|Lesser Key of Solomon]], an anonymous grimoire focused on demonology that was compiled in the 17th century.
+* The symbol on the cover of Lemegeton may be the [[wikipedia:Seal of Solomon|Seal of Solomon]].
+
+== Bugs ==
+{{bug|dlc=nr+|After using {{i|Genesis}}, Isaac keeps the passive effects of each wisp until the next use of Lemegeton, which erases all lingering wisp effects.}}
+{{bug|dlc=nr+|If a run is exited and resumed while Isaac has item wisps generated from Lemegeton, all wisps will be condensed into the middle clockwise ring, even if this would result in more wisps on that ring than normally allowed. This also allows further wisps to be generated on the inner and outer rings.}}
+{{bug|dlc=nr+|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room from the one he is currently in (such as by teleporting to the previous room then using it again) will duplicate the wisps. Creating wisps in this way allows Isaac to exceed the item's wisp limit.}}
+
+{{nav|tainted bethany unlock|delirium unlock|book|fr=Lemegeton}}

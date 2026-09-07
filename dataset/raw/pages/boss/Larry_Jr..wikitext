@@ -1,0 +1,53 @@
+{{infobox boss
+ | id          = 19
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{floor|Basement}}{{floor|Burning Basement}}<br>{{room|challenge}}{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>(With Another Larry Jr., {{dlc|a}} [[Monstro]], or [[Pin]])<br>{{dlc|a+}} {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>(With [[Sisters Vis]])<br><u>Degraded Boss</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}<br>{{floor|Chest}}<br>{{room|clean bedroom}}
+ | base hp    = 22
+ | pool       = {{ip|Boss}}<br>{{dlc|r+}} Random worm trinket (1% chance)
+}}
+
+'''Larry Jr.''' is a [[boss]] that can appear in the {{s|Basement}} and the {{s|Burning Basement}}.
+
+He has 22 HP per segment.
+
+== Behavior ==
+The number of individual Larry Jr. bodies that can spawn each fight can vary from 1-4. The most common encounter with Larry Jr. is with 2 bodies.
+* Randomly moves around the room in the cardinal directions, turning when colliding with walls or obstacles.
+** Larry Jr. can change direction if one of his segments is destroyed.
+* Randomly spawns {{E|Poop}} while moving.
+** Colliding with a Poop destroys the Poop and causes Larry Jr. to turn.
+* Larry Jr. segments can be split into smaller copies of the boss as long as the new Larry Jr. segments are longer than 2 pieces.
+There is a chance that a {{e|Grub}} can spawn alongside a shorter Larry Jr. (basically replacing a second Larry Jr.) due to its patterns being very similar to the boss.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|7}}: Is 15% larger and has 45% more HP (31.9), but moves more slowly and does not leave poop behind. Has shared health between his body segments, meaning that dealing damage to one segment will deal a percentage of the damage to the other segments. This version always drops a {{e|Soul Heart}} when defeated.
+: {{bc|5}}: Will occasionally shoot a projectile in the direction he's facing, pausing momentarily as he does so.
+
+== Gallery ==
+<gallery>
+File:Boss Larry Jr. blue ingame.png|Blue Champion Larry Jr.
+File:Boss Larry Jr. green ingame.png|Green Champion Larry Jr.
+File:Boss Delirium Larry Jr. ingame.png|Larry Jr. as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Notes ==
+* {{Dlc|nr}}Poop spawned by Larry Jr. will never drop pickups, even when in possession of {{t|Petrified Poop}}.
+** {{Dlc|r}}Poops spawned by Larry Jr. have an incredibly low chance to spawn pickups. This chance is not affected by Petrified Poop.
+** Leaving the room and returning will make the poop generate pickups normally.
+* {{dlc|nr}} The {{i|D12|n}} doesn't reroll Larry Jr.'s poop.
+* Destroying Larry Jr.'s poop with {{t|Brown Cap}} will cause it to explode.
+* [[Piercing tears]] make fighting Larry Jr. much easier, as each tear can damage multiple segments.
+
+== Trivia ==
+* Larry Jr. appeared in the original ''The Binding of Isaac.''
+* {{e|The Hollow}} is the posthumous version of him.
+* Larry Jr. is an allusion to ''[[supermeatboy:Larries Lament|Larries' Lament]]'', the name for a group of bosses in Edmund McMillen's game, ''Super Meat Boy''.
+** Not only do they look similar but ''smaller Larries'' came from a dead Larry in the Super Meat Boy credits. This is a strong indication that those smaller Larries and Larry Jr. are the same.
+* In battle, Larry Jr. seems to be crying and has blood on the lower belly of his body, unlike the splash screen before the fight.
+* Larry Jr. might be a reference to the centipede enemies from the 1980 arcade game [[wikipedia:Centipede (video game)|Centipede]].
+
+{{nav|boss|fr=Larry Junior}}
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Rebirth]]

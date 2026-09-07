@@ -1,0 +1,31 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 714
+ | quote       = Come back
+ | description = Retrieves the Forgotten's body from any distance. Only available as the {{i|Birthright|dlc=n}} effect for {{c|Tainted Forgotten}}.
+ | quality     = 0
+ | tags        = noeden
+ | recharge    = 3s
+}}
+
+{{cit|a|r}} It is available solely for {{C|Tainted Forgotten}} as his {{i|Birthright}} effect.
+
+== Effects ==
+* Retrieves the {{c|Tainted Forgotten}}'s body automatically, even from a distance.
+** {{c|Tainted Soul}} is invincible while Tainted Forgotten is returning to him (except to {{m|Devil Beggar}}s and similar forms of self-damage).
+** Tainted Forgotten will deal ~4-6 times Isaac's damage to enemies that collide with it while it's returning to the Soul.
+
+== Notes ==
+* This item is not in any item pool and is set to be hidden from appearing in any normal scenario. The only way to obtain it is by picking up {{i|Birthright}} as {{c|Tainted Forgotten}} which will give Tainted Forgotten the item in the consumable slot.
+** It can, however, activate when using {{i|Metronome}}. This does nothing with most characters, however it ''will'' return {{C|Tainted Forgotten}}'s body to him if it is activated.
+* Re-rolling Birthright via {{i|D4}}, {{i|D100}} or similar items will not remove Recall from the consumable slot.
+* The item cannot be used while the Soul is holding the body or the body is traveling after it has been thrown. Trying to use it will not waste its charge.
+* Obtaining Recall on any other character has no effect.
+
+== In-game footage ==
+{{#ev:youtube|https://youtu.be/mx-AXgLccCU}}
+
+== Trivia ==
+* The name of the item could be a joke relating to the antonym of Forgotten, as in 'recalling memories'.
+
+{{nav|fr=Rappel}}

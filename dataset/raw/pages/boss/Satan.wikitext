@@ -1,0 +1,83 @@
+{{infobox boss
+ | name        = Satan
+ | id          = 84
+ | appearance  = (scale:1)
+ | environment = <u>Boss</u><br>{{floor|Sheol}}<br>{{floor|The Void}}
+ | base hp     = 1200
+ | pool        = Final Boss Chest ([[Endings|Ending 12]], or {{s|Dark Room}} if Isaac has {{i|The Negative}})<br>Gateway to {{s|The Void}} (15% Chance)
+}}
+
+'''Satan''' is the [[boss]] of {{s|Sheol}}, and the final boss of [[Endings|Ending 12]].
+
+== Behavior ==
+The battle against Satan has three distinct phases.
+
+=== Phase 1 ===
+The first phase starts with a slight delay after Isaac enters the room:
+* Satan shouts, and roughly two seconds after Satan's voice dies out, {{e|The Fallen}} spawns at the center, with two {{e|Kamikaze Leech|text=Kamikaze Leeches}} to either side.
+
+=== Phase 2 ===
+Once The Fallen is dead, the Devil Room statue at the top of the screen transforms into Satan's first form. He stays near the top of the room moving horizontally and performs the following attacks:
+* Spits out 2 consecutive spreads of 5 and 4 projectiles towards Isaac. He chains this attack at least twice.
+* If Isaac is to either side of him, he can:
+** Shoot half-rings of 8 projectiles from both his hands towards the left and right sides of the room.
+* If Isaac is below him, he can:
+** Shoot two {{i|Brimstone}} lasers from his hands, that curve towards each other while leaving a gap in the middle.
+** Charge up and fires a {{i|Brimstone}} beam from his mouth directly downwards.
+
+If Satan is pushed too far away from the top center of the room, he will rapidly spring back to that position.
+
+=== Phase 3 ===
+After depleting his entire second phase health bar and reaching half of his total HP, he flies off-screen and has one attack:
+* Stomps the ground with both of his feet at Isaac's previous positions, similar to {{e|Mom}}'s stomp attack, but with less delay. The stomps come down one after another, and after two stomps, they persist for a moment before both are retracted.
+* Up to two Kamikaze Leeches continuously spawn during this phase.
+** They can be killed by Satan's stomp, but will also deal considerable damage to him.
+** There appears to be a maximum amount of Kamikaze Leeches that can be spawned, as they stop appearing if the fight draws out for too long and the Kamikaze Leeches are not killed.
+
+Satan's projectiles and contact damage deal a whole heart of damage.
+
+Once Satan is defeated, remaining Kamikaze Leeches die alongside him.
+
+== Gallery ==
+<gallery>
+File:Boss Satan Hoof ingame.png|Satan in his second form.
+File:Satandevilroom.png|Satan in his statue form.
+File:Boss Delirium Satan ingame.png|Satan as one of {{e|Delirium}}'s forms.
+File:Boss_Satan_Hoof_Rebirth_ingame.png|{{dlc|nr}} Satan in his second form prior to [[Repentance]].
+</gallery>
+
+== Unlockable [[Achievements]] ==
+{{achievement text | I RULE!, Judas, The Negative, Mom's Knife, Guardian Angel, A Bag of Bombs, Judas' Tongue, Forget Me Now, The Razor, Blood Rights, Daemon's Tail, Broken Ankh, Book of Secrets, The Mind, Serpent's Kiss, Keeper holds Store Key, Locust of Pestilence, Pointy Rib, Urn of Souls, Red Stew, Godhead, Mom's Lock, Holy Crown, Gilded Key, Your Soul, Dingle Berry, Strange Key, Temporary Tattoo, Wicked Crown, Torn Pocket, Nuh Uh!, Kid's Drawing, The Twins, Keeper's Bargain, Cricket Leg, Polished Bone, Expansion Pack, RC Remote }}
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage Scaling|here]].
+
+{{dlc|r+}} '''Satan''' has damage scaling.
+
+== Notes ==
+* Every time Satan is defeated, the current [[Savefile Images|savefile's image]] changes until {{i|The Negative}} is unlocked.
+* Defeating Satan for the 1st time will unlock [[Champion]] versions of Bosses.
+* Using the {{i|The Bible}} or {{p|XV - The Devil?}} on Satan will instantly kill Isaac.
+* On the third wave, {{i|Pyromaniac}} and/or {{i|Host Hat}} will be extremely useful, as Kamikaze Leeches and stomping (which is considered as an explosion) will not hurt Isaac.
+** {{dlc|r}} Stomps are no longer considered explosions and cannot have their damage negated.
+* {{dlc|nr}} Unlike in the original ''Binding of Isaac'', Satan's feet don't cause damage on contact for the short time they rest on the ground after a stomp, providing a window of opportunity to deal significant damage with orbitals such as {{i|Sacrificial Dagger}}, or activate other contact effects like {{i|Midas' Touch}}.
+
+== Trivia ==
+* Satan appeared in the Halloween Update for the original ''The Binding of Isaac.''
+* Satan's pose as a statue and during the VS Screen is a nod to the demon [[Wikipedia:Baphomet|Baphomet]], who is usually portrayed in a similar pose.
+* Satan, in mythology, began as a fallen angel but evolved over time into a greater evil. This may be the reason The Fallen spawns at the start of the fight.
+* The demonic speech Satan shouts at the start of his first phase reuses one of Mom's voice lines, shouting "Isaac!" in reverse with heavy distortion.
+* The [[music]] that plays during this battle is titled ''[https://ridiculon.bandcamp.com/track/hericide-satan-fight Hericide]''. Hericide is a combination of the latin word ''herus'' (or ''erus''), meaning master or lord, and the suffix -''cide'', denoting the act of killing.
+* This song's melody shares some similarities with that of ''Periculum'', the [[Cellar]] theme. 
+** This music also plays during the battle against {{e|Mega Satan}}.
+** {{dlc|a}} This music also plays during the nightmare wave of [[Greed Mode]], for unlocking the floor's {{r|Devil Room}} or {{r|Angel Room}}.
+
+== Bugs ==
+{{bug|dlc=r|If exactly 600 HP of damage is dealt to Satan, it will completely skip the third phase and spawn the chest, due to how the boss is coded to go to the third phase only if over 600 damage is dealt. {{p|Chaos Card}} also skips Satan's third phase due to this bug.
+The easiest way to do this is to use only [[familiar]]s to do damage, or to use 6 {{e|Bomb}}s (without modifications) against Satan's second phase.}}
+
+{{nav|satan unlock|boss}}
+
+[[Category:Chapter 5 bosses]]
+[[Category:Final bosses]]
+[[Category:Debut bosses in Rebirth]]

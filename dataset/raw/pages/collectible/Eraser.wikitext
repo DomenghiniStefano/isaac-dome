@@ -1,0 +1,66 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 638
+ | quote       = Erase thy enemy
+ | description = Throws an eraser that instantly kills the first monster it hits, and prevents that enemy from spawning for the rest of the run. Deals 15 damage to bosses, erasing the boss from the rest of the run if damage is fatal. Only recharges upon entering a new floor.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge    = 1f
+}}
+
+{{cit|a|r}}
+
+== Effects ==
+* Upon use, Isaac holds an Eraser above his head, which can be thrown in any cardinal direction. Upon hitting a [[monster]], the enemy will be "erased", preventing any of the same enemy from appearing for the rest of the run.
+** Deals 15 damage to [[boss]]es. If fatal, erases the boss for the rest of the run.
+* Can only be recharged by entering a new floor. [[Batteries]] and most other methods of recharging have no effect.
+
+== Notes ==
+* Erased enemies and bosses appear as a brief pink puff of smoke. Any on-death effects are not checked.
+** The [[Seven Deadly Sins]] minibosses and [[Angel]]s will still drop their respective pickups or items.
+** If used on multistage bosses like {{e|Hush}} or {{e|Ultra Greed}}, erasing the first phase skips any further phases.
+** Erasing the first phase of {{e|Mega Satan}} will not end the fight until his hands are also defeated.
+* Has no effect on invincible enemies, such as {{E|Stone Grimace}}s, lowered {{E|Host}}s, or {{E|Eternal Fly}}s.
+* {{E|Bulb}}s can steal charges from the Eraser.
+* If Eraser's projectile hits an enemy's projectile that has collision with Isaac's tears and isn't considered an enemy (e.g. {{e|Fire Worm}}'s fire, {{e|Coal Boy}}'s coal, {{e|Big Bony}}'s thrown bone) it has no effect and Eraser's projectile will be destroyed .
+* Although the thrown Eraser cannot hit [[friendly]] enemies these enemies can still be erased if their hostile variants are erased. This also means that when effects such as {{I|Friend Finder}} attempts to spawn an erased enemy it only creates the brief puff of pink smoke wasting the effect.
+* Erased enemies will remain erased if a [[Victory Lap]] is started.
+** Erased enemies will also remain erased if items such as {{I|R Key}} or {{I|Genesis}} are used.
+* Entities such as {{e|Ultra Greed Coin (Spinner)|text=Ultra Greed Coins}} or {{E|Little Horn}}'s {{E|Dark Ball}}s are considered enemies and can be erased.
+* It is possible to erase {{E|Chubber}}'s launched Charger, rendering it unable to attack.
+* Erasing {{E|Polty}}s will render {{E|Haunted Chest}}s harmless, but may make some rooms impossible to complete without bombs or flight as they rely on a Polty clearing a path.
+* Each floor traveled up during the [[Ascent]] will recharge the Eraser.
+* If a segmented worm-boss such as {{e|Larry Jr.}} or {{e|Scolex}} is removed via Eraser, {{e|Delirium}} will disappear if it attempts to turn into that boss. This will spawn the ending chest and count as having defeated Delirium. Other multipart bosses' erased pieces may be unable to spawn, but do not kill Delirium entirely.
+* Erased enemies don't grant exploration bonuses in [[Daily Challenges]].
+
+== Synergies ==
+* {{p|? Card}}: Can throw an additional Eraser.
+* {{i|Angelic Prism}}: Throwing the Eraser through the Angelic Prism will cause it to split into four.
+* {{i|The Battery}}: The eraser can gain an extra charge if it is not used on one floor.
+* {{c|Bethany}} / {{c|Tainted Bethany}}: Soul and blood charges can be used with the Eraser, allowing multiple uses per floor.
+* {{i|Blood Puppy}}: Throwing the Eraser at an enraged Blood Puppy (second stage) will 'erase' its enraged form, keeping it permanently tame.
+** Throwing the Eraser at its third stage will make it cycle through its normal and second stage as it kills enemies.
+* {{Book of Virtues synergy|description=Spawns a pink eraser wisp on the middle ring. The wisp is immune to projectiles. If a [[monster|non-boss enemy]] touches the wisp, it is erased and the wisp is destroyed. The wisp cannot erase [[boss]]es, regardless of how much health they have left.}}
+* {{I|Void}}: An eraser can be thrown with each use of Void after absorbing it, allowing multiple uses per floor.
+* {{c|Tainted Lazarus}}: Enemies erased in one form will still be erased when Tainted Lazarus flips.
+
+== Interactions ==
+* {{I|9 Volt}} / {{I|Battery Pack}}: Item doesn't fully charge the Eraser when picked up.
+* {{i|Car Battery}}: No effect.
+* {{i|Kidney Stone}} / {{i|Number One}} / {{i|Pluto}} / {{i|Inner Child}}'s revive: Lowers the Eraser's range drastically and can only be improved with [[tear height]] ups.
+* {{I|My Shadow}} / {{I|Shade}}: Erasing a {{E|Charger}} will prevent all newly created [[friendly]] Chargers from spawning, rendering the item useless as this item spawns a normal Charger before changing it to the special My Shadow variant.
+* {{i|Sharp Plug}}: Attempting to recharge the Eraser with the Sharp Plug hurts Isaac for half a heart without recharging the item.
+* {{I|Habit}}: Taking damage with Habit will not charge Eraser.
+
+== In-game Footage ==
+{{#ev:youtube|snj-Qujl8Bo}}
+
+== Trivia ==
+* [[anti:Eraser|Eraser]] originates from the ''Antibirth'' mod. In ''Antibirth'', this item was single use and wouldn't permanently remove an erased boss from the run, but could kill any boss in one hit.
+** The Pickup quote was "Erase your enemies!".
+* This item's effect is similar to the scroll of genocide that appears in traditional roguelikes such as ''NetHack'', originating in the ''Hack'' variant ''Hack121''.
+
+== Bugs ==
+{{Bug|dlc=nr+|If used to kill {{e|Dogma}} or the {{e|Mom's Heart}} leading to {{s|Corpse}}, it will not count it as a kill, preventing progress on the respective paths.}}
+
+{{nav|fr=Gomme}}

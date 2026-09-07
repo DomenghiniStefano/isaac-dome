@@ -1,0 +1,193 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc          = r
+ | id           = 33
+ | health       = {{hearts|coin=2}}
+ | tears        = -2.2
+ | luck         = -2
+ | pickups      = 1 [[Bomb]]
+ | collectibles = Quadruple shot
+ | unlocked by  = The Miser
+}}
+'''Tainted Keeper''' is a [[character]] added in [[The Binding of Isaac: Repentance]]. He is the alternate version of {{C|Keeper}}. Tainted Keeper is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|1=Soul of Cain}} to access a special room in one of the walls while playing as Keeper.
+
+Tainted Keeper starts with (and has a maximum of) 2 [[Health#Coin Hearts|coin hearts]] and 1 {{e|Bomb}}. Tainted Keeper shares the same mechanics with the regular Keeper, including recovering one coin heart upon picking up a coin, as well as converting any [[Hearts|heart pickups]] to [[blue flies]], {{dlc|r+}} except for {{e|Gold Heart}}s, which immediately turn into coins when picked up. Picking up a coin to restore a heart does not add a coin to his coin counter. Tainted Keeper shoots four tears at a time, similar to the item {{I|Mutant Spider}}. Whenever an enemy is defeated, a random coin is dropped that will vanish quickly.{{explain}} Most [[items]] encountered when playing as Tainted Keeper must first be paid for with coins, including Deals with the Devil, {{r|Angel Room}}, {{R|Boss Room}} items, and {{R|Treasure Room}} items.
+
+== Strategy ==
+* Tainted Keeper plays like a glass cannon: his ability to stockpile coins lets him purchase many more items per floor than most other characters, allowing him to potentially steamroll early floors. However, his two coin hearts (and very limited methods to increase max health) means he is unable to make many mistakes in comparison, especially for drawn-out boss fights without monster spawns.
+* In the standard game mode, {{r|Shop}}s are different and much better for Tainted Keeper. They do not require a {{e|Key}} and generally have increased stock available. At max level, they have eight items/pickups for sale, of which there will always be at least one {{ip|Shop|text=Shop item}}, one {{ip|Boss|text=Boss Room item}}, and two {{ip|Treasure Room|text=Treasure Room items}}. The other four terminals in the shop can be keys, bombs, cards, pills, trinkets (which will be sold for 5 cents), or more Shop/Treasure Room items.
+** This shop can rarely be replaced by a better (or worse) variant: The better variant has 2-6 more shopkeepers, [[Rocks#Urns|Urns]] scattered about, two {{E|Lucky Penny|text=Lucky Pennies}}, and one more random item/pickup for sale. The worse variant has only one random sale terminal, one {{e|Shopkeeper}}, some {{e|Poop}}, and a {{E|Fly}}.
+** These improved shops do not appear in {{mode|Greed}} [[Greed Mode]].
+** Due to shops including {{ip|Treasure Room|text=Treasure Room items}}, it is usually best to skip {{R|Treasure Room}}s for a {{R|Planetarium}}.
+* Some items do not need to be paid for. These include:
+** [[All Mini-Bosses (Bosses)|Mini-Boss]] drops.
+** {{I|The Small Rock}} if dropped from a tinted rock.
+** Golden and Red Chest items.
+** Items spawned by beggars and machines.
+** Items spawned by other items, such as through {{I|Eden's Soul}} or {{P|XVII - The Stars?}} card.
+** Plot-related items, including {{I|The Polaroid}}, {{I|The Negative}}, {{I|Key Piece 1}}, {{I|Key Piece 2}}, {{I|Knife Piece 1}}, {{I|Knife Piece 2}}, and {{I|Dad's Note}}.
+*** This also applies to drops generated from Angel Statues while holding {{t|Filigree Feather}}.
+** Boss drops in {{s|The Void}}.
+* Enemies spawned after entering the room (i.e. spawned by another enemy or spawned on later waves in [[Challenge Room]]s) don't have a guaranteed coin drop.
+** Spawned enemies will stop dropping coins after fights go on long enough such as with {{R|Boss Rush}}.
+* Champion enemies and [[Mini-boss|Mini-Bosses]] drop 2 coins on death.
+* Bosses drop several coins.
+** If the boss comprises multiple enemies (e.g. {{E|Gurglings}}), each of them drops fewer coins.
+** Most degraded bosses drop 3 coins, exceptions such as {{E|The Cage}} and {{E|Monstro II}} have regular boss coin drops.
+** Coins dropped by bosses stay on the floor longer before disappearing.
+* {{R|Boss Rush}} items must still be paid for, and doing so will start the event.
+* A high speed stat can help pick up coins before they disappear.
+* A high fire rate will increase reliability in killing groups of enemies, allowing for safer coin collection. However, as changes to the Tears stat are much less effective on fire rate at or below -0.77 Tears (see [[Tears]] for the exact calculations), Tainted Keeper will gain very little fire rate from his first 1.43 added Tears. After crossing this threshold, as Tainted Keeper fires 4 tears at a time with no multiplicative fire rate penalty, he can gain far more DPS from Tears than other characters.
+** For reference, a Tears Up pill gives 0.35 tears. Assuming no other tears modifiers are taken, Tainted Keeper will gain 0.07, 0.09, 0.10, and 0.12 fire rate from his first four Tears Up pills, and 0.52 from his fifth; more than his first four ''combined''.
+** Items that directly add fire rate are very desirable for Tainted Keeper while his Tears stat is low. 
+* Because Tainted Keeper has to pay for all items, taking devil deals is often more powerful than taking Angel items. This is because taking one devil deal item will not despawn the other items, but only one item can be taken from an Angel room.
+** The following items cost 30 coins to purchase:{{column list | width = 15em | content =
+*** {{i|The Body}}
+*** {{i|Crown Of Light}}
+*** {{i|Dead Dove}}
+*** {{i|Godhead}}
+*** {{i|Holy Grail}}
+*** {{i|Holy Mantle}}
+*** {{i|Immaculate Heart}}
+*** {{i|The Mind}}
+*** {{i|Paschal Candle}}
+*** {{i|Prayer Card}}
+*** {{i|The Relic}}
+*** {{i|Revelation}}
+*** {{i|Sacred Heart}}
+*** {{i|Sacred Orb}}
+*** {{i|The Soul}}
+*** {{i|Spirit Sword}}
+*** {{i|Trinity Shield}}
+*** {{i|The Wafer}}
+*** All items that normally cost two hearts in a Devil Deal
+}}
+* Like [[Tainted Magdalene]], Tainted Keeper can take advantage of his coin-healing ability by running into a hoard of enemies, picking up coins during his invincibility frames and healing in the process. This is effective if the player has contact-based items like {{I|The Virus}}.
+* {{e|Sticky Nickel}}s are able to spawn as a result of killing enemies, effectively making them impossible to collect (aside from having an accompanying explosion to break it free after spawning, and being mindful enough to collect it in time), as it would have already disappeared by the time a bomb detonated to pick it up. {{I|Remote Detonator}} would help, but it could end up in self-damage as the explosion would have to be extremely quick.
+** Coin drops from enemies are generated when a room is first generated. If an enemy that begins in the room drops a nickel, dime, or penny variant, it will drop the same coin if you leave and re-enter the room. This makes items such as {{I|Mercurius}}, {{I|Ventricle Razor}} and {{T|Door Stop}} much more useful, as they allow the player to easily leave and re-enter the desired room, allowing the player to easily generate money to fuel the run. This will, however, make the enemies start dropping less and less money each time you kill them, eventually not dropping anything.
+* In [[Repentance Co-Op|Co-Op]], all players will need to use money to purchase items if Tainted Keeper is in the game, but enemies will also drop money regardless of who killed them.
+** With this in mind, having the {{T|Blessed Penny}} can earn a huge amount of {{e|Soul Heart}}s for the players who can use them quickly.
+** Only the first item in a {{r|Boss Room}} needs to be purchased, the ones that spawn after it are free.
+** This can be used to get Devil Deal items without losing health for all players.
+* Tainted Keeper can utilize {{R|Sacrifice Room}}s much more reliably and efficiently than other characters, because monsters reliably generate health. This can be done by leaving regular coin drops on the floor to go pick up, or alternating stepping on the sacrifice spikes with clearing a monster room. The latter is reliable to produce coins but risky because you're always entering an unknown monster room with one health, but can be used with restarts to start a run with one or two angel room items. Keep in mind that Tainted Keeper has to pay for items in Angel Rooms that you may get at the 6th sacrifice, though the item drop you may get at the 7th sacrifice will be free.
+* {{E|Golden Penny|text=Golden Pennies}} are able to spawn as a result of killing enemies. It still despawns like a normal coin unless picked up, in which case, any subsequent spawns will not disappear.
+* Pressing reward plates is more worthwhile as enemies spawned by buttons reward extra coins.
+* After entering {{r|Curse Room}}s, try to exit the room immediately.
+** If there are enemies in the room, you will not be able to leave, but the dropped coins will ensure you have health to exit safely.
+** If there are no enemies, you'll exit the room while invincibility frames are active and will not lose your second coin heart.
+** It is also recommended to save teleport cards/pills/items for entering curse rooms, so you may safely leave regardless.
+* {{dlc|r+}} Using the {{e|White Fire Place}} to turn into a ghostly form makes {{R|Boss Room}} items free of charge.
+
+== Interactions ==
+* {{i|Sack Head}}: Similarly to how the chance for dimes and nickels to appear are determined by the seed, sacks are as well: rerolling the enemies in a room with {{I|D7}} will result in them dropping sacks again if they had the first time, with the same exact contents inside the sack every time.
+* {{I|Vanishing Twin}}: The extra item dropped by the clone boss costs money to obtain.
+* The [[Hematemesis]] pill makes Tainted Keeper spawn coins instead.
+* {{P|2 of Hearts}} will heal Tainted Keeper.
+* {{P|2 of Diamonds}} will also heal Tainted Keeper, at the cost of 1 coin after doubling your coins.
+
+=== Favored Items ===
+* {{I|2Spooky}}/{{I|Venus}}: Useful for self-protection due to Tainted Keeper's low fire rate, which makes it easier to defend against chasing enemies.
+* {{I|Birthright}} strongly attracts vanishing coins, making it much easier to amass resources.
+** {{T|Broken Magnet}} acts as a weaker version of Birthright, while also affecting normal non-vanishing coins.
+* {{I|The Boomerang}}/{{I|Jaw Bone}} allow for Tainted Keeper to retrieve dropped coins that are otherwise inaccessible, such as ones over a pit or a gap.
+* {{i|Brittle Bones}}: Picking this item up will give a one-time +0.5 tears up ({{dlc|r}} +0.4 [[fire rate]]) and 24 [[Blue Fly|Blue Flies]] without removing any health. This bonus is retained even if the item is later lost or rerolled.
+* Most Penny Trinkets are powerful from the sheer amount of coins Tainted Keeper is able to earn.
+** {{T|Burnt Penny}} and {{T|Flat Penny}} allow Tainted Keeper to obtain large amounts of keys and bombs.
+*** Burnt Penny in particular is especially powerful; in a room with enough enemies, it is possible to gain infinite money and bombs by killing most enemies in the room, then bombing your way out of the room to reset it.
+** {{T|Charged Penny}} allows for quickly charging active items, and can serve as a pseudo-{{I|Jumper Cables}}.
+** {{T|Counterfeit Penny}} can give an additional coin for each one you pick up, helping you gather money much more quickly and allowing you to afford more items.
+** {{T|Rotten Penny}} allows Tainted Keeper to amass a large amount of blue flies.
+*** {{T|Bloody Penny}} and {{T|Blessed Penny}} act as somewhat weaker versions of the Rotten Penny, due to Tainted Keeper replacing all heart drops with flies.
+* {{I|Coupon}} works on any purchasable item.
+* {{I|D7}} Because coin drops are determined by the seed, the D7 can be used to reset a room with a valuable coin to get it twice. Can additionally be used in {{R|Shop}}s and {{R|Secret Room}}s to refight {{E|Greed}} and {{E|Super Greed}}, allowing for large coin generation.
+* {{i|Deep Pockets}} guarantees 1-3 coins when clearing rooms if they would otherwise have no drops, and increases max number of coins to 999.
+* {{t|Devil's Crown}}'s downside is heavily mitigated, as you would have had to pay for the item regardless of if it is a devil deal. That said, deals that would normally be 2 hearts still cost 30 cents, and buying the devil items will still lock you out of getting Angel Rooms.
+* {{T|Door Stop}} effectively allows for infinite money with enough patience. Tainted Keeper can leave 1 monster alive in a room, leave, and re-enter to collect even more coins from killing enemies. The chance of them dropping another coin lessens and lessens, so it could be uneffective.
+* {{I|Fanny Pack}} can be used to break the game in a room with many enemies by taking damage and killing enemies to heal back the lost health. Fanny Pack may provide bombs when you take damage, allowing you to continuously bomb out of the room and re-enter.
+* {{i|Glass Cannon}} essentially has no downside, as any hit will already leave Tainted Keeper at one coin heart by default.
+* {{I|Golden Razor}} is very useful for end-game bosses since Tainted Keeper usually has a large stock of coins with few places to spend them.
+* {{i|Greed's Gullet}} works very well to address Tainted Keeper's low health, able to grant up to 4 additional coin hearts, and up to 12 additional containers if you also have {{i|Deep Pockets}}. Keep in mind that you do have to buy most of your things, and that lowering your coins below each threshold will also remove a coin heart.
+* {{i|Head of the Keeper}} grants a set chance for tears to drop a free penny with no downside. 
+* {{I|Humbleing Bundle}} has a chance to double the coins dropped from killing enemies.
+* {{i|Hypercoagulation}} automatically creates blue flies every time you are hurt.
+* {{I|1=Isaac's Heart}} makes Tainted Keeper's body invulnerable and grants contact damage, making it much easier to collect coins. It also makes strong synergy with {{i|Midas' Touch}}.
+* {{I|Keeper's Box}} grants a consistent way to spend pennies, especially in later floors where shops are not available. It can also potentially offer items that might be missing from the floor's store, such as bombs or keys.
+* {{I|Keeper's Sack}} gives stat upgrades with every purchase, which is available much more often with Tainted Keeper than with other characters.
+* {{I|Magic Fingers}} can be used to kill every enemy in the room, and is sustainable with the coins they drop. The item is especially useful with high damage, or on later floors that do not have shops to spend money in.
+* {{i|Magneto}} automatically draws in dropped coins. {{T|Broken Magnet}} and {{T|Super Magnet}} are also good substitutes.
+* {{I|Meat Cleaver}}: Multiplied enemies will always drop coins
+* {{I|Member Card}}/{{i|The Stairway}} add additional shops for Tainted Keeper to purchase items and pickups in.
+* {{I|Midas' Touch}} allows Tainted Keeper to run into enemies and potentially turn them into coins. On Tainted Keeper, petrified enemies drop 0-1 pennies instead of 1-4, but in a freshly uncleared room, this can still result in an equal loss at worst as the enemy will still drop 1 coin if killed by Tainted Keeper.
+* {{I|Missing Page 2}} essentially activates every time Tainted Keeper takes damage.
+* {{I|Money Power}} can combine with the large number of coin drops in general to increase Tainted Keeper's damage steadily, even more so with {{I|Deep Pockets}}. It is most effective in the late game, as the player will be spending more during the early phase of the game, and less on later floors when shops stop spawning.
+* {{T|Mother's Kiss}} will allow Tainted Keeper to have 3 Coin hearts, which is the only method other than Greed's Gullet to harbor more than 2 Coin hearts. If the trinket is dropped, the extra Coin heart will disappear.
+** Like {{C|Keeper}}, Tainted Keeper can technically have unlimited permanent coin hearts by swallowing many copies of {{T|Mother's Kiss}}, through methods like {{I|Marbles}} or the Gulp! pill.
+* {{I|Number One}} and {{I|Odd Mushroom (Thin)}} both help to greatly offset Tainted Keeper's -2.2 starting tears. With no other tears increases, they will increase his rate of fire to 1.55 and 1.82 tears per second, respectively.
+* {{T|Petrified Poop}} will make poops an additional source of income, while any heart drops from poops will be converted to useful blue flies.
+* {{i|Piggy Bank}}/{{t|Swallowed Penny}} each have a chance to drop 0-1 pennies on damage instead of their usual 1-2 pennies or 1 coin respectively.
+* {{I|Portable Slot}} can be used to generate coins to heal Tainted Keeper during extended fights.
+* {{I|Satanic Bible}} won't provide Black Hearts, since Tainted Keeper can't hold them, but it will provide a few flies and change boss items to more powerful Devil Room items at no real downside, since Tainted Keeper must purchase his boss items anyway.
+* {{T|Sigil of Baphomet}} can be used to let Tainted Keeper grab coins without risk of taking contact damage after killing an enemy.
+* {{T|Silver Dollar}}, {{T|Holy Crown}} and {{T|Wicked Crown}} grant access to extra shops after {{e|Mom}}, which is extra valuable with Tainted Keeper's stronger shops.
+* {{I|Steam Sale}} reduces prices of all items, even outside the shop.
+* {{I|Sack Head}}: The pennies dropped from killing enemies have a chance to be sacks instead. The sacks do not flash and disappear. However, this might also mean that killing an enemy won't give the player a coin when you really need one.
+* {{I|Tractor Beam}} directs all of Tainted Keeper's shots in one line, greatly enhancing accuracy.
+* {{I|Virgo}} and {{I|Celtic Cross}} has a chance of allowing Tainted Keeper to safely regain lost health and collect coins after getting hit; this is very good for killing large groups of enemies.
+* {{I|Voodoo Head}} adds a penny to all Curse Rooms, letting Tainted Keeper regain lost health and safely exit the room.
+
+=== Situational Items ===
+* HP Up items (Apart from {{i|Greed's Gullet}} and {{T|Mother's Kiss}}) don't do anything. Unlike regular Keeper, Tainted Keeper can never have 3 hearts. Only take them if your health has been reduced in any way (such as by taking {{I|Dead Cat}}).
+* {{I|20/20}}: Decreases damage to 80%, but increases the default tear stat, making it 2.73 without other items and effects. This allows him to double his damage output with tears. Decreases the spread of tears fired, making it easier to hit a single enemy with more tears.
+** As Tainted Keeper can reach 5.0 tear rate cap, this item becomes less effective damage-wise by the time Tainted Keeper gets to 3.75 tear rate without 20/20 and becomes disfavored after that, overall making him output less damage per second with tears.
+* {{I|Blood Rights}} effectively allows for free damage as long as you can get to a dropped coin (this, however, will result in less coins collected overall, since pennies dropped from faraway enemies will be impossible to reach before they disappear).
+* While {{I|Bum Friend}} or {{I|Bumbo}} would be items normal Keeper would want to stay away from, Tainted Keeper could potentially benefit from these items considering the large amount of coins he is able to produce.
+* {{T|Butt Penny}} is useful for pushing away and poisoning enemies, but can cause other coins to be pushed away and time out.
+* {{I|Brimstone}}/{{I|C Section}}: Only recommended if Tainted Keeper has found fire rate items, as his low starting fire rate will cause both items to charge extremely slowly.
+* {{T|Cursed Penny}}: While it can be assumed that the teleports will allow Tainted Keeper to farm infinite money by resetting uncleared rooms, this will eventually lower the total payout of each room visited. This is because the chance of an enemy dropping a vanishing coin depends on the number of times a room has been visited, which will eventually cause enemies to drop nothing.
+* {{I|Champion Belt}} and {{T|Purple Heart}} can be beneficial, as champions drop 2 coins; however, champions can be more dangerous than standard enemies.
+* {{i|Charm of the Vampire}} is somewhat redundant, as there is already consistent healing from enemy coin drops.
+* {{i|D20}}: Can reroll coins dropped by Tainted Keeper into other pickups, but they will still disappear if not picked up quickly.
+* {{I|Dataminer}} can achieve integer underflow easily. This is when the tear rate becomes negative, which then causes tears to shoot up to max 120 tears per second. Tainted Keeper only needs 2 tears down procs to get to -0.01 tears as he begins with a fire-rate just below 1.00.
+** Be wary of taking any tears or fire-rate boosting items with Dataminer equipped, as an underflow will set the tears to an extremely low rate (e.g. 0.09).
+* {{I|Eraser}} can completely remove frustrating enemies that are difficult to kill with Tainted Keeper's low fire rate. However, erasing weak enemies that spawn in groups (such as {{e|Attack Fly||Attack Flies}}) should be avoided, as it will remove an easy source of coins.
+* {{i|Fruit Cake}} has a solid chance of giving Tainted Keeper the coin-generating effects of {{i|Eye of Greed}}, and {{i|Head of the Keeper}}, especially given his quadruple shot. However, it can also make coins more difficult to get by triggering the effects of {{I|Lodestone}} and {{I|Ocular Rift}}.
+* {{i|Jar of Wisps}}: While the mass of wisps can protect Tainted Keeper and let him fire more tears per shot, the jar has a chance of spawning unique wisps that have explosive properties, which can easily cause accidental self-damage.
+* {{I|Pageant Boy}} is generally a bad item, as it usually pays out with 7 cents and costs 15. However, if it is on sale, it is almost always worth picking up, as it will always at least pay for itself, and has the opportunity to net a profit if a more valuable coin spawns such as a Nickel or Dime.
+** {{dlc|r+}} Pageant Boy now drops a penny trinket alongside its other rewards, making it a worthwhile investment as it could result in free resources (eg. {{T|Burnt Penny}} occasionally giving {{E|Bomb}}s).
+* {{I|Vanishing Twin}}'s extra item will still cost money to obtain. While it can offer an alternative {{ip|Boss|text=Boss pool item}} (especially given the large amount of HP ups in said pool), fighting an extra boss may not be worth it.
+
+=== Disfavored Items ===
+* Currently {{I|Damocles}} does not work with Tainted Keeper, as every item needs to be purchased.
+* Items that decrease Tainted Keeper's size like {{I|Mini Mush}} and {{I|Pluto}} should be avoided, as the smaller hitbox makes it harder to collect coins dropped by enemies.
+* {{I|Black Hole}}, {{I|Lodestone}}, and {{I|Ocular Rift}} can make it difficult for Tainted Keeper to collect coins as they will be pulled or pushed away.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop don’t drop coins.
+* {{I|Experimental Treatment}}: Risky for Tainted Keeper in two ways; It has a chance to either set his health down to 1 coin heart or cut his starting tear rate in half.
+* Items that deal damage to every enemy in a room, such as {{I|Toxic Shock}} and {{I|Butt Bombs}}, can make it difficult for Tainted Keeper to collect coins as they will spawn rapidly across the entire room as multiple enemies die at once.
+* {{I|Heartbreak}}/{{P|VI - The Lovers?}}: Immediately turns the second coin heart into a broken coin heart, and the next hit will kill Tainted Keeper. The lost coin heart cannot be regained through HP upgrades until the broken heart is removed.
+* {{I|Mutant Spider}}: Tainted Keeper will now shoot six tears with x0.42 tears modifier. This reduces his damage output per second by ~36%.
+* {{I|The Inner Eye}}: Tainted Keeper will now shoot five tears with x0.51 tears modifier. This reduces his damage output per second by ~38%.
+* {{P|III - The Empress?}} will not increase health past 2 coins, and will reduce it to 1 at the end of its duration.
+* {{I|Uranus}}: Frozen enemies DO drop coins but multi-stage monsters such as {{e|Big Spider}}s or {{e|Dank Squirt}}s will not split into smaller enemies, reducing total coin output. In addition, the collision of frozen enemies may block coin pickup.
+* {{I|The Wafer}}, {{I|Cancer}} and {{I|Empty Vessel}} have no effect.
+* {{I|Whore of Babylon}} will never trigger, since Tainted Keeper can never have half a coin heart.
+
+== Unlockable Items ==
+{{achievement text | Keeper's Bargain, The Hanged Man, Soul of the Keeper, Golden Penny, Keeper's Kin, Cursed Penny, Strawman }}
+
+== Gallery ==
+<gallery>
+File:Transition Keeper Tainted.png|Tainted Keeper's transition screen portrait.
+File:Start_Tainted_Keeper.png|The spawn floor when playing Tainted Keeper.
+File: Tainted Keeper Menu Icon (Locked).png|Tainted Keeper's locked character icon, depicting a [[shop]]’s door.
+</gallery>
+
+== Trivia ==
+* Tainted Keeper having two coins on his eyes is possibly a reference to [[wikipedia:Charon's obol|Charon's Obol]], a tradition in northern Mediterranean cultures, particularly Greek and Roman cultures, where one would place a pair of coins on the deceased's eyes to pay Charon, the ferryman of the river Styx, for the trip across, but also to pay for a return trip from the world of the dead if one was expected. This is further supported by the fact {{c|The Lost}}, whose starting coin is also suspected to be a reference to Charon's Obol, only has one coin and is depicted as a spirit, while Keeper has two and is depicted as a corpse, supposing he paid to bring his body back across the river Styx.
+* Like his non-tainted counterpart, Tainted Keeper's starting health is listed as "II" on the character selection screen, despite having no red hearts. This is unique among such characters, whose health is usually listed as "-I" or "?".
+* Through his abilities and appearance, Tainted Keeper is the equivalent of {{E|Super Greed}} as {{c|Keeper}} is to {{E|Greed}}.
+* The achievement for unlocking Tainted Keeper is "The Miser", a possible title for the character.
+** A miser is someone who obsessively hoards money and refuses to spend it, the former of which fits Tainted Keeper's penny-pinching playstyle.
+* Defeating {{E|Ultra Greedier}} as Tainted Keeper unlocks {{P|XII - The Hanged Man?}}. Most elements associated with Greed in The Binding of Isaac are shown to have been hanged or have severed nooses around their necks.
+** When reversed, The Hanged Man represents selfishness and stubbornness. This can be read as Tainted Keeper treating all item rooms as shops and his attributes being "upgrades" from Store Key, Wooden Nickel, and triple shot, but deepening his disadvantages like lower health ceiling, lower tear rate cap, and applying Keeper's Bargain to all item pedestals.
+
+{{nav|character|keeper unlock|tainted keeper unlock|fr=Le Gardien Impur}}

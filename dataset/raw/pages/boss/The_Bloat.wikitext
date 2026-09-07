@@ -1,0 +1,59 @@
+{{infobox boss
+ | name = The Bloat
+ | id          = 68
+ | variant     = 1
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Necropolis}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{room|Boss Rush}}<br>{{dlc|r}}<br>{{floor|Necropolis}}<br>{{floor|Utero}}<br>{{floor|The Void}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Degraded Boss</u><br><u>Main Path</u><br>{{floor|Cathedral}}<br>{{floor|Chest}}{{floor|Dark Room}}<br><u>Alternate path</u><br>{{floor|Corpse}}
+ | base hp     = 450
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|The Peeper}} (1% chance)
+}}
+
+'''The Bloat''' is a [[boss]] that can appear in {{s|Necropolis}} and:
+* {{dlc|nr}} All environments of [[Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}).
+* {{dlc|r}} The {{s|Utero}}.
+
+== Behavior ==
+* Unlike {{e|Peep}}, The Bloat's eyes are dislocated at the start of the fight.
+** The {{e|Bloat Eye|text=Bloat's eyeballs}} float diagonally, bouncing off of walls, and do not take damage. They block Isaac's tears and inflict contact damage.
+* Performs a small jump in place and fires eight projectiles in all directions.
+** Unlike Peep's, The Bloat's projectiles are always shot in the same orientation.
+* Creates large puddles of [[Creep#Red Creep|Red Creep]].
+* Jumps into the air and travels a moderate distance in Isaac's direction, leaving a small puddle of Red Creep and sending out a ring of eight projectiles upon landing.
+* Fires 2 {{i|Brimstone}} lasers from his eye sockets, aiming below him or to both sides of him, depending on Isaac's location. This attack is not telegraphed and fires near-instantly, although it can be deliberately triggered by standing beside or above The Bloat's head.
+** He can not perform this attack upwards.
+The Bloat deals a whole heart of contact damage.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|5}}: Fires 2 {{dlc|nr}} greenish-red/{{dlc|r}} green {{i|Ipecac}} projectiles instead of blood shots when performing a small jump, and 3 when jumping off-screen. Spawns 2 {{e|Charger}}s whenever he creates large puddles of Creep. {{dlc|r}} Creates [[Creep#Green Creep|Green Creep]] instead of Red Creep.
+
+== Gallery ==
+<gallery>
+File:Boss The Bloat green ingame.png|The Green Champion Bloat.
+File:Boss Delirium The Bloat ingame.png|The Bloat as one of {{e|Delirium}}'s forms.
+File:WOTL Boss Sketches.jpg|Sketches for The Bloat and other bosses for the original Binding of Isaac's Wrath of the Lamb DLC.
+</gallery>
+
+== Notes ==
+* The Bloat's eyes can be destroyed with {{p|Chaos Card}}, {{i|Euthanasia}}, {{i|God's Flesh}}, or {{i|Little Horn}}.
+
+== Trivia ==
+* The Bloat was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* He is the posthumous version of Peep.
+* Bloating is a medical condition in which the stomach becomes overstretched by excessive gas content.
+** Corpses also bloat during decomposition due to the excessive build-up of gas-releasing bacteria.
+* {{dlc|nr}} The Bloat's eyeballs look slightly different than Peep's.
+** {{dlc|r}} The Bloat's eyeballs are now very different than Peep's.
+* {{chal|Aprils Fool}} replaces all bosses with The Bloat as a reference to the exceptional hatred some fans express towards this boss.
+* 	[https://mewgenics.wiki.gg/wiki/The_Bloat#cite_note-2 The Bloat] cameos in Mewgenics, [[Edmund McMillen|Edmund McMillen's]] latest game, as a miniboss.
+
+== Bugs ==
+{{bug|dlc=nr|The Bloat's eyes have the same collision radius as The Bloat himself, which results in the eyes being difficult to dodge since the hitbox doesn't match up with the eyes' visual size.}}
+
+{{nav|boss|fr=Boursoufle}}
+
+[[Category:Chapter 3 bosses]]
+[[Category:Chapter 4 bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

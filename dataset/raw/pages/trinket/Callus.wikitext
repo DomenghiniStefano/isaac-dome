@@ -1,0 +1,32 @@
+{{infobox trinket
+ | id          = 14
+ | quote       = Your feet feel stronger
+ | description = Prevents damage from [[creep]] and [[spikes]].
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Prevents damage from [[creep]] and floor [[spikes]].
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Sacrifice spikes only damage Isaac for 1/2 hearts. 
+** If Isaac has both {{i|Mom's Box|n}} and {{A|Golden Trinket|n}}, all damage is reduced to 1/2 hearts similar to {{I|The Wafer}}.
+
+== Notes ==
+* Also grants immunity to slowdown from black and white creep, but not from [[Cobweb]]s.
+* Does not prevent any damage from {{R|Curse Room}} doors.
+* {{dlc+|a}}Does not prevent damage from {{E|Spiked Chest}}s.{{dlc-}}
+* {{dlc|a}}Does not prevent damage from [[Greed mode]]'s stop button.
+* {{dlc|r}} Does not prevent damage from Spiked Rocks.
+* {{dlc|nr}} Prevents the use of {{R|Sacrifice Room}}s, unlike [[flight]].
+** {{dlc|r}} Can use Sacrifice Rooms now. Can also use the spikes created by {{i|Sanguine Bond}}.
+
+== In-game Footage ==
+{{#ev:youtube|UR4P275diE8||inline}} {{#ev:youtube|q7h7TCf1m50||inline}}
+
+== Trivia ==
+* A [[wikipedia:callus|callus]] is an area of thickened skin that forms as a response to repeated friction, pressure, or other irritation.
+
+{{nav|fr=Callosités}}
+[[Category:Damage-preventing items]]

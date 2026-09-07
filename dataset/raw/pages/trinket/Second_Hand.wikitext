@@ -1,0 +1,32 @@
+{{infobox trinket
+ | dlc = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | name = Second Hand
+ | id = 78
+ | quote = Extended stat effect time!
+ | description = Increases the time that [[status effect]]s stay on enemies.
+}}
+
+{{cit|t|a}}
+
+== Effect ==
+* Increases the time that [[status effect]]s stay on enemies.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Further increases the duration of status effect.
+
+== Interactions ==
+* {{i|Acid Baby}} / {{i|The Bean}} / {{i|The Black Bean}} / {{i|Contagion}}: The [[poison]] duration from these items is not affected by Second Hand.
+* {{i|Hemoptysis}}: The Brimstone curse duration is affected by Second Hand. This also applies to {{C|Tainted Azazel}}.
+* {{t|Meconium}}: The [[confuse]] duration from {{e|Black Poop}}s is unaffected by Second Hand.
+* {{i|Mega Bean}}: Doubles the petrification duration but not the poison duration.
+* {{i|2Spooky}} / {{I|Venus}}: The fear/charm effect will last for twice as long after an enemy leaves Isaac's radius.
+
+== In-game Footage ==
+{{#ev:youtube|JVJN9A5Pky4}}
+
+== Trivia ==
+* {{dlc|a+}} Second Hand's sprite was changed for [[Booster Packs|Booster Pack #5]].
+* Its appearance is based off a clock's second hand, i.e. the hand that displays the seconds elapsed.
+
+{{nav|fr=Grande Aiguille}}

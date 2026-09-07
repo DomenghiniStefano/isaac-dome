@@ -1,0 +1,31 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 578
+ | quote       = Party time!
+ | description = Creates a large pool of [[Creep#Yellow Creep|yellow creep]] beneath Isaac.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | recharge    = 4
+}}
+
+{{cit|a|r}}
+
+== Effects ==
+* Spawns [[Creep#Yellow Creep|a pool of Lemonade]] similar to the Lemon Party [[pill]] effect underneath Isaac.
+** The creep deals 8 damage per tick (24 per second) and lasts ~19 seconds.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Peep}}.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns large, yellow wisps on the middle ring. The wisps make small puddles of yellow creep every other shot, which last for 3 seconds and deal 7 damage per tick to enemies that walk over them (56 damage per second).}}
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+
+== Trivia ==
+* [[anti:Free Lemonade|Free Lemonade]] originates from the ''Antibirth'' mod.
+* The appearance of the item is based off {{i|Lemon Mishap}} from the original ''Binding of Isaac''. When the item was picked up, its appearance would change from a lemon into a glass of lemonade.
+* The pickup quote "Party time!" is a reference to the Lemon Party [[pill]] as well as the shock website the pill is named after.
+
+{{nav|fr=Carafe de Limonade}}

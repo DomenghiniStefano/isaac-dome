@@ -1,0 +1,63 @@
+{{infobox boss
+ | dlc = r
+ | id = 908
+ | environment = <u>Boss</u><br>{{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{room|boss challenge}}<br><u>Double Trouble</u><br>(with another Baby Plum)<br>{{floor|Dank Depths}}<br><u>Degraded Boss</u><br>{{floor|Cathedral}}<br>{{floor|Chest}}
+ | base hp     = 234
+ | pool        = {{ip|Boss}} <br>{{i|Plum Flute}} if spared<br> 
+ |unlocked by=Something wicked this way comes+!
+ }}
+ 
+'''Baby Plum''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in all environments of [[Chapter 1]] ({{s|Basement}}, {{s|Cellar}}, {{s|Burning Basement}}).
+
+== Behavior ==
+Baby Plum floats slowly towards Isaac and attempts to orbit a certain distance around him. She will not break this distance unless she performs an attack with a movement ability. While chasing Isaac, she also performs the following attacks:
+* Spits a diagonal stream of projectiles, propelling herself backwards across the room and bouncing off any walls she collides into.
+** Randomly scattered in the stream are larger projectiles that deal a whole heart of damage.
+** Baby Plum takes increased knockback from any source during this attack.
+* Twirls towards Isaac, sending out a spiral of projectiles.
+** The spiral will always start pointing down, then make a full rotation starting in the direction closest to Isaac.
+* Slams the ground, firing two rings of projectiles outwards and leaving behind a small pool of [[Creep#Red Creep|Red Creep]]. The inner ring consists of 14 slow-moving projectiles while the outer one consists of 8 fast-moving projectiles.
+** The outer ring's projectiles will always be fired in the cardinal and ordinal directions, while the inner ring's projectiles will have a random spread.
+* Upon death, releases a ring of 10 projectiles.
+If Baby Plum doesn't take damage for 30 seconds, she will wave at the screen before flying away. The Boss Room item that spawns when the room is cleared will also be replaced by {{i|Plum Flute}} if Isaac isn't already holding it.
+* If Baby Plum takes damage, it does not negate the ability to spare her but rather resets the timer for her to fly away.
+* This does not apply in Greed mode, or any rooms she appears in that are not actually her own boss room.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Baby Plum ingame.png|Baby Plum as one of {{e|Delirium}}'s forms.
+File:Boss Baby Plum Old portrait.png|Baby Plum's splash art in Antibirth.
+File:Baby Plum Concept Art.png|Concept sketches of Baby Plum and her intro animation plus attacks.
+File:Plum hint.png|Unused hint sprite present in the files.
+</gallery>
+
+== Unlockable [[achievements]] ==
+{{achievement text | Fruity Plum, Plum Flute }}
+
+== Notes ==
+* The copy of Baby Plum created by {{i|Vanishing Twin}} drops a random boss item if spared.
+
+== Trivia ==
+* Baby Plum may be the boss version of a {{e|Red Boom Fly}}.
+** This is made more apparent due to the fact that she shares several room layouts with one.
+* So far, Baby Plum is the only boss from ''Repentance'' to have a Delirium sprite. Delirium can transform into Bumbino and The Pile but doesn't have a Delirium sprite for them.
+* There is an unused animation file next to Baby Plum's called "Derpy Plum" that has no associated sprites.
+* There is an unused sprite called "plum_hint" that depicts a timer icon next to a Baby Plum with a heart, hinting at the fact that Baby Plum can be spared.
+** It is found in the "backdrops" folder, which means it was most likely intended to be a floor or wall decoration.
+* Baby Plum is one of only 3 bosses that can be spared, with the others being {{e|Bumbino}} and {{e|Hornfel}}.
+** Coincidentally, they all made their debut in ''Repentance''.
+* Baby Plum's chasing behavior is reflected by her item equivalent, {{i|Fruity Plum}}, when it is following Isaac.
+* According to the [https://store.steampowered.com/news/app/250900/view/6232446836692812577 patch notes description for patch 1.7.9a], Baby Plum's death animation during normal runs will have a 0.0001% chance<ref>[https://ibb.co/trhxMmT Exact chances of Baby Plum exploding]</ref> to use the explosion animations provided by [[G FUEL!]], even if the item has not been encountered. The chance was 100% in the 1.7.9 patch before it.
+
+== Bugs ==
+{{bug|[[Status Effects#Confusion|Concussive effects]] don't work on Baby Plum.}}
+
+== References ==
+{{Reflist}}
+
+{{nav|blue baby boss unlock|boss|fr=Prunelle}}
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Cellar bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Repentance]]

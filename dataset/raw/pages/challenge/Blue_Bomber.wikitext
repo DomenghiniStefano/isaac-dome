@@ -1,0 +1,66 @@
+{{infobox challenge
+ | dlc         = a
+ | number      = 23
+ | character   = ???
+ | blindfolded = yes
+ | item        = {{i|Brother Bobby}}<br>{{i|Kamikaze!}}<br>{{i|Pyromaniac}}<br>{{i|Mr. Mega}}
+ | has shops   = yes
+ | goal        = Satan
+ | unlocks     = Gold Bomb
+ | unlocked by = Blue Bomber
+}}
+
+'''Blue Bomber''' is [[Challenge]] #23 introduced in ''[[The Binding of Isaac: Afterbirth]]''. The challenge is started as {{C|???}} with {{i|Kamikaze!}}, {{i|Pyromaniac}}, {{i|Mr. Mega}}, and {{i|Brother Bobby}}. No Treasure Rooms. The goal is to defeat {{E|Satan}}.
+
+== Difficulty ==
+??? is [[blindfolded]] and cannot fire tears. Players will have to use Kamikaze! and {{e|Bomb}}s to defeat enemies, with Brother Bobby generally as a last resort. Because Pyromaniac prevents damage from being taken from explosions, players can use Kamikaze! whenever they please. Using it as an offensive weapon can be very dangerous, as the player will have to closely approach enemies, increasing the chance of taking damage.
+
+As ???, health is crucial due to the absence and inability to obtain Red Heart containers. Any form of damage is threatening, as hearts may be hard to replenish.
+
+* {{dlc|r}} This challenge has become significantly easier with the buff to Kamikaze! making it go from 40 damage to a staggering 185, and increasing the explosion radius.
+
+== Strategies ==
+* {{Dlc|nr}} Finding an item which revives ??? as another character, like {{i|Lazarus' Rags}} or {{i|Judas' Shadow}} will make the run trivial: After reviving ??? will be able to gain Red Heart containers, therefore heal infinitely as long as there are extra lives, effectively making him invulnerable. {{i|Clicker}} will also work, though the odds of getting it are small.
+** {{Dlc+|r}} {{i|Lazarus' Rags}}, {{i|Judas' Shadow}} and {{i|Clicker}} can no longer appear during challenge runs, making this impossible.{{dlc-}}
+* With Kamikaze!, rooms can be skipped without having to clear them. This can especially be useful against larger and more challenging rooms.
+** {{t|Broken Remote}} allows for essentially infinitely reusable teleportation, enabling entire floors to be skipped, except for boss fights.
+* The player should use bombs for boss fights or harder enemies. Due to {{i|Mr. Mega}}, not only do bombs deal increased damage, but they also have a far larger blast radius.
+* By dropping a bomb then using Kamikaze! to propel the bomb towards enemies, ??? can safely deal damage from afar with relative ease.
+* Kamikaze! effectively gives ??? infinite explosives, so it’s a good idea to blow up rocks to look for {{R|Crawl Space}}s, and ??? can search for {{R|Secret Room}}s at no cost. Also, the player can blow up Tinted Rocks, [[Skull]]s, and {{E|Blue Fire Place}}s, which may contain {{e|Soul Heart}}s/{{e|Black Heart}}s. However, be careful about blowing up Skulls before clearing a room, because they may contain {{E|Host}}s.
+* Be careful about bombing objects that could deal damage to ??? upon destruction. It's risky to use Kamikaze! around Mushrooms since they may release damaging gas or around Polyps as they may explode into bullets. It may behoove the player to destroy these obstacles via bombs to prevent such a scenario from occurring.
+* The player should not replace/reroll Kamikaze! as without it, the challenge will be extremely difficult or even impossible. They should be very careful around {{R|Dice Room}}s, {{i|Missing No.}}, and certain dice items.
+* Familiars and {{i|BFFS!}} are useful in this challenge, since it allows the player to deal with enemies that are dangerous up close more easily.
+** {{i|BBF}} and {{i|Bob's Brain}} are especially useful as they gain increased damage from Mr. Mega, while Pyromaniac will protect ??? if they explode close by.
+** Familiars that attack enemies on their own, such as{{i|Bumbo}}, {{i|Cube of Meat}} and {{i|Ball of Bandages}} in their level 4 state allow the player to keep enemies at a distance while they chase them down and do contact damage.
+* {{i|The Polaroid}} is preferred over {{i|The Negative}} since the shield will trigger every time ??? takes damage, allowing him to get up close to spam Kamikaze! safely for a brief moment.
+** {{Dlc|r}} Only The Negative appears after defeating Mom.
+* {{dlc|nr}} When fighting {{e|Mom}}, a reliable strategy is to stand in the corner and play defensive. Whenever she exposes herself from nearby doors, go to them and use Kamikaze! from the side. ??? cannot be hurt by her (and {{E|Satan}}'s) stomping attack (see {{i|Pyromaniac}}), but watch out for its knockback.
+** {{dlc|nr}} Due to the immunity to Mom's stomping attack, {{t|Mom's Toenail}} has improved usefulness.
+** {{Dlc|r}} Pyromaniac no longer grants immunity to stomping attacks.
+* Items that modify bombs, such as {{i|Bomber Boy}}, {{i|Bob's Curse}}, and {{i|Butt Bombs}} are especially useful, as they provide a greater range for the detonation, a poison effect, and damage to the entire room, respectively.
+* {{i|Glitter Bombs|nr}} provide an unlimited source of pickups, including {{e|Soul Heart}}s.
+** {{dlc|r}} While many pickups are still able to be generated, there is a limit of 63-65 per floor.
+* Gaining flight allows ??? to quickly navigate rooms, to avoid having to use {{i|Brother Bobby}} to reach faraway enemies, and to better maneuver around for Kamikaze! usage.
+** {{i|Transcendence}}, which grants flight, can be found in Secret Rooms.
+* {{i|Trinity Shield}}, which is incredibly useful for blocking shots, can be found in {{R|Angel Room}}s. Since ??? can't fire tears, focus on defending from enemy projectiles. This is especially useful in the battles with {{e|Mom's Heart}} / {{E|It Lives!}} and Satan.
+* Sleeping in a [[bed]] will give 3 {{e|Soul Heart}}s.
+* Since ??? is unable to use {{e|Red Heart}} pickups, {{i|Dark Bum}} is extraordinarily useful as he gathers the hearts and converts them into {{e|Black Heart}}s and {{e|Soul Heart|nr}}s, as well as the occasional friendly blue spider.
+** {{Dlc|r}} Dark Bum now also has a chance to drop pills, cards, and runes, which can include {{P|Dagaz}}, [[Balls of Steel]], or {{P|V - The Hierophant}}, to name a few.
+* {{i|Camo Undies}} are especially useful. Every room entered will confuse enemies and with Kamikaze! they will not attack ??? as long as the fire buttons aren't pressed.
+* Acquiring {{i|Chaos}} makes this challenge far easier. Allowing bomb-related items such as {{i|Butt Bombs}} and {{i|Sad Bombs}} to spawn in Shops, Devil/Angel Rooms and as Boss rewards, these items allow Isaac to hit enemies passively from afar or use an unlimited {{i|Tammy's Head}}-style effect, especially powerful when combined with {{i|Brimstone}}.
+* {{i|Empty Vessel}} is another great item that makes the challenge easier. You get 2 Black Hearts and its passive activates across the run, giving you flight and a 10-second shield every 40 seconds. Paired with {{i|The Polaroid}} shield already mentioned, you can activate Kamikaze enough to kill most bosses without taking any damage.
+* {{i|Censer}} is useful for reducing the risk of being overrun by fast enemies, and makes it far easier to dodge enemy projectiles when weaving towards them.
+* {{i|Brimstone Bombs}} can be a run-winning item as it triggers a {{i|Head of Krampus}} 4-way brimstone at every kamikaze explosion due to their new synergy. This can clear out entire rooms for you and is very helpful in dealing with certain enemies which previously had to be dealt with with the tears of familiars as Brother Bobby.
+* {{I|Book of Virtues}} is extremely useful and borderline run-winning since it gives you access to an infinite supply of wisps that shoot explosive shots and block damage.
+
+== Notes ==
+* {{Dlc|nr}}If the {{E|Satan}} boss is somehow skipped, using {{R|I AM ERROR}} or {{R|Sacrifice Room}}'s 12th activation, the golden door will not appear in the {{s|Dark Room}} and upon killing {{E|The Lamb}} the completion trophy will still drop although this isn't recommended.
+
+== Reward ==
+* {{achievement text | Gold Bomb }}
+** Note that Golden Bombs can be obtained by their fixed appearances in certain room layouts, {{dlc|r}} and by using [[Bombs Are Key]] pill with {{e|Golden Key}}, even before this achievement is unlocked. The achievement simply allows them to spawn in place of other bombs, like Golden Keys.
+
+== Trivia ==
+* The title for this challenge is a possible reference to Mega Man, as he is commonly known as the Blue Bomber.
+
+{{nav|challenge|moms heart unlock|fr=Pierrot le Fou}}

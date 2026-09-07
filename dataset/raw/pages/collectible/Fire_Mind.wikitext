@@ -1,0 +1,68 @@
+{{infobox passive collectible
+ | tear app scale = 1/2
+ | id             = 257
+ | quote          = Flaming tears
+ | description    = Grants flaming tears that deal [[burn]]ing damage over time. Tears have a chance to explode on impact with an enemy, which creates a fire at the location of the explosion.
+ | quality        = 2
+ | tags           = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Tears inflict [[burn]] to enemies.
+* Tears have a chance to explode on impact with an enemy, leaving behind a fire.
+** Explosions do Isaac's current tear damage, in addition to the tear's hit.
+** {{dlc|nr}} The fires deal 22 damage per tick.
+** {{dlc|r}} Each fire deals up to 4 ticks of damage: 1st tick deals 23 damage, 2nd tick 17.3 damage, and 3rd and 4th tick 11.5 damage.
+*** {{dlc|r}} Fires can block projectiles, up to 4 times, each time getting smaller.
+**** Isaac cannot take damage from the flame, but can still take damage from the explosion.
+* {{dlc|a}} Isaac gives a wide glow lighting up dark areas, such as those under the effects of the {{cu|Darkness}} or the {{E|Dark One}}'s attacks.
+
+== Notes ==
+* The explosion effect chance depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 10 - \left \lfloor \mathit{Luck} * 0.7 \right \rfloor}</math>
+** At base Luck (0), the chance is 10%, maxing out at 100% at 12.86 Luck.
+* {{dlc|nr}} An exploding tear does not set either the hit enemy or anything in the blast range on fire.
+** {{dlc|r}} All enemies hit by the explosion will be set on fire.
+* Explosive and burning damage is equal to Isaac's current damage stat.
+* The flame will transform certain enemies into their fire-related versions (e. g. {{E|Hopper}}s into {{E|Flaming Hopper}}s).
+* Tears can explode upon hitting {{e|Bomb}}s of any kind.
+
+== Synergies ==
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Fire Mind it turns into a burning locust that sets enemies on fire but does not explode.
+* {{i|Bob's Rotten Head}}: Creates fire when the head lands.
+* {{i|Compound Fracture}}/{{i|Cricket's Body}}/{{I|Haemolacria}}/{{i|The Parasite}}: Each fractal tear has its own chance to explode. However, if the main tear explodes, all fractal tears explode.
+* {{dlc|na}} {{i|Death's Touch}}: Adds burn damage to the scythes, but will not cause explosions.
+* {{i|Dr. Fetus}}: All Dr. Fetus bombs will leave a flame behind after exploding, similar to the effect of {{I|Hot Bombs}}.
+* {{i|Epic Fetus}}: The missile will leave behind a fire.
+* {{i|Explosivo}}: Explosivo tears leave a flame behind after exploding.
+* {{i|Finger!|nr}}: Finger familiar can set enemies on fire but won't cause explosions.
+* {{i|Host Hat}}/{{i|Pyromaniac}}: Makes Isaac immune to explosions caused by flaming tears.
+* {{i|Ipecac}}: Every time the tear explodes, it will leave a fire.
+* {{i|Jacob's Ladder}}: Sparks can set enemies on fire but won't explode.
+* {{i|Lost Contact}}: Tears can explode when they destroy an enemy's tear.
+* [[Piercing tears]]: Tears will pierce enemies and retain the chance to self-destruct each time it hits an enemy.
+** {{Dlc|r}} Tears will pierce enemies without exploding, then self-destruct when they hit a wall or fall to the ground.
+* {{Dlc|r}} {{I|Soy Milk}}: Explosions are smaller (similar to those of {{I|Scatter Bombs|n}}) and do not reach Isaac as easily.
+
+== Interactions ==
+* {{i|Brimstone}}: Adds burn damage to the beam, but will not cause explosions.
+* {{C|The Forgotten}}: Club turns orange and burns enemies, but doesn't cause explosions.
+* {{C|The Lost}} /{{C|Tainted Lost}}: Since you'll likely have {{T|Perfection}}, Fire Mind is an awful item to obtain due to the explosion being based on luck.
+* {{i|The Ludovico Technique}}: Tears retain the ability to ignite enemies and explode. Tears will respawn at Isaac's location after the explosion.
+* {{i|Mom's Knife}}: Overrides the explosion chance, but the knife can still set enemies on fire.
+* {{i|Mysterious Liquid}}: Overrides the explosion chance, but tears can still set enemies on fire.
+** {{dlc|a}} When the Fire Mind tear explodes, a much larger pool of creep is left behind.
+* {{i|Sinus Infection}}: Tears will still stick to enemies, but lose the booger appearance. The booger tears will not constantly burn the enemy they are stuck to.
+* {{i|Technology}}/{{i|Technology 2}}/{{i|Tech.5}}/{{i|Tech X}}/{{i|Technology Zero}}: Adds burn damage to the beam, but will not cause explosions.
+* {{dlc+|a+nr}} {{i|Trisagion}}: Beams can burn enemies, but won't cause explosions.{{dlc-}}
+* {{i|Rubber Cement}}: Causes tears that bounce off of enemies after exploding to also explode when the tear lands.
+
+== In-game Footage ==
+{{#ev:youtube|mRTS6GXNjeA}}
+
+== Bugs ==
+{{bug|dlc=nr|Fires spawned by {{i|Angelic Prism}} will damage Isaac.}}
+
+{{nav|fr=Esprit de Feu}}
+[[Category:Tear-modifying items]]

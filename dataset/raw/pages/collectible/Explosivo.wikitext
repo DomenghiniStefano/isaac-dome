@@ -1,0 +1,75 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 401
+ | quote       = Sticky bomb shot{{dlc|nr|!}}
+ | description = Isaac's tears have a chance to stick to enemies and explode.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Isaac's tears have a 25% chance to stick to enemies and explode a few seconds afterward, dealing 60 damage plus Isaac's tear damage.
+
+== Notes ==
+* Explosivo does damage to Isaac if he is hit by the explosion.
+* {{dlc|nr}} Tears that stick to enemies do not deal any damage until they explode.
+* {{dlc|r}} Explosivo shots deal regular tear damage upon sticking to an enemy.
+* If an enemy dies or teleports with an Explosivo tear attached, the tear detaches and drops to the ground. If the detached tears touch an enemy, they will stick to that enemy and explode.
+** However, when an Explosivo tear is attached to {{E|Loki}} or {{E|Lokii}}, the tear teleports with the respective boss when the boss teleports.
+* Since Explosivo causes large tears to grow even larger, they can completely obscure enemies and their surroundings.
+* The special tears can stick to the various spiked blocks ({{E|Wall Hugger}}, {{E|Slide}}, and {{E|Poky}}) as well as the variants of {{E|Stone Grimace}}, even when they are inactive. They will not destroy them, however. This can be used to destroy rocks or other obstacles around the tile.
+* Explosivo is not affected by [[luck]].
+* Explosivo shots can go through any type of {{e|Fire Place}} and {{dlc+|r}} coal from {{e|Coal Spider}} and {{e|Coal Boy}}{{dlc-}}.
+* Tears that are attached to enemies can destroy {{e|Poop}}s and hit other enemies if they are close enough.
+
+== Synergies ==
+* {{dlc|r}}{{i|Brimstone}}/{{i|The Ludovico Technique}}/{{i|Mom's Knife}}/{{i|Tech X}}: Every tick of damage Isaac’s tears deal have a chance to attach a separate Explosivo tear on a hit enemy.
+* {{i|Cricket's Body}}: The explosion results in split Explosivo shots being generated. {{dlc|nr}} If the target survives, they're likely to immediately stick again. {{dlc|r}} The split tears explode when they hit an enemy or the ground.
+* {{dlc|r}} {{i|Dr. Fetus}}: Dr. Fetus bombs may occasionally turn into {{i|Sticky Bombs}}, but don't spawn spiders or slowing white creep.
+* {{i|Fire Mind}}: Explosivo tears leave a flame behind after exploding.
+* {{i|Godhead}}: The tear keeps its damaging aura while attached to the enemy, the aura grows as the tear does until it explodes. The aura can damage only enemies other than the one the tear is stuck to, however.
+* {{i|Haemolacria}}: Main tears and burst tears can have the Explosivo effect. If a main tear has the Explosivo effect, it will burst with its explosion, the burst tears dealing damage based off the explosion damage.
+* {{i|Ipecac}}: Sticky shots will explode even if they fall to the floor after the initial target dies.
+* {{i|Lachryphagy}}: Explosivo tears can be fed and will burst into Explosivo tears; however, if normal tears are fed first, Explosivo fed to the normal tears will not give the tear the Explosivo effect.
+* {{i|Lost Contact}}: Tears that stick to enemies can still block/be destroyed by enemy shots.
+** {{dlc|r}} Shielded Explosivo tears are no longer destroyed by shots while they're stuck to enemies. Up to the point that they explode, they block all enemy shots that come into contact with them, effectively cutting off an entire direction of attack (much like Dry/Fart Baby, but with a larger area of blockage and without forcing the player to waste time positioning). As such, this is an extremely powerful synergy between otherwise adequate items.
+* {{i|Mr. Mega}}: Increases the damage bonus of Explosivo's explosions to 110.
+* {{i|Mysterious Liquid}}: Leaves a pool of green creep on the floor.
+* {{I|Parasitoid}}: Egg sacs that trigger the explosion will leave a larger pool of slowing creep.
+* {{t|Nose Goblin}}/{{i|Sinus Infection}}: Explosivo tears can also be booger tears which damage the enemy over time while stuck to them before exploding.
+* {{i|Soy Milk}}: The 60 point explosion damage bonus is not affected by Soy Milk's penalty, combining efficiently with the high fire rate.
+* {{i|Spirit Sword}}: The fired projectile can take on Explosivo's effects. The sword swing can leave behind Explosivo tears.
+* {{i|Strange Attractor}}: When a tear sticks to an enemy, nearby enemies will be quickly pulled in the direction of the tear. The constant pull may however make enemy movement unpredictable.
+* {{Dlc|r}}{{I|Tech.5}}: The laser also has a chance to apply explosive tears on enemies.
+* {{dlc|r}}{{i|Technology}}: Regular explosive tears may stick to enemies hit by the laser.
+* {{Dlc|r}}{{I|Technology 2}}: The laser has a chance to apply an explosive tear every tick. The 60 point explosion damage bonus is not affected by the laser's penalty, combining efficiently with the high tick rate.
+* {{i|Technology Zero}}: Stuck tears will still generate arcs of electricity. Multiple tears stuck to a single enemy can cause very rapid damage.
+* {{i|Trisagion|r}}: Every tick of damage Isaac’s tears deal have a chance to attach a separate Explosivo tear on a hit enemy.
+
+== Interactions ==
+* [[:Category:Bomb items|All other bomb modifiers]]: No bomb modifier outside {{I|Mr. Mega}} and {{T|Short Fuse}} has an effect on Explosivo tears.
+* {{i|Bob's Rotten Head}}: Bob's Rotten Head has a chance to stick onto enemies. The explosion damage bonus increases to 110.
+* {{dlc|nr}}{{i|Brimstone}}/{{i|Dr. Fetus}}/{{i|Mom's Knife}}/{{i|Technology}}/{{i|Tech X}}: Overrides Explosivo.
+* {{i|Epic Fetus}}: Overrides Explosivo.
+* {{Dlc|r}}{{I|Holy Light}}: Some Explosivo tears have the Holy Light effect applied to them. These tears spawn a beam of light after a few seconds of sticking to an enemy instead of exploding.
+* {{I|Immaculate Heart}}/{{I|Saturnus|n}}: Orbiting tears that stick to an enemy will return to the ring if the enemy cannot be stuck to anymore before the tear's duration ends.
+* {{Dlc|nr}}{{i|The Ludovico Technique}}: Not recommended. Tear will alternate between "normal" and black. If it touches an enemy, it will stick to it, grow in size, then explode. While the tear is stuck to an enemy, it stops doing damage and cannot be controlled, leaving the player helpless.
+* {{Dlc|nr}}{{i|Tech.5}}/{{I|Technology 2}}: The laser is unaffected by Explosivo.
+* {{i|Trisagion|a+nr}}: Overrides Explosivo.
+
+== In-game Footage ==
+{{#ev:youtube|Y0LS18osxw4}}
+
+== Trivia ==
+* Possible reference to the Tenacious D song of the same name.
+* The icon may be a reference to the NES game Top Gun as it looks incredibly similar to [http://i.imgur.com/GyyojQe.png the missiles] that shoot at you in the game.
+* Explosivo means ''Explosive'' in Portuguese and Spanish.
+* Explosivo is one of the few tear-modifying passive items that does not change Isaac's appearance.
+
+== Bugs ==
+{{bug|If an explosive tear sticks to a [[Nulls]] or a [[Begotten]], when they become invisible, the tear will fall to the ground.}}
+
+{{nav}}
+[[Category:Tear-modifying items]]

@@ -1,0 +1,59 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 353
+ | quote       = {{dlcalt|Explosive blast!|r=Cross blast + 5 bombs}}
+ | description = +5 {{e|Bomb}}s. Isaac's bombs will now explode in a large cross-shaped pattern (roughly 5 bombs explosions wide). This also affects player-spawned {{e|Troll Bomb}}s.
+ | bomb app    = {{dlcalt|Bomb.png|r=Collectible Bomber Boy bomb appearance.png}}
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Grants 5 {{e|Bomb}}s.
+* Causes bombs to explode in a large cross-shaped blast by adding two additional explosions in each cardinal direction.
+** The damage for a single explosion is {{dlc|nr}} unchanged (60) {{dlc|r}} 0.75x times its normal damage (resulting in 75 damage per explosion). Each successive explosion that hits the same enemy has its damage halved.
+
+== Notes ==
+* {{dlc|nr}} The damage per successive explosion is: 60, 30, 15, 7.5, 3.75, 1.875, 0.9375, 0.46875, 0.234375.
+* {{dlc|r}} The damage per successive explosion is: 75, 37.5, 18.75, 9.375, 4.6875, 2.34375, 1.171875, 0.5859375, 0.29296875.
+** {{i|Mr. Mega}} changes the explosions' base damage to {{dlc|nr}}110/{{dlc|r}}185, with the same damage reductions as above.
+* With Bomber Boy, [[Bedroom]]s, [[Rocks#Super Special Rocks|Super Special Rocks]], and the {{s|Mines}} can be accessed with a single bomb.
+* Bombing the {{M|Donation Machine}} will cause a greater than normal amount of coins to drop from the Donation Machine.
+** The total amount of dropped coins is still deducted from the Donation Machine, however.
+* {{dlc|na+}} Bombing a {{E|Blue Fire Place}} or {{E|Purple Fire Place}} may cause it to drop multiple {{e|Soul Heart}}s.
+* {{dlc|r}} Bombs are colored blue and no longer have a skull on them.
+
+== Synergies ==
+* {{i|BBF|nr}}/{{i|Best Friend}}/{{i|Bob's Brain}}/{{dlc|a+nr}}[[Locust|Red Locusts]]: Explosion damage is halved with no additional explosions.
+** {{i|BBF|r}}/{{i|Best Friend}}/{{i|Bob's Brain}}/{{i|Mr. Boom}}/{{dlc|r}}[[Locust|Red Locusts]]: Bomber Boy affects the item’s explosion.
+*** Red Locusts will create additional smaller explosions that spawn in a tight cross formation.
+* {{I|Pyromaniac}}: Heals Isaac multiple times per bomb depending on the number of explosions that hit him.
+* {{i|Dr. Fetus}}: Bomber Boy affects the bombs fired by Dr. Fetus.
+* {{i|Doctor's Remote|r}}/{{i|Epic Fetus}}: Bomber Boy affects the missiles' explosions from Epic Fetus, with the explosions' multiplier resulting in 15 times Isaac's damage per explosion. Unlike with regular bombs, Bomber Boy won't decrease the damage from each of the missile's successive explosions, drastically increasing damage.
+* {{i|Hot Bombs}}: Each extra explosion creates an additional fire.
+* {{i|Mr. Mega}}: All explosions deal more damage, have a larger radius and will overlap each other more, potentially vastly increasing damage. Caution should be exercised, as the explosions' increased radius make self-damage likely.
+
+== Interactions ==
+* {{i|Anarchist Cookbook}}/{{i|Curse of the Tower}}/{{p|XVI - The Tower}}: Not recommended. The cross pattern explosion makes it very hard to avoid taking damage.
+* {{i|Bob's Rotten Head}}: No effect.
+* {{t|Blasting Cap}}: The extra explosions cannot drop bomb pickups.
+* {{i|Epic Fetus|nr}}: Epic Fetus explosions are unaffected.
+* {{i|Glitter Bombs|nr}}: Each additional explosion created has a chance to spawn a pickup or trinket.
+** {{i|Glitter Bombs|r}}: Extra explosions are unaffected by Glitter Bombs.
+* {{i|Ipecac}}: Ipecac explosions are unaffected.
+* {{i|Sad Bombs|anr}}: Each explosion releases 10 tears in all directions.
+** {{dlc|r}}{{i|Sad Bombs}}: Only the center-most explosion creates 10 tears.
+
+== In-game Footage ==
+{{#ev:youtube|yCoXJ16z_rQ}}
+
+== Trivia ==
+* Bomber Boy is a reference to the 1983 video-game ''[[wikipedia:Bomberman|Bomberman]]''. ''Bomber Boy'' is, specifically, the original name of a Game Boy game known as ''[[wikipedia:Atomic Punk|Atomic Punk]]'' in the United States and ''Dynablaster'' in Europe and Oceania.
+
+== Bugs ==
+{{bug|dlc=na+|Due to the extreme force of multiple simultaneous explosions, it is possible for Bomber Boy bombs (especially when combined with Mr. Mega) to propel Isaac into obstacles or over pits.}}
+{{bug|Although {{i|Bob's Rotten Head}} works normally with {{i|Butt Bombs}}, and {{i|Bomber Boy}} has no effect with it, their combination drops the explosion damage by 50%.}}
+
+{{nav|bomb modifier|bomb|fr=Homme Bombeur}}

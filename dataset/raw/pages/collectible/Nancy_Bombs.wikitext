@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 563
+ | quote       = Random blast +5 bombs
+ | description = +5 {{e|Bomb}}s. Each bomb gains 1-4 random bomb synergies.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Grants 5 {{e|Bomb}}s.
+* Causes Isaac's bombs to gain the effects of 1-4 random bomb synergies (most commonly 1).
+** Aside from normal bomb synergy items, this also includes {{t|Bob's Bladder}}, {{i|Strange Attractor}}, and {{e|Golden Bomb}}s (golden bombs will not be free).
+
+== Notes ==
+* Nancy Bombs cannot give the effects of {{i|Mr. Mega}}, {{i|Rocket in a Jar}}, or {{E|Giga Bomb}}s.
+* Even though Nancy Bombs can grant the {{i|Fast Bombs}} synergy, this will have no effect on the bomb placement speed. It will, however, disallow that bomb to knock back other bombs.
+
+== Interactions ==
+* {{i|Dr. Fetus}} / {{I|Epic Fetus}}: Bombs have a chance to be affected by Nancy Bombs.
+* {{I|Kamikaze!}}: Gains the effect of a random bomb synergy each time it is used.
+* {{i|Scatter Bombs}}: Extra bombs will copy the bomb synergies of the original bomb.
+
+== Trivia ==
+* ''Nancy Bombs'' originates from the ''Antibirth'' mod, but was named [[anti:Enigma Bombs|Enigma Bombs]]. By extension, it was also from the ''Community Remix'' mod for the flash version.
+** In ''Community Remix'', it instead would spawn a random bomb upon entering a room, picking between {{i|Mr. Mega}}, {{i|Bob's Curse}}, and {{i|Bobby-Bomb}}.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+* The rename from ''Enigma Bombs'' was likely to match the naming scheme of {{i|3 Dollar Bill}}, {{i|Fruit Cake}}, and {{t|Rainbow Worm}}.
+** "Nancy" as a pejorative term refers to an effeminate male.
+
+== References ==
+<references />
+
+{{nav|bomb modifier|bomb|fr=Bombes Fabuleuses}}
+[[Category:Bomb items]]

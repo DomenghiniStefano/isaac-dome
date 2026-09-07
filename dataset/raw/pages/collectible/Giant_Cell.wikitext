@@ -1,0 +1,62 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 658
+ | quote       = Micro friends
+ | description = Causes Isaac to spawn Minisaac familiars when he takes damage, which chase and shoot at nearby enemies.
+ | quality     = 1
+ | tags        = nolostbr summonable
+}}
+{{distinguish visual|Eye Sore}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Whenever Isaac takes damage, he summons a micro-Isaac [[familiar]], known as Minisaac, that chases nearby enemies and attacks on its own.
+** Minisaacs deal 1.35 base damage that scales with +0.15 per floor: <code>damage = 1.35 + 0.15 * (floor - 1)</code>
+** Minisaacs shoot 3 tears per second and their tear delay is not affected by Isaac's stats.
+** Minisaacs persists between rooms and floors.
+** Each Minisaac is spawned with 15 health points that are constantly drained with a rate of 0.4 per second. The draining stops when they reach 0.8 HP.
+*** They are healed back to full HP whenever Isaac takes damage, even when the familiars cap is reached.
+** Enemies can damage Minisaacs by shooting projectiles at them or dealing contact damage.
+*** Isaac's bomb explosions will also damage the familiars.
+*** Minisaacs are immune to spikes and lasers.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Polycephalus}}.{{dlc-}}
+* The familiar cap for Giant Cell is 16, after which taking damage will not spawn a new Minisaac.
+* Minisaacs will change their skin color based on the character that they were spawned from.
+** Certain items that change skin color can also affect the familiars' appearance.
+* When playing as {{c|The Forgotten}}, the familiars take the style as either The Soul or The Forgotten, depending on who gets hit.
+** If the familiar takes the style of The Forgotten, it will also inherit its bone club attack, dealing 8.1 base damage that scales with +0.9 per floor. It will swing its bone club 1.5 times per second. It can also interact with [[pickups]] using the bone club.
+* Minisaacs for {{c|Tainted Forgotten}} will spawn from The Forgotten's body and inherit its skin color but they will shoot regular tears.
+* Familiars spawned for {{c|Azazel}} or {{c|Tainted Azazel}} will not inherit the {{i|Brimstone}} laser and will fire regular tears.
+* If Isaac has any form of flight, the Minisaacs will receive wings and will be able to fly as well.
+** Minisaacs spawned before flight was acquired will not get upgraded, unless the flight is acquired by killing {{E|Dogma}} and starting {{E|The Beast}} fight in which case they will get upgraded.
+** Minisaacs that acquire temporary flight (e.g. from {{i|The Bible}}) will remain permanently upgraded until they die, even after the effect of The Bible expires.
+* If being hit makes Isaac become the {{i|Whore of Babylon}}, a Shadow-like Minisaac will spawn instead of a regular one.
+
+== Synergies ==
+* {{i|BFFS!}}: Increases damage dealt by the familiars by 40%.
+* {{i|Dull Razor}}: Provides a penalty-free way of spawning Minisaacs and/or healing existing ones.
+* {{i|Glowing Hourglass}}: Each use of Glowing Hourglass that does not move Isaac to a different room than the one he is currently in (such as the starting room of a new floor) will duplicate the Minisaacs. (This is possibly a bug)
+* {{i|Sacrificial Altar}}: Converts all Minisaacs into 1 {{E|Penny}} each upon use.
+
+== Interactions ==
+* Many familiar-modifying items and trinkets do <u>not</u> affect the Minisaacs. These include:
+** {{i|Box of Friends}}
+** {{dlc+|nr+}}{{t|Child Leash}}{{dlc-}}
+** {{t|Duct Tape}}
+** {{t|Extension Cord}}
+** {{t|Forgotten Lullaby}}
+** {{t|Friendship Necklace}}
+** {{i|King Baby}}
+** {{dlc+|nr+}}{{t|RC Remote}}{{dlc-}}
+
+== In-game footage ==
+{{#ev:youtube|5s18BaD5iZY}}
+
+== Trivia ==
+* Any {{e|Dummy|text=Dummies}} on screen will not only be attacked by the Minisaac spawned by Giant Cell, but will prioritize attacking the Dummy over any other enemies.
+
+{{nav|fr=Cellule Géante}}
+[[Category:Damage-triggered items]]

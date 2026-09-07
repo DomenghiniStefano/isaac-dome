@@ -1,0 +1,40 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 590
+ | quote       = Speed up + you feel elusive
+ | description = +0.4 [[speed]]. Doors stay open after entering a room, even in rooms with enemies.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* +0.4 [[speed]].
+* Opens most doors after entering a room, even in rooms with enemies, allowing Isaac to leave at any time.
+
+== Notes ==
+* While {{t|Door Stop}} has a similar effect, Mercurius has the added benefit of opening the doors that Isaac did not enter through.
+* Does not open the {{r|Boss Rush}} door.
+* Does not open any Special Rooms, including those that require [[pickup]]s to unlock. Doors won't be opened even if they were open already (such as {{r|Treasure Room}}s and {{r|Shop}}s on the first floor, {{r|Sacrifice Room}}s, etc.) or have been entered before.
+** {{r|Mini-Boss Room}}s, despite looking identical to normal rooms, are considered Special and will not be opened. This makes it possible to distinguish between regular rooms and mini-boss rooms without map-revealing effects (such as {{i|The Compass}}).
+* Does not open doors to {{r|Red Room}}s if those doors are created while there are enemies inside the current room.
+
+== Synergies ==
+* {{i|4.5 Volt}} / {{i|Jumper Cables}}: Provides infinite charges by clearing some enemies then leaving the room, and repeating.
+* {{I|Camo Undies}}: Allows the player to go through rooms at a quicker pace due to the invisibility.
+* {{I|Charm of the Vampire}} / {{i|Leech}}: Allows for unlimited healing.
+* {{I|Gimpy}} / {{i|Sharp Straw}}: Allows the possibility to generate unlimited [[Hearts]].
+* {{I|Head of the Keeper}}: With enough patience, [[Coins]] can be gathered infinitely.
+* {{c|Tainted Keeper}}: Leaving and re-entering the room allows for unlimited coin farming; however, enemies in rooms Tainted Keeper has already visited will eventually stop dropping coins.
+
+== In-game footage ==
+{{#ev:youtube|lQCM3h0qkL0}}
+
+== Trivia ==
+* [[anti:Mercurius|Mercurius]] originates from the ''Antibirth'' mod.
+* Mercurius' effects reference the Roman god of travel and communication, [[wikipedia:Mercury (mythology)|Mercury]], who wore winged shoes and a winged hat.
+* Mercurius is the biggest static speed upgrade in the game.
+* Despite Mercurius preventing doors from closing, the sound of doors opening can still be heard after clearing a room with enemies.
+
+{{nav|astrological}}

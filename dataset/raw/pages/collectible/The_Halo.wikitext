@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | id          = 101
+ | quote       = All stats up
+ | description = {{dlc|nr}} Grants one full Red [[Heart container]], +0.3 [[damage]], +0.2 [[tears]], +0.25 [[range]], +0.3 [[speed]], and +0.5 [[tear falling speed]].<br>{{dlc|r}} Grants one full Red [[Heart container]], +0.3 [[damage]], +0.2 [[tears]], +1.5 [[range]], and +0.3 [[speed]]. Heals 1 additional {{e|Red Heart}}.
+ | quality     = {{dlcalt|2|r+=3}}
+ | tags        = summonable tearsup offensive angel
+ | unlocked by = A Halo
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Grants one full Red [[Red Heart container|Heart container]].
+** {{Dlc|r}} Heals 1 additional {{e|Red Heart}}.
+* +0.3 [[damage]].
+* +0.2 [[tears]].
+* {{dlc|nr}} +0.25 [[range]].
+* {{dlc|r}} +1.5 [[range]].
+* +0.3 [[speed]].
+* {{dlc|nr}} +0.5 [[tear falling speed]].
+* {{transformation contribution|Seraphim}}
+
+== In-game Footage ==
+{{#ev:youtube|4qU2vf8Ni2s||inline}} {{#ev:youtube|U9z5Xx2Vx7k||inline}}
+
+{{nav|seraphim|mom unlock|moms heart unlock|it lives unlock|fr=Auréole}}

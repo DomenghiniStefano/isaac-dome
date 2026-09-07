@@ -1,0 +1,63 @@
+{{infobox boss
+ | dlc         = r
+ | id          = 916
+ | environment = <u>Boss</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br><u>Degraded Boss</u><br>{{floor|Cathedral}}
+ | base hp     = 385
+ | unlocked by =Something wicked this way comes+!
+}}
+'''Bumbino'''  is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in all environments of [[Chapter 2]] ({{s|Caves}}, {{s|Catacombs}}, {{Dlc|a}} {{s|Flooded Caves}}).
+
+== Behavior ==
+Bumbino slowly moves towards Isaac and can perform the following attacks:
+* Swipes forward to clear a path to Isaac if Bumbino is obstructed by obstacles while chasing him.
+* Performs two swipes, one in Isaac's direction, followed by another swipe in the opposite direction; these swipes can break obstacles. Then slams the ground, releasing 8 rock projectiles in all directions as well as 4 rock waves diagonally.
+** If Bumbino hits a wall or a pit with a swipe he is momentarily stunned, interrupting this attack and causing rock projectiles to fall from the ceiling.
+** His swipe attack will also deflect incoming projectiles.
+* Charges in Isaac's direction when vertically aligned with him and a wall, breaking all obstacles caught in his path. Bumbino will become stunned upon impacting the wall, launching a cluster of rock projectiles in the opposite direction and causes rock projectiles to fall from the ceiling.
+** If Isaac is close to the impact, he is pushed away.
+* Launches a {{i|Butt Bombs}} Bomb in Isaac's direction.
+
+All of Bumbino's attacks deal 1 Heart of damage.
+
+Additionally, Bumbino attempts to pick up any dropped [[Coins]], similar to {{e|Ultra Greed}}, but without the healing.
+* He prioritizes picking up coins on the ground over attacking.
+* He cannot pick up {{e|Sticky Nickel}}s, but will try indefinitely if one should spawn in the room, effectively anchoring him to one spot.
+* Getting hit by Bumbino's swipes may sometimes cause Isaac to drop coins.
+* If Bumbino picks up at least 12 cents worth of coins, he drops an extra [[item]] from the following list and then leaves the room:
+{{collectible table | <3, Bone Spurs, Butt Bombs, The Common Cold, Compound Fracture, Dead Tooth, Lemon Mishap, Monstro's Tooth, Number One, The Poop, Sinus Infection, Yum Heart }}
+
+== Audio ==
+{{sound table header}}
+{{sound table row | [[File:Misc 3.wav]] | Bumbino growling. }}
+{{sound table row | [[File:Punch1.wav]] | Bumbino performing a swipe attack. }}
+{{sound table row | [[File:Slam fists.wav]] | Bumbino performing a slam attack. }}
+{{sound table row | [[File:Hitting wall.wav]] | The noise Bumbino makes upon slamming into a wall. }}
+{{sound table row | [[File:Getting dizzy 1.wav]] | Bumbino getting stunned after slamming into a wall. }}
+{{sound table row | [[File:Death sound.wav]] | The sound Bumbino makes upon being defeated. }}
+|}
+
+== Notes ==
+* Bumbino cannot spawn copies of items that Isaac has already encountered/collected. Once Bumbino's item pool is exhausted, he will only drop {{i|The Poop}}.
+
+== Trivia ==
+* Bumbino is based on {{I|Bumbo}}, an item in-game and the main character in ''[[Wikipedia:The Legend of Bum-bo|The Legend of Bum-bo]]'', another game developed by Edmund McMillen in 2019.
+* All items dropped by Bumbino reference the [[thelegendofbumbo:Puzzle Board|gameplay symbols]] from ''The Legend of Bum-bo'': Pee, Poop, Hearts, Bones, Snot, and Teeth.
+* The name "Bumbino" is a portmanteau of "Bumbo" and "Bambino", the Italian word for child.
+* Bumbino's slam attack may be a reference to the ''Wario Land'' games, as he slams with his shoulder forward, mimicking Wario's Shoulder Bash move.
+* Bumbino's voice is noticably deeper pitched than Bumbo's from ''The Legend of Bum-bo'', despite resembling him.
+* Bumbino's ingame face resembles the Newgrounds emoticon "Agnry Faic", which is also represented as a Co-op Baby called Boss Baby.
+* Taking {{I|Knockout Drops}} as {{C|Keeper}} will give him an expression resembling Bumbino.
+* Bumbino does not have a sprite for his [https://www.reddit.com/r/bindingofisaac/comments/z5heu1/bumbino_is_missing_his_delirium_form/ delirium form].
+* Bumbino is one of only 3 bosses that can be spared, with the others being {{e|Baby Plum}} and {{e|Hornfel}}.
+** Coincidentally, they all made their debut in ''Repentance''.
+
+== Bugs ==
+{{bug|dlc=nr+|Isaac will drop coins from Bumbino's swipes even if he's immune to damage through any means. This includes {{c|Tainted Forgotten}}'s skeleton.}}
+
+{{nav|blue baby boss unlock|boss}}
+
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Repentance]]

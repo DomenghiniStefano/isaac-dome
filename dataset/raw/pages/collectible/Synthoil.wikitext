@@ -1,0 +1,24 @@
+{{infobox passive collectible
+ | id          = 345
+ | quote       = DMG + range up
+ | description = {{dlc|nr}} +1 [[damage]], +5.25 [[range]], +0.5 [[tear falling speed]].<br>{{dlc|r}} +1 [[damage]], +2.5 [[range]].
+ | quality     = 3
+ | tags        = summonable syringe offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +1 [[damage]].
+* {{dlc|nr}} +5.25 [[range]].
+* {{dlc|r}} +2.5 [[range]].
+* {{dlc|nr}} +0.5 [[tear falling speed]].
+* {{transformation contribution|Spun}}
+
+== In-game Footage ==
+{{#ev:youtube|3meuiqe8tEs}}
+
+== Trivia ==
+* Synthoil, or as it should correctly be spelled as "synthol", is a mixture of oil, lidocaine, and alcohol used to artificially increase muscle volume through scar tissue formation.
+
+{{nav|syringe|fr=Synthol}}

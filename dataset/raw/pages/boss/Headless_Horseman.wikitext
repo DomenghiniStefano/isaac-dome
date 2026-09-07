@@ -1,0 +1,64 @@
+{{infobox boss
+ | image name  = * {{dlc|nr|Rebirth}}
+ | name        = Headless Horseman
+ | id          = 82
+ | environment = <u>Boss</u><br>{{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{room|Boss Rush}}<br><u>Degraded Boss</u><br>{{floor|Necropolis}}<br>(Head Only)<br>{{floor|Cathedral}}{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}<br>{{room|challenge}}<br>(Head And Body)<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 160
+ | stage hp    = 30
+ | pool = {{i|A Pony}}
+ | unlocked by = The Harbingers
+}}
+
+'''Headless Horseman''' is a [[Harbinger]] that can appear in all environments of [[Chapters]] 1, 2, 3, and 4; replacing any other Horsemen.
+
+The head has 100 HP. The body's HP scales depending on what Chapter it is encountered, ranging from 60-300 HP.
+
+== Behavior ==
+Headless Horseman consists of two entities: The head and the body. Each performs attacks independently of the other.
+
+The head has the following attacks:
+* Shoots 3 projectiles in a spread at Isaac.
+* Charges either left or right off-screen and reappears on the opposite end of the screen. He can charge either one, two or three times.
+** He performs this attack more often if Isaac is to his left or right.
+** This attack deals a full heart of damage.
+
+The body has the following attack:
+* Periodically shoots red {{i|Ipecac}}-like shots at Isaac, leaving a large puddle of damaging [[Creep#Red Creep|Red Creep]] on impact.
+** This behavior is similar to {{e|Pestilence}}'s second phase.
+Both the head and the body deal a whole heart of contact damage.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium The Headless Horseman ingame.png|{{dlc|a+}} Headless Horseman as one of {{e|Delirium|n}}'s forms.
+</gallery>
+
+== Notes ==
+* In several normal rooms, Headless Horseman's head appears on his own without his body.
+** Two or three of Headless Horseman's heads can be found in the same normal rooms.
+
+== Trivia ==
+* Headless Horseman appeared in the original ''The Binding of Isaac.''
+* The [[wikipedia:Headless Horseman|Headless Horseman]] originated from European folklore during the Middle Ages but gained popularity in America with ''[[wikipedia:The Legend of Sleepy Hollow|The Legend of Sleepy Hollow]]'', a short story written in 1820 by American author [[wikipedia:Washington Irving|Washington Irving]], in which the Headless Horseman was prominently featured.
+* The boss art shows the head with both eyes, even though its in-game sprite only has one.
+* The boss art shows the horse's head as brown, even though its in-game sprite is black.
+* {{dlc|a+}} The Delirium version of Headless Horseman's horse resembles {{e|Famine}}'s horse rather than Headless Horseman's.
+
+{{nav|boss|mom unlock|fr=Le Cavalier Sans Tête|zh=无头骑士}}
+[[Category:Harbingers]]
+[[Category:Chapter 1 bosses]]
+[[Category:Chapter 2 bosses]]
+[[Category:Chapter 3 bosses]]
+[[Category:Chapter 4 bosses]]
+[[Category:Basement bosses]]
+[[Category:Cellar bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Depths bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

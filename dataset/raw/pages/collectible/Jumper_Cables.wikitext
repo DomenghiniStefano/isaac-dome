@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 520
+ | quote       = Bloody recharge
+ | description = Grants an active item charge every 15 enemies killed.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable offensive nocantrip
+ | unlocked by = Jumper Cables
+}}
+
+{{cit|up|a+2}}
+
+== Effects ==
+* Grants an active item charge every 15 enemies killed.
+
+== Notes ==
+* Destroying a {{E|Shopkeeper}} will count as an enemy killed.
+* Multiple copies of this item do not grant more charges.
+
+== Synergies ==
+* {{i|Jacob's Ladder}} / {{i|120 Volt}}: Increases the amount of arcs a spark can generate.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s don't count towards the kills needed to grant an active item charge.
+* {{i|E. Coli}}/{{i|Flush!}}: Turning enemies into poop doesn’t count towards the kills needed to grant an active item charge.
+* {{dlc|r}}[[Freeze|Freeze Effects]]: Enemies that die from being frozen don't count towards the kills needed to grant an active item charge.
+** {{dlc|r+}} Frozen enemies do contribute to the charge counter.
+* {{i|Isaac's Tears}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|ZYqQomOhHzY}}
+
+== Trivia ==
+* Jumper Cables is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=846644717 this Steam Workshop item] by Ashkait and Scayze.
+
+{{nav|booster pack|fr=Câbles de Démarrage}}

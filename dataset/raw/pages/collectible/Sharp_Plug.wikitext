@@ -1,0 +1,54 @@
+{{infobox passive collectible
+ | id          = 205
+ | quote       = {{dlcalt|Charge with blood|r=Infinite charge... at a cost}}
+ | description = Damages Isaac in exchange for fully recharging Isaac's current activated item.
+ | quality     = 2
+ | tags        = nolostbr summonable nocantrip
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Damages Isaac in exchange for fully recharging Isaac's current activated item.
+** {{dlc|nr}} Sharp Plug costs two hearts of health to use.
+*** {{dlc|r}} Sharp Plug's heart cost is one half-heart per charge slot filled. The health cost is not increased in later stages where half-heart damage is upgraded to full heart.
+** If the item has no charges, the Sharp Plug will not activate.
+
+== Notes ==
+* {{dlc|nr}} If Isaac has less than two Black or Soul Hearts, it will remove them but will not remove any Red Hearts.
+* {{dlc|r}} Sharp Plug attempts to draw from Red Hearts first.
+* {{dlc|r}} Sharp Plug cannot deal fatal damage. If used at half a heart, it will not work.
+
+== Synergies ==
+* {{dlc|r}} [[:Category:Damage-triggered items|Damage-triggered items]]: Each half heart used up by activating Sharp Plug triggers damage effects separately, allowing multiple payouts.
+** {{i|Habit}}: Each damage taken triggers the extra charge, which can be seen when Isaac has {{i|The Battery}}, or when using Sharp Plug without having enough health to fully charge the active.
+* {{i|Glowing Hourglass|anr}}: As long as Isaac has more than 2 full hearts, time can be rewinded indefinitely since the health used to recharge the item is refunded upon use.
+* {{i|Jacob's Ladder}} / {{i|120 Volt}}: Electricity deals 75% of Isaac's tear damage if he owns 1 of these items, to 100% if Isaac owns both.
+* {{C|Keeper|anr}}: The Keeper takes only one heart of damage.
+** {{dlc|r}} Expends health for charges at the rate of 2 charges per 1 [[Coin Heart]]. If an item is 1-charge, removes 1 Coin Heart.
+* {{i|Schoolbag|a+nr}}: The active item in the main slot is fully charged as normal and the secondary slot gains as many charges as the main one did.
+** {{dlc|r}}: Only the front item is charged.
+* {{C|Tainted Magdalene|nr+}}: Tainted Magdalene's {{i|Yum Heart}} can be used infinitely, allowing for infinite invincibility frames from taking damage. Paired with Tainted Magdalene's melee attack, this can easily win a run.
+**{{dlc|r+}} Bleeding hearts grant 1 charge per full bleeding heart. Non bleeding hearts grant charges as normal.
+* {{i|The Wafer|nr}}: Reduces the health cost to half a heart (except for Keeper).
+
+== Interactions ==
+* {{i|9 Volt|nr}}: Renders the Sharp Plug unusable. Sharp Plug can only be used if the item is at 0 charges, but 9 Volt instantly gives 1 charge to the item upon activation.
+** {{dlc|r}} As Sharp Plug can now be used with charges and the cost is based on charges filled, 9 Volt now synergizes with Sharp Plug, lowering the cost of using it by half a heart on 2+ charge items.
+* {{i|Alabaster Box}}: Expends up to 6 full hearts if possible with no charges given.
+* {{c|Bethany}} / {{c|Tainted Bethany}}: Soul/blood charges are used before Sharp Plug when available.
+* {{i|Eraser}}: Attempting to recharge the Eraser with the Sharp Plug fails and only hurts Isaac for half a heart.
+* {{i|Holy Mantle|nr}}: Holy Mantle blocks the damage from Sharp Plug if the shield is active, but also keeps Isaac's active item from charging.
+** {{dlc|r}} Bypasses the Holy Mantle and gives charges as usual.
+* {{i|Isaac's Heart|nr}}: Renders the Sharp Plug unusable.
+* {{C|The Lost}}: No benefit from this item unless he has a respawn item because his active item's charge will not refill if the {{i|Holy Mantle}} effect activates. Sharp Plug only activates upon receiving actual damage.
+** {{dlc|r}} No effect, as The Lost doesn't have health.
+** {{c|Tainted Jacob}} or {{e|White Fire Place|n}} Lost form: Activating Sharp Plug will take the health cost from the original character's health. {{I|Holy Mantle}} will not block the health cost.
+*** '''Lost form''' + {{i|Heartbreak}}: Every point of health taken to activate Sharp Plug is considered fatal damage, leaving Isaac with as little as half a soul heart. It is possible to get 12 [[Broken Heart]]s in addition to this final half heart, past the normal limit.
+* {{i|Mega Blast|anr}}: Sharp Plug will not work with Mega Blast.
+** {{dlc|r}} Works as intended, giving 1 charge per half a heart.
+
+== In-game Footage ==
+{{#ev:youtube|qXCp1nvM3Ew}}
+
+{{nav|active modifier|fr=Prise de Sang}}

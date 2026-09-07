@@ -1,0 +1,23 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 163
+ | quote       = Oops!
+ | description = Spawns a [[Familiar#Dips|Dip Familiar]] upon clearing a room.
+ | unlocked by = Dingle Berry
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Spawns a random friendly {{E|Dip}} upon clearing a room.
+** Spawns a random friendly Dip upon starting a new wave in [[Greed Mode]].
+* Turns enemy Dips into friendly Dips, similar to {{I|Dirty Mind}}.
+* Dips come in [[Poops]] variants rather than Dip variants. Golden variants drop coins on being damaged and can turn enemies into gold. Red variants do extra damage. Rainbow variants turn into a heart upon death. White variants are harder to kill. Black and Corny variants have had no extra visible effects.
+
+== Synergies ==
+* {{A|Golden Trinket}}/{{I|Mom's Box}}: Grants 1 extra dip per copy. Also, dip enemies become friendly.
+
+== Trivia ==
+* Dingle Berry might be a reference to {{E|Dingle}}, as both are poop themed and Dingle's name is thought to come from the word "dingleberry", which means a small ball of feces clinging to an animal.
+
+{{nav|poop|tainted blue baby unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Colombin}}

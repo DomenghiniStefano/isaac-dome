@@ -1,0 +1,64 @@
+{{infobox boss
+ | dlc         = r
+ | id          = 900
+ | environment = <u>Boss</u><br><u>Main path</u><br>{{Floor|Depths}}{{floor|Dank Depths}}<br>{{room|boss challenge}}<br><u>Alternate path</u><br>{{floor|Mines}}<br>{{room|boss challenge}}<br><u>Degraded Boss</u><br>{{floor|Chest}}
+ | base hp     = 690
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|The Wiz}} (1% chance)
+ | unlocked by = Something wicked this way comes+!
+}}
+
+'''Reap Creep''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in the {{s|Depths}} and the {{s|Dank Depths}}, as well as in the {{s|Mines}} in the alternate path.
+
+== Behavior ==
+=== Phase 1 ===
+Upon spawning, Reap Creep jumps up to the top of the [[Boss Room]] similarly to {{e|The Haunt}}. It starts off taking {{e|Wall Creep}}'s form and can perform the following attacks:
+* Spawns a Wall Creep on either the left, right or bottom wall.
+* Spews out a continuous stream of projectiles vertically while attempting to follow Isaac's movements.
+** When reaching near the end of either wall, it leaves a gap between the stream and the wall.
+
+=== Phase 2 ===
+After losing 33% health, Reap Creep takes {{e|Blind Creep}}'s form and has new attacks:
+* Spews a huge number of disorganized projectiles, similar to {{e|Monstro}}, but larger.
+* Spews out a wide spread of spaced projectiles.
+* Spawns 3-4 {{e|Spider}}s or a {{e|Trite}} downwards.
+
+=== Phase 3 ===
+After losing 66% health, Reap Creep takes {{e|Rage Creep}}'s form and has new attacks:
+* Slams itself against either the left or right wall, causing rock projectiles and 3-4 Spiders to fall from the ceiling.
+** If it's fought in the Mines, 3-4 {{e|Rock Spider}}s fall instead.
+* Charges for a '''moderate''' period of time before shooting a wide {{i|Brimstone}} laser while attempting to follow Isaac's movements.
+** When reaching near the end of either wall, it leaves a gap between the laser and the wall.
+* Charges for a '''long''' period of time before shooting 4 regular Brimstone lasers diagonally outwards while attempting to follow Isaac's movements. The beams slowly come together leaving a small gap within the center.
+** The two Brimstone attacks have distinct charge sounds, allowing the player to distinguish them.
+
+== Gallery ==
+<gallery>
+File:Boss Reap Creep secondphase ingame.png|Reap Creep in its second phase.
+File:Boss Reap Creep thirdphase ingame.png|Reap Creep in its third phase.
+File:Reap Creep Concept.png|Concept art for Reap Creep.
+File:ReapCreep2ndConcept.png|Concept art for Reap Creep's 2nd phase.
+File:Reap Creep Concept.jpeg|Boss screen mockup of Reap Creep's concept. Created by artist NotYourSagittarius.
+</gallery>
+
+== Notes ==
+* Reap Creep's arena always has a hollow upper layer, preventing Isaac from getting too close with it. This makes the situation tricky if Isaac somehow has to deal damage with melee or grounded attacks.
+** Due to this, as of [[V1.06.J791]], Reap Creep cannot appear in the [[Scat Man]] challenge.
+
+== Trivia ==
+* Reap Creep originates from a [https://www.reddit.com/r/bindingofisaac/comments/2trm97/versus_screen_mockups/ Reddit post] by NotYourSaggitarius in 2015, as a boss mockup. The boss was later incorporated into the Antibirth mod.
+* Originally in Antibirth, killing it, {{e|Baby Plum}} and {{e|The Pile}} were necessary to unlock Antibirth's alternate chapters.
+* Reap Creep is one of two bosses that can appear in both the main path and the alternate path, the other being The Pile.
+** Because of this, its battle theme will be different, depending on where it's fought. If it's fought in The Depths or the Dank Depths, either ''Crusade'' or ''Cerebrum Dispersio'' will play, while if it's fought in the Mines, ''Juggernaut'' will play.
+* It is the boss version of Wall Creeps, Blind Creeps and Rage Creeps.
+
+== Bugs ==
+{{Bug|If {{c|Tainted Forgotten}}'s body is thrown next to the boss during Phase 3, it will continuously charge in place against the body, making for an easy kill.}}
+
+{{nav|blue baby boss unlock|boss|fr=La Mère des Rampants}}
+
+[[Category:Chapter 2.5 bosses]]
+[[Category:Chapter 3 bosses]]
+[[Category:Mines bosses]]
+[[Category:Depths bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Debut bosses in Repentance]]

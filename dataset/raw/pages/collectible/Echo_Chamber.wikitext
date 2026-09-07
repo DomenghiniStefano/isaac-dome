@@ -1,0 +1,55 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 700
+ | quote       = I can see see the future future future
+ | description = When Isaac uses a [[Card]], [[Pill]], or [[Rune]], he also uses a copy of the previous three Cards/Pills/Runes he used after picking up Echo Chamber.
+ | quality     = 3
+ | tags        = summonable offensive nocantrip stars
+ | unlocked by = Echo Chamber
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* When Isaac uses a [[Card]], [[Pill]], or [[Rune]], he also uses a copy of the previous three Cards/Pills/Runes he used after picking up Echo Chamber.
+
+== Notes ==
+* Previously used cards, pills, and runes are effectively used again, meaning items that modify the effects of cards, pills, or runes will also modify the effects that Echo Chamber activates.
+** As a result, previously taken golden pills and blank runes will activate a random effect each time Echo Chamber activates them.
+* If Isaac uses cards that convert/destroy pickups (such as {{p|Ace of Spades}}, {{p|Black Rune}}, {{p|IX - The Hermit?}}, etc.), any other cards Echo Chamber activates that generate pickups have a high chance to have their pickups converted.
+* It is advised to avoid using cards that teleport Isaac, as he will be teleported to a specific room the next three times he uses a consumable. This effectively negates any current-room effects from consumables, such as {{p|XV - The Devil}} or {{p|Algiz}}, during that period, as Isaac is teleported after they activate.
+** Similarly, it is also advised to avoid using unidentified pills, as Isaac runs the risk of activating either a stat down or [[Telepills]] for the next three consumables he uses.
+** If playing co-op with another character, the player without Echo Chamber can use unidentified pills to identify them and, if found later, can give them to the player with Echo Chamber to propagate its positive effects for the next three consumables.
+* When obtained on {{C|Tainted Lazarus}}, Echo Chamber will only duplicate the last three cards or pills previously used on the Lazarus state with Echo Chamber. As a result, teleport cards or Telepills can be freely used on the Lazarus state without Echo Chamber.
+* If this item is somehow removed and reobtained during the run (such as when obtained from {{i|Lemegeton}} or {{t|Modeling Clay}}), the last three consumable types used during the time Isaac had Echo Chamber will be remembered. {{i|Genesis}} and [[Victory Lap]]s will erase all of the remembered consumable types, however.
+* A card, rune, or pill must be '''consumed''' for the effect of Echo Chamber to trigger. That means using {{i|Blank Card}}, {{i|Placebo}}, or {{i|Clear Rune}} will not trigger Echo Chamber.
+** Consuming {{p|XIV - Temperance?}} will trigger its effect normally. The pills consumed as a result of using the card are not added to Echo Chamber, and any pills in the current run's pool can be picked as normal.
+* While {{P|Cracked Key}} will activate the effect of Echo Chamber and trigger the last three consumables used, using a different consumable near a wall that a red room could be created on will not create a red room, even if a Cracked Key has been used before.
+* Getting automatically revived by {{P|Soul of Lazarus}} does not add it to the queue, and directly using the soul stone will not allow for automatic revival in the future.
+
+== Synergies ==
+* {{p|? Card}} + {{P|Ancient Recall}} / [[Pills#Pill Effects|Vurp Pill]] + {{I|R Key}}: The ? Card effect can be used in conjunction with R Key without consuming it, allowing the player to in theory (with the help of {{I|Clicker}}) obtain completion marks for up to four additional routes and characters in a single run.
+* {{p|Ancient Recall}}: Can be used to spawn many extra cards.
+* {{I|False PHD}}: Taking benign pills (e.g. puberty) will give black hearts or damage ups for each of the pills that are activated. Caution should be exercised when using this synergy, since the last three pills taken will be converted to their bad counterparts, and one stat down can ruin the synergy.
+* {{i|PHD}}, {{i|Virgo}}, or {{I|Lucky Foot}}: The last three activated pills are converted to their good counterparts, including pills taken prior to picking up {{i|PHD}}, {{i|Virgo}}, or {{I|Lucky Foot}}.
+* {{I|R Key}}: Using the R key does not reset the consumable pool, as such they stay the same in Echo Chamber too.
+* {{p|Jera}}: Allows for repeat duplication of consumables in the room, up to 16x if used four times.
+* {{p|Suicide King}} + {{i|Dead Cat}}: Can be used to generate many pickups and items at the cost of three extra lives.
+* {{i|Tarot Cloth}}: Every activated tarot card will be given a bonus effect.
+* [[Pills#Pill Effects|Vurp Pill]]: Can be used to spawn infinite pills.
+
+== Interactions ==
+* {{i|Genesis}}: The consumable pool is reset when Genesis is used, so if it's re-obtained after using Genesis, the previously stored consumable types won't be activated.
+* {{i|Placebo}}/{{i|Blank Card}}/{{i|Clear Rune}}: Doesn't cause Echo Chamber to activate, or put the pill/card/rune into the queue.
+
+== In-game Footage ==
+{{#ev:youtube|kdc8apxR4LE}}
+
+== Trivia ==
+* This is possibly a reference to the card [https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=83791 Eye of the Storm] from <u>Magic: the Gathering</u>, as the item resembles the art of the card and both result in previous effects being reused when a new one is activated.
+* This is also possibly a reference to the card [[slaythespire:Echo Form|Echo Form]] from 'Slay the Spire', which will duplicate the card effect of the first card played per turn.
+* Before the 1.7.7 patch, Echo Chamber was able to copy the effects of all previously used cards and pills, enabling many powerful synergies such as getting infinite cards and pills with {{P|Ancient Recall}}.
+* Echo chamber is a term for the act of surrounding yourself with people and media that only support and agree with one's views and excluding any opposing views or criticism.
+* Echo Chamber appears to be a [[Cards and Runes|Tarot Card]] and a [[Cards and Runes|Playing Card]] being sucked into some kind of vortex.
+
+{{nav|tainted apollyon unlock|the beast unlock|card modifier|fr=Résonance}}

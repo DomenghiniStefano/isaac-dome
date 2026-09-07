@@ -1,0 +1,57 @@
+{{infobox boss
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 63
+ | environment = <u>Boss</u><br>{{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{room|boss rush}}<br><u>Degraded Boss</u><br>{{floor|Cathedral}}{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 240
+ | pool        = {{i|Ball of Bandages}}<br>{{i|Cube of Meat}}<br>{{t|Locust of Famine|r+}} (1% chance)
+ | unlocked by = The Harbingers
+}}
+'''Famine''' is a [[Harbinger]] that can appear in all environments of [[Chapter 1]] ({{s|Basement}}, {{s|Cellar}}, {{s|Burning Basement}}).
+
+== Behavior ==
+=== Phase 1 ===
+* If Isaac is to the left or right of Famine, he charges horizontally across the screen. He continues this charge off-screen and reappears from the opposite end of the screen.
+* Spawns a {{e|Pooter}} with a limit of 2.
+** If this limit is reached Famine will move to try to position himself horizontally of Isaac so he can charge at him.
+** Any Pooters caught in Famine's charge will be killed.
+
+=== Phase 2 ===
+When Famine takes a sufficient amount of damage, his body and horse explode and vanish while only his head remains.
+* Famine's head behaves similarly to a {{e|Maw}}, slowly moving towards Isaac, and occasionally stops to fire three projectiles in a spread at Isaac.
+Famine deals a whole heart of contact damage in both phases and during his charge.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|7}}: Charges more often and veers towards Isaac (similar to the {{e|Dark One}}). He can do this attack regardless of whether Isaac is to his sides or not. He will shoot six bullets in all directions instead of summoning Pooters. In ''Phase 2'', he will spit out a cluster of bullets instead of a triple shot, similar to {{e|Monstro}}'s attack, with a lower shot speed than his non-champion version. Will always drop a {{E|Soul Heart}} upon death.
+
+== Gallery ==
+<gallery>
+File:Boss Famine spitting ingame.png|Famine in his second phase.
+File:Boss Famine blue ingame.png|Blue Champion Famine.
+File:Boss Famine blue2 ingame.png|Blue Champion Famine in his second phase.
+File:Boss Delirium Famine ingame.png|{{dlc+|a+}} Famine as one of {{e|Delirium}}'s forms.{{dlc-}}
+File:Last will famine.png|Famine as seen in Isaac's last will.
+File:Famine.png|Mini version of famine summoned with the 7 seals.
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Book of Revelations, 7 Seals }}
+
+== Trivia ==
+* Famine appeared in the original ''The Binding of Isaac.''
+* Famine is one of the [[wikipedia:Four Horsemen of the Apocalypse|Four Horsemen of the Apocalypse]] mentioned in the Bible. However, in the Bible, Famine is depicted as riding a black horse rather than the tan horse seen in-game.
+* A famine is the scarcity of food over a large area, which can explain Famine's emaciated appearance.
+* Famine is shown with pupils in his Rebirth artwork, which is absent in his original artwork. This is slightly averted with his ultra form.
+* The Pooters Famine spawns may be a reference to the many insect-caused famines.
+* {{dlc|r}} Blue Champion Famine's cleft lip is a reference to {{E|Monstro}}'s iconic cleft lip, as he uses a similar projectile cluster attack to Monstro in his second phase.
+
+== Bugs ==
+{{bug|If phase 2 of Famine is inflicted with [[fear]] or [[confusion]], instead of running away from Isaac, it will chase him without attacking.}}
+{{bug|If Famine is [[confusion|stunned]] at the same time as he tries to shoot Isaac after the effect wears off, his shots will be fired without his corresponding animation.}}
+
+{{nav|boss|mom unlock|zh=饥荒骑士}}
+[[Category:Harbingers]]
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Cellar bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Rebirth]]

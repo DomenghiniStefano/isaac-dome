@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 717
+ | quote       = Under a rock
+ | description = [[Rocks]] and other [[Obstacles]] spawn [[Familiar#Blue Spiders|blue spiders]] over time while in a room with enemies, and spawn two blue spiders when destroyed.
+ | quality     = 2
+ | tags        = summonable spider offensive
+ | unlocked by = Keeper's Kin
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* If Isaac is in a room with enemies, [[rocks]] and rock-like obstacles will occasionally spawn [[Familiar#Blue Spiders|blue spiders]].
+* Causes all rocks to spawn 0-2 blue spiders when destroyed.
+* {{transformation contribution|Spider Baby}}
+
+== Synergies ==
+* {{i|Compost}} : Will double the current amount of [[blue spider]]s.
+* {{i|D12}}: Due to the high tendency of replacing rocks with {{e|TNT}}, it allows for easy destruction of nearby rocks, resulting in lots of blue spiders.
+* {{i|Leo}} / {{i|Mega Mush}} / {{i|Notched Axe}} / {{tf|Stompy}} / {{i|Sulfuric Acid}} / {{i|Terra}} / {{i|Thunder Thighs}}: As Isaac can break all reachable rocks, he can amass a lot of [[blue spider]]s.
+* {{i|Mega Mush}} : When Isaac destroys [[block]]s it will produce [[blue spider]]s.
+
+== In-game footage ==
+{{#ev:youtube|VhelA_aTX_g}}
+
+{{nav|spider|tainted keeper unlock|delirium unlock|fr=Amies du Gardien}}

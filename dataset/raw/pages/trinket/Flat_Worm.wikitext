@@ -1,0 +1,22 @@
+{{infobox trinket
+ | id          = 12
+ | quote       = Blub blub!
+ | description = Isaac's tears take on an oblong appearance. They also [[Knockback|push enemies back]].
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Makes Isaac's tears 50% wider, giving them an oblong appearance.
+* Increases tears' natural [[knockback]] slightly.
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}}, or {{e|Scolex}}.{{dlc-}}
+
+== Synergies ==
+* {{A|Golden Trinket}}/{{I|Mom's Box|r}}: Each copy further increases width of Isaac's tears.
+
+== In-game Footage ==
+{{#ev:youtube|giw_b7HBXDc}}
+
+{{nav|worm|fr=Ver Plat}}

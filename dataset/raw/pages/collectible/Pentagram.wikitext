@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 51
+ | quote       = DMG up
+ | description = +1 [[damage]], increases {{R|Devil Room}} / {{R|Angel Room}} chance by 10%.
+ | quality     = 3
+ | tags        = devil summonable offensive lazarussharedglobal
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +1 [[damage]].
+* Increases chance for a {{R|Devil Room}} / {{R|Angel Room}} door to open by 10%.
+** This chance is increased to 15% with two or more Pentagrams.
+* {{transformation contribution|Leviathan}}
+
+== Notes ==
+* If all of {{i|Sacrificial Altar}}'s drops have been seen, it will only spawn Pentagrams.
+
+== In-game Footage ==
+{{#ev:youtube|N_b9v_2SiSQ||inline}} {{#ev:youtube|_Bvwu7z5pFo||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Darkness Falls}}.
+
+{{nav|leviathan}}

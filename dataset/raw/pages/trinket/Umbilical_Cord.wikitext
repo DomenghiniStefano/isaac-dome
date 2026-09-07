@@ -1,0 +1,31 @@
+{{infobox trinket
+ | name        = Umbilical Cord
+ | id          = 33
+ | quote       = Fetal Protection
+ | description = When brought down to only a {{E|Half Red Heart}}, spawns a {{i|Little Steven}} [[familiar]] for the current room. {{dlc|r}} Adds a high chance to spawn a {{i|Gemini}} familiar for the current room after taking damage.
+}}
+
+{{cit|t}}
+
+== Effects ==
+* {{dlc|nr}} When Isaac's [[health]] is brought down to half a red heart and no soul hearts, a {{i|Little Steven}} familiar spawns for the current room.
+* {{dlc|r}} When Isaac enters a room and has half a red heart or less, a Little Steven familiar spawns and will remain until red health is restored to above a Half Red Heart, disappearing after entering another room.
+** Characters which cannot acquire red heart containers in any way will always have a Little Steven.
+* {{dlc|r}} When Isaac takes damage, there is a chance to spawn a {{i|Gemini}} familiar for the current room. This effect is stackable.
+** The chance to spawn the familiar depends on the [[luck]] stat, and the formula used to determine the chance is: <math>30% + \mathit{Luck} \times 2%</math>.
+*** At 0 luck the chance is 30%, maxing out at 100% at 35 luck.
+
+== Notes ==
+* This trinket has a chance to drop from destroying [[Rocks#Polyps|polyps]] (outside of {{s|Corpse}}).
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either spawns the {{i|Little Steven}} familiar if Isaac enters a room with a red heart or less. Having both spawns it if Isaac has 1 and a half red heart or less.
+
+== In-game Footage ==
+{{#ev:youtube|ej8k2iHZV_E}}
+
+== Trivia ==
+* An [[wikipedia:Umbilical cord|umbilical cord]] is a tube that is connected to a fetus via the placenta and is used to give nutrients, blood, and oxygen to the growing child.
+
+[[Category:Damage-triggered items]]
+{{nav|fr=Cordon Ombilical}}

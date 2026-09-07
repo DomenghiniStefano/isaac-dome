@@ -1,0 +1,60 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | recharge    = 2
+ | id          = 478
+ | quote       = Stop!
+ | description = Freezes all enemies until a fire button is pressed.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | shop price  = {{dlcalt|15|r+=10}}
+}}
+
+{{cit|a|a+}}
+
+== Effects ==
+* Stops all enemies including bosses until a fire button is pressed.
+** This does not affect troll bombs.
+** Touching frozen enemies will still damage Isaac.
+** Co-op babies can fire without ending the effect.
+** Stops {{E|Red Fire Place}}s/{{E|Purple Fire Place}}s from shooting projectiles.
+** Bosses will resume their actions after 30 seconds have passed, while non-boss enemies (except {{E|Lil' Haunt}}) are still paused.
+*** {{Dlc|r}} All enemies resume actions after 30 seconds
+
+== Notes ==
+* New enemies generated during Pause being active will not be frozen and act normally. This applies for spawn-upon-death effects such as {{E|Attack Fly|text=Attack Flies}} created by a {{E|Moter}}, or a Boss that stopped becoming frozen and began summoning enemies.
+* Damage against paused multi-segmented bosses works unpredictably, most notably allowing you to damage {{E|Scolex}} on normally invulnerable parts.
+** The health bars of multi-segmented bosses may not be updated properly, making it seem as if they died without running out of health.
+* Reducing a boss to zero health whilst they are paused will initiate their death animation but they will not die until a fire button is pressed or the 30 second timer has lapsed.
+* {{C|The Forgotten}}'s Soul will be able to extend far past the normal limits of the chain when activated while {{C|The Soul}} is out.
+* {{dlc+|r}} Pausing in the room before entering the minecart in the {{s|Mines}} causes the minecart to freeze, trapping the player inside of it until they exit to the main menu.{{dlc-}}
+* Using {{I|Dark Arts}} will not stop the effect.
+* Pausing in {{r|Boss Rush}} just as bosses spawn will cause the bosses to not deal contact damage to Isaac for the full duration. This allows for contact damage items, such as {{I|Mom's Heels}}, to be extremely viable in completing Boss Rush.
+* If you freeze {{e|Haunted Chest}} at a time when {{e|Polty}} has not yet picked it up, the chest will be impossible to open in any way until {{e|Polty}} unfreezes or dies. If you try to push {{e|Haunted Chest}} away from {{e|Polty}}, the ghost will appear immediately at the current chest after unfreezing.
+
+== Synergies ==
+* {{I|120 Volt}} / {{I|Monstrance}} / {{I|Mom's Knife}}: Continues to damage enemies even while paused, allowing for insane amounts of damage.
+* {{Book of Virtues synergy|description=Spawns green wisps on the middle ring. Wisps pause all enemies and enemy shots for 3 seconds when destroyed. This effect is not cancelled by shooting tears.}}
+* Items that can be used without firing, such a Mom's knife and orbitals can do massive amounts of damage.
+** Any item that does damage without firing + {{i|4.5 Volt}}: Pause can be recharged while the effect is active, allowing for potentially infinite uptime.
+* {{I|Daddy Longlegs}}: Hitting pause stops all enemies from moving but Daddy Longlegs will continue his normal attack pattern, potentially clearing many rooms without any risk of damage unless spawn-on-death enemies are killed and Isaac has trouble avoiding them, forcing him to fire. This strategy is also time demanding so if going for Boss Rush etc. this synergy is detrimental.
+* {{C|Tainted Jacob}}: Dark Esau will also be affected by Pause. With proper timing, this allows him to melt through endgame bosses with large amounts of armor-piercing damage by having Dark Esau sit on top of them.
+* {{I|The Ludovico Technique}}: The giant tear keeps dealing damage in stopped time, making it easy for boss kills.
+
+== Interactions ==
+* {{I|Car Battery}}: No effect.
+* {{I|Marked}}: While the crosshair is out, immediately ends Pause's effect upon use. The player can cancel the use of Marked by pressing the "drop" key or button to then use Pause.
+* Using the item in [[Greed Mode]] will freeze all enemies but will not pause the timer. New waves of enemies will continue to spawn even while the effect is active.
+
+== In-game Footage ==
+{{#ev:youtube|wM8lag6KUlI}}
+
+== Trivia ==
+* This item is a reference to how a television channel can be paused with a TV remote.
+
+== Bugs ==
+{{Bug|If you activate and resume "Pause" while an enemy emits projectiles, the bullets won't proceed with regular but instead extremely decreased speed. However, they will still pass intended range, which bypasses the effect of shot speed being reduced as it normally would with any items that slow projectiles down.}}
+{{Bug|When used with {{i|Dad's Ring}}/{{i|Monstrance}}/{{i|Saturnus}} it creates a second ring/aura/circle of light that stays in place where Isaac used "Pause" which lasts for the active item's duration. The second ring/aura/circle is a visual glitch and does not interact with enemies. Moreover, both rings/auras/circles are flashing for the duration. When used while {{i|Telekinesis}} is active Pause creates a second ring that stays in place where Isaac used "Pause" which lasts for Telekinesis's remaining duration. Moreover both rings are flashing and the second ring can not block enemy tears for the duration. Any tears that were still caught in Telekinesis’s radius before using Pause become incredibly slowed and indefinitely follow Isaac until he shoots. The items {{i|Salvation}}, {{i|Spear Of Destiny}}, and {{i|Trinity Shield}} all have a similar bug however these items are completely unable to interact with enemies (or block enemy tears for the shield) while Pause is activated.}}
+{{Bug|dlc=r|When used with {{i|Star of Bethlehem}} the light aura will be stuck in the last position before Pause was used even if the familiar continues without it. This is only a visual glitch, Isaac still has to be near the star to receive its benefits. If Pause’s effect ends the light instantly disappears and respawns back around the star again. The light will still fade when the star leaves the room.}}
+{{Bug|dlc=r|When used with {{i|Dark Arts}}, the player can unintentionally Soft-lock themselves if the Pause item is used during the effects of Dark Arts, this can be fixed by quitting then entering the game again. This is because Dark Arts does not finish its animation due to the pause item locking it in place. In addition to this, the player cannot escape this soft-lock via the fire button due to the player not being able to fire during the effects of Dark Arts. Moreover if this bug happens while {{c|Tainted Judas}} has {{I|Birthright}}, the dark aura around Tainted Judas will experience a visual bug from Pause that is similar to {{i|Monstrance}}.}}
+
+{{nav}}

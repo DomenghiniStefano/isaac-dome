@@ -1,0 +1,71 @@
+{{infobox boss
+ | name = The Haunt
+ | id          = 260
+ | environment = <u>Boss</u><br>{{Dlc|nr}}<br>{{floor|Cellar}}{{floor|Burning Basement}}<br>{{room|boss challenge}}<br>{{Dlc|r}}<br>{{floor|Cellar}}<br>{{room|boss challenge}}<br><u>Double Trouble</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br><br><u>Degraded Boss</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp = 200
+ | pool    = {{ip|Boss}}<br> {{i|Lil Haunt|r+}} (1% chance)
+}}
+{{disambig msg|the boss|the item|Lil Haunt|the enemy|Lil' Haunt}}
+
+'''The Haunt''' is a [[boss]] that can appear:
+* {{Dlc|nr}} In the {{s|Cellar}} and the {{s|Burning Basement}}.
+* {{Dlc|r}} Only in the {{s|Cellar}}.
+
+== Behavior ==
+'''Phase 1:'''
+The battle begins with three {{e|Lil' Haunt}}s circling The Haunt, who floats around the room and is invulnerable. The Haunt and its Lil' Haunts can still do contact damage to Isaac while incorporeal.
+* One Lil' Haunt becomes corporeal and chases Isaac. Once the first one is dead, the other two take up the chase.
+* Once all three Lil' Haunts are dead, Phase 2 begins.
+
+'''Phase 2:'''
+The Haunt, now vulnerable, quickly flies to the upper wall of the room and begins to move left and right along the wall while periodically performing the following attacks:
+* Fires a straight {{i|Brimstone}} laser downwards.
+* Fires five blood shots in a spread downwards.
+* If Isaac is close to the upper wall, The Haunt will quickly dash toward his position.
+During The Haunt's transition to this phase, it can deal contact damage during the dash to the upper wall.
+
+The Haunt attacks based on its location and distance. If it cannot make it to a certain position, it gets stuck attempting to reach it and will not attack until it can resume moving.
+
+During both phases, The Haunt deals a whole heart of contact damage.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18|dlc=a}}: Only two Lil' Haunts circle The Haunt in the first phase. In the second phase, The Haunt spawns 1-2 {{e|Spider}}s instead of firing a Brimstone laser.
+: {{bc|20|dlc=a}}: Only one Lil' Haunt circles The Haunt in the first phase. In the second phase, The Haunt has 50% less HP (100). The Haunt's laser is replaced with two diagonal Brimstone lasers that reflect once off of walls. The Haunt's blood-shot attack is changed to 8 shots and is aimed towards Isaac.
+
+== Gallery ==
+<gallery>
+File:Haunt Phase1.png|The Haunt in its first phase.
+File:Haunt Phase2.png|The Haunt in its second phase.
+File:Boss The Haunt phase1 black ingame.png|The Black Champion Haunt in its first phase.
+File:Boss The Haunt phase2 black ingame.png|The Black Champion Haunt in its second phase.
+File:Boss The Haunt phase1 pink ingame.png|The Pink Champion Haunt in its first phase.
+File:Boss The Haunt phase2 pink ingame.png|The Pink Champion Haunt in its second phase.
+File:Boss Delirium The Haunt ingame.png|The Haunt as one of {{e|Delirium}}'s forms.
+File:Rebirth Boss Concepts.jpg|Concept art for The Haunt on the bottom left corner, along with other Rebirth boss concept arts.
+File:The Haunt Concept.png|More concept art for The Haunt.
+</gallery>
+
+== Notes ==
+* Although The Haunt can fly over rocks and most other obstacles, its movement in the second phase can be completely stopped by dropping a bomb in its path.
+** {{dlc|anr}} In [[Afterbirth]] and [[Afterbirth †]], the Haunt is no longer stopped by bombs and can move over them.
+* Lil' Haunts are immune to the effects of {{I|E. Coli}}, {{I|Flush!}}, {{I|D10|nr}} and {{dlc|r}} [[Cards and Runes#Playing Cards|Ace cards]].
+* Inflicting [[fear]] or [[confusion]] on The Haunt during Phase 2 can be dangerous, as it will sometimes start sliding back and forth rapidly.
+* The Haunt can be damaged in phase 1 using {{I|Dark Arts}} and {{I|The Boomerang}}.
+* The Haunt can be instantly killed with {{I|Vade Retro}} if it is at 50% health or below.
+
+== Trivia ==
+* It is the boss version of the Lil' Haunts.
+* {{e|The Forsaken}} is the posthumous version of it.
+* The Haunt's design may be a reference to [[gish:Paunchy Chops|Paunchy Chops]], a boss from the game ''Gish'', also developed by Edmund McMillen. They function similarly in that they are both ghosts that can phase in and out of corporeality, and they bear similar facial expressions.
+* {{Dlc|r}} The Haunt has a resurrected variation known as {{e|The Heretic|n}}.
+* Black Champion Haunt in its second phase resembles {{c|Tainted Lost}}.
+
+== Bugs ==
+{{bug|When you kill the Lil' Haunts spawned by The Black Champion Haunt, there is a chance that the music will end as if you defeated the boss.}}
+{{bug|If phase 2 starts at the same time as Isaac inflicts a [[Status Effects|status effect]] on The Haunt, after the effect is gone, The Haunt will be permanently tinted with that status effect's color until it dies.}}
+
+{{nav|boss|fr=Le Revenu}}
+[[Category:Chapter 1 bosses]]
+[[Category:Cellar bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Rebirth]]

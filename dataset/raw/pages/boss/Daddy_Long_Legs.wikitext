@@ -1,0 +1,54 @@
+{{infobox boss
+ | id          = 101
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{dlc|r}}<br>{{floor|Utero}}<br>{{floor|The Void}}<br>{{room|boss challenge}}<br><u>Degraded Boss</u><br>{{floor|Cathedral}}<br>{{floor|Chest}}{{floor|Dark Room}}<br>{{room|challenge}}
+ | base hp     = {{dlcalt|300|r=500}}
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Daddy Longlegs}} (1% chance)
+}} {{disambig msg|the boss|the item|Daddy Longlegs}}
+
+'''Daddy Long Legs''' is a [[boss]] that can appear:
+* {{dlc|nr}} In all environments of [[Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}).
+* {{dlc|r}} Only in the {{s|Utero}}.
+
+== Behavior ==
+Daddy Long Legs' head hangs down stationary and can perform the following attacks:
+* Raises his head, making it invulnerable, and stomps the ground in random locations around the room 4 times in quick succession. {{Dlc|r}} One of these legs will always stomp on top of Isaac's position.
+** The appendages that he stomps with can be attacked to damage him.
+* Lifts his head off-screen and stomps the ground 4 times at regular intervals on top of Isaac's position. At the end of the 4 stomps, he slams his head down quickly, shooting out 8 projectiles in all directions. He can only slam his head down along a horizontal plane across the center of the room and slams it down close to Isaac's position.
+** Occasionally performs a fifth stomp before slamming his head down.
+** The appendages that he stomps with can be attacked to damage him.
+* Spits out 2-3 {{e|Spider}}s.
+** These spiders can be killed by Daddy Long Legs' stomps and head slam.
+Daddy Long Legs' foot stomp and head slam deal a whole heart of contact damage.
+
+== Gallery ==
+<gallery>
+File:Longlegs ingame foot.png|One of his appendages.
+File:Boss Delirium Daddy Long Legs ingame.png|{{dlc+|a+}} Daddy Long Legs as one of {{e|Delirium}}'s forms.{{dlc-}}
+File:Daddy Long Legs Concept.jpg|Concept art for Daddy Long Legs along with the {{e|Mask of Infamy}} and other enemies.
+</gallery>
+
+== Notes ==
+* The passive item {{i|Daddy Longlegs}} is a familiar form of this boss, stomping enemies to assist Isaac. The familiar will even attack the Daddy Long Legs.
+* On rooms where Daddy Long Legs is treated as a degraded Boss, they can be used to blow open doors.
+* {{dlc|nr}} Like {{e|Mom}}'s stomp, his stomp deals explosive damage.
+
+== Trivia ==
+* Daddy Long Legs was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+** In the original game, Daddy Long Legs could be encountered in {{s|Necropolis}}.
+* Daddy Long Legs's appendages consist of 2 hands and 2 legs; he will use each of them once in his stomping attacks.
+** Only 3 appendages visually appear to be connected to his head despite him having 4.
+* Daddy Long Legs is a colloquialism for various types of arachnids including [[wikipedia:Opiliones|Opiliones]] and [[wikipedia:Pholcidae|Pholcidae]].
+* {{e|Triachnid}} is his alternative version.
+* His limbs are also used in the {{i|Daddy Longlegs}} item.
+
+== Bugs ==
+{{bug|dlc=ana+|During the mass-stomp attack, the player will take damage before the animation even begins, making it impossible to dodge.}}
+{{bug|During the mass-stomp attack, if the player deals damage to one of the legs that would normally kill a full health Daddy Long Legs, it will cause the leg to die as a separate Daddy Long Legs. This will not damage the boss at all.}}
+{{bug|If you [[petrification|freeze]] one of Daddy Long Legs's legs, then kill Daddy Long Legs while a Spider is still alive, then kill the Spider, the boss fight music won't stop. This is fixed if Isaac leaves the room and then re-enters again.}}
+
+{{nav|boss|fr=Faucheux}}
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

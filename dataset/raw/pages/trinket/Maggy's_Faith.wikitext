@@ -1,0 +1,39 @@
+{{infobox trinket
+ | name        = Maggy's Faith
+ | id          = 55
+ | quote       = Faith's reward
+ | description = Gives an {{E|Eternal Heart}} at the start of every floor.
+ | unlocked by = Maggy's Faith
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* Gives an {{E|Eternal Heart}} at the start of every floor.
+
+== Notes ==
+* The eternal heart is added directly to Isaac's heart containers, as opposed to appearing as a pickup.
+* The effect will also be triggered when the floor is reset (for example, with {{i|Forget Me Now}}).
+* {{C|Eden}} will not be given the eternal heart on the first floor if they start with this trinket.
+* {{dlc+|a+}} When held as {{C|The Forgotten}}, the eternal heart will be given to whichever character is being controlled when entering the next floor.{{dlc-}}
+* {{dlc|r}} When going though the [[Ascent]], eternal hearts will be given for each floor traveled up.
+
+== Synergies ==
+* {{A|Golden Trinket}}/{{t|Maggy's Faith|r}}/{{I|Mom's Box}}: Each effect/trinket copy stacks granting one additional eternal heart at the start of every floor with every pair of eternal hearts granted immediately giving Isaac a heart container.
+
+== In-game Footage ==
+{{#ev:youtube|qrKI7NKu4Eo||inline}} {{#ev:youtube|dX7DawSdyTk||inline}}
+
+== Trivia ==
+* Maggy's Faith is most likely a reference to Mary Magdalene's faith in Jesus. Mary was said to be one Jesus trusted most and she stayed with Him past the abandonment of His disciples, as well as being the first person He showed Himself to after His resurrection.<ref>http://www.smithsonianmag.com/history/who-was-mary-magdalene-119565482/?no-ist</ref>
+** It may also be a reference to Mom, with her name being revealed to be Maggy during the Ascent sequence.
+* "Faith's reward" may constitute a contraction of the adage "Faith is its own reward", although use of the word 'faith' in the game is conflicted, as it also used in the quote for the {{T|Rosary Bead}}, in reference to {{R|Angel Room}}s.
+* {{dlc|r}} This trinket is used in [[Baptism by Fire]] (challenge #38).
+
+== Bugs ==
+{{Bug|dlc=a|When held as {{C|Keeper}}, blue flies will not be spawned instead of the eternal heart, making the trinket useless.}}
+
+== References ==
+{{reflist}}
+
+{{nav|magdalene unlock|the lamb unlock|fr=Foi de Marie}}

@@ -1,0 +1,28 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 148
+ | quote       = {{dlcalt|They grow inside|r=Fly revenge}}
+ | description = {{dlc|nr}} 1-3 [[Blue Fly|Blue Flies]] randomly spawn every time Isaac gets hit.<br>{{dlc|r}} 2-6 [[Blue Fly|Blue Flies]] randomly spawn every time Isaac gets hit.
+ | quality     = 0
+ | tags        = nolostbr summonable {{dlc|r+|fly}}
+}}
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr}} 1-3 [[Blue Fly|Blue Flies]] spawn whenever Isaac takes damage.
+* {{dlc|r}} 2-6 [[Blue Fly|Blue Flies]] spawn whenever Isaac takes damage.
+* {{dlc|r+}} {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Husk}}.{{dlc-}}
+
+== Interactions ==
+* {{t|Fish Tail}}: Doubles number of flies spawned.
+* {{i|Hive Mind}}: Flies are bigger and deal double damage.
+
+== In-game Footage ==
+{{#ev:youtube|SEXvcY-OgzU||inline}} {{#ev:youtube|G1e728Gc7fo||inline}}
+
+{{nav|fly}}
+[[category:damage-triggered items]]

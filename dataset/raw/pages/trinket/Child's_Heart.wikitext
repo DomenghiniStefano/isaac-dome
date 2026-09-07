@@ -1,0 +1,63 @@
+{{infobox trinket
+ | id          = 34
+ | quote       = It calls out to its brothers
+ | pool        = blood donation machine
+ | description = Increases the chance of a {{e|Red Heart|text=Heart}} dropping after clearing a room, and the chance of finding a heart when opening a {{E|Chest}}.
+ | tags        = {{dlc|r+|nogreed}}
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Gives a 10% chance of changing the room drop reward to a {{e|Red Heart|text=Heart}}.
+* Gives a 33% chance of adding a heart to the rewards from opening certain [[Chest]]s, or destroying [[Tinted Rock]]s, certain [[Machine]]s, and certain [[Beggar]]s.
+** Other than Tinted Rocks, these can only drop the heart if they drop [[coin]]s, [[heart]]s, {{e|Bomb}}s, or {{e|Key}}s.
+** This includes: {{column list | width = 15em | content =
+*** {{E|Chest}}s
+*** {{e|Locked Chest}}s
+*** {{e|Bomb Chest}}s
+*** {{e|Eternal Chest}}s
+*** {{e|Spiked Chest}}s
+*** {{e|Mimic Chest}}s
+*** {{e|Mega Chest}}s
+*** {{e|Haunted Chest}}s
+*** [[Tinted Rock]]s
+*** {{M|Slot Machine}}s
+*** {{M|Fortune Telling Machine}}s
+*** {{M|Crane Game}}s
+*** {{M|Confessional}}s
+*** {{m|Beggar}}s
+*** {{dlc|nr}} {{m|Devil Beggar}}s
+*** {{m|Key Master}}s
+*** {{m|Bomb Bum}}s
+*** {{m|Battery Bum}}s
+}}
+** This excludes: {{column list | width = 15em | content =
+*** {{e|Red Chest}}s
+*** {{e|Old Chest}}s
+*** {{e|Wooden Chest}}s
+*** {{e|Mom's Chest}}
+*** {{m|Blood Donation Machine}}s
+*** {{m|Shop Restock Machine}}s
+*** {{m|Mom's Dressing Table}}
+*** The {{m|Donation Machine}}
+*** {{dlc|r}} {{m|Devil Beggar}}s
+*** {{m|Rotten Beggar}}s
+*** {{m|Hell Game}}s
+}}
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either increases the chance of changing the room drop reward to a {{e|Red Heart||Heart}} to 20% and increases the chance of adding a heart to rewards to 66%. Having both increases these chances to respectively 30% and 100%.
+
+== Notes ==
+* Upon using a {{M|Blood Donation Machine}}, there is a chance for the Child's Heart to spawn.
+* {{dlc|a+}} {{C|Samson}} will start with Child's Heart after completing [[Ultra Hard]].
+* Since the increase of heart drops come at the expense of other [[pickup]]s, if Isaac is short on pickups such as keys and bombs, dropping the trinket by holding the 'Drop' key (default: control) may be beneficial.
+
+== In-game Footage ==
+{{#ev:youtube|aNHXgoSFWmI}}
+
+== Trivia ==
+* This trinket is used in [[Cursed!]] (challenge #10) and {{dlc|r}} [[Bloody Mary]] (challenge #37).
+
+{{nav|fr=Cœur d'Enfant}}

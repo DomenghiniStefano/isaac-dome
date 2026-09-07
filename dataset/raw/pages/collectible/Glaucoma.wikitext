@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 460
+ | quote       = Blind tears!
+ | description = Adds a chance to shoot tears that [[confusion|confuse]] enemies for an extremely long time.
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Adds a 5% chance to shoot [[Status Effects#Effects|concussive tears]], causing enemies to walk around randomly.
+** The confusion caused by Glaucoma tears is effectively permanent for normal enemies, and a very long duration compared to most status effects for bosses.
+* Makes the screen darker.
+
+== Notes ==
+* Not affected by Luck.
+
+== In-game Footage ==
+{{#ev:youtube|X8fxquLxcAs}}
+
+== Trivia ==
+* [[wikipedia:Glaucoma|Glaucoma]] is a group of eye diseases that result in damage to the optic nerve and vision loss.
+* This item bears a strong resemblance to {{I|Cain's Other Eye}}.
+
+{{nav|fr=Glaucome}}

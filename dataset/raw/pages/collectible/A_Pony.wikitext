@@ -1,0 +1,53 @@
+{{infobox activated collectible
+ | id          = 130
+ | quote       = Flight + dash attack
+ | description = Passively grants [[flight]] and increases [[speed]] to 1.5. Upon use, Isaac charges in the direction the pony is facing, giving [[invulnerability]] during the charge and dealing damage to enemies hit.
+ | quality     = 2
+ | tags        = offensive
+ | recharge    = {{dlcalt|4|r=2}}
+ | pool        = The Headless Horseman
+ | unlocked by = The Harbingers
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* Passively gives [[flight]] whether it has charges or not.
+* If Isaac's [[speed]] is less than 1.5, passively increases his speed to 1.5.
+* Upon use, Isaac charges in the direction the pony is facing, giving invincibility during the charge and dealing contact damage to enemies.
+** {{dlc|nr}} The dash deals 40 flat contact damage to enemies.
+** Invincibility granted by dashing will not prevent Isaac from being damaged by {{M|Blood Donation Machine}}s, {{M|Devil Beggar}}s, and similar self-damage active items (when holding {{I|Schoolbag}}).
+** {{dlc|r}} The dash deals 4 times Isaac's damage, plus a flat 28 damage.
+** {{dlc|r}} Isaac can dash through doors, which means that damage from {{r|Curse Room}} doors can be avoided.
+*** The dash persists through rooms, and lasts up to the length of 2 normal rooms unless Isaac collides with a closed door/wall.
+**** This allows Isaac to enter and exit curse rooms for free, provided the dash is activated to give invincibility before charging through the exit.
+**** Caution should be taken when dashing into rooms that have not been explored, as some room layouts have {{M|Blood Donation Machine}}s or {{M|Devil Beggar}}s, which Isaac may dash into and get damaged.
+***** This is more important to {{C|The Lost}} and {{C|Tainted Lost}}, as {{i|Holy Mantle}} or {{P|Holy Card}} can not prevent damage from them.{{dlc-}}
+
+== Notes ==
+* A Pony is only obtainable as a boss drop from {{e|Headless Horseman}}, as a starting item for {{c|Eden}}, by using {{I|Spindown Dice}} on {{I|Bomb Bag}}, or by using {{i|Death Certificate}}.
+* The [[flight]] and potential [[speed]] added by A Pony will be removed if a new activated [[item]] is collected.
+* {{dlc+|a+}} If {{i|Void}} is used, Isaac will not be granted permanent flight.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns wisps in the middle ring, looking like "A Pony". The wisps charge in the direction Isaac shoots instead of firing tears. While charging, the wisps deal contact damage equal to 40% of Isaac's damage per tick (120% of Isaac's damage per second) and are immune to damage. Wisps must wait 2.5 seconds after hitting a wall before they can charge again. The wisps deal their normal contact damage while not charging.}}
+* {{I|Mars}}: Using A Pony after dashing lowers the dash cooldown to approximately 1 second.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{i|Taurus}} / {{i|Thunder Thighs}}: The speed decreases from the items can lower Isaac's speed past 1.50 (making the new lower speed limits 1.20 and 1.10, respectively). Having both items can lower the minimum speed to 0.80.
+
+== In-game Footage ==
+{{#ev:youtube|3OgRIVCXYVM||inline}} {{#ev:youtube|4LXGT3rbynA||inline}}
+
+== Trivia ==
+* The item appears to be a stick horse.
+* In the original ''The Binding of Isaac'', A Pony's contact damage was weaker and the charge was slower.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The Pony.png|{{plat|3ds}} The icon of A Pony as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|fr=Poney Noir}}
+[[Category:Flight-granting items]]

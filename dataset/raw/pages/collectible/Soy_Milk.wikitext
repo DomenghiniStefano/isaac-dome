@@ -1,0 +1,86 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 330
+ | quote       = DMG down + tears way up
+ | description = [[Tears]] are smaller and do much less [[damage]], but fire in very rapid succession.
+ | quality     = 2
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr}} Reduces [[tear delay]] by the formula: (delay / 4) - 2
+* {{dlc|r}} Multiplies [[fire rate]] / divides [[tear delay]] by 5.5x
+* 0.2x [[damage]] multiplier.
+* {{Dlc|nr}} 0.5x tear size multiplier.
+* {{Dlc|r}} -0.3 tear size.
+* {{dlc|r}} Drastically reduces [[knockback]] from Isaac's tears.
+
+== Notes ==
+* Due to the high fire rate, items that cause tears to inflict [[status effect]]s activate more frequently.
+** This makes Soy Milk very powerful with characters that start with higher luck such as {{C|Cain}}, or those who can avoid damage to obtain {{T|Perfection}} such as {{C|The Lost}} / {{C|Tainted Lost}}.
+* {{dlc|nr}} At base tear rate, Soy Milk sets the player's tear delay to the game's minimum value of 1, for 15 tears per second. This is much lower than the normal minimum tear delay; see [[tear delay|the tear delay explanation page]].
+* {{dlc|nr}} At base damage, Soy Milk is a very small DPS up. With a tear delay of 8 or lower, Soy Milk becomes a DPS down. The more tears per second before obtaining Soy Milk, the greater the decrease in DPS.
+* Soy Milk's damage down stat also significantly decreases tear size.
+* {{dlc|nr}} The endless stream of tears effectively increases directional knockback.
+* {{dlc|na}} Soy Milk is a [[special item]].
+* {{dlc+|r+}} Soy Milk's quality is treated as 1 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{i|20/20}}: The shot pattern may help in controlling enemy knockback, in addition to dealing up to {{Dlc|nr}} double damage {{dlc|r}} 60% more damage.
+* {{i|Blood Clot}}: +1 damage bonus on the left eye. Blood Clot tears are unaffected by the damage penalty.
+* {{dlc|r}} {{i|Brimstone}}/{{c|Azazel}}: Beam can be fired continuously after charging. The beam can change its direction while being fired, and can be aimed in any direction with joystick controls.
+* {{i|Chemical Peel}}: +2 damage bonus on the left eye. Chemical Peel tears are unaffected by the damage penalty.
+* {{i|Chocolate Milk|nr}}: Shots cannot be charged, but Isaac gains a flat +1 damage up after the Soy Milk penalty.
+** {{dlc|r}} Shots cannot be charged, but Isaac shoots moderately charged shots at a quick pace.
+* {{i|Cursed Eye|r}}: Fires automatically upon reaching full charge. This may be riskier than Cursed Eye alone because Soy Milk prevents Isaac from holding a fully charged shot.
+* {{i|Euthanasia}}/{{i|Little Horn}}: Allow Isaac to quickly execute non-boss enemies.
+** {{dlc|r}} '''Little Horn's''' damage to bosses is not affected by the penalty, resulting in significantly higher damage output.
+* {{i|Explosivo}}: Despite the tiny appearance of the bomb tears, the explosions will do normal explosion damage. Due to the massive fire rate, many bombs can be applied in extremely quick succession, decimating anything after a short delay.
+* {{i|Godhead|r}}: The damage of the tears' aura is not affected by the reduction.
+* {{I|Head of the Keeper}}: The barrage of tears makes it much more likely for coin drops.
+* {{i|Ipecac}}: The very fast rate of fire fills the screen with low damage explosions.
+** '''Ipecac''' + {{I|Technology}}: The lasers will explode when they hit a rock, wall, or enemy. This combined with Soy Milk's fire rate and Ipecac's damage makes for an extremely safe method of clearing most rooms.
+* {{i|Lead Pencil}}: The extra tear burst is fired very often.
+* {{i|Libra|nr}}: Decreases fire rate slightly, but massively increases damage, range, and speed. Tear height is also massively increased, meaning tears can hit enemies through obstacles without spectral effect.
+** {{dlc|r}} Resets stats to slightly higher than base level.
+** {{dlc|r}} '''Libra''' + {{i|Brimstone}}: Constant Brimstone beam at normal/higher damage.
+* {{i|Lost Contact}}: Extremely effective at blocking shots.
+* {{i|A Lump of Coal}}: Significantly increases tear damage as they get further away.
+* {{I|Monstro's Lung|r}}: Continuously fires tear barrages without the need to be charged.
+* {{I|The Mulligan}}: Will generate an enormous wave of blue flies given that each tear has a 1/6 chance of spawning one.
+** The same applies to {{tf|Guppy}} since each tear {{dlc|nr}} is guaranteed to spawn a fly {{dlc|r}} has a 2/3 chance of spawning one.
+* {{i|Mysterious Liquid}}: Each shot creates creep that deals reasonable damage but stacks with every shot, causing hefty damage.
+* [[Piercing tears]]: Causes tears to affect enemy movement less for better accuracy, though also removes the advantage of rapidly knocking back enemies.
+* {{i|Pisces}}: Greatly increases knockback, allowing tears to pin enemies against walls.
+* {{i|Rock Bottom}}: Grants a huge fire rate up without lowering Isaac's current damage. However, the damage multiplier and damage down still apply behind the scenes, making it very difficult to gain additional damage.
+* {{I|Strange Attractor}}: Enemies get pulled towards Isaac's tears, allowing for higher accuracy and a way to work around the reduced knockback.
+** Despite the tears having a stronger magnetic quality as they travel, it is still possible for enemies to get knocked wildly around the room. It is advised to play the long-range game when utilizing this synergy.
+* {{i|Tech X|r}}: Automatically charges and fires fully charged Tech X rings. Non-fully charged rings can still be fired by releasing the fire key during charging, but much harder due to the high fire rate and removal of charge bar.
+* {{i|Technology Zero}}: The near-constant stream of tears will have electricity chained between them, providing an electrical net of damage making it almost impossible to not hit an enemy.  This can greatly help offset the lowered damage by increasing the number of hits.
+* {{t|Torn Card}}: Unlike the normal Ipecac synergy, Torn Card shots ignore the damage down multiplier and always deal +40 damage, '''significantly''' increasing DPS.
+
+== Interactions ==
+* {{i|Almond Milk}}: Overrides Soy Milk (no additional effect on tears or damage).
+* {{dlc|na}} {{I|Dr. Fetus}}: Rapidly shoots very low damage bombs. Can create a line of bombs which can knock each other back, which can be difficult to avoid taking damage from.
+** {{dlc|anr}} Rapidly shoots medium damage bombs. Can create a line of bombs which can knock each other back, which can be difficult to avoid taking damage from.
+** {{dlc|r}} Rapidly shoots low damage mini-bombs. Bombs don't knock each other back.
+* {{i|Epic Fetus}}: Damage of missiles will be decreased accordingly, but unlike normal tears, there is still a fixed timed delay between firing missiles.
+* {{i|Kidney Stone}}: Charge time is not affected.
+* {{i|Maw Of The Void}}: Charge time is not affected, but damage is still reduced.
+* {{dlc|r}} {{i|Mom's Knife}}: No special synergy; charge bar still disappears, but the knife will not be automatically released upon full charge.
+* {{Dlc|nr}}{{i|Proptosis}}: The low-damage, lowered size tears disappear extremely quickly, greatly reducing effective range.
+** {{Dlc|r}} The damage reduction causes tears to disappear more quickly, slightly reducing effective range.
+* {{i|Revelation}}: Charge time is not affected, but damage is still reduced.
+* {{dlc|nr}} {{i|Technology 2}}: Half of the Soy Milk tears are replaced by a constant laser, but damage down compounds.
+** {{dlc|r}} Half of the Soy Milk tears are replaced by a constant laser and there is no further damage down on it.
+
+== In-game Footage ==
+{{#ev:youtube|68YAhJkOyWg}}
+
+== Trivia ==
+* This item is used in {{chal|Head Trauma}}.
+
+{{nav|fr=Lait de Soja}}
+[[Category:Special items]]

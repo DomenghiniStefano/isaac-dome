@@ -1,0 +1,115 @@
+{{infobox boss
+ | dlc         = a
+ | name        = Ultra Greed
+ | id          = 406
+ | environment = <u>Boss</u><br>{{floor|Ultra Greed}}
+ | base hp     = 3500
+ | pool        = Final Boss Chest ([[Endings|Ending 18]])<br/>{{M|Greed Donation Machine}}
+}}
+
+'''Ultra Greed''' is the final [[boss]] of [[Greed Mode]] and [[Endings|Ending 18]].
+
+== Behavior ==
+Ultra Greed is fought in a unique vertical double-size room with golden Boss Room doors on all 4 walls in regular positions.
+When Isaac enters the boss room, Ultra Greed starts out hanging on a noose before he abruptly cuts it off and lands on the ground. Ultra Greed cannot be damaged until he drops to the ground. Ultra Greed then performs a variety of attacks in addition to wandering around the room:
+* Stomps on the ground 4 times, spawning a {{e|Keeper}} with each stomp. Only 4 Keepers can be alive at once.
+* Charges at Isaac when he is in line of sight.
+* Shoots either 3-5 coin projectiles in a spread from his mouth, or a cluster of coin projectiles, similar to {{e|Monstro}}.
+** Ultra Greed does not perform this attack if Isaac is far enough away.
+* Spins around the room, firing coin projectiles in random directions.
+* If Isaac is too close to Ultra Greed, he performs a spin, kicking Isaac away in the process.
+* Stops moving and rotates his eyes in a slot machine manner. If both eyes land on the same symbol, he then spawns multiple [[Ultra Greed Coin]]s of the same symbol.
+** If the two symbols on Ultra Greed's eyes don't match, he spawns {{e|Ultra Greed Coin (Spinner)||Ultra Greed Coins (Spinner)}}.
+{{entity table | Ultra Greed Coin (Spinner), Ultra Greed Coin (Key), Ultra Greed Coin (Bomb), Ultra Greed Coin (Heart) }}
+
+* If there are too many monsters/coins alive at once, Ultra Greed assumes a defensive stance. While blocking, Ultra Greed takes much less damage from Isaac's attacks, and maintains this state until most of the monsters/coins have been killed.
+
+All of Ultra Greed's attacks deal a full heart of damage and cause Isaac to drop coins on hit. If he walks over any coins on the ground, he collects them, healing him for 4.375 HP each. Doing so also makes him slightly more aggressive. Heart coins also make the boss angrier.
+
+When Ultra Greed has low health, he turns red, which increases his attack speed and movement speed. This effect also occurs if Ultra Greed is healed by enough Heart Ultra Greed Coins, although only providing a temporary effect.
+* The scaling speed increases if {{a|Everything is Terrible 2!!!}} has been unlocked by using the {{M|Greed Donation Machine}}.
+
+When Ultra Greed's health bar is depleted, he turns into a golden statue and drops the end chest and the {{M|Greed Donation Machine}}. If in [[Greedier Mode]], he instead begins his second phase.
+{{clear}}
+
+== Ultra Greedier ==
+{{infobox boss
+ | dlc         = a+
+ | name        = Ultra Greedier
+ | variant     = 1
+ | environment = <u>Boss</u><br>{{mode|greedier}} {{floor|Ultra Greed}}
+ | base hp     = 2500
+ | pool        = Final Boss Chest ([[Endings|Ending 19]])<br/>{{M|Greed Donation Machine}}
+ | portrait    = no
+}}
+
+'''Greedier Mode''' is a mode added in ''Afterbirth ♰''. It is unlocked by depositing 500 coins in the Greed Machine.
+
+Playing on Greedier Mode gives '''Ultra Greed''' a second phase where his gold statue form comes to life. This phase is known as '''Ultra Greedier''', and is the final boss of [[Endings|Ending 19]]. Additionally, he performs several new attacks:
+
+* The coin projectiles that Ultra Greedier shoots from his first phase now explode upon contact.
+* Slams his fists into the ground, creating explosions where he slams and causing golden {{i|Brimstone}} lasers to fire from the golden Boss Room doors that surround the room.
+** They can either come out from one pair of doors at a time or from all of them at once.
+* Jumps into the air towards Isaac's position, dropping exploding coins down below while travelling. Upon landing, rock waves are sent in various directions.
+* Stomps on the ground four times, causing a slew of Bomb Coins to rain from the ceiling.
+** These coins can spawn a single {{e|Penny}} when they explode, providing both healing for Ultra Greedier and extra coins for Isaac.
+
+After defeating Ultra Greedier, he explodes, dropping a {{e|Penny}} and turning the entire room into solid gold. It is at this point that the end chest and the [[Greed Donation Machine]] spawn.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Boss Ultra Greed hanged ingame.png|Ultra Greed hanging from the ceiling.
+File:Ultra Greed Golden.png|Golden statue form of Ultra Greed.
+File:Beta Ultra Greed spritesheet1.png|Beta Ultra Greed's appearance/spritesheets
+File:Beta Ultra Greed spritesheet2.png|More beta images of Ultra Greed.
+File:KoreanEverythingisTerrible2.png|Everything is Terrible 2!!! unlock in Korean. Notably, Ultra Greed has a beard.
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+=== Greed Mode ===
+{{achievement text | Lil' Chest, Censer, Evil Eye, My Shadow, Cracked Dice, Black Feather, Lusty Blood, Lilith, Key Bum, GB Bug, Zodiac, Box of Friends, Rib of Greed, Brown Nugget, Finger Bone, Soul Locket, Inner Child }}
+
+=== {{dlc|a+}} Greedier Mode ===
+Completing Greedier Mode with a character will unlock the corresponding Greed Mode unlockable if it hasn't been unlocked.
+{{achievement text | D1, Glyph of Balance, Sack of Sacks, Eye of Belial, Meconium, Crow Heart, Stem Cell, Bat Wing, Plan C, Metronome, Dad's Lost Coin, Duality, Eye of Greed, Black Rune, Dad's Ring, Vade Retro, Genesis, The Fool, The Magician, The High Priestess, The Empress, The Emperor, The Hierophant, The Lovers, Wheel of Fortune, Strength, The Hanged Man, Death, The Devil, The Tower, The Stars, The Sun and the Moon, Judgement, The World }}
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to the players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage scaling|here]].
+
+== Notes ==
+* After Key Coins appear, using {{p|A Card Against Humanity}} causes spawned Gapers to be stuck and, as long as they're alive, Ultra Greed will not attack.
+* Having {{i|E. Coli}} (and perhaps other contact-based collectibles) is a fast way of disabling the Bomb, Key, or Heart Coins because they don't do contact damage. However, unmarked coins do.
+* {{dlc|a+nr}} Except for direct contact and the {{i|Brimstone}} lasers, all of Ultra Greedier's attacks only do explosive damage. Therefore having {{i|Pyromaniac}} or {{i|Host Hat}} makes this phase of the fight much easier to survive.
+** {{dlc|r}} The rock waves after Ultra Greedier's jump attack are no longer considered explosive damage.
+* {{dlc|a+}} The entire room will be turned to gold when he dies. This is due to a special shader that turns on in the room when he dies, so using effects like {{P|A Card Against Humanity}} or {{p|XVI - The Tower?}} will make the grid entities spawned look golden.
+* Any poop spawned in the Ultra Greedier fight, destroyed or not, will respawn as {{E|Golden Poop}} when Ultra Greedier dies and turns the room into gold.
+** {{dlc|r}} This effect is only visual, they act like regular {{e|Poop}} when destroyed despite the gold color.
+* If you manage to spawn a {{e|Sticky Nickel}} (possibly through a {{i|D20}}) Ultra Greed may station himself over it and no longer move around the arena.
+* {{I|Eraser}} can allow the Ultra Greedier phase to be skipped if you use it on Ultra Greed when he has 15 or less HP.
+
+== Trivia ==
+* Ultra Greedier has an unused sprite of him hanging from the ceiling similar to Ultra Greed when first entering the room.
+** This special sprite can still be seen if Ultra Greedier is summoned with console commands.
+* Ultra Greed can pick up coins even after being turned into a statue.
+* Ultra Greed is the second Ultra deadly sin boss to appear in the game, behind {{e|Ultra Pride}}, but is the first to appear as a final boss.
+* Teleporting out of the boss room after defeating Ultra Greed will cause the statue to disappear.
+* {{dlc|a+}} The name "Ultra Greedier" comes from the bestiary.
+* {{dlc|a+}} In Greedier Mode, when Ultra Greed is defeated for the first time, he will stay as a gold statue for 10 seconds before he begins to break out and turn into Ultra Greedier. On future runs, he will begin to break out immediately instead.
+* Prior to [[Booster Packs#Booster Pack #5|Booster Pack #5]], Ultra Greed could spawn {{e|Blister}}s along with Keepers.
+* There is an unused form of Ultra Greed in the game's sprite sheets, with a goatee style beard and a less fit body build. He was supposed to be a boss that represented Tyrone Rodriguez,<ref>[https://twitter.com/tyronerodriguez/status/672246234355138562 Beta Ultra Greed]</ref> similar to how Ultra Pride represents Edmund McMillen and Florian Himsl. This spritesheet can be found in the file folder "delirium forms".
+** The Korean version of the game still has some images with the beard used in the game.
+* According to Edmund in a [https://x.com/edmundmcmillen/status/1733332795353923624?s=20 twitter AMA], the other deadly sins were supposed to have ultra forms as well, but were scrapped for unknown reasons.
+* The prevalence of greed and money as a theme could represent how Isaac's Dad's poor spending habits, as heard in the dialogue of the [[Ascent]], have affected Isaac.
+
+== Bugs ==
+{{bug|dlc=na+|If Ultra Greed is defeated at the bottom of the room, the ending chest will spawn incorrectly, causing it to be unreachable.}}
+{{bug|dlc=nr|If Ultra Greed is hit by a {{p|Chaos Card}} after being turned into gold, his death animation will replay and cause a lot of gut splatter.}}
+{{bug|If the player dies and respawns outside of the room while Ultra Greed is rolling his eyes like a slot machine, the slot machine sound will play continuously until the game is paused.}}
+
+== References ==
+{{reflist}}
+
+{{nav|ultra greed unlock|ultra greedier unlock|greed machine unlock|boss|fr=Ultra Avarice}}
+[[Category:Final bosses]]
+[[Category:Debut bosses in Afterbirth]]

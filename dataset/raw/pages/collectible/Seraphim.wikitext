@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | dlc = a
+ | name = Seraphim
+ | id = 390
+ | quote = Sworn friend
+ | description = Spawns an angel [[familiar]] who follows Isaac and fires [[Tear Effects#Effects|homing tears]] which deal 10 damage and have 75% shot speed.
+ | quality     = 3
+ | tags        = summonable baby monstermanual offensive {{dlc|r+|angel}}
+}} {{disambig msg|the item|the transformation|Seraphim (Transformation)}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Spawns an angel [[familiar]] who follows Isaac and fires [[Tear Effects#Effects|homing tears]] similar to {{i|Sacred Heart}}, which deal 10 damage at 75% shot speed.
+* {{transformation contribution|Conjoined|dlc=r}}
+* {{transformation contribution|Seraphim|dlc=r+}}
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Seraphim having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+
+== Synergies ==
+* {{i|Sacrificial Altar}}: This familiar will also reward 2 {{e|Black Heart}}s when sacrificed.
+
+== In-game Footage ==
+{{#ev:youtube|f4qDx64TD2I}}
+
+== Trivia ==
+* Seraphim is the plural form of the word Seraph. Its use here to refer to a singular familiar as well as being used in the name of the [[Seraphim (Transformation)|transformation]] may be a mistake.
+
+{{nav|conjoined|seraphim|fr=Séraphin}}
+[[Category:Familiars]]

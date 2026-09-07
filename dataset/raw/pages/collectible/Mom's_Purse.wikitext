@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | id          = 139
+ | quote       = More trinket room
+ | description = Allows Isaac to hold one additional [[trinket]]. {{dlc|r}} Drops a random trinket.
+ | quality     = 2
+ | tags        = summonable mom offensive nocantrip
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Allows two different [[trinket]]s to be carried at once.
+* {{dlc|r}} Spawns one random trinket.
+* {{transformation contribution|Yes Mother?}}
+
+== Synergies ==
+* {{t|Tick}}: Lets you gain the benefits of the item without losing your only trinket slot.
+** {{dlc|a}} You cannot replace the {{t|Tick}} with The {{t|Match Stick}} once it is picked up, as it will only occupy the second trinket slot.
+
+== Interactions ==
+* {{i|Belly Button}}: No effect; Isaac can still only hold two trinkets.
+
+== In-game Footage ==
+{{#ev:youtube|H5KcwhOKXSM||inline}} {{#ev:youtube|tHK-yNNETro||inline}}
+
+== Trivia ==
+* {{dlc|r}} This item is used in {{chal|Pica Run}}.
+
+{{nav|yes mother|mom|inventory expansion|trinket modifier|fr=Sac à Main de Maman}}

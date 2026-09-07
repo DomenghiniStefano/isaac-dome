@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | quote       = {{dlcalt|Penetrative shot|r=Piercing shots}} + DMG up
+ | description = +1.5 [[damage]], -0.3 [[tears]]. Tears are replaced with large [[piercing tears|piercing]] scythes.
+ | quality     = 3
+ | tags        = summonable offensive
+ | id          = 237
+ | devil price = 2
+ | unlocked by = Death's Touch
+}}
+
+{{cit|up}}
+
+== Effects ==
+* +1.5 [[damage]]
+* -0.3 [[tears]]
+* Grants [[piercing tears]].
+* Tear size multiplier: 2x.
+* Tears are replaced by {{E|Death}}'s scythes.
+
+== Interactions ==
+* {{i|Brimstone}} / {{C|Azazel}} / {{C|Tainted Azazel}}: Overrides Death's Touch. Only stat changes apply.
+* {{i|Dr. Fetus}}: Bombs travel through enemies. When combined with {{I|Ipecac}}, bombs do not explode upon hitting enemies.
+** {{Dlc|r}} Bombs also deal 2.5x Isaac's damage to enemies when passing through them.
+* {{i|Haemolacria}}: Stat effects apply. Fired tears will retain piercing effect; however, burst tears will not. All other effects do not apply.
+* {{i|Ipecac}}: Tears explode at their center, not where they touch the enemy, which means the very large size from Death's Touch may be detrimental. Piercing effect does not apply.
+* {{I|Trisagion}}: Overrides Death's Touch. Only stat changes apply.
+* {{I|Spirit Sword}} Overrides the scythe visual including the ranged attack.
+* {{I|Tech X}}: Overrides Death's Touch. Only stat changes apply.
+
+== In-game Footage ==
+{{#ev:youtube|hzSbVColyWw}}
+
+== Trivia ==
+* The sound effect of the scythes hitting the ground is the same that was used in Super Meat Boy.
+** The sound effect was originally used when shooting sawblades were hitting the walls.
+* Isaac's face resembles {{E|Death}}'s when holding this item.
+
+{{nav|fr=La Faucheuse}}

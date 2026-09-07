@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 162
+ | quote       = {{dlcalt|You feel blessed|r=Blessing of protection}}
+ | description = Grants a chance to trigger the {{i|Book of Shadows}} effect upon taking damage, creating a [[shield]] that nullifies all types of damage for 7 seconds.
+ | quality     = 1
+ | tags        = nolostbr summonable angel
+ | unlocked by = Celtic Cross
+}}
+
+{{cit|up}}
+
+== Effect ==
+* Grants a chance to trigger the {{i|Book of Shadows}} effect upon taking damage, creating a [[shield]] that nullifies all types of damage for 7 seconds.
+
+== Notes ==
+* The base chance of creating the protective shield is 20%.
+* The activation chance of this item depends on the [[Luck]] stat and goes up to 100% at 27 Luck.
+* The shield negates health loss from {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s.
+* Does not prevent Heart Container loss from [[Health Down]] pills or {{r|Devil Room}} Deals.
+* Does not prevent damage from {{i|IV Bag}}.
+
+== Synergies ==
+* {{Dlc|r}}{{i|The Polaroid}}, {{i|Virgo}}: Can trigger at the same time as The Polaroid or Virgo, cumulating to up to 22 seconds of shield.
+
+== In-game Footage ==
+{{#ev:youtube|LUT04TGorIQ}}
+
+== Trivia ==
+* In [[wikipedia:Galicia (Spain)|Galicia]], Celtic crosses are usually found on top of granaries as a protective measure against any kind of evil. They are also commonly found among Celtic nations today and historically.
+* This item is functionally almost identical to {{I|Virgo}}, minus the pill conversion effect.
+
+{{nav|seraphim|magdalene unlock|blue baby boss unlock|fr=Croix Celte}}
+[[Category:Damage-triggered items]]
+[[Category:Damage-preventing items]]

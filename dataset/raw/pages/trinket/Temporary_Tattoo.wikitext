@@ -1,0 +1,22 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 177
+ | quote       = You feel braver
+ | description = Drops a {{E|Chest}} after clearing a {{r|Challenge Room}}, or an extra [[Boss (Item Pool)|Boss item]] after clearing a {{r|Boss Challenge Room}}.
+ | tags        = lazarussharedglobal nogreed
+ | unlocked by = Temporary Tattoo
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Drops a {{E|Chest}} after clearing a {{r|Challenge Room}}, or an extra [[Boss (Item Pool)|Boss item]] after clearing a {{r|Boss Challenge Room}}.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Each copy provides a small random stat increase after completing a challenge room.
+* {{c|Tainted Keeper}}: The bonus item dropped after clearing a {{r|Boss Challenge Room}} is free.
+
+== In-game Footage ==
+{{#ev:youtube|dtt6ZIwMQ0A}}
+
+{{nav|tainted samson unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Tatouage temporaire}}

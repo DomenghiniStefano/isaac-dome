@@ -1,0 +1,226 @@
+{{infobox boss
+ | dlc         = a+
+ | id          = 412
+ | environment = <u>Boss</u><br>{{floor|The Void}}
+ | base hp     = 10000
+ | pool        = Final Boss Chest ([[Endings|Ending 20]])
+}}
+'''Delirium''' is a [[boss]] added in ''[[The Binding of Isaac: Afterbirth †]]''. It is the main boss of {{s|The Void}} and the final boss of [[Endings#Ending 20/Final Ending|Ending 20]].
+
+== Behavior ==
+Delirium's main form is stationary but teleports erratically around the room and performs the following attacks:
+* Continuously sends out various overlapping patterns of white projectiles for the entire duration of the fight:
+** 20 projectiles that slowly rotate clockwise or counterclockwise while expanding.
+** 16 projectiles outwards in all directions.
+** 14 projectiles that rotate clockwise, counterclockwise, or back and forth while expanding.
+** 10 projectiles that fluctuate in and out while expanding.
+** 8 slow-moving green-tinted {{i|Ipecac}} projectiles in all directions.
+** 6 projectiles that travel outwards in a zig-zag pattern.
+** 4 projectiles outwards in a lop-sided cross.
+** 4 lines of 3 projectiles that spiral outwards.
+** A spread of 5 projectiles in Isaac's direction.
+** A burst of projectiles that travel outwards in random directions.
+** A stray short-range projectile in a random direction.
+*** The projectile size per each attack is random and varies from very small to moderately large.
+* Transforms into bosses previously encountered during the run, which can include major bosses such as {{e|Mom}} or {{e|It Lives!}}.
+** When it transforms into a boss, Delirium retains its own health, not the health of the boss it transformed into.
+** When transforming into certain multi-phase bosses, such as Isaac, Delirium copies the phase that that boss would be at, given its current health percentage.
+** When transforming into a segmented boss, only the first two segments share Delirium's hp; the other segments have separately generated hp and can be defeated separately.
+** In rare occasions, it can transform into two or even three bosses at once.
+** In rare occasions, it spawns a separate copy of the boss it transformed into.
+** Whether it turns into a Champion variant or a regular variant is random and does not depend on which variant was previously defeated.
+** {{dlc|nr}} It is unable to properly transform into Hush's true form. In order for this to happen, very few bosses must be encountered in the run. Additionally, many of Hush's attacks do not work properly and the sprite is also unfinished.
+** {{dlc+|r}} Can transform into {{e|Baby Plum}}, {{e|Bumbino}}, and {{e|The Pile}}, but only Baby Plum has a unique sprite. Cannot transform into any other <u>Repentance</u> bosses.{{dlc-}}
+** {{dlc|r}} Cannot transform into {{e|Mega Satan}}, rendering its unique sprite unused.
+* Occasionally, it returns to its main form to perform projectile attacks at a faster pace.
+* As it takes damage, it becomes more aggressive: moving, teleporting, transforming, and attacking at a faster rate.
+** {{dlc|r+}} {{e|Mom|}} and {{e|Satan|}}'s second phase are exempt from the faster attack speed, instead attacking at a fixed speed.
+** It also takes on a reddish hue to signify this change.
+** Destroying non-Delirium segments when he transforms into segmented bosses can also temporarily trigger this effect.
+** If Delirium is being dealt damage at a significantly high rate from multiple tear sources, he will attack, teleport, and transform at extreme speeds.
+
+Upon defeat, the screen starts to glitch, fills with static, and the room switches between different environments, while short scenes from the current run are played ending with Delirium screaming and bursting into a small puddle of blood.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Monstro ingame.png|Delirium as {{e|Monstro}}.
+File:Boss Delirium Gemini ingame.png|Delirium as {{e|Gemini}}.
+File:Boss Delirium Steven ingame.png|Delirium as {{e|Steven}}.
+File:Boss Delirium Dingle Dangle ingame.png|Delirium as {{e|Dingle}}/{{e|Dangle}}.
+File:Boss Delirium Gurglings ingame.png|Delirium as {{e|Gurglings}}.
+File:Boss Delirium Larry Jr. ingame.png|Delirium as {{e|Larry Jr.}}
+File:Boss Delirium Turdlings ingame.png|Delirium as {{e|Turdlings}}.
+File:Boss Delirium The Duke of Flies ingame.png|Delirium as {{e|The Duke of Flies}}.
+File:Boss Delirium Little Horn ingame.png|Delirium as {{e|Little Horn}}.
+File:Boss Delirium Baby Plum ingame.png|{{dlc+|r}} Delirium as {{e|Baby Plum}}.{{dlc-}}
+File:Boss Delirium Widow ingame.png|Delirium as {{e|Widow}}.
+File:Boss Delirium Blighted Ovum ingame.png|Delirium as {{e|Blighted Ovum}}.
+File:Boss Delirium The Haunt ingame.png|Delirium as {{e|The Haunt}}.
+File:Boss Delirium Pin ingame.png|Delirium as {{e|Pin}}.
+File:Boss Delirium Rag Man ingame.png|Delirium as {{e|Rag Man}}.
+File:Boss Delirium Famine ingame.png|Delirium as {{e|Famine}}.
+File:Boss Delirium Fistula ingame.png|Delirium as {{e|Fistula}}.
+File:Boss Delirium Chub ingame.png|Delirium as {{e|Chub}}.
+File:Boss Delirium C.H.A.D. ingame.png|Delirium as {{e|C.H.A.D.}}
+File:Boss Delirium Gurdy ingame.png|Delirium as {{e|Gurdy}}.
+File:Boss Delirium Mega Fatty ingame.png|Delirium as {{e|Mega Fatty}}.
+File:Boss Delirium Mega Maw ingame.png|Delirium as {{e|Mega Maw}}.
+File:Boss Delirium The Stain ingame.png|Delirium as {{e|The Stain}}.
+File:Boss Delirium Gurdy Jr. ingame.png|Delirium as {{e|Gurdy Jr.}}
+File:Boss Delirium Peep ingame.png|Delirium as {{e|Peep}}.
+File:Boss Delirium Big Horn ingame.png|Delirium as {{e|Big Horn}}.
+File:Boss Delirium Rag Mega ingame.png|Delirium as {{e|Rag Mega}}.
+File:Boss Delirium The Husk ingame.png|Delirium as {{e|The Husk}}.
+File:Boss Delirium The Hollow ingame.png|Delirium as {{e|The Hollow}}.
+File:Boss Delirium Carrion Queen ingame.png|Delirium as {{e|Carrion Queen}}.
+File:Boss Delirium Dark One ingame.png|Delirium as {{e|Dark One}}.
+File:Boss Delirium Polycephalus ingame.png|Delirium as {{e|Polycephalus}}.
+File:Boss Delirium The Wretched ingame.png|Delirium as {{e|The Wretched}}.
+File:Boss Delirium The Frail ingame.png|Delirium as {{e|The Frail}}.
+File:Boss Delirium The Forsaken ingame.png|Delirium as {{e|The Forsaken}}.
+File:Boss Delirium Pestilence ingame.png|Delirium as {{e|Pestilence}}.
+File:Boss Delirium Monstro II ingame.png|Delirium as {{e|Monstro II}}.
+File:Boss Delirium Gish ingame.png|Delirium as {{e|Gish}}.
+File:Boss Delirium The Cage ingame.png|Delirium as {{e|The Cage}}.
+File:Boss Delirium The Gate ingame.png|Delirium as {{e|The Gate}}.
+File:Boss Delirium Loki ingame.png|Delirium as {{e|Loki}}.
+File:Boss Delirium Brownie ingame.png|Delirium as {{e|Brownie}}.
+File:Boss Delirium Sister Vis ingame.png|Delirium as {{e|Sisters Vis}}.
+File:Boss Delirium The Adversary ingame.png|Delirium as {{e|The Adversary}}.
+File:Boss Delirium The Bloat ingame.png|Delirium as {{e|The Bloat}}.
+File:Boss Delirium Mask of Infamy ingame.png|Delirium as {{e|Mask of Infamy}}.
+File:Boss Delirium War ingame.png|Delirium as {{e|War}}.
+File:Boss Delirium Blastocyst ingame.png|Delirium as {{e|Blastocyst}}.
+File:Boss Delirium Mama Gurdy ingame.png|Delirium as {{e|Mama Gurdy}}.
+File:Boss Delirium Scolex ingame.png|Delirium as {{e|Scolex}}.
+File:Boss Delirium Mr. Fred ingame.png|Delirium as {{e|Mr. Fred}}.
+File:Boss Delirium The Matriarch ingame.png|Delirium as {{e|The Matriarch}}.
+File:Boss Delirium Lokii ingame.png|Delirium as {{e|Lokii}}.
+File:Boss Delirium Daddy Long Legs ingame.png|Delirium as {{e|Daddy Long Legs}}.
+File:Boss Delirium Triachnid ingame.png|Delirium as {{e|Triachnid}}.
+File:Boss Delirium Teratoma ingame.png|Delirium as {{e|Teratoma}}.
+File:Boss Delirium Death ingame.png|Delirium as {{e|Death}}.
+File:Boss Delirium Conquest ingame.png|Delirium as {{e|Conquest}}.
+File:Boss Delirium The Fallen ingame.png|Delirium as {{e|The Fallen}}.
+File:Boss Delirium The Headless Horseman ingame.png|Delirium as {{e|Headless Horseman}}.
+File:Boss Delirium Krampus ingame.png|Delirium as {{e|Krampus}}.
+File:Boss Delirium Uriel ingame.png|Delirium as {{e|Uriel}}.
+File:Boss Delirium Gabriel ingame.png|Delirium as {{e|Gabriel}}.
+File:Boss Delirium Mom ingame.png|Delirium as {{e|Mom}}.
+File:Boss Delirium Mom's Heart ingame.png|Delirium as {{e|Mom's Heart}}.
+File:Boss Delirium It Lives! ingame.png|Delirium as {{e|It Lives!}}.
+File:Boss Delirium Satan ingame.png|Delirium as {{e|Satan}}.
+File:Boss Delirium Isaac ingame.png|Delirium as {{e|Isaac}}.
+File:Boss Delirium Blue Baby ingame.png|Delirium as {{e|???}}.
+File:Boss Delirium The Lamb ingame.png|Delirium as {{e|The Lamb}}.
+File:Boss Delirium Mega Satan ingame.png|{{Dlc|nr}} Delirium as {{e|Mega Satan}}.
+File:Boss Delirium Hush ph1 ingame.png|Delirium as {{e|Hush}}'s first form.
+File:Boss Delirium Hush ingame.png|Delirium as Hush's true form.
+File:Delirium last wish.png|Delirium's main form on [[Isaac's last will]].
+File:Faded sprite.jpg|A frame of Delirium's death animation, showing a faded sprite of Isaac.
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Delirious, Lil Delirium, D infinity, Eucharist, Silver Dollar, Shade, King Baby, Dull Razor, Bloody Crown, Dark Prince's Crown, Compound Fracture, Eden's Soul, Holy Card, Godhead, Euthanasia, Crooked Penny, Void, Book of the Dead, Star of Bethlehem, Suplex!, Spindown Dice, Hypercoagulation, Bag of Crafting, Dark Arts, IBS, Sumptorium, Berserk!, Hemoptysis, Flip, Corrupted Data, Ghost Bombs, Gello, Keeper's Kin, Abyss, Decap Attack, Lemegeton, Anima Sola }}
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in The Binding of Isaac: Afterbirth to provide a more challenging experience to the players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage scaling|here]].
+
+Delirium only has damage scaling while transformed, not while in its main form.
+
+== Notes ==
+* Delirium is immune to {{p|Chaos Card}}.
+* Upon defeating Delirium, Isaac gains 2 charges for his [[Active Collectible|active item]].
+* {{i|Plan C}} can be used to kill Delirium. After Plan C is used against Delirium, when pausing in the instant of each flash from Delirium's death animation, the animation can be skipped before the death from Plan C's 3 seconds delay; this works because each flash from Delirium's death animation is still played when the game is paused.<ref>https://www.reddit.com/r/bindingofisaac/comments/nsc1pw/in_addition_to_my_other_post_how_to_kill_delirium/</ref> It is also recommended to position Isaac on the chest spawn location before Plan C's death occurs.
+** It works with {{I|Lazarus' Rags}}, as it revives Isaac on the spot. However, the Completion Mark will go towards Lazarus, not the character originally selected.
+** {{dlc+|r}} {{p|Soul of Lazarus}} and {{I|Inner Child}} revive Isaac in the same room he died in, and the Completion Mark goes toward the selected/current character.{{dlc-}}
+** {{dlc+|r}} While playing as {{C|Tainted Lost}}, {{I|Birthright}} revives him inside Delirium's room without transforming himself into another character.{{dlc-}}
+** {{dlc|r+}} This is no longer necessary, as {{i|Plan C}} will kill Isaac in 10 seconds after being used inside Delirium's room, which is enough time to let its death animation finish, and reward the completion mark for the current character before [[Isaac's Last Will]] pops up.
+* Most entities that are considered to be bosses by the game (usually identified by ones that add the boss health bar to the screen, though there are exceptions) are marked as bosses that Delirium can transform into.
+* Delirium's transformations have a huge amount of quirks and odd mechanics, and as such are practically impossible to fully document. A good amount of these quirks are documented below.
+** Delirium can transform into either form of {{e|Satan}}.
+** When transformed into the {{e|Gurglings}} or the {{e|Turdlings}}, it only appears as one instead of two.
+** When transformed into {{e|Headless Horseman}}, it transforms into either the head or the body, but it doesn't transform into both at the same time.
+** If Delirium transforms into {{e|Isaac}} and Delirium's health is low enough, it will attempt to perform Isaac's {{I|Crack the Sky}} attack. However, because Delirium's boss arena is a quadruple-sized room, the attack will cover half of the arena, making it extremely deadly.
+** Each size of {{e|Fistula}} and {{e|Teratoma}} count as a separate boss, which Delirium can transform into just like any other boss.
+** This also results in many bugs due to unaccounted for transformations. These can be viewed in the [[#Bugs|bugs]] section of this page.
+** When transformed into two instances of the same boss (like {{e|Lokii}} or {{e|Sisters Vis}}), one of them can be killed but the other cannot (until Delirium's hp fully runs out).
+*** If Delirium transforms into Pink Champion {{e|Monstro}}, it only takes the form of one and summons an extra Pink Champion Monstro.
+**** This is also true for Pink Champion {{e|Polycephalus}} and Pink Champion {{e|The Cage}}.
+*** If Delirium transforms into {{e|The Lamb}}'s second phase then undergoes another transformation, the body doesn't disappear and can be killed, just like the original Lamb's body.
+**** Killing this body will cause the screen to become darker for a period of time, just like when you kill the original Lamb's body.
+**** Delirium can also transform into the Lamb's body on its own. If this happens, the body disappears when Delirium transforms again.
+** When transformed into a boss that has multiple segments, the extra segments can be killed. The head, however, cannot.
+*** This also applies to {{e|Gemini}} — Suture can be killed but Contusion cannot.
+**** If Delirium transforms into Gemini, then undergoes another transformation, Suture doesn't disappear. Instead, he continues to chase Isaac as if Contusion was killed in the original fight.
+** Delirium's {{e|Mom}} form only stomps and does not spawn enemies.
+* {{dlc+|r}} If a segmented worm-boss such as {{e|Larry Jr.}} or {{e|Scolex}} is removed via {{i|Eraser}}, Delirium will disappear if it attempts to turn into that boss. This will spawn the ending chest and count as having defeated Delirium. Other multipart bosses' erased pieces may be unable to spawn, but do not kill Delirium entirely.{{dlc-}}
+* {{dlc|nr}} If Delirium transforms into Mega Satan, the boss maintains the ability to spawn the Harbingers, the Super Sins, and the Fallen Angels, and can do so in quick succession depending on Delirium's health. This can make the fight much longer, as attacking the bosses spawned by Delirium will have no effect on Delirium's actual health.
+* Delirium can transform into Fallen {{e|Uriel}} and Fallen {{e|Gabriel}} but they don't have unique Delirium skins.
+* Each time Delirium transforms, its [[Status Effects|Status Effect]] timer resets, allowing for useful effects to be active for a large portion of the fight if re-inflicted frequently enough.
+** This quirk is especially useful in conjunction with the petrification from {{I|Mom's Contacts}}, as it can hold Delirium in place each time it is petrified, making it a much easier target to hit.
+
+== Strategies ==
+* Just like with {{e|Hush}}, effects that cause long-lasting mass slowdown such as {{i|Stop Watch}} or the I'm Drowsy pill are very valuable, aiding the player's ability to dodge the complex tear patterns and deal with the massive spawns of enemies, which can happen in quick succession.
+* {{dlc|r}} {{i|Broken Modem}} can also remove a lot of bullets, making it a must-have against Delirium.
+* Delirium's main form lacks any damage scaling or armor, allowing the opportunity to deal high damage attacks against its massive base HP. Be wary that dealing significant bursts of damage against Delirium will also quickly increase its aggressiveness.
+* One may wish to save this fight with {{c|Tainted Eden}} for the last mark of a file, as {{achievement|Corrupted Data|n}} can make {{r|I AM ERROR}} and {{r|Secret Room}}s worse.
+
+== Trivia ==
+* Delirium is Isaac's manifestation of the "white light at the end of the tunnel" where the entire history of his life flashes before his eyes, moments before Isaac's death.<ref>https://twitter.com/edmundmcmillen/status/920931148720586753</ref>
+** This is reflected by Delirium's death animation and its ability to shapeshift into previously encountered bosses.
+* "Delirium" is the state of mental confusion of a person who is delirious. Symptoms include restlessness, illusions, and incoherence.
+* The arena can randomly change themes during the fight and is purely visual.
+** After Delirium finishes his death animation, the arena will change into the theme of {{S|Chest}}.
+* Delirium is one of only two enemies immune to {{p|Chaos Card}}, {{dlc+|r}} the other being {{e|The Beast}}{{dlc-}}.
+* Killing Delirium in a [[daily challenge]] counts as winning it. {{dlc|nr+}} However, this does not reward any unique bonus points.
+** {{dlc|r+}} Delirium can be a goal and grants unique bonus points.
+* Unlike other [[completion mark]]s, defeating Delirium does not add a mark to the post-it note. Instead, the note will become tattered (with blood on [[Hard mode]]).
+* If no other bosses have been encountered during the run, Delirium is unable to transform.
+** This is normally impossible, as {{e|Mom}} must always be defeated in order to even have access to {{S|The Void}} on any run.
+** {{dlc+|r}} {{i|We Need To Go Deeper!}} can be used to access {{s|Dark Room}}, then create an {{r|Crawl Space}} there. Entering the {{r|Crawl Space}} and leaving it through an unintended direction will lead Isaac to an {{R|I AM ERROR}} room, allowing access to {{s|The Void}}, all without fighting any bosses.{{dlc-}}
+* Every time Delirium transforms into another boss, it adds onto the encounters counter in the [[Bestiary]].
+* If Delirium transforms into {{e|Mom}} as soon as the battle starts, it stomps in the center of the room regardless of Isaac's position, similar to how the original Mom always starts her battle by stomping in the center of the room.
+** Similarly, If Delirium transforms into {{e|Mom's Heart}}/{{e|It Lives!}} as soon as the battle starts, it is accompanied by two {{E|Eye}}s in the same position as they are when they accompany the original Mom's Heart/It Lives! at the start of its battle.
+* Prior to [[Booster Pack#5]], Delirium could turn into a {{E|Lil' Haunt}}.
+** Also, if it transformed into [[Brownie#Champion Versions|Black Champion Brownie]] when at low health, it would spawn two {{e|Dank Squirt}}s like the original boss would and die before the health bar actually fully depleted, without playing its death animation. This no longer happens because Delirium's {{e|Brownie}} form (normal and Black Champion) no longer transitions into the second phase (turning into a weakened {{e|Dangle}} or leaving two {{e|Dank Squirt}}s, respectively).
+* Delirium uses the exact same sprite for both its {{e|Dingle}} and {{e|Dangle}} forms.
+* {{dlc|r}} Delirium's sprite for its {{e|Steven}} form is based on Ash from ''The End Is Nigh''.
+* If Delirium transforms into {{e|Mega Fatty}} and performs the vomit attack, it attracts its White and Green projectiles towards it.
+* The only bosses Delirium can't normally transform are {{e|Ultra Greed}}, {{e|Ultra Greedier}}, and any other [[Repentance]] boss except for most of those that can appear on the "main" route: {{e|Baby Plum}}, {{e|Bumbino}}, and {{e|The Pile}}.
+** Technically speaking, Delirium ''can'' transform into Ultra Greed and Ultra Greedier, but they lack unique sprites. This will never happen in a normal playthrough, as the bosses exist in different game modes.
+** {{Dlc|nr}} Delirium's {{e|Hush}} form can be summoned with {{i|Delirious}}, but it has to be used many times in quick succession in the same room, which is only possible via cheats or the [[Debug Console]].
+*** {{dlc|r+}} Delirious has a very low chance to spawn the Hush form.
+** Delirium can even transform into the hidden incomplete Skinless Hush boss, which does not move and performs basic projectile attacks. This is despite the fact that Skinless Hush does not have any AI by itself and cannot be encountered without manually spawning it in.
+** {{dlc|r}} Delirium can transform into a dummy spawned by the <code>spawn dummy</code> command in the Debug Console, and when they do, a functioning endgame chest spawns instantly, which ends the fight and triggers the ending regardless of Delirium's health.
+* There are a couple items themed around Delirium that play off of its ever-changing form — those being {{i|Lil Delirium}}, {{i|Delirious}}, and {{i|D infinity|r}}.
+* {{dlc+|r}} Delirium's unlocks for Tainted characters mostly reflect the special ability of that character. For example, beating Delirium as {{C|Tainted Azazel}} unlocks {{i|Hemoptysis}}, which gives Isaac the sneeze ability of Tainted Azazel.
+** The only exceptions to this are {{C|Tainted Isaac}}, who instead unlocks {{I|Spindown Dice|n}}, {{C|Tainted Lost}}, who instead unlocks {{i|Ghost Bombs}}, and {{C|Tainted Keeper}}, who instead unlocks {{I|Keeper's Kin}}.
+** The item that most mimics Tainted Isaac's starting ability, {{I|Glitched Crown|n}}, is instead unlocked by defeating The Beast.
+** The item that most mimics Tainted Lost's starting ability, {{i|Sacred Orb}}, is instead unlocked by defeating The Beast.
+** The item that most mimics a Tainted Keeper property is {{T|Keeper's Bargain}}, unlocked by Satan, The Lamb, Isaac and ???'s completion marks together.{{dlc-}}
+
+== Bugs ==
+{{bug|If Delirium transforms into an enemy like {{e|Chub}} with multiple hitboxes, the game may crash if one of the secondary hitboxes is hit by {{p|Chaos Card}}.}}
+{{bug|Delirium can be killed by a {{p|Chaos Card}} if shot in the black segment in {{e|Carrion Queen}} form.}}
+{{Bug|dlc=nr|If Delirium transforms into {{e|Mega Satan}}, the sprites will bug out. It can attack normally, but the sprite may not be visible/half-visible/only showing the hands.}}
+{{bug|On [[Isaac's last will]], Delirium will be shown in its current form rather than its main one. Sometimes it will show his main form, even if Isaac is killed by a different form.}}
+{{bug|Delirium can sometimes deal unavoidable damage. For example, when transformed into {{e|Mom}}, the boss will constantly target Isaac until it stomps down. If Delirium changes during this targeting phase, it can teleport into Isaac, instantly damaging him.}}
+{{bug|Sometimes, when Delirium transforms into a segmented boss, its health will appear to be lower than it is. This is usually purely visual and returns to normal whenever it transforms again.}}
+{{bug|If Delirium transforms into Blue Champion {{e|Larry Jr.}}, it will, due to how Blue Champion Larry Jr.'s HP works, effectively lose a large portion of HP as its total HP will get divided into however many segments it transforms into. It will not receive the lost HP back after transforming again.}}
+{{bug|If Delirious is used to spawn {{e|Hush}}, Delirium will be able to transform into Hush.}}
+{{Bug|If Delirium transforms into {{e|Gemini}}, Suture will stay in its enraged form separated from Contusion when Delirium transforms again.}}
+{{Bug|If Delirium transforms into {{e|Blighted Ovum}}, Suture will keep its usual sprite instead of using its special sprite for Delirium.}}
+{{Bug|If Delirium transforms into the {{e|Mask of Infamy}}, it will only transform into the heart.}}
+{{Bug|If Delirium transforms into {{e|The Frail}}, it will always transform into the first phase, regardless of how much hp it has left (unless it's the Black Champion version).}}
+{{Bug|dlc=r|If Delirium transforms into {{e|Lokii}}, it will only transform into one Lokii half.}}
+{{Bug|dlc=rnr+|If Delirium transforms into {{e|War}}'s second phase, the body will be invisible (except for when it does its sobbing animation). This also applies to {{e|Blighted Ovum}}'s Contusion.}}
+{{Bug|dlc=r|As of patch [[V1.7.8]], if Delirium transforms into a champion boss, it will retain its normal appearance and color, but its attacks (and size in the case of some forms) will be those of the champion.}}
+{{Bug|dlc=r|If Delirium transforms into {{e|Bumbino}} and there are coins on the floor of its boss room, it will move toward the coins but cannot pick them up, causing it to get stuck until it transforms again.}}
+
+== References ==
+{{Reflist}}
+
+{{nav|delirium unlock|boss|hush unlock}}
+[[Category:Final bosses]]
+[[Category:Debut bosses in Afterbirth+]]

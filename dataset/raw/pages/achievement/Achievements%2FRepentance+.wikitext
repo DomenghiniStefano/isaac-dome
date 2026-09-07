@@ -1,0 +1,27 @@
+{{page dlc|r+}}
+{{storage page}}
+{{infobox achievement
+ | dlc          = r+
+ | name         = Play Online
+ | description  = Played Online
+ | requirements = Play an Online game
+ | id           = 638
+}} {{infobox achievement
+ | dlc          = r+
+ | name         = Win Online
+ | description  = Won Online
+ | requirements = Win an Online run
+ | id           = 639
+}} {{infobox achievement
+ | dlc          = r+
+ | name         = Win Online Daily
+ | description  = Won Online Daily
+ | requirements = Win an Online Daily run
+ | id           = 640
+}} {{infobox achievement
+ | dlc          = r+
+ | name         = Item Descriptions
+ | description  = Read Up!
+ | requirements = Defeat {{e|Mom}}
+ | id           = 641
+}}

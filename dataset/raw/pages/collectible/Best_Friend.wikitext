@@ -1,0 +1,48 @@
+{{infobox activated collectible
+ | id          = 136
+ | quote       = Friends 'till the end
+ | description = Spawns a decoy Isaac that explodes after 5 seconds. Enemies will always target the decoy and ignore Isaac.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | recharge    = 3
+}}
+
+{{cit|a}}
+
+== Effect ==
+* Spawns a decoy vaguely resembling Isaac in his crying animation, which explodes after 5 seconds with the blast radius of a {{e|Mega Troll Bomb}}.
+** {{dlc|nr}} The explosion deals 110 [[damage]].
+** {{dlc|r}} The explosion deals 185 [[damage]].
+* The decoy bomb distracts enemies, as they will target the decoy instead of Isaac regardless of distance.
+
+== Notes ==
+* All {{e|Bomb}} modifier items will affect Best Friend, with the exception of {{i|Bobby-Bomb}}, {{i|Bomber Boy|dlc=nr}}, {{i|Fast Bombs}}, {{i|Mr. Mega}}, and {{i|Rocket in a Jar}}.
+** {{i|Scatter Bombs}} will create mini decoys.
+** {{i|Sticky Bombs}}. When sticking to a flying enemy that can fly off-screen, Best Friend will fly off with them but will not deal explosion damage.
+* Bosses such as {{E|Chub}} or {{E|Carrion Queen}} can swallow the decoy bomb just like a regular bomb.
+* Isaac can push the decoy bomb by walking into it or shooting it with his tears just like regular bombs.
+* If Isaac leaves and re-enters a room after placing the decoy bomb, its explosion timer will be set to that of a regular bomb (1.5 seconds).
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Creates wisps that are small Isaac heads with a white flame in the middle ring. Tears shot by these have a 7.5% of applying the [[bait]] status effect, akin to {{I|Rotten Tomato}}.}}
+* {{i|Car Battery}}: Spawns two decoys on top of each other.
+* {{dlc|a+}} {{i|Remote Detonator}} + {{i|Schoolbag|n}}: The decoy bomb is affected by remote detonator.
+
+== In-game footage ==
+{{#ev:youtube|OXzwHFD5ms8||inline}} {{#ev:youtube|vFtyoyWBMvI||inline}}
+
+== Trivia ==
+* [[Edmund McMillen]] stated that Best Friend would no longer "Die upon touch". This is a reference to a bug in the original ''The Binding of Isaac'' where, in many circumstances, Isaac could take glitched hits (often killing Isaac outright).
+* Best Friend works remarkably similar to Pipe Bombs in [[wikipedia:Left 4 Dead (franchise)|Left 4 Dead]], down to the 5 second timer and not working on bosses.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Best Friend.png|The icon of Best Friend as seen on the lower 3DS screen.
+File:Best Friend Deployed.png|Best Friend when deployed onto the ground.
+</gallery>
+
+== Bugs ==
+{{bug|dlc=nr|[[Gurgle]]s, [[Splasher]]s, [[Boil]]s, [[Gut]]s, and [[Sack]]s are immune to Best Friend's explosion.}}
+{{bug|plat=Switch|Doubles when [[Multidimensional Baby]] passes through it.{{Citation needed}}}}
+
+{{nav|fr=Mon Meilleur Ami}}

@@ -1,0 +1,26 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Wish Bone
+ | id = 104
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote = Make a wish
+ | description = Taking damage has a small chance to destroy the trinket and spawn a random [[item]].
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* Taking damage has a {{dlc|nr+}} 2% / {{dlc|r+}} 5% chance to destroy the trinket and spawn a random [[item]] using the [[Item Pool|item pool]] of the current room.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Adds +5% chance to destroy the trinket upon taking damage per copy.
+* {{t|Wish Bone|nr}}: Two copies cannot be held at the same time.
+
+== In-game Footage ==
+{{#ev:youtube|jbas-sd7mGI}}
+
+== Trivia ==
+* The wishbone is the [[wikipedia:Furcula|furcula]] of the turkey, which is eaten during [[wikipedia:Thanksgiving (United States)|Thanksgiving]]. It's tradition for two people to break the wishbone by holding one end each and pulling. The one that gets the bigger end gets to make a wish.
+
+{{nav|bone|fr=Os de Poulet}}
+[[Category:Damage-triggered items]]

@@ -1,0 +1,51 @@
+{{infobox passive collectible
+ | id          = 116
+ | quote       = Quicker charge
+ | description = Reduces the charge of any [[activated item]] by 1. Any 1 charge items instead have timed recharges.
+ | quality     = 2
+ | tags        = battery summonable offensive nocantrip
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Fully charges the currently held active item upon 9 Volt's first pickup.
+* If the current active item has a recharge time of more than 1 bar, then it will grant 1 bar of charge whenever the item is activated.
+* If the current active item has a recharge time of 1 bar, then it will change the item to have a timed recharge of 15 seconds. The recharging of the item only triggers so long as there are enemies present in the room in any fashion. Empty rooms do not cause recharging to start.
+* {{dlc|a+}} If the current activated item already has a timed recharge, 9 Volt makes it start at half charge when used, effectively halving the time to recharge and allowing quicker reuse.
+
+== Notes ==
+* Enemies generated through a {{Machine|Slot Machine}}, {{Machine|Shell Game}}, {{Machine|Hell Game}}, {{Machine|Rotten Beggar}} or breaking Urns/Skulls will restart the charging process, even though a cleared room still counts as cleared if enemies are spawned in it.
+
+== Synergies ==
+* '''2-bar items''': Fills the entire gauge in a single room, effectively granting the opportunity for the item to be used every room.
+* {{dlc|a+}} '''3-bar items''': Quadruple rooms and L-shaped rooms give 2 bars after clearing them, allowing one free use of the item in those rooms if the gauge is full upon entering them. It can also be used at the beginning of a Boss Challenge Room to get the full charges back after beating both bosses.
+** {{t|AAA Battery|a+}} + 3-bar items: Same as the 2-bar item synergy without AAA Battery.
+* {{dlc|a+}} '''4-bar items''': In a Challenge Room, if the item is used during the first wave, it will get all its charges back at the end.
+** {{t|AAA Battery|a+}} + 4-bar items: Same as the 3-bar item synergy without AAA Battery.
+* {{i|Jacob's Ladder}}: Increases arcing distance of sparks.
+* {{C|Keeper|a}}: The {{I|Wooden Nickel|n}} and the 9 Volt allow him to gain health (and money) forever, as long as there is an enemy in the room.
+** An enemy spawned in a cleared room will also cause recharging to start.
+* {{I|Telekinesis|r}}: The item can be reactivated the moment the previous charge stops, making it always active.
+
+== Interactions ==
+* {{I|9 Volt}}: No further decrease in charges.
+* {{I|Alabaster Box}}: No effect.
+* {{T|Dim Bulb}}: Prevents Dim Bulb from working, as minimum charge becomes 1 instead of 0.
+* {{I|Eraser}}: No effect.
+* {{I|Everything Jar}} / {{I|Larynx}}: The first bar gains an automatic recharge, but the further bars will not be affected.
+* {{i|Sharp Plug}}:
+** {{dlc|nr}} Renders the Sharp Plug unusable on 2+ charge items. Sharp Plug can only be used if the item is at 0 charges, but 9 Volt instantly gives +1 charge to the item upon activation.
+** {{dlc|r}} Lowers the cost of using Sharp Plug by half a heart on 2+ charge items.
+* {{i|The Battery}}: If the effect of 9 Volt would result in the active item having at least 1 full level of charge, 9 Volt has no effect. Otherwise, it functions as usual.
+
+== In-game Footage ==
+{{#ev:youtube|9o9X7hqqF30||inline}} {{#ev:youtube|1dcCYFSNP2s||inline}}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Extension Cord, Jumper Cables }}
+
+== Trivia ==
+* This item is used in [[When Life Gives You Lemons|When Life Gives You Lemons (challenge #12)]], [[Beans!|Beans! (challenge #13)]], [[It's in the Cards|It's in the Cards (challenge #14)]], and {{dlc|r}} [[Scat Man|Scat Man (challenge #36)]].
+
+{{nav|active modifier|battery}}

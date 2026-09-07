@@ -1,0 +1,36 @@
+{{infobox trinket
+ | id          = 24
+ | quote       = Wealth of gas
+ | description = Isaac will fart when he picks up a [[Coins|coin]]. Coins have a higher chance to drop from {{e|Poop}}s.
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Upon picking up a [[Coins|coin]], Isaac farts, [[Knock-back|knocking back]] nearby enemies {{dlc|r}} and projectiles.
+** {{dlc|nr}} The fart does not deal any damage or inflict [[poison]].
+*** {{dlc|r}} The fart inflicts [[poison]].
+* 20% chance for a coin to drop from {{e|Poop}}s, in addition to its normal drop chances.
+
+== Notes ==
+* This trinket can be found by destroying {{E|Special Shopkeeper}}s, and {{dlc+|r}} [[Rocks#Buckets|buckets]] in {{s|Dross}}.{{dlc-}}
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Destroyed poops are 30% more likely to drop coin.
+* {{i|Dirty Mind}}: Grants a chance to spawn a Dip each time a coin is picked up.
+* {{i|E. Coli|a+}}/{{i|Flush!|n}}: Grants poops made from enemies a chance to drop pickups.
+* {{t|Gigante Bean}}: The size of the fart is drastically increased.
+* {{i|IBS}} / {{c|Tainted ???}}: Thrown poops gain the chance of dropping a coin on being destroyed.
+* {{I|IV Bag}} / {{I|Piggy Bank}} / {{T|Swallowed Penny}}: Pennies dropped can be used either defensively to deflect enemies {{dlc|r}}and projectiles, or offensively to poison.
+* {{i|The Poop}} / {{T|Mysterious Candy}}: Allows Isaac to slowly farm coins over time.
+* {{i|Ghost Pepper}} / {{i|Bird's Eye}} : Isaac farts flames whenever he picks up coins.
+
+== Interactions ==
+* {{i|E. Coli|na+}} / {{i|Flush!|n}}: Poops made from enemies do not drop pickups.
+* {{c|Tainted Keeper}}: All coins dropped from enemies trigger the effect, helping in defending Keeper or damaging nearby enemies, though the knockback could make collecting coins more difficult were there a lot of them dropped close to each other.
+
+== In-game Footage ==
+{{#ev:youtube|HjHk-EJHPjA}}
+
+{{nav|coin modifier|penny|fr=Pièce de Fesse}}
+[[Category:Penny trinkets]]

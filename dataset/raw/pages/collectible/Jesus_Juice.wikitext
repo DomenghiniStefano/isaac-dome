@@ -1,0 +1,28 @@
+{{infobox passive collectible
+ | id          = 197
+ | quote       = Damage + range up
+ | description = {{dlc|nr}} +0.5 [[damage]], +0.25 [[range]], +0.5 [[tear falling speed]].<br>{{dlc|r}} +0.5 [[damage]], +1.5 [[range]].
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.5 [[damage]].
+* {{dlc|nr}} +0.25 [[range]].
+* {{dlc|r}} +1.5 [[range]].
+* {{dlc|nr}} +0.5 [[tear falling speed]].
+
+== In-game Footage ==
+{{#ev:youtube|StN4HsmZS8s}}
+
+== Trivia ==
+* "Jesus juice" is slang for the red wine used in Holy Communion, which is supposed to signify the blood of Jesus. When children take communion, instead of letting them have wine, most churches will let them have grape juice instead, which is why the item is a box of grape juice.
+* According to the ''Repentance'' trailer, Jesus Juice contains "less than 1% Blood of Christ".
+* According to a 2021 interview with Edmund McMillen hosted by BroskiPlays, the name 'Jesus Juice' is also a reference to the term allegedly used by Michael Jackson when giving wine to minors, adding a layer of dark satire to the item’s religious symbolism.<ref>https://www.youtube.com/live/b0IWbxuZWF0?t=2106</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Sang du Christ}}

@@ -1,0 +1,66 @@
+{{infobox passive collectible
+ | image name   = * {{dlc|na+|Rebirth}}
+ | id           = 122
+ | costume name = * {{dlc|nr|Rebirth}}
+ | quote        = Curse up
+ | description  = Grants +1.5 [[Damage]] and +0.3 [[Speed]] whenever Isaac has a {{E|Half Red Heart}} or less.
+ | quality      = 2
+ | tags         = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants +1.5 [[Damage]] and +0.3 [[Speed]] whenever Isaac has a {{E|Half Red Heart}} or less.
+
+== Notes ==
+* {{c|Eve}} starts with this item by default, and has the following extra effects:
+** The item is activated at one full {{E|Red Heart}} or less.
+** Her damage multiplier increases from 0.75 to 1.0 when active.
+* The effect is removed after leaving a room with more than half a heart (more than one full heart for {{c|Eve}}).
+* The effect may not be immediately applied if Isaac has lost red hearts without taking damage; the effect will activate upon entering a new room.
+* The effect is always active for characters without {{E|Red Heart}} containers, such as {{c|???}} and {{c|The Lost}}, though other characters can also lose their heart containers through Devil deals or items like {{i|Guppy's Paw}} or {{i|Abaddon}}.
+* {{p|III - The Empress}} grants a similar effect to Whore of Babylon for the current room which does stack with Whore of Babylon.
+** Stacking ''The Empress'' on Whore of Babylon either via multiple cards or multiple activations of {{i|Blank Card}} increases damage by the number of uses ''squared'', e.g. +1.5 * 2 * 2 total damage bonus for using the card on top of activated Whore of Babylon.
+
+== Synergies ==
+* {{i|Blood Rights}} / {{i|Razor Blade}} / {{i|IV Bag}} / {{i|Sumptorium}}: As these items takes {{e|Red Heart}}s before other heart types, it can be use to get the Whore of Babylon activation's condition easier.
+*{{i|Sharp Plug}} / {{i|Blood Bombs}}: Prioritize removing {{e|Red Heart}}s first although are conditional on having an applicable active item or having zero bombs. 
+*{{i|Shard of Glass}}: Will slowly drain Isaac's red hearts upon taking damage, eventually triggering Whore of Babylon, unless Isaac has a {{e|Rotten Heart}} with no soul, black or bone hearts (unless playing as {{c|Eve}}). 
+* {{i|Blood Oath}}: Consistently triggers Whore of Babylon at the start of each floor along with giving other bonuses. 
+* {{i|Guppy's Paw}} / {{i|Potato Peeler}}: Can be used to remove red health containers to keep Whore of Babylon Active.
+**{{i|Magic Skin}} / {{p|VI - The Lovers?}}: Prioritize removing red heart containers with the downside of giving a [[Health#Broken_Hearts|Broken Heart]] with each use 
+* {{t|Crow Heart}}: Can be used to remove red hearts while keeping soul and black hearts intact.
+*{{c|The Forgotten}}: By quickly switching to {{c|The Soul}}, Whore of Babylon can be triggered for the room if The Forgotten does not meet the trigger conditions.
+
+== Interactions ==
+* {{I|Birthright}} + {{C|Eve}}: Whore of Babylon will be active at all times.
+* {{c|Keeper|a}} / {{c|Tainted Keeper}}: As Keeper cannot have half of a Coin Heart, this item has no effect on him.
+* {{e|Rotten Heart}}s: Counts as a full Red Heart for the purposes of this item, rendering it impossible to activate (except for {{c|Eve}}).
+* {{i|Whore of Babylon}}: No further effect when multiple copies are acquired.
+* {{i|Placenta}} / {{i|Charm of the Vampire}} / {{i|Leech}} / {{i|Sol}}: Regen effects can make triggering Whore of Babylon difficult if Isaac has empty [[Health#Red_Heart_Containers|Red Heart Container]]s.
+**{{t|Isaac's Fork}} / {{t|Mom's Locket}} / {{t|Stem Cell}}: Regen effects from trinkets can be problematic in maintaining Whore of Babylon if swallowed or smelted 
+**{{i|Cambion Conception}} / {{p|Soul of Lilith}}: Have a chance of granting Leech, although are likely still worth using for the chance of receiving strong familiars.
+*{{i|Dogma}}: Is forcefully given to Isaac after defeating {{e|Dogma}}, which among other effects heals him up to at least 6 hearts by filling [[Health#Red_Heart_Containers|Red Heart Container]]s and giving {{e|Soul Heart}}s. Forcing Isaac out of Whore of Babylon if he has at least 1 [[Health#Red_Heart_Containers|Red Heart Container]] while under 5 hearts (2 Containers while under 4 hearts for {{c|Eve}})
+*{{i|Magneto}}: Can make avoiding {{e|Red Heart}} pickups difficult
+*{{c|Bethany}} / {{c|Tainted Magdalene}}: Due to their reliance on red hearts makes Whore of Babylon much more difficult to use.
+
+== In-game Footage ==
+{{#ev:youtube|iNhWmangIrk||inline}} {{#ev:youtube|AmBjxSFJdc0||inline}}
+
+== Gallery ==
+<gallery>
+Collectible Whore of Babylon Eve appearance Rebirth.png| {{c|Eve|nr}} as she appears under the effect of Whore of Babylon.
+Collectible Whore of Babylon Eve appearance.png| {{c|Eve|r}} as she appears under the effect of Whore of Babylon.
+Whore of Babylon activation.png| The pop-up that appears whenever Whore of Babylon activates.
+</gallery>
+
+== Trivia ==
+* Upon obtaining the Whore of Babylon effect, a popup displaying the text ''"What a horrible night to have a curse"'' appears on-screen. This can be disabled in the game options.
+** This text is a reference to ''[[wikipedia:Castlevania II: Simon's Quest|Castlevania II: Simon's Quest]]''. In the game, the text appears when the sun goes down.
+* In the original ''The Binding of Isaac'', Whore of Babylon gave a higher stat increase just for the room it was activated in, with +2.16 damage and +0.36 speed.
+** {{p|III - The Empress}} was also much stronger, with +3.375 damage and +0.45 speed.
+* The Whore of Babylon is an evil creature mentioned in the [[wikipedia:The Book of Revelation|Book of Revelations]].
+* This item is used in {{chal|Darkness Falls}}.
+
+{{nav|fr=Grande Prostituée}}

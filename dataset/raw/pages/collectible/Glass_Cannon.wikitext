@@ -1,0 +1,68 @@
+{{infobox activated collectible
+ | dlc         = a
+ | image name  = * {{dlcalt|na+=Afterbirth|nr=Afterbirth+}}
+ | quote       = Be gentle...
+ | description = {{dlc|nr}} Fires a high-damage piercing spectral tear, but lowers Isaac's health to half a heart.<br>{{dlc|r}} Fires a high-damage piercing spectral tear. If Isaac takes damage while holding this, he takes extra damage and it becomes {{i|Broken Glass Cannon|dlc=n}}.
+ | quality     = 1
+ | tags        = offensive
+ | id          = 352
+ | recharge    = 4s
+}} {{disambig msg|the item|the challenge|Glass Cannon (Challenge)}}
+
+{{cit|a|a}}
+
+== Effects ==
+* Fires a single high-damage [[piercing]] tear which can travel over [[obstacle]]s.
+** The damage dealt by this tear is ten times Isaac's damage, plus a flat 10 damage.
+** The shot has an additional 1.5x size multiplier on top of damage-increased size.
+* {{dlc|nr}} Sets Isaac's health to half a heart with each use (half a Soul Heart if these are present but there are no Red Heart containers). This also removes any other {{E|Soul Heart}}s or {{E|Black Heart}}s, but not {{E|Eternal Heart}}s.
+** {{dlc+|a+nr}} If Isaac has no Red Hearts and at least one {{E|Bone Heart}}, only an empty Bone Heart remains.{{dlc-}}
+* {{dlc+|r}} Upon taking damage, this item turns into {{i|Broken Glass Cannon}}, and Isaac will lose an additional 2 hearts of health on top of the damage he already took. Isaac gains 1.5 range and leaves a trail of red [[creep]] behind him for the rest of the current room, identical to the effects of {{i|Anemic}}.
+** If the damage from breaking Glass Cannon would result in death, Isaac will remain at half a heart, gaining half a soul heart if necessary. This does not apply if the damage Isaac took would be lethal before the extra damage is taken.
+** The damage from breaking Glass Cannon does not count as self-damage and '''will''' result in losing Angel/Devil Room chance if it is taken to Red Hearts.
+** Self-damage (e.g. from {{Machine|Blood Donation Machine}}s or {{r|Sacrifice Room}}s) will not break Glass Cannon.{{dlc-}}
+
+== Notes ==
+* Glass Cannon can be fired diagonally, {{dlc+|a+}} even without {{I|Analog Stick}}{{dlc-}}.
+* Shooting the Glass Cannon gives a slight [[knockback]] effect to Isaac, which can be dangerous in rooms with obstacles like spikes or Fire Places.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Grants Judas +2.67 damage up while Glass Cannon is broken.}}
+* {{Book of Virtues synergy|description=Spawns white wisps on the middle ring. The wisps shatter in one hit and their tears deal 8 damage per shot, but if one of the wisps is destroyed, all the others are also destroyed. Does not affect wisps other than ones made by this item. Despite Glass Cannon having a timed charge, the wisps persist between rooms.}}
+* {{i|Chocolate Milk|nr}}: The current charge of Chocolate Milk affects Glass Cannon.
+* {{i|Compound Fracture}} / {{i|Cricket's Body}} / {{i|The Parasite}}: Tears fired by Glass Cannon will split.
+* {{i|Godhead}}: Creates a giant aura around Glass Cannon tears that almost fills up normal sized rooms.
+* {{i|Lachryphagy}}: Glass Cannon will fire giant Lachryphagy tears. Tears are harder to feed as they will burst very quickly but they can be fed if you fire tears beforehand and then fire Glass Cannon into those tears.
+* {{i|Multidimensional Baby}}: The Glass Cannon tears will be doubled by Multidimensional Baby.
+* {{i|Mysterious Liquid}}: Creates a large pool of creep when tears land.
+* {{i|Tiny Planet}}: Tears produced by Glass Cannon will orbit Isaac.
+* {{i|Lost Contact}}: The Glass Cannon tears can block enemy shots.
+
+== Interactions ==
+* {{i|Anti-Gravity}}, {{i|Car Battery}}, {{i|The Inner Eye}}, {{i|Mutant Spider}}, {{i|Brimstone}}, {{i|Dr. Fetus}}, {{i|Epic Fetus}}, {{i|The Ludovico Technique}}, {{i|Marked}}, {{i|Mom's Knife}}, {{i|Monstro's Lung}}, {{i|Technology}}, {{i|Tech X}}, {{i|9 Volt|na+}}, and {{i|20/20|nr}}: No effect, Glass Cannon fires a normal tear.
+* {{i|9 Volt|a+}}: Reduces charge time to 2 seconds.
+* {{I|20/20|r}}: Gives a 25% damage down, hurting Glass Cannon's performance.
+* {{i|Eye of the Occult}}: Cannon shot can be controlled. If a synergy is given a crosshair (e.g. {{i|Brimstone}}, {{i|Technology}} etc.), the tear will follow wherever it's pointed.
+* {{dlc+|r}} {{i|Habit}}: Upon taking damage, {{I|Broken Glass Cannon}} will be half-charged. However, taking damage before the last charge will break the cannon again.{{dlc-}}
+* Items that trigger upon taking damage (such as {{i|It Hurts}} and {{t|Swallowed Penny}}) will activate 3 times when the Glass Cannon breaks.
+* {{i|Holy Mantle|nr}}: Doesn't prevent damage done by Glass Cannon, but will protect against other types of damage.
+* {{i|Ipecac|nr}}: As the Glass Cannon tears are so large, even a modest damage increase or a single tear size increasing item is likely to render the tear unable to damage enemies, their explosions too far from them.
+* {{i|Pluto}}: Allows Isaac to cross small gaps using the knockback of Glass Cannon.
+* {{i|Schoolbag|r}}: The cannon will break on damage, regardless if it or another active is on hand.
+** '''Schoolbag''' + {{I|Tear Detonator|n}}: Glass Cannon shots will detonate into normal tears. The tears don't inherit [[spectral]] or [[piercing]].
+* {{i|Soy Milk}}: Reduces damage of shots, no effect on charge time.
+* {{i|Trisagion}}: Fires normal Trisagion beams that do not have increased damage.
+* {{i|The Wafer|r}}: Doesn't reduce the damage from breaking the Glass Cannon.
+* {{i|Stye}} and {{i|Blood Clot}}: Copies the eye used most recently.
+
+== In-game Footage ==
+{{#ev:youtube|tXpqxxRox6Q}}
+
+== Trivia ==
+* Glass Cannon is a term used in video games for a character or entity that deals high amounts of damage but has very low defense.
+
+== Bugs ==
+{{bug|dlc=nr|Glass Cannon can be used to steal Devil Room items by using it to set your health to {{dlc|na+}} half of a Soul Heart or {{dlc|a+}} no health at all before you die. In the latter case, picking up any item that isn't a health upgrade will kill Isaac.}}
+{{bug|dlc=rnr+|If {{c|Tainted Forgotten}} takes damage with the cannon held above his head, he will be unable to fire and unable to attack. Exiting and continuing will fix this.}}
+
+{{nav|fr=Canon de Verre}}

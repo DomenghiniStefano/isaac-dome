@@ -1,0 +1,49 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 124
+ | quote       = Hold the door
+ | description = The last door Isaac went through stays open, allowing him to leave the room even if enemies are in it.
+ | tags        = nogreed
+ | unlocked by = Door Stop
+}}
+
+{{cit|ut|a+3}}
+
+== Effects ==
+* While held, the last door Isaac went through stays open, allowing him to leave the room even if enemies are in it.
+** Does not prevent doors from closing while Isaac is within the room, e.g. triggering a {{R|Challenge Room}} or awaking an Angel in an {{r|Angel Room}}.
+
+== Notes ==
+* Does not work in [[Greed Mode]].
+** {{dlc|r}} Cannot spawn in Greed Mode.
+* This trinket allows Isaac to leave rooms, including boss rooms, if the fight goes poorly.
+** This becomes particularly useful in {{s|The Void}}, as it allows to escape the {{e|Delirium}} fight if encountered.
+* Leaving immediately after enemies have spawned gives the player information on the fight, potentially improving decision making.
+* If a {{R|Devil Room}} has a {{e|Krampus}} fight in it, Isaac may choose not to fight him and leave.
+* If {{e|Greed}} / {{e|Super Greed}} is found in a {{R|Shop}}, one can kill it and leave the room while summoned monsters are still alive to respawn the boss and farm its loot infinitely.
+* Does not affect {{e|Mom}}'s and {{e|Mega Satan}}'s boss room as the access door itself disappears.
+* {{dlc|nr}} If a room contained champion enemies, upon leaving and re-entering the room, all previous champion enemies will have turned to regular enemies.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Boss Rush exit remains open.
+* {{i|4.5 Volt}} / {{i|Jumper Cables}}: Provides infinite charges by clearing some enemies then leaving the room, and repeating.
+* {{I|Charm of the Vampire}} / {{I|Gimpy}}: Allows the possibility to generate unlimited Hearts.
+* {{I|Head of the Keeper}}: With enough patience, Coins can be gathered infinitely.
+* {{i|Holy Mantle}}: Can be used to reset the shield at will.
+* {{c|Tainted Keeper}}: Leaving and re-entering the room allows for limited coin farming; however, enemies in rooms Tainted Keeper has already visited will eventually stop dropping coins.
+
+== In-game Footage ==
+{{#ev:youtube|zMq22VbpIYs}}
+
+== Gallery ==
+<gallery>
+File:Trinket Door Stop mod icon.png|Door Stop's appearance in the original [http://steamcommunity.com/sharedfiles/filedetails/?id=894758868 Steam Workshop mod].
+File:Trinket Door Stop Booster Pack 3 icon.png|Door Stop's original appearance prior to [[Booster Pack #4]].
+</gallery>
+
+== Trivia ==
+* Door Stop is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=894758868 this Steam Workshop trinket] by Strawrat and CupertinoEffect - which in turn is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=892838724 this Steam Workshop trinket] by Lord Pigfoot Nosebeggar XVII.
+* Before ''[[Repentance+]]'', the pickup quote included an exclamation point.
+* The pickup quote may be a reference to the ''Game of Thrones'' episode [[wikipedia:The Door (Game of Thrones)|The Door]] where the same quote is repeatedly exclaimed.
+
+{{nav|booster pack|fr=Cale-Porte}}

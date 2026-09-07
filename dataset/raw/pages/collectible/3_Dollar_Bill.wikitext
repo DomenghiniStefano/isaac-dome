@@ -1,0 +1,73 @@
+{{infobox passive collectible
+ | id          = 191
+ | quote       = Rainbow tears
+ | description = {{dlc|na}} Gives Isaac a random tear effect every room.<br>{{dlc|a}} Gives Isaac a random tear effect every few seconds.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants Isaac random tear effects. The possible effects are: {{column list | width = 15em | content =
+** {{i|8 Inch Nails|r}}
+** {{i|20/20}}
+** {{I|Apple!|r}}
+** {{i|Ball of Tar}}
+** {{I|Continuum|r}}
+** {{I|Cricket's Body|r}}
+** {{i|Dark Matter}}
+** {{i|Dead Eye|r}}
+** {{i|Death's Touch}}
+** {{i|Euthanasia|r}}
+** {{i|Explosivo|r}}
+** {{i|Eye of Belial|r}}
+** {{i|Fire Mind}}
+** {{i|Holy Light|r}}
+** {{i|Iron Bar}}
+** {{i|Little Horn|r}}
+** {{i|Lost Contact|r}}
+** {{i|Mom's Contacts}}
+** {{i|Mom's Eyeshadow|r}}
+** {{i|Mom's Perfume|r}}
+** {{i|Mutant Spider|r}}
+** {{i|My Reflection}}
+** {{i|Mysterious Liquid}}
+** {{i|Number One}}
+** {{i|Ouija Board}}
+** {{i|Parasitoid|r}}
+** {{i|Proptosis}}
+** {{i|Pupula Duplex|r}}
+** {{I|Rubber Cement|r}}
+** {{i|Sagittarius}}
+** {{i|Scorpio}}
+** {{i|Sinus Infection|r}}
+** {{i|Speed Ball}}
+** {{i|Spoon Bender}}
+** {{i|The Inner Eye}}
+** {{i|The Parasite}}
+** {{i|The Sad Onion|r}}
+** {{i|The Wiz|r}}
+** {{i|Tough Love}}
+}}
+* {{dlc|na}} The type of randomized tear is determined upon entering a room.
+* {{dlc|a}} The type of randomized tear changes every 6 seconds. The item appears to select two tear effects at once, perhaps staggering the times at which each of those effects change.
+* {{dlc|r}} While not directly a tear effect, 3 Dollar Bill may rotate through {{i|Magneto}} and {{i|Lucky Foot}}, which may be used to take only positive pills.
+
+== Notes ==
+* {{dlc|na}} If a run is quit, and then continued, 3 Dollar Bill will have a new random tear effect for the current room.
+* Items that are required to charge like {{i|Brimstone}} or {{i|Monstro's Lung}} can have their charge amount change when gaining a new tear effect, depending on Isaac's new [[Tears]] stat. This can cause fully-charged items to need more charge time.
+* {{dlc+|a}} Unlike {{i|Fruit Cake}}, which can only modify individual tears, 3 Dollar Bill can modify stats as well.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|dWj_H5lznQY}}
+
+== Trivia ==
+* This item is a reference to an old expression "queer as a three dollar bill".
+* {{dlc+|a}} This item is used in {{chal|PRIDE DAY!}}.{{dlc-}}
+* Visually resembles the money from the popular board game Monopoly
+
+== Bugs ==
+{{bug|dlc=na+|The {{i|Proptosis}} effect will only fire half the range it would normally (damage is increased normally).}}
+
+{{nav|fr=Billet de Trois}}

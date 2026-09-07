@@ -1,0 +1,24 @@
+{{infobox passive collectible
+ | id          = 250
+ | quote       = 1+1 BOOM!
+ | description = All normal {{e|Bomb}}s become {{e|Double Bomb}}s.
+ | quality     = 1
+ | tags        = summonable offensive nocantrip
+}}
+
+{{cit|p}}
+
+== Effect ==
+* All normal {{e|Bomb}}s become {{e|Double Bomb}}s.
+
+== Interactions ==
+* {{i|Humbleing Bundle}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|vDaOSMxgqxI}}
+
+== Trivia ==
+* "B.O.G.O." is an acronym for the term "Buy One, Get One (Free)".
+* The description on this item is a reference to picking up double bombs in the original ''The Binding of Isaac'' where the message "1+1 Free!" would pop up in the bottom right whenever picking up a double bomb.
+
+{{nav|bomb modifier|fr=Soldes Explosives}}

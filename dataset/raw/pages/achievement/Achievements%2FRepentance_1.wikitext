@@ -1,0 +1,542 @@
+{{page dlc|r}}
+{{storage page}}
+{{infobox achievement
+ | dlc          = r
+ | name         = Bethany
+ | link         = Bethany
+ | description  = Beat Hard mode as Lazarus without losing a life
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[hard mode]] as {{c|Lazarus}}, without [[death|dying]] at all
+ | id           = 404
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Jacob and Esau
+ | link         = Jacob and Esau
+ | description  = You are just like your father...
+ | requirements = Defeat {{e|Mother}}
+ | id           = 405
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Planetarium
+ | link         = Planetarium
+ | description  = Kids shouldn't believe in fortunes...
+ | requirements = Collect any 3 items with the [[Item Tags stars|'stars' item tag]] in a single run
+ | id           = 406
+}} {{infobox achievement
+ | dlc          = r
+ | name         = A Secret Exit
+ | link         = Downpour
+ | description  = Complete ??? 3 times.
+ | requirements = Defeat {{e|Hush}} 3 times
+ | id           = 407
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Forgotten Lullaby
+ | link         = Forgotten Lullaby
+ | description  = Get that song out of her head.
+ | requirements = Blow up {{e|The Siren}}'s skull after defeating her
+ | id           = 408
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Fruity Plum
+ | link         = Fruity Plum
+ | description  = Defeat Baby Plum 10 times.
+ | requirements = Defeat {{e|Baby Plum}} 10 times
+ | id           = 409
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Plum Flute
+ | link         = Plum Flute
+ | description  = Make a new friend!
+ | requirements = Allow [[Baby Plum]] to escape instead of defeating her
+ | id           = 410
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Rotten Heart
+ | link         = Rotten Heart
+ | description  = Enter the Corpse...
+ | requirements = Enter {{s|Corpse}} for the first time
+ | id           = 411
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Dross
+ | link         = Dross
+ | description  = Defeat all bosses in Downpour.
+ | requirements = Defeat all bosses in {{s|Downpour}}
+ | id           = 412
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Ashpit
+ | link         = Ashpit
+ | description  = Defeat all bosses in the Mines.
+ | requirements = Defeat all bosses in {{s|Mines}}
+ | id           = 413
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Gehenna
+ | link         = Gehenna
+ | description  = Defeat all bosses in the Mausoleum.
+ | requirements = Defeat all bosses in {{s|Mausoleum}}
+ | id           = 414
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Red Key
+ | link         = Red Key
+ | description  = The other side is calling...
+ | requirements = Open Mom's Chest in {{s|Home}}
+ | id           = 415
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Wisp Baby
+ | link         = Co-op#Repentance babies
+ | description  = Beat the game in Hard mode with Bethany.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Bethany}}
+ | id           = 416
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Book of Virtues
+ | link         = Book of Virtues
+ | description  = Complete the Cathedral with Bethany.
+ | requirements = Defeat {{e|Isaac}} as {{c|Bethany}}
+ | id           = 417
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Urn of Souls
+ | link         = Urn of Souls
+ | description  = Complete Sheol with Bethany.
+ | requirements = Defeat {{e|Satan}} as {{c|Bethany}}
+ | id           = 418
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Blessed Penny
+ | link         = Blessed Penny
+ | description  = Complete the Chest with Bethany.
+ | requirements = Defeat {{e|???}} as {{c|Bethany}}
+ | id           = 419
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Alabaster Box
+ | link         = Alabaster Box
+ | description  = Complete the Dark Room with Bethany.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Bethany}}
+ | id           = 420
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Beth's Faith
+ | link         = Beth's Faith
+ | description  = Complete Boss Rush with Bethany.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Bethany}}
+ | id           = 421
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Soul Locket
+ | link         = Soul Locket
+ | description  = Beat Greed mode with Bethany.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Bethany}}
+ | id           = 422
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Divine Intervention
+ | link         = Divine Intervention
+ | description  = Complete ??? with Bethany.
+ | requirements = Defeat {{e|Hush}} as {{c|Bethany}}
+ | id           = 423
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Vade Retro
+ | link         = Vade Retro
+ | description  = Beat Greedier mode with Bethany.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Bethany}}
+ | id           = 424
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Star of Bethlehem
+ | link         = Star of Bethlehem
+ | description  = Beat the Void with Bethany.
+ | requirements = Defeat {{e|Delirium}} as {{c|Bethany}}
+ | id           = 425
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Hope Baby
+ | link         = Co-op#Repentance babies
+ | description  = Beat everything in Hard mode with Bethany.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Bethany}}
+ | id           = 426
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Glowing Baby
+ | link         = Co-op#Repentance babies
+ | description  = Defeat Mega Satan with Bethany.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Bethany}}
+ | id           = 427
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Double Baby
+ | link         = Co-op#Repentance babies
+ | description  = Beat the game in Hard mode with Jacob and Esau.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Jacob and Esau}}
+ | id           = 428
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Stairway
+ | link         = The Stairway
+ | description  = Complete the Cathedral with Jacob and Esau.
+ | requirements = Defeat {{e|Isaac}} as {{c|Jacob and Esau}}
+ | id           = 429
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Red Stew
+ | link         = Red Stew
+ | description  = Complete Sheol with Jacob and Esau.
+ | requirements = Defeat {{e|Satan}} as {{c|Jacob and Esau}}
+ | id           = 430
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Birthright
+ | link         = Birthright
+ | description  = Complete the Chest with Jacob and Esau.
+ | requirements = Defeat {{e|???}} as {{c|Jacob and Esau}}
+ | id           = 431
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Damocles
+ | link         = Damocles
+ | description  = Complete the Dark Room with Jacob and Esau.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Jacob and Esau}}
+ | id           = 432
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Rock Bottom
+ | link         = Rock Bottom
+ | description  = Complete Boss Rush with Jacob and Esau.
+ | requirements = Complete {{r|Boss Rush}} as {{c|Jacob and Esau}}
+ | id           = 433
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Inner Child
+ | link         = Inner Child
+ | description  = Beat Greed mode with Jacob and Esau.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Jacob and Esau}}
+ | id           = 434
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Vanishing Twin
+ | link         = Vanishing Twin
+ | description  = Complete ??? with Jacob and Esau.
+ | requirements = Defeat {{e|Hush}} as {{c|Jacob and Esau}}
+ | id           = 435
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Genesis
+ | link         = Genesis
+ | description  = Beat Greedier mode with Jacob and Esau.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Jacob and Esau}}
+ | id           = 436
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Suplex!
+ | link         = Suplex!
+ | description  = Complete the Void with Jacob and Esau.
+ | requirements = Defeat {{e|Delirium}} as {{c|Jacob and Esau}}
+ | id           = 437
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Solomon's Baby
+ | link         = Co-op#Repentance babies
+ | description  = Beat everything in Hard mode with Jacob and Esau.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Jacob and Esau}}
+ | id           = 438
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Illusion Baby
+ | link         = Co-op#Repentance babies
+ | description  = Defeat Mega Satan with Jacob and Esau.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Jacob and Esau}}
+ | id           = 439
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Meat Cleaver
+ | link         = Meat Cleaver
+ | description  = Complete the Corpse with Isaac.
+ | requirements = Defeat {{e|Mother}} as {{c|Isaac}}
+ | id           = 440
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Options?
+ | link         = Options?
+ | description  = Complete the final chapter with Isaac.
+ | requirements = Defeat {{e|The Beast}} as {{c|Isaac}}
+ | id           = 441
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Yuck Heart
+ | link         = Yuck Heart
+ | description  = Complete the Corpse with Magdalene.
+ | requirements = Defeat {{e|Mother}} as {{c|Magdalene}}
+ | id           = 442
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Candy Heart
+ | link         = Candy Heart
+ | description  = Complete the final chapter with Magdalene.
+ | requirements = Defeat {{e|The Beast}} as {{c|Magdalene}}
+ | id           = 443
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Guppy's Eye
+ | link         = Guppy's Eye
+ | description  = Complete the Corpse with Cain.
+ | requirements = Defeat {{e|Mother}} as {{c|Cain}}
+ | id           = 444
+}} {{infobox achievement
+ | dlc          = r
+ | name         = A Pound of Flesh
+ | link         = A Pound of Flesh
+ | description  = Complete the final chapter with Cain.
+ | requirements = Defeat {{e|The Beast}} as {{c|Cain}}
+ | id           = 445
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Akeldama
+ | link         = Akeldama
+ | description  = Complete the Corpse with Judas.
+ | requirements = Defeat {{e|Mother}} as {{c|Judas}}
+ | id           = 446
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Redemption
+ | link         = Redemption
+ | description  = Complete the final chapter with Judas.
+ | requirements = Defeat {{e|The Beast}} as {{c|Judas}}
+ | id           = 447
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Eternal D6
+ | link         = Eternal D6
+ | description  = Complete the Corpse with ???.
+ | requirements = Defeat {{e|Mother}} as {{c|???}}
+ | id           = 448
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Montezuma's Revenge
+ | link         = Montezuma's Revenge
+ | description  = Complete the final chapter with ???.
+ | requirements = Defeat {{e|The Beast}} as {{c|???}}
+ | id           = 449
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Bird Cage
+ | link         = Bird Cage
+ | description  = Complete the Corpse with Eve.
+ | requirements = Defeat {{e|Mother}} as {{c|Eve}}
+ | id           = 450
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Cracked Orb
+ | link         = Cracked Orb
+ | description  = Complete the final chapter with Eve.
+ | requirements = Defeat {{e|The Beast}} as {{c|Eve}}
+ | id           = 451
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Bloody Gust
+ | link         = Bloody Gust
+ | description  = Complete the Corpse with Samson.
+ | requirements = Defeat {{e|Mother}} as {{c|Samson}}
+ | id           = 452
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Empty Heart
+ | link         = Empty Heart
+ | description  = Complete the final chapter with Samson.
+ | requirements = Defeat {{e|The Beast}} as {{c|Samson}}
+ | id           = 453
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Devil's Crown
+ | link         = Devil's Crown
+ | description  = Complete the Corpse with Azazel.
+ | requirements = Defeat {{e|Mother}} as {{c|Azazel}}
+ | id           = 454
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Lil Abaddon
+ | link         = Lil Abaddon
+ | description  = Complete the final chapter with Azazel.
+ | requirements = Defeat {{e|The Beast}} as {{c|Azazel}}
+ | id           = 455
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Tinytoma
+ | link         = Tinytoma
+ | description  = Complete the Corpse with Lazarus.
+ | requirements = Defeat {{e|Mother}} as {{c|Lazarus}}
+ | id           = 456
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Astral Projection
+ | link         = Astral Projection
+ | description  = Complete the final chapter with Lazarus.
+ | requirements = Defeat {{e|The Beast}} as {{c|Lazarus}}
+ | id           = 457
+}} {{infobox achievement
+ | dlc          = r
+ | name         =  'M
+ | link         =  'M
+ | description  = Complete the Corpse with Eden.
+ | requirements = Defeat {{e|Mother}} as {{c|Eden}}
+ | id           = 458
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Everything Jar
+ | link         = Everything Jar
+ | description  = Complete the final chapter with Eden.
+ | requirements = Defeat {{e|The Beast}} as {{c|Eden}}
+ | id           = 459
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Lost Soul
+ | link         = Lost Soul
+ | description  = Complete the Corpse with the Lost.
+ | requirements = Defeat {{e|Mother}} as {{c|The Lost}}
+ | id           = 460
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Hungry Soul
+ | link         = Hungry Soul
+ | description  = Complete the final chapter with the Lost.
+ | requirements = Defeat {{e|The Beast}} as {{c|The Lost}}
+ | id           = 461
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Blood Puppy
+ | link         = Blood Puppy
+ | description  = Complete the Corpse with Lilith.
+ | requirements = Defeat {{e|Mother}} as {{c|Lilith}}
+ | id           = 462
+}} {{infobox achievement
+ | dlc          = r
+ | name         = C Section
+ | link         = C Section
+ | description  = Complete the final chapter with Lilith.
+ | requirements = Defeat {{e|The Beast}} as {{c|Lilith}}
+ | id           = 463
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Keeper's Sack
+ | link         = Keeper's Sack
+ | description  = Complete the Corpse with Keeper.
+ | requirements = Defeat {{e|Mother}} as {{c|Keeper}}
+ | id           = 464
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Keeper's Box
+ | link         = Keeper's Box
+ | description  = Complete the final chapter with Keeper.
+ | requirements = Defeat {{e|The Beast}} as {{c|Keeper}}
+ | id           = 465
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Lil Portal
+ | link         = Lil Portal
+ | description  = Complete the Corpse with Apollyon.
+ | requirements = Defeat {{e|Mother}} as {{c|Apollyon}}
+ | id           = 466
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Worm Friend
+ | link         = Worm Friend
+ | description  = Complete the final chapter with Apollyon.
+ | requirements = Defeat {{e|The Beast}} as {{c|Apollyon}}
+ | id           = 467
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Bone Spurs
+ | link         = Bone Spurs
+ | description  = Complete the Corpse with the Forgotten.
+ | requirements = Defeat {{e|Mother}} as {{c|The Forgotten}}
+ | id           = 468
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Spirit Shackles
+ | link         = Spirit Shackles
+ | description  = Complete the final chapter with the Forgotten.
+ | requirements = Defeat {{e|The Beast}} as {{c|The Forgotten}}
+ | id           = 469
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Revelation
+ | link         = Revelation
+ | description  = Complete the Corpse with Bethany.
+ | requirements = Defeat {{e|Mother}} as {{c|Bethany}}
+ | id           = 470
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Jar of Wisps
+ | link         = Jar of Wisps
+ | description  = Complete the final chapter with Bethany.
+ | requirements = Defeat {{e|The Beast}} as {{c|Bethany}}
+ | id           = 471
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Magic Skin
+ | link         = Magic Skin
+ | description  = Complete the Corpse with Jacob and Esau.
+ | requirements = Defeat {{e|Mother}} as {{c|Jacob and Esau}}
+ | id           = 472
+}} {{infobox achievement
+ | dlc          = r
+ | name         = Friend Finder
+ | link         = Friend Finder
+ | description  = Complete the final chapter with Jacob and Esau.
+ | requirements = Defeat {{e|The Beast}} as {{c|Jacob and Esau}}
+ | id           = 473
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Broken
+ | link         = Tainted Isaac
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Isaac}}
+ | id           = 474
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Dauntless
+ | link         = Tainted Magdalene
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Magdalene}}
+ | id           = 475
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Hoarder
+ | link         = Tainted Cain
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Cain}}
+ | id           = 476
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Deceiver
+ | link         = Tainted Judas
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Judas}}
+ | id           = 477
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Soiled
+ | link         = Tainted ???
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|???}}
+ | id           = 478
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Curdled
+ | link         = Tainted Eve
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Eve}}
+ | id           = 479
+}} {{infobox achievement
+ | dlc          = r
+ | name         = The Savage
+ | link         = Tainted Samson
+ | description  = ???
+ | requirements = Use {{i|Red Key}} (etc.) to open the hidden closet in {{s|Home}} as {{c|Samson}}
+ | id           = 480
+}}

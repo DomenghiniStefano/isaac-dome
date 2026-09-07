@@ -1,0 +1,59 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Nose Goblin
+ | id = 98
+ | quote = Seems magic...
+ | description = Chance to fire a homing booger that sticks to enemies and deals damage over time.
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* Adds a 10% chance to fire a booger tear that sticks to the first enemy that it comes in contact with and deals damage over time.
+** Each booger deals damage equal to Isaac's tear damage every second.
+** {{dlc|nr}}The booger lasts for 60 seconds or until the enemy dies.
+*** {{dlc|r}}The booger lasts 10 seconds.
+* Boogers have a 50% chance of being [[Tear Effects#Homing|homing]].
+
+== Notes ==
+* Not affected by [[Luck]].
+* Booger tears cannot pierce through enemies.
+* Multiple boogers can stick to one enemy to deal extra damage.
+* Nose Goblin's effect is almost identical to {{i|Sinus Infection}} beyond the added homing effect and having half the chance to trigger. Consequently, all its non-homing synergies apply to Nose Goblin.
+
+== Synergies ==
+* {{dlc|r}}{{i|Brimstone}}/{{i|The Ludovico Technique}}/{{i|Tech X}}/{{i|Trisagion}}: Every tick of damage Isaac’s tears deal have a chance to attach a separate booger tear on a hit enemy.
+* {{i|Cricket's Body}}: Booger tears will split into split booger tears that can attach to enemies.
+* {{i|Explosivo}}: Explosivo tears can also be booger tears which damage the enemy over time while stuck to them before exploding.
+* {{i|Godhead}}: Shots retain their aura while stuck to an enemy, but the aura can damage only enemies other than the booger victim. If the enemy dies before the booger’s maximum duration, it will resume homing and will often stick to a second enemy.
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either raises the chance to fire a booger tear to 20% chance and to 75% the chance for it to be [[Tear Effects#Homing|homing]]. Having both raises the chance to respectively 30% and 100%.
+* {{tf|Guppy}}: Damage instances from boogers attached to enemies have a 100% ({{dlc|r}} 50%) chance to spawn a [[Blue Fly]].
+* {{i|Lachryphagy|nr}}: All tears have a chance to burst into boogers. Boogers will always burst into more boogers, though some of the boogers may incorrectly appear to be normal tears. When a booger sticks to an enemy, it will burst into 8 boogers which have a high chance of sticking again to the same enemy.
+* {{i|Lost Contact}}: Boogers that stick to enemies will block shots, and will not be destroyed in the process.
+* {{i|Polyphemus}}: Booger shots lose the Polyphemus pierce effect, but stick to enemies while dealing the full damage of the Polyphemus shot. Damage does not degrade.
+* {{i|Sinus Infection}}: The 50% homing also applies to boogers fired by Sinus Infection.
+* {{i|Spirit Sword}}: Swings and projectiles have a chance to apply boogers on enemies.
+* {{i|Strange Attractor}}: Attraction effect will remain on the booger shot stuck to an enemy. This can drag the enemy across the whole room until they reach one wall and get stuck on it, effectively disabling their normal movement.
+* {{i|Tech.5|r}}: The laser also has a chance to apply boogers on enemies.
+* {{i|Technology|r}}: Hit enemies have a chance for a booger to be applied to them.
+* {{i|Technology 2|r}}: The laser can also apply boogers with the laser’s chance to apply boogers being determined rapidly every tick.
+* {{i|Technology Zero}}: Boogers can be connected with electricity while being attached dealing large amounts of damage to the booger victim.
+
+== Interactions ==
+* {{dlc|nr}}{{i|Brimstone}}/{{i|Technology}}/{{i|Tech X}}/{{i|Trisagion}}/{{i|Ipecac}}: Overrides Nose Goblin.
+** {{i|Ipecac}}: Booger tears will still appear, but will act identically to other Ipecac shots.
+* {{i|Compound Fracture}}/{{i|The Parasite}}: Booger tears will not split after killing enemies.
+* {{i|Dr. Fetus}}/{{i|Epic Fetus}}/{{i|Mom's Knife}}: Overrides Nose Goblin.
+* {{i|Holy Light}}: Holy light strikes do not activate on booger shots.
+* {{I|Immaculate Heart}}/{{I|Saturnus|n}}: Orbiting tears that stick to an enemy will return to the ring if the enemy cannot be stuck to anymore before the tear's duration ends.
+* {{i|Jacob's Ladder}}: Lightning strikes do not activate on booger shots.
+* {{Dlc|nr}} {{i|Tech.5}}/{{I|Technology 2}}: The laser is unaffected by Nose Goblin.
+* {{dlc|nr}}{{i|The Ludovico Technique}}: The large tear has a chance to stick to enemies. The tear cannot be controlled while it is stuck to an enemy, and cannot be removed until the enemy has died.
+
+== In-game Footage ==
+{{#ev:youtube|T9RB-SVtUeE}}
+
+== Trivia ==
+* The trinket's name and description appear to be a reference to the episode "Nurse Stimpy" from the cartoon "Ren and Stimpy".
+
+{{nav|fr=Crotte de Nez}}

@@ -1,0 +1,71 @@
+{{infobox activated collectible
+ | id          = 40
+ | quote       = Become the bomb!
+ | description = Creates an explosion around Isaac, damaging him and nearby enemies as well as destroying [[obstacles]].
+ | quality     = 0
+ | tags        = nolostbr
+ | recharge    = unlimited
+}}
+
+{{cit|a}}
+
+== Effect ==
+* Upon use, creates an explosion on Isaac's position.
+** The explosion damages Isaac for half a heart of [[health]] (or a full heart in [[Chapter 4]] onward).
+** {{dlc|nr}} The explosion deals 40 damage.
+** {{dlc|r}} The size and damage of the Kamikaze! explosion is identical to that of a {{I|Mr. Mega}} bomb, dealing 185 damage in a wide radius.
+
+== Notes ==
+* The explosion will damage {{e|Soul Heart}}s before {{e|Red Heart}}s, unlike most other self-damaging active items.
+* Despite the explosion usually damaging Isaac, Kamikaze! is not considered a self-damaging item because it is not the item's use which causes the damage, but rather the resulting explosion. This has a few consequences:
+** Kamikaze! does not bypass invincibility, which means items such as {{i|Holy Mantle}} or {{i|Tooth and Nail}} work normally.
+** {{dlc|nr}} {{r|Devil Room}}/{{r|Angel Room}} chance is lowered if red heart damage is taken.
+** {{dlc|r}} {{r|Devil Room}}/{{r|Angel Room}} chance will not be lowered if red heart damage is taken.
+* Kamikaze!'s cool down length is as long as the invincibility frames Isaac normally gets from being hit. This means that Isaac cannot activate Kamikaze!, and then activate Kamikaze! again before the invincibility frames end.
+* Synergizes with many bomb-enhancing items such as {{i|Bob's Curse}}, with exceptions listed in Interactions.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Invokes the effect of {{i|The Necronomicon}} effect along with the original effect.}}
+* {{Book of Virtues synergy|description=Spawns wisps in the middle ring that looks like small sticks of dynamite. The wisps fire explosive projectiles and explode when destroyed, dealing 30 damage to enemies that are close to it. This explosion is small enough to not always hit Isaac, although it will hurt him should he get caught in it. All explosions the wisps make are unaffected by {{I|BFFS!}} and bomb synergies. Using Kamikaze! will also trigger an explosion on each dynamite wisp.}}
+* {{i|Dark Arts}}: Kamikaze can be used for free while Dark Arts is active.
+* {{i|Glitter Bombs}}: Has a chance to drop a [[pickup]] or [[trinket]] each time it is used.
+* {{i|Gnawed Leaf}}: Activating Kamikaze will cancel out of the statue state, but Isaac will not be damaged by the resulting explosion.
+* {{i|Host Hat}}: Allows unlimited uses without consequences.
+* {{i|Mars}}: Isaac is invincible during the dash, allowing for unlimited uses with careful timing.
+* {{I|Nancy Bombs}}: Gains the effect of a random bomb synergy each time it is used.
+* {{I|Pyromaniac}}: Allows unlimited uses and heals without consequences.
+** Each use will heal Isaac for {{dlc|nr}} one full / {{dlc|r}} half a red heart.
+* {{I|Scapular}}: Damage from the explosion will trigger Scapular's effect, allowing Isaac to trigger on-damage effects infinitely between rooms.
+* {{t|Sigil of Baphomet}}: Isaac can chain-kill enemies without taking explosion damage while the shield is active.
+* {{i|Schoolbag|a+nr}}: The cool down before the player can use Kamikaze! again is eliminated when switching items. Depending on how fast the player can push the buttons, Kamikaze! can be used multiple times during Isaac's invincibility frames.
+* {{c|Tainted Forgotten}}: Explodes on Tainted Forgotten’s body, meaning that it is safe to use infinitely, so long as Tainted Soul is not within the blast radius.
+
+== Interactions ==
+* The following items have no effect:
+** {{t|Blasting Cap}}
+** {{t|Bob's Bladder}}
+** {{i|Car Battery}}
+** {{I|Mr. Mega}}
+** {{I|Rocket in a Jar}}
+** {{I|Scatter Bombs}}
+** {{I|Sticky Bombs}}
+* {{t|Blind Rage}}: With longer invincibility, Isaac can use Kamikaze! a second time without taking damage.
+* {{T|Panic Button}}: Isaac will use Kamikaze before taking damage, similarly to {{T|Swallowed M80}}, with the exception that, if Kamikaze triggers on red health, it will not affect devil/angel deal chances, effectively preserving it.
+* {{C|Jacob and Esau|r}}: Jacob will always take damage if he activates the item. Esau will take damage when he uses it, but only if Jacob is ''not'' inside the blast radius. If Jacob is within the blast radius, he will take damage despite Esau holding the item, and Esau will not take damage.
+* {{P|Soul of the Forgotten}}/{{I|Strawman|n}}: The Forgotten or Keeper ''will'' take damage if they are caught within the blast radius.
+* {{t|Swallowed M80}}: The damage received from Kamikaze itself cannot trigger the trinket, and the activation of the trinket applies a cooldown to Kamikaze (as if it was used).
+
+== In-game Footage ==
+{{#ev:youtube|CINx_m-kDqM||inline}} {{#ev:youtube|Yd5ddcUQ25Y||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Kamikaze.png|{{plat|3DS}} The icon of Kamikaze! as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* The term ''kamikaze'' comes from the Japanese language (神風, ''divine wind''), and refers to Japanese pilots that would blow up their aircraft and themselves to damage enemy targets during World War II.
+* This item is used in {{chal|Blue Bomber}}.
+* In the original ''Binding of Isaac'', Kamikaze! dealt a full heart of damage instead of half.
+
+{{nav|explosive|fr=Kamikaze !}}

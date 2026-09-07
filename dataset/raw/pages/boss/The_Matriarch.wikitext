@@ -1,0 +1,69 @@
+{{infobox boss
+ | dlc         = a+
+ | name        = The Matriarch
+ | id          = 413
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{dlc|r}}<br>{{floor|Womb}}{{floor|Scarred Womb}}<br>{{room|boss challenge}}<br><u>Degraded Boss</u><br>{{floor|Cathedral}}<br>{{floor|Chest}}
+ | base hp     = 700
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Big Chubby}} (1% chance)
+ | unlocked by = Something wicked this way comes+!
+}}
+
+'''The Matriarch''' is a [[boss]] added in [[Booster Packs|Booster Pack #5]] of ''[[The Binding of Isaac: Afterbirth †]]'' that can appear:
+* {{dlc|nr}} In all environments of [[Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}).
+* {{dlc+|r}} Only in the {{s|Womb}} and the {{s|Scarred Womb}}.{{dlc-}}
+
+== Behavior ==
+=== Phase 1 ===
+The Matriarch hops randomly around the room and performs the following attacks:
+* Spawns two small {{e|Fistula}}s once she takes 140 damage, and 2 more every 100 damage afterward.
+** She takes considerable knockback when this occurs.
+** {{dlc|r}} Reduced to 1 small Fistula for the first 2 spawns.
+* Spawns a {{e|Fistuloid}} that chases Isaac, subsequently spawned Fistuloids orbit her. She can have up to a maximum of 4 spawned at once and does not spawn more until she has taken enough damage to release a small Fistula even if previous Fistuloids have been killed.
+** Only 1 Fistuloid can chase Isaac at a time and they can occasionally swap when Isaac moves close to an orbiting Fistuloid. If the Fistuloid that chases Isaac is killed, one of the remaining ones stops orbiting the Matriarch and starts chasing Isaac.
+*** The active chasing Fistuloid will not chase Isaac if he is too far away and returns to staying near the Matriarch until Isaac draws near.
+*** Orbiting Fistuloids occasionally fire a projectile towards Isaac
+** All Fistuloids spawned when there are 2 or more small Fistulas alive will orbit The Matriarch and one only becomes active when there is only one small Fistula left.
+** {{dlc|r}} The Matriarch loses 30 HP each time she spawns a Fistuloid. If this would cause her to change phases or spawn small Fistulas, The Matriarch is unable to create Fistuloids.
+* Jumps and launches 8 {{e|Chubber}} projectiles in all directions, which rebound back to herself.
+* Spews a large long-range blood projectile towards Isaac that leaves [[Creep#Red Creep|Red Creep]] on the ground, similar to {{e|Mr. Fred}}.
+** The puddle of Creep left at the end of the projectile's path lasts longer than the Creep trail.
+** This projectile can kill the chasing Fistuloid.
+The Matriarch's Chubber and regular projectiles deal a whole heart of damage.
+
+=== Phase 2 ===
+After taking 340 damage, the Matriarch rapidly spawns waves of glowing red Fistuloids that have 20 HP and quickly lose health, causing them to shoot their maggots almost immediately.
+
+=== Phase 3 ===
+After taking enough damage, the Matriarch repeats the phase transition attack from Phase 1 to 2. During the rest of this phase The Matriarch no longer spawns Fistuloids and only uses the Chubber and projectile attacks.
+
+=== Phase 4 ===
+When at low HP (after taking ~540 damage), The Matriarch's shell splits into a medium-sized Fistula, 2 small Fistulas and a Fistuloid, and she turns into a low HP {{e|Chub}}.
+* Previously orbiting Fistuloids, including the one spawned, permanently orbit her Chub form, while previously active Fistuloids continue to chase Isaac.
+* The Matriarch as Chub always spawns charging in a random direction, regardless of Isaac's position, before returning to the normal Chub pattern, similar to the {{e|Charger}}s spawned by {{e|Sloth}}.
+* If the Matriarch eats a {{e|Bomb}} during her charge attack, she spits it back out at Isaac.
+** Most bomb modifiers will still be present on the bomb, except for {{i|Bomber Boy}}.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium The Matriarch ingame.png|The Matriarch as one of {{e|Delirium}}'s forms.
+File:Matriarchconceptart.png|Concept art for the Matriarch by _Kilburn.
+</gallery>
+
+== Notes ==
+* {{Dlc|r}} The Matriarch is unique in being twice as common than other [[Boss Room]] Bosses in the Scarred Womb boss pool, but only 1/4th as common as other Boss Room bosses in The Womb.
+** This makes her the only boss in the game to have a boss weight higher than 1 on any floor.
+** This also makes her the only boss to have a special weight which isn't an alternative variant of another boss on the same floor.
+
+== Trivia ==
+* The Matriarch appears to be a Chub stuck inside a Fistula. In this way, it also acts as a giant Fistuloid.
+** As Chub also appears to be a grown up Charger, the Matriarch could be a Charger inside a Fistula that outgrew its capacity.
+* The Matriarch is the only boss that was added in a Booster Pack.
+
+{{nav|blue baby boss unlock|booster pack|boss|fr=La Matriarche}}
+
+[[Category:Added in Booster Pack 5]]
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Afterbirth+]]

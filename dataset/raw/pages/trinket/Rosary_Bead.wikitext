@@ -1,0 +1,40 @@
+{{infobox trinket
+ | name        = Rosary Bead
+ | id          = 7
+ | quote       = Faith up
+ | description = Increases the chance of finding {{I|The Bible}} in the {{R|Library}} and {{R|Shop}}, and {{dlc|nr+}} increases the chance of {{R|Angel Room}}s appearing / {{dlc|r+}} guarantees Angel Rooms instead of {{R|Devil Room}}s.
+ | tags        = lazarussharedglobal
+}}
+
+{{cit|t}}
+
+== Effects ==
+* {{dlc|nr+}} Increases the chance to have an {{R|Angel Room}} replace a {{R|Devil Room}}, from 50% (base chance) to 75%.
+* {{dlc|r+}} Guarantees Angel Rooms instead of Devil Rooms, whenever one would spawn.
+* Increases the chance to find {{I|The Bible}} to 45% in the {{R|Library}} and in the {{R|Shop}} to 13%.<ref>https://www.reddit.com/r/bindingofisaac/comments/3q85fv/rnjesus_secrets_behind_pedestal_item_generation/</ref>
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: Future items in all item pools have a chance to be replaced by a {{i|Rosary}} while the trinket is held.
+** One boost results in a <math display="inline">\frac{4}{\mathit{SumOfPoolItemsWeight}}</math> chance, and both boosts results in a <math display="inline">\frac{6}{\mathit{SumOfPoolItemsWeight}}</math> chance.
+** The above means Rosaries are much more easily found in smaller pools. As an example, the chance for a replacement in the {{ip|Treasure Room|text=Treasure item pool}} is on the order of 1%, but for the {{ip|Planetarium|dlc=n}} they can be as high as ~36% or ~55% depending on the number of boosts.
+** The replaced items will count as seen, which may result in them never being available again depending on the item pool.
+** Picking up a Rosary will not remove the chance of finding more.
+** {{dlc|r+}} Increases Angel Room chance by 5%. Having both increases it by 10%.
+
+== Notes ==
+* {{Dlc|nr+}}The increased chance will not allow Angel Rooms to appear before [[Chapter 2]].
+* {{dlc|rnr+}} Due to an Angel Room being guaranteed after skipping the first Devil Deal, Rosary Bead only increases in usefulness after the first Angel Room has been encountered.
+* If a {{Dlc|nr+}} Devil, {{Dlc|nr}} {{R|Black Market}}, or {{i|Satanic Bible|rnr+}} deal has been paid, an Angel Room will not spawn, even with Rosary Bead.
+** {{dlc+|r}} An Angel Room can still spawn if Isaac has {{i|Act of Contrition}} or {{i|Book of Virtues}}.{{dlc-}}
+* Unlike {{I|Goat Head}} or {{I|The Book of Belial}}, this trinket does not increase the chance for an Angel/Devil Room Door to spawn when a Boss is killed. It only increases the chance for it to be an Angel room '''if''' it does appear.
+
+== In-game Footage ==
+{{#ev:youtube|-e0vPbqC1Nw}}
+
+== Trivia ==
+* Despite indicating "Faith Up", there is no "Faith" stat in the game. "Faith Up" only serves to inform the player that it is linked to Angel Rooms in an unspecified way.
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Perle de Rosaire}}

@@ -1,0 +1,68 @@
+{{infobox challenge
+ | dlc         = r
+ | number      = 43
+ | character   = Tainted Cain
+ | has shops   = yes
+ | unlocks     = Justice
+ | unlocked by = Cantripped!
+|description=All cards and pills are replaced with item cards. Enemies also have a chance of dropping an item card when killed. The {{i|Bag of Crafting}} now initially holds a maximum of 3 item cards at once. When picked up, each item card shows a preview of a random [[activated collectible|active item]] that, when used, activates the effect.
+All boss item drops are replaced with {{i|Starter Deck}}, which increases the max card limit by 1 and drops 3 item cards.}}
+
+'''Cantripped!''' is [[challenge]] #43. The goal is to defeat {{e|Mom}}. This challenge is unlocked by unlocking {{c|Tainted Cain}}.
+
+In this challenge, you play as {{c|Tainted Cain}}, but instead of crafting items from pickups using your {{i|Bag of Crafting}}, you have three slots in the bag, which can hold a new unique card type. Room clear rewards and enemy drops have a high chance to be said card type, which gives a random active item that is stored in one of your bag slots. These active items can only be used once before they are gone, and can be switched around by using your drop button (CTRL). All boss item rewards are changed to {{i|Starter Deck}}, which instead of giving another card slot, increases your bag's active item limit by 1, and drops 3 random item cards. Tainted Cain starts with these slots being filled with random active items. Devil Deals no longer take a heart container, and will only damage the player for one red heart, similar to {{I|A Pound of Flesh}}. 
+
+== Strategy ==
+* Some bonuses from items will remain after leaving the room. Therefore using them has a big influence on the run. This includes:
+** {{i|Cube of Meat}} and damage gained from using {{i|Potato Peeler}}.
+** Stat changes from {{I|Dataminer}} and {{I|D8}}.
+** Familiars spawned by {{i|Monster Manual}} lasts for the current floor.
+** Wisps and item effects from {{i|Book of Virtues}} and {{i|Lemegeton}} last until extinguished.
+* Although there are no treasure rooms, shops don't sell items, and bosses do not drop standard boss items, gaining items in other ways is still possible. You won't lose those items after leaving the room. These ways include but are not limited to:
+** Absorbing Trinkets by {{i|Smelter}}.
+** Using a 1-pip or 6-pip {{R|Dice Room}}.
+*** Doing so will replace your starter decks with random treasure-room items, and put you into a glitched state. You retain all held cards, which can be cycled through as normal, but they all cannot be seen at once, and attempting to pick up any new ones won't work. Using your held cards will fix this.
+* Holding onto {{I|The Bible}} or {{I|Plan C}} enables the player to instantly kill Mom. This can bypass the need to store several powerful items for the final fight.
+* Item cards act like [[pickup]]s and can be manipulated as such (e.g. duplicated with {{p|Jera}}).
+* As in many challenges, {{e|Golden Bomb}}s offer an alternate and powerful way to fight, allowing to pass floors easily.
+* Using {{i|Mama Mega!}} in a room will still activate it on every room in the floor, making getting through the rest of the floor trivial.
+* The player can use a {{I|Forget Me Now}} in order to gain another {{i|Starter Deck}}, and thus carry more items.
+* While holding the {{t|NO!}} trinket, future item card drops will be converted into {{i|Breakfast}}, allowing you to quickly reach maximum red heart containers.
+* Angel Deals can be taken over devil deals, as the cards will be free.
+** However, Devil Deals are still notable, as their drops are decent, with {{I|Sulfur}}, {{I|Monster Manual}}, and {{I|The Nail}} being viable drops.
+
+== Notes ==
+* Almost all rooms drop an item card when cleared.
+* Active items that grant an effect upon obtaining them, such as {{I|Sharp Key}} and {{I|Remote Detonator}}, will not grant that effect.
+* {{T|Butter!}} has no effect upon activated items used from the bag.
+* Items such as {{I|Sharp Key}} will consume a key.
+* {{I|Diplopia}} will not duplicate {{i|Starter Deck}}, it will only create an item card.
+* If an item pedestal would have spawned, an item card will spawn instead. This applies to:
+** Book pedestals in the {{R|Library}}.
+** Items found in Chests.
+** Item spawned by other items, such as through {{i|Eden's Soul}}.
+** Items in {{R|Angel Room}}s. If there is more than one item card, taking one of them makes the other(s) disappear. Key Pieces, however, will spawn normally.
+* Items in the {{R|Shop}} are transformed into item cards and can be bought for 5 [[coin]]s.
+* The same item can be encountered more than once and it is possible to have several copies of an item inside the bag.
+* Any [[transformation]]s obtained will last only for the room and cannot be carried over to the rest of the run.
+* Trinkets that revives {{c|Tainted Cain}} as another character, namely {{t|Missing Poster}} and {{t|Broken Ankh}}, will remove his Bag of crafting, making cards unusable.
+* If you use item cards in a room, then leave the room - returning to the previous room with {{i|Glowing Hourglass}} will give you the items back permanently.
+* Using {{i|D infinity}} will trigger a random dice effect.
+
+== Reward ==
+{{achievement text | Justice }}
+
+== Gallery ==
+<gallery>
+File:Cantripped! Item Card.png|An item card.
+</gallery>
+
+== Trivia ==
+* The name of this challenge is a reference to the Magic: the Gathering term "cantrip", meaning a card that draws another card.
+* The item cards in this challenge resemble the treasure cards from The Binding of Isaac: Four Souls.
+* Specific item cards can be spawned during this challenge with the debug console command <code>spawn 5.300.N</code> where <code>N</code> is the collectible's ID+32768. For instance, to spawn a {{i|Mega Blast}} card, the number would be <code>5.300.33209</code>.
+** Trying to spawn cantripped cards and picking them up during a normal run crashes the game.
+
+== Bugs ==
+{{bug|dlc=nr+|Receiving the Bag of Crafting as a card and using it will crash the game.}}
+{{nav|challenge|cain unlock|fr=À la Carte !}}

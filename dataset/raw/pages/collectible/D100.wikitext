@@ -1,0 +1,53 @@
+{{infobox activated collectible
+ | id          = 283
+ | quote       = REEROLLLLL!
+ | description = {{dlc|nr}} Activates the combined effects of {{i|D4}}, {{i|The D6}}, and {{i|D20}}.<br>{{dlc+|r}} Activates the combined effects of {{i|D1}}, {{i|D4}}, {{i|The D6}}, {{i|D7}}, {{i|D8}}, {{i|D10}}, {{i|D12}}, and {{i|D20}}.{{dlc-}}
+ | quality     = {{dlcalt|3|r+=1}}
+ | tags        = offensive nocantrip
+ | recharge    = 6
+ | unlocked by = The D100
+}}
+
+{{cit|ua}}
+
+== Effects ==
+Upon use, it:
+* Rerolls all passive items on Isaac (like the {{i|D4}}).
+* Rerolls all pedestal items in the [[room]] (like {{i|The D6}}).
+* Rerolls all pickups in the room (like the {{i|D20}}).
+* {{dlc+|r}} Restarts the room and respawns all enemies (like the {{i|D7}}).{{dlc-}}
+* {{dlc+|r}} Rerolls Isaac's [[damage]], [[tears]], [[range]] and [[speed]] (like the {{i|D8}}).{{dlc-}}
+* {{dlc+|r}} Rerolls all enemies in the room into weaker ones (like the {{i|D10}}).
+** Doesn't go into effect in rooms the {{i|D7}} works in.{{dlc-}}
+* {{dlc+|r}} Rerolls all rocks in the room (like the {{i|D12}}).{{dlc-}}
+* {{dlc+|r}} Duplicates 1 random pickup in the current room (like the {{i|D1}}).{{dlc-}}
+** The pickup is rerolled by the {{i|D20}} before being duplicated, essentially just granting a random extra pickup.
+
+== Notes ==
+* {{dlc|nr}} D100 is a [[special item]].
+* {{Dlc|nr}} See the {{i|D4}}, {{i|The D6}}, and the {{i|D20}} to learn more about the respective individual effects.
+* {{Dlc|r}} See the {{i|D1|dlc=n}}, {{i|D4}}, {{i|The D6}}, {{i|D7|dlc=n}}, {{i|D8|dlc=n}}, {{i|D10}}, {{i|D12|dlc=n}}, and the {{i|D20}} to learn more about the respective individual effects.
+* If Missing No. is given to the player, it will activate and remove the D100, preventing further rerolls.
+** Note that {{i|Missing No.}} can be rerolled into, but can't be rerolled out of.
+* {{dlc+|r+}} D100's quality is treated as 2 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Rerolls all of Isaac's wisps and gives him one random wisp. Book of Virtues will not be rerolled in the process.}}
+
+== In-game Footage ==
+{{#ev:youtube|Ng6qACGE3Sc}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed D100.png|{{plat|3DS}} The icon of D100 as seen on the lower 3DS screen.
+File:D100 giantbook.png|Splash image which appears when D100 is activated.
+</gallery>
+
+== Trivia ==
+* Unlike the base game sprite, the D100 sprite on the lower part of the 3DS screen appears to have no edges and is a perfect sphere, which would make it more akin to the {{i|D infinity}}.
+
+== Bugs ==
+{{bug|dlc=r|The D100 can reroll [[Angel Room]] passive items into the {{i|Book of Virtues}}. Upon further use, the {{i|Book of Virtues}} will not be rerolled<!--, but other [[Angel Room]] passive items can still be rerolled into it. This can effectively remove all of Isaac's [[Angel Room]] passive items-->.}}
+
+{{nav|dice|the lost unlock|boss rush unlock}}
+[[Category:Special items]]

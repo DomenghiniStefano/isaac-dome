@@ -1,0 +1,32 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Walnut
+ | id = 108
+ | quote = That's a hard nut to crack!
+ | description = Being hit by explosions will eventually destroy the trinket and spawn various [[pickups]].
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* While held, being hit with an explosion has a 33% chance to destroy the trinket and spawn a {{e|Penny|text=Coin}}, a {{e|Red Heart|text=Heart}}, a {{e|Key}} and another [[trinket]]. The pickups may be of any normal variety.
+
+== Notes ==
+* Taking damage from the explosion is not required to trigger the effect. This makes effects granting [[Invulnerability]] very useful for safely destroying the Walnut.
+* Getting hit by multiple explosions simultaneously has a high chance of cracking the Walnut, as every individual explosion will have its chance to activate the effect, no matter how closely they occur.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either makes the trinket spawn 2 of each mentionned pickups. Having both makes the trinket spawn 3 of each.
+* {{i|Bomber Boy}}: As Bomber Boy causes 9 explosions at once, laying a bomb and not moving before it explodes is almost guaranteed to trigger the trinket.
+* {{i|Gnawed Leaf}}: Isaac will not be knocked back from the explosions, but it will count for the trinket.
+* {{I|Holy Mantle}}: Explosions hitting the mantle still count for the trinket.
+* {{i|Host Hat}} / {{i|Pyromaniac}}: Isaac becomes immune to explosions, which allows to get the effect without any risk.
+
+== Interactions ==
+* {{t|Walnut|nr}}: Two copies cannot be held at the same time.
+
+== In-game Footage ==
+{{#ev:youtube|jbas-sd7mGI}}
+
+{{nav|fr=Noix}}
+[[Category:Damage-triggered items]]

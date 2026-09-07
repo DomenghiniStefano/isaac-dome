@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | id          = 314
+ | quote       = HP up + speed down + you feel stompy
+ | description = Destroys [[rocks]] upon contact with Isaac. Adds one [[Red Heart container]] and lowers [[Speed]].
+ | quality     = 1
+ | tags        = nolostbr summonable
+}}
+
+''Not to be confused with {{i|Bucket of Lard}}.''
+
+{{cit|p}}
+
+== Effects ==
+* +1 [[Red Heart container]].
+* {{Dlc|r}} Heals 1 additional {{E|Red Heart}}.
+* -0.4 [[speed]] down.
+** {{dlc|nr}} Also affects maximum speed.
+* Isaac gains the ability to destroy [[obstacle]]s by walking into them.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Mega Fatty}}.{{dlc-}}
+* Holes in the ground can be filled if Isaac walks into adjacent [[rocks]] from the right direction, similar to bombs.
+* Avoid walking over [[Mushroom (Obstacle)|Mushrooms]] and [[Bomb Rock]]s, as they can damage Isaac upon destruction.
+* With this item, Isaac can walk over and destroy {{E|Red Poop}} and [[Spiked Rock]]s without taking damage. He will still be damaged if he's above the destroyed Red Poop when it reforms.
+* Walking over an [[Angel]] Statue in the {{R|Angel Room}} will trigger the boss fight, and the Angel will spawn on top of Isaac. It is possible to avoid taking contact damage by walking away from the statue immediately after touching it.
+
+== Interactions ==
+* {{i|A Pony}}/{{i|White Pony}}: The lower limit for Isaac's [[speed]] is decreased from 1.50 to 1.10.
+
+== In-game Footage ==
+{{#ev:youtube|xRMi12xzz88}}
+
+== Trivia ==
+* This item is used in {{chal|The Tank}}, {{chal|BRAINS!}}, and {{chal|Scat Man}}.
+* The item's sprite is [https://twitter.com/edmundmcmillen/status/985986391132651521?s=20 a bucket of nacho cheese].
+
+{{nav|fr=Seau de Fromage}}

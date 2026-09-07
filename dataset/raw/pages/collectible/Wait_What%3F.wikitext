@@ -1,0 +1,45 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | files name  = Wait What
+ | id          = 484
+ | quote       = I can't believe it's not butter bean!
+ | description = Isaac farts, sending out a circular rock wave that destroys [[obstacles]] and hurts enemies.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = 10s
+}}
+
+{{cit|a|a+}}
+
+== Effects ==
+* Upon use, Isaac farts, knocking back enemies and their shots. It also sends out a circular rock wave around him that deal 10 damage per tick to nearby enemies and break [[obstacle]]s.
+* {{dlc|r}} Shots deflected by Wait What? farts deal 6 damage if they would've hurt Isaac for half a heart, and 7 for a full heart.
+
+== Notes ==
+* This item is identical to {{i|Butter Bean}} in appearance.
+* {{dlc|nr}} {{i|Butter Bean}} has a 10% chance to turn into this item upon pickup.
+* {{dlc|r}} Each run has a 5% chance of replacing Butter Bean with Wait What? in item pools. Both items generally do not exist during the same run.
+* One way for both items to exist in the same run is via {{i|Death Certificate}} or {{I|Spindown Dice}}. Since both items are identical in appearance, you can differentiate them by looking at the items that are next to them, {{i|Butter Bean}} will be between  {{i|Head of Krampus}} and {{i|Magic Fingers}} while {{i|Wait What?}} will be between {{i|Mama Mega!}} and {{i|Crooked Penny}}.
+* This item is useful for opening {{R|Secret Room}}s, {{R|Super Secret Room}}s, [[Bedroom]]s and the path to {{S|Mines}}. In Bedrooms, it can also open up the passage under the carpet.
+** To break open a secret room, the wall must be hit with one of the rock waves, not the gas cloud, so Isaac needs to stand a few steps away from the wall.
+* The earthquake can open {{E|Bomb Chest}}s.
+* The earthquake can destroy {{e|Shopkeeper}}s.
+* {{dlc|nr}} The earthquake can be used to blow up the {{M|Donation Machine}} or activate/blow up a {{M|Shop Restock Machine}}.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns white glowing wisps on the middle ring that don't shoot. The wisps invoke the effect of Wait What? when destroyed and do not persist between rooms.}}
+* {{i|Ghost Pepper}} / {{i|Bird's Eye}}: Shoots a flame behind Isaac upon each use of Wait What. Despite {{I|Car Battery}} not duplicating Wait What's shockwave, the flame shot is duplicated.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|ZUHb8k5MJ6A}}
+
+== Trivia ==
+* The item description is a reference to a brand of margarine named "[[wikipedia:I Can't Believe It's Not Butter!|I Can't Believe It's Not Butter!]]".
+* {{dlc|nr}} Unlike {{I|Butter Bean}}, this item has no unlock condition, meaning it's possible for the player to find it right away, making the joke and reference slightly confusing.
+** {{dlc|r}} Wait What? no longer shows up naturally in any item pools, however it has a chance to replace {{I|Butter Bean}} in any run.
+* The sprite of this item is exactly identical to that of {{i|Butter Bean}}, making them the two only items that are visually identical in the game.
+
+{{nav|bean|fr=Attends, Quoi ?|zh=等等，啥？}}

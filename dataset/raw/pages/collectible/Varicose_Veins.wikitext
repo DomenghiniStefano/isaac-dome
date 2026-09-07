@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 452
+ | quote       = I'm leaking...
+ | description = Taking damage releases a ring of 10 high damage tears.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* When Isaac gets hit, 10 tears are fired in a circle around him (similar to {{i|Tammy's Head}}).
+** Tears spawned on hit have a +25 damage bonus.
+* When Isaac gets hit, has a chance to activate the {{i|Anemic}} effect for 2 seconds.
+** The effect doesn't seem affected by luck.
+
+== Interactions ==
+* {{i|20/20}} / {{i|The Inner Eye}} / {{i|Mutant Spider}} / {{i|The Wiz}}: No effect. When Isaac gets damaged, only ten tears will be fired.
+* {{i|Apple!}}: Each tear has a chance to fire the razor tear.
+* {{C|Azazel}}: Fires ten short-ranged brimstone beams in a circle.
+* {{i|Anti-Gravity}}: No effect.
+* {{i|Chocolate Milk}}: Fires ten minimally charged tears. Damage of tears is reduced slightly.
+* {{i|Dr. Fetus}}: Taking damage releases 10 bombs around Isaac, which often leads to taking damage again.
+* {{i|Epic Fetus}}: Fires ten normal tears when taking damage.
+* {{I|Eye of the Occult}}: Tears are controllable.
+* {{i|It Hurts}}: Two rings of tears are released at once.
+* {{i|The Ludovico Technique}}: No effect.
+* {{i|Marked}}: No effect.
+* {{i|Monstro's Lung}}: Fires ten red tears when taking damage. No other effects.
+* {{I|Playdough Cookie}}: Each one of the 10 tears spawned on hit has one of the available random effects applied to it.
+* {{i|Soy Milk}}: Fires ten tiny tears when taking damage. Tear damage is only slightly reduced.
+* {{C|Tainted Azazel}}: Fires ten brimstone beams in a circle. These beams do not have the damage penalty T. Azazel's attacks have, and can be further boosted by his {{I|Hemoptysis}} sneeze.
+* {{i|Tech X}}: No effect.
+* {{I|Technology}}: Fires ten lasers in a circle.
+* {{i|Tractor Beam}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|hEXs-K46Z40}}
+
+== Trivia ==
+* Varicose veins is a medical condition where veins (typically on the extremities) become swollen and more visible. They can also cause aching pain or discomfort.
+
+{{nav|fr=Varices}}
+[[Category:Damage-triggered items]]

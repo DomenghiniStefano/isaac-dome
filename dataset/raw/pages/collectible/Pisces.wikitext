@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | id          = 309
+ | quote       = Tears up + knock-back shots
+ | description = {{dlc|nr}} -1 Tear Delay, adds [[knock-back]] shots and increases tear size.<br>{{dlc|r}} +0.5 Fire Rate, adds [[knock-back]] shots and increases tear size.
+ | quality     = 2
+ | tags        = summonable tearsup offensive stars
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Increases [[Knock-back|tear knockback]].
+** If the player has [[piercing tears]], the knockback effect is reduced.
+* {{Dlc|nr}} Tear size multiplier: 1.25x.
+* {{Dlc|r}} +0.12 tear size.
+* {{dlc|nr}} {{tear delay down|1}}
+* {{dlc|r}} +0.5 [[fire rate]].
+
+== Interactions ==
+* {{t|Blister}}: Overrides Pisces.
+* {{i|Brimstone}}: The beam gains knockback.
+* {{I|Cupid's Arrow}}/{{i|Death's Touch}}/{{i|Dead Onion}}/{{i|Sagittarius}}: Tears gain knockback.
+* {{i|Dr. Fetus}}/{{i|Epic Fetus}}/{{i|Ipecac}}: Explosions also gain increased knockback.
+* {{i|Mom's Knife}}: The knife gains knockback.
+* {{i|Technology}}/{{i|Technology 2}}/{{i|Tech X}}: The lasers gain knockback.
+** Technology 2's constant laser has such strong knockback, it can pin enemies to walls.
+* {{i|Trisagion}}: Adds knockback to blasts, which can not only significantly repel enemies when used correctly, it can deal a high amount of damage to enemies unable to escape the knockback.
+
+== In-game Footage ==
+{{#ev:youtube|ge4852hzLTI}}
+
+== Trivia ==
+* Isaac appears to be covered in scales, a reference to Pisces being represented by twin fish.
+* [[Edmund McMillen]] is a pisces.
+
+{{nav|zodiac}}

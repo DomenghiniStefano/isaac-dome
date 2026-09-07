@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 340
+ | quote       = Speed up + size down
+ | description = Grants +0.3 [[speed]], reduces Isaac's size, and gives a random [[pill]].
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.3 [[speed]].
+* Decreases Isaac's size, making him less likely to be hit.
+* Upon pickup, gives Isaac a random [[pill]]. If he is already holding a consumable, it is forcibly dropped to the ground.
+
+== Notes ==
+* {{Dlc|nr}} It will still drop a pill even if the player has {{I|Starter Deck}}.
+
+== In-game Footage ==
+{{#ev:youtube|l-k3kTpuaDQ||inline}} {{#ev:youtube|7mNEE7IRLqY||inline}}
+
+== Trivia ==
+* Caffeine is a stimulant in coffee and other drinks, relevant to the speed boost. It was also rumored, but isn't proven, to stunt growth in children, as per Isaac's decreased size and emaciated appearance with it.
+
+{{nav|pill}}

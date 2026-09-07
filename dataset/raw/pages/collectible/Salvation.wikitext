@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 696
+ | quote       = Divine protection
+ | description = Gives Isaac a halo that summons beams of light on enemies inside it. The halo grows larger the more times Isaac has taken damage this floor.
+ | quality     = 3
+ | tags        = summonable offensive angel
+ | unlocked by = Salvation
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Isaac receives an angelic halo around him.
+* When an enemy comes in contact with the halo, a beam of light starts to form above them. If they stay in the halo for about a second, a beam of light will strike down on them, dealing 3.5 damage and creating 4 more beams that shoot out in all cardinal directions.
+** The initial beam of light does 3.5 damage per tick (up to 15 times) and the others deal 1.75 damage per tick (up to 15 times).
+*** If an enemy is standing in the center of all the light beams, they will take a total of 152.5 damage.
+* Each time Isaac takes damage, the halo will grow in size, up to a maximum of 10 times. This isn't damage scaled, but allows Isaac to trigger the Salvation effect from further away. The halo size will reset after leaving the floor.
+* {{transformation contribution|Seraphim}}
+
+== Synergies ==
+* {{I|Camo Undies}}: Damaging enemies with Salvation will not take away Isaac's camouflage.
+* {{I|Dark Arts}}: Stays in effect even while using Dark Arts, allowing Isaac to deal more damage to nearby enemies while invulnerable.
+* {{I|Gnawed Leaf}}: The light beams trigger even when Isaac is a statue.
+
+== In-game footage ==
+{{#ev:youtube|LOjEsL0_f-U}}
+
+== Trivia ==
+* The item resembles the [[wikipedia:Ichthys|Ichthys symbol]], which was a symbol used by early Christians, and is associated with Jesus Christ.
+* The halo produced by the item resembles Jesus' Crown of Thorns, and the filename for the effect's graphics is <code>halo_thorns.png</code>.
+* {{E|Dogma}} and its television will have a wavy and distorted appearance while in range of Salvation.
+* Salvation is especially effective against segmented bosses, as each segment can be targeted by an initial beam, and the cardinal beams deal extra damage by damaging other segments.
+
+== Bugs ==
+{{Bug|When {{i|Pause}} is used with Salvation it creates a second halo that stays in place where Isaac used "Pause" which lasts for the active item's duration. Moreover both halos are flashing and can not interact with enemies for the duration.}}
+
+{{nav|seraphim|tainted lazarus unlock|the beast unlock}}

@@ -1,0 +1,103 @@
+'''Broken Shovel''' is a name shared by two separate items added in ''[[The Binding of Isaac: Afterbirth †]].''
+
+Together they form {{i|Mom's Shovel|n}}, which is used in [[The Forgotten#Unlocking The Forgotten|the process to unlock]] {{c|The Forgotten}}.
+
+== Activated Collectible ==
+{{infobox activated collectible
+ | dlc         = a+
+ | alias       = Broken Shovel 1
+ | id          = 550
+ | quote       = It feels cursed
+ | description = While held, causes Mom to continuously attempt to stomp on Isaac. Activating makes her stop for the current room or wave. One of two parts necessary to create {{i|Mom's Shovel|n}}.
+ | quality     = 4
+ | tags        = offensive noeden lazarussharedglobal quest
+ | recharge    = 4
+}}
+
+The first piece of the Broken Shovel is an [[activated collectible|activated item]]. It is acquired by defeating the first floor boss in under a minute (both bosses if {{cu|Labyrinth}} is in effect), navigating back to the starting room, and bombing the floor. {{e|The Lamb}} must have been defeated at least once with any character for the bomb explosion to reveal Broken Shovel. After having defeated the boss below the 1 minute cutoff, using the {{r|Sacrifice Room}} for the first time on that floor while having no {{e|Bomb}}s will always reward Isaac with one rather than its normal payout.
+
+It is the first part required to create {{i|Mom's Shovel}}.
+
+=== Effects ===
+* While held, 1–2 Mom's feet will stomp randomly every few seconds, targeting Isaac. They will try to stomp Isaac's current position, so they will always miss if he is constantly moving. Each stomp deals a full Heart of damage.
+** {{dlc|r}} The stomps will not blow up {{M|Slot Machine}}s or kill {{M|Beggar}}s. They will still destroy {{E|Shopkeeper}}s, open {{e|Bomb Chest}}s, break Obstacles, and open doors.
+* Upon activation, stomps will pause until entering another room.
+** If used during the {{r|Boss Rush}} or in a {{r|Challenge Room}} / {{r|Boss Challenge Room}}, stomping will be paused for that wave of enemies only.
+* The item's stomps cease while battling {{e|Mom}}.
+* While held, removes the twenty-minute time limit on the Boss Rush door; the entrance to the next floor will be sealed until Boss Rush is completed (including those created by {{i|We Need To Go Deeper!}} and other methods).
+** If the Boss Rush is left prematurely through any means after starting it, entering it again will immediately restart Boss Rush, even without picking up another item.
+* Prevents {{i|The Polaroid}} from appearing after defeating Mom. Only {{i|The Negative}} will appear after the boss fight. After completing Boss Rush, Isaac is likewise forced to travel down to {{s|Sheol}}.
+
+=== Notes ===
+* Mom's foot will still target Isaac even if he has the {{i|Punching Bag}} or {{i|Lost Fly|r}}.
+* It is impossible to obtain Broken Shovel during a [[RERUN]].
+* The Broken Shovel will disappear if left behind in a room. Leaving and re-entering a room with it left on a pedestal will cause it to disappear. If the Shovel has been knocked down but not touched, it will remain in the room.
+* The knocked down Shovel will work as a pickup and can be duplicated, rerolled or turned into a fly.
+* {{dlc|r}} Though it is possible to obtain the Broken Shovel during a [[Victory Lap]], {{c|The Forgotten}} cannot be unlocked during a Victory Lap.
+* {{dlc+|r}} While either of {{c|Jacob and Esau|n}} holds this item, the feet will only target the brother who is holding it. The feet will still damage both of them.{{dlc-}}
+* {{dlc+|r}} Regardless of which character holds the item, feet will target both {{c|Tainted Lazarus}}' forms.{{dlc-}}
+* {{dlc|r}} {{i|Mama Mega!}}'s explosion will knock the Broken Shovel down.
+* {{t|Myosotis}} may spawn Broken Shovel on the next floor when knocked down but not taken.
+
+=== Synergies ===
+* {{Book of Virtues synergy|description=Creates a tiny ghost wisp on the middle ring, which resembles {{c|The Soul}}. These wisps' tears have a 10% chance of invoking {{p|II - The High Priestess}} on enemies.}}
+* {{i|Car Battery}}: Prevents all stomping from occurring for two waves of a {{r|Boss Rush}} or {{r|Challenge Room}} / {{r|Boss Challenge Room}}. As each wave of Boss Rush restores 2 charges, this allows Isaac to be free from stomping for its entire duration.
+** If used in a normal room, the effect does not carry over to the next room.
+* {{i|Moving Box}}: Can be used to pick up the Broken Shovel without causing Mom's Foot to stomp down at all.
+
+=== Tips for Obtaining ===
+* Characters with good starting stats such as {{c|Cain}}, {{c|Judas}}, or {{c|Azazel}} are excellent for blazing through the first floor with time to spare.
+* {{dlc+|r}} {{c|Tainted Magdalene}} ability to rapidly regenerate health in almost any circumstance makes this challenge much easier, and due to how Tainted Magdalene is played, the constant i-frames generated through hugging enemies is useful for negating the full heart damage from the stomps, the stomps also acting as extra damage when fighting bosses.{{dlc-}}
+* Avoid wasting time for pickups, items, or any unnecessary rooms while progressing to the Boss Room. They can be returned to after clearing the rest of the floor and killing the boss.
+* There is no time limit on claiming the shovel, as long as the floor boss was killed within the time limit. Obtaining it can wait until Isaac is ready to move on to the next floor.
+* {{dlc|a+nr}} Look for items such as {{i|Host Hat}} to negate the stomp damage, or for damage/tear-increasing items to kill enemies quicker; conversely, when running into a mini-boss, getting {{cu|Maze}} or {{cu|Labyrinth}}, or encountering poor floor generation such as multiple large rooms and dead ends, restarting may be a better choice.
+** {{dlc|r}} Stomp damage can no longer be negated.
+* If the criteria for Broken Shovel to appear are not met and there is ambiguity as to whether it is obtainable, look for a large, faint shadow of the shovel covering the starting room; if it is not there, the Shovel cannot be obtained.
+* A legitimate strategy may be restarting repeatedly until one gets a godlike item, such as {{i|Tech X}},  {{i|The Ludovico Technique}} (as {{c|Azazel}}), or other personally preferred Quality 4s in the first room, since it really isn't very possible to think up a sufficient build on the fly as you have to focus on dodging Mom at all times.
+
+== Passive Collectible ==
+{{infobox passive collectible
+ | dlc         = a+
+ | alias       = Broken Shovel 2
+ | id          = 551
+ | quote       = It feels cursed
+ | description = One of two parts necessary to create {{i|Mom's Shovel}}. No effect if somehow obtained on its own.
+ | quality     = 4
+ | tags        = offensive noeden lazarussharedglobal quest
+}}
+
+The second Broken Shovel piece can be acquired by completing {{r|Boss Rush}} while holding the first half of Broken Shovel.
+
+=== Effects ===
+* Replaces the Broken Shovel active item with {{i|Mom's Shovel}}, ceasing the stomps from Mom's feet.
+
+=== Notes ===
+* The first Broken Shovel piece has to be in the active item slot when the second piece is picked up in order to obtain Mom's Shovel. If the second piece is picked up without the first piece, it will be added as a passive item and won't become Mom's Shovel even if the first piece is picked up afterward.
+** {{dlc+|r}} If either of {{c|Jacob and Esau|n}} holds the first Broken Shovel piece, that same brother must pick up the second piece.{{dlc-}}
+
+=== Tips for Obtaining ===
+* Make sure to keep moving; stopping for even a few seconds will increase the chance a foot hits Isaac.
+* Items that give flight are even more helpful than usual as Isaac will not need to worry about navigating around obstacles to avoid a stomp. Any means of temporary (or even permanent) invulnerability has obvious merit as well.
+* If an active item is offered in Boss Rush, it can be held for the duration of the fight; however, the Broken Shovel must be picked up before the last wave ends for the second half of Broken Shovel to appear.
+* If {{i|There's Options}} is held and Boss Rush is completed, an additional pedestal item will appear. Be careful not to pick up this other item, as doing so will cause Broken Shovel to disappear.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Forgotten, Bone Heart }}
+
+== In-game Footage ==
+{{#ev:youtube|t_qo3rzS4cI}}
+
+== Gallery ==
+<gallery>
+File:ShovelsShadow.jpg|The shadow of Broken Shovel's handle, as seen in the starting room after defeating the Boss in {{s|Basement}} I in under a minute.
+</gallery>
+
+== Trivia ==
+* The Broken Shovels were added in [[Booster Pack#5]], after the initial release of the DLC.
+* The Broken Shovels, {{I|Dogma}}, {{I|The Polaroid}} and {{I|The Negative}} are the only Quest Items to not be Quality 0.
+
+== Bugs ==
+{{bug|Taking the second part of Mom's Shovel with a different {{c|Tainted Lazarus}} form won't assemble the shovel.}}
+
+{{nav|booster pack|mom|broken|fr=Pelle Brisée}}
+[[Category:Added in Booster Pack 5]]

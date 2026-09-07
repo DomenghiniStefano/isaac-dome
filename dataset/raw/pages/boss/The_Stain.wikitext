@@ -1,0 +1,47 @@
+{{infobox boss
+ | dlc = a
+ | name = The Stain
+ | id          = 401
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|Boss Rush}}<br>{{dlc|r}}<br>{{floor|Caves}}{{floor|Flooded Caves}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Sheol}}<br>{{floor|Dark Room}}{{floor|Chest}}<br><u>Alternate path</u><br>{{floor|Corpse}}
+ | base hp     = 400
+ | pool        = {{ip|Boss}}<br> {{i|Worm Friend|r+}} (1% chance)
+ | unlocked by = Something wicked this way comes!
+}}
+
+'''The Stain''' is a [[boss]] added in ''[[The Binding of Isaac: Afterbirth]]'' that can appear:
+* {{dlc|nr}} In all environments of [[Chapter 2]] ({{s|Caves}}, {{s|Catacombs}}, {{s|Flooded Caves}}).
+* {{dlc+|r}} Only in the {{s|Caves}} and the {{s|Flooded Caves}}.{{dlc-}}
+
+== Behavior ==
+The Stain burrows underground when Isaac is not within range. While burrowed it becomes invincible and follows Isaac's movements. When close to Isaac, it pops out and performs one of the following attacks:
+* Sends out 2 patterns of numerous projectiles in all directions. The first barrage consists of fast-moving bullets that slow down. The second barrage consists of slow-moving bullets that speed up.
+* Sends out tendrils to its left and right leaving small puddles of damaging [[Creep#Red Creep|Red Creep]] directly around The Stain and to its either side.
+* Spawns 2 {{e|Charger}}s and can have a maximum of 3.
+It will stay vulnerable for a brief moment after performing an attack before quickly burrowing underground again.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|2|dlc=a+}}: Continuously spawns 2 {{e|Round Worm}}s instead of Chargers, with a maximum of 3 at any time. Never fires barrages of bullets.
+
+== Gallery ==
+<gallery>
+File:Thestain ingame bullethell.png|The Stain performing its barrage attack.
+File:Boss The Stain grey ingame.png|The Grey Champion Stain.
+File:Boss Delirium The Stain ingame.png|The Stain as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Trivia ==
+* It is the posthumous version of {{e|Polycephalus}}. It appears that the top heads have been stripped of their skin, while the bottom head only lacks its first skin layer.
+** Unlike its alive counterpart, the lower head has closed eyes and eyelids.
+** As of Repentance, the Stain is more common in terms of floor variants than Polycephalus, since it can appear in the {{s|Caves}} and the {{s|Flooded Caves}}, whereas Polycephalus can only appear in the {{s|Catacombs}}. This means that the player is more likely to encounter the Stain than Polycephalus, despite the Stain being a posthumous version of it.
+* The Stain has an alternative more degraded variation known as {{e|The Pile}}.
+* A third head can be seen in the background in The Stain's boss art.
+* {{dlc|na+}} Prior to [[Booster Packs#Booster Pack #5|Booster Pack #5]], The Stain could spawn {{e|Drowned Charger}}s if it was fought in the {{s|Flooded Caves}}.
+* During the versus screen, The Stain's popping out sound can be heard. The Stain is one of {{Dlc|nr}} seven/{{Dlc|r}} five bosses that can be heard in the versus screen; the other are {{e|The Forsaken}}, {{e|Big Horn}}, {{e|Mom}}, {{Dlc|nr}} {{e|Mom's Heart}}, {{Dlc|nr}} {{e|It Lives!}}, and {{e|Mother}}.
+
+{{nav|blue baby boss unlock|boss|fr=La Souillure}}
+
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Afterbirth]]

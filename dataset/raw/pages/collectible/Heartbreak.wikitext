@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 694
+ | quote       = Eternal sorrow
+ | description = Grants 3 [[Health#Broken Hearts|broken hearts]] and +0.25 [[damage]] for every [[Health|broken heart]] Isaac has. Every otherwise fatal hit will add 2 more until Isaac has nothing but broken hearts.
+ | quality     = 3
+ | tags        = summonable
+ | unlocked by = Heartbreak
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Grants +0.25 [[damage]] for every [[Health#Broken Hearts|broken heart]] Isaac has.
+* Immediately grants 3 broken hearts.
+** Every otherwise fatal hit will add 2 more, replacing other types of hearts if necessary, and activates {{i|The Necronomicon}}'s effect, dealing 40 damage to all enemies in the room.
+** Once Isaac has no non-broken hearts left, he dies. Extra lives will apply at this point.
+
+== Notes ==
+* At the maximum of 11 broken hearts, Isaac gains a total of +2.75 damage.
+* The effect does not save Isaac from fatal [[Devil deal]]s.
+**However, while taking an item that costs heart/s and will result in death, if Isaac takes any damage, it will leave him on half a blue heart with taken item and will add 2 broken hearts.
+
+== Synergies ==
+* {{t|A Missing Page|r}} / {{I|Missing Page 2|r}}: Deals an additional +40 damage when Isaac dies. Effects stack together and with multiple copies.
+* {{t|Found Soul}}: The ghost gains 2 extra hits per floor, and every hit they take will damage all enemies in a room as well.
+
+== Interactions ==
+* {{i|Damocles}}: Heartbreak does not protect Isaac from Damocles.
+* {{c|Keeper}}: Keeper will gain 1 broken heart instead of 3. Taking fatal damage will only grant Keeper 1 broken heart.
+* {{C|Magdalene}} + {{I|Birthright}}: Can hold up to 17 broken hearts, totaling +4.25 damage instead.
+* {{i|Plan C}} / {{p|Suicide King}}: Heartbreak does not protect Isaac from these effects.
+* {{c|Tainted Eden}} / {{c|Tainted Isaac}}: The starting broken hearts are removed when Heartbreak is rerolled/dropped. However, any broken hearts gained from lethal damage will persist.
+* {{C|Tainted Jacob}}: This effect will save Tainted Jacob while he is in his Lost form, adding two broken hearts to his regular health.
+* {{C|Tainted Keeper}}: Tainted Keeper will gain 1 broken heart instead of 3. Taking any damage will kill him, as he will then have 2 broken hearts.
+** {{t|Mother's Kiss}} can mitigate this as it gives Tainted Keeper an extra coin heart.
+* {{c|The Lost}} / {{c|Tainted Lost}}: The Lost has full benefit of the item. This lets him survive 4 extra hits, each hit adding 1 damage, and the 5th is fatal.
+** Tainted Lost can't normally obtain it, as it doesn't have the <code>offensive</code> item tag.
+** '''The Lost''' / '''Tainted Lost''' + {{i|Magic Skin}} / {{p|VI - The Lovers?}}: No broken hearts are added by the item/card, thus having no effect on Heartbreak.
+
+== In-game footage ==
+{{#ev:youtube|WT4-aw0Ic2c}}
+
+{{nav|tainted eve unlock|the beast unlock|fr=Brise-Cœur}}
+[[Category:Damage-preventing items]]

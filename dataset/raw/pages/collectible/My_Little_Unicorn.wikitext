@@ -1,0 +1,47 @@
+{{infobox activated collectible
+ | id          = 77
+ | quote       = Temporary badass
+ | description = Grants [[invulnerability]] and +0.28 [[speed]] for six seconds, removing the ability to shoot tears and replacing it with the ability to deal contact damage to enemies.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = {{dlcalt|6|r=4}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Gives [[invulnerability]] and +0.28 [[speed]] for six seconds, removing the ability to shoot tears and replacing it with the ability to deal contact damage to enemies.
+** {{dlc|nr}} Isaac deals 40 contact damage to enemies, once per second.
+** {{dlc|r}} Isaac deals 20 contact damage to enemies, twice per second.
+*** If an enemy is at 40 HP or less, the contact damage is increased to 40 for that enemy.
+
+== Notes ==
+* The invulnerability effect negates all forms of damage, including health loss from {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s.
+* Ending the current run via opening the end chest while My Little Unicorn is active will cause the credits and main menu music to be sped up. The effect ends upon restarting the game or starting a new run.
+* {{P|VII - The Chariot}} card provides the same effect of this item when used.
+
+== Synergies ==
+* {{i|4.5 Volt}}: With some damage source while this item is active, it can be permanently invulnerable inside the room while you have enemies.
+** If combined with {{I|9 Volt}}, it will be easier to achieve invincibility.
+* {{i|???'s Only Friend}}: The fly can still be controlled while invincible.
+* {{Book of Virtues synergy|description=Spawns rainbow-colored wisps in the middle ring. The wisps orbit Isaac more quickly than normal wisps and change colors constantly, with both of these effects being boosted while My Little Unicorn is active. The wisps also deal an extra 8 contact damage, for a total of 15 contact damage per tick. When de-activated, the rainbow coloring slightly fades away.}}
+* {{i|Car Battery}}: Doubles the duration of invulnerability.
+* {{I|Mom's Knife}} does contact damage in the same direction it was being held at the time of using it, giving a massive amount of free damage by ramming into an enemy.
+** If you have the {{tf|Yes Mother?}} transformation, you can basically do the same thing using this item.
+* Damage on contact items ({{i|Aries}}, {{i|The Virus}}, etc.) and [[Orbital Familiar]]s ({{i|Cube of Meat}}, {{i|Sacrificial Dagger}}, etc.): Deals damage on top of My Little Unicorn's damage and invincibility.
+
+== In-game Footage ==
+{{#ev:youtube|8Ju16ve2T70||inline}} {{#ev:youtube|FZpUXOFxzCs||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS_Detailed_My_Little_Unicorn.png|{{plat|3DS}} The icon of My Little Unicorn as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* The item is a reference to the show ''[[wikipedia:My Little Pony: Friendship Is Magic|My Little Pony: Friendship is Magic]]''. The unicorn is one of the three types of ponies in the show, the others being the pegasus and the earth pony. A notable unicorn from the show is Twilight Sparkle, its main character.
+* In the original ''Binding Of Isaac'', using the item changed the music instead of speeding it up.
+* If you pause the game while under the effect of My Little Unicorn, the music plays indefinitely.
+
+{{nav|fr=Licorne Arc-En-Ciel}}
+[[Category:Damage-preventing items]]

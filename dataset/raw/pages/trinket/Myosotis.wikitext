@@ -1,0 +1,34 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 137
+ | quote       = Forget me not...
+ | description = When entering a new floor, up to four uncollected [[pickups]] from the previous floor spawn in the starting room.
+ | tags        = lazarussharedglobal
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* Spawns pickups left on the previous floor in the starting room of the current floor.
+** A maximum of 4 pickups can be spawned.
+
+== Notes ==
+* The "previous floor" status of trinkets can be reset by picking them up and dropping them again, allowing multiple other trinkets to be carried between floors.
+* If pickups were transported to another floor from the Treasure or Boss Room, their copies will remain in those rooms and can be encountered during the [[Ascent]].
+** Affected trinkets still transform into {{P|Cracked Key}}s, potentially allowing you to gain large amounts of Cracked Keys.
+* Spawns pickups on the first floor if {{I|R Key}} was used.
+* Does not bring pickups from {{r|I AM ERROR}} rooms.
+* May spawn {{i|Broken Shovel 1|n}} on the next floor if it was knocked down but not taken.
+* [[Rooms|Special Rooms]]  take priority, in a certain order, over normal rooms, with {{r|Boss Rooms}} having the highest priority.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}} / {{t|Myosotis|r+}}: Each copy increases the amount of pickups spawned by 2, up to a maximum of 8 pickups spawned per floor.
+
+== In-game footage ==
+{{#ev:youtube|Fb4URa3BlVM}}
+
+== Trivia ==
+* Forget me not is a common name for the flower genus Myosotis. This name comes from a [[wikipedia:Vergißmeinnicht, WAB 93|German poem]] where it symbolizes remembrance of a loved one.
+* This trinket originated in ''Antibirth''. It was originally capped at 8 pickups instead of 4.
+
+{{nav}}

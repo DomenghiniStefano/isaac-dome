@@ -1,0 +1,62 @@
+{{infobox boss
+ | name        = Pestilence
+ | id          = 64
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|Boss Rush}}<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Cathedral}}{{floor|Sheol}}<br>{{floor|Chest}}<br><u>Alternate path</u><br>{{floor|Corpse}}
+ | base hp     = 280
+ | pool        = {{i|Ball of Bandages}}<br>{{i|Cube of Meat}}<br>{{dlc|r+}} {{t|Locust of Pestilence|n}} (1% chance)
+ | unlocked by = The Harbingers
+}}
+
+'''Pestilence''' is a [[Harbinger]] that can appear in all environments of [[Chapter 2]] ({{s|Caves}}, {{s|Catacombs}}, {{s|Flooded Caves}}).
+
+== Behavior ==
+=== Phase 1 ===
+* Floats around the room, leaving a large trail of damaging [[Creep#Green Creep|Green Creep]].
+* Fires an {{i|Ipecac}} projectile at Isaac, which leaves Green Creep on impact.
+* Summons two {{e|Charger}}s or {{e|Spitty|text=Spitties}} and can have a maximum of four summons.
+** Any Chargers or Spitties caught in Pestilence's Ipecac explosion will be killed.
+
+=== Phase 2 ===
+After taking enough damage, Pestilence's head will explode, beginning the second phase.
+* No longer moves around the room but slowly drifts around, leaving Green Creep.
+* Continues to fire Ipecac projectiles at Isaac, but at a faster rate.
+* Summons two {{e|Attack Fly|text=Attack Flies}}.
+
+Pestilence deals a whole heart of contact damage in both phases, though without flight Isaac is more likely to be damaged by the Green Creep instead.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|2}}: Leaves a trail of slowing [[Creep#White Creep|White Creep]] instead of Green Creep, shoots 6 projectiles in all directions instead of an Ipecac shot and spawns {{e|Trite}}s instead of Chargers or Spitties. He cannot spawn more than 3 Trites at once. It spawns {{e|Spider}}s instead of Attack Flies in Phase 2.
+
+== Gallery ==
+<gallery>
+File:Boss Pestilence headless ingame.png|Pestilence in his second phase.
+File:Boss Pestilence grey ingame.png|Grey Champion Pestilence.
+File:Boss Pestilence grey2 ingame.png|Grey Champion Pestilence in his second phase.
+File:Boss Delirium Pestilence ingame.png|Pestilence as one of {{e|Delirium}}'s forms.
+File:Last will Pestilence.png|Pestilence as seen in Isaac's last will.
+File:Pestilence 7S.png|Mini version of pestilence summoned with the 7 seals.
+</gallery>
+
+== Unlockable [[achievements]] ==
+{{achievement text | The Book of Revelations, 7 Seals }}
+
+== Trivia ==
+* Pestilence appeared in the original ''The Binding of Isaac''.
+* Pestilence is not directly one of the [[Wikipedia:Four Horsemen of the Apocalypse|Four Horsemen of the Apocalypse]] and is not present with the other Horsemen in Revelations (Revelation 6:2). The canonical Four Horsemen are Conquest (white), War (red), Famine (black), and Death (pale).
+** However, pestilence is featured as one of God's "four disastrous acts of judgment" alongside sword, famine, and wild beasts (Ezekiel 14:21), which, in some cases, can be interpreted as symbolic of the Horsemen- as the acts of judgement are often used by God for destructive purposes throughout the Bible.
+*** These four acts are given to the Horseman of Death to perform (Revelation 6:8) despite the contradictory fact that famine, the attribute of a completely separate Horsemen is among the acts.
+** Despite not being a true Horseman, {{e|Ultra Pestilence}} still appears instead of an ultra version of {{e|Conquest}} during {{e|The Beast}} fight.
+* Pestilence means a fatal disease epidemic.
+* Pestilence is the only Harbinger that is unable to charge out of the room.
+* {{Dlc|nr}} Pestilence’s head resembles {{e|The Husk}}.
+* Pestilence makes a "Hey!" sound when launching explosive projectiles at Isaac. {{e|Famine}} makes the same noises when spitting shots at Isaac at its second phase.
+
+{{nav|boss|mom unlock|fr=Épidémie|zh=瘟疫骑士}}
+
+[[Category:Harbingers]]
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Rebirth]]

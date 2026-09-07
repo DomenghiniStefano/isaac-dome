@@ -1,0 +1,24 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 715
+ | quote       = Saved for later
+ | description = Exclusive to {{c|Tainted ???}}. Allows him to save one [[Bombs#Poop|poop bomb]] for later, allowing him to gather more over time.
+ | quality     = 0
+ | tags        = noeden nocantrip
+ | recharge    = unlimited
+}}
+
+{{cit|a|r}} It is available solely for {{c|Tainted ???}} as his starting item.
+
+== Effects ==
+* Removes {{C|Tainted ???}}'s leftmost [[Bombs#Poop|poop]], storing it inside of Hold and cycling to the next poop.
+* Using Hold again while a poop is inside it will remove the poop and use it as expected.
+
+== Notes ==
+* The item is unavailable for anyone except {{C|Tainted ???}}.
+** It can, however, activate when using {{i|Metronome}}. This does nothing with most characters; however, it ''will'' count as a use of the item when activated as {{C|Tainted ???}}.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+
+{{nav|fr=Garder}}

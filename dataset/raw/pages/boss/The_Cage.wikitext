@@ -1,0 +1,53 @@
+{{infobox boss
+ | name        = The Cage
+ | id          = 265
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Depths}}<br>{{floor|The Void}}<br>{{room|Boss Rush}}<br>{{dlc|r}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|The Void}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Double Trouble</u><br>{{floor|Womb}}{{floor|Utero}}<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}<br><u>Alternate path</u><br>{{floor|Corpse}}
+ | base hp     = 800
+ | pool        = {{ip|Boss}}<br> {{i|Bird Cage|r+}} (1% chance)
+}}
+
+'''The Cage''' is a [[boss]] that can appear:
+* {{dlc|nr}} Only in the {{s|Depths}}.
+* {{dlc|r}} In the {{s|Depths}} and the {{s|Dank Depths}}.
+
+== Behavior ==
+* Leaps off-screen and tries to land in Isaac's path, predicting his movement. Leaves a small puddle of damaging [[Creep#Grey Creep|Grey Creep]] and sends out 4-5 lines of rock waves upon landing.
+* Quickly shoots 6 streams of 3-7 projectiles in a spiral pattern, similar to {{e|Mom's Heart}}/{{e|It Lives!}}.
+* Curls up in a ball and rolls towards Isaac, bouncing off walls and obstacles around the room.
+* Spawns a grey-coloured {{e|Vis}} that shoots a brown-coloured {{i|Brimstone}} laser.
+** The different colours are purely cosmetic, and it behaves exactly like a normal Vis.
+** Any Vis caught in The Cage's rolling attack will be killed.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|5|dlc=a}}: Periodically leaves puddles of [[Creep#Green Creep|Green Creep]] and doesn't spawn any Vis.
+: {{bc|20|dlc=a}}: Two Cages, each with 50% HP (400), replace the normal Cage. They never perform their jump attack. {{dlc|r}} Both Cages are ~50% smaller.
+
+== Gallery ==
+<gallery>
+File:Boss The Cage green ingame.png|The Green Champion Cage.
+File:Boss The Cage pink ingame.png|The Pink Champion Cage.
+File:Boss Delirium The Cage ingame.png|The Cage as one of {{e|Delirium}}'s forms.
+File:The Cage Unused.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite for The Cage found among the Room Editor files.
+File:Rebirth Boss Concepts.jpg|Concept art of The Cage on the right side, along with other Rebirth boss concept arts.
+File:Cage Vis Rebirth.png|{{dlc|nr}} Original Cage Vis sprite.
+File:Cage Vis.png|{{dlc|r}} Cage Vis sprite in Repentance.
+</gallery>
+
+== Notes ==
+* {{i|Host Hat|dlc=anr}} and {{i|Pyromaniac}} make Isaac immune to The Cage's rock waves, since it is considered to be the same as explosions by the game.
+* When The Cage jumps, there is a delay to his falling animation, causing Isaac to be hurt before The Cage falls back down.
+* If Isaac is [[Flight|flying]] on [[Obstacles#Pit|Pits]], The Cage can hit Isaac if it jumps towards him, and it will then be pushed back to the ground.
+
+== Trivia ==
+* It has the highest health of any boss fought before Mom's Heart.
+** Despite being a possible encounter before {{e|Mom}}, The Cage has more HP than her.
+* It is the posthumous version of {{e|Mega Fatty}}. It appears to have lost its head.
+* Although The Cage is a dead version of Mega Fatty, it also bears a lot of resemblances to a giant Vis as well, since it is a fat headless body with a giant cut in its belly. Another slight nod to their resemblance is The Cage's ability to spawn Vis with a Grey color palette and a Brown Brimstone laser.
+* The stitches on the Cage's body resemble Y-shaped incisions commonly made at the start of an autopsy.
+
+{{nav|boss|fr=La Cage}}
+
+[[Category:Chapter 3 bosses]]
+[[Category:Depths bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Debut bosses in Rebirth]]

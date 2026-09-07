@@ -1,0 +1,44 @@
+{{infobox passive collectible
+ | id          = 252
+ | quote       = Extra pill room
+ | description = Isaac can hold 2 [[pill]]s at once and all [[card]]s and [[rune]]s are replaced by pills.
+ | quality     = 0
+ | tags        = summonable offensive nocantrip
+ | unlocked by = Little Baggy
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Allows Isaac to carry two [[pill]]s. Tapping the Drop button will cause a cycle through the two pills.
+* Spawns a random pill.
+* {{dlc|nr}} Changes all [[card]] and [[rune]] drops into pills.
+* {{dlc|r}} Changes all [[card]] drops into pills. Existing runes will not be converted, but new runes will only appear through forced drops (such as from {{i|Mom's Ring}} or {{i|Clear Rune}}).
+
+== Notes ==
+* Any Tarot card or rune held when picking this item up will change into a pill.
+** {{dlc+|anr}} {{p|Dice Shard}} counts as a card and will be converted.{{dlc-}}
+** {{dlc|r}} If playing as {{C|Jacob and Esau}}, if one character picks up Little Baggy while the other character holds a card, that card will remain until used or dropped.
+* {{dlc|r}} Blowing up the [[Rocks#Marked Skulls|skull]] marked with a small "X" in {{s|Depths}} will drop [[Telepills]] instead of {{P|0 - The Fool}}.
+** If The Fool has already been generated, the generated pill will not be guaranteed to be a Telepills.
+* {{dlc|r}} [[Tainted Characters]] who have an active item in the consumable slot will be allowed a third slot for pills.
+
+== Interactions ==
+* {{i|Blank Card}}: All cards are replaced by pills, rendering Blank Card useless unless Isaac also has {{i|Starter Deck}}.
+* {{i|Crystal Ball}}: Generates pills instead of cards upon use.
+* {{i|Deck of Cards}}: The item becomes functionally identical to {{I|Mom's Bottle of Pills}}.
+** {{dlc|r}} During multiplayer, if Little Baggy is held by one player, other players can still spawn cards using Deck of Cards. Dropping the card will convert it into a pill.
+* {{I|False PHD}}: Since all cards turn to pills, there is potential for a lot of damage ups.
+* {{i|Lucky Foot|r}}: Most negative pills will be converted to their positive counterparts.
+* {{i|PHD}}/{{i|Virgo}}: Most negative pills will be converted to their positive counterparts.
+* {{dlc|nr}} {{i|Starter Deck}}: Overrides Little Baggy. Pills may still be for sale in shops, but dropping them turns them into cards.
+** {{dlc|r}} Having both items allows both cards and pills to appear again.
+*** Picking up Starter Deck while already holding Little Baggy will turn any held pills into cards.
+
+== In-game Footage ==
+{{#ev:youtube|8UkXwzCF4Ls}}
+
+== Bugs ==
+{{bug|dlc=r|Patch V1.7.5 stated that "Little Baggy no longer affects pocket items that are neither pills nor cards (such as runes)", even though that is not the case.}}
+
+{{nav|inventory expansion|pill modifier|card modifier|rune modifier|fr=Petit Sachet}}

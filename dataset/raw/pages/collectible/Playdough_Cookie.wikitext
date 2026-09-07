@@ -1,0 +1,70 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 570
+ | quote       = Tasty rainbow
+ | description = Grants multicolored tears. Each color comes with a different [[Status Effects|status]] or [[Tear Effects|tear]] effect.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Every tear has a different color and different corresponding effect. One of the following effects can be granted:
+** Brown: None
+** Red: 2x damage, {{I|Fire Mind}},  or [[Petrification|Petrify]]
+** Pink: [[Charm]]
+** Purple: [[Homing]] or {{T|Brain Worm}}
+** Dark Blue: chance for {{I|Proptosis}} tears
+*** Does not gain 3x damage, effectively making it a damage down.
+** Light Blue: [[Slow]], and [[Freeze]] on kill
+** Green: [[Poison]]
+** Yellow: [[Fear]]
+** Orange: [[Bait]]
+
+== Notes ==
+* The color of the tears from Playdough Cookie are not based on luck, but their individual effects are. (e.g. Red {{I|Fire Mind}} tears will always explode at 13 Luck.)
+
+== Synergies ==
+* {{i|Aquarius}}: Each individual puddle will grant a different effect, and will copy the corresponding color.
+* {{i|Brimstone}} (including {{C|Azazel}}'s and {{C|Tainted Azazel}}'s) / {{I|Trisagion}} / {{i|Technology 2}} / {{i|Tech X}}: Beam(s) apply a different effect every tick, and have an RGB filter. This can be used to rapidly apply different effects.
+** All of {{I|Trisagion}}'s lasers will share the same color at any given moment, regardless of when they were fired. The same is true for {{i|Tech X}}'s rings.
+* {{i|Dr. Fetus}} / {{I|Epic Fetus}}: Explosions still use the effects the tears give them, while also inheriting their synergies with the items they're based on and (for {{i|Dr. Fetus}}) visually resembling them. (e.g. Dark Red becomes {{I|Hot Bombs}}, Green becomes {{I|Bob's Curse}}).
+** They don't gain damage from Red, or lose damage from Blue, however.
+* {{i|Spirit Sword}}: Every swing gains a different color and effect based on that color. This can be used to rapidly apply different effects.
+
+== Interactions ==
+* {{I|120 Volt}}: No effect.
+* {{I|Compound Fracture}} / {{I|The Parasite}} / {{I|Lachryphagy}} / {{I|Haemolacria}}: All split shots copy the color and effect of the first shot.
+* {{C|The Forgotten}} / {{C|Tainted Forgotten}} / {{I|Notched Axe}}: Every swing gains a different color and effect based on that color. It lacks the ability to be spammed that {{i|Spirit Sword}} has, however.
+* {{I|Ipecac}}: {{I|Fire Mind}} tears drop a fire pit upon exploding.
+* {{I|Jacob's Ladder}}: Lasers use the same effect as the tear.
+* {{C|Tainted Lilith}}: The whip attack will apply different effects normally.
+* {{I|The Ludovico Technique}}: The tear changes color at your tear rate and gives the corresponding effects.
+* {{I|Maw Of The Void}}: No effect.
+* {{I|Mom's Knife}}: Applies a different effect every tick.
+* {{I|Revelation}} / {{I|Montezuma's Revenge}}: Applies the RGB filter, but does not gain its effects.
+* {{I|Technology}}: Beam applies a different effect every hit, and gains the RGB filter.
+* {{I|Varicose Veins}}: Each one of the 10 tears spawned on hit has one of the available random effects applied to it.
+
+== Trivia ==
+* ''Playdough Cookie'' originates from the ''Antibirth'' mod, but was named [[anti:Playdoh Cookie|Playdoh Cookie]]; this potentially was changed due to copyright issues. By extension, it was also from the ''Community Remix'' mod for the flash version, but named ''Playdough Cookie''.
+** In ''Antibirth'', it had only 5 different tear colors, and some were not included or had their effects changed in Repentance. Its pickup quote was also changed from "Multicolored tears".
+** In ''Community Remix'', it was based on a Reddit concept.<ref>https://www.reddit.com/r/bindingofisaac/comments/2g3uja/item_idea_playdough_cookie/</ref>
+*** It only had three effects, red giving a damage up upon killing an enemy, purple being homing, and green having a chance to poison enemies.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+* The pickup quote of this item is possibly a reference to the Skittles' slogan, "Taste the Rainbow".
+* Most of the tear effects are correspondent to tear effects of a similar color or effect. The only exception is Dark Blue, which has no correlation to {{I|Proptosis}}.
+** Green resembles {{I|Scorpio}}'s tears. Other poison items exist, but it is guaranteed much like Scorpio and matches its color.
+** Yellow resembles {{I|Mom's Perfume}}'s tears. Other fear items exist, but it matches that of Mom's Perfume.
+** Light Blue resembles {{I|Uranus}}' tear color, minus the ice shape.
+** Pink resembles {{I|Mom's Eyeshadow}}'s tears.
+** Red resembles the colors of {{I|Eye of Belial}}'s sprite and {{I|Mom's Contacts}}'s tears.
+*** Although {{I|Fire Mind}} is less similar, it could be based on Fire Pits having an orange and red variant.
+** Purple resembles {{I|Spoon Bender}}'s tears.
+*** {{T|Brain Worm}} still counts as a form of homing, though it does not change tear color.
+** Orange resembles {{I|Rotten Tomato}}'s tears.
+
+== References ==
+<references />
+
+{{nav|fr=Cookie en pâte à Modeler}}

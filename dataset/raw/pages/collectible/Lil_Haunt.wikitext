@@ -1,0 +1,23 @@
+{{infobox passive collectible
+ | name = Lil Haunt
+ | id = 277
+ | quote = Fear him
+ | description = Spawns a [[familiar]] that chases down enemies, dealing 4 damage per second and inflicting [[fear]].
+ | quality     = 1
+ | tags        = summonable monstermanual offensive
+}} {{disambig msg|the familiar|the enemy|Lil' Haunt|the boss|The Haunt}}
+
+{{cit|p}}
+
+== Effect ==
+* Spawns a [[familiar]] that chases down enemies, dealing 2 damage per tick (4 damage per second) and inflicting [[fear]].
+* {{dlc|r}} The familiar has an exceptionally higher detection range than most other familiars that chase down enemies.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Haunt}}.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|QVdBVXdz_d0}}
+
+{{nav|fr=P'tit Revenu}}
+[[Category:Familiars]]

@@ -1,0 +1,54 @@
+{{infobox boss
+ | id          = 28
+ | variant     = 1
+ | environment = <u>Boss</u><br>{{floor|Caves}}{{floor|Flooded Caves}}<br>{{room|challenge}}{{room|boss rush}}<br><u>Degraded Boss</u><br>{{floor|Chest}}
+ | base hp     = 350
+ | pool        = {{i|Little C.H.A.D.}}
+ | unlocked by = Something Cute
+}}
+
+'''C.H.A.D.''' is a [[boss]] that can appear in the {{s|Caves}} and the {{s|Flooded Caves}}.
+
+== Behavior ==
+C.H.A.D. moves randomly around the room in cardinal directions and can perform the following attacks:
+* C.H.A.D. charges at Isaac whenever he lines up with one of his cardinal directions.
+** Like {{e|Chub}}, C.H.A.D. eats any {{e|Bomb}}s dropped in his path; stunning him for a moment before dealing considerable damage.
+* Spawns 1-2 {{e|Sucker}}s.
+* As he gets damaged, C.H.A.D. gradually shrinks in size and increases in speed and attack frequency.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium C.H.A.D. ingame.png|{{dlc+|a+}} C.H.A.D as one of {{e|Delirium}}'s forms.{{dlc-}}
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Little C.H.A.D. }}
+
+== Notes ==
+* {{Dlc|r}} C.H.A.D is much less common than his counterpart, spawning only 1/4th as often.
+* C.H.A.D can spawn alongside 2 {{e|Boil}}s or 2 {{e|Red Boom Fly|text=Red Boom Flies}}.
+* Each segment of C.H.A.D. can be individually damaged, so a single piercing tear could hit C.H.A.D. multiple times.
+** {{Dlc|r}} Piercing shots no longer damage segmented enemies multiple times per attack.
+
+== Trivia ==
+* C.H.A.D. appeared in the original ''The Binding of Isaac''.
+* He is a rare alternative to {{e|Chub}}.
+* C.H.A.D. is a cameo from ''Super Meat Boy'', a game by Edmund McMillen.
+** In ''Super Meat Boy'', he is the boss of Chapter 2: The Hospital.
+** When defeated in Super Meat Boy, C.H.A.D. would shrink to a smaller version of himself. Him getting smaller during the fight in ''Rebirth'' and the item {{i|Little C.H.A.D.}} are allusions to this.
+* The name C.H.A.D. is a reference to the 1984 horror film ''[[wikipedia: C.H.U.D.|C.H.U.D.]]'', [http://new.spring.me/#!/EdmundM/q/400190223683714377 confirmed by Edmund].
+* Despite C.H.A.D. normally being speculated to stand for "Cute, Huge and Deadly," Edmund McMillen had confirmed that [https://twitter.com/edmundmcmillen/status/1102940262400090112 it doesn't stand for that phrase].
+** When asked what it does stand for, Edmund jokingly replied [https://twitter.com/edmundmcmillen/status/1300372521447874560 that he can't legally say].
+* C.H.A.D.'s secret for unlocking him says "In the {{s|Depths}}" even though he is found in The Caves.
+* {{plat|PS4, Vita}} Even though C.H.A.D is unlocked by accomplishing "Something Cute", its PSN Trophy icon features Chub.
+
+== Bugs ==
+{{bug|dlc=nr|Using the {{p|Emergency Contact}} on C.H.A.D. then killing him while he is held will crash the game.}}
+{{Bug|Killing C.H.A.D. for the first time using {{c|Tainted Lost}} will not unlock {{i|Little C.H.A.D.}}|dlc=r}}
+
+{{nav|boss}}
+[[Category:Alternate bosses]]
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Rebirth]]

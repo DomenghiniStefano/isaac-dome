@@ -1,0 +1,52 @@
+{{infobox activated collectible
+ | name        = Red Candle
+ | id          = 289
+ | quote       = Flame on
+ | description = Throws out a flame that damages everything in its path, diminishing in size as it hits enemies or blocks shots.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge    = 4s
+ | unlocked by = Red Candle
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* On use, Isaac raises the candle above his head. On pressing a fire button, a red flame, similar to a {{E|Red Fire Place}}, will fire in the chosen direction. It can pass over pits, but can not travel through [[obstacles]].
+** {{dlc|nr}} The flame deals 23 damage per tick, and can hit up to 5 times for a maximum of 115 damage per flame.
+** {{dlc|r}} The flame can hit up to 4 times, and the damage decreases as the flame shrinks. The first hit deals 23 damage, the second hit deals 17.5 damage, and the last two ticks deal 11.5 damage, for a maximum of 63.25 damage per flame.
+** The flame also destroys enemy shots it comes into contact with, which decreases its size each time being hit until the flame is entirely extinguished by this process.
+** {{dlc|nr}} The flame projectile is persistent and will remain active in the [[room]] until it deals a set amount of damage.
+** {{dlc|r}} Flames will disappear automatically after 10 seconds.
+
+== Notes ==
+* {{dlc|nr}} While Isaac holds the candle above his head, his movement speed is reduced.
+* {{Dlc|nr}} There is no limit to the number of fires that can be active. This is useful in situations where mob spawning can be controlled: for example, beating {{R|Boss Rush}} or [[Greed Mode]] as {{C|The Lost}}. This is time-consuming but can be viable if other sources of damage are weak or unreliable.
+* {{Dlc|nr}} It will block Isaac's tears but won't burn him. Isaac's tears can also shrink the size of the flame.
+* {{dlc|r}} Flames do not block Isaac's shots, nor are they put out by them.
+* Flames will destroy {{e|Shopkeeper}}s.
+* {{dlc|r}} Flames will turn certain enemies (such as {{E|Hopper}}s and {{E|Clotty|text=Clotties}}) into their flaming variants, making them stronger. The flame is unable to damage these monsters.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns red wisps in the middle ring. The wisps shoot small flames instead of tears, with a very high tear delay; flames last for 5 seconds or until they block 2 shots and/or deal 2 ticks of damage. The wisps do not persist between rooms, and the damage they deal does not increase with {{I|BFFS!}} or scale up on later floors.}}
+
+== Interactions ==
+* {{i|Car Battery}}: {{dlc|r+}} Spawns a second flame that travels a shorter distance.
+* {{dlc+|nr}}{{i|The Ludovico Technique}}: When the fire hits the tear, the tear resets and appears again on the player.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|EhewUzA2bAI}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Red Candle.png|The icon of Red Candle as seen on the lower 3DS screen
+</gallery>
+
+== Trivia ==
+* [[wikipedia:The Legend of Zelda (1986)|The Legend of Zelda]], a major inspiration for ''The Binding of Isaac'', also has a [[zelda:Red Candle|red candle]] item that can be activated to create flames for burning enemies and bushes, as well as lighting dark rooms. Unlike in Isaac however, where the red candle is unlocked first, the [[zelda:Blue Candle|blue candle]] is the inferior version of the red one, which can be activated only once per room.
+* {{i|The Candle}} is a variation of this item unlocked after donating 900 coins, diminishing over time as opposed to contact.
+* The pickup quote of this item is a reference to the catchphrase of the [[Wikipedia:Human Torch|Human Torch]], a member of the Marvel Comics Fantastic Four.
+* This item can be found as one of the Nintendo-themed {{r|Treasure Room}} items in the 6th of December's [[List of curated daily challenges|Daily Run]], which is an homage to the late CEO of Nintendo, Satoru Iwata.
+
+{{nav|donation machine unlock|fr=Bougie Rouge}}
+[[Category:Store upgrades]]

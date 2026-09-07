@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 634
+ | quote       = Help from beyond
+ | description = While in a room with enemies, spawns red cracks in the ground. Walking over these cracks summons ghosts that launch themselves at enemies and explode.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | unlocked by = Purgatory
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Spawns a red crack in the ground somewhere in the room while Isaac is in a room with enemies. Walking over the crack summons a [[Familiar#Ghosts|ghost]] that homes in on the nearest enemy, exploding when it hits it. After the ghost is summoned, cracks will keep showing up in the room until it is cleared.
+** The ghost spends one second spawning in before it attacks.
+** The ghost deals double Isaac's damage per tick, up to 4 times.
+
+== Notes ==
+* Only one crack is active at a time.
+** The amount of cracks does not increase with additional copies of the item.
+* The explosion does not hurt Isaac.
+* If a crack is stepped on and the room is cleared before the ghost spawns, it will fly to a random location and explode there.
+* The explosions from the ghosts will destroy enemy tears.
+* {{dlc|nr+}} Cracks don't spawn in {{r|Challenge Room}}s, {{r|Boss Rush}} and {{mode|greed}} [[Greed Mode]].
+* [[Friendly]] enemies can be killed by the ghosts.
+* The ghosts aren't considered familiars, therefore they're unaffected by items or trinkets that alter familiars or their behavior, such as {{i|BFFS!}}, {{i|King Baby}}, {{i|Box of Friends}} or {{t|Friendship Necklace}}.
+
+== Interactions ==
+* {{I|Dark Arts}}: Walking over cracks will not summon ghosts while under the effect of Dark Arts.
+* {{I|Spindown Dice}}: When used on Purgatory, turns the item into {{I|Dogma}}, a unique item usually only able to be obtained by killing the boss {{E|Dogma}}.
+
+== In-game footage ==
+{{#ev:youtube|TAEHAx-jE3Y}}
+
+== Trivia ==
+* Purgatory is a place or state of suffering inhabited by the souls of sinners who are expiating their sins before going to heaven.
+* Purgatory is one of only five items to appear in both the Angel and Devil item pools, the others being {{i|7 Seals}}, {{i|Duality}}, {{i|Lil Delirium}} and {{i|Void}}.
+
+{{nav|fr=Purgatoire}}

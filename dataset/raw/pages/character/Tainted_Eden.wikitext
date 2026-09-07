@@ -1,0 +1,149 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc          = r
+ | id           = 30
+ | health       = [[file:Eden Hearts Animated.gif|84px|link=Eden Generation#Hearts|Random]]
+ | damage       = 3.5 ± 1.0 (*1.00)
+ | tears        = +0.75 to -0.515
+ | shot speed   = 1 ± 0.25
+ | range        = 6.5 ± 1.5
+ | speed        = 1.0 ± 0.15
+ | luck         = 0 ± 1
+ | pickups      = 0-2 [[Bomb]](s)<br>0-1 [[Key]](s)<br>0-5 [[Coin]](s)<br>0-1 [[Trinket]], [[Pill]], or [[Card]]
+ | collectibles = Random [[active item]]<br>Random [[passive item]]
+ | unlocked by  = The Capricious
+}}
+'''Tainted Eden''' is a [[Characters|character]] added in [[The Binding of Isaac: Repentance]]. They are the alternate version of {{c|Eden}}. Unlike other Tainted characters, Tainted Eden has no obvious changes to their physical appearance. Tainted Eden is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|Soul of Cain}} to access a special room in one of the walls while playing as Eden.
+
+Like Eden, Tainted Eden starts with random stats, health, possibly some [[pickup]]s, a [[trinket]], an [[Items#Activated Collectibles|active item]], and a [[passive item]].
+
+Every time they take non-self damage, all of their stats, items (passive and active), their trinket and their currently-held card or pill get re-rolled.
+
+== Notes ==
+* {{dlc|nr+}} Items are guaranteed to re-roll into items from the item pool of the last generated item (i.e. If one were to enter every item-containing room without picking up the items, then entered, for example, an {{r|Angel Room}}, every item that was already spawned will reroll into angel deal items when Tainted Eden receives damage).
+* {{dlc|nr+}} Entering an item-containing room without picking up the items, then spawning an item from a specific item pool (e. g. an {{ip|Angel Room|text=angel item}} by using {{i|Alabaster Box}}, or a {{ip|Shop|text=shop item}} via {{i|Keeper's Box}}, etc.) will cause every item that was already spawned to reroll into items from that item pool.
+* Self-damage ({{M|Blood Donation Machine}}s, {{M|Devil Beggar}}s, {{r|Curse Room}}s, etc.) will not trigger a re-roll. Fatal damage will also not trigger a reroll.
+* Tainted Eden cannot reroll {{i|The Negative}}, {{i|The Polaroid}}, {{i|Dad's Note}}, {{I|Damocles}}, {{i|Dogma}}, {{i|Key Piece 1}}, {{i|Key Piece 2}}, {{i|Knife Piece 1}}, or {{i|Knife Piece 2}}.
+** Note that {{i|Missing No.}} can be re-rolled into, but can't be re-rolled out of.
+** Glitched items can be re-rolled into either glitched items or normal items if Tainted Eden is not holding {{i|TMTRAINER}}. If it is holding TMTRAINER, they can re-roll into other glitched items. Glitched items not re-rolling into normal items will eventually stop being re-rolled.
+* Powerful [[transformations]] such as {{tf|Guppy}} are difficult to attain, as transformations are removed if the appropriate items are re-rolled.
+** However, picking up active items will also counts as transformation progress, which allows {{tf|Guppy}} and {{tf|Bookworm}} much easier to keep.
+* If [[Gulp!]] pills or a {{i|Smelter}} are available, absorbing trinkets makes them permanent. If possible, they should be discarded to avoid losing them to a re-roll while looking for better trinkets.
+* If Tainted Eden re-rolls while holding two trinkets (such as from {{i|Mom's Purse}} or {{i|Belly Button}}), the trinket in the second slot is dropped rather than re-rolled. The same case happens with active items and {{i|Schoolbag}}.
+* Each roll is seeded. For instance, reverting a re-roll with {{i|Glowing Hourglass}} then getting hit will always give Tainted Eden their Glowing Hourglass back.
+* Since Cards and Pills are re-rolled on hit, Tainted Eden should pick up {{P|0 - The Fool}} before the fight with {{E|Mom}} and drop it at the beginning of the battle, so as to not lose it if they take damage, if they intend to use it to open {{achievement|A Strange Door}}.
+* Multiple copies of an item will be re-rolled into different items.
+
+== Strategy ==
+* The re-rolls will easily remove health, but not restore it. This makes it risky to focus solely on Red Hearts or Soul Hearts, and a balanced approach is overall safer.
+** There is no guarantee of consistency to Tainted Eden's health. While acquiring Soul or Black Hearts may be a good idea because they cannot be re-rolled away, there is a chance that Tainted Eden rerolls into a build with massive amounts of red health, causing the overflowing Soul health to irrevocably disappear.
+** It's not a good idea to get full 12 hearts. Having 6-9 hearts and leaving some hearts on ground to take when needed is much safer.
+** {{Curse|Unknown}} is also potentially dangerous if one gets hit a lot, as your health is truly unknown.
+** Since both getting and losing Heart Containers easily happen, it could be a good strategy to turn temporary Heart Containers into other resources whenever possible (by making devil deals or using both {{I|Guppy's Paw}} or {{I|Potato Peeler}}).
+* Gaining Heart Containers from sources other than passive items, such as Health Up pills, {{I|Converter}} or {{E|Eternal Heart}}s is beneficial, because those changes are not affected by Tainted Eden's mechanic.
+** Try to remember how many heart containers are gained by these way before using them in devil deals or so.
+* More than other characters, Tainted Eden benefits from quantity over quality of individual items since the items are likely to get re-rolled several times anyway. Obtaining as many passive items as possible means more items to re-roll and more chances for useful synergies.
+* Getting items from more consistently positive item pools can make a big difference. In particular, {{ip|Angel Room|text=Angel Room items}} and {{ip|Planetarium|text=Planetarium items}} are high-quality on average.
+** Remember to check {{R|Shop}}, as which may provide discounted items, and passive items in {{ip|Shop|text=Shop item pool}} may be re-rolled into great items like {{i|Blue Map}} or {{i|Black Candle}}, whose effects last for the current floor. {{i|Birthright}} can only be purchased in shops, it can't be obtained via a reroll.
+** Passive {{ip|Secret Room|text=Secret Room items}} can offer powerful synergies, but run the risk of re-rolling into {{i|Missing No.}} and {{i|TMTRAINER}}, both of which are extremely detrimental to almost any run. To avoid ever getting the latter item, consider defeating {{e|The Beast}} last, as that's what unlocks it. However, while {{r|Secret Room}} passive items are very risky, active items are instead very useful to keep around, as they are generally powerful, and they can be re-rolled into {{I|R Key}} or {{I|Death Certificate}}.
+** Active {{ip|Devil Room|text=Devil Room Items}} are also very useful to keep around, as which can be re-rolled into {{I|Damocles}} or  {{I|Guppy's Paw}}.
+** Focusing heavily on Devil Room items and not relying on Red Heart Containers in the first place is a viable strategy if plentiful Soul Hearts are acquired.
+* Carrying around a Trinket, even a useless one, carries the opportunity of re-rolling it into a very good one, such as {{t|Cancer}} or {{t|Cracked Crown}} and so on.
+* Cards, Runes, and Pills that aren't useful at the moment but may be useful later should be left or dropped on the ground so as to not lose them if a re-roll occurs. They can always be picked up later.
+* The {{r|Library}} can be powerful for Tainted Eden. If {{I|Book of Virtues}} is acquired from a Library, it cannot be re-rolled away due to how Book of Virtues is the only passive item in the {{ip|Library|text=Library item pool}}.
+* Holding {{T|NO!}} when taking a hit will re-roll Tainted Eden's active item into a passive item, which may or may not be desired.
+* Plenty of trinkets don't need to be held constantly to benefit from their effects, so dropping them when they aren't needed is often advisable. In particular, trinkets that affect level generation like {{T|Bloody Crown}}, {{T|Telescope Lens}} and {{T|Fragmented Card}} can be dropped in the starting room of each floor, and only returned to once ready to proceed to the next.
+* After rerolling everything, check if rocks are destroyed when walking into them. Several effects grant the ability to walk into rocks to destroy them, such as {{I|Thunder Thighs}} or {{I|Leo}}.
+** Also check if there are any item that helps you find and/or open {{r|Secret Room}} and {{r|Super Secret Room}}, or destroy [[Rocks]] without using bombs.
+* Whenever Tainted Eden gets {{I|We Need To Go Deeper!}} or {{I|Red Key}}, try to get a {{R|Crawl Space}}/ {{R|Ultra Secret Room}} as soon as possible before they are re-rolled.
+
+== Items ==
+While "good items" and "bad items" are less of a factor of choice than for other characters since they are frequently re-rolled, there are some that should be of special notice if found or re-rolled into.
+
+=== Good Items ===
+* {{i|Abyss}}: Can be re-rolled, but the locusts are permanent. Better using it on passive [[Secret Room (Item Pool)|Secret Room items]] or glitched items.
+* {{i|Bag of Crafting}}: Allows for generation of additional items via pickups.
+** If Tainted Eden loses Bag of Crafting to re-rolls, then gains it back later via re-rolls, it will still contain whatever pickups were inside it before it was re-rolled.
+* {{i|Birthright}}: Prevents items acquired before Birthright was picked up from being re-rolled. This includes normal re-rolls from items like {{i|D4}} and {{i|Missing No.}}, not only the damage-triggered re-rolls.
+** If Birthright is discovered in a shop it might be worth taking damage a few times to try to reroll a powerful synergy before locking it in with Birthright.
+** {{I|Birthright}} will prevent the currently held active item from re-rolling. However, if it is replaced, active items (including the original) will continue to be re-rolled.
+* {{i|Black Candle}} / {{i|Treasure Map}} /{{i|The Compass}} / {{i|Blue Map}} / {{i|The Mind}}: Triggers effect for the current floor, which won't be lost by re-rolling.
+* {{i|Converter}} /{{i|Empty Heart}}: Grants Red Heart Containers which won't be re-rolled away, significantly improving Eden's effective health for the rest of the run.
+* {{I|D8}}: Stats multiplier won't be re-rolled.
+* {{I|Damocles}}: '''Greatly''' increases quantity of items. Active items can be re-rolled into it and its passive effect cannot be re-rolled.
+* {{i|Death Certificate}}: Allows Tainted Eden to get {{i|Dogma}}, which cannot be re-rolled.
+* {{I|Diplopia}}: Gains extra items from certain item pool, which also a tricky way to progress {{tf|Guppy}} transformation by copying {{i|Guppy's Head}} and/or {{i|Guppy's Paw}}.
+* {{i|Esau Jr.}}: The ability to fly gained when transforming into Esau Jr. won't be re-rolled away, even when losing this active item.
+* {{i|Friendly Ball}} /{{i|Poke Go}} / {{i|Mystery Egg}} / {{i|Friend Finder}}: Summoned [[friendly]] monster will persist after the items are re-rolled away.
+* {{i|Flip}}: Provides extra passive items.
+* {{i|Glowing Hourglass}}: If used after getting hurt in the same room, will return Tainted Eden to their previous build upon landing in the previous room. Should Tainted Eden get hurt again without ever dropping their previous active item, they will always re-roll it into Glowing Hourglass.
+* {{i|Heartbreak}}: Only broken hearts inflicted from taking lethal damage will persist if the item is rerolled. Will activate if rerolled into after taking otherwise fatal damage, which can save a run.
+* {{i|Holy Mantle}}: Triggering Holy Mantle will not trigger rerolls, helping Tainted Eden keep their current build.
+** {{i|Blanket}}: Serves as a weaker version of this, for boss battles only.
+* {{i|Lost Soul}}: Lost Soul respawns whenever it was re-rolled into, which makes it easier to get the reward.
+* {{t|Lil Clot}} / {{I|Sumptorium}}: Summoned clots will persist after the items are rerolled away, acting as semi-permanent familiars until they die.
+* {{i|Monster Manual}}: Familiars summoned by it will last for the current floor.
+* {{i|PHD}}: Health Up pills will provide an additional heart container that remains even after being re-rolled. Additionally, while other stat up pills such as Range Up, Speed Up, and Tears Up are still subject to random multipliers after being re-rolled, they will permanently increase Tainted Eden's base stats, allowing for higher stats on average following a reroll.
+* {{I|Prayer Card}}: If retained long enough to be used a few times, Tainted Eden will be able to gain significant permanent Health, which is hard to come by for them.
+* {{T|Panic Button}}: Because self-damaging items do not trigger rerolls, a strategy can be to hold such a self-damaging active such as {{I|Razor Blade}} or {{I|IV Bag}} in conjunction with this trinket to protect Tainted Eden from rerolls and even slightly benefit from receiving damage.
+* {{i|Purgatory}}: The effect will remain for the current room even if the item itself is re-rolled, providing a helpful boon during boss battles.
+* {{i|Quints}}: Any familiar summoned with Quints will remain for the current room even if the item itself is re-rolled, making it useful for long boss battles.
+* {{I|Red Key}}: Provides chance to get more items by exploring {{R|Red Room}} (especially {{R|Ultra Secret Room}}).
+* {{i|Smelter}}, {{i|Marbles}}, or [[Pills|Gulp! pill]]: Swallowed Trinkets will be kept permanently.
+* {{i|Red Stew}}: The temporary damage boost is retained even after the item is re-rolled, potentially acting as a semi-permanent item effect until the damage boost is lost completely.
+* {{i|The Swarm}}: The orbital flies granted do not disappear if the item is re-rolled.
+* {{I|We Need To Go Deeper!}}: Opening a {{R|Crawl Space}} will provide a great opportunity, either getting an extra item or getting a {{R|Black Market}}.
+* Any items that give Tainted Eden pickups (I.E. {{i|Boom!}}) will be inevitably rerolled into a more useful item while the pickups granted remain. Items that only give pickups are useless when rerolled '''into''', however.
+
+=== Bad Items ===
+* Most items and trinkets that give benefits on taking damage, such as {{i|Bloody Lust}}, will be impossible to use as Tainted Eden's items will be rerolled anyway.
+* {{i|Missing No.}}: Doesn't do anything except doing more massive reroll. Generally makes you lose a passive [[Secret Room (Item Pool)|Secret Room Item]].
+* {{I|TMTRAINER}}: All items picked up after an item re-rolls into TMTRAINER will become glitched items. Glitched items will not re-roll anymore and will frequently be detrimental with their completely random effects.
+
+=== Situational Items ===
+* {{I|Blood Oath}}: Both the damage and speed boosts last after being re-rolled, but Tainted Eden's unpredictable health value after a rerolling hit can render the item more risky than usual.
+* {{I|Brittle Bones}}: Removes all Red Heart Containers but grants 6 Bone Hearts. [[Fire rate]] upgrades applied from every lost bone heart stay even after re-rolling. Can be very strong if taken early or if low on Red Heart Containers. On the other hand, if Tainted Eden has a lot of permanent Red Heart Containers from Eternal Hearts and Health Up pills, it could be detrimental. Re-rolled into it will not have any disadvantage.
+* {{I|Chaos}}: When re-rolled into, any item appearing before Chaos in the item list (that is, older items) will re-roll into items from the correct pool, and items appearing after Chaos (that is, younger items) will be from random item pools.
+* {{I|False PHD}}: Damage bonus will be lost after re-rolling it. Try to focus on eating bad pills that drop{{E|Black Heart}}s.
+* {{t|Filigree Feather}}: Allows for more angel room items to be added to Eden's passive item pool, at the cost of being unable to go to {{E|Mega Satan}}.
+* {{I|Genesis}}: Using it will remove all non-rerollable benefits you get, and it also removes itself (which actually makes you lost an active [[Angel Room (Item Pool)|Angel Room item]]).
+* {{I|Guppy's Paw}}: Converts one Red Heart Container into three Soul Hearts. Obtained early enough in a run, it allows for Heart Containers that are granted by passive items to be converted into Soul Hearts that can not be re-rolled.
+* {{I|Magic Skin}}: After using and re-rolling it, it will replace future items into itself, which reduce quantity of passive items in the future.
+* {{i|Potato Peeler}}: The {{I|Cube of Meat}} granted are permanent and are unaffected by re-rolls, but the loss of the health container will also be permanent.
+* [[Death#Extra Lives|Resurrection items]]: If Tainted Eden is holding a resurrection item when they take fatal damage, they will be resurrected and their items will not be rerolled.
+* {{I|Satanic Bible}}: Provides Black Hearts which are a relatively stable form of health for Tainted Eden. However, using it will also replace the floor's boss item with a [[Devil Room (Item Pool)|Devil Room item]].
+* {{I|Shard of Glass}}: The bleeding effect lasts after the item is re-rolled, which provides extra firepower in early game. {{E|Red Heart}} dropping effect will lost after re-rolled, however.
+* {{i|Void}}: Stat-ups from absorbed items are removed.
+
+== Unlockable Items ==
+{{achievement text | Nuh Uh!, The World, Soul of Eden, Wild Card, Corrupted Data, Modeling Clay, TMTRAINER }}
+
+== Gallery ==
+<gallery>
+File:Transition Tainted Eden.gif|Tainted Eden's transition screen portrait, animated as in game.
+File:Flash isaac Tainted Eden.png|One of Tainted Eden's transition screen portrait resembling Flash Isaac.
+File:Start_Tainted_Eden.png|The spawn floor when playing Tainted Eden.
+File:Tainted Eden Menu Icon (Locked).png|Tainted Eden's locked character icon, depicting a horizontally glitched closet door
+
+</gallery>
+
+== Trivia ==
+* The achievement for unlocking Tainted Eden is "The Capricious", a possible name for the character.
+** "Capricious" means "given to sudden and unaccountable changes of mood or behavior," fitting Tainted Eden's concept of complete randomness.
+* Tainted Eden's hairstyle will change every time they are hit.
+* On the stage transition screen, their body glitches in a unique animation. Prior to [[V1.7.5|Version 1.7.5]], their portrait did not appear whatsoever.
+** This animation features snippets of other portraits from different characters and bosses. These include {{E|Monstro}}, {{c|Dead Tainted Lazarus}}, {{c|The Forgotten}}, {{c|Apollyon}}, {{E|The Bloat}}, and {{c|Isaac}}, but colored and shaded to resemble how he appeared in the Flash version of The Binding of Isaac.
+* Tainted Eden's starting stats are listed as "?" on the character selection screen.
+* In-development, Tainted Eden's effect was a full reroll upon acquiring a new item that excluded the item triggering the reroll rather than having the reroll be triggered by damage. This was changed because in testing players would simply stop picking up items once they found something good enough to be worth keeping.<ref>https://discord.com/channels/123641386921754625/485133685881045014/847218561746993163 Conversation from Kilburn via the Binding of Isaac Community Discord</ref><ref>https://i.imgur.com/06ms8k5.png Imgur mirror</ref>
+* Oddly enough, Tainted Eden unlocks {{P|XXI - The World?}}, associated with stagnation and inertia, this in relation of unfinished goals, lack of motivation and roadblocks, as any builds Tainted Eden makes will be lost in a hit, causing runs to feel meaningless and take free hits hoping for a better build or require absolute perfection to keep a strong build.
+
+== Bugs ==
+{{bug|If Tainted Eden is firing {{i|Technology 2}} when damage triggers a re-roll, sometimes the laser persists firing in the last-fired direction until leaving the room, even picking up new synergies as other items reroll.}}
+{{bug|If the active item is re-rolled into {{I|Alabaster Box}} it will be fully charged instead of discharged as usual.}}
+{{Bug|If Tainted Eden first looks at an item on a floor (such as treasure room items, shop items, golden chest item drops, etc), but does not take them until after walking into a new room with an item in it (such as a Devil/Angel room), those items will be re-rolled into items of the pool most recently walked into.}}
+{{bug|If Tainted Eden rerolls into modded items that must be unlocked to be acquired, and they are not unlocked, the item will be rerolled into nothing, and an item will be lost. This can also cause crashes.}}
+
+== References ==
+{{reflist}}
+
+{{nav|character|eden unlock|tainted eden unlock|fr=Éden Impur}}

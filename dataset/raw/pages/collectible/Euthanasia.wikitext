@@ -1,0 +1,58 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 496
+ | quote       = Needle shot
+ | description = Adds a luck-based chance to fire needles that instantly kill [[Monsters|basic enemies]] and deal triple [[damage]] to [[boss]]es. If a needle kills an enemy, it bursts into more tears/needles.
+ | quality     = 3
+ | tags        = summonable syringe offensive
+ | unlocked by = Euthanasia
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* Adds a chance to fire needles which deal triple Isaac's [[Damage|tear damage]].
+** Needles will instantly kill [[Monsters|regular enemies]] and cause them to burst into 10 more tears in all directions.
+** The chance to fire a needle depends on [[luck]].
+** {{dlc|nr}} The formula used to determine the chance is: <math>\frac1 { 30 - \left \lfloor \mathit{Luck} \times 2 \right \rfloor}</math>
+*** At base luck (0), the chance is 3.33%, maxing out at 100% at 14.5 luck.
+** {{dlc|r}} The formula used to determine the chance is: <math>min(\frac1 { 30 - \left \lfloor \mathit{Luck} \times 2 \right \rfloor},25\%)</math>
+*** At base luck (0), the chance is 3.33%, maxing out at 25% at 13 luck.
+** The tears released upon an instant-kill ''also'' have a chance to be needles, though these ones ''do not'' have the instant-kill ability. They do retain the 3× damage, however.
+* {{transformation contribution|Spun}}
+
+== Notes ==
+* The needle tears can kill enemies that are normally invincible, such as {{E|Peep}}'s eyes, {{E|Death's Head}}s, and {{E|Stoney}}s.
+* The needle tears can kill {{E|Stone Grimace}}s and {{E|Spikeball}}s, allowing Isaac to permanently remove any obstacle in a room.
+** {{dlc|r}} The needle tears can kill {{E|Bomb Grimace|n}}s, dropping 10 unlit Throwable Bombs. This can make it detrimental to shoot at them, since they are usually provided as a tool rather than an obstacle.
+* The tears in the burst are larger than normal but do not have a damage bonus.
+* Unless piercing is obtained, {{E|Knight}}s will still block the needles if shot from the front.
+
+== Interactions ==
+* {{i|Brimstone|nr}} / {{I|Dr. Fetus|nr}} / {{I|Mom's Knife}} / {{i|Technology}} / {{i|Trisagion}}: No appearance change, tear burst, or instant kill, but triple damage still works.
+* {{i|Brimstone|r}} / {{I|Dr. Fetus|r}}: Enemies killed by a needle burst into normal tears.
+* {{i|Cricket's Body}} / {{i|The Parasite}}: Needles will always split into needles, although some of them may be incorrectly displayed as regular tears. Burst tears will split as normal.
+* {{i|Godhead|nr}}: The aura of a needle tear will also do triple damage, but does not cause tear burst or instant kill.
+* {{i|Ipecac}}: No tear burst or instant kill, but triple damage still works.
+** {{Dlc|r}} Enemies killed by a needle burst into ipecac shots.
+* {{I|Jacob's Ladder|r}}: The electric arcs released from a needle shot also retain the needle's instant kill and tear burst properties.
+* {{i|Little Horn}}: If a tear has both the Euthanasia and Little Horn effects and instantly kills an enemy, it does not cause a tear burst.
+* {{i|Tech.5}}: The tears that Isaac fires work normally, and the laser has a chance to deal triple damage with no other effects.
+* {{i|Tech X|nr}}: Completely overrides Euthanasia. No triple damage, no tear burst, or instant kill.
+** {{Dlc|r}} Laser Rings will sometimes deal triple damage/instantly kill regular enemies, and enemies killed by needles burst into normal tears.
+* {{dlc|r}} {{i|Technology}}: Killed enemies can burst into black tears normally.
+* {{i|Technology 2}}: The tears that Isaac fires work normally, but the laser is completely unaffected.
+** {{dlc|r}} The laser has an extremely high chance of executing normal enemies.
+* {{i|Tiny Planet}}: Euthanasia's tear bursts will follow the orbit in 2 close groups of 5 tears. One group travels clockwise and the other travels counterclockwise.
+* {{I|Spirit Sword}}: Each swing of the sword has a chance to do 3x damage and instantly kill a non-boss enemy, causing a tear explosion.
+
+== In-game Footage ==
+{{#ev:youtube|HyXKYO6ItgE}}
+
+== Trivia ==
+* [[wikipedia:Euthanasia|Euthanasia]] is the act of intentionally ending a person or animal's life to end their pain and suffering. It is usually carried out by an injection, hence why this item has the appearance of a needle.
+* Unlike the other [[syringe]] items, Euthanasia is the only one that points upwards, as it is a tear effect that is fired towards enemies, instead of being used on Isaac himself.
+* Euthanasia and {{i|Experimental Treatment}} are the only 2 syringe items that need to be unlocked.
+
+{{nav|lilith unlock|delirium unlock|syringe|fr=Euthanasie}}

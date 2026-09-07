@@ -1,0 +1,71 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 595
+ | quote       = Ring of tears
+ | description = Upon entering a room, a circle of 7 tears orbits Isaac, which last for 13 seconds before falling to the ground. Enemy tears have a chance to be caught in orbit, turning them friendly.
+ | quality     = 2
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* A circle surrounds Isaac. When entering a room, the circle is filled with 7 orbiting tears that copy Isaac's tear properties.
+** The tears will deal 1.5× Isaac's damage +5 flat damage.
+** After 13 seconds, the tears will automatically fall to the ground.
+** Orbiting tears are [[spectral tears|spectral]], although they don't visually appear to be.
+** The room does not have to be a new room to renew the 7 orbiting tears.
+* Enemy tears have a chance to be caught in the orbit, making them able to damage enemies.
+** Captured tears deal damage based on their size rather than how much they would've hurt Isaac: basic enemy shots deal 3.5 damage, and most champion shots deal 4.9 damage, but there is further variance.
+** Enemy tears caught disappear after a short time or upon leaving the current room.
+
+== Notes ==
+* Any new effect on tears provided by an item or a trinket won't affect ring tears until getting to a new room.
+** This is the same for lost effects (e.g. by dropping a trinket).
+* When using a teleporter in {{s|Mausoleum}}/{{s|Gehenna}}, the tears won't teleport and instead travel back towards the ring.
+* Saturnus tears deal no damage to "grid entities", such as {{e|TNT}} and {{e|Poop}}.
+* When Isaac spawns in the center of a room, or away from the door he should have entered through (for example, against {{e|Mom}} or {{e|Gurdy}} or on the first room of each floor), Saturnus' tears will spawn by the door and move towards Isaac.
+
+== Synergies ==
+* {{i|A Lump of Coal}}: The tears grow in size and damage as they orbit around Isaac.
+* {{i|Angelic Prism}}: The prism and tears share the same orbit, making them easy to split.
+* {{i|Blood Clot}}/{{i|Chemical Peel}}/{{i|Stye}}: Orbiting tears will be the same as the last fired tear before leaving the previous room.
+** Having an item that randomly applies the bonus ({{i|Mom's Knife}}, {{i|Brimstone}}, {{i|Stapler}}, etc), will give each tear a 50% chance to have the bonus.
+* {{i|Cricket's Body}}: The orbiting tears will split as normal, but the tears produced by the split will orbit Isaac instead of spreading out.
+* {{i|Godhead}}: The orbiting tears have Godhead's damaging aura without the homing effect.
+* [[Homing tears]]: Tears will break orbit to home into nearby enemies. With [[piercing tears|piercing]], tears will return to the orbit after dealing damage.
+* {{i|Kidney Stone}}: It's possible for one of the tears surrounding Isaac to be the stone.
+* {{i|Multidimensional Baby}}: Because both the orbiting tears and multidimensional baby start on top of Isaac when entering a room, all of the tears are immediately doubled.
+* {{i|The Parasite}} + [[piercing]] tears: The tears continuously create two smaller tears as they hit enemies, all of which in turn orbit and pierce enemies as well, resulting in far higher damage.
+
+== Interactions ==
+* {{I|Brimstone}} / {{I|C Section}} / {{I|Dr. Fetus}} / {{I|Epic Fetus}} / {{I|Mom's Knife}} / {{I|Technology}} / {{I|Tech X}}: No unique interactions; regular tears are generated which orbit Isaac normally.
+* {{I|Crown Of Light}}: Functions as intended, but the tears surrounding Isaac will appear normal.
+* {{i|Explosivo}}/{{t|Nose Goblin}}/{{i|Sinus Infection}}/{{i|Mucormycosis}}: Orbiting tears that stick to an enemy will return to the ring if the enemy cannot be stuck to anymore before the tear's duration ends.
+* {{I|Friend Finder}}: Bullets fired from friendly enemies can still get caught in the orbit.
+* {{T|Hook Worm}}: No effect upon ring's tear.
+* {{i|Ipecac}}: Tears surrounding Isaac will not cause self damage if at maximum distance until high tear size. If Isaac enters a room and his Saturnus tears have not spread out, they could hit an entity and cause self damage.
+* {{i|Lachryphagy}}: Orbiting tears are Lachryphagy tears, including enemy tears caught in orbit. Tears will still burst after a set duration, greatly the reducing the amount of time the tears orbit for. Burst tears will remain in an orbital path instead of spreading out.
+* {{i|Proptosis}}: Causes the tears to immediately fall, making Saturnus almost irrelevant. Enemy tears caught in the orbit will not fade away, and its defensive benefits helps slightly to maintain the aggressive playstyle required by Proptosis.
+* {{T|Ring Worm}} / {{t|Ouroboros Worm}}: The trinkets cause the ring tears to move with a very anarchistic movement in and out of the circle.
+* {{I|Sulfuric Acid}} / {{I|Terra}}: As the orbiting tears can destroy rocks, Isaac can unintentionally detonate [[Rocks#Bomb Rocks|Bomb Rocks]], causing self damage.
+* {{i|Tractor Beam}}: No effect on surrounding tears.
+
+== Gallery ==
+<gallery>
+File:Loaded Saturnus.jpg|Saturnus loaded
+File:Saturnus Unloaded.jpg|Saturnus unloaded, after 13 seconds.
+File: Items12.png|Concepts for 3 items that were originally implemented in Antibirth and later Repentance, including Saturnus.
+</gallery>
+
+== Trivia ==
+* [[anti:Saturnus|Saturnus]] originates from the ''Antibirth'' mod.
+* Saturnus' effects reference the planet [[Wikipedia:Saturn|Saturn]], known for its prominent [[Wikipedia:Rings of Saturn|ring system]].
+
+== Bugs ==
+{{Bug|Using {{i|Glowing Hourglass}} will trigger the effect of Saturnus again when returning to the room that was teleported out of, doubling the tears in that room.}}
+{{Bug|When {{i|Pause}} is used with Saturnus, it creates a second circle that stays in place where Isaac used "Pause" which lasts for the active item's duration. The second circle is a visual glitch and can't hold any orbiting tears. Moreover, both circles are flashing for the duration.}}
+{{Bug|In the first room of a floor, orbiting tears will appear elsewhere in the room and then be packed in two groups orbiting Isaac, instead of appearing on Isaac and then orbiting with an equivalent distance between each. They will turn back to normal when going to another room. This also happens in [[Mom]]'s room after using her bed.}}
+{{Bug|Saturnus tears affected by {{i|Trisagion}} deal damage to props and knock Isaac's bombs back.}}
+
+{{nav|astrological}}

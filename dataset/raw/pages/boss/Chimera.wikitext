@@ -1,0 +1,58 @@
+{{infobox boss
+| dlc         = r
+| id          = 910
+| name        = Chimera
+| environment = <u>Boss</u><br>{{floor|Corpse}}<br>{{room|boss challenge}}
+| base hp     = 1050
+| pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Decap Attack}} (1% chance)
+}}
+'''Chimera''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in the {{s|Corpse}}.
+
+== Behavior ==
+=== Phase 1 ===
+Chimera trots quickly in Isaac's direction, slowly building up speed. When fast enough, it leaves a trail of harmful [[green creep]] and makes wide turns due to its momentum. It can also perform the following attacks:
+* Spits out 5 {{e|Small Maggot}}s.
+** Any Small Maggots it walks into are killed.
+** Unlike its other attacks, Chimera can perform this one without interrupting its chase and its built up speed.
+* Spits out a {{e|Sick Boom Fly}} and throws it towards Isaac.
+* Jumps twice towards Isaac, shooting out a radius of 8 tears on the first landing and 4 rock waves in diagonal directions on the second landing.
+* Shoots out 8 {{i|Ipecac}} shots towards where Isaac is predicted to move. The landing position of each projectile is marked on the ground.
+
+=== Phase 2 ===
+Once its HP has dropped to about half, it makes a final charge towards Isaac before tripping and dividing the head and body into separate entities. It will take increasingly reduced damage as it approaches 50% HP until it transitions phases.
+* The head continuously makes leaps towards Isaac and slides a distance after landing while leaving a trail of damaging [[red creep]]. It can also perform the following attacks:
+** Shoots out 4 spreads of 5 projectiles in Isaac's direction.
+** Performs three quick dashes, similar to {{e|Dingle}}, leaving Red Creep. The first 2 dashes are towards Isaac while the final dash is towards its body. After completing the final dash the body can pick the head up and throw it at Isaac, leaving a trail of projectiles as it travels and creating a burst of projectiles where the head collides with a wall.
+*** If the body is performing another attack during the head's charges, the head will charge at Isaac for its third charge instead.
+** If the body dies before the head, it continuously makes long charges at Isaac, bouncing off any walls while also leaving Red Creep.
+
+* The body continues to chase Isaac like the first phase but at a slower pace. It can also perform the following attacks:
+** Fires a green-hued {{i|Brimstone}} beam downwards if Isaac is directly above or below it. It is propelled upwards by this beam until it hits the wall.
+** Runs quickly towards Isaac building momentum before leaping and rolling around the room bouncing off walls, similar to {{e|The Cage}}.
+** If the head dies before the body, the body continuously rolls around like The Cage for the rest of the battle.
+
+== Gallery ==
+<gallery>
+File:Boss Chimera secondphase head ingame.png|Chimera's head in its second phase.
+File:Boss Chimera secondphase body ingame.png|Chimera's body in its second phase.
+File:Boss Chimera old portrait.png|Chimera's old splash art in ''Antibirth''.
+File:Chimera Concept Art.png|Concept sketches of Chimera's attacks.
+</gallery>
+
+== Trivia ==
+* Chimera lends its name to the fact that it is a mix of three other bosses.
+** It has the body of {{E|The Cage}}.
+** It has the head of either {{e|Gurglings}}, {{e|Gurdy Jr.}}, or {{e|Gurdy}}.
+** It has the face of {{e|Monstro}}.
+** It has behavior similar to that of all bosses stated above.
+* A [[Wikipedia:Chimera (mythology)|Chimera]] in Greek mythology is a monstrous creature composed of a lion, goat, and snake.
+** "The term "chimera" has come to describe any mythical or fictional creature with parts taken from various animals...".
+** "Chimera" is also the medical term for a human or animal that possesses more than one set of DNA.
+
+== Bugs ==
+{{bug|Chimera's head will occasionally disappear once the body is killed, rendering them unbeatable unless the player exits the game and continues the run.}}
+
+{{nav|boss|fr=Chimère}}
+[[Category:Chapter 4.5 bosses]]
+[[Category:Corpse bosses]]
+[[Category:Debut bosses in Repentance]]

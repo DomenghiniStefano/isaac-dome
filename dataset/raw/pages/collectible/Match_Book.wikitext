@@ -1,0 +1,23 @@
+{{infobox passive collectible
+ | id          = 344
+ | quote       = Evil up
+ | description = Grants Isaac one {{E|Black Heart}}, spawns two or three {{E|Bomb}}s. {{dlc|r}} Also spawns {{t|Match Stick}} if it hasn't been encountered yet.
+ | quality     = 1
+ | tags        = offensive
+}} {{distinguish|Match Stick}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants Isaac one {{E|Black Heart}}.
+* Spawns three {{E|Bomb}}s near Isaac.
+** The bombs can be of any type that can naturally spawn, including {{E|Troll Bomb}}s and {{E|Mega Troll Bomb}}s. They spawn with their usual drop chance.
+* {{dlc|r}} Outside of [[Greed Mode]], spawns the {{t|Match Stick}} if it hasn't yet been encountered.
+
+== Synergies ==
+* {{T|Black Feather}}: Black Feather grants a damage boost for Match Book.
+
+== In-game Footage ==
+{{#ev:youtube|scH-MOg-ggo}}
+
+{{nav|fr=Boîte d'Allumettes}}

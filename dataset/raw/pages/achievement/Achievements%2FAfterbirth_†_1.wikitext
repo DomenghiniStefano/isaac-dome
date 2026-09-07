@@ -1,0 +1,457 @@
+{{page dlc|a+}}
+{{storage page}}
+{{infobox achievement
+ | dlc          = a+
+ | name         = Backasswards
+ | link         = Backasswards
+ | description  = Unlocked a new challenge.
+ | requirements = {{dlc|nr}} Defeat {{e|???}} or {{e|The Lamb}}<br>{{dlc|r}} Defeat {{e|Mega Satan}} and unlock {{i|The Negative}}
+ | id           = 277
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Aprils fool
+ | link         = Aprils Fool
+ | description  = Unlocked a new challenge.
+ | requirements = Defeat {{e|Mom}}
+ | id           = 278
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Pokey Mans
+ | link         = Pokey Mans
+ | description  = Unlocked a new challenge.
+ | requirements = Defeat {{e|Mom's Heart}} 11 times
+ | id           = 279
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Ultra Hard
+ | link         = Ultra Hard
+ | description  = Unlocked a new challenge.
+ | requirements = {{dlc|nr}} Defeat {{e|???}} or {{e|The Lamb}}<br>{{dlc|r}} Defeat {{e|Mega Satan}} and unlock {{i|The Negative}}
+ | notes        = {{dlc|nr}} Possession of {{i|The Polaroid}} / {{i|The Negative}} is required, barring getting to {{s|Dark Room}} through a {{r|Sacrifice Room}}
+ | id           = 280
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = PONG
+ | link         = Pong
+ | description  = Unlocked a new challenge.
+ | requirements = Defeat {{e|Isaac}} 5 times
+ | id           = 281
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = D infinity
+ | link         = D infinity
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Isaac}}
+ | id           = 282
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Eucharist
+ | link         = Eucharist
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Magdalene}}
+ | id           = 283
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Silver Dollar
+ | link         = Silver Dollar
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Cain}}
+ | id           = 284
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Shade
+ | link         = Shade
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Judas}}
+ | id           = 285
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = King Baby
+ | link         = King Baby
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Delirium}} as {{c|???}}
+ | id           = 286
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Bloody Crown
+ | link         = Bloody Crown
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Samson}}
+ | id           = 287
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Dull Razor
+ | link         = Dull Razor
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Eve}}
+ | id           = 288
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Eden's Soul
+ | link         = Eden's Soul
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Eden}}
+ | id           = 289
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Dark Prince's Crown
+ | link         = Dark Prince's Crown
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Azazel}}
+ | id           = 290
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Compound Fracture
+ | link         = Compound Fracture
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Lazarus}}
+ | id           = 291
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Euthanasia
+ | link         = Euthanasia
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Lilith}}
+ | id           = 292
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Holy Card
+ | link         = Holy Card
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|The Lost}}
+ | id           = 293
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Crooked Penny
+ | link         = Crooked Penny
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Keeper}}
+ | id           = 294
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Void
+ | link         = Void
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|Apollyon}}
+ | id           = 295
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = D1
+ | link         = D1
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Isaac}}
+ | id           = 296
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Glyph of Balance
+ | link         = Glyph of Balance
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Magdalene}}
+ | id           = 297
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Sack of Sacks
+ | link         = Sack of Sacks
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Cain}}
+ | id           = 298
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Eye of Belial
+ | link         = Eye of Belial
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Judas}}
+ | id           = 299
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Meconium
+ | link         = Meconium
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|???}}
+ | id           = 300
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Stem Cell
+ | link         = Stem Cell
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Samson}}
+ | id           = 301
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Crow Heart
+ | link         = Crow Heart
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Eve}}
+ | id           = 302
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Metronome
+ | link         = Metronome
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Eden}}
+ | id           = 303
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Bat Wing
+ | link         = Bat Wing
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Azazel}}
+ | id           = 304
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Plan C
+ | link         = Plan C
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Lazarus}}
+ | id           = 305
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Duality
+ | link         = Duality
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Lilith}}
+ | id           = 306
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Dad's Lost Coin
+ | link         = Dad's Lost Coin
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|The Lost}}
+ | id           = 307
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Eye of Greed
+ | link         = Eye of Greed
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Keeper}}
+ | id           = 308
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Black Rune
+ | link         = Black Rune
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|Apollyon}}
+ | id           = 309
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Locust of Wrath
+ | link         = Locust of War
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Apollyon}}
+ | id           = 310
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Locust of Pestilence
+ | link         = Locust of Pestilence
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|Apollyon}}
+ | id           = 311
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Locust of Famine
+ | link         = Locust of Famine
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|Apollyon}}
+ | id           = 312
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Locust of Death
+ | link         = Locust of Death
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Apollyon}}
+ | id           = 313
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Locust of Conquest
+ | link         = Locust of Conquest
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Apollyon}}
+ | id           = 314
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Hushy
+ | link         = Hushy
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|Apollyon}}
+ | id           = 315
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Brown Nugget
+ | link         = Brown Nugget
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|Apollyon}}
+ | id           = 316
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Mort Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|Apollyon}}
+ | id           = 317
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Smelter
+ | link         = Smelter
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|Apollyon}}
+ | id           = 318
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Apollyon Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|Apollyon}}
+ | id           = 319
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = New Area
+ | link         = The Void
+ | description  = Unlocked a new area.
+ | requirements = Defeat {{e|Hush}}
+ | id           = 320
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Once More with Feeling!
+ | link         = Gulp!
+ | description  = Unlocked a new item.
+ | requirements = Complete a [[Victory Lap]] by defeating {{e|The Lamb}}
+ | id           = 321
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Hat trick!
+ | link         = Ace of Clubs
+ | description  = Unlocked a new item.
+ | requirements = Get a 3-win streak
+ | id           = 322
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = 5 Nights at Mom's
+ | link         = Super special rock
+ | description  = Unlocked super special rocks.
+ | requirements = Get a 5-win streak, using a different character each time
+ | notes        = {{dlc|rnr+}} This number can be reduced to 3, see the notes section
+ | id           = 323
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Sin collector
+ | link         = Feels Like I'm Walking on Sunshine!
+ | description  = Unlocked a new item.
+ | requirements = Collect every entry in the [[Bestiary]]
+ | notes        = Bugged v190 - Mobs that don't exist in the bestiary are being counted. This allows Sin Collector to be unlocked without a complete bestiary <!-- Mobs that don't exist in the bestiary are being counted towards the 281 bestiary total. E.g. Envy is being counted 4 times but only counts for 1 entry in the bestiary. There are 282 entities marked as bestiary in entities2.xml(Minus Moms guts due to 0 basehp). This issue was introduced in v188. -->
+ | id           = 324
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Dedication
+ | link         = Horf!
+ | description  = Unlocked a new item.
+ | requirements = Participate in 31 [[Daily Challenge]]s
+ | notes        = They don't have to be consecutive; it will still count if Isaac dies in the first room
+ | id           = 325
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = ZIP!
+ | link         = Ace of Diamonds
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} in under 20 minutes
+ | id           = 326
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = It's the Key
+ | link         = Ace of Spades (Card)
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} without taking Hearts, Coins, or Bombs through the entire run
+ | notes        = Letting certain familiars (e.g. {{i|Bum Friend}}, {{i|Dark Bum}}, {{i|Bumbo}} or {{i|Lil Portal}}) or bosses (e.g. {{e|Bumbino}}) pick up the consumables fails this condition as well
+ | id           = 327
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Mr. Resetter!
+ | link         = Hearts#Scared_Heart
+ | description  = Unlocked a new item.
+ | requirements = Reset 7 times in a row<br>{{plat|Switch, PS4}} Get a minus 10-win streak
+ | id           = 328
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Living on the edge
+ | link         = Ace of Hearts
+ | description  = Unlocked a new item.
+ | requirements = Complete a Chapter (floors I and II) after {{s|Basement}}, start-to-finish, with only half a Heart total (can use {{c|The Lost}})
+ | id           = 329
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = U Broke It!
+ | link         = Vurp!
+ | description  = Unlocked a new item.
+ | requirements = Obtain 50 items in a run
+ | notes        = Duplicate passive items/familiars count towards the total, e.g., multiple {{i|Breakfast}}
+ | id           = 330
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Laz Bleeds More!
+ | link         = Lazarus
+ | description  = Unlocked a new starting item.
+ | requirements = Complete [[Backasswards|Backasswards (challenge #31)]]
+ | id           = 331
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Maggy Now Holds a Pill!
+ | link         = Magdalene
+ | description  = Unlocked a new starting item.
+ | requirements = Complete [[Aprils Fool|Aprils Fool (challenge #32)]]
+ | id           = 332
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Charged Key
+ | link         = Charged Key
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Pokey Mans|Pokey Mans (challenge #33)]]
+ | id           = 333
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Samson Feels Healthy!
+ | link         = Samson
+ | description  = Unlocked a new starting item.
+ | requirements = Complete [[Ultra Hard|Ultra Hard (challenge #34)]]
+ | id           = 334
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Greed's Gullet
+ | link         = Greed's Gullet
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Pong|Pong (challenge #35)]]
+ | id           = 335
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = The Marathon
+ | link         = Cracked Crown
+ | description  = Unlocked a new item.
+ | requirements = Get a 5-win streak in the [[Daily Challenge]]s
+ | notes        = They don't have to be consecutive days, only the runs you play are counted
+ | id           = 336
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = RERUN
+ | link         = RERUN
+ | description  = Unlocked the power of RERUN.
+ | requirements = Complete 3 [[Victory Lap]]s by defeating {{e|The Lamb}}
+ | id           = 337
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Delirious
+ | link         = Delirious
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}}
+ | id           = 338
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = 1000000%
+ | description  = Just Stop!
+ | requirements = {{dlc|nr}} [[Collection Page (Afterbirth †)|Collect]] every item in the game, unlock all secrets and [[ending]]s, and complete the [[Bestiary]]<br>{{dlc|r}} Unlock 402 random achievements and have at least 510 items in the collection page
+ | id           = 339
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Apollyon
+ | link         = Apollyon
+ | description  = Unlocked a new character.
+ | requirements = Defeat {{e|Mega Satan}}
+ | id           = 340
+}}

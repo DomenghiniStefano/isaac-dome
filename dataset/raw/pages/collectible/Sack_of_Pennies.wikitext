@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | name = Sack of Pennies
+ | id = 94
+ | quote = Gives money
+ | description = Spawns a [[familiar]] that drops a {{e|Penny|text=coin}} every 2 [[rooms]].
+ | quality     = 1
+ | tags        = summonable offensive nocantrip
+ | unlocked by = A Bag of Pennies
+}}
+
+{{cit|up}}
+
+== Effect ==
+* Spawns a [[familiar]] that drops a {{e|Penny|text=coin}} every 2 [[rooms]].
+** The first drop happens after 1 room.
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Sack of Pennies having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== Synergies ==
+* {{i|BFFS!}}: The familiar drops coins in a repeating pattern of 1, 2, 2 then 2 rooms.
+
+== In-game Footage ==
+{{#ev:youtube|yfR2dk6pdj8||inline}} {{#ev:youtube|RIYfMCZnqTg||inline}}
+
+== Trivia ==
+* This item is used in {{chal|PAY TO PLAY}}.
+* This item is the coin counterpart to {{i|Bomb Bag}}, {{i|Rune Bag}}, {{i|Mystery Sack}}, and {{i|Sack of Sacks}}.
+
+{{nav|cain unlock|isaac boss unlock|fr=Bourse}}

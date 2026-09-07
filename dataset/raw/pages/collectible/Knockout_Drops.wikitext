@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 637
+ | quote       = They pack a punch!
+ | description = Adds a chance to shoot a fist tear that has extremely high [[knockback]] and [[Confusion|confuses]] enemies.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Adds a chance to shoot red fist-shaped tears that deal extreme knockback and cause [[confusion]] for 2 seconds.
+** Enemies will take <code>10 + 2 * (floor - 1)</code> damage when they are knocked into a wall/[[obstacle]] or when hit by another knocked back enemy.
+
+== Notes ==
+* The chance to fire fist tears depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 10 - \left \lceil \mathit{Luck}  \right \rceil}</math>
+** At base luck (0), the chance is 10%, maxing out at 100% at 8.01 luck.
+* Bosses are also affected by all of Knockout Drops' effects.
+* Fist tears play a unique punch sound effect when they hit enemies.
+* Knockout Drops can be dangerous in {{E|The Beast}} battle, as the Ultra Harbingers may get knocked so far off the screen they become hard to damage further and their attacks cannot be seen properly.
+
+== Synergies ==
+* {{i|Aquarius}}: The trail of tears has a chance to knockback enemies.
+* {{I|Brimstone}}: Gives the lasers high knockback.
+* {{I|Jacob's Ladder}}: Enemies that are shocked by a knockback tear will also be knocked back.
+* {{I|The Ludovico Technique}}: Hovering tear alternates between a normal tear and a fist.
+* {{I|Technology}}: Laser receives knockback effect as with normal tears.
+
+== In-game footage ==
+{{#ev:youtube|fpb6g2JbKO0}}
+
+== Trivia ==
+* [[anti:Knockout Drops|Knockout Drops]] is from the ''Antibirth'' mod. In ''Antibirth'', enemies would not take extra damage from being knocked into something else but still deal damage to enemies they are knocked into.
+* Taking this item as {{C|Keeper}} will give him the expression of Bum-Bo the Brave, and by extension, {{E|Bumbino}}.
+
+== Gallery ==
+<gallery>
+File:Collectible Knockout Drops Keeper.png|{{C|Keeper}}'s unique appearance with Knockout Drops, resembling Bum-Bo the Brave and {{E|Bumbino}}.
+</gallery>
+
+== References ==
+* [https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing The Binding of Isaac Item Trigger Testing]
+
+{{nav|fr=Gouttes K.O.}}

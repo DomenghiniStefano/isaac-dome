@@ -1,0 +1,59 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | id          = 412
+ | quote       = Feed them hate
+ | description = After taking damage a certain amount of times, a permanent demonic [[familiar]] spawns.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = nolostbr summonable
+ | unlocked by = Cambion Conception
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Upon taking damage a certain number of times, Isaac gains a permanent demonic [[familiar]]. Possible familiars include:
+** {{i|Dark Bum}}
+** {{i|Demon Baby}}
+** {{i|Incubus}}
+** {{i|Leech}}
+** {{i|Lil Brimstone}}
+** {{i|Succubus}}
+** {{i|Lil Abaddon}}
+** {{i|Twisted Pair}}
+* The first and second familiars will each spawn after taking damage 15 times. The third and fourth familiars will each spawn after taking damage 30 more times. No further familiars will spawn. As a result, after taking damage 90 times, four out of eight possible familiars will have spawned.
+
+== Notes ==
+* Isaac will look progressively more pregnant as he takes damage.
+* Familiars spawned this way do not count towards [[transformation]]s nor the [[collection page]].
+* {{C|Lilith}} starts with this item by default, even if it hasn't been unlocked. Lilith can get a second {{I|Incubus}} through this.
+* Only one of each familiar can be spawned.
+* Familiars that have yet to be unlocked can spawn,  {{dlc+|r}} with the exception of {{i|Lil Abaddon}} and {{i|Twisted Pair}}, which must be unlocked before they can spawn through Cambion Conception.{{dlc-}}
+* Only actually getting damage counts towards the payout. For example, negating damage with the {{i|Holy Mantle}} will not count. Using the {{M|Blood Donation Machine}} or {{m|Devil Beggar}} counts as damage taken.
+* Familiars spawned by the item do not affect item pools, so multiple copies of one familiar can be obtained. For example, a second Incubus can be purchased after Cambion Conception spawns one.
+* If a familiar obtained is a copy of another one already obtained, using {{i|Box of Friends}} will only clone one of that familiar.
+* If this item is removed in anyway (such as with a {{P|XVII - The Stars?|r}}), the familiars from Cambion Conception will be removed upon updating familiars, including picking up items that don't add familiars but update its cache, such as {{i|Brimstone}}.
+** If the item is re-obtained after being removed (e.g. by dropping the item as {{C|Tainted Isaac|r}}), the damage counter and familiar limit will be reset, allowing Isaac to obtain all eight familiars with only one Cambion Conception. If the familiars were removed, all will return once familiars are updated.
+
+== Synergies ==
+* {{i|Dull Razor}}: Dull Razor counts towards the payout despite not removing health from Isaac.
+* {{i|Hypercoagulation}}:  By intentionally taking damage with something like a fire and grabbing the half-red hearts, Isaac can easily generate powerful familiars for free.
+* {{i|Scapular}}: By intentionally taking damage with something like a fire to half a red heart a soul heart will be generated. Leaving the room and taking damage again will continuously allow damage to be taken.
+
+== Interactions ==
+* {{i|Caffeine Pill}}: Makes it impossible to tell how far along the pregnancy is.
+* {{i|Cambion Conception}}: Having a second Cambion Conception allows Isaac to get the eight familiars, but cannot give an already obtained familiar. The hit counters do not stack. Isaac has to fully pay out the first cambion before collecting the second to get all 8 familiars. Collecting a second Cambion Conception will restart the damage counter and number of familiars received even if the first one has not finished paying out yet.
+
+== In-game Footage ==
+{{#ev:youtube|JQqR6qGEuwY}}
+
+== Trivia ==
+* This item is the demonic counterpart to {{I|Immaculate Conception}}.
+* In mythology, a [[wikipedia:Cambion|cambion]] is the offspring of a human and an incubus or succubus.
+* During the development of Afterbirth, [[Edmund McMillen]] asked on Twitter<ref>https://twitter.com/edmundmcmillen/status/561422400269471744</ref> what the opposite of {{i|Immaculate Conception}} would be called. 27 people replied with suggestions, but none of them were used.
+
+== References ==
+{{reflist}}
+
+{{nav|lilith unlock|blue baby boss unlock|fr=Conception Impure}}
+[[Category:Damage-triggered items]]

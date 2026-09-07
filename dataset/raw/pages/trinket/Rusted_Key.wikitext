@@ -1,0 +1,60 @@
+{{infobox trinket
+ | name        = Rusted Key
+ | id          = 36
+ | quote       = It feels lucky?
+ | description = Increases the chance of {{e|Key}}s dropping after clearing a room, and the chance of finding keys when opening a {{E|Chest}}.
+ | tags        = nogreed
+}}
+{{cit|t}}
+
+== Effects ==
+* Gives a 10% chance of changing the room drop reward to a {{e|Key}}.
+* Gives a 33% chance of adding a key to the rewards from opening certain [[Chests]], or destroying [[Tinted Rock]]s, certain [[Machine]]s, and certain [[Beggar]]s.
+** Other than Tinted Rocks, these can only drop the key if they drop [[coins]], [[hearts]], {{e|Bomb}}s, or {{e|Key}}s.
+** This includes: {{column list | width = 15em | content =
+*** {{E|Chest}}s
+*** {{e|Locked Chest}}s
+*** {{e|Bomb Chest}}s
+*** {{e|Eternal Chest}}s
+*** {{e|Spiked Chest}}s
+*** {{e|Mimic Chest}}s
+*** {{e|Mega Chest}}s
+*** {{e|Haunted Chest}}s
+*** [[Tinted Rock]]s
+*** {{M|Slot Machine}}s
+*** {{M|Fortune Telling Machine}}s
+*** {{M|Crane Game}}s
+*** {{M|Confessional}}s
+*** {{m|Beggar}}s
+*** {{dlc|nr}} {{m|Devil Beggar}}s
+*** {{m|Key Master}}s
+*** {{m|Bomb Bum}}s
+*** {{m|Battery Bum}}s
+}}
+** This excludes: {{column list | width = 15em | content =
+*** {{e|Red Chest}}s
+*** {{e|Old Chest}}s
+*** {{e|Wooden Chest}}s
+*** {{e|Mom's Chest}}
+*** {{m|Blood Donation Machine}}s
+*** {{m|Shop Restock Machine}}s
+*** {{m|Mom's Dressing Table}}
+*** The {{m|Donation Machine}}
+*** {{dlc|r}} {{m|Devil Beggar}}s
+*** {{m|Rotten Beggar}}s
+*** {{m|Hell Game}}s
+}}
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either increases the chance of changing the room drop reward to a {{e|Key||Key}} to 20% and increases the chance of adding a key to rewards to 66%. Having both increases these chances to respectively 30% and 100%.
+
+== In-game Footage ==
+{{#ev:youtube|Y9xMTc2tEp8}}
+
+== Trivia ==
+* In the original ''Binding of Isaac'', this trinket was broken and didn't do anything.<ref>[https://clips.twitch.tv/ArtisticExuberantMagpiePRChase-I3RivXtzAj5FXwAX/ Northerlion/Edmund discussion]</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|key modifier|key|fr=Clé Rouillée}}

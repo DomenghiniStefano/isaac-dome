@@ -1,0 +1,39 @@
+{{infobox trinket
+ | name = Monkey Paw
+ | id = 20
+ | quote = Wish granted
+ | description = If Isaac has half a heart after taking damage, drops a {{e|Black Heart}}. The effect can trigger up to three times, after which the trinket will disappear.
+}}
+{{distinguish|The Left Hand}}
+
+{{cit|t}}
+
+== Effects ==
+* If Isaac has half a heart or less after taking damage, this trinket drops a {{e|Black Heart}}.
+* The effect can trigger up to three times, after which the trinket will disappear.
+** The fingers stuck out by the paw will change to display the number of triggers left.
+
+== Notes ==
+* The effect can trigger more than once in the same room.
+* The effect does not trigger when picked up at half a heart or less.
+* {{dlc|a+}} If Gulped or smelted, its effect still only triggers 3 times, then disappears.
+
+== Interactions ==
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: Each copy allows Monkey Paw to drop an extra black heart.
+* {{i|Scapular}}: If Scapular's effect is triggered, the {{e|Soul Heart}} awarded will not cancel the effect of Monkey Paw.
+
+== In-game Footage ==
+{{#ev:youtube|bzs3QJQdj-4}}
+
+== Gallery ==
+<gallery>
+File:Monkey Paw 2.png|2 triggers left
+File:Monkey Paw 1.png|1 trigger left
+</gallery>
+
+== Trivia ==
+* This item is a reference to the supernatural short story [[Wikipedia:The Monkey's Paw|The Monkey's Paw]] by W.W Jacobs. The title artifact could grant three wishes, but they frequently carried a most unpleasant price.
+
+{{nav|fr=Patte de Singe}}
+[[Category:Trinkets]]
+[[Category:Damage-triggered items]]

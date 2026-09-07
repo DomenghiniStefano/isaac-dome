@@ -1,0 +1,49 @@
+{{infobox passive collectible
+ | name        = Magic Mushroom
+ | id          = 12
+ | quote       = All stats up!
+ | description = {{dlc|nr}} Makes Isaac bigger. Adds one Red [[Heart Container]], +0.3 [[Damage]], x1.5 damage multiplier, +5.25 [[Range]], +0.3 [[Speed]], and restores all Health.<br>{{dlc|r}} Makes Isaac bigger. Adds one Red [[Heart Container]], +0.3 [[Damage]], x1.5 damage multiplier, +2.5 [[Range]], +0.3 [[Speed]], and restores all Health.
+ | quality     = 4
+ | tags        = summonable mushroom offensive
+ | pool        = mushroom
+}}
+
+{{cit|p}}
+
+== Effect ==
+* Grants Isaac one Red [[Heart Container]].
+* +0.3 [[Damage]].
+* x1.5 damage multiplier.
+* {{dlc|nr}} +5.25 [[Range]].
+* {{dlc|r}} +2.5 [[Range]].
+* +0.3 [[Speed]].
+* {{dlc|nr}} +0.5 [[Tear Falling Speed]].
+* Restores all [[Health]].
+* Isaac grows in size.
+* {{transformation contribution|Fun Guy}}
+* {{transformation contribution|Stompy}}
+
+== Notes ==
+* This item can rarely drop from destroying [[Rocks#Mushrooms|mushrooms]].
+* The x1.5 damage multiplier does not stack with the x1.5 damage multiplier from {{i|Cricket's Head}}, from the combination of {{i|The Book of Belial}} and {{i|Blood of the Martyr}}, or itself (by using an item such as {{i|Diplopia}}, for example). However, it will stack with any other multipliers, such as {{i|Sacred Heart}}.
+
+== Interactions ==
+* {{i|Haemolacria|dlc=r}}: Both 1.5x damage multipliers stack as expected.
+* {{C|Tainted Bethany}}: On pickup, grants 12 blood charges.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Huge Growth }}
+
+== In-game Footage ==
+{{#ev:youtube|iCahSbQ4OTI||inline}} {{#ev:youtube|FQCvL4X0NMI||inline}}
+
+== Trivia ==
+* Magic Mushroom does not give a [[Tears]], [[Luck]], or [[Shot Speed]] increase despite its quote saying 'All Stats Up!'.
+* This item and its effects are a reference to the Super Mushroom from the [[wikipedia:Super Mario Brothers|''Super Mario Brothers'']] video game franchise.
+* This item's sprite resembles to the mushroom species [[wikipedia:Amanita muscaria|''Amanita muscaria'']], fly agaric.
+* 'Magic mushrooms' is a colloquial term for hallucinogenic mushrooms containing psilocybin. Fly agaric is hallucinogenic, although it does not contain psilocybin and is not considered a "magic mushroom".
+* {{dlc|a+}} This item is one of the only two ({{dlc|r}} five/ {{dlc|r+}} six) in the game that work towards 2 transformations ({{tf|Stompy}} and {{tf|Fun Guy}}), the other ones being {{i|The Bible}}, {{i|Hive Mind|r}}, {{i|Parasitoid|r}}, {{I|Skatole|r}}, {{dlc|r+}} and {{i|The Necronomicon}}.
+* This item shares a retro pickup sound effect with {{i|1up!}}.
+* Magic Mushroom, along with {{i|1up!}}, {{i|Mini Mush}}, {{i|Super Bandage}}, and {{i|Mega Mush}} is one of the few items that make a unique sound upon pickup.
+
+{{nav|stompy|fun guy|mushroom|fr=Champignon Magique}}

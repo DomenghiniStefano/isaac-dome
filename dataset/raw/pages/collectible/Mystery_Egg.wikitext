@@ -1,0 +1,78 @@
+{{infobox passive collectible
+ | dlc = a+
+ | name = Mystery Egg
+ | id = 539
+ | quote = Sacrificial insemination
+ | description = Spawns an egg [[familiar]], which hatches a random [[friendly]] [[monster]] when Isaac is hurt once per room. The power of the monster improves for each consecutive room cleared without taking damage.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = nolostbr summonable
+ | unlocked by = Mystery Egg
+}}
+
+{{cit|up|a+5}}
+
+== Effect ==
+* Spawns an egg [[familiar]], which cracks and turns into a random [[friendly]] [[monster]] when Isaac is hurt.
+** The egg regenerates upon entering a different room.
+** The usefulness of the enemy depends on how many consecutive [[room]]s have been cleared without getting hurt.
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Mystery Egg having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+* Mystery Egg will activate when taking non-hostile damage (such as from a {{m|Blood Donation Machine}} or {{r|Curse Room}} door).
+* For [[Greed Mode|Greed Mode and Greedier Mode]], the usefulness of the enemy is based on waves cleared rather than rooms.
+* The list of available monsters is as follows:
+{| class="wikitable mw-collapsible mw-collapsed"
+!Number of rooms / waves cleared
+!Monsters
+|-
+|0 to 1 rooms cleared without taking damage
+|{{e|Fly}}, {{e|Attack Fly}}, {{e|Maggot}}, {{e|Spider}}, {{e|Dip}}, {{e|Embryo}}, {{e|Nerve Ending}}
+|-
+|2 to 4 rooms cleared without taking damage
+|{{e|Moter}}, {{e|Pooter}}, {{e|Swarm}}, {{e|Level 2 Fly}}, {{e|Full Fly}}, {{e|Horf}}, {{e|Sucker}}, {{e|Dart Fly}}, {{e|Big Spider}}, {{e|Guts}}, {{e|Hopper}}, {{e|Gusher}}, {{e|Round Worm}}, {{e|Mask + Heart||Heart}}, {{e|Gush}}
+|-
+|5 to 7 rooms cleared without taking damage
+|{{e|Squirt}}, {{e|Ragling}}, {{e|Homunculus}}, {{e|Level 2 Spider}}, {{e|Small Baby Long Legs}}, {{e|Wall Creep}}, {{e|Night Crawler}}, {{e|Ulcer}}, {{e|Ministro}}, {{e|Mulligan}}, {{e|Hive}}, {{e|Nest}}, {{e|Flaming Hopper}}, {{e|Gaper}}, {{e|Cyclopia}}, {{e|Skinny}}, {{e|Dople}}, {{e|Globin}}, {{e|Maw}}, {{e|Psychic Horf}}, {{e|Tumor}}, {{e|Fatty}}, {{e|Half Sack}}, {{e|Clotty}}, {{e|Charger}}, {{e|Brain}}, {{e|Conjoined Spitty}}, {{e|Buttlicker}}, {{e|Host}}, {{e|One Tooth}}, {{e|Baby}}, {{e|Dukie}}, {{e|Black Globin's Body}}, {{e|Black Globin's Head}}, {{e|Para-Bite}}
+|-
+|8 to 10 rooms cleared without taking damage
+|{{e|Splasher}}, {{e|Boom Fly}}, {{e|Keeper}}, {{e|Fat Bat}}, {{e|Psy Tumor}}, {{e|Imp}}, {{e|Fred}}, {{e|Cod Worm}}, {{e|Lump}}, {{e|Swinger}}, {{e|Bony}}, {{e|Black Globin}}, {{e|Nulls}}, {{e|Begotten}}, {{e|Knight}}, {{e|Bone Knight}}, {{e|Blubber}}, {{e|Conjoined Fatty}}, {{e|Oob}}, {{e|Leech}}, {{e|MemBrain}}, {{e|Wizoob}}, {{e|Mr. Maw}}, {{e|Flesh Death's Head}}, {{e|Mushroom}}, {{e|Blind Creep}}, {{e|The Thing}}, {{e|Blister}}, {{e|Leaper}}, {{e|Hanger}}, {{e|Poison Mind}}, {{e|Fistuloid}}, {{e|Tar Boy}}
+|-
+|11 to 13 rooms cleared without taking damage
+|{{e|Gurgle}}, {{e|Walking Gut}}, {{e|Black Bony}}, {{e|Black Maw}}, {{e|Camillo Jr.}}, {{e|Eye}}, {{e|Roundy}}, {{e|Mom's Hand}}, {{e|Mega Clotty}}, {{e|Swarmer}}, {{e|Fat Sack}}, {{e|Mobile Host}}
+|-
+|More than 13 rooms cleared without taking damage
+|{{e|Red Ghost}}, {{e|Rage Creep}}, {{e|Vis}}, {{e|Gurglings}}, {{e|Dinga}}, {{e|Portal}}
+|}
+
+== Synergies ==
+* {{i|BFFS!}}: The egg grows in size. Enemies spawned will be a champion variant.
+** Even if the enemy spawned cannot be a champion under normal circumstances, they will become a champion.
+
+== Interactions ==
+* {{dlc|r}} [[Cards and Runes|Ace Cards]]: Friendly monsters are still affected by Ace Cards.
+* {{i|Blood Puppy}}: Either angry version of Blood Puppy will target friendly enemies as well and can drag them along with it when it charges them. Blood Puppy cannot damage friendly enemies however friendly enemies can damage Blood Puppy despite not targeting it outright.
+* {{i|Broken Modem}}: Broken Modem also affects friendly enemies and projectiles created by them.
+* {{I|Eraser}}: Enemies erased by Eraser will never show up again, hindering Mystery Egg should it spawn said removed enemy.
+* {{dlc+|r}} {{I|Ghost Bombs}} / {{i|Hungry Soul}} / {{I|Purgatory}} / {{i|Vade Retro}}: Explosions from ghosts can kill friendly enemies.{{dlc-}}
+* {{I|Holy Mantle}}: Losing the Mantle will not cause a friendly enemy to spawn.
+* {{t|Tick}}: [[Friendly]] enemies start with less health if they have 60HP or higher.
+
+== In-game footage ==
+{{#ev:youtube|X16ZLPIJ-GA}}
+
+== Trivia ==
+* Mystery Egg is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1016223447 this Steam Workshop item] by Strawrat and Aczom.
+
+== Bugs ==
+{{bug|dlc=nr|When using {{t|Extension Cord|n}} with Mystery Egg, after the egg turns into a friendly enemy, the electricity shoots out into a random corner of the room.}}
+{{bug|When the egg turns into a friendly {{e|Mask + Heart||Heart}}, it will sometimes act as the heart companion for a mask already in the room resulting in an unbeatable room.}}
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room than the one he is currently in (such as the starting room of a new floor) will duplicate friendly enemies.}}
+
+== Gallery ==
+<gallery>
+File:Collectible Mystery Egg mod icon.png|Mystery Egg's appearance in the original [https://steamcommunity.com/sharedfiles/filedetails/?id=1016223447 steam workshop mod].
+File:Collectible Mystery Egg familiar appearance.png|Mystery Egg's familiar appearance.
+</gallery>
+
+{{nav|booster pack|fr=Œuf Mystère}}
+[[Category:Damage-triggered items]]

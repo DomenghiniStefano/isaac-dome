@@ -1,0 +1,538 @@
+{{storage page}}
+{{infobox achievement
+ | name         = Magdalene
+ | link         = Magdalene
+ | description  = Unlocked a new character.
+ | requirements = Have 7 or more {{e|Red Heart}} Containers at one time
+ | id           = 1
+}} {{infobox achievement
+ | name         = Cain
+ | link         = Cain
+ | description  = Unlocked a new character.
+ | requirements = Hold 55 [[Coin]]s at one time
+ | id           = 2
+}} {{infobox achievement
+ | name         = Judas
+ | link         = Judas
+ | description  = Unlocked a new character.
+ | requirements = Defeat {{e|Satan}}
+ | id           = 3
+}} {{infobox achievement
+ | name         = The Womb
+ | link         = Womb
+ | description  = Chapter 4 - The Womb unlocked.
+ | requirements = Defeat {{e|Mom}}
+ | id           = 4
+}} {{infobox achievement
+ | name         = The Harbingers
+ | link         = The Harbingers
+ | description  = The horsemen are loose.
+ | requirements = Defeat {{e|Mom}}
+ | id           = 5
+}} {{infobox achievement
+ | name         = A Cube of Meat
+ | link         = Cube of Meat
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Mom}}
+ | id           = 6
+}} {{infobox achievement
+ | name         = The Book of Revelations
+ | link         = Book of Revelations
+ | description  = Unlocked a new item.
+ | requirements = Defeat a [[The Harbingers|Harbinger]]
+ | id           = 7
+}} {{infobox achievement
+ | name         = A Noose
+ | link         = Transcendence
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Mom's Heart}} 3 times
+ | id           = 8
+}} {{infobox achievement
+ | name         = The Nail
+ | link         = The Nail
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Azazel}}
+ | id           = 9
+}} {{infobox achievement
+ | name         = A Quarter
+ | link         = A Quarter
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Mom's Heart}} 8 times
+ | id           = 10
+}} {{infobox achievement
+ | name         = A Fetus in a Jar
+ | link         = Dr. Fetus
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Mom's Heart}} 9 times
+ | id           = 11
+}} {{infobox achievement
+ | name         = A Small Rock
+ | link         = The Small Rock
+ | description  = Unlocked a new item.
+ | requirements = Destroy 100 [[Tinted Rock]]s
+ | id           = 12
+}} {{infobox achievement
+ | name         = Monstro's Tooth
+ | link         = Monstro's Tooth
+ | description  = Unlocked a new item.
+ | requirements = Beat [[Chapter 1]]
+ | id           = 13
+}} {{infobox achievement
+ | name         = Lil' Chubby
+ | link         = Little Chubby
+ | description  = Unlocked a new item.
+ | requirements = Beat [[Chapter 2]]
+ | id           = 14
+}} {{infobox achievement
+ | name         = Loki's Horns
+ | link         = Loki's Horns
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Lokii}}
+ | id           = 15
+}} {{infobox achievement
+ | name         = Something From The Future
+ | link         = Steven
+ | description  = New boss in the basement!
+ | requirements = Beat {{s|Basement}} 40 times
+ | id           = 16
+}} {{infobox achievement
+ | name         = Something Cute
+ | link         = C.H.A.D.
+ | description  = New boss in the caves!
+ | requirements = Beat [[Chapter 2]] 30 times
+ | id           = 17
+}} {{infobox achievement
+ | name         = Something Sticky
+ | link         = Gish
+ | description  = New boss in the depths!
+ | requirements = Beat [[Chapter 3]] 20 times
+ | id           = 18
+}} {{infobox achievement
+ | name         = A Bandage
+ | link         = Super Bandage
+ | description  = Unlocked a new item.
+ | requirements = Make a Super Bandage Girl by picking up 4 copies of {{i|Ball of Bandages}} in one run
+ | notes        = See [[Unlocking Super Meat Boy & Super Bandage Girl]]
+ | id           = 19
+}} {{infobox achievement
+ | name         = A Cross
+ | link         = The Relic
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Magdalene}}
+ | id           = 20
+}} {{infobox achievement
+ | name         = A Bag of Pennies
+ | link         = Sack of Pennies
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Cain}}
+ | id           = 21
+}} {{infobox achievement
+ | name         = The Book of Sin
+ | link         = The Book of Sin
+ | description  = Unlocked a new item.
+ | requirements = Defeat all [[7 Deadly Sins]]
+ | id           = 22
+}} {{infobox achievement
+ | name         = Little Gish
+ | link         = Little Gish
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Gish}}
+ | id           = 23
+}} {{infobox achievement
+ | name         = Little Steven
+ | link         = Little Steven
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Steven}}
+ | id           = 24
+}} {{infobox achievement
+ | name         = Little C.H.A.D.
+ | link         = Little C.H.A.D.
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|C.H.A.D.}}
+ | id           = 25
+}} {{infobox achievement
+ | name         = A Gamekid
+ | link         = The Gamekid
+ | description  = Unlocked a new item.
+ | requirements = Visit 10 {{r|Arcade}}s
+ | id           = 26
+}} {{infobox achievement
+ | name         = A Halo
+ | link         = The Halo
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Mom}}, {{e|Mom's Heart}}, or {{e|It Lives!}} using {{i|The Bible}} or {{p|XV - The Devil?}}
+ | id           = 27
+}} {{infobox achievement
+ | name         = Mr. Mega
+ | link         = Mr. Mega
+ | description  = Unlocked a new item.
+ | requirements = Destroy 10 [[Tinted Rock]]s
+ | id           = 28
+}} {{infobox achievement
+ | name         = The D6
+ | link         = The D6
+ | description  = Isaac now holds the D6!
+ | requirements = Defeat {{e|Isaac}} as {{c|???}}
+ | id           = 29
+}} {{infobox achievement
+ | name         = The Scissors
+ | link         = Scissors
+ | description  = Unlocked a new item.
+ | requirements = [[death|Die]] 100 times
+ | id           = 30
+}} {{infobox achievement
+ | name         = The Parasite
+ | link         = The Parasite
+ | description  = Unlocked a new item.
+ | requirements = Pick up 2 dead-related items in a single run
+ | notes        = {{dlc|nr}} Dead-related items are {{i|Bob's Rotten Head}}, {{i|Dead Cat}}, {{i|Cricket's Head}}, and {{i|Tammy's Head}}<br>{{dlc|r}} Dead-related items have the [[Item Tags dead|'dead' item tag]]
+ | id           = 31
+}} {{infobox achievement
+ | name         = ???
+ | link         = ??? (Character)
+ | description  = Unlocked a new character.
+ | requirements = Defeat {{e|Mom's Heart}} 10 times
+ | id           = 32
+}} {{infobox achievement
+ | name         = Everything Is Terrible!!!
+ | description  = The game just got harder!
+ | requirements = Defeat {{e|Mom's Heart}} 5 times
+ | id           = 33
+}} {{infobox achievement
+ | name         = It Lives!
+ | link         = It Lives!
+ | description  = Your future's past waits.
+ | requirements = Defeat {{e|Mom's Heart}} 11 times
+ | id           = 34
+}} {{infobox achievement
+ | name         = Mom's Contact
+ | link         = Mom's Contacts
+ | description  = Unlocked a new item.
+ | requirements = Obtain three [[:category:Yes Mother? items|Yes Mother? items]] in one run
+ | id           = 35
+}} {{infobox achievement
+ | name         = The Necronomicon
+ | link         = The Necronomicon
+ | description  = Unlocked a new item.
+ | requirements = Use {{p|XIII - Death}} 4 times
+ | id           = 36
+}} {{infobox achievement
+ | name         = Basement Boy
+ | description  = Beat basement without taking damage.
+ | requirements = Beat [[Chapter 1]] without taking damage
+ | id           = 37
+}} {{infobox achievement
+ | name         = Spelunker Boy
+ | description  = Beat caves without taking damage.
+ | requirements = Beat [[Chapter 2]] without taking damage
+ | id           = 38
+}} {{infobox achievement
+ | name         = Dark Boy
+ | description  = Beat depths without taking damage.
+ | requirements = Beat [[Chapter 3]] without taking damage
+ | id           = 39
+}} {{infobox achievement
+ | name         = Mama's Boy
+ | description  = Beat womb without taking damage.
+ | requirements = Beat [[Chapter 4]] without taking damage
+ | id           = 40
+}} {{infobox achievement
+ | name         = Golden God!
+ | description  = You are the best!!
+ | requirements = Defeat {{e|???}} and {{e|The Lamb}}
+ | id           = 41
+}} {{infobox achievement
+ | name         = Eve
+ | link         = Eve
+ | description  = Unlocked a new character.
+ | requirements = Don't pick up any [[heart]]s for 2 floors in a row
+ | id           = 42
+}} {{infobox achievement
+ | name         = Mom's Knife
+ | link         = Mom's Knife
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|Isaac}}
+ | id           = 43
+}} {{infobox achievement
+ | name         = The Razor
+ | link         = Razor Blade
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|Eve}}
+ | id           = 44
+}} {{infobox achievement
+ | name         = Guardian Angel
+ | link         = Guardian Angel
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|Magdalene}}
+ | id           = 45
+}} {{infobox achievement
+ | name         = A Bag of Bombs
+ | link         = Bomb Bag
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|Cain}}
+ | id           = 46
+}} {{infobox achievement
+ | name         = Demon Baby
+ | link         = Demon Baby
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Azazel}}
+ | id           = 47
+}} {{infobox achievement
+ | name         = Forget Me Now
+ | link         = Forget Me Now
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|???}}
+ | id           = 48
+}} {{infobox achievement
+ | name         = The D20
+ | link         = D20
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|Isaac}}
+ | id           = 49
+}} {{infobox achievement
+ | name         = Celtic Cross
+ | link         = Celtic Cross
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|Magdalene}}
+ | id           = 50
+}} {{infobox achievement
+ | name         = Abel
+ | link         = Abel
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Cain}}
+ | id           = 51
+}} {{infobox achievement
+ | name         = Curved Horn
+ | link         = Curved Horn
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Judas}}
+ | id           = 52
+}} {{infobox achievement
+ | name         = Sacrificial Dagger
+ | link         = Sacrificial Dagger
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|Eve}}
+ | id           = 53
+}} {{infobox achievement
+ | name         = Bloody Lust
+ | link         = Bloody Lust
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Samson}}
+ | id           = 54
+}} {{infobox achievement
+ | name         = Blood Penny
+ | link         = Bloody Penny
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|Samson}}
+ | id           = 55
+}} {{infobox achievement
+ | name         = Blood Rights
+ | link         = Blood Rights
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|Samson}}
+ | id           = 56
+}} {{infobox achievement
+ | name         = The Polaroid
+ | link         = The Polaroid
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} 5 times
+ | id           = 57
+}} {{infobox achievement
+ | name         = Dad's Key
+ | link         = Dad's Key
+ | description  = Unlocked a new item.
+ | requirements = Pick up both Key Pieces from the [[Angel]]s in one run
+ | id           = 58
+}} {{infobox achievement
+ | name         = Blue Candle
+ | link         = The Candle
+ | description  = Unlocked a new item.
+ | requirements = Donate 900 coins to the {{machine|Donation Machine}}
+ | id           = 59
+}} {{infobox achievement
+ | name         = Burnt Penny
+ | link         = Burnt Penny
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Beans!|Beans! (challenge #13)]]
+ | id           = 60
+}} {{infobox achievement
+ | name         = Lucky Toe
+ | link         = Lucky Toe
+ | description  = Unlocked a new item.
+ | requirements = Blow up 20 [[Shopkeeper]]s
+ | id           = 61
+}} {{infobox achievement
+ | name         = Epic Fetus
+ | link         = Epic Fetus
+ | description  = Unlocked a new item.
+ | requirements = Complete [[The Family Man|The Family Man (challenge #19)]]
+ | id           = 62
+}} {{infobox achievement
+ | name         = SMB Super Fan
+ | link         = SMB Super Fan
+ | description  = Unlocked a new item.
+ | requirements = Complete [[It's in the Cards|It's in the Cards (challenge #14)]]
+ | id           = 63
+}} {{infobox achievement
+ | name         = Counterfeit Coin
+ | link         = Counterfeit Penny
+ | description  = Unlocked a new item.
+ | requirements = Play either [[Shell Game]] or {{dlc|r}} [[Hell Game]] 100 times
+ | id           = 64
+}} {{infobox achievement
+ | name         = Guppy's Hairball
+ | link         = Guppy's Hairball
+ | description  = Unlocked a new item.
+ | requirements = Become {{tf|Guppy}}
+ | id           = 65
+}} {{infobox achievement
+ | name         = A Forgotten Horseman
+ | link         = Conquest
+ | description  = Unlocked a new boss!
+ | requirements = Take 10 [[Angel Room (Item Pool)|Angel Room items]]
+ | id           = 66
+}} {{infobox achievement
+ | name         = Samson
+ | link         = Samson
+ | description  = Unlocked a new character.
+ | requirements = Complete 2 floors in a row without taking damage
+ | id           = 67
+}} {{infobox achievement
+ | name         = Something Icky
+ | link         = Triachnid
+ | description  = New boss in the womb!
+ | requirements = Defeat {{e|Isaac}} 10 times
+ | id           = 68
+}} {{infobox achievement
+ | name         = !Platinum God!
+ | description  = OMG!
+ | requirements = [[collection page|Collect]] all non-DLC items, and unlock all non-DLC secrets and [[ending]]s (minus {{c|The Lost}} and his 6 unlockable items)
+ | id           = 69
+}} {{infobox achievement
+ | name         = Isaac's Head
+ | link         = Isaac's Head
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|Isaac}}
+ | id           = 70
+}} {{infobox achievement
+ | name         = Maggy's Faith
+ | link         = Maggy's Faith
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Magdalene}}
+ | id           = 71
+}} {{infobox achievement
+ | name         = Judas' Tongue
+ | link         = Judas' Tongue
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|Judas}}
+ | id           = 72
+}} {{infobox achievement
+ | name         = ???'s Soul
+ | link         = ???'s Soul
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|???}}
+ | id           = 73
+}} {{infobox achievement
+ | name         = Samson's Lock
+ | link         = Samson's Lock
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|Samson}}
+ | id           = 74
+}} {{infobox achievement
+ | name         = Cain's Eye
+ | link         = Cain's Eye
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|Cain}}
+ | id           = 75
+}} {{infobox achievement
+ | name         = Eve's Bird Foot
+ | link         = Eve's Bird Foot
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|Eve}}
+ | id           = 76
+}} {{infobox achievement
+ | name         = The Left Hand
+ | link         = The Left Hand
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Pride}} as any character, or {{e|???}} as {{c|Judas}}
+ | id           = 77
+}} {{infobox achievement
+ | name         = The Negative
+ | link         = The Negative
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} 5 times
+ | id           = 78
+}} {{infobox achievement
+ | name         = Azazel
+ | link         = Azazel
+ | description  = Unlocked a new character.
+ | requirements = Make 3 [[Devil Room|Deals with the Devil]] in one run
+ | id           = 79
+}} {{infobox achievement
+ | name         = Lazarus
+ | link         = Lazarus
+ | description  = Unlocked a new character.
+ | requirements = Have 4 or more [[Soul Heart]]s at one time
+ | id           = 80
+}} {{infobox achievement
+ | name         = Eden
+ | link         = Eden
+ | description  = Unlocked a new character.
+ | requirements = Complete [[Chapter 4]]
+ | id           = 81
+}} {{infobox achievement
+ | name         = The Lost
+ | link         = The Lost
+ | description  = Unlocked a new character.
+ | requirements = {{dlc|na}} [[The Lost#Unlocking The Lost in Rebirth|It's complicated]]<br>{{dlc|a}} Die in a {{r|Sacrifice Room}} while holding {{t|Missing Poster}}
+ | id           = 82
+}} {{infobox achievement
+ | name         = Dead Boy
+ | description  = Beat Chest or Dark Room without taking damage.
+ | requirements = Complete [[Chapter 6]] without taking damage
+ | id           = 83
+}} {{infobox achievement
+ | name         = The Real Platinum God
+ | description  = 111% now stop playing!
+ | requirements = [[Collection Page|Collect]] all non-DLC [[items]], and unlock all non-DLC secrets and [[ending]]s
+ | id           = 84
+}} {{infobox achievement
+ | name         = Lucky Rock
+ | link         = Lucky Rock
+ | description  = Destroy 100 rocks.
+ | requirements = Destroy 100 [[rock]]s
+ | id           = 85
+}} {{infobox achievement
+ | name         = The Cellar
+ | link         = The Cellar
+ | description  = Alt stage to the basement.
+ | requirements = Beat all {{s|Basement}} bosses
+ | notes        = {{dlc|r}} Except [[Baby Plum]]<br>Not restricted to beating bosses ''in'' The Basement
+ | id           = 86
+}} {{infobox achievement
+ | name         = The Catacombs
+ | link         = The Catacombs
+ | description  = Alt stage to the caves.
+ | requirements = Beat all {{s|Caves}} bosses
+ | notes        = {{dlc|r}} Except [[Bumbino]]<br>Not restricted to beating bosses ''in'' The Caves
+ | id           = 87
+}} {{infobox achievement
+ | name         = The Necropolis
+ | link         = Necropolis
+ | description  = Alt stage to the depths.
+ | requirements = Beat all {{s|Depths}} bosses
+ | notes        = {{dlc|r}} Except [[Reap Creep]]<br>Not restricted to beating bosses ''in'' The Depths
+ | id           = 88
+}} {{infobox achievement
+ | name         = Rune of Hagalaz
+ | link         = Runes
+ | description  = Unlocked a new item.
+ | requirements = Complete [[Pitch Black|Pitch Black (challenge #1)]]
+ | id           = 89
+}} {{infobox achievement
+ | name         = Rune of Jera
+ | link         = Runes
+ | description  = Unlocked a new item.
+ | requirements = Complete [[High Brow|High Brow (challenge #2)]]
+ | id           = 90
+}}

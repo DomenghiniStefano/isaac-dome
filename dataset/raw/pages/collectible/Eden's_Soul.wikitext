@@ -1,0 +1,44 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 490
+ | quote       = ...
+ | description = Spawns two random [[item]]s from the current room's Item Pool and then disappears. Starts with no charges.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = offensive
+ | recharge    = 12
+ | unlocked by = Eden's Soul
+}}
+{{disambig msg|the item|the soul stone|Soul of Eden}}
+{{distinguish visual|Star of Bethlehem}}
+
+{{cit|ua|a+}}
+
+== Effects ==
+* Upon use, spawns two random item pedestals using the [[Item Pool|item pool]] of the current room. Eden's Soul is consumed and vanishes from Isaac's inventory.
+
+== Notes ==
+* Starts with no charges when first picked up.
+* {{dlc|nr}} Unlike {{i|Mega Blast}}, this item can be charged with a single {{E|Lil' Battery}}.
+
+== Synergies ==
+* {{p|? Card|r}}: Activates the item without consuming it, allowing for potential multiple uses.
+* {{Book of Virtues synergy|description=Spawns a random wisp. For the rest of the run, a random wisp spawns after clearing a room if the one given by the item was destroyed, including the replacement wisps given by this effect.}}
+* {{p|Wild Card}}: Gives the effect of Eden's Soul if it was the last item/card used.
+
+== Interactions ==
+* {{i|The Battery}}: Eden's Soul cannot be activated twice with a double charge.
+* {{i|Car Battery}}: Does not affect Eden's Soul. Only two items will spawn upon use.
+* {{i|Void|r}}: If absorbed, Eden's Soul is stored, and allows for a single use in a desired location. Also effectively reduces charge time to {{dlc|r}} 6 / {{dlc|r+}} 4 rooms.
+** {{dlc|r}}{{i|Car Battery}} + {{i|Void}}: Eden's Soul is Voided and then immediately consumed, spawning 2 items from the current item pool. This is likely to be the Angel Room as that is where Eden’s Soul is usually found. Effectively removes the charge time of Eden’s Soul.
+*** If Car Battery is picked up after Eden's Soul was absorbed, the next Void use will spawn 2 item pedestals and immediately Void them.
+
+== In-game Footage ==
+{{#ev:youtube|mKU1975ZfQg}}
+
+== Trivia ==
+* {{dlc+|r}} Eden's Soul is one of the three activated items, alongside {{i|Alabaster Box}} and {{i|Broken Glass Cannon}}, that:
+** Has no charges upon pickup rather than full.
+** Needs to be charged AND disappears upon use.{{dlc-}}
+
+{{nav|eden unlock|delirium unlock|fr=Âme d'Éden}}

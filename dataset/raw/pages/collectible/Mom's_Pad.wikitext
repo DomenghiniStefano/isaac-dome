@@ -1,0 +1,37 @@
+{{infobox activated collectible
+ | name        = Mom's Pad
+ | id          = 41
+ | quote       = {{dlcalt|Gross...|r=Mass fear}}
+ | description = Inflicts [[fear]] to all enemies in the [[room]] for 4 seconds. {{dlc|r}} Spawns a [[blue fly]].
+ | quality     = 0
+ | tags        = mom offensive
+ | recharge    = {{dlcalt|3|r=2}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Inflicts [[fear]] on all enemies in the [[room]] for 4 seconds.
+* {{dlc|r}} Spawns 1 [[blue fly]] on use.
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc+|a+}} This item has a 1% chance to spawn when bombing {{m|Mom's Dressing Table}}. Multiple copies can be obtained through this method.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a black wisp with a yellow fire in the middle ring. Wisps' tears have a 7.5% chance to inflict [[fear]] on enemies.}}
+
+== Interactions ==
+* {{I|Car Battery}}:
+** {{dlc|anr}} No effect.
+** {{dlc|r}} Spawns two flies. No effect on the fear duration.
+
+== In-game Footage ==
+{{#ev:youtube|m94MKl6pQkA||inline}} {{#ev:youtube|DrPq3JXTURQ||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Moms Pad.png|{{plat|3DS}} The icon of Mom's Pad as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|yes mother|mom|fr=Serviette de Maman}}

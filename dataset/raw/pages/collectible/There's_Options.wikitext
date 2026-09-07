@@ -1,0 +1,40 @@
+{{disambig msg|an item affecting Boss rewards|a similar item affecting room clear rewards|Options?|a similar item affecting Treasure Rooms|More Options}}
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 249
+ | quote       = More options
+ | description = Two items appear after defeating a [[Boss]]. Only one can be taken; the other will disappear.
+ | quality     = 3
+ | tags        = summonable offensive nocantrip lazarussharedglobal nogreed
+ | unlocked by = There's Options
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Two items appear after defeating a [[Boss]]. Only one can be taken; the other will disappear.
+
+== Notes ==
+* If the boss has a fixed item drop such as [[The Harbingers]], the other item will be selected from the normal {{ip|Boss|text=Boss item pool}}.
+* Two items appear after clearing {{r|Boss Rush}}.
+* Both items that appear after defeating a Boss in {{s|The Void}} are from random item pools. Likewise, both items that appear after defeating {{E|The Fallen}} are {{ip|Devil Room|text=Devil Room items}}.
+* There is no effect on items dropped by [[All Mini-Bosses (Bosses)|Mini-Bosses]].
+* There is no effect on what appears after defeating {{E|Mom}}, even if {{i|The Polaroid}} / {{i|The Negative}} have not unlocked (in which case only 1 {{ip|Boss|text=Boss item}} will appear).
+* Does not retroactively affect {{r|Boss Room}}s that had already been cleared prior to picking it up.
+
+== Synergies ==
+* {{i|Book of Revelations|r}}: Defeating a [[Harbinger]] will spawn both a regular {{ip|Boss|text=Boss item}} and either {{i|Ball of Bandages}} or {{i|Cube of Meat}}.
+* {{dlc+|r}} {{i|Crooked Penny}} / {{i|Diplopia}}: Both items are copied, allowing Isaac to take both copied items without the other disappearing. The original pedestals will function as normal, removing the other if one is collected.{{dlc-}}
+* {{p|IV - The Emperor?}}: The extra boss room's rewards will be two choice pedestals.
+* {{c|Jacob and Esau}}: Both brothers can take one item each if they are lined up properly.
+* {{i|Satanic Bible|r}}: Both items will be {{ip|Devil Room|text=Devil Room items}}; only one can be bought.
+* {{i|Vanishing Twin}}: The item which appears after defeating the copied boss is also affected.
+
+== In-game Footage ==
+{{#ev:youtube|iAxWCzyAK3o}}
+
+== Trivia ==
+* {{dlc+|r}} {{i|More Options}}' description is "There's options". It's the other way around for this item.{{dlc-}}
+
+{{nav|donation machine unlock|options|fr=L'Embarras du Choix}}
+[[Category:Store upgrades]]

@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | name = Punching Bag
+ | id = 281
+ | quote = Scape goat
+ | description = Spawns a {{E|Mulligan}} [[familiar]] that wanders randomly. Enemies will attack the Mulligan if it's closer.
+ | quality     = 1
+ | tags        = summonable {{dlc|r+|monstermanual}}
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a {{E|Mulligan}} [[familiar]] that walks around the [[room]] and acts as a decoy for [[monsters]].
+* If the monsters are closer to the decoy than Isaac, they will attack the decoy.
+* {{dlc|r}} Homing shots from enemies will always be attracted to the decoy if they are closer to it than Isaac.
+* {{dlc|nar+}} Punching Bag will also block enemy shots.
+* {{dlc|ana+}} Punching Bag will die after taking too much damage and eventually respawn after a long time. Exiting and continuing the run will cause it to reappear right away.
+** {{dlc|ana+}} Punching Bag will reappear instantly each time a familiar or orbital item is picked up.
+
+== Notes ==
+* The Punching Bag will be targeted by enemies if it is closer to them than Isaac, for up to 6 seconds. Then they will target Isaac for 6 seconds regardless of distance, before acknowledging the Punching Bag again.
+* {{dlc|ana+}} The Punching Bag will die instantly by enemies' beam-type attacks, such as {{i|Brimstone}} or by {{E|Uriel}}'s and {{E|Gabriel}}'s beam. This also includes enemies' {{i|Technology}} lasers such as {{E|Eye}} and {{E|Camillo Jr.}}
+
+== Interactions ==
+* {{i|Box of Friends}}: Adds another Punching Bag. This may cause enemies to become unpredictable, so use with caution.
+** If the Punching Bag has died, it can be forced to respawn with a double upon using the Box of Friends.
+
+== In-game Footage ==
+{{#ev:youtube|0fOnPmMyY10}}
+
+== Gallery ==
+<gallery>
+File:Collectible Punching Bag ingame.png|The familiar's ingame appearance.
+</gallery>
+
+== Trivia ==
+* This item is used in {{chal|The Guardian}}.
+* A punching bag, used in this context, is a target of frequent criticism and abuse.
+* The term "scape goat" in the pickup quote means someone who is blamed for problems that were caused by another person, or being treated like a punching bag.
+
+{{nav|fr=Théodule}}

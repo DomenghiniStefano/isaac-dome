@@ -1,0 +1,85 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 375
+ | quote       = {{dlcalt|Nice hat!|r=Blast resistance}}
+ | description = A host familiar that sits on Isaac's head and has a 20% chance to block enemy shots and retaliate with 3 tears. Grants immunity to explosions.
+ | quality     = 3
+ | tags        = summonable
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Enemy shots that hit Isaac have a 20% chance to be blocked. When a shot is effectively blocked, Host Hat fires 3 projectiles similar to the {{E|Host}}'s.
+** Projectiles fired from Host Hat use Isaac's [[Damage]] and [[Range]], and copy Isaac's [[Tear effects]].
+*** The bullets do not use Isaac's [[Shot Speed]].
+** Can block:
+*** Fireballs (e.g. from {{E|Crackle}}), but their lines of fire harm Isaac.
+*** Fire projectiles (e.g. from {{E|Mega Satan}}).
+*** Obstacles thrown by {{E|Polty}} or {{E|Kineti}}.
+** Does not block:
+*** Lasers or beams.
+*** Lines of fire from fireballs.
+*** Projectiles from {{E|Big Bony}}, {{E|Coal Boy}}, {{E|Danny}}.
+* Grants immunity to explosions.
+* {{Dlc|r}} Grants immunity to bullets falling from above.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Gate}}.{{dlc-}}
+* Does not protect against exploding [[Rocks#Mushrooms|mushrooms]].
+* Does not protect against {{E|Hush}}'s vertical beams in the final phase.
+* {{Dlc|nr}} Isaac becomes immune to {{E|Mom}} and {{E|Satan}}'s stomp attacks, as they are considered explosions. This makes the item very valuable if trying to unlock {{C|The Forgotten}}, as it will protect Isaac from the effects of the {{I|Broken Shovel 1}}.
+* {{dlc|a+}} This item is invaluable in [[Greedier Mode]] as nearly all of {{E|Ultra Greedier|n}}'s attacks are considered explosions.
+* One of only two items that grant full immunity to explosive damage, the other being {{I|Pyromaniac}}.
+* Although Host Hat has firing animation that expose itself after it blocks a tear, it can still block tears in this state, firing bullets as it blocks.
+
+== Synergies ==
+* {{I|Dr. Fetus}} / {{I|Epic Fetus}} / {{I|Ipecac}}: Isaac becomes immune to his explosives.
+* {{T|Walnut}}: Walnut will only require 1-5 explosions to open. As Isaac is immune to explosions, he can safely open Walnut without taking any damage.
+
+== Interactions ==
+* The following items that change the property of Isaac's tears affect Host Hat's bullets:
+** {{I|Eye of the Occult}}
+** {{I|Haemolacria}}
+** {{I|Ipecac}}
+** {{I|Lachryphagy}}
+** {{I|My Reflection}}
+** {{I|Pop!}}
+** {{I|Tiny Planet}}
+** {{I|Trisagion}}
+* The following items that modify Isaac's tears do not affect Host Hat's bullets, aside from stat changes (if present):
+** {{I|Brimstone}}
+** {{I|Chocolate Milk}}
+** {{I|C Section}}
+** {{I|Cursed Eye}}
+** {{I|Dr. Fetus}}
+** {{I|Epic Fetus}}
+** {{I|The Ludovico Technique}}
+** {{I|Mom's Knife}}
+** {{I|Monstro's Lung}}
+** {{I|Neptunus}}
+** {{I|Spirit Sword}}
+** {{I|Technology}}
+** {{I|Tech X}}
+* {{I|20/20}} / {{C|Keeper}} and other multi-shot effects: Do not add Host Hat's bullets.
+* {{I|Anti-Gravity}} / {{I|Tractor Beam}}: Does not affect Host Hat's bullets, aside from stat changes.
+* {{I|Cone Head}}: Cone Head's chance of blocking effect is applied first. Tears blocked by Cone Head do not cause Host Hat to fire.
+** This leaves Isaac 40% chance to negate tears in any way.
+* {{I|Dead Eye}}: Host Hat's bullets grant the damage multiplier, but do not reset it even when they miss.
+* {{I|Eye of Greed}} / {{I|Lead Pencil}}: Host Hat's bullets are not counted for shots fired.
+* {{I|Gnawed Leaf}}: Tears can be reflected while Isaac is invulnerable.
+* {{I|Hallowed Ground}}: Host Hat's chance of blocking effect is applied first.
+** This leaves Isaac 60% chance to negate tears in any way.
+* '''Host Hat''': Additional copies of this item, such as from {{I|Diplopia}} / {{I|Crooked Penny}}, have no effect.
+* {{I|Infamy}}: Infamy's chance of blocking effect is applied first. Tears blocked by Infamy do not cause Host Hat to fire.
+** This leaves Isaac 60% chance to negate tears in any way.
+* {{I|Isaac's Heart}}: Tears can be reflected when hitting the heart, not Isaac.
+* {{P|Holy Card}} / {{i|Holy Mantle}}: Host Hat's chance of blocking projectiles is applied before the shield, allowing it to be saved.
+* {{I|Metal Plate}}: Host Hat's chace of reflecting effect is applied first. Tears blocked by Host Hat are not reflected by Metal Plate.
+** This leaves Isaac 40% chance to negate tears in any way.
+
+== In-game Footage ==
+{{#ev:youtube|SoGhkRzgGRc}}
+
+{{nav|bone|fr=Crâne d'Hôte}}
+[[Category:Damage-preventing items]]

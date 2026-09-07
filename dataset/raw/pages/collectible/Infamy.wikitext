@@ -1,0 +1,46 @@
+{{infobox passive collectible
+ | id          = 242
+ | quote       = {{dlcalt|Damage reduction|r=Blocks damage... sometimes}}
+ | description = Gives Isaac a 50% chance to block projectiles coming from any direction.
+ | quality     = 2
+ | tags        = summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Enemy shots that hit Isaac have a 50% chance to be blocked.
+** After effectively blocking a projectile, Isaac will briefly flash blue. Isaac in this state can still take damage from another projectile.
+** Can block:
+*** Fireballs (e.g. from {{E|Crackle}}), but their lines of fire harm Isaac.
+*** Fire projectiles (e.g. from {{E|Mega Satan}}).
+*** Obstacles thrown by {{E|Polty}} or {{E|Kineti}}.
+** Does not block:
+*** Explosive projectiles (e.g. from {{E|Gurgle}}).
+*** Lasers or beams.
+*** Lines of fire from fireballs.
+*** Projectiles from {{E|Big Bony}}, {{E|Coal Boy}}, {{E|Danny}}.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Mask of Infamy}}.{{dlc-}}
+* Although the mask is seen only on Isaac's face, projectiles still have a 50% chance to be blocked from any direction.
+
+== Interactions ==
+* {{I|Cone Head}}: Blocking effect from either item can occur.
+** This leaves Isaac 60% chance to negate tears.
+* {{P|Holy Card}} / {{I|Holy Mantle}}: Infamy's chance of blocking projectiles is applied before the shield, allowing the shield to be saved.
+* {{I|Host Hat}}: Infamy's blocking effect is applied first. Host Hat does not fire tears when a tear is blocked by Infamy.
+** This leaves Isaac 60% chance to negate tears in any way.
+* '''Infamy''': Additional copies of this item, such as from {{I|Diplopia}} / {{I|Crooked Penny}}, have no effect.
+* {{I|Metal Plate}}: Infamy's blocking effect is applied first. Tears blocked by Infamy are not reflected by Metal Plate.
+** This leaves Isaac 62.5% chance to negate tears in any way.
+
+== In-game Footage ==
+{{#ev:youtube|gWXSVl2moRU||inline}} {{#ev:youtube|rFq__5lvUvQ||inline}}
+
+== Trivia ==
+* This item is a reference to the {{E|Mask of Infamy}} boss.
+* This item is used in {{chal|The Tank}}.
+
+{{nav|fr=Infamie}}
+[[Category:Damage-preventing items]]

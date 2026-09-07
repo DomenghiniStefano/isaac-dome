@@ -1,0 +1,64 @@
+{{header characters}}
+{{infobox character
+ | id           = 2
+ | health       = {{hearts|red=2}}
+ | damage       = 3.5 (*1.20)
+ | range        = {{dlcalt|17.75|r=4.5}}
+ | speed        = 1.3
+ | pickups      = 1 {{e|Key}}<br>{{dlc|a}} {{unlockable}} {{t|Paper Clip}}
+ | collectibles = {{i|Lucky Foot}}
+ | unlocked by  = Cain
+}}
+'''Cain''' is a [[character]] unlocked by obtaining 55 or more [[coin]]s at once in a run. He starts with two [[Red Heart container]]s, one {{e|Key}}, and {{i|Lucky Foot}}.
+
+{{dlc|a}} Cain also starts with {{t|Paper Clip}} after 68 coins have been donated to the {{M|Greed Donation Machine|n}}.
+
+{{dlc|r}} Lucky Foot now changes bad [[pills]] into good pills (similar to {{i|PHD}}, although not revealing their effect).
+
+== Notes ==
+* Cain's high starting luck, along with his {{i|Lucky Foot}}, will increase the chance of room drops and [[machines]] paying out. Luck-based tear effects are also made more effective.
+** {{dlc|r}} {{I|Lucky Foot}} makes pills a must-have by guaranteeing positive pill effects.
+* Unlocking {{t|Paper Clip}} is a priority, as Cain can spend those {{e|Key}}s elsewhere for greater rewards.
+* Cain is not a very good candidate for {{R|Devil Room}} deals early on, due to his low starting health.
+** {{R|Angel Room}}s are more valuable for Cain. As he is likely to have a large collection of coins or keys after a few floors, it is wise to open up {{R|Shop}}s, bomb {{e|Shopkeeper}}s, donate ten coins to a {{M|Donation Machine}}, or donate to a {{M|Beggar}} until he pays out to maximize the chances of an {{R|Angel Room}}.
+* Cain only being able to shoot tears from his right eye makes aiming easier, and lets him consistently peek around corners to shoot behind cover. This trait also affects certain items:
+** The R U a Wizard? pill will cause Cain to only fire tears to his right.
+** {{i|Blood Clot}}, {{dlc|r|{{I|Stye}},}} and {{i|Chemical Peel}}  have a 50% chance to do increased damage.
+** {{i|Technology 2}} {{dlcalt|will prevent him from firing normal tears, including tear-changing effects like {{i|Brimstone}}|r=will no longer prevent him from firing normal tears and instead will cause him to also fire {{i|Technology}} lasers out of his right eye instead of his normal tears. These Technology shots have the same synergies and interactions with other items on top of the Technology 2 laser. {{I|Neptunus|n}} lets him fire tears normally. These lasers cannot be angled with momentum.}}
+
+== Item Interactions ==
+* {{dlc|r}} {{i|Abel}}: The item's tears become red and deal 7.5 damage when held by Cain.
+* {{i|Birthright}}: Grants +1 luck. All floors that can have special rooms contain an upgraded {{R|Arcade}}.
+* {{dlc|r}} {{i|Technology 2}}: Effectively acts like the {{i|Technology}} item.
+* {{i|Eye Drops}}: Since his left eye is covered, it's simply a tears up instead of the normal effect of +40% fire rate on the left eye.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Cain's Other Eye, Glass Baby, A Bag of Bombs, A Bag of Pennies, Abel, Cain's Eye, Evil Eye, Sack of Sacks, D12, Green Baby, Silver Dollar, Guppy's Eye, A Pound of Flesh, The Hoarder, Picky Baby }}
+
+== Unlockable Starting Items ==
+* {{achievement unlock|Cain holds Paperclip}} - Start with {{t|Paper Clip}}
+
+== Gallery ==
+<gallery>
+File:Transition Cain.png|Cain's transition screen portrait.
+File:Start_Cain.png|The spawn floor when playing Cain.
+File:Cain_Menu_Icon_(Locked).png|Cain's locked character icon.
+</gallery>
+
+== Trivia ==
+* Cain appeared in the original ''Binding of Isaac'', with the same unlock method.
+* Cain is a reference to the Biblical story of Cain and Abel, in which Cain commits the first murder by killing Abel.
+** {{i|Abel}} also appears as an item in ''Rebirth''.
+** Cain's special interaction with Abel is also a reference to this.
+* [[Co-op#Rebirth Babies|Glass Baby]] could be a reference to Cain having a glass eye.
+* Cain's locked icon shows him bound in chains.
+** He shares this trait with {{C|Magdalene}}, {{C|Samson}}, {{C|Eve}}, {{C|Lazarus}}, {{C|Bethany|r}}, and {{C|Jacob and Esau|r}}.
+** He is the only character whose mouth is visible when locked.
+* The fact that he takes 55 coins to unlock may be a reference to how it is said that Jesus cast out 55 demons during his life.
+* Cain's Lucky Foot item is mistakenly called "Luck Foot" in the character selection screen.
+** This is similar to Samson's {{i|Bloody Lust}} item, which is also missing its "y" and is called "Blood Lust" in his character description.
+
+== Bugs ==
+{{bug|Cain's covered eye can be seen through the reflection on the floor on stages/rooms with water.}}
+
+{{nav|character|cain unlock|fr=Caïn}}

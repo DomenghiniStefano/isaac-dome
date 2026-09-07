@@ -1,0 +1,30 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Rotten Penny
+ | quote = Wealth of flies
+ | id = 126
+ | description = Spawns a [[Blue Fly]] every time a [[coin]] is picked up.
+ | unlocked by = Rotten Penny
+}}
+
+{{cit|ut|a+5}}
+
+== Effects ==
+* Spawns a [[Blue Fly]] every time a [[coin]] is picked up.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Spawns one more blue fly per copy.
+
+== In-game footage ==
+{{#ev:youtube|wEnkuwkwHgQ}}
+
+== Trivia ==
+* Rotten Penny is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=850129854 this Steam Workshop item] by Eufuu.
+
+== Gallery ==
+<gallery>
+Trinket Rotten Penny mod icon.png | Rotten Penny's appearance in the original [https://steamcommunity.com/sharedfiles/filedetails/?id=850129854 Steam Workshop mod].
+</gallery>
+
+{{nav|booster pack|coin modifier|penny}}
+[[Category:Penny trinkets]]

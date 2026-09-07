@@ -1,0 +1,44 @@
+{{infobox activated collectible
+ | character appearance = ()
+ | id                   = 58
+ | quote                = Temporary invincibility
+ | description          = Creates a protective [[shield]], nullifying all types of damage in the current room for 10 seconds.
+ | quality              = 3
+ | tags                 = book {{dlc|nr+|offensive}}
+ | recharge             = 3
+}}
+
+{{cit|a}}
+
+== Effect ==
+* Upon use, creates a protective [[shield]], nullifying all types of damage in the current room for 10 seconds.
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+* The Book of Shadows effect negates [[health]] loss from {{Machine|Blood Donation Machine}}s, {{Machine|Devil Beggar}}s, {{Machine|Hell Game}}, and {{Machine|Confessional}}.
+* {{dlc+|r+}} Book of Shadows' quality is treated as 2 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{I|4.5 Volt}}: With sufficient damage, the Book of Shadows can be kept active indefinitely.
+* {{Book of Virtues synergy|description=Spawns shielded wisps in the middle ring. The wisps have 1 health, but will not be damaged by blocking projectiles, and can only be destroyed on contact with enemies. When Book of Shadows is active, wisps are immune to all damage, allowing for easy melee kills.}}
+* {{i|Car Battery}}: Doubles the duration of invulnerability.
+* {{I|Cube of Meat}} and most other orbitals: Highly effective with Book of Shadows, as Isaac can run into enemies with an active shield to deal massive amounts of damage.
+* {{i|Razor Blade|nr}}: Can be used at no cost while the Book of Shadows shield is present, allowing damage to be significantly increased for the room.
+
+== Interactions ==
+* {{I|Blood Oath}}: If the book is used just before the knife stabs Isaac, he will not lose any health, nor gain any stat upgrades associated with the item.
+* {{i|Blood Rights}}/{{i|IV Bag}}/{{i|Razor Blade|r}}: Does not prevent damage from these items.
+
+== In-game Footage ==
+{{#ev:youtube|q6pzHHh0fbs||inline}} {{#ev:youtube|u-9heYxIaIk||inline}}
+
+== Trivia ==
+* ''[[wikipedia:Book of Shadows|The Book of Shadows]]'' is an infamous book of religious texts and instructions for magical rituals found within the Neopagan religion of [[wikipedia:Wicca|Wicca]].
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Book of Shadows.png|{{plat|3DS}} The icon of Book of Shadows as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|book|fr=Livre des Ombres}}
+[[Category:Damage-preventing items]]

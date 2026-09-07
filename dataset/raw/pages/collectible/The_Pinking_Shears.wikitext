@@ -1,0 +1,54 @@
+{{infobox activated collectible
+ | id          = 107
+ | quote       = Cut and run
+ | description = Separates Isaac's head from his body for the current [[Rooms|room]], granting [[flight]] and turning the body into a [[familiar]] that chases enemies.
+ | quality     = 2
+ | tags        = offensive
+ | recharge    = {{dlcalt|6|r=4}}
+}}
+
+''Not to be confused with the {{i|Scissors}} or {{t|Safety Scissors}}.''
+
+{{cit|a}}
+
+== Effects ==
+* Separates Isaac's head and body for the current [[Rooms|room]]. Isaac's head, which now has [[flight]], will be under the player's control, while his body will seek out enemies to attack by contact damage.
+** The body's movement speed is dependent on Isaac's [[speed]].
+** {{dlc|nr}} The body deals 5.5 damage per tick, or up to 82.5 damage per second.
+** {{dlc|r}} The body deals 5.5 damage per tick, or up to 23.6 damage per second.
+
+== Notes ==
+* The damage of the body [[familiar]] is independent of Isaac's stats. {{dlc|nr}} Its damage per second is the highest of all chasing familiars.
+* {{dlc|r}} If Isaac's body is not visible (for example, through the effects of {{i|Transcendence}} or previous uses of the Pinking Shears), the familiar will gain [[Flight]] and take upon a ghost-like body, similar to the Lost's body type.
+* If used multiple times in the same room (via battery pickups, for example), more instances of the body familiar can be spawned.
+* {{dlc|nr}} If Isaac switches active items while The Pinking Shears is in effect, the body will immediately despawn for the rest of the room.
+* The body familiar will avoid [[creep]], and will consequently rarely damage enemies like {{e|Brain}}s and {{e|Blighted Ovum}} that leave creep trails as they walk, instead opting to stand right next to them.
+* Using The Pinking Shears just above an obstacle results in the body becoming stuck in the terrain, making it useless until the obstacle is destroyed.
+
+== Synergies ==
+* {{i|BFFS!}}: Damage dealt by the body is doubled.
+* {{Book of Virtues synergy|description=Spawns wisps on the inner ring, looking like Isaac's floating head. Wisps fire [[piercing]] tears. }}
+* {{i|Car Battery}}: Two bodies are spawned at once.
+* {{c|Tainted Forgotten}}: Only the head needs to be moved by the {{c|Tainted Soul|n}}.
+
+== Interactions ==
+* {{I|Scissors}}: If Scissors and Pinking Shears are used together, control is given back to an invisible head with only a shadow visible as both the head and body are mobilized to attack.
+* {{I|Guillotine}}: Using The Pinking Shears after picking up Guillotine results in the head revolving around a shadow, making Isaac's hitbox difficult to determine.
+* {{I|The Intruder}}: If the familiar is released after Pinking Shears are used, control is given back to an invisible head with only a shadow visible. This is due to both the head (the spider) and the body being mobilized to attack.
+
+== In-game Footage ==
+{{#ev:youtube|eWIaMGgqw0o||inline}} {{#ev:youtube|YqBl27yMoKA||inline}}
+
+== Trivia ==
+* In the original ''The Binding of Isaac'', The Pinking Shears were unlocked by dying 100 times. In Rebirth, this unlocks {{i|Scissors}} instead.
+* Pinking shears are shears with a serrated blade and are used for cutting canvas.
+* {{dlc|nr}} Isaac's headless body looks similar to a {{e|Pacer}}.
+* {{dlc|r}} The body shares the same appearance as Isaac's body but with blood gushing from the top, similar to a {{e|Gusher}}.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The Pinking Shears.png|{{plat|3DS}} The icon of The Pinking Shears as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|fr=Ciseaux Cranteurs}}
+[[Category:Flight-granting items]]

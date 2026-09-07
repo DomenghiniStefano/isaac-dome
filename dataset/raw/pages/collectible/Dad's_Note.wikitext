@@ -1,0 +1,36 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 668
+ | quote       = ...
+ | description = Sends Isaac on an [[Ascent]] toward {{s|Home}}.
+ | quality     = 0
+ | tags        = lazarusshared noeden quest
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Initiates the [[Ascent]] sequence.
+* Any trinkets left in {{r|Treasure Room}}s and {{r|Boss Room}}s will turn into {{p|Cracked Key}}s.
+
+== How to Acquire ==
+* Once {{e|Mother}} has been defeated at least once, {{A|A Strange Door}} will appear in the starting room of {{s|Depths}} II and its alts (only {{s|Necropolis}} and {{s|Dank Depths}}, as the door does not appear on {{s|Mausoleum}} or {{s|Gehenna}}).  This door can only be opened if Isaac has {{i|The Polaroid}}, {{i|The Negative}}, or {{t|Faded Polaroid}}.
+** This can be done by beating {{E|Mom}} then teleporting out of the boss room to anywhere else on the floor, or, alternatively, by inheriting any of the items from a previous run. Helpfully, a marked [[Rocks#Marked Skulls|Skull]] will always appear somewhere on {{s|Depths}} II which, when destroyed, drops {{P|0 - The Fool}}. If Isaac has {{I|Little Baggy}}, it will drop a [[Pills|Telepills]] instead.
+** The door can also be opened with {{t|Broken Padlock}}, {{i|Cracked Orb}}, {{P|Soul of Cain}}, or {{I|Sharp Key}}.
+** Interacting with this door consumes {{I|The Polaroid}}, {{I|The Negative}} or {{T|Faded Polaroid}}. If multiple are available, {{T|Faded Polaroid}} is preferred, {{I|The Negative}} next, and {{I|The Polaroid}} last.
+* The door leads to a special version of {{s|Mausoleum}}/{{s|Gehenna}} II. Instead of a boss, the boss room of this floor contains Dad's Note.
+
+== Notes ==
+* Dad's Note cannot be rerolled or destroyed in most ways, such as with {{i|The D6}}, {{i|Void}}, {{I|Abyss}}, or even {{I|Spindown Dice}}.
+* Dad's Note cannot be duplicated via {{i|Crooked Penny}}, even if other items in the same room would be duplicated. Other duplication items such as {{i|Diplopia}} work as normal.
+* The boss room containing Dad's Note cannot be exited once entered, similar to the {{e|Mom}} boss fight. The only way to exit is through teleportation.
+* The only item that can be taken in the boss room of this special version of {{s|Mausoleum}}/{{s|Gehenna}} is Dad's Note. No other items will be spawned.
+** {{i|Lemegeton}} pulls from the [[Boss (Item Pool)|Boss Pool]] when used.
+* {{R|Treasure Room}} and {{R|Shop}} will still generate in this special floor as in usual floors, giving Isaac more options.
+* If Dad's Note is obtained outside of the special boss room via unintended means (such as using {{I|Spindown Dice}} on {{I|Sausage}}), the music will slowly fade out, but the Ascent will not start.
+* {{r|Red Room}} doors cannot appear on the borders of the map, preventing access to the {{r|I AM ERROR}} room and {{s|Womb}}/{{s|Utero}}/{{s|Scarred Womb}}.
+
+== Trivia ==
+* The boss room that contains Dad's Note is same boss room that would contain Mom if the player were to have entered {{s|Mausoleum}}/{{s|Gehenna}} normally (by entering the door to Mausoleum/Gehenna I in the boss room of the {{s|Depths}}/{{s|Necropolis}}/{{s|Dank Depths}} I or the {{s|Mines}}/{{s|Ashpit}} II). Whether or not Mom has already been killed in Chapter 3, the boss room reflects the fight's completed state with blood on the floor and no exit door, which would normally be the scenario after defeating Mom.
+
+{{nav|dad|fr=Lettre de Papa}}

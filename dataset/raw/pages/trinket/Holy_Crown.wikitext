@@ -1,0 +1,29 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 155
+ | quote       = Walk the path of the saint
+ | description = A {{R|Treasure Room}} and {{R|Shop}} appear in the {{s|Cathedral}}.
+ | tags        = lazarussharedglobal nogreed
+ | unlocked by = Holy Crown
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Causes a {{R|Treasure Room}} and {{R|Shop}} to generate in {{s|Cathedral}}.
+
+== Notes ==
+* Cannot appear in [[Greed Mode]].
+* The spawned Treasure Room will have one of 23 unique layouts for the floor.
+* {{i|Card Reading}} will spawn a second portal if Isaac has the trinket upon entering Cathedral.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Treasure rooms in the Cathedral have an item choice, as if Isaac had {{i|More Options}} and Shops will be upgraded. Having both reveals the locations of the treasure room and the shop on the map.
+
+== Trivia ==
+* This trinket has a demonic counterpart in {{T|Wicked Crown}}.
+
+== In-game footage ==
+{{#ev:youtube|-O_LajwWkSU}}
+
+{{nav|tainted magdalene unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Couronne Sacrée}}

@@ -1,0 +1,49 @@
+{{infobox activated collectible
+ | id          = 45
+ | quote       = Reusable regeneration
+ | description = Restores one full {{e|Red Heart}}.
+ | quality     = 1
+ | tags        = nolostbr
+ | recharge    = 4
+ | pool        = Super Lust
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Restores one full {{e|Red Heart}}.
+* {{dlc|r}} When playing in co-op, all other players will be healed for a {{e|Half Red Heart}}.
+
+== Notes ==
+* {{c|Magdalene}} / {{c|Tainted Magdalene|r}} starts with this item by default.
+** When used as {{c|Tainted Magdalene}} it restores 2 red hearts instead.
+* This item can drop from killing {{E|Super Lust}}. {{dlc|nr}} Super Lust can drop this item even if Isaac has already encountered/possessed it. 
+** {{dlc+|r}} It can also be spawned by {{e|Bumbino}} if he picks up 12 cents.{{dlc-}}
+* {{Dlc|r}} This item can be crafted from {{i|Bag of Crafting|n}} with eight {{e|Red Heart}}s.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Creates Red Heart wisps in the middle ring. Enemies killed by the wisps' tears have a 1/15 chance to drop a full {{e|Red Heart}}.}}
+* {{i|Car Battery}}: Doubles the amount Yum Heart heals.
+* {{c|Jacob and Esau}}: Heals the character who uses it for a full red heart and the other for half a red heart.
+* {{c|Keeper}} / {{c|Tainted Keeper}}: Heals one [[Health#Coin Hearts|Coin Hearts]]; no [[blue fly]] is generated.
+* {{dlc|nr}} {{i|Sharp Plug}} + {{i|The Wafer}} / {{i|Cancer}}: Allows infinite Red Heart regeneration.
+* {{dlc|rnr+}} {{c|Tainted Magdalene|n}} + {{i|Sharp Plug}}: Allows infinite usage and infinite invincibility frames.
+
+== Interactions ==
+* {{i|Maggy's Bow}}: No effect; will still only replenish one full Red Heart.
+
+== In-game Footage ==
+{{#ev:youtube|QmWXdzKgE70||inline}} {{#ev:youtube|1swqLPzIPFk||inline}}
+
+== Trivia ==
+* This item is used in {{chal|The Tank}} and {{chal|Cursed!}}.
+* Yum Heart is the only item that more than 1 character starts with (excluding {{c|Eden}}).
+* {{i|Yuck Heart}} is a {{e|Rotten Heart|n}} variation of Yum Heart.
+* This item along with any form of healing other than the starting item has no effect in {{chal|Have a Heart}}
+
+== Gallery ==
+<gallery>
+File:3DS_Detailed_Yum_Heart.png|{{plat|3DS}} The icon of Yum Heart as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|fr=Joli Cœur}}

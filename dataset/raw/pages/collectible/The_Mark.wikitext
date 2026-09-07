@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | id          = 79
+ | quote       = {{dlcalt|DMG up|r=DMG + speed up}}
+ | description = {{dlc|nr}} Grants one {{e|Soul Heart}}, +1 [[damage]], and +0.2 [[speed]].<br>{{dlc+|r}} Grants one {{e|Black Heart}}, +1 [[damage]], and +0.2 [[speed]].{{dlc-}}
+ | quality     = 3
+ | tags        = devil summonable offensive
+}} {{distinguish|Marked}}
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr}} Grants one {{e|Soul Heart}}.
+* {{dlc|r}} Grants one {{e|Black Heart}}.
+* +1 [[damage]].
+* +0.2 [[speed]].
+* {{transformation contribution|Leviathan}}
+
+== Synergies ==
+* {{t|Black Feather|r+}}: Counts as an evil item, granting a damage up.
+
+== In-game Footage ==
+{{#ev:youtube|977It9O3EKY||inline}} {{#ev:youtube|9k2549Ml8mc||inline}}
+
+== Trivia ==
+* The Mark refers to the Mark of the Beast in the end of times prophecies (3 6's arranged in a triskelion). Without this mark, one would not be allowed to buy or sell.
+* While The Mark's icon shows the 6's facing towards the center, on Isaac's forehead the symbol appears with the 6's facing outwards.
+* {{E|Loki}} has the Mark of the Beast on his forehead.
+
+{{nav|leviathan|fr=Le Nombre de la Bête}}

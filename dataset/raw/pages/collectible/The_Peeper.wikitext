@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 155
+ | quote       = Plop!
+ | description = Spawns a [[familiar]] that slowly floats around the room in a zig-zag pattern, damaging enemies it passes through. {{dlc|r}} Increases the damage of tears from Isaac's left eye by 35%.
+ | quality     = 2
+ | tags        = summonable monstermanual offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a [[familiar]] that slowly floats diagonally around the room and bounces off walls. The eye blocks enemy shots and deals 8 damage per tick or about 17.1 damage per second to enemies it passes through.
+* Gives tears shot from Isaac’s left eye a red appearance.
+* {{dlc|r}} All tears shot from the left eye will deal 35% more damage.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Bloat}}.{{dlc-}}
+* The empty eye leaves behind a small blood trail. This doesn't affect anything and is a purely cosmetic effect.
+* The Peeper is distinguishable from the eyes emitted from {{E|Peep}} by the size of the pupil, it being noticeably bigger on The Peeper.
+* {{dlc+|r}} A slightly better Peeper familiar can be spawned by {{I|The Scooper}}.{{dlc-}}
+
+== Synergies ==
+* {{I|The Scooper}}: When used, causes Isaac's right eye to be scooped out too with the same benefits as the left, effectively granting Isaac a 35% damage boost.
+
+== In-game Footage ==
+{{#ev:youtube|vSpQdnTl4_Q}}
+
+{{nav}}

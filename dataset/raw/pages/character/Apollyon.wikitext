@@ -1,0 +1,60 @@
+{{header characters}}
+{{infobox character
+ | dlc          = a+
+ | id           = 15
+ | health       = {{hearts|red=2}}
+ | collectibles = {{i|Void}}
+ | unlocked by  = Apollyon
+}}
+'''Apollyon''' is a [[character]] added in ''[[The Binding of Isaac: Afterbirth †]]''. He is unlocked after defeating {{e|Mega Satan}} for the first time.
+
+Apollyon starts with two Red [[Heart container]]s and {{i|Void}}.
+
+== Notes ==
+* Apollyon's strength comes from turning bad items into base stats. This can heavily reduce the need for good luck throughout the run, as runs can be completed while collecting only a few items.
+* [[Item Tags quest|Quest Items]] can be absorbed for extra stats.
+** As such, Apollyon can go to {{s|Downpour}} II, as {{i|Knife Piece 1}} can be absorbed if {{e|Mother}} isn't the goal of the run.
+** Using Void to absorb {{i|Key Piece 1}} and {{i|Key Piece 2}} will not permanently remove them from the run. They will continue to spawn after defeating {{e|Uriel}} or {{e|Gabriel}} no matter how many times Apollyon uses Void on them, as long as he does not pick them up normally. This means that Apollyon can fight an angel in an angel room, then absorb both the Key Piece and an unwanted angel item at the same time.
+* {{i|The Battery}}, {{i|Sharp Plug}}, and {{i|Charged Baby}} allow {{i|Void}} to be used twice consecutively without going into other rooms. This is helpful if the player wants to use {{i|Void}} to fight the boss and then absorb the item after defeating it after all rooms have been cleared, or when a {{r|Devil Room}} / {{r|Angel Room}} spawns after defeating the boss and Apollyon does not have {{i|Goat Head}} or {{i|Eucharist}}.
+* Finding a {{R|Library}} can be very powerful as Apollyon can use {{I|Void}} to gain numerous amounts of active effects from one room.
+** However, it is not recommended to absorb a few books for the following reasons:
+*** {{i|The Bible}} will instantly kill Apollyon if used while fighting {{E|Satan}}. However, taking it is fine as long as the player doesn't forget they have it or aren't fighting him.
+*** {{i|How to Jump}} causes a sudden movement, which can potentially throw Apollyon into an enemy or trap him behind rocks (the latter can be fixed by leaving the run and continuing).
+*** {{i|Satanic Bible|r}} replaces the boss item with a Devil Deal, which could be bad if low on health. Devil deals also cannot be absorbed until they've been paid for.
+*** {{i|Book of Virtues}} is treated as a passive item if absorbed by Void. It's much better to take Book of Virtues and gain the passive wisp effect over a minor stat boost.
+** It's also a good idea to touch at least three books if possible before using Void, to get the free {{tf|Bookworm}} transformation.
+* Note that using Void to absorb items in {{r|Boss Rush}} or {{r|Challenge Room}}s counts as taking the items and will cause waves of bosses or enemies to start spawning.
+** {{dlc|r}} Absorbing passive items from a room with choice pedestals will count as absorbing only one of them.
+* {{dlc+|r}} Void can be used during the 'item get' animation to absorb the held item. This allows Apollyon to absorb undesirable devil and shop items, albeit by paying their cost first. It can also be used on items formerly unidentified due to the {{cu|Blind}} (Pausing is recommended right after picking up the item to properly check what it is before absorbing it or not). {{dlc-}}
+
+== Item Interactions ==
+* {{i|Birthright}}: Using {{I|Void}} has a 10% chance to spawn one previously destroyed passive item (while keeping the bonus stats). Each absorbed passive item has an equal chance to be spawned. Spawned items can be spawned again even if they are not reabsorbed. Absorbing duplicates of the same item will make it more likely to be spawned, as each duplicate counts as a separate item and thus has its own chance to be spawned. Birthright has no effect if Void is not held.
+* {{dlc|nr}} {{i|There's Options}} and {{i|More Options}} are amazing items for Apollyon, as they give the opportunity to absorb twice as many items that could increase his stats or add to his actives collection.
+* {{dlc|r}} Even with {{i|There's Options}} or {{i|More Options}}, absorbing passive items from a room with choice pedestals will count as absorbing only one of them. Choice rooms can still be effective for copying active item effects, however.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Locust of Conquest, Smelter, Locust of Pestilence, Locust of Wrath }} <!--The item was mistakenly called Locust of Wrath prior to Booster Pack #3. The achievement still has the old name, and this section lists achievements. Please do not change it.-->
+{{achievement text | Locust of Death, Locust of Famine, Brown Nugget, Black Rune, Hushy, Mort Baby, Void, Lil Portal, Worm Friend, The Empty, Apollyon Baby }}
+
+== Gallery ==
+<gallery>
+File:Transition Apollyon.png|Apollyon's transition screen portrait.
+File:Start_Apollyon.png|The spawn floor when playing Apollyon.
+File:Apollyon Menu Icon (Locked).png|Apollyon's locked character icon.
+File:Apollyon Concept.jpg|Apollyon's concept art.
+</gallery>
+
+== Trivia ==
+* Apollyon is the Greek name for the angel [[wikipedia:Abaddon|Abaddon]], and is also known as "The Destroyer". This is reflected in the Achievement pop-up, which states "You Unlocked The Destroyer".
+** This is referenced further in the {{i|Void}} item he starts with, in that he is both the angel of the abyss and that the main function of the Void is to destroy items to gain beneficial effects.
+** In the New Testament {{i|Book of Revelations}}, Abaddon is written as the king of an army of locusts, hence the locust trinkets he unlocks.
+* In a Twitter Q&A, Edmund revealed [https://twitter.com/NY_Sagittarius/status/1318740085349679105 details about Apollyon's physical appearance], stating that he is a living statue, and has flesh but it appears like stone. He also confirmed that Apollyon has no eyes but can see out of the holes.
+* In the original Afterbirth+ release (before [[Booster Pack#5]]), Apollyon was unlocked by default (except in the Switch version).
+* Even though Apollyon appears to have wings, he does not start with flight. Edmund said he has "tiny, useless wings".
+* Apollyon's locked character icon is a locked box with dark energy swirling around it.
+** He shares this locked box icon with {{C|Azazel}}, {{C|Judas}}, and {{C|Lilith|a}}.
+
+== Bugs ==
+{{Bug|Using an "I've found pills" pill will turn Apollyon's head invisible, showing only his face and horns.|dlc=nr}}
+
+{{nav|mega satan unlock|apollyon unlock|character}}

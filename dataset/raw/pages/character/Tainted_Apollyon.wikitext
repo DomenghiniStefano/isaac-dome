@@ -1,0 +1,55 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc         = r
+ | id          = 34
+ | health      = {{hearts|red=2}}
+ | tears       = -0.5
+ | pickups     = {{i|Abyss}}
+ | unlocked by = The Empty
+}}
+'''Tainted Apollyon''' is a [[Characters|character]] added in ''[[The Binding of Isaac: Repentance]]''. He is the alternate version of {{c|Apollyon}}. Tainted Apollyon is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|1=Soul of Cain}} to access a special room in one of the walls while playing as Apollyon.
+
+Tainted Apollyon starts with 2 heart containers, {{i|Abyss}} in the consumable slot with 4 charges, and 1 red Abyss locust [[familiar]] that swarms erratically around Apollyon. When Abyss is used, items in the current room are destroyed and turned into more locust familiars, with some items granting special types of locusts. They charge in the direction Tainted Apollyon is firing until they hit something, dealing Tainted Apollyon's [[damage]] per tick.
+
+== Strategy and Items ==
+* The randomness of {{C|Apollyon}}'s {{I|Void|dlc=x}} is substituted for a guaranteed DPS upgrade with {{I|Abyss|dlc=x}}. This allows for easier judgement over whether active or mediocre items should be destroyed.
+** Some Items give [[Abyss#Special Locusts|Special locusts]]. However, many of these Items are quite powerful, and may be more valuable if collected than if they are turned into Locusts.
+* If Tainted Apollyon uses Abyss while picking up an active item, it will be turned into a locust; this is due to the change to items being able to be destroyed while being picked up in ''Repentance''.
+** This does not apply to any other characters, as Tainted Apollyon is the only one who can have Abyss in his consumable slot, and therefore both pick up an active item and use Abyss simultaneously.
+** Be careful of swapping active items while picking up a new one as the old item will also be turned into a locust.
+* In rooms where the player is presented a choice between several items (i.e. {{R|Boss Rush}}, {{R|Treasure Room}}s on the alternate path, {{R|Treasure Room}}s / {{R|Boss Room}}s under the effect of {{I|More Options}} / {{I|There's Options}}, certain {{R|Angel Room}} layouts, etc.) using Abyss will only give one locust for each item choice/set.
+** This does not apply to rooms where the player can collect multiple items without penalty such as a {{R|Library}}, which can be fully absorbed, making them extremely useful to find.
+* Locusts deal full damage per tick, meaning that it is important to find a balance between the number of locusts spawned and amount of damage dealt. Items from the [[Boss (Item Pool)|Boss item pool]] are usually good sources of damage, so it may be worth it to seek them out immediately.
+** {{I|Ipecac}}, for example, generates a unique poison locust with increased damage when Abyss consumes it; however, taking the item itself is almost always a superior choice, as the damage bonus from Ipecac affects all locusts Apollyon has, scaling further than the single locust would.
+* Like {{I|Void}}, Abyss can be used while holding an item, meaning it is completely possible to buy shop items and consume the item to grant a locust. One-time or low-use items such as {{I|Mom's Coin Purse}}, {{I|Booster Pack}} can be great items to do this with.
+** This can also be used with blind item pedestals (such as on the alternate path or with Curse of the Blind), allowing Tainted Apollyon to use Abyss at the last second should he find the collected item to be undesirable.
+* Tainted Apollyon has very low [[Tears]]. Items such as {{I|The Sad Onion}} and {{I|Torn Photo}}, if not absorbed, can be invaluable.
+** While {{I|Soy Milk}} gives a heavy tears upgrade, it will also decrease the damage of your locusts drastically. As such, it may be better to destroy it for a locust.
+* {{t|Extension Cord}}: Every locust will generate a beam of electricity, significantly increasing the range and damage potential of Tainted Apollyon.
+* {{i|Glowing Hourglass}}: Due to a bug, Glowing Hourglass can be used to duplicate locusts via Isaac teleporting to the previous room with the Glowing Hourglass and then using it again.
+* {{I|Genesis}} will remove all locusts except his starting one, and does not replace them with items, making this item a gamble for Tainted Apollyon.
+* {{I|Birthright}} makes the locusts remain and track the enemy's position as long as the fire button is held, resulting in massive damage and allowing for less focus on aiming and more on dodging.
+** '''Birthright''' + [[Guppy]]: Each tick of damage dealt counts for the purposes of the Guppy transformation, generating a constant flow of blue flies.
+* {{I|Hive Mind}} and {{I|BFFS!}} both greatly increase the damage dealt by Tainted Apollyon's locusts, making {{r|Shop}}s important (note: the effects don't stack).
+* {{dlc|r+}} As the damage of locusts scales with the quality of the item destroyed, {{i|Broken Shovel 1}} is a quality 4 item that can be semi-guaranteed to be encountered on any run. Note that the Broken Shovel cannot be immediately destroyed by Abyss and will have to be held until replaced by another active item.
+* In [[Repentance Co-Op]] if Tainted Apollyon dies his red locusts will persist, following and attacking from his ghost.
+
+== Unlockable Items ==
+{{achievement text | Cricket Leg, The Tower, Soul of Apollyon, Rotten Beggar, Abyss, Apollyon's Best Friend, Echo Chamber }}
+
+== Gallery ==
+<gallery>
+File:Transition Apollyon Tainted.png|Tainted Apollyon's transition screen portrait.
+File:Start_Tainted_Apollyon.png|The spawn floor when playing Tainted Apollyon.
+File: Tainted Apollyon Menu Icon (Locked).png|Tainted Apollyon's locked character icon, depicting a doorway with a swirling abyss in it
+</gallery>
+
+== Trivia ==
+* Tainted Apollyon has four horns, unlike Apollyon, who only has two.
+* The Hebrew term ''Abaddon'', and its Greek counterpart ''Apollyon'' appear in the Bible as a place of destruction and an archangel of the abyss. The supposed crack on Tainted Apollyon's face is a reference to that void that is used to reference the bottomless pit which is {{s|Sheol}}.
+** In Christianity, Apollyon appears in the Book of Revelations as the Destroyer and King of locusts, with him liberating his plague of locusts on Earth. Tainted Apollyon's cracked face references the events in the Apocalypse.
+** {{P|XVI - The Tower}} and {{P|XVI - The Tower?}} propose a cycle of desired creation and destruction. The events in the apocalypse mark the end of the cycle to a new perfect era.
+* The crack on Tainted Apollyon's face could also be a reference to Azami Kurotani from the manga ''Uzumaki'' by Junji Ito, who has a very similar crack on her face.
+* The achievement for unlocking Tainted Apollyon is "The Empty", a possible title for the character.
+
+{{nav|character|apollyon unlock|tainted apollyon unlock|fr=Apollyon Impur}}

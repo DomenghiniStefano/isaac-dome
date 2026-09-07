@@ -1,0 +1,40 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 50
+ | quote       = DMG up
+ | description = +1 [[damage]].
+ | quality     = 3
+ | tags        = summonable offensive
+ | pool        = Steven
+}} {{disambig msg|the damage item|the boss|Steven|the familiar item|Little Steven}}
+
+{{cit|p}}
+
+== Effect ==
+* +1 [[damage]].
+
+== {{dlc|nar}} Tips ==
+Finding '''Steven''' for the [[collection page]] can be difficult, as the boss {{E|Steven}} rarely appears and has a high chance to drop {{i|Little Steven}} instead of '''Steven'''. The following method can be used to obtain '''Steven'''.
+
+* Make sure {{E|Steven}} is unlocked.
+* Play as {{C|Azazel}}.
+** His [[flight|fly ability]] and his version of {{i|Brimstone}} grants fast progress.
+* Restart until {{s|Basement}} appears.
+* Rush to the {{R|Boss Room}}.
+** The given {{p|0 - The Fool}} can return Azazel instantly to the start if he went a wrong way.
+** By using {{E|Black Heart}}s, slow rooms can be cleared quickly.
+** Skipping any special rooms (such as {{R|Treasure Room}}s or {{R|Curse Room}}s) and leaving any [[pickup]]s behind allow faster rushing.
+* The process is repeated until {{E|Steven}} is found as the first boss and until he drops ''Steven''
+* Alternatively, Steven is guaranteed to appear if {{i|Spindown Dice}} is used on {{i|Pentagram}}.
+
+== Notes ==
+* This item is more likely to be dropped by {{E|Steven}} if {{i|Little Steven}} has already been picked up.
+
+== In-game Footage ==
+{{#ev:youtube|zhdOTWsG4pA||inline}} {{#ev:youtube|QJqf_d0b-nY||inline}}
+
+== Trivia ==
+* Steven originated from the 2009 flash game ''[http://www.newgrounds.com/portal/view/511754 Time Fcuk]'', which was created by Edmund McMillen.
+* Steven is the only damage upgrade that has no additional stat increases or secondary effects.
+
+{{nav|fr=Steven (Objet)}}

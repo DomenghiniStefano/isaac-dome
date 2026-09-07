@@ -1,0 +1,52 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 506
+ | quote       = Watch your back!
+ | description = Isaac's tears deal double [[damage]] and inflict [[Status Effects#Bleed|bleeding]] on enemies if they're facing away from Isaac.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* When Isaac's attacks land on the "back" of enemies, they deal double [[damage]] and inflict [[Status Effects#Bleed|bleeding]].
+** {{dlc|nr}} Bleeding enemies take damage equal to 10% of their maximum health every 5 seconds. Bosses cannot be inflicted with bleeding, but will still take the extra damage.
+** {{dlc|r}} Enemies bleed for 5 seconds, bleeding enemies repeatedly take <code>2.8 + (floor * 0.3)</code> damage based on how quickly they move; the faster the enemy, the more damage they take. While moving, a bleeding enemy leaves behind [[red creep]] that can damage other enemies.
+** The extra damage is dealt even if the enemy is already bleeding.
+
+== Notes ==
+* The damage is dealt as 2 separate hits, as opposed to one double damage hit.
+* What is considered to be the "back" of an enemy is based solely on their velocity when the attacks land: their back is opposite to their movement direction.
+** High [[knockback]] makes it easier to get follow-up backstabs as the enemies are pushed away from the tears.
+** Pushing enemies while shooting makes them easy to backstab, though is mostly viable only on ones that don't deal contact damage or while having a [[shield]].
+** Completely stationary enemies generally have their back on their upper and right sides, but knockback considerations apply.
+
+== Synergies ==
+* {{I|Dark Arts}}: Freezing an enemy from its back using Dark Arts will apply bleeding, though there is no extra direct damage.
+* {{i|Dr. Fetus}}/{{i|Epic Fetus}}/{{i|Ipecac}}: These explosives can backstab but deal only 3.5 bonus damage instead of double damage.
+* {{dlc|nr}} [[Shooting familiar]]s: Tears fired by familiars can inflict the effects of Backstabber.
+* {{i|The Ludovico Technique}}: The Ludovico tear will nearly always backstab when over an enemy.
+* {{i|Trisagion}}: The Trisagion blasts' shape and size make them almost guaranteed to backstab.
+* Worm Trinkets, like {{T|Hook Worm}} and {{T|Wiggle Worm}} make Backstabber's effect possible even if the enemy is facing Isaac.
+
+== Interactions ==
+* {{i|Akeldama}}: Akeldama tears cannot backstab.
+* {{i|Bag of Crafting}}: The melee swing cannot backstab.
+* [[Bomb]]s: Unlike Dr. Fetus bombs, normal bombs cannot backstab.
+* {{i|Breath of Life|r}}: Neither normal contact beams or the perfectly timed ones cannot backstab.
+* {{i|Divine Intervention}}: The shield cannot backstab.
+* {{i|Hemoptysis}}/{{c|Tainted Azazel}}: The sneeze cannot backstab.
+* {{t|Lost Cork|r}}: No effect on enemy blood creep.
+* {{i|Salvation}}: The beams cannot backstab.
+* {{i|Spear Of Destiny}}: The spear cannot backstab.
+
+== In-game Footage ==
+{{#ev:youtube|zGEZ0vT7nek}}
+
+== Trivia ==
+* This item is a reference to the backstabbing mechanic in various video games, where backstabbing results in more damage done to the target. However, the mechanic of backstabbing is usually applied to melee weapons, not ranged weapons.
+** It may also be a reference to Judas' betrayal of Jesus.
+* Backstabber was originally an unofficial item which was supposed to showcase the modding capabilities of ''Afterbirth+'' in the [https://www.youtube.com/watch?v=FRR-wzTky9Q PAX 2016 livestream]. However, all items included in the demo were later added to the final game.
+
+{{nav|fr=Traîtrise}}

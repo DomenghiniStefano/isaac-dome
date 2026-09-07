@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 367
+ | quote       = Egg sack bombs!
+ | description = +5 {{e|Bomb}}s. Bombs stick to enemies and spawn 2-5 [[Blue Spider]]s on kill. {{dlc|r}} Bombs leave a long-lasting puddle of [[slow]]ing [[creep]]. {{dlc|r+}} Spawns 1-2 [[Blue Spider]]s or [[Blue Flies]] when bombs damage enemies.
+ | bomb app    = {{dlcalt|Bomb.png|r=Collectible Sticky Bombs bomb appearance.png}}
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable spider offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* +5 {{e|Bomb}}s.
+* Bombs stick to enemies.
+* Spawns 2-5 [[Blue Spider]]s when one of Isaac's bombs kills an enemy.
+* {{dlc|r+}} Spawns 1-2 [[Blue Spider]]s or [[Blue Flies]] when it damages an enemy.
+* {{dlc|r}} Bombs leave a puddle of [[slow]]ing white [[creep]] on the ground when they explode.
+* {{dlc+|r}}{{transformation contribution|Spider Baby}}{{dlc-}}
+
+== Notes ==
+* Sticky Bombs spawn the same amount of spiders even if multiple enemies are killed with a single bomb.
+* Sticky Bombs can stick to [[Status Effects#Effects|friendly]] enemies.
+
+== Synergies ==
+* {{i|Bob's Rotten Head|anr}}: sticks to an enemy, the explosion is delayed but will deal 110 damage.
+** {{dlc|r}} No longer sticks to enemies.
+* {{i|Bomber Boy|r}}: Greatly increases the size of the creep puddle.
+
+== Interactions ==
+* {{i|Dr. Fetus}}: Dr. Fetus bombs retain the sticky effect ({{dlc|nr}} unless Isaac has [[piercing]]). Dr. Fetus bombs will not spawn spiders even if they stick to an enemy.
+** {{dlc|r}} The bombs always spawn slowing white creep after exploding.
+* {{i|Mr. Mega|r}} / {{t|Lost Cork}}: No effect on the creep puddle size.
+
+== In-game Footage ==
+{{#ev:youtube|9z4IgW8e44M}}
+
+== Trivia ==
+* Sticky Bombs may be a reference to [[wikipedia:Spelunky|Spelunky]]'s sticky bombs, which are also related to spiders and stick to enemies.
+
+{{nav|spider|bomb modifier|bomb|fr=Bombes Arachnides}}

@@ -1,0 +1,57 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 244
+ | quote       = It's still being tested...
+ | description = Isaac occasionally fires an unlimited range [[piercing tears|piercing]] laser alongside his normal tears. The laser can glitch, mimicking the effects of certain items and trinkets.
+ | quality     = 3
+ | tags        = summonable tech offensive
+ | unlocked by = Technology .5
+}}
+
+For all Tech items, check [[Tech (Disambiguation)]]
+
+{{cit|up}}
+
+== Effects ==
+* Grants an unlimited range [[piercing tears|piercing]] laser with random rate of fire that does not replace tears.
+* The laser has a 1/6 chance to fire every ~0.07 seconds (4 frames), firing at an average rate of 2.5 times per second.
+* {{dlc|nr}} The laser occasionally fires with the effect of the listed items or trinkets, randomly:
+** {{t|Hook Worm}}
+** {{i|Spoon Bender}}
+** {{i|Tiny Planet}}
+** {{dlc|a}} {{i|Mysterious Liquid}}
+** {{dlc|a}} {{i|Rubber Cement}}
+* {{dlc|r+}} The laser has a 5% chance of firing with a {{i|Fruit Cake}} effect.
+
+== Notes ==
+* The damage of the laser scales directly with Isaac's damage.
+* Unlike {{i|Technology}} or {{i|Technology 2}}, Isaac can still fire tears from both eyes in addition to firing the laser.
+* The laser can be fired independently from tears by slightly tilting the right analog stick, just like shooting familiars.
+* {{Dlc|r}} Unlike {{i|Technology}}, Tech.5 Lasers do not have momentum, and fire exclusively in the cardinal directions unless Isaac has an item like {{i|Analog Stick}}, {{i|Eye of the Occult}} or {{I|Marked}}.
+
+== Interactions ==
+* {{Dlc|r}}{{I|Anti-Gravity}}:  Creates floating laser balls that will all fire simultaneously when the fire button is released.
+* {{i|Brimstone|na}}: Tech.5 does not fire. However, it will still fire when playing as {{C|Azazel}} with his short-ranged Brimstone. Since the laser scales with player damage, this can be a devastating combination.
+** {{dlc|a}} Tech.5 fires normally while Brimstone laser is charging.
+* {{dlc|nr}} {{i|Cricket's Body}}: Tear delay down as expected, but no benefit from the splash effect.
+** {{dlc|r}} Releases a 4-way spread of tears whenever the laser hits a wall or an enemy.
+* {{i|Eye of the Occult}}: Only affects the laser's color.
+** '''Eye of the Occult''' + {{i|Brimstone}}/{{i|Technology}}: The Tech.5 laser also automatically fires at the crosshair.
+* {{I|Gello}}: Laser only fires from Isaac.
+* {{C|Lilith|anr}}: No effect, as Lilith is inherently Blindfolded.
+** {{dlc|r}} Lilith fires the Tech.5 laser from her forehead as expected, though the costume doesn't appear.
+* {{i|The Ludovico Technique}}: Laser is fired in the same direction that the controlled tear is moving and the laser becomes spectral.
+* {{I|Ipecac|r}}: Laser explodes and poisons enemies on contact.
+* {{i|The Parasite|r}}: Laser splits into two perpendicular beams upon hitting an obstacle.
+** {{dlc|r+}} Also spawn small split tears.
+* {{dlc|a}}{{I|Rubber Cement}}: Laser will bounce in angle depending on the obstacle hit.
+* {{i|Sprinkler}}: No effect.
+* {{I|Urn of Souls}}: Isaac can still fire the laser as normal while using the urn.
+
+== In-game Footage ==
+{{#ev:youtube|8B3wRr0e-bU}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Technology Zero }}
+
+{{nav|fr=Tech 0,5}}

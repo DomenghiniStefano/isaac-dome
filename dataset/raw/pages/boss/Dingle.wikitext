@@ -1,0 +1,56 @@
+{{infobox boss
+ | id          = 261
+ | environment = <u>Boss</u><br>{{Dlc|nr}}<br>{{floor|Basement}}<br>{{room|boss challenge}}{{room|boss rush}}<br>{{Dlc|r}}<br>{{floor|Basement}}{{floor|Burning Basement}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>(with [[Mega Maw]])<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>(with another Dingle or [[Brownie]])<br><u>Degraded Boss</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{floor|Chest}}
+ | base hp     = 300
+ | pool = {{ip|Boss}}<br> {{i|The Poop|r+}} (1% chance)
+}}
+
+'''Dingle''' is a [[boss]] that can appear:
+* {{Dlc|nr}} Only in the {{s|Basement}}.
+* {{Dlc+|r}} In the {{s|Basement}} and the {{s|Burning Basement}}.{{dlc-}}
+He is the boss version of the {{e|Dip}}s.
+
+== Behavior ==
+Dingle remains stationary and performs the following attacks:
+* Fires 3 projectiles towards Isaac.
+* Whistles before summoning 1-3 Dips and then fires 3 projectiles at Isaac.
+* Quickly performs 3 long dashes towards Isaac while bouncing off obstacles and walls, after which he pauses to catch his breath.
+** Dips caught in his dashes are knocked back a distance.
+** Occasionally, Dingle will leave behind a {{E|Poop}} while using this attack.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18|dlc=a}}: Dingle summons {{e|Spider}}s instead of Dips and fires eight shots in all directions instead of spitting three at Isaac. He also dashes much faster, but will only dash one time instead of three.
+: {{bc|1|dlc=a}}: Dingle creates a {{E|Red Poop}} instead of summoning Dips. He also dashes four times instead of three, though the dashes are shorter and slower. {{Dlc|r}} He also fires blood projectiles instead of poop projectiles, though this is a purely cosmetic effect.
+
+== Gallery ==
+<gallery>
+File:Boss Dingle black ingame.png|Black Champion Dingle.
+File:Boss Dingle red ingame.png|Red Champion Dingle.
+File:Boss Delirium Dingle Dangle ingame.png|Dingle as one of {{e|Delirium}}'s forms.
+File:Dingle Plus Mama Gurdy Concepts.jpg|Early sketch of Dingle (sketch name presumably "Pooper"), along with {{e|Mama Gurdy}}.
+File:Dingle Concept.png|More concept art of Dingle.
+</gallery>
+
+== Notes ==
+* {{i|Flush!}} kills Dingle instantly and causes him to leave behind 6 {{e|Dip}}s.
+* If a Bomb from {{I|Butt Bombs}} goes off in the same room as Dingle, it will heal him. {{dlc+|a}} This is especially bad if Isaac happens to have {{i|Number Two}}, which causes him to drop butt bombs while firing tears.{{dlc-}}
+** {{dlc|a+}} Butt Bombs fired by {{I|Dr. Fetus}} and {{I|Epic Fetus}} do not heal Dingle.
+
+== Trivia ==
+* {{dlc+|a}}{{e|Dangle}} and {{e|Brownie}} are related to Dingle.{{dlc-}}
+* The name 'Dingle' derives from the crude term, "dingleberry".
+* Dingle was the first new boss to be shown by Edmund.<ref name="dingle">[[boisite:88344465539]]</ref>
+* Dingle is referred to as male by Edmund.<ref name="dingle">[[boisite:88344465539]]</ref>
+* There are three other poop monsters: Dinga, Squirt, and Dip.
+** {{dlc+|a}} Two more poop monsters ({{e|Corn}} and {{e|Dank Squirt}}) and three poop bosses (Brownie, Dangle, and the {{e|Turdlings}}) were added.{{dlc-}}
+** {{dlc+|r}} Four more poop monsters ({{e|Big Corn}}, {{e|Drip}}, {{e|Splurt}}, and {{e|Hardy}}) and three poop bosses ({{e|Clog}}, {{e|Colostomia}}, and {{e|Turdlet}}) were added.{{dlc-}}
+* The Black Champion Version of Dingle acts slightly similar to the Dank Squirt and appears to be a "dank" or [[wikipedia:meconium|meconium]] version of Dingle.
+* {{dlc|r}} Prior to ''Repentance'', all versions of Dingle could fire blood projectiles instead of just the Red Champion variant.
+
+== References ==
+{{reflist}}
+
+{{nav|boss|fr=Pendouille}}
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Debut bosses in Rebirth]]

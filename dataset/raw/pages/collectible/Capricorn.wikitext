@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | id          = 307
+ | quote       = All stats up
+ | description = {{dlc|nr}} Adds 1 [[Red Heart container]], gives +0.5 [[Damage]], +0.1 [[Speed]], +1.5 [[Range]], and -1.0 [[Tear Delay]], and gives 1 {{E|Bomb}}, {{E|Penny}}, and {{E|Key}}.<br>{{dlc|r}} Adds 1 [[Red Heart container]], gives +0.5 [[Damage]], +0.1 [[Speed]], +0.75 [[Range]], and +0.5 [[Fire Rate]], and gives 1 {{E|Bomb}}, {{E|Penny}}, and {{E|Key}}.
+ | quality     = 3
+ | tags        = summonable tearsup offensive stars
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Adds 1 [[Red Heart container]].
+* +0.5 [[Damage]].
+* +0.1 [[Speed]].
+* {{dlc|nr}} +1.5 [[Range]].
+* {{dlc|r}} +0.75 [[Range]].
+* {{dlc|nr}} -1 [[Tear Delay]].
+* {{dlc|r}} +0.5 [[Fire Rate]].
+* +1 {{E|Bomb}}, {{E|Penny}}, and {{E|Key}}.
+
+== In-game Footage ==
+{{#ev:youtube|SxMJvpb3o_c}}
+
+== Trivia ==
+* Despite the pickup quote being "All stats up", [[Shot Speed]] and [[Luck]] aren't raised in any way.
+
+{{nav|zodiac|fr=Capricorne}}

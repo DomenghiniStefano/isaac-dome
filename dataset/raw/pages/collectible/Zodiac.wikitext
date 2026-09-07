@@ -1,0 +1,34 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 392
+ | quote       = The heavens will change you
+ | description = Gives Isaac a random [[Signs of the Zodiac|zodiac item]] effect that changes every floor.
+ | quality     = 1
+ | tags        = summonable offensive stars
+ | unlocked by = Zodiac
+}}
+
+''For a list of all zodiac signs, see [[Signs of the Zodiac]].''
+
+{{cit|up|a}}
+
+== Effects ==
+* Gives Isaac a random [[Signs of the Zodiac|Zodiac item]] effect that changes each floor.
+
+== Notes ==
+* Getting {{i|Capricorn}}, {{i|Cancer}} and {{i|Libra}} does not grant {{e|Penny|text=Coins}}, {{e|Bomb}}s, {{e|Key}}s or {{e|Soul Heart}}s.
+* {{dlc|nr}} Getting {{i|Leo}} will not change Isaac's size.
+* {{dlc|r}} {{i|Capricorn}} and {{i|Pisces}} grant +1.0 fire rate instead of their usual +0.5.
+* If already in possession of the item given by Zodiac, most have no effect.
+** The exceptions are {{i|Capricorn}} giving an additional +0.5 damage, and {{i|Gemini}} giving another familiar.
+** {{dlc|r}} Capricorn and Pisces will also grant +1.0 fire rate on top of the normal +0.5.
+
+== In-game Footage ==
+{{#ev:youtube|kHDBSggimdI}}
+
+== Trivia ==
+* This item's appearance is a reference to the [[wikipedia:Zodiac Killer|Zodiac Killer]], who used the symbol as his signature.
+* {{dlc|nr}} This item's icon shares the same icon as {{i|Marked}} but white instead of red. {{C|Isaac}}'s sprite is also the same as Marked but black instead of red.
+
+{{nav|the lost unlock|zodiac|ultra greed unlock|fr=Zodiaque}}

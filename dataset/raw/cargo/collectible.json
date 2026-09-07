@@ -1,0 +1,5762 @@
+[
+  {
+    "_pageName": "120 Volt",
+    "alias": "120 Volt",
+    "dlc": "24",
+    "id": "559",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "1up!",
+    "alias": "1up!",
+    "dlc": "31",
+    "id": "11",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "20/20",
+    "alias": "20/20",
+    "dlc": "31",
+    "id": "245",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "2Spooky",
+    "alias": "2Spooky",
+    "dlc": "24",
+    "id": "554",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "3 Dollar Bill",
+    "alias": "3 Dollar Bill",
+    "dlc": "31",
+    "id": "191",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "4.5 Volt",
+    "alias": "4.5 Volt",
+    "dlc": "24",
+    "id": "647",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "7 Seals",
+    "alias": "7 Seals",
+    "dlc": "28",
+    "id": "526",
+    "is activated": "0",
+    "unlocked by": "7 Seals"
+  },
+  {
+    "_pageName": "8 Inch Nails",
+    "alias": "8 Inch Nails",
+    "dlc": "30",
+    "id": "359",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "9 Volt",
+    "alias": "9 Volt",
+    "dlc": "31",
+    "id": "116",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "???'s Only Friend",
+    "alias": "???'s Only Friend",
+    "dlc": "31",
+    "id": "320",
+    "is activated": "0",
+    "unlocked by": "???'s Only Friend"
+  },
+  {
+    "_pageName": "A Bar of Soap",
+    "alias": "A Bar of Soap",
+    "dlc": "24",
+    "id": "564",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "A Dollar",
+    "alias": "A Dollar",
+    "dlc": "31",
+    "id": "18",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "A Lump of Coal",
+    "alias": "A Lump of Coal",
+    "dlc": "31",
+    "id": "132",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "A Pony",
+    "alias": "A Pony",
+    "dlc": "31",
+    "id": "130",
+    "is activated": "1",
+    "unlocked by": "The Harbingers"
+  },
+  {
+    "_pageName": "A Pound of Flesh",
+    "alias": "A Pound of Flesh",
+    "dlc": "24",
+    "id": "672",
+    "is activated": "0",
+    "unlocked by": "A Pound of Flesh"
+  },
+  {
+    "_pageName": "A Quarter",
+    "alias": "A Quarter",
+    "dlc": "31",
+    "id": "74",
+    "is activated": "0",
+    "unlocked by": "A Quarter"
+  },
+  {
+    "_pageName": "A Snack",
+    "alias": "A Snack",
+    "dlc": "31",
+    "id": "346",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Abaddon",
+    "alias": "Abaddon",
+    "dlc": "31",
+    "id": "230",
+    "is activated": "0",
+    "unlocked by": "Abaddon"
+  },
+  {
+    "_pageName": "Abel",
+    "alias": "Abel",
+    "dlc": "31",
+    "id": "188",
+    "is activated": "0",
+    "unlocked by": "Abel"
+  },
+  {
+    "_pageName": "Abyss",
+    "alias": "Abyss",
+    "dlc": "24",
+    "id": "706",
+    "is activated": "1",
+    "unlocked by": "Abyss"
+  },
+  {
+    "_pageName": "Acid Baby",
+    "alias": "Acid Baby",
+    "dlc": "28",
+    "id": "491",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Act of Contrition",
+    "alias": "Act of Contrition",
+    "dlc": "24",
+    "id": "601",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Adrenaline",
+    "alias": "Adrenaline",
+    "dlc": "28",
+    "id": "493",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Akeldama",
+    "alias": "Akeldama",
+    "dlc": "24",
+    "id": "641",
+    "is activated": "0",
+    "unlocked by": "Akeldama"
+  },
+  {
+    "_pageName": "Alabaster Box",
+    "alias": "Alabaster Box",
+    "dlc": "24",
+    "id": "585",
+    "is activated": "1",
+    "unlocked by": "Alabaster Box"
+  },
+  {
+    "_pageName": "Almond Milk",
+    "alias": "Almond Milk",
+    "dlc": "24",
+    "id": "561",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Analog Stick",
+    "alias": "Analog Stick",
+    "dlc": "28",
+    "id": "465",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Anarchist Cookbook",
+    "alias": "Anarchist Cookbook",
+    "dlc": "31",
+    "id": "65",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Anemic",
+    "alias": "Anemic",
+    "dlc": "31",
+    "id": "214",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Angelic Prism",
+    "alias": "Angelic Prism",
+    "dlc": "28",
+    "id": "528",
+    "is activated": "0",
+    "unlocked by": "Angelic Prism"
+  },
+  {
+    "_pageName": "Angry Fly",
+    "alias": "Angry Fly",
+    "dlc": "28",
+    "id": "511",
+    "is activated": "0",
+    "unlocked by": "Angry Fly"
+  },
+  {
+    "_pageName": "Anima Sola",
+    "alias": "Anima Sola",
+    "dlc": "24",
+    "id": "722",
+    "is activated": "1",
+    "unlocked by": "Anima Sola"
+  },
+  {
+    "_pageName": "Ankh",
+    "alias": "Ankh",
+    "dlc": "31",
+    "id": "161",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Anti-Gravity",
+    "alias": "Anti-Gravity",
+    "dlc": "31",
+    "id": "222",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Apple!",
+    "alias": "Apple!",
+    "dlc": "28",
+    "id": "443",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Aquarius",
+    "alias": "Aquarius",
+    "dlc": "31",
+    "id": "308",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Aries",
+    "alias": "Aries",
+    "dlc": "31",
+    "id": "300",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Astral Projection",
+    "alias": "Astral Projection",
+    "dlc": "24",
+    "id": "677",
+    "is activated": "0",
+    "unlocked by": "Astral Projection"
+  },
+  {
+    "_pageName": "Athame",
+    "alias": "Athame",
+    "dlc": "30",
+    "id": "408",
+    "is activated": "0",
+    "unlocked by": "Athame"
+  },
+  {
+    "_pageName": "Azazel's Rage",
+    "alias": "Azazel's Rage",
+    "dlc": "24",
+    "id": "699",
+    "is activated": "0",
+    "unlocked by": "Azazel's Rage"
+  },
+  {
+    "_pageName": "BBF",
+    "alias": "BBF",
+    "dlc": "31",
+    "id": "272",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "BFFS!",
+    "alias": "BFFS!",
+    "dlc": "31",
+    "id": "247",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "BOGO Bombs",
+    "alias": "BOGO Bombs",
+    "dlc": "31",
+    "id": "250",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Backstabber",
+    "alias": "Backstabber",
+    "dlc": "28",
+    "id": "506",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bag of Crafting",
+    "alias": "Bag of Crafting",
+    "dlc": "24",
+    "id": "710",
+    "is activated": "1",
+    "unlocked by": "Bag of Crafting"
+  },
+  {
+    "_pageName": "Ball of Bandages",
+    "alias": "Ball of Bandages",
+    "dlc": "31",
+    "id": "207",
+    "is activated": "0",
+    "unlocked by": "A Cube of Meat"
+  },
+  {
+    "_pageName": "Ball of Tar",
+    "alias": "Ball of Tar",
+    "dlc": "31",
+    "id": "231",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Battery Pack",
+    "alias": "Battery Pack",
+    "dlc": "24",
+    "id": "603",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Belly Button",
+    "alias": "Belly Button",
+    "dlc": "28",
+    "id": "458",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Belly Jelly",
+    "alias": "Belly Jelly",
+    "dlc": "24",
+    "id": "690",
+    "is activated": "0",
+    "unlocked by": "Belly Jelly"
+  },
+  {
+    "_pageName": "Berserk!",
+    "alias": "Berserk!",
+    "dlc": "24",
+    "id": "704",
+    "is activated": "1",
+    "unlocked by": "Berserk!"
+  },
+  {
+    "_pageName": "Best Bud",
+    "alias": "Best Bud",
+    "dlc": "31",
+    "id": "274",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Best Friend",
+    "alias": "Best Friend",
+    "dlc": "31",
+    "id": "136",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Betrayal",
+    "alias": "Betrayal",
+    "dlc": "30",
+    "id": "391",
+    "is activated": "0",
+    "unlocked by": "Betrayal"
+  },
+  {
+    "_pageName": "Big Chubby",
+    "alias": "Big Chubby",
+    "dlc": "28",
+    "id": "473",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Big Fan",
+    "alias": "Big Fan",
+    "dlc": "31",
+    "id": "279",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Binge Eater",
+    "alias": "Binge Eater",
+    "dlc": "24",
+    "id": "664",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Binky",
+    "alias": "Binky",
+    "dlc": "30",
+    "id": "438",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bird Cage",
+    "alias": "Bird Cage",
+    "dlc": "24",
+    "id": "610",
+    "is activated": "0",
+    "unlocked by": "Bird Cage"
+  },
+  {
+    "_pageName": "Bird's Eye",
+    "alias": "Bird's Eye",
+    "dlc": "24",
+    "id": "616",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Birthright",
+    "alias": "Birthright",
+    "dlc": "24",
+    "id": "619",
+    "is activated": "0",
+    "unlocked by": "Birthright"
+  },
+  {
+    "_pageName": "Black Candle",
+    "alias": "Black Candle",
+    "dlc": "31",
+    "id": "260",
+    "is activated": "0",
+    "unlocked by": "Black Candle"
+  },
+  {
+    "_pageName": "Black Hole",
+    "alias": "Black Hole",
+    "dlc": "28",
+    "id": "512",
+    "is activated": "1",
+    "unlocked by": "Black Hole"
+  },
+  {
+    "_pageName": "Black Lotus",
+    "alias": "Black Lotus",
+    "dlc": "31",
+    "id": "226",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Black Powder",
+    "alias": "Black Powder",
+    "dlc": "30",
+    "id": "420",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Blank Card",
+    "alias": "Blank Card",
+    "dlc": "31",
+    "id": "286",
+    "is activated": "1",
+    "unlocked by": "Blank Card"
+  },
+  {
+    "_pageName": "Blanket",
+    "alias": "Blanket",
+    "dlc": "28",
+    "id": "535",
+    "is activated": "0",
+    "unlocked by": "Blanket"
+  },
+  {
+    "_pageName": "Blood Bag",
+    "alias": "Blood Bag",
+    "dlc": "31",
+    "id": "119",
+    "is activated": "0",
+    "unlocked by": "Blood Bag"
+  },
+  {
+    "_pageName": "Blood Bombs",
+    "alias": "Blood Bombs",
+    "dlc": "24",
+    "id": "614",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Blood Clot",
+    "alias": "Blood Clot",
+    "dlc": "31",
+    "id": "254",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Blood Oath",
+    "alias": "Blood Oath",
+    "dlc": "24",
+    "id": "569",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Blood Puppy",
+    "alias": "Blood Puppy",
+    "dlc": "24",
+    "id": "565",
+    "is activated": "0",
+    "unlocked by": "Blood Puppy"
+  },
+  {
+    "_pageName": "Blood Rights",
+    "alias": "Blood Rights",
+    "dlc": "31",
+    "id": "186",
+    "is activated": "1",
+    "unlocked by": "Blood Rights"
+  },
+  {
+    "_pageName": "Blood of the Martyr",
+    "alias": "Blood of the Martyr",
+    "dlc": "31",
+    "id": "7",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bloodshot Eye",
+    "alias": "Bloodshot Eye",
+    "dlc": "28",
+    "id": "509",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bloody Gust",
+    "alias": "Bloody Gust",
+    "dlc": "24",
+    "id": "695",
+    "is activated": "0",
+    "unlocked by": "Bloody Gust"
+  },
+  {
+    "_pageName": "Bloody Lust",
+    "alias": "Bloody Lust",
+    "dlc": "31",
+    "id": "157",
+    "is activated": "0",
+    "unlocked by": "Bloody Lust"
+  },
+  {
+    "_pageName": "Blue Cap",
+    "alias": "Blue Cap",
+    "dlc": "31",
+    "id": "342",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Blue Map",
+    "alias": "Blue Map",
+    "dlc": "31",
+    "id": "246",
+    "is activated": "0",
+    "unlocked by": "Blue Map"
+  },
+  {
+    "_pageName": "Bob's Brain",
+    "alias": "Bob's Brain",
+    "dlc": "31",
+    "id": "273",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bob's Curse",
+    "alias": "Bob's Curse",
+    "dlc": "31",
+    "id": "140",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bob's Rotten Head",
+    "alias": "Bob's Rotten Head",
+    "dlc": "31",
+    "id": "42",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bobby-Bomb",
+    "alias": "Bobby-Bomb",
+    "dlc": "31",
+    "id": "125",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Boiled Baby",
+    "alias": "Boiled Baby",
+    "dlc": "24",
+    "id": "607",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bomb Bag",
+    "alias": "Bomb Bag",
+    "dlc": "31",
+    "id": "131",
+    "is activated": "0",
+    "unlocked by": "A Bag of Bombs"
+  },
+  {
+    "_pageName": "Bomber Boy",
+    "alias": "Bomber Boy",
+    "dlc": "30",
+    "id": "353",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bone Spurs",
+    "alias": "Bone Spurs",
+    "dlc": "24",
+    "id": "683",
+    "is activated": "0",
+    "unlocked by": "Bone Spurs"
+  },
+  {
+    "_pageName": "Book of Revelations",
+    "alias": "Book of Revelations",
+    "dlc": "31",
+    "id": "78",
+    "is activated": "1",
+    "unlocked by": "The Book of Revelations"
+  },
+  {
+    "_pageName": "Book of Secrets",
+    "alias": "Book of Secrets",
+    "dlc": "31",
+    "id": "287",
+    "is activated": "1",
+    "unlocked by": "Book of Secrets"
+  },
+  {
+    "_pageName": "Book of Shadows",
+    "alias": "Book of Shadows",
+    "dlc": "31",
+    "id": "58",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Book of Virtues",
+    "alias": "Book of Virtues",
+    "dlc": "24",
+    "id": "584",
+    "is activated": "1",
+    "unlocked by": "Book of Virtues"
+  },
+  {
+    "_pageName": "Book of the Dead",
+    "alias": "Book of the Dead",
+    "dlc": "28",
+    "id": "545",
+    "is activated": "1",
+    "unlocked by": "Book of the Dead"
+  },
+  {
+    "_pageName": "Boom!",
+    "alias": "Boom!",
+    "dlc": "31",
+    "id": "19",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Booster Pack (Item)",
+    "alias": "Booster Pack",
+    "dlc": "24",
+    "id": "624",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bot Fly",
+    "alias": "Bot Fly",
+    "dlc": "24",
+    "id": "629",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Box",
+    "alias": "Box",
+    "dlc": "31",
+    "id": "198",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Box of Friends",
+    "alias": "Box of Friends",
+    "dlc": "30",
+    "id": "357",
+    "is activated": "1",
+    "unlocked by": "Box of Friends"
+  },
+  {
+    "_pageName": "Box of Spiders",
+    "alias": "Box of Spiders",
+    "dlc": "31",
+    "id": "288",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bozo",
+    "alias": "Bozo",
+    "dlc": "28",
+    "id": "513",
+    "is activated": "0",
+    "unlocked by": "Bozo"
+  },
+  {
+    "_pageName": "Breakfast",
+    "alias": "Breakfast",
+    "dlc": "31",
+    "id": "25",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Breath of Life",
+    "alias": "Breath of Life",
+    "dlc": "31",
+    "id": "326",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Brimstone",
+    "alias": "Brimstone",
+    "dlc": "31",
+    "id": "118",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Brimstone Bombs",
+    "alias": "Brimstone Bombs",
+    "dlc": "24",
+    "id": "646",
+    "is activated": "0",
+    "unlocked by": "Brimstone Bombs"
+  },
+  {
+    "_pageName": "Brittle Bones",
+    "alias": "Brittle Bones",
+    "dlc": "28",
+    "id": "549",
+    "is activated": "0",
+    "unlocked by": "Brittle Bones"
+  },
+  {
+    "_pageName": "Broken Glass Cannon",
+    "alias": "Broken Glass Cannon",
+    "dlc": "24",
+    "id": "474",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Broken Modem",
+    "alias": "Broken Modem",
+    "dlc": "28",
+    "id": "514",
+    "is activated": "0",
+    "unlocked by": "Broken Modem"
+  },
+  {
+    "_pageName": "Broken Shovel",
+    "alias": "Broken Shovel 1",
+    "dlc": "28",
+    "id": "550",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Broken Shovel",
+    "alias": "Broken Shovel 2",
+    "dlc": "28",
+    "id": "551",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Broken Watch",
+    "alias": "Broken Watch",
+    "dlc": "31",
+    "id": "337",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Brother Bobby",
+    "alias": "Brother Bobby",
+    "dlc": "31",
+    "id": "8",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Brown Nugget",
+    "alias": "Brown Nugget",
+    "dlc": "28",
+    "id": "504",
+    "is activated": "1",
+    "unlocked by": "Brown Nugget"
+  },
+  {
+    "_pageName": "Bucket of Lard",
+    "alias": "Bucket of Lard",
+    "dlc": "31",
+    "id": "129",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Buddy in a Box",
+    "alias": "Buddy in a Box",
+    "dlc": "28",
+    "id": "518",
+    "is activated": "0",
+    "unlocked by": "Buddy in a Box"
+  },
+  {
+    "_pageName": "Bum Friend",
+    "alias": "Bum Friend",
+    "dlc": "31",
+    "id": "144",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bumbo",
+    "alias": "Bumbo",
+    "dlc": "30",
+    "id": "385",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Bursting Sack",
+    "alias": "Bursting Sack",
+    "dlc": "30",
+    "id": "377",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Butt Bombs",
+    "alias": "Butt Bombs",
+    "dlc": "31",
+    "id": "209",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Butter Bean",
+    "alias": "Butter Bean",
+    "dlc": "31",
+    "id": "294",
+    "is activated": "1",
+    "unlocked by": "Butter Bean"
+  },
+  {
+    "_pageName": "C Section",
+    "alias": "C Section",
+    "dlc": "24",
+    "id": "678",
+    "is activated": "0",
+    "unlocked by": "C Section"
+  },
+  {
+    "_pageName": "Caffeine Pill",
+    "alias": "Caffeine Pill",
+    "dlc": "31",
+    "id": "340",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Cain's Other Eye",
+    "alias": "Cain's Other Eye",
+    "dlc": "31",
+    "id": "319",
+    "is activated": "0",
+    "unlocked by": "Cain's Other Eye"
+  },
+  {
+    "_pageName": "Cambion Conception",
+    "alias": "Cambion Conception",
+    "dlc": "30",
+    "id": "412",
+    "is activated": "0",
+    "unlocked by": "Cambion Conception"
+  },
+  {
+    "_pageName": "Camo Undies",
+    "alias": "Camo Undies",
+    "dlc": "28",
+    "id": "497",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Cancer",
+    "alias": "Cancer",
+    "dlc": "31",
+    "id": "301",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Candy Heart",
+    "alias": "Candy Heart",
+    "dlc": "24",
+    "id": "671",
+    "is activated": "0",
+    "unlocked by": "Candy Heart"
+  },
+  {
+    "_pageName": "Capricorn",
+    "alias": "Capricorn",
+    "dlc": "31",
+    "id": "307",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Car Battery",
+    "alias": "Car Battery",
+    "dlc": "30",
+    "id": "356",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Card Reading",
+    "alias": "Card Reading",
+    "dlc": "24",
+    "id": "660",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Cat-o-nine-tails",
+    "alias": "Cat-o-nine-tails",
+    "dlc": "31",
+    "id": "165",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Celtic Cross",
+    "alias": "Celtic Cross",
+    "dlc": "31",
+    "id": "162",
+    "is activated": "0",
+    "unlocked by": "Celtic Cross"
+  },
+  {
+    "_pageName": "Censer",
+    "alias": "Censer",
+    "dlc": "30",
+    "id": "387",
+    "is activated": "0",
+    "unlocked by": "Censer"
+  },
+  {
+    "_pageName": "Ceremonial Robes",
+    "alias": "Ceremonial Robes",
+    "dlc": "31",
+    "id": "216",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Champion Belt",
+    "alias": "Champion Belt",
+    "dlc": "31",
+    "id": "208",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Chaos",
+    "alias": "Chaos",
+    "dlc": "30",
+    "id": "402",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Charged Baby",
+    "alias": "Charged Baby",
+    "dlc": "30",
+    "id": "372",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Charm of the Vampire",
+    "alias": "Charm of the Vampire",
+    "dlc": "31",
+    "id": "62",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Chemical Peel",
+    "alias": "Chemical Peel",
+    "dlc": "31",
+    "id": "154",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Chocolate Milk",
+    "alias": "Chocolate Milk",
+    "dlc": "31",
+    "id": "69",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Circle of Protection",
+    "alias": "Circle of Protection",
+    "dlc": "30",
+    "id": "423",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Clear Rune",
+    "alias": "Clear Rune",
+    "dlc": "24",
+    "id": "263",
+    "is activated": "1",
+    "unlocked by": "Blank Rune"
+  },
+  {
+    "_pageName": "Clicker",
+    "alias": "Clicker",
+    "dlc": "28",
+    "id": "482",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Compost",
+    "alias": "Compost",
+    "dlc": "28",
+    "id": "480",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Compound Fracture",
+    "alias": "Compound Fracture",
+    "dlc": "28",
+    "id": "453",
+    "is activated": "0",
+    "unlocked by": "Compound Fracture"
+  },
+  {
+    "_pageName": "Cone Head",
+    "alias": "Cone Head",
+    "dlc": "28",
+    "id": "457",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Consolation Prize",
+    "alias": "Consolation Prize",
+    "dlc": "24",
+    "id": "644",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Contagion",
+    "alias": "Contagion",
+    "dlc": "28",
+    "id": "466",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Continuum",
+    "alias": "Continuum",
+    "dlc": "30",
+    "id": "369",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Contract From Below",
+    "alias": "Contract From Below",
+    "dlc": "31",
+    "id": "241",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Converter",
+    "alias": "Converter",
+    "dlc": "31",
+    "id": "296",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Coupon",
+    "alias": "Coupon",
+    "dlc": "28",
+    "id": "521",
+    "is activated": "1",
+    "unlocked by": "Coupon"
+  },
+  {
+    "_pageName": "Crack Jacks",
+    "alias": "Crack Jacks",
+    "dlc": "30",
+    "id": "354",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Crack the Sky",
+    "alias": "Crack the Sky",
+    "dlc": "31",
+    "id": "160",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Cracked Orb",
+    "alias": "Cracked Orb",
+    "dlc": "24",
+    "id": "675",
+    "is activated": "0",
+    "unlocked by": "Cracked Orb"
+  },
+  {
+    "_pageName": "Cricket's Body",
+    "alias": "Cricket's Body",
+    "dlc": "31",
+    "id": "224",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Cricket's Head",
+    "alias": "Cricket's Head",
+    "dlc": "31",
+    "id": "4",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Crooked Penny",
+    "alias": "Crooked Penny",
+    "dlc": "28",
+    "id": "485",
+    "is activated": "1",
+    "unlocked by": "Crooked Penny"
+  },
+  {
+    "_pageName": "Crown Of Light",
+    "alias": "Crown Of Light",
+    "dlc": "30",
+    "id": "415",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Crystal Ball",
+    "alias": "Crystal Ball",
+    "dlc": "31",
+    "id": "158",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Cube Baby",
+    "alias": "Cube Baby",
+    "dlc": "24",
+    "id": "652",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Cube of Meat",
+    "alias": "Cube of Meat",
+    "dlc": "31",
+    "id": "73",
+    "is activated": "0",
+    "unlocked by": "A Cube of Meat"
+  },
+  {
+    "_pageName": "Cupid's Arrow",
+    "alias": "Cupid's Arrow",
+    "dlc": "31",
+    "id": "48",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Curse of the Tower",
+    "alias": "Curse of the Tower",
+    "dlc": "30",
+    "id": "371",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Cursed Eye",
+    "alias": "Cursed Eye",
+    "dlc": "31",
+    "id": "316",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "D infinity",
+    "alias": "D infinity",
+    "dlc": "28",
+    "id": "489",
+    "is activated": "1",
+    "unlocked by": "D infinity"
+  },
+  {
+    "_pageName": "D1",
+    "alias": "D1",
+    "dlc": "28",
+    "id": "476",
+    "is activated": "1",
+    "unlocked by": "D1"
+  },
+  {
+    "_pageName": "D10",
+    "alias": "D10",
+    "dlc": "31",
+    "id": "285",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "D100",
+    "alias": "D100",
+    "dlc": "31",
+    "id": "283",
+    "is activated": "1",
+    "unlocked by": "The D100"
+  },
+  {
+    "_pageName": "D12",
+    "alias": "D12",
+    "dlc": "30",
+    "id": "386",
+    "is activated": "1",
+    "unlocked by": "D12"
+  },
+  {
+    "_pageName": "D20",
+    "alias": "D20",
+    "dlc": "31",
+    "id": "166",
+    "is activated": "1",
+    "unlocked by": "The D20"
+  },
+  {
+    "_pageName": "D4",
+    "alias": "D4",
+    "dlc": "31",
+    "id": "284",
+    "is activated": "1",
+    "unlocked by": "The D4"
+  },
+  {
+    "_pageName": "D7",
+    "alias": "D7",
+    "dlc": "30",
+    "id": "437",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "D8",
+    "alias": "D8",
+    "dlc": "30",
+    "id": "406",
+    "is activated": "1",
+    "unlocked by": "D8"
+  },
+  {
+    "_pageName": "Dad's Key",
+    "alias": "Dad's Key",
+    "dlc": "31",
+    "id": "175",
+    "is activated": "1",
+    "unlocked by": "Dad's Key"
+  },
+  {
+    "_pageName": "Dad's Lost Coin",
+    "alias": "Dad's Lost Coin",
+    "dlc": "28",
+    "id": "455",
+    "is activated": "0",
+    "unlocked by": "Dad's Lost Coin"
+  },
+  {
+    "_pageName": "Dad's Note",
+    "alias": "Dad's Note",
+    "dlc": "24",
+    "id": "668",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dad's Ring",
+    "alias": "Dad's Ring",
+    "dlc": "28",
+    "id": "546",
+    "is activated": "0",
+    "unlocked by": "Dad's Ring"
+  },
+  {
+    "_pageName": "Daddy Longlegs",
+    "alias": "Daddy Longlegs",
+    "dlc": "31",
+    "id": "170",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Damocles",
+    "alias": "Damocles",
+    "dlc": "24",
+    "id": "577",
+    "is activated": "1",
+    "unlocked by": "Damocles"
+  },
+  {
+    "_pageName": "Dark Arts",
+    "alias": "Dark Arts",
+    "dlc": "24",
+    "id": "705",
+    "is activated": "1",
+    "unlocked by": "Dark Arts"
+  },
+  {
+    "_pageName": "Dark Bum",
+    "alias": "Dark Bum",
+    "dlc": "31",
+    "id": "278",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dark Matter",
+    "alias": "Dark Matter",
+    "dlc": "31",
+    "id": "259",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dark Prince's Crown",
+    "alias": "Dark Prince's Crown",
+    "dlc": "28",
+    "id": "442",
+    "is activated": "0",
+    "unlocked by": "Dark Prince's Crown"
+  },
+  {
+    "_pageName": "Dataminer",
+    "alias": "Dataminer",
+    "dlc": "28",
+    "id": "481",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dead Bird",
+    "alias": "Dead Bird",
+    "dlc": "31",
+    "id": "117",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dead Cat",
+    "alias": "Dead Cat",
+    "dlc": "31",
+    "id": "81",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dead Dove",
+    "alias": "Dead Dove",
+    "dlc": "31",
+    "id": "185",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dead Eye",
+    "alias": "Dead Eye",
+    "dlc": "30",
+    "id": "373",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dead Onion",
+    "alias": "Dead Onion",
+    "dlc": "31",
+    "id": "336",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dead Sea Scrolls",
+    "alias": "Dead Sea Scrolls",
+    "dlc": "31",
+    "id": "124",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dead Tooth",
+    "alias": "Dead Tooth",
+    "dlc": "28",
+    "id": "446",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Death Certificate",
+    "alias": "Death Certificate",
+    "dlc": "24",
+    "id": "628",
+    "is activated": "1",
+    "unlocked by": "Death Certificate"
+  },
+  {
+    "_pageName": "Death's List",
+    "alias": "Death's List",
+    "dlc": "28",
+    "id": "530",
+    "is activated": "0",
+    "unlocked by": "Death's List"
+  },
+  {
+    "_pageName": "Death's Touch",
+    "alias": "Death's Touch",
+    "dlc": "31",
+    "id": "237",
+    "is activated": "0",
+    "unlocked by": "Death's Touch"
+  },
+  {
+    "_pageName": "Decap Attack",
+    "alias": "Decap Attack",
+    "dlc": "24",
+    "id": "729",
+    "is activated": "1",
+    "unlocked by": "Decap Attack"
+  },
+  {
+    "_pageName": "Deck of Cards",
+    "alias": "Deck of Cards",
+    "dlc": "31",
+    "id": "85",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Deep Pockets",
+    "alias": "Deep Pockets",
+    "dlc": "30",
+    "id": "416",
+    "is activated": "0",
+    "unlocked by": "Deep Pockets"
+  },
+  {
+    "_pageName": "Delirious",
+    "alias": "Delirious",
+    "dlc": "28",
+    "id": "510",
+    "is activated": "1",
+    "unlocked by": "Delirious"
+  },
+  {
+    "_pageName": "Demon Baby",
+    "alias": "Demon Baby",
+    "dlc": "31",
+    "id": "113",
+    "is activated": "0",
+    "unlocked by": "Demon Baby"
+  },
+  {
+    "_pageName": "Depression",
+    "alias": "Depression",
+    "dlc": "28",
+    "id": "469",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dessert",
+    "alias": "Dessert",
+    "dlc": "31",
+    "id": "24",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dinner",
+    "alias": "Dinner",
+    "dlc": "31",
+    "id": "23",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Diplopia",
+    "alias": "Diplopia",
+    "dlc": "30",
+    "id": "347",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dirty Mind",
+    "alias": "Dirty Mind",
+    "dlc": "24",
+    "id": "576",
+    "is activated": "0",
+    "unlocked by": "Dirty Mind"
+  },
+  {
+    "_pageName": "Distant Admiration",
+    "alias": "Distant Admiration",
+    "dlc": "31",
+    "id": "57",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Divine Intervention",
+    "alias": "Divine Intervention",
+    "dlc": "24",
+    "id": "568",
+    "is activated": "0",
+    "unlocked by": "Divine Intervention"
+  },
+  {
+    "_pageName": "Divorce Papers",
+    "alias": "Divorce Papers",
+    "dlc": "28",
+    "id": "547",
+    "is activated": "0",
+    "unlocked by": "Divorce Papers"
+  },
+  {
+    "_pageName": "Doctor's Remote",
+    "alias": "Doctor's Remote",
+    "dlc": "31",
+    "id": "47",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dog Tooth",
+    "alias": "Dog Tooth",
+    "dlc": "28",
+    "id": "445",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dogma (Item)",
+    "alias": "Dogma",
+    "dlc": "24",
+    "id": "633",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dr. Fetus",
+    "alias": "Dr. Fetus",
+    "dlc": "31",
+    "id": "52",
+    "is activated": "0",
+    "unlocked by": "A Fetus in a Jar"
+  },
+  {
+    "_pageName": "Dream Catcher",
+    "alias": "Dream Catcher",
+    "dlc": "24",
+    "id": "566",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Dry Baby",
+    "alias": "Dry Baby",
+    "dlc": "31",
+    "id": "265",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Duality",
+    "alias": "Duality",
+    "dlc": "28",
+    "id": "498",
+    "is activated": "0",
+    "unlocked by": "Duality"
+  },
+  {
+    "_pageName": "Dull Razor",
+    "alias": "Dull Razor",
+    "dlc": "28",
+    "id": "486",
+    "is activated": "1",
+    "unlocked by": "Dull Razor"
+  },
+  {
+    "_pageName": "E. Coli",
+    "alias": "E. Coli",
+    "dlc": "31",
+    "id": "236",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Echo Chamber",
+    "alias": "Echo Chamber",
+    "dlc": "24",
+    "id": "700",
+    "is activated": "0",
+    "unlocked by": "Echo Chamber"
+  },
+  {
+    "_pageName": "Eden's Blessing",
+    "alias": "Eden's Blessing",
+    "dlc": "30",
+    "id": "381",
+    "is activated": "0",
+    "unlocked by": "Eden's Blessing"
+  },
+  {
+    "_pageName": "Eden's Soul",
+    "alias": "Eden's Soul",
+    "dlc": "28",
+    "id": "490",
+    "is activated": "1",
+    "unlocked by": "Eden's Soul"
+  },
+  {
+    "_pageName": "Empty Heart",
+    "alias": "Empty Heart",
+    "dlc": "24",
+    "id": "676",
+    "is activated": "0",
+    "unlocked by": "Empty Heart"
+  },
+  {
+    "_pageName": "Empty Vessel",
+    "alias": "Empty Vessel",
+    "dlc": "30",
+    "id": "409",
+    "is activated": "0",
+    "unlocked by": "Empty Vessel"
+  },
+  {
+    "_pageName": "Epic Fetus",
+    "alias": "Epic Fetus",
+    "dlc": "31",
+    "id": "168",
+    "is activated": "0",
+    "unlocked by": "Epic Fetus"
+  },
+  {
+    "_pageName": "Epiphora",
+    "alias": "Epiphora",
+    "dlc": "30",
+    "id": "368",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Eraser",
+    "alias": "Eraser",
+    "dlc": "24",
+    "id": "638",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Esau Jr.",
+    "alias": "Esau Jr.",
+    "dlc": "24",
+    "id": "703",
+    "is activated": "1",
+    "unlocked by": "Esau Jr."
+  },
+  {
+    "_pageName": "Eternal D6",
+    "alias": "Eternal D6",
+    "dlc": "24",
+    "id": "609",
+    "is activated": "1",
+    "unlocked by": "Eternal D6"
+  },
+  {
+    "_pageName": "Eucharist",
+    "alias": "Eucharist",
+    "dlc": "28",
+    "id": "499",
+    "is activated": "0",
+    "unlocked by": "Eucharist"
+  },
+  {
+    "_pageName": "Euthanasia",
+    "alias": "Euthanasia",
+    "dlc": "28",
+    "id": "496",
+    "is activated": "0",
+    "unlocked by": "Euthanasia"
+  },
+  {
+    "_pageName": "Eve's Mascara",
+    "alias": "Eve's Mascara",
+    "dlc": "31",
+    "id": "310",
+    "is activated": "0",
+    "unlocked by": "Eve's Mascara"
+  },
+  {
+    "_pageName": "Everything Jar",
+    "alias": "Everything Jar",
+    "dlc": "24",
+    "id": "720",
+    "is activated": "1",
+    "unlocked by": "Everything Jar"
+  },
+  {
+    "_pageName": "Evil Charm",
+    "alias": "Evil Charm",
+    "dlc": "24",
+    "id": "632",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Evil Eye",
+    "alias": "Evil Eye",
+    "dlc": "30",
+    "id": "410",
+    "is activated": "0",
+    "unlocked by": "Evil Eye"
+  },
+  {
+    "_pageName": "Experimental Treatment",
+    "alias": "Experimental Treatment",
+    "dlc": "31",
+    "id": "240",
+    "is activated": "0",
+    "unlocked by": "Experimental Treatment"
+  },
+  {
+    "_pageName": "Explosivo",
+    "alias": "Explosivo",
+    "dlc": "30",
+    "id": "401",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Eye Drops",
+    "alias": "Eye Drops",
+    "dlc": "24",
+    "id": "600",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Eye Sore",
+    "alias": "Eye Sore",
+    "dlc": "24",
+    "id": "558",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Eye of Belial",
+    "alias": "Eye of Belial",
+    "dlc": "28",
+    "id": "462",
+    "is activated": "0",
+    "unlocked by": "Eye of Belial"
+  },
+  {
+    "_pageName": "Eye of Greed",
+    "alias": "Eye of Greed",
+    "dlc": "28",
+    "id": "450",
+    "is activated": "0",
+    "unlocked by": "Eye of Greed"
+  },
+  {
+    "_pageName": "Eye of the Occult",
+    "alias": "Eye of the Occult",
+    "dlc": "24",
+    "id": "572",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "False PHD",
+    "alias": "False PHD",
+    "dlc": "24",
+    "id": "654",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Fanny Pack",
+    "alias": "Fanny Pack",
+    "dlc": "31",
+    "id": "204",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Farting Baby",
+    "alias": "Farting Baby",
+    "dlc": "30",
+    "id": "404",
+    "is activated": "0",
+    "unlocked by": "Fart Baby"
+  },
+  {
+    "_pageName": "Fast Bombs",
+    "alias": "Fast Bombs",
+    "dlc": "28",
+    "id": "517",
+    "is activated": "0",
+    "unlocked by": "Fast Bombs"
+  },
+  {
+    "_pageName": "Fate",
+    "alias": "Fate",
+    "dlc": "31",
+    "id": "179",
+    "is activated": "0",
+    "unlocked by": "Fate"
+  },
+  {
+    "_pageName": "Fate's Reward",
+    "alias": "Fate's Reward",
+    "dlc": "30",
+    "id": "361",
+    "is activated": "0",
+    "unlocked by": "Fate's Reward"
+  },
+  {
+    "_pageName": "Finger!",
+    "alias": "Finger!",
+    "dlc": "28",
+    "id": "467",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Fire Mind",
+    "alias": "Fire Mind",
+    "dlc": "31",
+    "id": "257",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Flat Stone",
+    "alias": "Flat Stone",
+    "dlc": "28",
+    "id": "540",
+    "is activated": "0",
+    "unlocked by": "Flat Stone"
+  },
+  {
+    "_pageName": "Flip",
+    "alias": "Flip",
+    "dlc": "24",
+    "id": "711",
+    "is activated": "1",
+    "unlocked by": "Flip"
+  },
+  {
+    "_pageName": "Flush!",
+    "alias": "Flush!",
+    "dlc": "31",
+    "id": "291",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Forever alone",
+    "alias": "Forever alone",
+    "dlc": "31",
+    "id": "128",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Forget Me Now",
+    "alias": "Forget Me Now",
+    "dlc": "31",
+    "id": "127",
+    "is activated": "1",
+    "unlocked by": "Forget Me Now"
+  },
+  {
+    "_pageName": "Fortune Cookie",
+    "alias": "Fortune Cookie",
+    "dlc": "24",
+    "id": "557",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Free Lemonade",
+    "alias": "Free Lemonade",
+    "dlc": "24",
+    "id": "578",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Freezer Baby",
+    "alias": "Freezer Baby",
+    "dlc": "24",
+    "id": "608",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Friend Finder",
+    "alias": "Friend Finder",
+    "dlc": "24",
+    "id": "687",
+    "is activated": "1",
+    "unlocked by": "Friend Finder"
+  },
+  {
+    "_pageName": "Friend Zone",
+    "alias": "Friend Zone",
+    "dlc": "30",
+    "id": "364",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Friendly Ball",
+    "alias": "Friendly Ball",
+    "dlc": "30",
+    "id": "382",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Fruit Cake",
+    "alias": "Fruit Cake",
+    "dlc": "30",
+    "id": "418",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Fruity Plum",
+    "alias": "Fruity Plum",
+    "dlc": "24",
+    "id": "649",
+    "is activated": "0",
+    "unlocked by": "Fruity Plum"
+  },
+  {
+    "_pageName": "GB Bug",
+    "alias": "GB Bug",
+    "dlc": "30",
+    "id": "405",
+    "is activated": "0",
+    "unlocked by": "GB Bug"
+  },
+  {
+    "_pageName": "Gello",
+    "alias": "Gello",
+    "dlc": "24",
+    "id": "728",
+    "is activated": "1",
+    "unlocked by": "Gello"
+  },
+  {
+    "_pageName": "Gemini (Item)",
+    "alias": "Gemini",
+    "dlc": "31",
+    "id": "318",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Genesis",
+    "alias": "Genesis",
+    "dlc": "24",
+    "id": "622",
+    "is activated": "1",
+    "unlocked by": "Genesis"
+  },
+  {
+    "_pageName": "Ghost Baby",
+    "alias": "Ghost Baby",
+    "dlc": "31",
+    "id": "163",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Ghost Bombs",
+    "alias": "Ghost Bombs",
+    "dlc": "24",
+    "id": "727",
+    "is activated": "0",
+    "unlocked by": "Ghost Bombs"
+  },
+  {
+    "_pageName": "Ghost Pepper",
+    "alias": "Ghost Pepper",
+    "dlc": "28",
+    "id": "495",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Giant Cell",
+    "alias": "Giant Cell",
+    "dlc": "24",
+    "id": "658",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Gimpy",
+    "alias": "Gimpy",
+    "dlc": "31",
+    "id": "225",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Glass Cannon",
+    "alias": "Glass Cannon",
+    "dlc": "30",
+    "id": "352",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Glass Eye",
+    "alias": "Glass Eye",
+    "dlc": "24",
+    "id": "730",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Glaucoma",
+    "alias": "Glaucoma",
+    "dlc": "28",
+    "id": "460",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Glitched Crown",
+    "alias": "Glitched Crown",
+    "dlc": "24",
+    "id": "689",
+    "is activated": "0",
+    "unlocked by": "Glitched Crown"
+  },
+  {
+    "_pageName": "Glitter Bombs",
+    "alias": "Glitter Bombs",
+    "dlc": "30",
+    "id": "432",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Glowing Hourglass",
+    "alias": "Glowing Hourglass",
+    "dlc": "30",
+    "id": "422",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Glyph of Balance",
+    "alias": "Glyph of Balance",
+    "dlc": "28",
+    "id": "464",
+    "is activated": "0",
+    "unlocked by": "Glyph of Balance"
+  },
+  {
+    "_pageName": "Gnawed Leaf",
+    "alias": "Gnawed Leaf",
+    "dlc": "31",
+    "id": "210",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Goat Head",
+    "alias": "Goat Head",
+    "dlc": "31",
+    "id": "215",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "God's Flesh",
+    "alias": "God's Flesh",
+    "dlc": "30",
+    "id": "398",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Godhead",
+    "alias": "Godhead",
+    "dlc": "31",
+    "id": "331",
+    "is activated": "0",
+    "unlocked by": "Godhead"
+  },
+  {
+    "_pageName": "Golden Razor",
+    "alias": "Golden Razor",
+    "dlc": "24",
+    "id": "555",
+    "is activated": "1",
+    "unlocked by": "Golden Razor"
+  },
+  {
+    "_pageName": "Greed's Gullet",
+    "alias": "Greed's Gullet",
+    "dlc": "28",
+    "id": "501",
+    "is activated": "0",
+    "unlocked by": "Greed's Gullet"
+  },
+  {
+    "_pageName": "Growth Hormones",
+    "alias": "Growth Hormones",
+    "dlc": "31",
+    "id": "70",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Guardian Angel",
+    "alias": "Guardian Angel",
+    "dlc": "31",
+    "id": "112",
+    "is activated": "0",
+    "unlocked by": "Guardian Angel"
+  },
+  {
+    "_pageName": "Guillotine",
+    "alias": "Guillotine",
+    "dlc": "31",
+    "id": "206",
+    "is activated": "0",
+    "unlocked by": "Guillotine"
+  },
+  {
+    "_pageName": "Guppy's Collar",
+    "alias": "Guppy's Collar",
+    "dlc": "31",
+    "id": "212",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Guppy's Eye",
+    "alias": "Guppy's Eye",
+    "dlc": "24",
+    "id": "665",
+    "is activated": "0",
+    "unlocked by": "Guppy's Eye"
+  },
+  {
+    "_pageName": "Guppy's Hairball",
+    "alias": "Guppy's Hairball",
+    "dlc": "31",
+    "id": "187",
+    "is activated": "0",
+    "unlocked by": "Guppy's Hairball"
+  },
+  {
+    "_pageName": "Guppy's Head",
+    "alias": "Guppy's Head",
+    "dlc": "31",
+    "id": "145",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Guppy's Paw",
+    "alias": "Guppy's Paw",
+    "dlc": "31",
+    "id": "133",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Guppy's Tail",
+    "alias": "Guppy's Tail",
+    "dlc": "31",
+    "id": "134",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Habit",
+    "alias": "Habit",
+    "dlc": "31",
+    "id": "156",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Haemolacria",
+    "alias": "Haemolacria",
+    "dlc": "28",
+    "id": "531",
+    "is activated": "0",
+    "unlocked by": "Haemolacria"
+  },
+  {
+    "_pageName": "Hallowed Ground",
+    "alias": "Hallowed Ground",
+    "dlc": "28",
+    "id": "543",
+    "is activated": "0",
+    "unlocked by": "Hallowed Ground"
+  },
+  {
+    "_pageName": "Halo of Flies",
+    "alias": "Halo of Flies",
+    "dlc": "31",
+    "id": "10",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Harlequin Baby",
+    "alias": "Harlequin Baby",
+    "dlc": "31",
+    "id": "167",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Head of Krampus",
+    "alias": "Head of Krampus",
+    "dlc": "31",
+    "id": "293",
+    "is activated": "1",
+    "unlocked by": "Head of Krampus"
+  },
+  {
+    "_pageName": "Head of the Keeper",
+    "alias": "Head of the Keeper",
+    "dlc": "30",
+    "id": "429",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Headless Baby",
+    "alias": "Headless Baby",
+    "dlc": "31",
+    "id": "269",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Heartbreak",
+    "alias": "Heartbreak",
+    "dlc": "24",
+    "id": "694",
+    "is activated": "0",
+    "unlocked by": "Heartbreak"
+  },
+  {
+    "_pageName": "Hemoptysis",
+    "alias": "Hemoptysis",
+    "dlc": "24",
+    "id": "726",
+    "is activated": "0",
+    "unlocked by": "Hemoptysis"
+  },
+  {
+    "_pageName": "Hive Mind",
+    "alias": "Hive Mind",
+    "dlc": "31",
+    "id": "248",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Hold",
+    "alias": "Hold",
+    "dlc": "24",
+    "id": "715",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Holy Grail",
+    "alias": "Holy Grail",
+    "dlc": "31",
+    "id": "184",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Holy Light",
+    "alias": "Holy Light",
+    "dlc": "30",
+    "id": "374",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Holy Mantle",
+    "alias": "Holy Mantle",
+    "dlc": "31",
+    "id": "313",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Holy Water",
+    "alias": "Holy Water",
+    "dlc": "31",
+    "id": "178",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Host Hat",
+    "alias": "Host Hat",
+    "dlc": "30",
+    "id": "375",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Hot Bombs",
+    "alias": "Hot Bombs",
+    "dlc": "31",
+    "id": "256",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "How to Jump",
+    "alias": "How to Jump",
+    "dlc": "31",
+    "id": "282",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Humbleing Bundle",
+    "alias": "Humbleing Bundle",
+    "dlc": "31",
+    "id": "203",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Hungry Soul",
+    "alias": "Hungry Soul",
+    "dlc": "24",
+    "id": "684",
+    "is activated": "0",
+    "unlocked by": "Hungry Soul"
+  },
+  {
+    "_pageName": "Hushy",
+    "alias": "Hushy",
+    "dlc": "28",
+    "id": "470",
+    "is activated": "0",
+    "unlocked by": "Hushy"
+  },
+  {
+    "_pageName": "Hypercoagulation",
+    "alias": "Hypercoagulation",
+    "dlc": "24",
+    "id": "724",
+    "is activated": "0",
+    "unlocked by": "Hypercoagulation"
+  },
+  {
+    "_pageName": "IBS",
+    "alias": "IBS",
+    "dlc": "24",
+    "id": "725",
+    "is activated": "0",
+    "unlocked by": "IBS"
+  },
+  {
+    "_pageName": "IV Bag",
+    "alias": "IV Bag",
+    "dlc": "31",
+    "id": "135",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Immaculate Conception",
+    "alias": "Immaculate Conception",
+    "dlc": "30",
+    "id": "413",
+    "is activated": "0",
+    "unlocked by": "Immaculate Conception"
+  },
+  {
+    "_pageName": "Immaculate Heart",
+    "alias": "Immaculate Heart",
+    "dlc": "24",
+    "id": "573",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Incubus",
+    "alias": "Incubus",
+    "dlc": "30",
+    "id": "360",
+    "is activated": "0",
+    "unlocked by": "Incubus"
+  },
+  {
+    "_pageName": "Infamy",
+    "alias": "Infamy",
+    "dlc": "31",
+    "id": "242",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Infestation",
+    "alias": "Infestation",
+    "dlc": "31",
+    "id": "148",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Infestation 2",
+    "alias": "Infestation 2",
+    "dlc": "31",
+    "id": "234",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Inner Child",
+    "alias": "Inner Child",
+    "dlc": "24",
+    "id": "688",
+    "is activated": "0",
+    "unlocked by": "Inner Child"
+  },
+  {
+    "_pageName": "Ipecac",
+    "alias": "Ipecac",
+    "dlc": "31",
+    "id": "149",
+    "is activated": "0",
+    "unlocked by": "Ipecac"
+  },
+  {
+    "_pageName": "Iron Bar",
+    "alias": "Iron Bar",
+    "dlc": "31",
+    "id": "201",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Isaac's Heart",
+    "alias": "Isaac's Heart",
+    "dlc": "31",
+    "id": "276",
+    "is activated": "0",
+    "unlocked by": "Isaac's Heart"
+  },
+  {
+    "_pageName": "Isaac's Tears",
+    "alias": "Isaac's Tears",
+    "dlc": "31",
+    "id": "323",
+    "is activated": "1",
+    "unlocked by": "Isaac's Tears"
+  },
+  {
+    "_pageName": "Isaac's Tomb",
+    "alias": "Isaac's Tomb",
+    "dlc": "24",
+    "id": "701",
+    "is activated": "0",
+    "unlocked by": "Isaac's Tomb"
+  },
+  {
+    "_pageName": "It Hurts",
+    "alias": "It Hurts",
+    "dlc": "24",
+    "id": "560",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Jacob's Ladder",
+    "alias": "Jacob's Ladder",
+    "dlc": "28",
+    "id": "494",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Jar of Flies",
+    "alias": "Jar of Flies",
+    "dlc": "30",
+    "id": "434",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Jar of Wisps",
+    "alias": "Jar of Wisps",
+    "dlc": "24",
+    "id": "685",
+    "is activated": "1",
+    "unlocked by": "Jar of Wisps"
+  },
+  {
+    "_pageName": "Jaw Bone",
+    "alias": "Jaw Bone",
+    "dlc": "28",
+    "id": "548",
+    "is activated": "0",
+    "unlocked by": "Jaw Bone"
+  },
+  {
+    "_pageName": "Jesus Juice",
+    "alias": "Jesus Juice",
+    "dlc": "31",
+    "id": "197",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Judas' Shadow",
+    "alias": "Judas' Shadow",
+    "dlc": "31",
+    "id": "311",
+    "is activated": "0",
+    "unlocked by": "Judas' Shadow"
+  },
+  {
+    "_pageName": "Juicy Sack",
+    "alias": "Juicy Sack",
+    "dlc": "31",
+    "id": "266",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Jumper Cables",
+    "alias": "Jumper Cables",
+    "dlc": "28",
+    "id": "520",
+    "is activated": "0",
+    "unlocked by": "Jumper Cables"
+  },
+  {
+    "_pageName": "Jupiter",
+    "alias": "Jupiter",
+    "dlc": "24",
+    "id": "594",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Kamikaze!",
+    "alias": "Kamikaze!",
+    "dlc": "31",
+    "id": "40",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Keeper's Box",
+    "alias": "Keeper's Box",
+    "dlc": "24",
+    "id": "719",
+    "is activated": "1",
+    "unlocked by": "Keeper's Box"
+  },
+  {
+    "_pageName": "Keeper's Kin",
+    "alias": "Keeper's Kin",
+    "dlc": "24",
+    "id": "717",
+    "is activated": "0",
+    "unlocked by": "Keeper's Kin"
+  },
+  {
+    "_pageName": "Keeper's Sack",
+    "alias": "Keeper's Sack",
+    "dlc": "24",
+    "id": "716",
+    "is activated": "0",
+    "unlocked by": "Keeper's Sack"
+  },
+  {
+    "_pageName": "Key Bum",
+    "alias": "Key Bum",
+    "dlc": "30",
+    "id": "388",
+    "is activated": "0",
+    "unlocked by": "Key Bum"
+  },
+  {
+    "_pageName": "Key Piece 1",
+    "alias": "Key Piece 1",
+    "dlc": "31",
+    "id": "238",
+    "is activated": "0",
+    "unlocked by": "Angels"
+  },
+  {
+    "_pageName": "Key Piece 2",
+    "alias": "Key Piece 2",
+    "dlc": "31",
+    "id": "239",
+    "is activated": "0",
+    "unlocked by": "Angels"
+  },
+  {
+    "_pageName": "Kidney Bean",
+    "alias": "Kidney Bean",
+    "dlc": "30",
+    "id": "421",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Kidney Stone",
+    "alias": "Kidney Stone",
+    "dlc": "30",
+    "id": "440",
+    "is activated": "0",
+    "unlocked by": "Kidney Stone"
+  },
+  {
+    "_pageName": "King Baby",
+    "alias": "King Baby",
+    "dlc": "28",
+    "id": "472",
+    "is activated": "0",
+    "unlocked by": "King Baby"
+  },
+  {
+    "_pageName": "Knife Piece 1",
+    "alias": "Knife Piece 1",
+    "dlc": "24",
+    "id": "626",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Knife Piece 2",
+    "alias": "Knife Piece 2",
+    "dlc": "24",
+    "id": "627",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Knockout Drops",
+    "alias": "Knockout Drops",
+    "dlc": "24",
+    "id": "637",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lachryphagy",
+    "alias": "Lachryphagy",
+    "dlc": "28",
+    "id": "532",
+    "is activated": "0",
+    "unlocked by": "Lachryphagy"
+  },
+  {
+    "_pageName": "Large Zit",
+    "alias": "Large Zit",
+    "dlc": "28",
+    "id": "502",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Larynx",
+    "alias": "Larynx",
+    "dlc": "24",
+    "id": "611",
+    "is activated": "1",
+    "unlocked by": "Larynx"
+  },
+  {
+    "_pageName": "Latch Key",
+    "alias": "Latch Key",
+    "dlc": "31",
+    "id": "343",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lazarus' Rags",
+    "alias": "Lazarus' Rags",
+    "dlc": "31",
+    "id": "332",
+    "is activated": "0",
+    "unlocked by": "Lazarus' Rags"
+  },
+  {
+    "_pageName": "Lead Pencil",
+    "alias": "Lead Pencil",
+    "dlc": "28",
+    "id": "444",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Leech",
+    "alias": "Leech",
+    "dlc": "31",
+    "id": "270",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lemegeton",
+    "alias": "Lemegeton",
+    "dlc": "24",
+    "id": "712",
+    "is activated": "1",
+    "unlocked by": "Lemegeton"
+  },
+  {
+    "_pageName": "Lemon Mishap",
+    "alias": "Lemon Mishap",
+    "dlc": "31",
+    "id": "56",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Leo",
+    "alias": "Leo",
+    "dlc": "31",
+    "id": "302",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Leprosy",
+    "alias": "Leprosy",
+    "dlc": "28",
+    "id": "525",
+    "is activated": "0",
+    "unlocked by": "Leprosy"
+  },
+  {
+    "_pageName": "Less Than Three",
+    "alias": "<3",
+    "dlc": "31",
+    "id": "15",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Libra",
+    "alias": "Libra",
+    "dlc": "31",
+    "id": "304",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lil Abaddon",
+    "alias": "Lil Abaddon",
+    "dlc": "24",
+    "id": "679",
+    "is activated": "0",
+    "unlocked by": "Lil Abaddon"
+  },
+  {
+    "_pageName": "Lil Brimstone",
+    "alias": "Lil Brimstone",
+    "dlc": "31",
+    "id": "275",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lil Chest",
+    "alias": "Lil Chest",
+    "dlc": "30",
+    "id": "362",
+    "is activated": "0",
+    "unlocked by": "Lil' Chest"
+  },
+  {
+    "_pageName": "Lil Delirium",
+    "alias": "Lil Delirium",
+    "dlc": "28",
+    "id": "519",
+    "is activated": "0",
+    "unlocked by": "Lil Delirium"
+  },
+  {
+    "_pageName": "Lil Dumpy",
+    "alias": "Lil Dumpy",
+    "dlc": "24",
+    "id": "615",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lil Gurdy",
+    "alias": "Lil Gurdy",
+    "dlc": "30",
+    "id": "384",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lil Haunt",
+    "alias": "Lil Haunt",
+    "dlc": "31",
+    "id": "277",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lil Loki",
+    "alias": "Lil Loki",
+    "dlc": "30",
+    "id": "435",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lil Monstro",
+    "alias": "Lil Monstro",
+    "dlc": "28",
+    "id": "471",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lil Portal",
+    "alias": "Lil Portal",
+    "dlc": "24",
+    "id": "681",
+    "is activated": "0",
+    "unlocked by": "Lil Portal"
+  },
+  {
+    "_pageName": "Lil Spewer",
+    "alias": "Lil Spewer",
+    "dlc": "28",
+    "id": "537",
+    "is activated": "0",
+    "unlocked by": "Lil Spewer"
+  },
+  {
+    "_pageName": "Linger Bean",
+    "alias": "Linger Bean",
+    "dlc": "28",
+    "id": "447",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Little Baggy",
+    "alias": "Little Baggy",
+    "dlc": "31",
+    "id": "252",
+    "is activated": "0",
+    "unlocked by": "Little Baggy"
+  },
+  {
+    "_pageName": "Little C.H.A.D.",
+    "alias": "Little C.H.A.D.",
+    "dlc": "31",
+    "id": "96",
+    "is activated": "0",
+    "unlocked by": "Little C.H.A.D."
+  },
+  {
+    "_pageName": "Little Chubby",
+    "alias": "Little Chubby",
+    "dlc": "31",
+    "id": "88",
+    "is activated": "0",
+    "unlocked by": "Lil' Chubby"
+  },
+  {
+    "_pageName": "Little Gish",
+    "alias": "Little Gish",
+    "dlc": "31",
+    "id": "99",
+    "is activated": "0",
+    "unlocked by": "Little Gish"
+  },
+  {
+    "_pageName": "Little Horn (Item)",
+    "alias": "Little Horn",
+    "dlc": "28",
+    "id": "503",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Little Steven",
+    "alias": "Little Steven",
+    "dlc": "31",
+    "id": "100",
+    "is activated": "0",
+    "unlocked by": "Little Steven"
+  },
+  {
+    "_pageName": "Lodestone",
+    "alias": "Lodestone",
+    "dlc": "24",
+    "id": "617",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Loki's Horns",
+    "alias": "Loki's Horns",
+    "dlc": "31",
+    "id": "87",
+    "is activated": "0",
+    "unlocked by": "Loki's Horns"
+  },
+  {
+    "_pageName": "Lord of the Pit",
+    "alias": "Lord of the Pit",
+    "dlc": "31",
+    "id": "82",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lost Contact",
+    "alias": "Lost Contact",
+    "dlc": "31",
+    "id": "213",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lost Fly",
+    "alias": "Lost Fly",
+    "dlc": "30",
+    "id": "365",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lost Soul",
+    "alias": "Lost Soul",
+    "dlc": "24",
+    "id": "612",
+    "is activated": "0",
+    "unlocked by": "Lost Soul"
+  },
+  {
+    "_pageName": "Lucky Foot",
+    "alias": "Lucky Foot",
+    "dlc": "31",
+    "id": "46",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Luna",
+    "alias": "Luna",
+    "dlc": "24",
+    "id": "589",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lunch",
+    "alias": "Lunch",
+    "dlc": "31",
+    "id": "22",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Lusty Blood",
+    "alias": "Lusty Blood",
+    "dlc": "30",
+    "id": "411",
+    "is activated": "0",
+    "unlocked by": "Lusty Blood"
+  },
+  {
+    "_pageName": "MEAT!",
+    "alias": "MEAT!",
+    "dlc": "31",
+    "id": "193",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Maggy's Bow",
+    "alias": "Maggy's Bow",
+    "dlc": "31",
+    "id": "312",
+    "is activated": "0",
+    "unlocked by": "Maggy's Bow"
+  },
+  {
+    "_pageName": "Magic 8 Ball",
+    "alias": "Magic 8 Ball",
+    "dlc": "31",
+    "id": "194",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Magic Fingers",
+    "alias": "Magic Fingers",
+    "dlc": "31",
+    "id": "295",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Magic Mushroom",
+    "alias": "Magic Mushroom",
+    "dlc": "31",
+    "id": "12",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Magic Scab",
+    "alias": "Magic Scab",
+    "dlc": "31",
+    "id": "253",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Magic Skin",
+    "alias": "Magic Skin",
+    "dlc": "24",
+    "id": "642",
+    "is activated": "1",
+    "unlocked by": "Magic Skin"
+  },
+  {
+    "_pageName": "Magneto",
+    "alias": "Magneto",
+    "dlc": "31",
+    "id": "53",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mama Mega!",
+    "alias": "Mama Mega!",
+    "dlc": "28",
+    "id": "483",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Marbles",
+    "alias": "Marbles",
+    "dlc": "28",
+    "id": "538",
+    "is activated": "0",
+    "unlocked by": "Marbles"
+  },
+  {
+    "_pageName": "Marked",
+    "alias": "Marked",
+    "dlc": "30",
+    "id": "394",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Marrow",
+    "alias": "Marrow",
+    "dlc": "28",
+    "id": "541",
+    "is activated": "0",
+    "unlocked by": "Marrow"
+  },
+  {
+    "_pageName": "Mars",
+    "alias": "Mars",
+    "dlc": "24",
+    "id": "593",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Match Book",
+    "alias": "Match Book",
+    "dlc": "31",
+    "id": "344",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Maw Of The Void",
+    "alias": "Maw Of The Void",
+    "dlc": "30",
+    "id": "399",
+    "is activated": "0",
+    "unlocked by": "Maw of the Void"
+  },
+  {
+    "_pageName": "Meat Cleaver",
+    "alias": "Meat Cleaver",
+    "dlc": "24",
+    "id": "631",
+    "is activated": "1",
+    "unlocked by": "Meat Cleaver"
+  },
+  {
+    "_pageName": "Mega Bean",
+    "alias": "Mega Bean",
+    "dlc": "30",
+    "id": "351",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mega Blast",
+    "alias": "Mega Blast",
+    "dlc": "30",
+    "id": "441",
+    "is activated": "1",
+    "unlocked by": "Mega"
+  },
+  {
+    "_pageName": "Mega Mush",
+    "alias": "Mega Mush",
+    "dlc": "24",
+    "id": "625",
+    "is activated": "1",
+    "unlocked by": "Mega Mush"
+  },
+  {
+    "_pageName": "Member Card",
+    "alias": "Member Card",
+    "dlc": "24",
+    "id": "602",
+    "is activated": "0",
+    "unlocked by": "Member Card"
+  },
+  {
+    "_pageName": "Mercurius",
+    "alias": "Mercurius",
+    "dlc": "24",
+    "id": "590",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Metal Plate",
+    "alias": "Metal Plate",
+    "dlc": "28",
+    "id": "449",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Metronome",
+    "alias": "Metronome",
+    "dlc": "28",
+    "id": "488",
+    "is activated": "1",
+    "unlocked by": "Metronome"
+  },
+  {
+    "_pageName": "Midas' Touch",
+    "alias": "Midas' Touch",
+    "dlc": "31",
+    "id": "202",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Midnight Snack",
+    "alias": "Midnight Snack",
+    "dlc": "28",
+    "id": "456",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Milk!",
+    "alias": "Milk!",
+    "dlc": "30",
+    "id": "436",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mine Crafter",
+    "alias": "Mine Crafter",
+    "dlc": "30",
+    "id": "427",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mini Mush",
+    "alias": "Mini Mush",
+    "dlc": "31",
+    "id": "71",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Missing No.",
+    "alias": "Missing No.",
+    "dlc": "31",
+    "id": "258",
+    "is activated": "0",
+    "unlocked by": "Missing No."
+  },
+  {
+    "_pageName": "Missing Page 2",
+    "alias": "Missing Page 2",
+    "dlc": "31",
+    "id": "262",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mitre",
+    "alias": "Mitre",
+    "dlc": "31",
+    "id": "173",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Bottle of Pills",
+    "alias": "Mom's Bottle of Pills",
+    "dlc": "31",
+    "id": "102",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Box",
+    "alias": "Mom's Box",
+    "dlc": "30",
+    "id": "439",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Bra",
+    "alias": "Mom's Bra",
+    "dlc": "31",
+    "id": "39",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Bracelet",
+    "alias": "Mom's Bracelet",
+    "dlc": "24",
+    "id": "604",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Coin Purse",
+    "alias": "Mom's Coin Purse",
+    "dlc": "31",
+    "id": "195",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Contacts",
+    "alias": "Mom's Contacts",
+    "dlc": "31",
+    "id": "110",
+    "is activated": "0",
+    "unlocked by": "Mom's Contact"
+  },
+  {
+    "_pageName": "Mom's Eye",
+    "alias": "Mom's Eye",
+    "dlc": "31",
+    "id": "55",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Eyeshadow",
+    "alias": "Mom's Eyeshadow",
+    "dlc": "31",
+    "id": "200",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Heels",
+    "alias": "Mom's Heels",
+    "dlc": "31",
+    "id": "30",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Key",
+    "alias": "Mom's Key",
+    "dlc": "31",
+    "id": "199",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Knife",
+    "alias": "Mom's Knife",
+    "dlc": "31",
+    "id": "114",
+    "is activated": "0",
+    "unlocked by": "Mom's Knife"
+  },
+  {
+    "_pageName": "Mom's Lipstick",
+    "alias": "Mom's Lipstick",
+    "dlc": "31",
+    "id": "31",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Pad",
+    "alias": "Mom's Pad",
+    "dlc": "31",
+    "id": "41",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Pearls",
+    "alias": "Mom's Pearls",
+    "dlc": "30",
+    "id": "355",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Perfume",
+    "alias": "Mom's Perfume",
+    "dlc": "31",
+    "id": "228",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Purse",
+    "alias": "Mom's Purse",
+    "dlc": "31",
+    "id": "139",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Razor",
+    "alias": "Mom's Razor",
+    "dlc": "28",
+    "id": "508",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Ring",
+    "alias": "Mom's Ring",
+    "dlc": "24",
+    "id": "732",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Shovel",
+    "alias": "Mom's Shovel",
+    "dlc": "28",
+    "id": "552",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Underwear",
+    "alias": "Mom's Underwear",
+    "dlc": "31",
+    "id": "29",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mom's Wig",
+    "alias": "Mom's Wig",
+    "dlc": "31",
+    "id": "217",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Money = Power",
+    "alias": "Money Power",
+    "dlc": "31",
+    "id": "109",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mongo Baby",
+    "alias": "Mongo Baby",
+    "dlc": "31",
+    "id": "322",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Monster Manual",
+    "alias": "Monster Manual",
+    "dlc": "31",
+    "id": "123",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Monstrance",
+    "alias": "Monstrance",
+    "dlc": "24",
+    "id": "574",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Monstro's Lung",
+    "alias": "Monstro's Lung",
+    "dlc": "31",
+    "id": "229",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Monstro's Tooth",
+    "alias": "Monstro's Tooth",
+    "dlc": "31",
+    "id": "86",
+    "is activated": "1",
+    "unlocked by": "Monstro's Tooth"
+  },
+  {
+    "_pageName": "Montezuma's Revenge",
+    "alias": "Montezuma's Revenge",
+    "dlc": "24",
+    "id": "680",
+    "is activated": "0",
+    "unlocked by": "Montezuma's Revenge"
+  },
+  {
+    "_pageName": "More Options",
+    "alias": "More Options",
+    "dlc": "30",
+    "id": "414",
+    "is activated": "0",
+    "unlocked by": "There's Options"
+  },
+  {
+    "_pageName": "Moving Box",
+    "alias": "Moving Box",
+    "dlc": "28",
+    "id": "523",
+    "is activated": "1",
+    "unlocked by": "Moving Box"
+  },
+  {
+    "_pageName": "Mr. Boom",
+    "alias": "Mr. Boom",
+    "dlc": "31",
+    "id": "37",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mr. Dolly",
+    "alias": "Mr. Dolly",
+    "dlc": "30",
+    "id": "370",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mr. ME!",
+    "alias": "Mr. ME!",
+    "dlc": "28",
+    "id": "527",
+    "is activated": "1",
+    "unlocked by": "Mr. ME!"
+  },
+  {
+    "_pageName": "Mr. Mega",
+    "alias": "Mr. Mega",
+    "dlc": "31",
+    "id": "106",
+    "is activated": "0",
+    "unlocked by": "Mr. Mega"
+  },
+  {
+    "_pageName": "Mucormycosis",
+    "alias": "Mucormycosis",
+    "dlc": "24",
+    "id": "553",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Multidimensional Baby",
+    "alias": "Multidimensional Baby",
+    "dlc": "30",
+    "id": "431",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mutant Spider",
+    "alias": "Mutant Spider",
+    "dlc": "31",
+    "id": "153",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "My Little Unicorn",
+    "alias": "My Little Unicorn",
+    "dlc": "31",
+    "id": "77",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "My Reflection",
+    "alias": "My Reflection",
+    "dlc": "31",
+    "id": "5",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "My Shadow",
+    "alias": "My Shadow",
+    "dlc": "30",
+    "id": "433",
+    "is activated": "0",
+    "unlocked by": "My Shadow"
+  },
+  {
+    "_pageName": "Mysterious Liquid",
+    "alias": "Mysterious Liquid",
+    "dlc": "31",
+    "id": "317",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Mystery Egg",
+    "alias": "Mystery Egg",
+    "dlc": "28",
+    "id": "539",
+    "is activated": "0",
+    "unlocked by": "Mystery Egg"
+  },
+  {
+    "_pageName": "Mystery Gift",
+    "alias": "Mystery Gift",
+    "dlc": "28",
+    "id": "515",
+    "is activated": "1",
+    "unlocked by": "Mystery Gift"
+  },
+  {
+    "_pageName": "Mystery Sack",
+    "alias": "Mystery Sack",
+    "dlc": "31",
+    "id": "271",
+    "is activated": "0",
+    "unlocked by": "Mystery Sack"
+  },
+  {
+    "_pageName": "Nancy Bombs",
+    "alias": "Nancy Bombs",
+    "dlc": "24",
+    "id": "563",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Neptunus",
+    "alias": "Neptunus",
+    "dlc": "24",
+    "id": "597",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Night Light",
+    "alias": "Night Light",
+    "dlc": "30",
+    "id": "425",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Notched Axe",
+    "alias": "Notched Axe",
+    "dlc": "31",
+    "id": "147",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Number One",
+    "alias": "Number One",
+    "dlc": "31",
+    "id": "6",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Number Two",
+    "alias": "Number Two",
+    "dlc": "30",
+    "id": "378",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Obsessed Fan",
+    "alias": "Obsessed Fan",
+    "dlc": "30",
+    "id": "426",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Ocular Rift",
+    "alias": "Ocular Rift",
+    "dlc": "24",
+    "id": "606",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Odd Mushroom (Large)",
+    "alias": "Odd Mushroom (Large)",
+    "dlc": "31",
+    "id": "121",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Odd Mushroom (Thin)",
+    "alias": "Odd Mushroom (Thin)",
+    "dlc": "31",
+    "id": "120",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Old Bandage",
+    "alias": "Old Bandage",
+    "dlc": "31",
+    "id": "219",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Options?",
+    "alias": "Options?",
+    "dlc": "24",
+    "id": "670",
+    "is activated": "0",
+    "unlocked by": "Options?"
+  },
+  {
+    "_pageName": "Orphan Socks",
+    "alias": "Orphan Socks",
+    "dlc": "24",
+    "id": "571",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Ouija Board",
+    "alias": "Ouija Board",
+    "dlc": "31",
+    "id": "115",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "PHD",
+    "alias": "PHD",
+    "dlc": "31",
+    "id": "75",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "PJs",
+    "alias": "PJs",
+    "dlc": "30",
+    "id": "428",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Pageant Boy",
+    "alias": "Pageant Boy",
+    "dlc": "31",
+    "id": "141",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Pandora's Box",
+    "alias": "Pandora's Box",
+    "dlc": "31",
+    "id": "297",
+    "is activated": "1",
+    "unlocked by": "Pandora's Box"
+  },
+  {
+    "_pageName": "Papa Fly",
+    "alias": "Papa Fly",
+    "dlc": "30",
+    "id": "430",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Parasitoid",
+    "alias": "Parasitoid",
+    "dlc": "28",
+    "id": "461",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Paschal Candle",
+    "alias": "Paschal Candle",
+    "dlc": "24",
+    "id": "567",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Pause",
+    "alias": "Pause",
+    "dlc": "28",
+    "id": "478",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Pay To Play",
+    "alias": "Pay To Play",
+    "dlc": "30",
+    "id": "380",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Pentagram",
+    "alias": "Pentagram",
+    "dlc": "31",
+    "id": "51",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Piggy Bank",
+    "alias": "Piggy Bank",
+    "dlc": "31",
+    "id": "227",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Pisces",
+    "alias": "Pisces",
+    "dlc": "31",
+    "id": "309",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Placebo",
+    "alias": "Placebo",
+    "dlc": "30",
+    "id": "348",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Placenta",
+    "alias": "Placenta",
+    "dlc": "31",
+    "id": "218",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Plan C",
+    "alias": "Plan C",
+    "dlc": "28",
+    "id": "475",
+    "is activated": "1",
+    "unlocked by": "Plan C"
+  },
+  {
+    "_pageName": "Playdough Cookie",
+    "alias": "Playdough Cookie",
+    "dlc": "24",
+    "id": "570",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Plum Flute",
+    "alias": "Plum Flute",
+    "dlc": "24",
+    "id": "650",
+    "is activated": "1",
+    "unlocked by": "Plum Flute"
+  },
+  {
+    "_pageName": "Pluto",
+    "alias": "Pluto",
+    "dlc": "24",
+    "id": "598",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Pointy Rib",
+    "alias": "Pointy Rib",
+    "dlc": "28",
+    "id": "544",
+    "is activated": "0",
+    "unlocked by": "Pointy Rib"
+  },
+  {
+    "_pageName": "Poke Go",
+    "alias": "Poke Go",
+    "dlc": "28",
+    "id": "505",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Polydactyly",
+    "alias": "Polydactyly",
+    "dlc": "28",
+    "id": "454",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Polyphemus",
+    "alias": "Polyphemus",
+    "dlc": "31",
+    "id": "169",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Pop!",
+    "alias": "Pop!",
+    "dlc": "28",
+    "id": "529",
+    "is activated": "0",
+    "unlocked by": "Pop!"
+  },
+  {
+    "_pageName": "Portable Slot",
+    "alias": "Portable Slot",
+    "dlc": "31",
+    "id": "177",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Potato Peeler",
+    "alias": "Potato Peeler",
+    "dlc": "28",
+    "id": "487",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Prayer Card",
+    "alias": "Prayer Card",
+    "dlc": "31",
+    "id": "146",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Proptosis",
+    "alias": "Proptosis",
+    "dlc": "31",
+    "id": "261",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Psy Fly",
+    "alias": "Psy Fly",
+    "dlc": "24",
+    "id": "581",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Punching Bag",
+    "alias": "Punching Bag",
+    "dlc": "31",
+    "id": "281",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Pupula Duplex",
+    "alias": "Pupula Duplex",
+    "dlc": "30",
+    "id": "379",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Purgatory",
+    "alias": "Purgatory",
+    "dlc": "24",
+    "id": "634",
+    "is activated": "0",
+    "unlocked by": "Purgatory"
+  },
+  {
+    "_pageName": "Purity",
+    "alias": "Purity",
+    "dlc": "30",
+    "id": "407",
+    "is activated": "0",
+    "unlocked by": "Purity"
+  },
+  {
+    "_pageName": "Pyro",
+    "alias": "Pyro",
+    "dlc": "31",
+    "id": "190",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Pyromaniac",
+    "alias": "Pyromaniac",
+    "dlc": "31",
+    "id": "223",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Quints",
+    "alias": "Quints",
+    "dlc": "24",
+    "id": "661",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "R Key",
+    "alias": "R Key",
+    "dlc": "24",
+    "id": "636",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Rainbow Baby",
+    "alias": "Rainbow Baby",
+    "dlc": "31",
+    "id": "174",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Raw Liver",
+    "alias": "Raw Liver",
+    "dlc": "31",
+    "id": "16",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Razor Blade",
+    "alias": "Razor Blade",
+    "dlc": "31",
+    "id": "126",
+    "is activated": "1",
+    "unlocked by": "The Razor"
+  },
+  {
+    "_pageName": "Recall",
+    "alias": "Recall",
+    "dlc": "24",
+    "id": "714",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Red Candle",
+    "alias": "Red Candle",
+    "dlc": "31",
+    "id": "289",
+    "is activated": "1",
+    "unlocked by": "Red Candle"
+  },
+  {
+    "_pageName": "Red Key",
+    "alias": "Red Key",
+    "dlc": "24",
+    "id": "580",
+    "is activated": "1",
+    "unlocked by": "Red Key"
+  },
+  {
+    "_pageName": "Red Stew",
+    "alias": "Red Stew",
+    "dlc": "24",
+    "id": "621",
+    "is activated": "0",
+    "unlocked by": "Red Stew"
+  },
+  {
+    "_pageName": "Redemption",
+    "alias": "Redemption",
+    "dlc": "24",
+    "id": "673",
+    "is activated": "0",
+    "unlocked by": "Redemption"
+  },
+  {
+    "_pageName": "Remote Detonator",
+    "alias": "Remote Detonator",
+    "dlc": "31",
+    "id": "137",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Restock",
+    "alias": "Restock",
+    "dlc": "30",
+    "id": "376",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Revelation",
+    "alias": "Revelation",
+    "dlc": "24",
+    "id": "643",
+    "is activated": "0",
+    "unlocked by": "Revelation"
+  },
+  {
+    "_pageName": "Robo-Baby",
+    "alias": "Robo-Baby",
+    "dlc": "31",
+    "id": "95",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Robo-Baby 2.0",
+    "alias": "Robo-Baby 2.0",
+    "dlc": "31",
+    "id": "267",
+    "is activated": "0",
+    "unlocked by": "Robo-Baby 2.0"
+  },
+  {
+    "_pageName": "Rock Bottom",
+    "alias": "Rock Bottom",
+    "dlc": "24",
+    "id": "562",
+    "is activated": "0",
+    "unlocked by": "Rock Bottom"
+  },
+  {
+    "_pageName": "Rocket in a Jar",
+    "alias": "Rocket in a Jar",
+    "dlc": "24",
+    "id": "583",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Roid Rage",
+    "alias": "Roid Rage",
+    "dlc": "31",
+    "id": "14",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Rosary",
+    "alias": "Rosary",
+    "dlc": "31",
+    "id": "72",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Rotten Baby",
+    "alias": "Rotten Baby",
+    "dlc": "31",
+    "id": "268",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Rotten Meat",
+    "alias": "Rotten Meat",
+    "dlc": "31",
+    "id": "26",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Rotten Tomato",
+    "alias": "Rotten Tomato",
+    "dlc": "24",
+    "id": "618",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Rubber Cement",
+    "alias": "Rubber Cement",
+    "dlc": "31",
+    "id": "221",
+    "is activated": "0",
+    "unlocked by": "Rubber Cement"
+  },
+  {
+    "_pageName": "Rune Bag",
+    "alias": "Rune Bag",
+    "dlc": "30",
+    "id": "389",
+    "is activated": "0",
+    "unlocked by": "Rune Bag"
+  },
+  {
+    "_pageName": "SMB Super Fan",
+    "alias": "SMB Super Fan",
+    "dlc": "31",
+    "id": "189",
+    "is activated": "0",
+    "unlocked by": "SMB Super Fan"
+  },
+  {
+    "_pageName": "Sack Head",
+    "alias": "Sack Head",
+    "dlc": "30",
+    "id": "424",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sack of Pennies",
+    "alias": "Sack of Pennies",
+    "dlc": "31",
+    "id": "94",
+    "is activated": "0",
+    "unlocked by": "A Bag of Pennies"
+  },
+  {
+    "_pageName": "Sack of Sacks",
+    "alias": "Sack of Sacks",
+    "dlc": "28",
+    "id": "500",
+    "is activated": "0",
+    "unlocked by": "Sack of Sacks"
+  },
+  {
+    "_pageName": "Sacred Heart",
+    "alias": "Sacred Heart",
+    "dlc": "31",
+    "id": "182",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sacred Orb",
+    "alias": "Sacred Orb",
+    "dlc": "24",
+    "id": "691",
+    "is activated": "0",
+    "unlocked by": "Sacred Orb"
+  },
+  {
+    "_pageName": "Sacrificial Altar",
+    "alias": "Sacrificial Altar",
+    "dlc": "28",
+    "id": "536",
+    "is activated": "1",
+    "unlocked by": "Sacrificial Altar"
+  },
+  {
+    "_pageName": "Sacrificial Dagger",
+    "alias": "Sacrificial Dagger",
+    "dlc": "31",
+    "id": "172",
+    "is activated": "0",
+    "unlocked by": "Sacrificial Dagger"
+  },
+  {
+    "_pageName": "Sad Bombs",
+    "alias": "Sad Bombs",
+    "dlc": "31",
+    "id": "220",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Safety Pin",
+    "alias": "Safety Pin",
+    "dlc": "31",
+    "id": "339",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sagittarius",
+    "alias": "Sagittarius",
+    "dlc": "31",
+    "id": "306",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Salvation",
+    "alias": "Salvation",
+    "dlc": "24",
+    "id": "696",
+    "is activated": "0",
+    "unlocked by": "Salvation"
+  },
+  {
+    "_pageName": "Samson's Chains",
+    "alias": "Samson's Chains",
+    "dlc": "31",
+    "id": "321",
+    "is activated": "0",
+    "unlocked by": "Samson's Chains"
+  },
+  {
+    "_pageName": "Sanguine Bond",
+    "alias": "Sanguine Bond",
+    "dlc": "24",
+    "id": "692",
+    "is activated": "0",
+    "unlocked by": "Sanguine Bond"
+  },
+  {
+    "_pageName": "Satanic Bible",
+    "alias": "Satanic Bible",
+    "dlc": "31",
+    "id": "292",
+    "is activated": "1",
+    "unlocked by": "Satanic Bible"
+  },
+  {
+    "_pageName": "Saturnus",
+    "alias": "Saturnus",
+    "dlc": "24",
+    "id": "595",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sausage",
+    "alias": "Sausage",
+    "dlc": "24",
+    "id": "669",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Scapular",
+    "alias": "Scapular",
+    "dlc": "31",
+    "id": "142",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Scatter Bombs",
+    "alias": "Scatter Bombs",
+    "dlc": "30",
+    "id": "366",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Schoolbag",
+    "alias": "Schoolbag",
+    "dlc": "28",
+    "id": "534",
+    "is activated": "0",
+    "unlocked by": "Schoolbag"
+  },
+  {
+    "_pageName": "Scissors",
+    "alias": "Scissors",
+    "dlc": "31",
+    "id": "325",
+    "is activated": "1",
+    "unlocked by": "The Scissors"
+  },
+  {
+    "_pageName": "Scorpio",
+    "alias": "Scorpio",
+    "dlc": "31",
+    "id": "305",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Screw",
+    "alias": "Screw",
+    "dlc": "31",
+    "id": "255",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Seraphim",
+    "alias": "Seraphim",
+    "dlc": "30",
+    "id": "390",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Serpent's Kiss",
+    "alias": "Serpent's Kiss",
+    "dlc": "30",
+    "id": "393",
+    "is activated": "0",
+    "unlocked by": "Serpent's Kiss"
+  },
+  {
+    "_pageName": "Shade",
+    "alias": "Shade",
+    "dlc": "28",
+    "id": "468",
+    "is activated": "0",
+    "unlocked by": "Shade"
+  },
+  {
+    "_pageName": "Shard of Glass",
+    "alias": "Shard of Glass",
+    "dlc": "28",
+    "id": "448",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sharp Key",
+    "alias": "Sharp Key",
+    "dlc": "24",
+    "id": "623",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sharp Plug",
+    "alias": "Sharp Plug",
+    "dlc": "31",
+    "id": "205",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sharp Straw",
+    "alias": "Sharp Straw",
+    "dlc": "28",
+    "id": "507",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Shoop da Whoop!",
+    "alias": "Shoop da Whoop!",
+    "dlc": "31",
+    "id": "49",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sinus Infection",
+    "alias": "Sinus Infection",
+    "dlc": "28",
+    "id": "459",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sissy Longlegs",
+    "alias": "Sissy Longlegs",
+    "dlc": "31",
+    "id": "280",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sister Maggy",
+    "alias": "Sister Maggy",
+    "dlc": "31",
+    "id": "67",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Skatole",
+    "alias": "Skatole",
+    "dlc": "31",
+    "id": "9",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Skeleton Key",
+    "alias": "Skeleton Key",
+    "dlc": "31",
+    "id": "17",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Slipped Rib",
+    "alias": "Slipped Rib",
+    "dlc": "28",
+    "id": "542",
+    "is activated": "0",
+    "unlocked by": "Slipped Rib"
+  },
+  {
+    "_pageName": "Smart Fly",
+    "alias": "Smart Fly",
+    "dlc": "31",
+    "id": "264",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Smelter",
+    "alias": "Smelter",
+    "dlc": "28",
+    "id": "479",
+    "is activated": "1",
+    "unlocked by": "Smelter"
+  },
+  {
+    "_pageName": "Sol",
+    "alias": "Sol",
+    "dlc": "24",
+    "id": "588",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Soul Locket",
+    "alias": "Soul Locket",
+    "dlc": "24",
+    "id": "686",
+    "is activated": "0",
+    "unlocked by": "Soul Locket"
+  },
+  {
+    "_pageName": "Soy Milk",
+    "alias": "Soy Milk",
+    "dlc": "31",
+    "id": "330",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Spear Of Destiny",
+    "alias": "Spear Of Destiny",
+    "dlc": "30",
+    "id": "400",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Speed Ball",
+    "alias": "Speed Ball",
+    "dlc": "31",
+    "id": "143",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Spelunker Hat",
+    "alias": "Spelunker Hat",
+    "dlc": "31",
+    "id": "91",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Spider Bite",
+    "alias": "Spider Bite",
+    "dlc": "31",
+    "id": "89",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Spider Butt",
+    "alias": "Spider Butt",
+    "dlc": "31",
+    "id": "171",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Spider Mod",
+    "alias": "Spider Mod",
+    "dlc": "30",
+    "id": "403",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Spiderbaby",
+    "alias": "Spiderbaby",
+    "dlc": "31",
+    "id": "211",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Spin to Win",
+    "alias": "Spin to Win",
+    "dlc": "24",
+    "id": "655",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Spindown Dice",
+    "alias": "Spindown Dice",
+    "dlc": "24",
+    "id": "723",
+    "is activated": "1",
+    "unlocked by": "Spindown Dice"
+  },
+  {
+    "_pageName": "Spirit Shackles",
+    "alias": "Spirit Shackles",
+    "dlc": "24",
+    "id": "674",
+    "is activated": "0",
+    "unlocked by": "Spirit Shackles"
+  },
+  {
+    "_pageName": "Spirit Sword",
+    "alias": "Spirit Sword",
+    "dlc": "24",
+    "id": "579",
+    "is activated": "0",
+    "unlocked by": "Spirit Sword"
+  },
+  {
+    "_pageName": "Spirit of the Night",
+    "alias": "Spirit of the Night",
+    "dlc": "31",
+    "id": "159",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Spoon Bender",
+    "alias": "Spoon Bender",
+    "dlc": "31",
+    "id": "3",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sprinkler",
+    "alias": "Sprinkler",
+    "dlc": "28",
+    "id": "516",
+    "is activated": "1",
+    "unlocked by": "Sprinkler"
+  },
+  {
+    "_pageName": "Squeezy",
+    "alias": "Squeezy",
+    "dlc": "31",
+    "id": "196",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Stapler",
+    "alias": "Stapler",
+    "dlc": "24",
+    "id": "708",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Star of Bethlehem",
+    "alias": "Star of Bethlehem",
+    "dlc": "24",
+    "id": "651",
+    "is activated": "0",
+    "unlocked by": "Star of Bethlehem"
+  },
+  {
+    "_pageName": "Starter Deck",
+    "alias": "Starter Deck",
+    "dlc": "31",
+    "id": "251",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Steam Sale",
+    "alias": "Steam Sale",
+    "dlc": "31",
+    "id": "64",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Stem Cells",
+    "alias": "Stem Cells",
+    "dlc": "31",
+    "id": "176",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Steven (Item)",
+    "alias": "Steven",
+    "dlc": "31",
+    "id": "50",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sticky Bombs",
+    "alias": "Sticky Bombs",
+    "dlc": "30",
+    "id": "367",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Stigmata",
+    "alias": "Stigmata",
+    "dlc": "31",
+    "id": "138",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Stitches",
+    "alias": "Stitches",
+    "dlc": "24",
+    "id": "635",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Stop Watch",
+    "alias": "Stop Watch",
+    "dlc": "31",
+    "id": "232",
+    "is activated": "0",
+    "unlocked by": "Stop Watch"
+  },
+  {
+    "_pageName": "Strange Attractor",
+    "alias": "Strange Attractor",
+    "dlc": "31",
+    "id": "315",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Strawman",
+    "alias": "Strawman",
+    "dlc": "24",
+    "id": "667",
+    "is activated": "0",
+    "unlocked by": "Strawman"
+  },
+  {
+    "_pageName": "Stye",
+    "alias": "Stye",
+    "dlc": "24",
+    "id": "731",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Succubus",
+    "alias": "Succubus",
+    "dlc": "30",
+    "id": "417",
+    "is activated": "0",
+    "unlocked by": "Succubus"
+  },
+  {
+    "_pageName": "Sulfur",
+    "alias": "Sulfur",
+    "dlc": "24",
+    "id": "556",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sulfuric Acid",
+    "alias": "Sulfuric Acid",
+    "dlc": "28",
+    "id": "463",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sumptorium",
+    "alias": "Sumptorium",
+    "dlc": "24",
+    "id": "713",
+    "is activated": "1",
+    "unlocked by": "Sumptorium"
+  },
+  {
+    "_pageName": "Super Bandage",
+    "alias": "Super Bandage",
+    "dlc": "31",
+    "id": "92",
+    "is activated": "0",
+    "unlocked by": "A Bandage"
+  },
+  {
+    "_pageName": "Suplex!",
+    "alias": "Suplex!",
+    "dlc": "24",
+    "id": "709",
+    "is activated": "1",
+    "unlocked by": "Suplex!"
+  },
+  {
+    "_pageName": "Supper",
+    "alias": "Supper",
+    "dlc": "24",
+    "id": "707",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Sworn Protector",
+    "alias": "Sworn Protector",
+    "dlc": "30",
+    "id": "363",
+    "is activated": "0",
+    "unlocked by": "Sworn Protector"
+  },
+  {
+    "_pageName": "Synthoil",
+    "alias": "Synthoil",
+    "dlc": "31",
+    "id": "345",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "TMTRAINER",
+    "alias": "TMTRAINER",
+    "dlc": "24",
+    "id": "721",
+    "is activated": "0",
+    "unlocked by": "TMTRAINER"
+  },
+  {
+    "_pageName": "Tammy's Head",
+    "alias": "Tammy's Head",
+    "dlc": "31",
+    "id": "38",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Tarot Cloth",
+    "alias": "Tarot Cloth",
+    "dlc": "28",
+    "id": "451",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Taurus",
+    "alias": "Taurus",
+    "dlc": "31",
+    "id": "299",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Tear Detonator",
+    "alias": "Tear Detonator",
+    "dlc": "30",
+    "id": "383",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Tech X",
+    "alias": "Tech X",
+    "dlc": "30",
+    "id": "395",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Tech.5",
+    "alias": "Tech.5",
+    "dlc": "31",
+    "id": "244",
+    "is activated": "0",
+    "unlocked by": "Technology .5"
+  },
+  {
+    "_pageName": "Technology",
+    "alias": "Technology",
+    "dlc": "31",
+    "id": "68",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Technology 2",
+    "alias": "Technology 2",
+    "dlc": "31",
+    "id": "152",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Technology Zero",
+    "alias": "Technology Zero",
+    "dlc": "28",
+    "id": "524",
+    "is activated": "0",
+    "unlocked by": "Technology Zero"
+  },
+  {
+    "_pageName": "Telekinesis",
+    "alias": "Telekinesis",
+    "dlc": "28",
+    "id": "522",
+    "is activated": "1",
+    "unlocked by": "Telekinesis"
+  },
+  {
+    "_pageName": "Telepathy For Dummies",
+    "alias": "Telepathy For Dummies",
+    "dlc": "31",
+    "id": "192",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Teleport 2.0",
+    "alias": "Teleport 2.0",
+    "dlc": "30",
+    "id": "419",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Teleport!",
+    "alias": "Teleport!",
+    "dlc": "31",
+    "id": "44",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Terra",
+    "alias": "Terra",
+    "dlc": "24",
+    "id": "592",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Battery",
+    "alias": "The Battery",
+    "dlc": "31",
+    "id": "63",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Bean",
+    "alias": "The Bean",
+    "dlc": "31",
+    "id": "111",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Belt",
+    "alias": "The Belt",
+    "dlc": "31",
+    "id": "28",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Bible",
+    "alias": "The Bible",
+    "dlc": "31",
+    "id": "33",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Black Bean",
+    "alias": "The Black Bean",
+    "dlc": "31",
+    "id": "180",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Body",
+    "alias": "The Body",
+    "dlc": "31",
+    "id": "334",
+    "is activated": "0",
+    "unlocked by": "The Body"
+  },
+  {
+    "_pageName": "The Book of Belial",
+    "alias": "The Book of Belial",
+    "dlc": "31",
+    "id": "34",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Book of Sin",
+    "alias": "The Book of Sin",
+    "dlc": "31",
+    "id": "97",
+    "is activated": "1",
+    "unlocked by": "The Book of Sin"
+  },
+  {
+    "_pageName": "The Boomerang",
+    "alias": "The Boomerang",
+    "dlc": "31",
+    "id": "338",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Candle",
+    "alias": "The Candle",
+    "dlc": "31",
+    "id": "164",
+    "is activated": "1",
+    "unlocked by": "Blue Candle"
+  },
+  {
+    "_pageName": "The Common Cold",
+    "alias": "The Common Cold",
+    "dlc": "31",
+    "id": "103",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Compass",
+    "alias": "The Compass",
+    "dlc": "31",
+    "id": "21",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The D6",
+    "alias": "The D6",
+    "dlc": "31",
+    "id": "105",
+    "is activated": "1",
+    "unlocked by": "The D6"
+  },
+  {
+    "_pageName": "The Gamekid",
+    "alias": "The Gamekid",
+    "dlc": "31",
+    "id": "93",
+    "is activated": "1",
+    "unlocked by": "A Gamekid"
+  },
+  {
+    "_pageName": "The Halo",
+    "alias": "The Halo",
+    "dlc": "31",
+    "id": "101",
+    "is activated": "0",
+    "unlocked by": "A Halo"
+  },
+  {
+    "_pageName": "The Hourglass",
+    "alias": "The Hourglass",
+    "dlc": "31",
+    "id": "66",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Inner Eye",
+    "alias": "The Inner Eye",
+    "dlc": "31",
+    "id": "2",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Intruder",
+    "alias": "The Intruder",
+    "dlc": "24",
+    "id": "575",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Jar",
+    "alias": "The Jar",
+    "dlc": "31",
+    "id": "290",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Ladder",
+    "alias": "The Ladder",
+    "dlc": "31",
+    "id": "60",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Ludovico Technique",
+    "alias": "The Ludovico Technique",
+    "dlc": "31",
+    "id": "329",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Mark",
+    "alias": "The Mark",
+    "dlc": "31",
+    "id": "79",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Mind",
+    "alias": "The Mind",
+    "dlc": "31",
+    "id": "333",
+    "is activated": "0",
+    "unlocked by": "The Mind"
+  },
+  {
+    "_pageName": "The Mulligan",
+    "alias": "The Mulligan",
+    "dlc": "31",
+    "id": "151",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Nail",
+    "alias": "The Nail",
+    "dlc": "31",
+    "id": "83",
+    "is activated": "1",
+    "unlocked by": "The Nail"
+  },
+  {
+    "_pageName": "The Necronomicon",
+    "alias": "The Necronomicon",
+    "dlc": "31",
+    "id": "35",
+    "is activated": "1",
+    "unlocked by": "The Necronomicon"
+  },
+  {
+    "_pageName": "The Negative",
+    "alias": "The Negative",
+    "dlc": "31",
+    "id": "328",
+    "is activated": "0",
+    "unlocked by": "The Negative"
+  },
+  {
+    "_pageName": "The Pact",
+    "alias": "The Pact",
+    "dlc": "31",
+    "id": "80",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Parasite",
+    "alias": "The Parasite",
+    "dlc": "31",
+    "id": "104",
+    "is activated": "0",
+    "unlocked by": "The Parasite"
+  },
+  {
+    "_pageName": "The Peeper",
+    "alias": "The Peeper",
+    "dlc": "31",
+    "id": "155",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Pinking Shears",
+    "alias": "The Pinking Shears",
+    "dlc": "31",
+    "id": "107",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Polaroid",
+    "alias": "The Polaroid",
+    "dlc": "31",
+    "id": "327",
+    "is activated": "0",
+    "unlocked by": "The Polaroid"
+  },
+  {
+    "_pageName": "The Poop",
+    "alias": "The Poop",
+    "dlc": "31",
+    "id": "36",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Relic",
+    "alias": "The Relic",
+    "dlc": "31",
+    "id": "98",
+    "is activated": "0",
+    "unlocked by": "A Cross"
+  },
+  {
+    "_pageName": "The Sad Onion",
+    "alias": "The Sad Onion",
+    "dlc": "31",
+    "id": "1",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Scooper",
+    "alias": "The Scooper",
+    "dlc": "24",
+    "id": "605",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Small Rock",
+    "alias": "The Small Rock",
+    "dlc": "31",
+    "id": "90",
+    "is activated": "0",
+    "unlocked by": "A Small Rock"
+  },
+  {
+    "_pageName": "The Soul",
+    "alias": "The Soul",
+    "dlc": "31",
+    "id": "335",
+    "is activated": "0",
+    "unlocked by": "The Soul"
+  },
+  {
+    "_pageName": "The Stairway",
+    "alias": "The Stairway",
+    "dlc": "24",
+    "id": "586",
+    "is activated": "0",
+    "unlocked by": "The Stairway"
+  },
+  {
+    "_pageName": "The Swarm",
+    "alias": "The Swarm",
+    "dlc": "24",
+    "id": "693",
+    "is activated": "0",
+    "unlocked by": "The Swarm"
+  },
+  {
+    "_pageName": "The Virus",
+    "alias": "The Virus",
+    "dlc": "31",
+    "id": "13",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Wafer",
+    "alias": "The Wafer",
+    "dlc": "31",
+    "id": "108",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "The Wiz",
+    "alias": "The Wiz",
+    "dlc": "30",
+    "id": "358",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "There's Options",
+    "alias": "There's Options",
+    "dlc": "31",
+    "id": "249",
+    "is activated": "0",
+    "unlocked by": "There's Options"
+  },
+  {
+    "_pageName": "Thunder Thighs",
+    "alias": "Thunder Thighs",
+    "dlc": "31",
+    "id": "314",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Tiny Planet",
+    "alias": "Tiny Planet",
+    "dlc": "31",
+    "id": "233",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Tinytoma",
+    "alias": "Tinytoma",
+    "dlc": "24",
+    "id": "645",
+    "is activated": "0",
+    "unlocked by": "Tinytoma"
+  },
+  {
+    "_pageName": "Tonsil",
+    "alias": "Tonsil",
+    "dlc": "4",
+    "id": "474",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Tooth Picks",
+    "alias": "Tooth Picks",
+    "dlc": "31",
+    "id": "183",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Tooth and Nail",
+    "alias": "Tooth and Nail",
+    "dlc": "24",
+    "id": "663",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Torn Photo",
+    "alias": "Torn Photo",
+    "dlc": "31",
+    "id": "341",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Tough Love",
+    "alias": "Tough Love",
+    "dlc": "31",
+    "id": "150",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Toxic Shock",
+    "alias": "Toxic Shock",
+    "dlc": "30",
+    "id": "350",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Tractor Beam",
+    "alias": "Tractor Beam",
+    "dlc": "30",
+    "id": "397",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Transcendence",
+    "alias": "Transcendence",
+    "dlc": "31",
+    "id": "20",
+    "is activated": "0",
+    "unlocked by": "A Noose"
+  },
+  {
+    "_pageName": "Treasure Map",
+    "alias": "Treasure Map",
+    "dlc": "31",
+    "id": "54",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Trinity Shield",
+    "alias": "Trinity Shield",
+    "dlc": "31",
+    "id": "243",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Trisagion",
+    "alias": "Trisagion",
+    "dlc": "28",
+    "id": "533",
+    "is activated": "0",
+    "unlocked by": "Trisagion"
+  },
+  {
+    "_pageName": "Tropicamide",
+    "alias": "Tropicamide",
+    "dlc": "24",
+    "id": "659",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Twisted Pair",
+    "alias": "Twisted Pair",
+    "dlc": "24",
+    "id": "698",
+    "is activated": "0",
+    "unlocked by": "Twisted Pair"
+  },
+  {
+    "_pageName": "Undefined",
+    "alias": "Undefined",
+    "dlc": "31",
+    "id": "324",
+    "is activated": "1",
+    "unlocked by": "Undefined"
+  },
+  {
+    "_pageName": "Unicorn Stump",
+    "alias": "Unicorn Stump",
+    "dlc": "31",
+    "id": "298",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Uranus",
+    "alias": "Uranus",
+    "dlc": "24",
+    "id": "596",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Urn of Souls",
+    "alias": "Urn of Souls",
+    "dlc": "24",
+    "id": "640",
+    "is activated": "1",
+    "unlocked by": "Urn of Souls"
+  },
+  {
+    "_pageName": "Vade Retro",
+    "alias": "Vade Retro",
+    "dlc": "24",
+    "id": "653",
+    "is activated": "1",
+    "unlocked by": "Vade Retro"
+  },
+  {
+    "_pageName": "Vanishing Twin",
+    "alias": "Vanishing Twin",
+    "dlc": "24",
+    "id": "697",
+    "is activated": "0",
+    "unlocked by": "Vanishing Twin"
+  },
+  {
+    "_pageName": "Varicose Veins",
+    "alias": "Varicose Veins",
+    "dlc": "28",
+    "id": "452",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Vasculitis",
+    "alias": "Vasculitis",
+    "dlc": "24",
+    "id": "657",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Vengeful Spirit",
+    "alias": "Vengeful Spirit",
+    "dlc": "24",
+    "id": "702",
+    "is activated": "0",
+    "unlocked by": "Vengeful Spirit"
+  },
+  {
+    "_pageName": "Ventricle Razor",
+    "alias": "Ventricle Razor",
+    "dlc": "30",
+    "id": "396",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Venus",
+    "alias": "Venus",
+    "dlc": "24",
+    "id": "591",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Virgo",
+    "alias": "Virgo",
+    "dlc": "31",
+    "id": "303",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Void",
+    "alias": "Void",
+    "dlc": "28",
+    "id": "477",
+    "is activated": "1",
+    "unlocked by": "Void"
+  },
+  {
+    "_pageName": "Voodoo Head",
+    "alias": "Voodoo Head",
+    "dlc": "24",
+    "id": "599",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Wait What?",
+    "alias": "Wait What?",
+    "dlc": "28",
+    "id": "484",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Wavy Cap",
+    "alias": "Wavy Cap",
+    "dlc": "24",
+    "id": "582",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "We Need To Go Deeper!",
+    "alias": "We Need To Go Deeper!",
+    "dlc": "31",
+    "id": "84",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "White Pony",
+    "alias": "White Pony",
+    "dlc": "31",
+    "id": "181",
+    "is activated": "1",
+    "unlocked by": "A Forgotten Horseman"
+  },
+  {
+    "_pageName": "Whore of Babylon",
+    "alias": "Whore of Babylon",
+    "dlc": "31",
+    "id": "122",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Wire Coat Hanger",
+    "alias": "Wire Coat Hanger",
+    "dlc": "31",
+    "id": "32",
+    "is activated": "0",
+    "unlocked by": "Wire Coat Hanger"
+  },
+  {
+    "_pageName": "Wooden Nickel",
+    "alias": "Wooden Nickel",
+    "dlc": "30",
+    "id": "349",
+    "is activated": "1",
+    "unlocked by": "Wooden Nickel"
+  },
+  {
+    "_pageName": "Wooden Spoon",
+    "alias": "Wooden Spoon",
+    "dlc": "31",
+    "id": "27",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Worm Friend",
+    "alias": "Worm Friend",
+    "dlc": "24",
+    "id": "682",
+    "is activated": "0",
+    "unlocked by": "Worm Friend"
+  },
+  {
+    "_pageName": "X-Ray Vision",
+    "alias": "X-Ray Vision",
+    "dlc": "31",
+    "id": "76",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "YO LISTEN!",
+    "alias": "YO LISTEN!",
+    "dlc": "28",
+    "id": "492",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Yuck Heart",
+    "alias": "Yuck Heart",
+    "dlc": "24",
+    "id": "639",
+    "is activated": "1",
+    "unlocked by": "Yuck Heart"
+  },
+  {
+    "_pageName": "Yum Heart",
+    "alias": "Yum Heart",
+    "dlc": "31",
+    "id": "45",
+    "is activated": "1",
+    "unlocked by": ""
+  },
+  {
+    "_pageName": "Zodiac",
+    "alias": "Zodiac",
+    "dlc": "30",
+    "id": "392",
+    "is activated": "0",
+    "unlocked by": "Zodiac"
+  }
+]

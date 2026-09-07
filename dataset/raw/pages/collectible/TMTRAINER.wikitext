@@ -1,0 +1,75 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 721
+ | quote       = ZZaZZ ZZdZZiZZmZZhZZ ZZvZZ ZZoZZ ZZ ZZsZZlZZhZZsZZoZZaZZiZZ
+ | description = Causes all future [[items]] to be "glitched", granting them completely random effects.
+ | quality     = 0
+ | tags        = offensive nocantrip
+ | unlocked by = TMTRAINER
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* When picked up, all future [[items]] become "Glitched", causing them to become random combinations of 2-3 effects based on other items as well as effects that are not normally controlled by the player, such as enemy spawning and other behind-the-scenes effects.
+** [[Item Tags quest|Quest items]] do not become glitched. This includes: {{i|The Polaroid}}, {{i|The Negative}}, {{i|Key Piece 1}}, {{i|Key Piece 2}}, {{i|Knife Piece 1}}, {{i|Knife Piece 2}}, {{i|Dad's Note}}.
+** Additionally, the currently playing music will fade out. The silence will remain until another music track plays.
+** Any enemies in the room will also become simultaneously frozen and set on fire.
+* "Glitched" items can be passive or active and are completely randomly generated with practically infinite possibilities. There is a 75% chance that the item will be passive.
+* Random effects combine effects that exist on other items, and assign them to a random event (e.g. on enemy death, on room clear, on damage taken etc.).
+** These effects may also be derived from installed modded items.
+* Glitched items sold for money cost a random amount of pennies up to 99 pennies.
+
+== Notes ==
+* Once {{a|Corrupted Data}} is unlocked, the TMTRAINER effect may be randomly applied to items found in {{r|Secret Room}}s and {{r|I AM ERROR}} rooms.
+* Items affected by TMTRAINER may take the effect of rerolling all of your items. This includes TMTRAINER itself, meaning any future items you encounter will not be under its effect, nor will the items obtained by rerolling due to the glitched item.
+* All glitched items appear as {{I|Mega Blast}} in [[Isaac's Last Will]] or the In-game Pause Menu.
+* If an item held by Isaac is rerolled into TMTRAINER (Either by {{I|D4}} or a 1-pip {{r|Dice Room}}), all items after it will be rerolled into glitched items.
+* A majority of the random item effects include farts, including active items.
+* Due to the sheer randomness of glitched items, some may cause the game to either crash or lag to the point of unplayability.
+** However, some may spawn entities that are normally only accessible using the [[Debug Console]], including the Challenge Trophy that spawns at the end of [[Challenges]] and the Big Chest that spawns after most major bosses. Touching either of these on a floor that would not normally spawn them will instantly end the run and send the player back to the title screen (unless a challenge is currently being played, in which case the player will receive unlocks as if they had completed the challenge normally). Touching a Big Chest on any floor that can spawn them will NOT give the player the respective completion marks but will still end the run (unless Isaac has either {{i|The Polaroid}} or {{i|The Negative}} and is on either {{s|Cathedral}} or {{s|Sheol}}, respectively.)
+
+== Interactions ==
+* {{T|'M}}: Rerolls glitched actives into other glitched actives.
+* {{i|Bag of Crafting}}: Recipes are not glitched.
+* {{i|Binge Eater}}: Functions as intended, cycling pedestals between a glitched item and an HP up item.
+* {{Book of Virtues synergy|description=Using a glitched active spawns a random wisp.}}
+* {{I|Death Certificate}}: TMTRAINER will not apply to Death Certificate's items.
+* {{I|Diplopia}}: Glitched items are copied normally. Pedestals spawned before acquiring TMTRAINER will duplicate into a glitched item.
+* {{I|Dream Catcher}}: Cannot identify glitched items.
+* {{I|Genesis}}: Removes TMTRAINER's effect and allows items to spawn normally again, including items which appear in the special Bedroom created by Genesis. This also applies to glitched items which invoke Genesis' effect.
+* {{I|Lemegeton}}: Spawns wisps of glitched items. All wisps look like {{I|The Sad Onion}}, but this is purely aesthetic. The wisps do not have any items' effects.
+* {{I|Magic Skin}}: All summoned items will be glitched. Magic Skin cannot replace future glitched items after being left behind.
+* {{i|Missing No.}}: Can reroll TMTRAINER, but not any previously acquired glitched items.
+* {{T|Modeling Clay}}: Cannot transform into glitched items. Will visually vanish from sight, but is still held and can be dropped as normal.
+* {{i|Spindown Dice}}: Glitch items will disappear if rerolled.
+* {{c|Tainted Cain}}: Can craft TMTRAINER but it will have no effect other than giving shop items random prices which are most often overpriced.
+
+== In-game Footage ==
+{{#ev:youtube|Vjiocd7CRgY}}
+
+== Trivia ==
+* The name and description of the item comes from the result of [[bulbapedia:TMTRAINER effect|glitches in ''Pokémon Red and Blue'']]. Certain glitch moves in that game can have names so long they run into the memory, corrupting it and causing glitchy effects, like the opponent's name becoming "TMTRAINER". A certain other glitch (commonly referred to as the [[bulbapedia:ZZAZZ glitch|ZZAZZ glitch]]) replaces the letters in the player's name with capital Zs except for every third letter.
+** The pickup quote for this item is defined as "Isaac and his mother lived alone in a small house on a hill", but in game it's shown with the pattern of Zs overlaid on top.
+*** When viewed in the collection grid, the pickup quote is unobscured, but it's so long it goes off of the screen.
+** The music fading out and status effects being applied to enemies upon acquiring the item is another direct reference to the effects of TMTRAINER in ''Pokémon Red and Blue'', which fades the music out upon use until another song is triggered to play (assuming the game survives the effects), as well as applying burn and frozen statuses to enemy pokémon.
+* The sprite for TMTRAINER itself is a heavily glitched version of the in-game {{t|Isaac's Head}}'s face, affected similarly to the face of {{c|Tainted Eden}} in menus.
+** For the TMTRAINER sprite in particular is a reference to how sprites corrupt in ''Pokémon Red and Blue'', especially after encountering glitch Pokémon, by segmenting into strips, then rearranged, usually flipped around.
+* The effect of the item is similar to a "Randomizer" for other games.
+** The item's effect is a reference to an old randomizer mod that came out before ''Afterbirth+''.<ref>https://discord.com/channels/123641386921754625/485133685881045014/830627113311928320</ref>
+* This item is used in {{chal|DELETE THIS}}.
+** DELETE THIS will always be unlocked before TMTRAINER on any given file. This item, {{i|The Small Rock}}, {{i|Dirty Mind}}, and {{i|Spirit Sword}} are the only items that appear in challenges before they are unlocked. Small Rock and TMTRAINER are also notable for not being unlocked by beating the challenge they appear in.
+* {{I|MEAT!}}, {{I|YO LISTEN!}}, [[G FUEL!]], {{I|PHD}}, {{I|BBF}}, {{i|IBS}}, {{I|BFFS!}} and {{I|TMTRAINER}} are the only items in the game with all capital letters in their names.
+* All glitched items have a unique appearance in the pause menu and death screen.
+** {{dlc|nr+}} Most glitched item sprites are shown as {{I|Mega Blast}} in Isaac's last will. Very rarely one will show a glitchy icon.
+** {{dlc|r+}} Glitched items appear as a question mark symbol. The description of the glitched item matches what is shown when picked up, and also lists pickup items granted, if any.
+* Sounds when picking up glitched items are often changed.
+
+== Bugs ==
+{{bug|dlc=r+|In online, tmtrainer active items have no on use effects, only passive effects from actives.}}
+{{bug|dlc=r|plat=PS4, PS5| Glitched items can trigger the effect of {{i|Wavy Cap}}, crashing the game. }}
+
+== References ==
+{{reflist}}
+
+{{nav|tainted eden unlock|the beast unlock|glitch}}

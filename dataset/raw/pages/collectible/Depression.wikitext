@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 469
+ | quote       = &colon;(
+ | description = Spawns a [[familiar]] that leaves a trail of [[creep]] that damages enemies at 6 damage per second. Has a chance to spawn damaging beams of light onto enemies that touch the cloud.
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Spawns a [[familiar]] that follows Isaac and leaves a trail of [[blue creep]] that damages enemies.
+** The creep deals 2 damage per tick or 6 damage per second to non-flying enemies.
+* If the cloud touches an enemy, it has a 1% chance to spawn a damaging {{I|Holy Light}} beam onto the enemy.
+** The light beams deal 20 + Isaac's tear damage per tick and may strike an enemy up to 8 times.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Rainmaker}}.{{dlc-}}
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Depression having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== Interactions ==
+* {{i|BFFS!}}: Increase cloud size but does not increase damage.
+
+== In-game Footage ==
+{{#ev:youtube|X8fxquLxcAs}}
+
+== Trivia ==
+* [[wikipedia:depression (mood)|Depression]] is the emotional state of low mood and aversion to activity.
+* [https://www.metlink.org/resource/weather-systems/#:~:text=Under%20a%20depression%20air%20is,anticlockwise%20direction%20around%20a%20depression. Depression] is also a state of air currents which often result in cloudy and wet weather.
+
+== Gallery ==
+<gallery>
+File:AB- Item Concept.jpg|Item concept arts for AB+, including Depression.
+</gallery>
+
+{{nav|fr=Dépression}}

@@ -1,0 +1,78 @@
+{{infobox passive collectible
+ | dlc            = a
+ | tear app scale = 1/2
+ | id             = 440
+ | quote          = Matt's kidney stone
+ | description    = Isaac is occasionally forced to stop firing and charge an attack that launches a massive piercing, spectral kidney stone and a barrage of tears. {{dlc+|nr}} -0.2 [[speed]], decreases [[range]].{{dlc-}}
+ | quality        = 2
+ | tags           = summonable offensive
+ | unlocked by    = Kidney Stone
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* {{dlc|nr}} -0.2 [[speed]] and maximum speed.
+* {{dlc|na+}} -15 [[range]].
+* {{dlc|a+nr}} -17 [[range]].
+* {{dlc|nr}} +2.0 [[tear falling speed]].
+** {{dlc|na+}} The increased tear falling speed and decreased range results in slightly increased firing distance.
+** {{dlc|a+nr}} The increased tear falling speed and decreased range results in nearly identical firing distance.
+* Occasionally, Isaac will become unable to fire tears. He must charge an attack, indicated by his head turning red, that launches a [[piercing]], [[spectral]] kidney stone when released, followed by a rapid, inaccurate spray of tears.
+** This effect occurs approximately every 25 seconds.
+** {{dlc|nr}} The kidney stone does 5x Isaac's damage and has approximately twice the range of normal tears.
+** {{dlc|r}} The kidney stone does 10x Isaac's damage and has approximately twice the range of normal tears.
+** The barrage grants a decaying 6x fire rate multiplier that can exceed the normal cap and forces Isaac to fire for the duration.
+** The barrage will continue for its full length between [[room]]s, as will the state of charging the attack.
+
+== Notes ==
+* Tints tears red. This is only a cosmetic change.
+* The kidney stone can still be fired by [[blindfolded]] characters, but not the tear barrage. This includes {{c|Lilith}}.
+
+== Synergies ==
+* {{i|Incubus}}: Fire tears normally while Isaac is charging, and copies the barrage but not the stone. The barrage from the Incubus will be in a straight line instead of an inaccurate burst.
+* {{i|Maw Of The Void}}: Whenever the kidney stone is fired, the tear barrage will continuously charge and activate Maw Of The Void until Isaac can fire normally.
+* {{I|Montezuma's Revenge}}/{{i|Revelation|n}}: Whenever the kidney stone is fired, the tear barrage will continuously charge and activate these items' effects until Isaac can fire normally.
+* {{I|Rock Bottom}}: The temporary tears up from the kidney stone burst becomes a permanent x6 fire rate multiplier.
+
+== Interactions ==
+* {{i|20/20}}/{{i|The Inner Eye}}/{{i|Mutant Spider}}: Only fires one stone.
+* {{i|Anti-Gravity}}: The stone will not hover and will travel regardless.
+* {{C|Azazel}}/{{i|Brimstone}}: Overrides Kidney Stone. {{Dlc|nr}} Speed and range downs still apply.
+* {{i|Chocolate Milk|dlc=nr}}: When Kidney Stone activates, it fires one kidney stone and then no more tears until tears stat is under a certain value (unknown).
+* {{i|Cursed Eye}}: Charging the barrage pauses the Cursed Eye charge bar - if the bar is not full and Isaac is hurt, he will teleport. Firing during the barrage will neither fire tears, nor show the charge bar, but will still charge Cursed Eye. Being hit while the invisible charge bar is not full will teleport Isaac.
+* {{i|Compound Fracture}}/{{i|Cricket's Body}}/{{i|The Parasite}}: The stone cannot split into smaller stones.
+* {{i|Dr. Fetus}}: Overrides Kidney Stone. {{Dlc|nr}} Speed and range downs still apply.
+* {{i|Epic Fetus}}: Overrides Kidney Stone. {{Dlc|nr}} Speed and range downs still apply.
+* {{C|The Forgotten|a+}}: The Forgotten will swing his club rapidly instead of shooting the burst of tears (The Forgotten still fires the stone normally).
+* {{Dlc+|a+nr}} {{i|Haemolacria}}: Overridden by Haemolacria. Only stat changes apply.{{dlc-}}
+** {{Dlc|r}} Fires a barrage of Haemolacria tears upon activation
+* {{i|Jacob's Ladder}}: The stone will only spawn sparks when hitting enemies.
+* {{i|Libra}}: Stats are greatly increased during the barrage. {{dlc|nr}} The harsh speed and range down make Libra a large stats down.
+* {{i|The Ludovico Technique}}: Overrides Kidney Stone.
+* {{i|A Lump of Coal}}: The stone will not grow bigger as it travels, but it will increase in damage.
+* {{i|Marked}}: Occasionally, Isaac will stop automatically firing, and an attack key must be held to release the kidney stone and continued firing.
+* {{i|Mom's Knife}}: Overrides Kidney Stone. {{Dlc|nr}} Speed and range downs still apply.
+* {{i|Monstro's Lung}}: Overrides Kidney Stone. {{Dlc|nr}} Speed and range downs still apply.
+** {{dlc|r}} '''Monstro's Lung''' + {{I|Technology}}: Kidney Stone can activate, but the barrage does not work correctly (see bugs).
+* {{i|Number One|dlc=nr}}: Number One's range down overrides Kidney Stone, for an additional -0.62. The stone is not affected by the range decrease.
+* {{i|Spirit Sword}}: Overrides Kidney Stone.
+* {{dlc|r}} {{c|Tainted Lilith}}: Kidney Stone has no effect.
+* {{i|Technology|dlc=nr}}: Overrides Kidney Stone.
+** {{dlc|r}} Fires the stone like normal, followed by a barrage of Technology lasers.
+* {{i|Tech X|dlc=anr}}: Overrides Kidney Stone.
+* {{i|Urn of Souls}}: Firing the urn counts as fire time but the urn must be put away for Isaac to charge and shoot the kidney shot. Switching to the urn while auto-firing from Kidney Stone forces the urn to fire as well.
+
+== In-game Footage ==
+{{#ev:youtube|BGjHzvhj69E}}
+
+== Trivia ==
+* "Matt" refers to Matt Kap, a pixel artist for ''The Binding of Isaac: Rebirth'', who has once been afflicted with a kidney stone.
+** A kidney stone is a hard deposit made of minerals and salts that form inside kidneys. It will usually pass through the urethra, which is often a very painful process.
+* When Isaac enters a room with half a heart and holding this item, he will leave a small puddle of blood rather than pee.
+
+== Bugs ==
+{{bug|If Kidney Stone activates while a charged tear effect such as {{i|Tech X}} or {{i|Chocolate Milk}} is currently charging, the charge will get stuck, unable to fire for a somewhat-short period of time, before eventually having the Kidney stone be released as normal. Tears will then occasionally charge, even if a fire button isn't held down anymore.}}
+{{bug|{{dlc|r}} With {{i|Monstro's Lung}} and {{i|Technology}}, the stone can be launched but the barrage will not charge Monstro's Lung enough to fire, preventing Isaac from firing at all during the barrage.}}
+
+{{nav|fr=Calcul Rénal}}

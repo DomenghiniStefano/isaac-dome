@@ -1,0 +1,221 @@
+{{header characters}}
+{{infobox character
+ | image name   = * {{dlc|nr|Afterbirth}}
+ | dlc          = a
+ | id           = 14
+ | health       = {{hearts|coin=2}}<br/>{{unlockable}} {{dlc|r}}{{hearts|coin=3}}
+ | damage       = 3.5 (*1.20)
+ | tears        = {{dlcalt|-2|r=-1.9}}
+ | speed        = {{dlcalt|0.85|r=0.9}}
+ | luck         = -2
+ | pickups      = 1 [[bomb]]<br>{{unlockable}} 1 [[coin]]<br>{{unlockable}} {{t|Store Key}}
+ | collectibles = Triple shot<br>{{unlockable}} {{i|Wooden Nickel}}
+ | unlocked by  = Keeper
+}} {{disambig msg|the playable character|the monster|Keeper (Enemy)}}
+'''Keeper''' is a secret [[character]] added in ''[[The Binding of Isaac: Afterbirth]]''.
+
+Keeper is unlocked by donating 1000 {{E|Penny|text=Coins}} to the {{M|Greed Donation Machine}}. Keeper starts with 1 {{E|Bomb}} and a triple shot similar to {{i|The Inner Eye}}.
+* Keeper starts with {{i|Wooden Nickel}} after defeating {{E|Isaac}} with Keeper.
+
+* Keeper will start with {{t|Store Key}} after defeating {{E|Satan}} with Keeper.
+* Keeper will start with 1 [[coin]] pickup after defeating {{E|Hush}} with Keeper.
+* {{dlc|r}} Keeper will start with 3 [[Coin Heart]]s instead of 2 after defeating {{E|Hush}} with Keeper. If Hush has not yet been beaten with him, Keeper can still gain one extra Coin Heart container with a Health Up.
+
+* {{dlc|r}} Instead of using [[Health#Coin Hearts|Coin Heart containers]] to trade for [[Devil Room|Devil Deal]] items, they must be bought using coins. 1 Red Heart and 2 Red Heart deals cost 15 and 30 cents, respectively.
+** Devil Deals created by {{i|Satanic Bible}} are also paid in coins.
+** Paying cents for Devil Deals will remove the Angel room appearance chance as normal.
+
+Unlike other characters, Keeper uses coins as health. He starts with 2 [[Health#Coin Hearts|Coin Hearts]], loses one every time he is damaged, and heals for one every time he obtains a coin, at the cost of a cent.
+If Keeper loses Coin Heart containers (Health Down, {{Dlc|nr|Devil Deals}}, etc.), a Health Up will increase his health back up. 
+
+All types of hearts are transformed into [[Familiar#Blue Flies|blue flies]]. {{dlc|r+}} {{e|Gold Heart}}s are an exception, and immediately turn into coins when picked up.
+
+== Notes ==
+* {{dlc|r}} Keeper when initially unlocked is one of the game's weakest characters due to his frailty, lack of healing, and slow fire rate and speed. After unlocking the starting {{i|Wooden Nickel}}, he becomes a high-risk, high-reward character who can dominate the late game if played strategically. By beating {{E|Hush}} with him and unlocking his free third [[Coin Heart]], he can enter {{R|Curse Room}}s without needing a Health Up, and faces less risk when playing {{R|Sacrifice Room}}s.
+** It is recommended that players who struggle with Keeper play in Normal Mode to obtain his key unlocks before attempting the more challenging Hard Mode.
+* Keeper can be quite a tedious character to unlock, because the player needs to deposit 1000 [[Coins]] to the {{M|Greed Donation Machine}}, which takes multiple good runs and good enough luck for the donation machine to not jam/explode too early.
+* {{dlc|nr}} Keeper cannot have more than 2 [[Coin Heart]]s.
+* {{dlc|r}} Keeper cannot have more than 3 [[Coin Heart]]s. This cap applies even before Hush is defeated.
+** The only three exceptions to this are {{i|Greed's Gullet}}, which allows him to have up to {{dlcalt|6|r=7}} Coin Hearts, and {{i|Birthright}} and {{T|Mother's Kiss}}, which allow him to have an additional Coin Heart.
+*** {{dlc|r}} Greed's Gullet in combination with {{i|Deep Pockets}} can allow Keeper to reach 12 Coin Hearts at 600 coins.
+**** It is possible to reach 15 Coin Hearts at 900 coins. Any Coin Heart containers past the max of 12 will appear as an additional row beneath the standard 2 rows of Coin Hearts, similar to {{c|Magdalene}}'s {{i|Birthright}}.
+** Theoretically, Keeper could gain limitless Coin Hearts by generating and smelting Mother's Kiss, as each copy would grant a heart container, eventually bypassing the 12 heart container cap.
+** If the effect of {{T|Mother's Kiss}} is doubled via {{I|Mom's Box}} or a {{a|Golden Trinket}}, Keeper will also receive an extra coin.
+* Keeper always takes one full Coin Heart of damage, which means he cannot have half Coin Hearts.
+** Because Keeper can usually not have less than one full heart, items such as {{i|Whore of Babylon}} and {{i|Empty Vessel}} cannot be activated.
+** {{dlc|a+nr}} The effect of {{i|Clicker}} can allow Keeper to have half Coin Hearts.
+** {{dlc|r}} The effect of {{i|Clicker}} will now fill one Coin Heart if Keeper would otherwise have no health.
+* The amount of blue flies created from each heart depends on the type of heart.
+** {{E|Half Red Heart}}s are transformed into 1 blue fly.
+** Full {{E|Red Heart}}s, {{E|Blended Heart}}s, {{E|Half Soul Heart}}s, {{E|Rotten Heart}}s, are transformed into 2 blue flies.
+** Full {{E|Soul Heart}}s are transformed into 3 blue flies.
+** {{E|Black Heart}}s, {{E|Double Heart}}s, {{E|Bone Heart}}s, are transformed into 4 blue flies.
+** {{E|Eternal Heart}}s are transformed into 5 blue flies.
+** {{dlc|nr+}} {{E|Gold Heart}}s are transformed into 6 blue flies.
+* Every time Keeper uses a coin to heal himself, that coin is consumed and isn't added to his current coin amount.
+** Double Pennies, Nickels, Dimes and items that give money on pickup (such as {{i|A Quarter}}, {{i|A Dollar}}, {{i|Piggy Bank}}, etc.) will give their amount minus the healed HP.
+** Using a [[Lucky Penny]] to refill health will not give a coin, but will still give +1 Luck.
+** {{p|2 of Diamonds}} can refill Keeper's health at the cost of 1 coin.
+** {{t|Counterfeit Penny}} allows the chance for Keeper to gain the full value of a coin while healing.
+* Coin Hearts are generally treated as Red Hearts, such as in {{dlc|nr|{{R|Devil Room}} / }}{{R|Angel Room}} chance, {{dlc|nr|[[Devil Deal]]s}}, {{R|Challenge Room}}s, {{R|Boss Challenge Room}}s, and items such as {{i|Dark Prince's Crown}}.
+** {{dlc|nr}} Taking a Devil Deal costing 2 Red Hearts will kill Keeper.
+** {{dlc|r}} Getting hit will not lower the chance for a Devil Room/Angel room to appear.
+* {{dlc|nr}} If Keeper doesn't have maximum Coin Heart containers, using {{p|XI - Strength}} will give Keeper an additional Coin Heart that does not disappear upon leaving the room.
+* {{i|IV Bag}} only gives Keeper 0-1 coins per use (instead of 1-3).
+** {{i|IV Bag}} + {{i|PHD}}: IV Bag drops 0-2 coins per use.
+* {{dlc|r}} {{M|Blood Donation Machine}} aren't guaranteed to pay Keeper out with a coin.
+* {{i|Piggy Bank}} only allows Keeper to drop 0-1 pennies when taking damage (instead of 1-2).
+** {{Dlc|r}} Having a partner in True Co-Op mode can get around this, as the Co-Op partner will drop pennies normally (as long as they are not Keeper themselves), giving Keeper a reliable source of health (the drawback being that the partner will have normal health mechanics and therefore won't have infinite health this way).
+* {{dlc|r}} {{t|Swallowed Penny}} only allows Keeper to drop 0-1 pennies when taking damage (instead of 1).
+* Despite having an innate triple shot, Keeper does not start with {{i|The Inner Eye}}. Because of this, the item can still spawn.
+** The Inner Eye grants {{dlcalt|6|r=4}} shots with a reduced fire rate.
+* {{dlc|r}} [[Pills|Health Down pill]]s cannot spawn while playing as Keeper.
+* {{Dlc|r}} When Keeper is being played in Co-op mode:
+** If he dies, his ghost baby will maintain his innate triple shot.
+** He will not convert hearts into flies unless he picks up a soul heart or is granted them directly by an item.
+** Devil Deals will use coins for all players.
+** Because he cannot pick up hearts, he will not pick up eternal hearts when dead for a free revive.
+
+== Strategy ==
+* Changes to the Tears stat are much less effective on fire rate at or below -0.77 Tears (see [[Tears]] for the exact calculations), so Keeper will gain very little fire rate from his first 1.13 added Tears. After crossing this threshold, as he fires 3 tears at a time with no multiplicative fire rate penalty, Keeper can gain far more DPS from Tears than other characters.
+** For reference, a Tears Up pill gives 0.35 tears. Assuming no other tears modifiers are taken, Keeper will gain 0.08, 0.1, and 0.12 fire rate from his first three Tears Up pills, and 0.47 from his fourth; over 50% more than his first three ''combined''.
+** Items that directly increase fire rate are very desirable for Keeper.
+* Due to his {{dlcalt|nr=2|r=3}} Coin Heart limit, Keeper can easily die due to fast shooting enemies. As all hearts turn into flies, Soul/Black Hearts cannot be found to protect the Keeper's health.
+** {{dlc|na+}} Keeper can take a 2 heart Devil Deal by spawning in a co-op baby, taking the Devil Deal, then quickly getting rid of the co-op baby, which will leave Keeper with one Coin Heart.
+** {{Dlc|nr}} Taking Devil Deals that cost 2 Red Hearts will instantly kill him.
+* It is strongly recommended to defeat {{E|Isaac}} as soon as possible so that Keeper has the {{i|Wooden Nickel}}, which will vastly improve his survivability.
+* Leaving a few coins on the ground when clearing a floor allows Keeper to heal himself if he takes a hit from an enemy.
+* Try to bomb as many urns as possible during Chapter 1; {{t|Swallowed Penny}} can drop from urns, which is amazing as Keeper (see [[Keeper#Good Items|Good Items]]).
+** Urns can also appear in an {{R|Angel Room}}, an {{R|Arcade}}, and the {{s|Cathedral}}.
+* In [[Greed Mode]], as coins spawn during waves, Keeper can easily heal himself during each wave by leaving some coins on the ground, even if this will decrease the amount of coins he will be able to collect and spend in the Shop. {{dlc|a|{{E|Ultra Greed}} attacks make the player lose coins when damaged, which means that Keeper can heal himself as long as he possesses coins.}}
+* {{dlcalt|{{r|Curse Rooms}} are very risky to enter as Keeper. Entering it through the door will leave the player at 1 health, meaning that if they don't find any coins there, it will end their run. Even with the {{i|Wooden Nickel}} unlocked, it's not guaranteed that they will leave the Curse Room alive.|r=With 3 Coin Hearts, entering a {{r|Curse Room}} and leaving through the door will leave the player at 1 health, meaning that if they get hit by an enemy inside the room, it will end their run. The {{i|Wooden Nickel}} does reduce this risk.}} 
+** It is possible to enter the Curse Room and remain at full health. This is achieved with a coin in the room right next to the Curse Room's door, most easily achieved with {{i|Wooden Nickel}}. The player can then walk into the Curse Room doorframe to take damage, quickly pick up the coin and heal, then walk through the door into the Curse Room while their invincibility frames are still active.
+* {{dlc|nr}} It is possible to take a 2 Red Heart Devil Deal by using {{t|Judas' Tongue}}, a [[Pill|Health Up pill]], or {{p|XI - Strength}} right after paying for the item. This would leave Keeper at 1 Coin Heart (empty if it was recovered using the pill, but he will not be killed), which is quite risky as he will be one hit away from death. However, if the boss item is a normally-useless Health Up, it can make even a 2 heart Devil Deal effectively free if Keeper possess a Strength Card and take the boss item after leaving the Devil Room.
+* {{Dlc+|nr}} It can be useful for the player to hold onto any {{p|Joker}} cards they find, as they will probably be given an item that increases health at some point in their run; before taking it, they should use Joker to see if any 1 heart Devil Deals are available. {{dlc-}}
+** {{Dlc+|nr}} Keeper's Coin Hearts count as Red Hearts for the purposes of Devil Room and Angel Room spawn chances, making Joker Cards, {{i|Goat Head}} and {{i|Eucharist}} invaluable for getting consistent Devil Rooms and Angel Rooms. {{dlc-}}
+* {{dlc|nr}} Pills can be risky to take as Keeper since there are many adverse effects in the pool, which can quickly ruin a run should they happen. Picking up {{i|PHD}} is recommended before trying any pills.
+** {{dlc|nr}} The [[Pill|Hematemesis Pill]] will reduce the Keeper's health, but in exchange, spawn many flies.
+* {{dlc+|r}} The [[Pill|Hematemesis Pill]] will drop many coins on the floor, making it very useful for quick health regeration, and [[Pill|Health Down Pill]]s are excluded from the pill pool when playing as Keeper, making using unknown pills slightly less risky. {{dlc-}}
+* Co-op babies can be used to exploit a {{M|Blood Donation Machine}} and a {{M|Devil Beggar}} because babies still spawn with a whole heart while Keeper always has a full coin; thus, the baby's health can be replenished by spawning/respawning.
+** This doesn't work in [[Chapter 4]] and beyond unless Keeper has {{i|The Wafer}}.
+* In fights against {{e|Hush}} and}} {{E|Mega Satan}}, bring {{p|X - Wheel of Fortune}}: they will not attack the Keeper until he gets closer to the center of the room, allowing him to spawn a lot of coins from the {{M|Slot Machine}} for healing in the middle of battle.
+* The Keeper can utilize the {{R|Sacrifice Room}} much more reliably and efficiently than other characters. To do this, instead of picking up extra dropped coins, leave them all on the floor. When the player finds a sacrifice room, they can repeatedly step on the spikes for a reward, then go pick up a penny left on the floor, and repeat this process until they are satisfied with their rewards. This process is easier in ''Repentance'', as the player can start with 3 Coin Hearts rather than 2.
+* Once unlocked, {{T|Rib of Greed}} is particularly useful for Keeper, since it increases the chances of coins dropping after a room clear in place of hearts. This allows for more opportunities to heal.
+
+=== Wooden Nickel ===
+After beating Cathedral with Keeper, he will start with {{i|Wooden Nickel}}, giving Keeper a source of potential free coins and health.
+* It's usually a good idea to use the Wooden Nickel right after entering a room, so that the coin dropped will also work as emergency healing.
+* {{i|The Battery}}, {{I|Jumper Cables}}, {{i|9 Volt}}, {{i|Charged Baby}}, and {{i|Car Battery}} help to further increase the amount of coins produced. Having {{i|Habit}} will recharge the Wooden Nickel whenever Keeper is hit, allowing him to potentially sustain himself endlessly, as long as the Wooden Nickel pays out. Having {{i|Habit}} and {{i|Car Battery}} increases chances for infinite coins.
+* Sacrifice rooms can be used much more with the Wooden Nickel, as the coins gained from it can be spent on them.
+* {{i|9 Volt}} can be used to farm charges infinitely in the room before the boss room or a trap room, as the doors will not automatically open after the normal amount of time. It is easiest if there are any immobile or passive enemies.
+
+=== Shops ===
+After beating {{S|Sheol}} with Keeper, he will start with {{t|Store Key}}, giving Keeper free access to Shops.
+
+The following shop items are particularly useful for Keeper:
+* {{i|Hive Mind}}: Enhances the many [[blue fly|blue flies]] Keeper will naturally produce.
+* {{i|Piggy Bank}}: Drops 0-1 coins with Keeper instead of 1-2, but still provides increased survivability.
+** {{dlc|r}} In Co-Op, a player not using Keeper can take the Piggy Bank instead for its full benefit and thus supply Keeper with coins when necessary.
+* {{i|Mom's Box}}: Can drop {{t|Swallowed Penny}}, and makes Swallowed Penny drop 2 coins instead of one, resulting in infinite money.
+** {{dlc|r}} While this no longer results in infinite money, having a Swallowed Penny that's twice as effective will drastically increase survivability.
+* Any Battery type items (see [[#Wooden Nickel|above]])
+* {{i|Sharp Plug}} takes only one HP on use.
+
+== Item Interactions ==
+* {{i|Birthright}}: Raises Keeper's HP cap by 1.
+* {{dlc|r}} {{i|Steam Sale}}: Applies to the Devil Deals.
+
+=== Good Items ===
+* Because of Keeper's slow rate of fire, any Tears Up items are a boon to him. His tears stat can be raised higher than the normal Inner Eye cap with enough Tears Up. This is because his low Tears stat is separate from his triple shot effect, allowing him to hit the standard Tears levels while having triple shots.
+* Flight is useful in general, and it also lets Keeper enter Curse Rooms with less risk.
+* {{dlc|r}} Before Hush is defeated, any health increasing items will grant him a 3rd Coin Heart, greatly increasing his survivability. Once Hush is defeated this no longer applies, as he will start with a 3rd Coin Heart from the beginning of the run from then on, although these items can still heal Keeper if he is missing health.
+* Since every heart is changed into flies, items that give extra Heart drops like {{i|Gimpy}}, {{i|The Virus|nr}}, {{i|Old Bandage}}, {{i|Fanny Pack}}, {{t|Bloody Penny}}, {{i|Serpent's Kiss}}, {{i|Little C.H.A.D.}}, or {{i|The Relic}} become great sources to generate flies. Having {{i|Hive Mind}} also helps Keeper deal extra damage to enemies.
+* {{dlc|nr}} {{i|1up!}} / {{i|Dead Cat}}: Allows Keeper to trade all of his Coin Hearts in Devil Deals, reviving him with 1 health for Dead Cat, and 0 Coin Hearts and 1/2 Soul Heart for 1up!. Keeper can later regain lost Coin Hearts with health up items.
+* {{i|20/20}}: Causes Keeper to shoot 5 tears in an arc, without decreasing his fire rate.
+** {{dlc|r}} 20/20 grants a similar effect to {{I|Odd Mushroom (Thin)}}, giving Keeper a massive Tears Up in exchange for a Damage Down.
+* {{t|Blind Rage}}: Has good synergies with money-dropping items. Since coins need to complete their animations before Keeper can collect it, the extra invincibility frames give him a bigger window of opportunity to pick them up.
+* {{i|Brittle Bones}}: Picking this item up will give a one-time +0.5 tears up ({{dlc|r}} +0.4 [[fire rate]]) and 24 [[Blue Fly|Blue Flies]] without removing any health. This bonus is retained even if the item is later lost or rerolled.
+* {{i|Cursed Eye}}: Allows him to fire {{dlcalt|12|r=15}} tears without an increase in tear delay.
+* {{i|Charm of the Vampire}}: Charm of the Vampire works with Coin Hearts, therefore providing a consistent source of healing.
+* {{t|Dim Bulb}}: Very useful with the {{i|Wooden Nickel}}, as using it at the start of any room or beforehand will grant a hefty boost to most stats.
+* {{i|Diplopia}} / {{p|Credit Card}}: Can be used to take Devil Deals without spending any {{dlcalt|hearts|r=coins}}
+* {{i|Glass Cannon}}: Since Glass Cannon can never reduce Isaac's health to 0 it works well in early game with Keeper for killing bosses and large groups of fast enemies, especially when holding {{i|Dark Prince's Crown}} or {{i|Dead Cat}}. It's also useful for speeding up the run when the player's goal is Boss Rush or Blue Womb.
+* {{i|Greed's Gullet}}: Allows Keeper's health to extend past {{dlcalt|2|r=3 or 4 coins with {{i|Birthright}}}}. 
+** {{dlc+|nr}} Do ''NOT'' pick up {{i|Dead Cat}} if Keeper has all hearts available while using Greed's Gullet. This will instantly kill him, and when he is brought back by the Dead Cat, he will only have 1 heart container which he can no longer increase. {{dlc-}}
+* {{i|Head of the Keeper}}: Very useful since enemies will drop coins when hit, which will help Keeper stay alive.
+** When combined with {{i|Soy Milk}}, it practically guarantees a steady stream of coin drops. This makes the Keeper effectively immortal as long as he keeps collecting those coins.
+* {{i|Holy Mantle}}: Allows Keeper to enter and leave Curse Rooms with less risk.
+* {{dlc+|nr}} {{i|The Inner Eye}} / {{i|Mutant Spider}}: Causes Keeper's fire rate to drop considerably, but in exchange he shoots 6/7 tears, respectively, in an arc, allowing for greater damage output. {{dlc-}}
+* {{t|Lucky Rock}}: Can allow Keeper to get coins from rocks as long as he has bombs.
+* {{i|Missing Page 2}}: Will activate every time Keeper is at one coin Heart, making it an effective replacement to {{i|The Negative}}'s {{i|The Necronomicon}} effect.
+* {{i|Moving Box}}: Can be used to drop multiple coins in a potentially harder room or boss fight.
+* {{i|Options?}}: Hearts spawned will immediately turn into blue flies, giving Keeper both the flies and the other pickup.
+* {{i|Piggy Bank}}: Works differently with Keeper and doesn't drop coins every time he takes damage. Still, it allows him to sometimes recover from a hit for free. 
+** {{dlc+|r}} The same is true for {{t|Swallowed Penny}}.{{dlc-}}
+* {{t|Petrified Poop}}: Similarly to Lucky Rock, allows for Keeper to acquire coins (and flies) from poops.
+* {{i|Placenta}}: Regeneration effect affects the Coin Hearts just like regular red hearts and will allow the Keeper to regenerate 1 Coin Heart every minute. As Keeper does not benefit from items that trigger at half a red heart, this item has no downsides.
+* {{i|Portable Slot}}: Can be used to generate coins to heal Keeper during extended fights and in some cases might be better than {{i|Wooden Nickel}} when money is not a concern.
+* {{i|Pyromaniac}}: Explosions heal Keeper for a full Coin Heart. Combined with bomb items such as {{i|Kamikaze!}}, {{i|Dr. Fetus}}, {{i|Epic Fetus}}, {{i|Ipecac}} renders Keeper almost unkillable.
+* Items that restore red hearts directly such as {{i|Leech}} and {{i|Yum Heart}} will heal Keeper.
+* {{dlc|nr}} {{t|Swallowed Penny}}: Is very powerful as Keeper will always be able to heal himself after taking a hit. This can also grant unlimited money since this will sometimes drop a nickel or a dime. {{dlc|na+}} However, invincibility after taking damage does not last long enough to pick up the money without risk of death.
+** {{dlc|a+}} The coin dropped on hit can be picked up before Keeper's invincibility frames end, making Swallowed Penny even better for him.
+** If Keeper takes damage from entering a {{R|Curse Room}}, the coin will be dropped on the outside and can't be used to heal before leaving.
+*** However, if one quickly enters, exits to collect the coin, and re-enters the room before the invulnerability period ends, the Swallowed Penny allows the Curse Room to be traversed with no net loss in life. Just be wary that there may be enemies in the curse room that would lock the door and prevent the player from leaving and collecting the coin outside the curse room.
+** Obtaining Swallowed Penny means you can play the {{M|Blood Donation Machine}}, {{M|Devil Beggar}} and {{R|Sacrifice Room}} practically for free until they pay out since each time you donate a coin to them, you get a coin back.
+*** {{dlc|r}} You are no longer guaranteed to get a coin back.
+* {{i|Tech X}}: Synergizes well with Keeper's triple shot.
+* {{i|Tractor Beam}}: Will make all 3 of Keeper's tears travel along the beam, hitting a single target all at the same time and effectively increasing damage output.
+* {{dlc+|r}}{{i|IV Bag}} + {{t|Panic Button}}: Panic Button will make it so that when Keeper is about to take damage, IV Bag will activate, giving immunity frames to avoid the initial damage and having a chance to heal Keeper right away.{{dlc-}}
+
+=== Bad Items ===
+* Health Ups are useless when Keeper has maximum health ({{dlcalt|2|r=3}} Coin Hearts). They still heal him if he has unfilled Coin Heart containers.
+** {{dlc|r}} This does not apply if Keeper has yet to defeat Hush, as they can grant him a 3rd Coin Heart until that point.
+* It is not recommended to take {{i|Bum Friend}} or {{i|Bumbo}}, as they will pick up coins off the floor that could be used as health.
+* {{dlc|nr}} Taking {{i|Abaddon}} will instantly kill Keeper, since it takes away all Red Hearts (which also includes Coin Hearts) and Keeper cannot make use of the Black Hearts given. Amusingly, it will spawn a lot of flies in the process.
+* {{dlc|r}} Taking {{i|Abaddon}} will not kill Keeper as in previous versions, but it will reduce his Coin Heart containers to 1.
+* {{i|Guppy's Paw}} will remove a Coin Heart and spawn 9 blue flies. 
+** {{dlc|nr}} Removing all Coin Hearts with Guppy's Paw will not kill the Keeper immediately, but he will die upon picking up an item.
+** {{dlc|r}} Removing all Coin Hearts will kill the Keeper.
+* {{i|Maggy's Bow}}, {{i|The Jar}}, {{i|Dark Bum}}, {{i|Immaculate Conception}}, {{i|Candy Heart}}, {{i|Soul Locket}}, will not provide Keeper any benefit, as all heart pickups turn into flies.
+* {{t|Maggy's Faith}} does nothing for Keeper and will not grant 5 blue flies when traveling to the next floor, like it would if an Eternal Heart spawned.
+* {{i|Monstro's Lung}} will take a dangerously long time to charge, giving it terrible usability.
+** {{dlc|r}} {{i|Mutant Spider}} / {{i|The Inner Eye}}: Shoots 5 / 4 tears at a time with reduced fire rate. The extra tear rarely compensates for the significant fire rate decrease.
+* {{i|The Polaroid}}, {{i|The Negative}} ({{dlc|r}} though the damage up still applies), {{i|Empty Vessel}} or {{i|Whore of Babylon}} cannot be triggered by the Keeper since he can't have half a heart of health. {{Dlc|nr}} An exception is after being revived by {{i|Guppy's Collar}}, which is a Bug.
+* {{i|The Wafer}} and {{i|Cancer}} have no effect, as Coin Hearts cannot be Half Red Hearts.
+* {{i|Alabaster Box}} can only be charged with items that directly give Soul Hearts to the player, as Soul Hearts spawned on the ground will be converted into blue flies.
+* {{dlc|r}} {{t|Judas' Tongue}} is completely useless with Keeper. It won't decrease 30 Cent devil deals to 15 Cents, and does not have any other effect.
+* {{i|Heartbreak}} will remove one Coin Heart and replace it by a broken heart upon pickup.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Sticky Nickels, Super Greed Baby, Keeper holds Store Key, Keeper holds Wooden Nickel, Karma, Deep Pockets, Rib of Greed, Eye of Greed, Keeper now holds... A Penny!, Noose Baby, Crooked Penny, Keeper's Sack, Keeper's Box, The Miser, Sale Baby }}
+
+== Unlockable Starting Items ==
+* {{achievement unlock|Keeper holds Wooden Nickel  }} - Start with {{I|Wooden Nickel}}
+* {{achievement unlock|Keeper holds Store Key      }} - Start with {{T|Store Key}}
+* {{achievement unlock|Keeper now holds... A Penny!}} - Start with 1 [[Coins|coin]]
+** {{dlc|r}}{{achievement unlock|Keeper now holds... A Penny!}} - Start with 3 {{Heart|coin|size=16px}} [[Coin Heart]]s (instead of 2)
+
+== Gallery ==
+<gallery>
+File:Transition Keeper.png|Keeper's transition screen portrait.
+File:Start_Keeper.png|The spawn floor when playing Keeper.
+File:Keeper Ending 18.PNG|Keeper Isaac in Ending 18.
+</gallery>
+
+== Trivia ==
+* Keeper was publicly revealed to players through an [http://imgur.com/V2l5TaN alternate reality game] created by the developers; however, files alluding to Keeper's existence already were found after the initial release of ''Afterbirth''. With the conclusion of the [[Keeper_ARG|ARG]], a patch was released to fully add Keeper to the game as a playable character.
+* {{dlc|nr}} In the game's files, there is a character called "[[Cut Content#Old Man Keeper|Old Man Keeper]]", which was most likely meant to be the 2nd ''Afterbirth'' character instead of Keeper. However, he was replaced with this Keeper. This sprite is used for April Fool's Day's daily run since 2016, as Keeper's sprite is changed to this sprite for the day.
+* Keeper's starting health is listed as "II" on the character selection screen, despite having no red hearts. This is unique among such characters, whose health is usually listed as "-I" or "?".
+** {{dlc|r}} The starting health will become "III" after defeating {{E|Hush}} with him.
+* The Keeper was created for the sake of being "[https://twitter.com/edmundmcmillen/status/1238378074967699456 another challenge character]" for this game (the other character is {{c|The Lost}}).
+* As a secret character, Keeper does not appear on the character select screen until unlocked.
+** He shares this trait with {{C|???}}, {{C|The Lost}}, and {{C|The Forgotten|a+}}.
+* Edmund has confirmed that Keeper (and by extension, {{E|Shopkeeper}}s) is a mummified version of Isaac from previous runs.<ref>https://twitter.com/edmundmcmillen/status/1568484195252731904</ref>
+
+== Bugs ==
+{{Bug|dlc=nr|{{i|Guppy's Collar}} respawns Keeper with half a soul heart}}
+
+== References ==
+{{reflist}}
+
+{{nav|greed machine unlock|character|keeper unlock|fr=Le Gardien}}

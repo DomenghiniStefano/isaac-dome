@@ -1,0 +1,22 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 458
+ | quote       = What's in there?
+ | description = Drops a random [[trinket]]. Grants a second trinket slot.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+* Drops a random [[trinket]].
+* Grants a second trinket slot.
+
+== Interactions ==
+* {{i|Mom's Purse}}: No effect; Isaac can still only carry two trinkets.
+
+== In-game Footage ==
+{{#ev:youtube|h06XTDnm-mw}}
+
+{{nav|inventory expansion|trinket modifier}}

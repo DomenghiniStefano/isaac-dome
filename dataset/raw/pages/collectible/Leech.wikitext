@@ -1,0 +1,44 @@
+{{infobox passive collectible
+ | id          = 270
+ | quote       = Blood sucker
+ | description = Spawns a leech [[familiar]] that chases enemies, dealing ~3 damage per second. Heals a {{e|Half Red Heart}} whenever Leech kills an enemy.
+ | quality     = 2
+ | tags        = summonable monstermanual offensive
+}} {{disambig msg|the item|the monster|Leech (Enemy)}}
+
+{{cit|p}}
+
+== Effect ==
+* Spawns a crawling Leech [[familiar]] that follows Isaac. If an enemy comes near, the Leech will attack and chase it, doing 1.5 damage per tick or about 3.2 damage per second. If an enemy is killed by the Leech, Isaac will be healed by a {{e|Half Red Heart}}.
+
+== Notes ==
+* {{dlc+|r}} This item can rarely drop from destroying [[Rocks#Buckets|buckets]] in {{s|Downpour}}.{{dlc-}}
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Wormwood}}.{{dlc-}}
+* The Leech's healing effect does not affect [[characters]] that do not have [[Health|Heart containers]].
+** {{C|Keeper}} / {{C|Tainted Keeper}} will be healed by The Leech.
+* Enemies that turn into flesh piles and regenerate when killed such as {{E|Globin}}s and some [[champion|dark red champions]] regenerate quicker than the Leech can kill them. Isaac will gain half a heart each time the enemies collapse, granting an easy way to regenerate all Red Hearts. This can also open up many powerful synergies with any item that provides a benefit or resource when Isaac takes damage.
+
+== Synergies ==
+* {{R|Arcade}}s: The player can let the Leech eat {{E|Fly|text=Flies}} from the {{M|Shell Game}} and use the resulting health to gamble on the {{M|Blood Donation Machine}}.
+* {{i|BFFS!}}: Leech grows bigger and does double damage. Still only heals for a Half Red Heart.
+* {{i|E. Coli|nr}}: Enemies can be turned into {{e|Poop}} at the cost of a Half Red Heart, then consumed by the leech to regain health. Utilization of temporary immunity when hit can allow multiple enemies to be turned into poop, resulting in a net gain of health. However, when combined with Gnawed Leaf (see below), the player can simply stand still and let Leech do the dirty work.
+* {{i|Flush!|nr}}: The leech still can attack the enemies turned into poop and gain health.
+* {{i|Gnawed Leaf}}: The player can stand still and allow the Leech to clear a [[Rooms|room]], granting simple clears and easy health.
+* {{C|Tainted Bethany}}: The leech can grant blood charges by killing enemies.
+* {{c|Tainted Magdalene|r}}: Leech restores a full {{e|Red Heart}}.
+
+== Interactions ==
+* {{i|E. Coli|r}}/{{i|Flush!}}: Enemies that are turned into poop are now treated as regular poop and can't be damaged by Leech.
+* {{i|Maggy's Bow}}: No effect on healing.
+
+== In-game Footage ==
+{{#ev:youtube|mfitoa_cndc}}
+
+== Trivia ==
+* This familiar is notorious for having bad tracking AI.
+
+== Bugs ==
+{{bug|Tends to get confused when attacking {{e|Maggot}} like enemies and just moves around in the attacking animation without attacking anything until the Maggot is killed by The Player.}}
+{{bug|dlc=nr|The Leech will continuously heal the player while it's attacking {{e|Mama Gurdy}}.}}
+
+{{nav}}

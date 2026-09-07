@@ -1,0 +1,25 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 601
+ | quote       = Tears up&comma; you feel forgiven
+ | description = +0.7 [[tears]], grants an {{e|Eternal Heart}}. Allows {{r|Angel Room}}s to appear even if a Devil Deal has been taken before. Reduces the Devil/Angel room chance penalty for taking Red heart damage.
+ | quality     = 3
+ | tags        = summonable tearsup offensive lazarussharedglobal
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* +0.7 [[tears]] up.
+* Grants an {{e|Eternal Heart}}.
+* Allows {{r|Angel Room}}s to spawn even after Isaac has taken a [[Devil Room|Deal with the Devil]].
+* Mitigates the penalties to [[Devil Room#Conditions to Make Devil Rooms Appear|the chance for a deal to appear]] from taking red heart damage.
+** Damage during the stage replaces the 99% no-damage bonus with 40% instead of removing it.
+** Damage against the boss replaces the 35% no-damage bonus with 15% instead of removing it.
+** In practice, this results in a -24% chance instead of -64% for taking damage during the stage, and -44% instead of -99% for taking damage against the boss.
+
+== Trivia ==
+* [[anti:Act Of Contrition|Act of Contrition]] originates from the ''Antibirth'' mod. It originally granted an [[anti:Pickups|Immortal Heart]] instead of an Eternal Heart, a heart type that was not added in ''Repentance''. It also did not have the effect to increase the Devil/Angel chance.
+* An act of contrition is a Christian prayer that expresses regret over committing a sin and asks for forgiveness.
+
+{{nav|fr=Acte de Contrition}}

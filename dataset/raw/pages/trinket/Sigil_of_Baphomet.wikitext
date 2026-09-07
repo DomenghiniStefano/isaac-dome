@@ -1,0 +1,37 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 189
+ | quote       = Revel in death
+ | description = Grants an invulnerability shield for 1 second after killing an enemy.
+ | unlocked by = Sigil of Baphomet
+}}
+{{cit|ut|r}}
+
+== Effects ==
+* [[Temporary Buffs#Shield|Shield]]s Isaac for 1 second after killing an enemy.
+** If another enemy is killed while Isaac is shielded, another second is added to the shield's duration.
+** Up to 5 seconds of invincibility can be accumulated.
+
+== Notes ==
+* If Isaac is in range of an enemy that explodes on death, the shield will not come up before Isaac takes damage from the explosion. Other on-death effects, like firing shots, are still guarded against.
+* {{dlc|nr+}} In {{r|Arcade}}s, {{machine|Blood Donation Machine}}s or {{machine|Devil Beggar}}s can be used without losing health by killing the red flies from {{machine|Shell Game}}s and gaining a shield.
+* Additionally, losing in a {{machine|Hell Game}} always spawns a red spider, the shield generated from killing it guarantees a payout for each half-heart.
+* During the fight against {{E|Ultra Greed}}, destroying {{E|Ultra Greed Coin (Spinner)|text=Ultra Greed Coins}} will not grant a shield, despite being considered enemies.
+* Destroyed {{e|Shopkeeper}}s also grant a shield.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Having either increase the shield duration to 1.5 second and 7.5 seconds of invincibility can be accumulated. Having both increase the shield duration to 2 seconds and 10 seconds of invincibility can be accumulated.
+* {{i|Kamikaze!}}: Isaac can chain-kill enemies without taking explosion damage while the shield is active.
+
+== Interactions ==
+* [[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s don’t activate the shield or extend its duration.
+* {{i|E. Coli}} / {{i|Flush!}}: Enemies that are turned into poop don’t activate the shield or extend its duration.
+* [[Freeze|Freeze Effects]]: Enemies that are frozen don't activate the shield or extend its duration.
+** Because of this interaction, when Isaac has {{i|Uranus}}, only enemies killed by icicles from statues, bombs, familiars and other sources will activate Sigil of Baphomet's effects, thus rendering the trinket quite difficult to use.
+** {{dlc|r+}} Frozen enemies do activate the shield and can extend its duration.
+* [[Friendly]] Enemies: When friendly enemies spawned by items die, they activate the shield or extend its duration.
+
+== In-game Footage ==
+{{#ev:youtube|qEYg3B3eOo8||inline}} {{#ev:youtube|oZ9C_XIA6Z8||inline}}
+
+{{nav|fr=Sigil de Baphomet}}

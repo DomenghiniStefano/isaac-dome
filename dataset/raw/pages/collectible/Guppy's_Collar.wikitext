@@ -1,0 +1,44 @@
+{{infobox passive collectible
+ | id          = 212
+ | quote       = Eternal life?
+ | description = Grants a permanent 50% chance to respawn with 1/2 of a {{E|Red Heart}} after [[death]].
+ | quality     = 1
+ | tags        = guppy
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants a permanent 50% chance to resurrect on [[death]].
+** Resurrection leaves Isaac at half of a {{E|Red Heart}}, or half a {{E|Soul Heart}} if he had no Red Heart Containers.
+* {{transformation contribution|Guppy}}
+
+== Notes ==
+* Resurrection items activate in a [[:Category:Revival items|set order]]. Guppy's Collar is {{dlcalt|4th|r=6th}} in this order after {{p|Soul of Lazarus}}, {{i|1up!}}, {{dlcalt|{{i|Dead Cat}}, {{c|Lazarus}}' inherent extra life|r={{c|Lazarus}}' inherent extra life, {{i|Dead Cat}}}}, and {{i|Inner Child}}.
+* It is possible to obtain two collars by finding one in a {{E|Red Chest}}, without picking it up, and then finding another collar in a different Red Chest. {{dlc|nr}} However, this does not have any additional effects and does not count towards transforming into Guppy.
+** {{dlc|r}} Obtaining multiple copies of Guppy's Collar now grants extra lives, depending on how many copies are obtained (obtaining a second collar displays the lives count as '2?', and so on). The chance for Guppy's Collar to activate is defined with separate rolls, but increases the odds for one of the collars to revive Isaac. Additional collars also count towards the Guppy transformation.
+* Resurrecting in a {{r|Curse Room}} may trap Isaac if he has no way of recovering health or exiting them without losing health.
+* {{dlc|a+}} Resurrecting via Guppy's Collar during a [[Daily Challenge]] will count as a death, even if the run is eventually completed.
+* After picking up {{i|Knife Piece 2}}, Guppy's Collar gets 100% of effectivity while escaping [[Mother's Shadow]].
+
+== In-game Footage ==
+{{#ev:youtube|wK41WtFu9Hk||inline}} {{#ev:youtube|XaJJpoHisQE||inline}}
+
+== Gallery ==
+<gallery>
+File:Collectible Guppy's Collar concept.jpg|Concept drawn for Guppy's Collar.
+</gallery>
+
+== Trivia ==
+* This item is a tribute to [[Edmund McMillen]]'s cat Guppy.<ref>http://bindingofisaac.com/post/95782104184/9-lives</ref>
+* This item may also be a reference to the ''[[wikipedia:Schrödinger's Cat|Schrödinger's Cat]]'' thought experiment.
+* With this item, at any given point, Isaac will on average be resurrected once more (before he is killed). This is not dependent on how many times he has been resurrected already, a property known as [[wikipedia:Memorylessness|memorylessness]].
+
+== Bugs ==
+{{bug|When the {{c|Keeper}} is resurrected by Guppy's Collar, there is a chance he spawns with a Half Soul Heart instead of Coin Hearts. When an HP up is obtained, Keeper will have 1 Coin Heart, as well as the Half Soul Heart he had previously. When a second HP up is obtained, Keeper will lose the Half Soul Heart and have 2 Coin Hearts, like normal.|dlc=na+}}
+{{bug|Guppy's Collar can be exploited to gain infinite lives. When Isaac's last will is on the screen, close the game, re-open it, and continue the run. Isaac will appear to die again, and will also have a separate chance to be resurrected.|dlc=na+}}
+
+== References ==
+{{reflist}}
+
+{{nav|guppy|revival|cat|fr=Collier de Guppy}}

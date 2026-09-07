@@ -1,0 +1,82 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 565
+ | quote       = What a cute little thing!
+ | description = Spawns a [[familiar]] that chases enemies. After killing enough enemies, it becomes more powerful but will also try to hurt Isaac. Dealing enough damage to it returns it to normal.
+ | quality     = 1
+ | tags        = {{dlc|r+|summonable monstermanual}} offensive
+ | unlocked by = Blood Puppy
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Spawns a [[familiar]] that chases nearby enemies and deals 2 contact damage to them per tick (~8.57 per second).
+* After killing 15 enemies, Blood Puppy becomes angry, and changes in the following ways:
+** Deals 7.5 damage per tick instead of 2 (15 per second, or 90 per second while charging).
+** Charges at enemies that are aligned with it in the cardinal directions.
+*** If Blood Puppy charges into a live {{e|Bomb}}, it will get caught on its mouth, preventing it from moving until it explodes.
+** Drops a {{e|Half Red Heart}} for every 10 enemies it kills.
+** Will also try to attack Isaac, dealing a half heart of contact damage to him.
+** Can be damaged by Isaac, returning it to normal after it takes enough damage. Blood Puppy has 20 health and 90 [[armor]] (effective health is ~140-180).
+* After getting 25 more kills (40 total), the angry version evolves, gaining the following modifications:
+** Becomes much larger and deals 15 damage per tick instead of 7.5 (30 per second, or 180 per second while charging).
+** Destroys [[obstacle]]s it runs into while charging.
+** Deals a full heart of damage to Isaac instead of half a heart.
+** Drops a {{e|Red Heart}} after every 10 kills instead of a half red heart.
+** Has 50 health instead of 20 (effective health is ~400-500).
+* Each boss killed by Blood Puppy counts as killing 4 enemies.
+
+== Notes ==
+* Blood Puppy appears in the [[Bestiary]] as a type of monster if Isaac turns it back to normal after it becomes angry. This is required to complete the Bestiary.
+* Blood Puppy is not targeted by other familiars while it is angry.
+** [[Blue Fly|Blue Flies]] and other familiars that deal contact damage will still damage Blood Puppy if they happen to collide.
+** {{i|Mr. ME!}} will target Blood Puppy if the crosshair targets nothing and there are no enemies in the room, and has a chance to do so if there are enemies in the room.
+* Since {{e|Bomb}}s ignore armor, a single bomb will tame the Blood Puppy.
+* Stages 2 and 3 of Blood Puppy are an enemy for all intents and purposes, similar to {{E|Dark Esau}}. This means it can be affected by, for example, the slow effect of {{i|Broken Watch}}.
+* Friendly Blood Puppies will spawn beside Isaac when he enters a new room, while hostile ones will spawn in the middle or opposite ends of the room.
+* Once a hostile Blood Puppy spawns, it might start targeting Isaac, ignoring any enemies it may have spawned on top of. This can be dangerous, as you may unexpectedly get cornered from multiple sides right as you enter a room.
+* Starting the {{e|Mega Satan}} or {{e|Dogma}} fight while Blood Puppy is angry can be dangerous, as it will let Blood Puppy attack Isaac while he is unable to move during the boss's spawning animation.
+* {{e|Level 2 Willo}} will orbit angry Blood Puppy.
+
+== Interactions ==
+* {{dlc|nr+}} {{p|Ace of Spades}} / {{p|Ace of Clubs}} / {{p|Ace of Diamonds}} / {{p|Ace of Hearts}}: Using them on an angry Blood Puppy will create the respective pickup and tame it.
+* {{i|BFFS!}}: Only increases the size and damage of Blood Puppy during its first phase.
+* {{I|Box of Friends}}: Spawns another tamed Blood Puppy.
+* {{I|C Section}}: C Section babies do not home on angry Blood Puppy.
+* {{I|Camo Undies}}: While the camo effect is active, stages 2 and 3 of Blood Puppy will not target Isaac, but will still target other enemies.
+* {{i|Eraser}}: Using Eraser on Blood Puppy while it's angry will permanently prevent it from advancing to the erased phase. Using it on phase two will prevent it from becoming angry altogether.
+* {{I|Flush!}}: Using Flush! will instantly tame an angry Blood Puppy and create a {{e|Poop}}.
+* [[Freeze]] effects: "Killing" an angry Blood Puppy by freezing it will cause it to stay frozen until Isaac touches it or leaves the room, causing the frozen Blood Puppy to revert back to its tamed phase.
+* {{I|Friendly Ball}}: Using the ball on an angered Blood Puppy will instantly tame it. Using the ball again results in a purely cosmetic blood explosion.
+* [[Friendly]] enemies: Either angry version of Blood Puppy will target friendly enemies as well and can drag them along with it when it charges them. Blood Puppy cannot damage friendly enemies; however, friendly enemies can damage Blood Puppy despite not targeting it outright.
+* {{i|GB Bug}}: Hitting Blood Puppy with GB Bug will transform it into a random enemy and spawn a tamed Blood Puppy.
+* {{i|God's Flesh}}: If an angry Blood Puppy is shot with a God's Flesh tear, Isaac can instantly change it back to a tamed Blood Puppy by touching it.
+* {{I|Humbleing Bundle}}: Allows an angry Blood Puppy to drop {{e|Double Heart}}s.
+* {{i|Meat Cleaver}}: If Blood Puppy is angry, splits it into two copies. One copy can level up and be tamed like normal, but the other cannot level up and dies instead of being tamed.
+* {{i|Spider Mod}}: An angry Blood Puppy can be inflicted with a random [[status effect]] if the spider comes into contact with it.
+** Status effects will persist through multiple rooms.
+* Using Horse Pill Pheromones on angry Blood Puppy will make it friendly until it becomes angrier or dies, preventing it from dealing damage to Isaac.
+
+== In-game footage ==
+{{#ev:youtube|rAxK_yMQw70}}
+
+== Gallery ==
+<gallery>
+File:Familiar bloodpuppy level1.png|A tame Blood Puppy.
+File:Familiar bloodpuppy level2.png|An angry Blood Puppy.
+File:Familiar bloodpuppy level3.png|A ''very'' angry Blood Puppy.
+File:Blood Puppy Dev Sketches.png|Concept art of Blood Puppy by Edmund McMillen.
+</gallery>
+
+{{nav|lilith unlock|mother unlock|fr=Chiot de Sang}}
+
+{{infobox monster
+ | hidden      = yes
+ | name        = Blood Puppy
+ | dlc         = r
+ | id          = 802
+ | variant     = 0
+ | base hp     = 20
+ | behavior    = Quickly moves around the room, attacking and charging at other monsters and Isaac when they get in its line of sight.
+}}

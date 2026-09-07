@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 621
+ | quote       = Full HP + temporary DMG up
+ | description = Refills all [[heart container]]s. Grants an enormous [[damage]] boost that wears off over time.
+ | quality     = 2
+ | tags        = offensive
+ | unlocked by = Red Stew
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* On pickup, fully [[Health#Red Heart Containers|heals]] Isaac and gives him a temporary +21.6 [[damage]] up.
+** The damage upgrade scales down to 0 over the course of three minutes. Due to how the [[Damage#Effective Damage|damage formula]] works, the damage upgrade scales down faster over time, starting at -~0.015 per half second and increasing to -~.1 per half second as the bonus approaches 0.
+** While Red Stew is active, Isaac gains an effect similar to {{i|Lusty Blood}}, gaining a small damage bonus every time he kills an enemy. This damage bonus persists between rooms and floors, allowing Isaac to sustain the temporary damage up for longer than he otherwise would if he manages to kill many enemies. This effect disappears once Red Stew's damage bonus completely runs out.
+
+== Notes ==
+* Due to the high amount of damage you temporarily gain, this item is extremely effective in [[Greed Mode]], as all fights are done within the same room and you are easily able to make the most out of it.
+* The damage bonuses on kills can exceed the damage increase given from picking up Red Stew.
+* The default length of Red Stew is 5390 game frames, which is just short of 3 minutes. (This will be the length if no enemies are killed during the effect.)
+
+== Synergies ==
+* {{i|Rock Bottom}}: The damage up becomes permanent and if Isaac kills enemies fast enough it can increase even further. It would be difficult to gain further damages 3 minutes later, but the first damage up is so high that this isn't a real problem.
+
+== Interactions ==
+* [[Cards and Runes|Ace Cards]]: Turning enemies into [[pickup]]s doesn’t grant the damage bonus.
+* {{i|E. Coli}}/{{i|Flush!}}: Turning enemies into poop doesn’t grant the damage bonus.
+* [[Freeze|Freeze Effects]]: Enemies that die from being frozen don't grant the damage bonus.
+** {{dlc|r+}} Frozen enemies do grant the damage bonus.
+* {{i|Red Stew}}: Picking up another stew will reset the bonus to its full amount.
+* {{C|Tainted Bethany}}: Grants 12 blood charges.
+
+== In-game footage ==
+{{#ev:youtube|https://youtu.be/N_98xsPNqfw}}
+
+== Trivia ==
+* [[anti:Red Stew|Red Stew]] originates from the ''Antibirth'' mod.
+* In the Book of Genesis in the Bible, Esau sold his birthright to his younger brother, Jacob, for a serving of lentil stew, so that Jacob would receive their dying father's blessing instead.
+** The item's powerful but temporary effects reflect this exchange, akin to the idiom "to sell one's birthright for a mess of pottage", which itself alludes to the Genesis story.
+* Prior to [[V1.7.5]], Red Stew was the only unlockable item added in Repentance with a quality of 0.
+
+{{nav|jacob and esau unlock|satan unlock}}

@@ -1,0 +1,55 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 711
+ | quote       = Twist of fate
+ | description = Item pedestals have a second un-interactable "ghostly" item behind them. Activating will flip the real and ghostly items around. If playing as {{c|Tainted Lazarus}}, also flips between them and {{c|Dead Tainted Lazarus}}.
+ | quality     = 4
+ | tags        = offensive nocantrip
+ | recharge    = 6
+ | unlocked by = Flip
+}}
+
+{{cit|ua|r}} It is the starting item for {{C|Tainted Lazarus}}.
+
+== Effects ==
+* While holding Flip, when Isaac enters a new room containing an item ({{r|Treasure Room}}, {{r|Shop}}, etc.), the item pedestal will have a second "ghostly" item behind it.
+** The real item can be interacted with normally, while the ghostly item cannot.
+** The ghostly item will vanish if there is no real item on the pedestal and Isaac leaves the room.
+* Upon use, flips all real / ghostly items around on pedestals, allowing Isaac to collect the ghostly items. Does not affect pedestals that do not contain a ghostly item.
+** As long as Isaac does not exit the room, empty pedestals can be flipped, meaning both the original item and the flipped ghostly item can be collected.
+* If playing as {{C|Tainted Lazarus}}, activating it also flips between them and {{C|Dead Tainted Lazarus}}.
+** {{dlc|r+}} Tainted Lazarus' Flip also only requires 4 charges.
+
+== Notes ==
+* Flip has no effect on item pedestals that do not generate upon the creation of the room (i.e. Boss items, items from chests / beggars, etc.).
+* Buying a real item, such as from a {{R|Shop}} or {{R|Devil Room}}, will also buy the ghostly version for free, although it can still only be obtained using Flip.
+** Flipping an unbought item will update the price to the ghostly item's. 
+* Ghostly items do not count as seen or collected before they have been flipped into existence.
+** Once a ghostly item has been chosen for a pedestal by encountering it, it will stay even if collected elsewhere before flipping.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a small white Isaac head wisp in the middle ring with high health. If you are playing Tainted Lazarus, the wisp is given to the form that isn't holding Book of Virtues. A wisp is also granted when Flip is automatically used by clearing the room as Tainted Lazarus.}}
+* {{i|Eternal D6}}: When Eternal D6 makes an item disappear, the ghostly item behind it will not be gone and can be taken after using Flip.
+** Upon using Flip, the new item will be free to take, even if the original item had to be purchased with money or health.
+
+== Interactions ==
+* {{c|Tainted Isaac}} /  {{I|Glitched Crown}}: The cycling effect only gets applied to the primary item; the ghostly item does not cycle. Using Flip on a cycling item pedestal will cause the currently visible item to switch places with the ghostly one, after which neither item will cycle.
+* {{i|The D6}} / {{p|Perthro}} / {{p|Dice Shard}}, etc.: Only rerolls visible item. Ghostly items remain unchanged.
+* {{i|Car Battery}}: No effect.
+* {{i|Damocles}}: Additional pedestals will not have ghostly items.
+* {{i|Void}}: Ghostly items no longer appear when absorbed by Void, rendering Flip useless.
+
+== In-game footage ==
+{{#ev:youtube|butrLBgQJ6g}}
+
+== Gallery ==
+<gallery>
+File:Collectible Flip 2 icon.png|Flip item's icon when {{C|Dead Tainted Lazarus}} is present.
+</gallery>
+
+== Trivia ==
+* Flip's icons are the alchemy symbols for death and life, respectively.
+* Prior to patch [[V1.7.6]], Flip's pickup quote was "Life and death".
+* Prior to patch V1.7.6, using Flip as a character other than Tainted Lazarus after having previously used {{i|Esau Jr.}} would switch between Esau Jr. and the base character. This was most likely a bug, as Flip was not yet obtainable for other characters besides using {{i|Death Certificate}} or as a starting item for {{c|Eden}}.
+
+{{nav|tainted lazarus unlock|delirium unlock|fr=Inversion}}

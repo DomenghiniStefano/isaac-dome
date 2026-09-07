@@ -1,0 +1,56 @@
+{{infobox boss
+ | name        = Peep
+ | id          = 68
+ | environment = <u>Boss</u><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{dlc|r}}{{floor|Depths}}<br><u>Degraded Boss</u><br>{{floor|Womb}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 450
+ | pool        = {{ip|Boss}} <br> {{i|Free Lemonade|r+}} (1% chance)
+}}
+
+'''Peep''' is a [[boss]] that can appear in all environments of [[Chapter 2]] ({{s|Caves}}, {{s|Catacombs}}, {{s|Flooded Caves}}).
+
+== Behavior ==
+* Creates puddles of [[Creep#Yellow Creep|Yellow Creep]] around him.
+* Fires eight yellow projectiles in all directions with varying orientation.
+* Jumps into the air and travels a moderate distance in Isaac's direction, sending out a ring of twelve yellow projectiles upon landing.
+* {{e|Peep Eye|text=Peep's eyeballs}} dislocate and start floating around the room at specific points in his health. One pops off at 2/3rds, and the other pops off at 1/3rd.
+** Peep's eyeballs float diagonally bouncing off of walls and do not take damage. They block Isaac's tears and inflict contact damage.
+Peep deals a whole heart of contact damage.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|8}}: Starts the battle with both his eyes popped out, similar to {{e|The Bloat}}.
+: {{bc|12}}: 15% smaller, moves faster, and leaves a constant trail of Yellow Creep.
+
+== Gallery ==
+<gallery>
+File:Boss Peep oneeyed ingame.png|Peep missing one eye.
+File:Boss Peep eyeless ingame.png|Peep missing both of his eyes.
+File:Boss Peep no eyes dark cyan ingame.png|Cyan Champion Peep.
+File:Boss Peep two eyes yellow ingame.png|Yellow Champion Peep.
+File:Boss Peep one eye yellow ingame.png|Yellow Champion Peep missing one eye.
+File:Boss Peep no eyes yellow ingame.png|Yellow Champion Peep missing both of his eyes.
+File:Peep Eye.png|A Peep Eye.
+File:Peep eye peep yellow.png|Unique design for a Peep Eye spawned by Yellow Champion Peep.
+File:Boss Delirium Peep ingame.png|Peep as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Notes ==
+* Peep's eyeballs can be destroyed with {{p|Chaos Card}}, {{i|Euthanasia}}, {{i|God's Flesh}}, or {{i|Little Horn}}.
+
+== Trivia ==
+* Peep appeared in the original ''The Binding of Isaac.''
+* Peep's name could come from the word "pee", which could allude to Peep urinating yellow creep while battling.
+** Peep's name could also be a shortened version of "peeper", which is slang for an eye.
+* His posthumous version is The Bloat.
+* He has 3 unused sprites in his spritesheet that were removed in The Bloat spritesheet.
+* {{Dlc|r}}Yellow Peep's pupils diverge slightly, resembling {{I|Acid Baby}}.
+
+== Bugs ==
+{{bug|dlc=nr|Peep's Eyes have the same collision radius as Peep itself, which results in the eyes being difficult to dodge since the hitbox doesn't match up with the eyes' visual size.}}
+
+{{nav|boss|fr=La Flaque}}
+
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Rebirth]]

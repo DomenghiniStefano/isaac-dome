@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | tear app scale = 1/2
+ | id             = 259
+ | quote          = {{dlcalt|Fear shot|r=DMG up + fear shot}}
+ | description    = +1 [[damage]], adds a chance to shoot [[fear|fear tears]].
+ | quality        = 3
+ | tags           = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +1 [[damage]].
+* Adds a chance to shoot [[fear|fear tears]], causing enemies to run away from Isaac.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Dark One}}.{{dlc-}}
+* Fear tear effect depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 3 - \left \lfloor \mathit{Luck} * 0.1 \right \rfloor}</math>
+** At base luck (0), the chance is 33.33%, maxing out at 100% at 20 luck.
+** This makes Dark Matter significantly better at inflicting fear than {{i|Abaddon}} or {{i|Mom's Perfume}}.
+* {{dlc+|r+}} Dark Matter's quality is treated as 2 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{i|Brimstone}}: Laser applies fear to enemies more consistently due to its tick rate.
+* {{i|Compound Fracture}}/{{i|Cricket's Body}}/{{i|The Parasite}}: Chance for tears and split tears to cause fear. If the main tear causes fear, the split tears cause fear too.
+
+== Interactions ==
+* {{i|Haemolacria}}: Tear appearance stays the same; only the main tear can cause fear.
+* {{i|Lachryphagy}}: If a fear tear is fed, all burst tears cause fear. If a normal tear is fed, the burst tears cannot cause fear.
+* {{i|The Ludovico Technique}}: Tear occasionally changes appearance to Dark Matter tears and causes fear.
+
+== In-game Footage ==
+{{#ev:youtube|o-6YQzXm_Ww}}
+
+== Trivia ==
+* This item is used in {{chal|Darkness Falls}}.
+* [[wikipedia:Dark_Matter|Dark Matter]] is a hypothetical form of matter that is thought to account for over 80% of all the matter in the universe. In media, dark matter is often portrayed as an evil element or demonic power, which explains why this item is found in Devil Rooms.
+
+{{nav|fr=Matière Noire}}

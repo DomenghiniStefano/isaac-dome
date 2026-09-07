@@ -1,0 +1,40 @@
+{{infobox trinket
+ | name        = The Left Hand
+ | id          = 61
+ | quote       = The left-hand path reaps dark rewards
+ | description = Replaces all types of [[Chest]]s with {{E|Red Chest}}s.
+ | oldpool     = Dropped by [[Ultra Pride]]
+ | unlocked by = The Left Hand
+}}
+{{distinguish|Monkey Paw}}
+
+{{cit|ut}}
+
+== Effects ==
+* Replaces all types of [[Chest]]s with {{E|Red Chest}}s.
+
+== Notes ==
+* Killing Edmund last in an {{E|Ultra Pride}} fight will drop The Left Hand, even if Isaac is already carrying it.
+* {{dlc|nr}} The effect includes Chests already spawned. Entering a room that previously contained other types of Chests while holding The Left Hand will turn them into Red Chests permanently.
+** {{dlc|r}} Chests that have already spawned are not converted into Red Chests.
+* It is advised to drop The Left Hand (by holding {{plat|PC}} ''CTRL'' key for few seconds / {{plat|PS4, Vita}} R2 for 3 seconds / {{plat|XboxOne}} RT for 3 seconds / {{plat|3DS, Switch}} ZR for a few seconds) before entering {{s|Chest}}, as non-Red Chests always contain item pedestals on this floor, especially the 4 located in the starting room.
+** {{dlc|nr}} Isaac may prefer Red Chests for their possible {{E|Soul Heart}}s or Red Chest items, at the expense of guaranteed items.
+** {{dlc|r}} {{E|Locked Chest}}s converted in {{s|Chest}}'s starting room will contain Devil Deals, potentially allowing for more powerful items, but at the cost of Hearts.
+*** Red Chests found past the starting rooms of either {{s|Chest}} or {{s|Dark Room}} will contain regular Red Chest drops. Dropping the trinket before leaving the starting room is advised.
+* {{dlc|r}} {{E|Bomb Chest}}s are affected by The Left Hand. {{E|Old Chest}}s and {{E|Mega Chest}}s are not affected.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Red chests drop an additional pickup. Additionally prevents red chests from dropping enemy spiders if isaac has both {{A|Golden Trinket|n}} and {{i|Mom's Box|n}}.
+
+== Interactions ==
+* {{t|Gilded Key}}: Overridden by The Left Hand.
+* {{i|Sharp Key}}: Enemies killed by keys will only give the contents of red chests allowing items to be obtained through Sharp Key more consistently.
+
+== In-game Footage ==
+{{#ev:youtube|XOQa0M0aK2g||inline}} {{#ev:youtube|FG729-p2nZI||inline}}
+
+== Trivia ==
+* The Left Hand is a reference to occult beliefs in which the "The left hand path" is associated to black magic.
+* The Left Hand is the only item in the game with 2 separate conditions for unlocking it, being unlocked by killing {{E|Ultra Pride}}, or by defeating {{E|???}} in {{s|Chest}} as {{c|Judas}}
+
+{{nav|judas unlock|blue baby boss unlock|fr=Main Gauche}}

@@ -1,0 +1,22 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 105
+ | quote       = I wonder what it is
+ | description = Taking damage has a small chance to destroy the trinket and spawn {{i|Lunch}}.
+}}
+{{disambig msg|the trinket|the item|Lunch}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* Taking damage has a {{dlc|nr+}} 2% / {{dlc|r+}} 5% chance to destroy the trinket and spawn {{i|Lunch}}.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Adds +5% chance to destroy the trinket upon taking damage per copy.
+* {{t|Bag Lunch|nr}}: Two copies cannot be held at the same time.
+
+== In-game Footage ==
+{{#ev:youtube|jbas-sd7mGI}}
+
+{{nav|fr=Sac de Friandises}}
+[[Category:Damage-triggered items]]

@@ -1,0 +1,69 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 526
+ | quote       = Lil harbingers!
+ | description = Spawns a random [[Harbinger]] [[familiar]] that changes every 10 seconds. Harbingers have different behaviors and spawn themed [[Locust]]s.
+ | quality     = 2
+ | tags        = summonable {{dlc|r+|monstermanual}} offensive
+ | unlocked by = 7 Seals
+}}
+
+{{cit|up|a+3}}
+
+== Effects ==
+* Spawns a random [[Harbinger]] [[familiar]] that changes every 10 seconds. All harbingers deal contact damage to enemies and periodically spawn [[locust]]s if Isaac currently doesn't have any, though each harbinger behaves slightly differently:
+** {{e|Famine}} wanders around the room, leaves a trail of slowing black creep, deals 0.5 contact damage per tick or 15 damage per second, and spawns [[Locust of Famine|yellow locusts]] every 3 seconds that deal double Isaac's damage and slows enemies.
+** {{e|Pestilence}} wanders around the room, leaves a trail of green creep that deals 1 damage per tick or 30 damage per second, deals 0.5 contact damage per tick or 15 damage per second, and spawns [[Locust of Pestilence|green locusts]] every 3 seconds that deal double Isaac's damage and poisons enemies, which deals double Isaac's damage over time.
+** {{e|War}} chases enemies, moves faster than the other Harbingers, deals 1.5 contact damage per tick or 45 damage per second, and spawns [[Locust of War|red locusts]] every 5 seconds which detonates upon impact with enemies, dealing double tear damage for the impact of the locust and 60 damage for the explosion. The explosion synergizes with multiple bomb related items.
+** {{e|Death}} chases enemies, deals 1.5 contact damage per tick or 45 damage per second, and spawns [[Locust of Death|black locusts]] every 3 seconds that deal quadruple Isaac's damage, applied as two hits of double damage.
+** {{e|Conquest}} wanders around the room, deals 0.5 contact damage per tick or 15 damage per second, and spawns two [[Locust of Conquest|white locusts]] at a time every 2 seconds that deal double Isaac's damage.
+*** {{dlc|nr}} Conquest ignores the locust spawn timer.
+
+== Notes ==
+* {{dlc|r}} Explosive locusts have a larger aggro range than all other locusts. They will target an enemy from further away.
+* {{dlc|nr}}If Conquest is on top of an enemy when Isaac has no white locusts, it will spawn locusts at an incredibly high rate and deal a lot of damage.
+* If an enemy is large enough to stand on multiple segments of Pestilence's creep trail, the damage from each pool of creep will stack.
+* The locusts that War spawns can damage Isaac if they explode near him.
+
+== Synergies ==
+* {{i|BFFS!}}: Increases Horsemens' size and doubles their contact damage. Does not affect locusts spawned.
+* {{i|Bomber Boy|r}}: War's locusts explode in a small horizontal cross-shape pattern.
+* {{i|Box of Friends}}: Creates another random horseman that can be different from the original.
+** This makes it possible to gain multiple varying horsemen and gain all of their locusts at one time.
+* {{i|Brimstone Bombs}}: War's locusts will shoot out four brimstone beams in a + formation after hitting an enemy.
+* {{i|Glitter Bombs|r}}: Locust explosions have a chance to spawn pickups or trinkets.
+* {{i|Hive Mind}}: Increases locusts' size and doubles their damage.
+** Red locusts’ impact damage is doubled and the explosion damage is increased to 85.
+* {{i|Sad Bombs}}: War's locusts fire a ring of ten tears outward upon detonation, which are affected by Isaac's tear modifiers, and deal damage equal to 15 + 0.6x, where x is Isaac's [[Damage]].
+
+== Interactions ==
+* {{t|Fish Tail}}: Despite working with the locust trinkets, it does not double locusts from any of the 7 Seals Horsemen.
+
+== In-game Footage ==
+{{#ev:youtube|ZYqQomOhHzY}}
+
+== Trivia ==
+* 7 Seals is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=848969396 this Steam Workshop item] by Ashkait and Scayze.
+** In the original mod, Conquest was able to horizontally charge with multiple copies of himself, just like the [[Conquest|real boss]].
+* The 7 Seals is a phrase in the Book of Revelation that refers to the 7 symbolic seals, which explains why it summons miniature Harbingers.
+* If all 5 Harbingers were defeated on a save file before Booster Pack #5 was installed, defeating any normal boss will unlock 7 Seals.
+* 7 Seals was given a new sprite in Booster Pack #4. The harbinger familiars also got new sprites, based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1098300666 this Steam Workshop item] by Quartz.
+* 7 Seals is one of only five items to appear in both the Angel and Devil item pools, the others being {{i|Duality}}, {{i|Lil Delirium}}, {{i|Void}} and {{i|Purgatory}}.
+* Although the Headless Horseman is a horseman, it isn't represented in the 7 Seals roster.
+* Its achievement popup graphic was changed in [[v1.7.6]]; the previous one resembled its Steam Workshop sprite, and the new one resembles its actual in-game appearance after it officially released.
+* The mini harbinger familiars use the pre-repentance designs of their boss counterparts.
+
+== Gallery ==
+<gallery>
+File:Collectible 7 Seals Booster Pack 3 icon.png|7 Seal's original appearance prior to [[Booster Pack #4]].
+File:Famine.png|Lil' Famine familiar.
+File:Pestilence 7S.png|Lil' Pestilence familiar.
+File:War.png|Lil' War familiar.
+File:Death.png|Lil' Death familiar.
+File:Conquest.png|Lil' Conquest familiar.
+</gallery>
+
+== Bugs ==
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room from the one he is currently in (such as by teleporting to the previous room then using it again) will duplicate the locusts.}}
+
+{{nav|booster pack|locust|fr=Livre des 7 Sceaux}}

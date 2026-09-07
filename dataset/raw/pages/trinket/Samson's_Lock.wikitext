@@ -1,0 +1,38 @@
+{{infobox trinket
+ | name        = Samson's Lock
+ | id          = 58
+ | quote       = Your rage grows
+ | description = 1/15 chance to gain +0.5 [[damage]] for the current room each time an enemy dies.
+ | unlocked by = Samson's Lock
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* 1/15 chance to increase [[damage]] by 0.5 for the current room each time an enemy dies.
+** Samson's Lock can activate up to 10 times per room.
+** The activation chance depends on the [[Attributes#Luck|Luck]] stat and goes up to 100% with 10 Luck.
+
+== Notes ==
+* The effect can also be activated by destroying {{e|Shopkeeper}}s.
+
+== Synergies ==
+* {{I|Lusty Blood}}: Both the item and the trinket stack, granting 1 damage per kill. With 100% proc rate on the Lock, Isaac may gain up to 10 damage after 10 kills.
+* {{I|Rock Bottom}}: Preserves the highest bonus earned between rooms.
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: At base luck, having either increases the chance to 13% and having both to 25%.
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that are turned into [[pickup]]s don’t count towards the Samson's Lock counter.
+* {{i|E. Coli}} / {{i|Flush!}}: Enemies that are turned into poop don't count towards the Samson's Lock counter.
+* {{dlc+|rnr+}}[[Freeze|Freeze Effects]]: Enemies that are frozen don't count towards the Samson's Lock counter.
+** Because of this interaction, when Isaac has {{i|Uranus}}, only enemies killed by icicles from statues, bombs, familiars and other sources will increment Samson's Lock's counter, thus rendering Samson's Lock quite difficult to use.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|Cd0gHjoJMnU}}
+
+== Trivia ==
+* According to the Bible, [[Wikipedia:Samson|Samson]] was given supernatural strength by God to fight his enemies, the Philistines, and perform heroic acts; but when he was tricked into allowing his hair to be cut by a Philistine woman named Delilah, Samson was powerless.
+* This trinket is a reference to the effect of {{i|Bloody Lust}} (Samson's starting item) in the original game, which was later changed in ''Rebirth'' and added in ''Afterbirth'' as the item {{I|Lusty Blood}}.
+* This trinket has the same flavor text as {{t|Red Patch}}.
+
+{{nav|samson unlock|the lamb unlock|fr=Mèche de Samson}}

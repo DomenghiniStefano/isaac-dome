@@ -1,0 +1,36 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 181
+ | quote       = Fun extras
+ | description = Once per room, using an active item triggers another random active item effect.
+ | unlocked by = Expansion Pack
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Upon use of an [[activated item]], activates the effect of another random activated item.
+** The random effect is any activated item with a charge time of 1 or 2 rooms (with the exception of {{I|Metronome}}, {{I|D infinity}}, and {{I|Esau Jr.}}.) View the page on activated items for a complete list.
+** Timed-recharge and infinite-use items trigger the effect once per room. Re-entering the room will allow Expansion Pack to trigger again.
+
+== Notes ==
+* Effects from one-time-use, timed-recharge, and infinite-use items will not be produced by Expansion Pack.
+* {{i|Dead Sea Scrolls}} qualifies for Expansion Pack as its charge time is 2 rooms. This may result in activations of items not normally selectable by Expansion Pack.
+* If Expansion Pack uses an item that requires Isaac to shoot to activate it (like {{i|Bob's Rotten Head}} or {{i|Shoop da Whoop!}}), using it will be counted as another item use and activate Expansion Pack an additional time.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Having either activates the effect of another random 1 or 2 charge active item. Having both activates 2 another random 1 or 2 charge and 1 random 3 charge active item.
+
+== Tips ==
+* If Isaac has an active item that recharges over time and doesn't require resources to use, Expansion Pack can be used indefinitely to repeatedly activate certain effects. Effects tied to Dead Sea Scrolls specifically will be noted with *asterisks*:
+** {{i|Bob's Rotten Head}}/{{i|Doctor's Remote}}/{{i|Mr. Boom}}/{{i|Mine Crafter}}/*{{i|Best Friend}}*: Allows Isaac to destroy rocks and open {{R|Secret Room}} doors without spending resources.
+** {{i|Dad's Key}}/{{i|Teleport!}}: Lets Isaac enter locked rooms without spending resources.
+** {{i|Unicorn Stump}}/*{{i|Book of Shadows}}*/*{{i|The Gamekid}}*/*{{i|My Little Unicorn}}*: Gives Isaac invincibility, allowing him to use {{Machine|Blood Donation Machine}}s, {{Machine|Devil Beggar}}s, etc. without spending health.
+** {{i|Box of Spiders}}/{{i|Guppy's Head}}/{{i|Compost}}: Allows Isaac generate infinite [[Blue Flies]] and [[Blue Spider]]s.
+** {{i|The Poop}}/{{i|Wooden Nickel}}/*{{i|The Book of Sin}}*/*{{i|Deck of Cards}}*/*{{i|Mom's Bottle of Pills}}*: Allows Isaac to generate infinite resources.
+** {{i|Fortune Cookie}}/*{{i|Book of Revelations}}*/*{{i|Crystal Ball}}*/*{{i|The Nail}}*/*{{i|Prayer Card}}*/*{{i|Yum Heart}}*: Allows Isaac to generate infinite health.
+*** The health gain can be negated by {{i|Teleport!}} teleporting Isaac into the {{r|Curse Room}} (if one is present on the floor) or *{{i|Monstro's Tooth}}* making {{E|Monstro}} land on Isaac (if he stands still).
+** {{i|Eternal D6}}: Allows Isaac to reroll items.
+* If Isaac's active item requires resources to use or doesn't recharge over time, its best use with Expansion Pack is during combat in a manner similar to {{E|Bomb}}s, due to the prevalence of explosives and effects that can damage enemies in the pool of effects Expansion Pack can pull from.
+
+{{nav|active modifier|tainted bethany unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Pack d'Extension}}

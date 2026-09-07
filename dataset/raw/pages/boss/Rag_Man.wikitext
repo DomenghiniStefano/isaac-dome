@@ -1,0 +1,66 @@
+{{infobox boss
+ | dlc         = a
+ | name        = Rag Man
+ | id          = 405
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{room|Boss Rush}}<br>{{dlc|r}}<br>{{floor|Cellar}}{{floor|Burning Basement}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Double Trouble</u><br>{{floor|Depths}}{{floor|Necropolis}}<br>(with [[Little Horn]])<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Cathedral}}{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}<br>{{room|I AM ERROR}}{{room|Super Secret}}<br><u>Alternate path</u><br>{{floor|Mausoleum}}<br>{{room|I AM ERROR}}{{room|Super Secret}}
+ | base hp     = {{dlcalt|250|a+=200}}
+ | pool        = {{ip|Boss}} <br> {{dlc|r+}} {{i|Box of Spiders}} (1% chance)
+ | unlocked by = Something wicked this way comes!
+}}
+
+'''Rag Man''' is a [[boss]] added in ''[[The Binding of Isaac: Afterbirth]]'' that can appear:
+* {{Dlc|nr}} In all environments of [[Chapter 1]] ({{s|Basement}}, {{s|Cellar}}, {{s|Burning Basement}}).
+* {{dlc+|r}} Only in the {{s|Cellar}} and the {{s|Burning Basement}}.{{dlc-}}
+
+== Behavior ==
+Rag Man chases Isaac if there are no {{e|Rag Man's Ragling}}s alive and can stop to perform the following attacks:
+* Throws his head towards Isaac. The head rolls for a bit, after which it turns into a Rag Man's Ragling. His head then reappears on his body. While his head is rolling, his body walks around aimlessly, occasionally shooting a homing projectile in a random direction, behaving similar to a {{e|Gusher}}.
+** The head has 25 HP and can be shot to damage both Rag Man and the Ragling spawned from it.
+** Rag Man's Raglings leave remains on the ground after death. If the head is destroyed before transforming, it still creates a Ragling's remains.
+** Rag Man can only spawn up to 4 Raglings.
+** If there are any Rag Man's Raglings alive, Rag Man switches from chasing Isaac to following one of his Raglings.
+* Revives all nearby Raglings from their remains and heals himself for 10 HP during the process, regardless of the number of Raglings resurrected.
+** By doing this, he can overheal above his original HP amount of 200.
+* Fires 1, 3, or 5 homing projectiles at Isaac in quick succession.
+Once Rag Man is killed, his Raglings' remains disappear, and the Raglings that are still alive won't leave remains upon death.
+* {{dlc|r}} Raglings that are still alive will instantly die once Rag Man is killed even if they were not originally spawned by Rag Man himself.
+** However, they will not die if they're in their spawning/head stage when Rag Man was killed.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18|dlc=a+}}: The head roll attack spawns 1-2 {{e|Spider}}s instead of a Ragling. He fires a spray of 3 arcing projectiles, instead of a resurrection attack. He can perform this attack at any time and it will still heal him.
+: {{bc|1|dlc=a+}}: Does not fire homing bullets, and instead constantly creates and revives Raglings. The Raglings spawned by this version have the same red color as Rag Man and have 19.8 HP (34% less than the normal ones).
+
+== Gallery ==
+<gallery>
+File:Boss Rag Man black ingame.png|Black Champion Rag Man.
+File:Boss Rag Man red ingame.png|Red Champion Rag Man.
+File:Rag_man's_ragling_rag_man_red.png|Unique design for Rag Man's Ragling spawned by Red Champion Rag Man.
+File:Boss Delirium Rag Man ingame.png|Rag Man as one of {{e|Delirium}}'s forms.
+File:Ragman concept.png|Concept art.
+File:Afterbirth Boss Concepts.jpg|Rag Man's design, along with those of other Afterbirth/Afterbirth† bosses, by Edmund McMillen.
+</gallery>
+
+== Notes ==
+* Rag Man will often be accompanied by his own Raglings at the start of the battle, but they aren't able to leave remains upon death.
+* He can also start surrounded by 8 spiders.
+* The health bar of Rag Man will flash orange for a short time to indicate that he is healing.
+* Killing Rag Man's spawned Raglings with {{i|Lusty Blood|n}} doesn't boost Isaac's damage.
+* Rag Man's head can be caught using the {{i|Friendly Ball|n}}.
+
+== Trivia ==
+* His name comes from a [http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=1740 ''Magic: The Gathering'' card].
+* According to a [https://twitter.com/edmundmcmillen/status/896895624875999233 tweet by Edmund McMillen], the theme comes from an old character he made years ago, called "Ghost".
+* Rag Man is referred to as male in Edmund's design documents.
+* Edmund mentioned that it is highly likely that Rag Man can be also be found in [[Crawl Space]]s in addition to being a normal boss. However, this is not the case, though Rag Man can be found in an [[I AM ERROR]] room and a {{dlc|na+}} [[Closets|Closet]].
+* Rag Man is also a term for the Devil.
+* Rag Man is very similar in appearance to a [[wikipedia:Mummy|Mummy]], the result of an ancient practice to preserve corpses by embalming them and wrapping them in bandages.
+* If Rag Man's head is [[Shrink|Shrunk]] while rolling, a lower body can be seen.
+* {{e|Rag Mega}} is an evolved version of Rag Man.
+* Originally, the End Is Nigh's protagonist, Ash, was going to [https://twitter.com/edmundmcmillen/status/1123390193820504064 look similar to Rag Man, but with legs and one arm]. However, Edmund thought the design looked bad, so he cut off his body and removed the rags.
+
+{{nav|blue baby boss unlock|boss|fr=Toutânhaillons}}
+[[Category:Chapter 1 bosses]]
+[[Category:Basement bosses]]
+[[Category:Cellar bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Debut bosses in Afterbirth]]

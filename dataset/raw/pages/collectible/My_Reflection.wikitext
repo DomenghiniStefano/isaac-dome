@@ -1,0 +1,78 @@
+{{infobox passive collectible
+ | id          = 5
+ | quote       = Boomerang tears {{dlc|r|+ DMG up + luck down}}
+ | description = Gives Isaac's tears a boomerang effect. {{dlc|nr}} +1.5 [[range]], +1 [[tear falling speed]], x1.6 [[shot speed]] multiplier. {{dlc|r}} 2x + 1.5 [[range]], +1.5 [[damage]], -1 [[luck]], 1.6x [[shot speed]] multiplier.
+ | quality     = {{dlcalt|2|r+=3}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Isaac's tears travel a short distance, then reverse direction and return to Isaac.
+** The tears are constantly pulled towards Isaac; if Isaac moves after shooting, the tears will always return to him.
+** {{dlc|r}} The distance the tears travel before rebounding is determined by Isaac's Range stat.
+* {{dlc|nr}} +1.5 [[range]].
+* {{dlc|nr}} +1 [[tear falling speed]].
+* {{dlc|r}} 2x + 1.5 [[range]], +1.5 [[damage]], -1 [[luck]].
+* 1.6x [[shot speed]] multiplier.
+
+== Interactions ==
+* {{i|Anti-Gravity}}: The tears will slowly move towards Isaac instead of remaining stationary. Releasing the fire button will launch the tears as usual.
+* {{dlc|na}} {{i|Brimstone}}: Overrides My Reflection.
+** {{dlc|anr}} Makes the beam curve when moving. It has the same effect on Azazel's mini-brimstone and doubles the range.
+** {{dlc|r}} The laser makes a thin loop in front of Isaac, and fires the normal laser backwards.
+* {{i|Continuum}}: If tears cross the border of the room, they will move towards Isaac from their new position rather than crossing back across the border.
+* {{i|Compound Fracture}} / {{i|The Parasite}}/{{i|Cricket's Body}}: Split tears will move towards Isaac.
+* {{i|Dr. Fetus}}: '''Not recommended.''' The bombs will slide back towards Isaac after having reached a certain distance.
+** When combined with {{i|Rocket in a Jar}}, the rockets will not explode unless they hit an obstacle or enemy, making this much safer.
+* {{i|Epic Fetus}}: Overrides My Reflection.
+* {{i|Euthanasia}}: Needles from Euthanasia bursts will move towards Isaac.
+* {{i|Flat Stone}}: Tears bounce away from and then back towards Isaac. However, unless you have range ups, this generally results in tears slowing down then dissipating rather than actually returning.
+* {{i|Haemolacria}}: Range becomes extremely high, making Haemolacria tears follow Isaac for a long time before hitting the ground. Burst tears do not have a boomerang effect.
+* {{i|Ipecac}}: '''Not recommended.''' The explosive tears will begin flying back towards Isaac after having reached a certain distance.
+* {{i|Lachryphagy}}: Tears will move towards Isaac and can still be fed and burst. The bursted tears will also move towards Isaac.
+* {{i|A Lump of Coal}}: The tears increase in damage as they are pulled towards Isaac.
+* {{i|The Ludovico Technique}}: The tear will slowly move towards Isaac, and the shot speed increase allows the tear to be moved much faster.
+* {{Dlc|anr}}{{i|Mom's Knife}}: No effect, as the knife already has this effect.
+** {{Dlc|r}}The stat changes carry over, but the knife's trajectory does not.
+* {{i|Montezuma's Revenge}}: Causes the beam range behind Isaac to become significantly increased as well as having a short range similar to Azazel's beam in front of him. This greatly eases the use of this item allowing for high DPS.
+* {{dlc|nr}}{{i|My Reflection}}: No further stat changes.
+** {{dlc|r}} Damage and luck changes stack, range and shot speed don't.
+* [[Piercing tears]]: Despite the piercing effect, tears cannot damage the same enemy multiple times.
+* {{i|Pop!}}: Tears constantly swarm around Isaac, quickly filling the room.
+* {{i|Proptosis}}: At base tear size, tears disappear before they can return to Isaac.
+* {{i|Pupula Duplex|r}}: Tears will spin like boomerangs, the effect is purely cosmetic.
+* {{i|Revelation}}: The laser makes a thin loop in front of Isaac, and fires the normal laser backwards.
+* {{i|Rubber Cement}}: Isaac's tears will continually be pulled towards him, effectively reducing the chances that tears will bounce.
+* {{i|Spoon Bender}}: If tears are close enough to an enemy, it will home in and damage them. If not, they will return to Isaac.
+* {{dlc|r}}{{i|Stop Watch}}: Slightly reduces the distance tears travel before returning to Isaac, while slightly increasing the distance tears travel while returning to Isaac.
+* {{i|Strange Attractor}}: '''Not recommended.''' While it may make it easier to hit enemies, it also makes it much easier for them to be attracted to Isaac, surrounding him.
+* {{dlc|na}}{{i|Technology}}: Overrides My Reflection.
+** {{dlc|anr}}Makes the beam curve when moving.
+** {{dlc|r}} The laser makes a thin loop in front of Isaac, and fires the normal laser backwards.
+* {{dlc|na}}{{i|Technology 2}} / {{i|Tech.5}}
+** {{dlc|anr}}Tears return to character and the beams curve when moving.
+** {{dlc|r}} The laser makes a thin loop in front of Isaac, and fires the normal laser backwards.
+* {{i|Tech X}}: Stat effects of My Reflection remain but the boomerang effect does not.
+* {{i|Tiny Planet}}: The orbital tears will move faster to stay in orbit around Isaac, making aiming easier.
+** {{dlc|r}} Increases the radius of the orbital tears.
+* {{i|Trisagion|a+nr}}: Makes the beams much longer as they move away from and then back towards Isaac.
+** {{dlc|r}} The beams are in the form of a thin loop which cover a larger area, and the beams return to Isaac.
+* {{t|Whip Worm}}: Further increases shot speed, making Isaac's tears travel much farther forward before returning to Isaac.
+** {{dlc|r}} Shots travel the same distance forward, but loop back further before hitting the ground.
+
+== In-game footage ==
+{{#ev:youtube|PQObvIs7T5o||inline}} {{#ev:youtube|irsTXjiL6N0||inline}}
+
+== Trivia ==
+* This item is a reference to the concept of a mirror breaking when being looked into, usually played as a joke on ugly characters being '[https://tvtropes.org/pmwiki/pmwiki.php/Main/MirrorCrackingUgly so ugly they break the mirror]'.
+** This may be a commentary on Isaac's poor self-esteem.
+** {{dlc|r}} The Luck Down inflicted by the item is a secondary reference to the [[wikipedia:List of bad luck signs|superstition]] of a broken mirror causing seven years of bad luck.
+** This is also shared with the {{dlc|r}} {{floor|Downpour}} II mirror
+* In his [https://youtu.be/kby0rXT7qYQ first post-Repentance Lore Stream], Edmund McMillen stated that Isaac's visual appearance (ie: the crescent shape on his forehead) is simply a reference to the shape of [[wikipedia:Boomerang|boomerangs]], as the item causes Isaac's tears to come back to him like the movement pattern of a boomerang.
+* In the same lore stream, McMillen explained that the reason Isaac's tears return to him is simply due to the idea of attacking a mirror, with the tears being reflected backwards similarly to how shiny surfaces (such as mirrors) reflect light.
+* This item is the only one to apply a multiplier to Isaac's shot speed, instead of a plain bonus.
+* This item is used in {{chal|Suicide King}} and {{chal|Slow Roll}}.
+
+{{nav}}

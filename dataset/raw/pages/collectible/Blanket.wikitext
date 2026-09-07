@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 535
+ | quote       = You feel Safe
+ | description = Grants one {{E|Soul Heart}}. Upon entering a boss room, grants a shield that blocks one hit, then disappears.
+ | quality     = 2
+ | tags        = summonable
+ | unlocked by = Blanket
+}}
+
+{{cit|up|a+5}}
+
+== Effects ==
+* Heals one {{e|Red Heart}}.
+* Grants one {{e|Soul Heart}}.
+* Upon entering a {{r|Boss Room}}, grants a shield that blocks one hit. If the shield is not used by the time the player leaves the room, the shield will disappear.
+
+== Notes ==
+* The shield will be granted regardless of whether the Boss Room is already cleared.
+* This item's shield effect has the same synergies and interactions as {{I|Holy Mantle}} with the only difference being that when paired with Holy Mantle or {{c|The Lost|r}}'s innate shield it can still reapply later into the run. For a list of synergies and interactions, visit that page.
+* Multiple Blankets will only give 1 shield.
+* In [[Greed Mode]], this item grants a shield only for the two boss fights on the final level. The shield does not activate for the regular boss waves on previous floors.
+* To quickly unlock this item, keep restarting [[Greed mode]] to enter its {{r|Curse Room}} which occasionally contains a bed.
+
+== Interactions ==
+* {{p|IV - The Emperor?}}: A shield is granted upon teleporting to the extra boss room.
+
+== In-game Footage ==
+{{#ev:youtube|74Pr50YpoXA}}
+
+== Trivia ==
+* Blanket is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1090362016 this Steam Workshop item] by P.5000 and Ratlah, originally known as Security Blanket.
+** A "security blanket" is a common type of childhood [https://en.wikipedia.org/wiki/Comfort_object comfort object], an item which provides psychological comfort.
+* The blanket's appearance (being worn around the neck as a cape) and blue color is similar to the outfit of [https://en.wikipedia.org/wiki/Pajama_Sam Pajama Sam], a character who also wears a blanket as a cape. This trait is shared with {{i|PJs}}.
+* This item is part of a set of bedtime-themed items, including {{i|Binky}}, {{i|Mr. Dolly}}, {{i|Night Light}}, and {{i|PJs}}.
+
+== Bugs ==
+{{Bug|dlc=r|Blanket doesn't work in {{e|Dogma}} and {{e|The Beast}} boss fights.}}
+
+{{nav|booster pack|fr=Couverture}}
+[[category:damage-preventing items]]

@@ -1,0 +1,31 @@
+{{infobox trinket
+ | id          = 19
+ | quote       = Master of lockpicking
+ | description = {{E|Locked Chest}}s can be opened without using a {{E|Key}}.
+}}
+{{cit|t}}
+
+== Effects ==
+* Allows Isaac to unlock {{E|Locked Chest}}s without using {{E|Key}}s.
+** Locked doors, key blocks, and {{E|Mega Chest}}s still require keys.
+
+== Notes ==
+* In addition to regular trinket drop sources, Paper Clip can be obtained as a possible reward from {{M|Key Master}}s.
+* {{dlc|a}} {{c|Cain}} starts with this trinket after donating 68 coins to the {{M|Greed Donation Machine}}.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Allows to open locked blocks without using a key. 
+** Additionally allows to open locked doors without using a key if Isaac has both {{A|Golden Trinket|n}} and {{i|Mom's Box|n}}.
+* {{I|Pay To Play|r}}: Golden Chests no longer cost a coin to open.
+
+== Interactions ==
+* {{t|Mom's Locket|a}}: Renders Mom's Locket less effective as the trinket requires a key to be consumed by the lock in order to heal Isaac.
+
+== In-game Footage ==
+{{#ev:youtube|_s3xjm2l2fw||inline}} {{#ev:youtube|wF3sASLvPjs||inline}}
+
+== Trivia ==
+* The pickup quote of this item is a reference to an infamous line from the first [[wikipedia:Resident Evil|Resident Evil]] game.
+* {{dlc+|r}} Paper Clip is the only Beggar payout (coming from the {{M|Key Master}}) that is not a passive/active item. While {{M|Rotten Beggar}}s and {{M|Battery Bum}}s can also pay with trinkets, they do so as random drops, rather than payout.{{dlc-}}
+
+{{nav|greed machine unlock|fr=Trombone}}

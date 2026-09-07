@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | dlc         = a
+ | name        = Rune Bag
+ | id          = 389
+ | quote       = Rune generator
+ | description =  Spawns a [[familiar]] that drops a random [[Cards and Runes|rune]] after clearing enough [[rooms]].
+ | quality     = 3
+ | tags        = summonable offensive nocantrip
+ | unlocked by = Rune Bag
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Spawns a [[familiar]] that drops a random [[Cards and Runes|rune]] after clearing enough rooms.
+** {{dlc|nr}} Runes are dropped alternating every 5 or 6 rooms.
+** {{dlc|r}} Runes are dropped alternating every 7 or 8 rooms.
+
+== Notes ==
+* {{dlc|nr}} If there are no runes unlocked, it will drop [[Cards and Runes|cards]] instead.
+* {{dlc|r}} Rune Bag will also drop Soul Stones if any have been unlocked.
+* {{dlc+|r}} If less than 6 runes are unlocked, it can drop a {{p|Rune Shard}} instead of a rune.{{dlc-}}
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Rune Bag having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== Synergies ==
+* {{i|BFFS!}}: The drop rate is improved to every 4-5 rooms.
+** {{dlc|r}} The drop rate is improved to every 6 rooms.
+
+== In-game Footage ==
+{{#ev:youtube|JNqQr4vGS8Q||inline}} {{#ev:youtube|wdBeEUD4Das||inline}}
+
+== Trivia ==
+This item is the rune counterpart to {{i|Bomb Bag}}, {{i|Mystery Sack}}, {{i|Sack of Pennies}}, and {{i|Sack of Sacks}}.
+
+{{nav|lilith unlock|isaac boss unlock}}

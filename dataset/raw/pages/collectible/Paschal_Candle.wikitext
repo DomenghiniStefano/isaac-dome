@@ -1,0 +1,34 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 567
+ | quote       = Keep the flame burning
+ | description = Gives Isaac a [[familiar]] that grants +0.4 [[Fire Rate]] for each consecutive room he's cleared without taking damage. The bonus stacks up to five times.
+ | quality     = 3
+ | tags        = uniquefamiliar summonable tearsup offensive nocantrip
+ | devil price = 2
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Gives Isaac a candle familiar that grants a [[Fire Rate]] bonus of +0.4 for each room cleared in a row without taking damage, which stacks up to 5 times (Max. +2 [[Fire Rate]]), represented by how brightly the flame burns. Starts at 1 stack, and resets to zero if damage is taken.
+
+== Notes ==
+* The Fire Rate bonus can exceed the normal Fire Rate cap.
+** Any self-damage, such as from {{r|Curse Room}}s, {{r|Sacrifice Room}}s, the [[Bad Trip]] pill, spiked chests, and self-damaging items such as {{i|IV Bag}}, won't reset the bonus.
+* Clearing waves in [[Greed Mode]] will give the candle charges as if you cleared rooms.
+* [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Paschal Candle having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+
+== Synergies ==
+* {{i|Holy Mantle}} / any similar item: The flame is not snuffed out when damage is negated by the shield.
+
+== Interactions ==
+* {{i|BFFS!}}: The candle appears larger, but otherwise does not change.
+* {{i|Paschal Candle}}: No extra familiars or stat boosts are granted from copies.
+
+== Trivia ==
+* {{dlc|r}} When lit, the candle will glow slightly in {{Curse|Darkness}} making its position always visible. The more stacks it has, the brighter the glow.
+* [[anti:Paschal Candle|Paschal Candle]] originates from the ''Antibirth'' mod.  In ''Antibirth'', the tears ups would stack 6 times.
+* A [[wikipedia:Paschal candle|Paschal candle]] is a large, white candle used in liturgies in Western Christianity.
+
+{{nav|fr=Cierge Pascal}}

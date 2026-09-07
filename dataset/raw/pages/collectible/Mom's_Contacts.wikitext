@@ -1,0 +1,51 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 110
+ | quote       = Freeze effect
+ | description = Adds a chance to shoot [[Petrification|petrifying tears]]. {{dlc|nr}} +0.25 [[range]]. {{dlc|r}} +1.5 [[range]].
+ | quality     = 3
+ | tags        = summonable mom offensive
+ | unlocked by = Mom's Contact
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Adds a chance to shoot [[Petrification|petrifying tears]].
+* {{dlc|nr}} +0.25 [[range]]. ({{dlc|na}} not applied until the next time Isaac's range stat is updated).
+* {{dlc|r}} +1.5 [[range]].
+* {{dlc|nr}} +0.5 [[tear falling speed]]. ({{dlc|na}} not applied until the next time Isaac's tear falling speed is updated).
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc+|a+}} This item has a 1% chance to spawn when bombing {{m|Mom's Dressing Table}}. Multiple copies can be obtained through this method.{{dlc-}}
+* Despite granting the [[Yes Mother?]] transformation, duplicated items will not contribute to unlocking Mom's Contacts. Three '''different''' items are required to unlock it.
+* The chance to fire a petrifying tear depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\min(\frac1 { 5 - \left \lfloor \mathit{Luck} * 0.15 \right \rfloor},50\%)</math>
+** At base Luck (0), the chance is 20%, maxing out at 50% at 20 Luck.
+* Petrifying the Heart of a {{E|Mask + Heart}} also freezes the Mask bound to it.
+* Petrifying an enemy with a weak zone ({{E|Scolex}} or {{E|Carrion Queen}}) will make the enemy take damage anywhere while it is petrified, making combat significantly easier.
+
+== Synergies ==
+* {{i|Compound Fracture}}/{{i|Cricket's Body}}/{{i|Haemolacria}}/{{i|The Parasite}}: If the main tear causes petrification, split tears will too.
+* {{I|Finger!}}: Finger can also apply the petrification effect.
+* {{i|Lachryphagy}}: If freezing tears are fed first when they burst, the split tears can also freeze enemies.
+
+== Interactions ==
+* {{i|Brimstone}}: The beam can occasionally freeze enemies with no visual difference.
+* {{i|Epic Fetus}}: Occasionally fires missiles that can freeze enemies. No visual difference.
+* {{i|Technology}}: Lasers can occasionally freeze enemies with no visual difference.
+* {{i|Technology Zero}}: The electricity that is connecting tears has a chance to freeze enemies.
+
+== In-game Footage ==
+{{#ev:youtube|f6c_d6DyM_U||inline}} {{#ev:youtube|HL0ssfH5N_w||inline}}
+
+== Trivia ==
+* {{dlc|a+}} Mom's Contacts' appearance was changed in [[Booster Pack #5]].
+
+== Bugs ==
+{{bug|Enemies with multiple segments ({{e|Chub}}, {{e|Pin}}, etc.) can be petrified and have their segments destroyed individually, but continue to live with any remaining health. This can be problematic at times especially with {{e|Carrion Queen}}, as you could destroy the "tail" or center body segment when Carrion Queen is petrified, thus making you have to petrify her again, or use bombs to do damage.}}
+
+== References ==
+* [https://docs.google.com/spreadsheets/d/15K8Xgxoxdx68AIaxuLXgZoJJlG36UPgy3_aeDpAM5tU/edit?usp=sharing The Binding of Isaac Item Trigger Testing]
+
+{{nav|yes mother|mom|fr=Lentille de Maman}}

@@ -1,0 +1,49 @@
+{{infobox boss
+ | name = Teratoma
+ | id          = 71
+ | variant     = 1
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{dlc|r}}<br>{{floor|Utero}}<br>{{floor|The Void}}<br>{{room|boss challenge}}<br><u>Degraded Boss</u><br><u>Small</u><br><u>Main path</u><br>{{floor|Catacombs}}<br>{{floor|Necropolis}}<br>{{floor|Sheol}}<br><u>Alternate path</u><br>{{floor|Corpse}}<br><u>Medium</u><br><u>Main path</u><br>{{floor|Catacombs}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Utero}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}<br><u>Alternate path</u><br>{{floor|Corpse}}<br><u>Large</u><br><u>Main path</u><br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}<br><u>Alternate path</u><br>{{floor|Corpse}}
+ | base hp     = 60
+ | pool        = {{ip|Boss}}<br> {{i|Tinytoma|r+}} (1% chance)
+}}
+
+'''Teratoma''' is a [[boss]] that can appear:
+* {{dlc|nr}} In all environments of [[Chapters#Chapter 4|Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}).
+* {{dlc|r}} Only in the {{s|Utero}}.
+
+The large Teratoma has 60 HP, the medium forms have 15 HP, and the small forms have 8 HP, for a total of 153 HP.
+__TOC__
+
+== Behavior ==
+* Moves around the room slowly, bouncing off the walls.
+* When enough health is depleted, the one large Teratoma breaks into three medium Teratomas.
+** Medium forms behave identically, but move slightly faster.
+* Each of the three medium Teratomas breaks into two small Teratomas.
+** Small forms behave identically, but move very fast.
+* Each of the smallest Teratomas spawns two {{e|Spider}}s on defeat unless they are over a pit or other obstacle.
+* All stages of Teratoma will do 1 full heart of contact damage.
+
+== Gallery ==
+<gallery>
+File:Teratoma ingame med.png|Medium-sized Teratoma.
+File:Teratoma ingame small.png|Small Teratoma.
+File:Boss Delirium Teratoma ingame.png|{{dlc|a+}} Teratoma as one of {{e|Delirium}}'s forms.
+File:Teratoma_Corpse.png|{{dlc+|r}} Teratoma's appearance in {{s|Corpse}}.{{dlc-}}
+File:WOTL Boss Sketches.jpg|Sketches for Teratoma and other bosses for the original Binding of Isaac's Wrath of the Lamb DLC.
+</gallery>
+
+== Trivia ==
+* Teratoma was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* It is the posthumous form of {{e|Fistula}}.
+* A [[wikipedia:teratoma|teratoma]] is a rare tumor that contains tissues that are atypical for its placement in the body. This can include hair, teeth, bones, and so on.
+* Unlike the original ''Binding Of Isaac'', Teratoma doesn't bounce off of [[Rock]]s.
+* {{dlc|nr}} Teratoma is one of the three bosses that can be spawned by {{e|It Lives!}}, the other two being {{e|Chub}} and {{e|Polycephalus}}.
+** {{dlc|r}} It Lives! can now spawn Fistula as well.
+
+{{nav|boss|fr=Tératome}}
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

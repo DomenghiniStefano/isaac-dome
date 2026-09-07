@@ -1,0 +1,46 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 416
+ | quote       = {{dlcalt|More stuff to carry!|r=More money!}}
+ | description = {{dlc|nr}} Allows Isaac to carry two [[Cards and Runes|cards]] or [[pills]] (or a combination of both) at the same time.<br>{{dlc|r}} Increases the [[coin]] cap to 999. If a room would otherwise yield no reward, 1-3 coins will spawn.
+ | quality     = 2
+ | tags        = summonable offensive nocantrip lazarussharedglobal
+ | unlocked by = Deep Pockets
+}}
+
+{{cit|up|a}}
+
+== Effect ==
+* {{dlc|nr}} Allows Isaac to carry two [[Cards and Runes|cards]] or [[pills]] (or a combination of both) at the same time.
+* {{dlc|r}} Increases the [[coin]] cap to 999.
+* {{dlc|r}} If a room would otherwise yield no reward, 1-3 random coins will spawn.
+** All coins spawned will be of the same type.
+
+== Notes ==
+* {{dlc|nr}} This item has the same effects as {{i|Little Baggy}} and {{i|Starter Deck}}, but without removing pills/cards from the game.
+* {{dlc|a+nr}} This item has the same effect as {{i|Polydactyly|n}}.
+* {{dlc|r}} Has no effect on spawning coins in [[Greed mode]], including the trapdoor/exit room.
+* {{dlc|r}} Losing this item while holding more than 99 coins will reduce coin count to 99. Picking it back up again (if playing as{{C|Tainted Isaac}}, for example) will not restore lost coins.
+** {{dlc|nr+}} This includes going for {{I|Knife Piece 2|n}} in {{s|Mines|n}}.
+
+== Synergies ==
+* {{i|A Dollar|r}}: Allows Isaac to gain the full 100 coins when picking this up.
+* {{i|Contract From Below|r}} / {{i|Guppy's Tail}}: If the room clear reward is removed, spawns 1-3 random coins. Allows Deep Pockets to remain useful at high luck.
+* {{i|Greed's Gullet|r}}: After exceeding 100 coins, Isaac gains an extra [[Health#Red Heart Containers|Heart Container]] for every 100 coins instead of every 25.
+** {{C|Keeper}}/{{C|Tainted Keeper}}: The limit of 12 heart containers can be bypassed, allowing for up to 15 [[Health#Coin Hearts|coin hearts]] at 999 coins. Additional coin hearts past 12 are not displayed.
+* {{i|Money Power|r}}: Increases maximum [[damage]] bonus. The damage caps at +39.96 damage with 999 coins.
+* {{i|Midas' Touch|r}}: Increases maximum contact damage. The damage caps at 203.3 damage with 999 coins.
+* {{i|Options?}}: A [[pickup]], card, pill, [[trinket]], or {{E|Chest}} will accompany each coin.
+
+== Interactions ==
+* {{i|Diplopia|nr}}: No effect, only two pills or cards can be held.
+** {{dlc|r}} No effect. Only 999 coins can be held.
+* {{t|Perfection}}: Possibly detrimental. Since room clear rewards become very common at high luck, the 1-3 coin drop will rarely occur.
+
+== In-game Footage ==
+{{#ev:youtube|KvSF4hfvy0Y||inline}} {{#ev:youtube|fdh-nvb2GxE||inline}}
+
+== Bugs ==
+{{bug|dlc=r|While holding {{i|Esau Jr.}}, swapping to the character without Deep Pockets then collecting or spending coins will cap the number of coins at 99.}}
+
+{{nav|inventory expansion|coin modifier|card modifier|rune modifier|pill modifier|keeper unlock|blue baby boss unlock}}

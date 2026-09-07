@@ -1,0 +1,31 @@
+{{infobox challenge
+ | number    = 15
+ | item      = {{i|Cupid's Arrow}}<br>{{i|My Reflection}}<br>{{i|Polyphemus}}
+ | has shops = yes
+ | unlocks   = Swallowed Penny
+}}
+
+'''Slow Roll''' is [[Challenges|challenge]] #15. {{c|Isaac}} starts with {{i|Polyphemus}}, {{i|Cupid's Arrow}}, and {{i|My Reflection}}. Damage is fixed at 100, shot speed is fixed at 1.0 and fire rate is at 0.49 tears per second (60 [[tear delay]]). The goal is to defeat {{E|Mom}}. This challenge is unlocked by default.
+__TOC__
+
+== Difficulty ==
+Tears are huge, are blocked by [[obstacle]]s, have a slow, small range, and there is a substantial cooldown between firing each shot.
+
+== Strategy ==
+* Tears fired are huge and do high amounts of damage, meaning it is not difficult to kill an enemy if there is a clear shot.
+* Thanks to Cupid's Arrow, tears do not disappear when hitting an enemy.
+* My Reflection will shrink the range of tears considerably, to about half a room. A little practice is more than enough to accommodate it.
+* The biggest worry in this challenge is the large amounts of obstacles. This can be mitigated by spectral tears, such as those granted by {{i|Spirit of the Night}} or {{i|Dead Dove}}. These items can be found in a {{R|Devil Room}} or {{R|Angel Room}}, respectively.
+* {{i|Mom's Knife}} (also {{I|Spirit Sword}}) can be considered as a high-risk, high-reward item to get in this challenge. While it must be fought with almost exclusively at melee range (due to its excruciatingly long charge), it deals enough damage to where it can one-hit kill almost all enemies (including bosses).
+* {{i|Guppy's Head}} spawns flies that deal twice the starting damage, making them extremely effective weapons.
+* {{i|Succubus|nr}} will kill most enemies and early-game bosses instantaneously (as soon as they enter the area of its damage).
+* {{i|Chocolate Milk}} will allow Isaac to fire large shots that each still deal high damage rapidly.
+* {{i|Tammy's Head}} fires 10 high power shots, making it an easy option for clearing the challenge.
+* {{Dlc|r}} {{I|Notched Axe}}'s swings scale off of Isaac's damage, and are not affected by tear delay, resulting in it being quite a useful weapon.
+* {{I|Sharp Key}} fires a tear worth 5x Isaac's damage + 30, making it deal 530 damage per shot.
+* {{I|Eye of the Occult}} gives you full control of the huge tear you shoot, making it easy to kill multiple enemies in the same shot by directing the tear into them.
+
+== Reward ==
+{{achievement text | Swallowed Penny }}
+
+{{nav|challenge|fr=Mollo !}}

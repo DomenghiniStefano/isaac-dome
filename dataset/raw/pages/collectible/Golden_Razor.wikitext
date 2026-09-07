@@ -1,0 +1,41 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 555
+ | quote       = Pain from gain
+ | description = Spends 5 {{E|Penny|text=pennies}} to grant +1.2 [[damage]] for the current room. Grants 5 pennies when picked up for the first time.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = offensive
+ | recharge    = unlimited
+ | unlocked by = Golden Razor
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, spends 5 {{E|Penny|text=pennies}} and grants +1.2 [[damage]] for the current room.
+** The effect can be stacked.
+** If Isaac has fewer than 5 coins, nothing happens.
+* Grants 5 pennies upon being picked up for the first time.
+
+== Notes ==
+* Using the item will give Isaac's tears a golden tint that becomes more noticeable with each use, up to a maximum of three times. This effect is purely cosmetic.
+* When unlocking the item, coins do not actually have to be spent, just removed. Actions such as donating to a {{M|Donation Machine}} or items like {{i|Magic Fingers}} will also count as long as the coin amount goes from 99 to 0.
+** Similarly, losing coins by getting damaged by {{e|Greed}} or similar enemies counts as spending coins when it comes to unlocking Golden Razor.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Also invokes the effect of {{i|Magic Fingers}} when used, which occurs after the damage increase and deals an additional +5 damage; non-boss enemies killed by this effect also have a chance to drop 1-2 pennies.}}
+* {{Book of Virtues synergy|description=Spawns yellow wisps on the middle ring, looking like coins. Wisps' tears have a 15% chance of inflicting {{i|Midas' Touch}} effect on enemies.}}
+* {{i|Deep Pockets}}: The increased money capacity can allow the Golden Razor to be used more than 10 times as much before the player runs out of money.
+* {{i|Rock Bottom}}: The damage bonus from each use will be permanently locked at the highest achieved value in a single room.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+
+== In-game footage ==
+{{#ev:youtube|6YxoZYKsAKo}}
+
+== Trivia ==
+* This item is similar to {{i|Razor Blade}}, the only difference being the cost in coins instead of [[hearts]].
+* The item is based on the Golden Razor Blade from ''The Binding of Isaac: Four Souls'' card game.
+
+{{nav|fr=Lame de Rasoir Dorée}}

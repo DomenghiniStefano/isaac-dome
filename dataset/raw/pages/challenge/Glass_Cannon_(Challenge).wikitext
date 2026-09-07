@@ -1,0 +1,35 @@
+{{infobox challenge
+ | number      = 11
+ | character   = Judas
+ | item        = {{i|Epic Fetus}}<br>{{i|Loki's Horns}}
+ | has shops   = yes
+ | goal        = Satan
+ | unlocks     = Rules Card
+ | unlocked by = Glass Cannon
+}} {{disambig msg|the challenge|the item|Glass Cannon}}
+
+'''Glass Cannon''' is [[Challenges|challenge]] #11. {{c|Judas}} is the default character in this challenge, and he starts with {{i|Epic Fetus}} and {{i|Loki's Horns}}. The goal is to defeat {{ E|Satan}}. This challenge is unlocked by unlocking {{i|Epic Fetus}}, {{i|Loki's Horns}}, and {{c|Judas}}; which requires completing {{Chal|The Family Man}}, defeating {{e|Lokii}}, and defeating {{ E|Satan}} respectively.
+
+== Difficulty ==
+* Starting the game with only one heart container. This means that without acquiring additional [[heart container]]s, {{e|Soul Heart}}s, or {{e|Black Heart}}s, doing any self-damage will instantly kill Judas.
+** However, with the ability to access all {{R|Secret Room}}s, {{R|Super Secret Room}}s, and {{R|Crawl Space}}s on all floors, as well as free access to all the pickups that tinted rocks, urns, mushrooms, skulls, and polyps provide, experienced players can get very easy runs.
+
+== Strategy ==
+* Epic Fetus is an incredibly powerful offensive item, so primarily focus on acquiring health upgrades and defensive items such as Pretty Fly (from a [[pill]] or {{m|Slot Machine}}), {{i|Sacrificial Dagger}}, {{i|Cube of Meat}}, and {{i|Ball of Bandages}}. {{i|Demon Baby}} and {{i|Rotten Baby}} can be helpful as well, as they do not require aiming to do damage.
+* {{i|Pyromaniac}} or {{i|Host Hat}} are highly useful as they prevent self-damage.
+* {{i|Strange Attractor}} is highly effective, because most enemies and some bosses will be pulled towards the missiles instead of targeting the player. However, finding it is extremely unlikely because it is only found in the Treasure Room item pool.
+
+* Destroying all rocks and destructible objects on every floor, as well as accessing both Secret Rooms on each floor, is a vital aspect to completing the challenge easily.
+
+* Loki's Horns are difficult to utilize effectively with Epic Fetus. However, the extra crosshairs can move through walls and are always the same distance from the character as the main crosshair, so pretend that they are not there, and just avoid taking damage from the main crosshair.
+
+* {{dlc|a}} {{i|Brimstone}} will make this challenge incredibly easy. It synergizes with Epic Fetus, firing 10 blood lasers. If Loki's horns activate, the 40 lasers will usually cover an entire standard size room.  With {{i|20/20}} or the {{tf|Bookworm}} transformation, the 80 lasers will destroy most bosses in one shot
+* {{i|Spirit Sword}} overrides Epic Fetus, arguably making the challenge easier by removing any chance of self harm or need to aim Epic Fetus missiles.
+
+== Reward ==
+{{achievement text | Rules Card }}
+
+== Trivia ==
+* A "glass cannon" is a term used for someone or something that deals high damage but can't take much damage.
+
+{{nav|it lives unlock|challenge|fr=Canon de Verre (Défi)}}

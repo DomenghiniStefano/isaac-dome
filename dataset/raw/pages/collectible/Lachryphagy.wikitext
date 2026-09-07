@@ -1,0 +1,95 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 532
+ | quote       = Feed them!
+ | description = Isaac's tears decelerate as they travel. Upon stopping or hitting an obstacle, they burst into 8 tears in all directions. Tears can be fired into other tears to feed them, increasing their damage.
+ | quality     = {{dlcalt|2|r+=3}}
+ | tags        = summonable offensive
+ | unlocked by = Lachryphagy
+}}
+
+{{cit|up|a+4}}
+
+== Effects ==
+* Isaac's tears decelerate as they travel. Upon stopping or hitting an obstacle, they burst into tears that fly in all directions. Hitting an enemy will not cause them to burst.
+** {{dlc|nr}} They burst into 8 tears.
+** {{dlc|r}} They burst into 5-8 tears, depending on tear size.
+* Tears can be fired into other tears to feed them, increasing their damage and the damage of the burst tears.
+** If one tear is fed 5 other tears, it will immediately burst.
+** The tears will have their damage added together, with the first consumed tear giving additional damage.
+** Tears in the burst will deal half the damage the main tear would have.
+** This also applies to [[Familiar]] tears.
+
+== Notes ==
+* Certain items that cause tears to split and feed each other, when combined, can cause the resulting tear to become so large that the game will crash.
+* Tears can also burst from shot size. With sufficiently high damage or several tear-size increasing items, the tears will burst almost immediately after firing.
+* The distance burst tears fly depends on [[tear height]] and not [[range]].
+
+== Synergies ==
+* {{i|20/20}} / {{i|The Inner Eye}} / {{i|Mutant Spider}}: Tears tend to clump together soon after firing for high damage shots. It may take more than 5 tears in total to cause a burst.
+* {{I|Akeldama}}: Akeldama tears can feed and be fed by the Lachryphagy tears. Fed Akeldama tears will gain increased damage but will not burst, and will cap at 5 tears fed each.
+* {{i|Bob's Rotten Head}}: The head act as a tear, dividing itself if enough time has passed and interacting with other tears. The five heads coming from the main head deal half damage. Feeding a head with another increases damage by the amount of damage Isaac has. If a tear is fed with a head, the tear will gain the head's damage.
+* {{i|Book of Virtues}} / {{i|Jar of Wisps}}: Wisps' tears can feed the Lachryphagy tears.
+* {{dlc|r}} {{i|Brimstone}}: Brimstone's range is now limited, but [[piercing]] Lachryphagy tears will quickly form at the end of the beam.
+** {{c|Azazel}}: Lachryphagy effectively leaves Azazel's brimstone unchanged given it already has limited range.
+** {{i|Rubber Cement}}: Reflected brimstone will still have its full range.
+* {{i|Compound Fracture}}: Bone tears split into a random spread of fractured tears and bone tears.
+* {{i|Cricket's Body}} / {{i|The Parasite}}: Fed tears split into 12 tears.
+* {{I|Dead Eye}} Firing into the floating tear won't reset the multiplier as long as that tear doesn't hit a wall.  The burst tears will never reset the multiplier.
+* {{I|Euthanasia}}: Needle shots will allow the tears to burst at least twice.
+* {{I|Eye of Belial}}: Tear burst retains Eye of Belial's effect, greatly increasing the effectiveness of the tear burst due to the [[piercing]], [[spectral]], and increased tear damage. By proxy, piercing, spectral, and continuum tears all improve the value of Lachyphagy.
+* {{I|Evil Eye}}: can compound tears with Lachryphagy.
+* {{i|Haemolacria}}: Tears look like Haemolacria. They can be fed and will burst into 8 tears that have Haemolacria's burst effect upon hitting obstacles or enemies.
+** {{Dlc|r}} '''Haemolacria''' + {{I|Brimstone}} / {{i|Tech X}} / {{I|Technology}}: The tears behave like Lachryphagy tears. On hitting enemies, they always burst into respective Lachryphagy-synergized lasers (if available), but on hitting a wall or an obstacle, slower-moving shots burst into normal shots and faster ones into lasers.
+* {{i|Kidney Stone}}: When a barrage of tears is fired, tears clump together and burst at a high rate. The stone also behaves as a Lachryphagy tear. Because of the [[tear height]] decrease, burst tears cover much shorter distance before falling, making the combination less effective.
+* {{i|Lost Contact}}: Both the original tear and the burst tears can block enemy shots. The tears' size is increased, so it is easier to feed them.
+* {{i|A Lump of Coal}}: Tears continually grow in size without being fed other tears, but they will still only deal bonus damage based strictly on how far they travel. Burst tears will still grow in size and damage as they travel.
+* {{i|Monstro's Lung}} / {{i|Lead Pencil}}: The tears clump together soon after firing, causing potentially up to 20x tear damage on a direct hit on an enemy.
+* {{I|My Reflection}}: Causes tears to float back towards Isaac and clump together with any tears they come along.
+* {{t|Pulse Worm}}: The fluctuating hitboxes of the tears causes them to clump together at a faster rate.
+* {{I|Revelation}}: The beam's range is now limited, but [[piercing]] Lachryphagy tears will form at the end of it.
+* {{i|Sinus Infection}}: Boogers will always burst into more boogers, though some of the boogers may incorrectly appear to be normal tears. When a booger sticks to an enemy, it will burst into 8 boogers which have a high chance of sticking again to the same enemy.
+* {{dlc|r}} {{i|Technology}}: Technology's range is now limited, but [[piercing]] Lachryphagy tears will form at the end of the beam.
+* {{Dlc|r}} {{I|Technology 2}}: Significantly shortens the range of the laser. A [[piercing]] Lachryphagy tear spawns at the end of the laser every tick, rapidly feeding off of each other and bursting when standing still. This is an extremely powerful combo that alone can provide enough damage output to challenge any boss in the game.
+** A fire rate reduction such as from {{i|The Inner Eye}} or a few [[Tears Down]] pills makes the combo even stronger, as tears will grow even larger before bursting.
+* {{i|Tiny Planet}}: {{dlc|nr}} Tears will orbit until they are behind the character. Tears will burst into 8 tears that follow the orbit in 2 close groups of 4. One group travels clockwise and the other travels counterclockwise.
+** {{dlc|r}} Tears orbit the player without slowing down, and can be fed as normal. When a tear bursts, the created tears orbit the place of burst.
+* {{i|Tractor Beam|nr}}: All split tears will travel along the beam.
+* {{dlc+|r}} {{i|Trisagion}}: Trisagion tears will fade faster, but will constantly spit out more [[piercing]] Lachryphagy tears while they are active.{{dlc-}}
+
+== Interactions ==
+* {{i|Brimstone|nr}}: Lachryphagy does not affect regular Brimstone beams, but tears from other sources such as {{i|Isaac's Tears}} or {{i|Fate's Reward}} will burst into 8 Brimstone beams. Lachryphagy affects Chocolate Milk + Brimstone.
+* {{p|Chaos Card}}: Counts as a tear and will be wasted if thrown into another tear.
+* {{i|Dr. Fetus}}: Overrides Lachryphagy.
+* {{i|Epic Fetus}}: Overrides Lachryphagy.
+* {{i|Flat Stone}}: Overridden by Lachryphagy.
+* {{I|Ipecac}}: Lachryphagy tears will burst into ipecac shots and explode. The Ipecac tear burst will travel like a normal tear instead of an arc. Due to tear slowdown effect it becomes hard to hit enemies without standing in the explosion radius.
+* {{i|The Ludovico Technique}}: Overrides Lachryphagy.
+* {{i|Mom's Knife}}: No effect.
+* {{i|Pop!}}: Tears behave erratically, with freshly fired tears usually behaving like Lachryphagy and burst tears like Pop!.
+* {{i|Saturnus}}: Orbiting tears are Lachryphagy tears, including enemy tears caught in orbit. Tears will still burst after a set duration, greatly the reducing the amount of time the tears orbit for. Burst tears will remain in an orbital path instead of spreading out.
+* {{i|Stop Watch}} / {{i|Broken Watch}} / {{p|Era Walk}}: Tears are slowed/sped up along with enemies.
+* {{i|Tech X}}: Overrides Lachryphagy.
+* {{i|Technology|nr}}: Overrides Lachryphagy.
+* {{i|Technology Zero}}: Tears will generate arcs of electricity until they burst. As the tears will hang in the air for several seconds, this significantly increases the uptime of electricity arcs. Burst tears are similarly connected to each other by electricity. 
+* {{i|Trisagion|nr}}: Tears will split but cannot be grown by feeding tears.
+
+== In-game Footage ==
+{{#ev:youtube|LdpxHe8Pf8o}}
+
+== Trivia ==
+* Lachryphagy is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=893096768 this Steam Workshop item] by KittyK47, originally known as Hungry Tears.
+* [https://en.wikipedia.org/wiki/Lachryphagy Lachryphagy] refers to the insect practice of drinking tears or eye secretions from other creatures.
+* Isaac's appearance (his eyes being replaced by gaping mouths) is similar to [[sandman:The Corinthian|the Corinthian]] from Neil Gaiman's "The Sandman".
+
+== Gallery ==
+<gallery>
+File:Collectible Lachryphagy mod icon.png|Lachryphagy's appearance in the original [http://steamcommunity.com/sharedfiles/filedetails/?id=893096768 Steam Workshop mod].
+File:Lachryphagy tear growth.png|Lachryphagy tear growth, as they're being fed.
+</gallery>
+
+== Bugs ==
+{{bug|In the battle with {{e|The Beast|n}} and the Ultra Harbingers, outputting high amounts of Lachryphagy tears can cause the damage from all the tears offscreen to be instantly applied to each entity the moment they arrive to fight Isaac.|dlc=r}}
+{{bug|{{i|Rubber Cement}} causes all tears on screen to have their damage applied to any enemy that gets hit by a tear.}}
+
+{{nav|booster pack|fr=Lachryphagie}}

@@ -1,0 +1,210 @@
+{{infobox activated collectible
+ | dlc         = a
+ | quote       = Double item vision
+ | description = Duplicates all pickups and item pedestals in the current room.
+ | quality     = 3
+ | tags        = offensive
+ | id          = 347
+ | recharge    = one time
+}}
+
+{{cit|a|a}}
+
+== Effect ==
+* Instantly spawns a copy of all [[pickup]]s and pedestal [[item]]s on the floor in the current room, then disappears.
+
+== Notes ==
+* If used in a room with anything that has a cost to obtain, including a {{R|Shop}}, {{R|Devil Room}} or the {{R|Black Market}}, the duplicated items and pickups will spawn without a cost attached and can be taken for free. 
+** The original items will remain unchanged, and Deal with the Devil precedent will not be set by collecting the free copies. 
+* If an item pedestal that is duplicated is visible as "?" (for example with the {{cu|Blind}}), duplicate will be visible as "?" until taken, just like the original item pedestal.
+* Diplopia cannot be copied with another copy of Diplopia or any duplication that mimics the effect. Other forms of item duplication, such as {{i|Crooked Penny}} work as normal. 
+* {{dlc|nr}} Using Diplopia on a [[trinket]] will spawn another random trinket instead of duplicating the trinket.
+** {{dlc|r}} Using Diplopia on a trinket does nothing.
+* {{dlc|r}} Does not duplicate {{p|Jera}}.
+* {{dlc|na+}} Using Diplopia on an empty item pedestal will spawn another random item.
+* {{dlc|nr}} Picking up multiple copies of items that can cause Isaac to [[transformation|transform]] will not count towards transformation progress.
+** {{dlc|r}} Multiple copies of the same item do count towards transformations.
+* {{dlc|nr}} If Diplopia is used in a room that offers a choice between multiple items, all of the duplicated items can be taken. The original items will still behave as normal: once an item is chosen, the others will disappear, but the duplicates will remain. This also includes {{R|Boss Rush}} ('''though taking any duplicate will still start the Boss Rush''')
+** {{dlc|r}} Only one duplicate can be taken. This affects {{R|Treasure Room}} on the alternate path, {{R|Angel Room}} that has multiple [[item]] pedestals, the {{i|The Polaroid}} and {{i|The Negative}} after defeating {{E|Mom}}, the item {{i|More Options}}, {{R|Boss Rush}}, etc.
+* {{C|Jacob and Esau}} can use this item to duplicate an active item to each have the same active item.
+* Tear-boosting items, if stacked, cap at shooting 16 tears at once.
+
+== Synergies ==
+* Most passive item stats bonuses stack normally when duplicated. 
+* Active item copies do not share charges, and appear with a full charge (unless the item normally spawns empty of charges). 
+* {{i|20/20}}: Isaac fires 3 tightly-packed tears with no increase in tear delay.
+** {{dlc|r}} Damage down does not stack.
+* {{Book of Virtues synergy|description=Spawns a special Diplopia wisp on the middle ring. The wisp fires two tears at a time (similar to {{I|20/20}}) and has very high HP. Also duplicates all of Isaac's other wisps.}}
+** Additional copies of Book of Virtues do not have any effect. 
+* {{i|Brimstone|nr}}: Isaac fires two lasers simultaneously.
+** {{dlc|r}} Isaac gains a powered-up version of Brimstone with a unique costume that deals 1.2x damage and has +1 damage. Further copies will add another +1 damage.
+* {{i|Contract From Below}}: Triples the drops upon clearing a room.
+* {{I|Damocles}}: Spawns an extra item for each item cloned.
+* {{i|Dr. Fetus}}: Isaac fires two bombs simultaneously.
+* {{i|Eden's Blessing}}: Tears upgrades stack and Isaac gains two items at the start of the next run. Stacks up to {{dlc|nr+}} 10 / {{dlc|r+}} 2 times.
+* {{i|Epic Fetus}}: Two missiles drop, one after the other.
+* {{i|The Inner Eye|nr}}: Isaac fires 6 tears. Tears down stat does not stack.
+** {{dlc|r}} Isaac fires an additional tear. Tears down stat does not stack.
+* {{i|The Ludovico Technique}}: A smaller tear orbits the main tear.
+* {{i|Maw Of The Void|nr}}: Increased damage for tears and ring.
+* {{i|Mom's Knife}}: Isaac fires two knives simultaneously.
+* {{i|Monstro's Lung}}: The tear burst gains another {{dlc|nr}}10 tears/{{dlc|r}}12 tears, nearly doubling in size. Stacks up to 4 times.
+* {{i|Mutant Spider|nr}}: Isaac fires 8 tears. Tears down stat does not stack.
+** {{dlc|r}} Isaac fires 2 additional tears. Tear down stat does not stack.
+* {{i|The Relic}}: An extra soul heart is given for each relic familiar.
+* {{i|Schoolbag}} + any active item: While there is no use in duplicating the Schoolbag, it gives Isaac a use for duplicating an active item.
+* {{i|Steam Sale|nr}}: All items in Shops become free. With {{i|Restock}}, items can be infinitely bought for free.
+** {{dlc|r}} Each additional Steam Sale will further halve the price. Items cannot be reduced below 1 cent.
+* {{i|Technology}}: Isaac fires two lasers simultaneously.
+* {{i|Tech X}}: Isaac fires two laser rings simultaneously.
+* {{i|Twisted Pair}}: Adds two more familiars that float further away from either side of Isaac.
+* {{p|Wild Card|r}}: Allows infinite uses of Diplopia. This can be done by dropping the card, using Diplopia, then picking up the copied card and using it. This results in everything in the room being copied, including the first wild card. This can be repeated infinitely as long as Diplopia was the last item used.
+* {{i|The Wiz|na+}}: Isaac fires 4 tears diagonally.
+** {{dlc|a+}} Isaac fires 3 tears, one straight ahead and two diagonally.
+
+== Interactions ==
+* {{p|? Card|nr}}: Expends both the card and the item with no additional benefit.
+** {{dlc|r}} Now expends the card without consuming Diplopia, allowing for potential multiple uses.
+*** If 2 ? Cards are gathered in the same room, one can be used to duplicate the other, allowing for infinite duplication of everything else in that room.
+*** If 3 ? Cards are gathered in the same room, one of them can be used to duplicate infinite ? Cards as well.
+* {{i|Compound Fracture}}: Range increases twice. No effect on how many bone tears are fired or how many bone shards are fired.
+* {{i|Continuum}}: Only increases range further.
+* {{i|Cricket's Head}}: Damage multiplier doesn't stack.
+* {{i|Crown Of Light}}: Only further decreases shot speed and increases range.
+* {{i|Dead Eye}}: The damage multiplier increases twice as fast, but still caps at double damage.
+* {{i|Eden's Soul}} / {{i|Alabaster Box}}: All copies of these items starts with no charge.
+* {{i|Eve's Mascara}}: The damage and tear multipliers do not stack. The shot speed does stack.
+* {{i|Eye of Belial}}: Only further increases range.
+* {{i|Finger!}}: Spawns two familiars completely overlapping each other.
+* {{i|Godhead}}: Only stat ups and downs compound, but the aura gains no bonus.
+* {{i|Guillotine}}: Isaac will have two orbital heads, but only one will fire tears.
+* {{i|Holy Mantle}}: An extra effect is added in the room it was found in, but only a single effect will be given in future rooms.
+* {{i|Iron Bar}}: Increases damage but not chance of concussive tears being fired.
+* {{i|Key Piece 1}}, {{i|Key Piece 2}}: Spawns a copy of the same Key Piece. The copy does not increase the chance for an Angel Room.
+* {{i|Kidney Stone|nr}}: Only further decreases speed.
+* {{i|Little Baggy}} / {{i|Polydactyly}} / {{i|Starter Deck}} / {{i|Deep Pockets|nr}}: Does not allow more than two pills or cards to be held at once.
+* {{i|Lost Contact}}: Only further decreases shot speed.
+* {{i|Magic Mushroom}}: Increases all stats twice, but damage significantly less the second time as the 1.5x multipliers do not stack.
+* {{i|Marked}}: Only increases range and firerate.
+* {{i|Mom's Contacts}}: Only increases range.
+* {{i|Mom's Purse}} / {{i|Belly Button}}: Does not allow more than two trinkets to be held at once.
+* {{i|My Reflection|nr}}: Only increases range.
+* {{i|Piggy Bank}}: Only grants 3 more coins. Does not drop more pennies when taking damage.
+* {{i|Placenta}}: Only increases HP with no change to the regeneration effect.
+* {{i|Pointy Rib}}: Spawns two familiars that completely overlap each other.
+* {{i|Purity}}: No effect. Aura changes after a second pickup.
+* {{i|Quints}}: Increases maximum familiar count by 5.
+* {{i|Revelation}}: Only adds soul hearts with no addition effect on the beam.
+* {{i|Sacred Heart}}: Further decreases tears and shot speed with no increase in damage.
+* {{i|Stop Watch|dlc=r}}: Further increases speed with no further effect on movement speed or shot speed of enemies.
+* {{i|Sulfuric Acid}}: Only further increases damage.
+* {{i|Tractor Beam}}: Further increases shot speed, fire rate, and range with no other effects.
+
+== No Effect ==
+{{column list | width = 15em | content =
+* {{i|2Spooky}}
+* {{i|9 Volt}}
+* {{i|Anemic}}
+* {{dlc|nr}} {{i|Anti-Gravity}}
+* {{i|Aries}}
+* {{i|Athame}}
+* {{i|Ball of Tar}}
+* {{i|The Battery}}
+* {{i|BFFS!}}
+* {{i|Blood of the Martyr}}
+* {{i|Cambion Conception}}
+* {{i|Car Battery}}
+* {{i|Celtic Cross}}
+* {{i|Chemical Peel}}
+* {{i|Chocolate Milk}}
+* {{i|Circle of Protection}}
+* {{dlc|nr}} {{i|Cricket's Body}}
+* {{i|C Section}}
+* {{i|Cursed Eye}}
+* {{i|Curse of the Tower}}
+* {{i|Dad's Ring}}
+* {{i|Dead Tooth}}
+* {{I|Deep Pockets}}
+* {{i|Epiphora}}
+* {{i|Euthanasia}}
+* {{i|Explosivo}}
+* {{i|Eye Drops}}
+* {{i|Eye of Greed}}
+* {{i|Eye Sore}}
+* {{i|Flat Stone}}
+* {{i|Ghost Pepper}}
+* {{i|Gimpy}}
+* {{i|Glitched Crown}}
+* {{i|Greed's Gullet}}
+* {{i|Habit}}
+* {{i|Haemolacria|a+nr}}
+* {{i|Head of the Keeper}}
+* {{i|Hive Mind}}
+* {{i|Holy Light}}
+* {{i|Humbleing Bundle}}
+* {{i|Ipecac}}
+* {{i|Isaac's Heart}}
+* {{i|Isaac's Tomb}}
+* {{i|Jacob's Ladder}}
+* {{dlc|r}} {{i|Kidney Stone}}
+* {{i|Lachryphagy}}
+* {{i|Lead Pencil}}
+* {{i|Leprosy}}
+* {{i|Linger Bean}}
+* {{i|Lodestone}}
+* {{i|Loki's Horns}}
+* {{i|Lost Soul}}
+* {{i|Lusty Blood}}
+* {{i|A Lump of Coal}}
+* {{i|Mom's Eye}}
+* {{i|Mom's Eyeshadow}}
+* {{dlc|nr}} {{i|Mom's Perfume}}
+* {{i|Mom's Purse}}
+* {{i|Money Power}}
+* {{i|Mr. Mega}}
+* {{dlc|nr}} {{i|Ouija Board}}
+* {{i|The Parasite}}
+* {{i|Paschal Candle}}
+* {{i|Polyphemus}}
+* {{i|Pop!}}
+* {{i|Proptosis}}
+* {{i|Pupula Duplex}}
+* {{i|Purgatory}}
+* {{i|Rubber Cement}}
+* {{i|Scatter Bombs}}
+* {{i|Schoolbag}}
+* {{i|Soul Locket}}
+* {{i|Soy Milk}}
+* {{i|Spear Of Destiny}}
+* {{i|Spirit Shackles}}
+* {{I|Star of Bethlehem}}
+* {{i|Tarot Cloth}}
+* {{i|Taurus}}
+* {{i|Technology 2}}
+* {{i|Tech.5}}
+* {{i|Technology Zero}}
+* {{i|Telekinesis|a+nr}}
+* {{i|There's Options}}
+* {{i|Tiny Planet}}
+* {{i|Toxic Shock}}
+* {{i|Trinity Shield}}
+* {{i|Trisagion}}
+* {{i|Void}}
+* {{i|The Wafer}}
+* {{i|Whore of Babylon}}
+}}
+
+== In-game Footage ==
+{{#ev:youtube|petzHwwqGSk}}
+
+== Gallery ==
+<gallery>
+File:Collectible Diplopia concept.png|Concept drawn for Diplopia.
+</gallery>
+
+== Trivia ==
+* This is the first Afterbirth item by ID number.
+* [[wikipedia:Diplopia|Diplopia]] is the simultaneous perception of two images of a single object, commonly referred to as double vision.
+* This item's appearance is similar to {{i|Pupula Duplex}}.
+
+{{nav|fr=Diplopie}}

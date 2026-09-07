@@ -1,0 +1,174 @@
+{{infobox passive collectible
+ | tear app scale = 1/3
+ | id             = 329
+ | quote          = Controlled tears
+ | description    = Instead of firing tears, Isaac controls one floating tear that hover over obstacles. This tear deals constant damage when held in place over an enemy.
+ | quality        = {{dlcalt|2|r+=1}}
+ | tags           = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Instead of firing tears, Isaac controls one floating tear that hovers over obstacles. This tear deals constant damage when held in place over an enemy.
+* {{dlc|r+}} +0.2 [[shot speed]].
+
+== Notes ==
+* {{dlc|nr}} The Ludovico Technique is a [[special item]].
+* Ludovico tear is piercing and spectral by default.
+* Ludovico tear movement speed is determined by the [[shot speed]] stat.
+* Ludovico tear hits per second are determined by the [[tears]] stat, maxed out at 30 ticks per second.
+* {{dlc|nr}} When {{E|Death}} uses his {{I|The Hourglass}} attack, the tear is slow to respond, but then moves so quickly that it is nearly impossible to use effectively.
+* {{dlc|nr}} When there are no enemies in a room, the tear slowly floats towards Isaac.
+** The {{I|Brimstone}} ring still follows when Isaac is outside of it.
+* If multiple Ludovico Techniques are acquired (via {{i|Diplopia}}, {{i|Crooked Penny}}, {{i|Bag of Crafting}} or on a [[victory lap]]), then additional smaller tears will orbit the main tear.
+** A maximum of 15 smaller tears can orbit the main tear.
+* The Ludovico tear is larger than normal, but does not gain size from damage as much as normal tears.
+
+== Synergies ==
+* {{i|20/20}} / {{i|The Inner Eye}} / {{I|Mutant Spider}} / {{tf|Conjoined}}: Smaller tears orbit the main tear.
+* {{I|Angelic Prism}}: While the tear is in contact with the prism, it will fire 4 additional tears in cardinal directions at Isaac's tear rate.
+* {{C|Azazel}}: The same effect as with Brimstone, but the damage is halved.
+** '''Azazel''' + {{i|Brimstone}}: Full damage of the laser ring is regained.
+* {{I|Backstabber}}: Much easier to inflict bleeding and double damage on most enemies.
+* {{I|Berserk!}}: The tear can't be controlled while berserking, but it can be batted around the room until the effect ends.
+** {{C|Tainted Samson}}: uses a passive form of Berserk! that works the same way.
+* {{tf|Bookworm}}: Causes an additional smaller tear to constantly appear and disappear, teleporting from Isaac's location to the main Ludovico tear in a glitchy manner.
+* {{i|Brimstone}}: Tear takes the shape of a very large laser ring. {{Dlc|nr}} The shot speed is ignored. The Tears stat is ignored and the damage is dealt very rapidly at a rate equivalent to 1 tear delay. This ring will always be present and doesn't need charging up like normal Brimstone would.
+** '''Brimstone''' + {{i|Incubus}}: Incubus' Brimstone laser is not affected by Ludovico Technique.
+*** {{Dlc|r}} Adds a smaller controllable laser ring in addition to the main one.
+** '''Brimstone''' + {{i|Twisted Pair}}: Similar effects to Incubus.
+** {{Dlc|r}} '''Brimstone''' + {{i|Ipecac}}: +2 damage, beam explodes when colliding with enemies and obstacles.
+** '''Brimstone''' + {{i|A Lump of Coal}}: The ring increases in diameter, but not the damage, the farther away it gets from Isaac.
+** '''Brimstone''' + {{i|Spoon Bender}}: The ring reaches out to attack enemies near it, reforming into a ring when no enemies are present.
+** '''Brimstone''' + {{i|Technology}}: The ring is visually identical to a normal Brimstone ring, but the 1.5x damage multiplier applies.
+** '''Brimstone''' + {{i|20/20}}/{{i|The Inner Eye}}/{{I|Mutant Spider}} / {{tf|Conjoined}}: no effect.
+** '''Brimstone''' + {{i|Apple!}} / {{i|Holy Light}} / Other tear effects: no effect.
+* {{i|Compound Fracture}}: Turns tear into a large bone, which shoots out smaller tears when attacking/touching an enemy. Scattered tears are spectral and piercing.
+* {{i|Dead Eye}}: Damage bonus increases until it hits the max of 2x. Since the controllable tear never hits the ground or wall, the bonus cannot be lost.
+* {{i|Dr. Fetus}}: A bomb is shot out at high speed and can be controlled, another bomb cannot be shot until the previously shot bomb has detonated.
+** {{Dlc|r}} Causes your tears to act like {{i|Epic Fetus}} and now inherits all synergies Epic Fetus has.
+
+* {{i|Epiphora}}: Moving the tear in one direction for an extended time increases your fire rate.
+
+* {{i|Explosivo|r}}/{{t|Nose Goblin|n}}/{{i|Sinus Infection|n}}: Every tick of damage the Ludovico tear deals has a chance to stick a separate Explosivo/booger tear onto the enemy allowing Isaac to continue controlling the Ludovico tear.
+* {{I|Eye of the Occult}}: While holding a direction key, the Ludovico tear will constantly shoot out controllable tears in random directions. The air time of these tears scales with the range stat.
+* {{i|Fate's Reward}}: The familiar gains spectral and piercing tears.
+* {{i|Flat Stone}}: The tear starts bouncing at a rate somewhat below Isaac's fire rate, each bounce dealing splash damage.
+** '''Flat Stone''' + {{i|Ipecac}}: Causes a poisonous explosion when it bounces instead of plain splash damage, as per normal Ipecac. The first bounce when entering a room does not explode, allowing moving the tear with less risk of self-damage.
+* {{i|Fruit Cake}}: The tear will cycle through different effects, based on Isaac's tear rate.
+** {{dlc|a+nr}} If Isaac stays in one room long enough the Ludovico tear will often fill the room with many stationary {{i|Trisagion}} tears that last until Isaac leaves the room. This combination can easily clear most rooms.
+* {{C|The Forgotten}}: The tear follows the Forgotten when in its skeleton form. It can be hit with its melee attack to propel it, making it do more damage. When switching to the Soul, the tear behaves as normal.
+** '''The Forgotten''' + {{i|Multidimensional Baby}}: The second tear acts exactly like the first and can also be hit to propel it.
+** '''The Forgotten''' + Multi-shot: Switching back from the Soul to the Forgotten will only remove the main tear, thus creating infinitely persisting tears on the screen. Repeating this process allows suspending arbitrarily high amount of tears.
+* {{i|Godhead}}: The tear homes towards nearby enemies and gains a large damaging aura. However, the aura cannot damage an enemy that is in contact with the actual tear; barring a high tear rate, it may be better to keep the aura on the enemies instead of the tear.
+* {{dlc|na+}} {{tf|Guppy}}: A large number of flies is rapidly deployed whilst controlling the Ludovico tear.
+* {{I|Holy Light}}: The Ludovico tear will release holy beams on itself periodically while touching an enemy.
+* {{i|Incubus|anr}}: Isaac gains a controlled tear while also being able to shoot normally with Incubus. Incubus's tears gain piercing and spectral properties.
+** {{dlc|r}} Incubus creates a second smaller Ludovico Technique tear instead, which can both be controlled by Isaac. The second tear is slightly delayed/ outside of the main tear. This may cause it to not hit enemies sometimes.
+** {{dlc|r}}  {{C|Lilith}}:  Lilith's incubus will fire a smaller Ludovico Technique tear. For each doubled incubus caused by {{i|Box of Friends}}, there will be an additional Ludovico Technique tear that spawns on Lilith's location.
+* {{i|Lead Pencil|a+nr}}: The tear blinks red, but the effect is entirely cosmetic.
+** {{dlc|r}} Tear barrages are launched in cardinal directions, even when not controlling the tear. Proc rate depends on fire rate.
+* {{I|Lodestone}}: The single floating tear will flash grey to indicate that the magnetism might apply on hit. Like Strange Attractor, enemies tagged with magnetism will also draw the floating tear towards said enemy.
+* {{i|Loki's Horns|a}}: The Ludovico tear will sometimes shoot 4 smaller [[piercing]] + [[spectral]] tears in each cardinal direction. This chance scales with [[luck]] and goes up to 100% at 20 Luck.
+* {{i|Lost Contact}}: Tear will block enemy tears without disappearing.
+* {{i|A Lump of Coal}}: The tear becomes larger the further away it is from Isaac, increasing in damage.
+* {{i|Mom's Eye|a}}: The Ludovico tear has a chance on each damage tick to fire a smaller [[piercing]] + [[spectral]] tear in a random direction. This chance scales with [[luck]] and goes up to 100% at 10 Luck.
+* {{dlc|na+}} {{i|Mom's Wig}}: The item causes spiders to spawn rapidly when moving the tear.
+** {{dlc|r}} Causes Spiders to rapidly spawn until the cap of 5 is reached.
+* {{i|Monstro's Lung}}: Tear turns red and does more damage.
+** {{dlc|a}} Tear becomes a cluster of variously sized tears spread over a small area. The tears move at the same speed when controlled but constantly move around each other.
+* {{I|My Reflection}}: The shot speed multiplier causes the tear to move significantly faster, allowing it to catch up to any fast-moving enemies.
+* {{I|Mysterious Liquid}}: Creep continuously oozes from underneath the tear.
+* {{i|The Parasite}}: Shoots out smaller tears when attacking an enemy. Scattered tears are spectral and piercing.
+* {{i|Pause}}: The tear deals damage, even if the enemies are stopped. Moving the tear unpauses the enemies.
+* {{i|Strange Attractor}}: Enemies, items and even most bosses will be sucked to the single floating tear, dealing constant damage while keeping Isaac well away from harm, making this combination extremely effective in almost all scenarios.
+* {{dlc+|r}}{{C|Tainted Azazel}}: The same effect as Brimstone, dealing full damage (Tainted Azazel's default laser damage is halved unless {{I|Hemoptysis}} is used first). Tainted Azazel can no longer use Hemoptysis.{{dlc-}}
+* {{i|Tear Detonator}}: The tear explodes into six smaller tears, then reappears next to the player.
+* {{i|Tech.5}}: The tear controls as usual, and Isaac fires the laser towards the tear relative to his position, rather than in the direction the player is moving the tear. The laser becomes spectral.
+* {{i|Technology}}: The tear becomes a large laser ring, which visually looks like a shot fired by {{i|Tech X|n}}. Shot speed is ignored. The Tears stat is ignored and the damage is dealt very rapidly at a rate equivalent to 1 tear delay.
+* {{i|The Wiz}}: Small tear orbits the main tear. Tear controls rotated 45 degrees clockwise - holding up makes it move northeast and so on.
+
+== Interactions ==
+Overrides The Ludovico Technique:
+* {{i|C Section}}
+** Except when combined with {{i|Brimstone}} in which case fetuses cease to spawn.
+* {{i|Epic Fetus}}
+* {{i|Haemolacria}}, provides piercing tears
+* {{i|Spirit Sword}}
+* {{i|Tech X}}
+Overridden by The Ludovico Technique:
+* {{I|Chocolate Milk|r}}
+* {{i|Cursed Eye}}
+* {{i|Ipecac|na+}}
+** {{dlc|a+nr}} +2 Damage.
+*** {{dlc|r}} +4 Damage.
+* {{I|Lachryphagy}}
+* {{i|Neptunus}}
+Overridden by The Ludovico Technique, other than stat changes:
+* {{i|Anti-Gravity}}
+* {{i|Cricket's Body}}
+* {{i|Marked}}
+* {{i|Tractor Beam}}
+Other interactions:
+* {{i|???'s Only Friend}} / {{i|Robo-Baby 2.0}}: The tear and familiar(s) travel together, as they are controlled in the same way. Because the familiars' travel speeds are not affected by Isaac's shot speed, they only travel in the same spot when Isaac has exactly the amount of shot speed to sync them up.
+* {{I|Almond Milk}}: The tear will rapidly teleport in a small area around it, making it difficult to aim.
+* {{i|Bag of Crafting}}: Swiping the bag at the Ludovico tear will bat it in the direction of the knockback.
+* {{i|Bird's Eye}}: Isaac will occasionally shoot a flame towards the Ludovico tear.
+* {{i|Blood Clot}} / {{i|Chemical Peel}}: The tear steadily cycles between red and "normal," dealing more damage when red.
+* {{i|Chocolate Milk|nr}}: The tear can't be charged, but reduces Isaac's [[Attributes#Tear Delay|tear delay]] by 20%.
+* {{i|The Common Cold}}: The tear pulses green, poisoning enemies.
+* {{i|Explosivo|na+}}: '''Not recommended''' as the tear will alternate between "normal" and black. If it touches an enemy, it will stick to it, grow in size, then explode. The tear can not damage anything or be controlled when stuck to an enemy.
+** {{dlc|a+nr}} The tear will grow very quickly when stuck to an enemy and pop without dealing damage, instead of the normal Explosivo delay and explosion.
+* {{i|Fire Mind|na+}}: Tears retain the ability to ignite enemies and explode. Tears reappear at Isaac's location after exploding.
+** {{dlc|a+}} Tears do not explode on contact with an enemy.
+* {{i|Ghost Pepper|nr}} / {{i|Red Candle}}: Created fires will destroy the tear and cause it to reappear at Isaac's location.
+** {{dlc|r}} Fires generated by both items do not interact with the Ludovico tear. However Ghost Pepper will create fires quickly when the Tear is moved.
+* {{i|Isaac's Tears}}:
+** {{dlc|nr}}: The item charges based on the tear's movement.
+** {{dlc|r}}: The item charges even while the tear is not moving, with the speed based on Isaac's tears stat.
+* [[Tear Effects|Homing Tears]]: The Ludovico tear will slowly move towards an enemy. This can make it harder to control towards a different enemy or for enemies that hide underground.
+* {{i|Mom's Knife}}: The tear becomes a controllable knife that deals double Isaac's damage. Effective shot speed is lowered. Tears stat is ignored and the damage is dealt at a rate equivalent to 4 tear delay.
+** '''Mom's Knife''' + {{i|Brimstone}} / {{i|Flat Stone}} / {{i|Monstro's Lung}} / {{i|Technology}}: The latter items are overridden completely.
+** Multishots: Knives orbit the main knife, similarly to Tiny Planet.
+* {{i|Multidimensional Baby|na+}}: No effect.
+** {{dlc|a+nr}} An additional Ludovico tear is created when it passes through Multidimensional Baby, at the start of every room, and persists like the Ludovico tear itself. However, it cannot be controlled; it instead slowly follows Isaac.
+*** {{dlc|r}} The extra tear stays completely still where it appeared.
+* {{dlc|a+nr}}{{t|Nose Goblin|n}}/{{i|Sinus Infection|n}}: '''Not recommended''' as the tear can occasionally stick to an enemy. This leaves Isaac defenseless until the enemy dies or a minute has passed causing the tear to pop and a new one to appear.
+* {{i|Notched Axe|nr}}: The Ludovico tear cannot be moved while Notched Axe is held up.
+** {{dlc|r}} The tear can be moved by swings, without any special effect happening to it.
+* {{i|Proptosis}}: The closer the tear floats to Isaac, the larger it is. The farther away, the smaller.
+* {{i|Pupula Duplex}}: Decreases the tear size by taking the form of a Pupula Duplex tear; however, it travels faster.
+* {{I|Sulfuric Acid}}: The Ludovico tear occasionally becomes acidic and can destroy objects.
+* {{C|Tainted Lilith|r}}: {{I|Gello|n}} shoots a smaller Ludovico tear which disappears if he retreats back into Lilith. However, the automatic aiming of Gello interacts with the manual control of Ludovico, making the tear uncontrollable while fighting enemies.
+* {{i|Technology 2|nr}}: The tear controls as usual, and Isaac fires the laser towards the tear relative to his position, rather than in the direction the player is moving the tear. Technology 2's damage penalty still applies. The laser becomes spectral.
+** {{Dlc|r}}Technology 2's tears penalty applies instead of damage.
+*** '''Technology 2''' + {{i|Analog Stick}}: Laser is fired directly at the tear while it is being moved, instead of being limited to cardinal directions.
+* {{i|Technology Zero}}: No effect without additional items. Extra tears orbiting the main one or familiar tears will generate arcs to the controlled tear.
+* {{i|The Wiz}}: A smaller Ludovico tear will appear and revolve around the main one. Also, the Ludovico tear moves diagonally, up is up-right, down is down-left, left is left-up, right is right-down. This can be counteracted by holding the keys or d-pad in its associated path (up-right to make it go up and so forth with the other keys).
+* {{i|Tiny Planet}}: Tear orbits around Isaac, however, the orbit can be grown or shrunken, sped up or slowed down by using the firing keys.
+* {{I|Tough Love}} / {{T|Jawbreaker}}: Tear occasionally flicks to being a tooth, which deals 3.2x Isaac's tear damage, before immediately returning to being a normal tear. The frequency at which the tear very briefly transforms into a tooth increases with [[Luck]], permanently becoming a tooth at 9 Luck. {{T|Jawbreaker}} does not change the tear appearance.
+* {{i|Trinity Shield}}: The controls of the tear and the shield overlap, making it impossible to consistently control both.
+* {{i|Tropicamide}}: No size increase effect. Ludovico tear size scales with damage, and not with size multipliers.
+
+== In-game Footage ==
+{{#ev:youtube|U56p5_2nvkQ}}
+
+== Trivia ==
+* The Ludovico Technique is a reference to Anthony Burgess' novel [[wikipedia:A Clockwork Orange|''A Clockwork Orange'']] and Stanley Kubrick's [[wikipedia:A Clockwork Orange (film)|film adaptation]], where it was referred to as "Ludovico's Technique." The technique involved headgear which forced the patient's eyelids open (hence ''"Controlled Tears"'') while watching violent films under nausea-inducing drugs, conditioning them against violence.
+* It is possible to control the tear with the mouse; just open the <code>options.ini</code> file in <code>C:\Users\USER\Documents\My Games\Binding of Isaac Repentance</code> and change <code>MouseControl=0</code> to <code>MouseControl=1</code>.
+* The sound of firing a tear with The Ludovico Technique can be heard in the splash screen of a boss room, before it is possible to control your character.
+
+== Gallery ==
+<gallery>
+File:Collectible The Ludovico Technique concept.jpg|Concept art for The Ludovico Technique.
+</gallery>
+
+== Bugs ==
+{{bug|dlc=anr|Mom's Knife + {{i|Technology}}: Creates an uncontrollable laser ring centered on Isaac. The knife becomes stuck under Isaac and cannot be fired.}}
+{{Bug|dlc=nr|With the [[bookworm]] transformation, the tear generated by Ludovico Technique will disappear and reappear on top of Isaac occasionally.}}
+{{Bug|dlc=r|At exactly 30.00 fire rate, the tear can only tick once on an enemy, potentially causing softlock due to lack of dps.}}
+{{Bug|dlc=r|If Isaac is holding fire and has {{i|Technology 2}} while pulling out {{i|Urn of Souls}}, another Technology 2 laser is created in the direction being fired that persists until the urn is put away or the room is left.}}
+
+{{nav|fr=La Technique Ludovico}}
+[[Category:Special items]]

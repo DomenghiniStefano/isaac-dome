@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | dlc            = a
+ | tear app scale = 1/2
+ | id             = 379
+ | quote          = Wide shot
+ | description    = Gives Isaac [[spectral tears]] and gives his tears a wide arc shape, increasing their size.
+ | quality        = 2
+ | tags           = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Grants [[spectral tears]].
+* {{Dlc|nr}} Tear size multiplier: 2x.
+* {{Dlc|r}} +0.6 tear size.
+
+== Notes ==
+* Despite their crescent shape, the tears still have a circular hitbox.
+
+== Synergies ==
+* {{i|Godhead}}: The damaging aura benefits from the increased size significantly.
+
+== Interactions ==
+* {{c|Azazel}}/{{c|Tainted Azazel}}/{{c|The Forgotten}}/{{c|Tainted Forgotten}}: No effect, only has an effect on {{c|The Soul}}.
+* {{i|Epic Fetus}}/{{i|Mom's Knife}}/{{i|Tech X}}/{{I|Spirit Sword}}/{{i|Brimstone}}: No effect on those items.
+* {{i|The Ludovico Technique}}: Only tear appearance changes, no tear size up.
+* {{Dlc|r}} {{I|My Reflection}}: Tears will spin like boomerangs. This is a purely cosmetic effect.
+* {{dlc|r}} {{i|Technology}}: Lasers are much wider.
+
+== In-game Footage ==
+{{#ev:youtube|Ak5jUSO8KMk}}
+
+== Trivia ==
+* "Pupula Duplex" is said to be a condition in which a person has two irises and two pupils in one eye, without any actual recorded cases. An actual rare medical condition similar to it exists, called [[wikipedia:Polycoria|polycoria]].
+* This item's appearance is similar to {{I|Diplopia}}.
+
+{{nav|fr=Polycorie}}

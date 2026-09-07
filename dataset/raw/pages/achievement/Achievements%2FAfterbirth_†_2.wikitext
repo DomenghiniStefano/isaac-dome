@@ -1,0 +1,447 @@
+{{page dlc|a+}}
+{{storage page}}
+{{infobox achievement
+ | dlc          = a+
+ | name         = Greedier!
+ | link         = Greedier Mode
+ | description  = New mode unlocked!
+ | requirements = Donate 500 Coins to the {{m|Greed Donation Machine}}
+ | id           = 341
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Burning Basement
+ | link         = Burning Basement
+ | description  = Alt stage to the basement.
+ | requirements = Defeat {{e|Mom's Heart}} 11 times
+ | id           = 342
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Flooded Caves
+ | link         = Flooded Caves
+ | description  = Alt stage to the caves.
+ | requirements = Defeat {{e|Mom's Heart}}/{{e|It Lives!}} 16 times
+ | id           = 343
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Dank Depths
+ | link         = Dank Depths
+ | description  = Alt stage to the depths.
+ | requirements = Defeat {{e|Mom's Heart}}/{{e|It Lives!}} 21 times
+ | id           = 344
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Scarred Womb
+ | link         = Scarred Womb
+ | description  = Alt stage to the womb.
+ | requirements = Defeat {{e|Mom's Heart}}/{{e|It Lives!}} 30 times
+ | id           = 345
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Something wicked this way comes!
+ | link         = Something wicked this way comes!
+ | description  = Unlocked new bosses!
+ | requirements = Defeat {{e|???}} as 3 different [[Character]]s
+ | id           = 346
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Something wicked this way comes+!
+ | link         = Something wicked this way comes+!
+ | description  = Unlocked even more bosses!
+ | requirements = Defeat {{e|???}} as 6 different [[Character]]s
+ | id           = 347
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = The gate is open!
+ | link         = Portal
+ | description  = Unlocked new enemies!
+ | requirements = Defeat {{e|The Lamb}}
+ | id           = 348
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Black Hole
+ | link         = Black Hole
+ | description  = Unlocked a new item.
+ | requirements = Defeat 20 [[Portal]]s
+ | id           = 349<br>{{plat|PS4}}&nbsp;340
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Mystery Gift
+ | link         = Mystery Gift
+ | description  = Unlocked a new item.
+ | requirements = Destroy 500 [[rock]]s
+ | id           = 350<br>{{plat|PS4}}&nbsp;341
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Sprinkler
+ | link         = Sprinkler
+ | description  = Unlocked a new item.
+ | requirements = Beat [[Chapter 1]] without taking damage
+ | id           = 351<br>{{plat|PS4}}&nbsp;342
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Angry Fly
+ | link         = Angry Fly
+ | description  = Unlocked a new item.
+ | requirements = Become {{tf|Beelzebub}}
+ | id           = 352<br>{{plat|PS4}}&nbsp;343
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Bozo
+ | link         = Bozo
+ | description  = Unlocked a new item.
+ | requirements = Destroy 5 [[rainbow poop]]s
+ | id           = 353<br>{{plat|PS4}}&nbsp;344
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Broken Modem
+ | link         = Broken Modem
+ | description  = Unlocked a new item.
+ | requirements = Complete 7 [[Daily Challenge]]s (by touching the trophy at the end)
+ | id           = 354<br>{{plat|PS4}}&nbsp;345
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Buddy in a Box
+ | link         = Buddy in a Box
+ | description  = Unlocked a new item.
+ | requirements = Pick up 5 [[familiar]]s in a single run
+ | id           = 355<br>{{plat|PS4}}&nbsp;346
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Fast Bombs
+ | link         = Fast Bombs
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Little Horn}} 20 times
+ | id           = 356<br>{{plat|PS4}}&nbsp;347
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Lil Delirium
+ | link         = Lil Delirium
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} for the 1st time
+ | id           = 357<br>{{plat|PS4}}&nbsp;348
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Hairpin
+ | link         = Hairpin
+ | description  = Unlocked a new item.
+ | requirements = Recharge using [[Lil' Battery|Lil' Batteries]] 20 times
+ | id           = 358<br>{{plat|PS4}}&nbsp;349
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Wooden Cross
+ | link         = Wooden Cross
+ | description  = Unlocked a new item.
+ | requirements = Sleep in a [[bed]]
+ | id           = 359<br>{{plat|PS4}}&nbsp;350
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Butter!
+ | link         = Butter!
+ | description  = Unlocked a new item.
+ | requirements = Complete 2 [[Victory Lap]]s by defeating {{e|The Lamb}}
+ | id           = 360<br>{{plat|PS4}}&nbsp;351
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Huge Growth
+ | link         = Huge Growth
+ | description  = Unlocked a new item.
+ | requirements = Be 3 times larger than the starting size. Depending on the item/card/pill size's multiplier, 5 to 7 size increases will be required.
+ | id           = 361<br>{{plat|PS4}}&nbsp;352
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Ancient Recall
+ | link         = Ancient Recall
+ | description  = Unlocked a new item.
+ | requirements = Use [[Cards and Runes]] 20 times
+ | id           = 362<br>{{plat|PS4}}&nbsp;353
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Era Walk
+ | link         = Era Walk
+ | description  = Unlocked a new item.
+ | requirements = Add both the {{i|Broken Watch}} and the {{i|Stop Watch}} to your [[Collection Page|collection]]
+ | id           = 363<br>{{plat|PS4}}&nbsp;354
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Coupon
+ | link         = Coupon
+ | description  = Unlocked a new item.
+ | requirements = Purchase anything from {{r|Shop}}s, {{r|Devil Room}}s, and/or {{r|Black Market}}s 50 times
+ | id           = 364<br>{{plat|PS4}}&nbsp;355
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Telekinesis
+ | link         = Telekinesis
+ | description  = Unlocked a new item.
+ | requirements = Beat [[Chapter 2]] without taking damage
+ | id           = 365<br>{{plat|PS4}}&nbsp;356
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Moving Box
+ | link         = Moving Box
+ | description  = Unlocked a new item.
+ | requirements = Use {{i|Pandora's Box}} in {{s|Dark Room}}
+ | id           = 366<br>{{plat|PS4}}&nbsp;357
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Jumper Cables
+ | link         = Jumper Cables
+ | description  = Unlocked a new item.
+ | requirements = Pick up 2 battery-related items in a single run
+ | notes        = {{dlc|nr}} Battery-related items are {{i|9 Volt}}, {{i|The Battery}}, and {{i|Car Battery}}<br>{{dlc|r}} Battery-related items have the [[Item Tags battery|'battery' item tag]])
+ | id           = 367<br>{{plat|PS4}}&nbsp;358
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Leprosy
+ | link         = Leprosy
+ | description  = Unlocked a new item.
+ | requirements = Beat [[Chapter 3]] without taking damage
+ | id           = 368<br>{{plat|PS4}}&nbsp;359
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Technology Zero
+ | link         = Technology Zero
+ | description  = Unlocked a new item.
+ | requirements = Pick up 2 [[Tech (Disambiguation)|technology]]-related items in a single run
+ | notes        = {{dlc|r}} Technology-related items have the [[Item Tags tech|'tech' item tag]]
+ | id           = 369<br>{{plat|PS4}}&nbsp;360
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Filigree Feather
+ | link         = Filigree Feather
+ | description  = Unlocked a new item.
+ | requirements = Acquire both {{i|Key Piece 1}} and {{i|Key Piece 2}}
+ | id           = 370<br>{{plat|PS4}}&nbsp;361
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Mr. ME!
+ | link         = Mr. ME!
+ | description  = Unlocked a new item.
+ | requirements = Open 20 [[Locked Chest]]s
+ | id           = 371<br>{{plat|PS4}}&nbsp;362
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = 7 Seals
+ | link         = 7 Seals
+ | description  = Unlocked a new item.
+ | requirements = Defeat all 5 [[Harbinger]]s
+ | id           = 372<br>{{plat|PS4}}&nbsp;363
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Angelic Prism
+ | link         = Angelic Prism
+ | description  = Unlocked a new item.
+ | requirements = Defeat an [[Angel]] 10 times
+ | id           = 373<br>{{plat|PS4}}&nbsp;364
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Pop!
+ | link         = Pop!
+ | description  = Unlocked a new item.
+ | requirements = Beat [[Chapter 4]] without taking damage
+ | id           = 374<br>{{plat|PS4}}&nbsp;365
+}}{{infobox achievement
+ | dlc          = a+
+ | name         = Door Stop
+ | link         = Door Stop
+ | description  = Unlocked a new item.
+ | requirements = Blow up doors and {{r|Secret Room}} walls 50 times
+ | id           = 375<br>{{plat|PS4}}&nbsp;366
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Death's List
+ | link         = Death's List
+ | description  = Unlocked a new item.
+ | requirements = Take 25 [[Devil Room|Deals with the Devil]]
+ | id           = 376
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Haemolacria
+ | link         = Haemolacria
+ | description  = Unlocked a new item.
+ | requirements = Acquire {{i|Blood Clot}} 10 times
+ | id           = 377
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Lachryphagy
+ | link         = Lachryphagy
+ | description  = Unlocked a new item.
+ | requirements = Collect 10 "Tears Up" [[Item Tags tearsup|items]] or [[Tears Up|pills]] in one run
+ | id           = 378
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Schoolbag
+ | link         = Schoolbag
+ | description  = Unlocked a new item.
+ | requirements = Enter 6 {{r|Shop}}s in one run
+ | id           = 379
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Trisagion
+ | link         = Trisagion
+ | description  = Unlocked a new item.
+ | requirements = Take 25 [[Angel Room (Item Pool)|Angel Rooms items]]
+ | id           = 380
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Extension Cord
+ | link         = Extension Cord
+ | description  = Unlocked a new item.
+ | requirements = Have {{i|The Battery}}, {{i|9 Volt}}, and {{i|Car Battery}} in Isaac's collection
+ | id           = 381
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Flat Stone
+ | link         = Flat Stone
+ | description  = Unlocked a new item.
+ | requirements = Acquire {{i|Rubber Cement}} 5 times
+ | id           = 382
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Sacrificial Altar
+ | link         = Sacrificial Altar
+ | description  = Unlocked a new item.
+ | requirements = Take 50 [[Devil Room|Deals with the Devil]]
+ | id           = 383
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Lil Spewer
+ | link         = Lil Spewer
+ | description  = Unlocked a new item.
+ | requirements = Have Isaac die to his own explosion from any explosive and poisoned tear ({{i|Ipecac}}, {{i|Bob's Rotten Head}}, {{i|Fire Mind}} / {{i|Explosivo}} + {{i|Scorpio}}, or a [[Horf!]] pill)
+ | id           = 384
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Blanket
+ | link         = Blanket
+ | description  = Unlocked a new item.
+ | requirements = Sleep in 10 [[bed]]s
+ | id           = 385
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Marbles
+ | link         = Marbles
+ | description  = Unlocked a new item.
+ | requirements = Use 5 [[Gulp!]] pills in one run
+ | notes        = {{i|Placebo}} uses count
+ | id           = 386
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Mystery Egg
+ | link         = Mystery Egg
+ | description  = Unlocked a new item.
+ | requirements = Spawn three charmed enemies in the same room
+ | id           = 387
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Rotten Penny
+ | link         = Rotten Penny
+ | description  = Unlocked a new item.
+ | requirements = Have 20 [[Blue Fly|Blue Flies]] at the same time
+ | id           = 388
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Baby-Bender
+ | link         = Baby-Bender
+ | description  = Unlocked a new item.
+ | requirements = Use {{p|I - The Magician}} or {{i|Telepathy For Dummies}} while already having [[homing]] tears
+ | id           = 389
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = The Forgotten
+ | link         = The Forgotten
+ | description  = Unlocked a new character.
+ | requirements = [[The Forgotten#Unlocking the Forgotten|It's complicated]]
+ | id           = 390
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Bone Heart
+ | link         = Hearts (Pickup)
+ | description  = Unlocked a new item.
+ | requirements = [[The Forgotten#Unlocking the Forgotten|It's complicated]]
+ | id           = 391
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Marrow
+ | link         = Marrow
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Mom's Heart}} or {{e|It Lives!}} on [[Hard mode]] as {{c|The Forgotten}}
+ | id           = 392
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Slipped Rib
+ | link         = Slipped Rib
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Isaac}} as {{c|The Forgotten}}
+ | id           = 393
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Pointy Rib
+ | link         = Pointy Rib
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Satan}} as {{c|The Forgotten}}
+ | id           = 394
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Jaw Bone
+ | link         = Jaw Bone
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|???}} as {{c|The Forgotten}}
+ | id           = 395
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Brittle Bones
+ | link         = Brittle Bones
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|The Lamb}} as {{c|The Forgotten}}
+ | id           = 396
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Divorce Papers
+ | link         = Divorce Papers
+ | description  = Unlocked a new item.
+ | requirements = Complete the {{r|Boss Rush}} as {{c|The Forgotten}}
+ | id           = 397
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Hallowed Ground
+ | link         = Hallowed Ground
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Hush}} as {{c|The Forgotten}}
+ | id           = 398
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Finger Bone
+ | link         = Finger Bone
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greed}} as {{c|The Forgotten}}
+ | id           = 399
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Dad's Ring
+ | link         = Dad's Ring
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Ultra Greedier}} as {{c|The Forgotten}}
+ | id           = 400
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Book of the Dead
+ | link         = Book of the Dead
+ | description  = Unlocked a new item.
+ | requirements = Defeat {{e|Delirium}} as {{c|The Forgotten}}
+ | id           = 401
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Bone Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Earn all [[Hard mode]] [[Completion Mark]]s as {{c|The Forgotten}}
+ | id           = 402
+}} {{infobox achievement
+ | dlc          = a+
+ | name         = Bound Baby
+ | link         = Babies
+ | description  = Unlocked a new co-player baby.
+ | requirements = Defeat {{e|Mega Satan}} as {{c|The Forgotten}}
+ | id           = 403
+}}

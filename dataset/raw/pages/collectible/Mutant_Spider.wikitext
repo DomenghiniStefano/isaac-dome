@@ -1,0 +1,58 @@
+{{infobox passive collectible
+ | id          = 153
+ | quote       = Quad shot
+ | description = Isaac shoots four tears at once with lower [[fire rate]].
+ | quality     = 3
+ | tags        = summonable spider offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Isaac fires 4 tears at the same time.
+* {{Dlc|nr}} Tears down: (Delay * 2.1) + 3.
+* {{Dlc|r}} Tears fired per second * 0.42.
+* {{transformation contribution|Spider Baby}}
+
+== Notes ==
+* {{dlc|nr}} Mutant Spider is a [[special item]].
+* {{dlc+|a}} The maximum number of tears per volley that can be reached by combining and/or duplicating {{i|20/20}}, {{i|The Inner Eye}}, Mutant Spider and {{i|The Wiz}} is 16.{{dlc-}}
+
+== Synergies ==
+* {{dlc|a+nr}} {{i|20/20}}: Shoots 6 tears.
+** {{dlc|r}} Removes the fire rate penalty while reducing damage to 80%. Additional copies will add one additional tear with no further change to damage/fire rate.
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Mutant Spider it creates four locusts instead of one.
+* {{I|Brimstone}}: Shoots 4 beams at once.
+* {{dlc|nr}} {{i|Cursed Eye}}: Shoots 4 shots out of each eye, for a total of 16 tears when fully charged.
+* {{i|Doctor's Remote}}/{{i|Epic Fetus}}: Replaces the single missile strike with a barrage of four consecutive missiles.
+* {{dlc|anr}} {{i|The Inner Eye}}: Shoots 7 tears with no further decrease in fire rate.
+** {{dlc|r}} Shoots 5 tears with no further decrease in fire rate.
+* {{i|Libra}}: Negates the firing rate reduction effect.
+* {{I|Monstro's Lung}}: Adds 7 tears to the barrage with a significant decrease in fire rate.
+* {{dlc|anr}}{{i|Mutant Spider}}: Fires 8 tears with no further decrease in fire rate.
+** {{dlc|r}} Each copy of the item adds +2 tears, up to the maximum of 16.
+* {{i|Polyphemus}}: Tear rate is not lowered further. Damage is increased by a flat +5 instead of normal Polyphemus boost.
+* {{i|Tractor Beam}}: All tears are fired along the beam.
+* {{i|The Wiz|nr}}: Four shots are fired in each direction.
+** {{dlc|r}}: Three shots are fired in each direction.
+
+== Interactions ==
+* {{Dlc|na+}} {{i|20/20}}: Overridden by Mutant Spider.
+* {{C|Keeper|n}}: Fires {{dlc|nr}} 7 / {{dlc|r}} 5 tears with significantly decreased fire rate.
+* {{c|Tainted Keeper}}: Fires 6 tears with significantly decreased fire rate.
+* {{I|The Ludovico Technique}}: The tear gains 3 orbiting tears.
+* {{i|Loki's Horns}}: Only occasionally fires one tear in the other three directions.
+* {{Dlc|na+}} {{i|Mom's Eye}}: No effect.
+** {{dlc|a+}} Fires three shots out of each eye.
+* {{i|Pupula Duplex|a+}} + {{i|Lachryphagy|n}}: The four shots instantly fuse and burst.
+* {{i|Sad Bombs}} / {{I|Varicose Veins}} / {{I|It Hurts}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|C6zRjp8qWR8}}
+
+== Trivia ==
+* It might be a nod to Spiderman and the general trope of gaining superpowers by being bitten by a radiative animal.
+* This item is often called "Quad Shot" by the community instead of Mutant Spider.
+
+{{nav|spider|fr=Araignée Mutante}}
+[[Category:Special items]]

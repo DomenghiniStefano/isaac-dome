@@ -1,0 +1,27 @@
+{{infobox challenge
+ | number      = 5
+ | character   = Magdalene
+ | item        = {{i|Infamy}}<br>{{i|Bucket of Lard}}<br>{{i|Thunder Thighs}}<br>{{i|Yum Heart}}
+ | has shops   = yes
+ | unlocks     = Rune of Ansuz
+ | unlocked by = The Tank
+}}
+
+'''The Tank''' is [[Challenges|challenge]] #5. {{C|Magdalene}} is the default character for the challenge, and she starts with {{i|Bucket of Lard}}, {{i|Infamy}}, {{i|Yum Heart}}, and {{i|Thunder Thighs}}. The goal is to defeat {{E|Mom}}. This challenge is unlocked upon unlocking Magdalene.
+
+== Difficulty ==
+The main difficulty of the challenge is linked to Magdalene's low [[speed]], which was already lower than average, but with {{I|Bucket of Lard}} and {{I|Thunder Thighs}}, it is now at a mere quarter of the average speed (0.25). Additionally, the Thunder Thighs effect can cause unwanted results when not paying attention, such as setting off [[Obstacles#Bomb Rocks|Bomb Rocks]] or creating new monsters to fight.
+
+== Strategy ==
+* The Thunder Thighs effect can easily give access to chests and other items trapped behind rocks. This will allow bombs to be used more liberally for finding secret rooms, as well as in combat.
+* Pills can be obtained from mushrooms, which may provide a much-needed Speed Up pill, but mushrooms can spawn poisonous clouds when destroyed, making this strategy risky.
+** {{dlc|a+nr}} Completing {{chal|Aprils Fool|n}} allows Magdalene to spawn with a Speed Up pill, counteracting the heavy speed reduction from the challenge items and easily identifying future Speed Up pills.
+*** {{Dlc|r}}The Speed Up pill is replaced with a Full Health pill, which can be useful to replenish Magdalene's health at the cost of her already low speed.
+* Destroying as many rocks as possible is a recommended strategy, as this may result in finding a trapdoor. This can lead Magdalene to a {{R|Crawl Space}} or {{R|Black Market}}, thereby allowing the player to obtain valuable items.
+* Magdalene's high starting Health makes it easier to take [[Devil Room|deals with the devil]] and [[Sacrifice Room]] payouts without harsh consequences.
+** Recommended items include those that grant flight, such as {{i|Lord of the Pit}} or {{i|Spirit of the Night}}, as they can give increased mobility in the lower levels.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Rune of Ansuz }}
+
+{{nav|challenge|fr=Le Tank}}

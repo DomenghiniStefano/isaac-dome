@@ -1,0 +1,60 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 149
+ | quote       = Push in case of emergency
+ | description = Activates Isaac's active item just before he takes damage.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* Activates Isaac's active item just before damage would be taken.
+** This still uses the item's charges, so if the item is not charged, the trinket will do nothing.
+** Single-use items will be consumed.
+
+== Notes ==
+* Panic Button will attempt to use the item 2-3 times per tick as damage is incoming. This may cause some unlimited use items to trigger multiple times before one damage instance.
+* Some items will be activated after respawning if Isaac is killed by the incoming damage, including {{I|Guppy's Paw}} and {{I|Mega Blast}}.
+* Taking damage from explosions, enemy creep, spikes and spike rocks, {{E|Spiked Chest}} and {{E|Mimic Chest}}, some attack from above (for example, the stomp attacks from {{E|Mom}} and {{E|Satan}}), {{E|Whipper}} and their variants, brimstone lasers (including angel lasers), or electric lasers, will not trigger the effect as those are instantaneous.
+* Self-damage sources also won't trigger the trinket. This includes items, machines, and damaging doors.
+* Does not activate items in a consumable slot (such as {{c|Tainted Bethany}}'s {{i|Lemegeton}} or dice items granted by {{t|Dice Bag}}).
+* Will activate when touching {{E|Dark Esau}} while playing as {{C|Tainted Jacob}}, despite Dark Esau not technically dealing damage.
+** This effect still occurs even whilst he is chained by {{I|Anima Sola}}, when he deals no contact damage.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Having either gives 10% chance to not deplete the item's charge when it's activated. Having both increases the chance to 20%.
+
+== Interactions ==
+* Any self-damaging item: Self-damage occurs before enemy damage, making it almost impossible to lose Devil/Angel Room chances.
+** For self-damaging items that deals only half a heart damage (such as {{i|Kamikaze!}}), before chapter 4, it will also reduce enemy damage to half a heart, similarly to {{i|The Wafer}}.
+* {{i|Blank Card}} with {{P|VII - The Chariot}} / {{P|VII - The Chariot?}}: Activate their respective effects without consuming it.
+* {{i|Blood Rights}}: Triggers the effect on hit, at the cost of a full-heart of damage on the first hit and half-heart damage on subsequent hits in the same room.
+* {{I|Book of Shadows}}: Activates the item, giving Isaac the [[shield]] effect for 10 seconds.
+* {{i|Bursting Sack}}: Even though the neutral spiders can't possibly hurt Isaac, the trinket still activates when contact is made with them.
+* {{i|Butter Bean}} / {{i|Wait What?}}: Isaac farts before being hit, knocking back enemies and projectiles.
+* {{i|Clear Rune}} with {{P|Algiz}} / {{P|Blank Rune}} / {{P|Rune Shard}} / {{P|Soul of Judas}}: Activate their respective effects without consuming it.
+* {{I|Dark Arts}}: Unlike many other items on this list, Dark Arts can be used to negate damage more than once per room, making it an excellent defensive item to use with Panic Button. Note that this does '''not''' work while playing as{{C|Tainted Judas}}.
+* {{i|Damocles}}: '''Not recommended.''' Damocles will activate right before Isaac takes damage, guaranteeing Damocles will fall later in the run.
+* {{i|Dull Razor}}: Activates the item and gives Isaac invincibility frames before being hit. If combined with {{i|9 Volt}} or {{t|AAA Battery}}, works every room, just like Holy Mantle. If combined with {{i|The Battery}}, {{i|Habit}}, and {{i|Car Battery}} it will make Isaac almost invincible.
+* {{I|Glowing Hourglass}}: Rewind time to the previous room.
+* {{i|Holy Mantle}}: Does ''not'' stop the trinket from activating.
+** {{C|The Lost}} can die this way should he carry self-damaging items at the time of the hit.
+* {{i|How to Jump}}: Makes Isaac immune to contact and tear damage while moving.
+* {{i|IV Bag}}: Upon getting hit, activates the IV Bag instead, causing self-damage and producing money.
+* {{i|Kamikaze!}}: Causes a highly-damaging explosion to occur every time Isaac is hit.
+* {{i|My Little Unicorn}}: Gives [[invulnerability]] and +0.28 [[speed]] for six seconds, removing the ability to shoot tears and replacing it with the ability to deal contact damage to enemies.
+* {{i|Razor Blade}}: Isaac gains a damage boost every time he's hit, acting similarly to {{T|Red Patch}}, at the cost of a full-heart of damage on the first hit and half-heart damage on subsequent hits in the same room.
+* {{i|Stitches}}: Isaac will teleport before damage is taken, making him much harder to hit.
+* {{C|Tainted Forgotten}}: Triggers his active item whenever the body touches something that would damage the {{c|Tainted Soul}}, regardless of damage taken.
+* {{i|Suplex!}}: As long as Suplex! is fully charged, damage can be dodged by the grab.
+* {{i|Telekinesis}}: Automatically blocks any incoming shots, but the push is not strong enough to prevent contact damage.
+* {{I|The Gamekid}}: Turns the character into a Pac-Man-like creature for 6.5 seconds and provides [[invulnerability]], inflicts [[fear]] on all enemies, removing the ability to shoot tears and replacing it with the ability to deal contact damage to enemies.
+* {{i|Unicorn Stump}}: Gives [[invulnerability]] and +0.28 [[speed]] for six seconds, but removes the ability to shoot tears while the effect is active.
+
+== In-game footage ==
+{{#ev:youtube|8t75LgPs2E8}}
+
+== Bugs ==
+{{bug|{{i|Spin to Win}} Has a chance to spawn additional wheels upon taking damage that last only for the current room.}}
+
+{{nav|fr=Bouton Rouge}}

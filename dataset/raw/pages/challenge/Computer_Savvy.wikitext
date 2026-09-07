@@ -1,0 +1,22 @@
+{{infobox challenge
+ | number    = 16
+ | item      = {{i|Spoon Bender}}<br>{{i|Technology}}<br>{{i|Technology 2}}
+ | has shops = yes
+ | unlocks   = Robo-Baby 2.0
+}}
+
+'''Computer Savvy''' is [[challenge]] #16. {{c|Isaac}} starts off with {{i|Technology}}, {{i|Technology 2}}, and {{i|Spoon Bender}}. The goal is to defeat {{E|Mom}}. This challenge is available by default.
+__TOC__
+
+== Difficulty ==
+Due to the homing laser setup given, this challenge is considered the easiest of all the challenges. The only problem you will encounter will be rocks and obstacles getting in the way of your lasers, but this is something most runs have to deal with anyway.
+
+== Strategy ==
+* Getting an item that can break obstacles like {{i|Thunder Thighs}} or {{i|Leo}} will make the challenge trivial.
+* Be aware of Isaac's position so lasers can be shot in the right direction to either get a direct hit or have it curve to hit enemies.
+* [[Spectral]] tears, such as from {{I|Dead Dove}} (found in {{R|Angel Room}}s), and {{I|Spirit of the Night}} or {{I|Ouija Board}} (both found in {{R|Devil Room}}s), are also very helpful.
+
+== Rewards ==
+{{achievement text | Robo-Baby 2.0 }}
+
+{{nav|challenge|fr=Ingénieur Informaticien}}

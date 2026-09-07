@@ -1,0 +1,53 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 660
+ | quote       = A link to your future
+ | description = Spawns two portals at the beginning of each floor that each lead to either the {{R|Boss Room}}, {{R|Treasure Room}}, or {{R|Secret Room}}.
+ | quality     = 3
+ | tags        = summonable offensive nocantrip stars lazarussharedglobal nogreed
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* At the beginning of each floor, spawns 2 portals that lead to certain special rooms:
+** A red portal leading to the {{R|Boss Room}}.
+** A yellow portal leading to the {{R|Treasure Room}}.
+** A blue portal leading to the {{R|Secret Room}}.
+**{{dlc|r+}} A green portal leading to the {{R|Shop}}.
+* On floors with no treasure rooms or no secret rooms, only 1 portal will spawn.
+* The portals will disappear once the starting room is left, whether a portal was taken or not.
+
+== Notes ==
+* Assuming that each portal has an equal chance of spawning, before chapter 4, each portal has a {{dlc|nr+}}2/3 {{dlc|r+}}1/2 chance to appear. From chapter 4 onward, there's a 1/2 chance of either color spawning.
+** In challenges without treasure rooms or without secret rooms, only 1 portal will spawn on each floor.
+* No portals will spawn in {{s|Home}}.
+* During the [[Ascent]], the portal will spawn in the "starting room" that leads to the next floor.
+* Entering the starting room in the [[Mirrored World]] will cause the portals to spawn there, leading to the mirror's treasure, secret, boss, {{dlc|r+}} or shop.
+* If the run is exited, the portals will not be there upon continuing.
+* In {{s|The Void}} the boss portal will lead to a random boss, not necessarily {{E|Delirium}}.
+* Entering a portal with {{cu|Maze}} active on the current floor has a chance of teleporting Isaac to a random room instead.
+* The Treasure Room portal will not lead to a {{R|Planetarium}} if available, unlike {{P|XVII - The Stars}}.
+* {{dlc+|r+}} Card Reading's quality is treated as 2 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Interactions ==
+* {{t|Bloody Crown}}: Makes a second portal spawn in Chapter 4.
+* {{T|Holy Crown}}/{{T|Wicked Crown}}: Makes a second portal spawn in Chapter 5, if on the respective floor.
+
+== In-game footage ==
+{{#ev:youtube|NkDpn9zrvTE}}
+
+== Trivia ==
+* Fittingly, this item's sprite is a combination of {{p|IV - The Emperor}} and {{p|XVII - The Stars}}.
+* This item may be a reference to the portals in the videogame [https://store.steampowered.com/app/445980/Wizard_of_Legend/ Wizard of Legend], where [https://cdn.staticneo.com/ew/5/51/Wizard_of_Legend_Exit_Portal.png four portals] appear after clearing the boss room, that teleport you to important locations (shops or the start point) depending on their color (red, green, purple, and turquoise).
+* The subtext "A link to your future" is very likely a reference to the game ''The Legend of Zelda: A Link to The Past''.
+* Card Reading is twice as unlikely to appear as most other Shop items, and is the only Shop item which acts this way that cannot be obtained from a different item pool.
+* Card Reading is tied with {{i|Key Piece 1}} and {{i|Key Piece 2}} for the item with the most item tags at 6.
+
+== Bugs ==
+{{bug|In the first floor of a [[Victory Lap]], the portals will appear but cannot be entered. It will work again from floor 2.}}
+{{bug| Entering one of the portals causes the {{T|Found Soul}} familiar to become invisible until Isaac drops and picks up the trinket again or enters a new floor.}}
+{{bug|Using a portal, then rewinding time with the {{i|Glowing Hourglass}} will not cause the portals to reappear.}}
+{{bug|Portals may on rare occasion appear in {{i|Death Certificate}} rooms, even under item pedestals. Taking the portal will simply teleport Isaac to another room inside the Death Certificate area.}}
+
+{{nav|fr=Cartomancie}}

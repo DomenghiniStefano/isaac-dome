@@ -1,0 +1,91 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 166
+ | quote       = ???
+ | description = 50% chance to grant the effect of a random passive [[Item]] each room.
+ | unlocked by = Modeling Clay
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Has a 50% chance to mimic the effect of a random [[passive item]] from the current room’s [[Item Pool|item pool]] when entering a room.
+** The trinket takes the shape of the mimic item.
+
+== Notes ==
+* Modeling Clay can only mimic items that have the "<code>[[Item Tags summonable|summonable]]</code>" item tag, the same way {{I|Lemegeton}} selects the wisps it summons.
+* The item given by Modeling Clay is seeded and based on the room Isaac is in.
+* Effects that activate upon pickup will not be applied.
+
+== Excluded Items ==
+The following passive items cannot be mimicked by Modeling Clay.
+
+=== Collectibles ===
+{{collectible table | type = passive | no tag = summonable | collapsed = true }}
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box}}: Increases the chance of triggering to 100%. Having both, or stacking extra copies has no effect.
+* {{i|Chaos}}: Removes the item pool constraint for Modeling Clay's available items.
+* {{i|Rock Bottom}}: Permanently increases Isaac's stats when it transforms into an item that surpasses Isaac's current stats.
+* {{i|Sacred Orb}}: Temporary items are affected by Sacred Orb.
+* {{i|Sacrificial Altar}}: If Modeling Clay is currently mimicking a viable familiar, it will also be sacrificed and spawn an additional Devil Room item, but Modeling Clay will not be destroyed.
+
+== Interactions ==
+* {{t|Modeling Clay}}: No effect.
+* {{i|Magic Skin}}: Modeling Clay can turn into Magic Skin if it was used during the run. Modeling Clay has no effect if this occurs.
+* {{i|TMTRAINER}}: Modeling Clay cannot copy glitched items; it will do nothing and not have a sprite if it tries to.
+
+If Modeling Clay mimics the following items, they will behave in the following ways:
+* {{i|9 Volt}}: 1-room charge active items will not recharge over time. Other active items are affected normally.
+* {{i|Belly Button}} / {{i|Mom's Purse}}: Allows Isaac to hold another trinket alongside Modeling Clay if he picks it up while Modeling Clay mimics the item, and he will continue to hold both even after Modeling Clay changes. If Isaac tries to pick up another trinket while he already has two, it will instead be destroyed and he will only be able to hold one trinket again.
+** Isaac can safely exchange cards/pills/trinkets by manually dropping them, at the cost of being unable to hold two.
+** Extra trinkets held this way are susceptible to not working properly, if at all.
+* {{i|Black Candle}}: Does not remove the current floor’s [[curse]].
+* {{i|Bloody Lust}} / {{i|Bloody Gust}} / {{i|False PHD}} / {{i|Keeper's Sack}} / {{i|Rock Bottom}}: Stat boosts will not persist after Modeling Clay changes. If it mimics that item again, it will remember the stat boosts they gave.
+* {{i|Blue Map}} / {{i|The Compass}} / {{i|The Mind}} / {{i|Treasure Map}}: Does not reveal rooms on the map.
+* {{i|Candy Heart}} / {{i|Soul Locket}}: Stats granted from picking up hearts will not persist after Modeling Clay changes.
+* {{i|Cambion Conception}} / {{i|Immaculate Conception}}: If Isaac can somehow meet the requirements for these items to spawn familiars, the familiars will persist for only one room after Modeling Clay changes.
+* {{i|Delirious}} / {{i|Mr. ME!}}: Has no effect, even if Isaac uses his active item.
+* {{i|Dog Tooth}} / {{i|Spelunker Hat}} / {{i|X-Ray Vision}} / {{i|YO LISTEN!}}: Will reveal/open neighboring [[Secret Room]]s.
+* {{i|False PHD}} / {{i|PHD}}: Pills’ effects will be changed, but they will not be identified.
+* {{i|GB Bug}}: The familiar respawns every time Isaac re-enters the room where Modeling Clay mimicks GB Bug, allowing for the infinite transformation of pickups.
+* {{i|Glitched Crown}}: Items that are spawned while it’s being mimicked will cycle between 5 different items, even after Modeling Clay changes.
+* {{i|Missing No.}} / {{i|Isaac's Tomb}} / {{i|Voodoo Head}}: If Isaac can enter a trapdoor to the next floor while it’s being mimicked, they will have their normal effects.
+** Other items that activate on floor transition (such as {{i|Dream Catcher}}, {{i|Empty Heart}}, or {{i|Lost Soul}}) will not work.
+* {{i|Little Baggy}} / {{i|Polydactyly}} / {{i|Starter Deck}}: Allows Isaac to hold two cards and/or pills if he picks them up while Modeling Clay mimics the item, and he will continue to hold both even after Modeling Clay changes. If Isaac tries to pick up another card/pill after Modeling Clay changes, the inactive card/pill he was holding will be destroyed and he will only be able to hold one card/pill again.
+** If Isaac goes to a new room while Modeling Clay mimics Starter Deck/Little Baggy, cards/pills in the new room will be converted appropriately.
+* {{i|Member Card}}: The special trapdoor will not spawn.
+* {{i|Sanguine Bond}}: The unique spikes will not spawn.
+* {{i|Schoolbag}}: If Isaac picks up another active item while Modeling Clay mimics the item, the other active item is dropped after Modeling Clay changes.
+
+== Strategy ==
+Modeling Clay can open additional advantages if a particularly helpful item is chosen for a given room. Exploring all rooms to see what effects are available may be worthwhile to gain the most value of the trinket:
+* Explosive shots: Allows Isaac to destroy rocks and open {{R|Secret Room}} doors without spending resources.
+* [[:Category:Damage-triggered items|Damage-triggered items]]: To gain extra value from using [[Machines]]/{{M|Beggar}}s that take health or {{R|Sacrifice Room}}s. Note that stats given by on-hit items will not persist outside the rooms they were used in.
+** {{i|Hallowed Ground}} can be used first to spawn a white poop next to a Machine/Beggar that takes health to give Isaac the chance to resist damage taken from using them.
+* {{i|The Battery}}: Allows Isaac's active item to be overcharged; overcharging will persist after Modeling Clay changes.
+* {{i|Cancer}} / {{i|The Wafer}}: Reduces the damage taken from Sacrifice Rooms to half a heart, allowing Isaac to use them more.
+* {{i|Echo Chamber}}: Cards and runes’ effects will be stacked if used while it mimics the item. The game will remember what cards and runes were used if it turns into Echo Chamber in the future, even on later floors.
+* {{i|Lucky Foot}} / {{i|PHD}} / {{i|Virgo}}: Bad pills will be their good counterparts while mimicking these items, making them much safer to use.
+* {{i|Marbles}}: Allows trinkets to be smelted if Isaac can deal damage to himself while it mimics the item.
+* {{i|Pyromaniac}}: Lets Isaac heal off explosions in the current room. Can be used to greater effect in rooms with {{E|TNT}} or {{M|Bomb Bum}}s.
+* {{i|Restock}}: Items will restock themselves as normal.
+* {{i|Scapular}}: To gain a {{E|Soul Heart}} if at low health. This will not work if the damage source is considered "health donation", such as from a {{M|Blood Donation Machine}}, {{M|Devil Beggar}}, {{M|Confessional}}, or {{M|Hell Game}}, but it will work for {{R|Curse Room}}s and {{R|Sacrifice Room}}s.
+* {{i|Sharp Plug}}: Isaac’s active item can be instantly recharged at the cost of red hearts.
+* {{i|Steam Sale}}: {{R|Shop}} items and pickups will be discounted.
+* {{i|Tarot Cloth}}: Cards will have their effects boosted.
+** Notable cards are {{P|IX - The Hermit}} for getting rid of [[Greed]] in shops and {{P|XVII - The Stars}} for effectively {{I|More Options}}.
+
+== In-game footage ==
+{{#ev:youtube|5oa2sikkU38}}
+
+== Trivia ==
+* The trinket is a direct reference to the item of the same name in The Binding of Isaac: Four Souls, which turns into another available item when used.
+* In addition, the item is possibly a reference to the Self-forming Clay item from the rogue-like deckbuilder ''[[wikipedia:Slay the Spire|Slay the Spire]]''.
+
+== Bugs ==
+{{Bug|Walking between rooms back and forward with Modeling Clay may cause the game to crash at random.}}
+{{Bug|{{dlc|nr+}} Normally, Modeling Clay's appearance changes to reflect what item it's imitating. This is not the case if the trinket is absorbed, e.g. through {{I|Smelter}}. It will appear in the Found HUD where passive items appear, like other absorbed trinkets, but will never change its appearance.}}
+{{Bug|{{i|Magic Skin}}'s item-replacing effect can also apply to this trinket. If modeling clay replicates Magic Skin, it will have no effect.}}
+
+{{nav|tainted eden unlock|mother unlock|fr=Pâte à Modeler}}

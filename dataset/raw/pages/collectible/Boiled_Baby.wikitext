@@ -1,0 +1,23 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 607
+ | quote       = Messy friend
+ | description = Spawns a [[familiar]] that follows Isaac around and fires chaotic bursts of tears in all directions.
+ | quality     = 1
+ | tags        = summonable baby monstermanual offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Spawns a [[familiar]] that follows Isaac around and fires chaotic bursts of tears in all directions at random intervals while in a room with enemies, shooting faster the closer it is to an enemy, similarly to {{E|Boil}}s.
+** Each tear fired by Boiled Baby does either 3.5 or 5.3 damage, with no in-between.
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Boiled Baby having the lowest priority at {{dlcalt|6th|r+=8th}} and thus staying the farthest away from Isaac when compared to other familiars with higher priorities.
+
+== Trivia ==
+* [[anti:Boiled Baby|Boiled Baby]] originates from the ''Antibirth'' mod.
+
+{{nav|conjoined|fr=Bébé Furoncle}}

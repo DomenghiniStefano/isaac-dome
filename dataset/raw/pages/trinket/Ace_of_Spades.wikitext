@@ -1,0 +1,58 @@
+{{infobox trinket
+ | id          = 45
+ | quote       = Luck of the draw
+ | description = Increases the chance of [[Cards and Runes|tarot cards or playing cards]] dropping after clearing a room, and the chance of finding cards when opening a {{E|Chest}}.
+ | tags        = nogreed
+}} {{disambig msg|the trinket|the card of the same name|Ace of Spades (Card)}}
+
+{{cit|t}}
+
+== Effects ==
+* Gives a 10% chance of changing the room drop reward to a [[Cards and Runes|tarot or playing card]].
+* Gives a 33% chance of adding a card or rune to the rewards from opening certain [[Chests]], or destroying [[Tinted Rock]]s, certain [[Machine]]s, and certain [[Beggar]]s.
+** Other than Tinted Rocks and {{e|Wooden Chest}}s, these can only drop the card if they drop [[coin]]s, [[heart]]s, {{e|Bomb}}s, or {{e|Key}}s.
+*** {{e|Wooden Chest}}s can even drop the card in addition to an item.
+** This includes: {{column list | width = 15em | content =
+*** {{E|Chest}}s
+*** {{e|Locked Chest}}s
+*** {{e|Bomb Chest}}s
+*** {{e|Eternal Chest}}s
+*** {{e|Spiked Chest}}s
+*** {{e|Mimic Chest}}s
+*** {{e|Wooden Chest}}s
+*** {{e|Mega Chest}}s
+*** {{e|Haunted Chest}}s
+*** [[Tinted Rock]]s
+*** {{M|Slot Machine}}s
+*** {{M|Fortune Telling Machine}}s
+*** {{M|Crane Game}}s
+*** {{M|Confessional}}s
+*** {{m|Beggar}}s
+*** {{dlc|nr}} {{m|Devil Beggar}}s
+*** {{m|Key Master}}s
+*** {{m|Bomb Bum}}s
+*** {{m|Battery Bum}}s
+}}
+** This excludes: {{column list | width = 15em | content =
+*** {{e|Red Chest}}s
+*** {{e|Old Chest}}s
+*** {{e|Mom's Chest}}
+*** {{m|Blood Donation Machine}}s
+*** {{m|Shop Restock Machine}}s
+*** {{m|Mom's Dressing Table}}
+*** {{m|Donation Machine}}
+*** {{dlc|r}} {{m|Devil Beggar}}s
+*** {{m|Rotten Beggar}}s
+*** {{m|Hell Game}}s
+}}
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either increases the chance of changing the room drop reward to a [[Cards and Runes|tarot or playing card]] by 20% and increases the chance of adding a card or rune to rewards to 66%. Having both increases these chances to respectively 30% and 100%.
+
+== In-game Footage ==
+{{#ev:youtube|349Ok1tzvzM||inline}} {{#ev:youtube|pEoY0Smk8JE||inline}}
+
+== Trivia ==
+* The Ace of Spades is often seen as the most powerful and highest card in an average 52 card deck.
+
+{{nav|fr=As de Pique}}

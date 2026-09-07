@@ -1,0 +1,45 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 150
+ | quote       = Look between the rooms
+ | description = Doors can be unlocked without using {{e|Key}}s. Opening a door this way brings Isaac to an in-between room that resembles {{s|???}}, with a few [[monster]]s.
+ | unlocked by = Blue Key
+}}
+{{disambig msg|the trinket that creates Blue Womb rooms|the trinket that opens the [[Hush]] fight and empowers [[Pandora's Box]]|Strange Key}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Entering a room that requires a {{e|Key}} does not consume a key, but brings Isaac to a room resembling {{s|???}}, which acts as an in-between of the two rooms.
+** These rooms contain assortments of {{E|Blue Gaper}}s, {{E|Blue Boil}}s, and/or {{E|Blue Conjoined Fatty|text=Blue Conjoined Fatties}}, and are always long rooms (either normal or slim). They have a chance to give a reward when cleared, like normal rooms.
+** Once exited, the room cannot be re-entered.
+
+== Notes ==
+* Doors that were unlocked with the trinket have a blue hue emitting from them instead of the normal floor-dependent hue.
+* The doors leading to the entrance of {{S|Downpour}} or {{S|Dross}} can be unlocked for free by Blue Key, though the blue room generated will be a dead end. Leaving the way Isaac came in will leave the door unlocked, allowing the player to continue normally.
+* Rooms that require money to enter ({{R|Arcade}}s or rooms affected by {{i|Pay To Play}}) can also be opened for free.
+* Doors that require two keys to open, such as {{R|Vault}}s or {{R|Dice Room}}s, will be opened instantly instead of waiting for the animation of both keys to be used.
+* The door leading to {{E|Hush}} will also produce a blue room, despite not requiring a key.
+* Isaac can unlock the rooms with Blue Key, but not enter them straight away. By exiting and re-entering the room, he can pass through the door that was unlocked with the Blue Key without having to go through the room in between.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Having either makes the blue rooms drop double rewards when cleared. Having both triples the rewards.
+* {{t|Door Stop}} / {{i|Mercurius}}: The blue room can be exited without fighting the enemies, and the door will remain unlocked.
+
+== Interactions ==
+* {{T|Broken Padlock}}: Doors opened via explosions will not spawn the corridor.
+* {{I|Ventricle Razor}}: Any portals inside the hall will be deleted upon exiting. While in the hallway, any portals to the outside can still be taken.
+
+== In-game Footage ==
+{{#ev:youtube|XlGaGKin9Ms}}
+
+== Trivia ==
+* The trinket might be a reference to [http://scp-wiki.wikidot.com/scp-860 SCP-860], a fictional key that acts in a near-identical manner.
+* If used on the {{s|???}} floor, one might hear the mid-combat layer of the floor's theme, Nativitate, an asset which was previously unused.
+** The combat layer of ''Nativitate'' can also be heard in a {{r|Crawl Space}} or an {{r|I AM ERROR}} room with enemies, or in rooms created by {{i|Red Key}} (or similar effects) on the ??? floor.
+* This is the only trinket to be unlocked by defeating {{E|The Beast}}.
+
+== Bugs ==
+{{Bug|Opening a locked door without entering it and then leaving and re-entering the room will no longer cause the door opened by Blue Key to lead to a Blue Womb room. In other words, this removes the downside of the trinket.}}{{nav|tainted cain unlock|the beast unlock|key|fr=Clé Bleue}}
+
+[[Category:Bugs]]

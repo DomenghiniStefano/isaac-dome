@@ -1,0 +1,39 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 617
+ | quote       = Magnetizing tears
+ | description = Gives Isaac the chance to fire tears that magnetize enemies they hit, causing them to attract nearby [[pickups]] and enemies, as well as tears/shots from all sources.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Gives Isaac the chance to fire tears that [[Status Effects#Magnetized|magnetize]] enemies they hit, giving them properties similar to tears fired by Isaac when he has {{i|Strange Attractor}}:
+** Enemies and [[pickup]]s that are near magnetized enemies are pulled towards them. This includes live {{e|Bomb}}s.
+** All tears/enemy shots (from Isaac, his familiars, and all enemies, including the magnetized one) will be strongly pulled towards magnetized enemies.
+*** Enemy shots that get pulled in will now also damage enemies other than the ones that fired them.
+
+== Notes ==
+* The chance to fire magnetizing tears depends on the [[luck]] stat. The activation rate is equal to 1/(6 - Luck). At 0 luck, the chance is 16.67%, maxing out at 100% at 5 luck.
+
+== Synergies ==
+* {{i|Book of Virtues}}: The wisps' tears are attracted to the magnetic enemy, making it much easier to connect all of the wisps' tears on an enemy.
+* {{I|E. Coli}}: If an enemy is hit by a lodestone tear perfectly simultaneously with it being turned into poop, the resulting poop will be tinted black and have a lodestone aura that sucks in enemies. This poop will return to normal after a few seconds.
+* {{I|Pop!}}: Magnetizing an enemy causes all active eyeball tears to rush to the enemy.
+* {{I|Rotten Tomato}}: Enemies affected by Lodestone and Rotten Tomato will be quickly swarmed and killed by other enemies.
+* {{i|Tech X}}: Changes the color of rings to gray. They still apply the magnetized effect, but the effect being applied is random for each enemy damaged with the same ring. Has increased chance of magnetizing enemy.
+** {{i|Tech X}} + {{i|Dr. Fetus}}: Only the explosions from Dr. Fetus' bombs can magnetize enemies.
+* {{i|The Ludovico Technique}}: Isaac's tear has a chance to magnetize and stick to enemies or bosses, making it impossible to move the tear until the enemy dies or until the magnetization effect somehow doesn't get reapplied long enough for the effect to end.
+
+== Interactions ==
+* {{i|Brimstone}}: Changes the beam to gray, can still apply the magnetized effect. The beams are not attracted to enemies with the magnetized effect.
+* {{I|Technology}}: Changes the laser to gray, can still apply the magnetized effect. The lasers are not attracted to enemies with the magnetized effect.
+
+== Trivia ==
+* [[anti:Lodestone|Lodestone]] is from the ''Antibirth'' mod where it would require 10 Luck to have a 100% chance of activating.
+* When used on {{E|Dogma}} or its TV, the respective sprites will get fuzzier, as if the boss/TV is having signal errors.
+* A [[wikipedia:Lodestone|lodestone]] is a naturally magnetized piece of mineral magnetite.
+
+{{nav|magnetic|fr=Magnétite}}

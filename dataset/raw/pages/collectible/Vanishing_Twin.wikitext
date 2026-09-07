@@ -1,0 +1,70 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 697
+ | quote       = He wants revenge
+ | description = Spawns a [[familiar]] that becomes a weaker clone of the floor's [[boss]] when entering the {{R|Boss Room}}. Defeating it drops an extra [[item]].
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = uniquefamiliar offensive nogreed lazarussharedglobal
+ | unlocked by = Vanishing Twin
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Spawns a flat, rotating fetus [[familiar]] that follows Isaac.
+* After entering a {{R|Boss Room}}, the familiar will move closer to the center of the room, and become a clone of the [[boss]]. Isaac must defeat both bosses.
+** The Vanishing Twin and original boss will be set to 75% of their maximum health, and their movements and attack patterns will be around 20% slower.
+* Upon death, the clone boss will drop an item pedestal where it died from the [[Boss (Item Pool)|boss item pool]], even if the fight isn't over yet.
+** {{dlc|r+}} The item cannot appear on top of the trapdoor's tile.
+* The effect doesn't occur against [[mini-boss]]es and end-chapter bosses such as {{E|Mom}}, {{E|Mom's Heart}}, {{E|Isaac}}, {{E|Satan}}, etc.
+* The Vanishing Twin familiar will return when Isaac reaches the next floor.
+
+== Notes ==
+* If Vanishing Twin becomes a clone of a boss with a hardcoded item drop, such as {{E|Gish}} or one of the [[Harbinger]]s, the second item pedestal will be from the [[Boss (Item Pool)|boss item pool]] instead of the boss' regular drop.
+* Managing to defeat the boss before the twin has transformed into it will not prevent the twin from doing the transformation, and the boss fight will continue.
+* Obtaining Vanishing Twin in the boss fight itself will not take effect immediately. The boss room must be re-entered in order for the twin to transform.
+* On floors with multiple bosses (e.g. {{s|The Void}}) or when getting {{Cu|Labyrinth}}, the twin will only act on the first boss encountered.
+* The twin will not transform into bosses that are randomly found in some default room layouts.
+* This item has no effect in [[Greed Mode]] and will not normally spawn in this game mode.
+* If it becomes a clone of {{E|Great Gideon}}, 2 extra waves of enemies are added to the battle, as well as the second Great Gideon also performing attacks.
+* If Vanishing Twin turns into {{e|Clutch}}, the clone will immediately enter its second phase due to not having any {{e|Clickety Clack}}s to possess.
+* When multiple {{E|Rotgut}}s are spawned, only one needs to be entered.
+* In true Co-op, the pedestal spawned by Vanishing Twin will have an extra item for each player.
+* [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Vanishing Twin having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+* Vanishing Twin does not appear in item pools (and cannot be found normally) from [[Chapter 4]] onwards.
+
+== Synergies ==
+* {{i|Sacrificial Altar}}: The twin can be sacrificed normally at any time.
+** If sacrificed after it's transformed into a boss, it will still give an item from the sacrifice, but the boss will not disappear and will also ''not'' spawn an additional item.
+* {{i|Satanic Bible}}: Using it before killing the clone boss will cause it to spawn an item from the [[Devil Room (Item Pool)|Devil Room item pool]] instead of from the [[Boss (Item Pool)|Boss item pool]]. This item must be purchased just like a normal [[Devil Room#Deals with the Devil|Devil Deal]].
+* {{i|There's Options}}: Will spawn an additional item choice for the item spawned by Vanishing Twin.
+* {{t|Tick}}: Further lowers the health of both the original boss and its clone.
+* {{i|Vanishing Twin}}: Picking up multiple copies of the item will result in multiple clones getting spawned.
+** Each boss will have its health reduced down further to 75% of the health of its previous clone.
+** Each of the bosses will spawn a separate item.
+** Each clone of {{E|Great Gideon}} adds 2 extra waves of enemies.
+
+== Interactions ==
+* {{i|BFFS!}}: Will increase the fetus' size, although it has no effect after the transformation happens.
+* {{i|Box of Friends}}: No effect.
+* {{p|IV - The Emperor?}}: The twin will clone the additional boss and spawn an item if the original one has not been visited yet. However, this will not allow for another item to be obtained from the floor's original boss, because the twin won't be active until the next floor.
+* {{i|Meat Cleaver}}: No effect on the number of items spawned.
+* {{c|Tainted Keeper}}: If playing as Tainted Keeper, the item dropped by the clone boss will cost money.
+
+== In-game footage ==
+{{#ev:youtube|UvDWLJjtEIA}}
+
+== Trivia ==
+* A [[wikipedia:Vanishing twin|Vanishing Twin]] is a fetus that dies during gestation and is reabsorbed by its twin, hence the appearance of the item.
+** The familiar's flat appearance is due to a real life phenomenon known as ''fetus papyracaeus'', where instead of a vanishing twin being physically reabsorbed by the other, the body stays in the womb and gets crushed and flattened by the healthy twin in full term between the fetus' expanding membranes and the uterine walls.
+* When encountering {{E|C.H.A.D.}}, the original will notably shrink once its clone spawns, due to Vanishing Twin reducing its HP and C.H.A.D.'s HP being linked to its size.
+* Vanishing Twin used to not have the "<code>[[Item Tags lazarussharedglobal|lazarussharedglobal]]</code>" tag with the lack thereof causing bugs. These bugs would occur when {{C|Tainted Lazarus}} used {{I|Flip}}. If Flip was used after the boss was cloned, it would not drop an additional item. If Flip was used after defeating the boss and gaining the item, it would spawn another item of the current pool on the next flip.
+
+== Bugs ==
+{{bug|Using {{p|IV - The Emperor}} while in a boss fight will immediately kill the twin boss and spawn the second item for free; the player will only have to fight one boss thereafter.}}
+{{bug|In [[Double Trouble]] boss fights, only one of the bosses will get copied, but both of them will get their health lowered down to 75%.}}
+{{Bug|The interaction between this item and {{E|Great Gideon}} is unstable — attempting to kill a clone of Great Gideon with {{p|Chaos Card}} will sometimes fail and cause a softlock.}}
+{{Bug|When cloning {{E|Turdlet}}, Vanishing Twin will only clone 1 segment of the boss and will stick to it, making a 6-segments Turdlet.}}
+{{Bug|Playing as {{c|Tainted Lazarus}} while holding {{i|Birthright}}, if the form not holding Vanishing Twin finishes the {{e|Mother's Shadow}} chase, both forms will have a separate copy of Vanishing Twin, allowing for multiple copies of bosses to be spawned. Flipping will undo the bug.}}
+
+{{nav|jacob and esau unlock|hush unlock|fr=Jumeau Évanescent}}

@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 593
+ | quote       = Double tap dash
+ | description = Dash by double-tapping the movement key, becoming invulnerable and damaging enemies. There's a short cooldown before Isaac can dash again. {{dlc|r+}} Knocks away nearby enemies and briefly grants i-frames after dashing.
+ | quality     = {{dlcalt|2|r+=0}}
+ | tags        = summonable offensive stars
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Double tapping a direction makes Isaac quickly dash in that direction.
+** Isaac is immune to damage from all sources during the dash, with the exception of {{M|Blood Donation Machine}}s, {{M|Devil Beggar}}s, and similar self-damage active items.
+*** {{dlc|r+}} At the end of the dash, Isaac gains i-frames that protect him against {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s damage. They will also not activate if touched during those i-frames.
+** The dash deals damage equal to 4× Isaac's [[damage]] + 8.
+** The direction of the dash can be angled by holding another button.
+** The dash has an approximate 3 second cooldown.
+** {{dlc|r+}} If Isaac collides with a wall or obstacle, he releases 8 columns of fire that deal 10 damage and can [[burn]] enemies.
+
+== Notes ==
+* The dash can be used to enter {{R|Curse Room}}s and open {{E|Spiked Chest}}s/{{E|Mimic Chest}}s without taking damage.
+* The dash can destroy {{e|Shopkeeper}}s.
+* With a controller, tapping the joystick is rather inconsistent, and the dash can often activate by accident. Using the directional pad instead is recommended.
+* When Mars's dash is charged, Isaac will occasionally flash brightly, and visible steam will emit from his nose.
+* Extra care needs to be taken with this item, as tapping for precise movements too quickly will cause a dash.
+* {{dlc+|r+}} Mars' quality is treated as 1 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{i|Camo Undies}}: Can be used to deal damage without breaking the confusion effect.
+* {{i|Kamikaze!}}: Kamikaze can be used without taking damage while dashing.
+* {{i|A Pony}} / {{i|White Pony}}: Lowers the dash cooldown to approximately 1.5 seconds.
+* {{c|Tainted Forgotten}}: Tainted Forgotten will charge on double-tap if Tainted Soul is not holding him. This can be used to let Tainted Forgotten attack enemies from a resting position, or move him away from damaging hazards so Tainted Soul can pick him up.
+
+== In-game footage ==
+{{#ev:youtube|6ouRRdUtnD0}}
+
+== Trivia ==
+* [[anti:Mars|Mars]] originates from the ''Antibirth'' mod.
+* Isaac resembles {{E|War}} when holding the item, referencing the Roman god of war, [[wikipedia:Mars (mythology)|Mars]].
+
+{{nav|astrological|fr=Mars}}

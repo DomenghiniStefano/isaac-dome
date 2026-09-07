@@ -1,0 +1,33 @@
+{{infobox trinket
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | name        = Super Magnet
+ | id          = 68
+ | quote       = It Pulls
+ | description = Pulls [[Monsters|enemies]] and [[pickups]] towards Isaac.
+}}
+
+{{cit|t|a}}
+
+== Effects ==
+* [[Pickups]] and [[Monsters|enemies]] are attracted to Isaac.
+** The attraction enables pickups to pass over pits and rocks, but not through Key Blocks.
+** {{e|Red Heart|text=Hearts}} are only attracted if Isaac could pick them up with his existing heart containers.
+
+== Notes ==
+* Does not pull other [[trinket]]s, {{E|Chest}}s, or {{e|Grab Bag}}s.
+* {{dlc|na+}} If Isaac has {{i|The Ludovico Technique}} while also holding the Super Magnet, the speed at which the tear slowly crawls nearer to Isaac is increased.
+* One tactic for using the Super Magnet is to drop it in the floor's starting room and come back for it once rooms are cleared. This allows it to be used to attract unreachable pickups without the downside of attracting enemies.
+* {{dlc|na+}} While fighting {{E|Ultra Greed}}, the doors are affected by the magnet as well.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either also pulls [[trinket]]s and [[sacks]] toward Isaac. Having both also pulls {{e|Chest}}s.
+
+== In-game Footage ==
+{{#ev:youtube|yTWvqlgSGoQ}}
+
+== Trivia ==
+* {{dlc|a+}} Super Magnet's sprite was changed for [[Booster Packs|Booster Pack #5]].
+* Super magnets, also known as [[wikipedia:Neodymium magnet|neodymium magnets]], are magnets made of an iron, boron, and neodymium alloy (Nd<sub>2</sub>Fe<sub>14</sub>B). They are more powerful compared to the ordinary ferrite magnets, made of iron oxide.
+
+{{nav|magnetic|fr=Aimant au Néodyme}}

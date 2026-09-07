@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 708
+ | quote       = DMG up
+ | description = +1 [[Damage]]. Prevents Isaac from firing tears from his left eye, like {{c|Cain}}.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* +1 [[Damage]]
+* Prevents Isaac from firing tears from his left eye, similar to {{C|Cain}}.
+
+== Interactions ==
+* {{I|20/20}}: Isaac will still fire from both eyes.
+* {{I|Blood Clot}}/{{I|Chemical Peel}}/{{I|The Peeper}}/{{I|Stye}}: Isaac has a 50% chance of firing tears with respective effect each shot.
+* [[Conjoined]]: The side tears are not affected.
+* [[R U a Wizard?]]: Isaac will only fire from his right eye, diagonally.
+* {{I|Eye Drops}}: Tears are no longer staggered, but increased fire rate remains.
+* {{I|Technology}}: Isaac will still fire lasers from his left eye.
+* {{I|Technology 2}}: Isaac no longer fires tears, he instead fires {{I|Technology}} lasers out of his right eye, alongside the Technology 2 beam.
+* {{I|The Wiz}}: Isaac will still fire from his left eye.
+
+{{nav|fr=Agrafeuse}}

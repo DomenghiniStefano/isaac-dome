@@ -1,0 +1,112 @@
+{{header characters}}
+{{infobox character
+ | image name   = * {{dlc|nr|Rebirth}}
+ | id           = 4
+ | health       = {{hearts|soul=3}}
+ | damage       = 3.5 (*1.05)
+ | speed        = 1.1
+ | collectibles = {{i|The Poop}}<br>{{dlc|r}} Innate {{t|Lil Larva|dlc=n}}
+ | unlocked by  = ???
+}} {{disambig msg|the playable character}}
+'''???''', also known as '''Blue Baby''', is a [[character]] unlocked by defeating {{e|Mom's Heart}} ten times. He starts with three {{e|Soul Heart}}s and {{I|The Poop}}.
+
+??? cannot gain [[Red Heart container]]s; items that grant Red Heart containers (including empty ones) will give him the same amount of {{e|Soul Heart}}s instead.
+
+{{dlc|r}} ??? has an innate {{t|Lil Larva|dlc=n}} effect, causing [[Familiar#Blue Flies|Blue Fly]] spawns whenever a {{e|Poop}} is destroyed. Additionally, [[Devil Deal]]s and {{R|Black Market}} items only cost their Red Heart equivalent in Soul Hearts, unlike other characters with no red health for whom the deals will always cost 3 Soul Hearts.
+
+== Notes ==
+* ??? has average base stats and has a smaller resource pool for health, as he cannot gain Red Hearts. This makes the character challenging as his Soul Hearts cannot be spent carelessly by taking damage or on sacrifices.
+* ???'s starting item, {{I|The Poop}}, can provide powerful utility despite its weak appearance.
+** The Poop will [[knockback|knock back]] nearby enemies ({{dlc|a}} also knocks back pickups and enemy shots) upon use. Poops can also block enemies and low-flying tears.
+** Poops can bridge gaps when bombed from the opposite side (as if they were [[rocks]]).
+** Placing Poops on {{e|Red Poop}}s when they are temporarily disabled {{dlc|r}} and [[Spikes#Retractable Spikes|retractable spikes]] when they are retracted will destroy them.
+** Poops spawned in this way will still yield [[pickups]] like normal.
+** {{dlc+|r}} As ??? has an innate {{t|Lil Larva}}{{dlc-}} effect, it can be wise to use The Poop repeatedly in one room without destroying them at first, then clear rooms all the way to a {{R|Boss Room}} or other hard rooms, finally breaking all the Poop at once and taking on the hard room. This way, the Blue Flies will be put into better use, being effective if the player lacks damage.
+*** A possibly unintended effect is that this stacks with multiple ???'s in true coop: along with The Poop, the potential flies gained per room increases quadratically with players, with the formula simply being the amount of ???'s in game to the second power.
+** The Poop will not work well with items or transformations that grant the ability to destroy obstacles on contact, such as {{I|Thunder Thighs}}, {{I|Leo}}, and {{tf|Stompy|r}} as the Poop spawned by the item will be destroyed instantly.
+* As ??? cannot have red health, {{R|Devil Room}}s or {{R|Angel Room}}s are guaranteed.
+* Sleeping on a [[bed]] will give ??? three {{e|Soul Heart}}s.
+* {{e|Bone Heart}}s grant an empty Bone Heart upon pickup, but they cannot be refilled using Red Hearts.
+* The {{i|Ankh}} and {{t|Broken Ankh}} will revive any character as ???, even before he is unlocked.
+
+== Item Interactions ==
+=== Positive ===
+* {{i|Abaddon|nr}} costs three Soul Hearts and grants six Black Hearts, damage up, fear shot, and no negative effects to ???. Abaddon can be bought safely regardless of current health, because its price can be deducted from the acquired Black Hearts retroactively.
+** {{i|Abaddon|r}} will give 2 black hearts on pickup, essentially refunding the cost to obtain the item from a Devil Room.
+* {{i|D20}} and {{i|GB Bug|r}} can be used to reroll any red hearts that may drop into useful pickups.
+* {{i|Ankh}} is effectively a {{i|1up!}} for ???.
+* {{i|Athame|dlc=anr}} can be used to produce black hearts upon taking damage.
+* [[Balls of Steel]] pills or {{p|V - The Hierophant}} grant two soul hearts, both of which are more useful than normal HP up items.
+* {{P|Dagaz}} grants one soul heart as well as lifting any curses.
+* {{dlc|na}} The {{p|XI - Strength}} card gives ??? a permanent soul heart.
+* {{I|Book of Revelations}} grants ??? soul hearts.
+* {{i|Ceremonial Robes}} costs {{Dlc|nr}} three {{Dlc|r}} two Soul Hearts and grants three Black Hearts and damage up. Like {{i|Abaddon}}, this item is always safe to take.
+* {{i|Crown Of Light}} will always activate when entering a room, but still deactivates after taking damage.
+* {{i|Mitre}} and {{t|Daemon's Tail}} replace useless Red Hearts with Soul and Black Hearts respectively.
+* {{i|Dark Bum}} converts useless Red Hearts into Black Hearts and blue spiders.
+** {{Dlc|r}} Dark Bum can now also drop pills, cards, and runes, which can include {{P|V - The Hierophant}}, [[Balls of Steel]], or {{P|Dagaz}}.
+* {{i|Dead Cat}} will set Soul Hearts to 1, but can be used to gain devil deals by sacrificing the extra lives.
+* {{t|Dim Bulb}} is able to be activated every room due to the single charge on {{i|The Poop}}, providing a consistent stat boost.
+* {{i|Empty Vessel}} will always be active. {{dlc|r}} Additionally, it costs 1 Soul Heart and returns 2 Black Hearts, so the item is always safe to take.
+* {{i|Gimpy}} has a chance to spawn Soul Hearts when hit.
+* {{i|Hallowed Ground}} turns all {{i|The Poop}} uses into holy poops.
+* {{i|Lazarus' Rags}} causes ??? to be resurrected as {{C|Lazarus Risen}} when he dies, allowing the gathering of heart containers. Once this happens, however, you are no longer playing as ???, and therefore cannot get any of his achievements/unlocks. The same effect happens with the use of {{i|Judas' Shadow}}.
+* {{i|Maw Of The Void|dlc=anr}} can produce Black Hearts.
+* {{i|Midas' Touch}} makes {{i|The Poop}} create {{E|Golden Poop}}.
+* {{t|Monkey Paw}} will drop 3 {{e|Black Heart}}s when at half a heart, but must take damage for each one to spawn.
+* {{t|Petrified Poop}} is useful early on to get more pickups from {{i|The Poop}} every room.
+* {{i|The Mark|r}} can be bought safely in all circumstances since it costs 1 Soul Heart and returns 1 Black Heart.
+* {{i|The Pact}} is another item that is always safe to take, as it costs {{Dlc|nr}} three {{Dlc|r}} two Soul Hearts and grants two {{Dlc|nr}}Soul/{{Dlc|r}}Black Hearts on pickup, alongside a damage and tears up.
+* {{i|The Polaroid}} and {{i|The Negative}} will always activate when taking damage.
+* {{i|The Relic}}, which is generally useful, is especially useful to ??? as it spawns Soul Hearts.
+* {{i|Satanic Bible}} generates Black Hearts.
+** {{dlc|r}} Using Satanic Bible now also causes boss items to turn into devil deals that cost hearts, which is often worth since Devil deal items are cheap and better than boss items.
+* {{i|Serpent's Kiss}} can produce Black Hearts by poisoning enemies.
+** {{Dlc|r}} Serpent's Kiss now only produces Black Hearts from contact damage poison, making it slightly less useful for ???.
+* {{i|Squeezy}} and {{i|Mr. Dolly}} increase ???'s tears and can grant Soul Hearts.
+* {{i|Whore of Babylon}} is always active.
+* {{I|Birthright}} will double the effectiveness of HP upgrades, meaning ??? gains twice as many soul hearts as normal.
+** This can be exploited with {{I|Converter}} to generate unlimited HP.
+* {{I|Fortune Cookie}} can give a soul heart upon use.
+* {{I|IBS}} spawns different kinds of poop, all of which spawn blue flies when ??? destroys them.
+* {{t|Judas' Tongue|r}} lowers the price of Soul Heart Devil deals.
+
+=== Negative ===
+* Items that directly add Red Hearts to the health bar, such as {{i|Yum Heart}}, {{I|Yuck Heart}} or full health [[pill]]s, are useless. However {{e|Eternal Heart}}s still act as an extra half a heart and become a full soul heart at the end of the floor making {{I|Prayer Card}} viable.
+* {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s are riskier, as they deplete health that is harder to replenish.
+* {{Dlc|nr}} {{t|Cursed Skull}} will automatically teleport ??? out of the room upon taking any damage, as he doesn't have any Red Hearts. This can be used to easily warp out of the {{R|Boss Rush}} room, but is mostly an annoyance.
+** {{dlc|r}} Works only at half a soul heart.
+* {{i|Glass Cannon|dlc=anr}} will bring ??? down to half a Soul Heart, and not give back any health upon leaving a room due to ???'s lack of Red Hearts. This item essentially takes away most of the player's health in exchange for a single high damage tear.
+** {{dlc|r}} This effect no longer applies in Repentance, making it a more viable choice. Even so, caution should be used, as taking damage will cause the next damage taken in the room to be two full soul hearts, making this especially risky for ???.
+* {{i|Guppy's Paw}}, since requiring Red Hearts to convert, would be a useless item to hold (but should still be picked up and swapped back to get credit towards the {{tf|Guppy}} transformation).
+** {{Dlc|nr}} Guppy's Paw may still be used to activate {{t|Broken Remote}}.
+* {{i|Little C.H.A.D.}} is useless unless paired with {{i|Dark Bum}} or {{T|Apple of Sodom}}, where it becomes very useful.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | ???'s Only Friend, Dead Baby, Forget Me Now, The D6, ???'s Soul, Fate, Cracked Dice, Meconium, Fate's Reward, Blue Baby, King Baby, Eternal D6, Montezuma's Revenge, The Soiled, Hive Baby }}
+
+== Gallery ==
+<gallery>
+File:Transition BlueBaby.png|???'s transition screen portrait.
+File:Start_???.png|The spawn floor when playing ???.
+File:Ending 10 Blue Baby.png|??? in [[ending 10]].
+File:Dogma cutscene Blue Baby.png|{{dlc+|r}} Isaac briefly appearing as ??? during the cutscene preceding {{e|The Beast}}.{{dlc-}}
+</gallery>
+
+== Trivia ==
+* ??? appeared in the original ''Binding of Isaac'', with the same unlock method.
+* The name "Blue Baby" was used in the original ''Binding of Isaac'', where it would appear in Isaac's Last Will in parentheses after dying as him. This was removed in ''Rebirth''.
+** ??? is referred to as "Blue Baby" in the game files and in ''The Binding of Isaac: Four Souls''. It is also used for the name of a co-op baby that resembles him.
+** The name is a reference to [[wikipedia:blue baby syndrome|blue baby syndrome]], in which a baby's skin complexion appears blue from a lack of oxygen in its blood due to a congenital heart defect.
+* ???'s design originally came from [https://www.newgrounds.com/portal/view/12725 Dead Baby Dressup!], one of Edmund McMillen's first Flash games.
+** Many of Edmund's older flash games on Newgrounds feature ??? and {{i|Brother Bobby}}. ??? was Edmund's mascot from 1996 to 2002.
+** Edmund's username on Newgrounds is 'Bluebaby'.
+* In several cutscenes, Isaac is shown suffocating inside a chest. ??? is first seen inside an identical chest, and {{E|???}} is the follow-up boss after {{E|Isaac}}. Blue skin tone is typically used to show suffocation, and cross-shaped eyes imply that the character is deceased.
+** After death, the bowels of the deceased will sometimes loosen, causing them to defecate. This is most likely the reason ??? starts with {{i|The Poop}}.
+*** For this reason, ??? might represent a sort of loss of human dignity for Isaac, seeing as how he died in such a horrific and embarrassing manner. This is possibly reflected in ending 10 of the game, where ??? smiles at Isaac, terrifying him, possibly reminding him of how he died.
+* ??? does not appear in the Bible or any religious scripture. He is the first character with this distinction, and the only one to appear in the original ''Binding of Isaac'' — the second being {{C|The Lost}} in ''Rebirth'', third being {{C|Keeper}} in ''Afterbirth'', and fourth being {{C|The Forgotten}} in ''Afterbirth+''.
+* Like all characters that start with only soul/black hearts, ???'s starting health is listed as "-I" on the character selection screen.
+* As a secret character, ??? does not appear on the character select screen until unlocked.
+** He shares this trait with {{C|The Lost}}, {{C|Keeper}}, and {{C|The Forgotten}}.
+
+{{nav|moms heart unlock|blue baby unlock|character|fr=??? (Personnage)}}

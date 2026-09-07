@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 361
+ | quote       = Your fate beside you
+ | description = A blue head [[familiar]] that will follow Isaac and fire tears copying his [[tear effects]] and [[damage]].
+ | quality     = 2
+ | tags        = summonable monstermanual offensive
+ | unlocked by = Fate's Reward
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Spawns a [[familiar]] that fires tears with the same [[damage]] and [[tear effects]] as Isaac's tears.
+* Fires at half the normal fire rate of a familiar.
+** Since the normal fire rate of familiars (such as {{i|Little Steven}}, {{i|Robo-Baby}} or {{i|Seraphim}}) is {{dlc|nr}} once per second / {{dlc|r}} 1.36 times a second, Fate's Reward shoots {{dlc|nr}} once every 2 seconds / {{dlc|r}} 0.68 times a second.
+* The familiar is not affected by {{dlc|nr}} [[range]]/{{dlc|r}} [[tear height]]; only [[tear falling speed]].
+** {{dlc|r}} Since increasing tear height and shot speed lowers tear falling speed in order to adjust Isaac's range, increases to either stat will decrease the familiar's range, and decreases to either stat will increase the familiar's range.
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Fate's Reward having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
+
+== Synergies ==
+* {{i|Flat Stone}}: Familiar's tears will travel very far and then bounce once, traveling up and hitting the nearest wall.
+* {{i|Haemolacria}}: Will fire tears that burst into split tears. Does not affect fire rate.
+* {{i|Ipecac}}: Will fire explosive tears. Does not affect fire rate.
+* {{i|Lachryphagy}} + {{i|Brimstone}}: The tears fired by the familiar will eventually explode in a star-like pattern of Brimstone lasers if they don't hit anything.
+
+== Interactions ==
+* Following tear modifiers do not affect Fate's Reward, and the familiar will only fire normal tears:
+** {{I|Brimstone}}
+** {{I|C Section}}
+** {{I|Dr. Fetus}}
+** {{I|Epic Fetus}}
+** {{I|The Ludovico Technique}}
+** {{i|Mom's Knife}}
+** {{i|Monstro's Lung}}
+** {{i|Technology}}
+** {{i|Tech X}}
+
+* {{i|20/20}} / {{i|The Inner Eye}} / {{i|Mutant Spider}}: Fate's Reward only fires single tears. The items do not affect the fire rate of Fate's Reward.
+* {{i|Chocolate Milk}}: Familiar's tears will turn a brown color but can not be charged.
+* {{Dlc|nr}} {{i|Marked}}: Fate's Reward will only fire while the crosshair is being moved, and can only fire in cardinal directions.
+** {{dlc|r}} Fate's Reward will aim and fire at the crosshair, wherever it's pointed.
+* {{i|Soy Milk}} / {{i|Almond Milk}} / {{i|Polyphemus}}: Does not affect fire rate, but does affect damage.
+
+== In-game Footage ==
+{{#ev:youtube|aYoXPRcmsSM}}
+
+{{nav|blue baby unlock|hush unlock}}

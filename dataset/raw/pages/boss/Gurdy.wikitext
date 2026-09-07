@@ -1,0 +1,54 @@
+{{infobox boss
+ | id          = 36
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{floor|Caves}}{{floor|Flooded Caves}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br><u>Degraded Boss</u><br>{{floor|Chest}}
+ | base hp     = 595
+ | pool        = {{ip|Boss}}<br> {{i|Lil Gurdy|r+}} (1% chance)
+}}
+
+'''Gurdy''' is a [[boss]] that can appear in the {{s|Caves}} and the {{s|Flooded Caves}}.
+
+== Behavior ==
+Gurdy is completely stationary and will always appear in the upper middle of the room. She has three attacks:
+* Ducks down into her body and emerges from the middle facing Isaac, firing 5 projectiles in a spread.
+** She can do this below her and to her sides and will not perform this attack if Isaac is behind her.
+* Spawns a {{e|Pooter}} near herself.
+* Spawns two {{e|Attack Fly|text=Attack Flies}} behind her.
+** Spawned Attack Flies are weaker than normal, with only about 3 health and can be killed if Isaac walks into them, though they will still deal contact damage before dying.
+* Summons two {{e|Boil}}s in front of her.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|5}}: 11% larger and does not use her projectile attack. Instead, she summons monsters at a faster rate.
+
+== Gallery ==
+<gallery>
+File:Boss Gurdy dark greyish green ingame.png|Green Champion Gurdy.
+File:Boss Delirium Gurdy ingame.png|{{dlc+|a+}} Gurdy as one of {{e|Delirium}}'s forms.{{dlc-}}
+</gallery>
+
+== Notes ==
+* Upon entering a room with Gurdy in it, the player will usually be teleported to the bottom center of the room regardless of which side the player entered from.
+** This teleporting effect occurs when Gurdy spawns in a {{R|Boss Challenge Room}} as well.
+* Gurdy will sometimes be accompanied by Attack Flies to the left and right of her and two Boils in the bottom corners of the room. She might also be accompanied by three Boils behind her.
+
+== Trivia ==
+* Gurdy appeared in the original ''The Binding of Isaac''.
+* Gurdy was originally supposed to be a pile of dead children, but it looked too confusing, so Edmund McMillen made her body made of guts instead.<ref name="g">https://edmundmcmillen.tumblr.com/post/51416553970/binding-of-isaac-fast-facts-now-they-need-to-do</ref>
+* Gurdy's name is supposedly derived from a medical condition called G.E.R.D. ([[wikipedia:Gastroesophageal reflux disease|gastroesophageal reflux disease]]), more commonly known as acid reflux.<ref name="g"/>
+* Gurdy appears to be the third stage of the "Gurdy" boss line, with the first stage as {{e|Gurglings}}, second as {{e|Gurdy Jr.}}, and final as {{e|Mama Gurdy}}.
+* Gurdy shares her name with a level from Edmund's previous game [[wikipedia:Super Meat Boy|Super Meat Boy]].
+* Gurdy is female.<ref name="g"/>
+* {{Dlc|r}} Gurdy will perform a taunting laugh animation if Isaac takes damage.
+
+== Bugs ==
+{{bug|dlc=nr|Using [[A Card Against Humanity]] will cause Gurdy to appear to teleport onto the player. This is purely a cosmetic effect and clearing the poop from the center of the room will cause her to return to normal.}}
+
+== References ==
+{{reflist}}
+
+{{nav|boss|fr=Boris}}
+[[Category:Chapter 2 bosses]]
+[[Category:Caves bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Debut bosses in Rebirth]]
+[[Category:Gurdies]]

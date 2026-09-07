@@ -1,0 +1,86 @@
+{{infobox trinket
+ | id          = 4
+ | quote       = It's broken
+ | description = Triggers the {{i|Teleport!}} effect whenever an [[activated item]] is used.
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Triggers the {{i|Teleport!}} effect whenever an [[active item]] is used.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: Triggers the {{i|Teleport 2.0}} effect whenever an [[active item]] is used.
+
+== Infinite Synergies ==
+* {{i|Bob's Rotten Head}} (works before throwing the head)
+* {{i|Shoop da Whoop!}} (works before firing the laser)
+* {{i|Guppy's Paw}}
+** {{dlc|nr}} It works even without health to convert.
+** {{dlc|r}} It works after converting the health.
+* {{i|Remote Detonator}} (works even if there are no bombs planted in the room)
+* {{i|Notched Axe}} (works before swinging the axe)
+* {{i|The Candle}} (works before firing the candle)
+* {{i|Portable Slot}} (works after consuming a coin, but still works with 0 coins)
+* {{i|How to Jump}} (works before jumping)
+* {{i|Red Candle}} (works before firing the candle)
+* {{i|The Jar}} (works before putting hearts in the jar)
+* {{i|The Boomerang}} (works before throwing the boomerang)
+* {{i|Glass Cannon}} (works before shooting)
+* {{I|Friendly Ball}} (works before throwing the ball)
+* {{i|Ventricle Razor}} (works after creating a portal)
+* {{i|Jar of Flies}} (works after releasing the flies)
+* {{i|Potato Peeler}}
+** {{dlc|nr}} It works even without health to convert.
+** {{dlc|r}} Doesn't work without health to convert.
+* {{i|Black Hole}} (works before shooting the hole)
+* {{i|Mom's Bracelet}} (works immediately without having to pick up a rock)
+* {{i|Sharp Key}} (works before firing a key)
+* {{i|Urn of Souls}} (works after capping/uncapping the urn)
+* {{i|Vade Retro}} (works even if there are no souls to explode on the screen)
+* {{i|Bag of Crafting}} (works before picking a pickup)
+* {{i|Gello}} (works before firing the familiar)
+* {{i|Decap Attack}} (works before firing the familiar)
+
+== Infinite Synergies (With Delay) ==
+* {{i|Butter Bean}}
+* {{i|Isaac's Tears}}
+* {{dlc|a+}}{{i|Breath of Life}}
+* {{i|Tear Detonator}}
+* {{i|Wait What?}}
+* {{i|Brown Nugget}}
+* {{i|Sharp Straw}}
+* {{i|Telekinesis}}
+* {{i|Stitches}}
+* {{i|Dark Arts}}
+* {{i|Suplex!}} (you need to double-tap move)
+* {{i|Anima Sola}}
+
+== Infinite Synergies (Conditional) ==
+* {{i|Kamikaze!}} (only with {{i|Pyromaniac}} or {{i|Host Hat}})
+* {{i|Razor Blade}} (only with a way to regenerate your health or prevent the damage)
+* {{i|IV Bag}} (only with a way to regenerate your health or prevent the damage)
+* {{i|Blood Rights}} (only with a way to regenerate your health or prevent the damage)
+* {{i|Magic Fingers}} (only works if you have coins)
+* {{i|Sacrificial Altar}} (only if you have no familiars)
+* {{i|Golden Razor}} (works as long as you have more than 5 coins)
+
+== Infinite Synergies (Pre-Repentance) ==
+* {{dlc|nr}} {{i|A Pony}} (no longer teleports before the charge is expended)
+* {{dlc|nr}} {{i|White Pony}} (no longer teleports before the charge is expended)
+
+== Other Interactions ==
+* {{i|D10|nr}}: Using D10 while holding this will first teleport Isaac, and then reroll the enemies in the new room.
+
+== Notes ==
+* Upon using {{i|The Bible}} while fighting {{E|Mom}} or {{E|Mom's Heart}} / {{E|It Lives!}}, Isaac will get teleported out of the room before the death animation is finished, resulting in the boss room being reset.
+* This item can only teleport Isaac to rooms that can be shown on the map. It is not possible to teleport to the {{R|I AM ERROR}} room, {{R|Devil Room}}, {{R|Angel Room}}, {{R|Crawl Space}}, {{R|Black Market}}, {{R|Boss Rush}}, {{dlc+|a}} the room with the access to {{s|???}}{{dlc-}}, or {{E|Mega Satan}}.
+* {{dlc+|r}} During {{E|The Beast}} fight, Broken Remote will teleport you randomly on the screen.{{dlc-}}
+* {{i|Spin to Win}} does not work at all with Broken Remote.
+* {{i|Mine Crafter}} does not work with Broken Remote if there is already a TNT barrel in the room.
+* {{dlc+|r}} For some reason, {{i|Mom's Bracelet}} produces a faster teleport with Broken Remote than with any other item.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|eaX470hsuxA||inline}} {{#ev:youtube|Pv3ENZXl14w||inline}}
+
+{{nav|active modifier|broken|fr=Télécommande Cassée}}

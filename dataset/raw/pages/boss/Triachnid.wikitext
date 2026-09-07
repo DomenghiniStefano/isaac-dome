@@ -1,0 +1,56 @@
+{{infobox boss
+ | portrait name = * {{dlc|nr|Rebirth}}
+ | id            = 101
+ | variant       = 1
+ | environment   = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{dlc|r}}<br>{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}
+ | base hp       = {{dlcalt|300|r=500}}
+ | pool          = {{ip|Boss}}<br> {{dlc|r+}} {{i|Spider Bite}} (1% chance)
+ | unlocked by   = Something Icky
+}}
+
+'''Triachnid''' is a [[boss]] that can appear:
+* {{dlc|nr}} In all environments of [[Chapter 4]] ({{s|Womb}}, {{s|Utero}}, {{s|Scarred Womb}}).
+* {{dlc+|r}} Only in the {{s|Utero}} and the {{s|Scarred Womb}}.{{dlc-}}
+
+== Behavior ==
+Triachnid's head hangs down stationary and can perform the following attacks:
+* Raises his head, making it invulnerable, and stomps the ground in random locations around the room 3 times in quick succession, leaving small puddles of slowing [[Creep#White Creep|White Creep]]. {{Dlc|r}} One of these legs will always stomp on top of Isaac's position.
+** The appendages that he stomps with can be attacked to damage him.
+* Lifts his head off-screen and stomps the ground 3 times at regular intervals on top of Isaac's position, leaving a small puddle of White Creep with each stomp. At the end of the stomps, he slams his head down quickly in the center, shooting 8 white projectiles in all directions and creating a large puddle of White Creep. He can only slam his head down along a horizontal plane across the center of the room and slams it down close to Isaac's position.
+** Occasionally performs a fourth stomp before slamming his head down and very occasionally performs a fifth.
+** Occasionally, when he slams his head down, he leaves a larger puddle of White Creep, but only shoots 4 white projectiles in the cardinal directions.
+** The appendages that he stomps with can be attacked to damage him.
+* Spits out a {{e|Trite}} in Isaac's direction.
+** Trites can be killed by Triachnid's stomps and head slam.
+Triachnid's foot stomp and head slam deal a whole heart of contact damage.
+
+== Gallery ==
+<gallery>
+File:Boss Triachnid foot ingame.png|One of his appendages.
+File:Boss Delirium Triachnid ingame.png|Triachnid as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Notes ==
+* {{Dlc|r}} Unlike all other other alternative versions of bosses, such as {{e|Dangle}}, {{e|C.H.A.D.}}, and {{e|Gish}}, Triachnid has the same weight as his alternative boss form.
+** Although they share the same weight, Triachnid is actually '''more''' common than {{e|Daddy Long Legs}}, since he also appears in the Scarred Womb.
+
+== Trivia ==
+* Triachnid was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+** In the original game, Triachnid could be encountered in {{s|Necropolis}}.
+** Triachnid's unlock method is possibly a reference to a bug in ''Wrath of the Lamb'' that caused Triachnid to occasionally replace {{e|Isaac}} in the {{s|Cathedral}}.
+* Triachnid originated from the 2006 flash game ''[http://www.newgrounds.com/portal/view/347467 Tri-achnid]'', which was created by Edmund McMillen.
+* He is an alternative of {{e|Daddy Long Legs}}.
+** Unlike the other alternate bosses ({{e|Steven}}, {{E|C.H.A.D.}}, {{E|Gish}}, and {{e|Conquest}}), Triachnid does not drop a specific item.
+* While Daddy Long Legs uses 4 appendages in his attacks, Triachnid is reduced to mostly only using 3; this is most likely in homage to the fact that Triachnid in his title game only had 3 appendages.
+* {{dlc|na+}} Triachnid does not have a death animation.
+* {{dlc+|a+}} Triachnid can be found in {{s|The Void}}, even before being unlocked.{{dlc-}}
+* {{dlc|r}} {{e|Blighted Ovum}}, {{e|Big Horn}}, Triachnid, Isaac, and {{e|???}} are the only bosses whose portraits were completely changed in ''Repentance'' (beyond simply adding more detail). Of these, only Triachnid, Isaac, and ??? didn't receive new sprites.
+
+{{nav|boss|isaac boss unlock|fr=Triachnide}}
+
+[[Category:Alternate bosses]]
+[[Category:Chapter 4 bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

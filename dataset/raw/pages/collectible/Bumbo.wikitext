@@ -1,0 +1,61 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 385
+ | quote       = Bumbo want coin!
+ | description = Spawns a beggar [[familiar]] which picks up any nearby [[coin]]s, leveling up after collecting several coins. At level 2, Bumbo gains a body. At level 3, it begins to fire tears. At level 4, Bumbo follows enemies and gains contact damage.
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effect ==
+* Spawns a [[familiar]] which follows Isaac and picks up any nearby [[coin]]s. Bumbo changes level based on the amount of coins it's collected.
+:: [[file:Collectible Bumbo level 1.png|30px|link=]] '''Level 1 (0-5 coins):''' Bumbo just collects coins to level up.
+:: [[file:Collectible Bumbo level 2.png|30px|link=]] '''Level 2 (6-11 coins):''' Bumbo occasionally drops a [[pickup]], [[trinket]], [[chest]] or pedestal item after a room clear.
+:: [[file:Collectible Bumbo level 3.png|30px|link=]] '''Level 3 (12-23 coins):''' Bumbo now fires tears that deal 3.5 damage in the same direction Isaac does. Bumbo's tears have a chance to drop a coin if they hit an enemy.
+:: [[file:Collectible Bumbo level 4.png|30px|link=]] '''Level 4 (24+ coins):''' Bumbo no longer fires tears and instead chases enemies slowly and deals contact damage (2.5 per tick, or {{dlc|nr}}37.5 per second/{{dlc|r}}10.7 per second). Bumbo will occasionally drop {{e|Bomb}}s while chasing enemies or coins.
+* After reaching level 4, Bumbo will continue to collect coins, and can drop a pickup, trinket, or chest for each coin it collects, similar to {{i|Bum Friend}}.
+** Bumbo can also drop items from the current room's [[Item Pool]].
+
+== Notes ==
+* Level 1-3 Bumbo can fly over pits and [[obstacle]]s, despite having limbs at level 2 and 3 that serve him as legs.
+* If Bumbo consumes an absurd amount of coins while level four, Bumbo can become level one again (Unsure if bug, likely a buffer overflow)
+* If Level 4 Bumbo targets {{E|Mega Satan}}'s head, Bumbo will attempt to "chase" him the entire fight by standing in the middle of the room.
+* Level 4 Bumbo's bombs are unaffected by Isaac's bomb synergies.
+* Bumbo cannot pick up {{e|Sticky Nickel}}s and will hover over them. Level 4 Bumbo can eventually bomb the Sticky Nickel to free it.
+* Bumbo will pick up {{E|Lucky Penny|text=Lucky Pennies}}, without additional benefit to evolution or drops.
+* If Bumbo drops a pedestal item, it will be pulled from the current room's [[item pool]].
+* In a [[RERUN]], Bumbo's level is reset.
+* Level 4 Bumbo can target charmed enemies and will try to follow them around to no effect.  This prevents him from picking up coins until the target is changed.
+* {{Dlc+|r}} There is a [[boss]] that resembles Bumbo level 4 named {{E|Bumbino}}.{{dlc-}}
+* {{dlc|anr}} From a scoring perspective, Coins that Bumbo picks up count towards your Schwag bonus on daily runs.
+
+== Synergies ==
+* {{i|BFFS!}}: Doubles both the contact and shot damage, when applicable.
+
+== Interactions ==
+* {{i|Box of Friends}}: Will spawn a level 1 Bumbo regardless of the original Bumbo's current level.
+* {{C|Keeper}}: Not recommended, as the coins Bumbo collects could have been used to heal Keeper.
+* {{C|Tainted Keeper}}: Due to the large influx of coins spawned, it's technically possible to sustain Bumbo while also maintaining a good level of wealth and health.
+
+== In-game Footage ==
+{{#ev:youtube|2XJ-DfRE3WI}}
+
+== Trivia ==
+* Bumbo is the main character of his own game, [https://store.steampowered.com/app/1148650/The_Legend_of_BumBo/ The Legend of Bum-Bo], designed by Edmund McMillen.
+* The name is a play on the word bum and Rambo.
+* Bumbo Level 1 looks similar to Bum Friend's head.
+
+== Gallery ==
+<gallery>
+File:Collectible Bumbo level 1.png|Bumbo level 1
+File:Collectible Bumbo level 2.png|Bumbo level 2
+File:Collectible Bumbo level 3.png|Bumbo level 3
+File:Collectible Bumbo level 4.png|Bumbo level 4
+</gallery>
+
+== Bugs ==
+{{Bug|dlc=rnr+|Bumbo's level can be reset after the sequence of obtaining {{i|Knife Piece 2}} in {{s|Ashpit}}/{{s|Mines}} II.}}
+
+{{nav}}

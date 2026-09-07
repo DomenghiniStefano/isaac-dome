@@ -1,0 +1,53 @@
+{{infobox activated collectible
+ | id          = 133
+ | quote       = Soul converter
+ | description = Converts one Red [[Heart Container]] into three {{e|Soul Heart}}s.
+ | quality     = 3
+ | tags        = nolostbr dead guppy
+ | recharge    = unlimited
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Upon use, converts one Red [[Heart Container]] into three {{e|Soul Heart}}s.
+* {{transformation contribution|Guppy}}
+
+== Notes ==
+* {{e|Bone Heart}}s cannot be converted.
+* {{dlc+|r+}} Guppy's Paw's quality is treated as 2 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{Book of Belial synergy|description=Grants a permanent 0.5 damage up for every converted heart.}}
+* {{Book of Virtues synergy|description=Spawns 3 wisps in the middle ring for every Red Heart Container consumed, in addition to granting Soul Hearts. These wisps have a large amount of health.}}
+* {{t|Broken Remote|nr}}: The teleport will activate whenever Guppy's Paw is used, even if Isaac has no Red Heart Containers to trade. This can give any characters with no Red Hearts the ability to teleport any number of times for free.
+* {{i|Converter}}:
+** {{dlc|nr}} Allows Isaac to attain up to 10 Red Heart Containers and 1 Soul Heart.
+** {{dlc|r}} Allows Isaac to attain up to 12 Red Heart Containers or any combination of Red Heart Containers and Soul Hearts.
+*** + {{i|Potato Peeler|r}} + {{i|Sharp Plug|r}}: Allows Isaac to generate infinite damage upgrades and {{i|Cube of Meat||Cubes of Meat}}.
+* {{c|Tainted Eden}}: Soul Hearts granted by Guppy's Paw are not rerolled when Tainted Eden takes damage.
+* {{I|Dead Cat}}: In addition to contributing to the transformation, converting the Red Heart Container obtained after revival into three Soul Hearts effectively triples Isaac's HP.
+
+== Interactions ==
+* {{c|Bethany}}: Guppy's Paw will remove one Heart Container in exchange for Soul Heart charges. This will kill Bethany if she has no health left afterward.
+* {{I|Car Battery}}: No effect.
+* {{c|Keeper}}: Guppy's Paw will take away one Coin Heart, but will only grant [[Blue Fly|Blue Flies]] in return.
+* {{p|XI - Strength}}: Converts the temporary Red Heart Container into three Soul Hearts (however, Isaac will still lose one Red Heart Container upon leaving the room if he has any left).
+
+== In-game Footage ==
+{{#ev:youtube|8JSeAc8nAc0||inline}} {{#ev:youtube|SAkfWfD9hzQ||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Guppy's Paw.png|The icon of Guppy's Paw as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* This item is the first (by item ID) to appear in ''The Binding of Isaac: Wrath of the Lamb'' DLC. The last one is {{i|Box}}.
+* It is also a reference to [[Edmund McMillen]]'s cat Guppy.
+* {{dlc+|r}} This item is used in {{chal|Baptism by Fire}}.{{dlc-}}
+
+== Bugs ==
+{{bug|dlc=nr|If {{c|Keeper}} uses Guppy's Paw to remove all his Coin Hearts, he will not die until he picks up an item.}}
+
+{{nav|guppy|cat|fr=Patte de Guppy}}

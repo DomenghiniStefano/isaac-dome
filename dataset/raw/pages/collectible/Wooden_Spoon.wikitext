@@ -1,0 +1,22 @@
+{{infobox passive collectible
+ | id          = 27
+ | quote       = Speed up
+ | description = +0.3 [[speed]].
+ | quality     = 1
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effect ==
+* +0.3 [[speed]].
+
+== In-game Footage ==
+{{#ev:youtube|eRsW7C12mY8||inline}} {{#ev:youtube|FSAxeRVaU9g||inline}}
+
+== Trivia ==
+* In his first [https://youtu.be/kby0rXT7qYQ post-Repentance Lore Stream], Edmund McMillen revealed that the wooden spoon is inspired by the fact that during his childhood his parents would threaten to beat him with a wooden spoon.
+** The Wooden Spoon granting a speed up is a nod to the act of running faster to try and escape the abuse.
+** In this way, the Wooden Spoon is a counterpart to {{I|The Belt}}, which is also a speed-up item based on a specific object used by McMillen's parents to abuse him.
+
+{{nav|fr=Cuillère en Bois}}

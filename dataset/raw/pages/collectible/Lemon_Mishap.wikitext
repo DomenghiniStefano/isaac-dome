@@ -1,0 +1,44 @@
+{{infobox activated collectible
+ | id          = 56
+ | quote       = Oops...
+ | description = Creates a small pool of [[Creep#Yellow Creep|yellow creep]], damaging enemies that cross it. {{dlc|r+}} The pool lasts for the entire room.
+ | quality     = 0
+ | tags        = offensive
+ | recharge    = 2
+}}
+
+{{cit|a}}
+
+== Effect ==
+* Creates a {{dlc|nr+}} tiny / {{dlc|r+}} small pool of [[Creep#Yellow Creep|yellow creep]], damaging enemies that cross it.
+** {{dlc|r+}} The pool lasts for the entire room, only disappearing when it is exited.
+** The puddle deals 8 damage per tick or 24 damage per second.
+
+== Notes ==
+* {{dlc+|r}} This item can be spawned by {{e|Bumbino}} if he picks up 12 cents.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns yellow wisps in the middle ring. The wisps fire faster and have decreased range. The wisps themselves occasionally leave small puddles of yellow [[creep]] that last for 3 seconds and deal 7 damage per tick to enemies that walk over them (56 damage per second).}}
+* {{T|Lost Cork}}: Doubles puddle size.
+
+== Interactions ==
+* {{I|Car Battery}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|PrbGAlsoJT8||inline}} {{#ev:youtube|BeUH9Hi3J-Q||inline}}
+
+== Gallery ==
+<gallery>
+File:LemonMishapOnUse.jpg|Lemon Mishap on use.
+<gallery>
+File:3DS Detailed Lemon Mishap.png|{{plat|3DS}} The icon of Lemon Mishap as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* The [[pill|Lemon Party Pill]] will drop a larger pool of Lemon Mishap.
+* In the original ''Binding of Isaac'', Lemon Mishap was the only activated collectible to have an icon different to its item (the item was a lemon, but picked up it was a glass of lemonade).
+** The item {{I|Free Lemonade}} is a reference to this.
+* In the original ''Binding of Isaac'', Lemon Mishap was widely considered as one of the worst active items in the game, due to low damage and small creep size, making it both hard and unreliable at killing anything. In ''Rebirth,'' Lemon Mishap was buffed considerably.
+* This item is used in {{chal|When Life Gives You Lemons}}).
+
+{{nav}}

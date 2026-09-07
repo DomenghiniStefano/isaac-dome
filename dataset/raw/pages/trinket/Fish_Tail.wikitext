@@ -1,0 +1,61 @@
+{{infobox trinket
+| dlc         = a+
+| id          = 94
+| quote       = It also stinks!
+| description = Items and trinkets that generate [[Blue Fly|Blue Flies]] or [[Locust]]s will generate twice as many.
+}}
+
+{{cit|t|a+}}
+
+== Effects ==
+* Many items and trinkets that generate [[Blue Fly|Blue Flies]] or [[Locust]]s will generate twice as many.
+
+== Notes ==
+* Flies may spawn on top of each other, appearing as a single fly initially.
+
+== Synergies ==
+Blue Fly / Locust sources that are doubled:
+{{column list | width = 15em | content =
+* {{p|Berkano}}
+* {{p|Black Rune}}
+* {{T|Fish Head}}
+* [[Friends Till The End!]]
+* {{tf|Guppy}}
+* {{I|Guppy's Head}}
+* {{I|Infestation}}
+* {{I|Jar of Flies}}
+* {{T|Lil Larva}}
+* {{I|Lil Portal}}
+* {{T|Locust of Conquest}}
+* {{T|Locust of Death}}
+* {{T|Locust of Famine}}
+* {{T|Locust of Pestilence}}
+* {{T|Locust of War}}
+* {{I|Mom's Underwear|dlc=r}}
+* {{I|The Mulligan}}
+* {{T|Rotten Penny}}
+* {{E|Red Chest}}
+* {{E|Rotten Heart}}
+* {{I|The Swarm}}
+}}
+
+Other notable interactions:
+* {{I|Compost}}: Isaac will gain twice as many flies per use, meaning each fly will be tripled.
+* {{tf|Beelzebub}}: Blue flies generated will be doubled, but charmed flies will not be doubled.
+* {{I|Rotten Baby}}: Will spit two flies at a time with one being a copy. Will only spawn more flies when the original fly is destroyed.
+* {{I|Parasitoid}}: The duplicated flies will spawn on top of the enemy and deal damage immediately.
+* {{c|Tainted ???}} / {{i|IBS}}: Blue flies created by corny poops will be duplicated when spawned in, but not when the poop is broken.
+* {{c|Keeper}} / {{c|Tainted Keeper}}: Blue Flies created from hearts will be doubled.
+* {{a|Golden Trinket}} / {{i|Mom's Box}}: If you have either, when blue files are spawned, 20% chance to triple the number spawned.
+** {{dlc|r+}} If you have both, 20% chance to quadruple the number spawned.
+
+== Interactions ==
+* {{I|7 Seals}}: No effect.
+* {{T|Cricket Leg}}: No effect.
+* {{p|Soul of Apollyon}}: No effect.
+* {{i|Abyss}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|8XwNloLO1gc}}
+
+{{nav|fly|fr=Queue de Poisson}}

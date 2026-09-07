@@ -1,0 +1,49 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 147
+ | quote       = Wealth of power
+ | description = Picking up [[coin]]s has a chance to give an Active Item charge.
+ | unlocked by = Charged Penny
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Picking up [[coin]]s has a chance to add one charge to Isaac's currently held [[activated collectible|Active Item]].
+** This chance is equal to 1/6th of the value of the coin, and cannot activate more than once per coin collected.
+{| class="wikitable"
+|+Chance per Coin
+|Coin
+|Value
+|Chance
+|-
+|{{e|Penny}}
+|1
+|16-17%
+|-
+|{{e|Double Penny}}
+|2
+|33%
+|-
+|{{e|Nickel}}
+|5
+|83%
+|-
+|{{e|Dime}}
+|10
+|~99%
+|}
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Each copy adds one more charge to Isaac's active item.
+
+== Trivia ==
+* This trinket used to be called [[anti:Electric Penny|Electric Penny]] in ''Antibirth'', and had a different sprite. In ''Antibirth'', it was always unlocked and nickels and dimes would proc the charge chance 5 and 10 times respectively.
+
+== Gallery ==
+<gallery>
+File:Electric_Penny_Old.png|Charged Penny's counterpart from Antibirth.
+</gallery>
+
+{{nav|coin modifier|penny|fr=Pièce Électrisée}}
+[[Category:Penny trinkets]]

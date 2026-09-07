@@ -1,0 +1,25 @@
+{{infobox passive collectible
+ | id          = 32
+ | quote       = Tears up
+ | description = +0.7 [[tears]].
+ | quality     = 3
+ | tags        = summonable tearsup offensive
+ | unlocked by = Wire Coat Hanger
+}}
+
+{{cit|up}}
+
+== Effect ==
+* +0.7 [[tears]].
+
+== Notes ==
+* Is functionally identical to {{I|The Sad Onion}}.
+
+== In-game Footage ==
+{{#ev:youtube|B2j3E8aqlA0||inline}} {{#ev:youtube|aqPBMzQ90-s||inline}}
+
+== Trivia ==
+* In his [https://youtu.be/kby0rXT7qYQ first post-Repentance Lore Stream], Edmund McMillen revealed that the Wire Coat Hanger was a reference to the famous line ''"No wire hangers, ever!"'' from the 1981 film ''[[wikipedia:Mommie Dearest (film)|Mommie Dearest]]'', as well as being a reference to a highly dangerous method of [[wikipedia:Self-induced abortion|self-induced abortion]] in which a pregnant woman attempts to use a long implement (usually metal) such as a wire coat hanger to physically damage the uterus in a desperate bid to prevent fetal development.
+* In the original flash version of ''The Binding of Isaac'', this item was unlocked by default.
+
+{{nav|moms heart unlock|fr=Cintre}}

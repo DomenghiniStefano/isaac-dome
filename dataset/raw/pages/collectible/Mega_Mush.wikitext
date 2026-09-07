@@ -1,0 +1,63 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 625
+ | quote       = I'm a big boy now!
+ | description = Gigantifies Isaac for 30 seconds, increasing [[damage]] and [[range]] while lowering [[tears]], granting invulnerability, and allowing Isaac to crush enemies and obstacles he walks on. The effect persists between rooms.
+ | quality     = 4
+ | tags        = mushroom offensive
+ | recharge    = 12
+ | unlocked by = Mega Mush
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, gigantifies Isaac for 30 seconds, persisting between rooms and floors. While gigantic, Isaac gains the following effects:
+** A 4x [[damage]] multiplier, +2 [[range]], and -1.9 [[tears]].
+** Cannot take damage for the duration of the effect.
+** Can destroy [[Object]]s, [[Obstacles]], and {{e|Pitfall}}s when walking over them. This includes [[Metal Block]]s and [[Key Block]]s without using keys.
+** Can break through normal doors, {{r|Secret Room}}s, and any doors that require {{e|Bomb}}s such as {{r|Clean Bedroom}}s, by walking into them.
+*** Cannot break through {{r|Challenge Room}}s, {{r|Boss Room}}s, {{r|Mini-Boss Room}}s, {{r|Curse Room}}s, {{r|Sacrifice Room}}s, or any doors that require {{e|Key}}s such as {{r|Shop}}s. Bedrooms also cannot be broken back into if they are closed but no longer boarded up.
+** Deals extremely heavy contact damage to enemies (80 per tick, or 2,400 per second).
+* {{transformation contribution|Fun Guy}}
+
+== Notes ==
+* Using Mega Mush again while its effects are still active will add an additional 30 seconds to the current active time.
+* Isaac's physical size, i.e. collision circle or "hitbox" is roughly doubled in radius when Mega Mush is active. This is the only item that can make Isaac tangibly larger than his starting size, as normal size ups can't increase the collision area beyond the default.
+* Mega Mush will not negate the damage taken from the {{S|Mausoleum}} door and the {{E|Golden Battery}}. It is also possible to die this way.
+* Non-tear based attacks such as {{i|Brimstone}} or {{i|Mom's Knife}} are overridden by normal tears while Mega Mush is active.
+** The only exceptions are the melee attacks by {{c|The Forgotten}}, {{c|Tainted Samson}} and {{i|Berserk!}}, which have increased hitboxes.
+* Isaac is unable to use the invulnerability effect to donate to {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s, since they will be destroyed on contact. {{M|Bomb Bum}}s will also be destroyed by walking over them.
+* Mega Mush can be obtained by using {{i|Spindown Dice}} on {{i|Knife Piece 1}}.
+* If Isaac dies while giant, he will revive in his giant form if he has any [[revival item]]s.
+* Using Mega Mush as {{c|Tainted Lazarus}} will retain effect and time remaining upon flipping back to the form that used it.
+
+== Synergies ==
+* {{i|4.5 Volt}}: The contact damage dealt by Mega Mush will allow it to be recharged and used multiple times in the same room.
+* {{i|Car Battery}}: Mega Mush's active time will be doubled to 60 seconds.
+* {{I|Rock Bottom}}: Retains massive damage increase after Mega Mush's timer is up, though can make it nearly impossible to raise it afterwards without another use.
+* {{i|Serpent's Kiss}}: Enemies killed with contact damage will frequently drop hearts.
+
+== Interactions ==
+* {{I|Book of Virtues}}: Spawns a basic wisp.
+* {{i|Keeper's Kin}}: Destroying [[rocks]] and [[blocks]] will allow Isaac to amass a lot of [[blue spider]]s.
+
+== In-game Footage ==
+{{#ev:youtube|DNeQuogRXEM}}
+{{#ev:youtube|51HMgpcNDKU}}
+
+== Trivia ==
+* '''Mega Mush''' is based off of the Mega Mushroom from ''New Super Mario Bros.'', which would turn Mario giant, grant invulnerability, and allow him to defeat almost anything he touches.
+* Originally in ''Antibirth'', [[Anti:Mega Mush|Mega Mush]] didn't gain charges while active, and was unlocked by defeating {{E|Mother}} (then known as The Witness) as every character on Hard Mode.
+* Entering the Big chest in Mega Mush form triggers the credits 0.5 seconds faster than normal (tested by entering the Big Chest going from the same position to the beginning of credits and timed with scripts)
+* The Mega Mush form makes Isaac's face look similar to [[enboi:Isaac|Flash Isaac]].
+* Mega Mush, along with {{i|1up!}}, {{i|Mini Mush}}, {{i|Magic Mushroom}}, and {{i|Super Bandage}} is one of the few items that make a unique sound upon pickup.
+
+== Bugs ==
+{{bug|Activating Mega Mush before entering the Knife Piece 2 area will keep the effect active inside the chase area but Isaac will have his normal sized, followed with a huge shadow and will continuously stomp the ground, breaking everything in his way, even pushing away Mother's Shadow.}}
+{{bug|If Isaac walks over a {{e|Teleport Pitfall}} while Mega Mush is active a visual bug will occur where the pitfall is destroyed and can no longer harm Isaac however its sprites still remain in the room. When Isaac reenters the room or exits and continues the run, the teleport pitfall works normally again.}}
+{{bug|Using Mega Mush in combination with {{I|Suplex!}} makes you grab enemies and move them around until you leave the room. Doing this on any of the Ultra Harbingers or {{E|The Beast}} will make the enemy disappear and render you unable to move at all.}}
+{{bug|Activating Mega Mush through {{i|Void}} will cause Isaac to visually revert to normal after leaving the room while still under the item's effects. If Isaac does not have flight, a stomping sound will play and the screen will shake constantly even if he is not moving.}}
+{{bug|When Mega Mush times out and Isaac returns to normal size, he may occasionally appear to have no head. Isaac is unable to fire tears in this form and cannot interact with enemies or objects or pick up items. He also cannot interact with trap doors or Crawl Space entrances, causing softlocks. Going into an animation (e. g. by taking damage, using a [[pill]], etc.), or exiting and continuing the run fixes this issue.}}
+
+{{nav|fun guy|mushroom|fr=Méga Champi}}

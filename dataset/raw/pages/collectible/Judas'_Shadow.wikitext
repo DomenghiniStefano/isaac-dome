@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | id          = 311
+ | quote       = Sweet revenge
+ | description = Upon [[death]], respawns Isaac as {{c|Black Judas}} with two {{e|Black Heart}}s in the previous room.
+ | quality     = 3
+ | tags        = nolostbr nocantrip nochallenge
+ | devil price = 2
+ | unlocked by = Judas' Shadow
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Upon [[death]], respawns Isaac as {{c|Black Judas}} with two {{e|Black Heart}}s in the previous room.
+
+== Notes ==
+* Resurrection items activate in a [[:Category:Revival items|set order]]. 
+** {{dlc+|nr}} Judas' Shadow is 8th in this order after {{i|1up!}}, {{i|Dead Cat}}, {{c|Lazarus}}' inherent extra life, {{i|Guppy's Collar}}, {{i|Lazarus' Rags}}, {{i|Ankh}}, and {{t|Broken Ankh}}. {{dlc-}}
+** {{dlc+|r}} Judas' Shadow is 10th in this order after {{p|Soul of Lazarus}}, {{i|1up!}}, {{c|Lazarus}}' inherent extra life, {{i|Dead Cat}}, {{i|Inner Child}}, {{i|Guppy's Collar}}, {{i|Lazarus' Rags}}, {{i|Ankh}}, and {{t|Broken Ankh}}. {{dlc-}}
+* Beating bosses as {{c|Black Judas}} will give [[Completion Mark]]s for {{c|Judas}} and will unlock the associated items and achievements.
+
+== Synergies ==
+* {{c|Tainted Judas}}: Revived as Tainted Judas instead of Black Judas.
+
+== In-game Footage ==
+{{#ev:youtube|jt0s3UPZxX8}}
+
+{{nav|revival|judas unlock|boss rush unlock|fr=Ombre de Judas}}
+[[category:revival items]]

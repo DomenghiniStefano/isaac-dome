@@ -1,0 +1,33 @@
+{{infobox trinket
+ | name = Store Credit
+ | id = 13
+ | quote = YES!
+ | description = The next {{r|Shop}} purchase is free. The trinket disappears after purchasing anything there.
+ | unlocked by = Store Credit
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* While holding the trinket, all items in the {{r|Shop}} are free.
+** After purchasing anything there, the trinket disappears.
+** This trinket only works on monetary transactions within the Shop.
+
+== Synergies ==
+* {{A|Golden Trinket}}: Does not disappear on use. Purchasing an item has a 25% chance to turn into a regular store credit trinket and 75% to remain golden.
+
+== Interaction ==
+* {{I|Keeper's Box}}: Cannot be used on items/pickups spawned outside of the Shop.
+* {{I|The Stairway}}: Cannot be used on the items/pickups found in the special Angel room.
+* {{i|Marbles}} / {{i|Smelter}} / [[Pills|Gulp!]] pills: Store Credit's effect will only happen once after being absorbed.
+* {{I|A Pound of Flesh}}: Store Credit becomes a useless trinket, as neither Devil Deals nor shop items will become free.
+
+== In-game Footage ==
+{{#ev:youtube|Go2B25irSFw||inline}} {{#ev:youtube|Qi-hbvqzWFg||inline}}
+
+== Bugs ==
+{{bug|dlc=nr|Buying a trinket (which is possible only in [[Greed Mode]], as trinkets are not sold otherwise) while holding Store Credit will drop Store Credit without consuming it while still taking the trinket for free.}}
+{{bug|Buying free pickups with the {{i|Bag of Crafting}} doesn't remove the trinket.}}
+
+{{nav|lazarus unlock|blue baby boss unlock|fr=Bon d'Achat}}
+[[Category:Trinkets]]

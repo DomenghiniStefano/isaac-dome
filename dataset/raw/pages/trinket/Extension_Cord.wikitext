@@ -1,0 +1,47 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 125
+ | quote       = Charged friends
+ | description = Bolts of electricity arc between Isaac and his [[familiar]]s, damaging any enemies between them.
+ | unlocked by = Extension Cord
+}}
+
+''Not to be confused with {{i|Sharp Plug}}.''
+
+{{cit|ut|a+4}}
+
+== Effects ==
+* Bolts of electricity arc between Isaac and his [[familiar]]s, damaging any enemies between them.
+** The bolts do 6 points of damage per strike.
+** The bolts flow through each familiar in reverse order of acquisition, and reach Isaac last.
+** A bolt arcs every 2 seconds with one familiar. 3 of them arc per second with two familiars. 7.5 per second with three or more familiars.
+
+== Notes ==
+* Does not affect [[Familiar#Temporary Familiars|temporary familiars]] or {{i|The Swarm}}’s gray flies.
+* The bolts will damage destructible [[obstacles]], such as {{E|TNT}} and {{E|Fire Place}}s, as a normal tear would.
+* {{Dlc|r}} In [[True co-op]], electricity will arc to all characters, as well as all their familiars.
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Each copy deals 6 more damage per tick.
+* {{C|The Forgotten}} / {{C|Tainted Forgotten}}: Bolts will arc between it and {{C|The Soul}} / {{C|Tainted Soul}}.
+* {{C|Jacob and Esau}}: Electricity will arc to familiars held by both characters, not just the familiars owned by the character holding it. It will also arc between Jacob and Esau themselves.
+
+== In-game Footage ==
+{{#ev:youtube|rKsmstUjpD8}}
+
+== Gallery ==
+<gallery>
+File:Trinket Extension Cord mod icon.png|Extension Cord's appearance in the original [http://steamcommunity.com/sharedfiles/filedetails/?id=894760381 Steam Workshop mod].
+File:Trinket_Extension_Cord_Booster_Pack_4_icon.png|Extension Cord's appearance prior to [[Booster Pack #5]].
+File:Ext-cord_bbf.png|Extension Cord's electricity striking {{I|BBF}}'s last location after it explodes.
+</gallery>
+
+== Trivia ==
+* Extension Cord is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=894760381 this Steam Workshop mod] by Mozzie and CupertinoEffect, which was originally a passive item.
+
+== Bugs ==
+{{bug|dlc=nr|When using {{i|BBF}}, electricity will arc to its last location before exploding, until it respawns.}}
+{{bug|dlc=nr|When {{i|Holy Water}} breaks, the sprite is temporarily stored just off the top-left of the screen, toward which electricity will still arc.}}
+{{bug|dlc=r| During the Siren fight in mausoleum if she converts any familiars Isaac will take constant damage.}}
+
+{{nav|booster pack|familiar modifier|fr=Rallonge Électrique}}

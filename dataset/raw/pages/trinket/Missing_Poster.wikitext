@@ -1,0 +1,69 @@
+{{infobox trinket
+ | name        = Missing Poster
+ | id          = 23
+ | quote       = ???
+ | description = {{dlc|na}} If Isaac dies to a {{r|Sacrifice Room}}'s spikes, a puzzle piece will appear on his [[Isaac's last will|last will]].<br>{{dlc|a}} Dying in a {{r|Sacrifice Room}} while holding it unlocks {{c|The Lost}}. If The Lost is already unlocked, revives Isaac as The Lost if he dies anywhere, then disappears. {{dlc|r+}} Also has a 33% chance to reveal the {{r|Super Secret Room}} when entering a new floor.
+ | tags        = {{dlc|r+|nochallenge}}
+ | unlocked by = Missing Poster
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* {{dlc|na}} If Isaac dies to a {{r|Sacrifice Room}}'s spikes, a puzzle piece will appear on his [[Isaac's last will|last will]].
+* {{dlc|a}} Dying in a {{r|Sacrifice Room}} while holding the trinket consumes it, revives Isaac as {{c|The Lost}} and unlocks the character.
+** If The Lost is already unlocked, the trinket works outside Sacrifice Rooms as well, reviving Isaac as The Lost.
+* {{dlc|r+}} Adds a 1/3 chance to reveal a super secret room upon entering a new floor.
+
+== Notes ==
+* {{dlc|nr}} None of the effects will occur during any [[Challenges]].
+** {{dlc|r+}} This trinket can no longer spawn in challenges.
+* {{dlc|anr}} Resurrection items activate in a [[:Category:Revival items|set order]]. Missing Poster has the lowest priority of all / {{dlc|r}} the second-lowest priority of all, with only {{c|Tainted Lost}}'s {{i|Birthright|n}} effect being lower.
+** If another resurrection item activates before Missing Poster while in the sacrifice room, then the player will not become The Lost, but The Lost will still be unlocked. Missing Poster will also not get used up by this.
+* {{dlc|anr}} The Lost's intrinsic {{i|Holy Mantle}} is not gained when revived into this way.
+** {{dlc|r}} If unlocked, The Lost will have his intrinsic {{i|Holy Mantle}} when revived into this way.
+* {{dlc|a}} Dying to {{r|Sacrifice Room}} ''spikes'' specifically is not required to unlock The Lost, and any death within the room counts.
+** If Isaac teleports out of the room before dying, i.e. is teleported by the spikes to {{s|Dark Room}}, The Lost will not be unlocked.
+** {{dlc|r}} Doesn't unlock {{c|The Lost}} in challenges.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either increases the chance to reveal the location of the super secret room upon entering a new floor to 2/3. Having both to 100%.
+* {{dlc|a+}} [[Gulp!]] / {{i|Marbles}} / {{i|Smelter}}: Missing Poster functions correctly after being consumed, but still disappears after activating.
+
+== Interactions ==
+* {{i|Birthright}}: {{c|The Lost}}'s Birthright effect will apply after respawning as him, even if Birthright was obtained prior to dying.
+* {{c|Jacob and Esau}}: As long as one holds the poster, Isaac will be revived, regardless of which one dies. The Lost will get both character's items.
+* {{C|Tainted Lost}}: Revives as Tainted Lost instead of The Lost.
+
+== Puzzle Pieces {{dlc|na}} ==
+* The puzzle piece will belong to one of four jigsaw puzzles, differentiated by a grey symbol in the corner of each piece.
+** The symbol can [http://i.imgur.com/40SOeMh.png either be] a pixel, a 2x2px square, a 3x3 px square, or four pixels arranged like a plus-sign.
+* Each jigsaw puzzle displays an altered last will for the characters {{c|Isaac}}, {{c|Magdalene}}, {{c|Judas}}, or {{c|Azazel}} respectively.
+** Each picture on the last will shows [[The Lost#Unlocking The Lost in Rebirth|in which way Isaac has to die]] when playing as the respective character to unlock The Lost.
+* There are many puzzle pieces and more details to be found; see [http://www.reddit.com/r/bindingofisaac/comments/2lpv6b/puzzle_pieces_spoilers/ here].
+
+== In-game Footage ==
+{{#ev:youtube|v4W7NgNUbsA}}
+
+Note that this footage only applies to the ''Rebirth'' version of this trinket and does not show the changes made to it in ''Afterbirth''.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | The Lost }}
+
+== Trivia ==
+* The first scenes in [[Endings|Ending 15]] and [[Endings|Ending 17]] show The Missing Poster pinned to a utility pole, with a silhouette of [[Mom|Isaac's mother]] who seems to be searching for Isaac in the background.
+* There are many puzzle pieces in total. Assembling all of the jigsaw puzzles and figuring out what they meant was initially designed to be a collaborative effort of the community. As such, [[Edmund]] and [[Tyrone]] had openly expressed disappointment towards the datamining.<ref>"[https://youtu.be/UJVuLvGjPOc?t=8201 [Vinesauce&#93; Vinny - Interview with Edmund McMillen]" by Vinesauce: The Full Sauce; November 11, 2014.</ref>
+* The unlock pop-up of Missing Poster calls it "Lost Poster". It is unknown if this is a mistake or a hint.
+* A chest always containing the Missing Poster will appear as a room clear reward from the [[Dogma]] room, although it is impossible to access it without the use of [[Debug Console|console commands]].
+
+== Gallery ==
+<gallery>
+File:Ending 15 Missing Poster.png|The Missing Poster in Ending 15.
+</gallery>
+
+== References ==
+{{Reflist}}
+
+{{nav|isaac unlock|the lamb unlock|revival|fr=Avis de Recherche}}
+[[Category:Trinkets]]
+[[Category:Revival items]]

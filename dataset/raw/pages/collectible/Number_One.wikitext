@@ -1,0 +1,67 @@
+{{infobox passive collectible
+ | quote       = Tears up {{dlc|r|+ range down}}
+ | description = Grants +1.5 [[tears]], but severely reduces [[range]].
+ | tags        = summonable tearsup offensive
+ | id          = 6
+ | quality     = 2
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +1.5 [[tears]].
+* {{dlc|nr}} -17.62 [[range]].
+* {{dlc|r}} -1.5 [[range]] and -20% [[range]] multiplier. Will not decrease range below 4.00.
+* {{dlc|nr}} +0.76 [[tear falling speed]].
+* Tears turn yellow and are fired from Isaac's lower body rather than his head.
+
+== Notes ==
+* {{dlc+|r}} This item can be spawned by {{e|Bumbino}} if he picks up 12 cents.{{dlc-}}
+* Number One doesn't increase the tear rate cap, meaning picking it up with tears capped (normally 5.0) will just decrease range with no benefit.
+* {{dlc|r}} Multiple copies of Number One, (such as those made by {{i|Diplopia}}), will not cause the negative range multiplier to stack.
+
+== Synergies ==
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Number One it turns into a yellow locust that is faster, deals damage quicker, but has a limited range.
+* {{i|Brimstone}} / {{c|Tainted Azazel|r}}: The laser turns yellow and charges at a much faster rate with no decrease to the range.
+* {{i|Epic Fetus}}: Increases fire-rate with no decrease in range. Explosive clouds are now yellow.
+* {{i|Incubus|anr}}: The Incubus fires at a much faster rate with no decrease to the range.
+** {{dlc|r}}: Incubus' range decreases like normal.
+* {{i|The Ludovico Technique}}: Turns tear yellow and allows it to be moved much faster.
+* {{i|Number One}}: Gives an additional fire rate bonus without further reducing range.
+* {{i|Pop!}}: Eyeball tears are yellow, can be fired much quicker, and does not affect their airtime.
+* {{i|Technology}}: The laser turns yellow and Technology's firing rate is greatly increased with no decrease to the range.
+* {{i|Tech X}}: Laser turns yellow, charge time is greatly decreased, and no decrease to the range.
+* {{i|Tiny Planet}}: Tears travel a slightly smaller distance but can be fired much quicker.
+
+== Interactions ==
+* {{C|Azazel}}: Lowers range, reduces charge time.
+* {{i|Compound Fracture}} / {{i|The Parasite}}: Tears often disappear before being able to split. Split tears also only travel a very short distance.
+* {{i|Cricket's Body}}: Tears disappear '''very''' quickly after being fired, and split tears barely travel at all.
+** {{dlc|r}} '''Not recommended.''' Number One's x0.8 range multiplier stacks with Cricket's Body's own x0.8 range multiplier, thus drastically reducing range.
+* {{i|Dr. Fetus}}: '''Not recommended.''' Makes bombs travel distance very short. The extremely reduced range can turn simple rooms into a challenge and self-damage a constant concern.
+* {{i|Haemolacria}}: Does not affect the main tear; however, burst tears travel significantly less far.
+** {{dlc|r}} '''Not recommended.''' Number One's x0.8 range multiplier stacks with Haemolacria's own x0.8 range multiplier, thus drastically reducing range.
+* {{i|Ipecac}}: Increases fire rate moderately, and decreases range only slightly.
+** {{dlc|r}} '''Not recommended.''' Number One's x0.8 range multiplier does stack with Ipecac's own x0.8 range multiplier, making self-damage more likely.
+* {{i|Kidney Stone}}: The stone is not affected by short range, otherwise the combo behaves as expected. {{dlc|nr}} Number One's range penalty overrides Kidney Stone's.
+* {{i|A Lump of Coal}}: Tears still increase in size and damage as they travel; however, the short-ranged distance limits tear size and damage.
+* {{i|Marked}}: Tears become orange. The firing rate is increased, Marked's effect is unaffected but the range is reduced.
+* {{i|Mom's Knife}}: The knife turns yellow and the maximum range is significantly reduced.
+* {{dlc|nr}} {{i|Monstro's Lung}} / {{i|Lead Pencil}}: '''Not recommended.''' Tear barrage disappears very close to Isaac.
+** {{dlc|r}} Range is more forgiving.
+* {{i|Proptosis|nr}}: '''Not recommended.''' Tears disappear after traveling a very short distance.
+** {{dlc|r}} This is now fixed and works as expected.
+* {{i|Rubber Cement}}: Tears often disappear before being able to bounce off walls.
+* {{i|Tooth Picks}}: Tears become orange.
+
+== In-game footage ==
+{{#ev:youtube|3Ek-uDOuK8w||inline}} {{#ev:youtube|TH9rOVHzg2Q||inline}}
+
+== Trivia ==
+* "Number One" is a euphemism for urination and mirrors {{i|Number Two}} being an euphemism for defecation.
+** This is why the tears fired after collecting this item are no longer fired from the head, but the lower waist.
+* In the original ''Binding of Isaac'', Number One had the effect of turning all future Range Down pills into Range Up pills. This was presumably designed to reduce the risk of players being stuck in situations where their range would become too low to clear certain rooms. However, in ''Rebirth'', Number One no longer has this effect, and will not turn Range Down pills into Range Up pills.
+* This item is used in {{chal|High Brow}}.
+* {{dlc|na+}} The firing animation of Number One is a little different from what it looks like in the original ''Binding of Isaac.''
+
+{{nav|fr=Petite Commission}}

@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 167
+ | quote       = Double shot buddy
+ | description = Spawns a [[familiar]] that follows Isaac around and fires two tears at once in a V-pattern.
+ | quality     = 1
+ | tags        = summonable baby monstermanual offensive
+ | pool = polyp
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a [[familiar]] who follows Isaac around and fires two tears at once in a V-shape pattern {{dlcalt|once per second|r=1.36 times a second}} that each do 4 damage.
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Mr. Fred}}.{{dlc-}}
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Harlequin Baby having {{dlcalt|5th|r+=7th}} priority.
+
+== Synergies ==
+* {{I|Mongo Baby}}: Will copy Harlequin Baby’s spread double shot effect.
+* {{c|Tainted Forgotten|r}}: The momentum from the skeleton being tossed makes Harlequin Baby's tears launch at an abnormally high shot speed.
+
+== In-game Footage ==
+{{#ev:youtube|nch4mTjucGM}}
+
+== Trivia ==
+* This item refers to a condition called [[wikipedia:harlequin-type ichthyosis|Harlequin Ichthyosis]], which is a rare skin condition from birth, which on babies gives puffy red eyes, green or red crackled/scaly skin, and stretched out lips.
+
+{{nav|conjoined|fr=Bébé Arlequin}}

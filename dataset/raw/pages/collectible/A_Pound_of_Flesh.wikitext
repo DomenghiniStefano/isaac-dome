@@ -1,0 +1,67 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 672
+ | quote       = Blood money
+ | description = [[Devil Room|Devil deals]] now cost {{E|Penny|text=Coins}}, {{r|Shop}} items now cost [[health]], and [[consumable]]s in shops are free but surrounded by spikes.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = summonable nokeeper nogreed {{dlc|r+|devilsacrifice}}
+ | unlocked by = A Pound of Flesh
+ | devil price = {{dlcalt|1|r+=0}}
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* [[Devil deal]]s and {{r|Black Market}} items can now be paid with {{E|Penny|text=Coins}}.
+** Anything that generates Devil Deals (such as {{i|Satanic Bible}} or the special chests in {{s|Dark Room}}) will also create items that cost coins.
+* Items in {{r|Shop}}s now cost [[health]].
+* [[Consumable]]s in shops have no cost, but are surrounded with [[Spikes]] and can't be pushed out with an explosion.
+
+== Notes ==
+* Buying shop items for health does not prevent {{r|Angel Room}}s from appearing.
+* Taking a health consumable surrounded by spikes at a single heart or less will still result in Isaac's death.
+* Immunity to spikes or invulnerability of any kind (e.g. via {{i|The Gamekid}}) does not prevent damage when taking consumables in shops.
+* Shop consumables cannot be taken during invincibility frames, e.g. from taking another consumable.
+** {{c|The Lost}} can take the consumables, without losing his {{I|Holy Mantle}}.
+** When transformed into {{c|The Lost}} in {{s|Downpour}}/{{s|Dross}} II with the {{e|White Fire Place}}, shop consumables can be taken for free even without {{I|Holy Mantle}}.
+* The item is not available to {{C|Keeper}} and {{c|Tainted Keeper}} normally. If acquired through {{i|Spindown Dice}}, {{i|Death Certificate}} or such, it has no effect.
+
+== Synergies ==
+* {{I|Binge Eater}}: All shops become free stat-ups if the food item is chosen.
+* {{I|Restock}}: The price never increases, staying at one red heart container/three soul hearts for each item, and one full heart of damage for pickups.
+** However, Restock's coin cost increase mechanic is still present, and if Pound of Flesh is lost, the items will have their equivalent coin cost displayed.
+** With {{I|Binge Eater}}, this can result in infinite stat gains.
+** If a Heart is on sale, Isaac can trigger [[:Category:Damage-triggered items|items that activate upon taking damage]] indefinitely.
+** If a {{E|Lil' Battery}} is on sale, Isaac can buy items indefinitely with certain active items such as {{I|Blank Card}} with {{p|XI - Strength}} or {{I|Book of Revelations}} with {{I|Car Battery}}.
+** When transformed into a ghost in {{s|Downpour}} II or as {{C|Tainted Jacob}}, or playing as{{C|The Lost}}, Isaac can buy items indefinitely.
+* {{I|Maggy's Bow}}: Buying a Red Heart will out-heal the damage taken from the spikes if Isaac can survive it.
+* {{I|The Wafer}} / {{I|Cancer}} / [[Percs!]]: The spikes only deal half a heart damage, allowing Isaac to gain health from buying hearts.
+** With {{i|Restock}}, any character except {{C|Bethany}} can buy items indefinitely if a Soul Heart is on sale.
+
+== Interactions ==
+* {{I|Chaos}}: Items in Devil Rooms that would otherwise cost two heart containers will only cost one if found in Shops.
+* {{t|Flat File}}: No effect. Spikes generated surrounding consumables will not be removed.
+* {{I|Holy Mantle}} / {{p|Holy Card}} / {{t|Wooden Cross}} / {{I|Blanket}} / {{I|Dogma}}: Unless Isaac is {{C|The Lost}}, the spikes around consumables will simply break the shield without letting him take them.
+* {{I|Isaac's Heart}}: Consumables can no longer be picked up in shops.
+* {{T|Judas' Tongue}}: Ensures that items in the {{I|Member Card}} secret shop only cost one heart container, but Devil Deal prices are not reduced, and other shop items already only cost one heart container.
+* {{i|Keeper's Box}}: Items and pickups generated outside Devil Rooms will cost health, but items generated inside Devil Rooms will cost coins.
+* {{i|Keeper's Sack}}: Because shop items no longer cost coins, stat bonuses are no longer gained from buying shop items, but they are gained from Devil Deals.
+* {{C|The Lost}}: Only one item can be picked up from each shop; any other items will vanish. Consumables can be taken for free.
+** However, multiple items can be bought from Devil Deals.
+** Items will not disappear when taking any consumable.
+** With {{i|Restock}}, the Lost can buy items indefinitely.
+* {{I|Member Card}}: Items in the secret shop can cost two heart containers.
+* {{I|Redemption}}: Doesn't change the conditions to lose or keep the cross even when spending health in shops.
+* {{I|The Stairway}}: Affects Angel Shops the same way it does regular shops.
+* {{I|Steam Sale}}: Devil Deals will have their price reduced. Shop items will cost the same amount of health.
+* {{T|Store Credit}}: Store Credit becomes a useless trinket, as neither Devil Deals nor shop items will become free.
+
+== In-game footage ==
+{{#ev:youtube|9Hp5UIAw0n8||inline}}
+
+== Trivia ==
+* The name of this item is a reference to Shakespeare's play ''The Merchant of Venice'', where the Jewish moneylender Shylock asks the bankrupt Antonio for 'a pound of flesh' in payment for his debt.
+* The name of this item matches the description of the {{i|Potato Peeler}}, which also references the play.
+* This is the only item with the [[Item Tags nokeeper|<code>nokeeper</code> item tag.]]
+
+{{nav|cain unlock|the beast unlock|fr=Une Livre de Chair}}

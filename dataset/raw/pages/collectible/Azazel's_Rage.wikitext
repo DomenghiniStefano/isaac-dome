@@ -1,0 +1,35 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 699
+ | quote       = Ancient power
+ | description = Isaac builds rage every time a room is cleared. After four rooms, fires a large {{i|Brimstone}} laser when entering the next room.
+ | quality     = 2
+ | tags        = summonable offensive
+ | unlocked by = Azazel's Rage
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Isaac builds up rage every time he clears a room, which is indicated by the patch of skin that spreads around his face, as well as the four sections of the horn lighting up red one at a time.
+* After four rooms, Isaac's head will start to flash red; upon entering a room with enemies, he will fire a large {{I|Brimstone}} laser for ~3.33 seconds.
+** The laser deals Isaac's damage per tick (15x Isaac's damage per second).
+
+== Notes ==
+* The counter for activation will go up during [[Greed Mode]], {{r|Challenge Room}}s, {{r|Boss Challenge Room}}s and {{r|Boss Rush}} waves, as well as the waves in the {{e|The Beast}} fight.
+** If the Brimstone laser is ready, it will fire automatically after clearing a Greed Mode or Beast fight wave.
+** {{dlc|nr+}} It will not fire in challenge rooms or boss rush.
+
+== In-game footage ==
+{{#ev:youtube|vVU2KRoyDss}}
+
+== Trivia ==
+* This item is, most likely, {{C|Azazel}}'s severed right horn.
+* This item resembles one of the horns of {{e|The Beast}}.
+
+== Gallery ==
+<gallery>
+File:Collectible Azazel's Rage stages.png|The five stages of Azazel's Rage as it slowly overtakes Isaac. The final stage slowly pulses red.
+</gallery>
+
+{{nav|tainted azazel unlock|the beast unlock}}

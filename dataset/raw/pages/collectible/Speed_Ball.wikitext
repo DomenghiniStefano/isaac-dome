@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 143
+ | quote       = Speed + shot speed up
+ | description = +0.3 [[speed]], +0.2 [[shot speed]].
+ | quality     = 2
+ | tags        = summonable syringe offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +0.3 [[speed]].
+* +0.2 [[shot speed]].
+* {{transformation contribution|Spun}}
+
+== In-game Footage ==
+{{#ev:youtube|ihkB2oDCmVE||inline}} {{#ev:youtube|Dq7F5Dwtfdk||inline}}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Little Baggy }}
+
+== Trivia ==
+* A "[[wikipedia:Speedball (drug)|speedball]]" is cocaine or an amphetamine mixed with heroin or morphine.
+* {{dlc|r}} The [[G FUEL!]] item that appears with the special GFVE LLLL [[Seeds|easter egg seed]] or during daily runs with the same effect enabled is considered a "temporary" version of Speed Ball with a replaced sprite, different costume and additional effects. Normal Speed Ball is still available, however.
+
+{{nav|syringe}}

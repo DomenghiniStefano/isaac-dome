@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | id          = 337
+ | quote       = I think it's broken
+ | description = [[Slow]]s all enemies in every fourth newly-discovered room, with a ~13% chance to speed them up instead.
+ | quality     = 1
+ | tags        = summonable nocantrip
+}} {{disambig msg|the broken watch|the normal version of this item|Stop Watch}}
+
+{{cit|p}}
+
+== Effects ==
+* Every 4th newly discovered room, [[slow]]s all enemies and their attacks down to half their normal speed, but has a ~13% chance of speeding them up by 40% instead.
+** The effect is lost upon leaving the room, and not gained again if re-entering it.
+
+== Notes ==
+* The effect is lost upon exiting and continuing the run. This can be used when the speed up chance is hit when fighting a Boss.
+* {{Dlc|nr}} Because of the slow effect, champion versions of enemies will be tinted the same color as all other enemies. This makes it much harder to distinguish certain champion types, such as those that explode upon death.
+* The player can abuse the Broken Watch to have the Broken Stopwatch trigger during any difficult boss fight by making sure that the fight is the fourth room since the last time the effect activated.
+** For example, if the third undiscovered room was the Mom boss fight, Boss Rush will be the fourth undiscovered room, resulting in it being slowed down. This necessitates skipping the {{R|Devil Room}} or {{R|Angel Room}}, however.
+** To trigger the effects of Broken Watch during the {{E|The Beast}} fight and do not have either the {{I|Red Key}} or a {{P|Cracked Key}}, you have to clear 1 room after the effect has activated, then explore every room in {{s|Home}}. Otherwise, after the effect has activated in a room, immediately go to {{s|Home}} and explore every room.{{dlc-}}
+** There is also the 13% risk of the room being sped up, so this strategy can rarely backfire.
+* If the slow effect triggers when entering The Boss Rush or {{E|The Beast}} boss area, it will be active for the entire Boss Rush/all four Horsemen and the Beast. This is also true of the speed effect.
+
+== Interactions ==
+* {{i|Glowing Hourglass}}: The Glowing Hourglass does not reset the entered room counter: using it in a room where the Broken Watch is active and immediately returning without visiting other new rooms will not trigger the effect again.
+* {{T|Lil Clot}} / {{I|Sumptorium}} / {{C|Tainted Eve}}: Clots are moving and firing at normal speeds when a room is sped up. This can be extra hurtful as Tainted Eve, since the clots will not move in sync with her.
+* {{dlc|na}} {{i|Stop Watch}}: Overrides Broken Watch; the speed-up effect will not occur.
+** {{dlc|a}} Both the slow effect and the rarer speed up can trigger at the start of a room.
+*** {{dlc|nr}} This results in enemies being slowed to around 71.8% of their original speed.
+*** {{dlc|r}} This results in enemies being sped up by 12%.
+
+== In-game Footage ==
+{{#ev:youtube|KsaLmrsp2eo}}
+
+== Trivia ==
+* The {{I|Stop Watch}} is the repaired version of this item, and thus functions differently.
+* When the slow effect is activated, the background music is also slowed down to 70% of the original speed of the music.
+* When the speed effect is activated, the background music is sped up by x1.428571428 (Or 1 3/7).
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Era Walk }}
+
+{{nav|broken|fr=Chronomètre Cassé}}

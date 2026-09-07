@@ -1,0 +1,57 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 481
+ | quote       = 109
+ | description = Displaces enemy sprites for the current room and randomly increases one of Isaac's [[Attributes|stats]] while decreasing another. {{dlc|r+}} Turns all items in the room into glitched items with random effects.
+ | quality     = 0
+ | tags        = offensive
+ | recharge    = 4
+}}
+
+{{cit|a|a+}}
+
+== Effects ==
+* Upon use, rotates every enemy and pickup 90 degrees and moves its sprite up and left for the current room.
+** Enemy hitboxes remain the same.
+* Increases one of Isaac's [[Attributes|stats]] and decreases another. Possible stat changes include:
+** ± 1 flat [[damage]]
+** {{dlc|nr}} ±0.5 [[tears]]
+** {{dlc|r}} ±0.5 [[fire rate]]
+** ±0.2 [[speed]]
+*** {{dlc|nr}} Also affects maximum speed (may never exceed 2.0)
+** ±0.2 [[shot speed]]
+** ±1 [[luck]]
+** {{dlc|nr}} ±0.5 [[range]]
+** {{dlc|r}} ±2.5 [[range]]
+* Adds random tear effects for the current room.
+* Distorts the music for the current room.
+* {{dlc+|r+}} Rerolls any item in the room to a glitched {{i|TMTRAINER}} item.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a special wisp on the middle ring that is otherwise undistinguishable from a normal wisp. These wisps' tears have a 5% chance of transforming any non-boss enemy into random wisps.}}
+* {{i|Rock Bottom}}: The stats are locked to the highest number achieved, though the lowered stat will still be more difficult to increase.
+
+== Notes ==
+* {{Dlc|r}} If the tears stat reaches a negative number, there will be a wrap-around into the maximum fire rate of 120; if the tears stat is boosted back into a positive number, fire rate will again become low.
+** If Rock Bottom is obtained while the tears stat is negative, fire rate will stay at 120 even if boosts are obtained.
+* The minimum values for each stat are as follows:
+** Damage: 0.5
+** Speed: 0.1
+** Shot Speed: 0.6
+** Range: 1.0
+* Further changes to Isaac's stats are still calculated normally behind the scenes, but their ''effective'' values cannot go below the minimum. For example, 0.5 Shot Speed will ''behave'' as though it were 0.6, but a 0.2 Shot Speed increase would apply to the true stat value of 0.5, meaning the new stat value would be 0.7.
+* {{dlc+|r}} Using Dataminer during the fight against {{E|The Beast}} is '''not recommended''', as it will distort the stalagmites and stalactites, causing them to be incredibly difficult to dodge.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|f-bBq81xOBk}}
+
+== Trivia ==
+* The item name and description are a likely reference to the dataminers who discovered the secret of {{C|The Lost}}, as well as the {{C|Keeper}} [[Keeper_ARG|ARG]]'s recurring usage of the number 109.
+** The item and its pickaxe icon are a play on words on the term data mining, used in the context of gaming communities as extracting data from the game files.
+* The item's sprite is a recolor and flipped version of the {{i|Notched Axe}}.
+* If used during the {{E|Mom}} fight, a normally hidden part of the leg sprite, revealing a blue skirt with yellow polka dots, will be visible.
+* If Dataminer is used right before traveling to the next floor, the music for the transition screen will be affected by it.
+** Also affects the music during the Game Over screen ([[Isaac's last will]]), if activated before death.
+* In a Q&A from Twitter, Edmund McMillen considered [https://twitter.com/edmundmcmillen/status/1160772106344288256 Dataminer to be the worst item in ''The Binding of Isaac''].
+
+{{nav|glitch|fr=Pioche Pirate}}

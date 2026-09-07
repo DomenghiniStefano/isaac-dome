@@ -1,0 +1,27 @@
+{{infobox trinket
+ | dlc         = a
+ | id          = 90
+ | quote       = Fartoom!
+ | description = {{E|Poop}}s explode upon being destroyed.
+}}
+
+{{cit|t|a}}
+
+== Effects ==
+* Destroying {{E|Poop}}s causes them to explode, dealing {{dlc|nr}} 60 / {{dlc|r}} 100 damage like a normal bomb, but with a shorter range.
+
+== Notes ==
+* Poops are not affected by [[Bomb|bomb modifiers]].
+* {{E|Red Poop}}s will not explode when destroyed.
+
+== Synergies ==
+* {{t|Brown Cap}} / {{A|Golden Trinket}} / {{I|Mom's Box}}: Each effect/trinket copy stacks adding another {{dlc|nr}} 60 / {{dlc|r}} 100 damage to the explosion per stack.
+
+== Interactions ==
+* {{T|Dingle Berry}} / {{I|Dirty Mind|n}}: Dips do not explode.
+* {{I|Mr. Mega}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|i7ynFg5YOR0}}
+
+{{nav|poop|fr=Bouchon Brun}}

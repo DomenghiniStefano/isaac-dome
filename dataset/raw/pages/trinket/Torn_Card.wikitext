@@ -1,0 +1,59 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 157
+ | quote       = Death awaits
+ | description = Every 15 shots, Isaac shoots an {{i|Ipecac}} + {{i|My Reflection}} tear.
+ | unlocked by = Torn Card
+}}
+{{distinguish visual|Fragmented Card}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Every 15 shots, Isaac will shoot an {{i|Ipecac}} + {{i|My Reflection}} tear with a very high range value.
+* The tear will follow Isaac until it hits an enemy or lands, where it will explode.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Each copy reduces the number of shots required to shoot an ipecac tear by 5, with a minimum of 5 shots in between.
+* {{I|Pyromaniac}}: Completely negates the downside of Torn Card and will heal you if the shot misses an enemy or wall and hits you instead.
+* {{I|Host Hat}}: Completely negates the downside of Torn Card.
+* {{I|Almond Milk}} / {{I|Soy Milk}} / {{I|Chocolate Milk}}: Unlike the normal {{I|Ipecac}} synergy, Torn Card shots ignore the damage down multiplier, always dealing +40 damage, '''significantly''' increasing DPS.
+* {{T|Brain Worm}}: Brain Worm forces some tears to snap 90 degrees to target enemies that they may have missed.
+* {{I|Death's Touch}} / {{I|Pupula Duplex}}: Ipecac shots get a bigger hitbox, making shots easier to hit, and from a safer distance.
+* {{I|Eye of the Occult}}: Tear control is stronger than the reflection, although it's still present if Isaac stops shooting. Effectively negates downside.
+* {{I|Fire Mind}}: A fire is always spawned at the place of explosion.
+* [[Tear Effects|Homing]]: The homing is stronger than the reflection, effectively negating Torn Card's downside.
+* {{T|Hook Worm}}: Hook Worm allows tears to hit enemies more easily, while also making them easier to avoid.
+* {{I|Lead Pencil}}: Lowers tear shot requirement by 1. Lead Pencil will always proc at the 14th shot, soon followed by Torn Card's at 15th.
+* {{I|Monstro's Lung}}: An Ipecac shot is fired for 4 bursts consecutively, with the 5th burst lacking one, and repeat. Makes Torn Card very consistent.
+* {{I|Proptosis}}: Ipecac tear will always explode before reflection takes effect. It's the '''only item''' that affects Torn Card's flat 40 damage.
+* {{I|Spirit Sword}}: Swings can be spammed rapidly to create Ipecac shots.
+* {{I|Tiny Planet}}: Ipecac shots will stick to the orbit and direction Isaac is aiming.
+* {{T|Whip Worm}}: Increased shot speed boosts accuracy and the tear is more likely to hit walls if the enemy is missed.
+
+== Interactions ==
+* {{I|20/20}} / {{I|Eye Sore}} / {{I|The Inner Eye}} / {{I|Immaculate Heart}} / {{I|Loki's Horns}} / {{I|Mom's Eye}} / {{I|Mutant Spider}} / {{I|The Wiz}}: Extra tears fired do not count towards Torn Card proccing.
+* {{I|Anti-Gravity}}: Ipecac shots will follow Isaac closely until he stops firing.
+* {{I|Epic Fetus}}: Despite replacing tears, Torn Card will still calculate shots required based on Isaac's fire rate. These shots will be fired regardless if the missile crosshair is moving or not.
+* {{I|Evil Eye}}: Tears shot by evil eyes cannot fire Ipecac shots, nor count towards proccing.
+* {{I|Fate's Reward}}: Cannot proc Torn Card.
+* {{I|Incubus}} /  {{I|Twisted Pair}} / {{T|Lil Clot}} / {{T|Found Soul}}: Has its own shot counter, independent of Isaac's. Shots not affected by its damage multiplier, always dealing +40 damage. Shots fired from the Soul will reflect back on itself, rather than Isaac. The Twisted pairs fire an Ipecac shot at the same time.
+* {{I|Lachryphagy}}: Ipecac shots become Lachryphagy shots, allowing them to grow. Reflection is weaker due to lower momentum. The burst tears spawned from the tear will all explode.
+* {{I|Marked}}: Ipecac shots will be fired from cardinal directions rather than aiming at the crosshair.
+* {{T|Second Hand}}: Does not lenghthen the poison effect.
+
+== Detrimental items ==
+* {{I|Dr. Fetus}}: Ipecac shots will immediately explode on contact with the bombs, unless back pedaling.
+* {{I|Flat Stone}}: Each bounce produces an explosion. As tear height lowers on return, the explosion frequency increases.
+* {{I|The Ludovico Technique}}: Ipecac shots are fired even when not controlling the tear. Proc rate is based on fire rate, same as with Epic Fetus.
+* {{I|The Parasite}}: Tears split on walls will all try to home in back to Isaac.
+* {{I|Tractor Beam}}: Tears that did not hit any enemy or wall will reflect back to Isaac with ease, thanks to the beam. If the tear gets on top of Isaac, it's very hard getting rid of it, usually resulting in self-damage.
+
+== In-game footage ==
+{{#ev:youtube|WcI0usFT4YE}}
+
+== Trivia ==
+* This trinket is a torn {{P|Suicide King}} card, and its tear effect is the same combination used in the [[Suicide King (Challenge)|Suicide King]] challenge (which unlocks said card).
+** The Suicide King challenge uses Lazarus as the starting character, which is also referenced by it being one of the {{C|Tainted Lazarus}} unlocks.
+
+{{nav|tainted lazarus unlock|mother unlock|broken|fr=Carte Déchirée}}

@@ -1,0 +1,68 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 709
+ | quote       = Angel breaker
+ | description = Isaac dashes forward and picks up the first enemy hit. After a moment, he jumps and slams them into the ground to deal damage and create a circular rock wave.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge    = 7s
+ | unlocked by = Suplex!
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Upon use, Isaac dashes forward a short distance. If Isaac runs into an enemy while dashing, he picks them up and a crosshair spawns under him that can be controlled with tear controls. After one second, Isaac leaps up and slams down on the crosshair with the enemy, dealing damage to them and any enemies he lands on depending on his size. On impact, this move creates circular rock waves that damage nearby enemies and destroy obstacles.
+** The damage the slam deals is 50 +/- 10 for each size up/down Isaac has.
+** Each spike in the rock wave deals 10 damage, and the range of the rock waves increases/decreases for each size up/down Isaac has.
+** Isaac is immune to damage for the duration of the effect, which allows him to use it to get into {{r|Curse Room}}s, open {{e|Spiked Chest}}s, and travel over spikes without taking damage.
+*** {{m|Blood Donation Machine}}s and {{m|Devil Beggar}}s will still deal damage while Suplex! is active.
+
+== Notes ==
+* In addition to normal enemies, Isaac is able to suplex:
+** {{e|Bomb}}s of any kind
+** [[Bosses]]
+** [[Friendly]] enemies (this deals no damage to them).
+** {{e|Shopkeeper}}s
+** {{E|Poky}} type enemies
+** {{E|Movable TNT}}
+** Stationary or mostly stationary enemies such as a {{E|Stone Grimace}} or {{E|Slide}} (they will move back to their original position after the suplex)
+** Fires (including {{e|Fire Place}}s; if Isaac suplexes a fireplace, it will glitch out and leave an invisible damaging fireplace in its original spot)
+** Enemies that are normally invincible, such as the ghost of {{E|Blighted Ovum}} (which deals no damage to it) and {{E|The Haunt}} before it moves to the top of the room.
+** {{C|Tainted ???}}'s poops, making it easier to break tinted rocks and open secret rooms. After being suplexed, the broken poop can be repeatedly suplexed as well. The broken poop will block the movement of Isaac and enemies, as it is still technically intact, even though it is visually destroyed. If the broken poop is shot at by Isaac, it will be 'destroyed' and is no longer able to be suplexed.
+** {{e|Dark Esau}} if playing as {{c|Tainted Jacob}}, although care should be taken to move away after the suplex attack to avoid touching Dark Esau.
+** Furniture on the {{s|Home}} floor.
+* If Isaac picks up an enemy and then suffers [[fear]], he cannot move the crosshair.
+* Despite the description, Isaac cannot suplex angel statues unless the fight has already been started.
+* As this item allows Isaac to leap over gaps and obstacle, the player must be careful not to strand him in an inaccessible place without a means to exit, such as teleportation, flight, or another target to Suplex, as that will effectively softlock the game.
+* Using suplex on a bomb in the {{R|Crawl Space}} and positioning the cross hair slightly above Isaac propels Isaac with enough force downward to force through the floor and access the error room. Be cautious about this as there's no way to go back to the floor other than teleporting.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=3 wisps are spawned where Isaac lands after using Suplex!. The wisps rotate around the spot Isaac landed and fire tears in the same direction Isaac does. The wisps do not persist between rooms.}}
+* {{i|Berserk!}} / {{p|Soul of Samson}} / {{c|Tainted Samson}}: When used near the end of the Berserk state (any time after the second bell ring), Suplex receives a unique visual effect, and will deal massive damage to the target, while setting off a {{i|Mama Mega!}} style explosion, destroying all [[obstacle]]s in the current room and blowing open all doors. The target being Suplexed, as well as nearby enemies, will receive 300 base damage that scales with Isaac's size. All other enemies receive 200 flat damage. The reason this interaction exists is that prior to a patch, doing this would instantly kill any enemy, including end bosses. It was then nerfed to only produce an explosion.
+* [[Freeze]] effects: Isaac can suplex frozen enemies.
+* [[Friendly]] enemies: If Isaac uses Suplex! to dash in a room, he will suplex a friendly enemy upon entering the room. This gives more time to react to danger and allows to deal damage to a group of enemies without risk (since the item gives invincibility during suplexes).
+* {{t|Panic Button}}: As long as Suplex! is fully charged and Isaac is moving, Panic Button automatically triggers when about to take damage, avoiding the damage and potentially grabbing an enemy in the process. Allows Isaac to grab an enemy by simply walking into them, provided the item is charged.
+* {{i|The Virus}}: The nature of suplexing helps to inherently poison enemies without consequences most of the time.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{c|Tainted Forgotten}}: Suplex can only be used while carrying the body or throwing the body, and can only control where he lands after being thrown. {{c|Tainted Soul}} gains the temporary damage immunity, including while Tainted Forgotten is suplexing a target. Tainted Forgotten cannot dash, requiring walking into enemies after using Suplex to grab them.
+* {{t|Safety Scissors}}: Suplexed {{e|Troll Bomb}}s (and their versions) will explode instead of turning into {{e|Bomb}} pickups.
+
+== In-game footage ==
+{{#ev:youtube|mVyDJPpRwCI}}
+
+== Trivia ==
+* This item is likely a reference to [[wikipedia:Jacob wrestling with the angel|the biblical story of Jacob wrestling an angel]], hence its description.
+* It also likely refers to the Suplex ability from ''Final Fantasy'', which is itself somewhat of an [https://knowyourmeme.com/memes/sabin-train-suplex internet meme] due to it being possible to suplex ridiculous things like trains or the suplexer themselves (when under the confusion status).
+* Several games in the ''Kirby'' series also feature a functionally identical Suplex ability. Suplex's pickup graphic resembles the ability's icon in ''Kirby Super Star''.
+
+== Bugs ==
+{{bug|Using Suplex! in an room that contains normal floor tiles separated by pits or other obstacles Isaac cannot cross (without flying) and using a consumable to cancel the Suplex!'s jumping back animation may leave Isaac stranded on the other side, effectively softlocking the game and ending the run. Isaac can usually get around this by exiting and resuming the run (returning him to the last door that was entered), but if a {{r|Crawl Space}} was entered first, resuming the run will place you there instead, meaning you're out of luck without using the console.}}
+{{bug|dlc=nr+|Using Suplex! in combination with {{i|Mega Mush}} makes you grab enemies and move them around until you leave the room. Doing this on any of the Ultra Harbingers or {{e|The Beast}} will make the enemy disappear and render you unable to move at all.}}
+{{bug|dlc=nr+|Using Suplex! on the White Fire will permanently extinguish it, preventing you from turning into the Lost any further and potentially locking you out of {{i|Knife Piece 1}}.}}
+{{bug|When Isaac leaps with an enemy that has a [[status effect]] it creates a visual bug where the effect is displayed over the enemy's head twice with one display following the enemy as Isaac leaps with them and the other display remaining static. This effect goes away once Isaac slams the enemy into the ground.}}
+{{Bug|When using Suplex! with {{c|Tainted Jacob}} on {{e|Dark Esau}}, then using a pill while offscreen, it will cause Dark Esau to become fused to your body. He will not be able to hurt you, and he will stay stuck on you permanently until you are put into an animation (on hit, grabbing/using items,going to the next floor, etc;) which ends the bug, reverting him to his normal properties. It can also be used on anything that is or the game considers an enemy, (ex: Mom's Couch, Mom's Dresser, Shopkeepers, etc). It can also be used on bosses as well. Using this on either stage of {{e|Dogma}} will softlock the game.}}
+{{bug|Using a consumable while an enemy is under the effects of Suplex! results in Isaac being unable to move and that enemy not reappearing. This can lead to a softlock if there are no other enemies in the room, which can be fixed by exiting and resuming the run.}}
+{{nav|jacob and esau unlock|delirium unlock|fr=Suplex !}}

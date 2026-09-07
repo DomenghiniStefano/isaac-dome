@@ -1,0 +1,31 @@
+{{infobox trinket
+ | dlc         = a
+ | image name  = * {{dlc|na+|Afterbirth}}
+ | name        = Stud Finder
+ | id          = 74
+ | quote       = The ground below feels hollow...
+ | description = Increases the chance to spawn a {{R|Crawl Space}} when a rock is destroyed.
+ | unlocked by = Stud Finder
+}}
+
+{{cit|ut|a}}
+
+== Effect ==
+* When a rock is destroyed, there is an additional 1 in 200 (0.5%) chance for a {{r|Crawl Space}} to spawn.
+
+== Notes ==
+* Stud Finder's effect is applied when a rock is destroyed and does not depend on the rock's location.
+** Any of the rocks already seen before picking up Stud Finder can be affected by the trinket.
+** {{t|Shiny Rock|n}} doesn't synergize with Stud Finder, as there is no set location for the rocks that will reveal a Crawl Space when destroyed with Stud Finder.
+** Unlike Tinted Rocks and normal Crawl Space rocks, whose generation is dependent on the room they're in, Stud Finder's Crawl Space generation effect mainly depends on the number of rocks destroyed, which means that the more rocks destroyed, the higher the chance to find a Crawl Space.
+
+== Synergies ==
+* {{i|Mom's Box}} / {{A|Golden Trinket}}: The chance to find a crawl space increases to 1 in 100 (1%).
+
+== In-game Footage ==
+{{#ev:youtube|DGzhsgbaRyM}}
+
+== Trivia ==
+* {{dlc|a+}} Stud Finder's sprite was changed for [[Booster Packs|Booster Pack #5]].
+
+{{nav|fr=Détecteur de Métaux}}

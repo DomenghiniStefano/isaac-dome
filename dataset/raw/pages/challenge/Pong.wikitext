@@ -1,0 +1,90 @@
+{{infobox challenge
+ | dlc         = a+
+ | number      = 35
+ | item        = {{i|Cupid's Arrow}}<br>{{i|Rubber Cement}}
+ | has shops   = yes
+ | description = Damage fixed at 100, tear rate fixed at {{dlc|nr}} 150 / {{dlc|r}} 0.2.
+ | goal        = ???
+ | unlocks     = Greed's Gullet
+ | unlocked by = PONG
+}}
+
+'''Pong''' is [[Challenge]] #35. Isaac starts off with {{i|Rubber Cement}} and {{i|Cupid's Arrow}}. Damage is fixed at 100 and tear rate is fixed at {{dlc|nr}} 150 / {{dlc|r}} 0.2. The goal is to defeat {{e|???}} in {{s|Chest}}.
+
+== Difficulty ==
+The high starting Damage makes this run fairly easy, although keep in mind that with the high tear-delay, tears can only be fired once every 5 seconds.
+
+== Strategy ==
+* Keeping Cupid's Arrow in mind, try to hit as many enemies with the initial shot as possible since while the tear is midair Isaac cannot shoot any more tears until the cooldown is up.
+* Before entering the next room, make sure that the current tear is no longer flying, since Isaac may not be able to shoot a tear upon entering a new room.
+* There is not a need to take any damage ups, so if given the choice, pick speed or Health ups.
+* Thanks to the huge damage stat, Isaac can easily reach {{R|Boss Rush}} if reached in time. But while Boss Rush can provide extremely beneficial items, most bosses won't die in a single hit (and damage cannot be increased to one-shot them), resulting in Isaac having to avoid several attacks to fire the next tear. It may be better to skip the Boss Rush to avoid taking unnecessary damage.
+* Luring enemies into the bouncing tear may be a viable strategy, especially if it is stuck somewhere.
+** Purposely making the tear stuck (e.g. by shooting it against a wall directly, making it bounce back and forth) might be viable situationally (e.g. {{E|Larry Jr.}} or any fight, where the boss is stationary, especially when this stationary enemy is in the center of the room.
+** This, or another source of damage, is required when dealing with regenerating enemies, like {{E|Globin}}s, as you cannot shoot a second tear fast enough before they have regenerated.
+* {{dlc|nr}} All items that generate flies are extremely useful, due to fixed high damage.
+** {{dlc|r}} Blue Flies and Blue Spiders' damage are not calculated from the fixed challenge damage. Damage is calculated from Isaac's current equipment.
+** {{dlc|r}} Blue Fly and Blue Spider damage get calculated on spawn. Existing spawns get their damage to reset to Isaac's base stats x2 when the game is closed and re-opened.
+* {{dlc|nr}} {{R|Sacrifice Room}}s can be used to skip to the {{s|Dark Room}}. Beating {{E|The Lamb}} there will count as clearing the challenge.
+
+=== Good items ===
+* {{i|Shoop da Whoop!}} is a valuable item since its damage scales with Isaac's damage, one-shotting most bosses.
+* {{i|Bob's Rotten Head}} is also a very strong item because it inflicts a flat damage + Isaac's damage.
+* {{i|Tammy's Head}}, {{i|Tear Detonator}}, {{i|Varicose Veins}}, and {{i|Sad Bombs}} release circles of giant bouncing tears that can clear any room (even bosses) in a few seconds.
+* {{i|Mutant Spider}} and {{i|The Inner Eye}} provide quadruple and triple shot with no downsides respectively.
+* Collecting 3 [[item Tags baby|baby familiars]] will transform Isaac into {{tf|Conjoined|n}}, significantly improving his DPS due to the triple shot.
+* {{i|Libra}} provides one of the only means of overriding this challenge's fixed damage and tears. Of questionable benefit, as it provides reasonably high fire rate but rather tame damage. Items that only affect damage or tears (such as {{I|Blood of the Martyr}} or {{I|The Sad Onion}}) apply no change to stats.
+* {{i|Fate's Reward|n}} will fire the same high-damage tears at a faster rate than Isaac.
+** Similarly, {{i|Incubus|n}} / {{i|Cain's Other Eye|r}} is a very powerful item as it fires an exact copy of the tear essentially doubling the already high damage. Combine this with {{i|BFFS!}} for that tear to become even larger.
+** Likewise, {{i|Papa Fly}} will fire a high-damage tear each second. However, it will not inherit any tear synergies Isaac has.
+* {{i|Chocolate Milk}} is an extremely powerful item that will allow Isaac to quickly fire small but powerful tears, or charge up to fire a room size tear that will rapidly bounce off all enemies in the room.
+* {{i|Technology 2}} will allow Isaac to fire a very high damage laser without the drawback of the low tear rate.
+* {{i|Finger!|n}} scales with Isaac's high starting damage, making this item an effective primary weapon.
+* {{i|Pointy Rib|n}} deals Isaac's damage 6 times per second, making this item an effective primary weapon.
+* {{t|Ouroboros Worm|n}} can make this run trivial as the tear's high speed and travel rate can have it cover the entire room before it bursts.
+* {{i|Eye of Belial|n}} grants homing and piercing tears after hitting one enemy.
+* {{i|Multidimensional Baby|n}} doubles tears, which can clear rooms very easily.
+* {{i|Godhead}} will cover a large portion of the room with its damaging aura. When combined with another item like {{t|Ouroboros Worm|n}} that speeds up the tear, the entire room may be cleared immediately.
+* {{i|Maw Of The Void|n}} can eliminate entire rooms in one go if the circle attack is charged.
+* {{i|The Boomerang}} will deal double Isaac's damage, for a total of 300 damage with the tear, and it recharges in 4 seconds.
+* {{i|Pupula Duplex|n}}: Isaac's tears become a huge arc covering more than half of the width of a typical room allowing for an easy run while one-shotting bosses.
+* {{i|The Parasite|n}}: Isaac's tears split into smaller ball-shaped tears upon hitting enemies, causing the room to quickly fill with bouncing tear shots that can quickly clear a room.
+* {{i|Sacred Heart|n}} / {{i|Spoon Bender|n}}/{{i|Telepathy For Dummies|n}} grant homing, which causes Isaac's tears to hunt down nearby enemies or linger around bosses instead of ricocheting randomly.
+* {{i|Tech.5}} will fire lasers as long as the fire button is held, resulting in a large amount of damage at random
+* {{I|Spear Of Destiny}} deals twice Isaac's damage per tick, defeating enemies and even bosses incredibly easily.
+* {{i|Potato Peeler}} can be a good choice if Isaac has a lot of heart containers, as the Super Meat Boy that can be created provides a viable alternate source of damage.
+* {{I|Sharp Key}} scales with Isaac's high damage with no downside. Can potentially kill {{E|???}} with only 5 keys.
+* {{i|Eye Drops|r}} staggers Isaac's fire rate, which is largely beneficial given this challenge's fixed low fire rate.
+* {{I|Notched Axe|r}} / {{I|Spirit Sword}} both ignore tear delay and scale with Isaac's high damage.
+* {{i|Circle of Protection|r}} is very effective, as its contact damage and deflected tears scale with Isaac's damage. This is especially useful for clearing stragglers.
+* {{t|Brain Worm|r}} causes the tear to snap onto enemies even after several bounces.
+* {{i|Saturnus}}: Orbiting tears deal huge damage (up to 930 damage if all tears hit) and can clear rooms with ease.
+* {{i|Dark Arts}} does damage based on the very high attack stat, and can be activated when tears are unavailable.
+* {{i|Scorpio|nr}} and {{i|The Common Cold|nr}} are powerful as the poison damage is double Isaac's damage.
+* {{i|Magic Fingers|nr}} can clear rooms in one go, as it scales with Isaac's damage.
+* {{i|Toxic Shock|nr}} allows Isaac to clear most rooms upon entering them, as it will deal double Isaac's damage (for 200 in total) to every enemy in the room upon entering.
+* {{i|Succubus|nr}} is an extremely potent room clearer, since it scales with Isaac's damage.
+* {{dlc|nr}} Items that give flies or spiders like {{i|Guppy's Head}}, {{i|Rotten Baby}} or {{i|Box of Spiders}} will be able to near-instantly kill bosses and clear rooms very fast, as flies do two times Isaac's damage.
+
+=== Bad items ===
+* {{i|Mom's Knife}} should be avoided; despite enormous damage, it will take a long time to charge for any meaningful distance, so Isaac will be essentially reduced to melee range.
+** {{i|Brimstone}}, {{I|C Section}}, {{i|Monstro's Lung}} and {{i|Tech X|n}} should also be avoided. Although the attack will probably be enough to destroy any enemy or boss, Isaac is defenseless during the lengthy charge time. {{Dlc|nr}}Tech X also loses the benefit of bouncing attacks.
+* {{i|Ipecac}} should also be avoided. The tears will not bounce on enemies anymore, and due to the great height of the tears, these will pass over the enemies, being very difficult to hit.
+* {{i|Technology}} should also be avoided, as the delay between lasers will become very long, and the lasers do not bounce on enemies.
+* ANY damage or tears upgrade will be worthless (except for the aformentioned {{i|Libra}}), and detrimental if they lower other stats in exchange, like for example {{i|The Small Rock}} and {{i|Pentagram}} (if offered by a deal with the Devil) should be avoided; the former will only lower Isaac's speed while the latter will only result in a loss of a Heart container(s).
+* {{i|Proptosis}} Will lower damage as the tear travels, without any plus to damage.
+* {{i|The Ludovico Technique}} and {{i|Eye of the Occult}}, while good at clearing rooms, will make the challenge take longer due to the low damage per tick and big amounts of health some bosses have.
+** With Eye of the Occult, a tear will only damage an enemy/boss a second time after hitting a wall.
+
+== Notes ==
+* Items that increase [[damage]] or [[tears]] won't affect Isaac's stats.
+** {{dlc|r}} Isaac's [[damage]] is fixed for the challenge, but stat adjustments are being processed to calculate blue fly and blue spider damage.
+* Defeating {{E|Delirium}} will also clear the challenge.
+
+== Reward ==
+{{achievement text | Greed's Gullet }}
+
+== Trivia ==
+* The challenge's name and tear behavior is a reference to the game [[wikipedia:Pong|Pong]].
+
+{{nav|challenge|isaac boss unlock}}

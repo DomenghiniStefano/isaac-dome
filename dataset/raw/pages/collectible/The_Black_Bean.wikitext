@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | id          = 180
+ | quote       = Toot on touch
+ | description = {{dlc|nr}} When taking damage, Isaac farts, [[poison]]ing enemies in range.<br>{{dlc|r}} When taking damage, Isaac farts five times, [[poison]]ing and knocking back nearby enemies and leaving lingering poison clouds.
+ | quality     = 0
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr}} When taking damage, Isaac farts, applying [[poison]] to all enemies in range.
+* {{dlc|r}} When taking damage, Isaac farts 5 times in quick succession. The farts [[poison]] and knock back enemies and projectiles, and leave lingering poison clouds. Deflected projectiles deal 7 damage.
+* {{dlc|na}} Farts deal 5 damage and the poison deals 21 damage over time.
+* {{dlc|a}} Farts deal 5 damage and the poison deals Isaac's tear damage for 6 ticks.
+
+== Synergies ==
+* {{I|Ghost Pepper}}/{{i|Bird's Eye}}: Shoots a flame behind Isaac when he farts.
+
+== Interactions ==
+* {{t|Second Hand}}: The poison duration is not increased.
+
+== In-game Footage ==
+{{#ev:youtube|tQ2LAAcbYk0}}
+
+== Trivia ==
+* This item is used in {{chal|Beans!}}.
+
+{{nav|bean|fr=Haricot Noir}}
+[[category:damage-triggered items]]

@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 652
+ | quote       = Kick it!
+ | description = Spawns an ice cube [[familiar]] that slides around when walked into. It [[slow]]s and deals contact damage, [[freeze|freezing]] monsters it kills.
+ | quality     = 1
+ | tags        = {{dlc|r+|summonable}} baby {{dlc|r+|monstermanual offensive}}
+}}
+{{distinguish|Ice Cube|Freezer Baby}}
+{{cit|p|r}}
+
+== Effects ==
+* Spawns an ice cube familiar. It cannot move on its own, but slides around when Isaac walks into it, uses a melee attack on it, or when Isaac or enemies shoot at it.
+* The familiar damages and [[slow]]s enemies it touches while moving. It can deal up to 17.5 damage when it collides with enemies, depending on how fast it's moving.
+* Monsters killed by Cube Baby are [[Freeze|frozen]].
+** Frozen monsters will follow the same physics as Cube Baby, and will shatter on impact creating ice shards that are capable of freezing other monsters
+* Cube Baby can block enemy projectiles.
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* Killing enemies by freezing them does not however count as a "kill" for the purposes of activating the on kill effects of certain items and trinkets. Because of this, only enemies killed by icicles from statues, bombs, familiars and other sources will count towards the on kill effects, rendering them quite difficult to use. These items and trinkets are: {{t|Bat Wing}}, {{i|Berserk!}}, {{i|Charm of the Vampire}}, {{t|Eve's Bird Foot}}, {{i|Jumper Cables}}, {{i|Lusty Blood}}, {{I|Red Stew}}, {{t|Samson's Lock}}, {{t|Sigil of Baphomet}}, {{i|Toxic Shock}}, and {{i|Vasculitis}}.
+* If a non-boss enemy dies within 10 ticks (0.33 seconds) after being hit by '''Cube Baby''', it will be frozen regardless of what killed it.
+
+== Synergies ==
+* {{I|Mom's Bracelet}}: Cube Baby can be picked up and thrown. It will then slide at maximum speed in the direction it's thrown at and leave a trail of damaging white creep until it slows down.
+* {{I|BFFS!}}: Increases the size and doubles the damage dealt.
+
+== Bugs ==
+{{bug|Pushing Cube Baby directly into a hole in a way that it cannot slide sideways will cause it to shake until it starts to "float" over the hole, acting as if it were on the ground. It returns to normal if it leaves that hole.}}
+{{Bug|If a Cube Baby is picked up by multiple characters using {{i|Mom's Bracelet}} at the same time, it seems that they are all holding one, but trying to throw "them" at the same time will make Cube Baby disappear, only leaving a trail of creep.}}	
+
+{{nav|conjoined|fr=Bébé Congelé}}

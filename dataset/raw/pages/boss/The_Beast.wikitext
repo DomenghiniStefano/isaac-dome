@@ -1,0 +1,141 @@
+<br />{{infobox boss
+ | id          = 951
+ | dlc         = r
+ | variant     = 0
+ | environment = <u>Boss</u><br>{{floor|Home}}
+ | appearance  = The Beast
+ | base hp     = 10000
+ | portrait    = no
+ | pool        = ''None''
+}}
+
+'''The Beast''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' DLC. She appears in {{s|Home}} and is the final boss of [[Endings#Ending 22 (Dogma)|Ending 22]], as well as ''The Binding of Isaac'' as a whole.
+
+== Behavior ==
+After defeating {{e|Dogma}}, Isaac is given {{i|Dogma}}, granting him [[flight]] and allowing him to traverse The Beast's 2D [[Crawl Space]]-like arena. {{i|Dogma}} also grants a one-time {{i|Holy Mantle}} shield, the effect of {{i|The Wafer}} (if playing in Normal Mode), Prevents Isaac's [[speed]] from going under 1.1, and +2 [[damage]], and heals him up to 6 [[Health|hearts]] with {{e|Red Heart}} Containers and {{e|Soul Heart}}s.
+
+At the start of the fight, The Beast sits inactive in the background. Flying around The Beast are four [[Harbingers (Bosses)#Ultra Harbingers|Ultra Harbingers]], which attack Isaac one at a time in the order of {{e|Ultra Famine}}, {{e|Ultra Pestilence}}, {{e|Ultra War}}, and {{e|Ultra Death}}. Once they have all been defeated, The Beast lets out a roar, submerges into the lava, then reemerges on the right side of the screen, beginning her fight.
+
+=== {{dlc|nr+}} Phase 1 ===
+During her first phase, The Beast uses the following sequence of attacks, repeating indefinitely:
+* Charges towards Isaac, forcing the screen to scroll while harmful, destructible stalagmites and stalactites move towards Isaac.
+** The screen scrolls along with The Beast, meaning that she will not get closer to Isaac even if he doesn't move; this attack only brings the stalagmites and stalactites on-screen.
+* At the end of the charge, The Beast begins to inhale large rings of fire which have one small gap that Isaac can fit through.
+** Any remaining stalagmites or stalactites on-screen are destroyed at the start of this attack.
+* After inhaling 8 rings of fire, The Beast stops and fires a colossal {{i|Brimstone}}-like beam that covers the bottom and middle portions of the screen.
+* After this attack, she performs a quick charge across the screen before repeating the initial charge in the opposite direction. Similar to the {{i|Brimstone}}-like beam directly before, she covers a large portion of the bottom and middle parts of the screen.
+Even if The Beast's HP drops below the threshold for her second phase, this will always still be the first attack she performs every single time.
+
+=== {{dlc|nr+}} Phase 2 ===
+The Beast enters her second phase below 6660 HP and loses her inhaling attack, but gains 2 new ones. Additionally, during the charging attack, there are more rocky obstacles and some stalactites are cracked and fall when Isaac passes underneath. (As before, the screen scrolls while The Beast charges, with Isaac's position on the screen being maintained.)
+
+At the end of a charge, The Beast performs one of two attacks:
+
+* Opens her mouth and fires 3 radial waves of slow-moving fire, then fires 6 radial strings of fast-moving projectiles which travel through the gaps left between each fire.
+* Roars and spawns 4 Beast Souls which chase Isaac and charge at him, trying to predict his movements, before dissipating.
+** Any remaining stalagmites or stalactites on-screen are destroyed at the start of this attack.
+
+After using either of these attacks, The Beast submerges into the lava and causes glowing orange lines to appear beneath Isaac and in other random areas. The glow of these lines increases in intensity over time before launching out a large fiery projectile that flies up and falls back into the lava. The Beast gradually increases the rate at which projectiles are launched before eventually reemerging from the lava on the opposite end of the screen and launching a small burst of large fiery projectiles arcing in all directions.
+* Any remaining stalagmites or stalactites on-screen are destroyed at the start of this attack.
+
+=== {{dlc|r+}} Phases 1&2 ===
+In [[The Binding of Isaac: Repentance+]], previous attacks from phase 1 and 2 are mixed together and not tied to HP. Phase 3 is still triggering at 33% HP.
+
+=== Phase 3 ===
+The Beast enters her third phase at 33% HP and is indicated by a burst of blood. The Beast is forced to submerge into the lava and reappear on the other side of the screen, then begins charging towards Isaac indefinitely while more stalagmites and stalactites spawn behind him. (As before, the screen scrolls while The Beast charges, with Isaac's position on the screen being maintained.) Cracked stalactites do not appear during this phase.
+
+Once The Beast's HP reaches 2000, her horns crack and her body ruptures in boils. She degrades through two more stages: losing 2 horns and an eye upon reaching 1000 HP, and losing another eye, another horn, all of her teeth, and generally having a melted look upon reaching 500 HP. Upon defeat, a large light ray comes from above and strikes her down, followed immediately by [[Endings#Ending 22 (Dogma)|Ending 22]].
+
+== Gallery ==
+<gallery>
+File:Beast_charge.png|The Beast charging.
+File:Beast_damaged_slightly.png|The Beast slightly damaged.
+File:Beast_damaged_very.png|The Beast very damaged.
+File:Beast_damaged_extremely.png|The Beast extremely damaged.
+File:Beast Concept Art 1.jpg|Early concept art of the Beast, depicting her with multiple heads based on the four Harbingers.
+File:Beast Concept Art 2.jpg|(Continued) Early concept art of the Beast.
+File:Beast Dev Sketches.png|Development notes and sketches of the Beast and her attack patterns.
+</gallery>
+
+== Audio ==
+{{sound table header}}
+{{sound table row | [[File:Beast vocal introscream.wav]] | The roar The Beast makes in the background before emerging in the foreground. }}
+{{sound table row | [[File:Brimstone lazer big.wav]] | The sound of The Beast's Brimstone attack. }}
+{{sound table row | [[File:Beast vocal ghostattackroar1.wav]] | The growl The Beast makes before the four ghosts are summoned to attack Isaac. }}
+{{sound table row | [[File:Beast ghostrise1.wav]] | The sound of ghosts rising after being summoned. }}
+{{sound table row | [[File:Beast ghostdash1.wav]] | The sound of ghosts charging at Isaac. }}
+{{sound table row | [[File:Beast lavaball splash1.wav]] | The sound of lava balls being shot from underneath the ground. }}
+{{sound table row | [[File:Sfx brimstone angelic blast 1.wav]] | The sound of a choir playing while The Beast is smitten by a beam of holy light. It serves as a prelude to ending 22. }}
+|}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Options?, Candy Heart, A Pound of Flesh, Redemption, Montezuma's Revenge, Cracked Orb, Empty Heart, Lil Abaddon, Astral Projection, Everything Jar, Hungry Soul, C Section, Keeper's Box, Worm Friend, Spirit Shackles, Jar of Wisps, Friend Finder, Glitched Crown, Belly Jelly, Blue Key, Sanguine Bond, The Swarm, Heartbreak, Larynx, Azazel's Rage, Salvation, TMTRAINER, Sacred Orb, Twisted Pair, Strawman, Echo Chamber, Isaac's Tomb, Vengeful Spirit, Esau Jr. }}
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to the players, enabling ''some'' enemies to retaliate against high-damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage scaling|here]].
+
+== Notes ==
+* Phase 2's narrow activation period (from 50% to 33% health) means it will often be skipped, typically if enough damage is done during the long-duration fire rings attack.
+* {{i|Censer}} / {{I|Night Light}} is not recommended for this boss battle, as it can cause flames to pile up unavoidably during the Beast's fire ring inhalation attack.
+* {{p|Chaos Card}} doesn't work on The Beast.
+** If the fight is entered with a {{p|Chaos Card}} it will be converted to a [[Pills|Full Health]] pill
+* {{p|Era Walk}}, "[[Pills|I'm Drowsy...]]" pill, etc. works for the duration of the fight, and makes for an easy battle.
+* {{I|Sprinkler}} will float in the air for the duration of the flight and remains in place during the chase sequence, providing constant extra damage.
+* {{i|Plan C}} works and will kill The Beast before dying, triggering [[Endings|Ending 22]]. It must be used after all four Ultra Harbingers are defeated, or else it will only kill the current Ultra Harbinger.
+** However, if the "[[Pill|I'm Drowsy...]]" pill was used in the boss room, using {{i|Plan C}} would kill Isaac right before the Beast's death animation's end.
+* All teleportation items/cards cannot be used to escape the fight; instead, Isaac will be teleported to a random spot on the screen. Similarly, any respawn items will respawn Isaac immediately, without restarting the fight. Essentially, there is no way to leave the fight after it has begun, outside of {{i|R Key}} and {{i|Forget Me Now}}.
+** {{dlc|nr+}} {{i|Lil Portal}} is capable of creating a portal in the fight if it consumes enough pickups. Going into the portal will return Isaac to an unexplored room in {{s|Home}} and softlock the run as it is not possible to return to the boss fight.
+* {{i|Ipecac}} and {{i|Haemolacria}} travel in an arc, similar to Ultra Pestilence's shots, and are extremely hard to aim. If Isaac has high [[range]] when firing left or right, the projectiles will go up and off-screen.
+* Most non-flying [[familiar]]s, such as Super Meat Boy, {{i|Leech}}, or [[Familiars#Blue Spiders|Blue Spiders]], are almost completely useless against the Ultra Harbingers, as the familiars will stay stuck in the lava on the bottom of the arena. However, they can damage Ultra War if his movement pattern takes him close enough to the bottom of the screen, and The Beast as she is half-submerged in lava.
+* Any item that gives an effect for the room, such as {{i|Box of Friends}} or {{i|The Book of Belial}}, will work for the entire fight, starting with Ultra Famine.
+* {{i|Broken Watch}} can affect this fight. However, it only activates for 1 unvisited room out of 4. Finishing the fight with Dogma and beginning the fight against the Ultra Harbingers counts as a new visited room. Hence, to have the effect against The Beast, the last visited room in Home must be the 3rd after the effect was triggered for the last time.
+* {{i|Gnawed Leaf}} works as normal in this fight — as long as Isaac stays still and has some way of dealing damage without moving or firing, such as an enemy-chasing familiar. He will eventually kill The Beast with enough patience.
+* {{i|Flat Stone}} makes tears travel straight down, as there is no ground they can skip on.
+* Like {{i|Flat Stone}}, bombs fired with {{I|Dr. Fetus}} will be fired in a downward arch since there's no ground for them to slide on, making it a difficult item to use in the fight without bomb immunity items such as {{i|Pyromaniac}} or {{i|Host Hat}}.
+* Defeating each Ultra Harbinger will grant Isaac's active item 2 charges, similar to {{r|Boss Rush}}.
+* {{c|The Soul}} is capable of dragging {{c|The Forgotten}} with him as he moves. This means he can move anywhere on the screen, but at a much slower rate. {{c|Tainted Forgotten}} flies during this battle and stays where he ends up when thrown (in mid-air), meaning that if you throw him at the Beast you can constantly attack its during the chase scenes.
+* The hitboxes of stalactites, stalagmites, and the lava persist during The Beast's death animation.
+* Despite not being able to fly or go over gaps in its final form, {{i|Bumbo}} will be able to "fly" around the arena and deal damage without sinking in the lava. Bombs placed by Bumbo still behave normally and fall.
+* Bombs are affected by gravity and are hard to hit the Ultra Harbingers with, but can easily be used against The Beast, especially during chase sequences. As such, it is a great strategy to continuously use all of your bombs during this sequence, as there is no longer any other need for them.
+* Because there are no walls or floors for tears to collide with in this fight, the damage boost from {{i|Dead Eye}} will not fade away.
+* Items that place [[Poops]], such as {{i|The Poop}} or {{i|Hallowed Ground}}, cannot place poops during the fight.
+** However, poops will spawn if enemies are turned into poops (e. g. by {{i|E. Coli}}).
+* The lava projectiles from both the lava and when The Beast rises afterward can be slowed and knocked down with certain slowing items such as {{i|Censer}} and high [[knockback]] tears.
+
+== Trivia ==
+* The Beast is heavily based on [[wikipedia:The Beast (Revelation)|the first Beast]] described in the Book of Revelation.
+** The Beast's theme is called "Revelations 13-1", referencing the section in the Book of Revelation describing the first Beast.
+*** A narration performed by Matthias Bossi reads the second verse of this passage during the cutscene before The Beast's fight. This narration says, "And the beast which I saw was like unto a leopard, and his feet were as the feet of a bear, and his mouth as the mouth of a lion: and the dragon gave him his power, and his seat, and great authority."
+* The Beast appears to be wearing a tattered version of {{e|Mom}}'s dress, suggesting that it is yet another interpretation of Mom from Isaac's perspective.
+* The Beast is the only boss to be preceded by an introductory cutscene rather than a VS screen.
+** The cutscene depicts Isaac being crushed by a giant static cross that rises from the remains of Dogma, which turns his tears into static. Following this, the room begins collapsing, revealing a hellish cavern while Isaac sprouts a pair of wings and flickers between resembling {{c|???}}, {{c|The Forgotten}}, and {{c|The Lost}}. Isaac then flies up to face The Beast rising from the lava.
+*** Isaac's flickering between ???, the Forgotten, and the Lost is a reference to the events of [[Endings#Final Ending / Ending 20 (Delirium Ending)|Ending 20]].
+* The Beast is one of the only 2 bosses to take place in a Crawlspace-like side-scrolling environment, the other being {{e|Rotgut}}.
+* At the end of the fight, Isaac's father refers to The Beast as "the Mother of Harlots."
+* When using the "[[Pill|I'm Drowsy...]]" pill during the battle with the Ultra Harbingers, there is one extra slow sign in the position of where The Beast will be, indicating that The Beast is actually "hidden" below the lava before the Ultra Harbingers are defeated.
+* Revelations 13-1 is the longest track in the entire ''Rebirth'' OST, sitting at 7 minutes and 53 seconds. This makes sense, as the theme is highly dynamic, changing depending on where the player is in the fight.
+** During the section that plays while fighting The Beast, Latin chanting can be heard in the background sometimes. The chanting is "mori bestia, cum nostra lucis", which is a mistranslation of "die, Beast, to our light". A more accurate translation would be "Mori, bestia, per luce nostra".
+* In Revelation, it is said that the Lord is the one who defeats The Beast, which may explain the beam of light that comes down to kill The Beast.
+* In the fight's background, each of the four Harbingers can be seen doing a small animation before they fly into the foreground. Ultra Famine chuckles, Ultra Pestilence raises his fists in the air, Ultra War becomes enraged, and Ultra Death facepalms before brandishing his scythe.
+** They can also be seen doing a small animation whenever Isaac takes a hit. Ultra Pestilence waves his arms and grins, Ultra War raises his arms and then "slams" them down, and Ultra Death laughs. Ultra Famine doesn't have one because he is the first Ultra Harbinger to come into battle.
+* According to the game files, The Beast's boss fight takes place in Hell itself.
+** Despite being in a standard fire-and-brimstone depiction of Hell, [[Isaac's Last Will|Isaac's last will]] still retains Home's "familiar place" location line, suggesting some level of allusion to the events of The Beast.
+** Edmund McMillen has referred to the place as the Lake of Fire on Twitter.<ref>https://twitter.com/edmundmcmillen/status/1408676530201366528</ref>
+* The Beast is confirmed to be female.<ref>https://twitter.com/edmundmcmillen/status/1410142261615075330</ref>
+* The Beast was teased initially in a post made to Steam by Edmund 5 days before <u>Repentance</u>'s release, which included an artwork that featured its faint silhouette in the background<ref>https://store.steampowered.com/news/app/250900/view/3032584660758395998</ref>
+* The skull of The Beast can be seen in the icon for the {{a|Dead God}} achievement.
+* Edmund McMillen noted that the Beast sequence, along with the [[Tainted Characters]] and Dogma, was initially reserved for a possible Isaac sequel.<ref>https://twitter.com/edmundmcmillen/status/1487577680044195840</ref>
+
+== Bugs ==
+{{Bug|If the player has {{i|Knockout Drops}}, a sufficiently high amount of [[luck]], and an item that fires multiple tears at once (such as {{i|Monstro's Lung}}), they will be capable of knocking the Ultra Harbingers far off the screen during The Beast's fight. This also occurs if the player has {{i|Strange Attractor}} and enough sources of tears being fired. {{i|Ocular Rift}} and {{i|Lodestone}} can provide similar effects.}}
+{{bug|{{p|II - The High Priestess}} will always summon the foot on the right side of the screen, trying to target The Beast even during the fight with Ultra Harbingers. This will not deal damage to her, but can still hit enemies if they are close to the foot. {{i|Monstro's Tooth}}, however, works normally. }}
+{{bug|If you get too close to The Beast during the inhaling attack, you won't be able to get out and will be stuck for the rest of the attack. This can be detrimental if you're playing Tainted Samson or The Forgotten, as The Beast will continuously deal contact damage.}}
+
+== References ==
+{{reflist}}
+
+{{nav|the beast unlock|boss|fr=La Bête}}
+
+[[Category:Home bosses]]
+[[Category:Final bosses]]
+[[Category:Debut bosses in Repentance]]

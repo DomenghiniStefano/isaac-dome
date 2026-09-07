@@ -1,0 +1,199 @@
+{{infobox activated collectible
+ | dlc         = a
+ | name        = Mom's Box
+ | id          = 439
+ | quote       = {{dlcalt|Whats inside?|a+=What's inside?}}
+ | description = Increases [[luck]] by 1 and doubles the effects of [[trinket]]s while held. When used, drops a random trinket on the ground.
+ | quality     = 2
+ | tags        = mom offensive
+ | recharge    = 4
+}}
+
+{{cit|a|a}}
+
+== Effects ==
+* Increases [[luck]] by 1 and doubles the effects of certain [[trinket]]s while held. When used, drops a random trinket on the ground.
+* {{dlc|r}} {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc|nr}} Most trinkets [[Mom's Box#No Effect|are not affected]].
+** {{dlc|r}} Of the 188 trinkets in Repentance, only 72 have a doubled effect.
+* {{dlc|r+}} All trinkets have some added effect, either simply a doubled effect or a specifically enhanced one.
+* {{dlc+|r}} This effect stacks additively with {{a|Golden Trinket}}s; holding one with Mom's Box will cause applicable trinkets to have triple the regular effect.{{dlc-}}
+* Holding a second Mom's Box by using {{I|Schoolbag}} only increases [[luck]], the effects of trinkets are not affected further.
+
+== Synergies ==
+* {{dlc+|a+}} [[Gulp!]] Pill / {{i|Marbles}} / {{i|Smelter}}: Trinket effects are still doubled when permanently applied to Isaac.{{dlc-}}
+
+== Interactions ==
+* {{t|Mother's Kiss}}: Grants double the heart containers but only one of them is filled.
+* {{i|Void}}: Passive effects of Mom's Box are lost if absorbed.
+* {{i|Book of Virtues}}: Spawns a normal wisp with no unique effect.
+
+The following trinkets have a different benefit than their effect being doubled:
+* {{t|Broken Remote|r}}: Triggers the {{I|Teleport 2.0}} effect whenever an [[activated item]] is used.
+* {{t|NO!|r}}: Prevents items with quality 0 from appearing.
+* {{t|Rosary Bead|r}}: Adds 4 [[Rosary|Rosaries]] to all item pools, 6 if the trinket is golden. Upon picking up a Rosary, the effect ends.
+* {{t|'M|r+}}: The new item has a 10% chance to be fully charged, 20% chance if the trinket is golden.
+* {{t|Adoption Papers|r+}}: Familiars are always on sale. Shops are also able to sell {{p|Soul of Lilith}} if the trinket is golden.
+* {{t|Apple of Sodom|r+}}: All types of hearts can be converted to spiders. No further benefit if the trinket is golden.
+* {{t|Baby-Bender|r+}}: Familiars gain the {{t|Brain Worm|n}} effect. Familiars gain the {{t|Tape Worm|n}} effect on top if the trinket is golden.
+* {{t|Beth's Essence|r+}}: The wisps spawned by the trinket have a 50% chance to be special wisps, 100% chance if the trinket is golden.
+* {{t|Blessed Penny|r+}}: Proc chance increases, but less than 2× or 3× if the trinket is golden.
+* {{t|Bloody Crown|r+}}: Treasure rooms in the Womb have an item choice, as if Isaac had {{i|More Options}}. No further benefit if the trinket is golden.
+* {{t|Bloody Penny|r+}}: Proc chance increases, but less than 2× or 3× if the trinket is golden.
+* {{t|Blue Key|r+}}: Makes the blue rooms drop double rewards when cleared. If the trinket is golden, the reward is tripled.
+* {{t|Brain Worm|r+}}: Shots have a 25% chance to be piercing, 50% chance if the trinket is golden. 
+* {{t|Broken Ankh|r+}}: Proc chance increases, but less than 2× or 3× if the trinket is golden.
+* {{t|Broken Padlock|r+}}: Challenge rooms, arcades and {{e|Mega Satan}} door can be opened with bombs. Boss rooms can be opened with bombs as well if the trinket is golden.
+* {{t|Callus|r+}}: Damage from sacrifice spikes is reduced to 1/2 hearts. If the trinket is golden, all damage is reduced to 1/2 hearts
+* {{t|Crow Heart|r+}}: Adds a 25% chance that taking red heart damage does not reduce Devil room chances, 50% if the trinket is golden.
+* {{t|Daemon's Tail|r+}}: Blue and purple fires drop {{e|Black Heart}}s instead of {{e|Soul Heart}}. No further benefit if the trinket is golden.
+* {{t|Cursed Skull|r+}}: Teleports Isaac to a random special room instead of any room. Golden trinket triggers if Isaac has 1 full heart or less after taking damage.
+
+== {{dlc+|nr+}} No Effect ==
+These trinkets are not affected by Mom's Box.
+{{column list | width = 15em | content =
+* {{t|'M}}
+* {{t|???'s Soul}}
+* {{t|AAA Battery|nr}}
+* {{t|Ace of Spades}}
+* {{t|Adoption Papers}}
+* {{t|Apple of Sodom}}
+* {{t|Baby-Bender}}
+* {{t|Bag Lunch}}
+* {{t|Bat Wing}}
+* {{t|Beth's Essence}}
+* {{t|Black Tooth}}
+* {{t|Blessed Penny}}
+* {{t|Blister}}
+* {{t|Bloody Crown}}
+* {{t|Bloody Penny}}
+* {{t|Blue Key}}
+* {{t|Bob's Bladder}}
+* {{t|Brain Worm}}
+* {{t|Broken Ankh}}
+* {{t|Broken Magnet|nr}}
+* {{t|Broken Padlock}}
+* {{t|Broken Remote|nr}}
+* {{t|Burnt Penny}}
+* {{t|Butter!}}
+* {{t|Cain's Eye}}
+* {{t|Callus}}
+* {{t|Cartridge|nr}}
+* {{t|Charged Penny}}
+* {{t|Chewed Pen}}
+* {{t|Child's Heart}}
+* {{t|Child Leash}}
+* {{t|Counterfeit Penny}}
+* {{t|Cracked Dice}}
+* {{t|Crow Heart}}
+* {{t|Cursed Penny}}
+* {{t|Cursed Skull}}
+* {{t|Daemon's Tail}}
+* {{t|Devil's Crown}}
+* {{t|Dim Bulb}}
+* {{t|Door Stop}}
+* {{t|Duct Tape}}
+* {{t|Endless Nameless}}
+* {{t|Equality!}}
+* {{t|Eve's Bird Foot}}
+* {{t|Expansion Pack}}
+* {{t|Extension Cord}}
+* {{t|Faded Polaroid}}
+* {{t|Filigree Feather}}
+* {{t|Finger Bone}}
+* {{t|Fish Head|nr}}
+* {{t|Fish Tail}}
+* {{t|Flat File}}
+* {{t|Flat Penny}}
+* {{t|Flat Worm|nr}}
+* {{t|Forgotten Lullaby}}
+* {{t|Found Soul}}
+* {{t|Fragmented Card}}
+* {{t|Friendship Necklace}}
+* {{t|Gigante Bean}}
+* {{t|Gilded Key}}
+* {{t|Hairpin}}
+* {{t|Holy Crown}}
+* {{t|Ice Cube}}
+* {{t|Isaac's Head}}
+* {{t|Jawbreaker}}
+* {{t|Judas' Tongue}}
+* {{t|Keeper's Bargain}}
+* {{t|Kid's Drawing}}
+* {{t|The Left Hand}}
+* {{t|Liberty Cap|nr}}
+* {{t|Locust of Conquest}}
+* {{t|Locust of Death}}
+* {{t|Locust of Famine}}
+* {{t|Locust of Pestilence}}
+* {{t|Locust of War}}
+* {{t|Lost Cork}}
+* {{t|Louse|nr}}
+* {{t|Lucky Rock|nr}}
+* {{t|Match Stick}}
+* {{t|Meconium}}
+* {{t|A Missing Page|nr}}
+* {{t|Missing Poster}}
+* {{t|Mom's Locket}}
+* {{t|Mom's Toenail|nr}}
+* {{t|Monkey Paw|nr}}
+* {{t|Myosotis}}
+* {{t|Mysterious Candy}}
+* {{t|Mysterious Paper}}
+* {{t|Nose Goblin}}
+* {{t|Nuh Uh!}}
+* {{t|Number Magnet}}
+* {{t|Panic Button}}
+* {{t|Paper Clip}}
+* {{t|Pay to Win}}
+* {{t|Pinky Eye}}
+* {{t|Poker Chip}}
+* {{t|Pulse Worm|nr}}
+* {{t|Rainbow Worm|nr}}
+* {{t|RC Remote}}
+* {{t|Red Patch}}
+* {{t|Rib of Greed}}
+* {{t|Ring Worm|nr}}
+* {{t|Rosary Bead|nr}}
+* {{t|Rotten Penny}}
+* {{t|Rusted Key}}
+* {{t|Safety Cap}}
+* {{t|Safety Scissors}}
+* {{t|Samson's Lock}}
+* {{t|Shiny Rock}}
+* {{t|Short Fuse}}
+* {{t|Sigil of Baphomet}}
+* {{t|Silver Dollar}}
+* {{t|Stem Cell}}
+* {{t|Store Credit}}
+* {{t|Store Key}}
+* {{t|Strange Key}}
+* {{t|Super Ball}}
+* {{t|Super Magnet}}
+* {{t|Telescope Lens}}
+* {{t|Temporary Tattoo}}
+* {{t|Tonsil}}
+* {{t|Torn Card}}
+* {{t|Torn Pocket}}
+* {{t|Umbilical Cord}}
+* {{t|Vibrant Bulb}}
+* {{t|Walnut}}
+* {{t|Wicked Crown}}
+* {{t|Wiggle Worm|nr}}
+* {{t|Wish Bone}}
+* {{t|Wooden Cross}}
+* {{t|Your Soul}}
+}}{{dlc-}}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Mom's Contact }}
+
+== Trivia ==
+* The item description possibly is a reference to the film ''[[wikipedia:Seven (1995 film)|Seven (1995)]]'' where the climax of the film involves the protagonist asking the question over and over again "What's in the box?".
+* {{dlc+|r}} The item strongly resembles the chest found in Mom's room in {{s|Home}}.{{dlc-}}
+* {{dlc+|r}} This item is used in {{chal|Pica Run}}.{{dlc-}}
+* This item is implied to be made of wood, due to its inclusion in the {{ip|Wooden Chest|text=Wooden Chest item pool}}.
+
+{{nav|trinket modifier|yes mother|mom|fr=Boîte de Maman}}

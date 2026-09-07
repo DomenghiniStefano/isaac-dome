@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 267
+ | quote       = We worked out all the kinks
+ | description = Spawns a [[familiar]] that fires lasers at any enemy in its line of sight and moves based on the direction Isaac is firing tears.
+ | quality     = 1
+ | tags        = summonable baby tech monstermanual offensive
+ | unlocked by = Robo-Baby 2.0
+}}
+
+{{cit|up}}
+
+== Effect ==
+* Spawns a [[familiar]] who moves in the direction Isaac is firing and automatically fires {{i|Technology}} lasers that each deal 3.5 damage towards enemies when it aligns with them.
+* {{transformation contribution|Conjoined|dlc=r}}
+
+== Notes ==
+* Unlike {{i|The Ludovico Technique}}, Robo-Baby 2.0 cannot be controlled with the mouse if mouse control is enabled in the config files.
+
+== In-game Footage ==
+{{#ev:youtube|uKiF20acuTA}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Technology Zero }}
+
+== Bugs ==
+{{bug|Robo-Baby 2.0 cannot target {{e|Wall Creep}}s unless it is on top of one.}}
+
+{{nav|conjoined|fr=Robo-Bébé 2.0}}

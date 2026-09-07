@@ -1,0 +1,75 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 528
+ | quote       = Eclipsed by the moon
+ | description = Spawns an [[orbital familiar]] with a large orbital radius. Tears that pass through the prism split into four multi-colored tears.
+ | quality     = 3
+ | tags        = summonable offensive
+ | unlocked by = Angelic Prism
+}}
+
+{{cit|up|a+3}}
+
+== Effects ==
+* Spawns an [[orbital familiar]] with a large orbital radius. Tears that pass through the prism split into four multi-colored tears.
+
+== Notes ==
+* It will also quadruple [[shooting familiar]] tears.
+
+== Synergies ==
+* {{I|Akeldama}}: Turns the chain of tears into four multi-colored chains.
+* {{i|Anti-Gravity}}: Tears that are floating in the air when they hit the prism will quadruple but will not move. Tears that begin moving before they hit the prism will travel outwards normally.
+** By releasing the built up tears as the prism passes by, significantly more tears can be affected than normal.
+** With {{i|Flat Stone}}, split suspended tears will bounce in place until their duration ends.
+* {{T|Duct Tape}}: By keeping the prism in the same spot, damage output can be significantly increased in that direction.
+** '''Duct Tape''' + {{i|Incubus}}: By stacking the incubus familiar on top of the prism before picking up Duct Tape, the shots will be affected no matter what direction Isaac is firing.
+* {{i|Immaculate Heart}}: The extra spectral tears share the same orbit as Angelic Prism, making them very easy to split.
+* {{i|Jacob's Ladder}}: All of the split tears will be electrified. Also, electric arcs that pass through the prism will be split.
+* {{i|The Ludovico Technique}}: While the tear is in contact with the prism, it will fire 4 additional tears in cardinal directions at Isaac's tear rate.
+* {{I|Saturnus}}: Since the prism and the orbiting tears have the exact same orbital radius, orbiting tears will immediately be split into 28 multi-colored tears upon entering a room.
+* {{i|Tractor Beam}}: Tears will split but continue stacked on top of each other along the tractor beam, essentially quadrupling the shot's damage.
+
+== Interactions ==
+* {{i|Bot Fly}}: Its tears are split in four.
+* {{i|BFFS!}}: Only a visual size change, with no difference in the hitbox and thus usefulness of the Prism.
+* {{i|Brimstone}} / {{i|Revelation}} / {{i|Salvation}} / {{I|Shoop da Whoop!}} / {{I|Tech.5}} / {{i|Technology}} / {{i|Technology 2}}: The laser is split in four.
+* {{I|C Section}}: Fetuses split in four.
+* {{p|Chaos Card}}: Four cards are shot out if Chaos Card hits the prism.
+* {{Dlc|nr}} {{i|Dr. Fetus}}: Split bombs can also damage charmed enemies summoned by Friendly Ball, Poke Go, and Delirious.
+** {{Dlc|nr}} '''Dr. Fetus''' + {{i|Remote Detonator}}: Bombs split through the prism cannot be remotely detonated.
+* {{i|Epic Fetus}}: No effect.
+* {{i|Eraser}}: The Eraser splits, like normal tears.
+* {{Dlc|nr}} {{i|Ipecac}}: Split explosions can also damage charmed enemies summoned by Friendly Ball, Poke Go, and Delirious.
+* {{Dlc|nr}} {{i|Mom's Knife}}: When the knife touches the prism, split knives are launched that do not return to Isaac. The extra knives deal only 1x damage, unlike normal thrown knives.
+** {{Dlc|r}} The duplicated knives deal full damage and return to Isaac normally.
+* {{i|My Reflection}}: Tears made by the prism will not quadruple once more if they hit the prism again.
+* {{i|Proptosis}}: Tears that hit the prism will continue to shrink as normal even after they split until they disappear.
+* {{I|Rocket in a Jar}}: Rockets do not split, unless its paired with Dr. Fetus, and even then only normal attacks are affected.
+* {{i|Rubber Cement}}: Tears will split and will bounce if they hit a wall. However, if split tears hit the prism, they will not split again.
+* {{I|Sharp Key}}: Key projectiles can split through the prism.
+* {{i|Tech X}}: Laser rings are split into four.
+* {{i|Tiny Planet}}: Tears that hit the prism will quadruple, but all four tears will overlap and follow the same orbit.
+* {{I|Urn of Souls}}: The flames split into four multicolored flames.
+
+== In-game Footage ==
+{{#ev:youtube|Os6ZGVlqInc}}
+
+== Gallery ==
+=== In-game Interactions ===
+<gallery widths="180" heights="180">
+File:AP tear.png|Angelic Prism's interaction with normal tears.
+File:AP brim.png|Angelic Prism's interaction with {{i|Brimstone}}.
+File:AP dr.png|Angelic Prism's interaction with {{i|Dr. Fetus}}.
+File:AP ludo.png|Angelic Prism's interaction with {{i|The Ludovico Technique}}.
+File:AP Mom's Knife.png|Angelic Prism's interaction with {{i|Mom's Knife}}.
+File:AP tech.png|Angelic Prism's interaction with {{i|Technology}}.
+File:AP TechX.png|Angelic Prism's interaction with {{i|Tech X}}.
+</gallery>
+
+== Trivia ==
+* Angelic Prism is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=869439958 this Steam Workshop item] by electoon and Erfly, originally known as Thought.
+* The description and appearance of the item are references to Pink Floyd's 8th studio album, ''[[wikipedia:The Dark Side of the Moon|The Dark Side of The Moon]]''.
+** The description is an excerpt from the final line of ''Eclipse'', the last song on the album: "And everything under the sun is in tune / But the sun is ''eclipsed by the moon"''
+* The familiar spawned by this item is geometrically not a prism, but rather a square pyramid.
+
+{{nav|booster pack|fr=Prisme Angélique}}

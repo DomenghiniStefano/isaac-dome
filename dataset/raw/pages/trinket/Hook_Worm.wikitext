@@ -1,0 +1,38 @@
+{{infobox trinket
+ | id          = 26
+ | quote       = Zip zoop!
+ | description =  {{dlc|nr}} Tears move shifting left to right on a square-wave-like path. +10 [[Range]] (effective Range remains about the same).<br>{{dlc|r}} Tears move shifting left to right on a square-wave-like path. +0.4 [[Tears]], +1.5 Range (effective Range is slightly lower).
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Tears move shifting left to right on a square-wave-like path.
+* {{dlc|nr}} +10 [[Range]].
+* {{dlc|r}} +1.5 [[Range]], +0.4 [[Tears]].
+* {{dlc|r}} Grants [[spectral tears]].
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}} or {{e|Scolex}}.{{dlc-}}
+* {{dlc|nr}} Effective range remains the same because the range buff only compensates for the tears tracing a longer path.
+* {{dlc|r}} Effective range is a bit lower, by about 1 tile.
+* {{dlc|nr}} Shooting with this trinket equipped when next to a wall or block may cause the tear to travel into the wall.
+
+== Synergies ==
+* {{A|Golden Trinket}} / {{i|Mom's Box|r}}: In addition to the further stats increase, the square-wave-like pattern has a bigger amplitude.
+
+== Interactions ==
+* {{i|Brimstone}} / {{I|Tech.5}} / {{I|Technology}} / {{I|Technology 2}} / {{I|Revelation}} / {{C|Tainted Azazel}}: Effect applies to the Brimstone beam, effectively increasing the width of the beam.
+** {{dlc|nr}} It also adds an extra tick to the Brimstone beam.
+** {{C|Azazel}}: Azazel gains the wider beam, but no range increase.
+* {{C|The Forgotten}}: Bone club does not get any wider or attack any further {{dlc|r}} though he will still benefit from the tears up, making the trinket's main effect only work on {{C|The Soul}}.
+* {{i|Tiny Planet}} / {{i|Tech X}}: No effect.
+* {{i|Tractor Beam}}: The beam overrides the worm's tear movement effect, but keeps the +10 range.
+
+== In-game Footage ==
+{{#ev:youtube|rxEyOLAkCPo}}
+
+== Trivia ==
+* [[wikipedia:Hookworm infection|Hookworms]] are parasitic worms that can enter through the skin from dirt that contains their eggs and larvae.
+
+{{nav|worm|fr=Ver Droit}}

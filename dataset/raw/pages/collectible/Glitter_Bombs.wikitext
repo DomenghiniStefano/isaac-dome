@@ -1,0 +1,49 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 432
+ | quote       = Prize bombs{{dlc|na+|!}}
+ | description = +5 {{e|Bomb}}s. Bombs have a chance to drop random [[pickup]]s or [[charm]] enemies when they explode.
+ | bomb app    = Collectible Glitter Bombs {{dlcalt|icon|a+=bomb appearance}}.png
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Grants 5 {{e|Bomb}}s.
+* Isaac's bombs have a 25% chance to spawn a [[pickup]] or [[trinket]] when they explode including other bombs.
+** {{dlc|r}} Isaac's bombs have a 63% chance to spawn a pickup or trinket when they explode, but the chance for either to generate decreases by 1% for each spawn until Isaac enters a new floor. This is to prevent items such as {{i|Dr. Fetus}} or a {{e|Golden Bomb}} from providing unlimited resources. This means that the maximum spawns per floor is 63, although the final generation of a pickup or trinket will have a 1% chance to occur.
+* Isaac's bombs have a 15% chance to [[charm]] random enemies in the room when they explode.
+
+== Notes ==
+* {{dlc|nr}} Picking up a {{e|Golden Bomb}}, {{i|Dr. Fetus}}, {{i|Epic Fetus}}, or {{i|Number Two}} with Glitter Bombs allows infinite pickup generation.
+** {{dlc|nr}} In [[Greed Mode]], Glitter Bombs cannot generate coins. Infinite pickup generation that isn't coins is still possible, however, so this can be worked around if Isaac has the {{t|Swallowed Penny}} or {{i|Piggy Bank}}, since it does still produce health.
+
+== Synergies ==
+* {{I|Anarchist Cookbook}}/{{i|Curse of the Tower}}/{{p|XVI - The Tower}}: Each Troll Bomb has a chance to spawn a pickup or trinket including a {{E|Lil' Battery}} or {{e|Red Heart|text=Heart}} which can be taken advantage of for repeated uses of Anarchist Cookbook or Curse of the Tower respectively.
+* {{I|Best Friend}}/{{I|Bob's Rotten Head}}/{{I|Mr. Boom}}/{{I|BBF}}/{{I|Bob's Brain}}/{{I|Kamikaze!}}: Has a chance to spawn a pickup or trinket when exploding.
+* {{I|Bomber Boy|nr}}: Each additional explosion created has a chance to spawn a pickup or trinket.
+* {{I|Doctor's Remote}}/{{i|Epic Fetus}}: Missiles have a chance of spawning a pickup or trinket upon exploding.
+* {{I|Dr. Fetus}}: Bombs have a chance of spawning pickups or trinkets upon exploding.
+* {{I|Everything Jar}}: At eleven charges guarantees a golden bomb.
+* {{I|Number Two}}: The butt bombs have a chance of spawning pickups or trinkets upon exploding.
+* {{dlc|r}}[[Familiars#Locusts|Red Locusts]]: Red locust explosions have a chance to spawn a pickup or trinket.
+* {{I|Scatter Bombs}}: Each smaller bomb also has a chance of dropping a pickup or trinket.
+* {{t|Swallowed M80}}: Swallowed M80 explosions have a chance of spawning pickups or trinkets.
+
+== Interactions ==
+* {{I|Bomber Boy|r}}: Extra explosions are unaffected by Glitter Bombs.
+* {{i|Ipecac}}: No effect on shots.
+* {{dlc|a+nr}}[[Familiars#Locusts|Red Locusts]]: No effect on red locust explosions.
+
+== In-game Footage ==
+{{#ev:youtube|fIqvytnx1GU}}
+
+== Trivia ==
+* The act of [[wikipedia:glitter bombing|glitter bombing]] refers to showering individuals with containers of glitter.
+
+== Bugs ==
+{{bug|dlc=rnr+|The limit of generated pickups is reset when exiting and reentering the game.}}
+
+{{nav|bomb modifier|bomb|fr=Bombes à Paillettes}}

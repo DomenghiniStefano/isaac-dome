@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 417
+ | quote       = Damage booster
+ | description = Spawns a flying [[familiar]] that bounces around the room with a black aura, dealing rapid damage to any enemies inside it. While standing in the aura, Isaac gains a 1.5× [[Damage|tear damage]] multiplier.
+ | quality     = 3
+ | tags        = summonable monstermanual offensive
+ | devil price = {{dlcalt|1|r=2}}
+ | unlocked by = Succubus
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Spawns a familiar that bounces around the room and has a dark aura around it.
+** Enemies within the radius of the aura take damage.
+*** {{dlc|nr}} The aura deals 30% of Isaac's [[damage]] per tick or about 129% of Isaac's damage per second.
+*** {{dlc|r}} The aura deals 2.5 damage per tick or about 7.5-10 damage per second.
+** If Isaac is within the aura, his tears gain a 1.5× [[damage]] multiplier.
+
+== Notes ==
+* The damage boost stacks with other Succubi, as well as other damage multipliers (e.g. {{i|Cricket's Head}}, {{i|Sacred Heart}}, etc.).
+
+== Synergies ==
+* {{i|Rock Bottom}}: The damage boost is permanent. Damage is easier to stack, since Isaac can enter the Succubus aura to permanently boost any temporary damage-ups.
+
+== Interactions ==
+* {{i|BFFS!}}: Succubus and its damaging aura are visually larger, but the damage multiplier is not increased any further away from the familiar. However, the damaging aura is increased.
+* {{I|Libra}}: When Isaac is within the aura, affects re-balanced stats rather than just damage.
+
+== In-game Footage ==
+{{#ev:youtube|dUf-tXk_KwQ||inline}} {{#ev:youtube|ge9ywDW3UbA||inline}}
+
+== Trivia ==
+* In folklore, [[wikipedia:Succubus|Succubi]] are female demons that attempt to seduce men in their dreams.
+* {{I|Incubus}} is the male version of a succubus.
+
+== Bugs ==
+{{bug|dlc=na+|If Succubus is spawned through {{i|Cambion Conception}}, its dark aura will not grant a damage multiplier to Isaac.}}
+{{bug|dlc=a+nr|If {{i|Sacrificial Altar}} is used to sacrifice Succubus while Isaac is in its dark aura, the damage multiplier will remain active until the remainder of the floor.}}
+
+{{nav|lilith unlock|the lamb unlock|fr=Succube}}

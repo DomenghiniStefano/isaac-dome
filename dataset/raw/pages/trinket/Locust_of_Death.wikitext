@@ -1,0 +1,26 @@
+{{infobox trinket
+ | dlc = a+
+ | name = Locust of Death
+ | id = 116
+ | quote = I bring Death
+ | description = Upon entering a room with enemies, spawns a [[Locust|Black Locust]] that does a very high amount of damage.
+ | unlocked by = Locust of Death
+}}
+
+{{cit|ut|a+}}
+
+== Effects ==
+* Upon entering a room with enemies, spawns a [[Familiars#Locusts|Black Locust]] that deals quadruple Isaac's damage, applied as two hits of double damage.
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Death}}.{{dlc-}}
+* The Locust will also spawn each time a wave starts in {{R|Boss Rush}} and {{dlc|r+}} {{mode|greed|greedier}} [[Greed Mode]].
+* If the player has exited the game, the Locust will spawn upon continuing from the main menu, allowing multiple locusts to spawn for the same room by repeatedly exiting.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Each copy will spawn one more locust.
+
+== In-game Footage ==
+{{#ev:youtube|yu7bkE3bMkk}}
+
+{{nav|apollyon unlock|locust|the lamb unlock|fr=Locuste de Mort}}

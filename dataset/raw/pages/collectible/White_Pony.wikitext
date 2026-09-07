@@ -1,0 +1,53 @@
+{{infobox activated collectible
+ | id          = 181
+ | quote       = Flight + holy death
+ | description = Passively grants [[flight]] and increases [[speed]] to 1.5. Upon use, Isaac charges in the direction the pony is facing, giving [[invulnerability]] during the charge while also creating damaging beams of light.
+ | quality     = {{dlcalt|2|r+=3}}
+ | tags        = offensive
+ | recharge    = {{dlcalt|6|r=2}}
+ | pool        = Conquest
+ | unlocked by = A Forgotten Horseman
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* Passively grants [[flight]].
+* If Isaac's [[speed]] is less than 1.5, passively increases his speed to 1.5.
+* Upon use, Isaac charges in the direction the pony is facing, giving [[invulnerability|invincibility]] during the charge and damaging enemies while also creating beams of light.
+** {{dlc|nr}} The beams of light are spaced randomly around the room and deal the same damage as those created by {{i|Crack the Sky}}.
+** {{dlc|r}} The beams of light deal 4 times Isaac's damage, plus a flat 10 damage and trail behind Isaac as he charges.
+** {{dlc|nr}} The dash deals 40 flat contact damage to enemies.
+** {{dlc|r}} The dash deals 4 times Isaac's damage, plus a flat 28 damage.
+** {{dlc|r}} Isaac can dash through doors, which means that damage from {{r|Curse Room}} doors can be avoided.
+*** Although the dash can persist between rooms, the beams of light only occur in the room it is used in.
+* While not time-based, invincibility from White Pony is otherwise identical to damage immunity granted by the [[invulnerability]] effect.
+
+== Notes ==
+* White Pony is only obtainable as a boss drop from {{E|Conquest}}, as a starting item for {{c|Eden}}, by using {{I|Spindown Dice}} on {{I|Sacred Heart}}, or by using {{i|Death Certificate}}.
+** White Pony cannot be crafted with the {{I|Bag of Crafting}}.
+* If White Pony is replaced by another activated [[item]], Isaac will lose any passive benefits that it had granted.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Creates white pony wisps on the middle ring that fire white tears with a 10% chance to fire {{I|Holy Light}} tears. The beams of light the wisps' tears make deal extra damage to enemies in a small area equal to 3x the wisps' tear damage.}}
+* {{I|Mars}}: Using White Pony after dashing lowers the dash cooldown to approximately 1 second.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{i|Taurus}} / {{i|Thunder Thighs}}: The speed decreases from the items can lower Isaac's speed past 1.50 (making the new lower speed limits 1.20 and 1.10, respectively). Having both items can lower the minimum speed to 0.80.
+
+== In-game Footage ==
+{{#ev:youtube|TI3o_sfTvuo}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed White Pony.png|{{plat|3DS}} The icon of White Pony as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* This item is a reference to the [[wikipedia:Four Horsemen of the Apocalypse#White Horse|White Horse]], one of the ''Four Horsemen of the Apocalypse'' described in the last book of the Bible. This is reinforced by the fact that the item is dropped by {{E|Conquest}}, which is a further reference to that passage of Christian theology.
+* The item appears to be a stick horse.
+
+{{nav|fr=Poney Blanc}}
+
+[[Category:Flight-granting items]]

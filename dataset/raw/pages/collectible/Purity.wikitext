@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 407
+ | quote       = Aura stat boost
+ | description = Boosts one of Isaac's [[Attributes|stats]] depending on the color of the aura around him. The aura disappears upon taking damage and reappears with a random color upon entering a new room. Red boosts [[damage]], blue boosts [[tears]], yellow boosts [[speed]], and orange boosts [[range]].
+ | quality     = 3
+ | tags        = summonable tearsup offensive
+ | unlocked by = Purity
+}}
+
+{{cit|up|a}}
+
+== Effects ==
+* Grants a random aura around Isaac that grants a boost depending on the aura's color:
+** '''Red''': +4 [[damage]].
+** {{dlc|nr}} '''Blue''': -4 [[tear delay]].
+** {{dlc|r}} '''Blue''': +2.0 [[fire rate]].
+** '''Yellow''': +0.5 [[speed]].
+*** {{dlc|nr}} Also affects maximum speed (may never exceed 2.0).
+** {{dlc|nr}} '''Orange''': +7.5 [[range]], +1.0 [[tear falling speed]].
+** {{dlc|r}} '''Orange''': +3.0 [[range]].
+* Taking damage causes the aura to disappear. When the next room is entered, the aura will reappear with a random color.
+
+== Notes ==
+* The tear delay boost can allow the player's tears to go over the normal maximum [[tear delay|rate of fire]].
+* {{dlc+|r}} If {{C|Tainted Isaac}} swaps Purity for another item and picks it back up again, it will have a different aura.{{dlc-}}
+
+== Interactions ==
+* {{i|Diplopia}}/{{i|Crooked Penny}}: Holding multiple copies of Purity will still only grant one aura, providing no additional benefit.
+
+== In-game Footage ==
+{{#ev:youtube|CcPCCH0nb2w}}
+
+== Trivia ==
+* This item's sprite references purity roses, white roses commonly associated with weddings.
+
+{{nav|magdalene unlock|hush unlock|fr=Pureté}}

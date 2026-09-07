@@ -1,0 +1,31 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 142
+ | quote       = My faith protects me
+ | description = At the beginning of each floor, spawn 4-8 wisps that orbit Isaac and fires tears alongside him.
+ | unlocked by = Beth's Faith
+}}
+{{distinguish|Beth's Essence}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* At the beginning of each floor, spawn 4 wisps that orbit Isaac and fire tears alongside him. The wisps are the same as the default wisps that spawn with {{I|Book of Virtues}}.
+
+== Notes ==
+* If Isaac already has any wisps before entering a new floor, the trinket will only add enough new wisps to bring the total wisps to 8.
+
+== Synergies ==
+* {{I|Glowing Hourglass|nr+}}: Wisps given by Beth's Faith will persist through the time leap to the upper floor, as well as giving new ones after going back down to the next floor.
+* {{A|Golden Trinket}} / {{I|Mom's Box}}: Gives 8 wisps at once.
+
+== In-game footage ==
+{{#ev:youtube|bgrSiQg6kPQ}}
+
+== Trivia ==
+* [[anti:Beth's Faith|Beth's Faith]] originates from the ''Antibirth'' mod.
+
+== Bugs ==
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room from the one he is currently in (such as by teleporting to the previous room then using it again) will duplicate the wisps. Any extra wisps created from duplication on a filled ring will appear at the entrance of each room Isaac enters and shoot in the direction Isaac is currently shooting.}}
+
+{{nav|bethany unlock|boss rush unlock|fr=Foi de Béthanie}}

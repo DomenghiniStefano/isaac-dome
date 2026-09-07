@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | id          = 208
+ | quote       = DMG + challenge up
+ | description = +1 [[damage]]. Increases the chance of [[champion]] enemies appearing by 15%.
+ | quality     = 3
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* +1 [[damage]].
+* Increases the chance for [[champion|champion enemies]] to appear by 15%.
+** Without any other champion enemy appearance modifiers the chance increases from 5% to 20% ({{dlc|nr}} 20% to 35% in [[hard mode]]).
+
+== Notes ==
+* While more champions likely mean a tougher run, players will also profit from a higher amount of [[pickup]]s available to them, thanks to many champions dropping items upon death.
+** Champion enemies don't drop consumables while playing Greedier mode, making Champion Belt significantly worse in that mode.
+* The belt does not affect the appearance rate of champion [[boss]]es.
+* This is one of the only raw DMG up's in the [[Shop (Item Pool)|shop item pool]].
+* {{dlc+|a+}} The chance for champions to appear does not increase in {{s|The Void}}. It has a fixed 75% chance. {{dlc-}}
+* {{dlc+|r+}} Champion Belt's quality is treated as 2 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Interactions ==
+* {{t|Purple Heart}}: Champion Belt's increased chance is also doubled.
+
+== In-game Footage ==
+{{#ev:youtube|8mx4P4j2x5s||inline}} {{#ev:youtube|tWkxxnc3PwU||inline}}
+
+== Trivia ==
+* The item resembles a championship belt in wrestling, MMA, boxing, and other similar commercialized fighting competitions.
+
+== Gallery ==
+<gallery>
+File:Collectible Champion Belt concept.jpg|Concept drawn for Champion Belt.
+</gallery>
+
+{{nav|fr=Ceinture du Champion}}

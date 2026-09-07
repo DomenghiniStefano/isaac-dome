@@ -1,0 +1,123 @@
+{{infobox passive collectible
+ | id          = 149
+ | quote       = Explosive shots
+ | description = Replaces tears with explosive and [[poison]]ing projectiles fired in an arc from the mouth.
+ | quality     = 4
+ | tags        = bob summonable offensive
+ | unlocked by = Ipecac
+}}
+
+{{distinguish visual|Rubber Cement}}
+
+{{cit|p}}
+
+== Effects ==
+* Replaces tears with explosive and [[poison]]ing projectiles fired in an arc.
+* {{dlc|nr}} Tears down − (Delay × 2) + 10
+* {{dlc|r}} 1/3 Fire Rate
+* {{dlc|nr}} [[Tear Falling Speed]] is set to 13.
+* {{dlc|r}} 0.8× [[range]] multiplier.
+* {{dlc|r}} 0.8× [[shot speed]] multiplier.
+* +40 flat [[damage]] (See [[Damage#Effective Damage|Effective Damage]])
+* Tear size multiplier: 0.4×
+* {{transformation contribution|Bob}}
+
+== Notes ==
+* Enemies within the blast radius of an Ipecac explosion will also be [[poison]]ed.
+* The damage boost mitigates the very small tear size multiplier.
+* Ipecac's damage bonus does not apply to [[Burn]] or [[Poison]] fully; only {{Dlc|nr}} +4/{{Dlc|r}} +2 is applied to their damage per tick.
+* Character damage multipliers do not apply to Ipecac's flat bonus.
+* Since explosions that deal less than 85 damage hurt Isaac for half a heart, Ipecac shots usually hurt Isaac for half a heart.
+** Self-damage is increased to a full heart with 85 or higher damage stat.
+* If Isaac's damage is above {{dlc|nr}} 100 / {{dlc|r}} 166, Ipecac's explosions will shake the screen. This is just a visual effect.
+** {{dlc|r}} A big enough tear size (~827 damage with no other tear size modifiers) will cause the explosion sound to change to the one used by {{i|Mama Mega!|n}}.
+* {{dlc|r}} The height of the shots scales with range. At base stats, Ipecac shots won't be able to fly over obstacles, but the more range ups Isaac gets, the higher shots will be launched.
+* {{dlc|r}} It is possible that with low shot speed and high range/tear height, Isaac won't be able to hit obstacles up close with Ipecac shots.
+* {{dlc|nr}} The range of the explosion is a circle roughly 3 blocks in diameter, regardless of damage.
+** As Ipecac's explosion range does not scale with tear size, with enough tear size increasing items (e.g. {{I|Death's Touch}}), it can become nearly impossible to hit enemies with Ipecac's explosions.
+* {{dlc|r}} Ipecac's explosion range increases with tear size.
+
+== Synergies ==
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Ipecac it turns into a larger slow moving green locust that deals x1.5 Isaac’s damage per tick and poisons enemies.
+* {{T|Brain Worm}}: The Ipecac tears will snap 90 degrees and rain down at nearby enemy should the shot miss, completely eliminating the shortcoming of having too much range and causing Ipecac tears to fly over enemy's head, missing them.
+* {{dlc+|ana+}} {{i|Brimstone}} / {{c|Azazel}}: No explosive beam or stat change. Beam poisons enemies.{{dlc-}}
+** {{dlc|a+nr}} Isaac shoots Ipecac tears while charging Brimstone. Both Brimstone and Ipecac shots modify Isaac's damage and tear delay stat, meaning that Ipecac fires slower and Brimstone charges slower, but Brimstone does an extra 40*13 damage.  Take care to pre-charge Brimstone so that the Ipecac shot is on cooldown as Isaac enters a room.
+** {{dlc|r}} Blood beam now does poison damage and will explode on connection with an enemy which can damage the character if close enough. The character doesn't gain the Damage Up or Tears Down effects. The flat damage bonus is reduced to +2, but Isaac's tear rate stat is not modified. The beam explodes on the first enemy or obstacle it hits every other tick, dealing 10 + twice of Isaac's Damage. The explosions do not occur when the beam narrows, meaning that they occur only twice per shot without {{I|Soy Milk}} / {{I|Almond Milk}}. The beam and its explosions poison enemies.
+* {{i|Cricket's Body}}: The main tear splits into four explosive splash tears. The splash tears can still damage Isaac.
+** {{dlc|r}} Ipecac's x0.8 range multiplier does not stack with Cricket's Body's own x0.8 range multiplier.
+* {{I|C Section}}: The fetuses explode once they touch an enemy, poisoning and dealing damage equal to Isaac's Damage.
+* {{i|Dr. Fetus}}: Bombs explode on contact, do no damage to Isaac and become {{I|Bob's Curse}} bombs.
+** {{dlc|nr}} The damage is massively increased, as the +40 damage from Ipecac is run through the damage multiplier of Dr. Fetus.
+** {{dlc|r}} The flat damage bonus is reduced to +2. Bombs leave a poison cloud that damages enemies. With {{C|Jacob and Esau}} only the character with the items is immune to the explosions.
+** '''Dr. Fetus''' + '''Monstro's Lung''': Renders Isaac no longer immune to his shots. {{dlc|r}} The flat damage bonus is increased back to +40.
+** '''Dr. Fetus''' + '''Sad Bombs''': Isaac is not immune to the explosive shots created by the Sad Bombs' effect.
+* {{i|Epic Fetus}}: Missiles turn green and are poisonous. Damage greatly increases as the flat damage bonus stacks with Epic Fetus' explosive multiplier.
+* {{i|Flat Stone}}: The Ipecac shots cause full-damage explosions instead of lesser splash damage when they bounce off the floor, though they can also harm Isaac.
+** {{Dlc|r}} Each bounce creates an explosion that deals half Isaac's damage as well as dealing the regular splash damage. The bounce explosion radius is slightly larger than the splash radius.
+* {{c|The Forgotten|nr}}: The flat damage bonus is reduced to +4. Melee attacks become poisonous and explosive; he cannot be hurt by the blasts but is pushed back by them. The explosions deal 1.5x damage. The charged throwing attack is only poisonous. The Soul uses Ipecac as normal.
+** {{Dlc|r}} The flat damage bonus is reduced to +2. The thrown bone club can explode once on enemy contact while being sent out, but not while returning. These explosions deal from 10 + 2.8x to 10 + 6x Damage based on how much the attack is charged, and do no self-damage.
+** {{Dlc|r}} When the skeleton form has {{i|Technology}}, the thrown bone club constantly explodes and deals damage to The Forgotten.
+* {{i|Haemolacria}}: Tear delay is increased by 1/3 compared to either of the items on their own, but Isaac now fires Ipecac shots that release poisonous, high-damage but non-explosive split tears on impact.
+** {{dlc|r}} Ipecac's x0.8 range multiplier does not stack with Haemolacria's own x0.8 range multiplier.
+* {{i|The Ludovico Technique}}: Tear damage is increased by 4, explodes when killing an enemy, and comes back to Isaac.
+** {{dlc|a+nr}} +4 flat damage bonus, no explosion.
+** {{dlc|r}} +2 flat damage bonus, no explosion.
+* {{i|Maw Of The Void|r}}: The ring becomes poisonous and explodes on the first enemy or obstacle contact it hits every other tick, dealing 10 + twice of Isaac's Damage. The explosions do not occur for the first four ticks.
+* {{i|Mom's Knife}}: Knife turns green, may poison enemies, and removes Ipecac's damage increase.
+** {{dlc|a+nr}} Also adds +4 flat damage bonus.
+** {{dlc|r}} Also adds +2 flat damage bonus. The thrown knife can explode once on enemy contact while being sent out, but not while returning. These explosions deal from 10 + 2.1x to 10 + 6x Damage based on how much the attack is charged.
+* {{i|Monstro's Lung}}: Isaac fires a barrage of Ipecac shots, with no increase in charge time compared to Monstro's Lung alone.
+** {{dlc|r}} Charge time increases by 3x.
+* {{i|Montezuma's Revenge}}: The poop beam gets only a +2 flat damage bonus instead of +40. The beam explodes 10 times, either on the first enemy or obstacle it hits or at the very end otherwise, dealing 10 + twice of the beam's damage.
+* {{i|Mysterious Liquid}}: Leaves a massive pool of [[creep]] on the floor on impact.
+* {{i|The Parasite}}: The Ipecac tear will spawn two smaller explosive tears when it collides with a solid object, but not with an enemy. These tears can spawn tears on their own as well, potentially leading to huge chain reactions.
+* {{i|Revelation}}: The laser gets only a +2 flat damage bonus instead of +40. The laser explodes on the first enemy or obstacle it hits every other tick. The explosions occur 8 times and deal 10 + twice of the laser's damage.
+* {{i|Tech X}}: The flat damage bonus is reduced to +4. The laser ring becomes poisonous.
+** {{dlc|r}} The flat damage bonus is reduced to +2. The laser ring becomes poisonous and explodes every other tick on contact, deal 10 + twice of the ring's damage. Knockback from the blasts will push enemies along the path of the ring, prolonging damage. The ring will not open {{R|Secret Room}}s if the entrance is on the bottom wall since the ring will never explode against the bottom wall.
+* {{i|Technology}}: Removes the flat damage bonus, poisonous laser.
+** {{dlc|a+nr}} +4 flat damage bonus, poisonous laser.
+** {{dlc|r}} +2 flat damage bonus, poisonous laser that explodes on enemy or obstacle contact, deal 10 + twice of Isaac's damage. Keeps Ipecac's stats other than damage.
+*** Note: This combination is not advised if the player has the {{I|Multidimensional Baby}} familiar. When the ipecac technology laser passes through the {{I|Multidimensional Baby}}, it instantly explodes, damaging the player and likely being fatal for the run.{{dlc-}}
+* {{i|Trisagion}}: Trisagion blasts do not explode on hit. The explosion happen once the blast runs out of range or hits a wall and deals damage equal to Isaac's Damage.
+** {{Dlc|r}} Trisagion blasts are poisonous and explode upon impact with an enemy or obstacle, dealing 10 + twice of the blast's damage. When the base of the blast reaches an enemy or obstacle, it explodes and deals damage equal to Isaac's Damage.
+
+== Interactions ==
+* {{i|120 Volt}}: The zaps get only a +2 flat damage bonus instead of +40. The 0.75x-1.5x damage multiplier applies afterwards.
+* {{i|Crown Of Light}} / {{i|Polyphemus}} / {{i|Proptosis|nr}} / {{i|Sacred Heart}} / {{i|Bloody Lust|nr}}: The damage multipliers from these items do not apply to Ipecac's +40 bonus, resulting in much lower damage increase than expected.
+* {{i|Chocolate Milk}}: Charged up Ipecac deals expectedly high damage. Rapid-fire can be used against weaker enemies or to clear obstacles when necessary.
+* {{i|Cricket's Head}} / {{i|Eve's Mascara}} / {{i|Magic Mushroom}}: The damage multipliers from these items apply to Ipecac's +40 bonus, unlike others.
+* {{i|Death's Touch|nr}}: Although damage is increased, the tears' hitboxes also grow larger, which may be detrimental.
+* {{I|Fire Mind}}: Due to the nature of the Ipecac, all shots will have a 100% chance of leaving a fire at the center of the explosion. {{dlc|nr}} It will also no longer leave behind green creep and the explosion will be of normal color instead of green.
+* {{i|Ghost Bombs}} / {{i|Hungry Soul}}: The ghosts get only +1 flat damage from Ipecac, instead of the expected +20.
+* {{i|Ghost Pepper|nr}}: If a fire is generated at the same time as an Ipecac shot, the Ipecac shot will explode instantly.
+* {{i|Glass Cannon}}: As the Glass Cannon tears are so large, even a modest damage increase or a single tear size increasing item is likely to render the tear unable to damage enemies.
+* {{I|Holy Light}}: A beam of light will spawn on top of any enemy within the explosion's radius.
+* {{i|Jacob's Ladder}}: The sparks spawn only when they hit a wall.
+* {{i|Little Horn|nr}}: If an Ipecac shot has the Little Horn effect, after destroying an enemy, it loses its explosive property and effectively is just a normal Little Horn tear.
+* {{i|Lost Contact}}: Ipecac shots will explode on contact with enemy shots.
+* {{i|Mom's Eye}} / {{i|Loki's Horns}}: Occasionally shoots backwards or in all 4 directions, with high risk of self-damage.
+* {{i|Number One|r}}: '''Not recommended.''' Unlike other similar items, Ipecac's x0.8 range multiplier does stack with Number One's own x0.8 range multiplier, making self-damage more likely.
+* {{i|Parasitoid|nr+}}: Only extra range applies on egg sack tears and they will not spawn flies or spiders.
+* [[Piercing tears]]: Tears will still explode on enemy contact, nullifying piercing.
+* {{i|Rubber Cement}}: Tears will bounce off walls and rocks and won't explode until they hit the ground. '''Not recommended''', as self-damage is likely.
+* [[Spectral tears]]: Ipecac shots no longer explode on contact with obstacles or walls, making accidental self-damage less likely but more difficult to open doors.
+* {{c|Tainted Forgotten}}: Tainted Forgotten's melee attacks will explode. Tainted Soul is immune ''only'' to those explosions, so any further explosions caused by synergies will damage it.
+* {{i|Technology 2|nr}}: The +40 damage bonus is not affected by the Technology 2 multiplier, making the laser very high powered, but only every other Ipecac shot is fired.
+* {{i|Technology Zero}}: High fire rate needed for explosive shots to be connected.
+* {{i|Tiny Planet}}: Ipecac tears orbit around Isaac for a very long time. They land far enough to not cause self-damage, but that can be relied on only if Isaac is not moving and do not hit enemies.
+* {{i|Tractor Beam}}: The Ipecac tear will travel in an arc along the beam, even if Isaac is moving forward as well. When Isaac changes direction, the tear will snap to the beam, making it very easy to accidentally hit close objects blocking its new path.
+* {{i|Brimstone}} + {{i|Monstro's Lung}}: The erratically fired lasers can easily hit rocks or enemies near Isaac, damaging him. This affect is worsened by [[Azazel]]'s need to be close to enemies to damage them. Be wary of this synergy without explosion immunity.
+
+== In-game Footage ==
+{{#ev:youtube|Tr2kLXcBzDg}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Lil Spewer }}
+
+== Trivia ==
+* "Ipecac" is a shortened name for [[wikipedia:syrup of ipecac|syrup of ipecac]], a powerful emetic (a substance used to induce vomiting). This name is itself derived from a shortening of the source plant's name, Ipecacuanha. Production of ipecac syrup has been discontinued since 2010.
+* This item is used in {{chal|Suicide King}}.
+* In the ''Wrath of the Lamb'' DLC for the original game, this item was unlocked by default.
+
+{{nav|bob|moms heart unlock|fr=Ipéca}}
+[[Category:Tear-modifying items]]

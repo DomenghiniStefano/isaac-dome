@@ -1,0 +1,82 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 622
+ | quote       = In the beginning
+ | description = Removes all of Isaac's [[items]] and [[pickups]] and takes him to a unique {{R|Clean Bedroom}} with some pickups and {{E|Chest}}s and a passage to the next [[floor]]. For every item Isaac lost, he gets to take an item from a set of three.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = offensive nocantrip
+ | recharge    = one time
+ |unlocked by  = Genesis
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* On use, Isaac is teleported to a unique {{R|Clean Bedroom}} that acts like an {{r|I AM ERROR}} room. It has a [[Bed]], two random {{E|Chest}}s, two {{E|Grab Bag}}s, and a random [[Trinket]]. The only way out is through the beam of light, which teleports Isaac to the next floor (with some exceptions, seen below).
+* Isaac loses all items and is reset to a state exactly like if he started a new run, though keeping quest items to not block progression. All [[Attributes|stats]], consumables, trinkets, and all items except for starting items and quest items, are removed. Isaac gains back all of his starting trinkets and consumables. 
+* For every item removed using Genesis, there will be a set of three items from the removed item's pool to choose from, each set appearing one after the other at the bottom of the room.
+
+== Notes ==
+* If used on one of the final floors of the game, such as {{s|Chest}}, {{s|Dark Room}}, {{s|The Void}}, or {{s|Corpse}} II, the beam of light will be replaced with a {{r|Crawl Space}} that leads Isaac back to the starting room of the floor he used it on. In addition, on {{s|Chest}} or {{s|Dark Room}} the aforementioned chests will include items. These items will not disappear along the "choice" pedestals.
+** {{dlc|nr+}} If used in the final floor of Greedier mode, the beam of light will instead be replaced with a normal trap door that leads Isaac to a brand new Ultra Greed floor, forcing him to repeat the boss fight.
+*** {{dlc|r+}} The trapdoor now leads to the starting room of the floor, without resetting it.
+* If used in {{s|Womb}} II, {{s|Utero}} II, or {{s|???}}, the beam will always teleport Isaac to {{s|Cathedral}}.
+* {{r|Crawl Space}}s can be generated and entered inside the Genesis room, but upon leaving them, Isaac will be returned to the floor Genesis was used on instead of returning to the room.
+** Similarly, {{p|Joker}} can teleport Isaac to a {{r|Devil Room}} or {{r|Angel Room}}, and leaving will return Isaac to the room Genesis was used in, instead of the Genesis room.
+** Other cards, such as {{p|0 - The Fool}}, can be used to directly teleport to one of the rooms in the current floor, successfully escaping as well. Cards can be obtained by opening a {{E|Chest}}, whose contents could be a {{E|Locked Chest}}, whose contents could be a [[Cards and Runes|Card]].
+* [[Item Pool]]s will not be reset, however any lost items can be obtained again if they spawn.
+* [[Transformations]] are also removed.
+* Does not work during {{E|The Beast}}'s fight, instead merely teleporting Isaac to a random location in the room. No items will be removed.
+* Take caution; choosing an active item while holding another one will not drop the previous item to the ground, but replace it.
+* Genesis will remove all currently active [[curses]], meaning {{cu|Blind}} will not affect the item pedestals present inside the room (except during the [[Ultra Hard]] challenge).
+* Trinkets absorbed using a [[Gulp!]] pill or an item such as {{i|Smelter}} will simply be removed with no extra pedestals granted for them.
+* If used as {{C|Jacob and Esau}}, both characters' items are removed to offer choices, but Jacob and Esau cannot take two items at once from the choices. Both characters' items are considered in the amount of choices offered.
+* {{C|Tainted Cain}} will be able to pick up the items that appear normally, one of the few times he is able to do so (along with quest items and items in the {{I|Death Certificate}} area).
+* If used as {{C|Tainted Lazarus}}, both forms' items are removed and offer the equivalent number of choices, while his initial {{I|Flip}} is granted infinite charges and can be used freely in the special room.
+* {{C|Bethany}} will lose all existing wisps and reset the soul charge count to its default of 4 on use, but will gain 3 default wisps upon appearing in the Genesis room.
+* {{C|Tainted Bethany}} will lose all of her {{I|Lemegeton}} wisps and reset the blood charge count to its default of 6 on use. She does not gain extra wisps back.
+* If used as {{C|Eden}} or {{C|Tainted Eden}}, a new set of items and stats will be generated. The first random passive item Eden starts with is rerolled immediately with no choice of three.
+* If Isaac uses Genesis while in {{s|Downpour}} II / {{s|Mines}} II / {{s|Mausoleum}} II or their variants, the beam of light will send him back to the regular floors. However, after using Genesis on {{s|Downpour}} I / {{s|Mines}} I / {{s|Mausoleum}} I / {{s|Corpse}} I, it sends Isaac to the respective second part of the stage.
+* Since Genesis resets Isaac's health, it is one way to remove [[Health#Broken Hearts|Broken Hearts]].
+* Using Genesis removes the schwag bonus and {{dlc|nr+}} damage penalty on [[Daily Challenges]] and outside.
+* {{dlc+|r+}} Genesis' quality is treated as 3 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Synergies ==
+* {{Book of Belial synergy|description=Grants a free {{i|Pentagram}} that will not be removed by Genesis.}}
+* {{Book of Virtues synergy|description=Replaces all of Isaac's wisps with 3 normal wisps. Unlike other reroll items, Isaac does not keep Book of Virtues.}}
+
+== Interactions ==
+* {{P|? Card}}: If ? Card is used in place of Genesis, Genesis will be counted as an extra item for the choice set.
+* {{i|Abyss}}: The locusts created by Abyss are removed without creating items to replace them making Genesis one of the few effects that can remove them.
+* {{C|Azazel}} / {{C|Tainted Azazel}}: Both have the ability to return to the floor Genesis was used on, due to them starting with a {{P|0 - The Fool}} card.
+* {{I|Book of Revelations}}/{{I|Satanic Bible}}: Effects on the {{R|Boss Room}} and boss item still apply to the floor even after using Genesis.
+* {{i|Brittle Bones}}: Genesis removes the [[fire rate]] upgrades upon use.
+* {{i|Car Battery}}: No effect.
+* {{I|Crooked Penny}}: Using it on the choice pedestals has the 50/50 chance of duplicating them as normal, or make them disappear, in which case no new ones will spawn.
+* {{I|Damocles}} / {{I|Missing No.}}: Genesis removes these items as well, making it the only item or effect that can remove them besides {{t|Butter!}}.
+* {{i|Death Certificate}}: After taking an item in the Death Certificate area, Isaac will return to the Genesis room and the current 3 item pedestals can all be taken, with the next set spawning on top of them.
+* {{i|Echo Chamber}}: The consumable pool is reset when Genesis is used, so if it's re-obtained after using Genesis, the previously stored consumable types won't be activated.
+* {{I|Eden's Blessing}}: Eden's Blessing will be consumed, and the next run Isaac starts will begin with a random item.
+* {{I|Esau Jr.}}: Using Genesis as Esau Jr. will revert back to the original character.
+* {{I|Lazarus' Rags}} / {{I|Ankh}} / {{I|Clicker}}: Using Genesis after Lazarus' Rags, Ankh or Clicker activates will continue as the new character.
+* {{I|Glowing Hourglass}}: Using it works as intended and will give back all previous stats, items, pickups, and health.
+* {{I|Magic Skin}}: Genesis does '''NOT''' remove the downside of Magic Skin; any of the choice pedestals can be replaced by Magic Skin.
+* {{I|Sacred Orb}}: Will affect future items while inside the Genesis Room.
+* {{I|Teleport!}} / {{I|Teleport 2.0}} / [[Pills|Telepills]] / [[Cards and Runes|Teleport Cards]]: Should such items/consumables be obtained in the Genesis room, they can be used to circumvent the forced floor skip.
+** In the case of pills, unidentified pills should only be consumed ''after'' taking all of the items in case telepills is rolled, for the Genesis room cannot be returned to after leaving.
+* {{i|Void}}: All effects granted by absorbed items including stat ups and [[activated item]] abilities Void takes are removed without creating items to replace them. Since Void is stripped of any active item abilities it would have gained, any other Void found will also have no other active effects stored in it.
+** Void's active effects are reset even if Isaac is currently not holding it.
+* {{p|Wild Card}}: Can't activate Genesis.
+* {{C|Tainted Lost}}: Will lose his Holy Mantle shield on use but will gain a new {{p|Holy Card|n}}.
+
+== In-game Footage ==
+{{#ev:youtube|Vd2izjLiAyM||inline}} {{#ev:youtube|VOp8QWUPRYE||inline}}
+
+== Trivia ==
+* Genesis refers to the first book in the Bible, and is an Ancient Greek term for "birth". The item description refers to the very first words in the Book of Genesis.
+
+== Bugs ==
+{{Bug|Using Genesis immediately after taking {{i|Dad's Note|n}} will teleport Isaac to the Genesis room, then to the start of the [[ascent]] with no items except those that cannot be removed (Dad's Note, Key Pieces, etc.).}}
+{{bug|dlc=nr+|Genesis removes wisps created by {{i|Lemegeton|n}} but not the item effects associated with them. These remain permanently active until Lemegeton is used again.}}
+
+{{nav|jacob and esau unlock|ultra greedier unlock|fr=Genèse}}

@@ -1,0 +1,55 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 464
+ | quote       = A gift from above
+ | description = Grants 2 {{E|Soul Heart}}s and modifies drops from [[Champion]] monsters based on certain conditions. {{dlc|r}} Also modifies room clear drops.
+ | quality     = 2
+ | tags        = summonable offensive
+ | unlocked by = Glyph of Balance
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* Grants 2 Soul Hearts.
+* Modifies drops from Champion enemies depending on certain conditions.
+* {{dlc|r}} Also modifies room clear drops.
+* {{Dlc|r}} Every room is guaranteed to drop a reward.
+* The priorities of the drops, in order, are as follows:
+** '''{{E|Soul Heart}}s''': When Isaac has no Red Heart containers and less than 2 Soul Hearts.
+** '''{{E|Red Heart}}s''': While at 0.5 Red Hearts.
+** '''{{E|Key}}s''': When Isaac has no keys. 
+** '''{{E|Bomb}}s''': When Isaac has no bombs.
+** '''{{E|Red Heart}}s''': When Isaac has at least half a Red Heart container empty.
+*** {{c|Tainted Bethany}} will always get this drop until she reaches 12 "blood charges".
+** '''{{E|Penny|text=Pennies}}''': While Isaac has less than 15 pennies.
+** '''{{E|Key}}s''': When Isaac has less than 5 keys. 
+** '''{{E|Bomb}}s''': When Isaac has less than 5 bombs.
+** '''Trinkets''': If Isaac has no trinkets and there are no trinkets on the ground in the room.
+** '''{{E|Soul Heart}}s''': When Isaac has less than 6 total Heart containers of any kind.
+*** {{c|Bethany}} will only get this drop until she reaches 12 "soul charges". 
+*** {{c|Tainted Bethany}} changes blue heart drop to red heart drop until she reaches 12 "blood charges", thus she is unable to receive any blue hearts.
+** If none of the above conditions are true, items dropped will be rolled as normal.
+** {{Dlc|r}} Chest drops override the Glyph of Balance.
+
+== Notes ==
+* When the conditions for specific drop is met, you can intentionally not pick up the drop to guarantee that same drop (or a chest) every room.
+* {{Dlc|r}} Staying at low luck (but not below 0) is recommended to take full advantage of Glyph of Balance, as higher luck will make chest drops more common.
+* The Glyph has no effect in [[Greed Mode]] or Greedier Mode aside from the {{E|Soul Heart}}s granted upon pickup; champions still never drop anything.
+* {{dlc|nr}} Because of how the item works in the priorities listed above, this item is not recommended for {{c|The Lost}} (except in combination with {{i|Immaculate Conception}}) as he is always considered to be at half a Soul Heart, and all drops ''from champions'' are replaced with Soul Hearts.
+** {{dlc+|r}}{{c|The Lost}} and {{c|Tainted Lost}} ignore both rules for Soul Heart generation. This prevents the item from generating mostly useless Soul Hearts.{{dlc-}}
+* When playing as {{c|The Forgotten}}, the priority of the drops is based on the active form's health: for example, if The Forgotten has half a red heart or less, but The Soul was active right before the pickup drop and it had more than 2 soul hearts, the Glyph will skip over the full red heart drops to the next condition. Also if The Forgotten is full on pickups and health, has a trinket but has less than 6 bone hearts, the Glyph will always drop soul hearts unless The Soul is active at the moment of the drop.
+* {{dlc+|r}} When playing as {{c|Jacob and Esau}} / {{c|Tainted Lazarus}}, the priority of the drops is based on the health of the character that has the Glyph.{{dlc-}}
+* {{dlc+|r}} When playing as {{c|Tainted Lazarus}}, the room drop will be modified when the character switches to the character that has the item on room clear.{{dlc-}}
+* {{Dlc|r}} When playing as characters incapable of having red heart containers such as {{C|???}}, the Glyph will skip soul heart and red heart generation.
+* While empty room drops are replaced by Glyph of Balance drops, if you get a heart drop in {{mode|hard}} Hard mode, there is a separate chance of it being replaced with an empty drop.
+** It is still possible to get hearts if none of the other conditions are true.
+
+== Interactions ==
+* {{i|Options?}}: Only one of the options will be modified by the Glyph.
+* {{T|Perfection}}: Chest spawns are prioritized over Glyph of Balance, meaning it will be very hard to use the Glyph effectively.
+
+== In-game Footage ==
+{{#ev:youtube|ToQhXPcL-Uk}}
+
+{{nav|magdalene unlock|ultra greedier unlock|fr=Marque d'Harmonie}}

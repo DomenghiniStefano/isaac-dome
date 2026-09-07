@@ -1,0 +1,82 @@
+{{infobox activated collectible
+ | id          = 42
+ | quote       = Reusable ranged bomb
+ | description = Isaac holds a [[poison]] {{e|Bomb}} which can be thrown in a cardinal direction and explodes on impact.
+ | quality     = 1
+ | tags        = bob dead offensive
+ | recharge    = {{dlcalt|3|r=2}}
+ | pool        = Sloth
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Upon use, Isaac holds a [[poison]] {{e|Bomb}} over his head which can be thrown in the cardinal directions and explodes on impact.
+** The bomb can fly across the room for 9.5 tiles before falling to the ground and exploding.
+** {{dlc|nr}} The explosion deals a flat 50 + Isaac's [[Damage|tear damage]] and poisons affected [[monster]]s.
+** {{dlc|r}} The explosion deals a flat 185 + Isaac's tear damage and leaves behind a gas cloud that poisons affected monsters. The poison cloud deals 5 damage.
+** {{dlc|na}} The poison deals 6 or 8 points of damage over time.
+** {{dlc|a}} The poison deals 3 times Isaac's tear damage over time.
+* {{transformation contribution|Bob}}
+
+== Notes ==
+* This item can drop from killing {{E|Sloth}}. {{dlc|nr}} Sloth can drop this item even if Isaac has already encountered/possessed it. 
+* Bob's Rotten Head is affected by many tear modifiers and some bomb modifiers. Notable exceptions and precautions are listed below.
+* Bob's Rotten Head passes through {{Machine|Beggar}}s, {{Machine|Slot Machine}}s, or {{Machine|Blood Donation Machine}}s, but can destroy them with the blast damage if it impacts anything nearby.
+* Can open open {{R|Secret Room}}s, {{R|Super Secret Room}}s, or destroy [[rock]]s like any other bomb.
+* Certain interactions require Flat Stone to be effective or work.
+
+== Interactions ==
+* {{t|Bob's Bladder}} / {{i|Bobby-Bomb}} / {{i|Bomber Boy}} / {{i|Fast Bombs}} / {{i|Rocket in a Jar}} / {{i|Scatter Bombs}} / {{i|Mr. Mega}}: No effect.
+* {{i|Bob's Curse}}:
+** {{dlc|nr}} No effect.
+** {{dlc|r}} The explosion leaves behind a poison cloud.
+* {{I|Blood Bombs}}: Bob's Rotten Head leaves a pool of [[red creep]] on the ground after each explosion.
+* {{Book of Virtues synergy|description=Spawns wisps in the middle ring. The wisps shoot arcing green tears with decreased range, with a 7.5% chance of firing an explosive, poisonous tear.}}
+* {{i|Car Battery}}: No effect.
+* {{i|Compound Fracture}}: Spawns 1-3 smaller heads that explodes for half the damage of the bigger one.
+* {{i|Continuum}}:
+** {{dlc|anr}} Bob's Rotten Head can now travel through walls and appear out of the opposite wall, similar to a portal-type mechanic.
+** {{dlc|r}} No longer travels through the wall; instead he bounces off it, like with {{i|Rubber Cement}}, and then travels for the rest of its duration at a slower speed and then explodes.
+* {{i|Cricket's Body}}: Spawns four smaller heads that explode for half the damage of the bigger one.
+* {{i|Explosivo}} / {{i|Sticky Bombs}}:
+** {{dlc|anr}} If Bob's Rotten Head sticks to an enemy (sometimes with Explosivo, always with Sticky Bombs), the explosion is delayed but will deal 110 damage.
+** {{dlc|r}} No longer sticks to monsters.
+* {{i|Eye of the Occult}}: Isaac can control the mid-flight direction of the head, however its air-time is not increased.
+* {{i|Flat Stone|r}}: Will cause Bob's Rotten Head to bounce once, exploding twice and leaving two gas clouds.
+* {{I|Fire Mind}}: Creates fire when the head lands.
+* {{I|Godhead}}: Creates a Godhead aura around the head and applies homing effect when thrown.
+* {{I|Haemolacria}}: When the head lands, tears are fired.
+* {{I|Holy Light}}: Has a chance to throw a Holy Light head that spawns a damaging beam of light dealing ({{Dlc|nr}}4x) {{dlc|r}}3x the explosion damage when it hits an enemy.
+* [[Homing]] tears: Homing is applied to the thrown head as well.
+* {{dlc|nr}} [[Spectral]] tears: The head will pass through obstacles and walls, meaning it will no longer destroy obstacles or open secret rooms on impact. They can still be opened if the user stands back far enough to let the thrown head run out of range.
+** {{dlc|r}} The head will slightly bounce off of walls with spectral tears. It still passes through obstacles.
+* {{i|Lachryphagy}}: The head act as a tear, dividing itself if enough time has passed and interacting with other tears. The five heads coming from the main head deal half damage. Feeding a head with another increases damage by the amount of damage Isaac has. If a tear is fed with a head, the tear will gain the head's damage.
+* {{i|The Parasite}}: Causes two smaller tears to appear that explodes for half the damage of the head. Tears do not look like the normal head.
+* {{i|Rubber Cement}}: Causes the head to bounce off of [[rock]]s and walls.
+* {{i|Tiny Planet}}: When used, Bob's Rotten Head will orbit the player similar to a tear.
+* {{i|Trisagion}}:
+** {{dlc|a+nr}} '''Not recommended''' as it explodes multiple times before reaching its target, dealing explosive damage and knockback to Isaac.
+** {{dlc|r}} Shoots a white blast of light instead of the head that pierces through monsters, and causing explosions when it contacts an enemy (if not killing it at the first tick), an obstacle, or when it runs out of range. One tick of the beam deals 33% of Bob's Rotten Head's damage to monsters, but the resulting explosion every tick deals full damage.
+* {{I|Uranus}}: Monsters are frozen when dying to Bob's Rotten Head.
+* [[:Category:Worm trinkets|Worm trinkets]]: Bob's Rotten Head is affected by [[trinket]]s like {{t|Hook Worm}} and {{t|Wiggle Worm}} the same way tears are.
+
+== In-game Footage ==
+{{#ev:youtube|uJ27Bp9LLnU||inline}} {{#ev:youtube|_07RRNxJn4k||inline}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Lil Spewer, The Parasite }}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Bob's Rotten Head.png|{{plat|3DS}} The icon of Bob's Rotten Head as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* The item's appearance is similar to {{E|Pestilence}}'s head.
+* {{E|Sloth}}'s full name is Bob Sloth, revealed in a QnA. Because Sloth drops this item, it may be his head.
+
+== Bugs ==
+{{bug|Although {{i|Bob's Rotten Head}} works normally with {{i|Butt Bombs}} and {{i|Bomber Boy}} has no effect with it, their combination drops the explosion damage by 50%.}}
+
+{{nav|bob|explosive|fr=Tête de Bob}}

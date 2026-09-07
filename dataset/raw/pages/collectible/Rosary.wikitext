@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | id          = 72
+ | quote       = {{dlcalt|Faith up|r=Tears + faith up}}
+ | description = Grants 3 {{E|Soul Heart}}s. {{i|The Bible}} has a chance to appear in any [[item pool]]. {{dlc|r}} +0.5 [[tears]].
+ | quality     = 2
+ | tags        = {{dlc|nr+|nolostbr}} {{dlc|r+|tearsup offensive}} nocantrip angel
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants 3 {{e|Soul Heart}}s.
+* Items in [[item pool|all pools]] have a <math display="inline">\frac{1}{\mathit{SumOfPoolItemsWeight}}</math> chance to be replaced by {{i|The Bible}}.
+** The original item that was replaced is considered seen and, depending on the pool, possibly can't be found again.
+* {{dlc|r}} +0.5 [[tears]].
+* {{transformation contribution|Seraphim}}
+
+== Notes ==
+* If The Bible has been picked up before collecting the Rosary, it will not replace other items.
+* The Bible can be encountered multiple times even in the same pool if it is not picked up; however, once picked up, it cannot appear again anywhere.
+* {{dlc|r}} Collecting more than one Rosary will further increase the chance of finding The Bible. The above limitations still apply, and it can be collected only once no matter the number of Rosaries.
+* This item stacks with {{t|Rosary Bead}}, further increasing the chance to find The Bible in the {{R|Library}} and {{R|Shop}}.
+* {{dlc|na}} The approximate chances of finding {{i|The Bible}} in each item pool are:
+** [[Treasure Room (Item Pool)|Treasure Room]]: 2.26%
+** [[Shop (Item Pool)|Shop]]: 12.82%
+** [[Boss (Item Pool)|Boss]]: 11.36%
+** [[Devil Room (Item Pool)|Devil Room]]: 12.82%
+** [[Angel Room (Item Pool)|Angel Room]]: 20.83%
+** [[Secret Room (Item Pool)|Secret Room]]: 20.83%
+** [[Library (Item Pool)|Library]]: 45.45%
+** [[Golden Chest (Item Pool)|Golden Chest]]: 55.56%
+** [[Red Chest (Item Pool)|Red Chest]]: 71.43%
+** [[Beggar (Item Pool)|Beggar]]: 27.78%
+** [[Devil Beggar (Item Pool)|Devil Beggar]]: 45.45%
+** [[Curse Room (Item Pool)|Curse Room]]: 38.46%
+** [[Key Master (Item Pool)|Key Master]]: 71.43%
+*** The probabilities after Rebirth have not been computed, though the chances are pretty similar to the ones shown above. This is because the smaller the item pool, the more likely the Bible is to appear, and this effect is far more pronounced than the Bible simply being added to each pool. So, for example, the Bible is much more likely to appear from a Red Chest compared to the Treasure Room.
+
+== In-game Footage ==
+{{#ev:youtube|faZmYKRp-M4||inline}} {{#ev:youtube|dDgGfjxN5Uk||inline}}
+
+{{nav|seraphim|fr=Rosaire}}

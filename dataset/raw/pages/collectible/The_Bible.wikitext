@@ -1,0 +1,54 @@
+{{infobox activated collectible
+ | costume name = Fate
+ | id           = 33
+ | quote        = Temporary flight
+ | description  = Grants [[flight]] for the current [[Rooms|room]]. Instantly kills {{e|Mom}}, {{e|Mom's Heart}}, and {{E|It Lives!}} when activated, but kills Isaac when used on {{E|Satan}}.
+ | quality      = 1
+ | tags         = {{dlc|r+|nolostbr}} book {{dlc|nr+|offensive}} angel
+ | recharge     = {{dlcalt|6|r=4}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Gives Isaac [[flight]] for the current room.
+* Instantly kills {{e|Mom}}, {{e|Mom's Heart}}, {{E|It Lives!}}, and their {{s|Mausoleum}} / {{s|Gehenna}} variants upon use.
+* Kills Isaac instantly when used on {{E|Satan}}.
+* {{transformation contribution|Seraphim}}
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+* Using The Bible on {{E|Isaac}}, {{E|???}}, {{E|The Lamb}}, {{E|Hush}}, {{E|Mega Satan}}, {{e|Delirium}}, {{E|Dogma}}, {{E|The Beast}} or {{E|Mother}} has no special effect and does not kill Isaac.
+** Will not affect Delirium even if it is transformed into a relevant boss.
+* Switching active items while The Bible is active does not remove the flight, allowing continued flight until the room is exited.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns white wisps in the middle ring. Wisps' tears have 0.75 shot speed and [[homing]], and deal 6 damage +0.1 per floor.}}
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | A Halo }}
+
+== In-game footage ==
+{{#ev:youtube|ZeGIpeyfc60||inline}} {{#ev:youtube|Kh_tqbvrg_Q||inline}}
+
+== Trivia ==
+* The Bible is a set of Christian scriptures, consisting of 73 books of the Old and New Testaments (66 in Protestant Bibles).
+* The Bible item instantly killing {{e|Mom}}, {{e|Mom's Heart}}, and {{E|It Lives!}}, is a reference to the epilogue of ''The Binding of Isaac'' when the Bible hits Mom's head, knocking out or killing her.
+* In the original ''Binding of Isaac'', using The Bible on {{E|Isaac}} or {{E|???}} would kill the player.
+* {{dlc|a+}} This item is one of the only two ({{dlc|r}} five/ {{dlc|r+}} six) in the game that work toward 2 transformations ({{tf|Bookworm}} and {{tf|Seraphim}}) and is the only activated item to. The other ones are {{i|Magic Mushroom}}, {{i|Hive Mind|r}}, {{i|Parasitoid|r}}, {{I|Skatole|r}}, {{dlc|r+}} and {{i|The Necronomicon}}.
+* With an ID of 33, The Bible is the very first active item on the ordered ID list, likely due to its plot relevance.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The Bible.png|{{plat|3DS}} The icon of The Bible as seen on the lower 3DS screen.
+File:The Bible giantbook.png|The Bible's splash image
+</gallery>
+
+== Bugs ==
+{{bug|If The Bible is used on Mom with the {{t|Broken Remote}} trinket, it will not kill Mom and will instead teleport Isaac randomly to another room. However, this still unlocks {{i|The Halo}} as if Mom was killed with the Bible.}}
+
+{{nav|seraphim|book|fr=Bible}}
+[[Category:Flight-granting items]]

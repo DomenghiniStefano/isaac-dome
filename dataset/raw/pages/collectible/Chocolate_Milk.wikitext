@@ -1,0 +1,86 @@
+{{infobox passive collectible
+ | image name     = * {{dlc|nr|Rebirth}}
+ | tear app scale = 2/3
+ | id             = 69
+ | quote          = Charge shots
+ | description    = Grants charged tears that deal greater damage when fully charged.
+ | quality        = 3
+ | tags           = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants charged tears that deal greater damage when fully charged.
+** Tear damage scales from approximately 10% damage at a minimum charge to 400% damage at full charge.
+*** The minimum charge damage increases as Isaac's fire rate increases.
+* {{Dlc|nr}} Tear delay: ×2.5.
+
+== Notes ==
+* Repeatedly pressing a key to fire allows Isaac to fire as quickly as the key is pressed, up to the equivalent of a maxed tears stat. This is not generally recommended, as overall damage per second is greatly reduced.
+** Rapid-fire can be useful for dealing with low-health enemies or for quickly destroying obstacles like poops or fireplaces, for whom DPS is less relevant, or chance-based tear effects.
+* Having multiple instances of Chocolate Milk has no effect.
+* {{Dlc|r}} At 30.00 fire rate or above, charging is no longer needed. Higher fire rate results in higher tear damage. At 120.00 fire rate, tears deal 4× Isaac's damage.
+
+== Synergies ==
+* {{i|20/20}} / {{i|The Inner Eye}} / {{i|Mutant Spider}}: Fires multiple charged shots.
+* {{i|Cricket's Body}} / {{i|The Parasite}} / {{i|Compound Fracture}}: Since split tears tend to hit the same target the main tear hits, this can allow for much higher damage.
+* {{c|The Forgotten}}: When charging the club, instead of being thrown, the club grows bigger in size and damage.
+* {{c|Tainted Azazel}}: The beam takes longer to fully charge, but can be released at any point during its charge. Sneezing on enemies fills half the charge meter and can be immediately released for high damage.
+* {{i|Explosivo}}: Firing quickly generates a lot of explosive tears, which leads to a much higher damage than firing tears alone.
+* {{i|Godhead|nr}}: Charging the shots increases the size and damage of the aura.
+** {{dlc|r}} Charging the shots increases the size of the aura, but not its damage.
+* {{tf|Guppy}}: Firing quickly generates lots of Blue Flies, which can lead to much higher damage than firing tears alone.
+* {{i|Haemolacria}}: Increased tear delay. Completely charged shots and their burst tears are larger and deal higher damage than normal. Chocolate Milk also allows low-damage Haemolacria shots to be fired rapidly.
+** {{i|Haemolacria}} + {{i|Tech X}}: rings are created where the Haemolacria shot splashes. The Tech X rings do full damage even on minimum charge shots that were fired rapidly.
+** {{i|Haemolacria}} + {{i|Brimstone}}: Haemolacria bursts into 4-7 brimstone beams that do full damage even on minimum charge shots that were fired rapidly.
+* {{i|Immaculate Heart}}: Orbiting tears' damage does not depend on the charge of Chocolate Milk, so Isaac can shoot low damage tears rapidly to produce a large number of orbiting tears which do full damage.
+* {{i|Ghost Pepper}} / {{i|Bird's Eye}}: Fires' damage does not depend on the charge of Chocolate Milk, so Isaac can shoot low damage tears rapidly to fire full damage flames frequently.
+* {{i|Parasitoid}} / {{i|The Mulligan}}: Flies and spiders generated deal full damage regardless of charge, allowing Isaac to shoot low damage tears to generate flies and spiders rapidly which do full damage.
+* {{Dlc|nr}}{{i|Isaac's Tears}} / {{i|Sad Bombs}} / {{i|Tammy's Head}}: The size and damage of all generated tears correspond to the current charge level of Chocolate Milk. Isaac's Tears will nearly instantly recharge while charging a Chocolate Milk shot.
+** {{Dlc|r}} Charge level does not affect generated tears. Isaac's Tears recharge only when a shot is fired.
+* {{i|Ipecac}}: Increased tear delay. Charged shots deal massively increased damage, as the +40 damage from Ipecac is run through the damage multiplier of Chocolate Milk. It also allows low-damage Ipecac shots to be fired rapidly.
+* {{i|Lachryphagy|nr}}: Rapidly firing small, uncharged tears can cause the fed tear to grow into a gigantic tear that will still deal fairly low damage while feeding tears with charged tears will result in higher-damage tears.
+** {{dlc|r}} Charged and uncharged fed tears deal similar damage.
+* {{i|Mom's Wig|nr}}: Spiders rapidly spawn while charging.
+** {{Dlc|r}} Spiders spawn only when a shot is fired.
+* {{i|Monstro's Lung|nr}}: Reduces Isaac's current tear delay by 20%, allowing Monstro's Lung to charge faster. Each tear from Monstro's Lung is also a charged Chocolate Milk shot, massively increasing damage.
+** {{dlc|r}} Tear damage, along with the number of tears fired is dependent on charge time.
+* {{i|Polyphemus}}: Increased tear delay. Massively increases the damage of each shot, and charged tears decay in damage much slower as they pierce as a result.
+* {{i|Sinus Infection}}: Booger damage is influenced by the damage of the individual tear, so fully-charged Chocolate Milk shots can result in very potent damage over time.
+* {{i|Technology 2|nr}}: Damage dealt by the laser is equal to Isaac's current charge, leading to constant high damage from a safe distance.
+** {{Dlc|r}} The laser deals 13% of Isaac's damage regardless of charge, tears are affected by Chocolate Milk as normal.
+* {{i|Trisagion}}: Fully charged beams deal four times normal damage. Trisagion's shots are colored brown.
+
+== Interactions ==
+* {{i|Anti-Gravity}}: No effect, but retains the reduced tear delay.
+* {{C|Azazel}} / {{i|Brimstone|nr}}: Reduces Isaac's current [[Tears#Tear Delay|tear delay]] by 20%. Doesn't increase damage.
+** {{dlc|r}} The beam takes longer to fully charge, but can be released at any point during its charge. Width and damage of the beam increases at higher charges; width scales from 50% at minimum charge to 160% at maximum charge, while damage scales from 25% at minimum charge to 250% at maximum charge.
+* {{i|C Section|r}}: Overrides Chocolate Milk.
+* {{i|Cursed Eye|nr}}: The charge bar only indicates the current charge for Chocolate Milk, not for Cursed Eye; the latter's charge is determined by the eye's glow. If charged until Cursed Eye fully glows, Isaac fires one Chocolate Milk shot, followed by up to three minimal power ones.
+** {{dlc|r}} Cursed Eye takes longer to charge, but low damage shots can be fired rapidly. If fully charged, Isaac fires five Chocolate Milk shots.
+* {{i|Dr. Fetus|nr}}: Reduces Isaac's current tear delay by 20%. Bombs can't be charged.
+* {{i|Epic Fetus|nr}}: Reduces Isaac's current tear delay by 20%. Missiles can't be charged.
+* {{i|The Ludovico Technique|nr}}: Reduces Isaac's current tear delay by 20%. The tear can't be charged.
+** {{dlc|r}} Overrides Chocolate Milk.
+* {{i|Mom's Knife|nr}}: Reduces Isaac's current tear delay by 20%. Doesn't increase damage.
+* {{i|Marked}}: Isaac will automatically charge his shots. Fire rate increases when the crosshair is closer to Isaac, and damage increases when the crosshair is farther from Isaac.
+* {{i|Mega Blast}}: Firing the Mega Blast beam while Chocolate Milk charges preserve the charge, but does not increase the beam's damage.
+* {{i|Neptunus}}: Overrides Chocolate Milk's active charge. Tear damage is determined by how charged Neptunus is.
+** '''Neptunus''' + {{i|Kidney Stone|n}}: Isaac will not fire any tears during the Kidney Stone burst.
+* {{i|Soy Milk|nr}}: Overrides Chocolate Milk, but Isaac gains a flat +1 damage bonus after the Soy Milk damage penalty.
+** {{dlc|r}} Shoots moderately charged shots at a quick pace with no increase in damage.
+* {{i|Sprinkler|a+nr}}: The size and damage of the sprinkler's tears depend on Isaac's current charge amount.
+** {{dlc|r}} No effect on Sprinkler.
+* {{i|Technology|nr}}: Reduces Isaac's current tear delay by 20%. Lasers can't be charged.
+** {{dlc|r}} Lasers can be charged, dealing up to 4× damage when fully charged. Low-damage lasers can also be fired rapidly.
+*** At 30.00 fire rate or above, charging is no longer needed and lasers deal 4× damage.
+* {{i|Tech X|anr}}: Reduces Isaac's current tear delay by 20%. Doesn't increase damage.
+
+== In-game Footage ==
+{{#ev:youtube|9xZqH9u9ZMc||inline}} {{#ev:youtube|SVMHMEcYGo8||inline}}
+
+== Trivia ==
+* {{dlc+|a}} This item is used in {{chal|Onan's Streak}}.{{dlc-}}
+
+{{nav|fr=Chocolat Chaud}}

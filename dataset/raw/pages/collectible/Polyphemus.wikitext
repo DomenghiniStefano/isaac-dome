@@ -1,0 +1,46 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 169
+ | quote       = Mega tears
+ | description = Isaac fires huge tears that deal massive [[damage]], but [[Tears|fire rate]] is greatly decreased. If a tear kills an enemy, it travels on with any leftover damage.
+ | quality     = 4
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Greatly increased [[damage]]: <math display="inline">{(Damage + 4) \times 2}</math>
+* {{dlc|nr}} [[Tears]] down: <math display="inline">{(Delay \times 2.1) + 3}</math>
+* {{dlc|r}} Tears fired per second * 0.42.
+* If a tear kills an enemy and has left over damage, the tear travels on with the remaining damage.
+
+== Notes ==
+* {{dlc|nr}} Polyphemus is a [[special item]].
+
+== Synergies ==
+* {{i|20/20|r}}: Damage is reduced and tear rate is increased.
+* {{i|Abyss}}: When Polyphemus is picked up instead of being converted into a locust, it grants all of Abyss's locusts the high damage up without suffering the tears down allowing Isaac to increase his damage rate substantially the more items he uses Abyss on.
+* {{i|Dr. Fetus}}: Increases tear delay, and after the first bomb explodes, a second bomb appears where the first one exploded, doing roughly half the damage of the first.
+* {{i|The Inner Eye}}/{{i|Mutant Spider}}/{{I|C Section}}: The tear rate is not lowered further, but the effect on damage becomes a flat +5 bonus instead.
+* {{C|The Forgotten}}: The Forgotten's bone club becomes massive. It deals very high damage but has a very low swing rate.
+* {{i|Rock Bottom}}: Allows Isaac to keep his previous fire rate in addition to the massive damage boost.
+* {{i|Shard of Glass|r}}: The rapidly spawning red tears do full damage.
+
+== Interactions ==
+* {{i|Haemolacria}}: The main tear retains the semi-piercing ability and may not burst when hitting a weaker enemy. Split tears do not semi-pierce.
+* {{i|Lachryphagy}}: Greatly increases how big the fed tear can grow.
+* {{i|Lost Contact}}: Isaac's tears will block enemy shots and continue, but lose 10 damage. If the tear had less than 10 damage left, it disappears.
+* [[Piercing tears]]: Semi-piercing is replaced by proper piercing, with no loss of damage on any enemy contact.
+* {{i|Polyphemus}}: No further effect when multiple copies are acquired.
+
+== In-game Footage ==
+{{#ev:youtube|5MdbAQFZKXM}}
+
+== Trivia ==
+* Much like other eye-altering passive items, Polyphemus has a unique appearance on {{C|The Forgotten}}, appearing as an empty eye socket.
+* Polyphemus, ancient Greek for "The much vaunted", is a Cyclops. He is the son of Poseidon and the sea nymph Thoosa. This item is a reference to the cyclops named Polyphemus from the poem by Homer called "The Odyssey"
+* This item is used in {{chal|Slow Roll}}.
+
+{{nav|fr=Polyphème}}
+[[Category:Special items]]

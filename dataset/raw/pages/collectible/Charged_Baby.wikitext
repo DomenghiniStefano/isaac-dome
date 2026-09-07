@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 372
+ | quote       = Bbbzzzzzt!
+ | description = Spawns a [[familiar]] that occasionally drops a {{E|Lil' Battery}}, gives an active item charge, or [[petrification|petrifies]] all enemies in the room.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable offensive nocantrip
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Spawns a battery [[familiar]] that, while Isaac is in an uncleared room, every 30 seconds, starting from the moment it has been picked up, does one of the following:
+** Spawns a {{E|Lil' Battery}}. It does this a maximum of 2 times per [[room]].
+*** {{dlc|r}} Can also spawn a {{E|Micro Battery|n}} or {{E|Mega Battery|n}} instead.
+** Adds a charge to Isaac's [[activated collectible|activated item]]. It does this a maximum of 2 times per [[room]].
+** [[Petrification|Petrifies]] all enemies for 1.3 seconds.
+** Nothing.
+
+== Notes ==
+* Charged Baby becomes very powerful as {{C|Lilith}} in [[Greed mode]], as the duplicates will continue to spawn Lil' Batteries, leading to a huge chain of familiars.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Charged Baby having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+* In an uncleared room, if Charged Baby familiar has reached the maximum of spawned batteries and/or added activated item charges, Isaac may re-enter the room (e.g. by bombing a closed door, having {{t|Door Stop}} or {{I|Mercurius}}) to reset Charged Baby's effect limits.
+** This effectively allows farming for batteries and activated item charges, given the player's patience, ability to avoid enemies present in the room, and a way to re-enter the room indefinitely.
+
+== Synergies ==
+* {{i|BFFS!}}: Familiar is bigger and drops Lil' Batteries more often. No effect on its other abilities.
+
+== In-game Footage ==
+{{#ev:youtube|ZqoR0lhfg2A}}
+
+{{nav|battery|fr=Bébé Chargé}}

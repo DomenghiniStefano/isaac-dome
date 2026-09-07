@@ -1,0 +1,25 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 354
+ | quote       = {{dlcalt|Don't swallow the prize!|r=HP up. Don't swallow the prize!}}
+ | description = Grants one full [[Red Heart container]] and drops a random [[trinket]]. {{Dlc|r}} Heals 1 additional {{e|Red Heart}}.
+ | quality     = 2
+ | tags        = nolostbr
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Grants one full [[Red Heart container]].
+** {{Dlc|r}} Heals 1 additional {{e|Red Heart}}.
+* Spawns one random [[trinket]].
+
+== In-game Footage ==
+{{#ev:youtube|u_0ZC3gqLBo}}
+
+== Trivia ==
+* This item is a reference to [[wikipedia:Cracker Jack|Cracker Jack]], a snack that is well-known for containing a prize in every bag.
+* Despite the item description, swallowing the trinket through {{i|Marbles}} or a [[Gulp!]] pill has no known additional effect.
+
+{{nav|fr=Boîte de Céréales}}

@@ -1,0 +1,45 @@
+{{infobox boss
+ | name        = Monstro II
+ | id          = 43
+ | environment = <u>Boss</u><br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|The Void}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}<br><u>Alternate path</u><br>{{floor|Corpse}}
+ | base hp     = 632.5
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Monstro's Lung}} (1% chance)
+}}
+
+'''Monstro II''' is a [[boss]] that can appear in the {{s|Depths}} and the {{s|Dank Depths}}.
+
+== Behavior ==
+* Hops towards Isaac, similar to {{e|Monstro}}.
+* If Isaac is standing to the left or right side of Monstro II, he will shoot a horizontal {{i|Brimstone}} laser.
+* Jumps off-screen and lands on Isaac's position two times in a row.
+** Shoots 8 projectiles in all directions on his first landing. Each projectile deals a full heart of damage.
+** Spawns 4 {{e|Sucker}}s on his second landing.
+*** Suckers caught in Monstro II's hops, as well as his jump and his Brimstone attack, are killed.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|1}}: 20% smaller. Moves and attacks much faster, but only spawns 2 Suckers when landing. {{dlc|r}} Has 10% less HP (569.25).
+
+== Gallery ==
+<gallery>
+File:Boss Monstro II red ingame.png|Red Champion Monstro II.
+File:Boss Delirium Monstro II ingame.png|Monstro II as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Notes ==
+* Monstro II can often be seen with 2 {{e|Attack Fly|text=Attack Flies}} to its left and right sides.
+
+== Trivia ==
+* Monstro II appeared in the original ''The Binding of Isaac.''
+* He is the posthumous version of Monstro.
+* {{e|Gish}} is his alternate version.
+* A spinal cord can be seen attached to Monstro II in his Versus image, implying that Monstro had a lower body at one point. The spine can also be seen when he fires a Brimstone laser.
+* Monstro II is missing a tooth, most likely a reference to {{i|Monstro's Tooth}}.
+* In the original ''The Binding of Isaac'', Monstro II was the very first posthumous boss prior to the ''Wrath of the Lamb'' DLC.
+* He is Edmund McMillen's least favorite boss solely due to his name.
+
+{{nav|boss}}
+
+[[Category:Chapter 3 bosses]]
+[[Category:Depths bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Debut bosses in Rebirth]]

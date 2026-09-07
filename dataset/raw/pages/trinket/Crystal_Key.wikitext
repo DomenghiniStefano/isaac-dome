@@ -1,0 +1,52 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 170
+ | quote       = Call to the other side
+ | description = Whenever Isaac clears a room, has a chance to open a neighboring {{r|Red Room}}.
+ | tags        = nogreed
+ | unlocked by = Crystal Key
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Whenever Isaac clears a room, has a chance to open a neighboring {{r|Red Room}}.
+** This effect can occur while Isaac is inside a Red Room, but the chance is smaller.
+
+== Notes ==
+* It's possible to increase the chance of a {{r|Red Room}} unlocking if multiple Crystal Keys are held, e.g. from absorbing using {{I|Smelter}}, holding {{i|Mom's Box}}, having a [[Golden Trinket|golden]] Crystal Key. The chance for a Red Room door to unlock depends on the number of Crystal Keys held and if the room cleared is normal or Red.
+{| class="wikitable sortable"
+|-
+! Crystal Key Count
+! Normal Room
+! Red room
+|-
+| 1
+| 33.3%
+| 12.5%
+|-
+| 2
+| 50%
+| 16.6%
+|-
+| 3
+| 100%
+| 25%
+|-
+| 4
+| 100%
+| 50%
+|-
+| 5
+| 100%
+| 100%
+|}
+
+* Each cleared wave of a {{r|Challenge Room}} has a chance to generate an adjacent Red Room.
+* Rooms that are re-fought using the {{i|D7}} have a chance to generate additional Red Rooms.
+* Doors do not have to open to an actual valid Red Room, and can lead outside the map and into an {{r|I AM ERROR}} Room.
+
+== In-game Footage ==
+{{#ev:youtube|ebqiGxAVsVk||inline}} {{#ev:youtube|s1r9Jduld5Y||inline}}
+
+{{nav|key|tainted lost unlock|mother unlock|fr=Clé de Cristal}}

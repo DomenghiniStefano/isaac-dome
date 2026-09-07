@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 17
+ | quote       = 99 keys
+ | description = Gives Isaac 99 {{E|Key}}s.
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = offensive nocantrip
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Gives Isaac 99 {{E|Key}}s.
+
+== Notes ==
+* Rerolling this item with the {{i|D4}}, etc., will not remove the 99 keys.
+* This item can appear when using the {{P|0 - The Fool?}} with 99 keys in inventory.
+
+== In-game Footage ==
+{{#ev:youtube|5sdcqJLu8-c||inline}} {{#ev:youtube|mZmfsy2qIuI||inline}}
+
+== Trivia ==
+* A [[wikipedia:skeleton key|skeleton key]] is a type of master key that can be used to open most types of locks, usually warded locks.
+* This item is the Key counterpart to {{i|A Dollar}} and {{i|Pyro}}.
+
+{{nav|key modifier|key|zh=骷髅钥匙|fr=Clé Squelette}}

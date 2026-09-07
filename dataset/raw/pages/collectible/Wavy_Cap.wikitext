@@ -1,0 +1,50 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 582
+ | quote       = Tears up. A mind changing experience!
+ | description = Increases [[tears]], decreases [[speed]], and distorts the screen. All effects become more pronounced with repeated use, and wear off by clearing rooms.
+ | quality     = {{dlcalt|1|r+=0}}
+ | tags        = mushroom offensive
+ | recharge    = 0.5s
+}}
+
+{{cit|a|r}}
+
+== Effects ==
+* Upon use, grants +0.75 [[fire rate]], -0.03 [[speed]], and distorts the screen and background music. The effects can be stacked in the same room, and the distortion becomes more pronounced with repeated use. After repeated uses, the colors begin to turn very bright and intense.
+** Each use increases the recharge time, which starts at 0.5 seconds with the 1st use, and ends with 15 seconds on the 9th use. After the 10th use, it no longer recharges automatically though it can be recharged and used even more through {{E|Lil' Battery|text=Lil' Batteries}}.
+** Leaving the room doubles the speed penalty and multiplies the fire rate bonus by x0.4, for the uses in that room.
+** Clearing a room removes one use's worth of penalties and bonuses, giving +0.06 speed and -0.3 fire rate.
+** Isaac's costume will change the stronger the Item's effects get.
+* {{transformation contribution|Fun Guy}}
+
+== Notes ==
+* This item can very rarely drop from destroying [[Rocks#Mushrooms|mushrooms]] in the {{r|Secret Room}}.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Gives a damage bonus which lasts until the next floor equal to 0.2 × the maximum number of times Wavy Cap's effects have been stacked.}}
+* {{Book of Virtues synergy|description=Creates a single mushroom wisp on the middle ring, firing 1.5 damage tears. Only one of these wisps can exist at a time.}}
+* {{i|Rock Bottom}}: The distortion effect will wear off eventually, but the highest reached fire rate bonus won't. However, Wavy Cap will no longer have any positive effects until an even higher bonus is reached.
+
+== Interactions ==
+* {{c|Tainted Lazarus}} / {{i|Esau Jr.}}: The distortion effect will not be removed when flipping between characters.
+
+== In-game Footage ==
+{{#ev:youtube|HLDIDfwzmGU}}
+
+== Trivia ==
+* ''Wavy Cap'' originates from the ''Antibirth'' mod, and was called [[anti:Black Mushroom|Black Mushroom]]. By extension, it was also from the ''Community Remix'' mod for the flash version.
+** In ''Community Remix'', its effects were permanent, always had an instant recharge time, and did not have any screen distortion effects.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+* Since the fire rate increase is flat, it is technically possible to reach the hard cap of 120.0 with enough uses. In practice this renders the game unplayable due to distortion.
+* The distortion effect applied to Isaac is very similar to the one seen in ''[[wikipedia:Yoshi's Island|Yoshi's Island]]'' when touching a Fuzzy.
+* On final stages of the distortion, the wave effect will appear to make parts of the top of the screen on the lower screen and the lower screen on top of the screen, while bright colors dance on the screen, similar to how psychedelic trips are described.
+* Wavy Cap, also known as ''[[wikipedia:Psilocybe cyanescens|Psilocybe cyanescens]],''  is a species of potent psychedelic mushroom.
+
+== References ==
+<references />
+
+== Bugs ==
+{{bug|plat=PS4, PS5| Using the item causes the game to crash.}}
+{{bug|dlc=nr+|If the player continues a save after maximizing the use of the Wavy Cap, they will respawn with the fire rate increase and changed appearance, but none of the screen effects. The screen effects will return at the same intensity once a room is cleared.}}
+
+{{nav|fun guy|mushroom|fr=Psilocybe Cyanescens}}

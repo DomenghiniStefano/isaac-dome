@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | id          = 336
+ | quote       = Toxic aura tears
+ | description = Grants [[piercing tears|piercing]] and [[spectral tears|spectral]] tears. Increases tear size (without increasing [[damage]]) while greatly reducing [[range]] and [[shot speed]].
+ | quality     = {{dlcalt|3|r+=2}}
+ | tags        = summonable dead offensive
+}}{{Distinguish|The Sad Onion}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants [[piercing tears|piercing]] and [[spectral tears|spectral]] tears.
+* {{dlc|nr}} +0.25 [[range]].
+* {{dlc|r}} -1.5 [[range]].
+* -0.4 [[shot speed]].	
+* {{dlc|nr}} -0.5 [[tear falling speed]].
+* {{Dlc|nr}} Tear size multiplier: 1.5x.
+* {{Dlc|r}} +0.22 tear size.
+
+== Notes ==
+* Although the description says "Toxic aura tears", the tears do not inflict [[poison]] damage.
+* Due to the spectral tears, tears will go through walls and the floor in a {{R|Crawl Space}}.
+
+== Synergies ==
+* {{i|Incubus}}: Does not affect shot speed or tear size, but still gives the piercing effect.
+** {{dlc|r}}: Shot speed, range, and tear size will be affected.
+* {{i|Lost Contact}}: Tears will destroy enemy projectiles without being destroyed in the process.
+
+== Interactions ==
+* {{C|Azazel}}:  Range penalty is the only effect.
+* {{i|Dr. Fetus}}: Bombs are slow to fire and will pass through enemies, making it far more difficult to hit them with explosions.
+** {{Dlc|r}} Bombs also deal 2.5x Isaac's damage to enemies when passing through them.
+* {{i|Epic Fetus}} / {{i|Brimstone}}: Overrides Dead Onion, although stat effects apply.
+* {{i|The Ludovico Technique}}: Tear moves very slowly making it hard to kill mobile enemies.
+* {{i|Mom's Knife}}: Overrides Dead Onion.
+* {{i|Monstro's Lung|nr+}}: Fires a barrage of large tears that disappear at close range. Spectral and piercing effects make it very effective at close range.
+* {{i|My Reflection|nr}}: Tears will travel a very short distance before they return to Isaac and eventually disappear.
+* {{i|Proptosis}}: While tears do massive damage at short range, it makes it a lot easier to be damaged by explosive enemies or enemies that do contact damage.
+* {{i|Rubber Cement}}: Edges of tears retain both piercing and spectral effects; however, the center of the tear will lose them and bounce.
+* {{i|Sulfuric Acid}}: Acid Tears no longer impact objects and can no longer open Secret Rooms.
+** {{dlc|r}} Acid Tears can break objects.
+* {{i|Technology|r}}: Laser size is increased.
+
+== In-game Footage ==
+{{#ev:youtube|GOMzUIm2XWA}}
+
+== Trivia ==
+* Dead Onion has the most stat downs out of any other item if tear falling speed is counted as a stat.
+
+{{nav|fr=Oignon Pourri}}

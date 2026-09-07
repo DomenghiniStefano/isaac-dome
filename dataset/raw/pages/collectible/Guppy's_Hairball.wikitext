@@ -1,0 +1,45 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 187
+ | quote       = Swing it
+ | description = Spawns a [[familiar]] that loosely follows behind Isaac, which blocks shots and can be swung like a flail to damage enemies. Grows bigger by killing enemies.
+ | quality     = 1
+ | tags        = summonable guppy offensive
+ | unlocked by = Guppy's Hairball
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Spawns a hairball [[familiar]] that loosely follows behind Isaac, blocks shots, and can be swung like a flail to damage enemies.
+** The ball deals 5 damage per tick, but grows, increasing damage by 2 each time it kills an enemy — up to 4 times for a maximum of 13 damage. The damage it deals per tick (each half-second) is <code>(level × 2) + 3</code>.
+** The hairball level decreases upon entering a new floor: if level 2, it reverts to level 1. If level 3 or 4, it reverts to level 2. If level 5, it reverts to level 3.
+* {{transformation contribution|Guppy}}
+
+== Notes ==
+* The hairball's hitbox is the same size regardless of level.
+* {{dlc|na+r}} If Isaac has transformed into {{tf|Guppy}}, Guppy's Hairball spawns Blue Flies when it deals damage.
+* If [[Blindfolded]], the ball occasionally spawns a [[Blue Fly]] while it's damaging an enemy.
+* {{dlc|r}} The hairball will be reset to level 1 after entering and leaving the {{e|Mother's Shadow|n}} escape sequence.
+
+== In-game Footage ==
+{{#ev:youtube|sLWq7VX-INU||inline}} {{#ev:youtube|Uw0P9YrkPD8||inline}}
+
+== Trivia ==
+* This item is used in {{chal|Cat Got Your Tongue}}.
+* The function and flavor text of this item might reference the idioms "no room to swing a cat" and "can't swing a dead cat without hitting...".
+* In the original ''The Binding of Isaac'', Guppy's Hairball did not count towards the Guppy transformation.
+
+== Gallery ==
+<gallery>
+File:Guppy's Hairball level1.png|Guppy's Hairball level 1.
+File:Guppy's Hairball level2.png|Guppy's Hairball level 2.
+File:Guppy's Hairball level3.png|Guppy's Hairball level 3.
+File:Guppy's Hairball level4.png|Guppy's Hairball level 4.
+File:Guppy's Hairball level5.png|Guppy's Hairball level 5.
+</gallery>
+
+== Bugs ==
+{{bug|Killing the [[Hush Fly|Hush Flies]] that [[Hush]] spawns does not increase the hairball's level.|dlc=ana+}}
+
+{{nav|guppy|cat|fr=Boule de Poils de Guppy}}

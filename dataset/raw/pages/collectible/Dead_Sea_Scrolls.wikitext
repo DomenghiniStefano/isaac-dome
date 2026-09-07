@@ -1,0 +1,81 @@
+{{infobox activated collectible
+ | id          = 124
+ | quote       = It's a mystery
+ | description = Triggers the effect of a random [[activated item]] from a list of possible options (not every activated item is included).
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = 2
+}}
+
+{{cit|a}}
+
+== Effect ==
+When used, a random activated item effect will be activated from the following:
+{{column list | width = 15em | content =
+* {{i|Anarchist Cookbook}}
+* {{i|Best Friend|r}}
+* {{i|Bob's Rotten Head}}
+* {{i|The Book of Belial}}
+* {{i|Book of Revelations}}
+* {{i|Book of Shadows}}
+* {{i|The Book of Sin}}
+* {{i|Crack the Sky}}
+* {{i|Crystal Ball|r}}
+* {{i|Deck of Cards}}
+* {{i|Doctor's Remote|r}}
+* {{i|The Gamekid}}
+* {{i|The Hourglass}}
+* {{i|Kamikaze!|nr}}
+* {{i|Lemon Mishap}}
+* {{i|Mom's Bottle of Pills}}
+* {{i|Mom's Bra}}
+* {{i|Mom's Pad|r}}
+* {{i|Monster Manual|r}}
+* {{i|Monstro's Tooth}}
+* {{i|Mr. Boom}}
+* {{i|My Little Unicorn}}
+* {{i|The Nail}}
+* {{i|The Necronomicon|r}}
+* {{i|The Pinking Shears}}
+* {{i|Prayer Card|r}}
+* {{i|Shoop da Whoop!}}
+* {{i|Spider Butt|r}}
+* {{i|Tammy's Head}}
+* {{i|Telepathy For Dummies|r}}
+* {{i|Teleport!}}
+* {{i|We Need To Go Deeper!}}
+* {{i|Yum Heart}}
+}}
+
+== Notes ==
+* When {{i|Bob's Rotten Head}} or {{i|Shoop da Whoop!}} is chosen, Dead Sea Scrolls will not lose its charge until said item is thrown or released.
+** This allows Isaac to press Spacebar again if need be to skip over said items in the rotation while keeping full charge, allowing it to be used again for a different effect.
+*** This doesn't work if Bethany has Soul Charges and {{i|Book of Virtues}}.
+* It may be helpful to use Dead Sea Scrolls upon entering an enemy room, as many of its effects such as {{i|The Gamekid}} and {{i|Tammy's Head}} are helpful in combat.
+* As many of Dead Sea Scrolls effects involve explosions, using it near [[Rocks|Tinted Rocks]] or potential {{R|Secret Room}} entrances can potentially be helpful when low on bombs.
+** While {{I|Anarchist Cookbook}} and {{I|Kamikaze!|nr}} can hurt the player, effects such as {{I|Book of Revelations}}, {{I|The Nail}}, {{I|Crystal Ball|r}} and {{I|Prayer Card|r}} will pay out with more health than is lost long-term.
+* {{dlc|r}} Since {{i|We Need To Go Deeper!}} guarantees a crawlspace if used on special tiles, it may be helpful to use Dead Sea Scrolls on such tiles whenever possible.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Each wisp spawned has the attributes of the active item that was triggered.}}
+
+== Interactions ==
+* {{I|Car Battery}}: Two effects are activated, with only one being named on screen.
+
+== In-game Footage ==
+{{#ev:youtube|qF9nrAcINmc||inline}} {{#ev:youtube|72FLCJxwrOk||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Dead Sea Scrolls.png|{{plat|3DS}} The icon of Dead Sea Scrolls as seen on the lower 3DS screen.
+File:Dead Sea Scrolls giantbook.png|Dead Sea Scrolls' splash image which appears when it's activated.
+</gallery>
+
+== Trivia ==
+* The [[wikipedia:Dead Sea Scrolls|Dead Sea Scrolls]] are a collection of 981 Hellenistic-period manuscripts found within caves on the north shore of the Dead Sea.
+** The pickup quote "It's a mystery" references the item's effect, as well as the fact that the real Dead Sea Scrolls are so tattered and eroded that reading them can prove impossible.
+
+== Bugs ==
+{{bug|If an effect triggers and adds to the character's appearance while being held ({{i|Monstro's Tooth}} or {{i|Kamikaze!|nr}} for example), the additional visual effects will remain for the rest of the game or until they are replaced.}}
+
+{{nav|fr=Manuscrits de la Mer Morte}}

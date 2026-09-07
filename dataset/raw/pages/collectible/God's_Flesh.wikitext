@@ -1,0 +1,46 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 398
+ | quote       = Shrink shot!
+ | description = Tears have a chance to [[shrink]] enemies, making them run away from Isaac. Shrunk enemies can be crushed and killed by walking over them.
+ | quality     = 1
+ | tags        = summonable mushroom offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Tears now have a {{dlc|nr+}} 10% / {{dlc|r+}} 20% chance to apply a [[Status Effects#Effects|shrinking]] effect, causing enemies to shrink in size and also run away from Isaac.
+** Shrunk enemies can be crushed and killed by walking over them.
+** {{dlc|r}} Enemies that spawn from the death of a shrunken enemy will also be shrunken upon spawning. {{dlc|r+}} Enemies that release projectiles, explosions or other effects such as {{e|Soul Sucker}}s no longer perform their effect when killed while shrunken.
+* The shrinking effect lasts 5 seconds {{dlc|r+}} and enemies will flash white when the effect is about to end.
+* {{transformation contribution|Fun Guy}}
+
+== Notes ==
+* The shrinking effect does not affect bosses or mini-bosses.
+* {{dlc|nr+}} [[Champion]]s and enemies that explode upon death will damage Isaac if crushed.
+* Shrinking the heart of a {{E|Mask + Heart}} will cause its corresponding Mask to shrink as well. The Mask can be crushed and killed separately.
+* The chance to fire a shrinking tear does not scale with [[Luck]].
+
+== Synergies ==
+* {{i|Compound Fracture}} / {{i|Cricket's Body}} / {{i|The Parasite}}: Split tears will retain shrinking effect if main tear had shrinking effect. With Compound Fracture and The Parasite, tears with a shrinking effect look like normal tears.
+* {{i|Finger!}}: Finger can also apply the shrinking effect.
+* {{i|Lachryphagy}}: Will occasionally fire tears with shrinking effect. All burst tears have a chance to apply the shrinking effect.
+* {{i|The Ludovico Technique}}: Tear flickers blue, capable of shrinking enemies when it does.
+* {{i|Technology Zero}}: Electricity connected to tears with shrinking effect has a chance to shrink enemies.
+
+== Interactions ==
+* {{i|Blood Puppy}}: If an angry Blood Puppy is shot with a God's Flesh tear, Isaac can instantly change it back to a tamed Blood Puppy by touching it.
+* {{i|Haemolacria}}: Only main tear has a chance to apply a shrinking effect.
+* {{I|Brimstone}} / {{C|Azazel}}: Brimstone laser becomes blue.
+
+== In-game Footage ==
+{{#ev:youtube|J2TE418nXJw}}
+
+== Trivia ==
+* The term ''God's flesh'' is a nickname for psychedelic mushrooms.
+* In Aztec culture, hallucinogenic mushrooms were eaten during religious ceremonies. The Aztec name for these mushrooms translates to "god's flesh".
+* It may also be a reference to Industrial/Experimental Metal band [[wikipedia:Godflesh|Godflesh]].
+* The effects of this item are similar to the [[dukenukem:Shrinker (DN3D)|Shrinker]] from Duke Nukem 3D, including the ability to kill shrunken enemies by stepping on them.
+
+{{nav|fun guy|mushroom|fr=Chair des Dieux}}

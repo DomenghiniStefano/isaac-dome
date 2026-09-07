@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlcalt|na+=Afterbirth|nr=Afterbirth+}}
+ | id          = 365
+ | quote       = Lost protector
+ | description = Spawns a fly [[familiar]] that moves in a straight line and circles around the first wall or [[obstacle]] it hits. {{dlc|nr}} It deals 105 damage per second on contact. {{dlc|r}} It deals 56 damage per second and forces nearby enemies to attack it.
+ | quality     = 2
+ | tags        = summonable monstermanual offensive fly
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Spawns a fly [[familiar]] that moves in a straight line and attaches itself to the first wall or [[Obstacles|obstacle]] it comes into contact within each [[Rooms|room]].
+** The Lost Fly will then move around the room functionally similar to the {{E|Guts}}.
+* {{dlc|nr}} If any enemies walk into its path, it will deal 7 contact damage per tick or 105 damage per second.
+* {{dlc|r}} Lost Fly deals 7 contact damage every 7 ticks, or 30 damage per second. Enemies near Lost Fly will target it instead of Isaac.
+** Some enemies that do not normally give chase to Isaac, such as {{E|Mulligan}}s, will chase after the Lost Fly if nearby it.
+* If the obstacle it is attached to is destroyed, then it will continue rolling in the direction it was previously traveling until it meets another wall or obstacle.
+* {{transformation contribution|Beelzebub}}
+
+== In-game Footage ==
+{{#ev:youtube|lmVZ-gN9qX8}}
+
+== Trivia ==
+* {{dlc|r}} The fly will glow slightly in {{Curse|Darkness}}, making its position always visible.
+* The name of the item is likely a reference to the maze-solving algorithm called the [[wikipedia:Maze-solving algorithm#Wall follower|left-hand rule]], which is based on walking forward and turning left as far as possible until you find an exit to the maze.
+
+{{nav|fly}}

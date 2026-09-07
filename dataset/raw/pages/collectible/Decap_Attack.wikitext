@@ -1,0 +1,41 @@
+{{infobox activated collectible
+ | costume name = The Pinking Shears
+ | dlc         = r
+ | id          = 729
+ | quote       = Chuck away!
+ | description = Throws Isaac's head, which is still able to fire tears at the spot it lands. Reactivating the item or stepping on the head reattaches it.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge    = 4s
+ | unlocked by = Decap Attack
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Throws Isaac's head while allowing to shoot from the spot it lands, blocking enemy shots as well as dealing contact damage to nearby enemies. Meanwhile, Isaac's body can no longer shoot tears.
+** The head does 24 damage on impact and 4 damage per tick (12 damage per second) on contact when it's on the ground.
+** The head can return by picking it up with the body, or by using the item again without requiring charges. Both the throwing and retaking of the head can deal damage to enemies passing through.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Chimera}}.{{dlc-}}
+* This item acts similarly to {{c|Tainted Forgotten}}'s birthright.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Grants Judas +2 damage and ×3 tears fired per second while his head is detached from his body.}}
+* {{Book of Virtues synergy|description=A stationary wisp spawns where Isaac was when he threw his head that fires tears in the same direction Isaac does. The wisps do not persist between rooms.}}
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{c|The Forgotten}}: The head changes in sync when switching between The Forgotten and {{c|The Soul}}. The Forgotten's bone attack still belongs to the body, while The Soul's tear attack belongs to the head as expected.
+* {{c|Tainted Forgotten}}: Throws the head of Tainted Forgotten, but the bone attack still remains on his body. The head can only be recalled by reactivating the item or having the body touch the head.
+* {{i|Transcendence}}/{{i|The Pinking Shears}}: Isaac is invisible apart from his shadow while both items are active.
+* {{i|Mom's Knife}}: The knife still follows and shoots from the body, the head doesn't shoot tears.
+
+== Trivia ==
+* The name, description, effect and sprite of this item is a reference to the [[wikipedia:Decap Attack|Sega Genesis game of the same name]] from 1991.
+
+== Bugs ==
+{{bug|Playing as {{c|Tainted Lazarus}}, flipping while the head is detached and leaving the room will cause the tears from the form holding Decap Attack to still be detached. This can also happen to the form not holding Decap Attack, by flipping twice in the same room while the head is detached, then returning the head.}}
+
+{{nav|tainted forgotten unlock|delirium unlock|fr=Décapitation}}

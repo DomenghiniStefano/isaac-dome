@@ -1,0 +1,66 @@
+{{infobox activated collectible
+ | name        = The Book of Sin
+ | id          = 97
+ | quote       = Reusable item generator
+ | description = Spawns a random [[coin]], [[heart]], [[bomb]], [[key]], [[battery]], [[pill]] or [[card]] near Isaac.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = book offensive
+ | recharge    = 4
+ | unlocked by = The Book of Sin
+}}
+
+{{cit|ua}}
+
+== Effect ==
+* On use, spawns a random [[coin]], [[heart]], [[bomb]], [[key]], [[battery]], [[pill]] or [[card]] near Isaac.
+* {{transformation contribution|Bookworm}}
+
+== Notes ==
+* {{dlc|nr}} Hearts are proportionally more likely to be generated, with {{e|Red Heart}}s, {{e|Soul Heart}}s and {{e|Black Heart}}s each having a 1/9 chance of being chosen, the other 6/9 being distributed among the other categories.
+* {{dlc|r}} Each category has a 1/7 chance of being chosen.
+* The card category includes [[rune]]s, {{p|Dice Shard}}, {{p|Emergency Contact}} and {{p|Cracked Key}}.
+* {{dlc+|r}} The heart category has the following distribution:
+:: {| class="wikitable"
+! Type !! Chance
+|-
+| {{e|Red Heart}} || 48.3%
+|-
+| {{e|Soul Heart}} || 16.1%
+|-
+| {{e|Black Heart}} || 16.1%
+|-
+| {{e|Bone Heart|n}} || 6.4%
+|-
+| {{e|Rotten Heart|n}} || 6.4%
+|-
+| {{e|Eternal Heart}} || 3.2%
+|-
+| {{e|Gold Heart|n}} || 3.2%
+|}
+::* {{e|Half Red Heart}}s, {{e|Half Soul Heart|n}}s and {{e|Blended Heart|n}}s cannot be generated.{{dlc-}}
+* {{E|Penny|text=Coins}} can be of any type, with higher value coins, including {{E|Lucky Penny|text=Lucky Pennies}}, and {{E|Sticky Nickel|text=Sticky Nickels}}, being rarer.
+* {{E|Bomb}}s and {{E|Key}}s will always be singular (unless Isaac has {{i|BOGO Bombs}} and/or {{i|Humbleing Bundle}}).
+* {{dlc|r}} The Book of Sin cannot generate a {{E|Micro Battery|n}}.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Grants a random wisp based on one of the [[Seven Deadly Sins]]. The wisp spawned isn't linked to the pickup dropped.
+** {{e|Pride}}: a blue bomb wisp in the middle ring. When destroyed, a small homing bomb that deals normal troll bomb damage is spawned.
+** {{e|Greed}}: 3 yellow coin wisps in the outer ring. Their tears may petrify enemies like {{i|Midas' Touch}}.
+** {{e|Wrath}}: an orange bomb wisp in the middle ring, which fire flaming tears. They drop troll bombs when continuously firing, and leave a bomb pickup when they die.
+** {{e|Envy}}: a white face-like wisp in the outer ring.
+** {{e|Lust}}: a randomly colored pill wisp in the inner ring, with effects that are the same as {{i|Mom's Bottle of Pills}} wisps.
+** {{e|Gluttony}}: a heart wisp in the middle ring, with effects that are the same as {{i|Yum Heart}} wisps.
+** {{e|Sloth}}: a Bob's Head wisp in the middle ring. Their tears travel in an arc like {{i|Ipecac}} but don't always explode on impact. There is a small chance for an exploding tear.}}
+
+== In-game Footage ==
+{{#ev:youtube|Hz21S-wPG6w||inline}} {{#ev:youtube|D95jGjHr-VM||inline}}
+
+== Trivia ==
+* The Book of Sin is a reference to the [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]]. Unlike other Book items, The Book of Sin doesn't appear to be based on a real book or scripture.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The Book of Sin.png|{{plat|3DS}} The icon of The Book of Sin as seen on the lower 3DS screen.
+</gallery>
+
+{{nav|book|fr=Livre du Péché}}

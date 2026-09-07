@@ -1,0 +1,31 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 318
+ | quote       = Conjoined friend
+ | description = Spawns a conjoined [[familiar]] which chases enemies close to Isaac, dealing ~6.43 damage per second.
+ | quality     = 1
+ | tags        = summonable monstermanual offensive stars
+}} {{disambig msg|the zodiac item|the boss|Gemini}}
+
+{{cit|p}}
+
+== Effect ==
+* Spawns a conjoined [[familiar]], much like {{E|Gemini}}'s small twin, Suture. It chases enemies close to Isaac, dealing 3 damage per tick (~6.43 damage per second).
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Gemini}}.{{dlc-}}
+* Despite its appearance and description, Gemini does not count towards the {{tf|Conjoined}} transformation.
+
+== Interaction ==
+* {{t|Duct Tape}}: The familiar will stay in place relative to Isaac, but the effect of chasing enemies persists.
+* {{I|King Baby}}: Suture will rest near King Baby if there are no enemies near Isaac, but will snap towards the enemy once one gets close enough to Isaac. Otherwise, no functional difference.
+* {{T|RC Remote}}: The familiar can be extended way past its attack range, and will still do contact damage, but will only chase when an enemy enters the usual aggro distance.
+
+== In-game Footage ==
+{{#ev:youtube|ubzle0utbtc}}
+
+== Trivia ==
+* {{dlc|a+}} The Gemini familiar is now animated, turning red and chasing enemies, similar to how Suture chases the player after Contusion is killed, based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1239674288 this Steam Workshop mod] by piber20.
+* Gemini's item ID is 318, putting it outside the range of other Zodiac items that are 299 to 309.
+
+{{nav|zodiac|fr=Gémeaux (Objet)}}

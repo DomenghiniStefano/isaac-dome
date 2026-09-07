@@ -1,0 +1,33 @@
+{{infobox trinket
+ | dlc         = a
+ | id          = 65
+ | quote       = Floooooooooop!
+ | description = {{dlc|nr}} Doubles Isaac's [[range]] and halves his [[tear falling speed]].<br>{{dlc|r}} +3 [[range]].
+}}
+{{cit|t|a}}
+
+== Effects ==
+* {{dlc|nr}} x2 [[range]].
+* {{dlc|r}} +3 [[range]].
+* {{dlc|nr}} x0.5 [[tear falling speed]].
+
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}} or {{e|Scolex}}.{{dlc-}}
+
+== Synergies ==
+* {{i|Mom's Box|nr}}: Quadruples the range.
+* {{A|Golden Trinket|r}} / {{i|Mom's Box|r}}: Having either increases [[range]] by 6. Having both by 9.
+
+== Interactions ==
+* {{C|Azazel|nr}}: Increases the laser's range, but doesn't double it.
+* {{i|Dr. Fetus}}: Shot bombs are very fast.
+* {{i|Incubus|nr}} / {{i|Fate's Reward}}: Only tear falling speed affects their shots, usually lowering effective range.
+* {{i|Ipecac|nr}}: Reduces the effective range of shots, as they fall faster.
+
+== In-game Footage ==
+{{#ev:youtube|5NSqv6A3cl8}}
+
+== Trivia ==
+* The Tapeworm is a well-known species of [[wikipedia:Cestoda|Cestoda]], a class of parasitic flatworms of the phylum Platyhelminthes, who can reach many meters of length within their host's intestines.
+
+{{nav|worm|fr=Ver Solitaire}}

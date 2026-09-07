@@ -1,0 +1,1402 @@
+{{infobox activated collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 285
+ | quote       = Reroll enemies
+ | description = {{dlc|nr}} Rerolls all [[monster]]s in the [[room]].<br>{{dlc|r}} Replaces all [[monster]]s in the [[room]] with weaker monsters.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = {{dlcalt|1|r=2}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* {{dlc|nr}} Upon use, rerolls all [[monster]]s in the [[room]].
+* {{dlc|r}} Upon use, replaces all [[monster]]s in the [[room]] with weaker monsters. Each monster type has a specific weaker monster it will transform into. If the monster is already at its weakest level, it usually transforms it into a background critter or kills it outright.
+** Some enemies can be transformed into obstacles or pickups instead.
+
+{{Clear}} <!--This is here to give the tables max width for better visibility-->
+
+== {{dlc+|r}} Monster Replacement Tables ==
+{| class="wikitable mw-collapsible mw-collapsed" style=""
+! colspan="10" | Affected monsters 
+|-
+| —
+| —
+| {{e|Crackle}}
+| {{e|Gurgle}}
+| rowspan=10 | {{e|Frowning Gaper}}
+| rowspan=29 | {{e|Gaper}}
+| rowspan=34 | {{e|Embryo}}
+| rowspan=65 | {{e|Small Maggot}}
+| rowspan=67 | ''Background worm(s)''
+|-
+| {{e|Scarred Double Vis}}
+| rowspan=2 | {{e|Double Vis}}
+| rowspan=4 | {{e|Vis}}
+| rowspan=6 | {{e|Cyclopia}}
+|-
+| {{e|Evis}}
+|-
+| —
+| {{e|Chubber}}
+|-
+| —
+| {{e|Vis Versa}}
+|-
+| —
+| {{e|Bloodshot Eye}}
+| rowspan=2 | {{e|Eye}}
+|-
+| —
+| {{e|Holy Eye}}
+|-
+| —
+| —
+| —
+| {{e|Blue Gaper}}
+|-
+| —
+| —
+| {{e|Bubbles}}
+| {{e|Blurb}}
+|-
+| —
+| —
+| {{e|Tainted Faceless}}
+| {{e|Faceless}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Flaming Gaper}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Nulls}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Greed Gaper}}
+|-
+| —
+| —
+| {{e|Hard Host}}
+| {{e|Host}}
+| rowspan=14 | {{e|Skinny}}
+|-
+| —
+| —
+| {{e|Mobile Host}}
+| {{e|Rotty}}
+|-
+| —
+| —
+| {{e|Flaming Fatty}}
+| rowspan=5 | {{e|Fatty}}
+|-
+| —
+| {{e|Shady}}
+| {{e|Fat Sack}}
+|-
+| —
+| {{e|Blue Conjoined Fatty}}
+| {{e|Conjoined Fatty}}
+|-
+| —
+| {{e|Cross Stoney}}
+| {{e|Stoney}}
+|-
+| —
+| —
+| {{e|Bloaty}}
+|-
+| —
+| —
+| —
+| {{e|Crispy}}
+|-
+| —
+| —
+| {{e|Holy Bony}}
+| rowspan=6 | {{e|Bony}}
+|-
+| —
+| —
+| {{e|Black Bony}}
+|-
+| —
+| —
+| {{e|Big Bony}}
+|-
+| —
+| —
+| {{e|Exorcist}}
+|-
+| —
+| {{e|Quad Revenant}}
+| {{e|Revenant}}
+|-
+| —
+| —
+| {{e|Maze Roamer}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Dople}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Level 2 Gaper}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Angelic Baby}}
+| rowspan=3 | {{e|Baby}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Wrinkly Baby}}
+|-
+| —
+| —
+| —
+| —
+| {{dlc|r+}}{{e|Fetal Demon}}
+|-
+| —
+| —
+| —
+| {{e|Begotten}}
+| {{e|Homunculus}}
+| {{e|Unborn}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Gurgling}}
+|-
+| —
+| —
+| —
+| {{e|Dank Charger}}
+| {{e|Drowned Charger}}
+| rowspan=16 | {{e|Charger}}
+| rowspan=29 | {{e|Maggot}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Carrion Princess}}
+|-
+| —
+| {{e|Bone Knight}}
+| {{e|Selfless Knight}}
+| rowspan=5 | {{e|Knight}}
+| rowspan=8 | {{e|Brain}}
+|-
+| —
+| —
+| {{e|Loose Knight}}
+|-
+| —
+| —
+| {{e|Black Knight}}
+|-
+| —
+| {{e|Snapper}}
+| rowspan=2 | {{e|Whipper}}
+|-
+| —
+| {{e|Flagellant}}
+|-
+| —
+| {{e|Black Maw}}
+| {{e|Oob}}
+| {{e|MemBrain}}
+|-
+| —
+| —
+| —
+| {{e|Poison Mind}}
+|-
+| —
+| —
+| —
+| {{e|Pon}}
+|-
+| —
+| —
+| —
+| {{e|Kamikaze Leech}}
+| rowspan=3 | {{e|Leech}}
+|-
+| —
+| —
+| —
+| {{e|Holy Leech}}
+|-
+| —
+| —
+| —
+| {{e|Adult Leech}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Grub}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Fistuloid}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Level 2 Charger}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Tainted Spitty}}
+| rowspan=2 | {{e|Spitty}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Conjoined Spitty}}
+|-
+| —
+| —
+| —
+| {{e|Scarred Para-Bite}}
+| rowspan=2 | {{e|Para-Bite}}
+| rowspan=11 | {{e|Round Worm}}
+|-
+| —
+| —
+| —
+| {{e|Cod Worm}}
+|-
+| —
+| —
+| —
+| {{e|Fred}}
+| rowspan=5 | {{e|Ulcer}}
+|-
+| —
+| —
+| {{e|Planetoid}}
+| rowspan=3 | {{e|Tumor}}
+|-
+| —
+| —
+| {{e|Camillo Jr.}}
+|-
+| —
+| —
+| {{e|Psy Tumor}}
+|-
+| —
+| —
+| —
+| {{e|Roundy}}
+|-
+| —
+| —
+| {{e|Tainted Tube Worm}}
+| {{e|Tube Worm}}
+| {{e|Night Crawler}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Tainted Round Worm}}
+|-
+| —
+| —
+| —
+| {{e|Tainted Mole}}
+| {{e|Mole}}
+|-
+| —
+| —
+| —
+| {{e|Pasty}}
+| {{e|Needle}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Floast}}
+| {{e|Fissure}}
+| rowspan=2 | {{e|Small Leech}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Elleech}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Mama Fly}}
+| {{e|Pustule}}
+| 3 {{e|Small Maggot}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Festering Guts}}
+| 5 {{e|Small Maggot}}
+|-
+| —
+| —
+| —
+| {{e|Psychic Maw}}
+| rowspan=9 | {{e|Maw}}
+| rowspan=19 | {{e|Horf}}
+| rowspan=36 | {{e|Gusher}}
+| rowspan=50 | {{e|Pacer}}
+| rowspan=51 | ''Dies''
+|-
+| —
+| —
+| —
+| {{e|Mr. Maw}} <small>(body)</small>
+|-
+| —
+| —
+| {{e|Dank Death's Head}}
+| rowspan=6 | {{e|Death's Head}}
+|-
+| —
+| —
+| {{e|Cursed Death's Head}}
+|-
+| —
+| —
+| {{e|Brimstone Death's Head}}
+|-
+| —
+| —
+| {{e|Redskull}}
+|-
+| —
+| —
+| {{e|Mockulus}}
+|-
+| —
+| —
+| {{e|Dusty Death's Head}}
+|-
+| —
+| —
+| —
+| {{e|Swinger}} <small>(body)</small>
+|-
+| —
+| —
+| —
+| {{e|Mr. Red Maw}} <small>(body)</small>
+| rowspan=4 | {{e|Red Maw}}
+|-
+| —
+| —
+| —
+| {{e|Floating Knight}}
+|-
+| —
+| —
+| —
+| {{e|Mr. Mine}}
+|-
+| —
+| —
+| —
+| {{e|Morningstar|r+}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Psychic Horf}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Dukie}}
+|-
+| —
+| —
+| —
+| {{e|Tainted Sub Horf}}
+| rowspan=2 | {{e|Sub Horf}}
+|-
+| —
+| —
+| —
+| {{e|Poot Mine}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Necro}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Level 2 Horf}}
+|-
+| —
+| —
+| {{e|Quakey}}
+| rowspan=2 | {{e|Pale Fatty}}
+| rowspan=3 | {{e|Blubber}}
+| rowspan=3 | {{e|Half Sack}}
+|-
+| —
+| {{e|Gutted Fatty}}
+| {{e|Vis Fatty}} <small>(body)</small>
+|-
+| —
+| —
+| —
+| {{e|Peeping Fatty}}
+|-
+| —
+| —
+| —
+| {{e|Mulliboom}}
+| rowspan=3 | {{e|Mulligoon}}
+| rowspan=10 | {{e|Mulligan}}
+|-
+| —
+| —
+| —
+| {{e|Blaster}}
+|-
+| —
+| —
+| —
+| {{e|Gas Dwarf}}
+|-
+| —
+| —
+| —
+| {{e|Drowned Hive}}
+| rowspan=2 | {{e|Hive}}
+|-
+| —
+| —
+| —
+| {{e|Swarmer}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Holy Mulligan}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Tainted Mulligan}}
+|-
+| —
+| —
+| {{e|Coal Boy}}
+| {{e|Danny}}
+| {{e|Nest}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Prey}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Bouncer}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Splasher}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Black Globin's Body}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Level 2 Gusher}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Black Goat}}
+| {{e|Goat}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Eggy}}
+| rowspan=9 | {{e|Hopper}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Tainted Hopper}}
+|-
+| —
+| —
+| —
+| {{e|Rag Man's Ragling}}
+| {{e|Ragling}}
+| rowspan=2 | {{e|Trite}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Twitchy}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Sticky Leaper}}
+| rowspan=2 | {{e|Leaper}}
+|-
+| —
+| —
+| —
+| {{e|Mom's Dead Hand}}
+| {{e|Mom's Hand}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Flaming Hopper}}
+|-
+| —
+| —
+| —
+| {{e|Flesh Maiden}}
+| {{e|Hanger}}
+| {{e|Keeper}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Ministro}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Butt Slicker}}
+| {{e|Buttlicker}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Leper}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Wraith}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Deep Gaper}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Fanatic}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Evil Twin}}
+|-
+| —
+| —
+| —
+| {{e|Tainted Pooter}}
+| rowspan=2 | {{e|Super Pooter}}
+| rowspan=2 | {{e|Pooter}}
+| rowspan=40 | {{e|Attack Fly}}
+| rowspan=40 | {{e|Fly}}
+| rowspan=42 | ''Background fly''
+|-
+| —
+| —
+| {{e|Bloodfly}}
+| {{e|Bulb}}
+|-
+| —
+| —
+| {{e|I.Blob}}
+| {{e|Clot}}
+| rowspan=12 | {{e|Clotty}}
+| rowspan=16 | {{e|Boil}}
+|-
+| —
+| —
+| {{e|Grilled Gyro}}
+| {{e|Grilled Clotty}}
+|-
+| —
+| —
+| {{e|Black Globin's Head}}
+| rowspan=3 | {{e|Globin}}
+|-
+| —
+| —
+| {{e|Cohort}}
+|-
+| —
+| —
+| {{e|Clickety Clack}}
+|-
+| —
+| —
+| {{e|Dank Globin}}
+| rowspan=3 | {{e|Gazing Globin}}
+|-
+| —
+| —
+| {{e|Cursed Globin}}
+|-
+| —
+| —
+| {{e|Black Globin}}
+|-
+| —
+| —
+| —
+| {{e|Mega Clotty}}
+|-
+| —
+| —
+| —
+| {{e|Meatball}}
+|-
+| —
+| —
+| —
+| {{e|Gyro}}
+|-
+| —
+| —
+| —
+| {{e|Cloggy}}
+|-
+| —
+| —
+| —
+| {{e|Flesh Mobile Host}}
+| {{e|Red Host}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Lump}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Walking Boil}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Blue Boil}}
+|-
+| —
+| —
+| —
+| {{e|Drowned Boom Fly}}
+| rowspan=2 | {{e|Boom Fly}}
+| rowspan=7 | {{e|Level 2 Fly}}
+|-
+| —
+| —
+| —
+| {{e|Tainted Boom Fly}}
+|-
+| —
+| {{e|Fire Worm}}
+| {{e|Dragon Fly}}
+| rowspan=4 | {{e|Red Boom Fly}}
+| rowspan=4 | {{e|Full Fly}}
+|-
+| —
+| —
+| {{e|Bone Fly}}
+|-
+| —
+| {{e|Gasbag}}
+| {{e|Sick Boom Fly}}
+|-
+| —
+| {{e|Poofer}}
+| {{e|Flesh Death's Head}}
+|-
+| —
+| —
+| —
+| {{e|Fat Bat}}
+| {{e|One Tooth}}
+|-
+| —
+| —
+| {{e|Walking Gut}}
+| rowspan=3 | {{e|Gut}}
+| rowspan=7 | {{e|Army Fly}}
+| rowspan=8 | {{e|Ring Fly}}
+|-
+| —
+| {{e|Tar Boy}}
+| {{e|Gush}}
+|-
+| —
+| —
+| {{e|Cyst}}
+|-
+| —
+| —
+| {{e|Scarred Guts}}
+| rowspan=3 | {{e|Guts}}
+|-
+| —
+| —
+| {{e|Slog}}
+|-
+| —
+| {{e|Dead Meat}}
+| {{e|Mama Guts}}
+|-
+| —
+| —
+| —
+| {{e|Spit}}
+|-
+| —
+| —
+| —
+| {{e|Portal}}
+| {{e|Lil Portal}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Soul Sucker}}
+| rowspan=3 | {{e|Sucker}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Tainted Sucker}}
+|-
+| —
+| —
+| [[File:Fistula ingame med.png|20px]] [[Fistula|Fistula Medium]]
+| [[File:Fistula ingame small.png|20px]] [[Fistula|Fistula Small]]
+| {{e|Leper Flesh}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Ink}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Moter}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Dart Fly}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Fly Bomb}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Level 2 Willo}}
+| {{e|Willo}}
+| rowspan=2 | {{e|Swarm}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Fly Trap}}
+|-
+| —
+| —
+| {{e|Tainted Soy Creep}}
+| {{e|Soy Creep}}
+| rowspan=5 | {{e|Wall Creep}}
+| rowspan=2 colspan=4 | {{dlc|nr+}} ''{{e|Blind Creep}} / {{e|Wall Creep}} cycle''
+|-
+| rowspan=2 | —
+| rowspan=2 | —
+| rowspan=2 | —
+| rowspan=2 | {{e|Rage Creep}}
+|-
+| rowspan=3 | {{dlc|r+}} {{e|Big Spider}}
+| rowspan=8 | {{e|Spider}}
+| rowspan=9 | {{e|Swarm Spider}}
+| rowspan=9 | ''Background spider''
+|-
+| —
+| —
+| —
+| {{e|The Thing}}
+|-
+| —
+| —
+| —
+| {{e|Blind Creep}}
+|-
+| —
+| —
+| —
+| {{e|Walking Sack}}
+| {{e|Sack}}
+| rowspan=2 | {{e|Big Spider}}
+|-
+| —
+| —
+| —
+| {{e|Baby Long Legs}}
+| {{e|Small Baby Long Legs}}
+|-
+| —
+| —
+| —
+| {{e|Crazy Long Legs}}
+| {{e|Small Crazy Long Legs}}
+| rowspan=3 | {{e|Level 2 Spider}}
+|-
+| —
+| —
+| —
+| {{e|Migraine}}
+| {{e|Ticking Spider}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Blister}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Strider}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Red Ghost}}
+| rowspan=2 | {{e|Wizoob}}
+| rowspan=6 | {{e|Lil' Haunt}}
+| rowspan=6 | ''Background ghost''
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Dust}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Baby Begotten}}
+| {{e|Imp}}
+| rowspan=3 | {{e|Polty}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Kineti}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Mullighoul}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Candler}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Vomit Grimace}}
+| rowspan=4 | {{e|Stone Grimace}}
+| rowspan=6 | ''Random [[Rock]]''
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Triple Grimace}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Stone Eye}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Cross Stone Shooter}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Brimstone Head}}
+| {{e|Constant Stone Shooter}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Gaping Maw}}
+| {{e|Broken Gaping Maw}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Mask + Heart}} <small>(heart)</small>
+| ''{{E|Scared Heart}}''
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Mask II + 1/2 Heart}}
+| ''2 {{E|Half Red Heart}}''
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Corn}}
+| rowspan=8 | {{e|Dip}}
+| rowspan=8 | ''Random {{E|Poop}}''
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Brownie Corn}}
+|-
+| —
+| —
+| —
+| —
+| {{e|Dump}}
+| {{e|Big Corn}}
+| rowspan=2 | {{e|Drip}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Dump Head}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Dank Squirt}}
+| rowspan=4 | {{e|Squirt}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Dinga}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Hardy}}
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Splurt}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Nerve Ending 2}}
+| {{e|Nerve Ending}}
+| ''{{E|Red Poop}}''
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Mushroom}}
+| ''[[Mushroom (Obstacle)|Mushroom Rock]]''
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Dark Ball}}
+| ''Fiery effect''
+|-
+| —
+| —
+| —
+| —
+| —
+| {{e|Bishop}}
+| {{e|Cultist}}
+| {{e|Peep Eye}}
+| rowspan=2 | ''Can't be replaced''
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Blood Cultist}}
+| {{e|Bloat Eye}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| —
+| {{e|Henry}}
+| ''Replaced by itself''
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| —
+| {{dlc|r+}} {{e|Ultra Greed Coin (Spinner)}}
+| rowspan=4 | {{dlc|r+}} ''Random {{E|Penny|text=Coin}}''
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| —
+| {{dlc|r+}} {{e|Ultra Greed Coin (Key)}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| —
+| {{dlc|r+}} {{e|Ultra Greed Coin (Bomb)}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| —
+| {{dlc|r+}} {{e|Ultra Greed Coin (Heart)}}
+|-
+| —
+| —
+| —
+| —
+| —
+| —
+| —
+| {{dlc|r+}} {{e|Bombgagger}}
+| {{dlc|r+}} ''{{e|Mega Troll Bomb}}''
+|}
+
+{| class="wikitable mw-collapsible mw-collapsed" style=""
+! colspan="3" | Unaffected monsters 
+|-
+| {{e|Siren Minion}}
+| {{e|Rotten Gaper}}
+| {{e|My Shadow}}
+|-
+| {{e|Dragon Fly X}}
+| {{e|Angelic Baby (small)}}
+| {{e|Poky}}
+|-
+| {{e|Slide}}
+| {{e|Brainless Knight}}
+| {{e|Death Scythe}}
+|-
+| {{e|Peep Eye}}
+| {{e|Bloat Eye}}
+| {{e|Mask + Heart}} <small>(mask)</small>
+|-
+| {{e|Mask II + 1/2 Heart}} <small>(mask)</small>
+| {{e|Mask II + 1/2 Heart}} <small>(right heart)</small>
+| {{e|Eternal Fly}}
+|-
+| {{e|Wall Hugger}}
+| {{e|Pitfall}}
+| {{e|Suction Pitfall}}
+|-
+| {{e|Teleport Pitfall}}
+| {{e|Ultra Greed Coin (Spinner)|nr+}}
+| {{e|Ultra Greed Coin (Key)|nr+}}
+|-
+| {{e|Ultra Greed Coin (Bomb)|nr+}}
+| {{e|Ultra Greed Coin (Heart)|nr+}}
+| {{e|Corn Mine}}
+|-
+| {{e|Purple Ball}}
+| {{e|Blood Puppy}}
+| {{e|Quake Grimace}}
+|-
+| {{e|Bomb Grimace}}
+| {{e|Rock Spider}}
+| {{e|Tinted Rock Spider}}
+|-
+| {{e|Coal Spider}}
+| {{e|Eternal Fly Bomb}}
+| {{e|Gutted Fatty Eye}}
+|-
+| {{dlc|nr+}}{{e|Fetal Demon}}
+| {{e|Peeping Fatty Eye}}
+| {{e|Bombgagger|nr+}}
+|-
+| {{e|Spikeball}}
+| {{e|Morningstar|nr+}}
+| {{e|Grudge}}
+|-
+| {{e|Ball and Chain}}
+| {{e|Visage Plasma}}
+| {{e|Singe's Ball}}
+|-
+| {{e|Dead Isaac}}
+| {{e|Ultra Famine Fly}}
+| {{e|Ultra Pestilence Fly}}
+|-
+| {{e|Ultra Death Head}}
+| {{e|Ultra Death Scythe}}
+| {{e|Dummy}}
+|-
+| {{e|Siren Helper}}
+|}
+{{dlc-}}
+
+== Notes ==
+* {{dlc|nr}} Rerolling a monster will replace it with an entirely new one from any floor, making it dangerous to use early on in the game (as Isaac could get monsters from {{s|Depths}} or later).
+* {{dlc|nr}} The D10 will not reroll [[Boss]]es but can reroll monsters spawned by bosses.
+* {{dlc|r}} The D10 will not reroll [[friendly]] enemies.
+* Using this item can cause some rooms to become impossible to clear. Jumping or flying monsters may become trapped behind rocks after being rerolled, and therefore become unbeatable.
+** Sealed doors open after 2 minutes, though there are situations that can prevent this failsafe from triggering.
+* {{dlc|anr}} Flying monsters will only be rerolled into other flying monsters, and ground monsters can only be rerolled into ground monsters. ({{e|Horf}}s are classified as ground monsters by the D10).
+* {{dlc|r}} Some invincible enemies will be rerolled, while others (including most Grimace variants) are completely unaffected.
+* Using this item in a room with {{e|Mom's Hand}} can be very dangerous, as unless they have already landed, they will be directly on top of Isaac, resulting in the new monsters spawning directly on top of Isaac, instantly dealing contact damage.
+* Using this item, then exiting the room, such as by teleporting or a bombed door, will cause the enemies to be in their original forms upon Isaac's return.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns orange wisps in the middle ring. Tears shot from these wisps have a 10% chance to replace enemies with their weaker variants.}}
+* {{I|Car Battery|r}}: Weakens affected enemies twice.
+
+== Interactions ==
+* {{t|Broken Remote|nr}}: Using D10 while holding this will first teleport Isaac, and then reroll the enemies in the new room.
+
+== In-game Footage ==
+{{#ev:youtube|gICUUCDXbVM}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed D10.png|{{plat|3DS}} The icon of the D10 as seen on the lower 3DS screen.
+File:D10 giantbook.png|Splash image which appears when D10 is activated.
+</gallery>
+
+== Trivia ==
+* Despite being a dice item, D10 is not an unlock.
+** {{dlc+|a}} This trait is shared with {{i|D7}} and {{p|Dice Shard}}.{{dlc-}}
+* {{dlc|r}} D10 was voted the worst quality 0 item in the game in [https://www.reddit.com/r/bindingofisaac/comments/x6brwj/ladies_and_gents_isaacs_and_mothers_the_winner_of/?utm_source=share&utm_medium=ios_app&utm_name=iossmf a poll] on the Binding of Isaac subreddit, resulting in its consequent rework and upgrade to quality 1.
+
+== Bugs ==
+{{bug|dlc=na+|The D10 can reroll the Suture half of {{e|Blighted Ovum}}.}}
+{{bug|dlc=na+|Using this item on any monster with several pieces will reroll every piece into a monster. {{e|Mr. Maw}} and {{e|Gemini}}'s cord dots are considered pieces, each turning into a new monster.}}
+{{bug|dlc=na+|Rarely, a monster can be rerolled into the mask half of the {{e|Mask + Heart}} enemy, and the mask will die instantly.}}
+{{bug|dlc=anr|The {{e|Attack Fly}}, {{e|Swarm}}, and {{e|Camillo Jr.}} enemy can't be rerolled (even though monsters can be rerolled into them).}}
+{{bug|dlc=nr|Using this item in a room with {{e|Stone Grimace}}s will turn them invisible. They will not fire, but the space they occupied will prevent Isaac from moving through it like an invisible wall.}}
+{{bug|dlc=r|D10 and items related to it can reroll [[frozen]] enemies into alive ones, effectively bringing them back to life.}}
+<!--
+{{Bug|dlc=r|Can reroll Fistulas degrades (including Delirium when transformed as Fistula) down into a leprosy.}}
+What does this mean? I think this mean that divided parts of Fistula can be rerolled, while they shouldn't as they are an ennemi part, but, what leprosy mean?
+-->{{nav|dice}}

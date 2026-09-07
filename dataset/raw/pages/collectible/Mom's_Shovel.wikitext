@@ -1,0 +1,51 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | id          = 552
+ | quote       = Lost but not forgotten
+ | description = Creates a trapdoor that leads to the next floor. Unlocks {{c|The Forgotten}} when used on a mound of dirt that appears in {{s|Dark Room}}.
+ | quality     = 4
+ | tags        = mom offensive noeden lazarussharedglobal quest
+ | recharge    = 4
+}}
+
+{{cit|a|a+5}}
+
+It is obtained by collecting the {{i|Broken Shovel 1}} and the {{i|Broken Shovel 2}}.
+
+== Effects ==
+* Upon activation, creates a trapdoor that leads to the next floor or to a {{r|Crawl Space}}, identical to {{i|We Need To Go Deeper!}}.
+* Using this on a dirt patch that appears in [[Grave Room]]s in {{s|Dark Room}} will unlock {{c|The Forgotten}}.
+** Once the Forgotten is unlocked, digging into dirt patches will instead spawn a random type of {{E|Chest}}.
+* {{dlc|r}} {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* It is possible to unlock {{c|The Forgotten}} even if {{i|The Negative}} has not yet been unlocked by teleporting straight to the dark room via a {{r|Sacrifice Room}}.
+* Does nothing when used on {{s|???}}, {{s|Sheol}}, {{s|Cathedral}}, {{s|Dark Room}} (except in a [[Grave Room]]), {{s|Chest}}, {{s|The Void}}, or {{s|Home}}.
+* Once Mom's Shovel is complete, the stomping caused by {{i|Broken Shovel 1}} stops.
+* Unlike the Broken Shovel, Mom's Shovel will not disappear if it is left on a pedestal, and Isaac leaves and re-enters the room it was left in.
+* Like {{i|We Need To Go Deeper!}}, this item can be used to destroy rocks if used while Isaac is flying over a rock.
+* {{dlc+|r}} This item can be obtained by using {{i|Spindown Dice}} on {{i|Mucormycosis}} without obtaining the Broken Shovels.{{dlc-}}
+* {{dlc+|r}} The full Mom's Shovel can be found within the area of {{i|Death Certificate}}. Even without unlocking the item, its effect can potentially be activated by {{i|Metronome}}.{{dlc-}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Creates two wisps on the middle ring: one looks like {{c|The Forgotten}}, which has increased HP but does not fire tears, and the other looks like {{c|The Soul}}, which fires tears that have a 10% chance of invoking {{P|II - The High Priestess}} on enemies.}}
+
+== Interactions ==
+* {{I|Car Battery}}: In most cases, no extra effect. When used near the entrances to a room, the item can occasionally open 2 trapdoors at once, {{Dlc|nr}} increasing the chance of opening a {{r|Crawl Space}}.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Forgotten, Bone Heart }}
+
+== In-game footage ==
+{{#ev:youtube|t_qo3rzS4cI}}
+
+== Gallery ==
+<gallery>
+File:DarkRoomTreasure opened.jpg|The dirt mound, opened with Mom's Shovel.
+</gallery>
+
+== Trivia ==
+* This item could be a reference to [[Endings|Ending 20]], where Isaac is found dead inside the chest being nothing but skeletal remains, and this item was what {{e|Mom}} used to bury Isaac underground.
+** This is seen in The Forgotten Update [https://www.youtube.com/watch?v=YpW0eWMkdJw trailer], where Mom is burying Isaac's remains, along with {{I|The Gamekid}}, and possibly other items he had with him.
+
+{{nav|booster pack|yes mother|mom|fr=Pelle de Maman}}

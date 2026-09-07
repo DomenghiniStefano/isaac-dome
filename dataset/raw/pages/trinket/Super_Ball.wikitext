@@ -1,0 +1,28 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 99
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = Boing!
+ | description = Makes tears have a chance to bounce off enemies and obstacles.
+}}
+
+{{cit|t|a+}}
+
+== Effect ==
+* Adds a 10% chance to fire tears that bounce off of enemies and obstacles.
+** {{dlc|nr+}} The chance is not affected by luck.
+*** {{dlc|r+}} The chance is now affected by luck, maxing out at 100% at 18 luck.
+
+== Notes ==
+* Super Ball's tear effect functions identically to {{I|Rubber Cement}}. For a full list of interactions and synergies, see that page.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: At base luck, having either increases the chance to 20% and having both to 33%.
+
+== In-game Footage ==
+{{#ev:youtube|T9RB-SVtUeE}}
+
+== Trivia ==
+* A Super Ball is a type of toy ball that is known for its extreme bounciness. Dropping it onto a hard surface will cause it to bounce nearly to the point it was dropped.
+
+{{nav|fr=Balle Rebondissante}}

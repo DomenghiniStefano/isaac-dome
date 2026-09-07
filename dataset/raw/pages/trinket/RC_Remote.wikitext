@@ -1,0 +1,26 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 179
+ | quote       = Controllable buddies!
+ | description = Instead of trailing behind Isaac, [[familiar]]s are directly controlled by the same inputs as Isaac's.
+ | unlocked by = RC Remote
+}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Instead of trailing behind Isaac, [[familiar]]s are directly controlled by the same inputs as Isaac's.
+* Holding the drop button will allow Isaac to move while keeping the familiars in place, identical to {{c|Jacob and Esau}}.
+
+== Notes ==
+* This trinket affects the same familiars {{I|King Baby}} effects. For a list of the familiars unaffected by this trinket, visit King Baby's page.
+* [[Familiar#Throwable familiars|Throwable familiars]] do not return to Isaac upon impact; instead, they treat their impact location as their new "launch" location, and can be fired in any direction from there. The only exception is {{I|Jaw Bone}} which will return to the location it was launched from.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Familiars gain contact damage, dealing 2 damage per tick (about 8.6 damage per second). Having both increases the damage to 5 per tick (about 21.4 damage per second).
+* {{t|Friendship Necklace}} + {{i|Spin to Win}}: Familiars affected by Friendship Necklace are still considered orbitals regardless of positioning allowing Isaac to use their contact damage without getting close to enemies. RC Remote also prevents familiars that weren't already orbitals from flashing when Spin to Win is used despite still being affected by the active item.
+* {{I|King Baby}}: Familiars are not held in place while firing but still auto-target enemies.
+* {{c|Lilith}}: {{i|Incubus}} can be positioned on top of Lilith, effectively removing Lilith's downside.
+* {{C|Tainted Forgotten}}: Familiars will move with Tainted Soul, and not follow behind Tainted Forgotten like they normally do. This is massively beneficial as it allows Tainted Soul to have actual protection against enemies. Orbitals still remain orbiting Tainted Forgotten as expected.
+
+{{nav|familiar modifier|tainted jacob unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Télécommande Radio}}

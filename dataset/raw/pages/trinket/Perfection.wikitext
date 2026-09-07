@@ -1,0 +1,44 @@
+{{Infobox trinket
+ | dlc         = r
+ | id          = 145
+ | quote       = Luck way up. Don't lose it!
+ | description = +10 [[Luck]]. If Isaac takes damage, the trinket is destroyed and its effect is removed.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* Gives +10 [[luck]].
+* This trinket is destroyed if Isaac takes non-self damage while holding it (i.e. getting hit by [[Monsters]], walking on [[Spikes]], getting hit by an explosion, etc.).
+
+== Notes ==
+* This trinket can only be obtained by clearing 3 consecutive floors without taking damage. It will drop upon the final boss room of said consecutive floors being cleared.
+** In [[Greed Mode]], it will drop after defeating the first boss of the third floor ({{s|Depths}} / {{s|Necropolis}} / {{s|Dank Depths}}).
+** While playing co-op, everyone needs to play without taking damage for the trinket to spawn.
+* {{M|Blood Donation Machine}}s, {{M|Devil Beggar}}s, {{M|Hell Game}}s, {{M|Confessional}}s, {{R|Curse Room}}s, {{R|Sacrifice Room}}s, {{E|Spiked Chest}}s, [[Bad Trip]] pills, {{E|White Fire Place}}s and the door to {{s|Mausoleum}} / {{s|Gehenna}} count as self-damage and won't destroy Perfection.
+* Every XL floor cleared counts as a single floor for the purposes of obtaining this trinket.
+* Perfection can intentionally be dropped if Isaac must take damage for whatever reason, allowing him to keep it.
+* Due to the unique method of obtaining it, Perfection can never naturally spawn as a {{A|Golden Trinket}}.
+* 10 Luck is coincidentally the highest amount of luck Isaac can have that would help with [[Room Clear Awards|room clear rewards]] paying out.
+* If Isaac holds multiple copies of Perfection via {{i|Mom's Purse}} or {{i|Belly Button}}, upon taking a hit only one of them will get destroyed.
+* {{dlc|nr+}} Damage taken by {{T|Found Soul}}, {{I|Lost Soul}}, {{i|Strawman}} and {{p|Soul of the Forgotten}} will reset cleared floors count, thus Perfection will not drop. However, Perfection itself will not be destroyed if they take damage.
+
+== Synergies ==
+* {{i|Blanket}} / {{i|Dogma}} / {{p|Holy Card}} / {{i|Holy Mantle}} / {{c|The Lost}} / {{p|Soul of the Lost}} / {{E|White Fire Place}}s / {{t|Wooden Cross}}: Losing the shield does not destroy Perfection.
+* {{I|Blood Oath}} / {{i|Dull Razor}} / {{i|Sharp Plug}} / {{i|IV Bag}}: Does not destroy Perfection, nor does it prevent its acquisition.
+* {{i|Glowing Hourglass}}: Makes it much easier to hold on to Perfection since, as long as it can be used in the room where you take damage before you leave, Isaac can reset to the previous room with the trinket intact.
+* {{c|The Lost}} / {{c|Tainted Lost}}: Since these characters are likely to die instantly after taking a single hit, Perfection is almost guaranteed to drop after the third floor boss room is cleared and is also almost guaranteed to stay with them until their deaths.
+** This means getting [[Luck#Effects of Luck|luck based items]] at any point of the run, especially ones with luck scaling that tops out at about 10 luck, is a very good idea.
+** The ability to [[Smelter|Smelt]]/[[Pills#Gulp!|Gulp]] trinkets will also add to the synergy, as there are many luck-based trinkets as well.
+* {{i|Rock Bottom}}: The +10 luck persists after switching trinkets as stats are locked to their highest values ever reached after picking Rock Bottom up. However, after losing Perfection, additional luck-ups will have no effect until the luck bonus lost is made up. (The stats are still being calculated behind the scenes, but until it surpasses the run's post-rock-bottom luck record, the record will be used instead).
+
+== Interactions ==
+* [[Gulp!]] / {{i|Marbles}} / {{i|Smelter}}: Despite being added to the inventory, it will still be destroyed at the next damage taken.
+
+== In-game footage ==
+{{#ev:youtube|https://youtu.be/7cBdA373N3g}}
+
+== Trivia ==
+* [[anti:Perfection|Perfection]] is from the ''Antibirth'' mod. In ''Antibirth'' the trinket would continue to be dropped by every subsequent floor boss if damage was still not taken and every source of damage would destroy it.
+
+{{nav}}

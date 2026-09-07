@@ -1,0 +1,62 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 462
+ | quote       = Possessed tears!
+ | description = Grants [[Tear Effects#Piercing|piercing tears]]. After piercing one enemy, tears start [[Tear Effects#Homing Tears|homing]] and deal double [[damage]].
+ | quality     = 3
+ | tags        = summonable offensive
+ | devil price = 2
+ | unlocked by = Eye of Belial
+}}
+
+{{cit|up|a+}}
+
+== Effects ==
+* +1.5 [[range]].
+* {{dlc|nr}} +1.0 [[tear falling speed]].
+* Grants [[piercing tears]].
+* After piercing one enemy, tears will gain double [[damage]], [[homing tears|homing]], and a 1.3x size multiplier.
+
+== Notes ==
+* {{dlc|nr}}The piercing effect makes placed {{e|Bomb}}s, {{e|Troll Bomb}}s, and {{e|Mega Troll Bomb}}s unable to be pushed around by Isaac's tears.
+* Tears will also gain homing and double damage when they pierce bombs and entities the game considers enemies, like {{E|Stone Grimace}}s and {{e|Fire Place}}s.
+
+== Synergies ==
+* {{i|Compound Fracture}}/{{i|Cricket's Body}}/{{i|The Parasite}}: Tears that pass through enemies will become Belial tears and split into smaller Belial tears. Non-Belial split tears can also turn into Belial tears if they pass through enemies.
+* {{i|C Section}}: Fetuses will continue to deal damage per tick after gaining the effect, almost doubling total damage output.
+* {{i|Godhead}}: Normal tears and Eye of Belial tears will retain damaging aura.
+* {{i|Lachryphagy}}: Eye of Belial tears can still be fed and will burst, and burst Eye of Belial tears will still be homing. Tears from regular bursts can also turn into Eye of Belial tears.
+* {{i|Lost Contact}}: Piercing through a projectile triggers the double damage and homing effect.
+* {{i|Remote Detonator}}: Placed Bombs won't explode automatically, so they can be placed and have tears fired through them to activate double damage and homing.
+* {{dlc|r}}{{I|Tiny Planet}}: After piercing an enemy, tears will continue orbiting rather than homing, but each tear can gain multiple damage and size multipliers. These tears can make quick work of even most bosses.
+* {{dlc+|r}}{{I|Saturnus}}: When an orbiting tear hits an enemy, it will turn into an Eye of Belial tear. From that point, the tear gets out of {{I|Saturnus}}' orbit every time an enemy is nearby, becomes autonomous and chases every enemy in the room. It won't be destroyed by enemies anymore. When there's no enemy close from it, it comes back into the orbit. As all 7 tears can become Eye of Belial ones, this synergy is significantly powerful.{{dlc-}}
+* {{i|Technology Zero}}: All tears will be connected with electricity. Electricity will double in damage when the tears change.
+
+== Interactions ==
+Overrides Eye of Belial:
+* {{I|Brimstone}}
+* {{I|Epic Fetus}}
+* {{I|Ipecac}}
+* {{I|Mom's Knife}}
+* {{I|Technology}}
+* {{I|Tech X}}
+* {{I|Trisagion}}
+* {{C|The Forgotten}}
+Other interactions:
+* {{i|Diplopia}}: Only further increases range.
+* {{i|Dr. Fetus}}: Piercing effect applies, but homing and doubled damage do not.
+** {{Dlc|r}} Bombs also deal 2.5x Isaac's damage to enemies when passing through them.
+* {{i|Haemolacria}}: If the main tear pierces an enemy, it will turn into a Belial tear, and the burst tears retain the piercing effect and do double damage. If the main tear does not turn into a Belial tear, the burst tears will not be able to turn into Belial tears.
+* {{i|The Ludovico Technique}}: Doubled damage does not apply if hitting the same enemy multiple times in a row. The controlled tear will continue to increase in size on every hit up to roughly the width of a single room, and the effect resets on changing rooms.
+* {{i|Ouija Board}}: Eye of Belial tears lose their homing ability and fly offscreen.
+* {{i|Pop!}}: Homing tears will only damage the enemy once and then just remain fixed above the target for a brief amount of time until disappearing.
+* {{i|Technology 2}}/{{i|Tech.5}}: The lasers are not affected by the Eye of Belial; however, the tears apply the effect normally.
+* {{i|Tractor Beam}}: May seem to override Eye of Belial but if a homing tear finds a target to seek it will stop midair as if it were fighting its momentum.
+
+== In-game Footage ==
+{{#ev:youtube|5UuMYhb8Xro}}
+
+== Trivia ==
+* Belial is a term from the Hebrew Bible referring to the devil.
+
+{{nav|judas unlock|ultra greedier unlock|fr=Œil de Bélial}}

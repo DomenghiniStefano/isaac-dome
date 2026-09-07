@@ -1,0 +1,51 @@
+{{infobox challenge
+ | dlc         = a+
+ | number      = 33
+ | item        = {{i|Friendly Ball|n}}<br>{{i|Mom's Eyeshadow}}
+ | has shops   = yes
+ | description = Each use of Friendly Ball causes a random monster to be spawned. Friendly Ball instantly charges once the spawned monster is killed.
+ | goal        = Isaac
+ | unlocks     = Charged Key
+ | unlocked by = Pokey Mans
+}}
+
+'''Pokey Mans''' is [[challenge]] #33. Isaac starts with {{i|Friendly Ball|n}} and {{i|Mom's Eyeshadow}} with the objective being to kill {{E|Isaac}}.
+
+== Difficulty ==
+* Some spawns from the Friendly Ball can cause unavoidable damage in certain rooms. Hazards or enemies can be hidden by larger allies or if many are in a group, and it will become harder to keep track of Isaac himself as there are more allies in the room. In the case of monsters that fire some sort of projectile or beam, it may be hard to discern allies shots from enemies.
+
+== Strategy ==
+* The Friendly Ball works differently in this challenge, being unable to capture enemies, but summoning a random [[friendly]] enemy with each use instead. Also, as soon as a friendly enemy dies, the Friendly Ball instantly recharges and can be used multiple times per room.
+* {{dlc|nr}} When a monster spawned with Friendly Ball dies, Isaac's currently equipped Active Item will be recharged. In most cases this will be Friendly Ball, but it can also apply to any other active item. This is extremely powerful when combined with {{i|Schoolbag}}, as it allows fast recharging of other active items.
+** {{dlc|r}} Only recharges the Friendly Ball.
+* If Isaac has {{i|The Battery}}, he will get two full charges instead of one when a friendly monster dies. This allows him to replace or amass friendly monsters quickly in rooms with hazards or heavy enemy fire. However, one must still take care and not get too distracted by using the Friendly Ball and take unnecessary damage from enemies.
+* Some types of monsters are especially helpful in this challenge. Examples include:
+** Any monster capable of spawning other monsters in any way, as these spawned monster(s) are also friendly towards Isaac. However, friendly monsters spawned by other monsters won't count towards recharging the Friendly Ball upon death. Example: Spawning a {{E|Sack}} will let Isaac generate friendly {{E|Spider}}s, but every time a spider dies it won't give him a recharge. On the other hand, if the Sack dies, he will gain a free recharge.
+** Monsters that can fire {{i|Ipecac}} tears, as these shots can do massive AOE damage, break objects, and gain access to secret rooms. {{E|Roundy}}, {{E|Gurgle}}, {{E|Splasher}}, {{E|Spit}}, and {{E|Blue Conjoined Fatty}} are capable of doing this.
+** Monsters that fire {{i|Brimstone}} beams, being able to kill many enemies per shot and doing high damage. {{E|Vis}}, {{E|Scarred Double Vis}}, {{E|Red Ghost}}, {{E|Double Vis}}, {{E|Bloodshot Eye}}, and {{E|Soul Sucker}} (albeit only upon death) fit in this category.
+** Enemies that dig, teleport, or become invincible for a short time, who can stay alive for longer. Such examples include regular {{E|Host}}s and {{E|Wizoob}}s.
+** {{E|Tar Boy}}, since the black creep that he lays on the ground could slow down enemies and not Isaac, which can be used to an advantage when chased by them.
+** {{E|Bishop}}s, will Shield Isaac and all other friendly enemies till it dies, letting Isaac build up a large amount of monsters.
+** {{E|Cultist}}, Revives defeated monster as friendly versions of themselves. This includes bosses but they will disappear upon leaving the room.
+* Do not leave a room before the Friendly Ball has spawned its monster. Isaac's charges will be consumed and no monster will die to replenish the charges.
+* {{dlc|nr}} Do not exit and then continue the run as it will cause all friendly enemies to despawn without giving any of the charges back.
+* Isaac's bombs or items which explode can't damage his friendly enemies just as their explosions can't hurt him, and enemy explosions can break [[obstacles]] just like regular explosions.
+* While almost all non-invincible and non-boss enemies can be spawned from the unique Friendly Ball, {{E|Wall Creep}}, {{E|Blind Creep}}, {{E|Rage Creep}}, and {{E|The Thing}} will never be spawned for unknown reasons.
+* {{E|Mr. Mine}}s can be summoned via Friendly Ball, but they only appear in areas with pits; if the Friendly Ball spawns nothing in a room with no pits, it must have attempted to spawn a Mr. Mine.
+* Be wary of hazards that can easily kill friendly monsters (e.g. {{e|Fire Place}}s, [[Spikes]], {{e|Troll Bomb}}s, and explosive enemies), as they can destroy your more powerful monsters in an instant.
+* Since the spiked floor in a {{R|Sacrifice Room}} can hurt flying enemies, they can be used to cycle through the less useful monsters received from the ball.
+** However, sacrifice rooms can also be very dangerous, as monsters can kill themselves on the spikes faster than they can be replaced.
+* {{i|Spear Of Destiny|nr}} is not recommended, as it will also kill the friendly monsters spawned from the Friendly Ball.
+* {{I|Hungry Soul}} is not recommended as although the souls will not actively hurt the monsters spawned from the Friendly Ball, the explosions that they cause when they expire will damage the friendly monsters.
+* Using the Broken Remote trinket with the Friendly Ball charged will allow infinite teleporting.
+* Friendly enemies that have multiple "phases" will only recharge his Friendly Ball when their first phase is killed. For example, {{E|Leper}}s will only recharge his Friendly Ball when the first part of their {{E|Leper Flesh}} detaches from them.
+* {{Dlc|r}} Be wary when using [[Ace cards]] as they will transform all friendly enemies into their respective pickup.
+* But above all else, do not solely rely on the friendly enemies to win the run; no matter how powerful the spawns are, remember that Isaac is always stronger. Do not get carried away by the large number of allies and take unnecessary damage. Good tears stats and modifiers are still important in situations where you can't use the Friendly Ball due to the lack of charges.
+
+== Reward ==
+{{achievement text | Charged Key }}
+
+== Trivia ==
+* The title of the challenge is a play on the word Pokémon. The use of the modified Friendly Ball (and to some extent, Mom's Eyeshadow) is a reference to Pokémon Trainers battling opposing Pokémon using their Pokémon.
+
+{{nav|challenge|moms heart unlock|fr=Le Pire Dresseur}}

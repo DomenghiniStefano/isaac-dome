@@ -1,0 +1,64 @@
+{{infobox boss
+ | name        = The Gate
+ | id          = 263
+ | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Depths}}{{floor|Necropolis}}<br>{{floor|The Void}}<br>{{room|Boss Rush}}<br>{{dlc|r}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|The Void}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Double Trouble</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}<br><u>Alternate path</u><br>{{floor|Corpse}}
+ | base hp     = 500
+ | pool        = {{ip|Boss}}<br> {{i|Host Hat|r+}} (1% chance)
+}}
+
+'''The Gate''' is a [[boss]] that can appear:
+* {{dlc|nr}} In the {{s|Depths}} and {{s|Necropolis}}.
+* {{Dlc|r}} In the  {{s|Depths}} and the {{s|Dank Depths}}.
+
+== Behavior ==
+Like {{e|Mega Maw}}, The Gate is stationary and will perform the following attacks:
+* Spawns a {{e|Leaper}} into the air. It can land anywhere in the room while releasing its projectile attack immediately.
+** There is a maximum of 4 Leapers alive at once.
+** The Gate cannot perform other attacks if there are no Leapers alive. As such, it will also always perform this attack first.
+* Shoots a ring of 9 projectiles that can rotate in either direction while expanding outwards.
+* Shoots two rings of 6 projectiles which expand outwards and rotate in opposite directions.
+* Shoots a ring of 11 straight projectiles in all directions.
+** The Gate's projectiles can damage its Leapers.
+* If there are 2-3 Leapers alive, it charges up and fires a {{i|Brimstone}} laser that curves to connect to all Leapers that are not off-screen.
+** This kills any Leapers hit.
+** If faced alongside other enemies or bosses, such as in {{R|Boss Rush}}, the laser connects to them, damaging them as well.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18|dlc=a}}: Has 25% more HP (625) and spawns {{e|Big Spider}}s instead of Leapers. The Big Spiders are tossed directly towards Isaac instead of landing randomly in the room, and can be damaged by The Gate's blood shots, like the Leapers. It does not perform the Brimstone attack.
+: {{bc|1|dlc=a}}: Does not spawn any enemies and has a completely different set of attacks, including:
+:: Fires 5 lines of 2-3 slow-moving homing purple shots.
+:: Fires 8 lines of 9 blood shots that spiral outwards.
+:: Fires 7 lines of 9 blood shots that pulsate outwards.
+:: Fires 8 lines of 9 blood shots that move outwards in a zigzag pattern.
+:: All the attacks of the Red version do 1 heart of damage.
+
+== Gallery ==
+<gallery>
+File:Gate ingame peek.png|The Gate defeated.
+File:Boss The Gate black ingame.png|The Black Champion Gate.
+File:Boss The Gate black2 ingame.png|The Black Champion Gate defeated.
+File:Boss The Gate red ingame.png|The Red Champion Gate.
+File:Boss The Gate red2 ingame.png|The Red Champion Gate defeated.
+File:Boss Delirium The Gate ingame.png|The Gate as one of {{e|Delirium}}'s forms.
+File:Mega Maw Concept.jpg|Concept art for what appears to be The Gate (known in this sketch as "Mega Maw 2"), along with Mega Maw and a scrapped Pin variant.
+File:The Gate Concept.png|More Concept art for The Gate.
+</gallery>
+
+== Notes ==
+* Using the {{i|Eraser}} to remove Leapers causes The Gate to be stuck attempting to spawn them infinitely, as it cannot perform other attacks without any Leapers alive.
+
+== Trivia ==
+* It is the posthumous version of Mega Maw.
+** Despite being a posthumous version of Mega Maw, The Gate physically resembles a giant {{e|Host}}.
+** It's also larger than Mega Maw.
+* Upon death, a small Isaac head can be seen poking out of its corpse before it explodes.
+** Two glowing white eyes can be seen in its mouth throughout the fight, which may also be the Isaac head.
+** {{Dlc|r}} The Red Champion Gate's death animation reveals a small demon instead, whose glowing red eyes can also be seen in its mouth during the fight.
+
+{{nav|boss|fr=Le Rempart}}
+
+[[Category:Chapter 3 bosses]]
+[[Category:Depths bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Debut bosses in Rebirth]]

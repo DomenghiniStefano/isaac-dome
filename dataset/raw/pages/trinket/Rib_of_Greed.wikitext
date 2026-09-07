@@ -1,0 +1,29 @@
+{{infobox trinket
+ | dlc         = a
+ | name        = Rib of Greed
+ | id          = 84
+ | quote       = Feels greedy
+ | description = Prevents {{E|Greed}} and {{E|Super Greed}} from appearing in {{R|Shop}}s and {{R|Secret Room}}s, and makes [[Coins|coin]] drops after clearing rooms more likely.
+ | tags        = lazarussharedglobal nogreed
+ | unlocked by = Rib of Greed
+}}
+
+{{cit|ut|a}}
+
+== Effects ==
+* Prevents {{E|Greed}} and {{E|Super Greed}} from appearing in {{R|Shop}}s and {{R|Secret Room}}s.
+* Increases the chance of [[Coins|coin]] drops when clearing rooms at the expense of [[Hearts|heart]] drops.
+
+== Notes ==
+* Cannot appear in [[Greed Mode]].
+* If Rib of Greed is picked up after a Greed fight in a {{R|Shop}} or a {{R|Secret Room}}, reentering the room will turn the room into a regular shop with items for sale or a secret room respectively (while keeping the previously dropped items on the floor).
+** By dropping the Rib of Greed before entering a shop, fighting Greed, then picking up the trinket again, the shop can be accessed while also having made free money from the Greed fight.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Also increases chance of {{e|Double Penny||double pennies}}, {{e|Nickel||nickels}}, {{e|Dime||dimes}}, {{e|Lucky Penny||lucky pennies}}, and {{e|Golden Penny|n|golden pennies}} drops.
+
+== In-game Footage ==
+{{#ev:youtube|NkN7JeJkE68}}
+
+{{nav|coin modifier|keeper unlock|bone|ultra greed unlock|fr=Côte d'Avarice}}
+[[Category:Trinkets]]

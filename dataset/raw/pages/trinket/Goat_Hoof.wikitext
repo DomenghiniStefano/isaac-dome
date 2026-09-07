@@ -1,0 +1,19 @@
+{{infobox trinket
+ | id          = 37
+ | quote       = Speed up
+ | description = +0.15 [[speed]].
+}}
+
+{{cit|t}}
+
+== Effect ==
+* +0.15 [[speed]].
+** {{dlc|nr}} Also affects maximum speed, may never exceed 2.0.
+
+== Synergies ==
+* {{A|Golden Trinket}}/{{i|Mom's Box}}: Having either increases speed by 0.3. Having both by 0.45.
+
+== In-game Footage ==
+{{#ev:youtube|vtbu4mdTZ2A}}
+
+{{nav|fr=Sabot de Chèvre}}

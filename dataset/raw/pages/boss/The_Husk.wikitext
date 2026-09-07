@@ -1,0 +1,46 @@
+{{infobox boss
+ | id          = 67
+ | variant     = 1
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = <u>Boss</u><br>{{floor|Catacombs}}<br>{{room|boss challenge}}{{room|boss rush}}<br><u>Double Trouble</u><br>{{floor|Depths}}{{floor|Necropolis}}<br><u>Degraded Boss</u><br><u>Main path</u><br>{{floor|Utero}}<br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}<br><u>Alternate path</u><br>{{floor|Corpse}}
+ | base hp     = 150
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Infestation}} (1% chance)
+}}
+
+'''The Husk''' is a [[boss]] that can appear in the {{s|Catacombs}}.
+
+== Behavior ==
+Moves around the room like {{e|The Duke of Flies}}, but much faster and can perform the following attacks:
+* Spawns 2 {{e|Attack Fly|text=Attack Flies}} that orbit loosely around him, blocking shots, as well as a {{e|Spider}}.
+** These flies, like the ones spawned by the Duke of Flies, can be killed if Isaac walks into them.
+** The Husk will not use this attack if there is a total of 8 flies and spiders spawned, but can exceed the 8 limit if he spawns more flies and spiders when just under the limit.
+* Fires a spray of projectiles, similar to {{e|Monstro}}, but with fewer projectiles.
+* Fires blood shots in 8 directions and spreads the flies orbiting him outwards, freeing them to chase Isaac.
+** Unlike the Duke, the Husk can perform this attack at any time without any required amount of orbiting Attack Flies.
+* Upon death, all orbiting flies will be free to chase Isaac.
+** {{dlc|r}} Spawns a 6-8 random {{e|Fly|text=Flies}}, Attack Flies, and {{e|Pooter}}s upon death.
+
+== Champion Versions {{unlockable}} ==
+: {{bc|18}}: 15% larger with 56% more HP (234). He moves slower and spawns {{e|Boom Fly|text=Boom Flies}} instead of Spiders and Attack Flies. The explosions from the Boom Flies can damage the Husk. Spawns 1-2 additional Boom Flies upon death.
+: {{bc|1}}: 25% smaller and faster. Rather than spawning enemies, he only fires his ring of eight blood shots. Spawns 1-2 additional {{e|Red Boom Fly|text=Red Boom Flies}} upon death.
+
+== Gallery ==
+<gallery>
+File:Boss The Husk dark grey ingame.png|The Black Champion Husk.
+File:Boss The Husk red ingame.png|The Red Champion Husk.
+File:Boss Delirium The Husk ingame.png|The Husk as one of {{e|Delirium}}'s forms.
+File:The Husk Unused.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite for The Husk found among the Room Editor files.
+</gallery>
+
+== Trivia ==
+* The Husk was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* He is the posthumous version of the Duke of Flies, more decayed, no longer having any limbs and now also being infested with spiders.
+* In his boss art, the Husk has some missing teeth in his mouth, but in-game, he has extra teeth.
+* {{Dlc|nr}} The Husk resembles {{e|Pestilence}}'s head.
+* The shell worn by {{e|Min-Min}} bears a striking resemblance to the Husk, and it was confirmed by Edmund that it is indeed him.
+
+{{nav|boss|fr=La Carcasse}}
+
+[[Category:Chapter 2 bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Debut bosses in Rebirth]]

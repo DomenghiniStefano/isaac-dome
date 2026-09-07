@@ -1,0 +1,179 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 678
+ | quote       = Fetus shots
+ | description = Replaces tears with fetuses that chase down enemies and deal contact damage. Each shot requires a brief charge up.
+ | quality     = 4
+ | tags        = summonable offensive
+ | unlocked by = C Section
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Isaac gains a short delay charge attack that fires [[homing]], [[piercing]], [[spectral]] fetus tears.
+** The fetus tears do 75% of Isaac's [[Damage]], 3.75 times per second, until they run out of [[Range]].
+** The fetuses will automatically fire when Isaac is at full charge, meaning the charge cannot be held.
+** Charge time is calculated based on [[Tear Delay]].
+*** <math>\text{Fetuses per Second} = \frac{30}{Roundup(\text{Tear Delay} \times 3) + 1}</math>
+*** Fetuses per second is capped at 15.
+
+== Notes ==
+* Fetus size scales with damage.
+* The fetuses slow down upon contacting enemies, making its homing effect more powerful.
+
+== Synergies ==
+* {{I|Berserk!}}: Isaac can fire the fetuses on duration. The fetuses hold and attack with bone clubs that are identical to {{C|The Forgotten}}'s one.
+* {{i|Brimstone}} / {{c|Azazel}}: Shoots 4 fetus tears along with the brimstone beam.
+** Each additional beam created from {{I|Monstro's Lung}}, split tears (such as {{I|The Parasite}}), or multi-shot effects (including {{I|Loki's Horns}} and {{I|Eye Sore}}) spawns four additional fetuses.
+** {{I|Anti-Gravity}}: The fetuses spawn when the beam is being released. The fetuses do not spawn if Isaac is charging when the beam is being released.
+** {{I|The Ludovico Technique}}: When combined with {{i|Brimstone}}, overrides {{i|C Section}}: fetuses no longer spawn.
+* {{i|Compound Fracture}}: Fetuses are skeletons that shoot splitting bone fragments when in contact with an enemy.
+* {{i|Cricket's Body}}: Fetuses drop four short-ranged tears when they hit the ground.
+* {{I|Dead Eye}}: Damage boost is granted once a fetus hits an enemy (once per fetus) and is reset when a fetus does not hit anything before going down, using the same rule to determine whether the damage boost is reset or not.
+** This makes for a great synergy since the fetuses are homing and stay up much longer than regular tears.
+* {{i|Dr. Fetus}}: The fetuses drop small bombs when they touch an enemy. The bomb's damage follows Dr. Fetus' damage calculation, based on half of the fetuses damage. A fetus can drop only one bomb.
+** The fetuses' bombs do not benefit from Isaac's bomb effects such as {{I|Hot Bombs}} or {{I|Bobby-Bomb}}. However, they do benefit from Isaac's tear effects and have the appearance of the corresponding bombs. For example, {{I|Hot Bombs}} from {{I|Fire Mind}}, {{I|Bobby-Bomb}} from [[homing]] tears. As such, {{I|Cricket's Body}}, {{I|The Parasite}}, and {{I|Polyphemus}} leave a subsequent bomb or bombs, and {{I|Mysterious Liquid}} leaves a creep.
+** Dr. Fetus + {{I|Ipecac}}: The fetuses explode before dropping any bomb.
+** Dr. Fetus + {{I|Haemolacria}}: Fetuses will both drop a bomb on touching an enemy and burst into multiple small bombs upon hitting the ground.
+* {{I|Explosivo}}: Some Fetuses stick to enemies, expand, then explode. However, they do not inflict their contact damage while sticking.
+** Explosivo + {{I|Mom's Knife}}: The knives from fetuses with Explosivo's effect create exploding tears for each damaging tick. The explosions from a knife deal 60 + half of the fetus' damage which held it.
+** Explosivo + {{I|Berserk!}} / {{I|Spirit Sword}} / {{C|The Forgotten}} / {{C|Tainted Forgotten}}: The clubs/swords from fetuses with Explosivo's effect create exploding tears for each damaged enemy from their attack. The explosions from a club/sword deal 60 + the damage its attack dealt.
+** Explosivo + {{I|Technology}}: The lasers from fetuses with Explosivo's effect create exploding tears for each damaged enemy from their attack. The tears inherit the fetuses' property, including laser attacks, from which can create more tears. The tears from a laser deal 60 + the laser's damage they originated, and their lasers deal the same as the lasers they originated. Fetuses can fire lasers while sticking to an enemy and spin, while tears do not spin.
+** Explosivo + {{I|Tech X}}: The laser rings from fetuses with Explosivo's effect create exploding tears for each damaging tick. The explosions from a ring deal 60 + the ring's damage.
+* {{c|The Forgotten}} / {{c|Tainted Forgotten}}: Fetuses are skeletons that attack with bone clubs in addition to contact damage. The fetuses from Tainted Forgotten deal 80% of their normal damage.
+** With {{I|Brimstone}}: Spawns a brimstone ball along with a fetus. Shots are fired automatically as the charge completes.
+** With {{I|Mom's Knife}}: Fetuses hold knives instead of bone clubs and no longer perform the swing attacks.
+** With {{I|Monstro's Lung}} Tears remain unchanged; the Forgotten will fire a burst attack alongside the fetus. No effect on the Soul.
+** With {{i|Technology}}: Fetuses perform laser attacks and enhanced bone club attacks separately, causing more damage.
+* {{i|Godhead}}: Fetuses have a glowing aura around them, but the aura cannot damage the enemy in contact with the fetuses.
+* {{i|Haemolacria}}: Fetuses explode into a burst of tears when they hit the ground.
+* {{i|Ipecac}}: The fetuses explode on impact, dealing its contact damage, which is often massively increased from the item.
+* {{i|Jacob's Ladder}}: Fetuses zap nearby enemies.
+* [[Luck]]-based tear effects (e.g. {{I|Holy Light}} / {{I|Knockout Drops}}): If a fetus has the effect, the fetus causes the effect for each damaging tick.
+** {{I|Little Horn}}: Still only two hands can appear at once.
+** {{I|Ocular Rift}}: The rifts spawn only once per fetus.
+** [[Luck]]-based tear effects + {{I|Angelic Prism}}: If Isaac's speed is greater than the speed of a fetus, he can manually walk the prism through any fetus with a luck-based tear effect (or any fetus), greatly multiplying its effectiveness.
+** [[Luck]]-based tear effects + {{I|Mom's Knife}}: If a fetus has the effect, the knife also causes the effect for each damaging tick. If not, the knife has chance to cause the effect based on Isaac's Luck for each damaging tick.
+** [[Luck]]-based tear effects + {{I|Berserk!}} / {{I|Spirit Sword}} / {{I|Technology}} / {{C|The Forgotten}} / {{C|Tainted Forgotten}}: If a fetus has the effect, each attack also causes the effect.
+** [[Luck]]-based tear effects + {{I|Tech X}}: If a fetus has the effect, the laser ring also causes the effect for each damaging tick.
+* {{i|Mom's Knife}}: Fetuses hold small knives in their front, causing extra damage. The knife deals twice of Isaac's [[Damage]], just as when it is held by Isaac, and their size scales with the fetuses' size. Any additional copy of the item causes Isaac to shoot more fetuses.
+** Mom's Knife + {{I|Proptosis}}: The knives shrink along with the fetuses, but they retain their tripled damage.
+** Mom's Knife + {{I|Brimstone}}: Instead of a barrage of knives, fires a normal Brimstone beam alongside knife-carrying fetuses.
+* {{i|Mucormycosis}}: Some Fetuses stick to enemies, expand, then burst. However, they do not inflict their contact damage while sticking. Unlike normal spores, the fetuses from the burst can home into the enemy they burst from.
+** Mucormycosis + {{I|Mom's Knife}}: The knives from fetuses with Mucormycosis' effect create spores for each damaging tick. Their knives deal twice of Isaac's Damage, same as the ones they originated.
+** Mucormycosis + {{I|Berserk!}} / {{I|Spirit Sword}} / {{C|The Forgotten}} / {{C|Tainted Forgotten}}: The clubs/swords from fetuses with Mucormycosis' effect create spores for each damaged enemy from their attack. The fetuses from the burst also hold clubs/swords which are able to create another wave of spores. The damage of attacks are calculated based on half of the spores' flat 3.5 damage.
+*** {{I|Berserk!}} / {{C|The Forgotten}}: Their swings deal 10.5 damage.
+*** {{C|Tainted Forgotten}}: Their swings deal 8.4 damage.
+*** {{I|Spirit Sword}}: Their swing attacks/spin attacks/projectiles deal 8.75/24/11 damage.
+** Mucormycosis + {{I|Technology}}: The lasers from fetuses with Mucormycosis' effect create spores for each damaged enemy from their attack. The spores inherit the fetuses' property including laser attacks, which can create another spores. The fetuses from the burst also has laser attacks which are able to create another wave of spores. Their laser attacks deal 3.5 damage, based on the spores' flat 3.5 damage. Fetuses can fire lasers while sticking to an enemy and spin, while spores do not spin.
+** Mucormycosis + {{I|Tech X}}: The laser rings from fetuses with Mucormycosis' effect create spores for each damaging tick. The fetuses from the burst are also surrounded by laser rings which are able to create another wave of spores. Their rings deal 1.75 damage, based on half of the spores' flat 3.5 damage.
+* {{I|My Reflection}}: Fetuses travel a short distance, then reverse direction and return to Isaac.
+* {{i|The Parasite}}: Fetuses fire short-ranged tears constantly while in contact with an enemy.
+* {{i|Parasitoid}}: Parasitoid fetuses spawn spiders/flies and slowing creep with every hit on an enemy.
+* {{i|Polyphemus}}: Grants +5 flat damage with no fire rate down.
+* {{i|Sinus Infection}}: Some Fetuses stick to enemies. However, they only do the Sinus Infection damage ticking and often result in dealing much less damage.
+** Sinus Infection + {{I|Mom's Knife}}: The knives from fetuses with Sinus Infection's effect create boogers for each damaging tick. The boogers from a knife deal half of the fetus' damage which held it per tick.
+** Sinus Infection + {{I|Berserk!}} / {{I|Spirit Sword}} / {{C|The Forgotten}} / {{C|Tainted Forgotten}}: The clubs/swords from fetuses with Sinus Infection's effect create boogers for each damaged enemy from their attack. The boogers from a club/sword deal half of the fetus' damage which held it per tick.
+** Sinus Infection + {{I|Technology}}: The lasers from fetuses with Sinus Infection's effect create boogers for each damaged enemy from their attack. The boogers inherit the fetuses' property including laser attacks, which can create another boogers. The boogers from a laser deal the laser's damage, so does their lasers. Fetuses can fire lasers while sticking to an enemy and spin, while boogers do not spin.
+** Sinus Infection + {{I|Tech X}}: The laser rings from fetuses Sinus Infection's effect create boogers for each damaging tick. The boogers from a ring deal the ring's damage per tick.
+* {{i|Spirit Sword}}: Fetuses hold small swords and repeat the swing attack and the charged spin attack as they travel. The damage calculation is based on half of the fetus' damage. On base [[Range]], they have just enough time to perform the attacks twice. The sword's size scales with the fetus' size.
+** Spirit Sword + {{I|Berserk!}} / {{I|Mom's Knife}} / {{C|The Forgotten}} / {{C|Tainted Forgotten}}: The fetuses hold swords and do not benefit from the others.
+** Spirit Sword + {{I|Proptosis}}: Although the attacks' damages diminish along with the fetus, the projectile from the sword does not lose its damage over range.
+* {{c|Tainted Azazel}}: Shoots 2 fetus tears along with his thin brimstone beam.
+* {{i|Tech.5}} / {{i|Technology 2}}: Both fire at the same time.
+* {{I|Technology Zero}}: Fetuses are connected with electricity.
+* {{i|Tech X}}: Fetuses are surrounded by a laser ring that deals half of their damage. The ring's size scales with the fetus' size.
+** Tech X + {{I|Brimstone}}: The laser rings do not change into brimstone rings. The Brimstone has no effect unless combined with other additional items.
+** Tech X + {{I|Proptosis}}: The rings shrink along with the fetuses, but they retain their tripled damage.
+* {{i|Technology}}: Fetuses rapidly shoot a short-ranged laser based on their damage when facing enemies.
+** Technology + {{I|Cricket's Body}}: Split tears created from the end of the laser inherit the effects of fetus tears including laser attacks from Technology, but they do not create another split tears.
+** Technology + {{I|Lachryphagy}}: Fetuses can feed on either other fetuses or Lachryphagy tears which their laser attacks create. Fed fetuses shoot stronger lasers, creating powerful Lachryphagy tears.
+** Technology + {{i|Pop!}}: Pop! tears created from the end of the laser inherit the effects of fetus tears including laser attacks from Technology, which can create another Pop! tears.
+** Technology + {{I|Proptosis}}: Although the laser's damage diminishes along with the fetus, it does not lose its damage over range.
+** Technology + {{i|Spirit Sword}}: Fetuses hold lightsabers and perform laser attacks and enhanced sword attacks separately, causing more damage.
+
+== Interactions ==
+Overridden by C Section:
+* {{I|Chocolate Milk}}
+* {{i|Cursed Eye}}
+* {{I|Evil Eye}}
+* {{i|Eye of the Occult}} (besides stat changes)
+* {{I|The Ludovico Technique}}
+* {{i|Monstro's Lung}}
+* {{i|Neptunus}}
+* {{i|Tractor Beam}} (besides stat changes)
+* {{I|Trisagion}}
+Other interactions:
+* {{i|Anti-Gravity}}: Fetuses will begin stuck in-place as expected, but will ignore this behavior if there are nearby enemies, in which case they will home in and chase them. Range "lifetime" is still ticking during the stuck time unlike normal tears, making them markedly harder to use and shorter lasting.
+* {{I|BFFS!}}: No effect; fetuses are considered tears, not familiars.
+* {{I|C Section}}: No additional effect for multiple copies of the item.
+* {{i|Epic Fetus}}: Overrides C Section  making Epic Fetus the only item in the game that can override it.
+* {{I|Eye of Belial}}: Fetuses' appearances change into Eye of Belial tears when passing through an enemy, but they retain their effects.
+* {{I|Fire Mind}}: The fetuses can explode and leave fires before they run out of [[Range]], which can result in inflicting less damage.
+* {{i|Flat Stone}}: Fetuses only bounce after going rather far or damaging enemies for long enough.
+* {{I|Immaculate Heart}}/{{I|Saturnus}}: No unique interactions; regular tears are generated which orbit Isaac normally.
+* {{I|Knockout Drops}}: Fetuses affected by it have the appearance of a fist, but they retain their effects.
+* {{I|Lachryphagy}}: Burst tears appear to be fetuses, but they do not retain [[homing]] or [[piercing]] effect from C Section.
+* {{I|Lead Pencil}}: low range burst of 12 non-fetus tears every 15 fetuses fired.
+* {{i|Lost Contact}}: Fetuses collide with enemy shots, destroying them. The collisions slightly affect the fetuses' movement.
+* {{i|Multidimensional Baby}}: Fetuses' appearances change into normal tears when passing through Multidimensional Baby, but they retain their effects.
+* {{I|Pop!}}: Fetuses' movements do not extend their lifespan, it is still limited by Range. Fetuses do not fall after bouncing off of each other 8 times.
+* {{I|Sad Bombs}} / {{I|Tammy's Head}}: Fires normal tears.
+* {{i|Scissors}}: C Section tears are fired from the body instead of the head. This makes the head do nothing, but the item still provides a benefit as the body will fire both the C Section tears and the blood fountain from Scissors.
+* {{I|Sharp Key}}: No effect on thrown keys.
+* {{I|Tear Detonator}}: Fetuses split into normal tears.
+
+== In-game Footage ==
+{{#ev:youtube|tA18r8RO1vY}}
+
+== Gallery ==
+C Section has a variety of appearances for its fetus shots. It depends mostly on the color of the character's body and is influenced mostly by costumes. There are a few unique appearances for specific items/characters.
+{| class="wikitable mw-collapsible striped"
+ ! Image
+ ! Notes
+ |-
+ | [[File:C Section Tears Default.png]]
+ | Default; appearance when fired by the large majority of characters.
+ |-
+ | [[File:C Section Tears Black.png]]
+ | {{c|Azazel}}, {{c|Lilith}}, {{c|Tainted Azazel}}, {{c|Tainted Lilith}}, {{i|Brimstone}}, {{i|Ball of Tar}}, or any other effects that turn the character's body black.
+ |-
+ | [[File:C Section Tears Blue.png]]
+ | {{c|???}}, {{c|The Soul}}, {{c|Tainted ???}} (albeit heavily brown tinted), {{i|Anti-Gravity}}, {{i|Neptunus}}, or any other effects  that turn the character's body blue.
+ |-
+ | [[File:C Section Tears Dark.png]]
+ | {{c|Black Judas}} or {{c|Tainted Judas}}.
+ |-
+ | [[File:C Section Tears Green.png]]
+ | {{i|Infestation}} or any other effects that turn the character's body green.
+ |-
+ | [[File:C Section Tears Grey.png]]
+ | {{c|Keeper}}, {{c|Apollyon}}, {{c|Tainted Lost}}, {{c|Tainted Keeper}}, {{c|Tainted Apollyon}}, {{i|Terra}}, {{i|Tooth and Nail}} (while active), {{p|VII - The Chariot?}} (unless in the Edith costume; see below), or any other effects that turn the character's body grey.
+ |-
+ | [[File:C Section Tears Red.png]]
+ | {{c|Esau}}, {{i|SMB Super Fan}}, {{i|Razor Blade}}, {{t|Red Patch}}, or any other effects that turn the character's body red.
+ |-
+ | [[File:C Section Tears Skeleton.png]]
+ | {{c|The Forgotten}} (not {{c|The Soul}}), {{c|Tainted Forgotten}}, or {{i|Compound Fracture}}.
+ |-
+ | [[File:C Section Tears White.png]]
+ | {{c|The Lost}}, {{c|Dead Tainted Lazarus}}, any character in their [[White Fire Place|ghost form]], {{I|Uranus}}, the Edith costume from {{p|VII - The Chariot?}}, or any other effects that turn the character's body white.
+ |}
+
+== Trivia ==
+* A [[wikipedia:Caesarean section|Caesarean Section]], or C Section for short, is a surgical procedure by which a baby is delivered through an incision in the mother's abdomen.
+* Isaac's body resembles a {{E|Vis}}. The fetus shots themselves resemble {{e|Unborn}}s.
+* Prior to [[v1.7.5]], this item had no effect other than changing Isaac's appearance and appeared in no item pools. Nonetheless, obtaining it was still required in order to unlock the {{A|Dead God}} [[achievement]].
+** It was only obtainable via {{i|Death Certificate}} and {{i|Spindown Dice}}, or as a starting item for {{c|Eden}} / {{c|Tainted Eden}}.
+** According to Edmund McMillen, C Section was a "dream item" whose mechanics and many hard-coded synergies were too complex to implement at ''Repentance''<nowiki/>'s launch, with Kilburn "obsessively" working on the item and other parts of ''Repentance''.<ref>https://twitter.com/edmundmcmillen/status/1486230032720691201</ref>
+
+== Bugs ==
+{{bug|There's no idle animation for C Section's costume, so Isaac (and every other character other than {{c|Lilith}}) will always appear to be walking when charging a shot, even when stationary.}}
+{{bug|{{c|Tainted ???}} does not have a costume assigned for C Section (despite {{c|???}} having one), and nonetheless always appears to be walking while charging a shot, even when stationary (see previous bug).}}
+{{bug|While Isaac has both C Section and {{i|Incubus}} (including {{c|Lilith}}'s inherent Incubus), Incubus' flying animation does not play while not firing; it floats around with no animation at all. The animation plays normally while firing.}}
+
+== References ==
+{{Reflist}}
+
+{{nav|lilith unlock|the beast unlock|fr=Césarienne}}

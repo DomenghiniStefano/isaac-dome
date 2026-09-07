@@ -1,0 +1,52 @@
+{{infobox trinket
+ | image name  = * {{dlcalt|nr=Rebirth|r=}}
+ | id          = 22
+ | quote       = Evil up
+ | description = Most non-specific {{e|Red Heart|text=Heart}} drops become {{e|Black Heart}}s, but most heart drops are replaced by {{e|Key}}s.
+ | unlocked by = Daemon's Tail
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* 80% of [[Hearts|heart]] drops are replaced with {{e|Key}}s.
+* All heart drops turn into {{e|Black Heart}}s, if possible. (Sometimes heart types are tied to the room, such as in certain {{R|Super Secret Room}}s.)
+
+== Notes ==
+* Objects and items such as [[tinted rock]]s, {{e|Red Chest}}s, {{M|Fortune Telling Machine}}s, {{i|Little C.H.A.D.}}, {{t|Bloody Penny}}, or {{E|Blue Fire Place}}s can't drop {{e|Black Heart}}s. Thus, they will still drop {{e|Soul Heart}}s/{{e|Red Heart}}s with Daemon's Tail.
+* {{i|Glyph of Balance}} can still force drops to be Red Hearts if the proper conditions are met.
+* {{dlc+|a+}} All heart drops from {{p|Ace of Hearts}} will be Black Hearts.{{dlc-}}
+* No effect on {{P|Queen of Hearts}}, {{p|V - The Hierophant}}, {{p|V - The Hierophant?}}, and {{p|VI - The Lovers}}.
+* {{p|VIII - Justice}} is affected by the heart pickup reduction, however its Red Heart drop will be replaced if it spawns.
+* Sources of heart drops that are reduced include cleared rooms, [[boss]]es, {{M|Slot Machine}}s, {{M|Fortune Telling Machine}}s, {{M|Beggar}}s, {{e|Fire Place}}s, {{E|Chest}}s, {{e|Red Chest}}s, {{e|Poop}}s, [[tinted rock]]s, items ({{i|Gimpy}}, {{i|Old Bandage}}, {{i|Fanny Pack}}), trinkets ({{t|Bloody Penny}}), and familiars ({{i|Little C.H.A.D.}}, {{i|The Relic}}, etc).
+** Hearts that are present upon entering a room for the first time are unaffected by the reduction (for example, the ones found in {{R|Curse Room}}s/{{R|Devil Room}}s/{{R|Angel Room}}s), but will be converted to Black Hearts.
+*** The exceptions to this are particular {{R|Super Secret Room}}s, which have the effect of forcing all heart drops to be the kind found within them.
+** {{dlc|na+}}The {{p|V - The Hierophant}} and {{p|VI - The Lovers}} [[tarot card]]s have a chance to drop one heart instead of two.
+* Things that can drop pickups other than hearts will keep the same chance to drop a consumable, but with an increased chance for drops other than hearts and a decreased chance for heart drops. In particular, this increases the chances of acquiring:
+** [[Tarot card]]s & [[trinket]]s from {{M|Fortune Telling Machine}}s
+** {{e|Bomb}}s and {{e|Key}}s from [[tinted rock]]s
+** [[Pill]]s and items from {{e|Red Chest}}s
+** [[Coin]]s from {{e|Poop}}s and {{e|Fire Place}}s
+** Any pickup from {{M|Slot Machine}}s, cleared rooms, {{M|Beggar}}s, {{E|Chest}}s, and the Fanny Pack.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Blue and purple fires drop {{e|Black Heart}}s instead of {{e|Soul Heart}}.
+* {{t|Black Feather}}: Black Feather grants a damage boost for Daemon's Tail, provided Isaac has an extra trinket slot ({{dlc|a+}} or has gulped/smelted either of the trinkets).
+
+== Interactions ==
+* {{i|Box}}: The Red Heart drop will not be reduced and will always be replaced by a Black Heart.
+* {{i|Crystal Ball}}: The chance to drop Cards or Runes will change to 90%/10% in favor of cards.
+* {{i|Squeezy}} / {{i|Mr. Dolly}} / {{i|Marrow}}: Heart drops are unaffected.
+
+== Tips ==
+* Due to its specific mechanic, Daemon's Tail has no synergy with items increasing chances for Soul/Eternal/Black Hearts to drop instead of a Red Heart, like {{i|Mitre}}, {{t|Mom's Pearl}}, or {{t|Bible Tract}}.
+* Since the frequency of heart drops is lowered, holding this trinket can be dangerous to Isaac if he has numerous [[Health#Red Heart Containers|Red Heart containers]], as he can easily find himself short on health.
+** This trinket is more effective for {{c|???}}, {{c|Tainted ???}}, {{dlc|r}}{{c|Black Judas}}, {{c|Tainted Judas}}, and {{c|Tainted Forgotten}} because they cannot gain red heart containers or fill their {{e|Bone Heart}}s with red hearts.
+** The trinket is also beneficial for {{c|The Lost}}, {{c|Tainted Lost}}, {{c|Keeper}}, and {{c|Tainted Keeper}} since it replaces useless hearts with other pickups.
+* {{t|Mom's Pearl}} or {{t|Bible Tract}} are trinkets which only need to be held to be useful, whereas Daemon's Tail is more effective if it is held and dropped at the right times, to get an increased chance for consumables from certain mechanics (to counter a lack of {{e|Bomb}}s/{{e|Key}}s/[[coin]]s, or to get {{e|Black Heart}} protection), and to still get enough heart drops to stay alive at other times (from bosses or familiars).
+** This trinket nearly requires this kind of strategy to pay off, making it tough to use as the player will have to sort and remember the moments where they must pick up or drop the trinket, as it interacts with nearly every consumable dropping mechanic.
+
+== In-game Footage ==
+{{#ev:youtube|MFaHxTDWyCE}}
+
+{{nav|key modifier|azazel unlock|satan unlock|fr=Queue de Diablotin}}

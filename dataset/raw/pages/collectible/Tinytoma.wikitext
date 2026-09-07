@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 645
+ | quote       = Itching for revenge
+ | description = Gives Isaac a {{E|Teratoma}} [[Familiar#Orbital Familiars|orbital]] that blocks shots, deals contact damage, and splits into smaller versions of itself upon taking damage. The smaller versions break into [[blue spider]]s.
+ | quality     = 1
+ | tags        = summonable monstermanual
+ | unlocked by = Tinytoma
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Grants a large [[Familiar#Orbital Familiars|orbital]] similar to {{E|Teratoma}} that slowly orbits Isaac.
+** The orbital repels enemies that touch it and deals 3.5 contact damage to enemies, once per second.
+* After blocking 3 shots and/or dealing 3 ticks of contact damage, the orbital splits into two smaller ones that orbit opposite of each other. They behave the same as the original, except they are smaller and can only take 2 hits before being destroyed, bursting into 3 [[blue spider]]s in the process.
+** 5 seconds after both orbitals are destroyed, the original, full-size orbital respawns.
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Teratoma}}.{{dlc-}}
+* If there is a [[spiked rock]] in the room, Isaac can destroy Tinytoma with them to spawn lots of [[blue spider]]s, as Tinytoma will respawn after being destroyed.
+** This can be done until the maximum of 64 blue spiders/flies is reached.
+
+== Trivia ==
+* [[anti:Tinytoma|Tinytoma]] is from the ''Antibirth'' mod. In ''Antibirth'', destroying [[Rocks#Polyps|Polyps]] on the {{s|Corpse}} floor had a chance to drop Tinytoma and could even drop the item before it was unlocked.
+
+== Bugs ==
+{{bug|Each use of {{i|Glowing Hourglass}} that does not move Isaac to a different room from the one he is currently in (such as by teleporting to the previous room then using it again) will duplicate any smaller orbitals of Tinytoma currently orbiting Isaac.}}
+
+{{nav|lazarus unlock|mother unlock}}

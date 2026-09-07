@@ -1,0 +1,110 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 654
+ | quote       = Worse pills + evil up
+ | description = Converts good [[pills]] into bad pills and identifies all pills. Bad pills now have secondary positive effects. Grants one {{e|Black Heart}}.
+ | quality     = 2
+ | tags        = summonable offensive nocantrip
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Identifies all [[pills]] upon pickup.
+* Spawns a pill.
+* Grants one {{E|Black Heart}} on pickup.
+* Converts all good pills into their bad counterparts.
+* Grants +0.6 [[damage]] for each stat down pill and +1.2 [[damage]] for each stat down [[Pills#Horse Pills|horse pill]] Isaac has taken, including those taken before acquiring False PHD.
+* Using a non-stat down bad pill drops a {{E|Black Heart}}.
+{| class="wikitable"
+ ! Pill !! Changes Into
+ |-
+ | Stat up pill
+ | Stat down pill
+ |-
+ |''Bad Gas'' & ''Friends Till the End!''
+ |''Health Down''
+ |-
+ |''I can see forever!'' & ''Lemon Party''
+ |''Amnesia''
+ |-
+ |''Explosive Diarrhea'' & ''One makes you larger''
+ |''Range Down''
+ |-
+ |''Bombs are Key'' & ''Infested!''
+ |''Tears Down''
+ |-
+ |''48 Hour Energy'' & ''One makes you small''
+ | ''Speed Down''
+ |-
+ |''Pretty Fly'' & ''Infested?''
+ |''Luck Down''
+ |-
+ |''Balls of Steel'', ''Full Health'', & ''Hematemesis''
+ |''Bad Trip''
+ |-
+ |''Pheromones''
+ |''Paralysis''
+ |-
+ |''Telepills''
+ |''???''
+ |-
+ |''I'm Drowsy...''
+ |''I'm Excited!!!''
+ |-
+ |''Percs!''
+ |''Addicted!''
+ |-
+ |''Feels Like I'm Walking on Sunshine!''
+ |''Retro Vision''
+ |-
+ |''Power Pill!''
+ |''R U A Wizard?''
+ |-
+ |''Something's wrong...''
+ |''X-Lax''
+ |-
+ |''Gulp!'' & ''Vurp!''
+ |''Horf!''
+ |-
+ |''Experimental Pill''
+ |Only grants a stat down
+ |-
+ |''Gold Pill''
+ |Only has negative effects
+ |-
+ ! colspan="2"| Neutral pills
+ |-
+ |colspan="2"| ''I Found Pills''
+ |-
+ |colspan="2"| ''Puberty''
+ |-
+ |colspan="2"| ''Re-Lax''
+|}
+
+== Notes ==
+* Bad Trip and Health Down pills will turn into I Found Pills when Isaac is at one heart.
+* Neutral pills will not have a secondary effect.
+* Telepills will be converted to ??? even if the latter has not yet been unlocked.
+* Gulp! and Vurp! will be converted to Horf! even if the latter has not yet been unlocked.
+* Pills are only converted while held by a character with False PHD. For example: If playing as {{c|Jacob and Esau}} and {{c|Jacob}} has this item, pills that got converted into 'bad' pills like a Tears Down pill can be given to {{c|Esau}} to convert them back into whatever the pill was originally.
+* Losing the item by either dropping it as {{c|Tainted Isaac}} or re-rolling it via {{i|D4}}, etc., causes the damage buffs given to be removed.
+* With {{i|Little Baggy}} and False PHD, the [[Rocks#Marked Skulls|Marked Skull]] in {{S|Depths}} II will drop a ??? pill, making it much harder to open {{A|A Strange Door}} that run.
+* This item can be crafted from {{i|Bag of Crafting}} with seven [[pill]]s and one {{e|Black Heart}}.
+
+== Synergies ==
+* {{I|A Pony}}/{{I|White Pony}}: Effectively converts all Speed Down pills into Damage Up as long as one of the ponies are being held, since they will always give a minimum of 1.5 speed.
+* {{t|Black Feather}}: Counts as an evil item, granting a damage up.
+* {{i|Lucky Foot}} / {{i|PHD}} / {{i|Virgo}}: Pills can now be both good and bad again. The other effects of False PHD still apply when taking bad pills.
+** Getting multiple of the pill-upgrading items has no effect, bad pills can still appear.
+* {{i|The Wafer}}: Using a Bad Trip pill will only deal half a heart of damage and spawn a full Black Heart, resulting in a net gain of health.
+** The Wafer + {{i|Placebo}}: Allows for farming infinite health using Bad Trip pills.
+* {{i|Rock Bottom}}: Prevents stat-decreasing pills from decreasing your current stats. They still have an effect in the background, making it more difficult to raise that stat in the future.
+
+== Interactions ==
+* {{I|Libra}}: The balancing of stats mostly leads to a net decrease between Stat Downs and +0.6 [[damage]] up, while Luck Down provides +0.6 damage and -1 [[luck]].
+
+== In-game Footage ==
+{{#ev:youtube|dFwYucBWQ9k}}
+
+{{nav|pill modifier|fr=Doctorat Falsifié}}

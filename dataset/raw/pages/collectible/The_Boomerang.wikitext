@@ -1,0 +1,59 @@
+{{infobox activated collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 338
+ | quote       = It will never leave you
+ | description = Throws a boomerang which retrieves [[pickup]]s, as well as damages and [[Status Effects#Effects|petrifies]] enemies hit for 2 seconds. {{Dlc|r}} Pierces through enemies.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = 2s
+ | shop price  = {{dlcalt|15|r=10}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* On use, Isaac readies the Boomerang. Pressing a fire key will throw it in the chosen direction, and it will return shortly afterward.
+* Any [[pickup]]s hit will return to Isaac with the Boomerang.
+* Enemies hit by it will take double Isaac's current damage and are [[Status Effects#Effects|petrified]] for about 2 seconds.
+* {{Dlc|r}} Boomerang [[Tear Effects#Effects|pierces]] enemies it hits.
+** The Boomerang will only hit a given enemy once during its travel time.
+
+== Notes ==
+* The Boomerang starts to recharge only after it has returned to Isaac.
+* The Boomerang can grab [[pickup]]s from afar, even over [[obstacle]]s.
+* The Boomerang can be used to destroy any {{e|Shopkeeper}}s.
+** If Isaac has low damage, the shopkeeper won’t get destroyed and will instead flash red as if taking damage.
+* The Boomerang can damage {{E|Host}} and {{E|Mobile Host}} enemies even while under their shells.
+* {{dlc|nr}} The Boomerang's range scales with Isaac's [[range]] stat.
+* {{dlc|r}} The Boomerang's range scales with Isaac's [[tear height]].
+* The Boomerang can hit and stun {{E|The Haunt}} or {{E|Lil' Haunt}}s even when they are invincible.
+* The Boomerang is unable to pick up {{e|Sticky Nickel}}s, or {{E|Chest}}s.
+* With enough speed, it is possible to have two Boomerangs in the air at the same time.
+* {{dlc|na+}} The Boomerang can grab troll bombs.
+* {{Dlc|r}} The item only costs 10 coins when found in a {{r|Shop}}.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns wisps in the middle ring. Wisps' tears have the {{I|My Reflection}} effect and do not persist between rooms.}}
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{i|Angelic Prism}}: No effect on the Boomerang's attack.
+* {{dlc+|r}} {{i|Kidney Stone}} / {{i|Number One}} / {{i|Pluto}} / {{i|Inner Child}}'s revive: The Boomerang loses almost all of its range, and can only be improved with [[tear height]] ups.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|zY5GtJNX5XY}}
+
+== Trivia ==
+* The Boomerang is a recurring item in ''[[wikipedia:The Legend of Zelda|The Legend of Zelda]]'' series. The icon used is inspired by ''The Magic Boomerang'''s appearance in the first ''The Legend of Zelda'' game.
+* {{dlc|a}} This item is used in {{chal|I RULE!}}.
+* This item can be found as one of the Nintendo-themed {{r|Treasure Room}} items in the 6th of December's [[List of curated daily challenges|Daily Run]], which is an homage to the late CEO of Nintendo, Satoru Iwata.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed The Boomerang.png|{{plat|3DS}} The icon of The Boomerang as seen on the lower 3DS screen.
+</gallery>
+
+== Bugs ==
+{{bug|The Boomerang can collide with {{i|The Ladder}} when deployed, causing it to immediately return to Isaac when thrown. It doesn't always happen.}}
+
+{{nav|fr=Boomerang}}

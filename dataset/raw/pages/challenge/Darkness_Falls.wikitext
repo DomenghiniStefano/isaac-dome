@@ -1,0 +1,31 @@
+{{infobox challenge
+ | number      = 4
+ | character   = Eve
+ | item        = {{i|Pentagram}}<br>{{i|Dead Bird}}<br>{{i|Whore of Babylon}}<br>{{i|Razor Blade}}<br>{{i|Sacrificial Dagger}}<br>{{i|Dark Matter}}
+ | has shops   = yes
+ | goal        = Satan
+ | unlocks     = Rune of Dagaz
+ | unlocked by = Darkness Falls
+}}
+
+'''Darkness Falls''' is [[challenge]] #4. {{C|Eve}} is the default character for this challenge, and she starts the challenge with {{i|Pentagram}}, {{i|Dead Bird}}, {{i|Whore of Babylon}}, {{i|Razor Blade}}, {{i|Sacrificial Dagger}}, and {{i|Dark Matter}}. The goal is to defeat {{e|Satan}}.
+
+== Difficulty ==
+This challenge focuses on a high risk, high reward style of play. When low on health, Eve can inflict more damage. As a result, the majority of the challenge will be spent in a near-death state.
+
+== Strategy ==
+* Since the player is playing as Eve, Whore of Babylon will activate when having 1 Red Heart or less, rather than 1/2. Since she starts with 2 hearts, the Razor Blade can activate this effect immediately.
+** Because the Razor Blade inflicts damage, using it will also activate the Dead Bird.
+* Sacrificial Dagger and Dark Matter can be used together. The [[fear]] effect can drive enemies away, allowing Eve to chase and kill them with the dagger.
+* Making one [[Devil deal]] can permanently activate Whore of Babylon. However, this can put Eve in a very dangerous position with only one Red Heart.
+** A {{i|Dark Bum}} obtained in a Devil deal can both remove 1 Red Heart container from Eve to keep Whore of Babylon always active and convert usually useless Red Heart drops into more useful heart types.
+* Since all of the starting items are from the [[Devil Room (Item Pool)|Devil Room pool]], Eve has a much higher chance to get some of the stronger items such as {{i|Mom's Knife}} or {{i|Brimstone}}. As such, opening the {{R|Devil Room}} as often as possible should be a priority.
+** Also, to prevent Angel Rooms from appearing later on in the run, it is advised to take the first Devil Deal encountered.
+
+== Notes ==
+* {{dlc|a+}} Killing {{E|Delirium|n}} will count as completing the challenge.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Rune of Dagaz }}
+
+{{nav|challenge|moms heart unlock|eve unlock|blue baby boss unlock|fr=Noir c'est noir}}

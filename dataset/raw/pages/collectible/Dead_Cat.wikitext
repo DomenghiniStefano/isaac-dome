@@ -1,0 +1,77 @@
+{{infobox passive collectible
+ | quote       = 9 lives
+ | description = Sets Isaac's [[Red Heart Container]]s to 1, but grants 9 extra lives. After dying, Isaac respawns with 1 Red Heart Container in the previous room.
+ | quality     = 3
+ | tags        = uniquefamiliar dead guppy nocantrip
+ | id          = 81
+ | devil price = {{dlcalt|1|r=2}}
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Sets Isaac's Red [[Heart container]]s to 1 when being picked up.
+** Does not remove {{E|Soul Heart}}s or {{E|Black Heart}}s unless picked up as {{C|???}}, {{c|The Soul}}, {{dlc|r}} {{C|Black Judas}}, {{C|Tainted Judas}}, {{c|Tainted ???}}, {{c|Tainted Forgotten}}, or {{C|Tainted Bethany}}.
+** {{dlc|a+}} Does not remove {{E|Bone Heart|n}}s unless picked up as {{c|The Forgotten|n}}.
+*** Can be picked up as The Soul half of The Forgotten to remove all but 1 Soul heart and keep all Bone Hearts.
+* Grants 9 extra lives.
+** Upon death, Isaac respawns with 1 Red [[Heart container]], typically in the previous room. 
+* The head of Guppy begins following Isaac like a familiar upon pickup but doesn't do anything.
+** When Isaac has lost all of the lives provided by this item, the Guppy familiar will disappear.
+* {{transformation contribution|Guppy}}
+
+== Notes ==
+* This item can drop from killing {{e|Super Pride}}. {{dlc|nr}} Super Pride can drop this item even if Isaac has already encountered/possessed it. 
+* Resurrection items activate in a [[:Category:Revival items|set order]]. Dead Cat is {{dlc|nr}} 2nd / {{dlc|r}} 4th in this order after {{p|Soul of Lazarus}}, {{i|1up!}}, and {{c|Lazarus|r}}' inherent extra life.
+* {{dlc|na}} Picking this item up as {{c|The Lost}} does not show the number of lives remaining, but still functions normally.
+* {{dlc+|a+}} If picked up as {{c|The Forgotten}}, his Bone Hearts are reduced to 1 but {{c|The Soul}}'s Soul Hearts remain unaffected; It is also true the other way.{{dlc-}}
+* The lives are added after the "picking up an item" animation has ended, so characters that die while the animation is playing will not be revived by this item.
+* {{dlc|nr}} The effects of the {{i|D4}}, {{i|D100}}, {{i|Missing No.}}, or a 1- or 6-pip {{r|Dice Room}} will not remove the lives granted by this item.
+* Additional Dead Cats can be picked up during a run, increasing lives well past 9. {{dlc|nr}} Only the first dead cat counts toward becoming Guppy.
+* {{dlc|a+nr}} This item counts as 9 items, so if Isaac is trying for an early portal to {{s|The Void}} after beating {{E|Mom}}, this will significantly boost the progress closer to 20 items.
+* {{Dlc+|r}} If {{c|Jacob and Esau}} take the item, only the brother who takes it will be set to one Red Heart Container on pickup. But if they die, both are resurrected with one Red Heart Container.{{dlc-}}
+** If both brothers take the item (via {{I|Diplopia}} or {{I|Birthright}}), resurrections will be subtracted from Jacob before Esau, regardless of which brother actually died.
+* {{c|Tainted Jacob}}'s health will still be reduced to 1 Red Heart Container if he takes this item after being touched by {{E|Dark Esau|n}} or if he dies in his Lost form.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Dead Cat having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+* If Isaac somehow obtains Dead Cat in the starting room of Chapter 1 and dies before ever leaving it, he will respawn in that same room.
+** {{dlc|r}} Similarly, during the fight against {{E|The Beast|n}}, Isaac will respawn in the same room on the spot and can continue the battle.
+* {{dlc|r}} Despite the life counter being shown during the {{e|Mother's Shadow|n}} chase, the item is inactive like all other items and will not provide extra lives.
+* {{dlc|r}} If all 9 lives are used, Dead Cat disappears from Isaac's inventory.  If Isaac only has three Guppy items prior to losing Dead Cat, then its disappearance will cause the Guppy transformation to be lost.
+* {{dlc+|r+}} Dead Cat's quality is treated as 2 for the purposes of {{I|Bag of Crafting}}.{{dlc-}}
+
+== Strategies ==
+* In the context of a {{r|Devil Room}}:
+** Taking Dead Cat with 1 or 2 Heart Containers won't kill Isaac because it will set his number of Heart Containers to 1 immediately, saving him from the death that would have resulted from having no Heart Containers. {{dlc|nr}} Buying Dead Cat when at 1 Heart Container essentially obtains the item for free.
+** Because Dead Cat sets Isaac's Heart Containers to 1, if it's found alongside other devil deals and Isaac has enough Heart Containers, it's possible to essentally take those other deals for free if they're taken before Dead Cat.
+** Other Devil Room items can be bought without the necessary number of Heart Containers at the cost of one of the many lives Dead Cat provides.
+** To take multiple Devil Deals, buy a Devil deal item then quickly leave the room before the "item get" animation finishes. This will result in Dead Cat reviving Isaac back inside the Devil Room.
+* {{dlc|a}} Taking Dead Cat as {{c|Keeper}} or {{c|Tainted Keeper|r}} will reduce their total number of Coin Hearts to one, meaning they will die upon taking any damage at all. Unless either of them have immediate access to an HP Up item, such as from the Boss Item Drop, taking Dead Cat is usually detrimental.
+** {{dlc|r}} Dead Cat no longer allows Keeper to spend his lives for Devil Deals like others characters due to his Devil Deal purchasing mechanic. As he no longer needs heart containers to purchase Devil Deals, it is more likely he will have extra heart containers around that can be used to mitigate Dead Cat's penalty.
+* {{dlc|r}} Holding onto a {{P|XIX - The Sun?|n}} can be beneficial if at high HP. Using it prior to taking Dead Cat will convert all red heart containers to {{E|Bone Heart|n}}s for the floor. The bone hearts do not disappear when taking Dead Cat and will all revert back to normal red-heart containers on the next floor (and stay filled if the bone hearts were filled).
+
+== Synergies ==
+* {{E|Gold Heart|anr}}s: Gives Isaac many coins when picked up, due to the amount of hearts lost.
+* {{i|Guppy's Paw}}: In addition to contributing to the transformation, converting the Red Heart Container obtained after revival into three Soul Hearts effectively triples Isaac's HP.
+
+== In-game Footage ==
+{{#ev:youtube|5yqkG14NkPA||inline}} {{#ev:youtube|R2XKXRQFTHo||inline}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Parasite }}
+
+== Gallery ==
+<gallery>
+File:Dead Cat ingame.png|The Dead Cat familiar in-game.
+File:Collectible Dead Cat appearance.jpg|The Dead Cat familiar with Isaac.
+</gallery>
+
+== Trivia ==
+* The 9 lives gained by the item is a reference to a myth that cats have 9 lives.
+* The item {{I|Guppy's Tail}} and the transformation {{tf|Guppy}} implies that Guppy has a white fur on it's tip of the tail while the sprite for Dead Cat does not.
+* The Dead Cat shares the same tuxedo type bicolor fur with Guppy.
+** Despite not having Guppy in its name, this item counts for the Guppy transformation which may imply that Dead Cat is Guppy, or at least was what Guppy looked like at some point.
+
+== Bugs ==
+{{bug|If picked up as {{c|???}}, {{c|Black Judas}}, {{c|Tainted Judas}}, {{c|Tainted ???}}, {{c|Tainted Forgotten}}, or {{c|Tainted Bethany}} while in possession of {{e|Bone Heart}}s, the health bar may become glitched. The actual health amount is correctly set to 1 {{e|Soul Heart}}/{{e|Black Heart}} + all Bone Hearts, but some of the Bone Hearts are incorrectly displayed as half Soul Hearts depending on the situation before picking up Dead Cat. This can mess with the order of Soul Hearts and Bone Hearts after taking damage or gaining health. The glitch will resolve itself after taking damage, picking up health or touching an item.|dlc=r}}
+
+{{nav|guppy|revival|cat|fr=Chat Mort}}

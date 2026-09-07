@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 629
+ | quote       = Defense drone
+ | description = Spawns an orbiting fly [[familiar]] that fires shielded tears at incoming enemy projectiles.
+ | quality     = 3
+ | tags        = summonable monstermanual fly
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Spawns a robotic {{E|Pooter}} familiar that orbits around Isaac and fires shielded tears at incoming enemy projectiles, which destroy them on contact.
+** The shielded tears home in on projectiles, but not enemies.
+** The familiar deals 1 contact damage per tick or 3 damage per second, and instantly kills weak fly enemies on contact.
+** The shielded tears deal 3 damage if they hit an enemy.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* {{dlc|nr+}} Only 5 Bot Flies can circle Isaac at a time.
+* While most orbital familiars orbit Isaac counter-clockwise, Bot Fly orbits clockwise. It shares this orbit ring, speed, and pattern with {{i|Distant Admiration}}.
+
+== Interactions ==
+* {{i|BFFS!}}: Increases contact damage but does not increase the damage of the tears.
+
+== Trivia ==
+* [[anti:Bot Fly|Bot Fly]] is from the ''Antibirth'' mod. In ''Antibirth'', the shots would home on projectiles only when paired with {{i|BFFS!}}.
+* This item's name appears to be a play on the word "bot" when used as shorthand for "robot" and on "botfly", a parasitic insect which lives in tropical climates.
+
+{{nav|fly|fr=Robomouche}}

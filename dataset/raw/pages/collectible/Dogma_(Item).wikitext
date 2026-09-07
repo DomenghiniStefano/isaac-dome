@@ -1,0 +1,56 @@
+
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 633
+ | quote       = Ascended
+ | description = Grants [[flight]], +2 [[damage]], and increases [[speed]] to 1.1. Grants enough [[health]] to have 6 full hearts, if possible. Grants the {{i|Holy Mantle}} effect for the room it was obtained in. Automatically given to Isaac after defeating [[Dogma]].
+ | quality     = 3
+ | tags        = lazarusshared noeden quest
+}}
+{{disambig msg|the item|the boss|Dogma}}
+{{distinguish visual|The Relic}}
+
+{{cit|p|r||Dogma}} It is automatically given to Isaac after defeating {{E|Dogma}}; the only ways to acquire it on a pedestal are either through the {{i|Death Certificate}} or by using {{i|Spindown Dice}} on {{i|Purgatory}}.
+
+== Effects ==
+* Grants [[flight]].
+* Grants a one-time {{i|Holy Mantle}}-like effect. This effect wears off upon leaving the room.
+* Prevents Isaac's [[speed]] from going under 1.1.
+* +2 [[damage]].
+* If Isaac has fewer than six full [[health|hearts]] of health, Isaac is given enough hearts to get to six full hearts, first by restoring empty [[Health#Red Heart Containers|red heart containers]], and then by granting [[Health#Soul Hearts|soul hearts]] if that isn't enough.
+** Does not affect {{c|The Lost}} or {{c|Tainted Lost}} normally.
+** {{c|Keeper}} and {{c|Tainted Keeper}}'s [[Health#Coin Hearts|coin heart containers]] are affected by the red heart healing, but they will gain [[Blue Fly|Blue Flies]] instead of soul hearts.
+** {{c|The Forgotten}} will have all his bone hearts replenished, and any soul hearts earned will go to The Soul.
+** {{c|Bethany}} will gain soul charges instead of soul hearts.
+** {{c|Tainted Lazarus}} will receive the flight and stat bonuses for both forms. Since defeating Dogma will swap between forms, the active character before the cutscene will ''not'' receive the healing and shield effect, which will instead be given to the form present after the cutscene.
+** {{I|Alabaster Box}} will take the soul hearts before they're given to Isaac, like normal.
+* {{mode|normal}} On Normal mode, grants {{I|The Wafer}} effect, reducing all damage taken to half a heart.
+
+== Notes ==
+* As with all items crucial to story progress ({{i|The Polaroid}}, {{i|The Negative}}, {{i|Key Piece 1}}, {{i|Key Piece 2}}, {{i|Knife Piece 1}}, {{i|Knife Piece 2}}, and {{i|Dad's Note}}), this item:
+** Cannot be rerolled once picked up.
+** Does not take up an item slot for {{c|Tainted Isaac}}.
+** Still grants flight while acquiring Knife Piece 2, as it isn't removed (possible when carried over in a [[RERUN]], using {{i|R Key}}, using {{i|Death Certificate}}, or using {{i|Spindown Dice}} on {{i|Purgatory}}).
+* {{dlc|nr+}} Dogma's Holy Mantle effect does not stack with an actual Holy Mantle, but it does stack with a {{P|Holy Card}} effect.
+** {{dlc|r+}} All shield-type items now stack in the following order:
+*** {{t|Wooden Cross}}
+*** {{i|Blanket}}
+*** {{i|Holy Mantle}}
+*** {{p|Holy Card}}
+*** {{i|Dogma}}
+
+== In-game footage ==
+{{#ev:youtube|YxzF9HyfX6A}}
+
+== Trivia ==
+* Dogma's in-game appearance is actually TV static, much like the boss, instead of being blue.
+** This is because the blue is used to indicate areas that the game should apply the static effect to. This was likely done to avoid making the sprite file animated, instead simply letting the game apply the effect to designated areas when the time comes to use them. This also results in the static effect being randomized, instead of following a repeating pattern. This same trick is also what {{E|Dogma}} uses.
+
+== Gallery ==
+<gallery>
+File:Collectible Dogma icon animated.gif|Simulation of the ingame appearance for Dogma. It animates with a white TV static effect instead of being blue, both when on a pedestal or seen on the HUD.
+</gallery>
+
+{{nav|fr=Dogma_(Objet)}}
+[[Category:Damage-preventing items]]
+[[Category:Flight-granting items]]

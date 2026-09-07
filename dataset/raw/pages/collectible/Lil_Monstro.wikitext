@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | dlc = a+
+ | name = Lil Monstro
+ | id = 471
+ | quote = Ain't he cute?
+ | description = Spawns a [[familiar]] that fires clusters of tears. Must be charged before shooting.
+ | quality     = 2
+ | tags        = summonable monstermanual offensive
+}}
+{{disambig msg|the item|the boss|Monstro|the enemy|Ministro}}
+
+{{cit|p|a+}}
+
+== Effect ==
+* Spawns a small flying {{E|Monstro}} [[familiar]] that charges up and fires a large cluster of tears, similar to Monstro's main attack.
+** It fires between 12 and 14 tears that do 3.5 damage each.
+*** It can do a minimum of 3.5 damage to 49 damage, depending on how many shots are fired and how many hit.
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Lil Monstro having {{dlc|nr+}} 3rd / {{dlc|r+}} 5th priority.
+
+== In-game Footage ==
+{{#ev:youtube|l5zJS2MxJbY}}
+
+== Trivia ==
+* '''Lil Monstro''' is the familiar form of {{E|Monstro}}.
+
+== Gallery ==
+<gallery>
+File:AB- Item Concept.jpg|Item art concepts for AB+, including Lil Monstro
+</gallery>
+
+{{nav|fr=P'tit Monstro}}

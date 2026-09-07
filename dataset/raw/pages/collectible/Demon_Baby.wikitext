@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | image name  = * {{dlcalt|na+=Rebirth|nr=Afterbirth+}}
+ | id          = 113
+ | quote       = Auto-turret friend
+ | description = Spawns a [[familiar]] that follows Isaac around and automatically fires at enemies within its range.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable baby monstermanual offensive
+ | unlocked by = Demon Baby
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Spawns a [[familiar]] who follows Isaac around and automatically fires normal tears at enemies in its range 3 times per second that each do 3.5 damage.
+* {{transformation contribution|Conjoined|dlc=r}}
+
+== Notes ==
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Demon Baby having {{dlcalt|5th|r+=7th}} priority.
+
+== Synergies ==
+* {{i|Box of Friends}}: If used without having any familiars, a Demon Baby will be spawned for the remainder of the current [[Rooms|room]].
+* {{i|Chocolate Milk}}: Shoots at enemies while charging up a shot, thus giving Isaac an alternative way to kill enemies while charging a shot.
+* {{tf|Guppy|nr}}: Spawns flies as if normal tears are hitting enemies.
+* {{i|Mongo Baby}}: Behaves like Demon Baby, and will no longer shoot its regular tears unless Isaac has another compatible familiar. If Isaac has other familiars that Mongo Baby can mimic, its behavior alternates between Demon Baby’s and the other familiars’.
+
+== In-game Footage ==
+{{#ev:youtube|XnEI93D4blY||inline}} {{#ev:youtube|m9VeI_NALG8||inline}}
+
+== Trivia ==
+* In the original ''The Binding of Isaac'', Demon Baby was unlocked by defeating {{E|Satan}} as {{C|Eve}}.
+
+{{nav|conjoined|azazel unlock|the lamb unlock|fr=Bébé Démoniaque}}

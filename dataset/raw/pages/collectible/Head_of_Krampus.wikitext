@@ -1,0 +1,44 @@
+{{infobox activated collectible
+ | id          = 293
+ | quote       = Krampus rage
+ | description = Fires a powerful {{i|Brimstone}} beam in four cardinal directions. {{dlc|ana+}} Has a 50% chance to rotate all beams around Isaac 90 degrees.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = offensive
+ | recharge    = {{dlcalt|6|r=3}}
+ | pool        = Krampus
+ | unlocked by = Head of Krampus
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* Upon use, fires a powerful {{i|Brimstone}} beam in the four cardinal directions, similar to that of the attack used by {{e|The Fallen}} and {{e|Krampus}}.
+** {{dlc|ana+}} Has a 50% chance to rotate all beams around Isaac 90 degrees, similar to Krampus' second Brimstone attack.
+
+== Notes ==
+* Head of Krampus is one of two items that can drop by defeating {{e|Krampus}}. The other one is {{i|A Lump of Coal}}.
+** This is the only way to get this item normally.
+* {{dlc|nr}} Each beam deals 22 damage per tick, ticking a total of 20 times, dealing a total of 440 damage per use.
+* {{dlc|r}} Each beam deals 10 damage per tick, ticking a total of 20 times, dealing a total of 200 damage per use.
+* Damaging enemies with the effect of this item as {{tf|Guppy}} will spawn multiple [[Blue Fly|Blue Flies]].
+* By standing really close to large enemies such as bosses, it's possible to hit them with multiple beams at once, dealing significantly more damage than a single beam.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns red wisps in the middle ring. The wisps fire small {{I|Brimstone}} lasers in the cardinal directions when destroyed. The lasers deal the wisps' tear damage per tick, and can hit up to 20 times. {{I|BFFS!}} will not increase this damage, despite it scaling with the wisps' tear damage.}}
+* {{i|Car Battery}}: Doubles the damage the brimstone beams deal, but not their durations.
+** {{dlc|nr}} Each beam now deals 44 damage per tick, ticking a total of 20 times, dealing a total of 880 damage per use.
+** {{dlc|r}} Each beam now deals 20 damage per tick, ticking a total of 20 times, dealing a total of 400 damage per use.
+
+== In-game Footage ==
+{{#ev:youtube|Atcppbu41DY}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Head of Krampus.png|{{plat|3DS}} The icon of Head of Krampus as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* This item was originally planned to appear as a Halloween Update in the original ''The Binding of Isaac'', but was scrapped.
+** A scrapped item in the original game called [[original:Cut Content#Pumpkin Mask|Pumpkin Mask]] was very similar in effect to Head of Krampus.
+
+{{nav|fr=Tête de Krampus}}

@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | costume name = * {{dlc|nr|Rebirth}}
+ | id          = 279
+ | quote       = Fat protector
+ | description = Spawns a large, slow-moving [[orbital familiar]] that blocks enemy shots and deals 30 damage per second to enemies. Reduces the speed other orbitals rotate at.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable monstermanual fly
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a large, slow-moving [[orbital familiar]] that blocks enemy shots and deals 2 damage per tick (~8.57 damage per second) on contact.
+* Reduces the rotation speed of all of Isaac's orbitals. {{dlc|na+}} This excludes Pretty Flies.
+* {{transformation contribution|Beelzebub}}
+
+== Notes ==
+* The Big Fan orbits independently rather than occupying one of the three defense orbital slots.
+* {{dlc|r}} Pretty Fly [[Horse Pill]]s spawn a Big Fan without granting it as an item. These Big Fans spin at normal pace and don't affect rotation speed of other orbitals. 
+** Unlike regular Pretty Fly, there is no limit to how many familiars can be spawned this way.
+
+== Synergies ==
+* {{i|BFFS!}} / {{i|Hive Mind|dlc=r}}: Big Fan becomes visually larger and deals more damage.
+* {{i|Guillotine}}: Reduces the head's rotation speed, making it easier to aim.
+
+== Interactions ==
+* {{t|Friendship Necklace}}: No effect.
+* {{i|Guardian Angel}}: Overrides Guardian Angel's speed boost. If Guardian Angel was obtained first, it will retain its own increased speed. If Big Fan was obtained first, Guardian Angel will be slower.
+* {{i|Psy Fly}}: Rotates slower, but moves at full speed while blocking incoming projectiles.
+
+== In-game Footage ==
+{{#ev:youtube|D_oh5PYGCME}}
+
+== Trivia ==
+* Big Fan looks like a mixture of a {{E|Boom Fly}} and {{E|Gluttony}}.
+
+{{nav|fly|familiar modifier|fr=Mon Plus Gros Fan}}

@@ -1,0 +1,40 @@
+{{infobox trinket
+ | name = Mysterious Candy
+ | id = 25
+ | quote = Uh-oh!
+ | description = Isaac farts or poops at random intervals. {{dlc|nr}} Getting hit can also trigger the effect.
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Isaac has a chance to fart or poop every 30 seconds. {{dlc|nr}} Getting hit can also trigger the effect.
+* {{dlc|r}} Farts deal 6 damage and blow away projectiles.
+
+== Notes ==
+* With smart positioning, poops can be placed and bombed to create bridges for 1 tile gaps, allowing Isaac to reach otherwise unobtainable consumables.
+* Isaac can poop as much as he wants without leaving the room, but he still cannot poop where a previous poop was placed or destroyed.
+
+== Synergies ==
+* {{A|Golden Trinket}}: Spawned poop is golden.
+* {{T|Brown Cap}}: Poops may be used to access secret rooms and blow rocks and debris.
+** + {{tf|Yes Mother?}}: Not recommended. Poops will blow up as soon as they spawn.
+** + {{I|Pyromaniac}}: Provides a slow, but effective source of healing.
+* {{T|Butt Penny}} / {{T|Petrified Poop}} : Poops are more likely to drop pickups, allowing to farm them over time.
+* {{I|Dirty Mind}}: Allows a steady supply of Dips, with time. Useful for later chapters.
+* {{T|Gigante Bean}}: Farts are affected, covering a wide area and dealing 10 damage instead.
+* {{T|Meconium}}: Poops spawned by Mysterious Candy have a chance to be black poop.
+
+== Interactions ==
+* {{I|Hallowed Ground}} / {{I|Midas' Touch}}: The spawned poops are not affected by these items.
+
+== In-game Footage ==
+{{#ev:youtube|5vctRUrfhX4}}
+
+== Trivia ==
+* Mysterious Candy is a reference to Ex-Lax brand of laxative, where the active ingredient is contained in chocolate bars.
+* {{dlc|r}} This trinket is used in [[Scat Man|Scat Man (challenge #36)]].
+
+{{nav|poop|fr=Chocolat Douteux}}
+[[Category:Trinkets]]
+[[Category:Damage-triggered items]]

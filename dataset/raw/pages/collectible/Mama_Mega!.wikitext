@@ -1,0 +1,72 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 483
+ | quote       = BOOOOOOOOOM!
+ | description = Deals immense damage to all enemies, opens all bombable doors, and destroys all [[obstacle]]s in the room. The effect occurs every time a new room is entered for the rest of the floor.
+ | quality     = 3
+ | tags        = offensive
+ | recharge    = one time
+}}
+
+{{cit|a|a+}}
+
+== Effects ==
+* Upon use, destroys all [[obstacle]]s in the current room and deals 200 damage to every enemy (including [[boss]]es). This effect also applies to every room for the remainder of the floor.
+** {{dlc|r}} Also destroys all [[Machine]]s, {{M|Beggar}}s, {{E|Shopkeeper}}s, and {{E|Fire Place}}s.
+** {{dlc|r}} Also destroys all obstacles in rooms that have already been cleared.
+** {{dlc|r}} Will destroy {{M|Donation Machine}}s as well, reducing donated coin count and removing them for the rest of the run.
+* Opens all {{r|Secret Room}} and {{r|Super Secret Room}} doors on the current floor.
+* Mama Mega! opens the paths to {{r|Boss Rush}} and the {{s|???}} even after the time limits expire.
+
+== Notes ==
+* While Mama Mega! opens the paths to {{r|Boss Rush}} and the {{s|???}} after the time limits expire, there are still some things to be aware of:
+** The Boss does not need to be defeated before entering these doors.
+** It will also open the Boss Rush / {{s|???}} entrance room door if it is activated after {{E|Mom}} or {{E|Mom's Heart}} / {{E|It Lives!}} has already been defeated.
+** Leaving the {{r|Boss Room}} (via teleport or entering a {{r|Devil Room}}/{{r|Angel Room}}) will close the doors.
+** Leaving the {{r|Boss Rush}} room or {{s|???}} entrance room will also close the doors.
+** Does not open the Boss Rush door from the inside.
+** {{Dlc+|r}} Does not open a path to {{s|???}} if used in the room on the other side of the flesh door in {{s|Mausoleum}} / {{s|Gehenna}} II.{{dlc-}}
+* Entering a room with an angel statue while the effect is active automatically initiates a fight with an [[Angel]].
+* Does not kill enemies that are immune to damage while entering the room, such as {{e|Lil' Haunt}}s.
+* If used before the {{E|Ultra Greed}} fight begins, it will deal no damage to Ultra Greed, as he is invulnerable for the first few seconds upon first entering his room. However, it will still break obstacles as usual.
+* When used in [[Greed mode]], it will only activate once for the main room (as opposed to once per wave, in a similar fashion to a standard run). Therefore, its damage potential is maximized if used after all the monster waves have spawned for the current floor.
+* Does not open the door to {{E|Mega Satan}} in {{s|Dark Room}} or {{s|Chest}}, nor does it open {{dlc+|r}}the flesh door at the end of {{s|Mausoleum}} / {{s|Gehenna}} II{{dlc-}}.
+* {{dlc+|r}} If used in {{s|Downpour}} / {{s|Dross}} II, the entrance to the [[Mirrored World]] will be destroyed, making it inaccessible.
+** If used in the [[Mirrored World]], it will destroy the exit, which, on top of making it impossible to leave, will then cause Isaac to take damage and die.{{dlc-}}
+* {{dlc+|r}} Only works on a single floor of the [[Ascent]].{{dlc-}}
+* This item can be crafted from {{i|Bag of Crafting}} with eight {{e|Giga Bomb}}s, or six {{e|Bomb}}s and two {{e|Golden Bomb}}s.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Summons 8 wisps in the middle ring on use. The wisps summon {{E|Golden Troll Bomb}}s when destroyed.}}
+** '''Mama Mega!''' + {{T|Safety Scissors}}: Allows for infinite uses of Mama Mega! after finding a Golden Bomb or {{p|? Card}}, as the extinguished Golden Troll Bombs will turn into Golden Bombs.
+*** {{i|Bag of Crafting}}: The infinite golden bombs created can be used to easily craft high quality items.
+* {{t|Broken Padlock}}: Mama Mega!'s blast will also open locks.
+* {{e|Golden Bomb}}: While holding a golden bomb, Mama Mega! can be used once on that floor without consuming it, using it a second time consumes it as normal. It may be used again for free on another floor if yet another golden bomb is collected, and so on. {{dlc|r}} Using Mama Mega once will remove the golden bomb from Isaac's consumables. Mama Mega! also receives a unique golden sprite in the HUD.
+** {{i|Schoolbag}} + {{i|Everything Jar}}: Reliable source of Golden Bombs for the above use.
+
+== Interactions ==
+* {{i|Car Battery|n}}: No effect.
+* {{i|Void|nr}}: Can't be consumed by Void.
+** {{dlc|r}} If consumed by Void, the Mama Mega! effect will be activated once only, the next time Void is activated.
+* {{p|? Card|nr}}: Mama Mega! will be activated and consumed.
+** {{dlc|r}} Mama Mega!'s effect can be activated through the card without consuming the actual item.
+
+== In-game Footage ==
+{{#ev:youtube|zjSjO-8Y5N8}}
+
+== Gallery ==
+<gallery>
+File:MamaMega Golden.png|{{dlc|r}} Mama Mega's HUD icon while holding a golden bomb.
+</gallery>
+
+== Trivia ==
+* {{dlc|r}} The visual effect has been changed from a simple screen flash and shake to a massive shockwave on entering each room.
+* {{dlc|r}} Mama Mega!'s effect is one of the only {{dlc|nr+}} two / {{dlc|r+}} three ways a {{M|Bomb Bum}} can be destroyed.
+* Mama Mega! may be a reference to the [[wikipedia:GBU-43/B MOAB|GBU-43]], known colliqually as the mother of all bombs due to its massive payload.
+
+== Bugs ==
+{{bug|Mama Mega! can break the door to the {{i|Knife Piece 2}} room. If Isaac leaves this room before the intro animation of {{e|Mother's Shadow}} finishes and then enters it again, another Mother's Shadow will be generated.|dlc=r}}
+{{bug|plat=XboxOne, PS4, Switch|Mama Mega! cannot be used to open the doors to {{r|Boss Rush}} / {{s|???}}.}}
+
+{{nav|bomb|fr=Mama Méga}}

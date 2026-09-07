@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 380
+ | quote       = Money talks
+ | description = {{dlc|nr}} +5 {{e|Penny|text=Coins}}. Most doors require one {{e|Penny}} to open instead of a {{e|Key}}.<br />{{dlc|r}} +5 {{e|Penny|text=Coins}}. All locked doors, {{E|Locked Chest}}s, and [[Key Block]]s must be opened with one {{e|Penny}} instead of {{e|Key}}s.
+ | quality     = 2
+ | tags        = summonable offensive nocantrip lazarussharedglobal
+}} {{disambig msg|the item|the challenge|PAY TO PLAY}}
+
+{{cit|p|a}}
+
+== Effects ==
+* +5 [[coins]].
+* {{dlc|nr}} {{r|Shop}}s, {{r|Treasure Room}}s, and {{r|Libraries}} must be opened with a {{e|Penny}} instead of a {{e|Key}}. These doors appear identical to {{r|Arcade}} doors.
+* {{dlc|r}} All locked doors, {{E|Locked Chest}}s, and [[Key Block]]s must be opened with a {{e|Penny}} instead of {{e|Key}}s, including those that require 2 keys to open.
+
+== Notes ==
+* {{dlc|r}} Locked doors, chests, and key blocks gain a unique visual where their key slot is replaced with a vertical coin slot.
+
+== Interactions ==
+* {{t|Mom's Locket}}: Renders Mom's Locket less effective as the trinket requires a key is consumed by the lock in order to heal Isaac.
+* {{i|Sharp Key}}: Thrown keys cannot unlock doors that originally were accessible by keys, but can still open chests.
+* {{t|Store Key}}: Overridden by Pay To Play. Stores still require coins to unlock.
+* Golden Key: Overridden by Pay To Play. Still require coins to unlock.
+
+== In-game Footage ==
+{{#ev:youtube|xHr6_hE5UfY||inline}} {{#ev:youtube|eULEpBFpxTs||inline}}
+
+== Bugs ==
+{{Bug|plat=Switch|dlc=r|In Greed mode, it locks the {{r|Shop}} door and requires a coin to unlock it.}}
+{{bug|dlc=r|Pay to play can softlock a room in the {{e|Mother's Shadow}} sequence by making the [[Key Block]] require a {{e|Penny}} after coming back from a {{r|Crawl Space}}.}}
+
+{{nav|fr=Fente magique}}

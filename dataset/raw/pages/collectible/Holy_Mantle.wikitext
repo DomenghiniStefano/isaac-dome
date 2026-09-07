@@ -1,0 +1,66 @@
+{{infobox passive collectible
+ | id          = 313
+ | quote       = Holy shield
+ | description = Grants a shield that negates the first instance of damage taken from a hostile source once per room.
+ | quality     = 4
+ | tags        = summonable angel
+ | devil price = {{dlcalt|1|r=2}}
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants a shield that negates the first instance of damage taken from a hostile source in each room.
+* {{transformation contribution|Seraphim}}
+
+== Notes ==
+* {{dlc+|nr}} When the shield is broken, Isaac gets invincibility frames like he does when he would normally take damage, based on the damage it negated; 1 second for half a heart of damage, 2 seconds for a full heart, and 4 seconds for 2 full hearts.{{dlc-}}
+** {{dlc|r}} Holy Mantle breaking grants one second of invincibility frames, regardless of the damage source.
+* {{dlc|nr}} Holy Mantle won't be active when initially appearing in the starting room of a floor if it was lost in the room where Isaac left the previous floor.
+** {{dlc|r}} If Holy Mantle's shield is broken prior to using {{i|R Key|n}}, the shield won't be active in the new starting room initially.
+* As the shield gets restored whenever another room is entered, Holy Mantle allows {{r|Curse Room}}s to be entered and exited without taking damage.
+* Holy Mantle does not prevent damage from {{m|Blood Donation Machine}}s, {{m|Devil Beggar}}s, and {{i|Blood Rights}}.
+** {{dlc|nr}} However, Blood Donation Machines and Devil Beggars can be played practically for free during the invincibility frames granted when losing the shield, by taking damage from touching a {{e|Fire Place}}, etc.
+* Damage from {{r|Sacrifice Room}} spikes can be blocked by Holy Mantle, but no payout is rewarded.
+* The blocked hit does not count as damage taken for related achievements and will not trigger items that activate upon taking damage, like {{i|Dead Bird}}.
+* {{c|The Lost|a}} starts with this item after donating 879 coins to the {{m|Greed Donation Machine|n}}.
+* {{dlc|r}} When Holy Mantle's shield is broken, a white cross symbol will briefly appear overlaid on top of Isaac and a smashing sound will play.
+* {{dlc|r}} While Holy Mantle is in effect, a blue cross [[File:Holy Mantle hp.png|10px]] icon appears in the HUD next to Isaac's health.
+
+== Synergies ==
+* {{i|Belly Jelly}} / {{i|Host Hat}} / {{i|Infamy}} / {{i|Metal Plate}}: The chance of blocking projectiles is applied before the Holy Mantle, allowing the Holy Mantle shield to be saved.
+* {{i|Blanket}} / {{i|Dogma}} / {{p|Holy Card}} / {{t|Wooden Cross}}: All stack with Holy Mantle. {{dlc|nr+}} Holy Mantle applies last.
+** {{dlc|r+}} Shield-type items stack in the following order:
+*** {{t|Wooden Cross}}
+*** {{i|Blanket}}
+*** {{i|Holy Mantle}}
+*** {{p|Holy Card}}
+*** {{i|Dogma}}
+* {{t|Blind Rage}}: Doubles the invincibility frames given when damage is negated.
+* {{i|Damocles}}: The nullified first hit does not trigger the chance of the sword falling. It will not, however, protect Isaac from the falling sword.
+* {{i|E. Coli}} / {{i|Midas' Touch}}: On-contact effects still apply to enemies if Holy Mantle negates the contact damage taken.
+* {{i|Isaac's Heart}}: The shield effect transfers to the heart.
+* {{i|Stop Watch|anr}}: If damage is blocked with Holy Mantle, Stop Watch will trigger the slow effect.
+* {{c|Tainted Lazarus}} + [[Greed Mode]]: The shield regenerates every wave if broken. This allows one form of Tainted Lazarus to press the button for free on every wave.
+
+== Interactions ==
+* [[Bad Trip]]: Damage is blocked by Holy Mantle.
+* {{i|Dull Razor|r}}: Ignores Holy Mantle's shield and works normally.
+* {{i|IV Bag}}: IV Bag ignores the shield's protection, resulting in Isaac taking damage regardless.
+* {{i|Glass Cannon|nr}}: Holy Mantle's effect will apply after Glass Cannon reduces Isaac's health to half a heart.
+* {{i|Holy Mantle}} / {{c|The Lost|r}}: An extra shield is given in the room it was found in, but the shield is removed when leaving that room and does not reapply.
+* {{i|Sharp Plug|nr}}: Holy Mantle blocks the damage from Sharp Plug, but also prevents it from adding charges.
+
+== In-game Footage ==
+{{#ev:youtube|QPtCi2kMzXQ}}
+
+== Trivia ==
+* This may be a reference to the [https://gatherer.wizards.com/pages/card/details.aspx?name=Holy%20Mantle card of the same name] from [[wikipedia:Magic: The Gathering|Magic: the Gathering]], a [[wikipedia:Collectible card game|collectible card game]] [[Edmund McMillen]] played since his childhood.
+
+== Bugs ==
+{{bug|dlc=nr|If the Holy Mantle is removed from Isaac's inventory — for example, when using the {{i|D4}} — Isaac can still take one damage and it will be negated with Holy Mantle's effect, but only in the room where the items were re-rolled.}}
+{{bug|dlc=r|Activating Soul of Judas at the same time Isaac blocks a hit with Holy Mantle, time will freeze as normal, but Isaac will be allowed to shoot during the duration of the Dark Arts effect.}}
+{{bug|dlc=na+|Upon leaving the game and reentering it, if Holy Mantle was broken in the room, it will be restored.}}
+
+{{nav|seraphim|greed machine unlock|fr=Voile Sacré}}
+[[Category:Damage-preventing items]]

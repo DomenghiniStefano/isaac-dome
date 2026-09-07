@@ -1,0 +1,123 @@
+{{infobox activated collectible
+ | id          = 297
+ | quote       = ? ?
+ | description = Spawns specific [[pickup]]s or [[item]]s depending on the [[floor]] it is used on. Disappears after use.
+ | quality     = 2
+ | tags        = offensive
+ | recharge    = one time
+ | unlocked by = Pandora's Box
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* Upon use, spawns specific [[pickup]]s or [[item]]s depending on the [[floor]] it is used on. Disappears after use.
+
+{| class="wikitable striped"
+ ! Normal/Hard Mode
+ ! {{dlc|a}} [[Greed Mode]]
+ ! Items/Pickups
+ |-
+ | {{s|Basement}} / {{s|Cellar}} / {{s|Burning Basement}} I<br>{{s|Downpour}} / {{s|Dross}} I
+ | {{dlc|ana+}} {{s|Basement}}
+ | 2 {{e|Soul Heart}}s
+ |-
+ | {{s|Basement}} / {{s|Cellar}} / {{s|Burning Basement}} II<br>{{s|Downpour}} / {{s|Dross}} II
+ | {{s|Caves|ana+}}<br>{{s|Basement|a+}} / {{s|Cellar|r}} / {{s|Burning Basement|r}}
+ | 2 {{e|Bomb}}s and 2 {{e|Key}}s
+ |-
+ | {{s|Caves}} / {{s|Catacombs}} / {{s|Flooded Caves}} I<br>{{s|Mines}} / {{s|Ashpit}} I
+ | {{dlc|ana+}} {{s|Depths}}
+ | 1 [[Boss (Item Pool)|Boss Room item]]
+ |-
+ | {{s|Caves}} / {{s|Catacombs}} / {{s|Flooded Caves}} II<br>{{s|Mines}} / {{s|Ashpit}} II
+ | {{s|Womb|ana+}}<br>{{s|Caves|a+}} / {{s|Catacombs|r}} / {{s|Flooded Caves|r}}
+ | 1 [[Boss (Item Pool)|Boss Room item]] and 2 {{e|Soul Heart}}s
+ |-
+ | {{s|Depths}} / {{s|Necropolis}} / {{s|Dank Depths}} I<br>{{s|Mausoleum}} / {{s|Gehenna}} I
+ | {{s|Sheol|ana+}}
+ | 4 {{e|Soul Heart}}s
+ |-
+ | {{s|Depths}} / {{s|Necropolis}} / {{s|Dank Depths}} II<br>{{s|Mausoleum}} / {{s|Gehenna}} II
+ | {{s|The Shop|ana+}}<br>{{dlc|a+}} {{s|Depths|a+}} / {{s|Necropolis|r}} / {{s|Dank Depths|r}}
+ | 20 {{e|Penny|text=Pennies}}
+ |-
+ | {{s|Womb}} / {{s|Utero}} / {{s|Scarred Womb}} I<br>{{s|Corpse}} I
+ | {{s|Ultra Greed|ana+}}<br>{{s|Womb|a+}} / {{s|Utero|r}} / {{s|Scarred Womb|r}}
+ | 2 [[Boss (Item Pool)|Boss Room items]]
+ |-
+ | {{s|Womb}} / {{s|Utero}} / {{s|Scarred Womb}} II<br>{{s|Corpse}} II
+ | —
+ | {{i|The Bible}}
+ |-
+ | {{s|???}}
+ | —
+ | Nothing
+ |-
+ | {{s|Sheol}}
+ | {{s|Sheol|a+}}
+ | 1 [[Devil Room (Item Pool)|Devil Room item]] and 1 {{e|Black Heart}}
+ |-
+ | {{s|Cathedral}}
+ | —
+ | 1 [[Angel Room (Item Pool)|Angel Room item]] and 1 {{e|Eternal Heart}}
+ |-
+ | {{s|Dark Room}}
+ | —
+ | Nothing<br>{{dlc|a+}} Unlocks {{i|Moving Box|n}}
+ |-
+ | {{s|Chest}}
+ | {{s|The Shop|a+}} / {{s|Ultra Greed}}
+ | 1 {{e|Penny}}
+ |-
+ | {{s|The Void}}
+ | —
+ | Nothing
+ |-
+ | {{s|Home}}
+ | —
+ | {{i|Red Key|n}}
+|}
+
+== Notes ==
+* Floors affected by {{cu|Labyrinth}} are counted as the first floor by Pandora's Box.
+* {{dlc|a}} When playing [[Greed Mode]], the normal [[Devil Room (Item Pool)|Devil Room item pool]] is still used in Sheol, instead of the [[Devil Room (Greed Mode Item Pool)|Greed Mode Devil Room item pool]].
+* {{dlc+|a+}} In [[Greed Mode]], it will always generate its 2nd floor drops for each Chapter that is before the {{s|Womb}}, such as 20 pennies in the {{s|Depths}}, etc.{{dlc-}}
+** The {{s|Womb}} is the exception, generating its 1st floor drop: 2 Boss Room items.
+* {{dlc|r}} [[Ascent]] floors give the rewards of their regular floors.
+
+== Synergies ==
+* {{Book of Belial synergy|description=In addition to the item's expected reward, spawns one of the following demonic familiars: {{i|Blood Puppy}}, {{i|Dark Bum}}, {{i|Demon Baby}}, {{i|Incubus}}, {{i|Lil Abaddon}}, {{i|Lil Brimstone}}, {{i|Succubus}}, or {{i|Twisted Pair}}.}}
+* {{Book of Virtues synergy|description=Spawns <code>floor - 1</code> regular wisps with no unique effect, up to a maximum of 8. No wisps are spawned on the first floor.}}
+* {{t|Strange Key}}: Instead of its normal effect, Pandora's Box spawns six items from a set of item pools. Both items are consumed.
+** This will prevent unlocking {{I|Moving Box|n}} if it hasn't already been unlocked, when used in {{S|Dark Room}}.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{p|? Card}}:
+** {{dlc|anr}} Will consume both the card and Pandora's Box, but nothing will happen, wasting both of them.
+** {{dlc|r}} Will activate Pandora's Box without consuming it, allowing for multiple activations.
+** {{Dlc|r}} If Isaac is holding {{T|Strange Key|n}}, using the ? Card will consume the card and trinket, spawning 6 items, but Pandora's Box will not be consumed.
+* {{I|Void}} After Pandora's Box is absorbed by Void, using Void again while holding {{T|Strange Key|n}} will spawn 6 items. Strange key will be consumed.
+
+== In-game Footage ==
+{{#ev:youtube|rAmg0Lm5gpU}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Moving Box }}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Pandora's Box.png|The icon of Pandora's Box as seen on the lower 3DS screen.
+File:Lilith_Eden_Blue Box Concept Art.png|Concept art and development notes by Edmund McMillen, featuring early ideas for Pandora's Box's rewards for the Chest and Dark Room floors.
+</gallery>
+
+== Trivia ==
+* In Greek legend, [[wikipedia:Pandora's Box|''Pandora's Box'']] is a jar containing all of the evils of the world. It was given to the first woman created, who, in her curiosity, opened it, releasing every evil unto the land. Once the evils were released, the only thing that remained was Elpis, the Spirit of Hope.
+* Pandora's Box, along with {{t|Strange Key}}, is likely a reference to David Lynch's 2001 film ''[[wikipedia:Mulholland Drive (film)|Mulholland Drive]].''
+* The rewards for Greed Mode changed in patch [[v1.06.J168]]; the rewards given in {{s|Caves}} are instead given in {{s|Basement}}, and so on.
+* Despite Pandora’s Box’s sprite depicting a keylock, the item does not require a key to open.
+* Pandora's Box is named '''Blue Box''' both in the game files and on Edmund McMillen's development notes, as it was likely an early name for the item.
+** Paradoxically, {{I|Box of Friends}}' sprite in the game files is named '''Pandora’s Box''', despite the fact it was added to the game after Pandora's Box.
+
+{{nav|lazarus unlock|the lamb unlock|fr=Boîte de Pandore}}

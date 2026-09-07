@@ -1,0 +1,31 @@
+{{infobox trinket
+ | name = Purple Heart
+ | id = 5
+ | quote = Challenge up
+ | description = Increases the chance of encountering [[Monsters#Champions|champion enemies]] and [[boss]]es. {{dlc|r+}} The chance for champion enemies to drop special or double loot is increased to 50%.
+}}
+
+{{cit|t}}
+
+== Effects ==
+* Doubles the chance for [[Monsters#Champions|champion enemies]] to appear.
+* Also increases the chance of encountering champion [[boss]]es.
+* {{dlc|r+}} The chance for champion enemies to drop special or double loot is increased to 50%.
+
+== Notes ==
+* The increased number of Champions means that more enemies will drop additional loot, which can be useful when low on keys or bombs.
+* The chance to spawn a champion in Normal is very low (5%), {{dlc|nr+}} and the drop chance for additional loot in Hard mode is only 33%, making this trinket very rarely worth keeping.
+* {{dlc|a}} Since champions don't drop any consumables in [[Greed Mode]], this trinket only has a downside in this mode.
+
+== Synergies ==
+* {{i|Mom's Box|r}} / {{a|Golden Trinket}}: Each copy of Purple Heart increases the multiplier by 2 (e.g. 6x with 3 Purple Hearts, 20x with 10 Purple Hearts).
+** {{i|Mom's Box|r+}} / {{a|Golden Trinket|r+}}: Having either increases the chance of special or double loot to 66%. Having both to 75%.
+
+== In-game footage ==
+{{#ev:youtube|bmXInhNfjjU||inline}} {{#ev:youtube|cxmVDqgKEMk||inline}}
+
+== Trivia ==
+* The Purple Heart is a military decoration awarded to soldiers who are wounded or killed while serving in the U.S. Military.
+
+[[Category:Trinkets]]
+{{nav|fr=Cœur Violet}}

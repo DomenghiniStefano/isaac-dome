@@ -1,0 +1,50 @@
+{{infobox boss
+ | dlc         = r
+ | name        = Ultra War
+ | portrait    = no
+ | id          = 951
+ | variant     = 30
+ | environment = <u>Boss</u><br>{{floor|Home}}
+ | base hp     = 2000
+ | pool        = ''None''
+}}
+
+'''Ultra War''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' and is the third of the [[Harbingers (Bosses)#Ultra Harbingers|Ultra Harbingers]] fought before {{e|The Beast}} in {{s|Home}}.
+
+== Behavior ==
+=== Phase 1 ===
+Ultra War charges in from the side of the screen and has two attacks which he alternates between:
+* Throws a large, {{e|Giga Bomb}} that deals contact-damage and explodes mid-air in a cross pattern that spreads across the entire screen, similar to {{i|Bomber Boy}} Bombs. The Bomb also releases a burst of 12 lines of 4 projectiles outward when it explodes. This attack is repeated 3 times.
+* Charges off-screen, then wraps around the bottom of the screen 3 times, creating 4 to 6 pillars of harmless light in alternating positions across the screen, from which large lava projectiles launch upwards with staggered timing.
+
+=== Phase 2 ===
+Ultra War dismounts from his hobby-horse and has two new attacks which it alternates between:
+* Chases Isaac, then lunges diagonally downwards in Isaac's direction. After, Ultra War releases 4 streams of fire in the cardinal directions as well as a small burst of slower moving fires in all directions. This attack is repeated 2 times.
+* Lunges diagonally downwards while holding a large bomb which explodes in a cross pattern that spreads across the entire screen. Ultra War then bounces across the sides of the screen 3 times while moving upwards before plummeting into the lava below. When Ultra War emerges, he creates 4 to 6 large lava projectiles that launch upwards with staggered timing.
+
+* Upon death, Ultra War explodes, which can damage Isaac at close range.
+
+== Gallery ==
+<gallery>
+File:Boss Ultra War ready bomb ingame.png|Ultra War tossing a bomb, first phase.
+File:Boss Ultra War floating ingame.png|Ultra War in his second phase.
+File:Boss Ultra War bomb ingame.png|Ultra War bouncing around while holding a bomb, second phase.
+File:Ultra War death portrait.png|Ultra War death portrait.
+File:Ultrawarconcept.png|Concept sketches for Ultra War's behaviors.
+</gallery>
+
+== Notes ==
+* If Isaac has the {{t|Safety Scissors}}, the Giga Bombs Ultra War throws will be defused and fail to explode, after which they can be picked up or left to fall into the lava.
+* Ultra War's Giga Bombs can be killed by {{i|Euthanasia}} shots.
+* The lava projectiles can be slowed and knocked down with certain slowing items such as {{I|Censer}} and high knockback tears.
+
+== Damage Scaling ==
+Damage scaling is a mechanic introduced in [[The Binding of Isaac: Afterbirth]] to provide a more challenging experience to players, enabling ''some'' enemies to retaliate against high damage attacks by deploying an "armor" of a sort to greatly reduce the amount of damage taken. Further details and an in-depth explanation may be found [[Damage Scaling|here]].
+
+== Trivia ==
+* Ultra War, like the other Ultra Harbingers is an upgraded version of his regular counterpart, {{e|War}}.
+
+{{nav|boss|fr=Ultra Guerre}}
+
+[[Category:Home bosses]]
+[[Category:Debut bosses in Repentance]]

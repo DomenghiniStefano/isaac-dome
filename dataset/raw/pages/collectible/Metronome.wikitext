@@ -1,0 +1,107 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | name        = Metronome
+ | id          = 488
+ | quote       = Waggles a finger
+ | description = Grants a random item effect for the current room.
+ | quality     = 1
+ | tags        = offensive
+ | recharge    = 2
+ | unlocked by = Metronome
+}}
+
+{{cit|ua|a+}}
+
+== Effect ==
+* Grants a random item's effect for the current room.
+
+== Notes ==
+* This item can trigger self-damage effects, making it not recommended for {{C|The Lost}} or {{C|Tainted Lost}}.
+* Using this item multiple times in the same room will replace the previous item with a new one.
+* Metronome cannot grant the effects of itself, {{i|Glowing Hourglass}} or {{i|Plan C}}.
+** {{dlc+|r}} Also unable to grant {{i|Breath of Life}}, {{i|Clicker}}, or {{i|R Key}}.{{dlc-}}
+** {{dlc+|r+}} Also unable to grant {{i|Urn of Souls}}.{{dlc-}}
+* Metronome can grant items that haven't been unlocked yet.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=If an active item was selected, grants the same wisp as that item. If a passive item was selected, grants any random wisp.}}
+* {{i|Rock Bottom}}: Isaac keeps any stat upgrades gained by a random temporary item as long as the item brings his stats over their highest value reached on that run.
+
+== Interactions ==
+* {{dlc|nr}} {{i|Blanket}} / {{P|Holy Card}} / {{i|Holy Mantle}} / {{t|Wooden Cross}}: if Metronome is used while the shield is active, any stat changes or familiars/orbitals generated from Metronome will persist between rooms until Metronome is used again or replaced with another active item. Items that modify your stats and have other additional effects will keep the stats but the effect will be gone after leaving the room. For example, the tears down applied from {{i|The Inner Eye}} will persist between rooms, but Isaac will not shoot three tears at once.
+** Some items behave unusually after leaving the room while the Holy Mantle shield was active:
+*** Items that grant flight: Isaac's appearance is reset back to normal, but he is still able to fly.
+*** {{i|1up!}}: the mushroom familiar continues to follow Isaac, but doesn't grant an extra life.
+*** {{i|Cupid's Arrow}}: the tear appearance is reset back to normal, but the tears still travel through enemies.
+*** {{i|Fire Mind}}: the tear appearance is reset back to normal, but tears can still explode when they hit an enemy.
+*** {{i|Mysterious Liquid}}: the tear appearance is reset back to normal, but tears will still leave green creep on the ground.
+* {{i|Car Battery}}: Metronome is activated twice at once as expected, but the item chosen for the first activation is shown raised above Isaac's head, instead of the second one that actually remains active.
+** Moreover, active item effects chosen by Metronome are only activated once.
+* {{i|Bird Cage}}: Spawns the familiar for the current room, leaving the room it spawned in will only left the sprite over Isaac's head without doing nothing.
+
+== Specific Item Effects ==
+* Certain items used by Metronome have permanent or limited/unusual effects, or no effect. It is not clear what is intended and what is a bug.
+* Permanent effects include:
+** Health, coins, bombs, or keys that are granted to Isaac directly will persist.
+** {{i|Cube of Meat}} granted by {{i|Potato Peeler}} will persist.
+** {{i|D8|n}}'s rerolled stat multipliers will persist, {{i|D4}} or {{i|D100}} will reroll all items permanently and {{i|D infinity}} mimicking any of the previous also has the same effects.
+** {{I|Damocles}}' activated version will permanently grant the passive version. The passive can also be chosen, which will apply only for the current room; they can be told apart by no Damocles item appearing in the collected items list.
+** {{i|Dataminer}}'s stat changes will persist.
+** {{i|Forget Me Now}} will restart the level.
+** {{I|Genesis}} will work as normal and will cause Metronome to disappear from the active slot.
+** {{i|Heartbreak}} does not add broken hearts immediately, but will protect Isaac from death and grant its damage bonus. Broken hearts received from avoiding death are permanent.
+** {{I|Magic Skin}} will give Isaac a [[Health#Broken Hearts|broken heart]], spawn an item, and count as an activation of Magic Skin, causing future items to have a chance of being replaced by Magic Skin.
+** {{i|Vengeful Spirit}} wisps will persist for the rest of the stage.
+** {{i|Void|n}} absorbing passives and granting stats will persist.
+* Limited and unusual effects include:
+** Items do not spawn pickups and consumables that they would when picked up normally.
+** {{dlc|nr}} Items that adjust Isaac's size will not do so.
+** {{i|1up!}}, {{i|Ankh|r}}, {{i|Guppy's Collar}}, {{i|Judas' Shadow|r}} and {{i|Lazarus' Rags|r}} give no indication of extra lives, but will still work if you die in the room.
+** {{i|9 Volt}} will restore one tick of charge instead of fully charging.
+** {{i|Abaddon}} will not remove red hearts or grant black hearts.
+** {{i|Act of Contrition}} does not grant an eternal heart.
+** {{i|Alabaster Box}} will immediately activate without requiring {{e|Soul Heart}}s.
+** {{i|Azazel's Rage}} is useful only in Greed Mode or Boss Rush as the activation requires multiple room clears without actually leaving the room.
+** {{i|Belly Button}} and {{i|Mom's Purse}} allow picking up two trinkets in the room, but if another one is picked up outside, one trinket disappears completely along with the extra slot.
+** {{i|Birthright}} effects that add health, spawn items or alter level generation do not work. {{c|Eve}} does not go into Whore of Babylon mode.
+** {{i|Black Candle}} only adds a black heart and does not remove curses.
+** {{i|Brittle Bones}} and {{i|Divorce Papers}} do not grant bone hearts. Brittle Bones can still be used to gain permanent tears ups if bone hearts are available.
+** {{i|Crown Of Light}} only adds soul hearts, no damage multiplier.
+** {{i|Dead Cat}} will only restore one red heart without setting heart containers to 1.
+*** {{dlc|nr}} Doesn't grant extra lives.
+*** {{dlc|r}} Grants only one extra life for the room.
+** {{i|Eden's Blessing}} will not grant an extra item for the next run.
+** {{i|False PHD}} grants a black heart, but will not identify pills. Pills are still guaranteed to be negative. Damage bonus is lost upon leaving the room.
+** {{i|Fate}} only grants flight, no {{e|Eternal Heart}}.
+** {{i|Little Baggy}}, {{i|Polydactyly}}, {{i|Starter Deck}}, and {{i|Deep Pockets|nr}} allow picking up two consumables while in the room and kept outside, but using them will lose the extra slot.
+** {{i|Lost Soul}} cannot be taken to the next stage, reducing its use to potentially blocking a single hit.
+** {{I|Mega Mush}} stats increases and Isaac's appearance revert on changing rooms, but Isaac retains the shadow of his large size, the ability to crush rocks, and invulnerability until the 30 seconds are up.
+** {{i|Mercurius}} only grants a speed up but does not open the doors.
+** {{i|Moving Box}} will cause items in the room to be packed away into the box until you either find the Moving Box or Metronome gives you the Moving Box effect again.
+** {{i|PHD}} will not identify pills, but they are still guaranteed to not be negative.
+**{{i|Remote Detonator}} bombs placed in the room when the effect is active will not detonate. If Isaac manages to charge Metronome again, using it will detonate any placed bombs. 
+** {{i|Schoolbag}} allows picking up two activated items while in the room and they can be kept even outside, but the extra slot and one of the items is lost if another activated item is picked up.
+** {{i|Spin to Win}} will give Isaac two orbitals.
+** {{i|Strawman}}: If the Keeper dies, it will instantly respawn near Isaac. The familiar does not persist between rooms.
+** {{i|The Swarm}} will not spawn its initial flies, but will add one on room clear.
+* The following items have no effect beyond possible cosmetic changes:
+** Items that only spawn pickups or consumables.
+** Items that trigger upon entering the next stage: {{i|Blood Oath}}, {{i|Card Reading}}, {{i|Dream Catcher}}, {{i|Empty Heart}}, {{i|Isaac's Tomb}}, {{i|The Stairway}}, {{i|Voodoo Head}}.
+** Other items: {{i|Ankh|nr}}, {{i|Battery Pack}}, {{i|Blue Map}}, {{i|Breath of Life}}, {{i|Broken Watch}}, {{i|Camo Undies}}, {{i|The Compass}}, {{i|Dad's Note}}, {{i|Death's List}}, {{i|Experimental Treatment}}, {{i|Holy Mantle}}, {{i|The Jar}}, {{i|Judas' Shadow|nr}}, {{i|Lazarus' Rags|nr}}, {{i|Luna}}, {{i|Marrow}}, {{i|Member Card}}, {{i|The Mind}}, {{i|Missing No.}}, {{i|More Options}}, {{i|Poke Go}}, {{i|Purity}}, {{i|Redemption}}, {{i|Sanguine Bond}}, {{i|Spelunker Hat}}, {{i|Toxic Shock}}, {{i|Treasure Map}}, {{i|Vanishing Twin}}.
+* The following items have a reduced chance of activating:
+** {{i|Death Certificate}} (15%)
+** {{i|Genesis}} (25%)
+
+== In-game Footage ==
+{{#ev:youtube|45nosXD83z0}}
+
+== Trivia ==
+* The name, pickup quote, and effect of this item are a reference to the move [[bulbapedia:Metronome (move)|Metronome]] from the ''Pokémon'' franchise.
+* This item works similarly to the item {{i|Dead Sea Scrolls}}.
+
+== Bugs ==
+{{Bug|plat=PC|dlc=nr|It is possible for this item to give an indefinite {{i|Breath of Life}} effect that persists throughout rooms, eventually killing the player.}}
+{{Bug|dlc=nr|Some tear effects from items will remain active between rooms. These include: {{i|Continuum}}, {{i|Epic Fetus}}, {{i|Eve's Mascara}}, {{i|Godhead}}, {{i|Ipecac}}, {{i|Jacob's Ladder}}, {{i|The Ludovico Technique}}, {{i|A Lump of Coal}}, {{i|Monstro's Lung}}, {{i|My Reflection}}, {{i|Ouija Board}}, {{i|Pop!}}, {{i|Rubber Cement}}, {{i|Sacred Heart}}, {{i|Spoon Bender}}, {{i|Strange Attractor}}, {{i|Technology Zero}}.}}
+{{Bug|plat=PC|dlc=rnr+|If {{i|Urn of Souls}} is activated through Metronome, it won't shoot fire and Isaac could get stuck with the urn in his hands unable to shoot tears. You can fix this by exiting and continuing the run, restarting the room without the urn and without Metronome charges.}}
+
+{{nav|eden unlock|ultra greedier unlock|fr=Métronome}}

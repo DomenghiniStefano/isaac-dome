@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|na+|Rebirth}}
+ | id          = 159
+ | quote       = Scary
+ | description = Grants [[spectral tears]] and [[flight]].
+ | quality     = 3
+ | tags        = devil nolostbr summonable
+ | devil price = 2
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants [[spectral tears]] and [[flight]].
+* {{transformation contribution|Leviathan}}
+
+== Notes ==
+* Because the boosts provided by Spirit of the Night are already innate to {{c|The Lost}} and {{C|Azazel}}, this item grants no real benefits when playing as the characters in question other than its contribution to the leviathan transformation.
+
+== In-game Footage ==
+{{#ev:youtube|swx-wiI4J0M}}
+
+== Trivia ==
+* It is the {{R|Devil Room}} equivalent of the {{i|Dead Dove}}.
+* This item's name and Isaac's appearance are a reference to the [http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=3315 Magic: the Gathering card].
+* This item's icon is the Wiccan symbol for a blessing.
+* This item's apperance has the same body as {{c|The Lost}}, only recolored to fit its demonic theme.
+
+{{nav|leviathan|fr=Esprit de la Nuit}}
+[[Category:Flight-granting items]]

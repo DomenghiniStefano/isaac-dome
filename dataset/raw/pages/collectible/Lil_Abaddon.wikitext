@@ -1,0 +1,32 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 679
+ | quote       = Abyssal friend
+ | description = Spawns a [[familiar]] that charges a miniature {{i|Maw Of The Void|dlc=n}} attack while Isaac shoots.
+ | quality     = 2
+ | tags        = summonable baby monstermanual offensive
+ | unlocked by = Lil Abaddon
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Gives Isaac a [[familiar]] that creates a fluctuating black ring after a 1 second charge time that damages enemies that touch it, similarly to {{i|Maw Of The Void}}.
+** The black ring lasts for 1 second and deals 3.5 damage per tick, up to 15 times per ring, for a total of 52.5 damage.
+* {{transformation contribution|Conjoined}}
+
+== Notes ==
+* [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Lil Abaddon having {{dlc|rnr+}} 4th / {{dlc|r+}} 6th priority.
+
+== Synergies ==
+* {{i|BFFS!}}: The black ring created gets wider and deals double damage.
+* {{i|Hemoptysis}}: Enemies hit by the sneeze will gain a curse that increases the damage the black ring deals to 10 damage per tick. Enemies who die to the black ring under the curse will damage and spread the curse to nearby enemies.
+** Hemoptysis + {{i|BFFS!}}: The curse causes the ring's damage to be increased to 17 damage per tick.
+
+== In-game Footage ==
+{{#ev:youtube|ilrclfjwpTw}}
+
+== Trivia ==
+* As its name implies, Lil Abaddon resembles a miniature version of the {{i|Abaddon}} costume.
+
+{{nav|conjoined|azazel unlock|the beast unlock|fr=P'tit Abaddon}}

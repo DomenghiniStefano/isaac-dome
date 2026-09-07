@@ -1,0 +1,67 @@
+{{infobox boss
+ | name = The Fallen
+ | id          = 81
+ | base hp     = 60
+ | stage hp    = 45
+ | environment = <u>Boss</u><br>{{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>(Second floor only)<br><br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>(Normally)<br><br>{{floor|Sheol}}<br>{{floor|The Void}}<br>(Followed by Satan)<br><u>Double Trouble</u><br>{{floor|Womb}}{{floor|Utero}}<br>(With either another Fallen or {{e|Little Horn}})<br><br>{{room|Boss Rush}}<br><u>Degraded Boss</u><br>{{floor|Sheol}}<br>{{floor|Dark Room}}{{floor|Chest}}
+ | pool        = {{ip|Devil Room}}<br> {{i|Brimstone Bombs|r+}} (1% chance)
+}}
+
+'''The Fallen''' is a [[boss]] that can appear on any main path [[Chapter]], with the prerequisite that Isaac has entered (not just encountered) a {{r|Devil Room}} through any methods, and with the following exceptions:
+
+* It cannot appear on floors with predetermined bosses such as {{e|Mom}}, {{e|Mom's Heart}}, {{e|Isaac}}, etc.
+* {{dlc|r}} It also cannot appear on any of the alternate Chapters added in [[Repentance]].
+It is also encountered as the first phase of the {{e|Satan}} battle.
+
+== Behavior ==
+=== Phase 1 ===
+The Fallen moves randomly around the room in cardinal directions and can perform the following attacks:
+* Fires 3 projectiles in a spread followed by 4 projectiles in a spread in succession towards Isaac.
+* Increases its speed and chases Isaac. After taking a certain amount of damage, it halts and fires a {{i|Brimstone}} laser in each cardinal direction.
+
+=== Phase 2 ===
+* At 50% health, The Fallen splits into two smaller versions of itself. The two clones have identical behaviour.
+** It is possible to avoid the split if the Fallen takes a single hit doing more than 50% damage that causes [[poison]]ing or [[burn]]ing as the final one.
+The Fallen deals a whole heart of contact damage in both phases.
+
+== Notes ==
+* Unlike other bosses, the item pool of the Fallen room is the [[Devil Room (Item Pool)|Devil Room item pool]].
+** {{Dlc|na}}Leaving and re-entering the room will change the item pool to the normal Boss Room item pool.
+* The Fallen can appear on the first floor during a Victory Lap if a Devil Room was entered during the previous lap. Even more rarely, it is possible to encounter him on a normal run if the first level was rerolled with {{i|Forget Me Now}} or a 5-pip {{r|Dice Room}} after visiting the Devil Room by teleporting with a {{p|Joker}} card, a {{e|Red Chest}}, or similar methods.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium The Fallen ingame.png|The Fallen as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Trivia ==
+* The Fallen appeared in the Halloween Update for the original ''The Binding of Isaac.''
+* Under normal circumstances, the Fallen is one of six bosses (the other five being {{e|Conquest}}, {{e|Headless Horseman}}, {{e|Krampus}}, {{e|Baby Plum}} if spared, and {{e|Bumbino}} if he picks up enough coins) who drop or can drop active items upon defeat.
+* The Fallen is both visually and behaviorally similar to Krampus.
+* {{dlc|nr}}Despite the first phase of The Fallen having a death animation before splitting into clones, the clones themselves don't have a death animation. {{dlc|r}}The clones now have a death animation, like the main Fallen.
+* {{dlc|a+}} Previously, only ''Crusade'' would play when The Fallen appeared as Satan's first phase. As of [[Booster Pack #5]], ''Cerebrum Dispersio'' also has a chance to play in this situation.
+** This also applies to when the [[Angel]]s are fought normally (by bombing the Angel statues).
+* The Boss might represent Satan or another fallen angel who fell from grace and became evil.
+* The Fallen is tied with Krampus as having the highest [[Stage HP]] among all entities in the game.
+* Double Trouble Fallen encounters in The Womb/Utero do not require the player to have entered a Devil Room before. Upon defeat, they will still drop a Devil Room item.
+* The Fallen could appear in the alternative chapters in [https://antibirth.com/ Antibirth].
+
+{{nav|boss|fr=Le Déchu}}
+
+[[Category:Chapter 1 bosses]]
+[[Category:Chapter 2 bosses]]
+[[Category:Chapter 3 bosses]]
+[[Category:Chapter 4 bosses]]
+[[Category:Basement bosses]]
+[[Category:Cellar bosses]]
+[[Category:Burning Basement bosses]]
+[[Category:Caves bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Flooded Caves bosses]]
+[[Category:Depths bosses]]
+[[Category:Necropolis bosses]]
+[[Category:Dank Depths bosses]]
+[[Category:Womb bosses]]
+[[Category:Utero bosses]]
+[[Category:Scarred Womb bosses]]
+[[Category:Debut bosses in Rebirth]]

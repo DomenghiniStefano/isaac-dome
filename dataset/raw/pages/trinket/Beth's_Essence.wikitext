@@ -1,0 +1,21 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 182
+ | quote       = Virtue's reward
+ | description = Upon entering an {{R|Angel Room}}, spawns 5 wisp orbitals. Giving money to {{M|Beggar}}s can spawn wisps.
+ | unlocked by = Beth's Essence
+}}
+
+{{distinguish|Beth's Faith}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Upon entering an {{R|Angel Room}}, spawns 5 normal blue wisp orbitals.
+** Also applies to {{i|The Stairway}}'s shop.
+* Donating to '''any''' kind of {{M|Beggar}} has a chance to create a random wisp orbital.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: The wisps have a 50% chance to be special wisps. Having both increases the chance to 100%.
+
+{{nav|tainted bethany unlock|mother unlock|fr=Essence de Béthanie}}

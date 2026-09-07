@@ -1,0 +1,62 @@
+{{infobox activated collectible
+ | id          = 175
+ | quote       = Opens all doors...
+ | description = Opens all doors in the current [[room]] in almost all circumstances, including doors which require a {{e|Key}} to open, entrances to {{r|Secret Room}}s, and the door to {{e|Mega Satan}}.
+ | quality     = 2
+ | tags        = offensive
+ | recharge    = 2
+ | unlocked by = Dad's Key
+}}
+
+{{cit|ua}}
+
+== Effect ==
+* Upon use, opens all doors in the current [[room]] in almost all circumstances.
+
+== Notes ==
+* Dad's Key can open:
+:# Any normal doors that are closed during combat, even on floors that normally disallow this;
+:# Any dоor requiring {{e|Key}}s;
+:# Any door requiring {{e|Bomb}}s to blow open (including {{r|Secret Room}} and {{r|Super Secret Room}} doors);
+:# {{r|Challenge Room}} and {{r|Boss Challenge Room}} doors regardless of health total;
+:# The door to the {{e|Mega Satan}} arena;
+:# The {{r|Boss Rush}} door from inside;
+:# The doors of a {{r|Mini-Boss Room}} from inside;
+:# Most {{r|Boss Room}} dоors from inside;
+:# {{dlc+|r}} The {{s|Mausoleum}} / {{s|Gehenna}} doors without paying the health cost.{{dlc-}}
+* Dad's Key cannot open:
+
+:# The {{r|Boss Rush}} door if the timer has already passed 20 minutes;
+:# {{dlc+|a}} The door to the room leading to {{s|???}} if the timer has already passed 30 minutes;{{dlc-}}
+:# {{r|Angel Room}} or {{r|Devil Room}} doors from the outside;
+:# {{E|Locked Chest}}s of any kind, or [[Key Block]]s;
+:# The door of {{e|Mom}}'s Boss Room from inside;
+:# {{dlc|anr}} The exit door in [[Greed mode]];
+:#* Leaving the main room before clearing a set of waves will reset your wave counter, and repeated waves will not drop coins or charge your activated item.
+:# {{dlc+|a+}} The door to {{s|The Void}} during the {{e|Hush}} boss fight;{{dlc-}}
+:# {{dlc+|r}} The flesh door leading to {{s|Corpse}};{{dlc-}}
+:# {{a|A Strange Door}};
+:# {{dlc|r}} [[Red Key|Red doors]].
+* {{Dlc|r}} This item can be crafted from {{i|Bag of Crafting|n}} with six {{e|Key}}s and two {{e|Golden Key}}s.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Creates wisps in the middle ring. If the wisps touch {{E|Locked Chest}}s, Special Room doors, or uncleared room doors, they will unlock and open them, destroying themselves in the process. These wisps can open ''any'' locked door they touch, including the door to the {{e|Mega Satan}} arena, {{a|A Strange Door}}, and the flesh door to {{s|Corpse}}. {{e|Bomb Chest}}s and {{e|Mega Chest}}s are unaffected. They will also donate to {{m|Key Master}}s on touch, destroying themselves in the process. Opening a chest in a {{r|Challenge Room}} with a wisp will ''not'' start the challenge.}}
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|2fL5G-ScCCE}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Dad's Key.png|{{plat|3DS}} The icon of Dad's Key as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* This item is used in {{chal|The Family Man}} and {{chal|Red Redemption}}, as well as the June 19th [[List of curated daily challenges|curated daily challenge]].
+* Dad's Key may be a reference to Isaac's father leaving his mother, as it can be used to escape from almost any conflict.
+* In ''Wrath of the Lamb'', this item was unlocked by beating {{e|???}} for the first time.
+* The function of this item is very similar to the [[zelda:Magical Key|Magical Key]] from The Legend of Zelda.
+
+{{nav|dad|key|fr=Clé de Papa}}

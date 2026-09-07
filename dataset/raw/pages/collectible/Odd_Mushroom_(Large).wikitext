@@ -1,0 +1,37 @@
+{{infobox passive collectible
+ | alias         = Odd Mushroom (Large)
+ | link          = Odd Mushroom (Large)
+ | costume scale = 1/4
+ | id            = 121
+ | quote         = {{dlcalt|DMG up|r=HP + DMG up, speed down}}
+ | description   = {{dlc|nr}} Grants one empty [[Heart container]], +0.3 [[damage]], +0.25 [[range]], +0.5 [[tear falling speed]], and -0.1 [[speed]].<br>{{dlc|r}} Grants one full [[Heart container]], +1 [[damage]], +1.5 [[range]], and -0.2 [[speed]].
+ | quality       = 2
+ | tags          = summonable mushroom offensive
+}} {{disambig msg|the large odd mushroom|the smaller mushroom|Odd Mushroom (Thin)}}
+
+{{cit|p}}
+
+== Effects ==
+* {{dlc|nr}} Gives Isaac one empty [[Heart container]].
+* {{dlc|r}} Gives Isaac one full [[Heart container]].
+* {{dlc|nr}} +0.3 [[damage]].
+* {{dlc|r}} +1 [[damage]].
+* {{dlc|nr}} +0.25 [[range]].
+* {{dlc|r}} +1.5 [[range]].
+* {{dlc|nr}} +0.5 [[tear falling speed]].
+* {{dlc|nr}} -0.1 [[speed]].
+* {{dlc|r}} -0.2 [[speed]].
+* Makes Isaac's head larger, which on its own is only a visual effect.
+** If taken when Isaac is smaller than the default, this Mushroom also increases his hitbox slightly.
+* {{transformation contribution|Fun Guy}}
+
+== Notes ==
+* There are two collectible items in the game named [[Odd Mushroom]]; you can tell them apart from the sprites, or in the case of {{curse|blind}}, by looking at the change in Isaac's stats (usually health is the most noticeable).
+
+== Interactions ==
+* {{i|The Virus|nr}}: The speed down from the Virus does not stack with the Odd Mushroom; if both are collected, only a total of -0.1 applies.
+
+== In-game Footage ==
+{{#ev:youtube|5IGPBe9Bvq8}}
+
+{{nav|fun guy|mushroom|fr=Champignon Suspect (Gros)}}

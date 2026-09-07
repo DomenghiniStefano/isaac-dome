@@ -1,0 +1,90 @@
+{{infobox activated collectible
+ | dlc         = a
+ | id          = 382
+ | quote       = Gotta fetch 'em all!
+ | description = Throwing the ball at a [[monster]] instantly kills and captures it. The captured enemy can later be released and will be [[friendly]], fighting for Isaac and persisting between rooms.
+ | quality     = 1
+ | tags        = offensive nocantrip
+ | recharge    = {{dlcalt|3|r=2}}
+}}
+
+{{cit|a|a}}
+
+== Effects ==
+* Once thrown, the Friendly Ball will instantly capture any [[monster|non-boss enemy]] it hits, removing them from the room.
+* {{dlc|r}} Walking over a Friendly Ball after it captures an enemy will instantly recharge the item.
+* The next time the Friendly Ball is thrown, it will release the previously captured enemy as a [[friendly]] enemy.
+** Released enemies persist between rooms and floors and will follow Isaac until they die.
+** Friendly enemies cannot harm Isaac and do not need to be defeated to clear a room.
+** If Isaac leaves the room before the monster is released, the monster will stay in the ball until it is thrown again.
+* If the Friendly Ball does not capture an enemy, it will simply disappear after a couple seconds being on the ground. The next throw will work the same.
+
+== Notes ==
+* All enemies that aren't invincible and are not designated as a boss or mini-boss can be captured by the Friendly Ball. This includes enemies summoned from bosses such as {{E|Brownie}}'s spawned {{E|Dip}}s or {{E|The Cage}}'s unique {{E|Vis}}es.
+** {{dlc+|a+nr}} One exception to this is if you capture a {{E|Portal}}, as it can spawn enemies such as {{E|Death's Head}}.{{dlc-}}
+* It is generally wasteful to use this item on {{E|Mulligan}}s and their variants as they will immediately rush towards enemies and try to kill themselves, leaving behind friendly debris.
+* If the captured enemy is a {{E|Globin}} variant (besides {{E|Black Globin}}s for their lack of regenerative abilities) or a [[Champion|Dark Red Champion]], the enemy will regenerate after dying, granting a much longer lifespan.
+* {{E|Wall Creep}}s and their variants stick to walls, backing far away from any potential danger they might encounter.
+* Stationary enemies that move underground (such as {{E|Round Worm}}s or {{E|Lump}}s) work surprisingly well as an ally as they shoot foes from far away and rarely ever get hurt.
+* {{E|Mom's Hand}} and {{E|Mom's Dead Hand}} will both one-shot almost all normal enemies and greatly damage most bosses with an incredibly small window for the hands to be hit, making them ideal for capturing.
+* Brimstone-capable enemies are very potent as their lasers can cause an obscene amount of damage to both enemies and most bosses.
+* If the captured enemy is one that spawns enemies, those enemies will be friendly as well.
+* If the ally is immune to damage (such as a {{E|Mobile Host}} while its head is lowered), it will not take contact damage.
+* If the captured enemy is a [[Champion|Solid White Champion]], it will be completely invincible, as it cannot be killed until the room counts as being cleared, at which point it can be killed by [[spikes]] or a {{E|Wall Hugger}}.
+* {{dlc|a+}} If the captured enemy is a [[Champion|Pulsing Red Champion]], it will regenerate the health of other monsters in the room, including friendly ones.
+* {{dlc|na+}} If an enemy that leaves behind a trail of damaging [[creep]] is caught, the creep created by the friendly mob will still damage Isaac when he walks over it.
+** {{dlc|a+}} All creep created by a friendly enemy will only hurt grounded enemies and not the player.
+* The ball will only capture one segment of a {{E|Grub}}, one {{E|Buttlicker}}, or one {{E|Swarm|text=Swarm Fly}}. However, when releasing a Swarm Fly, a new swarm is generated for it.
+* If a {{E|Mask + Heart}}'s Heart is caught and then released, a Mask can use the friendly heart to live even if its original heart is destroyed. The room will not be cleared unless the Mask is killed.
+** The mask will ignore the friendly heart yet can still damage it. Bait the mask to charge towards the heart to destroy both.
+* Friendly enemies that produce explosions do not damage Isaac. This includes enemies that explode on death (such as {{E|Boom Fly|text=Boom Flies}}), as well as enemies that create Ipecac explosions (such as {{E|Gurgle}}s).
+** On top of that, lit bombs from friendly {{E|Mulligoon}}s, {{E|Fly Bomb|n}}s, and even {{E|Bombgagger|n}}s cannot hurt Isaac.
+* The head of {{E|Rag Man}} can be captured by the ball while detached. It will not become a Ragling after being released, and only chases enemies by rolling.
+* {{dlc+|r}} Captured {{E|Bishop}}s will protect Isaac with their shield generation ability, as well as all other friendly enemies. Isaac cannot take any damage while the Bishop is alive, as it will protect him with the shield. Protecting the Bishop can be a powerful defensive tool, especially when playing as {{C|The Lost}}.
+** The {{e|Bishop}} will die after protecting Isaac 6 times.
+** The shield does not protect against instant death effects such as {{p|Suicide King}} or {{i|Plan C}}.{{dlc-}}
+* {{dlc+|r}} Captured {{E|Cultist}}s will revive killed enemies as friendlies, allowing one to slowly amass an army of friendlies by protecting the Cultist.
+** Bosses and degraded bosses can be revived by a friendly Cultist, but will not persist between rooms.{{dlc-}}
+* Enemies that are spawned by a captured enemy (such as {{E|Dip}}s spawned by a {{E|Dinga}}) will persist between rooms as well.
+
+== Synergies ==
+* {{I|The Battery|r}}: Walking over a captured enemy will double charge the ball. This allows Isaac the ability to release a captured enemy and catch a new one in the same room double charging the ball to release and capture more enemies. Attempting to catch a new enemy while the old one is in the process of spawning will result in the ball phasing through the new enemy and wasting the charge.
+* {{i|Blood Puppy}}: Using the ball on an angered Blood Puppy will instantly tame it. Using the ball again results in a purely cosmetic blood explosion.
+* {{Book of Virtues synergy|description=Spawns a wisp, all on the middle ring, whenever a [[friendly]] enemy dies. Depending on the enemy that dies, the wisp may have a different effect:
+** Normal: Enemies captured by Friendly Ball spawn this wisp when they die if they wouldn't spawn any of the other variants listed below.
+** Homing: Enemies captured by Friendly Ball spawn this wisp when they die if they were psychic or had homing shots in some way. Wisps' tears are [[homing]].
+** Explosive: Enemies captured by Friendly Ball spawn this wisp when they die if they created explosions in some way. Wisps' tears have a 33% chance to explode. Explosive tears deal no extra damage.
+** Brimstone: Enemies captured by Friendly Ball spawn this wisp when they die if they fired lasers in some way. Wisps fire {{I|Brimstone}} lasers. The laser does not need to be charged to be fired, and can tick up to 8 times for a total of 20 damage.}}
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Friendly monsters are still affected by Ace Cards.
+* {{i|Blood Puppy}}: Either angry version of Blood Puppy will target friendly enemies as well and can drag them along with it when it charges them. Blood Puppy cannot damage friendly enemies however friendly enemies can damage Blood Puppy despite not targeting it outright.
+* {{i|Broken Modem}}: Broken Modem also affects friendly enemies and projectiles created by them.
+* {{i|Car Battery}}: No effect.
+* {{i|Eraser}}: If the ball captures an enemy and then another enemy of the same type is erased the next use of Friendly Ball will release a puff of pink smoke wasting the effect.
+* {{dlc+|r}} {{I|Ghost Bombs}} / {{i|Hungry Soul}} / {{I|Purgatory}} / {{i|Vade Retro}}: Explosions from ghosts can kill friendly enemies.{{dlc-}}
+* {{i|Hive Mind}}: No effect on captured flies or spiders.
+* {{i|Skatole}} or {{i|Bursting Sack}}: Friendly Fly/Spider enemies will be unable to shoot, slowed down, and/or reverted to a weaker form, hindering this item's effectiveness on those enemies.
+* {{t|Tick}}: [[Friendly]] enemies start with less health if they have 60HP or higher.
+* {{i|Void|r}}: Walking over a thrown Friendly Ball that captured an enemy will not recharge Void.
+* {{i|Glowing Hourglass}}: Will duplicate friendly enemies if used in the same room multiple times.
+
+== In-game Footage ==
+{{#ev:youtube|0wpYercV2gQ}}
+
+== Gallery ==
+<gallery>
+File:Collectible Friendly Ball concept.png|Concept drawn for Friendly Ball.
+</gallery>
+
+== Trivia ==
+* The item is a reference to Poké Balls from the [[wikipedia:Pokémon|Pokémon]] franchise. Ironically, it doesn't at all resemble the [http://vignette2.wikia.nocookie.net/pokemon/images/d/d4/Ball-friend1.png/revision/latest?cb=20110521124009 actual Friend Ball] in the franchise.
+* The Friendly Ball’s design represents Isaac’s eye depicted by the release button and the blue line representing his tears.
+== Bugs ==
+{{bug|dlc=na+|Certain monsters will not spawn friendly enemies when defeated:
+* [[Moter]]
+* [[Swinger]]
+* [[Dinga]]
+* [[Black Globin's Body]]}}
+
+{{nav|fr=Boule à Monstres}}

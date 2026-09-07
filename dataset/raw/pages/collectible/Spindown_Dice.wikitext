@@ -1,0 +1,166 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 723
+ | quote       = -1
+ | description = Reduces the internal ID number of all items in the room by one, turning them into the item with that number.
+ | quality     = 4
+ | tags        = offensive nocantrip
+ | recharge    = 6
+ | unlocked by = Spindown Dice
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Rerolls all pedestal items in a room by subtracting their internal ID number by one until a valid item is rolled. This effect occurs per item and is independent of any other items in the room.
+** Unlockable items will be skipped if they are not unlocked.
+
+== Notes ==
+* A list of items sorted by item ID can be found [[Collection_Page_(Repentance)|here]] (helpful for finding Spindown targets at a glance.)
+* Hidden items <ref>Hidden items are defined with the attribute <code>hidden="true"</code> in <code>items.xml</code>.</ref> will always be skipped, including:
+** {{i|Recall}}
+** {{i|Hold}}
+** The passive version of {{i|Damocles}} created by usage of Damocles (the one with item ID "<code>656</code>").
+** The passive version of {{i|The Book of Belial}} created by {{i|Birthright}} effect of {{c|Judas}} / {{c|Black Judas}} (the one with item ID "<code>59</code>").
+* Items created by using Spindown Dice are not considered "normally generated" and can be encountered again in their normal pools if they were not picked up.
+* Spindown Dice ignores all effects that prevent certain items from spawning, such as through [[item quality]] thresholds (e.g. {{i|Sacred Orb}}), [[Item Tags]] or other effects such as from {{t|NO!}}.
+** This makes the item especially valuable for {{c|Tainted Lost}}, as many helpful items cannot naturally spawn for him otherwise.
+* If used in a [[Challenge]] or [[Daily Challenge]], Spindown Dice will skip over items with the "<code>[[Item Tags nochallenge|nochallenge]]</code>" and "<code>[[Item Tags nodaily|nodaily]]</code>" tags, respectively.
+
+== Notable Rerolls ==
+* Reroll chains from common items into powerful items:
+** Items from [[Treasure Room (Item Pool)|Treasure Room Item Pool]]:
+*** {{i|Acid Baby}} → {{i|Eden's Soul}} → {{i|D infinity}}
+*** {{i|Belly Jelly}} → {{i|Glitched Crown}}
+*** {{I|Big Fan}} → {{I|Dark Bum}}
+*** {{I|Bird Cage}} → {{I|Eternal D6}}
+*** {{i|The Black Bean}} → {{i|Fate}}
+*** {{i|Blood Rights}} → {{i|Dead Dove}}
+*** {{i|Brown Nugget}} → {{i|Little Horn}}
+*** {{i|Candy Heart}} → {{i|Options?}}
+*** {{i|Cricket's Body}} → {{i|Pyromaniac}}
+*** {{i|Cursed Eye}} → {{i|Strange Attractor}} → {{i|Thunder Thighs}} → {{i|Holy Mantle}}
+*** {{i|Curse of the Tower}}  → {{i|Mr. Dolly}}
+*** {{i|E. Coli}} → {{i|Infestation 2}}
+*** {{I|Fate's Reward}} → {{I|Incubus}}
+*** {{i|Free Lemonade}} → {{i|Damocles}}
+*** {{i|Glaucoma}} → {{i|Sinus Infection}}
+*** {{i|Isaac's Heart|dlc=}} → {{i|Lil Brimstone}}
+*** {{i|Knockout Drops}} → {{i|R Key}}
+*** {{i|Large Zit}} → {{i|Greed's Gullet}}
+*** {{i|Lazarus' Rags}} → {{i|Godhead}}
+*** {{i|Leprosy}} → {{i|Technology Zero}}
+*** {{i|Lost Contact}} → {{i|Guppy's Collar}} → {{i|Spiderbaby}} → {{i|Gnawed Leaf}}
+*** {{i|Maggy's Bow}} → {{i|Judas' Shadow}}
+*** {{i|Magneto}} → {{i|Dr. Fetus}}
+*** {{i|Meat Cleaver}} → {{i|Bot Fly}} → {{i|Death Certificate}}
+*** {{i|Mr. Mega}} → {{I|The D6}} → {{I|The Parasite}}
+*** {{i|My Reflection}} → {{i|Cricket's Head}} → {{I|Spoon Bender}}
+*** {{i|Nancy Bombs}} → {{i|Rock Bottom}}
+*** {{i|Ouija Board}} → {{i|Mom's Knife}}
+*** {{i|Pause}} → {{i|Void}}
+*** {{i|Roid Rage}} → {{i|The Virus}} → {{i|Magic Mushroom}} → {{i|1up!}}
+*** {{i|Spider Butt}} → {{i|Daddy Longlegs}} → {{i|Polyphemus}} → {{i|Epic Fetus}}
+*** {{I|Tiny Planet}} → {{I|Stop Watch}}
+** Items from [[Boss (Item Pool)|Boss Item Pool]]:
+*** {{i|Tooth Picks}} → {{i|Sacred Heart}}
+*** {{i|Consolation Prize}} → {{i|Revelation}}
+*** {{i|Roid Rage}} → {{i|The Virus}} → {{i|Magic Mushroom}} → {{i|1up!}}
+*** {{I|Supper}} → {{i|Abyss}}
+** Items from [[Shop (Item Pool)|Shop Item Pool]]:
+*** {{I|Alabaster Box}} → {{I|Book of Virtues}}
+*** {{I|Blue Map}} → {{I|20/20}}
+*** {{i|Crooked Penny}} → {{i|Wait What?}} → {{i|Mama Mega!}}
+*** {{i|Deep Pockets}} → {{i|Crown Of Light}}
+*** {{i|Eraser}} →{{i|Knockout Drops}} → {{i|R Key}}
+*** {{i|Friendly Ball}} → {{i|Eden's Blessing}}
+*** {{i|Isaac's Tomb}} → {{i|Echo Chamber}}
+*** {{I|Night Light}} → {{I|Sack Head}}
+*** {{i|Placebo}} → {{i|Diplopia}}
+*** {{i|Red Stew}} → {{i|Birthright}}
+*** {{i|Sack of Sacks}} → {{i|Eucharist}}
+*** {{i|Sharp Key}} → {{i|Genesis}}
+*** {{i|Ventricle Razor}} → {{i|Tech X}}
+** Items from other resources that are easy to obtain:
+*** {{i|Blood Bag}} (obtained by a {{M|Blood Donation Machine}}) → {{i|Brimstone}}
+*** {{i|IV Bag}} (obtained by a {{M|Blood Donation Machine}}) → {{i|Guppy's Tail}} → {{i|Guppy's Paw}} → {{i|A Lump of Coal}}
+*** {{i|The Virus}} (dropped by {{E|Lust}}) → {{i|Magic Mushroom}} → {{i|1up!}}
+*** {{i|Mr. Mega}} (dropped by {{E|Super Wrath}}) → {{i|The D6}}
+*** {{i|Little Gish}} (dropped by {{E|Gish}}) → {{i|The Relic}}
+*** {{i|Key Piece 1}} → {{i|Death's Touch}}
+*** {{i|Knife Piece 1}} → {{i|Mega Mush}}
+** Items from [[Devil Room (Item Pool)|Devil Room]]:
+*** {{I|2Spooky}} → {{i|Mucormycosis}} → '''{{i|Mom's Shovel}}'''
+*** {{I|Azazel's Rage}} → {{I|Twisted Pair}}
+*** {{i|Dark Prince's Crown}} → {{i|Mega Blast}}
+*** {{i|Guppy's Eye}} → {{i|Binge Eater}}
+*** {{i|Head of Krampus}} → {{i|Satanic Bible}}
+*** {{i|Lemegeton}} → {{i|Flip}}
+*** {{i|Lil Abaddon}} → {{i|C Section}}
+*** {{i|Missing Page 2}} → {{i|Proptosis}} → {{i|Black Candle}}
+*** {{i|Ouija Board}} → {{i|Mom's Knife}}
+*** {{i|Sanguine Bond}} → {{i|Sacred Orb}}
+*** {{i|Money Power}} → {{i|The Wafer}}
+** Items from [[Angel Room (Item Pool)|Angel Room]]:
+*** {{i|Eden's Soul}} → {{i|D infinity}}
+*** {{i|Lazarus' Rags}} → {{i|Godhead}}
+** Items from other resources:
+*** {{i|Sol}} → {{i|The Stairway}}
+*** {{i|Wavy Cap}} → {{i|Psy Fly}} → {{i|Red Key}} → {{I|Spirit Sword}}
+
+* Reroll chains into items that are notably difficult to obtain in normal circumstances:
+** {{i|The Black Bean}} → {{i|Fate}} (only rarely dropped from {{e|Locked Chest}}s)
+** {{i|Bomb Bag}} → {{i|A Pony}} (only dropped by {{E|Headless Horseman}})
+** {{i|Boom!}} → {{i|A Dollar}} (only dropped from {{Machine|Slot Machine}}s)
+** {{i|Butter Bean}} → {{i|Head of Krampus}} (only dropped by {{E|Krampus}})
+** {{i|Crooked Penny}} → {{i|Wait What?}} (only found when it replaces {{i|Butter Bean}} in item pools)
+** {{i|Halo of Flies}} → {{i|Skatole}} (only dropped from {{Machine|Shell Game}}s)
+** {{i|Guppy's Paw}} → {{i|A Lump of Coal}} (only dropped by {{E|Krampus}} or from {{I|Mystery Gift}})
+** {{i|Mucormycosis}} → '''{{i|Mom's Shovel}}''' (only found by combining {{i|Broken Shovel 1}} and {{i|Broken Shovel 2}})
+** {{i|Papa Fly}} → {{i|Head of the Keeper}} (only found by bombing {{E|Shopkeeper}}s)
+** {{i|Pentagram}} → {{i|Steven}} (only rarely dropped by {{E|Steven}})
+** {{i|Purgatory}} → {{i|Dogma}} (only obtained by defeating {{E|Dogma}})
+** {{i|Sacred Heart}} → {{i|White Pony}} (only dropped by {{E|Conquest}})
+** {{I|Sausage}} → {{I|Dad's Note}} (only found in the special {{S|Mausoleum}} / {{S|Gehenna}} II boss room)
+*** Doing so is pointless as {{I|Dad's Note}} cannot be rerolled further by any means, even though the next spindown ID would be {{I|Strawman}}.
+** {{i|Spelunker Hat}} → {{i|The Small Rock}} (only found by destroying [[Tinted Rock]]s or playing {{Machine|Crane Game}}s)
+** {{i|Spirit of the Night}} → {{i|Crystal Ball}} (only dropped from {{Machine|Fortune Telling Machine}}s)
+** {{i|Spirit Shackles}} → {{i|Redemption}} (only dropped from {{Machine|Confessional}}s or {{R|Sacrifice Room}}s after taking a devil deal)
+** {{I|Voodoo Head}} → {{I|Pluto}} → {{I|Neptunus}} → {{I|Uranus}} → {{I|Saturnus}} → {{I|Jupiter}} → {{I|Mars}} → {{I|Terra}} → {{I|Venus}} → {{I|Mercurius}} → {{I|Luna}} → {{I|Sol}} (all of these are only found in {{R|Planetarium}}s)
+
+* The following items' ID are continuous, which are not recommended to re-roll:
+** {{I|Mom's Lipstick}} → {{I|Mom's Underwear}} → {{I|The Belt}} → {{I|Wooden Spoon}} → {{I|Rotten Meat}} → {{I|Breakfast}} → {{I|Dessert}} → {{I|Dinner}} → {{I|Lunch}}
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a random wisp in the middle ring and rerolls all of Isaac's wisps into the type that was just spawned. Due to some wisps having unique behaviors, Isaac can end up with more or less wisps in a given ring than expected.}}
+* {{i|Glitched Crown}} / {{c|Isaac}} with {{i|Birthright}} / {{c|Tainted Isaac}}: Rerolling a cycling item will reduce the ID number of the displayed item by 1 and randomize all other options. This may allow Isaac to acquire items with large ID numbers by jumping to a higher ID.
+
+== Interactions ==
+* {{i|Car Battery}}: All future rerolls turn into the item that is 2 less than the previous ID.
+* {{i|The Sad Onion}}: Disappears upon being rerolled, as its internal ID number is 1.
+* {{i|TMTRAINER}} / {{A|Corrupted Data}}: Glitch items will disappear if rerolled.
+
+== In-game Footage ==
+{{#ev:youtube|n_0USAobJcA}}
+
+== Trivia ==
+<!--
+Die is the singular form of the word dice. Please do not change the word die to dice.
+-->
+
+* A spindown die is a type of die used as a life counter for ''Magic: The Gathering'' or for various other uses across card and board games. It is a D20 with the numbers laid out in a sequential pattern, to allow for the face-up number to be changed easily when a player's life goes up or down.
+* The item's color scheme matches the D8 die included in ''The Binding of Isaac: Four Souls'' card game, which is used as a spindown die to keep track of an enemy's health.
+* Spindown Dice is the only dice item that cannot be copied by the {{I|D infinity}}.
+** It is arguable that Spindown Dice is not necessarily a dice item, since its effect does not involve random generation.
+* Spindown Dice itself will be rerolled into {{I|Anima Sola}}, while {{I|Hypercoagulation}} rerolls into it.
+* Using Spindown Dice on {{I|Smart Fly}} rerolls into {{I|Clear Rune}}, which is the only ''Repentance'' added item to reroll from a ''Rebirth'' one. This is due to the item taking up a previously unused item id.
+* Two items are impossible to obtain with Spindown Dice:
+** {{i|Mom's Ring}}, as it has the highest ID of all items (without mods taking a higher number, etc).
+** {{I|Strawman}}, due to {{I|Dad's Note}} having immunity to being rerolled.
+*** Even with {{I|Car Battery}}, {{I|Sausage}} will still spin down into {{I|Dad's Note}}
+* Defeating {{E|Delirium}} as most tainted characters will unlock an item that is similar to their gameplay characteristic. However, Tainted Isaac's passive ability to have multiple items cycle on an item pedestal ({{I|Glitched Crown}}) is unlocked through defeating {{E|The Beast}} instead.
+
+== References ==
+<references />
+
+{{nav|dice|tainted isaac unlock|delirium unlock|fr=Dé Compteur}}

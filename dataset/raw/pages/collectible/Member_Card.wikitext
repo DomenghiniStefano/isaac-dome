@@ -1,0 +1,51 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 602
+ | quote       = Exclusive access!
+ | description = Adds a trapdoor to every {{R|Shop}} that leads to a second shop with a unique stock and marked-up prices.
+ | quality     = 2
+ | tags        = summonable offensive {{dlc|r+|lazarussharedglobal}}
+ | unlocked by = Member Card
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Spawns a trapdoor in each {{R|Shop}} that leads to an additional underground shop that can sell 2-5 of the following:
+** A [[Trinket]] for 15 cents.
+** An [[Item]] for 15-30 cents. Items will be from the [[Secret Room (Item Pool)|Secret Room]], [[Shop (Item Pool)|Shop]], [[Devil Room (Item Pool)|Devil]]/[[Angel Room (Item Pool)|Angel Room]], or [[Boss (Item Pool)|Boss Room]] items; there can be multiple items from different item pools, but items will stay to their chosen item pool if rerolled.
+*** Devil/Angel room items can cost up to 50 cents, and Secret Room items can cost up to 99 cents.
+** A [[Cards and Runes#Cards|Card]]/[[Cards and Runes#Runes|Rune]]/[[Cards and Runes#Soul Stones|Soul Stone]] for 6-8 cents.
+** A {{E|Black Heart}}/{{E|Bone Heart}} for 8 cents.
+** An {{E|Eternal Heart}} for 15 cents.
+** A {{E|Rotten Heart}} for 5 cents.
+
+== Notes ==
+* The trapdoor spawns even if the shop was replaced by {{E|Greed}} or {{E|Super Greed}}, in which case it won't open until Greed has been defeated.
+* Similar to {{R|Crawl Space}}s, there is only one secret shop per floor. The trapdoors in extra shops created by {{i|Red Key}} will lead to the same secret shop.
+* If the Member Card was removed from the player's inventory (for example, by playing {{c|Tainted Isaac}} and replacing it with a different item), the trapdoor will still remain open once it has been spawned, even after leaving and reentering the shop.
+* The trapdoor will appear in the [[Mirrored World]] version of the shop. Despite the shop itself being empty, the trapdoor will lead to the same secret shop where the items are still for sale. Buying from the secret shop in the Mirrored World will thus remove the bought item from both worlds.
+
+== Interactions ==
+* {{i|Eden's Soul}}/{{i|Magic Skin}}/{{i|Mystery Gift}}: Only shop pool items are created if used in the underground shop.
+* {{i|Restock}}: Items bought in the underground shop will also be restocked.
+
+== In-game Footage ==
+{{#ev:youtube|yKLLK-3cxjA}}
+
+== Trivia ==
+* [[anti:Member Card|Member Card]] is from the ''Antibirth'' mod.
+* It is likely a reference to the Member Card from the Fire Emblem series. In Fire Emblem, having a Member Card gives one access to unique and valuable items in shops, similar to the Member Card in Repentance.
+
+== Bugs ==
+{{bug|Using {{p|XVI - The Tower?}} in the underground Shop can spawn rocks under the ladder, resulting in a softlock if Isaac can't fly or doesn't have any bombs.}}
+{{Bug|Using {{p|IV - The Emperor?}} in the underground Shop on Mausoleum II, and getting Rotgut as the boss, will result in an infinite loop of entering and exiting the boss room and the shop, respectively.}}
+{{bug|On Downpour II (or one of its alternate versions) :
+* Don't go into the underground shop.
+* Go in the mirror world, enter the underground shop's alternate mirror version. It should have nothing for sale.
+* Make the game refill shop. For example by using a restock machine.
+* Go to the regular underground shop in the normal non-mirror world.
+* Now the underground shop contains two overlapped sets of things on sale : One from when the mirror version was restocked, and one from when you entered the "real" underground shop for the first time.}}
+{{bug|If Isaac teleports to an {{r|I AM ERROR}}, {{r|Devil Room}}, or {{r|Angel Room}} from the underground Shop, and then enters a {{r|Crawl Space}} from that room, exiting the Crawl Space will lead Isaac to the underground Shop. From there, Isaac is unable to exit the underground Shop, and he will be permanently stuck unless he can teleport out.}}
+
+{{nav|fr=Carte de Membre}}

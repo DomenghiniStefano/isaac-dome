@@ -1,0 +1,30 @@
+{{infobox passive collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 119
+ | quote       = {{dlcalt|HP up|r=HP + speed up}}
+ | description = Grants one filled [[Red Heart container]], restores {{dlc|nr}} 4 / {{dlc|r}} 5 {{E|Red Heart}}s, and increases [[speed]] by 0.3.
+ | quality     = 2
+ | tags        = nolostbr
+ | pool        = blood donation machine
+ | unlocked by = Blood Bag
+}}
+
+{{cit|up}}
+
+== Effects ==
+* Grants one full [[Red Heart container]].
+* {{dlc|nr}} Restores 4 {{E|Red Heart}}s.
+* {{dlc|r}} Restores 5 {{E|Red Heart}}s.
+* +0.3 [[speed]].
+
+== Notes ==
+* This item can be generated multiple times by paying out multiple {{M|Blood Donation Machine}}s.
+
+== In-game Footage ==
+{{#ev:youtube|mM0vNDAehNM||inline}} {{#ev:youtube|UtDUacDwIAc||inline}}
+
+== Trivia ==
+* The Blood Bag seems to give Isaac a face similar to {{E|Larry Jr.}}
+* {{dlc+|r}} This item is used in {{chal|Bloody Mary}}, and is required to be unlocked to access the challenge.{{dlc-}}
+
+{{nav|fr=Poche de Sang}}

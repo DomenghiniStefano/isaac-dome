@@ -1,0 +1,47 @@
+{{infobox trinket
+ | id          = 52
+ | quote       = Wealth of wealth
+ | description = Gives a 50% chance of increasing the value of every [[Coins|coin]] pickup by one.
+ | pool        = golden poop, special shopkeeper
+ | unlocked by = Counterfeit Coin
+}}
+
+{{cit|ut}}
+
+== Effects ==
+* Gives a chance, upon picking up a coin, to increase the value of that coin by 1.
+** {{dlc|nr}} 50% chance.
+** {{dlc|r}} The chance is based on the coin's worth:<ref>The chance is calculated as 1-0.50<sup>(coin_worth)</sup></ref>
+{| class="wikitable"
+ ! Coin
+ ! Chance
+ |-
+ | {{e|Penny}}
+ | 50.00%
+ |-
+ | {{E|Double Penny}}
+ | 75.00%
+ |-
+ | {{E|Nickel}}
+ | 96.88%
+ |-
+ | {{E|Dime}}
+ | 99.90%
+ |}
+
+== Notes ==
+* This trinket can be found from destroying {{E|Golden Poop}} and {{E|Special Shopkeeper}}s.
+* {{dlc+|a}} Counterfeit Penny allows the chance for {{C|Keeper}} / {{c|Tainted Keeper}} to gain the full value of a coin while healing, or to heal 2 coin hp from a single penny.{{dlc-}}
+* {{dlc+|r}} If picked up by {{C|Jacob and Esau}}, only the brother holding Counterfeit Penny can trigger the effect.{{dlc-}}
+
+== Interactions ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either gives the chance to increase the value of collected coins by 2. Having both by 3.
+
+== In-game Footage ==
+{{#ev:youtube|4XnfBs8nXeA}}
+
+== References ==
+{{Reflist}}
+
+{{nav|coin modifier|penny|fr=Pièce de Contrefaçon}}
+[[Category:Penny trinkets]]

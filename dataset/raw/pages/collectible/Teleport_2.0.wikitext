@@ -1,0 +1,70 @@
+{{infobox activated collectible
+ | dlc         = a
+ | id          = 419
+ | quote       = I-Teleport!
+ | description = Teleports Isaac to a room that has not been explored yet. Normal rooms are prioritized over special rooms, and common special rooms take priority over rarer ones.
+ | quality     = 3
+ | tags        = offensive
+ | recharge    = 4
+}}
+
+{{cit|a|a}}
+
+== Effects ==
+* Teleports Isaac to a room that has not been explored yet. Normal rooms are prioritized over special rooms, and common special rooms take priority over rarer ones.
+
+== Notes ==
+* The room that Isaac is teleported into will be touching an explored room, if possible.
+* When used in a room with enemies in it, Isaac is teleported back into the same room, resetting it.
+* The order of types of rooms is predetermined, first available on this list chosen:
+*# {{dlc|a+}} [[Grave Room]] / {{r|Mirror Room}} / {{r|Mine Cart Room}}
+*# Normal rooms
+*# {{r|Red Room}}s (opened but unexplored)
+*# {{r|Boss Room}}
+*# {{r|Super Secret Room}}
+*# {{r|Shop}}
+*# {{r|Treasure Room}}
+*# {{r|Planetarium}}
+*# {{r|Sacrifice Room}} / {{r|Dice Room}}
+*# {{r|Library}}
+*# {{r|Curse Room}}
+*# {{r|Mini-Boss Room}}
+*# {{r|Challenge Room}} / {{r|Boss Challenge Room}}
+*# {{r|Arcade}} / {{r|Vault}}
+*# {{r|Clean Bedroom}} / {{r|Dirty Bedroom}}
+*# {{r|Secret Room}}
+*# {{r|Ultra Secret Room}} ([[Mirrored World]] only, even if it wasn't located)
+*# {{r|Devil Room}} / {{r|Angel Room}}
+*# {{r|I AM ERROR}} room.
+* In {{s|Cathedral}} or {{s|Sheol}}, using the I AM ERROR room exit will bring Isaac to The Chest or Dark Room respectively.
+** This works even if Isaac has the wrong corresponding item ({{i|The Polaroid}} / {{i|The Negative}}) for that floor.
+* In {{s|Chest}}, {{s|Dark Room}}, {{s|The Void}}, {{i|Dad's Note}} floor, and {{s|Corpse}} II, Teleport 2.0 will teleport Isaac to the Devil/Angel room instead of the I AM ERROR room. The same is true when using it on the final floor of a [[Daily Challenges]].
+* {{dlc|a+nr}} In {{s|The Void}}, using Teleport 2.0 in the I AM ERROR room will teleport Isaac to The Void again, allowing the floor to be restarted. The floor regenerates with new rooms and enemies. This can be done multiple times.
+* A floor's [[Bosses|Boss]] must be defeated in order to access rooms prioritized after the {{r|Boss Room}} with this item.
+** {{dlc+|r}} The exception to this is {{s|Corpse}} II, where simply entering the boss room will count the room as cleared. The hole to the {{E|Mother}} fight does not need to be entered. This allows the player to use this item to access rooms prioritized after the Boss Room without needing to fight Mother.{{dlc-}}
+* {{dlc+|r}} Using Teleport 2.0 in the [[Ascent]] sequence will teleport Isaac to the Angel/Devil Room if all other rooms have been explored. After returning from the Angel/Devil Room, using the Teleport 2.0 again will teleport Isaac to the I AM ERROR room. If it's instead used without exploring any rooms, Isaac will be teleported to the 'starting' room of the floor containing the beam of light up to the next floor.
+** This strategy also works in {{s|Home}}, taking Isaac to an Angel/Devil Room if all rooms have been explored. Isaac cannot use this to reach the hidden closet room containing Tainted characters, however. Using it after visiting the Angel/Devil Room will not teleport Isaac to the I AM ERROR room, and will instead merely teleport to the same Angel/Devil Room again.{{dlc-}}
+* {{dlc+|r}} Using Teleport 2.0 during the {{E|The Beast}} fight will teleport Isaac to a random spot on the screen without interrupting the fight.{{dlc-}}
+* {{dlc+|r}} In the [[Mirrored World]], Isaac will teleport to the {{r|Ultra Secret Room}} before the I AM ERROR room. Although it's empty like any other special room inside the Mirror, this can be useful to find the room in the normal world with {{i|Red Key}}.
+** If used again in the Mirrored World, Isaac will teleport to the {{r|Red Room}} which leads Isaac back to the main floor; if used once again, Isaac will teleport to the I AM ERROR room of the normal, non-mirrored floor.{{dlc-}}
+* {{dlc+|r}} After killing {{e|Mom's Heart}} in {{s|Mausoleum}} / {{s|Gehenna}} II, Teleport 2.0 will teleport Isaac to the I AM ERROR room with hole leading to {{s|Corpse}}, even if there are unexplored rooms on the floor.{{dlc-}}
+* After exhausting all possible rooms, using the item will not teleport Isaac anymore.
+
+== Interactions ==
+* {{Book of Virtues synergy|description=Spawns flashing blue wisps on the middle ring. Tears have 20% chance of teleporting non-boss enemies to a random location in the current room on hit. Wisps also temporarily vanish every 5 seconds, preventing them from blocking shots or taking/dealing damage.
+** This effect is identical to {{i|Teleport!}}'s effect with Book of Virtues, albeit with a 10% higher chance of teleporting enemies on hit.}}
+
+== In-game Footage ==
+{{#ev:youtube|hwkf2uKuyjs}}
+
+== Trivia ==
+* The sprite of this item is identical to {{i|Teleport!}} and {{i|Doctor's Remote}}, but with a different color.
+* Teleporting to the I AM ERROR room when all rooms on the map are explored is a possible failsafe for the error the item would otherwise cause, as no other valid unexplored rooms would exist at that point.
+* This item is the successor to {{I|Teleport!}}.
+* This item is one of four reliable ways to reach the I AM ERROR room in-game, the others being the {{i|Blank Card}} + {{p|? Card}} interaction, using {{i|Red Key}} to go beyond the 13x13 level grid, and {{i|Undefined}}.
+
+== Bugs ==
+{{Bug|After all Mini-Bosses in [[Mini-Boss Room]]s are encountered, on floors that would otherwise spawn Mini-Boss Rooms, they will not spawn, which results in Teleport 2.0 being unable to teleport Isaac to special rooms after the Mini-Boss Room in the teleport order, instead teleporting Isaac to the same room each time.}}
+{{Bug|If Isaac is in {{s|Mines}} / {{s|Ashpit}} II while holding {{i|Knife Piece 1}}, and if there is no {{r|Curse Room}} in the floor, Teleport 2.0 sometimes incorrectly teleports Isaac to the room containing the minecart that leads to {{i|Knife Piece 2}}. If this happens, all further uses of Teleport 2.0 in that floor will also lead Isaac to this room.}}
+
+{{nav|fr=Téléportation 2.0}}

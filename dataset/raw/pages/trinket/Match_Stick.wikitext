@@ -1,0 +1,66 @@
+{{infobox trinket
+ | name        = Match Stick
+ | id          = 41
+ | quote       = Tastes like burning
+ | description = Increases the chance of {{e|Bomb}}s dropping after clearing a room, and the chance of finding Bombs when opening a {{E|Chest}}.
+ | tags        = nogreed
+}} {{distinguish|Match Book}}
+
+{{cit|t}}
+
+== Effects ==
+* Gives a 10% chance of changing the room drop reward to a {{e|Bomb}}.
+* Gives a 33% chance of adding a bomb to the rewards from opening certain [[Chests]],  destroying [[Tinted Rock]]s, or certain [[Machine]]s.
+** Other than Tinted Rocks, these can only drop the bomb if they drop [[coins]], [[heart]]s, {{e|Bomb}}s, or {{e|Key}}s.
+** This includes: {{column list | width = 15em | content =
+*** {{E|Chest}}s
+*** {{e|Locked Chest}}s
+*** {{e|Bomb Chest}}s
+*** {{e|Eternal Chest}}s
+*** {{e|Spiked Chest}}s
+*** {{e|Mimic Chest}}s
+*** {{e|Mega Chest}}s
+*** {{e|Haunted Chest}}s
+*** [[Tinted Rock]]s
+*** {{M|Slot Machine}}s
+*** {{M|Fortune Telling Machine}}s
+*** {{M|Crane Game}}s
+*** {{M|Confessional}}s
+*** {{m|Beggar}}s
+*** {{dlc|nr}} {{m|Devil Beggar}}s
+*** {{m|Key Master}}s
+*** {{m|Bomb Bum}}s
+*** {{m|Battery Bum}}s
+}}
+** This excludes: {{column list | width = 15em | content =
+*** {{e|Red Chest}}s
+*** {{e|Old Chest}}s
+*** {{e|Wooden Chest}}s
+*** {{e|Mom's Chest}}
+*** {{m|Blood Donation Machine}}s
+*** {{m|Shop Restock Machine}}s
+*** {{m|Mom's Dressing Table}}s
+*** {{m|Donation Machine}}s
+*** {{dlc|r}} {{m|Devil Beggar}}s
+*** {{m|Rotten Beggar}}s
+*** {{m|Hell Game}}s
+}}
+
+== Notes ==
+* This trinket can be found from destroying {{E|TNT}} barrels.
+** {{dlc|r}} It is also dropped alongside 3 bombs when picking up {{I|Match Book}}.
+
+== Synergies ==
+* {{dlc+|a}} {{T|Tick}}: Tick can be removed by picking up Match Stick.
+** '''Tick''' + {{i|Mom's Purse}} / {{i|Belly Button}}: Match Stick can no longer remove Tick, instead moving to the second trinket slot even if Isaac already holds two trinkets.{{dlc-}}
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either increases the chance of changing the room drop reward to a {{e|Bomb}} to 20% and increases the chance of adding a bomb to rewards to 66%. Having both increases these chances to respectively 30% and 100%.
+
+== In-game Footage ==
+{{#ev:youtube|ZRW7mRNZeYI}}
+
+== Trivia ==
+* The pickup quote is a reference to [[Wikipedia:The Simpsons|The Simpsons]], as in the episode "Das Bus", Ralph eats poisonous berries and says "They taste like burning...".
+* This item is used in [[Challenge]] #9 ([[Demo Man]]).
+* {{dlc|a}}The Match Stick being able to replace the Tick is a reference to a common remedy for removing a tick from one's skin, which is putting a flame beside it until the tick disengages.
+
+{{nav|bomb modifier|fr=Allumette}}

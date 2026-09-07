@@ -1,0 +1,46 @@
+{{infobox passive collectible
+ | dlc         = a
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 436
+ | quote       = {{dlcalt|Dont cry over it...|a+=Don{{dlc|a+|'}}t cry over it...}}
+ | description = {{dlc|nr+}} Spawns a glass [[familiar]] that follows Isaac. After Isaac takes damage, the milk spills, and he gains -2 [[Attributes#Tear Delay|tear delay]] ({{dlc|r}} +1.0 [[fire rate]]) until leaving the [[Rooms|room]]<br>{{dlc|r+}} Spawns a glass [[familiar]] that follows Isaac. The milk will block projectiles, and upon blocking 10, the milk spills, giving Isaac +1.0 [[fire rate]] for the rest of the floor.
+ | quality     = 1
+ | tags        = uniquefamiliar nolostbr summonable {{dlc|r+|tearsup}}
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Spawns a glass [[familiar]] that follows Isaac.
+** {{dlc|nr+}} The milk spills on the floor upon taking damage. After which, Isaac gains -2 [[Attributes#Tear Delay|tear delay]] ({{dlc|r}} +1.0 [[fire rate]]) until leaving the [[Rooms|room]]. The familiar will reappear in the next room.
+** {{dlc|r+}} The milk will block projectiles and take damage up to 10 times, after which the familiar shatters granting Isaac +1.0 [[fire rate]] for the rest of the floor. The familiar will reappear upon entering a new floor.
+*** The familiar can also take damage from contact with enemies, enemy lasers and all explosions, although they are not blocked or pushed back.
+** Direct tear delay reduction can break the normal soft fire rate cap.
+
+== Notes ==
+* The milk puddle is purely visual, and will stay on the ground for a few seconds before disappearing.
+* {{dlc|rnr+}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Milk! having the lowest priority at 6th and thus being farther from Isaac than familiars of different priorities.
+** {{dlc+|r+}} Milk! has the third-highest priority; just behind {{i|Incubus}}.{{dlc-}}
+
+
+== Synergies ==
+* {{dlc|nr}} {{i|Box of Friends}}: The milk familiar is not duplicated; instead, tear delay decreases by 2 upon use even if the player has not taken damage in the current room.
+** {{dlc|r}} No extra tear delay is granted, neither before nor after breaking.
+* {{i|Rock Bottom}}: If activated at least once, the increased rate of fire will always be active.
+
+== Interactions ==
+* {{i|BFFS!}}: Familiar is bigger but no effect on tear delay.
+
+== In-game Footage ==
+{{#ev:youtube|25Cib9UQZLw}}
+
+== Trivia ==
+* This item is a reference to the phrase "Don't cry over spilled milk".
+
+== Bugs ==
+{{bug|dlc=nr|When the milk is spilled and becomes a puddle while {{t|Extension Cord|n}} is equipped, the electricity will fire consistently to the upper left even when the puddle disappears.}}
+{{bug| dlc=r+ |The milk familiar has a chance to block a projectile, but not count towards breaking. This is indicated by the familiar not flashing red despite blocking a shot.}}
+{{bug| dlc=r+ |If the run is exited and resumed when the familiar has been broken, it will reppear but only hover at the latest entrance to the current room. It can still block enemy shots and flashes red when damaged, but can't be broken again. It becomes normal again upon entering the next stage.}}
+
+{{nav|fr=Tasse de Lait}}
+[[Category:Damage-triggered items]]

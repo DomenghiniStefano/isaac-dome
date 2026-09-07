@@ -1,0 +1,122 @@
+{{infobox activated collectible
+ | dlc         = a
+ | id          = 422
+ | quote       = Turn back time
+ | description = Rewinds time, putting Isaac back in the previous room and undoing anything that happened in the current room. {{dlc|r}} Can only be used three times per floor, after which it functions like {{i|The Hourglass}} until the next floor.
+ | quality     = 3
+ | tags        = {{dlc|nr+|offensive}} nocantrip
+ | recharge    = {{dlcalt|2|r=unlimited}}
+}} {{disambig msg|the glowing hourglass|the normal version of this item|The Hourglass}}
+
+{{cit|a|a}}
+
+== Effect ==
+* On use, Isaac will be returned to the previous room and everything that happened in the current room will be undone.
+** Health, bombs, coins, keys, cards / runes / pills, items, and trinkets, gained or lost, will be restored to their state before having entered the room.
+** Time spent and score gained or lost within the room are reverted.
+*** {{dlc|nr}} About one second will be spent during the animation after use.
+** Most permanent unlocks will be reverted (see below).
+* {{dlc|r}} Can only be used 3 times on each floor, after which it functions like {{i|The Hourglass}} until a new floor is entered.
+
+== Notes ==
+* The Glowing Hourglass is very useful for finding out hidden information. For example:
+** Every pill on the floor can be accumulated and used in the same room, the pills' effects can be noted and reverted if unwanted.
+** Isaac can bomb walls with potential secret rooms, then go back in time if he fails to find one.
+** If Isaac has {{cu|Blind}}, Glowing Hourglass can be used to pick up or purchase an unknown item to see what it is, then decide whether or not to undo picking it up.
+** It can be even be used in extremely creative ways, such as using {{p|XXI - The World}} and screenshotting the map, then going back in time to get the card back.
+* Does not affect the chance for a {{R|Devil Room}}, {{R|Angel Room}}, or a portal to {{s|The Void}} to spawn (it will not spawn if it didn’t initially).
+* If used in a Devil Room or Angel Room, the door to it has its normal chance to close.
+** If used on the {{R|Boss Rush}} after the time limit expires, the door will not remain open when sent back to the boss room.
+* If Isaac goes into a Devil / Angel room, sees undesirable items, activates the Glowing Hourglass, and the Devil / Angel door doesn't stay open, then the game will think that Isaac missed the Devil / Angel deal on the floor, and will thus increase the chance of getting one on the next floor.
+** However, if it's the first Devil Deal, and the door doesn't stay open, then you'll still get an Angel deal on the next floor.
+*** By combining these two bugged interactions, Isaac can get a Devil Deal on Basement 2, bomb himself to reduce your deal chance to 1%, then go into the Devil Deal, and use the Glowing Hourglass. You then have a 100% Angel Deal chance on Caves 1.
+* Finding the Glowing Hourglass in a room and using it to undo picking up Glowing Hourglass will preserve its charges, allowing for infinite resets for that room.
+** This effect can also be achieved by replacing the Glowing Hourglass with a different active item, exiting the room, then re-entering and using the Glowing Hourglass.
+** {{dlc|nr}} Doing this will remove the charges of the returned active item.
+** {{dlc|nr}} If there is a Lil' Battery in a Shop, the Glowing Hourglass can be used infinitely, by entering the Shop without a charge and using the Lil' Battery to recharge and exit the shop. This is useful for duplicating temporary familiars or filling up the Donation Machine, among other uses.
+* The delayed effect of the I'm Excited pill will still occur after rewinding.
+* {{dlc|nr}} The Retro Vision [[Pill]] will continue to affect the game even after using the Glowing Hourglass.
+* {{dlc|na+}} Does not turn a character back into another should they have been revived by {{i|Ankh}}, {{i|Lazarus' Rags}}, or {{i|Judas' Shadow}}.
+** {{dlc|a+}} Character changes are reverted by Glowing Hourglass.
+* {{dlc|nr}} Does not return keys or health used to enter [[Rooms#Special rooms|special rooms]].
+** If a bomb is used to enter a Secret Room, the Secret Room is entered, and the Glowing Hourglass is used, the Secret Room door will stay open and the bomb will not be refunded.
+* {{dlc|nr}} Does not return extra lives.
+* {{dlc|nr}} Using any teleportation card and then the Glowing Hourglass to return to the previous room does not refund the used card.
+** {{dlc|r}} Teleport cards like {{p|Joker}} can be refunded. However, if used on the first room on the floor, the Glowing Hourglass will be uncharged when returning.
+* {{Dlc|r}} Using the Glowing Hourglass after entering a new floor will teleport Isaac back to the room in which the trapdoor was entered on the previous floor.
+** Going back to the previous floor will transform Glowing Hourglass into {{i|The Hourglass}} for the rest of that previous floor. Going back to the new floor recharges the Glowing Hourglass, which allows for infinite usage of Glowing Hourglass on the starting room of a new floor.
+*** If the Glowing Hourglass is held in the secondary slot of {{i|Schoolbag}} when entering the room with the trapdoor, the Glowing Hourglass will not be transformed into The Hourglass after returning to the previous floor.
+** After returning to the previous floor, most changes in the room with the trapdoor will be undone. However, enemies / bosses will not be revived.
+* {{Dlc|r}} {{C|Bethany|n}}'s soul heart counter does '''<u>not</u>''' get reset upon activating this item.
+* {{Dlc|r}} If {{C|Tainted Jacob|n}} is hit by Esau, using the Glowing Hourglass will return him to normal form in the previous room.
+* {{dlc|r}} The guaranteed angel room chance can be preserved if the item is used after entering the first devil room.
+* {{Dlc|r}} When Isaac enters {{E|The Beast|n}} fight, Glowing Hourglass will transform into a fully charged {{i|The Hourglass}}.
+* {{dlc+|r}} May be helpful for finding {{R|Planetarium}}s, as it lets the player effectively skip item rooms while also seeing if what's inside them is worth taking.{{dlc-}}
+* {{dlc+|r}} If Isaac enters a Planetarium  for the first time and then uses Glowing Hourglass to leave, the chance of a {{R|Planetarium}} generating on future floors can be preserved, effectively allowing Isaac to reroll his Planetarium until a desired item is found. The likelihood of this being useful is rather low, however, due to Planetariums being rather rare.{{dlc-}}
+* {{dlc|r}} The {{R|Boss Challenge Room}} re-rolls bosses on using the Glowing Hourglass.
+* {{t|Perfection}} is still able to drop if the Glowing Hourglass is used to reset damage, and will be brought back by the Glowing Hourglass if used to reset a damage taken while holding it.
+* {{Dlc+|r}} If used in the starting room of {{S|Basement}} I without having entered any other rooms, Isaac is taken to the first room of {{S|Home}}. If used again in this room without having entered any other rooms, the room will be rewound to when it was first entered. In a normal game, this is only possible by getting the item as a starting item from {{C|Eden}} / {{C|Tainted Eden}}, or from {{I|Eden's Blessing}}. Having {{i|Schoolbag}} and obtaining {{i|R Key}} and resetting the run also makes this possible.{{dlc-}}
+** {{dlc|r+}} Doing the same in {{mode|greed}}[[Greed Mode]] will teleport Isaac to the I AM ERROR room.
+* The Glowing Hourglass affects permanent unlocks, event counters, boss kills, etc. differently depending on what is being reset:
+** [[Completion Marks|Completion marks]] earned in the room will be removed.
+** {{Dlc|na+}} Donations to the {{m|Donation Machine}} or {{M|Greed Donation Machine}} are not reverted, and they can be reset into a working state once jammed.
+*** {{dlc|a+}} Event counters will get restored (including {{M|Donation Machine}}s, {{M|Greed Donation Machine}}s, and {{i|Eden's Blessing}}).
+*** Other counters not tied to the specific run, such as {{M|Slot Machine}}s or [[Tinted Rock]]s destroyed, continue to accumulate, allowing easy unlocking of secrets such as the {{t|Counterfeit Penny}}, the {{i|D4}}, and {{E|Conquest}} if one has have access to infinite uses of the Glowing Hourglass (see the '''Synergies''' section).
+** Does not remove [[collection page]] entries if it undoes collecting an item for the first time.
+** No Damage Achievements are still available if the Glowing Hourglass is used to reset damage.
+*** If a hit is taken, then reversed, Samson can still be unlocked.
+** {{dlc|nr}} Can be used to unlock multiple achievements tied to the killing of certain bosses such as {{E|Mom's Heart}} / {{E|It Lives!}}.
+** {{dlc|nr}} Using the Glowing Hourglass right after beating {{E|Mom's Heart}} / {{E|It Lives!}} / {{E|Ultra Greed}} allows additional Eden tokens to be obtained.
+
+== Synergies ==
+* Any reroll item/collectible: Items in the room can be rerolled, and if the result is undesirable, then Isaac can go back in time to save whatever was used to reroll. However, note that activating the reroll on the same items again will result in the same items being generated as the first time. Rerolling different items from the same type of room (such as going to a different Shop) will result in the reroll effect creating new and different items. This technique is useful for saving charges on items like {{I|The D6}}, or getting multiple options with consumables like the {{p|Perthro}}.
+* Anything that spawns an item such as {{i|Mystery Gift}} / {{p|XVII - The Stars?}}: After the player activates them, they can then go back in time if the item is undesirable. However, ''unlike'' reroll effects, using something that spawns an item/collectible will always generate that same item, dependent on the room type, even if the player goes to a different one in the future. For example, activating XVII - The Stars? in a Secret Room will create two items from the Secret Room item pool, and even if the player goes to the next floor and uses it again in a new Secret Room, the same exact items will be generated. So, the best way to use something that spawns an item is to activate it in rooms with different item pools (Secret, Devil/Angel, Treasure, Shop, etc.) and see which item would be the best before accepting it.
+* {{dlc|na+}} {{p|? Card}}: Allows for infinite usage as the ? Card gets refunded upon usage.
+* {{dlc|nr}} {{i|9 Volt}}: Clearing any room is enough to instantly recharge the hourglass, allowing infinite tries for the best outcome.
+* {{Dlc|na+}}{{i|The Battery}}: When the item is double charged and used, it will also refund the used extra charge bar, making it possible to use it endlessly.
+* {{Dlc|a+nr}}[[48 Hour Energy]] pill: Allows for infinite usage as the pill gets refunded upon use.
+* {{Dlc|a+nr}}{{i|Sharp Plug}}: Allows for infinite usage as long as you have more than 2 full hearts as the hearts used to charge will be refunded upon use.
+* {{Dlc|a+nr}}{{i|Habit}}: Allows rooms to be repeated infinitely as long as Isaac has enough health to take two hits, which are refunded on use.
+* {{t|Hairpin|dlc=a+nr}}: If Hairpin is held while entering any Boss Room for the first time, Glowing Hourglass may be used indefinitely on said room to repeat the fight until you beat it.
+* {{i|Moving Box|dlc=a+nr}}: Using the Glowing Hourglass after retrieving it from Moving Box will not deplete its charge.
+* {{i|Curse of the Tower|dlc=a+nr}}: If used quickly after taking damage, Troll bombs will spawn in the previous room. If you have the {{t|Safety Scissors}}, these can be harvested as normal.
+* {{dlc+|a+nr}}{{i|Crooked Penny}} + {{i|Schoolbag}}: If there is a battery and an item in the same room, you can multiply items an infinite number of times. Every time you fail the Crooked Penny flip, you can activate the Glowing Hourglass, go back in, grab a battery, then try again. Every time you succeed a flip, you must leave the room and enter it again to "save" your progress.{{dlc-}}
+* {{dlc|rnr+}} {{i|More Options}}: If used after entering the Treasure Room in an Alt-Path floor, the items in the room will change.
+* {{dlc|r}} If {{C|Tainted Eden}}'s active item re-rolls into Glowing Hourglass, it can be used immediately to return Tainted Eden to their previous state. This allows the player to have practically infinite attempts to keep their loadout of passive items as long as they travel back in time before being hit again.
+* {{Book of Virtues synergy|description=Any wisps lost in the previous room will be restored, and an additional Glowing Hourglass wisp will be added on the middle ring. This wisp's tears have a 30% chance to [[petrify]] enemies.}}
+** While playing as {{C|Tainted Eden}} and rerolling an active item into the Glowing Hourglass, you can infinitely spawn wisps as much as possible until you reroll it again.
+* {{i|Duality|r}}: The doors to the {{R|Devil Room}} and {{R|Angel Room}} can stay open if you use the Glowing Hourglass inside their rooms, so Duality lets you check the items of both of them before deciding which room to use, provided two charges are still available by the end of the floor.
+* {{dlc+|r}} {{I|Forget Me Now}} + {{I|Schoolbag}}: Using Forget Me Now will fully recharge Glowing Hourglass on the new floor, using Glowing Hourglass after that will take Isaac back to the previous room while also giving back Forget Me Now. This allows for infinite usage of Glowing Hourglass as well as infinite retries of any room as long as Forget Me Now is used before the room is cleared.{{dlc-}}
+* {{i|Saturnus}}: Using the Glowing Hourglass will activate the effect of Saturnus again, essentially allowing for double the amount of orbiting tears, if the player returns to a room, where the tears created by Saturnus were not destroyed.
+* {{Dlc|r}} If activated while under the effect of [[Soul of Azazel]], as long as you had the consumable in the previously visited room, you will keep the Megablast effect while having another copy of the soul in your inventory.
+** {{I|Schoolbag}} + {{i|Mega Blast}} + Glowing Hourglass: Works the same way
+
+== Interactions ==
+* {{p|? Card|r}}: The Glowing Hourglass loses a charge when the card is used.
+* {{i|Bag of Crafting}}: The bag's contents will be reverted to its previous state. Additionally, Bag of Crafting cannot be used to create Glowing Hourglass.
+* {{i|The Battery|nr}}: Glowing Hourglass will receive a maximum of two full charges as normal, however, using the item twice consecutively will not result in the player being teleported two rooms previous, only one. This means that if Glowing Hourglass is used twice in succession, they will rewind as normal with the first use to the previous room, then, upon second use, everything will be rewound, but the player will not be teleported to the room previous to the one they just teleported to and will instead find themselves teleported to the room they are currently in. Rewinding works as normal, but teleportation is limited to the last room visited.
+** {{dlc|r}} The battery has no effect on Glowing Hourglass when it is not in {{I|The Hourglass}} form.
+* {{I|Car Battery}}: No effect.
+* {{I|Schoolbag}}: Losing your Schoolbag while Glowing Hourglass is in your second active slot will drop it on the ground fully charged.
+* {{C|Tainted Jacob|r}}: Using this item in a room where Dark Esau has spawned will cause him to remain with the player after teleporting, but once enough time has passed, he will suddenly disappear and respawn elsewhere. This may be a bug.
+* {{i|Void|dlc=a+nr}}: It is impossible to absorb a Glowing Hourglass pedestal without using the item and preventing it from having been absorbed.
+** {{Dlc+|r}} The Glowing Hourglass is absorbed like normal. Subsequent uses of '''Void''' send Isaac back to the previous room, reverting most changes, nullifying many other effects that '''Void''' may have absorbed. This will prevent you from consuming any further powers, as you will instead reset the room. This effectively turns '''Void''' into a charged version of Glowing Hourglass, allowing potential infinite uses with items like [[48 Hour Energy]] pills, {{i|Sharp Plug}}, {{i|Habit}}, {{t|Hairpin}}, {{i|4.5 Volt}}, or a room with a {{e|Lil' Battery}}.{{dlc-}}
+* {{I|The Stairway}}: Using the Glowing Hourglass whilst in the Angel shop will consume all three charges and remove the ladder.
+
+== In-game Footage ==
+{{#ev:youtube|X_fmk_LWC2g}}
+
+== Trivia ==
+* Prior to ''Afterbirth+'' [[Booster Pack 5]], Glowing Hourglass would turn into {{i|The Hourglass}} after being used 5 times.
+* Prior to ''Repentance'' [[V1.7.9a]], Glowing Hourglass was called "Glowing Hour Glass".
+
+== Bugs ==
+{{Bug|dlc=rnr+|Using {{i|Glowing Hourglass}} on the first room of the first floor of [[Ascent]] will take Isaac to the room containing {{i|Dad's Note}}. However, {{i|Dad's Note}} will be missing, and {{i|Glowing Hourglass}} will be in {{i|The Hourglass}} state, causing a softlock unless Isaac can teleport.}}
+{{Bug|Having {{t|Error}} will make familiars respawn each time {{i|Glowing Hourglass}} is used, which leads for some interesting interactions. For example, {{i|Buddy in a Box}} and {{i|7 Seals}} will change their forms each time leap, and the {{i|Star of Bethlehem}} will change its position to the previous room, allowing strategic repositioning of the star.}}
+{{Bug|Rewinding time will add one more copy of each familiar that were created by {{i|Monster Manual}} for the duration of the room Isaac is teleported into, regardless if in possession or not of Monster Manual. Exiting this room and using {{i|Glowing Hourglass}} again will add another copy for each use of the item. The familiars disappear upon exiting the room.}}
+{{Bug|Going back to the starting room will undo some map-revealing effects, such as {{i|The Compass}}.}}
+{{Bug|dlc=na+|Isaac's [[temporary familiar]]s (Blue Flies and Spiders) duplicate when using the Glowing Hourglass.}}
+{{Bug|dlc=nr| If a new game is started and {{C|Eden}} begins with this item, using it in the first room will remove Eden's starting items.}}
+{{Bug| Playing as {{C|Tainted Lazarus}}, if one form has {{i|Mega Mush}}, {{i|Mega Blast}}, {{i|A Pony}}, {{i|White Pony}}, or {{i|Berserk!}}'s effects active before flipping to the other form and using Glowing Hourglass, the form that holds Glowing Hourglass will gain the effects of that item.}}
+
+{{nav|fr=Sablier Luisant}}

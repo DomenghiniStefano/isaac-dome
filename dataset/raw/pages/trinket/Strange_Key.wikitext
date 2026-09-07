@@ -1,0 +1,35 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 175
+ | quote       = What could it open?
+ | description = Unlocks the passageway to {{s|???}} and the {{e|Hush|n}} fight, regardless of the run duration. Using {{i|Pandora's Box}} grants it a special effect, consuming the key.
+ | tags        = lazarussharedglobal
+ | unlocked by = Strange Key
+}}
+{{disambig msg|the trinket that opens the [[Hush]] fight and empowers [[Pandora's Box]]|the trinket that creates Blue Womb rooms|Blue Key}}
+
+{{cit|ut|r}}
+
+== Effects ==
+* Unlocks the passageway to {{s|???}}, regardless of run duration.
+* If {{i|Pandora's Box}} is used while holding Strange Key, the following effects will occur instead of Pandora's Box regular effects:
+** The normal effect of Pandora's Box for that level is ignored, and instead 6 random [[item]]s from any of the following [[item pool]]s are spawned: {{r|Treasure Room}}, {{r|Shop}}, {{r|Boss Room}}, {{r|Devil Room}}, {{r|Angel Room}}, {{r|Secret Room}}, {{r|Library}}, {{e|Locked Chest}}, {{r|Curse Room}}, and {{r|Planetarium}}.
+** Both Pandora's Box and the trinket are consumed.
+
+== Notes ==
+* Both effects work even if the key has been turned into a passive item from items such as {{i|Smelter}} or {{i|Marbles}}.
+** Using Pandora's Box with the key in this state will remove the key from Isaac's Inventory.
+* If playing with modal characters such as {{c|Tainted Lazarus}}, the character with the Strange Key must enter the room while holding it to cause the passage to open. Leaving and re-entering the room after switching to the correct character will open the door normally.
+* Unlike with {{i|Mama Mega!}}, {{e|It Lives!}} must be beaten for the passageway to {{s|???}} to open.
+* If the passageway to {{s|???}} is somehow not yet unlocked, Strange Key will not open the door.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Gives +2 random items when used with Pandora's box per copy and can be used to open all locked chests and doors in {{s|???}}.
+
+== In-game Footage ==
+{{#ev:youtube|w-dD86Ibo8s}}
+
+== Trivia ==
+* Strange Key is likely a reference to the film by David Lynch, ''[[wikipedia:Mulholland_Drive_(film)|Mulholland Drive (2001)]]'', where a small blue box being unlocked by a strange key is a major plot point.
+
+{{nav|key|tainted eve unlock|satan unlock|isaac boss unlock|the lamb unlock|blue baby boss unlock|fr=Étrange Clé}}

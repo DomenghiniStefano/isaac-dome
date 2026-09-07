@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | id          = 62
+ | quote       = {{dlcalt|Kills heal|r=DMG up + kills heal}}
+ | description = Heals Isaac for a {{E|Half Red Heart}} for every 13 [[monster|enemies]] killed. {{dlc|r}} +0.3 [[damage]].
+ | quality     = {{dlcalt|1|r+=2}}
+ | tags        = nolostbr summonable nocantrip
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Restores a {{E|Half Red Heart}} for every 13 [[monster|enemies]] killed.
+* {{dlc|r}} +0.3 [[damage]].
+
+== Notes ==
+* As {{C|Keeper}} and {{C|Tainted Keeper}}, [[Coin Heart]]s can be restored with this item.
+* The healing effect is useless for characters that cannot use Red hearts.
+** {{dlc+|r}} {{C|Tainted Bethany|n}} will gain one blood charge when it activates.{{dlc-}}
+* Destroyed {{E|Shopkeeper}}s contribute to the counter.
+* The healing counter also applies to enemies killed by familiars.
+* If a room is cleared save for one enemy, it can be reset if the games is quit and resumed. The counter for Charm of the Vampire is saved along with the game, meaning the same room can be farmed for Red Hearts.
+** The {{t|Door Stop}} trinket can be used to achieve this without having to save and quit the game. Simply leaving the room will reset the room.
+
+== Interactions ==
+* {{dlc|r}} [[Cards and Runes|Ace Cards]]: Turning enemies into [[pickup]]s doesn't count towards the healing counter.
+* {{i|E. Coli}} / {{i|Flush!}}: Enemies that are turned into poop don't count towards the healing counter.
+* {{dlc|r}} [[Freeze|Freeze Effects]]: Enemies that die from being frozen don't count towards the healing counter.
+** {{dlc|r+}} Frozen enemies do count for the healing effect.
+* {{i|Maggy's Bow}}: No effect.
+* {{I|My Reflection}}: Despite vampires having no reflection, Charm of the Vampire does not remove the effect of My Reflection.
+* {{c|Tainted Magdalene}}: Restores a full {{E|Red Heart}} instead.
+
+== In-game Footage ==
+{{#ev:youtube|wD08pPMxxxU||inline}} {{#ev:youtube|lnFnzi02o9M||inline}}
+
+== Trivia ==
+* {{dlc+|a}} This item is used in {{chal|Have a Heart}}.{{dlc-}}
+* A [[wikipedia:vampire|vampire]] is a being from folklore who subsists by feeding on the life essence (generally in the form of blood) of the living.
+** In folklore, a vampire leaves no reflection because it has no soul. {{dlc|r}} This is why Charm of the Vampire removes Isaac's reflections in the water/blood visible in some floors.
+* If an enemy dies while Isaac is [[Death|dying]], Charm of the Vampire can still heal him, leaving him dead with half a Red Heart.
+
+{{nav|fr=Morsure de Vampire}}

@@ -1,0 +1,72 @@
+{{infobox challenge
+ | dlc                = a+
+ | number             = 32
+ | has treasure rooms = yes
+ | has shops          = yes
+ | description        = The minimap displays the floor's layout accurately but displays Isaac's position inaccurately. Pedestal items and pickups are not what they appear to be. Active items, pills, cards, and rune effects are randomized upon each use, making them very unreliable or deadly (for example {{P|Suicide King}}). Items with no charge time (i.e. {{I|How to Jump}}, {{I|IV Bag}}, etc) can be used repeatedly for random effects. {{E|Stoney|text=Stonies}} have a chance of being replaced by a {{E|Cross Stoney}}. Every boss is {{E|The Bloat}}. Isaac's health is not what it appears to be. Inventory pickups numbers are accurate.
+ | goal               = Mom's Heart
+ | unlocks            = Maggy Now Holds a Pill!
+ | unlocked by        = Aprils fool
+}}
+
+'''Aprils Fool''' is [[challenge]] #32. Isaac has no special starting items for this challenge. However, all floor bosses are changed to {{E|The Bloat}}, {{E|Stoney|text=Stonies}} have a chance to be replaced by {{E|Cross Stoney|text=Cross Stonies}}, all items, trinkets, and pickups display an incorrect sprite, activated items and pickups never activate the correct effect, and Isaac's location is displayed as a random room on the map. The goal is to defeat {{E|Mom's Heart}}, which has also been replaced by {{E|The Bloat}}. Treasure Rooms and Shops are present in this challenge.
+
+== Difficulty ==
+* All changes mentioned above are designed to make this challenge exceedingly difficult and frustrating.
+** While {{cu|Blind}} is not active, the fact that all pedestal items are displayed incorrectly means that, like with {{cu|Blind}}, it is impossible to know what each item is until acquired.
+*** All items are still pulled from the correct item pool ([[Angel]]s will still drop [[Key Piece]]s, {{E|Mom}} will drop {{I|The Polaroid}} and {{I|The Negative}} if they are unlocked).
+** Pickups (coins/hearts/bombs/keys), unlike pedestal items, are not displayed incorrectly. Once a pickup is acquired, it is randomly changed to another.
+*** {{E|Penny|text=Coins}} and {{E|Key|text=Keys}} give hearts, bombs, or keys.
+*** {{E|Bomb}}s give hearts, coins, or keys.
+*** {{E|Red Heart|text=Hearts}} give coins, bombs, or keys.
+*** This makes it very hard to accumulate coins as they can be gained only from bombs and hearts, at a 1-in-3 rate.
+*** {{E|Lucky Penny|text=Lucky Pennies}} will still provide +1 Luck.
+*** Hearts follow their standard behavior, and cannot be picked up unless Isaac is injured, even though they provide other resources. However, other pickups may provide red hearts when picked up, giving no benefit if Isaac's health is full.
+*** {{E|Golden Key|text=Golden Keys}} give a {{E|Golden Bomb}} instead when picked up, even if golden bombs are not unlocked yet.
+** All [[activated collectible]]s, [[pill]]s, [[card]]s, and [[rune]]s have a random effect upon being used. This makes any strategy involving them unreliable and potentially dangerous. Cards can trigger the {{p|Suicide King}} effect, pills can activate the Health Down effect, {{dlc|nr}} and active items can trigger {{i|Plan C}}.
+*** {{dlc|r}} {{i|Plan C}} and {{i|Death Certificate|n}} can't trigger upon using an activated item.
+** {{E|Cross Stoney|text=Cross Stonies}} are significantly more challenging compared to regular Stonies.
+** Most importantly, every single boss found during the challenge is The Bloat, which is normally found only in chapters 3 and 4 and is considered one of the most difficult bosses even in those chapters. As a result, the boss fights will be more difficult throughout the run, especially early on.
+
+== Strategy ==
+* A method to dodging The Bloat is to stay behind it, and if no space is available, directly diagonal to it, as the Brimstone lasers it shoots are aimed downwards and to his sides.
+* Randomness is a major source of difficulty in this challenge, but it can also be the key factor to completing it, as sometimes coins will grant {{E|Soul Heart}}s, {{E|Black Heart}}s, and {{E|Gold Heart}}s. If a large number of coins are found in one place, it is possible to dramatically increase Isaac's health pool. Gold hearts, in particular, are useful, as they can spawn a large number of coins when depleted, which in turn can be used to grant a large number of other pickups, {{dlc|nr}} potentially even more gold hearts. If lucky, enough gold hearts chained could lead to 99 of each pickup, excluding coins.
+** When Dimes or Nickels are picked up, they will grant {{dlc|nr}} 10 or 5 {{dlc|r}} 3 or 2 of the pickup they act as respectively, which can lead to incredibly powerful results, {{dlc|nr}} such as acquiring 5 Gold Hearts at once.
+** It is possible to use a {{t|Swallowed Penny}} along with a {{R|Sacrifice Room}} to generate infinite coins, assuming Gold Hearts are repeatedly spawned in the process. This also will trigger many of the Sacrifice Room's effects, {{Dlc|nr}}notably transporting Isaac to the {{s|Dark Room}}. The challenge can still be completed by defeating {{E|The Bloat}} at the end of the Dark Room stage. This can be done as early as the first floor, allowing most of The Bloat fights to be skipped entirely.
+* Active items with a short charge time, such as {{i|Butter Bean}}, or no charge time, such as {{i|Kamikaze!}}, can allow for rapid use of random active item effects. {{dlc+|nr}} While this can be extremely powerful if lucky, this can also trigger effects like {{i|Plan C}}, likely killing Isaac.{{dlc-}}
+* The map always displays Isaac's location incorrectly, randomly selecting a room on the floor for this purpose. As this includes rooms not yet uncovered through traditional methods, it is possible to learn {{R|Secret Room}} locations from this.
+** {{dlc+|r}} This includes the {{R|Ultra Secret Room}}. While risky, it's possible for an active item to roll the {{i|Red Key}} effect, potentially allowing access to an extra item from the powerful Ultra Secret item pool.{{dlc-}}
+** Although your location in the map isn't correct, the rooms you enter and cleared appear, revealing where you are if you check the map frequently: this becomes unreliable as you progress since, with larger maps, the indicated current location may be far enough away that your actual location won't be visible in the mini-map, though it always is visible with the full map displayed. This makes XL floors more disorienting.
+* {{t|Counterfeit Penny}} has a chance to grant coins upon picking them up, making it easier to accumulate coins.
+* Pills will always show their true effect in their name after being used, and the narrator will always state what the effect is, meaning that setting the narrator to always activate can be helpful.
+* As the Bloat has less health than other bosses chapter 4 onward including {{E|Mom}} and {{E|Mom's Heart}}, the player is less reliant on powerful items and Devil/Angel rooms, although they are welcomed.
+* Items that allow you to deal damage without directly aligning yourself with enemies such as {{I|Marked}} and {{I|The Ludovico Technique}} make the Bloat fight markedly easier, lowering the difficulty of the challenge significantly.
+* Not entering the {{R|Devil Room}} and waiting for an {{R|Angel Room}} to appear is less risky : because of the wrong display, the player will not know what item they will get with a deal.
+* Active Items that can be spammed like {{I|Magic Fingers}} and {{I|IV Bag}} (which is a fairly reliable find) open a lot of routes for this challenge. Bringing these items to either a {{R|Devil Room}} or {{R|Angel Room}} will allow the player to spam random item effects, and possibly generate many powerful items from those pools.
+
+== Notes ==
+* {{dlc|r+}} In-game Item Descriptions will not work in this challenge.
+* Using the {{i|Book of Revelations}} can replace {{E|The Bloat}} with a [[Harbinger]]. However, because all active item effects are randomized, this cannot be used consistently.
+* It is possible to get repeats of the same item during this challenge.
+* When encountering a Double Trouble Boss Fight, The Bloat will not appear.
+* It is possible to go to {{s|The Void}} during this challenge. However, The Bloat will appear instead of {{E|Delirium}}, making the challenge unable to be completed.
+* {{i|Guppy's Eye}} shows an additional layer of fake item sprites - different from the ones obtained when opening the chest but also different from the real items.
+* When used, activated items can trigger an effect belonging to an item that is not unlocked yet.
+* While having {{i|Remote Detonator}} equipped bombs are no longer able to explode, because due to nature of the challenge player isn't able to trigger them.
+* {{dlc+|r}} Using {{i|Esau Jr.}} will swap Isaac with Esau Jr. on top of activating random active item effect.{{dlc-}}
+
+== Reward ==
+{{achievement text | Maggy Now Holds a Pill! }}
+
+== Trivia ==
+* This challenge's effect of changing item appearance is similar to the April Fool's 2016 [[daily challenge]].
+* {{E|The Bloat}}'s appearance as a replacement for all other bosses is a reference to the exceptional hatred some fans express toward this boss.
+** The user who suggested this challenge was banned from [http://www.reddit.com/r/FUCKBLOAT a subreddit] (NSFW) whose theme is hatred towards The Bloat. This same user was also forced to use the "I love The Bloat" flair for a week on the Binding of Isaac [http://www.reddit.com/r/bindingofisaac subreddit].<ref>https://www.reddit.com/r/bindingofisaac/comments/5mbnqs/i_got_banned_from_rfuckbloat_for_coming_up_with/</ref>
+* The {{E|Cross Stoney}} is exclusive to this challenge and was added in [[Booster Pack #5]].
+** Ironically, Cross Stonies were revealed on April 1.<ref>https://twitter.com/FixItVinh/status/980490518747631616</ref>
+** Similarly to The Bloat's inclusion in this challenge, Cross Stonies are a nod to the community's generally negative reaction to {{E|Cross Stone Shooter}}s added in the previous booster pack.
+
+== References ==
+{{reflist}}
+
+{{nav|mom unlock|challenge|fr=Poison d'Avril}}

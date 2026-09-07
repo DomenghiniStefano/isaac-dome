@@ -1,0 +1,27 @@
+{{infobox passive collectible
+ | id          = 60
+ | quote       = Building bridges
+ | description = Allows Isaac to walk across gaps one square across by automatically placing a ladder between the two walkable sections.
+ | quality     = 1
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Allows Isaac to walk across gaps one square across by automatically placing a ladder between the two walkable sections. Enemies can not walk over the ladder.
+* {{C|Jacob and Esau}}: both characters can walk over the ladder, but only the character with the item can place it.
+
+== In-game Footage ==
+{{#ev:youtube|BmWgPfEbdiw||inline}} {{#ev:youtube|KtCuwzXgzLE||inline}}
+
+== Trivia ==
+* This item is a reference to the Ladder in The Legend of Zelda for the NES.
+* This item is used in {{chal|I RULE!}}.
+* This item can be found as one of the Nintendo-themed {{r|Treasure Room}} items in the 6th of December's [[List of curated daily challenges|Daily Run]], which is an homage to the late CEO of Nintendo, Satoru Iwata.
+
+== Bug ==
+{{bug|In co-op, fellow players can stand on the ladder. If they do this and the player holding the item walks to another ledge, the ladder beneath player 2 will disappear, allowing him to walk on air.}}
+{{bug|dlc=r|The placed Ladder can trigger {{i|Ipecac}} + lasers explosions.}}
+
+{{nav|fr=Échelle en Bois}}

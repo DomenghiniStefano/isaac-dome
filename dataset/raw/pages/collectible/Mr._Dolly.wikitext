@@ -1,0 +1,28 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 370
+ | quote       = Range + tears up
+ | description = {{dlc|nr}} +0.7 [[tears]], +5.25 [[range]], +0.5 [[tear falling speed]], Spawns a combination of 3 {{E|Red Heart}}s, {{E|Soul Heart}}s or {{E|Black Heart}}s on the floor when picked up.<br>{{dlc|r}} +0.7 [[tears]], +2.5 [[range]], spawns 3 random types of {{E|Red Heart|text=Heart}}s on the floor when picked up.
+ | quality     = 3
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* +0.7 [[tears]].
+* {{dlc|nr}} +5.25 [[range]].
+* {{dlc|r}} +2.5 [[range]].
+* {{dlc|nr}} +0.5 [[tear falling speed]].
+* Spawns a combination of 3 {{E|Red Heart}}s, {{E|Soul Heart}}s or {{E|Black Heart}}s on the floor when picked up.
+** These hearts are not subject to the Red/Soul/Black Heart chances; each type has an equal chance to spawn.
+
+== In-game Footage ==
+{{#ev:youtube|DjKb2NJu54c}}
+
+== Trivia ==
+* This item is part of a set of bedtime-themed items, including {{i|Binky}}, {{i|Blanket}}, {{i|PJs}}, and {{i|Night Light}}.
+* The doll resembles a small {{C|Magdalene}}.
+* It is referred as "Mr." despite looking conventionally female with long blonde hair and a bow.
+
+{{nav|fr=Mme Poupée}}

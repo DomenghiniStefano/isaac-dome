@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | costume scale = 1/5
+ | id            = 266
+ | quote         = Sticky babies
+ | description   = Spawns a [[familiar]] that follows Isaac and drips a trail of [[Status Effects#Effects|slow]] [[creep]], spawning 1-2 [[Blue Spider]]s after each [[Rooms|room]].
+ | quality       = 2
+ | tags          = summonable spider monstermanual offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Spawns a [[familiar]] that follows Isaac, leaving a trail of white [[creep]] that [[Status Effects#Effects|slows]] enemies.
+* Spawns 1-2 [[Blue Spider]]s after every [[Rooms|room]].
+* {{Dlc+|r}}{{transformation contribution|Spider Baby}}{{dlc-}}
+
+== Notes ==
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|The Wretched}}.{{dlc-}}
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars.
+** {{dlc|nr+}} Juicy Sack has 6th priority.
+** {{dlc|r+}} Juicy Sack has 8th priority.
+
+== Synergies ==
+* {{i|BFFS!}}: Juicy Sack spawns an extra Blue Spider.
+
+== In-game Footage ==
+{{#ev:youtube|SeeMD5kQnRE}}
+
+{{nav|spider|fr=Cocon Juteux}}

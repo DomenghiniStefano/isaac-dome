@@ -1,0 +1,55 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 689
+ | quote       = ?????
+ | description = Item pedestals cycle between 5 random items before being picked up.
+ | quality     = 4
+ | tags        = summonable offensive nocantrip
+ | unlocked by = Glitched Crown
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* New item pedestals cycle very quickly between 5 random items.
+** The 5 items will cycle in the same order every loop.
+** Items are rerolled at a rate of once every 0.2 seconds.
+
+== Notes ==
+* Plot-related items (i.e {{i|The Polaroid}}/{{i|The Negative}}, {{i|Broken Shovel 1}}/{{i|Broken Shovel 2}}, {{i|Knife Piece 1}}/{{i|Knife Piece 2}},{{i|Key Piece 1}},{{i|Key Piece 2}} etc.) are unaffected by Glitched Crown.
+* One of the items will be the initial one spawned/rerolled, while the other four will be from the [[item pool]] of the room the item is in.
+* {{dlc|nr+}} Items spawned from {{E|Chest||chests}} normally have a small delay between when they spawn and when Isaac can pick them up; if Isaac has Glitched Crown, this delay is removed and he can pick up the item the moment it spawns, effectively forcing him to get a random item.
+** Chests have to be lightly tapped and immediately walked away from to avoid accidentally picking up the item so Glitched Crown can be used properly.
+* {{c|Isaac}}'s {{i|Birthright}} effect and {{c|Tainted Isaac}}'s inherent ability are overridden by this effect.
+* Items seen as options will count as picked up items, meaning they cannot appear again later in a run. This effect depletes item pools 5x faster.
+* A good strategy to get a specific item is to remember the one that becomes before it in the cycle. Stand as close to the pedestal as possible and move towards the pedestal when the item that comes before the desired one appears.
+** {{dlc|nr+}} Pausing the game between each roll can make this substantially easier.
+*** {{dlc|r+}} Pausing the game does not pause the rotation of items. Instead, its cycling speed increases to one per frame, returning to normal once the game is unpaused.
+* Due to Glitched Crown's indiscriminate cycling of items, anything that turns item pedestals into blind item pedestals, such as Curse of the Blind, or traveling to a floor that offers blind items such as {{s|Downpour}}, renders Glitched Crown's effect useless or even detrimental, as there is a chance of missing out on desirable items permanently among the blind choices.
+
+== Synergies ==
+* {{i|Spindown Dice}}: Rerolling a cycling item will reduce the ID number of the displayed item by 1 and randomize the other 4 options.
+** This allows {{i|Spindown Dice}} to mimic {{i|The D6}}'s rerolling effect on 4/5 of Glitched crown's displayed items.
+* {{i|The D6}}: All 5 items will be re-rolled.
+
+== Interactions ==
+* {{i|Binge Eater}}: Adds a random food item to the cycle, for a total of 6 items on the cycling pedestal. Only the pedestals generated after picking up Binge Eater will be affected.
+* {{i|Damocles}}: Extra item pedestals do not reroll.
+* {{i|Diplopia}}: The items on-screen at the moment of activation will be duplicated, but the pedestal will also cycle through four new items.
+* {{i|Genesis}}: If Glitched Crown is picked up during the item sequence, the effect will start on the second item after grabbing Glitched Crown.
+* {{p|0 - The Fool?}}: Items spawned using the card such as {{I|Boom!}} will not generate a cycling pedestal.
+
+== In-game Footage ==
+{{#ev:youtube|E2qjwB1ClOI||inline}} {{#ev:youtube|e-MJdCHV6cI||inline}}
+
+== Trivia ==
+* This item is a stronger version of the item cycling mechanic of {{C|Tainted Isaac}}. Its unlock method is unusual, as most other tainted characters have items based on their mechanics unlocked by defeating {{e|Delirium}} instead of {{E|The Beast}}.
+* The Glitched Crown is a nod to a visual glitch in ''Super Mario Bros.'' where if the player has more than 99 lives, often achieved by the Koopa shell infinite 1up trick, the lives counter shown at the start of each stage shows a crown.
+* There are five question marks in the item description, a nod to the five options that the item gives.
+* The crown's glitched appearance looks to be a sprite error, a bug that messes with video game sprites by making their sprites either devolve into unintelligible pixels like in the bottom right quarter of the crown, or renders the sprite incorrectly, like the flipped effect of the top right quarter of the sprite.
+** This causes it to look like an item afflicted by {{I|TMTRAINER}}, an item whose icon features similar glitchy distortions.
+
+== Bugs ==
+{{Bug|dlc=nr+|Glitched Crown still attempts to create 4 extra items when a quest item is generated (such as {{i|Key Piece 1}}), but because quest items cannot be rerolled, it will delete 4 items from that room's item pool.}}
+
+{{nav|tainted isaac unlock|the beast unlock|glitch|fr=Couronne Corrompue}}

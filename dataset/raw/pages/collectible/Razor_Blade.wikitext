@@ -1,0 +1,68 @@
+{{infobox activated collectible
+ | image name  = * {{dlc|nr|Rebirth}}
+ | costume name = * {{dlc|nr|Rebirth}}
+ | id          = 126
+ | quote       = Feel my pain
+ | description = Damages Isaac for one heart and grants +1.2 [[damage]] for the current [[room]]. {{dlc|r}} Subsequent uses in the same room only take half a heart.
+ | quality     = 0
+ | tags        = nolostbr {{dlc|r+|devilsacrifice}}
+ | recharge    = unlimited
+ | unlocked by = The Razor
+ | devil price = {{dlcalt|1|r+=0}}
+}}
+
+{{cit|ua}}
+
+== Effects ==
+* On use, damages Isaac for a full heart of [[health]] and grants +1.2 [[damage]] for the current [[room]].
+** Razor Blade takes {{e|Red Heart}}s before other heart types.
+** {{dlc|r}} When used more than once in the same room, damage taken is lowered to half a heart.
+
+== Notes ==
+* {{dlc+|a}} {{C|Eve}} starts with this item after unlocking it and donating 439 [[coins]] to the {{m|Greed Donation Machine}}.{{dlc-}}
+** {{dlc|nr}} Both conditions must be met for Eve to hold it; donating 439 coins before defeating {{E|Satan}} with Eve will wrongly state on Eve's profile on the Character Selection Screen that she has it equipped.
+** {{dlc|r}} Eve starts with the Razor Blade if unlocked from the Greed Machine, even if [[Satan]] has not been defeated with Eve.
+* {{dlc|nr}} If Isaac has half a red heart left, Razor Blade will damage other heart types.
+* It is possible to die using Razor Blade if Isaac does not have enough hearts.
+* The effect stacks with itself and {{t|Red Patch}}, which provides a similar benefit.
+* Using this item does not affect {{R|Devil Room}}/{{R|Angel Room}} chances.
+* Using the Razor Blade grants immunity frames; this allows access to {{r|Curse Room}}s without losing soul hearts.
+* {{dlc+|a}} Using this item in the {{E|Ultra Greed}} boss room will remove 2-4 coins and drop 1-3 pennies on the floor, as if Isaac was hit by an enemy attack.{{dlc-}}
+* Using this item as {{c|The Lost}} will kill The Lost, even if the protective effect from {{i|Holy Mantle}} is still active.
+** {{dlc|r}} This interaction will kill Isaac while temporarily transformed into The Lost by a {{e|White Fire Place|n}}, even when he would otherwise have enough hearts to survive.
+
+== Synergies ==
+* {{dlc|nr}} [[Invulnerability]] / [[Shield]]: The Razor can be used at no cost while invulnerability / shield is active, allowing damage to be significantly increased for the room.
+* {{Book of Belial synergy|description=Invokes the effect of {{i|The Necronomicon}} effect along with the original effect.}}
+* {{Book of Virtues synergy|description=Spawns red wisps in the middle ring. Wisps have higher health.}}
+* {{dlc|nr}}{{i|Isaac's Heart}}: Isaac cannot take damage from the Razor Blade, allowing for infinite uses of the item.
+* {{i|Old Bandage}} / {{i|Shard of Glass}}: Isaac has a chance to drop a red heart while using the item.
+* {{T|Panic Button}}: Self-damage occurs before enemy damage, making it almost impossible to lose Angel or Devil chance.
+* {{dlc|nr}} {{i|The Polaroid}}: Isaac takes no damage while invincible, allowing for repeated free uses of the item.
+* {{i|The Wafer}}: Isaac loses half a heart instead of a full heart.
+* {{i|Whore of Babylon}}/{{i|Dark Prince's Crown}}: Can lower Isaac's health on demand to activate the bonus.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+* {{i|Holy Mantle}} / Similar effects: The shield is not broken, but Razor Blade still damages Isaac.
+* {{dlc|r}} [[Shield]] / [[Invulnerability]]: Will not protect against this item's damage.
+* {{dlc+|r}} {{C|Tainted Samson}} / {{I|Berserk!}}: The Razor Blade can be used in order to gain a massive damage boost in a room as long as there's a source of HP within reach.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|1PTjj2d7sJ8||inline}} {{#ev:youtube|X-BdtYKZTI0||inline}}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Razor Blade.png|The icon of Razor Blade as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* This item is used in {{chal|Darkness Falls}}.
+* The item itself is a reference to the act of cutting one's self, usually at the wrists, to inflict self-harm or to commit suicide by loss of blood.
+* Isaac's appearance after using the item is just like the {{E|Dople}}.
+* In the original ''The Binding of Isaac'', Razor Blade was unlocked by defeating {{e|Mom's Heart}} / {{E|It Lives!}} as {{C|Eve}}.
+
+== Bugs ==
+{{Bug|As Eve, there is a very unlikely chance that using this to activate Whore of Babylon will not activate it, despite being at the correct health to do so.}}
+
+{{nav|eve unlock|satan unlock|greed machine unlock|fr=Lame de Rasoir}}

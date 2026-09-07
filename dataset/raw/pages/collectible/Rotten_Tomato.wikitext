@@ -1,0 +1,41 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 618
+ | quote       = Delicious!
+ | description = Adds a chance to fire tears that mark enemies with the [[Status Effects#Bait|Bait]] status effect. Enemies marked as bait are attacked by other enemies.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Adds a chance to fire tears that mark enemies with the [[Status Effects#Bait|Bait]] status effect. Enemies marked as bait will move slower and be attacked by other enemies until it is killed or the effect wears off.
+* Tears that apply the effect are red.
+
+== Notes ==
+* The chance to fire marking tears depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 6 - \left \lceil \mathit{Luck}  \right \rceil}</math>
+** At base luck (0), the chance is 16.67%, maxing out at 100% at 4.01 luck.
+* Causes pathing issues with segmented bosses, as they attempt to attack their own segments.
+* Most enemies will ignore Isaac in order to attack a baited enemy, making Rotten Tomato an item with both offensive and defensive applications.
+* With a high enough luck stat and piercing effects, the uptime of the bait effect can be enough to render some bosses harmless, such as {{E|Ultra Pestilence}} or {{E|The Duke of Flies}} who spawn a multitude of flies that it will then focus on.
+* This item is very effective during {{R|Boss Rush}}. Boss enemies affected by this item will deal massive amounts of damage to each other and Isaac will be less likely to get hurt by their attacks.
+* Due to the nature of [[Mother]]'s hitbox, the bait effect will cause Mother to often shoot herself in her second phase causing a lot of her attacks to be nullified.
+* Enemies and entities normally non-affected by status effects like the {{e|Stone Grimace}} or {{e|Red Fire Place}} will target the baited enemies.
+
+== Synergies ==
+* {{I|Brimstone}}: Firing can mark enemies as bait.
+* {{I|Dr. Fetus}}: Fired bombs can mark enemies as bait.
+* {{I|Jacob's Ladder}}: Chaining electricity arcs can mark enemies as bait.
+
+== In-game footage ==
+{{#ev:youtube|https://youtu.be/bhPkseS5blQ}}
+
+== Trivia ==
+* [[anti:Rotten Tomato|Rotten Tomato]] is from the ''Antibirth'' mod.
+* It is likely a reference to the act of throwing rotten tomatoes at a bad performance.
+* Rotten Tomato is the only item that grants the bait status effect reliably, even if it can also be obtained by rainbow tears items like {{i|Playdough Cookie}}
+* The bait effect is the inverse of the charmed effect; a charmed enemy would seek to target any other enemies, a baited enemy will be targeted by all other enemies.
+* The tomato dripping from Isaac's mouth with this item's costume will leave red stains on the ground. This is entirely visual; it does not create [[Creep]].
+
+{{nav|fr=Tomate Pourrie}}

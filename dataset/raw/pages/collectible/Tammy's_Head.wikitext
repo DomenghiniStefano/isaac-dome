@@ -1,0 +1,54 @@
+{{infobox activated collectible
+ | name        = Tammy's Head
+ | id          = 38
+ | quote       = Reusable tear burst
+ | description = Shoots 10 tears in a circle around Isaac, which retain the [[damage]], [[range]], [[shot speed]], and special [[effects]] (such as [[poison]]) of Isaac's tears. Tears from this item have a +25 flat damage bonus.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = dead offensive
+ | recharge    = 1
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Shoots 10 tears in a circle around Isaac.
+* The tears retain the [[range]], [[shot speed]], and special [[effects]] (such as [[Effects#Poison|poison]]) of Isaac's tears.
+* Each tear will do Isaac's current damage and a flat +25 damage bonus on top.
+
+== Notes ==
+The effect of {{i|Tammy's Head}} is similar to {{i|Isaac's Tears}}, but Tammy's Head will benefit from tear-replacing items like {{i|Brimstone}}, unlike Isaac's Tears.
+
+== Synergies ==
+* {{c|Azazel}} / {{i|Brimstone}}: Isaac will fire Brimstone lasers in all directions. {{dlc|nr}} Each laser is given bonus damage.
+** This will deal a substantial amount of damage near the center of the effect due to how lasers overlap the closer you get to Isaac.
+* {{Book of Virtues synergy|description=Spawns pale wisps in the outer ring. The wisps' tears deal 1.5 damage, but fire twice as fast as standard wisps. Tears are inaccurate and fire in a spread.}}
+* {{i|Car Battery}}: Shoots 20 tears in a circle around Isaac.
+* {{dlc|nr}}{{i|Chocolate Milk}}: The size and damage of tears shot depends on how far Chocolate Milk is charged.
+* {{c|Tainted Azazel}}: Although Tainted Azazel's Brimstone beams do not have a damage bonus, they also do not have the normal damage penalty and still deal double damage to enemies that have been sneezed on.
+
+== Interactions ==
+* {{i|Dr. Fetus}} / {{i|Ipecac}}: Tears are replaced by bombs or exploding shots, which may result in self-damage.
+* {{i|Epic Fetus}}: Fires only normal tears.
+* {{i|Eye of the Occult}}: The tears quickly lose their outward momentum and can now be controlled all at once, making it easy to make the tears hit enemies.
+* {{i|Mom's Knife}}: The tears are replaced with knives that deal double Isaac's damage, but move very quickly, have a small hitbox, and don't return to Isaac.
+* {{i|Trisagion}}: Shoots Trisagion blasts without any increase to their damage.
+
+== In-game Footage ==
+{{#ev:youtube|AC4GcWvaMVM||inline}} {{#ev:youtube|CeoxwrcRUDM||inline}}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | The Parasite }}
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Tammys Head.png|{{plat|3DS}} The Icon of Tammy's Head as seen on the lower 3DS screen.
+</gallery>
+
+== Trivia ==
+* Tammy's Head is named after one of [[Edmund McMillen]]'s cats.
+* When Repentance released, this item was removed from Golden Chests, but it wasn't added into any other item pool besides the {{m|Crane Game}}, effectively making it impossible to find normally. This was later rectified.
+
+== Bugs ==
+{{Bug|dlc=nr|With the {{i|Mom's Knife}} synergy, the [[Blindfolded]] condition prevents Tammy's Head from shooting knives and makes the item useless.}}
+
+{{nav|pet|fr=Tête de Tammy}}

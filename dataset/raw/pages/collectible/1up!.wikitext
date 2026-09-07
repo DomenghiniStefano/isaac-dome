@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | id          = 11
+ | quote       = Extra life
+ | description = Gives Isaac an extra life. Upon death, he will respawn in the previous room with full health, after which 1up! will disappear.
+ | quality     = 2
+ | tags        = {{dlc|r+|uniquefamiliar}} mushroom
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Gives Isaac an extra life. Upon death, he will respawn in the previous room with full health, after which 1up! will disappear.
+** If Isaac has no Red Heart Containers, he'll respawn with a {{e|Half Soul Heart|n}} instead.
+* The 1up! mushroom begins following Isaac like a familiar upon pickup, but doesn't do anything. It disappears when its life is used up.
+* {{transformation contribution|Fun Guy}}
+
+== Notes ==
+* Resurrection items activate in a [[:Category:Revival items|set order]]. 1up! is {{dlcalt|1st in this order|r=2nd in this order after {{p|Soul of Lazarus|n}}}}.
+* {{c|???}} ({{dlc|r}} {{c|Tainted ???|n}} / {{c|Tainted Bethany}} / {{c|Tainted Forgotten}}) will each respawn with 3 {{e|Soul Heart}}s.
+* {{dlc+|a+}} {{c|The Forgotten}} will respawn with {{dlcalt|3|r=2}} filled {{e|Bone Heart}}s and {{c|The Soul}} with whatever Soul and Black Hearts he had on death.
+** Dying as The Soul respawns him with {{dlcalt|a Half Soul Heart|r=1 Soul Heart}} and The Forgotten with whatever Bone Hearts he had on death.
+* {{dlc|r}} {{c|Black Judas}} / {{c|Tainted Judas}} will respawn with 2 {{e|Black Heart}}s.
+* {{c|Tainted Jacob}} will respawn in his ghost form if he had been turned into his ghost form before dying.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with 1up! having the lowest priority at {{dlcalt|6th|r+=8th}} and thus being farther from Isaac than familiars of different priorities.
+
+== In-game Footage ==
+{{#ev:youtube|zLWVD2q9TI0||inline}} {{#ev:youtube|Uuf90WwDoTg||inline}}
+
+== Trivia ==
+* This is a reference to the ''[[wikipedia:Super Mario|Super Mario]]'' franchise, wherein collecting a green mushroom would give the player an extra life.
+* 1up!, along with {{i|Magic Mushroom}}, {{i|Mini Mush}}, {{i|Super Bandage}}, and {{i|Mega Mush}} is one of the few items that make a unique sound upon pickup.
+
+{{nav|fun guy|mushroom|revival|fr=1-UP !}}

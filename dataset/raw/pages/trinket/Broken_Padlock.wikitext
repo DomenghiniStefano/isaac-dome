@@ -1,0 +1,37 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 136
+ | quote       = Bombs are key
+ | description = Locks can be opened with explosions.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* Doors and {{E|Chest}}s that require a pickup to open can be opened with explosions.
+* [[Key Block]]s can be destroyed with explosions.
+
+== Notes ==
+* Broken Padlock cannot open:
+** {{R|Challenge Room}} doors (neither Normal Challenge Room nor Boss Challenge Room), the golden door that leads to {{E|Mega Satan}}, or the flesh door to {{E|Mom's Heart}} in {{s|Mausoleum}}/{{s|Gehenna}}.
+** {{E|Haunted Chest}}s and {{E|Mom's Chest}}.
+* Doors that require two keys ({{R|Vault}} and {{R|Dice Room}}) only require one bomb to open.
+* {{E|Mega Chest}}s require multiple explosions in order to be opened, just as when using keys.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Challenge rooms, arcades and {{e|Mega Satan}} door can be opened with bombs. Allows to open boss rooms with bombs as well if Isaac has both {{A|Golden Trinket|n}} and {{i|Mom's Box|n}}.
+* {{i|Notched Axe}}: Allows the Notched Axe to open locked chests and doors. The opening of chests does not use durability; however, when opening locked doors, only every other door does not use durability for the first four doors opened on the current floor. If Isaac uses the axe's durability or puts away the axe, the other door uses durability to open.
+* {{I|Options?}}: Bombing any chest spawned by Options?, including the ones not requiring keys, allows picking up the contents of the chest without the other reward disappearing, unless the empty chest is touched. This can be easily avoided by simply exiting and reentering the room.
+* {{i|Sulfuric Acid}} / {{i|Terra}}: Locked doors can be opened by shooting at them.
+
+== Interactions ==
+* {{T|Blue Key}}: Doors opened via explosions will not spawn the corridor.
+* {{i|Pay To Play}}: Doors can still be opened up normally via explosions.
+
+== In-game footage ==
+{{#ev:youtube|https://youtu.be/ksgqJkjhDSE}}
+
+== Trivia ==
+* [[anti:Broken Padlock|Broken Padlock]] originates from the ''Antibirth'' mod.
+
+{{nav|bomb modifier|broken|fr=Cadenas Cassé}}

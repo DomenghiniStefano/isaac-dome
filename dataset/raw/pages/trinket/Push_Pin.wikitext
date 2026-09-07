@@ -1,0 +1,23 @@
+{{infobox trinket
+ | name = Push Pin
+ | id = 31
+ | quote = Piercing shots
+ | description = Adds a 10% chance to shoot a [[Piercing tears|piercing]] and [[Spectral tears|spectral]] tear.
+}} {{distinguish|Pin|Safety Pin}}
+
+{{cit|t}}
+
+== Effects ==
+* Adds a chance to shoot a [[Tears#Piercing Tears|piercing]] and [[Tears#Spectral Tears|spectral]] tear.
+
+== Notes ==
+* The chance to fire a special tear depends on the [[luck]] stat, and the formula used to determine the chance is: <math>\frac1 { 10 - \left \lfloor \mathit{Luck} * 0.5  \right \rfloor}</math>
+** At base luck (0), the chance is 10%, maxing out at 100% at 18 luck.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: At base luck, having either increases the chance to 20% and having both to 33%.
+
+== In-game Footage ==
+{{#ev:youtube|WDurPuTL7mE}}
+
+{{nav|fr=Punaise}}

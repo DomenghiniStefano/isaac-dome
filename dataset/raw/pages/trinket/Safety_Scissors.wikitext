@@ -1,0 +1,45 @@
+{{Disambig msg|the trinket|the item|Scissors|another similar item|The Pinking Shears}}
+{{infobox trinket
+ | dlc = a
+ | name = Safety Scissors
+ | id = 63
+ | quote = Fuse Cutter
+ | description = {{e|Troll Bomb}}s turn into {{e|Bomb}} pickups before they explode. {{e|Mega Troll Bomb}}s turn into {{e|Double Bomb}}s before they explode.
+}}
+
+{{cit|t|a}}
+
+== Effects ==
+* {{e|Troll Bomb}}s turn into {{e|Bomb}} pickups before they explode.
+** {{e|Mega Troll Bomb}}s turn into {{e|Double Bomb}}s.
+** {{E|Golden Troll Bomb}}s turn into {{e|Golden Bomb}}s.
+** Giga bombs (thrown by {{e|Bombgagger|n}}s and {{E|Ultra War|n}}) turn into their respective {{E|Giga Bomb}} pickups.
+
+== Strategy ==
+* {{Dlc|r}} Bombing a {{M|Bomb Bum}} while possessing this trinket will convert the {{e|Troll Bomb}}s he spawns into regular {{e|Bomb}}s. This process can be repeated indefinitely for unlimited {{e|Bomb}} pickups.
+** These {{e|Bomb}} pickups can be rerolled with the {{I|D20}}.
+* Large amounts of {{e|Bomb}} pickups can be farmed if used against {{E|Little Horn}}, {{E|War}}, {{E|Pride}}, or other {{e|Troll Bomb}} spawning enemies or items like {{i|Anarchist Cookbook}} or {{i|Curse of the Tower}}.
+
+== Notes ==
+* The disarming effects of the {{e|Troll Bomb}}s will apply to {{E|Chub}} when she swallows it, as the {{e|Bomb}} pickups will come out shortly after, not damaging her.
+* Does not affect {{E|Wrath}}'s Bombs.
+** {{dlc|a+}} {{E|Super Wrath}}'s Bombs turn into their respective pickups.
+* Does not affect {{E|Big Horn}}'s hot Bombs.
+* Does not affect bombs from the Explosive Diarrhea [[pill]].
+* {{Dlc|r}} Does not affect {{E|Hornfel|n}}'s Bombs.
+
+== Interactions ==
+* {{i|BOGO Bombs}}: Turns a Troll Bomb into a {{e|Double Bomb}}.
+* {{c|Tainted ???}}: Bombs are converted into poop pickups.
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Reduces the size of enemy explosions. Having both reduces the size of enemy explosions even more.
+
+== In-game Footage ==
+{{#ev:youtube|nto7lkt1PNw||inline}} {{#ev:youtube|jwEI9HACr1c||inline}}
+
+== Gallery ==
+<gallery>
+File:Safetyscissors.gif|Safety Scissors turning a Mega Troll Bomb into a double bomb pickup.
+File:Trinket Safety Scizzors concept.jpg|Concept drawn for Safety Scissors.
+</gallery>
+
+{{nav|bomb modifier|fr=Ciseaux à Bout Rond}}

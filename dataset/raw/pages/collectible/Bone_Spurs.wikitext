@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 683
+ | quote       = Break your enemies
+ | description = Enemies spawn floating bones on death, which block shots and damage/repel enemies that touch them.
+ | quality     = 2
+ | tags        = summonable offensive
+ | unlocked by = Bone Spurs
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Enemies spawn 1–2 floating bones on death, which block enemy shots and damage/repel enemies that touch them.
+** Bones block 2 shots and/or deal 2 ticks of damage before breaking.
+** Bones deal contact damage equal to Isaac's damage at the moment they were created.
+
+== Notes ==
+* This item can be spawned by {{e|Bumbino}} if he picks up 12 cents.
+* {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Carrion Queen}}.{{dlc-}}
+* Bone particles will be created whenever Isaac shoots, though this is purely visual.
+* Because the bones deal contact damage equal to Isaac's damage in the moment they were created, if the damage stat was changed, the bones that were already present on the screen will use Isaac's old damage stat.
+* The bones can immediately hit splitting enemies' spawns, damaging or destroying them as well.
+** When fighting {{e|Ultra Pestilence}}, if Isaac has a strong, piercing tear modifier such as {{i|Tech X}}, the Ultra Pestilence flies spawned will die in quick succession, summoning many bones that push the boss off the screen and out of reach, making the fight significantly harder and more tedious.
+
+== Synergies ==
+* {{i|BFFS!}}: Doubles the bones' size and damage.
+* {{i|Spin to Win}}: Boosts the bones' damage while spinning even though there's no visual tell of the effect.
+
+== Interactions ==
+* [[Cards and Runes|Ace Cards]]: Turning enemies into [[pickup]]s doesn't spawn bones.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that are turned into poop don't spawn bones.
+
+== In-game footage ==
+{{#ev:youtube|LRZgprJSX3U}}
+
+== Trivia ==
+* A bone spur is a bony growth that often occurs close to joints and can have a multitude of causes from joint damage from osteoarthritis to excessive overuse of said joints.
+
+== Bugs ==
+{{Bug|{{dlc|nr+}} If switching between {{c|Tainted Lazarus}} and {{c|Dead Tainted Lazarus}} with the {{i|Flip}} item, there is a chance to spawn a mass amount of bone spurs on the place you flip each time you use the item.}}
+
+{{nav|the forgotten unlock|mother unlock|bone|fr=Épines Osseuses}}

@@ -1,0 +1,145 @@
+{{infobox passive collectible
+ | id          = 75
+ | quote       = Better pills
+ | description = Converts all bad [[pills]] into good pills, spawns one pill pickup, and identifies all pills. Restores two {{e|Red Heart}}s and increases the payout of {{M|Blood Donation Machine}}s.
+ | quality     = 2
+ | tags        = summonable offensive nocantrip
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Identifies all [[pills]] upon pickup.
+* Spawns a pill.
+* Replenishes 2 {{e|Red Heart}}s.
+* Increases the payout of {{M|Blood Donation Machine}}s to 2-3 [[coins]] on Normal mode and 2 on [[Hard mode]].
+* {{dlc|nr}} Increases the payout of {{i|IV Bag}} to 2-3 [[coins]].
+* {{dlc|r}} Increases the payout of {{i|IV Bag}} to 2-3 [[coins]] on Normal mode and 2 on [[Hard mode]].
+* Converts some "bad" pills into their "good" counterparts or removes their bad effects:
+
+{| class="wikitable"
+ ! Pill !! Changes Into
+ |-
+ | Stat down pill
+ | Stat up pill
+ |-
+ |''Amnesia''
+ |''I can see forever!''
+ |-
+ |{{dlc|a+}} ''???''
+ |''Telepills''
+ |-
+ |{{dlc|a+}} ''Addicted''
+ |''Percs!''
+ |-
+ |{{dlc|a+}} ''I'm Excited!!!''
+ |''I'm Drowsy...''
+ |-
+ |{{dlc|a+}} ''Paralysis''
+ |''Pheromones''
+ |-
+ |{{dlc|a+}} ''Retro Vision''
+ |''I can see forever!''
+ |-
+ |{{dlc|a+}} ''R U A Wizard?''
+ |''Power Pill!''
+ |-
+ |{{dlc|a+}} ''X-Lax''
+ |''Something's wrong...''
+ |-
+ |{{dlc|nr}} ''Bad Trip''
+ |''Full Health''
+ |-
+ |{{dlc|r}} ''Bad Trip''
+ |''Balls of Steel''
+ |-
+ |{{Dlc|r}} ''Experimental Pill''
+ |Only grants a stat up
+ |-
+ |{{dlc|r}} ''Gold Pill''
+ |Only has positive effects
+ |-
+ ! colspan="2"| Unchanged
+ |-
+ |colspan="2"| ''48 Hour Energy''
+ |-
+ |colspan="2"| ''Bad Gas''
+ |-
+ |colspan="2"| ''Bombs are Key''
+ |-
+ |colspan="2"| ''Explosive Diarrhea''
+ |-
+ |colspan="2"| ''Hematemesis''
+ |-
+ |colspan="2"| ''I can see forever!''
+ |-
+ |colspan="2"| ''I Found Pills''
+ |-
+ |colspan="2"| ''Lemon Party''
+ |-
+ |colspan="2"| ''Pheromones''
+ |-
+ |colspan="2"| ''Pretty Fly''
+ |-
+ |colspan="2"| ''Puberty''
+ |-
+ |colspan="2"| ''Telepills''
+ |-
+ |colspan="2"| {{dlc|a}} ''Friends Till the End!''
+ |-
+ |colspan="2"| {{dlc|a}} ''Infested!''
+ |-
+ |colspan="2"| {{dlc|a}} ''Infested?''
+ |-
+ |colspan="2"| {{dlc|a}} ''One makes you larger''
+ |-
+ |colspan="2"| {{dlc|a}} ''One makes you small''
+ |-
+ |colspan="2"| {{dlc|a}} ''Percs!''
+ |-
+ |colspan="2"| {{dlc|a}} ''Power Pill!''
+ |-
+ |colspan="2"| {{dlc|a}} ''Re-Lax''
+ |-
+ |colspan="2"| {{dlc|ana+}} ''???''
+ |-
+ |colspan="2"| {{dlc|ana+}} ''Addicted!''
+ |-
+ |colspan="2"| {{dlc|ana+}} ''Retro Vision''
+ |-
+ |colspan="2"| {{dlc|a+}} ''Feels Like I'm Walking on Sunshine!''
+ |-
+ |colspan="2"| {{dlc|a+}} ''Gulp!''
+ |-
+ |colspan="2"| {{dlc|a+}} ''Horf!''
+ |-
+ |colspan="2"| {{dlc|a+}} ''Something's Wrong...''
+ |-
+ |colspan="2"| {{dlc|a+}} ''Vurp!''
+ |-
+ |colspan="2"| {{dlc|na+}} ''Paralysis''
+ |-
+ |colspan="2"| {{dlc|na+}} ''R U A Wizard?''
+|}
+
+== Notes ==
+* Bad pills already obtained/dropped will be converted to their "good" counterparts.
+* If PHD is lost in any way, such as rerolling by the {{i|D4}} or a {{R|Dice Room}}, or dropping it as {{c|Tainted Isaac}}, pills will remain fully identified, but negative pills will not be converted.
+* {{dlc|a+}} Performing a [[RERUN]] with a character that held PHD will still prevent negative pills from spawning, but will no longer identify pills until used.
+* As bad pills will turn into good pills, it is possible for two different colored pills to have the same effect.
+* Multiple copies of PHD will not yield more coins when using a Blood Donation Machine or IV Bag.
+* This item can be crafted from {{i|Bag of Crafting}} with eight [[pills]].
+
+== Interactions ==
+* {{i|False PHD}}: Pills can both be good or bad again. Taking a bad pill still applies the benefits from False PHD.
+* {{C|Keeper|r}} / {{C|Tainted Keeper}}: {{m|Blood Donation Machine}}s will not produce more coins and they will still have a chance to fail.
+* {{c|Jacob and Esau}}: Pills will be identified for both characters, but pills with negative effects will only have their effects reversed when used by the character holding PHD.
+
+== In-game Footage ==
+{{#ev:youtube|5yQy-wyRigw}}
+
+== Trivia ==
+* PHD stands for Doctor of Philosophy (Ph.D.) and it's the most common degree at the highest academic level awarded following a course of study. Doctorates can be in any study, in Isaac's case, medicine.
+* {{I|MEAT!}}, {{I|YO LISTEN!}}, {{I|PHD}}, [[G FUEL!]], and {{I|TMTRAINER}} are the only '''ALL CAPS''' items in the game.
+
+{{nav|pill modifier|fr=Doctorat}}

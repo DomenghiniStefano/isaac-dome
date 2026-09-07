@@ -1,0 +1,87 @@
+{{infobox activated collectible
+ | name        = Portable Slot
+ | id          = 177
+ | quote       = Gamble 24/7
+ | description = Consumes one {{E|Penny}} and has a chance to drop a random [[pickup]], like a {{M|Slot Machine}}.
+ | quality     = 0
+ | tags        = offensive
+ | recharge    = unlimited
+ | shop price  = {{dlcalt|15|r=10|r+=15}}
+}}
+
+{{cit|a}}
+
+== Effects ==
+* Upon use, consumes 1 {{E|Penny}} and has a chance to drop a random [[pickup]], like a {{M|Slot Machine}}.
+** Unlike a {{M|Slot Machine}}, the default reaction to using a bad [[Pill]] will occur if the Portable Slot grants nothing.
+{| class="wikitable"
+|+ '''Possible Results from Coin Gamble (in Percentage % Points)'''
+!
+! Nothing
+! Bomb
+! Key
+! Heart
+! Pill
+! One Coin
+! Two Coins
+! [[Black Fly]]
+! [[Familiar#Pretty Fly|Pretty Fly]]
+|-
+| No {{I|Lucky Foot}}
+| 57.63
+| 4.7
+| 3.1
+| 9.5
+| 4.7
+| 10.5
+| 5.2
+| 3.1
+| 1.57
+|-
+| {{I|Lucky Foot}}
+| 40.1
+| 6.7
+| 4.4
+| 13.3
+| 6.7
+| 14.8
+| 7.4
+| 4.4
+| 2.2
+|}
+
+== Notes ==
+* {{dlc|r+}} Portable Slot can be obtained as final pay out from a {{m|Slot Machine}}.
+* Unlike normal Slot Machines, the Portable Slot can't explode, nor can it drop {{i|A Dollar}}, although it can still grant [[Pretty Fly|Pretty Flies]].
+* {{dlc|r}} The item only costs 10 coins when found in a {{r|Shop}}.
+* {{Dlc|r}} This item can be crafted from {{i|Bag of Crafting|n}} with eight {{e|Penny|text=Pennies}}.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Gives the wisps of the following items depending on the reward:
+** {{e|Fly}}: Nothing.
+** {{e|Bomb}}: {{i|Mr. Boom}} wisp.
+** {{e|Penny||Coin}}: Coin wisp for each coin dropped.
+** {{e|Red Heart||Heart}}: {{i|Yum Heart}} wisp.
+** {{e|Key}}: {{i|Dad's Key}} wisp.
+** [[Pill]]: {{i|Mom's Bottle of Pills}} wisp.
+** [[Pretty Fly]]: 2-4 {{i|Guppy's Head}} wisps.}}
+* {{t|Equality!|r+}}: Allows Isaac to get rid of coins and potentially spawn bombs and keys, making it easier to keep the number of pickups the same.
+* {{i|IV Bag}}: Can be alternated between to gain ridiculous amounts of pickups from only a few initial coins or hearts.
+* {{c|Keeper}}: Can be used to spawn coins in the room to heal Keeper.
+
+== Interactions ==
+* {{i|Car Battery}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|t4VUueqWBw8}}
+
+== Trivia ==
+* In the original ''The Binding of Isaac'', Portable Slot could be used to spawn an enemy Fly after defeating the boss in a {{R|Boss Room}}, which would enable Isaac to leave the room and come back, facing another boss battle and obtaining another item.
+** Also, hearts spawned from Portable Slot were affected by what room it was used in, such as {{E|Eternal Heart}}s spawning when used in {{S|Cathedral}}.
+
+== Gallery ==
+<gallery>
+File:3DS Detailed Portable Slot.png|{{plat|3DS}} The icon of Portable Slot as seen on the lower 3DS screen
+</gallery>
+
+{{nav|fr=Casino Portatif}}

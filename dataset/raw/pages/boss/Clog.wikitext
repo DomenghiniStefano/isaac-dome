@@ -1,0 +1,48 @@
+{{infobox boss
+ | dlc         = r
+ | name        = Clog
+ | id          = 914
+ | environment = <u>Boss</u><br>{{floor|Dross}}<br>{{room|boss challenge}}
+ | base hp     = 420
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Flush!}} (1% chance)
+}}
+
+'''Clog''' is a [[boss]] introduced in [[The Binding of Isaac: Repentance]] and can appear in {{dlc|r}} {{s|Dross}}.
+
+== Behavior ==
+Clog remains stationary in the center of the room, with the exception of a rare boss room layout where he spawns at the top center. He performs the following attacks:
+* Spits out a {{e|Drip}} below him, repeating this attack a random number of times.
+** Clog stops spitting out Drips if 4 are already alive.
+** Clog alternates between spitting out Drips and performing his other attacks. If 4 Drips are alive, he skips spawning them and continuously uses his other attacks.
+* Creates three lines of farts that spread across the room, knocking away Isaac and Drips. Each fart has a chance to spawn {{E|Poop}}s.
+** 1-2 {{E|Corny Poop}}s are spawned in this attack, and no more than 3 can be up at a time.
+* Shoots out 4 spiraling lines of projectiles, consisting of either slow projectiles with small gaps in between or fast projectiles with large gaps in between.
+** The projectiles pass over poop for 1 second after being fired, and are blocked by poop afterward.
+** The gaps between the slower projectiles are barely large enough for Isaac to move between them if he is next to the left or right wall.
+* Clog spins and causes the water in the room to circulate around him clockwise or counterclockwise, catching Isaac and any Drips, {{e|Bomb}}s, and/or [[Pickups]] in its current.
+** This attack can only be used if at least 2 Drips are alive.
+** Like other water-based effects in the {{s|Dross}} floor, Isaac is unaffected by this current if he has [[flight]].
+* Upon Clog's defeat, he and all remaining Drips are "flushed" away identical to the effect of using {{i|Flush!}} on them.
+
+== Notes ==
+* If a {{i|Butt Bombs}} Bomb goes off in the same room as Clog, it heals him.
+* The hitbox of poops is small enough for Isaac and the Drips spawned by Clog to move diagonally between them, even if they are undamaged.
+** This happens frequently when Clog causes the water to circulate and forces them to be pressed against the poops he spawns.
+* All poops created by Clog are significantly less likely to spawn pickups until Clog is defeated and Isaac re-enters the room, at which point they return to having their normal pickup drop chance.
+* {{i|Flush!}} kills Clog instantly and causes him to leave behind 6 {{e|Dip}}s.
+
+== Trivia ==
+* Clog appears to be a boss version of a {{e|Splurt}}.
+* A clog is a blockage in a toilet and/or its drain pipes.
+** This is further referenced in Clog's death animation, where he gets flushed into the floor.
+* Clog has many similarities to {{e|Brownie}}, though it is unknown whether or not they are truly connected.
+** Clog's "voice" is the same as that of Brownie, albeit pitched down.
+** Clog has buck teeth, just like Brownie.
+** Clog and Brownie are both large, round balls of poop.
+
+{{nav|boss|fr=Bouchon}}
+
+[[Category:Bosses]]
+[[Category:Chapter 1.5 bosses]]
+[[Category:Dross bosses]]
+[[Category:Debut bosses in Repentance]]

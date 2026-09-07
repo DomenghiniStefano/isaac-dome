@@ -1,0 +1,36 @@
+{{infobox boss
+ | name = The Wretched
+ | id          = 100
+ | variant     = 1
+ | environment = <u>Boss</u><br>{{floor|Catacombs}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Double Trouble</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br><u>Degraded Boss</u><br>{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp     = 215
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Juicy Sack}} (1% chance)
+}}
+
+'''The Wretched''' is a [[boss]] that can appear in the {{s|Catacombs}}.
+__TOC__
+
+== Behavior ==
+The Wretched's behavior is similar to {{e|Widow}}'s: making large leaps towards Isaac, and can perform the following attacks after landing:
+* Leaves a puddle of [[Creep#White|White Creep]] that is slightly larger than Widow's, and shoots 8 white projectiles outwards.
+* Spits out 2 {{e|Spider}}s, a {{e|Big Spider}}, or a {{e|Trite}}.
+** The Wretched can kill her own summons if she jumps on top of them.
+* {{dlc|r}} Spawns 3 Spiders upon death.
+
+== Gallery ==
+<gallery>
+File:Boss Delirium The Wretched ingame.png|The Wretched as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Trivia ==
+* The Wretched was added in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+** In the original game, The Wretched could also appear in {{s|Necropolis}}.
+* She is the posthumous version of [[Widow]].
+* The word Wretched means to be in an unfortunate state, which may refer to The Wretched's stitched upper mouth, and multiple bumps on her face.
+* {{Dlc|r}} Widow's and Wretched's animations and behavior have been sped up to more closely resemble their Flash counterparts.
+
+{{nav|boss|fr=Le Misérable}}
+
+[[Category:Chapter 2 bosses]]
+[[Category:Catacombs bosses]]
+[[Category:Debut bosses in Rebirth]]

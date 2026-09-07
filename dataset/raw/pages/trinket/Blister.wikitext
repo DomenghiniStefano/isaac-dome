@@ -1,0 +1,38 @@
+{{infobox trinket
+ | dlc         = a
+ | id          = 77
+ | quote       = Bounce back!
+ | description = Increases knockback of tears.
+}} {{disambig msg|the trinket|the enemy|Blister (Enemy)}}
+
+{{cit|t|a}}
+
+== Effect ==
+* Increases the [[knockback]] of Isaac's tears.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{i|Mom's Box|r+}}: Having either further increases knockback. Having both further increases knockback again.
+
+== Tips ==
+* This trinket is useful against chasing enemies and enemies that explode upon death such as {{E|Mulliboom}}s or {{E|Boom Fly|text=Boom Flies}}.
+
+== Interactions ==
+* {{dlc|nr}} {{i|8 Inch Nails}} / {{i|Pisces}}: The knockback increases are the same and do not stack.
+* {{i|Brimstone}}: The beam pushes back enemies.
+* {{i|The Ludovico Technique|nr}}: The controlled tear gains knockback.
+** {{dlc|r}}: No effect.
+* {{i|Mom's Box}}: No effect.
+* {{i|Mom's Knife}}: The knife pushes back enemies.
+* {{i|Tech.5}} / {{i|Technology}} / {{i|Technology 2}}: The laser pushes back enemies.
+* {{i|Tech X|nr}}: The knockback direction is counter-clockwise around the ring.
+** {{dlc|r}} Enemies are knocked back in the ring's fired direction.
+* {{i|Revelation}}: The beam pushes back enemies.
+* {{i|Trisagion}}: The blast slightly pushes back enemies.
+
+== In-game Footage ==
+{{#ev:youtube|IEjYLdGU0RU}}
+
+== Trivia ==
+* In real life, a [[wikipedia:blister|blister]] is a small pocket of body fluid that forms within the upper layers of the skin.
+
+{{nav|fr=Cloque}}

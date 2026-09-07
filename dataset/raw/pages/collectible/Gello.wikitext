@@ -1,0 +1,46 @@
+{{infobox activated collectible
+ | dlc         = r
+ | id          = 728
+ | quote       = Demonic gestation
+ | description = Spawns a demon [[familiar]] for the current room attached to Isaac that moves and fires in the direction Isaac shoots, using Isaac's [[damage]], [[tears]], [[range]], [[shot speed]], and [[Status Effects|special]] [[tear effects]].
+ | quality     = 3
+ | tags        = offensive
+ | recharge    = 2
+ | unlocked by = Gello
+}}
+
+{{cit|ua|r}}
+
+== Effects ==
+* Spawns a demon [[familiar]] attached to Isaac by a cord for the current room, floating in the direction Isaac shoots. It automatically fires tears (whenever Isaac is shooting) in the direction of the closest enemy to it, using Isaac's [[damage]], [[tears]], [[range]], [[shot speed]], and [[Status Effects|special]] [[tear effects]].
+** The item is initially held over Isaac's head until he fires, which launches the familiar in the direction he shoots, dealing 3x Isaac's damage to all enemies it passes through.
+** If Isaac has any tear modifier that requires him to charge his shots (i.e. {{i|Brimstone}}), Gello will automatically release its shot every time it is fully charged.
+** Gello's tears deal 0.75x Isaac's damage.
+
+== Notes ==
+* {{c|Tainted Lilith}} attacks in a way nearly identical to this item, except she can recall it and launch it again.
+* If used multiple times in the same room, the Gellos will eventually overlap perfectly and appear as one after some movement, but all remain functional. This makes Gello exceptionally powerful in [[Greed Mode]], {{R|Boss Rush}}, and against {{E|The Beast}}.
+
+== Synergies ==
+* {{Book of Virtues synergy|description=Spawns a red wisp on the middle ring. The wisps will orbit Gello instead of Isaac while it's active.}}
+* {{c|Tainted Azazel}}: Each time Gello starts charging an attack, he will "sneeze" just like Tainted Azazel does, cursing enemies in front of him. This allows Tainted Azazel to keep enemies cursed without needing to come up to a dangerously close distance to them.
+* {{c|Tainted Lazarus}}: The familiar persists when switching states.
+* {{i|Uranus}}: When the baby is launched, any enemies it kills in its trajectory will freeze and any frozen enemies the baby is launched into slide if Isaac is moving, similarly to when kicked by Isaac.
+* {{c|Lilith}} / {{c|Tainted Lilith}}: Gello's tears deal 1.0x of Isaac's damage instead.
+
+== Interactions ==
+* {{i|Car Battery|nr+}}: No effect.
+** {{dlc|r+}} Spawns an additional familiar.
+
+== In-game footage ==
+{{#ev:youtube|RiFECPCKr2s}}
+
+== Trivia ==
+* [[wikipedia:Gello|Gello]] is a revenant in Greek mythology who causes infertility, miscarriages, and infant mortality.
+* It is implied to be a fetal {{I|Incubus}}.
+* Gello is named "umbilical_baby" in the files.
+
+== Bugs ==
+{{bug|Using {{P|? Card}} on Gello will still result in the charges being used once Gello is whipped out. The ? Card will be used up as well, despite providing no free use of the item.}}
+
+{{nav|tainted lilith unlock|delirium unlock|fr=Gello}}

@@ -1,0 +1,69 @@
+{{infobox passive collectible
+ | id          = 202
+ | quote       = Golden touch
+ | description = Enemies that touch Isaac are temporarily [[Petrification|petrified]] and turn to gold. Any enemy killed while in this state will drop {{E|Penny|text=Pennies}}.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Petrifies and turns enemies into gold upon contact with Isaac.
+** Enemies killed while in this state will drop 1-3 {{E|Penny|text=Pennies}}.
+** When held by  {{C|Keeper}} or  {{C|Tainted Keeper}}, enemies will drop 0-1 pennies instead.
+* Enemies that make contact with Isaac take damage equal to the number of [[coin]]s he has.
+** {{dlc|r}} The damage is 3.5+0.2 * the number of Isaac's coins. The damage caps at 23.30 with 99 coins and 203.3 with 999 coins.
+** Damage is dealt up to twice per second per enemy.
+
+== Notes ==
+* With Midas' Touch, some effects that create {{E|Poop}} may instead create {{E|Golden Poop}} (see Synergies for details).
+* If an enemy doesn't deal contact damage, Midas' Touch can safely be used on it to create extra Pennies. {{E|Fly|text=Flies}}, {{E|Bulb}}, {{E|Mulligan}}, and {{E|Host}} are the most common enemies this can be applied to.
+** If Isaac has 13 coins or more when using Midas' Touch on {{E|Mulligan|text=Mulligans}}, they will die and release flies, hurting Isaac.
+** With {{i|Skatole}}, {{E|Hive}}s and {{E|Swarmer}}s will constantly spawn black flies, meaning they can create endless amounts of coins.
+** {{dlc|nr}} As {{E|Mom}}'s foot and {{E|Satan}}'s feet don't deal contact damage, Midas' Touch can be used against them to great effect.
+* Spawning Multiplayer [[Babies]] while the player has Midas' Touch will give the Midas' Touch effects (freeze on touch + damage) to the baby itself. This can be abused, considering the baby's invincibility frames upon spawning:
+** Spawn the baby using the Enter key. It is invincible for a short period.
+** During this period, stay in contact with enemies to freeze them and damage them.
+* This can be used to gather 99 [[coin]]s very quickly, and in turn, deal massive damage with Midas' Touch damage component.
+* {{dlc|r}} Petrified enemies that are [[Freeze|frozen]] will not drop any coins on death.
+* {{dlc|r}} Midas' Touch can be a great item with {{C|Tainted Keeper}}, as you can run into enemies and get even more coins. Just be careful to not kill yourself.
+* {{dlc|r}} Both Midas' Touch and {{i|E. Coli}} affect {{C|Tainted Forgotten}}'s body, causing enemies that touch the body to freeze and turn into poop respectively.
+* {{dlc+|r+}} If a [[Champions|violet champion]] monster is killed while it is gold-petrified, the trinket it drops is guaranteed to be a golden one. Rainbow champions still drop normal trinkets.{{dlc-}}
+
+== Synergies ==
+* {{p|A Card Against Humanity}}: Spawned Poops have a great chance to turn into Golden Poops. 11% at 0 [[luck]] and 100% at 18 [[luck]].
+* {{I|Deep Pockets|dlc=r}}: Increases maximum contact damage. The damage caps at 203.3 damage with 999 coins.
+* {{I|E. Coli}}: Enemies touched are turned into {{E|Golden Poop}}.
+* {{dlc|nr}} {{i|Epic Fetus}} + {{i|E. Coli}}: Launching a rocket at Isaac will turn the rocket into a golden poop, causing the explosion to break it automatically and spawning coins, which allows health to be exchanged for money.
+* {{i|Flush!|na+}}: Touching poops made from enemies turns them into {{E|Golden Poop}}s just before being destroyed dropping the normal {{E|Golden Poop}} pickups including {{t|Counterfeit Penny}}.
+* {{i|The Poop}}: Using The Poop has a high chance to spawn Golden Poop.
+** {{dlc|nr}} 50% at 0 [[luck]] and 100% at 5 [[luck]].
+** {{dlc|r}} 34% at 0 [[luck]] and 100% at 6.6 [[luck]].
+* [[Pills#Re-Lax|Re-Lax]]: Spawned Poops have a chance to turn into Golden Poops. 25% at 0 [[luck]] and 100% at 8 [[luck]].
+* Any item or card that grants Isaac temporary invincibility lets Isaac use Midas' Touch on any enemy without taking damage. This includes, but is not limited to:
+** {{p|VII - The Chariot}}/{{P|VII - The Chariot?}}
+** {{i|A Pony}}/{{i|White Pony}}
+** {{i|Book of Shadows}}/{{i|Celtic Cross}}/{{i|Empty Vessel}}/{{p|Algiz}}/{{i|The Polaroid}}/{{i|Virgo}}
+** {{i|Breath of Life}}
+** {{i|Dull Razor}}
+** {{i|Holy Mantle}}
+** {{i|My Little Unicorn}}/{{i|Unicorn Stump}}/[[Pills|Feels like I'm walking on Sunshine!]]
+** {{Dlc|r}}{{I|Aries}} (if Isaac's speed is greater than 0.85)
+** {{i|The Gamekid}}/[[Pills|Power Pill!]]
+** {{i|Ventricle Razor}} (briefly after exiting a portal)
+** {{i|Tooth and Nail}}
+*** The stone isaac turns into is changed to a yellowish gold with Midas' touch
+
+== Interactions ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Petrified enemies that are turned into [[pickup]]s don’t also drop coins from the petrification effect.
+* {{dlc|r}}[[Freeze|Freeze Effects]]: Petrified enemies that are frozen don’t drop coins.
+* {{i|Mine Crafter}}: Has a chance to petrify the TNT block when placed, damaging Isaac in the process if he touches the golden TNT Block.
+
+== In-game Footage ==
+{{#ev:youtube|ZMI4yf7wclM}}
+
+== Trivia ==
+* This item is a reference to [[wikipedia:Midas|King Midas]] from Greek Mythology, who wished to be able to turn everything he touched with his hand into gold and ended up regretting his wish after turning his food (or in some interpretations his wife) to gold.
+
+{{nav|fr=Malédiction de Midas}}

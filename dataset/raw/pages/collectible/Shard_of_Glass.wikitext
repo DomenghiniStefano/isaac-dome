@@ -1,0 +1,52 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 448
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | quote       = Blood and guts!
+ | description = {{dlc|nr}} Upon taking damage, Isaac has a chance to drop a full red heart, gain 5 range, and leave a trail of damaging red [[creep]] for the current room.<br>{{dlc|r}} Taking damage causes Isaac to bleed, spraying a volley of blood in the direction he fires. Bleeding will eventually damage him, but it can be stopped by picking up a {{E|Red Heart}}.
+ | quality     = 1
+ | tags        = summonable nolostbr
+}}
+
+{{cit|p|a+}}
+
+== Effects ==
+Upon taking damage, activates the following effects:
+* 25% chance to drop a full {{E|Red Heart}}.
+* {{dlc|nr}} 10% chance to gain the {{i|Anemic}} effect (+5 [[range]], red creep trail) for the current room upon taking damage.
+* {{dlc|r}} Causes Isaac to bleed, spewing blood tears around him constantly.
+** The sprayed tears vary in damage, roughly in range of 67% to 101% of Isaac's base damage.
+** Holding a direction of fire focuses the bleeding tears to that direction, with slightly increased range.
+*** The bleeding tears can be aimed at any direction just like having {{i|Analog Stick}}.
+** After bleeding for 20 seconds, Isaac's Red Hearts or Rotten Hearts will take damage (bypassing other Hearts); this is indicated by Isaac slowly turning red after and eventually blinking. This damage also has a 25% chance to drop a full Red Heart. The damaging effect will continue to occur every 20 seconds until the bleeding effect ends.
+*** The damage amount is always half a {{E|Red Heart}}, a [[Health#Coin Hearts|Coin Heart]], or a {{E|Rotten Heart|n}}, even in later [[chapters]] where most damage is now a full Heart or two Rotten Hearts.
+** The bleeding effect ends when Isaac receives any form of {{E|Red Heart}} or {{E|Rotten Heart|n}} healing, if he has no more Red or Rotten Hearts, if he fills an {{E|Eternal Heart}}, or if the next hit would kill him.
+** If Isaac has no Red or Rotten Hearts, the bleeding effect of Shard of Glass will not activate. 
+
+== Notes ==
+* Red Hearts spawned by this item may become different hearts in certain {{R|Super Secret Room}}s.
+* {{dlc|r}} Regarding the bleeding effect:
+** Taking bleed damage does not affect {{r|Devil Room}} or {{r|Angel Room}} chances.
+** Bleeding blood tears will not keep any [[Tear Effects|tear effects]] or special tears that Isaac has.
+** The bleeding effect persists between floor transitions.
+** If Shard of Glass is re-rolled or lost while Isaac is bleeding, the bleeding will continue, but {{E|Red Heart}}s will no longer spawn when Isaac takes damage.
+** {{C|The Forgotten}} can end the bleeding by switching to {{C|The Soul}}.
+** The bleeding effect works with {{C|Keeper}} {{dlc+|r}}(and {{C|Tainted Keeper}}){{dlc-}}. They will bleed and lose a coin heart until only one coin is left. Receiving coins will stop the bleeding effect. Due to Tainted Keeper only having two coin hearts in most circumstances, bleeding will rarely apply to him.
+** Rotten Hearts will take bleeding damage only when Isaac has no red hearts remaining. Picking up Rotten Hearts will also end the bleeding.
+** Using a [[bed]] or a Full Health [[Pills|pill]] to heal Isaac's red hearts will not stop the bleeding.
+** Turning into The Lost via the {{E|White Fire Place|n}} or {{P|Soul of the Lost|n}} will stop bleeding effect.
+** Using the {{I|Yum Heart}} will stop the bleeding effect.
+
+== Synergies ==
+* {{dlc|r}} {{I|Epic Fetus}} / {{I|Marked}}: Bleeding tears will aim at the crosshair.
+
+* {{dlc|r}} {{I|The Ludovico Technique}}: Bleeding tears will aim at the controlled tear.
+
+== In-game Footage ==
+{{#ev:youtube|NBaOqLD9PaI}}
+
+== Trivia ==
+* "Blood and guts" is a term for violence, typically in fiction.
+
+{{nav|fr=Bris de Verre}}
+[[Category:Damage-triggered items]]

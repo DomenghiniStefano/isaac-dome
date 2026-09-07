@@ -1,0 +1,21 @@
+{{infobox passive collectible
+ | dlc         = a
+ | id          = 438
+ | quote       = {{dlcalt|Memories...|r=Tears up}}
+ | description = Grants one {{E|Soul Heart}}, +0.75 [[tears]] and decreases Isaac's size.
+ | quality     = 3
+ | tags        = summonable tearsup offensive
+}}
+
+{{cit|p|a}}
+
+== Effects ==
+* Grants one {{E|Soul Heart}}.
+* +0.75 [[tears]].
+* Decreases Isaac's size.
+* Increases the pitch of Isaac's voice.
+
+== In-game Footage ==
+{{#ev:youtube|zi-5cv_0kdE}}
+
+{{nav|fr=Tétine}}

@@ -1,0 +1,37 @@
+{{infobox trinket
+ | dlc         = r
+ | id          = 144
+ | quote       = Ding!
+ | description = Tears snap 90 degrees to target enemies that they may have missed.
+}}
+
+{{cit|t|r}}
+
+== Effects ==
+* Tears snap 90 degrees to target enemies that they may have missed.
+== Notes ==
+* {{dlc+|r+}} This trinket has a 1% chance to drop when defeating {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}} or {{e|Scolex}}.{{dlc-}}
+* The effect will not work if Isaac is too close to enemies.
+* The effect will only work if the tear has a line of sight to the enemy: if it's interrupted by an obstacle, Brain Worm won't work even if Isaac has enough tear height to otherwise clear it unless he also possesses spectral tears.
+
+== Interactions ==
+* {{i|Anti-Gravity}}: Tears will snap to enemies after they're released, but not while the tears are staying in place.
+* {{i|Brimstone}} / {{I|Montezuma's Revenge}} / {{i|Revelation}} / {{i|Technology}} / {{i|Technology 2}}: Laser will snap regardless of length from enemy. Also works with {{C|Azazel}}'s Brimstone.
+* {{I|Cricket's Body}} / {{I|The Parasite}}: Both the main and split tears are affected by Brain Worm.
+* {{I|Dr. Fetus}}: No effect on bombs.
+* {{i|Eye of the Occult}}: Tears briefly snap to target enemies but Isaac's control quickly takes over them.
+* [[Homing]] tears: Override Brain Worm.
+* {{i|The Ludovico Technique}}: No effect.
+* {{I|Mom's Knife}}: No effect.
+* {{I|Tech X}}: No effect.
+* {{I|Tractor Beam}}: No Effect.
+
+== Synergies ==
+* {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}}: Having either makes shots have a 25% chance to pierce. Having both increase the chance to 50%.
+
+== Trivia ==
+* [[anti:Brain Worm|Brain Worm]] originates from the ''Antibirth'' mod.
+* The name, appearance and effect of the trinket are likely inspired by the {{E|Brain}} enemy.
+* The trinket might be a reference to [[wikipedia:Parelaphostrongylus tenuis|Parelaphostrongylus tenuis]], a real life brain worm commonly found in white-tailed deer.
+
+{{nav|worm}}

@@ -1,0 +1,46 @@
+{{infobox trinket
+ | dlc         = a+
+ | id          = 103
+ | quote       = =
+ | description = Turns pickups into their doubled versions while Isaac's numbers of coins, bombs, and keys are equal.
+}}
+
+{{cit|t|a+}}
+
+<tabber>{{dlc|nr+}} Before Repentance+=
+__forcetoc__
+== Effects ==
+* All pickups on the ground become their doubled variants as long as Isaac's held pickups are all the same number, e.g. 65 pennies, 65 bombs, 65 keys.
+
+== Notes ==
+* {{dlc|nr}} All single keys, bombs and red hearts in a shop will become free when doubled.
+** This is likely due to the entity being removed and a double variant being spawned, instead of simply overriding it before it spawns like {{I|Humbleing Bundle}} does.
+* {{dlc|nr}} Upon picking up a non-doubled pickup that makes Isaac's pickups equal in number, a doubled variant will be spawned as well.
+* Doubled pickups will not revert if Isaac's pickups become unequal.
+* This trinket works well in [[Greed mode]], doubling all pennies spawned from completing waves as long as Isaac's pickups are equal.
+
+== Strategy ==
+* Previously seen non-doubled pickups will become their doubled variants after reaching equal numbers for all of Isaac's pickups. Said doubled pickups will never revert back even if Isaac's pickups numbers changes or if the trinket is dropped.
+* It is recommended to leave pickups on the ground until going to the next floor. Not only does it allow for more opportunities to reach equal numbers for all pickups, but it also allows for previously found pickups to transform into their doubled variants.
+* Heart pickups will also be doubled, however Isaac's hearts amount will not prevent Equality! from working. This means doubled hearts can be picked up as much as you want without any downside.
+** {{I|IV Bag}}, especially if paired with {{I|Old Bandage}}, can be abused for doubled pennies to spawn while also taking advantage of said doubled hearts.
+
+== Synergies ==
+* {{I|Hypercoagulation}} / {{c|Tainted Magdalene}}: As long as Equality! is active, all hearts spawned their respective sources will be {{e|Double Heart}}s and do not disappear.
+* {{I|Options?}}: While Equality! is active, if one of the two rewards are doubled pickups, both rewards can be collected without the other despawning. Options? also makes Equality! easier to keep active.
+* {{C|Tainted ???}}: Tainted ??? will always have 0 bombs, making the trinket only possible to activate while also having 0 coins and keys (except with the Bombs are Key pill).
+* {{C|Tainted Keeper}}: Doubled pennies from killed enemies will not despawn. All other coin types will still disappear.
+
+== In-game Footage ==
+{{#ev:youtube|8XwNloLO1gc}}
+
+|-|{{dlc|r+}} In Repentance+=
+== Effects ==
+* +2.0 [[fire rate]] as long as Isaac's held pickups are all the same number.
+
+== Synergies ==
+* {{I|Mom's Box}} / {{a|Golden Trinket|n}}: Adds +2.0 [[fire rate]] per stack.
+* {{I|Portable Slot}}: Allows Isaac to get rid of coins and potentially spawn bombs and keys, making it easier to keep the number of pickups the same.
+</tabber>
+
+{{nav|bomb modifier|key modifier|coin modifier|fr=Égalité !}}

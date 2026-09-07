@@ -1,0 +1,71 @@
+{{infobox passive collectible
+ | dlc         = a+
+ | id          = 530
+ | quote       = Just hope you're not next...
+ | description = Grants a [[pickup]] or [[Attributes|stat]] upgrade if all enemies in a room are killed in the order they are marked.
+ | quality     = {{dlcalt|2|r+=1}}
+ | tags        = summonable offensive {{dlc|r+|lazarusshared}}
+ | unlocked by = Death's List
+}}
+
+{{cit|up|a+4}}
+
+== Effects ==
+* Upon entering a room, a skull appears over an enemy's head.
+** The marked enemy will have a bigger shadow.
+** Killing the marked enemy will cause the skull to move to a different enemy.
+** If all enemies in the room are cleared in the order they are marked, Isaac gains one of the following rewards at random:
+*** A {{e|Soul Heart}}, a [[pill]], a {{e|Key}}, a {{e|Bomb}}, or a {{e|Nickel}}.
+*** +0.2 [[speed]], +0.5 [[range]], {{dlc|nr}} +0.5 [[tears]], {{dlc|r}} +0.5 [[fire rate]], +0.2 [[shot speed]], +1 flat [[damage]], or +1 [[luck]].
+** If a non-marked enemy is killed, the skull will disappear and no bonuses will be granted for that room.
+
+== Notes ==
+* Losing this item will not remove stat rewards.
+* As long as the room is not cleared, Isaac can re-attempt a Death's List by leaving and re-entering.
+* The marked enemies are chosen in the same order in a given room, starting from the top-left corner with enemies that are vulnerable at their spawn time (from top to bottom, then from left to right). If new enemies are spawned via Portals or on death, they are added to the end of the marked queue.
+* The marked {{e|Army Fly}} will always be the last one in the line of Army Flies.
+* {{e|Bishop}}s can shield the marked enemy unless frozen or petrified beforehand.
+* Killing all piles of a {{e|Cursed Globin}}s counts as one kill.
+* A room with no enemies that instead requires {{e|Pressure Plate}}s to be pressed will also give a reward when cleared.
+* If a reward stat is chosen that is already at maximum, the sound effect and Isaac's thumbs up animation will play, but there is no other effect.
+* Bosses may also be marked.
+* If a {{e|Portal}} is marked and despawns, no other enemy will be marked and the bonus is lost.
+* Enemies that are not spawned when the room is entered (such as [[Angel]]s from bombed Angel Statues and enemies in {{r|Challenge Room}}s, [[Greed Mode]], and {{r|Boss Rush}}) will not be marked.
+* In the {{e|Mom}} boss fight, each of Mom's body parts (eyes, foot, and hands) is considered as a different enemy, and Isaac has to kill the foot to get the bonus.
+* If the doors open automatically due to spending a long enough time in the room, any existing mark will disappear.
+* [[Familiar]]s, especially ones that passively or actively damage enemies of their own accord, may make killing enemies in order difficult, if not impossible.
+* Ace cards will kill the enemies in the correct order when possible.
+* If a {{e|Mr. Maw}} is marked, killing either part of its body will not forfeit Death's List, as the remaining enemy of said Mr. Maw will still be marked.
+* This item has little to no effect in Greed Mode.
+* Waiting for the [[User:Blcd/RandomTidbits#Room Anti-softlock|Room Anti-softlock]] to trigger will always grant a reward from Death's List.
+* [[Friendly]] enemies cannot be marked, and their deaths do not cause the mark to disappear.
+
+== Synergies ==
+* {{dlc|r}}[[Cards and Runes|Ace Cards]]: Enemies that die by being turned into [[pickup]]s don't disrupt the Death's List chain and clearing a room by turning all its enemies into pickups still grants Isaac the Death's List reward.
+* {{t|Door Stop}}: If Isaac has failed Death's List but hasn't cleared the room, leaving and re-entering will reset the list.
+* {{i|E. Coli}}/{{i|Flush!}}: Enemies that die by being turned into poop do not disrupt the Death's List chain and clearing a room by turning all its enemies into poop still grants Isaac the Death's List reward.
+* {{i|Eraser}}: Erasing enemies makes it easier to complete the list as erased enemies do not disrupt the Death's List chain and rooms cleared by Eraser's effect will also reward the bonus.
+
+== Interactions ==
+* {{dlc|r}} [[Frozen|Freezing attacks]]: Enemies that die by freezing do not disrupt the Death's List chain and clearing a room by freezing its enemies still grants Isaac the Death's List reward, though the shards caused by them breaking do.
+** {{dlc|r+}} Frozen enemies do disrupt Death's List's chain.
+* {{i|Toxic Shock}}: Not recommended. If multiple enemies are killed by Toxic Shock at the same time, the mark will disappear and no reward will be given, even if the enemy next in line to be marked was killed at the same time as the marked one.
+
+== In-game Footage ==
+{{#ev:youtube|kSI1Gd6IRew}}
+
+== Trivia ==
+* Death's List is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=908104321 this Steam Workshop item] by x Wyvern x, Ashkal, and Merlo.
+* {{dlc|r+}} Death's List is the only non-[[Item Tags quest|quest]] item to have the item tag <code>lazarusshared</code>.
+
+== Gallery ==
+<gallery>
+File:Collectible Death's List Booster Pack 4 icon.png|Death's List's initial appearance in [[Booster Pack #4]].
+</gallery>
+
+== Bugs ==
+{{bug|{{e|Swarmer}}s will lose the mark and no reward will be granted.}}
+{{bug|dlc=nr|Multisegmented enemies such as {{e|Mr. Maw}} and {{e|Pin}} may be impossible to kill in the correct order, as each segment is considered a separate entity and are destroyed as the enemy on the whole dies.}}
+{{bug|Other multisegmented enemies such as {{e|Larry Jr.}} can have their segments destroyed in a proper order, but the skull marker is displayed on the wrong segment.}}
+
+{{nav|booster pack|fr=La Liste de la Mort}}

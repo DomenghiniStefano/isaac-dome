@@ -1,0 +1,43 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 686
+ | quote       = Power of faith
+ | description = Gives Isaac a permanent [[Attributes|stat]] boost whenever he picks up a {{e|Soul Heart}}.
+ | quality     = 1
+ | tags        = summonable offensive
+ | unlocked by = Soul Locket
+}}
+
+{{cit|up|r}}
+
+== Effects ==
+* Gives Isaac one of the following [[Attributes|stat]] boosts per half heart gained by picking up {{e|Soul Heart}}s or {{e|Black Heart}}s:
+** +0.04 [[speed]].
+** +0.1 [[tears]].
+** +0.2 flat [[damage]].
+** +0.5 [[range]].
+** +0.04 [[shot speed]].
+** +0.20 [[luck]].
+* Spawns a {{e|Soul Heart}} when picked up.
+
+== Notes ==
+* Black Hearts give the same stat boosts as normal soul hearts.
+* If a character can only have soul hearts for health (such as {{c|???}}), picking up two {{e|Eternal Heart}}s will count as giving one soul heart's worth of stat boosts.
+* Soul Locket only activates when picking up actual Soul Hearts, not if they're directly added to Isaac's [[health]] (such as by a [[Pills|Balls of Steel pill]] or {{i|Book of Revelations}}).
+* This item gives stats when adding to {{c|Bethany}}'s soul charges.
+* {{C|The Lost}} and {{C|Tainted Lost}} can use this item normally, despite not having health.
+** Unlike {{i|Alabaster Box}}, {{e|Black Heart}}s still work with these characters
+* This item is useless for {{c|Keeper}} and {{c|Tainted Keeper}}, since they cannot encounter soul hearts.
+* Hearts acquired prior to picking up Soul Locket will not provide stat boosts.
+* The stat bonuses are [[seed]]ed, meaning the same stat ups will apply in the same order in the same seed.
+* {{dlc|nr+}} The stat bonuses are "stored" on the Soul Locket. Dropping or losing it in any way won't immediately revert the bonuses gained, only when Isaac's stats are updated again. The respective stat changed is the one that loses the Soul Locket bonuses.
+** The bonus stats will be lost if Isaac's stats are updated by dropping out of the game or if the game crashes.
+* This item can be crafted from {{i|Bag of Crafting}} with eight {{e|Soul Heart}}s.
+
+== In-game Footage ==
+{{#ev:youtube|aFN5RJBK7rY||inline}}
+
+== Trivia ==
+* This item is the soul heart equivalent to {{i|Candy Heart}}, and gives twice as many stats per heart collected, comparatively.
+
+{{nav|bethany unlock|ultra greed unlock|fr=Pendentif des Âmes}}

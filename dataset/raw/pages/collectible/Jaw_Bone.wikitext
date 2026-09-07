@@ -1,0 +1,50 @@
+{{infobox passive collectible
+ | dlc = a+
+ | name = Jaw Bone
+ | id = 548
+ | quote = Fetch!
+ | description = Spawns a [[familiar]] that flies through the [[Rooms|room]] while firing, dealing a flat 7 contact damage to enemies and retrieving [[pickups]].
+ | quality     = 1
+ | tags        = summonable offensive
+ | unlocked by = Jaw Bone
+}}
+
+{{cit|up|a+5}}
+
+== Effects ==
+* Spawns a [[familiar]] that fires across the [[Rooms|room]] in the direction of the first tear fired and returns to Isaac when it hits a wall, similar to {{i|Little Chubby}}. Deals a flat 7 damage to enemies that come in contact with it.
+** When thrown, the familiar will pierce through some fly enemies, instantly killing them, but will instantly bounce back upon hitting other enemies.
+** The familiar can pass through [[obstacles]].
+** The familiar can retrieve [[pickups]] like {{i|The Boomerang}}.
+** Blocks enemy tears when stationary and when thrown.
+** After returning to Isaac, it has a short recharge time before it can be fired again.
+
+== Notes ==
+* Just like {{I|The Boomerang}}, Jaw Bone can grab pickups through obstacles and will '''not''' grab {{e|Troll Bomb}}s.
+* {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Jaw Bone having the lowest priority at {{dlc|nr+}} 6th / {{dlc|r+}} 8th and thus being farther from Isaac than familiars of different priorities.
+* The following types of flies are instantly killed when they come in contact with the orbitals:
+** {{e|Army Fly}}
+** {{e|Attack Fly}}
+** {{e|Dart Fly}}
+** {{e|Fly}}
+** {{e|Hush Fly}}
+** {{e|Moter}}
+** {{e|Pooter}}
+** {{e|Ring Fly}}
+** {{e|Super Pooter}}
+** {{e|Swarm}}
+
+== Synergies ==
+* {{i|BFFS!}}: Familiar grows in size and does a flat 14 damage to enemies.
+* {{t|Duct Tape|n}}: Jaw Bone will face in the same direction as Isaac and remain stationary as opposed to trailing behind him. Jaw Bone can still be fired.
+* {{I|King Baby|r}}: After being thrown, Jaw Bone will return to Isaac and then reappear behind King Baby.
+
+== In-game Footage ==
+{{#ev:youtube|ZiQMQiNbvLI}}
+
+== Gallery ==
+<gallery>
+File:AfterbirthPlus Booster Pack 5 Concepts.jpg|Concept for Jaw Bone (labeled as "Jaw") on the right side, along with other Booster Pack items and trinkets, by Edmund McMillen.
+</gallery>
+
+{{nav|the forgotten unlock|blue baby boss unlock|booster pack|bone|fr=Mandibule}}

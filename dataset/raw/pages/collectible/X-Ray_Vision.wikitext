@@ -1,0 +1,26 @@
+{{infobox passive collectible
+ | id          = 76
+ | quote       = I've seen everything
+ | description = Reveals and opens all {{R|Secret Room}} and {{R|Super Secret Room}} entrances.
+ | quality     = 2
+ | tags        = summonable offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Opens {{R|Secret Room}}s and {{R|Super Secret Room}}s automatically.
+
+== Notes ==
+* {{dlc+|a+nr}} When in {{s|The Void}}, the entrances are not automatically opened if the room is not yet cleared. Re-entering the room once enemies are killed and/or {{E|Pressure Plate}}s pressed will open the doors normally.{{dlc-}}
+
+== In-game Footage ==
+{{#ev:youtube|hMd5OMB9quE||inline}} {{#ev:youtube|F0pSq4QvhIk||inline}}
+
+== Trivia ==
+* {{dlc|r}} When {{i|Book of Secrets}} is used while all mapping effects have been obtained, through book of secrets itself or another mapping effect, the X-Ray Vision effect is given.
+* The flavor text "I've seen everything" could be a reference to Patrick Stewart's popular scene in the TV series "Extras".
+* The cosmetic is a reference to 'X-ray Specs' sold as gag-gifts or on the back of Comic books in the 1960's and 70's.
+* This item is used in {{chal|Seeing Double}}.
+
+{{nav|fr=Lunettes à Rayon X}}

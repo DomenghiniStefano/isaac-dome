@@ -1,0 +1,29 @@
+{{infobox passive collectible
+ | id          = 200
+ | quote       = Charm tears
+ | description = Tears have a chance to [[charm]] enemies.
+ | quality     = 1
+ | tags        = summonable mom offensive
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Gives a chance to shoot [[charm|charming tears]].
+* {{transformation contribution|Yes Mother?}}
+
+== Notes ==
+* {{dlc+|a+}} This item has a 1% chance to spawn when bombing {{m|Mom's Dressing Table}}. Multiple copies can be obtained through this method.{{dlc-}}
+* The chance for a tear to be charming depends on the [[Luck]] stat. The activation rate is almost equal to <math>1/(10 - (Luck / 3))</math>. With 0 Luck, the chance is 10%, maxing out at 100% at 26.95 Luck.
+** Due to how this formula works, increases in activation rate are only seen with about every 3 points of Luck, as this formula rounds down after dividing Isaac's Luck by 3.
+
+== Interactions ==
+* {{I|Immaculate Heart}}: Orbital tears produced by this item can charm.
+* {{i|Compound Fracture}} / {{i|Cricket's Body}} / {{i|Haemolacria}} / {{i|The Parasite}}: Split tears will retain the charm effect if main tear had the charm effect.
+* {{I|Finger!|nr}}: Finger can also apply the charm effect.
+* {{i|Lachryphagy}}: If a charm tear is fed, all burst tears can charm. If a normal tear is fed, the burst tears cannot charm.
+
+== In-game Footage ==
+{{#ev:youtube|xv7uG8I6ke0}}
+
+{{nav|yes mother|mom|fr=Fard à Paupières de Maman}}

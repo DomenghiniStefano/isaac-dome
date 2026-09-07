@@ -1,0 +1,48 @@
+{{Infobox boss
+ | dlc         = r
+ | name        = The Heretic
+ | id          = 905
+ | environment = <u>Boss</u><br>{{floor|Mausoleum}}<br>{{room|boss challenge}}
+ | base hp     = 789
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Ceremonial Robes}} (1% chance)
+}}
+
+'''The Heretic''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' that can appear in the {{s|Mausoleum}}.
+
+== Behavior ==
+=== Phase 1 ===
+* During the beginning of the fight, 5 {{e|Exorcist}}s, which are shielded and invulnerable, summon The Heretic from a large pentagram, after which they turn into {{e|Fanatic}}s.
+** The Heretic is incorporeal until all Fanatics and the {{e|Pacer}}s or {{e|Gusher}}s they turn into are dead, similar to {{e|The Haunt}}'s first phase.
+** While incorporeal, The Heretic can still do contact damage.
+
+=== Phase 2 ===
+* Lobs 7 projectiles that, after landing, burst into 6 fires that spread out in a radial pattern. The landing position of each projectile is marked on the ground.
+** The Heretic then follows up by launching itself towards Isaac, creating a radial burst of 8 lines of fire where it lands. It spends a short time readjusting its dislocated jaw before continuing to attack.
+* The arena of the Heretic always spawns a number of unlit [[Fire Places]]. The Heretic can light up 5-6 of them before firing a purple {{i|Brimstone}} laser that connects all of the lit fires. The order the Heretic lights each fire indicates what order the laser travels.
+** These can be extinguished with an explosion, preventing Brimstone lasers from reaching the deactivated Fire Place.
+* Dashes off-screen and turns invisible before charging in again, predicting Isaac's movements and attempting to bite down on where Isaac is moving, doing a full heart of damage if the attack connects. It chains this attack a total of 4 times, each time from alternating sides of the room.
+** The Heretic occasionally does not finish the fourth charge, instead fading away and quickly charging in one final time from the other side of the screen.
+* Upon death, the Heretic's fiery eye drops down and sends out lines of fire in the cardinal directions.
+
+== Gallery ==
+<gallery>
+File:The Heretic Brimstone.png|The Heretic performing its Brimstone attack.
+</gallery>
+
+== Notes ==
+* When not fought as a main boss, such as in a Boss Challenge room or a degraded boss, it will not be preceded by Fanatics and have no first phase.
+** The Heretic also cannot perform its {{i|Brimstone}} attack outside of its regular boss room as there will be no unlit Fire Places.
+* The Heretic can be instantly killed with {{I|Vade Retro}} if it is at 50% health or below.
+
+== Trivia ==
+* The Heretic originates from a [https://www.reddit.com/r/bindingofisaac/comments/2v2gl1/more_versus_screen_mockups/ Reddit post] by NotYourSaggitarius in 2015, as a versus screen mockup. The boss was later incorporated into the ''Antibirth'' mod.
+* It appears to be a resurrected variation of {{e|The Haunt}} or {{e|The Forsaken}}.
+* The only time the Heretic's empty right eye lights up is during its {{i|Brimstone}} attack.
+* The Exorcists that appear during the beginning of the fight to summon the Heretic are found nowhere else in the {{s|Mausoleum}}, unlike in ''Antibirth'', where they were a regularly appearing Monster.
+* If The Heretic is destroyed with a {{p|Chaos Card}} before the summoning animation finishes, any remaining Exorcists will become vulnerable and be stuck performing the ritual until they are killed.
+
+{{nav|boss|fr=L'Hérétique}}
+
+[[Category:Chapter 3.5 bosses]]
+[[Category:Mausoleum bosses]]
+[[Category:Debut bosses in Repentance]]

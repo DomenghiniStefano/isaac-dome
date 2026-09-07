@@ -1,0 +1,57 @@
+{{infobox activated collectible
+ | dlc         = a+
+ | name        = Potato Peeler
+ | id          = 487
+ | quote       = A pound of flesh
+ | description = Removes a [[Heart Container]], increases [[Damage]] and [[Range]], and grants a {{i|Cube of Meat}}. {{dlc|r+}} If Isaac has a {{i|Ball of Bandages}}, it will instead give additional copies of that.
+ | quality     = 2
+ | tags        = nolostbr
+ | recharge    = unlimited
+}}
+
+{{cit|a|a+}}
+
+== Effects ==
+* On use:
+** Removes one Red [[Heart Container]].
+** Increases [[damage]] by a flat +0.2.
+** Grants one {{i|Cube of Meat}}.
+*** {{dlc|r}} The Cube of Meat is not added as a real item in Isaac's inventory.
+** {{dlc|r+}} If Isaac has {{i|Ball of Bandages}}, Potato Peeler will give additional copies of that instead.
+** Grants an active {{i|Anemic}} effect for the current room.
+** {{dlc|r}} Counts as self-damage for the purposes of damage-triggered items.
+
+== Notes ==
+* It is possible for Isaac to kill himself by removing his final heart container.
+* It is possible to generate multiple Meat Boys.
+* Cubes of Meat given by this item do not remove any Cubes of Meat from [[Greed Mode]] item pools.
+* {{dlc+|r}} The Cube of Meat gained through this item will persist in the escape sequence of {{s|Mines}} II.{{dlc-}}
+* This item cannot normally be used on {{E|Soul Heart}}s, {{E|Black Heart}}s, {{E|Bone Heart}}s, or {{E|Eternal Heart}}s.
+** Thus, this item does not work with {{C|The Lost}}, {{C|???}}, {{c|Black Judas|r}}, {{C|The Forgotten}}, {{C|Tainted ???}}, {{C|Tainted Judas}}, {{C|Tainted Bethany}}, {{C|Tainted Lost}} or {{C|Tainted Forgotten}}. Using it will not hurt them, nor produce any Cubes of Meat.
+* {{dlc|nr+}} If Isaac has {{i|Ball of Bandages}}, Cubes of Meat will be added regardless.
+** [[Harbingers]] will preferentially drop Cubes of Meat if Isaac has both types of orbitals.
+* {{dlc|r}} In [[Repentance Co-Op]] the Cube of Meat gained through this item will persist when a player dies allowing them to have a powerful damage output while in ghost form.
+
+== Synergies ==
+* {{Book of Belial synergy|description=Each use grants a permanent +0.5 normal damage up in addition to a +0.2 flat damage up.}}
+* {{Book of Virtues synergy|description=Spawns an indestructible wisp. The wisps do not orbit Isaac, block shots, or deal contact damage. Instead, they chase and constantly shoot at nearby enemies.}}
+* {{i|D4|nr}}: Every Cube of Meat produced using Potato Peeler counts as an item for rerolling. Because health usually is not removed when rerolling items, this is useful to increase the number of items at the expense of the item pool.
+** Cubes of Meat created by Potato Peeler will always reroll into {{ip|Treasure Room|text=Treasure Room items}}, regardless of where Potato Peeler was obtained or the rooms it was used in.
+* {{p|III - The Empress?}}/{{p|XI - Strength}}: The temporary hearts granted by the cards can be used to create a Cube of Meat.
+* {{c|Tainted Eden}}: The {{i|Cube of Meat}} is not re-rolled when Tainted Eden takes damage, but the loss of a heart container is permanent.
+
+== Interactions ==
+* {{i|Box of Friends|r}}: The Cubes of Meat from Potato Peeler cannot be duplicated by Box of Friends.
+* {{I|Car Battery}}: No effect.
+** Car Battery + {{I|Book of Virtues}}: Summons 2 wisps and one Cube of Meat upon use.
+
+== In-game Footage ==
+{{#ev:youtube|emmFSBkDAOA}}
+
+== Trivia ==
+* In earlier versions of ''Repentance'', this item used to kill any characters with red hearts when used while they were turned into {{c|The Lost}}.
+* The description on this item matches the name of the item {{I|A Pound of Flesh}}.
+* The pickup quote "A pound of flesh" is a reference to Shakespeare's ''[[wikipedia:The Merchant of Venice|The Merchant of Venice]]''.
+* This item might be a reference of the infamous suicide of Petunia from Happy Tree Friends' episode [https://youtu.be/-8ZjTWvrkbQ Wishy Washy] (content warning: extreme cartoon gore).
+
+{{nav|fr=Épluche-Légumes}}

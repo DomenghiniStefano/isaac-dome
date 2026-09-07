@@ -1,0 +1,62 @@
+{{CATEGORIES}}{{STORAGE}}
+{{infobox passive collectible
+ | name        = 20/20
+ | files name  = 20 20
+ | image name  = * {{dlcalt|na=Rebirth|nr=Afterbirth}}
+ | id          = 245
+ | quote       = Double shot
+ | description = Isaac fires two tears at once, one from each eye. {{dlc|r}} 0.8× [[damage]] multiplier.
+ | quality     = 4
+ | tags        = summonable offensive
+}}
+
+{{cit|p|||20/20}}
+
+== Effect ==
+* Isaac fires two tears at once, one from each eye.
+* {{dlc|r}} 0.8× [[damage]] multiplier.
+
+== Notes ==
+* Unlike other multiple shot items like {{i|Mutant Spider}} or {{i|The Inner Eye}}, 20/20 does not reduce the rate of fire.
+* The maximum amount of tears per volley that can be reached by combining and/or duplicating 20/20, {{i|The Inner Eye}}, {{i|Mutant Spider}}, and {{i|The Wiz}} is 16.
+
+== Synergies ==
+* {{i|Blood Clot}} / {{i|Chemical Peel}}: Every second row of tears has increased damage.
+* {{dlc|a}}{{i|Brimstone}}: Two Brimstone shots are fired, without an increase in charge time.
+* {{i|Diplopia|anr}}: Every additional 20/20 adds 2 more tears in a tight pattern.
+** {{dlc|r}} Adds one more tear without further lowering damage.
+* {{dlc|a}}{{i|Doctor's Remote}} / {{i|Epic Fetus}}: Replaces the single missile strike with a barrage of two consecutive missiles.
+* {{dlc|anr}}{{i|The Inner Eye}} / {{i|Mutant Spider}}: Adds two/three tears to each shot, with no extra fire rate decrease.
+** {{dlc|r}} Removes the fire rate penalty while reducing damage to 80%. Additional copies will add one additional tear with no further change to damage/fire rate.
+* {{C|Keeper|anr}}: Fires 5 tears with no fire rate decrease.
+** {{dlc|r}} Decreases tears' spread. Reduces damage dealt to 80%, but makes his base tear stat equal 2.73. This is a damage per second increase if tear rate before picking up was less than 3.75; otherwise this is a damage per second decrease. This is the same for {{C|Tainted Keeper}}.
+* {{i|The Ludovico Technique}}: The Ludovico tear gains one smaller tear orbiting the main one, each dealing the same amount of damage.
+* {{dlc|a}}{{i|Monstro's Lung}}: Adds two tears to the tear barrage, for a total of 16.
+* {{Dlc|r}}{{I|Polyphemus}}: Grants additional +5 flat damage and removes the fire rate penalty, firing 2 tears per shot.
+* {{i|Sprinkler}}: Fires two tears at once that almost completely overlap each other.
+* {{Dlc|a}}{{I|Technology}}: Fires two technology shots simultaneously.
+* {{i|Tractor Beam}}: Both tears are fired along the beam. Only one tear can be seen, as they overlap each other.
+* {{i|The Wiz}}: Two tears are fired in each direction.
+
+== Interactions ==
+* {{dlc|na}}{{i|Brimstone}}: Overrides 20/20.
+* {{dlc|na}}{{i|The Inner Eye}}: Overrides 20/20.
+* {{i|Kidney Stone}}: Increase number of tears in tear barrage; however, only fires one stone.
+* {{i|Loki's Horns}}: Only occasionally fires one tear in the other three directions.
+* {{i|Mom's Eye}}: Only occasionally fires one tear out of the back of Isaac's head.
+* {{dlc|na}}{{i|Mom's Knife}}: Overrides 20/20.
+* {{dlc|na}}{{i|Monstro's Lung}}: Overrides 20/20.
+* {{dlc|na}}{{i|Mutant Spider}}: Overrides 20/20.
+* {{i|Sad Bombs}}: Does not affect the number of tears when bombs explode.
+* {{dlc|na}}{{i|Technology}}: Overrides 20/20.
+* {{i|Varicose Veins}}: No effect on number of tears when taking damage.
+
+== In-game Footage ==
+{{#ev:youtube|LVKCgWHV9DM}}
+
+== Trivia ==
+* 20/20 is an idiom that refers to someone with near-perfect vision.
+* Despite only having one eye, {{C|Cain}} shoots two tears at once with this item.
+* {{dlc+|r}} This item is used in {{chal|Seeing Double}}.{{dlc-}}
+
+{{nav}}

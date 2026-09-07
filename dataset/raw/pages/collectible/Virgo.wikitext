@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | id          = 303
+ | quote       = You feel refreshed and protected
+ | description = Adds a chance to give a [[shield]] that nullifies all incoming damage for 10 seconds upon taking damage. Also converts bad [[pills]] into good pills.
+ | quality     = 2
+ | tags        = summonable stars
+}}
+
+{{cit|p}}
+
+== Effects ==
+* Grants a chance to trigger the {{i|Book of Shadows}} effect upon taking damage, creating a [[shield]] that nullifies all types of damage for 10 seconds.
+** The activation chance depends on the [[luck]] stat and goes up to 100% with 10 Luck.
+* Converts all negative [[pill]]s into positive ones, but does not identify them.
+
+== Notes ==
+* The shield negates health loss from {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s.
+* Does not prevent [[Red Heart container]] loss from {{R|Devil Room}} deals.
+* Bad pills already obtained/dropped will be converted to their "good" counterpart.
+* As bad pills will turn into good pills, it is possible for two different colored pills to have the same effect.
+
+== Synergies ==
+* {{Dlc|r}}{{i|Celtic Cross}} / {{i|The Polaroid}}: Virgo can trigger at the same time as Celtic Cross or The Polaroid, cumulating to up to 22 seconds of shield.
+
+== Interactions ==
+* {{i|False PHD}}: Pills can be both good and bad again. Taking bad pills still applies the benefits from False PHD.
+
+== In-game Footage ==
+{{#ev:youtube|wkvcrSNwn14}}
+
+{{nav|zodiac|fr=Vierge}}
+[[Category:Damage-preventing items]]
+[[Category:Damage-triggered items]]

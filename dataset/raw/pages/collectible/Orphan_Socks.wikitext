@@ -1,0 +1,38 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 571
+ | quote       = Speed up + your feet feel stronger
+ | description = Prevents [[creep]] and floor [[spikes]] from damaging Isaac. Also gives Isaac +0.3 [[speed]] and 2 {{e|Soul Heart}}s.
+ | quality     = 2
+ | tags        = nolostbr summonable
+}}
+
+{{cit|p|r}}
+
+== Effects ==
+* Gives Isaac +0.3 [[speed]] and 2 {{e|Soul Heart}}s.
+* Isaac becomes immune to [[spikes]] and [[creep]].
+
+== Notes ==
+* Does not prevent damage from {{R|Curse Room}} doors, {{E|Spiked Chest}}s, or [[Rocks#Spiked Rocks|spiked rocks]], but does protect against spiked rock bridges.
+* Does not prevent use of a {{R|Sacrifice Room}}.
+
+== Interactions ==
+* {{i|A Pound of Flesh}}: Does not offer immunity against spikes placed around pickups.
+
+== In-game footage ==
+{{#ev:youtube|https://youtu.be/gsInFDEZdww}}
+
+== Trivia ==
+* Orphan socks refer to socks that are missing their matching pair.
+* [[anti:Orphan Socks|Orphan Socks]] originates from the ''Antibirth'' mod, and by extension, from the ''Community Remix'' mod for the flash version.
+** In ''Antibirth'', it would allow Isaac to only take damage from {{r|Curse Room}} doors via exiting them, similar to [[flight]], and give {{C|Magdalene}} immunity altogether in {{chal|Cursed!}}.
+** In ''Community Remix'', it was instead called ''The Socks''.<ref>https://web.archive.org/web/20221115035837/http://platinumgod.co.uk/old/index.html</ref>
+* The "your feet feel stronger" part of the description is exactly the same as the description of {{t|Callus}}, which gives Isaac immunity to [[spikes]] and [[creep]].
+* Orphan Socks is the rarest item that can be acquired from a {{E|Locked Chest}}, along with {{i|Lead Pencil}}.
+
+== References ==
+<references />
+
+{{nav|fr=Chaussettes Orphelines}}
+[[Category:Damage-preventing items]]

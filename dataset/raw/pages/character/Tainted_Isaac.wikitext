@@ -1,0 +1,87 @@
+{{header tainted characters}}
+{{infobox character
+ | dlc         = r
+ | id          = 21
+ | health      = {{hearts|red=3}}
+ | pickups     = 1 [[bomb]]
+ | unlocked by = The Broken
+}}
+'''Tainted Isaac''' is a [[Characters|character]] added in ''[[The Binding of Isaac: Repentance]]''. He is the alternate version of {{c|Isaac}}. Tainted Isaac is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|Soul of Cain}} to access a special room in one of the walls while playing as Isaac.
+
+== Notes ==
+* Tainted Isaac can only hold 8 passive items at a time. Tainted Isaac's current 8 passive items are visible in the top-left corner of the screen, with one highlighted by a white square. Upon picking up a 9th passive item, the item currently selected, or rather the item currently in the white square, will be dropped on a pedestal in front of Tainted Isaac. The swap key can be pressed to cycle which item is selected.
+* In exchange for this, all rerollable item pedestals, {{ip|Shop|text=Shop items}}, and {{ip|Devil Room|text=Devil deals}} will cycle between two items for the player to choose from, essentially a stronger version of {{i|More Options}} + {{i|There's Options}}. Whichever item is currently visible when the item is picked up will be the one selected. Once an item has been picked up it will no longer cycle between items.
+* {{i|The Polaroid}}, {{i|The Negative}}, {{i|Key Piece 1}}, {{i|Key Piece 2}}, {{i|Knife Piece 1}}, {{i|Knife Piece 2}}, {{i|Dad's Note}}, {{i|Birthright}}, the passive item created when {{I|Damocles}} is used (the one with item ID "<code>656</code>"), and all activated items are exempt from this limit and do not take up inventory space. Swallowed [[trinkets]] also do not count towards the 8 item limit.
+* Dropping items causes their passive buffs to be removed, however health or pickups will be kept (such as from{{i|Breakfast}} or {{i|Pageant Boy}}). Note that pickups will be kept regardless of which way they were gained (picked up or directly added to the counters).
+* Even if one of the item is a [[Item Pool#Set Drops|set drop]], the other one is still randomly pulled from the current room's item pool.
+
+== Strategy ==
+* While most passive items have their effects "bound" to them, with the changes reverted with the loss of the item, some passive items have a permanent effect that triggers on pickup. HP upgrades like {{I|Breakfast}}, and pickup spawners like {{I|Pageant Boy}} can all be left behind immediately. Many items not having their effects reverted are listed in Synergies and Interactions section.
+** Rerolled health items makes Tainted Isaac lose the health "bound". Using the {{I|D4}} or {{I|D100}} or {{I|D infinity}} to reroll passive items then dropping gained health items makes it easier for him to accumulate more health containers.
+* Stat changes from [[Pills]] are permanent. This can make them either extremely useful or dangerous, as high natural stats mean less need to carry stat up items, but Tainted Isaac cannot counteract stat downs with items as easily due to the limited inventory.
+* Due to the limited amount of items, [[Trinkets]] have a more important role with this character. Therefore any item helping to gain some, such as {{I|Mom's Box}}, will help a lot. Items or pickups that allow to absorb them ({{I|Marbles}}, {{I|Smelter}}, [[Gulp!]]...) are even more important as absorbed trinkets do not take up an item slot.
+* [[Transformations]] are permanent, and the progress towards transformations by passive items remains if it is replaced with a new item.
+** Transformation progress of an item ''will be lost'' if the passive item is removed in any other way, such as being rerolled with{{I|D4}}, or destroyed by {{I|Sacrificial Altar}}
+* Items that would add items directly to Tainted Isaac (such as {{I|Cambion Conception}}, {{I|Monster Manual}}, etc) or pickups that would do the same (such as {{P|Soul of Lilith}}) do not take up an inventory slot.
+** If {{p|Soul of Lilith}} is used while Tainted Isaac has an empty slot, the familiar granted by the soul ''will'' take up the slot and can be dropped in exchange for another item as normal.
+* On item choice, instead of building up stats, it's more effective to find and optimize strong synergies.
+* In Co-op mode, the other character can pick up the items that Tainted Isaac drops but this item will no longer contribute to the transformation it is a part of.
+** Killing the Boss of a floor in Co-op mode will spawn a Boss item that cycles between two different options, but any subsequent options will not come with an extra choice.
+* Cards like {{P|XIV - Temperance}} or {{P|XX - Judgement}} can be extremely powerful, as they allow to spawn an item from a specific item pool. For example, donating to a Blood Donation Machine will spawn either {{I|Blood Bag}} or {{I|IV Bag}} and cycle with a second item pulled from the current room item pool. This can be used to get powerful items from Angel / Devil Room, or help in completing the collection page if the player wishes to avoid a full game break (such as using {{C|Tainted Cain}} or {{I|D20}}) and is actively looking for items in a specific pool.
+* Similar to the above, {{P|VI - The Lovers?}}, {{P|VIII - Justice?}} and {{P|XVII - The Stars?}} allow the generation of items from a specific pool, directly through {{P|VI - The Lovers?}} and {{P|XVII - The Stars?}}, and indirectly through the golden chests spawned by {{P|VIII - Justice?}} if they happen to contain items.
+
+== Synergies ==
+* {{i|Abyss}} / {{i|Void}}: are extremely powerful with Tainted Isaac. Any item left behind (especially health ups and items that give one-time effects such as {{i|Booster Pack}}) can be consumed for stat upgrades or red attack locusts.
+* {{i|Birthright}}: Gives Tainted Isaac four more item slots without taking up an item slot itself.
+** Birthright can be rerolled by items such as the {{I|D4}}, but it will only partially undo the effect of Birthright. If you had more than 8 items at the time of reroll, the extra items are retained above the usual limit. These extra items do take full effect, and can be rerolled, but are not displayed and cannot be selected to drop next in the set of items.  Collecting Birthright again will show these extra items.
+** If Tainted Isaac collects multiple Birthrights (whether by using {{I|Death Certificate}}, {{I|Diplopia}}, {{I|Crooked Penny}}, or any other means) the effect does NOT stack and Isaac receives no additional item slots.
+* {{I|Brittle Bones}} / {{i|Candy Heart|nr+}} / {{i|Soul Locket|nr+}} / {{i|Death's List}} / {{I|Consolation Prize}} / {{I|Experimental Treatment}} / {{I|Redemption}}: The stat upgrade(s) will not be reverted when left behind.
+* {{I|Eden's Blessing}}: Grants a random item at the start of your next run, even if you are to drop it and not finish your run with it.
+* {{i|Lemegeton}}: Each spawned wisp grants a passive item effect which won't count towards an inventory slot. The wisps can be destroyed, losing the corresponding passive effect. Protective items or battery items help maintain wisps throughout a run.
+* {{I|Lost Soul}}: Respawns after being hit if swapped for another item and picked back up again, virtually guaranteeing rewards as long as Isaac's inventory is full.
+* {{I|Lucky Foot}} / {{I|Virgo}} / {{I|PHD}}: Can help Tainted Isaac build up a large amount of stat boosts via pills without having items tied to them. Pills that were negative will revert back when the item is dropped.
+** Pills stay identified when removing PHD.
+* {{I|Luna}}: The stat upgrade(s) for the current floor will not be reverted when left behind.
+* {{P|XX - Judgement?}}: Allows Tainted Isaac to deplete the current item pool faster (given full inventory) when an item pedestal is present.
+** With {{I|Sacred Orb}} combined, powerful items can be obtained way more easily.
+* {{I|Strawman}}: Tainted Isaac can give any excess items beyond his capacity to the Strawman, severely mitigating the downside of the character until the Strawman dies.
+** Items like {{i|Glitched Crown}}, {{i|The Mind}}, or {{i|Goat Head}} that don't directly affect your character will provide their full benefit without taking up an inventory slot.
+
+== Interactions ==
+* {{i|Bag of Crafting}}: Items created by it do not cycle between two options.
+* {{I|Schoolbag}} + {{I|Glowing Hourglass}}: If you change your Schoolbag for another item while Glowing Hourglass is in your second active slot, Glowing Hourglass will be dropped on the ground fully charged.
+* {{I|Binge Eater|dlc=r}}: The stat upgrades will disappear if it or the food items are left behind. The temporary damage up will not be reverted, but will still decrease over time as normal.
+* {{i|Book of Virtues}}: Is considered a passive item by the game and will take up one of Tainted Isaac's inventory slots.
+* {{I|Cambion Conception}} / {{I|Immaculate Conception}}: Familiars granted will not take up inventory slots, but will disappear if those items are left behind and will not be regained if Isaac picks them up again.
+* {{I|Clicker}}: If Tainted Isaac turns into another character, whether by the Clicker or resurrection items, any cycling item pedestals seen by Tainted Isaac will remain cycling for the new character until they are collected or rerolled.
+* {{I|Crooked Penny}} / {{i|Diplopia}}: Makes each copied pedestal rotate between the item that was on each pedestal at the time it was used and a random second item.
+* {{i|Damocles}}: Extra item pedestals won't rotate between two items. Damocles itself will not take up an inventory slot and cannot be removed.
+* {{i|False PHD}}: Dropping it will make pills effects back to normal, but pills will remain identified. Damage upgrades will disappear if it is left behind, but will remain tied to the item and can be picked back up again. This will not, however, revert back the decreased stats.
+* {{i|GB Bug}}: When his inventory is full, he is able to swap it with another item from a pedestal. Every time GB Bug is picked up, the familiar will be re-summoned even if a room has not been cleared since the last re-roll. This allows Tainted Isaac to re-roll pickups indefinitely until they become chests, increasing the amount of pickups or giving items. However, the pickups may also re-roll into troll bombs, effectively removing a pickup to re-roll. This can be mitigated by having {{t|Safety Scissors}}.
+* {{i|Heartbreak}}: The starting broken hearts are removed when Heartbreak is dropped however any broken hearts gained from lethal damage will persist.
+* {{i|Keeper's Sack}}: The stat upgrades will disappear if it is left behind, but will remain tied to this item. If Isaac picks it up again, he will regain them. Dropping bought items will not remove the stat upgrades gained by buying them. If Isaac buys an item and it results in him dropping Keeper's Sack, he will not get any stat upgrades from buying it.
+* {{i|Greed's Gullet}}: The heart containers will disappear when left behind.
+* {{I|Missing No.}} can be dropped when Tainted Isaac's inventory is full, which makes it easier to get clear benefit from than other characters.  Tainted Isaac can carry from floor to floor until he rolls a useful combination of items, and then can choose to drop it so that it doesn't reroll his items on future floors.
+* {{P|0 - The Fool?}}: May spawn coins and/or bombs as pedestal items such as {{I|Boom!}} or {{I|A Quarter}}, however these pedestals won't cycle between two different items.
+* {{I|Rock Bottom}}: Prevents any stat from decreasing, letting the effects of picked up items linger even after discarding them. However, raising stats beyond the values reached will be more difficult after leaving the source item, and swapping away Rock Bottom resets them to Tainted Isaac's current set.
+* {{i|Vengeful Spirit}}: Wisps will remain until the end of the floor if the item is left behind.
+
+== Unlockable Items ==
+{{achievement text | Mom's Lock, The Stars, Soul of Isaac, Mega Chest, Spindown Dice, Dice Bag, Glitched Crown }}
+
+== Gallery ==
+<gallery>
+File:Transition Isaac Tainted.png|Tainted Isaac's transition screen portrait.
+File:Start_Tainted_Isaac.png|The spawn floor when playing Tainted Isaac.
+File: Tainted Isaac Menu Icon (Locked).png|Tainted Isaac's locked character icon, depicting a locked closet [[Title Sequence#Isaac's Door|with Isaac peeking through a crack in the door.]]
+File: Repentance Boss Designs 1.jpg|Concept art of Tainted Isaac (alongside other characters) by Edmund McMillen, featuring a scrapped starting item.
+</gallery>
+
+== Trivia ==
+* The achievement for unlocking Tainted Isaac is "The Broken". This is the name used in ''The Binding of Isaac: Four Souls''.
+* Tainted Isaac's unlock for Ultra Greedier is the {{P|XVII - The Stars?}}. Typically, this card symbolizes a lack of faith and despair. This is probably a reference to the fact that Isaac is shown to view himself as evil, and believing his only escape out is to end his own life.
+
+== Bugs ==
+{{bug|Sometimes items generated by {{I|TMTRAINER}} can bypass or reduce Tainted Isaac's item limit. Attempting to pick up a non-glitched item with a glitched item selected for replacement will add the normal item to Isaac's permanent inventory.}}
+{{Bug|Using {{I|Esau Jr.}} as Tainted Isaac can cause some items to bypass the item limit. One of the ways to do this is by having full inventory and a "quest" item (such as {{i|The Negative}}), and switch to and from Esau Jr repeatedly. After each switch, Tainted Isaac should replace at least one of his passive items. After a few switches, some item slots will appear to be empty or will depict the "quest" item(s). At that point, certain slots are bugged, and Tainted Isaac can take items, ignoring the limit if such a slot is selected. (more information is needed)}}
+{{nav|character|isaac unlock|tainted isaac unlock|fr=Isaac Impur}}

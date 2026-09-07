@@ -1,0 +1,33 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 716
+ | quote       = Spending power
+ | description = Gives [[range]], [[speed]], or [[damage]] when buying things from a shop. Spawns three [[coins]] and a {{E|Key}} on pickup.
+ | quality     = 3
+ | tags        = summonable offensive
+ | unlocked by = Keeper's Sack
+}}
+
+{{cit|up|r}}
+<!--Yes, the item looks like balls, and it's probably on purpose. Please do not add that to the page. It will just be deleted.-->
+
+== Effects ==
+* Spawns 3 random [[coin]]s and a {{E|Key}} on the floor when picked up.
+* Every 3 coins spent on items and pickups grants in a cycle: +0.5 [[damage]], then +0.25 [[range]], then +0.03 [[speed]].
+
+== Notes ==
+* The coins and key spawned on pickup can be any of their variants.
+* Keeper's Sack works with anything that costs coins, including [[Devil deal]]s/{{R|Black Market}}s as {{c|Keeper}} / affected by {{t|Keeper's Bargain}} or {{i|A Pound of Flesh}}, items or pickups created by {{i|Keeper's Box}}, the Angel shop created by {{I|The Stairway}}, and the second shop created by {{i|Member Card}}.
+* The stat upgrades are tied to Keeper's Sack; losing Keeper's Sack (for instance, using {{i|D4}}, crossing a 1-pip or 6-pip {{R|Dice Room}}, or using {{p|XVII - The Stars?}}) will result in the loss of all obtained stats.
+
+== Interactions ==
+* {{i|Bag of Crafting}}: Purchasing a pickup by swinging the Bag of Crafting at it will still give the stat upgrades from Keeper's Sack.
+* {{i|Diplopia}}/{{i|Crooked Penny}}: Extra copies of Keeper's Sack do not grant any more stats from purchasing items.
+* {{i|Steam Sale}}: As items/pickups cost less money, Isaac will gain fewer stats for making the same purchases.
+* {{t|Store Credit}}: Anything bought will not give stats.
+* {{C|Tainted Keeper}}: Every {{R|Devil Room}}, {{R|Treasure Room}}, {{R|Angel Room}} etc. will give stat ups, as long as the items are bought.
+
+== In-game footage ==
+{{#ev:youtube|QnIe5b1X12Y}}
+
+{{nav|keeper unlock|mother unlock|fr=Bourse du Gardien}}

@@ -1,0 +1,42 @@
+{{infobox passive collectible
+ | dlc         = r
+ | id          = 626
+ | quote       = ???
+ | description = Combined with {{i|Knife Piece 2|n}}, creates a knife [[familiar]] that damages enemies and can open the door to the {{s|Corpse}}.
+ | quality     = 0
+ | tags        = uniquefamiliar lazarusshared noeden quest
+}}
+
+{{cit|p|r}}
+
+== Effect ==
+* Spawns a knife handle familiar that follows Isaac.
+* Generates a room in {{s|Mines}} / {{s|Ashpit}} II for {{i|Knife Piece 2}} to spawn in.
+* Combines with {{i|Knife Piece 2}} to form a knife familiar that launches itself in the direction Isaac shoots, dealing 25 damage to and piercing enemies it hits.
+* Launching it at the red door at the end of {{s|Mausoleum}}/{{s|Gehenna}} II will open the door, destroying the knife in the process.
+
+== How to Acquire ==
+* A white fire place will be present in {{s|Downpour}} / {{s|Dross}} II. Touching the white fire place temporarily transforms Isaac into {{C|The Lost}}. Another room on the floor has a mirror, which Isaac can enter while a ghost. Walking through the mirror will teleport Isaac to the [[Mirrored World]]. The Knife Piece is in the Mirrored World's {{R|Treasure Room}}. After acquiring it, Isaac can return to the normal floor by walking through the mirror again.
+** The mirror floor is technically a separate area to the normal floor with an identical layout, meaning all rooms will not be cleared, and that destroying obstacles in one area has no effect on the other.
+** No other items or pickups naturally spawn in the mirror floor, although they can still be generated or awarded for clearing a room.
+** If the character is {{C|The Lost}}, {{C|Tainted Lost}}, {{C|Tainted Jacob}} in his Lost form, {{C|Tainted Forgotten}}'s Soul, or any character upon using {{p|Soul of the Lost}}, the mirror can be entered without interacting with the white campfire.
+*** Since Tainted Forgotten does not need to interact with the white fire to enter the mirror, their normal health remains intact.
+*** Despite the Soul of the Lost only lasting for one room in most circumstances, when used to enter the mirror, the Lost form will be kept until Isaac leaves the mirror world, meaning Isaac cannot keep his health on his way to obtain the Knife Piece.
+** Should the player use a {{I|Forget Me Now}} on this floor, it's possible (though useless) to acquire two separate Knife Piece 1s.
+*** However, the spare Knife Piece can be rerolled just like any other pedestal item.
+
+== Notes ==
+* Isaac will remain as The Lost until after he has cleared a room of enemies; it does not matter whether this room is in the mirror world. His normal form will be restored upon entering any room outside the mirror world. This effect can extend to the next floor.
+* If you don't have {{i|Holy Mantle}} unlocked on {{C|The Lost}}, you don't get Holy Mantle while in ghost form.
+* The red door can alternatively be opened using {{i|Cracked Orb}}, {{i|Sharp Key}}, or {{p|Soul of Cain}}.
+* The knife piece can be rerolled, in the event that {{E|Mother}} is not the desired completion mark.
+* '''Knife Piece 1''' takes 6th priority on the line of following [[familiar]]s while the knife familiar created from both knife pieces takes 5th priority.
+* It's possible to see the Knife Piece 1 multiple times by using {{i|Forget Me Now}} or {{i|R Key}}, allowing you to use the {{i|The D6}} or {{i|Void}} on one of the duplicates while still collecting the other.
+
+== In-game Footage ==
+{{#ev:youtube|hqL2twpQ-hM}}
+
+== Trivia ==
+* [[anti:Knife Piece 1|Knife Piece 1]] is from the ''Antibirth'' mod. In ''Antibirth'', Isaac would acquire Knife Piece 1 by bombing open a hidden stone chest instead of entering the Mirrored World. Once bombed, the stone chest would remain open on subsequent runs.
+** Knife Piece 1 was also one of 3 knife pieces which needed to be combined to make the knife familiar instead of 2.
+{{nav|fr=1er Morceau de Couteau}}
