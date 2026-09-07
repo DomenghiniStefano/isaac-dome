@@ -179,6 +179,29 @@ impl Rules {
     }
 }
 
+static EMBEDDED: std::sync::OnceLock<Result<Rules, RulesError>> = std::sync::OnceLock::new();
+
+/// The rules compiled into the binary. There is deliberately no runtime path for "rules
+/// missing": there is no file that can be missing. Rules read from disk at runtime would
+/// buy updatability-without-recompiling at the cost of one more failure mode — a trade
+/// worth making for `log-watch`, whose patterns chase the game's patches, and not here,
+/// where they chase a wiki snapshot that is already inside the binary.
+pub fn embedded() -> Result<&'static Rules, &'static RulesError> {
+    EMBEDDED
+        .get_or_init(|| {
+            let r: Requirements = serde_json::from_str(include_str!("../rules/requirements.json"))
+                .map_err(|e| RulesError::Malformed {
+                    reason: e.to_string(),
+                })?;
+            let c: Corrections = serde_json::from_str(include_str!("../rules/corrections.json"))
+                .map_err(|e| RulesError::Malformed {
+                    reason: e.to_string(),
+                })?;
+            Rules::build(r, c)
+        })
+        .as_ref()
+}
+
 /// The key a target is addressed by in `corrections.json`: `kind:label`. The label is the
 /// bridge, not the id — the wiki's entity ids and the catalog's boss ids are two different
 /// numbering spaces (Gish is entity 43 and boss 19).
