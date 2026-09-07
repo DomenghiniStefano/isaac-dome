@@ -1,0 +1,73 @@
+//! Moving a row, and repairing the order around it.
+//!
+//! The queue is yours to order, and the graph is the one thing it may not contradict. A
+//! move is never refused: the rows that must yield are moved, and the moved row lands
+//! where you asked whenever that is a position at all.
+
+use crate::model::{Queue, Row};
+
+/// "a requires b", transitively. The queue asks this and nothing else, which keeps this
+/// crate independent of how the graph computes it — and lets the tests state the relation
+/// they mean instead of deriving it.
+pub trait Dependencies {
+    fn requires(&self, a: u32, b: u32) -> bool;
+}
+
+impl Queue {
+    /// Moves a row and returns the index it actually landed at.
+    ///
+    /// Rows that depend on it gather immediately below; rows it depends on gather
+    /// immediately above; everything else keeps its relative order. The landing index is
+    /// clamped so the prerequisites have somewhere to be: dropping a row at the top with
+    /// three prerequisites queued asks for three rows above position zero, which is not a
+    /// position. Downward moves are never clamped — dependents can always be pushed
+    /// further down.
+    pub fn move_row(&mut self, achievement: u32, to: usize, deps: &impl Dependencies) -> usize {
+        let Some(from) = self.position(achievement) else {
+            // Not in the queue: nothing to move, and not an error.
+            return to.min(self.rows().len().saturating_sub(1));
+        };
+        let mut rows: Vec<Row> = self.rows().to_vec();
+        let moved = rows.remove(from);
+
+        // The two relations behave differently, and the asymmetry is the rule itself:
+        //
+        // **Dependents are dragged.** Move a prerequisite down and what needs it follows,
+        // gathered right below it — the case this feature was asked for.
+        //
+        // **Prerequisites are a wall.** They are never moved: one already above the row is
+        // fine where you put it, and hauling it into a block would reorder rows you had
+        // arranged by hand. They only stop the row from rising past them.
+        //
+        // A row the graph can't compute answers `false` both ways, so it neither drags nor
+        // walls: it stays exactly where it is.
+        let mut dragged = Vec::new();
+        let mut rest = Vec::new();
+        for r in rows {
+            if deps.requires(r.achievement, achievement) {
+                dragged.push(r);
+            } else {
+                rest.push(r);
+            }
+        }
+
+        // The floor: one past the last prerequisite left in the list. In a queue that was
+        // valid before the move every prerequisite precedes every dependent, so this is
+        // the only bound the rise has.
+        let floor = rest
+            .iter()
+            .rposition(|r| deps.requires(achievement, r.achievement))
+            .map(|i| i + 1)
+            .unwrap_or(0);
+        let landed = to.clamp(floor, rest.len());
+
+        let mut out = Vec::with_capacity(rest.len() + dragged.len() + 1);
+        let tail = rest.split_off(landed);
+        out.append(&mut rest);
+        out.push(moved);
+        out.append(&mut dragged);
+        out.extend(tail);
+        *self = Queue::from_rows(out);
+        landed
+    }
+}

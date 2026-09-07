@@ -129,6 +129,26 @@ impl Graph {
         }
         Eval { infos, diagnostics }
     }
+
+    /// The not-done achievements standing between the profile and this node, transitively,
+    /// in ascending id order.
+    ///
+    /// Empty when the node is done, when it is available now, when the graph can't say,
+    /// and when the node isn't in the graph at all — four different situations that the
+    /// caller tells apart from `NodeInfo`, not from this list. It answers one question:
+    /// what would still have to be earned.
+    pub fn missing_chain(&self, achievement: u32, flags: Option<&[bool]>) -> Vec<u32> {
+        let Some(flags) = flags else {
+            return Vec::new();
+        };
+        let done = |id: u32| flags.get(id as usize).copied().unwrap_or(false);
+        let mut memo = BTreeMap::new();
+        let mut stack = Vec::new();
+        let mut cycles = Vec::new();
+        transitive(self, achievement, &done, &mut memo, &mut stack, &mut cycles)
+            .map(|set| set.into_iter().collect())
+            .unwrap_or_default()
+    }
 }
 
 /// The set of not-done achievements standing between the profile and this node. `None`

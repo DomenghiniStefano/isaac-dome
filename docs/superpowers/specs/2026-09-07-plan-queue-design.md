@@ -76,15 +76,15 @@ around the moved row:
 - Everything else keeps its relative order and fills in around the block.
 
 **The row lands at `to_index` whenever that is possible, and as close to it as the graph
-allows when it isn't.** Dropping a row at the very top when it has three prerequisites in
-the queue asks for those three to sit above position zero, which is not a position — so the
-row lands at index three, with its three prerequisites contiguous above it. The clamp is
-therefore `to_index.clamp(prerequisites_in_queue, rows - dependents_in_queue)`, and it
-explains itself on screen: what stopped the row is sitting right there, immediately above.
+allows when it isn't.** Dropping a row at the very top when three of its prerequisites are
+queued asks for those three to sit above position zero, which is not a position — so the row
+lands just below the last of them. The floor is therefore one past the last prerequisite;
+there is no ceiling, because dependents are dragged rather than jumped over.
 
-Moving **downward is never clamped** — dependents can always be pushed further down — which
-is the case the rule was stated for: move a prerequisite below what needs it, and what needs
-it follows.
+Moving **down** is bounded only by the list's end: the dependents come along, so there is
+nothing to jump over. A prerequisite dropped on the last row lands one above its dragged
+block — which is the rule this was written for, and it looks exactly like what you asked
+for: the parent moved, the children followed.
 
 Dependency here means the **transitive** prerequisite relation from the graph, restricted
 to rows present in the queue. A prerequisite not in the queue constrains nothing: it isn't
@@ -216,7 +216,7 @@ reason about than teaching the frontend to replay the repair.
 
 - A move puts the row at the requested index whenever the constraint allows it, and at the
   clamped index — `to.clamp(prerequisites_in_queue, rows - dependents_in_queue)` — when it
-  doesn't. Downward moves are never clamped.
+  doesn't. The clamp works in both directions.
 - Moving a prerequisite below its dependent drags the dependent below it.
 - Moving a dependent above its prerequisite pulls the prerequisite above it.
 - Yielded rows keep their relative order.

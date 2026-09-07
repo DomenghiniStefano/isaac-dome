@@ -7,7 +7,7 @@ mod migrations;
 use std::path::Path;
 
 use ipc::{Goal, GoalId, TargetKey};
-use rusqlite::{params, Connection};
+use rusqlite::{params, Connection, OptionalExtension};
 
 pub use migrations::SCHEMA_VERSION;
 
@@ -129,6 +129,51 @@ impl Store {
         self.conn
             .execute("DELETE FROM goals WHERE id = ?1", params![id.as_str()])
             .map(|n| n > 0)
+            .map_err(StoreError::from_sqlite)
+    }
+
+    /// The plan queue, as it was written.
+    ///
+    /// The nested `Result` is deliberate and mirrors `goals()`: the outer one is "the
+    /// database failed", the inner one is "the document didn't parse". They are different
+    /// situations — a broken file against a plan written by a version that knew more — and
+    /// the screen says different things about them.
+    pub fn queue(&self) -> Result<Result<plan::Queue, plan::QueueError>, StoreError> {
+        let found: Option<String> = self
+            .conn
+            .query_row("SELECT rows_json FROM plan_queue WHERE id = 1", [], |r| {
+                r.get(0)
+            })
+            .optional()
+            .map_err(StoreError::from_sqlite)?;
+        // No row yet is an empty queue, not a failure: a fresh database has no plan.
+        Ok(match found {
+            Some(json) => plan::Queue::from_json(&json),
+            None => Ok(plan::Queue::default()),
+        })
+    }
+
+    /// Replaces the document. The whole order is one value, so a write is one statement and
+    /// there is no half-applied reorder to recover from.
+    pub fn set_queue(&self, q: &plan::Queue) -> Result<(), StoreError> {
+        self.write_queue_json(&q.to_json())
+    }
+
+    /// Writes a document straight in, for the test that an unreadable queue is declared
+    /// rather than flattened to an empty one. There is no other way to reach that state
+    /// through the public API, which is the point of the API.
+    pub fn __corrupt_queue_for_tests(&self, raw: &str) -> Result<(), StoreError> {
+        self.write_queue_json(raw)
+    }
+
+    fn write_queue_json(&self, raw: &str) -> Result<(), StoreError> {
+        self.conn
+            .execute(
+                "INSERT INTO plan_queue (id, rows_json) VALUES (1, ?1)
+                 ON CONFLICT(id) DO UPDATE SET rows_json = excluded.rows_json",
+                params![raw],
+            )
+            .map(|_| ())
             .map_err(StoreError::from_sqlite)
     }
 }

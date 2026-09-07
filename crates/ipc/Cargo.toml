@@ -11,6 +11,7 @@ core-save = { path = "../core-save" }
 unpack = { path = "../unpack" }
 catalog = { path = "../catalog" }
 graph = { path = "../graph" }
+plan = { path = "../plan" }
 wiki = { path = "../wiki" }
 
 [dev-dependencies]

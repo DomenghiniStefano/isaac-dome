@@ -7,10 +7,10 @@ use rusqlite::Connection;
 use crate::StoreError;
 
 /// The version this binary knows how to read and write.
-pub const SCHEMA_VERSION: u32 = 1;
+pub const SCHEMA_VERSION: u32 = 2;
 
 /// Index = version − 1. Append at the end, never modify a migration that's already shipped.
-const MIGRATIONS: [&str; 1] = [
+const MIGRATIONS: [&str; 2] = [
     // 1: the user's goals. `target_json` is the serialized `ipc::TargetKey` -- identity
     // alone, never name or icon: a column per variant would be a schema that changes
     // with every new kind of unlock.
@@ -20,6 +20,16 @@ const MIGRATIONS: [&str; 1] = [
         created_unix INTEGER NOT NULL,
         note TEXT,
         seq INTEGER NOT NULL
+    );",
+    // 2: the plan queue, as one JSON document rather than a row per achievement. The
+    // order is the position in the array, so there is no sequence column that could
+    // contradict itself. One row, pinned by the CHECK: a second document would be a
+    // second answer to "what is the order". It seeds nothing — resolving a saved target
+    // to the achievement that unlocks it needs the catalog, which this crate doesn't
+    // have and doesn't depend on.
+    "CREATE TABLE plan_queue (
+        id INTEGER PRIMARY KEY CHECK (id = 1),
+        rows_json TEXT NOT NULL
     );",
 ];
 
