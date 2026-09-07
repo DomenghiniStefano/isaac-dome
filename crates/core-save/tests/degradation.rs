@@ -1,0 +1,155 @@
+use core_save::{Diagnostic, Kind, Save};
+
+/// Assembles a synthetic `.dat`. Each section: (kind, declared count, raw data).
+/// `f2` is written as count*4, as in the real format.
+fn build(unknown: u32, sections: &[(u32, u32, &[u8])]) -> Vec<u8> {
+    let mut v = Vec::new();
+    v.extend_from_slice(b"ISAACNGSAVE09R  ");
+    v.extend_from_slice(&unknown.to_le_bytes());
+    for &(kind, count, data) in sections {
+        v.extend_from_slice(&kind.to_le_bytes());
+        v.extend_from_slice(&count.wrapping_mul(4).to_le_bytes());
+        v.extend_from_slice(&count.to_le_bytes());
+        v.extend_from_slice(data);
+    }
+    v.extend_from_slice(&[0u8; 4]); // dummy checksum
+    v
+}
+
+#[test]
+fn parses_well_formed_sections() {
+    // kind 1: 3 achievements (1 byte each); kind 2: 2 counters (4 bytes each).
+    let counters: Vec<u8> = [7u32, 42u32].iter().flat_map(|v| v.to_le_bytes()).collect();
+    let bytes = build(0, &[(1, 3, &[1, 0, 1]), (2, 2, &counters)]);
+
+    let save = Save::parse(&bytes).unwrap();
+    assert_eq!(save.sections.len(), 2);
+    assert_eq!(save.sections[0].kind, Kind::Achievements);
+    assert_eq!(save.sections[0].count, 3);
+    assert_eq!(save.sections[0].bytes, vec![1, 0, 1]);
+    assert_eq!(save.sections[1].kind, Kind::Counters);
+    assert_eq!(save.sections[1].count, 2);
+    assert!(save.diagnostics.is_empty(), "expected no diagnostics");
+}
+
+#[test]
+fn bestiary_extends_to_end_ignoring_header_count() {
+    // kind 10 with a bogus count (80) but only 16 bytes of real data (2 records of 8).
+    let data = [0u8; 16];
+    let bytes = build(0, &[(10, 80, &data)]);
+
+    let save = Save::parse(&bytes).unwrap();
+    assert_eq!(save.sections.len(), 1);
+    let bestiary = &save.sections[0];
+    assert_eq!(bestiary.kind, Kind::Bestiary);
+    assert_eq!(bestiary.count, 80); // header preserved...
+    assert_eq!(bestiary.bytes.len(), 16); // ...but length comes from the bytes, not from count
+    assert!(save.diagnostics.is_empty());
+}
+
+#[test]
+fn flags_a_section_that_overruns_the_buffer() {
+    // kind 1 declares 100 entries of 1 byte, but supplies only 3.
+    let bytes = build(0, &[(1, 100, &[0, 0, 0])]);
+
+    let save = Save::parse(&bytes).unwrap();
+    // The section is present, truncated to the available bytes.
+    assert_eq!(save.sections.len(), 1);
+    assert_eq!(save.sections[0].bytes.len(), 3);
+    assert!(
+        save.diagnostics.iter().any(|d| matches!(
+            d,
+            Diagnostic::SectionOverrun {
+                kind: 1,
+                needed: 100,
+                available: 3,
+                ..
+            }
+        )),
+        "expected SectionOverrun, found {:?}",
+        save.diagnostics
+    );
+}
+
+#[test]
+fn flags_an_unexpected_kind_but_keeps_going() {
+    // First section declares kind 5 instead of 1: it's noted and parsing continues with the kind read.
+    let bytes = build(0, &[(5, 2, &[0, 0]), (2, 1, &1u32.to_le_bytes())]);
+
+    let save = Save::parse(&bytes).unwrap();
+    assert!(
+        save.diagnostics.iter().any(|d| matches!(
+            d,
+            Diagnostic::UnexpectedKind {
+                expected: 1,
+                found: 5,
+                ..
+            }
+        )),
+        "expected UnexpectedKind, found {:?}",
+        save.diagnostics
+    );
+    assert_eq!(save.sections[0].kind, Kind::Unknown5);
+    assert_eq!(save.sections.len(), 2);
+}
+
+#[test]
+fn flags_trailing_bytes_before_checksum() {
+    // A 2-byte section, then 3 leftover bytes, then the checksum.
+    let bytes = build(0, &[(1, 2, &[0, 0, 9, 9, 9])]); // count=2 but 5 bytes of data
+                                                       // count*1 = 2 consumes 2 bytes; 3 bytes remain before the checksum.
+    let save = Save::parse(&bytes).unwrap();
+    assert_eq!(save.sections[0].bytes.len(), 2);
+    assert!(
+        save.diagnostics
+            .iter()
+            .any(|d| matches!(d, Diagnostic::TrailingBytes { len: 3, .. })),
+        "expected TrailingBytes, found {:?}",
+        save.diagnostics
+    );
+}
+
+#[test]
+fn accessors_expose_typed_views() {
+    let counters: Vec<u8> = [7u32, 42u32].iter().flat_map(|v| v.to_le_bytes()).collect();
+    let bytes = build(0, &[(1, 3, &[1, 0, 5]), (2, 2, &counters)]);
+    let save = Save::parse(&bytes).unwrap();
+
+    assert_eq!(save.section(Kind::Achievements).unwrap().count, 3);
+    assert_eq!(
+        save.flags(Kind::Achievements),
+        Some(vec![true, false, true])
+    );
+    assert_eq!(save.u32s(Kind::Counters), Some(vec![7, 42]));
+
+    // Wrong type for the section → None (not a panic).
+    assert_eq!(save.flags(Kind::Counters), None);
+    assert_eq!(save.u32s(Kind::Achievements), None);
+    // Section absent → None.
+    assert_eq!(save.flags(Kind::Items), None);
+}
+
+#[test]
+fn bestiary_accessor_returns_raw_bytes() {
+    let data = [1u8; 24];
+    let bytes = build(0, &[(10, 3, &data)]);
+    let save = Save::parse(&bytes).unwrap();
+    assert_eq!(save.bestiary(), Some(&[1u8; 24][..]));
+}
+
+#[test]
+fn diff_reports_newly_set_flags_and_changed_counters() {
+    use core_save::diff;
+
+    let ca: Vec<u8> = [1u32, 1u32].iter().flat_map(|v| v.to_le_bytes()).collect();
+    let cb: Vec<u8> = [1u32, 9u32].iter().flat_map(|v| v.to_le_bytes()).collect();
+
+    // a: achievements [1,0,0]; b: [1,0,1] → index 2 is new. Counter 1: 1→9.
+    let a = Save::parse(&build(0, &[(1, 3, &[1, 0, 0]), (2, 2, &ca)])).unwrap();
+    let b = Save::parse(&build(0, &[(1, 3, &[1, 0, 1]), (2, 2, &cb)])).unwrap();
+
+    let d = diff(&a, &b);
+    assert_eq!(d.achievements, vec![2]);
+    assert_eq!(d.items, Vec::<usize>::new());
+    assert_eq!(d.counters, vec![(1, 1, 9)]);
+}
