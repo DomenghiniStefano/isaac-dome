@@ -28,7 +28,9 @@ pub use profile::{
     CandidateView, ChoiceReason, GameView, MissingReason, ProfileId, SetupDiagnostic, SetupState,
     SteamView,
 };
-pub use queue::{queue_view, QueueDiagnostic, QueueInputs, QueueRow, QueueView};
+pub use queue::{
+    achievement_unlocking, queue_view, QueueDiagnostic, QueueInputs, QueueRow, QueueView,
+};
 pub use resources::{
     archive_views, data_url, extraction_report, ArchiveMode, ArchiveView, ExtractionReport,
     SpriteView,

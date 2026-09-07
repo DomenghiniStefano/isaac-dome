@@ -163,3 +163,25 @@ fn a_row_carries_its_origins_and_the_node_the_unlock_screen_would_draw() {
     );
     assert_eq!(json["wanted"], false);
 }
+
+#[test]
+fn a_saved_target_resolves_to_the_achievement_that_unlocks_it() {
+    use ipc::{ItemKindView, TargetKey};
+    let c = catalog_with_achievements();
+    // Item 2 declares `achievement="1"`, so achievement 1 is what unlocks it.
+    assert_eq!(
+        ipc::achievement_unlocking(
+            &c,
+            &TargetKey::Item {
+                item_kind: ItemKindView::Passive,
+                id: 2
+            }
+        ),
+        Some(1)
+    );
+    assert_eq!(
+        ipc::achievement_unlocking(&c, &TargetKey::Character { id: 99 }),
+        None,
+        "a target nothing unlocks is skipped, not guessed at"
+    );
+}
