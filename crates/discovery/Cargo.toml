@@ -1,0 +1,18 @@
+[package]
+name = "discovery"
+version = "0.1.0"
+edition = "2021"
+description = "Localizza Steam, il gioco Isaac e i salvataggi su un PC qualsiasi"
+
+[dependencies]
+dirs = "6.0.0"
+keyvalues-parser = "0.2.4"
+serde = { version = "1", features = ["derive"] }
+steamlocate = "2.1.1"
+
+[target."cfg(windows)".dependencies]
+winreg = "0.56.0"
+
+[dev-dependencies]
+test-support = { path = "../test-support" }
+tempfile = "3.27.0"
