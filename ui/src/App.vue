@@ -138,12 +138,10 @@ const modeText = (m: ArchiveMode) => {
   }
 }
 
-// Until the graph (M2) exists, steps arrive in slot order: the basis states
-// this, and the screen says so instead of making the order look computed.
+// The steps are what the graph says is unlockable now, most-opening first. The basis
+// travels with them so the screen never has to guess why the order is what it is.
 const basisText = (b: StepsBasis) => {
   switch (b) {
-    case StepsBasis.Stub:
-      return 'ordine di slot: il grafo non esiste ancora'
     case StepsBasis.FanOut:
       return 'per fan-out'
     default:
