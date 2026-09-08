@@ -1215,11 +1215,15 @@ flagged wherever it's a fallback.
       **bloodied sheet**. With Delirium out of the symbols, the last pairing (`Cross` → The
       Lamb) closed by elimination. `symbolSource` in `marks.json` says for every row whether
       it's read from the file, referenced, or inferred.
-      > **Wrong, corrected on 2026-09-08.** The glyph row holds **twelve** 16 × 16 cells and
-      > the layers claim eleven: the cell at x = 96 is Delirium's symbol, and it was never
-      > cut because the cutter follows layers. Taking the mark does bloody the sheet, so the
-      > observation was real — the inference from it wasn't. The pairing by elimination
-      > survives untouched, since Delirium never needed one of the eleven.
+      > **Wrong, corrected on 2026-09-08.** Delirium's mark is a small face with two eyes,
+      > and the game names it — in **another file**: `main menu/onlinelobby.anm2`, layer
+      > `Completion_Delirium`, the only anm2 that names all twelve. Taking the mark does
+      > bloody the sheet, so the observation was real; the inference from it wasn't. It now
+      > ships as the row's `symbolFallback`, with the face as the symbol.
+      > A second wrong answer along the way is worth recording too: `completion_widget`'s
+      > glyph row holds twelve cells and the layers claim eleven, so the leftover at x = 96
+      > *looked* like Delirium by elimination. It isn't — it's a drawing we still can't
+      > name. Elimination inside one file proves nothing when the answer is in another.
 - [x] **Language convention put back in order**: `design-export` was the only crate with
       identifiers and JSON keys in Italian. Now, everywhere, it's **English identifiers,
       Italian prose**; the package uses `images/`, `sheets/`, `data/`, `INDEX.json`.
