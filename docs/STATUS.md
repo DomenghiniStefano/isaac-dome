@@ -453,7 +453,9 @@ building the Collection screen, not before designing it.
       report in `docs/superpowers/plans/2026-09-05-wiki-dataset-report.md`. All that's left is the
       design of the screen that shows the text. ~~B2 challenge rewards~~ **closed on
       2026-09-05** (three forms in the
-      file, not one: see the entry); B3 lists and search after design; B4 is M2.
+      file, not one: see the entry); B3 lists and search after design; B4 is M2; **B8 is
+      the spike M4 waits on** — what a real `log.txt` contains after an actual run
+      (logged 2026-09-08).
 - [x] ~~Red test: `stable_section_counts_match_the_format`.~~ **Resolved: false alarm.**
       The test is correct. The `live.*` fixture is meant to represent "a save from the current
       era"; a January 2025 profile had been put there, which reports 521 counters because
