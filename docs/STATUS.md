@@ -549,6 +549,25 @@ building the Collection screen, not before designing it.
 
 ## Session log
 
+### 2026-09-08 (later) — the repository gets a licence
+
+- [x] **GPL-3.0-only**, a decision and not a default. The repo declared nothing at all —
+      no `LICENSE`, and no `license` field in any of the thirteen crates or either
+      `package.json` — which is all rights reserved: no legal fork, no legal contribution,
+      and M5 ships an installer. Copyleft over permissive because this is a tool built on
+      top of a community's own wiki.
+- [x] **Three regimes, not two.** The README described the game's assets and the dataset
+      and said nothing about the code. Now: code GPL-3.0-only, `dataset/` keeping the
+      CC BY-SA 4.0 it inherits from the wiki, game assets nobody's to license here and
+      never shipped. A CC BY-SA dataset inside a GPL program is a collection, not a
+      derivative of it — neither licence swallows the other.
+- [x] **One declaration, not thirteen**: `[workspace.package]` plus
+      `license.workspace = true`. Tauri already defaults its bundle licence to the one in
+      `Cargo.toml`, so the config adds only what it can't infer — the copyright line and
+      `licenseFile`, so the installer carries the text instead of naming it.
+- [x] The licence text was downloaded verbatim from gnu.org and checked (674 lines, all 17
+      sections, LF): a licence is the one file where writing it from memory is a defect.
+
 ### 2026-09-08 (later) — the test net was lying
 
 Started as the smallest item on the "what can be done without game data" list and turned
@@ -910,8 +929,15 @@ A documents-only session, no code. Two explicit requests, logged as
       optional update from GitHub. Freshness: snapshot date checked against the `appmanifest`'s
       `LastUpdated`, which `discovery` already opens. Implementation waits for design
       (it's a screen), like B3.
-- [ ] Side finding: **the repository declares no license** (no `LICENSE` file). To
-      decide before the first installer, independently of B1.
+- [x] ~~Side finding: **the repository declares no license** (no `LICENSE` file).~~
+      **Closed on 2026-09-08: GPL-3.0-only**, decided rather than defaulted — a fork of a
+      tool built on a community's wiki shouldn't be able to close and sell it back. The
+      gap was wider than "no `LICENSE`": no `license` field in any of the thirteen crates
+      or either `package.json` either. Declared once in `[workspace.package]`, inherited
+      everywhere; Tauri reads the bundle licence from `Cargo.toml` on its own, so the
+      config only adds the copyright line and the path to the text. The README now
+      separates three regimes where it described two — code GPL-3.0, dataset CC BY-SA 4.0
+      inherited from the wiki, game assets neither ours nor shipped.
 
 ### 2026-09-05 (night) — wiki dataset
 
