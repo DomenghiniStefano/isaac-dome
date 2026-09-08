@@ -150,18 +150,33 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
       "game not installed" case isn't cached: someone who opens the app before installing
       the game shouldn't have to restart it.
 
-- [ ] **C2. Icons out of the `unlock` rows.** *Weight M, deferred to when the frontend kicks
-      off.*
-      Changes the IPC contract and hence `types.ts`: do it when the real screen begins, so
-      the TypeScript type changes once instead of twice.
-      Already in `STATUS.md`, same block.
-      **Why:** 641 nodes with the base64 icon inside every row is megabytes on every call.
-      Fine for the verification page, not for the real screen with TanStack Virtual.
-      **What to do:** `unlock` returns the nodes without `iconUrl`; a separate command
-      gives the icons for a list of ids, which the UI requests for the visible elements.
-      The contract changes, so the shape test and `types.ts` get updated together.
-      **Done when:** the `unlock` payload on the real profile stays under a threshold
-      declared in the test, and the icons arrive only on request.
+- [x] **C2. Icons out of the `unlock` rows.** *Weight M.*
+      **Closed on 2026-09-08, with a different shape than this entry proposed.** The entry
+      asked for a second command serving icons for a list of ids. That would have moved a
+      cache into the UI — decide what's visible, ask for those, keep them, don't ask twice,
+      drop them on scroll — which is code we'd write and test in TypeScript, in the one
+      place the project says receives only resolved JSON.
+      Instead the app registers a **URI scheme**. A row still carries `iconUrl`, but it is
+      now a short link (`isaac://achievement/19`, `isaac://item/passive/92`) that an
+      asynchronous protocol handler serves from the `ResourceSet`. The browser does the
+      lazy loading, the caching and the de-duplication; the UI writes `<img :src>`.
+      **The measured outcome:** `unlock` went from ~7 MB to **415 KB**, and `next_steps` —
+      the app's opening screen — from 124 KB to **3 KB**. The 94% figure that motivated
+      this was measured, not estimated: 226 KB of base64 in a 240 KB twenty-node excerpt.
+      **Two things this shape gets for free.** The TypeScript type doesn't change at all
+      (`iconUrl` is still `string | null`), so the frontend was never blocked on it. And
+      no file path crosses the IPC boundary, which the id-keyed reference guarantees by
+      construction where a path-keyed one would not.
+      **Where the pieces are:** `ipc::IconRef` with its `to_path`/`parse` round trip and
+      `icon_source` (pure, 5 tests); `icon_url` and the handler in `crates/app`, which is
+      also the only place that knows Windows rewrites the scheme to
+      `http://isaac.localhost/`. **Done when** is met by
+      `crates/ipc/tests/unlock_size.rs`: the real payload under a declared ceiling, no
+      `data:image` anywhere in it, and at least one link actually present — because a
+      ceiling alone would pass just as happily on a payload with no icons at all.
+      **One thing to remember at release time:** `tauri.conf.json` says `"csp": null`. When
+      a real CSP arrives it must allow `img-src` from this scheme, or every icon vanishes
+      with no error and no failing test. Written in the code, next to the registration.
 
 ---
 
