@@ -2,6 +2,7 @@
 name = "unpack"
 version = "0.1.0"
 edition = "2021"
+license.workspace = true
 description = "Reader for The Binding of Isaac's ARCH000 archives, with targeted extraction"
 
 [dependencies]
