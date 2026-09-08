@@ -414,10 +414,33 @@ Path, in order:
 - [ ] **4. Handoff to Claude Design** — screens 0, 4 and 5 on real data, the other four
       on fixed contracts. From here M2 proceeds in parallel with the webapp without touching the
       types the frontend consumes.
-      **The material has been ready since 2026-09-06**: `DESIGN-BRIEF.md` rewritten around the two
-      sections (Wiki and Progress) and the `design-export/isaacdome-design-pack/` package, 423 files, generated
-      by `pnpm design:export`. What's left is the actual handoff, which is an action outside the
-      repo.
+      The material was ready on 2026-09-06 and **has since aged out**. The committed package is
+      the output of `a9a32ee`, taken before M2 and M3 landed: every payload in it still declares
+      `"kind": "stub"` — 641 nodes, `basis: stub`, `expansion: stub` — and `contracts/types.ts`
+      is the pre-M2 copy, with `GraphInfo = stub | computed`, no `RequirementView` and no queue.
+      Handing that over buys a design of the placeholder. The exporter itself is current
+      (`72d8d44` builds the real graph); it's the committed output, and the brief, that are
+      behind. **Regenerate the whole thing before the handoff:**
+      - [ ] **a. A queue payload in `design-export`** — `payload.rs` writes the Plan's *goals*,
+            not the queue: `QueueRow` and `QueueDiagnostic` have been in the contract since
+            `2352163` and appear nowhere in the package. It needs an empty queue and a full
+            one, the full one with at least one row at `stepsNotQueued > 0` and one
+            diagnostic, otherwise the hardest rule to draw — a move repairs, prerequisites
+            are a wall — is invisible to whoever draws it. **Pure code, no sample needed.**
+      - [ ] **b. `DESIGN-BRIEF.md` re-aligned on the post-M2/M3 contract** — §4's status light,
+            §7's types, the real/stub table in §7.5, and question 4 of §12, which asks how to
+            draw a `stub` node. That state no longer exists, and what replaces it is a harder
+            question: `partial` isn't "not known yet", it's "this requirement wasn't
+            interpretable", and it must never read as unlockable. **No sample needed.**
+      - [ ] **c. `pnpm design:export` re-run over the whole package** — needs the machine with
+            the game installed, the `samples/packed` junction and a real save; then commit the
+            regenerated output. The package is committed on purpose (see `.gitignore`): Claude
+            Design opens it from a fixed path, and it would vanish on a branch switch. The
+            package README forbids the assets ending up in a public repository — `origin` is
+            private, which is what makes committing them acceptable.
+      - [ ] **d. The file count, here and in the package README** — it says 423, from before the
+            atlases and the sheets. Take the new one from the export's own report instead of
+            pinning it by hand a second time.
 
 Doesn't block the handoff but blocks Collection and Unlock: **`Archive::open` loads 1.3 GB**
 to extract sprites (see open blockers), and the graph commands do this on every
@@ -592,6 +615,22 @@ building the Collection screen, not before designing it.
 ---
 
 ## Session log
+
+### 2026-09-08 (later still) — the design package is a photograph of an era that ended
+
+- [x] **The package is structurally complete and factually old.** 5835 files, atlases,
+      sheets cut from the `.anm2`s, wiki samples, a README that declares its own three
+      fallbacks — all fine. But the payloads are the output of `a9a32ee`, from before M2 and
+      M3: 641 nodes at `"kind": "stub"`, `basis: stub`, `expansion: stub`.
+- [x] **The file dates say the opposite of the truth.** `contracts/types.ts` has an mtime
+      *newer* than the source it was copied from: git rewrote it at checkout. The era is
+      readable in the content, never in the timestamp — 641 `stub` is a signature no mtime
+      can fake.
+- [x] **M3 is missing from the package entirely**, not stale: `payload.rs` never wrote a
+      queue payload, so the one screen whose rule is genuinely hard to draw has nothing to
+      draw from.
+- [x] Regeneration written into the handoff entry as four steps, two of which need no
+      sample data and can be done anywhere.
 
 ### 2026-09-08 (later) — the last three small ones, and one wasn't small
 
