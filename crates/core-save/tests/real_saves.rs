@@ -12,10 +12,10 @@ use test_support::{dated_series, sample_bytes};
 /// saves sitting in `samples/` were read by nothing at all.
 const SERIES: [&str; 2] = ["rep_persistentgamedata1.dat", "rep+persistentgamedata1.dat"];
 
-/// The series' first snapshot and its last. Used by the tests that compare two eras
-/// of the game: between the two, a patch added an achievement.
-const JUN_2025: &str = "20250626.rep+persistentgamedata1.dat";
-const SEP_2026: &str = "20260905.rep+persistentgamedata1.dat";
+/// One file per era, named so the tests that compare two of them say which.
+const REP_2024: &str = "20240118.rep_persistentgamedata1.dat";
+const REP_PLUS_2025: &str = "20250112.rep+persistentgamedata1.dat";
+const REP_PLUS_2026: &str = "20260905.rep+persistentgamedata1.dat";
 
 /// The eras `samples/` can hold, and the counts each one's header declares:
 /// `(file, achievements, counters)`. Every number here was read with
@@ -30,16 +30,17 @@ const SEP_2026: &str = "20260905.rep+persistentgamedata1.dat";
 /// was the only file left for an assertion that demanded 523.
 const ERAS: [(&str, u32, u32); 3] = [
     // Repentance, before the + edition.
-    ("20240118.rep_persistentgamedata1.dat", 638, 496),
+    (REP_2024, 638, 496),
     // Repentance+, January 2025: the achievements are already 641, the counters not yet 523.
-    ("20250112.rep+persistentgamedata1.dat", 641, 521),
+    (REP_PLUS_2025, 641, 521),
     // Repentance+ 2026, the era the table in `CLAUDE.md` describes.
-    (SEP_2026, 642, 523),
+    (REP_PLUS_2026, 642, 523),
 ];
 
-/// One series, already parsed, in chronological order. Empty if `samples/` holds none:
-/// the folder is ignored by git, so whoever clones the repo has none.
-fn series(suffix: &str) -> Vec<(String, Save)> {
+/// One series, already parsed, in chronological order — name, raw bytes, parsed save.
+/// Empty if `samples/` holds none: the folder is ignored by git, so whoever clones the
+/// repo has none.
+fn series(suffix: &str) -> Vec<(String, Vec<u8>, Save)> {
     dated_series(suffix)
         .into_iter()
         .map(|p| {
@@ -49,7 +50,8 @@ fn series(suffix: &str) -> Vec<(String, Save)> {
                 .to_string_lossy()
                 .into_owned();
             let bytes = std::fs::read(&p).expect("a sample that is present must read");
-            (name, Save::parse(&bytes).expect("a real sample must parse"))
+            let save = Save::parse(&bytes).expect("a real sample must parse");
+            (name, bytes, save)
         })
         .collect()
 }
@@ -57,6 +59,16 @@ fn series(suffix: &str) -> Vec<(String, Save)> {
 /// Every dated save present, from every series. For the properties that hold of a save
 /// on its own, where which profile it came from doesn't enter into it.
 fn every_dated_save() -> Vec<(String, Save)> {
+    SERIES
+        .iter()
+        .flat_map(|s| series(s))
+        .map(|(name, _, save)| (name, save))
+        .collect()
+}
+
+/// The same, keeping the raw bytes: for the properties stated in terms of the file's own
+/// length, where the parsed view alone can't answer.
+fn every_dated_save_with_bytes() -> Vec<(String, Vec<u8>, Save)> {
     SERIES.iter().flat_map(|s| series(s)).collect()
 }
 
@@ -82,7 +94,12 @@ fn comparable_series() -> Vec<Vec<(String, Save)>> {
                 ));
                 return None;
             }
-            Some(saves)
+            Some(
+                saves
+                    .into_iter()
+                    .map(|(name, _, save)| (name, save))
+                    .collect(),
+            )
         })
         .collect()
 }
@@ -104,19 +121,30 @@ fn every_real_save_has_ten_sections_in_order() {
     });
 }
 
-/// The achievement count is read from the file. This isn't a theoretical precaution: between
-/// 2025 and 2026 a patch added one, and any hardcoded number would have broken on its own.
-/// Both values were verified by reading the header byte by byte
-/// (`od -j 16 -t u4`), not from this parser's output.
+/// The achievement count is read from the file. This isn't a theoretical precaution: a
+/// patch has added slots more than once, and any hardcoded number would have broken on
+/// its own.
+///
+/// What proves it is **two eras that disagree**, and any two will do. This pair used to
+/// be 641 → 642, the newest jump, and that cost the test its data: neither snapshot is
+/// on every machine, so it skipped every run and proved nothing. 638 → 641 asks the same
+/// question of files that are actually here. Both numbers read from the header with
+/// `od -A d -j 16 -N 12 -t u4`, not from this parser's output.
 #[test]
 fn achievement_count_is_read_from_file_not_hardcoded() {
-    let (Some(earlier), Some(later)) = (sample_bytes(JUN_2025), sample_bytes(SEP_2026)) else {
+    let (Some(earlier), Some(later)) = (sample_bytes(REP_2024), sample_bytes(REP_PLUS_2025)) else {
         return;
     };
     let earlier = Save::parse(&earlier).unwrap();
     let later = Save::parse(&later).unwrap();
-    assert_eq!(earlier.section(Kind::Achievements).unwrap().count, 641);
-    assert_eq!(later.section(Kind::Achievements).unwrap().count, 642);
+    let count = |s: &Save| s.section(Kind::Achievements).unwrap().count;
+    assert_eq!(count(&earlier), 638, "{REP_2024}");
+    assert_eq!(count(&later), 641, "{REP_PLUS_2025}");
+    assert_ne!(
+        count(&earlier),
+        count(&later),
+        "two eras that agree would prove nothing about where the number comes from"
+    );
 }
 
 #[test]
@@ -194,19 +222,22 @@ fn bestiary_length_follows_bytes_not_header_count() {
     });
 }
 
+/// The file has no slack: the last section ends exactly where the checksum's four bytes
+/// begin. A property of the format, so it's asked of every save present rather than of
+/// one named file — which is also what keeps it running when that file isn't there.
 #[test]
 fn the_last_section_reaches_exactly_the_checksum() {
-    let Some(bytes) = sample_bytes(SEP_2026) else {
-        return;
-    };
-    let save = Save::parse(&bytes).unwrap();
-    let bestiary = save.section(Kind::Bestiary).unwrap();
-    let end = bestiary.offset + bestiary.bytes.len();
-    assert_eq!(
-        end,
-        bytes.len() - 4,
-        "no leftover bytes before the checksum"
-    );
+    every_dated_save_with_bytes()
+        .iter()
+        .for_each(|(name, bytes, save)| {
+            let bestiary = save.section(Kind::Bestiary).unwrap();
+            let end = bestiary.offset + bestiary.bytes.len();
+            assert_eq!(
+                end,
+                bytes.len() - 4,
+                "{name}: no leftover bytes before the checksum"
+            );
+        });
 }
 
 /// The diff reports what changed between two snapshots, and on a real historical series
@@ -279,11 +310,11 @@ fn the_series_never_regresses() {
         });
 }
 
+/// Nothing changed between a save and itself. True of every save, so every save present
+/// gets asked.
 #[test]
 fn diff_of_a_save_with_itself_is_empty() {
-    let Some(bytes) = sample_bytes(SEP_2026) else {
-        return;
-    };
-    let save = Save::parse(&bytes).unwrap();
-    assert_eq!(diff(&save, &save), core_save::SaveDiff::default());
+    every_dated_save().iter().for_each(|(name, save)| {
+        assert_eq!(diff(save, save), core_save::SaveDiff::default(), "{name}");
+    });
 }
