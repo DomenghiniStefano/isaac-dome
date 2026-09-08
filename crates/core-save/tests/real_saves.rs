@@ -1,10 +1,16 @@
 use core_save::{diff, Kind, Save};
 use test_support::{dated_series, sample_bytes};
 
-/// The historical series' suffix: Repentance+ profile, slot 1. The files come from the
-/// dated backups the game leaves in `save_backups\`, copied into `samples/` under the
-/// name they already had — `YYYYMMDD.` plus this suffix.
-const SERIE: &str = "rep+persistentgamedata1.dat";
+/// The historical series in `samples/`, one suffix per edition, slot 1. The files come
+/// from the dated backups the game leaves in `save_backups\`, copied under the name they
+/// already had — `YYYYMMDD.` plus one of these suffixes.
+///
+/// There are two because a comparison only means something **inside** one profile:
+/// `rep_` snapshots are a Repentance profile, `rep+` a Repentance+ one, and laying them
+/// end to end would read a change of profile as progress. Which is also why this is a
+/// list and not a single constant: pinned to `rep+` alone, the three dated Repentance
+/// saves sitting in `samples/` were read by nothing at all.
+const SERIES: [&str; 2] = ["rep_persistentgamedata1.dat", "rep+persistentgamedata1.dat"];
 
 /// The series' first snapshot and its last. Used by the tests that compare two eras
 /// of the game: between the two, a patch added an achievement.
@@ -31,10 +37,10 @@ const ERAS: [(&str, u32, u32); 3] = [
     (SEP_2026, 642, 523),
 ];
 
-/// The historical series, already parsed, in chronological order. Empty if `samples/`
-/// contains none: the folder is ignored by git, so whoever clones the repo has none.
-fn series() -> Vec<(String, Save)> {
-    dated_series(SERIE)
+/// One series, already parsed, in chronological order. Empty if `samples/` holds none:
+/// the folder is ignored by git, so whoever clones the repo has none.
+fn series(suffix: &str) -> Vec<(String, Save)> {
+    dated_series(suffix)
         .into_iter()
         .map(|p| {
             let name = p
@@ -48,30 +54,42 @@ fn series() -> Vec<(String, Save)> {
         .collect()
 }
 
-/// The series, but only when it can actually answer a question about *change*: comparing
-/// two snapshots needs two of them.
+/// Every dated save present, from every series. For the properties that hold of a save
+/// on its own, where which profile it came from doesn't enter into it.
+fn every_dated_save() -> Vec<(String, Save)> {
+    SERIES.iter().flat_map(|s| series(s)).collect()
+}
+
+/// The series that can actually answer a question about *change*, one entry each:
+/// comparing two snapshots needs two of them, from the same profile.
 ///
-/// A series of one isn't a series, and the difference is invisible from the outside —
+/// A series of one isn't a series, and the shortfall is invisible from the outside —
 /// `dated_series` prints `sample:` for the file it found, the test walks a `windows(2)`
 /// that yields nothing, and the run reports a pass. That's the failure mode
 /// `test-support` exists to prevent, one level up: the helper declared which file it
-/// used, while the test quietly stopped verifying anything. So the shortfall gets said
-/// out loud, the way `graph`'s `series_evals` already says it.
-fn comparable_series() -> Vec<(String, Save)> {
-    let saves = series();
-    if saves.len() < 2 {
-        test_support::skip(&format!(
-            "the series has {} dated *.{SERIE}: comparing two snapshots needs two",
-            saves.len()
-        ));
-        return Vec::new();
-    }
-    saves
+/// used, while the test quietly stopped verifying anything. So it gets said out loud,
+/// the way `graph`'s `series_evals` already says it — and per suffix, because "one
+/// series is long enough" must not cover for the other being empty.
+fn comparable_series() -> Vec<Vec<(String, Save)>> {
+    SERIES
+        .iter()
+        .filter_map(|suffix| {
+            let saves = series(suffix);
+            if saves.len() < 2 {
+                test_support::skip(&format!(
+                    "the *.{suffix} series has {}: comparing two snapshots needs two",
+                    saves.len()
+                ));
+                return None;
+            }
+            Some(saves)
+        })
+        .collect()
 }
 
 #[test]
 fn every_real_save_has_ten_sections_in_order() {
-    let saves = series();
+    let saves = every_dated_save();
     if saves.is_empty() {
         return;
     }
@@ -103,7 +121,7 @@ fn achievement_count_is_read_from_file_not_hardcoded() {
 
 #[test]
 fn some_counts_do_not_change_with_the_game_version() {
-    let saves = series();
+    let saves = every_dated_save();
     if saves.is_empty() {
         return;
     }
@@ -147,7 +165,7 @@ fn each_era_declares_its_own_counts() {
 /// in the loop over the series — unlike the number itself, which lives in [`ERAS`].
 #[test]
 fn counters_length_follows_the_header() {
-    let saves = series();
+    let saves = every_dated_save();
     if saves.is_empty() {
         return;
     }
@@ -159,7 +177,7 @@ fn counters_length_follows_the_header() {
 
 #[test]
 fn bestiary_length_follows_bytes_not_header_count() {
-    let saves = series();
+    let saves = every_dated_save();
     if saves.is_empty() {
         return;
     }
@@ -196,36 +214,35 @@ fn the_last_section_reaches_exactly_the_checksum() {
 /// flipped from off to on, derived from the two sections rather than from the diff itself.
 #[test]
 fn diff_reports_exactly_the_bits_that_turned_on() {
-    let saves = comparable_series();
-    if saves.is_empty() {
-        return;
-    }
-    saves.windows(2).for_each(|w| {
-        let (before_name, before) = &w[0];
-        let (after_name, after) = &w[1];
-        let d = diff(before, after);
-        let (Some(a), Some(b)) = (
-            before.flags(Kind::Achievements),
-            after.flags(Kind::Achievements),
-        ) else {
-            return;
-        };
-        // We walk the whole of `b`, not just the common part: a slot that didn't exist in
-        // the first snapshot is off, not "outside the comparison". This is the real case
-        // of the 641 → 642 slot transition, where the new achievement shows up as
-        // unlocked right away and must appear in the diff.
-        let expected: Vec<usize> = (0..b.len())
-            .filter(|&i| b[i] && !a.get(i).copied().unwrap_or(false))
-            .collect();
-        assert_eq!(
-            d.achievements, expected,
-            "{before_name} → {after_name}: indices turned on between the two snapshots"
-        );
-        assert!(
-            d.achievements.windows(2).all(|w| w[0] < w[1]),
-            "{before_name} → {after_name}: indices ordered and distinct"
-        );
-    });
+    comparable_series()
+        .iter()
+        .flat_map(|s| s.windows(2))
+        .for_each(|w| {
+            let (before_name, before) = &w[0];
+            let (after_name, after) = &w[1];
+            let d = diff(before, after);
+            let (Some(a), Some(b)) = (
+                before.flags(Kind::Achievements),
+                after.flags(Kind::Achievements),
+            ) else {
+                return;
+            };
+            // We walk the whole of `b`, not just the common part: a slot that didn't exist in
+            // the first snapshot is off, not "outside the comparison". This is the real case
+            // of the 641 → 642 slot transition, where the new achievement shows up as
+            // unlocked right away and must appear in the diff.
+            let expected: Vec<usize> = (0..b.len())
+                .filter(|&i| b[i] && !a.get(i).copied().unwrap_or(false))
+                .collect();
+            assert_eq!(
+                d.achievements, expected,
+                "{before_name} → {after_name}: indices turned on between the two snapshots"
+            );
+            assert!(
+                d.achievements.windows(2).all(|w| w[0] < w[1]),
+                "{before_name} → {after_name}: indices ordered and distinct"
+            );
+        });
 }
 
 /// The property the self-updating plan rests on: progression never regresses. An
@@ -233,34 +250,33 @@ fn diff_reports_exactly_the_bits_that_turned_on() {
 /// grow, as when a patch adds a slot.
 #[test]
 fn the_series_never_regresses() {
-    let saves = comparable_series();
-    if saves.is_empty() {
-        return;
-    }
-    saves.windows(2).for_each(|w| {
-        let (before_name, before) = &w[0];
-        let (after_name, after) = &w[1];
-        let (Some(a), Some(b)) = (
-            before.flags(Kind::Achievements),
-            after.flags(Kind::Achievements),
-        ) else {
-            return;
-        };
-        assert!(
-            b.len() >= a.len(),
-            "{before_name} → {after_name}: slots don't disappear"
-        );
-        (0..a.len()).for_each(|i| {
+    comparable_series()
+        .iter()
+        .flat_map(|s| s.windows(2))
+        .for_each(|w| {
+            let (before_name, before) = &w[0];
+            let (after_name, after) = &w[1];
+            let (Some(a), Some(b)) = (
+                before.flags(Kind::Achievements),
+                after.flags(Kind::Achievements),
+            ) else {
+                return;
+            };
             assert!(
-                !a[i] || b[i],
-                "{before_name} → {after_name}: achievement {i} became re-locked"
+                b.len() >= a.len(),
+                "{before_name} → {after_name}: slots don't disappear"
+            );
+            (0..a.len()).for_each(|i| {
+                assert!(
+                    !a[i] || b[i],
+                    "{before_name} → {after_name}: achievement {i} became re-locked"
+                );
+            });
+            assert!(
+                after.sections.len() >= before.sections.len(),
+                "{before_name} → {after_name}: sections don't disappear"
             );
         });
-        assert!(
-            after.sections.len() >= before.sections.len(),
-            "{before_name} → {after_name}: sections don't disappear"
-        );
-    });
 }
 
 #[test]
