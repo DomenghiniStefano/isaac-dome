@@ -2,7 +2,7 @@
 name = "store"
 version = "0.1.0"
 edition = "2021"
-description = "Persistenza dell'app: un file SQLite, schema versionato. Scrive solo nel proprio file."
+description = "The app's persistence: one SQLite file, versioned schema. It writes only to its own file."
 
 [dependencies]
 rusqlite = { version = "0.40", features = ["bundled"] }

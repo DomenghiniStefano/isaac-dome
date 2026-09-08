@@ -34,7 +34,7 @@ These apply to every task, without repeating them.
 - **Exhaustiveness**: no `_ =>` branch on closed enums.
 - **Frontend**: `docs/frontend-conventions.md`. No `<style>` in SFCs, no hardcoded visual
   values, no `invoke()` outside `src/lib/ipc/`.
-- **Commits**: prefix `ipc:`, `app:`, `ui:` or `docs:`; messages in Italian; **never** a
+- **Commits**: prefix `ipc:`, `app:`, `ui:` or `docs:`; messages in English; **never** a
   `Co-Authored-By` trailer nor references to Claude.
 - **Gates, after every Rust task**: `cargo test --workspace`, `cargo fmt --check`,
   `cargo clippy --all-targets -- -D warnings`.
@@ -420,7 +420,7 @@ Expected: 8 tests passed.
 cargo fmt --check
 cargo clippy -p ipc --all-targets -- -D warnings
 git add crates/ipc
-git commit -m "ipc: candidati presentabili, senza id account ne' percorsi come chiave"
+git commit -m "ipc: presentable candidates, with neither account id nor paths as the key"
 ```
 
 ---
@@ -644,7 +644,7 @@ Expected: 14 tests passed.
 cargo fmt --check
 cargo clippy -p ipc --all-targets -- -D warnings
 git add crates/ipc
-git commit -m "ipc: risoluzione del profilo attivo, senza ripieghi silenziosi"
+git commit -m "ipc: active profile resolution, with no silent fallbacks"
 ```
 
 ---
@@ -852,7 +852,7 @@ Expected: 5 tests passed.
 cargo fmt --check
 cargo clippy -p ipc --all-targets -- -D warnings
 git add crates/ipc
-git commit -m "ipc: tabelle dei marchi portate dal riferimento Python"
+git commit -m "ipc: mark tables carried over from the Python reference"
 ```
 
 ---
@@ -1187,7 +1187,7 @@ Expected: PASS.
 cargo fmt --check
 cargo clippy -p ipc --all-targets -- -D warnings
 git add crates/ipc
-git commit -m "ipc: controllo incrociato della matrice col riferimento Python"
+git commit -m "ipc: cross-check of the matrix against the Python reference"
 ```
 
 ---
@@ -1433,7 +1433,7 @@ cargo test --workspace
 cargo fmt --check
 cargo clippy --all-targets -- -D warnings
 git add crates/ipc
-git commit -m "ipc: riepilogo del salvataggio, stato dell'installazione, impostazioni"
+git commit -m "ipc: save summary, installation state, settings"
 ```
 
 ---
@@ -1553,7 +1553,7 @@ create a temporary `ui/dist/.gitkeep`.
 cargo fmt --check
 cargo clippy -p app --all-targets -- -D warnings
 git add crates/app Cargo.lock
-git commit -m "app: scaffold del crate Tauri e tipo d'errore dell'IPC"
+git commit -m "app: Tauri crate scaffold and the IPC error type"
 ```
 
 ---
@@ -1721,7 +1721,7 @@ Expected: compiles without warnings.
 cargo fmt --check
 cargo clippy -p app --all-targets -- -D warnings
 git add crates/app
-git commit -m "app: i quattro comandi e la persistenza del profilo attivo"
+git commit -m "app: the four commands and active profile persistence"
 ```
 
 ---
@@ -2023,8 +2023,8 @@ onMounted(() => load().catch((e) => (error.value = JSON.stringify(e))))
 
     <section v-if="state" class="flex flex-col gap-2">
       <h1 class="text-lg font-bold">Stato</h1>
-      <p>Steam: {{ state.steam?.rootHint ?? 'non trovato' }}</p>
-      <p>Gioco: {{ state.game?.dirHint ?? 'non trovato' }} ({{ state.game?.edition ?? '—' }})</p>
+      <p>Steam: {{ state.steam?.rootHint ?? 'not found' }}</p>
+      <p>Game: {{ state.game?.dirHint ?? 'not found' }} ({{ state.game?.edition ?? '—' }})</p>
       <p>Profilo attivo: {{ state.active.kind }}</p>
       <ul class="flex flex-col gap-1">
         <li v-for="c in state.candidates" :key="c.id">
@@ -2171,13 +2171,13 @@ cd ui && pnpm typecheck && pnpm lint && pnpm format:check && pnpm scan
 
 - [ ] **Step 5: commit and status update**
 
-Check off the `ipc` module and the Tauri app in `docs/STATO.md`, and write the report in
+Check off the `ipc` module and the Tauri app in `docs/STATUS.md`, and write the report in
 `docs/superpowers/plans/2026-09-02-app-shell-ipc-report.md` as done for the other three
 modules.
 
 ```bash
-git add ui/scripts docs/STATO.md docs/superpowers/plans
-git commit -m "ui: scansione delle convenzioni e chiusura dello scheletro"
+git add ui/scripts docs/STATUS.md docs/superpowers/plans
+git commit -m "ui: convention scanning and closing out the skeleton"
 ```
 
 ---

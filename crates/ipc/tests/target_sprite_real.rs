@@ -17,7 +17,7 @@ use ipc::{target_sprite, Target, TargetSprite};
 use unpack::ResourceSet;
 
 /// The family of a target, to group the count.
-fn famiglia(t: &Target) -> &'static str {
+fn family(t: &Target) -> &'static str {
     match t {
         Target::Item { .. } => "item",
         Target::Trinket { .. } => "trinket",
@@ -33,21 +33,21 @@ fn famiglia(t: &Target) -> &'static str {
 }
 
 #[derive(Default, Debug, Clone, Copy)]
-struct Conteggio {
-    trovati: usize,
-    senza_arte: usize,
-    ignoti: usize,
+struct Counts {
+    found: usize,
+    no_art: usize,
+    unknown: usize,
 }
 
-impl Conteggio {
-    fn totale(&self) -> usize {
-        self.trovati + self.senza_arte + self.ignoti
+impl Counts {
+    fn total(&self) -> usize {
+        self.found + self.no_art + self.unknown
     }
 }
 
 /// The target of every page in the dataset. Boss pages are indexed with the game's
 /// `type.variant.subtype` notation: it's read back from there.
-fn pagine() -> Vec<Target> {
+fn pages() -> Vec<Target> {
     let Ok(ds) = wiki::Dataset::embedded() else {
         return Vec::new();
     };
@@ -81,20 +81,20 @@ fn pagine() -> Vec<Target> {
 
 /// Walks the dataset's pages and counts how **the page itself** (its target) resolves,
 /// per family.
-fn copertura_delle_pagine(c: &Catalog) -> BTreeMap<&'static str, Conteggio> {
-    let mut per_famiglia: BTreeMap<&'static str, Conteggio> = BTreeMap::new();
-    for t in pagine() {
-        let voce = per_famiglia.entry(famiglia(&t)).or_default();
+fn page_coverage(c: &Catalog) -> BTreeMap<&'static str, Counts> {
+    let mut per_family: BTreeMap<&'static str, Counts> = BTreeMap::new();
+    for t in pages() {
+        let entry = per_family.entry(family(&t)).or_default();
         match target_sprite(c, &t) {
-            TargetSprite::Found(_) => voce.trovati += 1,
-            TargetSprite::NoArt => voce.senza_arte += 1,
-            TargetSprite::Unknown => voce.ignoti += 1,
+            TargetSprite::Found(_) => entry.found += 1,
+            TargetSprite::NoArt => entry.no_art += 1,
+            TargetSprite::Unknown => entry.unknown += 1,
         }
     }
-    per_famiglia
+    per_family
 }
 
-fn reale() -> Option<Catalog> {
+fn real_catalog() -> Option<Catalog> {
     let packed = test_support::packed_dir()?;
     let rs = ResourceSet::open(&packed);
     Some(Catalog::build(|p| rs.read(p)))
@@ -102,34 +102,34 @@ fn reale() -> Option<Catalog> {
 
 #[test]
 fn every_wiki_page_that_is_an_item_or_a_trinket_has_its_icon() {
-    let Some(c) = reale() else { return };
-    let cop = copertura_delle_pagine(&c);
-    for famiglia in ["item", "trinket"] {
-        let n = cop.get(famiglia).copied().unwrap_or_default();
-        eprintln!("coverage {famiglia}: {n:?}");
-        assert!(n.totale() > 100, "{famiglia}: is the dataset not loaded?");
+    let Some(c) = real_catalog() else { return };
+    let coverage = page_coverage(&c);
+    for family in ["item", "trinket"] {
+        let n = coverage.get(family).copied().unwrap_or_default();
+        eprintln!("coverage {family}: {n:?}");
+        assert!(n.total() > 100, "{family}: is the dataset not loaded?");
         // Every collectible and every trinket in the game has a `gfx` in `items.xml`: if
         // any ends up without an icon, either the wiki cites an id the game doesn't
         // have, or the catalog failed to read `items.xml`. Both must be seen, not
         // tolerated.
         assert_eq!(
-            n.senza_arte, 0,
-            "{famiglia}: none can be 'without art', the icon is mandatory in the file"
+            n.no_art, 0,
+            "{family}: none can be 'without art', the icon is mandatory in the file"
         );
         assert!(
-            n.ignoti * 100 < n.totale(),
-            "{famiglia}: more than 1% of ids the catalog doesn't know ({n:?})"
+            n.unknown * 100 < n.total(),
+            "{family}: more than 1% of ids the catalog doesn't know ({n:?})"
         );
     }
 }
 
 #[test]
 fn most_boss_pages_reach_their_portrait_through_the_entity_key() {
-    let Some(c) = reale() else { return };
-    let cop = copertura_delle_pagine(&c);
-    let n = cop.get("entity").copied().unwrap_or_default();
+    let Some(c) = real_catalog() else { return };
+    let coverage = page_coverage(&c);
+    let n = coverage.get("entity").copied().unwrap_or_default();
     eprintln!("coverage entity: {n:?}");
-    if n.totale() == 0 {
+    if n.total() == 0 {
         test_support::skip("the dataset has no entity pages");
         return;
     }
@@ -137,44 +137,44 @@ fn most_boss_pages_reach_their_portrait_through_the_entity_key() {
     // by definition don't have a portrait. The property that holds is that the bosses
     // the game illustrates are reachable — not that every entity has a picture.
     assert!(
-        n.trovati > 50,
+        n.found > 50,
         "boss portraits must stay reachable from the entity key ({n:?})"
     );
 }
 
 #[test]
 fn the_coverage_of_every_family_is_declared_not_guessed() {
-    let Some(c) = reale() else { return };
-    let cop = copertura_delle_pagine(&c);
-    if cop.is_empty() {
+    let Some(c) = real_catalog() else { return };
+    let coverage = page_coverage(&c);
+    if coverage.is_empty() {
         test_support::skip("wiki dataset not embedded");
         return;
     }
     // This test imposes no thresholds: it **declares**. This is the number that ends
     // up in the brief, and printing it every run is how a change gets noticed.
-    let mut totale = Conteggio::default();
-    for (famiglia, n) in &cop {
+    let mut total = Counts::default();
+    for (family, n) in &coverage {
         eprintln!(
-            "sample: wiki/{famiglia} — {} with image, {} without art, {} unknown ids (out of {})",
-            n.trovati,
-            n.senza_arte,
-            n.ignoti,
-            n.totale()
+            "sample: wiki/{family} — {} with image, {} without art, {} unknown ids (out of {})",
+            n.found,
+            n.no_art,
+            n.unknown,
+            n.total()
         );
-        totale.trovati += n.trovati;
-        totale.senza_arte += n.senza_arte;
-        totale.ignoti += n.ignoti;
+        total.found += n.found;
+        total.no_art += n.no_art;
+        total.unknown += n.unknown;
     }
     eprintln!(
         "sample: wiki/all — {} pages out of {} have an image",
-        totale.trovati,
-        totale.totale()
+        total.found,
+        total.total()
     );
     // The one property: the majority of pages are illustrable. If it drops below that,
     // the design's Wiki section needs rethinking, and that must be known before it's
     // designed.
     assert!(
-        totale.trovati * 2 > totale.totale(),
-        "less than half of wiki pages have an image: {totale:?}"
+        total.found * 2 > total.total(),
+        "less than half of wiki pages have an image: {total:?}"
     );
 }

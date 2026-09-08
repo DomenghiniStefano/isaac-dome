@@ -1,7 +1,7 @@
 # IPC contracts for the graph screens — Unlock, Next steps, Plan (design)
 
 **Date:** 2026-09-05
-**Sub-project:** delivery to design, step 2 (`docs/STATO.md`, "Delivery to design")
+**Sub-project:** delivery to design, step 2 (`docs/STATUS.md`, "Delivery to design")
 **Status:** design approved verbally; pending spec review
 
 ## Context
@@ -386,7 +386,7 @@ sorting (frontend state).
   with name and icon, on this profile.
 - A goal that's added survives an app restart, in `isaacdome.db`; `settings.json`
   contains no goals.
-- `store` exists with migration 1 and the tests above; `docs/STATO.md` records it as a
+- `store` exists with migration 1 and the tests above; `docs/STATUS.md` records it as a
   module born with this step, not with M4.
-- `docs/STATO.md`: step 2 of the delivery checked off with the three decisions;
+- `docs/STATUS.md`: step 2 of the delivery checked off with the three decisions;
   `DESIGN-BRIEF.md` with the contracts and the real/stub table.

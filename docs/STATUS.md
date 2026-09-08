@@ -4,7 +4,7 @@ Single source of truth for the project status. Updated every session.
 Narrative summary and design decisions live elsewhere: `docs/PROJECT.md` (project),
 `docs/superpowers/specs/` (module design), `docs/superpowers/plans/` (plans and reports).
 The quality tasks that came out of the 2026-09-05 review (local verification, scanner, IPC
-contract, memory, test data) live in `docs/MIGLIORIE.md`, with closing criteria and order.
+contract, memory, test data) live in `docs/IMPROVEMENTS.md`, with closing criteria and order.
 
 **Integration branch:** `develop`. `master` is stopped at the initial commit.
 **Wiki dataset merged** into `develop` on 2026-09-06 (`feature/wiki-dataset`, 29 commits,
@@ -390,7 +390,7 @@ building the Collection screen, not before designing it.
 ## Open blockers
 
 - [x] ~~**`Archive::open` reads the whole file into memory.**~~ **Resolved on 2026-09-06** (C1
-      in `docs/MIGLIORIE.md`). `open` reads the header and the index and keeps the `File`
+      in `docs/IMPROVEMENTS.md`). `open` reads the header and the index and keeps the `File`
       open; a resource's bytes are read on demand, with positional reads
       (`seek_read` / `read_at`), because the `ResourceSet` is shared across commands and a
       shared file cursor would be a race. An entry's data upper bound is the next offset
@@ -404,7 +404,7 @@ building the Collection screen, not before designing it.
       of megabytes on every call. Fine for the verification screen, not for the real
       one: the final Unlock screen will want icons separated from the rows (fetched
       separately, only for visible elements) instead of embedded in every node. This is C2 in
-      `docs/MIGLIORIE.md`, and it changes the IPC contract: do it when the real frontend
+      `docs/IMPROVEMENTS.md`, and it changes the IPC contract: do it when the real frontend
       begins, so the TypeScript type only changes once.
 - [x] ~~**`unpack` implements only one of the three compression schemes.**~~ **Resolved on
       2026-09-03.** The byte at `0x07` in the ARCH000 header wasn't a version, as the
@@ -448,7 +448,7 @@ building the Collection screen, not before designing it.
 - [ ] **Backlog of registered, not-yet-started tasks: `docs/BACKLOG.md`** (2026-09-05).
       ~~B1 analysis on sources for item effects~~ **closed on 2026-09-05**: the
       source is wiki.gg (CC BY-SA 4.0, not the fandom copy), dataset in the build, report in
-      `docs/superpowers/plans/2026-09-05-b1-fonti-effetti-report.md`. **Implementation closed
+      `docs/superpowers/plans/2026-09-05-b1-sources-effects-report.md`. **Implementation closed
       the same day** (at night): crate `wiki`, tool `wiki-snapshot`, embedded dataset —
       report in `docs/superpowers/plans/2026-09-05-wiki-dataset-report.md`. All that's left is the
       design of the screen that shows the text. ~~B2 challenge rewards~~ **closed on
@@ -559,6 +559,43 @@ New pure crate `crates/graph`, 42 tests. Full report in
 - [ ] **Not done**: regenerating `design-export/isaacdome-design-pack/` (the generator now
       puts real graph data in it, so the checked-in copy is a version behind).
 
+### 2026-09-07 — B7 follow-up: the leftovers
+
+The B7 pass below translated the prose but stopped at the edge of the fenced code blocks,
+and it never regenerated the design package. Both closed here, plus the source strings B7
+had deliberately left alone.
+
+- [x] **Italian file names renamed**: `docs/STATO.md` → `docs/STATUS.md`,
+      `docs/MIGLIORIE.md` → `docs/IMPROVEMENTS.md`,
+      `…/2026-09-05-b1-fonti-effetti-report.md` → `…-b1-sources-effects-report.md`,
+      with the references updated in 19 files, `CLAUDE.md` included.
+- [x] **`design-export/isaacdome-design-pack/` realigned.** It was output committed before
+      the translation: the generator already copied the English `DESIGN-BRIEF.md` and wrote
+      an English `README.md`, but the checked-in pack still held the Italian brief and a
+      `LEGGIMI.md` the code no longer produces. Rather than rerun the tool (it needs the
+      game installed and rewrites 5,833 images), `documents()` was replicated by hand: the
+      three copied files refreshed, `README.md` written from the generator's own
+      `readme()` with `{images}` = 5833, `LEGGIMI.md` deleted. The count was confirmed from
+      two sides — `INDEX.json` has 5,833 rows and the stale `LEGGIMI.md` printed 5,833 — so
+      the result is what a regeneration would produce for those documents.
+- [x] **The code blocks inside the plans and specs**, ~250 lines: Rust doc comments,
+      `assert!` messages, `git commit -m` messages, Cargo `description` fields shown in
+      snippets. The plans' own instruction "messages in Italian" was flipped to English in
+      the four files that carried it; the real history has been English and squashed since
+      the initial commits, so nothing points at a live commit any more.
+- [x] **Italian identifiers in Rust**, which no earlier pass had looked for:
+      `crates/ipc/tests/target_sprite_real.rs` (`Conteggio`, `copertura_delle_pagine`,
+      `famiglia`, `reale`, …), `crates/unpack/src/arch.rs` (`tabella`, `leggibili`,
+      `disponibili`), `crates/ipc/src/target_sprite.rs` (`chiave`, `resto`, `tipo`,
+      `variante`), and `ui/scripts/scan-conventions.mjs` (`ECCEZIONI` → `EXEMPTIONS`,
+      `motivo` → `reason`, `esente` → `isExempt`, with `CLAUDE.md`,
+      `docs/frontend-conventions.md` and `docs/IMPROVEMENTS.md` updated to match).
+- [x] **The nine `Cargo.toml` `description` fields** and the whole of `crates/wiki/build.rs`,
+      which the B7 pass had skipped entirely.
+- [x] **The user-facing strings**: `describe_open_error` and `store_reason` in
+      `crates/app/src/lib.rs`, the expectations pinning them in `crates/ipc/tests/graph.rs`,
+      and every visible string in `ui/src/App.vue` and comment in `ui/src/assets/main.css`.
+
 ### 2026-09-07 — B7: the repo's prose moves to English
 
 Backlog task B7 (registered 2026-09-06) executed: comments, assert/panic/eprintln
@@ -575,23 +612,20 @@ the size (2,100+ comment lines across 116 Rust files, ~30 `.md` files).
       CSS/styling on purpose — the user asked for a plain Markdown document, not a ported
       stylesheet.
 - [x] **`docs/convenzioni-frontend.md` → `docs/frontend-conventions.md`**, and
-      `design-export`'s generated `LEGGIMI.md` → `README.md` in the generator source (the
-      checked-in `design-export/isaacdome-design-pack/` copy is stale until the tool runs
-      again on a machine with the game installed — this environment doesn't have it).
+      `design-export`'s generated `LEGGIMI.md` → `README.md` in the generator source. The
+      checked-in `design-export/isaacdome-design-pack/` copy stayed stale until 2026-09-07,
+      when the four documents `documents()` copies were brought back in line by hand.
 - [x] **Every crate** (`app`, `catalog`, `core-save`, `design-export`, `discovery`, `ipc`,
       `store`, `test-support`, `unpack`, `wiki`, `wiki-snapshot`), `ui/`, `reference/`, and
       the dev-tool shell scripts, translated. `cargo fmt`, `cargo clippy --all-targets -D
       warnings`, and `cargo test --workspace -- --nocapture` all clean, one pre-existing
       failure aside (below). `pnpm typecheck`, `lint`, `format:check`, `scan` all clean too.
-- [x] **What deliberately stayed in Italian**, and why it isn't a leftover: business-facing
-      diagnostic text the app already returns today pending real i18n (e.g. `store_reason`'s
-      `"database di una versione più nuova (N > M)"`; `ui/src/App.vue`'s verification-screen
-      copy, which carries its own declared exemption in `scan-conventions.mjs`); and test
-      *input data* chosen to look like garbage on purpose (an invalid VDF/JSON literal, a
-      lone accented character fed through percent-encoding). Translating those would either
-      misrepresent what the running app actually shows today, or change what a test is
-      exercising. Same treatment applied consistently to the `docs/superpowers/plans/`
-      files that mirror this code in illustrative snippets.
+- [x] **What deliberately stayed in Italian at the time**: user-facing diagnostic text the
+      app returns pending real i18n (`store_reason`, `describe_open_error`, `ui/src/App.vue`'s
+      verification-screen copy) and test *input data* chosen to look like garbage on purpose.
+      **Reversed on 2026-09-07**, on the user's explicit call: none of that text comes from
+      the game, so it is ours to translate. The App.vue exemption in `scan-conventions.mjs`
+      stands — it bans visible strings in a template, regardless of their language.
 - [x] **Rust identifiers already in English almost everywhere — except `unpack`**, found
       while translating: `disponibili`, `leggibili`, `tabella`, `PRECEDENZA`, `RADICI`,
       `VIVI`, `PICCO`, `SOGLIA_APERTURA`, `controllati`, `mancanti` are Italian variable/
@@ -686,7 +720,7 @@ a 10 MB ZIP with real data and images. Three pieces of code and a rewrite.
 
 ### 2026-09-06 — the completed improvements: no CI, local verification, streaming archives
 
-Twelve of the fourteen tasks in `docs/MIGLIORIE.md` closed (A1 disappeared along with CI).
+Twelve of the fourteen tasks in `docs/IMPROVEMENTS.md` closed (A1 disappeared along with CI).
 Still open: **B2** (generating `types.ts` from the Rust types, when the webapp starts), and **C2** is
 deliberately postponed:
 it changes the IPC contract, so it happens once the real frontend begins. The frontend is
@@ -739,7 +773,7 @@ A documents-only session, no code. Two explicit requests, logged as
 ### 2026-09-05 (night) — B1, sources for item effects
 
 - [x] **Backlog B1 closed**, an analysis task with no code. Report —
-      `docs/superpowers/plans/2026-09-05-b1-fonti-effetti-report.md`. The original entry compared
+      `docs/superpowers/plans/2026-09-05-b1-sources-effects-report.md`. The original entry compared
       against the fandom wiki (CC BY-NC-SA): that's the **abandoned copy** since the 2023
       migration. The living wiki is **wiki.gg**, CC BY-SA 4.0, already cited in `PROJECT.md`
       for the graph; the NC clause no longer applies to us. MediaWiki API with no credentials and **Cargo
@@ -788,7 +822,7 @@ A documents-only session, no code. Two explicit requests, logged as
       unknown template and of `{{bug|…}}` (capped at 8 levels), with a real-data test
       that forbids raw braces in text nodes. Two families of cases remain, listed
       in the `wiki` module section above.
-- [x] `docs/STATO.md` (this entry and the `wiki` module in "M1 — detail"), `BACKLOG.md`,
+- [x] `docs/STATUS.md` (this entry and the `wiki` module in "M1 — detail"), `BACKLOG.md`,
       `CLAUDE.md`, `DESIGN-BRIEF.md` (new §8) and the spec kept in sync. `README.md` wasn't
       touched by the plan's tasks; its rewrite, independent of this cycle, landed on the branch
       as a separate commit.
@@ -836,7 +870,7 @@ A documents-only session, no code. Two explicit requests, logged as
       row with an unreadable target doesn't wipe out the goals but reaches the UI by id;
       a database that won't open arrives as a diagnostic with a reason, and `storeAvailable` is
       derived from a single source.
-- [x] `docs/STATO.md`, `DESIGN-BRIEF.md` (new §7 with the contracts, sections renumbered),
+- [x] `docs/STATUS.md`, `DESIGN-BRIEF.md` (new §7 with the contracts, sections renumbered),
       `CLAUDE.md` and `README.md` kept in sync: `store` is born, the structural base is closed.
 - [x] **Final review of the whole branch and a fix round** (`c5c2ef7..`, six commits in two
       rounds): seven findings accepted in the first round. The two that mattered: `Goal` was persisting the whole `UnlockTarget`

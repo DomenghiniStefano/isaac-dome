@@ -132,7 +132,7 @@ const modeText = (m: ArchiveMode) => {
     case 'bogocrypt2':
       return 'Bogocrypt2'
     case 'unknown':
-      return `sconosciuto (${m.value})`
+      return `unknown (${m.value})`
     default:
       return assertNever(m)
   }
@@ -143,7 +143,7 @@ const modeText = (m: ArchiveMode) => {
 const basisText = (b: StepsBasis) => {
   switch (b) {
     case StepsBasis.FanOut:
-      return 'per fan-out'
+      return 'by fan-out'
     default:
       return assertNever(b)
   }
@@ -154,14 +154,14 @@ const basisText = (b: StepsBasis) => {
 // the snapshot is behind.
 const freshnessText = (newerThanSnapshot: boolean | null) => {
   if (newerThanSnapshot === null)
-    return 'gioco non da Steam: freschezza non verificabile'
+    return 'game not from Steam: freshness cannot be checked'
   return newerThanSnapshot
-    ? 'il gioco è più recente dello snapshot'
-    : 'snapshot al passo col gioco'
+    ? 'the game is newer than the snapshot'
+    : 'snapshot in step with the game'
 }
 
 const countsText = (counts: Extract<WikiInfo, { kind: 'loaded' }>['counts']) =>
-  `oggetti ${counts.items} · trinket ${counts.trinkets} · achievement ${counts.achievements} · boss ${counts.bosses} · sfide ${counts.challenges} · personaggi ${counts.characters}`
+  `items ${counts.items} · trinkets ${counts.trinkets} · achievements ${counts.achievements} · bosses ${counts.bosses} · challenges ${counts.challenges} · characters ${counts.characters}`
 
 onMounted(() => load().catch(handleIpcError))
 </script>
@@ -171,19 +171,19 @@ onMounted(() => load().catch(handleIpcError))
     <p v-if="error" class="text-mark-partial">{{ JSON.stringify(error) }}</p>
 
     <section v-if="state" class="flex flex-col gap-2">
-      <h1 class="text-lg font-bold">Stato</h1>
-      <p>Steam: {{ state.steam?.rootHint ?? 'non trovato' }}</p>
+      <h1 class="text-lg font-bold">Status</h1>
+      <p>Steam: {{ state.steam?.rootHint ?? 'not found' }}</p>
       <p>
-        Gioco: {{ state.game?.dirHint ?? 'non trovato' }} ({{
+        Game: {{ state.game?.dirHint ?? 'not found' }} ({{
           state.game?.edition ?? '—'
         }})
       </p>
-      <p>Profilo attivo: {{ state.active.kind }}</p>
+      <p>Active profile: {{ state.active.kind }}</p>
       <ul class="flex flex-col gap-1">
         <li v-for="c in state.candidates" :key="c.id">
           <button class="underline" @click="choose(c.id)">
-            {{ c.prefix }} slot {{ c.slot }} — {{ c.sizeBytes }} byte
-            <span v-if="c.suggested">(suggerito)</span>
+            {{ c.prefix }} slot {{ c.slot }} — {{ c.sizeBytes }} bytes
+            <span v-if="c.suggested">(suggested)</span>
           </button>
         </li>
       </ul>
@@ -193,14 +193,14 @@ onMounted(() => load().catch(handleIpcError))
       v-if="state && state.diagnostics.length"
       class="flex flex-col gap-1"
     >
-      <h2 class="font-bold">Diagnostica setup</h2>
+      <h2 class="font-bold">Setup diagnostics</h2>
       <p v-for="(d, i) in state.diagnostics" :key="i">
         {{ JSON.stringify(d) }}
       </p>
     </section>
 
     <section v-if="summary" class="flex flex-col gap-1">
-      <h2 class="font-bold">Sezioni</h2>
+      <h2 class="font-bold">Sections</h2>
       <p v-for="s in summary.sections" :key="s.kind">
         {{ s.kind }}: {{ s.count }}
       </p>
@@ -210,7 +210,7 @@ onMounted(() => load().catch(handleIpcError))
       v-if="summary && summary.diagnostics.length"
       class="flex flex-col gap-1"
     >
-      <h2 class="font-bold">Diagnostica salvataggio</h2>
+      <h2 class="font-bold">Save diagnostics</h2>
       <p v-for="(d, i) in summary.diagnostics" :key="i">
         {{ JSON.stringify(d) }}
       </p>
@@ -218,37 +218,37 @@ onMounted(() => load().catch(handleIpcError))
 
     <section v-if="extraction" class="flex flex-col gap-2">
       <h2 class="font-bold">
-        Archivi del gioco: {{ extraction.archives.length }} aperti,
-        {{ extraction.totalEntries }} voci indicizzate
+        Game archives: {{ extraction.archives.length }} open,
+        {{ extraction.totalEntries }} entries indexed
       </h2>
       <p v-if="!extraction.archives.length" class="opacity-muted">
-        Nessun archivio: il gioco non risulta installato.
+        No archives: the game does not appear to be installed.
       </p>
       <p v-for="a in extraction.archives" :key="a.name">
-        {{ a.name }} — {{ modeText(a.mode) }} — {{ a.entries }} voci
+        {{ a.name }} — {{ modeText(a.mode) }} — {{ a.entries }} entries
       </p>
     </section>
 
     <section v-if="extraction?.catalog" class="flex flex-col gap-2">
       <h2 class="font-bold">
-        Catalogo: {{ extraction.catalog.total }} oggetti —
-        {{ extraction.catalog.counts.passives }} passivi,
-        {{ extraction.catalog.counts.actives }} attivi,
-        {{ extraction.catalog.counts.familiars }} familiari,
-        {{ extraction.catalog.counts.trinkets }} trinket
+        Catalog: {{ extraction.catalog.total }} items —
+        {{ extraction.catalog.counts.passives }} passives,
+        {{ extraction.catalog.counts.actives }} actives,
+        {{ extraction.catalog.counts.familiars }} familiars,
+        {{ extraction.catalog.counts.trinkets }} trinkets
       </h2>
       <p class="opacity-muted">
-        Nomi da stringtable.sta in
-        {{ extraction.catalog.languages.length }} lingue;
-        {{ extraction.catalog.unresolvedNames }} senza stringa (si mostra la
-        chiave).
+        Names from stringtable.sta in
+        {{ extraction.catalog.languages.length }} languages;
+        {{ extraction.catalog.unresolvedNames }} without a string (the key is
+        shown).
       </p>
     </section>
 
     <section v-if="extraction?.sprites.length" class="flex flex-col gap-2">
       <h2 class="font-bold">
-        Sprite estratti a runtime ({{ extraction.sprites.length }} dei
-        {{ extraction.catalog?.total ?? 0 }} oggetti)
+        Sprites extracted at runtime ({{ extraction.sprites.length }} of
+        {{ extraction.catalog?.total ?? 0 }} items)
       </h2>
       <ul class="flex flex-row flex-wrap gap-4">
         <li
@@ -268,16 +268,16 @@ onMounted(() => load().catch(handleIpcError))
       <template v-if="extraction.wiki.kind === 'loaded'">
         <p>
           snapshot {{ extraction.wiki.snapshotAt }} · patch
-          {{ extraction.wiki.lastKnownPatch?.number ?? '?' }} · irrisolti
-          (occorrenze) {{ extraction.wiki.unresolved }} · template ignoti
-          (occorrenze) {{ extraction.wiki.unknownTemplates }}
+          {{ extraction.wiki.lastKnownPatch?.number ?? '?' }} · unresolved
+          (occurrences) {{ extraction.wiki.unresolved }} · unknown templates
+          (occurrences) {{ extraction.wiki.unknownTemplates }}
         </p>
         <p>{{ freshnessText(extraction.wiki.gameNewerThanSnapshot) }}</p>
         <p>{{ countsText(extraction.wiki.counts) }}</p>
       </template>
-      <p v-else>dataset assente: {{ extraction.wiki.reason }}</p>
+      <p v-else>dataset absent: {{ extraction.wiki.reason }}</p>
       <label class="flex gap-2">
-        oggetto id
+        item id
         <input
           v-model="wikiId"
           class="border"
@@ -304,11 +304,11 @@ onMounted(() => load().catch(handleIpcError))
 
     <section v-if="matrix" class="flex flex-col gap-2 overflow-x-auto">
       <h2 class="font-bold">
-        Marchi: {{ matrix.totals.started }} iniziati su
-        {{ matrix.totals.readable }} leggibili ({{
+        Marks: {{ matrix.totals.started }} started out of
+        {{ matrix.totals.readable }} readable ({{
           matrix.totals.unknown
         }}
-        ignoti, {{ matrix.totals.unexpected }} sospetti)
+        unknown, {{ matrix.totals.unexpected }} suspect)
       </h2>
       <table>
         <thead>
@@ -337,9 +337,9 @@ onMounted(() => load().catch(handleIpcError))
 
     <section v-if="unlockView" class="flex flex-col gap-2">
       <h2 class="font-bold">
-        Unlock: {{ unlockView.totals.done }} fatti su
+        Unlock: {{ unlockView.totals.done }} done out of
         {{ unlockView.totals.slots }} ({{ unlockView.totals.unknown }}
-        sconosciuti al catalogo)
+        unknown to the catalog)
       </h2>
       <p
         v-for="(d, i) in unlockView.diagnostics"
@@ -351,7 +351,7 @@ onMounted(() => load().catch(handleIpcError))
     </section>
 
     <section v-if="steps" class="flex flex-col gap-2">
-      <h2 class="font-bold">Prossimi passi ({{ basisText(steps.basis) }})</h2>
+      <h2 class="font-bold">Next steps ({{ basisText(steps.basis) }})</h2>
       <ul class="flex flex-col gap-1">
         <li
           v-for="(n, i) in steps.steps"
@@ -371,7 +371,8 @@ onMounted(() => load().catch(handleIpcError))
             </span>
           </template>
           <span v-else class="opacity-muted">
-            slot {{ n.achievement.slot }}: fatto o no, il catalogo non sa cos'è
+            slot {{ n.achievement.slot }}: done or not, the catalog does not
+            know what it is
           </span>
         </li>
       </ul>

@@ -7,7 +7,7 @@
 Task 8 (batches truncated by the server) and one round on Task 9 (characters and wikilinks). No task
 was stopped or rewritten from scratch: every round fixed code that was already headed in the right direction.
 Then the **whole-branch review**, which found a single finding but the one that mattered:
-the recursion over unknown templates was declared done in this report and in `STATO.md`
+the recursion over unknown templates was declared done in this report and in `STATUS.md`
 while the code didn't exist (314 raw `{{…}}` fragments in the derived dataset). Closed by fix
 wave `9ec171c`, with a test on real data that now forbids raw braces in text nodes.
 

@@ -2,7 +2,7 @@
 name = "discovery"
 version = "0.1.0"
 edition = "2021"
-description = "Localizza Steam, il gioco Isaac e i salvataggi su un PC qualsiasi"
+description = "Locates Steam, the Isaac game and the saves on any PC"
 
 [dependencies]
 dirs = "6.0.0"

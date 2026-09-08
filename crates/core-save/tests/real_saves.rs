@@ -8,8 +8,8 @@ const SERIE: &str = "rep+persistentgamedata1.dat";
 
 /// The series' first snapshot and its last. Used by the tests that compare two eras
 /// of the game: between the two, a patch added an achievement.
-const GIU_2025: &str = "20250626.rep+persistentgamedata1.dat";
-const SET_2026: &str = "20260905.rep+persistentgamedata1.dat";
+const JUN_2025: &str = "20250626.rep+persistentgamedata1.dat";
+const SEP_2026: &str = "20260905.rep+persistentgamedata1.dat";
 
 /// The historical series, already parsed, in chronological order. Empty if `samples/`
 /// contains none: the folder is ignored by git, so whoever clones the repo has none.
@@ -51,13 +51,13 @@ fn every_real_save_has_ten_sections_in_order() {
 /// (`od -j 16 -t u4`), not from this parser's output.
 #[test]
 fn achievement_count_is_read_from_file_not_hardcoded() {
-    let (Some(prima), Some(dopo)) = (sample_bytes(GIU_2025), sample_bytes(SET_2026)) else {
+    let (Some(earlier), Some(later)) = (sample_bytes(JUN_2025), sample_bytes(SEP_2026)) else {
         return;
     };
-    let prima = Save::parse(&prima).unwrap();
-    let dopo = Save::parse(&dopo).unwrap();
-    assert_eq!(prima.section(Kind::Achievements).unwrap().count, 641);
-    assert_eq!(dopo.section(Kind::Achievements).unwrap().count, 642);
+    let earlier = Save::parse(&earlier).unwrap();
+    let later = Save::parse(&later).unwrap();
+    assert_eq!(earlier.section(Kind::Achievements).unwrap().count, 641);
+    assert_eq!(later.section(Kind::Achievements).unwrap().count, 642);
 }
 
 #[test]
@@ -117,7 +117,7 @@ fn bestiary_length_follows_bytes_not_header_count() {
 
 #[test]
 fn the_last_section_reaches_exactly_the_checksum() {
-    let Some(bytes) = sample_bytes(SET_2026) else {
+    let Some(bytes) = sample_bytes(SEP_2026) else {
         return;
     };
     let save = Save::parse(&bytes).unwrap();
@@ -153,11 +153,11 @@ fn diff_reports_exactly_the_bits_that_turned_on() {
         // the first snapshot is off, not "outside the comparison". This is the real case
         // of the 641 → 642 slot transition, where the new achievement shows up as
         // unlocked right away and must appear in the diff.
-        let attesi: Vec<usize> = (0..b.len())
+        let expected: Vec<usize> = (0..b.len())
             .filter(|&i| b[i] && !a.get(i).copied().unwrap_or(false))
             .collect();
         assert_eq!(
-            d.achievements, attesi,
+            d.achievements, expected,
             "{before_name} → {after_name}: indices turned on between the two snapshots"
         );
         assert!(
@@ -204,7 +204,7 @@ fn the_series_never_regresses() {
 
 #[test]
 fn diff_of_a_save_with_itself_is_empty() {
-    let Some(bytes) = sample_bytes(SET_2026) else {
+    let Some(bytes) = sample_bytes(SEP_2026) else {
         return;
     };
     let save = Save::parse(&bytes).unwrap();

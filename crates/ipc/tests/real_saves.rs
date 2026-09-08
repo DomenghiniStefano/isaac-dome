@@ -6,12 +6,12 @@ use test_support::sample;
 /// The latest snapshot in the historical series under `samples/`. The samples are
 /// named by date because the numbers pinned here are a fixture of known origin; the
 /// first of the series, from a year earlier, serves the test that compares two eras.
-const RECENTE: &str = "20260905.rep+persistentgamedata1.dat";
-const ANNO_PRIMA: &str = "20250626.rep+persistentgamedata1.dat";
+const RECENT: &str = "20260905.rep+persistentgamedata1.dat";
+const A_YEAR_EARLIER: &str = "20250626.rep+persistentgamedata1.dat";
 
 #[test]
 fn summary_reports_the_counts_declared_by_the_file() {
-    let Some(path) = sample(RECENTE) else { return };
+    let Some(path) = sample(RECENT) else { return };
     let bytes = std::fs::read(&path).expect("a present sample must be readable");
     let save = Save::parse(&bytes).unwrap();
     let summary = save_summary(&profile_id(&path), &save);
@@ -35,7 +35,7 @@ fn summary_reports_the_counts_declared_by_the_file() {
 
 #[test]
 fn summary_carries_no_raw_bytes() {
-    let Some(path) = sample(RECENTE) else { return };
+    let Some(path) = sample(RECENT) else { return };
     let bytes = std::fs::read(&path).expect("a present sample must be readable");
     let save = Save::parse(&bytes).unwrap();
     let json = serde_json::to_string(&save_summary(&profile_id(&path), &save)).unwrap();
@@ -103,11 +103,11 @@ fn save_diagnostic_json_tags_and_fields_are_pinned() {
 /// against real data.
 #[test]
 fn summary_reports_the_counts_each_snapshot_declares_and_they_differ() {
-    let (Some(recente_path), Some(prima_path)) = (sample(RECENTE), sample(ANNO_PRIMA)) else {
+    let (Some(recent_path), Some(earlier_path)) = (sample(RECENT), sample(A_YEAR_EARLIER)) else {
         return;
     };
-    let leggi = |p: &Path| std::fs::read(p).expect("a present sample must be readable");
-    let (recente_bytes, prima_bytes) = (leggi(&recente_path), leggi(&prima_path));
+    let read_file = |p: &Path| std::fs::read(p).expect("a present sample must be readable");
+    let (recent_bytes, earlier_bytes) = (read_file(&recent_path), read_file(&earlier_path));
 
     let summary_of = |path: &Path, bytes: &[u8]| -> SaveSummary {
         let save = Save::parse(bytes).unwrap();
@@ -123,8 +123,8 @@ fn summary_reports_the_counts_each_snapshot_declares_and_they_differ() {
         summary
     };
 
-    let recente = summary_of(&recente_path, &recente_bytes);
-    let prima = summary_of(&prima_path, &prima_bytes);
+    let recent = summary_of(&recent_path, &recent_bytes);
+    let earlier = summary_of(&earlier_path, &earlier_bytes);
 
     let count_of = |summary: &SaveSummary, kind: Kind| {
         summary
@@ -136,16 +136,16 @@ fn summary_reports_the_counts_each_snapshot_declares_and_they_differ() {
     };
 
     assert_ne!(
-        count_of(&recente, Kind::Achievements),
-        count_of(&prima, Kind::Achievements),
+        count_of(&recent, Kind::Achievements),
+        count_of(&earlier, Kind::Achievements),
         "between the two snapshots a patch added an achievement"
     );
     // The counters, on the other hand, haven't changed between these two dates: that's
     // the whole point of the rule, not an exception. The number is read from each
     // file, and whether it's the same or different is discovered, never assumed.
     assert_eq!(
-        count_of(&recente, Kind::Counters),
-        count_of(&prima, Kind::Counters),
+        count_of(&recent, Kind::Counters),
+        count_of(&earlier, Kind::Counters),
         "the counters are the same in both snapshots"
     );
 }

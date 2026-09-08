@@ -129,20 +129,20 @@ impl Archive {
 
         // The index is read in one shot, and only for the part that fits in the file: a
         // truncated index degrades to "take what's there", as before.
-        let disponibili = file_len.saturating_sub(index_off) / 20;
-        let leggibili = (count as u64).min(disponibili) as usize;
-        let mut tabella = vec![0u8; leggibili * 20];
-        if leggibili > 0 {
-            read_exact_at(&file, &mut tabella, index_off)?;
+        let available = file_len.saturating_sub(index_off) / 20;
+        let readable = (count as u64).min(available) as usize;
+        let mut table = vec![0u8; readable * 20];
+        if readable > 0 {
+            read_exact_at(&file, &mut table, index_off)?;
         }
 
-        let mut entries = Vec::with_capacity(leggibili);
-        let mut index = std::collections::HashMap::with_capacity(leggibili);
-        for i in 0..leggibili {
+        let mut entries = Vec::with_capacity(readable);
+        let mut index = std::collections::HashMap::with_capacity(readable);
+        for i in 0..readable {
             let o = i * 20;
             let word = |k: usize| {
                 let p = o + k * 4;
-                u32::from_le_bytes([tabella[p], tabella[p + 1], tabella[p + 2], tabella[p + 3]])
+                u32::from_le_bytes([table[p], table[p + 1], table[p + 2], table[p + 3]])
             };
             let offset = word(2) as u64;
             if offset >= file_len {

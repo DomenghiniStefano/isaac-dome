@@ -7,7 +7,7 @@
 ## Context
 
 Fourth sub-project of M1, taken up in place of `catalog` — which stays blocked until the
-game's XMLs are available (see `docs/STATO.md`, *Open blockers*).
+game's XMLs are available (see `docs/STATUS.md`, *Open blockers*).
 
 The three completed modules (`core-save`, `discovery`, `unpack`) are libraries with no
 consumers: today nothing calls them except the tests. This sub-project builds the first

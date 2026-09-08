@@ -441,7 +441,7 @@ same rows**, and that's the only thing keeping the document from promising a che
 doesn't happen.
 
 **The exceptions live in the script, not in the head of whoever runs it.** At the top of
-`scan-conventions.mjs` there's an `ECCEZIONI` array with file, check, and reason: today it
+`scan-conventions.mjs` there's an `EXEMPTIONS` array with file, check, and reason: today it
 only contains `App.vue` and `WikiInline.vue`, which are declared verification pages and
 will be replaced by the real frontend. An empty list is the goal; an exception with no
 written reason is an untracked violation.

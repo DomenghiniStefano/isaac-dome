@@ -136,7 +136,7 @@ mod tests {
 \t<passive gfx=\"NoId.png\" name=\"#X\" description=\"#X\" />
 \t<passive id=\"abc\" gfx=\"BadId.png\" name=\"#X\" description=\"#X\" />
 \t<passive id=\"7\" name=\"#NO_GFX\" description=\"#X\" />
-\t<passives>non e' un passive</passives>
+\t<passives>not a passive</passives>
 </items>";
 
     fn parsed() -> (Vec<Item>, Vec<Diagnostic>) {

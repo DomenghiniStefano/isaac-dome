@@ -1,7 +1,7 @@
 # The plan queue — an ordered series of achievements (design)
 
 **Date:** 2026-09-07
-**Milestone:** M3 (`docs/STATO.md`), the derived plan
+**Milestone:** M3 (`docs/STATUS.md`), the derived plan
 **Depends on:** M2, the unlock graph — `docs/superpowers/specs/2026-09-07-unlock-graph-design.md`
 **Status:** design approved in conversation, section by section; pending spec review
 

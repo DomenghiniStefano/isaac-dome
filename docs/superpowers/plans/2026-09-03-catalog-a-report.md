@@ -18,7 +18,7 @@
 | 7 | Real-data tests (`crates/catalog/tests/real_data.rs`): found and fixed a real Tainted-recognition bug, and found wrong measured numbers in the brief (911 instead of 909). | `7817e87..948be98` |
 | 8 | `ipc::catalog_view`: catalog view-model; removed `ipc::resources::catalog_peek` and its text parser; bridge from matrix row ↔ `players.xml`. | `948be98..f2185e7` |
 | 9 | Catalog built once in `CatalogState` (Tauri managed state); verification screen with real names instead of keys. | `f2185e7..dbb5245` |
-| 10 | This report; aligned `docs/STATO.md`, `DESIGN-BRIEF.md` and the spec with the real numbers that came out of Task 7; renamed the `all_item_names_resolve` test. | `dbb5245..a83fff8` |
+| 10 | This report; aligned `docs/STATUS.md`, `DESIGN-BRIEF.md` and the spec with the real numbers that came out of Task 7; renamed the `all_item_names_resolve` test. | `dbb5245..a83fff8` |
 
 **Final gate:** `cargo test --workspace` → **156 tests, 0 failed** (42 of them in the
 `catalog` crate: 28 unit, 7 on `build.rs`, 7 on real data). `cargo fmt --check` and

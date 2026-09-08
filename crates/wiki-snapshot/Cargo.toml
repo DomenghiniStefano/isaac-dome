@@ -2,7 +2,7 @@
 name = "wiki-snapshot"
 version = "0.1.0"
 edition = "2021"
-description = "Tool da sviluppatore: scarica lo snapshot grezzo della wiki e costruisce il dataset"
+description = "Developer tool: downloads the raw wiki snapshot and builds the dataset"
 
 [dependencies]
 wiki = { path = "../wiki", default-features = false }

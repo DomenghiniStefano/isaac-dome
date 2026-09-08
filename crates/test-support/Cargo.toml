@@ -2,4 +2,4 @@
 name = "test-support"
 version = "0.1.0"
 edition = "2021"
-description = "Helper condivisi dai test che leggono dati reali da samples/"
+description = "Helpers shared by the tests that read real data from samples/"

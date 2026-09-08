@@ -345,7 +345,7 @@ pub const MAGIC: &[u8; 14] = b"ISAACNGSAVE09R";
 /// The structural model of a save: raw sections + diagnostics.
 #[derive(Debug, Clone, Serialize)]
 pub struct Save {
-    /// Il `u32` a 0x10, significato ignoto, esposto grezzo.
+    /// The `u32` at 0x10, meaning unknown, exposed raw.
     pub unknown_0x10: u32,
     pub sections: Vec<Section>,
     pub diagnostics: Vec<Diagnostic>,
@@ -379,7 +379,7 @@ fn read_u32(bytes: &[u8], off: usize) -> u32 {
 }
 
 impl Save {
-    /// Legge e interpreta un file. Sola lettura.
+    /// Reads and interprets a file. Read-only.
     pub fn open(path: impl AsRef<Path>) -> Result<Save, OpenError> {
         let bytes = std::fs::read(path)?;
         Save::parse(&bytes)
@@ -637,7 +637,7 @@ Expected: PASS (unit tests from parse.rs + all fixtures in `degradation.rs`).
 
 ```bash
 git add crates/core-save/src/parse.rs crates/core-save/tests/degradation.rs
-git commit -m "core-save: walk delle sezioni con diagnostica e degradazione"
+git commit -m "core-save: section walk with diagnostics and degradation"
 ```
 
 ---

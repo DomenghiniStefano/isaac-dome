@@ -2,12 +2,12 @@
 name = "wiki"
 version = "0.1.0"
 edition = "2021"
-description = "Dataset derivato dalla wiki: parser del wikitext e albero tipizzato"
+description = "Dataset derived from the wiki: wikitext parser and typed tree"
 
 [features]
 default = ["embedded"]
-# Incorpora `dataset/wiki.json` (compresso da build.rs) e espone `Dataset::embedded`. Il tool
-# `wiki-snapshot`, che quel file lo produce, compila senza.
+# Embeds `dataset/wiki.json` (compressed by build.rs) and exposes `Dataset::embedded`. The
+# `wiki-snapshot` tool, which is what produces that file, compiles without it.
 embedded = ["dep:miniz_oxide"]
 
 [dependencies]

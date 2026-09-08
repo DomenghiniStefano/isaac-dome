@@ -17,69 +17,69 @@ use unpack::{Archive, ResourceSet};
 /// of the process's working set (pages mapped by the system don't pass through here):
 /// it's the peak of this program's heap, which is what differs between "I read the
 /// whole file" and "I read the index".
-static VIVI: AtomicUsize = AtomicUsize::new(0);
-static PICCO: AtomicUsize = AtomicUsize::new(0);
+static LIVE: AtomicUsize = AtomicUsize::new(0);
+static PEAK: AtomicUsize = AtomicUsize::new(0);
 
-struct Contatore;
+struct Counter;
 
-unsafe impl GlobalAlloc for Contatore {
+unsafe impl GlobalAlloc for Counter {
     unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
         let p = unsafe { System.alloc(layout) };
         if !p.is_null() {
-            let ora = VIVI.fetch_add(layout.size(), Ordering::Relaxed) + layout.size();
-            PICCO.fetch_max(ora, Ordering::Relaxed);
+            let now = LIVE.fetch_add(layout.size(), Ordering::Relaxed) + layout.size();
+            PEAK.fetch_max(now, Ordering::Relaxed);
         }
         p
     }
 
     unsafe fn dealloc(&self, ptr: *mut u8, layout: Layout) {
-        VIVI.fetch_sub(layout.size(), Ordering::Relaxed);
+        LIVE.fetch_sub(layout.size(), Ordering::Relaxed);
         unsafe { System.dealloc(ptr, layout) }
     }
 }
 
 #[global_allocator]
-static ALLOCATORE: Contatore = Contatore;
+static ALLOCATOR: Counter = Counter;
 
 /// The threshold also declared in `unpack`'s spec: opening every archive of a full
 /// installation must stay **under 64 MB** of heap. It's deliberately loose — it doesn't
 /// measure a line of code, it measures that the order of magnitude is the index (units
 /// of MB) and not the data (more than a thousand MB).
-const SOGLIA_APERTURA: usize = 64 * 1024 * 1024;
+const OPEN_THRESHOLD: usize = 64 * 1024 * 1024;
 
 /// How many entries per archive get reread in the equivalence test. All of them would
 /// be tens of thousands of decompressions: a regular stride is taken instead, and the
 /// test states how many.
-const VOCI_PER_ARCHIVIO: usize = 200;
+const ENTRIES_PER_ARCHIVE: usize = 200;
 
 #[test]
 fn opening_every_archive_costs_the_index_not_the_data() {
     let Some(dir) = test_support::packed_dir() else {
         return;
     };
-    let prima = VIVI.load(Ordering::Relaxed);
-    PICCO.store(prima, Ordering::Relaxed);
+    let before = LIVE.load(Ordering::Relaxed);
+    PEAK.store(before, Ordering::Relaxed);
 
     let rs = ResourceSet::open(&dir);
-    let picco = PICCO.load(Ordering::Relaxed).saturating_sub(prima);
+    let peak = PEAK.load(Ordering::Relaxed).saturating_sub(before);
 
     // The set must have opened something, otherwise a low peak proves nothing.
-    let voci: usize = rs.archives().iter().map(|a| a.entries).sum();
+    let entries: usize = rs.archives().iter().map(|a| a.entries).sum();
     assert!(
-        rs.archives().len() >= 4 && voci > 10_000,
-        "archives opened: {}, entries: {voci}",
+        rs.archives().len() >= 4 && entries > 10_000,
+        "archives opened: {}, entries: {entries}",
         rs.archives().len()
     );
     eprintln!(
-        "sample: {} archives, {voci} entries indexed, peak {} KiB",
+        "sample: {} archives, {entries} entries indexed, peak {} KiB",
         rs.archives().len(),
-        picco / 1024
+        peak / 1024
     );
     assert!(
-        picco < SOGLIA_APERTURA,
+        peak < OPEN_THRESHOLD,
         "opening the archives allocated {} MiB, above the threshold of {} MiB",
-        picco / 1024 / 1024,
-        SOGLIA_APERTURA / 1024 / 1024
+        peak / 1024 / 1024,
+        OPEN_THRESHOLD / 1024 / 1024
     );
 }
 
@@ -91,7 +91,7 @@ fn every_entry_still_decompresses_to_the_length_the_index_declares() {
     let Some(dir) = test_support::packed_dir() else {
         return;
     };
-    for nome in [
+    for name in [
         "config.a",
         "fonts.a",
         "animations.a",
@@ -101,22 +101,22 @@ fn every_entry_still_decompresses_to_the_length_the_index_declares() {
         "afterbirthp.a",
         "repentance.a",
     ] {
-        let Ok(a) = Archive::open(&dir.join(nome)) else {
-            test_support::skip(&format!("packed/{nome} missing"));
+        let Ok(a) = Archive::open(&dir.join(name)) else {
+            test_support::skip(&format!("packed/{name} missing"));
             continue;
         };
-        let totale = a.entries().len();
-        let passo = (totale / VOCI_PER_ARCHIVIO).max(1);
-        let mut lette = 0;
-        for i in (0..totale).step_by(passo) {
-            let attesa = a.entries()[i].decompressed_len as usize;
+        let total = a.entries().len();
+        let stride = (total / ENTRIES_PER_ARCHIVE).max(1);
+        let mut read_back = 0;
+        for i in (0..total).step_by(stride) {
+            let expected = a.entries()[i].decompressed_len as usize;
             let Some(bytes) = a.read_entry(i) else {
-                panic!("{nome}: entry {i} no longer reads");
+                panic!("{name}: entry {i} no longer reads");
             };
-            assert_eq!(bytes.len(), attesa, "{nome}: entry {i}");
-            lette += 1;
+            assert_eq!(bytes.len(), expected, "{name}: entry {i}");
+            read_back += 1;
         }
-        eprintln!("sample: packed/{nome} — {lette} entries reread out of {totale}");
+        eprintln!("sample: packed/{name} — {read_back} entries reread out of {total}");
     }
 }
 
@@ -129,13 +129,13 @@ fn the_last_entry_of_an_archive_reads_too() {
         return;
     };
     let a = Archive::open(&path).expect("config.a opens");
-    let ultima = a
+    let last = a
         .entries()
         .iter()
         .enumerate()
         .max_by_key(|(_, e)| e.offset)
         .map(|(i, _)| i)
         .expect("config.a has entries");
-    let attesa = a.entries()[ultima].decompressed_len as usize;
-    assert_eq!(a.read_entry(ultima).map(|b| b.len()), Some(attesa));
+    let expected = a.entries()[last].decompressed_len as usize;
+    assert_eq!(a.read_entry(last).map(|b| b.len()), Some(expected));
 }

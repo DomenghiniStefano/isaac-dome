@@ -2715,7 +2715,7 @@ git commit -m "test(graph): invariants, historical series and the wiki cross-che
 ### Task 12: Close the milestone in the documents
 
 **Files:**
-- Modify: `docs/STATO.md`
+- Modify: `docs/STATUS.md`
 - Modify: `docs/BACKLOG.md` (entry B4)
 - Modify: `CLAUDE.md` (the `graph` row of the modules table)
 - Create: `docs/superpowers/plans/2026-09-07-unlock-graph-report.md`
@@ -2726,7 +2726,7 @@ The report says what execution found that the plan didn't know. At minimum it mu
 
 - [ ] **Step 2: Update the state**
 
-In `docs/STATO.md`: tick M2, add the session entry, and move `GraphInfo::Stub` out of the "open" list. In `docs/BACKLOG.md`: close B4 with a pointer to the report. In `CLAUDE.md`: the `graph` row stops saying "Doesn't exist yet (M2)" and says what the crate does, and the `ipc` row loses the `{ kind: "stub" }` sentence.
+In `docs/STATUS.md`: tick M2, add the session entry, and move `GraphInfo::Stub` out of the "open" list. In `docs/BACKLOG.md`: close B4 with a pointer to the report. In `CLAUDE.md`: the `graph` row stops saying "Doesn't exist yet (M2)" and says what the crate does, and the `ipc` row loses the `{ kind: "stub" }` sentence.
 
 - [ ] **Step 3: Verify**
 
