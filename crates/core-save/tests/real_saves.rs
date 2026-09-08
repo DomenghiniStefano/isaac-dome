@@ -11,6 +11,26 @@ const SERIE: &str = "rep+persistentgamedata1.dat";
 const JUN_2025: &str = "20250626.rep+persistentgamedata1.dat";
 const SEP_2026: &str = "20260905.rep+persistentgamedata1.dat";
 
+/// The eras `samples/` can hold, and the counts each one's header declares:
+/// `(file, achievements, counters)`. Every number here was read with
+/// `od -A d -j <section offset> -N 12 -t u4` on the header, never taken from this
+/// parser's output — an expectation derived from the code under test proves nothing.
+///
+/// This is the **only** place a count is pinned, and it is pinned per file. It must
+/// never move inside the loop over the series: the series spans eras by construction,
+/// so an era's value asserted in there turns "samples/ holds a save from a different
+/// era" into a red. That is not a hypothesis — it is what happened when the 2026
+/// snapshots left this machine and a January 2025 profile, which declares 521 counters,
+/// was the only file left for an assertion that demanded 523.
+const ERAS: [(&str, u32, u32); 3] = [
+    // Repentance, before the + edition.
+    ("20240118.rep_persistentgamedata1.dat", 638, 496),
+    // Repentance+, January 2025: the achievements are already 641, the counters not yet 523.
+    ("20250112.rep+persistentgamedata1.dat", 641, 521),
+    // Repentance+ 2026, the era the table in `CLAUDE.md` describes.
+    (SEP_2026, 642, 523),
+];
+
 /// The historical series, already parsed, in chronological order. Empty if `samples/`
 /// contains none: the folder is ignored by git, so whoever clones the repo has none.
 fn series() -> Vec<(String, Save)> {
@@ -78,21 +98,41 @@ fn some_counts_do_not_change_with_the_game_version() {
     });
 }
 
+/// Counts are a fixture of an era, so each one is pinned next to the file that produced
+/// it, in [`ERAS`]. A sample that isn't there declares its own skip and takes its row
+/// with it — an era we have no save for is missing coverage, never a failure.
+#[test]
+fn each_era_declares_its_own_counts() {
+    ERAS.iter().for_each(|&(name, achievements, counters)| {
+        let Some(bytes) = sample_bytes(name) else {
+            return;
+        };
+        let save = Save::parse(&bytes).expect("a real sample must parse");
+        assert_eq!(
+            save.section(Kind::Achievements).unwrap().count,
+            achievements,
+            "{name}: achievements"
+        );
+        assert_eq!(
+            save.section(Kind::Counters).unwrap().count,
+            counters,
+            "{name}: counters"
+        );
+    });
+}
+
+/// The era-independent half of the same subject: however many counters the header
+/// declares, that's how many the parser hands back. True in every edition, so it belongs
+/// in the loop over the series — unlike the number itself, which lives in [`ERAS`].
 #[test]
 fn counters_length_follows_the_header() {
     let saves = series();
     if saves.is_empty() {
         return;
     }
-    // How many counters there are is dictated by the file, not by the code.
     saves.iter().for_each(|(name, save)| {
         let declared = save.section(Kind::Counters).unwrap().count as usize;
         assert_eq!(save.u32s(Kind::Counters).unwrap().len(), declared, "{name}");
-        // 523 is the Repentance+ value, read from section 2's header with
-        // `od` and recorded in CLAUDE.md's table. Earlier editions declared
-        // fewer (496 on Repentance): that's why the number isn't hardcoded in
-        // the parser, only in the expectation of a test for a known era.
-        assert_eq!(declared, 523, "{name}");
     });
 }
 
