@@ -196,3 +196,41 @@ pub fn queue_view(inputs: QueueInputs<'_>, icon: impl FnMut(&str) -> Option<Vec<
         store_available,
     }
 }
+
+/// What the queue's ordering rule asks the graph, answered from a table instead of a walk.
+///
+/// The chains are computed **once, for the rows involved**, and not per question: a move
+/// asks `requires` twice per row, and each answer would otherwise be a fresh transitive
+/// walk over the whole graph.
+///
+/// A node the graph can't compute has an empty chain, so it is never dragged and never
+/// walls — the spec's "rows the graph can't compute carry no constraints", expressed once,
+/// here. It lives in this crate rather than in the Tauri one because the design package
+/// builds its sample queue the same way the app does, and two copies of this rule would be
+/// a package showing an order the app doesn't produce.
+pub struct GraphDeps {
+    chains: std::collections::BTreeMap<u32, std::collections::BTreeSet<u32>>,
+}
+
+impl GraphDeps {
+    /// The chains as the graph gives them, for the rows a move involves.
+    pub fn new(g: &graph::Graph, flags: Option<&[bool]>, rows: &[u32]) -> GraphDeps {
+        GraphDeps::from_chains(rows.iter().map(|a| (*a, g.missing_chain(*a, flags))))
+    }
+
+    /// The same table without a graph: the part worth checking, and what the tests use.
+    pub fn from_chains(chains: impl IntoIterator<Item = (u32, Vec<u32>)>) -> GraphDeps {
+        GraphDeps {
+            chains: chains
+                .into_iter()
+                .map(|(a, c)| (a, c.into_iter().collect()))
+                .collect(),
+        }
+    }
+}
+
+impl plan::Dependencies for GraphDeps {
+    fn requires(&self, a: u32, b: u32) -> bool {
+        self.chains.get(&a).is_some_and(|c| c.contains(&b))
+    }
+}
