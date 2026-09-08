@@ -413,3 +413,73 @@ fn text_nodes_carry_no_raw_template_syntax() {
         offenders.len()
     );
 }
+
+/// `corrections.json` is written by hand and every one of its entries is a claim about a
+/// page that exists in `dataset/raw/`. Both files are committed together, so that claim
+/// is checkable — and it needs to be, because a correction that matches nothing produces
+/// no error, no warning and no effect: it just quietly doesn't happen.
+///
+/// Vacuous today: `pageId` is empty. That's the point of writing it now — it costs
+/// nothing while there's nothing to break, and it's the first edit to that file that it
+/// exists to catch. `the_correction_check_detects_a_correction_that_matches_nothing`
+/// below is what proves the check itself works.
+#[test]
+fn every_page_correction_names_a_table_and_a_page_that_exist() {
+    let corr = corrections();
+    let raw = raw();
+    let titles: BTreeMap<&str, ()> = raw.pages.iter().map(|p| (p.title.as_str(), ())).collect();
+
+    assert!(
+        corr.unknown_tables().is_empty(),
+        "corrections for tables nothing consults, so they can never fire: {:?} (known: {:?})",
+        corr.unknown_tables(),
+        wiki::CORRECTED_TABLES
+    );
+    let orphans: Vec<(&str, &str)> = corr
+        .page_id
+        .iter()
+        .flat_map(|(table, pages)| {
+            pages
+                .keys()
+                .map(move |title| (table.as_str(), title.as_str()))
+        })
+        .filter(|(_, title)| !titles.contains_key(title))
+        .collect();
+    assert!(
+        orphans.is_empty(),
+        "corrections for pages that aren't in dataset/raw/: {orphans:?}"
+    );
+}
+
+/// The check above is vacuous while `pageId` is empty, so this one runs it against a file
+/// that is deliberately wrong in both ways. Without it, the guard could be broken and
+/// nobody would know until it was needed.
+#[test]
+fn the_correction_check_detects_a_correction_that_matches_nothing() {
+    let mut corr = Corrections::default();
+    corr.page_id.insert(
+        "collectibles".into(), // the real table is singular
+        [("Breakfast".to_string(), 25u32)].into_iter().collect(),
+    );
+    corr.page_id.insert(
+        "collectible".into(),
+        [("No Such Page At All".to_string(), 1u32)]
+            .into_iter()
+            .collect(),
+    );
+
+    assert_eq!(corr.unknown_tables(), vec!["collectibles"]);
+
+    let raw = raw();
+    let titles: BTreeMap<&str, ()> = raw.pages.iter().map(|p| (p.title.as_str(), ())).collect();
+    let orphans: Vec<&str> = corr
+        .page_id
+        .values()
+        .flat_map(|pages| pages.keys().map(String::as_str))
+        .filter(|title| !titles.contains_key(title))
+        .collect();
+    assert!(
+        orphans.contains(&"No Such Page At All"),
+        "the page check has to see it: {orphans:?}"
+    );
+}
