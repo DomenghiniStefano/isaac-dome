@@ -15,8 +15,56 @@
 //! `scripts/check` counts the two families and reports them at the end. Watch out:
 //! `cargo test` **hides** the output of tests that pass, so those lines are only visible
 //! with `cargo test -- --nocapture`, which is what the script runs.
+//!
+//! The counting doesn't read that stderr, though — see [`DECLARATIONS_VAR`]. Two streams
+//! merged into one file can split a line down the middle, and the summary that tells you
+//! how much a run *didn't* verify is worth nothing if its own numbers are approximate.
 
+use std::io::Write;
 use std::path::{Path, PathBuf};
+
+/// When the runner sets this to a path, every declaration is mirrored into that file as
+/// well as printed. `scripts/check` sets it, empties the file first, and counts from
+/// there; `cargo test` on its own leaves it unset and nothing is written.
+///
+/// It exists because **stderr cannot be counted**. The harness writes `test … ok` to
+/// stdout while these lines go to stderr, so merging the two with `2>&1` can split a
+/// declaration across the middle of a harness line (`skip: ok`, with the rest orphaned);
+/// and the tests inside one binary run in parallel, so they interleave with each other
+/// too. Either way `grep -c '^skip:'` is noise, which is how a summary meant to say
+/// "this run verified less than it looks" ended up saying a number nobody could trust.
+/// A file opened in append mode has neither problem: one short atomic write per line.
+pub const DECLARATIONS_VAR: &str = "ISAACDOME_TEST_DECLARATIONS";
+
+/// Says a line on stderr, for whoever is reading the run, and mirrors it into the
+/// declarations file, for whatever is counting.
+fn declare(line: &str) {
+    eprintln!("{line}");
+    let Ok(path) = std::env::var(DECLARATIONS_VAR) else {
+        return;
+    };
+    // A mirror that can't be written must not fail a test: the declaration is already on
+    // stderr, and the summary reports how many it managed to count.
+    let _ = append_line(Path::new(&path), line);
+}
+
+/// Appends one line. Two details, both of which cost a wrong summary before they were
+/// there:
+///
+/// **Append mode, never truncate.** Every test binary of a run writes to the same file;
+/// a truncating open would leave only whatever spoke last.
+///
+/// **The newline goes in the same buffer as the text, written once.** `writeln!` emits
+/// them as two separate writes, and another writer landing in between fuses two
+/// declarations into one line — `sample: betaskip: alpha`, counted once instead of twice.
+/// One `write_all` of a short buffer in append mode is a single atomic write.
+fn append_line(path: &Path, line: &str) -> std::io::Result<()> {
+    let mut file = std::fs::OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open(path)?;
+    file.write_all(format!("{line}\n").as_bytes())
+}
 
 /// The `samples/` folder at the repo root. It's ignored by git: whoever clones doesn't
 /// have it, and the suite still has to come out green.
@@ -29,10 +77,10 @@ pub fn samples_dir() -> PathBuf {
 pub fn sample(name: &str) -> Option<PathBuf> {
     let path = samples_dir().join(name);
     if path.exists() {
-        eprintln!("sample: {name}");
+        declare(&format!("sample: {name}"));
         return Some(path);
     }
-    eprintln!("skip: {name} missing from samples/");
+    declare(&format!("skip: {name} missing from samples/"));
     None
 }
 
@@ -45,7 +93,7 @@ pub fn sample_bytes(name: &str) -> Option<Vec<u8>> {
         // red, but of a different kind — and it must be said, otherwise it looks like
         // the file was never there.
         Err(e) => {
-            eprintln!("skip: {name} present but unreadable ({e})");
+            declare(&format!("skip: {name} present but unreadable ({e})"));
             None
         }
     }
@@ -54,7 +102,7 @@ pub fn sample_bytes(name: &str) -> Option<Vec<u8>> {
 /// Skips for a reason that isn't a missing file: a tool absent from the machine, a
 /// junction that wasn't created. The text ends up in `scripts/check`'s summary.
 pub fn skip(reason: &str) {
-    eprintln!("skip: {reason}");
+    declare(&format!("skip: {reason}"));
 }
 
 /// The `samples/packed` folder, if it exists: a junction to the installed game's
@@ -64,7 +112,7 @@ pub fn skip(reason: &str) {
 pub fn packed_dir() -> Option<PathBuf> {
     let dir = samples_dir().join("packed");
     if dir.is_dir() {
-        eprintln!("sample: packed/ (installed game archives)");
+        declare("sample: packed/ (installed game archives)");
         return Some(dir);
     }
     skip("samples/packed missing (requires the game installation)");
@@ -77,7 +125,7 @@ pub fn packed_dir() -> Option<PathBuf> {
 pub fn packed_file(name: &str) -> Option<PathBuf> {
     let path = samples_dir().join("packed").join(name);
     if path.is_file() {
-        eprintln!("sample: packed/{name}");
+        declare(&format!("sample: packed/{name}"));
         return Some(path);
     }
     skip(&format!(
@@ -120,7 +168,7 @@ pub fn dated_series(suffix: &str) -> Vec<PathBuf> {
     names
         .iter()
         .map(|n| {
-            eprintln!("sample: {n}");
+            declare(&format!("sample: {n}"));
             samples_dir().join(n)
         })
         .collect()
@@ -128,7 +176,7 @@ pub fn dated_series(suffix: &str) -> Vec<PathBuf> {
 
 #[cfg(test)]
 mod tests {
-    use super::is_dated;
+    use super::{append_line, is_dated};
 
     const SUFFIX: &str = "rep+persistentgamedata1.dat";
 
@@ -155,5 +203,60 @@ mod tests {
     #[test]
     fn the_separating_dot_is_required() {
         assert!(!is_dated("20250626rep+persistentgamedata1.dat", SUFFIX));
+    }
+
+    /// The mirror appends: every declaration of a run has to end up in the file, in the
+    /// order it was made. Truncating instead would leave the summary counting only
+    /// whatever spoke last.
+    #[test]
+    fn the_mirror_appends_instead_of_replacing() {
+        let path = std::env::temp_dir().join("isaacdome-declarations-append.txt");
+        let _ = std::fs::remove_file(&path);
+        append_line(&path, "sample: one").expect("first write");
+        append_line(&path, "skip: two").expect("second write");
+        let written = std::fs::read_to_string(&path).expect("the file is there");
+        assert_eq!(written, "sample: one\nskip: two\n");
+        let _ = std::fs::remove_file(&path);
+    }
+
+    /// Every declaration of a run reaches the same file from many threads and many test
+    /// binaries at once, so a line has to be written **whole or not at all**. It isn't
+    /// theory: `writeln!` emits the text and the newline as two separate writes, and
+    /// another writer slipping between them produced real summary lines like
+    /// `skip: …installation)skip: …installation)` — two declarations fused, counted once.
+    #[test]
+    fn concurrent_appends_never_fuse_two_lines() {
+        let path = std::env::temp_dir().join("isaacdome-declarations-concurrent.txt");
+        let _ = std::fs::remove_file(&path);
+        let expected = ["skip: alpha", "sample: beta", "skip: gamma-is-longer"];
+        let target = path.as_path();
+        std::thread::scope(|s| {
+            for line in expected {
+                s.spawn(move || {
+                    for _ in 0..200 {
+                        append_line(target, line).expect("append");
+                    }
+                });
+            }
+        });
+        let written = std::fs::read_to_string(&path).expect("the file is there");
+        let lines: Vec<&str> = written.lines().collect();
+        assert_eq!(lines.len(), 600, "one line per append, none fused or lost");
+        assert!(
+            lines.iter().all(|l| expected.contains(l)),
+            "a line came out mangled: {:?}",
+            lines.iter().find(|l| !expected.contains(l))
+        );
+        let _ = std::fs::remove_file(&path);
+    }
+
+    /// A mirror that can't be written is not worth failing a test over: the declaration
+    /// is already on stderr, and the summary reports how many it managed to count.
+    #[test]
+    fn a_mirror_that_cannot_be_written_is_not_an_error_for_the_caller() {
+        let unwritable = std::env::temp_dir()
+            .join("no-such-dir-isaacdome")
+            .join("x.txt");
+        assert!(append_line(&unwritable, "skip: nowhere").is_err());
     }
 }

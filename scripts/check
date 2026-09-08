@@ -25,7 +25,8 @@ esegui() {
 }
 
 uscita=$(mktemp)
-trap 'rm -f "$uscita"' EXIT
+dichiarazioni=$(mktemp)
+trap 'rm -f "$uscita" "$dichiarazioni"' EXIT
 
 esegui 'cargo fmt' cargo fmt --check
 esegui 'cargo clippy' cargo clippy --all-targets -- -D warnings
@@ -36,7 +37,13 @@ esegui 'cargo clippy' cargo clippy --all-targets -- -D warnings
 # `unpack` stayed broken for days (D3 in MIGLIORIE). The output is also kept
 # in a file so it can be counted below.
 printf '\n=== cargo test\n'
-cargo test --workspace -- --nocapture >"$uscita" 2>&1
+# The declarations are counted from their own file, not from this output. The harness
+# writes `test … ok` to stdout while `test-support` declares on stderr, and merging the
+# two here can split a line down the middle (`skip: ok`, with the rest orphaned); tests
+# inside one binary interleave with each other too. A summary whose job is to say how
+# much a run *didn't* verify has to be exact, so `test-support` mirrors every line into
+# ISAACDOME_TEST_DECLARATIONS, one atomic append each.
+ISAACDOME_TEST_DECLARATIONS="$dichiarazioni" cargo test --workspace -- --nocapture >"$uscita" 2>&1
 if [ $? -ne 0 ]; then
 	falliti="$falliti cargo-test"
 fi
@@ -47,13 +54,13 @@ esegui 'pnpm lint' pnpm lint
 esegui 'pnpm format:check' pnpm format:check
 esegui 'pnpm scan' pnpm scan
 
-saltati=$(grep -c '^skip:' "$uscita")
-reali=$(grep -c '^sample:' "$uscita")
+saltati=$(grep -c '^skip:' "$dichiarazioni")
+reali=$(grep -c '^sample:' "$dichiarazioni")
 
 printf '\n=== summary\n'
 printf 'tests skipped (sample or missing tool): %s\n' "$saltati"
 printf 'real files touched: %s\n' "$reali"
-[ "$saltati" -gt 0 ] && grep '^skip:' "$uscita" | sort | uniq -c | sed 's/^/  /'
+[ "$saltati" -gt 0 ] && grep '^skip:' "$dichiarazioni" | sort | uniq -c | sed 's/^/  /'
 
 if [ -n "$falliti" ]; then
 	printf '\nFAILED:%s\n' "$falliti"
