@@ -12,29 +12,29 @@
 set -u
 cd "$(dirname "$0")/.." || exit 1
 
-falliti=''
-esegui() {
-	nome=$1
+failed=''
+run() {
+	name=$1
 	shift
-	printf '\n=== %s\n' "$nome"
+	printf '\n=== %s\n' "$name"
 	if "$@"; then
 		return 0
 	fi
-	falliti="$falliti $nome"
+	failed="$failed $name"
 	return 1
 }
 
-uscita=$(mktemp)
-dichiarazioni=$(mktemp)
-trap 'rm -f "$uscita" "$dichiarazioni"' EXIT
+output=$(mktemp)
+declarations=$(mktemp)
+trap 'rm -f "$output" "$declarations"' EXIT
 
-esegui 'cargo fmt' cargo fmt --check
-esegui 'cargo clippy' cargo clippy --all-targets -- -D warnings
+run 'cargo fmt' cargo fmt --check
+run 'cargo clippy' cargo clippy --all-targets -- -D warnings
 
 # `--nocapture` isn't a whim: without it, the test harness **hides** the output of
 # passing tests, so the `skip:` and `sample:` lines don't show up and an "N passed"
 # doesn't say how many tests were skipped for lack of data. It's the exact way
-# `unpack` stayed broken for days (D3 in MIGLIORIE). The output is also kept
+# `unpack` stayed broken for days (D3 in docs/IMPROVEMENTS.md). The output is also kept
 # in a file so it can be counted below.
 printf '\n=== cargo test\n'
 # The declarations are counted from their own file, not from this output. The harness
@@ -43,27 +43,27 @@ printf '\n=== cargo test\n'
 # inside one binary interleave with each other too. A summary whose job is to say how
 # much a run *didn't* verify has to be exact, so `test-support` mirrors every line into
 # ISAACDOME_TEST_DECLARATIONS, one atomic append each.
-ISAACDOME_TEST_DECLARATIONS="$dichiarazioni" cargo test --workspace -- --nocapture >"$uscita" 2>&1
+ISAACDOME_TEST_DECLARATIONS="$declarations" cargo test --workspace -- --nocapture >"$output" 2>&1
 if [ $? -ne 0 ]; then
-	falliti="$falliti cargo-test"
+	failed="$failed cargo-test"
 fi
-cat "$uscita"
+cat "$output"
 
-esegui 'pnpm typecheck' pnpm typecheck
-esegui 'pnpm lint' pnpm lint
-esegui 'pnpm format:check' pnpm format:check
-esegui 'pnpm scan' pnpm scan
+run 'pnpm typecheck' pnpm typecheck
+run 'pnpm lint' pnpm lint
+run 'pnpm format:check' pnpm format:check
+run 'pnpm scan' pnpm scan
 
-saltati=$(grep -c '^skip:' "$dichiarazioni")
-reali=$(grep -c '^sample:' "$dichiarazioni")
+skipped=$(grep -c '^skip:' "$declarations")
+real_files=$(grep -c '^sample:' "$declarations")
 
 printf '\n=== summary\n'
-printf 'tests skipped (sample or missing tool): %s\n' "$saltati"
-printf 'real files touched: %s\n' "$reali"
-[ "$saltati" -gt 0 ] && grep '^skip:' "$dichiarazioni" | sort | uniq -c | sed 's/^/  /'
+printf 'tests skipped (sample or missing tool): %s\n' "$skipped"
+printf 'real files touched: %s\n' "$real_files"
+[ "$skipped" -gt 0 ] && grep '^skip:' "$declarations" | sort | uniq -c | sed 's/^/  /'
 
-if [ -n "$falliti" ]; then
-	printf '\nFAILED:%s\n' "$falliti"
+if [ -n "$failed" ]; then
+	printf '\nFAILED:%s\n' "$failed"
 	exit 1
 fi
 printf '\nall green\n'
