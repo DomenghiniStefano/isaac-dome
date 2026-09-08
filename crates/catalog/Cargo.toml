@@ -2,6 +2,7 @@
 name = "catalog"
 version = "0.1.0"
 edition = "2021"
+license.workspace = true
 description = "Normalizes the game's XML into a catalog queryable by id. Pure: bytes in, model out."
 
 [dependencies]

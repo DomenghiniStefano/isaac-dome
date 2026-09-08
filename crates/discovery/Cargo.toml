@@ -2,6 +2,7 @@
 name = "discovery"
 version = "0.1.0"
 edition = "2021"
+license.workspace = true
 description = "Locates Steam, the Isaac game and the saves on any PC"
 
 [dependencies]

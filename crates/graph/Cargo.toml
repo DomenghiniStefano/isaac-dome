@@ -2,6 +2,7 @@
 name = "graph"
 version = "0.1.0"
 edition = "2021"
+license.workspace = true
 description = "Unlock graph: typed requirements, curated verdicts, evaluation against a profile"
 
 [dependencies]

@@ -1,6 +1,7 @@
 {
   "name": "isaac-dome",
   "private": true,
+  "license": "GPL-3.0-only",
   "scripts": {
     "check": "sh scripts/check",
     "dev": "tauri dev --config crates/app/tauri.conf.json",

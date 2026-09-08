@@ -2,6 +2,7 @@
 name = "wiki"
 version = "0.1.0"
 edition = "2021"
+license.workspace = true
 description = "Dataset derived from the wiki: wikitext parser and typed tree"
 
 [features]

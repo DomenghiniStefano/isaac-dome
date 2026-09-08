@@ -2,6 +2,7 @@
 name = "plan"
 version = "0.1.0"
 edition = "2021"
+license.workspace = true
 description = "The plan queue: an ordered series of achievements, kept consistent with the graph"
 
 [dependencies]
