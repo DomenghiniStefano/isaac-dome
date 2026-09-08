@@ -201,6 +201,45 @@ fn build_lists(items: &[RawItem], depth: usize, r: &Resolver, d: &mut Diagnostic
 
 /// The lines between `{|` and `|}`. The first line with `!` cells is `header`; every
 /// other line, `!` cells included (the pill table's subheadings), goes into `rows`.
+/// Splits a table row into cells, ignoring a separator nested inside `{{…}}` or `[[…]]`.
+///
+/// `||` is both the cell separator and, inside a template, an empty argument:
+/// `{{e|Mask + Heart||Heart}}` is one cell, and cutting it in two leaves each half
+/// holding template syntax that no longer parses — literal `{{` in a text node.
+///
+/// Depth counts the two-character openers and saturates at zero, so a stray `}}` on a
+/// malformed row can't drive it negative: the row degrades into one cell, never into
+/// none. Every delimiter here is ASCII, so slicing on these byte offsets stays on
+/// character boundaries.
+fn split_cells<'a>(body: &'a str, sep: &str) -> Vec<&'a str> {
+    let bytes = body.as_bytes();
+    let sep = sep.as_bytes();
+    let mut cells = Vec::new();
+    let mut depth: usize = 0;
+    let mut start = 0;
+    let mut i = 0;
+    while i < bytes.len() {
+        match bytes.get(i..i + 2) {
+            Some(b"{{") | Some(b"[[") => {
+                depth += 1;
+                i += 2;
+            }
+            Some(b"}}") | Some(b"]]") => {
+                depth = depth.saturating_sub(1);
+                i += 2;
+            }
+            Some(pair) if depth == 0 && pair == sep => {
+                cells.push(&body[start..i]);
+                i += 2;
+                start = i;
+            }
+            _ => i += 1,
+        }
+    }
+    cells.push(&body[start..]);
+    cells
+}
+
 fn build_table(lines: &[String], r: &Resolver, d: &mut Diagnostics) -> Block {
     let mut table = TableBuilder::default();
     for line in lines {
@@ -221,7 +260,7 @@ fn build_table(lines: &[String], r: &Resolver, d: &mut Diagnostics) -> Block {
         };
         table.row_is_header |= is_header;
         let sep = if is_header { "!!" } else { "||" };
-        for cell in body.split(sep) {
+        for cell in split_cells(body, sep) {
             let cell = strip_attributes(cell.trim());
             table.row.push(parse_inline(cell, r, d));
         }
@@ -424,6 +463,24 @@ mod tests {
                     },
                 ]
             }]
+        );
+    }
+
+    /// `||` inside a template is an empty argument, not a cell separator. Mystery Egg's
+    /// table carries `{{e|Mask + Heart||Heart}}`; split on the bare `||` it becomes two
+    /// cells, each holding half a template that no longer parses — which is how literal
+    /// `{{` ends up in a text node.
+    #[test]
+    fn a_pipe_pair_inside_a_template_is_an_argument_not_a_cell_separator() {
+        let v = p("{|\n| {{e|Mask + Heart||Heart}} || after\n");
+        let Block::Table { rows, .. } = &v[0] else {
+            panic!("table")
+        };
+        assert_eq!(rows.len(), 1);
+        assert_eq!(
+            rows[0].len(),
+            2,
+            "the template is one cell, `after` is the other: {rows:?}"
         );
     }
 

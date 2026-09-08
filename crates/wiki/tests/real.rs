@@ -357,30 +357,30 @@ fn text_nodes_carry_no_raw_template_syntax() {
     {
         raw_brace_texts_in_entry(e, &mut offenders);
     }
-    // 125 as of 2026-09-05, from three known families, none of which is the bug this fix
-    // addresses (recursion into unknown templates, which has already done its job here:
-    // `{{i|…}}` and `{{c|…}}` nested in `{{bug|…}}`, `{{dlcalt|…}}` and unknown templates
-    // in general are resolved):
+    // 123 as of 2026-09-08 (was 125), from two remaining families:
     // 1. A template with named content (`content=`, `description=`) that opens on one
     //    list line and closes many lines below — `column list` (~55 pages, in
     //    opening/closing pairs) and the two variants of `Book of … synergy` — is never
     //    seen as a single template: `build_lists` (`blocks.rs`) parses each list item on
     //    its own with `parse_inline`, so the closing `}}`, on a different line, stays
     //    invisible to `parse_template_at`. Same limitation for two `{{bug|…}}` whose
-    //    sentence continues on a following line.
-    // 2. `build_table` (`blocks.rs`) splits a cell on `||` without counting `{{…}}`
-    //    depth: Mystery Egg's table has `{{e|Mask + Heart||Heart}}`, where the `||` is an
-    //    empty template argument, not a cell separator — two entries.
-    // 3. Genuine text, not an unclosed template: the formulas between `<math>…</math>` on
+    //    sentence continues on a following line. Still open: it needs `blocks.rs` to
+    //    recognize a multi-line template *before* splitting into lines.
+    // 2. Genuine text, not an unclosed template: the formulas between `<math>…</math>` on
     //    Rosary and Mom's Contacts stay as text on purpose (no LaTeX parser here), and
     //    their nested curly braces produce `}}` by coincidence (9 entries); Keeper's page
-    //    has a wiki typo, `and}}` with no `{{` opening it anywhere (1 entry).
-    // Families 1 and 2 require rewriting `blocks.rs` to recognize a multi-line template
-    // before splitting into lines/cells: out of scope for this fix.
+    //    has a wiki typo, `and}}` with no `{{` opening it anywhere (1 entry). This family
+    //    is not a defect and won't go to zero.
+    // Closed on 2026-09-08 — the third family, worth two entries: `build_table` split a
+    // cell on `||` without counting `{{…}}` depth, so Mystery Egg's
+    // `{{e|Mask + Heart||Heart}}` (where `||` is an empty argument) became two half
+    // templates. `split_cells` now counts bracket depth; the reference resolves to
+    // entity 93 instead of leaving `{{e|Mask + Heart` in a text node.
     // Threshold pinned on purpose: don't loosen it silently, and if it grows, understand
-    // where it comes from before raising it.
+    // where it comes from before raising it. It came down by exactly the two entries the
+    // family predicted, which is the evidence the fix hit that and nothing else.
     assert!(
-        offenders.len() <= 125,
+        offenders.len() <= 123,
         "{} nodes with raw template syntax: {offenders:?}",
         offenders.len()
     );
