@@ -16,7 +16,7 @@ use std::path::Path;
 use crate::arch::{Archive, CompressionMode};
 
 /// Precedence order: the first one that has the resource wins. A missing archive is skipped.
-const PRECEDENZA: [&str; 8] = [
+const PRECEDENCE: [&str; 8] = [
     "repentance.a",
     "afterbirthp.a",
     "afterbirth.a",
@@ -28,7 +28,7 @@ const PRECEDENZA: [&str; 8] = [
 ];
 
 /// Known roots, tried in this order on every archive.
-const RADICI: [&str; 2] = ["resources-dlc3", "resources"];
+const ROOTS: [&str; 2] = ["resources-dlc3", "resources"];
 
 /// What we know about an open archive, for diagnostics.
 #[derive(Debug, Clone)]
@@ -52,7 +52,7 @@ impl ResourceSet {
     pub fn open(packed_dir: &Path) -> ResourceSet {
         let mut archives = Vec::new();
         let mut info = Vec::new();
-        for name in PRECEDENZA {
+        for name in PRECEDENCE {
             let Ok(a) = Archive::open(&packed_dir.join(name)) else {
                 continue;
             };
@@ -84,7 +84,7 @@ impl ResourceSet {
         }
         let logical = logical.trim_start_matches('/');
         for (name, archive) in &self.archives {
-            for root in RADICI {
+            for root in ROOTS {
                 if let Some(bytes) = archive.read(&format!("{root}/{logical}")) {
                     return Some((bytes, name));
                 }
@@ -100,7 +100,7 @@ impl ResourceSet {
         }
         let logical = logical.trim_start_matches('/');
         self.archives.iter().any(|(_, a)| {
-            RADICI
+            ROOTS
                 .iter()
                 .any(|root| a.contains(&format!("{root}/{logical}")))
         })

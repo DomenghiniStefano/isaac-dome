@@ -372,5 +372,5 @@ files no screen asks for.
 - The verification screen shows **real names** next to the sprites, and the item count
   it shows matches `items.xml`.
 - `ipc::resources::catalog_peek` no longer exists.
-- Every unknown has a written answer in `STATO.md`: verified, or degraded as described
+- Every unknown has a written answer in `STATUS.md`: verified, or degraded as described
   here.

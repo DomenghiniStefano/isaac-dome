@@ -19,7 +19,7 @@
 - **Never fake a value**: whatever the graph doesn't know travels as `{ kind: "stub" }`.
 - Exhaustiveness: no `_ =>` on our own enums. No new `#[allow]`.
 - Before declaring a task done: `cargo test --workspace`, `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings`; for UI tasks also `pnpm typecheck`, `pnpm lint`, `pnpm scan`, `pnpm format:check` from the root.
-- Commits: prefix `catalog:` / `store:` / `ipc:` / `app:` / `ui:` / `docs:`, messages in Italian, **no** `Co-Authored-By` trailer or references to Claude. No pushing from tasks.
+- Commits: prefix `catalog:` / `store:` / `ipc:` / `app:` / `ui:` / `docs:`, messages in English, **no** `Co-Authored-By` trailer or references to Claude. No pushing from tasks.
 
 ---
 
@@ -44,7 +44,7 @@ crates/ipc/tests/graph_real.rs       on the real profile + real catalog
 crates/app/src/error.rs              + UnknownTarget, StoreUnavailable { reason }
 crates/app/src/lib.rs                + StoreState, five commands
 ui/src/lib/ipc/types.ts, ui/src/lib/ipc/graph.ts, ui/src/lib/constants/commands.ts, ui/src/App.vue
-docs/STATO.md, DESIGN-BRIEF.md, docs/superpowers/plans/2026-09-05-graph-contracts-report.md
+docs/STATUS.md, DESIGN-BRIEF.md, docs/superpowers/plans/2026-09-05-graph-contracts-report.md
 ```
 
 ---
@@ -207,7 +207,7 @@ Run: `cargo test -p catalog && cargo fmt --check && cargo clippy --all-targets -
 
 ```bash
 git add crates/catalog
-git commit -m "catalog: indice inverso achievement -> cosa sblocca, costruito una volta"
+git commit -m "catalog: reverse index achievement -> what it unlocks, built once"
 ```
 
 ---
@@ -349,7 +349,7 @@ pub struct Goal {
 
 ```bash
 git add crates/ipc
-git commit -m "ipc: Goal, GoalId opaco e UnlockTarget, con la forma del JSON pinnata"
+git commit -m "ipc: Goal, opaque GoalId and UnlockTarget, with the JSON shape pinned"
 ```
 
 ---
@@ -370,7 +370,7 @@ git commit -m "ipc: Goal, GoalId opaco e UnlockTarget, con la forma del JSON pin
 name = "store"
 version = "0.1.0"
 edition = "2021"
-description = "Persistenza dell'app: un file SQLite, schema versionato. Scrive solo nel proprio file."
+description = "The app's persistence: one SQLite file, versioned schema. It writes only to its own file."
 
 [dependencies]
 rusqlite = { version = "0.40", features = ["bundled"] }
@@ -470,7 +470,7 @@ fn a_newer_schema_is_refused_not_destroyed() {
 fn a_file_that_is_not_sqlite_is_unreadable_not_a_panic() {
     let dir = tempfile::tempdir().unwrap();
     let path = dir.path().join("x.db");
-    std::fs::write(&path, b"questo non e' un database").unwrap();
+    std::fs::write(&path, b"this is not a database").unwrap();
     assert!(matches!(Store::open(&path), Err(StoreError::Unreadable { .. })));
 }
 ```
@@ -643,7 +643,7 @@ Run: `cargo test -p store && cargo fmt --check && cargo clippy --all-targets -- 
 
 ```bash
 git add crates/store Cargo.lock
-git commit -m "store: nasce con gli obiettivi, un file SQLite e lo schema versionato"
+git commit -m "store: born with the goals, one SQLite file and the versioned schema"
 ```
 
 ---
@@ -860,7 +860,7 @@ pub struct PlanStep {
 
 ```bash
 git add crates/ipc
-git commit -m "ipc: i contratti delle schermate del grafo, con stub dichiarati e forma del JSON pinnata"
+git commit -m "ipc: the graph screens' contracts, with declared stubs and the JSON shape pinned"
 ```
 
 ---
@@ -1098,7 +1098,7 @@ Run: `cargo test -p ipc && cargo fmt --check && cargo clippy --all-targets -- -D
 
 ```bash
 git add crates/ipc
-git commit -m "ipc: unlock_view dal catalogo e dal salvataggio, prossimi passi e piano con stub dichiarati"
+git commit -m "ipc: unlock_view from the catalog and the save, next steps and plan with declared stubs"
 ```
 
 ---
@@ -1205,7 +1205,7 @@ fn next_steps_on_the_real_profile_are_five_not_done_known_nodes_in_slot_order() 
 
 ```bash
 git add crates/ipc/tests/graph_real.rs
-git commit -m "ipc: la giunzione achievement <-> slot pinnata sul profilo reale"
+git commit -m "ipc: the achievement <-> slot junction pinned on the real profile"
 ```
 
 ---
@@ -1349,7 +1349,7 @@ fn target_exists(c: &catalog::Catalog, t: &ipc::UnlockTarget) -> bool {
 }
 ```
 
-`run()`: `.manage(StoreState(OnceLock::new()))` and the five commands in `generate_handler!`. `catalog` is already a dependency of `app`. **Note on the double `ResourceSet::open`**: `unlock` and `add_goal` open the archive set on every call (1.3 GB); it's the already-logged open block in `STATO.md`, not to be fixed here — but `next_steps` must **not** open it twice: it calls `unlock` just once, as above.
+`run()`: `.manage(StoreState(OnceLock::new()))` and the five commands in `generate_handler!`. `catalog` is already a dependency of `app`. **Note on the double `ResourceSet::open`**: `unlock` and `add_goal` open the archive set on every call (1.3 GB); it's the already-logged open block in `STATUS.md`, not to be fixed here — but `next_steps` must **not** open it twice: it calls `unlock` just once, as above.
 
 - [ ] **Step 3: green and commit**
 
@@ -1357,7 +1357,7 @@ Run: `cargo build -p app && cargo test --workspace && cargo fmt --check && cargo
 
 ```bash
 git add crates/app Cargo.lock
-git commit -m "app: unlock, prossimi passi e piano come comandi, con lo store aperto una volta"
+git commit -m "app: unlock, next steps and plan as commands, with the store opened once"
 ```
 
 ---
@@ -1482,7 +1482,7 @@ export const removeGoal = (id: GoalId): Promise<PlanView> => invoke(Command.Remo
 
 ```bash
 git add ui/src
-git commit -m "ui: tipi e wrapper dei contratti del grafo, e la verifica di Unlock e Prossimi passi"
+git commit -m "ui: types and wrappers for the graph contracts, and the Unlock and Next steps verification"
 ```
 
 ---
@@ -1491,16 +1491,16 @@ git commit -m "ui: tipi e wrapper dei contratti del grafo, e la verifica di Unlo
 
 **Files:**
 - Create: `docs/superpowers/plans/2026-09-05-graph-contracts-report.md`
-- Modify: `docs/STATO.md`, `DESIGN-BRIEF.md`, `CLAUDE.md` (module table: `store` is no longer future-tense "SQLite: run archive, snapshots, catalog, plans" — it's born with the goals), `README.md` if it mentions `store`
+- Modify: `docs/STATUS.md`, `DESIGN-BRIEF.md`, `CLAUDE.md` (module table: `store` is no longer future-tense "SQLite: run archive, snapshots, catalog, plans" — it's born with the goals), `README.md` if it mentions `store`
 
-- [ ] **Step 1: `STATO.md`** — "Delivery to design": step 2 checked off with the three decisions checked off; table: Unlock 🟡 → "🟢 designable on the contract: real nodes, `graph` stub", Next Steps and Plan 🔴 → "🟢 on the contract"; new section `### store — app persistence ✅ (born with the goals)` with spec, migration 1, tests; session log with commit and test count.
+- [ ] **Step 1: `STATUS.md`** — "Delivery to design": step 2 checked off with the three decisions checked off; table: Unlock 🟡 → "🟢 designable on the contract: real nodes, `graph` stub", Next Steps and Plan 🔴 → "🟢 on the contract"; new section `### store — app persistence ✅ (born with the goals)` with spec, migration 1, tests; session log with commit and test count.
 - [ ] **Step 2: `DESIGN-BRIEF.md`** — §4 table updated as above; new §6 "The graph contracts" with the TypeScript types and the spec's real/stub table; §11 with a fourth question: "how do you draw a node whose graph is `stub`, without it looking like missing data?".
 - [ ] **Step 3: report** with the same structure as previous ones: built, caught, decisions (in particular `store_available` in place of the diagnostic, unified `kind_view`, the double `ResourceSet::open` left at the open block), what's missing (M2, M3, `store`'s migration 2).
 - [ ] **Step 4: commit**
 
 ```bash
 git add docs DESIGN-BRIEF.md CLAUDE.md README.md
-git commit -m "docs: contratti del grafo consegnati, store nato, stato e brief allineati"
+git commit -m "docs: graph contracts delivered, store born, status and brief aligned"
 ```
 
 ---
@@ -1510,4 +1510,4 @@ git commit -m "docs: contratti del grafo consegnati, store nato, stato e brief a
 - **Spec coverage:** reverse index (T1); `Goal`/`GoalId`/`UnlockTarget` (T2); `store` with migration 1, `NewerSchema`, `Unreadable` (T3); contract types with pinned shape, including `unknown`, `stub`, `itemKind` (T4); `unlock_view`/`next_steps`/`plan_view` with the `slot[id]` junction, diagnostics, origin, icons (T5); real tests 642/379/637/4, 169/171, slots 638-639-641 (T6); commands with `Store` in state and degradation (T7); TS and screen (T8); documents (T9).
 - **Deviations from the spec, declared:** `PlanView.store_available: bool` in place of a `StoreUnavailable` diagnostic in `plan()` (the frontend consumes a boolean; the typed error stays for `add_goal`/`remove_goal`); `Unlock` derives `Ord` for deterministic ordering instead of a comparator; `GoalId::new` with no dependency on a UUID crate (entropy from time + address + pid: enough to distinguish goals on one machine, not a security token — the doc says so).
 - **Types consistent across tasks:** `UnlockTarget` defined in `goals.rs` (T2) and used by `graph.rs` (T4/T5), `store` (T3), and `app` (T7); `ItemKindView` gains `Deserialize, Hash` in T2 because `Goal` deserializes it; `Catalog::unlocks` (T1) consumed by T5; `catalog::{boss, challenge}` (plan B) consumed by T5 and T7; `data_url` reused; `STEPS` in T4 used in T5/T6.
-- **Known risk:** the 169/171 test (T6) depends on the `live.rep+…1.dat` profile as it stands today; if the profile gets updated by playing, the number changes and the test will say so — that's intended: the file should be copied into `samples/` with a date, not kept as "live" (to note in `STATO.md` at T9 as something to do: rename `live.*` with its date, as done for the other samples).
+- **Known risk:** the 169/171 test (T6) depends on the `live.rep+…1.dat` profile as it stands today; if the profile gets updated by playing, the number changes and the test will say so — that's intended: the file should be copied into `samples/` with a date, not kept as "live" (to note in `STATUS.md` at T9 as something to do: rename `live.*` with its date, as done for the other samples).

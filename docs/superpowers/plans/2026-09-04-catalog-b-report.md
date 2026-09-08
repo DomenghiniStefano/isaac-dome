@@ -145,7 +145,7 @@ opens the file and prints the real count, as done in Task 7. A `grep` is still u
   the JSON shape of `ExtractionReport` (not yet pinned down by a test), `Archive::open`
   loading the whole archive (~1.3 GB) into memory instead of reading entry by entry.
 - **The IPC contracts for the graph screens (M2).** Step 2 of "Handoff to design" in
-  `docs/STATO.md`: types for a graph node (done · unlockable now · blocked by N),
+  `docs/STATUS.md`: types for a graph node (done · unlockable now · blocked by N),
   fan-out, goal and expanded plan, with fake data behind a command that declares itself
   as such. Three decisions remain before those types can be written:
   - a **reverse index `AchievementId → what it unlocks`**: today `catalog` only carries

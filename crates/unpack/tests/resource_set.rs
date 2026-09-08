@@ -10,15 +10,18 @@ fn open_or_skip() -> Option<ResourceSet> {
 #[test]
 fn opens_every_archive_it_finds_and_reports_them() {
     let Some(rs) = open_or_skip() else { return };
-    let nomi: Vec<&str> = rs.archives().iter().map(|a| a.name.as_str()).collect();
-    for atteso in [
+    let names: Vec<&str> = rs.archives().iter().map(|a| a.name.as_str()).collect();
+    for expected in [
         "repentance.a",
         "afterbirthp.a",
         "afterbirth.a",
         "graphics.a",
         "config.a",
     ] {
-        assert!(nomi.contains(&atteso), "missing {atteso} among {nomi:?}");
+        assert!(
+            names.contains(&expected),
+            "missing {expected} among {names:?}"
+        );
     }
     // Every archive declares how many entries it has and in what mode they're encoded.
     let tot: usize = rs.archives().iter().map(|a| a.entries).sum();

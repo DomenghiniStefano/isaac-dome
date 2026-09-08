@@ -21,7 +21,7 @@ whole branch").
 | 6 | Test on the real profile (`crates/ipc/tests/graph_real.rs`): 642 slots, 379 done, 637 known, **4** unknown (slots 638, 639, 641 done); the `slot[id]` junction pinned from 169 of 171 items seen with the achievement done; five next steps not yet done, in slot order. Skip declared when the sample is missing or unreadable. | `c1d492e` (docs), `814e7cb`, `57462d6` |
 | 7 | The five commands in `app` (`unlock`, `next_steps`, `plan`, `add_goal`, `remove_goal`), `Store` opened once in managed state, `IpcError` with `UnknownTarget`, `CatalogUnavailable`, `StoreUnavailable`; `target_exists` in `ipc`; the local `store.rs` module renamed `settings_file.rs`. Then, from review: the plan degrades on an unreadable row and says why the store isn't there. | `f1a20f0`, `2724acd`, `591f6c2`, `9db537b` |
 | 8 | TypeScript mirror in `ui/src/lib/ipc/types.ts`, wrapper in `graph.ts`, commands in `constants/commands.ts`; verification screen with Unlock totals, diagnostics, and the five next steps with icon, text, and condition. `IpcError` extended with the three new variants and the exhaustive `switch` covering them. | `a439a8a` |
-| 9 | This report; `docs/STATO.md`, `DESIGN-BRIEF.md` (new §7, sections renumbered), `CLAUDE.md`, and `README.md` aligned. | (this commit) |
+| 9 | This report; `docs/STATUS.md`, `DESIGN-BRIEF.md` (new §7, sections renumbered), `CLAUDE.md`, and `README.md` aligned. | (this commit) |
 
 Two documentation-only commits before Task 2 (`e131a95`, `2650c0d`) corrected the plan on a
 point the existing code contradicted: `ItemKindView` was already a tagged enum
@@ -74,7 +74,7 @@ by construction, `store` doesn't even know about `core-save`.
 | 7 | Minor, all accepted: the store's poisoned mutex should be recovered; `CatalogUnavailable` distinguished from `UnknownTarget`; the store's state must keep the reason for a failed open so `NewerSchema` reaches the UI; real test on `Familiar` and `Trinket` (a wrong mapping to `Passive` would make a true expectation false); test on `store_error` that doesn't leak the path. | Fix round 1 (`2724acd`). |
 | 7 | From round 1: `plan` discarded the real reason for the failed open (`store_available: false` and nothing else). | Fix round 2 (`591f6c2`): `plan_view(goals, unreadable, store_unavailable: Option<String>)`, `store_available` derived and `PlanDiagnostic::StoreUnavailable { reason }` from the same source; a test pins that they can't contradict each other. |
 | 7 | New Minor from the re-review: in the test the unreadable row was at the end, not in the middle of the others. | `9db537b`: `seq` fixed, the broken row is really between `a` and `c`. |
-| 8 | Observational Minors: `OriginView` as a string union (it's a value, not a discriminator: allowed today); `next_steps` rebuilds the whole `UnlockView`, base64 icons included, on every load. | Both logged in `docs/STATO.md` as next steps for the webapp. |
+| 8 | Observational Minors: `OriginView` as a string union (it's a value, not a discriminator: allowed today); `next_steps` rebuilds the whole `UnlockView`, base64 icons included, on every load. | Both logged in `docs/STATUS.md` as next steps for the webapp. |
 | 8 | The screen shows **381** done, not the test's 379. | Not a bug: the app reads the live Steam save (updated 09/05), the tests snapshot `samples/live.rep+persistentgamedata1.dat` from 08/31. In the docs, the on-screen figure is referred to by its reference file, not as a constant. |
 
 ## The final review of the whole branch
@@ -94,7 +94,7 @@ then, and both would have caused harm later.
 | 6 (Minor) | Two conventions for unit enums over the IPC: `OriginView` a plain string, `ItemKindView` tagged. | One single rule, in `CLAUDE.md`: **a fieldless enum of ours is a plain camelCase string**; as soon as one variant gains a field, the whole enum becomes tagged. `ItemKindView` is now `"passive"`, and from Round 2 so are `StepsBasis`, `CandidateSource`, and `MissingReason`: zero exceptions in the repo. | `c5c2ef7`, `8426cf1` |
 | 7 (Minor) | `DESIGN-BRIEF.md` lines 121–122: two sentences that contradicted each other ("without a single image" / "may have images"). | The second one stays. | this commit |
 
-Three observations accepted, with no behavior change: in `docs/STATO.md`, on the block about
+Three observations accepted, with no behavior change: in `docs/STATUS.md`, on the block about
 the double `ResourceSet::open`, it's now recorded that `unlock` **serializes 641 nodes with
 base64 icons inline in the rows** (megabyte-sized payload per call) and that the real screen
 will want icons separated from the rows; in `graph.rs` a comment above the two diagnostics
@@ -111,7 +111,7 @@ two sections after the §7.1 that proclaimed the rule. All three converted to pl
 it is twice (on its own and inside a candidate row). The lesson: **a new rule must be applied
 to the code that already exists in the same commit that writes it**, otherwise it's born with
 its own exceptions, and exceptions are what make a convention unusable. Three corrections to
-`docs/STATO.md` left behind in the same round (migration 1 described with `UnlockTarget`,
+`docs/STATUS.md` left behind in the same round (migration 1 described with `UnlockTarget`,
 "same id that replaces", `store` at 7 tests) were closed together.
 
 **Final gate after the fixes:** `cargo test --workspace` → **242 tests, 0 failed** across 39
@@ -171,7 +171,7 @@ catalog — actually ran.
 - **The double `ResourceSet::open` is left at the already-open block.** `unlock` and
   `add_goal` each open their own archive set (1.3 GB per call) and `next_steps` goes through
   `unlock`. It's the same defect as `Archive::open` loading everything into memory, logged in
-  `docs/STATO.md` before this plan: it gets fixed there, in `unpack`, not with a cache in the
+  `docs/STATUS.md` before this plan: it gets fixed there, in `unpack`, not with a cache in the
   commands.
 - **No worktree for this plan**, as with previous ones: the real tests depend on the
   git-ignored `samples/packed` junction and on the `live.*` profile.
@@ -234,7 +234,7 @@ test says **what** each term counts.
   `unwrap_or(0)` if the clock predates 1970 (it isn't data read from disk, but a saved zero
   would be silent); the double `ResourceSet::open`, which now also affects `plan` and
   `remove_goal`, and with it the base64 icons inside `unlock`'s 641 nodes.
-- **Webapp next steps**, logged in `docs/STATO.md`: the four string unions in
+- **Webapp next steps**, logged in `docs/STATUS.md`: the four string unions in
   `types.ts` (`CandidateView.prefix`, `ActiveProfile.reason.kind`, `OriginView`,
   `ItemKindView`) to convert
   into `const … as const` in the modules that own them, and the checks for rules 4 and 5 in

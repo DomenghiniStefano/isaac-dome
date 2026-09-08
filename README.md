@@ -68,7 +68,7 @@ crate, hand-mirrored in `ui/src/lib/ipc/types.ts`.
 
 ## State
 
-The up-to-date state, as checkboxes, lives in [`docs/STATO.md`](docs/STATO.md).
+The up-to-date state, as checkboxes, lives in [`docs/STATUS.md`](docs/STATUS.md).
 
 - [x] **M0** — `.dat` format decoded and verified against 28 real saves
 - [ ] **M1** — Rust parser, discovery, unpack, Completion screen ← in progress
@@ -87,7 +87,7 @@ frontend consumes.
 ## Ideas and future features
 
 Registered, not promised. Details, with closing criteria, live in
-[`docs/BACKLOG.md`](docs/BACKLOG.md) and [`docs/MIGLIORIE.md`](docs/MIGLIORIE.md).
+[`docs/BACKLOG.md`](docs/BACKLOG.md) and [`docs/IMPROVEMENTS.md`](docs/IMPROVEMENTS.md).
 
 **The missing heart**
 
@@ -198,11 +198,11 @@ fixture of a known era, and a file named "live" invites overwriting it.
 
 - [`CLAUDE.md`](CLAUDE.md) — operating context: constraints, save format, conventions.
 - [`docs/PROJECT.md`](docs/PROJECT.md) — the full project document.
-- [`docs/STATO.md`](docs/STATO.md) — checkbox state, open blockers, session log.
+- [`docs/STATUS.md`](docs/STATUS.md) — checkbox state, open blockers, session log.
 - [`DESIGN-BRIEF.md`](DESIGN-BRIEF.md) — the design system's contract, with the TypeScript
   types.
 - [`docs/frontend-conventions.md`](docs/frontend-conventions.md) — the frontend rules.
-- [`docs/BACKLOG.md`](docs/BACKLOG.md), [`docs/MIGLIORIE.md`](docs/MIGLIORIE.md) —
+- [`docs/BACKLOG.md`](docs/BACKLOG.md), [`docs/IMPROVEMENTS.md`](docs/IMPROVEMENTS.md) —
   registered tasks.
 - `reference/` — reference implementation in Python.
 

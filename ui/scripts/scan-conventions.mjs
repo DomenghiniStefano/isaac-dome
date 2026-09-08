@@ -44,28 +44,28 @@ const visibleText = (body) => {
 
 // Exceptions are declared here, per file and per check, with a reason. An exception
 // with no reason is an untracked violation; an empty list is the goal.
-const ECCEZIONI = [
+const EXEMPTIONS = [
   {
     file: 'src/App.vue',
     check: 'raw primitive <button>/<input>',
-    motivo:
+    reason:
       "declared verification page, to be replaced by the design system: the primitives don't exist yet",
   },
   {
     file: 'src/App.vue',
     check: 'visible string in the template',
-    motivo: 'same verification page: i18n arrives with the real frontend',
+    reason: 'same verification page: i18n arrives with the real frontend',
   },
   {
     file: 'src/components/WikiInline.vue',
     check: 'raw primitive <button>/<input>',
-    motivo:
+    reason:
       'verification render of the wiki dataset: the link to another target will become a primitive',
   },
 ]
 
-const esente = (file, check) =>
-  ECCEZIONI.some(
+const isExempt = (file, check) =>
+  EXEMPTIONS.some(
     (e) =>
       e.check === check && relative(ROOT, file) === join(...e.file.split('/')),
   )
@@ -127,12 +127,12 @@ const violations = walk(SRC)
   .flatMap((file) => {
     const body = readFileSync(file, 'utf8')
     return checks
-      .filter((c) => c.test(file, body) && !esente(file, c.name))
+      .filter((c) => c.test(file, body) && !isExempt(file, c.name))
       .map((c) => `${relative(ROOT, file)}: ${c.name}`)
   })
 
 violations.forEach((v) => console.error(v))
 console.log(
-  `${violations.length} violations, ${ECCEZIONI.length} declared exemptions`,
+  `${violations.length} violations, ${EXEMPTIONS.length} declared exemptions`,
 )
 process.exit(violations.length === 0 ? 0 : 1)

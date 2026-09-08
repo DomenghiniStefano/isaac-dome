@@ -169,9 +169,9 @@ fn wiki_entry(target: ipc::Target) -> Result<Option<ipc::Entry>, IpcError> {
 /// that caused it.
 fn describe_open_error(e: &OpenError) -> String {
     match e {
-        OpenError::TooShort => "file troppo corto per contenere un salvataggio".to_string(),
-        OpenError::BadMagic { .. } => "firma del file non riconosciuta".to_string(),
-        OpenError::Io(io) => format!("errore di lettura del file: {io}"),
+        OpenError::TooShort => "file too short to hold a save".to_string(),
+        OpenError::BadMagic { .. } => "file signature not recognized".to_string(),
+        OpenError::Io(io) => format!("error reading the file: {io}"),
     }
 }
 
@@ -217,9 +217,9 @@ impl StoreState {
                 let dir = app
                     .path()
                     .app_data_dir()
-                    .map_err(|_| "cartella dati dell'app non nota".to_string())?;
+                    .map_err(|_| "app data folder unknown".to_string())?;
                 std::fs::create_dir_all(&dir)
-                    .map_err(|_| "cartella dati dell'app non creabile".to_string())?;
+                    .map_err(|_| "app data folder cannot be created".to_string())?;
                 Store::open(&dir.join("isaacdome.db"))
                     .map(Mutex::new)
                     .map_err(store_reason)
@@ -243,9 +243,9 @@ impl StoreState {
 /// message, which can contain the file path, so it never crosses the IPC boundary.
 fn store_reason(e: StoreError) -> String {
     match e {
-        StoreError::Unreadable { .. } => "database illeggibile".to_string(),
+        StoreError::Unreadable { .. } => "database unreadable".to_string(),
         StoreError::NewerSchema { found, supported } => {
-            format!("database di una versione più nuova ({found} > {supported})")
+            format!("database from a newer version ({found} > {supported})")
         }
     }
 }

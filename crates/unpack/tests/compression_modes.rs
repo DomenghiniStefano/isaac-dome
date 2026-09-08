@@ -153,8 +153,8 @@ fn every_catalog_item_has_its_sprite() {
     assert_eq!(da, "repentance.a", "the most recent DLC must win");
     let text = String::from_utf8_lossy(&xml);
 
-    let mut controllati = 0;
-    let mut mancanti = Vec::new();
+    let mut checked = 0;
+    let mut missing = Vec::new();
     for (tag, dir) in [
         ("passive", "gfx/items/collectibles"),
         ("active", "gfx/items/collectibles"),
@@ -163,18 +163,18 @@ fn every_catalog_item_has_its_sprite() {
     ] {
         for el in elements(&text, tag) {
             if let Some(gfx) = attr_of(el, "gfx") {
-                controllati += 1;
+                checked += 1;
                 if !rs.contains(&format!("{dir}/{gfx}")) {
-                    mancanti.push(format!("{dir}/{gfx}"));
+                    missing.push(format!("{dir}/{gfx}"));
                 }
             }
         }
     }
-    assert!(controllati > 900, "only {controllati} items checked");
+    assert!(checked > 900, "only {checked} items checked");
     assert!(
-        mancanti.is_empty(),
-        "missing sprites ({}): {mancanti:?}",
-        mancanti.len()
+        missing.is_empty(),
+        "missing sprites ({}): {missing:?}",
+        missing.len()
     );
 }
 

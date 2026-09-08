@@ -92,10 +92,10 @@ fn entity_portraits(c: &Catalog) -> HashMap<(u32, u32), &SpriteRef> {
 /// `…/Portrait_<type>.<variant>_<Name>.png` → `(type, variant)`.
 fn entity_key(path: &str) -> Option<(u32, u32)> {
     let file = path.rsplit(['/', '\\']).next()?;
-    let resto = file.strip_prefix("Portrait_")?;
+    let rest = file.strip_prefix("Portrait_")?;
     // The boss name follows the first `_`, and can itself contain dots: cut there
     // first, then split off type and variant.
-    let chiave = resto.split('_').next()?;
-    let (tipo, variante) = chiave.split_once('.')?;
-    Some((tipo.parse().ok()?, variante.parse().ok()?))
+    let key = rest.split('_').next()?;
+    let (kind, variant) = key.split_once('.')?;
+    Some((kind.parse().ok()?, variant.parse().ok()?))
 }

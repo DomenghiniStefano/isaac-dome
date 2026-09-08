@@ -134,7 +134,7 @@ fn a_newer_schema_is_refused_not_destroyed() {
 fn a_file_that_is_not_sqlite_is_unreadable_not_a_panic() {
     let dir = tempfile::tempdir().unwrap();
     let path = dir.path().join("x.db");
-    std::fs::write(&path, b"questo non e' un database").unwrap();
+    std::fs::write(&path, b"this is not a database").unwrap();
     assert!(matches!(
         Store::open(&path),
         Err(StoreError::Unreadable { .. })

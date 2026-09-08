@@ -1,7 +1,7 @@
 # The unlock graph — M2 (design)
 
 **Date:** 2026-09-07
-**Milestone:** M2 (`docs/STATO.md`), backlog entry B4
+**Milestone:** M2 (`docs/STATUS.md`), backlog entry B4
 **Status:** design approved in conversation; pending spec review
 
 ## Context

@@ -64,7 +64,7 @@ crates/app/src/lib.rs, error.rs, Cargo.toml
 ui/src/lib/ipc/types.ts, wiki.ts, constants/commands.ts
 ui/src/components/WikiBlocks.vue, ui/src/App.vue
 package.json (script wiki:fetch, wiki:build)
-docs/STATO.md, docs/BACKLOG.md, CLAUDE.md, README.md, DESIGN-BRIEF.md, spec
+docs/STATUS.md, docs/BACKLOG.md, CLAUDE.md, README.md, DESIGN-BRIEF.md, spec
 ```
 
 ---
@@ -356,7 +356,7 @@ Run: `cargo test -p wiki` → 5 tests pass. `cargo fmt` and `cargo clippy -p wik
 
 ```bash
 git add crates/wiki
-git commit -m "wiki: crate con i tipi dell'albero e la forma del JSON pinnata"
+git commit -m "wiki: crate with the tree types and the JSON shape pinned"
 ```
 
 ---
@@ -505,7 +505,7 @@ Note on the `nested_templates_and_links_are_not_split` test: the argument `{{i|A
 
 - [ ] **Step 4: green tests, fmt, clippy**
 
-- [ ] **Step 5: commit** — `git commit -m "wiki: parser dei template con annidamento"`
+- [ ] **Step 5: commit** — `git commit -m "wiki: template parser with nesting"`
 
 ---
 
@@ -791,7 +791,7 @@ impl Resolver {
 ```
 
 - [ ] **Step 4: green tests, fmt, clippy**
-- [ ] **Step 5: commit** — `wiki: risolutore dei riferimenti sulle tabelle Cargo, con le correzioni`
+- [ ] **Step 5: commit** — `wiki: reference resolver over the Cargo tables, with the corrections`
 
 ---
 
@@ -1025,7 +1025,7 @@ pub fn parse_inline(src: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Inline>
 ```
 
 - [ ] **Step 4: green tests, fmt, clippy** (if clippy complains about `expect` outside tests: these are internal invariants of the builder, not disk data; if you prefer, replace with `if let`.)
-- [ ] **Step 5: commit** — `wiki: parser inline con stili, link, riferimenti risolti ed edizioni`
+- [ ] **Step 5: commit** — `wiki: inline parser with styles, links, resolved references and editions`
 
 ---
 
@@ -1264,7 +1264,7 @@ fn strip_attributes(cell: &str) -> &str {
 ```
 
 - [ ] **Step 4: green tests, fmt, clippy** (clippy may ask to shrink the closures that take too many arguments: turning `close_row` into a free `fn` is fine).
-- [ ] **Step 5: commit** — `wiki: parser dei blocchi, liste annidate, tabelle e titoli`
+- [ ] **Step 5: commit** — `wiki: block parser, nested lists, tables and headings`
 
 ---
 
@@ -1534,7 +1534,7 @@ pub fn infobox_from(kind: InfoboxKind, ib: &RawInfobox, r: &Resolver, d: &mut Di
 ```
 
 - [ ] **Step 4: green tests, fmt, clippy**
-- [ ] **Step 5: commit** — `wiki: sezioni normalizzate e infobox per tipo`
+- [ ] **Step 5: commit** — `wiki: normalized sections and infobox per type`
 
 ---
 
@@ -1804,7 +1804,7 @@ pub use template::{parse_template_at, Template};
 ```
 
 - [ ] **Step 4: green tests, fmt, clippy**
-- [ ] **Step 5: commit** — `wiki: pagine, lettura di raw/, build del dataset e Dataset incorporato` (include the minimal `dataset/wiki.json` and `dataset/corrections.json`)
+- [ ] **Step 5: commit** — `wiki: pages, reading raw/, dataset build and the embedded Dataset` (include the minimal `dataset/wiki.json` and `dataset/corrections.json`)
 
 ---
 
@@ -1923,9 +1923,9 @@ Run: `pnpm wiki:fetch` (network, ~2 minutes). Expected: six types with counts cl
 
 ```bash
 git add crates/wiki-snapshot package.json
-git commit -m "wiki-snapshot: tool che scarica pagine e tabelle e costruisce il dataset"
+git commit -m "wiki-snapshot: tool that downloads pages and tables and builds the dataset"
 git add dataset/raw
-git commit -m "dataset: primo snapshot grezzo della wiki"
+git commit -m "dataset: first raw snapshot of the wiki"
 ```
 
 ---
@@ -2099,7 +2099,7 @@ fn manifest_reads_last_updated() {
 ```
 - [ ] **Step 2: it fails; Step 3: implement** (`app_state.get("LastUpdated")…parse::<u64>().ok()`), propagate to `GameInstall { updated_unix: manifest.last_updated, .. }`.
 - [ ] **Step 4: `cargo test -p discovery -p ipc -p app` green** (the `GameInstall` constructors in `ipc`'s tests need updating with `updated_unix: None`).
-- [ ] **Step 5: commit** — `discovery: data di aggiornamento del gioco dall'appmanifest`
+- [ ] **Step 5: commit** — `discovery: the game's update date from the appmanifest`
 
 ---
 
@@ -2273,14 +2273,14 @@ export const wikiEntry = (target: Target): Promise<Entry | null> =>
 
 - [ ] **Step 4: `pnpm typecheck`, `pnpm lint`, `pnpm format:check` (or `pnpm --filter ui format` then check), `pnpm scan`** clean. Run `pnpm dev` and eyeball it: Binge Eater with the eight nested entries and clickable links; clicking "Breakfast" reloads the view onto Breakfast; a nonexistent id (99999) shows an empty view with no error.
 
-- [ ] **Step 5: commit** — `app-shell: specchio dei tipi wiki e pannello di verifica con l'albero`
+- [ ] **Step 5: commit** — `app-shell: mirror of the wiki types and a verification panel with the tree`
 
 ---
 
 ### Task 13: documentation and spec alignment
 
 **Files:**
-- Modify: `docs/superpowers/specs/2026-09-05-wiki-dataset-design.md` (the three deviations at the top of the plan), `docs/STATO.md` (`wiki` module checked off, tool, session log), `docs/BACKLOG.md` (B1: "implementation started, plan report"), `CLAUDE.md` (module table: `wiki`, `wiki-snapshot`; scripts `wiki:fetch`/`wiki:build`; rule: `dataset/raw` and `wiki.json` get committed together, the `derived` test enforces it), `README.md` (one line about the dataset and attribution), `DESIGN-BRIEF.md` (new section with the `Entry`/`Block`/`Inline`/`Target` types and the `wiki_entry` command)
+- Modify: `docs/superpowers/specs/2026-09-05-wiki-dataset-design.md` (the three deviations at the top of the plan), `docs/STATUS.md` (`wiki` module checked off, tool, session log), `docs/BACKLOG.md` (B1: "implementation started, plan report"), `CLAUDE.md` (module table: `wiki`, `wiki-snapshot`; scripts `wiki:fetch`/`wiki:build`; rule: `dataset/raw` and `wiki.json` get committed together, the `derived` test enforces it), `README.md` (one line about the dataset and attribution), `DESIGN-BRIEF.md` (new section with the `Entry`/`Block`/`Inline`/`Target` types and the `wiki_entry` command)
 - Create: `docs/superpowers/plans/2026-09-05-wiki-dataset-report.md` (execution report: tasks, commits, gates, what the review found, meta diagnostics with the most frequent unknown templates as a list of the next ones to cover)
 
 - [ ] **Step 1:** write and commit — `docs: dataset wiki, report di esecuzione e documenti allineati`

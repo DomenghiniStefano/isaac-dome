@@ -2,7 +2,7 @@
 name = "catalog"
 version = "0.1.0"
 edition = "2021"
-description = "Normalizza gli XML del gioco in un catalogo interrogabile per id. Puro: byte in ingresso, modello in uscita."
+description = "Normalizes the game's XML into a catalog queryable by id. Pure: bytes in, model out."
 
 [dependencies]
 quick-xml = "0.42"

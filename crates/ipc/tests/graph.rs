@@ -139,14 +139,14 @@ fn views_and_diagnostics_are_pinned() {
         Some(&c),
         vec![],
         vec![],
-        Some("database di una versione più nuova (7 > 1)".into()),
+        Some("database from a newer version (7 > 1)".into()),
         |_| None,
     ))
     .unwrap();
     assert_eq!(v["storeAvailable"], false);
     assert_eq!(
         v["diagnostics"],
-        json!([{ "kind": "storeUnavailable", "reason": "database di una versione più nuova (7 > 1)" }])
+        json!([{ "kind": "storeUnavailable", "reason": "database from a newer version (7 > 1)" }])
     );
 
     // A database row that fails to read: the UI receives the id, not the broken JSON.
@@ -168,7 +168,7 @@ fn views_and_diagnostics_are_pinned() {
 #[test]
 fn store_available_and_the_store_diagnostic_cannot_disagree() {
     let c = catalog_with_achievements();
-    for reason in [None, Some("database illeggibile".to_string())] {
+    for reason in [None, Some("database unreadable".to_string())] {
         let p = plan_view(Some(&c), vec![], vec![], reason.clone(), |_| None);
         let says_unavailable = p
             .diagnostics

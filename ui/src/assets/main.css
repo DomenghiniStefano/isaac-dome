@@ -10,14 +10,14 @@
   --opacity-muted: 0.6;
   --opacity-disabled: 0.4;
 
-  /* Le icone del gioco sono 32x32 native: raddoppiate restano nitide. */
+  /* The game's icons are 32x32 native: doubled, they stay sharp. */
   --spacing-sprite: 4rem;
-  /* Le icone degli achievement sono immagini dipinte 263x176, non pixel art:
-     a meta' della dimensione nativa restano leggibili senza sgranare. */
+  /* Achievement icons are painted 263x176 images, not pixel art:
+     at half their native size they stay readable without going mushy. */
   --spacing-achievement: 5.5rem;
 }
 
-/* Gli sprite sono pixel art: l'interpolazione del browser li impasta. */
+/* Sprites are pixel art: the browser's interpolation smears them. */
 @utility pixelated {
   image-rendering: pixelated;
 }
