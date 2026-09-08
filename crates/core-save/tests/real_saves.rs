@@ -48,6 +48,27 @@ fn series() -> Vec<(String, Save)> {
         .collect()
 }
 
+/// The series, but only when it can actually answer a question about *change*: comparing
+/// two snapshots needs two of them.
+///
+/// A series of one isn't a series, and the difference is invisible from the outside —
+/// `dated_series` prints `sample:` for the file it found, the test walks a `windows(2)`
+/// that yields nothing, and the run reports a pass. That's the failure mode
+/// `test-support` exists to prevent, one level up: the helper declared which file it
+/// used, while the test quietly stopped verifying anything. So the shortfall gets said
+/// out loud, the way `graph`'s `series_evals` already says it.
+fn comparable_series() -> Vec<(String, Save)> {
+    let saves = series();
+    if saves.len() < 2 {
+        test_support::skip(&format!(
+            "the series has {} dated *.{SERIE}: comparing two snapshots needs two",
+            saves.len()
+        ));
+        return Vec::new();
+    }
+    saves
+}
+
 #[test]
 fn every_real_save_has_ten_sections_in_order() {
     let saves = series();
@@ -175,8 +196,8 @@ fn the_last_section_reaches_exactly_the_checksum() {
 /// flipped from off to on, derived from the two sections rather than from the diff itself.
 #[test]
 fn diff_reports_exactly_the_bits_that_turned_on() {
-    let saves = series();
-    if saves.len() < 2 {
+    let saves = comparable_series();
+    if saves.is_empty() {
         return;
     }
     saves.windows(2).for_each(|w| {
@@ -212,8 +233,8 @@ fn diff_reports_exactly_the_bits_that_turned_on() {
 /// grow, as when a patch adds a slot.
 #[test]
 fn the_series_never_regresses() {
-    let saves = series();
-    if saves.len() < 2 {
+    let saves = comparable_series();
+    if saves.is_empty() {
         return;
     }
     saves.windows(2).for_each(|w| {
