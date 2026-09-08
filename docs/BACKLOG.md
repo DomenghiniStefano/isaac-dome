@@ -398,7 +398,20 @@ two conventions at once.
 
 ---
 
-## B8 — What a real `log.txt` actually contains (a **spike**, blocks M4)
+## B8 — What a real `log.txt` actually contains (a **spike**, blocks M4) ✅ closed on 2026-09-08
+
+**Closed on 2026-09-08.** Report:
+`docs/superpowers/plans/2026-09-08-b8-log-spike-report.md`, from one real run (Judas, hard,
+Mega Satan, won) watched live with a throwaway probe. Both open questions answered — **rooms
+are logged**, and the flush is immediate — plus five findings the entry wasn't looking for,
+of which two change M4's design: the log **announces every save write** (132 times in one
+run), and the save is written continuously *during* play rather than between sessions. Also
+`from pool X` lies about the starting item, and rebuilding an inventory needs `catalog`
+because actives replace one another.
+
+**And one finding that isn't about M4 at all:** the game names every chunk of the save file
+as it reads it, which puts names on the four sections `CLAUDE.md` lists as "to be
+identified" and contradicts two we thought we knew. That's B9 below.
 
 Logged on 2026-09-08, out of the M4 brainstorming. **M4 shouldn't start before this
 closes**: the whole log watcher would otherwise be designed on five line types nobody has
@@ -478,3 +491,63 @@ verified on the dev machine, where a March 2024 log ending in
 not "the app must run while you play" but **"the app must run at least once between one
 session and the next"**. An app that reads the whole current log at startup recovers the
 last session; `RNG Start Seed` gives the dedup key that makes re-reading safe.
+
+---
+
+## B9 — Re-identify the save's sections from the game's own names (implementation, delicate)
+
+Logged on 2026-09-08, out of the B8 spike. Evidence and the full table in
+`docs/superpowers/plans/2026-09-08-b8-log-spike-report.md`.
+
+### What we found
+
+Loading a profile, the game prints `Reading chunk N` followed by that chunk's **name**, in
+file order, for **eleven** chunks. Our table in `CLAUDE.md` has ten sections, four of them
+marked "to be identified". The four have names, and two of the six we thought we knew are
+contradicted:
+
+- `Kind::PerChar` (3, 14 x 4) — the game calls it **Level Counters**, not one value per
+  original character. Fourteen stages fits at least as well as fourteen characters.
+- `Kind::Unknown5` (5, 7 x 1) — **Mini Bosses**.
+- `Kind::CardsPills` (6, 104 x 1) — the game calls it **Bosses**. The catalog has **103**
+  bosses; 104 cells fit that better than cards and pills.
+- `Kind::Unknown8` (8, 27 x 4) — **Cutscene Counters**.
+- `Kind::Unknown9` (9, 2 x 4) — **GameSettings**.
+- `Kind::Bestiary` (10) — the game reads **two** chunks here, Special Seed Counters then
+  Bestiary Counters. Our section 10's header declares `count=80, f2=320` and the parser
+  hands it 11,016 bytes: the payload holds both, with no second header between them.
+
+The four positions we are sure of (1, 2, 4, 7) all agree with the game's names, which is
+what makes the rest worth acting on.
+
+### Why it isn't just a rename
+
+**A log line is not a measurement.** The names are strong evidence about *what the game
+thinks it is reading*, not proof of what each cell means, and the existing labels may have
+come from watching bits flip in M0. Section 6 is the sharp case: if it is Bosses, then
+`SaveDiff.cards_pills` — a public field — has been reporting boss kills under a card's name
+since the day it was written.
+
+### What to do
+
+1. **Confirm section 6 by content**, not by the log: kill a boss we have never killed and
+   watch which cell in section 6 flips, the way the mark at index 119 was confirmed. Same
+   method for section 3 against a stage.
+2. **Split section 10** into Special Seed Counters (the declared 80) and Bestiary Counters
+   (the remainder), and check the arithmetic holds on the whole historical series, not on
+   one file. The three candidate strides all divide evenly on this sample, so the split has
+   to be settled by content too.
+3. **Then rename**, together: `Kind`, `SaveDiff`'s fields, the tests' assertions, the table
+   in `CLAUDE.md`, and the save-format section of `docs/PROJECT.md`.
+
+### Done when
+
+Every one of the eleven chunks has a name backed by a measurement of its own, the table in
+`CLAUDE.md` has no "to be identified" rows left, and no public name in `core-save` says
+something the bytes contradict.
+
+### What it is NOT
+
+Not an occasion to start *interpreting* the newly named sections. Naming section 8
+"Cutscene Counters" doesn't oblige anyone to decode which cutscene is which; it obliges us
+to stop calling it `Unknown8`.
