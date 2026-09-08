@@ -665,21 +665,23 @@ second level is a different row on the sheet, not the same drawing with a filter
 carries information.** The `Paper` layer has six frames, along two axes — the edge
 (straight → torn → **bloodied**) and the surface (clean or marked).
 
-**Delirium has a symbol of its own, and it took until 2026-09-08 to find it.** The glyph
-row on the sheet holds **twelve** 16 × 16 cells and the `.anm2` names **eleven** layers:
-one cell is drawn by the game and claimed by nobody, at x = 96, and that is Delirium's — an
-angular black shape, unmistakable once you see it on the pause screen or the co-op card.
-Before that the package handed over the bloodied sheet under Delirium's name. Taking the
-mark *does* bloody the sheet, so that was not wrong — it was the background, not the icon,
-and a design built on it would have drawn Delirium as a state of the paper rather than as a
-mark like the other eleven.
+**Delirium has a symbol of its own, and it is in another file.** `completion_widget.anm2`
+has no Delirium layer, which is why for a while the package handed over the bloodied paper
+under Delirium's name. The mark is named in **Repentance+'s online lobby**
+(`main menu/onlinelobby.anm2`, layer `Completion_Delirium`), the only file in the game that
+names all twelve: a small face, two eyes and three teeth, the one on the player cards of
+the lobby screen. It ships as `onlinelobby/background_completion_delirium_02.png`.
+
+Because it comes from a different sheet, that row — and only that row — also carries a
+**`symbolFallback`**: `completion_widget/paper_02.png`, the cell's own background, which
+really does turn bloody when the mark is taken. A grid that would rather not mix two
+sheets has something true to fall back on; the face is the primary.
 
 From here, all twelve columns have their symbol, and `data/marks.json` gives it alongside
 the header portrait. The **`symbolSource` field says how we know it**, because not every
-row carries the same weight: ten come from the **layer's name** in the file — *Knife* for
-Mother and *DadsNote* for The Beast among them; *Delirium* is **the only cell of twelve
-that no layer claims**, a derivation pinned by a test on the real game files; *The Lamb* is
-by **elimination**, the one symbol (`cross`) and the one column left over once every other
+row carries the same weight: eleven come from a **layer's name** — *Knife* for Mother,
+*DadsNote* for The Beast, *Completion_Delirium* from the lobby; *The Lamb* is by
+**elimination**, the one symbol (`cross`) and the one column left over once every other
 pairing is settled.
 
 The two unassigned symbols used to be the evidence that the widget had two columns our

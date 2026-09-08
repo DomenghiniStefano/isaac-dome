@@ -504,46 +504,74 @@ fn thirty_nine_challenges_have_a_reward_achievement_and_six_have_none() {
     );
 }
 
-/// The completion widget draws **twelve** marks and names **eleven** of them.
+/// Where the twelve completion marks are named, and where they are not.
 ///
-/// `completion_widget.anm2` has one layer per mark plus `Paper`, and every mark layer
-/// crops a 16 × 16 cell out of two rows of the sheet: y = 112 for the mark not taken,
-/// y = 96 for the mark taken. The cells sit on a 16 px pitch from x = 0 to x = 176 —
-/// twelve of them — and the layers claim eleven. **The gap is Delirium**, whose mark has
-/// no layer at all, which is why it looked for a long time as if it had no symbol.
+/// `completion_widget.anm2` has one layer per mark plus `Paper`, and its glyph row holds
+/// **twelve** 16 × 16 cells while the layers claim **eleven**. For a while the leftover
+/// cell was taken for Delirium's mark, by elimination. It isn't: Delirium's mark is a
+/// small face with two eyes, and the cell nobody claims is a different drawing whose
+/// meaning we still don't know.
 ///
-/// This test is what keeps that inference honest. `design-export` cuts the piece at
-/// x = 96 by name, on the strength of it being the only cell nobody claims; if a patch
-/// ever adds the missing layer, or moves the row, the gap stops being a single cell and
-/// this goes red before the package ships a symbol under the wrong name.
+/// The name comes from Repentance+'s **online lobby**, whose `.anm2` draws the marks on
+/// every player's card and is the only file in the game that names all twelve —
+/// `Completion_Delirium` included. `design-export` reads Delirium's symbol from there, so
+/// this test guards both halves: the layer must exist, and the widget's gap must stay a
+/// gap rather than quietly turning into a twelfth layer that would then disagree.
 #[test]
-fn the_completion_widget_leaves_exactly_one_glyph_unclaimed() {
+fn only_the_online_lobby_names_all_twelve_marks() {
     let Some((_, rs)) = build_or_skip() else {
         return;
     };
-    let Some(bytes) = rs.read("gfx/ui/completion_widget.anm2") else {
+    let Some(widget) = rs.read("gfx/ui/completion_widget.anm2") else {
         test_support::skip("gfx/ui/completion_widget.anm2 is not in the archives");
         return;
     };
-    let frames = catalog::anm2_frames(&bytes).expect("a real anm2 must parse");
+    let frames = catalog::anm2_frames(&widget).expect("a real anm2 must parse");
     let claimed: std::collections::BTreeSet<u32> = frames
         .iter()
         .filter(|f| f.rect.w == 16 && f.rect.h == 16 && (f.rect.y == 96 || f.rect.y == 112))
         .map(|f| f.rect.x)
         .collect();
-    assert_eq!(
-        claimed.len(),
-        11,
-        "eleven mark layers were expected, got {claimed:?}"
-    );
     let unclaimed: Vec<u32> = (0..12)
         .map(|i| i * 16)
         .filter(|x| !claimed.contains(x))
         .collect();
     assert_eq!(
-        unclaimed,
-        vec![96],
-        "the row of twelve cells must have exactly one gap, and it must be at x = 96: \
-         that is the cell `design-export` cuts as Delirium"
+        (claimed.len(), unclaimed.as_slice()),
+        (11, [96].as_slice()),
+        "the widget is supposed to name eleven of twelve cells and leave x = 96 unnamed"
+    );
+    assert!(
+        !frames.iter().any(|f| f.layer == "Delirium"),
+        "the widget has gained a Delirium layer: the symbol should come from here now, \
+         not from the lobby"
+    );
+
+    let Some(lobby) = rs.read("gfx/ui/main menu/onlinelobby.anm2") else {
+        test_support::skip("gfx/ui/main menu/onlinelobby.anm2 is not in the archives");
+        return;
+    };
+    let lobby = catalog::anm2_frames(&lobby).expect("a real anm2 must parse");
+    let marks: std::collections::BTreeSet<&str> = lobby
+        .iter()
+        .filter(|f| f.layer.starts_with("Completion_"))
+        .map(|f| f.layer.as_str())
+        .collect();
+    assert_eq!(marks.len(), 12, "twelve marks were expected, got {marks:?}");
+    // The one the whole detour was about, at the size and place `design-export` cuts.
+    let delirium: Vec<(u32, u32)> = lobby
+        .iter()
+        .filter(|f| f.layer == "Completion_Delirium" && f.animation == "Background")
+        .map(|f| (f.rect.x, f.rect.y))
+        .collect();
+    assert!(
+        delirium.contains(&(224, 32)),
+        "Completion_Delirium no longer crops (224, 32) in the Background animation: {delirium:?}"
+    );
+    assert!(
+        lobby
+            .iter()
+            .all(|f| f.layer != "Completion_Delirium" || (f.rect.w == 16 && f.rect.h == 16)),
+        "the mark is expected to be 16 x 16 like every other one"
     );
 }
