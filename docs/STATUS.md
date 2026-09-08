@@ -710,8 +710,38 @@ while a run was in progress, reporting each change through `core_save::diff` (ev
 - **Zero mod noise on this machine** (no `Lua Debug` at all), unlike the 2024 log B8 was
   written from.
 
-> B8 is answered in substance but **not yet written up**: the run was still in progress. The
-> document, with the `probe-*.tsv` files as evidence, is the next thing.
+- [x] **B8 closed** — report in `docs/superpowers/plans/2026-09-08-b8-log-spike-report.md`,
+      written from one complete run (Judas, hard, Mega Satan, won). Both open questions
+      answered: **rooms are logged**, with a frame number on every transition, and the flush
+      is immediate. Two findings change M4's shape — the log **announces every save write**
+      (132 times in that run), and `from pool X` lies about the character's starting item,
+      which only its **position** in the log distinguishes. M4's design can start.
+- [x] **The game names the save's sections, and we had two of them wrong.** Loading a
+      profile, the log prints `Reading chunk N` plus that chunk's **name**, for **eleven**
+      chunks. Our table has ten sections with four marked "to be identified" — they have
+      names now, and two labels we thought were settled are contradicted: `Kind::PerChar`
+      (3) is **Level Counters**, `Kind::CardsPills` (6) is **Bosses** (104 cells against
+      the catalog's 103 bosses), and section 10 holds **two** chunks — Special Seed Counters
+      then Bestiary Counters — which is why the game counts eleven where the file has ten
+      headers. The four positions we were sure of (1, 2, 4, 7) all agree, which is what
+      makes the rest credible. Measured, not inferred: `Save::parse` finds ten headers with
+      **zero diagnostics**, while section 10's header declares `count=80, f2=320` and the
+      parser hands it **11,016 bytes**. Blast radius is small — `CardsPills` appears only in
+      `SaveDiff`'s field name and two test assertions, `PerChar` only in tests, neither
+      crosses the IPC — but `cards_pills` is a wrong name in a public type.
+      **Logged as B9**, deliberately not fixed here: a log line is evidence about what the
+      game thinks it reads, not a measurement of what the cells mean, and the rename has to
+      follow a confirmation by content.
+- [x] **Three cross-checks the run gave for free**: `unlock steam achievement '19'` states
+      the section-1 `slot[id]` mapping in the game's own words, where we had inferred it
+      from 169 of 171 items; `MARK/Mega Satan/Judas [119] 0 -> 3` confirms the REPENTOGON
+      block table by *doing the thing and watching the right cell*; and, the run being hard
+      mode, that `0 -> 3` shows **hard writes both of the mark's bits at once** — which
+      `CLAUDE.md` had as an open question.
+- [ ] **One discrepancy left open**: `CHARACTER_LAST_RUN_WIN [188] 4 -> 12` on a winning
+      Judas run. Judas is id 3 and the old value 4 matches nothing played. Either the
+      REPENTOGON label is wrong for that index or it isn't a character id. Closes by
+      collecting wins with other characters.
 
 ### 2026-09-08 (later still) — the design package is a photograph of an era that ended
 
