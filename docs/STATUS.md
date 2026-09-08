@@ -293,10 +293,19 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
       - [ ] *Grid entities have no `Target`* — the leftover of the line above, and the
             same shape as the wrapper decision: resolving the three id-less buttons needs
             a `Target` variant, which crosses the IPC. Design, not resolver work.
-      - [ ] The remaining resolver themes (corrections looked up by exact `_pageName`
-            rather than normalized `key()`, unknown tables in `corrections.json` ignored
-            silently, the alias/title double index untested): untouched, still as listed
-            in the report.
+      - [x] *Unknown tables in `corrections.json` ignored silently* — **guarded on
+            2026-09-08.** `CORRECTED_TABLES` names the tables `apply` is called with, and
+            two tests make a correction that matches nothing a red instead of a no-op: one
+            over the real file, one over a file deliberately wrong in both ways, because
+            the first is vacuous while `pageId` is empty.
+      - [ ] *Corrections looked up by exact `_pageName` rather than normalized `key()`* —
+            still open, and latent for the same reason: `pageId` is empty, so nothing is
+            looked up yet. The guard above will catch a title that matches no page; it
+            won't catch one that matches except for case.
+      - [x] *The alias/title double index untested* — moot: the character half of
+            `corrections.json` is a name → id index used by `{{c|…}}` anywhere in the
+            text, and `diagnostics_are_bounded` already asserts that no `{{c|…}}` ever
+            comes out unresolved, which is stronger than any spelling check.
 - [ ] "Open on the wiki" link and runtime dataset update from GitHub: out of scope for
       this cycle, that's design and M5 work.
 
@@ -535,16 +544,21 @@ building the Collection screen, not before designing it.
       the game creates on its own. `samples/` now contains four files — three snapshots of the same
       profile (Jan 18, Mar 5, Jun 6, 2024) plus a Repentance+ profile (Jan 12, 2025). `core-save`'s
       real-data tests were rewritten against these: 8 tests, all actually run.
-- [ ] **`discovery` and the leftover game folder.** Verify that an orphaned
-      `steamapps\common\...` (with no executable) isn't reported as a valid installation.
-      **Seen behaving correctly on 2026-09-08**, on a machine that happened to hold exactly
-      that orphan — no executable, no `resources\`, no `appmanifest_250900.acf` — where
-      `crates/discovery/tests/real_machine.rs` printed `skip: Isaac (250900) not installed`
-      rather than reporting a find. That's one observation on one machine, not a test: it
-      disappears the moment that PC installs the game, and it never ran on the machines
-      that do have it. **Still open, and the closing criterion is unchanged**: a synthetic
-      fixture, so the case is checked everywhere instead of wherever the orphan happens to
-      be.
+- [x] ~~**`discovery` and the leftover game folder.**~~ **Closed on 2026-09-08** —
+      `crates/discovery/tests/orphan_game.rs` builds the orphan wherever the suite runs,
+      instead of relying on a machine that happens to have one. The registered behaviour
+      was already right: no `appmanifest_250900.acf`, no installation. It's the *pair* that
+      makes it mean something — the same folder with a manifest beside it **is** the
+      installation, so Steam's record decides and not the folder's name.
+      **Writing it turned up a defect the entry didn't suspect**, and the worse of the two
+      directions: with a manifest present and the folder it names gone (an interrupted
+      uninstall, a library on a drive that isn't plugged in), `find_game` returned
+      `Some(dir)` for a directory that doesn't exist and **no diagnostic at all**.
+      Downstream that reads as a failed extraction instead of a game that isn't there —
+      false data with a confident face. The scan now skips such a library and keeps going,
+      so a stale manifest on one drive can't shadow the game on another. `game_dir`, the
+      manual override, is untouched on purpose: a path the user chose comes back even when
+      it's empty, so the app can say so.
 - [x] ~~**Real-data tests that skip silently.**~~ Addressed in `c9faa1e`
       (non-silent skip). The suite is now at **94 tests, 0 failed**.
 - [ ] **Tests that pass on an unrepresentative sample.** A more insidious variant of the
@@ -578,6 +592,40 @@ building the Collection screen, not before designing it.
 ---
 
 ## Session log
+
+### 2026-09-08 (later) — the last three small ones, and one wasn't small
+
+- [x] **The summary that says how much a run didn't verify was itself approximate.** The
+      harness writes `test … ok` to stdout while `test-support` declares on stderr, `2>&1`
+      merges them without respecting line boundaries, and tests inside a binary interleave
+      anyway. Declarations are now mirrored into `ISAACDOME_TEST_DECLARATIONS`, which
+      `scripts/check` counts from: **90 skips and 37 real files**, where the old count said
+      81 and 35.
+- [x] **The mirror took two goes, and the second is the lesson.** `writeln!` emits the text
+      and the newline as **two** writes, so a second writer landing between them fuses two
+      declarations into one line — which the first version of the fix promptly printed.
+      One `write_all` with the newline already in the buffer, and
+      `concurrent_appends_never_fuse_two_lines` reproduces it: 600 lines, three threads,
+      all intact.
+- [x] **`scripts/check`'s Italian identifiers**, a B7 leftover of the same kind as
+      `crates/unpack`'s. Renamed while the file was open, in its own commit. `unpack`
+      stays as B7 left it.
+- [x] **The `discovery` fixture found a defect the entry didn't suspect.** The registered
+      case — a leftover folder with no manifest — already behaved. Its mirror image did
+      not: manifest present, folder gone, and `find_game` returned a directory that doesn't
+      exist with **no diagnostic**. The same function checks exactly this one branch over,
+      in the malformed-manifest fallback, which is what makes it an oversight rather than a
+      choice. Now it skips that library and keeps looking, so a stale manifest on one drive
+      can't hide the game on another.
+- [x] **A guard written while it is still vacuous.** A `corrections.json` entry that
+      matches nothing produces no error and no effect. `pageId` is empty today, so the
+      check over the real file asserts nothing — which is precisely why it costs nothing to
+      add now, and it ships with a second test that runs the same check against a file
+      deliberately wrong in both ways, so the guard itself is known to work.
+- [x] **Four times in one session, measuring first changed the job**: a red test hid 373
+      others; a stray `}}` was splitting fifty lists; "the multi-line wrapper" turned out to
+      be a contract decision; "entity aliases" turned out to be an argument-parsing bug. The
+      name a backlog entry carries is the hypothesis of whoever wrote it, not a diagnosis.
 
 ### 2026-09-08 (later) — wiki parser: three fixes and two decisions handed back
 
@@ -699,6 +747,10 @@ code touched: the suite was reporting green on work it had stopped doing.
       `okconfig.a` appear in real output), so `grep -c` over them is noise. The kinds are
       still readable, the totals aren't. Fixing it means `--test-threads=1` for that run,
       or emitting the declarations somewhere other than shared stderr.
+      **Closed the same day**, the second way: `test-support` mirrors every declaration
+      into the file named by `ISAACDOME_TEST_DECLARATIONS`, which `scripts/check` sets and
+      counts from. The true figures were 90 skips and 37 real files where the summary had
+      been saying 81 and 35.
 - [x] **Why the question "what can be done without game data" had an answer at all.** The
       machine in use had no game installed and no `samples/packed`, and its saves covered
       two eras but not the current one. **That is a fact about a PC, not about the
