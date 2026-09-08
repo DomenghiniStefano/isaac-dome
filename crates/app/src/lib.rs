@@ -9,7 +9,7 @@ use std::sync::{Mutex, MutexGuard, OnceLock};
 use catalog::Catalog;
 use core_save::{Kind, OpenError, Save};
 use discovery::{discover, Options};
-use ipc::{ActiveProfile, MarksMatrix, ProfileId, SaveSummary, Settings, SetupState};
+use ipc::{ActiveProfile, GraphDeps, MarksMatrix, ProfileId, SaveSummary, Settings, SetupState};
 use store::{GoalsRead, Store, StoreError};
 use tauri::{AppHandle, Manager};
 use unpack::ResourceSet;
@@ -312,36 +312,6 @@ fn plan_parts(
     match read {
         Ok(r) => (r.goals, r.unreadable, None),
         Err(e) => (Vec::new(), Vec::new(), Some(store_reason(e))),
-    }
-}
-
-/// "a requires b" for the queue, read from the graph's transitive prerequisites.
-///
-/// The chains are computed **once, for the rows involved**, and not per question: a move
-/// asks `requires` twice per row, and each answer would otherwise be a fresh transitive
-/// walk over the whole graph.
-///
-/// A node the graph can't compute has an empty chain, so it is never dragged and never
-/// walls — the spec's "rows the graph can't compute carry no constraints", expressed once,
-/// here.
-struct GraphDeps {
-    chains: std::collections::BTreeMap<u32, std::collections::BTreeSet<u32>>,
-}
-
-impl GraphDeps {
-    fn new(g: &graph::Graph, flags: Option<&[bool]>, rows: &[u32]) -> GraphDeps {
-        GraphDeps {
-            chains: rows
-                .iter()
-                .map(|a| (*a, g.missing_chain(*a, flags).into_iter().collect()))
-                .collect(),
-        }
-    }
-}
-
-impl plan::Dependencies for GraphDeps {
-    fn requires(&self, a: u32, b: u32) -> bool {
-        self.chains.get(&a).is_some_and(|c| c.contains(&b))
     }
 }
 
