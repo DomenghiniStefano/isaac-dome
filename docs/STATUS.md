@@ -414,13 +414,13 @@ Path, in order:
 - [ ] **4. Handoff to Claude Design** — screens 0, 4 and 5 on real data, the other four
       on fixed contracts. From here M2 proceeds in parallel with the webapp without touching the
       types the frontend consumes.
-      The material was ready on 2026-09-06 and **has since aged out**. The committed package is
-      the output of `a9a32ee`, taken before M2 and M3 landed: every payload in it still declares
+      The material was ready on 2026-09-06 and **had since aged out**: the committed package was
+      the output of `a9a32ee`, taken before M2 and M3 landed, where every payload still declared
       `"kind": "stub"` — 641 nodes, `basis: stub`, `expansion: stub` — and `contracts/types.ts`
-      is the pre-M2 copy, with `GraphInfo = stub | computed`, no `RequirementView` and no queue.
-      Handing that over buys a design of the placeholder. The exporter itself is current
-      (`72d8d44` builds the real graph); it's the committed output, and the brief, that are
-      behind. **Regenerate the whole thing before the handoff:**
+      was the pre-M2 copy, with `GraphInfo = stub | computed`, no `RequirementView` and no queue.
+      Handing that over buys a design of the placeholder. **The four steps below closed on
+      2026-09-08**: the package on disk is the post-M2/M3 contract on the real profile, and what
+      remains of this item is the act of handing it over.
       - [x] **a. A queue payload in `design-export`** (2026-09-08) — `queue.empty.json` and
             `queue.with_rows.json`, built through `plan::Queue::enqueue` and `GraphDeps`,
             i.e. the very functions behind the Tauri command: the package can't show an
@@ -443,14 +443,21 @@ Path, in order:
             the queue**, which the brief had nothing about at all: the types, the four states
             of a row, and the rule the whole thing rests on — a move repairs, so there is no
             rejected drop and no error toast to design.
-      - [ ] **c. `pnpm design:export` re-run over the whole package** — needs the machine with
-            the game installed, the `samples/packed` junction and a real save; then commit the
-            regenerated output. The package is committed on purpose (see `.gitignore`): Claude
-            Design opens it from a fixed path, and it would vanish on a branch switch. The
-            package README forbids the assets ending up in a public repository — `origin` is
-            private, which is what makes committing them acceptable.
-            **Rehearsed twice on 2026-09-08** into a scratch directory, so the run itself is
-            known to work here: 8 archives, 19,473 entries, 5,837 files, 36 MB, exit 0.
+      - [x] **c. `pnpm design:export` re-run over the whole package** (2026-09-08, evening) —
+            run on the machine with the game reinstalled, the `samples/packed` junction live
+            and the real profile: 8 archives, 19,473 entries, 2,074 images from the archives
+            (1,639 in atlases, 435 single files), 48 sheets cut into 3,759 pieces, 10 wiki
+            pages, 5,837 files, 36 MB. The package is committed on purpose (see
+            `.gitignore`): Claude Design opens it from a fixed path, and it would vanish on a
+            branch switch. The package README forbids the assets ending up in a public
+            repository — `origin` is private, which is what makes committing them acceptable.
+            **The diff says the extraction is deterministic**: 12 files changed and 2 added,
+            and not one image byte moved between the `a9a32ee` output and this one. What
+            changed is the whole point — `contracts/types.ts`, the unlock payloads, and the
+            brief. The profile behind it: **386 of 641 done**, 620 nodes `computed` against
+            21 `partial`. Two `"kind": "stub"` strings survive, both `PlanExpansion::Stub` in
+            `plan.*.json`, and that one **is** current behaviour: the Plan's expansion is
+            genuinely not computed, the queue is what replaced it.
       - [x] **d. The file count, here and in the package README** (2026-09-08) — the README
             was already generated (`readme(img.entries.len())` = 5,833) and correct; the stale
             number was in `DESIGN-BRIEF.md`'s header, which claimed **2035 images**. Now taken
@@ -632,6 +639,32 @@ building the Collection screen, not before designing it.
 ---
 
 ## Session log
+
+### 2026-09-08 (night) — the package regenerated, with the game back on disk
+
+The game is installed again, so step 4c — the one thing that needed this machine — is
+closed and the design package is current.
+
+- [x] **The whole package re-exported and committed**: 8 archives, 19,473 entries, 5,837
+      files, 36 MB. **Not one image byte moved** against the `a9a32ee` output: 12 files
+      changed, 2 added, all of them contracts, payloads and the brief. Extracting the same
+      archives twice gives the same bytes, which is what makes a committed package
+      reviewable at all — the diff is only ever the contract.
+- [x] **The queue payload shows all four states on real data**: 480 dragged in by 55
+      (`wanted: false`, `origins: [55]`), 55 the wish whose chain is queued
+      (`stepsNotQueued: 0`), 69 the wish standing alone (`stepsNotQueued: 1`, and `partial`
+      into the bargain), plus a `completed` diagnostic for a wish already done. The fifth,
+      `Unresolved`, can't be produced from a real catalog by definition.
+- [x] **No path leaks in the package**: `setup_state.json` carries `<account>` and no
+      Windows username anywhere in the 5,837 files.
+- [x] **Four commits of work that was sitting uncommitted**: `GraphDeps` into `ipc` with
+      its three tests, the queue payloads in `design-export`, the live probe, and the brief
+      plus this document.
+
+> `cargo test --workspace` cannot link `core-save`'s `live_probe` example while the probe
+> is running — `LNK1104`, the exe is held open. The suite was verified with
+> `--lib --tests --bins`: **zero failures, 7 skips**, all of them samples that exist on no
+> machine any more. `scripts/check` will go green again once the probe is stopped.
 
 ### 2026-09-08 (evening, at the PC with the game) — what only this machine can answer
 
