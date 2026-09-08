@@ -1,8 +1,10 @@
 use serde::Serialize;
 
-/// The ten verified bosses. Mother and The Beast don't yet have a column
-/// for any character, so they don't appear here.
-pub const BOSSES: [&str; 10] = [
+/// The twelve columns the game's own completion widget draws. Mother and The Beast were
+/// located on 2026-09-08, on the historical series: for the 14 original characters they
+/// are as verified as the other ten, for The Forgotten and the 19 later characters they
+/// are still unlocated — see `FORGOTTEN` and `BLOCKS_19`.
+pub const BOSSES: [&str; 12] = [
     "Mom's Heart",
     "Isaac",
     "Satan",
@@ -13,6 +15,8 @@ pub const BOSSES: [&str; 10] = [
     "Greed",
     "Hush",
     "Delirium",
+    "Mother",
+    "The Beast",
 ];
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
@@ -117,14 +121,44 @@ pub fn character_for(row: usize, catalog: &catalog::Catalog) -> Option<&catalog:
 }
 
 /// Base of the 14-cell block, per boss. Verified (REPENTOGON + real saves).
-const BLOCKS_14: [usize; 10] = [27, 41, 55, 69, 83, 97, 116, 130, 144, 173];
+///
+/// The last two came out of the historical series on 2026-09-08. Each was pinned three
+/// ways at once, on the days the cell changed: the boss (an achievement whose wiki
+/// requirement is *Mother* or *The Beast* unlocked the same day), the count (index 491
+/// and 492 are that boss's kills, and they rose by exactly as many as the new marks), and
+/// the character (index 188 is a bitmask of the characters that won, and it read
+/// Magdalene for base+1 and Cain for base+2).
+const BLOCKS_14: [usize; 12] = [27, 41, 55, 69, 83, 97, 116, 130, 144, 173, 423, 457];
 
 /// Single cells for The Forgotten, per boss. 212 belongs to another family.
-const FORGOTTEN: [usize; 10] = [203, 204, 205, 206, 207, 208, 209, 210, 211, 213];
+///
+/// Mother and The Beast are `None` on purpose: the spacing between the two 14-blocks is
+/// exactly 34 = 14 + 1 + 19, so their cells are certainly inside 423..=490, but which
+/// cell is The Forgotten's cannot be told from any save we have — those 40 cells are
+/// zero in every one of them. A guess here would show a mark nobody earned.
+const FORGOTTEN: [Option<usize>; 12] = [
+    Some(203),
+    Some(204),
+    Some(205),
+    Some(206),
+    Some(207),
+    Some(208),
+    Some(209),
+    Some(210),
+    Some(211),
+    Some(213),
+    None,
+    None,
+];
 
-/// Base of the 19-cell block, per boss. DERIVED, not documented, and it stops
-/// at Hush: from Delirium onward the regularity breaks down. `None` = not located.
-const BLOCKS_19: [Option<usize>; 10] = [
+/// Base of the 19-cell block, per boss. DERIVED from the regular pattern for the first
+/// nine, and each one corroborated by cells that were seen moving. `None` = not located.
+///
+/// Delirium closed on 2026-09-08: the base is 404, not the 386 the pattern predicted, and
+/// four characters agree on it — Bethany (+0), Jacob & Esau (+1), T. Cain (+4) and
+/// T. Azazel (+9), each on a day the Delirium kill counter also rose. What sits in
+/// 386..=403 is still unread.
+const BLOCKS_19: [Option<usize>; 12] = [
     Some(214),
     Some(233),
     Some(252),
@@ -134,6 +168,8 @@ const BLOCKS_19: [Option<usize>; 10] = [
     Some(328),
     Some(347),
     Some(366),
+    Some(404),
+    None,
     None,
 ];
 
@@ -145,7 +181,7 @@ pub fn counter_index(character: usize, boss: usize) -> Option<usize> {
     let (_, group) = *CHARACTERS.get(character)?;
     match group {
         CharacterGroup::Original => Some(*BLOCKS_14.get(boss)? + character),
-        CharacterGroup::Forgotten => Some(*FORGOTTEN.get(boss)?),
+        CharacterGroup::Forgotten => *FORGOTTEN.get(boss)?,
         CharacterGroup::Later => (*BLOCKS_19.get(boss)?).map(|base| base + character - FIRST_LATER),
     }
 }

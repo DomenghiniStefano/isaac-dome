@@ -2,10 +2,16 @@ use ipc::{counter_index, marks_matrix, Cell, CharacterGroup, BOSSES, CHARACTERS}
 
 #[test]
 fn tables_have_the_expected_shape() {
-    assert_eq!(BOSSES.len(), 10);
+    assert_eq!(
+        BOSSES.len(),
+        12,
+        "the widget the game draws has twelve columns"
+    );
     assert_eq!(CHARACTERS.len(), 34);
     assert_eq!(BOSSES[0], "Mom's Heart");
     assert_eq!(BOSSES[9], "Delirium");
+    assert_eq!(BOSSES[10], "Mother");
+    assert_eq!(BOSSES[11], "The Beast");
     assert_eq!(CHARACTERS[0], ("Isaac", CharacterGroup::Original));
     assert_eq!(CHARACTERS[14], ("The Forgotten", CharacterGroup::Forgotten));
     assert_eq!(CHARACTERS[15], ("Bethany", CharacterGroup::Later));
@@ -20,6 +26,17 @@ fn original_characters_use_the_verified_blocks() {
     assert_eq!(counter_index(13, 0), Some(40));
     // Delirium for the 14 originals starts at 173.
     assert_eq!(counter_index(0, 9), Some(173));
+    // Mother and The Beast, located on 2026-09-08 on the historical series. The base of
+    // each block is pinned by two characters read off the winner mask at index 188:
+    // Magdalene (+1) and Cain (+2) on the days their mark appeared.
+    assert_eq!(counter_index(0, 10), Some(423)); // Isaac × Mother
+    assert_eq!(counter_index(1, 10), Some(424)); // Magdalene
+    assert_eq!(counter_index(2, 10), Some(425)); // Cain
+    assert_eq!(counter_index(13, 10), Some(436)); // Apollyon, last of the 14
+    assert_eq!(counter_index(0, 11), Some(457)); // Isaac × The Beast
+    assert_eq!(counter_index(1, 11), Some(458)); // Magdalene
+    assert_eq!(counter_index(2, 11), Some(459)); // Cain
+    assert_eq!(counter_index(13, 11), Some(470)); // Apollyon
 }
 
 #[test]
@@ -27,26 +44,38 @@ fn the_forgotten_uses_single_cells() {
     assert_eq!(counter_index(14, 0), Some(203)); // Mom's Heart
     assert_eq!(counter_index(14, 8), Some(211)); // Hush
     assert_eq!(counter_index(14, 9), Some(213)); // Delirium: 212 belongs to another family
+                                                 // Mother and The Beast for The Forgotten: derived from the spacing, never observed
+                                                 // moving, so they stay unlocated rather than pointing at a guess.
+    assert_eq!(counter_index(14, 10), None);
+    assert_eq!(counter_index(14, 11), None);
 }
 
 #[test]
-fn later_characters_stop_at_hush() {
+fn later_characters_now_reach_delirium() {
     assert_eq!(counter_index(15, 0), Some(214)); // Bethany, Mom's Heart
     assert_eq!(counter_index(33, 8), Some(384)); // T. Jacob & Esau, Hush = 366 + 18
-    assert_eq!(
-        counter_index(15, 9),
-        None,
-        "the Delirium column isn't located for the 19s: this is where the unknown starts"
-    );
+                                                 // The column that used to be the hole. Four characters pin the base at 404:
+                                                 // Bethany (+0), Jacob & Esau (+1), T. Cain (+4) and T. Azazel (+9), each on the day
+                                                 // its cell appeared together with a Delirium kill.
+    assert_eq!(counter_index(15, 9), Some(404)); // Bethany
+    assert_eq!(counter_index(16, 9), Some(405)); // Jacob & Esau
+    assert_eq!(counter_index(19, 9), Some(408)); // T. Cain
+    assert_eq!(counter_index(24, 9), Some(413)); // T. Azazel
+    assert_eq!(counter_index(33, 9), Some(422)); // T. Jacob & Esau, last of the 19
 }
 
 #[test]
-fn exactly_nineteen_cells_are_unlocated() {
+fn exactly_forty_cells_are_unlocated() {
     let unlocated = (0..CHARACTERS.len())
         .flat_map(|c| (0..BOSSES.len()).map(move |b| (c, b)))
         .filter(|&(c, b)| counter_index(c, b).is_none())
         .count();
-    assert_eq!(unlocated, 19);
+    assert_eq!(
+        unlocated, 40,
+        "The Forgotten and the 19 later characters, for Mother and for The Beast: \
+         40 cells whose position is derived from the spacing and confirmed by nothing, \
+         because they are zero in every save we have"
+    );
 }
 
 /// A fake counters section, as long as a real save, all zero
@@ -61,21 +90,26 @@ fn counters(len: usize, set: &[(usize, u32)]) -> Vec<u32> {
 fn matrix_has_the_expected_shape_and_totals() {
     let m = marks_matrix(&counters(523, &[]));
     assert_eq!(m.characters.len(), 34);
-    assert_eq!(m.bosses.len(), 10);
-    assert_eq!(m.totals.cells, 340);
-    assert_eq!(m.totals.unknown, 19);
-    assert_eq!(m.totals.readable, 321);
+    assert_eq!(m.bosses.len(), 12);
+    assert_eq!(m.totals.cells, 408);
+    assert_eq!(m.totals.unknown, 40);
+    assert_eq!(m.totals.readable, 368);
     assert_eq!(m.totals.unexpected, 0);
     assert_eq!(m.totals.started, 0);
 }
 
 #[test]
-fn the_delirium_column_is_unknown_for_later_characters() {
+fn the_hole_is_now_mother_and_the_beast_for_the_last_twenty_rows() {
     let m = marks_matrix(&counters(523, &[]));
-    // row 15 = Bethany, column 9 = Delirium
-    assert_eq!(m.characters[15].cells[9], Cell::Unknown);
-    // row 0 = Isaac, same column: located
-    assert_eq!(m.characters[0].cells[9], Cell::Known { bits: 0 });
+    // row 15 = Bethany, column 9 = Delirium: located since 2026-09-08.
+    assert_eq!(m.characters[15].cells[9], Cell::Known { bits: 0 });
+    // Columns 10 and 11 for the same row, and for The Forgotten: still unlocated.
+    assert_eq!(m.characters[15].cells[10], Cell::Unknown);
+    assert_eq!(m.characters[15].cells[11], Cell::Unknown);
+    assert_eq!(m.characters[14].cells[10], Cell::Unknown);
+    // Row 0 = Isaac: the original characters have all twelve columns.
+    assert_eq!(m.characters[0].cells[10], Cell::Known { bits: 0 });
+    assert_eq!(m.characters[0].cells[11], Cell::Known { bits: 0 });
 }
 
 #[test]
@@ -115,14 +149,14 @@ fn a_shorter_section_yields_unknown_not_a_panic() {
         Cell::Known { bits: 0 },
         "index 27 is still there"
     );
-    assert!(m.totals.unknown > 19);
-    assert_eq!(m.totals.readable + m.totals.unknown, 340);
+    assert!(m.totals.unknown > 40);
+    assert_eq!(m.totals.readable + m.totals.unknown, 408);
 }
 
 #[test]
 fn an_empty_section_is_all_unknown() {
     let m = marks_matrix(&[]);
-    assert_eq!(m.totals.unknown, 340);
+    assert_eq!(m.totals.unknown, 408);
     assert_eq!(m.totals.readable, 0);
 }
 
@@ -133,7 +167,7 @@ fn an_empty_section_is_all_unknown() {
 #[test]
 fn cell_and_totals_json_shape_is_pinned() {
     // index 27 suspicious (outside the 0..=7 mask) → Unexpected
-    // index 15/9 (Bethany × Delirium) → Unknown, not located for the 19s
+    // columns 10 and 11 for The Forgotten and the 19s → Unknown, not located
     // the rest → Known
     let m = marks_matrix(&counters(523, &[(27, 49)]));
     let json = serde_json::to_value(&m).unwrap();
@@ -155,9 +189,9 @@ fn cell_and_totals_json_shape_is_pinned() {
     assert_eq!(
         json["totals"],
         serde_json::json!({
-            "cells": 340,
-            "readable": 320,
-            "unknown": 19,
+            "cells": 408,
+            "readable": 367,
+            "unknown": 40,
             "unexpected": 1,
             "started": 0
         }),
