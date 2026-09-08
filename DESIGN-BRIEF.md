@@ -663,17 +663,24 @@ second level is a different row on the sheet, not the same drawing with a filter
 
 **But the cell isn't just the symbol: it's also the background, and the background
 carries information.** The `Paper` layer has six frames, along two axes — the edge
-(straight → torn → **bloodied**) and the surface (clean or marked). The **Delirium** mark
-is the bloodied sheet: earning that mark doesn't add an icon on top, it changes the sheet
-underneath. That's why there's no "Delirium" among the eleven layers, and it looked like it
-was missing — it was being looked for in the wrong category.
+(straight → torn → **bloodied**) and the surface (clean or marked).
+
+**Delirium has a symbol of its own, and it took until 2026-09-08 to find it.** The glyph
+row on the sheet holds **twelve** 16 × 16 cells and the `.anm2` names **eleven** layers:
+one cell is drawn by the game and claimed by nobody, at x = 96, and that is Delirium's — an
+angular black shape, unmistakable once you see it on the pause screen or the co-op card.
+Before that the package handed over the bloodied sheet under Delirium's name. Taking the
+mark *does* bloody the sheet, so that was not wrong — it was the background, not the icon,
+and a design built on it would have drawn Delirium as a state of the paper rather than as a
+mark like the other eleven.
 
 From here, all twelve columns have their symbol, and `data/marks.json` gives it alongside
 the header portrait. The **`symbolSource` field says how we know it**, because not every
 row carries the same weight: ten come from the **layer's name** in the file — *Knife* for
-Mother and *DadsNote* for The Beast among them; *Delirium* is **reported by players** and
-verified by looking at the six sheets; *The Lamb* is by **elimination**, the one symbol
-(`cross`) and the one column left over once every other pairing is settled.
+Mother and *DadsNote* for The Beast among them; *Delirium* is **the only cell of twelve
+that no layer claims**, a derivation pinned by a test on the real game files; *The Lamb* is
+by **elimination**, the one symbol (`cross`) and the one column left over once every other
+pairing is settled.
 
 The two unassigned symbols used to be the evidence that the widget had two columns our
 matrix didn't. That gap closed on 2026-09-08: the columns were located in the save, and

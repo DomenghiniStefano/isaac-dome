@@ -1210,11 +1210,16 @@ flagged wherever it's a fallback.
       shared between a collectible and a trinket — item 1 is both *The Sad Onion*
       and *Swallowed Penny*. The index was dropping the type, and a join on id alone would have
       grabbed the wrong sprite half the time.
-- [x] **Delirium isn't a symbol, it's the background.** It looked like a gap — eleven layers and
-      none called Delirium — until it turned out the mark is the cell's **bloodied
-      sheet**. With Delirium out of the symbols, the last pairing (`Cross` → The
-      Lamb) closes by elimination. `symbolSource` in `marks.json` says for every row whether
+- [x] ~~**Delirium isn't a symbol, it's the background.**~~ It looked like a gap — eleven
+      layers and none called Delirium — and the conclusion was that the mark is the cell's
+      **bloodied sheet**. With Delirium out of the symbols, the last pairing (`Cross` → The
+      Lamb) closed by elimination. `symbolSource` in `marks.json` says for every row whether
       it's read from the file, referenced, or inferred.
+      > **Wrong, corrected on 2026-09-08.** The glyph row holds **twelve** 16 × 16 cells and
+      > the layers claim eleven: the cell at x = 96 is Delirium's symbol, and it was never
+      > cut because the cutter follows layers. Taking the mark does bloody the sheet, so the
+      > observation was real — the inference from it wasn't. The pairing by elimination
+      > survives untouched, since Delirium never needed one of the eleven.
 - [x] **Language convention put back in order**: `design-export` was the only crate with
       identifiers and JSON keys in Italian. Now, everywhere, it's **English identifiers,
       Italian prose**; the package uses `images/`, `sheets/`, `data/`, `INDEX.json`.

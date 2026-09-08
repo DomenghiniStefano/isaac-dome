@@ -13,8 +13,10 @@
 //!   icon's name (`IconShop`, `IconDevilRoom`…);
 //! - `hudstats.anm2`: two nine-frame animations — the name lives on the animation, and
 //!   the individual piece is told apart by position;
-//! - `completion_widget.anm2`: a single animation with **twelve layers**, one per mark,
-//!   and each layer's frames are its states.
+//! - `completion_widget.anm2`: a single animation with twelve layers — `Paper` plus
+//!   **eleven** of the twelve marks — and each layer's frames are its states. The twelfth
+//!   mark, Delirium's, is a cell of the sheet that no layer claims, which is exactly the
+//!   kind of thing a cutter driven by layers cannot see.
 //!
 //! Hence a single structure: a frame, with the name of the animation and layer that
 //! contain it. It's up to the caller to decide what to do with it.
