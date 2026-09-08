@@ -357,30 +357,37 @@ fn text_nodes_carry_no_raw_template_syntax() {
     {
         raw_brace_texts_in_entry(e, &mut offenders);
     }
-    // 123 as of 2026-09-08 (was 125), from two remaining families:
-    // 1. A template with named content (`content=`, `description=`) that opens on one
-    //    list line and closes many lines below — `column list` (~55 pages, in
-    //    opening/closing pairs) and the two variants of `Book of … synergy` — is never
-    //    seen as a single template: `build_lists` (`blocks.rs`) parses each list item on
-    //    its own with `parse_inline`, so the closing `}}`, on a different line, stays
-    //    invisible to `parse_template_at`. Same limitation for two `{{bug|…}}` whose
-    //    sentence continues on a following line. Still open: it needs `blocks.rs` to
-    //    recognize a multi-line template *before* splitting into lines.
-    // 2. Genuine text, not an unclosed template: the formulas between `<math>…</math>` on
-    //    Rosary and Mom's Contacts stay as text on purpose (no LaTeX parser here), and
-    //    their nested curly braces produce `}}` by coincidence (9 entries); Keeper's page
-    //    has a wiki typo, `and}}` with no `{{` opening it anywhere (1 entry). This family
-    //    is not a defect and won't go to zero.
-    // Closed on 2026-09-08 — the third family, worth two entries: `build_table` split a
-    // cell on `||` without counting `{{…}}` depth, so Mystery Egg's
-    // `{{e|Mask + Heart||Heart}}` (where `||` is an empty argument) became two half
-    // templates. `split_cells` now counts bracket depth; the reference resolves to
-    // entity 93 instead of leaving `{{e|Mask + Heart` in a text node.
+    // 83 as of 2026-09-08 (125 → 123 → 83), and the remainder is now two things only:
+    //
+    // 75 belong to **one open defect**: a template whose content is block-level, which
+    // opens on a list line and closes lines below. `blocks.rs` walks the wikitext line by
+    // line, so `parse_template_at` never sees it as a single template. What's left of it
+    // in the tree is 62 openers — `column list` 51, `Book of Virtues synergy` 6, `bug` 4,
+    // `Book of Belial synergy` 1 — plus 13 tails, a `}}` riding at the end of the last
+    // list item rather than on a line of its own.
+    // Closing it properly needs a way to say "a template wrapping blocks", and that is a
+    // `Block` variant, which crosses the IPC. `column list` is pure layout and could be
+    // dropped; `{{bug|…}}` is not, and the crate already models it specially in the
+    // single-line case. Choosing between transparent and modelled is a decision for the
+    // wiki screen's design, not a parser detail, so it stays open on purpose.
+    //
+    // 8 are **genuine text and will never go to zero**: the `<math>…</math>` formulas on
+    // Rosary and Mom's Contacts stay as text deliberately (no LaTeX parser here) and
+    // their nested curly braces produce `}}` by coincidence. Keeper's page also carries a
+    // wiki typo, `and}}` with nothing opening it.
+    //
+    // Closed on 2026-09-08, two families:
+    // - `build_table` split a cell on `||` without counting `{{…}}` depth, so Mystery
+    //   Egg's `{{e|Mask + Heart||Heart}}` became two half templates (2 entries).
+    // - a line of nothing but `}}` became a `}}` paragraph *and* cut the list around it
+    //   in two, because any non-list line flushes the list (40 entries). It's dropped and
+    //   counted in `Diagnostics::orphan_closers`, at 50 on this snapshot.
+    //
     // Threshold pinned on purpose: don't loosen it silently, and if it grows, understand
-    // where it comes from before raising it. It came down by exactly the two entries the
-    // family predicted, which is the evidence the fix hit that and nothing else.
+    // where it comes from before raising it. Each drop so far matched the size its family
+    // predicted, which is the evidence the change hit that family and nothing else.
     assert!(
-        offenders.len() <= 123,
+        offenders.len() <= 83,
         "{} nodes with raw template syntax: {offenders:?}",
         offenders.len()
     );

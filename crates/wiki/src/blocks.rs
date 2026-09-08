@@ -81,6 +81,16 @@ impl Parser<'_> {
             });
             return;
         }
+        // A line that is nothing but closing braces belongs to a template opened further
+        // up — `column list` wraps a nested list exactly that way. Left to fall through
+        // it does two kinds of damage: it emits a `}}` paragraph, and it **cuts the list
+        // in two**, because reaching `flush_list` below is what any non-list line does.
+        // Dropping it keeps the list whole. It does not represent the wrapper, which
+        // stays unmodelled and is counted instead of being hidden.
+        if !trimmed.is_empty() && trimmed.chars().all(|c| c == '}') {
+            self.d.orphan_closer();
+            return;
+        }
         self.flush_list();
         if trimmed.is_empty() {
             self.flush_para();
@@ -199,8 +209,6 @@ fn build_lists(items: &[RawItem], depth: usize, r: &Resolver, d: &mut Diagnostic
     blocks
 }
 
-/// The lines between `{|` and `|}`. The first line with `!` cells is `header`; every
-/// other line, `!` cells included (the pill table's subheadings), goes into `rows`.
 /// Splits a table row into cells, ignoring a separator nested inside `{{…}}` or `[[…]]`.
 ///
 /// `||` is both the cell separator and, inside a template, an empty argument:
@@ -240,6 +248,8 @@ fn split_cells<'a>(body: &'a str, sep: &str) -> Vec<&'a str> {
     cells
 }
 
+/// The lines between `{|` and `|}`. The first line with `!` cells is `header`; every
+/// other line, `!` cells included (the pill table's subheadings), goes into `rows`.
 fn build_table(lines: &[String], r: &Resolver, d: &mut Diagnostics) -> Block {
     let mut table = TableBuilder::default();
     for line in lines {
@@ -463,6 +473,25 @@ mod tests {
                     },
                 ]
             }]
+        );
+    }
+
+    /// A lone `}}` closes a template that opened on an earlier list line — this is how
+    /// `column list` wraps a nested list, on some fifty pages. Emitted as a paragraph it
+    /// does two kinds of damage: a junk block, and a list **cut in two**, because any
+    /// non-list line flushes the list. The items after the closer belong to the same
+    /// list as those before it.
+    #[test]
+    fn a_lone_template_closer_does_not_cut_the_list_in_two() {
+        let v = p("* first {{column list|content =\n** nested\n}}\n* second\n");
+        assert_eq!(v.len(), 1, "one list, not list + paragraph + list: {v:?}");
+        let Block::List { items, .. } = &v[0] else {
+            panic!("list")
+        };
+        assert_eq!(
+            items.len(),
+            2,
+            "`first` and `second` are siblings: {items:?}"
         );
     }
 
