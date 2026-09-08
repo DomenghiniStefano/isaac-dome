@@ -33,9 +33,11 @@ fn real() -> Option<(Catalog, ResourceSet, Save)> {
 
 #[test]
 fn the_real_profile_has_379_done_637_known_and_4_unknown_slots() {
-    let Some((c, rs, s)) = real() else { return };
+    let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
-    let v = unlock_view(Some(&c), Some(&flags), None, None, |p| rs.read(p));
+    let v = unlock_view(Some(&c), Some(&flags), None, None, |r: &ipc::IconRef| {
+        Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path()))
+    });
     // 642 flags but 641 nodes (slots 1..=641: slot 0 isn't a node); the catalog covers
     // 1..=637, so what's left beyond the catalog is 638..=641: four, not 642 - 637.
     assert_eq!(
@@ -100,11 +102,17 @@ fn the_slot_id_junction_is_pinned_by_the_items_seen_in_the_save() {
 
 #[test]
 fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
-    let Some((c, rs, s)) = real() else { return };
+    let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let g = graph::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
     let e = g.evaluate(Some(&flags));
-    let v = unlock_view(Some(&c), Some(&flags), Some(&g), Some(&e), |p| rs.read(p));
+    let v = unlock_view(
+        Some(&c),
+        Some(&flags),
+        Some(&g),
+        Some(&e),
+        |r: &ipc::IconRef| Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path())),
+    );
     let steps = next_steps(&v);
     assert_eq!(steps.basis, ipc::StepsBasis::FanOut);
     assert_eq!(steps.steps.len(), 5, "the real profile has work left to do");
@@ -155,7 +163,7 @@ fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
 #[test]
 fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
     let Some((c, rs, _)) = real() else { return };
-    let mut icon = |p: &str| rs.read(p);
+    let mut icon = |r: &ipc::IconRef| Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path()));
     // The first of each family, read from the game files on 2026-09-05.
     let item = resolve_target(
         &c,
@@ -175,9 +183,26 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
         } => {
             assert_eq!((*item_kind, *id), (ItemKindView::Passive, 1));
             assert_eq!(name, "The Sad Onion");
+            assert_eq!(
+                icon_url.as_deref(),
+                Some("isaac://item/passive/1"),
+                "the row carries a link, not a picture"
+            );
+            // The link above is only a promise; this is the half that keeps it. The view
+            // no longer extracts anything, so without this the test would pass just as
+            // happily on an install whose archives don't hold the sprite at all.
+            let sprite = ipc::icon_source(
+                &c,
+                &ipc::IconRef::Item {
+                    kind: ItemKindView::Passive,
+                    id: 1,
+                },
+            )
+            .expect("the catalog names a sprite for item 1");
             assert!(
-                icon_url.as_deref().unwrap().starts_with("data:image/png"),
-                "the sprite extracts from the real archives"
+                rs.read(&sprite.path)
+                    .is_some_and(|png| png.starts_with(b"\x89PNG")),
+                "the sprite the link points at really extracts from the archives"
             );
         }
         other => panic!("expected an item, got {other:?}"),
@@ -226,7 +251,7 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
 #[test]
 fn an_absurd_key_resolves_to_nothing() {
     let Some((c, _, _)) = real() else { return };
-    let mut icon = |_: &str| None;
+    let mut icon = |_: &ipc::IconRef| None;
     for key in [
         TargetKey::Item {
             item_kind: ItemKindView::Passive,

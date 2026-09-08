@@ -99,7 +99,10 @@ pub struct QueueInputs<'a> {
     pub store_reason: Option<String>,
 }
 
-pub fn queue_view(inputs: QueueInputs<'_>, icon: impl FnMut(&str) -> Option<Vec<u8>>) -> QueueView {
+pub fn queue_view(
+    inputs: QueueInputs<'_>,
+    icon: impl FnMut(&crate::IconRef) -> Option<String>,
+) -> QueueView {
     let QueueInputs {
         catalog,
         flags,
