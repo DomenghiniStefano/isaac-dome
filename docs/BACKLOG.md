@@ -395,3 +395,86 @@ translation loses the comment's value.
 
 Before starting, the rule in `CLAUDE.md` needs updating, otherwise the repo ends up with
 two conventions at once.
+
+---
+
+## B8 — What a real `log.txt` actually contains (a **spike**, blocks M4)
+
+Logged on 2026-09-08, out of the M4 brainstorming. **M4 shouldn't start before this
+closes**: the whole log watcher would otherwise be designed on five line types nobody has
+re-read since M0.
+
+### What we already have
+
+Five patterns, verified in M0 against a real log:
+
+```
+Adding collectible 225 (Gimpy) to player 0 (Cain) from pool treasure
+RNG Start Seed: FYQ8 QQ8G (586324166) [New, 1]
+Level::Init m_Stage 2, m_StageType 1 Seed 408474304
+Game Over. Killed by (9.0) spawned by (84.0) damage flags (0)
+playing cutscene 15 (Sheol).
+```
+
+So the run's seed is there, human-readable and numeric, with the run type; and every
+**floor** carries its stage, stage type and its own seed.
+
+### What's missing
+
+**A log with a run in it.** The one on the dev machine
+(`Documents\My Games\Binding of Isaac Repentance\log.txt`) is a launch-and-quit from
+2024-03-05: 86 lines, no gameplay. Three things it shows anyway, none of which the
+documented patterns mention:
+
+- every line is prefixed `[INFO] - `;
+- some entries **wrap over several physical lines** (the `Framebuffer Width:` block is one
+  event over six lines), so "one line, one event" is false;
+- **mods write into the same file** — this one has External Item Descriptions emitting
+  `[INFO] - Lua Debug: …`. The rule file has to tell game events from the noise of
+  third-party mods we don't control.
+
+Two open questions that decide entire features, and that only a real log answers:
+
+- **Does the log record rooms**, or only floors? Without room-level events there is no
+  explored map, and nothing map-shaped can be built on top.
+- **With what delay does the game flush to disk?** This decides whether a Live screen is
+  actually live or a few rooms behind.
+
+### The probe
+
+Install the game, play one run to a death or a win, keep the `log.txt`. Classify it: how
+many distinct line kinds, which events, at what granularity, how much mod noise. Half an
+hour of play; the output is a document, no code kept.
+
+### What the answer unblocks
+
+The M4 design itself, plus three ideas raised on 2026-09-08: a live item tracker on a
+second monitor (almost certainly yes), the explored map in real time (depends on rooms),
+and a secret-room-finder-style helper (depends on rooms, *and* on verifying how those
+tools actually work — the belief to check is that they reason on the map you have already
+explored plus placement rules, **not** on the seed).
+
+### Out of scope whatever the answer is
+
+**Regenerating the map from the seed.** The seed doesn't contain the map; the map is what
+the game's generator produces from it. Reproducing it means reimplementing that generator
+bit-exact — its PRNG, the exact order of its calls, room selection from the `.stb` files,
+pool weights — and it moves with every patch. One misplaced RNG call and everything after
+it diverges. It would also change what the app *is*: everything here reads a file the user
+already has, and the source of truth stays theirs; a generator makes the source of truth
+the fidelity of our own clone, which we can't verify. That's the step from "if I'm wrong I
+show incomplete data" to "if I'm wrong I show false data with a confident face".
+
+Related, and worth deciding in the open rather than discovering halfway: a secret room
+finder is **a different product**. IsaacDome answers "what am I missing, and what's worth
+playing tonight"; that answers "where is the secret room right now".
+
+### One finding already in hand
+
+The loss window for log data is narrower than `docs/PROJECT.md` implies. The game rewrites
+`log.txt` on the **next** launch, so the last session survives on disk until then —
+verified on the dev machine, where a March 2024 log ending in
+`Isaac has shut down successfully` is still intact two and a half years later. The rule is
+not "the app must run while you play" but **"the app must run at least once between one
+session and the next"**. An app that reads the whole current log at startup recovers the
+last session; `RNG Start Seed` gives the dedup key that makes re-reading safe.
