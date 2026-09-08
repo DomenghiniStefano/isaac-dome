@@ -528,17 +528,65 @@ come from watching bits flip in M0. Section 6 is the sharp case: if it is Bosses
 `SaveDiff.cards_pills` — a public field — has been reporting boss kills under a card's name
 since the day it was written.
 
-### What to do
+### Measured on 2026-09-08 (evening): steps 1 and 2 are answered
 
-1. **Confirm section 6 by content**, not by the log: kill a boss we have never killed and
-   watch which cell in section 6 flips, the way the mark at index 119 was confirmed. Same
-   method for section 3 against a stage.
-2. **Split section 10** into Special Seed Counters (the declared 80) and Bestiary Counters
-   (the remainder), and check the arithmetic holds on the whole historical series, not on
-   one file. The three candidate strides all divide evenly on this sample, so the split has
-   to be settled by content too.
-3. **Then rename**, together: `Kind`, `SaveDiff`'s fields, the tests' assertions, the table
-   in `CLAUDE.md`, and the save-format section of `docs/PROJECT.md`.
+The analysis below used a source nobody had opened yet — **`online_logs\sessions\`**, 21
+folders each holding a `log.txt` and two profile snapshots. `persistentgamedata1_end.dat`
+is **our** profile (it matches the dated sample of the same day, counter for counter);
+`persistentgamedata1_begin.dat` is **the other participant's**, a second real Repentance+
+profile that grows from **52 to 105 achievements** across the series. A second profile at
+the opposite end of the progression is exactly what these questions needed. The
+`sharedsave_*.dat` files in the same folders are **not** in our format — no `ISAACNGSAVE`
+magic anywhere in them — so the co-op shared profile stays unread for now.
+
+- **Section 6 is Bosses. Settled, and not by the log.** 104 cells, boss ids 0..103, and the
+  catalog has 103 bosses. On the beginner profile **56 of 104 are set, and the 48 that
+  aren't are exactly the late and alt-path roster**: The Lamb, Mega Satan, Delirium, Mother,
+  Dogma, The Beast and the whole Repentance list from Reap Creep to Cadavra. A player who
+  never went down the alt path, read straight off the cell ids. On our own profile 97 of 104
+  are set and the seven gaps are *The Matriarch*, *Cadavra*, **Raglich** — a boss that is
+  unused in the game — plus four that look like variants recorded under another id
+  (*Ultra Greed*, *Ultra Greedier*, *Mom (Mausoleum)*, *Mom's Heart (Mausoleum)*).
+  So `SaveDiff.cards_pills` has been reporting boss encounters under a card's name, exactly
+  as feared.
+- **Section 3 is stages, and "one value per original character" is refuted.** **Index 0 is
+  zero in every save we hold** — impossible for a table whose first row would be Isaac, the
+  most-played character. Indices 1..12 carry 309, 298, 199, 206, 162, 208, 107, 109, 19, 67,
+  50, 137, and index 1 (309) sits right on the number of runs the profile has. In a matched
+  window — one game launch, the live save against the last backup — the indices that moved
+  are **exactly** the stages the log declared with `Level::Init m_Stage`: 1, 2, 3, 4, 5, 6,
+  7, 8, 10, 11. Fourteen cells = stages 1..13 plus an unused 0.
+- **Section 8 is cutscenes, with one cell left over.** Same matched window: the log played
+  cutscene 1 and cutscene 19, and section 8 moved at **index 19** (+1) and index 2 (+1).
+  Index 19 is the identity mapping. Index 2 is the profile's largest cell (110) and rises
+  once per launch, which is also how often the log prints `playing cutscene 1` — so either
+  it is cutscene 1 under an off-by-one that index 19 contradicts, or it counts launches. One
+  more solo run with a known ending separates them.
+  *Careful with co-op*: of fifteen windows taken from the session folders, five had a
+  cutscene in the log and no movement in section 8 at all. All five are run endings played
+  in **online co-op**, whose progression goes to the shared profile. Co-op windows are not
+  evidence about the personal save — which is itself worth knowing.
+- **Section 10: the proposed split at byte 320 is wrong.** `count` is 80 and `f2` is 320 in
+  every file, but the payload is not two chunks meeting there. Reading it as `u32`: **0..19
+  are zero, 20..24 are five small counters (11, 5444, 4, 4, 616), and from index 25 the rest
+  is a sorted key → count list** — 1,364 pairs, 1,361 of which are a large key against a
+  small count. The keys run **straight across index 80 without a discontinuity**
+  (`0x02200000`, `0x02400000`, `0x02600000`, `0x02600100`), so byte 320 falls in the middle
+  of the list, not on a boundary.
+  The key decodes: **`(type << 20) | (variant << 8) | subtype`** — `0x00A00000` is type 10
+  variant 0, `0x02600100` is type 38 variant 1 — and the largest, 951, is inside the game's
+  entity range. The value is that entity's kill count. The list only ever grows: 973 pairs
+  on the beginner profile, 1,280 → 1,337 across our series, never once shorter.
+
+### What is left to do
+
+1. **The one cell in section 8**: solo run, known ending, watch index 2. Twenty minutes.
+2. **Then rename**, together: `Kind`, `SaveDiff`'s fields, the tests' assertions, the table
+   in `CLAUDE.md`, and the save-format section of `docs/PROJECT.md`. Nothing blocks this any
+   more for sections 3 and 6, which are the two the log contradicted.
+3. **Decide what section 10 becomes.** `Save::bestiary()` hands out raw bytes today; with
+   the key decoded it can hand out records, and the five counters at 20..24 stop being
+   invisible. That is new capability, not a rename, so it is its own task.
 
 ### Done when
 

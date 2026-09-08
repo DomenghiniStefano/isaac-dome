@@ -321,6 +321,8 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
       Steam → game → save → parser → matrix runs end-to-end on the real profile:
       4 candidates, selection, 10 sections read, a 34 × 10 matrix with 151 marks started out of
       321 readable and the 19 `unknown`s falling exactly on the Delirium column of the third group.
+      *(Those are that day's numbers and stay as measured: since 2026-09-08 the matrix is
+      34 × 12, 166 started out of 368 readable, 40 unknown.)*
       Required a `pnpm install` in `ui/` (never done before) and a fix to `tauri.conf.json`.
 - [x] **Five graph commands** (2026-09-05): `unlock`, `next_steps`, `plan`, `add_goal`,
       `remove_goal` — the last two are the app's first write commands, and they only write to
@@ -646,6 +648,55 @@ building the Collection screen, not before designing it.
 ---
 
 ## Session log
+
+### 2026-09-08 (late night) — the two columns design asked about, and where they were
+
+Design read the package and asked the obvious question: *no Mother and no The Beast?*
+Correct, and the answer was in the file all along — under no name.
+
+- [x] **The matrix is 34 × 12.** Delirium for the 19 later characters starts at **404**,
+      Mother for the 14 originals at **423**, The Beast at **457**; **491** and **492** are
+      those two bosses' kills. Nothing here was guessed: each base is pinned by three
+      independent facts on the day a cell changed — an achievement whose *wiki* requirement
+      is that boss unlocking the same day, the kill counter rising by exactly as many as the
+      new marks, and index **188**, a bitmask of the characters that won the run, which names
+      the row. Bethany, Jacob & Esau, T. Cain and T. Azazel each pin Delirium's base
+      independently; Magdalene and Cain pin the other two.
+- [x] **Two properties guard it**, in `crates/ipc/tests/marks_real.rs`. "No mark without a
+      kill of that boss" holds across all 34 snapshots — but it survives a base off by one,
+      so a second compares *identities*: when one mark appears and the winner mask names one
+      character, they must be the same character. Moving the Mother base by one turns that
+      red, which is how it was checked rather than assumed.
+- [x] **What stays unread, and says so**: Mother and The Beast for The Forgotten and the 19
+      — 40 cells, a 20 × 2 block in the bottom-right corner. The spacing puts them inside
+      423..490, but they are zero in every save we hold, so `counter_index` returns `None`
+      and the app draws *unknown*. One run of Mother with a Tainted character closes them.
+      Matrix: 340 cells with 19 unknown → **408 with 40**, 166 marks started.
+- [x] **The package and the brief follow**: twelve columns with their portraits and the two
+      symbols that were the only ones left unassigned in `completion_widget` — the knife
+      piece and Dad's Note. §5.3 of the brief loses a gap and rewrites another.
+
+**And then B9, the archived analysis, on a source nobody had opened.** `online_logs\` holds
+21 sessions, each with a `log.txt` and two profile snapshots — and the two are not one
+profile before and after: one is ours, the other is **the co-op partner's, a second real
+profile at 52→105 achievements**. A profile at the start of the progression is exactly what
+those questions needed.
+
+- [x] **Section 6 is Bosses, not cards and pills** — on the beginner profile 56 of 104 cells
+      are set and the 48 that aren't are precisely the late and alt-path roster, Mother and
+      The Beast included. `SaveDiff.cards_pills` has been naming boss encounters after cards.
+- [x] **Section 3 is stages** — index 0 is zero in every save, which no table starting at
+      Isaac could be, and in a matched window the cells that moved are exactly the stages
+      the log declared with `Level::Init m_Stage`.
+- [x] **Section 8 is cutscenes**, one cell short of certain: the log's cutscene 19 lands on
+      index 19, while index 2 rises once per launch and needs one more solo run.
+- [x] **Section 10's proposed split at byte 320 is wrong**: the payload is 20 zeros, five
+      counters, then a sorted key → count list of 1,364 pairs that runs straight across byte
+      320. The key decodes as `(type << 20) | (variant << 8) | subtype` — the bestiary,
+      readable.
+
+> Full evidence in `docs/BACKLOG.md` under B9, which now closes on one twenty-minute
+> measurement plus the rename.
 
 ### 2026-09-08 (late) — C2: the icons leave the payload
 

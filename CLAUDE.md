@@ -155,10 +155,21 @@ Steam\userdata\<id>\250900\remote\rep+persistentgamedata<n>.dat
 With Steam Cloud active, the save is **not** in the Documents folder. What stays there is
 `log.txt`, `options.ini`, and two useful subfolders: `save_backups\` (dated backups
 created by the game: a free historical series) and `online_logs\` (one folder per online
-co-op session, with the full log and a profile snapshot before and after).
+co-op session, with the full log and two profile snapshots).
+
+Those two snapshots are **not** the same profile before and after, whatever the names say.
+Measured on 2026-09-08: `persistentgamedata1_end.dat` is the local profile, counter for
+counter identical to the dated backup of the same day, while
+`persistentgamedata1_begin.dat` is the **other participant's** — a second real profile,
+growing from 52 to 105 achievements across 21 sessions. That makes the folder the only
+place with a profile at the *start* of the progression, which is where a table with many
+zeros can actually be tested. `sharedsave_*.dat` sits in the same folder and is **not** in
+our format: no `ISAACNGSAVE` magic anywhere in the file.
 
 Note: online co-op uses a **separate shared profile** that grows with the group, distinct
-from the personal one. It's a second progression the game shows nowhere.
+from the personal one. It's a second progression the game shows nowhere — and it is why
+co-op sessions are useless as evidence about the personal save: a run ending in co-op
+leaves the personal counters untouched.
 
 ---
 
