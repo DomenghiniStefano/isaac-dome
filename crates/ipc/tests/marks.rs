@@ -43,9 +43,10 @@ fn original_characters_use_the_verified_blocks() {
 fn the_forgotten_uses_single_cells() {
     assert_eq!(counter_index(14, 0), Some(203)); // Mom's Heart
     assert_eq!(counter_index(14, 8), Some(211)); // Hush
-    assert_eq!(counter_index(14, 9), Some(213)); // Delirium: 212 belongs to another family
-                                                 // Mother and The Beast for The Forgotten: derived from the spacing, never observed
-                                                 // moving, so they stay unlocated rather than pointing at a guess.
+                                                 // Delirium: 212 belongs to another family.
+    assert_eq!(counter_index(14, 9), Some(213));
+    // Mother and The Beast for The Forgotten: derived from the spacing, never observed
+    // moving, so they stay unlocated rather than pointing at a guess.
     assert_eq!(counter_index(14, 10), None);
     assert_eq!(counter_index(14, 11), None);
 }
@@ -53,10 +54,11 @@ fn the_forgotten_uses_single_cells() {
 #[test]
 fn later_characters_now_reach_delirium() {
     assert_eq!(counter_index(15, 0), Some(214)); // Bethany, Mom's Heart
-    assert_eq!(counter_index(33, 8), Some(384)); // T. Jacob & Esau, Hush = 366 + 18
-                                                 // The column that used to be the hole. Four characters pin the base at 404:
-                                                 // Bethany (+0), Jacob & Esau (+1), T. Cain (+4) and T. Azazel (+9), each on the day
-                                                 // its cell appeared together with a Delirium kill.
+                                                 // T. Jacob & Esau, Hush = 366 + 18.
+    assert_eq!(counter_index(33, 8), Some(384));
+    // The column that used to be the hole. Four characters pin the base at 404:
+    // Bethany (+0), Jacob & Esau (+1), T. Cain (+4) and T. Azazel (+9), each on the day
+    // its cell appeared together with a Delirium kill.
     assert_eq!(counter_index(15, 9), Some(404)); // Bethany
     assert_eq!(counter_index(16, 9), Some(405)); // Jacob & Esau
     assert_eq!(counter_index(19, 9), Some(408)); // T. Cain
