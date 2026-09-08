@@ -442,19 +442,23 @@ Rows: **34 characters**, in three groups that the game itself treats differently
 14 originals (Isaac → Apollyon), The Forgotten on its own, and 19 made up of Bethany,
 Jacob & Esau, and the 17 Tainted.
 
-Columns: **10 verified bosses/endings** — Mom's Heart, Isaac, Satan, Boss Rush, Blue Baby,
-The Lamb, Mega Satan, Greed, Hush, Delirium.
+Columns: **12 bosses/endings**, the same twelve the game's own widget draws — Mom's Heart,
+Isaac, Satan, Boss Rush, Blue Baby, The Lamb, Mega Satan, Greed, Hush, Delirium, **Mother**,
+**The Beast**. The last three were located on 2026-09-08, on the historical series; before
+that the grid was 34 × 10 and this document said so.
 
 Each cell is a **bitmask**, not a number: bit 0 and bit 1 are the mark's two levels
 (normal and hard mode), bit 2 is a third level **whose meaning is unconfirmed**.
 Observed values: 0, 1, 2, 3, 5, 7.
 
-**Three gaps to design for explicitly, not to hide:**
+**Two gaps to design for explicitly, not to hide:**
 
-1. For the 19 characters in the third group we know the columns only up to **Hush**: the
-   Delirium column for them isn't located in the file yet.
-2. **Mother** and **The Beast** don't have a column for anyone yet.
-3. We don't know what the third mark level is.
+1. **Mother** and **The Beast** are located for the 14 original characters only. For The
+   Forgotten and the 19 of the third group — **40 cells**, the bottom-right corner of the
+   grid — the position is inferred from the spacing and confirmed by nothing, so the app
+   reports them as *unknown*. They are not rare: it is a solid 20 × 2 block, and the design
+   has to survive it being unreadable.
+2. We don't know what the third mark level is.
 
 So the matrix has *unknown* cells next to *empty* cells, and they're two different
 things: "you never did it" ≠ "we can't read it". If the design conflates them, the app
@@ -496,18 +500,21 @@ you've played. The other nine don't.
 
 **Mark matrix**, the total the screen must be able to state:
 
-> **151 started out of 321 readable · 19 unknown · 0 suspect**
+> **166 started out of 368 readable · 40 unknown · 0 suspect**
 
-340 nominal cells (34 × 10), of which 321 are readable and 19 `unknown`. And the 19 are
-**all the Delirium column for the third group's 19 characters**: a rectangular gap in the
-bottom-right corner, not scattered cells. It's the real case to verify §5.3's design
-against — if the matrix renders that block indistinguishable from "never done", it's
-lying while looking like it works.
+408 nominal cells (34 × 12), of which 368 are readable and 40 `unknown`. And the 40 are
+**Mother and The Beast for The Forgotten and the third group's 19**: a rectangular gap in
+the bottom-right corner, 20 rows by 2 columns, not scattered cells. It's the real case to
+verify §5.3's design against — if the matrix renders that block indistinguishable from
+"never done", it's lying while looking like it works.
 
-Values observed in the readable cells: `0` dominates the third group, `3` is the most
-common in the first, `7` shows up on the most-played characters, `2` and `5` are rare.
-Five distinct values, plus `unknown`, plus `unexpected`: **seven visual states for one
-cell**, in a grid of 340 that has to stay readable at a glance. It's the tightest design
+Values observed in the readable cells, on the whole grid: `0` × 202, `3` × 108, `2` × 32,
+`7` × 12, `1` × 11, `5` × 3. They are not spread evenly, and the shape of the screen
+depends on that: among the 14 originals `3` is the most common value (85 of 168 cells) and
+only 40 cells are empty, while among the 19 of the third group **161 cells out of 228 are
+`0`** and 38 more are unknown. The top of the grid is dense, the bottom is nearly empty.
+Five distinct values plus `unknown` plus `unexpected`: **seven visual states for one
+cell**, in a grid of 408 that has to stay readable at a glance. It's the tightest design
 problem on the screen.
 
 ### 5.5 `catalog` — how much we can say about names, today
@@ -661,16 +668,17 @@ is the bloodied sheet: earning that mark doesn't add an icon on top, it changes 
 underneath. That's why there's no "Delirium" among the eleven layers, and it looked like it
 was missing — it was being looked for in the wrong category.
 
-From here, all ten columns have their symbol, and `data/marks.json` gives it alongside
+From here, all twelve columns have their symbol, and `data/marks.json` gives it alongside
 the header portrait. The **`symbolSource` field says how we know it**, because not every
-row carries the same weight: eight come from the **layer's name** in the file; *Delirium*
-is **reported by players** and verified by looking at the six sheets; *The Lamb* is by
-**elimination** — only one symbol (`cross`) and one column are left after *Knife* and
-*DadsNote* go to Mother and The Beast, which aren't among our ten columns.
+row carries the same weight: ten come from the **layer's name** in the file — *Knife* for
+Mother and *DadsNote* for The Beast among them; *Delirium* is **reported by players** and
+verified by looking at the six sheets; *The Lamb* is by **elimination**, the one symbol
+(`cross`) and the one column left over once every other pairing is settled.
 
-The two columns the widget has and our matrix doesn't — Mother and The Beast — remain a
-real blind spot, the same one `CLAUDE.md` records regarding the tail end of the counters.
-It needs looking into when the screen gets built, not now.
+The two unassigned symbols used to be the evidence that the widget had two columns our
+matrix didn't. That gap closed on 2026-09-08: the columns were located in the save, and
+`knife` and `dadsnote` are now columns 10 and 11 like any other. What remains is the
+bottom-right block of §5.3 — the same two columns for The Forgotten and the 19.
 
 **How it reaches the screen, and why the placeholder stays mandatory.** No asset is in
 the package: they get extracted **from the user's copy, at runtime, after the first
@@ -1257,8 +1265,8 @@ for it).
 Updated with the values read from the app (§5.4) and from the game's filelist (§5.6).
 
 - 642 achievements · 733 items · 523 counters · 104 cards and pills · 46 challenges
-- 34 playable characters · 10 verified mark columns · 11 endings
-- Completion matrix: **34 × 10 = 340 cells**, of which 321 readable and 19 unknown
+- 34 playable characters · 12 mark columns · 11 endings
+- Completion matrix: **34 × 12 = 408 cells**, of which 368 readable and 40 unknown
 - **7 visual states per cell**: five observed values (0, 2, 3, 5, 7) + unknown + suspect
 - 4 candidate save files on this machine (up to 6: 3 slots × 2 prefixes)
 - item names: **median 11 characters, p90 15, max 22**
@@ -1374,8 +1382,8 @@ None of §7's contracts changed to accommodate any of that, which was the point 
 them first. Runs and Live stay shell: their data only exists at runtime (M4).
 
 **The best test case we have is this one**, and it's real: four profiles to choose
-between, two of them practically empty; a 34 × 10 matrix with 151 marks started and a block
-of 19 cells we can't read; character headshots for 37 rows out of 41; and real sprites, at
+between, two of them practically empty; a 34 × 12 matrix with 166 marks started and a block
+of 40 cells we can't read; character headshots for 37 rows out of 41; and real sprites, at
 the sizes from §5.6. A design that holds up here holds up the app. A design that needs
 complete names to look good doesn't: before the catalog is read, the name is always
 missing.

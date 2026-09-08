@@ -109,10 +109,20 @@ Section 2 maps one-to-one to REPENTOGON's `EventCounter` enum. Labels in
 observed values are only 0, 1, 2, 3, 5, 7. Two bits are the mark's levels, the third is
 still unexplained — **don't compute completion percentages as if it were known**.
 
-Open: documented names reach 284; the regular pattern (19-cell blocks for Bethany,
-Jacob & Esau and the 17 Tainted) holds up to Hush, then breaks down. Index 385 is a
-counter on its own; the 404–522 tail mixes at least two families and contains Delirium,
-Mother and The Beast. This closes by collecting more saves where those values change.
+**The matrix is 34 × 12** since 2026-09-08: the last three columns were located on the
+historical series, not read off a document. Delirium for the 19 later characters starts at
+**404** (not the 386 the pattern predicted), Mother for the 14 originals at **423**, The
+Beast at **457**, and **491**/**492** are those two bosses' kills. Each base is pinned by
+three independent facts on the day a cell changed: an achievement whose wiki requirement is
+that boss, the kill counter rising by exactly as many as the new marks, and index **188** —
+a bitmask of the characters that won the run, which names the row. Two properties in
+`crates/ipc/tests/marks_real.rs` keep the tables answerable to the series.
+
+Still open: documented names reach 284; **40 cells** (Mother and The Beast for The Forgotten
+and the 19) sit inside 423–490 by spacing but are zero in every save collected, so they stay
+`Unknown` rather than pointing at a guess — one run of Mother with a Tainted character
+closes them. Index 385 is a counter on its own, 386–403 are eighteen cells never seen
+moving, and 493–522 is a family of counters that move several per session.
 
 ## log.txt
 
