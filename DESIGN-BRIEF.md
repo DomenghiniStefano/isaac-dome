@@ -7,12 +7,13 @@ to design with, i.e. **what we show, with what data, in which states, and with w
 Living document: it gets updated when the backend gains real data or when the design system
 makes decisions that affect the app. Module status lives in `docs/STATUS.md`.
 
-**Date:** 2026-09-06 · **Backend status:** M1 closed on the Rust side, `catalog` complete (plans A
-and B: names, sprites, quality, pools, achievements, challenges, bosses, origin DLC), app launched and
-verified on real data; **the graph screens' contracts are fixed and pinned
-by tests** (§7), and `store` was born for the Plan's goals. The delivery path
-fixed in `docs/STATUS.md`, "Delivery to design" section, has reached the final step:
-`catalog` plan B ✓ → IPC contracts ✓ → this brief revised ✓ → delivery.
+**Date:** 2026-09-08 · **Backend status:** M1 closed on the Rust side and `catalog` complete
+(plans A and B: names, sprites, quality, pools, achievements, challenges, bosses, origin
+DLC); **M2, the unlock graph, closed on 2026-09-07** and **M3's plan queue on 2026-09-08**,
+so the three graph screens are no longer designed against declared placeholders — the
+values behind §7's types are real. `store` holds the Plan's goals and the queue. The
+delivery path fixed in `docs/STATUS.md`, "Handoff to design" section, is at its final step:
+`catalog` plan B ✓ → IPC contracts ✓ → this brief revised ✓ → handoff.
 
 **Added on 2026-09-06:** three new product requirements, which land on the shell before
 they land on individual screens — the app splits into **two top-level sections** (§4),
@@ -20,16 +21,19 @@ they land on individual screens — the app splits into **two top-level sections
 as B5 and B6 in `docs/BACKLOG.md`. They change none of the contracts in §7.
 
 **This document travels with a package.** `pnpm design:export` produces
-`isaacdome-design-pack/`: the real IPC payloads for every command, **2035 images** extracted
-from the game with their index (family, id, name, rectangle, **real dimensions**), and ten
-sample wiki pages already paired with their image. Wherever there's a number below, that
-package has the file it came from.
+`isaacdome-design-pack/`: the real IPC payloads for every command, the game's images with
+their index (family, id, name, rectangle, **real dimensions**), and ten sample wiki pages
+already paired with their image. The last export reports **5,833 catalogued images** —
+2,074 pulled straight out of the archives plus 3,759 pieces cut from the game's own sheets
+by the rectangles its `.anm2` files declare — in **5,837 files, 36 MB** all told, since the
+regular families are packed into atlases rather than written one file each. Wherever
+there's a number below, that package has the file it came from.
 
 ---
 
 ## 0. What changed since 2026-09-02 (read before the rest)
 
-Five updates, and they change what can be designed **on real data** instead of assumptions.
+Seven updates, and they change what can be designed **on real data** instead of assumptions.
 
 1. **The game is installed.** `D:\SteamLibrary\...\The Binding of Isaac Rebirth`, Repentance+
    edition. The XML catalogs and graphic archives exist on this machine: they are no longer
@@ -45,13 +49,14 @@ Five updates, and they change what can be designed **on real data** instead of a
    characters with a name, and **37 out of 41 with a headshot** cropped from the co-op menu sheet
    (§5.6). The "index without a name" case remains only as a transitional state before the
    catalog is read, not as missing data.
-5. **The graph screens have a contract.** (2026-09-05) Unlock, Next steps, and
-   Plan are designed against TypeScript types fixed and pinned by tests (§7). Name, icon,
-   unlock condition, done/not done, what it unlocks, and origin DLC are **real data**,
-   from the catalog and the save; whatever the graph (M2) doesn't know yet arrives as a
-   **declared** `{ kind: 'stub' }`, never as a value that looks computed. The Plan's goals
-   are actually saved, in an app database, and survive a restart. When
-   the graph arrives, the values will change, not the types.
+5. **The graph screens have a contract, and now they have the graph.** (2026-09-05,
+   filled in 2026-09-07/08) Unlock, Next steps, and Plan are designed against TypeScript
+   types fixed and pinned by tests (§7). Name, icon, unlock condition, done/not done, what
+   it unlocks and origin DLC are **real data** from the catalog and the save; since M2 the
+   graph's verdict is real too, and where it couldn't interpret a requirement it says
+   **`partial`** — which is not "not known yet" and must never read as unlockable. The
+   Plan's goals are actually saved, in an app database, and survive a restart; M3 added the
+   queue (§7.6). None of the types changed when the values became real.
 6. **The app splits into two, and the split is in the data, not the aesthetics.** (2026-09-06)
    **Wiki** needs nothing: the dataset is compiled into the binary, so it works
    without the game installed and without a save chosen. **Progress** needs both.
@@ -157,9 +162,9 @@ The traffic light = availability of real data, not priority.
 
 | # | Screen | Answers | Data | Today |
 |---|---|---|---|---|
-| 1 | **Next steps** | The 5 things worth doing right now | save + graph | 🟢 **on the contract** (§7): the first 5 not-done items, real, with a declared `basis: stub` until the graph orders by fan-out |
-| 2 | **Unlock** | What's missing, filterable on every facet | save + graph + catalog | 🟢 **designable on the contract** (§7): real nodes — name, icon, condition (for 283 out of 637), done, what it unlocks, origin DLC — for 641 slots; `graph` is `stub` until M2 computes "unlockable now" |
-| 3 | **Plan** | My goals expanded into steps | graph + save diff | 🟢 **on the contract** (§7): real, saved goals; `expansion: stub` until M3 expands them into steps |
+| 1 | **Next steps** | The 5 things worth doing right now | save + graph | 🟢 **real** (§7.3): what is unlockable *now*, ordered by how much each opens up (`basis: 'fanOut'`). Empty, with a `noCatalog` diagnostic, when the game isn't installed |
+| 2 | **Unlock** | What's missing, filterable on every facet | save + graph + catalog | 🟢 **real** (§7): 641 nodes — name, icon, condition (283 of 637), done, what it unlocks, origin DLC — plus a typed `missing[]` and the graph's verdict: `computed`, or `partial` where a requirement wasn't interpretable |
+| 3 | **Plan** | My goals, in the order I mean to do them | graph + save diff | 🟢 **real** (§7.4, §7.6): saved goals, and a queue whose rows are the ones you asked for plus the prerequisites they dragged in. `expansion` is the one field still a declared stub |
 | 4 | **Completion** | Character × mark matrix, and how readable it is (see §5.3) | **save only** | 🟢 **designable now** |
 | 5 | **Collection** | Items never touched, by pool and quality | save + catalog | 🟢 designable now: name, sprite, quality, tags and pool for 909 out of 909 |
 | 6 | **Runs** | Win rate, nemesis, streak | run archive | 🔴 M4 |
@@ -170,7 +175,7 @@ The traffic light = availability of real data, not priority.
 **To design first: Profile selection and Completion.** They're the two we can fill
 entirely with real data, so the ones where the design gets verified instead of merely
 looking plausible. Then Collection, Unlock, Next steps, and Plan: real data behind
-a fixed contract (§7), with a *stub* state that needs to be designed as such. Runs and Live
+a fixed contract (§7), with a *partial* state that has to be designed as such. Runs and Live
 only need a *shell*: navigation, headers, empty state, loading skeleton.
 
 **And now all of them can have the game's images.** The traffic light above measures
@@ -776,10 +781,15 @@ no field: see "What's not included" in §7.
 The three screens that depend on the unlock graph (M2) and the plan derived from it (M3)
 are designed against **these types**, fixed on 2026-09-05 and pinned by tests on the JSON's
 shape. They're copied from `ui/src/lib/ipc/types.ts`: if a field isn't here, it doesn't
-exist. There's exactly one rule governing them: **data that exists arrives real; whatever
-the graph doesn't know yet arrives as a declared `{ kind: 'stub' }`**, never as a value that
-looks computed. When M2 and M3 arrive they'll change the *values* of three fields (`graph`,
-`basis`, `expansion`), not a single type or component.
+exist. There's exactly one rule governing them: **data that exists arrives real, and what
+cannot be computed says so in a variant of its own**, never as a value that looks computed.
+
+**The graph exists now.** M2 closed on 2026-09-07 and M3's plan queue on 2026-09-08, so the
+`{ kind: 'stub' }` this section used to be built around — "we'll fill it in later" — has
+left the wire entirely. What takes its place is a harder question, not an easier one:
+`partial` doesn't mean *not known yet*, it means **this node has a requirement we could not
+interpret**, and it must never read as unlockable. One field is still honestly a stub,
+`PlanExpansion` (§7.4), and the queue in §7.6 is what supersedes it in practice.
 
 ### 7.1 The node: one for three screens
 
@@ -809,19 +819,30 @@ type UnlockTarget =
 type OriginView = 'rebirth' | 'afterbirth' | 'afterbirthPlus' | 'repentance'
 
 type GraphInfo =
-  | { kind: 'stub' }
   | { kind: 'computed'; availableNow: boolean; blockedBy: number; fanOut: number; stepsMissing: number }
+  | { kind: 'partial'; blockedBy: number; fanOut: number; unknown: number }
+
+// what a node is still missing, typed by the nature of the target: this is what the
+// screen groups by, so it can say "1 character and 2 bosses" instead of "blocked by 3"
+type RequirementView =
+  | { kind: 'character'; id: number; name: string }
+  | { kind: 'boss'; id: number; name: string }
+  | { kind: 'challenge'; id: number; name: string }
+  | { kind: 'item'; itemKind: ItemKindView; id: number; name: string }
+  | { kind: 'gate'; label: string }
+  | { kind: 'unknown'; label: string }
 
 interface UnlockNode {
   achievement: AchievementRef
   done: boolean               // from the save, section 1: REAL
   unlocks: UnlockTarget[]     // from the catalog: REAL; empty if it unlocks nothing known
   origin: OriginView | null   // DLC of the first item unlocked: REAL
-  graph: GraphInfo            // today always { kind: 'stub' }
+  missing: RequirementView[]  // what stands in the way, one entry per requirement: REAL
+  graph: GraphInfo            // REAL since M2 (2026-09-07)
 }
 ```
 
-Three things to read in the node:
+Five things to read in the node:
 
 - **`achievement.known` and `achievement.unknown` are two different states**, not two
   degrees of the same thing. `unknown` is an achievement the save knows about and the
@@ -836,11 +857,20 @@ Three things to read in the node:
   one rule: a fieldless enum travels as a plain string; the tag only appears where the
   variants carry different data. They're *values* to display or filter on, not
   discriminators.
-- **`graph: { kind: 'stub' }` is a state to design for, not a gap.** The node *doesn't*
-  say "unlockable now" or "blocked by N", and the screen must not invent them or show a
-  placeholder that looks like a value (no "0 prerequisites"). When `computed` arrives, the
-  states will be: done · unlockable now (`availableNow`) · blocked by N (`blockedBy`), with
-  `fanOut` for ordering and `stepsMissing` for distance.
+- **`graph: { kind: 'partial' }` is the hardest state in this document.** It does not mean
+  "not computed yet" — that state no longer exists. It means the graph read this node's
+  requirements and **could not interpret at least one of them**: `unknown` says how many.
+  A `partial` node therefore knows something (`blockedBy`, `fanOut`) and is honest about
+  not knowing the rest, and the one thing it must never look like is **unlockable now**.
+  Treating it as "0 prerequisites" would send someone to play for an unlock that isn't
+  there. The package contains a real one to look at: *"!Platinum God! OMG!"*, whose
+  `missing` holds two `unknown` requirements (`"Collect"`, `"ending"`) beside a resolved
+  character.
+- **`missing` is the *why*, and it's typed on purpose.** `blockedBy: 3` is a number;
+  `missing` says it's one character and two bosses, with names and ids. Group on it: the
+  screen should say what stands in the way, not how much of it there is. `gate` and
+  `unknown` carry only a label — they're conditions expressed in prose that we deliberately
+  did not guess at.
 
 ### 7.2 Unlock
 
@@ -876,7 +906,9 @@ carries the data, not the interface.
 ### 7.3 Next steps
 
 ```ts
-type StepsBasis = 'stub' | 'fanOut'
+// no fields: a bare string, like `OriginView`. One value today; a second basis
+// (closeness, once the counters are understood) would arrive as another value here.
+type StepsBasis = 'fanOut'
 
 interface NextSteps {
   steps: UnlockNode[]   // at most 5, not done
@@ -884,10 +916,13 @@ interface NextSteps {
 }
 ```
 
-Today `basis` is `stub`: the five steps are the first not-done ones in slot order, real
-but not *recommended*. The screen has to say so — it's the app's opening screen, and "the 5
-things worth doing right now" without a graph would be a false promise. With M2 it becomes
-`fanOut` and the five change; the component doesn't.
+**Next steps changed meaning with M2**, and the change is the point: it used to be "the
+first 5 not-done in slot order" — real, but not *recommended*. It is now **what is
+unlockable right now, ordered by how much each one opens up** (`fanOut`). Two consequences
+the screen has to carry: a node the graph can only call `partial` is **not** a step, because
+we can't vouch for it; and without a catalog the list is **empty**, with a `noCatalog`
+diagnostic saying why, rather than five rows of something else. An empty Next steps is a
+state to design, not an error.
 
 ### 7.4 Plan
 
@@ -958,7 +993,7 @@ type IpcError =
   | { kind: 'storeUnavailable'; reason: string } // addGoal/removeGoal: no database
 ```
 
-### 7.5 What's real and what's stub, row by row
+### 7.5 What's real, and where the graph stops short
 
 | field | source | status |
 |---|---|---|
@@ -967,18 +1002,71 @@ type IpcError =
 | `done` | save, section 1, `slot[id]` | ✅ real |
 | `unlocks[]` | catalog's reverse index | ✅ real |
 | `origin` | DLC of the first item unlocked | ✅ real |
-| `graph` | — | 🔲 `stub` |
-| `NextSteps.steps` | the first 5 not-done in slot order | ✅ real, `basis: stub` |
+| `missing[]` | the wiki's typed requirements, resolved against the catalog | ✅ real |
+| `graph` | `graph`, evaluated against the profile | ✅ real — `computed`, or `partial` where a requirement wasn't interpretable |
+| `NextSteps.steps` | what is unlockable now, most fan-out first | ✅ real, `basis: 'fanOut'` |
 | `GoalView.key` | app database | ✅ real |
 | `GoalView.target` | catalog, resolved on every read | ✅ real, `null` if unresolvable |
-| `PlanView.expansion` | — | 🔲 `stub` |
+| `QueueRow.{node, wanted, origins, stepsNotQueued}` | the saved queue, resolved through the graph | ✅ real |
+| `PlanView.expansion` | — | 🔲 `stub`, and the queue (§7.6) is what stands in for it |
 
-**What's not included, and why.** The §6 facets that depend on the graph (unlockable
-now, blocked by N, fan-out, missing steps) live in `GraphInfo.computed` and arrive with M2.
-The ones that depend on **interpreting** the 283 English-language conditions (required
-ending, mode, effort shape) and Steam rarity (network) **have no field**: setting them as
-permanent `null` would fake having the data. The contract will grow by addition once
-something exists to compute them; components designed today won't break.
+**What's not included, and why.** The §6 facets that depend on **interpreting** the 283
+English-language conditions (required ending, mode, effort shape) and Steam rarity
+(network) **have no field**: setting them as a permanent `null` would fake having the data.
+Where the graph read a requirement but couldn't type it, that isn't a missing field either
+— it's a `RequirementView` of kind `gate` or `unknown` carrying the raw label, and the node
+above it says `partial`. The contract grows by addition once something exists to compute
+them; components designed today won't break.
+
+---
+
+### 7.6 The queue: the Plan is an order, not a set
+
+`PlanView.goals` is a **set** — the things you want. The queue is the **order** you intend
+to do them in, and it's the part with rules to draw.
+
+```ts
+interface QueueRow {
+  node: UnlockNode        // the same node Unlock draws, so the two can never disagree
+  wanted: boolean         // you asked for this one, for itself
+  origins: number[]       // the wanted achievements whose chain passes through this row
+  stepsNotQueued: number  // prerequisites this row still needs that are NOT in the queue
+}
+
+type QueueDiagnostic =
+  | { kind: 'storeUnavailable'; reason: string }
+  | { kind: 'unreadable' }
+  | { kind: 'completed'; count: number; wanted: number[] }
+  | { kind: 'unresolved'; achievement: number }
+  | { kind: 'goalsPending'; count: number }
+  | { kind: 'noCatalog' }
+
+interface QueueView {
+  rows: QueueRow[]
+  diagnostics: QueueDiagnostic[]
+  storeAvailable: boolean
+}
+```
+
+Four states the design has to tell apart, and the package's `queue.with_rows.json` contains
+one of each so they can be looked at rather than imagined:
+
+- **A row you asked for** — `wanted: true`, `origins: []`.
+- **A row that arrived by itself** — `wanted: false`, `origins: [55]`: a prerequisite that
+  a wish dragged in. It has to read as *serving* that wish, not as something you chose.
+  Both can be true at once: you can ask for a step that also serves another wish.
+- **A wish with work outside the queue** — `stepsNotQueued: 1`. This is the number that
+  says "there's more to do than what you're looking at", and it is the reason the queue
+  isn't just a list.
+- **A row that isn't there any more** — no row at all, and a `completed` diagnostic in its
+  place. A row never disappears without a word.
+
+**The one rule the whole thing rests on: a move repairs, it never fails.** Drag a row and
+the queue rearranges itself around the constraint — dependents are dragged along below it,
+prerequisites gather above it, everything else keeps its relative order. There is no
+rejected drop and no error toast to design, because there is no illegal move: prerequisites
+are a wall the row stops against, not a refusal. What the graph can't compute carries no
+constraint at all, so a `partial` row is never dragged and never walls.
 
 ---
 
@@ -1210,9 +1298,10 @@ These aren't edge cases: here they're the norm.
 - **Partial data** — a save section fails to read: show the rest and declare what's
   missing
 - **Unknown data** — distinct from zero (see §5.3)
-- **Declared stub** — the graph or the plan doesn't exist yet (§7): the node is real, the
-  computed part isn't. Distinct from "unknown" and from "loading": it won't arrive with a
-  refresh
+- **Partial graph** — the graph read this node and could not interpret at least one of its
+  requirements (§7.1): the node is real, and so is part of the computation, but it must
+  never read as unlockable. Distinct from "unknown" and from "loading": it won't arrive
+  with a refresh
 - **App database unavailable** — the Plan can neither read nor save goals, and says why
   (§7.4)
 - **Loading** — skeleton, not a spinner: list sizes are known ahead of time
@@ -1278,11 +1367,11 @@ Then: **Profile selection** (which is *Progress* before a choice is made) and
 **Completion** on real data, then **Collection** (real names and sprites, declared facets),
 then **one wiki page** — the app's most illustrated piece and the easiest to fill with real
 data —, then the study of Unlock's facets. The graph screens (Next steps, Unlock, Plan)
-**don't wait for the graph**: they're designed against §7's contracts, which the backend
-has fixed and pinned, real data up front and a declared stub where the graph doesn't exist.
-Today a node says *done* or *not done*; with M2 it'll also say *unlockable now · blocked by
-N*, with a fan-out and a missing-steps count, inside the same `graph` field and without
-changing a single type. Runs and Live stay shell: their data only exists at runtime (M4).
+**have their graph**: M2 and M3 landed, so a node really does say *done · unlockable now ·
+blocked by N*, with a fan-out, a missing-steps count and a typed list of what stands in the
+way — and, where a requirement wasn't interpretable, it says `partial` rather than guess.
+None of §7's contracts changed to accommodate any of that, which was the point of fixing
+them first. Runs and Live stay shell: their data only exists at runtime (M4).
 
 **The best test case we have is this one**, and it's real: four profiles to choose
 between, two of them practically empty; a 34 × 10 matrix with 151 marks started and a block
@@ -1301,10 +1390,12 @@ Five questions the first round of visuals should answer:
    look like an error (§5.5, §5.6).
 3. Where does the **active profile indicator** live in the shell, given that every number
    in the app depends on that choice and changing it is a routine action (§4.1)?
-4. How do you design a node whose graph is **`stub`** (§7), without it looking like missing
-   data? The node is real — name, icon, done, what it unlocks — but "unlockable now" and
-   "blocked by N" aren't there yet and won't arrive with a refresh: it's a product state, not
-   a loading state, and it must not read as an error or as "0 prerequisites".
+4. How do you draw a node the graph can only call **`partial`** (§7.1) so that it never
+   reads as *unlockable now*? The node is real — name, icon, done, what it unlocks, even a
+   `blockedBy` count — but at least one of its requirements is a condition we could not
+   interpret, and `unknown` says how many. It is the opposite of a loading state: nothing
+   further is coming. Drawn as "0 prerequisites" it would send someone off to play for an
+   unlock that isn't there.
 5. How do the **tab bar**, the **active profile indicator**, and the **search entry point**
    coexist in the same top strip (§4.2)? They're three things with three different meanings —
    what I have open, what I'm looking at, how I find everything else — and the temptation to
