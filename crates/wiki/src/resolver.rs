@@ -50,7 +50,23 @@ pub struct Corrections {
     pub characters: BTreeMap<String, u32>,
 }
 
+/// The tables [`Corrections::apply`] is ever called with. A `page_id` entry filed under
+/// any other name is a correction that can never fire, and `corrections.json` is written
+/// by hand: a typo there produces no error, no warning and no effect. Kept next to
+/// `apply` because it is the list of its call sites.
+pub const CORRECTED_TABLES: [&str; 2] = ["collectible", "trinket"];
+
 impl Corrections {
+    /// The `page_id` tables no lookup will ever ask about. Empty is the healthy answer;
+    /// anything else is a correction sitting in the file doing nothing.
+    pub fn unknown_tables(&self) -> Vec<&str> {
+        self.page_id
+            .keys()
+            .map(String::as_str)
+            .filter(|t| !CORRECTED_TABLES.contains(t))
+            .collect()
+    }
+
     /// The corrected id for page `title` of table `table`; `id` if there's no correction.
     pub fn apply(&self, table: &str, title: &str, id: u32) -> u32 {
         self.page_id
