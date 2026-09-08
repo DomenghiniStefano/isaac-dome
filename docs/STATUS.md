@@ -421,26 +421,43 @@ Path, in order:
       Handing that over buys a design of the placeholder. The exporter itself is current
       (`72d8d44` builds the real graph); it's the committed output, and the brief, that are
       behind. **Regenerate the whole thing before the handoff:**
-      - [ ] **a. A queue payload in `design-export`** — `payload.rs` writes the Plan's *goals*,
-            not the queue: `QueueRow` and `QueueDiagnostic` have been in the contract since
-            `2352163` and appear nowhere in the package. It needs an empty queue and a full
-            one, the full one with at least one row at `stepsNotQueued > 0` and one
-            diagnostic, otherwise the hardest rule to draw — a move repairs, prerequisites
-            are a wall — is invisible to whoever draws it. **Pure code, no sample needed.**
-      - [ ] **b. `DESIGN-BRIEF.md` re-aligned on the post-M2/M3 contract** — §4's status light,
-            §7's types, the real/stub table in §7.5, and question 4 of §12, which asks how to
-            draw a `stub` node. That state no longer exists, and what replaces it is a harder
-            question: `partial` isn't "not known yet", it's "this requirement wasn't
-            interpretable", and it must never read as unlockable. **No sample needed.**
+      - [x] **a. A queue payload in `design-export`** (2026-09-08) — `queue.empty.json` and
+            `queue.with_rows.json`, built through `plan::Queue::enqueue` and `GraphDeps`,
+            i.e. the very functions behind the Tauri command: the package can't show an
+            order the app wouldn't produce. Six tests on the pick rule.
+            **The first rule was wrong and the real export caught it**: "the first node
+            blocked by two or more steps" finds nothing on a profile at 385 achievements,
+            and the package came out with a single row — without the one thing the queue
+            exists to show. The rule is now "the deepest chain the profile actually has",
+            ties broken by the lower id because a committed package has to regenerate
+            identically. It degrades to a chain of one instead of to nothing.
+            Also here: **`GraphDeps` moved from `crates/app` to `ipc`**, with three tests it
+            never had while it sat in the crate that by convention isn't tested.
+      - [x] **b. `DESIGN-BRIEF.md` re-aligned on the post-M2/M3 contract** (2026-09-08) —
+            fourteen places, all the same point: `{ kind: 'stub' }` has left the wire.
+            `GraphInfo` is `computed | partial`; `RequirementView` and the node's `missing[]`
+            were missing from the document entirely; `StepsBasis` is `'fanOut'` and Next
+            steps changed *meaning*, not just values — a `partial` node is not a step, and
+            without a catalog the list is empty with a diagnostic saying so. §7.5's table
+            redone, §0/§4/§10/§13 and question 4 rewritten around `partial`. **New §7.6 on
+            the queue**, which the brief had nothing about at all: the types, the four states
+            of a row, and the rule the whole thing rests on — a move repairs, so there is no
+            rejected drop and no error toast to design.
       - [ ] **c. `pnpm design:export` re-run over the whole package** — needs the machine with
             the game installed, the `samples/packed` junction and a real save; then commit the
             regenerated output. The package is committed on purpose (see `.gitignore`): Claude
             Design opens it from a fixed path, and it would vanish on a branch switch. The
             package README forbids the assets ending up in a public repository — `origin` is
             private, which is what makes committing them acceptable.
-      - [ ] **d. The file count, here and in the package README** — it says 423, from before the
-            atlases and the sheets. Take the new one from the export's own report instead of
-            pinning it by hand a second time.
+            **Rehearsed twice on 2026-09-08** into a scratch directory, so the run itself is
+            known to work here: 8 archives, 19,473 entries, 5,837 files, 36 MB, exit 0.
+      - [x] **d. The file count, here and in the package README** (2026-09-08) — the README
+            was already generated (`readme(img.entries.len())` = 5,833) and correct; the stale
+            number was in `DESIGN-BRIEF.md`'s header, which claimed **2035 images**. Now taken
+            from the export's own report, and stated as two figures because they are two
+            things: **5,833 catalogued images** (2,074 from the archives + 3,759 cut from the
+            game's sheets) living in **5,837 files**, since the regular families are packed
+            into atlases rather than written one file each.
 
 Doesn't block the handoff but blocks Collection and Unlock: **`Archive::open` loads 1.3 GB**
 to extract sprites (see open blockers), and the graph commands do this on every
@@ -615,6 +632,53 @@ building the Collection screen, not before designing it.
 ---
 
 ## Session log
+
+### 2026-09-08 (evening, at the PC with the game) — what only this machine can answer
+
+Worked from the PC that has Isaac installed, with the game **running** and a run in
+progress. What follows could not have been produced anywhere else.
+
+- [x] **The suite's real picture here: 644 real files touched, 15 skips** — against the
+      *37 files and 90 skips* measured the same day on the other PC. That gap is the whole
+      point of the "re-check on every machine" blocker: `samples/packed` is a live junction
+      here, so `unpack`, `catalog`, `ipc` and `graph` all run on the real game.
+- [x] **Skips 15 → 7, with a file nobody had collected.** `userdata\` holds a
+      `rep_persistentgamedata1.dat` from **2024-06-06**, i.e. the pre-Repentance+ era, which
+      `samples/` had none of. Added as `20240606.rep_persistentgamedata1.dat`, it switches on
+      the 8 tests that were skipping everywhere with `no dated sample *.rep_…`. No
+      cross-edition contamination: `SERIES` is a list and compares only within one.
+      The 7 left are honest — `20250112` and `20240118` exist nowhere any more, and one
+      snapshot can't be compared with itself.
+- [x] **The 521-vs-523 counters failure did not reproduce** — but only because `20250112`,
+      the file that causes it, isn't on this machine. Not fixed: out of reach.
+- [x] **Fresh samples**: `20260906`, `20260907`, `20260908` copied from `save_backups\`,
+      extending the historical series past the 09-05 it stopped at.
+
+**A live probe, and the save turns out to be an event stream.** A throwaway
+`core-save/examples/live_probe.rs` watched `log.txt` and both `.dat` files every half second
+while a run was in progress, reporting each change through `core_save::diff` (evidence in
+`samples/logs/probe-*.tsv`; the log snapshots in `samples/logs/`). What it found:
+
+- **The game rewrites the persistent save every few seconds *during* a run**, not only on
+  exit — dozens of writes observed inside one session, one or two counters at a time. The
+  project assumes the `.dat` is a between-sessions snapshot; it isn't. A slice of what M4
+  wanted from `log-watch` ("something changed, refresh") is available from a format we
+  control, instead of from text patterns in a versioned rule file. The caveat belongs next
+  to the finding: these are **lifetime** counters, not per-run — "what you have done", never
+  "how this run went". That stays the log's job.
+- **No torn read in dozens of concurrent reads.** Every `Save::parse` during a write
+  succeeded, zero diagnostics. Not proof the write is atomic, but it's the first evidence we
+  have on a question that was pure worry before.
+- **`log.txt` reaches disk with no perceptible delay** — writes every 0.5–2s, 40 to 1200
+  bytes at a time. That answers B8's second open question: a Live screen can be live.
+- **The log records rooms**, `Room 1.1075(New Room)` with a frame counter on every
+  transition, which answers B8's first question and unblocks anything map-shaped. It also
+  carries `Spawn Entity` lines the five documented patterns never mentioned.
+- **Zero mod noise on this machine** (no `Lua Debug` at all), unlike the 2024 log B8 was
+  written from.
+
+> B8 is answered in substance but **not yet written up**: the run was still in progress. The
+> document, with the `probe-*.tsv` files as evidence, is the next thing.
 
 ### 2026-09-08 (later still) — the design package is a photograph of an era that ended
 
