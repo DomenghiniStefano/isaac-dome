@@ -16,6 +16,16 @@ pub struct Diagnostics {
     pub discarded_sections: BTreeMap<String, u32>,
     /// Pages with an infobox but no usable `id`.
     pub pages_without_id: u32,
+    /// Lines made of nothing but `}}`: they close a template that opened on an earlier
+    /// line, which the line-by-line pass never saw as a single template. The line is
+    /// dropped so it doesn't cut the list around it in two; the wrapper it closed stays
+    /// unrepresented, and this counts how often that happens.
+    ///
+    /// `default` because a dataset built by an earlier parser simply doesn't carry the
+    /// key, and refusing to load a whole snapshot over a missing diagnostic counter is
+    /// the opposite of degrading. Any counter added here later wants the same.
+    #[serde(default)]
+    pub orphan_closers: u32,
 }
 
 impl Diagnostics {
@@ -25,6 +35,10 @@ impl Diagnostics {
 
     pub fn unknown_template(&mut self, name: &str) {
         *self.unknown_templates.entry(name.to_string()).or_default() += 1;
+    }
+
+    pub fn orphan_closer(&mut self) {
+        self.orphan_closers += 1;
     }
 
     pub fn discarded_section(&mut self, title: &str) {
@@ -46,5 +60,6 @@ impl Diagnostics {
             *self.discarded_sections.entry(k.clone()).or_default() += v;
         }
         self.pages_without_id += other.pages_without_id;
+        self.orphan_closers += other.orphan_closers;
     }
 }
