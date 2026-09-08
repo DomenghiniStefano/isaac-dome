@@ -7,6 +7,14 @@ against real saves. Indices past 213 follow a regular pattern - for each boss, a
 block of 19 cells: Bethany, Jacob & Esau, and the 17 Tainted characters -
 reconstructed here and marked as derived, not documented.
 
+Updated 2026-09-08: the Delirium block for the 19, and the Mother and The Beast
+blocks for the 14 originals, were located on the historical series (35 saves).
+Method, for each cell: the day it changed, cross-checked three ways - the boss
+(an achievement whose wiki requirement is that boss unlocked the same day), the
+count (491 and 492 are Mother's and The Beast's kills, and they rose by exactly
+as many as the new marks) and the character (188 is a bitmask of the characters
+that won the run; it read Magdalene for base+1 and Cain for base+2).
+
 The PROGRESSION_* cells aren't counters but bit masks:
     bit 0 (1) and bit 1 (2) = the two levels of the completion mark
     bit 2 (4) = third level, meaning not yet confirmed
@@ -46,13 +54,16 @@ NAMED = {
     198: "CHESTS_OPENED_WITH_KEY", 199: "SECRET_ROOMS_WALLS_OPENED",
     200: "BLOOD_CLOT_ITEM_AQUIRED", 201: "RUBBER_CEMENT_ITEM_AQUIRED",
     202: "BEDS_USED", 212: "GREED_COINS_DONATED_FORGOTTEN",
+    # Located on the series, 2026-09-08: they sit right after the mark blocks of
+    # the two bosses Repentance added, in the same order as the blocks.
+    491: "MOTHER_KILLS", 492: "BEAST_KILLS",
 }
 
 # --- 14-cell blocks: the original characters ---
 BLOCKS_14 = [
     ("Mom's Heart", 27), ("Isaac", 41), ("Satan", 55), ("Boss Rush", 69),
     ("Blue Baby", 83), ("The Lamb", 97), ("Mega Satan", 116), ("Greed", 130),
-    ("Hush", 144), ("Delirium", 173),
+    ("Hush", 144), ("Delirium", 173), ("Mother", 423), ("The Beast", 457),
 ]
 
 # --- single cells for The Forgotten, added after the 14 ---
@@ -67,16 +78,26 @@ BLOCKS_19 = [
     ("Mom's Heart", 214), ("Isaac", 233), ("Satan", 252), ("Boss Rush", 271),
     ("Blue Baby", 290), ("The Lamb", 309), ("Mega Satan", 328), ("Greed", 347),
     ("Hush", 366),
-    # Delirium and the Repentance bosses (Mother, The Beast) sit at 386 onward,
-    # but the alignment isn't confirmed yet: index 385 is a counter on its own
-    # (it's 49, outside a mask's range), and from there the blocks' regularity
-    # breaks down. To be closed with more saves.
+    # Not 385 as the regular pattern predicted: the block starts at 404, and four
+    # characters agree on it - Bethany (+0), Jacob & Esau (+1), T. Cain (+4),
+    # T. Azazel (+9), each on a day DELIRIUM_KILLS also rose.
+    ("Delirium", 404),
+    # Mother and The Beast for the 19 later characters, and for The Forgotten, are
+    # inside 423-490 by the spacing (the two 14-blocks are exactly 34 = 14+1+19
+    # apart), but every candidate cell is zero in every save collected so far, so
+    # nothing distinguishes one layout from another. Left out on purpose.
 ]
 
-# Indices still without a label: 385, and the 404-522 tail, where at least
-# two different families coexist (values 0-7 typical of masks next to
-# large values like 53, 34, 13, which look like per-character counters).
-UNRESOLVED = [385] + list(range(404, 523))
+# Indices still without a label:
+#   385      a counter on its own, value 49, unchanged across the whole series
+#   386-403  eighteen cells, zero in every save, family unknown
+#   437-456  Mother for The Forgotten and the 19: located by spacing, unverified
+#   471-490  the same for The Beast
+#   493-522  a family of counters that move together, several per session
+UNRESOLVED = (
+    [385] + list(range(386, 404)) + list(range(437, 457))
+    + list(range(471, 491)) + list(range(493, 523))
+)
 
 MARK_BITS = {1: "level 1", 2: "level 2", 4: "level 3"}
 
