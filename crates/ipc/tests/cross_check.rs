@@ -4,7 +4,14 @@ use std::collections::HashMap;
 use std::path::{Path, PathBuf};
 use std::process::Command;
 
-const SAMPLE: &str = "20260905.rep+persistentgamedata1.dat";
+/// The profile the numbers at the bottom of this file were measured on. It has to stay
+/// the same file: `readable` and `started` are a fixture of one save at one moment, and
+/// pointing the constant at a different era while leaving them alone turns an
+/// independent check into an accident. That is what had happened — the constant named a
+/// 2026 snapshot while the assertion still said "measured on the January 2025 sample" —
+/// and nothing caught it, because a sample that isn't in `samples/` makes the whole test
+/// skip.
+const SAMPLE: &str = "20250112.rep+persistentgamedata1.dat";
 
 fn repo_root() -> PathBuf {
     Path::new(env!("CARGO_MANIFEST_DIR")).join("../..")
@@ -129,9 +136,6 @@ fn rust_matrix_agrees_with_the_python_reference() {
         "no suspicious value on a real save"
     );
 
-    assert_eq!(matrix.totals.readable, 321);
-    assert_eq!(
-        matrix.totals.started, 93,
-        "measured on the January 2025 sample"
-    );
+    assert_eq!(matrix.totals.readable, 321, "{SAMPLE}");
+    assert_eq!(matrix.totals.started, 93, "{SAMPLE}");
 }
