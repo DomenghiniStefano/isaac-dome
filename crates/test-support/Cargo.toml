@@ -2,4 +2,5 @@
 name = "test-support"
 version = "0.1.0"
 edition = "2021"
+license.workspace = true
 description = "Helpers shared by the tests that read real data from samples/"

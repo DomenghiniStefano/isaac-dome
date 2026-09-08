@@ -208,8 +208,21 @@ fixture of a known era, and a file named "live" invites overwriting it.
 
 ## License and attribution
 
-*The Binding of Isaac* and its assets belong to Nicalis, Inc. and Edmund McMillen: none of
-that ships in the package, and images are extracted from the user's own copy at runtime.
-The dataset derived from the
-[Binding of Isaac: Rebirth Wiki](https://bindingofisaacrebirth.wiki.gg) is distributed
-under **CC BY-SA 4.0**, with attribution and share-alike.
+Three different things travel in this repository, under three different terms.
+
+**The code is [GPL-3.0-only](LICENSE).** A fork stays open, which is the point: this is a
+tool built on top of a community's own wiki, and it shouldn't be possible to close it and
+sell it back. The identifier is declared once in `[workspace.package]` and inherited by
+every crate, so there is one answer and not thirteen.
+
+**The wiki dataset is not covered by that.** `dataset/` derives from the
+[Binding of Isaac: Rebirth Wiki](https://bindingofisaacrebirth.wiki.gg) and keeps its
+source's **CC BY-SA 4.0**, with attribution and share-alike; the terms and the snapshot's
+provenance are in [`dataset/ATTRIBUTION.md`](dataset/ATTRIBUTION.md), which ships in the
+package. Including it in a GPL program is a collection, not a derivative work of it: the
+dataset's own license rides along with the dataset, and neither license swallows the
+other.
+
+**The game's assets are nobody's to license here.** *The Binding of Isaac* and its assets
+belong to Nicalis, Inc. and Edmund McMillen: none of it ships in the package, and images
+are extracted from the user's own copy at runtime.
