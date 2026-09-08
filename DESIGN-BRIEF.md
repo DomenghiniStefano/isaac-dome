@@ -5,13 +5,13 @@ Document to feed to Claude Design. It is not the project document
 to design with, i.e. **what we show, with what data, in which states, and with which components**.
 
 Living document: it gets updated when the backend gains real data or when the design system
-makes decisions that affect the app. Module status lives in `docs/STATO.md`.
+makes decisions that affect the app. Module status lives in `docs/STATUS.md`.
 
 **Date:** 2026-09-06 · **Backend status:** M1 closed on the Rust side, `catalog` complete (plans A
 and B: names, sprites, quality, pools, achievements, challenges, bosses, origin DLC), app launched and
 verified on real data; **the graph screens' contracts are fixed and pinned
 by tests** (§7), and `store` was born for the Plan's goals. The delivery path
-fixed in `docs/STATO.md`, "Delivery to design" section, has reached the final step:
+fixed in `docs/STATUS.md`, "Delivery to design" section, has reached the final step:
 `catalog` plan B ✓ → IPC contracts ✓ → this brief revised ✓ → delivery.
 
 **Added on 2026-09-06:** three new product requirements, which land on the shell before
@@ -382,9 +382,9 @@ And the types for the matrix and the summary, which underpin *Completion*:
 
 ```ts
 type Cell =
-  | { kind: 'known'; bits: number }       // 0,1,2,3,5,7 — maschera, non conteggio
-  | { kind: 'unknown' }                   // non sappiamo leggerla ≠ non fatta
-  | { kind: 'unexpected'; value: number } // fuori dai valori previsti: mostrare come sospetto
+  | { kind: 'known'; bits: number }       // 0,1,2,3,5,7 — a mask, not a count
+  | { kind: 'unknown' }                   // we can't read it ≠ it isn't done
+  | { kind: 'unexpected'; value: number } // outside the expected values: show as suspect
 
 interface MarksMatrix {
   characters: { character: string; group: string; cells: Cell[] }[]
@@ -1117,12 +1117,12 @@ export interface Entry {
   sections: Section[]
 }
 
-// Senza campi: stringa nuda, come `MissingReason`.
+// No fields: a bare string, like `MissingReason`.
 export type WikiMissingReason = 'schemaMismatch' | 'malformed'
 
-// Lo stato del dataset incorporato: caricato (con i conteggi e la diagnostica) o no
-// (con il motivo). `unresolved` e `unknownTemplates` sono totali di occorrenze, non
-// di pagine: irrisolti (occorrenze) e template ignoti (occorrenze).
+// The embedded dataset's state: loaded (with the counts and the diagnostics) or not
+// (with the reason). `unresolved` and `unknownTemplates` are totals of occurrences, not
+// of pages: unresolved (occurrences) and unknown templates (occurrences).
 export type WikiInfo =
   | {
       kind: 'loaded'

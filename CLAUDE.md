@@ -233,7 +233,7 @@ Five non-negotiable rules, the rest is in the document:
 
 No linter enforces these rules: `ui/scripts/scan-conventions.mjs` (`pnpm scan`) does,
 covering all five as of 2026-09-06, plus the ban on visible strings in the template.
-Exceptions live in the `ECCEZIONI` array at the top of the script, per file and with a
+Exceptions live in the `EXEMPTIONS` array at the top of the script, per file and with a
 reason. Every new rule has to be added there too, otherwise the document promises a check
 that never happens.
 
@@ -323,7 +323,7 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
 
 ## State
 
-**The up-to-date state lives in `docs/STATO.md`**, as checkboxes: milestones, modules,
+**The up-to-date state lives in `docs/STATUS.md`**, as checkboxes: milestones, modules,
 open blockers, and a session log. What follows is just the framing.
 
 M0 closed. M1 closed on the Rust side, structural base closed on 2026-09-05: static data
@@ -333,7 +333,7 @@ proceeds in parallel without touching the types the frontend consumes.
 **The frontend is deliberately on hold.** `ui/` only has the verification page, and the
 real work starts with the design system: until it starts, components stay untouched and
 the IPC contract doesn't change for the convenience of a screen that doesn't exist yet
-(that's why C2 in `docs/MIGLIORIE.md` is deferred rather than done). Frontend conventions
+(that's why C2 in `docs/IMPROVEMENTS.md` is deferred rather than done). Frontend conventions
 and their scanner already exist on purpose instead: a rule introduced before the code is
 free.
 
@@ -341,7 +341,7 @@ The **wiki dataset** (crate `wiki`, tool `wiki-snapshot`, `dataset/`) is impleme
 passed whole-branch review, and **merged into `develop`** on 2026-09-06.
 
 Other documents: `DESIGN-BRIEF.md` (the design system's contract, with the TypeScript
-types); `docs/MIGLIORIE.md` (quality tasks with closing criteria); `docs/BACKLOG.md`
+types); `docs/IMPROVEMENTS.md` (quality tasks with closing criteria); `docs/BACKLOG.md`
 (registered, not-yet-started tasks). Every module follows spec → TDD plan → execution →
 report, in `docs/superpowers/specs/` and `docs/superpowers/plans/`.
 

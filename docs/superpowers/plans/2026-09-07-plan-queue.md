@@ -1428,7 +1428,7 @@ git commit -m "feat(app): the plan queue commands"
 
 **Files:**
 - Create: `crates/plan/tests/real_data.rs`
-- Modify: `ui/src/lib/ipc/types.ts`, `docs/STATO.md`, `CLAUDE.md`
+- Modify: `ui/src/lib/ipc/types.ts`, `docs/STATUS.md`, `CLAUDE.md`
 - Create: `docs/superpowers/plans/2026-09-07-plan-queue-report.md`
 
 - [ ] **Step 1: Write the real-data test**
@@ -1492,7 +1492,7 @@ Run: `pnpm typecheck && pnpm lint && pnpm scan`.
 
 The report says what execution found that this plan didn't know, with numbers: how deep the
 deepest chain on a real profile is, how many rows a typical wish adds, and anything the
-repair algorithm did that surprised its author. In `docs/STATO.md`: the M3 line, the session
+repair algorithm did that surprised its author. In `docs/STATUS.md`: the M3 line, the session
 entry. In `CLAUDE.md`: the `plan` row in the modules table, and `store` gains "migration 2:
 the plan queue".
 

@@ -61,7 +61,7 @@ The workspace root `Cargo.toml` already has `members = ["crates/*"]`, so the new
 name = "discovery"
 version = "0.1.0"
 edition = "2021"
-description = "Localizza Steam, il gioco Isaac e i salvataggi su un PC qualsiasi"
+description = "Locates Steam, the Isaac game and the saves on any PC"
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
@@ -459,7 +459,7 @@ Expected: PASS.
 
 ```bash
 git add crates/discovery/src/saves.rs crates/discovery/src/lib.rs crates/discovery/tests/pure.rs
-git commit -m "discovery: parsing del nome file di salvataggio"
+git commit -m "discovery: save file name parsing"
 ```
 
 ---
@@ -1050,7 +1050,7 @@ Expected: PASS with no warnings. If clippy flags dead imports/variables, clean t
 
 ```bash
 git add crates/discovery/src/steam.rs crates/discovery/src/game.rs
-git commit -m "discovery: localizzazione di Steam (steamlocate/winreg) e del gioco"
+git commit -m "discovery: locating Steam (steamlocate/winreg) and the game"
 ```
 
 ---

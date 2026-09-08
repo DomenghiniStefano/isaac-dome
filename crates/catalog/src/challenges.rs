@@ -158,7 +158,7 @@ mod tests {
     }
 
     #[test]
-    fn id_list_splits_on_whitespace_too_like_the_sfida_44_achievements() {
+    fn id_list_splits_on_whitespace_too_like_challenge_44_achievements() {
         // challenges.xml, challenge 44 "Red Redemption": achievements="490 415".
         assert_eq!(id_list("490 415"), Some(vec![490, 415]));
     }

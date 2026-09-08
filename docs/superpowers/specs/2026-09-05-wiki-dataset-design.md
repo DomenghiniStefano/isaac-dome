@@ -1,7 +1,7 @@
 # Wiki dataset — design
 
 **Date:** 2026-09-05
-**Origin:** `docs/superpowers/plans/2026-09-05-b1-fonti-effetti-report.md` (B1 analysis), with
+**Origin:** `docs/superpowers/plans/2026-09-05-b1-sources-effects-report.md` (B1 analysis), with
 the decisions made in chat the same day: all entities in the first cycle, Rust, raw and
 derived both in the repo, up to the IPC with a verification screen, typed tree.
 

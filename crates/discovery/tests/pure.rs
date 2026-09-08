@@ -128,7 +128,7 @@ fn parses_installdir_and_dlc_appids_from_real_acf() {
 #[test]
 fn malformed_acf_returns_none() {
     assert_eq!(
-        discovery::testing::parse_manifest_fields("questo non è vdf {{{"),
+        discovery::testing::parse_manifest_fields("this is not vdf {{{"),
         None
     );
 }

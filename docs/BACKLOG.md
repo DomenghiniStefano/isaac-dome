@@ -13,7 +13,7 @@ Logged on 2026-09-05. Reference for shape/format: the wiki page for *False PHD*
 (`bindingofisaacrebirth.fandom.com/wiki/False_PHD`).
 
 **Closed the same day.** Report —
-`docs/superpowers/plans/2026-09-05-b1-fonti-effetti-report.md`. What came out of it, that the entry
+`docs/superpowers/plans/2026-09-05-b1-sources-effects-report.md`. What came out of it, that the entry
 below didn't know:
 
 - The fandom wiki is the **copy abandoned** by the 2023 migration: stuck at 2025, HTTP 403
@@ -29,7 +29,7 @@ below didn't know:
   *(Corrected on 2026-09-05: it's not a wiki error. The page has two infoboxes — the current trinket
   97 and the Afterbirth+ collectible 474, replaced by Broken Glass Cannon in
   Repentance — and the Cargo table confirms it with the `dlc` bitmask. See
-  `docs/superpowers/plans/2026-09-05-b1-fonti-effetti-report.md` and
+  `docs/superpowers/plans/2026-09-05-b1-sources-effects-report.md` and
   `docs/superpowers/plans/2026-09-05-wiki-dataset-report.md`.)*
 - **EID** covers 100% of items and trinkets, Italian included, and has the Italian names
   that the stringtable doesn't; but it **has no license** and can't be redistributed without the author's
@@ -111,7 +111,7 @@ not **what completing it gives**: the game only writes it as a note on the rewar
 ("Beat Challenge #19" above achievement 62, *Epic Fetus*).
 
 **Closed the same day**, a bounded task with no spec or plan: design discussed in chat, TDD, commits
-`catalog:` and `ipc:`; logged in `docs/STATO.md`, session of 2026-09-05. What came out
+`catalog:` and `ipc:`; logged in `docs/STATUS.md`, session of 2026-09-05. What came out
 while executing it, that the original entry didn't know:
 
 - The pattern **isn't just one**. The Repentance+ file (637 achievements) writes the reward in three
@@ -168,7 +168,7 @@ condition in English). A tree requires structured parsing of the 283 conditions 
 versioned rules file ("beat X with Y", "Beat Challenge #N", "collect N …") and the
 recursive linking condition → character/boss/challenge → their unlocks. The `graph` field
 in the IPC contracts is already planned as a stub for this. It's not a backlog task: it's
-milestone M2, logged in `STATO.md`.
+milestone M2, logged in `STATUS.md`.
 
 ---
 
@@ -288,7 +288,7 @@ A declared fork, with a recommendation:
 Logged on 2026-09-06, an explicit request, right after `design-export` was
 realigned to the repo's convention.
 
-**Closed 2026-09-07.** No separate report: session log in `docs/STATO.md`, entry
+**Closed 2026-09-07.** No separate report: session log in `docs/STATUS.md`, entry
 "2026-09-07 — B7: the repo's prose moves to English". What execution answered, that the
 entry below left open:
 
@@ -349,7 +349,7 @@ The opposite also holds, and it's the reason this hasn't been done until now: wr
 ### The scope, decided on 2026-09-06
 
 **The comments in the code and all `.md` files.** So that includes `CLAUDE.md`, `README.md`,
-`docs/STATO.md`, `docs/MIGLIORIE.md`, `docs/frontend-conventions.md`, `DESIGN-BRIEF.md`,
+`docs/STATUS.md`, `docs/IMPROVEMENTS.md`, `docs/frontend-conventions.md`, `DESIGN-BRIEF.md`,
 this file, and the specs and plans in `docs/superpowers/`.
 
 ### What this task is NOT

@@ -3,9 +3,9 @@
 Tasks that take the foundation from "solid" to "ready for an external user". They come out of
 a quality review: architecture, IPC boundary, tests, local automation. They **do not** contain
 new features: the M2 graph, the log watcher and the webapp live in the milestones of
-`docs/STATO.md`, and remain the project's real bottleneck.
+`docs/STATUS.md`, and remain the project's real bottleneck.
 
-Where a point is already tracked in `STATO.md`, this says so and points there: this document
+Where a point is already tracked in `STATUS.md`, this says so and points there: this document
 adds closing criteria and ordering, not a second list.
 
 Every task has three fixed lines. *Why* is the cost of not doing it. *Done when* is
@@ -60,7 +60,7 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
       rows, `pnpm scan` is green on the current code, and every exempted file is exempted by
       name, by check, and with a reason written in the script.
       **Closed on 2026-09-06:** three new checks, verified against a probe file that
-      violates all three at once. Three exceptions declared in `ECCEZIONI`, all on the
+      violates all three at once. Three exceptions declared in `EXEMPTIONS`, all on the
       verification pages (`App.vue`, `WikiInline.vue`). The heuristic's two limits — it's
       text, not an AST — are written into the document instead of being discovered at the
       first false positive.
@@ -125,7 +125,7 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
 ## C — Memory and performance
 
 - [x] **C1. Streaming archives, one shared `ResourceSet`.** *Weight L.*
-      Already in `STATO.md`, "Open blockers", first entry. Here only the closing criterion.
+      Already in `STATUS.md`, "Open blockers", first entry. Here only the closing criterion.
       **Why:** about 1.3 GB loaded into RAM to open the archives, reopened by multiple
       commands. On a machine with 8 GB and the game running, this is the most likely case
       of "it closes without saying anything" — a violation of constraint 5.
@@ -154,7 +154,7 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
       off.*
       Changes the IPC contract and hence `types.ts`: do it when the real screen begins, so
       the TypeScript type changes once instead of twice.
-      Already in `STATO.md`, same block.
+      Already in `STATUS.md`, same block.
       **Why:** 641 nodes with the base64 icon inside every row is megabytes on every call.
       Fine for the verification page, not for the real screen with TanStack Virtual.
       **What to do:** `unlock` returns the nodes without `iconUrl`; a separate command
@@ -168,7 +168,7 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
 ## D — Test data
 
 - [x] **D1. Put back the samples the real tests look for.** *Weight S.*
-      Already in `STATO.md`, "To investigate".
+      Already in `STATUS.md`, "To investigate".
       **Why:** `real_saves.rs` (in `core-save` and in `ipc`) and `cross_check.rs` skip with
       a note because the dated files they look for are no longer in `samples/`. The suite's
       green doesn't count them.
@@ -188,7 +188,7 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
 
 - [x] **D2. Historical series in `samples/` and a diff test.** *Weight M.*
       Linked to the "`samples/` doesn't contain the M0 collection's saves" entry in
-      `STATO.md`.
+      `STATUS.md`.
       **Why:** the plan that updates itself rests on the diff between two saves. Today the
       diff is only exercised on two dates. `save_backups\` holds about thirty dated backups
       of the same profile: a free historical series that no test uses.
@@ -206,7 +206,7 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
       did it this way, on purpose; the test's first draft didn't.
 
 - [x] **D3. A test on real data declares which portion of the domain it runs on.** *Weight S.*
-      Rule already stated in `STATO.md`, "Tests that pass on a non-representative sample".
+      Rule already stated in `STATUS.md`, "Tests that pass on a non-representative sample".
       Here it's made mechanical.
       **Why:** the `unpack` tests all ran on `config.a`, the only archive the decompressor
       knew how to open. No skip, no red, main function broken.
@@ -222,7 +222,7 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
       files touched and 1 skip.
 
 - [x] **D4. Synthetic fixture for the game's leftover folder.** *Weight S.*
-      Already in `STATO.md`, "To investigate".
+      Already in `STATUS.md`, "To investigate".
       **Why:** the "leftovers only, no executable" case is no longer reproducible on this
       machine, so today it isn't covered by anything.
       **What to do:** a test in `discovery/tests/pure.rs` that builds an empty
@@ -240,7 +240,7 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
 ## E — Documentation and hygiene
 
 - [x] **E1. Corrected `unpack` spec.** *Weight S.*
-      Already in `STATO.md`: it still declares `0x07 u8 versione = 0x01`, disproven on
+      Already in `STATUS.md`: it still declares `0x07 u8 versione = 0x01`, disproven on
       2026-09-03.
       **Done when:** the spec describes the byte as the compression mode with the three
       known values, and cites the commit that discovered it.
@@ -266,7 +266,7 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
       `-- --nocapture` and counts the lines.
 
 - [x] **E3. Update Node to 22 LTS and enable pnpm via corepack.** *Weight S.*
-      Already in `STATO.md`. The version needs to be pinned in `package.json` (`engines`),
+      Already in `STATUS.md`. The version needs to be pinned in `package.json` (`engines`),
       so anyone cloning finds out right away if they're on a different major.
       **Done when:** `node --version` and the `engines` field declare the same major, and
       the pnpm version lives in a single place (`packageManager`).
@@ -284,7 +284,7 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
   writer's machine (E2 and A2), not an external service. If the choice ever changes, it
   changes in one place: `scripts/check` is already the list a pipeline would run.
 - **The unlock graph (M2).** It's what would raise the project's standing more than
-  anything else here, but it's a milestone, not an improvement. It lives in `STATO.md`.
+  anything else here, but it's a milestone, not an improvement. It lives in `STATUS.md`.
 - **The real webapp and the design system.** Same story: they start after the handoff to
   design.
 - **Cleaning up `App.vue`.** It's a declared verification page and will be replaced. The

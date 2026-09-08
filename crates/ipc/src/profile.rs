@@ -124,23 +124,23 @@ fn redacted_path(path: &Path, source: &SaveSource) -> String {
 fn mask_user_dir(path: &str) -> String {
     let mut out = String::with_capacity(path.len());
     let mut mask_next = false;
-    for pezzo in path.split_inclusive(['/', '\\']) {
-        let nome = pezzo.trim_end_matches(['/', '\\']);
-        let separatore = &pezzo[nome.len()..];
-        if nome.is_empty() {
+    for segment in path.split_inclusive(['/', '\\']) {
+        let name = segment.trim_end_matches(['/', '\\']);
+        let separator = &segment[name.len()..];
+        if name.is_empty() {
             // Consecutive separators (`\\?\`, UNC roots): not a segment, and they must
             // not consume a pending mask.
-            out.push_str(separatore);
+            out.push_str(separator);
             continue;
         }
         if mask_next {
             out.push_str("<utente>");
             mask_next = false;
         } else {
-            out.push_str(nome);
-            mask_next = nome.eq_ignore_ascii_case("users");
+            out.push_str(name);
+            mask_next = name.eq_ignore_ascii_case("users");
         }
-        out.push_str(separatore);
+        out.push_str(separator);
     }
     out
 }
