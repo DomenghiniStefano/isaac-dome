@@ -281,8 +281,22 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
             single-line case; `Book of … synergy` (7) sits in between. Transparent versus
             modelled changes what the wiki screen can render, so it belongs to that
             screen's design — same rule that keeps C2 deferred.
-      - [ ] *Entity aliases* and the rest of the resolver themes: untouched, still as
-            listed in the report.
+      - [x] *Entity aliases* — **measured on 2026-09-08, and it wasn't that.** The whole
+            unresolved set was 22 references over 7 distinct keys, and the aliases were
+            never the problem: three keys were `{{i|1=Name}}`, MediaWiki's explicit
+            positional syntax, which `assemble` filed under `named` leaving `args` empty
+            (fixed); three are `Killswitch`, `Pressure Plate` and `Reward Plate`, which
+            *are* in `entity.json` as aliases of `Buttons` and carry `id: ""` because
+            they're grid entities the game gives no `EntityType`; and one is `Tonsil`,
+            unresolved on purpose. `unresolved` is now `{e: 18, i: 1}` and that is the
+            floor, pinned per template in `diagnostics_are_bounded`.
+      - [ ] *Grid entities have no `Target`* — the leftover of the line above, and the
+            same shape as the wrapper decision: resolving the three id-less buttons needs
+            a `Target` variant, which crosses the IPC. Design, not resolver work.
+      - [ ] The remaining resolver themes (corrections looked up by exact `_pageName`
+            rather than normalized `key()`, unknown tables in `corrections.json` ignored
+            silently, the alias/title double index untested): untouched, still as listed
+            in the report.
 - [ ] "Open on the wiki" link and runtime dataset update from GitHub: out of scope for
       this cycle, that's design and M5 work.
 
@@ -565,7 +579,7 @@ building the Collection screen, not before designing it.
 
 ## Session log
 
-### 2026-09-08 (later) — wiki parser: two fixes and one decision handed back
+### 2026-09-08 (later) — wiki parser: three fixes and two decisions handed back
 
 - [x] **`||` is a cell separator *and* an empty template argument.** `build_table` split
       on the bare string, so Mystery Egg's `{{e|Mask + Heart||Heart}}` became two half
@@ -592,8 +606,21 @@ building the Collection screen, not before designing it.
       IPC — so it's the wiki screen's design decision, not something to settle from inside
       `blocks.rs`. Same rule that keeps C2 deferred.
 - [x] **The dataset is rebuilt with `pnpm wiki:build`, offline from `dataset/raw/`.** The
-      `derived` test went red the instant the parser changed, both times: that is the
+      `derived` test went red the instant the parser changed, every time: that is the
       mechanism working, not an obstacle.
+- [x] **"Entity aliases" was the wrong name for the last item, and listing the actual
+      failures said so in a minute.** All 22 unresolved references come down to 7 distinct
+      keys: three `{{i|1=Name}}` (MediaWiki's explicit positional syntax, which `assemble`
+      filed under `named` leaving `args` empty — fixed, `unresolved` goes `{e:18, i:4}` →
+      `{e:18, i:1}`); three id-less grid entities; and `Tonsil`, which must stay
+      unresolved. The aliases were present and correct the whole time.
+- [x] **`diagnostics_are_bounded` now asserts per template rather than one loose sum.**
+      What's left is a floor, not a score, so the bound should say which family moved —
+      and if the item count ever reaches zero that's a bug in the `Tonsil` handling, not
+      progress.
+- [ ] **A third thing pointing at the same decision**: the id-less buttons need a `Target`
+      variant for grid entities, exactly as the block-wrapper needs a `Block` variant.
+      Both cross the IPC, both belong to the wiki screen's design.
 
 ### 2026-09-08 (later) — the repository gets a licence
 
