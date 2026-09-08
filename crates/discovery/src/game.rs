@@ -110,6 +110,16 @@ pub(crate) fn find_game(
             .join("steamapps")
             .join("common")
             .join(&parsed.installdir);
+        // Steam's record says installed; the disk decides. A library on a drive that
+        // isn't plugged in, or an uninstall that left the manifest behind, would
+        // otherwise hand back a path that doesn't exist — and the rest of the app would
+        // go looking for archives inside it and report a failed extraction, when what
+        // actually happened is that the game isn't there. Keep looking instead: another
+        // library may hold it, and if none does, the `GameNotFound` below says so.
+        // The malformed-manifest fallback above already checks the same thing.
+        if !dir.is_dir() {
+            continue;
+        }
         return (
             Some(game_from_dir(
                 dir,
