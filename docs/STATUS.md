@@ -262,11 +262,27 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
       template and into `{{dlcalt|…}}` — references previously trapped in raw text are now
       parsed and simply remain unresolved); 2 pages with no id; snapshot
       2026-09-04T17:33:31Z, known patch v1.9.7.17.
-- [ ] Resolver and parser polish deferred from the review (entity aliases; a
-      named-content template that opens on a list line and closes many lines below,
-      invisible to `blocks.rs`, which parses each entry on its own; a table cell
-      split on `||` without counting `{{…}}` braces): listed by theme in the execution
-      report, "What's left out" section.
+- [ ] Resolver and parser polish deferred from the review: listed by theme in the
+      execution report, "What's left out" section. **Two of the three named there closed
+      on 2026-09-08**, and the third turned out not to be polish at all.
+      - [x] *A table cell split on `||` without counting `{{…}}` braces.* `split_cells`
+            counts bracket depth; Mystery Egg's `{{e|Mask + Heart||Heart}}` resolves to
+            entity 93 instead of leaving two half templates in text nodes.
+      - [x] *A lone `}}` line.* It was doing more damage than the report recorded: not
+            only a junk paragraph but a **list cut in two**, fifty times over, because
+            reaching the paragraph branch is what flushes an open list. Dropped and
+            counted in `Diagnostics::orphan_closers`. The raw-syntax count in
+            `text_nodes_carry_no_raw_template_syntax` went 125 → 83.
+      - [ ] *Representing the multi-line wrapper itself* — **reclassified as a design
+            decision, not a parser fix.** The template's content is block-level, so
+            expressing it needs a `Block` variant, and `Block` crosses the IPC.
+            `column list` (51 occurrences) is pure layout and could be dropped;
+            `{{bug|…}}` (4) is not, and the crate already models it specially in the
+            single-line case; `Book of … synergy` (7) sits in between. Transparent versus
+            modelled changes what the wiki screen can render, so it belongs to that
+            screen's design — same rule that keeps C2 deferred.
+      - [ ] *Entity aliases* and the rest of the resolver themes: untouched, still as
+            listed in the report.
 - [ ] "Open on the wiki" link and runtime dataset update from GitHub: out of scope for
       this cycle, that's design and M5 work.
 
@@ -548,6 +564,36 @@ building the Collection screen, not before designing it.
 ---
 
 ## Session log
+
+### 2026-09-08 (later) — wiki parser: two fixes and one decision handed back
+
+- [x] **`||` is a cell separator *and* an empty template argument.** `build_table` split
+      on the bare string, so Mystery Egg's `{{e|Mask + Heart||Heart}}` became two half
+      templates. `split_cells` counts `{{…}}`/`[[…]]` depth and saturates at zero, so a
+      malformed row degrades into one cell instead of none. Two entries, and thirteen
+      lines changed in a twenty-two-megabyte dataset.
+- [x] **A lone `}}` was doing more damage than anyone had written down.** The review
+      recorded a junk `}}` paragraph. It also **cut the list in two** — reaching the
+      paragraph branch is exactly what flushes an open list, so every `*` item after a
+      `column list` wrapper started a fresh list. Fifty occurrences. Measuring before
+      fixing is what turned "a stray text node" into "forty lists silently split".
+- [x] **The raw-syntax threshold went 125 → 123 → 83**, and each drop matched the size its
+      family predicted — which is the evidence the change hit that family and nothing
+      else. What's left is 75 from the wrapper defect proper and 8 `<math>` formulas that
+      are genuine text and will never go to zero.
+- [x] **`#[serde(default)]` on a new diagnostic counter, and the test that demanded it.**
+      `embedded_loads` went red the moment `Diagnostics` grew a field: a dataset built by
+      an earlier parser has no such key, and refusing to load a whole snapshot over a
+      missing counter is the opposite of degrading.
+- [ ] **Handed back rather than decided: how to represent a template that wraps blocks.**
+      `column list` (51) is pure layout and could be dropped; `{{bug|…}}` (4) is not, and
+      the crate already models it specially when it fits on one line; `Book of … synergy`
+      (7) sits in between. Expressing it needs a `Block` variant, and `Block` crosses the
+      IPC — so it's the wiki screen's design decision, not something to settle from inside
+      `blocks.rs`. Same rule that keeps C2 deferred.
+- [x] **The dataset is rebuilt with `pnpm wiki:build`, offline from `dataset/raw/`.** The
+      `derived` test went red the instant the parser changed, both times: that is the
+      mechanism working, not an obstacle.
 
 ### 2026-09-08 (later) — the repository gets a licence
 
