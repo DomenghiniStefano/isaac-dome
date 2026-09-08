@@ -237,15 +237,36 @@ fn achievement_349_reads_its_pc_id_before_the_ps4_note() {
 fn diagnostics_are_bounded() {
     let ds = dataset();
     let d = &ds.meta.diagnostics;
-    // 22 as of 2026-09-05 (18 `{{e|…}}`, 4 `{{i|…}}`), threshold rounded up to the next
-    // ten: recursion into unknown templates and into `{{dlcalt|…}}` now also parses the
-    // references that used to stay trapped in raw text, so some unresolved ones were
-    // added (it used to be 20). `{{c|…}}` templates all still resolve through our own
-    // character map.
+    // 19 as of 2026-09-08 (18 `{{e|…}}`, 1 `{{i|…}}`), down from 22, and what remains is
+    // a **floor**, not a backlog — which is why the bounds below are per template and
+    // tight, instead of one loose sum:
+    //
+    // - the 18 `{{e|…}}` are three keys, `Killswitch`, `Pressure Plate` and
+    //   `Reward Plate`. All three *are* in `entity.json`, as aliases of the page
+    //   `Buttons`, and all three carry `id: ""` — they're grid entities, which the game
+    //   gives no `EntityType`. `Target::Entity` needs an id and we can't invent one, so
+    //   resolving them would take a `Target` variant for grid entities: a contract
+    //   change, not a resolver fix.
+    // - the 1 `{{i|…}}` is `Tonsil`, unresolved **on purpose** — it's a trinket, not an
+    //   item, and `tonsil_is_a_trinket_and_474_is_broken_glass_cannon` pins exactly that.
+    //   If this one ever reaches zero, the bug is there and not here.
+    //
+    // The three that went away were `{{i|1=Name}}`, MediaWiki's explicit positional
+    // syntax, which `assemble` used to file under `named` leaving `args` empty.
     let unresolved: u32 = d.unresolved.values().sum();
     assert!(
-        unresolved <= 30,
+        unresolved <= 20,
         "unresolved {unresolved}: {:?}",
+        d.unresolved
+    );
+    assert!(
+        d.unresolved.get("i").copied().unwrap_or(0) <= 1,
+        "only Tonsil may stay an unresolved item: {:?}",
+        d.unresolved
+    );
+    assert!(
+        d.unresolved.get("e").copied().unwrap_or(0) <= 18,
+        "the unresolved entities are the three id-less buttons: {:?}",
         d.unresolved
     );
     assert_eq!(d.unresolved.get("c"), None, "{:?}", d.unresolved);

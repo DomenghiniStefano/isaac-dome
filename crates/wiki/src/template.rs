@@ -74,7 +74,26 @@ fn assemble(parts: Vec<String>) -> Template {
         // `k=v` only if `k` doesn't contain `{{`/`[[`: an `=` inside a link isn't a name.
         match p.split_once('=') {
             Some((k, v)) if !k.contains("{{") && !k.contains("[[") && !k.trim().is_empty() => {
-                named.insert(k.trim().to_lowercase(), v.trim().to_string());
+                let k = k.trim();
+                let v = v.trim().to_string();
+                // A name that is a number is MediaWiki's explicit positional syntax:
+                // `{{i|1=Bird's Eye}}` is `{{i|Bird's Eye}}`. Filed under `named` instead,
+                // it leaves `args` empty and the resolver with nothing to resolve.
+                //
+                // Accepted only for the slot right after the last one, or one already
+                // filled. The index comes from external wikitext, and a rule that
+                // honoured any number would let `{{x|999999999=y}}` ask for a vector of a
+                // billion empty slots. An index that leaves a gap keeps its named form,
+                // which is what it looks like anyway — degrade, don't allocate.
+                match k.parse::<usize>() {
+                    Ok(n) if (1..=args.len() + 1).contains(&n) => match args.get_mut(n - 1) {
+                        Some(slot) => *slot = v,
+                        None => args.push(v),
+                    },
+                    _ => {
+                        named.insert(k.to_lowercase(), v);
+                    }
+                }
             }
             _ => args.push(p.trim().to_string()),
         }
@@ -96,6 +115,25 @@ mod tests {
         assert_eq!(x.name, "i");
         assert_eq!(x.args, vec!["Little Baggy", "Baggy"]);
         assert!(x.named.is_empty());
+    }
+
+    /// MediaWiki's explicit positional syntax: an argument whose *name* is a number is
+    /// the positional argument at that index. `{{i|1=Bird's Eye}}` means `{{i|Bird's Eye}}`.
+    /// Read as an ordinary `k=v` it lands in `named` and leaves `args` empty, so the
+    /// resolver is handed nothing and the reference comes out unresolved — which is where
+    /// three of the snapshot's unresolved `{{i|…}}` came from.
+    #[test]
+    fn a_numeric_name_is_the_positional_argument_at_that_index() {
+        assert_eq!(t("{{i|1=Bird's Eye}}").args, vec!["Bird's Eye"]);
+        assert!(t("{{i|1=Bird's Eye}}").named.is_empty());
+        // It can also follow a plain positional one, and keeps its place.
+        let two = t("{{x|first|2=second}}");
+        assert_eq!(two.args, vec!["first", "second"]);
+        // A name that isn't a number stays a named argument.
+        assert_eq!(
+            t("{{dlc|dlc=na}}").named.get("dlc").map(String::as_str),
+            Some("na")
+        );
     }
 
     #[test]
