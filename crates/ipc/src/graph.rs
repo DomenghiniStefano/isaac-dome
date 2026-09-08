@@ -240,7 +240,7 @@ pub struct PlanStep {
 use catalog::{AchievementId, BossId, Catalog, ChallengeId, CharacterId, ItemId, Origin, Unlock};
 
 use crate::catalog_view::{item_kind, kind_view, ItemKindView};
-use crate::resources::data_url;
+use crate::icon::IconRef;
 
 /// The Unlock view: one node per slot 1..=N of section 1 of the save. `flags[i]` is
 /// slot i; slot 0 is unused (the `slot[id]` mapping, verified on 2026-09-05: 169 items
@@ -326,7 +326,7 @@ pub fn unlock_view(
     flags: Option<&[bool]>,
     graph: Option<&graph::Graph>,
     eval: Option<&graph::evaluate::Eval>,
-    mut icon: impl FnMut(&str) -> Option<Vec<u8>>,
+    mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> UnlockView {
     let read = flags.unwrap_or(&[]);
     let slots = read.len() as u32;
@@ -349,7 +349,7 @@ pub fn unlock_view(
                         id: a.id.0,
                         text: a.text.clone(),
                         hint: a.unlock_condition.clone(),
-                        icon_url: icon(&a.sprite.path).map(|png| data_url(&png)),
+                        icon_url: icon(&IconRef::Achievement { id: a.id.0 }),
                     },
                     unlocks,
                     origin,
@@ -453,7 +453,7 @@ pub fn unlock_view(
 pub fn resolve_target(
     c: &Catalog,
     key: &TargetKey,
-    icon: &mut impl FnMut(&str) -> Option<Vec<u8>>,
+    icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> Option<UnlockTarget> {
     let english = catalog::Language::English;
     let mut rewards = Vec::new();
@@ -462,7 +462,7 @@ pub fn resolve_target(
             let i = c.item(item_kind(k), ItemId(id))?;
             (
                 c.text(&i.name, english).to_string(),
-                icon(&i.sprite.path).map(|png| data_url(&png)),
+                icon(&IconRef::Item { kind: k, id }),
             )
         }
         TargetKey::Character { id } => (
@@ -486,7 +486,7 @@ pub fn resolve_target(
 pub fn target_of(
     c: &Catalog,
     u: &Unlock,
-    icon: &mut impl FnMut(&str) -> Option<Vec<u8>>,
+    icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> UnlockTarget {
     let key = key_of(u);
     resolve_target(c, &key, icon).unwrap_or_else(|| key.view(String::new(), None, Vec::new()))
@@ -573,7 +573,7 @@ pub fn plan_view(
     goals: Vec<Goal>,
     unreadable: Vec<GoalId>,
     store_unavailable: Option<String>,
-    mut icon: impl FnMut(&str) -> Option<Vec<u8>>,
+    mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> PlanView {
     let store_available = store_unavailable.is_none();
     let mut unresolved = Vec::new();

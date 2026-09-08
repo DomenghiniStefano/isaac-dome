@@ -151,6 +151,12 @@ export type AchievementRef =
       id: number
       text: string
       hint: string | null
+      // A link the app serves, never an embedded image: `isaac://achievement/19` (on Windows
+      // the same thing arrives rewritten as `http://isaac.localhost/achievement/19`). Put it
+      // straight into an `<img src>` — the browser does the lazy loading, the caching and the
+      // de-duplication, which is the reason the payload went from megabytes to kilobytes.
+      // `null` means the catalog knows no picture for it: draw the placeholder, not a broken
+      // image.
       iconUrl: string | null
     }
   | { kind: 'unknown'; slot: number }
@@ -180,6 +186,7 @@ export type UnlockTarget =
       itemKind: ItemKindView
       id: number
       name: string
+      // The same kind of link as `AchievementRef.known.iconUrl` above: `isaac://item/passive/92`.
       iconUrl: string | null
     }
   | { kind: 'character'; id: number; name: string }

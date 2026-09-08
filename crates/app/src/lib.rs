@@ -284,7 +284,7 @@ fn unlock(
         flags.as_deref(),
         g,
         eval.as_ref(),
-        |p| resources.and_then(|rs| rs.read(p)),
+        icon_url,
     ))
 }
 
@@ -317,7 +317,6 @@ fn plan_parts(
 
 /// What every queue command needs, gathered once so the five read the same way.
 struct QueuePieces<'a> {
-    resources: Option<&'a ResourceSet>,
     catalog: Option<&'a Catalog>,
     graph: Option<&'a graph::Graph>,
     flags: Option<Vec<bool>>,
@@ -332,7 +331,6 @@ fn queue_pieces<'a>(
     let rs = resources.get();
     let c = rs.and_then(|rs| catalog.get_or_build(rs));
     Ok(QueuePieces {
-        resources: rs,
         catalog: c,
         graph: c.and_then(|c| graph.get(c)),
         flags: achievement_flags(app)?,
@@ -373,7 +371,6 @@ fn queue_view_now(
         }
         Err(reason) => (Ok(plan::Queue::default()), 0, Some(reason)),
     };
-    let rs = pieces.resources;
     Ok(ipc::queue_view(
         ipc::QueueInputs {
             catalog: pieces.catalog,
@@ -384,7 +381,7 @@ fn queue_view_now(
             goals_pending,
             store_reason: reason,
         },
-        |p| rs.and_then(|rs| rs.read(p)),
+        icon_url,
     ))
 }
 
@@ -557,9 +554,7 @@ fn plan(
         Ok(guard) => plan_parts(guard.goals()),
         Err(reason) => (Vec::new(), Vec::new(), Some(reason)),
     };
-    Ok(ipc::plan_view(c, goals, unreadable, unavailable, |p| {
-        resources.and_then(|rs| rs.read(p))
-    }))
+    Ok(ipc::plan_view(c, goals, unreadable, unavailable, icon_url))
 }
 
 #[tauri::command]
@@ -593,9 +588,13 @@ fn add_goal(
     let guard = store.lock(&app).map_err(store_unavailable)?;
     guard.add_goal(&goal).map_err(store_error)?;
     let read = guard.goals().map_err(store_error)?;
-    Ok(ipc::plan_view(c, read.goals, read.unreadable, None, |p| {
-        resources.and_then(|rs| rs.read(p))
-    }))
+    Ok(ipc::plan_view(
+        c,
+        read.goals,
+        read.unreadable,
+        None,
+        icon_url,
+    ))
 }
 
 #[tauri::command]
@@ -614,11 +613,76 @@ fn remove_goal(
     // Idempotent: removing an id that's already gone isn't an error.
     let _removed = guard.remove_goal(&id).map_err(store_error)?;
     let read = guard.goals().map_err(store_error)?;
-    Ok(ipc::plan_view(c, read.goals, read.unreadable, None, |p| {
-        resources.and_then(|rs| rs.read(p))
-    }))
+    Ok(ipc::plan_view(
+        c,
+        read.goals,
+        read.unreadable,
+        None,
+        icon_url,
+    ))
 }
 
+/// The URL the webview can actually fetch for an icon.
+///
+/// Rows carry one of these instead of a base64 image. On the real profile that took the
+/// `unlock` payload from about 7 MB to under half of one, and it hands the lazy loading,
+/// the caching and the de-duplication to the browser instead of to code we would have to
+/// write and test in the UI.
+///
+/// **The platform difference lives here and nowhere else.** On Windows the webview never
+/// sees a custom scheme: Tauri rewrites it to an `http://<scheme>.localhost/` origin.
+/// Getting this wrong raises nothing at all — the picture simply never appears — which is
+/// exactly the failure mode `unpack` already taught us to distrust.
+fn icon_url(r: &ipc::IconRef) -> Option<String> {
+    let path = r.to_path();
+    Some(if cfg!(windows) {
+        format!("http://{}.localhost/{path}", ipc::ICON_SCHEME)
+    } else {
+        format!("{}://localhost/{path}", ipc::ICON_SCHEME)
+    })
+}
+
+/// A response with no body. Built without `?` or `unwrap`: this runs on data a webview
+/// handed us, and a malformed request must degrade to "no image", never kill the process.
+fn no_icon(status: u16) -> tauri::http::Response<Vec<u8>> {
+    let mut r = tauri::http::Response::new(Vec::new());
+    if let Ok(s) = tauri::http::StatusCode::from_u16(status) {
+        *r.status_mut() = s;
+    }
+    r
+}
+
+/// Serves one icon: parse the reference, ask the catalog which file it is, read it.
+///
+/// Every step answers 404 rather than guessing. The sprite's `rect` is ignored on purpose:
+/// achievements and items are whole files (`SpriteRef::whole`), and the cropped ones —
+/// character heads — aren't reachable through `IconRef`.
+fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<Vec<u8>> {
+    let Some(reference) = ipc::IconRef::parse(path) else {
+        return no_icon(400);
+    };
+    let resources = app.state::<ResourcesState>();
+    let catalog_state = app.state::<CatalogState>();
+    let Some(rs) = resources.get() else {
+        // The game isn't installed: expected, not an error worth logging.
+        return no_icon(404);
+    };
+    let Some(c) = catalog_state.get_or_build(rs) else {
+        return no_icon(404);
+    };
+    let Some(sprite) = ipc::icon_source(c, &reference) else {
+        return no_icon(404);
+    };
+    let Some(png) = rs.read(&sprite.path) else {
+        return no_icon(404);
+    };
+    let mut r = tauri::http::Response::new(png);
+    r.headers_mut().insert(
+        tauri::http::header::CONTENT_TYPE,
+        tauri::http::HeaderValue::from_static("image/png"),
+    );
+    r
+}
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -626,6 +690,25 @@ pub fn run() {
         .manage(GraphState::default())
         .manage(StoreState::default())
         .manage(ResourcesState::default())
+        // Icons don't travel inside the payloads any more: rows carry a link, and this
+        // serves it. Asynchronous on purpose — a grid asks for a hundred at once, and each
+        // one reads from an archive; on the main thread they would queue up behind the
+        // commands.
+        // **When a CSP is introduced** (it has to be, before the public release) it must
+        // allow `img-src` from this scheme — `isaac:` and, on Windows,
+        // `http://isaac.localhost`. Today `tauri.conf.json` says `"csp": null`, so nothing
+        // blocks it; the day it doesn't, every icon in the app disappears with no error in
+        // the console and no failing test.
+        .register_asynchronous_uri_scheme_protocol(ipc::ICON_SCHEME, |ctx, request, responder| {
+            let app = ctx.app_handle().clone();
+            // Only the path matters, and it has to leave the request before the thread
+            // takes it: `isaac://localhost/achievement/19` and the Windows rewrite
+            // `http://isaac.localhost/achievement/19` both give the same path.
+            let path = request.uri().path().trim_start_matches('/').to_string();
+            std::thread::spawn(move || {
+                responder.respond(icon_bytes(&app, &path));
+            });
+        })
         .invoke_handler(tauri::generate_handler![
             setup_state,
             select_profile,

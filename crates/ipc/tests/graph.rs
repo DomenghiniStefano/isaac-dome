@@ -1,6 +1,7 @@
 use ipc::{
-    AchievementRef, GraphInfo, ItemKindView, NextSteps, OriginView, PlanDiagnostic, PlanExpansion,
-    StepsBasis, UnlockDiagnostic, UnlockNode, UnlockTarget, UnlockTotals, UnlockView, STEPS,
+    AchievementRef, GraphInfo, IconRef, ItemKindView, NextSteps, OriginView, PlanDiagnostic,
+    PlanExpansion, StepsBasis, UnlockDiagnostic, UnlockNode, UnlockTarget, UnlockTotals,
+    UnlockView, STEPS,
 };
 use serde_json::{json, to_value, Value};
 
@@ -255,12 +256,23 @@ fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
         Some(&flags),
         None,
         None,
-        |p| (p == "gfx/items/collectibles/a.png").then(|| vec![0x89, b'P', b'N', b'G']),
+        // Only one reference resolves. The row for the other one still has to exist, with
+        // `iconUrl: null`: an item we can't picture is not an item we hide.
+        |r| {
+            matches!(
+                r,
+                IconRef::Item {
+                    kind: ItemKindView::Passive,
+                    id: 2
+                }
+            )
+            .then(|| "isaac://item/passive/2".to_string())
+        },
     );
     let n1 = &v.nodes[0];
     assert_eq!(n1.unlocks.len(), 1);
     assert!(
-        matches!(&n1.unlocks[0], UnlockTarget::Item { item_kind: ItemKindView::Passive, id: 2, name, icon_url: Some(u) } if name == "A" && u.starts_with("data:image/png"))
+        matches!(&n1.unlocks[0], UnlockTarget::Item { item_kind: ItemKindView::Passive, id: 2, name, icon_url: Some(u) } if name == "A" && u == "isaac://item/passive/2")
     );
     assert_eq!(
         n1.origin,
@@ -484,8 +496,8 @@ fn plan_view_keeps_goal_order_and_reports_the_store() {
 #[test]
 fn a_goal_carries_its_key_and_the_target_resolved_now() {
     let c = catalog_with_achievements();
-    let p = plan_view(Some(&c), vec![goal("g1")], vec![], None, |p| {
-        (p == "gfx/items/collectibles/a.png").then(|| vec![0x89, b'P', b'N', b'G'])
+    let p = plan_view(Some(&c), vec![goal("g1")], vec![], None, |r| {
+        Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path()))
     });
     let v = to_value(&p).unwrap();
     assert_eq!(v["goals"][0]["id"], "g1");
@@ -495,10 +507,10 @@ fn a_goal_carries_its_key_and_the_target_resolved_now() {
     );
     assert_eq!(v["goals"][0]["target"]["kind"], "item");
     assert_eq!(v["goals"][0]["target"]["name"], "A");
-    assert!(v["goals"][0]["target"]["iconUrl"]
-        .as_str()
-        .unwrap()
-        .starts_with("data:image/png"));
+    assert_eq!(
+        v["goals"][0]["target"]["iconUrl"], "isaac://item/passive/2",
+        "the goal's icon is a link resolved now, not a picture stored then"
+    );
     assert_eq!(v["goals"][0]["createdUnix"], 0);
     assert_eq!(v["goals"][0]["note"], Value::Null);
     // The key comes back from the resolved view: the two can never diverge.

@@ -3,6 +3,7 @@
 mod catalog_view;
 mod goals;
 mod graph;
+mod icon;
 mod marks;
 mod profile;
 mod queue;
@@ -19,6 +20,7 @@ pub use graph::{
     GraphInfo, NextSteps, OriginView, PlanDiagnostic, PlanExpansion, PlanStep, PlanView,
     RequirementView, StepsBasis, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
+pub use icon::{icon_source, IconRef, ICON_SCHEME};
 pub use marks::{
     character_for, counter_index, marks_matrix, Cell, CharacterGroup, CharacterRow, MarksMatrix,
     MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
