@@ -435,31 +435,50 @@ building the Collection screen, not before designing it.
       sources names. **They don't affect the product**: the catalog is covered at 100% (see below).
       *A way to unblock this, if ever needed:* a more complete path list, or generating candidates
       from recurring name patterns.
-- [ ] **Isaac isn't installed on this machine.** ~~Resolved on `D:\SteamLibrary\…`~~ —
-      **reopened on 2026-09-08**: there is no `D:` drive any more. The only Steam library
-      is `C:\Program Files (x86)\Steam`, it has **no `appmanifest_250900.acf`**, and what
-      is left under `steamapps\common\The Binding of Isaac Rebirth` is an orphan — `data\`,
-      `mods\`, `savedatapath.txt`, no executable and no `resources\`. So `samples/packed`,
-      a junction to that `resources\packed`, is gone with it.
-      **Cost, measured:** ~60 of the ~85 `skip:` lines in a full run. Every `unpack` test
-      on a real archive, and every `catalog`, `ipc` and `graph` test that needs a built
-      catalog (`build_or_skip`, `packed_dir`, `real_catalog`) — `ipc/graph_real.rs` and
-      `catalog/tests/real_data.rs` among them. Nothing here can be recovered without
-      reinstalling the game: it is the one blocker on this machine that isn't ours to fix.
-- [ ] **`samples/` holds four saves, and no current-era one.** The 28 saves over 14 months
-      used to decode the format aren't here. What is: `20240118`, `20240305`,
-      `20240606` (`rep_`, Repentance — 638 achievements / 496 counters) and `20250112`
-      (`rep+`, Repentance+ — 641 / 521), verified with `od` on the headers.
-      **The 642 / 523 era exists on no disk on this machine** — not in `samples/`, not in
-      Steam's `remote\` (whose newest profile is the January 2025 one), not in
-      `Documents\…\Binding of Isaac Repentance\` (whose 28 dated backups all stop at March
-      2024). The `20250626`, `20260905` and `live.*` names the tests used to pin are
-      therefore unrecoverable, and `each_era_declares_its_own_counts` now carries the 2026
-      row as declared missing coverage.
-      *Available and not yet taken:* 11 more dated `rep_` snapshots of the same profile sit
-      in `Documents\…\Binding of Isaac Repentance\` (Jan–Mar 2024, one folder, git-ignored
-      destination). Copying them into `samples/` would take the comparison series from 3
-      snapshots to 14 without needing the game.
+- [ ] **How much real data there is depends on the machine, and has to be re-checked on
+      each one.** The project is developed from more than one PC; `samples/` is git-ignored
+      and the game install isn't in the repo either, so neither travels. **Nothing in this
+      section is a property of the project** — it's what one machine happened to have on
+      one day, and a run that skips 60 tests here may skip none there.
+
+      What to run before trusting a green suite, on whatever machine you're on:
+
+      ```sh
+      ls samples/                  # which saves, and from which eras (the date is the name)
+      ls samples/packed/           # the junction to the game's resources\packed
+      sh scripts/check             # the summary at the end counts and lists the skips
+      ```
+
+      The two things that switch large parts of the suite on and off:
+
+      - **`samples/packed`**, a junction to the installed game's `resources\packed`.
+        Without it every `unpack` test on a real archive skips, and with them every
+        `catalog`, `ipc` and `graph` test that needs a built catalog (`build_or_skip`,
+        `packed_dir`, `real_catalog`) — `ipc/graph_real.rs` and `catalog/tests/real_data.rs`
+        among them. On a machine with the game this is one command to restore.
+      - **the saves in `samples/`**, and above all *how many eras* they span. Comparison
+        properties need two snapshots of the same profile; era-pinned counts need a file
+        from that era. Both shortfalls are declared on stderr, never silent.
+
+      *Observed on the machine used on 2026-09-08* (recorded so a future reading knows what
+      the numbers of that day rest on, not as the project's state): no game installed —
+      the only Steam library had no `appmanifest_250900.acf` and what remained under
+      `steamapps\common\The Binding of Isaac Rebirth` was an orphan with no executable and
+      no `resources\` — hence no `samples/packed`, and ~60 of ~81 skips. `samples/` held
+      four saves over two eras: `20240118`, `20240305`, `20240606` (`rep_`, Repentance —
+      638 achievements / 496 counters) and `20250112` (`rep+`, Repentance+ — 641 / 521),
+      counts read with `od` on the headers. No save of the **642 / 523** era, which is why
+      `each_era_declares_its_own_counts` carries that row as declared missing coverage —
+      on a machine that has one, the row runs and nothing needs changing.
+- [ ] **`samples/` never contained the M0 collection.** The 28 saves over 14 months used to
+      decode the format live outside the repo, and the folder is git-ignored: whoever
+      clones has none, and the suite has to stay green anyway. Two sources worth knowing
+      about when stocking a machine, both free of the game itself:
+      `Documents\…\Binding of Isaac Repentance\` keeps the dated backups the game writes on
+      its own (14 snapshots of one `rep_` profile across Jan–Mar 2024 on the 2026-09-08
+      machine, of which only 3 had been copied over), and Steam's
+      `userdata\<id>\250900\remote\` holds the live profiles. A denser series costs nothing
+      but copying, and every copied snapshot is one more comparison the properties can make.
 
 ## To investigate
 
@@ -486,14 +505,16 @@ building the Collection screen, not before designing it.
       the game creates on its own. `samples/` now contains four files — three snapshots of the same
       profile (Jan 18, Mar 5, Jun 6, 2024) plus a Repentance+ profile (Jan 12, 2025). `core-save`'s
       real-data tests were rewritten against these: 8 tests, all actually run.
-- [x] ~~**`discovery` and the leftover game folder.**~~ **Observed on 2026-09-08, and it
-      behaves.** The case stopped being hypothetical: with `D:` gone, this machine holds
-      exactly the orphan the entry describes — `steamapps\common\The Binding of Isaac
-      Rebirth` with no executable, no `resources\`, and no `appmanifest_250900.acf`.
-      `discovery` does **not** report it: `crates/discovery/tests/real_machine.rs` prints
-      `skip: Isaac (250900) not installed` on every run. A synthetic fixture is still worth
-      having so the check survives this machine getting the game back, but the behaviour
-      itself is no longer unverified.
+- [ ] **`discovery` and the leftover game folder.** Verify that an orphaned
+      `steamapps\common\...` (with no executable) isn't reported as a valid installation.
+      **Seen behaving correctly on 2026-09-08**, on a machine that happened to hold exactly
+      that orphan — no executable, no `resources\`, no `appmanifest_250900.acf` — where
+      `crates/discovery/tests/real_machine.rs` printed `skip: Isaac (250900) not installed`
+      rather than reporting a find. That's one observation on one machine, not a test: it
+      disappears the moment that PC installs the game, and it never ran on the machines
+      that do have it. **Still open, and the closing criterion is unchanged**: a synthetic
+      fixture, so the case is checked everywhere instead of wherever the orphan happens to
+      be.
 - [x] ~~**Real-data tests that skip silently.**~~ Addressed in `c9faa1e`
       (non-silent skip). The suite is now at **94 tests, 0 failed**.
 - [ ] **Tests that pass on an unrepresentative sample.** A more insidious variant of the
@@ -502,12 +523,14 @@ building the Collection screen, not before designing it.
       handled at the time. No skip, nothing red, and the module's main function doesn't work.
       To be treated as a rule: **a real-data test must declare which portion of the
       real domain it runs on.**
-- [x] ~~**Two real `ipc` tests skip on this machine.**~~ **Closed on 2026-09-08**, in the
-      opposite direction to the one the entry expected: the samples can't be restored (see
-      the blocker above), so the tests were rewritten against the files that are here.
-      `cross_check.rs` runs again — 321 readable cells agreeing with
-      `reference/isaac_save.py` — and its pinned numbers now sit next to the file they were
-      measured on. `ipc/real_saves.rs` needs no sample of its own.
+- [x] ~~**Two real `ipc` tests skip for want of a sample.**~~ **Closed on 2026-09-08**, in
+      the opposite direction to the one the entry expected: rather than hunt for the named
+      snapshots, the tests were pointed at eras that are actually stocked. `cross_check.rs`
+      runs again — 321 readable cells agreeing with `reference/isaac_save.py` — and its
+      pinned numbers now sit next to the file they were measured on, so the pairing can't
+      drift again. `ipc/real_saves.rs` needs no sample of its own. Like every real-data
+      test it still declares and skips where its sample is absent; the point is that it
+      no longer names a file nobody has.
 - [x] ~~**Rename `samples/live.rep+persistentgamedata1.dat` with its date.**~~ **Moot as of
       2026-09-08**: the file doesn't exist and no save of that era does. The two tests that
       named it, `ipc/graph_real.rs` and `catalog/tests/real_data.rs`, both skip on
@@ -574,16 +597,23 @@ code touched: the suite was reporting green on work it had stopped doing.
       321 readable cells agreeing with `reference/isaac_save.py`, `started` at 93, exactly
       the numbers the comment claimed. **The one independent check we own was switched off
       and nobody could tell.**
-- [x] **Measured, not asserted:** reads of real files per run went from **6 to 37**, and
-      all four samples are now used instead of two. Test *counts* don't show any of this —
-      a test that skips still reports a pass, which is why 501 passed before and after.
+- [x] **Measured, not asserted:** on that machine's four samples, reads of real files per
+      run went from **6 to 37**, and all four saves are now used instead of two. The
+      absolute numbers belong to that PC; what generalises is that the same files were
+      being read six times fewer than they could be. Test *counts* show none of it — a test
+      that skips still reports a pass, which is why 501 passed before and after.
 - [ ] **`scripts/check`'s skip summary can't be trusted for counting.** With tests running
       in parallel the `skip:`/`sample:` lines interleave and split (`skip: ok`,
       `okconfig.a` appear in real output), so `grep -c` over them is noise. The kinds are
       still readable, the totals aren't. Fixing it means `--test-threads=1` for that run,
       or emitting the declarations somewhere other than shared stderr.
-- [x] **Documented above, in the blockers:** no `D:` drive, no game, no `samples/packed`,
-      and no save of the 642/523 era anywhere on this machine.
+- [x] **Why the question "what can be done without game data" had an answer at all.** The
+      machine in use had no game installed and no `samples/packed`, and its saves covered
+      two eras but not the current one. **That is a fact about a PC, not about the
+      project** — the work moves across more than one machine, `samples/` is git-ignored
+      and the install isn't in the repo, so what a suite actually exercises has to be
+      re-checked on each one rather than read off this document. The blocker above now says
+      so, and says which commands answer it.
 - [ ] **Not done, on purpose**: `ipc/graph_real.rs` and `catalog/tests/real_data.rs` still
       name a `live.*` sample that no longer exists. Both skip on `samples/packed` first, so
       any change there is unverifiable here — it waits for the game.
