@@ -486,12 +486,19 @@ building the Collection screen, not before designing it.
       threshold is 64 MB. On the `app` side, `ResourcesState` opens the set once for all
       commands (`extraction_report`, `unlock`, `next_steps`, `plan`, `add_goal`,
       `remove_goal`).
-- [ ] **`unlock` serializes 641 nodes with base64 icons inline in each row**, i.e. a payload
-      of megabytes on every call. Fine for the verification screen, not for the real
-      one: the final Unlock screen will want icons separated from the rows (fetched
-      separately, only for visible elements) instead of embedded in every node. This is C2 in
-      `docs/IMPROVEMENTS.md`, and it changes the IPC contract: do it when the real frontend
-      begins, so the TypeScript type only changes once.
+- [x] ~~**`unlock` serializes 641 nodes with base64 icons inline in each row.**~~
+      **Resolved on 2026-09-08** (C2 in `docs/IMPROVEMENTS.md`), and not the way that entry
+      proposed. Rather than a second command and a cache written in the UI, the app
+      registers a **URI scheme**: a row still carries `iconUrl`, but it is a short link
+      (`isaac://achievement/19`) that an asynchronous handler serves from the
+      `ResourceSet`, so the browser does the lazy loading, the caching and the
+      de-duplication. Measured on the real profile: `unlock` **7 MB → 415 KB**, and
+      `next_steps` — the opening screen — **124 KB → 3 KB**.
+      The TypeScript type didn't change (`iconUrl` is still `string | null`), so this never
+      blocked the frontend the way the entry assumed; and no path crosses the boundary,
+      because the reference is keyed on ids. `ipc::IconRef` (round trip + `icon_source`, 5
+      tests), the ceiling pinned in `crates/ipc/tests/unlock_size.rs`, the platform rewrite
+      to `http://isaac.localhost/` confined to `crates/app`.
 - [x] ~~**`unpack` implements only one of the three compression schemes.**~~ **Resolved on
       2026-09-03.** The byte at `0x07` in the ARCH000 header wasn't a version, as the
       spec assumed (`0x07 u8 version = 0x01`): it's an **`ArchiveCompressionMode`** and
@@ -639,6 +646,57 @@ building the Collection screen, not before designing it.
 ---
 
 ## Session log
+
+### 2026-09-08 (late) — C2: the icons leave the payload
+
+The frontend's first real task, taken before any screen exists so the contract changes once.
+
+- [x] **A URI scheme instead of a second command.** The C2 entry asked for `unlock` without
+      `iconUrl` plus a command serving icons for a list of ids. That design moves a cache
+      into the UI — what's visible, ask for those, keep them, don't ask twice, evict on
+      scroll — which is TypeScript we would write and test, in the one place the project
+      says receives only resolved JSON. Instead `crates/app` registers an **asynchronous
+      URI scheme**: a row still carries `iconUrl`, now a short link
+      (`isaac://achievement/19`), and the browser does the lazy loading, the caching and
+      the de-duplication for free.
+- [x] **Measured, both ends.** The motivation was a measurement, not a hunch: 226 KB of
+      base64 inside a 240 KB twenty-node excerpt — **94% of the payload was pictures**. The
+      outcome is a measurement too: `unlock` **7 MB → 415 KB**, `next_steps` **124 KB → 3
+      KB**. That second one is the app's opening screen.
+- [x] **The seam already existed.** All three views take an `icon` closure; only what it
+      returns changed, from bytes to a URL. So `ipc` stays pure and platform-free, `app`
+      builds the URL — it is the only place that knows Windows rewrites the scheme to
+      `http://isaac.localhost/` — and `design-export` passes a closure that still inlines
+      real images, because the package is opened from a folder where an `isaac://` link
+      resolves to nothing.
+- [x] **The reference is keyed on ids, not on the sprite path.** A path-keyed scheme would
+      have been simpler and would have put a file path on the wire, which `CLAUDE.md`
+      forbids. `IconRef::Item` also carries the **kind**, because 186 ids are shared between
+      a collectible and a trinket: an id alone names two different pictures, and the wrong
+      one would look perfectly plausible. Pinned by a test.
+- [x] **`ipc::IconRef` round-trips.** `to_path` and `parse` live next to each other and are
+      tested against each other, because a reference that renders to something the handler
+      can't parse is an image that silently never appears — the exact failure `unpack`
+      taught us to distrust, where a wrong path doesn't error, it goes quiet.
+- [x] **The closing criterion is a test, not a claim** (`crates/ipc/tests/unlock_size.rs`):
+      the real payload under a declared ceiling, **no `data:image` anywhere in it**, and at
+      least one link actually present — because a ceiling alone would pass just as happily
+      on a payload that had lost its icons altogether.
+- [x] **The design package renamed its two `unlock` files, and they now tell the truth.**
+      `unlock.without_icons.json` used to be "the form the real screen will use"; the real
+      screen's form now *has* icons, they're just links. So: `unlock.json` is exactly what
+      the app sends, and `unlock.illustrated.json` is twenty nodes with the pictures inlined
+      for a human to look at. README regenerated from the exporter's own text.
+- [x] **A real-data test kept its meaning instead of its assertion.** `graph_real.rs`
+      checked that an icon started with `data:image/png` — "the sprite extracts from the
+      real archives". The view no longer extracts, so the assertion became the link *plus* a
+      direct `icon_source` + `ResourceSet::read` check. Dropping the second half would have
+      left a test that passes on an install whose archives don't hold the sprite at all.
+
+> **At release time:** `tauri.conf.json` carries `"csp": null`, so nothing blocks the scheme
+> today. A real CSP must allow `img-src` from `isaac:` and `http://isaac.localhost`, or
+> every icon disappears with no console error and no failing test. Written in the code, at
+> the registration.
 
 ### 2026-09-08 (night) — the package regenerated, with the game back on disk
 
