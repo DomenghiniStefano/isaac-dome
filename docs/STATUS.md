@@ -704,6 +704,40 @@ save against the dated backup the game wrote before it, and read which cells mov
 
 ## Session log
 
+### 2026-09-09 (last) — the documents catch up with the repository
+
+Six documents claimed a state the project had left, and they disagreed with each other,
+which is worse than any one of them being wrong: `README.md` still described the graph
+screens as carrying `{ kind: "stub" }` — gone from the wire with M2 — and still had M2
+unticked three days after it closed.
+
+- [x] **The handoff is recorded everywhere it was promised**: `CLAUDE.md`'s State section,
+      `README.md`, `DESIGN-BRIEF.md`'s delivery path, `docs/IMPROVEMENTS.md` and B3 in
+      `docs/BACKLOG.md`. All five said, in their own words, "next step: the handoff".
+- [x] **`CLAUDE.md` now states the constraint rather than the precaution.** "The IPC
+      contract doesn't change for the convenience of a screen that doesn't exist yet" was
+      written about a hypothetical reader; the paragraph now says what it means with a
+      design under way — a change is handed on, not merely committed — and names the silent
+      case, `core_save::Kind` crossing inside `ipc::SectionCount` under a TypeScript
+      `string`.
+- [x] **`README.md`'s milestones agree with `STATUS.md` again**, M2 checked with the same
+      caveat (the graph is done, the Unlock *section* is frontend work) and M3 carrying the
+      queue.
+- [x] **`docs/PROJECT.md` §03 was a year behind on the counter tail**: it still called
+      404–522 an unidentified mix of families. Rewritten around what was located on
+      2026-09-08, with the 40 unread cells named as 40 and not as "roughly eighty".
+- [x] **The bestiary gets its own block in `CLAUDE.md`**, because "read the declarations,
+      don't assume the shape" is a rule a future session needs before it opens the file,
+      not after. The section-10 row in all three tables says so too.
+- [x] **A stale doc comment in `crates/ipc/src/graph.rs`** — `basis: Stub` declares it —
+      described a variant `StepsBasis` no longer has. Comments rot where no test looks.
+- [x] **`B2` in `docs/IMPROVEMENTS.md` moves from "later" to "next"**: generating
+      `types.ts` from the Rust types was tidiness while nobody read the contract, and is
+      now the thing that would have caught a variant rename reaching the wire unannounced.
+
+The design package's copy of the brief was re-synced with `cp`, which is what
+`design-export` does with it.
+
 ### 2026-09-09 (later still) — the package is handed over
 
 Recorded rather than done: the handoff happened outside this repo, and step 4 of "Handoff

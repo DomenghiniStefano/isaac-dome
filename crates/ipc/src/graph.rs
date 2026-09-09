@@ -521,7 +521,6 @@ fn origin_view(o: Origin) -> OriginView {
     }
 }
 
-/// Without a graph: the first `STEPS` not done, in slot order. `basis: Stub` declares it.
 /// The steps worth playing tonight: what is unlockable **now**, ordered by how much it
 /// opens. A node that is merely not-done isn't a step — if it's blocked, tonight can't
 /// touch it; if the graph can't say (`Partial`), suggesting it would be a guess.

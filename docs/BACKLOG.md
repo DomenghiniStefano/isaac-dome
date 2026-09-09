@@ -141,7 +141,8 @@ while executing it, that the original entry didn't know:
 
 Logged on 2026-09-05. The data is there; what's missing is the IPC commands that list challenges and
 items with B1's fields and the filterable grid (TanStack Table) on the frontend side. It depends on the
-screen design: it doesn't start before that handoff.
+screen design, so it waits on the design system rather than on the handoff — which
+happened on 2026-09-09.
 
 The "search" in this entry is the **filter inside a list**; searching across the whole app is a different
 matter and is **B5**. The two meet only at the point where a global result opens the list
