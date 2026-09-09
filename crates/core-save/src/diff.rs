@@ -10,7 +10,10 @@ pub struct SaveDiff {
     pub achievements: Vec<usize>,
     pub items: Vec<usize>,
     pub challenges: Vec<usize>,
-    pub cards_pills: Vec<usize>,
+    /// Bosses met for the first time. Named `cards_pills` until B9: 104 cells against the
+    /// catalog's 103 bosses, and on a beginner profile the 48 that are off are exactly the
+    /// late and alt-path roster.
+    pub bosses: Vec<usize>,
     /// (index, value in `a`, value in `b`) where the counters differ.
     pub counters: Vec<(usize, u32, u32)>,
 }
@@ -42,7 +45,7 @@ pub fn diff(a: &Save, b: &Save) -> SaveDiff {
         achievements: newly_set(Kind::Achievements),
         items: newly_set(Kind::Items),
         challenges: newly_set(Kind::Challenges),
-        cards_pills: newly_set(Kind::CardsPills),
+        bosses: newly_set(Kind::Bosses),
         counters,
     }
 }

@@ -422,10 +422,10 @@ Ten sections, each with a `kind`, a `count` read from the file, and the raw byte
 |---|---|---|
 | 1 | 642 | achievements and secrets (1 byte: done / not done) |
 | 2 | 523 | game counters **and completion marks** |
-| 3 | 14 | one value per original character, yet to be identified |
+| 3 | 14 | level counters, one cell per stage — index 0 is unused |
 | 4 | 733 | item collection (1 byte) |
 | 5 | 7 | yet to be identified |
-| 6 | 104 | cards and pills |
+| 6 | 104 | bosses met |
 | 7 | 46 | challenges |
 | 8 | 27 | yet to be identified |
 | 9 | 2 | yet to be identified |
@@ -491,8 +491,8 @@ started. It's worth more than the date.
 **Save sections**, with the `count` values read from the file:
 
 ```
-achievements 642 · counters 523 · per_char 14 · items 733 · unknown5 7
-cards_pills 104 · challenges 46 · unknown8 27 · unknown9 2 · bestiary 80
+achievements 642 · counters 523 · level_counters 14 · items 733 · unknown5 7
+bosses 104 · challenges 46 · unknown8 27 · unknown9 2 · bestiary 80
 ```
 
 `bestiary: 80` varies by profile: it's the only section whose length depends on how much
@@ -1273,7 +1273,7 @@ for it).
 
 Updated with the values read from the app (§5.4) and from the game's filelist (§5.6).
 
-- 642 achievements · 733 items · 523 counters · 104 cards and pills · 46 challenges
+- 642 achievements · 733 items · 523 counters · 104 bosses · 46 challenges
 - 34 playable characters · 12 mark columns · 11 endings
 - Completion matrix: **34 × 12 = 408 cells**, of which 368 readable and 40 unknown
 - **7 visual states per cell**: five observed values (0, 2, 3, 5, 7) + unknown + suspect

@@ -155,13 +155,48 @@ fn some_counts_do_not_change_with_the_game_version() {
     }
     saves.iter().for_each(|(name, save)| {
         let count = |k: Kind| save.section(k).unwrap().count;
-        assert_eq!(count(Kind::PerChar), 14, "{name}");
+        assert_eq!(count(Kind::LevelCounters), 14, "{name}");
         assert_eq!(count(Kind::Items), 733, "{name}");
         assert_eq!(count(Kind::Unknown5), 7, "{name}");
-        assert_eq!(count(Kind::CardsPills), 104, "{name}");
+        assert_eq!(count(Kind::Bosses), 104, "{name}");
         assert_eq!(count(Kind::Challenges), 46, "{name}");
         assert_eq!(count(Kind::Unknown8), 27, "{name}");
         assert_eq!(count(Kind::Unknown9), 2, "{name}");
+    });
+}
+
+/// Section 3 is a table of **stages**, and "one value per original character" is refuted
+/// by index 0.
+///
+/// A per-character table's first row is Isaac — the character everyone starts with and
+/// plays most. On a profile with hundreds of runs it cannot be zero. It is zero in every
+/// save we hold, in both editions, while its neighbours carry hundreds; the game numbers
+/// stages from 1 in `Level::Init m_Stage`, so index 0 is the slot that numbering leaves
+/// unused.
+///
+/// Stated as a property, not as the twelve values one profile happened to have: this is
+/// what earns the section its name, and it has to keep holding on saves nobody has
+/// collected yet. The other half of the evidence — a matched window in which the indices
+/// that moved are exactly the stages the log declared — needs a live window and can't be
+/// run from a sample; it is written up in `docs/BACKLOG.md`, B9.
+#[test]
+fn stage_counters_leave_index_0_unused() {
+    let saves = every_dated_save();
+    if saves.is_empty() {
+        return;
+    }
+    saves.iter().for_each(|(name, save)| {
+        let values = save
+            .u32s(Kind::LevelCounters)
+            .expect("section 3 is present");
+        assert_eq!(
+            values[0], 0,
+            "{name}: index 0 carries a count, which a table of stages numbered from 1 never does"
+        );
+        assert!(
+            values[1..].iter().any(|&v| v > 0),
+            "{name}: every cell is zero, so index 0 being zero proves nothing"
+        );
     });
 }
 

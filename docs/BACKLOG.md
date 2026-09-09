@@ -581,9 +581,21 @@ magic anywhere in them — so the co-op shared profile stays unread for now.
 ### What is left to do
 
 1. **The one cell in section 8**: solo run, known ending, watch index 2. Twenty minutes.
-2. **Then rename**, together: `Kind`, `SaveDiff`'s fields, the tests' assertions, the table
-   in `CLAUDE.md`, and the save-format section of `docs/PROJECT.md`. Nothing blocks this any
-   more for sections 3 and 6, which are the two the log contradicted.
+   Needs a machine with the game running, so it is the item that travels worst.
+2. ~~**Then rename**, together.~~ **Sections 3 and 6 renamed on 2026-09-09**, on a machine
+   without the game — everything they needed was already measured. `Kind::PerChar` →
+   `Kind::LevelCounters`, `Kind::CardsPills` → `Kind::Bosses`, `SaveDiff.cards_pills` →
+   `SaveDiff.bosses`, plus the tables in `CLAUDE.md`, `docs/PROJECT.md` and
+   `DESIGN-BRIEF.md`. Sections 5, 8 and 9 keep their `Unknown` names on purpose: they have
+   the game's word for it and nothing else, which is the distinction the enum's own doc
+   comment now states.
+   **The blast radius recorded above was wrong in one place.** It said `Kind` "neither
+   crosses the IPC nor drives product behaviour"; it *does* cross, inside
+   `ipc::SectionCount`, so a variant's name is a wire value. Nothing caught it because the
+   TypeScript mirror types that field as `kind: string` rather than a union — a type wide
+   enough to hide a contract change. Now pinned by `crates/ipc/tests/summary_shape.rs`,
+   ten variants against ten strings, with a second test that goes red if an eleventh
+   variant is added without a row.
 3. **Decide what section 10 becomes.** `Save::bestiary()` hands out raw bytes today; with
    the key decoded it can hand out records, and the five counters at 20..24 stop being
    invisible. That is new capability, not a rename, so it is its own task.
