@@ -566,17 +566,50 @@ magic anywhere in them — so the co-op shared profile stays unread for now.
   cutscene in the log and no movement in section 8 at all. All five are run endings played
   in **online co-op**, whose progression goes to the shared profile. Co-op windows are not
   evidence about the personal save — which is itself worth knowing.
-- **Section 10: the proposed split at byte 320 is wrong.** `count` is 80 and `f2` is 320 in
-  every file, but the payload is not two chunks meeting there. Reading it as `u32`: **0..19
-  are zero, 20..24 are five small counters (11, 5444, 4, 4, 616), and from index 25 the rest
-  is a sorted key → count list** — 1,364 pairs, 1,361 of which are a large key against a
-  small count. The keys run **straight across index 80 without a discontinuity**
-  (`0x02200000`, `0x02400000`, `0x02600000`, `0x02600100`), so byte 320 falls in the middle
-  of the list, not on a boundary.
-  The key decodes: **`(type << 20) | (variant << 8) | subtype`** — `0x00A00000` is type 10
-  variant 0, `0x02600100` is type 38 variant 1 — and the largest, 951, is inside the game's
-  entity range. The value is that entity's kill count. The list only ever grows: 973 pairs
-  on the beginner profile, 1,280 → 1,337 across our series, never once shorter.
+- **Section 10: the proposed split at byte 320 is wrong**, and so was the list that
+  replaced it. `count` is 80 and `f2` is 320 in every file, but the payload is not two
+  chunks meeting there — the keys run **straight across index 80 without a
+  discontinuity**, so byte 320 falls in the middle, not on a boundary. That much holds.
+  The reading that followed — "0..19 are zero, 20..24 are five small counters, and from
+  index 25 the rest is a sorted key → count list of 1,364 pairs" — does not.
+
+  **Measured on 2026-09-09, on four saves across two editions.** The section is
+  **self-describing**, and reading it as one list is what made it look unsorted:
+
+  ```
+  words[0..19]   twenty zeros
+  words[20]      11            constant in every save
+  words[21]      the total, exactly the sum of the four sizes below
+  words[22]      4             how many tallies follow
+  then 4 x ( id, size, size/4 records of (key, count) )
+                 ids 4, 2, 3, 1 in that order in every save
+  ```
+
+  A size is in units of two bytes and a record is eight, so `size / 4` records. Inside a
+  tally the keys are **strictly ascending and each entity appears once**. Read as a single
+  list from index 25, the same bytes show three descents and 445 repeated keys — those are
+  the three intermediate `(id, size)` headers and the fact that the same entity is counted
+  in several tallies. Both artefacts vanish when the boundaries are read from the file.
+
+  So "20..24 are five counters" was really `11`, the total, the tally count, and then the
+  first tally's own `(id, size)`.
+
+  **One word is left over** after the last tally, in every save: 11,343 (Jan 2024) rising
+  to 29,725 (Jan 2025). It is not slack — it grows with the profile. It nearly went
+  unnoticed: the throwaway script that mapped the layout had an off-by-one that consumed
+  it, and it came back only because the Rust reader disagreed with the script.
+
+  The key decodes as before: **`(type << 20) | (variant << 8) | subtype`** — `0x00A00000`
+  is type 10 variant 0, `0x02600100` is type 38 variant 1 — and the largest type, 951, is
+  inside the game's entity range. What the four tallies count is **not known**: they hold
+  the same entities with different numbers against each one. The triple is the same one
+  `crates/wiki` already indexes bosses by (`Dataset::boss_key`), so the join exists the day
+  the tallies have meanings.
+
+  **Read by `core-save` since 2026-09-09** — `Save::bestiary_tallies()`, module
+  `crates/core-save/src/bestiary.rs`, eight real-data properties in
+  `crates/core-save/tests/bestiary.rs`. The tallies keep the id the file gives them and are
+  given no names, for the same reason sections 5, 8 and 9 are still `Unknown`.
 
 ### What is left to do
 
@@ -596,9 +629,17 @@ magic anywhere in them — so the co-op shared profile stays unread for now.
    enough to hide a contract change. Now pinned by `crates/ipc/tests/summary_shape.rs`,
    ten variants against ten strings, with a second test that goes red if an eleventh
    variant is added without a row.
-3. **Decide what section 10 becomes.** `Save::bestiary()` hands out raw bytes today; with
-   the key decoded it can hand out records, and the five counters at 20..24 stop being
-   invisible. That is new capability, not a rename, so it is its own task.
+3. ~~**Decide what section 10 becomes.**~~ **Its structure is read as of 2026-09-09.**
+   `Save::bestiary_tallies()` returns the four tallies, each a list of
+   `(EntityId, count)` in key order, plus what the section declared about itself and the
+   one word the layout doesn't account for. The reading is checked by the invariants that
+   found it — the declared total accounts for every tally, the section is consumed but for
+   that word, each tally is ascending and holds an entity once — so it keeps working on a
+   patch and says so when it can't.
+   **What is left needs the game**, and is listed in `docs/STATUS.md`: which of the four
+   tallies counts what, and what the trailing word is. Both want a matched window — play a
+   run, compare the save against the backup taken before it — which is the same instrument
+   that answered sections 3 and 8, and it cannot be done from samples.
 
 ### Done when
 
