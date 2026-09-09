@@ -40,7 +40,7 @@ datasets downloaded once — neither with credentials.
 
 | Source | Where | What it gives | Solidity |
 |---|---|---|---|
-| `persistentgamedata<1-3>.dat` | `Documents\My Games\Binding of Isaac Repentance+\` — with Steam Cloud active, `Steam\userdata\<id>\250900\remote\rep+persistentgamedata<n>.dat` | Completion marks, achievements, item collection, challenges, cards and pills, 523 game counters, bestiary | **Verified** |
+| `persistentgamedata<1-3>.dat` | `Documents\My Games\Binding of Isaac Repentance+\` — with Steam Cloud active, `Steam\userdata\<id>\250900\remote\rep+persistentgamedata<n>.dat` | Completion marks, achievements, item collection, challenges, bosses, 523 game counters, bestiary | **Verified** |
 | `save_backups\` | save subfolder | Dated backups the game creates on its own: a historical series of the profile, spanning months | **Verified** |
 | `online_logs\` | save subfolder | One folder per online co-op session: the session's full log and a profile snapshot before and after | **Verified** |
 | `log.txt` | same folder as the save | Current and historical runs: items with name, character and pool, seed, floors, who killed you, endings | **Verified, but fragile across patches** |
@@ -79,10 +79,10 @@ count   number of entries        # on-disk size varies by section
 |---|---|---|---|
 | 1 | 642 | 1 | Achievements and secrets |
 | 2 | 523 | 4 | Game counters **and completion marks** |
-| 3 | 14 | 4 | One value per original character, to be identified |
+| 3 | 14 | 4 | Level counters, one cell per stage — index 0 is unused |
 | 4 | 733 | 1 | Item collection |
 | 5 | 7 | 1 | To be identified |
-| 6 | 104 | 1 | Cards and pills |
+| 6 | 104 | 1 | Bosses met |
 | 7 | 46 | 1 | Challenges |
 | 8 | 27 | 4 | To be identified |
 | 9 | 2 | 4 | To be identified |
