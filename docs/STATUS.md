@@ -413,7 +413,8 @@ Path, in order:
       light updated with the three graph screens on-contract, new §7 with the TypeScript
       types and the real/stub table, fourth question in §12 (how to draw a node whose graph
       is `stub` without it looking like missing data).
-- [ ] **4. Handoff to Claude Design** — screens 0, 4 and 5 on real data, the other four
+- [x] **4. Handoff to Claude Design** — **done: the package is handed over and the design
+      is under way as of 2026-09-09.** Screens 0, 4 and 5 on real data, the other four
       on fixed contracts. From here M2 proceeds in parallel with the webapp without touching the
       types the frontend consumes.
       The material was ready on 2026-09-06 and **had since aged out**: the committed package was
@@ -422,7 +423,21 @@ Path, in order:
       was the pre-M2 copy, with `GraphInfo = stub | computed`, no `RequirementView` and no queue.
       Handing that over buys a design of the placeholder. **The four steps below closed on
       2026-09-08**: the package on disk is the post-M2/M3 contract on the real profile, and what
-      remains of this item is the act of handing it over.
+      remained of this item was the act of handing it over, and that happened.
+
+      **From here the IPC contract is live.** The rule in `CLAUDE.md` — the contract does
+      not change for the convenience of a screen that doesn't exist yet — stops being a
+      precaution and starts being a constraint with someone on the other end of it. Any
+      change to a type in `ipc` or to `ui/src/lib/ipc/types.ts` from now on is a change to
+      material a design is being built on, and has to be handed on rather than merely
+      committed.
+
+      *Known drift at handover:* the rename of sections 3 and 6 (`017131c`, 2026-09-09)
+      changed two label strings in `contracts/payload/save_summary.json` —
+      `per_char` → `level_counters`, `cards_pills` → `bosses` — and the matching rows of
+      the brief's save-format table. No count moved and no TypeScript type changed. If the
+      copy in design's hands predates that commit, those two strings are the whole
+      difference.
       - [x] **a. A queue payload in `design-export`** (2026-09-08) — `queue.empty.json` and
             `queue.with_rows.json`, built through `plan::Queue::enqueue` and `GraphDeps`,
             i.e. the very functions behind the Tauri command: the package can't show an
@@ -688,6 +703,28 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-09 (later still) — the package is handed over
+
+Recorded rather than done: the handoff happened outside this repo, and step 4 of "Handoff
+to design" had stayed unticked while claiming that all that remained was the act itself.
+A status file that describes a state the project has left is worse than one that says
+nothing.
+
+- [x] **Step 4 closed.** The design is under way. Screens 0, 4 and 5 went over on real
+      data, the other four on the fixed contracts.
+- [x] **The IPC contract is now live**, which changes what a rule in `CLAUDE.md` means. "The
+      contract doesn't change for the convenience of a screen that doesn't exist yet" was a
+      precaution about a hypothetical; there is now someone on the other end of it, and a
+      change to `ipc` or to `ui/src/lib/ipc/types.ts` has to be handed on and not merely
+      committed.
+- [x] **One drift is already on the record.** The section 3 and 6 rename earlier today
+      (`017131c`) moved two label strings inside the package —
+      `per_char` → `level_counters` and `cards_pills` → `bosses`, in
+      `contracts/payload/save_summary.json` and the brief's save-format table. No count
+      changed and no TypeScript type changed, so if design's copy predates that commit
+      those two strings are the entire difference. Noted at the step itself, where someone
+      checking the package will actually look.
 
 ### 2026-09-09 (later) — the bestiary: four tallies, not one list
 
