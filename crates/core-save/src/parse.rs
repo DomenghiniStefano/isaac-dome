@@ -192,12 +192,19 @@ impl Save {
         )
     }
 
-    /// Raw bytes of the bestiary, up to `end-4` (normally a multiple of 8, but the
-    /// crate doesn't enforce it). Interpreting the record belongs to the
-    /// `completion` module, not to this crate.
+    /// Raw bytes of the bestiary, up to `end-4`. Kept alongside the typed reading
+    /// because a section whose layout is only partly understood is worth being able to
+    /// look at whole.
     pub fn bestiary(&self) -> Option<&[u8]> {
         self.section(crate::section::Kind::Bestiary)
             .map(|s| s.bytes.as_slice())
+    }
+
+    /// The bestiary read as the tallies it declares. `None` when the section is absent
+    /// or too short to carry a header; a section that is present but malformed comes
+    /// back with what could be read and the rest counted in `unread_words`.
+    pub fn bestiary_tallies(&self) -> Option<crate::bestiary::Bestiary> {
+        self.bestiary().and_then(crate::bestiary::read)
     }
 }
 
