@@ -575,6 +575,46 @@ building the Collection screen, not before designing it.
       `userdata\<id>\250900\remote\` holds the live profiles. A denser series costs nothing
       but copying, and every copied snapshot is one more comparison the properties can make.
 
+## What only a machine with the game can answer
+
+Collected here on 2026-09-09 because it had accumulated in five places. Nothing below is
+blocked on thinking or on code — each one is an instrument that needs the game installed,
+running, or both, and every one of them is cheap once you are at that machine. The
+instrument they mostly share is the **matched window**: play a run, then compare the live
+save against the dated backup the game wrote before it, and read which cells moved.
+
+- [ ] **Section 8's index 2** — one solo run with a known ending, watching index 2.
+      Twenty minutes. Index 19 is already the identity mapping for cutscene 19; index 2 is
+      either cutscene 1 under an off-by-one or a count of launches, and one run separates
+      them. Closing it lets sections 5, 8 and 9 be renamed the way 3 and 6 were. *Careful
+      with co-op*: five of fifteen co-op windows showed a cutscene in the log and no
+      movement at all, because co-op progression goes to the shared profile.
+- [ ] **What the bestiary's four tallies count** (B9, structure closed 2026-09-09). Section
+      10 holds four lists over the same entities — ids 4, 2, 3, 1 — with a different number
+      against each entity in each. A matched window says which is which: kill a known enemy
+      a known number of times and see which tally moves by how much. Until then they carry
+      the id the file gives them and no name.
+- [ ] **What the bestiary's trailing word is.** One word after the last tally, in every
+      save, growing 11,343 → 29,725 across the samples we hold. Same instrument: one run,
+      see what it moves by. `Save::bestiary_tallies()` already hands it back as a value, so
+      this is only a matter of watching it.
+- [ ] **The 40 unknown cells in the completion matrix** — Mother and The Beast for The
+      Forgotten and the 19. One run of Mother with a Tainted character closes the whole
+      20 × 2 block, because the base indices are already pinned and only the evidence that
+      those cells move is missing.
+- [ ] **A save of the 642 / 523 era in `samples/`** — a copy out of
+      `Steam\userdata\<id>\250900\remote\`, named `YYYYMMDD.rep+persistentgamedata1.dat`.
+      Costs nothing but the copy, and it switches on the era row in
+      `each_era_declares_its_own_counts` that today declares itself as missing coverage.
+      More snapshots of one profile are worth more than more profiles: the comparison
+      properties need two of the same.
+- [ ] **The `samples/packed` junction** to the installed game's `resources\packed`. One
+      command, and it switches ~60 skipped tests back on across `unpack`, `catalog`, `ipc`
+      and `graph` — plus it is what `pnpm design:export` needs to regenerate the design
+      package.
+
+---
+
 ## To investigate
 
 - [ ] **Backlog of registered, not-yet-started tasks: `docs/BACKLOG.md`** (2026-09-05).
@@ -648,6 +688,56 @@ building the Collection screen, not before designing it.
 ---
 
 ## Session log
+
+### 2026-09-09 (later) — the bestiary: four tallies, not one list
+
+B9 recorded section 10 as "twenty zeros, five small counters, then a sorted key → count
+list of 1,364 pairs". Probed on four saves across two editions, that reading does not
+hold — and the section turned out to be **self-describing**, which is better than a
+reading anyone has to trust.
+
+```
+words[0..19]   twenty zeros
+words[20]      11            constant in every save
+words[21]      the total, exactly the sum of the four sizes below
+words[22]      4             how many tallies follow
+then 4 x ( id, size, size/4 records of (key, count) )
+```
+
+- [x] **The three anomalies were one mistake seen from three angles.** Read as a single
+      list the keys descend three times, 445 of them repeat, and one word dangles at the
+      end. The descents are the three intermediate `(id, size)` headers; the repeats are
+      the same entity counted in several tallies; the dangling word is a six-word slip from
+      reading four lists as one. Each had a plausible wrong explanation available — "the
+      game doesn't sort", "the duplicates are variants", "there's a terminator". What
+      settled it was not a better hypothesis but an **arithmetic constraint**: `words[21]`
+      is the sum of the sizes, and the tallies consume the section to the word. A reading
+      that closes exactly, on four files, is not one reading among several.
+- [x] **`Save::bestiary_tallies()`**, module `crates/core-save/src/bestiary.rs`. Eight
+      real-data properties plus five unit tests on the packing and on degradation. The
+      tallies keep the id the file gives them and get **no names**: the same entity appears
+      in all four with different numbers, so they are four counts of one space, and which
+      count is which needs the game. Naming them now would be the mistake that had section
+      6 reporting bosses as cards.
+- [x] **A test caught the throwaway script, not the code.** `the_section_is_consumed…`
+      was written expecting zero leftover words, taken from the probe that mapped the
+      layout. The reader said one. The probe had an off-by-one that ate exactly that word —
+      which is a real word, present in every save and growing 11,343 → 29,725 across the
+      samples. It is now carried as a **value** rather than a count, and a property says it
+      never goes backwards. A test whose number comes from a script is only as good as the
+      script.
+- [x] **`EntityId` is the triple `crates/wiki` already indexes bosses by**
+      (`Dataset::boss_key`), so the join is there the day the tallies have meanings. Not
+      built now: nothing to join *to* yet.
+- [x] **`crates/core-save/tests/helpers.rs`** — `series`, `every_dated_save` and the rest
+      moved out of `real_saves.rs`, which had grown to 355 lines and was about to be copied
+      rather than shared. A helper that declares on stderr which sample it used is exactly
+      the thing that must not exist twice with two behaviours. `real_saves.rs` is down to
+      280 lines.
+
+**What this did not do**, and it is now written down in "What only a machine with the game
+can answer": name the four tallies, and identify the trailing word. Both want a matched
+window against a live run.
 
 ### 2026-09-09 — B9: the rename two measurements had already paid for
 
