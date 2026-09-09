@@ -96,7 +96,7 @@ depends on the section.
 | 7 | 46 | 1 | challenges |
 | 8 | 27 | 4 | to be identified |
 | 9 | 2 | 4 | to be identified |
-| 10 | variable | 8 | bestiary, key/value records |
+| 10 | variable | 8 | bestiary: four tallies over the same entities, self-describing |
 
 > **The entry count is read from the file, NEVER hardcoded.** The June 2025 save declares
 > 641 achievements, the 2026 ones declare 642: a patch added one. Any hardcoded count
@@ -130,6 +130,35 @@ and the 19) sit inside 423–490 by spacing but are zero in every save collected
 `Unknown` rather than pointing at a guess — one run of Mother with a Tainted character
 closes them. Index 385 is a counter on its own, 386–403 are eighteen cells never seen
 moving, and 493–522 is a family of counters that move several per session.
+
+### The bestiary (section 10)
+
+Unlike every other section, it **describes itself** — read the declarations, don't assume
+the shape. Measured 2026-09-09 on four saves across two editions; the header's `count=80` /
+`f2=320` describe nothing in this layout and are ignored.
+
+```
+words[0..19]   twenty zeros
+words[20]      11            constant in every save
+words[21]      the total, exactly the sum of the four sizes below
+words[22]      4             how many tallies follow
+then 4 x ( id, size, size/4 records of (key, count) )
+                             ids 4, 2, 3, 1 in that order
+```
+
+A size is in units of two bytes, a record is eight: `size / 4` records. Inside a tally the
+keys are **strictly ascending, each entity once**; the key is
+`(type << 20) | (variant << 8) | subtype`, the same triple `crates/wiki` indexes bosses by.
+Read it as one list instead and you get three descents, 445 repeated keys and a dangling
+word — all three are artefacts of ignoring the boundaries, and all three have a plausible
+wrong explanation ready.
+
+**The four tallies have no names**, and must not be given one from a guess: they hold the
+same entities with different numbers against each, so they are four counts of one space and
+telling them apart needs a matched window against a live run. Same for the **one word left
+over** after the last tally, present in every save and growing (11,343 → 29,725 across the
+samples). `Save::bestiary_tallies()` hands both back; `docs/STATUS.md` lists what closing
+them needs.
 
 ## log.txt
 
@@ -355,15 +384,22 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
 open blockers, and a session log. What follows is just the framing.
 
 M0 closed. M1 closed on the Rust side, structural base closed on 2026-09-05: static data
-normalized and IPC contracts fixed. Next step is the handoff to design; M2 (the graph)
-proceeds in parallel without touching the types the frontend consumes.
+normalized and IPC contracts fixed. M2 (the graph) closed on 2026-09-07 and M3's plan
+queue on 2026-09-08. **The design package was handed over on 2026-09-09 and the design is
+under way.**
 
-**The frontend is deliberately on hold.** `ui/` only has the verification page, and the
-real work starts with the design system: until it starts, components stay untouched and
-the IPC contract doesn't change for the convenience of a screen that doesn't exist yet
-(that's why C2 in `docs/IMPROVEMENTS.md` is deferred rather than done). Frontend conventions
-and their scanner already exist on purpose instead: a rule introduced before the code is
-free.
+**The IPC contract is live.** It used to be a precaution — don't reshape the types for the
+convenience of a screen that doesn't exist yet — and it is now a constraint with someone
+on the other end: a change to a type in `ipc` or in `ui/src/lib/ipc/types.ts` is a change
+to material a design is being built on, so it has to be **handed on, not merely
+committed**. Watch for the silent case: `core_save::Kind` crosses the boundary inside
+`ipc::SectionCount` and the TypeScript mirror types that field as `string`, so renaming a
+variant changed the wire with the whole suite green (pinned since by
+`crates/ipc/tests/summary_shape.rs`).
+
+**`ui/` is still the verification page**, and the frontend code starts when the design
+system lands. Frontend conventions and their scanner exist already on purpose: a rule
+introduced before the code is free.
 
 The **wiki dataset** (crate `wiki`, tool `wiki-snapshot`, `dataset/`) is implemented,
 passed whole-branch review, and **merged into `develop`** on 2026-09-06.

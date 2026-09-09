@@ -86,7 +86,7 @@ count   number of entries        # on-disk size varies by section
 | 7 | 46 | 1 | Challenges |
 | 8 | 27 | 4 | To be identified |
 | 9 | 2 | 4 | To be identified |
-| 10 | variable | 8 | Bestiary: key/value records, grows over time |
+| 10 | variable | 8 | Bestiary: four tallies over the same entities, self-describing |
 
 The entry count **is read from the file, never hardcoded**. The proof is in the backups:
 the June 2025 save declares **641** achievements, the 2026 ones declare **642**. A patch
@@ -111,11 +111,19 @@ explained.
 
 > **What's still open.** Documented names reach index 284. From there on the pattern is
 > regular — a 19-cell block per boss, with Bethany, Jacob & Esau and the 17 Tainted — and
-> holds up to Hush. Then it breaks down: index 385 is a counter on its own and the
-> 404–522 tail mixes at least two different families, where Delirium, Mother and The
-> Beast live. That's roughly eighty cells out of 523, and they close by collecting more
-> saves where those values change. Sections 3, 5, 8 and 9 — all small — and the
-> bestiary's internal structure also remain to be identified.
+> holds up to Hush. The tail beyond it was read on 2026-09-08: Delirium for the 19 later
+> characters starts at **404**, Mother for the 14 originals at **423**, The Beast at
+> **457**, and **491**/**492** are those two bosses' kills. What stays unread is **40
+> cells** — Mother and The Beast for The Forgotten and the 19 — which the spacing puts
+> inside 423–490 but which are zero in every save collected, so they are drawn as
+> *unknown* rather than guessed; one run of Mother with a Tainted character closes them.
+> Index 385 is a counter on its own, 386–403 are eighteen cells never seen moving, and
+> 493–522 is a family of counters that move several per session.
+>
+> Sections **5, 8 and 9** — all small — still have only the name the game prints when it
+> loads a profile, which is evidence and not a measurement, so `core-save` still calls
+> them `Unknown`. Section 3 was measured and renamed on 2026-09-09, and the bestiary's
+> **layout** is read (see §03's table); what each of its four tallies counts is not.
 
 ## 04 — What the log gives us
 
@@ -391,7 +399,8 @@ everything between the double-click and the first useful screen.
 
 **M0 ✓ — Format spike — done.** Format decoded and a working Python parser against 28
 real saves. Counters labeled, the mark matrix reconstructed, the log verified. Four small
-sections, the counter tail, and the bestiary remain to be identified.
+sections, the counter tail and the bestiary were left unidentified at the time; where they
+stand now is in §03 and, day by day, in `docs/STATUS.md`.
 
 **M1 — Rust parser, discovery, unpack.** The core that makes the app installable by
 anyone: finding Steam and the game, extracting the resources, reading the save. First

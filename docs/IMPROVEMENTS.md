@@ -300,8 +300,11 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
   changes in one place: `scripts/check` is already the list a pipeline would run.
 - **The unlock graph (M2).** It's what would raise the project's standing more than
   anything else here, but it's a milestone, not an improvement. It lives in `STATUS.md`.
-- **The real webapp and the design system.** Same story: they start after the handoff to
-  design.
+- **The real webapp and the design system.** The handoff happened on 2026-09-09 and the
+  design is under way; the webapp starts when the design system lands. Which also moves
+  **B2** above from "later" to "next": with the contract live, a `types.ts` generated from
+  the Rust types stops being tidiness and becomes the thing that would have caught a
+  variant rename reaching the wire unannounced.
 - **Cleaning up `App.vue`.** It's a declared verification page and will be replaced. The
   frontend rules apply to code written from here on: A3 enforces them from the start, and
   the existing verification files are exempted by name in the scanner, not by oversight.

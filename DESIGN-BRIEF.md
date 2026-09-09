@@ -7,13 +7,15 @@ to design with, i.e. **what we show, with what data, in which states, and with w
 Living document: it gets updated when the backend gains real data or when the design system
 makes decisions that affect the app. Module status lives in `docs/STATUS.md`.
 
-**Date:** 2026-09-08 · **Backend status:** M1 closed on the Rust side and `catalog` complete
+**Date:** 2026-09-09 · **Backend status:** M1 closed on the Rust side and `catalog` complete
 (plans A and B: names, sprites, quality, pools, achievements, challenges, bosses, origin
 DLC); **M2, the unlock graph, closed on 2026-09-07** and **M3's plan queue on 2026-09-08**,
 so the three graph screens are no longer designed against declared placeholders — the
 values behind §7's types are real. `store` holds the Plan's goals and the queue. The
-delivery path fixed in `docs/STATUS.md`, "Handoff to design" section, is at its final step:
-`catalog` plan B ✓ → IPC contracts ✓ → this brief revised ✓ → handoff.
+delivery path fixed in `docs/STATUS.md`, "Handoff to design" section, is complete:
+`catalog` plan B ✓ → IPC contracts ✓ → this brief revised ✓ → **handed over 2026-09-09** ✓.
+From here the contract in §7 is live: it changes only deliberately, and a change is handed
+on rather than merely committed.
 
 **Added on 2026-09-06:** three new product requirements, which land on the shell before
 they land on individual screens — the app splits into **two top-level sections** (§4),
@@ -429,7 +431,7 @@ Ten sections, each with a `kind`, a `count` read from the file, and the raw byte
 | 7 | 46 | challenges |
 | 8 | 27 | yet to be identified |
 | 9 | 2 | yet to be identified |
-| 10 | variable | bestiary, key/value records |
+| 10 | variable | bestiary: four tallies over the same entities, self-describing |
 
 > **The counts aren't constants.** A save from January 2025 declares **521** entries in
 > section 2, recent ones **523**; June 2025 declared 641 achievements, 2026 declares
