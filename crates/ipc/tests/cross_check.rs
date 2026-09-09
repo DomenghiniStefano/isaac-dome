@@ -136,6 +136,27 @@ fn rust_matrix_agrees_with_the_python_reference() {
         "no suspicious value on a real save"
     );
 
-    assert_eq!(matrix.totals.readable, 321, "{SAMPLE}");
-    assert_eq!(matrix.totals.started, 93, "{SAMPLE}");
+    // 34 characters × 12 columns = 408 cells, less the 40 that sit in the unread
+    // bottom-right block (Mother and The Beast for The Forgotten and the 19): 368. Was
+    // 321 for as long as the matrix had 10 columns — 34 × 10 − 19 — and stayed behind
+    // when the twelve-column matrix landed on 2026-09-08.
+    assert_eq!(matrix.totals.readable, 368, "{SAMPLE}");
+
+    // `started` was pinned at 93, and 93 was a fixture of the ten-column era just as 321
+    // was. Rather than move it to a new number this file would have to keep chasing, it
+    // is counted from the reference — which has just agreed with us on every one of those
+    // cells, so it is an oracle outside the code under test. A column added tomorrow moves
+    // both sides at once, and a disagreement stays visible instead of turning into a
+    // stale constant.
+    let started_in_reference = CHARACTERS
+        .iter()
+        .flat_map(|&(name, _)| BOSSES.iter().map(move |boss| (name, *boss)))
+        .filter(|&(name, boss)| {
+            reference
+                .get(boss)
+                .and_then(|row| row.get(name))
+                .is_some_and(|&v| v != 0)
+        })
+        .count();
+    assert_eq!(matrix.totals.started, started_in_reference, "{SAMPLE}");
 }
