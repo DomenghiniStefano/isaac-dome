@@ -59,8 +59,8 @@ fn describe(previous: Option<&Save>, now: &Save) -> String {
     if !d.challenges.is_empty() {
         parts.push(format!("challenges {:?}", d.challenges));
     }
-    if !d.cards_pills.is_empty() {
-        parts.push(format!("cards/pills {:?}", d.cards_pills));
+    if !d.bosses.is_empty() {
+        parts.push(format!("bosses {:?}", d.bosses));
     }
     if !d.counters.is_empty() {
         let named: Vec<String> = d

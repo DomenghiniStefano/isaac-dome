@@ -10,7 +10,7 @@ contract, memory, test data) live in `docs/IMPROVEMENTS.md`, with closing criter
 **Wiki dataset merged** into `develop` on 2026-09-06 (`feature/wiki-dataset`, 29 commits,
 suite green on the merge result, review of the whole branch closed). The local branch was
 deleted; on origin its last published version remains.
-**Last update:** 2026-09-08
+**Last update:** 2026-09-09
 
 ---
 
@@ -648,6 +648,49 @@ building the Collection screen, not before designing it.
 ---
 
 ## Session log
+
+### 2026-09-09 — B9: the rename two measurements had already paid for
+
+Nothing in this needed the game: the evidence for sections 3 and 6 was measured on
+2026-09-08 and written down, and the point of writing it down is that a later session on a
+different machine can act on it. This machine has four saves over two eras and no
+`samples/packed`.
+
+- [x] **`Kind::PerChar` → `Kind::LevelCounters`, `Kind::CardsPills` → `Kind::Bosses`**, and
+      the public `SaveDiff.cards_pills` → `SaveDiff.bosses`. Sections 5, 8 and 9 keep their
+      `Unknown` names: they have the game's own word for it — Mini Bosses, Cutscene
+      Counters, GameSettings — and a log line is not a measurement. The enum's doc comment
+      now *states* that distinction instead of leaving it to a backlog entry, so the next
+      reader can't mistake "the game calls it X" for "we checked".
+- [x] **The evidence went in first, as a property.** `stage_counters_leave_index_0_unused`
+      asserts what refutes the old name: a per-character table's first row is Isaac, and on
+      a profile with hundreds of runs it cannot be zero. It is zero in all four saves, and
+      **three of them are the 2024 `rep_` snapshots the original measurement never
+      covered** — so the property now spans two editions and 14 months rather than one
+      profile. Checked by moving the expectation to 1 and watching it go red, not by
+      assuming.
+- [x] **The recorded blast radius was wrong, and the correction is the useful part.** The
+      B8 report had it that `Kind` "neither crosses the IPC nor drives product behaviour".
+      It crosses: `ipc::SectionCount` carries it, so `"per_char"` and `"cards_pills"` were
+      wire values and this rename changed the JSON the frontend reads. The workspace stayed
+      green through it because the TypeScript mirror types that field as `kind: string`
+      instead of a union — **a type wide enough to hide a contract change**. Now pinned by
+      `crates/ipc/tests/summary_shape.rs`: ten variants against ten strings, plus a test
+      that goes red if an eleventh variant arrives without a row.
+- [x] **The design package stayed truthful without a re-export.** Two strings in
+      `contracts/payload/save_summary.json` and two lines in the brief carried the old
+      names. A re-export needs the archives and this machine hasn't got them — but the only
+      thing that changed is the label: every count is untouched, and the new strings are
+      exactly what the renamed code emits, which is what `summary_shape.rs` now pins. The
+      brief's copy inside the package is a byte-for-byte `cp`, which is what
+      `design-export` does with it anyway (`crates/design-export/src/main.rs:436`).
+
+**What is deliberately not done.** Section 8's one ambiguous cell needs a solo run with a
+known ending, and section 10's records are new capability rather than a rename. Both are
+still open in B9, which no longer claims the rename among them.
+
+> Left as a note, not acted on: `crates/core-save/tests/real_saves.rs` is now 355 lines and
+> covers several subjects. Splitting it is worth doing, but not inside a rename's diff.
 
 ### 2026-09-08 (late night) — the two columns design asked about, and where they were
 

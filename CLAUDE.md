@@ -89,10 +89,10 @@ depends on the section.
 |---|---|---|---|
 | 1 | 642 | 1 | achievements and secrets |
 | 2 | 523 | 4 | game counters **and completion marks** |
-| 3 | 14 | 4 | one value per original character, to be identified |
+| 3 | 14 | 4 | level counters, one cell per stage — index 0 is unused |
 | 4 | 733 | 1 | item collection |
 | 5 | 7 | 1 | to be identified |
-| 6 | 104 | 1 | cards and pills |
+| 6 | 104 | 1 | bosses met |
 | 7 | 46 | 1 | challenges |
 | 8 | 27 | 4 | to be identified |
 | 9 | 2 | 4 | to be identified |
@@ -101,6 +101,13 @@ depends on the section.
 > **The entry count is read from the file, NEVER hardcoded.** The June 2025 save declares
 > 641 achievements, the 2026 ones declare 642: a patch added one. Any hardcoded count
 > breaks itself.
+
+> **A section's name is either structural or measured, never taken from a log line.**
+> Sections 3 and 6 were renamed on 2026-09-09 (B9): they read `PerChar` and `CardsPills`,
+> labels from watching bits flip, and both were wrong — 3 is stages and 6 is bosses. The
+> game prints its own names when it loads a profile (5 is "Mini Bosses", 8 "Cutscene
+> Counters", 9 "GameSettings"), which is strong evidence and **not** a measurement: those
+> stay `Unknown` until the bytes are checked.
 
 ### Counters and marks
 
