@@ -72,17 +72,20 @@ The up-to-date state, as checkboxes, lives in [`docs/STATUS.md`](docs/STATUS.md)
 
 - [x] **M0** — `.dat` format decoded and verified against 28 real saves
 - [ ] **M1** — Rust parser, discovery, unpack, Completion screen ← in progress
-- [ ] **M2** — unlock graph and Unlock section
-- [ ] **M3** — derived plan
+- [x] **M2** — unlock graph (2026-09-07). The Unlock *section* is frontend work and
+      waits for the design system; the graph behind it is done.
+- [ ] **M3** — derived plan ← in progress. The plan queue closed on 2026-09-08; what
+      remains is the screen.
 - [ ] **M4** — log watcher and run archive
 - [ ] **M5** — public release
 
 M1 is closed on the Rust side: `core-save`, `discovery`, `unpack`, `catalog`, `ipc`,
-`store` and the Tauri skeleton run end-to-end on a real profile. The IPC contracts for the
-graph screens are fixed and pinned by tests; whatever the graph doesn't know yet travels
-as a **declared** `{ kind: "stub" }`, never as a value that looks computed. Next step: the
-handoff to the design system, while M2 proceeds in parallel without touching the types the
-frontend consumes.
+`store` and the Tauri skeleton run end-to-end on a real profile. M2, the unlock graph,
+closed on 2026-09-07, and M3's plan queue on 2026-09-08 — so the graph screens are no
+longer described against placeholders: a node is `computed` or, where a requirement can't
+be interpreted, **`partial`**, which is a declared "we can't say" and never reads as
+"nothing in the way". The design package went over on 2026-09-09 and the design system is
+being built; the frontend code starts with it.
 
 ## Ideas and future features
 
