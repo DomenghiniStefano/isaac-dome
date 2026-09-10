@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { BookIcon, CogIcon, InfoIcon, ListXIcon, SearchIcon } from '@lucide/vue'
+import { CogIcon, InfoIcon, SearchIcon } from '@lucide/vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Kbd, KbdGroup } from '@/components/ui/kbd'
 import { useMessages } from '@/i18n'
 import { AppName } from '@/lib/constants/app'
+import { AriaCurrent } from '@/lib/constants/aria'
 import { KeyName } from '@/lib/constants/keyNames'
-import { NavSection } from './navSection'
+import { NavSection, navSectionIcon, navSectionLabel } from './navSection'
 
 const props = defineProps<{ section: NavSection; focused: boolean }>()
 const emit = defineEmits<{
@@ -16,7 +17,9 @@ const emit = defineEmits<{
 }>()
 const { t } = useMessages()
 
-const current = (s: NavSection) => (props.section === s ? 'page' : undefined)
+const sections = Object.values(NavSection)
+const current = (s: NavSection) =>
+  props.section === s ? AriaCurrent.Page : undefined
 </script>
 
 <template>
@@ -39,20 +42,14 @@ const current = (s: NavSection) => (props.section === s ? 'page' : undefined)
     </div>
     <div class="flex h-full items-stretch gap-0.5">
       <Button
+        v-for="s in sections"
+        :key="s"
         :variant="ButtonVariant.Section"
-        :aria-current="current(NavSection.Wiki)"
-        class="h-full gap-1.75 px-3.25"
-        @click="emit('update:section', NavSection.Wiki)"
+        :size="ButtonSize.Section"
+        :aria-current="current(s)"
+        @click="emit('update:section', s)"
       >
-        <BookIcon class="size-3.5" />{{ t('shell.sections.wiki') }}
-      </Button>
-      <Button
-        :variant="ButtonVariant.Section"
-        :aria-current="current(NavSection.Progress)"
-        class="h-full gap-1.75 px-3.25"
-        @click="emit('update:section', NavSection.Progress)"
-      >
-        <ListXIcon class="size-3.5" />{{ t('shell.sections.progress') }}
+        <component :is="navSectionIcon[s]" />{{ t(navSectionLabel[s]) }}
       </Button>
     </div>
     <div class="min-w-0 flex-1" />
