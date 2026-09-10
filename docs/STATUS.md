@@ -760,6 +760,22 @@ so an off-system class generates nothing; motion on `steps()`; Determination onl
 - [x] **Commits rebuilt before pushing**: `git mv` staged two renames that the next
       `git commit` swept into an unrelated commit, leaving two commits whose `App.vue`
       imported a moved file. The unpushed commits were redone so each compiles alone.
+- [x] **Cleanup pass**, four independent reviews (reuse, simplification and magic values,
+      efficiency, altitude): the KPI bar is the `Progress` primitive (new `size`, `tone`);
+      the navbar's section icons come from `tabOriginIcon`; `ButtonSize.Section` and
+      `IconCompact` replace classes that overrode sizes at the call site; the container
+      token has its own `theme/containers.css`; `TabStrip` reads tab positions once per
+      drag and shares `TabRole` with `TabItem`; `WikiInline` resolves each icon once;
+      `WikiBlocks` forwards one object; `markBarShare` and `AriaCurrent` name the last
+      literals. Skipped: composing `Collapsible` inside `CardCollapsible` (same forwarding
+      either way), quarter-step paddings measured from the export, re-rendering every tab
+      on a drag move (a handful of tabs).
+- [x] **A regression the first squeezed-tab fix had brought in**: making the tab a size
+      container zeroes its content width, and the strip, sized by its tabs, collapsed every
+      tab to 34px with only three open. Seen on the cleanup pass's screenshots, measured
+      (`flex-basis` 150px applied, strip 104px wide), fixed with
+      `contain-intrinsic-inline-size` and a shrink-only basis: three tabs at 150px, nine at
+      39px with the drag region at its 130px minimum.
 - [ ] First launch: look at the delegated choices in the real window.
 
 ### 2026-09-09 (last) — the documents catch up with the repository
