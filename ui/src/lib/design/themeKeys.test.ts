@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest'
+import motion from '@/assets/theme/motion.css?raw'
+import typography from '@/assets/theme/typography.css?raw'
 import { ThemeNamespace, themeKeys } from './themeKeys'
 
 describe('themeKeys', () => {
@@ -40,5 +42,25 @@ describe('themeKeys', () => {
     expect(themeKeys(css, ThemeNamespace.Font)).toEqual([])
     expect(themeKeys(css, ThemeNamespace.TransitionDuration)).toEqual([])
     expect(themeKeys(css, ThemeNamespace.Ease)).toEqual([])
+  })
+
+  it('reads the real theme files as source, not as compiled CSS', () => {
+    expect(typography).toContain('@theme')
+    expect(themeKeys(typography, ThemeNamespace.Text)).toEqual([
+      'title',
+      'heading',
+      'body',
+      'control',
+      'row',
+      'caption',
+      'label',
+      'micro',
+    ])
+    expect(themeKeys(motion, ThemeNamespace.TransitionDuration)).toEqual([
+      'tap',
+      'panel',
+      'sheet',
+      'loop',
+    ])
   })
 })

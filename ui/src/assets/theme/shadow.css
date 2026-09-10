@@ -1,0 +1,4 @@
+/* The skin is flat ("bordo pixel piatto"): no shadow token exists. */
+@theme {
+  --shadow-*: initial;
+}
