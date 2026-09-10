@@ -271,3 +271,21 @@ ui/scripts/scan-conventions.mjs       window API confinement; dev-only dirs
 - Tab persistence, the tabs settings page, restored tabs that point at nothing (7).
 - Choosing a folder by hand (B14: a dialog and a command that accepts a path).
 - The search palette's content (5): the trigger opens nothing yet.
+
+## Deviations recorded while planning and executing
+
+- **The pure profile logic lives in `ui/src/lib/profile/`** (`profileView.ts`,
+  `profileLabels.ts`), not under `screens/profile/`: the indicator in `components/shell/`
+  reads it too, and a component folder importing from a screen folder would run backwards.
+- **`router/routeTable.ts` carries no components**: names, paths, titles, icons, origins.
+  `routes.ts` adds the screens, so the tab model and its tests import the table without
+  pulling `.vue` files into Vitest.
+- **`formatCount`, not `formatBytes`**: the unit is a message ("byte"/"bytes"), the number
+  is `Intl.NumberFormat`, and the same function formats the section counts.
+- **`formatModified(null)` returns `null`**, and the caller shows its own "unknown date"
+  message: the pure function has no messages to translate.
+- **Two days ago reads "l’altro ieri"**, not "2 giorni fa": that is what
+  `Intl.RelativeTimeFormat` with `numeric: 'auto'` says in Italian, and the tests follow it.
+- **vue-router 4.6.4 and pinia 4.0.3**, the versions current on 2026-09-11.
+- **Tasks 2, 6 and 7 landed in one commit**: moving `App.vue` to `verify/` leaves `main.ts`
+  without an app until the shell exists, and no intermediate commit typechecks.
