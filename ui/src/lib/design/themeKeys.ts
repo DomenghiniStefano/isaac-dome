@@ -5,6 +5,7 @@ import { uniq } from 'lodash-es'
 export const ThemeNamespace = {
   Text: 'text',
   Font: 'font',
+  Tracking: 'tracking',
   Spacing: 'spacing',
   Radius: 'radius',
   Ease: 'ease',
