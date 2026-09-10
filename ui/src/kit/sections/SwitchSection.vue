@@ -10,6 +10,9 @@ import KitSection from '../KitSection.vue'
       <Label><Switch :default-value="true" /> Riapri le tab all'avvio</Label>
       <Label><Switch /> Apri in secondo piano</Label>
       <Label><Switch disabled /> Non disponibile</Label>
+      <Label
+        ><Switch :default-value="true" disabled /> Acceso ma bloccato</Label
+      >
     </div>
   </KitSection>
 </template>

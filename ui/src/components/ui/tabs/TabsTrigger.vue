@@ -19,7 +19,7 @@ const forwardedProps = useForwardProps(delegatedProps)
     v-bind="forwardedProps"
     :class="
       cn(
-        'inline-flex cursor-pointer items-center justify-center gap-1.5 px-3.5 py-2.5 text-control whitespace-nowrap text-muted-foreground hover:text-foreground disabled:pointer-events-none disabled:text-faint-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground [&_svg:not([class*=size-])]:size-4',
+        'inline-flex cursor-pointer items-center justify-center gap-1.5 px-3.5 py-2.5 text-control whitespace-nowrap text-muted-foreground hover:text-foreground disabled:pointer-events-none disabled:text-faint-foreground enabled:data-[state=active]:bg-primary enabled:data-[state=active]:text-primary-foreground [&_svg:not([class*=size-])]:size-4',
         props.class,
       )
     "

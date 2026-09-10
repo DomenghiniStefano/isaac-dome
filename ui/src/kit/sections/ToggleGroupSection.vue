@@ -34,5 +34,14 @@ const Status = { Done: 'done', Now: 'now', Blocked: 'blocked' } as const
         <LockIcon />
       </ToggleGroupItem>
     </ToggleGroup>
+    <ToggleGroup
+      :type="ToggleGroupType.Single"
+      :default-value="Filter.Done"
+      disabled
+    >
+      <ToggleGroupItem :value="Filter.All">Tutti</ToggleGroupItem>
+      <ToggleGroupItem :value="Filter.Missing">Manca</ToggleGroupItem>
+      <ToggleGroupItem :value="Filter.Done">Fatto</ToggleGroupItem>
+    </ToggleGroup>
   </KitSection>
 </template>
