@@ -653,3 +653,33 @@ something the bytes contradict.
 Not an occasion to start *interpreting* the newly named sections. Naming section 8
 "Cutscene Counters" doesn't oblige anyone to decode which cutscene is which; it obliges us
 to stop calling it `Unknown8`.
+
+---
+
+## B10 — The design export pack: what the design tool had to measure by hand (implementation, `design-export`)
+
+Logged on 2026-09-10, from `design-export.md` inside the Claude Design export: the places
+where the pack `pnpm design:export` produces forced the design tool to measure, crop or
+guess. They aren't bugs in the app, but cycle 2's matrix cell leans on the first four, and
+every later export repeats the work until the pack says what it knows.
+
+1. **Sprites aren't trimmed**: `completion_widget/paper_00.png` is 96×96 with the drawing at
+   `x 0–84, y 3–82`, so centring the frame centres empty pixels. Export trimmed frames, or a
+   `trim: [x, y, w, h]` and `pivot: [x, y]` per frame in `sheets.json`.
+2. **`sheets.json` has no content rectangle or pivot** (same fix).
+3. **Delirium's mark isn't among the marks**: it lives in `onlinelobby/background_completion_delirium_*`,
+   under another naming.
+4. **The `_00`/`_02` tier is guessed from layer names**: an explicit `mark`, `tier` field.
+5. **No usable card or card back**: `ui_cardfronts/outline.png` is a 16×24 outline.
+6. **Papers come paired in one image** (`pausescreen_mystuff/paper.png`, `deedsmenu/paper.png`,
+   `scoremenu/smallpaper_00.png`): one file per sheet, or declared 9-slice cuts.
+7. **`sheet` paths contain spaces** (`gfx/ui/seed paper.png`).
+8. **The co-op sheet's holes are undeclared**: a `characters.json` mapping character id → cell,
+   with an explicit `null`.
+9. **40 completion cells are unreadable** (already a real data gap, modelled as `unknown`).
+10. **`unlock.json` derives the target from text**: 30 of 72 sampled rows match nothing.
+11. **Boss portraits are indexed by sheet position**, the entity key only inside the `source`
+    file name: a `target: { kind: 'entity', id, variant }` field.
+12. **A typed target doesn't imply an image**: the list of holes of `target_sprite`, not only
+    its aggregate coverage.
+13. **`unlock.illustrated.json` inlines icons as base64**: references to paths (the C2 flaw).
