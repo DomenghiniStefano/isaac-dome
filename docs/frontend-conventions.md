@@ -206,7 +206,9 @@ Operational rules:
 - **Spacing:** padding and gaps use Tailwind's standard 4px grid (`p-1`, `gap-2`, half
   steps such as `p-2.5` allowed). Named spacing tokens exist only for dimensions that mean
   something — row heights, control height, scrollbar, sprite sizes — in
-  `theme/spacing.css`.
+  `theme/spacing.css`. The grid is only 4px while `rem` is the browser's 16px: **no font
+  size on `html`**. The document's text size sits on `body`; on the root it made every step
+  3.5px for a whole cycle, and `src/assets/base.test.ts` now fails if it comes back.
 - **Colors:** never a literal color in a component. The data states — *done*, *unlockable
   now*, *blocked*, *unknown*, *unexpected* — and the *challenge* tag are semantic tokens
   (`state-*`, `challenge`), not shades picked case by case.
