@@ -368,7 +368,22 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
             states, collapsible card; presentational, on the Kit page. Spec
             `docs/superpowers/specs/2026-09-10-design-system-components-design.md`, plan
             `docs/superpowers/plans/2026-09-10-design-system-components.md`
-      - [ ] 3. Screens — shell, Pinia, Vue Router, TanStack
+      - [ ] **3. Screens** — decomposed into seven sub-projects in
+            `docs/superpowers/specs/2026-09-11-screens-shell-profile-design.md`, each with
+            its own spec → plan → execution; decisions marked "(delegated)" wait for the
+            first-launch review:
+            - [x] 3.1 Shell and profile selection (2026-09-11) — tabs owning locations, Vue Router in
+                  memory, Pinia, the live window chrome, the profile indicator, the profile
+                  screen and its gate, placeholders, fixtures for `pnpm ui:dev`. Plan
+                  `docs/superpowers/plans/2026-09-11-screens-shell-profile.md` (its
+                  checkboxes are the step-by-step state)
+            - [ ] 3.2 Completion — the marks matrix screen (B13)
+            - [ ] 3.3 Next steps, Unlock, Plan — TanStack Table and Virtual, the queue with
+                  drag
+            - [ ] 3.4 Collection — items by pool and quality
+            - [ ] 3.5 Wiki in tabs, search — the `Ctrl+K` palette (B5)
+            - [ ] 3.6 Settings and About — provenance, credits, the three promises
+            - [ ] 3.7 Tabs that survive a restart (B6)
 
 ---
 
@@ -712,6 +727,39 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-11 — the screens' first sub-project: the window becomes the app
+
+Cycle 3 is too big for one spec, so it was split into seven sub-projects
+(`docs/superpowers/specs/2026-09-11-screens-shell-profile-design.md`), and the first one
+landed on `feature/design-system-screens`. The owner delegated the decisions ("do as much as
+you can, we look at it on first launch"): the spec marks each one "(delegated)" so the
+first-launch review knows what to question.
+
+- [x] **One transport for every command.** `call()` in `lib/ipc/transport.ts` is `invoke()`
+      in Tauri and the fixtures under `pnpm ui:dev`, so the shell can be looked at in a
+      browser: `?fixture=none|pick|active`. A command without a fixture throws instead of
+      answering something plausible.
+- [x] **Tabs own locations; the router renders the active one.** Pure rules in
+      `stores/tabModel.ts` (open after the active tab, close to the right neighbour, the bar
+      never empty, move, navigate), a Pinia store on top, Vue Router on memory history.
+- [x] **The chrome goes live.** `decorations: false`, a capability for minimize, maximize,
+      close and dragging; `lib/window/appWindow.ts` is the only module that talks to the
+      window, and the scanner now says so.
+- [x] **Profile selection is the first real screen**: the Steam → game → saves chain, the
+      broken chain with its diagnostics, the candidate table with nothing preselected, the
+      active profile with the ten sections read. Progress routes sit behind a gate that shows
+      the same selection until a profile is active; the navbar indicator is one click from it.
+- [x] **Every other screen is a placeholder** that names the sub-project bringing it.
+- [x] The verification page moved to `#verify`, beside the Kit; the scanner's last exemption
+      went with it (`0 violations, 0 declared exemptions`).
+- [x] Checked on the development server with the `pick` fixture: the gate, choosing a
+      profile, the indicator turning active, the profile screen, tabs opening and closing by
+      middle click. 103 Vitest tests.
+- [ ] **Not checked in a real Tauri window**: `decorations: false`, the window controls and
+      dragging the title bar need `pnpm dev` on the machine — first thing at first launch.
+- [ ] Choosing a folder by hand is B14: the screen says where the chain broke and offers
+      "Riprova", with no button that does nothing.
 
 ### 2026-09-10 — the design system's first cycle, and a typecheck that checked nothing
 

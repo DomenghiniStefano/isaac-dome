@@ -744,3 +744,15 @@ symbol map (with Delirium on the online-lobby sheet and its `symbolFallback`); D
 §5.6 already says it belongs beside `BOSSES` in `ipc`. Needed: the map in `ipc`, the icon
 protocol extended to the completion-widget sprites, and a test that every one of the twelve
 columns resolves to two tiers.
+
+---
+
+## B14 — Choosing the game or saves folder by hand (implementation, cycle 3)
+
+Logged 2026-09-11, from sub-project 3.1: when the chain breaks (Steam missing, the game not
+found, no saves) the profile screen says where and offers "Riprova", but not the two buttons
+of `Schermate.dc.html` ("Scegli la cartella del gioco", "Scegli la cartella dei
+salvataggi"). A button that does nothing is worse than none, so they wait for what makes
+them work: the Tauri dialog plugin with its capability, a command that accepts a folder and
+hands back a `SetupState` (the path travels inward only, never back out), the chosen folder
+persisted in the settings file, and `discovery` trying it before its own search.

@@ -40,10 +40,17 @@ ui/
       data-state/  read-but-empty, unreadable, empty category
       <domain>/    further app components, named for WHAT THEY ARE
     composables/
-    stores/        Pinia, setup syntax
+    stores/        Pinia, setup syntax: tabs (and tabModel, its pure rules), profile
+    router/        routeTable (names, paths, titles, icons: no components), routes, index
+    screens/       one screen per route, and the parts only it uses (`screens/profile/`)
     kit/           development-only Kit page: every primitive in every state (`#kit`)
+    verify/        development-only verification page: every command, raw (`#verify`)
     lib/
       ipc/         typed wrappers around Tauri commands — the only place with invoke()
+        transport.ts  call(): invoke() in Tauri, the fixtures under `pnpm ui:dev`
+        fixtures/     development answers, one scenario per `?fixture=`
+      window/      appWindow: the only module that talks to the window
+      profile/     what the profile screen and the indicator show, as pure functions
       constants/   magic strings: command names, dev routes, key names, placement
       design/      themeKeys: the token names cn() reads from the theme CSS
       cn.ts        class merging that knows our tokens
@@ -341,6 +348,15 @@ Three reasons, in order of importance:
 
 Command names live in `src/lib/constants/`, not hand-written in the wrapper.
 
+Every wrapper goes through `call()` in `src/lib/ipc/transport.ts`. Inside Tauri it is
+`invoke()`; in a plain browser under `pnpm ui:dev` it answers from `src/lib/ipc/fixtures/`,
+so the shell can be looked at without the backend. `?fixture=none|pick|active` picks the
+scenario (no saves, a choice to make, an active profile); a command with no fixture throws
+`no fixture answers <command>` rather than returning something plausible. The fixtures are
+imported dynamically behind `import.meta.env.DEV`: the production build carries none of
+them. The window works the same way: `src/lib/window/appWindow.ts` is the only module that
+imports `@tauri-apps/api/window`, and outside Tauri its controls do nothing.
+
 A note on serde, which is the twin trap on the Rust side: every struct that crosses the
 IPC has `#[serde(rename_all = "camelCase")]`. Without it, TypeScript reads `undefined` and
 nobody notices until it's too late.
@@ -524,10 +540,11 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **Hardcoded opacity** | `ui/scripts/scan-conventions.mjs` |
 | **Hardcoded duration** | `ui/scripts/scan-conventions.mjs` |
 | **`invoke()` outside the IPC layer** | `ui/scripts/scan-conventions.mjs` |
+| **Window API outside `src/lib/window/`** | `ui/scripts/scan-conventions.mjs` |
 | **Numeric `:size` prop on an icon** | `ui/scripts/scan-conventions.mjs` |
 | **Raw `<button>` / `<input>` outside `src/components/ui/`** | `ui/scripts/scan-conventions.mjs` |
 | **String literal unions (`'a' \| 'b'`)** | `ui/scripts/scan-conventions.mjs` |
-| **Visible strings in the template** (skipping `src/kit/`, development-only) | `ui/scripts/scan-conventions.mjs` |
+| **Visible strings in the template** (skipping `src/kit/` and `src/verify/`, development-only) | `ui/scripts/scan-conventions.mjs` |
 | **`dark:` variant** (one theme) | `ui/scripts/scan-conventions.mjs` |
 | **Literal colour in a class** | `ui/scripts/scan-conventions.mjs` |
 | **Colour alpha modifier (`bg-x/50`)** | `ui/scripts/scan-conventions.mjs` |
