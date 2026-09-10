@@ -13,25 +13,34 @@ import SelectSection from './sections/SelectSection.vue'
 import KbdSection from './sections/KbdSection.vue'
 import SeparatorSection from './sections/SeparatorSection.vue'
 import SkeletonSection from './sections/SkeletonSection.vue'
+import TooltipSection from './sections/TooltipSection.vue'
+import PopoverSection from './sections/PopoverSection.vue'
+import CollapsibleSection from './sections/CollapsibleSection.vue'
+import { TooltipProvider } from '@/components/ui/tooltip'
 </script>
 
 <template>
-  <main
-    class="grid min-h-screen grid-cols-3 content-start items-start gap-4 bg-background p-8 text-foreground"
-  >
-    <ButtonSection />
-    <BadgeSection />
-    <CardSection />
-    <AlertSection />
-    <EmptySection />
-    <FieldSection />
-    <CheckboxSection />
-    <SwitchSection />
-    <ToggleGroupSection />
-    <TabsSection />
-    <SelectSection />
-    <KbdSection />
-    <SeparatorSection />
-    <SkeletonSection />
-  </main>
+  <TooltipProvider>
+    <main
+      class="grid min-h-screen grid-cols-3 content-start items-start gap-4 bg-background p-8 text-foreground"
+    >
+      <ButtonSection />
+      <BadgeSection />
+      <KbdSection />
+      <SeparatorSection />
+      <SkeletonSection />
+      <CardSection />
+      <AlertSection />
+      <EmptySection />
+      <FieldSection />
+      <CheckboxSection />
+      <SwitchSection />
+      <ToggleGroupSection />
+      <TabsSection />
+      <SelectSection />
+      <TooltipSection />
+      <PopoverSection />
+      <CollapsibleSection />
+    </main>
+  </TooltipProvider>
 </template>
