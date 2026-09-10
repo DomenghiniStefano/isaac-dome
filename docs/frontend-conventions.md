@@ -29,17 +29,26 @@ The rest of the document explains the reasoning and adds the details.
 
 ```
 ui/
+  components.json  shadcn-vue registry settings, written by hand (never `init`)
   src/
     components/
-      ui/          shadcn-vue primitives: they live in the repo and get modified
+      ui/          shadcn-vue primitives (reka-vega), dressed: they live in the repo
       <domain>/    app components, named for WHAT THEY ARE
     composables/
     stores/        Pinia, setup syntax
+    kit/           development-only Kit page: every primitive in every state (`#kit`)
     lib/
       ipc/         typed wrappers around Tauri commands — the only place with invoke()
-      constants/   magic strings: command names, storage keys
-    i18n/          it, en
+      constants/   magic strings: command names, dev routes, key names, placement
+      design/      themeKeys: the token names cn() reads from the theme CSS
+      cn.ts        class merging that knows our tokens
+    i18n/          it (the schema), en, locale, useMessages()
     assets/
+      main.css     imports only
+      theme/       one file per token family
+      base.css     document defaults, focus ring, scrollbar, reduced motion
+      utilities.css
+      fonts/
     App.vue
     main.ts
 ```
@@ -175,8 +184,10 @@ What the rule forbids isn't the second file, it's the **second place where the s
 is defined**. Two declarations with the same name don't produce an error: the last one
 loaded wins, and the first one stays there lying to whoever reads it.
 
-As long as the tokens fit on half a screen, they stay in `main.css`. The split happens
-when it helps find them, not before.
+The split happened with the design system (2026-09-10): `theme/colors.css`,
+`typography.css`, `spacing.css`, `radius.css`, `shadow.css`, `opacity.css`, `motion.css`.
+The values and the reasoning behind each are in
+`docs/superpowers/specs/2026-09-10-design-system-foundations-design.md`.
 
 Operational rules:
 
@@ -197,9 +208,25 @@ Operational rules:
   *unlockable now*, *locked* — plus *unknown* are semantic tokens, not shades picked case
   by case.
 
-Dark mode in v4 is no longer enabled with `darkMode: 'class'` in a config file: it
-requires an explicit variant in the CSS (`@custom-variant dark …`). The dark theme is the
-app's true default, not a variant: tokens are defined for dark and adapted for light.
+**One theme, the dark one.** Values live directly in `@theme`; there is no `.dark` class and
+no `@custom-variant dark`, and a `dark:` class is a scanner violation — without the custom
+variant, Tailwind's built-in `dark:` follows `prefers-color-scheme`, so a leftover would
+switch on with the Windows setting. A light theme later means moving the values of
+`theme/colors.css` to selectors and mapping them with `@theme inline`; no component class
+changes.
+
+**The default scales are off.** Every namespace we define is reset first
+(`--color-*: initial`, `--text-*`, `--font-*`, `--font-weight-*`, `--radius-*`, `--shadow-*`,
+`--ease-*`, `--animate-*`), so `bg-red-500`, `text-sm`, `rounded-md`, `font-bold`,
+`ease-in-out` and `animate-pulse` generate nothing. The static utilities survive
+(`bg-transparent`, `text-current`, `rounded-full`). Spacing keeps the default grid. The trap
+this creates is the old one in a new place: a class that doesn't exist emits nothing, so
+check the Kit page, not only the typecheck.
+
+**Motion runs on `steps()`.** `duration-tap|panel|sheet|loop` with `ease-tap|panel|sheet|frame`,
+and `animate-*` tokens for entrances; the default transition is `0ms` on `steps(1)`, so hover
+and active never lag. No exit animations. `prefers-reduced-motion` collapses everything to
+0ms in `base.css`.
 
 > The **values** of the tokens are set by the design system, not this document. Here we
 > only establish that they exist and that nobody writes a visual value anywhere else.
@@ -274,6 +301,12 @@ color. `color` is never passed as a prop; the container's text color is changed 
 The only prop worth passing is `absolute-stroke-width`, and only if an enlarged icon shows
 a disproportionate stroke.
 
+**Determination has no `→ ← ↑ ↓ ⏎ ⌘ ✓`** (measured on the font file). Written in source they
+fall back to whatever system font the machine has, so they are Lucide icons
+(`ArrowRightIcon`, `ArrowUpIcon`, `ArrowDownIcon`, `CornerDownLeftIcon`, `CheckIcon`), inside a
+`Kbd` for keys; the scanner rejects the glyphs. The font has one weight: emphasis is colour
+(`text-foreground` against `text-foreground-soft`), never `font-bold`.
+
 ## The IPC layer
 
 **`invoke()` never appears in a component.** Every Tauri command has a typed wrapper in
@@ -319,6 +352,24 @@ and Reka UI's headless primitives where the API requires the native element unde
 
 Practical rule: if you're writing `<button class="… hover:bg-…">`, stop and look for the
 primitive.
+
+### How a primitive is written
+
+- **From the registry, already dressed.** shadcn-vue 2.8.2, style `reka-vega`. Never
+  `shadcn-vue init` (it rewrites `main.css`); `pnpm dlx shadcn-vue@2.8.2 add <name> --view`
+  shows the registry version, `--diff` compares it with ours.
+- **Variants in `variants.ts`**, as `as const` objects keying the `cva` config; `index.ts`
+  re-exports them by name. Not in `index.ts`: a component that uses a constant as a prop
+  default would read it before `index.ts` has initialised it.
+- **State styling with `data-[state=…]`**: Reka sets `data-state="open"`, `"checked"`,
+  `"active"`, `"on"` and `data-highlighted`; the registry's `data-open:` classes need a
+  stylesheet we don't import.
+- **No `tw-animate-css`, no `opacity-50`, no `outline-none` on focusable elements** (the ring
+  comes from `base.css`), no `shadow-*`, no radius except `rounded-input`, `rounded-cell` and
+  `rounded-full`.
+- **`cn()` from `@/lib/cn`**: it knows our token names. Plain `twMerge` would read `text-body`
+  as a colour and drop it next to `text-foreground`.
+- Shared state between parts goes through a typed `InjectionKey`, never a string key.
 
 ---
 
@@ -369,14 +420,19 @@ false data instead of an error.
 - Item, character, and boss names **stay in English** even in Italian: they're the names
   that appear in the game and that the user searches by. They're not strings to translate,
   they're data.
-- `useI18n()` must also be called in the root component, otherwise children emit the
-  "Not found parent scope" warning.
+- **Components call `useMessages()`** from `@/i18n`, never `useI18n()` directly: vue-i18n's
+  own `t()` accepts any string, while `useMessages().t` only takes a key that exists in the
+  Italian schema (`i18n/messages/it.ts`). `en.ts` is typed against that schema, so a missing
+  English key is a compile error. `useMessages()` uses the global scope: no component needs a
+  local instance.
 
 ---
 
 ## TypeScript and Vue
 
 - **TypeScript strict**, always.
+- **`pnpm typecheck` is `vue-tsc --build --force`.** `ui/tsconfig.json` is a solution file;
+  `vue-tsc --noEmit` on it checks no file at all, and did so until 2026-09-10.
 - **`<script setup>` always**, never the Options API.
 - Pinia in **setup syntax**.
 - Always explicit exports, **never `export *`** (already applies to the whole project).
@@ -400,6 +456,12 @@ Exempt: pure presentation, configuration, static markup.
 This app's heavy logic lives in Rust and already has its own tests. On the frontend side,
 most of it is presentation: tests are needed where there's a decision, not where there's a
 grid.
+
+**Vitest** (`pnpm ui:test`, part of `scripts/check`) runs the frontend's logic: pure functions
+beside their module (`*.test.ts`). Type-level guarantees are probes checked by
+`pnpm typecheck` (`i18n/messageKey.typecheck.ts`). Presentation is checked on the Kit page
+(`pnpm ui:dev`, then `#kit`). Vitest doesn't load CSS unless `test.css.include` matches it:
+the theme files are listed there because `cn()` reads them.
 
 ---
 

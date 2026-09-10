@@ -157,8 +157,8 @@ pnpm wiki:build       # builds dataset/wiki.json
 
 **There's no CI**, by choice: the checks run here, and their list lives in one place,
 `scripts/check`. One command runs all of them — `cargo fmt`, `clippy`, the workspace's
-tests, `typecheck`, `lint`, `format:check` and the conventions scanner — without stopping
-at the first red, and it summarizes what failed at the end:
+tests, `typecheck`, `ui:test`, `lint`, `format:check` and the conventions scanner —
+without stopping at the first red, and it summarizes what failed at the end:
 
 ```
 pnpm check            # or: sh scripts/check
