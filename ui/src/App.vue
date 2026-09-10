@@ -22,6 +22,9 @@ import type {
 import { StepsBasis } from './lib/ipc/types'
 import { assertNever } from './lib/assertNever'
 import WikiBlocks from './components/WikiBlocks.vue'
+import { Button, ButtonVariant } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 
 const state = ref<SetupState | null>(null)
 const summary = ref<SaveSummary | null>(null)
@@ -35,7 +38,7 @@ const error = ref<IpcError | null>(null)
 // nested notes to eyeball.
 const wikiTarget = ref<Target>({ kind: 'item', id: 664 })
 const wikiEntryView = ref<Entry | null>(null)
-const wikiId = ref('664')
+const wikiId = ref<string | number>('664')
 
 const load = async () => {
   state.value = await setupState()
@@ -183,10 +186,10 @@ onMounted(() => load().catch(handleIpcError))
       <p>Active profile: {{ state.active.kind }}</p>
       <ul class="flex flex-col gap-1">
         <li v-for="c in state.candidates" :key="c.id">
-          <button class="underline" @click="choose(c.id)">
+          <Button :variant="ButtonVariant.Link" @click="choose(c.id)">
             {{ c.prefix }} slot {{ c.slot }} — {{ c.sizeBytes }} bytes
             <span v-if="c.suggested">(suggested)</span>
-          </button>
+          </Button>
         </li>
       </ul>
     </section>
@@ -278,17 +281,17 @@ onMounted(() => load().catch(handleIpcError))
         <p>{{ countsText(extraction.wiki.counts) }}</p>
       </template>
       <p v-else>dataset absent: {{ extraction.wiki.reason }}</p>
-      <label class="flex gap-2">
+      <Label class="w-fit">
         item id
-        <input
+        <Input
           v-model="wikiId"
-          class="border border-input bg-data"
+          class="w-40"
           @keyup.enter="
             Number.isFinite(Number(wikiId)) &&
             loadWiki({ kind: 'item', id: Number(wikiId) })
           "
         />
-      </label>
+      </Label>
       <template v-if="wikiEntryView">
         <h3 class="text-foreground">
           {{ wikiEntryView.title }} (revid {{ wikiEntryView.revid }})

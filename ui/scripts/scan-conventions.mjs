@@ -60,14 +60,9 @@ const isUnder = (file, dir) => relative(ROOT, file).startsWith(dir)
 const EXEMPTIONS = [
   {
     file: 'src/App.vue',
-    check: 'raw primitive <button>/<input>',
-    reason:
-      "declared verification page, to be replaced by the design system: the primitives don't exist yet",
-  },
-  {
-    file: 'src/App.vue',
     check: 'visible string in the template',
-    reason: 'same verification page: i18n arrives with the real frontend',
+    reason:
+      'declared verification page, replaced by the shell in cycle 3 of the design system: its text is deliberately left untranslated',
   },
   {
     file: 'src/components/WikiInline.vue',
