@@ -132,6 +132,11 @@ mode, both out of scope. Gold headings (`#BE8C32`) are `highlight`, as in cycle 
 The sidebar's width is **not** a token: it moves at runtime, and its bounds belong to the
 function that clamps it (see `shell/`). The template binds the width as a CSS variable.
 
+Two more, added after the Kit page review and the cleanup pass: `icon-compact` (22px, the tab
+strip's "+") in `theme/spacing.css`, and a new family file, **`theme/containers.css`**, with
+`--container-tab-narrow: 64px` for the squeezed tab's `@max-tab-narrow` query. A container
+size isn't a spacing token, so it doesn't sit in `spacing.css`.
+
 ### Typography — `theme/typography.css`
 
 - `text-kpi`: 26px / line height 1.
@@ -149,6 +154,8 @@ not hand styling. So:
 | size | classes (intent) | used by |
 |---|---|---|
 | `Micro` | 14px square, no border or padding, 8px icon | a tab's close |
+| `IconCompact` | 22px square (`icon-compact` spacing token), 12px icon | the tab strip's "+" (added in the cleanup pass: it overrode `Icon` with classes) |
+| `Section` | full height, `gap-1.75 px-3.25`, 14px icon | a navbar section (added in the cleanup pass: both call sites repeated the classes) |
 | `Row` | auto height, full width, start-aligned, `px-2.75 py-1.75`, `text-row` | sidebar items |
 | `Inline` | `inline` (not `inline-flex`: in a flex box the icon sets the baseline and lifts the label, found on the Kit page), auto height, no padding, baseline-aligned, `text-row` | wiki references in running text |
 | `Window` | full height, `w-window-control`, no border | window controls |
@@ -193,6 +200,10 @@ null`. Emits `select`, `close`.
 - **Squeezed** (found on the Kit page with nine tabs: icon, name and close need about 52px,
   the minimum is 34): the tab is a size container, and below `--container-tab-narrow`
   (64px) an inactive tab hides its close and the active one its icon; overflow is clipped.
+  A size container's content counts as zero width, so the tab also carries
+  `contain-intrinsic-inline-size: tab-max` (the `tab-intrinsic` utility) and a
+  `basis-tab-max` that only shrinks. Without it every tab collapsed to 34px even with three
+  tabs open — a regression of the first squeezed-tab fix, caught by the cleanup pass.
 
 **`TabStrip`** — the row of tabs. Props: `tabs: TabView[]`, `activeId`. Emits `select(id)`,
 `close(id)`, `move(from, to)`, `add`.
@@ -298,9 +309,11 @@ case here. Its `symbolFallback` is a backend concern (cycle 3).
 
 ### `kpi/`
 
-**`kpiBar(value, denominator): number | null`** — the bar's share in percent, or `null`
-when there's no declared denominator (`null`, not finite, or ≤ 0): "every KPI has a
-declared denominator or no bar". Built on `progressShares`.
+**`hasKpiBar(denominator): denominator is number`** — whether there is a bar at all: not
+without a declared denominator (`null`, not finite, or ≤ 0), because "every KPI has a
+declared denominator or no bar". The bar is the `Progress` primitive at
+`ProgressSize.Micro`, its fill `ProgressTone` chosen by a record over `KpiTone` (the cleanup
+pass replaced a first, hand-drawn bar and a `kpiBar` that computed the share a second time).
 
 **`KpiTile`** — Props: `value`, `denominator` (optional), `unit` (optional text shown
 instead of `/ denominator`), `label`, `tone: KpiTone` (`Progress`, `Done`, `Unknown`).
@@ -411,7 +424,9 @@ Vitest, test-first, expected values from this document:
   1; (3, 1, After) → 2; (2, 2, Before) → 2; (2, 2, After) → 2.
 - `editionLabel` — `[]` → `''`; `[repentance]` → `Repentance`; `[repentancePlus,
   afterbirth]` → `Afterbirth · Repentance+`; duplicates appear once.
-- `kpiBar` — (166, 368) → 166/368 × 100; (5, null) → null; (5, 0) → null; (500, 368) → 100.
+- `hasKpiBar` — 368 → true; `null` → false; 0 → false; `NaN` → false. The share itself is
+  the `Progress` primitive's, already tested through `progressShares` (the cleanup pass
+  replaced a hand-drawn bar with `Progress` at `ProgressSize.Micro`).
 - `cn` — `cn('tracking-nav', 'tracking-caps')` → `tracking-caps`; `themeKeys` reads the
   real typography file's tracking names.
 
@@ -423,7 +438,10 @@ production build is checked for the absence of the Kit page **and of any mark sp
 
 ```
 ui/src/
-  assets/theme/          colors.css spacing.css typography.css   (tokens above)
+  assets/theme/          colors.css spacing.css typography.css containers.css (tokens above)
+  assets/main.css                    imports containers.css
+  components/ui/progress/            variants.ts: ProgressSize, ProgressTone (the KPI bar)
+  lib/constants/aria.ts              AriaCurrent
   lib/design/themeKeys.ts (+ test)   Tracking namespace
   lib/cn.ts (+ test)                 tracking theme key
   lib/constants/app.ts               the product name
