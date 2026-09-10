@@ -7,7 +7,7 @@ import SkeletonSection from './sections/SkeletonSection.vue'
 
 <template>
   <main
-    class="grid min-h-screen grid-cols-3 items-start gap-4 bg-background p-8 text-foreground"
+    class="grid min-h-screen grid-cols-3 content-start items-start gap-4 bg-background p-8 text-foreground"
   >
     <ButtonSection />
     <KbdSection />
