@@ -6,6 +6,7 @@ import AlertSection from './sections/AlertSection.vue'
 import EmptySection from './sections/EmptySection.vue'
 import FieldSection from './sections/FieldSection.vue'
 import CheckboxSection from './sections/CheckboxSection.vue'
+import RadioGroupSection from './sections/RadioGroupSection.vue'
 import SwitchSection from './sections/SwitchSection.vue'
 import ToggleGroupSection from './sections/ToggleGroupSection.vue'
 import TabsSection from './sections/TabsSection.vue'
@@ -38,6 +39,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
       <EmptySection />
       <FieldSection />
       <CheckboxSection />
+      <RadioGroupSection />
       <SwitchSection />
       <ToggleGroupSection />
       <TabsSection />
