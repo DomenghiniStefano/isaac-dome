@@ -22,7 +22,9 @@ const icon = computed(() => tabOriginIcon[props.tab.origin])
 <template>
   <!-- Chrome e Stati.dc.html, "Stati della tab". The drop edge sits on the side the tab will
        land on (data-drop), not under the pointer. The close is out of the arrow-key order:
-       arrows move between tabs, not into them. -->
+       arrows move between tabs, not into them. A squeezed tab can't hold icon, name and
+       close: below tab-narrow an inactive tab drops its close and the active one its icon,
+       so nothing spills onto the neighbour. -->
   <div
     role="tab"
     :aria-selected="active"
@@ -30,7 +32,7 @@ const icon = computed(() => tabOriginIcon[props.tab.origin])
     :data-drop="drop ?? undefined"
     :class="
       cn(
-        'flex h-tab max-w-tab-max min-w-tab-min flex-1 basis-0 cursor-pointer items-center gap-1.5 border-x-2 border-t-2 border-b-0 border-transparent pr-1.5 pl-2 text-label text-subtle-foreground select-none data-[drop=after]:border-r-selection-edge data-[drop=before]:border-l-selection-edge',
+        '@container flex h-tab max-w-tab-max min-w-tab-min flex-1 basis-0 cursor-pointer items-center gap-1.5 overflow-hidden border-x-2 border-t-2 border-b-0 border-transparent pr-1.5 pl-2 text-label text-subtle-foreground select-none data-[drop=after]:border-r-selection-edge data-[drop=before]:border-l-selection-edge',
         active && 'border-t-primary bg-sheet text-foreground',
         dragging && 'opacity-disabled',
       )
@@ -42,7 +44,9 @@ const icon = computed(() => tabOriginIcon[props.tab.origin])
       :class="
         cn(
           'size-3 shrink-0',
-          active ? 'text-highlight' : 'text-faint-foreground',
+          active
+            ? 'text-highlight @max-tab-narrow:hidden'
+            : 'text-faint-foreground',
         )
       "
     />
@@ -51,6 +55,7 @@ const icon = computed(() => tabOriginIcon[props.tab.origin])
       :variant="ButtonVariant.Chrome"
       :size="ButtonSize.Micro"
       :aria-label="t('shell.closeTab')"
+      :class="active ? undefined : '@max-tab-narrow:hidden'"
       tabindex="-1"
       @pointerdown.stop
       @click.stop="emit('close')"

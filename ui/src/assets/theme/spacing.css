@@ -24,6 +24,9 @@
   --spacing-navbar: 38px;
   --spacing-brand: 150px;
   --spacing-search: 240px;
+  /* Below this width a tab can't hold its icon, name and close together: an inactive tab
+     drops the close, the active one the icon (@max-tab-narrow). */
+  --container-tab-narrow: 64px;
   /* The completion matrix: a 16px mark symbol at 2x in a 40px cell (cycle 2, Decision 7). */
   --spacing-mark-cell: 40px;
   --spacing-mark-symbol: 32px;
