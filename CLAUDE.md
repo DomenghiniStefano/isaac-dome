@@ -386,7 +386,7 @@ open blockers, and a session log. What follows is just the framing.
 M0 closed. M1 closed on the Rust side, structural base closed on 2026-09-05: static data
 normalized and IPC contracts fixed. M2 (the graph) closed on 2026-09-07 and M3's plan
 queue on 2026-09-08. **The design export arrived on 2026-09-10, and cycle 1 of the design
-system — tokens, font, `cn()`, i18n, 22 primitives on the development-only Kit page —
+system — tokens, font, `cn()`, i18n, 23 primitives on the development-only Kit page —
 landed the same day.**
 
 **The IPC contract is live.** It used to be a precaution — don't reshape the types for the
