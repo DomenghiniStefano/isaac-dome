@@ -24,7 +24,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     v-bind="forwarded"
     :class="
       cn(
-        'peer relative flex size-4 shrink-0 cursor-pointer items-center justify-center border border-input bg-data text-foreground disabled:cursor-not-allowed disabled:border-secondary disabled:bg-muted data-[state=checked]:border-selection-edge data-[state=checked]:bg-primary data-[state=indeterminate]:border-selection-edge data-[state=indeterminate]:bg-primary',
+        'peer relative flex size-4 shrink-0 cursor-pointer items-center justify-center border border-input bg-data text-foreground disabled:cursor-not-allowed disabled:border-secondary disabled:bg-muted disabled:text-faint-foreground enabled:data-[state=checked]:border-selection-edge enabled:data-[state=checked]:bg-primary enabled:data-[state=indeterminate]:border-selection-edge enabled:data-[state=indeterminate]:bg-primary',
         props.class,
       )
     "
@@ -38,7 +38,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
           class="size-3 animate-tap-in group-data-[state=indeterminate]:hidden"
         />
         <span
-          class="hidden h-0.5 w-2.5 bg-foreground group-data-[state=indeterminate]:block"
+          class="hidden h-0.5 w-2.5 bg-current group-data-[state=indeterminate]:block"
         />
       </slot>
     </CheckboxIndicator>
