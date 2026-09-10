@@ -24,11 +24,6 @@ const TAG = /<(?:[^>"']|"[^"]*"|'[^']*')*>/g
 // source they fall back to whatever system font the machine has.
 const MISSING_GLYPHS = /[→←↑↓⏎⌘✓]/
 
-// The check exists to protect what the font actually renders: a `//` comment never reaches
-// the user, so a chain written as prose ("Steam → game → saves") can't break on Determination
-// the way the same glyph in a template or a string literal would. Stripped before testing.
-const stripLineComments = (body) => body.replace(/\/\/.*$/gm, '')
-
 const hasScriptTagWithoutSetup = (body) =>
   [...body.matchAll(SCRIPT_TAG)].some(([, attrs]) => !SETUP_ATTR.test(attrs))
 
@@ -174,7 +169,7 @@ const checks = [
   },
   {
     name: 'glyph missing from Determination: use an icon',
-    test: (_f, body) => MISSING_GLYPHS.test(stripLineComments(body)),
+    test: (_f, body) => MISSING_GLYPHS.test(body),
   },
 ]
 
