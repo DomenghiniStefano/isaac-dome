@@ -50,6 +50,7 @@ fi
 cat "$output"
 
 run 'pnpm typecheck' pnpm typecheck
+run 'pnpm ui:test' pnpm ui:test
 run 'pnpm lint' pnpm lint
 run 'pnpm format:check' pnpm format:check
 run 'pnpm scan' pnpm scan

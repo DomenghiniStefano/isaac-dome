@@ -25,7 +25,7 @@ export interface CandidateView {
   pathHint: string
 }
 
-// Where the Steam → game → saves chain broke down. No fields: a plain string.
+// Where the Steam, game, saves chain broke down. No fields: a plain string.
 export const MissingReason = {
   SteamNotFound: 'steamNotFound',
   GameNotFound: 'gameNotFound',

@@ -32,9 +32,9 @@ The full project document is in `docs/PROJECT.md`.
   **TanStack Table** (filterable grids), **TanStack Virtual** (long lists: 733 items,
   642 achievements), Pinia, Vue Router, vue-i18n, Lucide (`@lucide/vue`, **not**
   `lucide-vue-next`, deprecated).
-  **Target stack, not today's**: `ui/` currently has only Vue, Vite, Tailwind and
-  `@tauri-apps/api` installed. The rest arrives with the design system, on purpose: adding
-  it earlier would mean guessing the tokens.
+  **Target stack, not all of it today's**: since the design system's first cycle
+  (2026-09-10) `ui/` has Vue, Vite, Tailwind, `@tauri-apps/api`, shadcn-vue on Reka UI,
+  Lucide, vue-i18n and Vitest. Pinia, Vue Router and TanStack arrive with the screens.
 - **Backend**: Rust inside Tauri 2. Crates: `steamlocate`, `winreg` (fallback),
   `keyvalues-parser`, `quick-xml`, `notify`, `rusqlite` (bundled), `serde`.
 - **Tooling**: pnpm, Git Flow with `develop` as the integration branch.
@@ -47,7 +47,7 @@ frontend knows nothing about offsets, file names, or log strings.
 `crates/app`, not `src-tauri`: every `tauri` command needs
 `--config crates/app/tauri.conf.json`, and the root scripts already do that (`pnpm dev`,
 `pnpm build`). The frontend is the pnpm workspace `ui/`; from the root, `pnpm typecheck`,
-`lint`, `scan`, `format:check` are pass-throughs to `ui/`.
+`lint`, `scan`, `format:check`, `ui:test` are pass-throughs to `ui/`.
 
 ## Modules
 
@@ -279,9 +279,8 @@ Five non-negotiable rules, the rest is in the document:
    imported from `main.css`, one per token family; what never gets duplicated is the
    token.
 3. **No `invoke()` in components** — only typed wrappers in `ui/src/lib/ipc/`.
-4. **No raw `<button>` / `<input>`** — use the primitives in `ui/src/components/ui/`
-   (folder still to be created, arrives with shadcn-vue), and extend them with a prop
-   instead of styling by hand.
+4. **No raw `<button>` / `<input>`** — use the primitives in `ui/src/components/ui/`, and
+   extend them with a prop instead of styling by hand.
 5. **No string unions** — `const X = { … } as const`, never `type X = 'a' | 'b'`. Also
    applies to the wire types in `ui/src/lib/ipc/types.ts`: there the distinction between
    value and discriminator is the *Rust* rule, which decides how it serializes, not how the
@@ -326,15 +325,16 @@ that never happens.
   the comparison.
 - Before declaring anything done: **`pnpm check`** (i.e. `scripts/check`), which runs
   `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings`, `cargo test --workspace`,
-  `pnpm typecheck`, `pnpm lint`, `pnpm format:check`, `pnpm scan`. **There's no CI**, by
-  choice: the list of commands lives in that script and nowhere else. The two fast ones also
-  run in the pre-commit hook (`git config core.hooksPath scripts/git-hooks`).
+  `pnpm typecheck`, `pnpm ui:test`, `pnpm lint`, `pnpm format:check`, `pnpm scan`. **There's
+  no CI**, by choice: the list of commands lives in that script and nowhere else. The two
+  fast ones also run in the pre-commit hook (`git config core.hooksPath scripts/git-hooks`).
 - Skips on real data print `skip: …` on stderr and pass, but **`cargo test` alone doesn't
   show them**: the harness hides output from passing tests. You need
   `cargo test --workspace -- --nocapture`, which is what `scripts/check` runs before
   counting lines. `samples/packed` is a junction to the installed game's `resources\packed`
   folder, and without it dozens of `unpack`, `catalog` and `ipc` tests skip silently.
-- Frontend: no test runner installed. Test-first rules apply once there's logic.
+- Frontend: Vitest (`pnpm ui:test`) for the logic in `ui/`, test-first like the Rust side;
+  presentation is checked on the development-only Kit page (`pnpm ui:dev`, `#kit`).
 
 ### Wiki dataset
 
@@ -385,8 +385,9 @@ open blockers, and a session log. What follows is just the framing.
 
 M0 closed. M1 closed on the Rust side, structural base closed on 2026-09-05: static data
 normalized and IPC contracts fixed. M2 (the graph) closed on 2026-09-07 and M3's plan
-queue on 2026-09-08. **The design package was handed over on 2026-09-09 and the design is
-under way.**
+queue on 2026-09-08. **The design export arrived on 2026-09-10, and cycle 1 of the design
+system — tokens, font, `cn()`, i18n, 23 primitives on the development-only Kit page —
+landed the same day.**
 
 **The IPC contract is live.** It used to be a precaution — don't reshape the types for the
 convenience of a screen that doesn't exist yet — and it is now a constraint with someone
@@ -397,9 +398,9 @@ committed**. Watch for the silent case: `core_save::Kind` crosses the boundary i
 variant changed the wire with the whole suite green (pinned since by
 `crates/ipc/tests/summary_shape.rs`).
 
-**`ui/` is still the verification page**, and the frontend code starts when the design
-system lands. Frontend conventions and their scanner exist already on purpose: a rule
-introduced before the code is free.
+**`ui/` is still the verification page, plus the Kit page.** App components are cycle 2,
+screens are cycle 3. Frontend conventions and their scanner exist already on purpose: a
+rule introduced before the code is free.
 
 The **wiki dataset** (crate `wiki`, tool `wiki-snapshot`, `dataset/`) is implemented,
 passed whole-branch review, and **merged into `develop`** on 2026-09-06.
