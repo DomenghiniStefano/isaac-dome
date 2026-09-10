@@ -5,6 +5,7 @@ import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import type { DropSide, TabView } from './tabs'
+import { TabRole } from './tabs'
 import { tabOriginIcon } from './tabOriginIcon'
 
 const props = defineProps<{
@@ -26,13 +27,13 @@ const icon = computed(() => tabOriginIcon[props.tab.origin])
        close: below tab-narrow an inactive tab drops its close and the active one its icon,
        so nothing spills onto the neighbour. -->
   <div
-    role="tab"
+    :role="TabRole"
     :aria-selected="active"
     :tabindex="active ? 0 : -1"
     :data-drop="drop ?? undefined"
     :class="
       cn(
-        '@container flex h-tab max-w-tab-max min-w-tab-min flex-1 basis-0 cursor-pointer items-center gap-1.5 overflow-hidden border-x-2 border-t-2 border-b-0 border-transparent pr-1.5 pl-2 text-label text-subtle-foreground select-none data-[drop=after]:border-r-selection-edge data-[drop=before]:border-l-selection-edge',
+        '@container flex h-tab max-w-tab-max min-w-tab-min shrink grow-0 basis-tab-max cursor-pointer items-center gap-1.5 overflow-hidden border-x-2 border-t-2 border-b-0 border-transparent pr-1.5 pl-2 text-label text-subtle-foreground select-none tab-intrinsic data-[drop=after]:border-r-selection-edge data-[drop=before]:border-l-selection-edge',
         active && 'border-t-primary bg-sheet text-foreground',
         dragging && 'opacity-disabled',
       )
@@ -50,7 +51,9 @@ const icon = computed(() => tabOriginIcon[props.tab.origin])
         )
       "
     />
-    <span class="min-w-0 flex-1 truncate">{{ tab.label }}</span>
+    <span class="min-w-0 flex-1 truncate @max-tab-narrow:hidden">{{
+      tab.label
+    }}</span>
     <Button
       :variant="ButtonVariant.Chrome"
       :size="ButtonSize.Micro"
