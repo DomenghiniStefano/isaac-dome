@@ -16,6 +16,10 @@ export interface TabView {
   origin: TabOrigin
 }
 
+// The ARIA role a tab's root carries. TabItem sets it and TabStrip finds tabs by it, so the
+// two can't drift apart.
+export const TabRole = 'tab'
+
 export const DropSide = { Before: 'before', After: 'after' } as const
 export type DropSide = (typeof DropSide)[keyof typeof DropSide]
 
