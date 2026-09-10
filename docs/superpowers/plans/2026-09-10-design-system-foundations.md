@@ -4213,7 +4213,7 @@ Replace `ui/src/kit/KitPage.vue`'s template so the whole page sits inside one `T
 <template>
   <TooltipProvider>
     <main
-      class="grid min-h-screen grid-cols-3 items-start gap-4 bg-background p-8 text-foreground"
+      class="grid min-h-screen grid-cols-3 content-start items-start gap-4 bg-background p-8 text-foreground"
     >
       <ButtonSection />
       <BadgeSection />
