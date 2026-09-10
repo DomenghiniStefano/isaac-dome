@@ -41,6 +41,8 @@
   --color-secondary-hover: #492e20;
   --color-secondary-edge: #6c4437;
   --color-selection-edge: #fc0000;
+  /* The dot of a chosen radio: the edge's red, a different job. */
+  --color-selection-mark: #fc0000;
   --color-destructive-surface: #2a0b08;
   --color-tooltip: #492e20;
   /* The alpha lives here, never in a class. */
