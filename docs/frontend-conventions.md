@@ -365,9 +365,12 @@ and Reka UI's headless primitives where the API requires the native element unde
 Practical rule: if you're writing `<button class="… hover:bg-…">`, stop and look for the
 primitive.
 
-**The extensions that exist** (cycle 2): `ButtonSize.Micro` (a tab's close), `Row` (sidebar
-items), `Inline` (a wiki reference in running text — `inline`, not `inline-flex`, or an icon
-sets the baseline), `Window` (window controls), `Compact` (the search trigger);
+**The extensions that exist** (cycle 2): `ButtonSize.Micro` (a tab's close), `IconCompact`
+(the tab strip's "+"), `Row` (sidebar items), `Inline` (a wiki reference in running text —
+`inline`, not `inline-flex`, or an icon sets the baseline), `Window` (window controls),
+`Compact` (the search trigger), `Section` (a navbar section, full height);
+`Progress` takes `size` (`Default`, `Micro` for the KPI bar) and `tone` (`Primary`, `Done`,
+`Muted`);
 `ButtonVariant.Nav`, `Section`, `Ref`, `Chrome`, `ChromeDanger`, `Field`. A size only sizes
 and a variant only colours: cva writes size classes after variant classes, so a height inside
 a variant loses. The collapsible card is a set of Card parts (`CardCollapsible`,
