@@ -4,6 +4,7 @@ import BadgeSection from './sections/BadgeSection.vue'
 import CardSection from './sections/CardSection.vue'
 import AlertSection from './sections/AlertSection.vue'
 import EmptySection from './sections/EmptySection.vue'
+import FieldSection from './sections/FieldSection.vue'
 import KbdSection from './sections/KbdSection.vue'
 import SeparatorSection from './sections/SeparatorSection.vue'
 import SkeletonSection from './sections/SkeletonSection.vue'
@@ -18,6 +19,7 @@ import SkeletonSection from './sections/SkeletonSection.vue'
     <CardSection />
     <AlertSection />
     <EmptySection />
+    <FieldSection />
     <KbdSection />
     <SeparatorSection />
     <SkeletonSection />
