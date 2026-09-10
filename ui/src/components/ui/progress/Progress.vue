@@ -5,7 +5,7 @@ import { reactiveOmit } from '@vueuse/core'
 import { ProgressIndicator, ProgressRoot } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '@/lib/cn'
-import { progressShares } from './progressShares'
+import { progressShares, progressBounds } from './progressShares'
 
 const props = withDefaults(
   defineProps<
@@ -21,7 +21,15 @@ const props = withDefaults(
   },
 )
 
-const delegatedProps = reactiveOmit(props, 'class', 'unknown')
+const delegatedProps = reactiveOmit(
+  props,
+  'class',
+  'unknown',
+  'modelValue',
+  'max',
+)
+
+const bounds = computed(() => progressBounds(props.modelValue ?? 0, props.max))
 
 const shares = computed(() =>
   progressShares(props.modelValue ?? 0, props.unknown, props.max),
@@ -38,6 +46,8 @@ const shareVariables = computed(() => ({
   <ProgressRoot
     data-slot="progress"
     v-bind="delegatedProps"
+    :model-value="bounds.value"
+    :max="bounds.max"
     :style="shareVariables"
     :class="
       cn(
