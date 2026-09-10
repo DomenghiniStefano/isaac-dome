@@ -1,0 +1,16 @@
+/* Padding and gaps use Tailwind's 4px grid. Named tokens exist only for dimensions that
+   mean something. */
+@theme {
+  /* Table rows, Chrome e Stati.dc.html "Densità": normal is the kit's default. */
+  --spacing-row: 30px;
+  --spacing-row-compact: 24px;
+  --spacing-row-wide: 40px;
+  /* Height of button, input, select; side of an icon button. */
+  --spacing-control: 34px;
+  --spacing-scrollbar: 12px;
+  /* The game's icons are 32x32 native: doubled, they stay sharp. */
+  --spacing-sprite: 4rem;
+  /* Achievement icons are painted 263x176 images, not pixel art:
+     at half their native size they stay readable without going mushy. */
+  --spacing-achievement: 5.5rem;
+}
