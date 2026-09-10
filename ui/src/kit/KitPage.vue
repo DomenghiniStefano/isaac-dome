@@ -9,6 +9,7 @@ import CheckboxSection from './sections/CheckboxSection.vue'
 import SwitchSection from './sections/SwitchSection.vue'
 import ToggleGroupSection from './sections/ToggleGroupSection.vue'
 import TabsSection from './sections/TabsSection.vue'
+import SelectSection from './sections/SelectSection.vue'
 import KbdSection from './sections/KbdSection.vue'
 import SeparatorSection from './sections/SeparatorSection.vue'
 import SkeletonSection from './sections/SkeletonSection.vue'
@@ -28,6 +29,7 @@ import SkeletonSection from './sections/SkeletonSection.vue'
     <SwitchSection />
     <ToggleGroupSection />
     <TabsSection />
+    <SelectSection />
     <KbdSection />
     <SeparatorSection />
     <SkeletonSection />
