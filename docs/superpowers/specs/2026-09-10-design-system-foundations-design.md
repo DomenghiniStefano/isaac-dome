@@ -3,7 +3,7 @@
 **Date:** 2026-09-10
 **Milestone:** design system (`docs/STATUS.md`, "Design system"), cycle 1 of 3
 **Depends on:** the Claude Design export of 2026-09-10 (`IsaacDome design system.zip`), `DESIGN-BRIEF.md`, `docs/frontend-conventions.md`
-**Status:** design agreed in conversation (scope, token naming, theme, colour rules, primitive list); pending spec review
+**Status:** design agreed in conversation (scope, token naming, theme, colour rules, primitive list); revised the same day after the planning spike (see "Verified during planning")
 
 ## What this is
 
@@ -66,9 +66,9 @@ Consequences:
   A second theme later is a change inside `theme/colors.css` alone — move the values to
   selectors, map them with `@theme inline` — and no component class changes.
 - **`@custom-variant dark` leaves `main.css`, and `dark:` becomes a scanner violation.**
-  This isn't tidiness: without the custom variant, Tailwind v4's built-in `dark:` follows
-  `prefers-color-scheme`, so a `dark:` class left over from a shadcn component would switch
-  on by itself on a Windows machine set to dark mode.
+  This isn't tidiness: without the custom variant, Tailwind v4's built-in `dark:` compiles
+  to `@media (prefers-color-scheme: dark)` (measured on 4.3.3), so a `dark:` class left over
+  from a shadcn component would switch on by itself on a Windows machine set to dark mode.
 
 ## Decision 2 — shadcn's role names, plus the roles shadcn doesn't have
 
@@ -93,15 +93,18 @@ Every namespace we define is **reset before it is defined**:
   --font-weight-*: initial;
   --radius-*: initial;
   --shadow-*: initial;
+  --ease-*: initial;
+  --animate-*: initial;
 }
 ```
 
-With the defaults gone, `bg-red-500`, `text-sm`, `rounded-md`, `shadow-xs` and `font-bold`
-**generate nothing**. The rule "never a literal colour, never an off-system size" stops
-being discipline and becomes the absence of the class. `--spacing` stays on (the
-conventions keep the default 4px grid), and so do the static utilities (`bg-transparent`,
-`border-transparent`, `text-current`, `rounded-full`), which are not theme values — to be
-confirmed on tailwindcss 4.3 during planning.
+With the defaults gone, `bg-red-500`, `text-sm`, `rounded-md`, `shadow-xs`, `font-bold`,
+`ease-in-out` and `animate-pulse` **generate nothing**. The rule "never a literal colour,
+never an off-system size, never a continuous curve" stops being discipline and becomes the
+absence of the class. `--spacing` stays on (the conventions keep the default 4px grid).
+Measured on tailwindcss 4.3.3: the static utilities survive the resets (`bg-transparent`,
+`bg-current`, `border-transparent`, `text-current`, `rounded-full`, `rounded-none`), and
+`--transition-duration-*` and `--opacity-*` do generate `duration-*` and `opacity-*`.
 
 The export's own `@theme` draft can't be pasted for the same reason: `--state-done`,
 `--surface-sheet`, `--selected`, `--radius`, `--row-h` and `--m-tap` sit outside any
@@ -125,7 +128,7 @@ Files under `ui/src/assets/theme/`, one per family, imported at the top of `main
 | `primary` / `primary-foreground` | `#901800` / `#F2ECEC` | default button; selected tab, toggle, checked control |
 | `secondary` / `secondary-foreground` | `#3A251D` / `#F2ECEC` | secondary button, raised surface |
 | `muted` / `muted-foreground` | `#241812` / `#BFB2AC` | disabled surface / helper text and icons |
-| `accent` / `accent-foreground` | `#3A251D` / `#F2ECEC` | hover of ghost buttons and list items |
+| `accent` / `accent-foreground` | `#3A251D` / `#F2ECEC` | hover of list items (kept for primitives added later) |
 | `destructive` / `destructive-foreground` | `#FC0000` / `#E8C4BF` | invalid field, error alert / text on the error surface |
 | `border` | `#5A3A2C` | border of sheet, card, table |
 | `input` | `#8A5A46` | border of fields and controls |
@@ -190,7 +193,8 @@ The kit's sizes win over `Tokens.dc.html`'s table (28 / 17 / 15), which no compo
 drawn with. Sizes are in px because Determination is a pixel font and its crispness is
 tied to whole pixels.
 
-`--font-pixel: 'Determination', monospace`, set as the document's default family.
+`--font-pixel: 'Determination', monospace`, set as the document's default family through
+`--default-font-family`, the variable preflight reads.
 
 ### Spacing — `theme/spacing.css`
 
@@ -216,11 +220,15 @@ height, 34px, for all of them.
 `radius-cell: 2px`, `radius-input: 4px`. Paper, cards, buttons and panels have **no radius**
 (no class); chips use `rounded-full`.
 
+### Shadows — `theme/shadow.css`
+
+Only the reset: the skin is flat ("bordo pixel piatto"), and the kit draws no shadow.
+
 ### Motion — `theme/motion.css`
 
 | token | value | used for |
 |---|---|---|
-| `--default-transition-duration` | `0ms` | a bare `transition-*` class is instant, so hover and active can't lag behind by default |
+| `--default-transition-duration` / `--default-transition-timing-function` | `0ms` / `steps(1)` | a bare `transition-*` class is instant, and never a smooth curve |
 | `duration-tap` / `ease-tap` | 80ms / `steps(2)` | checkbox tick, switch thumb |
 | `duration-panel` / `ease-panel` | 120ms / `steps(3)` | popover, select, tooltip, collapsible, chevron rotation |
 | `duration-sheet` / `ease-sheet` | 200ms / `steps(5)` | dialog |
@@ -230,13 +238,13 @@ Animations are `--animate-*` tokens composed from the tokens above, with their k
 the same file: `animate-tap-in`, `animate-panel-rise`, `animate-panel-drop`,
 `animate-panel-open`, `animate-sheet-rise`, `animate-skeleton`. Every translation is a
 multiple of 4px; no scale, no blur, no easing curve. There are **no exit animations**:
-Reka unmounts immediately when no animation is running, and `Motion.dc.html` draws
+Reka unmounts immediately when no new animation starts, and `Motion.dc.html` draws
 entrances only.
 
 `prefers-reduced-motion: reduce` sets every animation and transition to 0ms and loops to a
 single iteration — "loops become static, entrances instant", as the Motion page asks.
 
-`--opacity-muted` and `--opacity-disabled` stay as they are.
+`--opacity-muted` and `--opacity-disabled` stay as they are, in `theme/opacity.css`.
 
 ### Utilities — `assets/utilities.css`
 
@@ -270,39 +278,57 @@ belongs to the About screen (cycle 3); the files travel from now.
 - **One focus ring for the whole app**, in the base layer rather than on each component:
   `:focus-visible { outline: 2px solid var(--color-ring); outline-offset: 2px }`. Rows set
   a negative offset so the ring doesn't push their neighbours. shadcn's
-  `focus-visible:ring-[3px] ring-ring/50` classes go in the dressing.
+  `focus-visible:ring-3 ring-ring/50` and `outline-none` classes go in the dressing.
 - **Scrollbar always visible, 12px**, flat thumb with an edge, track darker than the sheet —
-  written with `::-webkit-scrollbar` only. WebView2 is Chromium, and Chromium ignores the
-  `::-webkit-scrollbar` rules on any element that also sets `scrollbar-width` or
-  `scrollbar-color`: the export sets both, which would give a thin overlay-like bar instead
-  of the 12px one it draws. To be confirmed in planning.
-- Document defaults: `font-family` from `--font-pixel`, `text-body`, `bg-background`,
-  `text-foreground`, `font-synthesis-weight: none`.
+  written with `::-webkit-scrollbar` only. WebView2 is Chromium, and since Chrome 121 the
+  `::-webkit-scrollbar` rules are ignored on any element whose `scrollbar-width` or
+  `scrollbar-color` isn't the initial value: the export sets both, which would give a thin
+  bar instead of the 12px one it draws.
+- Document defaults: `font-synthesis-weight: none`, `text-body` size and line height,
+  `bg-background`, `text-foreground`.
 
-## Decision 7 — primitives come from the CLI and are dressed in a second commit
+## Decision 7 — primitives are shadcn-vue's, written already dressed
 
-Each primitive is added with `shadcn-vue add` and **committed untouched**, then dressed in a
-separate commit: tokens instead of shadcn's classes, our animations instead of
+The primitives are **shadcn-vue 2.8.2, style `reka-vega`** (the current successor of the
+`new-york` style the export names), read from the registry and **written into the repo in
+their dressed form**: tokens instead of shadcn's classes, our animations instead of
 `tw-animate-css`, no `opacity-50`, no `rounded-*`, no `dark:`, no `shadow-*`, strings through
-i18n, variants as constants.
+i18n, variants as constants. What the planning spike changed from the first draft of this
+decision:
 
-- Reka's accessibility wiring (focus trap, ARIA, keyboard) stays as its maintainers wrote
-  it.
-- The git history keeps a readable diff "shadcn → IsaacDome" per primitive. When shadcn-vue
-  updates a component, `add --overwrite` on a branch shows exactly which lines were ours.
+- **No `shadcn-vue init`.** On this workspace it rewrites `main.css` wholesale — a
+  `:root`/`.dark` palette, an `@import url('https://fonts.googleapis.com/…Inter…')` and
+  `@import "tw-animate-css"` — against Decisions 1, 3 and 5. `components.json` is written by
+  hand (`style: reka-vega`, `iconLibrary: lucide`, `utils: @/lib/cn`); `add` with a
+  hand-written `components.json` leaves `main.css` untouched.
+- **No "untouched first, dressed second" pair of commits.** The pre-commit hook runs
+  `pnpm scan`, and the 22 primitives as the registry ships them carry 38 violations; a commit
+  that exists to be red can't pass the hook, and hooks are never skipped. The upstream
+  reference stays one command away: `pnpm dlx shadcn-vue@2.8.2 add <name> --diff` shows the
+  registry's version against ours.
+- **The dependencies are installed with pnpm at the versions the spike ran** (`reka-ui`
+  2.10.4, `@vueuse/core` 14.4.0, `@lucide/vue` 1.44.0, `class-variance-authority` 0.7.1,
+  `clsx` 2.1.1, `tailwind-merge` 3.6.0), not through the CLI's own install step.
+- **State styling uses `data-[state=…]`.** Reka UI sets `data-state="open"`,
+  `data-state="checked"`, `data-highlighted`; the `vega` registry classes use `data-open:`,
+  `data-checked:`, which only work with shadcn's base stylesheet, which we don't import.
 - **`tw-animate-css` is not installed.** Its utilities animate with continuous easing
-  (`fade-in`, `zoom-in-95`), the opposite of `Motion.dc.html`. Its class names left behind
-  in a component would generate nothing without warning, so the scanner forbids them.
+  (`fade-in`, `zoom-in-95`), the opposite of `Motion.dc.html`; its class names left behind
+  would generate nothing without warning, so the scanner forbids them.
+- **Parts no screen uses are not written**: `DialogScrollContent`, `CommandSeparator`,
+  `CommandShortcut`, `SelectSeparator`, `TableCaption`, `TableEmpty`, `EmptyHeader`,
+  `AlertAction`, `CardDescription`, `PopoverAnchor/Description/Header`, most `Field*` parts,
+  and the `input-group`, `textarea` and `toggle` components the registry pulls in as
+  dependencies (`CommandInput` is written without `InputGroup`, `ToggleGroup` carries its
+  own variants).
 
-`components.json` points `utils` at `@/lib/cn` (not a catch-all `utils.ts`), and `ui/` gains
-the `@/` alias in `tsconfig.app.json` and `vite.config.ts`, which the CLI requires. The
-style name to pass (`new-york` in the export, `vega` in the current CLI documentation, the
-two pages of shadcn-vue's docs disagreeing) is read from the installed CLI's `--help`.
+`ui/` gains the `@/` alias in `tsconfig.app.json`, `tsconfig.json` (where the CLI looks for
+it) and `vite.config.ts`.
 
 ## Decision 8 — variants are constants, never strings
 
-A variant is an `as const` object exported from the primitive's `index.ts`, and the `cva`
-configuration is keyed by it:
+A variant is an `as const` object in the primitive's **`variants.ts`**, and the `cva`
+configuration is keyed by it; `index.ts` re-exports it by name.
 
 ```ts
 export const ButtonVariant = {
@@ -324,6 +350,12 @@ export const buttonVariants = cva('…', {
 })
 ```
 
+The separate file isn't style. The registry defines variants in `index.ts`, which also
+re-exports the `.vue` files; a component that uses a constant as a prop default
+(`withDefaults(…, { variant: BadgeVariant.Tag })`) evaluates it while `index.ts` is still
+importing that component, and the constant isn't initialised yet. `variants.ts` imports
+nothing from the folder, so the cycle can't form.
+
 Consumers write `:variant="ButtonVariant.Outline"`. A literal `variant="outline"` on a
 primitive is a scanner violation. The same shape covers every closed set in this cycle:
 
@@ -332,56 +364,125 @@ primitive is a scanner violation. The same shape covers every closed set in this
 | `ButtonVariant`, `ButtonSize` | `components/ui/button` | see catalogue |
 | `BadgeVariant` | `components/ui/badge` | see catalogue |
 | `AlertVariant` | `components/ui/alert` | `Default`, `Destructive` |
-| `ToggleSize` | `components/ui/toggle-group` | `Default`, `Icon` |
+| `FieldOrientation` | `components/ui/field` | `Vertical`, `Horizontal` |
+| `CheckboxState` | `components/ui/checkbox` | `Checked`, `Unchecked`, `Indeterminate` |
+| `ToggleSize`, `ToggleGroupType` | `components/ui/toggle-group` | `Default`, `Icon`; `Single`, `Multiple` |
+| `SelectPosition` | `components/ui/select` | `Popper`, `ItemAligned` |
 | `TableDensity` | `components/ui/table` | `Compact`, `Normal`, `Wide` |
-| `Locale` | `i18n/` | `It`, `En` |
-| `ThemeNamespace` | `lib/design/` | the namespaces `cn()` must know |
-| `DevRoute` | `lib/constants/` | `Kit: '#kit'` |
-| `KeyName` | `lib/constants/` | `Ctrl`, `Esc`, … — key caps are data, not translations |
+| `Orientation`, `Align`, `Side` | `lib/constants/placement.ts` | Reka's orientation and floating placement |
+| `Locale` | `i18n/locale.ts` | `It`, `En` |
+| `ThemeNamespace` | `lib/design/themeKeys.ts` | the namespaces `cn()` must know |
+| `DevRoute` | `lib/constants/devRoutes.ts` | `Kit: '#kit'` |
+| `KeyName` | `lib/constants/keyNames.ts` | `Ctrl`, `K`, `Esc` — key caps are data, not translations |
 
 Anything shared through `provide`/`inject` uses a typed `InjectionKey` symbol exported from
-the module that owns it, never a string key.
+the module that owns it, never a string key (the registry's `ToggleGroup` provides under the
+string `'toggleGroup'`; ours doesn't).
 
 ## Decision 9 — `cn()` knows our tokens, and learns them from the CSS
 
 shadcn's `cn()` is `twMerge(clsx(…))` with no configuration. With our tokens that **silently
-drops classes**: tailwind-merge doesn't know `text-body` is a size, reads it as a colour, and
-`cn('text-body', 'text-foreground')` keeps only the second. Buttons would lose their font
+drops classes** — measured: tailwind-merge's text-size validator only accepts t-shirt sizes,
+its colour validator accepts anything, so `text-body` is read as a colour and
+`cn('text-body', 'text-foreground')` returns `text-foreground`. Buttons would lose their font
 size the moment a consumer passes a colour.
 
 `lib/cn.ts` builds the merger with `extendTailwindMerge`, registering every custom value of
-every namespace we define. **The lists are not written in TypeScript**: `lib/design/themeKeys.ts`
-reads them from the theme files themselves (`import typography from '@/assets/theme/typography.css?raw'`),
-through a pure function `themeKeys(css, namespace)`. The CSS stays the one place a token is
-declared. A TypeScript copy would be a second place, and the conventions forbid exactly
-that.
+every namespace we define — `theme.text`, `font`, `spacing`, `radius`, `ease`, `animate`, and
+`classGroups.duration` (tailwind-merge has no duration theme key). **The lists are not written
+in TypeScript**: `lib/design/themeKeys.ts` reads them from the theme files themselves
+(`import typography from '@/assets/theme/typography.css?raw'`), through a pure function
+`themeKeys(css, namespace)`. The CSS stays the one place a token is declared; a TypeScript copy
+would be a second place, and the conventions forbid exactly that.
 
-## Decision 10 — i18n arrives now
+Two measured details: Vite's `?raw` keeps the CSS source in a production build; **Vitest, by
+default, hands a `?raw` CSS import an empty string**, so `test.css.include` lists the theme
+files.
+
+## Decision 10 — i18n arrives now, with keys the compiler checks
 
 vue-i18n in composition mode, with `it` and `en` as TypeScript modules: `it.ts` defines the
-messages, `export type MessageSchema = typeof it`, and `en.ts` is typed `MessageSchema`. A key
-missing from either language, or a key misspelled in `t()`, **fails `vue-tsc`**. Alignment of
-the two files is a compile error, not a review note.
+messages, `export type MessageSchema = typeof it`, and `en.ts` is typed `MessageSchema`, so a
+key missing from English fails `vue-tsc`.
+
+**vue-i18n's own `t()` accepts any string** — measured: `useI18n<{ message: MessageSchema }>()`
+still compiles `t('ui.nope')`. So components never call it directly: `useMessages()` wraps it,
+and its `t` takes a `MessageKey<MessageSchema>`, the union of every dotted path to a string in
+the schema. A misspelled key is a compile error. A committed type probe
+(`i18n/messageKey.typecheck.ts`, with a `@ts-expect-error` on a missing key) keeps that true:
+if `MessageKey` ever widens to `string`, the directive goes unused and the typecheck fails.
 
 The initial locale comes from a pure `resolveLocale(navigator.languages)`: the first language
 we have, English otherwise. The settings preference arrives with the Settings screen.
+`useMessages()` uses the global scope, so no component needs a local i18n instance.
 
 In this cycle the messages are few — the accessible labels primitives render themselves
-(`ui.close`, …). `useI18n()` is called in the root component, as the conventions require.
+(`ui.close`).
 
 ## Decision 11 — the Kit page
 
 A development-only page, `src/kit/KitPage.vue` with one `src/kit/sections/<Primitive>Section.vue`
-per primitive, shows **every primitive in every state side by side** — the way
-`Shadcn Kit Light.dc.html` lays states out instead of hiding them behind interaction —
-so it can be compared with the export page by eye.
+per primitive and a `KitSection.vue` frame, shows **every primitive in every state side by
+side** — the way `Shadcn Kit Light.dc.html` lays states out instead of hiding them behind
+interaction — so it can be compared with the export page by eye.
 
 - Mounted by `main.ts` only when `import.meta.env.DEV` and the hash is `DevRoute.Kit`,
-  through a dynamic import the production build eliminates.
+  through a dynamic import the production build eliminates (measured: no Kit module in
+  `dist`).
 - `src/kit/` is declared **development-only** in the scanner: it is excused from the
-  visible-string check, and only from that one, with the reason written in the script. That
-  is one declared rule, not one exemption per section file.
-- Sample content (item names are data) lives in `src/kit/samples.ts`.
+  visible-string check, and only from that one, with the reason written in the script. Kit
+  labels are plain text in the templates; every other rule — constants for variants, no
+  literal colours — applies there too.
+
+## Decision 12 — what already exists moves in the same cycle
+
+With the default scales switched off, today's classes stop generating, silently. So the
+migration belongs to this cycle, not to the next:
+
+- **`pnpm typecheck` becomes `vue-tsc --build --force`.** Found in planning: `ui/tsconfig.json`
+  is a solution file (`"files": []` plus `references`), and `vue-tsc --noEmit` on it checks
+  **no file at all** — a deliberate type error passes with exit 0. In build mode the same error
+  is caught. Run on today's repo, build mode reports 0 errors, so the fix is the script alone.
+  `build` uses the same command.
+- **`main.css`** keeps only `@import 'tailwindcss'`, the theme files, `base.css` and
+  `utilities.css`. `--color-mark-*` disappear (the states replace them); `@custom-variant
+  dark` goes.
+- **`App.vue`** (verification page): `font-mono text-sm` → the document default;
+  `text-lg font-bold` → `text-heading`; `font-bold` → `text-foreground`; `border` →
+  `border border-input bg-data`; `text-mark-*` → the state foregrounds and `destructive`. Its
+  raw `<button>` and `<input>` become `Button` and `Input`, and **its "primitives don't exist
+  yet" exemption is deleted**, because the reason stops being true. Its visible-strings
+  exemption stays, with the reason reworded: the page is replaced by the shell in cycle 3.
+- **`WikiInline.vue`** and **`WikiBlocks.vue`**: `font-bold` → `text-foreground`; `italic`
+  stays. `WikiInline`'s raw-button exemption stays: the wiki link becomes a component in
+  cycle 2.
+- **ESLint**: `vue/multi-word-component-names` off for `src/components/ui/**/*.vue` only,
+  with a comment. shadcn's files are named `Button.vue`, `Badge.vue` (24 errors measured on
+  the registry files): the rule exists to avoid clashing with HTML elements, and a folder of
+  primitives is exactly where single words belong.
+
+## Decision 13 — the scanner learns what this cycle introduces
+
+New checks in `ui/scripts/scan-conventions.mjs`, each added as a row of the conventions'
+enforcement table in the same commit:
+
+| check | pattern (heuristic, as the existing ones) | why |
+|---|---|---|
+| `dark:` variant | `dark:` at the start of a class | one theme; the built-in variant follows the OS |
+| literal colour in a class | `[#…]`, `[rgb(`, `[hsl(`, `[oklch(` | colours are tokens |
+| colour alpha modifier | a colour utility followed by `/<number>` | alpha lives in a token (`overlay`), not in a class |
+| `tw-animate-css` class | `animate-in`, `fade-in`, `zoom-in`, `slide-in-from`… | the package isn't installed: the class would do nothing |
+| literal variant on a primitive | `variant="…"`, `size="…"`, `density="…"`, `orientation="…"` outside `src/components/ui/` | variants are constants |
+| glyph missing from Determination | `→ ← ↑ ↓ ⏎ ⌘ ✓` | they fall back to a system font; use the icon |
+
+Two changes to existing behaviour:
+
+- **The visible-string heuristic skips quoted attribute values.** It stripped tags with
+  `<[^>]*>`, which ends at the first `>` — inside a class like `has-[>svg]:grid-cols-2` — and
+  left the rest of the class list behind as "visible text": 8 false positives on the registry
+  files.
+- **`src/kit/` is the declared development-only directory**, excused from the visible-string
+  check alone (Decision 11).
 
 ## Primitive catalogue
 
@@ -391,132 +492,108 @@ kit's, expressed in the tokens above.
 | primitive | parts | variants and states | where it serves |
 |---|---|---|---|
 | **Button** | `Button` | `ButtonVariant`: Default (`primary`, edge `primary-edge`, hover/active tokens) · Secondary (`secondary`, edge `secondary-edge`, hover `secondary-hover` + edge `input`, active `band`) · Outline (transparent, edge `input`, hover `secondary`) · Ghost (transparent edge, hover `secondary` + `secondary-edge`) · Link (`highlight`, underlined). `ButtonSize`: Default (`h-control`, `px-4`, `text-control`) · Icon (`size-control`). Disabled: `muted` surface, `faint-foreground`, edge `secondary`. No radius. | everywhere |
-| **Badge** | `Badge` | `BadgeVariant`. **State** variants are pills (`rounded-full`, `text-caption`) and **carry their own icon**, so a state is never colour alone: Done ✓ `Check` · Now `Star` · Blocked `Lock` · Unknown `?` on `hatch-unknown` · Unexpected `TriangleAlert`. **Tag** variants are square (`text-control`): Tag (`data`, edge `input`) · Challenge (`challenge`). The icon per variant is an exhaustive record, not a switch with a default. | Unlock, Next steps, Plan, wiki |
+| **Badge** | `Badge` | `BadgeVariant`. **State** variants are pills (`rounded-full`, `text-caption`) and **carry their own mark**, so a state is never colour alone: Done `Check` · Now `Star` · Blocked `Lock` · Unknown `?` on `hatch-unknown` · Unexpected `TriangleAlert`. **Tag** variants are square (`text-control`): Tag (`data`, edge `input`) · Challenge (`challenge`). The mark per variant is an exhaustive record, not a switch with a default. | Unlock, Next steps, Plan, wiki |
 | **Card** | `Card`, `CardHeader`, `CardTitle`, `CardAction`, `CardContent`, `CardFooter` | body `card`, edge `border`; header is the `band` strip; footer separated by `hairline` | Next steps, active profile |
 | **Alert** | `Alert`, `AlertTitle`, `AlertDescription` | `AlertVariant`: Default (`data`, edge `border`, icon `highlight`) · Destructive (`destructive-surface`, edge `destructive`, text `destructive-foreground`). Not dismissable: diagnostics don't go away by clicking. | setup chain, `noCatalog`, `storeUnavailable` |
-| **Dialog** | `Dialog`, `DialogContent`, `DialogHeader`, `DialogTitle`, `DialogFooter` | backdrop `overlay`; body `sheet`, edge `input`, `animate-sheet-rise`; header is the `band` strip with a close icon button labelled `ui.close` | the `Ctrl+K` palette |
-| **Command** | `Command`, `CommandInput`, `CommandList`, `CommandGroup`, `CommandItem`, `CommandEmpty`, **`CommandFooter`** (ours) | `popover`, edge `input`; group heading `text-label` `subtle-foreground`; highlighted item `secondary`; the footer carries the count and key hints drawn with `Kbd` and icons | global search |
-| **Tooltip** | `Tooltip`, `TooltipTrigger`, `TooltipContent` | `tooltip`, edge `input`, `text-caption`, `animate-panel-rise`, no arrow | KPI explanations, "blocked by 2" |
-| **Popover** | `Popover`, `PopoverTrigger`, `PopoverContent`, **`PopoverTitle`** (ours) | `popover`, edge `input`, `animate-panel-rise`; the title is the `band` strip | profile indicator → change profile |
+| **Dialog** | `Dialog`, `DialogTrigger`, `DialogClose`, `DialogContent`, `DialogOverlay`, `DialogHeader`, `DialogTitle`, `DialogDescription`, `DialogFooter` | backdrop `overlay`; body `sheet`, edge `input`, `animate-sheet-rise`; header is the `band` strip with a close control labelled `ui.close` | the `Ctrl+K` palette |
+| **Command** | `Command`, `CommandDialog`, `CommandInput`, `CommandList`, `CommandGroup`, `CommandItem`, `CommandEmpty`, **`CommandFooter`** (ours) | `popover`, edge `input`; input row with a search icon, no `InputGroup`; group heading `text-label` `subtle-foreground`; highlighted item `secondary`; the footer carries key hints drawn with `Kbd` and icons; `CommandDialog` takes `title` and `description` as required props (no English defaults) | global search |
+| **Tooltip** | `Tooltip`, `TooltipTrigger`, `TooltipContent`, `TooltipProvider` | `tooltip`, edge `input`, `text-caption`, `animate-panel-rise`, no arrow | KPI explanations, "blocked by 2" |
+| **Popover** | `Popover`, `PopoverTrigger`, `PopoverContent`, `PopoverTitle` | `popover`, edge `input`, `animate-panel-rise`, aligned to the trigger's start; the title is the `band` strip | profile indicator → change profile |
 | **Tabs** | `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent` | list underlined by `border`; active trigger `primary`, inactive `muted-foreground`; content `data`, edge `border` without top | settings, grouped panels |
-| **Toggle group** | `ToggleGroup`, `ToggleGroupItem` | one edge `secondary-edge` around, dividers between items; on = `primary`; `ToggleSize`: Default · Icon | All / Missing / Done; sprite / paper |
-| **Checkbox** | `Checkbox` | 16px, `data`, edge `input`; checked `primary` + `selection-edge`, tick `animate-tap-in`; indeterminate is a bar; disabled `muted` | Unlock facets, table selection |
+| **Toggle group** | `ToggleGroup`, `ToggleGroupItem` | one edge `secondary-edge` around, dividers between items; on = `primary`; `ToggleSize`: Default · Icon, provided to items through an injection key | All / Missing / Done; sprite / paper |
+| **Checkbox** | `Checkbox` | 16px, `data`, edge `input`; checked `primary` + `selection-edge`, tick `animate-tap-in`; indeterminate is a bar, switched by `data-state` in CSS; disabled `muted` | Unlock facets, table selection |
 | **Switch** | `Switch` | square, 34×18, thumb 12px; on `primary` + `selection-edge`, thumb `foreground`; off `data`, thumb `faint-foreground`; thumb moves with `duration-tap ease-tap` | settings toggles |
-| **Select** | `Select`, `SelectTrigger`, `SelectValue`, `SelectContent`, `SelectGroup`, `SelectLabel`, `SelectItem` | trigger `h-control`, `data`, edge `input`, `rounded-input`, chevron rotates with `duration-panel ease-panel`; content `animate-panel-drop`; selected tick in `foreground` — **not** the done green the kit uses | "sort by" |
+| **Select** | `Select`, `SelectTrigger`, `SelectValue`, `SelectContent`, `SelectGroup`, `SelectLabel`, `SelectItem`, scroll buttons | trigger `h-control`, `data`, edge `input`, `rounded-input`, chevron rotates with `duration-panel ease-panel`; content below the trigger (`SelectPosition.Popper`), `animate-panel-drop`; selected tick in `foreground` — **not** the done green the kit uses | "sort by" |
 | **Input** | `Input` | `h-control`, `data`, edge `input`, `rounded-input`, `text-body`, placeholder `faint-foreground`; `aria-invalid` → edge `destructive`; disabled `muted` | search field, folder chosen by hand |
-| **Field / Label** | `Label`, `Field`, `FieldLabel`, `FieldDescription`, `FieldError` | label `text-caption foreground-soft`; description `muted-foreground`; error `foreground` beside the red field edge | settings, manual folder |
-| **Table** | `Table`, `TableHeader`, `TableBody`, `TableRow`, `TableHead`, `TableCell`, `TableFooter` | `data`, edge `border`; header the `band` strip, `text-label`; rows `text-row`, divided by `hairline`, alternate `row-alt`, hover `row-hover`, focus ring inset; `TableDensity` on `Table` sets `h-row-compact` / `h-row` / `h-row-wide` for every row through an injection key | Unlock, Collection, profile candidates |
-| **Progress** | `Progress` | `modelValue`, `max`, **`unknown`**: a filled `primary` segment, then a `hatch-unknown` segment for what can't be read, then empty. Widths go through CSS variables bound from the template, computed by a pure `progressShares` | marks started over readable |
+| **Field / Label** | `Label`, `Field`, `FieldLabel`, `FieldDescription`, `FieldError` | label `text-caption foreground-soft`; description `muted-foreground`; error `foreground` beside the red field edge; `FieldOrientation` | settings, manual folder |
+| **Table** | `Table`, `TableHeader`, `TableBody`, `TableRow`, `TableHead`, `TableCell`, `TableFooter` | `data`, edge `border`; header the `band` strip, `text-label`; rows `text-row`, divided by `hairline`, alternate `row-alt`, hover `row-hover`, focus ring inset; `TableDensity` on `Table` reaches `TableBody` through an injection key and sets the body rows to `h-row-compact` / `h-row` / `h-row-wide` | Unlock, Collection, profile candidates |
+| **Progress** | `Progress` | `modelValue`, `max`, **`unknown`**: a filled `primary` segment, then a `hatch-unknown` segment for what can't be read, then empty. Widths go through CSS variables bound from the template, computed by a pure `progressShares` beside the component | marks started over readable |
 | **Skeleton** | `Skeleton` | `animate-skeleton` between `secondary` and `secondary-hover`; the consumer gives the size | loading (brief §10: skeleton, not spinner) |
-| **Separator** | `Separator` | `border` colour, 1px | panels |
-| **Collapsible** | `Collapsible`, `CollapsibleTrigger`, `CollapsibleContent` | chevron rotates 90° with `duration-panel ease-panel`; content `animate-panel-open` | collapsible card, facets drawer |
+| **Separator** | `Separator` | `border` colour, 1px, horizontal or vertical | panels |
+| **Collapsible** | `Collapsible`, `CollapsibleTrigger`, `CollapsibleContent` | content `animate-panel-open`; the consumer's chevron rotates 90° on the trigger's `data-state` with `duration-panel ease-panel` | collapsible card, facets drawer |
 | **Kbd** | `Kbd`, `KbdGroup` | edge `secondary-edge`, `text-label`; arrow and enter keys are Lucide icons at `size-3` | `Ctrl K`, key hints |
 | **Empty** | `Empty`, `EmptyMedia`, `EmptyTitle`, `EmptyDescription`, `EmptyContent` | dashed edge `secondary-edge`, `data`; icon `faint-foreground`; title `text-heading`; description `text-row muted-foreground`; actions are Outline buttons | no results; no steps without a catalogue |
 
 Out of this cycle, because no screen uses them: Calendar, Range calendar, Pin input, Tags
 input, Carousel, Chart, Stepper, Slider, Number field, Menubar, Context menu, Dropdown menu,
 Drawer, Sheet, Alert dialog, Pagination (lists are virtualised), Breadcrumb, Avatar, Hover
-card, Accordion, Sonner, Spinner, Sidebar (cycle 2 draws its own: shadcn's can't be resized
-by dragging), Scroll area (the always-visible native bar replaces it).
-
-## Decision 12 — what already exists moves in the same cycle
-
-With the default scales switched off, today's classes stop generating, silently. So the
-migration belongs to this cycle, not to the next:
-
-- **`main.css`** keeps only `@import 'tailwindcss'`, the theme files, `base.css` and
-  `utilities.css`. `--color-mark-*` disappear (the states replace them); `@custom-variant
-  dark` goes.
-- **`App.vue`** (verification page): `font-mono text-sm` → the document default;
-  `text-lg font-bold` → `text-heading`; `font-bold` → `text-foreground`; `border` →
-  `border border-border`; `text-mark-*` → the state foregrounds and `destructive`. Its raw
-  `<button>` and `<input>` become `Button` and `Input`, and **its "primitives don't exist yet"
-  exemption is deleted**, because the reason stops being true. Its visible-strings exemption
-  stays, with the reason reworded: the page is replaced by the shell in cycle 3.
-- **`WikiInline.vue`**: `font-bold` → `text-foreground`; `italic` stays. Its raw-button
-  exemption stays: the wiki link becomes a component in cycle 2.
-- **ESLint**: `vue/multi-word-component-names` off for `src/components/ui/**` only, with a
-  comment. shadcn's files are named `Button.vue`, `Badge.vue`: the rule exists to avoid
-  clashing with HTML elements, and a folder of primitives is exactly where single words
-  belong.
-
-## Decision 13 — the scanner learns what this cycle introduces
-
-New checks in `ui/scripts/scan-conventions.mjs`, each added as a row of the conventions'
-enforcement table in the same commit:
-
-| check | pattern (heuristic, as the existing ones) | why |
-|---|---|---|
-| `dark:` variant | `\bdark:` | one theme; the built-in variant follows the OS |
-| literal colour in a class | `\[#[0-9a-fA-F]{3,8}\]`, `\[(rgb|hsl|oklch)\(` | colours are tokens |
-| colour alpha modifier | a colour utility followed by `/<number>` | alpha lives in a token (`overlay`), not in a class |
-| `tw-animate-css` class | `\b(animate-(in|out)|fade-(in|out)|zoom-(in|out)|slide-(in|out)-from)` | the package isn't installed: the class would do nothing |
-| literal variant on a primitive | `\s(variant|size|density)="[a-z]` outside `src/components/ui/` | variants are constants |
-| glyph missing from Determination | `[→←↑↓⏎⌘✓]` | they fall back to a system font; use the icon |
-
-Plus the declared development-only directory, `src/kit/`, excused from the visible-string
-check alone (Decision 11).
+card, Accordion, Sonner, Spinner, Textarea, Input group, Sidebar (cycle 2 draws its own:
+shadcn's can't be resized by dragging), Scroll area (the always-visible native bar replaces
+it).
 
 ## Testing
 
 The frontend has its first logic, so it gets its first test runner: **Vitest**, `pnpm ui:test`
 at the root, run by `scripts/check`. Test-first, with expectations from the spec:
 
-- `themeKeys(css, namespace)` — returns the names declared in that namespace; skips the
-  `--x-*: initial` reset; skips sub-properties (`--text-body--line-height`); ignores other
-  namespaces; on the real `typography.css`, contains `body` and `caption`.
-- `cn()` — `cn('text-body', 'text-foreground')` keeps both (size and colour); `cn('text-body',
-  'text-caption')` keeps the second; `cn('h-row', 'h-control')` keeps the second;
-  `cn('rounded-input', 'rounded-cell')` keeps the second; `cn('bg-primary', 'bg-secondary')`
-  keeps the second.
-- `resolveLocale(languages)` — `['it-IT', 'en']` → it; `['de-DE', 'en-GB']` → en; `['de']` →
-  en; `[]` → en.
-- `progressShares(value, unknown, max)` — shares add up to at most 100; negative inputs clamp
-  to zero; value plus unknown beyond max clamps; `max = 0` gives zeros, never `NaN`.
+- `themeKeys(css, namespace)` — returns the names declared in that namespace, once each; skips
+  the `--x-*: initial` reset; keeps multi-word names (`row-compact`); reads the hyphenated
+  `transition-duration` namespace; ignores references (`var(--text-body)`), other namespaces
+  (`--color-text-muted`) and look-alikes (`--default-transition-duration`); on the real theme
+  files, reads the source (`@theme` present) and finds the declared names in order.
+- `cn()` — `cn('text-body', 'text-foreground')` keeps both (size and colour); a later size,
+  spacing token, radius, colour, duration, easing or animation replaces the earlier one;
+  falsy inputs drop out.
+- `resolveLocale(languages)` — `['it-IT', 'en']` → it; `['de-DE', 'en-GB']` → en; `['IT']` →
+  it; `['de']` → en; `[]` → en.
+- `MessageKey<MessageSchema>` — a compile-time probe run by `pnpm typecheck`: an existing key
+  is accepted, a missing one is rejected.
+- `progressShares(value, unknown, max)` — shares of `max` in percent; negative inputs clamp to
+  zero; a value beyond max clamps and leaves no room for unknown; unknown gets only the room the
+  value leaves; `max = 0` gives zeros, never `NaN`.
 
 What stays visual: the dressing of each primitive, checked on the Kit page against
 `Shadcn Kit.dc.html`, and `pnpm check` green (typecheck, lint, format, scan, tests). The
-production build is checked once for the absence of the Kit page's chunk.
+production build is checked for the font asset and the absence of the Kit page.
 
 ## Files
 
 ```
 ui/
   components.json
+  eslint.config.js                  multi-word rule off for components/ui
+  tsconfig.json, tsconfig.app.json  the @/ alias
+  vite.config.ts                    the @/ alias, Vitest (theme CSS loaded as source)
   src/
     assets/
-      main.css                  imports only
-      base.css                  document defaults, focus ring, scrollbar, reduced motion
-      utilities.css             pixelated, hatch-placeholder, hatch-unknown
+      main.css                      imports only
+      base.css                      document defaults, focus ring, scrollbar, reduced motion
+      utilities.css                 pixelated, hatch-placeholder, hatch-unknown
       theme/
-        colors.css  typography.css  spacing.css  radius.css  motion.css  opacity.css
-      fonts/determination/      determination.ttf, license.txt, readme.txt
-    components/ui/<primitive>/  index.ts (parts, variant constants) + Part.vue files
+        colors.css  typography.css  spacing.css  radius.css  shadow.css  opacity.css  motion.css
+      fonts/determination/          determination.ttf, license.txt, readme.txt
+    components/ui/<primitive>/      index.ts (named re-exports), variants.ts where there are
+                                    variants, Part.vue files
+    components/ui/progress/         + progressShares.ts, progressShares.test.ts
     i18n/
-      index.ts                  createI18n, Locale, resolveLocale
+      index.ts                      createI18n, useMessages
+      locale.ts (+ .test.ts)        Locale, resolveLocale
+      messageKey.ts                 MessageKey<T>
+      messageKey.typecheck.ts       compile-time probe
       messages/it.ts  en.ts
     kit/
-      KitPage.vue  samples.ts  sections/<Primitive>Section.vue
+      KitPage.vue  KitSection.vue  sections/<Primitive>Section.vue
     lib/
-      cn.ts
-      design/themeKeys.ts  progressShares.ts  (+ .test.ts beside each)
-      constants/devRoutes.ts  keyNames.ts
+      cn.ts (+ .test.ts)
+      design/themeKeys.ts (+ .test.ts)
+      constants/devRoutes.ts  keyNames.ts  placement.ts
 ```
 
 ## Documents updated by this cycle
 
 - `docs/frontend-conventions.md` — one theme; namespaces reset; the token families and
   their files; motion and reduced motion; the font rules (missing glyphs, no synthetic
-  bold); variant constants; `cn()` and why its lists come from CSS; the Kit page; the new
-  scanner rows; `src/kit/` and `lib/design/` in the structure.
+  bold); variant constants in `variants.ts`; `cn()` and why its lists come from CSS;
+  `useMessages()`; Vitest; the Kit page; the new scanner rows; the structure of `ui/`.
 - `CLAUDE.md` — the "target stack, not today's" paragraph (shadcn-vue, Reka, Lucide,
-  vue-i18n, Vitest installed; Pinia, Router, TanStack still to come) and `pnpm ui:test` among
-  the pass-throughs.
-- `docs/STATUS.md` — the design system section and the session log.
-- `docs/BACKLOG.md` — a new entry for the 13 problems of the export's `design-export.md`
-  (untrimmed sprites, no trim/pivot, Delirium on another sheet, guessed tiers, paired
-  papers, paths with spaces, co-op sheet holes, boss portraits by position, base64 icons…):
-  they belong to `crates/design-export` and to cycle 2's matrix cell, not to this cycle.
+  vue-i18n, Vitest installed; Pinia, Router, TanStack still to come), `pnpm ui:test` among the
+  pass-throughs and in the `pnpm check` list, the frontend test line.
+- `docs/STATUS.md` — the design system section and the session log, including the typecheck
+  that checked nothing.
+- `docs/BACKLOG.md` — B10, the 13 problems of the export's `design-export.md` (untrimmed
+  sprites, no trim/pivot, Delirium on another sheet, guessed tiers, paired papers, paths with
+  spaces, co-op sheet holes, boss portraits by position, base64 icons…): they belong to
+  `crates/design-export` and to cycle 2's matrix cell, not to this cycle.
 
 ## Handed back to design
 
@@ -555,37 +632,49 @@ back to Claude Design so the next export starts from them:
     page's note on which cells are unreadable predates 2026-09-08 (today: Mother and The
     Beast for The Forgotten and the 19, 40 cells).
 
-## Verified during planning, before any code relies on it
+## Verified during planning (2026-09-10)
 
-Each point is checked against the official documentation or by making the tool answer, not
-assumed:
+A throwaway copy of `ui/` in the session scratchpad, not the repo. Each point was checked by
+making the tool answer:
 
-1. tailwindcss 4.3: namespace resets keep the static utilities (`bg-transparent`,
-   `border-transparent`, `text-current`, `rounded-full`); `--default-font-family` and
-   `--default-transition-duration` are the variables preflight and transitions read;
-   `@keyframes` inside `@theme`; `--transition-duration-*` and `--opacity-*` generate
-   `duration-*` and `opacity-*` (the conventions say verified on 4.3.3, a documentation lookup
-   of 2026-09-10 didn't list them: build and look); theme variables referenced only from plain
-   CSS (`base.css`, `utilities.css`) are emitted.
-2. shadcn-vue CLI: the style name, `init` on an existing Vite workspace with `utils` aliased
-   to `@/lib/cn`, and what it rewrites in `main.css` (writing `components.json` by hand is the
-   fallback).
-3. tailwind-merge (the version shadcn-vue installs): the `extendTailwindMerge` theme keys for
-   text sizes, radius, spacing, easing and animations.
-4. Vite: `?raw` on a CSS file returns the source untransformed; `url()` in an imported theme
-   file resolves the font.
-5. WebView2/Chromium: `::-webkit-scrollbar` precedence against `scrollbar-width` and
-   `scrollbar-color`.
-6. eslint-plugin-vue: `multi-word-component-names` in `flat/essential`; TypeScript 6: `paths`
-   without `baseUrl`.
-7. Reka UI v2: the data attributes the dressing relies on (`data-state`, `data-highlighted`,
-   `data-disabled`) per primitive.
-8. vue-i18n: the typed-schema API of the current major version.
+1. **tailwindcss 4.3.3**: with `--color-*`, `--text-*`, `--font-*`, `--font-weight-*`,
+   `--radius-*`, `--shadow-*` reset, `bg-red-500`, `text-sm`, `font-bold`, `shadow-xs`,
+   `text-white`, `bg-black` emit nothing, while `bg-transparent`, `bg-current`,
+   `border-transparent`, `text-current`, `rounded-full`, `rounded-none` survive; custom
+   `text-body`, `rounded-input`, `h-row`, `duration-tap`, `ease-tap`, `opacity-muted`,
+   `animate-tap-in` emit; `@keyframes` inside `@theme` emit; a theme variable referenced only
+   from a base-layer rule or an `@utility` is emitted; `--default-font-family` is what
+   preflight reads; `dark:` without a custom variant compiles to
+   `@media (prefers-color-scheme: dark)`.
+2. **tailwind-merge 3.6.0**: default `cn('text-body', 'text-foreground')` → `text-foreground`;
+   with `extend.theme` (`text`, `spacing`, `radius`, `ease`, `animate`, `font`) and
+   `extend.classGroups.duration`, every case of the test list resolves as specified.
+3. **shadcn-vue 2.8.2**: styles are `vega, nova, maia, lyra, mira` (no `new-york`); `init`
+   rewrites `main.css` as described in Decision 7; `add` with a hand-written `components.json`
+   doesn't touch `main.css`; the 22 primitives pull in `input-group`, `textarea` and `toggle`,
+   produce 24 `multi-word-component-names` errors and 38 scanner violations.
+4. **Reka UI 2.10.4**: `data-state` on Checkbox indicator (`checked/unchecked/indeterminate`),
+   Switch thumb (`checked/unchecked`), Toggle (`on/off`), Select trigger (`open/closed`, plus
+   `data-placeholder`), Tabs trigger (`active/inactive`), Collapsible trigger (`open/closed`);
+   Listbox item `data-highlighted`, `data-disabled`, `data-state`; no `data-open` or
+   `data-checked` attribute anywhere in the package.
+5. **Vite 8 / Vitest 5**: `?raw` on a theme CSS keeps the source in a production build; Vitest
+   returns `''` for it unless `test.css.include` matches the file; `url()` in an imported theme
+   file resolves the font into `dist/assets`; the Kit page behind `import.meta.env.DEV` is
+   absent from `dist`.
+6. **vue-tsc 3.3 / TypeScript 6**: `vue-tsc --noEmit` on the solution `tsconfig.json` exits 0
+   with a deliberate type error; `vue-tsc --build --force` reports it; on the repo as it stands,
+   build mode reports 0 errors. `paths` without `baseUrl` resolves `@/`.
+7. **vue-i18n 11.4.10**: `createI18n<[MessageSchema], Locale, false>` accepts a locale type
+   derived from an `as const` object; `useI18n<{ message: MessageSchema }>()`'s `t` accepts an
+   unknown key; the `MessageKey` wrapper rejects it; `en: MessageSchema` rejects a missing key.
+8. **Chromium ≥ 121** ignores `::-webkit-scrollbar` on elements with a non-initial
+   `scrollbar-width`/`scrollbar-color` (Chrome's scrollbar-styling documentation).
 
 ## Out of scope for this cycle
 
 - The light theme.
 - App components (cycle 2) and screens, shell, Pinia, Vue Router, TanStack (cycle 3).
 - Primitives not in the catalogue.
-- The export pack's problems (`docs/BACKLOG.md` entry above).
+- The export pack's problems (`docs/BACKLOG.md`, B10).
 - Committing the export zip: it contains the game's sprites.
