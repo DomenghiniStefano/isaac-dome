@@ -21,6 +21,14 @@ import DialogSection from './sections/DialogSection.vue'
 import CommandSection from './sections/CommandSection.vue'
 import TableSection from './sections/TableSection.vue'
 import ProgressSection from './sections/ProgressSection.vue'
+import TitleBarSection from './sections/app/TitleBarSection.vue'
+import NavBarSection from './sections/app/NavBarSection.vue'
+import SectionSidebarSection from './sections/app/SectionSidebarSection.vue'
+import KpiTileSection from './sections/app/KpiTileSection.vue'
+import MarkCellSection from './sections/app/MarkCellSection.vue'
+import WikiSection from './sections/app/WikiSection.vue'
+import DataStateSection from './sections/app/DataStateSection.vue'
+import CollapsibleCardSection from './sections/app/CollapsibleCardSection.vue'
 import { TooltipProvider } from '@/components/ui/tooltip'
 </script>
 
@@ -51,6 +59,17 @@ import { TooltipProvider } from '@/components/ui/tooltip'
       <CommandSection />
       <TableSection />
       <ProgressSection />
+      <h1 class="col-span-3 mt-6 text-heading text-highlight">
+        Componenti app
+      </h1>
+      <TitleBarSection />
+      <NavBarSection />
+      <SectionSidebarSection />
+      <KpiTileSection />
+      <MarkCellSection />
+      <DataStateSection />
+      <WikiSection />
+      <CollapsibleCardSection />
     </main>
   </TooltipProvider>
 </template>
