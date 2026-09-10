@@ -1,5 +1,11 @@
 {
   "files": [],
+  // Repeated here only because the shadcn-vue CLI looks for the alias in this file.
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
