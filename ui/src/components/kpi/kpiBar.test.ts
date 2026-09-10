@@ -1,20 +1,20 @@
 import { describe, expect, it } from 'vitest'
-import { kpiBar } from './kpiBar'
+import { hasKpiBar } from './kpiBar'
 
-describe('kpiBar', () => {
-  it('is the share of the declared denominator, in percent', () => {
-    expect(kpiBar(166, 368)).toBeCloseTo((166 / 368) * 100)
+describe('hasKpiBar', () => {
+  it('draws a bar against a declared denominator', () => {
+    expect(hasKpiBar(368)).toBe(true)
   })
 
-  it('has no bar without a denominator', () => {
-    expect(kpiBar(5, null)).toBeNull()
+  it('draws no bar without a denominator', () => {
+    expect(hasKpiBar(null)).toBe(false)
   })
 
-  it('has no bar against a denominator of zero', () => {
-    expect(kpiBar(5, 0)).toBeNull()
+  it('draws no bar against a denominator of zero', () => {
+    expect(hasKpiBar(0)).toBe(false)
   })
 
-  it('never passes a full bar', () => {
-    expect(kpiBar(500, 368)).toBe(100)
+  it('draws no bar against a denominator that is not a number', () => {
+    expect(hasKpiBar(Number.NaN)).toBe(false)
   })
 })

@@ -5,3 +5,4 @@ export {
   defaultProgressMax,
 } from './progressShares'
 export type { ProgressShares, ProgressBounds } from './progressShares'
+export { ProgressSize, ProgressTone } from './variants'

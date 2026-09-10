@@ -1,0 +1,7 @@
+/* Container sizes, for @container queries: a component reacts to its own width, not the
+   window's. */
+@theme {
+  /* Below this width a tab can't hold its icon, name and close together: an inactive tab
+     drops the close, the active one the icon (@max-tab-narrow). */
+  --container-tab-narrow: 64px;
+}

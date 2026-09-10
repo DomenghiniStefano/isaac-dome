@@ -5,7 +5,7 @@ import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import type { Cell } from '@/lib/ipc/types'
 import type { MarkArt } from './markVisual'
-import { MarkTier, markVisual } from './markVisual'
+import { MarkTier, markBarShare, markVisual } from './markVisual'
 
 const props = defineProps<{
   cell: Cell
@@ -27,11 +27,10 @@ const symbol = computed(() => {
   return v.tier === MarkTier.Hard ? props.art.hard : props.art.normal
 })
 
-// The fallback's bar: a third for the normal mark, two thirds for the hard one.
+// The fallback's bar height travels as a CSS variable, read by h-(--mark-bar).
 const barHeight = computed(() => {
   const v = visual.value
-  if (v.kind !== 'marked') return { '--mark-bar': '0%' }
-  return { '--mark-bar': v.tier === MarkTier.Hard ? '66.667%' : '33.333%' }
+  return { '--mark-bar': v.kind === 'marked' ? markBarShare[v.tier] : '0%' }
 })
 
 const accessibleName = computed(() => {

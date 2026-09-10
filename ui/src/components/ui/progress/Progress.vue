@@ -6,11 +6,15 @@ import { ProgressIndicator, ProgressRoot } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '@/lib/cn'
 import { progressShares, progressBounds } from './progressShares'
+import type { ProgressSize, ProgressTone } from './variants'
+import { progressIndicatorVariants, progressVariants } from './variants'
 
 const props = withDefaults(
   defineProps<
     ProgressRootProps & {
       unknown?: number
+      size?: ProgressSize
+      tone?: ProgressTone
       class?: HTMLAttributes['class']
     }
   >(),
@@ -18,6 +22,8 @@ const props = withDefaults(
     modelValue: 0,
     max: 100,
     unknown: 0,
+    size: undefined,
+    tone: undefined,
   },
 )
 
@@ -27,6 +33,8 @@ const delegatedProps = reactiveOmit(
   'unknown',
   'modelValue',
   'max',
+  'size',
+  'tone',
 )
 
 const bounds = computed(() => progressBounds(props.modelValue ?? 0, props.max))
@@ -49,16 +57,11 @@ const shareVariables = computed(() => ({
     :model-value="bounds.value"
     :max="bounds.max"
     :style="shareVariables"
-    :class="
-      cn(
-        'flex h-3.5 w-full overflow-hidden border border-input bg-data',
-        props.class,
-      )
-    "
+    :class="cn(progressVariants({ size }), props.class)"
   >
     <ProgressIndicator
       data-slot="progress-indicator"
-      class="h-full w-(--progress-value) bg-primary"
+      :class="progressIndicatorVariants({ tone })"
     />
     <div
       data-slot="progress-unknown"

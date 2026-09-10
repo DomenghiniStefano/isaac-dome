@@ -20,11 +20,13 @@ export type ButtonVariant = (typeof ButtonVariant)[keyof typeof ButtonVariant]
 export const ButtonSize = {
   Default: 'default',
   Icon: 'icon',
+  IconCompact: 'iconCompact',
   Micro: 'micro',
   Row: 'row',
   Inline: 'inline',
   Window: 'window',
   Compact: 'compact',
+  Section: 'section',
 } as const
 export type ButtonSize = (typeof ButtonSize)[keyof typeof ButtonSize]
 
@@ -68,6 +70,9 @@ export const buttonVariants = cva(
       size: {
         [ButtonSize.Default]: 'h-control px-4',
         [ButtonSize.Icon]: 'size-control',
+        // The tab strip's "+": a 22px square inside the 30px title bar.
+        [ButtonSize.IconCompact]:
+          'size-icon-compact [&_svg:not([class*=size-])]:size-3',
         [ButtonSize.Micro]:
           'size-3.5 border-0 p-0 [&_svg:not([class*=size-])]:size-2',
         [ButtonSize.Row]:
@@ -77,6 +82,9 @@ export const buttonVariants = cva(
         [ButtonSize.Inline]: 'inline h-auto p-0 align-baseline text-row',
         [ButtonSize.Window]: 'h-full w-window-control border-0',
         [ButtonSize.Compact]: 'h-7 gap-1.75 px-2.25 text-caption',
+        // A navbar section: the navbar's full height.
+        [ButtonSize.Section]:
+          'h-full gap-1.75 px-3.25 [&_svg:not([class*=size-])]:size-3.5',
       },
     },
     compoundVariants: [

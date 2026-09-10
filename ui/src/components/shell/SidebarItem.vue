@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
+import { AriaCurrent } from '@/lib/constants/aria'
 
 defineProps<{ active: boolean }>()
 </script>
@@ -9,7 +10,7 @@ defineProps<{ active: boolean }>()
   <Button
     :variant="ButtonVariant.Nav"
     :size="ButtonSize.Row"
-    :aria-current="active ? 'page' : undefined"
+    :aria-current="active ? AriaCurrent.Page : undefined"
     class="gap-2.25 [&_svg]:size-4 [&_svg]:text-subtle-foreground aria-[current=page]:[&_svg]:text-foreground"
   >
     <slot name="icon" />

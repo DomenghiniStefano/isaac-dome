@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { computed, useSlots } from 'vue'
+import { useSlots } from 'vue'
+import { Progress, ProgressSize, ProgressTone } from '@/components/ui/progress'
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { assertNever } from '@/lib/assertNever'
 import { cn } from '@/lib/cn'
-import { kpiBar } from './kpiBar'
+import { hasKpiBar } from './kpiBar'
 import { KpiTone } from './kpiTone'
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     value: number
     denominator?: number | null
@@ -22,26 +22,19 @@ const props = withDefaults(
 )
 const slots = useSlots()
 
-const bar = computed(() => kpiBar(props.value, props.denominator))
-const barWidth = computed(() => ({ '--kpi-bar': `${bar.value ?? 0}%` }))
-
-const barClass = computed(() => {
-  switch (props.tone) {
-    case KpiTone.Progress:
-      return 'bg-primary'
-    case KpiTone.Done:
-      return 'bg-state-done'
-    case KpiTone.Unknown:
-      return 'bg-faint-foreground'
-    default:
-      return assertNever(props.tone)
-  }
-})
+// The bar's colour follows what the number is. A record over the whole set: a tone with no
+// colour fails to compile.
+const barTone: Record<KpiTone, ProgressTone> = {
+  [KpiTone.Progress]: ProgressTone.Primary,
+  [KpiTone.Done]: ProgressTone.Done,
+  [KpiTone.Unknown]: ProgressTone.Muted,
+}
 </script>
 
 <template>
   <!-- A number, its unit, the label, a micro bar (Chrome e Stati.dc.html, "KPI"). No prose:
-       the explanation lives in the tooltip. -->
+       the explanation lives in the tooltip. The bar is the Progress primitive at its micro
+       size, so the share is computed and clamped in one place. -->
   <Tooltip :disabled="!slots.explain">
     <TooltipTrigger as-child>
       <div
@@ -74,13 +67,15 @@ const barClass = computed(() => {
         <span class="mt-1.75 text-label text-muted-foreground">{{
           label
         }}</span>
-        <div
-          v-if="bar !== null"
-          :style="barWidth"
-          class="mt-2 flex h-1 border border-secondary bg-data"
-        >
-          <div :class="cn('w-(--kpi-bar)', barClass)" />
-        </div>
+        <Progress
+          v-if="hasKpiBar(denominator)"
+          :model-value="value"
+          :max="denominator"
+          :size="ProgressSize.Micro"
+          :tone="barTone[tone]"
+          :aria-label="label"
+          class="mt-2"
+        />
       </div>
     </TooltipTrigger>
     <TooltipContent><slot name="explain" /></TooltipContent>
