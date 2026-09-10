@@ -13,4 +13,18 @@
   /* Achievement icons are painted 263x176 images, not pixel art:
      at half their native size they stay readable without going mushy. */
   --spacing-achievement: 5.5rem;
+  /* The window (Chrome e Stati.dc.html, "Finestra"): tab strip, tabs, drag region,
+     window controls, navbar. */
+  --spacing-titlebar: 30px;
+  --spacing-tab: 24px;
+  --spacing-tab-min: 34px;
+  --spacing-tab-max: 150px;
+  --spacing-drag-region: 130px;
+  --spacing-window-control: 38px;
+  --spacing-navbar: 38px;
+  --spacing-brand: 150px;
+  --spacing-search: 240px;
+  /* The completion matrix: a 16px mark symbol at 2x in a 40px cell (cycle 2, Decision 7). */
+  --spacing-mark-cell: 40px;
+  --spacing-mark-symbol: 32px;
 }
