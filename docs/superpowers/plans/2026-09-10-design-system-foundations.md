@@ -805,7 +805,7 @@ Run:
 ```bash
 pnpm --filter ui build
 CSS=$(ls ui/dist/assets/*.css)
-grep -c "font-family:.Determination" $CSS
+grep -ci "determination" $CSS
 ls ui/dist/assets | grep -c determination
 grep -o "\.text-heading" $CSS | head -1
 grep -o -- "--color-state-done-foreground:[^;]*" $CSS | head -1
@@ -1016,7 +1016,7 @@ const locales: readonly string[] = Object.values(Locale)
 
 const isLocale = (tag: string): tag is Locale => locales.includes(tag)
 
-// `it-IT` → `it`: the app speaks one Italian and one English, not regional variants.
+// `it-IT` becomes `it`: the app speaks one Italian and one English, not regional variants.
 const primarySubtag = (language: string): string =>
   (language.split('-')[0] ?? '').toLowerCase()
 
@@ -1065,7 +1065,7 @@ export const en: MessageSchema = {
 Create `ui/src/i18n/messageKey.ts`:
 
 ```ts
-// The dotted path of every string in a message tree: { ui: { close } } → 'ui.close'.
+// The dotted path of every string in a message tree: { ui: { close } } gives 'ui.close'.
 export type MessageKey<T> = {
   [K in keyof T & string]: T[K] extends string ? K : `${K}.${MessageKey<T[K]>}`
 }[keyof T & string]
@@ -4548,7 +4548,7 @@ export interface CommandFilterState {
   filtered: {
     /** How many items match the search. */
     count: number
-    /** Item id → 1 when it matches, 0 when it doesn't. */
+    /** Item id to 1 when it matches, 0 when it doesn't. */
     items: Map<string, number>
     /** Groups with at least one matching item. */
     groups: Set<string>
