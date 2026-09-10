@@ -729,3 +729,7 @@ Logged 2026-09-10, a list:
    mount); `role="status"` may fit.
 9. `Progress` doesn't expose the unknown segment to assistive tech (`getValueLabel` with
    an i18n string).
+10. A disabled segmented control loses its on-state: a disabled active `TabsTrigger` or
+    pressed `ToggleGroupItem` renders exactly like an unselected one, while `Checkbox`
+    keeps its tick and `Switch` its thumb position — back to design (a faint edge or
+    underline would keep "which one" readable without reading as enabled).
