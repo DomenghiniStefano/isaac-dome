@@ -13,8 +13,8 @@ export default defineConfig({
   test: {
     include: ['src/**/*.test.ts'],
     // Vitest doesn't load CSS by default and hands a `?raw` import an empty string.
-    // `cn()` reads its token names from the theme files, so those load as source. No `$`
-    // anchor: the module id ends in `?raw`.
-    css: { include: [/src\/assets\/theme\/.+\.css/] },
+    // `cn()` reads its token names from the theme files, and base.test.ts reads base.css,
+    // so those load as source. No `$` anchor: the module id ends in `?raw`.
+    css: { include: [/src\/assets\/theme\/.+\.css/, /src\/assets\/base\.css/] },
   },
 })
