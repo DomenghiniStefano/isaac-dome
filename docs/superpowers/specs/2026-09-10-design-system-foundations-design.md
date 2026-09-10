@@ -286,8 +286,11 @@ built bundle doesn't carry `license.txt` and `readme.txt` yet (`docs/BACKLOG.md`
   `::-webkit-scrollbar` rules are ignored on any element whose `scrollbar-width` or
   `scrollbar-color` isn't the initial value: the export sets both, which would give a thin
   bar instead of the 12px one it draws.
-- Document defaults: `font-synthesis-weight: none`, `text-body` size and line height,
-  `bg-background`, `text-foreground`.
+- Document defaults: `font-synthesis-weight: none`, `bg-background`, `text-foreground` on
+  `html`; `text-body` size and line height on **`body`**. Not on `html`: a font size on the
+  root moves `rem`, and Tailwind's spacing step is `0.25rem`. The first version put it on
+  `html` and every step was 3.5px — a 14px checkbox, a 10.5px gap — until a measurement on
+  the Kit page caught it; `assets/base.test.ts` keeps it off the root.
 
 ## Decision 7 — primitives are shadcn-vue's, written already dressed
 
