@@ -72,7 +72,9 @@ export const buttonVariants = cva(
           'size-3.5 border-0 p-0 [&_svg:not([class*=size-])]:size-2',
         [ButtonSize.Row]:
           'h-auto w-full justify-start px-2.75 py-1.75 text-row',
-        [ButtonSize.Inline]: 'h-auto gap-1 p-0 align-baseline text-row',
+        // Inline, not inline-flex: in a flex box an icon's bottom edge becomes the baseline
+        // and lifts the label off the line of the surrounding text.
+        [ButtonSize.Inline]: 'inline h-auto p-0 align-baseline text-row',
         [ButtonSize.Window]: 'h-full w-window-control border-0',
         [ButtonSize.Compact]: 'h-7 gap-1.75 px-2.25 text-caption',
       },
