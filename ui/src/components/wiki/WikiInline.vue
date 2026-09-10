@@ -46,7 +46,7 @@ const icon = (target: Target): string | null => props.iconFor?.(target) ?? null
         v-if="icon(token.target)"
         :src="icon(token.target) ?? undefined"
         alt=""
-        class="size-4 pixelated"
+        class="mr-0.75 inline-block size-4 align-text-bottom pixelated"
       />{{ token.label }}
     </Button>
     <span
