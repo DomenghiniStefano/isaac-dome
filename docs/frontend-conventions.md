@@ -433,10 +433,19 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **Numeric `:size` prop on an icon** | `ui/scripts/scan-conventions.mjs` |
 | **Raw `<button>` / `<input>` outside `src/components/ui/`** | `ui/scripts/scan-conventions.mjs` |
 | **String literal unions (`'a' \| 'b'`)** | `ui/scripts/scan-conventions.mjs` |
-| **Visible strings in the template** | `ui/scripts/scan-conventions.mjs` |
+| **Visible strings in the template** (skipping `src/kit/`, development-only) | `ui/scripts/scan-conventions.mjs` |
+| **`dark:` variant** (one theme) | `ui/scripts/scan-conventions.mjs` |
+| **Literal colour in a class** | `ui/scripts/scan-conventions.mjs` |
+| **Colour alpha modifier (`bg-x/50`)** | `ui/scripts/scan-conventions.mjs` |
+| **`tw-animate-css` class** (not installed) | `ui/scripts/scan-conventions.mjs` |
+| **Literal `variant`/`size`/`density`/`orientation` on a primitive** | `ui/scripts/scan-conventions.mjs` |
+| **Glyph missing from Determination** | `ui/scripts/scan-conventions.mjs` |
 
-The last three rows arrived on 2026-09-06: before that, the document declared five rules
-and the script checked three. **This table and the script's `checks` array must have the
+Three rows arrived on 2026-09-06 — before that, the document declared five rules and the
+script checked three — and six more on 2026-09-10, with the design system. On the same day
+the visible-string heuristic learned to skip quoted attribute values: a class such as
+`has-[>svg]:grid-cols-2` used to end the tag early and leave half a class list behind as
+"visible text". **This table and the script's `checks` array must have the
 same rows**, and that's the only thing keeping the document from promising a check that
 doesn't happen.
 
