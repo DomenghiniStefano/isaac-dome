@@ -45,9 +45,9 @@ browser.
 **Interfaces:**
 - Produces: `call<T>(command: CommandName, args?: CommandArgs): Promise<T>`; `CommandName`, `CommandArgs`; fixtures `answer`, `resetFixtures`, `FixtureScenario { None, Pick, Active }`.
 
-- [ ] **Step 1: Install** — `pnpm --filter ui add vue-router@4.6.4 pinia@4.0.3`
+- [x] **Step 1: Install** — `pnpm --filter ui add vue-router@4.6.4 pinia@4.0.3`
 
-- [ ] **Step 2: Write the failing test** — `ui/src/lib/ipc/transport.test.ts`
+- [x] **Step 2: Write the failing test** — `ui/src/lib/ipc/transport.test.ts`
 
 ```ts
 import { beforeEach, describe, expect, it } from 'vitest'
@@ -106,9 +106,9 @@ describe('fixture scenarios', () => {
 })
 ```
 
-- [ ] **Step 3: Run it to see it fail** — `pnpm --filter ui exec vitest run src/lib/ipc` → FAIL, `Cannot find module './fixtures'`.
+- [x] **Step 3: Run it to see it fail** — `pnpm --filter ui exec vitest run src/lib/ipc` → FAIL, `Cannot find module './fixtures'`.
 
-- [ ] **Step 4: `ui/src/lib/ipc/transport.ts`**
+- [x] **Step 4: `ui/src/lib/ipc/transport.ts`**
 
 ```ts
 import { invoke, isTauri } from '@tauri-apps/api/core'
@@ -132,7 +132,7 @@ export const call = async <T>(
 }
 ```
 
-- [ ] **Step 5: `ui/src/lib/ipc/fixtures/profile.ts`**
+- [x] **Step 5: `ui/src/lib/ipc/fixtures/profile.ts`**
 
 ```ts
 import { CandidateSource, MissingReason, SavePrefix } from '../types'
@@ -232,7 +232,7 @@ export const summary: SaveSummary = {
 }
 ```
 
-- [ ] **Step 6: `ui/src/lib/ipc/fixtures/index.ts`**
+- [x] **Step 6: `ui/src/lib/ipc/fixtures/index.ts`**
 
 ```ts
 import { Command } from '../../constants/commands'
@@ -331,7 +331,7 @@ export const answer = async <T>(
 }
 ```
 
-- [ ] **Step 7: Route every wrapper through `call`** — in each of `setup.ts`, `save.ts`, `graph.ts`, `queue.ts`, `resources.ts`, `wiki.ts`: replace `import { invoke } from '@tauri-apps/api/core'` with `import { call } from './transport'`, and every `invoke(` with `call(`. Nothing else changes. For example `setup.ts` becomes:
+- [x] **Step 7: Route every wrapper through `call`** — in each of `setup.ts`, `save.ts`, `graph.ts`, `queue.ts`, `resources.ts`, `wiki.ts`: replace `import { invoke } from '@tauri-apps/api/core'` with `import { call } from './transport'`, and every `invoke(` with `call(`. Nothing else changes. For example `setup.ts` becomes:
 
 ```ts
 import { Command } from '../constants/commands'
@@ -344,9 +344,9 @@ export const selectProfile = (id: string): Promise<SetupState> =>
   call(Command.SelectProfile, { id })
 ```
 
-- [ ] **Step 8: Run the tests to see them pass** — `pnpm --filter ui exec vitest run src/lib/ipc` → PASS (5 tests).
+- [x] **Step 8: Run the tests to see them pass** — `pnpm --filter ui exec vitest run src/lib/ipc` → PASS (5 tests).
 
-- [ ] **Step 9: Verify and commit** — `pnpm typecheck && pnpm lint && pnpm scan`, then
+- [x] **Step 9: Verify and commit** — `pnpm typecheck && pnpm lint && pnpm scan`, then
 
 ```bash
 git add ui/package.json pnpm-lock.yaml ui/src/lib/ipc
@@ -366,7 +366,7 @@ git commit -m "feat(ui): one transport for every command, with fixtures for a br
 **Interfaces:**
 - Produces: `DevRoute.Verify = '#verify'`; `minimizeWindow()`, `toggleMaximizeWindow()`, `closeWindow()`, `watchWindowFocus(onChange): Promise<() => void>`.
 
-- [ ] **Step 1: Move the verification page** — `git mv ui/src/App.vue ui/src/verify/VerifyPage.vue`, then replace its import block (the lines from `import { onMounted, ref } from 'vue'` to `import { Label } from '@/components/ui/label'`) with:
+- [x] **Step 1: Move the verification page** — `git mv ui/src/App.vue ui/src/verify/VerifyPage.vue`, then replace its import block (the lines from `import { onMounted, ref } from 'vue'` to `import { Label } from '@/components/ui/label'`) with:
 
 ```ts
 import { onMounted, ref } from 'vue'
@@ -397,7 +397,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 ```
 
-- [ ] **Step 2: `ui/src/lib/constants/devRoutes.ts`**
+- [x] **Step 2: `ui/src/lib/constants/devRoutes.ts`**
 
 ```ts
 // Hash routes that only exist under `pnpm ui:dev`: main.ts checks import.meta.env.DEV
@@ -406,7 +406,7 @@ export const DevRoute = { Kit: '#kit', Verify: '#verify' } as const
 export type DevRoute = (typeof DevRoute)[keyof typeof DevRoute]
 ```
 
-- [ ] **Step 3: Scanner** — in `ui/scripts/scan-conventions.mjs`:
+- [x] **Step 3: Scanner** — in `ui/scripts/scan-conventions.mjs`:
   replace
   ```js
   const DEV_ONLY_DIR = join('src', 'kit')
@@ -428,7 +428,7 @@ export type DevRoute = (typeof DevRoute)[keyof typeof DevRoute]
   },
   ```
 
-- [ ] **Step 4: `ui/src/lib/window/appWindow.ts`**
+- [x] **Step 4: `ui/src/lib/window/appWindow.ts`**
 
 ```ts
 import { isTauri } from '@tauri-apps/api/core'
@@ -457,7 +457,7 @@ export const watchWindowFocus = async (
 }
 ```
 
-- [ ] **Step 5: `crates/app/capabilities/default.json`**
+- [x] **Step 5: `crates/app/capabilities/default.json`**
 
 ```json
 {
@@ -475,10 +475,10 @@ export const watchWindowFocus = async (
 }
 ```
 
-- [ ] **Step 6: `crates/app/tauri.conf.json`** — the window becomes
+- [x] **Step 6: `crates/app/tauri.conf.json`** — the window becomes
   `"windows": [{ "title": "IsaacDome", "width": 1280, "height": 800, "decorations": false }]`.
 
-- [ ] **Step 7: Verify** — `cargo clippy -p app -- -D warnings` (tauri-build validates the capability), `pnpm typecheck && pnpm lint && pnpm scan`. `main.ts` still mounts `App.vue`, which no longer exists: Task 7 restores it; until then typecheck is expected to fail on `main.ts` only, so this task commits together with Task 7's `main.ts` (no commit here).
+- [x] **Step 7: Verify** — `cargo clippy -p app -- -D warnings` (tauri-build validates the capability), `pnpm typecheck && pnpm lint && pnpm scan`. `main.ts` still mounts `App.vue`, which no longer exists: Task 7 restores it; until then typecheck is expected to fail on `main.ts` only, so this task commits together with Task 7's `main.ts` (no commit here).
 
 ---
 
@@ -491,7 +491,7 @@ export const watchWindowFocus = async (
 **Interfaces:**
 - Produces: `RouteName`, `WikiCategory`, `TabLocation`, `routeTitle`, `routeIcon`, `routeOrigin`, `routePath`, `routeArrives`, `wikiCategoryTitle`, `wikiCategoryIcon`, `locationTitle(location)`, `defaultLocation`; `Tab`, `TabsState`, `firstState`, `openTab`, `selectTab`, `closeTab`, `moveTab`, `navigateTab`; `useTabsStore` with `tabs`, `activeId`, `active`, `open(location?)`, `select(id)`, `close(id)`, `move(from, to)`, `navigate(location)`.
 
-- [ ] **Step 1: Write the failing tests**
+- [x] **Step 1: Write the failing tests**
 
 `ui/src/stores/tabModel.test.ts`:
 
@@ -605,9 +605,9 @@ describe('locationTitle', () => {
 })
 ```
 
-- [ ] **Step 2: Run them to see them fail** — `pnpm --filter ui exec vitest run src/stores src/router` → FAIL, modules not found.
+- [x] **Step 2: Run them to see them fail** — `pnpm --filter ui exec vitest run src/stores src/router` → FAIL, modules not found.
 
-- [ ] **Step 3: `ui/src/router/routeTable.ts`**
+- [x] **Step 3: `ui/src/router/routeTable.ts`**
 
 ```ts
 import type { Component } from 'vue'
@@ -767,7 +767,7 @@ export const locationTitle = (location: TabLocation): Message => {
 }
 ```
 
-- [ ] **Step 4: `ui/src/stores/tabModel.ts`**
+- [x] **Step 4: `ui/src/stores/tabModel.ts`**
 
 ```ts
 import type { TabLocation } from '@/router/routeTable'
@@ -853,7 +853,7 @@ export const navigateTab = (
 })
 ```
 
-- [ ] **Step 5: `ui/src/lib/constants/stores.ts`**
+- [x] **Step 5: `ui/src/lib/constants/stores.ts`**
 
 ```ts
 // Pinia store ids.
@@ -861,7 +861,7 @@ export const StoreId = { Tabs: 'tabs', Profile: 'profile' } as const
 export type StoreId = (typeof StoreId)[keyof typeof StoreId]
 ```
 
-- [ ] **Step 6: `ui/src/stores/tabs.ts`**
+- [x] **Step 6: `ui/src/stores/tabs.ts`**
 
 ```ts
 import { defineStore } from 'pinia'
@@ -914,7 +914,7 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
 })
 ```
 
-- [ ] **Step 7: Run the tests to see them pass** — `pnpm --filter ui exec vitest run src/stores src/router` → PASS (12 tests).
+- [x] **Step 7: Run the tests to see them pass** — `pnpm --filter ui exec vitest run src/stores src/router` → PASS (12 tests).
 
 ---
 
@@ -928,7 +928,7 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
 - Consumes: Task 3's route table; cycle 2's `NavSection`, `TabOrigin`, `tabOriginIcon`.
 - Produces: `SidebarSection`, `SidebarEntry`, `sidebarEntries`, `sidebarHeaders`, `sectionOfOrigin`, `navSectionOf`, `sidebarSectionOf`, `isEntryActive`.
 
-- [ ] **Step 1: Write the failing test** — `ui/src/components/shell/sectionNav.test.ts`
+- [x] **Step 1: Write the failing test** — `ui/src/components/shell/sectionNav.test.ts`
 
 ```ts
 import { describe, expect, it } from 'vitest'
@@ -980,9 +980,9 @@ describe('sectionNav', () => {
 })
 ```
 
-- [ ] **Step 2: Run it to see it fail** — `pnpm --filter ui exec vitest run src/components/shell/sectionNav` → FAIL.
+- [x] **Step 2: Run it to see it fail** — `pnpm --filter ui exec vitest run src/components/shell/sectionNav` → FAIL.
 
-- [ ] **Step 3: `ui/src/components/shell/sectionNav.ts`**
+- [x] **Step 3: `ui/src/components/shell/sectionNav.ts`**
 
 ```ts
 import type { Component } from 'vue'
@@ -1123,7 +1123,7 @@ export const isEntryActive = (
     (location.query?.category ?? null)
 ```
 
-- [ ] **Step 4: Run it to see it pass** — PASS (5 tests).
+- [x] **Step 4: Run it to see it pass** — PASS (5 tests).
 
 ---
 
@@ -1136,7 +1136,7 @@ export const isEntryActive = (
 **Interfaces:**
 - Produces: `ChainLink`, `LinkState`, `ChainRow`, `chainLinks(setup)`, `formatRelativeDay(unix, now, locale)`, `formatModified(unix, now, locale)`, `formatCount(n, locale)`, `editionShort(prefix)`, `editionLong(prefix)`, `gameName(value)`, `indicator(active, now, locale)`, `IndicatorView`, `sectionLabel(kind)`; `candidateSourceLabel`; `useProfileStore` with `setup`, `summary`, `status`, `error`, `isActive`, `load()`, `choose(id)`; `LoadStatus`.
 
-- [ ] **Step 1: Write the failing test** — `ui/src/lib/profile/profileView.test.ts`
+- [x] **Step 1: Write the failing test** — `ui/src/lib/profile/profileView.test.ts`
 
 ```ts
 import { describe, expect, it } from 'vitest'
@@ -1294,9 +1294,9 @@ describe('sectionLabel', () => {
 })
 ```
 
-- [ ] **Step 2: Run it to see it fail** — `pnpm --filter ui exec vitest run src/lib/profile` → FAIL.
+- [x] **Step 2: Run it to see it fail** — `pnpm --filter ui exec vitest run src/lib/profile` → FAIL.
 
-- [ ] **Step 3: `ui/src/lib/profile/profileView.ts`**
+- [x] **Step 3: `ui/src/lib/profile/profileView.ts`**
 
 ```ts
 import type { MessageKey } from '@/i18n/messageKey'
@@ -1494,7 +1494,7 @@ export const sectionLabel = (kind: string): Message | null =>
   sectionLabels[kind] ?? null
 ```
 
-- [ ] **Step 4: `ui/src/lib/profile/profileLabels.ts`**
+- [x] **Step 4: `ui/src/lib/profile/profileLabels.ts`**
 
 ```ts
 import type { MessageKey } from '@/i18n/messageKey'
@@ -1532,7 +1532,7 @@ export const linkStateLabel: Record<LinkState, Message> = {
 }
 ```
 
-- [ ] **Step 5: `ui/src/stores/profile.ts`**
+- [x] **Step 5: `ui/src/stores/profile.ts`**
 
 ```ts
 import { defineStore } from 'pinia'
@@ -1597,9 +1597,9 @@ export const useProfileStore = defineStore(StoreId.Profile, () => {
 })
 ```
 
-- [ ] **Step 6: Run the tests to see them pass** — `pnpm --filter ui exec vitest run src/lib/profile` → PASS (17 tests).
+- [x] **Step 6: Run the tests to see them pass** — `pnpm --filter ui exec vitest run src/lib/profile` → PASS (17 tests).
 
-- [ ] **Step 7: Commit Tasks 3–5** (typecheck still waits on Task 7's `main.ts`, so only Vitest here)
+- [x] **Step 7: Commit Tasks 3–5** (typecheck still waits on Task 7's `main.ts`, so only Vitest here)
 
 ```bash
 pnpm --filter ui exec vitest run
@@ -1615,7 +1615,7 @@ git commit -m "feat(ui): the tab model, the sidebar's sections and what the prof
 - Modify: `ui/src/i18n/messages/it.ts`, `ui/src/i18n/messages/en.ts`
 - Create: `ui/src/screens/ScreenHeader.vue`, `ui/src/screens/PlaceholderScreen.vue`, `ui/src/screens/ProgressGate.vue`, `ui/src/screens/ProfileScreen.vue`, `ui/src/screens/profile/ChainCard.vue`, `NoSavesCard.vue`, `CandidatesCard.vue`, `ActiveProfileCard.vue`, `ProfileFact.vue`, `SectionsCard.vue`, `ProfileError.vue`
 
-- [ ] **Step 1: Messages** — add to `it` (after `marks`) and the matching English in `en`:
+- [x] **Step 1: Messages** — add to `it` (after `marks`) and the matching English in `en`:
 
 ```ts
   routes: {
@@ -1772,7 +1772,7 @@ git commit -m "feat(ui): the tab model, the sidebar's sections and what the prof
 
 English (`en.ts`), same keys: routes — `Next steps`, `Completion`, `Unlock`, `Plan`, `Collection`, `Runs`, `Live`, `Wiki`, `Game profile`, `Tabs`, `About`; wikiCategories — `Items`, `Trinkets`, `Achievements`, `Bosses`, `Challenges`, `Characters`; sidebar — `Progress` / `Every entry reads the active profile.`, `Wiki` / `The Wiki works without the game or a save.`, `Settings` / `Where the app finds the game and the saves.`; placeholder — `Arrives with Next steps, Unlock and Plan.`, `Arrives with the Completion screen.`, `Arrives with the Collection screen.`, `Arrives with the run archive (M4).`, `Arrives with wiki pages in tabs and search.`, `Arrives with Settings and About.`, `Arrives with tabs that survive closing.`; gate — `Progress depends on the active profile: choose one to see this screen.`; indicator — `No active profile`, `Saves not found`, `slot`; profile — eyebrow `Screen 0`, title `Game profile`, intro `Not a step to go through once: it is the state that decides every number in the app. It stays open to read and change.`; chain — `The chain of three requirements`, `each level can be missing on its own`, `Steam`, `Game`, `Saves`, `found`, `not found`, `your choice`, `more than one`, `chosen`, `candidate files`; none — `No save found`, `Steam isn't in the system registry: without Steam we can't find the game folder, and without that we can't find the saves.`, `Steam is there, but the game isn't in any of its libraries: without the game folder we can't find the saves.`, `The game is there, but there is no save file in the known places.`, `Search again`, `Diagnostics — what we tried`; diagnostics — `Steam: no installation found`, `Game: not in Steam's libraries`, `Saves: no file in the known places`, `Unreadable path`, `Unreadable Steam manifest`; pick — `A choice is needed`, `until you choose, no profile is active`, `The profile you used no longer exists where it was. We didn't pick another in its place: a different profile's numbers, shown without saying so, are the error you never notice you have.`, `Edition`, `Slot`, `Found here`, `Modified`, `Size`, `most recent`, `The most recent is only a suggestion: you choose which profile to read.`, `Use this profile`, `Cancel`; sources — `Steam Cloud`, `Documents`, `Chosen by hand`; active — `Active profile`, `chosen by us · it was the only one`, `Modified`, `Size`, `DLC`, `Found in`, `Change profile`, `Read the file again`, `unknown`, `bytes`; read — `What we could read`, `sections`, `Some sections we don't know the content of yet, and the counts change with every patch: no number is hardcoded, here or anywhere in the app. The screens show what the file declares today.`, `The file holds something we didn't expect`; saveDiagnostics — `A section isn't the expected one`, `A section runs past the end of the file`, `There are extra bytes at the end of the file`; sections — `Achievements and secrets`, `Counters and marks`, `Per-floor counters`, `Item collection`, `Bosses met`, `Challenges`, `Bestiary`, `To identify`; errors — `We can't read the profile`, `Try again`, `The backend didn't answer.`, `No active profile.`, `The chosen profile no longer exists.`, `The save can't be read.`, `We can't remember the choice.`, `What you're looking for doesn't exist.`, `The game's catalogue isn't available.`, `The app's database isn't available.`, `The wiki dataset isn't available.`
 
-- [ ] **Step 2: `ui/src/screens/ScreenHeader.vue`**
+- [x] **Step 2: `ui/src/screens/ScreenHeader.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -1797,7 +1797,7 @@ defineProps<{ icon: Component; title: string; eyebrow?: string }>()
 </template>
 ```
 
-- [ ] **Step 3: `ui/src/screens/PlaceholderScreen.vue`**
+- [x] **Step 3: `ui/src/screens/PlaceholderScreen.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -1822,7 +1822,7 @@ const { t } = useMessages()
 </template>
 ```
 
-- [ ] **Step 4: `ui/src/screens/ProgressGate.vue`**
+- [x] **Step 4: `ui/src/screens/ProgressGate.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -1850,7 +1850,7 @@ const { t } = useMessages()
 </template>
 ```
 
-- [ ] **Step 5: `ui/src/screens/profile/ChainCard.vue`**
+- [x] **Step 5: `ui/src/screens/profile/ChainCard.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -1927,7 +1927,7 @@ const detail = (row: ChainRow): string => {
 </template>
 ```
 
-- [ ] **Step 6: `ui/src/screens/profile/NoSavesCard.vue`**
+- [x] **Step 6: `ui/src/screens/profile/NoSavesCard.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -2000,7 +2000,7 @@ const diagnosticText = (d: SetupDiagnostic): string => {
 </template>
 ```
 
-- [ ] **Step 7: `ui/src/screens/profile/CandidatesCard.vue`**
+- [x] **Step 7: `ui/src/screens/profile/CandidatesCard.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -2149,7 +2149,7 @@ const confirm = () => {
 </template>
 ```
 
-- [ ] **Step 8: `ui/src/screens/profile/ProfileFact.vue`**
+- [x] **Step 8: `ui/src/screens/profile/ProfileFact.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -2164,7 +2164,7 @@ defineProps<{ label: string; value: string }>()
 </template>
 ```
 
-- [ ] **Step 9: `ui/src/screens/profile/ActiveProfileCard.vue`**
+- [x] **Step 9: `ui/src/screens/profile/ActiveProfileCard.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -2256,7 +2256,7 @@ const view = computed(() => {
 </template>
 ```
 
-- [ ] **Step 10: `ui/src/screens/profile/SectionsCard.vue`**
+- [x] **Step 10: `ui/src/screens/profile/SectionsCard.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -2352,7 +2352,7 @@ const diagnosticText = (d: SaveDiagnostic): string => {
 </template>
 ```
 
-- [ ] **Step 11: `ui/src/screens/profile/ProfileError.vue`**
+- [x] **Step 11: `ui/src/screens/profile/ProfileError.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -2414,7 +2414,7 @@ const message = computed((): string => {
 </template>
 ```
 
-- [ ] **Step 12: `ui/src/screens/ProfileScreen.vue`**
+- [x] **Step 12: `ui/src/screens/ProfileScreen.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -2502,7 +2502,7 @@ const choose = async (id: string) => {
 </template>
 ```
 
-- [ ] **Step 13: Verify** — `pnpm --filter ui exec vitest run` (typecheck waits for Task 7).
+- [x] **Step 13: Verify** — `pnpm --filter ui exec vitest run` (typecheck waits for Task 7).
 
 ---
 
@@ -2512,7 +2512,7 @@ const choose = async (id: string) => {
 - Create: `ui/src/router/routes.ts`, `ui/src/router/index.ts`, `ui/src/components/shell/ProfileIndicator.vue`, `ui/src/App.vue`
 - Modify: `ui/src/main.ts`, `ui/src/components/shell/NavBar.vue` (a `status` slot; `section` may be `null`), `ui/src/components/shell/TabItem.vue` (middle click closes)
 
-- [ ] **Step 1: `ui/src/router/routes.ts`**
+- [x] **Step 1: `ui/src/router/routes.ts`**
 
 ```ts
 import type { Component } from 'vue'
@@ -2565,7 +2565,7 @@ export const routes: RouteRecordRaw[] = [
 ]
 ```
 
-- [ ] **Step 2: `ui/src/router/index.ts`**
+- [x] **Step 2: `ui/src/router/index.ts`**
 
 ```ts
 import { createMemoryHistory, createRouter } from 'vue-router'
@@ -2576,11 +2576,11 @@ import { routes } from './routes'
 export const router = createRouter({ history: createMemoryHistory(), routes })
 ```
 
-- [ ] **Step 3: `NavBar.vue`** — change the props to `defineProps<{ section: NavSection | null; focused: boolean }>()` and add `<slot name="status" />` immediately before the search trigger `<Button :variant="ButtonVariant.Field" …>`.
+- [x] **Step 3: `NavBar.vue`** — change the props to `defineProps<{ section: NavSection | null; focused: boolean }>()` and add `<slot name="status" />` immediately before the search trigger `<Button :variant="ButtonVariant.Field" …>`.
 
-- [ ] **Step 4: `TabItem.vue`** — on the root `<div role…>` add `@mousedown.middle.prevent` and `@auxclick.middle="emit('close')"` (the first stops the browser's autoscroll cursor).
+- [x] **Step 4: `TabItem.vue`** — on the root `<div role…>` add `@mousedown.middle.prevent` and `@auxclick.middle="emit('close')"` (the first stops the browser's autoscroll cursor).
 
-- [ ] **Step 5: `ui/src/components/shell/ProfileIndicator.vue`**
+- [x] **Step 5: `ui/src/components/shell/ProfileIndicator.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -2638,7 +2638,7 @@ const label = computed((): string => {
 </template>
 ```
 
-- [ ] **Step 6: `ui/src/App.vue`**
+- [x] **Step 6: `ui/src/App.vue`**
 
 ```vue
 <script setup lang="ts">
@@ -2806,7 +2806,7 @@ const indicatorView = computed(() =>
 </template>
 ```
 
-- [ ] **Step 7: `ui/src/main.ts`**
+- [x] **Step 7: `ui/src/main.ts`**
 
 ```ts
 import { createPinia } from 'pinia'
@@ -2839,9 +2839,9 @@ if (import.meta.env.DEV && hash === DevRoute.Kit) {
 }
 ```
 
-- [ ] **Step 8: Verify statically** — run `pnpm --filter ui exec prettier --write src scripts`, then `pnpm typecheck && pnpm lint && pnpm format:check && pnpm scan && pnpm ui:test`. Expected: all green, `0 violations, 0 declared exemptions`.
+- [x] **Step 8: Verify statically** — run `pnpm --filter ui exec prettier --write src scripts`, then `pnpm typecheck && pnpm lint && pnpm format:check && pnpm scan && pnpm ui:test`. Expected: all green, `0 violations, 0 declared exemptions`.
 
-- [ ] **Step 9: Commit Tasks 2, 6 and 7** (they only compile together)
+- [x] **Step 9: Commit Tasks 2, 6 and 7** (they only compile together)
 
 ```bash
 git add crates/app/tauri.conf.json crates/app/capabilities ui/src ui/scripts/scan-conventions.mjs
@@ -2852,10 +2852,10 @@ git commit -m "feat(ui): the window becomes the app, with profile selection as i
 
 ### Task 8: Visual verification with the fixtures
 
-- [ ] **Step 1:** `pnpm ui:dev` and open, one at a time, `/?fixture=none`, `/?fixture=pick`, `/?fixture=active` (with Playwright: scroll an element into view before pressing its coordinates).
-- [ ] **Step 2:** In each scenario check and screenshot: the indicator's square and label; the Next steps tab showing the gate with profile selection below; the Profile screen from the cog (Settings sidebar) — chain badges, the none alert with diagnostics, the candidate table with nothing selected and "Usa questo profilo" disabled until a row is clicked; after choosing, the indicator turns active, the gate lifts on Next steps into its placeholder, the sections grid shows ten counts.
-- [ ] **Step 3:** Tabs: `+` opens Next steps after the active tab; Ctrl+click on "Unlock" opens a new tab; middle click closes; closing the last tab leaves a fresh Next steps; dragging reorders; the sidebar follows the active tab's section; the navbar's Wiki/Progress switch changes the sidebar without navigating.
-- [ ] **Step 4:** `#kit` and `#verify` still mount. Fix what differs before Task 9.
+- [x] **Step 1:** `pnpm ui:dev` and open, one at a time, `/?fixture=none`, `/?fixture=pick`, `/?fixture=active` (with Playwright: scroll an element into view before pressing its coordinates).
+- [x] **Step 2:** In each scenario check and screenshot: the indicator's square and label; the Next steps tab showing the gate with profile selection below; the Profile screen from the cog (Settings sidebar) — chain badges, the none alert with diagnostics, the candidate table with nothing selected and "Usa questo profilo" disabled until a row is clicked; after choosing, the indicator turns active, the gate lifts on Next steps into its placeholder, the sections grid shows ten counts.
+- [x] **Step 3:** Tabs: `+` opens Next steps after the active tab; Ctrl+click on "Unlock" opens a new tab; middle click closes; closing the last tab leaves a fresh Next steps; dragging reorders; the sidebar follows the active tab's section; the navbar's Wiki/Progress switch changes the sidebar without navigating.
+- [x] **Step 4:** `#kit` and `#verify` still mount. Fix what differs before Task 9.
 
 ---
 
@@ -2863,15 +2863,15 @@ git commit -m "feat(ui): the window becomes the app, with profile selection as i
 
 **Files:** `docs/frontend-conventions.md`, `docs/STATUS.md`, `CLAUDE.md`, `docs/BACKLOG.md`, the spec
 
-- [ ] **Step 1: `docs/frontend-conventions.md`** — structure: add `router/` (routeTable, routes, index), `stores/` (tabs, tabModel, profile), `screens/` (and `screens/profile/`), `lib/window/`, `lib/profile/`, `lib/ipc/transport.ts` and `lib/ipc/fixtures/`, `verify/` beside `kit/`; the enforcement table gains "window API outside `src/lib/window/`"; the development-only directories are `src/kit/` and `src/verify/`; a paragraph on the transport and `?fixture=`.
-- [ ] **Step 2: `docs/STATUS.md`** — under the design system: cycle 3 with its seven sub-projects, the first checked; a session log entry for 2026-09-11.
-- [ ] **Step 3: `CLAUDE.md`** — State: "`ui/` is the shell, with profile selection; the verification page lives behind `#verify`"; the stack line: Pinia and Vue Router installed, TanStack with sub-project 3.
-- [ ] **Step 4: `docs/BACKLOG.md`** — B14: choosing the game or saves folder by hand (a dialog plugin, a command that accepts a path and hands back a `SetupState`, the two buttons of `Schermate.dc.html`).
-- [ ] **Step 5: The spec** — record the planning deviations listed under Global Constraints.
-- [ ] **Step 6:** `pnpm check` → all green.
-- [ ] **Step 7:** `pnpm --filter ui build`, then
+- [x] **Step 1: `docs/frontend-conventions.md`** — structure: add `router/` (routeTable, routes, index), `stores/` (tabs, tabModel, profile), `screens/` (and `screens/profile/`), `lib/window/`, `lib/profile/`, `lib/ipc/transport.ts` and `lib/ipc/fixtures/`, `verify/` beside `kit/`; the enforcement table gains "window API outside `src/lib/window/`"; the development-only directories are `src/kit/` and `src/verify/`; a paragraph on the transport and `?fixture=`.
+- [x] **Step 2: `docs/STATUS.md`** — under the design system: cycle 3 with its seven sub-projects, the first checked; a session log entry for 2026-09-11.
+- [x] **Step 3: `CLAUDE.md`** — State: "`ui/` is the shell, with profile selection; the verification page lives behind `#verify`"; the stack line: Pinia and Vue Router installed, TanStack with sub-project 3.
+- [x] **Step 4: `docs/BACKLOG.md`** — B14: choosing the game or saves folder by hand (a dialog plugin, a command that accepts a path and hands back a `SetupState`, the two buttons of `Schermate.dc.html`).
+- [x] **Step 5: The spec** — record the planning deviations listed under Global Constraints.
+- [x] **Step 6:** `pnpm check` → all green.
+- [x] **Step 7:** `pnpm --filter ui build`, then
   `grep -rl "rep_plus-2\|KitPage\|VerifyPage\|no fixture answers" ui/dist || echo "no fixtures, kit or verify"`.
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add docs CLAUDE.md
