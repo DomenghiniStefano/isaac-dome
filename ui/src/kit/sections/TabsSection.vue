@@ -21,5 +21,15 @@ const Tab = {
       <TabsContent :value="Tab.Challenges">9 sfide ancora aperte.</TabsContent>
       <TabsContent :value="Tab.Secrets">22 segreti da trovare.</TabsContent>
     </Tabs>
+    <Tabs :default-value="Tab.Items">
+      <TabsList>
+        <TabsTrigger :value="Tab.Items" disabled>Oggetti</TabsTrigger>
+        <TabsTrigger :value="Tab.Challenges">Sfide</TabsTrigger>
+        <TabsTrigger :value="Tab.Secrets">Segreti</TabsTrigger>
+      </TabsList>
+      <TabsContent :value="Tab.Items"
+        >Scheda attiva ma disabilitata.</TabsContent
+      >
+    </Tabs>
   </KitSection>
 </template>

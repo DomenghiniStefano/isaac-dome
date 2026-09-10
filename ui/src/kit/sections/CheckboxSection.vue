@@ -15,6 +15,10 @@ import KitSection from '../KitSection.vue'
         <Checkbox :model-value="CheckboxState.Indeterminate" /> parziale
       </Label>
       <Label><Checkbox disabled /> bloccato</Label>
+      <Label
+        ><Checkbox :default-value="CheckboxState.Checked" disabled /> bloccato e
+        fatto</Label
+      >
     </div>
   </KitSection>
 </template>
