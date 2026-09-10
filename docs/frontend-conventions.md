@@ -157,9 +157,9 @@ and they generate their corresponding utilities on their own.
 @import "tailwindcss";
 
 @theme {
-  --color-mark-done: …;
-  --color-mark-unknown: …;
-  --height-row: …;
+  --color-state-done: …;
+  --color-state-unknown: …;
+  --spacing-row: …;
 }
 ```
 
@@ -196,17 +196,20 @@ Operational rules:
 - **Semantic opacity.** Only named tokens (`opacity-disabled`, `opacity-muted`).
   `opacity-50`, `opacity-30` are violations. `opacity-0` and `opacity-100` remain allowed
   as the endpoints of an animation.
-- **Semantic durations.** Only `duration-fast`, `duration-slow` and similar; never
-  `duration-150`. Watch the token name: the `duration-*` utility reads the
-  `--transition-duration-*` family, so it's declared as `--transition-duration-fast`,
-  **not** `--duration-fast`. With the wrong name the class simply doesn't exist and
-  Tailwind emits nothing, without an error — verified on tailwindcss 4.3.3. (`--opacity-*`,
-  on the other hand, is the right family for `opacity-*`.)
-- **Spacing:** use Tailwind's standard 4px grid (`p-1`, `gap-2`, …), with no dedicated
-  tokens. It's the only family of values for which the default scale is enough.
-- **Colors:** never a literal color in a component. The app's three states — *done*,
-  *unlockable now*, *locked* — plus *unknown* are semantic tokens, not shades picked case
-  by case.
+- **Semantic durations.** Only `duration-tap`, `duration-panel`, `duration-sheet`,
+  `duration-loop` and similar; never `duration-150`. Watch the token name: the
+  `duration-*` utility reads the `--transition-duration-*` family, so it's declared as
+  `--transition-duration-fast`, **not** `--duration-fast`. With the wrong name the class
+  simply doesn't exist and Tailwind emits nothing, without an error — verified on
+  tailwindcss 4.3.3. (`--opacity-*`, on the other hand, is the right family for
+  `opacity-*`.)
+- **Spacing:** padding and gaps use Tailwind's standard 4px grid (`p-1`, `gap-2`, half
+  steps such as `p-2.5` allowed). Named spacing tokens exist only for dimensions that mean
+  something — row heights, control height, scrollbar, sprite sizes — in
+  `theme/spacing.css`.
+- **Colors:** never a literal color in a component. The data states — *done*, *unlockable
+  now*, *blocked*, *unknown*, *unexpected* — and the *challenge* tag are semantic tokens
+  (`state-*`, `challenge`), not shades picked case by case.
 
 **One theme, the dark one.** Values live directly in `@theme`; there is no `.dark` class and
 no `@custom-variant dark`, and a `dark:` class is a scanner violation — without the custom
@@ -370,6 +373,12 @@ primitive.
 - **`cn()` from `@/lib/cn`**: it knows our token names. Plain `twMerge` would read `text-body`
   as a colour and drop it next to `text-foreground`.
 - Shared state between parts goes through a typed `InjectionKey`, never a string key.
+- **Combined states are part of the dressing.** An "on" state class is gated with
+  `enabled:` (`enabled:data-[state=checked]:bg-primary`), otherwise a disabled control that
+  is on keeps painting as on; the Kit page shows each primitive disabled *and* on, and
+  overlays (select list, popover, tooltip, dialog) are checked open, not only closed.
+- **`TooltipProvider` is required once** above any tooltip: Reka throws without it. The Kit
+  page wraps itself in one; the shell must too.
 
 ---
 
@@ -490,7 +499,9 @@ For honesty's sake, and so as not to make this document look more complete than 
 | Generic Vue and TS rules | ESLint flat config: `eslint-plugin-vue`, `typescript-eslint`, `@vue/eslint-config-typescript` |
 | **`<style>` blocks without a marker** | `ui/scripts/scan-conventions.mjs` |
 | **Mandatory `<script setup>`** | `ui/scripts/scan-conventions.mjs` |
-| **Arbitrary pixels, hardcoded opacity and durations** | `ui/scripts/scan-conventions.mjs` |
+| **Arbitrary pixel value in a class** | `ui/scripts/scan-conventions.mjs` |
+| **Hardcoded opacity** | `ui/scripts/scan-conventions.mjs` |
+| **Hardcoded duration** | `ui/scripts/scan-conventions.mjs` |
 | **`invoke()` outside the IPC layer** | `ui/scripts/scan-conventions.mjs` |
 | **Numeric `:size` prop on an icon** | `ui/scripts/scan-conventions.mjs` |
 | **Raw `<button>` / `<input>` outside `src/components/ui/`** | `ui/scripts/scan-conventions.mjs` |
