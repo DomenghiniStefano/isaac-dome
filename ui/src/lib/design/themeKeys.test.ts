@@ -48,6 +48,7 @@ describe('themeKeys', () => {
     expect(typography).toContain('@theme')
     expect(themeKeys(typography, ThemeNamespace.Text)).toEqual([
       'title',
+      'kpi',
       'heading',
       'body',
       'control',
@@ -55,6 +56,10 @@ describe('themeKeys', () => {
       'caption',
       'label',
       'micro',
+    ])
+    expect(themeKeys(typography, ThemeNamespace.Tracking)).toEqual([
+      'nav',
+      'caps',
     ])
     expect(themeKeys(motion, ThemeNamespace.TransitionDuration)).toEqual([
       'tap',

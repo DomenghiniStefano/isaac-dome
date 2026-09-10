@@ -45,6 +45,13 @@
   --color-selection-mark: #fc0000;
   --color-destructive-surface: #2a0b08;
   --color-tooltip: #492e20;
+  /* The window's chrome (Chrome e Stati.dc.html, "Finestra"). */
+  --color-titlebar: #0d0908;
+  --color-navbar: #120c0b;
+  --color-chrome-inactive-foreground: #5a4a44;
+  /* The paper a marked matrix cell is drawn on: the pixel at (42, 42) of the game's
+     completion_widget/paper_00.png, sampled through a canvas on 2026-09-10. */
+  --color-mark-paper: #e9dadf;
   /* The alpha lives here, never in a class. */
   --color-overlay: rgb(12 7 6 / 0.8);
   --color-highlight: #ebd9c4;
