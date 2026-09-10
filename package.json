@@ -7,6 +7,7 @@
     "dev": "tauri dev --config crates/app/tauri.conf.json",
     "build": "tauri build --config crates/app/tauri.conf.json",
     "ui:dev": "pnpm --filter ui dev",
+    "ui:test": "pnpm --filter ui test",
     "lint": "pnpm --filter ui lint",
     "typecheck": "pnpm --filter ui typecheck",
     "scan": "pnpm --filter ui scan",

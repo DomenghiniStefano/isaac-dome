@@ -1,0 +1,36 @@
+/* Determination — FontStruct, CC BY 3.0 (license.txt beside the file), one weight.
+   Served by the app: no CDN, the app works offline. */
+@font-face {
+  font-family: 'Determination';
+  src: url('../fonts/determination/determination.ttf') format('truetype');
+  font-weight: 400;
+  font-display: block;
+}
+
+@theme {
+  --font-*: initial;
+  /* One weight: font-bold would be a smeared fake. Emphasis is colour. */
+  --font-weight-*: initial;
+  --font-pixel: 'Determination', monospace;
+  /* What preflight reads for the document's font. */
+  --default-font-family: var(--font-pixel);
+
+  /* The kit's scale (Shadcn Kit.dc.html), in px: a pixel font is crisp on whole pixels. */
+  --text-*: initial;
+  --text-title: 30px;
+  --text-title--line-height: 1.3;
+  --text-heading: 21px;
+  --text-heading--line-height: 1.35;
+  --text-body: 14px;
+  --text-body--line-height: 1.5;
+  --text-control: 13px;
+  --text-control--line-height: 1;
+  --text-row: 13px;
+  --text-row--line-height: 1.35;
+  --text-caption: 12px;
+  --text-caption--line-height: 1.45;
+  --text-label: 11px;
+  --text-label--line-height: 1.3;
+  --text-micro: 10px;
+  --text-micro--line-height: 1.2;
+}

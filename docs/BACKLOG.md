@@ -653,3 +653,83 @@ something the bytes contradict.
 Not an occasion to start *interpreting* the newly named sections. Naming section 8
 "Cutscene Counters" doesn't oblige anyone to decode which cutscene is which; it obliges us
 to stop calling it `Unknown8`.
+
+---
+
+## B10 — The design export pack: what the design tool had to measure by hand (implementation, `design-export`)
+
+Logged on 2026-09-10, from `design-export.md` inside the Claude Design export: the places
+where the pack `pnpm design:export` produces forced the design tool to measure, crop or
+guess. They aren't bugs in the app, but cycle 2's matrix cell leans on the first four, and
+every later export repeats the work until the pack says what it knows.
+
+1. **Sprites aren't trimmed**: `completion_widget/paper_00.png` is 96×96 with the drawing at
+   `x 0–84, y 3–82`, so centring the frame centres empty pixels. Export trimmed frames, or a
+   `trim: [x, y, w, h]` and `pivot: [x, y]` per frame in `sheets.json`.
+2. **`sheets.json` has no content rectangle or pivot** (same fix).
+3. **Delirium's mark isn't among the marks**: it lives in `onlinelobby/background_completion_delirium_*`,
+   under another naming.
+4. **The `_00`/`_02` tier is guessed from layer names**: an explicit `mark`, `tier` field.
+5. **No usable card or card back**: `ui_cardfronts/outline.png` is a 16×24 outline.
+6. **Papers come paired in one image** (`pausescreen_mystuff/paper.png`, `deedsmenu/paper.png`,
+   `scoremenu/smallpaper_00.png`): one file per sheet, or declared 9-slice cuts.
+7. **`sheet` paths contain spaces** (`gfx/ui/seed paper.png`).
+8. **The co-op sheet's holes are undeclared**: a `characters.json` mapping character id → cell,
+   with an explicit `null`.
+9. **40 completion cells are unreadable** (already a real data gap, modelled as `unknown`).
+10. **`unlock.json` derives the target from text**: 30 of 72 sampled rows match nothing.
+11. **Boss portraits are indexed by sheet position**, the entity key only inside the `source`
+    file name: a `target: { kind: 'entity', id, variant }` field.
+12. **A typed target doesn't imply an image**: the list of holes of `target_sprite`, not only
+    its aggregate coverage.
+13. **`unlock.illustrated.json` inlines icons as base64**: references to paths (the C2 flaw).
+
+---
+
+## B11 — Third-party licences travel with the bundle (implementation, packaging)
+
+Logged 2026-09-10: Vite copies only the hashed `determination-*.ttf` into `ui/dist`;
+`ui/src/assets/fonts/determination/license.txt` and `readme.txt` stay in the source tree,
+while the font's readme requires all files of the archive to accompany any redistribution
+and CC BY 3.0 requires attribution. `crates/app/tauri.conf.json` has no `bundle.resources`.
+Same gap for `dataset/ATTRIBUTION.md`, which CLAUDE.md says ships in the package. Fix when
+packaging: `bundle.resources` (or the files under `ui/public/`), plus the credit line in
+About (cycle 3).
+
+---
+
+## B12 — Design system cycle 1 follow-ups (implementation, cycles 2 and 3)
+
+Logged 2026-09-10, a list:
+
+1. `cn()` doesn't register `--opacity-*` tokens (`opacity-muted opacity-disabled` both
+   survive a merge) — add `classGroups.opacity` read from `theme/opacity.css`, with a
+   test.
+2. vue-i18n feature flags aren't defined in `ui/vite.config.ts`
+   (`__VUE_I18N_LEGACY_API__` stays in the bundle, legacy API not tree-shaken) — add the
+   `define` entries per vue-i18n's optimization guide.
+3. Keyboard highlight contrast in Select and Command items: `secondary` #3A251D on
+   `popover` #1B120E is about 1.28:1; Reka's Select gives items real DOM focus, so the
+   highlight replaces the focus ring — back to design (an inset `ring` edge would fit
+   "cyan means focus").
+4. `Command` filters only when the search text changes; items mounted after a change
+   (async palette results) leave their group hidden and `CommandEmpty` beside results;
+   `CommandItem` doesn't prune its id from the group set on unmount; no tests for the
+   filter; `CommandInput` always auto-focuses (make it a prop) — for the cycle 3 palette.
+5. Scanner gaps: the literal-attribute check skips `position`, `align`, `side`
+   (constants exist); the `dark:` pattern misses stacked variants like `hover:dark:`;
+   `outline-none` on focusable elements isn't scanned; classes of the reset default
+   scales (`text-sm`, `rounded-md`, `font-bold`, `shadow-*`) aren't flagged although they
+   generate nothing.
+6. `SelectTrigger` hover uses `row-hover`, a row's role, on a field — a `field-hover`
+   role or `secondary`.
+7. `Button` has no default `type="button"`: inside a future `<form>` every Button
+   submits.
+8. `Alert` uses `role="alert"` for diagnostics rendered with the page (assertive on
+   mount); `role="status"` may fit.
+9. `Progress` doesn't expose the unknown segment to assistive tech (`getValueLabel` with
+   an i18n string).
+10. A disabled segmented control loses its on-state: a disabled active `TabsTrigger` or
+    pressed `ToggleGroupItem` renders exactly like an unselected one, while `Checkbox`
+    keeps its tick and `Switch` its thumb position — back to design (a faint edge or
+    underline would keep "which one" readable without reading as enabled).

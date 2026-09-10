@@ -1,0 +1,7 @@
+/* Paper, cards, buttons and panels have no radius at all. rounded-full stays for chips
+   and radios: it isn't a theme value. */
+@theme {
+  --radius-*: initial;
+  --radius-cell: 2px;
+  --radius-input: 4px;
+}
