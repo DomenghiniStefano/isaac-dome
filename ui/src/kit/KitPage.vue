@@ -19,6 +19,7 @@ import CollapsibleSection from './sections/CollapsibleSection.vue'
 import DialogSection from './sections/DialogSection.vue'
 import CommandSection from './sections/CommandSection.vue'
 import TableSection from './sections/TableSection.vue'
+import ProgressSection from './sections/ProgressSection.vue'
 import { TooltipProvider } from '@/components/ui/tooltip'
 </script>
 
@@ -47,6 +48,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
       <DialogSection />
       <CommandSection />
       <TableSection />
+      <ProgressSection />
     </main>
   </TooltipProvider>
 </template>
