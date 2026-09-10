@@ -271,7 +271,8 @@ Measured on `determination.ttf` (2048 units per em, 990 glyphs):
 
 The font ships as `ui/src/assets/fonts/determination/` with `license.txt` (CC BY 3.0) and
 `readme.txt`, which its readme requires alongside any redistribution. The credit line
-belongs to the About screen (cycle 3); the files travel from now.
+belongs to the About screen (cycle 3). The files travel with the source from now; the
+built bundle doesn't carry `license.txt` and `readme.txt` yet (`docs/BACKLOG.md`, B11).
 
 ## Decision 6 — focus, scrollbar, base layer — `assets/base.css`
 
@@ -475,6 +476,10 @@ enforcement table in the same commit:
 | literal variant on a primitive | `variant="…"`, `size="…"`, `density="…"`, `orientation="…"` outside `src/components/ui/` | variants are constants |
 | glyph missing from Determination | `→ ← ↑ ↓ ⏎ ⌘ ✓` | they fall back to a system font; use the icon |
 
+Known gap: the literal-attribute check covers `variant`, `size`, `density`, `orientation`,
+fewer props than Decision 8 has constants for (`position`, `align`, `side`);
+`docs/BACKLOG.md`, B12.
+
 Two changes to existing behaviour:
 
 - **The visible-string heuristic skips quoted attribute values.** It stripped tags with
@@ -544,7 +549,10 @@ at the root, run by `scripts/check`. Test-first, with expectations from the spec
 
 What stays visual: the dressing of each primitive, checked on the Kit page against
 `Shadcn Kit.dc.html`, and `pnpm check` green (typecheck, lint, format, scan, tests). The
-production build is checked for the font asset and the absence of the Kit page.
+production build is checked for the font asset and the absence of the Kit page. Visual
+checks cover combined states — a control both disabled and on — and overlays opened, not
+only default closed states; the final review of 2026-09-10 found a disabled-and-checked
+rendering bug that default states hide.
 
 ## Files
 
