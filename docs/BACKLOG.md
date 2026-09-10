@@ -683,3 +683,49 @@ every later export repeats the work until the pack says what it knows.
 12. **A typed target doesn't imply an image**: the list of holes of `target_sprite`, not only
     its aggregate coverage.
 13. **`unlock.illustrated.json` inlines icons as base64**: references to paths (the C2 flaw).
+
+---
+
+## B11 — Third-party licences travel with the bundle (implementation, packaging)
+
+Logged 2026-09-10: Vite copies only the hashed `determination-*.ttf` into `ui/dist`;
+`ui/src/assets/fonts/determination/license.txt` and `readme.txt` stay in the source tree,
+while the font's readme requires all files of the archive to accompany any redistribution
+and CC BY 3.0 requires attribution. `crates/app/tauri.conf.json` has no `bundle.resources`.
+Same gap for `dataset/ATTRIBUTION.md`, which CLAUDE.md says ships in the package. Fix when
+packaging: `bundle.resources` (or the files under `ui/public/`), plus the credit line in
+About (cycle 3).
+
+---
+
+## B12 — Design system cycle 1 follow-ups (implementation, cycles 2 and 3)
+
+Logged 2026-09-10, a list:
+
+1. `cn()` doesn't register `--opacity-*` tokens (`opacity-muted opacity-disabled` both
+   survive a merge) — add `classGroups.opacity` read from `theme/opacity.css`, with a
+   test.
+2. vue-i18n feature flags aren't defined in `ui/vite.config.ts`
+   (`__VUE_I18N_LEGACY_API__` stays in the bundle, legacy API not tree-shaken) — add the
+   `define` entries per vue-i18n's optimization guide.
+3. Keyboard highlight contrast in Select and Command items: `secondary` #3A251D on
+   `popover` #1B120E is about 1.28:1; Reka's Select gives items real DOM focus, so the
+   highlight replaces the focus ring — back to design (an inset `ring` edge would fit
+   "cyan means focus").
+4. `Command` filters only when the search text changes; items mounted after a change
+   (async palette results) leave their group hidden and `CommandEmpty` beside results;
+   `CommandItem` doesn't prune its id from the group set on unmount; no tests for the
+   filter; `CommandInput` always auto-focuses (make it a prop) — for the cycle 3 palette.
+5. Scanner gaps: the literal-attribute check skips `position`, `align`, `side`
+   (constants exist); the `dark:` pattern misses stacked variants like `hover:dark:`;
+   `outline-none` on focusable elements isn't scanned; classes of the reset default
+   scales (`text-sm`, `rounded-md`, `font-bold`, `shadow-*`) aren't flagged although they
+   generate nothing.
+6. `SelectTrigger` hover uses `row-hover`, a row's role, on a field — a `field-hover`
+   role or `secondary`.
+7. `Button` has no default `type="button"`: inside a future `<form>` every Button
+   submits.
+8. `Alert` uses `role="alert"` for diagnostics rendered with the page (assertive on
+   mount); `role="status"` may fit.
+9. `Progress` doesn't expose the unknown segment to assistive tech (`getValueLabel` with
+   an i18n string).
