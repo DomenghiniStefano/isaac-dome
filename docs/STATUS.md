@@ -360,7 +360,7 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
       (2026-09-10); Pinia, Vue Router and TanStack arrive with the screens
 - [ ] Design system — the Claude Design export arrived on 2026-09-10, built in three cycles:
       - [x] **1. Foundations and primitives** (2026-09-10) — tokens, font, motion, i18n,
-            `cn()`, 22 primitives on a development-only Kit page. Spec
+            `cn()`, 23 primitives on a development-only Kit page. Spec
             `docs/superpowers/specs/2026-09-10-design-system-foundations-design.md`, plan
             `docs/superpowers/plans/2026-09-10-design-system-foundations.md`
       - [ ] 2. App components — tab strip, navbar, section sidebar, KPI tile, matrix cell,
@@ -730,8 +730,13 @@ so an off-system class generates nothing; motion on `steps()`; Determination onl
       string unless `test.css.include` lists it; unconfigured tailwind-merge drops
       `text-body` beside `text-foreground`; the scanner's visible-text heuristic ended a tag
       at the `>` inside `has-[>svg]:`.
-- [x] 22 primitives, dressed, on the Kit page (`pnpm ui:dev`, `#kit`); `App.vue` uses
+- [x] 23 primitives, dressed, on the Kit page (`pnpm ui:dev`, `#kit`); `App.vue` uses
       them and loses its exemption.
+- [x] **Radio group, missed by the catalogue.** Checked against the export before the
+      merge: `Schermate.dc.html` draws a radio on every row of the profile candidates, and
+      the spec listed Radio neither among the primitives nor among the exclusions. Added
+      with the kit's values (16px, 8px dot); the screen's own drawing — 13px, a 2px edge,
+      a fill outside the palette — loses to the kit, as every component value does.
 - [ ] Cycle 2 — app components.
 
 ### 2026-09-09 (last) — the documents catch up with the repository

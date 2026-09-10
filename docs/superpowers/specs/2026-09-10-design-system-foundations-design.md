@@ -146,7 +146,8 @@ Files under `ui/src/assets/theme/`, one per family, imported at the top of `main
 | `hairline` | `#2E1E17` | separator between rows |
 | `primary-hover` / `primary-active` / `primary-edge` | `#A81C00` / `#6C0C00` / `#4A0A00` | default button states and border |
 | `secondary-hover` / `secondary-edge` | `#492E20` / `#6C4437` | secondary button hover; border of secondary button, toggle group, kbd |
-| `selection-edge` | `#FC0000` | border of a checked checkbox or switch |
+| `selection-edge` | `#FC0000` | border of a checked checkbox, switch or radio |
+| `selection-mark` | `#FC0000` | the dot of a chosen radio — the edge's value, a different job |
 | `destructive-surface` | `#2A0B08` | error alert background |
 | `tooltip` | `#492E20` | tooltip background |
 | `overlay` | `rgb(12 7 6 / 0.8)` | dialog backdrop — the alpha lives in the token, never in a class |
@@ -507,6 +508,7 @@ kit's, expressed in the tokens above.
 | **Tabs** | `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent` | list underlined by `border`; active trigger `primary`, inactive `muted-foreground`; content `data`, edge `border` without top | settings, grouped panels |
 | **Toggle group** | `ToggleGroup`, `ToggleGroupItem` | one edge `secondary-edge` around, dividers between items; on = `primary`; `ToggleSize`: Default · Icon, provided to items through an injection key | All / Missing / Done; sprite / paper |
 | **Checkbox** | `Checkbox` | 16px, `data`, edge `input`; checked `primary` + `selection-edge`, tick `animate-tap-in`; indeterminate is a bar, switched by `data-state` in CSS; disabled `muted` | Unlock facets, table selection |
+| **Radio group** | `RadioGroup`, `RadioGroupItem` | a row with `gap-3.5`, a column by class; item 16px, `rounded-full`, `data`, edge `input`; chosen: edge `selection-edge` and an 8px dot in `selection-mark`, drawn in `currentColor`; disabled `muted`, edge `secondary`, the dot kept in `faint-foreground`. Added after the cycle's review: the catalogue had missed it | profile selection, one candidate per row (§4.1) |
 | **Switch** | `Switch` | square, 34×18, thumb 12px; on `primary` + `selection-edge`, thumb `foreground`; off `data`, thumb `faint-foreground`; thumb moves with `duration-tap ease-tap` | settings toggles |
 | **Select** | `Select`, `SelectTrigger`, `SelectValue`, `SelectContent`, `SelectGroup`, `SelectLabel`, `SelectItem`, scroll buttons | trigger `h-control`, `data`, edge `input`, `rounded-input`, chevron rotates with `duration-panel ease-panel`; content below the trigger (`SelectPosition.Popper`), `animate-panel-drop`; selected tick in `foreground` — **not** the done green the kit uses | "sort by" |
 | **Input** | `Input` | `h-control`, `data`, edge `input`, `rounded-input`, `text-body`, placeholder `faint-foreground`; `aria-invalid` → edge `destructive`; disabled `muted` | search field, folder chosen by hand |
@@ -639,6 +641,9 @@ back to Claude Design so the next export starts from them:
     meaning ("multiplayer") that `DESIGN-BRIEF.md` §5.3 declares unconfirmed; and the Tokens
     page's note on which cells are unreadable predates 2026-09-08 (today: Mother and The
     Beast for The Forgotten and the 19, 40 cells).
+14. **Two radios.** The kit draws 16px with a 1px edge and an 8px dot on `data`;
+    `Schermate.dc.html`'s profile candidates draw 13px with a 2px edge, a 5px dot and a
+    `#3A1512` fill no token holds. The kit's is used.
 
 ## Verified during planning (2026-09-10)
 
