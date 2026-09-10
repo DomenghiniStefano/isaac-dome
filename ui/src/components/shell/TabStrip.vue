@@ -6,7 +6,7 @@ import { useMessages } from '@/i18n'
 import { EventKey } from '@/lib/constants/eventKeys'
 import TabItem from './TabItem.vue'
 import type { DropSide, TabView } from './tabs'
-import { TabDrag, dropSide, moveIndex } from './tabs'
+import { TabDrag, TabRole, dropSide, moveIndex } from './tabs'
 
 const props = defineProps<{ tabs: TabView[]; activeId: string | null }>()
 const emit = defineEmits<{
@@ -27,18 +27,20 @@ interface Drop {
   side: DropSide
 }
 
+const tabSelector = `[role="${TabRole}"]`
+
 const strip = ref<HTMLElement | null>(null)
 const drag = ref<Drag | null>(null)
 const drop = ref<Drop | null>(null)
+// Where the tabs are, read once when a press becomes a drag: nothing moves until the drag
+// ends, and a layout read for every tab on every pointermove would be waste.
+let tabRects: DOMRect[] = []
 
 const tabElements = (): HTMLElement[] =>
-  strip.value
-    ? [...strip.value.querySelectorAll<HTMLElement>('[role="tab"]')]
-    : []
+  strip.value ? [...strip.value.querySelectorAll<HTMLElement>(tabSelector)] : []
 
 const dropAt = (x: number, from: number): Drop | null => {
-  for (const [index, el] of tabElements().entries()) {
-    const r = el.getBoundingClientRect()
+  for (const [index, r] of tabRects.entries()) {
     if (x >= r.left && x < r.right)
       return index === from
         ? null
@@ -60,6 +62,7 @@ const onPointerMove = (e: PointerEvent) => {
   if (!d.moving) {
     if (Math.abs(e.clientX - d.startX) < TabDrag.Threshold) return
     d.moving = true
+    tabRects = tabElements().map((el) => el.getBoundingClientRect())
     strip.value?.setPointerCapture(e.pointerId)
   }
   drop.value = dropAt(e.clientX, d.from)
@@ -70,6 +73,7 @@ const onPointerUp = (e: PointerEvent) => {
   const target = drop.value
   drag.value = null
   drop.value = null
+  tabRects = []
   if (strip.value?.hasPointerCapture(e.pointerId))
     strip.value.releasePointerCapture(e.pointerId)
   if (!d?.moving || !target) return
@@ -121,12 +125,12 @@ const onKeydown = (e: KeyboardEvent) => {
     </div>
     <Button
       :variant="ButtonVariant.Chrome"
-      :size="ButtonSize.Icon"
+      :size="ButtonSize.IconCompact"
       :aria-label="t('shell.newTab')"
-      class="mb-px ml-0.75 size-5.5"
+      class="mb-px ml-0.75"
       @click="emit('add')"
     >
-      <PlusIcon class="size-3" />
+      <PlusIcon />
     </Button>
   </div>
 </template>

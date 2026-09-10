@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { assertNever } from '@/lib/assertNever'
 import type { Inline, Target } from '@/lib/ipc/types'
@@ -24,7 +25,13 @@ const textClass = (style: Style): string => {
   }
 }
 
-const icon = (target: Target): string | null => props.iconFor?.(target) ?? null
+// Each reference's icon, resolved once per render instead of once per use in the template:
+// a page can carry 185 references.
+const icons = computed(() =>
+  props.inline.map((token) =>
+    token.kind === 'ref' ? (props.iconFor?.(token.target) ?? null) : null,
+  ),
+)
 </script>
 
 <template>
@@ -43,8 +50,8 @@ const icon = (target: Target): string | null => props.iconFor?.(target) ?? null
       @click="emit('navigate', token.target)"
     >
       <img
-        v-if="icon(token.target)"
-        :src="icon(token.target) ?? undefined"
+        v-if="icons[index]"
+        :src="icons[index] ?? undefined"
         alt=""
         class="mr-0.75 inline-block size-4 align-text-bottom pixelated"
       />{{ token.label }}

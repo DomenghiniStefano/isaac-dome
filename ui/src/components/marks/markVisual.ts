@@ -10,6 +10,13 @@ export type MarkVisual =
   | { kind: 'unknown' }
   | { kind: 'unexpected'; value: number }
 
+// The fallback outfit's bar, as a share of the cell's height (Tokens.dc.html): a third for
+// the normal mark, two thirds for the hard one.
+export const markBarShare: Record<MarkTier, string> = {
+  [MarkTier.Normal]: '33.333%',
+  [MarkTier.Hard]: '66.667%',
+}
+
 // The symbol URLs of one column. Normal and hard are two different sprites in the game.
 export interface MarkArt {
   normal: string

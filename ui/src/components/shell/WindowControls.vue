@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import type { Component } from 'vue'
 import { MinusIcon, SquareIcon, XIcon } from '@lucide/vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
+import type { MessageKey } from '@/i18n/messageKey'
+import type { MessageSchema } from '@/i18n/messages/it'
 
 const emit = defineEmits<{
   minimize: []
@@ -9,6 +12,34 @@ const emit = defineEmits<{
   closeWindow: []
 }>()
 const { t } = useMessages()
+
+interface WindowControl {
+  label: MessageKey<MessageSchema>
+  icon: Component
+  variant: ButtonVariant
+  press: () => void
+}
+
+const controls: WindowControl[] = [
+  {
+    label: 'shell.minimize',
+    icon: MinusIcon,
+    variant: ButtonVariant.Chrome,
+    press: () => emit('minimize'),
+  },
+  {
+    label: 'shell.maximize',
+    icon: SquareIcon,
+    variant: ButtonVariant.Chrome,
+    press: () => emit('toggleMaximize'),
+  },
+  {
+    label: 'shell.closeWindow',
+    icon: XIcon,
+    variant: ButtonVariant.ChromeDanger,
+    press: () => emit('closeWindow'),
+  },
+]
 </script>
 
 <template>
@@ -16,31 +47,15 @@ const { t } = useMessages()
        window unfocused the title bar's data-focused dims the glyphs. -->
   <div class="flex items-stretch">
     <Button
-      :variant="ButtonVariant.Chrome"
+      v-for="control in controls"
+      :key="control.label"
+      :variant="control.variant"
       :size="ButtonSize.Window"
-      :aria-label="t('shell.minimize')"
+      :aria-label="t(control.label)"
       class="group-data-[focused=false]:text-chrome-inactive-foreground"
-      @click="emit('minimize')"
+      @click="control.press"
     >
-      <MinusIcon class="size-2.5" />
-    </Button>
-    <Button
-      :variant="ButtonVariant.Chrome"
-      :size="ButtonSize.Window"
-      :aria-label="t('shell.maximize')"
-      class="group-data-[focused=false]:text-chrome-inactive-foreground"
-      @click="emit('toggleMaximize')"
-    >
-      <SquareIcon class="size-2.5" />
-    </Button>
-    <Button
-      :variant="ButtonVariant.ChromeDanger"
-      :size="ButtonSize.Window"
-      :aria-label="t('shell.closeWindow')"
-      class="group-data-[focused=false]:text-chrome-inactive-foreground"
-      @click="emit('closeWindow')"
-    >
-      <XIcon class="size-2.5" />
+      <component :is="control.icon" class="size-2.5" />
     </Button>
   </div>
 </template>
