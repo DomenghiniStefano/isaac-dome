@@ -1,0 +1,55 @@
+@layer base {
+  html {
+    /* One weight: never a synthesised bold. Italic synthesis stays: the kit uses it. */
+    font-synthesis-weight: none;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  /* The text size lives here, not on html: on the root it would move rem, and every
+     spacing step (0.25rem) would stop being 4px (base.test.ts). */
+  body {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+  }
+
+  /* One focus ring for the whole app (Chrome e Stati.dc.html): never blurred, never
+     rounded. Rows move it inside with -outline-offset-2. */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  /* Always visible, 12px: in a long table the position is information. Only the webkit
+     pseudo-elements: in Chromium (WebView2) a non-initial scrollbar-width or
+     scrollbar-color makes these rules be ignored. */
+  ::-webkit-scrollbar {
+    width: var(--spacing-scrollbar);
+    height: var(--spacing-scrollbar);
+  }
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-data);
+    border-left: 1px solid var(--color-secondary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-band);
+    border: 1px solid var(--color-input);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-input);
+  }
+  ::-webkit-scrollbar-corner {
+    background-color: var(--color-data);
+  }
+}
+
+/* Motion.dc.html: loops become static, entrances instant. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0ms !important;
+  }
+}

@@ -10,7 +10,7 @@ contract, memory, test data) live in `docs/IMPROVEMENTS.md`, with closing criter
 **Wiki dataset merged** into `develop` on 2026-09-06 (`feature/wiki-dataset`, 29 commits,
 suite green on the merge result, review of the whole branch closed). The local branch was
 deleted; on origin its last published version remains.
-**Last update:** 2026-09-09
+**Last update:** 2026-09-10
 
 ---
 
@@ -356,10 +356,16 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
             file, not a constant: the app reads the live save, which changes as you play.
 - [ ] Real Completion screen — **this is webapp work**, not base work: starts after the
       handoff to design (see below)
-- [ ] shadcn-vue, Reka UI, Pinia, vue-i18n, TanStack — deliberately out of the first step:
-      they arrive with the design system, and getting ahead of it would mean guessing the
-      tokens
-- [ ] Design system (in progress on Claude Design, outside this repo)
+- [x] shadcn-vue, Reka UI, vue-i18n — arrived with the design system's first cycle
+      (2026-09-10); Pinia, Vue Router and TanStack arrive with the screens
+- [ ] Design system — the Claude Design export arrived on 2026-09-10, built in three cycles:
+      - [x] **1. Foundations and primitives** (2026-09-10) — tokens, font, motion, i18n,
+            `cn()`, 23 primitives on a development-only Kit page. Spec
+            `docs/superpowers/specs/2026-09-10-design-system-foundations-design.md`, plan
+            `docs/superpowers/plans/2026-09-10-design-system-foundations.md`
+      - [ ] 2. App components — tab strip, navbar, section sidebar, KPI tile, matrix cell,
+            wiki inline tokens, data states
+      - [ ] 3. Screens — shell, Pinia, Vue Router, TanStack
 
 ---
 
@@ -703,6 +709,42 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-10 — the design system's first cycle, and a typecheck that checked nothing
+
+The Claude Design export arrived as a zip of six pages. Read against the brief, it
+contradicted itself in thirteen places — two light palettes, three button heights, two
+encodings of the matrix cell, a "multiplayer" meaning for the one bit the brief calls
+unconfirmed, gold for both "unlockable now" and every heading — and the spec resolves each
+and hands the list back to design. One theme, the dark one; Tailwind's default scales reset,
+so an off-system class generates nothing; motion on `steps()`; Determination only.
+
+- [x] **`pnpm typecheck` checked no file.** `ui/tsconfig.json` is a solution file, and
+      `vue-tsc --noEmit` on it exits 0 with a deliberate type error. Now
+      `vue-tsc --build --force`; the existing code had 0 errors in build mode, so nothing
+      had been hiding — but nothing would have been caught either.
+- [x] **Found while planning, each by making the tool answer**: `shadcn-vue init` rewrites
+      `main.css` (so `components.json` is hand-written); the registry's `data-open:` classes
+      don't match Reka's `data-state`; vue-i18n's `t()` accepts any string (so
+      `useMessages()` narrows the key type); Vitest hands a `?raw` CSS import an empty
+      string unless `test.css.include` lists it; unconfigured tailwind-merge drops
+      `text-body` beside `text-foreground`; the scanner's visible-text heuristic ended a tag
+      at the `>` inside `has-[>svg]:`.
+- [x] 23 primitives, dressed, on the Kit page (`pnpm ui:dev`, `#kit`); `App.vue` uses
+      them and loses its exemption.
+- [x] **Radio group, missed by the catalogue.** Checked against the export before the
+      merge: `Schermate.dc.html` draws a radio on every row of the profile candidates, and
+      the spec listed Radio neither among the primitives nor among the exclusions. Added
+      with the kit's values (16px, 8px dot); the screen's own drawing — 13px, a 2px edge,
+      a fill outside the palette — loses to the kit, as every component value does.
+- [x] **The 4px grid was 3.5px.** `base.css` set the text size on `html`, which moves
+      `rem`, and Tailwind's spacing step is `0.25rem`: measured on the Kit page, a 14px
+      checkbox where the kit draws 16, a button's padding at 14, a 10.5px gap. The size
+      moved to `body`; after the fix the same measurements read 16, 16 and 12, the kit's
+      numbers. `--spacing-sprite` (4rem, "a 32px sprite doubled") and
+      `--spacing-achievement` (5.5rem, "half of 176") had been 56px and 77px all along.
+      Pinned by `ui/src/assets/base.test.ts`.
+- [ ] Cycle 2 — app components.
 
 ### 2026-09-09 (last) — the documents catch up with the repository
 

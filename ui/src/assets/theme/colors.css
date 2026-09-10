@@ -1,0 +1,79 @@
+/* Colour tokens. One theme, the dark one ("il seminterrato"): values live directly in
+   @theme, with no :root/.dark indirection to switch (spec Decision 1).
+   Source: Shadcn Kit.dc.html (dark), Claude Design export of 2026-09-10. */
+@theme {
+  /* Tailwind's palette goes: bg-red-500 and text-white generate nothing. */
+  --color-*: initial;
+
+  /* shadcn roles */
+  --color-background: #150e0d;
+  --color-foreground: #f2ecec;
+  --color-card: #1b120e;
+  --color-card-foreground: #f2ecec;
+  --color-popover: #1b120e;
+  --color-popover-foreground: #f2ecec;
+  --color-primary: #901800;
+  --color-primary-foreground: #f2ecec;
+  --color-secondary: #3a251d;
+  --color-secondary-foreground: #f2ecec;
+  --color-muted: #241812;
+  --color-muted-foreground: #bfb2ac;
+  --color-accent: #3a251d;
+  --color-accent-foreground: #f2ecec;
+  --color-destructive: #fc0000;
+  --color-destructive-foreground: #e8c4bf;
+  --color-border: #5a3a2c;
+  --color-input: #8a5a46;
+  /* Focus, and active filters from cycle 2. Nothing else is cyan. */
+  --color-ring: #00a6cc;
+
+  /* Domain roles */
+  --color-sheet: #2a1c17;
+  --color-band: #6c4437;
+  --color-band-foreground: #f2ecec;
+  --color-data: #1b120e;
+  --color-row-alt: #20140f;
+  --color-row-hover: #241812;
+  --color-hairline: #2e1e17;
+  --color-primary-hover: #a81c00;
+  --color-primary-active: #6c0c00;
+  --color-primary-edge: #4a0a00;
+  --color-secondary-hover: #492e20;
+  --color-secondary-edge: #6c4437;
+  --color-selection-edge: #fc0000;
+  /* The dot of a chosen radio: the edge's red, a different job. */
+  --color-selection-mark: #fc0000;
+  --color-destructive-surface: #2a0b08;
+  --color-tooltip: #492e20;
+  /* The alpha lives here, never in a class. */
+  --color-overlay: rgb(12 7 6 / 0.8);
+  --color-highlight: #ebd9c4;
+  --color-foreground-soft: #d5c8c2;
+  --color-subtle-foreground: #a69690;
+  --color-faint-foreground: #8a7a72;
+  /* "Image not yet extracted": temporary, it will arrive. */
+  --color-placeholder-stripe-a: #3a251d;
+  --color-placeholder-stripe-b: #241812;
+
+  /* States — the brief's, never reused for anything else. Gold means "unlockable now". */
+  --color-state-done: #2cc53f;
+  --color-state-done-foreground: #8fe79b;
+  --color-state-done-surface: #132916;
+  --color-state-now: #be8c32;
+  --color-state-now-foreground: #e8be6e;
+  --color-state-now-surface: #2b2010;
+  --color-state-blocked: #6c4437;
+  --color-state-blocked-foreground: #bfb2ac;
+  --color-state-blocked-surface: #241812;
+  /* "We can't read it", which is not zero. */
+  --color-state-unknown: #8a7a72;
+  --color-state-unknown-foreground: #bfb2ac;
+  --color-state-unknown-stripe-a: #2e1e17;
+  --color-state-unknown-stripe-b: #241812;
+  --color-state-unexpected: #fc0000;
+  --color-state-unexpected-foreground: #e8c4bf;
+  --color-state-unexpected-surface: #2a0b08;
+  --color-challenge: #a855a8;
+  --color-challenge-foreground: #dda8dd;
+  --color-challenge-surface: #25102a;
+}

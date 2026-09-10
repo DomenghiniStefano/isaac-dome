@@ -33,7 +33,7 @@ const textClass = (style: Style) => {
     case Style.Plain:
       return ''
     case Style.Bold:
-      return 'font-bold'
+      return 'text-foreground'
     case Style.Italic:
       return 'italic'
     default:

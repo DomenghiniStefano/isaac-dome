@@ -1,0 +1,23 @@
+/* Sprites are pixel art: the browser's interpolation smears them. */
+@utility pixelated {
+  image-rendering: pixelated;
+}
+
+/* Two gaps that must never look alike (DESIGN-BRIEF.md §5.6): an image that isn't there
+   yet, and a value we can't read. Same geometry on the 4px grid, different stripes; where
+   hatch-unknown stands for data it also gets a dashed edge and a "?". */
+@utility hatch-placeholder {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--color-placeholder-stripe-a) 0 var(--spacing),
+    var(--color-placeholder-stripe-b) var(--spacing) calc(var(--spacing) * 2)
+  );
+}
+
+@utility hatch-unknown {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--color-state-unknown-stripe-a) 0 var(--spacing),
+    var(--color-state-unknown-stripe-b) var(--spacing) calc(var(--spacing) * 2)
+  );
+}
