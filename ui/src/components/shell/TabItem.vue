@@ -39,6 +39,8 @@ const icon = computed(() => tabOriginIcon[props.tab.origin])
       )
     "
     @click="emit('select')"
+    @mousedown.middle.prevent
+    @auxclick.middle="emit('close')"
   >
     <component
       :is="icon"

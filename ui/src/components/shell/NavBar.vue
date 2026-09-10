@@ -8,7 +8,8 @@ import { AriaCurrent } from '@/lib/constants/aria'
 import { KeyName } from '@/lib/constants/keyNames'
 import { NavSection, navSectionIcon, navSectionLabel } from './navSection'
 
-const props = defineProps<{ section: NavSection; focused: boolean }>()
+// `null` when the sidebar shows a section the switch doesn't name (Settings).
+const props = defineProps<{ section: NavSection | null; focused: boolean }>()
 const emit = defineEmits<{
   'update:section': [section: NavSection]
   search: []
@@ -53,6 +54,7 @@ const current = (s: NavSection) =>
       </Button>
     </div>
     <div class="min-w-0 flex-1" />
+    <slot name="status" />
     <Button
       :variant="ButtonVariant.Field"
       :size="ButtonSize.Compact"
