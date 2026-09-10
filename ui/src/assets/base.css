@@ -4,6 +4,11 @@
     font-synthesis-weight: none;
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+
+  /* The text size lives here, not on html: on the root it would move rem, and every
+     spacing step (0.25rem) would stop being 4px (base.test.ts). */
+  body {
     font-size: var(--text-body);
     line-height: var(--text-body--line-height);
   }
