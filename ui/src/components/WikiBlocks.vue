@@ -59,10 +59,10 @@ const emit = defineEmits<{ navigate: [target: Target] }>()
       </table>
     </div>
     <template v-else-if="b.kind === 'heading'">
-      <h3 v-if="b.level === 3" class="font-bold">
+      <h3 v-if="b.level === 3" class="text-foreground">
         <WikiInline :inline="b.inline" @navigate="emit('navigate', $event)" />
       </h3>
-      <h4 v-else class="font-bold">
+      <h4 v-else class="text-foreground">
         <WikiInline :inline="b.inline" @navigate="emit('navigate', $event)" />
       </h4>
     </template>

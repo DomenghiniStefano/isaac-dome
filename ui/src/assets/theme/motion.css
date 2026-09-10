@@ -1,0 +1,82 @@
+/* Motion.dc.html: the game doesn't interpolate, so neither do we. Everything moves on
+   steps(); data never moves. */
+@theme {
+  /* A bare transition-* class is instant and never a curve: hover and active can't lag. */
+  --default-transition-duration: 0ms;
+  --default-transition-timing-function: steps(1);
+
+  --transition-duration-tap: 80ms;
+  --transition-duration-panel: 120ms;
+  --transition-duration-sheet: 200ms;
+  --transition-duration-loop: 640ms;
+
+  --ease-*: initial;
+  --ease-tap: steps(2);
+  --ease-panel: steps(3);
+  --ease-sheet: steps(5);
+  /* Loops are frame-by-frame keyframes: each segment jumps. */
+  --ease-frame: steps(1);
+
+  --animate-*: initial;
+  --animate-tap-in: rise-in var(--transition-duration-tap) var(--ease-tap);
+  --animate-panel-rise: rise-in var(--transition-duration-panel)
+    var(--ease-panel);
+  --animate-panel-drop: drop-in var(--transition-duration-panel)
+    var(--ease-panel);
+  --animate-panel-open: open-panel var(--transition-duration-panel)
+    var(--ease-panel);
+  --animate-sheet-rise: rise-in var(--transition-duration-sheet)
+    var(--ease-sheet);
+  --animate-skeleton: skeleton-sweep var(--transition-duration-loop)
+    var(--ease-frame) infinite;
+
+  /* Translations are multiples of 4px. transform, not translate, so they compose with
+     the translate-* utilities a centred dialog uses. */
+  @keyframes rise-in {
+    0% {
+      transform: translateY(8px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(4px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes drop-in {
+    0% {
+      transform: translateY(-8px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-4px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes open-panel {
+    0% {
+      transform: translateY(-4px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes skeleton-sweep {
+    0%,
+    100% {
+      background-color: var(--color-secondary);
+    }
+    50% {
+      background-color: var(--color-secondary-hover);
+    }
+  }
+}

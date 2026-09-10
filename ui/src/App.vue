@@ -111,11 +111,13 @@ const cellText = (c: Cell) => {
 const cellClass = (c: Cell) => {
   switch (c.kind) {
     case 'known':
-      return c.bits === 0 ? 'text-mark-none' : 'text-mark-done'
+      return c.bits === 0
+        ? 'text-faint-foreground'
+        : 'text-state-done-foreground'
     case 'unknown':
-      return 'text-mark-unknown italic'
+      return 'text-state-unknown-foreground italic'
     case 'unexpected':
-      return 'text-mark-partial font-bold'
+      return 'text-state-unexpected-foreground'
     default:
       return assertNever(c)
   }
@@ -167,11 +169,11 @@ onMounted(() => load().catch(handleIpcError))
 </script>
 
 <template>
-  <main class="flex flex-col gap-6 p-6 font-mono text-sm">
-    <p v-if="error" class="text-mark-partial">{{ JSON.stringify(error) }}</p>
+  <main class="flex flex-col gap-6 p-6 text-foreground-soft">
+    <p v-if="error" class="text-destructive">{{ JSON.stringify(error) }}</p>
 
     <section v-if="state" class="flex flex-col gap-2">
-      <h1 class="text-lg font-bold">Status</h1>
+      <h1 class="text-heading text-foreground">Status</h1>
       <p>Steam: {{ state.steam?.rootHint ?? 'not found' }}</p>
       <p>
         Game: {{ state.game?.dirHint ?? 'not found' }} ({{
@@ -193,14 +195,14 @@ onMounted(() => load().catch(handleIpcError))
       v-if="state && state.diagnostics.length"
       class="flex flex-col gap-1"
     >
-      <h2 class="font-bold">Setup diagnostics</h2>
+      <h2 class="text-foreground">Setup diagnostics</h2>
       <p v-for="(d, i) in state.diagnostics" :key="i">
         {{ JSON.stringify(d) }}
       </p>
     </section>
 
     <section v-if="summary" class="flex flex-col gap-1">
-      <h2 class="font-bold">Sections</h2>
+      <h2 class="text-foreground">Sections</h2>
       <p v-for="s in summary.sections" :key="s.kind">
         {{ s.kind }}: {{ s.count }}
       </p>
@@ -210,14 +212,14 @@ onMounted(() => load().catch(handleIpcError))
       v-if="summary && summary.diagnostics.length"
       class="flex flex-col gap-1"
     >
-      <h2 class="font-bold">Save diagnostics</h2>
+      <h2 class="text-foreground">Save diagnostics</h2>
       <p v-for="(d, i) in summary.diagnostics" :key="i">
         {{ JSON.stringify(d) }}
       </p>
     </section>
 
     <section v-if="extraction" class="flex flex-col gap-2">
-      <h2 class="font-bold">
+      <h2 class="text-foreground">
         Game archives: {{ extraction.archives.length }} open,
         {{ extraction.totalEntries }} entries indexed
       </h2>
@@ -230,7 +232,7 @@ onMounted(() => load().catch(handleIpcError))
     </section>
 
     <section v-if="extraction?.catalog" class="flex flex-col gap-2">
-      <h2 class="font-bold">
+      <h2 class="text-foreground">
         Catalog: {{ extraction.catalog.total }} items —
         {{ extraction.catalog.counts.passives }} passives,
         {{ extraction.catalog.counts.actives }} actives,
@@ -246,7 +248,7 @@ onMounted(() => load().catch(handleIpcError))
     </section>
 
     <section v-if="extraction?.sprites.length" class="flex flex-col gap-2">
-      <h2 class="font-bold">
+      <h2 class="text-foreground">
         Sprites extracted at runtime ({{ extraction.sprites.length }} of
         {{ extraction.catalog?.total ?? 0 }} items)
       </h2>
@@ -264,7 +266,7 @@ onMounted(() => load().catch(handleIpcError))
     </section>
 
     <section v-if="extraction" class="flex flex-col gap-2">
-      <h2 class="font-bold">Wiki</h2>
+      <h2 class="text-foreground">Wiki</h2>
       <template v-if="extraction.wiki.kind === 'loaded'">
         <p>
           snapshot {{ extraction.wiki.snapshotAt }} · patch
@@ -280,7 +282,7 @@ onMounted(() => load().catch(handleIpcError))
         item id
         <input
           v-model="wikiId"
-          class="border"
+          class="border border-input bg-data"
           @keyup.enter="
             Number.isFinite(Number(wikiId)) &&
             loadWiki({ kind: 'item', id: Number(wikiId) })
@@ -288,7 +290,7 @@ onMounted(() => load().catch(handleIpcError))
         />
       </label>
       <template v-if="wikiEntryView">
-        <h3 class="font-bold">
+        <h3 class="text-foreground">
           {{ wikiEntryView.title }} (revid {{ wikiEntryView.revid }})
         </h3>
         <div
@@ -296,14 +298,14 @@ onMounted(() => load().catch(handleIpcError))
           :key="s.kind"
           class="flex flex-col gap-1"
         >
-          <h4 class="font-bold">{{ s.kind }}</h4>
+          <h4 class="text-foreground">{{ s.kind }}</h4>
           <WikiBlocks :blocks="s.blocks" @navigate="loadWiki" />
         </div>
       </template>
     </section>
 
     <section v-if="matrix" class="flex flex-col gap-2 overflow-x-auto">
-      <h2 class="font-bold">
+      <h2 class="text-foreground">
         Marks: {{ matrix.totals.started }} started out of
         {{ matrix.totals.readable }} readable ({{
           matrix.totals.unknown
@@ -336,7 +338,7 @@ onMounted(() => load().catch(handleIpcError))
     </section>
 
     <section v-if="unlockView" class="flex flex-col gap-2">
-      <h2 class="font-bold">
+      <h2 class="text-foreground">
         Unlock: {{ unlockView.totals.done }} done out of
         {{ unlockView.totals.slots }} ({{ unlockView.totals.unknown }}
         unknown to the catalog)
@@ -351,7 +353,7 @@ onMounted(() => load().catch(handleIpcError))
     </section>
 
     <section v-if="steps" class="flex flex-col gap-2">
-      <h2 class="font-bold">Next steps ({{ basisText(steps.basis) }})</h2>
+      <h2 class="text-foreground">Next steps ({{ basisText(steps.basis) }})</h2>
       <ul class="flex flex-col gap-1">
         <li
           v-for="(n, i) in steps.steps"
