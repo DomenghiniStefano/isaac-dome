@@ -18,6 +18,7 @@ import PopoverSection from './sections/PopoverSection.vue'
 import CollapsibleSection from './sections/CollapsibleSection.vue'
 import DialogSection from './sections/DialogSection.vue'
 import CommandSection from './sections/CommandSection.vue'
+import TableSection from './sections/TableSection.vue'
 import { TooltipProvider } from '@/components/ui/tooltip'
 </script>
 
@@ -45,6 +46,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
       <CollapsibleSection />
       <DialogSection />
       <CommandSection />
+      <TableSection />
     </main>
   </TooltipProvider>
 </template>
