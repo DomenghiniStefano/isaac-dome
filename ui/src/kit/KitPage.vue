@@ -5,6 +5,10 @@ import CardSection from './sections/CardSection.vue'
 import AlertSection from './sections/AlertSection.vue'
 import EmptySection from './sections/EmptySection.vue'
 import FieldSection from './sections/FieldSection.vue'
+import CheckboxSection from './sections/CheckboxSection.vue'
+import SwitchSection from './sections/SwitchSection.vue'
+import ToggleGroupSection from './sections/ToggleGroupSection.vue'
+import TabsSection from './sections/TabsSection.vue'
 import KbdSection from './sections/KbdSection.vue'
 import SeparatorSection from './sections/SeparatorSection.vue'
 import SkeletonSection from './sections/SkeletonSection.vue'
@@ -20,6 +24,10 @@ import SkeletonSection from './sections/SkeletonSection.vue'
     <AlertSection />
     <EmptySection />
     <FieldSection />
+    <CheckboxSection />
+    <SwitchSection />
+    <ToggleGroupSection />
+    <TabsSection />
     <KbdSection />
     <SeparatorSection />
     <SkeletonSection />
