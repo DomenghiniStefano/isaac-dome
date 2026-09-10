@@ -64,12 +64,6 @@ const EXEMPTIONS = [
     reason:
       'declared verification page, replaced by the shell in cycle 3 of the design system: its text is deliberately left untranslated',
   },
-  {
-    file: 'src/components/WikiInline.vue',
-    check: 'raw primitive <button>/<input>',
-    reason:
-      'verification render of the wiki dataset: the link to another target will become a primitive',
-  },
 ]
 
 const isExempt = (file, check) =>

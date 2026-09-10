@@ -21,7 +21,7 @@ import type {
 } from './lib/ipc/types'
 import { StepsBasis } from './lib/ipc/types'
 import { assertNever } from './lib/assertNever'
-import WikiBlocks from './components/WikiBlocks.vue'
+import WikiBlocks from './components/wiki/WikiBlocks.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
