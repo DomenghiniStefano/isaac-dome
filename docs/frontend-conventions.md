@@ -33,7 +33,12 @@ ui/
   src/
     components/
       ui/          shadcn-vue primitives (reka-vega), dressed: they live in the repo
-      <domain>/    app components, named for WHAT THEY ARE
+      shell/       title bar, tabs, window controls, navbar, section sidebar
+      marks/       the completion-matrix cell and its bit reading
+      kpi/         the KPI tile
+      wiki/        the wiki's inline tokens and blocks
+      data-state/  read-but-empty, unreadable, empty category
+      <domain>/    further app components, named for WHAT THEY ARE
     composables/
     stores/        Pinia, setup syntax
     kit/           development-only Kit page: every primitive in every state (`#kit`)
@@ -209,6 +214,8 @@ Operational rules:
   `theme/spacing.css`. The grid is only 4px while `rem` is the browser's 16px: **no font
   size on `html`**. The document's text size sits on `body`; on the root it made every step
   3.5px for a whole cycle, and `src/assets/base.test.ts` now fails if it comes back.
+- **Letter spacing:** `tracking-*` is reset and holds two tokens, `tracking-nav` and
+  `tracking-caps`; `cn()` knows them through `ThemeNamespace.Tracking`.
 - **Colors:** never a literal color in a component. The data states — *done*, *unlockable
   now*, *blocked*, *unknown*, *unexpected* — and the *challenge* tag are semantic tokens
   (`state-*`, `challenge`), not shades picked case by case.
@@ -357,6 +364,15 @@ and Reka UI's headless primitives where the API requires the native element unde
 
 Practical rule: if you're writing `<button class="… hover:bg-…">`, stop and look for the
 primitive.
+
+**The extensions that exist** (cycle 2): `ButtonSize.Micro` (a tab's close), `Row` (sidebar
+items), `Inline` (a wiki reference in running text — `inline`, not `inline-flex`, or an icon
+sets the baseline), `Window` (window controls), `Compact` (the search trigger);
+`ButtonVariant.Nav`, `Section`, `Ref`, `Chrome`, `ChromeDanger`, `Field`. A size only sizes
+and a variant only colours: cva writes size classes after variant classes, so a height inside
+a variant loses. The collapsible card is a set of Card parts (`CardCollapsible`,
+`CardCollapsibleTrigger`, `CardCollapsibleContent`), because a prop can't turn a `div` into
+Reka's collapsible root.
 
 ### How a primitive is written
 

@@ -385,9 +385,10 @@ open blockers, and a session log. What follows is just the framing.
 
 M0 closed. M1 closed on the Rust side, structural base closed on 2026-09-05: static data
 normalized and IPC contracts fixed. M2 (the graph) closed on 2026-09-07 and M3's plan
-queue on 2026-09-08. **The design export arrived on 2026-09-10, and cycle 1 of the design
-system — tokens, font, `cn()`, i18n, 23 primitives on the development-only Kit page —
-landed the same day.**
+queue on 2026-09-08. **The design export arrived on 2026-09-10, and cycles 1 and 2 of the design
+system — tokens, font, `cn()`, i18n, 23 primitives, then the app components (title bar,
+navbar, sidebar, KPI, matrix cell, wiki tokens, data states) on the development-only Kit
+page — landed the same day.**
 
 **The IPC contract is live.** It used to be a precaution — don't reshape the types for the
 convenience of a screen that doesn't exist yet — and it is now a constraint with someone
@@ -398,8 +399,8 @@ committed**. Watch for the silent case: `core_save::Kind` crosses the boundary i
 variant changed the wire with the whole suite green (pinned since by
 `crates/ipc/tests/summary_shape.rs`).
 
-**`ui/` is still the verification page, plus the Kit page.** App components are cycle 2,
-screens are cycle 3. Frontend conventions and their scanner exist already on purpose: a
+**`ui/` is still the verification page, plus the Kit page.** The app components exist
+(cycle 2); screens and the shell's wiring are cycle 3. Frontend conventions and their scanner exist already on purpose: a
 rule introduced before the code is free.
 
 The **wiki dataset** (crate `wiki`, tool `wiki-snapshot`, `dataset/`) is implemented,

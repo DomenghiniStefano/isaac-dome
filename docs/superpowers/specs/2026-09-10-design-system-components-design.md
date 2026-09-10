@@ -150,7 +150,7 @@ not hand styling. So:
 |---|---|---|
 | `Micro` | 14px square, no border or padding, 8px icon | a tab's close |
 | `Row` | auto height, full width, start-aligned, `px-2.75 py-1.75`, `text-row` | sidebar items |
-| `Inline` | auto height, no padding, baseline-aligned, `text-row` | wiki references in running text |
+| `Inline` | `inline` (not `inline-flex`: in a flex box the icon sets the baseline and lifts the label, found on the Kit page), auto height, no padding, baseline-aligned, `text-row` | wiki references in running text |
 | `Window` | full height, `w-window-control`, no border | window controls |
 | `Compact` | `h-7`, `px-2.25`, `text-caption` | the navbar's search trigger |
 
@@ -190,6 +190,9 @@ null`. Emits `select`, `close`.
   tab will land (`data-drop`), which says where it goes, not where the pointer is.
 - The origin icon is an exhaustive record over `TabOrigin` (`Wiki` → `Book`, `Progress` →
   `ListX`, `Settings` → `Cog`, `About` → `Info`): the brief wants the origin shown by shape.
+- **Squeezed** (found on the Kit page with nine tabs: icon, name and close need about 52px,
+  the minimum is 34): the tab is a size container, and below `--container-tab-narrow`
+  (64px) an inactive tab hides its close and the active one its icon; overflow is clipped.
 
 **`TabStrip`** — the row of tabs. Props: `tabs: TabView[]`, `activeId`. Emits `select(id)`,
 `close(id)`, `move(from, to)`, `add`.

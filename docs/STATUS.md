@@ -363,8 +363,11 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
             `cn()`, 23 primitives on a development-only Kit page. Spec
             `docs/superpowers/specs/2026-09-10-design-system-foundations-design.md`, plan
             `docs/superpowers/plans/2026-09-10-design-system-foundations.md`
-      - [ ] 2. App components — tab strip, navbar, section sidebar, KPI tile, matrix cell,
-            wiki inline tokens, data states
+      - [x] **2. App components** (2026-09-10) — title bar and tabs, navbar, section
+            sidebar, KPI tile, matrix cell in sprites or bars, wiki tokens and blocks, data
+            states, collapsible card; presentational, on the Kit page. Spec
+            `docs/superpowers/specs/2026-09-10-design-system-components-design.md`, plan
+            `docs/superpowers/plans/2026-09-10-design-system-components.md`
       - [ ] 3. Screens — shell, Pinia, Vue Router, TanStack
 
 ---
@@ -744,7 +747,20 @@ so an off-system class generates nothing; motion on `steps()`; Determination onl
       numbers. `--spacing-sprite` (4rem, "a 32px sprite doubled") and
       `--spacing-achievement` (5.5rem, "half of 176") had been 56px and 77px all along.
       Pinned by `ui/src/assets/base.test.ts`.
-- [ ] Cycle 2 — app components.
+- [x] **Cycle 2 — app components.** Scope, cell encoding, bit 2, edition tag, folders and
+      shell agreed in conversation; the cell's scale chosen on a comparison page with the
+      real sprites (40px, flat paper `#E9DADF` sampled from `paper_00.png`, symbol at 2×)
+      and the rest delegated, marked **(delegated)** in the spec to revisit on first
+      launch. Thirteen off-palette colours mapped, three colour tokens added.
+- [x] **Found on the Kit page, not by the tests**: at the 34px minimum a tab's icon, name
+      and close spilled onto the next tab (now a size container that drops the close, or
+      the active tab's icon, below 64px); a wiki reference's icon lifted its label off the
+      line (`ButtonSize.Inline` is `inline` now). A tab drag that "did nothing" was the
+      probe's fault: the mouse pressed coordinates of a section scrolled out of view.
+- [x] **Commits rebuilt before pushing**: `git mv` staged two renames that the next
+      `git commit` swept into an unrelated commit, leaving two commits whose `App.vue`
+      imported a moved file. The unpushed commits were redone so each compiles alone.
+- [ ] First launch: look at the delegated choices in the real window.
 
 ### 2026-09-09 (last) — the documents catch up with the repository
 

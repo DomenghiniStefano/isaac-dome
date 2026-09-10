@@ -733,3 +733,14 @@ Logged 2026-09-10, a list:
     pressed `ToggleGroupItem` renders exactly like an unselected one, while `Checkbox`
     keeps its tick and `Switch` its thumb position — back to design (a faint edge or
     underline would keep "which one" readable without reading as enabled).
+
+---
+
+## B13 — The marks map moves to `ipc` with the Completion screen (implementation, cycle 3)
+
+Logged 2026-09-10, from cycle 2: `MarkCell` takes each column's symbol URLs as a prop, and
+nothing in the app serves them yet. `crates/design-export`'s `marks.json` holds the column →
+symbol map (with Delirium on the online-lobby sheet and its `symbolFallback`); DESIGN-BRIEF
+§5.6 already says it belongs beside `BOSSES` in `ipc`. Needed: the map in `ipc`, the icon
+protocol extended to the completion-widget sprites, and a test that every one of the twelve
+columns resolves to two tiers.
