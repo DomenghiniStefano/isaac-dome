@@ -20,6 +20,9 @@ export const it = {
       progress: 'Progressi',
     },
   },
+  marks: {
+    thirdLevel: 'terzo livello, significato non confermato',
+  },
 }
 
 export type MessageSchema = typeof it

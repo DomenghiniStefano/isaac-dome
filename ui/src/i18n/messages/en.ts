@@ -19,4 +19,7 @@ export const en: MessageSchema = {
       progress: 'Progress',
     },
   },
+  marks: {
+    thirdLevel: 'third level, meaning unconfirmed',
+  },
 }
