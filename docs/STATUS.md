@@ -737,6 +737,13 @@ so an off-system class generates nothing; motion on `steps()`; Determination onl
       the spec listed Radio neither among the primitives nor among the exclusions. Added
       with the kit's values (16px, 8px dot); the screen's own drawing — 13px, a 2px edge,
       a fill outside the palette — loses to the kit, as every component value does.
+- [x] **The 4px grid was 3.5px.** `base.css` set the text size on `html`, which moves
+      `rem`, and Tailwind's spacing step is `0.25rem`: measured on the Kit page, a 14px
+      checkbox where the kit draws 16, a button's padding at 14, a 10.5px gap. The size
+      moved to `body`; after the fix the same measurements read 16, 16 and 12, the kit's
+      numbers. `--spacing-sprite` (4rem, "a 32px sprite doubled") and
+      `--spacing-achievement` (5.5rem, "half of 176") had been 56px and 77px all along.
+      Pinned by `ui/src/assets/base.test.ts`.
 - [ ] Cycle 2 — app components.
 
 ### 2026-09-09 (last) — the documents catch up with the repository
