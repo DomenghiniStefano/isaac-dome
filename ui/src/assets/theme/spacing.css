@@ -24,6 +24,13 @@
   --spacing-unlock-fan: 56px;
   --spacing-unlock-queue: 40px;
   --spacing-unlock-body: 560px;
+  /* The Collection's table (Schermate.dc.html, "Collezione"): the sprite column, the quality
+     pips, the origin DLC and the state badge; a quality pip's side. */
+  --spacing-collection-sprite: 56px;
+  --spacing-collection-quality: 96px;
+  --spacing-collection-origin: 104px;
+  --spacing-collection-state: 136px;
+  --spacing-quality-pip: 6px;
   /* The Plan's proposal column (Schermate.dc.html, 246px, on the 4px grid). */
   --spacing-plan-aside: 248px;
   /* The window (Chrome e Stati.dc.html, "Finestra"): tab strip, tabs, drag region,
