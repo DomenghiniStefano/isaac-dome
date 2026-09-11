@@ -15,6 +15,9 @@ export const badgeIcons: Record<BadgeVariant, Component | null> = {
   [BadgeVariant.Done]: CheckIcon,
   [BadgeVariant.Now]: StarIcon,
   [BadgeVariant.Blocked]: LockIcon,
+  // A partial node is locked like a blocked one; its dashed edge, not its mark, says the
+  // graph couldn't interpret everything. It must never borrow the star of Now.
+  [BadgeVariant.Partial]: LockIcon,
   [BadgeVariant.Unknown]: QuestionMark,
   [BadgeVariant.Unexpected]: TriangleAlertIcon,
   [BadgeVariant.Tag]: null,

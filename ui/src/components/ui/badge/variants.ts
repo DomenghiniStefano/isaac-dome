@@ -5,6 +5,7 @@ export const BadgeVariant = {
   Done: 'done',
   Now: 'now',
   Blocked: 'blocked',
+  Partial: 'partial',
   Unknown: 'unknown',
   Unexpected: 'unexpected',
   Tag: 'tag',
