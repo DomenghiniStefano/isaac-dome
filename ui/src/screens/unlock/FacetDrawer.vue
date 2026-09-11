@@ -61,7 +61,7 @@ const active = computed(() => activeFilterCount(props.filter))
       {{ t('unlock.facets') }}
       <template #summary>{{
         active > 0
-          ? `${active} ${t('unlock.activeFilters')}`
+          ? `${t('unlock.activeFilters')}: ${active}`
           : t('unlock.noFilters')
       }}</template>
     </CardCollapsibleTrigger>

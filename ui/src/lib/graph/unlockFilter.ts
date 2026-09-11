@@ -206,7 +206,12 @@ export const sortNodes = (
 ): UnlockNode[] => {
   switch (sort) {
     case UnlockSort.FanOut:
-      return sortBy(nodes, [(n) => -n.graph.fanOut, nodeSlot])
+      // What is done opens nothing more for the player, whatever its fan-out: it goes last.
+      return sortBy(nodes, [
+        (n) => (n.done ? 1 : 0),
+        (n) => -n.graph.fanOut,
+        nodeSlot,
+      ])
     case UnlockSort.Steps:
       return sortBy(nodes, [
         (n) => stepsRank[nodeState(n)],
