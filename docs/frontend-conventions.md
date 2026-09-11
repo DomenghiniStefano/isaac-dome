@@ -35,16 +35,18 @@ ui/
       ui/          shadcn-vue primitives (reka-vega), dressed: they live in the repo
       shell/       title bar, tabs, window controls, navbar, section sidebar
       marks/       the completion-matrix cell, its bit reading, and the grid of cells
+      graph/       a node's state badge and its why, the achievement drawing, kind labels
       sprite/      PixelSprite: a game sprite that falls back, never a broken image
       kpi/         the KPI tile
       wiki/        the wiki's inline tokens and blocks
       data-state/  read-but-empty, unreadable, empty category
       <domain>/    further app components, named for WHAT THEY ARE
-    composables/
-    stores/        Pinia, setup syntax: tabs (and tabModel, its pure rules), profile, completion
+    composables/   useOnActiveProfile: a screen reloads when the active profile changes
+    stores/        Pinia, setup syntax: tabs (and tabModel, its pure rules), profile,
+                   completion, graph
     router/        routeTable (names, paths, titles, icons: no components), routes, index
     screens/       one screen per route, and the parts only it uses (`screens/profile/`,
-                   `screens/completion/`)
+                   `screens/completion/`, `screens/nextSteps/`, `screens/unlock/`)
     kit/           development-only Kit page: every primitive in every state (`#kit`)
     verify/        development-only verification page: every command, raw (`#verify`)
     lib/
@@ -52,10 +54,13 @@ ui/
         transport.ts  call(): invoke() in Tauri, the fixtures under `pnpm ui:dev`
         errors.ts     isIpcError, shared by the stores
         fixtures/     development answers, one scenario per `?fixture=`; `art.ts` globs the
-                      design pack's sprites, `?art=none` answers without them
+                      design pack's sprites, `?art=none` answers without them; `graph.ts`
+                      answers the pack's real unlock payloads, `?catalog=none` without the
+                      game, and `graphArt.ts` holds their 1,500 images, loaded only then
       window/      appWindow: the only module that talks to the window
       profile/     what the profile screen and the indicator show, as pure functions
       completion/  what the Completion screen counts, as pure functions
+      graph/       a node's state and why, Unlock's facets, search and sort, as pure functions
       constants/   magic strings: command names, dev routes, key names, placement
       design/      themeKeys: the token names cn() reads from the theme CSS
       cn.ts        class merging that knows our tokens
@@ -399,6 +404,13 @@ and a variant only colours: cva writes size classes after variant classes, so a 
 a variant loses. The collapsible card is a set of Card parts (`CardCollapsible`,
 `CardCollapsibleTrigger`, `CardCollapsibleContent`), because a prop can't turn a `div` into
 Reka's collapsible root.
+
+**Added with sub-project 3.3a**: `BadgeVariant.Partial` — a node the graph couldn't fully
+interpret: the blocked colours, a dashed edge and the lock, never the star of `Now` and never
+the hatch of `Unknown`. Long lists are virtualized with `@tanstack/vue-virtual`: the options
+are a `computed`, the row height is a number pinned against its spacing token by a test
+(`screens/unlock/unlockLayout.test.ts`), and each row's offset travels as a CSS variable read by
+`translate-y-(--row-start)`.
 
 ### How a primitive is written
 
