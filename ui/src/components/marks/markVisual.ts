@@ -1,4 +1,4 @@
-import type { Cell } from '@/lib/ipc/types'
+import type { Cell, MarkArtView } from '@/lib/ipc/types'
 import { assertNever } from '@/lib/assertNever'
 
 export const MarkTier = { Normal: 'normal', Hard: 'hard' } as const
@@ -21,6 +21,14 @@ export const markBarShare: Record<MarkTier, string> = {
 export interface MarkArt {
   normal: string
   hard: string
+}
+
+// A column's art as the IPC sends it, drawn only when both tiers have a URL: a column that
+// showed one tier as a sprite and the other as bars would read as two different codes.
+export const markArtOf = (view: MarkArtView | undefined): MarkArt | null => {
+  const normal = view?.normalUrl
+  const hard = view?.hardUrl
+  return normal && hard ? { normal, hard } : null
 }
 
 // A cell is a bitmask (DESIGN-BRIEF.md §5.3): bit 0 the normal mark, bit 1 the hard one,

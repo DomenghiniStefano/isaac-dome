@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { MarkTier, markVisual } from './markVisual'
+import { MarkTier, markArtOf, markVisual } from './markVisual'
 
 const known = (bits: number) => markVisual({ kind: 'known', bits })
 
@@ -70,5 +70,20 @@ describe('markVisual', () => {
       kind: 'unexpected',
       value: 9,
     })
+  })
+})
+
+describe('markArtOf', () => {
+  it('draws a column only when both tiers have a URL', () => {
+    expect(markArtOf({ normalUrl: 'n', hardUrl: 'h' })).toEqual({
+      normal: 'n',
+      hard: 'h',
+    })
+  })
+
+  it('draws nothing for a column missing a tier, or missing altogether', () => {
+    expect(markArtOf({ normalUrl: 'n', hardUrl: null })).toBeNull()
+    expect(markArtOf({ normalUrl: null, hardUrl: null })).toBeNull()
+    expect(markArtOf(undefined)).toBeNull()
   })
 })
