@@ -12,8 +12,17 @@ suite green on the merge result, review of the whole branch closed). The local b
 deleted; on origin its last published version remains.
 **Design system merged** into `develop` on 2026-09-11: cycle 1 (`feature/design-system-foundations`),
 then cycle 2 and screens 3.1–3.2 in one merge of `feature/design-system-screens`, which
-already held `feature/design-system-components`; suite green on the merge result. The screens
-branch carries on with 3.3.
+already held `feature/design-system-components`; suite green on the merge result. Screens 3.3a
+and 3.3b followed on the same branch, each merged into `develop` with the suite green (the last,
+`ef962c8`, on 2026-09-11).
+
+**Branches from 3.4 on: one per sub-project, cut from `develop`** (decided 2026-09-11). Nobody
+commits on `develop` directly: it is where finished work lands, through a `--no-ff` merge with
+`scripts/check` green. A sub-project gets its own `feature/<name>` branch — Collection is
+`feature/screens-collection` — so each merge is one sub-project, its diff stays reviewable, and
+a piece that has to be redone is thrown away without touching the others.
+`feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
+said what it carried; it is fully merged and kept, its deletion waiting for the owner.
 **Last update:** 2026-09-11
 
 ---
@@ -399,7 +408,13 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
                         move names the row it lands under (`queue_move(achievement, after)`).
                         Spec `docs/superpowers/specs/2026-09-11-screens-plan-design.md`, plan
                         `docs/superpowers/plans/2026-09-11-screens-plan.md`
-            - [ ] 3.4 Collection — items by pool and quality
+            - [x] 3.4 Collection (2026-09-11) — the save's item collection joined with the
+                  catalog's collectibles (`ipc::collection_view`, the `collection` command, a
+                  pack payload), one state per item, facets on quality, pool, kind and origin
+                  over a virtualized table. Spec
+                  `docs/superpowers/specs/2026-09-11-screens-collection-design.md`, plan
+                  `docs/superpowers/plans/2026-09-11-screens-collection.md`, branch
+                  `feature/screens-collection`
             - [ ] 3.5 Wiki in tabs, search — the `Ctrl+K` palette (B5)
             - [ ] 3.6 Settings and About — provenance, credits, the three promises
             - [ ] 3.7 Tabs that survive a restart (B6)
@@ -746,6 +761,38 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-11 (late night) — the Collection
+
+On `feature/screens-collection`, the first branch under the one-per-sub-project rule; every
+commit pushed as it lands.
+
+- [x] **A new contract, not only a screen**: nothing joined the save's item collection with the
+      catalog. `ipc::collection_view` lists the catalog's collectibles by id with name, icon link,
+      quality, pools and origin, whether section 4 holds each one, and the lock its achievement
+      puts on it; the `collection` command wires it; `design-export` writes
+      `contracts/payload/collection.json`. Handed on in `DESIGN-BRIEF.md` §7.7.
+- [x] **Section 4 keeps its structural name**: "in the collection", never "seen" or "picked up",
+      which nobody has measured. **Trinkets have no slot** and aren't listed. **Unread is never
+      false**: a missing section or a slot past its end gives `null`, with its diagnostic.
+- [x] **Seven synthetic Rust tests and one real-data property** (each item against its own slot),
+      which skips here: this machine has no game.
+- [x] **A collectible's state and the facets are pure functions** (`lib/collection/`): in the
+      collection, to find, locked, unreadable; quality with unrated as a value, pool with none,
+      kind, origin; counts that leave their own facet out; the screen opens on what hasn't been
+      found.
+- [x] **The fixture says what it is**: the pack has no `collection.json` yet, so ids, kinds and
+      names come from `images/INDEX.json`, locks from `unlock.json` and origins from the catalog's
+      id ranges — all real — while quality, pools and the collection flag are synthetic, declared
+      by `collectionSource()` and warned once in the console.
+- [x] **Looked at through headless Chrome**, 18 checks: 422 / 211 / 88 / 0 and "299 / 721" on the
+      default pick, 22 of 721 rows in the DOM, the pips, the synthetic warning, sprites, a locked
+      item's tooltip naming its achievement, a pool count falling from 67 to 15 when quality 4 is
+      picked, the search, the last row reachable, `?collection=unread` (721 unreadable and the
+      alert), `?catalog=none`, `?art=none`. No finding in the app; two in the script.
+- [ ] **The pack's real `collection.json`** waits for `pnpm design:export` on a machine with the
+      game and a save; until then the Collection has only been seen on synthetic quality, pools
+      and flags. Not seen in a real Tauri window either.
 
 ### 2026-09-11 (night) — the Plan and the queue
 

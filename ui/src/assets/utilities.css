@@ -42,6 +42,17 @@
     var(--spacing-unlock-queue);
 }
 
+/* The Collection's table: the sprite, the name, the quality, the pools, the origin, the state. */
+@utility grid-cols-collection {
+  grid-template-columns:
+    var(--spacing-collection-sprite)
+    minmax(0, 1.4fr)
+    var(--spacing-collection-quality)
+    minmax(0, 1fr)
+    var(--spacing-collection-origin)
+    var(--spacing-collection-state);
+}
+
 /* A column header read bottom to top. */
 @utility writing-vertical {
   writing-mode: vertical-rl;

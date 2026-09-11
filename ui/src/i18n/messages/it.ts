@@ -52,8 +52,64 @@ export const it = {
     settingsTitle: 'Impostazioni',
     settingsHint: "Da qui l'app trova gioco e salvataggi.",
   },
+  collection: {
+    intro:
+      'Gli oggetti che la collezione di questo salvataggio non ha ancora, per qualità e pool: non un muro di icone. Qualità e pool vengono dai file del gioco, non indovinati dal nome. I trinket non ci sono: il salvataggio non tiene la loro collezione.',
+    state: {
+      inCollection: 'in collezione',
+      available: 'da trovare',
+      locked: 'bloccato',
+      unknown: 'non leggibile',
+    },
+    facets: 'Faccette',
+    facet: {
+      state: 'Stato',
+      quality: 'Qualità',
+      pool: 'Pool',
+      kind: 'Tipo',
+      origin: 'DLC di origine',
+    },
+    qualityUnrated: 'non valutato',
+    poolNone: 'nessun pool',
+    items: 'oggetti',
+    search: 'cerca un oggetto',
+    sortBy: 'ordina per',
+    sort: {
+      quality: 'qualità',
+      id: 'id',
+      name: 'nome',
+    },
+    columns: {
+      item: 'Oggetto',
+      quality: 'Qualità',
+      pools: 'Pool',
+      origin: 'DLC',
+      state: 'Stato',
+    },
+    id: 'id',
+    lockedBy: 'si sblocca con',
+    achievement: 'achievement',
+    noResults: 'Nessun oggetto con questi filtri.',
+    resetFilters: 'Azzera i filtri',
+    noFilters: 'nessun filtro',
+    activeFilters: 'filtri attivi',
+    reset: 'Azzera',
+    diagnostics: {
+      noCatalogTitle: 'Manca il catalogo',
+      noCatalog:
+        'Senza il gioco installato gli oggetti non hanno nome né qualità: la collezione del salvataggio si legge, ma non si sa di cosa.',
+      noCollectionSectionTitle: 'La collezione del salvataggio non si legge',
+      noCollectionSection:
+        "Ogni oggetto risulta non leggibile: non vuol dire che non l'hai mai trovato, vuol dire che quella parte del salvataggio non è stata letta.",
+      noAchievementSectionTitle:
+        'Gli achievement del salvataggio non si leggono',
+      noAchievementSection:
+        'Non si sa quali oggetti siano ancora bloccati: quelli che dipendono da un achievement risultano non leggibili.',
+      itemsBeyondSlots:
+        'oggetti del catalogo oltre la collezione del salvataggio, mostrati come non leggibili',
+    },
+  },
   placeholder: {
-    collection: 'Arriva con la schermata Collezione.',
     runArchive: "Arriva con l'archivio delle run (M4).",
     wiki: 'Arriva con le pagine wiki nelle tab e la ricerca.',
     settings: 'Arriva con Impostazioni e Informazioni.',

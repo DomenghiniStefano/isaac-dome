@@ -506,3 +506,48 @@ export interface QueueView {
   // says so instead of showing an empty list.
   storeAvailable: boolean
 }
+
+// --- The Collection ---
+
+// What stands between an item and a run. Tagged: three variants carry data. `locked` means its
+// achievement isn't done, so the item can't appear yet; `unknown` means section 1 wasn't read.
+export type LockView =
+  | { kind: 'free' }
+  | { kind: 'unlocked'; achievement: number; text: string | null }
+  | { kind: 'locked'; achievement: number; text: string | null }
+  | { kind: 'unknown'; achievement: number; text: string | null }
+
+// A collectible as the Collection shows it — never a trinket, which has no slot in section 4.
+// `inCollection: null` is unread (section 4 missing, or no slot for this id), never "not in the
+// collection".
+export interface CollectionItem {
+  id: number
+  kind: ItemKindView
+  name: string
+  iconUrl: string | null
+  quality: number | null
+  pools: string[]
+  origin: OriginView | null
+  inCollection: boolean | null
+  lock: LockView
+}
+
+export interface CollectionTotals {
+  slots: number
+  items: number
+  inCollection: number
+}
+
+export type CollectionDiagnostic =
+  | { kind: 'noCatalog' }
+  | { kind: 'noCollectionSection' }
+  | { kind: 'noAchievementSection' }
+  | { kind: 'itemsBeyondSlots'; count: number }
+
+export interface CollectionView {
+  items: CollectionItem[]
+  // The pools any listed item belongs to, each once, in the catalog's order.
+  pools: string[]
+  totals: CollectionTotals
+  diagnostics: CollectionDiagnostic[]
+}

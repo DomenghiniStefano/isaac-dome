@@ -1,0 +1,190 @@
+import type {
+  CollectionItem,
+  CollectionView,
+  ItemKindView,
+  LockView,
+  OriginView,
+} from '../types'
+import { graphAnswers } from './graph'
+import { packIconUrl } from './graphArt'
+
+// Development only. The pack's real collection.json once design-export has written it (it needs
+// a machine with the game and a save). Until then the items come from the pack's image index —
+// ids, kinds and names, real — their locks from unlock.json, real, their origin from the catalog's
+// id ranges, real, and their quality, pools and collection flag from the id: synthetic, and said.
+const payloads = import.meta.glob<CollectionView>(
+  '../../../../../design-export/isaacdome-design-pack/contracts/payload/collection.json',
+  { eager: true, import: 'default' },
+)
+
+interface IndexEntry {
+  family: string
+  id: number
+  kind?: string
+  name?: string
+}
+const indexes = import.meta.glob<IndexEntry[]>(
+  '../../../../../design-export/isaacdome-design-pack/images/INDEX.json',
+  { eager: true, import: 'default' },
+)
+
+export const CollectionSource = {
+  Pack: 'pack',
+  Synthetic: 'synthetic',
+} as const
+export type CollectionSource =
+  (typeof CollectionSource)[keyof typeof CollectionSource]
+
+const packed = (): CollectionView | null => Object.values(payloads)[0] ?? null
+
+export const collectionSource = (): CollectionSource =>
+  packed() ? CollectionSource.Pack : CollectionSource.Synthetic
+
+export interface CollectionAnswerOptions {
+  withArt: boolean
+  withCatalog: boolean
+  collectionRead: boolean
+}
+
+// The reference save's section 4 length (the pack's save_summary.json declares 733 items).
+const referenceSlots = 733
+
+const collectibleKinds: string[] = ['passive', 'active', 'familiar']
+const isCollectible = (kind: string | undefined): kind is ItemKindView =>
+  kind !== undefined && collectibleKinds.includes(kind)
+
+// crates/catalog/src/origin.rs, COLLECTIBLES: the last collectible id of each DLC.
+const originOf = (id: number): OriginView | null => {
+  if (id <= 0) return null
+  if (id <= 341) return 'rebirth'
+  if (id <= 440) return 'afterbirth'
+  if (id <= 552) return 'afterbirthPlus'
+  if (id <= 732) return 'repentance'
+  return null
+}
+
+// Synthetic, from the id: enough variety to look at facets and pips, and nothing more.
+const syntheticPools = [
+  'treasure',
+  'boss',
+  'shop',
+  'devil',
+  'angel',
+  'secret',
+  'library',
+]
+const poolsOf = (id: number): string[] => {
+  if (id % 11 === 0) return []
+  const first = syntheticPools[id % 7] ?? 'treasure'
+  const second = syntheticPools[(id + 3) % 7] ?? 'boss'
+  return id % 3 === 0 ? [first, second] : [first]
+}
+const qualityOf = (id: number): number | null => (id % 23 === 0 ? null : id % 5)
+
+const free: LockView = { kind: 'free' }
+
+// The locks the reference profile's unlock view implies: an item a node unlocks is unlocked or
+// locked by that node's done; any other item is free.
+const locksFrom = (): Map<string, LockView> => {
+  const nodes = graphAnswers({ withArt: false, withCatalog: true }).unlock.nodes
+  return new Map(
+    nodes.flatMap((node) => {
+      const a = node.achievement
+      if (a.kind !== 'known') return []
+      return node.unlocks.flatMap((target) => {
+        if (target.kind !== 'item') return []
+        const lock: LockView = node.done
+          ? { kind: 'unlocked', achievement: a.id, text: a.text }
+          : { kind: 'locked', achievement: a.id, text: a.text }
+        return [[`${target.itemKind}-${target.id}`, lock] as const]
+      })
+    }),
+  )
+}
+
+const itemOf = (
+  entry: IndexEntry,
+  kind: ItemKindView,
+  lock: LockView,
+  withArt: boolean,
+  collectionRead: boolean,
+): CollectionItem => ({
+  id: entry.id,
+  kind,
+  name: entry.name ?? '',
+  iconUrl: withArt ? packIconUrl(`isaac://item/${kind}/${entry.id}`) : null,
+  quality: qualityOf(entry.id),
+  pools: poolsOf(entry.id),
+  origin: originOf(entry.id),
+  // A locked item can't have been found: the synthetic flag never says otherwise.
+  inCollection: collectionRead
+    ? lock.kind !== 'locked' && entry.id % 3 !== 0
+    : null,
+  lock,
+})
+
+const synthetic = (
+  withArt: boolean,
+  collectionRead: boolean,
+): CollectionView => {
+  const locks = locksFrom()
+  const entries = (Object.values(indexes)[0] ?? [])
+    .filter((e) => e.family === 'item')
+    .sort((a, b) => a.id - b.id)
+  const items = entries.flatMap((e) =>
+    isCollectible(e.kind)
+      ? [
+          itemOf(
+            e,
+            e.kind,
+            locks.get(`${e.kind}-${e.id}`) ?? free,
+            withArt,
+            collectionRead,
+          ),
+        ]
+      : [],
+  )
+  return {
+    items,
+    pools: syntheticPools.filter((p) => items.some((i) => i.pools.includes(p))),
+    totals: {
+      slots: collectionRead ? referenceSlots : 0,
+      items: items.length,
+      inCollection: items.filter((i) => i.inCollection === true).length,
+    },
+    diagnostics: collectionRead ? [] : [{ kind: 'noCollectionSection' }],
+  }
+}
+
+let warned = false
+
+// Said once on the development server, where someone is looking at the screen.
+const warnSynthetic = (): void => {
+  if (warned || typeof window === 'undefined') return
+  warned = true
+  console.warn(
+    'Collection fixture: quality, pools and collection flags are synthetic until the design pack carries collection.json (pnpm design:export)',
+  )
+}
+
+export const collectionAnswer = ({
+  withArt,
+  withCatalog,
+  collectionRead,
+}: CollectionAnswerOptions): CollectionView => {
+  if (!withCatalog)
+    return {
+      items: [],
+      pools: [],
+      totals: {
+        slots: collectionRead ? referenceSlots : 0,
+        items: 0,
+        inCollection: 0,
+      },
+      diagnostics: [{ kind: 'noCatalog' }],
+    }
+  const pack = packed()
+  if (pack) return pack
+  warnSynthetic()
+  return synthetic(withArt, collectionRead)
+}

@@ -512,7 +512,7 @@ fn first_item_origin(c: &Catalog, unlocks: &[Unlock]) -> Option<OriginView> {
     }
 }
 
-fn origin_view(o: Origin) -> OriginView {
+pub(crate) fn origin_view(o: Origin) -> OriginView {
     match o {
         Origin::Rebirth => OriginView::Rebirth,
         Origin::Afterbirth => OriginView::Afterbirth,

@@ -49,7 +49,7 @@ ui/
     router/        routeTable (names, paths, titles, icons: no components), routes, index
     screens/       one screen per route, and the parts only it uses (`screens/profile/`,
                    `screens/completion/`, `screens/nextSteps/`, `screens/unlock/`,
-                   `screens/plan/`)
+                   `screens/plan/`, `screens/collection/`)
     kit/           development-only Kit page: every primitive in every state (`#kit`)
     verify/        development-only verification page: every command, raw (`#verify`)
     lib/
@@ -61,12 +61,16 @@ ui/
                       answers the pack's real unlock payloads, `?catalog=none` without the
                       game, and `graphArt.ts` holds their 1,500 images, loaded only then and
                       indexed once; `queue.ts` keeps a plan queue in memory, repaired by a port
-                      of the Rust rule (`queueRepair.ts`), `?queue=empty|unavailable|unreadable`
+                      of the Rust rule (`queueRepair.ts`), `?queue=empty|unavailable|unreadable`;
+                      `collection.ts` answers the pack's `collection.json` when it has one, and
+                      until then real names and locks with **declared synthetic** quality, pools
+                      and flags (`collectionSource()`), `?collection=unread`
       window/      appWindow: the only module that talks to the window
       profile/     what the profile screen and the indicator show, as pure functions
       completion/  what the Completion screen counts, as pure functions
       graph/       a node's state and why, Unlock's facets, search and sort, as pure functions
       plan/        the queue's drops and anchors, the row a move stopped under, as pure functions
+      collection/  a collectible's state and the Collection's facets, as pure functions
       constants/   magic strings: command names, dev routes, key names, placement
       design/      themeKeys: the token names cn() reads from the theme CSS
       cn.ts        class merging that knows our tokens

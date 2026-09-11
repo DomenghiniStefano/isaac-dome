@@ -31,7 +31,10 @@ const ArtParam = 'art'
 const CatalogParam = 'catalog'
 // `?queue=empty|unavailable|unreadable` answers the plan queue in one of its other states.
 const QueueParam = 'queue'
+// `?collection=unread` answers the Collection as a save whose section 4 wasn't read.
+const CollectionParam = 'collection'
 const Off = 'none'
+const Unread = 'unread'
 
 const query = (): URLSearchParams =>
   new URLSearchParams(globalThis.location?.search ?? '')
@@ -54,6 +57,7 @@ const currentQueueScenario = (): QueueScenario => {
 
 const artShown = (): boolean => query().get(ArtParam) !== Off
 const catalogShown = (): boolean => query().get(CatalogParam) !== Off
+const collectionRead = (): boolean => query().get(CollectionParam) !== Unread
 
 // A profile chosen through select_profile stays chosen for the page's life, as in the app.
 let chosenId: string | null = null
@@ -108,6 +112,16 @@ const graph = async () => {
   return graphAnswers({ withArt: artShown(), withCatalog: catalogShown() })
 }
 
+// The Collection's image index loads only when the Collection asks for it, like the graph.
+const collection = async () => {
+  const { collectionAnswer } = await import('./collection')
+  return collectionAnswer({
+    withArt: artShown(),
+    withCatalog: catalogShown(),
+    collectionRead: collectionRead(),
+  })
+}
+
 // The queue's nodes are the Unlock view's, as in the app: the same node on both screens.
 const queueOptions = async (): Promise<QueueOptions> => ({
   scenario: currentQueueScenario(),
@@ -142,6 +156,8 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     whenActive(scenario, async () => (await graph()).unlock),
   [Command.NextSteps]: (_args, scenario) =>
     whenActive(scenario, async () => (await graph()).steps),
+  [Command.Collection]: (_args, scenario) =>
+    whenActive(scenario, () => collection()),
   [Command.Queue]: (_args, scenario) =>
     whenActive(scenario, async () => readQueue(await queueOptions())),
   [Command.QueueAdd]: (args, scenario) =>
