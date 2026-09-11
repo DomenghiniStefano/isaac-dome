@@ -110,6 +110,97 @@ export const it = {
     nothingReadable:
       'Il salvataggio non lascia leggere nessun marchio: la sezione dei contatori manca o è troncata.',
   },
+  graph: {
+    state: {
+      done: 'fatto',
+      now: 'sbloccabile ora',
+      blocked: 'bloccato da',
+      partial: 'grafo parziale',
+    },
+    why: {
+      title: 'Cosa gli manca',
+      character: 'Personaggi',
+      boss: 'Boss',
+      challenge: 'Sfide',
+      item: 'Oggetti',
+      gate: 'Condizioni',
+      unknown: 'Requisiti che non sappiamo interpretare',
+    },
+    kinds: {
+      passive: 'oggetto passivo',
+      active: 'oggetto attivo',
+      familiar: 'famiglio',
+      trinket: 'trinket',
+      character: 'personaggio',
+      boss: 'boss',
+      challenge: 'sfida',
+      nothing: 'niente di catalogato',
+    },
+    stateName: {
+      done: 'fatto',
+      now: 'sbloccabile ora',
+      blocked: 'bloccato',
+      partial: 'grafo parziale',
+    },
+    originNone: 'non indicata',
+    unknownAchievement: 'Achievement sconosciuto',
+    slot: 'slot',
+  },
+  nextSteps: {
+    intro:
+      'Al massimo cinque righe, tutte sbloccabili adesso: le cinque che aprono più cose a valle. Un nodo che il grafo sa dire solo parziale non è un passo, perché non possiamo garantirlo.',
+    unlocks: 'sblocca',
+    noCatalogTitle: 'Nessun passo: manca il catalogo',
+    noCatalog:
+      'Senza il gioco installato non si può sapere cosa sblocca cosa: la lista è vuota di proposito, non cinque righe indovinate.',
+    nothingNow:
+      "Niente è sbloccabile adesso: è tutto fatto, oppure tutto aspetta qualcos'altro.",
+  },
+  unlock: {
+    intro:
+      'Ogni nodo del grafo, filtrabile. Un filtro conta più degli altri: sbloccabile ora.',
+    rows: 'righe',
+    search: 'cerca nome, condizione o cosa sblocca',
+    sortBy: 'ordina per',
+    sort: {
+      fanOut: 'sblocca',
+      steps: 'passi mancanti',
+      name: 'nome',
+    },
+    facets: 'Faccette',
+    noFilters: 'nessun filtro',
+    activeFilters: 'filtri attivi',
+    reset: 'Azzera',
+    resetFilters: 'Azzera i filtri',
+    noResults: 'Nessuna riga con questi filtri.',
+    facet: {
+      state: 'Stato',
+      unlocks: 'Cosa sblocca',
+      origin: 'DLC di origine',
+      character: 'Personaggio richiesto',
+    },
+    columns: {
+      achievement: 'Achievement',
+      unlocks: 'Cosa sblocca',
+      condition: 'Condizione',
+      state: 'Stato',
+      fanOut: 'Sblocca',
+    },
+    unlocksNothing: 'niente di catalogato',
+    noCondition: 'nessuna condizione nel file',
+    diagnostics: {
+      noCatalogTitle: 'Manca il catalogo',
+      noCatalog:
+        'Senza il gioco installato gli achievement non hanno nome né condizione: le righe dicono solo quali slot sono fatti.',
+      noAchievementSectionTitle: 'La sezione degli achievement non si legge',
+      noAchievementSection:
+        'Zero righe non vuol dire zero achievement fatti: vuol dire che quella parte del salvataggio non è stata letta.',
+      slotsBeyondCatalog:
+        'slot del salvataggio oltre il catalogo, mostrati come achievement sconosciuti',
+      catalogBeyondSlots:
+        'achievement del catalogo oltre il salvataggio, che non compaiono',
+    },
+  },
   gate: {
     needsProfile:
       'Progressi dipende dal profilo attivo: scegline uno per vedere questa schermata.',

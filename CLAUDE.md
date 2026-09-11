@@ -35,7 +35,9 @@ The full project document is in `docs/PROJECT.md`.
   **Target stack, not all of it today's**: since the design system's first cycle
   (2026-09-10) `ui/` has Vue, Vite, Tailwind, `@tauri-apps/api`, shadcn-vue on Reka UI,
   Lucide, vue-i18n and Vitest; Pinia and Vue Router since the screens' first sub-project
-  (2026-09-11). TanStack arrives with sub-project 3.3.
+  (2026-09-11); TanStack Virtual since 3.3a. TanStack Table was left out of 3.3a — its
+  faceted values count an array cell as one value, and Unlock's facets are pure functions —
+  and is reconsidered for Collection (3.4).
 - **Backend**: Rust inside Tauri 2. Crates: `steamlocate`, `winreg` (fallback),
   `keyvalues-parser`, `quick-xml`, `notify`, `rusqlite` (bundled), `serde`.
 - **Tooling**: pnpm, Git Flow with `develop` as the integration branch.
@@ -400,10 +402,11 @@ committed**. Watch for the silent case: `core_save::Kind` crosses the boundary i
 variant changed the wire with the whole suite green (pinned since by
 `crates/ipc/tests/summary_shape.rs`).
 
-**`ui/` is the shell, with two real screens** (2026-09-11): tabs, router, the live window
-chrome, the profile indicator; profile selection (3.1) and Completion (3.2), whose mark
-symbols and character heads are crops of the user's own sheets served through the icon
-protocol. Every other screen is a placeholder naming the sub-project that brings it. The
+**`ui/` is the shell, with four real screens** (2026-09-11): tabs, router, the live window
+chrome, the profile indicator; profile selection (3.1), Completion (3.2), whose mark symbols
+and character heads are crops of the user's own sheets served through the icon protocol, and
+Next steps and Unlock (3.3a), which draw a node's state and its why one way, with Unlock's
+facets, search and sort as pure functions over a virtualized table. Every other screen is a placeholder naming the sub-project that brings it. The
 verification page lives behind `#verify` and the Kit behind `#kit`, both development-only;
 `pnpm ui:dev` runs without the backend on fixtures (`?fixture=none|pick|active`, and
 `?art=none` for the first-launch outfit without sprites). Frontend conventions and their scanner exist already on

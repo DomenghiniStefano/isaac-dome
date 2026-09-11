@@ -1,33 +1,22 @@
 <script setup lang="ts">
 import { Grid2x2Icon, InfoIcon } from '@lucide/vue'
-import { computed, watch } from 'vue'
+import { computed } from 'vue'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Skeleton } from '@/components/ui/skeleton'
+import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
 import { completionKpis } from '@/lib/completion/completionView'
 import { useCompletionStore } from '@/stores/completion'
-import { LoadStatus, useProfileStore } from '@/stores/profile'
+import { LoadStatus } from '@/stores/profile'
 import ScreenHeader from './ScreenHeader.vue'
 import CompletionKpis from './completion/CompletionKpis.vue'
 import MarksMatrixCard from './completion/MarksMatrixCard.vue'
 import ProfileError from './profile/ProfileError.vue'
 
 const completion = useCompletionStore()
-const profile = useProfileStore()
 const { t } = useMessages()
 
-// A matrix is one profile's: it is read again whenever the active profile changes.
-const activeId = computed(() => {
-  const active = profile.setup?.active
-  return active?.kind === 'active' ? active.profile.id : null
-})
-watch(
-  activeId,
-  (id) => {
-    if (id !== null) void completion.load()
-  },
-  { immediate: true },
-)
+useOnActiveProfile(() => completion.load())
 
 const kpis = computed(() =>
   completion.matrix ? completionKpis(completion.matrix) : null,

@@ -1,0 +1,6 @@
+/* Aspect ratios of the game's pictures that are drawn at a size of our choosing. Tailwind's
+   own ratios (square, video) stay: only the ones that mean something are named here. */
+@theme {
+  /* An achievement drawing is 263 x 176, for 637 of 637 (DESIGN-BRIEF.md §5.6). */
+  --aspect-achievement: 263 / 176;
+}
