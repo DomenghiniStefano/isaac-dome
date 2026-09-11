@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RefreshCwIcon, TriangleAlertIcon } from '@lucide/vue'
+import { TriangleAlertIcon } from '@lucide/vue'
 import { computed } from 'vue'
 import {
   Alert,
@@ -7,13 +7,11 @@ import {
   AlertTitle,
   AlertVariant,
 } from '@/components/ui/alert'
-import { Button, ButtonVariant } from '@/components/ui/button'
 import { useIpcErrorText } from '@/composables/useIpcErrorText'
 import { useMessages } from '@/i18n'
 import type { IpcError } from '@/lib/ipc/types'
 
 const props = defineProps<{ error: IpcError | null }>()
-const emit = defineEmits<{ retry: [] }>()
 const { t } = useMessages()
 const { errorText } = useIpcErrorText()
 
@@ -21,14 +19,11 @@ const message = computed((): string => errorText(props.error))
 </script>
 
 <template>
+  <!-- A write the backend refused: the queue on screen is still the one it had, and this says
+       why it didn't change. It goes away with the next write that succeeds. -->
   <Alert :variant="AlertVariant.Destructive">
     <TriangleAlertIcon />
-    <AlertTitle>{{ t('profile.errors.title') }}</AlertTitle>
-    <AlertDescription class="flex flex-col items-start gap-2">
-      {{ message }}
-      <Button :variant="ButtonVariant.Outline" @click="emit('retry')">
-        <RefreshCwIcon />{{ t('profile.errors.retry') }}
-      </Button>
-    </AlertDescription>
+    <AlertTitle>{{ t('queue.errorTitle') }}</AlertTitle>
+    <AlertDescription>{{ message }}</AlertDescription>
   </Alert>
 </template>
