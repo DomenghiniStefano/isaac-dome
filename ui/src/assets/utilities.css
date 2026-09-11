@@ -31,13 +31,15 @@
     var(--spacing-matrix-total);
 }
 
-/* Unlock's table: the drawing, three columns that share the width, the state, the fan-out. */
+/* Unlock's table: the drawing, three columns that share the width, the state, the fan-out,
+   and the button that puts a row in the Plan's queue. */
 @utility grid-cols-unlock {
   grid-template-columns:
     var(--spacing-unlock-art)
     minmax(0, 1.5fr) minmax(0, 1.1fr) minmax(0, 1fr)
     var(--spacing-unlock-state)
-    var(--spacing-unlock-fan);
+    var(--spacing-unlock-fan)
+    var(--spacing-unlock-queue);
 }
 
 /* A column header read bottom to top. */

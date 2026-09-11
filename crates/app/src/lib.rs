@@ -502,7 +502,7 @@ fn queue_remove(
 fn queue_move(
     app: AppHandle,
     achievement: u32,
-    to: usize,
+    after: Option<u32>,
     store: tauri::State<'_, StoreState>,
     catalog: tauri::State<'_, CatalogState>,
     resources: tauri::State<'_, ResourcesState>,
@@ -512,7 +512,9 @@ fn queue_move(
     queue_mutate(&app, &store, &pieces, |q, g, flags| {
         let ids: Vec<u32> = q.rows().iter().map(|r| r.achievement).collect();
         let deps = GraphDeps::new(g, flags, &ids);
-        q.move_row(achievement, to, &deps);
+        // The row the drop landed under, not an index: the view the screen drew leaves
+        // completed and unresolved rows out, so its positions are not the document's.
+        q.move_after(achievement, after, &deps);
     })?;
     queue_view_now(&app, &store, &pieces)
 }

@@ -3,5 +3,7 @@
 export const EventKey = {
   ArrowLeft: 'ArrowLeft',
   ArrowRight: 'ArrowRight',
+  ArrowUp: 'ArrowUp',
+  ArrowDown: 'ArrowDown',
 } as const
 export type EventKey = (typeof EventKey)[keyof typeof EventKey]

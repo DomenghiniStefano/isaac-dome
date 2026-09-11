@@ -14,6 +14,7 @@ import KitSection from '../KitSection.vue'
       <Badge :variant="BadgeVariant.Unexpected">Anomalo</Badge>
       <Badge :variant="BadgeVariant.Tag">Oggetto</Badge>
       <Badge :variant="BadgeVariant.Challenge">Sfida</Badge>
+      <Badge :variant="BadgeVariant.Wanted">Chiesta</Badge>
     </div>
   </KitSection>
 </template>

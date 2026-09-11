@@ -1101,6 +1101,14 @@ rejected drop and no error toast to design, because there is no illegal move: pr
 are a wall the row stops against, not a refusal. What the graph can't compute carries no
 constraint at all, so a `partial` row is never dragged and never walls.
 
+**A drop names the row it lands under, never an index**: `queueMove(achievement, after)`, with
+`after: null` for the top (since 2026-09-11; it took `to`, an index, before). The rows the view
+leaves out — completed, unresolved — still sit in the saved queue, so a position on screen is not
+a position in the file; and a row that drags its dependents along would shift any index past
+them. What the design draws after a drop is the order the command answers with. When a rising
+row stops short, the row right above it is the prerequisite that stopped it, and the Plan says
+so in the queue's band.
+
 ---
 
 ## 8. The wiki detail view

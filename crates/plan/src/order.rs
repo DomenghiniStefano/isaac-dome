@@ -14,14 +14,35 @@ pub trait Dependencies {
 }
 
 impl Queue {
-    /// Moves a row and returns the index it actually landed at.
+    /// Moves a row right below another one — `None` for the top.
     ///
-    /// Rows that depend on it gather immediately below; rows it depends on gather
-    /// immediately above; everything else keeps its relative order. The landing index is
-    /// clamped so the prerequisites have somewhere to be: dropping a row at the top with
-    /// three prerequisites queued asks for three rows above position zero, which is not a
-    /// position. Downward moves are never clamped — dependents can always be pushed
-    /// further down.
+    /// The way a screen names a drop: by the row it lands under. An index would not do, since
+    /// the view leaves completed and unresolved rows out and its positions are not the file's.
+    /// An `after` that isn't queued, or is the moved row itself, leaves the queue as it is: the
+    /// caller's picture was stale, and the view it gets back is the truth.
+    pub fn move_after(&mut self, achievement: u32, after: Option<u32>, deps: &impl Dependencies) {
+        let Some(from) = self.position(achievement) else {
+            return;
+        };
+        let to = match after {
+            None => 0,
+            Some(a) if a == achievement => return,
+            Some(a) => match self.position(a) {
+                // A position once the moved row is out: one past the anchor.
+                Some(i) if i < from => i + 1,
+                Some(i) => i,
+                None => return,
+            },
+        };
+        self.move_row(achievement, to, deps);
+    }
+
+    /// Moves a row to `to` — a position in the queue once the row is taken out — and returns
+    /// the index it landed at among the rows that didn't move with it.
+    ///
+    /// Rows that depend on it are dragged along, right below it; rows it depends on are a wall
+    /// it stops under, and never move; everything else keeps its relative order. The landing
+    /// is clamped between one past the last prerequisite and the end of the list.
     pub fn move_row(&mut self, achievement: u32, to: usize, deps: &impl Dependencies) -> usize {
         let Some(from) = self.position(achievement) else {
             // Not in the queue: nothing to move, and not an error.
@@ -43,8 +64,14 @@ impl Queue {
         // walls: it stays exactly where it is.
         let mut dragged = Vec::new();
         let mut rest = Vec::new();
-        for r in rows {
+        // `to` counts the dragged rows too, and each one above it leaves with the moved row:
+        // the target among the rows that stay is that much higher.
+        let mut target = to;
+        for (i, r) in rows.into_iter().enumerate() {
             if deps.requires(r.achievement, achievement) {
+                if i < to {
+                    target -= 1;
+                }
                 dragged.push(r);
             } else {
                 rest.push(r);
@@ -59,7 +86,7 @@ impl Queue {
             .rposition(|r| deps.requires(achievement, r.achievement))
             .map(|i| i + 1)
             .unwrap_or(0);
-        let landed = to.clamp(floor, rest.len());
+        let landed = target.clamp(floor, rest.len());
 
         let mut out = Vec::with_capacity(rest.len() + dragged.len() + 1);
         let tail = rest.split_off(landed);

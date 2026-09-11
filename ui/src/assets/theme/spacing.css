@@ -18,11 +18,14 @@
   /* An achievement drawing in a table row: 48 x 32, the 263 x 176 drawing at its ratio. */
   --spacing-achievement-thumb: 48px;
   /* Unlock's table (Schermate.dc.html): the drawing column, the state badge column, the
-     fan-out column, and the height of the scrolling body. */
+     fan-out column, the add-to-the-queue column, and the height of the scrolling body. */
   --spacing-unlock-art: 64px;
   --spacing-unlock-state: 136px;
   --spacing-unlock-fan: 56px;
+  --spacing-unlock-queue: 40px;
   --spacing-unlock-body: 560px;
+  /* The Plan's proposal column (Schermate.dc.html, 246px, on the 4px grid). */
+  --spacing-plan-aside: 248px;
   /* The window (Chrome e Stati.dc.html, "Finestra"): tab strip, tabs, drag region,
      window controls, navbar. */
   --spacing-titlebar: 30px;

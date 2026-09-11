@@ -387,14 +387,18 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
                   icon protocol serving crops). Spec
                   `docs/superpowers/specs/2026-09-11-screens-completion-design.md`, plan
                   `docs/superpowers/plans/2026-09-11-screens-completion.md`
-            - [ ] 3.3 Next steps, Unlock, Plan — split in two halves
+            - [x] 3.3 Next steps, Unlock, Plan — split in two halves
                   (`docs/superpowers/specs/2026-09-11-screens-graph-design.md`):
                   - [x] 3.3a the node, Next steps and Unlock (2026-09-11) — a node's state and
                         its why, the Badge's partial state, four facets with data and their
                         counts, search, three sorts, a virtualized table; plan
                         `docs/superpowers/plans/2026-09-11-screens-graph.md`
-                  - [ ] 3.3b Plan — goals, the queue with drag and its repair, "in the queue"
-                        on Next steps and Unlock
+                  - [x] 3.3b Plan (2026-09-11) — the queue you drag, a repair that says where a
+                        row stopped, the diagnostics as alerts and footnotes, the proposal
+                        beside it; "in coda" and one click to add on Next steps and Unlock; a
+                        move names the row it lands under (`queue_move(achievement, after)`).
+                        Spec `docs/superpowers/specs/2026-09-11-screens-plan-design.md`, plan
+                        `docs/superpowers/plans/2026-09-11-screens-plan.md`
             - [ ] 3.4 Collection — items by pool and quality
             - [ ] 3.5 Wiki in tabs, search — the `Ctrl+K` palette (B5)
             - [ ] 3.6 Settings and About — provenance, credits, the three promises
@@ -742,6 +746,40 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-11 (night) — the Plan and the queue
+
+Still on the owner's delegation; every commit pushed as it lands.
+
+- [x] **3.3a merged into `develop`** ("merge: screens 3.3a, Next steps and Unlock, into develop"),
+      the screens branch fast-forwarded onto it.
+- [x] **A move names the row it lands under** (`plan::Queue::move_after`,
+      `queue_move(achievement, after)`). Building the drop found two silent defects in
+      `queue_move(achievement, to)`: the view leaves completed and unresolved rows out, so the
+      screen's indices are not the document's; and `move_row` applied `to` after taking the
+      dragged dependents out, so `[1, 2, 3, 4]` with 2 requiring 1, moved to 2, landed
+      `[3, 4, 1, 2]`. Pinned by six cases and a second 500-round property; `QueueView` and the
+      saved document are unchanged, no migration.
+- [x] **The queue's decisions are pure functions** (`lib/plan/`): the anchor of a drop or of an
+      Alt+arrow, the row a move stopped under — read from the answer, not guessed while
+      dragging — the summary, the wishes a step serves, what can still be queued.
+- [x] **The fixtures keep a queue in memory** with a port of the Rust repair, seeded with the
+      design pack's rows and a done row above them, so the hidden-row case is on screen;
+      `?queue=empty|unavailable|unreadable` beside `?catalog=none`.
+- [x] **The Plan screen**, and "in coda" with one click to add on Next steps and Unlock. The
+      IpcError sentences moved to `useIpcErrorText` and `ipcErrors.*`, for the profile and the
+      queue alike.
+- [x] **Found by a test timing out**: every graph answer with art took 1.7 s, because
+      `packIconUrl` scanned all 1,500 image paths for each link — on every Unlock, Next steps
+      and queue command of the development server since 3.3a. Indexed once: 2 ms.
+- [x] **Looked at through headless Chrome**, 38 checks: the three row kinds and their badges; a
+      drag of 480 below 69 bringing 55 along; 55 sent to the top stopping under 480, with the
+      hint naming it; Alt+↑; removing a wish taking its step; adding from the proposal, from
+      Next steps and from Unlock; the four degraded states.
+- [x] **Found by looking, and fixed**: at 248px the proposal truncated every step to "You …";
+      it now names what the step unlocks.
+- [ ] Not seen with the game installed, nor in a real Tauri window: the drag has only met
+      synthetic pointer events.
 
 ### 2026-09-11 (evening) — merged into develop, then Next steps and Unlock
 
