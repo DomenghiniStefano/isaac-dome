@@ -3,6 +3,7 @@ import { assertNever } from '../../assertNever'
 import type { CommandArgs, CommandName } from '../transport'
 import type { IpcError, SetupState } from '../types'
 import { completionMatrix } from './completion'
+import { graphAnswers } from './graph'
 import { candidates, noneSetup, setupWith, summary } from './profile'
 
 export const FixtureScenario = {
@@ -17,7 +18,9 @@ export type FixtureScenario =
 const ScenarioParam = 'fixture'
 // `?art=none` answers every image URL as null: every user's first launch, before any art.
 const ArtParam = 'art'
-const ArtOff = 'none'
+// `?catalog=none` answers the graph as a machine without the game gets it.
+const CatalogParam = 'catalog'
+const Off = 'none'
 
 const query = (): URLSearchParams =>
   new URLSearchParams(globalThis.location?.search ?? '')
@@ -30,7 +33,8 @@ const currentScenario = (): FixtureScenario => {
   )
 }
 
-const artShown = (): boolean => query().get(ArtParam) !== ArtOff
+const artShown = (): boolean => query().get(ArtParam) !== Off
+const catalogShown = (): boolean => query().get(CatalogParam) !== Off
 
 // A profile chosen through select_profile stays chosen for the page's life, as in the app.
 let chosenId: string | null = null
@@ -71,6 +75,15 @@ const setupFor = (scenario: FixtureScenario): SetupState => {
 
 const noActiveProfile: IpcError = { kind: 'noActiveProfile' }
 
+// Every command that reads the save answers only with an active profile, as the backend does.
+const whenActive = (scenario: FixtureScenario, read: () => unknown): unknown =>
+  setupFor(scenario).active.kind === 'active'
+    ? read()
+    : Promise.reject(noActiveProfile)
+
+const graph = () =>
+  graphAnswers({ withArt: artShown(), withCatalog: catalogShown() })
+
 type Handler = (
   args: CommandArgs | undefined,
   scenario: FixtureScenario,
@@ -85,13 +98,13 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     return setupFor(scenario)
   },
   [Command.SaveSummary]: (_args, scenario) =>
-    setupFor(scenario).active.kind === 'active'
-      ? summary
-      : Promise.reject(noActiveProfile),
+    whenActive(scenario, () => summary),
   [Command.Completion]: (_args, scenario) =>
-    setupFor(scenario).active.kind === 'active'
-      ? completionMatrix(artShown())
-      : Promise.reject(noActiveProfile),
+    whenActive(scenario, () => completionMatrix(artShown())),
+  [Command.Unlock]: (_args, scenario) =>
+    whenActive(scenario, () => graph().unlock),
+  [Command.NextSteps]: (_args, scenario) =>
+    whenActive(scenario, () => graph().steps),
 }
 
 export const answer = async <T>(
