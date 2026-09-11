@@ -107,6 +107,46 @@ export const en: MessageSchema = {
     nothingReadable:
       'The save lets us read no mark: the counters section is missing or cut short.',
   },
+  graph: {
+    state: {
+      done: 'done',
+      now: 'unlockable now',
+      blocked: 'blocked by',
+      partial: 'partial graph',
+    },
+    why: {
+      title: 'What it still needs',
+      character: 'Characters',
+      boss: 'Bosses',
+      challenge: 'Challenges',
+      item: 'Items',
+      gate: 'Conditions',
+      unknown: "Requirements we can't interpret",
+    },
+    kinds: {
+      passive: 'passive item',
+      active: 'active item',
+      familiar: 'familiar',
+      trinket: 'trinket',
+      character: 'character',
+      boss: 'boss',
+      challenge: 'challenge',
+      nothing: 'nothing catalogued',
+    },
+    originNone: 'not stated',
+    unknownAchievement: 'Unknown achievement',
+    slot: 'slot',
+  },
+  nextSteps: {
+    intro:
+      "At most five rows, all unlockable now: the five that open the most further down. A node the graph can only call partial isn't a step, because we can't vouch for it.",
+    unlocks: 'unlocks',
+    noCatalogTitle: 'No steps: the catalogue is missing',
+    noCatalog:
+      "Without the game installed there's no telling what unlocks what: the list is empty on purpose, not five guessed rows.",
+    nothingNow:
+      'Nothing is unlockable right now: everything is done, or everything waits on something else.',
+  },
   gate: {
     needsProfile:
       'Progress depends on the active profile: choose one to see this screen.',
