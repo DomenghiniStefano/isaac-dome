@@ -6,6 +6,7 @@ export const Command = {
   ExtractionReport: 'extraction_report',
   Unlock: 'unlock',
   NextSteps: 'next_steps',
+  Collection: 'collection',
   Plan: 'plan',
   AddGoal: 'add_goal',
   RemoveGoal: 'remove_goal',
