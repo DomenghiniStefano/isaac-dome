@@ -12,8 +12,17 @@ suite green on the merge result, review of the whole branch closed). The local b
 deleted; on origin its last published version remains.
 **Design system merged** into `develop` on 2026-09-11: cycle 1 (`feature/design-system-foundations`),
 then cycle 2 and screens 3.1–3.2 in one merge of `feature/design-system-screens`, which
-already held `feature/design-system-components`; suite green on the merge result. The screens
-branch carries on with 3.3.
+already held `feature/design-system-components`; suite green on the merge result. Screens 3.3a
+and 3.3b followed on the same branch, each merged into `develop` with the suite green (the last,
+`ef962c8`, on 2026-09-11).
+
+**Branches from 3.4 on: one per sub-project, cut from `develop`** (decided 2026-09-11). Nobody
+commits on `develop` directly: it is where finished work lands, through a `--no-ff` merge with
+`scripts/check` green. A sub-project gets its own `feature/<name>` branch — Collection is
+`feature/screens-collection` — so each merge is one sub-project, its diff stays reviewable, and
+a piece that has to be redone is thrown away without touching the others.
+`feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
+said what it carried; it is fully merged and kept, its deletion waiting for the owner.
 **Last update:** 2026-09-11
 
 ---
