@@ -90,7 +90,7 @@ export const nodeSlot = (node: UnlockNode): number =>
     ? node.achievement.id
     : node.achievement.slot
 
-const targetKind = (target: UnlockTarget): UnlockKind => {
+export const targetKind = (target: UnlockTarget): UnlockKind => {
   switch (target.kind) {
     case 'item':
       return target.itemKind
@@ -106,7 +106,7 @@ const targetKind = (target: UnlockTarget): UnlockKind => {
 }
 
 // A node's values for one facet, each once. A node matches a facet when any of its values is
-// picked: "what it unlocks" holds several kinds for 36 nodes.
+// picked: "what it unlocks" holds several kinds for 31 nodes of the reference profile.
 export const facetValues = (node: UnlockNode, facet: FacetId): string[] => {
   switch (facet) {
     case FacetId.State:
