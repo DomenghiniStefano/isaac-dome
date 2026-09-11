@@ -53,12 +53,63 @@ export const it = {
     settingsHint: "Da qui l'app trova gioco e salvataggi.",
   },
   placeholder: {
-    graph: 'Arriva con Prossimi passi, Unlock e Piano.',
     collection: 'Arriva con la schermata Collezione.',
     runArchive: "Arriva con l'archivio delle run (M4).",
     wiki: 'Arriva con le pagine wiki nelle tab e la ricerca.',
     settings: 'Arriva con Impostazioni e Informazioni.',
     tabs: 'Arriva con le tab che sopravvivono alla chiusura.',
+  },
+  plan: {
+    intro:
+      "Gli obiettivi sono l'insieme di ciò che vuoi, la coda è l'ordine in cui intendi farlo: le righe che hai chiesto, più i prerequisiti che si sono tirate dietro. Trascini una riga e la coda si ripara attorno al vincolo: i prerequisiti sono un muro contro cui si ferma, non un rifiuto.",
+    summary: {
+      rows: 'righe',
+      wanted: 'chieste',
+      pulledIn: 'tirate dentro',
+    },
+    queueTitle: 'La coda',
+    hint: {
+      idle: 'trascina per riordinare — una mossa ripara, non fallisce',
+      dragging: 'rilascia dove vuoi: la coda si ripara',
+      stoppedUnder: 'si è fermata sotto',
+      prerequisite: 'è un prerequisito',
+    },
+    row: {
+      move: 'Sposta la riga (Alt e freccia su o giù)',
+      wanted: 'chiesta',
+      serves: 'serve',
+      unlocks: 'sblocca',
+      fanOut: 'sblocca',
+      outsideQueue: 'passi fuori dalla coda',
+      hint: 'indizio del gioco:',
+    },
+    achievement: 'achievement',
+    empty: 'La coda è vuota.',
+    emptyHint: 'Aggiungi una riga dalla proposta qui accanto, o da Unlock.',
+    completed: {
+      closed: 'righe chiuse giocando',
+      wanted: 'fra quelle chieste',
+    },
+    unresolved: 'non è più nel catalogo',
+    alerts: {
+      storeUnavailableTitle: 'Il piano non è disponibile',
+      unreadableTitle: 'La coda salvata non si legge con questa versione',
+      unreadable:
+        'Resta com’è nel file e non viene sovrascritta: una versione più recente dell’app potrebbe saperla leggere.',
+      noCatalogTitle: 'Serve il gioco installato',
+      noCatalog:
+        'Senza catalogo non si sa quale achievement sia ogni riga né cosa le manchi: la coda resta salvata e torna appena il gioco c’è.',
+      goalsPendingTitle: 'Obiettivi salvati da importare',
+      goalsPending:
+        'Obiettivi salvati prima che esistesse la coda: nessuno li sposta da solo.',
+      import: 'Importa nella coda',
+    },
+    aside: {
+      title: 'Prossimi passi',
+      intro:
+        'Righe sbloccabili adesso, ordinate per quante cose aprono. Non sono la tua coda: sono la proposta.',
+      empty: 'Nessuna proposta adesso.',
+    },
   },
   completion: {
     intro:
