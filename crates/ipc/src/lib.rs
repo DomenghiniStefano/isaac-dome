@@ -9,6 +9,7 @@ mod profile;
 mod queue;
 mod resources;
 mod settings;
+mod sprite_png;
 mod summary;
 mod target_sprite;
 mod wiki;
@@ -38,6 +39,7 @@ pub use resources::{
     SpriteView,
 };
 pub use settings::Settings;
+pub use sprite_png::{crop_png, decode_rgba};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
 pub use wiki::{
