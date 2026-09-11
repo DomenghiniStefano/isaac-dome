@@ -110,6 +110,46 @@ export const it = {
     nothingReadable:
       'Il salvataggio non lascia leggere nessun marchio: la sezione dei contatori manca o è troncata.',
   },
+  graph: {
+    state: {
+      done: 'fatto',
+      now: 'sbloccabile ora',
+      blocked: 'bloccato da',
+      partial: 'grafo parziale',
+    },
+    why: {
+      title: 'Cosa gli manca',
+      character: 'Personaggi',
+      boss: 'Boss',
+      challenge: 'Sfide',
+      item: 'Oggetti',
+      gate: 'Condizioni',
+      unknown: 'Requisiti che non sappiamo interpretare',
+    },
+    kinds: {
+      passive: 'oggetto passivo',
+      active: 'oggetto attivo',
+      familiar: 'famiglio',
+      trinket: 'trinket',
+      character: 'personaggio',
+      boss: 'boss',
+      challenge: 'sfida',
+      nothing: 'niente di catalogato',
+    },
+    originNone: 'non indicata',
+    unknownAchievement: 'Achievement sconosciuto',
+    slot: 'slot',
+  },
+  nextSteps: {
+    intro:
+      'Al massimo cinque righe, tutte sbloccabili adesso: le cinque che aprono più cose a valle. Un nodo che il grafo sa dire solo parziale non è un passo, perché non possiamo garantirlo.',
+    unlocks: 'sblocca',
+    noCatalogTitle: 'Nessun passo: manca il catalogo',
+    noCatalog:
+      'Senza il gioco installato non si può sapere cosa sblocca cosa: la lista è vuota di proposito, non cinque righe indovinate.',
+    nothingNow:
+      "Niente è sbloccabile adesso: è tutto fatto, oppure tutto aspetta qualcos'altro.",
+  },
   gate: {
     needsProfile:
       'Progressi dipende dal profilo attivo: scegline uno per vedere questa schermata.',
