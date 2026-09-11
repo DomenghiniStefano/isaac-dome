@@ -3,6 +3,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import { TabOrigin } from '@/components/shell/tabs'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
+import CompletionScreen from '@/screens/CompletionScreen.vue'
 import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
 import ProfileScreen from '@/screens/ProfileScreen.vue'
 import {
@@ -26,6 +27,7 @@ declare module 'vue-router' {
 
 // The screens that exist. Every other route renders its placeholder until its sub-project.
 const screens: Partial<Record<RouteName, Component>> = {
+  [RouteName.Completion]: CompletionScreen,
   [RouteName.Profile]: ProfileScreen,
 }
 
