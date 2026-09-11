@@ -192,6 +192,21 @@ Visual checks on the development server: the four state counts and the default p
 counts moving as another is picked, quality pips, a locked item's tooltip, the search, the
 virtualized scroll to the last row, `?collection=unread`, `?catalog=none`, `?art=none`.
 
+## Deviations recorded while executing
+
+- **`ipc::graph::origin_view` became `pub(crate)`**: the Collection maps an item's origin the
+  same way Unlock maps a node's, and a second copy of the match would be two answers to keep in
+  step.
+- **The fixture's section 4 length is a named constant**, `referenceSlots = 733`, the reference
+  save's own count (the pack's `save_summary.json`): the synthetic view has no save to read it
+  from.
+- **The Collection's state toggle and drawer are their own components**, not Unlock's made
+  generic: two screens, two small modules, as Decision 4 says, until a third shows what is
+  really shared.
+- **Nothing was found by looking.** The headless check's two failures were the script's own: a
+  facet label's name and count run together in its text, and a row's offset is read back with
+  its unit.
+
 ## Out of scope for this sub-project
 
 - **Trinkets** — no collection state in the save.
