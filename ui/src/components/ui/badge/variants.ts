@@ -5,6 +5,7 @@ export const BadgeVariant = {
   Done: 'done',
   Now: 'now',
   Blocked: 'blocked',
+  Partial: 'partial',
   Unknown: 'unknown',
   Unexpected: 'unexpected',
   Tag: 'tag',
@@ -25,6 +26,9 @@ export const badgeVariants = cva(
         [BadgeVariant.Done]: `${statePill} border-state-done bg-state-done-surface text-state-done-foreground`,
         [BadgeVariant.Now]: `${statePill} border-state-now bg-state-now-surface text-state-now-foreground`,
         [BadgeVariant.Blocked]: `${statePill} border-state-blocked bg-state-blocked-surface text-state-blocked-foreground`,
+        // Not unlockable (the blocked colours), not fully computed (the dashed edge), and never
+        // the unknown hatch: a partial node is real, only part of its requirements isn't read.
+        [BadgeVariant.Partial]: `${statePill} border-dashed border-state-blocked bg-state-blocked-surface text-state-blocked-foreground`,
         [BadgeVariant.Unknown]: `${statePill} hatch-unknown border-dashed border-state-unknown text-state-unknown-foreground`,
         [BadgeVariant.Unexpected]: `${statePill} border-state-unexpected bg-state-unexpected-surface text-state-unexpected-foreground`,
         [BadgeVariant.Tag]: `${squareTag} border-input bg-data text-foreground`,

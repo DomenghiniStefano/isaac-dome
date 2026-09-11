@@ -387,8 +387,14 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
                   icon protocol serving crops). Spec
                   `docs/superpowers/specs/2026-09-11-screens-completion-design.md`, plan
                   `docs/superpowers/plans/2026-09-11-screens-completion.md`
-            - [ ] 3.3 Next steps, Unlock, Plan — TanStack Table and Virtual, the queue with
-                  drag
+            - [ ] 3.3 Next steps, Unlock, Plan — split in two halves
+                  (`docs/superpowers/specs/2026-09-11-screens-graph-design.md`):
+                  - [x] 3.3a the node, Next steps and Unlock (2026-09-11) — a node's state and
+                        its why, the Badge's partial state, four facets with data and their
+                        counts, search, three sorts, a virtualized table; plan
+                        `docs/superpowers/plans/2026-09-11-screens-graph.md`
+                  - [ ] 3.3b Plan — goals, the queue with drag and its repair, "in the queue"
+                        on Next steps and Unlock
             - [ ] 3.4 Collection — items by pool and quality
             - [ ] 3.5 Wiki in tabs, search — the `Ctrl+K` palette (B5)
             - [ ] 3.6 Settings and About — provenance, credits, the three promises
@@ -736,6 +742,40 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-11 (evening) — merged into develop, then Next steps and Unlock
+
+On the owner's delegation ("procedi come credi, anche mergiando i vari tree"; "pusha sempre in
+modo che rimane allineato"): every commit is pushed as it lands.
+
+- [x] **Merged into `develop`**: cycle 2 and screens 3.1–3.2 in one `--no-ff` merge of
+      `feature/design-system-screens`, suite green on the merge result, `develop` pushed and the
+      screens branch fast-forwarded onto it.
+- [x] **Sub-project 3.3 split in two**: 3.3a (the node, Next steps, Unlock) done, 3.3b (Plan and
+      the queue) next. Spec `docs/superpowers/specs/2026-09-11-screens-graph-design.md`.
+- [x] **One answer for a node's state** (`lib/graph/nodeState.ts`), and its why grouped by kind
+      in the state badge's tooltip. The Badge learns `partial`: the blocked colours, a dashed
+      edge, the lock — `DESIGN-BRIEF.md`'s question 4, answered for design to overturn.
+- [x] **Unlock's facets are pure functions** (`lib/graph/unlockFilter.ts`), tested first on the
+      design pack's committed payload: 387 / 119 / 117 / 18, 231 nodes unlocking nothing
+      catalogued, 274 without an origin, ten required characters. TanStack Table was read from
+      9.2.4 and left out — its faceted values count an array cell as one value; TanStack
+      Virtual renders the body.
+- [x] **Without a catalog Unlock still has 641 nodes**: `ipc::unlock_view` sends one unknown,
+      partial node per slot, where the brief said "empty nodes"; fixture, screen and brief
+      follow the code now.
+- [x] **Looked at through headless Chrome**: five steps with their pictures and the no-catalog
+      alert; Unlock's four counts, 22 of 641 rows in the DOM, "unlockable now" (119), partial
+      only (18, every badge dashed), Rebirth (107) with the other facets' counts moving and
+      their zeros disabled, the name sort's last rows (slots 639–641), no catalog (254
+      partial), no art, and the why tooltip ("Cosa gli manca · Personaggi · Samson").
+- [x] **Found by looking, and fixed**: the fan-out sort put done nodes first; "1 filtri
+      attivi"; the progress gate asked for a profile while the profile was still loading (a
+      flaw of 3.1); the fixtures imported some 1,500 images to read the profile.
+- [x] **Found by `scripts/check`, not by the tasks' own checks**: the partial Badge had no
+      classes. The tasks grepped `vue-tsc`'s output for "error TS", which its colours split, so
+      four typechecks read nothing. Checks are judged by exit code since.
+- [ ] Not seen with the game installed, nor in a real Tauri window.
 
 ### 2026-09-11 (later) — Completion: the matrix on the game's own sprites
 
