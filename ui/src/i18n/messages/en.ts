@@ -133,6 +133,12 @@ export const en: MessageSchema = {
       challenge: 'challenge',
       nothing: 'nothing catalogued',
     },
+    stateName: {
+      done: 'done',
+      now: 'unlockable now',
+      blocked: 'blocked',
+      partial: 'partial graph',
+    },
     originNone: 'not stated',
     unknownAchievement: 'Unknown achievement',
     slot: 'slot',
@@ -146,6 +152,51 @@ export const en: MessageSchema = {
       "Without the game installed there's no telling what unlocks what: the list is empty on purpose, not five guessed rows.",
     nothingNow:
       'Nothing is unlockable right now: everything is done, or everything waits on something else.',
+  },
+  unlock: {
+    intro:
+      'Every node of the graph, filterable. One filter matters more than the rest: unlockable now.',
+    rows: 'rows',
+    search: 'search name, condition or what it unlocks',
+    sortBy: 'sort by',
+    sort: {
+      fanOut: 'unlocks',
+      steps: 'steps missing',
+      name: 'name',
+    },
+    facets: 'Facets',
+    noFilters: 'no filters',
+    activeFilters: 'active filters',
+    reset: 'Reset',
+    resetFilters: 'Reset the filters',
+    noResults: 'No rows with these filters.',
+    facet: {
+      state: 'State',
+      unlocks: 'What it unlocks',
+      origin: 'Origin DLC',
+      character: 'Required character',
+    },
+    columns: {
+      achievement: 'Achievement',
+      unlocks: 'What it unlocks',
+      condition: 'Condition',
+      state: 'State',
+      fanOut: 'Unlocks',
+    },
+    unlocksNothing: 'nothing catalogued',
+    noCondition: 'no condition in the file',
+    diagnostics: {
+      noCatalogTitle: 'The catalogue is missing',
+      noCatalog:
+        'Without the game installed the achievements have no name and no condition: the rows only say which slots are done.',
+      noAchievementSectionTitle: "The achievements section can't be read",
+      noAchievementSection:
+        "Zero rows doesn't mean zero achievements done: it means that part of the save wasn't read.",
+      slotsBeyondCatalog:
+        'save slots beyond the catalogue, shown as unknown achievements',
+      catalogBeyondSlots:
+        "catalogue achievements beyond the save, which don't appear",
+    },
   },
   gate: {
     needsProfile:
