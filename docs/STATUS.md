@@ -10,6 +10,10 @@ contract, memory, test data) live in `docs/IMPROVEMENTS.md`, with closing criter
 **Wiki dataset merged** into `develop` on 2026-09-06 (`feature/wiki-dataset`, 29 commits,
 suite green on the merge result, review of the whole branch closed). The local branch was
 deleted; on origin its last published version remains.
+**Design system merged** into `develop` on 2026-09-11: cycle 1 (`feature/design-system-foundations`),
+then cycle 2 and screens 3.1–3.2 in one merge of `feature/design-system-screens`, which
+already held `feature/design-system-components`; suite green on the merge result. The screens
+branch carries on with 3.3.
 **Last update:** 2026-09-11
 
 ---
