@@ -12,10 +12,19 @@
 use catalog::{AchievementId, Catalog, ItemId, SpriteRef};
 
 use crate::catalog_view::{item_kind, ItemKindView};
+use crate::marks::{character_for, BOSSES, CHARACTERS};
 
-/// The things the interface draws an icon for. Characters, bosses and challenges aren't
-/// here because `UnlockTarget` carries no image for them: the game has no single picture
-/// for a challenge, and the brief asks for a typographic placeholder instead of a guess.
+/// The two levels of a mark. The game draws them as two different symbols, not one tinted
+/// (DESIGN-BRIEF.md §5.6).
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum MarkTier {
+    Normal,
+    Hard,
+}
+
+/// The things the interface draws an icon for. Bosses and challenges aren't here because
+/// `UnlockTarget` carries no image for them: the game has no single picture for a
+/// challenge, and the brief asks for a typographic placeholder instead of a guess.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum IconRef {
     Achievement {
@@ -26,6 +35,16 @@ pub enum IconRef {
     Item {
         kind: ItemKindView,
         id: u32,
+    },
+    /// A completion-matrix column's mark symbol: a piece of `completion_widget.png` or of
+    /// the online lobby's sheet, resolved by `mark_source`, never by the catalog.
+    Mark {
+        column: usize,
+        tier: MarkTier,
+    },
+    /// The co-op menu head of a completion-matrix row, resolved through `character_for`.
+    Head {
+        row: usize,
     },
 }
 
@@ -50,17 +69,38 @@ fn kind_from_token(s: &str) -> Option<ItemKindView> {
     }
 }
 
+fn tier_token(t: MarkTier) -> &'static str {
+    match t {
+        MarkTier::Normal => "normal",
+        MarkTier::Hard => "hard",
+    }
+}
+
+fn tier_from_token(s: &str) -> Option<MarkTier> {
+    match s {
+        "normal" => Some(MarkTier::Normal),
+        "hard" => Some(MarkTier::Hard),
+        // A string a webview handed us, paired with `tier_token` like the kinds above.
+        _ => None,
+    }
+}
+
 impl IconRef {
-    /// The path half of the URL, without a scheme: `achievement/19`, `item/passive/92`.
+    /// The path half of the URL, without a scheme: `achievement/19`, `item/passive/92`,
+    /// `mark/9/hard`, `head/0`.
     pub fn to_path(&self) -> String {
         match self {
             IconRef::Achievement { id } => format!("achievement/{id}"),
             IconRef::Item { kind, id } => format!("item/{}/{id}", kind_token(*kind)),
+            IconRef::Mark { column, tier } => format!("mark/{column}/{}", tier_token(*tier)),
+            IconRef::Head { row } => format!("head/{row}"),
         }
     }
 
     /// The inverse. `None` for anything we didn't write: the handler answers "no image"
-    /// rather than guessing, and never panics on a string a webview handed it.
+    /// rather than guessing, and never panics on a string a webview handed it. A mark past
+    /// the matrix's columns or a head past its rows isn't ours either, so the handler
+    /// refuses it before it opens an archive.
     pub fn parse(path: &str) -> Option<IconRef> {
         let mut parts = path.split('/');
         let out = match (parts.next()?, parts.next()?, parts.next()) {
@@ -70,6 +110,16 @@ impl IconRef {
             ("item", kind, Some(id)) => IconRef::Item {
                 kind: kind_from_token(kind)?,
                 id: id.parse().ok()?,
+            },
+            ("mark", column, Some(tier)) => IconRef::Mark {
+                column: column.parse::<usize>().ok().filter(|&c| c < BOSSES.len())?,
+                tier: tier_from_token(tier)?,
+            },
+            ("head", row, None) => IconRef::Head {
+                row: row
+                    .parse::<usize>()
+                    .ok()
+                    .filter(|&r| r < CHARACTERS.len())?,
             },
             _ => return None,
         };
@@ -86,6 +136,9 @@ pub fn icon_source<'a>(c: &'a Catalog, r: &IconRef) -> Option<&'a SpriteRef> {
     match *r {
         IconRef::Achievement { id } => c.achievement(AchievementId(id)).map(|a| &a.sprite),
         IconRef::Item { kind, id } => c.item(item_kind(kind), ItemId(id)).map(|i| &i.sprite),
+        IconRef::Head { row } => character_for(row, c).and_then(|ch| ch.head.as_ref()),
+        // Not the catalog's: the symbols are pieces of the widget's sheets, see `mark_source`.
+        IconRef::Mark { .. } => None,
     }
 }
 
