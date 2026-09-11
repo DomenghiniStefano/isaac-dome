@@ -4,11 +4,13 @@ mod catalog_view;
 mod goals;
 mod graph;
 mod icon;
+mod mark_art;
 mod marks;
 mod profile;
 mod queue;
 mod resources;
 mod settings;
+mod sprite_png;
 mod summary;
 mod target_sprite;
 mod wiki;
@@ -20,10 +22,11 @@ pub use graph::{
     GraphInfo, NextSteps, OriginView, PlanDiagnostic, PlanExpansion, PlanStep, PlanView,
     RequirementView, StepsBasis, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
-pub use icon::{icon_source, IconRef, ICON_SCHEME};
+pub use icon::{icon_source, IconRef, MarkTier, ICON_SCHEME};
+pub use mark_art::{mark_source, MarkFrames, LOBBY_ANM2, WIDGET_ANM2};
 pub use marks::{
-    character_for, counter_index, marks_matrix, Cell, CharacterGroup, CharacterRow, MarksMatrix,
-    MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
+    character_for, counter_index, marks_matrix, Cell, CharacterGroup, CharacterRow, MarkArtView,
+    MarksMatrix, MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
 };
 pub use profile::{
     candidates, profile_id, resolve_active, setup_state, ActiveProfile, CandidateSource,
@@ -38,6 +41,7 @@ pub use resources::{
     SpriteView,
 };
 pub use settings::Settings;
+pub use sprite_png::{crop_png, decode_rgba};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
 pub use wiki::{

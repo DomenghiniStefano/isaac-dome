@@ -3,6 +3,14 @@
   image-rendering: pixelated;
 }
 
+/* A tab is a size container (@container), and inline-size containment makes its content
+   count as zero width: a strip sized by its tabs would shrink every tab to the minimum.
+   The intrinsic width stands in for the content, so tabs start at tab-max and shrink only
+   when the strip runs out of room. */
+@utility tab-intrinsic {
+  contain-intrinsic-inline-size: var(--spacing-tab-max);
+}
+
 /* Two gaps that must never look alike (DESIGN-BRIEF.md §5.6): an image that isn't there
    yet, and a value we can't read. Same geometry on the 4px grid, different stripes; where
    hatch-unknown stands for data it also gets a dashed edge and a "?". */
@@ -12,6 +20,21 @@
     var(--color-placeholder-stripe-a) 0 var(--spacing),
     var(--color-placeholder-stripe-b) var(--spacing) calc(var(--spacing) * 2)
   );
+}
+
+/* The completion matrix: the name column, one mark cell per boss, the row total. The column
+   count is data, bound from the template as --matrix-columns. */
+@utility grid-cols-matrix {
+  grid-template-columns:
+    var(--spacing-matrix-name)
+    repeat(var(--matrix-columns), var(--spacing-mark-cell))
+    var(--spacing-matrix-total);
+}
+
+/* A column header read bottom to top. */
+@utility writing-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
 
 @utility hatch-unknown {

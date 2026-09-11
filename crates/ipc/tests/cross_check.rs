@@ -95,7 +95,7 @@ fn rust_matrix_agrees_with_the_python_reference() {
         .expect("the sample must be readable")
         .u32s(Kind::Counters)
         .expect("the counters section must be present");
-    let matrix = marks_matrix(&counters);
+    let matrix = marks_matrix(&counters, None, |_| None);
 
     let compared = CHARACTERS
         .iter()

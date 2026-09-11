@@ -733,3 +733,98 @@ Logged 2026-09-10, a list:
     pressed `ToggleGroupItem` renders exactly like an unselected one, while `Checkbox`
     keeps its tick and `Switch` its thumb position — back to design (a faint edge or
     underline would keep "which one" readable without reading as enabled).
+
+---
+
+## B13 — The marks map moves to `ipc` with the Completion screen (implementation, cycle 3) ✅ closed on 2026-09-11
+
+**Closed with sub-project 3.2** (`docs/superpowers/specs/2026-09-11-screens-completion-design.md`):
+the map is `crates/ipc/src/mark_art.rs`, the icon protocol serves `mark/<column>/<tier>` and
+`head/<row>` as crops (`ipc::crop_png`, moved from `design-export`), and
+`crates/ipc/tests/mark_art.rs` resolves every one of the twelve columns to two different
+tiers. The real-archive twin, `mark_art_real.rs`, skips on a machine without the game and
+has yet to run on one. The Delirium `symbolFallback` is not carried: the cell's own bars
+outfit is the app's fallback.
+
+Logged 2026-09-10, from cycle 2: `MarkCell` takes each column's symbol URLs as a prop, and
+nothing in the app serves them yet. `crates/design-export`'s `marks.json` holds the column →
+symbol map (with Delirium on the online-lobby sheet and its `symbolFallback`); DESIGN-BRIEF
+§5.6 already says it belongs beside `BOSSES` in `ipc`. Needed: the map in `ipc`, the icon
+protocol extended to the completion-widget sprites, and a test that every one of the twelve
+columns resolves to two tiers.
+
+---
+
+## B14 — Choosing the game or saves folder by hand (implementation, cycle 3)
+
+Logged 2026-09-11, from sub-project 3.1: when the chain breaks (Steam missing, the game not
+found, no saves) the profile screen says where and offers "Riprova", but not the two buttons
+of `Schermate.dc.html` ("Scegli la cartella del gioco", "Scegli la cartella dei
+salvataggi"). A button that does nothing is worse than none, so they wait for what makes
+them work: the Tauri dialog plugin with its capability, a command that accepts a folder and
+hands back a `SetupState` (the path travels inward only, never back out), the chosen folder
+persisted in the settings file, and `discovery` trying it before its own search.
+
+---
+
+## B15 — Tearing a tab off into its own window, and back (implementation, after 3.7)
+
+Logged 2026-09-11, a product requirement from the owner: drag a tab out of the window and, on
+drop, it opens in a new window; drag it back over the first window's tab strip and the two
+merge again — **exactly as a browser does**.
+
+### What we already have
+
+- Tabs own locations (`stores/tabModel.ts`, pure and tested): open, close, move, navigate,
+  "the bar is never empty". A tab is `{ id, location }`, never the view's content (B6), which
+  is what makes it movable between windows at all.
+- `TabStrip` drags within the strip (cycle 2's `moveIndex`); the title bar is ours
+  (`decorations: false`, `lib/window/appWindow.ts` the only module that talks to the window).
+
+### What the Tauri 2 documentation says (researched 2026-09-11)
+
+- **A window at runtime:** `new WebviewWindow(label, { url, x, y, width, height, decorations,
+  visible })`, permission `core:webview:allow-create-webview-window`; a capability whose
+  `"windows"` glob matches the new label covers it without re-registration.
+  ([webviewWindow](https://v2.tauri.app/reference/javascript/api/namespacewebviewwindow/),
+  [capability](https://v2.tauri.app/reference/acl/capability/))
+- **The cursor outside the window:** `cursorPosition()` (JS) / `cursor_position()` (Rust),
+  desktop physical pixels, stable since 2.1.0, permission `core:window:allow-cursor-position`.
+  ([window API](https://v2.tauri.app/reference/javascript/api/namespacewindow/))
+- **Which window is under a point:** `getAllWebviewWindows()` with `outerPosition()` /
+  `outerSize()` / `isMinimized()`; **no z-order API** (tauri#5656), so overlapping windows are
+  ambiguous and the hit test is ours.
+- **Between windows:** `emitTo(label, event, payload)` and `listen`.
+- **The two traps.** `setPointerCapture()` in WebView2 is unreliable once the cursor leaves
+  the control (microsoft-ui-xaml #8677, #8753), so a DOM-only drag can lose its `pointerup`
+  outside the window; and `startDragging()` can't be started on a window that didn't receive
+  the mousedown, so the torn-off window follows the cursor through `setPosition` from the
+  origin window, not through the OS move.
+- **Prior art to evaluate, not yet trusted:** `tauri-plugin-drag-as-window`
+  (crabnebula-dev/drag-rs) starts a native OS drag of an element that becomes a window and has
+  a `dragBack` for re-docking — which would sidestep the pointer-capture trap. Its maintenance,
+  licence and behaviour with `decorations: false` have to be checked by making it answer, on
+  the machine, before it enters `Cargo.toml`.
+
+### The constraints that shape it
+
+1. **The active profile is window-global today** (§4.1, §4.2): with two windows it becomes the
+   app's, and every window's indicator and Progress screens must follow a change made in
+   another. The profile store reads backend state already; what's missing is the event that
+   says "it changed".
+2. **B6 saves tabs**: with tear-off, a saved session is windows of tabs, not one list. Doing
+   B15 after 3.7 means the persisted shape is decided once, knowing it.
+3. **A tab dropped outside every window opens a window; a tab dropped on a strip joins it**;
+   a window whose last tab leaves closes, and the main window never does (the bar is never
+   empty is the same rule, one level up).
+4. **Not verifiable on the development server**: fixtures run in one browser tab. The checks
+   are a real `pnpm dev` window, with a mouse, on Windows at mixed DPI.
+
+### Questions the task has to close
+
+- Native drag (the plugin) or DOM pointer events with `cursorPosition` polling — decided by a
+  spike on the machine, not by the documentation alone.
+- The re-dock gesture: hover over the strip with a grace period (the WinUI write-up uses
+  ~240 ms so a tab doesn't snap back instantly), or drop only.
+- Where a torn-off tab's window opens: under the cursor at the drop, sized like the origin.
+- Whether a secondary window has the navbar and sidebar, or tabs and content only.

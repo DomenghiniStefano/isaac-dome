@@ -1,0 +1,28 @@
+import { describe, expect, it } from 'vitest'
+import { clampSidebarWidth } from './sidebarWidth'
+
+describe('clampSidebarWidth', () => {
+  it('raises a width below the minimum to the minimum', () => {
+    expect(clampSidebarWidth(100)).toBe(168)
+  })
+
+  it('keeps the minimum itself', () => {
+    expect(clampSidebarWidth(168)).toBe(168)
+  })
+
+  it('keeps a width inside the bounds', () => {
+    expect(clampSidebarWidth(300)).toBe(300)
+  })
+
+  it('lowers a width above the maximum to the maximum', () => {
+    expect(clampSidebarWidth(500)).toBe(420)
+  })
+
+  it('falls back to the default for a width that is not a number', () => {
+    expect(clampSidebarWidth(Number.NaN)).toBe(212)
+  })
+
+  it('rounds to a whole pixel', () => {
+    expect(clampSidebarWidth(250.6)).toBe(251)
+  })
+})
