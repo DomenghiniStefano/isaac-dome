@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
+import { isIpcError } from '@/lib/ipc/errors'
 import { saveSummary } from '@/lib/ipc/save'
 import { selectProfile, setupState } from '@/lib/ipc/setup'
 import type { IpcError, SaveSummary, SetupState } from '@/lib/ipc/types'
@@ -12,9 +13,6 @@ export const LoadStatus = {
   Failed: 'failed',
 } as const
 export type LoadStatus = (typeof LoadStatus)[keyof typeof LoadStatus]
-
-const isIpcError = (e: unknown): e is IpcError =>
-  typeof e === 'object' && e !== null && 'kind' in e
 
 // The active profile is the window's, never a tab's (DESIGN-BRIEF.md §4.1, §4.2): one store,
 // read by the indicator, the gate and the profile screen alike.
