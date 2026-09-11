@@ -400,11 +400,13 @@ committed**. Watch for the silent case: `core_save::Kind` crosses the boundary i
 variant changed the wire with the whole suite green (pinned since by
 `crates/ipc/tests/summary_shape.rs`).
 
-**`ui/` is the shell, with profile selection as its first screen** (2026-09-11): tabs,
-router, the live window chrome, the profile indicator; every other screen is a placeholder
-naming the sub-project that brings it. The verification page lives behind `#verify` and the
-Kit behind `#kit`, both development-only; `pnpm ui:dev` runs without the backend on fixtures
-(`?fixture=none|pick|active`). Frontend conventions and their scanner exist already on
+**`ui/` is the shell, with two real screens** (2026-09-11): tabs, router, the live window
+chrome, the profile indicator; profile selection (3.1) and Completion (3.2), whose mark
+symbols and character heads are crops of the user's own sheets served through the icon
+protocol. Every other screen is a placeholder naming the sub-project that brings it. The
+verification page lives behind `#verify` and the Kit behind `#kit`, both development-only;
+`pnpm ui:dev` runs without the backend on fixtures (`?fixture=none|pick|active`, and
+`?art=none` for the first-launch outfit without sprites). Frontend conventions and their scanner exist already on
 purpose: a rule introduced before the code is free.
 
 The **wiki dataset** (crate `wiki`, tool `wiki-snapshot`, `dataset/`) is implemented,

@@ -34,23 +34,28 @@ ui/
     components/
       ui/          shadcn-vue primitives (reka-vega), dressed: they live in the repo
       shell/       title bar, tabs, window controls, navbar, section sidebar
-      marks/       the completion-matrix cell and its bit reading
+      marks/       the completion-matrix cell, its bit reading, and the grid of cells
+      sprite/      PixelSprite: a game sprite that falls back, never a broken image
       kpi/         the KPI tile
       wiki/        the wiki's inline tokens and blocks
       data-state/  read-but-empty, unreadable, empty category
       <domain>/    further app components, named for WHAT THEY ARE
     composables/
-    stores/        Pinia, setup syntax: tabs (and tabModel, its pure rules), profile
+    stores/        Pinia, setup syntax: tabs (and tabModel, its pure rules), profile, completion
     router/        routeTable (names, paths, titles, icons: no components), routes, index
-    screens/       one screen per route, and the parts only it uses (`screens/profile/`)
+    screens/       one screen per route, and the parts only it uses (`screens/profile/`,
+                   `screens/completion/`)
     kit/           development-only Kit page: every primitive in every state (`#kit`)
     verify/        development-only verification page: every command, raw (`#verify`)
     lib/
       ipc/         typed wrappers around Tauri commands — the only place with invoke()
         transport.ts  call(): invoke() in Tauri, the fixtures under `pnpm ui:dev`
-        fixtures/     development answers, one scenario per `?fixture=`
+        errors.ts     isIpcError, shared by the stores
+        fixtures/     development answers, one scenario per `?fixture=`; `art.ts` globs the
+                      design pack's sprites, `?art=none` answers without them
       window/      appWindow: the only module that talks to the window
       profile/     what the profile screen and the indicator show, as pure functions
+      completion/  what the Completion screen counts, as pure functions
       constants/   magic strings: command names, dev routes, key names, placement
       design/      themeKeys: the token names cn() reads from the theme CSS
       cn.ts        class merging that knows our tokens
@@ -354,7 +359,9 @@ so the shell can be looked at without the backend. `?fixture=none|pick|active` p
 scenario (no saves, a choice to make, an active profile); a command with no fixture throws
 `no fixture answers <command>` rather than returning something plausible. The fixtures are
 imported dynamically behind `import.meta.env.DEV`: the production build carries none of
-them. The window works the same way: `src/lib/window/appWindow.ts` is the only module that
+them. Their images come from the design pack, globbed once in `fixtures/art.ts` (the Kit
+reads it too); `?art=none` answers every image URL as `null`, which is what every user sees
+before the game's sprites are there, and a clone without the pack gets the same. The window works the same way: `src/lib/window/appWindow.ts` is the only module that
 imports `@tauri-apps/api/window`, and outside Tauri its controls do nothing.
 
 A note on serde, which is the twin trap on the Rust side: every struct that crosses the

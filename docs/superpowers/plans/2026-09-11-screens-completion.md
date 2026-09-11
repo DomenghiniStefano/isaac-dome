@@ -42,7 +42,7 @@ Pinia 4.0.3, Tailwind v4.3, Reka UI 2.10.4, vue-i18n 11.4, Vitest.
 **Interfaces:**
 - Produces: `ipc::decode_rgba(bytes: &[u8]) -> Option<(u32, u32, Vec<u8>)>`; `ipc::crop_png(sheet: &[u8], x: u32, y: u32, w: u32, h: u32) -> Option<Vec<u8>>`.
 
-- [ ] **Step 1: Write the failing test** — `crates/ipc/tests/sprite_png.rs`
+- [x] **Step 1: Write the failing test** — `crates/ipc/tests/sprite_png.rs`
 
 ```rust
 //! Cutting a piece out of a game sheet. Moved from `design-export` with B13: the app serves
@@ -106,9 +106,9 @@ fn something_that_is_not_a_png_is_not_cropped() {
 }
 ```
 
-- [ ] **Step 2: Run it to see it fail** — `cargo test -p ipc --test sprite_png` → FAIL, unresolved imports `crop_png`, `decode_rgba`.
+- [x] **Step 2: Run it to see it fail** — `cargo test -p ipc --test sprite_png` → FAIL, unresolved imports `crop_png`, `decode_rgba`.
 
-- [ ] **Step 3: `crates/ipc/src/sprite_png.rs`** — the body of `design-export`'s `decode` and `crop`, returning a tuple instead of the private `Image`:
+- [x] **Step 3: `crates/ipc/src/sprite_png.rs`** — the body of `design-export`'s `decode` and `crop`, returning a tuple instead of the private `Image`:
 
 ```rust
 //! A piece of a game sheet, as a PNG of its own.
@@ -178,9 +178,9 @@ pub fn crop_png(sheet: &[u8], x: u32, y: u32, w: u32, h: u32) -> Option<Vec<u8>>
 
 `crates/ipc/Cargo.toml`: `png = "0.17"` under `[dependencies]`. `crates/ipc/src/lib.rs`: `mod sprite_png;` and `pub use sprite_png::{crop_png, decode_rgba};`.
 
-- [ ] **Step 4: Run it to see it pass** — `cargo test -p ipc --test sprite_png` → 4 passed.
+- [x] **Step 4: Run it to see it pass** — `cargo test -p ipc --test sprite_png` → 4 passed.
 
-- [ ] **Step 5: `design-export` imports the crop** — in `atlas.rs` delete `pub fn crop` with its doc comment and the whole `mod crops`, and replace `decode`'s body:
+- [x] **Step 5: `design-export` imports the crop** — in `atlas.rs` delete `pub fn crop` with its doc comment and the whole `mod crops`, and replace `decode`'s body:
 
 ```rust
 fn decode(byte: &[u8]) -> Option<Image> {
@@ -190,9 +190,9 @@ fn decode(byte: &[u8]) -> Option<Image> {
 
 `sheets.rs`: `use crate::atlas::crop;` → `use ipc::crop_png as crop;`. `images.rs:391`: `crate::atlas::crop(` → `ipc::crop_png(`.
 
-- [ ] **Step 6: Run the two crates** — `cargo test -p ipc -p design-export && cargo clippy -p ipc -p design-export --all-targets -- -D warnings` → green.
+- [x] **Step 6: Run the two crates** — `cargo test -p ipc -p design-export && cargo clippy -p ipc -p design-export --all-targets -- -D warnings` → green.
 
-- [ ] **Step 7: Commit** — `refactor(ipc): the sheet crop moves to ipc, where the app can reach it`
+- [x] **Step 7: Commit** — `refactor(ipc): the sheet crop moves to ipc, where the app can reach it`
 
 ---
 
@@ -206,7 +206,7 @@ fn decode(byte: &[u8]) -> Option<Image> {
 - Consumes: `ipc::{BOSSES, CHARACTERS, character_for}`.
 - Produces: `ipc::MarkTier { Normal, Hard }`; `IconRef::Mark { column: usize, tier: MarkTier }` ↔ `mark/<column>/<normal|hard>`; `IconRef::Head { row: usize }` ↔ `head/<row>`; `icon_source` resolves `Head` through the catalog and answers `None` for `Mark`.
 
-- [ ] **Step 1: Write the failing tests** — append to `crates/ipc/tests/icon.rs`
+- [x] **Step 1: Write the failing tests** — append to `crates/ipc/tests/icon.rs`
 
 ```rust
 use ipc::MarkTier;
@@ -291,9 +291,9 @@ fn a_mark_is_not_in_the_catalog() {
 }
 ```
 
-- [ ] **Step 2: Run to see them fail** — `cargo test -p ipc --test icon` → FAIL, no `MarkTier`, no variant `Mark`.
+- [x] **Step 2: Run to see them fail** — `cargo test -p ipc --test icon` → FAIL, no `MarkTier`, no variant `Mark`.
 
-- [ ] **Step 3: Implement** — in `crates/ipc/src/icon.rs`:
+- [x] **Step 3: Implement** — in `crates/ipc/src/icon.rs`:
 
 ```rust
 use crate::marks::{character_for, BOSSES, CHARACTERS};
@@ -359,9 +359,9 @@ fn tier_from_token(s: &str) -> Option<MarkTier> {
 
 `lib.rs`: `pub use icon::{icon_source, IconRef, MarkTier, ICON_SCHEME};`.
 
-- [ ] **Step 4: Run to see them pass** — `cargo test -p ipc --test icon` → green; `cargo build -p app` still compiles (the handler's `match` doesn't exist yet; `icon_source` is the only exhaustive consumer).
+- [x] **Step 4: Run to see them pass** — `cargo test -p ipc --test icon` → green; `cargo build -p app` still compiles (the handler's `match` doesn't exist yet; `icon_source` is the only exhaustive consumer).
 
-- [ ] **Step 5: Commit** — `feat(ipc): icon references for a mark's symbol and a row's head`
+- [x] **Step 5: Commit** — `feat(ipc): icon references for a mark's symbol and a row's head`
 
 ---
 
@@ -375,7 +375,7 @@ fn tier_from_token(s: &str) -> Option<MarkTier> {
 - Consumes: `catalog::{Anm2Frame, SpriteRef, anm2_frames}`, `ipc::MarkTier`.
 - Produces: `ipc::WIDGET_ANM2`, `ipc::LOBBY_ANM2`; `ipc::MarkFrames { widget: Vec<Anm2Frame>, lobby: Vec<Anm2Frame> }` (`Default`); `ipc::mark_source(column: usize, tier: MarkTier, frames: &MarkFrames) -> Option<SpriteRef>`.
 
-- [ ] **Step 1: Write the failing tests** — `crates/ipc/tests/mark_art.rs`
+- [x] **Step 1: Write the failing tests** — `crates/ipc/tests/mark_art.rs`
 
 ```rust
 //! Which piece of which sheet draws a column's mark (B13). The anm2 files are synthetic,
@@ -538,9 +538,9 @@ fn every_column_crops_two_real_symbols() {
 }
 ```
 
-- [ ] **Step 2: Run to see them fail** — `cargo test -p ipc --test mark_art --test mark_art_real` → FAIL, unresolved `mark_source`.
+- [x] **Step 2: Run to see them fail** — `cargo test -p ipc --test mark_art --test mark_art_real` → FAIL, unresolved `mark_source`.
 
-- [ ] **Step 3: `crates/ipc/src/mark_art.rs`**
+- [x] **Step 3: `crates/ipc/src/mark_art.rs`**
 
 ```rust
 //! Which piece of which game sheet draws a column's mark.
@@ -647,9 +647,9 @@ pub fn mark_source(column: usize, tier: MarkTier, frames: &MarkFrames) -> Option
 
 `lib.rs`: `mod mark_art;` and `pub use mark_art::{mark_source, MarkFrames, LOBBY_ANM2, WIDGET_ANM2};`. (If `rustc` predates `Option::is_none_or`, 1.82, use `m.animation.map_or(true, …)` and allow nothing: check `rustc --version` first.)
 
-- [ ] **Step 4: Run to see them pass** — `cargo test -p ipc --test mark_art --test mark_art_real -- --nocapture` → 4 passed, 1 passing with `skip: samples/packed missing` on this machine.
+- [x] **Step 4: Run to see them pass** — `cargo test -p ipc --test mark_art --test mark_art_real -- --nocapture` → 4 passed, 1 passing with `skip: samples/packed missing` on this machine.
 
-- [ ] **Step 5: Commit** — `feat(ipc): the marks map, from design-export to beside BOSSES`
+- [x] **Step 5: Commit** — `feat(ipc): the marks map, from design-export to beside BOSSES`
 
 ---
 
@@ -664,7 +664,7 @@ pub fn mark_source(column: usize, tier: MarkTier, frames: &MarkFrames) -> Option
 - Consumes: `IconRef::{Mark, Head}`, `MarkTier`, `character_for`.
 - Produces: `CharacterRow.tainted: bool`, `CharacterRow.head_url: Option<String>`; `ipc::MarkArtView { normal_url, hard_url }`; `MarksMatrix.art: Vec<MarkArtView>`; `marks_matrix(counters: &[u32], catalog: Option<&catalog::Catalog>, icon: impl FnMut(&IconRef) -> Option<String>) -> MarksMatrix`.
 
-- [ ] **Step 1: Write the failing tests** — in `crates/ipc/tests/marks.rs`, every existing `marks_matrix(x)` becomes `marks_matrix(x, None, no_icon)`, and:
+- [x] **Step 1: Write the failing tests** — in `crates/ipc/tests/marks.rs`, every existing `marks_matrix(x)` becomes `marks_matrix(x, None, no_icon)`, and:
 
 ```rust
 use catalog::Catalog;
@@ -749,9 +749,9 @@ fn the_new_fields_are_camel_case_on_the_wire() {
 
 `cross_check.rs:98`: `marks_matrix(&counters, None, |_| None)`.
 
-- [ ] **Step 2: Run to see them fail** — `cargo test -p ipc --test marks` → FAIL, wrong number of arguments.
+- [x] **Step 2: Run to see them fail** — `cargo test -p ipc --test marks` → FAIL, wrong number of arguments.
 
-- [ ] **Step 3: Implement** — in `crates/ipc/src/marks.rs`:
+- [x] **Step 3: Implement** — in `crates/ipc/src/marks.rs`:
 
 ```rust
 use crate::icon::{IconRef, MarkTier};
@@ -834,9 +834,9 @@ In `totals_of`: `started: count(|c| matches!(c, Cell::Known { bits } if bits & 3
 
 Callers: `design-export/src/payload.rs:230` → `ipc::marks_matrix(&counters, Some(c), <the same icon closure this function passes to unlock_view>)`; `crates/app/src/lib.rs` `completion` → Task 5.
 
-- [ ] **Step 4: Run to see them pass** — `cargo test -p ipc && cargo test -p design-export` → green (`crates/app` compiles in Task 5).
+- [x] **Step 4: Run to see them pass** — `cargo test -p ipc && cargo test -p design-export` → green (`crates/app` compiles in Task 5).
 
-- [ ] **Step 5: Commit together with Task 5** (the workspace doesn't build between them).
+- [x] **Step 5: Commit together with Task 5** (the workspace doesn't build between them).
 
 ---
 
@@ -849,7 +849,7 @@ Callers: `design-export/src/payload.rs:230` → `ipc::marks_matrix(&counters, So
 - Consumes: `ipc::{marks_matrix, mark_source, MarkFrames, WIDGET_ANM2, LOBBY_ANM2, crop_png, icon_source, IconRef}`.
 - Produces: `completion` answers `art`/`headUrl` when the game is installed; `isaac://…/mark/<c>/<tier>` and `…/head/<row>` answer PNG crops.
 
-- [ ] **Step 1: `MarkFramesState`**, beside `CatalogState`:
+- [x] **Step 1: `MarkFramesState`**, beside `CatalogState`:
 
 ```rust
 /// The frames of the two anm2 files the marks are cut from, read once. Kept only when both
@@ -869,7 +869,7 @@ impl MarkFramesState {
 }
 ```
 
-- [ ] **Step 2: `completion`**
+- [x] **Step 2: `completion`**
 
 ```rust
 #[tauri::command]
@@ -887,7 +887,7 @@ fn completion(
 }
 ```
 
-- [ ] **Step 3: `icon_bytes` crops** — replace the resolution and read:
+- [x] **Step 3: `icon_bytes` crops** — replace the resolution and read:
 
 ```rust
     let sprite = match reference {
@@ -924,9 +924,9 @@ fn sprite_bytes(rs: &ResourceSet, sprite: &catalog::SpriteRef) -> Option<Vec<u8>
 
 Update `icon_bytes`'s doc comment (the rect is no longer ignored) and register `.manage(MarkFramesState::default())`.
 
-- [ ] **Step 4: Verify** — `cargo fmt --all && cargo clippy --workspace --all-targets -- -D warnings && cargo test --workspace` → green.
+- [x] **Step 4: Verify** — `cargo fmt --all && cargo clippy --workspace --all-targets -- -D warnings && cargo test --workspace` → green.
 
-- [ ] **Step 5: Commit** — `feat(ipc): the completion matrix carries its mark art and row heads` (Tasks 4 and 5).
+- [x] **Step 5: Commit** — `feat(ipc): the completion matrix carries its mark art and row heads` (Tasks 4 and 5).
 
 ---
 
@@ -940,7 +940,7 @@ Update `icon_bytes`'s doc comment (the rect is no longer ignored) and register `
 **Interfaces:**
 - Produces: TS `CharacterRow`, `MarkArtView`, `MarksMatrix.art`; `isIpcError(e): e is IpcError`; `packMarkArt: MarkArtView[]`, `packHeadUrl(row): string | null`; `completionMatrix(withArt: boolean): MarksMatrix`; `markArtOf(view: MarkArtView | undefined): MarkArt | null`; `StoreId.Completion`.
 
-- [ ] **Step 1: Write the failing tests** — `transport.test.ts` gains:
+- [x] **Step 1: Write the failing tests** — `transport.test.ts` gains:
 
 ```ts
 import type { MarksMatrix } from './types'
@@ -986,9 +986,9 @@ describe('markArtOf', () => {
 })
 ```
 
-- [ ] **Step 2: Run to see them fail** — `pnpm --filter ui exec vitest run src/lib/ipc src/components/marks` → FAIL.
+- [x] **Step 2: Run to see them fail** — `pnpm --filter ui exec vitest run src/lib/ipc src/components/marks` → FAIL.
 
-- [ ] **Step 3: Implement**
+- [x] **Step 3: Implement**
   - `types.ts`: `export interface CharacterRow { character: string; group: string; tainted: boolean; cells: Cell[]; headUrl: string | null }`, `export interface MarkArtView { normalUrl: string | null; hardUrl: string | null }`, and `MarksMatrix { characters: CharacterRow[]; bosses: string[]; art: MarkArtView[]; totals }` with a comment: `art[i]` draws `bosses[i]`; every URL is `null` when the game's archives aren't open.
   - `errors.ts`: `export const isIpcError = (e: unknown): e is IpcError => typeof e === 'object' && e !== null && 'kind' in e`; `stores/profile.ts` imports it.
   - `markVisual.ts`: `export const markArtOf = (view: MarkArtView | undefined): MarkArt | null => view?.normalUrl && view.hardUrl ? { normal: view.normalUrl, hard: view.hardUrl } : null`.
@@ -998,9 +998,9 @@ describe('markArtOf', () => {
   - `fixtures/index.ts`: `[Command.Completion]: (_args, scenario) => setupFor(scenario).active.kind === 'active' ? completionMatrix(artShown()) : Promise.reject(noActiveProfile)`, where `artShown()` is false for `?art=none`.
   - `stores.ts`: `Completion: 'completion'`.
 
-- [ ] **Step 4: Run to see them pass** — `pnpm --filter ui exec vitest run && pnpm typecheck` → green.
+- [x] **Step 4: Run to see them pass** — `pnpm --filter ui exec vitest run && pnpm typecheck` → green.
 
-- [ ] **Step 5: Commit** — `feat(ui): the completion matrix's mirror, fixture and development art`
+- [x] **Step 5: Commit** — `feat(ui): the completion matrix's mirror, fixture and development art`
 
 ---
 
@@ -1013,7 +1013,7 @@ describe('markArtOf', () => {
 - Consumes: `completionMatrix(false)` (tests only).
 - Produces: `CellStatus { Empty, Normal, Hard, Both, Unknown, Unexpected }`; `cellReading(cell): { status: CellStatus; third: boolean }`; `Tally { started; readable; complete }`; `rowTally(row)`; `columnTallies(matrix): Tally[]`; `MatrixGroup { Base, Tainted }`; `matrixGroups(matrix): GroupView[]` with `GroupView { group; rows: { row: CharacterRow; index: number; tally: Tally }[]; first; last; started; readable; unknown }`; `completionKpis(matrix): CompletionKpis { started; readable; both; completeCharacters; characters; unknown; cells }`.
 
-- [ ] **Step 1: Write the failing test** — expectations from DESIGN-BRIEF.md §5.4 and the Kit page's tiles (166 / 368, 120 cells, 3 / 34, 40 unreadable), and counted by hand on the export's digit strings:
+- [x] **Step 1: Write the failing test** — expectations from DESIGN-BRIEF.md §5.4 and the Kit page's tiles (166 / 368, 120 cells, 3 / 34, 40 unreadable), and counted by hand on the export's digit strings:
 
 ```ts
 import { describe, expect, it } from 'vitest'
@@ -1101,13 +1101,13 @@ describe('cellReading', () => {
 })
 ```
 
-- [ ] **Step 2: Run to see it fail** — `pnpm --filter ui exec vitest run src/lib/completion` → FAIL, no module.
+- [x] **Step 2: Run to see it fail** — `pnpm --filter ui exec vitest run src/lib/completion` → FAIL, no module.
 
-- [ ] **Step 3: Implement** `completionView.ts` — a `switch` with `assertNever` over `cell.kind`; bits outside 0–7 are `Unexpected`; `isStarted` = `Normal | Hard | Both`; `isReadable` = not `Unknown` and not `Unexpected`; one `tallyOf(cells)` behind `rowTally`, `columnTallies` and the groups; groups built by `tainted`, dropping an empty group.
+- [x] **Step 3: Implement** `completionView.ts` — a `switch` with `assertNever` over `cell.kind`; bits outside 0–7 are `Unexpected`; `isStarted` = `Normal | Hard | Both`; `isReadable` = not `Unknown` and not `Unexpected`; one `tallyOf(cells)` behind `rowTally`, `columnTallies` and the groups; groups built by `tainted`, dropping an empty group.
 
-- [ ] **Step 4: Run to see it pass** — green, and `pnpm typecheck`.
+- [x] **Step 4: Run to see it pass** — green, and `pnpm typecheck`.
 
-- [ ] **Step 5: Commit** — `feat(ui): what the Completion screen counts, as pure functions`
+- [x] **Step 5: Commit** — `feat(ui): what the Completion screen counts, as pure functions`
 
 ---
 
@@ -1117,7 +1117,7 @@ describe('cellReading', () => {
 - Create: `ui/src/stores/completion.ts`, `ui/src/screens/CompletionScreen.vue`, `ui/src/screens/completion/CompletionKpis.vue`, `MarksMatrixCard.vue`, `MatrixLegend.vue`, `ui/src/components/marks/MarksGrid.vue`, `ui/src/components/sprite/PixelSprite.vue`
 - Modify: `ui/src/components/marks/MarkCell.vue` (a symbol that fails falls back), `ui/src/assets/theme/spacing.css`, `ui/src/assets/utilities.css`, `ui/src/router/routes.ts`, `ui/src/router/routeTable.ts`, `ui/src/i18n/messages/it.ts`, `en.ts`
 
-- [ ] **Step 1: Tokens and utilities** — `spacing.css`: `--spacing-matrix-name: 176px; --spacing-matrix-total: 52px; --spacing-matrix-header: 118px;` under a comment naming `Schermate.dc.html`. `utilities.css`:
+- [x] **Step 1: Tokens and utilities** — `spacing.css`: `--spacing-matrix-name: 176px; --spacing-matrix-total: 52px; --spacing-matrix-header: 118px;` under a comment naming `Schermate.dc.html`. `utilities.css`:
 
 ```css
 /* The completion matrix: the name column, one mark cell per boss, the row total. The column
@@ -1136,19 +1136,19 @@ describe('cellReading', () => {
 }
 ```
 
-- [ ] **Step 2: The store** — `useCompletionStore` (setup syntax, `StoreId.Completion`): `matrix`, `status: LoadStatus`, `error: IpcError | null`, `load()` that clears the matrix, calls `completion()`, and on failure keeps `isIpcError(e) ? e : null`.
+- [x] **Step 2: The store** — `useCompletionStore` (setup syntax, `StoreId.Completion`): `matrix`, `status: LoadStatus`, `error: IpcError | null`, `load()` that clears the matrix, calls `completion()`, and on failure keeps `isIpcError(e) ? e : null`.
 
-- [ ] **Step 3: `PixelSprite` and `MarkCell`** — `PixelSprite` (props `url: string | null`, `placeholder?: boolean`): an `<img class="pixelated">` until it errors, then a `<span aria-hidden>` with `hatch-placeholder` when `placeholder`; the error resets when `url` changes; sizes come from the parent's class. `MarkCell`: a `failed` ref reset on `art` change, `symbol` is `null` when failed, `<img @error="failed = true">`.
+- [x] **Step 3: `PixelSprite` and `MarkCell`** — `PixelSprite` (props `url: string | null`, `placeholder?: boolean`): an `<img class="pixelated">` until it errors, then a `<span aria-hidden>` with `hatch-placeholder` when `placeholder`; the error resets when `url` changes; sizes come from the parent's class. `MarkCell`: a `failed` ref reset on `art` change, `symbol` is `null` when failed, `<img @error="failed = true">`.
 
-- [ ] **Step 4: `MarksGrid`** — props `matrix`; `:style="{ '--matrix-columns': matrix.bosses.length }"`; header row (`Personaggio`, per boss a `writing-vertical` name over the hard symbol in `size-mark-symbol` via `PixelSprite`, `iniziati`), per group a band (title, first – last, `started/readable iniziati`, `N non leggibili` when any) and its rows (`PixelSprite` head `size-8` with placeholder, truncated name, a `Tooltip` per cell around a labelled `MarkCell` — content: `character · boss` and the reading's message, "valore fuori da quelli previsti: N" for unexpected, `marks.thirdLevel` appended when `third` — then the row tally), the footer "Personaggi con il marchio" with `columnTallies`; rows alternate on `bg-row-alt`, hover `bg-row-hover`; tally colour `text-state-done-foreground` complete, `text-faint-foreground` nothing readable, else `text-subtle-foreground`; the whole grid in `overflow-x-auto`.
+- [x] **Step 4: `MarksGrid`** — props `matrix`; `:style="{ '--matrix-columns': matrix.bosses.length }"`; header row (`Personaggio`, per boss a `writing-vertical` name over the hard symbol in `size-mark-symbol` via `PixelSprite`, `iniziati`), per group a band (title, first – last, `started/readable iniziati`, `N non leggibili` when any) and its rows (`PixelSprite` head `size-8` with placeholder, truncated name, a `Tooltip` per cell around a labelled `MarkCell` — content: `character · boss` and the reading's message, "valore fuori da quelli previsti: N" for unexpected, `marks.thirdLevel` appended when `third` — then the row tally), the footer "Personaggi con il marchio" with `columnTallies`; rows alternate on `bg-row-alt`, hover `bg-row-hover`; tally colour `text-state-done-foreground` complete, `text-faint-foreground` nothing readable, else `text-subtle-foreground`; the whole grid in `overflow-x-auto`.
 
-- [ ] **Step 5: The screen parts** — `CompletionKpis` (four `KpiTile`s per the spec's table, explanations in the `explain` slot), `MatrixLegend` (five decorative `MarkCell`s: 0, 1, 3, 7, `unknown`, with column 0's art), `MarksMatrixCard` (`Card` → `CardHeader`/`CardTitle` "Matrice dei marchi", a legend strip, `CardContent` with `MarksGrid`), `CompletionScreen` (`ScreenHeader` with `Grid2x2Icon`; `ProfileError` on failure with retry; KPIs, the nothing-readable `Alert` when `readable === 0`, the card; `Skeleton`s while loading; loads on the active profile id, immediately).
+- [x] **Step 5: The screen parts** — `CompletionKpis` (four `KpiTile`s per the spec's table, explanations in the `explain` slot), `MatrixLegend` (five decorative `MarkCell`s: 0, 1, 3, 7, `unknown`, with column 0's art), `MarksMatrixCard` (`Card` → `CardHeader`/`CardTitle` "Matrice dei marchi", a legend strip, `CardContent` with `MarksGrid`), `CompletionScreen` (`ScreenHeader` with `Grid2x2Icon`; `ProfileError` on failure with retry; KPIs, the nothing-readable `Alert` when `readable === 0`, the card; `Skeleton`s while loading; loads on the active profile id, immediately).
 
-- [ ] **Step 6: i18n and route** — `completion.*` in `it.ts` and `en.ts` (intro, kpi labels and explanations, `cells` unit, card title, legend, grid labels, group names, cell states, nothing-readable); `routes.ts` maps `RouteName.Completion` to `CompletionScreen`; `routeTable.ts` drops its `routeArrives` entry and both message files drop `placeholder.completion`.
+- [x] **Step 6: i18n and route** — `completion.*` in `it.ts` and `en.ts` (intro, kpi labels and explanations, `cells` unit, card title, legend, grid labels, group names, cell states, nothing-readable); `routes.ts` maps `RouteName.Completion` to `CompletionScreen`; `routeTable.ts` drops its `routeArrives` entry and both message files drop `placeholder.completion`.
 
-- [ ] **Step 7: Verify** — `pnpm typecheck && pnpm ui:test && pnpm lint && pnpm format:check && pnpm scan` → green; then `pnpm ui:dev` and look: `?fixture=active` (art, tooltips, the unknown block bottom-right, totals 166/368, 120, 3/34, 40/408), `?fixture=active&art=none` (bars, placeholder heads), `?fixture=pick` (the gate on Completion); the Kit's MarkCell and Wiki sections unchanged.
+- [x] **Step 7: Verify** — `pnpm typecheck && pnpm ui:test && pnpm lint && pnpm format:check && pnpm scan` → green; then `pnpm ui:dev` and look: `?fixture=active` (art, tooltips, the unknown block bottom-right, totals 166/368, 120, 3/34, 40/408), `?fixture=active&art=none` (bars, placeholder heads), `?fixture=pick` (the gate on Completion); the Kit's MarkCell and Wiki sections unchanged.
 
-- [ ] **Step 8: Commit** — `feat(ui): the Completion screen, the marks matrix on the active profile`
+- [x] **Step 8: Commit** — `feat(ui): the Completion screen, the marks matrix on the active profile`
 
 ---
 
@@ -1157,7 +1157,7 @@ describe('cellReading', () => {
 **Files:**
 - Modify: `DESIGN-BRIEF.md` (§5.6 the map lives in `ipc` now; §7 the `MarksMatrix` additions and the `started` rule), `docs/frontend-conventions.md` (`grid-cols-matrix`, `writing-vertical`, `PixelSprite`, fixtures' art and `?art=none`), `docs/BACKLOG.md` (B13 closed), `docs/STATUS.md` (3.2 ticked, session log), `CLAUDE.md` (State paragraph), the spec's "Deviations" section
 
-- [ ] **Step 1: Documents** — as listed; the spec records every deviation met while executing.
-- [ ] **Step 2: Production build** — `pnpm --filter ui build`, then check `ui/dist` holds no `fixtures`, no `isaacdome-design-pack` image and no Kit.
-- [ ] **Step 3: `sh scripts/check`** → all green, skips counted and declared.
-- [ ] **Step 4: Commit** — `docs: cycle 3.2 lands, the Completion screen and the marks map handed on`
+- [x] **Step 1: Documents** — as listed; the spec records every deviation met while executing.
+- [x] **Step 2: Production build** — `pnpm --filter ui build`, then check `ui/dist` holds no `fixtures`, no `isaacdome-design-pack` image and no Kit.
+- [x] **Step 3: `sh scripts/check`** → all green, skips counted and declared.
+- [x] **Step 4: Commit** — `docs: cycle 3.2 lands, the Completion screen and the marks map handed on`

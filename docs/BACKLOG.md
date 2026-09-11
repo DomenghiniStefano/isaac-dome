@@ -736,7 +736,15 @@ Logged 2026-09-10, a list:
 
 ---
 
-## B13 — The marks map moves to `ipc` with the Completion screen (implementation, cycle 3)
+## B13 — The marks map moves to `ipc` with the Completion screen (implementation, cycle 3) ✅ closed on 2026-09-11
+
+**Closed with sub-project 3.2** (`docs/superpowers/specs/2026-09-11-screens-completion-design.md`):
+the map is `crates/ipc/src/mark_art.rs`, the icon protocol serves `mark/<column>/<tier>` and
+`head/<row>` as crops (`ipc::crop_png`, moved from `design-export`), and
+`crates/ipc/tests/mark_art.rs` resolves every one of the twelve columns to two different
+tiers. The real-archive twin, `mark_art_real.rs`, skips on a machine without the game and
+has yet to run on one. The Delirium `symbolFallback` is not carried: the cell's own bars
+outfit is the app's fallback.
 
 Logged 2026-09-10, from cycle 2: `MarkCell` takes each column's symbol URLs as a prop, and
 nothing in the app serves them yet. `crates/design-export`'s `marks.json` holds the column →
