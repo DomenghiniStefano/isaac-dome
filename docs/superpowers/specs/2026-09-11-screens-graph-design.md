@@ -163,8 +163,10 @@ column widths; a `grid-cols-unlock` utility composes them, like `grid-cols-matri
   committed payloads, imported under the development build only. Their `isaac://` links become
   the pack's image files (`images/achievement/NNNN_*.png`, the items' sprites) through a glob;
   `?art=none` answers them as `null`.
-- **`?catalog=none`** answers what a machine without the game gets: no nodes, a `noCatalog`
-  diagnostic, no steps.
+- **`?catalog=none`** answers what a machine without the game gets, as `ipc::unlock_view`
+  builds it: one node per slot, each an `unknown` achievement with the save's `done`, nothing
+  unlocked, no origin, nothing missing and a `partial` graph with one unknown; totals with
+  `known: 0`; a `noCatalog` diagnostic; no steps.
 
 ## i18n
 
@@ -207,6 +209,10 @@ catalog.
   state (3.7).
 - **The fixtures read the payloads through `import.meta.glob`**, not a JSON import: a file
   outside `src/` imported by name would leave `vue-tsc --build`'s file list.
+- **Without a catalog the nodes are not empty.** `DESIGN-BRIEF.md` §7.2 says "empty nodes";
+  `ipc::unlock_view` sends one `unknown`, `partial` node per slot with the save's `done`. The
+  fixture follows the code, the Unlock screen draws those rows under the `noCatalog` alert,
+  and the brief's line is corrected when this half lands.
 
 ## Out of scope for this half
 
