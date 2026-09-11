@@ -9,7 +9,8 @@ const UI_DIR = join('src', 'components', 'ui')
 // Development-only pages: main.ts imports them behind `import.meta.env.DEV`, so they never
 // reach the production build and their text is never user-facing. The visible-string check
 // is the one check they are excused from.
-const DEV_ONLY_DIR = join('src', 'kit')
+const DEV_ONLY_DIRS = [join('src', 'kit'), join('src', 'verify')]
+const WINDOW_DIR = join('src', 'lib', 'window')
 
 const STYLE_BLOCK = /<style[^>]*>([\s\S]*?)<\/style>/g
 const STYLE_EXEMPTION = /^\s*\/\*\s*exception allowed:/
@@ -57,20 +58,7 @@ const isUnder = (file, dir) => relative(ROOT, file).startsWith(dir)
 
 // Exceptions are declared here, per file and per check, with a reason. An exception
 // with no reason is an untracked violation; an empty list is the goal.
-const EXEMPTIONS = [
-  {
-    file: 'src/App.vue',
-    check: 'visible string in the template',
-    reason:
-      'declared verification page, replaced by the shell in cycle 3 of the design system: its text is deliberately left untranslated',
-  },
-  {
-    file: 'src/components/WikiInline.vue',
-    check: 'raw primitive <button>/<input>',
-    reason:
-      'verification render of the wiki dataset: the link to another target will become a primitive',
-  },
-]
+const EXEMPTIONS = []
 
 const isExempt = (file, check) =>
   EXEMPTIONS.some(
@@ -92,6 +80,11 @@ const checks = [
   {
     name: 'invoke() outside src/lib/ipc/',
     test: (file, body) => /\binvoke\s*\(/.test(body) && !isUnder(file, IPC_DIR),
+  },
+  {
+    name: 'window API outside src/lib/window/',
+    test: (file, body) =>
+      /@tauri-apps\/api\/window/.test(body) && !isUnder(file, WINDOW_DIR),
   },
   {
     name: 'arbitrary pixel value in a class',
@@ -126,7 +119,7 @@ const checks = [
     name: 'visible string in the template',
     test: (file, body) =>
       file.endsWith('.vue') &&
-      !isUnder(file, DEV_ONLY_DIR) &&
+      !DEV_ONLY_DIRS.some((dir) => isUnder(file, dir)) &&
       /\p{L}{2,}/u.test(visibleText(body)),
   },
   {

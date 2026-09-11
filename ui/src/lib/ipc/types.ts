@@ -63,9 +63,28 @@ export type Cell =
   | { kind: 'unknown' }
   | { kind: 'unexpected'; value: number }
 
+// Mirrors crates/ipc/src/marks.rs. `tainted` groups the rows the way a player does, while
+// `group` stays the file's three blocks. Every URL is null when the game's archives aren't
+// open, and the screen draws the fallback outfit.
+export interface CharacterRow {
+  character: string
+  group: string
+  tainted: boolean
+  cells: Cell[]
+  headUrl: string | null
+}
+
+// One column's symbol URLs, one per tier.
+export interface MarkArtView {
+  normalUrl: string | null
+  hardUrl: string | null
+}
+
 export interface MarksMatrix {
-  characters: { character: string; group: string; cells: Cell[] }[]
+  characters: CharacterRow[]
   bosses: string[]
+  // art[i] draws bosses[i].
+  art: MarkArtView[]
   totals: {
     cells: number
     readable: number
