@@ -1,6 +1,7 @@
 //! ipc — view-models for the UI. Pure logic: no I/O, no dependency on Tauri.
 
 mod catalog_view;
+mod collection;
 mod goals;
 mod graph;
 mod icon;
@@ -16,6 +17,10 @@ mod target_sprite;
 mod wiki;
 
 pub use catalog_view::{catalog_view, item_views, CatalogView, ItemKindView, ItemView, KindCounts};
+pub use collection::{
+    collection_view, CollectionDiagnostic, CollectionItem, CollectionTotals, CollectionView,
+    LockView,
+};
 pub use goals::{target_exists, Goal, GoalId, TargetKey, UnlockTarget};
 pub use graph::{
     next_steps, plan_view, resolve_target, target_of, unlock_view, AchievementRef, GoalView,
