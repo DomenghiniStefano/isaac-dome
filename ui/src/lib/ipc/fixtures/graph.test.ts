@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { packIconUrl } from './art'
+import { packIconUrl } from './graphArt'
 import { graphAnswers } from './graph'
 
 // The design pack's committed payloads (contracts/payload/unlock.json and next_steps.json),
