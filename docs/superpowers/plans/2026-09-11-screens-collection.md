@@ -40,7 +40,7 @@ Pinia, Tailwind v4, Reka UI, vue-i18n, lodash-es, `@tanstack/vue-virtual` 3.13.3
 
 **Interfaces:** Produces `collection_view(catalog: Option<&Catalog>, items: Option<&[bool]>, achievements: Option<&[bool]>, icon: impl FnMut(&IconRef) -> Option<String>) -> CollectionView`; `CollectionView { items, pools, totals, diagnostics }`; `CollectionItem { id, kind, name, icon_url, quality, pools, origin, in_collection, lock }`; `CollectionTotals { slots, items, in_collection }`; `LockView { Free, Unlocked, Locked, Unknown }`; `CollectionDiagnostic { NoCatalog, NoCollectionSection, NoAchievementSection, ItemsBeyondSlots { count } }`.
 
-- [ ] **Step 1: Failing tests** — `crates/ipc/tests/collection.rs`:
+- [x] **Step 1: Failing tests** — `crates/ipc/tests/collection.rs`:
 
 ```rust
 //! The Collection as the UI sees it: section 4 joined with the catalog's collectibles. The
@@ -197,9 +197,9 @@ fn every_collectible_the_save_has_a_slot_for_reads_as_true_or_false() {
 }
 ```
 
-- [ ] **Step 2: Run** `cargo test -p ipc --test collection` → FAIL (no `collection_view`).
+- [x] **Step 2: Run** `cargo test -p ipc --test collection` → FAIL (no `collection_view`).
 
-- [ ] **Step 3: Implement** — in `graph.rs`, `fn origin_view` becomes `pub(crate) fn origin_view`. `crates/ipc/src/collection.rs`:
+- [x] **Step 3: Implement** — in `graph.rs`, `fn origin_view` becomes `pub(crate) fn origin_view`. `crates/ipc/src/collection.rs`:
 
 ```rust
 //! The Collection: the save's item collection (section 4) joined with the catalog's
@@ -374,7 +374,7 @@ fn lock_of(c: &Catalog, unlocked_by: Option<AchievementId>, achievements: Option
 
 `lib.rs`: `mod collection;` and `pub use collection::{collection_view, CollectionDiagnostic, CollectionItem, CollectionTotals, CollectionView, LockView};`. If `catalog` doesn't re-export `Item` or `AchievementId` under those names, import them from where `crates/ipc/src/graph.rs` does.
 
-- [ ] **Step 4: Run** `cargo test -p ipc --test collection --test collection_real` → green (the real test prints its skip); `cargo fmt`, `cargo clippy -p ipc --all-targets -- -D warnings` by exit code. Commit `feat(ipc): the Collection, the save's item collection joined with the catalog` and push.
+- [x] **Step 4: Run** `cargo test -p ipc --test collection --test collection_real` → green (the real test prints its skip); `cargo fmt`, `cargo clippy -p ipc --all-targets -- -D warnings` by exit code. Commit `feat(ipc): the Collection, the save's item collection joined with the catalog` and push.
 
 ### Task 2: The command, the pack's payload, the TypeScript mirror
 
@@ -382,7 +382,7 @@ fn lock_of(c: &Catalog, unlocked_by: Option<AchievementId>, achievements: Option
 
 **Interfaces:** Consumes Task 1. Produces Tauri `collection() -> Result<ipc::CollectionView, IpcError>`; TS `CollectionView`, `CollectionItem`, `CollectionTotals`, `LockView`, `CollectionDiagnostic`; `Command.Collection = 'collection'`; `collection(): Promise<CollectionView>`.
 
-- [ ] **Step 1: Command** — in `crates/app/src/lib.rs`, after `next_steps`:
+- [x] **Step 1: Command** — in `crates/app/src/lib.rs`, after `next_steps`:
 
 ```rust
 #[tauri::command]
@@ -408,7 +408,7 @@ fn collection(
 
 and `collection,` in `generate_handler!` after `next_steps`.
 
-- [ ] **Step 2: The pack** — in `payload.rs`, after `next_steps.json`:
+- [x] **Step 2: The pack** — in `payload.rs`, after `next_steps.json`:
 
 ```rust
     // The Collection needs the save's item collection: without a profile there is nothing
@@ -423,7 +423,7 @@ and `collection,` in `generate_handler!` after `next_steps`.
     }
 ```
 
-- [ ] **Step 3: TypeScript** — `types.ts`, after the queue block:
+- [x] **Step 3: TypeScript** — `types.ts`, after the queue block:
 
 ```ts
 // --- The Collection ---
@@ -479,7 +479,7 @@ import type { CollectionView } from './types'
 export const collection = (): Promise<CollectionView> => call(Command.Collection)
 ```
 
-- [ ] **Step 4: Verify** `cargo build -p app`, `cargo build -p design-export`, `cargo clippy -p app -p design-export --all-targets -- -D warnings`, `pnpm typecheck` by exit code. Commit `feat(app): the collection command, its pack payload and its TypeScript mirror` and push.
+- [x] **Step 4: Verify** `cargo build -p app`, `cargo build -p design-export`, `cargo clippy -p app -p design-export --all-targets -- -D warnings`, `pnpm typecheck` by exit code. Commit `feat(app): the collection command, its pack payload and its TypeScript mirror` and push.
 
 ### Task 3: An item's state and the Collection's facets
 
@@ -487,7 +487,7 @@ export const collection = (): Promise<CollectionView> => call(Command.Collection
 
 **Interfaces:** Produces `ItemState { InCollection, Available, Locked, Unknown }`, `itemStateOrder`, `itemState(item)`, `itemStateCounts(items): Record<ItemState, number>`; `CollectionFacet { State, Quality, Pool, Kind, Origin }`, `collectionFacetOrder`, `QualityValue`, `NoPool = 'none'`, `CollectionSort { Quality, Id, Name }`, `CollectionFilter { query; picks: Record<CollectionFacet, string[]> }`, `defaultCollectionFilter()`, `emptyCollectionFilter()`, `collectionFacetValues(item, facet)`, `matchesCollectionFilter(item, filter)`, `collectionFacetCounts(items, filter, facet)`, `collectionFacetOptions(pools, facet)`, `sortItems(items, sort)`, `activeCollectionFilterCount(filter)`.
 
-- [ ] **Step 1: Failing tests** — a shared builder in each test file:
+- [x] **Step 1: Failing tests** — a shared builder in each test file:
 
 ```ts
 import type { CollectionItem, LockView } from '@/lib/ipc/types'
@@ -587,9 +587,9 @@ describe('the Collection facets', () => {
 
 (`Unrated` sorts after `The Sad Onion` by name: "the inner eye" < "the sad onion" < "unrated".)
 
-- [ ] **Step 2: Run** `pnpm --filter ui exec vitest run src/lib/collection` → FAIL.
+- [x] **Step 2: Run** `pnpm --filter ui exec vitest run src/lib/collection` → FAIL.
 
-- [ ] **Step 3: Implement** `itemState.ts`:
+- [x] **Step 3: Implement** `itemState.ts`:
 
 ```ts
 import { countBy } from 'lodash-es'
@@ -798,7 +798,7 @@ export const activeCollectionFilterCount = (filter: CollectionFilter): number =>
 
 (`OriginValue` in `unlockFilter.ts` already holds the four origins and `none`; `ItemKindView` is imported as a value.)
 
-- [ ] **Step 4: Run** the tests → green; typecheck, lint, scan, format by exit code. Commit `feat(ui): a collectible's state and the Collection's facets, as pure functions` and push.
+- [x] **Step 4: Run** the tests → green; typecheck, lint, scan, format by exit code. Commit `feat(ui): a collectible's state and the Collection's facets, as pure functions` and push.
 
 ### Task 4: The Collection's fixture
 
@@ -806,7 +806,7 @@ export const activeCollectionFilterCount = (filter: CollectionFilter): number =>
 
 **Interfaces:** Consumes `graphAnswers`, `packIconUrl`. Produces `CollectionSource { Pack, Synthetic }`, `collectionSource(): CollectionSource`, `collectionAnswer({ withArt, withCatalog, collectionRead }): CollectionView`; the `collection` handler; `?collection=unread`.
 
-- [ ] **Step 1: Failing test** — `collection.test.ts`:
+- [x] **Step 1: Failing test** — `collection.test.ts`:
 
 ```ts
 import { describe, expect, it } from 'vitest'
@@ -861,9 +861,9 @@ describe('the Collection fixture', () => {
 
 Before running, confirm the two lock examples against `unlock.json` (a node whose `unlocks` holds `{ itemKind: 'familiar', id: 73 }` with `done: true`, and one holding `{ itemKind: 'passive', id: 168 }` with `done: false`); the expectation follows the payload.
 
-- [ ] **Step 2: Run** `pnpm --filter ui exec vitest run src/lib/ipc/fixtures/collection.test.ts` → FAIL.
+- [x] **Step 2: Run** `pnpm --filter ui exec vitest run src/lib/ipc/fixtures/collection.test.ts` → FAIL.
 
-- [ ] **Step 3: Implement** `collection.ts`:
+- [x] **Step 3: Implement** `collection.ts`:
 
 ```ts
 import type { CollectionItem, CollectionView, ItemKindView, LockView, OriginView } from '../types'
@@ -1010,7 +1010,7 @@ export const collectionAnswer = ({
 
 `index.ts`: `const CollectionParam = 'collection'`; `collectionRead = (): boolean => query().get(CollectionParam) !== 'unread'`; a lazy `const collection = async () => { const { collectionAnswer } = await import('./collection'); return collectionAnswer({ withArt: artShown(), withCatalog: catalogShown(), collectionRead: collectionRead() }) }`; handler `[Command.Collection]: (_args, scenario) => whenActive(scenario, () => collection())`.
 
-- [ ] **Step 4: Run** the fixture tests and `src/lib/ipc` → green; typecheck, lint, scan, format. Commit `feat(ui): the Collection's fixture, real names and locks, declared synthetic flags` and push.
+- [x] **Step 4: Run** the fixture tests and `src/lib/ipc` → green; typecheck, lint, scan, format. Commit `feat(ui): the Collection's fixture, real names and locks, declared synthetic flags` and push.
 
 ### Task 5: The Collection screen
 
@@ -1018,9 +1018,9 @@ export const collectionAnswer = ({
 
 **Interfaces:** Consumes Tasks 2–4.
 
-- [ ] **Step 1: The row height, pinned** — `collectionLayout.ts` exports `collectionRowHeight = 40`; its test reads `theme/spacing.css?raw` and expects `--spacing-row-wide: 40px`. Run → FAIL, write, → green.
+- [x] **Step 1: The row height, pinned** — `collectionLayout.ts` exports `collectionRowHeight = 40`; its test reads `theme/spacing.css?raw` and expects `--spacing-row-wide: 40px`. Run → FAIL, write, → green.
 
-- [ ] **Step 2: Tokens** — `spacing.css`: `--spacing-collection-sprite: 56px; --spacing-collection-quality: 96px; --spacing-collection-origin: 104px; --spacing-collection-state: 136px; --spacing-quality-pip: 6px;` under a comment "the Collection's table (Schermate.dc.html, Collezione)". `utilities.css`:
+- [x] **Step 2: Tokens** — `spacing.css`: `--spacing-collection-sprite: 56px; --spacing-collection-quality: 96px; --spacing-collection-origin: 104px; --spacing-collection-state: 136px; --spacing-quality-pip: 6px;` under a comment "the Collection's table (Schermate.dc.html, Collezione)". `utilities.css`:
 
 ```css
 /* The Collection's table: the sprite, the name, quality, pools, origin and state. */
@@ -1035,11 +1035,11 @@ export const collectionAnswer = ({
 }
 ```
 
-- [ ] **Step 3: Store** — `StoreId.Collection: 'collection'`; `stores/collection.ts` as `stores/completion.ts`: `view`, `status`, `error`, `load()` reading `collection()`.
+- [x] **Step 3: Store** — `StoreId.Collection: 'collection'`; `stores/collection.ts` as `stores/completion.ts`: `view`, `status`, `error`, `load()` reading `collection()`.
 
-- [ ] **Step 4: Messages** — `collection.*` in both languages: `intro` (the export's line and that trinkets have no collection state), `state.{inCollection: 'in collezione', available: 'da trovare', locked: 'bloccato', unknown: 'non leggibile'}`, `facets`, `facet.{state, quality, pool, kind, origin}`, `quality.unrated: 'non valutato'`, `pool.none: 'nessun pool'`, `items: 'oggetti'`, `search: 'cerca un oggetto'`, `sortBy`, `sort.{quality, id, name}`, `columns.{item, quality, pools, origin, state}`, `id: 'id'`, `lockedBy: 'si sblocca con'`, `noResults`, `resetFilters`, `noFilters`, `activeFilters`, `reset`, `diagnostics.{noCatalogTitle, noCatalog, noCollectionSectionTitle, noCollectionSection, noAchievementSectionTitle, noAchievementSection, itemsBeyondSlots}`; `placeholder.collection` goes.
+- [x] **Step 4: Messages** — `collection.*` in both languages: `intro` (the export's line and that trinkets have no collection state), `state.{inCollection: 'in collezione', available: 'da trovare', locked: 'bloccato', unknown: 'non leggibile'}`, `facets`, `facet.{state, quality, pool, kind, origin}`, `quality.unrated: 'non valutato'`, `pool.none: 'nessun pool'`, `items: 'oggetti'`, `search: 'cerca un oggetto'`, `sortBy`, `sort.{quality, id, name}`, `columns.{item, quality, pools, origin, state}`, `id: 'id'`, `lockedBy: 'si sblocca con'`, `noResults`, `resetFilters`, `noFilters`, `activeFilters`, `reset`, `diagnostics.{noCatalogTitle, noCatalog, noCollectionSectionTitle, noCollectionSection, noAchievementSectionTitle, noAchievementSection, itemsBeyondSlots}`; `placeholder.collection` goes.
 
-- [ ] **Step 5: Parts**
+- [x] **Step 5: Parts**
   - `collectionLabels.ts`: `collectionFacetTitle: Record<CollectionFacet, MessageKey>`, `itemStateText: Record<ItemState, MessageKey>`, `collectionFacetValueLabel(t, facet, value)` — state through `itemStateText`, quality `unrated` through `collection.quality.unrated` else the number, pool `none` through `collection.pool.none` else the name, kind through `unlockKindText` (`@/components/graph/unlockKindText`), origin as `facetLabels.ts` does (the DLC names, `graph.originNone`).
   - `CollectionStateToggle.vue`: Unlock's `StateToggle` over `itemStateOrder`, squares `bg-state-done`, `bg-state-now`, `bg-state-blocked`, `hatch-unknown border border-dashed border-state-unknown`.
   - `CollectionFacetDrawer.vue`: Unlock's `FacetDrawer` over Quality, Pool, Kind, Origin (`grid-cols-4`), with `collectionFacetCounts` and `collectionFacetOptions(view.pools, facet)`.
@@ -1049,13 +1049,13 @@ export const collectionAnswer = ({
   - `CollectionTable.vue`: Unlock's `UnlockTable` with `grid-cols-collection`, `collectionRowHeight`, `CollectionRow`, keyed by `item.id`.
   - `CollectionDiagnostics.vue`: `noCatalog`, `noCollectionSection`, `noAchievementSection` as `Alert`s; `itemsBeyondSlots` as a line.
 
-- [ ] **Step 6: Screen** — `CollectionScreen.vue`: `useOnActiveProfile(() => store.load())`; `filter = ref(defaultCollectionFilter())`, `sort = ref(CollectionSort.Quality)`; `counts = itemStateCounts(items)`; `rows = sortItems(items.filter(matchesCollectionFilter), sort)`; header (`LayersIcon`, `routes.collection`, `collection.intro`), diagnostics, state toggle, drawer, a `Card` with toolbar and table or the no-results state with "Azzera i filtri" (which returns to `emptyCollectionFilter()`), `ProfileError`, `Skeleton`s. `routes.ts` maps `RouteName.Collection`; `routeTable.ts` drops its `routeArrives` entry.
+- [x] **Step 6: Screen** — `CollectionScreen.vue`: `useOnActiveProfile(() => store.load())`; `filter = ref(defaultCollectionFilter())`, `sort = ref(CollectionSort.Quality)`; `counts = itemStateCounts(items)`; `rows = sortItems(items.filter(matchesCollectionFilter), sort)`; header (`LayersIcon`, `routes.collection`, `collection.intro`), diagnostics, state toggle, drawer, a `Card` with toolbar and table or the no-results state with "Azzera i filtri" (which returns to `emptyCollectionFilter()`), `ProfileError`, `Skeleton`s. `routes.ts` maps `RouteName.Collection`; `routeTable.ts` drops its `routeArrives` entry.
 
-- [ ] **Step 7: Verify** — typecheck, lint, format, scan, `ui:test` by exit code. Commit `feat(ui): the Collection, what this save's collection doesn't hold` and push.
+- [x] **Step 7: Verify** — typecheck, lint, format, scan, `ui:test` by exit code. Commit `feat(ui): the Collection, what this save's collection doesn't hold` and push.
 
 ### Task 6: Looked at, handed on, checked
 
-- [ ] **Step 1: visual check** — `pnpm ui:dev` and a throwaway headless-Chrome script in the job's temp folder: the state counts and the default pick (to find + locked), the synthetic warning in the console, a facet's counts moving as another is picked, quality pips, a locked item's tooltip naming its achievement, the search, scrolling to the last row, `?collection=unread` (every state unreadable and the alert), `?catalog=none`, `?art=none`. Findings fixed with a test where they are logic, recorded in the spec.
-- [ ] **Step 2: documents** — `DESIGN-BRIEF.md` §7.7 (the Collection's contract, handed on) and §3's row 5; `docs/STATUS.md` (3.4 ticked, the session log, the pack waiting for `pnpm design:export` to carry `collection.json`); `docs/frontend-conventions.md` (`lib/collection/`, `screens/collection/`, the fixture's declared synthetic source); `CLAUDE.md` (the `ipc` row and the State paragraph); the spec's deviations; this plan's checkboxes.
-- [ ] **Step 3: production build** — no fixture, pack payload or image in `ui/dist`.
+- [x] **Step 1: visual check** — `pnpm ui:dev` and a throwaway headless-Chrome script in the job's temp folder: the state counts and the default pick (to find + locked), the synthetic warning in the console, a facet's counts moving as another is picked, quality pips, a locked item's tooltip naming its achievement, the search, scrolling to the last row, `?collection=unread` (every state unreadable and the alert), `?catalog=none`, `?art=none`. Findings fixed with a test where they are logic, recorded in the spec.
+- [x] **Step 2: documents** — `DESIGN-BRIEF.md` §7.7 (the Collection's contract, handed on) and §3's row 5; `docs/STATUS.md` (3.4 ticked, the session log, the pack waiting for `pnpm design:export` to carry `collection.json`); `docs/frontend-conventions.md` (`lib/collection/`, `screens/collection/`, the fixture's declared synthetic source); `CLAUDE.md` (the `ipc` row and the State paragraph); the spec's deviations; this plan's checkboxes.
+- [x] **Step 3: production build** — no fixture, pack payload or image in `ui/dist`.
 - [ ] **Step 4: `sh scripts/check`** → "all green". Commit `docs: cycle 3.4 lands, the Collection` and push; merge `feature/screens-collection` into `develop` with `--no-ff` ("merge: screens 3.4, the Collection, into develop") through a temporary worktree, push `develop`.

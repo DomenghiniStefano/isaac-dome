@@ -168,7 +168,7 @@ The traffic light = availability of real data, not priority.
 | 2 | **Unlock** | What's missing, filterable on every facet | save + graph + catalog | 🟢 **real** (§7): 641 nodes — name, icon, condition (283 of 637), done, what it unlocks, origin DLC — plus a typed `missing[]` and the graph's verdict: `computed`, or `partial` where a requirement wasn't interpretable |
 | 3 | **Plan** | My goals, in the order I mean to do them | graph + save diff | 🟢 **real** (§7.4, §7.6): saved goals, and a queue whose rows are the ones you asked for plus the prerequisites they dragged in. `expansion` is the one field still a declared stub |
 | 4 | **Completion** | Character × mark matrix, and how readable it is (see §5.3) | **save only** | 🟢 **designable now** |
-| 5 | **Collection** | Items never touched, by pool and quality | save + catalog | 🟢 designable now: name, sprite, quality, tags and pool for 909 out of 909 |
+| 5 | **Collection** | Items never touched, by pool and quality | save + catalog | 🟢 **real** (§7.7): the save's item collection joined with the catalog's collectibles — name, sprite, quality, pools, origin, whether the collection holds it, and the achievement that locks it. Trinkets have no slot in the save, and aren't listed |
 | 6 | **Runs** | Win rate, nemesis, streak | run archive | 🔴 M4 |
 | 7 | **Live** | What I've collected in this run | log watcher | 🔴 M4 |
 | 8 | **Search** | Where this thing is, wherever the app knows it | catalog + wiki + save + graph | 🟢 designable now for catalog and wiki; graph nodes enter the results with M2 (B5) |
@@ -1108,6 +1108,54 @@ a position in the file; and a row that drags its dependents along would shift an
 them. What the design draws after a drop is the order the command answers with. When a rising
 row stops short, the row right above it is the prerequisite that stopped it, and the Plan says
 so in the queue's band.
+
+---
+
+### 7.7 The Collection: the save's item collection, joined with the catalog
+
+Added on 2026-09-11 with the Collection screen (3.4): `collection()`.
+
+```ts
+interface CollectionView {
+  items: CollectionItem[]      // collectibles only, by id
+  pools: string[]              // the pools any listed item belongs to, in the catalog's order
+  totals: { slots: number; items: number; inCollection: number }
+  diagnostics: CollectionDiagnostic[]
+}
+
+interface CollectionItem {
+  id: number
+  kind: ItemKindView           // 'passive' | 'active' | 'familiar', never 'trinket'
+  name: string
+  iconUrl: string | null       // isaac://item/<kind>/<id>
+  quality: number | null       // items_metadata.xml; null when unrated
+  pools: string[]              // itempools.xml names, untranslated
+  origin: OriginView | null
+  inCollection: boolean | null // null: section 4 unread, or no slot for this id
+  lock: LockView
+}
+
+type LockView =
+  | { kind: 'free' }                                                // nothing unlocks it
+  | { kind: 'unlocked'; achievement: number; text: string | null }  // its achievement is done
+  | { kind: 'locked'; achievement: number; text: string | null }    // not done: it can't appear
+  | { kind: 'unknown'; achievement: number; text: string | null }   // section 1 unread
+
+type CollectionDiagnostic =
+  | { kind: 'noCatalog' }
+  | { kind: 'noCollectionSection' }
+  | { kind: 'noAchievementSection' }
+  | { kind: 'itemsBeyondSlots'; count: number }
+```
+
+**Section 4 is the save's item collection**: one slot per collectible id, the catalog's ids a
+subset of its slots. What a set byte means in play — picked up, or merely seen — is not
+measured, so the contract uses the section's own name, **in the collection**. **Trinkets have no
+slot**, and the Collection lists collectibles only. **Unread is never "not in the collection"**:
+a missing section, or a slot past its end, gives `inCollection: null`, and the design has to draw
+that as unreadable, not as "never found". The design pack carries the real payload as
+`contracts/payload/collection.json` once `pnpm design:export` has run on a machine with the game
+and a save.
 
 ---
 
