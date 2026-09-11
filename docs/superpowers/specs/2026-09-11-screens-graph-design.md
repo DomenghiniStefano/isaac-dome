@@ -194,6 +194,20 @@ a partial badge next to a blocked one, the why tooltip, facet counts moving as a
 is picked, no results, the virtualized scroll to the last row, Next steps with and without a
 catalog.
 
+## Deviations recorded while planning
+
+- **TanStack Table is not introduced in this half.** Read from the installed package
+  (`@tanstack/vue-table` 9.2.4, whose v9 API is `useTable` with `tableFeatures`): its faceted
+  unique values count a cell's value, so an array cell ("what it unlocks") would count as one
+  value, while the facets need one count per kind and every count must leave out its own facet.
+  The pure functions of Decision 5 already filter, count and sort; a second engine over the same
+  rows would be a second source of truth. Reconsidered for Collection (3.4), whose columns are
+  scalar. TanStack Virtual (3.13.37) renders the body as planned.
+- **The filter lives in the Unlock screen**: leaving the tab resets it, until tabs keep their
+  state (3.7).
+- **The fixtures read the payloads through `import.meta.glob`**, not a JSON import: a file
+  outside `src/` imported by name would leave `vue-tsc --build`'s file list.
+
 ## Out of scope for this half
 
 - **Plan and the queue**, and "in the queue" / "add to the queue" on these screens (3.3b).
