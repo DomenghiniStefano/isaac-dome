@@ -1,5 +1,5 @@
 import type { NextSteps, UnlockNode, UnlockTarget, UnlockView } from '../types'
-import { packIconUrl } from './art'
+import { packIconUrl } from './graphArt'
 
 // Development only: the design pack's committed payloads, the reference profile on 2026-09-08
 // (contracts/payload/unlock.json and next_steps.json), read through a glob so that no file

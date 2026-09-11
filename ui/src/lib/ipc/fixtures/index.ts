@@ -3,7 +3,6 @@ import { assertNever } from '../../assertNever'
 import type { CommandArgs, CommandName } from '../transport'
 import type { IpcError, SetupState } from '../types'
 import { completionMatrix } from './completion'
-import { graphAnswers } from './graph'
 import { candidates, noneSetup, setupWith, summary } from './profile'
 
 export const FixtureScenario = {
@@ -81,8 +80,12 @@ const whenActive = (scenario: FixtureScenario, read: () => unknown): unknown =>
     ? read()
     : Promise.reject(noActiveProfile)
 
-const graph = () =>
-  graphAnswers({ withArt: artShown(), withCatalog: catalogShown() })
+// The graph's payloads and its 1,500 images load only when a screen asks for the graph: every
+// read of the profile would otherwise wait for them.
+const graph = async () => {
+  const { graphAnswers } = await import('./graph')
+  return graphAnswers({ withArt: artShown(), withCatalog: catalogShown() })
+}
 
 type Handler = (
   args: CommandArgs | undefined,
@@ -102,9 +105,9 @@ const handlers: Partial<Record<CommandName, Handler>> = {
   [Command.Completion]: (_args, scenario) =>
     whenActive(scenario, () => completionMatrix(artShown())),
   [Command.Unlock]: (_args, scenario) =>
-    whenActive(scenario, () => graph().unlock),
+    whenActive(scenario, async () => (await graph()).unlock),
   [Command.NextSteps]: (_args, scenario) =>
-    whenActive(scenario, () => graph().steps),
+    whenActive(scenario, async () => (await graph()).steps),
 }
 
 export const answer = async <T>(
