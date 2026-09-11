@@ -305,3 +305,30 @@ DESIGN-BRIEF.md                       §5.3, §5.6, §7: the contract change and
   picture with labels.
 - **Regenerating the design pack**: `pnpm design:export` needs the game. The pack's
   `contracts/types.ts` catches up at the next export; until then the brief says what changed.
+
+## Deviations recorded while planning and executing
+
+- **`PixelSprite`, not `CharacterHead`** (`components/sprite/`): the row head and the column
+  header's symbol need the same thing — a pixel-art image that becomes a placeholder, or
+  nothing, when it fails — so it is one generic component, sized by its parent.
+- **`ProfileError` is reused** for a failed `completion`: its messages cover every `IpcError`
+  and its title ("we can't read the profile") is true of this failure too. A generic screen
+  error waits for a screen whose failure isn't the profile's.
+- **One `completion.grid.started` message** serves the header column and the group band;
+  the plan's separate `startedSuffix` said the same word twice.
+- **`compact`, `first`, `last` from lodash-es** in `completionView.ts`, per the owner's rule
+  that lodash helpers win where they read better.
+- **The intro avoids "×"** ("Ogni personaggio, ogni marchio, …"): Determination's glyph
+  coverage is measured for arrows and a few symbols only, and a multiplication sign that
+  falls back to a system font would break the one-font rule unseen.
+- **The design pack's sprites are globbed once**, in `lib/ipc/fixtures/art.ts`; the Kit's
+  `markArt.ts` reads them from there instead of globbing its own copy.
+- **Visual check through headless Chrome over the DevTools protocol**: no browser automation
+  tool was available in the session, so a throwaway script outside the repository drove
+  Chrome, read the DOM and took screenshots. It measured the KPIs (166 / 368, 120, 3 / 34,
+  40 / 408), 408 labelled cells, 40 unknown, 215 images loaded and none broken, no image at
+  all under `?art=none`, and the gate under `?fixture=pick`. One hard heart looked dark in a
+  downscaled screenshot; the probe showed the cell loads `heart_02.png`, the same file and
+  pixels as the legend's red hard heart — the screenshot's scale, not a wrong tier.
+- **Owner request met while executing, logged not built**: tearing a tab off into its own
+  window and back (`docs/BACKLOG.md` B15), with what the Tauri 2 documentation allows.

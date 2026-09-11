@@ -10,7 +10,7 @@ contract, memory, test data) live in `docs/IMPROVEMENTS.md`, with closing criter
 **Wiki dataset merged** into `develop` on 2026-09-06 (`feature/wiki-dataset`, 29 commits,
 suite green on the merge result, review of the whole branch closed). The local branch was
 deleted; on origin its last published version remains.
-**Last update:** 2026-09-10
+**Last update:** 2026-09-11
 
 ---
 
@@ -377,7 +377,12 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
                   screen and its gate, placeholders, fixtures for `pnpm ui:dev`. Plan
                   `docs/superpowers/plans/2026-09-11-screens-shell-profile.md` (its
                   checkboxes are the step-by-step state)
-            - [ ] 3.2 Completion — the marks matrix screen (B13)
+            - [x] 3.2 Completion (2026-09-11) — the marks matrix on the active profile: four
+                  KPIs with their denominators, base and Tainted groups, the unknown block,
+                  a tooltip per cell, sprites or bars; B13 closed (the marks map in `ipc`, the
+                  icon protocol serving crops). Spec
+                  `docs/superpowers/specs/2026-09-11-screens-completion-design.md`, plan
+                  `docs/superpowers/plans/2026-09-11-screens-completion.md`
             - [ ] 3.3 Next steps, Unlock, Plan — TanStack Table and Virtual, the queue with
                   drag
             - [ ] 3.4 Collection — items by pool and quality
@@ -727,6 +732,39 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-11 (later) — Completion: the matrix on the game's own sprites
+
+The second screens sub-project, taken on the owner's delegation ("comincia a fare in
+autonomia"): spec, plan and execution in one session, every choice marked "(delegated)" in
+`docs/superpowers/specs/2026-09-11-screens-completion-design.md`.
+
+- [x] **B13 closed.** The marks map left `crates/design-export` for `ipc`
+      (`mark_art.rs`, beside `BOSSES`): column, anm2 file, layer, frame 0 for normal and 2
+      for hard, Delirium on the online lobby's `Background` animation. `crop` moved to
+      `ipc::crop_png`; the icon protocol serves `mark/<column>/<tier>` and `head/<row>` as
+      crops, through a `MarkFramesState` that never caches the game's absence.
+- [x] **The contract changed additively, and was handed on** (`DESIGN-BRIEF.md` §5.1,
+      §5.6): `tainted` and `headUrl` on a row, `art` beside `bosses`. `totals.started` now
+      counts bit 0 or bit 1: a cell holding only the unconfirmed bit was "started" in the
+      total and empty in the grid. No save we hold has such a cell, so no number moved.
+- [x] **The screen**: four KPIs with their denominators, a legend, base and Tainted groups
+      with their own counts, a tooltip per cell, row and column totals, sprites or bars.
+      Every number comes from `lib/completion/completionView.ts`, tested first against
+      §5.4's reference profile (166 / 368, 120, 3 / 34, 40 / 408), which the fixtures carry.
+- [x] **Looked at, not only typechecked**: with no browser automation in the session, a
+      throwaway script drove headless Chrome over the DevTools protocol against
+      `pnpm ui:dev` — the KPIs, 408 labelled cells, 40 unknown, 215 images with none broken,
+      none under `?art=none`, the gate under `?fixture=pick`. A hard heart that looked dark
+      in a downscaled screenshot was measured by file and pixel colour: `heart_02.png`, the
+      right tier.
+- [ ] **Not run with the game**: this machine has none installed, so `mark_art_real.rs`
+      skips, and whether each mark's frame 1 repeats frame 0's rectangle is still open
+      (`pnpm design:export --dump gfx/ui/completion_widget.anm2` answers it).
+- [ ] **Not seen in a real Tauri window**, like 3.1: first launch.
+- [x] **B15 logged**, the owner's request met mid-session: tearing a tab off into its own
+      window and dragging it back, with what the Tauri 2 documentation allows and the two
+      traps it names (WebView2 pointer capture, `startDragging` on another window).
 
 ### 2026-09-11 — the screens' first sub-project: the window becomes the app
 
