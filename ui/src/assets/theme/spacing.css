@@ -29,4 +29,9 @@
   /* The completion matrix: a 16px mark symbol at 2x in a 40px cell (cycle 2, Decision 7). */
   --spacing-mark-cell: 40px;
   --spacing-mark-symbol: 32px;
+  /* The completion matrix's frame (Schermate.dc.html): the name column, the row total, and a
+     column header tall enough for a vertical "Mom's Heart" over a 32px symbol. */
+  --spacing-matrix-name: 176px;
+  --spacing-matrix-total: 52px;
+  --spacing-matrix-header: 118px;
 }

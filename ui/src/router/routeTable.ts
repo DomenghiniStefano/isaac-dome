@@ -117,7 +117,6 @@ export const routeIcon: Record<RouteName, Component> = {
 // Which sub-project brings a screen that is still a placeholder; absent once it's real.
 export const routeArrives: Partial<Record<RouteName, Message>> = {
   [RouteName.NextSteps]: 'placeholder.graph',
-  [RouteName.Completion]: 'placeholder.completion',
   [RouteName.Unlock]: 'placeholder.graph',
   [RouteName.Plan]: 'placeholder.graph',
   [RouteName.Collection]: 'placeholder.collection',

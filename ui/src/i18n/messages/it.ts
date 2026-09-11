@@ -54,12 +54,61 @@ export const it = {
   },
   placeholder: {
     graph: 'Arriva con Prossimi passi, Unlock e Piano.',
-    completion: 'Arriva con la schermata Completamento.',
     collection: 'Arriva con la schermata Collezione.',
     runArchive: "Arriva con l'archivio delle run (M4).",
     wiki: 'Arriva con le pagine wiki nelle tab e la ricerca.',
     settings: 'Arriva con Impostazioni e Informazioni.',
     tabs: 'Arriva con le tab che sopravvivono alla chiusura.',
+  },
+  completion: {
+    intro:
+      'Ogni personaggio, ogni marchio, e quanto il salvataggio lascia leggere.',
+    kpi: {
+      started: 'marchi iniziati',
+      startedExplain:
+        'Celle con almeno un segno, normale o hard, fra quelle che il salvataggio lascia leggere. Le celle non leggibili restano fuori dal denominatore.',
+      both: 'normale + hard',
+      bothExplain:
+        'Celle in cui sono presenti sia il segno normale sia quello hard.',
+      cells: 'celle',
+      complete: 'personaggi completi',
+      completeExplain:
+        'Personaggi che hanno iniziato tutte le loro celle leggibili: chi ha celle non leggibili risulta completo su meno colonne.',
+      unknown: 'non leggibili',
+      unknownExplain:
+        'Celle la cui colonna non è localizzata nel salvataggio per quel personaggio. Non vuol dire "mai fatto": non lo sappiamo leggere.',
+    },
+    card: {
+      title: 'Matrice dei marchi',
+    },
+    legend: {
+      empty: 'mai fatto',
+      normal: 'normale',
+      hard: 'hard',
+      third: 'terzo livello',
+      unknown: 'non leggibile',
+    },
+    grid: {
+      character: 'Personaggio',
+      started: 'iniziati',
+      unreadable: 'non leggibili',
+      columnTotals: 'Personaggi con il marchio',
+    },
+    groups: {
+      base: 'Personaggi base',
+      tainted: 'Tainted',
+    },
+    cell: {
+      empty: 'mai fatto',
+      normal: 'normale',
+      hard: 'hard',
+      both: 'normale e hard',
+      unknown:
+        'non leggibile: la colonna non è localizzata per questo personaggio',
+      unexpected: 'valore fuori da quelli previsti:',
+    },
+    nothingReadable:
+      'Il salvataggio non lascia leggere nessun marchio: la sezione dei contatori manca o è troncata.',
   },
   gate: {
     needsProfile:
