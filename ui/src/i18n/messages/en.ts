@@ -52,12 +52,63 @@ export const en: MessageSchema = {
     settingsHint: 'Where the app finds the game and the saves.',
   },
   placeholder: {
-    graph: 'Arrives with Next steps, Unlock and Plan.',
     collection: 'Arrives with the Collection screen.',
     runArchive: 'Arrives with the run archive (M4).',
     wiki: 'Arrives with wiki pages in tabs and search.',
     settings: 'Arrives with Settings and About.',
     tabs: 'Arrives with tabs that survive closing.',
+  },
+  plan: {
+    intro:
+      'The goals are the set of what you want, the queue is the order you mean to do it in: the rows you asked for, plus the prerequisites they dragged in. Drag a row and the queue repairs itself around the constraint: prerequisites are a wall it stops against, not a refusal.',
+    summary: {
+      rows: 'rows',
+      wanted: 'asked for',
+      pulledIn: 'pulled in',
+    },
+    queueTitle: 'The queue',
+    hint: {
+      idle: 'drag to reorder — a move repairs, it never fails',
+      dragging: 'drop it anywhere: the queue repairs itself',
+      stoppedUnder: 'it stopped under',
+      prerequisite: "that's a prerequisite",
+    },
+    row: {
+      move: 'Move the row (Alt and the up or down arrow)',
+      wanted: 'asked for',
+      serves: 'serves',
+      unlocks: 'unlocks',
+      fanOut: 'unlocks',
+      outsideQueue: 'steps outside the queue',
+      hint: "the game's hint:",
+    },
+    achievement: 'achievement',
+    empty: 'The queue is empty.',
+    emptyHint: 'Add a row from the proposal beside it, or from Unlock.',
+    completed: {
+      closed: 'rows closed by playing',
+      wanted: 'among the ones asked for',
+    },
+    unresolved: 'is no longer in the catalogue',
+    alerts: {
+      storeUnavailableTitle: "The plan isn't available",
+      unreadableTitle: "This version can't read the saved queue",
+      unreadable:
+        'It stays as it is in the file and is never overwritten: a newer version of the app may be able to read it.',
+      noCatalogTitle: 'The game has to be installed',
+      noCatalog:
+        "Without the catalogue there's no telling which achievement each row is or what it still needs: the queue stays saved and comes back as soon as the game is there.",
+      goalsPendingTitle: 'Saved goals to import',
+      goalsPending:
+        'Goals saved before the queue existed: nothing moves them in on its own.',
+      import: 'Import into the queue',
+    },
+    aside: {
+      title: 'Next steps',
+      intro:
+        'Rows unlockable right now, ordered by how much they open. Not your queue: the proposal.',
+      empty: 'Nothing to propose right now.',
+    },
   },
   completion: {
     intro:
