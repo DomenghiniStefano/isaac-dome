@@ -208,7 +208,22 @@ pub enum Cell {
 pub struct CharacterRow {
     pub character: String,
     pub group: CharacterGroup,
+    /// The Tainted form. The screen groups rows the way a player does, base and Tainted,
+    /// while `group` stays the file's three blocks — which is where the unread cells live.
+    pub tainted: bool,
     pub cells: Vec<Cell>,
+    /// The co-op menu head. `None` without a catalog, or for a character the menu doesn't
+    /// draw.
+    pub head_url: Option<String>,
+}
+
+/// The symbol URLs of one column, one per tier. Both `None` when the game's archives
+/// aren't open: the screen draws the fallback outfit instead.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct MarkArtView {
+    pub normal_url: Option<String>,
+    pub hard_url: Option<String>,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
@@ -226,19 +241,55 @@ pub struct MarksTotals {
 pub struct MarksMatrix {
     pub characters: Vec<CharacterRow>,
     pub bosses: Vec<String>,
+    /// `art[i]` draws `bosses[i]`: a parallel array, so `bosses` keeps the shape the design
+    /// was built on.
+    pub art: Vec<MarkArtView>,
     pub totals: MarksTotals,
 }
 
 /// Builds the matrix from the counters read out of the file. It assumes no fixed
 /// length: an index past the section read produces `Unknown`.
-pub fn marks_matrix(counters: &[u32]) -> MarksMatrix {
+///
+/// With a catalog — the game's archives are open — rows and columns carry the URLs `icon`
+/// builds for their head and their symbols; without one, none, because a URL nothing can
+/// serve draws a broken image where the fallback belongs.
+pub fn marks_matrix(
+    counters: &[u32],
+    catalog: Option<&catalog::Catalog>,
+    mut icon: impl FnMut(&crate::icon::IconRef) -> Option<String>,
+) -> MarksMatrix {
+    use crate::icon::{IconRef, MarkTier};
+
     let rows: Vec<CharacterRow> = CHARACTERS
         .iter()
         .enumerate()
         .map(|(c, &(name, group))| CharacterRow {
             character: name.to_string(),
             group,
+            tainted: CHARACTER_KEYS.get(c).is_some_and(|&(_, tainted)| tainted),
             cells: (0..BOSSES.len()).map(|b| cell_at(counters, c, b)).collect(),
+            head_url: catalog
+                .and_then(|cat| character_for(c, cat))
+                .and_then(|ch| ch.head.as_ref())
+                .and_then(|_| icon(&IconRef::Head { row: c })),
+        })
+        .collect();
+    let art = (0..BOSSES.len())
+        .map(|column| match catalog {
+            Some(_) => MarkArtView {
+                normal_url: icon(&IconRef::Mark {
+                    column,
+                    tier: MarkTier::Normal,
+                }),
+                hard_url: icon(&IconRef::Mark {
+                    column,
+                    tier: MarkTier::Hard,
+                }),
+            },
+            None => MarkArtView {
+                normal_url: None,
+                hard_url: None,
+            },
         })
         .collect();
 
@@ -246,6 +297,7 @@ pub fn marks_matrix(counters: &[u32]) -> MarksMatrix {
     MarksMatrix {
         characters: rows,
         bosses: BOSSES.iter().map(|b| b.to_string()).collect(),
+        art,
         totals,
     }
 }
@@ -268,6 +320,8 @@ fn totals_of(rows: &[CharacterRow]) -> MarksTotals {
         readable: count(|c| matches!(c, Cell::Known { .. })),
         unknown: count(|c| matches!(c, Cell::Unknown)),
         unexpected: count(|c| matches!(c, Cell::Unexpected { .. })),
-        started: count(|c| matches!(c, Cell::Known { bits } if *bits != 0)),
+        // Bit 0 or bit 1: the unconfirmed bit alone draws nothing in the grid (the
+        // frontend's `markVisual`), and a total that counts what its grid doesn't show lies.
+        started: count(|c| matches!(c, Cell::Known { bits } if *bits & 3 != 0)),
     }
 }
