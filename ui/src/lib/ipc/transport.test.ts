@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { Command } from '../constants/commands'
 import { FixtureScenario, answer, resetFixtures } from './fixtures'
 import { call } from './transport'
-import type { SetupState } from './types'
+import type { MarksMatrix, SetupState } from './types'
 
 beforeEach(() => resetFixtures())
 
@@ -49,6 +49,32 @@ describe('fixture scenarios', () => {
   it('refuses a summary without an active profile, as the backend does', async () => {
     await expect(
       answer(Command.SaveSummary, undefined, FixtureScenario.None),
+    ).rejects.toEqual({ kind: 'noActiveProfile' })
+  })
+})
+
+describe('the completion fixture', () => {
+  it('answers the reference matrix with an active profile', async () => {
+    const m = await answer<MarksMatrix>(
+      Command.Completion,
+      undefined,
+      FixtureScenario.Active,
+    )
+    expect(m.characters).toHaveLength(34)
+    expect(m.art).toHaveLength(m.bosses.length)
+    // DESIGN-BRIEF.md §5.4: 166 started out of 368 readable, 40 unknown, 0 suspect.
+    expect(m.totals).toEqual({
+      cells: 408,
+      readable: 368,
+      unknown: 40,
+      unexpected: 0,
+      started: 166,
+    })
+  })
+
+  it('refuses the matrix without an active profile, as the backend does', async () => {
+    await expect(
+      answer(Command.Completion, undefined, FixtureScenario.None),
     ).rejects.toEqual({ kind: 'noActiveProfile' })
   })
 })

@@ -2,6 +2,7 @@ import { Command } from '../../constants/commands'
 import { assertNever } from '../../assertNever'
 import type { CommandArgs, CommandName } from '../transport'
 import type { IpcError, SetupState } from '../types'
+import { completionMatrix } from './completion'
 import { candidates, noneSetup, setupWith, summary } from './profile'
 
 export const FixtureScenario = {
@@ -14,16 +15,22 @@ export type FixtureScenario =
 
 // `?fixture=none|pick|active` on the development server; active when absent.
 const ScenarioParam = 'fixture'
+// `?art=none` answers every image URL as null: every user's first launch, before any art.
+const ArtParam = 'art'
+const ArtOff = 'none'
+
+const query = (): URLSearchParams =>
+  new URLSearchParams(globalThis.location?.search ?? '')
 
 const currentScenario = (): FixtureScenario => {
-  const requested = new URLSearchParams(globalThis.location?.search ?? '').get(
-    ScenarioParam,
-  )
+  const requested = query().get(ScenarioParam)
   return (
     Object.values(FixtureScenario).find((s) => s === requested) ??
     FixtureScenario.Active
   )
 }
+
+const artShown = (): boolean => query().get(ArtParam) !== ArtOff
 
 // A profile chosen through select_profile stays chosen for the page's life, as in the app.
 let chosenId: string | null = null
@@ -69,7 +76,7 @@ type Handler = (
   scenario: FixtureScenario,
 ) => unknown
 
-// Only what the shell reads today. Any other command is refused loudly: a screen built on a
+// Only what the screens read today. Any other command is refused loudly: a screen built on a
 // command with no fixture should fail on the development server, not render undefined.
 const handlers: Partial<Record<CommandName, Handler>> = {
   [Command.SetupState]: (_args, scenario) => setupFor(scenario),
@@ -80,6 +87,10 @@ const handlers: Partial<Record<CommandName, Handler>> = {
   [Command.SaveSummary]: (_args, scenario) =>
     setupFor(scenario).active.kind === 'active'
       ? summary
+      : Promise.reject(noActiveProfile),
+  [Command.Completion]: (_args, scenario) =>
+    setupFor(scenario).active.kind === 'active'
+      ? completionMatrix(artShown())
       : Promise.reject(noActiveProfile),
 }
 
