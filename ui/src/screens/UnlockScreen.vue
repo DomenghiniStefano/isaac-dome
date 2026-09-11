@@ -2,6 +2,7 @@
 import { LockOpenIcon } from '@lucide/vue'
 import { computed, ref } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
+import QueueError from '@/components/plan/QueueError.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -16,8 +17,10 @@ import {
   sortNodes,
 } from '@/lib/graph/unlockFilter'
 import type { UnlockFilter } from '@/lib/graph/unlockFilter'
+import { queuedIds } from '@/lib/plan/queueRows'
 import { useGraphStore } from '@/stores/graph'
 import { LoadStatus } from '@/stores/profile'
+import { useQueueStore } from '@/stores/queue'
 import ScreenHeader from './ScreenHeader.vue'
 import ProfileError from './profile/ProfileError.vue'
 import FacetDrawer from './unlock/FacetDrawer.vue'
@@ -27,9 +30,12 @@ import UnlockTable from './unlock/UnlockTable.vue'
 import UnlockToolbar from './unlock/UnlockToolbar.vue'
 
 const graph = useGraphStore()
+const queue = useQueueStore()
 const { t } = useMessages()
 
-useOnActiveProfile(() => graph.load())
+useOnActiveProfile(async () => {
+  await Promise.all([graph.load(), queue.load()])
+})
 
 // The filter belongs to this screen: leaving the tab resets it, until tabs keep their state.
 const filter = ref<UnlockFilter>(emptyFilter())
@@ -43,6 +49,11 @@ const rows = computed(() =>
     sort.value,
   ),
 )
+
+// A queue that couldn't be read or saved offers nothing: the rows still show, without "in
+// coda" or the button.
+const queued = computed(() => queuedIds(queue.view))
+const canWrite = computed(() => queue.view?.storeAvailable === true)
 
 const setPicks = (facet: FacetId, picked: string[]) => {
   filter.value = {
@@ -82,6 +93,7 @@ const reset = () => {
     />
     <template v-else-if="graph.unlock">
       <UnlockDiagnostics :diagnostics="graph.unlock.diagnostics" />
+      <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
       <StateToggle
         :counts="counts"
         :picked="filter.picks[FacetId.State]"
@@ -104,7 +116,14 @@ const reset = () => {
           @update:sort="setSort"
           @toggle="toggle"
         />
-        <UnlockTable v-if="rows.length > 0" :nodes="rows" />
+        <UnlockTable
+          v-if="rows.length > 0"
+          :nodes="rows"
+          :queued="queued"
+          :can-write="canWrite"
+          :busy="queue.busy"
+          @add="queue.add"
+        />
         <div v-else class="flex flex-col items-start gap-3 p-4">
           <EmptyCategory>{{ t('unlock.noResults') }}</EmptyCategory>
           <Button :variant="ButtonVariant.Outline" @click="reset">{{
