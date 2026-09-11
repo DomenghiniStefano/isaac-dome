@@ -10,6 +10,7 @@ export const BadgeVariant = {
   Unexpected: 'unexpected',
   Tag: 'tag',
   Challenge: 'challenge',
+  Wanted: 'wanted',
 } as const
 export type BadgeVariant = (typeof BadgeVariant)[keyof typeof BadgeVariant]
 
@@ -33,6 +34,9 @@ export const badgeVariants = cva(
         [BadgeVariant.Unexpected]: `${statePill} border-state-unexpected bg-state-unexpected-surface text-state-unexpected-foreground`,
         [BadgeVariant.Tag]: `${squareTag} border-input bg-data text-foreground`,
         [BadgeVariant.Challenge]: `${squareTag} border-challenge bg-challenge-surface text-challenge-foreground`,
+        // A queue row you asked for, told apart from a step a wish dragged in (Schermate.dc.html,
+        // the Plan's red "chiesta").
+        [BadgeVariant.Wanted]: `${squareTag} border-primary-edge bg-primary text-primary-foreground`,
       },
     },
     defaultVariants: {

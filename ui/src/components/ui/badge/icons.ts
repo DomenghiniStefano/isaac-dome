@@ -22,4 +22,5 @@ export const badgeIcons: Record<BadgeVariant, Component | null> = {
   [BadgeVariant.Unexpected]: TriangleAlertIcon,
   [BadgeVariant.Tag]: null,
   [BadgeVariant.Challenge]: null,
+  [BadgeVariant.Wanted]: null,
 }
