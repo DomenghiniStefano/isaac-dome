@@ -302,16 +302,28 @@ export const it = {
     errors: {
       title: 'Non riusciamo a leggere il profilo',
       retry: 'Riprova',
-      noBackend: 'Il backend non ha risposto.',
-      noActiveProfile: 'Nessun profilo attivo.',
-      unknownProfile: 'Il profilo scelto non esiste più.',
-      unreadableSave: 'Il salvataggio non si legge.',
-      settingsNotWritable: 'Non riusciamo a ricordare la scelta.',
-      unknownTarget: 'Quello che cerchi non esiste.',
-      catalogUnavailable: 'Il catalogo del gioco non è disponibile.',
-      storeUnavailable: "Il database dell'app non è disponibile.",
-      wikiUnavailable: 'Il dataset della wiki non è disponibile.',
     },
+  },
+  queue: {
+    inQueue: 'in coda',
+    inPlan: 'già nella coda del Piano',
+    add: 'Aggiungi alla coda',
+    addShort: 'Aggiungi',
+    remove: 'Togli dalla coda',
+    removeShort: 'Togli',
+    errorTitle: 'La coda non è cambiata',
+  },
+  // One sentence per IpcError, for every screen that has to say why a command failed.
+  ipcErrors: {
+    noBackend: 'Il backend non ha risposto.',
+    noActiveProfile: 'Nessun profilo attivo.',
+    unknownProfile: 'Il profilo scelto non esiste più.',
+    unreadableSave: 'Il salvataggio non si legge.',
+    settingsNotWritable: 'Non riusciamo a ricordare la scelta.',
+    unknownTarget: 'Quello che cerchi non esiste.',
+    catalogUnavailable: 'Il catalogo del gioco non è disponibile.',
+    storeUnavailable: "Il database dell'app non è disponibile.",
+    wikiUnavailable: 'Il dataset della wiki non è disponibile.',
   },
 }
 
