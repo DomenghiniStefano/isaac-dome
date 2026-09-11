@@ -23,6 +23,8 @@
   --spacing-unlock-state: 136px;
   --spacing-unlock-fan: 56px;
   --spacing-unlock-body: 560px;
+  /* The Plan's proposal column (Schermate.dc.html, 246px, on the 4px grid). */
+  --spacing-plan-aside: 248px;
   /* The window (Chrome e Stati.dc.html, "Finestra"): tab strip, tabs, drag region,
      window controls, navbar. */
   --spacing-titlebar: 30px;
