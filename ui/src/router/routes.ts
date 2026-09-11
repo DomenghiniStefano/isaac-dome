@@ -6,6 +6,7 @@ import type { MessageSchema } from '@/i18n/messages/it'
 import CompletionScreen from '@/screens/CompletionScreen.vue'
 import NextStepsScreen from '@/screens/NextStepsScreen.vue'
 import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
+import PlanScreen from '@/screens/PlanScreen.vue'
 import ProfileScreen from '@/screens/ProfileScreen.vue'
 import UnlockScreen from '@/screens/UnlockScreen.vue'
 import {
@@ -32,6 +33,7 @@ const screens: Partial<Record<RouteName, Component>> = {
   [RouteName.NextSteps]: NextStepsScreen,
   [RouteName.Completion]: CompletionScreen,
   [RouteName.Unlock]: UnlockScreen,
+  [RouteName.Plan]: PlanScreen,
   [RouteName.Profile]: ProfileScreen,
 }
 

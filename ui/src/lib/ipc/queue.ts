@@ -13,12 +13,14 @@ export const queueAdd = (achievement: number): Promise<QueueView> =>
 export const queueRemove = (achievement: number): Promise<QueueView> =>
   call(Command.QueueRemove, { achievement })
 
-// `to` is where you dropped it. The row lands there when the graph allows it and as close
-// as it allows otherwise: read the returned order, never assume it.
+// `after` is the row it was dropped under, `null` for the top: a row and not an index, because
+// the view leaves completed and unresolved rows out and its positions are not the file's. The
+// row lands there when the graph allows it and as close as it allows otherwise: read the
+// returned order, never assume it.
 export const queueMove = (
   achievement: number,
-  to: number,
-): Promise<QueueView> => call(Command.QueueMove, { achievement, to })
+  after: number | null,
+): Promise<QueueView> => call(Command.QueueMove, { achievement, after })
 
 // The one-off move from the goals saved before the queue existed. Nothing happens on its
 // own: a read never writes.

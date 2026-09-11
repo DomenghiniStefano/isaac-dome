@@ -5,10 +5,17 @@ import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import { nodeSlot } from '@/lib/graph/unlockFilter'
 import type { UnlockNode } from '@/lib/ipc/types'
+import { canQueue, isQueued } from '@/lib/plan/queueRows'
 import UnlockRow from './UnlockRow.vue'
 import { unlockRowHeight } from './unlockLayout'
 
-const props = defineProps<{ nodes: UnlockNode[] }>()
+const props = defineProps<{
+  nodes: UnlockNode[]
+  queued: Set<number>
+  canWrite: boolean
+  busy: boolean
+}>()
+const emit = defineEmits<{ add: [achievement: number] }>()
 const { t } = useMessages()
 
 const scroller = ref<HTMLElement | null>(null)
@@ -51,6 +58,7 @@ const rowStart = (start: number) => ({ '--row-start': `${start}px` })
       <span class="px-2 py-1.5 text-right">{{
         t('unlock.columns.fanOut')
       }}</span>
+      <span />
     </div>
     <div ref="scroller" class="max-h-unlock-body overflow-auto">
       <div :style="body" class="relative h-(--unlock-total)">
@@ -65,7 +73,13 @@ const rowStart = (start: number) => ({ '--row-start': `${start}px` })
             )
           "
         >
-          <UnlockRow :node="node" />
+          <UnlockRow
+            :node="node"
+            :queued="isQueued(node, queued)"
+            :can-add="canWrite && canQueue(node, queued)"
+            :busy="busy"
+            @add="emit('add', nodeSlot(node))"
+          />
         </div>
       </div>
     </div>

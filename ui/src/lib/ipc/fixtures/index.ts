@@ -4,6 +4,16 @@ import type { CommandArgs, CommandName } from '../transport'
 import type { IpcError, SetupState } from '../types'
 import { completionMatrix } from './completion'
 import { candidates, noneSetup, setupWith, summary } from './profile'
+import type { QueueOptions } from './queue'
+import {
+  QueueScenario,
+  addToQueue,
+  importGoals,
+  moveInQueue,
+  readQueue,
+  removeFromQueue,
+  resetQueue,
+} from './queue'
 
 export const FixtureScenario = {
   None: 'none',
@@ -19,6 +29,8 @@ const ScenarioParam = 'fixture'
 const ArtParam = 'art'
 // `?catalog=none` answers the graph as a machine without the game gets it.
 const CatalogParam = 'catalog'
+// `?queue=empty|unavailable|unreadable` answers the plan queue in one of its other states.
+const QueueParam = 'queue'
 const Off = 'none'
 
 const query = (): URLSearchParams =>
@@ -32,6 +44,14 @@ const currentScenario = (): FixtureScenario => {
   )
 }
 
+const currentQueueScenario = (): QueueScenario => {
+  const requested = query().get(QueueParam)
+  return (
+    Object.values(QueueScenario).find((s) => s === requested) ??
+    QueueScenario.Rows
+  )
+}
+
 const artShown = (): boolean => query().get(ArtParam) !== Off
 const catalogShown = (): boolean => query().get(CatalogParam) !== Off
 
@@ -40,6 +60,7 @@ let chosenId: string | null = null
 
 export const resetFixtures = (): void => {
   chosenId = null
+  resetQueue()
 }
 
 const activeOn = (id: string): SetupState => {
@@ -87,6 +108,19 @@ const graph = async () => {
   return graphAnswers({ withArt: artShown(), withCatalog: catalogShown() })
 }
 
+// The queue's nodes are the Unlock view's, as in the app: the same node on both screens.
+const queueOptions = async (): Promise<QueueOptions> => ({
+  scenario: currentQueueScenario(),
+  withCatalog: catalogShown(),
+  nodes: (await graph()).unlock.nodes,
+})
+
+const achievementArg = (args: CommandArgs | undefined): number =>
+  Number(args?.achievement)
+
+const afterArg = (args: CommandArgs | undefined): number | null =>
+  args?.after === null || args?.after === undefined ? null : Number(args.after)
+
 type Handler = (
   args: CommandArgs | undefined,
   scenario: FixtureScenario,
@@ -108,6 +142,22 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     whenActive(scenario, async () => (await graph()).unlock),
   [Command.NextSteps]: (_args, scenario) =>
     whenActive(scenario, async () => (await graph()).steps),
+  [Command.Queue]: (_args, scenario) =>
+    whenActive(scenario, async () => readQueue(await queueOptions())),
+  [Command.QueueAdd]: (args, scenario) =>
+    whenActive(scenario, async () =>
+      addToQueue(await queueOptions(), achievementArg(args)),
+    ),
+  [Command.QueueRemove]: (args, scenario) =>
+    whenActive(scenario, async () =>
+      removeFromQueue(await queueOptions(), achievementArg(args)),
+    ),
+  [Command.QueueMove]: (args, scenario) =>
+    whenActive(scenario, async () =>
+      moveInQueue(await queueOptions(), achievementArg(args), afterArg(args)),
+    ),
+  [Command.QueueImportGoals]: (_args, scenario) =>
+    whenActive(scenario, async () => importGoals(await queueOptions())),
 }
 
 export const answer = async <T>(
