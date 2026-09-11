@@ -36,17 +36,20 @@ ui/
       shell/       title bar, tabs, window controls, navbar, section sidebar
       marks/       the completion-matrix cell, its bit reading, and the grid of cells
       graph/       a node's state badge and its why, the achievement drawing, kind labels
+      plan/        QueueError: a write to the plan queue that was refused, and why
       sprite/      PixelSprite: a game sprite that falls back, never a broken image
       kpi/         the KPI tile
       wiki/        the wiki's inline tokens and blocks
       data-state/  read-but-empty, unreadable, empty category
       <domain>/    further app components, named for WHAT THEY ARE
-    composables/   useOnActiveProfile: a screen reloads when the active profile changes
+    composables/   useOnActiveProfile: a screen reloads when the active profile changes;
+                   useIpcErrorText: one sentence per IpcError, for every screen
     stores/        Pinia, setup syntax: tabs (and tabModel, its pure rules), profile,
-                   completion, graph
+                   completion, graph, queue
     router/        routeTable (names, paths, titles, icons: no components), routes, index
     screens/       one screen per route, and the parts only it uses (`screens/profile/`,
-                   `screens/completion/`, `screens/nextSteps/`, `screens/unlock/`)
+                   `screens/completion/`, `screens/nextSteps/`, `screens/unlock/`,
+                   `screens/plan/`)
     kit/           development-only Kit page: every primitive in every state (`#kit`)
     verify/        development-only verification page: every command, raw (`#verify`)
     lib/
@@ -56,11 +59,14 @@ ui/
         fixtures/     development answers, one scenario per `?fixture=`; `art.ts` globs the
                       design pack's sprites, `?art=none` answers without them; `graph.ts`
                       answers the pack's real unlock payloads, `?catalog=none` without the
-                      game, and `graphArt.ts` holds their 1,500 images, loaded only then
+                      game, and `graphArt.ts` holds their 1,500 images, loaded only then and
+                      indexed once; `queue.ts` keeps a plan queue in memory, repaired by a port
+                      of the Rust rule (`queueRepair.ts`), `?queue=empty|unavailable|unreadable`
       window/      appWindow: the only module that talks to the window
       profile/     what the profile screen and the indicator show, as pure functions
       completion/  what the Completion screen counts, as pure functions
       graph/       a node's state and why, Unlock's facets, search and sort, as pure functions
+      plan/        the queue's drops and anchors, the row a move stopped under, as pure functions
       constants/   magic strings: command names, dev routes, key names, placement
       design/      themeKeys: the token names cn() reads from the theme CSS
       cn.ts        class merging that knows our tokens
@@ -411,6 +417,14 @@ the hatch of `Unknown`. Long lists are virtualized with `@tanstack/vue-virtual`:
 are a `computed`, the row height is a number pinned against its spacing token by a test
 (`screens/unlock/unlockLayout.test.ts`), and each row's offset travels as a CSS variable read by
 `translate-y-(--row-start)`.
+
+**Added with sub-project 3.3b**: `BadgeVariant.Wanted` — a queue row you asked for, a square tag
+in the primary colours, told apart from a step a wish dragged in. The queue reorders the way the
+tab strip does — a press becomes a drag past a threshold, the pointer is captured only then, the
+rows' rects are read once — and a drop sends **the row it lands under**, never an index
+(`lib/plan/queueDrop.ts`); what the screen draws next is the order the command answers with. The
+IpcError sentences live in `useIpcErrorText` and `ipcErrors.*`, shared by every screen that has
+to say why a command failed.
 
 ### How a primitive is written
 
