@@ -10,7 +10,7 @@
     "beforeBuildCommand": "pnpm --filter ui build"
   },
   "app": {
-    "windows": [{ "title": "IsaacDome", "width": 1280, "height": 800 }],
+    "windows": [{ "title": "IsaacDome", "width": 1280, "height": 800, "decorations": false }],
     "security": { "csp": null }
   },
   "bundle": {

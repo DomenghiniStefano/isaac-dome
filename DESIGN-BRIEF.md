@@ -394,10 +394,20 @@ type Cell =
   | { kind: 'unexpected'; value: number } // outside the expected values: show as suspect
 
 interface MarksMatrix {
-  characters: { character: string; group: string; cells: Cell[] }[]
+  characters: {
+    character: string
+    group: string            // the file's three blocks: original, forgotten, later
+    tainted: boolean         // added 2026-09-11: the base / Tainted grouping a player uses
+    cells: Cell[]
+    headUrl: string | null   // added 2026-09-11: the co-op menu head, null without the game
+  }[]
   bosses: string[]
+  art: { normalUrl: string | null; hardUrl: string | null }[]
+                             // added 2026-09-11: art[i] draws bosses[i], null without the game
   totals: { cells: number; readable: number; unknown: number
             unexpected: number; started: number }
+                             // started counts bit 0 or bit 1 since 2026-09-11: bit 2 alone
+                             // draws nothing in the grid, so it doesn't count either
 }
 
 interface SaveSummary {
@@ -643,9 +653,13 @@ in the package. **Boss Rush is the only column without a portrait**, and it isn'
 fill with a generic image: it isn't a boss, it's a timed room, and that spot wants a mark
 we design ourselves.
 
-When the Completion screen gets built, that map will need to move from
-`data/marks.json` to `ipc`, alongside `BOSSES`: today it lives in the export tool because
-that's where it was first needed, but it's domain knowledge, not packaging.
+**The map moved to `ipc` on 2026-09-11**, with the Completion screen
+(`crates/ipc/src/mark_art.rs`, beside `BOSSES`): column → anm2 file → layer → frame, frame 0
+for the normal symbol and frame 2 for the hard one. The app serves each symbol and each co-op
+menu head as a crop of the user's own sheet, through the same `isaac://` links as the icons,
+and the matrix carries them in `art` and `headUrl` (§5.1). `data/marks.json` stays in the
+package as the design's copy; the bloodied-paper `symbolFallback` is not carried by the app,
+whose fallback is the cell's own bars outfit.
 
 **The game's own marks widget is reference material.** `completion_widget.png` contains
 the visual vocabulary the game itself uses for marks: the same little sheet in four

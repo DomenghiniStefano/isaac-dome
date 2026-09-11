@@ -34,6 +34,10 @@ describe('cn', () => {
     )
   })
 
+  it('lets a later letter spacing replace an earlier one', () => {
+    expect(cn('tracking-nav', 'tracking-caps')).toBe('tracking-caps')
+  })
+
   it('drops falsy inputs', () => {
     expect(cn('text-body', false, undefined, 'text-foreground')).toBe(
       'text-body text-foreground',

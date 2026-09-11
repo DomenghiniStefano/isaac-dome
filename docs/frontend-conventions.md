@@ -33,12 +33,29 @@ ui/
   src/
     components/
       ui/          shadcn-vue primitives (reka-vega), dressed: they live in the repo
-      <domain>/    app components, named for WHAT THEY ARE
+      shell/       title bar, tabs, window controls, navbar, section sidebar
+      marks/       the completion-matrix cell, its bit reading, and the grid of cells
+      sprite/      PixelSprite: a game sprite that falls back, never a broken image
+      kpi/         the KPI tile
+      wiki/        the wiki's inline tokens and blocks
+      data-state/  read-but-empty, unreadable, empty category
+      <domain>/    further app components, named for WHAT THEY ARE
     composables/
-    stores/        Pinia, setup syntax
+    stores/        Pinia, setup syntax: tabs (and tabModel, its pure rules), profile, completion
+    router/        routeTable (names, paths, titles, icons: no components), routes, index
+    screens/       one screen per route, and the parts only it uses (`screens/profile/`,
+                   `screens/completion/`)
     kit/           development-only Kit page: every primitive in every state (`#kit`)
+    verify/        development-only verification page: every command, raw (`#verify`)
     lib/
       ipc/         typed wrappers around Tauri commands — the only place with invoke()
+        transport.ts  call(): invoke() in Tauri, the fixtures under `pnpm ui:dev`
+        errors.ts     isIpcError, shared by the stores
+        fixtures/     development answers, one scenario per `?fixture=`; `art.ts` globs the
+                      design pack's sprites, `?art=none` answers without them
+      window/      appWindow: the only module that talks to the window
+      profile/     what the profile screen and the indicator show, as pure functions
+      completion/  what the Completion screen counts, as pure functions
       constants/   magic strings: command names, dev routes, key names, placement
       design/      themeKeys: the token names cn() reads from the theme CSS
       cn.ts        class merging that knows our tokens
@@ -209,6 +226,8 @@ Operational rules:
   `theme/spacing.css`. The grid is only 4px while `rem` is the browser's 16px: **no font
   size on `html`**. The document's text size sits on `body`; on the root it made every step
   3.5px for a whole cycle, and `src/assets/base.test.ts` now fails if it comes back.
+- **Letter spacing:** `tracking-*` is reset and holds two tokens, `tracking-nav` and
+  `tracking-caps`; `cn()` knows them through `ThemeNamespace.Tracking`.
 - **Colors:** never a literal color in a component. The data states — *done*, *unlockable
   now*, *blocked*, *unknown*, *unexpected* — and the *challenge* tag are semantic tokens
   (`state-*`, `challenge`), not shades picked case by case.
@@ -334,6 +353,17 @@ Three reasons, in order of importance:
 
 Command names live in `src/lib/constants/`, not hand-written in the wrapper.
 
+Every wrapper goes through `call()` in `src/lib/ipc/transport.ts`. Inside Tauri it is
+`invoke()`; in a plain browser under `pnpm ui:dev` it answers from `src/lib/ipc/fixtures/`,
+so the shell can be looked at without the backend. `?fixture=none|pick|active` picks the
+scenario (no saves, a choice to make, an active profile); a command with no fixture throws
+`no fixture answers <command>` rather than returning something plausible. The fixtures are
+imported dynamically behind `import.meta.env.DEV`: the production build carries none of
+them. Their images come from the design pack, globbed once in `fixtures/art.ts` (the Kit
+reads it too); `?art=none` answers every image URL as `null`, which is what every user sees
+before the game's sprites are there, and a clone without the pack gets the same. The window works the same way: `src/lib/window/appWindow.ts` is the only module that
+imports `@tauri-apps/api/window`, and outside Tauri its controls do nothing.
+
 A note on serde, which is the twin trap on the Rust side: every struct that crosses the
 IPC has `#[serde(rename_all = "camelCase")]`. Without it, TypeScript reads `undefined` and
 nobody notices until it's too late.
@@ -357,6 +387,18 @@ and Reka UI's headless primitives where the API requires the native element unde
 
 Practical rule: if you're writing `<button class="… hover:bg-…">`, stop and look for the
 primitive.
+
+**The extensions that exist** (cycle 2): `ButtonSize.Micro` (a tab's close), `IconCompact`
+(the tab strip's "+"), `Row` (sidebar items), `Inline` (a wiki reference in running text —
+`inline`, not `inline-flex`, or an icon sets the baseline), `Window` (window controls),
+`Compact` (the search trigger), `Section` (a navbar section, full height);
+`Progress` takes `size` (`Default`, `Micro` for the KPI bar) and `tone` (`Primary`, `Done`,
+`Muted`);
+`ButtonVariant.Nav`, `Section`, `Ref`, `Chrome`, `ChromeDanger`, `Field`. A size only sizes
+and a variant only colours: cva writes size classes after variant classes, so a height inside
+a variant loses. The collapsible card is a set of Card parts (`CardCollapsible`,
+`CardCollapsibleTrigger`, `CardCollapsibleContent`), because a prop can't turn a `div` into
+Reka's collapsible root.
 
 ### How a primitive is written
 
@@ -505,10 +547,11 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **Hardcoded opacity** | `ui/scripts/scan-conventions.mjs` |
 | **Hardcoded duration** | `ui/scripts/scan-conventions.mjs` |
 | **`invoke()` outside the IPC layer** | `ui/scripts/scan-conventions.mjs` |
+| **Window API outside `src/lib/window/`** | `ui/scripts/scan-conventions.mjs` |
 | **Numeric `:size` prop on an icon** | `ui/scripts/scan-conventions.mjs` |
 | **Raw `<button>` / `<input>` outside `src/components/ui/`** | `ui/scripts/scan-conventions.mjs` |
 | **String literal unions (`'a' \| 'b'`)** | `ui/scripts/scan-conventions.mjs` |
-| **Visible strings in the template** (skipping `src/kit/`, development-only) | `ui/scripts/scan-conventions.mjs` |
+| **Visible strings in the template** (skipping `src/kit/` and `src/verify/`, development-only) | `ui/scripts/scan-conventions.mjs` |
 | **`dark:` variant** (one theme) | `ui/scripts/scan-conventions.mjs` |
 | **Literal colour in a class** | `ui/scripts/scan-conventions.mjs` |
 | **Colour alpha modifier (`bg-x/50`)** | `ui/scripts/scan-conventions.mjs` |

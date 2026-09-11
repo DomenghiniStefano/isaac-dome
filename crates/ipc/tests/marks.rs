@@ -1,4 +1,7 @@
-use ipc::{counter_index, marks_matrix, Cell, CharacterGroup, BOSSES, CHARACTERS};
+use catalog::Catalog;
+use ipc::{
+    counter_index, marks_matrix, Cell, CharacterGroup, IconRef, MarkArtView, BOSSES, CHARACTERS,
+};
 
 #[test]
 fn tables_have_the_expected_shape() {
@@ -88,9 +91,14 @@ fn counters(len: usize, set: &[(usize, u32)]) -> Vec<u32> {
         .collect()
 }
 
+/// No catalog, no URL: what a machine without the game gets.
+fn no_icon(_: &IconRef) -> Option<String> {
+    None
+}
+
 #[test]
 fn matrix_has_the_expected_shape_and_totals() {
-    let m = marks_matrix(&counters(523, &[]));
+    let m = marks_matrix(&counters(523, &[]), None, no_icon);
     assert_eq!(m.characters.len(), 34);
     assert_eq!(m.bosses.len(), 12);
     assert_eq!(m.totals.cells, 408);
@@ -102,7 +110,7 @@ fn matrix_has_the_expected_shape_and_totals() {
 
 #[test]
 fn the_hole_is_now_mother_and_the_beast_for_the_last_twenty_rows() {
-    let m = marks_matrix(&counters(523, &[]));
+    let m = marks_matrix(&counters(523, &[]), None, no_icon);
     // row 15 = Bethany, column 9 = Delirium: located since 2026-09-08.
     assert_eq!(m.characters[15].cells[9], Cell::Known { bits: 0 });
     // Columns 10 and 11 for the same row, and for The Forgotten: still unlocated.
@@ -116,7 +124,7 @@ fn the_hole_is_now_mother_and_the_beast_for_the_last_twenty_rows() {
 
 #[test]
 fn a_read_value_becomes_a_bit_mask() {
-    let m = marks_matrix(&counters(523, &[(27, 3), (41, 7)]));
+    let m = marks_matrix(&counters(523, &[(27, 3), (41, 7)]), None, no_icon);
     assert_eq!(m.characters[0].cells[0], Cell::Known { bits: 3 });
     assert_eq!(m.characters[0].cells[1], Cell::Known { bits: 7 });
     assert_eq!(m.totals.started, 2, "only readable, non-zero cells count");
@@ -124,7 +132,7 @@ fn a_read_value_becomes_a_bit_mask() {
 
 #[test]
 fn a_value_outside_the_mask_range_is_flagged_not_truncated() {
-    let m = marks_matrix(&counters(523, &[(27, 49)]));
+    let m = marks_matrix(&counters(523, &[(27, 49)]), None, no_icon);
     assert_eq!(
         m.characters[0].cells[0],
         Cell::Unexpected { value: 49 },
@@ -140,7 +148,7 @@ fn a_value_outside_the_mask_range_is_flagged_not_truncated() {
 #[test]
 fn a_shorter_section_yields_unknown_not_a_panic() {
     // 300 counters: the 19-blocks (214..384) mostly fall outside.
-    let m = marks_matrix(&counters(300, &[]));
+    let m = marks_matrix(&counters(300, &[]), None, no_icon);
     assert_eq!(
         m.characters[33].cells[8],
         Cell::Unknown,
@@ -157,7 +165,7 @@ fn a_shorter_section_yields_unknown_not_a_panic() {
 
 #[test]
 fn an_empty_section_is_all_unknown() {
-    let m = marks_matrix(&[]);
+    let m = marks_matrix(&[], None, no_icon);
     assert_eq!(m.totals.unknown, 408);
     assert_eq!(m.totals.readable, 0);
 }
@@ -171,7 +179,7 @@ fn cell_and_totals_json_shape_is_pinned() {
     // index 27 suspicious (outside the 0..=7 mask) → Unexpected
     // columns 10 and 11 for The Forgotten and the 19s → Unknown, not located
     // the rest → Known
-    let m = marks_matrix(&counters(523, &[(27, 49)]));
+    let m = marks_matrix(&counters(523, &[(27, 49)]), None, no_icon);
     let json = serde_json::to_value(&m).unwrap();
 
     let flat = json.to_string();
@@ -216,5 +224,108 @@ fn character_group_json_tags_are_pinned() {
     assert_eq!(
         serde_json::to_value(CharacterGroup::Later).unwrap(),
         serde_json::json!("later")
+    );
+}
+
+#[test]
+fn rows_know_whether_they_are_tainted() {
+    let m = marks_matrix(&counters(523, &[]), None, no_icon);
+    assert!(!m.characters[0].tainted, "Isaac");
+    assert!(!m.characters[14].tainted, "The Forgotten");
+    assert!(!m.characters[16].tainted, "Jacob & Esau");
+    assert!(m.characters[17].tainted, "T. Isaac");
+    assert!(m.characters[33].tainted, "T. Jacob & Esau");
+    assert_eq!(m.characters.iter().filter(|r| r.tainted).count(), 17);
+}
+
+#[test]
+fn without_a_catalog_nothing_carries_a_url() {
+    // Even an icon builder that would answer: without the game's archives there is nothing
+    // to serve, and a URL that 404s would draw a broken image instead of the fallback.
+    let m = marks_matrix(&counters(523, &[]), None, |r| Some(r.to_path()));
+    assert_eq!(m.art.len(), m.bosses.len(), "art[i] draws bosses[i]");
+    assert!(m
+        .art
+        .iter()
+        .all(|a| a.normal_url.is_none() && a.hard_url.is_none()));
+    assert!(m.characters.iter().all(|r| r.head_url.is_none()));
+}
+
+const PLAYERS: &[u8] = b"<players portraitroot=\"gfx/ui/stage/\">
+<player id=\"0\" name=\"#ISAAC_NAME\" portrait=\"PlayerPortrait_Isaac.png\" />
+<player id=\"21\" name=\"#ISAAC_NAME\" portrait=\"PlayerPortrait_Isaac_b.png\" />
+</players>";
+
+/// `coop menu.anm2` with frame 0 uncropped (the "?" placeholder) and one cell per frame after.
+fn coop_menu_anm2() -> Vec<u8> {
+    let frames: String = (1..=37)
+        .map(|f| {
+            format!(
+                r#"<Frame XCrop="{}" YCrop="0" Width="32" Height="32" Visible="true"/>"#,
+                32 * f
+            )
+        })
+        .collect();
+    format!(
+        r#"<AnimatedActor><Content><Spritesheets><Spritesheet Path="coop menu.png" Id="0"/></Spritesheets><Layers><Layer Name="Main" Id="0" SpritesheetId="0"/></Layers></Content><Animations><Animation Name="Main"><LayerAnimations><LayerAnimation LayerId="0"><Frame Delay="1" Visible="true"/>{frames}</LayerAnimation></LayerAnimations></Animation></Animations></AnimatedActor>"#
+    )
+    .into_bytes()
+}
+
+#[test]
+fn with_a_catalog_urls_follow_what_it_knows() {
+    let anm2 = coop_menu_anm2();
+    let c = Catalog::build(|p| match p {
+        "players.xml" => Some(PLAYERS.to_vec()),
+        "gfx/ui/coop menu.anm2" => Some(anm2.clone()),
+        _ => None,
+    });
+    let m = marks_matrix(&counters(523, &[]), Some(&c), |r| Some(r.to_path()));
+    assert_eq!(
+        m.characters[0].head_url.as_deref(),
+        Some("head/0"),
+        "Isaac has a head"
+    );
+    assert_eq!(
+        m.characters[17].head_url.as_deref(),
+        Some("head/17"),
+        "T. Isaac has a head"
+    );
+    assert_eq!(
+        m.characters[1].head_url, None,
+        "Magdalene isn't in this catalog"
+    );
+    assert_eq!(
+        m.art[9],
+        MarkArtView {
+            normal_url: Some("mark/9/normal".to_string()),
+            hard_url: Some("mark/9/hard".to_string()),
+        }
+    );
+}
+
+#[test]
+fn a_cell_holding_only_the_unconfirmed_bit_is_not_started() {
+    // 4 has never been observed; if it appears, the grid draws it empty, and so must the total.
+    let m = marks_matrix(&counters(523, &[(27, 4), (41, 5)]), None, no_icon);
+    assert_eq!(
+        m.totals.started, 1,
+        "5 carries the normal mark, 4 carries nothing the grid draws"
+    );
+}
+
+#[test]
+fn the_new_fields_are_camel_case_on_the_wire() {
+    let m = marks_matrix(&counters(523, &[]), None, no_icon);
+    let json = serde_json::to_value(&m).unwrap();
+    let row = json["characters"][0].as_object().unwrap();
+    assert!(
+        row.contains_key("tainted") && row.contains_key("headUrl"),
+        "{row:?}"
+    );
+    let art = json["art"][0].as_object().unwrap();
+    assert!(
+        art.contains_key("normalUrl") && art.contains_key("hardUrl"),
+        "{art:?}"
     );
 }

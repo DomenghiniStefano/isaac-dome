@@ -19,6 +19,9 @@
   --text-*: initial;
   --text-title: 30px;
   --text-title--line-height: 1.3;
+  /* A KPI's number (Chrome e Stati.dc.html, "KPI"). */
+  --text-kpi: 26px;
+  --text-kpi--line-height: 1;
   --text-heading: 21px;
   --text-heading--line-height: 1.35;
   --text-body: 14px;
@@ -33,4 +36,9 @@
   --text-label--line-height: 1.3;
   --text-micro: 10px;
   --text-micro--line-height: 1.2;
+
+  /* Letter spacing: the navbar's sections, the sidebar's uppercase headings. */
+  --tracking-*: initial;
+  --tracking-nav: 0.04em;
+  --tracking-caps: 0.07em;
 }

@@ -1,5 +1,8 @@
 export { default as Card } from './Card.vue'
 export { default as CardAction } from './CardAction.vue'
+export { default as CardCollapsible } from './CardCollapsible.vue'
+export { default as CardCollapsibleContent } from './CardCollapsibleContent.vue'
+export { default as CardCollapsibleTrigger } from './CardCollapsibleTrigger.vue'
 export { default as CardContent } from './CardContent.vue'
 export { default as CardFooter } from './CardFooter.vue'
 export { default as CardHeader } from './CardHeader.vue'

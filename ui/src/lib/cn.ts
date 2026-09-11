@@ -17,6 +17,7 @@ const merge = extendTailwindMerge({
     theme: {
       text: themeKeys(typography, ThemeNamespace.Text),
       font: themeKeys(typography, ThemeNamespace.Font),
+      tracking: themeKeys(typography, ThemeNamespace.Tracking),
       spacing: themeKeys(spacing, ThemeNamespace.Spacing),
       radius: themeKeys(radius, ThemeNamespace.Radius),
       ease: themeKeys(motion, ThemeNamespace.Ease),

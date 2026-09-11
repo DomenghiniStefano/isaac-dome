@@ -70,6 +70,23 @@ impl ResourcesState {
     }
 }
 
+/// The frames of the two anm2 files the completion marks are cut from, read once. Kept only
+/// when both read: a failed read — the game absent, an archive missing — is tried again on
+/// the next request, like `ResourcesState`.
+#[derive(Default)]
+struct MarkFramesState(OnceLock<ipc::MarkFrames>);
+
+impl MarkFramesState {
+    fn get(&self, rs: &ResourceSet) -> Option<&ipc::MarkFrames> {
+        if let Some(f) = self.0.get() {
+            return Some(f);
+        }
+        let widget = catalog::anm2_frames(&rs.read(ipc::WIDGET_ANM2)?)?;
+        let lobby = catalog::anm2_frames(&rs.read(ipc::LOBBY_ANM2)?)?;
+        Some(self.0.get_or_init(|| ipc::MarkFrames { widget, lobby }))
+    }
+}
+
 #[tauri::command]
 fn setup_state(app: AppHandle) -> Result<SetupState, IpcError> {
     let settings = settings_file::load(&app);
@@ -106,10 +123,17 @@ fn save_summary(app: AppHandle) -> Result<SaveSummary, IpcError> {
 }
 
 #[tauri::command]
-fn completion(app: AppHandle) -> Result<MarksMatrix, IpcError> {
+fn completion(
+    app: AppHandle,
+    state: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+) -> Result<MarksMatrix, IpcError> {
     let (_, save) = active_save(&app)?;
     let counters = save.u32s(Kind::Counters).unwrap_or_default();
-    Ok(ipc::marks_matrix(&counters))
+    // Game not installed is expected: the matrix goes out without art, and the screen draws
+    // the fallback outfit.
+    let catalog = resources.get().and_then(|rs| state.get_or_build(rs));
+    Ok(ipc::marks_matrix(&counters, catalog, icon_url))
 }
 
 /// How many icons to extract for the verification screen: a sample, not the whole catalog.
@@ -652,28 +676,36 @@ fn no_icon(status: u16) -> tauri::http::Response<Vec<u8>> {
     r
 }
 
-/// Serves one icon: parse the reference, ask the catalog which file it is, read it.
+/// Serves one icon: parse the reference, find which piece of which file it is, read it.
 ///
-/// Every step answers 404 rather than guessing. The sprite's `rect` is ignored on purpose:
-/// achievements and items are whole files (`SpriteRef::whole`), and the cropped ones —
-/// character heads — aren't reachable through `IconRef`.
+/// Every step answers 404 rather than guessing. Achievements and items are whole files;
+/// the completion marks and the co-op menu heads are cells of a sheet, so their sprite
+/// carries a `rect` and the answer is the crop.
 fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<Vec<u8>> {
     let Some(reference) = ipc::IconRef::parse(path) else {
         return no_icon(400);
     };
     let resources = app.state::<ResourcesState>();
-    let catalog_state = app.state::<CatalogState>();
     let Some(rs) = resources.get() else {
         // The game isn't installed: expected, not an error worth logging.
         return no_icon(404);
     };
-    let Some(c) = catalog_state.get_or_build(rs) else {
+    let sprite = match reference {
+        ipc::IconRef::Mark { column, tier } => app
+            .state::<MarkFramesState>()
+            .get(rs)
+            .and_then(|frames| ipc::mark_source(column, tier, frames)),
+        ipc::IconRef::Achievement { .. }
+        | ipc::IconRef::Item { .. }
+        | ipc::IconRef::Head { .. } => app
+            .state::<CatalogState>()
+            .get_or_build(rs)
+            .and_then(|c| ipc::icon_source(c, &reference).cloned()),
+    };
+    let Some(sprite) = sprite else {
         return no_icon(404);
     };
-    let Some(sprite) = ipc::icon_source(c, &reference) else {
-        return no_icon(404);
-    };
-    let Some(png) = rs.read(&sprite.path) else {
+    let Some(png) = sprite_bytes(rs, &sprite) else {
         return no_icon(404);
     };
     let mut r = tauri::http::Response::new(png);
@@ -683,6 +715,16 @@ fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<Vec<u8>> {
     );
     r
 }
+
+/// The file a sprite names, cropped when it names a piece of a sheet.
+fn sprite_bytes(rs: &ResourceSet, sprite: &catalog::SpriteRef) -> Option<Vec<u8>> {
+    let file = rs.read(&sprite.path)?;
+    match sprite.rect {
+        None => Some(file),
+        Some(r) => ipc::crop_png(&file, r.x, r.y, r.w, r.h),
+    }
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -690,6 +732,7 @@ pub fn run() {
         .manage(GraphState::default())
         .manage(StoreState::default())
         .manage(ResourcesState::default())
+        .manage(MarkFramesState::default())
         // Icons don't travel inside the payloads any more: rows carry a link, and this
         // serves it. Asynchronous on purpose — a grid asks for a hundred at once, and each
         // one reads from an archive; on the main thread they would queue up behind the

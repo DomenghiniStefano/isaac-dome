@@ -34,7 +34,8 @@ The full project document is in `docs/PROJECT.md`.
   `lucide-vue-next`, deprecated).
   **Target stack, not all of it today's**: since the design system's first cycle
   (2026-09-10) `ui/` has Vue, Vite, Tailwind, `@tauri-apps/api`, shadcn-vue on Reka UI,
-  Lucide, vue-i18n and Vitest. Pinia, Vue Router and TanStack arrive with the screens.
+  Lucide, vue-i18n and Vitest; Pinia and Vue Router since the screens' first sub-project
+  (2026-09-11). TanStack arrives with sub-project 3.3.
 - **Backend**: Rust inside Tauri 2. Crates: `steamlocate`, `winreg` (fallback),
   `keyvalues-parser`, `quick-xml`, `notify`, `rusqlite` (bundled), `serde`.
 - **Tooling**: pnpm, Git Flow with `develop` as the integration branch.
@@ -385,9 +386,10 @@ open blockers, and a session log. What follows is just the framing.
 
 M0 closed. M1 closed on the Rust side, structural base closed on 2026-09-05: static data
 normalized and IPC contracts fixed. M2 (the graph) closed on 2026-09-07 and M3's plan
-queue on 2026-09-08. **The design export arrived on 2026-09-10, and cycle 1 of the design
-system — tokens, font, `cn()`, i18n, 23 primitives on the development-only Kit page —
-landed the same day.**
+queue on 2026-09-08. **The design export arrived on 2026-09-10, and cycles 1 and 2 of the design
+system — tokens, font, `cn()`, i18n, 23 primitives, then the app components (title bar,
+navbar, sidebar, KPI, matrix cell, wiki tokens, data states) on the development-only Kit
+page — landed the same day.**
 
 **The IPC contract is live.** It used to be a precaution — don't reshape the types for the
 convenience of a screen that doesn't exist yet — and it is now a constraint with someone
@@ -398,9 +400,14 @@ committed**. Watch for the silent case: `core_save::Kind` crosses the boundary i
 variant changed the wire with the whole suite green (pinned since by
 `crates/ipc/tests/summary_shape.rs`).
 
-**`ui/` is still the verification page, plus the Kit page.** App components are cycle 2,
-screens are cycle 3. Frontend conventions and their scanner exist already on purpose: a
-rule introduced before the code is free.
+**`ui/` is the shell, with two real screens** (2026-09-11): tabs, router, the live window
+chrome, the profile indicator; profile selection (3.1) and Completion (3.2), whose mark
+symbols and character heads are crops of the user's own sheets served through the icon
+protocol. Every other screen is a placeholder naming the sub-project that brings it. The
+verification page lives behind `#verify` and the Kit behind `#kit`, both development-only;
+`pnpm ui:dev` runs without the backend on fixtures (`?fixture=none|pick|active`, and
+`?art=none` for the first-launch outfit without sprites). Frontend conventions and their scanner exist already on
+purpose: a rule introduced before the code is free.
 
 The **wiki dataset** (crate `wiki`, tool `wiki-snapshot`, `dataset/`) is implemented,
 passed whole-branch review, and **merged into `develop`** on 2026-09-06.
