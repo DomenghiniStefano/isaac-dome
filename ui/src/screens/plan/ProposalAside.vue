@@ -8,7 +8,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
 import { nodeSlot } from '@/lib/graph/unlockFilter'
 import type { UnlockNode } from '@/lib/ipc/types'
-import { canQueue, isQueued, knownText } from '@/lib/plan/queueRows'
+import {
+  canQueue,
+  isQueued,
+  knownText,
+  proposalLabel,
+} from '@/lib/plan/queueRows'
 
 defineProps<{
   steps: UnlockNode[]
@@ -25,7 +30,8 @@ const iconOf = (node: UnlockNode): string | null =>
 
 <template>
   <!-- Schermate.dc.html, the Plan's "Prossimi passi": the proposal beside your queue, never
-       your queue itself. -->
+       your queue itself. A narrow column names what a step unlocks: the achievement's text
+       would be cut to "You …". -->
   <Card>
     <CardHeader>
       <CardTitle>{{ t('plan.aside.title') }}</CardTitle>
@@ -41,26 +47,31 @@ const iconOf = (node: UnlockNode): string | null =>
           class="flex items-center gap-2"
         >
           <AchievementArt :url="iconOf(step)" :size="ArtSize.Thumb" />
-          <span class="min-w-0 flex-1 truncate text-caption text-foreground">{{
-            knownText(step)
-          }}</span>
-          <span class="text-label text-state-now-foreground tabular-nums">{{
-            step.graph.fanOut
-          }}</span>
+          <div class="flex min-w-0 flex-1 flex-col">
+            <span
+              class="truncate text-caption text-foreground"
+              :title="knownText(step) ?? undefined"
+              >{{ proposalLabel(step) }}</span
+            >
+            <span class="text-label text-subtle-foreground tabular-nums"
+              >{{ t('plan.row.fanOut') }}: {{ step.graph.fanOut }}</span
+            >
+          </div>
           <span
             v-if="isQueued(step, queued)"
-            class="text-label text-state-done-foreground"
+            class="shrink-0 text-label text-state-done-foreground"
             >{{ t('queue.inQueue') }}</span
           >
           <Button
             v-else-if="canWrite && canQueue(step, queued)"
             :variant="ButtonVariant.Outline"
-            :size="ButtonSize.Compact"
+            :size="ButtonSize.IconCompact"
             :aria-label="t('queue.add')"
             :disabled="busy"
             @click="emit('add', nodeSlot(step))"
-            ><ListPlusIcon />{{ t('queue.addShort') }}</Button
           >
+            <ListPlusIcon />
+          </Button>
         </div>
       </div>
       <EmptyValue v-else>{{ t('plan.aside.empty') }}</EmptyValue>
