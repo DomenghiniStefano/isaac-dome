@@ -9,6 +9,7 @@ import KitSection from '../KitSection.vue'
       <Badge :variant="BadgeVariant.Done">Fatto</Badge>
       <Badge :variant="BadgeVariant.Now">Ora</Badge>
       <Badge :variant="BadgeVariant.Blocked">Da 2</Badge>
+      <Badge :variant="BadgeVariant.Partial">Grafo parziale</Badge>
       <Badge :variant="BadgeVariant.Unknown">Sconosciuto</Badge>
       <Badge :variant="BadgeVariant.Unexpected">Anomalo</Badge>
       <Badge :variant="BadgeVariant.Tag">Oggetto</Badge>

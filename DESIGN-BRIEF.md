@@ -913,7 +913,7 @@ interface UnlockTotals { slots: number; done: number; known: number; unknown: nu
 type UnlockDiagnostic =
   | { kind: 'slotsBeyondCatalog'; count: number }  // the save has more slots than the catalog
   | { kind: 'catalogBeyondSlots'; count: number }  // the catalog is newer than the save
-  | { kind: 'noCatalog' }                          // game absent: empty nodes
+  | { kind: 'noCatalog' }                          // game absent: every slot an unknown, partial node
   | { kind: 'noAchievementSection' }               // section 1 unreadable: NOT "zero done"
 
 interface UnlockView {
@@ -1429,6 +1429,11 @@ Five questions the first round of visuals should answer:
    interpret, and `unknown` says how many. It is the opposite of a loading state: nothing
    further is coming. Drawn as "0 prerequisites" it would send someone off to play for an
    unlock that isn't there.
+   *Answered in the app on 2026-09-11 (sub-project 3.3a), for design to overturn:* the blocked
+   colours, a **dashed** edge and the lock — never gold, never the star. A partial node is never
+   a step and is never counted among the unlockable; its badge's tooltip names the
+   requirements the graph couldn't interpret, as the file wrote them.
+
 5. How do the **tab bar**, the **active profile indicator**, and the **search entry point**
    coexist in the same top strip (§4.2)? They're three things with three different meanings —
    what I have open, what I'm looking at, how I find everything else — and the temptation to
