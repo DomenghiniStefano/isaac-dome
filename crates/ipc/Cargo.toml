@@ -14,6 +14,7 @@ catalog = { path = "../catalog" }
 graph = { path = "../graph" }
 plan = { path = "../plan" }
 wiki = { path = "../wiki" }
+png = "0.17"
 
 [dev-dependencies]
 test-support = { path = "../test-support" }
