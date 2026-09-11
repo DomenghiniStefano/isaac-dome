@@ -25,8 +25,8 @@ pub use graph::{
 pub use icon::{icon_source, IconRef, MarkTier, ICON_SCHEME};
 pub use mark_art::{mark_source, MarkFrames, LOBBY_ANM2, WIDGET_ANM2};
 pub use marks::{
-    character_for, counter_index, marks_matrix, Cell, CharacterGroup, CharacterRow, MarksMatrix,
-    MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
+    character_for, counter_index, marks_matrix, Cell, CharacterGroup, CharacterRow, MarkArtView,
+    MarksMatrix, MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
 };
 pub use profile::{
     candidates, profile_id, resolve_active, setup_state, ActiveProfile, CandidateSource,
