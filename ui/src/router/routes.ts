@@ -3,6 +3,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import { TabOrigin } from '@/components/shell/tabs'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
+import CollectionScreen from '@/screens/CollectionScreen.vue'
 import CompletionScreen from '@/screens/CompletionScreen.vue'
 import NextStepsScreen from '@/screens/NextStepsScreen.vue'
 import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
@@ -34,6 +35,7 @@ const screens: Partial<Record<RouteName, Component>> = {
   [RouteName.Completion]: CompletionScreen,
   [RouteName.Unlock]: UnlockScreen,
   [RouteName.Plan]: PlanScreen,
+  [RouteName.Collection]: CollectionScreen,
   [RouteName.Profile]: ProfileScreen,
 }
 

@@ -402,13 +402,15 @@ committed**. Watch for the silent case: `core_save::Kind` crosses the boundary i
 variant changed the wire with the whole suite green (pinned since by
 `crates/ipc/tests/summary_shape.rs`).
 
-**`ui/` is the shell, with five real screens** (2026-09-11): tabs, router, the live window
+**`ui/` is the shell, with six real screens** (2026-09-11): tabs, router, the live window
 chrome, the profile indicator; profile selection (3.1), Completion (3.2), whose mark symbols
 and character heads are crops of the user's own sheets served through the icon protocol,
 Next steps and Unlock (3.3a), which draw a node's state and its why one way, with Unlock's
-facets, search and sort as pure functions over a virtualized table, and the Plan (3.3b), the
+facets, search and sort as pure functions over a virtualized table, the Plan (3.3b), the
 first screen that writes: a queue you drag, whose drop names the row it lands under and whose
-answer is the order drawn next. Every other screen is a placeholder naming the sub-project that
+answer is the order drawn next, and the Collection (3.4), the save's item collection joined
+with the catalog — collectibles only, since trinkets have no slot, and unread never shown as
+"not found". Every other screen is a placeholder naming the sub-project that
 brings it. The verification page lives behind `#verify` and the Kit behind `#kit`, both
 development-only; `pnpm ui:dev` runs without the backend on fixtures
 (`?fixture=none|pick|active`, `?art=none` for the first-launch outfit without sprites,

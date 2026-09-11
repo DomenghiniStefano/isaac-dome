@@ -324,6 +324,26 @@ fn next_steps(
     Ok(ipc::next_steps(&view))
 }
 
+#[tauri::command]
+fn collection(
+    app: AppHandle,
+    state: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+) -> Result<ipc::CollectionView, IpcError> {
+    let (_, save) = active_save(&app)?;
+    // Game not installed is expected: the view goes out without a catalog and says so.
+    let resources = resources.get();
+    let catalog = resources.and_then(|rs| state.get_or_build(rs));
+    let items = save.flags(Kind::Items);
+    let achievements = save.flags(Kind::Achievements);
+    Ok(ipc::collection_view(
+        catalog,
+        items.as_deref(),
+        achievements.as_deref(),
+        icon_url,
+    ))
+}
+
 /// What the plan receives from `store`, however things went: the goals that were read,
 /// the ones that couldn't be, and the reason there are none. A database that won't open
 /// and a query that fails are the same case for the user — "the goals can't be seen, and
@@ -763,6 +783,7 @@ pub fn run() {
             wiki_entry,
             unlock,
             next_steps,
+            collection,
             queue,
             queue_add,
             queue_remove,

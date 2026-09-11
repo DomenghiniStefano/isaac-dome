@@ -51,8 +51,63 @@ export const en: MessageSchema = {
     settingsTitle: 'Settings',
     settingsHint: 'Where the app finds the game and the saves.',
   },
+  collection: {
+    intro:
+      "The items this save's collection doesn't hold yet, by quality and pool: not a wall of icons. Quality and pool come from the game's files, not guessed from the name. Trinkets aren't here: the save keeps no collection of them.",
+    state: {
+      inCollection: 'in the collection',
+      available: 'to find',
+      locked: 'locked',
+      unknown: 'unreadable',
+    },
+    facets: 'Facets',
+    facet: {
+      state: 'State',
+      quality: 'Quality',
+      pool: 'Pool',
+      kind: 'Kind',
+      origin: 'Origin DLC',
+    },
+    qualityUnrated: 'unrated',
+    poolNone: 'no pool',
+    items: 'items',
+    search: 'search an item',
+    sortBy: 'sort by',
+    sort: {
+      quality: 'quality',
+      id: 'id',
+      name: 'name',
+    },
+    columns: {
+      item: 'Item',
+      quality: 'Quality',
+      pools: 'Pool',
+      origin: 'DLC',
+      state: 'State',
+    },
+    id: 'id',
+    lockedBy: 'unlocked by',
+    achievement: 'achievement',
+    noResults: 'No items with these filters.',
+    resetFilters: 'Reset the filters',
+    noFilters: 'no filters',
+    activeFilters: 'active filters',
+    reset: 'Reset',
+    diagnostics: {
+      noCatalogTitle: 'The catalogue is missing',
+      noCatalog:
+        "Without the game installed the items have no name and no quality: the save's collection reads, but there's no telling what it holds.",
+      noCollectionSectionTitle: "The save's collection can't be read",
+      noCollectionSection:
+        "Every item reads as unreadable: it doesn't mean you never found it, it means that part of the save wasn't read.",
+      noAchievementSectionTitle: "The save's achievements can't be read",
+      noAchievementSection:
+        "There's no telling which items are still locked: the ones an achievement unlocks read as unreadable.",
+      itemsBeyondSlots:
+        "catalogue items beyond the save's collection, shown as unreadable",
+    },
+  },
   placeholder: {
-    collection: 'Arrives with the Collection screen.',
     runArchive: 'Arrives with the run archive (M4).',
     wiki: 'Arrives with wiki pages in tabs and search.',
     settings: 'Arrives with Settings and About.',
