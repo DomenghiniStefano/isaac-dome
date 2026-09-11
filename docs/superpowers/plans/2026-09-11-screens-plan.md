@@ -42,7 +42,7 @@ not the Italian wording the spec quoted.
 
 **Interfaces:** Produces `Queue::move_after(&mut self, achievement: u32, after: Option<u32>, deps: &impl Dependencies)`; Tauri `queue_move(achievement: u32, after: Option<u32>)`; TS `queueMove(achievement: number, after: number | null): Promise<QueueView>`.
 
-- [ ] **Step 1: Failing tests** — append to `crates/plan/tests/order.rs`:
+- [x] **Step 1: Failing tests** — append to `crates/plan/tests/order.rs`:
 
 ```rust
 #[test]
@@ -165,9 +165,9 @@ fn after_any_move_after_the_queue_never_contradicts_the_graph() {
 
 (the old `after_any_move_the_queue_never_contradicts_the_graph` body is replaced by the version above).
 
-- [ ] **Step 2: Run** `cargo test -p plan --test order` → FAIL: `move_after` doesn't exist (compile error). Temporarily comment the `move_after` tests out and run again to see `an_index_means_the_same_place_when_dependents_sit_before_it` fail with `[3, 4, 1, 2]`; restore them.
+- [x] **Step 2: Run** `cargo test -p plan --test order` → FAIL: `move_after` doesn't exist (compile error). Temporarily comment the `move_after` tests out and run again to see `an_index_means_the_same_place_when_dependents_sit_before_it` fail with `[3, 4, 1, 2]`; restore them.
 
-- [ ] **Step 3: Implement** in `crates/plan/src/order.rs` — replace the `move_row` doc comment and the partition loop, add `move_after`:
+- [x] **Step 3: Implement** in `crates/plan/src/order.rs` — replace the `move_row` doc comment and the partition loop, add `move_after`:
 
 ```rust
 impl Queue {
@@ -226,9 +226,9 @@ impl Queue {
 
 The module doc keeps its first paragraph; the long comment on the two relations inside `move_row` stays as it is.
 
-- [ ] **Step 4: Run** `cargo test -p plan` → all green (the nine old cases still hold: each was checked against the new target arithmetic in the spec's session).
+- [x] **Step 4: Run** `cargo test -p plan` → all green (the nine old cases still hold: each was checked against the new target arithmetic in the spec's session).
 
-- [ ] **Step 5: The command and the wrapper** — in `crates/app/src/lib.rs`, `queue_move` takes `after: Option<u32>` instead of `to: usize` and calls `q.move_after(achievement, after, &deps)`. In `ui/src/lib/ipc/queue.ts`:
+- [x] **Step 5: The command and the wrapper** — in `crates/app/src/lib.rs`, `queue_move` takes `after: Option<u32>` instead of `to: usize` and calls `q.move_after(achievement, after, &deps)`. In `ui/src/lib/ipc/queue.ts`:
 
 ```ts
 // `after` is the row it was dropped under, `null` for the top: a row and not an index, because
@@ -241,16 +241,16 @@ export const queueMove = (
 ): Promise<QueueView> => call(Command.QueueMove, { achievement, after })
 ```
 
-- [ ] **Step 6: Verify** `cargo fmt --check && cargo clippy --all-targets -- -D warnings && cargo test -p plan && cargo build -p app` and `pnpm typecheck`, each by exit code. Commit `fix(plan): a move names the row it lands under, not an index` and push.
+- [x] **Step 6: Verify** `cargo fmt --check && cargo clippy --all-targets -- -D warnings && cargo test -p plan && cargo build -p app` and `pnpm typecheck`, each by exit code. Commit `fix(plan): a move names the row it lands under, not an index` and push.
 
 ### Task 2: The Badge learns the wanted row
 
 **Files:** Modify `ui/src/components/ui/badge/variants.ts`, `icons.ts`, `ui/src/kit/sections/BadgeSection.vue`
 
-- [ ] **Step 1**: `BadgeVariant.Wanted: 'wanted'`; classes `${squareTag} border-primary-edge bg-primary text-primary-foreground`, with a comment: a row you asked for, told apart from a step a wish dragged in (the export's red "chiesta").
-- [ ] **Step 2**: `badgeIcons[BadgeVariant.Wanted] = null` — a tag, not a state.
-- [ ] **Step 3**: the Kit's Badge section shows `<Badge :variant="BadgeVariant.Wanted">Chiesta</Badge>` after `Oggetto`.
-- [ ] **Step 4**: `pnpm typecheck` and `pnpm scan` → exit 0. Commit `feat(ui): the Badge learns the wanted row` and push.
+- [x] **Step 1**: `BadgeVariant.Wanted: 'wanted'`; classes `${squareTag} border-primary-edge bg-primary text-primary-foreground`, with a comment: a row you asked for, told apart from a step a wish dragged in (the export's red "chiesta").
+- [x] **Step 2**: `badgeIcons[BadgeVariant.Wanted] = null` — a tag, not a state.
+- [x] **Step 3**: the Kit's Badge section shows `<Badge :variant="BadgeVariant.Wanted">Chiesta</Badge>` after `Oggetto`.
+- [x] **Step 4**: `pnpm typecheck` and `pnpm scan` → exit 0. Commit `feat(ui): the Badge learns the wanted row` and push.
 
 ### Task 3: The queue's pure logic
 
@@ -258,7 +258,7 @@ export const queueMove = (
 
 **Interfaces:** Produces, from `queueRows.ts`: `rowId(row: QueueRow): number`; `knownText(node: UnlockNode): string | null`; `achievementText(nodes: UnlockNode[], id: number): string | null`; `queuedIds(view: QueueView | null): Set<number>`; `isQueued(node: UnlockNode, queued: Set<number>): boolean`; `canQueue(node: UnlockNode, queued: Set<number>): boolean`; `QueueSummary { rows; wanted; pulledIn }`, `queueSummary(rows): QueueSummary`; `OriginRow { id: number; row: QueueRow | null }`, `originRows(row, rows): OriginRow[]`; `stoppedUnder(rows, achievement: number, after: number | null): QueueRow | null`. From `queueDrop.ts`: `Anchor { after: number | null }`; `DropEdge { Above, Below }`; `StepDirection { Up, Down }`; `dropEdge(pointerY, top, height): DropEdge`; `dropAnchor(ids: number[], from: number, target: number, edge: DropEdge): Anchor | null`; `stepAnchor(ids: number[], index: number, direction: StepDirection): Anchor | null`.
 
-- [ ] **Step 1: Failing tests** — `queueDrop.test.ts`:
+- [x] **Step 1: Failing tests** — `queueDrop.test.ts`:
 
 ```ts
 import { describe, expect, it } from 'vitest'
@@ -410,9 +410,9 @@ describe('stoppedUnder', () => {
 
 Check the expected text of achievement 1 against the payload before running (`"You unlocked \"Magdalene\""` in `unlock.json`); if the payload spells it differently, the expectation follows the payload.
 
-- [ ] **Step 2: Run** `pnpm --filter ui exec vitest run src/lib/plan` → FAIL (no modules).
+- [x] **Step 2: Run** `pnpm --filter ui exec vitest run src/lib/plan` → FAIL (no modules).
 
-- [ ] **Step 3: Implement** `queueDrop.ts`:
+- [x] **Step 3: Implement** `queueDrop.ts`:
 
 ```ts
 // Where a dragged row goes, named the way the backend takes it: right below a row, or the top.
@@ -536,7 +536,7 @@ export const stoppedUnder = (
 }
 ```
 
-- [ ] **Step 4: Run** the tests → green; `pnpm typecheck`, `pnpm lint`, `pnpm scan` → exit 0. Commit `feat(ui): the queue's rows, drops and anchors, as pure functions` and push.
+- [x] **Step 4: Run** the tests → green; `pnpm typecheck`, `pnpm lint`, `pnpm scan` → exit 0. Commit `feat(ui): the queue's rows, drops and anchors, as pure functions` and push.
 
 ### Task 4: The queue's fixtures
 
@@ -544,7 +544,7 @@ export const stoppedUnder = (
 
 **Interfaces:** Consumes `graphAnswers`. Produces `Requires = (a: number, b: number) => boolean`; `moveRow(ids, achievement, to, requires): number[]`; `moveAfter(ids, achievement, after, requires): number[]`; `QueueScenario { Rows, Empty, Unavailable, Unreadable }`; `QueueOptions { scenario: QueueScenario; withCatalog: boolean; nodes: UnlockNode[] }`; `resetQueue()`; `readQueue(o): QueueView`; `addToQueue(o, id)`, `removeFromQueue(o, id)`, `moveInQueue(o, id, after)`, `importGoals(o)`, each `Promise<QueueView>`; handlers for the five queue commands; `?queue=`.
 
-- [ ] **Step 1: Failing tests** — `queueRepair.test.ts`, the Rust cases on plain arrays:
+- [x] **Step 1: Failing tests** — `queueRepair.test.ts`, the Rust cases on plain arrays:
 
 ```ts
 import { describe, expect, it } from 'vitest'
@@ -696,9 +696,9 @@ describe('the queue’s other states', () => {
 })
 ```
 
-- [ ] **Step 2: Run** `pnpm --filter ui exec vitest run src/lib/ipc/fixtures` → FAIL (no modules).
+- [x] **Step 2: Run** `pnpm --filter ui exec vitest run src/lib/ipc/fixtures` → FAIL (no modules).
 
-- [ ] **Step 3: Implement** `queueRepair.ts`:
+- [x] **Step 3: Implement** `queueRepair.ts`:
 
 ```ts
 import { clamp, findLastIndex } from 'lodash-es'
@@ -999,7 +999,7 @@ with handlers
     whenActive(scenario, async () => importGoals(await queueOptions())),
 ```
 
-- [ ] **Step 4: Run** `pnpm --filter ui exec vitest run src/lib/ipc` → green (the transport test still expects `Command.Plan` to have no fixture); typecheck, lint, scan by exit code. Commit `feat(ui): the queue's fixtures, a queue that repairs in memory` and push.
+- [x] **Step 4: Run** `pnpm --filter ui exec vitest run src/lib/ipc` → green (the transport test still expects `Command.Plan` to have no fixture); typecheck, lint, scan by exit code. Commit `feat(ui): the queue's fixtures, a queue that repairs in memory` and push.
 
 ### Task 5: The queue store, and one text for every IPC error
 
@@ -1007,9 +1007,9 @@ with handlers
 
 **Interfaces:** Produces `useQueueStore()` with `view: QueueView | null`, `status: LoadStatus`, `error: IpcError | null`, `busy: boolean`, `mutationFailed: boolean`, `mutationError: IpcError | null`, `lastMove: { achievement: number; after: number | null } | null`, `load()`, `add(id)`, `remove(id)`, `move(id, after)`, `importGoals()`; `useIpcErrorText(): { errorText(e: IpcError | null): string }`; `<QueueError :error>`.
 
-- [ ] **Step 1: Messages** — move `profile.errors.{noBackend, noActiveProfile, unknownProfile, unreadableSave, settingsNotWritable, unknownTarget, catalogUnavailable, storeUnavailable, wikiUnavailable}` to a top-level `ipcErrors` in both languages (`profile.errors` keeps `title` and `retry`); add `queue: { inQueue: 'in coda', inPlan: 'già nella coda del Piano', add: 'Aggiungi alla coda', addShort: 'Aggiungi', remove: 'Togli dalla coda', removeShort: 'Togli', errorTitle: 'La coda non è cambiata' }` and the English `queue: { inQueue: 'queued', inPlan: 'already in the Plan’s queue', add: 'Add to the queue', addShort: 'Add', remove: 'Remove from the queue', removeShort: 'Remove', errorTitle: 'The queue didn’t change' }`.
+- [x] **Step 1: Messages** — move `profile.errors.{noBackend, noActiveProfile, unknownProfile, unreadableSave, settingsNotWritable, unknownTarget, catalogUnavailable, storeUnavailable, wikiUnavailable}` to a top-level `ipcErrors` in both languages (`profile.errors` keeps `title` and `retry`); add `queue: { inQueue: 'in coda', inPlan: 'già nella coda del Piano', add: 'Aggiungi alla coda', addShort: 'Aggiungi', remove: 'Togli dalla coda', removeShort: 'Togli', errorTitle: 'La coda non è cambiata' }` and the English `queue: { inQueue: 'queued', inPlan: 'already in the Plan’s queue', add: 'Add to the queue', addShort: 'Add', remove: 'Remove from the queue', removeShort: 'Remove', errorTitle: 'The queue didn’t change' }`.
 
-- [ ] **Step 2: The composable** — `useIpcErrorText.ts` holds ProfileError's switch unchanged, reading `ipcErrors.*`:
+- [x] **Step 2: The composable** — `useIpcErrorText.ts` holds ProfileError's switch unchanged, reading `ipcErrors.*`:
 
 ```ts
 import { useMessages } from '@/i18n'
@@ -1049,7 +1049,7 @@ export const useIpcErrorText = () => {
 
 `ProfileError.vue` keeps its template and computes `message` as `errorText(props.error)`. `QueueError.vue`: a destructive `Alert` with `TriangleAlertIcon`, title `queue.errorTitle`, description `errorText(error)`; prop `error: IpcError | null`.
 
-- [ ] **Step 3: Failing store test** — `stores/queue.test.ts`:
+- [x] **Step 3: Failing store test** — `stores/queue.test.ts`:
 
 ```ts
 import { createPinia, setActivePinia } from 'pinia'
@@ -1105,7 +1105,7 @@ describe('useQueueStore', () => {
 
 Run `pnpm --filter ui exec vitest run src/stores/queue.test.ts` → FAIL (no store).
 
-- [ ] **Step 4: The store** — `StoreId.Queue: 'queue'`; `stores/queue.ts`:
+- [x] **Step 4: The store** — `StoreId.Queue: 'queue'`; `stores/queue.ts`:
 
 ```ts
 import { defineStore } from 'pinia'
@@ -1207,7 +1207,7 @@ export const useQueueStore = defineStore(StoreId.Queue, () => {
 })
 ```
 
-- [ ] **Step 5: Run** the store test → green; `pnpm ui:test`, typecheck, lint, scan by exit code. Commit `feat(ui): the queue store, and one text for every IPC error` and push.
+- [x] **Step 5: Run** the store test → green; `pnpm ui:test`, typecheck, lint, scan by exit code. Commit `feat(ui): the queue store, and one text for every IPC error` and push.
 
 ### Task 6: The Plan screen
 
@@ -1215,9 +1215,9 @@ export const useQueueStore = defineStore(StoreId.Queue, () => {
 
 **Interfaces:** Consumes Tasks 2–5.
 
-- [ ] **Step 1: tokens and keys** — `--spacing-plan-aside: 248px;` under a comment "the Plan's proposal column (Schermate.dc.html, 246px on the 4px grid)"; `EventKey.ArrowUp: 'ArrowUp'`, `EventKey.ArrowDown: 'ArrowDown'`.
+- [x] **Step 1: tokens and keys** — `--spacing-plan-aside: 248px;` under a comment "the Plan's proposal column (Schermate.dc.html, 246px on the 4px grid)"; `EventKey.ArrowUp: 'ArrowUp'`, `EventKey.ArrowDown: 'ArrowDown'`.
 
-- [ ] **Step 2: messages** — `plan.*` in both languages:
+- [x] **Step 2: messages** — `plan.*` in both languages:
 
 ```ts
   plan: {
@@ -1269,7 +1269,7 @@ export const useQueueStore = defineStore(StoreId.Queue, () => {
 
 English: the same keys, translated in the tone of `en.ts`.
 
-- [ ] **Step 3: `QueueRow.vue`** — props `row: QueueRow`, `rows: QueueRow[]`, `position: number`, `dragging: boolean`, `busy: boolean`; emits `grab: [e: PointerEvent]`, `step: [e: KeyboardEvent]`, `remove: []`. Layout, one flex row `items-start gap-3 px-3 py-2.5`, `opacity-disabled` when dragging:
+- [x] **Step 3: `QueueRow.vue`** — props `row: QueueRow`, `rows: QueueRow[]`, `position: number`, `dragging: boolean`, `busy: boolean`; emits `grab: [e: PointerEvent]`, `step: [e: KeyboardEvent]`, `remove: []`. Layout, one flex row `items-start gap-3 px-3 py-2.5`, `opacity-disabled` when dragging:
   - handle: `<Button :variant="ButtonVariant.Ghost" :size="ButtonSize.Icon" :aria-label="t('plan.row.move')" :disabled="busy" class="cursor-grab touch-none" @pointerdown="emit('grab', $event)" @keydown="emit('step', $event)"><GripVerticalIcon /></Button>`;
   - position in `w-4 text-label text-subtle-foreground tabular-nums text-right`;
   - `<AchievementArt :url="…iconUrl" :size="ArtSize.Thumb" />`;
@@ -1278,7 +1278,7 @@ English: the same keys, translated in the tone of `en.ts`.
   - remove: `<Button v-if="row.wanted" :variant="ButtonVariant.Ghost" :size="ButtonSize.Icon" :aria-label="t('queue.remove')" :disabled="busy" @click="emit('remove')"><XIcon /></Button>`.
   The texts with `«»` and `:` are composed in `computed`s in the script, as `StepCard` composes its text.
 
-- [ ] **Step 4: `QueueCard.vue`** — props `rows`, `diagnostics: QueueDiagnostic[]`, `nodes: UnlockNode[]`, `busy`, `lastMove: QueueMove | null`; emits `move: [achievement: number, after: number | null]`, `remove: [achievement: number]`. A `Card`; a `CardHeader` with `CardTitle` "La coda" and the hint in `text-caption`; the list; `QueueFootnotes`; when `rows` is empty, an `EmptyCategory` with `plan.empty` and `plan.emptyHint` under it. The drag, following `TabStrip`:
+- [x] **Step 4: `QueueCard.vue`** — props `rows`, `diagnostics: QueueDiagnostic[]`, `nodes: UnlockNode[]`, `busy`, `lastMove: QueueMove | null`; emits `move: [achievement: number, after: number | null]`, `remove: [achievement: number]`. A `Card`; a `CardHeader` with `CardTitle` "La coda" and the hint in `text-caption`; the list; `QueueFootnotes`; when `rows` is empty, an `EmptyCategory` with `plan.empty` and `plan.emptyHint` under it. The drag, following `TabStrip`:
 
 ```ts
 interface Drag {
@@ -1382,13 +1382,13 @@ const hint = computed((): string => {
 
   Template: `<div ref="list" class="flex flex-col py-1" @pointermove="onPointerMove" @pointerup="onPointerUp" @pointercancel="onPointerUp">`; each row a `<div data-queue-row class="relative border-b border-hairline last:border-b-0">` holding `<span v-if="gap === index" class="absolute inset-x-0 -top-px h-0.5 bg-primary" />`, the `QueueRow` (`:dragging="drag?.moving === true && drag.from === index"`, `@grab="onGrab(index, $event)"`, `@step="onStep(index, $event)"`, `@remove="emit('remove', rowId(row))"`), and for the last row `<span v-if="gap === rows.length" class="absolute inset-x-0 -bottom-px h-0.5 bg-primary" />`.
 
-- [ ] **Step 5: `QueueFootnotes.vue`** — props `diagnostics`, `nodes`, `busy`; emits `remove: [achievement: number]`. Under the rows, `border-t border-hairline px-3 py-2 text-caption text-foreground-soft`: for `completed`, a `CheckIcon` in `text-state-done-foreground` and `righe chiuse giocando: N`, followed when `wanted` isn't empty by ` · fra quelle chieste: ` and the texts (`achievementText(nodes, id) ?? achievement N`) joined by `, `; for each `unresolved`, `achievement N non è più nel catalogo` and a `Button` ghost compact `queue.removeShort` emitting `remove`. Nothing when neither is present. The switch over `diagnostics` filters by `kind` with type guards; the other kinds belong to `PlanAlerts`.
+- [x] **Step 5: `QueueFootnotes.vue`** — props `diagnostics`, `nodes`, `busy`; emits `remove: [achievement: number]`. Under the rows, `border-t border-hairline px-3 py-2 text-caption text-foreground-soft`: for `completed`, a `CheckIcon` in `text-state-done-foreground` and `righe chiuse giocando: N`, followed when `wanted` isn't empty by ` · fra quelle chieste: ` and the texts (`achievementText(nodes, id) ?? achievement N`) joined by `, `; for each `unresolved`, `achievement N non è più nel catalogo` and a `Button` ghost compact `queue.removeShort` emitting `remove`. Nothing when neither is present. The switch over `diagnostics` filters by `kind` with type guards; the other kinds belong to `PlanAlerts`.
 
-- [ ] **Step 6: `PlanAlerts.vue`** — props `view: QueueView`, `busy`; emits `import: []`. One `Alert` per diagnostic of the four kinds, in the order the view lists them: `storeUnavailable` destructive with the title and `reason`; `unreadable` and `noCatalog` default with title and text; `goalsPending` default with `Obiettivi salvati da importare: N`, its text, and an outline `Button` `plan.alerts.import` (`:disabled="busy"`). A `computed` narrows `view.diagnostics` to these kinds with an exhaustive `switch` returning `true`/`false`, `assertNever` in the default.
+- [x] **Step 6: `PlanAlerts.vue`** — props `view: QueueView`, `busy`; emits `import: []`. One `Alert` per diagnostic of the four kinds, in the order the view lists them: `storeUnavailable` destructive with the title and `reason`; `unreadable` and `noCatalog` default with title and text; `goalsPending` default with `Obiettivi salvati da importare: N`, its text, and an outline `Button` `plan.alerts.import` (`:disabled="busy"`). A `computed` narrows `view.diagnostics` to these kinds with an exhaustive `switch` returning `true`/`false`, `assertNever` in the default.
 
-- [ ] **Step 7: `ProposalAside.vue`** — props `steps: UnlockNode[]`, `queued: Set<number>`, `canWrite: boolean`, `busy: boolean`; emits `add: [achievement: number]`. A `Card` with `CardHeader`/`CardTitle` "Prossimi passi"; in a `CardContent`, the intro in `text-caption text-foreground-soft`; one row per step (`flex items-center gap-2`): `AchievementArt` thumb, the text truncated, the fan-out in `text-label text-state-now-foreground tabular-nums`, then `queue.inQueue` in `text-label text-state-done-foreground` when `isQueued`, or an outline compact `Button` `queue.addShort` when `canWrite && canQueue(step, queued)`. No steps: `EmptyValue` `plan.aside.empty`.
+- [x] **Step 7: `ProposalAside.vue`** — props `steps: UnlockNode[]`, `queued: Set<number>`, `canWrite: boolean`, `busy: boolean`; emits `add: [achievement: number]`. A `Card` with `CardHeader`/`CardTitle` "Prossimi passi"; in a `CardContent`, the intro in `text-caption text-foreground-soft`; one row per step (`flex items-center gap-2`): `AchievementArt` thumb, the text truncated, the fan-out in `text-label text-state-now-foreground tabular-nums`, then `queue.inQueue` in `text-label text-state-done-foreground` when `isQueued`, or an outline compact `Button` `queue.addShort` when `canWrite && canQueue(step, queued)`. No steps: `EmptyValue` `plan.aside.empty`.
 
-- [ ] **Step 8: `PlanScreen.vue`**:
+- [x] **Step 8: `PlanScreen.vue`**:
 
 ```ts
 const queue = useQueueStore()
@@ -1416,22 +1416,22 @@ const nodes = computed(() => graph.unlock?.nodes ?? [])
 
   Template: `max-w-300 flex-col gap-4`; `ScreenHeader` (`MapIcon`, `routes.plan`, `plan.intro`); `ProfileError` on `queue.status === Failed` with retry `queue.load()`; with a view: the summary line `righe: N · chieste: M · tirate dentro: K` (`text-caption text-foreground-soft tabular-nums`, only when `readable`), `PlanAlerts` (`@import="queue.importGoals()"`), `QueueError` when `queue.mutationFailed`, and when `readable` a `flex flex-col items-start gap-4 lg:flex-row` holding `QueueCard` (`class="w-full min-w-0 flex-1"`, `@move="queue.move"`, `@remove="queue.remove"`) and `ProposalAside` (`class="w-full lg:w-plan-aside lg:shrink-0"`, `:steps="graph.steps?.steps ?? []"`, `:can-write="queue.view.storeAvailable"`, `@add="queue.add"`); otherwise three `Skeleton`s.
 
-- [ ] **Step 9: route** — `routes.ts` maps `RouteName.Plan` to `PlanScreen`; `routeTable.ts` drops `[RouteName.Plan]` from `routeArrives`; if `placeholder.graph` has no user left, remove it from both message files.
+- [x] **Step 9: route** — `routes.ts` maps `RouteName.Plan` to `PlanScreen`; `routeTable.ts` drops `[RouteName.Plan]` from `routeArrives`; if `placeholder.graph` has no user left, remove it from both message files.
 
-- [ ] **Step 10: verify** — typecheck, lint, format, scan, `ui:test`, each by exit code. Commit `feat(ui): the Plan, a queue you drag and a repair that says where it stopped` and push.
+- [x] **Step 10: verify** — typecheck, lint, format, scan, `ui:test`, each by exit code. Commit `feat(ui): the Plan, a queue you drag and a repair that says where it stopped` and push.
 
 ### Task 7: In the queue, on Next steps and Unlock
 
 **Files:** Modify `ui/src/screens/NextStepsScreen.vue`, `screens/nextSteps/StepCard.vue`, `UnlockScreen.vue`, `screens/unlock/UnlockTable.vue`, `UnlockRow.vue`, `spacing.css`, `utilities.css`
 
-- [ ] **Step 1: tokens** — `--spacing-unlock-queue: 40px;` beside the other Unlock columns; `grid-cols-unlock` gains `var(--spacing-unlock-queue)` as its last column.
-- [ ] **Step 2: Next steps** — the screen reads `useQueueStore()` too and loads both in `useOnActiveProfile(async () => { await Promise.all([graph.load(), queue.load()]) })`; `queued = computed(() => queuedIds(queue.view))`, `canWrite = computed(() => queue.view?.storeAvailable === true)`; `QueueError` under the header when `queue.mutationFailed`. `StepCard` gains props `queued: boolean`, `canAdd: boolean`, `busy: boolean` and emits `add`; under the state badge: `queue.inPlan` in `text-caption text-state-done-foreground` when `queued`, else an outline compact `Button` with `ListPlusIcon` and `queue.add` when `canAdd` (`:disabled="busy"`). The screen passes `:queued="isQueued(step, queued)"`, `:can-add="canWrite && canQueue(step, queued)"`, `@add="queue.add(nodeSlot(step))"`.
-- [ ] **Step 3: Unlock** — the screen loads and reads the queue the same way and shows `QueueError`; `UnlockTable` gains props `queued: Set<number>`, `canWrite: boolean`, `busy: boolean` and emits `add: [achievement: number]`, adds an empty `<span />` to the header, and passes each row `:queued="isQueued(node, queued)"`, `:can-add="canWrite && canQueue(node, queued)"`, `:busy`, `@add="emit('add', nodeSlot(node))"`. `UnlockRow` gains those props and `add`; the slot line becomes `{{ t('graph.slot') }} {{ nodeSlot(node) }}<template v-if="queued"> · {{ t('queue.inQueue') }}</template>`; a last cell `<span class="flex justify-center"><Button v-if="canAdd" :variant="ButtonVariant.Ghost" :size="ButtonSize.IconCompact" :aria-label="t('queue.add')" :disabled="busy" @click="emit('add')"><ListPlusIcon /></Button></span>`.
-- [ ] **Step 4: verify** — typecheck, lint, format, scan, `ui:test` by exit code (the `unlockLayout` test still pins the row height). Commit `feat(ui): in the queue, and one click to put it there, on Next steps and Unlock` and push.
+- [x] **Step 1: tokens** — `--spacing-unlock-queue: 40px;` beside the other Unlock columns; `grid-cols-unlock` gains `var(--spacing-unlock-queue)` as its last column.
+- [x] **Step 2: Next steps** — the screen reads `useQueueStore()` too and loads both in `useOnActiveProfile(async () => { await Promise.all([graph.load(), queue.load()]) })`; `queued = computed(() => queuedIds(queue.view))`, `canWrite = computed(() => queue.view?.storeAvailable === true)`; `QueueError` under the header when `queue.mutationFailed`. `StepCard` gains props `queued: boolean`, `canAdd: boolean`, `busy: boolean` and emits `add`; under the state badge: `queue.inPlan` in `text-caption text-state-done-foreground` when `queued`, else an outline compact `Button` with `ListPlusIcon` and `queue.add` when `canAdd` (`:disabled="busy"`). The screen passes `:queued="isQueued(step, queued)"`, `:can-add="canWrite && canQueue(step, queued)"`, `@add="queue.add(nodeSlot(step))"`.
+- [x] **Step 3: Unlock** — the screen loads and reads the queue the same way and shows `QueueError`; `UnlockTable` gains props `queued: Set<number>`, `canWrite: boolean`, `busy: boolean` and emits `add: [achievement: number]`, adds an empty `<span />` to the header, and passes each row `:queued="isQueued(node, queued)"`, `:can-add="canWrite && canQueue(node, queued)"`, `:busy`, `@add="emit('add', nodeSlot(node))"`. `UnlockRow` gains those props and `add`; the slot line becomes `{{ t('graph.slot') }} {{ nodeSlot(node) }}<template v-if="queued"> · {{ t('queue.inQueue') }}</template>`; a last cell `<span class="flex justify-center"><Button v-if="canAdd" :variant="ButtonVariant.Ghost" :size="ButtonSize.IconCompact" :aria-label="t('queue.add')" :disabled="busy" @click="emit('add')"><ListPlusIcon /></Button></span>`.
+- [x] **Step 4: verify** — typecheck, lint, format, scan, `ui:test` by exit code (the `unlockLayout` test still pins the row height). Commit `feat(ui): in the queue, and one click to put it there, on Next steps and Unlock` and push.
 
 ### Task 8: Looked at, handed on, checked
 
-- [ ] **Step 1: visual check** — `pnpm ui:dev` and a throwaway headless-Chrome script outside the repository (DevTools protocol, as in 3.2 and 3.3a), in the job's temp folder: the Plan's three rows with "chiesta", "serve «…»", "passi fuori dalla coda: 1" and the completed line; a pointer drag of 480 below 69 (55 follows); a drag of 55 to the top (it stays under 480 and the hint names it); `Alt+↑` on 69; removing 55 (480 goes too); adding from the aside; "in coda" and the add buttons on Next steps and Unlock, and the add reaching the Plan; `?queue=empty` and the import; `?queue=unavailable`; `?queue=unreadable`; `?catalog=none`. Each finding fixed with a test where it is logic, recorded in the spec's deviations.
-- [ ] **Step 2: documents** — `docs/STATUS.md` (3.3b ticked, 3.3 closed, the session log: the move's contract fix and why); `DESIGN-BRIEF.md` §7.6 (a drop names the row it lands under: `queueMove(achievement, after)`, and why an index can't be); `docs/frontend-conventions.md` (`lib/plan/`, `components/plan/`, `stores/queue.ts`, `useIpcErrorText`, `ipcErrors.*`, the `Wanted` badge); `CLAUDE.md` (the `plan` module line: a move names the row it lands under; the State paragraph); the spec's deviations while executing; this plan's checkboxes.
-- [ ] **Step 3: production build** — `pnpm --filter ui build`: no fixture, payload or pack image in `ui/dist`.
+- [x] **Step 1: visual check** — `pnpm ui:dev` and a throwaway headless-Chrome script outside the repository (DevTools protocol, as in 3.2 and 3.3a), in the job's temp folder: the Plan's three rows with "chiesta", "serve «…»", "passi fuori dalla coda: 1" and the completed line; a pointer drag of 480 below 69 (55 follows); a drag of 55 to the top (it stays under 480 and the hint names it); `Alt+↑` on 69; removing 55 (480 goes too); adding from the aside; "in coda" and the add buttons on Next steps and Unlock, and the add reaching the Plan; `?queue=empty` and the import; `?queue=unavailable`; `?queue=unreadable`; `?catalog=none`. Each finding fixed with a test where it is logic, recorded in the spec's deviations.
+- [x] **Step 2: documents** — `docs/STATUS.md` (3.3b ticked, 3.3 closed, the session log: the move's contract fix and why); `DESIGN-BRIEF.md` §7.6 (a drop names the row it lands under: `queueMove(achievement, after)`, and why an index can't be); `docs/frontend-conventions.md` (`lib/plan/`, `components/plan/`, `stores/queue.ts`, `useIpcErrorText`, `ipcErrors.*`, the `Wanted` badge); `CLAUDE.md` (the `plan` module line: a move names the row it lands under; the State paragraph); the spec's deviations while executing; this plan's checkboxes.
+- [x] **Step 3: production build** — `pnpm --filter ui build`: no fixture, payload or pack image in `ui/dist`.
 - [ ] **Step 4: `sh scripts/check`** → "all green", exit 0. Commit `docs: cycle 3.3b lands, the Plan and the queue` and push; merge `feature/design-system-screens` into `develop` with `--no-ff` ("merge: screens 3.3b, the Plan and the queue, into develop") through a temporary worktree, push `develop`, fast-forward the feature branch and push it.
