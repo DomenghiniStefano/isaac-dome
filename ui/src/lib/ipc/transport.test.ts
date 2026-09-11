@@ -13,7 +13,8 @@ describe('call, outside Tauri in development', () => {
   })
 
   it('rejects a command no fixture answers instead of resolving undefined', async () => {
-    await expect(call(Command.Unlock)).rejects.toThrow(Command.Unlock)
+    // Plan has no fixture until sub-project 3.3b; unlock gained one with 3.3a.
+    await expect(call(Command.Plan)).rejects.toThrow(Command.Plan)
   })
 })
 
