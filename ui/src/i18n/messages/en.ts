@@ -53,12 +53,59 @@ export const en: MessageSchema = {
   },
   placeholder: {
     graph: 'Arrives with Next steps, Unlock and Plan.',
-    completion: 'Arrives with the Completion screen.',
     collection: 'Arrives with the Collection screen.',
     runArchive: 'Arrives with the run archive (M4).',
     wiki: 'Arrives with wiki pages in tabs and search.',
     settings: 'Arrives with Settings and About.',
     tabs: 'Arrives with tabs that survive closing.',
+  },
+  completion: {
+    intro:
+      'Every character, every mark, and how much of it the save lets us read.',
+    kpi: {
+      started: 'marks started',
+      startedExplain:
+        'Cells with at least one mark, normal or hard, among those the save lets us read. Unreadable cells stay out of the denominator.',
+      both: 'normal + hard',
+      bothExplain: 'Cells holding both the normal and the hard mark.',
+      cells: 'cells',
+      complete: 'complete characters',
+      completeExplain:
+        'Characters who started every one of their readable cells: a character with unreadable cells is complete over fewer columns.',
+      unknown: 'unreadable',
+      unknownExplain:
+        "Cells whose column isn't located in the save for that character. It doesn't mean \"never done\": we can't read it.",
+    },
+    card: {
+      title: 'Marks matrix',
+    },
+    legend: {
+      empty: 'never done',
+      normal: 'normal',
+      hard: 'hard',
+      third: 'third level',
+      unknown: 'unreadable',
+    },
+    grid: {
+      character: 'Character',
+      started: 'started',
+      unreadable: 'unreadable',
+      columnTotals: 'Characters with the mark',
+    },
+    groups: {
+      base: 'Base characters',
+      tainted: 'Tainted',
+    },
+    cell: {
+      empty: 'never done',
+      normal: 'normal',
+      hard: 'hard',
+      both: 'normal and hard',
+      unknown: "unreadable: the column isn't located for this character",
+      unexpected: 'a value outside the expected ones:',
+    },
+    nothingReadable:
+      'The save lets us read no mark: the counters section is missing or cut short.',
   },
   gate: {
     needsProfile:

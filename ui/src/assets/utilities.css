@@ -22,6 +22,21 @@
   );
 }
 
+/* The completion matrix: the name column, one mark cell per boss, the row total. The column
+   count is data, bound from the template as --matrix-columns. */
+@utility grid-cols-matrix {
+  grid-template-columns:
+    var(--spacing-matrix-name)
+    repeat(var(--matrix-columns), var(--spacing-mark-cell))
+    var(--spacing-matrix-total);
+}
+
+/* A column header read bottom to top. */
+@utility writing-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
 @utility hatch-unknown {
   background-image: repeating-linear-gradient(
     45deg,

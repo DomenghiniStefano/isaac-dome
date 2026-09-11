@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ChevronUpIcon, TriangleAlertIcon } from '@lucide/vue'
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import type { Cell } from '@/lib/ipc/types'
@@ -21,9 +21,19 @@ const third = computed(() => {
   return (v.kind === 'empty' || v.kind === 'marked') && v.third
 })
 
+// A symbol that fails to load (a layer a patch renamed, an archive gone) drops the cell to
+// the fallback outfit instead of a broken-image glyph; new art tries again.
+const failed = ref(false)
+watch(
+  () => props.art,
+  () => {
+    failed.value = false
+  },
+)
+
 const symbol = computed(() => {
   const v = visual.value
-  if (v.kind !== 'marked' || !props.art) return null
+  if (v.kind !== 'marked' || !props.art || failed.value) return null
   return v.tier === MarkTier.Hard ? props.art.hard : props.art.normal
 })
 
@@ -69,6 +79,7 @@ const accessibleName = computed(() => {
         :src="symbol"
         alt=""
         class="size-mark-symbol pixelated"
+        @error="failed = true"
       />
       <template v-else>
         <span class="absolute inset-x-0 bottom-0 h-(--mark-bar) bg-primary" />
