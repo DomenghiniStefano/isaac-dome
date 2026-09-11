@@ -216,6 +216,27 @@ dragging 55 with 480, a drag up stopping under 480 with its hint, `Alt+↑`, rem
 from the aside, "in coda" and the add button on Next steps and Unlock, each `?queue=` scenario
 and `?catalog=none`.
 
+## Deviations recorded while planning
+
+- **The fixture's `storeUnavailable` reason is the app's own text**, `store_reason` in
+  `crates/app/src/lib.rs` — "database from a newer version (3 > 2)" — not the Italian wording
+  quoted in Decision 8.
+
+## Deviations recorded while executing
+
+- **The pack's images are indexed once.** The store's test timed out, and a measurement found
+  why: every graph answer with art took 1,728 ms, because `packIconUrl` scanned all 1,500 image
+  paths for each achievement and item link. That cost has been on every Unlock, Next steps and
+  (now) queue command of the development server since 3.3a. Indexed by prefix: 2 ms.
+- **The store's test imports the graph fixture up front**: the first command otherwise pays for
+  loading the 1,500 images inside its five seconds.
+- **The proposal names what a step unlocks** ("The Lost"), falling back to the achievement's
+  text, found by looking: at `plan-aside` every achievement text truncated to "You …". The
+  fan-out moves to a second line and the add button to an icon.
+- **The grip's label has no arrow glyphs**: the scanner refused ↑ and ↓, which the Determination
+  font doesn't draw; it says "Alt e freccia su o giù".
+- **`placeholder.graph` is gone**: no route arrives with it any more.
+
 ## Out of scope for this half
 
 - **Saved goals as a set**: showing, adding and removing `PlanView.goals`. The queue stands
