@@ -242,6 +242,15 @@ describe('sortNodes', () => {
     expect(slots(sortNodes(nodes, UnlockSort.FanOut))).toEqual([2, 1, 3])
   })
 
+  it('puts done nodes after the rest: what is done opens nothing more for you', () => {
+    const nodes = [
+      node(1, { done: true, graph: computed(true, 0, 10) }),
+      node(2, { graph: computed(true, 0, 3) }),
+      node(3, { graph: computed(false, 2, 1) }),
+    ]
+    expect(slots(sortNodes(nodes, UnlockSort.FanOut))).toEqual([2, 3, 1])
+  })
+
   it('puts the fewest steps first, then partial, then done', () => {
     const nodes = [
       node(1, { graph: computed(false, 2) }),
