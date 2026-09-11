@@ -4,6 +4,7 @@ mod catalog_view;
 mod goals;
 mod graph;
 mod icon;
+mod mark_art;
 mod marks;
 mod profile;
 mod queue;
@@ -22,6 +23,7 @@ pub use graph::{
     RequirementView, StepsBasis, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
 pub use icon::{icon_source, IconRef, MarkTier, ICON_SCHEME};
+pub use mark_art::{mark_source, MarkFrames, LOBBY_ANM2, WIDGET_ANM2};
 pub use marks::{
     character_for, counter_index, marks_matrix, Cell, CharacterGroup, CharacterRow, MarksMatrix,
     MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
