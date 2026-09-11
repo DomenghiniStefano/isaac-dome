@@ -6,6 +6,7 @@ import {
   canQueue,
   isQueued,
   originRows,
+  proposalLabel,
   queueSummary,
   queuedIds,
   rowId,
@@ -60,6 +61,16 @@ describe('the queue, read', () => {
   it("finds an achievement's text among the nodes", () => {
     expect(achievementText(nodes, 1)).toBe('You unlocked "Magdalene"')
     expect(achievementText(nodes, 9999)).toBeNull()
+  })
+})
+
+describe('proposalLabel', () => {
+  it('names what a step unlocks, which a narrow column can still show', () => {
+    expect(proposalLabel(node(484))).toBe('The Lost')
+  })
+
+  it("falls back to the achievement's text when it unlocks nothing catalogued", () => {
+    expect(proposalLabel(node(69))).toBe('!Platinum God! OMG!')
   })
 })
 
