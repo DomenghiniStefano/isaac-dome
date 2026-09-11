@@ -7,6 +7,7 @@ import CompletionScreen from '@/screens/CompletionScreen.vue'
 import NextStepsScreen from '@/screens/NextStepsScreen.vue'
 import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
 import ProfileScreen from '@/screens/ProfileScreen.vue'
+import UnlockScreen from '@/screens/UnlockScreen.vue'
 import {
   RouteName,
   routeArrives,
@@ -30,6 +31,7 @@ declare module 'vue-router' {
 const screens: Partial<Record<RouteName, Component>> = {
   [RouteName.NextSteps]: NextStepsScreen,
   [RouteName.Completion]: CompletionScreen,
+  [RouteName.Unlock]: UnlockScreen,
   [RouteName.Profile]: ProfileScreen,
 }
 

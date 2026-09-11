@@ -136,6 +136,12 @@ export const it = {
       challenge: 'sfida',
       nothing: 'niente di catalogato',
     },
+    stateName: {
+      done: 'fatto',
+      now: 'sbloccabile ora',
+      blocked: 'bloccato',
+      partial: 'grafo parziale',
+    },
     originNone: 'non indicata',
     unknownAchievement: 'Achievement sconosciuto',
     slot: 'slot',
@@ -149,6 +155,51 @@ export const it = {
       'Senza il gioco installato non si può sapere cosa sblocca cosa: la lista è vuota di proposito, non cinque righe indovinate.',
     nothingNow:
       "Niente è sbloccabile adesso: è tutto fatto, oppure tutto aspetta qualcos'altro.",
+  },
+  unlock: {
+    intro:
+      'Ogni nodo del grafo, filtrabile. Un filtro conta più degli altri: sbloccabile ora.',
+    rows: 'righe',
+    search: 'cerca nome, condizione o cosa sblocca',
+    sortBy: 'ordina per',
+    sort: {
+      fanOut: 'sblocca',
+      steps: 'passi mancanti',
+      name: 'nome',
+    },
+    facets: 'Faccette',
+    noFilters: 'nessun filtro',
+    activeFilters: 'filtri attivi',
+    reset: 'Azzera',
+    resetFilters: 'Azzera i filtri',
+    noResults: 'Nessuna riga con questi filtri.',
+    facet: {
+      state: 'Stato',
+      unlocks: 'Cosa sblocca',
+      origin: 'DLC di origine',
+      character: 'Personaggio richiesto',
+    },
+    columns: {
+      achievement: 'Achievement',
+      unlocks: 'Cosa sblocca',
+      condition: 'Condizione',
+      state: 'Stato',
+      fanOut: 'Sblocca',
+    },
+    unlocksNothing: 'niente di catalogato',
+    noCondition: 'nessuna condizione nel file',
+    diagnostics: {
+      noCatalogTitle: 'Manca il catalogo',
+      noCatalog:
+        'Senza il gioco installato gli achievement non hanno nome né condizione: le righe dicono solo quali slot sono fatti.',
+      noAchievementSectionTitle: 'La sezione degli achievement non si legge',
+      noAchievementSection:
+        'Zero righe non vuol dire zero achievement fatti: vuol dire che quella parte del salvataggio non è stata letta.',
+      slotsBeyondCatalog:
+        'slot del salvataggio oltre il catalogo, mostrati come achievement sconosciuti',
+      catalogBeyondSlots:
+        'achievement del catalogo oltre il salvataggio, che non compaiono',
+    },
   },
   gate: {
     needsProfile:
