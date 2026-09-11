@@ -214,6 +214,28 @@ catalog.
   fixture follows the code, the Unlock screen draws those rows under the `noCatalog` alert,
   and the brief's line is corrected when this half lands.
 
+## Deviations recorded while executing
+
+- **The state is a toggle group, not four cards.** Four clickable cards would need a hand-made
+  button; the `ToggleGroup` primitive already toggles several values, by keyboard too, and
+  carries each state's name, count and square. The drawer holds the other three facets.
+- **A state has two wordings**: "bloccato da N" on the badge, where the number follows, and a
+  plain name ("bloccato") on the toggle and the chips (`graph.stateName`).
+- **The fan-out sort puts done nodes last**, found by looking: the first row was a done node
+  with a fan-out of 10, while what is done opens nothing more for the player.
+- **The drawer's summary reads "filtri attivi: N"**, found by looking at "1 filtri attivi".
+- **The progress gate waits** while the profile is still loading, instead of asking for a
+  choice it doesn't know is needed — found by looking, a flaw of 3.1 the slower graph fixtures
+  made visible.
+- **The graph's fixture images live in `fixtures/graphArt.ts`** and load only when a screen
+  asks for the graph: importing some 1,500 images on every read of the profile made each page
+  load wait for seconds.
+- **The Partial badge had no classes for four tasks.** Each task's typecheck was filtered with
+  `grep "error TS"`, which `vue-tsc`'s coloured output never matches; `scripts/check`, which
+  reads the exit code, caught it. Checks are judged by exit code since.
+- **A shared `useOnActiveProfile` composable** reloads Completion, Next steps and Unlock when
+  the active profile changes, instead of three copies of the same watch.
+
 ## Out of scope for this half
 
 - **Plan and the queue**, and "in the queue" / "add to the queue" on these screens (3.3b).
