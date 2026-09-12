@@ -40,11 +40,11 @@ const current = (s: NavSection) =>
     class="group flex h-navbar items-center gap-2.5 border-b border-hairline bg-navbar pr-2.5"
   >
     <div
-      class="flex h-full w-brand shrink-0 items-center gap-2 border-r border-hairline pl-3"
+      class="flex h-full w-brand min-w-0 shrink items-center gap-2 border-r border-hairline pl-3"
     >
       <BrandMark class="text-primary group-data-[focused=false]:text-border" />
       <span
-        class="text-control text-foreground group-data-[focused=false]:text-faint-foreground"
+        class="truncate text-control text-foreground group-data-[focused=false]:text-faint-foreground"
         >{{ AppName }}</span
       >
     </div>

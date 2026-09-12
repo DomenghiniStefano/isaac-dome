@@ -824,7 +824,7 @@ B23, B29's bar), or for its own sub-project (B22 with 3.6, B26 as 3.5c, B27 with
 ### 2026-09-12 — the owner's first-launch review, as backlog entries
 
 The review the "(delegated)" decisions were waiting for, dictated screen by screen and
-written up as B16–B29 in `docs/BACKLOG.md`:
+written up as B16–B33 in `docs/BACKLOG.md`:
 
 - [x] **Chrome**: the brand mark becomes the app icon, in `primary` (B16); no white flash at
       launch, a splash with the mark (B18); About is a dialog, not a page (B25).
@@ -845,6 +845,14 @@ written up as B16–B29 in `docs/BACKLOG.md`:
       drops the `tainted` flag the marks matrix already uses (B28).
 - [ ] **Collection's filter**: "Faccette" goes, and so do values with nothing behind them
       (B29).
+- [ ] **Plan**: dragging a row lifts the whole card above the page, the red marker still
+      names the landing, and one composable does the drag for the queue and the tab strip
+      (B31).
+- [ ] **Next steps**: a name that says what the list is ("Obiettivi consigliati"), an intro
+      in the player's words, and cards that read what, how, why, add (B32).
+- [ ] **Backings from the game**: the achievement drawing sits on the sheet the game puts
+      behind it, to be found in the files (B33); Completion's cell on the sheet the design
+      already took from the game (B19, confirmed).
 
 ### 2026-09-11 (late night) — the Collection
 

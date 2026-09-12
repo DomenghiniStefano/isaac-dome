@@ -32,6 +32,7 @@ export const en: MessageSchema = {
     live: 'Live',
     wiki: 'Wiki',
     profile: 'Game profile',
+    appearance: 'Appearance',
     tabsSettings: 'Tabs',
     about: 'About',
   },
@@ -194,6 +195,27 @@ export const en: MessageSchema = {
       missingTitle: "The wiki dataset didn't load",
       missing:
         "The binary carries a dataset that doesn't read: the Wiki has no pages to show.",
+    },
+  },
+  appearance: {
+    intro:
+      'Choose how large the interface is. It moves everything at once — text, icons, rows, the window — and it stays that way between launches.',
+    scaleTitle: 'Size',
+    scaleLabel: 'Interface size',
+    preview: 'Preview',
+    previewHint:
+      'It stays here while you scroll: the app, drawn at the size you picked.',
+    shortcut: 'From any screen:',
+    shortcutReset: 'back to 100%',
+    saveFailedTitle: "The size wasn't saved",
+    saveFailed:
+      "The interface is already this size, but we couldn't write it down: the next launch starts as it was.",
+    sample: {
+      kpi: 'Achievements done',
+      item: 'The Sad Onion',
+      itemHint: 'passive item · quality 2',
+      button: 'A button',
+      badge: 'unlockable now',
     },
   },
   about: {
