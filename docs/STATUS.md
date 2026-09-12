@@ -415,18 +415,23 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
                   `docs/superpowers/specs/2026-09-11-screens-collection-design.md`, plan
                   `docs/superpowers/plans/2026-09-11-screens-collection.md`, branch
                   `feature/screens-collection`
-            - [ ] 3.5 Wiki in tabs, search — spec
+            - [x] 3.5 Wiki in tabs, search (2026-09-12, both halves) — spec
                   `docs/superpowers/specs/2026-09-12-screens-wiki-search-design.md`, branch
-                  `feature/screens-wiki-search`, two halves:
+                  `feature/screens-wiki-search` for A, `feature/screens-search` for B:
                   - [x] 3.5a the Wiki in tabs (2026-09-12) — the landing with the dataset's
                         provenance, a category's list, a page in a tab (figure, infobox per
                         kind, sections, references that open in place or beside), the
                         `wiki_index` command and `IconRef::Page`. Plan
                         `docs/superpowers/plans/2026-09-12-screens-wiki.md`
-                  - [ ] 3.5b search — the `Ctrl+K` palette and the Search screen (B5).
-                        **Runs after 3.5c**: the palette and the Search screen are screens,
-                        and the scale has to rewrite the tokens before a screen is built on
-                        them
+                  - [x] 3.5b search (2026-09-12) — one index over the catalog's names, the
+                        achievements' conditions, the wiki's titles and the body of its
+                        sections; `search(query, limit)` with the wiki half built once;
+                        six tiers with the profile inside the ranking; the `Ctrl+K` palette
+                        and the Search screen, whose rows are **destinations** and not hits.
+                        B5 closed, and measured rather than assumed: 1,727 pages indexed in
+                        15 ms, a query in 15–19 ms, so the FTS5 fallback is not needed. Plan
+                        `docs/superpowers/plans/2026-09-12-screens-search.md`, report
+                        `…-screens-search-report.md`, branch `feature/screens-search`
             - [x] **3.5c Interface scale (2026-09-12, B26)** — pulled ahead of 3.6 on the
                   owner's request; numbered `c` because `b` was already the search half
                   of 3.5, which it now precedes. Spec
@@ -789,6 +794,47 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-12 (night) — one index, two ways to ask it
+
+On `feature/screens-search`, sub-project 3.5b, the half of 3.5 that waited for the scale to
+rewrite the tokens.
+
+- [x] **One index, two sources, one document per target.** The wiki side is flattened once —
+      each page a title plus one string per section, `ref` labels, table cells and nested list
+      blocks included, `edition` inlines unwrapped — and the catalog side is read at every
+      query, never cached, because "the game isn't installed" is not an answer to keep. A
+      target both sides know is **one** row: the catalog's name is its title, the wiki's an
+      alias when it differs.
+- [x] **Six tiers, then the profile, then the name.** "Not done before done" is what makes the
+      profile ranking information rather than a facet (B5). Every word has to be in the **same**
+      field: "monstro spits" finds nothing, and that is the point — no single field holds both.
+- [x] **Measured, not assumed**, which is what B5 asked for: 1,727 pages indexed in **15 ms**,
+      "brimstone" answered in **19 ms** over the whole dataset and the installed catalog, in a
+      debug build. **FTS5 in `store` is not needed**; the timings are printed by
+      `crates/ipc/tests/search_real.rs` and pinned by nothing, because a time is a machine's.
+- [x] **A result is not a row, it is the destinations it opens**: a wiki page, an Unlock row,
+      a Collection row, and the screens the frontend names itself. The palette caps each group
+      at five and the screen shows them all; the backend's order is never re-sorted.
+- [x] **Three corrections to the spec, written back into it**: `SearchDiagnostic` is a bare
+      string (the repo has no tagged unit enum, and a second convention is how a `switch` falls
+      into no branch); `Command` gains two props, because the typed text has to leave the
+      primitive to be debounced; and the search state is a **composable**, not a store — the
+      palette and the screen ask different questions at once.
+- [x] **A defect older than this sub-project, found by the eye and fixed at the root**: a
+      virtualized table never measured again when the interface changed size. 3.5c unified the
+      number the rows are positioned with, but nothing told the virtualizer to re-measure, so
+      changing the scale with Unlock already open drew 70px rows 80px apart — overlapping, with
+      nothing failing. All four tables share one composable now, and the watch is stated in a
+      test.
+- [x] **Three more the eye found**: a palette row opened twice (Reka replays the click, so the
+      row opens on `select` and `Ctrl` is read from the window); a Collection row opened the
+      list at "0 / 721", because the screen's default states outrank a name the user just asked
+      for; and every row carried the same `non noto` badge, which is B29's case again — a mark
+      is drawn only when it tells that row apart.
+- [ ] **Not seen in a real Tauri window**: the command against the real index, and the ranking
+      on a profile that has marks. The development server ranks synthetically and says so in the
+      console; the ranking that counts is Rust's, and the tests pin that one.
 
 ### 2026-09-12 (evening) — the interface scales
 

@@ -173,7 +173,7 @@ milestone M2, logged in `STATUS.md`.
 
 ---
 
-## B5 — Global search: one thing searches all of them (implementation, after design)
+## B5 — Global search: one thing searches all of them ✅ closed 2026-09-12
 
 Logged on 2026-09-06, an explicit request. It has to find **anything the app knows about**:
 an item, an achievement, a challenge, a character, a boss, a wiki page and what's
@@ -213,7 +213,28 @@ wiki link".
 
 The index, the IPC command that queries it, and the two views. Nothing else.
 
-### Questions the task has to close
+### Closed as sub-project 3.5b
+
+Implemented on 2026-09-12 (`docs/superpowers/plans/2026-09-12-screens-search-report.md`), and
+every question below was answered where it said it would be:
+
+- **The index lives in `crates/ipc/src/search.rs`**, pure, with the wiki half built once and
+  held in managed state and the catalog half read per query — because "the game isn't
+  installed" is never a cached answer.
+- **Measured, not assumed**, as this entry asked: 1,727 pages flattened in **15 ms**, a query
+  answered in **15–19 ms** over the whole dataset and the installed catalog, in a debug build.
+  **FTS5 in `store` is not needed**, and nothing in the contract would change if it ever were.
+- **Ranking**: six tiers over the fields, then the profile ("not done" before "done"), then the
+  name — a total order the tests pin.
+- **The language**: names stay English and screens are messages; the Screens rows are matched
+  against the translated label, so one query hits both.
+- **Degrading**: no catalog, no dataset, no profile and an unread section are five diagnostics
+  in the payload, never an error.
+- **The type on the IPC**: `SearchMatch` is tagged with `rename_all_fields` and its JSON shape
+  is pinned; `SearchDiagnostic` and `ProgressMark` are fieldless, so they travel as bare
+  strings — the correction this entry's own recommendation needed.
+
+### Questions the task had to close
 
 - **Where the index lives.** Recommendation: in `ipc`, built once from the catalog and
   `wiki::Dataset::embedded()`, held in managed state like the catalog. It stays a pure crate
