@@ -88,7 +88,10 @@ const fileWith = (files: Record<string, string>, stem: string): string | null =>
   Object.entries(files).find(([path]) => path.includes(`/${stem}_`))?.[1] ??
   null
 
-export const iconOf = (target: Target, bossId: number | null): string | null => {
+export const iconOf = (
+  target: Target,
+  bossId: number | null,
+): string | null => {
   switch (target.kind) {
     case 'item':
     case 'trinket': {
