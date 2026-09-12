@@ -429,6 +429,7 @@ fn collection(
     let achievements = save.flags(Kind::Achievements);
     Ok(ipc::collection_view(
         catalog,
+        wiki::Dataset::embedded().ok(),
         items.as_deref(),
         achievements.as_deref(),
         icon_url,

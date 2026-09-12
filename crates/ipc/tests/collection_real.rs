@@ -21,7 +21,13 @@ fn every_listed_collectible_reads_its_own_slot() {
     };
     let items = save.flags(Kind::Items).expect("section 4");
     let achievements = save.flags(Kind::Achievements);
-    let v = ipc::collection_view(Some(&c), Some(&items), achievements.as_deref(), |_| None);
+    let v = ipc::collection_view(
+        Some(&c),
+        None,
+        Some(&items),
+        achievements.as_deref(),
+        |_| None,
+    );
     for item in &v.items {
         assert_eq!(
             item.in_collection,
