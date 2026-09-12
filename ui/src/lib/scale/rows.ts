@@ -10,8 +10,14 @@ export const RootFontPx = 16
 // the rows would simply overlap. So the number is derived from the same value the token is.
 export const RowWideRem = 2.5
 
+// A search result carries a second line: taller than a table row, and measured the same way.
+export const RowResultRem = 3.5
+
 export const remToPx = (rem: number, percent: number): number =>
   rem * RootFontPx * scaleFactor(percent)
 
 export const rowWidePx = (percent: number): number =>
   remToPx(RowWideRem, percent)
+
+export const rowResultPx = (percent: number): number =>
+  remToPx(RowResultRem, percent)
