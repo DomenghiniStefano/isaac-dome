@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useVirtualizer } from '@tanstack/vue-virtual'
 import { computed, ref, watch } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
@@ -22,14 +21,13 @@ import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
 import ScreenHeader from '../ScreenHeader.vue'
 import { pageId } from './wikiLabels'
+import { useScaledRows } from '@/composables/useScaledRows'
 import { rowWidePx } from '@/lib/scale/rows'
-import { useSettingsStore } from '@/stores/settings'
 
 const props = defineProps<{ category: WikiCategory }>()
 const wiki = useWikiStore()
 const tabs = useTabsStore()
 const { t } = useMessages()
-const settings = useSettingsStore()
 
 // The filter belongs to this screen and to this category: a tab that moves to another
 // category starts clean.
@@ -62,14 +60,11 @@ const scroller = ref<HTMLElement | null>(null)
 
 // Up to some 900 pages in a category, drawn as many as fit plus a margin, the same rule as
 // Unlock and the Collection.
-const virtualizer = useVirtualizer(
-  computed(() => ({
-    count: pages.value.length,
-    getScrollElement: () => scroller.value,
-    estimateSize: () => rowWidePx(settings.scale),
-    overscan: 8,
-  })),
-)
+const virtualizer = useScaledRows({
+  count: () => pages.value.length,
+  scroller,
+  rowPx: rowWidePx,
+})
 const visible = computed(() =>
   virtualizer.value.getVirtualItems().flatMap((entry) => {
     const page = pages.value[entry.index]

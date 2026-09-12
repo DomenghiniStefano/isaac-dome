@@ -30,29 +30,29 @@ const iconUrl = computed(() =>
   props.row.kind === 'hit' ? props.row.hit.iconUrl : null,
 )
 
-// A hit's mark, when it has one: a boss or a character has no slot to read.
-const mark = computed(() =>
-  props.row.kind === 'hit' && props.row.hit.progress !== ProgressMark.None
+// The mark is drawn only when it says something about *this* row. `none` is a boss or a
+// character, which has no slot anywhere; `unknown` reads the same on every row of the answer —
+// with no profile that is all of them — and what it would say is already said once, by the
+// diagnostic (`docs/BACKLOG.md` B29: a value with nothing behind it isn't listed).
+type Told = typeof ProgressMark.Done | typeof ProgressMark.Pending
+
+const isTold = (p: ProgressMark): p is Told =>
+  p === ProgressMark.Done || p === ProgressMark.Pending
+
+const mark = computed((): Told | null =>
+  props.row.kind === 'hit' && isTold(props.row.hit.progress)
     ? props.row.hit.progress
     : null,
 )
 
-const markVariant: Record<
-  Exclude<ProgressMark, typeof ProgressMark.None>,
-  BadgeVariant
-> = {
+const markVariant: Record<Told, BadgeVariant> = {
   [ProgressMark.Done]: BadgeVariant.Done,
   [ProgressMark.Pending]: BadgeVariant.Now,
-  [ProgressMark.Unknown]: BadgeVariant.Unknown,
 }
 
-const markText: Record<
-  Exclude<ProgressMark, typeof ProgressMark.None>,
-  MessageKey<MessageSchema>
-> = {
+const markText: Record<Told, MessageKey<MessageSchema>> = {
   [ProgressMark.Done]: 'search.progress.done',
   [ProgressMark.Pending]: 'search.progress.pending',
-  [ProgressMark.Unknown]: 'search.progress.unknown',
 }
 
 interface Detail {

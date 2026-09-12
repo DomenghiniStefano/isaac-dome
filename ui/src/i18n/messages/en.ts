@@ -215,7 +215,6 @@ export const en: MessageSchema = {
     progress: {
       done: 'done',
       pending: 'to do',
-      unknown: 'unknown',
     },
     hint: {
       open: 'open',
@@ -228,15 +227,14 @@ export const en: MessageSchema = {
       noAchievementSectionTitle: 'Achievement section not read',
       noCollectionSectionTitle: 'Collection section not read',
       noProfile:
-        'No profile chosen: the results do not say what you have done.',
+        'The results do not say what you have already done: choose one in the settings.',
       noCatalog:
-        'Game not installed: only wiki titles and text are searched, with no pictures.',
-      noWiki:
-        "The wiki dataset did not load: only the game's names are searched, and no result opens a page.",
+        'Only wiki titles and text are searched, with no pictures, and no result opens Unlock or the Collection.',
+      noWiki: "Only the game's names are searched, and no result opens a page.",
       noAchievementSection:
-        'The achievement section did not read: what is done is unknown for achievements.',
+        'What is done is unknown for achievements: unread is not undone.',
       noCollectionSection:
-        'The collection section did not read: what you already have is unknown for items.',
+        'What you already have is unknown for items: unread is not not-found.',
     },
   },
   appearance: {

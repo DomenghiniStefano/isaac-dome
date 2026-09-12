@@ -50,7 +50,7 @@ const rows: Row[] = [
         matched: 'Treasure',
         after: ' Room',
       },
-      progress: 'unknown',
+      progress: 'none',
     }),
     location: { name: RouteName.Wiki },
   },
