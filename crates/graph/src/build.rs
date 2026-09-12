@@ -198,6 +198,24 @@ impl Graph {
         }
     }
 
+    /// A graph whose nodes carry requirements directly, for tests about evaluation rather
+    /// than about building. Prerequisites stay empty: these nodes are held by the profile,
+    /// not by other achievements.
+    pub fn from_requirements_for_tests(rows: &[(u32, Vec<Requirement>)]) -> Graph {
+        Graph {
+            nodes: rows
+                .iter()
+                .map(|(achievement, requirements)| Node {
+                    achievement: *achievement,
+                    requirements: requirements.clone(),
+                    prerequisites: Vec::new(),
+                    unknown: Vec::new(),
+                })
+                .collect(),
+            diagnostics: Vec::new(),
+        }
+    }
+
     pub fn nodes(&self) -> &[Node] {
         &self.nodes
     }

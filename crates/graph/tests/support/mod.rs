@@ -73,7 +73,7 @@ pub fn series_evals() -> Option<Vec<Era>> {
         let Some(flags) = s.flags(Kind::Achievements) else {
             continue;
         };
-        let e = g.evaluate(Some(&flags));
+        let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
         let infos: BTreeMap<u32, NodeInfo> = g
             .nodes()
             .iter()

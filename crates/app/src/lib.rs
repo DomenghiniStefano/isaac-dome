@@ -381,7 +381,7 @@ fn unlock(
     let resources = resources.get();
     let catalog = resources.and_then(|rs| state.get_or_build(rs));
     let g = catalog.and_then(|c| graph.get(c));
-    let eval = g.map(|g| g.evaluate(flags.as_deref()));
+    let eval = g.map(|g| g.evaluate(&graph::FlagsOnly(flags.as_deref())));
     Ok(ipc::unlock_view(
         catalog,
         flags.as_deref(),
@@ -576,7 +576,7 @@ fn queue_add(
 ) -> Result<ipc::QueueView, IpcError> {
     let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
     queue_mutate(&app, &store, &pieces, |q, g, flags| {
-        let chain = g.missing_chain(achievement, flags);
+        let chain = g.missing_chain(achievement, &graph::FlagsOnly(flags));
         let deps = GraphDeps::new(g, flags, &ids_for(q, achievement, &chain));
         q.enqueue(achievement, &chain, &deps);
     })?;
@@ -654,7 +654,7 @@ fn queue_import_goals(
             let Some(achievement) = ipc::achievement_unlocking(c, target) else {
                 continue;
             };
-            let chain = g.missing_chain(achievement, flags);
+            let chain = g.missing_chain(achievement, &graph::FlagsOnly(flags));
             let deps = GraphDeps::new(g, flags, &ids_for(q, achievement, &chain));
             q.enqueue(achievement, &chain, &deps);
         }

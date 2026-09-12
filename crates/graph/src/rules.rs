@@ -68,8 +68,8 @@ pub struct Corrections {
     pub verdicts: BTreeMap<String, Verdict>,
 }
 
-/// Exactly three verdicts, and no fourth. A target with no verdict is not "no
-/// prerequisite": it stays unknown, and the node that carries it drops to `Partial`.
+/// A closed list, and every addition to it is a decision. A target with no verdict is not
+/// "no prerequisite": it stays unknown, and the node that carries it drops to `Partial`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub enum Verdict {
@@ -102,7 +102,7 @@ pub enum Verdict {
 }
 
 /// The twelve columns of the completion matrix, in the game's own order.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub enum MarkColumn {
     MomsHeart,

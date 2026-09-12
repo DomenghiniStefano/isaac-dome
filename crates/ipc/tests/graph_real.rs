@@ -105,7 +105,7 @@ fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
     let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let g = graph::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
-    let e = g.evaluate(Some(&flags));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
     let v = unlock_view(
         Some(&c),
         Some(&flags),
