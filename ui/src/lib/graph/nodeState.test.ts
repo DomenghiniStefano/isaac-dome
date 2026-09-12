@@ -73,17 +73,22 @@ describe('stateCounts on the reference profile', () => {
 })
 
 describe('missingGroups', () => {
+  // A tainted character's name comes from a message; the stub prints the key and the name.
+  const t = (key: string, params?: Record<string, unknown>) =>
+    params ? `${key}:${params.name}` : key
+
   it('groups what stands in the way by kind, in a fixed order, names kept', () => {
     expect(
       missingGroups(
         node({
           missing: [
             { kind: 'unknown', label: 'Collect' },
-            { kind: 'character', id: 10, name: 'The Lost' },
+            { kind: 'character', id: 10, name: 'The Lost', tainted: false },
             { kind: 'unknown', label: 'ending' },
             { kind: 'item', itemKind: 'passive', id: 1, name: 'The Sad Onion' },
           ],
         }),
+        t,
       ),
     ).toEqual([
       { kind: RequirementKind.Character, names: ['The Lost'] },
@@ -101,6 +106,7 @@ describe('missingGroups', () => {
             { kind: 'boss', id: 6, name: 'Mom' },
           ],
         }),
+        t,
       ),
     ).toEqual([
       { kind: RequirementKind.Boss, names: ['Mom'] },
@@ -109,6 +115,30 @@ describe('missingGroups', () => {
   })
 
   it('has nothing to say when nothing is missing', () => {
-    expect(missingGroups(node({}))).toEqual([])
+    expect(missingGroups(node({}), t)).toEqual([])
+  })
+})
+
+describe('a tainted character in the way', () => {
+  const t = (key: string, params?: Record<string, unknown>) =>
+    params ? `${key}:${params.name}` : key
+
+  it('is named by its form, not by the name it shares with the base one', () => {
+    expect(
+      missingGroups(
+        node({
+          missing: [
+            { kind: 'character', id: 31, name: 'The Lost', tainted: true },
+            { kind: 'character', id: 10, name: 'The Lost', tainted: false },
+          ],
+        }),
+        t,
+      ),
+    ).toEqual([
+      {
+        kind: RequirementKind.Character,
+        names: ['graph.taintedName:The Lost', 'The Lost'],
+      },
+    ])
   })
 })

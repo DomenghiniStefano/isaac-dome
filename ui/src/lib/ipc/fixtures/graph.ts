@@ -24,13 +24,33 @@ type IconOf = (url: string | null) => string | null
 const targetWithIcon = (target: UnlockTarget, icon: IconOf): UnlockTarget =>
   target.kind === 'item' ? { ...target, iconUrl: icon(target.iconUrl) } : target
 
+// The pack's payload was written before a character carried its form (`docs/BACKLOG.md`
+// B28), so the field is absent there: absent reads as the base form, which is right for
+// every base character and wrong for the Tainted ones. Declared once in the console, and it
+// goes with the next `pnpm design:export` on a machine with the game.
+let warnedAboutForms = false
+const withForm = <T extends { kind: string; tainted?: boolean }>(
+  value: T,
+): T => {
+  if (value.kind !== 'character' || typeof value.tainted === 'boolean')
+    return value
+  if (!warnedAboutForms) {
+    warnedAboutForms = true
+    console.warn(
+      "graph fixture: the design pack's unlock.json predates the character's tainted flag; every character reads as its base form",
+    )
+  }
+  return { ...value, tainted: false }
+}
+
 const nodeWithIcons = (node: UnlockNode, icon: IconOf): UnlockNode => ({
   ...node,
   achievement:
     node.achievement.kind === 'known'
       ? { ...node.achievement, iconUrl: icon(node.achievement.iconUrl) }
       : node.achievement,
-  unlocks: node.unlocks.map((t) => targetWithIcon(t, icon)),
+  unlocks: node.unlocks.map((t) => withForm(targetWithIcon(t, icon))),
+  missing: node.missing.map(withForm),
 })
 
 const slotOf = (node: UnlockNode): number =>

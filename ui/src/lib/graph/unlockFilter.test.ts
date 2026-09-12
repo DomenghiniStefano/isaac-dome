@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { graphAnswers } from '@/lib/ipc/fixtures/graph'
 import type { GraphInfo, UnlockNode, UnlockTarget } from '@/lib/ipc/types'
+import { characterForms } from './characterName'
 import { NodeState, stateOrder } from './nodeState'
 import {
   FacetId,
@@ -61,6 +62,7 @@ const character = (name: string): UnlockTarget => ({
   kind: 'character',
   id: 2,
   name,
+  tainted: false,
 })
 
 const reference = graphAnswers({ withArt: false, withCatalog: true }).unlock
@@ -90,13 +92,14 @@ describe('facetValues', () => {
     const n = node(1, {
       graph: computed(false, 2),
       missing: [
-        { kind: 'character', id: 10, name: 'The Lost' },
+        { kind: 'character', id: 10, name: 'The Lost', tainted: false },
         { kind: 'unknown', label: 'ending' },
-        { kind: 'character', id: 0, name: 'Isaac' },
+        { kind: 'character', id: 0, name: 'Isaac', tainted: false },
       ],
     })
     expect(facetValues(n, FacetId.State)).toEqual([NodeState.Blocked])
-    expect(facetValues(n, FacetId.Character)).toEqual(['The Lost', 'Isaac'])
+    // The id, never the name: the two forms of a character share the name (B28).
+    expect(facetValues(n, FacetId.Character)).toEqual(['10', '0'])
   })
 })
 
@@ -225,10 +228,13 @@ describe('facetOptions', () => {
     ])
   })
 
-  it('lists the required characters found in the nodes, by name', () => {
+  it('lists the required characters found in the nodes, ordered by their name', () => {
     const characters = facetOptions(reference, FacetId.Character)
     expect(characters).toHaveLength(10)
-    expect(characters).toEqual([...characters].sort())
+    // The values are ids (B28); what they are sorted by is the name the player reads.
+    const forms = characterForms(reference)
+    const names = characters.map((value) => forms.get(value)?.name ?? value)
+    expect(names).toEqual([...names].sort())
   })
 })
 
@@ -301,3 +307,25 @@ function slots(nodes: UnlockNode[]): number[] {
     n.achievement.kind === 'known' ? n.achievement.id : n.achievement.slot,
   )
 }
+
+describe('the character facet keeps the two forms apart', () => {
+  const lost = (id: number, tainted: boolean) =>
+    node(id, {
+      graph: computed(false, 1),
+      missing: [{ kind: 'character', id, name: 'The Lost', tainted }],
+    })
+
+  it('offers one option per character, not one per name', () => {
+    const nodes = [lost(10, false), lost(31, true)]
+    expect(facetOptions(nodes, FacetId.Character)).toEqual(['10', '31'])
+  })
+
+  it('a pick on one form leaves the other out', () => {
+    const filter = {
+      ...emptyFilter(),
+      picks: { ...emptyFilter().picks, [FacetId.Character]: ['31'] },
+    }
+    expect(matchesFilter(lost(31, true), filter)).toBe(true)
+    expect(matchesFilter(lost(10, false), filter)).toBe(false)
+  })
+})

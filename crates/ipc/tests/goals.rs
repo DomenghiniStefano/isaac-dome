@@ -73,6 +73,7 @@ fn every_target_variant_keeps_its_tag_as_a_view_too() {
             UnlockTarget::Character {
                 id: 21,
                 name: "T. Isaac".into(),
+                tainted: true,
             },
             "character",
         ),
@@ -123,6 +124,7 @@ fn the_key_of_a_view_keeps_the_identity_and_drops_name_and_icon() {
             UnlockTarget::Character {
                 id: 21,
                 name: "T. Isaac".into(),
+                tainted: true,
             },
             TargetKey::Character { id: 21 },
         ),

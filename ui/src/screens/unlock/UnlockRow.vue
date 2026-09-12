@@ -9,6 +9,7 @@ import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
+import { targetName } from '@/lib/graph/characterName'
 import { nodeSlot } from '@/lib/graph/unlockFilter'
 import type { UnlockNode } from '@/lib/ipc/types'
 
@@ -60,7 +61,7 @@ const more = computed(() => Math.max(0, props.node.unlocks.length - 1))
         class="size-8 shrink-0"
       />
       <span class="truncate text-caption text-foreground">{{
-        first.name
+        targetName(t, first)
       }}</span>
       <span
         v-if="more > 0"
