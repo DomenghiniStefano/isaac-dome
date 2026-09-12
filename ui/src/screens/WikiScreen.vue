@@ -26,6 +26,9 @@ const category = computed((): WikiCategory | null => {
   const wanted = single(route.query.category)
   return Object.values(WikiCategory).find((c) => c === wanted) ?? null
 })
+// A dataset that didn't load has no lists and no pages: every query shows the landing,
+// which says so, rather than an empty list that reads as a category with no pages.
+const missing = computed(() => wiki.index?.info.kind === 'missing')
 </script>
 
 <template>
@@ -35,6 +38,7 @@ const category = computed((): WikiCategory | null => {
     :title="t('wiki.states.failedTitle')"
     @retry="wiki.loadIndex()"
   />
+  <WikiLanding v-else-if="missing" />
   <WikiPage v-else-if="page !== null" :page-key="page" :category="category" />
   <WikiCategoryList v-else-if="category !== null" :category="category" />
   <WikiLanding v-else />

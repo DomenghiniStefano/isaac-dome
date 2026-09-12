@@ -49,6 +49,7 @@ export const it = {
     progressHint: 'Ogni voce si legge sul profilo attivo.',
     wikiTitle: 'Wiki',
     wikiHint: 'La Wiki funziona senza gioco né salvataggio.',
+    wikiOverview: 'Panoramica',
     settingsTitle: 'Impostazioni',
     settingsHint: "Da qui l'app trova gioco e salvataggi.",
   },
