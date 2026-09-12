@@ -94,6 +94,8 @@ fn the_graph_has_the_shape_this_era_measured() {
                 graph::model::Requirement::Challenge { .. } => "challenge",
                 graph::model::Requirement::Item { .. } => "item",
                 graph::model::Requirement::Gate { .. } => "gate",
+                graph::model::Requirement::Mark { .. } => "mark",
+                graph::model::Requirement::Counter { .. } => "counter",
                 graph::model::Requirement::Unknown { .. } => "unknown",
                 graph::model::Requirement::None => "none",
             };
@@ -174,6 +176,8 @@ fn every_resolvable_requirement_produced_its_edge() {
                 graph::model::Requirement::Boss { id } => c.boss(*id).and_then(|b| b.unlocked_by),
                 graph::model::Requirement::Challenge { .. }
                 | graph::model::Requirement::Gate { .. }
+                | graph::model::Requirement::Mark { .. }
+                | graph::model::Requirement::Counter { .. }
                 | graph::model::Requirement::Unknown { .. }
                 | graph::model::Requirement::None => continue,
             };
