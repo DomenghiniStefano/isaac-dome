@@ -37,8 +37,16 @@ export interface ScreenEntry {
   location: TabLocation
 }
 
+// Every row carries where it goes, whichever kind it is: opening one is the same gesture
+// everywhere, and only what it *draws* differs.
 export type SearchRow =
-  | { kind: 'screen'; key: string; group: RowGroup; entry: ScreenEntry }
+  | {
+      kind: 'screen'
+      key: string
+      group: RowGroup
+      entry: ScreenEntry
+      location: TabLocation
+    }
   | {
       kind: 'hit'
       key: string
@@ -125,6 +133,7 @@ export const searchRows = (
       key: entry.key,
       group: RowGroup.Screens,
       entry,
+      location: entry.location,
     })),
     ...hits.flatMap((hit) => destinations(hit, catalog)),
   ]
