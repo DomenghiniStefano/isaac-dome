@@ -8,12 +8,20 @@ import { AriaCurrent } from '@/lib/constants/aria'
 import { KeyName } from '@/lib/constants/keyNames'
 import { NavSection, navSectionIcon, navSectionLabel } from './navSection'
 
-// `null` when the sidebar shows a section the switch doesn't name (Settings).
-const props = defineProps<{ section: NavSection | null; focused: boolean }>()
+// `section` is the active tab's, `null` while a settings page is open; `settingsActive`
+// says so, because the cog is a section like the other two and has to read as lit when you
+// are in it (`docs/BACKLOG.md` B24).
+const props = defineProps<{
+  section: NavSection | null
+  settingsActive: boolean
+  focused: boolean
+}>()
+// The click's event travels with the section: Ctrl opens the section's first page in a new
+// tab, as a sidebar entry does.
 const emit = defineEmits<{
-  'update:section': [section: NavSection]
+  'update:section': [section: NavSection, event: MouseEvent]
   search: []
-  settings: []
+  settings: [event: MouseEvent]
   about: []
 }>()
 const { t } = useMessages()
@@ -48,7 +56,7 @@ const current = (s: NavSection) =>
         :variant="ButtonVariant.Section"
         :size="ButtonSize.Section"
         :aria-current="current(s)"
-        @click="emit('update:section', s)"
+        @click="emit('update:section', s, $event)"
       >
         <component :is="navSectionIcon[s]" />{{ t(navSectionLabel[s]) }}
       </Button>
@@ -71,11 +79,15 @@ const current = (s: NavSection) =>
       </KbdGroup>
     </Button>
     <div class="flex items-center gap-0.5">
+      <!-- The cog is the third section: it navigates like the other two and lights up the
+           same way while a settings page is open. -->
       <Button
         :variant="ButtonVariant.Chrome"
         :size="ButtonSize.Icon"
         :aria-label="t('shell.settings')"
-        @click="emit('settings')"
+        :aria-current="settingsActive ? AriaCurrent.Page : undefined"
+        class="aria-[current=page]:bg-data aria-[current=page]:text-highlight"
+        @click="emit('settings', $event)"
       >
         <CogIcon class="size-3.5" />
       </Button>

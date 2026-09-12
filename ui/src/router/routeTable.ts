@@ -34,7 +34,6 @@ export const RouteName = {
   Wiki: 'wiki',
   Profile: 'profile',
   TabsSettings: 'tabsSettings',
-  About: 'about',
 } as const
 export type RouteName = (typeof RouteName)[keyof typeof RouteName]
 
@@ -69,7 +68,6 @@ export const routePath: Record<RouteName, string> = {
   [RouteName.Wiki]: '/wiki',
   [RouteName.Profile]: '/settings/profile',
   [RouteName.TabsSettings]: '/settings/tabs',
-  [RouteName.About]: '/about',
 }
 
 export const routeTitle: Record<RouteName, Message> = {
@@ -83,7 +81,6 @@ export const routeTitle: Record<RouteName, Message> = {
   [RouteName.Wiki]: 'routes.wiki',
   [RouteName.Profile]: 'routes.profile',
   [RouteName.TabsSettings]: 'routes.tabsSettings',
-  [RouteName.About]: 'routes.about',
 }
 
 export const routeOrigin: Record<RouteName, TabOrigin> = {
@@ -97,7 +94,6 @@ export const routeOrigin: Record<RouteName, TabOrigin> = {
   [RouteName.Wiki]: TabOrigin.Wiki,
   [RouteName.Profile]: TabOrigin.Settings,
   [RouteName.TabsSettings]: TabOrigin.Settings,
-  [RouteName.About]: TabOrigin.About,
 }
 
 export const routeIcon: Record<RouteName, Component> = {
@@ -111,7 +107,6 @@ export const routeIcon: Record<RouteName, Component> = {
   [RouteName.Wiki]: tabOriginIcon[TabOrigin.Wiki],
   [RouteName.Profile]: SaveIcon,
   [RouteName.TabsSettings]: AppWindowIcon,
-  [RouteName.About]: tabOriginIcon[TabOrigin.About],
 }
 
 // Which sub-project brings a screen that is still a placeholder; absent once it's real.
@@ -119,7 +114,6 @@ export const routeArrives: Partial<Record<RouteName, Message>> = {
   [RouteName.Runs]: 'placeholder.runArchive',
   [RouteName.Live]: 'placeholder.runArchive',
   [RouteName.TabsSettings]: 'placeholder.tabs',
-  [RouteName.About]: 'placeholder.settings',
 }
 
 export const wikiCategoryTitle: Record<WikiCategory, Message> = {

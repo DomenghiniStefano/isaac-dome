@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
+import AboutDialog from '@/components/shell/AboutDialog.vue'
 import NavBar from '@/components/shell/NavBar.vue'
 import ProfileIndicator from '@/components/shell/ProfileIndicator.vue'
 import SectionSidebar from '@/components/shell/SectionSidebar.vue'
 import SidebarItem from '@/components/shell/SidebarItem.vue'
 import TitleBar from '@/components/shell/TitleBar.vue'
-import type { NavSection } from '@/components/shell/navSection'
 import {
   SidebarSection,
+  firstEntry,
   isEntryActive,
   navSectionOf,
   sectionOfOrigin,
@@ -34,13 +35,11 @@ import { useProfileStore } from '@/stores/profile'
 import { tabLabel } from '@/stores/tabModel'
 import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
-
 const router = useRouter()
 const tabs = useTabsStore()
 const profile = useProfileStore()
 const wiki = useWikiStore()
 const { t } = useMessages()
-
 const focused = ref(true)
 let stopWatchingFocus: (() => void) | undefined
 onMounted(async () => {
@@ -50,7 +49,6 @@ onMounted(async () => {
   })
 })
 onUnmounted(() => stopWatchingFocus?.())
-
 // The router shows the active tab: selecting, closing or navigating a tab moves it.
 watch(
   () => tabs.active?.location,
@@ -59,7 +57,6 @@ watch(
   },
   { immediate: true },
 )
-
 // A page tab reads as its page's title once the wiki index knows it; every other label is
 // a message.
 const tabViews = computed<TabView[]>(() =>
@@ -72,7 +69,6 @@ const tabViews = computed<TabView[]>(() =>
     }
   }),
 )
-
 // The sidebar shows the active tab's section, until the navbar or the cog picks another.
 const browsing = ref<SidebarSection>(SidebarSection.Progress)
 watch(
@@ -82,28 +78,28 @@ watch(
   },
   { immediate: true },
 )
-
 const sidebarWidth = ref<number>(SidebarWidth.Default)
 const header = computed(() => sidebarHeaders[browsing.value])
 const entries = computed(() => sidebarEntries[browsing.value])
-
-const showSection = (section: NavSection) => {
-  browsing.value = sidebarSectionOf(section)
-}
-
 // Ctrl+click opens the entry in a new tab, as a browser does.
 const openEntry = (entry: SidebarEntry, event: MouseEvent) => {
   if (event.ctrlKey) tabs.open(entry.location)
   else tabs.navigate(entry.location)
 }
-
+// Clicking a section goes to its first page at once, with no second click in the sidebar:
+// this reverses Decision 5 of the shell spec, on purpose (`docs/BACKLOG.md` B24). The
+// sidebar follows the tab through the watch above, so `browsing` needs no setting here.
+const openSection = (section: SidebarSection, event: MouseEvent) => {
+  openEntry(firstEntry(section), event)
+}
+// Informazioni is a dialog over the tab, not a tab of its own (`docs/BACKLOG.md` B25).
+const aboutOpen = ref(false)
 const indicatorView = computed(() =>
   profile.setup
     ? indicator(profile.setup.active, new Date(), i18n.global.locale.value)
     : null,
 )
 </script>
-
 <template>
   <TooltipProvider>
     <div
@@ -123,10 +119,13 @@ const indicatorView = computed(() =>
       />
       <NavBar
         :section="navSectionOf(browsing)"
+        :settings-active="browsing === SidebarSection.Settings"
         :focused="focused"
-        @update:section="showSection"
-        @settings="browsing = SidebarSection.Settings"
-        @about="tabs.navigate({ name: RouteName.About })"
+        @update:section="
+          (section, event) => openSection(sidebarSectionOf(section), event)
+        "
+        @settings="openSection(SidebarSection.Settings, $event)"
+        @about="aboutOpen = true"
       >
         <template #status>
           <ProfileIndicator
@@ -162,6 +161,7 @@ const indicatorView = computed(() =>
           </RouterView>
         </main>
       </div>
+      <AboutDialog v-model:open="aboutOpen" />
     </div>
   </TooltipProvider>
 </template>

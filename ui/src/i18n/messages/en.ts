@@ -50,7 +50,7 @@ export const en: MessageSchema = {
     wikiHint: 'The Wiki works without the game or a save.',
     wikiOverview: 'Overview',
     settingsTitle: 'Settings',
-    settingsHint: 'Where the app finds the game and the saves.',
+    settingsHint: 'The save you are playing, and how it opens tabs.',
   },
   collection: {
     intro:
@@ -196,9 +196,29 @@ export const en: MessageSchema = {
         "The binary carries a dataset that doesn't read: the Wiki has no pages to show.",
     },
   },
+  about: {
+    fanMade:
+      'IsaacDome is fan-made and not affiliated with Nicalis or Edmund McMillen.',
+    version: 'Version',
+    versionUnknown: 'development server',
+    promisesTitle: 'The three promises',
+    promises: {
+      readOnly:
+        'Saves are only ever read: the module that opens the .dat files holds no write code, and the checksum is never recomputed.',
+      offline:
+        'No account, no backend, no telemetry: the app works offline, and the network is only for an optional dataset update.',
+      oneFile:
+        "One file written, isaacdome.db, in the app's data folder: nothing else on your disk is touched.",
+    },
+    creditsTitle: 'Credits and licences',
+    wikiText:
+      'The wiki text is CC BY-SA 4.0, from bindingofisaacrebirth.wiki.gg.',
+    assets:
+      "The game's images aren't ours and don't travel with the app: they are extracted from your own copy.",
+    font: 'The Determination Mono typeface is CC BY 3.0.',
+  },
   placeholder: {
     runArchive: 'Arrives with the run archive (M4).',
-    settings: 'Arrives with Settings and About.',
     tabs: 'Arrives with tabs that survive closing.',
   },
   plan: {
@@ -403,10 +423,9 @@ export const en: MessageSchema = {
     slot: 'slot',
   },
   profile: {
-    eyebrow: 'Screen 0',
     title: 'Game profile',
     intro:
-      'Not a step to go through once: it is the state that decides every number in the app. It stays open to read and change.',
+      'Choose the save you are playing with: every number on the other screens is read from it. You can change it whenever you like.',
     chain: {
       title: 'The chain of three requirements',
       summary: 'each level can be missing on its own',
