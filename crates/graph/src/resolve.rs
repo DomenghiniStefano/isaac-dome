@@ -58,20 +58,30 @@ impl NameIndex {
 
 /// One ref, one outcome. Convenience for tests and single lookups: it builds the index
 /// every time, so anything resolving many refs uses `requirement_with`.
-pub fn requirement(c: &Catalog, rules: &Rules, row: &RefRow) -> Requirement {
+pub fn requirement(
+    c: &Catalog,
+    rules: &Rules,
+    row: &RefRow,
+    character: Option<CharacterId>,
+) -> Requirement {
     let index = NameIndex::new(c);
-    requirement_with(c, rules, &index, row)
+    requirement_with(c, rules, &index, row, character)
 }
 
 /// The form used when resolving many refs: the caller builds the index once.
 ///
 /// Never `None` by omission — a target we can't judge becomes `Requirement::Unknown` and
 /// demotes its node to `Partial`.
+///
+/// `character` is the character the **same achievement** names, if any. It is a property of
+/// the sentence, not of this reference: "defeat Mother as Magdalene" is one requirement
+/// spread over two references, and the boss reference is the one that needs to know.
 pub fn requirement_with(
     c: &Catalog,
     rules: &Rules,
     index: &NameIndex,
     row: &RefRow,
+    character: Option<CharacterId>,
 ) -> Requirement {
     let label = rules.alias(&row.label).to_string();
     let verdict_key = target_key(&row.target, &label);
@@ -97,7 +107,7 @@ pub fn requirement_with(
             Some(id) if c.boss(id).and_then(|b| b.unlocked_by).is_some() => {
                 Requirement::Boss { id }
             }
-            _ => from_verdict(rules, &verdict_key, unknown),
+            _ => from_verdict(rules, &verdict_key, character, unknown),
         },
         Target::Challenge { number } => c
             .challenge(ChallengeId(*number))
@@ -125,23 +135,41 @@ pub fn requirement_with(
         Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Pickup { .. } => from_verdict(rules, &verdict_key, unknown),
+        | Target::Pickup { .. } => from_verdict(rules, &verdict_key, character, unknown),
     }
 }
 
-fn from_verdict(rules: &Rules, key: &str, unknown: impl Fn() -> Requirement) -> Requirement {
+fn from_verdict(
+    rules: &Rules,
+    key: &str,
+    character: Option<CharacterId>,
+    unknown: impl Fn() -> Requirement,
+) -> Requirement {
     match rules.verdict(key) {
         Some(Verdict::AlwaysAvailable(_)) | Some(Verdict::NotAPrerequisite(_)) => Requirement::None,
         Some(Verdict::Behind { .. }) => Requirement::Gate {
             gate: key.to_string(),
         },
+        // Which half answers is decided by the reference: one that names a character asks
+        // about that character's cell, one that names only the boss asks whether it was
+        // ever done at all. The half it needs may be absent — Ultra Greedier has no located
+        // tally — and then this is `Unknown` like anything else the crate can't say. It
+        // must not fall back to the other half, which would answer a question nobody asked.
+        Some(Verdict::Progress { mark, counter }) => match (character, mark, counter) {
+            (Some(ch), Some(m), _) => Requirement::Mark {
+                character: ch,
+                column: m.column,
+                level: m.level,
+            },
+            (None, _, Some(c)) => Requirement::Counter {
+                name: c.name,
+                at_least: c.at_least,
+            },
+            (Some(_), None, _) | (None, _, None) => unknown(),
+        },
         // Judged inexpressible and never judged land in the same place: the node drops to
         // `Partial` either way. The difference is recorded in `corrections.json`, for
         // whoever reads it next, not in the value.
-        // Task 2 of the 2026-09-12 plan turns this into a `Mark` or a `Counter`. Until it
-        // does, the outcome is what it is today for these five targets, so this task
-        // changes the vocabulary without changing a single answer.
-        Some(Verdict::Progress { .. }) => unknown(),
         Some(Verdict::Unknown { .. }) | None => unknown(),
     }
 }

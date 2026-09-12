@@ -5,7 +5,7 @@
 use catalog::{BossId, Catalog, CharacterId, ItemId, ItemKind};
 use graph::model::Requirement;
 use graph::resolve::requirement;
-use graph::rules::{Corrections, RefRow, Requirements, Rules};
+use graph::rules::{Corrections, CounterName, MarkColumn, MarkLevel, RefRow, Requirements, Rules};
 use wiki::Target;
 
 const PLAYERS: &str = r#"<players root="gfx/" portraitroot="gfx/ui/stage/">
@@ -67,7 +67,7 @@ fn an_entity_ref_resolves_to_a_boss_by_name_not_by_id() {
     let c = catalog();
     let rules = rules(r#"{"schemaVersion":1}"#);
     assert_eq!(
-        requirement(&c, &rules, &entity(43, "Gish")),
+        requirement(&c, &rules, &entity(43, "Gish"), None),
         Requirement::Boss { id: BossId(19) },
         "entity 43 is boss 19: the id spaces differ, the name is the bridge"
     );
@@ -81,7 +81,7 @@ fn a_boss_the_game_does_not_gate_is_judged_not_assumed() {
     let c = catalog();
     let unjudged = rules(r#"{"schemaVersion":1}"#);
     assert_eq!(
-        requirement(&c, &unjudged, &entity(84, "Satan")),
+        requirement(&c, &unjudged, &entity(84, "Satan"), None),
         Requirement::Unknown {
             label: "Satan".into()
         },
@@ -90,7 +90,7 @@ fn a_boss_the_game_does_not_gate_is_judged_not_assumed() {
     let judged =
         rules(r#"{"schemaVersion":1,"verdicts":{"entity:Satan":{"alwaysAvailable":true}}}"#);
     assert_eq!(
-        requirement(&c, &judged, &entity(84, "Satan")),
+        requirement(&c, &judged, &entity(84, "Satan"), None),
         Requirement::None,
         "judged as fought on night one: it gates nothing, and that is a decision on record"
     );
@@ -104,7 +104,8 @@ fn an_alias_is_applied_before_the_lookup() {
         requirement(
             &c,
             &rules,
-            &row(Target::Character { id: 19 }, "Jacob and Esau")
+            &row(Target::Character { id: 19 }, "Jacob and Esau"),
+            None
         ),
         Requirement::Character {
             id: CharacterId(19)
@@ -126,7 +127,8 @@ fn always_available_drops_the_requirement() {
                     name: "Boss Rush".into()
                 },
                 "Boss Rush"
-            )
+            ),
+            None
         ),
         Requirement::None,
         "content reachable on night one gates nothing"
@@ -146,7 +148,8 @@ fn a_target_with_no_verdict_stays_unknown() {
                     name: "Nowhere".into()
                 },
                 "Nowhere"
-            )
+            ),
+            None
         ),
         Requirement::Unknown {
             label: "Nowhere".into()
@@ -163,7 +166,12 @@ fn a_verdict_of_unknown_behaves_like_no_verdict_but_was_judged() {
              "transformation:Guppy":{"unknown":{"reason":"three items"}}}}"#,
     );
     assert_eq!(
-        requirement(&c, &rules, &row(Target::Transformation { id: 0 }, "Guppy")),
+        requirement(
+            &c,
+            &rules,
+            &row(Target::Transformation { id: 0 }, "Guppy"),
+            None
+        ),
         Requirement::Unknown {
             label: "Guppy".into()
         },
@@ -176,7 +184,7 @@ fn a_name_the_catalog_does_not_know_is_unknown_not_dropped() {
     let c = catalog();
     let rules = rules(r#"{"schemaVersion":1}"#);
     assert_eq!(
-        requirement(&c, &rules, &entity(999, "Nobody")),
+        requirement(&c, &rules, &entity(999, "Nobody"), None),
         Requirement::Unknown {
             label: "Nobody".into()
         }
@@ -189,7 +197,7 @@ fn an_entity_that_is_not_a_boss_takes_its_verdict() {
     let rules =
         rules(r#"{"schemaVersion":1,"verdicts":{"entity:Red Heart":{"notAPrerequisite":true}}}"#);
     assert_eq!(
-        requirement(&c, &rules, &entity(5, "Red Heart")),
+        requirement(&c, &rules, &entity(5, "Red Heart"), None),
         Requirement::None,
         "an entity the catalog has no boss for falls through to the verdict table"
     );
@@ -200,11 +208,92 @@ fn an_item_resolves_across_the_collectible_kinds() {
     let c = catalog();
     let rules = rules(r#"{"schemaVersion":1}"#);
     assert_eq!(
-        requirement(&c, &rules, &row(Target::Item { id: 35 }, "The Bible")),
+        requirement(&c, &rules, &row(Target::Item { id: 35 }, "The Bible"), None),
         Requirement::Item {
             kind: ItemKind::Active,
             id: ItemId(35)
         },
         "the wiki has one collectible id space; ours is keyed by (kind, id)"
+    );
+}
+
+// --- answered by the profile (spec 2026-09-12, §4.2) ---------------------------------
+
+const PROGRESS: &str = r#"{
+  "schemaVersion": 1,
+  "verdicts": {
+    "entity:Hush": { "progress": {
+      "mark": { "column": "hush", "level": "base" },
+      "counter": { "name": "hushKills", "atLeast": 1 }
+    } },
+    "entity:Ultra Greedier": { "progress": {
+      "mark": { "column": "greed", "level": "second" }
+    } }
+  }
+}"#;
+
+/// Which half answers is decided by the **reference**, not by the target: a sentence that
+/// names a character is asking about that character's cell.
+#[test]
+fn a_boss_the_reference_pairs_with_a_character_resolves_to_a_mark() {
+    let c = catalog();
+    let rules = rules(PROGRESS);
+    assert_eq!(
+        requirement(
+            &c,
+            &rules,
+            &entity(0, "Ultra Greedier"),
+            Some(CharacterId(0))
+        ),
+        Requirement::Mark {
+            character: CharacterId(0),
+            column: MarkColumn::Greed,
+            level: MarkLevel::Second,
+        }
+    );
+}
+
+/// The boss alone asks a different question — "ever, by anyone" — and a tally answers it.
+#[test]
+fn a_boss_named_alone_resolves_to_a_tally() {
+    let c = catalog();
+    let rules = rules(PROGRESS);
+    assert_eq!(
+        requirement(&c, &rules, &entity(0, "Hush"), None),
+        Requirement::Counter {
+            name: CounterName::HushKills,
+            at_least: 1,
+        }
+    );
+}
+
+/// Ultra Greedier has no located tally. Asked the question its curation cannot answer, the
+/// resolver says so and keeps the label — it does not fall back to the other half, which
+/// would answer a question nobody asked.
+#[test]
+fn the_half_a_reference_needs_may_be_absent_and_then_it_is_unknown() {
+    let c = catalog();
+    let rules = rules(PROGRESS);
+    assert_eq!(
+        requirement(&c, &rules, &entity(0, "Ultra Greedier"), None),
+        Requirement::Unknown {
+            label: "Ultra Greedier".to_string()
+        }
+    );
+}
+
+/// A boss the game itself gates by an achievement still short-circuits the verdict table:
+/// adding `Progress` must not change the order the resolver asks its questions in.
+#[test]
+fn a_game_gated_boss_still_wins_over_a_progress_verdict() {
+    let c = catalog();
+    let rules = rules(
+        r#"{"schemaVersion":1,"verdicts":{"entity:Gish":{"progress":{
+             "counter":{"name":"hushKills","atLeast":1}}}}}"#,
+    );
+    assert_eq!(
+        requirement(&c, &rules, &entity(43, "Gish"), None),
+        Requirement::Boss { id: BossId(19) },
+        "the game's own unlocked_by is stronger evidence than our curation"
     );
 }
