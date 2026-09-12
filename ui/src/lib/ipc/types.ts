@@ -488,6 +488,57 @@ export interface WikiIndex {
   pages: WikiPageRef[]
 }
 
+// --- search -----------------------------------------------------------------
+// Mirrors crates/ipc/src/search.rs. `ProgressMark` and `SearchDiagnostic` are fieldless in
+// Rust, so they travel as bare strings: values, not discriminators.
+export const ProgressMark = {
+  Done: 'done',
+  Pending: 'pending',
+  Unknown: 'unknown',
+  None: 'none',
+} as const
+export type ProgressMark = (typeof ProgressMark)[keyof typeof ProgressMark]
+
+export const SearchDiagnostic = {
+  NoProfile: 'noProfile',
+  NoCatalog: 'noCatalog',
+  NoWiki: 'noWiki',
+  NoAchievementSection: 'noAchievementSection',
+  NoCollectionSection: 'noCollectionSection',
+} as const
+export type SearchDiagnostic =
+  (typeof SearchDiagnostic)[keyof typeof SearchDiagnostic]
+
+// Why the hit matched, in the words its row shows.
+export type SearchMatch =
+  | { kind: 'title' }
+  | { kind: 'condition'; text: string }
+  | {
+      kind: 'section'
+      section: SectionKind
+      before: string
+      matched: string
+      after: string
+    }
+
+export interface SearchHit {
+  target: Target
+  title: string
+  iconUrl: string | null
+  // The dataset has this page: a Wiki destination exists for the hit.
+  hasPage: boolean
+  match: SearchMatch
+  progress: ProgressMark
+}
+
+export interface SearchView {
+  query: string
+  hits: SearchHit[]
+  // How many matched before the limit: what "mostrati 300 di N" is read from.
+  total: number
+  diagnostics: SearchDiagnostic[]
+}
+
 // --- The plan queue ---
 
 // A queue row is an **achievement**, not a target: wanting Tainted Lost and wanting the

@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { LayersIcon } from '@lucide/vue'
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
+import { singleQuery } from '@/lib/search/queryParam'
 import {
   CollectionFacet,
   CollectionSort,
   defaultCollectionFilter,
+  filterForQuery,
   emptyCollectionFilter,
   matchesCollectionFilter,
   sortItems,
@@ -35,6 +38,17 @@ useOnActiveProfile(() => store.load())
 // The filter belongs to this screen: leaving the tab resets it, until tabs keep their state. It
 // opens on what hasn't been found.
 const filter = ref<CollectionFilter>(defaultCollectionFilter())
+
+// A Search row opens this list already filtered on the name it found (B3, spec 3.5 Decision 8).
+const route = useRoute()
+watch(
+  () => route.query.q,
+  (value) => {
+    const q = singleQuery(value)
+    if (q !== null) filter.value = filterForQuery(q)
+  },
+  { immediate: true },
+)
 const sort = ref<CollectionSort>(CollectionSort.Quality)
 
 const items = computed(() => store.view?.items ?? [])

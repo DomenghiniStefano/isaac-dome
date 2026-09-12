@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 import AboutDialog from '@/components/shell/AboutDialog.vue'
 import NavBar from '@/components/shell/NavBar.vue'
 import ProfileIndicator from '@/components/shell/ProfileIndicator.vue'
+import SearchPalette from '@/components/search/SearchPalette.vue'
 import SectionSidebar from '@/components/shell/SectionSidebar.vue'
 import SidebarItem from '@/components/shell/SidebarItem.vue'
 import TitleBar from '@/components/shell/TitleBar.vue'
@@ -82,7 +83,10 @@ const browsing = ref<SidebarSection>(SidebarSection.Progress)
 watch(
   () => tabs.active?.location.name,
   (name) => {
-    if (name) browsing.value = sectionOfOrigin(routeOrigin[name])
+    if (!name) return
+    // A search tab belongs to neither section: the sidebar stays where the user left it.
+    const section = sectionOfOrigin(routeOrigin[name])
+    if (section) browsing.value = section
   },
   { immediate: true },
 )
@@ -106,6 +110,10 @@ const openSection = (section: SidebarSection, event: MouseEvent) => {
 
 // Informazioni is a dialog over the tab, not a tab of its own (`docs/BACKLOG.md` B25).
 const aboutOpen = ref(false)
+
+// The palette is mounted once, here: Ctrl+K reaches it from any tab, and so does the navbar's
+// search field, which is a trigger and not an input.
+const paletteOpen = ref(false)
 
 // `Ctrl` `+` / `-` / `0` move the interface's size from anywhere, on the same ladder and the
 // same saved value as the slider in Settings: a shortcut is not a second scale.
@@ -149,6 +157,7 @@ const indicatorView = computed(() =>
         @update:section="
           (section, event) => openSection(sidebarSectionOf(section), event)
         "
+        @search="paletteOpen = true"
         @settings="openSection(SidebarSection.Settings, $event)"
         @about="aboutOpen = true"
       >
@@ -187,6 +196,7 @@ const indicatorView = computed(() =>
         </main>
       </div>
       <AboutDialog v-model:open="aboutOpen" />
+      <SearchPalette v-model:open="paletteOpen" />
     </div>
   </TooltipProvider>
 </template>

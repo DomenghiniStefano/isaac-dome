@@ -20,3 +20,6 @@ crates/app/gen/schemas/
 # Playwright MCP writes its snapshots and console logs here while a screen is being
 # looked at: working material, never the repository's.
 .playwright-mcp/
+# A screenshot taken while looking at the app by eye: it lands wherever the tool was run,
+# and it is a look, not an artefact of the project.
+/*.png
