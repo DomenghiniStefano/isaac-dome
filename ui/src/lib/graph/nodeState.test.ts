@@ -83,9 +83,21 @@ describe('missingGroups', () => {
         node({
           missing: [
             { kind: 'unknown', label: 'Collect' },
-            { kind: 'character', id: 10, name: 'The Lost', tainted: false },
+            {
+              kind: 'character',
+              id: 10,
+              name: 'The Lost',
+              tainted: false,
+              page: null,
+            },
             { kind: 'unknown', label: 'ending' },
-            { kind: 'item', itemKind: 'passive', id: 1, name: 'The Sad Onion' },
+            {
+              kind: 'item',
+              itemKind: 'passive',
+              id: 1,
+              name: 'The Sad Onion',
+              page: null,
+            },
           ],
         }),
         t,
@@ -103,7 +115,7 @@ describe('missingGroups', () => {
         node({
           missing: [
             { kind: 'gate', label: 'Greedier' },
-            { kind: 'boss', id: 6, name: 'Mom' },
+            { kind: 'boss', id: 6, name: 'Mom', page: null },
           ],
         }),
         t,
@@ -128,8 +140,20 @@ describe('a tainted character in the way', () => {
       missingGroups(
         node({
           missing: [
-            { kind: 'character', id: 31, name: 'The Lost', tainted: true },
-            { kind: 'character', id: 10, name: 'The Lost', tainted: false },
+            {
+              kind: 'character',
+              id: 31,
+              name: 'The Lost',
+              tainted: true,
+              page: null,
+            },
+            {
+              kind: 'character',
+              id: 10,
+              name: 'The Lost',
+              tainted: false,
+              page: null,
+            },
           ],
         }),
         t,
