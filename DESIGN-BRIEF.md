@@ -333,6 +333,27 @@ work, not backend work.
 The rest of the settings is short and should stay that way: active profile (the same one
 from §4.1), game folder with the manual fallback, language, tabs saved on exit.
 
+**The interface's size is a setting, and the first one implemented** (2026-09-12, cycle
+3.5c). It is a percentage on Discord's eleven zoom levels — 50 · 67 · 75 · 80 · 90 · 100 ·
+110 · 125 · 150 · 175 · 200 — persisted in `settings.json` and applied before the first
+paint. The mechanism is one custom property on the root: `html` is
+`calc(16px * var(--app-scale))` and every size token is in rem, so nothing in a component
+knows the size. The one exception is pixel art, which is drawn at a whole multiple of 32px
+(`--sprite-multiple`) because the game's art smears at a fraction of its own size.
+
+```typescript
+// crates/ipc/src/settings.rs, mirrored in lib/ipc/types.ts
+interface Settings {
+  activeProfileId: string | null
+  scale: number // a percentage, always one of the eleven; anything else reads as 100
+}
+```
+
+Two commands: `settings()` and `setScale(percent)`, the second writing the file and
+answering the settings as they now are. A size that isn't on the ladder is read as 100 —
+a file we didn't write, not "about 125".
+
+
 **About** carries the credits and licenses from §14. Three things deserve to be in plain
 sight rather than in a footer, because they're the reason a stranger should trust an app
 that opens their saves: **read-only on saves, no account, no telemetry.** These are

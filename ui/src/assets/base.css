@@ -2,12 +2,18 @@
   html {
     /* One weight: never a synthesised bold. Italic synthesis stays: the kit uses it. */
     font-synthesis-weight: none;
+    /* The interface's size, and the only place it is applied: every size token is in rem,
+       so the root carries all of them (cycle 3.5c). 16px is the base the design file is
+       drawn at, not the browser's own root size — reading that would make one step mean two
+       sizes on two machines. The fallback keeps the app at 100% before the frontend has
+       heard from the backend, and on the Kit page, which has no settings. */
+    font-size: calc(16px * var(--app-scale, 1));
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
 
-  /* The text size lives here, not on html: on the root it would move rem, and every
-     spacing step (0.25rem) would stop being 4px (base.test.ts). */
+  /* The document's text size lives here, not on html: on the root it would be the scale's
+     base, and one step would stop being one step (base.test.ts). */
   body {
     font-size: var(--text-body);
     line-height: var(--text-body--line-height);

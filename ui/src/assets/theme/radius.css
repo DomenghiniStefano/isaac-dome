@@ -1,5 +1,9 @@
 /* Paper, cards, buttons and panels have no radius at all. rounded-full stays for chips
-   and radios: it isn't a theme value. */
+   and radios: it isn't a theme value.
+
+   These two stay in px at every scale (cycle 3.5c, Decision 4): a radius of 2.5px is a
+   smudge, and the skin is flat on purpose — a corner that grows with the interface would be
+   the one thing pretending to be round. */
 @theme {
   --radius-*: initial;
   --radius-cell: 2px;

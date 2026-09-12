@@ -5,10 +5,12 @@ import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import type { CollectionItem } from '@/lib/ipc/types'
 import CollectionRow from './CollectionRow.vue'
-import { collectionRowHeight } from './collectionLayout'
+import { rowWidePx } from '@/lib/scale/rows'
+import { useSettingsStore } from '@/stores/settings'
 
 const props = defineProps<{ items: CollectionItem[] }>()
 const { t } = useMessages()
+const settings = useSettingsStore()
 
 const scroller = ref<HTMLElement | null>(null)
 
@@ -18,7 +20,7 @@ const virtualizer = useVirtualizer(
   computed(() => ({
     count: props.items.length,
     getScrollElement: () => scroller.value,
-    estimateSize: () => collectionRowHeight,
+    estimateSize: () => rowWidePx(settings.scale),
     overscan: 8,
   })),
 )

@@ -566,3 +566,11 @@ export interface CollectionView {
   totals: CollectionTotals
   diagnostics: CollectionDiagnostic[]
 }
+
+// Mirrors crates/ipc/src/settings.rs. What the app persists: the chosen profile's opaque id
+// and the interface's size as a percentage, which the backend always answers snapped to the
+// eleven steps of `lib/scale/steps.ts`.
+export interface Settings {
+  activeProfileId: string | null
+  scale: number
+}

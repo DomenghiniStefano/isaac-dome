@@ -21,8 +21,10 @@ import type { SidebarEntry } from '@/components/shell/sectionNav'
 import { SidebarWidth } from '@/components/shell/sidebarWidth'
 import type { TabView } from '@/components/shell/tabs'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import { useShortcut } from '@/composables/useShortcut'
 import { i18n, useMessages } from '@/i18n'
 import { indicator } from '@/lib/profile/profileView'
+import { shortcutAction } from '@/lib/scale/shortcut'
 import {
   closeWindow,
   minimizeWindow,
@@ -32,14 +34,17 @@ import {
 import { RouteName, routeOrigin } from '@/router/routeTable'
 import ProgressGate from '@/screens/ProgressGate.vue'
 import { useProfileStore } from '@/stores/profile'
+import { useSettingsStore } from '@/stores/settings'
 import { tabLabel } from '@/stores/tabModel'
 import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
+
 const router = useRouter()
 const tabs = useTabsStore()
 const profile = useProfileStore()
 const wiki = useWikiStore()
 const { t } = useMessages()
+
 const focused = ref(true)
 let stopWatchingFocus: (() => void) | undefined
 onMounted(async () => {
@@ -49,6 +54,7 @@ onMounted(async () => {
   })
 })
 onUnmounted(() => stopWatchingFocus?.())
+
 // The router shows the active tab: selecting, closing or navigating a tab moves it.
 watch(
   () => tabs.active?.location,
@@ -57,6 +63,7 @@ watch(
   },
   { immediate: true },
 )
+
 // A page tab reads as its page's title once the wiki index knows it; every other label is
 // a message.
 const tabViews = computed<TabView[]>(() =>
@@ -69,6 +76,7 @@ const tabViews = computed<TabView[]>(() =>
     }
   }),
 )
+
 // The sidebar shows the active tab's section, until the navbar or the cog picks another.
 const browsing = ref<SidebarSection>(SidebarSection.Progress)
 watch(
@@ -78,28 +86,45 @@ watch(
   },
   { immediate: true },
 )
+
 const sidebarWidth = ref<number>(SidebarWidth.Default)
 const header = computed(() => sidebarHeaders[browsing.value])
 const entries = computed(() => sidebarEntries[browsing.value])
+
 // Ctrl+click opens the entry in a new tab, as a browser does.
 const openEntry = (entry: SidebarEntry, event: MouseEvent) => {
   if (event.ctrlKey) tabs.open(entry.location)
   else tabs.navigate(entry.location)
 }
+
 // Clicking a section goes to its first page at once, with no second click in the sidebar:
 // this reverses Decision 5 of the shell spec, on purpose (`docs/BACKLOG.md` B24). The
 // sidebar follows the tab through the watch above, so `browsing` needs no setting here.
 const openSection = (section: SidebarSection, event: MouseEvent) => {
   openEntry(firstEntry(section), event)
 }
+
 // Informazioni is a dialog over the tab, not a tab of its own (`docs/BACKLOG.md` B25).
 const aboutOpen = ref(false)
+
+// `Ctrl` `+` / `-` / `0` move the interface's size from anywhere, on the same ladder and the
+// same saved value as the slider in Settings: a shortcut is not a second scale.
+const settings = useSettingsStore()
+void settings.load()
+useShortcut((event) => {
+  const action = shortcutAction(event)
+  if (action === null) return false
+  void settings.step(action)
+  return true
+})
+
 const indicatorView = computed(() =>
   profile.setup
     ? indicator(profile.setup.active, new Date(), i18n.global.locale.value)
     : null,
 )
 </script>
+
 <template>
   <TooltipProvider>
     <div

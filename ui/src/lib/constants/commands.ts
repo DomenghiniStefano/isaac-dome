@@ -1,5 +1,7 @@
 export const Command = {
   SetupState: 'setup_state',
+  Settings: 'settings',
+  SetScale: 'set_scale',
   SelectProfile: 'select_profile',
   SaveSummary: 'save_summary',
   Completion: 'completion',

@@ -33,6 +33,7 @@ export const it = {
     live: 'Live',
     wiki: 'Wiki',
     profile: 'Profilo di gioco',
+    appearance: 'Aspetto',
     tabsSettings: 'Tab',
     about: 'Informazioni',
   },
@@ -198,26 +199,50 @@ export const it = {
         'Il binario contiene un dataset che non si legge: la Wiki non ha pagine da mostrare.',
     },
   },
+  appearance: {
+    intro:
+      "Scegli quanto è grande l'interfaccia. Cambia tutto insieme — testo, icone, righe, la finestra — e resta com'è tra un avvio e l'altro.",
+    scaleTitle: 'Dimensione',
+    scaleLabel: "Dimensione dell'interfaccia",
+    preview: 'Anteprima',
+    previewHint:
+      "Resta qui mentre scorri: è l'app disegnata alla dimensione scelta.",
+    shortcut: 'Da qualsiasi schermata:',
+    shortcutReset: 'torna al 100%',
+    saveFailedTitle: 'La dimensione non è stata salvata',
+    saveFailed:
+      "L'interfaccia è già a questa dimensione, ma non siamo riusciti a scriverla: al prossimo avvio torna com'era.",
+    sample: {
+      kpi: 'Achievement fatti',
+      item: 'The Sad Onion',
+      itemHint: 'oggetto passivo · qualità 2',
+      button: 'Un pulsante',
+      badge: 'sbloccabile ora',
+    },
+  },
   about: {
     fanMade:
-      'IsaacDome è fatto dai fan e non è affiliato a Nicalis né a Edmund McMillen.',
+      'IsaacDome è un progetto realizzato dai fan e non è affiliato, approvato o sponsorizzato da Nicalis né da Edmund McMillen.',
     version: 'Versione',
     versionUnknown: 'server di sviluppo',
     promisesTitle: 'Le tre promesse',
     promises: {
+      readOnlyTitle: 'Salvataggi in sola lettura',
       readOnly:
-        'Sui salvataggi si legge soltanto: il modulo che apre i .dat non contiene codice di scrittura, e il checksum non viene mai ricalcolato.',
+        'I salvataggi vengono esclusivamente letti. Il modulo che apre i file .dat non contiene codice di scrittura e il checksum non viene mai ricalcolato.',
+      offlineTitle: 'Nessun account, server o telemetria',
       offline:
-        "Nessun account, nessun server, nessuna telemetria: l'app funziona offline e la rete serve solo a un aggiornamento facoltativo del dataset.",
+        'IsaacDome funziona offline. Non richiede un account e non utilizza server né sistemi di telemetria. La connessione di rete viene utilizzata esclusivamente per un eventuale aggiornamento facoltativo del dataset.',
+      oneFileTitle: 'Un solo file scritto',
       oneFile:
-        "Un solo file scritto, isaacdome.db, nella cartella dati dell'app: nient'altro sul disco viene toccato.",
+        "L'app scrive un solo file, isaacdome.db, nella cartella dati dell'app. Nessun altro file sul disco viene modificato o scritto.",
     },
     creditsTitle: 'Crediti e licenze',
     wikiText:
-      'Il testo della wiki è CC BY-SA 4.0, da bindingofisaacrebirth.wiki.gg.',
+      'Il testo della wiki è distribuito con licenza CC BY-SA 4.0 e proviene da bindingofisaacrebirth.wiki.gg.',
     assets:
-      "Le immagini del gioco non sono nostre e non viaggiano con l'app: vengono estratte dalla tua copia.",
-    font: 'Il carattere Determination Mono è CC BY 3.0.',
+      "Le immagini del gioco non sono incluse né distribuite con l'app. Vengono estratte direttamente dalla copia del gioco dell'utente.",
+    font: 'Il carattere Determination Mono è distribuito con licenza CC BY 3.0.',
   },
   placeholder: {
     runArchive: "Arriva con l'archivio delle run (M4).",
@@ -360,9 +385,9 @@ export const it = {
     originNone: 'non indicata',
     unknownAchievement: 'Achievement sconosciuto',
     slot: 'slot',
-    // La forma contaminata di un personaggio: il gioco scrive lo stesso nome per le due
-    // forme, il nome resta suo e la parola che le distingue è nostra.
-    taintedName: '{name} contaminato',
+    // La forma Tainted di un personaggio: il gioco scrive lo stesso nome per le due forme.
+    // "Tainted" resta in inglese come ogni nome del gioco (DESIGN-BRIEF.md §12).
+    taintedName: 'Tainted {name}',
   },
   nextSteps: {
     intro:
