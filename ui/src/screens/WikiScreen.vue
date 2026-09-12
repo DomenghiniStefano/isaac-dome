@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useMessages } from '@/i18n'
+import { singleQuery } from '@/lib/search/queryParam'
 import { WikiCategory } from '@/router/routeTable'
 import { LoadStatus } from '@/stores/profile'
 import { useWikiStore } from '@/stores/wiki'
@@ -19,11 +20,9 @@ void wiki.loadIndex()
 
 // The location's query decides the view (spec 3.5, Decision 3): a page, a category's list,
 // or the landing. A query value the router hands as an array or null is no value.
-const single = (value: unknown): string | null =>
-  typeof value === 'string' ? value : null
-const page = computed(() => single(route.query.page))
+const page = computed(() => singleQuery(route.query.page))
 const category = computed((): WikiCategory | null => {
-  const wanted = single(route.query.category)
+  const wanted = singleQuery(route.query.category)
   return Object.values(WikiCategory).find((c) => c === wanted) ?? null
 })
 // A dataset that didn't load has no lists and no pages: every query shows the landing,
