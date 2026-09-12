@@ -1459,3 +1459,59 @@ design pass that redraws the bar for both screens at once.
 Both screens filter from one bar with a fold for the less important controls; pool, quality,
 origin and kind are multi-select dropdowns; neither shows a value with 0 unless it is
 currently picked; and the word "Faccette" appears nowhere in the app.
+
+---
+
+## B30 — Where the app writes, in Settings, and movable (implementation, `app`, `store` and `ui`)
+
+Logged 2026-09-12, from the owner while reading the About dialog: About says the app writes
+one file, `isaacdome.db`, in the app's data folder — and the owner wants to **see that folder
+and be able to move it**, which is a setting, not a credit.
+
+### What goes where
+
+About keeps what **identifies and credits** the app: the name, the version, the fan-made
+line, the licences, and the three promises — the promises are the product's contract and the
+first thing a stranger should read, so they stay where a stranger looks. What moves is the
+**fact about this machine**: which folder, how big, and the button that changes it. A path is
+something you act on; a promise is something you read.
+
+### What we already have
+
+- `crates/app/src/lib.rs`: `StoreState` opens `app_data_dir()/isaacdome.db` once, lazily, and
+  keeps it in managed state; `settings_file.rs` writes `settings.json` in `app_config_dir()`.
+  Neither path has ever crossed the IPC, and **neither may**: a path carries the Windows
+  username (CLAUDE.md, "Don't cross the IPC boundary").
+- `store` with its versioned schema and two migrations, and the queue as one JSON document.
+- The Settings section of the sidebar (Profile, Tabs, Appearance since 3.5c).
+
+### The constraint that shapes it, and the way out
+
+A path can't cross the boundary as a path — but the user has to see *where* their data is, or
+the setting is a button with no subject. The way out is the one `discovery` already uses for
+save files: **the view carries a hint, not a path** — the folder's display name and its parent
+in short form, enough to recognise it, never the full string. The dialog that changes it is
+the Tauri dialog plugin (B14 needs the same plugin), and what comes back travels **inward
+only**: the frontend asks "move it here" with the handle the dialog gave, and the backend
+answers with a new hint.
+
+### What's missing
+
+1. A **Data** page under Settings: the folder's hint, the database's size, and what is in it
+   (the queue, the goals — a row each, from `store`), plus the same for `settings.json`.
+2. A command that **moves** it: close the handle in `StoreState`, copy the file, verify it
+   opens at the destination, write the new location in `settings.json`, and only then remove
+   the old one. It is the app's own data, so the order is copy → verify → switch → delete,
+   never move → hope.
+3. The location in `settings.json` (`dataDir`), read at startup by `StoreState`; absent means
+   the default, which is what every install has today.
+4. **What happens when the saved folder is gone** on the next launch — an external drive, a
+   folder the user deleted: the app says so on the Data page and falls back to the default
+   rather than failing to open, and the goals and the queue read as unavailable, which is a
+   state `plan` and `queue` already have.
+
+### Done when
+
+The Data page names the folder in words, says how large the file is, and moving it leaves the
+queue and the goals intact at the new place; a folder that has gone missing is said, not
+crashed on; and no full path has crossed the IPC boundary.

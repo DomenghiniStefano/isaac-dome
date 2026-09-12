@@ -14,6 +14,7 @@ import SelectSection from './sections/SelectSection.vue'
 import KbdSection from './sections/KbdSection.vue'
 import SeparatorSection from './sections/SeparatorSection.vue'
 import SkeletonSection from './sections/SkeletonSection.vue'
+import SliderSection from './sections/SliderSection.vue'
 import TooltipSection from './sections/TooltipSection.vue'
 import PopoverSection from './sections/PopoverSection.vue'
 import CollapsibleSection from './sections/CollapsibleSection.vue'
@@ -42,6 +43,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
       <KbdSection />
       <SeparatorSection />
       <SkeletonSection />
+      <SliderSection />
       <CardSection />
       <AlertSection />
       <EmptySection />

@@ -200,24 +200,27 @@ export const it = {
   },
   about: {
     fanMade:
-      'IsaacDome è fatto dai fan e non è affiliato a Nicalis né a Edmund McMillen.',
+      'IsaacDome è un progetto realizzato dai fan e non è affiliato, approvato o sponsorizzato da Nicalis né da Edmund McMillen.',
     version: 'Versione',
     versionUnknown: 'server di sviluppo',
     promisesTitle: 'Le tre promesse',
     promises: {
+      readOnlyTitle: 'Salvataggi in sola lettura',
       readOnly:
-        'Sui salvataggi si legge soltanto: il modulo che apre i .dat non contiene codice di scrittura, e il checksum non viene mai ricalcolato.',
+        'I salvataggi vengono esclusivamente letti. Il modulo che apre i file .dat non contiene codice di scrittura e il checksum non viene mai ricalcolato.',
+      offlineTitle: 'Nessun account, server o telemetria',
       offline:
-        "Nessun account, nessun server, nessuna telemetria: l'app funziona offline e la rete serve solo a un aggiornamento facoltativo del dataset.",
+        'IsaacDome funziona offline. Non richiede un account e non utilizza server né sistemi di telemetria. La connessione di rete viene utilizzata esclusivamente per un eventuale aggiornamento facoltativo del dataset.',
+      oneFileTitle: 'Un solo file scritto',
       oneFile:
-        "Un solo file scritto, isaacdome.db, nella cartella dati dell'app: nient'altro sul disco viene toccato.",
+        "L'app scrive un solo file, isaacdome.db, nella cartella dati dell'app. Nessun altro file sul disco viene modificato o scritto.",
     },
     creditsTitle: 'Crediti e licenze',
     wikiText:
-      'Il testo della wiki è CC BY-SA 4.0, da bindingofisaacrebirth.wiki.gg.',
+      'Il testo della wiki è distribuito con licenza CC BY-SA 4.0 e proviene da bindingofisaacrebirth.wiki.gg.',
     assets:
-      "Le immagini del gioco non sono nostre e non viaggiano con l'app: vengono estratte dalla tua copia.",
-    font: 'Il carattere Determination Mono è CC BY 3.0.',
+      "Le immagini del gioco non sono incluse né distribuite con l'app. Vengono estratte direttamente dalla copia del gioco dell'utente.",
+    font: 'Il carattere Determination Mono è distribuito con licenza CC BY 3.0.',
   },
   placeholder: {
     runArchive: "Arriva con l'archivio delle run (M4).",
