@@ -17,6 +17,7 @@ mod sprite_png;
 mod summary;
 mod target_sprite;
 mod wiki;
+mod wiki_target;
 
 pub use catalog_view::{catalog_view, item_views, CatalogView, ItemKindView, ItemView, KindCounts};
 pub use collection::{
