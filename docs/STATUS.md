@@ -696,17 +696,28 @@ save against the dated backup the game wrote before it, and read which cells mov
       them. Closing it lets sections 5, 8 and 9 be renamed the way 3 and 6 were. *Careful
       with co-op*, now measured rather than suspected (2026-09-12): a won online Greed run
       logged `playing cutscene 21` and **section 8 did not move a byte** — nor did 3, 5 or
-      9. The run has to be **solo**; the rest of the personal save does move in co-op, but
-      not these four.
+      9. A solo session the same day separated them further: **section 3 moved** (four stage
+      cells, +1 +1 +2 +1) while 5, 8 and 9 stayed put — so 3 is the one co-op diverts, and 8
+      is simply waiting for a run with an ending. The run has to be **solo** *and* has to
+      finish: the 2026-09-12 solo session had no cutscene and no `Game Over`, so it did not
+      close this.
 - [ ] **What the bestiary's four tallies count** (B9, structure closed 2026-09-09;
       **halved on 2026-09-12**). Section 10 holds four lists over the same entities — ids 4,
       2, 3, 1 — with a different number against each entity in each. One matched window on a
       Greed run split them in two: **tallies 1 and 2 moved** (sum +432 and +805, no new
-      keys), **3 and 4 did not move at all**. So 1 and 2 count something a run does
-      constantly and 3 and 4 something it did not do once in 26 minutes — which rules out
-      "kills" for the latter pair. Naming them still needs the original instrument: kill a
-      known enemy a known number of times and read which tally moves by how much. Until
-      then they keep the id the file gives them.
+      keys), **3 and 4 did not move at all**. A second window the same day — Judas, **solo**,
+      44 minutes — split them again: 1 and 2 moved (+351, +258), **3 moved (+11)**, 4 still
+      did not. So the four sort into three behaviours: 1 and 2 move constantly and in both
+      modes; 3 moves solo but not in online co-op, like section 3 does; 4 has never been
+      seen moving.
+      **The hypothesis for 4, with its test**: it counts the times an entity *killed the
+      player*. It fits every number — 156 records for 321 deaths, growing slowly and by
+      whole new keys across the series (130/240 on 06-29, 142/277 on 08-05, 154/319 on
+      09-08) — and above all it explains the two flat windows, because **both sessions had
+      zero `Game Over` lines**. One deliberate death falsifies it or confirms it in two
+      minutes: tally 4 has to gain exactly 1 on the killer's key. Until then it keeps the id
+      the file gives it. Naming 1, 2 and 3 apart still needs the original instrument: kill a
+      known enemy a known number of times and read which moves by how much.
 - [ ] **What the bestiary's trailing word is.** One word after the last tally, in every
       save, growing 11,343 → 29,725 across the samples we hold, and 43,914 → **43,925** over
       the 2026-09-12 window. So it moves **+11 in one Greed run** — small, and not obviously
