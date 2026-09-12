@@ -1,10 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import base from './base.css?raw'
+import typography from './theme/typography.css?raw'
 
-// Tailwind's spacing is calc(var(--spacing) * n) with --spacing at 0.25rem, and the kit
-// draws on whole 4px steps. A font size on the root moves rem with it: at 14px every step
-// is 3.5px. Measured on the Kit page on 2026-09-10 before this test existed: a 14px
-// checkbox where the kit draws 16, and a 10.5px gap.
+// The root's font size is the interface's scale (cycle 3.5c): every token is in rem, so the
+// whole app follows it. What this file used to forbid — a font size on `html` — is now what
+// it requires; the invariant is the same one it was written for, restated: **at factor 1 the
+// root is 16px**, so a spacing step is 4px and `--text-body` is 14px, which is what the
+// design file is drawn at.
 function ruleBody(css: string, selector: string): string | undefined {
   return new RegExp(String.raw`(?:^|[\s}])${selector}\s*\{([^}]*)\}`).exec(
     css,
@@ -16,13 +18,18 @@ describe('base.css', () => {
     expect(base).toContain('@layer base')
   })
 
-  it('leaves the root font size to the browser, so a spacing step stays 4px', () => {
+  it('makes the root font size the scale, from a 16px base', () => {
     const html = ruleBody(base, 'html')
     expect(html).toBeDefined()
-    expect(html).not.toMatch(/font-size\s*:/)
+    expect(html).toMatch(/font-size:\s*calc\(16px \* var\(--app-scale, 1\)\);/)
   })
 
   it('sets the document text size on the body instead', () => {
     expect(ruleBody(base, 'body')).toMatch(/font-size:\s*var\(--text-body\);/)
+  })
+
+  it('is drawn at 14px body text when the factor is 1', () => {
+    // 0.875rem x 16px = 14px: the number the kit is measured in.
+    expect(typography).toMatch(/--text-body:\s*0\.875rem;/)
   })
 })

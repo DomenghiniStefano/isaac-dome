@@ -22,12 +22,14 @@ import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
 import ScreenHeader from '../ScreenHeader.vue'
 import { pageId } from './wikiLabels'
-import { wikiRowHeight } from './wikiLayout'
+import { rowWidePx } from '@/lib/scale/rows'
+import { useSettingsStore } from '@/stores/settings'
 
 const props = defineProps<{ category: WikiCategory }>()
 const wiki = useWikiStore()
 const tabs = useTabsStore()
 const { t } = useMessages()
+const settings = useSettingsStore()
 
 // The filter belongs to this screen and to this category: a tab that moves to another
 // category starts clean.
@@ -64,7 +66,7 @@ const virtualizer = useVirtualizer(
   computed(() => ({
     count: pages.value.length,
     getScrollElement: () => scroller.value,
-    estimateSize: () => wikiRowHeight,
+    estimateSize: () => rowWidePx(settings.scale),
     overscan: 8,
   })),
 )

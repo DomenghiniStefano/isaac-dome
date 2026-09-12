@@ -1,57 +1,68 @@
 /* Padding and gaps use Tailwind's 4px grid. Named tokens exist only for dimensions that
-   mean something. */
+   mean something.
+
+   Everything here is in rem against a 16px base, because the root's font size is the
+   interface's scale (cycle 3.5c): at scale 100 each value is the pixel size the design file
+   is drawn at — 2.375rem is 38px. Two kinds of value are not rem, and each says so on the
+   spot: the sprites, which are whole multiples of a pixel size because the game's art is
+   pixel art, and the scrollbar, which is the OS's furniture. */
 @theme {
   /* Table rows, Chrome e Stati.dc.html "Densità": normal is the kit's default. */
-  --spacing-row: 30px;
-  --spacing-row-compact: 24px;
-  --spacing-row-wide: 40px;
+  --spacing-row: 1.875rem;
+  --spacing-row-compact: 1.5rem;
+  --spacing-row-wide: 2.5rem;
   /* Height of button, input, select; side of an icon button. */
-  --spacing-control: 34px;
+  --spacing-control: 2.125rem;
   /* Side of a compact icon button: the tab strip's "+" inside the 30px title bar. */
-  --spacing-icon-compact: 22px;
+  --spacing-icon-compact: 1.375rem;
+  /* The OS's furniture in the app's clothes: one size at every scale, like a hairline. */
   --spacing-scrollbar: 12px;
-  /* The game's icons are 32x32 native: doubled, they stay sharp. */
-  --spacing-sprite: 4rem;
+  /* The game's icons are 32x32 native, drawn at a whole multiple of themselves: at a
+     fraction the browser smears pixel art, so the multiple is an integer the app writes on
+     the root (`lib/scale/apply.ts`) and never a rem value. */
+  --spacing-sprite: calc(32px * var(--sprite-multiple));
   /* Achievement icons are painted 263x176 images, not pixel art:
      at half their native size they stay readable without going mushy. */
   --spacing-achievement: 5.5rem;
   /* An achievement drawing in a table row: 48 x 32, the 263 x 176 drawing at its ratio. */
-  --spacing-achievement-thumb: 48px;
+  --spacing-achievement-thumb: 3rem;
   /* A wiki page's figure (Schermate.dc.html): a 32px sprite at 3x, a 192px portrait at half. */
   --spacing-wiki-figure: 6rem;
   /* Unlock's table (Schermate.dc.html): the drawing column, the state badge column, the
      fan-out column, the add-to-the-queue column, and the height of the scrolling body. */
-  --spacing-unlock-art: 64px;
-  --spacing-unlock-state: 136px;
-  --spacing-unlock-fan: 56px;
-  --spacing-unlock-queue: 40px;
-  --spacing-unlock-body: 560px;
+  --spacing-unlock-art: 4rem;
+  --spacing-unlock-state: 8.5rem;
+  --spacing-unlock-fan: 3.5rem;
+  --spacing-unlock-queue: 2.5rem;
+  --spacing-unlock-body: 35rem;
   /* The Collection's table (Schermate.dc.html, "Collezione"): the sprite column, the quality
      pips, the origin DLC and the state badge; a quality pip's side. */
-  --spacing-collection-sprite: 56px;
-  --spacing-collection-quality: 96px;
-  --spacing-collection-origin: 104px;
-  --spacing-collection-state: 136px;
-  --spacing-quality-pip: 6px;
+  --spacing-collection-sprite: 3.5rem;
+  --spacing-collection-quality: 6rem;
+  --spacing-collection-origin: 6.5rem;
+  --spacing-collection-state: 8.5rem;
+  --spacing-quality-pip: 0.375rem;
   /* The Plan's proposal column (Schermate.dc.html, 246px, on the 4px grid). */
-  --spacing-plan-aside: 248px;
+  --spacing-plan-aside: 15.5rem;
   /* The window (Chrome e Stati.dc.html, "Finestra"): tab strip, tabs, drag region,
      window controls, navbar. */
-  --spacing-titlebar: 30px;
-  --spacing-tab: 24px;
-  --spacing-tab-min: 34px;
-  --spacing-tab-max: 150px;
-  --spacing-drag-region: 130px;
-  --spacing-window-control: 38px;
-  --spacing-navbar: 38px;
-  --spacing-brand: 150px;
-  --spacing-search: 240px;
-  /* The completion matrix: a 16px mark symbol at 2x in a 40px cell (cycle 2, Decision 7). */
-  --spacing-mark-cell: 40px;
-  --spacing-mark-symbol: 32px;
+  --spacing-titlebar: 1.875rem;
+  --spacing-tab: 1.5rem;
+  --spacing-tab-min: 2.125rem;
+  --spacing-tab-max: 9.375rem;
+  --spacing-drag-region: 8.125rem;
+  --spacing-window-control: 2.375rem;
+  --spacing-navbar: 2.375rem;
+  --spacing-brand: 9.375rem;
+  --spacing-search: 15rem;
+  /* The completion matrix: a 16px mark symbol at a whole multiple, in a cell measured from
+     it. The cell can't be rem: at 125 the multiple rounds up, and a rem cell would be
+     smaller than the symbol inside it (cycle 3.5c, Decision 3). */
+  --spacing-mark-symbol: calc(16px * var(--sprite-multiple));
+  --spacing-mark-cell: calc(var(--spacing-mark-symbol) * 1.25);
   /* The completion matrix's frame (Schermate.dc.html): the name column, the row total, and a
-     column header tall enough for a vertical "Mom's Heart" over a 32px symbol. */
-  --spacing-matrix-name: 176px;
-  --spacing-matrix-total: 52px;
-  --spacing-matrix-header: 118px;
+     column header tall enough for a vertical "Mom's Heart" over the symbol. */
+  --spacing-matrix-name: 11rem;
+  --spacing-matrix-total: 3.25rem;
+  --spacing-matrix-header: 7.375rem;
 }
