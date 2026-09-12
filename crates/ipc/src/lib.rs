@@ -47,7 +47,8 @@ pub use resources::{
     SpriteView,
 };
 pub use search::{
-    documents_for_tests, progress_for_tests, Doc, ProgressMark, SaveFlags, SearchIndex,
+    documents_for_tests, progress_for_tests, search, Doc, ProgressMark, SaveFlags,
+    SearchDiagnostic, SearchHit, SearchIndex, SearchMatch, SearchView,
 };
 pub use settings::{snap_percent, Settings, DEFAULT_SCALE, SCALE_PERCENTS};
 pub use sprite_png::{crop_png, decode_rgba};
