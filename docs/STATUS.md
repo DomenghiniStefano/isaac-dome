@@ -787,14 +787,48 @@ save against the dated backup the game wrote before it, and read which cells mov
 
 ## Session log
 
+### 2026-09-12 (later) — the review's small half, implemented
+
+On `feature/review-fixes`, cut from `develop`: the entries of the review that needed no
+measurement and no design pass. Ticked above as they landed; what the boxes below still show
+open is either waiting for a run of the game (B19, B20, B21), for a design pass (B17's flow,
+B23, B29's bar), or for its own sub-project (B22 with 3.6, B26 as 3.5c, B27 with 3.7).
+
+- [x] **B28, and it was a contract**: `UnlockTarget::Character` and `RequirementView::Character`
+      carry `tainted`, the Unlock facet keys on the character's id instead of its name, and the
+      label is composed from a message (`Tainted {name}` / `{name} contaminato`) so the word
+      order belongs to the translation. `useMessages` learned to take values for a message,
+      which it had no reason to before. A real-data test pins the pair 82/484 as two targets
+      under one name; the pack's `unlock.json` predates the field, so the fixture fills it as
+      the base form and says so once in the console.
+- [x] **B24 reverses a decision of the shell spec**, on purpose: clicking Wiki, Progressi or
+      the cog moves the active tab to that section's first page at once (`firstEntry`), with
+      `Ctrl` opening it beside, and the cog reads as lit while a settings page is open.
+- [x] **B25 removes a route**: About is a `Dialog` over the current tab — the name, the version
+      read from the bundle through `getVersion()`, the three promises, the attributions. With
+      it went `RouteName.About`, `TabOrigin.About` and their placeholder, which the compiler
+      listed for us.
+- [x] **B16 and B18 are the window's first frame**: the navbar's placeholder square is the
+      Dome mark itself, inlined so it takes `currentColor` and keeps dimming with the focus;
+      the icon is `primary` now, regenerated for every size from the one SVG with
+      `tauri icon`. The window and the document both declare the background token and a splash
+      holds the mark until the bundle mounts. Three places hold that colour by necessity, so a
+      test reads all three and compares them.
+- [x] **The copy the owner called false** (B17, item 1) is gone: no "Schermata 0", no "è lo
+      stato che decide ogni numero", and the Settings hint says what is actually under it.
+- [x] **B29's two sight fixes**: "Faccette" becomes "Filtri", and a value with nothing behind
+      it is no longer listed with a 0 and a disabled checkbox — on Unlock too.
+- [ ] **Not seen in a real Tauri window**: the splash, the icon in the taskbar and the
+      installer, and the version in the dialog all need a build.
+
 ### 2026-09-12 — the owner's first-launch review, as backlog entries
 
 The review the "(delegated)" decisions were waiting for, dictated screen by screen and
-written up as B16–B26 in `docs/BACKLOG.md`, nothing implemented:
+written up as B16–B29 in `docs/BACKLOG.md`:
 
-- [ ] **Chrome**: the brand mark becomes the app icon, in `primary` (B16); no white flash at
+- [x] **Chrome**: the brand mark becomes the app icon, in `primary` (B16); no white flash at
       launch, a splash with the mark (B18); About is a dialog, not a page (B25).
-- [ ] **Navigation**: clicking a section navigates to its first page at once and the section
+- [x] **Navigation**: clicking a section navigates to its first page at once and the section
       reads as lit — this reverses Decision 5 of the shell spec, on purpose (B24).
 - [ ] **Profile**: "Schermata 0" and the settings copy go; the screen is a welcome flow with a
       preview per save (B17).
@@ -806,7 +840,7 @@ written up as B16–B26 in `docs/BACKLOG.md`, nothing implemented:
       sub-project 3.5c because it rewrites the tokens (B26).
 - [ ] **Tables**: a table fills the page or is sized by the mouse, and a dragged size is
       remembered per table, in the place 3.7 chooses for the session (B27).
-- [ ] **A bug in Unlock, traced**: slots 474–490 are the Tainted characters, whose `text`
+- [x] **A bug in Unlock, traced**: slots 474–490 are the Tainted characters, whose `text`
       in `achievements.xml` is the base name; the save and the graph are right, the label
       drops the `tainted` flag the marks matrix already uses (B28).
 - [ ] **Collection's filter**: "Faccette" goes, and so do values with nothing behind them
