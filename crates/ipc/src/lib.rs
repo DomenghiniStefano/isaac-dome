@@ -45,7 +45,7 @@ pub use resources::{
     archive_views, data_url, extraction_report, ArchiveMode, ArchiveView, ExtractionReport,
     SpriteView,
 };
-pub use settings::Settings;
+pub use settings::{snap_percent, Settings, DEFAULT_SCALE, SCALE_PERCENTS};
 pub use sprite_png::{crop_png, decode_rgba};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
