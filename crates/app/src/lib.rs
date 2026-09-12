@@ -394,6 +394,7 @@ fn unlock(
     let eval = g.map(|g| g.evaluate(&progress));
     Ok(ipc::unlock_view(
         catalog,
+        wiki::Dataset::embedded().ok(),
         flags.as_deref(),
         g,
         eval.as_ref(),
@@ -508,6 +509,7 @@ fn queue_view_now(
     Ok(ipc::queue_view(
         ipc::QueueInputs {
             catalog: pieces.catalog,
+            dataset: wiki::Dataset::embedded().ok(),
             flags: pieces.flags.as_deref(),
             graph: pieces.graph,
             eval: None,
