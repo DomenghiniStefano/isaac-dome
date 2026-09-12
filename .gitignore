@@ -16,3 +16,7 @@ crates/app/gen/schemas/
 # più niente. Si rigenera in un comando, quindi il commit non è la fonte di verità.
 /design-export/*
 !/design-export/isaacdome-design-pack/
+
+# Playwright MCP writes its snapshots and console logs here while a screen is being
+# looked at: working material, never the repository's.
+.playwright-mcp/
