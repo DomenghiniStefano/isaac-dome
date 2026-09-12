@@ -21,7 +21,7 @@ const props = defineProps<{ node: UnlockNode }>()
 const { t } = useMessages()
 
 const state = computed(() => nodeState(props.node))
-const groups = computed(() => missingGroups(props.node))
+const groups = computed(() => missingGroups(props.node, t))
 
 const variant: Record<NodeState, BadgeVariant> = {
   [NodeState.Done]: BadgeVariant.Done,

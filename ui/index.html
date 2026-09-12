@@ -1,12 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="background-color: #150e0d">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IsaacDome</title>
+    <!-- The window's own colour and the mark, before any stylesheet: the webview paints
+         white until the CSS lands, and on a dark app that reads as a glitch. The colour is
+         the `background` token and the window's `backgroundColor` in
+         `crates/app/tauri.conf.json`; the test beside the token file keeps the three from
+         drifting. The rules live here, and only here, because they have to be there before
+         the bundle is (`docs/BACKLOG.md` B18). -->
+    <style>
+      #splash {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background-color: #150e0d;
+      }
+      #splash img {
+        width: 96px;
+        height: 96px;
+      }
+    </style>
   </head>
   <body>
+    <div id="splash"><img src="/favicon.svg" alt="" /></div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
