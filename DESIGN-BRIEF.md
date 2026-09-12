@@ -878,14 +878,23 @@ type GraphInfo =
 
 // what a node is still missing, typed by the nature of the target: this is what the
 // screen groups by, so it can say "1 character and 2 bosses" instead of "blocked by 3"
+// `page` is the wiki page that says how *this* is unlocked, and it is what the badge's menu
+// opens (3.5d). `null` means the dataset has no page for it: the name shows and does not
+// link — never "no requirement". The four kinds below that are entities carry it; a gate, a
+// mark, a counter and an uninterpreted label are conditions, so they carry none at all.
 type RequirementView =
   // the two forms of a character share the game's name (achievements.xml writes
   // You unlocked "The Lost" for both): the flag is what tells them apart
-  | { kind: 'character'; id: number; name: string; tainted: boolean }
-  | { kind: 'boss'; id: number; name: string }
-  | { kind: 'challenge'; id: number; name: string }
-  | { kind: 'item'; itemKind: ItemKindView; id: number; name: string }
+  | { kind: 'character'; id: number; name: string; tainted: boolean; page: Target | null }
+  | { kind: 'boss'; id: number; name: string; page: Target | null }
+  | { kind: 'challenge'; id: number; name: string; page: Target | null }
+  | { kind: 'item'; itemKind: ItemKindView; id: number; name: string; page: Target | null }
   | { kind: 'gate'; label: string }
+  // one cell of the completion matrix: go and beat `column` with this character
+  | { kind: 'mark'; character: number; characterName: string; column: MarkColumnView; level: MarkLevelView }
+  // a tally and its threshold, with where the profile stands: the one requirement that is
+  // not a wall — the content is already reachable, it only has to be played
+  | { kind: 'counter'; label: string; current: number; atLeast: number }
   | { kind: 'unknown'; label: string }
 
 interface UnlockNode {
@@ -1158,11 +1167,14 @@ interface CollectionItem {
   lock: LockView
 }
 
+// `page` is the achievement's wiki page, what the badge's menu opens (3.5d); `null` is "the
+// dataset has no page", never "no achievement". `free` has no such key: nothing unlocks the
+// item, so there is nothing to open.
 type LockView =
-  | { kind: 'free' }                                                // nothing unlocks it
-  | { kind: 'unlocked'; achievement: number; text: string | null }  // its achievement is done
-  | { kind: 'locked'; achievement: number; text: string | null }    // not done: it can't appear
-  | { kind: 'unknown'; achievement: number; text: string | null }   // section 1 unread
+  | { kind: 'free' }                                                                    // nothing unlocks it
+  | { kind: 'unlocked'; achievement: number; text: string | null; page: Target | null } // its achievement is done
+  | { kind: 'locked'; achievement: number; text: string | null; page: Target | null }   // not done: it can't appear
+  | { kind: 'unknown'; achievement: number; text: string | null; page: Target | null }  // section 1 unread
 
 type CollectionDiagnostic =
   | { kind: 'noCatalog' }
