@@ -1,5 +1,0 @@
-[    1190ms] [WARNING] graph fixture: the design pack's unlock.json predates the character's tainted flag; every character reads as its base form @ http://localhost:5199/@vite/client:532
-[   69803ms] [WARNING] graph fixture: the design pack's unlock.json predates the character's tainted flag; every character reads as its base form @ http://localhost:5199/@vite/client:532
-[   88095ms] [WARNING] graph fixture: the design pack's unlock.json predates the character's tainted flag; every character reads as its base form @ http://localhost:5199/@vite/client:532
-[  140902ms] The requested module '/src/lib/constants/aria.ts' does not provide an export named 'AriaLabel'
-[  151628ms] [WARNING] graph fixture: the design pack's unlock.json predates the character's tainted flag; every character reads as its base form @ http://localhost:5199/@vite/client:532
