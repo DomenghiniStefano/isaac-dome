@@ -2,11 +2,12 @@
 //! sits behind. Edges come from the game's own `unlocked_by` links, never from the wiki —
 //! the wiki only says *what* is needed.
 
-use catalog::{AchievementId, Catalog};
+use catalog::{AchievementId, Catalog, CharacterId};
 
 use crate::model::Requirement;
 use crate::resolve::{requirement_with, NameIndex};
 use crate::rules::{Rules, Verdict};
+use wiki::Target;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Node {
@@ -56,11 +57,41 @@ impl Graph {
             let mut requirements = Vec::new();
             let mut prerequisites = Vec::new();
             let mut unknown: Vec<String> = Vec::new();
+            // The character an achievement names applies to its whole sentence: "defeat
+            // Mother as Magdalene" is one requirement spread over two references, and the
+            // boss reference is the one that needs to know. Found once per achievement,
+            // because it is a property of the sentence and not of any one reference.
+            //
+            // By name, then by the wiki's id — the same two steps `requirement_with` takes,
+            // and for the same reason: the game gives a Tainted character the base form's
+            // name and tells them apart by a flag, so "Tainted Isaac" is not a key the name
+            // index has. By name alone this found nothing for 141 of the 396 character
+            // references, and every one of them fell through to the tally — answering "has
+            // anyone ever" where the sentence asked "did you, as this character".
+            let character = rules.refs(id).iter().find_map(|r| match &r.target {
+                Target::Character { id: cid } => index
+                    .character(rules.alias(&r.label))
+                    .or_else(|| c.character(CharacterId(*cid)).map(|ch| ch.id)),
+                Target::Item { .. }
+                | Target::Trinket { .. }
+                | Target::Achievement { .. }
+                | Target::Challenge { .. }
+                | Target::Entity { .. }
+                | Target::Transformation { .. }
+                | Target::Stage { .. }
+                | Target::Room { .. }
+                | Target::Pickup { .. } => None,
+            });
             for row in rules.refs(id) {
-                let r = requirement_with(c, rules, &index, row);
+                let r = requirement_with(c, rules, &index, row, character);
                 match &r {
                     Requirement::Unknown { label } => unknown.push(label.clone()),
                     Requirement::None => {}
+                    // Answered by the profile, not by another achievement: no edge, and
+                    // not unknown either. It travels in `requirements` and evaluation asks
+                    // the profile about it — which is why it must not join `unknown`, or
+                    // the node would stay `Partial` with the answer sitting right there.
+                    Requirement::Mark { .. } | Requirement::Counter { .. } => {}
                     Requirement::Character { id: cid } => {
                         if let Some(by) = c.character(*cid).and_then(|ch| ch.unlocked_by) {
                             prerequisites.push(by.0);
