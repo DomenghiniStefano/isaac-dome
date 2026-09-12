@@ -44,6 +44,24 @@ describe('graphAnswers with the game installed', () => {
       /\/0001_you_unlocked_magdalene\.png$/,
     )
   })
+
+  it('fills the page a pack exported before the field existed', () => {
+    const { unlock } = graphAnswers({ withArt: false, withCatalog: true })
+    const missing = unlock.nodes.flatMap((n) => n.missing)
+    expect(missing.length).toBeGreaterThan(0)
+    // An absent key and an explicit null read the same in a template and type-check
+    // differently: the fixture has to answer null, not nothing.
+    missing.forEach((r) => {
+      if (
+        r.kind === 'gate' ||
+        r.kind === 'unknown' ||
+        r.kind === 'mark' ||
+        r.kind === 'counter'
+      )
+        return
+      expect(r.page === null || typeof r.page === 'object').toBe(true)
+    })
+  })
 })
 
 // What crates/ipc/src/graph.rs `unlock_view` sends without a catalog: one node per slot, an

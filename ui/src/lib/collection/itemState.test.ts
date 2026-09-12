@@ -18,6 +18,7 @@ const locked: LockView = {
   kind: 'locked',
   achievement: 62,
   text: '"Epic Fetus" has appeared in the basement',
+  page: null,
 }
 
 describe('itemState', () => {
@@ -31,7 +32,9 @@ describe('itemState', () => {
     expect(itemState(item())).toBe(ItemState.Available)
     expect(
       itemState(
-        item({ lock: { kind: 'unlocked', achievement: 1, text: null } }),
+        item({
+          lock: { kind: 'unlocked', achievement: 1, text: null, page: null },
+        }),
       ),
     ).toBe(ItemState.Available)
   })
@@ -44,7 +47,9 @@ describe('itemState', () => {
     expect(itemState(item({ inCollection: null }))).toBe(ItemState.Unknown)
     expect(
       itemState(
-        item({ lock: { kind: 'unknown', achievement: 62, text: null } }),
+        item({
+          lock: { kind: 'unknown', achievement: 62, text: null, page: null },
+        }),
       ),
     ).toBe(ItemState.Unknown)
   })

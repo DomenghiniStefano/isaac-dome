@@ -92,9 +92,15 @@ describe('facetValues', () => {
     const n = node(1, {
       graph: computed(false, 2),
       missing: [
-        { kind: 'character', id: 10, name: 'The Lost', tainted: false },
+        {
+          kind: 'character',
+          id: 10,
+          name: 'The Lost',
+          tainted: false,
+          page: null,
+        },
         { kind: 'unknown', label: 'ending' },
-        { kind: 'character', id: 0, name: 'Isaac', tainted: false },
+        { kind: 'character', id: 0, name: 'Isaac', tainted: false, page: null },
       ],
     })
     expect(facetValues(n, FacetId.State)).toEqual([NodeState.Blocked])
@@ -312,7 +318,9 @@ describe('the character facet keeps the two forms apart', () => {
   const lost = (id: number, tainted: boolean) =>
     node(id, {
       graph: computed(false, 1),
-      missing: [{ kind: 'character', id, name: 'The Lost', tainted }],
+      missing: [
+        { kind: 'character', id, name: 'The Lost', tainted, page: null },
+      ],
     })
 
   it('offers one option per character, not one per name', () => {
