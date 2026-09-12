@@ -14,6 +14,7 @@ export const Command = {
   RemoveGoal: 'remove_goal',
   WikiEntry: 'wiki_entry',
   WikiIndex: 'wiki_index',
+  Search: 'search',
   Queue: 'queue',
   QueueAdd: 'queue_add',
   QueueRemove: 'queue_remove',
