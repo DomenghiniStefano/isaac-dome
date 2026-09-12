@@ -6,7 +6,7 @@
 //! already — a wrong path doesn't raise an error, it goes quiet.
 
 use catalog::Catalog;
-use ipc::{icon_source, IconRef, ItemKindView, MarkTier};
+use ipc::{icon_source, IconRef, ItemKindView, MarkTier, Target};
 
 const ITEMS: &[u8] = b"<items gfxroot=\"gfx/items/\"><passive id=\"2\" gfx=\"a.png\" name=\"A\" achievement=\"1\" /></items>";
 const ACH: &[u8] = b"<achievements gfxroot=\"gfx/ui/achievement/\"><achievement id=\"1\" text=\"t1\" gfx=\"1.png\" /></achievements>";
@@ -227,6 +227,87 @@ fn a_mark_is_not_in_the_catalog() {
         &IconRef::Mark {
             column: 0,
             tier: MarkTier::Hard
+        }
+    )
+    .is_none());
+}
+
+#[test]
+fn a_page_reference_survives_the_round_trip_for_every_kind_that_has_a_page() {
+    let pages = [
+        Target::Item { id: 105 },
+        Target::Trinket { id: 97 },
+        Target::Achievement { id: 1 },
+        Target::Challenge { number: 19 },
+        Target::Character { id: 0 },
+        Target::Entity {
+            id: 20,
+            variant: 0,
+            subtype: 0,
+        },
+    ];
+    for target in pages {
+        let r = IconRef::Page { target };
+        let path = r.to_path();
+        assert!(path.starts_with("page/"), "{path}");
+        assert_eq!(IconRef::parse(&path), Some(r), "round trip of {path:?}");
+    }
+    assert_eq!(
+        IconRef::Page {
+            target: Target::Entity {
+                id: 20,
+                variant: 0,
+                subtype: 0
+            }
+        }
+        .to_path(),
+        "page/entity/20/0/0"
+    );
+}
+
+#[test]
+fn a_target_with_no_page_has_no_path() {
+    // Stages, rooms, pickups and transformations have no page in the dataset, so no figure
+    // to serve: the handler refuses the string instead of guessing.
+    for bad in [
+        "page/stage/Basement",
+        "page/room/x",
+        "page/pickup/Chest",
+        "page/transformation/1",
+        "page/item",
+        "page/entity/20/0",
+        "page/item/1/2",
+        "page/none",
+    ] {
+        assert_eq!(IconRef::parse(bad), None, "{bad:?}");
+    }
+}
+
+#[test]
+fn a_page_icon_resolves_through_target_sprite() {
+    let c = catalog();
+    let found = icon_source(
+        &c,
+        &IconRef::Page {
+            target: Target::Item { id: 2 },
+        },
+    );
+    assert_eq!(
+        found.map(|s| s.path.as_str()),
+        Some("gfx/items/collectibles/a.png")
+    );
+    assert!(icon_source(
+        &c,
+        &IconRef::Page {
+            target: Target::Item { id: 99 }
+        }
+    )
+    .is_none());
+    // A challenge the catalog doesn't list has no art, and says nothing.
+    assert!(icon_source(
+        &c,
+        &IconRef::Page {
+            target: Target::Challenge { number: 1 }
         }
     )
     .is_none());
