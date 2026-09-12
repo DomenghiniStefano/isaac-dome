@@ -26,7 +26,12 @@ const item = (over: Partial<CollectionItem> = {}): CollectionItem => ({
   lock: { kind: 'free' },
   ...over,
 })
-const locked: LockView = { kind: 'locked', achievement: 62, text: null }
+const locked: LockView = {
+  kind: 'locked',
+  achievement: 62,
+  text: null,
+  page: null,
+}
 
 const sadOnion = item({ id: 1 })
 const innerEye = item({
