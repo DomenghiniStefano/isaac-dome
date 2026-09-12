@@ -405,6 +405,8 @@ export const it = {
       challenge: 'Sfide',
       item: 'Oggetti',
       gate: 'Condizioni',
+      mark: 'Marchi di completamento',
+      counter: 'Boss da battere',
       unknown: 'Requisiti che non sappiamo interpretare',
     },
     kinds: {
@@ -423,6 +425,8 @@ export const it = {
       blocked: 'bloccato',
       partial: 'grafo parziale',
     },
+    // Una cella della matrice: il boss e il personaggio con cui va battuto.
+    markName: '{boss} con {character}',
     originNone: 'non indicata',
     unknownAchievement: 'Achievement sconosciuto',
     slot: 'slot',
