@@ -1386,6 +1386,55 @@ target written as one string, never the page's content (B6).
 - An `edition` is text scoped to certain editions (`only: Dlc[]`): it must be flagged — a
   label or a color per edition — not simply rendered as if it always applied.
 
+**Search** (added 2026-09-12, cycle 3.5b). `search(query, limit): Promise<SearchView>` answers
+one query over **one index**: the catalog's names, an achievement's own condition, wiki titles
+and the body of wiki sections. A target both sides know is one document, so a name is never
+listed twice; the catalog's name is its title and the wiki's is an alias when they differ.
+
+```typescript
+export type ProgressMark = 'done' | 'pending' | 'unknown' | 'none'
+export type SearchDiagnostic =
+  | 'noProfile' | 'noCatalog' | 'noWiki'
+  | 'noAchievementSection' | 'noCollectionSection'
+
+export type SearchMatch =
+  | { kind: 'title' }
+  | { kind: 'condition'; text: string }        // the achievement's own wording
+  | { kind: 'section'; section: SectionKind    // the page's words around the match
+      before: string; matched: string; after: string }
+
+export interface SearchHit {
+  target: Target
+  title: string
+  iconUrl: string | null
+  hasPage: boolean          // the dataset has this page: a Wiki destination exists
+  match: SearchMatch
+  progress: ProgressMark
+}
+export interface SearchView {
+  query: string
+  hits: SearchHit[]         // ranked, at most `limit`
+  total: number             // how many matched before the limit
+  diagnostics: SearchDiagnostic[]
+}
+```
+
+**The order is the backend's, and the frontend never re-sorts.** Six tiers — the title equal
+to the query, starting with it, a word of it starting with it, containing every word, then the
+condition, then a section — and inside a tier **not done before done**, which is what makes
+the profile part of the ranking. Every word must be in the **same field**: "monstro spits"
+finds nothing, because no one field holds both.
+
+**A result is not a row: it is the destinations it opens.** One hit becomes a Wiki row (when
+`hasPage`), an Unlock row for an achievement, a Collection row for an item, and the frontend
+adds a Screens row for every page whose name matches. A row opens in the active tab, or beside
+it with `Ctrl`. A list opened this way **starts from the name alone**: the Collection's default
+states would otherwise answer "0 of 721" to a row the user just clicked.
+
+No profile is a diagnostic, never a rejection: search answers before a save is chosen, and
+says the marks are unknown. The mark is drawn on a row only when it says something about that
+row — `unknown` reads the same on every row of the answer, and the diagnostic says it once.
+
 ---
 
 ## 9. Orders of magnitude (for sizing the grids)

@@ -109,8 +109,12 @@ export const sidebarHeaders: Record<SidebarSection, SidebarHeader> = {
   },
 }
 
-export const sectionOfOrigin = (origin: TabOrigin): SidebarSection => {
+// `null` for a tab that belongs to neither section: search sits above the two
+// (DESIGN-BRIEF.md §4.2), and opening one leaves the sidebar where it was.
+export const sectionOfOrigin = (origin: TabOrigin): SidebarSection | null => {
   switch (origin) {
+    case TabOrigin.Search:
+      return null
     case TabOrigin.Wiki:
       return SidebarSection.Wiki
     case TabOrigin.Progress:

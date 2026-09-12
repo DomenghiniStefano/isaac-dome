@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useVirtualizer } from '@tanstack/vue-virtual'
 import { computed, ref } from 'vue'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
@@ -7,8 +6,8 @@ import { nodeSlot } from '@/lib/graph/unlockFilter'
 import type { UnlockNode } from '@/lib/ipc/types'
 import { canQueue, isQueued } from '@/lib/plan/queueRows'
 import UnlockRow from './UnlockRow.vue'
+import { useScaledRows } from '@/composables/useScaledRows'
 import { rowWidePx } from '@/lib/scale/rows'
-import { useSettingsStore } from '@/stores/settings'
 
 const props = defineProps<{
   nodes: UnlockNode[]
@@ -18,20 +17,16 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{ add: [achievement: number] }>()
 const { t } = useMessages()
-const settings = useSettingsStore()
 
 const scroller = ref<HTMLElement | null>(null)
 
 // 641 rows, drawn as many as fit plus a margin: TanStack Virtual positions them, the options
 // are a computed so a new filter's count reaches the virtualizer.
-const virtualizer = useVirtualizer(
-  computed(() => ({
-    count: props.nodes.length,
-    getScrollElement: () => scroller.value,
-    estimateSize: () => rowWidePx(settings.scale),
-    overscan: 8,
-  })),
-)
+const virtualizer = useScaledRows({
+  count: () => props.nodes.length,
+  scroller,
+  rowPx: rowWidePx,
+})
 
 const visible = computed(() =>
   virtualizer.value.getVirtualItems().flatMap((item) => {

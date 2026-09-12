@@ -1,29 +1,24 @@
 <script setup lang="ts">
-import { useVirtualizer } from '@tanstack/vue-virtual'
 import { computed, ref } from 'vue'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import type { CollectionItem } from '@/lib/ipc/types'
 import CollectionRow from './CollectionRow.vue'
+import { useScaledRows } from '@/composables/useScaledRows'
 import { rowWidePx } from '@/lib/scale/rows'
-import { useSettingsStore } from '@/stores/settings'
 
 const props = defineProps<{ items: CollectionItem[] }>()
 const { t } = useMessages()
-const settings = useSettingsStore()
 
 const scroller = ref<HTMLElement | null>(null)
 
 // Some 720 collectibles, drawn as many as fit plus a margin, the same rule as Unlock: the options
 // are a computed so a new filter's count reaches the virtualizer.
-const virtualizer = useVirtualizer(
-  computed(() => ({
-    count: props.items.length,
-    getScrollElement: () => scroller.value,
-    estimateSize: () => rowWidePx(settings.scale),
-    overscan: 8,
-  })),
-)
+const virtualizer = useScaledRows({
+  count: () => props.items.length,
+  scroller,
+  rowPx: rowWidePx,
+})
 
 const visible = computed(() =>
   virtualizer.value.getVirtualItems().flatMap((entry) => {

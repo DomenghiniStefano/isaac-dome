@@ -23,6 +23,7 @@ export const en: MessageSchema = {
     thirdLevel: 'third level, meaning unconfirmed',
   },
   routes: {
+    search: 'Search',
     nextSteps: 'Next steps',
     completion: 'Completion',
     unlock: 'Unlock',
@@ -195,6 +196,45 @@ export const en: MessageSchema = {
       missingTitle: "The wiki dataset didn't load",
       missing:
         "The binary carries a dataset that doesn't read: the Wiki has no pages to show.",
+    },
+  },
+  search: {
+    intro:
+      "One index over everything the app knows by name or by text: the game's names, achievement conditions, wiki titles and the body of wiki pages.",
+    placeholder: 'Search screens, achievements, items, wiki pages…',
+    empty: 'No results.',
+    allResults: 'All results ({count})',
+    shown: '{shown} rows',
+    limit: 'Showing {shown} of {total}: narrow the search.',
+    groups: {
+      screens: 'Screens',
+      wiki: 'Wiki',
+      unlock: 'Unlock',
+      collection: 'Collection',
+    },
+    progress: {
+      done: 'done',
+      pending: 'to do',
+    },
+    hint: {
+      open: 'open',
+      newTab: 'open in a new tab',
+    },
+    diagnostics: {
+      noProfileTitle: 'No profile chosen',
+      noCatalogTitle: 'Game not installed',
+      noWikiTitle: 'Wiki dataset not loaded',
+      noAchievementSectionTitle: 'Achievement section not read',
+      noCollectionSectionTitle: 'Collection section not read',
+      noProfile:
+        'The results do not say what you have already done: choose one in the settings.',
+      noCatalog:
+        'Only wiki titles and text are searched, with no pictures, and no result opens Unlock or the Collection.',
+      noWiki: "Only the game's names are searched, and no result opens a page.",
+      noAchievementSection:
+        'What is done is unknown for achievements: unread is not undone.',
+      noCollectionSection:
+        'What you already have is unknown for items: unread is not not-found.',
     },
   },
   appearance: {

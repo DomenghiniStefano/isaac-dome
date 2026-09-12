@@ -183,6 +183,19 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     if (!wikiShown()) throw wikiUnavailable
     return (await wiki()).wikiEntryAnswer(args?.target as Target)
   },
+  // Search needs no profile, as in the app: what it lacks travels as a diagnostic.
+  [Command.Search]: async (args) => {
+    const { searchAnswer } = await import('./search')
+    return searchAnswer(
+      {
+        withArt: artShown(),
+        withCatalog: catalogShown(),
+        withWiki: wikiShown(),
+      },
+      String(args?.query ?? ''),
+      Number(args?.limit ?? 0),
+    )
+  },
   [Command.Queue]: (_args, scenario) =>
     whenActive(scenario, async () => readQueue(await queueOptions())),
   [Command.QueueAdd]: (args, scenario) =>

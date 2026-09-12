@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { LockOpenIcon } from '@lucide/vue'
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import QueueError from '@/components/plan/QueueError.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
@@ -8,6 +9,7 @@ import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
+import { singleQuery } from '@/lib/search/queryParam'
 import { characterForms } from '@/lib/graph/characterName'
 import { stateCounts } from '@/lib/graph/nodeState'
 import {
@@ -40,6 +42,17 @@ useOnActiveProfile(async () => {
 
 // The filter belongs to this screen: leaving the tab resets it, until tabs keep their state.
 const filter = ref<UnlockFilter>(emptyFilter())
+
+// A Search row opens this list already filtered on the name it found (B3, spec 3.5 Decision 8).
+const route = useRoute()
+watch(
+  () => route.query.q,
+  (value) => {
+    const q = singleQuery(value)
+    if (q !== null) filter.value = { ...filter.value, query: q }
+  },
+  { immediate: true },
+)
 const sort = ref<UnlockSort>(UnlockSort.FanOut)
 
 const nodes = computed(() => graph.unlock?.nodes ?? [])

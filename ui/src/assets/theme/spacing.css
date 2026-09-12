@@ -11,6 +11,8 @@
   --spacing-row: 1.875rem;
   --spacing-row-compact: 1.5rem;
   --spacing-row-wide: 2.5rem;
+  /* A search result: two lines, the title and why it matched. */
+  --spacing-row-result: 3.5rem;
   /* Height of button, input, select; side of an icon button. */
   --spacing-control: 2.125rem;
   /* Side of a compact icon button: the tab strip's "+" inside the 30px title bar. */

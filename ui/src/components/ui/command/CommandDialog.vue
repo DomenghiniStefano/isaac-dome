@@ -20,11 +20,23 @@ const props = defineProps<
     title: string
     description: string
     class?: HTMLAttributes['class']
+    // Both belong to the Command inside: the palette never mounts one itself.
+    filter?: boolean
+    search?: string
   }
 >()
-const emits = defineEmits<DialogRootEmits>()
+const emits = defineEmits<
+  DialogRootEmits & { 'update:search': [value: string] }
+>()
 
-const delegatedProps = reactiveOmit(props, 'title', 'description', 'class')
+const delegatedProps = reactiveOmit(
+  props,
+  'title',
+  'description',
+  'class',
+  'filter',
+  'search',
+)
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
@@ -38,7 +50,12 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         <DialogTitle>{{ title }}</DialogTitle>
         <DialogDescription>{{ description }}</DialogDescription>
       </DialogHeader>
-      <Command class="border-0">
+      <Command
+        class="border-0"
+        :filter="props.filter"
+        :search="props.search"
+        @update:search="emits('update:search', $event)"
+      >
         <slot v-bind="slotProps" />
       </Command>
     </DialogContent>

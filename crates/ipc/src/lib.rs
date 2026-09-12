@@ -10,6 +10,7 @@ mod marks;
 mod profile;
 mod queue;
 mod resources;
+mod search;
 mod settings;
 mod sprite_png;
 mod summary;
@@ -44,6 +45,10 @@ pub use queue::{
 pub use resources::{
     archive_views, data_url, extraction_report, ArchiveMode, ArchiveView, ExtractionReport,
     SpriteView,
+};
+pub use search::{
+    documents_for_tests, progress_for_tests, search, Doc, ProgressMark, SaveFlags,
+    SearchDiagnostic, SearchHit, SearchIndex, SearchMatch, SearchView,
 };
 pub use settings::{snap_percent, Settings, DEFAULT_SCALE, SCALE_PERCENTS};
 pub use sprite_png::{crop_png, decode_rgba};
