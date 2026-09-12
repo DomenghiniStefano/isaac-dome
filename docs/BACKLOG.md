@@ -836,7 +836,7 @@ merge again — **exactly as a browser does**.
 
 ---
 
-## B16 — The brand mark in the navbar is the app icon, and the icon is `primary` (implementation, `ui` and `app`)
+## B16 — The brand mark in the navbar is the app icon, and the icon is `primary` (implementation, `ui` and `app`) ✅ closed on 2026-09-12
 
 Logged 2026-09-12, from the owner's review of the bars.
 
@@ -866,7 +866,13 @@ The navbar shows the Dome mark, red, and the taskbar and installer show the same
 
 ---
 
-## B17 — The profile screen is a welcome flow, not "Screen 0" (implementation, after design)
+## B17 — The profile screen is a welcome flow, not "Screen 0" (implementation, after design) ⏳ copy done on 2026-09-12
+
+**Item 1 is done** (2026-09-12): the eyebrow "Schermata 0" and the intro that called the
+screen a permanent state are gone, and the sidebar hint no longer says the app finds the game
+from there. The screen now says what it is for — choose the save you are playing with.
+**Items 2 and 3 stay open**: the welcome flow with a preview per save, and what remains under
+Settings, are a design pass (sub-project 3.6).
 
 Logged 2026-09-12, a product decision from the owner: the profile screen's copy describes a
 settings page, and the owner wants the opposite — **on launch the app asks which save to
@@ -909,7 +915,7 @@ anywhere says "Schermata 0". Design first (`Schermate.dc.html`), then the usual 
 
 ---
 
-## B18 — No white flash at launch: a splash with the app logo (implementation, `app` and `ui`)
+## B18 — No white flash at launch: a splash with the app logo (implementation, `app` and `ui`) ✅ closed on 2026-09-12
 
 Logged 2026-09-12. Opening the built app shows a **white window** before the frontend paints:
 the webview's default background, visible for as long as Vite's bundle takes to load and the
@@ -1153,7 +1159,7 @@ label says "non leggibili". Design first: it's the same pass that draws B22's co
 
 ---
 
-## B24 — Clicking a section navigates, and the section lights up (implementation, `ui`, small)
+## B24 — Clicking a section navigates, and the section lights up (implementation, `ui`, small) ✅ closed on 2026-09-12
 
 Logged 2026-09-12, a product rule from the owner that **reverses Decision 5 of the shell spec**
 (`docs/superpowers/specs/2026-09-11-screens-shell-profile-design.md`, "clicking Wiki or
@@ -1196,7 +1202,7 @@ under the cursor reads as lit, and the cog reads as lit on the Profile page.
 
 ---
 
-## B25 — About is a dialog, not a page (implementation, `ui`, small)
+## B25 — About is a dialog, not a page (implementation, `ui`, small) ✅ closed on 2026-09-12
 
 Logged 2026-09-12, from the owner: what "Informazioni" has to say is short — the name, the
 version, the licences and the dataset attribution — and a centred dialog carries it; a page
@@ -1358,7 +1364,7 @@ table its own; and no fixed body height survives in the tokens.
 
 ---
 
-## B28 — Unlock calls a Tainted character by its base name (bug, `ipc`; the data is right)
+## B28 — Unlock calls a Tainted character by its base name (bug, `ipc`; the data is right) ✅ closed on 2026-09-12
 
 Logged 2026-09-12, from the owner's review of Unlock: rows such as *You unlocked "The Lost"*,
 slot 484, "sbloccabile ora", for a character the profile already has. Traced the same day,
@@ -1406,7 +1412,14 @@ character row in Unlock shares its label with another.
 
 ---
 
-## B29 — The Collection's filter: no "Faccette", no values with nothing behind them (implementation, `ui`, after design)
+## B29 — The Collection's filter: no "Faccette", no values with nothing behind them (implementation, `ui`, after design) ⏳ the two sight fixes done on 2026-09-12
+
+**The two things wrong on sight are fixed** (2026-09-12), on both screens: the drawer says
+"Filtri" / "Filters", and a value with nothing behind it is no longer offered at all — it used
+to sit there with a 0 and a disabled checkbox. **The shape the owner wants stays open**: one
+filter bar with a fold for the less important controls, and multi-select dropdowns in place of
+the checkbox columns, which needs a new primitive and the design pass that redraws the bar for
+Unlock and the Collection at once.
 
 Logged 2026-09-12, from the owner's review of the Collection's filter drawer
 (`screens/collection/CollectionFacetDrawer.vue`): the presentation is to be redone, and two
