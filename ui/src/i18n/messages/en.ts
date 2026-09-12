@@ -400,6 +400,8 @@ export const en: MessageSchema = {
       challenge: 'Challenges',
       item: 'Items',
       gate: 'Conditions',
+      mark: 'Completion marks',
+      counter: 'Bosses to beat',
       unknown: "Requirements we can't interpret",
     },
     kinds: {
@@ -418,6 +420,8 @@ export const en: MessageSchema = {
       blocked: 'blocked',
       partial: 'partial graph',
     },
+    // One cell of the matrix: the boss, and the character to beat it with.
+    markName: '{boss} as {character}',
     originNone: 'not stated',
     unknownAchievement: 'Unknown achievement',
     slot: 'slot',

@@ -180,6 +180,33 @@ export type AchievementRef =
     }
   | { kind: 'unknown'; slot: number }
 
+// The twelve columns of the completion matrix. A value, not a discriminator — so on the
+// wire it is a bare string, and here a union of values.
+export const MarkColumnView = {
+  MomsHeart: 'momsHeart',
+  Isaac: 'isaac',
+  Satan: 'satan',
+  BossRush: 'bossRush',
+  BlueBaby: 'blueBaby',
+  TheLamb: 'theLamb',
+  MegaSatan: 'megaSatan',
+  Greed: 'greed',
+  Hush: 'hush',
+  Delirium: 'delirium',
+  Mother: 'mother',
+  TheBeast: 'theBeast',
+} as const
+export type MarkColumnView =
+  (typeof MarkColumnView)[keyof typeof MarkColumnView]
+
+// A level inside a cell, named for its bit. `second` is Ultra Greedier in the Greed
+// column, measured; what it means in the other eleven is not, so it is not called `hard`.
+export const MarkLevelView = {
+  Base: 'base',
+  Second: 'second',
+} as const
+export type MarkLevelView = (typeof MarkLevelView)[keyof typeof MarkLevelView]
+
 // Value, not discriminator: `ItemKindView` has no fields, so on the wire it's
 // a bare string, like `OriginView`.
 export const ItemKindView = {
@@ -249,6 +276,18 @@ export type RequirementView =
   | { kind: 'challenge'; id: number; name: string }
   | { kind: 'item'; itemKind: ItemKindView; id: number; name: string }
   | { kind: 'gate'; label: string }
+  // One cell of the completion matrix. No progress: for a cell the state is binary, and a
+  // percentage here would be a number nobody measured.
+  | {
+      kind: 'mark'
+      character: number
+      characterName: string
+      column: MarkColumnView
+      level: MarkLevelView
+    }
+  // A tally and its threshold, with where the profile stands. The one requirement that is
+  // not a wall: the content is already reachable, it only has to be played.
+  | { kind: 'counter'; label: string; current: number; atLeast: number }
   | { kind: 'unknown'; label: string }
 
 export interface UnlockNode {
