@@ -1,27 +1,19 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
-import {
-  NodeState,
-  RequirementKind,
-  missingGroups,
-  nodeState,
-} from '@/lib/graph/nodeState'
+import { NodeState, nodeState } from '@/lib/graph/nodeState'
+import { nodeWhy } from '@/lib/graph/whyMenu'
 import type { UnlockNode } from '@/lib/ipc/types'
+import WhyMenu from './WhyMenu.vue'
 
 const props = defineProps<{ node: UnlockNode }>()
 const { t } = useMessages()
 
 const state = computed(() => nodeState(props.node))
-const groups = computed(() => missingGroups(props.node, t))
+const groups = computed(() => nodeWhy(props.node, t))
 
 const variant: Record<NodeState, BadgeVariant> = {
   [NodeState.Done]: BadgeVariant.Done,
@@ -37,17 +29,6 @@ const stateText: Record<NodeState, MessageKey<MessageSchema>> = {
   [NodeState.Partial]: 'graph.state.partial',
 }
 
-const kindText: Record<RequirementKind, MessageKey<MessageSchema>> = {
-  [RequirementKind.Character]: 'graph.why.character',
-  [RequirementKind.Boss]: 'graph.why.boss',
-  [RequirementKind.Challenge]: 'graph.why.challenge',
-  [RequirementKind.Item]: 'graph.why.item',
-  [RequirementKind.Gate]: 'graph.why.gate',
-  [RequirementKind.Mark]: 'graph.why.mark',
-  [RequirementKind.Counter]: 'graph.why.counter',
-  [RequirementKind.Unknown]: 'graph.why.unknown',
-}
-
 // "bloccato da 2": the number is the graph's, the words are the messages'.
 const label = computed(() =>
   state.value === NodeState.Blocked
@@ -57,32 +38,13 @@ const label = computed(() =>
 </script>
 
 <template>
-  <!-- The badge says the state, its tooltip says why: what stands in the way, by kind, as
-       DESIGN-BRIEF.md §7.1 asks ("1 character and 2 bosses", not "blocked by 3"). -->
-  <Tooltip :disabled="groups.length === 0">
-    <TooltipTrigger as-child>
-      <Badge
-        :variant="variant[state]"
-        :tabindex="groups.length > 0 ? 0 : undefined"
-        >{{ label }}</Badge
-      >
-    </TooltipTrigger>
-    <TooltipContent class="flex max-w-80 flex-col gap-1.5">
-      <span class="text-caption text-foreground">{{
-        t('graph.why.title')
-      }}</span>
-      <div
-        v-for="group in groups"
-        :key="group.kind"
-        class="flex flex-col gap-0.5"
-      >
-        <span class="text-label text-subtle-foreground">{{
-          t(kindText[group.kind])
-        }}</span>
-        <span class="text-caption text-foreground-soft">{{
-          group.names.join(', ')
-        }}</span>
-      </div>
-    </TooltipContent>
-  </Tooltip>
+  <!-- The badge says the state, its menu says why *and* where to read about it: each thing in
+       the way opens its wiki page (DESIGN-BRIEF.md §7.1, spec 3.5d). -->
+  <WhyMenu :groups="groups" :label="t('graph.why.title')">
+    <Badge
+      :variant="variant[state]"
+      :tabindex="groups.length > 0 ? 0 : undefined"
+      >{{ label }}</Badge
+    >
+  </WhyMenu>
 </template>

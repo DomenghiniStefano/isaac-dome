@@ -17,6 +17,7 @@ import SkeletonSection from './sections/SkeletonSection.vue'
 import SliderSection from './sections/SliderSection.vue'
 import TooltipSection from './sections/TooltipSection.vue'
 import PopoverSection from './sections/PopoverSection.vue'
+import DropdownMenuSection from './sections/DropdownMenuSection.vue'
 import CollapsibleSection from './sections/CollapsibleSection.vue'
 import DialogSection from './sections/DialogSection.vue'
 import CommandSection from './sections/CommandSection.vue'
@@ -57,6 +58,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
       <SelectSection />
       <TooltipSection />
       <PopoverSection />
+      <DropdownMenuSection />
       <CollapsibleSection />
       <DialogSection />
       <CommandSection />

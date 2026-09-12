@@ -271,10 +271,26 @@ export type GraphInfo =
 export type RequirementView =
   // `tainted` is part of the identity, not decoration: the two forms of a character share
   // the game's name, so the name alone names both (`docs/BACKLOG.md` B28).
-  | { kind: 'character'; id: number; name: string; tainted: boolean }
-  | { kind: 'boss'; id: number; name: string }
-  | { kind: 'challenge'; id: number; name: string }
-  | { kind: 'item'; itemKind: ItemKindView; id: number; name: string }
+  // `page` is the wiki page that says how *this* is unlocked: `null` means the dataset has
+  // no page for it — the name shows and does not link. Never "no requirement".
+  | {
+      kind: 'character'
+      id: number
+      name: string
+      tainted: boolean
+      page: Target | null
+    }
+  | { kind: 'boss'; id: number; name: string; page: Target | null }
+  | { kind: 'challenge'; id: number; name: string; page: Target | null }
+  | {
+      kind: 'item'
+      itemKind: ItemKindView
+      id: number
+      name: string
+      page: Target | null
+    }
+  // A gate carries no page by construction: it is a condition we chose not to resolve to an
+  // entity. Same for a mark and a counter below.
   | { kind: 'gate'; label: string }
   // One cell of the completion matrix. No progress: for a cell the state is binary, and a
   // percentage here would be a number nobody measured.
@@ -616,11 +632,28 @@ export interface QueueView {
 
 // What stands between an item and a run. Tagged: three variants carry data. `locked` means its
 // achievement isn't done, so the item can't appear yet; `unknown` means section 1 wasn't read.
+// `page` is the achievement's wiki page, `null` when the dataset has none. `free` has no such
+// key: nothing unlocks the item, so there is nothing to open.
 export type LockView =
   | { kind: 'free' }
-  | { kind: 'unlocked'; achievement: number; text: string | null }
-  | { kind: 'locked'; achievement: number; text: string | null }
-  | { kind: 'unknown'; achievement: number; text: string | null }
+  | {
+      kind: 'unlocked'
+      achievement: number
+      text: string | null
+      page: Target | null
+    }
+  | {
+      kind: 'locked'
+      achievement: number
+      text: string | null
+      page: Target | null
+    }
+  | {
+      kind: 'unknown'
+      achievement: number
+      text: string | null
+      page: Target | null
+    }
 
 // A collectible as the Collection shows it — never a trinket, which has no slot in section 4.
 // `inCollection: null` is unread (section 4 missing, or no slot for this id), never "not in the

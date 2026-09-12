@@ -23,8 +23,9 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-12. **Sub-project 3.5b merged into `develop`** (`bc249e2`), suite
-green on the merge result; 3.5 is closed on both halves.
+**Last update:** 2026-09-12. **Sub-project 3.5d is on `feature/blocked-menu`**, suite green,
+waiting to be merged: a blocked badge opens a menu whose entries are the wiki pages of what is
+in the way.
 
 ---
 
@@ -475,6 +476,21 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
                   built after it is built on the scaled tokens. Done when the slider moves
                   the whole app with no element left at its old size, on the Kit page and
                   in the built app. Needs a `Slider` primitive (none in the kit yet)
+            - [x] **3.5d "Bloccato" says where to go (2026-09-12)** — pulled ahead of 3.6 on
+                  the owner's request ("dove c'è scritto bloccato mi serve sempre un link che
+                  mi spiega come sbloccarlo, non basta il nome"), because it changes the live
+                  IPC contract and every screen that draws a node. A requirement and a
+                  collection lock carry `page: Option<Target>`, `Some` only when the embedded
+                  dataset really has that page; the catalog → page mapping left `search.rs`
+                  for `crates/ipc/src/wiki_target.rs`, one function for both readers. The
+                  badge stops being a tooltip and becomes the trigger of a `dropdown-menu`:
+                  one label per kind, one entry per blocker, click navigates and Ctrl opens
+                  beside — the palette's gesture. An entry with no page stays in the menu,
+                  disabled: never a link that leads nowhere. A mark and a counter carry none
+                  (B36), and what a node *unlocks* is B35. Spec
+                  `docs/superpowers/specs/2026-09-12-blocked-menu-design.md`, plan
+                  `docs/superpowers/plans/2026-09-12-blocked-menu.md`, report
+                  `…-blocked-menu-report.md`, branch `feature/blocked-menu`
             - [ ] 3.6 Settings and About — provenance, credits, the three promises; About
                   becomes a dialog, not a page (B25); the profile screen becomes a welcome
                   flow (B17); the KPI and matrix changes of B20, B22, B23
@@ -607,6 +623,161 @@ Doesn't block the handoff but blocks Collection and Unlock: **`Archive::open` lo
 to extract sprites (see open blockers), and the graph commands do this on every
 call. Needs solving before a screen asks for a hundred icons at once, i.e. before
 building the Collection screen, not before designing it.
+
+---
+
+## Next up — structural cleanup
+
+Read-only survey of 2026-09-12 over `crates/` and `ui/src`. It found no bug and no broken
+rule: no `unwrap()` outside tests, exhaustiveness respected, no `TODO` and no
+`@ts-expect-error` except the one that *is* the test, the dev pages behind
+`import.meta.env.DEV` with dynamic imports, `en.ts` and `it.ts` in key parity. What it found
+is what five screens built well, one after another, each on the shape of the one before,
+cost: **the same file exists twice under two names.**
+
+**The rule for this section: unification is measured in files that stop existing.** A task
+that adds a shared module and leaves in place the two it generalizes has not been done, it
+has doubled. Every item closes on a file count going *down*, and the count is written into
+the item. Where a pair must stay two files, the item says which and why, so nobody has to
+wonder whether it was forgotten.
+
+Cheapest and safest first. Nothing here is a feature and nothing changes what a screen
+shows. Each item gets its own branch cut from `develop`, like any sub-project (the rule
+of 2026-09-11): none of this starts on top of a sub-project in flight. **N7 is not a new
+item**: it is B2 of `docs/IMPROVEMENTS.md`, placed here in the order it has to run in.
+
+- [ ] **N1. The names left over.** *One session.*
+      Two Italian identifiers survive B7 in a file that is otherwise English —
+      `ICONE_DI_ESEMPIO` (`crates/app/src/lib.rs:155`) and `SEGRETO` (`:890`). Test-only
+      public API carries three different notations for one idea: `documents_for_tests` and
+      `progress_for_tests`, which `ipc/src/lib.rs` re-exports into the crate's public
+      surface, alongside `from_edges_for_tests`, `empty_for_tests` and
+      `__corrupt_queue_for_tests`. Pick one notation, and keep it out of the public
+      re-export list: a name in `pub use` says "call me", which is exactly what these mean
+      not to say.
+      **Done when** `grep -riE '(icone|segreto|_di_)' crates ui/src` finds nothing and one
+      notation covers every test-only entry point.
+
+- [ ] **N2. `reason: String` leaves the IPC.** *Two sessions. Before N7.*
+      `IpcError::UnreadableSave`, `SettingsNotWritable` and `StoreUnavailable` carry a
+      `String` built in Rust that `useIpcErrorText.ts` concatenates onto an i18n key
+      (lines 17, 19, 25) and `PlanAlerts.vue:48` prints raw. It is the defect `CLAUDE.md`
+      charges `format!("{:?}")` with, only hand-written: **not translatable**. An untyped
+      field is also what lets the wording drift — `store_reason` and `describe_open_error`
+      answer in English while `"coda del piano illeggibile"` (`lib.rs:533`) and
+      `"database illeggibile"` (`:642`, `:648`) answer in Italian, so the language of an
+      error depends on which line produced it.
+      **What:** an enum we define, per case — `StoreReason::{Unreadable, NewerSchema {
+      found, supported }, QueueUnparseable, DataDirUnknown }` — numbers travelling as
+      numbers and the wording living in `it.ts` / `en.ts`. `store_reason` and
+      `describe_open_error` then have nothing left to do: they exist only to produce a
+      `String`.
+      **Done when** no field of `IpcError` is a `String` the UI concatenates, those two
+      functions are gone, and the two anti-leak tests in `app` assert on a variant instead
+      of on a substring — which is what makes them structural rather than a search for a
+      word.
+
+- [ ] **N3. One faceted list, not two.** *Two or three sessions.*
+      `ui/src/lib/graph/unlockFilter.ts` and `ui/src/lib/collection/collectionFilter.ts`
+      hold `matchesQuery`, `matchesFacet`, `matchesFacets`, the facet counts and the active
+      count **identical word for word, comments included**: only the row type differs. The
+      same pair repeats four times above them — `FacetDrawer.vue` /
+      `CollectionFacetDrawer.vue` (the template differs in `grid-cols-3` against
+      `grid-cols-4` and in the i18n prefix), `UnlockToolbar.vue` / `CollectionToolbar.vue`,
+      `StateToggle.vue` / `CollectionStateToggle.vue`.
+      Two consequences are already on the page: the names defend themselves with prefixes
+      (`matchesFilter` against `matchesCollectionFilter`) because the two modules share a
+      flat namespace, and `collectionFilter.ts` imports `OriginValue` **from
+      `unlockFilter.ts`** — the Collection depends on Unlock's screen module for a value
+      that belongs to neither screen, it belongs to the wire. B3 in `docs/BACKLOG.md` would
+      write the third copy.
+      **What:** `ui/src/lib/facets/` with one engine —
+      `createFaceting<Row, Facet>({ order, values, options })` giving
+      `{ matches, counts, activeCount }` — and `ui/src/components/facets/` with one drawer,
+      one toolbar and one state toggle, each driven by a table. A screen keeps only what is
+      genuinely its own: which facets, how to read a row's values, which options, which
+      labels. `OriginValue` moves to a shared module beside the wire types. The drawer's
+      column count comes from the number of columns instead of a literal typed twice.
+      **Five files stop existing** — `collectionFilter.ts`, `collectionFilter.test.ts`,
+      `CollectionFacetDrawer.vue`, `CollectionToolbar.vue`, `CollectionStateToggle.vue` —
+      and their `unlock/` twins become the shared ones, under names that no longer say
+      "unlock". About 250 lines.
+      **Staying two on purpose:** `UnlockRow` / `CollectionRow` and `UnlockTable` /
+      `CollectionTable`. They draw different columns; one component with a column table
+      would be a worse file than the two it replaced.
+      **Done when** no file under `screens/collection/` is a copy of one under
+      `screens/unlock/`, adding a facet to one screen touches no file of the other, and
+      B3's third list costs one spec object.
+
+- [ ] **N4. One diagnostics list, not four.** *One session. After N2.*
+      `SearchDiagnostics.vue` (73), `UnlockDiagnostics.vue` (67),
+      `CollectionDiagnostics.vue` (77) and `PlanAlerts.vue` (77) all do one thing: map a
+      diagnostic's `kind` onto an alert with a title and a body, or onto a line of note,
+      sometimes with a count. 294 lines for one idea, and the fourth copy already differs
+      from the first in ways nobody decided.
+      **What:** one `DiagnosticsList` reading a table
+      `kind → { severity, titleKey, bodyKey, count }`. Each screen keeps the table, which
+      is the part that is actually its own.
+      **Three of the four components stop existing. Done when** a new diagnostic kind is
+      one row in one table, and no screen owns a component whose job is drawing alerts.
+
+- [ ] **N5. The stores stop repeating themselves.** *One session.*
+      `stores/collection.ts`, `stores/completion.ts`, `stores/graph.ts` and half of
+      `stores/wiki.ts` are the same `view` / `status` / `error` triad, the same `load()`,
+      the same `try` / `catch`; only the call in the middle changes. And `LoadStatus` is
+      exported from `stores/profile.ts`, so every other store imports a shared enum out of
+      one particular store.
+      **What:** `defineViewStore(id, loader)`, and `LoadStatus` in a file that is only
+      that. The three collapse into one `stores/views.ts`, a line each.
+      **Two files stop existing. Done when** no store writes that `try` / `catch` again and
+      `LoadStatus` is imported from a file that holds nothing else.
+
+- [ ] **N6. `crates/app` goes back to being wiring.** *Two or three sessions. After N2.*
+      964 lines, 21 commands, and about ten functions that are logic — `plan_parts`,
+      `queue_view_now`, `queue_pieces`, `queue_mutate`, `ids_for`, `icon_url` — plus
+      **80 lines of `#[cfg(test)] mod tests` at the bottom of the file**. That block is the
+      proof, written in-house, that the rule is already broken: *if a return value is worth
+      checking it lives in a pure crate, and the Tauri crate is not tested*. The comment
+      above `plan_parts` admits it in as many words.
+      **What:** the pure halves go to `ipc` with their tests, beside the view-models they
+      build — `GraphDeps` made exactly this trip on 2026-09-08 and gained three tests it
+      never had while it sat here. What is left is split by area: `state.rs` for the five
+      `OnceLock`s, `icons.rs` for the protocol and its crop, `commands/` one file per
+      screen family.
+      **Done when** `crates/app/src/` holds no `#[cfg(test)]`, no file over ~250 lines, and
+      `cargo test -p app` reports zero tests because there is nothing left in it to test.
+
+- [ ] **N7. `types.ts` generated — this is B2 of `docs/IMPROVEMENTS.md`.** *Two sessions.
+      Last on purpose.*
+      627 hand-written lines mirroring the `#[serde]` attributes. Registered since
+      2026-09-05 and still the repository's largest silent risk: `CLAUDE.md` already
+      records the case where renaming a `core_save::Kind` variant changed the wire with the
+      whole suite green. It runs after N2 because generating the contract while the error
+      type is still moving means generating it twice.
+      **Done when** what B2 says: changing an enum in Rust without regenerating makes
+      `scripts/check` fail, and `types.ts` takes no further hand edits — at which point it
+      stops being a file anybody opens.
+
+- [ ] **N8. The save read once per screen, not twice.** *Two sessions, one of them a
+      measurement.*
+      `active_save()` does, on every command that needs the profile: `settings_file::load`
+      (I/O), `discover()` (a walk of the Steam libraries), `fs::read` of the whole `.dat`,
+      and a full parse. Nothing caches it, while the catalog, the graph, the resources, the
+      mark frames and the search index all sit in a `OnceLock`. The worst case is
+      measurable rather than theoretical: `next_steps` calls `unlock()` internally and
+      `stores/graph.ts` asks for the two in one `Promise.all`, so **discover, parse, 642
+      nodes and the evaluation all run twice for one screen load.**
+      Two halves at very different prices, and they are not one task by accident:
+      - the free half — `next_steps` receives the `UnlockView` it is a filter over instead
+        of rebuilding it. Half the work of a screen load, no new state, nothing to
+        invalidate.
+      - the expensive half — a `SaveState` in `tauri::State`. **Not a blind `OnceLock`:**
+        the `.dat` is rewritten while you play, so it invalidates on the file's mtime, and
+        "no profile" is never cached — the rule `ResourcesState` already writes down for
+        the game not being installed.
+      **Done when** loading Next steps and Unlock opens the `.dat` **once**, asserted by a
+      counter in a test and not by eye, and a save written while the app is open is seen by
+      the next command.
 
 ---
 
@@ -846,6 +1017,34 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-12 (late) — a blocker stops being a dead end
+
+The owner read the app and said the obvious thing: where it says *bloccato* it names what is in
+the way and stops there. "Non basta il nome" — and then, on the shape, "una lista di link tipo
+menu windows?", which turned out to be the right answer to a problem the design hadn't noticed:
+the why lived in a **tooltip**, and a tooltip is not a thing you can click.
+
+So the badge became the trigger of a menu and the tooltip went. Each blocker is an entry that
+opens that thing's wiki page — offline, already in the binary. The page is resolved in Rust,
+because the frontend holds `{ kind, id }` and a page is keyed `entity:20.0.0`; the mapping that
+knows a boss is identified by **the file name of its portrait** already existed inside search's
+`documents()` and now lives once, in `crates/ipc/src/wiki_target.rs`. A requirement and a
+collection lock carry `page: Option<Target>`, `Some` only when `Dataset::entry` answers, so an
+entry the dataset has no page for is present and disabled rather than a link that goes nowhere.
+
+Two risks were written into the spec as things to check rather than assume, and both turned out
+benign, measured on the running app: the Plan's drag starts on the grip's own `pointerdown`, so
+the badge never steals it (a row dragged onto another still repaired itself and said so); and a
+menu open in the virtualized table goes away with its row when the row is recycled.
+
+Two things stayed undone on purpose. A **mark** and a **counter** carry no page: two of the
+twelve matrix columns (Boss Rush, Greed) are not entities, and a column → entity table written
+from the names would be the kind of curation this document keeps refusing to guess (B36). And
+what a node *unlocks* is still text (B35). What could not be checked from here is the last
+click in the real Tauri window — it builds and runs, but it can't be driven from a session; on
+fixtures every entry is disabled, because the committed design pack predates the field and the
+fixture layer says so in the console instead of pretending.
 
 ### 2026-09-12 (afternoon, the game running) — the third bit has a name, and a documented fact was wrong
 

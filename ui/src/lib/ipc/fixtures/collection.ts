@@ -93,9 +93,12 @@ const locksFrom = (): Map<string, LockView> => {
       if (a.kind !== 'known') return []
       return node.unlocks.flatMap((target) => {
         if (target.kind !== 'item') return []
+        // `page: null` is derived, not missing: this lock is built here out of the unlock
+        // payload, which carries no wiki page, and inventing one would be a link the real
+        // backend might not have.
         const lock: LockView = node.done
-          ? { kind: 'unlocked', achievement: a.id, text: a.text }
-          : { kind: 'locked', achievement: a.id, text: a.text }
+          ? { kind: 'unlocked', achievement: a.id, text: a.text, page: null }
+          : { kind: 'locked', achievement: a.id, text: a.text, page: null }
         return [[`${target.itemKind}-${target.id}`, lock] as const]
       })
     }),

@@ -4,6 +4,8 @@ import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import { MarkColumnView } from '@/lib/ipc/types'
 import type { RequirementView, UnlockNode } from '@/lib/ipc/types'
+import { pageLocation } from '@/lib/wiki/category'
+import type { TabLocation } from '@/router/routeTable'
 import { characterLabel } from './characterName'
 
 type Translate = (
@@ -129,9 +131,59 @@ const requirementName = (
   }
 }
 
+// A key that is stable per row and unique in the list: the kind and what identifies it. A
+// gate, a counter and an uninterpreted label have only their text, and two of them never
+// repeat inside one node; a mark is one cell, so it is the character and the column.
+const requirementKey = (requirement: RequirementView): string => {
+  switch (requirement.kind) {
+    case 'character':
+    case 'boss':
+    case 'challenge':
+    case 'item':
+      return `${requirement.kind}-${requirement.id}`
+    case 'mark':
+      return `mark-${requirement.character}-${requirement.column}`
+    case 'gate':
+    case 'counter':
+    case 'unknown':
+      return `${requirement.kind}-${requirement.label}`
+    default:
+      return assertNever(requirement)
+  }
+}
+
+// Where to read how *this* is unlocked. `null` is "nowhere to go": either the dataset has no
+// page, or the requirement is a condition and not an entity — a gate, a mark, a counter, an
+// uninterpreted label. Never a link that leads nowhere.
+const requirementLocation = (
+  requirement: RequirementView,
+): TabLocation | null => {
+  switch (requirement.kind) {
+    case 'character':
+    case 'boss':
+    case 'challenge':
+    case 'item':
+      return requirement.page ? pageLocation(requirement.page) : null
+    case 'gate':
+    case 'mark':
+    case 'counter':
+    case 'unknown':
+      return null
+    default:
+      return assertNever(requirement)
+  }
+}
+
+// What stands in the way, and where to read about it.
+export interface RequirementEntry {
+  key: string
+  name: string
+  location: TabLocation | null
+}
+
 export interface RequirementGroup {
   kind: RequirementKind
-  names: string[]
+  entries: RequirementEntry[]
 }
 
 // "1 character and 2 unknown conditions", not "blocked by 3": what a node is missing,
@@ -142,9 +194,18 @@ export const missingGroups = (
 ): RequirementGroup[] => {
   const byKind = groupBy(node.missing, (requirement) => requirement.kind)
   return requirementOrder.flatMap((kind) => {
-    const entries = byKind[kind]
-    return entries
-      ? [{ kind, names: entries.map((r) => requirementName(r, t)) }]
+    const of = byKind[kind]
+    return of
+      ? [
+          {
+            kind,
+            entries: of.map((r) => ({
+              key: requirementKey(r),
+              name: requirementName(r, t),
+              location: requirementLocation(r),
+            })),
+          },
+        ]
       : []
   })
 }
