@@ -60,7 +60,7 @@ const sampleKey = (path: string): string | null => {
   const [kind, ids] = [m[1], m[2]]
   return `${kind}:${ids.replaceAll('_', '.')}`
 }
-const pages = new Map<string, Entry>(
+export const samplePages = new Map<string, Entry>(
   Object.entries(samples).flatMap(([path, entry]) => {
     const key = sampleKey(path)
     return key === null ? [] : [[key, entry] as const]
@@ -88,7 +88,7 @@ const fileWith = (files: Record<string, string>, stem: string): string | null =>
   Object.entries(files).find(([path]) => path.includes(`/${stem}_`))?.[1] ??
   null
 
-const iconOf = (target: Target, bossId: number | null): string | null => {
+export const iconOf = (target: Target, bossId: number | null): string | null => {
   switch (target.kind) {
     case 'item':
     case 'trinket': {
@@ -121,7 +121,7 @@ const iconOf = (target: Target, bossId: number | null): string | null => {
   }
 }
 
-interface Page {
+export interface Page {
   target: Target
   title: string
   bossId: number | null
@@ -129,7 +129,7 @@ interface Page {
 
 const collectibleKinds = ['passive', 'active', 'familiar']
 
-const packPages = (): Page[] => {
+export const packPages = (): Page[] => {
   const all = entries()
   const items: Page[] = all
     .filter(
@@ -190,6 +190,17 @@ const packPages = (): Page[] => {
   ]
 }
 
+// What an achievement asks of you, as the pack's unlock payload words it: the search fixture
+// matches on it the way the backend matches on `unlock_condition`.
+export const packConditions = (): Map<number, string> =>
+  new Map(
+    (Object.values(unlocks)[0]?.nodes ?? []).flatMap((node) =>
+      node.achievement.kind === 'known' && node.achievement.hint !== null
+        ? [[node.achievement.id, node.achievement.hint] as const]
+        : [],
+    ),
+  )
+
 const missing: WikiInfo = { kind: 'missing', reason: 'malformed' }
 
 // The pack's extraction report carries the real dataset's info; the counts are recomputed
@@ -233,7 +244,7 @@ export const wikiIndexAnswer = ({
   const refs: WikiPageRef[] = list.map((p) => {
     // A sample page's own title wins over the image index's name.
     const key = pageKey(p.target)
-    const sample = key === null ? undefined : pages.get(key)
+    const sample = key === null ? undefined : samplePages.get(key)
     return {
       target: p.target,
       title: sample?.title ?? p.title,
@@ -251,11 +262,11 @@ export const wikiEntryAnswer = (target: Target): Entry | null => {
   if (!warned) {
     warned = true
     console.warn(
-      `wiki fixture: the design pack carries ${pages.size} sample pages; every other page reads as unknown`,
+      `wiki fixture: the design pack carries ${samplePages.size} sample pages; every other page reads as unknown`,
     )
   }
   const key = pageKey(target)
   if (key === null) return null
   // Round-tripping the key guards the sample names against a target the app never writes.
-  return parsePageKey(key) === null ? null : (pages.get(key) ?? null)
+  return parsePageKey(key) === null ? null : (samplePages.get(key) ?? null)
 }
