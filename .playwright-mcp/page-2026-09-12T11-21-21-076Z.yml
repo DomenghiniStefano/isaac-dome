@@ -1,0 +1,282 @@
+- generic [ref=f49e4]:
+  - banner [ref=f49e5]:
+    - generic [ref=f49e6]:
+      - tablist [ref=f49e7]:
+        - tab "Unlock Chiudi tab" [selected] [ref=f49e8] [cursor=pointer]:
+          - generic [ref=f49e12]: Unlock
+          - button "Chiudi tab" [ref=f49e13]
+      - button "Nuova tab" [ref=f49e14] [cursor=pointer]
+    - generic [ref=f49e16]:
+      - button "Riduci a icona" [ref=f49e17] [cursor=pointer]
+      - button "Ingrandisci" [ref=f49e18] [cursor=pointer]
+      - button "Chiudi finestra" [ref=f49e19] [cursor=pointer]
+  - navigation [ref=f49e20]:
+    - generic [ref=f49e21]: IsaacDome
+    - generic [ref=f49e26]:
+      - button "Wiki" [ref=f49e27] [cursor=pointer]
+      - button "Progressi" [ref=f49e28] [cursor=pointer]
+    - button "Rep+ · slot 1 · 3 giorni fa" [ref=f49e29] [cursor=pointer]
+    - button "Cerca in tutto Ctrl K" [ref=f49e32] [cursor=pointer]:
+      - generic [ref=f49e33]: Cerca in tutto
+      - generic [ref=f49e34]:
+        - generic: Ctrl
+        - generic: K
+    - generic [ref=f49e35]:
+      - button "Impostazioni" [ref=f49e36] [cursor=pointer]
+      - button "Informazioni" [ref=f49e37] [cursor=pointer]
+  - generic [ref=f49e38]:
+    - complementary [ref=f49e39]:
+      - generic [ref=f49e40]:
+        - generic [ref=f49e41]: Progressi
+        - paragraph [ref=f49e47]: Ogni voce si legge sul profilo attivo.
+        - button "Prossimi passi" [ref=f49e48] [cursor=pointer]
+        - button "Completamento" [ref=f49e49] [cursor=pointer]
+        - button "Unlock" [active] [ref=f49e50] [cursor=pointer]
+        - button "Piano" [ref=f49e51] [cursor=pointer]
+        - button "Collezione" [ref=f49e52] [cursor=pointer]
+        - button "Run" [ref=f49e53] [cursor=pointer]
+        - button "Live" [ref=f49e54] [cursor=pointer]
+      - separator "Ridimensiona la barra laterale" [ref=f49e55]
+    - main [ref=f49e56]:
+      - generic [ref=f49e57]:
+        - generic [ref=f49e58]:
+          - heading "Unlock" [level=1] [ref=f49e63]
+          - paragraph [ref=f49e64]: "Ogni nodo del grafo, filtrabile. Un filtro conta più degli altri: sbloccabile ora."
+        - paragraph [ref=f49e65]: 4 slot del salvataggio oltre il catalogo, mostrati come achievement sconosciuti
+        - group [ref=f49e66]:
+          - button "fatto 387" [ref=f49e67] [cursor=pointer]:
+            - text: fatto
+            - generic [ref=f49e69]: "387"
+          - button "sbloccabile ora 119" [ref=f49e70] [cursor=pointer]:
+            - text: sbloccabile ora
+            - generic [ref=f49e72]: "119"
+          - button "bloccato 117" [ref=f49e73] [cursor=pointer]:
+            - text: bloccato
+            - generic [ref=f49e75]: "117"
+          - button "grafo parziale 18" [ref=f49e76] [cursor=pointer]:
+            - text: grafo parziale
+            - generic [ref=f49e78]: "18"
+        - button "Filtri nessun filtro" [ref=f49e80] [cursor=pointer]:
+          - generic [ref=f49e83]: Filtri
+          - generic [ref=f49e84]: nessun filtro
+        - generic [ref=f49e85]:
+          - generic [ref=f49e86]:
+            - generic [ref=f49e87]: 641 / 641 righe
+            - generic [ref=f49e88]:
+              - textbox "cerca nome, condizione o cosa sblocca" [ref=f49e89]
+              - generic [ref=f49e90]: ordina per
+              - group [ref=f49e91]:
+                - button "sblocca" [pressed] [ref=f49e92] [cursor=pointer]
+                - button "passi mancanti" [ref=f49e93] [cursor=pointer]
+                - button "nome" [ref=f49e94] [cursor=pointer]
+          - generic [ref=f49e95]:
+            - generic [ref=f49e96]:
+              - generic [ref=f49e97]: Achievement
+              - generic [ref=f49e98]: Cosa sblocca
+              - generic [ref=f49e99]: Condizione
+              - generic [ref=f49e100]: Stato
+              - generic [ref=f49e101]: Sblocca
+            - generic [ref=f49e103]:
+              - generic [ref=f49e104]:
+                - generic [ref=f49e107]:
+                  - generic [ref=f49e108]: You unlocked "The Lost"
+                  - generic [ref=f49e109]: slot 484
+                - generic [ref=f49e110]: The Lost
+                - generic [ref=f49e112]: nessuna condizione nel file
+                - generic [ref=f49e114]: sbloccabile ora
+                - generic [ref=f49e116]: "23"
+                - button "Aggiungi alla coda" [ref=f49e118] [cursor=pointer]
+              - generic [ref=f49e119]:
+                - generic [ref=f49e122]:
+                  - generic [ref=f49e123]: You unlocked "The Forgotten"
+                  - generic [ref=f49e124]: slot 488
+                - generic [ref=f49e125]:
+                  - generic [ref=f49e126]: The Forgotten
+                  - generic [ref=f49e127]: "+1"
+                - generic [ref=f49e128]: nessuna condizione nel file
+                - generic [ref=f49e130]: sbloccabile ora
+                - generic [ref=f49e132]: "23"
+                - button "Aggiungi alla coda" [ref=f49e134] [cursor=pointer]
+              - generic [ref=f49e135]:
+                - generic [ref=f49e138]:
+                  - generic [ref=f49e139]: You unlocked "Bethany"
+                  - generic [ref=f49e140]: slot 489
+                - generic [ref=f49e141]: Bethany
+                - generic [ref=f49e143]: nessuna condizione nel file
+                - generic [ref=f49e145]: sbloccabile ora
+                - generic [ref=f49e147]: "23"
+                - button "Aggiungi alla coda" [ref=f49e149] [cursor=pointer]
+              - generic [ref=f49e150]:
+                - generic [ref=f49e153]:
+                  - generic [ref=f49e154]: You unlocked "Eve"
+                  - generic [ref=f49e155]: slot 479
+                - generic [ref=f49e156]: Eve
+                - generic [ref=f49e158]: nessuna condizione nel file
+                - generic [ref=f49e160]: sbloccabile ora
+                - generic [ref=f49e162]: "22"
+                - button "Aggiungi alla coda" [ref=f49e164] [cursor=pointer]
+              - generic [ref=f49e165]:
+                - generic [ref=f49e168]:
+                  - generic [ref=f49e169]: You unlocked "Samson"
+                  - generic [ref=f49e170]: slot 480 · in coda
+                - generic [ref=f49e171]: Samson
+                - generic [ref=f49e173]: nessuna condizione nel file
+                - generic [ref=f49e175]: sbloccabile ora
+                - generic [ref=f49e177]: "21"
+              - generic [ref=f49e178]:
+                - generic [ref=f49e181]:
+                  - generic [ref=f49e182]: You unlocked "Lilith"
+                  - generic [ref=f49e183]: slot 485
+                - generic [ref=f49e184]: Lilith
+                - generic [ref=f49e186]: nessuna condizione nel file
+                - generic [ref=f49e188]: sbloccabile ora
+                - generic [ref=f49e190]: "21"
+                - button "Aggiungi alla coda" [ref=f49e192] [cursor=pointer]
+              - generic [ref=f49e193]:
+                - generic [ref=f49e196]:
+                  - generic [ref=f49e197]: You unlocked "Keeper"
+                  - generic [ref=f49e198]: slot 486
+                - generic [ref=f49e199]: Keeper
+                - generic [ref=f49e201]: nessuna condizione nel file
+                - generic [ref=f49e203]: sbloccabile ora
+                - generic [ref=f49e205]: "21"
+                - button "Aggiungi alla coda" [ref=f49e207] [cursor=pointer]
+              - generic [ref=f49e208]:
+                - generic [ref=f49e211]:
+                  - generic [ref=f49e212]: You unlocked "Apollyon"
+                  - generic [ref=f49e213]: slot 487
+                - generic [ref=f49e214]: Apollyon
+                - generic [ref=f49e216]: nessuna condizione nel file
+                - generic [ref=f49e218]: sbloccabile ora
+                - generic [ref=f49e220]: "21"
+                - button "Aggiungi alla coda" [ref=f49e222] [cursor=pointer]
+              - generic [ref=f49e223]:
+                - generic [ref=f49e226]:
+                  - generic [ref=f49e227]: You unlocked "Jacob"
+                  - generic [ref=f49e228]: slot 490
+                - generic [ref=f49e229]:
+                  - generic [ref=f49e230]: Jacob
+                  - generic [ref=f49e231]: "+1"
+                - generic [ref=f49e232]: nessuna condizione nel file
+                - generic [ref=f49e234]: sbloccabile ora
+                - generic [ref=f49e236]: "8"
+                - button "Aggiungi alla coda" [ref=f49e238] [cursor=pointer]
+              - generic [ref=f49e239]:
+                - generic [ref=f49e242]:
+                  - generic [ref=f49e243]: "\"Marbles\" has appeared in the basement"
+                  - generic [ref=f49e244]: slot 386
+                - generic [ref=f49e245]:
+                  - generic: Marbles
+                  - generic [ref=f49e246]: "+1"
+                - generic [ref=f49e247]: nessuna condizione nel file
+                - generic [ref=f49e249]: sbloccabile ora
+                - generic [ref=f49e251]: "1"
+                - button "Aggiungi alla coda" [ref=f49e253] [cursor=pointer]
+              - generic [ref=f49e254]:
+                - generic [ref=f49e257]:
+                  - generic [ref=f49e258]: "\"Blood Penny\" has appeared in the basement"
+                  - generic [ref=f49e259]: slot 55 · in coda
+                - generic [ref=f49e260]: Bloody Penny
+                - generic [ref=f49e261]: beat Chest with Samson
+                - generic [ref=f49e262]: bloccato da 1
+                - generic [ref=f49e264]: "0"
+              - generic [ref=f49e265]:
+                - generic [ref=f49e268]:
+                  - generic [ref=f49e269]: "\"Epic Fetus\" has appeared in the basement"
+                  - generic [ref=f49e270]: slot 62
+                - generic [ref=f49e271]:
+                  - generic: Epic Fetus
+                  - generic [ref=f49e272]: "+1"
+                - generic [ref=f49e273]: "Beat Challenge #19"
+                - generic [ref=f49e274]: grafo parziale
+                - generic [ref=f49e276]: "0"
+                - button "Aggiungi alla coda" [ref=f49e278] [cursor=pointer]
+              - generic [ref=f49e279]:
+                - generic [ref=f49e282]:
+                  - generic [ref=f49e283]: "\"SMB Super Fan\" has appeared in the basement"
+                  - generic [ref=f49e284]: slot 63
+                - generic [ref=f49e285]: SMB Super Fan
+                - generic [ref=f49e286]: "Beat Challenge #14"
+                - generic [ref=f49e287]: sbloccabile ora
+                - generic [ref=f49e289]: "0"
+                - button "Aggiungi alla coda" [ref=f49e291] [cursor=pointer]
+              - generic [ref=f49e292]:
+                - generic [ref=f49e295]:
+                  - generic [ref=f49e296]: "!Platinum God! OMG!"
+                  - generic [ref=f49e297]: slot 69 · in coda
+                - generic [ref=f49e298]: niente di catalogato
+                - generic [ref=f49e300]: collect all items in the game and unlock all secrets and endings minus "the soul" and its 5 unlockable items
+                - generic [ref=f49e301]: grafo parziale
+                - generic [ref=f49e303]: "0"
+              - generic [ref=f49e304]:
+                - generic [ref=f49e307]:
+                  - generic [ref=f49e308]: "\"???'s Soul\" has appeared in the basement"
+                  - generic [ref=f49e309]: slot 73
+                - generic [ref=f49e310]: "???'s Soul"
+                - generic [ref=f49e311]: beat Dark Room with ???
+                - generic [ref=f49e312]: sbloccabile ora
+                - generic [ref=f49e314]: "0"
+                - button "Aggiungi alla coda" [ref=f49e316] [cursor=pointer]
+              - generic [ref=f49e317]:
+                - generic [ref=f49e320]:
+                  - generic [ref=f49e321]: "\"Samson's Lock\" has appeared in the basement"
+                  - generic [ref=f49e322]: slot 74
+                - generic [ref=f49e323]: Samson's Lock
+                - generic [ref=f49e324]: beat Dark Room with Samson
+                - generic [ref=f49e325]: bloccato da 1
+                - generic [ref=f49e327]: "0"
+                - button "Aggiungi alla coda" [ref=f49e329] [cursor=pointer]
+              - generic [ref=f49e330]:
+                - generic [ref=f49e333]:
+                  - generic [ref=f49e334]: The Real Platinum God
+                  - generic [ref=f49e335]: slot 84
+                - generic [ref=f49e336]: niente di catalogato
+                - generic [ref=f49e338]: 100% of the game (unlock every item)
+                - generic [ref=f49e339]: grafo parziale
+                - generic [ref=f49e341]: "0"
+                - button "Aggiungi alla coda" [ref=f49e343] [cursor=pointer]
+              - generic [ref=f49e344]:
+                - generic [ref=f49e347]:
+                  - generic [ref=f49e348]: "\"Rules Card\" has appeared in the basement"
+                  - generic [ref=f49e349]: slot 99
+                - generic [ref=f49e350]: niente di catalogato
+                - generic [ref=f49e352]: "Beat Challenge #11"
+                - generic [ref=f49e353]: grafo parziale
+                - generic [ref=f49e355]: "0"
+                - button "Aggiungi alla coda" [ref=f49e357] [cursor=pointer]
+              - generic [ref=f49e358]:
+                - generic [ref=f49e361]:
+                  - generic [ref=f49e362]: "\"Samson's Chains\" has appeared in the basement"
+                  - generic [ref=f49e363]: slot 115
+                - generic [ref=f49e364]: Samson's Chains
+                - generic [ref=f49e365]: beat Boss Rush with Samson
+                - generic [ref=f49e366]: bloccato da 1
+                - generic [ref=f49e368]: "0"
+                - button "Aggiungi alla coda" [ref=f49e370] [cursor=pointer]
+              - generic [ref=f49e371]:
+                - generic [ref=f49e374]:
+                  - generic [ref=f49e375]: "\"The Soul\" has appeared in the basement"
+                  - generic [ref=f49e376]: slot 132
+                - generic [ref=f49e377]: The Soul
+                - generic [ref=f49e378]: beat Dark Room with The Lost
+                - generic [ref=f49e379]: bloccato da 1
+                - generic [ref=f49e381]: "0"
+                - button "Aggiungi alla coda" [ref=f49e383] [cursor=pointer]
+              - generic [ref=f49e384]:
+                - generic [ref=f49e387]:
+                  - generic [ref=f49e388]: "\"Godhead\" has appeared in the basement"
+                  - generic [ref=f49e389]: slot 156
+                - generic [ref=f49e390]: Godhead
+                - generic [ref=f49e391]: beat Satan, Isaac, Mom's Heart, ???, Lamb, and Boss Rush on hard mode with The Lost
+                - generic [ref=f49e392]: bloccato da 1
+                - generic [ref=f49e394]: "0"
+                - button "Aggiungi alla coda" [ref=f49e396] [cursor=pointer]
+              - generic [ref=f49e397]:
+                - generic [ref=f49e400]:
+                  - generic [ref=f49e401]: "You unlocked Challenge #11 Glass Cannon"
+                  - generic [ref=f49e402]: slot 164
+                - generic [ref=f49e403]: niente di catalogato
+                - generic [ref=f49e405]: nessuna condizione nel file
+                - generic [ref=f49e407]: grafo parziale
+                - generic [ref=f49e409]: "0"
+                - button "Aggiungi alla coda" [ref=f49e411] [cursor=pointer]
