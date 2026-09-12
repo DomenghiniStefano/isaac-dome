@@ -138,6 +138,10 @@ fn from_verdict(rules: &Rules, key: &str, unknown: impl Fn() -> Requirement) -> 
         // Judged inexpressible and never judged land in the same place: the node drops to
         // `Partial` either way. The difference is recorded in `corrections.json`, for
         // whoever reads it next, not in the value.
+        // Task 2 of the 2026-09-12 plan turns this into a `Mark` or a `Counter`. Until it
+        // does, the outcome is what it is today for these five targets, so this task
+        // changes the vocabulary without changing a single answer.
+        Some(Verdict::Progress { .. }) => unknown(),
         Some(Verdict::Unknown { .. }) | None => unknown(),
     }
 }

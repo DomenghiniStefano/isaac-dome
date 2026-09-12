@@ -109,6 +109,9 @@ impl Graph {
                             (None, Some(Verdict::AlwaysAvailable(_)))
                             | (None, Some(Verdict::NotAPrerequisite(_)))
                             | (None, Some(Verdict::Unknown { .. }))
+                            // A gate answered by the profile is not an edge to another
+                            // achievement: there is no achievement on the other side.
+                            | (None, Some(Verdict::Progress { .. }))
                             | (None, None) => None,
                         };
                         if let Some(target) = edge {
