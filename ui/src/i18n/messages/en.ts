@@ -32,6 +32,7 @@ export const en: MessageSchema = {
     live: 'Live',
     wiki: 'Wiki',
     profile: 'Game profile',
+    appearance: 'Appearance',
     tabsSettings: 'Tabs',
     about: 'About',
   },
@@ -196,26 +197,50 @@ export const en: MessageSchema = {
         "The binary carries a dataset that doesn't read: the Wiki has no pages to show.",
     },
   },
+  appearance: {
+    intro:
+      'Choose how large the interface is. It moves everything at once — text, icons, rows, the window — and it stays that way between launches.',
+    scaleTitle: 'Size',
+    scaleLabel: 'Interface size',
+    preview: 'Preview',
+    previewHint:
+      'It stays here while you scroll: the app, drawn at the size you picked.',
+    shortcut: 'From any screen:',
+    shortcutReset: 'back to 100%',
+    saveFailedTitle: "The size wasn't saved",
+    saveFailed:
+      "The interface is already this size, but we couldn't write it down: the next launch starts as it was.",
+    sample: {
+      kpi: 'Achievements done',
+      item: 'The Sad Onion',
+      itemHint: 'passive item · quality 2',
+      button: 'A button',
+      badge: 'unlockable now',
+    },
+  },
   about: {
     fanMade:
-      'IsaacDome is fan-made and not affiliated with Nicalis or Edmund McMillen.',
+      'IsaacDome is a fan-made project and is not affiliated with, endorsed or sponsored by Nicalis or Edmund McMillen.',
     version: 'Version',
     versionUnknown: 'development server',
     promisesTitle: 'The three promises',
     promises: {
+      readOnlyTitle: 'Saves are read only',
       readOnly:
-        'Saves are only ever read: the module that opens the .dat files holds no write code, and the checksum is never recomputed.',
+        'Saves are only ever read. The module that opens the .dat files holds no write code, and the checksum is never recomputed.',
+      offlineTitle: 'No account, no server, no telemetry',
       offline:
-        'No account, no backend, no telemetry: the app works offline, and the network is only for an optional dataset update.',
+        'IsaacDome works offline. It needs no account and uses no server and no telemetry. The network is used only for an optional dataset update.',
+      oneFileTitle: 'One file written',
       oneFile:
-        "One file written, isaacdome.db, in the app's data folder: nothing else on your disk is touched.",
+        "The app writes one file, isaacdome.db, in the app's data folder. No other file on your disk is changed or written.",
     },
     creditsTitle: 'Credits and licences',
     wikiText:
-      'The wiki text is CC BY-SA 4.0, from bindingofisaacrebirth.wiki.gg.',
+      'The wiki text is licensed CC BY-SA 4.0 and comes from bindingofisaacrebirth.wiki.gg.',
     assets:
-      "The game's images aren't ours and don't travel with the app: they are extracted from your own copy.",
-    font: 'The Determination Mono typeface is CC BY 3.0.',
+      "The game's images are neither included nor distributed with the app. They are extracted from the user's own copy of the game.",
+    font: 'The Determination Mono typeface is licensed CC BY 3.0.',
   },
   placeholder: {
     runArchive: 'Arrives with the run archive (M4).',

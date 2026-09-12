@@ -15,26 +15,30 @@
   /* What preflight reads for the document's font. */
   --default-font-family: var(--font-pixel);
 
-  /* The kit's scale (Shadcn Kit.dc.html), in px: a pixel font is crisp on whole pixels. */
+  /* The kit's scale (Shadcn Kit.dc.html), in rem against a 16px base: at scale 100 every
+     one of these is the whole pixel size the kit was drawn at — 0.875rem is 14px. A pixel
+     font is crisp on whole pixels, and it is, at the steps that give them; at 67 or 125 the
+     browser rounds per element, which is what Discord's text does at the same steps
+     (cycle 3.5c, Decision 4). */
   --text-*: initial;
-  --text-title: 30px;
+  --text-title: 1.875rem;
   --text-title--line-height: 1.3;
   /* A KPI's number (Chrome e Stati.dc.html, "KPI"). */
-  --text-kpi: 26px;
+  --text-kpi: 1.625rem;
   --text-kpi--line-height: 1;
-  --text-heading: 21px;
+  --text-heading: 1.3125rem;
   --text-heading--line-height: 1.35;
-  --text-body: 14px;
+  --text-body: 0.875rem;
   --text-body--line-height: 1.5;
-  --text-control: 13px;
+  --text-control: 0.8125rem;
   --text-control--line-height: 1;
-  --text-row: 13px;
+  --text-row: 0.8125rem;
   --text-row--line-height: 1.35;
-  --text-caption: 12px;
+  --text-caption: 0.75rem;
   --text-caption--line-height: 1.45;
-  --text-label: 11px;
+  --text-label: 0.6875rem;
   --text-label--line-height: 1.3;
-  --text-micro: 10px;
+  --text-micro: 0.625rem;
   --text-micro--line-height: 1.2;
 
   /* Letter spacing: the navbar's sections, the sidebar's uppercase headings. */
