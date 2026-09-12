@@ -14,4 +14,5 @@ pub mod resolve;
 pub mod rules;
 
 pub use build::Graph;
+pub use evaluate::{FlagsOnly, Profile};
 pub use rules::{target_key, Corrections, Requirements, Rules, RulesError, SCHEMA_VERSION};
