@@ -45,7 +45,7 @@ Vitest.
 **Interfaces:**
 - Produces: `IconRef::Page { target: Target }` with `to_path` → `page/item/105`, `page/trinket/97`, `page/achievement/1`, `page/challenge/19`, `page/character/0`, `page/entity/20/0/0`; `parse` the inverse; `icon_source(c, &IconRef::Page{..})` → `target_sprite(c, target)`'s `Found` sprite or `None`.
 
-- [ ] **Step 1: Failing tests** — append to `crates/ipc/tests/icon.rs`:
+- [x] **Step 1: Failing tests** — append to `crates/ipc/tests/icon.rs`:
 
 ```rust
 #[test]
@@ -92,13 +92,13 @@ fn a_page_icon_resolves_through_target_sprite() {
 }
 ```
 
-- [ ] **Step 2: Run** `cargo test -p ipc --test icon` — expected: compile error, no `Page` variant.
+- [x] **Step 2: Run** `cargo test -p ipc --test icon` — expected: compile error, no `Page` variant.
 
-- [ ] **Step 3: Implement** in `crates/ipc/src/icon.rs`: add the variant with a doc comment; in `to_path`, `IconRef::Page { target } => format!("page/{}", page_path(target))` where `page_path` is a private fn exhaustive over `Target` returning `Option<String>` (`None` for Stage/Room/Pickup/Transformation — `to_path` for those returns `"page/none"`, a string `parse` refuses, and a debug assertion documents it never happens: the index only ever builds `Page` for targets that have a page); in `parse`, `("page", kind, Some(rest))` collects the remaining segments and matches `(kind, segments)` → `item`/`trinket`/`achievement`/`character` with one id, `challenge` with one number, `entity` with three; anything else `None`. In `icon_source`: `IconRef::Page { target } => match target_sprite(c, target) { TargetSprite::Found(s) => Some(s), TargetSprite::NoArt | TargetSprite::Unknown => None }`.
+- [x] **Step 3: Implement** in `crates/ipc/src/icon.rs`: add the variant with a doc comment; in `to_path`, `IconRef::Page { target } => format!("page/{}", page_path(target))` where `page_path` is a private fn exhaustive over `Target` returning `Option<String>` (`None` for Stage/Room/Pickup/Transformation — `to_path` for those returns `"page/none"`, a string `parse` refuses, and a debug assertion documents it never happens: the index only ever builds `Page` for targets that have a page); in `parse`, `("page", kind, Some(rest))` collects the remaining segments and matches `(kind, segments)` → `item`/`trinket`/`achievement`/`character` with one id, `challenge` with one number, `entity` with three; anything else `None`. In `icon_source`: `IconRef::Page { target } => match target_sprite(c, target) { TargetSprite::Found(s) => Some(s), TargetSprite::NoArt | TargetSprite::Unknown => None }`.
 
-- [ ] **Step 4: Run** `cargo test -p ipc --test icon` — expected: all pass; `cargo clippy -p ipc --all-targets -- -D warnings` clean.
+- [x] **Step 4: Run** `cargo test -p ipc --test icon` — expected: all pass; `cargo clippy -p ipc --all-targets -- -D warnings` clean.
 
-- [ ] **Step 5: Commit** — `feat(ipc): a page icon reference, served through target_sprite`
+- [x] **Step 5: Commit** — `feat(ipc): a page icon reference, served through target_sprite`
 
 ---
 
@@ -111,7 +111,7 @@ fn a_page_icon_resolves_through_target_sprite() {
 **Interfaces:**
 - Produces: `pub fn wiki_index(dataset: Result<&Dataset, &DatasetError>, catalog: Option<&Catalog>, game_updated_unix: Option<u64>, icon: impl FnMut(&IconRef) -> Option<String>) -> WikiIndex`; `WikiIndex { info: WikiInfo, pages: Vec<WikiPageRef> }`; `WikiPageRef { target: Target, title: String, icon_url: Option<String> }`.
 
-- [ ] **Step 1: Failing tests** — `crates/ipc/tests/wiki_index.rs`:
+- [x] **Step 1: Failing tests** — `crates/ipc/tests/wiki_index.rs`:
 
 ```rust
 //! The wiki index: every page the dataset has, once per window. What the tab labels, the
@@ -198,9 +198,9 @@ fn the_embedded_index_counts_match_its_meta_and_stay_small() {
 }
 ```
 
-- [ ] **Step 2: Run** `cargo test -p ipc --test wiki_index` — expected: compile error.
+- [x] **Step 2: Run** `cargo test -p ipc --test wiki_index` — expected: compile error.
 
-- [ ] **Step 3: Implement** in `crates/ipc/src/wiki.rs`:
+- [x] **Step 3: Implement** in `crates/ipc/src/wiki.rs`:
 
 ```rust
 /// One page of the dataset: its identity, its own title, and the link to its figure when
@@ -256,9 +256,9 @@ fn boss_target(key: &str) -> Option<Target> { … }
 
 Bosses' `BTreeMap<String, Entry>` sorts as strings ("20.0.0" before "3.0.0"): the test above has one boss and doesn't pin string-vs-numeric order; the list sorts by title on screen anyway (Task 7). Note it in a comment.
 
-- [ ] **Step 4: Run** `cargo test -p ipc --test wiki_index` — pass; clippy clean.
+- [x] **Step 4: Run** `cargo test -p ipc --test wiki_index` — pass; clippy clean.
 
-- [ ] **Step 5: Commit** — `feat(ipc): the wiki index, every page's identity, title and icon link`
+- [x] **Step 5: Commit** — `feat(ipc): the wiki index, every page's identity, title and icon link`
 
 ---
 
@@ -267,7 +267,7 @@ Bosses' `BTreeMap<String, Entry>` sorts as strings ("20.0.0" before "3.0.0"): th
 **Files:**
 - Modify: `crates/app/src/lib.rs`, `crates/design-export/src/payload.rs`
 
-- [ ] **Step 1:** In `crates/app/src/lib.rs`, beside `wiki_entry`:
+- [x] **Step 1:** In `crates/app/src/lib.rs`, beside `wiki_entry`:
 
 ```rust
 #[tauri::command]
@@ -285,11 +285,11 @@ fn wiki_index(
 
 Register it in `generate_handler!`. `IconRef::Page` needs no handler change: `icon_bytes` already routes every catalog-backed reference through `icon_source` — add `IconRef::Page { .. }` to that match arm (the match is exhaustive, so the build says where).
 
-- [ ] **Step 2:** In `crates/design-export/src/payload.rs` `export`, after `extraction_report`: `write_json(root, "contracts/payload/wiki_index.json", &ipc::wiki_index(wiki::Dataset::embedded(), Some(catalog), None, link))` following the file's existing pattern for the link closure and the manifest line.
+- [x] **Step 2:** In `crates/design-export/src/payload.rs` `export`, after `extraction_report`: `write_json(root, "contracts/payload/wiki_index.json", &ipc::wiki_index(wiki::Dataset::embedded(), Some(catalog), None, link))` following the file's existing pattern for the link closure and the manifest line.
 
-- [ ] **Step 3: Run** `cargo build -p app` and `cargo clippy --workspace --all-targets -- -D warnings`; `cargo test -p design-export`.
+- [x] **Step 3: Run** `cargo build -p app` and `cargo clippy --workspace --all-targets -- -D warnings`; `cargo test -p design-export`.
 
-- [ ] **Step 4: Commit** — `feat(app): the wiki_index command, and its payload in the design pack`
+- [x] **Step 4: Commit** — `feat(app): the wiki_index command, and its payload in the design pack`
 
 ---
 
@@ -302,7 +302,7 @@ Register it in `generate_handler!`. `IconRef::Page` needs no handler change: `ic
 **Interfaces:**
 - Produces: `pageKey(target: Target): string | null` (null for kinds with no page); `parsePageKey(key: string): Target | null`; `categoryOf(target: Target): WikiCategory | null`; `pageLocation(target): TabLocation | null` (`{ name: Wiki, query: { category, page } }`); `tabLabel(location, titleOf: (key: string) => string | null): MessageKey | string` — a page's title when known, else `locationTitle(location)`. Types `WikiIndex`, `WikiPageRef`; `wikiIndex(): Promise<WikiIndex>`; `Command.WikiIndex = 'wiki_index'`.
 
-- [ ] **Step 1: Failing tests** — `pageKey.test.ts`:
+- [x] **Step 1: Failing tests** — `pageKey.test.ts`:
 
 ```ts
 import { describe, expect, it } from 'vitest'
@@ -339,9 +339,9 @@ describe('pageKey', () => {
 
 `tabModel.test.ts` gains: `tabLabel` on a page location returns the title when `titleOf` knows the key, `locationTitle`'s message when it doesn't, and the route's message on any non-page location.
 
-- [ ] **Step 2: Run** `pnpm --filter ui exec vitest run src/lib/wiki src/stores` — expected: fail (modules missing).
+- [x] **Step 2: Run** `pnpm --filter ui exec vitest run src/lib/wiki src/stores` — expected: fail (modules missing).
 
-- [ ] **Step 3: Implement.** `pageKey.ts`: a `switch` on `target.kind` with `assertNever`; `parsePageKey` splits on the first `:`, checks the kind against `PageKind = { Item: 'item', … } as const`, parses decimal integers strictly (`/^\d+$/`), `entity` as three dot-separated. `category.ts`: `categoryOf` and `pageLocation` (imports `RouteName`, `WikiCategory`). `routeTable.ts`: `query?: { category?: WikiCategory; page?: string }`. `tabModel.ts`:
+- [x] **Step 3: Implement.** `pageKey.ts`: a `switch` on `target.kind` with `assertNever`; `parsePageKey` splits on the first `:`, checks the kind against `PageKind = { Item: 'item', … } as const`, parses decimal integers strictly (`/^\d+$/`), `entity` as three dot-separated. `category.ts`: `categoryOf` and `pageLocation` (imports `RouteName`, `WikiCategory`). `routeTable.ts`: `query?: { category?: WikiCategory; page?: string }`. `tabModel.ts`:
 
 ```ts
 export const tabLabel = (
@@ -356,9 +356,9 @@ export const tabLabel = (
 
 (A page title is data, not a message: the return says which, and `App.vue` translates one and shows the other.) `types.ts`: `WikiPageRef`, `WikiIndex` after `WikiInfo`; `wiki.ts`: `wikiIndex`; `commands.ts`: `WikiIndex: 'wiki_index'`.
 
-- [ ] **Step 4: Run** the same tests — pass; `pnpm typecheck`.
+- [x] **Step 4: Run** the same tests — pass; `pnpm typecheck`.
 
-- [ ] **Step 5: Commit** — `feat(ui): a wiki page is a tab location, its label read from the index`
+- [x] **Step 5: Commit** — `feat(ui): a wiki page is a tab location, its label read from the index`
 
 ---
 
@@ -371,15 +371,15 @@ export const tabLabel = (
 **Interfaces:**
 - Produces: `wikiIndexAnswer({ withArt, withCatalog, withWiki }): WikiIndex`; `wikiEntryAnswer(target): Entry | null`; `?wiki=none` → `info: { kind: 'missing', reason: 'malformed' }`, no pages.
 
-- [ ] **Step 1: Failing tests** — `wiki.test.ts`: the index lists the pack's item 105 with title "The D6" and the pack's boss `entity 20.0.0` "Monstro"; without the catalog every `iconUrl` is null; `wikiEntryAnswer({kind:'item',id:105})` has title "The D6" and `wikiEntryAnswer({kind:'item',id:1})` is null; `withWiki: false` gives a missing info and no pages.
+- [x] **Step 1: Failing tests** — `wiki.test.ts`: the index lists the pack's item 105 with title "The D6" and the pack's boss `entity 20.0.0` "Monstro"; without the catalog every `iconUrl` is null; `wikiEntryAnswer({kind:'item',id:105})` has title "The D6" and `wikiEntryAnswer({kind:'item',id:1})` is null; `withWiki: false` gives a missing info and no pages.
 
-- [ ] **Step 2: Run** — fail.
+- [x] **Step 2: Run** — fail.
 
-- [ ] **Step 3: Implement.** Globs: `images/INDEX.json` (families `item` → `item`/`trinket` by `kind`, `achievement`, `boss` → the entity key parsed from `source` `Portrait_<type>.<variant>_…`, `character`), `wiki/samples/*.json` (the `Entry` of each, keyed by the file stem → `pageKey`: `item_105` → `item:105`, `entity_20_0_0` → `entity:20.0.0`), `contracts/payload/unlock.json` for challenge targets (`unlocks` of kind `challenge`: id and name). Titles: the pack's `name`; a sample page's own title wins. `iconUrl`: `packIconUrl`-style rewrite to the pack's single files for items and achievements, `images/boss/<id>` and character portraits for the rest, null when `withArt` is false. Counts for `info` from the pages built. `wikiEntryAnswer` reads the samples map and warns once (`console.warn`) that the pack carries eleven pages. Wire `Command.WikiIndex` and `Command.WikiEntry` in `index.ts` with a `?wiki=none` param (`const WikiParam = 'wiki'`).
+- [x] **Step 3: Implement.** Globs: `images/INDEX.json` (families `item` → `item`/`trinket` by `kind`, `achievement`, `boss` → the entity key parsed from `source` `Portrait_<type>.<variant>_…`, `character`), `wiki/samples/*.json` (the `Entry` of each, keyed by the file stem → `pageKey`: `item_105` → `item:105`, `entity_20_0_0` → `entity:20.0.0`), `contracts/payload/unlock.json` for challenge targets (`unlocks` of kind `challenge`: id and name). Titles: the pack's `name`; a sample page's own title wins. `iconUrl`: `packIconUrl`-style rewrite to the pack's single files for items and achievements, `images/boss/<id>` and character portraits for the rest, null when `withArt` is false. Counts for `info` from the pages built. `wikiEntryAnswer` reads the samples map and warns once (`console.warn`) that the pack carries eleven pages. Wire `Command.WikiIndex` and `Command.WikiEntry` in `index.ts` with a `?wiki=none` param (`const WikiParam = 'wiki'`).
 
-- [ ] **Step 4: Run** tests — pass; `pnpm typecheck`; `pnpm lint`.
+- [x] **Step 4: Run** tests — pass; `pnpm typecheck`; `pnpm lint`.
 
-- [ ] **Step 5: Commit** — `feat(ui): the wiki fixture, the pack's pages and image index as the dataset`
+- [x] **Step 5: Commit** — `feat(ui): the wiki fixture, the pack's pages and image index as the dataset`
 
 ---
 
@@ -392,15 +392,15 @@ export const tabLabel = (
 **Interfaces:**
 - Produces: `useWikiStore()` with `index: WikiIndex | null`, `status`, `error`, `loadIndex()` (once; a second call while ready is a no-op), `titleOf(key: string): string | null`, `iconFor(target): string | null`, `hasPage(target): boolean`, `entry(key): Entry | null | undefined` (undefined: not read yet), `loadEntry(target)`. `WikiInline` / `WikiBlocks` emit `navigate: [target: Target, newTab: boolean]` and accept `canOpen?: (target: Target) => boolean`. `WikiFigure` props `{ target: Target; url: string | null }`.
 
-- [ ] **Step 1: Store.** `stores/wiki.ts`: `index`, `status`, `error`, a `Map<string, Entry | null>` of read pages keyed by page key; `titleOf` and `iconFor` through a `Map<string, WikiPageRef>` built once from the index (`computed`); `loadIndex` guards on `status === Ready || Loading`; `loadEntry(target)` reads `wikiEntry` once per key and stores `null` too (a page the dataset lacks is an answer). `wikiUnavailable` sets `Failed` with the error.
+- [x] **Step 1: Store.** `stores/wiki.ts`: `index`, `status`, `error`, a `Map<string, Entry | null>` of read pages keyed by page key; `titleOf` and `iconFor` through a `Map<string, WikiPageRef>` built once from the index (`computed`); `loadIndex` guards on `status === Ready || Loading`; `loadEntry(target)` reads `wikiEntry` once per key and stores `null` too (a page the dataset lacks is an answer). `wikiUnavailable` sets `Failed` with the error.
 
-- [ ] **Step 2: References.** In `WikiInline.vue`: the `Button` click emits `('navigate', token.target, $event.ctrlKey)`; the ref renders as a `Button` only when `canOpen?.(token.target) ?? true`, otherwise with the concept's dotted span (a `span` with the same classes as `concept`, carrying the icon when there is one). The recursive `WikiInline` for `edition` forwards `canOpen` and re-emits both arguments. `WikiBlocks.vue`: `forward` gains `canOpen` and `onNavigate: (target, newTab) => emit('navigate', target, newTab)`. The Kit's `WikiSection.vue` passes a `canOpen` that says items open and pickups don't, so both natures show.
+- [x] **Step 2: References.** In `WikiInline.vue`: the `Button` click emits `('navigate', token.target, $event.ctrlKey)`; the ref renders as a `Button` only when `canOpen?.(token.target) ?? true`, otherwise with the concept's dotted span (a `span` with the same classes as `concept`, carrying the icon when there is one). The recursive `WikiInline` for `edition` forwards `canOpen` and re-emits both arguments. `WikiBlocks.vue`: `forward` gains `canOpen` and `onNavigate: (target, newTab) => emit('navigate', target, newTab)`. The Kit's `WikiSection.vue` passes a `canOpen` that says items open and pickups don't, so both natures show.
 
-- [ ] **Step 3: `WikiFigure.vue`.** By `target.kind`: `item`/`trinket` → `PixelSprite` in a `size-wiki-figure` square with `placeholder`; `achievement` → `AchievementArt` with `ArtSize.Card`; `entity`/`character` → an `img` in a `size-wiki-figure` square frame (`bg-data`, the hatch placeholder on null or error — reuse `PixelSprite` without `pixelated`? No: portraits are pixel art too; use `PixelSprite`); the other four kinds → the placeholder. Add `--spacing-wiki-figure: 6rem` to `theme/spacing.css` with a comment (a 32 px sprite at 3×, a 192 px portrait at half).
+- [x] **Step 3: `WikiFigure.vue`.** By `target.kind`: `item`/`trinket` → `PixelSprite` in a `size-wiki-figure` square with `placeholder`; `achievement` → `AchievementArt` with `ArtSize.Card`; `entity`/`character` → an `img` in a `size-wiki-figure` square frame (`bg-data`, the hatch placeholder on null or error — reuse `PixelSprite` without `pixelated`? No: portraits are pixel art too; use `PixelSprite`); the other four kinds → the placeholder. Add `--spacing-wiki-figure: 6rem` to `theme/spacing.css` with a comment (a 32 px sprite at 3×, a 192 px portrait at half).
 
-- [ ] **Step 4: Run** `pnpm typecheck`, `pnpm ui:test`, `pnpm scan`.
+- [x] **Step 4: Run** `pnpm typecheck`, `pnpm ui:test`, `pnpm scan`.
 
-- [ ] **Step 5: Commit** — `feat(ui): the wiki store, and references that open in place or in a new tab`
+- [x] **Step 5: Commit** — `feat(ui): the wiki store, and references that open in place or in a new tab`
 
 ---
 
@@ -414,35 +414,35 @@ export const tabLabel = (
 - Consumes: the wiki store, `pageLocation`, `parsePageKey`, `categoryOf`, `tabLabel`.
 - Produces: `filterPages(pages: WikiPageRef[], category: WikiCategory, query: string): WikiPageRef[]` — the category's pages, by title, case-insensitive contains, sorted by title.
 
-- [ ] **Step 1: Failing test** — `listFilter.test.ts`: three pages (two items, one boss); `filterPages(pages, 'items', '')` gives the two items sorted by title; `'d6'` gives The D6 only; `'bosses'` with `''` gives Monstro.
+- [x] **Step 1: Failing test** — `listFilter.test.ts`: three pages (two items, one boss); `filterPages(pages, 'items', '')` gives the two items sorted by title; `'d6'` gives The D6 only; `'bosses'` with `''` gives Monstro.
 
-- [ ] **Step 2: Run** — fail; implement `listFilter.ts` (uses `categoryOf`); pass.
+- [x] **Step 2: Run** — fail; implement `listFilter.ts` (uses `categoryOf`); pass.
 
-- [ ] **Step 3: i18n.** `it.ts` gains `wiki: { intro, provenance: { snapshot, patch, patchUnknown, newerGame, license, licenseLong }, categoryCount, listHint, noCatalog, search, noResults, resetFilters, back, kind: { item, trinket, achievement, boss, challenge, character }, revision, section: { effects, notes, synergies, interactions, bugs, behavior, championVersions, damageScaling, strategies, difficulty, reward, unlockable }, infobox: { description, requirements, unlocks, unlockedBy, baseHp, environment, pool, goal, items, trinkets, pickups, health, curse, blindfolded, shops, treasureRooms, damage, range, speed, luck, shotSpeed, collectibles, none }, states: { loading, unknown, unknownHint, noSections, missing } }`; `en.ts` mirrored. The twelve section names from the export's `SEC_LABEL`; `placeholder.wiki` removed from both.
+- [x] **Step 3: i18n.** `it.ts` gains `wiki: { intro, provenance: { snapshot, patch, patchUnknown, newerGame, license, licenseLong }, categoryCount, listHint, noCatalog, search, noResults, resetFilters, back, kind: { item, trinket, achievement, boss, challenge, character }, revision, section: { effects, notes, synergies, interactions, bugs, behavior, championVersions, damageScaling, strategies, difficulty, reward, unlockable }, infobox: { description, requirements, unlocks, unlockedBy, baseHp, environment, pool, goal, items, trinkets, pickups, health, curse, blindfolded, shops, treasureRooms, damage, range, speed, luck, shotSpeed, collectibles, none }, states: { loading, unknown, unknownHint, noSections, missing } }`; `en.ts` mirrored. The twelve section names from the export's `SEC_LABEL`; `placeholder.wiki` removed from both.
 
-- [ ] **Step 4: `WikiScreen.vue`.** `useRoute()`; `wiki.loadIndex()` on setup; `computed` `page = route.query.page` (string or undefined), `category`; renders `WikiPage` when `page`, `WikiCategoryList` when `category`, else `WikiLanding`. A `ProfileError`-like alert with retry when `wiki.status === Failed`.
+- [x] **Step 4: `WikiScreen.vue`.** `useRoute()`; `wiki.loadIndex()` on setup; `computed` `page = route.query.page` (string or undefined), `category`; renders `WikiPage` when `page`, `WikiCategoryList` when `category`, else `WikiLanding`. A `ProfileError`-like alert with retry when `wiki.status === Failed`.
 
-- [ ] **Step 5: `WikiLanding.vue`.** `ScreenHeader` (book icon, `routes.wiki`, `wiki.intro`); the provenance as a `Card` of `ProfileFact`-style rows (snapshot date through `formatModified`-like `Intl.DateTimeFormat`, patch or "unknown", the license line with a `Tooltip` carrying `licenseLong`, the newer-game note when `gameNewerThanSnapshot === true`); a grid of six `Card`s (`grid-cols-3`), each a `Button` variant that navigates to `{ name: Wiki, query: { category } }` (Ctrl → `tabs.open`), with the category's icon, title and count. `info.kind === 'missing'` → an `Alert` destructive with `wiki.states.missing`.
+- [x] **Step 5: `WikiLanding.vue`.** `ScreenHeader` (book icon, `routes.wiki`, `wiki.intro`); the provenance as a `Card` of `ProfileFact`-style rows (snapshot date through `formatModified`-like `Intl.DateTimeFormat`, patch or "unknown", the license line with a `Tooltip` carrying `licenseLong`, the newer-game note when `gameNewerThanSnapshot === true`); a grid of six `Card`s (`grid-cols-3`), each a `Button` variant that navigates to `{ name: Wiki, query: { category } }` (Ctrl → `tabs.open`), with the category's icon, title and count. `info.kind === 'missing'` → an `Alert` destructive with `wiki.states.missing`.
 
-- [ ] **Step 6: `WikiCategoryList.vue`.** Props `category`. `ScreenHeader` with `wikiCategoryIcon`, `wikiCategoryTitle`, eyebrow `N pagine`; the `noCatalog` line when every `iconUrl` is null and `info` is loaded; a `Card` with a toolbar (`Input` bound to a local `query`, the shown/total count) and a virtualized list (the `CollectionTable` pattern: `useVirtualizer`, `--unlock-total`, `--row-start`, `h-row-wide`, `max-h-unlock-body`) whose row is a `Button` variant `Row`? — no such variant: the row is a `Button` with `ButtonVariant.Ghost` full-width? Check `button/variants.ts` at execution and use the variant that a table row uses on Unlock (`UnlockRow`'s add button pattern); the row shows `PixelSprite`/`AchievementArt` by kind at `size-8`, the title, and `id N` in `text-micro`. Click → `tabs.navigate(pageLocation(target))`, Ctrl+click → `tabs.open`. Empty → `EmptyCategory` + reset.
+- [x] **Step 6: `WikiCategoryList.vue`.** Props `category`. `ScreenHeader` with `wikiCategoryIcon`, `wikiCategoryTitle`, eyebrow `N pagine`; the `noCatalog` line when every `iconUrl` is null and `info` is loaded; a `Card` with a toolbar (`Input` bound to a local `query`, the shown/total count) and a virtualized list (the `CollectionTable` pattern: `useVirtualizer`, `--unlock-total`, `--row-start`, `h-row-wide`, `max-h-unlock-body`) whose row is a `Button` variant `Row`? — no such variant: the row is a `Button` with `ButtonVariant.Ghost` full-width? Check `button/variants.ts` at execution and use the variant that a table row uses on Unlock (`UnlockRow`'s add button pattern); the row shows `PixelSprite`/`AchievementArt` by kind at `size-8`, the title, and `id N` in `text-micro`. Click → `tabs.navigate(pageLocation(target))`, Ctrl+click → `tabs.open`. Empty → `EmptyCategory` + reset.
 
-- [ ] **Step 7: `WikiPage.vue`.** Props `pageKey: string`. `target = parsePageKey(pageKey)`; `watch(target, immediate)` → `wiki.loadEntry`. Header: `WikiFigure`, title (`text-title`), a `Badge` `Tag` with `wiki.kind.*` by kind, `rev. N` (`tabular-nums text-caption`), the license line. `entry === undefined` → skeletons; `null` or unparseable → `EmptyCategory` `wiki.states.unknown` + hint + a `Button` back to the category (`tabs.navigate({ name: Wiki, query: { category } })`). Else `WikiInfobox` and `WikiSections`. `onNavigate(target, newTab)` → `pageLocation(target)` and `tabs.open` / `tabs.navigate`; `iconFor = wiki.iconFor`, `canOpen = wiki.hasPage`.
+- [x] **Step 7: `WikiPage.vue`.** Props `pageKey: string`. `target = parsePageKey(pageKey)`; `watch(target, immediate)` → `wiki.loadEntry`. Header: `WikiFigure`, title (`text-title`), a `Badge` `Tag` with `wiki.kind.*` by kind, `rev. N` (`tabular-nums text-caption`), the license line. `entry === undefined` → skeletons; `null` or unparseable → `EmptyCategory` `wiki.states.unknown` + hint + a `Button` back to the category (`tabs.navigate({ name: Wiki, query: { category } })`). Else `WikiInfobox` and `WikiSections`. `onNavigate(target, newTab)` → `pageLocation(target)` and `tabs.open` / `tabs.navigate`; `iconFor = wiki.iconFor`, `canOpen = wiki.hasPage`.
 
-- [ ] **Step 8: `WikiInfobox.vue`.** Props `infobox: Infobox`, `iconFor`, `canOpen`, emits `navigate`. A `switch` on `infobox.kind` in the template (`v-if` chain ending in `assertNever`): `item`/`trinket` render nothing; the rows per the spec's table as `<dl>` with `text-label` labels and `WikiInline` values; a `Target | null` field becomes `[{ kind: 'ref', target, label: wiki.titleOf(pageKey(target)) ?? pageKey(target) }]`; empty arrays and null draw `wiki.infobox.none`; the three challenge flags as `Badge`s (`Done` when true, `Tag` when false with the label struck? — no: only the true ones are listed, and a line "nessuna restrizione" when none). Character stats as a five-cell strip of `text-caption` label + `text-row tabular-nums` value.
+- [x] **Step 8: `WikiInfobox.vue`.** Props `infobox: Infobox`, `iconFor`, `canOpen`, emits `navigate`. A `switch` on `infobox.kind` in the template (`v-if` chain ending in `assertNever`): `item`/`trinket` render nothing; the rows per the spec's table as `<dl>` with `text-label` labels and `WikiInline` values; a `Target | null` field becomes `[{ kind: 'ref', target, label: wiki.titleOf(pageKey(target)) ?? pageKey(target) }]`; empty arrays and null draw `wiki.infobox.none`; the three challenge flags as `Badge`s (`Done` when true, `Tag` when false with the label struck? — no: only the true ones are listed, and a line "nessuna restrizione" when none). Character stats as a five-cell strip of `text-caption` label + `text-row tabular-nums` value.
 
-- [ ] **Step 9: `WikiSections.vue`.** Props `sections: Section[]`, resolvers, emits `navigate`. Each section: `h2` `text-control text-highlight` with `wiki.section.*` (`Record<SectionKind, MessageKey>` in `wikiLabels.ts`) and `WikiBlocks`. No sections → `EmptyCategory` `wiki.states.noSections`.
+- [x] **Step 9: `WikiSections.vue`.** Props `sections: Section[]`, resolvers, emits `navigate`. Each section: `h2` `text-control text-highlight` with `wiki.section.*` (`Record<SectionKind, MessageKey>` in `wikiLabels.ts`) and `WikiBlocks`. No sections → `EmptyCategory` `wiki.states.noSections`.
 
-- [ ] **Step 10: Wire.** `routes.ts`: `[RouteName.Wiki]: WikiScreen`; `routeTable.ts`: remove `routeArrives[RouteName.Wiki]`; `App.vue`: `tabViews` label through `tabLabel(tab.location, wiki.titleOf)` — a `Message` is translated, `{ text }` is shown as is; `useWikiStore` in `App.vue` loads the index lazily: a `watch` on "any tab is a page" is over-engineering — call `wiki.loadIndex()` in `WikiScreen` only, and `titleOf` returns null until then, which the spec allows.
+- [x] **Step 10: Wire.** `routes.ts`: `[RouteName.Wiki]: WikiScreen`; `routeTable.ts`: remove `routeArrives[RouteName.Wiki]`; `App.vue`: `tabViews` label through `tabLabel(tab.location, wiki.titleOf)` — a `Message` is translated, `{ text }` is shown as is; `useWikiStore` in `App.vue` loads the index lazily: a `watch` on "any tab is a page" is over-engineering — call `wiki.loadIndex()` in `WikiScreen` only, and `titleOf` returns null until then, which the spec allows.
 
-- [ ] **Step 11: Run** `pnpm typecheck`, `pnpm ui:test`, `pnpm lint`, `pnpm format:check`, `pnpm scan`.
+- [x] **Step 11: Run** `pnpm typecheck`, `pnpm ui:test`, `pnpm lint`, `pnpm format:check`, `pnpm scan`.
 
-- [ ] **Step 12: Commit** — `feat(ui): the Wiki screen, a category list and a page in a tab`
+- [x] **Step 12: Commit** — `feat(ui): the Wiki screen, a category list and a page in a tab`
 
 ---
 
 ### Task 8: looked at, the suite, and the documents
 
-- [ ] **Step 1:** `pnpm ui:dev` in the background; through headless Chrome (`chrome --headless --dump-dom` / the Playwright tools) check: the landing's six counts; `?category=items` lists 909 rows (the pack's) and "d6" filters to one; `page=item:105` shows The D6 with a figure, the kind badge, 26 references with icons, a pickup ref drawn dotted; clicking a ref replaces the page; Ctrl+click opens a tab labelled with the page's title; `page=entity:20.0.0` shows the boss infobox with base HP 250; `page=item:1` says the dataset doesn't know it; `?catalog=none` draws placeholders and the line; `?wiki=none` shows the alert. Record findings in the session log.
-- [ ] **Step 2:** `sh scripts/check` — green; list the skips.
-- [ ] **Step 3:** `DESIGN-BRIEF.md` §8 gains `WikiIndex` / `WikiPageRef` and the `wiki_index` command; `docs/STATUS.md`: 3.5a checked, session log entry; `docs/BACKLOG.md` B5: A done, B next.
-- [ ] **Step 4: Commit** — `docs: cycle 3.5a lands, the Wiki in tabs`; then merge into `develop` with `--no-ff` once `scripts/check` is green on the branch.
+- [x] **Step 1:** `pnpm ui:dev` in the background; through headless Chrome (`chrome --headless --dump-dom` / the Playwright tools) check: the landing's six counts; `?category=items` lists 909 rows (the pack's) and "d6" filters to one; `page=item:105` shows The D6 with a figure, the kind badge, 26 references with icons, a pickup ref drawn dotted; clicking a ref replaces the page; Ctrl+click opens a tab labelled with the page's title; `page=entity:20.0.0` shows the boss infobox with base HP 250; `page=item:1` says the dataset doesn't know it; `?catalog=none` draws placeholders and the line; `?wiki=none` shows the alert. Record findings in the session log.
+- [x] **Step 2:** `sh scripts/check` — green; list the skips.
+- [x] **Step 3:** `DESIGN-BRIEF.md` §8 gains `WikiIndex` / `WikiPageRef` and the `wiki_index` command; `docs/STATUS.md`: 3.5a checked, session log entry; `docs/BACKLOG.md` B5: A done, B next.
+- [x] **Step 4: Commit** — `docs: cycle 3.5a lands, the Wiki in tabs`; then merge into `develop` with `--no-ff` once `scripts/check` is green on the branch.

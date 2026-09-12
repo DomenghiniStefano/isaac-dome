@@ -184,6 +184,11 @@ grouped by type, enter opens) for quick access, and the **Search screen** for th
 complete set, filterable by type, for when the results don't fit in a palette. The palette leads
 to the screen; the screen doesn't require going through the palette.
 
+**Designed on 2026-09-12** in `docs/superpowers/specs/2026-09-12-screens-wiki-search-design.md`
+as sub-project 3.5b, with 3.5a (the Wiki in tabs) closed the same day: the index, the ranking
+and the two surfaces are Decisions 5 to 8 there, and the destination a result opens is a tab
+location the Wiki half already defines. What stays open here is the implementation.
+
 ### What we already have
 
 Almost all the material, which is why this entry is small:
@@ -828,3 +833,616 @@ merge again — **exactly as a browser does**.
   ~240 ms so a tab doesn't snap back instantly), or drop only.
 - Where a torn-off tab's window opens: under the cursor at the drop, sized like the origin.
 - Whether a secondary window has the navbar and sidebar, or tabs and content only.
+
+---
+
+## B16 — The brand mark in the navbar is the app icon, and the icon is `primary` (implementation, `ui` and `app`)
+
+Logged 2026-09-12, from the owner's review of the bars.
+
+### What we already have
+
+- `shell/NavBar.vue` draws the brand as a bordered 14px square (`size-3.5 border-2
+  border-primary bg-sheet`) beside the name: a placeholder from cycle 2, never meant as the
+  logo.
+- The app icon exists twice, in two colours: `crates/app/icons/` (the PNG/ICO/ICNS set Tauri
+  bundles, 512×512 source) and `ui/public/favicon.svg`, the Dome silhouette with Isaac's face
+  cut out, filled `#47c7ff` — a light blue that belongs to no token.
+
+### What's missing
+
+1. The square in the navbar becomes the app icon: the SVG inlined as a component under
+   `ui/src/components/shell/` (or an `<img>` on the public asset), sized by a token, with
+   `currentColor` so the focused / unfocused states keep working through the existing
+   `group-data-[focused=false]` classes.
+2. The icon's fill becomes **`primary`** (`#901800`, `ui/src/assets/theme/colors.css`) in
+   every copy: `favicon.svg` and the bundled icon set. The PNG/ICO/ICNS are regenerated from
+   the SVG (`pnpm tauri icon` takes one source image), not recoloured by hand, so the two
+   never drift again.
+
+### Done when
+
+The navbar shows the Dome mark, red, and the taskbar and installer show the same one.
+
+---
+
+## B17 — The profile screen is a welcome flow, not "Screen 0" (implementation, after design)
+
+Logged 2026-09-12, a product decision from the owner: the profile screen's copy describes a
+settings page, and the owner wants the opposite — **on launch the app asks which save to
+play with and shows a preview of it**, a welcome flow.
+
+### What we already have
+
+- `screens/ProfileScreen.vue` with `ScreenHeader` eyebrow `profile.eyebrow` ("Schermata 0" /
+  "Screen 0") and `profile.intro` ("Non è un passaggio da attraversare una volta: è lo stato
+  che decide ogni numero dell'app. Resta consultabile e modificabile per sempre."), in
+  `ui/src/i18n/messages/{it,en}.ts`.
+- The sidebar hint `sidebar.settingsHint` ("Da qui l'app trova gioco e salvataggi."), wired in
+  `shell/sectionNav.ts`.
+- The candidate list with its opaque ids, `SetupState`, and auto-selection when there is
+  one save (sub-project 3.1).
+
+### What's wrong with the copy, as decided
+
+- "Schermata 0" is a design-file label, not something a user reads.
+- "Da qui l'app trova gioco e salvataggi" and the intro are **false** as product: the screen
+  isn't a permanent state page one may consult, it's the first thing the user meets and it
+  should behave as a welcome, letting them pick the save and see what it holds before the
+  rest of the app opens on it.
+
+### What's missing
+
+1. Drop the eyebrow and the intro; rewrite the sidebar hint. Copy comes from the design, not
+   from the code.
+2. A welcome flow: at launch, with more than one candidate, the app opens on the choice with
+   a **preview** per save (the KPI strip already drawn by Progress: achievements, items,
+   marks, last played); with one candidate, straight to the app as today. The flow stays
+   reachable afterwards from the profile indicator, and B14's manual folders live in it.
+3. The settings entry stops pretending to be this screen: what remains under "Impostazioni"
+   is decided with the design.
+
+### Done when
+
+A first launch on a machine with two saves shows the two, each with its numbers, and no text
+anywhere says "Schermata 0". Design first (`Schermate.dc.html`), then the usual spec → plan.
+
+---
+
+## B18 — No white flash at launch: a splash with the app logo (implementation, `app` and `ui`)
+
+Logged 2026-09-12. Opening the built app shows a **white window** before the frontend paints:
+the webview's default background, visible for as long as Vite's bundle takes to load and the
+first commands take to answer. On a dark app it reads as a glitch.
+
+### What we already have
+
+- `crates/app/tauri.conf.json` declares one window (`decorations: false`) with no
+  `backgroundColor` and `visible` left at its default `true`: the OS shows the frame before
+  there is anything in it.
+- `ui/index.html` is the bare Vite template: `<div id="app">` with no colour and no content
+  until `main.ts` mounts.
+- `--color-background: #150e0d` in `ui/src/assets/theme/colors.css`.
+- The Dome mark (B16), which is what a splash would show.
+
+### What's missing, in order of cost
+
+1. **Kill the white**: `backgroundColor` on the window in `tauri.conf.json` matching
+   `--color-background`, and the same colour on `<html>` in `index.html` so the page never
+   paints white even when the webview is up before the CSS. The value lives in two places by
+   necessity (the config is JSON, not CSS): a test that reads both and compares them.
+2. **A splash**: the logo centred on the background, inside `index.html` so it's there before
+   any JavaScript, removed by `App.vue` once the shell has its first answer from the backend
+   (the setup state). Tauri's own pattern — `visible: false` in the config and
+   `getCurrentWindow().show()` from the frontend — is the alternative when even the coloured
+   empty frame is too much; it costs the window appearing later rather than empty.
+3. Not a `splashscreen` second window: one window, the logo drawn in the same document,
+   otherwise B15's window logic gains a case for nothing.
+
+### Done when
+
+Launching the installed app never shows a white surface; the first frame is the dark
+background with the mark, and the shell replaces it without a jump.
+
+---
+
+## B19 — The marked cell sits on the game's paper, not on a flat panel (implementation, `ipc` and `ui`)
+
+Logged 2026-09-12, from the owner's review of Completion: a taken mark is drawn on a flat
+light panel, and it should sit on the game's own paper sheet, the one the completion widget
+draws under every symbol.
+
+### What we already have
+
+- `marks/MarkCell.vue` paints a marked cell with `bg-mark-paper`, the token
+  `--color-mark-paper: #e9dadf` in `colors.css` — a colour standing in for an image.
+- The image exists on the same sheet the symbols come from: `completion_widget/paper_00.png`
+  (the plain paper) and `paper_02.png` (the bloodied one, the state the game shows once a
+  mark is taken; `design-export`'s `mark_symbol_fallback` describes it). B10's first item
+  already measured it: 96×96 with the drawing at `x 0–84, y 3–82`, untrimmed.
+- The icon protocol already crops this sheet for `mark/<column>/<tier>` (`ipc::mark_art`,
+  `ipc::crop_png`).
+
+### What's missing
+
+1. One more address on the protocol, `mark/paper/<tier>` or the like, cropping the paper
+   frame from `completion_widget.anm2` the way the symbols are cropped — the frame read
+   from the anm2, not a hand-typed rectangle. Whether plain and bloodied are both used, or
+   only one, is the design's call; the tier decides which.
+2. `MarkCell` draws the paper as the cell's background image (a CSS variable bound by the
+   template, per the frontend rules) and the symbol over it; the token `mark-paper` stays as
+   the fallback colour for a machine without the game, or goes if the bars outfit covers it.
+3. `mark_art.rs`'s test extends to the paper: it resolves, and to a different rectangle
+   from every symbol.
+
+### Done when
+
+On a machine with the game, a marked cell shows the paper under its symbol, and the Kit
+page's legend row shows the same. Without the game, nothing changes.
+
+---
+
+## B20 — "Non leggibile" leaves the matrix: close the 40 cells (measurement, then `core-save` and `ui`)
+
+Logged 2026-09-12, a product decision from the owner: the matrix shouldn't say "non
+leggibile". The state has to be resolved, not restyled.
+
+### What we already have
+
+- **40 cells** the app can't place: Mother and The Beast for The Forgotten and the 19
+  Tainted characters, a 20 × 2 block in the bottom-right corner. Spacing puts them inside
+  423–490 (Mother for the 14 originals starts at 423, The Beast at 457), but they are zero
+  in every save collected, so `counter_index` answers `None` and the cell draws `unknown`
+  (CLAUDE.md, "Counters and marks"; `docs/STATUS.md`).
+- The rendering of that state: the dashed hatched cell in `MarkCell.vue`, the legend entry
+  `completion.legend.unknown`, the KPI `completion.grid.unreadable`, the tooltip
+  `completion.cell.unknown` ("la colonna non è localizzata per questo personaggio"), all in
+  `i18n/messages/{it,en}.ts`.
+- The two properties in `crates/ipc/tests/marks_real.rs` that pin every located base to the
+  historical series.
+
+### What's missing
+
+1. **The measurement, which no code can replace**: one run of Mother, then of The Beast, with
+   a Tainted character (or The Forgotten), with a backup of the save before and after. The
+   cell that changes names the base, and the same three facts that pinned 404, 423 and 457
+   have to hold — the achievement, the kill counter rising by one, index 188 naming the row.
+   The backups in `save_backups\` are the series; `samples/` gets the two dated files.
+2. Then the tables in `core-save` take the two bases, `counter_index` stops returning `None`
+   for those rows, and the fixture counts in the spec (408 with 40 unknown) become 408 with
+   0 — the `marks_real.rs` properties have to stay green on the whole series.
+3. Then the UI drops what only those cells needed: the legend row "non leggibile" and the
+   "non leggibili" KPI, whose count would be permanently zero. `MarkCell`'s `unknown` visual
+   and the `nothingReadable` message **stay**: they are the degrade-never-fail path for a
+   save whose counters section is missing or truncated, and that is a constraint, not a
+   label to remove. What changes is that a healthy save never shows it.
+
+### Done when
+
+A full save shows no hatched cell and the legend has four entries; a truncated fixture still
+draws every cell unknown and says why.
+
+---
+
+## B21 — A mark taken in multiplayer says so (measurement, then `ipc` and `ui`)
+
+Logged 2026-09-12, a product requirement from the owner: the matrix has to show whether a
+mark was taken in multiplayer or alone. Today a cell knows only its level.
+
+### What we already have
+
+- A cell's value is a bitmask, observed values 0, 1, 2, 3, 5, 7: bits 0 and 1 are the two
+  levels, **bit 2 is unexplained** (`ipc::marks::Cell::Known { bits }`, CLAUDE.md "Counters
+  and marks"). The UI names it "terzo livello, significato non confermato" in the tooltip and
+  "terzo livello" in the legend, and counts nothing on it.
+- The online co-op findings of 2026-09-08: online co-op plays on a **separate shared
+  profile** (`online_logs\<session>\sharedsave_*.dat`, not our format), and a run ending in
+  co-op leaves the personal counters untouched. So an online mark can't be a bit on the
+  personal save's cell unless the game copies it back — which nobody has measured.
+- Local co-op (a second controller, same machine) plays on the personal profile, and the
+  game keeps a per-player character bitmask at index 188 for the winning run.
+
+### What has to be measured before any design
+
+1. **Whether bit 2 is "multiplayer"**: the saves that hold 5 and 7 are the evidence. Match
+   each cell whose bit 2 is set against the dated backups of the day it flipped and the
+   `online_logs\` sessions of that day: if every 5 and 7 lands on a co-op day and no solo day
+   produces one, the bit has its name. If it doesn't, bit 2 stays "third level" and
+   multiplayer is a different question.
+2. **Whether the personal save records an online mark at all**: one online session that
+   takes a mark, with the personal save backed up before and after. Zero difference means
+   the personal matrix can't show it, and the honest UI is a note, not a symbol.
+3. **Local co-op** separately, same protocol, since it writes the personal profile.
+
+### What follows, depending on the answer
+
+- If the bit names it: `Cell` grows the reading (`multiplayer: bool` beside the level), the
+  tooltip and the legend say "in multiplayer" instead of "terzo livello", and the cell gets a
+  visual from the design (a corner glyph or a second head, not a colour: colour is the
+  level). The percentages stay forbidden until the whole mask is read.
+- If the personal save doesn't hold it: the shared save (`sharedsave_*.dat`) is the only
+  source, and reading it is a `core-save` task of its own — a second format, read-only like
+  the first.
+
+### Done when
+
+Every 5 and 7 in the collected saves has an explanation that a backup and a log agree on,
+and the matrix draws it; or the entry records why it can't, and the tooltip stops calling
+it a third level.
+
+---
+
+## B22 — Two counts per row: normal and hard, where hard implies normal (implementation, `ipc` and `ui`)
+
+Logged 2026-09-12, two product rules from the owner, one entry because they are the same
+number:
+
+1. **A mark taken on hard counts as taken on normal too.** Beating a boss on hard is the
+   harder of the two, so a character who has the hard mark has the normal one whatever
+   bit 0 says.
+2. **Rows and footer show two numbers, not one**: how many bosses at normal, how many at
+   hard, each over the readable cells.
+
+### What we already have
+
+- One tally everywhere: `started / readable`, started meaning "bit 0 or bit 1"
+  (`ui/src/lib/completion/completionView.ts` `tallyOf`, `crates/ipc/src/marks.rs`
+  `CharacterRow.started`). `MarksGrid.vue` draws it once per row, once per group header and
+  once per boss in the footer; `CompletionKpis.vue` sums it.
+- The cell already obeys rule 1 in its drawing: `markVisual.ts` picks the hard sprite when
+  bit 1 is set, whatever bit 0 says. What doesn't obey it is the reading: `CellStatus` has
+  `Normal`, `Hard` and `Both`, the tooltip says "normale e hard" for 3, and value 2 reads
+  "hard" as if normal were missing.
+- The observed values include a bare 2: the game does write hard without normal, so rule 1
+  is a rule of ours, not a reading of the file. The count keeps the bit; the label doesn't.
+
+### What's missing
+
+1. **The reading**: `CellStatus.Both` goes; `Hard` means "hard, hence normal", and the
+   tooltip and legend say so once ("hard" — the legend's "normale e hard" row disappears).
+   `cellReading` is pure and tested: the expected values come from the rule above.
+2. **The tally**: `Tally` becomes `{ normal, hard, readable, complete }` with
+   `normal = cells where bit 0 or bit 1`, `hard = cells where bit 1`, so `hard ≤ normal ≤
+   readable` always — a property to test on the fixtures and on `marks_real.rs`'s series.
+   `complete` means `hard === readable`: the row is done when every boss is done on hard,
+   which is what the game's own widget means by a full row. Whether a second, weaker
+   "complete at normal" colour exists is the design's call.
+3. **The IPC**: `CharacterRow.started` becomes `normal` and `hard` (a contract change,
+   handed on with the mirror in `types.ts` and `summary_shape.rs`'s kin pinned).
+4. **The grid**: two number columns on the right of every row, two in the group header, two
+   per boss in the footer, and the KPI strip splits the same way. Layout from
+   `Schermate.dc.html`, which today has one column.
+
+### Done when
+
+A row with twelve hard marks reads 12/12 · 12/12; a row with value 2 in one cell reads
+1/12 · 1/12, not 0 and 1; the legend has no "normale e hard"; and no test derives its
+expected number from the previous single count.
+
+---
+
+## B23 — The Completion KPIs: no "120 celle", no "40 non leggibili" (implementation, after design, with B20 and B22)
+
+Logged 2026-09-12, from the owner's review of the strip above the matrix
+(`screens/completion/CompletionKpis.vue`, spec §"KPIs"): of the four tiles, two say nothing
+the owner wants to read.
+
+| tile today | value | verdict |
+|---|---|---|
+| marchi iniziati | started / readable | keeps its place, split by B22 |
+| normale + hard | "120 celle", no denominator | **useless**: a count of cells with both bits, meaningful only while the bits were unread |
+| personaggi completi | complete / characters | stays |
+| non leggibili | "40 / 408 celle" | **not wanted**: the 40 are a gap in our tables (B20), not a fact about the player |
+
+### What replaces them
+
+With B22's two numbers and B20's closed cells the strip is the same three facts the rows
+show, summed: **normal marks / total**, **hard marks / total**, **complete characters /
+characters** — three tiles, or four with the design's fourth if it has one (the obvious
+candidate is "characters complete at normal", the weaker of the two `complete`s). Each keeps
+its denominator and no percentage is drawn (§5.3).
+
+The `Unknown` tone and the `unknown` count don't vanish from the model: while a section is
+missing the tiles read 0 / 0 and the alert above the grid says why (B20's rule). What goes
+is the tile that puts an unreadable count on the same line as the player's progress.
+
+### Done when
+
+The strip on a full save has no tile whose value is a bare count of cells, and none whose
+label says "non leggibili". Design first: it's the same pass that draws B22's columns.
+
+---
+
+## B24 — Clicking a section navigates, and the section lights up (implementation, `ui`, small)
+
+Logged 2026-09-12, a product rule from the owner that **reverses Decision 5 of the shell spec**
+(`docs/superpowers/specs/2026-09-11-screens-shell-profile-design.md`, "clicking Wiki or
+Progress shows that section's items; it doesn't navigate"): clicking Wiki, Progressi or the
+cog has to move the active tab **at once** to the section's first available page, not wait
+for a click in the sidebar. And the section the user is in has to read as lit.
+
+### What we already have
+
+- `App.vue`: `showSection` only sets `browsing`, the sidebar's section; the cog does the
+  same with `SidebarSection.Settings`. Nothing calls `tabs.navigate` until a sidebar entry is
+  clicked. The entries per section are `sidebarEntries` in `shell/sectionNav.ts`, in order,
+  so "the first" is `sidebarEntries[section][0]` — Next steps, the first wiki category, the
+  Profile.
+- The lit state exists on paper: `NavBar` sets `aria-current="page"` on the section equal to
+  `navSectionOf(browsing)`, and `ButtonVariant.Section` styles it (`border-highlight`,
+  `bg-data`, `text-highlight`). Two reasons it doesn't read as lit today: Settings marks
+  **neither** button by design, so the cog never lights; and the treatment is a 2px top edge
+  on the navbar's surface, which the owner didn't perceive as "on" — a design check on the
+  Kit page before touching it.
+
+### What's missing
+
+1. `showSection` navigates the active tab to the section's first entry (`tabs.navigate`,
+   `Ctrl`+click keeps opening a new tab as the sidebar does), and sets `browsing` as today;
+   the cog does the same with Settings' first entry, the Profile. A page that needs a profile
+   still shows the `ProgressGate` when none is active: the gate is the page, as today.
+2. The lit section follows the **active tab's** section, which `browsing` already does
+   through the watch; with navigation on click, the two agree at every moment and `browsing`
+   may collapse into the tab's section alone.
+3. A visible "on": the cog gets its own lit state when a Settings page is active (today it
+   is a plain `Chrome` button), and the Section variant's on-state is checked against the
+   design at the app's real size, not on the Kit page alone.
+4. Decision 5 is amended in the spec, not silently contradicted by the code.
+
+### Done when
+
+Clicking Progressi from a wiki page shows Next steps without a second click; the button
+under the cursor reads as lit, and the cog reads as lit on the Profile page.
+
+---
+
+## B25 — About is a dialog, not a page (implementation, `ui`, small)
+
+Logged 2026-09-12, from the owner: what "Informazioni" has to say is short — the name, the
+version, the licences and the dataset attribution — and a centred dialog carries it; a page
+in a tab, with a route and a placeholder, is more than it needs.
+
+### What we already have
+
+- A route `RouteName.About` (`/about`, origin `TabOrigin.About`, placeholder text), opened in
+  the active tab by the navbar's Info button (`App.vue`, `@about`), and counted under the
+  Settings section by `sectionOfOrigin`.
+- The `Dialog` primitive under `components/ui/dialog/` (cycle 1), unused by any screen yet.
+- The content it will hold: the app name and version from `tauri.conf.json`, the font's
+  CC BY 3.0 credit and the wiki's CC BY-SA 4.0 attribution that B11 says must ship.
+
+### What's missing
+
+1. The Info button opens a `Dialog` over the current tab — no navigation, no tab, no
+   sidebar entry. Closes with Escape, the overlay, or its one button.
+2. `RouteName.About` goes, with its placeholder, its `TabOrigin.About`, the `About` arm of
+   `sectionOfOrigin` (exhaustiveness makes the compiler list every site) and the message
+   keys the page alone used. A saved session (B6) never has to restore an About tab.
+3. The version read once, from the backend or from a build-time constant, never typed in
+   the frontend.
+
+### Done when
+
+Clicking Info shows the dialog on top of whatever tab is open, the tab strip doesn't
+change, and no route named `about` exists.
+
+---
+
+## B26 — Scaling the whole interface from Settings (implementation, **pulled ahead**: it shapes every token)
+
+Logged 2026-09-12, a product requirement from the owner, with a priority: the user picks the
+size of the whole interface from Settings, with a **draggable slider over fixed steps**, and it
+has to really work — every screen, every sprite, the chrome. The owner wants it **as early as
+possible**, so that the variables are defined the scaled way once and no later screen is built
+on values that don't scale. Tracked in `docs/STATUS.md` as sub-project 3.5c (3.5b is the
+search half of 3.5, which this precedes).
+
+**The reference is Discord's "Livello di zoom"** (four screenshots handed over the same day,
+`Accessibilità › Densità visiva`): one slider, **50 · 67 · 75 · 80 · 90 · 100 · 110 · 125 ·
+150 · 175 · 200**, the current value drawn in the accent colour above its tick, `Ctrl` `+` /
+`Ctrl` `-` doing the same steps from anywhere, and a **preview card pinned at the top** of the
+settings page that shows a slice of real UI (a message, a button, avatars) at the chosen
+size while the page scrolls under it. "Freely" means that ladder — the browser's own zoom
+levels — not a handful of sizes of ours. Discord keeps three other controls apart from the
+zoom and so do we: the chat text size (our type scale, not exposed), the UI density
+(compact / default / spacious — our `row-compact` / `row` / `row-wide` tokens, already there),
+and the spacing between groups (no counterpart).
+
+### What we already have
+
+- Every size is a token in `ui/src/assets/theme/` (rule 2 of the frontend conventions): 38 px
+  tokens in `spacing.css`, the type scale in px in `typography.css` ("a pixel font is crisp on
+  whole pixels"), three in rem (`sprite`, `achievement`, `wiki-figure`), and Tailwind's own
+  4px grid, which is rem-based and follows the root font size already. Because nothing is
+  hardcoded in a component, scaling is a change to the token files, not to the screens — which
+  is exactly why it's cheap now and expensive after cycle 3.
+- `PixelSprite` draws 32×32 sprites at 2x with `image-rendering: pixelated`.
+- `settings.json` through `crates/app/src/settings_file.rs` and `ipc::Settings`, holding only
+  the active profile choice today; the Settings section of the sidebar (Profile, Tabs).
+- A `Slider` primitive **doesn't exist** in `components/ui/` (23 primitives, none of them a
+  slider); Reka UI has one to wrap in the kit's hand.
+
+### The two mechanisms, and which one
+
+1. **Webview zoom** (`getCurrentWebview().setZoom(f)`, Tauri 2, WebView2 honours it): one
+   call, everything scales, the title bar included since it's ours. Costs: fractional zoom
+   turns `pixelated` sprites uneven and the pixel font soft; the zoom is webview state, so a
+   torn-off window (B15) has to re-apply it; it's invisible to the Kit page.
+2. **A root scale**: the px tokens become rem (`13px` → `0.8125rem`), the root font size is
+   `16px × step`, and the whole `@theme` follows; sprites keep their own rule — an integer
+   multiple of 32 chosen from the step (`2x` at 1, `3x` at 1.5, `4x` at 2), never a fraction.
+   Costs: one pass over the token files, a test that no px token survives except where a
+   comment says why (borders, hairlines, the scrollbar).
+
+Discord's ladder is Chromium's zoom ladder, which is what the first mechanism gives for
+free and the second has to reproduce. Still, the second is the one to take: it keeps the
+design rules inspectable in CSS, works on the Kit page and on fixtures (the preview card is
+just the same tokens under a different root), survives a torn-off window without a re-apply,
+and lets the sprites stay whole where zoom would smear them. Whole-pixel crispness of the
+text is exact only at integer steps; at 67 or 125 the browser rounds per element, exactly
+as Discord's text does at those steps — to be looked at on the Kit page, not assumed. What
+the root scale must not do is invent a ladder of its own: the eleven values are the steps.
+
+### The steps and the control
+
+- Steps: Discord's eleven, **50 · 67 · 75 · 80 · 90 · 100 · 110 · 125 · 150 · 175 · 200**,
+  a `const Scale = { … } as const` in `lib/`, the wire value the percentage as a number.
+- A `Slider` primitive (Reka's, styled by the kit: flat track, the thumb a square, the tick
+  labels above, the current one in the accent, no transition), snapping to the steps.
+- `Ctrl` `+` / `Ctrl` `-` / `Ctrl` `0` from anywhere in the app, the same steps, the same
+  persisted value: a shortcut is not a second scale.
+- **The preview card pinned at the top of the settings page**, like Discord's: a fixed slice
+  of real UI — a KPI tile, a row of the matrix with a sprite, a button — drawn at the chosen
+  size while the rest of the page follows too; it stays in view when the page scrolls, so the
+  slider and its effect are on screen together.
+- Sprites: at each step the sprite side is `32 × round(2 × step)` device-independent
+  pixels, an integer multiple — at 125 that's 3x (96px), not 80px — so pixel art never gets a
+  fractional multiple whatever the step. The rule and its table live beside `Scale`.
+- The value persists in `settings.json` (`ipc::Settings` grows `scale`, default 100, an
+  unknown value reads as 100 — never a fatal error), is applied before the first paint (the
+  splash of B18 is the moment) and on every window.
+
+### Done when
+
+The slider and `Ctrl` `+`/`-` move the whole app across the eleven steps with no element
+left at its old size, the preview card shows it at the top while the page scrolls; a 32px
+sprite is an integer multiple at every step; the value survives a restart; and the scanner
+has a rule that a px token needs a reason.
+
+---
+
+## B27 — A table fills the page, or the mouse sizes it and the size is remembered per table (implementation, `ui` and `app`)
+
+Logged 2026-09-12, a product rule from the owner: a table either **scales with the page it
+is open in**, or it is **resizable with the mouse**; in the second case its size is saved in
+state, **per table**, so it never has to be resized again after a restart.
+
+### What we already have
+
+- Two virtualized tables, Unlock (`screens/unlock/UnlockTable.vue`) and the Collection
+  (`screens/collection/CollectionTable.vue`), both scrolling inside a body capped at
+  `max-h-unlock-body`, the token `--spacing-unlock-body: 560px`: a fixed height chosen from
+  the design file, blind to the window. On a tall window the page ends with empty space
+  under the table; on a short one the table scrolls inside a page that also scrolls.
+- Their columns are already fluid: `grid-cols-unlock` and `grid-cols-collection` in
+  `utilities.css` give the image and badge columns a token width and the text columns `fr`
+  shares, so the width follows the page today. What doesn't is the height.
+- One resize gesture exists, the sidebar (`shell/SectionSidebar.vue`, pointer events,
+  `clampSidebarWidth`), whose width is shell state **not persisted** by decision, deferred to
+  the sub-project that saves the session (3.7).
+- Persistence: `settings.json` through `ipc::Settings` (one field today) — and the store,
+  where a document per concern already lives (the queue).
+
+### The two options, and the order
+
+1. **Fill the page** first, because it is the option that needs no state: the table's body
+   takes the height left under the facets and the header (`flex-1 min-h-0` on the page's
+   column, the scroller `h-full`), and `--spacing-unlock-body` goes. The Plan's queue and the
+   marks matrix are checked against the same rule. TanStack Virtual doesn't care: the
+   scroller's height is measured, not declared.
+2. **Resizable by hand** where filling isn't right (a table under other content, a split
+   pane): a grip on the table's bottom edge, the sidebar's gesture generalised into one
+   composable (`useResize`), a minimum and a maximum in tokens, and the height stored **per
+   table** under a key that names it (`unlock`, `collection`, …), never a shared number.
+3. **Where it is saved**: with the sidebar's width, in the same place 3.7 chooses for the
+   session — one `layout` document, keyed by table, in the store or in `settings.json`; the
+   decision is 3.7's, this entry only fixes that the table sizes belong in it. A missing or
+   unknown key reads as "fill the page". The value is in device-independent pixels and is
+   scaled with B26, not stored scaled.
+
+### Done when
+
+Unlock and the Collection use the whole height of a tall window and nothing under them
+scrolls twice; a table given a grip keeps the size it was dragged to across a restart, each
+table its own; and no fixed body height survives in the tokens.
+
+---
+
+## B28 — Unlock calls a Tainted character by its base name (bug, `ipc`; the data is right)
+
+Logged 2026-09-12, from the owner's review of Unlock: rows such as *You unlocked "The Lost"*,
+slot 484, "sbloccabile ora", for a character the profile already has. Traced the same day,
+with the sample of 2026-07-09:
+
+- **Slots 474–490 are the Tainted characters' unlocks.** `achievements.xml` writes their
+  `text` exactly as the base character's — `You unlocked "The Lost"` — and says "Tainted"
+  nowhere in the text; the form is only in `gfx="Achievement_TheLostB.png"` and in
+  `steam_name="The Baleful"`. `players.xml` confirms it: player 10 (The Lost, portrait
+  `Character_012_TheLost.png`) has `achievement="82"`, player 31 (portrait
+  `Character_012b_TheLost.png`, the `b` of the Tainted form) has `achievement="484"`, and
+  both carry the same name key `#THE_LOST_NAME`.
+- **The save is right.** In the 2026-07-09 sample, slot 82 (The Lost) is 1 and slot 484
+  (Tainted Lost) is 0; 474 (Tainted Isaac) and 478 (Tainted ???) are 1. The rows the owner
+  listed — 479, 480, 484–490 — are Tainted Eve, Samson, Lost, Lilith, Keeper, Apollyon,
+  Forgotten, Bethany, Jacob, all genuinely not unlocked on that profile.
+- **The graph is right.** `rules/requirements.json` has 484's refs — Red Key (item 580),
+  the stage Home, character 10 The Lost — so "sbloccabile ora" means the profile has the Red
+  Key and The Lost: Tainted Lost is one Home visit away, which is true. "Nessuna condizione
+  nel file" is right too: the game writes no comment condition for 474–490.
+- **The label is wrong.** `crates/ipc/src/graph.rs` names a character target by
+  `c.text(&character.name)` alone, and `catalog::Character` has the `tainted` flag the
+  marks matrix already uses to tell the pair apart (`marks.rs`: "it's the pair that
+  identifies the character"). Unlock drops it, so the row says "The Lost" for player 31, and
+  the Character facet (`FacetId.Character`, the name as a string) folds the two forms into
+  one value.
+
+### What's missing
+
+1. The character target carries `tainted` across the IPC (a field on the view, mirrored in
+   `types.ts`), and the frontend says "Tainted Lost" / "Lost contaminato" — the game's own
+   convention for the name, translatable, not baked into the Rust string.
+2. The row's headline is the target, not the game's `text`: *You unlocked "The Lost"* is
+   what the file says and stays available, but the name the player reads is the target's.
+3. The Character facet keys on the pair (character id, or name + tainted), never the name
+   alone; the sort by character too.
+4. A test on the real catalog: achievement 484 resolves to a Tainted character and 82 to a
+   base one, with different labels — the pair 82/484 is the fixture because it is the one
+   the owner tripped on.
+
+### Done when
+
+The row for slot 484 reads as Tainted Lost, the facet lists the two Losts apart, and no
+character row in Unlock shares its label with another.
+
+---
+
+## B29 — The Collection's filter: no "Faccette", no values with nothing behind them (implementation, `ui`, after design)
+
+Logged 2026-09-12, from the owner's review of the Collection's filter drawer
+(`screens/collection/CollectionFacetDrawer.vue`): the presentation is to be redone, and two
+things are wrong on sight.
+
+- **"Faccette"** (`collection.facets`, and `unlock.facets` on Unlock) is the design file's
+  word for the control, not a word a player uses. The drawer needs a name that says what it
+  does — filter — or no title at all.
+- **Values that match nothing are listed.** `collectionFacetOptions` offers every value of
+  each facet's set, so the quality "non valutato" and the origin "non indicata" appear with
+  a 0 and can't be picked (the drawer's own comment: "a value that would give nothing, and
+  isn't picked, can't be picked"). The owner reads them as noise: a value with nothing behind
+  it in this profile's view is not offered. Same rule for Unlock's drawer, which shares the
+  mechanism (`facetLabels.ts`, `FacetDrawer.vue`).
+
+### The shape the owner wants
+
+- **All the filters together**, in one place, not a drawer per screen with columns of
+  checkboxes: the state toggle, the search and the facets are one filter bar.
+- **The important ones visible, the rest behind "mostra più filtri"** (or the like): the
+  bar shows two or three controls at rest and unfolds the others on request; which ones are
+  important is decided per screen in the design (for the Collection, the state and the
+  quality; for Unlock, the state and what it unlocks).
+- **Pool, quality, origin, kind as multi-select dropdowns**: a `Select`-like control that
+  takes several values, shows the picked ones on its trigger ("Qualità · 3, 4") and the
+  count beside each option, instead of a column of checkboxes. The kit has `Select`
+  (single) and `Checkbox`; a multi-select is a new primitive, Reka's `Combobox` or
+  `Listbox` with `multiple`, styled by the kit, with its own Kit page row.
+
+The pure functions stay: `collectionFacetCounts` already knows which values are empty and
+what picking one would give. What changes is the presentation — the options are the values
+with a count, in the catalog's order, inside a multi-select — and the wording, from the
+design pass that redraws the bar for both screens at once.
+
+### Done when
+
+Both screens filter from one bar with a fold for the less important controls; pool, quality,
+origin and kind are multi-select dropdowns; neither shows a value with 0 unless it is
+currently picked; and the word "Faccette" appears nowhere in the app.
