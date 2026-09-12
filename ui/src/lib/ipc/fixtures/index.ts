@@ -4,6 +4,11 @@ import type { CommandArgs, CommandName } from '../transport'
 import type { IpcError, SetupState, Target } from '../types'
 import { completionMatrix } from './completion'
 import { candidates, noneSetup, setupWith, summary } from './profile'
+import {
+  resetSettingsFixture,
+  setScaleAnswer,
+  settingsAnswer,
+} from './settings'
 import type { QueueOptions } from './queue'
 import {
   QueueScenario,
@@ -68,6 +73,7 @@ let chosenId: string | null = null
 export const resetFixtures = (): void => {
   chosenId = null
   resetQueue()
+  resetSettingsFixture()
 }
 
 const activeOn = (id: string): SetupState => {
@@ -151,6 +157,8 @@ type Handler = (
 // Only what the screens read today. Any other command is refused loudly: a screen built on a
 // command with no fixture should fail on the development server, not render undefined.
 const handlers: Partial<Record<CommandName, Handler>> = {
+  [Command.Settings]: () => settingsAnswer(),
+  [Command.SetScale]: (args) => setScaleAnswer(Number(args?.percent)),
   [Command.SetupState]: (_args, scenario) => setupFor(scenario),
   [Command.SelectProfile]: (args, scenario) => {
     chosenId = String(args?.id ?? '')
