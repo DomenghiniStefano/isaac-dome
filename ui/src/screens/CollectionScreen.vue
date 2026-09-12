@@ -13,6 +13,7 @@ import {
   CollectionFacet,
   CollectionSort,
   defaultCollectionFilter,
+  filterForQuery,
   emptyCollectionFilter,
   matchesCollectionFilter,
   sortItems,
@@ -44,7 +45,7 @@ watch(
   () => route.query.q,
   (value) => {
     const q = singleQuery(value)
-    if (q !== null) filter.value = { ...filter.value, query: q }
+    if (q !== null) filter.value = filterForQuery(q)
   },
   { immediate: true },
 )

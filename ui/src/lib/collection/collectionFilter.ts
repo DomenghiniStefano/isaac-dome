@@ -84,6 +84,15 @@ export const defaultCollectionFilter = (): CollectionFilter => {
   }
 }
 
+// The filter a list opened on a name starts from: the name, and nothing else. The screen's
+// default states are a convenience, and a search result is a request — an item asked for by
+// name is often already in the collection, and keeping the default would answer "0 of 721" to
+// a row the user just clicked (spec 3.5, Decision 8).
+export const filterForQuery = (query: string): CollectionFilter => ({
+  ...emptyCollectionFilter(),
+  query,
+})
+
 // An item's values for one facet. It matches a facet when any of them is picked: an item can sit
 // in several pools.
 export const collectionFacetValues = (
