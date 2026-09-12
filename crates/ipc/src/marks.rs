@@ -19,16 +19,9 @@ pub const BOSSES: [&str; 12] = [
     "The Beast",
 ];
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "camelCase")]
-pub enum CharacterGroup {
-    /// The 14 originals: 14-cell blocks, verified.
-    Original,
-    /// The Forgotten, added later: single cells.
-    Forgotten,
-    /// Bethany, Jacob & Esau, and the 17 Tainted: 19-cell blocks, derived.
-    Later,
-}
+/// Which block family a row belongs to. Defined with the layout, because that is what it
+/// describes; re-exported here because it crosses the IPC as part of a `CharacterRow`.
+pub use core_save::marks::CharacterGroup;
 
 pub const CHARACTERS: [(&str, CharacterGroup); 34] = [
     ("Isaac", CharacterGroup::Original),
@@ -120,70 +113,15 @@ pub fn character_for(row: usize, catalog: &catalog::Catalog) -> Option<&catalog:
     })
 }
 
-/// Base of the 14-cell block, per boss. Verified (REPENTOGON + real saves).
+/// Index into the counters section for the (character, boss) cell, where `boss` is a
+/// position in [`BOSSES`]. `None` when the cell isn't located, or either index is out of
+/// range.
 ///
-/// The last two came out of the historical series on 2026-09-08. Each was pinned three
-/// ways at once, on the days the cell changed: the boss (an achievement whose wiki
-/// requirement is *Mother* or *The Beast* unlocked the same day), the count (index 491
-/// and 492 are that boss's kills, and they rose by exactly as many as the new marks), and
-/// the character (index 188 is a bitmask of the characters that won, and it read
-/// Magdalene for base+1 and Cain for base+2).
-const BLOCKS_14: [usize; 12] = [27, 41, 55, 69, 83, 97, 116, 130, 144, 173, 423, 457];
-
-/// Single cells for The Forgotten, per boss. 212 belongs to another family.
-///
-/// Mother and The Beast are `None` on purpose: the spacing between the two 14-blocks is
-/// exactly 34 = 14 + 1 + 19, so their cells are certainly inside 423..=490, but which
-/// cell is The Forgotten's cannot be told from any save we have — those 40 cells are
-/// zero in every one of them. A guess here would show a mark nobody earned.
-const FORGOTTEN: [Option<usize>; 12] = [
-    Some(203),
-    Some(204),
-    Some(205),
-    Some(206),
-    Some(207),
-    Some(208),
-    Some(209),
-    Some(210),
-    Some(211),
-    Some(213),
-    None,
-    None,
-];
-
-/// Base of the 19-cell block, per boss. DERIVED from the regular pattern for the first
-/// nine, and each one corroborated by cells that were seen moving. `None` = not located.
-///
-/// Delirium closed on 2026-09-08: the base is 404, not the 386 the pattern predicted, and
-/// four characters agree on it — Bethany (+0), Jacob & Esau (+1), T. Cain (+4) and
-/// T. Azazel (+9), each on a day the Delirium kill counter also rose. What sits in
-/// 386..=403 is still unread.
-const BLOCKS_19: [Option<usize>; 12] = [
-    Some(214),
-    Some(233),
-    Some(252),
-    Some(271),
-    Some(290),
-    Some(309),
-    Some(328),
-    Some(347),
-    Some(366),
-    Some(404),
-    None,
-    None,
-];
-
-const FIRST_LATER: usize = 15;
-
-/// Index into the counters section for the (character, boss) cell.
-/// `None` when the cell isn't located in the tables.
+/// The tables themselves live in `core_save::marks`: a cell's index is the shape of the
+/// save file, and this module draws a screen. What stays here is the translation from the
+/// screen's parallel arrays to the layout's typed column.
 pub fn counter_index(character: usize, boss: usize) -> Option<usize> {
-    let (_, group) = *CHARACTERS.get(character)?;
-    match group {
-        CharacterGroup::Original => Some(*BLOCKS_14.get(boss)? + character),
-        CharacterGroup::Forgotten => *FORGOTTEN.get(boss)?,
-        CharacterGroup::Later => (*BLOCKS_19.get(boss)?).map(|base| base + character - FIRST_LATER),
-    }
+    core_save::marks::cell_index(character, *core_save::marks::Column::ALL.get(boss)?)
 }
 
 /// A cell of the matrix. The three variants are the module's reason for existing:
