@@ -4,9 +4,15 @@ import AchievementArt from '@/components/graph/AchievementArt.vue'
 import { ArtSize } from '@/components/graph/artSize'
 import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { assertNever } from '@/lib/assertNever'
+import { cn } from '@/lib/cn'
 import type { Target } from '@/lib/ipc/types'
+import { WikiFigureSize } from './figureSize'
 
-const props = defineProps<{ target: Target; url: string | null }>()
+const props = defineProps<{
+  target: Target
+  url: string | null
+  size: WikiFigureSize
+}>()
 
 // How a page's figure is framed, by what the game draws for that kind (DESIGN-BRIEF.md
 // §8): a 32px sprite scaled up, a painted achievement at its own ratio, a portrait.
@@ -36,15 +42,27 @@ const frame = computed((): Frame => {
       return assertNever(props.target)
   }
 })
+
+const artSize: Record<WikiFigureSize, ArtSize> = {
+  [WikiFigureSize.Thumb]: ArtSize.Thumb,
+  [WikiFigureSize.Card]: ArtSize.Card,
+}
 </script>
 
 <template>
-  <!-- One figure per page, at the top; a missing one is the hatch placeholder, never a
-       broken image and never another page's picture. -->
+  <!-- One figure per page: a missing one is the hatch placeholder, never a broken image
+       and never another page's picture. A thumbnail sits bare in its row; the card's
+       figure gets the data frame the export draws behind it. -->
   <AchievementArt
     v-if="frame === Frame.Painting"
     :url="url"
-    :size="ArtSize.Card"
+    :size="artSize[size]"
+  />
+  <PixelSprite
+    v-else-if="size === WikiFigureSize.Thumb"
+    :url="url"
+    placeholder
+    class="size-8 shrink-0"
   />
   <span
     v-else
@@ -53,7 +71,7 @@ const frame = computed((): Frame => {
     <PixelSprite
       :url="url"
       placeholder
-      :class="frame === Frame.Sprite ? 'size-sprite' : 'size-wiki-figure'"
+      :class="cn(frame === Frame.Sprite ? 'size-sprite' : 'size-wiki-figure')"
     />
   </span>
 </template>
