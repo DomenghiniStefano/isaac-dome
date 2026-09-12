@@ -719,7 +719,8 @@ fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<Vec<u8>> {
             .and_then(|frames| ipc::mark_source(column, tier, frames)),
         ipc::IconRef::Achievement { .. }
         | ipc::IconRef::Item { .. }
-        | ipc::IconRef::Head { .. } => app
+        | ipc::IconRef::Head { .. }
+        | ipc::IconRef::Page { .. } => app
             .state::<CatalogState>()
             .get_or_build(rs)
             .and_then(|c| ipc::icon_source(c, &reference).cloned()),

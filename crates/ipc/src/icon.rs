@@ -10,9 +10,11 @@
 //! file**, never its bytes.
 
 use catalog::{AchievementId, Catalog, ItemId, SpriteRef};
+use wiki::Target;
 
 use crate::catalog_view::{item_kind, ItemKindView};
 use crate::marks::{character_for, BOSSES, CHARACTERS};
+use crate::target_sprite::{target_sprite, TargetSprite};
 
 /// The two levels of a mark. The game draws them as two different symbols, not one tinted
 /// (DESIGN-BRIEF.md §5.6).
@@ -25,7 +27,7 @@ pub enum MarkTier {
 /// The things the interface draws an icon for. Bosses and challenges aren't here because
 /// `UnlockTarget` carries no image for them: the game has no single picture for a
 /// challenge, and the brief asks for a typographic placeholder instead of a guess.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum IconRef {
     Achievement {
         id: u32,
@@ -45,6 +47,12 @@ pub enum IconRef {
     /// The co-op menu head of a completion-matrix row, resolved through `character_for`.
     Head {
         row: usize,
+    },
+    /// A wiki page's figure: the reference is the page's own identity, resolved through
+    /// `target_sprite`. Only targets that have a page get a path (`page_path`); the four
+    /// kinds the dataset has no page for render to a string `parse` refuses.
+    Page {
+        target: Target,
     },
 }
 
@@ -94,6 +102,15 @@ impl IconRef {
             IconRef::Item { kind, id } => format!("item/{}/{id}", kind_token(*kind)),
             IconRef::Mark { column, tier } => format!("mark/{column}/{}", tier_token(*tier)),
             IconRef::Head { row } => format!("head/{row}"),
+            // `page/none` is what a target with no page renders to; `parse` refuses it, so
+            // the handler answers "no image" rather than a guess. The index never builds
+            // such a reference (spec 3.5, Decision 2).
+            IconRef::Page { target } => {
+                format!(
+                    "page/{}",
+                    page_path(target).unwrap_or_else(|| "none".to_string())
+                )
+            }
         }
     }
 
@@ -121,6 +138,11 @@ impl IconRef {
                     .ok()
                     .filter(|&r| r < CHARACTERS.len())?,
             },
+            // A page's path has its own number of segments per kind: the rest of the
+            // string is read by `page_target`, which also refuses a trailing segment.
+            ("page", kind, first) => {
+                return page_target(kind, first?, parts);
+            }
             _ => return None,
         };
         // A trailing segment means the string isn't ours, whatever the prefix said.
@@ -128,15 +150,70 @@ impl IconRef {
     }
 }
 
+/// The path segments of a page's figure, `item/105` or `entity/20/0/0`. `None` for the
+/// four kinds the dataset has no page for: exhaustive, so a new wiki kind has to say here
+/// whether it has a figure.
+fn page_path(target: &Target) -> Option<String> {
+    match target {
+        Target::Item { id } => Some(format!("item/{id}")),
+        Target::Trinket { id } => Some(format!("trinket/{id}")),
+        Target::Achievement { id } => Some(format!("achievement/{id}")),
+        Target::Challenge { number } => Some(format!("challenge/{number}")),
+        Target::Character { id } => Some(format!("character/{id}")),
+        Target::Entity {
+            id,
+            variant,
+            subtype,
+        } => Some(format!("entity/{id}/{variant}/{subtype}")),
+        Target::Transformation { .. }
+        | Target::Stage { .. }
+        | Target::Room { .. }
+        | Target::Pickup { .. } => None,
+    }
+}
+
+/// The inverse of `page_path`, paired with it: one id for five kinds, three for an entity,
+/// and nothing else — a kind with no page never parses, and neither does a trailing segment.
+fn page_target<'a>(
+    kind: &str,
+    first: &str,
+    mut rest: impl Iterator<Item = &'a str>,
+) -> Option<IconRef> {
+    let number = |s: &str| s.parse::<u32>().ok();
+    let target = match kind {
+        "item" => Target::Item { id: number(first)? },
+        "trinket" => Target::Trinket { id: number(first)? },
+        "achievement" => Target::Achievement { id: number(first)? },
+        "challenge" => Target::Challenge {
+            number: number(first)?,
+        },
+        "character" => Target::Character { id: number(first)? },
+        "entity" => Target::Entity {
+            id: number(first)?,
+            variant: number(rest.next()?)?,
+            subtype: number(rest.next()?)?,
+        },
+        // A string a webview handed us, paired with `page_path` like the kinds above.
+        _ => return None,
+    };
+    rest.next().is_none().then_some(IconRef::Page { target })
+}
+
 /// The file the catalog names for a reference, if it knows it.
 ///
 /// `None` covers both "no such id" and "the catalog is older than the reference" — the
 /// caller draws the placeholder either way, and nothing here invents a path.
 pub fn icon_source<'a>(c: &'a Catalog, r: &IconRef) -> Option<&'a SpriteRef> {
-    match *r {
-        IconRef::Achievement { id } => c.achievement(AchievementId(id)).map(|a| &a.sprite),
-        IconRef::Item { kind, id } => c.item(item_kind(kind), ItemId(id)).map(|i| &i.sprite),
-        IconRef::Head { row } => character_for(row, c).and_then(|ch| ch.head.as_ref()),
+    match r {
+        IconRef::Achievement { id } => c.achievement(AchievementId(*id)).map(|a| &a.sprite),
+        IconRef::Item { kind, id } => c.item(item_kind(*kind), ItemId(*id)).map(|i| &i.sprite),
+        IconRef::Head { row } => character_for(*row, c).and_then(|ch| ch.head.as_ref()),
+        // A page's figure is whatever `target_sprite` finds for the page's identity; "no art"
+        // and "unknown id" both draw the placeholder.
+        IconRef::Page { target } => match target_sprite(c, target) {
+            TargetSprite::Found(s) => Some(s),
+            TargetSprite::NoArt | TargetSprite::Unknown => None,
+        },
         // Not the catalog's: the symbols are pieces of the widget's sheets, see `mark_source`.
         IconRef::Mark { .. } => None,
     }
