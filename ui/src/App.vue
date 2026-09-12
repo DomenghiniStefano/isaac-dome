@@ -28,14 +28,17 @@ import {
   toggleMaximizeWindow,
   watchWindowFocus,
 } from '@/lib/window/appWindow'
-import { RouteName, locationTitle, routeOrigin } from '@/router/routeTable'
+import { RouteName, routeOrigin } from '@/router/routeTable'
 import ProgressGate from '@/screens/ProgressGate.vue'
 import { useProfileStore } from '@/stores/profile'
+import { tabLabel } from '@/stores/tabModel'
 import { useTabsStore } from '@/stores/tabs'
+import { useWikiStore } from '@/stores/wiki'
 
 const router = useRouter()
 const tabs = useTabsStore()
 const profile = useProfileStore()
+const wiki = useWikiStore()
 const { t } = useMessages()
 
 const focused = ref(true)
@@ -57,12 +60,17 @@ watch(
   { immediate: true },
 )
 
+// A page tab reads as its page's title once the wiki index knows it; every other label is
+// a message.
 const tabViews = computed<TabView[]>(() =>
-  tabs.tabs.map((tab) => ({
-    id: tab.id,
-    label: t(locationTitle(tab.location)),
-    origin: routeOrigin[tab.location.name],
-  })),
+  tabs.tabs.map((tab) => {
+    const label = tabLabel(tab.location, wiki.titleOf)
+    return {
+      id: tab.id,
+      label: typeof label === 'string' ? t(label) : label.text,
+      origin: routeOrigin[tab.location.name],
+    }
+  }),
 )
 
 // The sidebar shows the active tab's section, until the navbar or the cog picks another.
