@@ -7,8 +7,11 @@
 
 use std::collections::BTreeMap;
 
+use catalog::{Catalog, ItemKind, Language};
+use serde::Serialize;
 use wiki::{Block, Dataset, DatasetError, Entry, Inline, SectionKind, Target};
 
+use crate::target_sprite::entity_key;
 use crate::wiki::boss_target;
 
 /// One page as the search reads it: the title, and the text of each section in the order the
@@ -89,6 +92,175 @@ impl SearchIndex {
             .find(|(k, _)| *k == kind)
             .map(|(_, text)| text.as_str())
     }
+}
+
+/// The two flag sections search reads. `None` for a section is "it didn't read", which is not
+/// "nothing is done": the mark says `unknown` and a diagnostic says which section.
+#[derive(Debug, Clone, Copy)]
+pub struct SaveFlags<'a> {
+    pub achievements: Option<&'a [bool]>,
+    pub items: Option<&'a [bool]>,
+}
+
+/// Where a target stands in the profile. Fieldless: a bare string.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub enum ProgressMark {
+    Done,
+    Pending,
+    Unknown,
+    None,
+}
+
+/// One searchable thing, with whatever the two sides know about it.
+#[derive(Debug, Clone)]
+pub struct Doc {
+    pub title: String,
+    /// The other name, when the two sides disagree: the wiki's title beside the game's.
+    pub alias: Option<String>,
+    /// An achievement's own wording of what to do.
+    pub condition: Option<String>,
+    pub has_page: bool,
+}
+
+/// Every document, keyed by target so the order is the kind's and then the id's, and a target
+/// the two sides share is one row.
+fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTreeMap<Target, Doc> {
+    let mut docs: BTreeMap<Target, Doc> = index
+        .pages
+        .iter()
+        .map(|(target, page)| {
+            (
+                target.clone(),
+                Doc {
+                    title: page.title.clone(),
+                    alias: None,
+                    condition: None,
+                    has_page: true,
+                },
+            )
+        })
+        .collect();
+    let Some(c) = catalog else {
+        return docs;
+    };
+    let en = Language::English;
+    let mut join = |target: Target, title: String, condition: Option<String>| {
+        match docs.get_mut(&target) {
+            // The catalog's name wins: it is what the game itself calls the thing. The wiki
+            // title stays as an alias when it says something else.
+            Some(doc) => {
+                if doc.title != title {
+                    doc.alias = Some(std::mem::replace(&mut doc.title, title));
+                }
+                doc.condition = condition;
+            }
+            None => {
+                docs.insert(
+                    target,
+                    Doc {
+                        title,
+                        alias: None,
+                        condition,
+                        has_page: false,
+                    },
+                );
+            }
+        }
+    };
+    for i in c.items() {
+        let target = match i.kind {
+            ItemKind::Trinket => Target::Trinket { id: i.id.0 },
+            ItemKind::Passive | ItemKind::Active | ItemKind::Familiar => {
+                Target::Item { id: i.id.0 }
+            }
+        };
+        join(target, c.text(&i.name, en).to_string(), None);
+    }
+    for p in c.characters() {
+        join(
+            Target::Character { id: p.id.0 },
+            c.text(&p.name, en).to_string(),
+            None,
+        );
+    }
+    for b in c.bosses() {
+        // The portrait's file name carries the entity key, exactly as `target_sprite` reads
+        // it; a portrait that doesn't declare one names no target and is left out.
+        if let Some((id, variant)) = entity_key(&b.portrait.path) {
+            join(
+                Target::Entity {
+                    id,
+                    variant,
+                    subtype: 0,
+                },
+                b.name.clone(),
+                None,
+            );
+        }
+    }
+    for ch in c.challenges() {
+        join(Target::Challenge { number: ch.id.0 }, ch.name.clone(), None);
+    }
+    for a in c.achievements() {
+        join(
+            Target::Achievement { id: a.id.0 },
+            a.text.clone(),
+            a.unlock_condition.clone(),
+        );
+    }
+    docs
+}
+
+/// Where the target stands in the profile: section 1 for an achievement, section 4 for a
+/// collectible, nothing for anything else. A slot past a section's end reads as not done —
+/// the save has no record of it — while a section that didn't read is `Unknown`.
+fn progress(target: &Target, flags: Option<SaveFlags<'_>>) -> ProgressMark {
+    let mark = |slots: Option<&[bool]>, id: u32| match slots {
+        None => ProgressMark::Unknown,
+        Some(f) => {
+            if f.get(id as usize).copied().unwrap_or(false) {
+                ProgressMark::Done
+            } else {
+                ProgressMark::Pending
+            }
+        }
+    };
+    match target {
+        Target::Achievement { id } => match flags {
+            None => ProgressMark::Unknown,
+            Some(f) => mark(f.achievements, *id),
+        },
+        Target::Item { id } => match flags {
+            None => ProgressMark::Unknown,
+            Some(f) => mark(f.items, *id),
+        },
+        // A trinket has no slot in section 4, and a boss, a character or a challenge has no
+        // slot to read at all: no mark is not an unknown one.
+        Target::Trinket { .. }
+        | Target::Character { .. }
+        | Target::Challenge { .. }
+        | Target::Entity { .. }
+        | Target::Transformation { .. }
+        | Target::Stage { .. }
+        | Target::Room { .. }
+        | Target::Pickup { .. } => ProgressMark::None,
+    }
+}
+
+/// The two halves above, reachable from the integration test: they are what a query is built
+/// on, and a test that could only see the ranked answer would say nothing about them.
+#[doc(hidden)]
+pub fn documents_for_tests(
+    index: &SearchIndex,
+    catalog: Option<&Catalog>,
+) -> BTreeMap<Target, Doc> {
+    documents(index, catalog)
+}
+
+#[doc(hidden)]
+pub fn progress_for_tests(target: &Target, flags: Option<SaveFlags<'_>>) -> ProgressMark {
+    progress(target, flags)
 }
 
 /// The characters kept before and after a match in a section fragment: enough to read the
