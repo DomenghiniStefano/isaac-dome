@@ -38,6 +38,21 @@ shadcn-vue, Tailwind v4, Vitest.
 - **Before declaring anything done:** `pnpm check` (`scripts/check`) green, and read its skip
   lines — `cargo test` hides them, the script runs `--nocapture` for that reason.
 
+## Amendment, 2026-09-12: eight requirement kinds, not six
+
+Between the spec and the execution, the graph's mark and tally requirements landed on `develop`
+(`4320516`). `RequirementView` now has eight variants: `Mark { character, character_name, column,
+level }` and `Counter { label, current, at_least }` join the six the spec describes.
+
+**Neither gains a page**, for the same reason `Gate` and `Unknown` don't: they are conditions, not
+entities. A mark is "beat Delirium with Cain" — its `column` is one of twelve labels, and two of
+them (Boss Rush, Greed) are not entities at all, so a column → wiki entity table would be a
+curation nobody has measured. A counter is a threshold on a tally. Linking them is its own task,
+with its own evidence; it goes in the backlog in Task 9, and until then those entries show in the
+menu as names you cannot follow — which is what they are.
+
+Everywhere this plan writes an exhaustive match over `RequirementView`, it now has eight arms.
+
 ---
 
 ### Task 0: The branch
@@ -353,7 +368,10 @@ fn a_blocked_node_links_to_the_pages_the_dataset_has() {
         | ipc::RequirementView::Boss { page, .. }
         | ipc::RequirementView::Challenge { page, .. }
         | ipc::RequirementView::Item { page, .. } => page.clone(),
-        ipc::RequirementView::Gate { .. } | ipc::RequirementView::Unknown { .. } => None,
+        ipc::RequirementView::Gate { .. }
+        | ipc::RequirementView::Mark { .. }
+        | ipc::RequirementView::Counter { .. }
+        | ipc::RequirementView::Unknown { .. } => None,
     };
 
     let v = unlock_view(Some(&c), Some(ds), Some(&flags), Some(&g), Some(&e), |_| None);
@@ -430,12 +448,19 @@ pub enum RequirementView {
     Gate {
         label: String,
     },
+    /// Unchanged. A mark is a condition, not an entity: two of the twelve columns are not
+    /// entities at all, so there is no page to carry without a curation nobody measured.
+    Mark { .. },
+    /// Unchanged, and for the same reason: a threshold on a tally is not a thing with a page.
+    Counter { .. },
     /// Not interpreted. A node carrying one cannot claim "available now".
     Unknown {
         label: String,
     },
 }
 ```
+
+`Mark` and `Counter` keep the fields they have on `develop`: copy them across untouched.
 
 - [ ] **Step 4: Fill it in**
 
@@ -1072,6 +1097,8 @@ const kindLabel: Record<RequirementKind, MessageKey<MessageSchema>> = {
   [RequirementKind.Challenge]: 'graph.why.challenge',
   [RequirementKind.Item]: 'graph.why.item',
   [RequirementKind.Gate]: 'graph.why.gate',
+  [RequirementKind.Mark]: 'graph.why.mark',
+  [RequirementKind.Counter]: 'graph.why.counter',
   [RequirementKind.Unknown]: 'graph.why.unknown',
 }
 
@@ -1480,10 +1507,16 @@ means "no requirement".*
 
 - [ ] **Step 2: The backlog entry for what was left out**
 
-Add a new numbered entry (the next free number after B33) to `docs/BACKLOG.md`: *Unlock's
-"sblocca" column and the Plan's queue rows link to their pages too* — same idea as 3.5d, a
-different surface (`UnlockTarget` instead of `RequirementView`), needing the same `page` field on
-`UnlockTarget`.
+Add two numbered entries (the next free numbers after the last one in the file) to
+`docs/BACKLOG.md`:
+
+- *Unlock's "sblocca" column and the Plan's queue rows link to their pages too* — same idea as
+  3.5d, a different surface (`UnlockTarget` instead of `RequirementView`), needing the same
+  `page` field on `UnlockTarget`.
+- *A mark and a counter link to the boss they name* — needs a measured column → wiki entity
+  table for the twelve columns, and an answer for the two that are not entities (Boss Rush,
+  Greed). Until it exists those entries show as names you cannot follow, which is honest;
+  guessing the table would not be.
 
 - [ ] **Step 3: The report**
 

@@ -83,17 +83,41 @@ describe('missingGroups', () => {
         node({
           missing: [
             { kind: 'unknown', label: 'Collect' },
-            { kind: 'character', id: 10, name: 'The Lost', tainted: false },
+            {
+              kind: 'character',
+              id: 10,
+              name: 'The Lost',
+              tainted: false,
+              page: null,
+            },
             { kind: 'unknown', label: 'ending' },
-            { kind: 'item', itemKind: 'passive', id: 1, name: 'The Sad Onion' },
+            {
+              kind: 'item',
+              itemKind: 'passive',
+              id: 1,
+              name: 'The Sad Onion',
+              page: null,
+            },
           ],
         }),
         t,
       ),
     ).toEqual([
-      { kind: RequirementKind.Character, names: ['The Lost'] },
-      { kind: RequirementKind.Item, names: ['The Sad Onion'] },
-      { kind: RequirementKind.Unknown, names: ['Collect', 'ending'] },
+      {
+        kind: RequirementKind.Character,
+        entries: [{ key: 'character-10', name: 'The Lost', location: null }],
+      },
+      {
+        kind: RequirementKind.Item,
+        entries: [{ key: 'item-1', name: 'The Sad Onion', location: null }],
+      },
+      {
+        kind: RequirementKind.Unknown,
+        entries: [
+          { key: 'unknown-Collect', name: 'Collect', location: null },
+          { key: 'unknown-ending', name: 'ending', location: null },
+        ],
+      },
     ])
   })
 
@@ -103,14 +127,20 @@ describe('missingGroups', () => {
         node({
           missing: [
             { kind: 'gate', label: 'Greedier' },
-            { kind: 'boss', id: 6, name: 'Mom' },
+            { kind: 'boss', id: 6, name: 'Mom', page: null },
           ],
         }),
         t,
       ),
     ).toEqual([
-      { kind: RequirementKind.Boss, names: ['Mom'] },
-      { kind: RequirementKind.Gate, names: ['Greedier'] },
+      {
+        kind: RequirementKind.Boss,
+        entries: [{ key: 'boss-6', name: 'Mom', location: null }],
+      },
+      {
+        kind: RequirementKind.Gate,
+        entries: [{ key: 'gate-Greedier', name: 'Greedier', location: null }],
+      },
     ])
   })
 
@@ -128,8 +158,20 @@ describe('a tainted character in the way', () => {
       missingGroups(
         node({
           missing: [
-            { kind: 'character', id: 31, name: 'The Lost', tainted: true },
-            { kind: 'character', id: 10, name: 'The Lost', tainted: false },
+            {
+              kind: 'character',
+              id: 31,
+              name: 'The Lost',
+              tainted: true,
+              page: null,
+            },
+            {
+              kind: 'character',
+              id: 10,
+              name: 'The Lost',
+              tainted: false,
+              page: null,
+            },
           ],
         }),
         t,
@@ -137,7 +179,14 @@ describe('a tainted character in the way', () => {
     ).toEqual([
       {
         kind: RequirementKind.Character,
-        names: ['graph.taintedName:The Lost', 'The Lost'],
+        entries: [
+          {
+            key: 'character-31',
+            name: 'graph.taintedName:The Lost',
+            location: null,
+          },
+          { key: 'character-10', name: 'The Lost', location: null },
+        ],
       },
     ])
   })

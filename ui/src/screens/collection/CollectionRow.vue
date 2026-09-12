@@ -3,16 +3,12 @@ import { computed } from 'vue'
 import EmptyValue from '@/components/data-state/EmptyValue.vue'
 import { unlockKindText } from '@/components/graph/unlockKindText'
 import PixelSprite from '@/components/sprite/PixelSprite.vue'
+import WhyMenu from '@/components/graph/WhyMenu.vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
-import { assertNever } from '@/lib/assertNever'
 import { CollectionFacet } from '@/lib/collection/collectionFilter'
 import { ItemState, itemState } from '@/lib/collection/itemState'
+import { lockWhy } from '@/lib/graph/whyMenu'
 import type { CollectionItem } from '@/lib/ipc/types'
 import QualityPips from './QualityPips.vue'
 import { collectionFacetValueLabel, itemStateText } from './collectionLabels'
@@ -41,23 +37,9 @@ const origin = computed(() =>
     : null,
 )
 
-// The achievement behind the item, for the badge's tooltip: "si sblocca con «…»".
-const lockText = computed((): string | null => {
-  const lock = props.item.lock
-  switch (lock.kind) {
-    case 'free':
-      return null
-    case 'unlocked':
-    case 'locked':
-    case 'unknown': {
-      const name =
-        lock.text ?? `${t('collection.achievement')} ${lock.achievement}`
-      return `${t('collection.lockedBy')} «${name}»`
-    }
-    default:
-      return assertNever(lock)
-  }
-})
+// The achievement behind the item, as the badge's menu: one group, one entry, and the page
+// that says how that achievement is earned.
+const groups = computed(() => lockWhy(props.item.lock, t))
 </script>
 
 <template>
@@ -90,17 +72,12 @@ const lockText = computed((): string | null => {
     origin ?? '—'
   }}</span>
   <span class="px-2">
-    <Tooltip :disabled="lockText === null">
-      <TooltipTrigger as-child>
-        <Badge
-          :variant="variant[state]"
-          :tabindex="lockText === null ? undefined : 0"
-          >{{ t(itemStateText[state]) }}</Badge
-        >
-      </TooltipTrigger>
-      <TooltipContent class="max-w-80 text-caption text-foreground">{{
-        lockText
-      }}</TooltipContent>
-    </Tooltip>
+    <WhyMenu :groups="groups" :label="t('collection.lockedBy')">
+      <Badge
+        :variant="variant[state]"
+        :tabindex="groups.length > 0 ? 0 : undefined"
+        >{{ t(itemStateText[state]) }}</Badge
+      >
+    </WhyMenu>
   </span>
 </template>

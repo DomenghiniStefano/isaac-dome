@@ -1,4 +1,11 @@
-import type { NextSteps, UnlockNode, UnlockTarget, UnlockView } from '../types'
+import { assertNever } from '@/lib/assertNever'
+import type {
+  NextSteps,
+  RequirementView,
+  UnlockNode,
+  UnlockTarget,
+  UnlockView,
+} from '../types'
 import { packIconUrl } from './graphArt'
 
 // Development only: the design pack's committed payloads, the reference profile on 2026-09-08
@@ -43,6 +50,35 @@ const withForm = <T extends { kind: string; tainted?: boolean }>(
   return { ...value, tainted: false }
 }
 
+// Same story for the page a requirement links to (spec 3.5d): a pack exported before the
+// field has none, and an absent key would read in a template exactly like "the dataset has no
+// page". It is filled with `null` — which is that sentence, said on purpose — and declared
+// once, until the next `pnpm design:export` on a machine with the game.
+let warnedAboutPages = false
+const withPage = (requirement: RequirementView): RequirementView => {
+  switch (requirement.kind) {
+    case 'gate':
+    case 'mark':
+    case 'counter':
+    case 'unknown':
+      return requirement
+    case 'character':
+    case 'boss':
+    case 'challenge':
+    case 'item':
+      if (requirement.page !== undefined) return requirement
+      if (!warnedAboutPages) {
+        warnedAboutPages = true
+        console.warn(
+          "graph fixture: the design pack's unlock.json predates the requirement's page; nothing links until the next pnpm design:export on a machine with the game",
+        )
+      }
+      return { ...requirement, page: null }
+    default:
+      return assertNever(requirement)
+  }
+}
+
 const nodeWithIcons = (node: UnlockNode, icon: IconOf): UnlockNode => ({
   ...node,
   achievement:
@@ -50,7 +86,7 @@ const nodeWithIcons = (node: UnlockNode, icon: IconOf): UnlockNode => ({
       ? { ...node.achievement, iconUrl: icon(node.achievement.iconUrl) }
       : node.achievement,
   unlocks: node.unlocks.map((t) => withForm(targetWithIcon(t, icon))),
-  missing: node.missing.map(withForm),
+  missing: node.missing.map((r) => withPage(withForm(r))),
 })
 
 const slotOf = (node: UnlockNode): number =>

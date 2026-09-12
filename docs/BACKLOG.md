@@ -1697,3 +1697,114 @@ right one has to be looked for in the game's files, not approximated.
 
 On a machine with the game, an achievement card shows the drawing on the same backing the
 game does, and the entry names the sheet and frame it came from.
+
+---
+
+## B34 — Seventeen references the wiki never meant as targets (implementation, `graph` and `dataset`)
+
+Logged 2026-09-12, left out on purpose by
+`docs/superpowers/specs/2026-09-12-graph-mark-requirements-design.md` §6: that sub-project
+took the graph's uninterpreted references from **195 to 17**, and these are the 17.
+
+They are not requirements nobody judged. They are **words that became targets**: the
+generator walks a wiki sentence's inline tree and `Inline::Concept` promotes a linked
+concept page to `Target::Pickup`, which is right for *Red Heart* and wrong for *collect*.
+
+### What we already have
+
+- The full list, measured against the real catalogue — 13 `pickup:` and 4
+  `transformation:`, and the same walk prints it:
+
+  | target | nodes it holds | |
+  |---|---|---|
+  | `pickup:ending` | 4 | a word, not a thing |
+  | `pickup:Collect` | 3 | and `pickup:collect` separately, 2 more |
+  | `pickup:Bestiary` | 2 | |
+  | `pickup:collection` | 1 | |
+  | `pickup:tainted character` | 1 | a class, not a target |
+  | `transformation:Guppy` | 2 | a real transformation, three items behind it |
+  | `transformation:Beelzebub` | 2 | the same |
+
+- `crates/graph/src/generate.rs:26` is where the promotion happens, and the only place that
+  has to change: the filter belongs to the **generator**, not to the curation.
+- Every one of the 17 currently carries a hand-written `Verdict::Unknown` in
+  `corrections.json` — so the graph is honest about them today, and this task is about
+  stopping the noise at its source rather than fixing a wrong answer.
+
+### Why it is not a five-minute change
+
+`requirements.json` is a **committed artefact**. Changing the generator means regenerating
+it with `pnpm graph:rules`, and the diff has to be read rather than trusted: the same filter
+that drops `collect` must not drop a concept page that is a real target. The `derived`
+discipline of `crates/wiki` is the model — the generated file and its inputs travel
+together, and a test keeps them from drifting.
+
+Note the two families are **not** the same problem. `pickup:` is noise and the answer is to
+drop it. The two transformations are real: Guppy and Beelzebub each sit behind a count of
+items (three Guppy items, three fly items), which is a threshold the model cannot say — the
+same shape as `Verdict::Unknown { reason: "three Guppy items" }` already records. They may
+stay unknown and that is a decision, not an omission.
+
+### What's missing
+
+1. Decide, per target, which of the two families it is — noise to filter, or a real
+   requirement the model cannot express. Seventeen rows, read once.
+2. Filter the noise in `generate.rs`, at the promotion, with the rule stated in code rather
+   than a list of words.
+3. Regenerate `requirements.json`, **read the diff**, and check that no target that used to
+   resolve stopped resolving. `crates/graph/tests/coverage.rs` already asserts that a node
+   with no typed reference is still a node the wiki has: that is the guard, and it has to go
+   red if the filter is too wide.
+4. Remove from `corrections.json` the verdicts that no longer have a target, so curation
+   does not keep answering questions nobody asks.
+
+### Done when
+
+The uninterpreted references are 17 minus the ones judged to be noise, every remaining one
+is a `Verdict::Unknown` with a reason that says *why the model cannot express it* rather
+than *what the word was*, and the regenerated `requirements.json` is committed alongside the
+generator change with the coverage test green.
+
+---
+
+## B35 — What a node unlocks links to its page too (implementation, `ipc` and `ui`, small)
+
+Logged on 2026-09-12, while closing 3.5d. That sub-project made every **blocker** a link: a
+requirement carries `page: Target | null` and the badge's menu opens it. The other half of the
+same row is still text — Unlock's "Cosa sblocca" column and the Plan's queue rows draw an
+`UnlockTarget` (an item, a character, a boss, a challenge) with no way to read about it.
+
+What exists: `crates/ipc/src/wiki_target.rs`, one function from a catalog record to its wiki
+`Target`, already used by search and by the requirements; `pageLocation()` on the frontend;
+the `dropdown-menu` primitive and `WhyMenu.vue`.
+
+What's missing: `page: Option<Target>` on `UnlockTarget` (four variants, the same rule — `Some`
+only when `Dataset::entry` answers), the TypeScript mirror, and a decision about the gesture.
+A target is a single thing, not a group, so a menu of one may be the wrong shape here: the
+name itself could be the link. That decision belongs to the first look at 3.5d, not before it.
+
+Closes when: Unlock's "Cosa sblocca" cell and a queue row open the page of what they name, with
+the same one gesture (click navigates, Ctrl opens beside), and an entry the dataset has no page
+for is drawn as plain text rather than as a link that leads nowhere.
+
+---
+
+## B36 — A mark and a counter say which boss they mean, and link to it (measurement, then `ipc` and `ui`)
+
+Logged on 2026-09-12, with 3.5d. `RequirementView::Mark` names a cell of the completion matrix
+("beat Delirium with Cain") and `Counter` a threshold on a tally; both draw in the blocked menu
+as names you cannot follow, because neither carries a page.
+
+Why it isn't done: the twelve columns are not twelve entities. Ten of them plausibly map to a
+boss the dataset has a page for, but **Boss Rush** is a room-and-event and **Greed** is a game
+mode, and a column → entity table written from the names would be a curation nobody measured —
+exactly what `docs/STATUS.md` keeps `Unknown` rather than guessing. The counters' labels are the
+bosses' own names, which is a second, easier case: those could resolve through the catalog.
+
+What it needs: the entity key of each of the ten bosses, taken from the same place
+`wiki_target::boss` takes it — the portrait's file name — rather than from a name match; and a
+decision, in words, for the two that are not entities.
+
+Closes when: a mark's entry in the blocked menu opens the boss's page for the ten that have one,
+the other two say what they are without pretending to be entities, and the mapping is pinned by
+a test that reads it from the catalog rather than from a literal table.
