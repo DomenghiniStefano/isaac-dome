@@ -397,6 +397,7 @@ fn unlock(
         flags.as_deref(),
         g,
         eval.as_ref(),
+        Some(&progress),
         icon_url,
     ))
 }
@@ -510,6 +511,7 @@ fn queue_view_now(
             flags: pieces.flags.as_deref(),
             graph: pieces.graph,
             eval: None,
+            progress: None,
             queue: queue.as_ref(),
             goals_pending,
             store_reason: reason,
