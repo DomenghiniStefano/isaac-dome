@@ -8,6 +8,7 @@ mod icon;
 mod mark_art;
 mod marks;
 mod profile;
+mod progress;
 mod queue;
 mod resources;
 mod search;
@@ -39,6 +40,7 @@ pub use profile::{
     CandidateView, ChoiceReason, GameView, MissingReason, ProfileId, SetupDiagnostic, SetupState,
     SteamView,
 };
+pub use progress::SaveProgress;
 pub use queue::{
     achievement_unlocking, queue_view, GraphDeps, QueueDiagnostic, QueueInputs, QueueRow, QueueView,
 };
