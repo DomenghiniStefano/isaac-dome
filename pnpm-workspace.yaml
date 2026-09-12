@@ -1,2 +1,4 @@
 packages:
   - ui
+allowBuilds:
+  vue-demi: false
