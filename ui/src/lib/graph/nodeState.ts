@@ -2,6 +2,7 @@ import { countBy, groupBy } from 'lodash-es'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
+import { MarkColumnView } from '@/lib/ipc/types'
 import type { RequirementView, UnlockNode } from '@/lib/ipc/types'
 import { characterLabel } from './characterName'
 
@@ -63,6 +64,8 @@ export const RequirementKind = {
   Challenge: 'challenge',
   Item: 'item',
   Gate: 'gate',
+  Mark: 'mark',
+  Counter: 'counter',
   Unknown: 'unknown',
 } as const
 export type RequirementKind =
@@ -74,8 +77,27 @@ const requirementOrder: RequirementKind[] = [
   RequirementKind.Challenge,
   RequirementKind.Item,
   RequirementKind.Gate,
+  RequirementKind.Mark,
+  RequirementKind.Counter,
   RequirementKind.Unknown,
 ]
+
+// What the game calls each column of the completion matrix. Game names, so they stay in
+// English like every other one (`DESIGN-BRIEF.md` §12) — data, not something to translate.
+const columnName: Record<MarkColumnView, string> = {
+  [MarkColumnView.MomsHeart]: "Mom's Heart",
+  [MarkColumnView.Isaac]: 'Isaac',
+  [MarkColumnView.Satan]: 'Satan',
+  [MarkColumnView.BossRush]: 'Boss Rush',
+  [MarkColumnView.BlueBaby]: 'Blue Baby',
+  [MarkColumnView.TheLamb]: 'The Lamb',
+  [MarkColumnView.MegaSatan]: 'Mega Satan',
+  [MarkColumnView.Greed]: 'Greed',
+  [MarkColumnView.Hush]: 'Hush',
+  [MarkColumnView.Delirium]: 'Delirium',
+  [MarkColumnView.Mother]: 'Mother',
+  [MarkColumnView.TheBeast]: 'The Beast',
+}
 
 // A gate and an unknown requirement carry only the file's label, in English: they are
 // conditions we deliberately did not guess at. A character is the one kind whose name
@@ -93,6 +115,14 @@ const requirementName = (
       return requirement.name
     case 'gate':
     case 'unknown':
+      return requirement.label
+    case 'mark':
+      return t('graph.markName', {
+        boss: columnName[requirement.column],
+        character: requirement.characterName,
+      })
+    // The label is already the boss's own name, in English like every game name.
+    case 'counter':
       return requirement.label
     default:
       return assertNever(requirement)
