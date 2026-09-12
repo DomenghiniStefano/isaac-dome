@@ -1764,3 +1764,47 @@ The uninterpreted references are 17 minus the ones judged to be noise, every rem
 is a `Verdict::Unknown` with a reason that says *why the model cannot express it* rather
 than *what the word was*, and the regenerated `requirements.json` is committed alongside the
 generator change with the coverage test green.
+
+---
+
+## B35 — What a node unlocks links to its page too (implementation, `ipc` and `ui`, small)
+
+Logged on 2026-09-12, while closing 3.5d. That sub-project made every **blocker** a link: a
+requirement carries `page: Target | null` and the badge's menu opens it. The other half of the
+same row is still text — Unlock's "Cosa sblocca" column and the Plan's queue rows draw an
+`UnlockTarget` (an item, a character, a boss, a challenge) with no way to read about it.
+
+What exists: `crates/ipc/src/wiki_target.rs`, one function from a catalog record to its wiki
+`Target`, already used by search and by the requirements; `pageLocation()` on the frontend;
+the `dropdown-menu` primitive and `WhyMenu.vue`.
+
+What's missing: `page: Option<Target>` on `UnlockTarget` (four variants, the same rule — `Some`
+only when `Dataset::entry` answers), the TypeScript mirror, and a decision about the gesture.
+A target is a single thing, not a group, so a menu of one may be the wrong shape here: the
+name itself could be the link. That decision belongs to the first look at 3.5d, not before it.
+
+Closes when: Unlock's "Cosa sblocca" cell and a queue row open the page of what they name, with
+the same one gesture (click navigates, Ctrl opens beside), and an entry the dataset has no page
+for is drawn as plain text rather than as a link that leads nowhere.
+
+---
+
+## B36 — A mark and a counter say which boss they mean, and link to it (measurement, then `ipc` and `ui`)
+
+Logged on 2026-09-12, with 3.5d. `RequirementView::Mark` names a cell of the completion matrix
+("beat Delirium with Cain") and `Counter` a threshold on a tally; both draw in the blocked menu
+as names you cannot follow, because neither carries a page.
+
+Why it isn't done: the twelve columns are not twelve entities. Ten of them plausibly map to a
+boss the dataset has a page for, but **Boss Rush** is a room-and-event and **Greed** is a game
+mode, and a column → entity table written from the names would be a curation nobody measured —
+exactly what `docs/STATUS.md` keeps `Unknown` rather than guessing. The counters' labels are the
+bosses' own names, which is a second, easier case: those could resolve through the catalog.
+
+What it needs: the entity key of each of the ten bosses, taken from the same place
+`wiki_target::boss` takes it — the portrait's file name — rather than from a name match; and a
+decision, in words, for the two that are not entities.
+
+Closes when: a mark's entry in the blocked menu opens the boss's page for the ten that have one,
+the other two say what they are without pretending to be entities, and the mapping is pinned by
+a test that reads it from the catalog rather than from a literal table.
