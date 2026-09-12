@@ -9,8 +9,14 @@ import { editionLabel } from './editionLabel'
 const props = defineProps<{
   inline: Inline[]
   iconFor?: (target: Target) => string | null
+  // Whether a reference leads to a page. Without it every reference opens, as on the Kit
+  // page; the wiki store answers from its index, so a stage or an entity the dataset lacks
+  // reads like a concept instead of leading to a page that says "unknown".
+  canOpen?: (target: Target) => boolean
 }>()
-const emit = defineEmits<{ navigate: [target: Target] }>()
+// `newTab` is the click's modifier: Ctrl opens the reference beside the page, as a browser
+// does with a link.
+const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
 
 const textClass = (style: Style): string => {
   switch (style) {
@@ -25,11 +31,16 @@ const textClass = (style: Style): string => {
   }
 }
 
-// Each reference's icon, resolved once per render instead of once per use in the template:
-// a page can carry 185 references.
-const icons = computed(() =>
+// Each reference's icon and whether it opens, resolved once per render instead of once per
+// use in the template: a page can carry 185 references.
+const refs = computed(() =>
   props.inline.map((token) =>
-    token.kind === 'ref' ? (props.iconFor?.(token.target) ?? null) : null,
+    token.kind === 'ref'
+      ? {
+          icon: props.iconFor?.(token.target) ?? null,
+          opens: props.canOpen?.(token.target) ?? true,
+        }
+      : null,
   ),
 )
 </script>
@@ -44,18 +55,28 @@ const icons = computed(() =>
       token.text
     }}</span>
     <Button
-      v-else-if="token.kind === 'ref'"
+      v-else-if="token.kind === 'ref' && refs[index]?.opens"
       :variant="ButtonVariant.Ref"
       :size="ButtonSize.Inline"
-      @click="emit('navigate', token.target)"
+      @click="emit('navigate', token.target, $event.ctrlKey)"
     >
       <img
-        v-if="icons[index]"
-        :src="icons[index] ?? undefined"
+        v-if="refs[index]?.icon"
+        :src="refs[index]?.icon ?? undefined"
         alt=""
         class="mr-0.75 inline-block size-4 align-text-bottom pixelated"
       />{{ token.label }}
     </Button>
+    <span
+      v-else-if="token.kind === 'ref'"
+      class="border-b border-dotted border-secondary-edge text-subtle-foreground"
+      ><img
+        v-if="refs[index]?.icon"
+        :src="refs[index]?.icon ?? undefined"
+        alt=""
+        class="mr-0.75 inline-block size-4 align-text-bottom pixelated"
+      />{{ token.label }}</span
+    >
     <span
       v-else-if="token.kind === 'concept'"
       class="border-b border-dotted border-secondary-edge text-subtle-foreground"
@@ -70,7 +91,8 @@ const icons = computed(() =>
       <WikiInline
         :inline="token.inline"
         :icon-for="iconFor"
-        @navigate="emit('navigate', $event)"
+        :can-open="canOpen"
+        @navigate="(target, newTab) => emit('navigate', target, newTab)"
       />
     </template>
     <span v-else>{{ assertNever(token) }}</span>

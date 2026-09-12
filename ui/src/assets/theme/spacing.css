@@ -17,6 +17,8 @@
   --spacing-achievement: 5.5rem;
   /* An achievement drawing in a table row: 48 x 32, the 263 x 176 drawing at its ratio. */
   --spacing-achievement-thumb: 48px;
+  /* A wiki page's figure (Schermate.dc.html): a 32px sprite at 3x, a 192px portrait at half. */
+  --spacing-wiki-figure: 6rem;
   /* Unlock's table (Schermate.dc.html): the drawing column, the state badge column, the
      fan-out column, the add-to-the-queue column, and the height of the scrolling body. */
   --spacing-unlock-art: 64px;
