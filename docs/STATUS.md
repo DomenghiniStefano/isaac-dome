@@ -23,9 +23,9 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-12. **Sub-project 3.5d is on `feature/blocked-menu`**, suite green,
-waiting to be merged: a blocked badge opens a menu whose entries are the wiki pages of what is
-in the way.
+**Last update:** 2026-09-12. **Sub-project 3.5d merged into `develop`** (`4406c49`), suite
+green on the merge result: a blocked badge opens a menu whose entries are the wiki pages of
+what is in the way.
 
 ---
 
