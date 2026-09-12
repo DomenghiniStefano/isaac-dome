@@ -23,8 +23,9 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-12. **Sub-project 3.5b merged into `develop`** (`bc249e2`), suite
-green on the merge result; 3.5 is closed on both halves.
+**Last update:** 2026-09-12. **Sub-project 3.5d is on `feature/blocked-menu`**, suite green,
+waiting to be merged: a blocked badge opens a menu whose entries are the wiki pages of what is
+in the way.
 
 ---
 
@@ -475,6 +476,21 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
                   built after it is built on the scaled tokens. Done when the slider moves
                   the whole app with no element left at its old size, on the Kit page and
                   in the built app. Needs a `Slider` primitive (none in the kit yet)
+            - [x] **3.5d "Bloccato" says where to go (2026-09-12)** — pulled ahead of 3.6 on
+                  the owner's request ("dove c'è scritto bloccato mi serve sempre un link che
+                  mi spiega come sbloccarlo, non basta il nome"), because it changes the live
+                  IPC contract and every screen that draws a node. A requirement and a
+                  collection lock carry `page: Option<Target>`, `Some` only when the embedded
+                  dataset really has that page; the catalog → page mapping left `search.rs`
+                  for `crates/ipc/src/wiki_target.rs`, one function for both readers. The
+                  badge stops being a tooltip and becomes the trigger of a `dropdown-menu`:
+                  one label per kind, one entry per blocker, click navigates and Ctrl opens
+                  beside — the palette's gesture. An entry with no page stays in the menu,
+                  disabled: never a link that leads nowhere. A mark and a counter carry none
+                  (B36), and what a node *unlocks* is B35. Spec
+                  `docs/superpowers/specs/2026-09-12-blocked-menu-design.md`, plan
+                  `docs/superpowers/plans/2026-09-12-blocked-menu.md`, report
+                  `…-blocked-menu-report.md`, branch `feature/blocked-menu`
             - [ ] 3.6 Settings and About — provenance, credits, the three promises; About
                   becomes a dialog, not a page (B25); the profile screen becomes a welcome
                   flow (B17); the KPI and matrix changes of B20, B22, B23
@@ -1001,6 +1017,34 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-12 (late) — a blocker stops being a dead end
+
+The owner read the app and said the obvious thing: where it says *bloccato* it names what is in
+the way and stops there. "Non basta il nome" — and then, on the shape, "una lista di link tipo
+menu windows?", which turned out to be the right answer to a problem the design hadn't noticed:
+the why lived in a **tooltip**, and a tooltip is not a thing you can click.
+
+So the badge became the trigger of a menu and the tooltip went. Each blocker is an entry that
+opens that thing's wiki page — offline, already in the binary. The page is resolved in Rust,
+because the frontend holds `{ kind, id }` and a page is keyed `entity:20.0.0`; the mapping that
+knows a boss is identified by **the file name of its portrait** already existed inside search's
+`documents()` and now lives once, in `crates/ipc/src/wiki_target.rs`. A requirement and a
+collection lock carry `page: Option<Target>`, `Some` only when `Dataset::entry` answers, so an
+entry the dataset has no page for is present and disabled rather than a link that goes nowhere.
+
+Two risks were written into the spec as things to check rather than assume, and both turned out
+benign, measured on the running app: the Plan's drag starts on the grip's own `pointerdown`, so
+the badge never steals it (a row dragged onto another still repaired itself and said so); and a
+menu open in the virtualized table goes away with its row when the row is recycled.
+
+Two things stayed undone on purpose. A **mark** and a **counter** carry no page: two of the
+twelve matrix columns (Boss Rush, Greed) are not entities, and a column → entity table written
+from the names would be the kind of curation this document keeps refusing to guess (B36). And
+what a node *unlocks* is still text (B35). What could not be checked from here is the last
+click in the real Tauri window — it builds and runs, but it can't be driven from a session; on
+fixtures every entry is disabled, because the committed design pack predates the field and the
+fixture layer says so in the console instead of pretending.
 
 ### 2026-09-12 (afternoon, the game running) — the third bit has a name, and a documented fact was wrong
 
