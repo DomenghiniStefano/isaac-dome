@@ -77,7 +77,7 @@ fn winning_greedier_sets_the_second_bit_of_that_characters_greed_cell() {
         };
         if let Some((pflags, pcounters)) = &prev {
             for id in 0..flags.len().min(pflags.len()) {
-                if !(flags[id] && !pflags[id]) {
+                if !flags[id] || pflags[id] {
                     continue;
                 }
                 let Some((label, wiki_id)) = pair(rules, id as u32, "entity:Ultra Greedier") else {
@@ -137,7 +137,7 @@ fn beating_mother_or_the_beast_moves_that_characters_own_cell() {
         };
         if let Some((pflags, pcounters)) = &prev {
             for id in 0..flags.len().min(pflags.len()) {
-                if !(flags[id] && !pflags[id]) {
+                if !flags[id] || pflags[id] {
                     continue;
                 }
                 for (key, column) in [
