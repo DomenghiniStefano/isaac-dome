@@ -2,6 +2,8 @@
    window's. */
 @theme {
   /* Below this width a tab can't hold its icon, name and close together: an inactive tab
-     drops the close, the active one the icon (@max-tab-narrow). */
+     drops the close, the active one the icon (@max-tab-narrow). In px, and measured at
+     scale 100 (cycle 3.5c, Decision 4): a container query is compared against a used width,
+     and what this number means is a fact about the drawn tab, which scales with it. */
   --container-tab-narrow: 64px;
 }

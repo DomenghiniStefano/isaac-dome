@@ -7,7 +7,8 @@ import { nodeSlot } from '@/lib/graph/unlockFilter'
 import type { UnlockNode } from '@/lib/ipc/types'
 import { canQueue, isQueued } from '@/lib/plan/queueRows'
 import UnlockRow from './UnlockRow.vue'
-import { unlockRowHeight } from './unlockLayout'
+import { rowWidePx } from '@/lib/scale/rows'
+import { useSettingsStore } from '@/stores/settings'
 
 const props = defineProps<{
   nodes: UnlockNode[]
@@ -17,6 +18,7 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{ add: [achievement: number] }>()
 const { t } = useMessages()
+const settings = useSettingsStore()
 
 const scroller = ref<HTMLElement | null>(null)
 
@@ -26,7 +28,7 @@ const virtualizer = useVirtualizer(
   computed(() => ({
     count: props.nodes.length,
     getScrollElement: () => scroller.value,
-    estimateSize: () => unlockRowHeight,
+    estimateSize: () => rowWidePx(settings.scale),
     overscan: 8,
   })),
 )
