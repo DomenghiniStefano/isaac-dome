@@ -840,12 +840,20 @@ That answer was built on a wrong fact, and the run proved it wrong in twenty-six
       then agreed: 6 of 6 bit-2 dates have an `online_logs\` session, ~60 marks on days
       without one never gained it, and on 2026-08-31 the **same character on the same day**
       took one mark with the bit and one without, so it belongs to the run, not the day.
-- [x] **Local co-op writes the profile and does not set bit 2** — B21's third question,
-      answered without playing anything. A local co-op win is the only thing that lights two
-      bits at once in index 188, which happens in exactly two windows: 2026-07-22 and
-      2026-09-01. The first took four marks, none with bit 2. Index 188's bit → character
-      map was re-derived from the series for this rather than assumed, and it confirms the
-      one `marks_real.rs` already uses.
+- [ ] **Local co-op — claimed closed, then reopened the same hour.** The argument was that a
+      local co-op win is the only thing lighting two bits at once in index 188, which made
+      2026-07-22 and 2026-09-01 identifiable. **It doesn't hold: 188 accumulates** — `2 → 6`
+      on 09-01 adds Cain and keeps Magdalene — so two bits is two wins in the window, not two
+      players in one run. What survives is by elimination only: no day without an online
+      session ever produced a bit 2, and the owner confirms local co-op happened at least
+      once. B21 point 3 stays open.
+      **The evidence was already in the repo**: the B8 spike report of 2026-09-08 records
+      `188: 4 -> 12` on a winning Judas run under "one thing that does not fit". Reading it
+      before concluding would have cost five minutes; it was read afterwards, while looking
+      up something else. That report can now drop the entry — the misfit was accumulation,
+      and what clears the mask is the question that replaces it.
+      Index 188's bit → character map *was* re-derived from the series rather than assumed,
+      and that part holds: it confirms the map `marks_real.rs` already uses.
 - [x] **The reading is pinned by a property, not by a value**:
       `the_online_bit_never_stands_without_the_cleared_bit` in `crates/ipc/tests/marks_real.rs`.
       An online clear is also a clear, so no cell may hold 4 or 6. It carries its own
