@@ -3,10 +3,106 @@
 //! cross the IPC boundary unchanged — a single set of names shared between `wiki` and
 //! the frontend.
 
+use catalog::Catalog;
 use serde::Serialize;
 
 pub use wiki::{Block, Dlc, Entry, Infobox, Inline, ListItem, Section, SectionKind, Style, Target};
 use wiki::{Dataset, DatasetError};
+
+use crate::icon::IconRef;
+use crate::target_sprite::{target_sprite, TargetSprite};
+
+/// One page of the dataset: its identity, its own title, and the link to its figure when
+/// the catalog draws one.
+#[derive(Debug, Clone, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct WikiPageRef {
+    pub target: Target,
+    pub title: String,
+    pub icon_url: Option<String>,
+}
+
+/// Every page the dataset has, once per window (spec 3.5, Decision 2): what the tab labels,
+/// the category lists and the icon of every reference inside a page are read from.
+#[derive(Debug, Clone, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct WikiIndex {
+    pub info: WikiInfo,
+    pub pages: Vec<WikiPageRef>,
+}
+
+/// The index, in the dataset's order: by kind, then by id. Bosses are keyed by a string
+/// (`Dataset::boss_key`), so they come out in string order — the screen sorts by title
+/// anyway. A link goes out only when the catalog resolves the figure: `None` is "no
+/// picture", drawn as the placeholder, never as a broken image.
+pub fn wiki_index(
+    dataset: Result<&Dataset, &DatasetError>,
+    catalog: Option<&Catalog>,
+    game_updated_unix: Option<u64>,
+    mut icon: impl FnMut(&IconRef) -> Option<String>,
+) -> WikiIndex {
+    let info = wiki_info(dataset, game_updated_unix);
+    let Ok(ds) = dataset else {
+        return WikiIndex {
+            info,
+            pages: Vec::new(),
+        };
+    };
+    let mut page = |target: Target, entry: &Entry| WikiPageRef {
+        icon_url: catalog.and_then(|c| match target_sprite(c, &target) {
+            TargetSprite::Found(_) => icon(&IconRef::Page {
+                target: target.clone(),
+            }),
+            TargetSprite::NoArt | TargetSprite::Unknown => None,
+        }),
+        title: entry.title.clone(),
+        target,
+    };
+    let mut pages = Vec::new();
+    pages.extend(
+        ds.items
+            .iter()
+            .map(|(id, e)| page(Target::Item { id: *id }, e)),
+    );
+    pages.extend(
+        ds.trinkets
+            .iter()
+            .map(|(id, e)| page(Target::Trinket { id: *id }, e)),
+    );
+    pages.extend(
+        ds.achievements
+            .iter()
+            .map(|(id, e)| page(Target::Achievement { id: *id }, e)),
+    );
+    pages.extend(
+        ds.bosses
+            .iter()
+            .filter_map(|(key, e)| Some(page(boss_target(key)?, e))),
+    );
+    pages.extend(
+        ds.challenges
+            .iter()
+            .map(|(n, e)| page(Target::Challenge { number: *n }, e)),
+    );
+    pages.extend(
+        ds.characters
+            .iter()
+            .map(|(id, e)| page(Target::Character { id: *id }, e)),
+    );
+    WikiIndex { info, pages }
+}
+
+/// The inverse of `Dataset::boss_key`: `"20.0.0"` → the entity. A key that isn't three
+/// numbers is one the build never wrote, and the page is left out rather than guessed.
+fn boss_target(key: &str) -> Option<Target> {
+    let mut parts = key.split('.').map(|s| s.parse::<u32>().ok());
+    let target = Target::Entity {
+        id: parts.next()??,
+        variant: parts.next()??,
+        subtype: parts.next()??,
+    };
+    parts.next().is_none().then_some(target)
+}
 
 /// A game patch, as the wiki knows it.
 #[derive(Debug, Clone, Serialize)]
