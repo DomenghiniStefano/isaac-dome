@@ -1,4 +1,5 @@
 import type { Component } from 'vue'
+import { LayoutGridIcon } from '@lucide/vue'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
@@ -47,6 +48,15 @@ const routeEntry = (name: RouteName): SidebarEntry => ({
   icon: routeIcon[name],
 })
 
+// The landing: what the Wiki is and where it comes from, with the six categories and their
+// counts. The bare route, so it's lit only when no category is chosen.
+const overviewEntry: SidebarEntry = {
+  key: RouteName.Wiki,
+  location: { name: RouteName.Wiki },
+  label: 'sidebar.wikiOverview',
+  icon: LayoutGridIcon,
+}
+
 const wikiEntry = (category: WikiCategory): SidebarEntry => ({
   key: `${RouteName.Wiki}-${category}`,
   location: { name: RouteName.Wiki, query: { category } },
@@ -64,7 +74,10 @@ export const sidebarEntries: Record<SidebarSection, SidebarEntry[]> = {
     RouteName.Runs,
     RouteName.Live,
   ].map(routeEntry),
-  [SidebarSection.Wiki]: Object.values(WikiCategory).map(wikiEntry),
+  [SidebarSection.Wiki]: [
+    overviewEntry,
+    ...Object.values(WikiCategory).map(wikiEntry),
+  ],
   [SidebarSection.Settings]: [RouteName.Profile, RouteName.TabsSettings].map(
     routeEntry,
   ),

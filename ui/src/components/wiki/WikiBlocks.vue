@@ -16,14 +16,17 @@ import WikiInline from './WikiInline.vue'
 const props = defineProps<{
   blocks: Block[]
   iconFor?: (target: Target) => string | null
+  canOpen?: (target: Target) => boolean
 }>()
-const emit = defineEmits<{ navigate: [target: Target] }>()
+const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
 
-// What every nested WikiInline and WikiBlocks receives: the icon resolver and the way back
+// What every nested WikiInline and WikiBlocks receives: the two resolvers and the way back
 // up. One object, so adding to it is one edit, not one per block kind.
 const forward = computed(() => ({
   iconFor: props.iconFor,
-  onNavigate: (target: Target) => emit('navigate', target),
+  canOpen: props.canOpen,
+  onNavigate: (target: Target, newTab: boolean) =>
+    emit('navigate', target, newTab),
 }))
 </script>
 

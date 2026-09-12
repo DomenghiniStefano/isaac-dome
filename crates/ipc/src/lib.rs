@@ -50,6 +50,7 @@ pub use sprite_png::{crop_png, decode_rgba};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
 pub use wiki::{
-    rfc3339_to_unix, wiki_info, Block, Dlc, Entry, Infobox, Inline, ListItem, PatchView, Section,
-    SectionKind, Style, Target, WikiCounts, WikiInfo, WikiMissingReason,
+    rfc3339_to_unix, wiki_index, wiki_info, Block, Dlc, Entry, Infobox, Inline, ListItem,
+    PatchView, Section, SectionKind, Style, Target, WikiCounts, WikiIndex, WikiInfo,
+    WikiMissingReason, WikiPageRef,
 };
