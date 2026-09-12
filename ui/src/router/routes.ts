@@ -10,6 +10,7 @@ import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
 import PlanScreen from '@/screens/PlanScreen.vue'
 import ProfileScreen from '@/screens/ProfileScreen.vue'
 import UnlockScreen from '@/screens/UnlockScreen.vue'
+import WikiScreen from '@/screens/WikiScreen.vue'
 import {
   RouteName,
   routeArrives,
@@ -36,6 +37,7 @@ const screens: Partial<Record<RouteName, Component>> = {
   [RouteName.Unlock]: UnlockScreen,
   [RouteName.Plan]: PlanScreen,
   [RouteName.Collection]: CollectionScreen,
+  [RouteName.Wiki]: WikiScreen,
   [RouteName.Profile]: ProfileScreen,
 }
 

@@ -186,6 +186,26 @@ fn wiki_entry(target: ipc::Target) -> Result<Option<ipc::Entry>, IpcError> {
     Ok(ds.entry(&target).cloned())
 }
 
+/// Every page the dataset has, once per window: the category lists, the tab labels and
+/// the icon of every reference on a page read from it (spec 3.5, Decision 2). A dataset
+/// that didn't load is an empty index that says so, not an `Err`: the landing shows it.
+#[tauri::command]
+fn wiki_index(
+    state: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+) -> Result<ipc::WikiIndex, IpcError> {
+    let d = discover(&Options::default());
+    let game_updated_unix = d.game.as_ref().and_then(|g| g.updated_unix);
+    // No game is expected: the index goes out with no icon links, and the screen says so.
+    let catalog = resources.get().and_then(|rs| state.get_or_build(rs));
+    Ok(ipc::wiki_index(
+        wiki::Dataset::embedded(),
+        catalog,
+        game_updated_unix,
+        icon_url,
+    ))
+}
+
 /// Describes an `OpenError` without letting its `Debug` cross the IPC boundary: that
 /// `Debug` is defined by `core-save`, not by us, and there's no guarantee its variants
 /// will stay free of raw data in the future. The text here never contains a path:
@@ -719,7 +739,8 @@ fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<Vec<u8>> {
             .and_then(|frames| ipc::mark_source(column, tier, frames)),
         ipc::IconRef::Achievement { .. }
         | ipc::IconRef::Item { .. }
-        | ipc::IconRef::Head { .. } => app
+        | ipc::IconRef::Head { .. }
+        | ipc::IconRef::Page { .. } => app
             .state::<CatalogState>()
             .get_or_build(rs)
             .and_then(|c| ipc::icon_source(c, &reference).cloned()),
@@ -781,6 +802,7 @@ pub fn run() {
             completion,
             extraction_report,
             wiki_entry,
+            wiki_index,
             unlock,
             next_steps,
             collection,

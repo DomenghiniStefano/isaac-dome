@@ -1,4 +1,9 @@
+import type { MessageKey } from '@/i18n/messageKey'
+import type { MessageSchema } from '@/i18n/messages/it'
+import { locationTitle } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
+
+type Message = MessageKey<MessageSchema>
 
 export interface Tab {
   id: string
@@ -79,3 +84,15 @@ export const navigateTab = (
     tab.id === state.activeId ? { ...tab, location } : tab,
   ),
 })
+
+// A tab's label. A page's title is data (English, from the index), every other label a
+// message: the caller translates one and shows the other. Until the index knows the page,
+// the tab reads as its category.
+export const tabLabel = (
+  location: TabLocation,
+  titleOf: (key: string) => string | null,
+): Message | { text: string } => {
+  const key = location.query?.page
+  const title = key === undefined ? null : titleOf(key)
+  return title === null ? locationTitle(location) : { text: title }
+}

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { RouteName } from '@/router/routeTable'
+import { RouteName, WikiCategory } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import {
   closeTab,
@@ -8,6 +8,7 @@ import {
   navigateTab,
   openTab,
   selectTab,
+  tabLabel,
 } from './tabModel'
 import type { Tab, TabsState } from './tabModel'
 
@@ -77,5 +78,32 @@ describe('tabModel', () => {
       RouteName.Plan,
     ])
     expect(s.activeId).toBe('b')
+  })
+})
+
+describe('tabLabel', () => {
+  const titles: Record<string, string> = { 'item:105': 'The D6' }
+  const titleOf = (key: string) => titles[key] ?? null
+  const page = (key: string): TabLocation => ({
+    name: RouteName.Wiki,
+    query: { category: WikiCategory.Items, page: key },
+  })
+
+  it("is the page's title when the index knows it", () => {
+    expect(tabLabel(page('item:105'), titleOf)).toEqual({ text: 'The D6' })
+  })
+
+  it("is the category's message until the index knows the page", () => {
+    expect(tabLabel(page('item:9'), titleOf)).toBe('wikiCategories.items')
+  })
+
+  it("is the route's message on any other location", () => {
+    expect(tabLabel(at(RouteName.Plan), titleOf)).toBe('routes.plan')
+    expect(
+      tabLabel(
+        { name: RouteName.Wiki, query: { category: WikiCategory.Bosses } },
+        titleOf,
+      ),
+    ).toBe('wikiCategories.bosses')
   })
 })

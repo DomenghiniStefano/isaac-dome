@@ -49,3 +49,20 @@ describe('sectionNav', () => {
     expect(bosses && isEntryActive(bosses, at(WikiCategory.Items))).toBe(false)
   })
 })
+
+describe('the wiki overview', () => {
+  it('is the first wiki entry, the bare route, lit only there', () => {
+    const [overview] = sidebarEntries[SidebarSection.Wiki]
+    expect(overview?.location).toEqual({ name: RouteName.Wiki })
+    expect(overview && isEntryActive(overview, { name: RouteName.Wiki })).toBe(
+      true,
+    )
+    expect(
+      overview &&
+        isEntryActive(overview, {
+          name: RouteName.Wiki,
+          query: { category: WikiCategory.Items },
+        }),
+    ).toBe(false)
+  })
+})
