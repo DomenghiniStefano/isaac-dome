@@ -20,7 +20,7 @@ fn flags(done: &[u32], slots: usize) -> Vec<bool> {
 #[test]
 fn a_node_with_no_prerequisites_is_available_now() {
     let g = graph(&[(1, &[])], &[]);
-    let e = g.evaluate(Some(&flags(&[], 2)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 2))));
     assert_eq!(
         e.node(1),
         Some(&NodeInfo::Computed {
@@ -35,7 +35,7 @@ fn a_node_with_no_prerequisites_is_available_now() {
 #[test]
 fn a_done_prerequisite_stops_blocking() {
     let g = graph(&[(1, &[]), (2, &[1])], &[]);
-    let blocked = g.evaluate(Some(&flags(&[], 3)));
+    let blocked = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 3))));
     assert_eq!(
         blocked.node(2),
         Some(&NodeInfo::Computed {
@@ -45,7 +45,7 @@ fn a_done_prerequisite_stops_blocking() {
             steps_missing: 1
         })
     );
-    let freed = g.evaluate(Some(&flags(&[1], 3)));
+    let freed = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 3))));
     assert_eq!(
         freed.node(2),
         Some(&NodeInfo::Computed {
@@ -61,7 +61,7 @@ fn a_done_prerequisite_stops_blocking() {
 fn steps_missing_counts_a_shared_ancestor_once() {
     // 4 needs 2 and 3; both need 1. Three runs, not four.
     let g = graph(&[(1, &[]), (2, &[1]), (3, &[1]), (4, &[2, 3])], &[]);
-    let e = g.evaluate(Some(&flags(&[], 5)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 5))));
     let Some(NodeInfo::Computed { steps_missing, .. }) = e.node(4) else {
         panic!("node 4 should be Computed: {:?}", e.node(4));
     };
@@ -74,7 +74,7 @@ fn steps_missing_counts_a_shared_ancestor_once() {
 #[test]
 fn steps_missing_skips_what_is_already_done() {
     let g = graph(&[(1, &[]), (2, &[1]), (3, &[2])], &[]);
-    let e = g.evaluate(Some(&flags(&[1], 4)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 4))));
     let Some(NodeInfo::Computed { steps_missing, .. }) = e.node(3) else {
         panic!("node 3 should be Computed");
     };
@@ -87,7 +87,7 @@ fn steps_missing_skips_what_is_already_done() {
 #[test]
 fn fan_out_counts_the_nodes_this_one_opens() {
     let g = graph(&[(1, &[]), (2, &[1]), (3, &[1])], &[]);
-    let e = g.evaluate(Some(&flags(&[], 4)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 4))));
     let Some(NodeInfo::Computed { fan_out, .. }) = e.node(1) else {
         panic!("node 1 should be Computed");
     };
@@ -97,7 +97,7 @@ fn fan_out_counts_the_nodes_this_one_opens() {
 #[test]
 fn an_unknown_requirement_makes_the_node_partial() {
     let g = graph(&[(1, &[])], &[(1, &["Bestiary", "Collect"])]);
-    let e = g.evaluate(Some(&flags(&[], 2)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 2))));
     assert_eq!(
         e.node(1),
         Some(&NodeInfo::Partial {
@@ -112,7 +112,7 @@ fn an_unknown_requirement_makes_the_node_partial() {
 #[test]
 fn a_cycle_is_declared_and_never_walked_twice() {
     let g = graph(&[(1, &[2]), (2, &[1])], &[]);
-    let e = g.evaluate(Some(&flags(&[], 3)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 3))));
     assert!(
         e.diagnostics()
             .iter()
@@ -130,7 +130,7 @@ fn a_cycle_is_declared_and_never_walked_twice() {
 #[test]
 fn a_node_already_done_is_not_available_now() {
     let g = graph(&[(1, &[])], &[]);
-    let e = g.evaluate(Some(&flags(&[1], 2)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 2))));
     let Some(NodeInfo::Computed {
         available_now,
         steps_missing,
@@ -146,7 +146,7 @@ fn a_node_already_done_is_not_available_now() {
 #[test]
 fn without_section_one_there_are_no_nodes_and_no_invented_zeros() {
     let g = graph(&[(1, &[])], &[]);
-    let e = g.evaluate(None);
+    let e = g.evaluate(&graph::FlagsOnly(None));
     assert_eq!(e.node(1), None, "unread is not the same as not done");
 }
 
@@ -156,7 +156,7 @@ fn a_slot_the_save_does_not_reach_is_treated_as_not_done() {
     // The missing slot is "not done", never "done" — the optimistic reading would claim
     // progress the file doesn't contain.
     let g = graph(&[(1, &[]), (9, &[])], &[]);
-    let e = g.evaluate(Some(&flags(&[], 3)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 3))));
     let Some(NodeInfo::Computed { available_now, .. }) = e.node(9) else {
         panic!("node 9 should be Computed");
     };
@@ -174,7 +174,7 @@ fn an_uninterpreted_gate_stops_blocking_once_something_behind_it_is_done() {
         &[(1, &[]), (2, &[])],
         &[(1, &["Delirium"]), (2, &["Delirium"])],
     );
-    let e = g.evaluate(Some(&flags(&[1], 3)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 3))));
     assert_eq!(
         e.node(2),
         Some(&NodeInfo::Computed {
@@ -193,7 +193,7 @@ fn a_gate_with_no_evidence_behind_it_still_blocks() {
         &[(1, &[]), (2, &[])],
         &[(1, &["Bestiary"]), (2, &["Bestiary"])],
     );
-    let e = g.evaluate(Some(&flags(&[], 3)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 3))));
     assert!(
         matches!(e.node(2), Some(NodeInfo::Partial { unknown: 1, .. })),
         "nothing done behind it: we genuinely don't know, got {:?}",
@@ -208,7 +208,7 @@ fn evidence_is_per_gate_not_per_node() {
         &[(1, &[]), (2, &[]), (3, &[])],
         &[(1, &["Delirium"]), (2, &["Delirium"]), (3, &["Bestiary"])],
     );
-    let e = g.evaluate(Some(&flags(&[1], 4)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 4))));
     assert!(matches!(e.node(2), Some(NodeInfo::Computed { .. })));
     assert!(
         matches!(e.node(3), Some(NodeInfo::Partial { unknown: 1, .. })),
@@ -222,7 +222,7 @@ fn a_node_waiting_on_two_gates_needs_evidence_for_both() {
         &[(1, &[]), (2, &[])],
         &[(1, &["Delirium"]), (2, &["Delirium", "Bestiary"])],
     );
-    let e = g.evaluate(Some(&flags(&[1], 3)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 3))));
     assert!(
         matches!(e.node(2), Some(NodeInfo::Partial { unknown: 1, .. })),
         "Delirium is proven, Bestiary isn't: one unknown left, got {:?}",
@@ -236,7 +236,7 @@ fn the_inference_is_declared_not_silent() {
         &[(1, &[]), (2, &[])],
         &[(1, &["Delirium"]), (2, &["Delirium"])],
     );
-    let e = g.evaluate(Some(&flags(&[1], 3)));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 3))));
     assert!(
         e.diagnostics().iter().any(|d| matches!(
             d,
@@ -250,22 +250,27 @@ fn the_inference_is_declared_not_silent() {
 #[test]
 fn the_missing_chain_is_what_still_stands_between_you_and_a_node() {
     let g = graph(&[(1, &[]), (2, &[1]), (3, &[2])], &[]);
-    assert_eq!(g.missing_chain(3, Some(&flags(&[], 4))), vec![1, 2]);
     assert_eq!(
-        g.missing_chain(3, Some(&flags(&[1], 4))),
+        g.missing_chain(3, &graph::FlagsOnly(Some(&flags(&[], 4)))),
+        vec![1, 2]
+    );
+    assert_eq!(
+        g.missing_chain(3, &graph::FlagsOnly(Some(&flags(&[1], 4)))),
         vec![2],
         "what is done is not owed again"
     );
     assert!(
-        g.missing_chain(1, Some(&flags(&[], 4))).is_empty(),
+        g.missing_chain(1, &graph::FlagsOnly(Some(&flags(&[], 4))))
+            .is_empty(),
         "nothing stands between you and a node with no prerequisites"
     );
     assert!(
-        g.missing_chain(3, None).is_empty(),
+        g.missing_chain(3, &graph::FlagsOnly(None)).is_empty(),
         "without section 1 there is nothing to compute, and nothing is claimed"
     );
     assert!(
-        g.missing_chain(999, Some(&flags(&[], 4))).is_empty(),
+        g.missing_chain(999, &graph::FlagsOnly(Some(&flags(&[], 4))))
+            .is_empty(),
         "a node that isn't in the graph owes nothing: it is not an error"
     );
 }
@@ -274,7 +279,159 @@ fn the_missing_chain_is_what_still_stands_between_you_and_a_node() {
 fn a_node_in_a_cycle_has_no_knowable_chain() {
     let g = graph(&[(1, &[2]), (2, &[1])], &[]);
     assert!(
-        g.missing_chain(1, Some(&flags(&[], 3))).is_empty(),
+        g.missing_chain(1, &graph::FlagsOnly(Some(&flags(&[], 3))))
+            .is_empty(),
         "not knowable comes back empty, and `NodeInfo::Partial` is what says so"
     );
+}
+
+// --- requirements the profile answers (spec 2026-09-12, §4.3 and §4.6) ---------------
+
+use catalog::CharacterId;
+use graph::model::Requirement;
+use graph::rules::{CounterName, MarkColumn, MarkLevel};
+use std::collections::BTreeMap;
+
+/// The tests own the numbers, so nothing here depends on a sample.
+///
+/// `marks` absent = the cell is not located (one of the 40). `Some(None)` = located and
+/// read, nothing reached. The two must not collapse: the first makes a node `Partial`,
+/// the second leaves it computed and unmet.
+#[derive(Default)]
+struct Fake {
+    done: Vec<bool>,
+    marks: BTreeMap<(u32, MarkColumn), Option<MarkLevel>>,
+    counters: BTreeMap<CounterName, u32>,
+}
+
+impl graph::Profile for Fake {
+    fn done(&self) -> Option<&[bool]> {
+        Some(&self.done)
+    }
+    fn mark(&self, character: CharacterId, column: MarkColumn) -> Option<Option<MarkLevel>> {
+        self.marks.get(&(character.0, column)).copied()
+    }
+    fn counter(&self, name: CounterName) -> Option<u32> {
+        self.counters.get(&name).copied()
+    }
+}
+
+impl Fake {
+    fn node_1(&self, g: &Graph) -> Option<NodeInfo> {
+        g.evaluate(self).node(1).cloned()
+    }
+}
+
+fn one_node(r: Requirement) -> Graph {
+    Graph::from_requirements_for_tests(&[(1, vec![r])])
+}
+
+fn mother_of(id: u32) -> Requirement {
+    Requirement::Mark {
+        character: CharacterId(id),
+        column: MarkColumn::Mother,
+        level: MarkLevel::Base,
+    }
+}
+
+/// Spec §4.6: nothing is locked, the content is reachable, it only has to be played. So
+/// the node is available now and `blocked_by` stays a count of achievements.
+#[test]
+fn a_node_held_only_by_an_unmet_mark_is_available_now() {
+    let g = one_node(mother_of(0));
+    let p = Fake {
+        done: vec![false, false],
+        marks: [((0, MarkColumn::Mother), None)].into_iter().collect(),
+        ..Default::default()
+    };
+    let Some(NodeInfo::Computed {
+        available_now,
+        blocked_by,
+        ..
+    }) = p.node_1(&g)
+    else {
+        panic!("a cell the profile can answer is not a reason to be Partial");
+    };
+    assert!(available_now, "nothing is locked: it only has to be played");
+    assert_eq!(
+        blocked_by, 0,
+        "blocked_by counts achievements, and a mark is not one"
+    );
+}
+
+/// One of the 40 cells nobody has located. "I can't tell you" must not become "not done".
+#[test]
+fn a_cell_the_layout_cannot_answer_keeps_the_node_partial() {
+    let g = one_node(mother_of(99));
+    let p = Fake {
+        done: vec![false, false],
+        ..Default::default()
+    };
+    assert!(
+        matches!(p.node_1(&g), Some(NodeInfo::Partial { .. })),
+        "an unlocated cell is 'we can't say', never 'not satisfied'"
+    );
+}
+
+#[test]
+fn the_second_level_satisfies_a_base_requirement() {
+    let g = one_node(Requirement::Mark {
+        character: CharacterId(0),
+        column: MarkColumn::Greed,
+        level: MarkLevel::Base,
+    });
+    let p = Fake {
+        done: vec![false, false],
+        marks: [((0, MarkColumn::Greed), Some(MarkLevel::Second))]
+            .into_iter()
+            .collect(),
+        ..Default::default()
+    };
+    assert!(
+        matches!(p.node_1(&g), Some(NodeInfo::Computed { .. })),
+        "reached at the higher level: the base requirement is met, and answerable"
+    );
+}
+
+#[test]
+fn a_tally_below_its_threshold_does_not_block_and_an_unread_one_is_partial() {
+    let g = one_node(Requirement::Counter {
+        name: CounterName::HushKills,
+        at_least: 1,
+    });
+    let below = Fake {
+        done: vec![false, false],
+        counters: [(CounterName::HushKills, 0)].into_iter().collect(),
+        ..Default::default()
+    };
+    assert!(
+        matches!(
+            below.node_1(&g),
+            Some(NodeInfo::Computed {
+                available_now: true,
+                ..
+            })
+        ),
+        "read and zero: unmet, and nothing is locked"
+    );
+
+    let unread = Fake {
+        done: vec![false, false],
+        ..Default::default()
+    };
+    assert!(
+        matches!(unread.node_1(&g), Some(NodeInfo::Partial { .. })),
+        "section 2 unread must not read as 'the tally is zero'"
+    );
+}
+
+/// A caller that only has the achievement flags answers `None` to both other questions,
+/// so every node holding one of these requirements stays `Partial`. That is the honest
+/// outcome, and it is what keeps a half-wired caller from claiming progress.
+#[test]
+fn a_flags_only_profile_cannot_answer_and_says_so() {
+    let g = one_node(mother_of(0));
+    let f = vec![false, false];
+    let e = g.evaluate(&graph::FlagsOnly(Some(&f)));
+    assert!(matches!(e.node(1), Some(NodeInfo::Partial { .. })));
 }

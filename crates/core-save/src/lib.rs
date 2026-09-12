@@ -2,6 +2,7 @@
 
 mod bestiary;
 mod diff;
+pub mod marks;
 mod parse;
 mod section;
 

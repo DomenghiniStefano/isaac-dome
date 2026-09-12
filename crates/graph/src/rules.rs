@@ -68,8 +68,8 @@ pub struct Corrections {
     pub verdicts: BTreeMap<String, Verdict>,
 }
 
-/// Exactly three verdicts, and no fourth. A target with no verdict is not "no
-/// prerequisite": it stays unknown, and the node that carries it drops to `Partial`.
+/// A closed list, and every addition to it is a decision. A target with no verdict is not
+/// "no prerequisite": it stays unknown, and the node that carries it drops to `Partial`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub enum Verdict {
@@ -85,6 +85,80 @@ pub enum Verdict {
     /// `Partial`), and it exists to separate *judged and inexpressible* from *nobody
     /// looked yet*. Without it, curation has to lie in one of two directions.
     Unknown { reason: String },
+    /// Answered by the profile rather than by another achievement: a cell of the completion
+    /// matrix, a tally of section 2, or both.
+    ///
+    /// Both halves are optional because which one answers is decided by the *reference*,
+    /// not by the target: "defeat Mother as Magdalene" asks about that character's cell,
+    /// "defeat Mother" asks whether it was ever done at all. A target rarely has both
+    /// located — Ultra Greedier has a cell and no tally — and the half a reference needs
+    /// may be missing, which is `Unknown` like anything else this crate can't say.
+    Progress {
+        #[serde(default)]
+        mark: Option<MarkRule>,
+        #[serde(default)]
+        counter: Option<CounterRule>,
+    },
+}
+
+/// The twelve columns of the completion matrix, in the game's own order.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub enum MarkColumn {
+    MomsHeart,
+    Isaac,
+    Satan,
+    BossRush,
+    BlueBaby,
+    TheLamb,
+    MegaSatan,
+    Greed,
+    Hush,
+    Delirium,
+    Mother,
+    TheBeast,
+}
+
+/// A level within a cell, **named for the bit and not for a meaning**. Bit 0 is `Base`,
+/// bit 1 is `Second`.
+///
+/// In the Greed column `Second` is Ultra Greedier, measured 2026-09-12 on three days and
+/// three characters. What bit 1 means in the other eleven columns is *not* measured, so a
+/// name like `Hard` would assert exactly what this repository has already paid for twice
+/// (sections 3 and 6, a mark's bit 2).
+///
+/// Ordered, `Base` first, so a cell reached at the second level satisfies a requirement
+/// for the base one by `reached >= required`.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub enum MarkLevel {
+    Base,
+    Second,
+}
+
+/// A tally of section 2, named. The index it sits at is `core-save`'s business: a rules
+/// file carrying an offset would be the same mistake as an offset crossing the IPC.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub enum CounterName {
+    HushKills,
+    DeliriumKills,
+    MotherKills,
+    BeastKills,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct MarkRule {
+    pub column: MarkColumn,
+    pub level: MarkLevel,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct CounterRule {
+    pub name: CounterName,
+    pub at_least: u32,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -133,6 +207,21 @@ impl Rules {
                 return Err(RulesError::SchemaMismatch {
                     found,
                     expected: SCHEMA_VERSION,
+                });
+            }
+        }
+        // A verdict that answers nothing is not the same as no verdict, and at runtime the
+        // two would be indistinguishable: both drop the node to `Partial`. Refusing the
+        // file keeps curation honest — an empty `progress` is a half-written row, not a
+        // judgement, and it must not be able to hide as one.
+        for (key, v) in &c.verdicts {
+            if let Verdict::Progress {
+                mark: None,
+                counter: None,
+            } = v
+            {
+                return Err(RulesError::Malformed {
+                    reason: format!("{key}: a progress verdict with neither half answers nothing"),
                 });
             }
         }

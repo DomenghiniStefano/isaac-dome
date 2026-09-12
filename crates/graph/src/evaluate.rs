@@ -3,7 +3,45 @@
 
 use std::collections::{BTreeMap, BTreeSet};
 
+use catalog::CharacterId;
+
 use crate::build::{Graph, GraphDiagnostic};
+use crate::model::Requirement;
+use crate::rules::{CounterName, MarkColumn, MarkLevel};
+
+/// What the graph is allowed to ask a save. Three questions, all already resolved by the
+/// caller: this crate names a column, a level and a tally, and never an index.
+///
+/// The double `Option` on `mark` is the point, not clumsiness. One `None` cannot mean both
+/// "this cell isn't located" and "this cell is at zero": the first has to make the node
+/// `Partial`, the second has to leave it computed and unmet. `counter` has the same shape
+/// for free — `None` unread, `Some(0)` read and zero.
+pub trait Profile {
+    fn done(&self) -> Option<&[bool]>;
+    /// `None` — cannot say: the cell isn't located, or section 2 wasn't read.
+    /// `Some(None)` — located and read, nothing reached yet.
+    /// `Some(Some(level))` — the highest level reached.
+    fn mark(&self, character: CharacterId, column: MarkColumn) -> Option<Option<MarkLevel>>;
+    /// `None` when section 2 wasn't read. Not `Some(0)`: an unread tally is not a zero one.
+    fn counter(&self, name: CounterName) -> Option<u32>;
+}
+
+/// A caller that has the achievement flags and nothing else. It answers "I can't say" to
+/// the other two questions, so every node holding a mark or a tally stays `Partial` — the
+/// honest outcome, and what stops a half-wired caller from claiming progress it never read.
+pub struct FlagsOnly<'a>(pub Option<&'a [bool]>);
+
+impl Profile for FlagsOnly<'_> {
+    fn done(&self) -> Option<&[bool]> {
+        self.0
+    }
+    fn mark(&self, _: CharacterId, _: MarkColumn) -> Option<Option<MarkLevel>> {
+        None
+    }
+    fn counter(&self, _: CounterName) -> Option<u32> {
+        None
+    }
+}
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum NodeInfo {
@@ -39,8 +77,8 @@ impl Eval {
 }
 
 impl Graph {
-    pub fn evaluate(&self, flags: Option<&[bool]>) -> Eval {
-        let Some(flags) = flags else {
+    pub fn evaluate(&self, profile: &dyn Profile) -> Eval {
+        let Some(flags) = profile.done() else {
             // Section 1 wasn't read. No nodes: "unread" must not become "not done".
             return Eval {
                 infos: BTreeMap::new(),
@@ -97,7 +135,28 @@ impl Graph {
                 .iter()
                 .filter(|l| !evidence.contains_key(l.as_str()))
                 .count() as u32;
-            let info = match (unproven, transitive_known) {
+            // A requirement this profile cannot answer joins the uninterpreted ones. An
+            // unread section 2 and one of the 40 unlocated cells are both "we can't say",
+            // and neither is allowed to read as satisfied — which is what would happen if
+            // an unanswerable mark simply fell out of the count.
+            let unanswerable = n
+                .requirements
+                .iter()
+                .filter(|r| match r {
+                    Requirement::Mark {
+                        character, column, ..
+                    } => profile.mark(*character, *column).is_none(),
+                    Requirement::Counter { name, .. } => profile.counter(*name).is_none(),
+                    Requirement::Character { .. }
+                    | Requirement::Boss { .. }
+                    | Requirement::Challenge { .. }
+                    | Requirement::Item { .. }
+                    | Requirement::Gate { .. }
+                    | Requirement::Unknown { .. }
+                    | Requirement::None => false,
+                })
+                .count() as u32;
+            let info = match (unproven + unanswerable, transitive_known) {
                 (0, Some(set)) => NodeInfo::Computed {
                     available_now: blocked_by == 0 && !done(id),
                     blocked_by,
@@ -137,8 +196,8 @@ impl Graph {
     /// and when the node isn't in the graph at all — four different situations that the
     /// caller tells apart from `NodeInfo`, not from this list. It answers one question:
     /// what would still have to be earned.
-    pub fn missing_chain(&self, achievement: u32, flags: Option<&[bool]>) -> Vec<u32> {
-        let Some(flags) = flags else {
+    pub fn missing_chain(&self, achievement: u32, profile: &dyn Profile) -> Vec<u32> {
+        let Some(flags) = profile.done() else {
             return Vec::new();
         };
         let done = |id: u32| flags.get(id as usize).copied().unwrap_or(false);
