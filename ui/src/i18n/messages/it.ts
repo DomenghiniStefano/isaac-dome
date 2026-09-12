@@ -360,9 +360,9 @@ export const it = {
     originNone: 'non indicata',
     unknownAchievement: 'Achievement sconosciuto',
     slot: 'slot',
-    // La forma contaminata di un personaggio: il gioco scrive lo stesso nome per le due
-    // forme, il nome resta suo e la parola che le distingue è nostra.
-    taintedName: '{name} contaminato',
+    // La forma Tainted di un personaggio: il gioco scrive lo stesso nome per le due forme.
+    // "Tainted" resta in inglese come ogni nome del gioco (DESIGN-BRIEF.md §12).
+    taintedName: 'Tainted {name}',
   },
   nextSteps: {
     intro:
