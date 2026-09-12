@@ -304,3 +304,41 @@ fn a_tainted_character_is_found_by_id_when_its_name_is_shared() {
         node.requirements
     );
 }
+
+/// The mirror of the test above, and the harder half: a **base** character's name resolves
+/// fine — to whichever of the two forms won the name index. Asked for Isaac, it can hand
+/// back Tainted Isaac, and a mark requirement built on that points at a different row of
+/// the completion matrix, with nothing to show anything went wrong.
+///
+/// Measured 2026-09-12: name-first, "Ultra Greedier as Keeper" picked row 29, which is
+/// T. Keeper. The wiki's id is the only thing that separates the two, so it goes first.
+#[test]
+fn a_base_character_is_found_by_id_even_though_its_name_also_resolves() {
+    let c = Catalog::build(|p| match p {
+        "players.xml" => Some(TAINTED_PLAYERS.as_bytes().to_vec()),
+        "achievements.xml" => Some(TAINTED_ACHIEVEMENTS.as_bytes().to_vec()),
+        _ => None,
+    });
+    // Character 0 is base Isaac; 21 is Tainted Isaac, and both are named "Isaac".
+    let requirements = r#"{"schemaVersion":1,
+        "generatedFrom":{"snapshotAt":"","maxRevid":0},
+        "achievements":{"1":{"refs":[
+            {"target":{"kind":"character","id":0},"label":"Isaac"},
+            {"target":{"kind":"entity","id":0,"variant":0,"subtype":0},"label":"Mother"}
+        ]}},
+        "targets":[]}"#;
+    let corrections = r#"{"schemaVersion":1,"verdicts":{"entity:Mother":{"progress":{
+        "mark":{"column":"mother","level":"base"}}}}}"#;
+    let g = Graph::build(&c, &rules(requirements, corrections));
+    let node = g.node(1).expect("node 1");
+    assert!(
+        node.requirements
+            .contains(&graph::model::Requirement::Mark {
+                character: catalog::CharacterId(0),
+                column: graph::rules::MarkColumn::Mother,
+                level: graph::rules::MarkLevel::Base,
+            }),
+        "the sentence names character 0, not whichever \"Isaac\" the index kept; got {:?}",
+        node.requirements
+    );
+}

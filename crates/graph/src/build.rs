@@ -62,16 +62,22 @@ impl Graph {
             // boss reference is the one that needs to know. Found once per achievement,
             // because it is a property of the sentence and not of any one reference.
             //
-            // By name, then by the wiki's id — the same two steps `requirement_with` takes,
-            // and for the same reason: the game gives a Tainted character the base form's
-            // name and tells them apart by a flag, so "Tainted Isaac" is not a key the name
-            // index has. By name alone this found nothing for 141 of the 396 character
-            // references, and every one of them fell through to the tally — answering "has
-            // anyone ever" where the sentence asked "did you, as this character".
+            // **By the wiki's id first, and only then by name.** The game gives a Tainted
+            // character the base form's name and tells them apart by a flag, so the name
+            // index holds one entry for the two and neither form can be named reliably:
+            // "Tainted Isaac" is not a key it has at all, and plain "Isaac" can come back
+            // as whichever of the two won the insert. The id is the only thing that tells
+            // them apart, and here the answer is a row of the completion matrix — a wrong
+            // one is a different character's cell, read with full confidence.
+            //
+            // Both halves of that were measured: by name alone, 141 of the 396 character
+            // references resolved to nothing and fell through to the tally; name-first,
+            // Ultra Greedier as Keeper picked row 29, which is T. Keeper.
             let character = rules.refs(id).iter().find_map(|r| match &r.target {
-                Target::Character { id: cid } => index
-                    .character(rules.alias(&r.label))
-                    .or_else(|| c.character(CharacterId(*cid)).map(|ch| ch.id)),
+                Target::Character { id: cid } => c
+                    .character(CharacterId(*cid))
+                    .map(|ch| ch.id)
+                    .or_else(|| index.character(rules.alias(&r.label))),
                 Target::Item { .. }
                 | Target::Trinket { .. }
                 | Target::Achievement { .. }
