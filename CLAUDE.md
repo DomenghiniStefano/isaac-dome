@@ -363,6 +363,36 @@ that never happens.
 - Frontend: Vitest (`pnpm ui:test`) for the logic in `ui/`, test-first like the Rust side;
   presentation is checked on the development-only Kit page (`pnpm ui:dev`, `#kit`).
 
+### Measuring on real data
+
+Most of what this repo knows about the save format was measured, not documented. These
+rules are what the measurements cost when they were skipped — each one has an incident
+behind it, named so the rule can be argued with.
+
+- **A fact that decides what *not* to measure has to be re-measured before it's trusted.**
+  On 2026-09-08 one window said a co-op run left the personal save alone, and that became
+  "co-op sessions are useless as evidence". It was wrong, and for two weeks it made every
+  co-op session — there were 21 — look not worth instrumenting. A claim of the form "X
+  can't tell us anything" is the most expensive kind to get wrong, because nothing after it
+  ever tests it. Re-measure it the first time it would save you work.
+- **"Nothing moved" is only true if you looked at every section.** That same error came from
+  reading "no achievement moved" as "nothing moved": the sections with names were checked,
+  the four still called `Unknown` weren't. `matched_window` exists so the whole file is read
+  at once — use it instead of `SaveDiff` when the question is whether *anything* changed.
+- **A negative result is a result, and silence is not one.** An instrument that reports
+  nothing proves nothing until it has been shown able to speak. Before reading a flat line
+  as evidence, make the same instrument report a change you already know about.
+- **A property over the series needs a vacuity guard.** `bit 2 implies bit 0` holds trivially
+  on a profile that has no bit 2 yet — which is every profile at the start. Assert that the
+  series actually contains the thing the property is about, the way
+  `the_three_located_columns_are_not_dead_cells` guards its neighbour. A test that cannot
+  fail is worse than no test: it reports coverage that isn't there.
+- **Anything that walks `samples/` uses `test_support::is_dated`, never its own filter.** A
+  looser filter picked up a same-day `20260912-pre.…` snapshot, won the dedup because `-`
+  sorts before `.`, and compared against the wrong end of the window — no error, just a
+  plausible wrong answer. Snapshots that are not points in the series (the "before" half of
+  a matched window) live in `samples/windows/`, not beside it.
+
 ### Wiki dataset
 
 `dataset/raw/`, `dataset/wiki.json` and `dataset/corrections.json` are committed together:
@@ -404,6 +434,19 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   delimits the substitution is also the one for closures, and the result is a file to
   restore from git. For a block of code, use a targeted text editor; regexes stay for
   single-line substitutions.
+- Don't name a section, a bit, or a tally from a guess — and don't leave one named from a
+  guess once it's been measured. Sections 3 and 6 carried wrong names for months;
+  a mark's bit 2 was "third level, meaning not confirmed" until a matched window said
+  "won online". `Unknown` costs nothing and a wrong label costs a re-derivation.
+- Don't run `cargo test --workspace` while `live_probe` runs **in the same profile**: the
+  example's exe is held open and the link fails with `LNK1104` (seen 2026-09-08). Running
+  the probe with `--release` leaves the debug build `scripts/check` uses free, which is the
+  cheap way to keep measuring while the suite runs — verified 2026-09-12. Otherwise stop the
+  probe and restart it after; the `.dat` watcher covers the gap.
+- Don't commit by `git add -A` on this repo: specs under `docs/superpowers/` are edited in
+  parallel by other sessions, and a clean `git status` at the start of a session is no
+  promise it's still clean at the end. Stage by explicit path, and say so when the tree
+  holds changes that aren't yours.
 
 ## State
 
