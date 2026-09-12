@@ -1326,6 +1326,30 @@ an `IpcError` of its own, for when the embedded dataset failed to load at all (i
 schema or malformed file — shouldn't happen in a consistent binary, but the contract accounts
 for it).
 
+**The index** (added 2026-09-12, cycle 3.5a). `wikiIndex(): Promise<WikiIndex>` answers once
+per window with every page the dataset has — its identity, its own title, and the link to
+its figure where the catalog draws one. It's what the category lists, the tab labels and the
+small icon beside every reference on a page are read from: one load settles all three, and
+"does this target have a page" with them. A dataset that didn't load is an empty index whose
+`info` says why, not a rejection.
+
+```typescript
+export interface WikiPageRef {
+  target: Target
+  title: string
+  iconUrl: string | null // null: no catalog, or the game draws nothing for this page
+}
+export interface WikiIndex {
+  info: WikiInfo
+  pages: WikiPageRef[] // the dataset's order: by kind, then by id
+}
+```
+
+The icon link is `isaac://page/<kind>/<ids>` (`page/item/105`, `page/entity/20/0/0`), served
+by the same protocol as every other icon through `target_sprite`. A page is a **tab
+location**: `{ name: 'wiki', query: { category, page: 'item:105' } }` — the page key is the
+target written as one string, never the page's content (B6).
+
 **How it renders, in three lines:**
 
 - A `ref` is an **internal** link to the entity it points at: the game's icon next to the

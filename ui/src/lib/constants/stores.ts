@@ -6,5 +6,6 @@ export const StoreId = {
   Graph: 'graph',
   Queue: 'queue',
   Collection: 'collection',
+  Wiki: 'wiki',
 } as const
 export type StoreId = (typeof StoreId)[keyof typeof StoreId]

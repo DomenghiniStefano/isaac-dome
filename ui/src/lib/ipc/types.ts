@@ -473,6 +473,19 @@ export type WikiInfo =
     }
   | { kind: 'missing'; reason: WikiMissingReason }
 
+// Mirrors crates/ipc/src/wiki.rs `WikiPageRef` and `WikiIndex`: every page the dataset has,
+// once per window. `iconUrl` is null when there is no catalog or the game draws nothing for
+// the page: a placeholder, never a broken image.
+export interface WikiPageRef {
+  target: Target
+  title: string
+  iconUrl: string | null
+}
+export interface WikiIndex {
+  info: WikiInfo
+  pages: WikiPageRef[]
+}
+
 // --- The plan queue ---
 
 // A queue row is an **achievement**, not a target: wanting Tainted Lost and wanting the
