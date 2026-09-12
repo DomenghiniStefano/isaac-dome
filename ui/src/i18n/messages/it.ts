@@ -224,6 +224,11 @@ export const it = {
       newTab: 'apri in una nuova tab',
     },
     diagnostics: {
+      noProfileTitle: 'Nessun profilo scelto',
+      noCatalogTitle: 'Gioco non installato',
+      noWikiTitle: 'Dataset della wiki non caricato',
+      noAchievementSectionTitle: 'Sezione degli achievement non letta',
+      noCollectionSectionTitle: 'Sezione della collezione non letta',
       noProfile:
         'Nessun profilo scelto: i risultati non dicono cosa hai già fatto.',
       noCatalog:

@@ -222,6 +222,11 @@ export const en: MessageSchema = {
       newTab: 'open in a new tab',
     },
     diagnostics: {
+      noProfileTitle: 'No profile chosen',
+      noCatalogTitle: 'Game not installed',
+      noWikiTitle: 'Wiki dataset not loaded',
+      noAchievementSectionTitle: 'Achievement section not read',
+      noCollectionSectionTitle: 'Collection section not read',
       noProfile:
         'No profile chosen: the results do not say what you have done.',
       noCatalog:
