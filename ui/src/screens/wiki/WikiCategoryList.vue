@@ -122,9 +122,10 @@ const rowStart = (start: number) => ({ '--row-start': `${start}px` })
               :url="page.iconUrl"
               :size="WikiFigureSize.Thumb"
             />
-            <span class="min-w-0 flex-1 truncate text-row text-foreground">{{
-              page.title
-            }}</span>
+            <span
+              class="min-w-0 flex-1 truncate text-left text-row text-foreground"
+              >{{ page.title }}</span
+            >
             <span
               v-if="pageId(page.target) !== null"
               class="shrink-0 text-micro text-faint-foreground tabular-nums"

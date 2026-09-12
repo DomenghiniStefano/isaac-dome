@@ -48,6 +48,7 @@ export const en: MessageSchema = {
     progressHint: 'Every entry reads the active profile.',
     wikiTitle: 'Wiki',
     wikiHint: 'The Wiki works without the game or a save.',
+    wikiOverview: 'Overview',
     settingsTitle: 'Settings',
     settingsHint: 'Where the app finds the game and the saves.',
   },

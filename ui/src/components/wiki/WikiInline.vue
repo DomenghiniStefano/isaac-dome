@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { assertNever } from '@/lib/assertNever'
+import { cn } from '@/lib/cn'
 import type { Inline, Target } from '@/lib/ipc/types'
 import { Style } from '@/lib/ipc/types'
 import { editionLabel } from './editionLabel'
@@ -31,14 +32,17 @@ const textClass = (style: Style): string => {
   }
 }
 
-// Each reference's icon and whether it opens, resolved once per render instead of once per
-// use in the template: a page can carry 185 references.
+// Each reference's icon, whether it opens, and whether it follows another reference with
+// nothing between — an infobox lists its places as bare references in a row, and drawn
+// back to back they read as one word. Resolved once per render instead of once per use in
+// the template: a page can carry 185 references.
 const refs = computed(() =>
-  props.inline.map((token) =>
+  props.inline.map((token, index) =>
     token.kind === 'ref'
       ? {
           icon: props.iconFor?.(token.target) ?? null,
           opens: props.canOpen?.(token.target) ?? true,
+          gap: props.inline[index - 1]?.kind === 'ref',
         }
       : null,
   ),
@@ -58,6 +62,7 @@ const refs = computed(() =>
       v-else-if="token.kind === 'ref' && refs[index]?.opens"
       :variant="ButtonVariant.Ref"
       :size="ButtonSize.Inline"
+      :class="refs[index]?.gap ? 'ml-1' : undefined"
       @click="emit('navigate', token.target, $event.ctrlKey)"
     >
       <img
@@ -69,7 +74,12 @@ const refs = computed(() =>
     </Button>
     <span
       v-else-if="token.kind === 'ref'"
-      class="border-b border-dotted border-secondary-edge text-subtle-foreground"
+      :class="
+        cn(
+          'border-b border-dotted border-secondary-edge text-subtle-foreground',
+          refs[index]?.gap && 'ml-1',
+        )
+      "
       ><img
         v-if="refs[index]?.icon"
         :src="refs[index]?.icon ?? undefined"
