@@ -229,12 +229,15 @@ type SearchMatch =
   | { kind: 'title' }
   | { kind: 'condition'; text: string }                 // the achievement's own wording
   | { kind: 'section'; section: SectionKind; before: string; matched: string; after: string }
+// Corrected on implementation (2026-09-12): fieldless, so a **bare string**, like every
+// other fieldless enum in the repo. Drawn tagged above, it would have been the first tagged
+// unit enum in the codebase, and a TypeScript switch on it would fall into no branch.
 type SearchDiagnostic =
-  | { kind: 'noProfile' }                // no done / not done: every mark is unknown
-  | { kind: 'noCatalog' }                // wiki titles only, no icons, no conditions
-  | { kind: 'noWiki' }                   // catalog names only, no page to open
-  | { kind: 'noAchievementSection' }     // achievements' marks unknown
-  | { kind: 'noCollectionSection' }      // items' marks unknown
+  | 'noProfile'                // no done / not done: every mark is unknown
+  | 'noCatalog'                // wiki titles only, no icons, no conditions
+  | 'noWiki'                   // catalog names only, no page to open
+  | 'noAchievementSection'     // achievements' marks unknown
+  | 'noCollectionSection'      // items' marks unknown
 ```
 
 - `ProgressMark` is fieldless, a bare string, `const … as const` in TypeScript. For an
@@ -294,7 +297,8 @@ trigger and by **`Ctrl+K`** from anywhere (a `useShortcut` composable on `window
 - **The query is debounced** (`Timing.SearchDebounce`, a motion token) and answers are
   numbered: an answer to an older query than the one typed is dropped, so a slow scan can't
   overwrite a fresh result.
-- **The `Command` primitive gains `filter: boolean`, default `true`.** With `false` it
+- **The `Command` primitive gains two props, not one** (corrected on implementation): `filter: boolean`, default `true`, and `search` as a model, because the palette owns the typed text — it debounces it before it reaches the backend — and the primitive has to receive it. A third correction landed with them: a row opens on the list's own `select`, never on a click, because Reka replays the click on the item and a click handler fires twice; `select` does not carry the modifier, so `Ctrl` is read from the window (`useGestureModifiers`).
+- **`filter: boolean`, default `true`.** With `false` it
   registers items and groups but scores nothing: every mounted item shows, which is what a
   list the backend already filtered needs. This is the one change B12 item 4 asks for that
   the palette can't do without; the rest of that item (the filter's tests, `autoFocus` as a
@@ -395,7 +399,7 @@ opened already filtered.
 
 **TypeScript:** `lib/ipc/types.ts`, `lib/ipc/wiki.ts`, `lib/ipc/search.ts` (new),
 `lib/constants/commands.ts`, `lib/wiki/{pageKey,category,listFilter}.ts`,
-`lib/search/{rows,latest}.ts`, `stores/{wiki,search}.ts`, `stores/tabModel.ts` (`tabLabel`),
+`lib/search/{rows,latest,queryParam}.ts`, `composables/{useSearch,useGestureModifiers,useScaledRows}.ts` (the search state is a **composable, not a store** — corrected on implementation: the palette and the screen ask different questions at the same time, and one store would have each overwrite the other's answer), `stores/wiki.ts`, `stores/tabModel.ts` (`tabLabel`),
 `router/routeTable.ts` (`Search`, `q`, `page`), `router/routes.ts`,
 `components/shell/{tabs,tabOriginIcon,sectionNav}.ts`, `components/ui/command/Command.vue`
 (`filter`), `components/wiki/{WikiInline,WikiBlocks}.vue` (`newTab`, `canOpen`),
