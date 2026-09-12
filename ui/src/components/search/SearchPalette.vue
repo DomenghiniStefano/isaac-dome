@@ -11,6 +11,7 @@ import {
   CommandList,
 } from '@/components/ui/command'
 import { Kbd, KbdGroup } from '@/components/ui/kbd'
+import { useGestureModifiers } from '@/composables/useGestureModifiers'
 import { useSearch } from '@/composables/useSearch'
 import { useShortcut } from '@/composables/useShortcut'
 import { useMessages } from '@/i18n'
@@ -29,6 +30,7 @@ import {
 } from '@/lib/search/rows'
 import type { SearchRow } from '@/lib/search/rows'
 import { RouteName } from '@/router/routeTable'
+import type { TabLocation } from '@/router/routeTable'
 import { useTabsStore } from '@/stores/tabs'
 import SearchRowContent from './SearchRow.vue'
 
@@ -86,22 +88,22 @@ const groupLabel: Record<RowGroup, MessageKey<MessageSchema>> = {
 const total = computed(() => view.value?.total ?? 0)
 const hasQuery = computed(() => typed.value.trim() !== '')
 
-// A click or Enter navigates the active tab; Ctrl opens the row beside it, as a browser does.
-const go = (row: SearchRow, event: MouseEvent | KeyboardEvent) => {
-  if (event.ctrlKey) tabs.open(row.location)
-  else tabs.navigate(row.location)
-  open.value = false
-}
+// Opening goes through the list's own `select`, not a click: Reka replays the click on the
+// item, so a click handler fires twice and opens two tabs. `select` says *that* a row was
+// chosen but not *how*, so the modifier of the gesture that produced it is read from the window.
+const { ctrl } = useGestureModifiers()
 
-const allResults = (event: MouseEvent | KeyboardEvent) => {
-  const location = {
-    name: RouteName.Search,
-    query: { q: typed.value },
-  }
-  if (event.ctrlKey) tabs.open(location)
+// Enter navigates the active tab; Ctrl opens the row beside it, as a browser does.
+const openAt = (location: TabLocation) => {
+  if (ctrl.value) tabs.open(location)
   else tabs.navigate(location)
   open.value = false
 }
+
+const go = (row: SearchRow) => openAt(row.location)
+
+const allResults = () =>
+  openAt({ name: RouteName.Search, query: { q: typed.value } })
 </script>
 
 <template>
@@ -124,18 +126,13 @@ const allResults = (event: MouseEvent | KeyboardEvent) => {
           v-for="row in group.rows"
           :key="row.key"
           :value="row.key"
-          @click="go(row, $event)"
-          @keydown.enter="go(row, $event)"
+          @select="go(row)"
         >
           <SearchRowContent :row="row" />
         </CommandItem>
       </CommandGroup>
       <CommandGroup v-if="hasQuery && total > 0">
-        <CommandItem
-          value="all-results"
-          @click="allResults($event)"
-          @keydown.enter="allResults($event)"
-        >
+        <CommandItem value="all-results" @select="allResults()">
           {{ t('search.allResults', { count: total }) }}
         </CommandItem>
       </CommandGroup>
