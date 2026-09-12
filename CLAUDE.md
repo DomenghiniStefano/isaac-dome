@@ -120,9 +120,14 @@ observed values are only 0, 1, 2, 3, 5, 7. Bits 0 and 1 are the mark's levels; *
 "won online"**, measured on 2026-09-12 (see below). That the set holds no 4 and no 6 is the
 structural half of that reading — an online clear is also a clear, so bit 2 never stands
 without bit 0 — and it is pinned by `the_online_bit_never_stands_without_the_cleared_bit`
-in `crates/ipc/tests/marks_real.rs`. The two **levels** are still the unmeasured half, so
-**don't compute completion percentages**: what forbids them now is B22/B23, not an unread
-bit.
+in `crates/ipc/tests/marks_real.rs`. The two **levels** are the unmeasured half **except in
+one column**: in **Greed**, bit 1 is **Ultra Greedier**, measured on 2026-09-12 on three days
+with three different characters (Keeper, Judas, Magdalene), each time the right character's
+cell. What bit 1 means in the other eleven is still unmeasured, and `graph::rules::MarkLevel`
+is therefore named `Base` / `Second` after the bits and not `Hard` after a meaning. The
+property is kept by `winning_greedier_sets_the_second_bit_of_that_characters_greed_cell` in
+`crates/ipc/tests/progress_real.rs`. Still **don't compute completion percentages**: what
+forbids them now is B22/B23, not an unread bit.
 
 **The matrix is 34 × 12** since 2026-09-08: the last three columns were located on the
 historical series, not read off a document. Delirium for the 19 later characters starts at
