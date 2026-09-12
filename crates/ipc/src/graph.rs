@@ -4,6 +4,7 @@
 //! saying "the graph doesn't exist" would now be lying.
 
 use serde::{Deserialize, Serialize};
+use wiki::{Dataset, Target};
 
 pub use crate::goals::{Goal, GoalId, TargetKey, UnlockTarget};
 
@@ -43,25 +44,30 @@ pub enum RequirementView {
         /// beside it is what tells the two apart.
         name: String,
         tainted: bool,
+        /// The wiki page that says how *this* is unlocked. `None` means the dataset has no
+        /// page for it: the name shows and does not link. Never "no requirement".
+        page: Option<Target>,
     },
     Boss {
         id: u32,
         name: String,
+        page: Option<Target>,
     },
     Challenge {
         id: u32,
         name: String,
+        page: Option<Target>,
     },
     /// `itemKind` and not `kind`: the tag already took that name.
     Item {
         item_kind: ItemKindView,
         id: u32,
         name: String,
+        page: Option<Target>,
     },
-    /// A curated gate — stage, room, mode. The label is what the wiki calls it.
-    Gate {
-        label: String,
-    },
+    /// A curated gate — stage, room, mode. The label is what the wiki calls it. No page by
+    /// construction: it is a condition we chose not to resolve to an entity.
+    Gate { label: String },
     /// One cell of the completion matrix: go and beat `column` with this character.
     ///
     /// No progress field, unlike `Counter`: for one cell the state is binary, and an
@@ -80,9 +86,7 @@ pub enum RequirementView {
         at_least: u32,
     },
     /// Not interpreted. A node carrying one cannot claim "available now".
-    Unknown {
-        label: String,
-    },
+    Unknown { label: String },
 }
 
 /// The twelve columns, as a value on the wire. Fieldless, so it is a bare camelCase string
@@ -289,6 +293,14 @@ use catalog::{AchievementId, BossId, Catalog, ChallengeId, CharacterId, ItemId, 
 
 use crate::catalog_view::{item_kind, kind_view, ItemKindView};
 use crate::icon::IconRef;
+use crate::wiki_target;
+
+/// A page, only when the dataset really has one. `Some(target)` is a link the screen can
+/// follow; `None` is a name it draws without one — never a link that leads nowhere.
+fn page_of(dataset: Option<&Dataset>, target: Option<Target>) -> Option<Target> {
+    let (ds, t) = (dataset?, target?);
+    ds.entry(&t).is_some().then_some(t)
+}
 
 /// The Unlock view: one node per slot 1..=N of section 1 of the save. `flags[i]` is
 /// slot i; slot 0 is unused (the `slot[id]` mapping, verified on 2026-09-05: 169 items
@@ -303,6 +315,7 @@ use crate::icon::IconRef;
 /// `Requirement::None` never reaches here — it was judged as gating nothing.
 fn missing_view(
     c: &Catalog,
+    dataset: Option<&Dataset>,
     node: &graph::build::Node,
     flags: &[bool],
     progress: Option<&dyn graph::Profile>,
@@ -358,6 +371,7 @@ fn missing_view(
                         id: id.0,
                         name: c.text(&ch.name, en).to_string(),
                         tainted: ch.tainted,
+                        page: page_of(dataset, Some(wiki_target::character(ch))),
                     });
                 }
             }
@@ -367,6 +381,7 @@ fn missing_view(
                     out.push(RequirementView::Boss {
                         id: id.0,
                         name: b.name.clone(),
+                        page: page_of(dataset, wiki_target::boss(b)),
                     });
                 }
             }
@@ -377,6 +392,7 @@ fn missing_view(
                     out.push(RequirementView::Challenge {
                         id: id.0,
                         name: ch.name.clone(),
+                        page: page_of(dataset, Some(wiki_target::challenge(ch))),
                     });
                 }
             }
@@ -389,6 +405,7 @@ fn missing_view(
                         item_kind: kind_view(*kind),
                         id: id.0,
                         name: c.text(&i.name, en).to_string(),
+                        page: page_of(dataset, Some(wiki_target::item(i))),
                     });
                 }
             }
@@ -412,6 +429,7 @@ fn missing_view(
 /// as "nothing is in the way".
 pub fn unlock_view(
     catalog: Option<&Catalog>,
+    dataset: Option<&Dataset>,
     flags: Option<&[bool]>,
     graph: Option<&graph::Graph>,
     eval: Option<&graph::evaluate::Eval>,
@@ -483,7 +501,7 @@ pub fn unlock_view(
             },
         };
         let missing = match (catalog, graph.and_then(|g| g.node(slot))) {
-            (Some(c), Some(n)) => missing_view(c, n, read, progress),
+            (Some(c), Some(n)) => missing_view(c, dataset, n, read, progress),
             _ => Vec::new(),
         };
         nodes.push(UnlockNode {
