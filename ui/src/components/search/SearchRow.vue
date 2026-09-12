@@ -1,0 +1,104 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import PixelSprite from '@/components/sprite/PixelSprite.vue'
+import { Badge, BadgeVariant } from '@/components/ui/badge'
+import { useMessages } from '@/i18n'
+import { assertNever } from '@/lib/assertNever'
+import { ProgressMark } from '@/lib/ipc/types'
+import type { MessageKey } from '@/i18n/messageKey'
+import type { MessageSchema } from '@/i18n/messages/it'
+import { RowGroup } from '@/lib/search/rows'
+import type { SearchRow } from '@/lib/search/rows'
+import { sectionText } from '@/screens/wiki/wikiLabels'
+
+const props = defineProps<{ row: SearchRow }>()
+const { t } = useMessages()
+
+const groupLabel: Record<RowGroup, MessageKey<MessageSchema>> = {
+  [RowGroup.Screens]: 'search.groups.screens',
+  [RowGroup.Wiki]: 'search.groups.wiki',
+  [RowGroup.Unlock]: 'search.groups.unlock',
+  [RowGroup.Collection]: 'search.groups.collection',
+}
+
+// What the row is called: a screen's name is a message, everything else is data in English.
+const title = computed(() =>
+  props.row.kind === 'screen' ? t(props.row.entry.label) : props.row.hit.title,
+)
+
+const iconUrl = computed(() =>
+  props.row.kind === 'hit' ? props.row.hit.iconUrl : null,
+)
+
+// A hit's mark, when it has one: a boss or a character has no slot to read.
+const mark = computed(() =>
+  props.row.kind === 'hit' && props.row.hit.progress !== ProgressMark.None
+    ? props.row.hit.progress
+    : null,
+)
+
+const markVariant: Record<
+  Exclude<ProgressMark, typeof ProgressMark.None>,
+  BadgeVariant
+> = {
+  [ProgressMark.Done]: BadgeVariant.Done,
+  [ProgressMark.Pending]: BadgeVariant.Now,
+  [ProgressMark.Unknown]: BadgeVariant.Unknown,
+}
+
+const markText: Record<
+  Exclude<ProgressMark, typeof ProgressMark.None>,
+  MessageKey<MessageSchema>
+> = {
+  [ProgressMark.Done]: 'search.progress.done',
+  [ProgressMark.Pending]: 'search.progress.pending',
+  [ProgressMark.Unknown]: 'search.progress.unknown',
+}
+
+interface Detail {
+  before: string
+  matched: string
+  after: string
+}
+
+// The second line says **why** this matched: the page's own words around the match, the
+// achievement's condition, or — for a title match — nothing to add.
+const detail = computed((): Detail | null => {
+  if (props.row.kind === 'screen') return null
+  const match = props.row.hit.match
+  switch (match.kind) {
+    case 'title':
+      return null
+    case 'condition':
+      return { before: match.text, matched: '', after: '' }
+    case 'section':
+      return {
+        before: `${t(sectionText[match.section])} · ${match.before}`,
+        matched: match.matched,
+        after: match.after,
+      }
+    default:
+      return assertNever(match)
+  }
+})
+</script>
+
+<template>
+  <div class="flex min-w-0 flex-1 items-center gap-3">
+    <PixelSprite :url="iconUrl" placeholder class="size-icon-compact" />
+    <div class="flex min-w-0 flex-1 flex-col">
+      <span class="truncate text-row text-foreground">{{ title }}</span>
+      <span v-if="detail" class="truncate text-caption text-subtle-foreground">
+        {{ detail.before
+        }}<span class="text-highlight">{{ detail.matched }}</span
+        >{{ detail.after }}
+      </span>
+    </div>
+    <span class="shrink-0 text-caption text-faint-foreground">{{
+      t(groupLabel[row.group])
+    }}</span>
+    <Badge v-if="mark" :variant="markVariant[mark]">{{
+      t(markText[mark])
+    }}</Badge>
+  </div>
+</template>
