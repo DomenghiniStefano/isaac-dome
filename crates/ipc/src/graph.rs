@@ -266,6 +266,11 @@ fn missing_view(c: &Catalog, node: &graph::build::Node, flags: &[bool]) -> Vec<R
     for r in &node.requirements {
         match r {
             graph::model::Requirement::None => {}
+            // Task 7 of the 2026-09-12 plan gives these their own views, built against the
+            // profile. Until then they are not drawn: `missing_view` has no profile to ask
+            // whether the cell was reached, and a requirement drawn as missing without
+            // looking would be a guess with a picture on it.
+            graph::model::Requirement::Mark { .. } | graph::model::Requirement::Counter { .. } => {}
             graph::model::Requirement::Character { id } => {
                 let Some(ch) = c.character(*id) else { continue };
                 if !done(ch.unlocked_by) {
