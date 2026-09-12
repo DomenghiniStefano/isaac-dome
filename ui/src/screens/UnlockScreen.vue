@@ -8,6 +8,7 @@ import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
+import { characterForms } from '@/lib/graph/characterName'
 import { stateCounts } from '@/lib/graph/nodeState'
 import {
   FacetId,
@@ -43,6 +44,8 @@ const sort = ref<UnlockSort>(UnlockSort.FanOut)
 
 const nodes = computed(() => graph.unlock?.nodes ?? [])
 const counts = computed(() => stateCounts(nodes.value))
+// The character facet's labels: the value is an id, the name is read from the nodes.
+const characters = computed(() => characterForms(nodes.value))
 const rows = computed(() =>
   sortNodes(
     nodes.value.filter((node) => matchesFilter(node, filter.value)),
@@ -112,6 +115,7 @@ const reset = () => {
           :filter="filter"
           :query="filter.query"
           :sort="sort"
+          :characters="characters"
           @update:query="setQuery"
           @update:sort="setSort"
           @toggle="toggle"

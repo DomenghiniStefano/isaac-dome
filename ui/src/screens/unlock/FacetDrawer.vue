@@ -9,6 +9,7 @@ import {
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { useMessages } from '@/i18n'
+import { characterForms } from '@/lib/graph/characterName'
 import {
   FacetId,
   activeFilterCount,
@@ -33,6 +34,9 @@ const drawerFacets: FacetId[] = [
   FacetId.Character,
 ]
 
+// The character facet stores ids: its labels are read from here (`docs/BACKLOG.md` B28).
+const characters = computed(() => characterForms(props.nodes))
+
 // Each count is over the rows every other facet and the search leave: it says what picking
 // the value would give. A value that would give nothing, and isn't picked, can't be picked.
 const columns = computed(() =>
@@ -43,7 +47,7 @@ const columns = computed(() =>
       facet,
       values: facetOptions(props.nodes, facet).map((value) => ({
         value,
-        label: facetValueLabel(t, facet, value),
+        label: facetValueLabel(t, facet, value, characters.value),
         count: counts.get(value) ?? 0,
         picked: picked.includes(value),
       })),

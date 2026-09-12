@@ -208,7 +208,7 @@ export type UnlockTarget =
       // The same kind of link as `AchievementRef.known.iconUrl` above: `isaac://item/passive/92`.
       iconUrl: string | null
     }
-  | { kind: 'character'; id: number; name: string }
+  | { kind: 'character'; id: number; name: string; tainted: boolean }
   | { kind: 'boss'; id: number; name: string }
   // The challenge's reward: the ids of the achievements that completing it grants.
   // Each one's node (done or not, what it unlocks) already lives in UnlockView.nodes,
@@ -242,7 +242,9 @@ export type GraphInfo =
 // What a node is still missing, typed by the nature of the target: this is what the
 // screen groups by, so it can say "1 character and 2 bosses" instead of "blocked by 3".
 export type RequirementView =
-  | { kind: 'character'; id: number; name: string }
+  // `tainted` is part of the identity, not decoration: the two forms of a character share
+  // the game's name, so the name alone names both (`docs/BACKLOG.md` B28).
+  | { kind: 'character'; id: number; name: string; tainted: boolean }
   | { kind: 'boss'; id: number; name: string }
   | { kind: 'challenge'; id: number; name: string }
   | { kind: 'item'; itemKind: ItemKindView; id: number; name: string }

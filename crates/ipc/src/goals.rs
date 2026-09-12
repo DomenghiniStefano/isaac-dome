@@ -64,16 +64,28 @@ pub enum TargetKey {
     Challenge { id: u32 },
 }
 
+/// Everything the catalog adds to a key to make it a view: what one variant needs the
+/// others ignore. A struct rather than four parameters, so a new field is one line here
+/// and not a fifth positional argument at every call.
+#[derive(Debug, Default)]
+pub(crate) struct Resolved {
+    pub name: String,
+    pub icon_url: Option<String>,
+    pub rewards: Vec<u32>,
+    pub tainted: bool,
+}
+
 impl TargetKey {
     /// The key in the form the UI shows, with the name (and icon) the catalog has
     /// resolved. Only one place builds an `UnlockTarget` from a key: it's the inverse
     /// of `UnlockTarget::key`, and the two are checked against each other.
-    pub(crate) fn view(
-        &self,
-        name: String,
-        icon_url: Option<String>,
-        rewards: Vec<u32>,
-    ) -> UnlockTarget {
+    pub(crate) fn view(&self, r: Resolved) -> UnlockTarget {
+        let Resolved {
+            name,
+            icon_url,
+            rewards,
+            tainted,
+        } = r;
         match *self {
             TargetKey::Item { item_kind: k, id } => UnlockTarget::Item {
                 item_kind: k,
@@ -81,7 +93,7 @@ impl TargetKey {
                 name,
                 icon_url,
             },
-            TargetKey::Character { id } => UnlockTarget::Character { id, name },
+            TargetKey::Character { id } => UnlockTarget::Character { id, name, tainted },
             TargetKey::Boss { id } => UnlockTarget::Boss { id, name },
             TargetKey::Challenge { id } => UnlockTarget::Challenge { id, name, rewards },
         }
@@ -108,7 +120,13 @@ pub enum UnlockTarget {
     },
     Character {
         id: u32,
+        /// The game's name, English like every game name. The **base and Tainted forms share
+        /// it**: `achievements.xml` writes *You unlocked "The Lost"* for both, so the name
+        /// alone names two characters and the flag below is what tells them apart.
         name: String,
+        /// The Tainted form, as `players.xml` declares it (the `b` in the portrait's name).
+        /// The same pair the completion matrix identifies a character by.
+        tainted: bool,
     },
     Boss {
         id: u32,
