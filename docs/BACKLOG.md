@@ -1238,7 +1238,7 @@ change, and no route named `about` exists.
 
 ---
 
-## B26 — Scaling the whole interface from Settings (implementation, **pulled ahead**: it shapes every token)
+## B26 — Scaling the whole interface from Settings (implementation, **pulled ahead**: it shapes every token) ✅ closed on 2026-09-12
 
 Logged 2026-09-12, a product requirement from the owner, with a priority: the user picks the
 size of the whole interface from Settings, with a **draggable slider over fixed steps**, and it

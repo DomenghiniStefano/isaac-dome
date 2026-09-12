@@ -427,9 +427,12 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
                         **Runs after 3.5c**: the palette and the Search screen are screens,
                         and the scale has to rewrite the tokens before a screen is built on
                         them
-            - [ ] **3.5c Interface scale (B26)** — pulled ahead of 3.6 on the owner's
-                  request (2026-09-12); numbered `c` because `b` was already the search half
-                  of 3.5, which it now precedes. The whole interface scales from Settings **as
+            - [x] **3.5c Interface scale (2026-09-12, B26)** — pulled ahead of 3.6 on the
+                  owner's request; numbered `c` because `b` was already the search half
+                  of 3.5, which it now precedes. Spec
+                  `docs/superpowers/specs/2026-09-12-screens-scale-design.md`, plan
+                  `docs/superpowers/plans/2026-09-12-screens-scale.md`. The whole interface
+                  scales from Settings **as
                   Discord's zoom level does** — a slider over its eleven steps 50–200,
                   `Ctrl` `+`/`-`, a preview card pinned at the top of the page — persisted
                   in `settings.json`, applied before the first paint. It goes first because
@@ -787,6 +790,44 @@ save against the dated backup the game wrote before it, and read which cells mov
 
 ## Session log
 
+### 2026-09-12 (evening) — the interface scales
+
+On `feature/screens-scale`, sub-project 3.5c, ahead of the search half and of 3.6 because it
+rewrites the token files and every screen built after it is built on the scaled tokens.
+
+- [x] **A root scale, not the webview's zoom.** `html` is `calc(16px * var(--app-scale))` and
+      every size token is in rem, so one custom property carries the whole interface: it works
+      on the Kit page, it survives a torn-off window (B15), and it leaves the rules
+      inspectable in CSS. The eleven steps are Discord's — 50 · 67 · 75 · 80 · 90 · 100 · 110 ·
+      125 · 150 · 175 · 200 — written twice, in `crates/ipc/src/settings.rs` and in
+      `lib/scale/steps.ts`, with a test that reads the Rust source: two ladders that drift are
+      a slider that saves a value the backend refuses.
+- [x] **A value off the ladder reads as 100**, never as the nearest step: 137 is a file we
+      didn't write, and "about 125" would draw the app at a size nobody designed. The
+      guarantee lives in `Settings::scale()`, so no command can read the field raw.
+- [x] **Pixel art keeps whole multiples.** A 32px sprite is drawn at `round(2 × factor)` times
+      its size, an integer on the root, and the three tokens that *are* a sprite are measured
+      from it — at 125 the multiple rounds up, so a cell in rem would be smaller than the
+      symbol inside it.
+- [x] **Applied before the first paint**: `main.ts` reads the setting and writes the properties
+      before mounting, and the splash of B18 covers the wait. The store applies first and saves
+      after — the user asked for the size, so a failed write leaves the app at it and says so.
+- [x] **Two defects the scale made visible**, both fixed at the root rather than patched: the
+      three virtualized tables positioned their rows with a fixed 40 while the row was drawn
+      from the token, so at any scale but 100 they would have overlapped (one `rowWidePx` now,
+      in place of three copies of the number); and the sidebar's width was in screen pixels, so
+      at 200% its labels were cut off — it is kept in the design's pixels now, multiplied by
+      the scale, with the drag dividing the pointer's travel by it.
+- [x] **The scanner gained a rule**: a px token in `assets/` needs a reason on the line above.
+      Four keep px and say why — the scrollbar, the two radii, the tab's container breakpoint —
+      and the sprite tokens are `calc()` on the multiple.
+- [x] **Looked at through Playwright**: 100 → 110 → 200 with `Ctrl` `+`, the root at 32px, the
+      sidebar at 424px with its labels whole, Unlock's rows 80px tall and 80px apart, the
+      preview card pinned while the page scrolls, and the navbar no longer overlapping itself.
+- [ ] **Not seen in a real Tauri window**, and the value's survival across a restart is the one
+      thing the development server can't show: its fixture keeps the size for the page's life,
+      the file is the app's.
+
 ### 2026-09-12 (later) — the review's small half, implemented
 
 On `feature/review-fixes`, cut from `develop`: the entries of the review that needed no
@@ -836,7 +877,7 @@ written up as B16–B33 in `docs/BACKLOG.md`:
       and "non leggibile" leaves a healthy save (B20); a mark taken in multiplayer, bit 2 as
       the candidate to verify (B21); hard implies normal and two counts per row (B22); the
       KPI strip loses "120 celle" and "40 non leggibili" (B23).
-- [ ] **Scale**: the whole interface scales from Settings, and it is pulled ahead as
+- [x] **Scale**: the whole interface scales from Settings, and it is pulled ahead as
       sub-project 3.5c because it rewrites the tokens (B26).
 - [ ] **Tables**: a table fills the page or is sized by the mouse, and a dragged size is
       remembered per table, in the place 3.7 chooses for the session (B27).
