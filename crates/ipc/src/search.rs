@@ -7,13 +7,14 @@
 
 use std::collections::BTreeMap;
 
-use catalog::{Catalog, ItemKind, Language};
+use catalog::{Catalog, Language};
 use serde::Serialize;
 use wiki::{Block, Dataset, DatasetError, Entry, Inline, SectionKind, Target};
 
 use crate::icon::IconRef;
-use crate::target_sprite::{entity_key, target_sprite, TargetSprite};
+use crate::target_sprite::{target_sprite, TargetSprite};
 use crate::wiki::boss_target;
+use crate::wiki_target;
 
 /// One page as the search reads it: the title, and the text of each section in the order the
 /// page has them.
@@ -170,42 +171,28 @@ fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTreeMap<Target,
         }
     };
     for i in c.items() {
-        let target = match i.kind {
-            ItemKind::Trinket => Target::Trinket { id: i.id.0 },
-            ItemKind::Passive | ItemKind::Active | ItemKind::Familiar => {
-                Target::Item { id: i.id.0 }
-            }
-        };
-        join(target, c.text(&i.name, en).to_string(), None);
+        join(wiki_target::item(i), c.text(&i.name, en).to_string(), None);
     }
     for p in c.characters() {
         join(
-            Target::Character { id: p.id.0 },
+            wiki_target::character(p),
             c.text(&p.name, en).to_string(),
             None,
         );
     }
     for b in c.bosses() {
-        // The portrait's file name carries the entity key, exactly as `target_sprite` reads
-        // it; a portrait that doesn't declare one names no target and is left out.
-        if let Some((id, variant)) = entity_key(&b.portrait.path) {
-            join(
-                Target::Entity {
-                    id,
-                    variant,
-                    subtype: 0,
-                },
-                b.name.clone(),
-                None,
-            );
+        // The portrait's file name carries the entity key; a portrait that doesn't declare
+        // one names no target and is left out.
+        if let Some(target) = wiki_target::boss(b) {
+            join(target, b.name.clone(), None);
         }
     }
     for ch in c.challenges() {
-        join(Target::Challenge { number: ch.id.0 }, ch.name.clone(), None);
+        join(wiki_target::challenge(ch), ch.name.clone(), None);
     }
     for a in c.achievements() {
         join(
-            Target::Achievement { id: a.id.0 },
+            wiki_target::achievement(a.id),
             a.text.clone(),
             a.unlock_condition.clone(),
         );
