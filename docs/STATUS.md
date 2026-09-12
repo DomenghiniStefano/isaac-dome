@@ -23,7 +23,7 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-11
+**Last update:** 2026-09-12
 
 ---
 
@@ -415,9 +415,34 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
                   `docs/superpowers/specs/2026-09-11-screens-collection-design.md`, plan
                   `docs/superpowers/plans/2026-09-11-screens-collection.md`, branch
                   `feature/screens-collection`
-            - [ ] 3.5 Wiki in tabs, search — the `Ctrl+K` palette (B5)
-            - [ ] 3.6 Settings and About — provenance, credits, the three promises
-            - [ ] 3.7 Tabs that survive a restart (B6)
+            - [ ] 3.5 Wiki in tabs, search — spec
+                  `docs/superpowers/specs/2026-09-12-screens-wiki-search-design.md`, branch
+                  `feature/screens-wiki-search`, two halves:
+                  - [x] 3.5a the Wiki in tabs (2026-09-12) — the landing with the dataset's
+                        provenance, a category's list, a page in a tab (figure, infobox per
+                        kind, sections, references that open in place or beside), the
+                        `wiki_index` command and `IconRef::Page`. Plan
+                        `docs/superpowers/plans/2026-09-12-screens-wiki.md`
+                  - [ ] 3.5b search — the `Ctrl+K` palette and the Search screen (B5).
+                        **Runs after 3.5c**: the palette and the Search screen are screens,
+                        and the scale has to rewrite the tokens before a screen is built on
+                        them
+            - [ ] **3.5c Interface scale (B26)** — pulled ahead of 3.6 on the owner's
+                  request (2026-09-12); numbered `c` because `b` was already the search half
+                  of 3.5, which it now precedes. The whole interface scales from Settings **as
+                  Discord's zoom level does** — a slider over its eleven steps 50–200,
+                  `Ctrl` `+`/`-`, a preview card pinned at the top of the page — persisted
+                  in `settings.json`, applied before the first paint. It goes first because
+                  it rewrites the token files — px to rem, the
+                  root font size as the scale, sprites at whole multiples — and every screen
+                  built after it is built on the scaled tokens. Done when the slider moves
+                  the whole app with no element left at its old size, on the Kit page and
+                  in the built app. Needs a `Slider` primitive (none in the kit yet)
+            - [ ] 3.6 Settings and About — provenance, credits, the three promises; About
+                  becomes a dialog, not a page (B25); the profile screen becomes a welcome
+                  flow (B17); the KPI and matrix changes of B20, B22, B23
+            - [ ] 3.7 Tabs that survive a restart (B6) — the same session document holds
+                  the sidebar's width and every table's dragged size, per table (B27)
 
 ---
 
@@ -761,6 +786,31 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-12 — the owner's first-launch review, as backlog entries
+
+The review the "(delegated)" decisions were waiting for, dictated screen by screen and
+written up as B16–B26 in `docs/BACKLOG.md`, nothing implemented:
+
+- [ ] **Chrome**: the brand mark becomes the app icon, in `primary` (B16); no white flash at
+      launch, a splash with the mark (B18); About is a dialog, not a page (B25).
+- [ ] **Navigation**: clicking a section navigates to its first page at once and the section
+      reads as lit — this reverses Decision 5 of the shell spec, on purpose (B24).
+- [ ] **Profile**: "Schermata 0" and the settings copy go; the screen is a welcome flow with a
+      preview per save (B17).
+- [ ] **Completion**: the game's paper under a mark (B19); the 40 unknown cells get measured
+      and "non leggibile" leaves a healthy save (B20); a mark taken in multiplayer, bit 2 as
+      the candidate to verify (B21); hard implies normal and two counts per row (B22); the
+      KPI strip loses "120 celle" and "40 non leggibili" (B23).
+- [ ] **Scale**: the whole interface scales from Settings, and it is pulled ahead as
+      sub-project 3.5c because it rewrites the tokens (B26).
+- [ ] **Tables**: a table fills the page or is sized by the mouse, and a dragged size is
+      remembered per table, in the place 3.7 chooses for the session (B27).
+- [ ] **A bug in Unlock, traced**: slots 474–490 are the Tainted characters, whose `text`
+      in `achievements.xml` is the base name; the save and the graph are right, the label
+      drops the `tainted` flag the marks matrix already uses (B28).
+- [ ] **Collection's filter**: "Faccette" goes, and so do values with nothing behind them
+      (B29).
 
 ### 2026-09-11 (late night) — the Collection
 
