@@ -6,6 +6,7 @@ import { useMessages } from '@/i18n'
 import { AppName } from '@/lib/constants/app'
 import { AriaCurrent } from '@/lib/constants/aria'
 import { KeyName } from '@/lib/constants/keyNames'
+import BrandMark from './BrandMark.vue'
 import { NavSection, navSectionIcon, navSectionLabel } from './navSection'
 
 // `section` is the active tab's, `null` while a settings page is open; `settingsActive`
@@ -41,9 +42,7 @@ const current = (s: NavSection) =>
     <div
       class="flex h-full w-brand shrink-0 items-center gap-2 border-r border-hairline pl-3"
     >
-      <span
-        class="size-3.5 border-2 border-primary bg-sheet group-data-[focused=false]:border-border"
-      />
+      <BrandMark class="text-primary group-data-[focused=false]:text-border" />
       <span
         class="text-control text-foreground group-data-[focused=false]:text-faint-foreground"
         >{{ AppName }}</span
