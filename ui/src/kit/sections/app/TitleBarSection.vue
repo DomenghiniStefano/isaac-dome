@@ -45,7 +45,7 @@ const add = () => {
   const id = `new-${added}`
   tabs.value = [
     ...tabs.value,
-    { id, label: `Nuova ${added}`, origin: TabOrigin.About },
+    { id, label: `Nuova ${added}`, origin: TabOrigin.Settings },
   ]
   active.value = id
 }

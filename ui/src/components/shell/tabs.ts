@@ -4,7 +4,6 @@ export const TabOrigin = {
   Wiki: 'wiki',
   Progress: 'progress',
   Settings: 'settings',
-  About: 'about',
 } as const
 export type TabOrigin = (typeof TabOrigin)[keyof typeof TabOrigin]
 

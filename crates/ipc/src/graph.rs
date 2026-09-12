@@ -39,7 +39,10 @@ pub struct UnlockNode {
 pub enum RequirementView {
     Character {
         id: u32,
+        /// Shared by the base and Tainted forms, like `UnlockTarget::Character`: the flag
+        /// beside it is what tells the two apart.
         name: String,
+        tainted: bool,
     },
     Boss {
         id: u32,
@@ -269,6 +272,7 @@ fn missing_view(c: &Catalog, node: &graph::build::Node, flags: &[bool]) -> Vec<R
                     out.push(RequirementView::Character {
                         id: id.0,
                         name: c.text(&ch.name, en).to_string(),
+                        tainted: ch.tainted,
                     });
                 }
             }
@@ -456,28 +460,28 @@ pub fn resolve_target(
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> Option<UnlockTarget> {
     let english = catalog::Language::English;
-    let mut rewards = Vec::new();
-    let (name, icon_url) = match *key {
+    let mut resolved = crate::goals::Resolved::default();
+    match *key {
         TargetKey::Item { item_kind: k, id } => {
             let i = c.item(item_kind(k), ItemId(id))?;
-            (
-                c.text(&i.name, english).to_string(),
-                icon(&IconRef::Item { kind: k, id }),
-            )
+            resolved.name = c.text(&i.name, english).to_string();
+            resolved.icon_url = icon(&IconRef::Item { kind: k, id });
         }
-        TargetKey::Character { id } => (
-            c.text(&c.character(CharacterId(id))?.name, english)
-                .to_string(),
-            None,
-        ),
-        TargetKey::Boss { id } => (c.boss(BossId(id))?.name.clone(), None),
+        TargetKey::Character { id } => {
+            let ch = c.character(CharacterId(id))?;
+            resolved.name = c.text(&ch.name, english).to_string();
+            // The base and Tainted forms carry the same name key: without the flag the two
+            // go out as one character (`docs/BACKLOG.md` B28).
+            resolved.tainted = ch.tainted;
+        }
+        TargetKey::Boss { id } => resolved.name = c.boss(BossId(id))?.name.clone(),
         TargetKey::Challenge { id } => {
             let ch = c.challenge(ChallengeId(id))?;
-            rewards = ch.rewards.iter().map(|a| a.0).collect();
-            (ch.name.clone(), None)
+            resolved.rewards = ch.rewards.iter().map(|a| a.0).collect();
+            resolved.name = ch.name.clone();
         }
-    };
-    Some(key.view(name, icon_url, rewards))
+    }
+    Some(key.view(resolved))
 }
 
 /// A catalog edge as the UI sees it. The edge is born from the catalog that resolves it
@@ -489,7 +493,7 @@ pub fn target_of(
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> UnlockTarget {
     let key = key_of(u);
-    resolve_target(c, &key, icon).unwrap_or_else(|| key.view(String::new(), None, Vec::new()))
+    resolve_target(c, &key, icon).unwrap_or_else(|| key.view(crate::goals::Resolved::default()))
 }
 
 /// The key of a catalog edge. The catalog's ids are newtypes; at the boundary they aren't.

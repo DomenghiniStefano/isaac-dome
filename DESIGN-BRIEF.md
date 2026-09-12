@@ -845,7 +845,7 @@ type TargetKey =
 // the same identity as the interface shows it: name and icon resolved right now
 type UnlockTarget =
   | { kind: 'item'; itemKind: ItemKindView; id: number; name: string; iconUrl: string | null }
-  | { kind: 'character'; id: number; name: string }
+  | { kind: 'character'; id: number; name: string; tainted: boolean }
   | { kind: 'boss'; id: number; name: string }
   | { kind: 'challenge'; id: number; name: string }
 
@@ -858,7 +858,9 @@ type GraphInfo =
 // what a node is still missing, typed by the nature of the target: this is what the
 // screen groups by, so it can say "1 character and 2 bosses" instead of "blocked by 3"
 type RequirementView =
-  | { kind: 'character'; id: number; name: string }
+  // the two forms of a character share the game's name (achievements.xml writes
+  // You unlocked "The Lost" for both): the flag is what tells them apart
+  | { kind: 'character'; id: number; name: string; tainted: boolean }
   | { kind: 'boss'; id: number; name: string }
   | { kind: 'challenge'; id: number; name: string }
   | { kind: 'item'; itemKind: ItemKindView; id: number; name: string }
