@@ -174,3 +174,54 @@ fn the_three_located_columns_are_not_dead_cells() {
         );
     }
 }
+
+/// What the third bit is, kept answerable to the series.
+///
+/// Measured on 2026-09-12, on a matched window around a single online co-op run: Greed
+/// Mode with Cain, won, and the cell `Greed × Cain` went 2 → 7. Across the dated series
+/// every date on which any cell gained bit 2 has an `online_logs\` session of the same
+/// day, and the ~60 marks taken on days without one gained bits 0 and 1 only. Local
+/// co-op — recognisable because the winner mask names two characters at once — takes
+/// marks the ordinary way and leaves bit 2 alone. So bit 2 reads **won online**.
+///
+/// The property below is the structural half of that reading, and the half a sample can
+/// still check once the logs are gone: an online clear is also a clear, so bit 2 can
+/// never stand without bit 0. Values 4 and 6 must not exist. If one ever does, "won
+/// online" is the wrong name and the tooltip has to go back to saying so.
+#[test]
+fn the_online_bit_never_stands_without_the_cleared_bit() {
+    let files = dated_series(SERIES);
+    if files.is_empty() {
+        return; // `dated_series` has already said why on stderr
+    }
+    let (mut checked, mut online) = (0, 0);
+    for path in &files {
+        let Some(values) = counters(path) else {
+            continue;
+        };
+        let name = path.file_name().unwrap_or_default().to_string_lossy();
+        for (row, (character, _)) in CHARACTERS.iter().enumerate() {
+            for (column, boss) in BOSSES.iter().enumerate() {
+                let Some(v) = counter_index(row, column).and_then(|i| values.get(i)) else {
+                    continue;
+                };
+                checked += 1;
+                online += u32::from(v & 4 != 0);
+                assert!(
+                    v & 4 == 0 || v & 1 != 0,
+                    "{name}: {character} × {boss} holds {v}, which sets the online bit \
+                     without the cleared bit. A run cannot be won online and not won.",
+                );
+            }
+        }
+    }
+    assert!(
+        checked > 0,
+        "no mark cell was read: the series is there but the tables no longer address it"
+    );
+    assert!(
+        online > 0,
+        "no cell in the series sets bit 2, so the property above held vacuously: it can \
+         no longer tell a wrong reading of the bit from a right one"
+    );
+}
