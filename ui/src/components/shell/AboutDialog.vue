@@ -26,10 +26,21 @@ onMounted(async () => {
   version.value = await appVersion()
 })
 
+// Each promise is a title and what it means: the title alone would read as a slogan, the
+// sentence alone as small print.
 const promises = [
-  'about.promises.readOnly',
-  'about.promises.offline',
-  'about.promises.oneFile',
+  {
+    title: 'about.promises.readOnlyTitle',
+    body: 'about.promises.readOnly',
+  },
+  {
+    title: 'about.promises.offlineTitle',
+    body: 'about.promises.offline',
+  },
+  {
+    title: 'about.promises.oneFileTitle',
+    body: 'about.promises.oneFile',
+  },
 ] as const
 </script>
 
@@ -49,24 +60,29 @@ const promises = [
             version ?? t('about.versionUnknown')
           }}</span>
         </div>
-        <div class="flex flex-col gap-1.5">
-          <span class="text-label text-subtle-foreground">{{
-            t('about.promisesTitle')
-          }}</span>
-          <ul class="flex list-disc flex-col gap-1 pl-4 text-row">
-            <li
-              v-for="promise in promises"
-              :key="promise"
-              class="text-foreground-soft"
-            >
-              {{ t(promise) }}
-            </li>
-          </ul>
+        <div class="flex flex-col gap-2">
+          <span
+            class="text-label tracking-caps text-subtle-foreground uppercase"
+            >{{ t('about.promisesTitle') }}</span
+          >
+          <div
+            v-for="promise in promises"
+            :key="promise.title"
+            class="flex flex-col gap-0.75"
+          >
+            <span class="text-control text-foreground">{{
+              t(promise.title)
+            }}</span>
+            <span class="text-caption text-foreground-soft">{{
+              t(promise.body)
+            }}</span>
+          </div>
         </div>
         <div class="flex flex-col gap-1.5">
-          <span class="text-label text-subtle-foreground">{{
-            t('about.creditsTitle')
-          }}</span>
+          <span
+            class="text-label tracking-caps text-subtle-foreground uppercase"
+            >{{ t('about.creditsTitle') }}</span
+          >
           <span class="text-caption text-foreground-soft">{{
             t('about.wikiText')
           }}</span>
