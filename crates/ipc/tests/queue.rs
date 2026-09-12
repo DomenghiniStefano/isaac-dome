@@ -23,6 +23,7 @@ fn inputs<'a>(
 ) -> QueueInputs<'a> {
     QueueInputs {
         catalog,
+        dataset: None,
         flags,
         graph: None,
         eval: None,

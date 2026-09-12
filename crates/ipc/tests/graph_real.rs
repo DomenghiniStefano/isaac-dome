@@ -37,6 +37,7 @@ fn the_real_profile_has_379_done_637_known_and_4_unknown_slots() {
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let v = unlock_view(
         Some(&c),
+        None,
         Some(&flags),
         None,
         None,
@@ -81,7 +82,7 @@ fn the_slot_id_junction_is_pinned_by_the_items_seen_in_the_save() {
     let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let seen = s.flags(Kind::Items).expect("section 4");
-    let v = unlock_view(Some(&c), Some(&flags), None, None, None, |_| None);
+    let v = unlock_view(Some(&c), None, Some(&flags), None, None, None, |_| None);
     let done: BTreeSet<u32> = v
         .nodes
         .iter()
@@ -113,6 +114,7 @@ fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
     let v = unlock_view(
         Some(&c),
+        None,
         Some(&flags),
         Some(&g),
         Some(&e),
@@ -316,4 +318,71 @@ fn the_tainted_form_of_a_character_is_a_different_target_under_the_same_name() {
     );
     assert!(!base_flag, "slot 82 unlocks the base form");
     assert!(tainted_flag, "slot 484 unlocks the tainted form");
+}
+
+/// A requirement links to the page the dataset really has, and to nothing else. Real catalog,
+/// real graph, real dataset: the mapping is only interesting where the ids are the game's.
+#[test]
+fn a_blocked_node_links_to_the_pages_the_dataset_has() {
+    let Some((c, _, s)) = real() else { return };
+    let flags = s.flags(Kind::Achievements).expect("section 1");
+    let g = graph::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
+    let ds = wiki::Dataset::embedded().expect("the dataset is embedded at build time");
+
+    let page_of = |r: &ipc::RequirementView| match r {
+        ipc::RequirementView::Character { page, .. }
+        | ipc::RequirementView::Boss { page, .. }
+        | ipc::RequirementView::Challenge { page, .. }
+        | ipc::RequirementView::Item { page, .. } => page.clone(),
+        // A gate, a mark, a counter and an uninterpreted label are conditions, not entities:
+        // there is no page to carry (plan amendment, 2026-09-12).
+        ipc::RequirementView::Gate { .. }
+        | ipc::RequirementView::Mark { .. }
+        | ipc::RequirementView::Counter { .. }
+        | ipc::RequirementView::Unknown { .. } => None,
+    };
+
+    let v = unlock_view(
+        Some(&c),
+        Some(ds),
+        Some(&flags),
+        Some(&g),
+        Some(&e),
+        None,
+        |_| None,
+    );
+    let linked = v
+        .nodes
+        .iter()
+        .flat_map(|n| n.missing.iter())
+        .filter_map(&page_of)
+        .inspect(|t| assert!(ds.entry(t).is_some(), "a page that goes out has to exist"))
+        .count();
+    assert!(
+        linked > 0,
+        "the real profile has blockers the wiki documents"
+    );
+
+    // No dataset: the names still come out, and nothing links.
+    let without = unlock_view(
+        Some(&c),
+        None,
+        Some(&flags),
+        Some(&g),
+        Some(&e),
+        None,
+        |_| None,
+    );
+    assert!(without
+        .nodes
+        .iter()
+        .flat_map(|n| n.missing.iter())
+        .all(|r| page_of(r).is_none()));
+    assert_eq!(without.totals, v.totals, "only the pages changed");
+    assert_eq!(
+        without.nodes.iter().map(|n| n.missing.len()).sum::<usize>(),
+        v.nodes.iter().map(|n| n.missing.len()).sum::<usize>(),
+        "a missing page never removes a requirement"
+    );
 }

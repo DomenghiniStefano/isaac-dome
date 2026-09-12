@@ -1,6 +1,6 @@
 use ipc::{
     AchievementRef, GraphInfo, IconRef, ItemKindView, NextSteps, OriginView, PlanDiagnostic,
-    PlanExpansion, StepsBasis, UnlockDiagnostic, UnlockNode, UnlockTarget, UnlockTotals,
+    PlanExpansion, StepsBasis, Target, UnlockDiagnostic, UnlockNode, UnlockTarget, UnlockTotals,
     UnlockView, STEPS,
 };
 use serde_json::{json, to_value, Value};
@@ -206,6 +206,7 @@ fn unlock_view_maps_slots_to_achievements_and_marks_the_ones_beyond_the_catalog(
     let flags = [false, true, false, true, true, false];
     let v = unlock_view(
         Some(&catalog_with_achievements()),
+        None,
         Some(&flags),
         None,
         None,
@@ -255,6 +256,7 @@ fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
     let flags = [false, false, false, false];
     let v = unlock_view(
         Some(&catalog_with_achievements()),
+        None,
         Some(&flags),
         None,
         None,
@@ -305,6 +307,7 @@ fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
 fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
     let v = unlock_view(
         Some(&catalog_with_achievements()),
+        None,
         Some(&[false, true]),
         None,
         None,
@@ -317,7 +320,15 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
         vec![UnlockDiagnostic::CatalogBeyondSlots { count: 2 }]
     );
 
-    let v = unlock_view(None, Some(&[false, true, true]), None, None, None, |_| None);
+    let v = unlock_view(
+        None,
+        None,
+        Some(&[false, true, true]),
+        None,
+        None,
+        None,
+        |_| None,
+    );
     assert_eq!(v.nodes.len(), 2);
     assert!(v
         .nodes
@@ -334,6 +345,7 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
 fn a_missing_achievement_section_is_declared_and_compares_nothing() {
     let v = unlock_view(
         Some(&catalog_with_achievements()),
+        None,
         None,
         None,
         None,
@@ -360,7 +372,7 @@ fn a_missing_achievement_section_is_declared_and_compares_nothing() {
         json!([{ "kind": "noAchievementSection" }])
     );
     // No catalog and no section: two different pieces of news, two diagnostics.
-    let v = unlock_view(None, None, None, None, None, |_| None);
+    let v = unlock_view(None, None, None, None, None, None, |_| None);
     assert_eq!(
         v.diagnostics,
         vec![
@@ -376,6 +388,7 @@ fn a_missing_achievement_section_is_declared_and_compares_nothing() {
 fn an_empty_but_present_section_still_compares_with_the_catalog() {
     let v = unlock_view(
         Some(&catalog_with_achievements()),
+        None,
         Some(&[]),
         None,
         None,
@@ -396,7 +409,7 @@ fn without_a_graph_there_are_no_next_steps_to_suggest() {
     let mut flags = vec![false; 10];
     flags[2] = true;
     flags[5] = true;
-    let v = unlock_view(None, Some(&flags), None, None, None, |_| None);
+    let v = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
     let s = next_steps(&v);
     assert_eq!(s.basis, StepsBasis::FanOut);
     assert!(
@@ -631,6 +644,7 @@ fn a_challenge_target_carries_the_achievements_it_rewards() {
     });
     let v = unlock_view(
         Some(&c),
+        None,
         Some(&[false, false, false, false]),
         None,
         None,
@@ -666,28 +680,38 @@ fn requirement_view_shapes() {
         to_value(RequirementView::Character {
             id: 1,
             name: "Magdalene".into(),
-            tainted: false
+            tainted: false,
+            page: Some(Target::Character { id: 1 }),
         })
         .unwrap(),
-        json!({ "kind": "character", "id": 1, "name": "Magdalene", "tainted": false })
+        json!({
+            "kind": "character", "id": 1, "name": "Magdalene", "tainted": false,
+            "page": { "kind": "character", "id": 1 }
+        }),
+        "the page is what the screen opens to read how *this* is unlocked"
     );
     assert_eq!(
         to_value(RequirementView::Item {
             item_kind: ItemKindView::Passive,
             id: 35,
-            name: "The Bible".into()
+            name: "The Bible".into(),
+            page: None,
         })
         .unwrap(),
-        json!({ "kind": "item", "itemKind": "passive", "id": 35, "name": "The Bible" }),
+        json!({
+            "kind": "item", "itemKind": "passive", "id": 35, "name": "The Bible",
+            "page": null
+        }),
         "`kind` is the tag: the item's own kind is `itemKind`, and a fieldless enum is a \
-         bare string"
+         bare string. `page: null` is 'the dataset has no page', never 'no requirement'"
     );
     assert_eq!(
         to_value(RequirementView::Gate {
             label: "The Void".into()
         })
         .unwrap(),
-        json!({ "kind": "gate", "label": "The Void" })
+        json!({ "kind": "gate", "label": "The Void" }),
+        "a gate is a curated condition, not an entity: it carries no page key at all"
     );
     assert_eq!(
         to_value(RequirementView::Unknown {
@@ -735,10 +759,12 @@ fn a_node_carries_what_it_is_missing_typed() {
             id: 1,
             name: "Magdalene".into(),
             tainted: false,
+            page: None,
         },
         RequirementView::Boss {
             id: 19,
             name: "Gish".into(),
+            page: None,
         },
     ];
     let v = to_value(&n).unwrap();
