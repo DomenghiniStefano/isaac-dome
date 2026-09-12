@@ -26,3 +26,7 @@ if (import.meta.env.DEV && hash === DevRoute.Kit) {
 } else {
   createApp(App).use(createPinia()).use(router).use(i18n).mount('#app')
 }
+
+// The splash `index.html` painted before the bundle existed: the shell is on screen now, so
+// it goes (`docs/BACKLOG.md` B18). Whichever page mounted, the gap it covered is over.
+document.getElementById('splash')?.remove()
