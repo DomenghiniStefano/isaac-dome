@@ -118,7 +118,6 @@ export const routeIcon: Record<RouteName, Component> = {
 export const routeArrives: Partial<Record<RouteName, Message>> = {
   [RouteName.Runs]: 'placeholder.runArchive',
   [RouteName.Live]: 'placeholder.runArchive',
-  [RouteName.Wiki]: 'placeholder.wiki',
   [RouteName.TabsSettings]: 'placeholder.tabs',
   [RouteName.About]: 'placeholder.settings',
 }
