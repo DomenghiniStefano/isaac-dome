@@ -1,7 +1,7 @@
 import { Command } from '../../constants/commands'
 import { assertNever } from '../../assertNever'
 import type { CommandArgs, CommandName } from '../transport'
-import type { IpcError, SetupState } from '../types'
+import type { IpcError, SetupState, Target } from '../types'
 import { completionMatrix } from './completion'
 import { candidates, noneSetup, setupWith, summary } from './profile'
 import type { QueueOptions } from './queue'
@@ -33,6 +33,8 @@ const CatalogParam = 'catalog'
 const QueueParam = 'queue'
 // `?collection=unread` answers the Collection as a save whose section 4 wasn't read.
 const CollectionParam = 'collection'
+// `?wiki=none` answers the wiki as a binary whose embedded dataset didn't load.
+const WikiParam = 'wiki'
 const Off = 'none'
 const Unread = 'unread'
 
@@ -58,6 +60,7 @@ const currentQueueScenario = (): QueueScenario => {
 const artShown = (): boolean => query().get(ArtParam) !== Off
 const catalogShown = (): boolean => query().get(CatalogParam) !== Off
 const collectionRead = (): boolean => query().get(CollectionParam) !== Unread
+const wikiShown = (): boolean => query().get(WikiParam) !== Off
 
 // A profile chosen through select_profile stays chosen for the page's life, as in the app.
 let chosenId: string | null = null
@@ -98,6 +101,7 @@ const setupFor = (scenario: FixtureScenario): SetupState => {
 }
 
 const noActiveProfile: IpcError = { kind: 'noActiveProfile' }
+const wikiUnavailable: IpcError = { kind: 'wikiUnavailable' }
 
 // Every command that reads the save answers only with an active profile, as the backend does.
 const whenActive = (scenario: FixtureScenario, read: () => unknown): unknown =>
@@ -121,6 +125,10 @@ const collection = async () => {
     collectionRead: collectionRead(),
   })
 }
+
+// The wiki needs neither a profile nor the catalog: the pack's image index and sample pages
+// load when the Wiki, or a tab label, first asks.
+const wiki = async () => import('./wiki')
 
 // The queue's nodes are the Unlock view's, as in the app: the same node on both screens.
 const queueOptions = async (): Promise<QueueOptions> => ({
@@ -158,6 +166,15 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     whenActive(scenario, async () => (await graph()).steps),
   [Command.Collection]: (_args, scenario) =>
     whenActive(scenario, () => collection()),
+  [Command.WikiIndex]: async () =>
+    (await wiki()).wikiIndexAnswer({
+      withArt: artShown() && catalogShown(),
+      withWiki: wikiShown(),
+    }),
+  [Command.WikiEntry]: async (args) => {
+    if (!wikiShown()) throw wikiUnavailable
+    return (await wiki()).wikiEntryAnswer(args?.target as Target)
+  },
   [Command.Queue]: (_args, scenario) =>
     whenActive(scenario, async () => readQueue(await queueOptions())),
   [Command.QueueAdd]: (args, scenario) =>
