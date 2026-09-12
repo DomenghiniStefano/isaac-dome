@@ -51,7 +51,7 @@ export type WikiCategory = (typeof WikiCategory)[keyof typeof WikiCategory]
 // A tab's identity: a route and its query, never the view's content (B6).
 export interface TabLocation {
   name: RouteName
-  query?: { category?: WikiCategory }
+  query?: { category?: WikiCategory; page?: string }
 }
 
 type Message = MessageKey<MessageSchema>
