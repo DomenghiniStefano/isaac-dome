@@ -1055,51 +1055,63 @@ draws every cell unknown and says why.
 
 ---
 
-## B21 — A mark taken in multiplayer says so (measurement, then `ipc` and `ui`)
+## B21 — A mark taken in multiplayer says so (`ipc` and `ui`; **measurement closed 2026-09-12**)
 
 Logged 2026-09-12, a product requirement from the owner: the matrix has to show whether a
 mark was taken in multiplayer or alone. Today a cell knows only its level.
 
-### What we already have
+**The three measurements this entry asked for were all made the same day**, on a live
+online Greed run. The entry stays open on the implementation, which is now unblocked and
+knows exactly what it has to draw.
 
-- A cell's value is a bitmask, observed values 0, 1, 2, 3, 5, 7: bits 0 and 1 are the two
-  levels, **bit 2 is unexplained** (`ipc::marks::Cell::Known { bits }`, CLAUDE.md "Counters
-  and marks"). The UI names it "terzo livello, significato non confermato" in the tooltip and
-  "terzo livello" in the legend, and counts nothing on it.
-- The online co-op findings of 2026-09-08: online co-op plays on a **separate shared
-  profile** (`online_logs\<session>\sharedsave_*.dat`, not our format), and a run ending in
-  co-op leaves the personal counters untouched. So an online mark can't be a bit on the
-  personal save's cell unless the game copies it back — which nobody has measured.
-- Local co-op (a second controller, same machine) plays on the personal profile, and the
-  game keeps a per-player character bitmask at index 188 for the winning run.
+### What was measured
 
-### What has to be measured before any design
+A matched window around one online co-op run — Greed Mode, Cain, won, the whole session
+inside the window — plus the dated series and the 22 folders in `online_logs\`.
 
-1. **Whether bit 2 is "multiplayer"**: the saves that hold 5 and 7 are the evidence. Match
-   each cell whose bit 2 is set against the dated backups of the day it flipped and the
-   `online_logs\` sessions of that day: if every 5 and 7 lands on a co-op day and no solo day
-   produces one, the bit has its name. If it doesn't, bit 2 stays "third level" and
-   multiplayer is a different question.
-2. **Whether the personal save records an online mark at all**: one online session that
-   takes a mark, with the personal save backed up before and after. Zero difference means
-   the personal matrix can't show it, and the honest UI is a note, not a symbol.
-3. **Local co-op** separately, same protocol, since it writes the personal profile.
+1. **Bit 2 is "won online".** ✅ The run took `Greed × Cain` from 2 to 7, lighting bit 2 on
+   exactly the cell its boss and character name. Across the series every date on which any
+   cell gained bit 2 has an `online_logs\` session of the same day (6 of 6, over the period
+   those folders cover), while ~60 marks taken on days without one gained bits 0 and 1
+   only. The sharpest case is 2026-08-31: same day, same character, `Satan × Magdalene`
+   3 → 7 **with** the bit and `Greed × Magdalene` 0 → 3 **without** — so it is a property of
+   the run, not of the day.
+2. **The personal save does record it.** ✅ Not "zero difference": 20 activity counters, the
+   mark itself, and bestiary tallies 1 and 2 all moved. What did *not* move is achievements,
+   items, challenges, bosses and sections 3, 5, 8, 9 — which is the half of the old claim
+   that was right, and the half that made the whole claim look right.
+3. **Local co-op writes the profile but does not set bit 2.** ✅ Free, out of the series: a
+   local co-op win is the only thing that makes index 188 name two characters at once, and
+   it happens in exactly two windows — 2026-07-22 (Magdalene + Blue Baby) and 2026-09-01
+   (Magdalene + Cain). The first took four marks for Blue Baby, all of them without bit 2.
 
-### What follows, depending on the answer
+So the name is **"won online"**, narrower than the "multiplayer" this entry assumed, and
+`sharedsave_*.dat` is *not* needed: that branch of the entry is dead.
 
-- If the bit names it: `Cell` grows the reading (`multiplayer: bool` beside the level), the
-  tooltip and the legend say "in multiplayer" instead of "terzo livello", and the cell gets a
-  visual from the design (a corner glyph or a second head, not a colour: colour is the
-  level). The percentages stay forbidden until the whole mask is read.
-- If the personal save doesn't hold it: the shared save (`sharedsave_*.dat`) is the only
-  source, and reading it is a `core-save` task of its own — a second format, read-only like
-  the first.
+### Still not closed by this
+
+- **2026-06-29 and 2026-07-06** hold a bit 2 with no session folder. Neither is a
+  counterexample — `online_logs\` starts on 2026-08-24, and on 07-06 index 188 names one
+  character while two took marks, so the bit sits on a run the mask does not describe. What
+  would settle it is knowing whether the game **rotates** `online_logs\` or keeps every
+  session: if it rotates, the two holes explain themselves.
+- The two **levels** (bits 0 and 1) are still unmeasured. B22 is that question.
+
+### What to implement
+
+- `ipc::marks::Cell::Known` grows the reading beside the level — the field names the bit,
+  so `online: bool`, not `multiplayer: bool`.
+- Tooltip and legend stop saying "terzo livello, significato non confermato" and say won
+  online; the cell gets a visual from the design (a corner glyph or a second head, **not** a
+  colour: colour is the level).
+- Percentages stay forbidden, but for B22/B23's reason now, not because a bit is unread.
 
 ### Done when
 
-Every 5 and 7 in the collected saves has an explanation that a backup and a log agree on,
-and the matrix draws it; or the entry records why it can't, and the tooltip stops calling
-it a third level.
+The matrix draws "won online" on the cells that carry bit 2, the tooltip and legend stop
+calling it a third level, and the reading is pinned by a test on the series — the structural
+half already is, by `the_online_bit_never_stands_without_the_cleared_bit` in
+`crates/ipc/tests/marks_real.rs`.
 
 ---
 

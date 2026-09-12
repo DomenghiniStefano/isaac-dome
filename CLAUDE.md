@@ -116,8 +116,13 @@ depends on the section.
 
 Section 2 maps one-to-one to REPENTOGON's `EventCounter` enum. Labels in
 `reference/isaac_counters.py`. The `PROGRESSION_*` cells aren't counters but **bitmasks**:
-observed values are only 0, 1, 2, 3, 5, 7. Two bits are the mark's levels, the third is
-still unexplained — **don't compute completion percentages as if it were known**.
+observed values are only 0, 1, 2, 3, 5, 7. Bits 0 and 1 are the mark's levels; **bit 2 is
+"won online"**, measured on 2026-09-12 (see below). That the set holds no 4 and no 6 is the
+structural half of that reading — an online clear is also a clear, so bit 2 never stands
+without bit 0 — and it is pinned by `the_online_bit_never_stands_without_the_cleared_bit`
+in `crates/ipc/tests/marks_real.rs`. The two **levels** are still the unmeasured half, so
+**don't compute completion percentages**: what forbids them now is B22/B23, not an unread
+bit.
 
 **The matrix is 34 × 12** since 2026-09-08: the last three columns were located on the
 historical series, not read off a document. Delirium for the 19 later characters starts at
@@ -206,9 +211,28 @@ zeros can actually be tested. `sharedsave_*.dat` sits in the same folder and is 
 our format: no `ISAACNGSAVE` magic anywhere in the file.
 
 Note: online co-op uses a **separate shared profile** that grows with the group, distinct
-from the personal one. It's a second progression the game shows nowhere — and it is why
-co-op sessions are useless as evidence about the personal save: a run ending in co-op
-leaves the personal counters untouched.
+from the personal one. It's a second progression the game shows nowhere.
+
+**It does not follow that co-op is invisible in the personal save, and until 2026-09-12
+this document said it was.** That claim — "a run ending in co-op leaves the personal
+counters untouched" — was measured wrong: it read "no achievement moved" as "nothing
+moved". A matched window around one online Greed run (Cain, won, the whole session inside
+the window) says the personal save splits in two:
+
+| moves in an online run | stays put |
+|---|---|
+| section 2's activity counters (20 of them) | achievements, items, challenges, bosses |
+| the **completion mark**, with bit 2 set | sections 3, 5, 8 and 9 |
+| bestiary tallies **1 and 2** | bestiary tallies **3 and 4** |
+
+Section 8 staying put through a logged `playing cutscene 21` is the same trap in its
+original form: the log announces a cutscene the personal save never records. **Read a
+co-op session as evidence about counters, marks and the bestiary; never about unlocks.**
+
+Local co-op (second controller) is a third case: it writes the personal profile the
+ordinary way and **does not** set bit 2. It is recognisable in the series without any log,
+because index 188 then names two characters at once — which is also why
+`the_character_that_won_is_the_character_whose_mark_appeared` skips those windows.
 
 ---
 
