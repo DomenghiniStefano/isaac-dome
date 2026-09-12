@@ -23,7 +23,8 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-12
+**Last update:** 2026-09-12. **Sub-project 3.5b merged into `develop`** (`bc249e2`), suite
+green on the merge result; 3.5 is closed on both halves.
 
 ---
 
