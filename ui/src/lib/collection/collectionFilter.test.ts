@@ -9,6 +9,7 @@ import {
   collectionFacetValues,
   defaultCollectionFilter,
   emptyCollectionFilter,
+  filterForQuery,
   matchesCollectionFilter,
   sortItems,
 } from './collectionFilter'
@@ -132,5 +133,19 @@ describe('the Collection facets', () => {
       1, 2, 168, 600,
     ])
     expect(ids(sortItems(rows, CollectionSort.Name))).toEqual([168, 2, 1, 600])
+  })
+})
+
+describe('a list opened on a name', () => {
+  it('shows that name, and drops the state the screen defaults to', () => {
+    // The Collection opens on "to find" and "locked" as a convenience. A search result asks
+    // for one item by name, and that item is often already in the collection: keeping the
+    // default would answer "0 of 721" to a row the user just clicked.
+    const filter = filterForQuery('Brimstone Bombs')
+    expect(filter.query).toBe('Brimstone Bombs')
+    expect(filter.picks[CollectionFacet.State]).toEqual([])
+    expect(defaultCollectionFilter().picks[CollectionFacet.State]).not.toEqual(
+      [],
+    )
   })
 })
