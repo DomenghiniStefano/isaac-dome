@@ -6,9 +6,11 @@
 
 use catalog::{AchievementId, Catalog, Item, ItemKind, Language};
 use serde::Serialize;
+use wiki::{Dataset, Target};
 
 use crate::catalog_view::kind_view;
 use crate::graph::origin_view;
+use crate::wiki_target;
 use crate::{IconRef, ItemKindView, OriginView};
 
 #[derive(Debug, Clone, Serialize)]
@@ -54,21 +56,26 @@ pub struct CollectionItem {
     rename_all_fields = "camelCase"
 )]
 pub enum LockView {
-    /// Nothing unlocks it: it is in the game from the start.
+    /// Nothing unlocks it: it is in the game from the start, so there is no page to open.
     Free,
     Unlocked {
         achievement: u32,
         text: Option<String>,
+        /// The achievement's wiki page. `None` means the dataset has no page for it: the
+        /// name shows and does not link. Never "no achievement".
+        page: Option<Target>,
     },
     /// Its achievement isn't done: the item can't appear in a run yet.
     Locked {
         achievement: u32,
         text: Option<String>,
+        page: Option<Target>,
     },
     /// Section 1 wasn't read: whether the achievement is done isn't known.
     Unknown {
         achievement: u32,
         text: Option<String>,
+        page: Option<Target>,
     },
 }
 
@@ -90,6 +97,7 @@ pub enum CollectionDiagnostic {
 
 pub fn collection_view(
     catalog: Option<&Catalog>,
+    dataset: Option<&Dataset>,
     items: Option<&[bool]>,
     achievements: Option<&[bool]>,
     mut icon: impl FnMut(&IconRef) -> Option<String>,
@@ -137,7 +145,7 @@ pub fn collection_view(
             pools,
             origin: i.origin.map(origin_view),
             in_collection,
-            lock: lock_of(c, i.unlocked_by, achievements),
+            lock: lock_of(c, dataset, i.unlocked_by, achievements),
         });
     }
 
@@ -178,6 +186,7 @@ pub fn collection_view(
 /// A slot past section 1's end reads as not done: the save has no record of it.
 fn lock_of(
     c: &Catalog,
+    dataset: Option<&Dataset>,
     unlocked_by: Option<AchievementId>,
     achievements: Option<&[bool]>,
 ) -> LockView {
@@ -186,9 +195,26 @@ fn lock_of(
     };
     let achievement = a.0;
     let text = c.achievement(a).map(|x| x.text.clone());
+    // A page only when the dataset really has one: never a link that leads nowhere.
+    let target = wiki_target::achievement(a);
+    let page = dataset
+        .filter(|ds| ds.entry(&target).is_some())
+        .map(|_| target);
     match achievements.map(|f| f.get(achievement as usize).copied().unwrap_or(false)) {
-        None => LockView::Unknown { achievement, text },
-        Some(true) => LockView::Unlocked { achievement, text },
-        Some(false) => LockView::Locked { achievement, text },
+        None => LockView::Unknown {
+            achievement,
+            text,
+            page,
+        },
+        Some(true) => LockView::Unlocked {
+            achievement,
+            text,
+            page,
+        },
+        Some(false) => LockView::Locked {
+            achievement,
+            text,
+            page,
+        },
     }
 }
