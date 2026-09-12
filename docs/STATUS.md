@@ -694,17 +694,25 @@ save against the dated backup the game wrote before it, and read which cells mov
       Twenty minutes. Index 19 is already the identity mapping for cutscene 19; index 2 is
       either cutscene 1 under an off-by-one or a count of launches, and one run separates
       them. Closing it lets sections 5, 8 and 9 be renamed the way 3 and 6 were. *Careful
-      with co-op*: five of fifteen co-op windows showed a cutscene in the log and no
-      movement at all, because co-op progression goes to the shared profile.
-- [ ] **What the bestiary's four tallies count** (B9, structure closed 2026-09-09). Section
-      10 holds four lists over the same entities — ids 4, 2, 3, 1 — with a different number
-      against each entity in each. A matched window says which is which: kill a known enemy
-      a known number of times and see which tally moves by how much. Until then they carry
-      the id the file gives them and no name.
+      with co-op*, now measured rather than suspected (2026-09-12): a won online Greed run
+      logged `playing cutscene 21` and **section 8 did not move a byte** — nor did 3, 5 or
+      9. The run has to be **solo**; the rest of the personal save does move in co-op, but
+      not these four.
+- [ ] **What the bestiary's four tallies count** (B9, structure closed 2026-09-09;
+      **halved on 2026-09-12**). Section 10 holds four lists over the same entities — ids 4,
+      2, 3, 1 — with a different number against each entity in each. One matched window on a
+      Greed run split them in two: **tallies 1 and 2 moved** (sum +432 and +805, no new
+      keys), **3 and 4 did not move at all**. So 1 and 2 count something a run does
+      constantly and 3 and 4 something it did not do once in 26 minutes — which rules out
+      "kills" for the latter pair. Naming them still needs the original instrument: kill a
+      known enemy a known number of times and read which tally moves by how much. Until
+      then they keep the id the file gives them.
 - [ ] **What the bestiary's trailing word is.** One word after the last tally, in every
-      save, growing 11,343 → 29,725 across the samples we hold. Same instrument: one run,
-      see what it moves by. `Save::bestiary_tallies()` already hands it back as a value, so
-      this is only a matter of watching it.
+      save, growing 11,343 → 29,725 across the samples we hold, and 43,914 → **43,925** over
+      the 2026-09-12 window. So it moves **+11 in one Greed run** — small, and not obviously
+      proportional to the 805 the tallies gained, which is the useful part: it is not a
+      fifth total. `Save::bestiary_tallies()` already hands it back as a value, so this is
+      only a matter of watching it over a run whose rooms and floors are counted.
 - [ ] **The 40 unknown cells in the completion matrix** — Mother and The Beast for The
       Forgotten and the 19. One run of Mother with a Tainted character closes the whole
       20 × 2 block, because the base indices are already pinned and only the evidence that
@@ -795,6 +803,54 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-12 (afternoon, the game running) — the third bit has a name, and a documented fact was wrong
+
+The owner was about to play an online Greed run and asked what the data collection wanted.
+The honest answer at the time was "very little": three of the four open measurements ask
+for a **solo** run, because this document and CLAUDE.md both said a co-op run leaves the
+personal save alone. The run was worth instrumenting only for B21's second question.
+
+That answer was built on a wrong fact, and the run proved it wrong in twenty-six minutes.
+
+- [x] **A matched window on a live online run**, taken with the instrument that was already
+      in the repo: `core-save`'s `live_probe`, plus a snapshot before and after. Greed Mode,
+      Cain, **won** (`Greed State Set: STATE_TURN_GOLD`, then `playing cutscene 21`), the
+      whole session inside the window.
+- [x] **"A run ending in co-op leaves the personal counters untouched" is false**, and had
+      been stated in three places. The personal save splits: **20 activity counters, the
+      completion mark and bestiary tallies 1 and 2 move**; achievements, items, challenges,
+      bosses and sections 3, 5, 8, 9 do not. The old claim came from reading "no achievement
+      moved" as "nothing moved" — the two halves look identical if you only count unlocks.
+      Corrected in CLAUDE.md, here, and in B21.
+- [x] **Bit 2 of a completion mark is "won online".** B21 had this as its first question and
+      expected to answer it from backups; it was answered from the run instead. The cell
+      `Greed × Cain` went 2 → 7 — bit 2 on exactly the boss and character played. The series
+      then agreed: 6 of 6 bit-2 dates have an `online_logs\` session, ~60 marks on days
+      without one never gained it, and on 2026-08-31 the **same character on the same day**
+      took one mark with the bit and one without, so it belongs to the run, not the day.
+- [x] **Local co-op writes the profile and does not set bit 2** — B21's third question,
+      answered without playing anything. A local co-op win is the only thing that lights two
+      bits at once in index 188, which happens in exactly two windows: 2026-07-22 and
+      2026-09-01. The first took four marks, none with bit 2. Index 188's bit → character
+      map was re-derived from the series for this rather than assumed, and it confirms the
+      one `marks_real.rs` already uses.
+- [x] **The reading is pinned by a property, not by a value**:
+      `the_online_bit_never_stands_without_the_cleared_bit` in `crates/ipc/tests/marks_real.rs`.
+      An online clear is also a clear, so no cell may hold 4 or 6. It carries its own
+      vacuity guard — if the series ever stops containing a bit-2 cell the test says so
+      instead of passing for free.
+- [x] **Bestiary, half a step** (B9): tallies **1 and 2** moved, **3 and 4** did not, which
+      rules out "kills" for the second pair. The trailing word moved **+11** in one run.
+- [ ] **Two holes left, both honest.** 2026-06-29 and 2026-07-06 carry a bit 2 with no
+      session folder; `online_logs\` only starts on 2026-08-24, and on 07-06 index 188 names
+      one character while two took marks. What settles them is knowing whether the game
+      rotates that folder — not another run.
+
+> The lesson worth keeping is not about co-op. A fact measured once, written into CLAUDE.md,
+> and then used to decide what *not* to measure, quietly cost three open questions two
+> weeks: every co-op session since 2026-08-24 could have answered them. **"Useless as
+> evidence" is a claim that has to be re-measured, not inherited.**
 
 ### 2026-09-12 (night) — one index, two ways to ask it
 
