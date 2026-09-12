@@ -81,3 +81,11 @@ describe('the first entry of a section', () => {
     })
   })
 })
+
+describe('a tab that belongs to no section', () => {
+  it('leaves the sidebar where it was', () => {
+    // Search sits above the two sections (DESIGN-BRIEF.md §4.2): it belongs to neither.
+    expect(sectionOfOrigin(TabOrigin.Search)).toBeNull()
+    expect(sectionOfOrigin(TabOrigin.Wiki)).toBe(SidebarSection.Wiki)
+  })
+})
