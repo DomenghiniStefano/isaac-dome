@@ -58,3 +58,23 @@ fn the_unlock_payload_carries_links_and_stays_small() {
         "no icon link in the payload at all"
     );
 }
+
+/// The wiki index is answered once per window and carries every page's title: it has to stay
+/// a payload, not a download. Titles only — the icons are links — so 256 KB is generous, and a
+/// regression here means something started travelling that shouldn't.
+const INDEX_CEILING: usize = 256_000;
+
+#[test]
+fn the_wiki_index_stays_a_payload() {
+    let Ok(ds) = wiki::Dataset::embedded() else {
+        test_support::skip("the embedded dataset didn't load");
+        return;
+    };
+    let index = ipc::wiki_index(Ok(ds), None, None, |_| None);
+    let json = serde_json::to_string(&index).expect("serializes");
+    assert!(
+        json.len() < INDEX_CEILING,
+        "wiki index is {} bytes, over the {INDEX_CEILING} ceiling",
+        json.len()
+    );
+}
