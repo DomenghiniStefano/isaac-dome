@@ -217,7 +217,6 @@ export const it = {
     progress: {
       done: 'fatto',
       pending: 'da fare',
-      unknown: 'non noto',
     },
     hint: {
       open: 'apri',
@@ -230,15 +229,15 @@ export const it = {
       noAchievementSectionTitle: 'Sezione degli achievement non letta',
       noCollectionSectionTitle: 'Sezione della collezione non letta',
       noProfile:
-        'Nessun profilo scelto: i risultati non dicono cosa hai già fatto.',
+        'I risultati non dicono cosa hai già fatto: scegline uno dalle impostazioni.',
       noCatalog:
-        'Gioco non installato: si cerca solo nei titoli e nel testo della wiki, senza immagini.',
+        'Si cerca solo nei titoli e nel testo della wiki, senza immagini, e nessun risultato apre Unlock o la Collezione.',
       noWiki:
-        'Il dataset della wiki non si è caricato: si cerca solo nei nomi del gioco, e nessun risultato apre una pagina.',
+        'Si cerca solo nei nomi del gioco, e nessun risultato apre una pagina.',
       noAchievementSection:
-        'La sezione degli achievement non si è letta: per gli achievement non si sa cosa è fatto.',
+        'Per gli achievement non si sa cosa è fatto: non letta non è non fatta.',
       noCollectionSection:
-        'La sezione della collezione non si è letta: per gli oggetti non si sa cosa hai già.',
+        'Per gli oggetti non si sa cosa hai già: non letta non è non trovata.',
     },
   },
   appearance: {

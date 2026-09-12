@@ -185,26 +185,26 @@ export const searchAnswer = (
     // The fixture never has a save behind it, whatever profile the scenario shows.
     'noProfile' as const,
   ]
-  const docs: FixtureDoc[] = withWiki
-    ? packPages().map((page) => {
-        const key = pageKey(page.target)
-        const sample = key === null ? undefined : samplePages.get(key)
-        return {
-          target: page.target,
-          title: sample?.title ?? page.title,
-          condition:
-            page.target.kind === 'achievement'
-              ? (conditions.get(page.target.id) ?? null)
-              : null,
-          sections: (sample?.sections ?? []).map((s) => ({
-            section: s.kind,
-            text: sectionText(s),
-          })),
-          hasPage: true,
-          iconUrl:
-            withArt && withCatalog ? iconOf(page.target, page.bossId) : null,
-        }
-      })
-    : []
+  // The pack's names are the **catalog's**, so they answer even with no dataset: what a
+  // missing dataset takes away is the text of the sections and the page to open, exactly as
+  // the backend degrades (spec 3.5, Decision 9).
+  const docs: FixtureDoc[] = packPages().map((page) => {
+    const key = pageKey(page.target)
+    const sample = withWiki && key !== null ? samplePages.get(key) : undefined
+    return {
+      target: page.target,
+      title: sample?.title ?? page.title,
+      condition:
+        withCatalog && page.target.kind === 'achievement'
+          ? (conditions.get(page.target.id) ?? null)
+          : null,
+      sections: (sample?.sections ?? []).map((s) => ({
+        section: s.kind,
+        text: sectionText(s),
+      })),
+      hasPage: withWiki,
+      iconUrl: withArt && withCatalog ? iconOf(page.target, page.bossId) : null,
+    }
+  })
   return rankFixture(docs, query, limit, diagnostics)
 }

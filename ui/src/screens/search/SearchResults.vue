@@ -1,29 +1,24 @@
 <script setup lang="ts">
-import { useVirtualizer } from '@tanstack/vue-virtual'
 import { computed, ref } from 'vue'
 import SearchRow from '@/components/search/SearchRow.vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { cn } from '@/lib/cn'
+import { useScaledRows } from '@/composables/useScaledRows'
 import { rowResultPx } from '@/lib/scale/rows'
 import type { SearchRow as Row } from '@/lib/search/rows'
-import { useSettingsStore } from '@/stores/settings'
 
 const props = defineProps<{ rows: Row[] }>()
 const emit = defineEmits<{ open: [row: Row, event: MouseEvent] }>()
-const settings = useSettingsStore()
 
 const scroller = ref<HTMLElement | null>(null)
 
 // Up to 300 rows: drawn as many as fit plus a margin, positioned with the same number the
 // row's own token is measured from, so no scale leaves them overlapping.
-const virtualizer = useVirtualizer(
-  computed(() => ({
-    count: props.rows.length,
-    getScrollElement: () => scroller.value,
-    estimateSize: () => rowResultPx(settings.scale),
-    overscan: 8,
-  })),
-)
+const virtualizer = useScaledRows({
+  count: () => props.rows.length,
+  scroller,
+  rowPx: rowResultPx,
+})
 
 const visible = computed(() =>
   virtualizer.value.getVirtualItems().flatMap((item) => {
@@ -31,6 +26,11 @@ const visible = computed(() =>
     return row ? [{ item, row }] : []
   }),
 )
+
+// `text-left` is not decoration: the row is a pressable primitive, which the user agent
+// centres, and a row of text has to read from its left edge like every other table's rows.
+const rowClass =
+  'absolute inset-x-0 top-0 h-row-result translate-y-(--row-start) border-x-0 border-t-0 border-b border-hairline px-3 text-left hover:bg-row-hover'
 
 // Geometry measured at runtime travels as CSS variables, read by utilities.
 const body = computed(() => ({
@@ -48,12 +48,7 @@ const rowStart = (start: number) => ({ '--row-start': `${start}px` })
         :variant="ButtonVariant.Ghost"
         :size="ButtonSize.Row"
         :style="rowStart(item.start)"
-        :class="
-          cn(
-            'absolute inset-x-0 top-0 h-row-result translate-y-(--row-start) border-x-0 border-t-0 border-b border-hairline px-3 hover:bg-row-hover',
-            item.index % 2 === 1 && 'bg-row-alt',
-          )
-        "
+        :class="cn(rowClass, item.index % 2 === 1 && 'bg-row-alt')"
         @click="emit('open', row, $event)"
       >
         <SearchRow :row="row" />
