@@ -103,17 +103,32 @@ fn select_profile(app: AppHandle, id: ProfileId) -> Result<SetupState, IpcError>
             id: id.as_str().to_string(),
         });
     }
-    // Load the existing settings and update only the field that changed: `Settings`
-    // has a single field today, so clippy flags the spread as "needless" — but it has
-    // to be written this way, because the day `Settings` grows, switching profiles
-    // must not silently wipe out the other preferences.
-    #[allow(clippy::needless_update)]
+    // Load the existing settings and update only the field that changed: since the
+    // interface's size joined them, switching profile would otherwise put it back to 100.
     let settings = Settings {
         active_profile_id: Some(id),
         ..settings_file::load(&app)
     };
     settings_file::save(&app, &settings)?;
     Ok(ipc::setup_state(&d, settings.active_profile_id.as_ref()))
+}
+
+/// The persisted settings, as the app will act on them: the scale comes back snapped to the
+/// ladder, so a hand-edited file never puts the interface at a size nothing was drawn at.
+#[tauri::command]
+fn settings(app: AppHandle) -> Result<Settings, IpcError> {
+    let stored = settings_file::load(&app);
+    Ok(stored.with_scale(stored.scale()))
+}
+
+/// Changes the interface's size and answers the settings as they now are — the same shape as
+/// `select_profile`, which also writes and answers. The value is snapped before it reaches
+/// the file: what we write is always a size we drew.
+#[tauri::command]
+fn set_scale(app: AppHandle, percent: u16) -> Result<Settings, IpcError> {
+    let settings = settings_file::load(&app).with_scale(percent);
+    settings_file::save(&app, &settings)?;
+    Ok(settings)
 }
 
 #[tauri::command]
@@ -798,6 +813,8 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             setup_state,
             select_profile,
+            settings,
+            set_scale,
             save_summary,
             completion,
             extraction_report,
