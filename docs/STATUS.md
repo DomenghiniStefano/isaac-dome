@@ -626,9 +626,9 @@ the item. Where a pair must stay two files, the item says which and why, so nobo
 wonder whether it was forgotten.
 
 Cheapest and safest first. Nothing here is a feature and nothing changes what a screen
-shows. `graph` and `ipc/queue.rs` are left alone while `feature/graph-mark-requirements` is
-open. **N7 is not a new item**: it is B2 of `docs/IMPROVEMENTS.md`, placed here in the order
-it has to run in.
+shows. Each item gets its own branch cut from `develop`, like any sub-project (the rule
+of 2026-09-11): none of this starts on top of a sub-project in flight. **N7 is not a new
+item**: it is B2 of `docs/IMPROVEMENTS.md`, placed here in the order it has to run in.
 
 - [ ] **N1. The names left over.** *One session.*
       Two Italian identifiers survive B7 in a file that is otherwise English —
