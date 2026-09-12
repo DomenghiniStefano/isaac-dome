@@ -1697,3 +1697,70 @@ right one has to be looked for in the game's files, not approximated.
 
 On a machine with the game, an achievement card shows the drawing on the same backing the
 game does, and the entry names the sheet and frame it came from.
+
+---
+
+## B34 — Seventeen references the wiki never meant as targets (implementation, `graph` and `dataset`)
+
+Logged 2026-09-12, left out on purpose by
+`docs/superpowers/specs/2026-09-12-graph-mark-requirements-design.md` §6: that sub-project
+took the graph's uninterpreted references from **195 to 17**, and these are the 17.
+
+They are not requirements nobody judged. They are **words that became targets**: the
+generator walks a wiki sentence's inline tree and `Inline::Concept` promotes a linked
+concept page to `Target::Pickup`, which is right for *Red Heart* and wrong for *collect*.
+
+### What we already have
+
+- The full list, measured against the real catalogue — 13 `pickup:` and 4
+  `transformation:`, and the same walk prints it:
+
+  | target | nodes it holds | |
+  |---|---|---|
+  | `pickup:ending` | 4 | a word, not a thing |
+  | `pickup:Collect` | 3 | and `pickup:collect` separately, 2 more |
+  | `pickup:Bestiary` | 2 | |
+  | `pickup:collection` | 1 | |
+  | `pickup:tainted character` | 1 | a class, not a target |
+  | `transformation:Guppy` | 2 | a real transformation, three items behind it |
+  | `transformation:Beelzebub` | 2 | the same |
+
+- `crates/graph/src/generate.rs:26` is where the promotion happens, and the only place that
+  has to change: the filter belongs to the **generator**, not to the curation.
+- Every one of the 17 currently carries a hand-written `Verdict::Unknown` in
+  `corrections.json` — so the graph is honest about them today, and this task is about
+  stopping the noise at its source rather than fixing a wrong answer.
+
+### Why it is not a five-minute change
+
+`requirements.json` is a **committed artefact**. Changing the generator means regenerating
+it with `pnpm graph:rules`, and the diff has to be read rather than trusted: the same filter
+that drops `collect` must not drop a concept page that is a real target. The `derived`
+discipline of `crates/wiki` is the model — the generated file and its inputs travel
+together, and a test keeps them from drifting.
+
+Note the two families are **not** the same problem. `pickup:` is noise and the answer is to
+drop it. The two transformations are real: Guppy and Beelzebub each sit behind a count of
+items (three Guppy items, three fly items), which is a threshold the model cannot say — the
+same shape as `Verdict::Unknown { reason: "three Guppy items" }` already records. They may
+stay unknown and that is a decision, not an omission.
+
+### What's missing
+
+1. Decide, per target, which of the two families it is — noise to filter, or a real
+   requirement the model cannot express. Seventeen rows, read once.
+2. Filter the noise in `generate.rs`, at the promotion, with the rule stated in code rather
+   than a list of words.
+3. Regenerate `requirements.json`, **read the diff**, and check that no target that used to
+   resolve stopped resolving. `crates/graph/tests/coverage.rs` already asserts that a node
+   with no typed reference is still a node the wiki has: that is the guard, and it has to go
+   red if the filter is too wide.
+4. Remove from `corrections.json` the verdicts that no longer have a target, so curation
+   does not keep answering questions nobody asks.
+
+### Done when
+
+The uninterpreted references are 17 minus the ones judged to be noise, every remaining one
+is a `Verdict::Unknown` with a reason that says *why the model cannot express it* rather
+than *what the word was*, and the regenerated `requirements.json` is committed alongside the
+generator change with the coverage test green.
