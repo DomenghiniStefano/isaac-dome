@@ -45,12 +45,34 @@ describe('characterValue', () => {
 
 describe('characterForms', () => {
   const nodes = [
-    node([{ kind: 'character', id: 31, name: 'The Lost', tainted: true }]),
     node([
-      { kind: 'character', id: 10, name: 'The Lost', tainted: false },
-      { kind: 'boss', id: 1, name: 'Monstro' },
+      {
+        kind: 'character',
+        id: 31,
+        name: 'The Lost',
+        tainted: true,
+        page: null,
+      },
     ]),
-    node([{ kind: 'character', id: 10, name: 'The Lost', tainted: false }]),
+    node([
+      {
+        kind: 'character',
+        id: 10,
+        name: 'The Lost',
+        tainted: false,
+        page: null,
+      },
+      { kind: 'boss', id: 1, name: 'Monstro', page: null },
+    ]),
+    node([
+      {
+        kind: 'character',
+        id: 10,
+        name: 'The Lost',
+        tainted: false,
+        page: null,
+      },
+    ]),
   ]
 
   it('reads every character a node is missing, once per id', () => {

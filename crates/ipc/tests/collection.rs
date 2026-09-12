@@ -4,6 +4,7 @@
 use catalog::Catalog;
 use ipc::{collection_view, CollectionDiagnostic, CollectionView, LockView};
 use serde_json::{json, to_value};
+use wiki::{Dataset, Entry, Infobox, Target};
 
 const ITEMS: &[u8] = b"<items gfxroot=\"gfx/items/\"><passive id=\"1\" gfx=\"a.png\" name=\"A\" achievement=\"1\" /><active id=\"2\" gfx=\"b.png\" name=\"B\" /><familiar id=\"5\" gfx=\"c.png\" name=\"C\" achievement=\"2\" /><trinket id=\"1\" gfx=\"t.png\" name=\"T\" /></items>";
 const META: &[u8] = b"<items><item id=\"1\" quality=\"4\" tags=\"\"/><item id=\"2\" quality=\"1\" tags=\"\"/></items>";
@@ -26,7 +27,7 @@ const SLOTS: [bool; 4] = [false, true, false, false];
 const DONE: [bool; 3] = [false, true, false];
 
 fn view(items: Option<&[bool]>, achievements: Option<&[bool]>) -> CollectionView {
-    collection_view(Some(&catalog()), items, achievements, |_| None)
+    collection_view(Some(&catalog()), None, items, achievements, |_| None)
 }
 
 #[test]
@@ -38,10 +39,24 @@ fn the_shapes_are_pinned() {
     assert_eq!(
         to_value(LockView::Locked {
             achievement: 2,
-            text: Some("t2".into())
+            text: Some("t2".into()),
+            page: None
         })
         .expect("serializes"),
-        json!({ "kind": "locked", "achievement": 2, "text": "t2" })
+        json!({ "kind": "locked", "achievement": 2, "text": "t2", "page": null }),
+        "`page: null` is a key the screen reads: the dataset has no page for this one"
+    );
+    assert_eq!(
+        to_value(LockView::Locked {
+            achievement: 2,
+            text: Some("t2".into()),
+            page: Some(Target::Achievement { id: 2 })
+        })
+        .expect("serializes"),
+        json!({
+            "kind": "locked", "achievement": 2, "text": "t2",
+            "page": { "kind": "achievement", "id": 2 }
+        })
     );
     assert_eq!(
         to_value(CollectionDiagnostic::ItemsBeyondSlots { count: 1 }).expect("serializes"),
@@ -104,12 +119,14 @@ fn locks_follow_the_unlocking_achievement() {
         vec![
             LockView::Unlocked {
                 achievement: 1,
-                text: Some("t1".into())
+                text: Some("t1".into()),
+                page: None
             },
             LockView::Free,
             LockView::Locked {
                 achievement: 2,
-                text: Some("t2".into())
+                text: Some("t2".into()),
+                page: None
             },
         ]
     );
@@ -123,12 +140,14 @@ fn locks_follow_the_unlocking_achievement() {
         vec![
             LockView::Unknown {
                 achievement: 1,
-                text: Some("t1".into())
+                text: Some("t1".into()),
+                page: None
             },
             LockView::Free,
             LockView::Unknown {
                 achievement: 2,
-                text: Some("t2".into())
+                text: Some("t2".into()),
+                page: None
             },
         ]
     );
@@ -161,11 +180,76 @@ fn quality_pools_and_origin_come_from_the_catalog() {
 #[test]
 fn without_a_catalog_only_the_totals_speak() {
     let flags = [false, true, true];
-    let v = collection_view(None, Some(&flags), None, |_| None);
+    let v = collection_view(None, None, Some(&flags), None, |_| None);
     assert!(v.items.is_empty() && v.pools.is_empty());
     assert_eq!(
         (v.totals.slots, v.totals.items, v.totals.in_collection),
         (3, 0, 2)
     );
     assert_eq!(v.diagnostics, vec![CollectionDiagnostic::NoCatalog]);
+}
+
+/// The lock links to the achievement's page, and only when the dataset has it. `free` carries
+/// no page because nothing unlocks the item — a different sentence from "no page".
+#[test]
+fn a_lock_carries_the_achievement_page_only_when_the_dataset_has_it() {
+    let mut ds = Dataset::empty_for_tests();
+    // Achievement 2 has a page, achievement 1 has none: one of each, in one view.
+    ds.achievements.insert(
+        2,
+        Entry {
+            title: "t2".into(),
+            revid: 1,
+            infobox: Infobox::Achievement {
+                description: String::new(),
+                requirements: vec![],
+                unlocks: None,
+            },
+            sections: vec![],
+        },
+    );
+
+    let v = collection_view(
+        Some(&catalog()),
+        Some(&ds),
+        Some(&SLOTS),
+        Some(&DONE),
+        |_| None,
+    );
+    let lock = |id: u32| {
+        to_value(
+            &v.items
+                .iter()
+                .find(|i| i.id == id)
+                .expect("the item is in the catalog")
+                .lock,
+        )
+        .expect("serializes")
+    };
+    assert_eq!(lock(5)["kind"], "locked");
+    assert_eq!(
+        lock(5)["page"],
+        json!({ "kind": "achievement", "id": 2 }),
+        "the badge's menu opens the achievement that unlocks the item"
+    );
+    assert_eq!(
+        lock(1)["page"],
+        json!(null),
+        "the dataset has no page for achievement 1: the name shows, and does not link"
+    );
+    assert_eq!(lock(2)["kind"], "free", "nothing unlocks item 2");
+    assert_eq!(
+        lock(2).get("page"),
+        None,
+        "a free item carries no page key at all: there is nothing to open"
+    );
+
+    // No dataset at all: every lock reads the same, and nothing links.
+    let without = collection_view(Some(&catalog()), None, Some(&SLOTS), Some(&DONE), |_| None);
+    assert!(without.items.iter().all(|i| match &i.lock {
+        LockView::Free => true,
+        LockView::Unlocked { page, .. }
+        | LockView::Locked { page, .. }
+        | LockView::Unknown { page, .. } => page.is_none(),
+    }));
 }
