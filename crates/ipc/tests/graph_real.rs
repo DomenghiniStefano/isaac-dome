@@ -35,9 +35,14 @@ fn real() -> Option<(Catalog, ResourceSet, Save)> {
 fn the_real_profile_has_379_done_637_known_and_4_unknown_slots() {
     let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
-    let v = unlock_view(Some(&c), Some(&flags), None, None, |r: &ipc::IconRef| {
-        Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path()))
-    });
+    let v = unlock_view(
+        Some(&c),
+        Some(&flags),
+        None,
+        None,
+        None,
+        |r: &ipc::IconRef| Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path())),
+    );
     // 642 flags but 641 nodes (slots 1..=641: slot 0 isn't a node); the catalog covers
     // 1..=637, so what's left beyond the catalog is 638..=641: four, not 642 - 637.
     assert_eq!(
@@ -76,7 +81,7 @@ fn the_slot_id_junction_is_pinned_by_the_items_seen_in_the_save() {
     let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let seen = s.flags(Kind::Items).expect("section 4");
-    let v = unlock_view(Some(&c), Some(&flags), None, None, |_| None);
+    let v = unlock_view(Some(&c), Some(&flags), None, None, None, |_| None);
     let done: BTreeSet<u32> = v
         .nodes
         .iter()
@@ -105,12 +110,13 @@ fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
     let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let g = graph::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
-    let e = g.evaluate(Some(&flags));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
     let v = unlock_view(
         Some(&c),
         Some(&flags),
         Some(&g),
         Some(&e),
+        None,
         |r: &ipc::IconRef| Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path())),
     );
     let steps = next_steps(&v);

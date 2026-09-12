@@ -12,6 +12,7 @@ fn every_edge_is_accounted_for() {
     let (mut character, mut boss, mut item, mut challenge) = (0u32, 0u32, 0u32, 0u32);
     let (mut no_unlocker, mut disjunction, mut gate, mut unknown, mut judged_none) =
         (0u32, 0u32, 0u32, 0u32, 0u32);
+    let (mut mark, mut counter) = (0u32, 0u32);
     let mut produced = 0u32;
     for n in g.nodes() {
         for r in &n.requirements {
@@ -43,6 +44,16 @@ fn every_edge_is_accounted_for() {
                     gate += 1;
                     continue;
                 }
+                // Answered by the profile, so it produces no edge and is not uninterpreted
+                // either: it is counted on its own rather than folded into a neighbour.
+                graph::model::Requirement::Mark { .. } => {
+                    mark += 1;
+                    continue;
+                }
+                graph::model::Requirement::Counter { .. } => {
+                    counter += 1;
+                    continue;
+                }
                 graph::model::Requirement::Unknown { .. } => {
                     unknown += 1;
                     continue;
@@ -62,7 +73,8 @@ fn every_edge_is_accounted_for() {
     let edges: u32 = g.nodes().iter().map(|n| n.prerequisites.len() as u32).sum();
     eprintln!(
         "requirements: character {character}, boss {boss}, item {item}, challenge {challenge}, \
-         gate {gate}, judged-not-a-prerequisite {judged_none}, uninterpreted {unknown}"
+         gate {gate}, mark {mark}, counter {counter}, \
+         judged-not-a-prerequisite {judged_none}, uninterpreted {unknown}"
     );
     eprintln!(
         "of those, {produced} name something the game says is unlocked by an achievement; \

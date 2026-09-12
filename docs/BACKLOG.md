@@ -1055,14 +1055,14 @@ draws every cell unknown and says why.
 
 ---
 
-## B21 — A mark taken in multiplayer says so (`ipc` and `ui`; **measurement closed 2026-09-12**)
+## B21 — A mark taken in multiplayer says so (`ipc` and `ui`; **two of three measured 2026-09-12**)
 
 Logged 2026-09-12, a product requirement from the owner: the matrix has to show whether a
 mark was taken in multiplayer or alone. Today a cell knows only its level.
 
-**The three measurements this entry asked for were all made the same day**, on a live
-online Greed run. The entry stays open on the implementation, which is now unblocked and
-knows exactly what it has to draw.
+**Two of the three measurements this entry asked for were made the same day**, on a live
+online Greed run; the third was briefly thought closed and is not. The implementation is
+unblocked either way — what it draws does not depend on the local co-op answer.
 
 ### What was measured
 
@@ -1080,10 +1080,16 @@ inside the window — plus the dated series and the 22 folders in `online_logs\`
    mark itself, and bestiary tallies 1 and 2 all moved. What did *not* move is achievements,
    items, challenges, bosses and sections 3, 5, 8, 9 — which is the half of the old claim
    that was right, and the half that made the whole claim look right.
-3. **Local co-op writes the profile but does not set bit 2.** ✅ Free, out of the series: a
-   local co-op win is the only thing that makes index 188 name two characters at once, and
-   it happens in exactly two windows — 2026-07-22 (Magdalene + Blue Baby) and 2026-09-01
-   (Magdalene + Cain). The first took four marks for Blue Baby, all of them without bit 2.
+3. **Local co-op — still open.** ❌ It was briefly called closed on the same day, on the
+   argument that a local co-op win is the only thing that makes index 188 name two
+   characters at once, which made 2026-07-22 and 2026-09-01 identifiable co-op days. **That
+   argument is wrong**: 188 accumulates. A single win adds its bit and leaves the previous
+   one standing — `2 → 6` on 2026-09-01, and the `4 → 12` the B8 spike report already
+   recorded as "one thing that does not fit" — so two bits is two wins in the window, not
+   two players in one run. The evidence that survives is weaker and by elimination: no day
+   without an online session has produced a bit 2, and the owner confirms local co-op
+   happened at least once. Settling it needs one local co-op win with a snapshot either
+   side, the same protocol as point 2.
 
 So the name is **"won online"**, narrower than the "multiplayer" this entry assumed, and
 `sharedsave_*.dat` is *not* needed: that branch of the entry is dead.

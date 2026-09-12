@@ -142,6 +142,15 @@ fn main() {
                 }
             }
             let mask = cur.get(WINNER_MASK).copied().unwrap_or(0);
+            let was = pc.get(WINNER_MASK).copied().unwrap_or(0);
+            if was != mask {
+                println!(
+                    "      188: {was} -> {mask}   (kept {:b}, added {:b}, lost {:b})",
+                    was & mask,
+                    mask & !was,
+                    was & !mask
+                );
+            }
             let won: Vec<&str> = (0..32).filter(|b| mask >> b & 1 == 1).map(winner).collect();
             if movers.is_empty() && won.is_empty() {
                 prev = Some((f[..8].to_string(), cur));

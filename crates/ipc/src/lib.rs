@@ -8,6 +8,7 @@ mod icon;
 mod mark_art;
 mod marks;
 mod profile;
+mod progress;
 mod queue;
 mod resources;
 mod search;
@@ -25,8 +26,9 @@ pub use collection::{
 pub use goals::{target_exists, Goal, GoalId, TargetKey, UnlockTarget};
 pub use graph::{
     next_steps, plan_view, resolve_target, target_of, unlock_view, AchievementRef, GoalView,
-    GraphInfo, NextSteps, OriginView, PlanDiagnostic, PlanExpansion, PlanStep, PlanView,
-    RequirementView, StepsBasis, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
+    GraphInfo, MarkColumnView, MarkLevelView, NextSteps, OriginView, PlanDiagnostic, PlanExpansion,
+    PlanStep, PlanView, RequirementView, StepsBasis, UnlockDiagnostic, UnlockNode, UnlockTotals,
+    UnlockView, STEPS,
 };
 pub use icon::{icon_source, IconRef, MarkTier, ICON_SCHEME};
 pub use mark_art::{mark_source, MarkFrames, LOBBY_ANM2, WIDGET_ANM2};
@@ -39,6 +41,7 @@ pub use profile::{
     CandidateView, ChoiceReason, GameView, MissingReason, ProfileId, SetupDiagnostic, SetupState,
     SteamView,
 };
+pub use progress::SaveProgress;
 pub use queue::{
     achievement_unlocking, queue_view, GraphDeps, QueueDiagnostic, QueueInputs, QueueRow, QueueView,
 };

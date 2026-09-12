@@ -120,9 +120,14 @@ observed values are only 0, 1, 2, 3, 5, 7. Bits 0 and 1 are the mark's levels; *
 "won online"**, measured on 2026-09-12 (see below). That the set holds no 4 and no 6 is the
 structural half of that reading — an online clear is also a clear, so bit 2 never stands
 without bit 0 — and it is pinned by `the_online_bit_never_stands_without_the_cleared_bit`
-in `crates/ipc/tests/marks_real.rs`. The two **levels** are still the unmeasured half, so
-**don't compute completion percentages**: what forbids them now is B22/B23, not an unread
-bit.
+in `crates/ipc/tests/marks_real.rs`. The two **levels** are the unmeasured half **except in
+one column**: in **Greed**, bit 1 is **Ultra Greedier**, measured on 2026-09-12 on three days
+with three different characters (Keeper, Judas, Magdalene), each time the right character's
+cell. What bit 1 means in the other eleven is still unmeasured, and `graph::rules::MarkLevel`
+is therefore named `Base` / `Second` after the bits and not `Hard` after a meaning. The
+property is kept by `winning_greedier_sets_the_second_bit_of_that_characters_greed_cell` in
+`crates/ipc/tests/progress_real.rs`. Still **don't compute completion percentages**: what
+forbids them now is B22/B23, not an unread bit.
 
 **The matrix is 34 × 12** since 2026-09-08: the last three columns were located on the
 historical series, not read off a document. Delirium for the 19 later characters starts at
@@ -229,10 +234,18 @@ Section 8 staying put through a logged `playing cutscene 21` is the same trap in
 original form: the log announces a cutscene the personal save never records. **Read a
 co-op session as evidence about counters, marks and the bestiary; never about unlocks.**
 
-Local co-op (second controller) is a third case: it writes the personal profile the
-ordinary way and **does not** set bit 2. It is recognisable in the series without any log,
-because index 188 then names two characters at once — which is also why
-`the_character_that_won_is_the_character_whose_mark_appeared` skips those windows.
+Local co-op (second controller) is a third case, and it is **not** settled. No day without
+an online session has ever produced a bit 2, and the owner confirms local co-op happened at
+least once, so the likely reading is that local co-op does not set it — by elimination, not
+by measurement. What would settle it is one local co-op win with a snapshot either side.
+
+**Do not try to identify those days from index 188.** That mask **accumulates**: a single
+win adds its character's bit and leaves the previous one standing (`2 → 6` on 2026-09-01,
+`4 → 12` in the B8 spike report), so two bits at once is two wins in the window, not two
+players in one run. Something clears it — `6 → 4`, `4 → 0` are both observed — and what,
+nobody has measured. This is why
+`the_character_that_won_is_the_character_whose_mark_appeared` only reads windows with
+exactly one bit: that restriction is load-bearing, not caution.
 
 ---
 

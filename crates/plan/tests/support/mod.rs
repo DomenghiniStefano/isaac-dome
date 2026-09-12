@@ -20,7 +20,14 @@ impl GraphDeps {
         GraphDeps {
             chains: rows
                 .iter()
-                .map(|a| (*a, g.missing_chain(*a, flags).into_iter().collect()))
+                .map(|a| {
+                    (
+                        *a,
+                        g.missing_chain(*a, &graph::FlagsOnly(flags))
+                            .into_iter()
+                            .collect(),
+                    )
+                })
                 .collect(),
         }
     }

@@ -10,7 +10,7 @@ fn available_now_and_blocked_by_never_contradict_each_other() {
     let Some((g, flags)) = support::real_graph_and_flags() else {
         return;
     };
-    let e = g.evaluate(Some(&flags));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
     for n in g.nodes() {
         let Some(NodeInfo::Computed {
             available_now,
@@ -33,7 +33,7 @@ fn steps_missing_is_zero_exactly_when_the_node_is_done_or_available() {
     let Some((g, flags)) = support::real_graph_and_flags() else {
         return;
     };
-    let e = g.evaluate(Some(&flags));
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
     for n in g.nodes() {
         let Some(NodeInfo::Computed {
             available_now,
@@ -94,6 +94,8 @@ fn the_graph_has_the_shape_this_era_measured() {
                 graph::model::Requirement::Challenge { .. } => "challenge",
                 graph::model::Requirement::Item { .. } => "item",
                 graph::model::Requirement::Gate { .. } => "gate",
+                graph::model::Requirement::Mark { .. } => "mark",
+                graph::model::Requirement::Counter { .. } => "counter",
                 graph::model::Requirement::Unknown { .. } => "unknown",
                 graph::model::Requirement::None => "none",
             };
@@ -174,6 +176,8 @@ fn every_resolvable_requirement_produced_its_edge() {
                 graph::model::Requirement::Boss { id } => c.boss(*id).and_then(|b| b.unlocked_by),
                 graph::model::Requirement::Challenge { .. }
                 | graph::model::Requirement::Gate { .. }
+                | graph::model::Requirement::Mark { .. }
+                | graph::model::Requirement::Counter { .. }
                 | graph::model::Requirement::Unknown { .. }
                 | graph::model::Requirement::None => continue,
             };

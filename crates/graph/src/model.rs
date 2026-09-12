@@ -31,6 +31,24 @@ pub enum Requirement {
     Unknown {
         label: String,
     },
+    /// One cell of the completion matrix: "beat `column` as `character`, at `level`".
+    /// Symbolic on purpose — the cell's index into the save is not this crate's business,
+    /// and a rules file carrying an offset would be the same mistake as an offset crossing
+    /// the IPC.
+    Mark {
+        character: CharacterId,
+        column: crate::rules::MarkColumn,
+        level: crate::rules::MarkLevel,
+    },
+    /// A tally of section 2, at or above a threshold. Named, never indexed.
+    ///
+    /// Separate from `Mark` and not folded into one `Progress` because the two are
+    /// different things to the player: a cell is "you, with this character", a tally is
+    /// "anyone, ever". Fusing them would erase the distinction the screen draws.
+    Counter {
+        name: crate::rules::CounterName,
+        at_least: u32,
+    },
     /// Judged as gating nothing — `alwaysAvailable` or `notAPrerequisite`. A variant
     /// rather than a ref filtered away at the source, so that resolution is **total**:
     /// every ref maps to exactly one outcome and none disappears without a name.

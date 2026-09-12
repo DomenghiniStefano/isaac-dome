@@ -197,6 +197,17 @@ the previous value 4 matches no character played. Either REPENTOGON's label for 
 means something other than a character id, or it encodes something else entirely. Recorded
 as an observed discrepancy, to be closed by collecting wins with other characters.
 
+> **Closed on 2026-09-12, and the label is the part that misleads.** The mask
+> **accumulates**: `4` is Cain, still standing from an earlier win, and the run *added*
+> Judas's bit 3 — `4 | 8 = 12`. The series shows the same shape at `2 → 6` on 09-01. So it
+> is a character mask, as REPENTOGON says, but not of the *last run*: a single win never
+> clears what is already there. What does clear it is now the open question — `6 → 4` and
+> `4 → 0` are both observed and neither is explained.
+>
+> This entry cost a day: on 2026-09-12 two bits at once were read as "two players in one
+> run", which closed B21's local co-op question on an argument this paragraph already
+> refuted. The report was in the repo and was read afterwards.
+
 ## Noise, and what it costs
 
 **87% of the log is animation warnings** — 29,089 lines out of 33,222, all of the form

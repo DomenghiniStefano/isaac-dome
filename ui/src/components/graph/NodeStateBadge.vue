@@ -43,6 +43,8 @@ const kindText: Record<RequirementKind, MessageKey<MessageSchema>> = {
   [RequirementKind.Challenge]: 'graph.why.challenge',
   [RequirementKind.Item]: 'graph.why.item',
   [RequirementKind.Gate]: 'graph.why.gate',
+  [RequirementKind.Mark]: 'graph.why.mark',
+  [RequirementKind.Counter]: 'graph.why.counter',
   [RequirementKind.Unknown]: 'graph.why.unknown',
 }
 
