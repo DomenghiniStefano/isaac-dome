@@ -37,6 +37,34 @@ green on the merge result; 3.5 is closed on both halves.
 - [x] **M2 — Unlock graph** (2026-09-07). The Unlock *section* is frontend work and
       waits for the design system; the graph behind it is done — report in
       `docs/superpowers/plans/2026-09-07-unlock-graph-report.md`.
+      **Reopened and closed again on 2026-09-12** for the one kind of prerequisite it could
+      not say. Spec `docs/superpowers/specs/2026-09-12-graph-mark-requirements-design.md`,
+      plan `docs/superpowers/plans/2026-09-12-graph-mark-requirements.md`.
+      - [x] Five targets — Mother, The Beast, Hush, Delirium, Ultra Greedier — held **178 of
+            the 195** uninterpreted references, and none of them for want of curation: every
+            one was a hand-written `Verdict::Unknown`. They are not behind an achievement,
+            they are behind *having played something*, and the model had no case for it.
+      - [x] **Uninterpreted references on real data: 195 → 17.** `mark 170, counter 8`, which
+            is exactly the split the spec measured: 170 of the references name a character
+            alongside the boss, so they are one cell of the completion matrix, and 8 name the
+            boss alone, which a kill tally answers. The 17 that remain are the 13 `pickup:`
+            and 4 `transformation:` references §6 of the spec leaves out.
+      - [x] **New measurement**: in the **Greed** column, bit 1 of a cell is **Ultra
+            Greedier** — three days, three characters, each time the right character's cell.
+            Recorded in `CLAUDE.md` and `reference/isaac_counters.py`, kept by a property in
+            `crates/ipc/tests/progress_real.rs`.
+      - [x] **The mark layout moved to `core-save`**, where the file's shape belongs; it had
+            been living in the view-model that draws the matrix. Completion's tests passed
+            unchanged, which is what says no index moved.
+      - [x] **Two bugs the tests found, both about a character's identity.** The game gives a
+            Tainted character the base form's name, so the name index keeps one of the two:
+            by name alone 141 of 396 character references resolved to nothing, and by
+            name-first "Ultra Greedier as Keeper" picked row 29 — T. Keeper. Resolution goes
+            by the wiki's id first now, pinned by two tests in `crates/graph/tests/build.rs`.
+      - [ ] **Handed to the design system**: `RequirementView` gained `mark` and `counter`,
+            and a node held only by one of them is `availableNow` — nothing is locked, the
+            content only has to be played. **Unlock's "unlockable now" count rises**, and
+            such nodes are now eligible as Next steps.
 - [ ] **M3 — Derived plan** ← in progress. The **plan queue** is done (2026-09-08): an
       ordered series of achievements whose order is yours and can never contradict the
       graph. Report in `docs/superpowers/plans/2026-09-07-plan-queue-report.md`. What
@@ -728,6 +756,10 @@ save against the dated backup the game wrote before it, and read which cells mov
       Forgotten and the 19. One run of Mother with a Tainted character closes the whole
       20 × 2 block, because the base indices are already pinned and only the evidence that
       those cells move is missing.
+      **Measured on 2026-09-12, and the absence is now a finding rather than an assumption**:
+      a walk of the whole dated series looking for *any* completion of Mother or The Beast by
+      those 20 characters found none. The blocker is real, the series cannot close it, and it
+      is what keeps 40 nodes of the unlock graph `Partial` instead of answered.
 - [ ] **A save of the 642 / 523 era in `samples/`** — a copy out of
       `Steam\userdata\<id>\250900\remote\`, named `YYYYMMDD.rep+persistentgamedata1.dat`.
       Costs nothing but the copy, and it switches on the era row in

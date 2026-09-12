@@ -60,6 +60,11 @@ NAMED = {
 }
 
 # --- 14-cell blocks: the original characters ---
+#
+# Greed (base 130), 2026-09-12: bit 1 of a cell in this column is Ultra Greedier, not
+# merely "the harder level". Measured on three days of the dated series, each with a
+# different character and each time that character's own cell: Keeper (142, 0 -> 3),
+# Judas (133, 1 -> 3), Magdalene (131, 0 -> 3). The claim is about this column only.
 BLOCKS_14 = [
     ("Mom's Heart", 27), ("Isaac", 41), ("Satan", 55), ("Boss Rush", 69),
     ("Blue Baby", 83), ("The Lamb", 97), ("Mega Satan", 116), ("Greed", 130),
