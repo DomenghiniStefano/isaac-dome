@@ -9,6 +9,7 @@ import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
+import { targetName } from '@/lib/graph/characterName'
 import { targetKind } from '@/lib/graph/unlockFilter'
 import type { QueueRow } from '@/lib/ipc/types'
 import { knownText, originRows, rowId } from '@/lib/plan/queueRows'
@@ -49,7 +50,7 @@ const serves = computed(() =>
 const firstUnlock = computed(() => {
   const target = props.row.node.unlocks[0]
   return target
-    ? `${t('plan.row.unlocks')} ${target.name} · ${t(unlockKindText[targetKind(target)])}`
+    ? `${t('plan.row.unlocks')} ${targetName(t, target)} · ${t(unlockKindText[targetKind(target)])}`
     : null
 })
 const fanOut = computed(() => props.row.node.graph.fanOut)

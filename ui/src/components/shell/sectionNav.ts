@@ -83,6 +83,12 @@ export const sidebarEntries: Record<SidebarSection, SidebarEntry[]> = {
   ),
 }
 
+// Where clicking a section goes (`docs/BACKLOG.md` B24): its first entry, which is the
+// section's own landing — Next steps, the Wiki's overview, the profile. A section always
+// has entries, so the fallback is only there to keep the type honest.
+export const firstEntry = (section: SidebarSection): SidebarEntry =>
+  sidebarEntries[section][0] ?? routeEntry(RouteName.NextSteps)
+
 export const sidebarHeaders: Record<SidebarSection, SidebarHeader> = {
   [SidebarSection.Progress]: {
     title: 'sidebar.progressTitle',
@@ -108,7 +114,6 @@ export const sectionOfOrigin = (origin: TabOrigin): SidebarSection => {
     case TabOrigin.Progress:
       return SidebarSection.Progress
     case TabOrigin.Settings:
-    case TabOrigin.About:
       return SidebarSection.Settings
     default:
       return assertNever(origin)

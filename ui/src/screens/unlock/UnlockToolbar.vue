@@ -10,6 +10,7 @@ import {
   ToggleGroupType,
 } from '@/components/ui/toggle-group'
 import { useMessages } from '@/i18n'
+import type { CharacterForm } from '@/lib/graph/characterName'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { FacetId, UnlockSort, facetOrder } from '@/lib/graph/unlockFilter'
@@ -22,6 +23,8 @@ const props = defineProps<{
   filter: UnlockFilter
   query: string
   sort: UnlockSort
+  // What a character pick is called: its value is an id (`docs/BACKLOG.md` B28).
+  characters: Map<string, CharacterForm>
 }>()
 const emit = defineEmits<{
   'update:query': [query: string]
@@ -52,7 +55,7 @@ const chips = computed(() =>
     props.filter.picks[facet].map((value) => ({
       facet,
       value,
-      label: facetValueLabel(t, facet, value),
+      label: facetValueLabel(t, facet, value, props.characters),
     })),
   ),
 )

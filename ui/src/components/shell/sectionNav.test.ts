@@ -3,6 +3,7 @@ import { RouteName, WikiCategory } from '@/router/routeTable'
 import { NavSection } from './navSection'
 import {
   SidebarSection,
+  firstEntry,
   isEntryActive,
   navSectionOf,
   sectionOfOrigin,
@@ -12,8 +13,8 @@ import {
 import { TabOrigin } from './tabs'
 
 describe('sectionNav', () => {
-  it('puts About under Settings', () => {
-    expect(sectionOfOrigin(TabOrigin.About)).toBe(SidebarSection.Settings)
+  it('puts a settings tab in the Settings sidebar', () => {
+    expect(sectionOfOrigin(TabOrigin.Settings)).toBe(SidebarSection.Settings)
   })
 
   it('marks no navbar section while browsing Settings', () => {
@@ -64,5 +65,19 @@ describe('the wiki overview', () => {
           query: { category: WikiCategory.Items },
         }),
     ).toBe(false)
+  })
+})
+
+describe('the first entry of a section', () => {
+  it('is where clicking the section goes (B24)', () => {
+    expect(firstEntry(SidebarSection.Progress).location).toEqual({
+      name: RouteName.NextSteps,
+    })
+    expect(firstEntry(SidebarSection.Wiki).location).toEqual({
+      name: RouteName.Wiki,
+    })
+    expect(firstEntry(SidebarSection.Settings).location).toEqual({
+      name: RouteName.Profile,
+    })
   })
 })
