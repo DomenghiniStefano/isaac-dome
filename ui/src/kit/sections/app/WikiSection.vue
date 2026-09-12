@@ -76,18 +76,21 @@ const blocks: Block[] = [
 // reference with an icon and one without sit side by side.
 const iconFor = (target: Target): string | null =>
   target.kind === 'item' ? (kitMarkArt.heart?.normal ?? null) : null
+
+// Which references lead to a page: items do, a pickup reads like a concept.
+const canOpen = (target: Target): boolean => target.kind !== 'pickup'
 </script>
 
 <template>
   <KitSection title="Wiki" class="col-span-2">
     <div class="flex flex-col gap-2 text-row">
       <p v-for="(line, i) in natures" :key="i">
-        <WikiInline :inline="line" :icon-for="iconFor" />
+        <WikiInline :inline="line" :icon-for="iconFor" :can-open="canOpen" />
       </p>
     </div>
     <p class="text-row">
-      <WikiInline :inline="paragraph" :icon-for="iconFor" />
+      <WikiInline :inline="paragraph" :icon-for="iconFor" :can-open="canOpen" />
     </p>
-    <WikiBlocks :blocks="blocks" :icon-for="iconFor" />
+    <WikiBlocks :blocks="blocks" :icon-for="iconFor" :can-open="canOpen" />
   </KitSection>
 </template>
