@@ -62,10 +62,55 @@ pub enum RequirementView {
     Gate {
         label: String,
     },
+    /// One cell of the completion matrix: go and beat `column` with this character.
+    ///
+    /// No progress field, unlike `Counter`: for one cell the state is binary, and an
+    /// invented percentage would be a number nobody measured.
+    Mark {
+        character: u32,
+        character_name: String,
+        column: MarkColumnView,
+        level: MarkLevelView,
+    },
+    /// A tally and its threshold, with where the profile stands. Unlike every other
+    /// requirement here, this one is not a wall: it is content already reachable.
+    Counter {
+        label: String,
+        current: u32,
+        at_least: u32,
+    },
     /// Not interpreted. A node carrying one cannot claim "available now".
     Unknown {
         label: String,
     },
+}
+
+/// The twelve columns, as a value on the wire. Fieldless, so it is a bare camelCase string
+/// and the TypeScript is a union of values — the repo's rule, zero exceptions.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub enum MarkColumnView {
+    MomsHeart,
+    Isaac,
+    Satan,
+    BossRush,
+    BlueBaby,
+    TheLamb,
+    MegaSatan,
+    Greed,
+    Hush,
+    Delirium,
+    Mother,
+    TheBeast,
+}
+
+/// A level inside a cell, named for its bit. `Second` is Ultra Greedier in the Greed
+/// column, measured; what it means elsewhere is not, and `hard` would ship that claim.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub enum MarkLevelView {
+    Base,
+    Second,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
@@ -256,7 +301,12 @@ use crate::icon::IconRef;
 /// The requirements still in the way, resolved to names. What is already satisfied is left
 /// out: a node blocked by nothing shows an empty list, and that agrees with `blocked_by`.
 /// `Requirement::None` never reaches here — it was judged as gating nothing.
-fn missing_view(c: &Catalog, node: &graph::build::Node, flags: &[bool]) -> Vec<RequirementView> {
+fn missing_view(
+    c: &Catalog,
+    node: &graph::build::Node,
+    flags: &[bool],
+    progress: Option<&dyn graph::Profile>,
+) -> Vec<RequirementView> {
     let en = catalog::Language::English;
     let done = |a: Option<AchievementId>| {
         a.and_then(|a| flags.get(a.0 as usize).copied())
@@ -266,11 +316,41 @@ fn missing_view(c: &Catalog, node: &graph::build::Node, flags: &[bool]) -> Vec<R
     for r in &node.requirements {
         match r {
             graph::model::Requirement::None => {}
-            // Task 7 of the 2026-09-12 plan gives these their own views, built against the
-            // profile. Until then they are not drawn: `missing_view` has no profile to ask
-            // whether the cell was reached, and a requirement drawn as missing without
-            // looking would be a guess with a picture on it.
-            graph::model::Requirement::Mark { .. } | graph::model::Requirement::Counter { .. } => {}
+            graph::model::Requirement::Mark {
+                character,
+                column,
+                level,
+            } => {
+                let Some(p) = progress else { continue };
+                let Some(ch) = c.character(*character) else {
+                    continue;
+                };
+                // Reached already: not missing. Cannot say: not this list's job to report
+                // it either — the node is `Partial` and that is where it says so.
+                match p.mark(*character, *column) {
+                    None => {}
+                    Some(reached) if reached.is_some_and(|r| r >= *level) => {}
+                    Some(_) => out.push(RequirementView::Mark {
+                        character: character.0,
+                        character_name: c.text(&ch.name, en).to_string(),
+                        column: column_view(*column),
+                        level: level_view(*level),
+                    }),
+                }
+            }
+            graph::model::Requirement::Counter { name, at_least } => {
+                let Some(p) = progress else { continue };
+                let Some(current) = p.counter(*name) else {
+                    continue;
+                };
+                if current < *at_least {
+                    out.push(RequirementView::Counter {
+                        label: counter_label(*name).to_string(),
+                        current,
+                        at_least: *at_least,
+                    });
+                }
+            }
             graph::model::Requirement::Character { id } => {
                 let Some(ch) = c.character(*id) else { continue };
                 if !done(ch.unlocked_by) {
@@ -335,6 +415,7 @@ pub fn unlock_view(
     flags: Option<&[bool]>,
     graph: Option<&graph::Graph>,
     eval: Option<&graph::evaluate::Eval>,
+    progress: Option<&dyn graph::Profile>,
     mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> UnlockView {
     let read = flags.unwrap_or(&[]);
@@ -402,7 +483,7 @@ pub fn unlock_view(
             },
         };
         let missing = match (catalog, graph.and_then(|g| g.node(slot))) {
-            (Some(c), Some(n)) => missing_view(c, n, read),
+            (Some(c), Some(n)) => missing_view(c, n, read, progress),
             _ => Vec::new(),
         };
         nodes.push(UnlockNode {
@@ -623,5 +704,44 @@ pub fn plan_view(
         expansion: PlanExpansion::Stub,
         diagnostics,
         store_available,
+    }
+}
+
+/// The graph's column as the wire's. No `_` arm: the two are the same twelve, and a
+/// thirteenth has to break the build rather than fall into a default.
+fn column_view(c: graph::rules::MarkColumn) -> MarkColumnView {
+    use graph::rules::MarkColumn as M;
+    match c {
+        M::MomsHeart => MarkColumnView::MomsHeart,
+        M::Isaac => MarkColumnView::Isaac,
+        M::Satan => MarkColumnView::Satan,
+        M::BossRush => MarkColumnView::BossRush,
+        M::BlueBaby => MarkColumnView::BlueBaby,
+        M::TheLamb => MarkColumnView::TheLamb,
+        M::MegaSatan => MarkColumnView::MegaSatan,
+        M::Greed => MarkColumnView::Greed,
+        M::Hush => MarkColumnView::Hush,
+        M::Delirium => MarkColumnView::Delirium,
+        M::Mother => MarkColumnView::Mother,
+        M::TheBeast => MarkColumnView::TheBeast,
+    }
+}
+
+fn level_view(l: graph::rules::MarkLevel) -> MarkLevelView {
+    match l {
+        graph::rules::MarkLevel::Base => MarkLevelView::Base,
+        graph::rules::MarkLevel::Second => MarkLevelView::Second,
+    }
+}
+
+/// What the screen calls the tally: the boss's English name, because that is what the
+/// player is being asked to go and beat. Not the counter's identifier, which is ours.
+fn counter_label(n: graph::rules::CounterName) -> &'static str {
+    use graph::rules::CounterName as C;
+    match n {
+        C::HushKills => "Hush",
+        C::DeliriumKills => "Delirium",
+        C::MotherKills => "Mother",
+        C::BeastKills => "The Beast",
     }
 }

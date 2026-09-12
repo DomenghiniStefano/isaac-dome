@@ -209,6 +209,7 @@ fn unlock_view_maps_slots_to_achievements_and_marks_the_ones_beyond_the_catalog(
         Some(&flags),
         None,
         None,
+        None,
         |_| None,
     );
     assert_eq!(v.nodes.len(), 5, "one per slot 1..=5");
@@ -255,6 +256,7 @@ fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
     let v = unlock_view(
         Some(&catalog_with_achievements()),
         Some(&flags),
+        None,
         None,
         None,
         // Only one reference resolves. The row for the other one still has to exist, with
@@ -306,6 +308,7 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
         Some(&[false, true]),
         None,
         None,
+        None,
         |_| None,
     );
     assert_eq!(v.nodes.len(), 1);
@@ -314,7 +317,7 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
         vec![UnlockDiagnostic::CatalogBeyondSlots { count: 2 }]
     );
 
-    let v = unlock_view(None, Some(&[false, true, true]), None, None, |_| None);
+    let v = unlock_view(None, Some(&[false, true, true]), None, None, None, |_| None);
     assert_eq!(v.nodes.len(), 2);
     assert!(v
         .nodes
@@ -329,9 +332,14 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
 /// would be false, because nothing is known about the file.
 #[test]
 fn a_missing_achievement_section_is_declared_and_compares_nothing() {
-    let v = unlock_view(Some(&catalog_with_achievements()), None, None, None, |_| {
-        None
-    });
+    let v = unlock_view(
+        Some(&catalog_with_achievements()),
+        None,
+        None,
+        None,
+        None,
+        |_| None,
+    );
     assert!(v.nodes.is_empty());
     assert_eq!(
         v.totals,
@@ -352,7 +360,7 @@ fn a_missing_achievement_section_is_declared_and_compares_nothing() {
         json!([{ "kind": "noAchievementSection" }])
     );
     // No catalog and no section: two different pieces of news, two diagnostics.
-    let v = unlock_view(None, None, None, None, |_| None);
+    let v = unlock_view(None, None, None, None, None, |_| None);
     assert_eq!(
         v.diagnostics,
         vec![
@@ -371,6 +379,7 @@ fn an_empty_but_present_section_still_compares_with_the_catalog() {
         Some(&[]),
         None,
         None,
+        None,
         |_| None,
     );
     assert!(v.nodes.is_empty());
@@ -387,7 +396,7 @@ fn without_a_graph_there_are_no_next_steps_to_suggest() {
     let mut flags = vec![false; 10];
     flags[2] = true;
     flags[5] = true;
-    let v = unlock_view(None, Some(&flags), None, None, |_| None);
+    let v = unlock_view(None, Some(&flags), None, None, None, |_| None);
     let s = next_steps(&v);
     assert_eq!(s.basis, StepsBasis::FanOut);
     assert!(
@@ -623,6 +632,7 @@ fn a_challenge_target_carries_the_achievements_it_rewards() {
     let v = unlock_view(
         Some(&c),
         Some(&[false, false, false, false]),
+        None,
         None,
         None,
         |_| None,

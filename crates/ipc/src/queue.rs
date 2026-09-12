@@ -93,6 +93,10 @@ pub struct QueueInputs<'a> {
     pub flags: Option<&'a [bool]>,
     pub graph: Option<&'a graph::Graph>,
     pub eval: Option<&'a graph::evaluate::Eval>,
+    /// What the save says about marks and tallies, for the requirements the graph now
+    /// answers from the profile. `None` draws none of them — which is right only when
+    /// `eval` was built without one too, or the queue and Unlock would disagree.
+    pub progress: Option<&'a dyn graph::Profile>,
     pub queue: Result<&'a plan::Queue, &'a plan::QueueError>,
     pub goals_pending: u32,
     /// `Some` when the database itself failed: the text is ours, never SQLite's.
@@ -108,6 +112,7 @@ pub fn queue_view(
         flags,
         graph,
         eval,
+        progress,
         queue,
         goals_pending,
         store_reason,
@@ -142,7 +147,7 @@ pub fn queue_view(
 
     // One `unlock_view`, indexed by achievement: a queue row shows **the same node** the
     // Unlock screen shows, so the two can never drift apart.
-    let view = unlock_view(Some(c), flags, graph, eval, icon);
+    let view = unlock_view(Some(c), flags, graph, eval, progress, icon);
     let by_id: std::collections::BTreeMap<u32, &UnlockNode> = view
         .nodes
         .iter()

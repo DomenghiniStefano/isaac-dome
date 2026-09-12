@@ -37,7 +37,7 @@ fn real() -> Option<(Catalog, Save)> {
 fn the_unlock_payload_carries_links_and_stays_small() {
     let Some((c, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
-    let view = ipc::unlock_view(Some(&c), Some(&flags), None, None, |r| {
+    let view = ipc::unlock_view(Some(&c), Some(&flags), None, None, None, |r| {
         Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path()))
     });
     let json = serde_json::to_string(&view).expect("serializes");

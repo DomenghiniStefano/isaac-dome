@@ -26,6 +26,7 @@ fn inputs<'a>(
         flags,
         graph: None,
         eval: None,
+        progress: None,
         queue,
         goals_pending: 0,
         store_reason: None,
