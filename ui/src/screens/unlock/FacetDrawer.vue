@@ -38,19 +38,22 @@ const drawerFacets: FacetId[] = [
 const characters = computed(() => characterForms(props.nodes))
 
 // Each count is over the rows every other facet and the search leave: it says what picking
-// the value would give. A value that would give nothing, and isn't picked, can't be picked.
+// the value would give. A value that would give nothing, and isn't picked, is not offered at
+// all: it could not be picked, and reading it with a 0 beside it is noise (B29).
 const columns = computed(() =>
   drawerFacets.map((facet) => {
     const counts = facetCounts(props.nodes, props.filter, facet)
     const picked = props.filter.picks[facet]
     return {
       facet,
-      values: facetOptions(props.nodes, facet).map((value) => ({
-        value,
-        label: facetValueLabel(t, facet, value, characters.value),
-        count: counts.get(value) ?? 0,
-        picked: picked.includes(value),
-      })),
+      values: facetOptions(props.nodes, facet)
+        .map((value) => ({
+          value,
+          label: facetValueLabel(t, facet, value, characters.value),
+          count: counts.get(value) ?? 0,
+          picked: picked.includes(value),
+        }))
+        .filter((option) => option.count > 0 || option.picked),
     }
   }),
 )
@@ -86,7 +89,6 @@ const active = computed(() => activeFilterCount(props.filter))
           >
             <Checkbox
               :model-value="entry.picked"
-              :disabled="entry.count === 0 && !entry.picked"
               @update:model-value="emit('toggle', column.facet, entry.value)"
             />
             <span

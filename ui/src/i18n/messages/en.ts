@@ -61,7 +61,7 @@ export const en: MessageSchema = {
       locked: 'locked',
       unknown: 'unreadable',
     },
-    facets: 'Facets',
+    facets: 'Filters',
     facet: {
       state: 'State',
       quality: 'Quality',
@@ -379,7 +379,7 @@ export const en: MessageSchema = {
       steps: 'steps missing',
       name: 'name',
     },
-    facets: 'Facets',
+    facets: 'Filters',
     noFilters: 'no filters',
     activeFilters: 'active filters',
     reset: 'Reset',

@@ -62,7 +62,7 @@ export const it = {
       locked: 'bloccato',
       unknown: 'non leggibile',
     },
-    facets: 'Faccette',
+    facets: 'Filtri',
     facet: {
       state: 'Stato',
       quality: 'Qualità',
@@ -385,7 +385,7 @@ export const it = {
       steps: 'passi mancanti',
       name: 'nome',
     },
-    facets: 'Faccette',
+    facets: 'Filtri',
     noFilters: 'nessun filtro',
     activeFilters: 'filtri attivi',
     reset: 'Azzera',
