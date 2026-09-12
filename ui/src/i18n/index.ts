@@ -14,7 +14,14 @@ export const i18n = createI18n<[MessageSchema], Locale, false>({
 // vue-i18n's own t() accepts any string, so a misspelled key would compile and render the
 // key itself. Components call this instead: the key is narrowed to the paths that exist.
 // Global scope, so no component needs a local i18n instance.
+// A message with a value in it (`{name}`) takes the values as a second argument: the word
+// order around the value is the translation's business, not the caller's.
 export const useMessages = () => {
   const { t } = useI18n({ useScope: 'global' })
-  return { t: (key: MessageKey<MessageSchema>): string => t(key) }
+  return {
+    t: (
+      key: MessageKey<MessageSchema>,
+      params?: Record<string, unknown>,
+    ): string => (params ? t(key, params) : t(key)),
+  }
 }

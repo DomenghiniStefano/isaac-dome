@@ -3,11 +3,16 @@ import { dlcNames } from '@/components/wiki/dlcNames'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
+import { characterLabel } from '@/lib/graph/characterName'
+import type { CharacterForm } from '@/lib/graph/characterName'
 import { NodeState } from '@/lib/graph/nodeState'
 import { FacetId, OriginValue, UnlockKind } from '@/lib/graph/unlockFilter'
 import { Dlc } from '@/lib/ipc/types'
 
-type Translate = (key: MessageKey<MessageSchema>) => string
+type Translate = (
+  key: MessageKey<MessageSchema>,
+  params?: Record<string, unknown>,
+) => string
 
 export const facetTitle: Record<FacetId, MessageKey<MessageSchema>> = {
   [FacetId.State]: 'unlock.facet.state',
@@ -43,6 +48,9 @@ export const facetValueLabel = (
   t: Translate,
   facet: FacetId,
   value: string,
+  // The characters the nodes are missing, by the facet's value: a character facet stores
+  // ids, because the base and Tainted forms share the name (`docs/BACKLOG.md` B28).
+  characters?: Map<string, CharacterForm>,
 ): string => {
   switch (facet) {
     case FacetId.State: {
@@ -58,8 +66,10 @@ export const facetValueLabel = (
       if (!origin) return value
       return originName[origin] ?? t('graph.originNone')
     }
-    case FacetId.Character:
-      return value
+    case FacetId.Character: {
+      const form = characters?.get(value)
+      return form ? characterLabel(t, form) : value
+    }
     default:
       return assertNever(facet)
   }

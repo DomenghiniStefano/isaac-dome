@@ -213,7 +213,8 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
         character,
         UnlockTarget::Character {
             id: 0,
-            name: "Isaac".into()
+            name: "Isaac".into(),
+            tainted: false
         }
     );
     let boss = resolve_target(&c, &TargetKey::Boss { id: 1 }, &mut icon).expect("boss 1");
@@ -263,4 +264,50 @@ fn an_absurd_key_resolves_to_nothing() {
     ] {
         assert_eq!(resolve_target(&c, &key, &mut icon), None, "{key:?}");
     }
+}
+
+/// The Tainted characters share their `text` with the base form: `achievements.xml` writes
+/// *You unlocked "The Lost"* for both slot 82 and slot 484, and says "Tainted" nowhere.
+/// What tells the two apart is `players.xml` — player 10's portrait is
+/// `Character_012_TheLost.png` and player 31's is `Character_012b_TheLost.png`, the `b` of
+/// the Tainted form — so the target has to carry the flag, or two different characters go
+/// out under one name.
+#[test]
+fn the_tainted_form_of_a_character_is_a_different_target_under_the_same_name() {
+    let Some((c, _, _)) = real() else { return };
+    let mut icon = |_: &ipc::IconRef| None;
+    let by_achievement = |slot: u32| {
+        c.characters()
+            .find(|ch| ch.unlocked_by == Some(catalog::AchievementId(slot)))
+            .map(|ch| ch.id.0)
+    };
+    let (Some(base), Some(tainted)) = (by_achievement(82), by_achievement(484)) else {
+        test_support::skip("this catalog has no character unlocked by 82 and 484");
+        return;
+    };
+    let base = resolve_target(&c, &TargetKey::Character { id: base }, &mut icon)
+        .expect("the base character");
+    let tainted = resolve_target(&c, &TargetKey::Character { id: tainted }, &mut icon)
+        .expect("the tainted character");
+    let (
+        UnlockTarget::Character {
+            name: base_name,
+            tainted: base_flag,
+            ..
+        },
+        UnlockTarget::Character {
+            name: tainted_name,
+            tainted: tainted_flag,
+            ..
+        },
+    ) = (&base, &tainted)
+    else {
+        panic!("expected two characters, got {base:?} and {tainted:?}");
+    };
+    assert_eq!(
+        base_name, tainted_name,
+        "the two forms share the game's name: that is why the flag exists"
+    );
+    assert!(!base_flag, "slot 82 unlocks the base form");
+    assert!(tainted_flag, "slot 484 unlocks the tainted form");
 }

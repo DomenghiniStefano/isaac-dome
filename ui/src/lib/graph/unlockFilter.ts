@@ -1,6 +1,7 @@
 import { countBy, sortBy, sumBy, uniq } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
 import type { UnlockNode, UnlockTarget } from '@/lib/ipc/types'
+import { characterForms, characterValue } from './characterName'
 import { NodeState, nodeState, stateOrder } from './nodeState'
 
 // Unlock's facets: only the ones the contract can answer (DESIGN-BRIEF.md §7.5). Mode, effort,
@@ -118,8 +119,12 @@ export const facetValues = (node: UnlockNode, facet: FacetId): string[] => {
     case FacetId.Origin:
       return [node.origin ?? OriginValue.None]
     case FacetId.Character:
+      // The id, never the name: the base and Tainted forms share the name, so a facet on
+      // names would fold two characters into one value (`docs/BACKLOG.md` B28).
       return uniq(
-        node.missing.flatMap((r) => (r.kind === 'character' ? [r.name] : [])),
+        node.missing.flatMap((r) =>
+          r.kind === 'character' ? [characterValue(r)] : [],
+        ),
       )
     default:
       return assertNever(facet)
@@ -183,8 +188,15 @@ export const facetOptions = (nodes: UnlockNode[], facet: FacetId): string[] => {
       return unlockKindOrder
     case FacetId.Origin:
       return originOrder
-    case FacetId.Character:
-      return sortBy(uniq(nodes.flatMap((n) => facetValues(n, facet))))
+    case FacetId.Character: {
+      // Sorted by the name the player reads, then by form, so the two Losts sit together;
+      // the values themselves stay the ids.
+      const forms = characterForms(nodes)
+      return sortBy(uniq(nodes.flatMap((n) => facetValues(n, facet))), [
+        (value) => forms.get(value)?.name ?? value,
+        (value) => (forms.get(value)?.tainted ? 1 : 0),
+      ])
+    }
     default:
       return assertNever(facet)
   }

@@ -1,6 +1,14 @@
 import { countBy, groupBy } from 'lodash-es'
+import type { MessageKey } from '@/i18n/messageKey'
+import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import type { RequirementView, UnlockNode } from '@/lib/ipc/types'
+import { characterLabel } from './characterName'
+
+type Translate = (
+  key: MessageKey<MessageSchema>,
+  params?: Record<string, unknown>,
+) => string
 
 // What a node is, one answer for every screen that draws it (DESIGN-BRIEF.md §7.1). A partial
 // node is never unlockable: the graph couldn't interpret at least one of its requirements.
@@ -70,10 +78,15 @@ const requirementOrder: RequirementKind[] = [
 ]
 
 // A gate and an unknown requirement carry only the file's label, in English: they are
-// conditions we deliberately did not guess at.
-const requirementName = (requirement: RequirementView): string => {
+// conditions we deliberately did not guess at. A character is the one kind whose name
+// isn't enough on its own — the two forms share it (`docs/BACKLOG.md` B28).
+const requirementName = (
+  requirement: RequirementView,
+  t: Translate,
+): string => {
   switch (requirement.kind) {
     case 'character':
+      return characterLabel(t, requirement)
     case 'boss':
     case 'challenge':
     case 'item':
@@ -91,11 +104,17 @@ export interface RequirementGroup {
   names: string[]
 }
 
-// "1 character and 2 unknown conditions", not "blocked by 3": what a node is missing, grouped.
-export const missingGroups = (node: UnlockNode): RequirementGroup[] => {
+// "1 character and 2 unknown conditions", not "blocked by 3": what a node is missing,
+// grouped. `t` is here for the one name that is composed rather than quoted.
+export const missingGroups = (
+  node: UnlockNode,
+  t: Translate,
+): RequirementGroup[] => {
   const byKind = groupBy(node.missing, (requirement) => requirement.kind)
   return requirementOrder.flatMap((kind) => {
     const entries = byKind[kind]
-    return entries ? [{ kind, names: entries.map(requirementName) }] : []
+    return entries
+      ? [{ kind, names: entries.map((r) => requirementName(r, t)) }]
+      : []
   })
 }

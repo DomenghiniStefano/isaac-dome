@@ -9,6 +9,7 @@ import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
+import { targetName } from '@/lib/graph/characterName'
 import { targetKind } from '@/lib/graph/unlockFilter'
 import type { UnlockNode } from '@/lib/ipc/types'
 
@@ -52,7 +53,7 @@ const art = computed(() =>
           v-for="target in node.unlocks"
           :key="`${target.kind}-${target.id}`"
           :variant="BadgeVariant.Tag"
-          >{{ target.name }} ·
+          >{{ targetName(t, target) }} ·
           {{ t(unlockKindText[targetKind(target)]) }}</Badge
         >
       </div>

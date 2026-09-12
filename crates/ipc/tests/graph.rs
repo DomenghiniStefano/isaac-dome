@@ -17,6 +17,7 @@ fn node(done: bool) -> UnlockNode {
         unlocks: vec![UnlockTarget::Character {
             id: 1,
             name: "Magdalene".into(),
+            tainted: false,
         }],
         origin: None,
         missing: Vec::new(),
@@ -280,7 +281,9 @@ fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
         "item 2 is from Rebirth"
     );
     let n2 = &v.nodes[1];
-    assert!(matches!(&n2.unlocks[0], UnlockTarget::Character { id: 7, name } if name == "Z_NAME"));
+    assert!(
+        matches!(&n2.unlocks[0], UnlockTarget::Character { id: 7, name, tainted: false } if name == "Z_NAME")
+    );
     assert_eq!(n2.origin, None, "the first target isn't an item");
     let n3 = &v.nodes[2];
     assert!(
@@ -652,10 +655,11 @@ fn requirement_view_shapes() {
     assert_eq!(
         to_value(RequirementView::Character {
             id: 1,
-            name: "Magdalene".into()
+            name: "Magdalene".into(),
+            tainted: false
         })
         .unwrap(),
-        json!({ "kind": "character", "id": 1, "name": "Magdalene" })
+        json!({ "kind": "character", "id": 1, "name": "Magdalene", "tainted": false })
     );
     assert_eq!(
         to_value(RequirementView::Item {
@@ -720,6 +724,7 @@ fn a_node_carries_what_it_is_missing_typed() {
         RequirementView::Character {
             id: 1,
             name: "Magdalene".into(),
+            tainted: false,
         },
         RequirementView::Boss {
             id: 19,
@@ -734,4 +739,31 @@ fn a_node_carries_what_it_is_missing_typed() {
         Some(2),
         "the screen groups by these: 'you're missing 1 character and 1 boss'"
     );
+}
+
+/// The pair, not the name: `players.xml` gives the two forms of a character the same name
+/// key, so a target that carried only the name would send two different characters out
+/// under one label (`docs/BACKLOG.md` B28).
+#[test]
+fn the_tainted_form_travels_as_a_flag_beside_the_shared_name() {
+    use ipc::{resolve_target, TargetKey};
+    // Two players with the same name key, told apart by the `b` in the portrait.
+    const PAIR: &[u8] = b"<players portraitroot=\"gfx/ui/stage/\"><player id=\"10\" name=\"#THE_LOST_NAME\" portrait=\"PlayerPortrait_TheLost.png\" achievement=\"82\" /><player id=\"31\" name=\"#THE_LOST_NAME\" portrait=\"PlayerPortrait_TheLost_b.png\" achievement=\"484\" /></players>";
+    let c = Catalog::build(|p| match p {
+        "players.xml" => Some(PAIR.to_vec()),
+        _ => None,
+    });
+    let mut icon = |_: &ipc::IconRef| None;
+    let base = resolve_target(&c, &TargetKey::Character { id: 10 }, &mut icon).expect("player 10");
+    let tainted =
+        resolve_target(&c, &TargetKey::Character { id: 31 }, &mut icon).expect("player 31");
+    let v = to_value(&tainted).unwrap();
+    assert_eq!(v["kind"], "character");
+    assert_eq!(v["tainted"], true);
+    assert_eq!(
+        v["name"],
+        to_value(&base).unwrap()["name"],
+        "the two forms share the game's name: the flag is what separates them"
+    );
+    assert_eq!(to_value(&base).unwrap()["tainted"], false);
 }

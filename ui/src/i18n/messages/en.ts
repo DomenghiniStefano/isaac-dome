@@ -336,6 +336,7 @@ export const en: MessageSchema = {
     originNone: 'not stated',
     unknownAchievement: 'Unknown achievement',
     slot: 'slot',
+    taintedName: 'Tainted {name}',
   },
   nextSteps: {
     intro:
