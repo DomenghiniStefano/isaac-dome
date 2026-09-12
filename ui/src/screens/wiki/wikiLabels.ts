@@ -1,4 +1,5 @@
 import type { MessageKey } from '@/i18n/messageKey'
+import { assertNever } from '@/lib/assertNever'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { SectionKind } from '@/lib/ipc/types'
 import type { Target } from '@/lib/ipc/types'
@@ -33,21 +34,25 @@ export const kindText: Record<WikiCategory, Message> = {
   [WikiCategory.Characters]: 'wiki.kind.character',
 }
 
-// The id a list row prints under the title: the number the game knows the page by.
-export const pageId = (target: Target): number | null => {
+// The id a list row prints under the title: the number the game knows the page by; a boss
+// by its entity key, the way the dataset indexes it, since two bosses can share a type.
+export const pageId = (target: Target): string | null => {
   switch (target.kind) {
     case 'item':
     case 'trinket':
     case 'achievement':
     case 'character':
-    case 'entity':
     case 'transformation':
-      return target.id
+      return String(target.id)
+    case 'entity':
+      return `${target.id}.${target.variant}.${target.subtype}`
     case 'challenge':
-      return target.number
+      return String(target.number)
     case 'stage':
     case 'room':
     case 'pickup':
       return null
+    default:
+      return assertNever(target)
   }
 }
