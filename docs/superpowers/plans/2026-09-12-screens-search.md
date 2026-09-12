@@ -53,7 +53,7 @@ Vitest.
 **Interfaces:**
 - Produces: `SearchIndex::build(dataset: Result<&Dataset, &DatasetError>) -> SearchIndex`; `SearchIndex::len()`, `is_empty()`, `is_loaded()`, `title(&Target) -> Option<&str>`, `section_text(&Target, SectionKind) -> Option<&str>`.
 
-- [ ] **Step 1: Write the failing test** — `crates/ipc/tests/search.rs`:
+- [x] **Step 1: Write the failing test** — `crates/ipc/tests/search.rs`:
 
 ```rust
 //! Search: one index over the wiki's text and the catalog's names. The tests state what a
