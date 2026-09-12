@@ -161,6 +161,25 @@ const checks = [
   },
 ]
 
+// The interface's size is the root's font size and every token is in rem (cycle 3.5c), so a
+// token left in px stays its own size while the rest of the app moves — which fails nothing
+// and looks like a bug in one component. Some values do keep px on purpose (a hairline, a
+// radius, a sprite's whole multiple): the rule is that each one says why, on the spot.
+const PX_TOKEN = /^\s*--[a-z0-9-]+\s*:\s*[^;]*\d+px/
+const COMMENT = /(^\s*\/\*)|(^\s*\*)|(\*\/\s*$)/
+const COMMENT_REACH = 5
+
+const pxWithoutReason = (body) => {
+  const lines = body.split('\n')
+  let lastComment = -COMMENT_REACH - 1
+  return lines.flatMap((line, index) => {
+    if (COMMENT.test(line)) lastComment = index
+    if (!PX_TOKEN.test(line)) return []
+    const reasoned = index - lastComment <= COMMENT_REACH || line.includes('/*')
+    return reasoned ? [] : [line.trim()]
+  })
+}
+
 const violations = walk(SRC)
   .filter((f) => /\.(vue|ts)$/.test(f))
   .flatMap((file) => {
@@ -169,6 +188,16 @@ const violations = walk(SRC)
       .filter((c) => c.test(file, body) && !isExempt(file, c.name))
       .map((c) => `${relative(ROOT, file)}: ${c.name}`)
   })
+  .concat(
+    walk(join(SRC, 'assets'))
+      .filter((f) => f.endsWith('.css'))
+      .flatMap((file) =>
+        pxWithoutReason(readFileSync(file, 'utf8')).map(
+          (line) =>
+            `${relative(ROOT, file)}: px token with no reason beside it — ${line}`,
+        ),
+      ),
+  )
 
 violations.forEach((v) => console.error(v))
 console.log(

@@ -225,6 +225,13 @@ Operational rules:
 
 - **Arbitrary pixels are forbidden.** `w-[48px]`, `h-[22px]`, `rounded-[5px]` are
   violations. If a new measurement is needed: the token in `@theme` first, then the class.
+- **Sizes are in rem, and the root font size is the interface's scale.** Since cycle 3.5c
+  the user picks the size of the whole app (`docs/BACKLOG.md` B26): `html` is
+  `calc(16px * var(--app-scale))`, so every rem token follows. A token left in px stays its
+  own size while the rest moves — which fails nothing and reads as a bug in one component.
+  Some values keep px on purpose: a hairline, the two radii, the scrollbar, and the sprite
+  tokens, which are whole multiples of a pixel size because the game's art is pixel art. The
+  rule is that **each one says why on the line above**, and the scanner checks it.
 - **Semantic opacity.** Only named tokens (`opacity-disabled`, `opacity-muted`).
   `opacity-50`, `opacity-30` are violations. `opacity-0` and `opacity-100` remain allowed
   as the endpoints of an animation.
@@ -588,6 +595,7 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **`tw-animate-css` class** (not installed) | `ui/scripts/scan-conventions.mjs` |
 | **Literal `variant`/`size`/`density`/`orientation` on a primitive** | `ui/scripts/scan-conventions.mjs` |
 | **Glyph missing from Determination** | `ui/scripts/scan-conventions.mjs` |
+| **A px token in `assets/` with no reason beside it** | `ui/scripts/scan-conventions.mjs` |
 
 Three rows arrived on 2026-09-06 — before that, the document declared five rules and the
 script checked three — and six more on 2026-09-10, with the design system. On the same day
