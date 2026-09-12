@@ -103,9 +103,21 @@ describe('missingGroups', () => {
         t,
       ),
     ).toEqual([
-      { kind: RequirementKind.Character, names: ['The Lost'] },
-      { kind: RequirementKind.Item, names: ['The Sad Onion'] },
-      { kind: RequirementKind.Unknown, names: ['Collect', 'ending'] },
+      {
+        kind: RequirementKind.Character,
+        entries: [{ key: 'character-10', name: 'The Lost', location: null }],
+      },
+      {
+        kind: RequirementKind.Item,
+        entries: [{ key: 'item-1', name: 'The Sad Onion', location: null }],
+      },
+      {
+        kind: RequirementKind.Unknown,
+        entries: [
+          { key: 'unknown-Collect', name: 'Collect', location: null },
+          { key: 'unknown-ending', name: 'ending', location: null },
+        ],
+      },
     ])
   })
 
@@ -121,8 +133,14 @@ describe('missingGroups', () => {
         t,
       ),
     ).toEqual([
-      { kind: RequirementKind.Boss, names: ['Mom'] },
-      { kind: RequirementKind.Gate, names: ['Greedier'] },
+      {
+        kind: RequirementKind.Boss,
+        entries: [{ key: 'boss-6', name: 'Mom', location: null }],
+      },
+      {
+        kind: RequirementKind.Gate,
+        entries: [{ key: 'gate-Greedier', name: 'Greedier', location: null }],
+      },
     ])
   })
 
@@ -161,7 +179,14 @@ describe('a tainted character in the way', () => {
     ).toEqual([
       {
         kind: RequirementKind.Character,
-        names: ['graph.taintedName:The Lost', 'The Lost'],
+        entries: [
+          {
+            key: 'character-31',
+            name: 'graph.taintedName:The Lost',
+            location: null,
+          },
+          { key: 'character-10', name: 'The Lost', location: null },
+        ],
       },
     ])
   })

@@ -80,7 +80,7 @@ const label = computed(() =>
           t(kindText[group.kind])
         }}</span>
         <span class="text-caption text-foreground-soft">{{
-          group.names.join(', ')
+          group.entries.map((e) => e.name).join(', ')
         }}</span>
       </div>
     </TooltipContent>
