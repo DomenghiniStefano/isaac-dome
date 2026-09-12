@@ -1,0 +1,126 @@
+- generic:
+  - generic [aria-hidden]:
+    - generic:
+      - banner:
+        - generic:
+          - tablist:
+            - tab [selected]:
+              - generic: Prossimi passi
+              - button
+          - button
+        - generic:
+          - button
+          - button
+          - button
+      - navigation:
+        - generic: IsaacDome
+        - generic:
+          - button: Wiki
+          - button: Progressi
+        - button:
+          - generic: Rep+ · slot 1 · 3 giorni fa
+        - button:
+          - generic: Cerca in tutto
+          - generic:
+            - generic: Ctrl
+            - generic: K
+        - generic:
+          - button
+          - button
+      - generic:
+        - complementary:
+          - generic:
+            - generic: Progressi
+            - paragraph: Ogni voce si legge sul profilo attivo.
+            - button: Prossimi passi
+            - button: Completamento
+            - button: Unlock
+            - button: Piano
+            - button: Collezione
+            - button: Run
+            - button: Live
+          - separator
+        - main:
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=1]: Prossimi passi
+              - paragraph: "Al massimo cinque righe, tutte sbloccabili adesso: le cinque che aprono più cose a valle. Un nodo che il grafo sa dire solo parziale non è un passo, perché non possiamo garantirlo."
+            - generic:
+              - generic:
+                - generic: "1"
+                - generic:
+                  - generic: You unlocked "The Lost"
+                  - generic: The Lost · personaggio
+                  - generic: sbloccabile ora
+                  - button: Aggiungi alla coda
+                - generic:
+                  - generic: "23"
+                  - generic: sblocca
+              - generic:
+                - generic: "2"
+                - generic:
+                  - generic: You unlocked "The Forgotten"
+                  - generic:
+                    - generic: The Forgotten · personaggio
+                    - generic: Hot Potato · sfida
+                  - generic: sbloccabile ora
+                  - button: Aggiungi alla coda
+                - generic:
+                  - generic: "23"
+                  - generic: sblocca
+              - generic:
+                - generic: "3"
+                - generic:
+                  - generic: You unlocked "Bethany"
+                  - generic: Bethany · personaggio
+                  - generic: sbloccabile ora
+                  - button: Aggiungi alla coda
+                - generic:
+                  - generic: "23"
+                  - generic: sblocca
+              - generic:
+                - generic: "4"
+                - generic:
+                  - generic: You unlocked "Eve"
+                  - generic: Eve · personaggio
+                  - generic: sbloccabile ora
+                  - button: Aggiungi alla coda
+                - generic:
+                  - generic: "22"
+                  - generic: sblocca
+              - generic:
+                - generic: "5"
+                - generic:
+                  - generic: You unlocked "Samson"
+                  - generic: Samson · personaggio
+                  - generic: sbloccabile ora
+                  - generic: già nella coda del Piano
+                - generic:
+                  - generic: "21"
+                  - generic: sblocca
+  - dialog [ref=f40e3]:
+    - heading "IsaacDome" [level=2] [ref=f40e5]
+    - paragraph [ref=f40e6]: IsaacDome è un progetto realizzato dai fan e non è affiliato, approvato o sponsorizzato da Nicalis né da Edmund McMillen.
+    - generic [ref=f40e7]:
+      - generic [ref=f40e8]:
+        - generic [ref=f40e9]: Versione
+        - generic [ref=f40e10]: server di sviluppo
+      - generic [ref=f40e11]:
+        - generic [ref=f40e12]: Le tre promesse
+        - generic [ref=f40e13]:
+          - generic [ref=f40e14]: Salvataggi in sola lettura
+          - generic [ref=f40e15]: I salvataggi vengono esclusivamente letti. Il modulo che apre i file .dat non contiene codice di scrittura e il checksum non viene mai ricalcolato.
+        - generic [ref=f40e16]:
+          - generic [ref=f40e17]: Nessun account, server o telemetria
+          - generic [ref=f40e18]: IsaacDome funziona offline. Non richiede un account e non utilizza server né sistemi di telemetria. La connessione di rete viene utilizzata esclusivamente per un eventuale aggiornamento facoltativo del dataset.
+        - generic [ref=f40e19]:
+          - generic [ref=f40e20]: Un solo file scritto
+          - generic [ref=f40e21]: L'app scrive un solo file, isaacdome.db, nella cartella dati dell'app. Nessun altro file sul disco viene modificato o scritto.
+      - generic [ref=f40e22]:
+        - generic [ref=f40e23]: Crediti e licenze
+        - generic [ref=f40e24]: Il testo della wiki è distribuito con licenza CC BY-SA 4.0 e proviene da bindingofisaacrebirth.wiki.gg.
+        - generic [ref=f40e25]: Le immagini del gioco non sono incluse né distribuite con l'app. Vengono estratte direttamente dalla copia del gioco dell'utente.
+        - generic [ref=f40e26]: Il carattere Determination Mono è distribuito con licenza CC BY 3.0.
+    - button "Chiudi" [active] [ref=f40e28] [cursor=pointer]
+    - button "Chiudi" [ref=f40e29] [cursor=pointer]

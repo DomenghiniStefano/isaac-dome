@@ -13,6 +13,7 @@ import {
   PlayIcon,
   SaveIcon,
   SkullIcon,
+  SlidersHorizontalIcon,
   TrophyIcon,
   UserIcon,
 } from '@lucide/vue'
@@ -33,6 +34,7 @@ export const RouteName = {
   Live: 'live',
   Wiki: 'wiki',
   Profile: 'profile',
+  Appearance: 'appearance',
   TabsSettings: 'tabsSettings',
 } as const
 export type RouteName = (typeof RouteName)[keyof typeof RouteName]
@@ -67,6 +69,7 @@ export const routePath: Record<RouteName, string> = {
   [RouteName.Live]: '/progress/live',
   [RouteName.Wiki]: '/wiki',
   [RouteName.Profile]: '/settings/profile',
+  [RouteName.Appearance]: '/settings/appearance',
   [RouteName.TabsSettings]: '/settings/tabs',
 }
 
@@ -80,6 +83,7 @@ export const routeTitle: Record<RouteName, Message> = {
   [RouteName.Live]: 'routes.live',
   [RouteName.Wiki]: 'routes.wiki',
   [RouteName.Profile]: 'routes.profile',
+  [RouteName.Appearance]: 'routes.appearance',
   [RouteName.TabsSettings]: 'routes.tabsSettings',
 }
 
@@ -93,6 +97,7 @@ export const routeOrigin: Record<RouteName, TabOrigin> = {
   [RouteName.Live]: TabOrigin.Progress,
   [RouteName.Wiki]: TabOrigin.Wiki,
   [RouteName.Profile]: TabOrigin.Settings,
+  [RouteName.Appearance]: TabOrigin.Settings,
   [RouteName.TabsSettings]: TabOrigin.Settings,
 }
 
@@ -106,6 +111,7 @@ export const routeIcon: Record<RouteName, Component> = {
   [RouteName.Live]: ActivityIcon,
   [RouteName.Wiki]: tabOriginIcon[TabOrigin.Wiki],
   [RouteName.Profile]: SaveIcon,
+  [RouteName.Appearance]: SlidersHorizontalIcon,
   [RouteName.TabsSettings]: AppWindowIcon,
 }
 

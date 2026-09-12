@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { useMessages } from '@/i18n'
 import { EventKey } from '@/lib/constants/eventKeys'
+import { currentFactor } from '@/lib/scale/apply'
 import { SidebarWidth, clampSidebarWidth } from './sidebarWidth'
 
 defineProps<{ title: string; hint?: string }>()
@@ -9,8 +10,11 @@ const width = defineModel<number>('width', { required: true })
 const { t } = useMessages()
 
 const resizing = ref<{ startX: number; startWidth: number } | null>(null)
+// The width is kept in the pixels the design is drawn in and multiplied by the interface's
+// scale here: a sidebar that stayed 212px while the text inside it doubled would cut the
+// labels off (cycle 3.5c).
 const widthVariable = computed(() => ({
-  '--sidebar-width': `${width.value}px`,
+  '--sidebar-width': `calc(${width.value}px * var(--app-scale, 1))`,
 }))
 
 const onPointerDown = (e: PointerEvent) => {
@@ -22,7 +26,11 @@ const onPointerDown = (e: PointerEvent) => {
 const onPointerMove = (e: PointerEvent) => {
   const r = resizing.value
   if (!r) return
-  width.value = clampSidebarWidth(r.startWidth + e.clientX - r.startX)
+  // The pointer travels in the screen's pixels, the width is kept in the design's: at 200%
+  // an inch of mouse would otherwise move the edge twice as far as the cursor.
+  width.value = clampSidebarWidth(
+    r.startWidth + (e.clientX - r.startX) / currentFactor(),
+  )
 }
 
 const onPointerUp = () => {

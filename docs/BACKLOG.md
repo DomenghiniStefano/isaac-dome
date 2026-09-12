@@ -958,6 +958,10 @@ Logged 2026-09-12, from the owner's review of Completion: a taken mark is drawn 
 light panel, and it should sit on the game's own paper sheet, the one the completion widget
 draws under every symbol.
 
+**Confirmed by the owner on 2026-09-12, with the reference**: the design's matrix cell drew
+the mark on a sheet **taken from the game**, and that is the sheet to use — not a colour that
+resembles it. Same rule as B33 for the achievement drawing.
+
 ### What we already have
 
 - `marks/MarkCell.vue` paints a marked cell with `bg-mark-paper`, the token
@@ -1234,7 +1238,7 @@ change, and no route named `about` exists.
 
 ---
 
-## B26 — Scaling the whole interface from Settings (implementation, **pulled ahead**: it shapes every token)
+## B26 — Scaling the whole interface from Settings (implementation, **pulled ahead**: it shapes every token) ✅ closed on 2026-09-12
 
 Logged 2026-09-12, a product requirement from the owner, with a priority: the user picks the
 size of the whole interface from Settings, with a **draggable slider over fixed steps**, and it
@@ -1459,3 +1463,198 @@ design pass that redraws the bar for both screens at once.
 Both screens filter from one bar with a fold for the less important controls; pool, quality,
 origin and kind are multi-select dropdowns; neither shows a value with 0 unless it is
 currently picked; and the word "Faccette" appears nowhere in the app.
+
+---
+
+## B30 — Where the app writes, in Settings, and movable (implementation, `app`, `store` and `ui`)
+
+Logged 2026-09-12, from the owner while reading the About dialog: About says the app writes
+one file, `isaacdome.db`, in the app's data folder — and the owner wants to **see that folder
+and be able to move it**, which is a setting, not a credit.
+
+### What goes where
+
+About keeps what **identifies and credits** the app: the name, the version, the fan-made
+line, the licences, and the three promises — the promises are the product's contract and the
+first thing a stranger should read, so they stay where a stranger looks. What moves is the
+**fact about this machine**: which folder, how big, and the button that changes it. A path is
+something you act on; a promise is something you read.
+
+### What we already have
+
+- `crates/app/src/lib.rs`: `StoreState` opens `app_data_dir()/isaacdome.db` once, lazily, and
+  keeps it in managed state; `settings_file.rs` writes `settings.json` in `app_config_dir()`.
+  Neither path has ever crossed the IPC, and **neither may**: a path carries the Windows
+  username (CLAUDE.md, "Don't cross the IPC boundary").
+- `store` with its versioned schema and two migrations, and the queue as one JSON document.
+- The Settings section of the sidebar (Profile, Tabs, Appearance since 3.5c).
+
+### The constraint that shapes it, and the way out
+
+A path can't cross the boundary as a path — but the user has to see *where* their data is, or
+the setting is a button with no subject. The way out is the one `discovery` already uses for
+save files: **the view carries a hint, not a path** — the folder's display name and its parent
+in short form, enough to recognise it, never the full string. The dialog that changes it is
+the Tauri dialog plugin (B14 needs the same plugin), and what comes back travels **inward
+only**: the frontend asks "move it here" with the handle the dialog gave, and the backend
+answers with a new hint.
+
+### What's missing
+
+1. A **Data** page under Settings: the folder's hint, the database's size, and what is in it
+   (the queue, the goals — a row each, from `store`), plus the same for `settings.json`.
+2. A command that **moves** it: close the handle in `StoreState`, copy the file, verify it
+   opens at the destination, write the new location in `settings.json`, and only then remove
+   the old one. It is the app's own data, so the order is copy → verify → switch → delete,
+   never move → hope.
+3. The location in `settings.json` (`dataDir`), read at startup by `StoreState`; absent means
+   the default, which is what every install has today.
+4. **What happens when the saved folder is gone** on the next launch — an external drive, a
+   folder the user deleted: the app says so on the Data page and falls back to the default
+   rather than failing to open, and the goals and the queue read as unavailable, which is a
+   state `plan` and `queue` already have.
+
+### Done when
+
+The Data page names the folder in words, says how large the file is, and moving it leaves the
+queue and the goals intact at the new place; a folder that has gone missing is said, not
+crashed on; and no full path has crossed the IPC boundary.
+
+---
+
+## B31 — Dragging a row lifts the whole card, and one component does it everywhere (implementation, `ui`, after design)
+
+Logged 2026-09-12, from the owner's review of the Plan: dragging a queue row doesn't feel
+right. What the owner wants is the **whole card lifted and floating above the rest**,
+following the pointer, and on release landing **exactly where the red marker says**, as it
+does today — the marker stays, the feedback is added. And since two screens already drag,
+this should be **one component** that does the lifting, reused wherever something is dragged.
+
+### What we already have
+
+- Two hand-written pointer drags of the same shape: the queue (`screens/plan/QueueCard.vue`,
+  rows `QueueRow.vue`) and the tab strip (`shell/TabStrip.vue`). Both: a press becomes a
+  drag past a threshold, the pointer is captured only then, the rows' rectangles are read
+  once, a `drop` with an index and an edge (`Above` / `Below`, or a side for the tabs) is
+  recomputed on every move, and nothing moves until the release — the pure functions
+  `lib/plan/queueDrop.ts` (`dropEdge`, `dropAnchor`) and `shell/tabs.ts` (`dropSide`,
+  `moveIndex`) decide where.
+- The feedback during the drag: the grabbed row is only **dimmed in place**
+  (`opacity-disabled`) and a line is drawn in the gap where the drop would land. The card
+  never leaves its slot, so the eye has nothing to follow.
+- A third gesture, the sidebar's resize (`shell/SectionSidebar.vue`), is the same pointer
+  choreography without a drop target; B27 wants it generalised for the tables.
+
+### What's missing
+
+1. **A lifted ghost**: at the moment a press becomes a drag, a copy of the row — same
+   size, drawn at the row's position — is rendered above everything (a `Teleport` to the
+   body, `position: fixed`, the kit's raised shadow, no transition) and follows the pointer
+   by the offset of the grab; the original stays dimmed in its slot; the marker keeps
+   showing where the drop lands; on release the ghost disappears and the row appears where
+   the marker was, as today. If the design wants the landing animated, that's the one
+   motion token this needs; the drop itself stays instant and named by `move_after`.
+2. **One composable** — `useDragList` or the like, under `composables/` — owning the
+   threshold, the capture, the rect snapshot, the ghost and the `drop` computation, fed by
+   two pure functions (where the pointer is over the list, and what anchor a drop means).
+   The queue and the tab strip become its two callers with their own pure functions; the
+   sidebar's resize stays apart, it has no list.
+3. **Keyboard stays**: whatever the pointer does, a row can still be moved without it (the
+   queue already repairs any move); the ghost is pointer feedback, not the mechanism.
+4. **Test the pure parts, look at the rest**: the composable's threshold and drop logic
+   in Vitest; the ghost on the Kit page with a list of three rows, and in the Plan.
+
+### Done when
+
+Grabbing a queue row lifts a copy that follows the pointer above the page while the red
+marker still names the landing; releasing puts the row there; the tab strip drags through
+the same composable; and no drag-specific pointer choreography is left in a screen.
+
+---
+
+## B32 — "Prossimi passi" is hard to read: a name that says what it is, and cards rewritten (implementation, `ui`, after design)
+
+Logged 2026-09-12, from the owner's review: the Next steps screen is hard to understand. The
+name itself doesn't say what the list is — the owner proposes **"Passi consigliati"** or
+**"Obiettivi consigliati"** — and both the copy and the cards are to be redone.
+
+### What we already have
+
+- The screen (`screens/NextStepsScreen.vue`, `nextsteps/StepCard.vue`) is the app's landing
+  page (`defaultLocation`), so it is the first thing a player reads. It shows at most five
+  nodes, all unlockable now, sorted by fan-out — the ones that open the most downstream
+  (spec 3.3a, Decision 3, "delegated" to this very review).
+- **The copy is the engineer's**: the intro says "Al massimo cinque righe, tutte sbloccabili
+  adesso: le cinque che aprono più cose a valle. Un nodo che il grafo sa dire solo parziale
+  non è un passo, perché non possiamo garantirlo." — true, and unreadable as a first
+  sentence. The empty states talk about the catalogue and the graph.
+- **The card shows the file, not the goal**: a rank, the drawing, the achievement's `text`
+  as the game writes it (*You unlocked "The Lost"* — and B28 showed that on the reference
+  profile the five steps were **484, 488, 489, 479, 480**, all Tainted characters labelled
+  with their base names, which is where the owner's confusion started), one `Tag` badge per
+  unlocked target ("Samson · personaggio"), the state badge, "in coda" or the add button,
+  and on the right a large number with the label "sblocca" — the fan-out, which nobody
+  outside the graph calls that.
+- The parts that are right and stay: the choice of the five (fan-out, unlockable now,
+  partial excluded), the one-click add to the Plan, the reload on profile change.
+
+### What's missing
+
+1. **The name**: "Obiettivi consigliati" reads better than "Passi consigliati" — a step
+   implies a sequence, and the five are independent; the decision is the design's, together
+   with the route title, the sidebar entry and the tab label (`routes.nextSteps`).
+2. **The intro in the player's words**: what the list is ("cinque cose che puoi sbloccare
+   adesso, quelle che aprono di più"), not how it was computed; the computation goes to a
+   tooltip or to the About dialog's promises.
+3. **The card as a goal**: the headline is *what you get* (the target, in its form — "Tainted
+   Lost", "Samson"), the achievement's condition under it in one line (the wiki's
+   requirement where the file has none: "arriva a Home con The Lost e usa la Red Key"), the
+   picture, then *why it's worth it* — "apre altre 23 cose" as a sentence, not a bare number
+   with "sblocca" — and the one action, add to the Plan. The state badge is redundant on a
+   list whose every row is unlockable now.
+4. **Empty states in the same voice**: no game installed, nothing unlockable now, everything
+   done.
+
+### Done when
+
+The landing page has a name a player understands, an intro of one sentence in their words,
+and cards that read "what, how, why, add" top to bottom; and the reference profile's five
+rows name the Tainted characters and their condition.
+
+---
+
+## B33 — The achievement drawing sits on the game's own backing, as the game shows it (implementation, `ipc` and `ui`)
+
+Logged 2026-09-12, from the owner's review of the cards: the achievement picture is drawn on
+a flat colour, and it should sit on **the image the game itself puts behind it** — the
+right one has to be looked for in the game's files, not approximated.
+
+### What we already have
+
+- `components/graph/AchievementArt.vue` draws the 263×176 achievement picture on
+  `bg-mark-paper`, the same flat token B19 replaces under the marks; its own comment says
+  "the way the game shows it on a note", which names the intent and not the sheet.
+- The picture itself is served through the icon protocol from the user's own copy, so the
+  backing can come the same way: a crop of a sheet, resolved by an anm2, addressed by the
+  protocol, with the bars fallback when the game isn't there.
+- The game shows an achievement in two places, with two backings: the **unlock popup** at
+  the end of a run (the achievement drawing on a paper note that slides in) and the
+  **achievements page of the pause / stats menu** (the drawing on a paper-like frame per
+  slot). Which of the two the card should imitate is the design's call; the sheet behind
+  each is the measurement.
+
+### What's missing
+
+1. Find, in `resources/packed`, the anm2 and sheet the game uses for the achievement popup
+   and for the achievements menu — a `design-export` probe listing the candidates under
+   `gfx/ui/achievement` and `gfx/ui/...menu` with their frame rectangles, so the choice is
+   made on the real files. The name is recorded here once it is measured, not guessed now.
+2. One more address on the icon protocol for the backing, cropped from its frame; the
+   `AchievementArt` component draws it under the picture with the game's own padding, on
+   every screen that shows an achievement (Next steps, Unlock, Plan, the Kit page).
+3. The flat token stays only as the fallback without the game.
+
+### Done when
+
+On a machine with the game, an achievement card shows the drawing on the same backing the
+game does, and the entry names the sheet and frame it came from.

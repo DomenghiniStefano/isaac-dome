@@ -1,8 +1,10 @@
 import { clamp } from 'lodash-es'
 
-// The section sidebar's width in pixels (Chrome e Stati.dc.html, "Sidebar di sezione").
-// Not a theme token: the width moves at runtime, and its bounds belong to the one function
-// that enforces them. The template binds the result as a CSS variable.
+// The section sidebar's width (Chrome e Stati.dc.html, "Sidebar di sezione"), in the
+// pixels the design file is drawn in — the ones at scale 100. The template multiplies by
+// the interface's scale, and the drag divides the pointer's travel by it, so the bounds
+// mean the same thing at every size. Not a theme token: the width moves at runtime, and its
+// bounds belong to the one function that enforces them.
 export const SidebarWidth = {
   Min: 168,
   Default: 212,

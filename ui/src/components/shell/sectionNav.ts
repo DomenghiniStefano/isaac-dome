@@ -78,9 +78,11 @@ export const sidebarEntries: Record<SidebarSection, SidebarEntry[]> = {
     overviewEntry,
     ...Object.values(WikiCategory).map(wikiEntry),
   ],
-  [SidebarSection.Settings]: [RouteName.Profile, RouteName.TabsSettings].map(
-    routeEntry,
-  ),
+  [SidebarSection.Settings]: [
+    RouteName.Profile,
+    RouteName.Appearance,
+    RouteName.TabsSettings,
+  ].map(routeEntry),
 }
 
 // Where clicking a section goes (`docs/BACKLOG.md` B24): its first entry, which is the

@@ -34,7 +34,7 @@ const label = computed((): string => {
   <Button
     :variant="ButtonVariant.Field"
     :size="ButtonSize.Compact"
-    class="max-w-60 shrink-0"
+    class="max-w-60 min-w-10 shrink"
     @click="emit('open')"
   >
     <Skeleton v-if="view === null" class="h-3 w-24" />
