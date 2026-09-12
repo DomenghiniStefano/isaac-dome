@@ -33,6 +33,7 @@ export const it = {
     live: 'Live',
     wiki: 'Wiki',
     profile: 'Profilo di gioco',
+    appearance: 'Aspetto',
     tabsSettings: 'Tab',
     about: 'Informazioni',
   },
@@ -196,6 +197,27 @@ export const it = {
       missingTitle: 'Il dataset della wiki non si è caricato',
       missing:
         'Il binario contiene un dataset che non si legge: la Wiki non ha pagine da mostrare.',
+    },
+  },
+  appearance: {
+    intro:
+      "Scegli quanto è grande l'interfaccia. Cambia tutto insieme — testo, icone, righe, la finestra — e resta com'è tra un avvio e l'altro.",
+    scaleTitle: 'Dimensione',
+    scaleLabel: "Dimensione dell'interfaccia",
+    preview: 'Anteprima',
+    previewHint:
+      "Resta qui mentre scorri: è l'app disegnata alla dimensione scelta.",
+    shortcut: 'Da qualsiasi schermata:',
+    shortcutReset: 'torna al 100%',
+    saveFailedTitle: 'La dimensione non è stata salvata',
+    saveFailed:
+      "L'interfaccia è già a questa dimensione, ma non siamo riusciti a scriverla: al prossimo avvio torna com'era.",
+    sample: {
+      kpi: 'Achievement fatti',
+      item: 'The Sad Onion',
+      itemHint: 'oggetto passivo · qualità 2',
+      button: 'Un pulsante',
+      badge: 'sbloccabile ora',
     },
   },
   about: {

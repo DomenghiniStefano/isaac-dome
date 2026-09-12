@@ -1,0 +1,2 @@
+[     819ms] [WARNING] graph fixture: the design pack's unlock.json predates the character's tainted flag; every character reads as its base form @ http://localhost:5199/@vite/client:532
+[  109855ms] [WARNING] graph fixture: the design pack's unlock.json predates the character's tainted flag; every character reads as its base form @ http://localhost:5199/@vite/client:532
