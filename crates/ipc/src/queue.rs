@@ -174,7 +174,7 @@ pub fn queue_view(
         let steps_not_queued = graph
             .zip(flags)
             .map(|(g, f)| {
-                g.missing_chain(r.achievement, Some(f))
+                g.missing_chain(r.achievement, &graph::FlagsOnly(Some(f)))
                     .iter()
                     .filter(|id| !queued.contains(id))
                     .count() as u32
@@ -218,7 +218,10 @@ pub struct GraphDeps {
 impl GraphDeps {
     /// The chains as the graph gives them, for the rows a move involves.
     pub fn new(g: &graph::Graph, flags: Option<&[bool]>, rows: &[u32]) -> GraphDeps {
-        GraphDeps::from_chains(rows.iter().map(|a| (*a, g.missing_chain(*a, flags))))
+        GraphDeps::from_chains(
+            rows.iter()
+                .map(|a| (*a, g.missing_chain(*a, &graph::FlagsOnly(flags)))),
+        )
     }
 
     /// The same table without a graph: the part worth checking, and what the tests use.
