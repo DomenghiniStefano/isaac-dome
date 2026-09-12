@@ -28,6 +28,7 @@ import SectionSidebarSection from './sections/app/SectionSidebarSection.vue'
 import KpiTileSection from './sections/app/KpiTileSection.vue'
 import MarkCellSection from './sections/app/MarkCellSection.vue'
 import WikiSection from './sections/app/WikiSection.vue'
+import SearchRowSection from './sections/app/SearchRowSection.vue'
 import DataStateSection from './sections/app/DataStateSection.vue'
 import CollapsibleCardSection from './sections/app/CollapsibleCardSection.vue'
 import { TooltipProvider } from '@/components/ui/tooltip'
@@ -71,6 +72,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
       <MarkCellSection />
       <DataStateSection />
       <WikiSection />
+      <SearchRowSection />
       <CollapsibleCardSection />
     </main>
   </TooltipProvider>
