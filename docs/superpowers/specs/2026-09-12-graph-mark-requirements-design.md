@@ -137,16 +137,27 @@ repository has already paid once for a plausible label. Both enums are fieldless
 The boss's name is not the column's name (`Ultra Greedier` lives in the `Greed` column, at
 level 1), so the mapping is curation, in the file curation already lives in:
 
+`Verdict` is an externally tagged enum, so a target carries **one** verdict. A target needs
+both answers, though — the mark for a reference that comes with a character, the counter for
+the 8 that do not — so this is one new variant holding two optional halves, not two variants:
+
 ```json
-"entity:Ultra Greedier": { "mark": { "column": "greed", "level": "second" } },
-"entity:Hush":           { "mark": { "column": "hush",  "level": "base" },
-                           "counter": { "name": "hushKills", "atLeast": 1 } }
+"entity:Ultra Greedier": { "progress": {
+    "mark": { "column": "greed", "level": "second" } } },
+"entity:Hush":           { "progress": {
+    "mark": { "column": "hush", "level": "base" },
+    "counter": { "name": "hushKills", "atLeast": 1 } } }
 ```
 
-A target may carry both: the `mark` answers a reference that comes with a character, the
-`counter` answers the 8 that do not. `Mother` and `The Beast` get the same pair; `Delirium`
-too. Where a target has only one of the two and the reference needs the other, the outcome is
-`Unknown` — declared, as always.
+```rust
+Progress { mark: Option<MarkRule>, counter: Option<CounterRule> },
+```
+
+`Mother` and `The Beast` get both halves, `Delirium` too; `Ultra Greedier` has no counter
+because no tally for it is located (§2.4 is about cells, this is the same absence in the other
+family). Where the half a reference needs is `None`, the outcome is `Unknown` — declared, as
+always. A `Progress` with both halves `None` is a malformed rules file, rejected at
+`Rules::build` rather than silently behaving like no verdict.
 
 ### 4.3 Evaluation — `graph` never learns the layout
 
