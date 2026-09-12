@@ -24,6 +24,7 @@ export const it = {
     thirdLevel: 'terzo livello, significato non confermato',
   },
   routes: {
+    search: 'Cerca',
     nextSteps: 'Prossimi passi',
     completion: 'Completamento',
     unlock: 'Unlock',
@@ -197,6 +198,46 @@ export const it = {
       missingTitle: 'Il dataset della wiki non si è caricato',
       missing:
         'Il binario contiene un dataset che non si legge: la Wiki non ha pagine da mostrare.',
+    },
+  },
+  search: {
+    intro:
+      "Un indice solo su tutto quello che l'app conosce per nome o per testo: nomi del gioco, condizioni degli achievement, titoli e testo delle pagine wiki.",
+    placeholder: 'Cerca schermate, achievement, oggetti, pagine wiki…',
+    empty: 'Nessun risultato.',
+    allResults: 'Tutti i risultati ({count})',
+    shown: '{shown} righe',
+    limit: 'Mostrati {shown} di {total}: affina la ricerca.',
+    groups: {
+      screens: 'Schermate',
+      wiki: 'Wiki',
+      unlock: 'Unlock',
+      collection: 'Collezione',
+    },
+    progress: {
+      done: 'fatto',
+      pending: 'da fare',
+    },
+    hint: {
+      open: 'apri',
+      newTab: 'apri in una nuova tab',
+    },
+    diagnostics: {
+      noProfileTitle: 'Nessun profilo scelto',
+      noCatalogTitle: 'Gioco non installato',
+      noWikiTitle: 'Dataset della wiki non caricato',
+      noAchievementSectionTitle: 'Sezione degli achievement non letta',
+      noCollectionSectionTitle: 'Sezione della collezione non letta',
+      noProfile:
+        'I risultati non dicono cosa hai già fatto: scegline uno dalle impostazioni.',
+      noCatalog:
+        'Si cerca solo nei titoli e nel testo della wiki, senza immagini, e nessun risultato apre Unlock o la Collezione.',
+      noWiki:
+        'Si cerca solo nei nomi del gioco, e nessun risultato apre una pagina.',
+      noAchievementSection:
+        'Per gli achievement non si sa cosa è fatto: non letta non è non fatta.',
+      noCollectionSection:
+        'Per gli oggetti non si sa cosa hai già: non letta non è non trovata.',
     },
   },
   appearance: {

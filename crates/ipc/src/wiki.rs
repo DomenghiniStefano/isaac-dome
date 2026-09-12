@@ -94,7 +94,7 @@ pub fn wiki_index(
 
 /// The inverse of `Dataset::boss_key`: `"20.0.0"` → the entity. A key that isn't three
 /// numbers is one the build never wrote, and the page is left out rather than guessed.
-fn boss_target(key: &str) -> Option<Target> {
+pub(crate) fn boss_target(key: &str) -> Option<Target> {
     let mut parts = key.split('.').map(|s| s.parse::<u32>().ok());
     let target = Target::Entity {
         id: parts.next()??,

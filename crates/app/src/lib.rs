@@ -221,6 +221,50 @@ fn wiki_index(
     ))
 }
 
+/// The wiki side of the search index, built once: the dataset is compiled into the binary and
+/// never changes, so the flattening is paid for on the first query and never again. The
+/// catalog side is *not* cached here — it is read per query, like everywhere else, because
+/// "the game isn't installed" is never a cached answer.
+#[derive(Default)]
+struct SearchState(OnceLock<ipc::SearchIndex>);
+
+impl SearchState {
+    fn get(&self) -> &ipc::SearchIndex {
+        self.0
+            .get_or_init(|| ipc::SearchIndex::build(wiki::Dataset::embedded()))
+    }
+}
+
+/// One query over the wiki's text and the catalog's names. No profile is a **diagnostic**, not
+/// an error: search answers before a save is chosen, and says the marks are unknown.
+#[tauri::command]
+fn search(
+    app: AppHandle,
+    state: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+    index: tauri::State<'_, SearchState>,
+    query: String,
+    limit: usize,
+) -> Result<ipc::SearchView, IpcError> {
+    // Game not installed is expected: the answer goes out with wiki titles alone.
+    let catalog = resources.get().and_then(|rs| state.get_or_build(rs));
+    let sections = active_save(&app)
+        .ok()
+        .map(|(_, s)| (s.flags(Kind::Achievements), s.flags(Kind::Items)));
+    let flags = sections.as_ref().map(|(a, i)| ipc::SaveFlags {
+        achievements: a.as_deref(),
+        items: i.as_deref(),
+    });
+    Ok(ipc::search(
+        index.get(),
+        catalog,
+        flags,
+        &query,
+        limit,
+        icon_url,
+    ))
+}
+
 /// Describes an `OpenError` without letting its `Debug` cross the IPC boundary: that
 /// `Debug` is defined by `core-save`, not by us, and there's no guarantee its variants
 /// will stay free of raw data in the future. The text here never contains a path:
@@ -791,6 +835,7 @@ pub fn run() {
         .manage(StoreState::default())
         .manage(ResourcesState::default())
         .manage(MarkFramesState::default())
+        .manage(SearchState::default())
         // Icons don't travel inside the payloads any more: rows carry a link, and this
         // serves it. Asynchronous on purpose — a grid asks for a hundred at once, and each
         // one reads from an archive; on the main thread they would queue up behind the
@@ -820,6 +865,7 @@ pub fn run() {
             extraction_report,
             wiki_entry,
             wiki_index,
+            search,
             unlock,
             next_steps,
             collection,
