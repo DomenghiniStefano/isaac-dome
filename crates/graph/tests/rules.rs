@@ -1,7 +1,10 @@
 //! The two rules files: they read, they join, and a file from another schema is refused
 //! whole rather than read half-broken.
 
-use graph::rules::{Corrections, Requirements, Rules, Verdict, SCHEMA_VERSION};
+use graph::rules::{
+    Corrections, CounterName, CounterRule, MarkColumn, MarkLevel, MarkRule, Requirements, Rules,
+    RulesError, Verdict, SCHEMA_VERSION,
+};
 
 const REQS: &str = r#"{
   "schemaVersion": 1,
@@ -74,5 +77,74 @@ fn refs_are_read_for_the_achievement_that_owns_them() {
     assert!(
         rules.refs(999).is_empty(),
         "an achievement with no row has no requirements, and that is not an error"
+    );
+}
+
+// --- the profile-answered verdict (spec 2026-09-12, §4.2) -----------------------------
+
+const CORR_PROGRESS: &str = r#"{
+  "schemaVersion": 1,
+  "verdicts": {
+    "entity:Hush": { "progress": {
+      "mark": { "column": "hush", "level": "base" },
+      "counter": { "name": "hushKills", "atLeast": 1 }
+    } },
+    "entity:Ultra Greedier": { "progress": {
+      "mark": { "column": "greed", "level": "second" }
+    } }
+  }
+}"#;
+
+#[test]
+fn a_progress_verdict_parses_both_halves() {
+    let c: Corrections = serde_json::from_str(CORR_PROGRESS).expect("parses");
+    assert_eq!(
+        c.verdicts.get("entity:Hush"),
+        Some(&Verdict::Progress {
+            mark: Some(MarkRule {
+                column: MarkColumn::Hush,
+                level: MarkLevel::Base,
+            }),
+            counter: Some(CounterRule {
+                name: CounterName::HushKills,
+                at_least: 1,
+            }),
+        })
+    );
+}
+
+#[test]
+fn a_progress_verdict_may_carry_only_the_mark() {
+    let c: Corrections = serde_json::from_str(CORR_PROGRESS).expect("parses");
+    let Some(Verdict::Progress { mark, counter }) = c.verdicts.get("entity:Ultra Greedier") else {
+        panic!("expected a progress verdict");
+    };
+    assert_eq!(mark.map(|m| m.level), Some(MarkLevel::Second));
+    assert!(
+        counter.is_none(),
+        "an absent half stays absent: it is not defaulted into existence"
+    );
+}
+
+/// Ordered so that a cell reached at the second level satisfies a base requirement.
+#[test]
+fn the_base_level_sorts_below_the_second() {
+    assert!(MarkLevel::Base < MarkLevel::Second);
+}
+
+/// A verdict that answers nothing is not the same as no verdict, and it must not behave
+/// like one: it is a broken rules file, and the file is refused whole.
+#[test]
+fn a_progress_verdict_with_neither_half_is_malformed() {
+    let empty = r#"{
+      "schemaVersion": 1,
+      "verdicts": { "entity:Nothing": { "progress": {} } }
+    }"#;
+    let r: Requirements = serde_json::from_str(REQS).expect("parses");
+    let c: Corrections = serde_json::from_str(empty).expect("parses");
+    let err = Rules::build(r, c).expect_err("an empty progress answers nothing");
+    assert!(
+        matches!(err, RulesError::Malformed { .. }),
+        "expected Malformed, got {err:?}"
     );
 }

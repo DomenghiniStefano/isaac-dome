@@ -253,3 +253,92 @@ fn a_node_is_never_its_own_prerequisite() {
         g.diagnostics()
     );
 }
+
+// --- the character a sentence names (spec 2026-09-12, §4.2) --------------------------
+
+const TAINTED_PLAYERS: &str = r#"<players root="gfx/" portraitroot="gfx/ui/stage/">
+  <player id="0" name="Isaac" portrait="PlayerPortrait_Isaac.png" />
+  <player id="21" name="Isaac" portrait="PlayerPortrait_Isaac_b.png" achievement="2" />
+</players>"#;
+
+const TAINTED_ACHIEVEMENTS: &str = r#"<achievements gfxroot="gfx/ui/achievement">
+  <achievement id="1" name="One" text="One" gfx="1.png" />
+  <achievement id="2" name="Two" text="Two" gfx="2.png" />
+</achievements>"#;
+
+/// The game gives a Tainted character the **same name** as its base form and tells them
+/// apart by a flag, so a lookup by name alone cannot find "Tainted Isaac" — the key does
+/// not exist, and one of the two "Isaac" rows wins the index outright.
+///
+/// That must not quietly become a tally. A reference naming a character asks about that
+/// character's cell; answering "has anyone ever beaten Mother" instead is a different,
+/// weaker question, and it would have been wrong for 141 of the 396 character references
+/// in the shipped rules.
+#[test]
+fn a_tainted_character_is_found_by_id_when_its_name_is_shared() {
+    let c = Catalog::build(|p| match p {
+        "players.xml" => Some(TAINTED_PLAYERS.as_bytes().to_vec()),
+        "achievements.xml" => Some(TAINTED_ACHIEVEMENTS.as_bytes().to_vec()),
+        _ => None,
+    });
+    let requirements = r#"{"schemaVersion":1,
+        "generatedFrom":{"snapshotAt":"","maxRevid":0},
+        "achievements":{"1":{"refs":[
+            {"target":{"kind":"character","id":21},"label":"Tainted Isaac"},
+            {"target":{"kind":"entity","id":0,"variant":0,"subtype":0},"label":"Mother"}
+        ]}},
+        "targets":[]}"#;
+    let corrections = r#"{"schemaVersion":1,"verdicts":{"entity:Mother":{"progress":{
+        "mark":{"column":"mother","level":"base"},
+        "counter":{"name":"motherKills","atLeast":1}}}}}"#;
+    let g = Graph::build(&c, &rules(requirements, corrections));
+    let node = g.node(1).expect("node 1");
+    assert!(
+        node.requirements
+            .contains(&graph::model::Requirement::Mark {
+                character: catalog::CharacterId(21),
+                column: graph::rules::MarkColumn::Mother,
+                level: graph::rules::MarkLevel::Base,
+            }),
+        "the sentence names Tainted Isaac, so it asks about his cell; got {:?}",
+        node.requirements
+    );
+}
+
+/// The mirror of the test above, and the harder half: a **base** character's name resolves
+/// fine — to whichever of the two forms won the name index. Asked for Isaac, it can hand
+/// back Tainted Isaac, and a mark requirement built on that points at a different row of
+/// the completion matrix, with nothing to show anything went wrong.
+///
+/// Measured 2026-09-12: name-first, "Ultra Greedier as Keeper" picked row 29, which is
+/// T. Keeper. The wiki's id is the only thing that separates the two, so it goes first.
+#[test]
+fn a_base_character_is_found_by_id_even_though_its_name_also_resolves() {
+    let c = Catalog::build(|p| match p {
+        "players.xml" => Some(TAINTED_PLAYERS.as_bytes().to_vec()),
+        "achievements.xml" => Some(TAINTED_ACHIEVEMENTS.as_bytes().to_vec()),
+        _ => None,
+    });
+    // Character 0 is base Isaac; 21 is Tainted Isaac, and both are named "Isaac".
+    let requirements = r#"{"schemaVersion":1,
+        "generatedFrom":{"snapshotAt":"","maxRevid":0},
+        "achievements":{"1":{"refs":[
+            {"target":{"kind":"character","id":0},"label":"Isaac"},
+            {"target":{"kind":"entity","id":0,"variant":0,"subtype":0},"label":"Mother"}
+        ]}},
+        "targets":[]}"#;
+    let corrections = r#"{"schemaVersion":1,"verdicts":{"entity:Mother":{"progress":{
+        "mark":{"column":"mother","level":"base"}}}}}"#;
+    let g = Graph::build(&c, &rules(requirements, corrections));
+    let node = g.node(1).expect("node 1");
+    assert!(
+        node.requirements
+            .contains(&graph::model::Requirement::Mark {
+                character: catalog::CharacterId(0),
+                column: graph::rules::MarkColumn::Mother,
+                level: graph::rules::MarkLevel::Base,
+            }),
+        "the sentence names character 0, not whichever \"Isaac\" the index kept; got {:?}",
+        node.requirements
+    );
+}

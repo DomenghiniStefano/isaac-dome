@@ -2,7 +2,7 @@
 //! new snapshot introduces a target nobody has judged, this test names it. The red is the
 //! point — a warning would mean nodes dropping to `Partial` with nobody noticing.
 
-use graph::rules::{Corrections, Requirements, Rules};
+use graph::rules::{Corrections, MarkColumn, MarkLevel, Requirements, Rules, Verdict};
 use std::path::Path;
 
 fn rules() -> Rules {
@@ -57,4 +57,41 @@ fn the_alias_that_carries_fifteen_refs_is_there() {
     // The wiki writes "Jacob and Esau", the game writes "Jacob & Esau": 15 refs hang on
     // this one line, measured on 2026-09-07 against snapshot 2026-09-04T17:33:31Z.
     assert_eq!(rules().alias("Jacob and Esau"), "Jacob & Esau");
+}
+
+// --- the five targets the profile answers (spec 2026-09-12, §4.2) ---------------------
+
+/// Each of the five with the halves it must carry. `Ultra Greedier` has no located tally,
+/// so it carries the mark alone: a `counter` here would be an index nobody measured.
+#[test]
+fn the_five_progress_targets_are_curated() {
+    let rules = rules();
+    let expected: &[(&str, MarkColumn, bool)] = &[
+        ("entity:Hush", MarkColumn::Hush, true),
+        ("entity:Delirium", MarkColumn::Delirium, true),
+        ("entity:Mother", MarkColumn::Mother, true),
+        ("entity:The Beast", MarkColumn::TheBeast, true),
+        ("entity:Ultra Greedier", MarkColumn::Greed, false),
+    ];
+    for (key, column, has_counter) in expected {
+        let Some(Verdict::Progress { mark, counter }) = rules.verdict(key) else {
+            panic!("{key} must carry a progress verdict");
+        };
+        assert_eq!(mark.map(|m| m.column), Some(*column), "{key}");
+        assert_eq!(counter.is_some(), *has_counter, "{key}");
+    }
+}
+
+/// Ultra Greedier is the only one of the five whose level is not the base bit, and that is
+/// the measurement of 2026-09-12: in the Greed column, bit 1 is Ultra Greedier. A
+/// regression here silently turns 34 answered nodes back into partial ones.
+#[test]
+fn ultra_greedier_is_the_second_level_of_the_greed_column() {
+    let rules = rules();
+    let Some(Verdict::Progress { mark: Some(m), .. }) = rules.verdict("entity:Ultra Greedier")
+    else {
+        panic!("entity:Ultra Greedier must carry a mark");
+    };
+    assert_eq!(m.column, MarkColumn::Greed);
+    assert_eq!(m.level, MarkLevel::Second);
 }

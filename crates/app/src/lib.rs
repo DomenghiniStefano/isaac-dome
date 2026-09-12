@@ -369,6 +369,15 @@ fn achievement_flags(app: &AppHandle) -> Result<Option<Vec<bool>>, IpcError> {
     Ok(save.flags(Kind::Achievements))
 }
 
+/// Section 1 and section 2 together, from one open of the save: the graph needs both —
+/// the flags for what is done, the counters for the marks and tallies it now asks about.
+/// Either may be `None`, and the profile turns that into "I can't say" rather than a zero.
+#[allow(clippy::type_complexity)]
+fn progress_sections(app: &AppHandle) -> Result<(Option<Vec<bool>>, Option<Vec<u32>>), IpcError> {
+    let (_, save) = active_save(app)?;
+    Ok((save.flags(Kind::Achievements), save.u32s(Kind::Counters)))
+}
+
 #[tauri::command]
 fn unlock(
     app: AppHandle,
@@ -376,17 +385,19 @@ fn unlock(
     resources: tauri::State<'_, ResourcesState>,
     graph: tauri::State<'_, GraphState>,
 ) -> Result<ipc::UnlockView, IpcError> {
-    let flags = achievement_flags(&app)?;
+    let (flags, counters) = progress_sections(&app)?;
     // Game not installed is expected: the view goes out without a catalog and says so.
     let resources = resources.get();
     let catalog = resources.and_then(|rs| state.get_or_build(rs));
     let g = catalog.and_then(|c| graph.get(c));
-    let eval = g.map(|g| g.evaluate(flags.as_deref()));
+    let progress = ipc::SaveProgress::new(flags.as_deref(), counters.as_deref(), catalog);
+    let eval = g.map(|g| g.evaluate(&progress));
     Ok(ipc::unlock_view(
         catalog,
         flags.as_deref(),
         g,
         eval.as_ref(),
+        Some(&progress),
         icon_url,
     ))
 }
@@ -500,6 +511,7 @@ fn queue_view_now(
             flags: pieces.flags.as_deref(),
             graph: pieces.graph,
             eval: None,
+            progress: None,
             queue: queue.as_ref(),
             goals_pending,
             store_reason: reason,
@@ -576,7 +588,7 @@ fn queue_add(
 ) -> Result<ipc::QueueView, IpcError> {
     let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
     queue_mutate(&app, &store, &pieces, |q, g, flags| {
-        let chain = g.missing_chain(achievement, flags);
+        let chain = g.missing_chain(achievement, &graph::FlagsOnly(flags));
         let deps = GraphDeps::new(g, flags, &ids_for(q, achievement, &chain));
         q.enqueue(achievement, &chain, &deps);
     })?;
@@ -654,7 +666,7 @@ fn queue_import_goals(
             let Some(achievement) = ipc::achievement_unlocking(c, target) else {
                 continue;
             };
-            let chain = g.missing_chain(achievement, flags);
+            let chain = g.missing_chain(achievement, &graph::FlagsOnly(flags));
             let deps = GraphDeps::new(g, flags, &ids_for(q, achievement, &chain));
             q.enqueue(achievement, &chain, &deps);
         }

@@ -2,11 +2,12 @@
 //! sits behind. Edges come from the game's own `unlocked_by` links, never from the wiki —
 //! the wiki only says *what* is needed.
 
-use catalog::{AchievementId, Catalog};
+use catalog::{AchievementId, Catalog, CharacterId};
 
 use crate::model::Requirement;
 use crate::resolve::{requirement_with, NameIndex};
 use crate::rules::{Rules, Verdict};
+use wiki::Target;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Node {
@@ -56,11 +57,47 @@ impl Graph {
             let mut requirements = Vec::new();
             let mut prerequisites = Vec::new();
             let mut unknown: Vec<String> = Vec::new();
+            // The character an achievement names applies to its whole sentence: "defeat
+            // Mother as Magdalene" is one requirement spread over two references, and the
+            // boss reference is the one that needs to know. Found once per achievement,
+            // because it is a property of the sentence and not of any one reference.
+            //
+            // **By the wiki's id first, and only then by name.** The game gives a Tainted
+            // character the base form's name and tells them apart by a flag, so the name
+            // index holds one entry for the two and neither form can be named reliably:
+            // "Tainted Isaac" is not a key it has at all, and plain "Isaac" can come back
+            // as whichever of the two won the insert. The id is the only thing that tells
+            // them apart, and here the answer is a row of the completion matrix — a wrong
+            // one is a different character's cell, read with full confidence.
+            //
+            // Both halves of that were measured: by name alone, 141 of the 396 character
+            // references resolved to nothing and fell through to the tally; name-first,
+            // Ultra Greedier as Keeper picked row 29, which is T. Keeper.
+            let character = rules.refs(id).iter().find_map(|r| match &r.target {
+                Target::Character { id: cid } => c
+                    .character(CharacterId(*cid))
+                    .map(|ch| ch.id)
+                    .or_else(|| index.character(rules.alias(&r.label))),
+                Target::Item { .. }
+                | Target::Trinket { .. }
+                | Target::Achievement { .. }
+                | Target::Challenge { .. }
+                | Target::Entity { .. }
+                | Target::Transformation { .. }
+                | Target::Stage { .. }
+                | Target::Room { .. }
+                | Target::Pickup { .. } => None,
+            });
             for row in rules.refs(id) {
-                let r = requirement_with(c, rules, &index, row);
+                let r = requirement_with(c, rules, &index, row, character);
                 match &r {
                     Requirement::Unknown { label } => unknown.push(label.clone()),
                     Requirement::None => {}
+                    // Answered by the profile, not by another achievement: no edge, and
+                    // not unknown either. It travels in `requirements` and evaluation asks
+                    // the profile about it — which is why it must not join `unknown`, or
+                    // the node would stay `Partial` with the answer sitting right there.
+                    Requirement::Mark { .. } | Requirement::Counter { .. } => {}
                     Requirement::Character { id: cid } => {
                         if let Some(by) = c.character(*cid).and_then(|ch| ch.unlocked_by) {
                             prerequisites.push(by.0);
@@ -109,6 +146,9 @@ impl Graph {
                             (None, Some(Verdict::AlwaysAvailable(_)))
                             | (None, Some(Verdict::NotAPrerequisite(_)))
                             | (None, Some(Verdict::Unknown { .. }))
+                            // A gate answered by the profile is not an edge to another
+                            // achievement: there is no achievement on the other side.
+                            | (None, Some(Verdict::Progress { .. }))
                             | (None, None) => None,
                         };
                         if let Some(target) = edge {
@@ -160,6 +200,24 @@ impl Graph {
             .collect();
         Graph {
             nodes,
+            diagnostics: Vec::new(),
+        }
+    }
+
+    /// A graph whose nodes carry requirements directly, for tests about evaluation rather
+    /// than about building. Prerequisites stay empty: these nodes are held by the profile,
+    /// not by other achievements.
+    pub fn from_requirements_for_tests(rows: &[(u32, Vec<Requirement>)]) -> Graph {
+        Graph {
+            nodes: rows
+                .iter()
+                .map(|(achievement, requirements)| Node {
+                    achievement: *achievement,
+                    requirements: requirements.clone(),
+                    prerequisites: Vec::new(),
+                    unknown: Vec::new(),
+                })
+                .collect(),
             diagnostics: Vec::new(),
         }
     }

@@ -22,8 +22,9 @@
       }
     },
     "entity:Delirium": {
-      "unknown": {
-        "reason": "lives in The Void, which opens after Hush: run progress, not an achievement"
+      "progress": {
+        "mark": { "column": "delirium", "level": "base" },
+        "counter": { "name": "deliriumKills", "atLeast": 1 }
       }
     },
     "entity:Die": {
@@ -41,8 +42,9 @@
       "alwaysAvailable": true
     },
     "entity:Hush": {
-      "unknown": {
-        "reason": "the Blue Womb opens after 11 Mom’s Heart kills: a counter, not an achievement"
+      "progress": {
+        "mark": { "column": "hush", "level": "base" },
+        "counter": { "name": "hushKills", "atLeast": 1 }
       }
     },
     "entity:Isaac": {
@@ -78,8 +80,9 @@
       "alwaysAvailable": true
     },
     "entity:Mother": {
-      "unknown": {
-        "reason": "end of the Repentance alt path: run progress, not an achievement"
+      "progress": {
+        "mark": { "column": "mother", "level": "base" },
+        "counter": { "name": "motherKills", "atLeast": 1 }
       }
     },
     "entity:Portal": {
@@ -106,8 +109,9 @@
       }
     },
     "entity:The Beast": {
-      "unknown": {
-        "reason": "end of the Ascent: run progress, not an achievement"
+      "progress": {
+        "mark": { "column": "theBeast", "level": "base" },
+        "counter": { "name": "beastKills", "atLeast": 1 }
       }
     },
     "entity:The Lamb": {
@@ -120,8 +124,8 @@
       "alwaysAvailable": true
     },
     "entity:Ultra Greedier": {
-      "unknown": {
-        "reason": "Greedier opens after 500 coins donated: a counter, not an achievement"
+      "progress": {
+        "mark": { "column": "greed", "level": "second" }
       }
     },
     "entity:Ultra Pride": {

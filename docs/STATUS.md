@@ -37,6 +37,34 @@ green on the merge result; 3.5 is closed on both halves.
 - [x] **M2 — Unlock graph** (2026-09-07). The Unlock *section* is frontend work and
       waits for the design system; the graph behind it is done — report in
       `docs/superpowers/plans/2026-09-07-unlock-graph-report.md`.
+      **Reopened and closed again on 2026-09-12** for the one kind of prerequisite it could
+      not say. Spec `docs/superpowers/specs/2026-09-12-graph-mark-requirements-design.md`,
+      plan `docs/superpowers/plans/2026-09-12-graph-mark-requirements.md`.
+      - [x] Five targets — Mother, The Beast, Hush, Delirium, Ultra Greedier — held **178 of
+            the 195** uninterpreted references, and none of them for want of curation: every
+            one was a hand-written `Verdict::Unknown`. They are not behind an achievement,
+            they are behind *having played something*, and the model had no case for it.
+      - [x] **Uninterpreted references on real data: 195 → 17.** `mark 170, counter 8`, which
+            is exactly the split the spec measured: 170 of the references name a character
+            alongside the boss, so they are one cell of the completion matrix, and 8 name the
+            boss alone, which a kill tally answers. The 17 that remain are the 13 `pickup:`
+            and 4 `transformation:` references §6 of the spec leaves out.
+      - [x] **New measurement**: in the **Greed** column, bit 1 of a cell is **Ultra
+            Greedier** — three days, three characters, each time the right character's cell.
+            Recorded in `CLAUDE.md` and `reference/isaac_counters.py`, kept by a property in
+            `crates/ipc/tests/progress_real.rs`.
+      - [x] **The mark layout moved to `core-save`**, where the file's shape belongs; it had
+            been living in the view-model that draws the matrix. Completion's tests passed
+            unchanged, which is what says no index moved.
+      - [x] **Two bugs the tests found, both about a character's identity.** The game gives a
+            Tainted character the base form's name, so the name index keeps one of the two:
+            by name alone 141 of 396 character references resolved to nothing, and by
+            name-first "Ultra Greedier as Keeper" picked row 29 — T. Keeper. Resolution goes
+            by the wiki's id first now, pinned by two tests in `crates/graph/tests/build.rs`.
+      - [ ] **Handed to the design system**: `RequirementView` gained `mark` and `counter`,
+            and a node held only by one of them is `availableNow` — nothing is locked, the
+            content only has to be played. **Unlock's "unlockable now" count rises**, and
+            such nodes are now eligible as Next steps.
 - [ ] **M3 — Derived plan** ← in progress. The **plan queue** is done (2026-09-08): an
       ordered series of achievements whose order is yours and can never contradict the
       graph. Report in `docs/superpowers/plans/2026-09-07-plan-queue-report.md`. What
@@ -696,17 +724,28 @@ save against the dated backup the game wrote before it, and read which cells mov
       them. Closing it lets sections 5, 8 and 9 be renamed the way 3 and 6 were. *Careful
       with co-op*, now measured rather than suspected (2026-09-12): a won online Greed run
       logged `playing cutscene 21` and **section 8 did not move a byte** — nor did 3, 5 or
-      9. The run has to be **solo**; the rest of the personal save does move in co-op, but
-      not these four.
+      9. A solo session the same day separated them further: **section 3 moved** (four stage
+      cells, +1 +1 +2 +1) while 5, 8 and 9 stayed put — so 3 is the one co-op diverts, and 8
+      is simply waiting for a run with an ending. The run has to be **solo** *and* has to
+      finish: the 2026-09-12 solo session had no cutscene and no `Game Over`, so it did not
+      close this.
 - [ ] **What the bestiary's four tallies count** (B9, structure closed 2026-09-09;
       **halved on 2026-09-12**). Section 10 holds four lists over the same entities — ids 4,
       2, 3, 1 — with a different number against each entity in each. One matched window on a
       Greed run split them in two: **tallies 1 and 2 moved** (sum +432 and +805, no new
-      keys), **3 and 4 did not move at all**. So 1 and 2 count something a run does
-      constantly and 3 and 4 something it did not do once in 26 minutes — which rules out
-      "kills" for the latter pair. Naming them still needs the original instrument: kill a
-      known enemy a known number of times and read which tally moves by how much. Until
-      then they keep the id the file gives them.
+      keys), **3 and 4 did not move at all**. A second window the same day — Judas, **solo**,
+      44 minutes — split them again: 1 and 2 moved (+351, +258), **3 moved (+11)**, 4 still
+      did not. So the four sort into three behaviours: 1 and 2 move constantly and in both
+      modes; 3 moves solo but not in online co-op, like section 3 does; 4 has never been
+      seen moving.
+      **The hypothesis for 4, with its test**: it counts the times an entity *killed the
+      player*. It fits every number — 156 records for 321 deaths, growing slowly and by
+      whole new keys across the series (130/240 on 06-29, 142/277 on 08-05, 154/319 on
+      09-08) — and above all it explains the two flat windows, because **both sessions had
+      zero `Game Over` lines**. One deliberate death falsifies it or confirms it in two
+      minutes: tally 4 has to gain exactly 1 on the killer's key. Until then it keeps the id
+      the file gives it. Naming 1, 2 and 3 apart still needs the original instrument: kill a
+      known enemy a known number of times and read which moves by how much.
 - [ ] **What the bestiary's trailing word is.** One word after the last tally, in every
       save, growing 11,343 → 29,725 across the samples we hold, and 43,914 → **43,925** over
       the 2026-09-12 window. So it moves **+11 in one Greed run** — small, and not obviously
@@ -717,6 +756,10 @@ save against the dated backup the game wrote before it, and read which cells mov
       Forgotten and the 19. One run of Mother with a Tainted character closes the whole
       20 × 2 block, because the base indices are already pinned and only the evidence that
       those cells move is missing.
+      **Measured on 2026-09-12, and the absence is now a finding rather than an assumption**:
+      a walk of the whole dated series looking for *any* completion of Mother or The Beast by
+      those 20 characters found none. The blocker is real, the series cannot close it, and it
+      is what keeps 40 nodes of the unlock graph `Partial` instead of answered.
 - [ ] **A save of the 642 / 523 era in `samples/`** — a copy out of
       `Steam\userdata\<id>\250900\remote\`, named `YYYYMMDD.rep+persistentgamedata1.dat`.
       Costs nothing but the copy, and it switches on the era row in
@@ -829,12 +872,20 @@ That answer was built on a wrong fact, and the run proved it wrong in twenty-six
       then agreed: 6 of 6 bit-2 dates have an `online_logs\` session, ~60 marks on days
       without one never gained it, and on 2026-08-31 the **same character on the same day**
       took one mark with the bit and one without, so it belongs to the run, not the day.
-- [x] **Local co-op writes the profile and does not set bit 2** — B21's third question,
-      answered without playing anything. A local co-op win is the only thing that lights two
-      bits at once in index 188, which happens in exactly two windows: 2026-07-22 and
-      2026-09-01. The first took four marks, none with bit 2. Index 188's bit → character
-      map was re-derived from the series for this rather than assumed, and it confirms the
-      one `marks_real.rs` already uses.
+- [ ] **Local co-op — claimed closed, then reopened the same hour.** The argument was that a
+      local co-op win is the only thing lighting two bits at once in index 188, which made
+      2026-07-22 and 2026-09-01 identifiable. **It doesn't hold: 188 accumulates** — `2 → 6`
+      on 09-01 adds Cain and keeps Magdalene — so two bits is two wins in the window, not two
+      players in one run. What survives is by elimination only: no day without an online
+      session ever produced a bit 2, and the owner confirms local co-op happened at least
+      once. B21 point 3 stays open.
+      **The evidence was already in the repo**: the B8 spike report of 2026-09-08 records
+      `188: 4 -> 12` on a winning Judas run under "one thing that does not fit". Reading it
+      before concluding would have cost five minutes; it was read afterwards, while looking
+      up something else. That report can now drop the entry — the misfit was accumulation,
+      and what clears the mask is the question that replaces it.
+      Index 188's bit → character map *was* re-derived from the series rather than assumed,
+      and that part holds: it confirms the map `marks_real.rs` already uses.
 - [x] **The reading is pinned by a property, not by a value**:
       `the_online_bit_never_stands_without_the_cleared_bit` in `crates/ipc/tests/marks_real.rs`.
       An online clear is also a clear, so no cell may hold 4 or 6. It carries its own
