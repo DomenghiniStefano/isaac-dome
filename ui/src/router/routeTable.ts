@@ -25,6 +25,7 @@ import type { MessageSchema } from '@/i18n/messages/it'
 // Everything a location needs to be named, drawn and placed, with no screen component in
 // sight: tab labels and the sidebar are built and tested from this alone.
 export const RouteName = {
+  Search: 'search',
   NextSteps: 'nextSteps',
   Completion: 'completion',
   Unlock: 'unlock',
@@ -52,7 +53,7 @@ export type WikiCategory = (typeof WikiCategory)[keyof typeof WikiCategory]
 // A tab's identity: a route and its query, never the view's content (B6).
 export interface TabLocation {
   name: RouteName
-  query?: { category?: WikiCategory; page?: string }
+  query?: { category?: WikiCategory; page?: string; q?: string }
 }
 
 type Message = MessageKey<MessageSchema>
@@ -60,6 +61,7 @@ type Message = MessageKey<MessageSchema>
 export const defaultLocation: TabLocation = { name: RouteName.NextSteps }
 
 export const routePath: Record<RouteName, string> = {
+  [RouteName.Search]: '/search',
   [RouteName.NextSteps]: '/progress/next-steps',
   [RouteName.Completion]: '/progress/completion',
   [RouteName.Unlock]: '/progress/unlock',
@@ -74,6 +76,7 @@ export const routePath: Record<RouteName, string> = {
 }
 
 export const routeTitle: Record<RouteName, Message> = {
+  [RouteName.Search]: 'routes.search',
   [RouteName.NextSteps]: 'routes.nextSteps',
   [RouteName.Completion]: 'routes.completion',
   [RouteName.Unlock]: 'routes.unlock',
@@ -88,6 +91,7 @@ export const routeTitle: Record<RouteName, Message> = {
 }
 
 export const routeOrigin: Record<RouteName, TabOrigin> = {
+  [RouteName.Search]: TabOrigin.Search,
   [RouteName.NextSteps]: TabOrigin.Progress,
   [RouteName.Completion]: TabOrigin.Progress,
   [RouteName.Unlock]: TabOrigin.Progress,
@@ -102,6 +106,7 @@ export const routeOrigin: Record<RouteName, TabOrigin> = {
 }
 
 export const routeIcon: Record<RouteName, Component> = {
+  [RouteName.Search]: tabOriginIcon[TabOrigin.Search],
   [RouteName.NextSteps]: ListChecksIcon,
   [RouteName.Completion]: Grid2x2Icon,
   [RouteName.Unlock]: LockOpenIcon,

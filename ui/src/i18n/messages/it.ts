@@ -24,6 +24,7 @@ export const it = {
     thirdLevel: 'terzo livello, significato non confermato',
   },
   routes: {
+    search: 'Cerca',
     nextSteps: 'Prossimi passi',
     completion: 'Completamento',
     unlock: 'Unlock',
@@ -197,6 +198,42 @@ export const it = {
       missingTitle: 'Il dataset della wiki non si è caricato',
       missing:
         'Il binario contiene un dataset che non si legge: la Wiki non ha pagine da mostrare.',
+    },
+  },
+  search: {
+    intro:
+      "Un indice solo su tutto quello che l'app conosce per nome o per testo: nomi del gioco, condizioni degli achievement, titoli e testo delle pagine wiki.",
+    placeholder: 'Cerca schermate, achievement, oggetti, pagine wiki…',
+    empty: 'Nessun risultato.',
+    allResults: 'Tutti i risultati ({count})',
+    shown: '{shown} righe',
+    limit: 'Mostrati {shown} di {total}: affina la ricerca.',
+    groups: {
+      screens: 'Schermate',
+      wiki: 'Wiki',
+      unlock: 'Unlock',
+      collection: 'Collezione',
+    },
+    progress: {
+      done: 'fatto',
+      pending: 'da fare',
+      unknown: 'non noto',
+    },
+    hint: {
+      open: 'apri',
+      newTab: 'apri in una nuova tab',
+    },
+    diagnostics: {
+      noProfile:
+        'Nessun profilo scelto: i risultati non dicono cosa hai già fatto.',
+      noCatalog:
+        'Gioco non installato: si cerca solo nei titoli e nel testo della wiki, senza immagini.',
+      noWiki:
+        'Il dataset della wiki non si è caricato: si cerca solo nei nomi del gioco, e nessun risultato apre una pagina.',
+      noAchievementSection:
+        'La sezione degli achievement non si è letta: per gli achievement non si sa cosa è fatto.',
+      noCollectionSection:
+        'La sezione della collezione non si è letta: per gli oggetti non si sa cosa hai già.',
     },
   },
   appearance: {

@@ -82,7 +82,10 @@ const browsing = ref<SidebarSection>(SidebarSection.Progress)
 watch(
   () => tabs.active?.location.name,
   (name) => {
-    if (name) browsing.value = sectionOfOrigin(routeOrigin[name])
+    if (!name) return
+    // A search tab belongs to neither section: the sidebar stays where the user left it.
+    const section = sectionOfOrigin(routeOrigin[name])
+    if (section) browsing.value = section
   },
   { immediate: true },
 )

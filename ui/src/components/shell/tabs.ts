@@ -1,6 +1,7 @@
 // A tab's origin, drawn as an icon on the tab itself (DESIGN-BRIEF.md §4.2): the mixed bar
 // stays readable because every tab says which part of the app it comes from.
 export const TabOrigin = {
+  Search: 'search',
   Wiki: 'wiki',
   Progress: 'progress',
   Settings: 'settings',
