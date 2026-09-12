@@ -51,7 +51,7 @@ export const it = {
     wikiHint: 'La Wiki funziona senza gioco né salvataggio.',
     wikiOverview: 'Panoramica',
     settingsTitle: 'Impostazioni',
-    settingsHint: "Da qui l'app trova gioco e salvataggi.",
+    settingsHint: 'Il salvataggio che stai giocando, e come apre le tab.',
   },
   collection: {
     intro:
@@ -198,9 +198,29 @@ export const it = {
         'Il binario contiene un dataset che non si legge: la Wiki non ha pagine da mostrare.',
     },
   },
+  about: {
+    fanMade:
+      'IsaacDome è fatto dai fan e non è affiliato a Nicalis né a Edmund McMillen.',
+    version: 'Versione',
+    versionUnknown: 'server di sviluppo',
+    promisesTitle: 'Le tre promesse',
+    promises: {
+      readOnly:
+        'Sui salvataggi si legge soltanto: il modulo che apre i .dat non contiene codice di scrittura, e il checksum non viene mai ricalcolato.',
+      offline:
+        "Nessun account, nessun server, nessuna telemetria: l'app funziona offline e la rete serve solo a un aggiornamento facoltativo del dataset.",
+      oneFile:
+        "Un solo file scritto, isaacdome.db, nella cartella dati dell'app: nient'altro sul disco viene toccato.",
+    },
+    creditsTitle: 'Crediti e licenze',
+    wikiText:
+      'Il testo della wiki è CC BY-SA 4.0, da bindingofisaacrebirth.wiki.gg.',
+    assets:
+      "Le immagini del gioco non sono nostre e non viaggiano con l'app: vengono estratte dalla tua copia.",
+    font: 'Il carattere Determination Mono è CC BY 3.0.',
+  },
   placeholder: {
     runArchive: "Arriva con l'archivio delle run (M4).",
-    settings: 'Arriva con Impostazioni e Informazioni.',
     tabs: 'Arriva con le tab che sopravvivono alla chiusura.',
   },
   plan: {
@@ -409,10 +429,9 @@ export const it = {
     slot: 'slot',
   },
   profile: {
-    eyebrow: 'Schermata 0',
     title: 'Profilo di gioco',
     intro:
-      "Non è un passaggio da attraversare una volta: è lo stato che decide ogni numero dell'app. Resta consultabile e modificabile per sempre.",
+      'Scegli il salvataggio con cui stai giocando: ogni numero delle altre schermate si legge su questo. Puoi cambiarlo quando vuoi.',
     chain: {
       title: 'La catena dei tre requisiti',
       summary: 'ogni livello può mancare da solo',

@@ -38,12 +38,12 @@ const choose = async (id: string) => {
 
 <template>
   <div class="flex max-w-250 flex-col gap-4">
-    <ScreenHeader
-      :icon="SaveIcon"
-      :eyebrow="t('profile.eyebrow')"
-      :title="t('profile.title')"
-      >{{ t('profile.intro') }}</ScreenHeader
-    >
+    <!-- No "Screen 0" and no settings copy: this is where you choose the save to play with
+         (`docs/BACKLOG.md` B17). The welcome flow and the preview per save come with the
+         design pass; what goes now is the wording that was false. -->
+    <ScreenHeader :icon="SaveIcon" :title="t('profile.title')">{{
+      t('profile.intro')
+    }}</ScreenHeader>
     <ProfileError
       v-if="profile.status === LoadStatus.Failed"
       :error="profile.error"
