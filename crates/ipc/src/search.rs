@@ -11,7 +11,8 @@ use catalog::{Catalog, ItemKind, Language};
 use serde::Serialize;
 use wiki::{Block, Dataset, DatasetError, Entry, Inline, SectionKind, Target};
 
-use crate::target_sprite::entity_key;
+use crate::icon::IconRef;
+use crate::target_sprite::{entity_key, target_sprite, TargetSprite};
 use crate::wiki::boss_target;
 
 /// One page as the search reads it: the title, and the text of each section in the order the
@@ -378,6 +379,229 @@ fn flatten_block(block: &Block, out: &mut String) {
             }
         }
     }
+}
+
+/// A ranked answer. `total` is how many documents matched before the limit: the screen says
+/// "300 of N" from it, and the palette's last row counts with it.
+#[derive(Debug, Clone, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SearchView {
+    pub query: String,
+    pub hits: Vec<SearchHit>,
+    pub total: u32,
+    pub diagnostics: Vec<SearchDiagnostic>,
+}
+
+#[derive(Debug, Clone, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SearchHit {
+    pub target: Target,
+    pub title: String,
+    pub icon_url: Option<String>,
+    /// The dataset has this page: a Wiki destination exists for the hit.
+    pub has_page: bool,
+    #[serde(rename = "match")]
+    pub matched: SearchMatch,
+    pub progress: ProgressMark,
+}
+
+/// Why the hit matched, in the words the row shows. Tagged: two of the three carry data.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[serde(
+    tag = "kind",
+    rename_all = "camelCase",
+    rename_all_fields = "camelCase"
+)]
+pub enum SearchMatch {
+    Title,
+    /// The achievement's own wording of what to do.
+    Condition {
+        text: String,
+    },
+    Section {
+        section: SectionKind,
+        before: String,
+        matched: String,
+        after: String,
+    },
+}
+
+/// What the answer couldn't take into account. Fieldless: a bare string.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub enum SearchDiagnostic {
+    /// No profile chosen: every mark is unknown. Expected before a save is picked, not a
+    /// failure.
+    NoProfile,
+    NoCatalog,
+    NoWiki,
+    NoAchievementSection,
+    NoCollectionSection,
+}
+
+/// Tier 0 to 3, on a name: equal, prefix, a word's prefix, or merely containing the words.
+fn title_tier(folded_title: &str, folded_query: &str) -> u8 {
+    if folded_title == folded_query {
+        0
+    } else if folded_title.starts_with(folded_query) {
+        1
+    } else if folded_title
+        .split_whitespace()
+        .any(|w| w.starts_with(folded_query))
+    {
+        2
+    } else {
+        3
+    }
+}
+
+/// Not done before done: that is what makes the profile part of the ranking (B5).
+fn progress_rank(p: ProgressMark) -> u8 {
+    match p {
+        ProgressMark::Pending => 0,
+        ProgressMark::Unknown => 1,
+        ProgressMark::None => 2,
+        ProgressMark::Done => 3,
+    }
+}
+
+/// The first field of this document that holds every word, and the tier it earns. Fields in
+/// order: title, alias, condition, then each section — so one target is one hit, named by the
+/// strongest reason it matched.
+fn best_field(
+    index: &SearchIndex,
+    target: &Target,
+    doc: &Doc,
+    words: &[String],
+    folded_query: &str,
+) -> Option<(u8, SearchMatch)> {
+    let title = fold(&doc.title);
+    if contains_all(&title, words) {
+        return Some((title_tier(&title, folded_query), SearchMatch::Title));
+    }
+    if let Some(alias) = &doc.alias {
+        let alias = fold(alias);
+        if contains_all(&alias, words) {
+            return Some((title_tier(&alias, folded_query), SearchMatch::Title));
+        }
+    }
+    if let Some(condition) = &doc.condition {
+        if contains_all(&fold(condition), words) {
+            return Some((
+                4,
+                SearchMatch::Condition {
+                    text: condition.clone(),
+                },
+            ));
+        }
+    }
+    for (kind, text) in index.pages.get(target).map(|p| &p.sections)? {
+        if let Some((before, matched, after)) = fragment(text, words) {
+            return Some((
+                5,
+                SearchMatch::Section {
+                    section: *kind,
+                    before,
+                    matched,
+                    after,
+                },
+            ));
+        }
+    }
+    None
+}
+
+/// The ranked answer to one query. Pure: the caller supplies the index, the catalog, the
+/// profile's two sections and the icon link.
+pub fn search(
+    index: &SearchIndex,
+    catalog: Option<&Catalog>,
+    flags: Option<SaveFlags<'_>>,
+    query: &str,
+    limit: usize,
+    mut icon: impl FnMut(&IconRef) -> Option<String>,
+) -> SearchView {
+    let words = words(query);
+    if words.is_empty() {
+        return SearchView {
+            query: query.to_string(),
+            hits: Vec::new(),
+            total: 0,
+            diagnostics: Vec::new(),
+        };
+    }
+    let folded_query = fold(query.trim());
+    let docs = documents(index, catalog);
+    let mut ranked: Vec<(u8, u8, String, Target, Doc, SearchMatch, ProgressMark)> = docs
+        .into_iter()
+        .filter_map(|(target, doc)| {
+            let (tier, matched) = best_field(index, &target, &doc, &words, &folded_query)?;
+            let progress = progress(&target, flags);
+            Some((
+                tier,
+                progress_rank(progress),
+                fold(&doc.title),
+                target,
+                doc,
+                matched,
+                progress,
+            ))
+        })
+        .collect();
+    // Tier, then the profile, then the name, and last the target itself: the order is total,
+    // so a test can pin it and two runs can never disagree.
+    ranked.sort_by(|a, b| (a.0, a.1, &a.2, &a.3).cmp(&(b.0, b.1, &b.2, &b.3)));
+    let total = ranked.len() as u32;
+    ranked.truncate(limit);
+    let hits = ranked
+        .into_iter()
+        .map(|(_, _, _, target, doc, matched, progress)| SearchHit {
+            icon_url: catalog.and_then(|c| match target_sprite(c, &target) {
+                TargetSprite::Found(_) => icon(&IconRef::Page {
+                    target: target.clone(),
+                }),
+                TargetSprite::NoArt | TargetSprite::Unknown => None,
+            }),
+            has_page: doc.has_page,
+            title: doc.title,
+            target,
+            matched,
+            progress,
+        })
+        .collect();
+    SearchView {
+        query: query.to_string(),
+        hits,
+        total,
+        diagnostics: diagnostics(index, catalog, flags),
+    }
+}
+
+fn diagnostics(
+    index: &SearchIndex,
+    catalog: Option<&Catalog>,
+    flags: Option<SaveFlags<'_>>,
+) -> Vec<SearchDiagnostic> {
+    let mut out = Vec::new();
+    if catalog.is_none() {
+        out.push(SearchDiagnostic::NoCatalog);
+    }
+    if !index.is_loaded() {
+        out.push(SearchDiagnostic::NoWiki);
+    }
+    match flags {
+        // One word, not two: without a profile there is no section to miss.
+        None => out.push(SearchDiagnostic::NoProfile),
+        Some(f) => {
+            if f.achievements.is_none() {
+                out.push(SearchDiagnostic::NoAchievementSection);
+            }
+            if f.items.is_none() {
+                out.push(SearchDiagnostic::NoCollectionSection);
+            }
+        }
+    }
+    out
 }
 
 #[cfg(test)]
