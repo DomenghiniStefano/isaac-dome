@@ -6,6 +6,7 @@ mod events;
 mod icons;
 mod settings_file;
 mod state;
+mod tray;
 mod window;
 use crate::commands::{completion, graph, plan, profile, queue, session, wiki};
 use crate::icons::icon_bytes;
@@ -18,6 +19,13 @@ pub use ipc::IpcError;
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        // **First, by the plugin's own requirement.** A second launch is the same gesture as a
+        // click on the icon: this app has no command line, so the arguments are nothing to act
+        // on.
+        .plugin(tauri_plugin_single_instance::init(|app, _argv, _cwd| {
+            window::open_or_focus(app);
+        }))
+        .plugin(tauri_plugin_notification::init())
         .manage(CatalogState::default())
         .manage(GraphState::default())
         .manage(StoreState::default())
@@ -74,6 +82,9 @@ pub fn run() {
         // The first window is built here, not by the config: one recipe, and the same call
         // the tray and a second launch make.
         .setup(|app| {
+            // The tray before the window: if a window fails to open, the way back in still
+            // exists.
+            tray::build(app.handle());
             window::open_or_focus(app.handle());
             Ok(())
         })
@@ -87,6 +98,7 @@ pub fn run() {
                 code: None, api, ..
             } if settings_file::load(app).stay_in_background => {
                 api.prevent_exit();
+                tray::notice_once(app);
             }
             // `RunEvent` is `#[non_exhaustive]` and is not ours: this is the one catch-all the
             // repo's exhaustiveness rule cannot ask us to remove.
