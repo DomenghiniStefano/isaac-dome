@@ -1,3 +1,4 @@
+import { isTauri } from '@tauri-apps/api/core'
 import { listen } from '@tauri-apps/api/event'
 
 // Events emitted by Rust when a command has just written. They carry no payload: they say
@@ -17,6 +18,11 @@ export type AppEvent = (typeof AppEvent)[keyof typeof AppEvent]
 export const watchAppEvents = async (
   handlers: Record<AppEvent, () => void>,
 ): Promise<() => void> => {
+  // Outside Tauri — `pnpm ui:dev` in a browser — there is nobody to be told by, and `listen`
+  // does not degrade on its own: it reaches into internals that are not there and throws
+  // `transformCallback of undefined` from inside a mounted hook, which takes the shell down
+  // with it. Measured on 2026-09-13, on the development server.
+  if (!isTauri()) return () => undefined
   const stops = await Promise.all(
     Object.values(AppEvent).map((name) => listen(name, () => handlers[name]())),
   )
