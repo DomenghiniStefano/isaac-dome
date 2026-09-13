@@ -388,6 +388,11 @@ export const en: MessageSchema = {
     nothingReadable:
       'The save lets us read no mark: the counters section is missing or cut short.',
   },
+  // The landing screen: what you get, how, why it is worth it, and the one action.
+  goals: {
+    opens: 'Opens {count} more things',
+    opensNothing: 'Opens nothing else',
+  },
   // The block an achievement's wiki page gains when a profile is active. It says only where
   // you stand: what the thing is and what it asks is already in the infobox below.
   profileBlock: {

@@ -393,6 +393,11 @@ export const it = {
     nothingReadable:
       'Il salvataggio non lascia leggere nessun marchio: la sezione dei contatori manca o è troncata.',
   },
+  // La schermata di atterraggio: cosa ottieni, come, perché conviene, e l'azione.
+  goals: {
+    opens: 'Apre altre {count} cose',
+    opensNothing: 'Non apre altro',
+  },
   // Il blocco che la pagina wiki di un achievement guadagna quando c'è un profilo attivo.
   // Dice soltanto dove sei tu: cos'è e cosa chiede lo dice già l'infobox sotto.
   profileBlock: {
