@@ -35,8 +35,10 @@ export interface TabDragOptions {
   // window. False when there was no such tab.
   lift: (index: number) => boolean
   // The drag ended. A label lands the tab on that window's strip — this window's own included,
-  // since the tab has already left it — and null lands it on the bare desktop.
-  settle: (target: string | null, at: Point) => void
+  // since the tab has already left it — and null lands it on the bare desktop. `at` is where the
+  // cursor was, which is what a strip needs; `origin` is where a **new window's top-left** goes
+  // so that the tab you were holding ends up under the cursor rather than the window's corner.
+  settle: (target: string | null, at: Point, origin: Point) => void
   // The drag was called off or lost: the tab goes back where it sat.
   putBack: () => void
 }
@@ -62,6 +64,10 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
   // Whether the card for this drag has been built yet. Reset when the drag ends, so the next
   // one builds its own — the label on the card is the tab being dragged.
   let warmed = false
+  // From the cursor to where a new window's top-left belongs, in this window's logical pixels:
+  // the grab inside the tab, plus where the first tab sits inside a window. Measured when the
+  // tab leaves, so the window that opens is drawn **around the tab you are holding**.
+  let tabOffset: Point = { x: 0, y: 0 }
 
   const stripBox = (): Box | null => {
     const el = options.strip.value
@@ -118,14 +124,36 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
 
   const onOutsideRelease = (p: Point) => {
     const target = hovered
+    // **The target keeps its marker until the tab lands on it.** Forgetting the hover first
+    // tells it "the tab left" — and with it goes the index the marker was pointing at, so the
+    // tab arrived unaimed and was appended to the end, wherever it had been dropped. Every
+    // time, which is how the owner found it. Clearing `hovered` here means `stopWatching`
+    // has nothing to take back.
+    hovered = null
+    // The window a drop on the desktop opens is placed so the tab lands under the cursor. The
+    // offset was measured in this window's logical pixels; the cursor speaks in the desktop's.
+    const factor = self.value?.scaleFactor ?? 1
+    const origin = {
+      x: Math.round(p.x - tabOffset.x * factor),
+      y: Math.round(p.y - tabOffset.y * factor),
+    }
     stopWatching()
-    options.settle(target, p)
+    options.settle(target, p, origin)
   }
 
   const detach = async (p: Point) => {
     if (detached.value || grabbed === null) return
     // The tab leaves the strip here, not at the release: from now on it is in flight.
     const label = options.labelOf(grabbed)
+    // Where the hand is holding the tab, and where a tab sits inside a window: both read from
+    // the page while they still exist, because a moment later the tab is gone from the strip.
+    const ghost = drag.ghost.value
+    const strip = stripBox()
+    if (ghost && strip)
+      tabOffset = {
+        x: p.x - ghost.left + strip.left,
+        y: p.y - ghost.top + strip.top,
+      }
     if (!options.lift(grabbed)) return
     detached.value = true
     // Anything that goes wrong between the tab leaving the strip and the watch being installed

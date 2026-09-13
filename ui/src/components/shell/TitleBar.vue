@@ -27,7 +27,7 @@ const emit = defineEmits<{
   aim: [index: number | null]
   // A tab dragged out of this window: onto another window's strip, or onto the bare desktop.
   lift: [index: number]
-  settle: [target: string | null, at: Point]
+  settle: [target: string | null, at: Point, origin: Point]
   putBack: []
 }>()
 </script>
@@ -50,7 +50,7 @@ const emit = defineEmits<{
       @add="emit('add')"
       @aim="emit('aim', $event)"
       @lift="emit('lift', $event)"
-      @settle="(target, at) => emit('settle', target, at)"
+      @settle="(target, at, origin) => emit('settle', target, at, origin)"
       @put-back="emit('putBack')"
     />
     <div data-tauri-drag-region class="min-w-drag-region flex-1" />
