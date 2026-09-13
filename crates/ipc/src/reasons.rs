@@ -16,7 +16,7 @@ use serde::Serialize;
 ///
 /// No variant carries a field, so this is a bare camelCase string on the wire and the
 /// TypeScript mirrors it as a union of values.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum IoReason {
     NotFound,
@@ -35,7 +35,7 @@ impl From<std::io::ErrorKind> for IoReason {
 }
 
 /// Why the active profile's save could not be read.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -66,7 +66,7 @@ impl From<&core_save::OpenError> for SaveReason {
 
 /// Why `settings.json` could not be written. The only state the app persists outside its
 /// own database, and the one file whose loss the user notices immediately.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -85,7 +85,7 @@ pub enum SettingsReason {
 
 /// Why the app's database is unavailable. `NewerSchema` is the only one the user can act
 /// on, which is why its two versions travel as numbers instead of inside a sentence.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",

@@ -5,7 +5,7 @@ use crate::ProfileId;
 
 /// Count for one section. Carries the `Kind`, not a translated label:
 /// the human-readable name is a UI string and lives in the i18n files.
-#[derive(Debug, Clone, Copy, Serialize)]
+#[derive(Debug, Clone, Copy, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct SectionCount {
     pub kind: Kind,
@@ -14,7 +14,7 @@ pub struct SectionCount {
 
 /// What could not be read from the save. Carries no offsets or lengths:
 /// the frontend has no knowledge of the file layout.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -41,7 +41,7 @@ fn save_diagnostic_of(d: &SaveParseDiagnostic) -> SaveDiagnostic {
     }
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct SaveSummary {
     pub profile: ProfileId,

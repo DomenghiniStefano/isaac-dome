@@ -38,7 +38,7 @@ pub struct Section {
 }
 
 /// Fieldless: a bare string.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum SectionKind {
     Effects,
@@ -123,14 +123,14 @@ pub enum Inline {
 /// type reports which template was read, and claims nothing about what the item is. A
 /// `bool` would have been worse than either — `activated: false` would silently mean both
 /// "passive" and "familiar".
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum CollectibleTemplate {
     Passive,
     Activated,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum Style {
     Plain,

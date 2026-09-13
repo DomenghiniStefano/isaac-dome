@@ -6,7 +6,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::resources::data_url;
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct KindCounts {
     pub passives: usize,
@@ -15,7 +15,7 @@ pub struct KindCounts {
     pub trinkets: usize,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct CatalogView {
     pub counts: KindCounts,
@@ -31,7 +31,7 @@ pub struct CatalogView {
 /// here there are none: `{"kind":"passive"}` would cost a key on every row and say
 /// nothing more. The day a variant gains a field, the enum becomes tagged and the
 /// TypeScript side follows.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum ItemKindView {
     Passive,
@@ -40,7 +40,7 @@ pub enum ItemKindView {
     Trinket,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct ItemView {
     pub id: u32,

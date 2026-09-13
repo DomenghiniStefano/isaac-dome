@@ -11,7 +11,7 @@ use wiki::Target;
 use crate::graph::{AchievementRef, UnlockNode, UnlockTarget, UnlockView};
 use crate::icon::IconRef;
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct WantView {
     pub wanted: WantedView,
@@ -23,7 +23,7 @@ pub struct WantView {
 /// variants and none is an achievement. Naming *Greedier!* has to reach the node whose
 /// target the catalog does not model, so the view carries both — and a third case for a name
 /// the catalog no longer resolves.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -35,14 +35,14 @@ pub enum WantedView {
     Unresolved,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct WantRoute {
     pub node: UnlockNode,
     pub state: WantState,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -64,7 +64,7 @@ pub enum WantState {
     NoProfile,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",

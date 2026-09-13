@@ -105,7 +105,7 @@ pub struct SaveFlags<'a> {
 }
 
 /// Where a target stands in the profile. Fieldless: a bare string.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum ProgressMark {
     Done,
@@ -355,7 +355,7 @@ fn flatten_block(block: &Block, out: &mut String) {
 
 /// A ranked answer. `total` is how many documents matched before the limit: the screen says
 /// "300 of N" from it, and the palette's last row counts with it.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct SearchView {
     pub query: String,
@@ -364,7 +364,7 @@ pub struct SearchView {
     pub diagnostics: Vec<SearchDiagnostic>,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct SearchHit {
     pub target: Target,
@@ -378,7 +378,7 @@ pub struct SearchHit {
 }
 
 /// Why the hit matched, in the words the row shows. Tagged: two of the three carry data.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -399,7 +399,7 @@ pub enum SearchMatch {
 }
 
 /// What the answer couldn't take into account. Fieldless: a bare string.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum SearchDiagnostic {
     /// No profile chosen: every mark is unknown. Expected before a save is picked, not a

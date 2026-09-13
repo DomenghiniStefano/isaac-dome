@@ -8,7 +8,7 @@ use std::time::UNIX_EPOCH;
 
 /// Opaque matching key between a persisted choice and a candidate.
 /// Newtype to prevent a path from ending up in here by mistake.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
 pub struct ProfileId(String);
 
 impl ProfileId {
@@ -38,7 +38,7 @@ fn fnv1a_64(bytes: &[u8]) -> u64 {
 /// The save's origin, without the data that `discovery`'s type carries along with it
 /// (Steam account id, folder): those don't cross the IPC boundary. A fieldless enum:
 /// on the wire it's a bare camelCase string (`"steamCloud"`), not a tagged object.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum CandidateSource {
     SteamCloud,
@@ -46,7 +46,7 @@ pub enum CandidateSource {
     Manual,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct CandidateView {
     pub id: ProfileId,
@@ -168,7 +168,7 @@ impl CandidateView {
 /// `rename_all = "camelCase"` always, the tag only where variants carry data: if two
 /// enums followed different conventions, a `switch` on the TypeScript side would fall
 /// into no branch at all, and nothing would flag it.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum MissingReason {
     SteamNotFound,
@@ -176,7 +176,7 @@ pub enum MissingReason {
     NoSaves,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -187,7 +187,7 @@ pub enum ChoiceReason {
     SavedProfileGone { was: String },
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -260,7 +260,7 @@ fn missing_reason(steam_found: bool, game_found: bool) -> MissingReason {
     }
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct SteamView {
     /// Display-only path: tells the user where it was found.
@@ -268,7 +268,7 @@ pub struct SteamView {
     pub libraries: usize,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct GameView {
     pub dir_hint: String,
@@ -276,7 +276,7 @@ pub struct GameView {
     pub dlcs: Vec<Dlc>,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct SetupState {
     pub steam: Option<SteamView>,
@@ -289,7 +289,7 @@ pub struct SetupState {
 /// What failed during discovery. Carries **only the last path component**:
 /// the full path contains the Steam account id under `userdata/`
 /// and always the Windows username.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
