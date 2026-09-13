@@ -210,3 +210,117 @@ fn the_no_profile_diagnostic_and_the_rows_cannot_disagree() {
         assert_eq!(all_rows, banner);
     }
 }
+
+/// 3 needs 2, 2 needs 1. The ids ascend here, so a test that only checked membership would
+/// pass on `missing_chain`'s own order; the point is that the order comes from the edges.
+fn chained_graph() -> graph::Graph {
+    graph::for_tests::from_edges(&[(1, &[]), (2, &[1]), (3, &[2])], &[])
+}
+
+const BLOCKED: GraphInfo = GraphInfo::Computed {
+    available_now: false,
+    blocked_by: 1,
+    fan_out: 0,
+    steps_missing: 2,
+};
+
+#[test]
+fn a_chain_is_ordered_the_way_the_queue_orders_it() {
+    let c = catalog_with_achievements();
+    let g = chained_graph();
+    let v = view_with(&c, &[], BLOCKED);
+    // Trinket 1 is granted by achievement 3, the deepest node.
+    let w = ipc::want_view(
+        Some(&c),
+        &v,
+        Some(&READ),
+        Some(&g),
+        &Target::Trinket { id: 1 },
+        |_| None,
+    );
+    let WantState::Chain { steps, unknown } = &w.routes[0].state else {
+        panic!("expected a chain, got {:?}", w.routes[0].state);
+    };
+    let ids: Vec<u32> = steps
+        .iter()
+        .filter_map(|n| match n.achievement {
+            AchievementRef::Known { id, .. } => Some(id),
+            AchievementRef::Unknown { .. } => None,
+        })
+        .collect();
+    assert_eq!(ids, vec![1, 2], "prerequisites first, the want excluded");
+    assert_eq!(*unknown, 0);
+
+    // The same order the Plan produces, because it is the Plan's own computation.
+    let mut q = plan::Queue::from_rows(vec![]);
+    let chain = g.missing_chain(3, &graph::FlagsOnly(Some(&READ)));
+    let mut rows = chain.clone();
+    rows.push(3);
+    q.enqueue(3, &chain, &ipc::GraphDeps::new(&g, Some(&READ), &rows));
+    let queued: Vec<u32> = q.rows().iter().map(|r| r.achievement).collect();
+    assert_eq!(
+        queued,
+        vec![1, 2, 3],
+        "the preview is the queue's own order"
+    );
+}
+
+#[test]
+fn a_partly_read_chain_counts_what_it_could_not_interpret() {
+    let c = catalog_with_achievements();
+    let g = chained_graph();
+    let mut v = view_with(&c, &[], BLOCKED);
+    // One step of the chain has requirements the graph only partly interprets.
+    v.nodes[0].graph = GraphInfo::Partial {
+        blocked_by: 1,
+        fan_out: 0,
+        unknown: 2,
+    };
+    let w = ipc::want_view(
+        Some(&c),
+        &v,
+        Some(&READ),
+        Some(&g),
+        &Target::Trinket { id: 1 },
+        |_| None,
+    );
+    let WantState::Chain { unknown, .. } = &w.routes[0].state else {
+        panic!("expected a chain");
+    };
+    assert_eq!(*unknown, 1, "one step the app cannot fully read");
+}
+
+#[test]
+fn no_route_is_an_empty_chain_that_claims_nothing_is_missing() {
+    // The failure this guards: reading an empty `missing_chain` as "nothing in the way".
+    // Whatever the node says, the state has to name which of the four situations it is.
+    let c = catalog_with_achievements();
+    let g = chained_graph();
+    for info in [
+        COMPUTED_NOW,
+        BLOCKED,
+        GraphInfo::Partial {
+            blocked_by: 0,
+            fan_out: 0,
+            unknown: 1,
+        },
+    ] {
+        for done in [&[][..], &[1, 2, 3][..]] {
+            let v = view_with(&c, done, info);
+            let w = ipc::want_view(
+                Some(&c),
+                &v,
+                Some(&READ),
+                Some(&g),
+                &Target::Trinket { id: 1 },
+                |_| None,
+            );
+            if let WantState::Chain { steps, unknown } = &w.routes[0].state {
+                assert!(
+                    !steps.is_empty() || *unknown > 0,
+                    "an empty chain with nothing unknown is `availableNow`, not a chain",
+                );
+            }
+        }
+    }
+}
