@@ -2,7 +2,12 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
 import { isIpcError } from '@/lib/ipc/errors'
-import { setScale as saveScale, settings } from '@/lib/ipc/settings'
+import {
+  setResumeTabs as saveResumeTabs,
+  setScale as saveScale,
+  setStayInBackground as saveStayInBackground,
+  settings,
+} from '@/lib/ipc/settings'
 import type { IpcError } from '@/lib/ipc/types'
 import { applyScale } from '@/lib/scale/apply'
 import { ScaleAction } from '@/lib/scale/shortcut'
@@ -21,6 +26,10 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
   const scale = ref<number>(DefaultScale)
   const saveError = ref<IpcError | null>(null)
   const saveFailed = ref(false)
+  // The backend's own defaults, so a `load()` that fails leaves the switches saying what the
+  // app actually does.
+  const stayInBackground = ref(true)
+  const resumeTabs = ref(true)
 
   const apply = (percent: number): number => {
     const wanted = snapPercent(percent)
@@ -33,7 +42,10 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
   // brings the store to the same value without a second paint.
   const load = async (): Promise<void> => {
     try {
-      apply((await settings()).scale)
+      const stored = await settings()
+      apply(stored.scale)
+      stayInBackground.value = stored.stayInBackground
+      resumeTabs.value = stored.resumeTabs
     } catch {
       apply(DefaultScale)
     }
@@ -45,6 +57,35 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
     saveError.value = null
     try {
       apply((await saveScale(wanted)).scale)
+    } catch (e) {
+      saveFailed.value = true
+      saveError.value = isIpcError(e) ? e : null
+    }
+  }
+
+  // The two switches of the Background screen. Same rule as the size: **applied first, saved
+  // after**, and a failed write is said rather than undone — except that here the app's actual
+  // behaviour is the backend's, so the answer is what the switch ends up showing.
+  const setStayInBackground = async (stay: boolean): Promise<void> => {
+    stayInBackground.value = stay
+    saveFailed.value = false
+    saveError.value = null
+    try {
+      stayInBackground.value = (
+        await saveStayInBackground(stay)
+      ).stayInBackground
+    } catch (e) {
+      saveFailed.value = true
+      saveError.value = isIpcError(e) ? e : null
+    }
+  }
+
+  const setResumeTabs = async (resume: boolean): Promise<void> => {
+    resumeTabs.value = resume
+    saveFailed.value = false
+    saveError.value = null
+    try {
+      resumeTabs.value = (await saveResumeTabs(resume)).resumeTabs
     } catch (e) {
       saveFailed.value = true
       saveError.value = isIpcError(e) ? e : null
@@ -66,5 +107,16 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
     }
   }
 
-  return { scale, saveFailed, saveError, load, setScale, step }
+  return {
+    scale,
+    stayInBackground,
+    resumeTabs,
+    saveFailed,
+    saveError,
+    load,
+    setScale,
+    setStayInBackground,
+    setResumeTabs,
+    step,
+  }
 })
