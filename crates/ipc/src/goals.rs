@@ -3,6 +3,7 @@
 
 use catalog::{BossId, Catalog, ChallengeId, CharacterId, ItemId};
 use serde::{Deserialize, Serialize};
+use wiki::Target;
 
 use crate::catalog_view::{item_kind, ItemKindView};
 
@@ -73,6 +74,10 @@ pub(crate) struct Resolved {
     pub icon_url: Option<String>,
     pub rewards: Vec<u32>,
     pub tainted: bool,
+    /// The dataset's page for this thing, when it has one. `None` is "nowhere to read about
+    /// it": the name shows and does not link. The same rule `RequirementView` follows, and
+    /// deliberately the same wording — one rule, two readers (`docs/BACKLOG.md` B35).
+    pub page: Option<Target>,
 }
 
 impl TargetKey {
@@ -85,6 +90,7 @@ impl TargetKey {
             icon_url,
             rewards,
             tainted,
+            page,
         } = r;
         match *self {
             TargetKey::Item { item_kind: k, id } => UnlockTarget::Item {
@@ -92,10 +98,21 @@ impl TargetKey {
                 id,
                 name,
                 icon_url,
+                page,
             },
-            TargetKey::Character { id } => UnlockTarget::Character { id, name, tainted },
-            TargetKey::Boss { id } => UnlockTarget::Boss { id, name },
-            TargetKey::Challenge { id } => UnlockTarget::Challenge { id, name, rewards },
+            TargetKey::Character { id } => UnlockTarget::Character {
+                id,
+                name,
+                tainted,
+                page,
+            },
+            TargetKey::Boss { id } => UnlockTarget::Boss { id, name, page },
+            TargetKey::Challenge { id } => UnlockTarget::Challenge {
+                id,
+                name,
+                rewards,
+                page,
+            },
         }
     }
 }
@@ -117,6 +134,11 @@ pub enum UnlockTarget {
         id: u32,
         name: String,
         icon_url: Option<String>,
+        /// Where to read about it. `None` means the dataset has no page: the name shows and
+        /// does not link, never a link that leads nowhere (B35). Same rule and same field as
+        /// `RequirementView` — what a node unlocks and what blocks it are two halves of one
+        /// row, and they answer alike.
+        page: Option<Target>,
     },
     Character {
         id: u32,
@@ -127,14 +149,17 @@ pub enum UnlockTarget {
         /// The Tainted form, as `players.xml` declares it (the `b` in the portrait's name).
         /// The same pair the completion matrix identifies a character by.
         tainted: bool,
+        page: Option<Target>,
     },
     Boss {
         id: u32,
         name: String,
+        page: Option<Target>,
     },
     Challenge {
         id: u32,
         name: String,
+        page: Option<Target>,
         /// The achievements that completing it grants: ids, not views. The UI already
         /// has an achievement node in `UnlockView` (done or not, what it unlocks, icon)
         /// and looks it up by id; repeating those nodes here would make the type

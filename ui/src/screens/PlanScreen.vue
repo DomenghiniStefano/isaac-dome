@@ -84,7 +84,7 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
         />
         <ProposalAside
           class="w-full lg:w-plan-aside lg:shrink-0"
-          :steps="graph.view?.steps.steps ?? []"
+          :steps="graph.view?.steps.sections.flatMap((s) => s.steps) ?? []"
           :queued="queued"
           :can-write="queue.view.storeAvailable"
           :busy="queue.busy"

@@ -15,19 +15,19 @@ import type { Tab, TabsState } from './tabModel'
 const at = (name: TabLocation['name']): TabLocation => ({ name })
 const three = (): TabsState => ({
   tabs: [
-    { id: 'a', location: at(RouteName.NextSteps) },
+    { id: 'a', location: at(RouteName.Goals) },
     { id: 'b', location: at(RouteName.Unlock) },
     { id: 'c', location: at(RouteName.Plan) },
   ],
   activeId: 'b',
 })
 const ids = (s: TabsState) => s.tabs.map((t) => t.id)
-const fresh = (): Tab => ({ id: 'new', location: at(RouteName.NextSteps) })
+const fresh = (): Tab => ({ id: 'new', location: at(RouteName.Goals) })
 
 describe('tabModel', () => {
   it('starts with one active tab', () => {
-    expect(firstState('a', at(RouteName.NextSteps))).toEqual({
-      tabs: [{ id: 'a', location: at(RouteName.NextSteps) }],
+    expect(firstState('a', at(RouteName.Goals))).toEqual({
+      tabs: [{ id: 'a', location: at(RouteName.Goals) }],
       activeId: 'a',
     })
   })
@@ -73,7 +73,7 @@ describe('tabModel', () => {
   it('navigating replaces the active tab location and nothing else', () => {
     const s = navigateTab(three(), at(RouteName.Profile))
     expect(s.tabs.map((t) => t.location.name)).toEqual([
-      RouteName.NextSteps,
+      RouteName.Goals,
       RouteName.Profile,
       RouteName.Plan,
     ])

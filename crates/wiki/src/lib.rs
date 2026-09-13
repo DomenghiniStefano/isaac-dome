@@ -23,7 +23,7 @@ pub use infobox::{
     entry_facts, extract_infoboxes, infobox_from, EntryFacts, InfoboxKind, RawInfobox,
     IGNORED_PARAMS,
 };
-pub use inline::parse_inline;
+pub use inline::{parse_inline, plain};
 pub use model::{
     Block, CollectibleTemplate, Dlc, Entry, Infobox, Inline, ListItem, Section, SectionKind, Style,
     Target,

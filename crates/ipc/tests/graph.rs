@@ -1,7 +1,7 @@
 use ipc::{
     AchievementRef, GraphInfo, IconRef, ItemKindView, NextSteps, OriginView, PlanDiagnostic,
-    PlanExpansion, StepsBasis, Target, UnlockDiagnostic, UnlockNode, UnlockTarget, UnlockTotals,
-    UnlockView, STEPS,
+    PlanExpansion, RequirementView, StepsBasis, StepsSection, Target, UnlockDiagnostic, UnlockNode,
+    UnlockTarget, UnlockTotals, UnlockView, STEPS,
 };
 use serde_json::{json, to_value, Value};
 
@@ -10,7 +10,7 @@ fn node(done: bool) -> UnlockNode {
         achievement: AchievementRef::Known {
             id: 1,
             text: "You unlocked \"Magdalene\"".into(),
-            hint: Some("have 7 or more max red hearts at one time".into()),
+            condition: Some("have 7 or more max red hearts at one time".into()),
             icon_url: None,
         },
         done,
@@ -18,6 +18,7 @@ fn node(done: bool) -> UnlockNode {
             id: 1,
             name: "Magdalene".into(),
             tainted: false,
+            page: None,
         }],
         origin: None,
         missing: Vec::new(),
@@ -36,7 +37,7 @@ fn unlock_node_json_shape_is_pinned() {
     assert_eq!(v["achievement"]["kind"], "known");
     assert_eq!(v["achievement"]["id"], 1);
     assert_eq!(
-        v["achievement"]["hint"],
+        v["achievement"]["condition"],
         "have 7 or more max red hearts at one time"
     );
     assert_eq!(v["achievement"]["iconUrl"], Value::Null);
@@ -80,15 +81,17 @@ fn item_target_uses_item_kind_not_kind_for_the_item_type() {
         id: 1,
         name: "Swallowed Penny".into(),
         icon_url: Some("data:image/png;base64,AA==".into()),
+        page: Some(Target::Trinket { id: 1 }),
     };
     let v = to_value(&t).unwrap();
     assert_eq!(v["kind"], "item");
     // `itemKind` is a string: the enum has no fields, so it isn't tagged.
     assert_eq!(v["itemKind"], "trinket");
+    assert_eq!(v["page"], json!({ "kind": "trinket", "id": 1 }));
     assert_eq!(
         v.as_object().unwrap().len(),
-        5,
-        "kind, itemKind, id, name, iconUrl: no key overwritten"
+        6,
+        "kind, itemKind, id, name, iconUrl, page: no key overwritten"
     );
 }
 
@@ -119,26 +122,34 @@ fn views_and_diagnostics_are_pinned() {
     assert_eq!(v["diagnostics"][1], json!({ "kind": "noCatalog" }));
 
     // `StepsBasis` has no fields: it's a bare string, like `itemKind` and `origin`.
-    assert_eq!(
-        to_value(NextSteps {
-            steps: vec![],
-            basis: StepsBasis::FanOut,
-        })
-        .unwrap()["basis"],
-        "fanOut"
-    );
+    let steps = to_value(NextSteps {
+        sections: vec![
+            StepsSection {
+                basis: StepsBasis::FanOut,
+                steps: vec![],
+            },
+            StepsSection {
+                basis: StepsBasis::Closeness,
+                steps: vec![],
+            },
+        ],
+    })
+    .unwrap();
+    assert_eq!(steps["sections"][0]["basis"], "fanOut");
+    assert_eq!(steps["sections"][1]["basis"], "closeness");
     assert_eq!(STEPS, 5);
 
     // The plan is only ever built via `plan_view`: `storeAvailable` and the store
     // diagnostic are born from the same argument and can never contradict each other.
     let c = catalog_with_achievements();
-    let v = to_value(plan_view(Some(&c), vec![], vec![], None, |_| None)).unwrap();
+    let v = to_value(plan_view(Some(&c), None, vec![], vec![], None, |_| None)).unwrap();
     assert_eq!(v["expansion"], json!({ "kind": "stub" }));
     assert_eq!(v["diagnostics"], json!([]));
     assert_eq!(v["storeAvailable"], true);
 
     let v = to_value(plan_view(
         Some(&c),
+        None,
         vec![],
         vec![],
         Some(ipc::StoreReason::NewerSchema {
@@ -160,6 +171,7 @@ fn views_and_diagnostics_are_pinned() {
     // A database row that fails to read: the UI receives the id, not the broken JSON.
     let v = to_value(plan_view(
         Some(&c),
+        None,
         vec![],
         vec![ipc::GoalId::from_str_unchecked("g9")],
         None,
@@ -177,7 +189,7 @@ fn views_and_diagnostics_are_pinned() {
 fn store_available_and_the_store_diagnostic_cannot_disagree() {
     let c = catalog_with_achievements();
     for reason in [None, Some(ipc::StoreReason::Unreadable)] {
-        let p = plan_view(Some(&c), vec![], vec![], reason, |_| None);
+        let p = plan_view(Some(&c), None, vec![], vec![], reason, |_| None);
         let says_unavailable = p
             .diagnostics
             .iter()
@@ -221,7 +233,7 @@ fn unlock_view_maps_slots_to_achievements_and_marks_the_ones_beyond_the_catalog(
     );
     assert_eq!(v.nodes.len(), 5, "one per slot 1..=5");
     assert!(
-        matches!(&v.nodes[0].achievement, AchievementRef::Known { id: 1, hint: Some(h), .. } if h == "c1")
+        matches!(&v.nodes[0].achievement, AchievementRef::Known { id: 1, condition: Some(h), .. } if h == "c1")
     );
     assert!(v.nodes[0].done);
     assert!(!v.nodes[1].done);
@@ -283,7 +295,7 @@ fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
     let n1 = &v.nodes[0];
     assert_eq!(n1.unlocks.len(), 1);
     assert!(
-        matches!(&n1.unlocks[0], UnlockTarget::Item { item_kind: ItemKindView::Passive, id: 2, name, icon_url: Some(u) } if name == "A" && u == "isaac://item/passive/2")
+        matches!(&n1.unlocks[0], UnlockTarget::Item { item_kind: ItemKindView::Passive, id: 2, name, icon_url: Some(u), .. } if name == "A" && u == "isaac://item/passive/2")
     );
     assert_eq!(
         n1.origin,
@@ -292,7 +304,7 @@ fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
     );
     let n2 = &v.nodes[1];
     assert!(
-        matches!(&n2.unlocks[0], UnlockTarget::Character { id: 7, name, tainted: false } if name == "Z_NAME")
+        matches!(&n2.unlocks[0], UnlockTarget::Character { id: 7, name, tainted: false, .. } if name == "Z_NAME")
     );
     assert_eq!(n2.origin, None, "the first target isn't an item");
     let n3 = &v.nodes[2];
@@ -416,10 +428,8 @@ fn without_a_graph_there_are_no_next_steps_to_suggest() {
     flags[2] = true;
     flags[5] = true;
     let v = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
-    let s = next_steps(&v);
-    assert_eq!(s.basis, StepsBasis::FanOut);
     assert!(
-        s.steps.is_empty(),
+        next_steps(&v).sections.is_empty(),
         "not-done is not the same as unlockable: with no graph the app has nothing to \
          recommend, and the view's NoCatalog diagnostic is what says why"
     );
@@ -464,20 +474,16 @@ fn next_steps_take_what_is_unlockable_now_most_fan_out_first() {
         diagnostics: vec![],
     };
     let s = next_steps(&v);
-    let slots: Vec<u32> = s
-        .steps
-        .iter()
-        .map(|n| match n.achievement {
-            AchievementRef::Unknown { slot } => slot,
-            AchievementRef::Known { id, .. } => id,
-        })
-        .collect();
     assert_eq!(
-        slots,
+        slots_of(&s, StepsBasis::FanOut),
         vec![3, 5, 1],
         "fan-out descending, ties by id ascending; the blocked and the partial stay out"
     );
-    assert!(s.steps.len() <= STEPS);
+    assert!(slots_of(&s, StepsBasis::FanOut).len() <= STEPS);
+    assert!(
+        slots_of(&s, StepsBasis::Closeness).is_empty(),
+        "nothing here is missing a counter, so there is no closeness section at all"
+    );
 }
 
 /// Item 2 from the test catalog: passive, name "A", sprite `gfx/items/a.png`.
@@ -496,7 +502,14 @@ fn goal(id: &str) -> ipc::Goal {
 #[test]
 fn plan_view_keeps_goal_order_and_reports_the_store() {
     let c = catalog_with_achievements();
-    let p = plan_view(Some(&c), vec![goal("b"), goal("a")], vec![], None, |_| None);
+    let p = plan_view(
+        Some(&c),
+        None,
+        vec![goal("b"), goal("a")],
+        vec![],
+        None,
+        |_| None,
+    );
     assert_eq!(
         p.goals.iter().map(|g| g.id.as_str()).collect::<Vec<_>>(),
         vec!["b", "a"]
@@ -507,6 +520,7 @@ fn plan_view_keeps_goal_order_and_reports_the_store() {
     assert!(
         !plan_view(
             Some(&c),
+            None,
             vec![],
             vec![],
             Some(ipc::StoreReason::Unreadable),
@@ -518,6 +532,7 @@ fn plan_view_keeps_goal_order_and_reports_the_store() {
     let bad = |s: &str| ipc::GoalId::from_str_unchecked(s);
     let p = plan_view(
         Some(&c),
+        None,
         vec![goal("a")],
         vec![bad("x"), bad("y")],
         None,
@@ -536,7 +551,7 @@ fn plan_view_keeps_goal_order_and_reports_the_store() {
 #[test]
 fn a_goal_carries_its_key_and_the_target_resolved_now() {
     let c = catalog_with_achievements();
-    let p = plan_view(Some(&c), vec![goal("g1")], vec![], None, |r| {
+    let p = plan_view(Some(&c), None, vec![goal("g1")], vec![], None, |r| {
         Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path()))
     });
     let v = to_value(&p).unwrap();
@@ -565,7 +580,9 @@ fn a_goal_carries_its_key_and_the_target_resolved_now() {
 /// once: this is the "game not installed" case, not "goal vanished".
 #[test]
 fn without_a_catalog_no_goal_resolves_and_one_diagnostic_says_it() {
-    let p = plan_view(None, vec![goal("a"), goal("b")], vec![], None, |_| None);
+    let p = plan_view(None, None, vec![goal("a"), goal("b")], vec![], None, |_| {
+        None
+    });
     assert_eq!(p.goals.len(), 2);
     assert!(p.goals.iter().all(|g| g.target.is_none()));
     assert_eq!(
@@ -596,7 +613,7 @@ fn a_key_the_catalog_does_not_know_is_named_not_dropped() {
         item_kind: ItemKindView::Passive,
         id: 999_999,
     };
-    let p = plan_view(Some(&c), vec![g], vec![], None, |_| None);
+    let p = plan_view(Some(&c), None, vec![g], vec![], None, |_| None);
     assert_eq!(p.goals.len(), 1);
     assert!(p.goals[0].target.is_none());
     assert_eq!(
@@ -672,6 +689,7 @@ fn a_challenge_target_carries_the_achievements_it_rewards() {
             id: 19,
             name: "The Family Man".into(),
             rewards: vec![2],
+            page: None,
         }]
     );
     assert_eq!(
@@ -680,6 +698,7 @@ fn a_challenge_target_carries_the_achievements_it_rewards() {
             id: 36,
             name: "Scat Man".into(),
             rewards: vec![],
+            page: None,
         }]
     );
     let json = serde_json::to_value(&v.nodes[2].unlocks[0]).unwrap();
@@ -805,9 +824,10 @@ fn the_tainted_form_travels_as_a_flag_beside_the_shared_name() {
         _ => None,
     });
     let mut icon = |_: &ipc::IconRef| None;
-    let base = resolve_target(&c, &TargetKey::Character { id: 10 }, &mut icon).expect("player 10");
+    let base =
+        resolve_target(&c, &TargetKey::Character { id: 10 }, None, &mut icon).expect("player 10");
     let tainted =
-        resolve_target(&c, &TargetKey::Character { id: 31 }, &mut icon).expect("player 31");
+        resolve_target(&c, &TargetKey::Character { id: 31 }, None, &mut icon).expect("player 31");
     let v = to_value(&tainted).unwrap();
     assert_eq!(v["kind"], "character");
     assert_eq!(v["tainted"], true);
@@ -817,4 +837,153 @@ fn the_tainted_form_travels_as_a_flag_beside_the_shared_name() {
         "the two forms share the game's name: the flag is what separates them"
     );
     assert_eq!(to_value(&base).unwrap()["tainted"], false);
+}
+
+/// A target's page follows the same rule as a requirement's: `Some` only when the dataset
+/// really has the entry. With no dataset there is no page to carry, and the row still names
+/// what it names — a missing page never removes a target.
+#[test]
+fn without_a_dataset_no_target_carries_a_page() {
+    let c = catalog_with_achievements();
+    let flags = [false, true, true, true];
+    let v = unlock_view(Some(&c), None, Some(&flags), None, None, None, |_| None);
+    let pages: Vec<Option<&Target>> = v
+        .nodes
+        .iter()
+        .flat_map(|n| n.unlocks.iter())
+        .map(|t| match t {
+            UnlockTarget::Item { page, .. }
+            | UnlockTarget::Character { page, .. }
+            | UnlockTarget::Boss { page, .. }
+            | UnlockTarget::Challenge { page, .. } => page.as_ref(),
+        })
+        .collect();
+    assert!(
+        !pages.is_empty(),
+        "the fixture catalog has to produce targets, or this test asserts nothing"
+    );
+    assert!(pages.iter().all(Option::is_none));
+}
+
+/// A node whose every standing requirement is a counter is not blocked: the content is
+/// reachable and only has to be played. It belongs to the section that can order it — a
+/// counter carries a distance, and the fan-out does not.
+#[test]
+fn a_node_held_only_by_counters_goes_to_the_closeness_section() {
+    let counter = |current: u32, at_least: u32| RequirementView::Counter {
+        label: "Mom's Heart".into(),
+        current,
+        at_least,
+    };
+    let available = |slot: u32, fan_out: u32, missing: Vec<RequirementView>| UnlockNode {
+        achievement: AchievementRef::Unknown { slot },
+        done: false,
+        unlocks: vec![],
+        origin: None,
+        missing,
+        graph: GraphInfo::Computed {
+            available_now: true,
+            blocked_by: 0,
+            fan_out,
+            steps_missing: 0,
+        },
+    };
+    let v = ipc::for_tests::unlock_view_of(vec![
+        available(1, 9, vec![]),               // nothing in the way: fan-out
+        available(2, 1, vec![counter(9, 11)]), // two to go
+        available(3, 1, vec![counter(3, 11)]), // eight to go
+    ]);
+
+    let s = next_steps(&v);
+    let bases: Vec<StepsBasis> = s.sections.iter().map(|x| x.basis).collect();
+    assert_eq!(bases, vec![StepsBasis::FanOut, StepsBasis::Closeness]);
+    assert_eq!(slots_of(&s, StepsBasis::FanOut), vec![1]);
+    assert_eq!(
+        slots_of(&s, StepsBasis::Closeness),
+        vec![2, 3],
+        "nearest the threshold first"
+    );
+}
+
+/// The slots a section names, in its own order.
+fn slots_of(s: &NextSteps, basis: StepsBasis) -> Vec<u32> {
+    s.sections
+        .iter()
+        .find(|x| x.basis == basis)
+        .map(|x| {
+            x.steps
+                .iter()
+                .map(|n| match n.achievement {
+                    AchievementRef::Known { id, .. } => id,
+                    AchievementRef::Unknown { slot } => slot,
+                })
+                .collect()
+        })
+        .unwrap_or_default()
+}
+
+/// A node is a suggestion once, or it reads as two different suggestions.
+#[test]
+fn the_two_sections_never_name_the_same_node() {
+    let v = ipc::for_tests::unlock_view_of(vec![UnlockNode {
+        achievement: AchievementRef::Unknown { slot: 4 },
+        done: false,
+        unlocks: vec![],
+        origin: None,
+        missing: vec![RequirementView::Counter {
+            label: "Hush".into(),
+            current: 0,
+            at_least: 1,
+        }],
+        graph: GraphInfo::Computed {
+            available_now: true,
+            blocked_by: 0,
+            fan_out: 40,
+            steps_missing: 0,
+        },
+    }]);
+    let s = next_steps(&v);
+    assert_eq!(s.sections.len(), 1, "one node cannot fill two sections");
+    assert_eq!(
+        s.sections[0].basis,
+        StepsBasis::Closeness,
+        "closeness says more about it than its fan-out does, however large"
+    );
+}
+
+/// A heading over nothing is not a state the screen should have to handle: "absent" is
+/// decided once, here.
+#[test]
+fn a_section_with_no_steps_is_not_emitted() {
+    let mut flags = vec![false; 10];
+    flags[2] = true;
+    let v = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
+    assert!(next_steps(&v).sections.is_empty());
+}
+
+/// A node with a mark still standing is `available_now` too, but a mark is binary: there is
+/// no distance to be near, so it is ordered by what it opens and not by how close it is.
+#[test]
+fn a_mark_is_not_a_distance_and_stays_in_the_fan_out_section() {
+    let v = ipc::for_tests::unlock_view_of(vec![UnlockNode {
+        achievement: AchievementRef::Unknown { slot: 7 },
+        done: false,
+        unlocks: vec![],
+        origin: None,
+        missing: vec![RequirementView::Mark {
+            character: 0,
+            character_name: "Isaac".into(),
+            column: ipc::MarkColumnView::MomsHeart,
+            level: ipc::MarkLevelView::Base,
+        }],
+        graph: GraphInfo::Computed {
+            available_now: true,
+            blocked_by: 0,
+            fan_out: 2,
+            steps_missing: 0,
+        },
+    }]);
+    let s = next_steps(&v);
+    assert_eq!(slots_of(&s, StepsBasis::FanOut), vec![7]);
+    assert!(slots_of(&s, StepsBasis::Closeness).is_empty());
 }

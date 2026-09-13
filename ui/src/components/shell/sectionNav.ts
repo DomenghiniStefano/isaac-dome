@@ -66,7 +66,7 @@ const wikiEntry = (category: WikiCategory): SidebarEntry => ({
 
 export const sidebarEntries: Record<SidebarSection, SidebarEntry[]> = {
   [SidebarSection.Progress]: [
-    RouteName.NextSteps,
+    RouteName.Goals,
     RouteName.Completion,
     RouteName.Unlock,
     RouteName.Plan,
@@ -89,7 +89,7 @@ export const sidebarEntries: Record<SidebarSection, SidebarEntry[]> = {
 // section's own landing — Next steps, the Wiki's overview, the profile. A section always
 // has entries, so the fallback is only there to keep the type honest.
 export const firstEntry = (section: SidebarSection): SidebarEntry =>
-  sidebarEntries[section][0] ?? routeEntry(RouteName.NextSteps)
+  sidebarEntries[section][0] ?? routeEntry(RouteName.Goals)
 
 export const sidebarHeaders: Record<SidebarSection, SidebarHeader> = {
   [SidebarSection.Progress]: {
