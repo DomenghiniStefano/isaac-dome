@@ -6,7 +6,7 @@ mod events;
 mod icons;
 mod settings_file;
 mod state;
-use crate::commands::{completion, graph, plan, profile, queue, wiki};
+use crate::commands::{completion, graph, plan, profile, queue, session, wiki};
 use crate::icons::icon_bytes;
 use crate::state::{
     CatalogState, GraphState, MarkFramesState, ResourcesState, SearchState, StoreState,
@@ -47,6 +47,10 @@ pub fn run() {
             profile::select_profile,
             profile::settings,
             profile::set_scale,
+            profile::set_stay_in_background,
+            profile::set_resume_tabs,
+            session::window_session,
+            session::set_window_session,
             completion::save_summary,
             completion::completion,
             completion::extraction_report,
