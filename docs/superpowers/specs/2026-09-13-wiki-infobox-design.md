@@ -319,17 +319,37 @@ Closing criterion, measurable from `meta.diagnostics` and therefore checkable by
 > every template with more than 50 occurrences is gone from `unknownTemplates`, and each one
 > still listed is named in this spec with the reason it stays out.
 
-Above the line today: `m` 357, `transformation contribution` 186, `book of virtues synergy` 157,
-`achievement text` 127, `ip` 110, `bc` 59, `machine` 52. Below it, and therefore optional:
-`cu` 41, `hearts` 33, `book of belial synergy` 32, `curse` 22, `plat` 21, `mode` 20, `heart` 17,
-`achievement unlock` 13, `code` 6, `tear delay down` 6, `=` 4, `blindfolded` 2,
-`citation needed` 2, `reconfirm` 2, `dlc clear` 1, `collectible table` 1, `entity table` 1,
+### Done (2026-09-13): 25 templates over 1290 occurrences → 17 over 200
+
+Seven were taught, and `crates/wiki/tests/templates_understood.rs` now holds the line as a
+property rather than a note:
+
+| template | uses | what it turned out to be |
+|---|---|---|
+| `m`, `machine` | 425 | a machine or a beggar — a wiki page with no id in the game, so `Inline::Concept`. Added `Resolution::Concept`, distinct from `Unresolved`: the latter means "we looked for an id and did not find one", and here there was never one to find. |
+| `transformation contribution` | 186 | a sentence whose only identity is the transformation, which `{{tf}}` already resolves. |
+| `book of virtues synergy`, `book of belial synergy` | 197 | the text is in a **named** `description` parameter, which neither `resolve` nor the positional recursion reached. The item is emitted too: a section is shown on its own, and a bare description loses the half that says *with what*. |
+| `achievement text` | 143 | the only template whose argument is a **list** — comma-separated achievement names on boss pages, 82 of them naming one and the longest naming seventeen. It cannot go through `resolve`, which answers with a single `Resolution`. |
+| `ip` | 110 | an item pool. `itempools.xml` keys pools by name and gives them no id: a concept, like a machine. |
+| `bc` | 59 | a boss's champion variant, all 59 under `== Champion Versions ==`. **The colour each index stands for is not readable from anything we have** — it lives in the wiki's own template, and `catalog` has no champion table. So the index is kept verbatim, the concept is named, and the colour is not invented. |
+
+### What stays unknown, and why
+
+`cu` 42, `hearts` 33, `curse` 22, `plat` 21, `mode` 20, `heart` 17, `achievement unlock` 13,
+`=` 6, `code` 6, `tear delay down` 6, `collectible table` 5, `blindfolded` 2,
+`citation needed` 2, `reconfirm` 2, `dlc clear` 1, `entity table` 1,
 `infobox passive collectible` 1.
 
-Two of those below the line are worth a sentence each in the plan rather than an
-implementation: `citation needed` and `reconfirm` are editorial marks with no reader-facing
-content, and `infobox passive collectible` appearing *inside* a page body (1 occurrence) is a
-wiki-side authoring mistake, not a template we lack.
+They fall in three groups, and none of them loses a word: an unknown template's argument is
+still recursed into, so the text reaches the reader without the markup.
+
+- **Icons and units** (`hearts`, `heart`, `curse`, `cu`, `plat`, `mode`, `tear delay down`):
+  the wiki draws a symbol where we would draw the word, and the word is already there.
+- **Editorial marks** (`citation needed`, `reconfirm`, `=`, `code`, `dlc clear`): no
+  reader-facing content at all.
+- **Table generators** (`collectible table`, `entity table`) and one wiki-side authoring
+  mistake (`infobox passive collectible` transcluded *inside* a page body, once). These would
+  need the wiki's own data modules to expand, which is a different sub-project from this one.
 
 ## Decision 8 — the sections that fall through by oversight (delegated)
 
