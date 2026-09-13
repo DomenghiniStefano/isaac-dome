@@ -328,7 +328,15 @@ export interface Entry {
 }
 ```
 
-Delete `description` from the `achievement` variant and `unlockedBy` from `boss`, `challenge` and `character`. If `Dlc` is not already exported there, add it as a value-union per the repo's rule (`const Dlc = { … } as const`), not a `type X = 'a' | 'b'`.
+Delete `description` from the `achievement` variant and `unlockedBy` from `boss`, `challenge` and `character`. `Dlc` is already exported there as a value-union (line ~436), so nothing to add.
+
+**The mirror is not the end of it, and this step's first draft implied it was.** `pnpm typecheck` then names four lines in `ui/src/screens/wiki/WikiInfobox.vue` that read the hoisted fields off the infobox. That is the contract change being *caught* rather than going silent, which is the good outcome — but it has to be finished:
+
+- `WikiInfobox.vue` takes `entry: Entry` instead of `infobox: Infobox`, with `const infobox = computed(() => props.entry.infobox)` so the rest of the script is untouched.
+- The description row and the three `unlockedBy` rows come out of the per-kind `<dl>`s and become **one pair of rows above the switch** — the same move as in Rust, for the same reason.
+- `WikiPage.vue` passes `:entry="entry"` instead of `:infobox="entry.infobox"`.
+- The achievement's description row changes from `:text` to `:inline`: it is `Inline[]` now, so its links resolve like any other.
+- `entry.dlc` is deliberately **not** rendered yet. Showing edition codes needs a label and a visual treatment, which is the design's call, not the parser's. The data is on the wire; Task 9 hands it on.
 
 - [ ] **Step 9: Regenerate the dataset**
 

@@ -5,7 +5,7 @@ use std::collections::BTreeMap;
 use crate::inline::parse_inline;
 use crate::resolver::Resolver;
 use crate::template::parse_template_at;
-use crate::{Diagnostics, Infobox, Inline};
+use crate::{Diagnostics, Dlc, Infobox, Inline, Target};
 
 /// An `{{infobox …}}` template as-is: lowercase name and raw named parameters.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -90,6 +90,26 @@ pub(crate) fn leading_number(s: &str) -> Option<u32> {
         .ok()
 }
 
+/// The three facts every kind declares, read once per infobox and carried on `Entry`
+/// instead of being repeated in all six variants.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct EntryFacts {
+    pub description: Vec<Inline>,
+    pub dlc: Vec<Dlc>,
+    pub unlocked_by: Option<Target>,
+}
+
+/// `unlocked by` is an achievement *name* on every kind that uses it — the 277 collectible
+/// pages that carry it read "???'s Only Friend", "A Pound of Flesh", … — so one resolution
+/// serves all six kinds.
+pub fn entry_facts(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> EntryFacts {
+    EntryFacts {
+        description: inline(ib, "description", r, d),
+        dlc: Dlc::parse_codes(param(ib, "dlc"), d),
+        unlocked_by: r.achievement_by_name(param(ib, "unlocked by")),
+    }
+}
+
 /// Converts a raw infobox into the `Infobox` of its kind. Missing parameters count as an
 /// empty string: a missing field degrades, it doesn't block the page.
 pub fn infobox_from(
@@ -102,7 +122,6 @@ pub fn infobox_from(
         InfoboxKind::Collectible => Infobox::Item,
         InfoboxKind::Trinket => Infobox::Trinket,
         InfoboxKind::Achievement => Infobox::Achievement {
-            description: text(ib, "description"),
             requirements: inline(ib, "requirements", r, d),
             unlocks: r.by_page_title(param(ib, "link")),
         },
@@ -110,7 +129,6 @@ pub fn infobox_from(
             base_hp: leading_number(param(ib, "base hp")),
             environment: inline(ib, "environment", r, d),
             pool: inline(ib, "pool", r, d),
-            unlocked_by: r.achievement_by_name(param(ib, "unlocked by")),
         },
         InfoboxKind::Challenge => Infobox::Challenge {
             blindfolded: yes(ib, "blindfolded"),
@@ -126,7 +144,6 @@ pub fn infobox_from(
             unlocks: r
                 .by_page_title(param(ib, "unlocks"))
                 .or_else(|| r.achievement_by_name(param(ib, "unlocks"))),
-            unlocked_by: r.achievement_by_name(param(ib, "unlocked by")),
         },
         InfoboxKind::Character => Infobox::Character {
             health: inline(ib, "health", r, d),
@@ -137,7 +154,6 @@ pub fn infobox_from(
             shot_speed: text(ib, "shot speed"),
             pickups: inline(ib, "pickups", r, d),
             collectibles: inline(ib, "collectibles", r, d),
-            unlocked_by: r.achievement_by_name(param(ib, "unlocked by")),
         },
     }
 }
@@ -199,14 +215,19 @@ mod tests {
             ],
         );
         let Infobox::Achievement {
-            description,
             requirements,
             unlocks,
         } = infobox_from(InfoboxKind::Achievement, &ib, &r, &mut d)
         else {
             panic!()
         };
-        assert_eq!(description, "Unlocked a new item.");
+        // `description` is no longer here: it rose to `Entry`, and `entry_facts` reads it.
+        // An achievement's is plain text, so it arrives as a single `Inline::Text`.
+        let facts = entry_facts(&ib, &r, &mut d);
+        assert!(matches!(
+            facts.description.first(),
+            Some(Inline::Text { text, .. }) if text == "Unlocked a new item."
+        ));
         assert!(requirements.iter().any(|i| matches!(
             i,
             Inline::Ref {
@@ -220,16 +241,50 @@ mod tests {
             "infobox boss",
             &[("base hp", "250 (x2)"), ("unlocked by", "Epic Fetus")],
         );
-        let Infobox::Boss {
-            base_hp,
-            unlocked_by,
-            ..
-        } = infobox_from(InfoboxKind::Boss, &ib, &r, &mut d)
-        else {
+        let Infobox::Boss { base_hp, .. } = infobox_from(InfoboxKind::Boss, &ib, &r, &mut d) else {
             panic!()
         };
         assert_eq!(base_hp, Some(250));
-        assert_eq!(unlocked_by, Some(Target::Achievement { id: 62 }));
+        // Same move: the boss's `unlocked by` is now one of the three common facts.
+        assert_eq!(
+            entry_facts(&ib, &r, &mut d).unlocked_by,
+            Some(Target::Achievement { id: 62 })
+        );
+    }
+
+    #[test]
+    fn entry_facts_reads_the_three_common_parameters() {
+        let r = test_resolver();
+        let mut d = Diagnostics::default();
+        let ib = raw(
+            "infobox passive collectible",
+            &[
+                ("description", "Tears are replaced with {{i|Breakfast}}"),
+                ("dlc", "a+nr"),
+                ("unlocked by", "Epic Fetus"),
+            ],
+        );
+        let facts = entry_facts(&ib, &r, &mut d);
+        // The description is wikitext, not a string: its links have to survive the move.
+        assert!(facts.description.iter().any(|i| matches!(
+            i,
+            Inline::Ref {
+                target: Target::Item { id: 25 },
+                ..
+            }
+        )));
+        assert_eq!(
+            facts.dlc,
+            vec![Dlc::AfterbirthPlus, Dlc::Rebirth, Dlc::Repentance]
+        );
+        assert_eq!(facts.unlocked_by, Some(Target::Achievement { id: 62 }));
+
+        // An infobox that declares none of the three degrades to empty, never to an error.
+        let bare = raw("infobox trinket", &[("id", "1")]);
+        let facts = entry_facts(&bare, &r, &mut d);
+        assert!(facts.description.is_empty());
+        assert!(facts.dlc.is_empty());
+        assert_eq!(facts.unlocked_by, None);
     }
 
     #[test]
