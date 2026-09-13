@@ -18,6 +18,7 @@ import {
   refineTab,
   removeTab,
   seedState,
+  sessionOf,
   selectTab,
   tabLabel,
   tabLocation,
@@ -334,5 +335,32 @@ describe('a tab that leaves, and one that arrives', () => {
   it('an active index past the seeds still selects a tab that exists', () => {
     const state = seedState(three().tabs.map(seedOf), 9, (n) => `tab-${n}`)
     expect(state.activeId).toBe('tab-2')
+  })
+})
+
+describe('what a window would save of itself', () => {
+  it('is its tabs without their ids, and which one is active', () => {
+    const session = sessionOf(three())
+    expect(session.activeIndex).toBe(1)
+    expect(session.tabs).toHaveLength(3)
+    expect(JSON.stringify(session)).not.toContain('"id"')
+  })
+
+  it('is what seedState reads back: the same tabs, the same one active', () => {
+    const session = sessionOf(three())
+    const back = seedState(session.tabs, session.activeIndex, (n) => `t-${n}`)
+    expect(back.tabs.map((t) => t.entries)).toEqual(
+      three().tabs.map((t) => t.entries),
+    )
+    expect(back.activeId).toBe('t-1')
+  })
+
+  it('answers 0 rather than -1 for a window with no tabs', () => {
+    // A window mid-tear-off holds nothing for an instant. -1 in a stored document would be a
+    // number nothing means.
+    expect(sessionOf({ tabs: [], activeId: '' })).toEqual({
+      tabs: [],
+      activeIndex: 0,
+    })
   })
 })

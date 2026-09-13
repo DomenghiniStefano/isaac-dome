@@ -140,6 +140,25 @@ export const tabSeed = (tab: Tab): TabSeed => {
   return seed
 }
 
+// A window's whole contents, as they travel and as they are stored: the tabs without their
+// ids, and which one is active. The same shape a tear-off sends and a session keeps, which is
+// why there is one seed mechanism and not two.
+export interface Session {
+  tabs: TabSeed[]
+  activeIndex: number
+}
+
+// What a window would be restored from. **The active index of a window with no tabs is 0, not
+// `findIndex`'s −1**: an empty session is restored as an empty seed, which is the landing tab,
+// and a −1 stored in a document would be a number nothing means.
+export const sessionOf = (state: TabsState): Session => {
+  const at = state.tabs.findIndex((tab) => tab.id === state.activeId)
+  return {
+    tabs: state.tabs.map(tabSeed),
+    activeIndex: Math.max(0, at),
+  }
+}
+
 // The state a window born from a tear-off starts in. An empty seed would leave a bar with no
 // tabs, so it becomes one default tab: a window showing the landing page beats a window
 // showing nothing.
