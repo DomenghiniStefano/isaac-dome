@@ -436,6 +436,7 @@ export const en: MessageSchema = {
       gate: 'Conditions',
       mark: 'Completion marks',
       counter: 'Bosses to beat',
+      threshold: 'Transformations',
       unknown: "Conditions we can't read",
     },
     kinds: {
@@ -456,6 +457,7 @@ export const en: MessageSchema = {
     },
     // One cell of the matrix: the boss, and the character to beat it with.
     markName: '{boss} as {character}',
+    thresholdName: '{name} — {current} of {atLeast}',
     originNone: 'not stated',
     unknownAchievement: 'Unknown achievement',
     slot: 'slot',
