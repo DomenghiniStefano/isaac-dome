@@ -223,6 +223,44 @@ This is why the repo's existing use is safe and this spec's is not: reading **bi
 asks "does this row survive into Repentance+", which no counter-example touches. Reading the
 lower bits as editions is the step nobody has earned.
 
+### The measurement (2026-09-13), and what it settled
+
+`crates/ipc/examples/dlc_mask.rs` reads `dataset/raw/cargo/collectible.json` against
+`catalog::origin_of` — a pure lookup over id boundaries verified against `items.xml`, so the
+example needs no game and no network. Over 720 rows:
+
+```
+masks seen:
+   4 = Afterbirth+                                              1 item
+  24 = Repentance, Repentance+                                173
+  28 = Afterbirth+, Repentance, Repentance+                   110
+  30 = Afterbirth, Afterbirth+, Repentance, Repentance+        95
+  31 = all five                                                341
+```
+
+**Every mask is a contiguous suffix of the editions.** That is the shape of "valid from this
+edition onward", and nothing else produces it: a mask meaning "introduced in" would be a single
+bit, and an arbitrary set would show gaps. Reading the lowest set bit as the edition a row first
+appears in **agrees with the game on 712 of 720 rows (98.9%)**.
+
+So `in_current_edition`'s comment was right all along, and Blue Cap was not the counter-example
+it looked like. The eight disagreements are three separate, ordinary things:
+
+- **342–346** (Blue Cap, Latch Key, Match Book, Synthoil, A Snack) — five *consecutive* ids the
+  game places in Afterbirth and the wiki marks 31. A contiguous block is one editing slip, not
+  five facts.
+- **474 Broken Glass Cannon** and **263 Clear Rune** — the id-reuse cases. `origin_of` maps an
+  id to an era by range and cannot know that 474 is Tonsil in Afterbirth+ and something else in
+  Repentance+. Here the *lookup* is the limited side, not the mask.
+- **441 Mega Blast** — the first Afterbirth+ id, which the wiki marks as valid from Afterbirth.
+  One row, on a boundary.
+
+**Conclusion:** the mask is "the editions this row is valid in". It is now measured rather than
+assumed, and it stays **unused** by this sub-project all the same — `Entry.dlc` continues to
+come from the wikitext parameter, because adopting a second source is a change with its own
+reasons and its own commit. What this measurement buys is that the change is now cheap to make
+and its 1% edge cases are named in advance.
+
 Therefore: **phase 1 takes `dlc` from the wikitext parameter**, through the existing and tested
 `Dlc::from_code`, and the field is documented as "the codes the infobox declares" — not as
 "introduced in" and not as "exists in". Naming it would be the guess the repo keeps paying for.
