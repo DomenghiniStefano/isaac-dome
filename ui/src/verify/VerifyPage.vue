@@ -149,6 +149,8 @@ const basisText = (b: StepsBasis) => {
   switch (b) {
     case StepsBasis.FanOut:
       return 'by fan-out'
+    case StepsBasis.Closeness:
+      return 'by closeness'
     default:
       return assertNever(b)
   }
@@ -355,11 +357,17 @@ onMounted(() => load().catch(handleIpcError))
       </p>
     </section>
 
-    <section v-if="steps" class="flex flex-col gap-2">
-      <h2 class="text-foreground">Next steps ({{ basisText(steps.basis) }})</h2>
+    <section
+      v-for="section in steps?.sections ?? []"
+      :key="section.basis"
+      class="flex flex-col gap-2"
+    >
+      <h2 class="text-foreground">
+        Next steps ({{ basisText(section.basis) }})
+      </h2>
       <ul class="flex flex-col gap-1">
         <li
-          v-for="(n, i) in steps.steps"
+          v-for="(n, i) in section.steps"
           :key="i"
           class="flex flex-row items-center gap-2"
         >

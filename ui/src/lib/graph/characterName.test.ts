@@ -85,9 +85,9 @@ describe('characterForms', () => {
 
 describe('targetName', () => {
   it("is the game's name for everything but a tainted character", () => {
-    expect(targetName(t, { kind: 'boss', id: 1, name: 'Monstro', page: null })).toBe(
-      'Monstro',
-    )
+    expect(
+      targetName(t, { kind: 'boss', id: 1, name: 'Monstro', page: null }),
+    ).toBe('Monstro')
     expect(
       targetName(t, {
         kind: 'character',

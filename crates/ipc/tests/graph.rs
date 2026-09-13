@@ -1,7 +1,7 @@
 use ipc::{
     AchievementRef, GraphInfo, IconRef, ItemKindView, NextSteps, OriginView, PlanDiagnostic,
-    PlanExpansion, StepsBasis, Target, UnlockDiagnostic, UnlockNode, UnlockTarget, UnlockTotals,
-    UnlockView, STEPS,
+    PlanExpansion, RequirementView, StepsBasis, StepsSection, Target, UnlockDiagnostic, UnlockNode,
+    UnlockTarget, UnlockTotals, UnlockView, STEPS,
 };
 use serde_json::{json, to_value, Value};
 
@@ -122,14 +122,21 @@ fn views_and_diagnostics_are_pinned() {
     assert_eq!(v["diagnostics"][1], json!({ "kind": "noCatalog" }));
 
     // `StepsBasis` has no fields: it's a bare string, like `itemKind` and `origin`.
-    assert_eq!(
-        to_value(NextSteps {
-            steps: vec![],
-            basis: StepsBasis::FanOut,
-        })
-        .unwrap()["basis"],
-        "fanOut"
-    );
+    let steps = to_value(NextSteps {
+        sections: vec![
+            StepsSection {
+                basis: StepsBasis::FanOut,
+                steps: vec![],
+            },
+            StepsSection {
+                basis: StepsBasis::Closeness,
+                steps: vec![],
+            },
+        ],
+    })
+    .unwrap();
+    assert_eq!(steps["sections"][0]["basis"], "fanOut");
+    assert_eq!(steps["sections"][1]["basis"], "closeness");
     assert_eq!(STEPS, 5);
 
     // The plan is only ever built via `plan_view`: `storeAvailable` and the store
@@ -421,10 +428,8 @@ fn without_a_graph_there_are_no_next_steps_to_suggest() {
     flags[2] = true;
     flags[5] = true;
     let v = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
-    let s = next_steps(&v);
-    assert_eq!(s.basis, StepsBasis::FanOut);
     assert!(
-        s.steps.is_empty(),
+        next_steps(&v).sections.is_empty(),
         "not-done is not the same as unlockable: with no graph the app has nothing to \
          recommend, and the view's NoCatalog diagnostic is what says why"
     );
@@ -469,20 +474,16 @@ fn next_steps_take_what_is_unlockable_now_most_fan_out_first() {
         diagnostics: vec![],
     };
     let s = next_steps(&v);
-    let slots: Vec<u32> = s
-        .steps
-        .iter()
-        .map(|n| match n.achievement {
-            AchievementRef::Unknown { slot } => slot,
-            AchievementRef::Known { id, .. } => id,
-        })
-        .collect();
     assert_eq!(
-        slots,
+        slots_of(&s, StepsBasis::FanOut),
         vec![3, 5, 1],
         "fan-out descending, ties by id ascending; the blocked and the partial stay out"
     );
-    assert!(s.steps.len() <= STEPS);
+    assert!(slots_of(&s, StepsBasis::FanOut).len() <= STEPS);
+    assert!(
+        slots_of(&s, StepsBasis::Closeness).is_empty(),
+        "nothing here is missing a counter, so there is no closeness section at all"
+    );
 }
 
 /// Item 2 from the test catalog: passive, name "A", sprite `gfx/items/a.png`.
@@ -862,4 +863,127 @@ fn without_a_dataset_no_target_carries_a_page() {
         "the fixture catalog has to produce targets, or this test asserts nothing"
     );
     assert!(pages.iter().all(Option::is_none));
+}
+
+/// A node whose every standing requirement is a counter is not blocked: the content is
+/// reachable and only has to be played. It belongs to the section that can order it — a
+/// counter carries a distance, and the fan-out does not.
+#[test]
+fn a_node_held_only_by_counters_goes_to_the_closeness_section() {
+    let counter = |current: u32, at_least: u32| RequirementView::Counter {
+        label: "Mom's Heart".into(),
+        current,
+        at_least,
+    };
+    let available = |slot: u32, fan_out: u32, missing: Vec<RequirementView>| UnlockNode {
+        achievement: AchievementRef::Unknown { slot },
+        done: false,
+        unlocks: vec![],
+        origin: None,
+        missing,
+        graph: GraphInfo::Computed {
+            available_now: true,
+            blocked_by: 0,
+            fan_out,
+            steps_missing: 0,
+        },
+    };
+    let v = ipc::for_tests::unlock_view_of(vec![
+        available(1, 9, vec![]),               // nothing in the way: fan-out
+        available(2, 1, vec![counter(9, 11)]), // two to go
+        available(3, 1, vec![counter(3, 11)]), // eight to go
+    ]);
+
+    let s = next_steps(&v);
+    let bases: Vec<StepsBasis> = s.sections.iter().map(|x| x.basis).collect();
+    assert_eq!(bases, vec![StepsBasis::FanOut, StepsBasis::Closeness]);
+    assert_eq!(slots_of(&s, StepsBasis::FanOut), vec![1]);
+    assert_eq!(
+        slots_of(&s, StepsBasis::Closeness),
+        vec![2, 3],
+        "nearest the threshold first"
+    );
+}
+
+/// The slots a section names, in its own order.
+fn slots_of(s: &NextSteps, basis: StepsBasis) -> Vec<u32> {
+    s.sections
+        .iter()
+        .find(|x| x.basis == basis)
+        .map(|x| {
+            x.steps
+                .iter()
+                .map(|n| match n.achievement {
+                    AchievementRef::Known { id, .. } => id,
+                    AchievementRef::Unknown { slot } => slot,
+                })
+                .collect()
+        })
+        .unwrap_or_default()
+}
+
+/// A node is a suggestion once, or it reads as two different suggestions.
+#[test]
+fn the_two_sections_never_name_the_same_node() {
+    let v = ipc::for_tests::unlock_view_of(vec![UnlockNode {
+        achievement: AchievementRef::Unknown { slot: 4 },
+        done: false,
+        unlocks: vec![],
+        origin: None,
+        missing: vec![RequirementView::Counter {
+            label: "Hush".into(),
+            current: 0,
+            at_least: 1,
+        }],
+        graph: GraphInfo::Computed {
+            available_now: true,
+            blocked_by: 0,
+            fan_out: 40,
+            steps_missing: 0,
+        },
+    }]);
+    let s = next_steps(&v);
+    assert_eq!(s.sections.len(), 1, "one node cannot fill two sections");
+    assert_eq!(
+        s.sections[0].basis,
+        StepsBasis::Closeness,
+        "closeness says more about it than its fan-out does, however large"
+    );
+}
+
+/// A heading over nothing is not a state the screen should have to handle: "absent" is
+/// decided once, here.
+#[test]
+fn a_section_with_no_steps_is_not_emitted() {
+    let mut flags = vec![false; 10];
+    flags[2] = true;
+    let v = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
+    assert!(next_steps(&v).sections.is_empty());
+}
+
+/// A node with a mark still standing is `available_now` too, but a mark is binary: there is
+/// no distance to be near, so it is ordered by what it opens and not by how close it is.
+#[test]
+fn a_mark_is_not_a_distance_and_stays_in_the_fan_out_section() {
+    let v = ipc::for_tests::unlock_view_of(vec![UnlockNode {
+        achievement: AchievementRef::Unknown { slot: 7 },
+        done: false,
+        unlocks: vec![],
+        origin: None,
+        missing: vec![RequirementView::Mark {
+            character: 0,
+            character_name: "Isaac".into(),
+            column: ipc::MarkColumnView::MomsHeart,
+            level: ipc::MarkLevelView::Base,
+        }],
+        graph: GraphInfo::Computed {
+            available_now: true,
+            blocked_by: 0,
+            fan_out: 2,
+            steps_missing: 0,
+        },
+    }]);
+    let s = next_steps(&v);
+    assert_eq!(slots_of(&s, StepsBasis::FanOut), vec![7]);
+    assert!(slots_of(&s, StepsBasis::Closeness).is_empty());
 }
