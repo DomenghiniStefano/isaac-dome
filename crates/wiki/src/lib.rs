@@ -14,6 +14,7 @@ mod raw;
 mod resolver;
 mod sections;
 mod template;
+mod transformation;
 
 pub use blocks::parse_blocks;
 pub use build::build;
