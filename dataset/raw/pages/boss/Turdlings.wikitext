@@ -5,7 +5,7 @@
  | variant     = 2
  | environment = <u>Boss</u><br>{{Dlc|nr}}<br>{{floor|Basement}}<br>{{room|Boss Rush}}<br>{{Dlc|r}}<br>{{floor|Basement}}{{floor|Burning Basement}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Double Trouble</u><br>{{floor|Catacombs}}<br>(with the [[Gurglings]])<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>(with [[Dangle]])<br><u>Degraded Boss</u><br>{{floor|Chest}}
  | base hp     = 50
- | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|Number Two}} (1% chance)
+ | pool        = {{ip|Boss}}<br> {{dlc|r+}} {{i|No. 2}} (1% chance)
  | unlocked by = Something wicked this way comes!
 }}
 

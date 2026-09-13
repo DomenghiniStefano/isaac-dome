@@ -27,7 +27,7 @@
 ** Familiars like {{I|Dry Baby}}, {{I|Angry Fly}} and even {{I|Finger!}} also destroy the eye on collision.
 
 == Synergies ==
-* {{I|Astral Projection}}: During the time-stop period of Astral Projection, there is a chance that the eyes fired will stop in the air instead of flying in a direction, and will last indefinitely until an enemy bump into it, greatly increase the existing time of evil eyes. Triggering of Astral Projection also greatly increase fire rate, giving a higher possibility to fire eyes.
+* {{I|Astral Projection}}: During the time-stop period of Astral Projection, there is a chance that the eyes fired will stop in the air instead of flying in a direction, and will last indefinitely until an enemy bumps into it, greatly increasing the lifetime of evil eyes. Triggering of Astral Projection also greatly increases fire rate, giving a higher chance to fire eyes.
 * {{I|Ghost Pepper}} / {{I|Bird's Eye}}: Eye tears won't shoot fires. Instead, they make Isaac shoots fire more frequently.
 * {{i|Pause}}: After using pause, eyes will remain frozen in place even after pause's effect has ran out.
 * [[Homing tears]]: Eyes will fire homing tears; however, the eye itself will not home in on enemies.

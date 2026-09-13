@@ -1,6 +1,6 @@
 {{infobox passive collectible
  | dlc         = a
- | name        = {{dlcalt|No. 2|r=Number Two}}
+ | name        = No. 2
  | id          = 378
  | quote       = Uh oh...
  | description = Continuously firing tears for 2.35 seconds causes Isaac to drop a {{i|Butt Bombs}} bomb, which damages and [[Status Effects|confuses]] all enemies in the room when it explodes.
@@ -9,7 +9,7 @@
  | costume     = Collectible No. 2 appearance.png
 }}
 
-{{cit|p|a||{{dlc|r}} Number Two / {{dlc|anr}} No. 2}}
+{{cit|p|a||No. 2}}
 
 == Effects ==
 * Holding any fire button/direction for 2.35 seconds causes Isaac to drop a free {{i|Butt Bombs}} bomb. This includes charging or directly controlled attacks. Only 1 Butt Bomb can be dropped per charging cycle, so it is required to stop firing and then charge again to drop another Butt Bomb. Taking damage will interrupt the cycle.
@@ -24,11 +24,11 @@
 * This item can be great for clearing the early floors of [[Greed mode]], due to the butt bombs dealing room-wide damage every few seconds.
 
 == Interactions ==
-* Number Two, {{I|Maw Of The Void}}, {{I|Montezuma's Revenge}} and {{I|Revelation}} all have the same charge time, allowing Isaac to easily utilize them at same time.
+* No. 2, {{I|Maw Of The Void}}, {{I|Montezuma's Revenge}} and {{I|Revelation}} all have the same charge time, allowing Isaac to easily utilize them at same time.
 * {{i|Bird's Eye}}/{{i|Ghost Pepper}}: Shoots a flame behind Isaac with each fart.
 * {{I|Glitter Bombs}}: The butt bombs have a chance of spawning pickups or trinkets upon exploding.
-* {{i|Remote Detonator}}: Bombs placed by Number Two will not explode until Remote Detonator is activated.
-* {{t|Ring Cap}}: Only 1 bomb is placed by Number Two.
+* {{i|Remote Detonator}}: Bombs placed by No. 2 will not explode until Remote Detonator is activated.
+* {{t|Ring Cap}}: Only 1 bomb is placed by No. 2.
 * {{t|Short Fuse}}: No effect.
 * {{i|Tiny Planet}}: Orbiting tears tend to knock the bomb towards Isaac, making self damage likely.
 
@@ -36,8 +36,6 @@
 {{#ev:youtube|WVwUOtWFOq8}}
 
 == Trivia ==
-* {{dlc|r}} This item's name was changed from No. 2 to Number Two.
-* This item's visual effects gets overlapped by black poops darkening one, at least pre-Repentance.
 * The item's name is a reference to a well-known euphemism for defecation.
 
 {{nav|oh crap|bomb spawner|poop|fr=Grosse Commission}}

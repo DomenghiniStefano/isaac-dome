@@ -2,97 +2,177 @@
   {
     "_pageName": "Adult",
     "alias": "Adult",
+    "appearance": "Adult",
+    "description": "+1 Red [[Heart container]].",
     "dlc": "28",
-    "id": "11"
+    "id": "11",
+    "items": "[[Puberty]] pill",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Beelzebub",
     "alias": "Beelzebub",
+    "appearance": "a giant humanoid fly",
+    "description": "Grants [[flight]]. Converts small enemy [[fly|flies]] into [[Blue Fly|Blue Flies]]. [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]] Larger flies become [[friendly]] and follow Isaac between rooms.",
     "dlc": "31",
-    "id": "1"
+    "id": "1",
+    "items": "[[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]][[Category:Modified in Afterbirth]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CJar+of+Flies\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Jar of Flies icon.png|link=Jar of Flies|class=tb-icon tb-link-icon|alt=|Jar of Flies]]</span>[[:Jar of Flies|Jar of Flies]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7C%3F%3F%3F%27s+Only+Friend\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Blue Baby's Only Friend icon.png|link=???'s Only Friend|class=tb-icon tb-link-icon|alt=|???'s Only Friend]]</span>[[:???'s Only Friend|???'s Only Friend]]</span>, [[File:Dlc a† indicator.png|link=|class=dlc cf-tag cf-val-28 |alt=(except in Rebirth and Afterbirth)|Added in Afterbirth †]][[Category:Modified in Afterbirth+]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CAngry+Fly\" data-tooltip-dlc=\"28\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Angry Fly icon.png|link=Angry Fly|class=tb-icon tb-link-icon|alt=|Angry Fly]]</span>[[:Angry Fly|Angry Fly]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBBF\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible BBF icon.png|link=BBF|class=tb-icon tb-link-icon|alt=|BBF]]</span>[[:BBF|BBF]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBest+Bud\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Best Bud icon.png|link=Best Bud|class=tb-icon tb-link-icon|alt=|Best Bud]]</span>[[:Best Bud|Best Bud]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBig+Fan\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Big Fan icon.png|link=Big Fan|class=tb-icon tb-link-icon|alt=|Big Fan]]</span>[[:Big Fan|Big Fan]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CDistant+Admiration\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Distant Admiration icon.png|link=Distant Admiration|class=tb-icon tb-link-icon|alt=|Distant Admiration]]</span>[[:Distant Admiration|Distant Admiration]]</span>, \n<strong class=\"error\">Error: The given collectible (\"Forever Alone\") does not exist.</strong>[[Category:Pages with template errors]], [[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]][[Category:Modified in Afterbirth]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CFriend+Zone\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Friend Zone icon.png|link=Friend Zone|class=tb-icon tb-link-icon|alt=|Friend Zone]]</span>[[:Friend Zone|Friend Zone]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CHalo+of+Flies\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Halo of Flies icon.png|link=Halo of Flies|class=tb-icon tb-link-icon|alt=|Halo of Flies]]</span>[[:Halo of Flies|Halo of Flies]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CHive+Mind\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Hive Mind icon.png|link=Hive Mind|class=tb-icon tb-link-icon|alt=|Hive Mind]]</span>[[:Hive Mind|Hive Mind]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CInfestation\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Infestation icon.png|link=Infestation|class=tb-icon tb-link-icon|alt=|Infestation]]</span>[[:Infestation|Infestation]]</span>, [[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]][[Category:Modified in Afterbirth]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CJar+of+Flies\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Jar of Flies icon.png|link=Jar of Flies|class=tb-icon tb-link-icon|alt=|Jar of Flies]]</span>[[:Jar of Flies|Jar of Flies]]</span>, [[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]][[Category:Modified in Afterbirth]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CLost+Fly\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Lost Fly icon.png|link=Lost Fly|class=tb-icon tb-link-icon|alt=|Lost Fly]]</span>[[:Lost Fly|Lost Fly]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Mulligan\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Mulligan icon.png|link=The Mulligan|class=tb-icon tb-link-icon|alt=|The Mulligan]]</span>[[:The Mulligan|The Mulligan]]</span>, [[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]][[Category:Modified in Afterbirth]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CObsessed+Fan\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Obsessed Fan icon.png|link=Obsessed Fan|class=tb-icon tb-link-icon|alt=|Obsessed Fan]]</span>[[:Obsessed Fan|Obsessed Fan]]</span>, [[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]][[Category:Modified in Afterbirth]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CPapa+Fly\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Papa Fly icon.png|link=Papa Fly|class=tb-icon tb-link-icon|alt=|Papa Fly]]</span>[[:Papa Fly|Papa Fly]]</span>, [[File:Dlc a† indicator.png|link=|class=dlc cf-tag cf-val-28 |alt=(except in Rebirth and Afterbirth)|Added in Afterbirth †]][[Category:Modified in Afterbirth+]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CParasitoid\" data-tooltip-dlc=\"28\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Parasitoid icon.png|link=Parasitoid|class=tb-icon tb-link-icon|alt=|Parasitoid]]</span>[[:Parasitoid|Parasitoid]]</span>, [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CPlum+Flute\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Plum Flute icon.png|link=Plum Flute|class=tb-icon tb-link-icon|alt=|Plum Flute]]</span>[[:Plum Flute|Plum Flute]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CSkatole\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Skatole icon.png|link=Skatole|class=tb-icon tb-link-icon|alt=|Skatole]]</span>[[:Skatole|Skatole]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CSmart+Fly\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Smart Fly icon.png|link=Smart Fly|class=tb-icon tb-link-icon|alt=|Smart Fly]]</span>[[:Smart Fly|Smart Fly]]</span>, [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBot+Fly\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Bot Fly icon.png|link=Bot Fly|class=tb-icon tb-link-icon|alt=|Bot Fly]]</span>[[:Bot Fly|Bot Fly]]</span>, [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CPsy+Fly\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Psy Fly icon.png|link=Psy Fly|class=tb-icon tb-link-icon|alt=|Psy Fly]]</span>[[:Psy Fly|Psy Fly]]</span>, [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Swarm\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Swarm icon.png|link=The Swarm|class=tb-icon tb-link-icon|alt=|The Swarm]]</span>[[:The Swarm|The Swarm]]</span>, [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CFruity+Plum\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Fruity Plum icon.png|link=Fruity Plum|class=tb-icon tb-link-icon|alt=|Fruity Plum]]</span>[[:Fruity Plum|Fruity Plum]]</span>, [[File:Dlc a† indicator.png|link=|class=dlc cf-tag cf-val-28 |alt=(except in Rebirth and Afterbirth)|Added in Afterbirth †]][[Category:Modified in Afterbirth+]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CYO+LISTEN%21\" data-tooltip-dlc=\"28\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible YO LISTEN! icon.png|link=YO LISTEN!|class=tb-icon tb-link-icon|alt=|YO LISTEN!]]</span>[[:YO LISTEN!|YO LISTEN!]]</span>",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Bob",
     "alias": "Bob",
+    "appearance": "Bob",
+    "description": "Isaac leaves a trail of [[Green Creep|green poisonous creep]] as he walks that deals 6 damage per second.",
     "dlc": "30",
-    "id": "4"
+    "id": "4",
+    "items": "",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Bookworm",
     "alias": "Bookworm",
+    "appearance": "Bookworm",
+    "description": "Roughly 25% of the time, Isaac shoots an extra tear, like <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7C20%2F20\" data-tooltip-dlc=\"28\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Collectible 20 20 icon.png|link=20/20|20/20|alt=]]</span>[[:20/20|20/20]]</span>.",
     "dlc": "28",
-    "id": "10"
+    "id": "10",
+    "items": "",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Conjoined",
     "alias": "Conjoined",
+    "appearance": "a three-faced version of himself",
+    "description": "Adds two tumors that fire diagonally from Isaac's head. -0.3 [[Damage]], -0.3 [[Tears]].",
     "dlc": "30",
-    "id": "7"
+    "id": "7",
+    "items": "",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Fun Guy",
     "alias": "Fun Guy",
+    "appearance": "a walking mushroom",
+    "description": "+1 Red [[Heart Container]].",
     "dlc": "30",
-    "id": "2"
+    "id": "2",
+    "items": "<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7C1up%21\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible 1up! icon.png|link=1up!|class=tb-icon tb-link-icon|alt=|1up!]]</span>[[:1up!|1up!]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBlue+Cap\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Blue Cap icon.png|link=Blue Cap|class=tb-icon tb-link-icon|alt=|Blue Cap]]</span>[[:Blue Cap|Blue Cap]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CGod%27s+Flesh\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible God's Flesh icon.png|link=God's Flesh|class=tb-icon tb-link-icon|alt=|God's Flesh]]</span>[[:God's Flesh|God's Flesh]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMagic+Mushroom\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Magic Mushroom icon.png|link=Magic Mushroom|class=tb-icon tb-link-icon|alt=|Magic Mushroom]]</span>[[:Magic Mushroom|Magic Mushroom]]</span>, [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMega+Mush\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Mega Mush icon.png|link=Mega Mush|class=tb-icon tb-link-icon|alt=|Mega Mush]]</span>[[:Mega Mush|Mega Mush]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMini+Mush\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Mini Mush icon.png|link=Mini Mush|class=tb-icon tb-link-icon|alt=|Mini Mush]]</span>[[:Mini Mush|Mini Mush]]</span>, [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMucormycosis\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Mucormycosis icon.png|link=Mucormycosis|class=tb-icon tb-link-icon|alt=|Mucormycosis]]</span>[[:Mucormycosis|Mucormycosis]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7COdd+Mushroom+%28Large%29\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Odd Mushroom (Large) icon.png|link=Odd Mushroom (Large)|class=tb-icon tb-link-icon|alt=|Odd Mushroom]]</span>[[:Odd Mushroom (Large)|Odd Mushroom]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7COdd+Mushroom+%28Thin%29\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Odd Mushroom (Thin) icon.png|link=Odd Mushroom (Thin)|class=tb-icon tb-link-icon|alt=|Odd Mushroom]]</span>[[:Odd Mushroom (Thin)|Odd Mushroom]]</span>, [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CWavy+Cap\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Wavy Cap icon.png|link=Wavy Cap|class=tb-icon tb-link-icon|alt=|Wavy Cap]]</span>[[:Wavy Cap|Wavy Cap]]</span>",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Guppy",
     "alias": "Guppy",
+    "appearance": "Guppy",
+    "description": "[[File:Dlc nr indicator.png|link=|class=dlc cf-tag cf-val-7 |alt=(except in Repentance and Repentance+)|Removed in Repentance]][[Category:Modified in Repentance]] Grants [[flight]] and spawns a [[Blue Fly]] each time a tear hits an enemy.<br/>[[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]] Grants [[flight]] and adds a 66% chance to spawn a [[Blue Fly]] when a tear hits an enemy.",
     "dlc": "31",
-    "id": "0"
+    "id": "0",
+    "items": "<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CDead+Cat\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Dead Cat icon.png|link=Dead Cat|class=tb-icon tb-link-icon|alt=|Dead Cat]]</span>[[:Dead Cat|Dead Cat]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CGuppy%27s+Collar\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Guppy's Collar icon.png|link=Guppy's Collar|class=tb-icon tb-link-icon|alt=|Guppy's Collar]]</span>[[:Guppy's Collar|Guppy's Collar]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CGuppy%27s+Tail\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Guppy's Tail icon.png|link=Guppy's Tail|class=tb-icon tb-link-icon|alt=|Guppy's Tail]]</span>[[:Guppy's Tail|Guppy's Tail]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CGuppy%27s+Hairball\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Guppy's Hairball icon.png|link=Guppy's Hairball|class=tb-icon tb-link-icon|alt=|Guppy's Hairball]]</span>[[:Guppy's Hairball|Guppy's Hairball]]</span>, [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CGuppy%27s+Eye\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Guppy's Eye icon.png|link=Guppy's Eye|class=tb-icon tb-link-icon|alt=|Guppy's Eye]]</span>[[:Guppy's Eye|Guppy's Eye]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CGuppy%27s+Head\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Guppy's Head icon.png|link=Guppy's Head|class=tb-icon tb-link-icon|alt=|Guppy's Head]]</span>[[:Guppy's Head|Guppy's Head]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CGuppy%27s+Paw\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Guppy's Paw icon.png|link=Guppy's Paw|class=tb-icon tb-link-icon|alt=|Guppy's Paw]]</span>[[:Guppy's Paw|Guppy's Paw]]</span>",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Leviathan",
     "alias": "Leviathan",
+    "appearance": "Leviathan",
+    "description": "Grants [[flight]] and gives +2 <span class=\"tb-icon tb-link-icon\" >[[File:Black Heart.png|link=Hearts#Black Heart|Black Heart|alt=]]</span>[[:Hearts#Black Heart|Black Heart]]s.",
     "dlc": "30",
-    "id": "8"
+    "id": "8",
+    "items": "",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Necromancer",
     "alias": "Necromancer",
+    "appearance": "an upgraded form",
+    "description": "<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Necronomicon\" data-tooltip-dlc=\"16\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Necronomicon icon.png|link=The Necronomicon|The Necronomicon|alt=]]</span>[[:The Necronomicon|The Necronomicon]]</span> becomes empowered. It can be used 10 times with no recharge between uses per floor, after which it turns back to normal for the rest of the floor.",
     "dlc": "16",
-    "id": "15"
+    "id": "15",
+    "items": "<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Necronomicon\" data-tooltip-dlc=\"16\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Necronomicon icon.png|link=The Necronomicon|The Necronomicon|alt=]]</span>[[:The Necronomicon|The Necronomicon]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMissing+Page+2\" data-tooltip-dlc=\"16\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:collectible Missing Page 2 icon.png|link=Missing Page 2|Missing Page 2|alt=]]</span>[[:Missing Page 2|Missing Page 2]]</span>, <span class=\"tooltip\" data-tooltip=\"t%2Ftooltip%7CA+Missing+Page\" data-tooltip-dlc=\"16\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:trinket A Missing Page icon.png|link=A Missing Page|A Missing Page|alt=]]</span>[[:A Missing Page|A Missing Page]]</span>",
+    "requirement": "three items from this set",
+    "target": "<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Necronomicon\" data-tooltip-dlc=\"16\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Necronomicon icon.png|link=The Necronomicon|The Necronomicon|alt=]]</span>[[:The Necronomicon|The Necronomicon]]</span>"
   },
   {
     "_pageName": "Oh Crap",
     "alias": "Oh Crap",
+    "appearance": "a walking pile of poop",
+    "description": "Whenever a pile of [[poop]] is destroyed, restores half of a [[red heart]].",
     "dlc": "30",
-    "id": "9"
+    "id": "9",
+    "items": "",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Seraphim (Transformation)",
     "alias": "Seraphim",
+    "appearance": "an angel",
+    "description": "Grants [[flight]] and gives +3 <span class=\"tb-icon tb-link-icon\" >[[File:Soul Heart.png|link=Hearts#Soul Heart|Soul Heart|alt=]]</span>[[:Hearts#Soul Heart|Soul Heart]]s.",
     "dlc": "30",
-    "id": "3"
+    "id": "3",
+    "items": "",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Spider Baby (Transformation)",
     "alias": "Spider Baby",
+    "appearance": "a humanoid spider",
+    "description": "Spawns a spider familiar that applies random status effects to enemies it comes in contact with.",
     "dlc": "28",
-    "id": "12"
+    "id": "12",
+    "items": "",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Spun",
     "alias": "Spun",
+    "appearance": "a buff berserker",
+    "description": "Gives +2 [[damage]] and +0.15 [[speed]], and spawns a random [[pill]] upon transformation.",
     "dlc": "30",
-    "id": "5"
+    "id": "5",
+    "items": "",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Stompy",
     "alias": "Stompy",
+    "appearance": "Stompy",
+    "description": "Taking damage has a chance to spawn rock waves. [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]] Isaac can break obstacles by walking over them.",
     "dlc": "28",
-    "id": "13"
+    "id": "13",
+    "items": "Leo, Magic Mushroom",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   },
   {
     "_pageName": "Super Bum",
     "alias": "Super Bum",
+    "appearance": "Super Bum",
+    "description": "Replaces <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBum+Friend\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Bum Friend icon.png|link=Bum Friend|class=tb-icon tb-link-icon|alt=|Bum Friend]]</span>[[:Bum Friend|Bum Friend]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CDark+Bum\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Dark Bum icon.png|link=Dark Bum|class=tb-icon tb-link-icon|alt=|Dark Bum]]</span>[[:Dark Bum|Dark Bum]]</span>, and <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CKey+Bum\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Key Bum icon.png|link=Key Bum|class=tb-icon tb-link-icon|alt=|Key Bum]]</span>[[:Key Bum|Key Bum]]</span> with Super Bum. This bum collects any of the other beggars' pickups, and offers twice the rewards.",
     "dlc": "30",
-    "id": "1000"
+    "id": "1000",
+    "items": "",
+    "requirement": "three items from this set",
+    "target": "Isaac's bums"
   },
   {
     "_pageName": "Yes Mother?",
     "alias": "Yes Mother?",
+    "appearance": "his mother",
+    "description": "Isaac gains a stationary knife that trails directly behind him. It synergizes like <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMom%27s+Knife\" data-tooltip-dlc=\"30\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Collectible Mom's Knife icon.png|link=Mom's Knife|Mom's Knife|alt=]]</span>[[:Mom's Knife|Mom's Knife]]</span> would.",
     "dlc": "30",
-    "id": "6"
+    "id": "6",
+    "items": "",
+    "requirement": "three items from this set",
+    "target": "Isaac"
   }
 ]

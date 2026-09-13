@@ -3,7 +3,7 @@
 //! because the wiki's entity ids and our boss ids are different numbering spaces.
 
 use catalog::{BossId, Catalog, CharacterId, ItemId, ItemKind};
-use graph::model::Requirement;
+use graph::model::{Requirement, ThresholdItem};
 use graph::resolve::requirement;
 use graph::rules::{Corrections, CounterName, MarkColumn, MarkLevel, RefRow, Requirements, Rules};
 use wiki::Target;
@@ -35,7 +35,7 @@ fn catalog() -> Catalog {
 
 fn rules(corrections: &str) -> Rules {
     let r: Requirements = serde_json::from_str(
-        r#"{"schemaVersion":1,
+        r#"{"schemaVersion":2,
             "generatedFrom":{"snapshotAt":"","maxRevid":0},
             "achievements":{},"targets":[]}"#,
     )
@@ -65,7 +65,7 @@ fn entity(id: u32, label: &str) -> RefRow {
 #[test]
 fn an_entity_ref_resolves_to_a_boss_by_name_not_by_id() {
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":1}"#);
+    let rules = rules(r#"{"schemaVersion":2}"#);
     assert_eq!(
         requirement(&c, &rules, &entity(43, "Gish"), None),
         Requirement::Boss { id: BossId(19) },
@@ -79,7 +79,7 @@ fn a_boss_the_game_does_not_gate_is_judged_not_assumed() {
     // `Requirement::Boss` here would produce no edge and no unknown, and the node would
     // read as "nothing in the way" — which is how Delirium looked available.
     let c = catalog();
-    let unjudged = rules(r#"{"schemaVersion":1}"#);
+    let unjudged = rules(r#"{"schemaVersion":2}"#);
     assert_eq!(
         requirement(&c, &unjudged, &entity(84, "Satan"), None),
         Requirement::Unknown {
@@ -88,7 +88,7 @@ fn a_boss_the_game_does_not_gate_is_judged_not_assumed() {
         "a boss with no unlocker and no verdict is unknown, never 'available'"
     );
     let judged =
-        rules(r#"{"schemaVersion":1,"verdicts":{"entity:Satan":{"alwaysAvailable":true}}}"#);
+        rules(r#"{"schemaVersion":2,"verdicts":{"entity:Satan":{"alwaysAvailable":true}}}"#);
     assert_eq!(
         requirement(&c, &judged, &entity(84, "Satan"), None),
         Requirement::None,
@@ -99,7 +99,7 @@ fn a_boss_the_game_does_not_gate_is_judged_not_assumed() {
 #[test]
 fn an_alias_is_applied_before_the_lookup() {
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":1,"aliases":{"Jacob and Esau":"Jacob & Esau"}}"#);
+    let rules = rules(r#"{"schemaVersion":2,"aliases":{"Jacob and Esau":"Jacob & Esau"}}"#);
     assert_eq!(
         requirement(
             &c,
@@ -117,7 +117,7 @@ fn an_alias_is_applied_before_the_lookup() {
 fn always_available_drops_the_requirement() {
     let c = catalog();
     let rules =
-        rules(r#"{"schemaVersion":1,"verdicts":{"room:Boss Rush":{"alwaysAvailable":true}}}"#);
+        rules(r#"{"schemaVersion":2,"verdicts":{"room:Boss Rush":{"alwaysAvailable":true}}}"#);
     assert_eq!(
         requirement(
             &c,
@@ -138,7 +138,7 @@ fn always_available_drops_the_requirement() {
 #[test]
 fn a_target_with_no_verdict_stays_unknown() {
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":1}"#);
+    let rules = rules(r#"{"schemaVersion":2}"#);
     assert_eq!(
         requirement(
             &c,
@@ -158,31 +158,161 @@ fn a_target_with_no_verdict_stays_unknown() {
     );
 }
 
+/// A stage and not a transformation: a transformation used to reach the verdict table and
+/// no longer does — it resolves through `transformations` in the rules file — so testing
+/// this on one would have quietly stopped testing the verdict.
 #[test]
 fn a_verdict_of_unknown_behaves_like_no_verdict_but_was_judged() {
     let c = catalog();
     let rules = rules(
-        r#"{"schemaVersion":1,"verdicts":{
-             "transformation:Guppy":{"unknown":{"reason":"three items"}}}}"#,
+        r#"{"schemaVersion":2,"verdicts":{
+             "stage:Home":{"unknown":{"reason":"all endings"}}}}"#,
     );
     assert_eq!(
+        requirement(
+            &c,
+            &rules,
+            &row(
+                Target::Stage {
+                    name: "Home".into()
+                },
+                "Home"
+            ),
+            None
+        ),
+        Requirement::Unknown {
+            label: "Home".into()
+        },
+        "judged inexpressible and never judged land in the same place at runtime"
+    );
+}
+
+/// The rules file with one transformation in it. `items` are the wiki's targets, exactly as
+/// the generator writes them: this file knows no id of ours.
+fn rules_with_transformation(at_least: &str, items: &str) -> Rules {
+    let r: Requirements = serde_json::from_str(&format!(
+        r#"{{"schemaVersion":2,
+            "generatedFrom":{{"snapshotAt":"","maxRevid":0}},
+            "achievements":{{}},"targets":[],
+            "transformations":{{"0":{{"label":"Guppy","atLeast":{at_least},"items":{items}}}}}}}"#
+    ))
+    .expect("requirements parse");
+    let c: Corrections = serde_json::from_str(r#"{"schemaVersion":2}"#).expect("corrections parse");
+    Rules::build(r, c).expect("rules build")
+}
+
+const BIBLE: &str = r#"{"kind":"item","id":35}"#;
+const UNKNOWN_ITEM: &str = r#"{"kind":"item","id":999}"#;
+
+#[test]
+fn a_transformation_resolves_to_a_threshold_over_the_items_the_catalog_has() {
+    let c = catalog();
+    let rules = rules_with_transformation("2", &format!("[{BIBLE},{BIBLE}]"));
+    let Requirement::Threshold {
+        at_least,
+        of,
+        unresolved,
+        label,
+        ..
+    } = requirement(
+        &c,
+        &rules,
+        &row(Target::Transformation { id: 0 }, "Guppy"),
+        None,
+    )
+    else {
+        panic!("expected a threshold")
+    };
+    assert_eq!(label, "Guppy");
+    assert_eq!(at_least, 2);
+    assert_eq!(
+        of,
+        vec![
+            ThresholdItem {
+                kind: ItemKind::Active,
+                id: ItemId(35),
+                unlocked_by: None
+            };
+            2
+        ]
+    );
+    assert_eq!(unresolved, 0);
+}
+
+/// A count the wiki did not state is not a threshold of zero, which everything meets.
+#[test]
+fn a_transformation_without_a_count_is_unknown_not_a_threshold_of_zero() {
+    let c = catalog();
+    let rules = rules_with_transformation("null", &format!("[{BIBLE}]"));
+    assert!(matches!(
         requirement(
             &c,
             &rules,
             &row(Target::Transformation { id: 0 }, "Guppy"),
             None
         ),
-        Requirement::Unknown {
-            label: "Guppy".into()
-        },
-        "judged inexpressible and never judged land in the same place at runtime"
-    );
+        Requirement::Unknown { .. }
+    ));
+}
+
+/// Stompy's shape, measured on the real snapshot: two collectibles and a count of three,
+/// because its third contributor is a pill and a pill is not something this model carries.
+/// A threshold nothing can ever meet would report "you are one item away" forever, so the
+/// crate that has to answer declines to.
+#[test]
+fn a_set_smaller_than_its_count_is_unknown_and_not_an_unreachable_threshold() {
+    let c = catalog();
+    let rules = rules_with_transformation("3", &format!("[{BIBLE},{BIBLE}]"));
+    assert!(matches!(
+        requirement(
+            &c,
+            &rules,
+            &row(Target::Transformation { id: 0 }, "Guppy"),
+            None
+        ),
+        Requirement::Unknown { .. }
+    ));
+}
+
+/// An item the catalog does not have is counted, not dropped: evaluation needs to know the
+/// tally it holds is incomplete, because an unresolved item can only ever add to it.
+#[test]
+fn contributors_outside_the_catalog_are_counted_not_dropped() {
+    let c = catalog();
+    let rules = rules_with_transformation("2", &format!("[{BIBLE},{BIBLE},{UNKNOWN_ITEM}]"));
+    let Requirement::Threshold { of, unresolved, .. } = requirement(
+        &c,
+        &rules,
+        &row(Target::Transformation { id: 0 }, "Guppy"),
+        None,
+    ) else {
+        panic!("expected a threshold")
+    };
+    assert_eq!(of.len(), 2);
+    assert_eq!(unresolved, 1);
+}
+
+/// A transformation the rules file has never heard of is unknown, and is **not** the same
+/// as one whose count could not be read: only the second is in the file at all.
+#[test]
+fn a_transformation_absent_from_the_rules_is_unknown() {
+    let c = catalog();
+    let rules = rules(r#"{"schemaVersion":2}"#);
+    assert!(matches!(
+        requirement(
+            &c,
+            &rules,
+            &row(Target::Transformation { id: 0 }, "Guppy"),
+            None
+        ),
+        Requirement::Unknown { .. }
+    ));
 }
 
 #[test]
 fn a_name_the_catalog_does_not_know_is_unknown_not_dropped() {
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":1}"#);
+    let rules = rules(r#"{"schemaVersion":2}"#);
     assert_eq!(
         requirement(&c, &rules, &entity(999, "Nobody"), None),
         Requirement::Unknown {
@@ -195,7 +325,7 @@ fn a_name_the_catalog_does_not_know_is_unknown_not_dropped() {
 fn an_entity_that_is_not_a_boss_takes_its_verdict() {
     let c = catalog();
     let rules =
-        rules(r#"{"schemaVersion":1,"verdicts":{"entity:Red Heart":{"notAPrerequisite":true}}}"#);
+        rules(r#"{"schemaVersion":2,"verdicts":{"entity:Red Heart":{"notAPrerequisite":true}}}"#);
     assert_eq!(
         requirement(&c, &rules, &entity(5, "Red Heart"), None),
         Requirement::None,
@@ -206,7 +336,7 @@ fn an_entity_that_is_not_a_boss_takes_its_verdict() {
 #[test]
 fn an_item_resolves_across_the_collectible_kinds() {
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":1}"#);
+    let rules = rules(r#"{"schemaVersion":2}"#);
     assert_eq!(
         requirement(&c, &rules, &row(Target::Item { id: 35 }, "The Bible"), None),
         Requirement::Item {
@@ -220,7 +350,7 @@ fn an_item_resolves_across_the_collectible_kinds() {
 // --- answered by the profile (spec 2026-09-12, §4.2) ---------------------------------
 
 const PROGRESS: &str = r#"{
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "verdicts": {
     "entity:Hush": { "progress": {
       "mark": { "column": "hush", "level": "base" },
@@ -288,7 +418,7 @@ fn the_half_a_reference_needs_may_be_absent_and_then_it_is_unknown() {
 fn a_game_gated_boss_still_wins_over_a_progress_verdict() {
     let c = catalog();
     let rules = rules(
-        r#"{"schemaVersion":1,"verdicts":{"entity:Gish":{"progress":{
+        r#"{"schemaVersion":2,"verdicts":{"entity:Gish":{"progress":{
              "counter":{"name":"hushKills","atLeast":1}}}}}"#,
     );
     assert_eq!(

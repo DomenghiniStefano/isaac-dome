@@ -467,6 +467,7 @@ export const it = {
       gate: 'Condizioni',
       mark: 'Marchi di completamento',
       counter: 'Boss da battere',
+      threshold: 'Trasformazioni',
       unknown: 'Condizioni che non sappiamo leggere',
     },
     kinds: {
@@ -487,6 +488,7 @@ export const it = {
     },
     // Una cella della matrice: il boss e il personaggio con cui va battuto.
     markName: '{boss} con {character}',
+    thresholdName: '{name} — {current} di {atLeast}',
     originNone: 'non indicata',
     unknownAchievement: 'Achievement sconosciuto',
     slot: 'slot',

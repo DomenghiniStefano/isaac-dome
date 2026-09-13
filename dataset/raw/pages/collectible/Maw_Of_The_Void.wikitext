@@ -31,7 +31,7 @@
 * This item can begin to be recharged again immediately after activating it, effectively cutting its charge time in half in situations where it may be needed again quickly.
 
 == Synergies ==
-* Maw Of The Void, {{I|Number Two}}, {{I|Montezuma's Revenge}} and {{I|Revelation}} all have the same charge time, allowing Isaac to easily utilize them at same time.
+* Maw Of The Void, {{I|No. 2}}, {{I|Montezuma's Revenge}} and {{I|Revelation}} all have the same charge time, allowing Isaac to easily utilize them at same time.
 * {{i|Dark Arts}}: Extremely powerful. Isaac will unleash a black Brimstone ring while using Dark Arts, letting Isaac do crazy damage while invincible.
 * {{tf|Guppy}}: Damaging enemies with Maw Of The Void allows flies to spawn from the Guppy transformation. Flies are spawned at a rate of approximately one fly per tick of damage for each enemy it hits. This causes a lot of flies to spawn very quickly. The spawned flies will also move to attack the nearest enemy immediately.
 * {{i|Hemoptysis}}: Enemies hit by the sneeze will gain a curse that increases the damage the black ring deals to 2x and +3 flat damage. Enemies who die to the black ring under the curse will damage and spread the curse to nearby enemies.

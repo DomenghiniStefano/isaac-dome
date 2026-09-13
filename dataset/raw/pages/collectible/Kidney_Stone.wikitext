@@ -57,7 +57,7 @@
 ** {{dlc|r}} '''Monstro's Lung''' + {{I|Technology}}: Kidney Stone can activate, but the barrage does not work correctly (see bugs).
 * {{i|Number One|dlc=nr}}: Number One's range down overrides Kidney Stone, for an additional -0.62. The stone is not affected by the range decrease.
 * {{i|Spirit Sword}}: Overrides Kidney Stone.
-* {{dlc|r}} {{c|Tainted Lilith}}: Kidney Stone has no effect.
+* {{c|Tainted Lilith}}: Kidney Stone has no effect.
 * {{i|Technology|dlc=nr}}: Overrides Kidney Stone.
 ** {{dlc|r}} Fires the stone like normal, followed by a barrage of Technology lasers.
 * {{i|Tech X|dlc=anr}}: Overrides Kidney Stone.

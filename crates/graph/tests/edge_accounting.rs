@@ -12,7 +12,7 @@ fn every_edge_is_accounted_for() {
     let (mut character, mut boss, mut item, mut challenge) = (0u32, 0u32, 0u32, 0u32);
     let (mut no_unlocker, mut disjunction, mut gate, mut unknown, mut judged_none) =
         (0u32, 0u32, 0u32, 0u32, 0u32);
-    let (mut mark, mut counter) = (0u32, 0u32);
+    let (mut mark, mut counter, mut threshold) = (0u32, 0u32, 0u32);
     let mut produced = 0u32;
     for n in g.nodes() {
         for r in &n.requirements {
@@ -54,6 +54,13 @@ fn every_edge_is_accounted_for() {
                     counter += 1;
                     continue;
                 }
+                // Same reading, one degree sharper: a threshold produces no edge because
+                // the prerequisites of "any three of these" are a disjunction, which is the
+                // case `disjunction` above counts for challenges.
+                graph::model::Requirement::Threshold { .. } => {
+                    threshold += 1;
+                    continue;
+                }
                 graph::model::Requirement::Unknown { .. } => {
                     unknown += 1;
                     continue;
@@ -73,7 +80,7 @@ fn every_edge_is_accounted_for() {
     let edges: u32 = g.nodes().iter().map(|n| n.prerequisites.len() as u32).sum();
     eprintln!(
         "requirements: character {character}, boss {boss}, item {item}, challenge {challenge}, \
-         gate {gate}, mark {mark}, counter {counter}, \
+         gate {gate}, mark {mark}, counter {counter}, threshold {threshold}, \
          judged-not-a-prerequisite {judged_none}, uninterpreted {unknown}"
     );
     eprintln!(

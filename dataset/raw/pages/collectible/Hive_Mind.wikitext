@@ -36,6 +36,6 @@
 
 == Trivia ==
 * Hive mind is the concept of a large number of beings acting in the interest of the survival of the group as a whole, with little to no individuality.
-* {{dlc|r}} This item is one of the only five ({{dlc|r+}} six) that count towards 2 transformations ({{tf|Beelzebub}} and {{tf|Spider Baby}}), the other ones being {{i|Magic Mushroom}}, {{i|The Bible}}, {{i|Parasitoid}}, {{i|Skatole}}, {{dlc|r+}} and {{i|The Necronomicon}}.
+* {{dlc|r}} This item is one of the only five ({{dlc|r+}} seven) that count towards 2 transformations ({{tf|Beelzebub}} and {{tf|Spider Baby}}), the other ones being {{i|Magic Mushroom}}, {{i|The Bible}}, {{i|Parasitoid}}, {{i|Skatole}}, {{dlc|r+}} {{i|The Necronomicon}}, and {{i|Seraphim}}.
 
 {{nav|spider|fly|familiar modifier|fr=Conscience Collective}}

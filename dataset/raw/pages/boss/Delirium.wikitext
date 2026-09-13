@@ -36,8 +36,8 @@ Delirium's main form is stationary but teleports erratically around the room and
 * As it takes damage, it becomes more aggressive: moving, teleporting, transforming, and attacking at a faster rate.
 ** {{dlc|r+}} {{e|Mom|}} and {{e|Satan|}}'s second phase are exempt from the faster attack speed, instead attacking at a fixed speed.
 ** It also takes on a reddish hue to signify this change.
-** Destroying non-Delirium segments when he transforms into segmented bosses can also temporarily trigger this effect.
-** If Delirium is being dealt damage at a significantly high rate from multiple tear sources, he will attack, teleport, and transform at extreme speeds.
+** Destroying non-Delirium segments when it transforms into segmented bosses can also temporarily trigger this effect.
+** If Delirium is being dealt damage at a significantly high rate from multiple tear sources, it will attack, teleport, and transform at extreme speeds.
 
 Upon defeat, the screen starts to glitch, fills with static, and the room switches between different environments, while short scenes from the current run are played ending with Delirium screaming and bursting into a small puddle of blood.
 

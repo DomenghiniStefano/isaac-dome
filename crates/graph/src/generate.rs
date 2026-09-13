@@ -6,7 +6,8 @@ use std::collections::BTreeMap;
 use wiki::{Dataset, Infobox, Inline, Target};
 
 use crate::rules::{
-    target_key, AchievementRefs, GeneratedFrom, RefRow, Requirements, TargetRow, SCHEMA_VERSION,
+    target_key, AchievementRefs, GeneratedFrom, RefRow, Requirements, TargetRow, TransformationRow,
+    SCHEMA_VERSION,
 };
 
 /// Walks the inline tree and keeps what points at something. `Inline::Text` carries no
@@ -98,6 +99,32 @@ pub fn generate(d: &Dataset) -> Requirements {
                 label,
                 uses,
                 verdict_required,
+            })
+            .collect(),
+        transformations: d
+            .transformations
+            .iter()
+            .filter_map(|(&id, e)| match &e.infobox {
+                Infobox::Transformation {
+                    requires,
+                    contributors,
+                    ..
+                } => Some((
+                    id,
+                    TransformationRow {
+                        label: e.title.clone(),
+                        at_least: *requires,
+                        items: contributors.clone(),
+                    },
+                )),
+                // A transformation page carrying another infobox is a wiki anomaly, not our
+                // error — the same reading the achievement walk above takes.
+                Infobox::Item { .. }
+                | Infobox::Trinket { .. }
+                | Infobox::Achievement { .. }
+                | Infobox::Boss { .. }
+                | Infobox::Challenge { .. }
+                | Infobox::Character { .. } => None,
             })
             .collect(),
     }
