@@ -1,0 +1,200 @@
+//! The run archive as the UI sees it.
+//!
+//! No path crosses: a session is named by its folder — a date, and nothing about this machine —
+//! and the live log has no name to give. Items carry a name only when the catalog is there; an
+//! id with no name says "the game is not installed" rather than showing a blank.
+
+use catalog::{Catalog, ItemId, ItemKind, Language};
+use serde::Serialize;
+
+/// Where a run came from. Tagged, because one variant carries a name and the other cannot.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(
+    tag = "kind",
+    rename_all = "camelCase",
+    rename_all_fields = "camelCase"
+)]
+pub enum RunSource {
+    /// The log the game is writing now.
+    Live,
+    /// One online session, by its folder's name: `09_12_2026__13_34_26`.
+    Session { name: String },
+}
+
+/// How a run ended, as the UI draws it. `Open` is not a failure and must never be drawn as one.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(
+    tag = "kind",
+    rename_all = "camelCase",
+    rename_all_fields = "camelCase"
+)]
+pub enum RunOutcomeView {
+    Won { ending: String },
+    Died { killer: String },
+    Abandoned,
+    Open,
+}
+
+/// An item in a run. `name` is `None` without a catalog.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub struct RunItemRef {
+    pub id: u32,
+    pub name: Option<String>,
+}
+
+/// One run.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub struct RunView {
+    pub source: RunSource,
+    /// The position in its own source. A run is `(source, ordinal)`.
+    pub ordinal: u32,
+    /// `None` when no item line ever named the character: it is not in the seed line.
+    pub character: Option<String>,
+    pub seed_words: String,
+    /// The game called this run online. The only free discriminator we have for co-op.
+    pub online: bool,
+    pub outcome: RunOutcomeView,
+    pub floors: u32,
+    pub starting_items: Vec<RunItemRef>,
+    pub collected: Vec<RunItemRef>,
+    pub held_active: Option<RunItemRef>,
+    pub achievements: Vec<u32>,
+}
+
+/// How many runs, and how they ended.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct RunTotals {
+    pub runs: u32,
+    pub won: u32,
+    pub died: u32,
+    pub abandoned: u32,
+    pub open: u32,
+}
+
+/// Every way the archive can be less than whole, said out loud.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(
+    tag = "kind",
+    rename_all = "camelCase",
+    rename_all_fields = "camelCase"
+)]
+pub enum RunsDiagnostic {
+    /// Documents has no folder for the game: nothing to watch, and no archive to build.
+    NoLogFolder,
+    /// The database will not open, and which case it is.
+    StoreUnavailable { reason: crate::StoreReason },
+    /// Rows that did not parse as events. They are counted, never hidden.
+    UnreadableEvents { count: u32 },
+    /// No catalog, so items have ids and no names.
+    NoCatalog,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub struct RunsView {
+    pub runs: Vec<RunView>,
+    pub totals: RunTotals,
+    pub diagnostics: Vec<RunsDiagnostic>,
+}
+
+/// What the command gathers before this crate can answer.
+pub struct RunsInputs<'a> {
+    /// Each source with its folded runs, in the order they should be shown.
+    pub sources: Vec<(RunSource, Vec<run::Run>)>,
+    pub catalog: Option<&'a Catalog>,
+    pub diagnostics: Vec<RunsDiagnostic>,
+}
+
+/// Where the fold gets item kinds when the game **is** installed. `run` must not depend on
+/// `catalog`; this is the one place that joins them.
+pub struct CatalogKinds<'a>(pub &'a Catalog);
+
+impl run::ItemKinds for CatalogKinds<'_> {
+    fn kind_of(&self, id: u32) -> run::ItemKind {
+        match collectible(self.0, id).map(|i| i.kind) {
+            Some(ItemKind::Active) => run::ItemKind::Active,
+            Some(ItemKind::Familiar) => run::ItemKind::Familiar,
+            // An item this catalog does not know accumulates rather than replacing: reading an
+            // unknown id as an active would silently drop whatever the player was carrying.
+            _ => run::ItemKind::Passive,
+        }
+    }
+}
+
+/// The item a log line means by an id.
+///
+/// The catalog is keyed by `(kind, id)` and a trinket can carry the same number as a
+/// collectible — but the line the fold reads is `Adding collectible N`, so the three
+/// collectible kinds are the only ones that can be meant. Looking a trinket up here would put
+/// the wrong name on a run.
+fn collectible(catalog: &Catalog, id: u32) -> Option<&catalog::Item> {
+    [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar]
+        .into_iter()
+        .find_map(|kind| catalog.item(kind, ItemId(id)))
+}
+
+pub fn runs_view(inputs: RunsInputs<'_>) -> RunsView {
+    let RunsInputs {
+        sources,
+        catalog,
+        mut diagnostics,
+    } = inputs;
+    if catalog.is_none() {
+        diagnostics.push(RunsDiagnostic::NoCatalog);
+    }
+    let named = |id: u32| -> RunItemRef {
+        RunItemRef {
+            id,
+            name: catalog
+                .and_then(|c| collectible(c, id).map(|i| c.text(&i.name, Language::English)))
+                .map(|s| s.to_string()),
+        }
+    };
+
+    let mut runs = Vec::new();
+    let mut totals = RunTotals::default();
+    for (source, folded) in sources {
+        for (ordinal, r) in folded.into_iter().enumerate() {
+            let outcome = match r.outcome {
+                run::Outcome::Won { ending } => {
+                    totals.won += 1;
+                    RunOutcomeView::Won { ending }
+                }
+                run::Outcome::Died { killer } => {
+                    totals.died += 1;
+                    RunOutcomeView::Died { killer }
+                }
+                run::Outcome::Abandoned => {
+                    totals.abandoned += 1;
+                    RunOutcomeView::Abandoned
+                }
+                run::Outcome::Open => {
+                    totals.open += 1;
+                    RunOutcomeView::Open
+                }
+            };
+            totals.runs += 1;
+            runs.push(RunView {
+                source: source.clone(),
+                ordinal: ordinal as u32,
+                character: r.character,
+                seed_words: r.seed_words,
+                online: r.seed_kind == run::SeedKind::Net,
+                outcome,
+                floors: r.floors.len() as u32,
+                starting_items: r.starting_items.iter().copied().map(named).collect(),
+                collected: r.collected.iter().copied().map(named).collect(),
+                held_active: r.held_active.map(named),
+                achievements: r.achievements,
+            });
+        }
+    }
+    RunsView {
+        runs,
+        totals,
+        diagnostics,
+    }
+}
