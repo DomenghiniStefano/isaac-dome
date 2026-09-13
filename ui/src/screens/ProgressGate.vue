@@ -4,7 +4,8 @@ import { computed } from 'vue'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useMessages } from '@/i18n'
-import { LoadStatus, useProfileStore } from '@/stores/profile'
+import { LoadStatus } from '@/stores/loadStatus'
+import { useProfileStore } from '@/stores/profile'
 import ProfileScreen from './ProfileScreen.vue'
 
 const profile = useProfileStore()

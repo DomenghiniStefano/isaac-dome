@@ -6,8 +6,8 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
 import { queueSummary, queuedIds } from '@/lib/plan/queueRows'
-import { useGraphStore } from '@/stores/graph'
-import { LoadStatus } from '@/stores/profile'
+import { useGraphStore } from '@/stores/views'
+import { LoadStatus } from '@/stores/loadStatus'
 import { useQueueStore } from '@/stores/queue'
 import ScreenHeader from './ScreenHeader.vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
@@ -41,7 +41,7 @@ const readable = computed((): boolean => {
 })
 const summary = computed(() => queueSummary(queue.view?.rows ?? []))
 const queued = computed(() => queuedIds(queue.view))
-const nodes = computed(() => graph.unlock?.nodes ?? [])
+const nodes = computed(() => graph.view?.unlock.nodes ?? [])
 </script>
 
 <template>
@@ -84,7 +84,7 @@ const nodes = computed(() => graph.unlock?.nodes ?? [])
         />
         <ProposalAside
           class="w-full lg:w-plan-aside lg:shrink-0"
-          :steps="graph.steps?.steps ?? []"
+          :steps="graph.view?.steps.steps ?? []"
           :queued="queued"
           :can-write="queue.view.storeAvailable"
           :busy="queue.busy"
