@@ -9,7 +9,7 @@ use crate::catalog_view::CatalogView;
 use crate::wiki::WikiInfo;
 
 /// An archive as the UI sees it.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct ArchiveView {
     pub name: String,
@@ -21,7 +21,7 @@ pub struct ArchiveView {
 ///
 /// `unpack::CompressionMode` has a newtype variant (`Unknown(u8)`), a shape the project's
 /// rules forbid past the IPC boundary. Here it becomes a tagged struct variant.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -83,7 +83,7 @@ fn base64(data: &[u8]) -> String {
 }
 
 /// Everything the verification screen shows about the extraction.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct ExtractionReport {
     pub archives: Vec<ArchiveView>,
@@ -98,7 +98,7 @@ pub struct ExtractionReport {
 }
 
 /// An icon already resolved: the frontend sees neither paths nor raw bytes.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct SpriteView {
     pub id: u32,

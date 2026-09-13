@@ -2,6 +2,7 @@
 
 mod catalog_view;
 mod collection;
+pub mod contract;
 mod error;
 pub mod for_tests;
 mod goals;
@@ -59,7 +60,8 @@ pub use resources::{
     SpriteView,
 };
 pub use search::{
-    search, SaveFlags, SearchDiagnostic, SearchHit, SearchIndex, SearchMatch, SearchView,
+    search, ProgressMark, SaveFlags, SearchDiagnostic, SearchHit, SearchIndex, SearchMatch,
+    SearchView,
 };
 pub use settings::{
     session_document_fits, snap_percent, Settings, DEFAULT_SCALE, MAX_SESSION_BYTES, SCALE_PERCENTS,

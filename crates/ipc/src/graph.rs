@@ -11,7 +11,7 @@ pub use crate::goals::{Goal, GoalId, TargetKey, UnlockTarget};
 /// How many "next steps" the screen shows. Presentation, not domain.
 pub const STEPS: usize = 5;
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct UnlockNode {
     pub achievement: AchievementRef,
@@ -31,7 +31,7 @@ pub struct UnlockNode {
 
 /// What a node is still missing. Typed because the type decides both the grouping and
 /// whether there is an achievement behind it at all.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -107,7 +107,7 @@ pub enum RequirementView {
 }
 
 /// One item of a threshold's set, with where the profile stands on it.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct ThresholdItemView {
     /// `itemKind` and not `kind`, for the same reason as `RequirementView::Item`.
@@ -121,7 +121,7 @@ pub struct ThresholdItemView {
 
 /// The twelve columns, as a value on the wire. Fieldless, so it is a bare camelCase string
 /// and the TypeScript is a union of values — the repo's rule, zero exceptions.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum MarkColumnView {
     MomsHeart,
@@ -140,14 +140,17 @@ pub enum MarkColumnView {
 
 /// A level inside a cell, named for its bit. `Second` is Ultra Greedier in the Greed
 /// column, measured; what it means elsewhere is not, and `hard` would ship that claim.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum MarkLevelView {
     Base,
     Second,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+/// One rule for the enums on this boundary: those whose variants carry different data are
+/// tagged on `kind`; those with no fields travel as a bare string. `UnlockTarget::Item`
+/// carries `item_kind`, not `kind`, because `kind` is the tag.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -174,7 +177,11 @@ pub enum AchievementRef {
     Unknown { slot: u32 },
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+/// `Partial` carries no count of the steps still missing, on purpose: with a requirement
+/// uninterpreted, or a node caught in a cycle, the transitive count is not knowable, and a zero
+/// would read as "nothing in the way". A node that is `Partial` must never be drawn as
+/// unlockable.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -201,7 +208,7 @@ pub enum GraphInfo {
 }
 
 /// `catalog::Origin` doesn't cross the IPC boundary: this is its view, like `ItemKindView` for `ItemKind`.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum OriginView {
     Rebirth,
@@ -210,7 +217,7 @@ pub enum OriginView {
     Repentance,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct UnlockView {
     pub nodes: Vec<UnlockNode>,
@@ -218,7 +225,7 @@ pub struct UnlockView {
     pub diagnostics: Vec<UnlockDiagnostic>,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct UnlockTotals {
     pub slots: u32,
@@ -227,7 +234,9 @@ pub struct UnlockTotals {
     pub unknown: u32,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+/// `NoAchievementSection` means section 1 of the save was not read: nodes and totals are
+/// zero, and that does not mean "zero achievements done".
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -246,7 +255,7 @@ pub enum UnlockDiagnostic {
     NoAchievementSection,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct NextSteps {
     pub sections: Vec<StepsSection>,
@@ -254,7 +263,7 @@ pub struct NextSteps {
 
 /// One reason, and the steps it produced. The screen draws the basis as a heading, because a
 /// row is worth showing only together with why it is being suggested.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct StepsSection {
     pub basis: StepsBasis,
@@ -267,7 +276,7 @@ pub struct StepsSection {
 /// `Closeness` is the basis this type was left open for. A counter is the **only**
 /// requirement that carries a distance — a mark is binary and a character is a wall — so it
 /// is the only one that can order a list by how near the profile is.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum StepsBasis {
     FanOut,
@@ -278,7 +287,7 @@ pub enum StepsBasis {
 /// about it. `target: None` means "not resolvable right now" — game not installed, or
 /// an id a patch has removed: the goal stays visible and is removed by its `key`,
 /// which is the only thing the database holds.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct GoalView {
     pub id: GoalId,
@@ -288,7 +297,7 @@ pub struct GoalView {
     pub note: Option<String>,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct PlanView {
     pub goals: Vec<GoalView>,
@@ -300,7 +309,11 @@ pub struct PlanView {
     pub store_available: bool,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+/// The plan degrades and says why. `store_available` is derived from the absence of
+/// `StoreUnavailable`: the UI uses it as a gate and reads the diagnostics for the text.
+/// `UnreadableGoal` and `UnresolvedGoal` carry the id, so the UI can offer to remove them.
+/// `NoCatalog` arrives once, not once per goal.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -322,7 +335,7 @@ pub enum PlanDiagnostic {
     UnresolvedGoal { id: GoalId },
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -333,7 +346,7 @@ pub enum PlanExpansion {
     Computed { steps: Vec<PlanStep> },
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct PlanStep {
     pub goal: GoalId,

@@ -29,7 +29,7 @@ fn default_scale() -> u16 {
 
 /// Persisted settings. The type and its serialization live here;
 /// reading and writing the file live in the app crate.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase", default)]
 pub struct Settings {
     pub active_profile_id: Option<ProfileId>,

@@ -56,7 +56,7 @@ pub struct GameInstall {
     pub updated_unix: Option<u64>,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, ts_rs::TS)]
 #[serde(rename_all = "snake_case")]
 pub enum Edition {
     Rebirth,
@@ -66,7 +66,8 @@ pub enum Edition {
     RepentancePlus,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[ts(rename = "InstalledDlc")]
 #[serde(rename_all = "snake_case")]
 pub enum Dlc {
     Afterbirth,
@@ -93,7 +94,9 @@ pub enum SaveSource {
     Override,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+/// The two save-file name prefixes, `rep_` and `rep+`. A domain enum: it keeps its own
+/// `snake_case` on the wire, unlike the ones the boundary defines for itself.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "snake_case")]
 pub enum SavePrefix {
     Rep,
