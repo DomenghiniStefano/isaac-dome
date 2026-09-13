@@ -57,7 +57,7 @@ export const it = {
   },
   collection: {
     intro:
-      'Gli oggetti che la collezione di questo salvataggio non ha ancora, per qualità e pool: non un muro di icone. Qualità e pool vengono dai file del gioco, non indovinati dal nome. I trinket non ci sono: il salvataggio non tiene la loro collezione.',
+      'Gli oggetti che questo salvataggio non ha ancora, con la loro qualità e i pool in cui compaiono. I trinket non ci sono: il gioco non tiene traccia di quali hai trovato.',
     state: {
       inCollection: 'in collezione',
       available: 'da trovare',
@@ -98,23 +98,22 @@ export const it = {
     activeFilters: 'filtri attivi',
     reset: 'Azzera',
     diagnostics: {
-      noCatalogTitle: 'Manca il catalogo',
+      noCatalogTitle: 'Non troviamo il gioco',
       noCatalog:
-        'Senza il gioco installato gli oggetti non hanno nome né qualità: la collezione del salvataggio si legge, ma non si sa di cosa.',
-      noCollectionSectionTitle: 'La collezione del salvataggio non si legge',
+        'Senza i file del gioco gli oggetti non hanno nome né qualità: sappiamo quanti ne hai, non quali. Installa The Binding of Isaac da Steam e riapri l’app.',
+      noCollectionSectionTitle: 'Il salvataggio non dice cosa hai raccolto',
       noCollectionSection:
-        "Ogni oggetto risulta non leggibile: non vuol dire che non l'hai mai trovato, vuol dire che quella parte del salvataggio non è stata letta.",
-      noAchievementSectionTitle:
-        'Gli achievement del salvataggio non si leggono',
+        'Ogni oggetto risulta non leggibile. Non vuol dire che non l’hai mai trovato: vuol dire che quella parte del salvataggio non si è aperta.',
+      noAchievementSectionTitle: 'Il salvataggio non dice cosa hai sbloccato',
       noAchievementSection:
-        'Non si sa quali oggetti siano ancora bloccati: quelli che dipendono da un achievement risultano non leggibili.',
+        'Non sappiamo dire quali oggetti siano ancora bloccati: quelli che arrivano da un achievement restano incerti.',
       itemsBeyondSlots:
-        '{count} oggetti del catalogo oltre la collezione del salvataggio, mostrati come non leggibili',
+        '{count} oggetti che il gioco conosce e questo salvataggio non nomina: li mostriamo come non leggibili',
     },
   },
   wiki: {
     intro:
-      "Il dataset è compilato nel binario: funziona senza gioco installato e senza salvataggio scelto. È l'unico pezzo dell'app che non dipende da niente.",
+      'Una copia della wiki di Isaac dentro l’app: oggetti, personaggi, boss, sfide e achievement. Funziona anche senza il gioco installato e senza aver scelto un salvataggio.',
     provenance: {
       title: 'Da dove viene',
       snapshot: 'Istantanea del',
@@ -131,7 +130,7 @@ export const it = {
     categories: 'Categorie',
     pages: 'pagine',
     noCatalog:
-      'Senza il gioco installato le pagine non hanno immagine: i nomi vengono dai titoli della wiki.',
+      'Senza il gioco installato le pagine non hanno immagine: le figure vengono dalla tua copia di Isaac, non dall’app.',
     search: 'cerca una pagina',
     noResults: 'Nessuna pagina con questo nome.',
     resetFilters: 'Azzera la ricerca',
@@ -192,19 +191,19 @@ export const it = {
     },
     states: {
       unknownTitle: 'Pagina sconosciuta',
-      unknown: 'Il dataset non conosce questa pagina.',
+      unknown: 'Questa pagina non è nella nostra copia della wiki.',
       unknownHint:
-        'La chiave della tab non corrisponde a nessuna pagina del dataset incorporato: può venire da una versione diversa del dataset.',
-      noSections: 'Questa pagina non ha sezioni di testo nel dataset.',
+        'Può essere stata aggiunta dopo: la copia risale alla data qui sopra e si aggiorna con l’app.',
+      noSections: 'Di questa pagina abbiamo solo la scheda, senza testo.',
       failedTitle: 'La Wiki non ha risposto',
-      missingTitle: 'Il dataset della wiki non si è caricato',
+      missingTitle: 'La Wiki non si è aperta',
       missing:
-        'Il binario contiene un dataset che non si legge: la Wiki non ha pagine da mostrare.',
+        'La copia della wiki dentro l’app non si legge, quindi non c’è nessuna pagina da mostrare. Riavviare l’app di solito basta; se continua, è un problema da segnalare.',
     },
   },
   search: {
     intro:
-      "Un indice solo su tutto quello che l'app conosce per nome o per testo: nomi del gioco, condizioni degli achievement, titoli e testo delle pagine wiki.",
+      'Una ricerca sola su tutto: nomi del gioco, condizioni degli achievement, titoli e testo delle pagine della wiki.',
     placeholder: 'Cerca schermate, achievement, oggetti, pagine wiki…',
     empty: 'Nessun risultato.',
     allResults: 'Tutti i risultati ({count})',
@@ -227,19 +226,19 @@ export const it = {
     diagnostics: {
       noProfileTitle: 'Nessun profilo scelto',
       noCatalogTitle: 'Gioco non installato',
-      noWikiTitle: 'Dataset della wiki non caricato',
-      noAchievementSectionTitle: 'Sezione degli achievement non letta',
-      noCollectionSectionTitle: 'Sezione della collezione non letta',
+      noWikiTitle: 'La Wiki non si è aperta',
+      noAchievementSectionTitle: 'Il salvataggio non dice cosa hai sbloccato',
+      noCollectionSectionTitle: 'Il salvataggio non dice cosa hai raccolto',
       noProfile:
-        'I risultati non dicono cosa hai già fatto: scegline uno dalle impostazioni.',
+        'I risultati non dicono cosa hai già fatto: scegli un salvataggio dalle impostazioni.',
       noCatalog:
         'Si cerca solo nei titoli e nel testo della wiki, senza immagini, e nessun risultato apre Unlock o la Collezione.',
       noWiki:
         'Si cerca solo nei nomi del gioco, e nessun risultato apre una pagina.',
       noAchievementSection:
-        'Per gli achievement non si sa cosa è fatto: non letta non è non fatta.',
+        'Accanto agli achievement non compare "fatto" o "da fare". Non vuol dire che non li hai: vuol dire che non lo sappiamo.',
       noCollectionSection:
-        'Per gli oggetti non si sa cosa hai già: non letta non è non trovata.',
+        'Accanto agli oggetti non compare se ce l’hai già. Non vuol dire di no: vuol dire che non lo sappiamo.',
     },
   },
   appearance: {
@@ -293,7 +292,7 @@ export const it = {
   },
   plan: {
     intro:
-      "Gli obiettivi sono l'insieme di ciò che vuoi, la coda è l'ordine in cui intendi farlo: le righe che hai chiesto, più i prerequisiti che si sono tirate dietro. Trascini una riga e la coda si ripara attorno al vincolo: i prerequisiti sono un muro contro cui si ferma, non un rifiuto.",
+      'L’ordine in cui vuoi fare le cose: quelle che hai chiesto, più quello che serve prima. Trascina una riga dove vuoi — se le manca un prerequisito si ferma appena sotto, invece di rifiutare lo spostamento.',
     summary: {
       rows: 'righe',
       wanted: 'chieste',
@@ -301,8 +300,8 @@ export const it = {
     },
     queueTitle: 'La coda',
     hint: {
-      idle: 'trascina per riordinare — una mossa ripara, non fallisce',
-      dragging: 'rilascia dove vuoi: la coda si ripara',
+      idle: 'trascina per riordinare — nessuno spostamento viene rifiutato',
+      dragging: 'rilascia dove vuoi: la coda si sistema da sola',
       stoppedUnder: 'si è fermata sotto',
       prerequisite: 'è un prerequisito',
     },
@@ -322,7 +321,7 @@ export const it = {
       closed: 'righe chiuse giocando',
       wanted: 'fra quelle chieste',
     },
-    unresolved: 'non è più nel catalogo',
+    unresolved: 'il gioco non lo conosce più',
     alerts: {
       storeUnavailableTitle: 'Il piano non è disponibile',
       unreadableTitle: 'La coda salvata non si legge con questa versione',
@@ -330,7 +329,7 @@ export const it = {
         'Resta com’è nel file e non viene sovrascritta: una versione più recente dell’app potrebbe saperla leggere.',
       noCatalogTitle: 'Serve il gioco installato',
       noCatalog:
-        'Senza catalogo non si sa quale achievement sia ogni riga né cosa le manchi: la coda resta salvata e torna appena il gioco c’è.',
+        'Senza i file del gioco non sappiamo che achievement sia ogni riga né cosa le manchi. La coda resta salvata: torna com’era appena il gioco c’è.',
       goalsPendingTitle: 'Obiettivi salvati da importare: {count}',
       goalsPending:
         'Obiettivi salvati prima che esistesse la coda: nessuno li sposta da solo.',
@@ -359,7 +358,7 @@ export const it = {
         'Personaggi che hanno iniziato tutte le loro celle leggibili: chi ha celle non leggibili risulta completo su meno colonne.',
       unknown: 'non leggibili',
       unknownExplain:
-        'Celle la cui colonna non è localizzata nel salvataggio per quel personaggio. Non vuol dire "mai fatto": non lo sappiamo leggere.',
+        'Caselle che nel salvataggio non sappiamo ancora dove stiano. Non vuol dire "mai fatto": vuol dire che non lo sappiamo dire.',
     },
     card: {
       title: 'Matrice dei marchi',
@@ -386,12 +385,11 @@ export const it = {
       normal: 'normale',
       hard: 'hard',
       both: 'normale e hard',
-      unknown:
-        'non leggibile: la colonna non è localizzata per questo personaggio',
-      unexpected: 'valore fuori da quelli previsti:',
+      unknown: 'non lo sappiamo dire per questo personaggio',
+      unexpected: 'un valore che non ci aspettavamo:',
     },
     nothingReadable:
-      'Il salvataggio non lascia leggere nessun marchio: la sezione dei contatori manca o è troncata.',
+      'Di questo salvataggio non riusciamo a leggere nessun marchio: la parte che li contiene manca o si interrompe a metà.',
   },
   // La schermata di atterraggio: cosa ottieni, come, perché conviene, e l'azione. L'intro
   // dice *cos'è* la lista, non come è stata calcolata: il calcolo sta nelle promesse della
@@ -432,7 +430,9 @@ export const it = {
       done: 'fatto',
       now: 'sbloccabile ora',
       blocked: 'bloccato da',
-      partial: 'grafo parziale',
+      // Non "grafo parziale": chi legge non sa cosa sia un grafo, e la cosa che deve
+      // sapere è che la risposta non c'è — non come mai.
+      partial: 'non sappiamo dirlo',
     },
     why: {
       title: 'Cosa gli manca',
@@ -443,7 +443,7 @@ export const it = {
       gate: 'Condizioni',
       mark: 'Marchi di completamento',
       counter: 'Boss da battere',
-      unknown: 'Requisiti che non sappiamo interpretare',
+      unknown: 'Condizioni che non sappiamo leggere',
     },
     kinds: {
       passive: 'oggetto passivo',
@@ -453,13 +453,13 @@ export const it = {
       character: 'personaggio',
       boss: 'boss',
       challenge: 'sfida',
-      nothing: 'niente di catalogato',
+      nothing: 'niente che il gioco nomini',
     },
     stateName: {
       done: 'fatto',
       now: 'sbloccabile ora',
       blocked: 'bloccato',
-      partial: 'grafo parziale',
+      partial: 'non sappiamo dirlo',
     },
     // Una cella della matrice: il boss e il personaggio con cui va battuto.
     markName: '{boss} con {character}',
@@ -472,7 +472,7 @@ export const it = {
   },
   unlock: {
     intro:
-      'Ogni nodo del grafo, filtrabile. Un filtro conta più degli altri: sbloccabile ora.',
+      'Tutti gli achievement del gioco, da filtrare come vuoi. Il filtro che conta più degli altri è "sbloccabile ora".',
     rows: 'righe',
     search: 'cerca nome, condizione o cosa sblocca',
     sortBy: 'ordina per',
@@ -500,19 +500,19 @@ export const it = {
       state: 'Stato',
       fanOut: 'Sblocca',
     },
-    unlocksNothing: 'niente di catalogato',
-    noCondition: 'nessuna condizione nel file',
+    unlocksNothing: 'niente che il gioco nomini',
+    noCondition: 'non lo sappiamo',
     diagnostics: {
-      noCatalogTitle: 'Manca il catalogo',
+      noCatalogTitle: 'Non troviamo il gioco',
       noCatalog:
-        'Senza il gioco installato gli achievement non hanno nome né condizione: le righe dicono solo quali slot sono fatti.',
-      noAchievementSectionTitle: 'La sezione degli achievement non si legge',
+        'Senza i file del gioco gli achievement non hanno nome né condizione: le righe dicono soltanto quali hai già fatto.',
+      noAchievementSectionTitle: 'Il salvataggio non dice cosa hai sbloccato',
       noAchievementSection:
-        'Zero righe non vuol dire zero achievement fatti: vuol dire che quella parte del salvataggio non è stata letta.',
+        'Zero righe fatte non vuol dire zero achievement: vuol dire che quella parte del salvataggio non si è aperta.',
       slotsBeyondCatalog:
-        '{count} slot del salvataggio oltre il catalogo, mostrati come achievement sconosciuti',
+        '{count} achievement che il salvataggio conosce e la tua copia del gioco no: probabilmente sono di una versione più recente',
       catalogBeyondSlots:
-        '{count} achievement del catalogo oltre il salvataggio, che non compaiono',
+        '{count} achievement che il gioco ha e questo salvataggio non nomina: non compaiono nella lista',
     },
   },
   gate: {
@@ -529,8 +529,8 @@ export const it = {
     intro:
       'Scegli il salvataggio con cui stai giocando: ogni numero delle altre schermate si legge su questo. Puoi cambiarlo quando vuoi.',
     chain: {
-      title: 'La catena dei tre requisiti',
-      summary: 'ogni livello può mancare da solo',
+      title: 'Le tre cose che servono',
+      summary: 'può mancarne una sola',
       steam: 'Steam',
       game: 'Gioco',
       saves: 'Salvataggi',
@@ -544,7 +544,7 @@ export const it = {
     none: {
       title: 'Nessun salvataggio trovato',
       steamNotFound:
-        'Steam non è nel registro di sistema: senza Steam non troviamo la cartella del gioco, e senza quella non troviamo i salvataggi.',
+        'Non troviamo Steam su questo computer, e partiamo da lì per arrivare alla cartella del gioco e poi ai salvataggi.',
       gameNotFound:
         'Steam c’è, ma il gioco non è in nessuna delle sue librerie: senza la cartella del gioco non troviamo i salvataggi.',
       noSaves:
@@ -594,7 +594,7 @@ export const it = {
     read: {
       title: 'Cosa siamo riusciti a leggere',
       sections: 'sezioni',
-      note: 'Alcune sezioni non sappiamo ancora cosa contengano, e i conteggi cambiano a ogni patch: nessun numero è cablato, né qui né nel resto dell’app. Le schermate mostrano quello che il file dichiara oggi.',
+      note: 'Di alcune parti del salvataggio non sappiamo ancora cosa contengano, e le quantità cambiano a ogni patch del gioco. Quello che vedi qui e nel resto dell’app è sempre quanto dichiara il tuo file, mai un numero deciso da noi.',
       diagnostics: 'Il file contiene qualcosa che non ci aspettavamo',
     },
     saveDiagnostics: {
