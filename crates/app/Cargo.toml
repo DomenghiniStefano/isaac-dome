@@ -28,6 +28,8 @@ catalog = { path = "../catalog" }
 graph = { path = "../graph" }
 plan = { path = "../plan" }
 store = { path = "../store" }
+log-watch = { path = "../log-watch" }
+run = { path = "../run" }
 wiki = { path = "../wiki" }
 tauri-plugin-single-instance = "2.4.4"
 tauri-plugin-notification = "2.4.0"

@@ -6,6 +6,7 @@ license.workspace = true
 description = "Reads the game's logs from disk: an offset, a read, and a watcher. Every judgment lives in `run`."
 
 [dependencies]
+notify = "8"
 run = { path = "../run" }
 store = { path = "../store" }
 
