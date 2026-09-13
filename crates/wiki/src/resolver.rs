@@ -433,6 +433,12 @@ pub(crate) mod fixtures {
                     ("id", "25"),
                     ("alias", "Breakfast"),
                 ]),
+                // Named by `{{Book of Virtues synergy}}`, which resolves it by hand.
+                row(&[
+                    ("_pageName", "Book of Virtues"),
+                    ("id", "584"),
+                    ("alias", "Book of Virtues"),
+                ]),
                 // Afterbirth+'s collectible 474: no longer exists in Repentance+.
                 row(&[
                     ("_pageName", "Tonsil"),
