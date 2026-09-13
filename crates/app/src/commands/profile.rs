@@ -7,6 +7,7 @@ use ipc::{IpcError, ProfileId, Settings, SetupState};
 
 use crate::events::{announce, PROFILE_CHANGED, SETTINGS_CHANGED};
 use crate::settings_file;
+use crate::state::StoreState;
 
 #[tauri::command]
 pub fn setup_state(app: AppHandle) -> Result<SetupState, IpcError> {
@@ -52,6 +53,37 @@ pub fn set_scale(app: AppHandle, percent: u16) -> Result<Settings, IpcError> {
     let settings = settings_file::load(&app).with_scale(percent);
     settings_file::save(&app, &settings)?;
     // One interface, one size: the other windows resize with this one.
+    announce(&app, SETTINGS_CHANGED);
+    Ok(settings)
+}
+
+/// Whether the app stays in the notification area when the last window closes.
+#[tauri::command]
+pub fn set_stay_in_background(app: AppHandle, stay: bool) -> Result<Settings, IpcError> {
+    let settings = settings_file::load(&app).with_stay_in_background(stay);
+    settings_file::save(&app, &settings)?;
+    announce(&app, SETTINGS_CHANGED);
+    Ok(settings)
+}
+
+/// Whether a window born with nothing owed to it opens on the last session's tabs.
+///
+/// Turning it off clears what was stored: the app should not keep a record the user has just
+/// said they don't want. A store that won't open is not a reason to refuse the setting —
+/// nothing will be read back either way.
+#[tauri::command]
+pub fn set_resume_tabs(
+    app: AppHandle,
+    store: tauri::State<'_, StoreState>,
+    resume: bool,
+) -> Result<Settings, IpcError> {
+    let settings = settings_file::load(&app).with_resume_tabs(resume);
+    settings_file::save(&app, &settings)?;
+    if !resume {
+        if let Ok(guard) = store.lock(&app) {
+            let _ = guard.set_session(None);
+        }
+    }
     announce(&app, SETTINGS_CHANGED);
     Ok(settings)
 }
