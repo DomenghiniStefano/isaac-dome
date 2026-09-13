@@ -9,14 +9,13 @@ import type { TabLocation } from '@/router/routeTable'
 import type { IncomingHover } from '@/components/shell/tabs'
 import { WindowMessageKind } from '@/lib/window/messages'
 import {
-  canDetach,
   closeTab,
-  detachTab,
   firstState,
   insertTab,
   moveTab,
   navigateTab,
   openTab,
+  removeTab,
   seedState,
   selectTab,
   tabSeed,
@@ -87,9 +86,67 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     return tab ? tabSeed(tab) : null
   }
 
-  // Whether a tab can leave this window at all. A window holding one tab already *is* that
-  // tab: the gesture is refused before it starts.
-  const canTear = computed(() => canDetach(state.value))
+  // A tab that has left the strip and has not landed yet. It leaves the moment the drag tears
+  // it off, not at the release (owner, 2026-09-13): what you are dragging is no longer in the
+  // bar, which is what a browser does and what the owner asked for. Until the drag ends it
+  // belongs to nobody, and the window it left stays open — even empty — because it can still
+  // come back.
+  const inFlight = ref<{ seed: TabSeed; index: number } | null>(null)
+
+  const liftOut = (id: string): boolean => {
+    const out = removeTab(state.value, id)
+    if (!out) return false
+    inFlight.value = { seed: out.seed, index: out.index }
+    state.value = out.state
+    return true
+  }
+
+  // The drag was called off, or the pointer was lost: the tab goes back where it sat.
+  const putBack = (): void => {
+    const flight = inFlight.value
+    if (!flight) return
+    inFlight.value = null
+    state.value = insertTab(state.value, flight.index, {
+      id: nextId(),
+      ...flight.seed,
+    })
+  }
+
+  // A window with nothing left in it. The first window keeps its landing tab, exactly as
+  // closing its last tab already does; any other has nothing left to be, and closes.
+  const closeIfEmpty = async (): Promise<void> => {
+    if (state.value.tabs.length > 0) return
+    if (!windowPort.isMain()) {
+      await windowPort.closeSelf()
+      return
+    }
+    const tab = fresh()
+    state.value = { tabs: [tab], activeId: tab.id }
+  }
+
+  // The tab landed on a strip — possibly this window's own, which is a landing like any other
+  // now that the tab has already left it.
+  const settleTo = async (target: string, at: Point): Promise<void> => {
+    const flight = inFlight.value
+    if (!flight) return
+    inFlight.value = null
+    await windowPort.send(target, {
+      kind: WindowMessageKind.Docked,
+      tab: flight.seed,
+      at,
+    })
+    if (target !== windowPort.label()) await windowPort.focus(target)
+    await closeIfEmpty()
+  }
+
+  // The tab landed on the bare desktop: a window of its own, there.
+  const settleInNewWindow = async (at: Point, size: Point): Promise<void> => {
+    const flight = inFlight.value
+    if (!flight) return
+    inFlight.value = null
+    await openWindowWith([flight.seed], at, size)
+    await closeIfEmpty()
+  }
 
   // A tab from another window, hovering over this strip. The point arrives in desktop pixels
   // because the sender cannot know our scale factor; the geometry to convert it is ours, read
@@ -122,49 +179,6 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     clearIncoming()
   }
 
-  // A tab leaving for another window. **The last tab may leave this way**: joining a window
-  // that exists is not the same gesture as opening one, and a window that gives its last tab
-  // away has nothing left to be — so it closes, unless it is `main`, which keeps a fresh tab
-  // the way closing the last one already does.
-  //
-  // The order is load-bearing: the target is told first, and only then does the tab leave
-  // here. A target that never answers costs nothing — the tab is still in this window.
-  const giveAway = async (
-    id: string,
-    target: string,
-    at: Point,
-  ): Promise<boolean> => {
-    const tab = state.value.tabs.find((t) => t.id === id)
-    if (!tab) return false
-    await windowPort.send(target, {
-      kind: WindowMessageKind.Docked,
-      tab: tabSeed(tab),
-      at,
-    })
-    const last = state.value.tabs.length === 1
-    state.value =
-      last && !windowPort.isMain() ? empty : closeTab(state.value, id, fresh)
-    await windowPort.focus(target)
-    if (last && !windowPort.isMain()) await windowPort.closeSelf()
-    return true
-  }
-
-  // A tab leaving for a window of its own. Here the last tab is refused: that window already
-  // *is* that tab alone, and tearing it off would close one window to open the same one. The
-  // window is created before the tab leaves, so a creation that fails leaves the tab where it
-  // was.
-  const tearOffTo = async (
-    id: string,
-    at: Point,
-    size: Point,
-  ): Promise<boolean> => {
-    const out = detachTab(state.value, id)
-    if (!out) return false
-    await openWindowWith([tabSeed(out.tab)], at, size)
-    state.value = out.state
-    return true
-  }
-
   return {
     tabs,
     activeId,
@@ -177,14 +191,15 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     navigate,
     seed,
     seedAt,
-    canTear,
     incoming,
     aimIncoming,
     clearIncoming,
     aim,
     dock,
-    giveAway,
-    tearOffTo,
+    liftOut,
+    putBack,
+    settleTo,
+    settleInNewWindow,
     openWindowWith,
   }
 })

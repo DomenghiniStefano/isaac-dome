@@ -76,9 +76,32 @@ export const insertTab = (
   return { tabs, activeId: tab.id }
 }
 
-// A window holding one tab *is* that tab: taking it out would leave a bar with nothing in it,
-// the one state the rules forbid. The gesture is refused before it starts rather than repaired
-// after — "the bar is never empty", one level up.
+// A tab lifted out of the strip and not yet anywhere: what it was, and where it sat. The bar it
+// left **may be empty**, and that is the difference from every other rule here — the window
+// stays open because the tab can still come back. What becomes of an empty window is decided
+// when the drag ends (`stores/tabs.ts`), not here.
+export interface Removed {
+  seed: TabSeed
+  index: number
+  state: TabsState
+}
+
+export const removeTab = (state: TabsState, id: string): Removed | null => {
+  const index = state.tabs.findIndex((t) => t.id === id)
+  const tab = state.tabs[index]
+  if (!tab) return null
+  const tabs = state.tabs.filter((t) => t.id !== id)
+  // The neighbour rule of `closeTab`, without its floor: no tabs means no active tab.
+  const activeId =
+    id === state.activeId
+      ? (tabs[Math.min(index, tabs.length - 1)]?.id ?? '')
+      : state.activeId
+  return { seed: tabSeed(tab), index, state: { tabs, activeId } }
+}
+
+// A window holding one tab *is* that tab: taking it out would leave a bar with nothing in it.
+// Kept for the gestures that must refuse it; **tearing off is no longer one of them** (owner,
+// 2026-09-13): a tab can be dragged out of a window that holds only it.
 export const canDetach = (state: TabsState): boolean => state.tabs.length > 1
 
 export interface Detached {

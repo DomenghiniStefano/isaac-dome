@@ -10,6 +10,7 @@ import {
   moveTab,
   navigateTab,
   openTab,
+  removeTab,
   seedState,
   selectTab,
   tabLabel,
@@ -173,6 +174,29 @@ describe('a tab that leaves, and one that arrives', () => {
     const seed = tabSeed(someTab('a'))
     expect('id' in seed).toBe(false)
     expect({ id: 'b', ...seed }.id).toBe('b')
+  })
+
+  it('lifting a tab out leaves the bar without it, and says where it was', () => {
+    const out = removeTab(three(), 'b')
+    expect(out?.index).toBe(1)
+    expect(out ? ids(out.state) : null).toEqual(['a', 'c'])
+    expect(out?.state.activeId).toBe('c')
+    expect(out?.seed).toEqual(tabSeed(three().tabs[1] as Tab))
+  })
+
+  // The difference from `detachTab`: a tab in flight has left the strip but has not landed
+  // anywhere, so the bar it left **may be empty** — the window stays open because the tab can
+  // still come back. What happens to an empty window is decided when the drag ends, not here.
+  it('lets the last tab leave, and leaves the bar empty', () => {
+    const one: TabsState = { tabs: [someTab('a')], activeId: 'a' }
+    const out = removeTab(one, 'a')
+    expect(out?.state.tabs).toEqual([])
+    expect(out?.state.activeId).toBe('')
+    expect(out?.index).toBe(0)
+  })
+
+  it('lifting a tab that is not there answers null', () => {
+    expect(removeTab(three(), 'zzz')).toBeNull()
   })
 
   it('a seed with nothing in it still leaves a bar with one tab', () => {
