@@ -987,3 +987,46 @@ fn a_mark_is_not_a_distance_and_stays_in_the_fan_out_section() {
     assert_eq!(slots_of(&s, StepsBasis::FanOut), vec![7]);
     assert!(slots_of(&s, StepsBasis::Closeness).is_empty());
 }
+
+/// `rename_all` on the enum renames the variants, not the fields inside them. Without
+/// `rename_all_fields` the wire would say `at_least` and `item_kind`, TypeScript would read
+/// `undefined`, and nothing would fail — the silent shape bug this repo has already paid
+/// for. Pinned on the JSON, like every other variant here.
+#[test]
+fn the_threshold_view_is_camel_case_on_the_wire() {
+    use ipc::{ItemKindView, RequirementView, ThresholdItemView};
+    let v = RequirementView::Threshold {
+        transformation: 0,
+        label: "Guppy".into(),
+        current: 2,
+        at_least: 3,
+        of: vec![ThresholdItemView {
+            item_kind: ItemKindView::Passive,
+            id: 211,
+            name: "Guppy's Head".into(),
+            unlocked: true,
+            page: None,
+        }],
+        unresolved: 0,
+        page: None,
+    };
+    assert_eq!(
+        serde_json::to_value(&v).unwrap(),
+        json!({
+            "kind": "threshold",
+            "transformation": 0,
+            "label": "Guppy",
+            "current": 2,
+            "atLeast": 3,
+            "of": [{
+                "itemKind": "passive",
+                "id": 211,
+                "name": "Guppy's Head",
+                "unlocked": true,
+                "page": null
+            }],
+            "unresolved": 0,
+            "page": null
+        })
+    );
+}

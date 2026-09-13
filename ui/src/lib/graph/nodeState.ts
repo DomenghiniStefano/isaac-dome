@@ -68,6 +68,7 @@ export const RequirementKind = {
   Gate: 'gate',
   Mark: 'mark',
   Counter: 'counter',
+  Threshold: 'threshold',
   Unknown: 'unknown',
 } as const
 export type RequirementKind =
@@ -81,6 +82,7 @@ const requirementOrder: RequirementKind[] = [
   RequirementKind.Gate,
   RequirementKind.Mark,
   RequirementKind.Counter,
+  RequirementKind.Threshold,
   RequirementKind.Unknown,
 ]
 
@@ -126,10 +128,38 @@ const requirementName = (
     // The label is already the boss's own name, in English like every game name.
     case 'counter':
       return requirement.label
+    case 'threshold':
+      return t('graph.thresholdName', {
+        name: requirement.label,
+        current: requirement.current,
+        atLeast: requirement.atLeast,
+      })
     default:
       return assertNever(requirement)
   }
 }
+
+// A threshold is the one requirement that is a set: naming it alone would say "you need
+// three Guppy items" and leave the player to go and find out which. So it draws as its own
+// row plus one per item still locked — the ones already unlocked are not in the way, and
+// listing them would bury the answer in the question.
+const thresholdEntries = (
+  requirement: Extract<RequirementView, { kind: 'threshold' }>,
+  t: Translate,
+): RequirementEntry[] => [
+  {
+    key: `threshold-${requirement.transformation}`,
+    name: requirementName(requirement, t),
+    location: requirement.page ? pageLocation(requirement.page) : null,
+  },
+  ...requirement.of
+    .filter((item) => !item.unlocked)
+    .map((item) => ({
+      key: `threshold-${requirement.transformation}-${item.id}`,
+      name: item.name,
+      location: item.page ? pageLocation(item.page) : null,
+    })),
+]
 
 // A key that is stable per row and unique in the list: the kind and what identifies it. A
 // gate, a counter and an uninterpreted label have only their text, and two of them never
@@ -143,6 +173,8 @@ const requirementKey = (requirement: RequirementView): string => {
       return `${requirement.kind}-${requirement.id}`
     case 'mark':
       return `mark-${requirement.character}-${requirement.column}`
+    case 'threshold':
+      return `threshold-${requirement.transformation}`
     case 'gate':
     case 'counter':
     case 'unknown':
@@ -169,6 +201,9 @@ const requirementLocation = (
     case 'counter':
     case 'unknown':
       return null
+    // Its own page, which the dataset has had since the sixteen were imported.
+    case 'threshold':
+      return requirement.page ? pageLocation(requirement.page) : null
     default:
       return assertNever(requirement)
   }
@@ -199,11 +234,19 @@ export const missingGroups = (
       ? [
           {
             kind,
-            entries: of.map((r) => ({
-              key: requirementKey(r),
-              name: requirementName(r, t),
-              location: requirementLocation(r),
-            })),
+            // `flatMap`, because a threshold is a set and answers with several rows where
+            // every other kind answers with one.
+            entries: of.flatMap((r) =>
+              r.kind === 'threshold'
+                ? thresholdEntries(r, t)
+                : [
+                    {
+                      key: requirementKey(r),
+                      name: requirementName(r, t),
+                      location: requirementLocation(r),
+                    },
+                  ],
+            ),
           },
         ]
       : []

@@ -219,6 +219,9 @@ const infoOf = (list: Page[]): WikiInfo => {
     bosses: count('entity'),
     challenges: count('challenge'),
     characters: count('character'),
+    // The pack has no transformation pages: a fixture that invented a number here would
+    // show the verification screen a count nothing produced.
+    transformations: count('transformation'),
   }
   return real?.kind === 'loaded'
     ? { ...real, counts }
