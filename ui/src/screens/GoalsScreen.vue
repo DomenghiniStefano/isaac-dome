@@ -6,10 +6,15 @@ import QueueError from '@/components/plan/QueueError.vue'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
+import { useRoute } from 'vue-router'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
+import { useWant } from '@/composables/useWant'
 import { useMessages } from '@/i18n'
 import { NodeState } from '@/lib/graph/nodeState'
 import { nodeSlot } from '@/lib/graph/unlockFilter'
+import { wantBanner, wantBlocks } from '@/lib/graph/wantBlocks'
+import { wantLocation, wantOf } from '@/lib/graph/wantLocation'
+import type { Target } from '@/lib/ipc/types'
 import { planNow } from '@/lib/plan/planNow'
 import { canQueue, isQueued, queuedIds } from '@/lib/plan/queueRows'
 import { RouteName } from '@/router/routeTable'
@@ -20,13 +25,39 @@ import { LoadStatus } from '@/stores/loadStatus'
 import { useQueueStore } from '@/stores/queue'
 import ScreenHeader from './ScreenHeader.vue'
 import GoalCard from './goals/GoalCard.vue'
+import WantAnswer from './goals/WantAnswer.vue'
+import WantBar from './goals/WantBar.vue'
 import { sectionTitle } from './goals/sectionTitle'
 import ProfileError from './profile/ProfileError.vue'
 
 const graph = useGraphStore()
 const queue = useQueueStore()
 const tabs = useTabsStore()
+const route = useRoute()
 const { t } = useMessages()
+
+// B37: the want lives in the URL, so back, forward and tab restore all reach it, and a link
+// from anywhere can ask the question without this screen knowing who called.
+const target = computed(() => wantOf(route.query as TabLocation['query']))
+// Destructured on purpose: a template unwraps refs that are setup bindings, not refs sitting
+// inside an object, and `asked.view` there would be the ref itself.
+const {
+  view: wantView,
+  status: wantStatus,
+  error: wantError,
+  load: reloadWant,
+} = useWant(target)
+const blocks = computed(() =>
+  wantView.value === null ? [] : wantBlocks(wantView.value, queued.value),
+)
+const banner = computed(() =>
+  wantView.value === null ? null : wantBanner(wantView.value),
+)
+const ask = (wanted: Target) => {
+  const location = wantLocation(wanted)
+  if (location !== null) tabs.navigate(location)
+}
+const stopAsking = () => tabs.navigate({ name: RouteName.Goals })
 
 // The same cap a section has: this is a reminder, not the queue.
 const PLAN_ROWS = 5
@@ -69,8 +100,31 @@ const open = (location: TabLocation, newTab: boolean) => {
     <ScreenHeader :icon="ListChecksIcon" :title="t('routes.goals')">{{
       t('goals.intro')
     }}</ScreenHeader>
+    <!-- B37: the other end of the same question. While a want is named the recommendations
+         step aside — the page answers one question at a time — and clearing the bar brings
+         them back. -->
+    <WantBar @pick="ask" @clear="stopAsking" />
+    <template v-if="target !== null">
+      <ProfileError
+        v-if="wantStatus === LoadStatus.Failed"
+        :error="wantError"
+        @retry="reloadWant()"
+      />
+      <template v-else-if="wantView">
+        <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
+        <WantAnswer
+          :blocks="blocks"
+          :banner="banner"
+          :can-write="canWrite"
+          :busy="queue.busy"
+          @queue="queue.add($event)"
+          @navigate="open"
+        />
+      </template>
+      <Skeleton v-else class="h-28 w-full" />
+    </template>
     <ProfileError
-      v-if="graph.status === LoadStatus.Failed"
+      v-else-if="graph.status === LoadStatus.Failed"
       :error="graph.error"
       @retry="graph.load()"
     />
