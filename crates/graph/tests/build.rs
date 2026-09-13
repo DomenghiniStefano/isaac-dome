@@ -32,7 +32,7 @@ fn rules(requirements: &str, corrections: &str) -> Rules {
 /// A requirements file with one achievement carrying one ref.
 fn one_ref(achievement: u32, target: &str, targets: &str) -> String {
     format!(
-        r#"{{"schemaVersion":1,
+        r#"{{"schemaVersion":2,
             "generatedFrom":{{"snapshotAt":"","maxRevid":0}},
             "achievements":{{"{achievement}":{{"refs":[{target}]}}}},
             "targets":[{targets}]}}"#
@@ -50,7 +50,7 @@ fn a_character_requirement_becomes_an_edge_to_its_unlocking_achievement() {
                 r#"{"target":{"kind":"character","id":1},"label":"Magdalene"}"#,
                 "",
             ),
-            r#"{"schemaVersion":1}"#,
+            r#"{"schemaVersion":2}"#,
         ),
     );
     let node = g.node(2).expect("node 2");
@@ -73,7 +73,7 @@ fn content_available_from_the_start_produces_no_edge() {
                 r#"{"target":{"kind":"character","id":0},"label":"Isaac"}"#,
                 "",
             ),
-            r#"{"schemaVersion":1}"#,
+            r#"{"schemaVersion":2}"#,
         ),
     );
     let node = g.node(2).expect("node 2");
@@ -98,7 +98,7 @@ fn an_uncurated_target_counts_as_unknown_on_its_node() {
                 r#"{"target":{"kind":"stage","name":"Nowhere"},"label":"Nowhere"}"#,
                 r#"{"key":"stage:Nowhere","label":"Nowhere","uses":1,"verdictRequired":true}"#,
             ),
-            r#"{"schemaVersion":1}"#,
+            r#"{"schemaVersion":2}"#,
         ),
     );
     assert_eq!(
@@ -118,7 +118,7 @@ fn a_gate_edge_comes_from_the_verdict() {
                 r#"{"target":{"kind":"stage","name":"The Void"},"label":"The Void"}"#,
                 r#"{"key":"stage:The Void","label":"The Void","uses":1,"verdictRequired":true}"#,
             ),
-            r#"{"schemaVersion":1,
+            r#"{"schemaVersion":2,
                 "verdicts":{"stage:The Void":{"behind":{"achievement":1}}}}"#,
         ),
     );
@@ -136,7 +136,7 @@ fn a_ref_straight_to_an_achievement_is_an_edge_on_its_own() {
                 r#"{"target":{"kind":"achievement","id":1},"label":"Magdalene"}"#,
                 "",
             ),
-            r#"{"schemaVersion":1}"#,
+            r#"{"schemaVersion":2}"#,
         ),
     );
     assert_eq!(
@@ -157,7 +157,7 @@ fn a_verdict_pointing_at_an_achievement_that_does_not_exist_is_diagnosed() {
                 r#"{"target":{"kind":"stage","name":"The Void"},"label":"The Void"}"#,
                 r#"{"key":"stage:The Void","label":"The Void","uses":1,"verdictRequired":true}"#,
             ),
-            r#"{"schemaVersion":1,
+            r#"{"schemaVersion":2,
                 "verdicts":{"stage:The Void":{"behind":{"achievement":999}}}}"#,
         ),
     );
@@ -190,7 +190,7 @@ fn the_same_prerequisite_named_twice_is_one_edge() {
                    {"target":{"kind":"achievement","id":1},"label":"Magdalene"}"#,
                 "",
             ),
-            r#"{"schemaVersion":1}"#,
+            r#"{"schemaVersion":2}"#,
         ),
     );
     assert_eq!(
@@ -203,7 +203,7 @@ fn the_same_prerequisite_named_twice_is_one_edge() {
 #[test]
 fn every_achievement_in_the_catalog_is_a_node_even_with_no_requirements() {
     let c = catalog();
-    let g = Graph::build(&c, &rules(&one_ref(2, "", ""), r#"{"schemaVersion":1}"#));
+    let g = Graph::build(&c, &rules(&one_ref(2, "", ""), r#"{"schemaVersion":2}"#));
     assert_eq!(
         g.nodes().len(),
         2,
@@ -236,7 +236,7 @@ fn a_node_is_never_its_own_prerequisite() {
                 r#"{"target":{"kind":"character","id":1},"label":"Magdalene"}"#,
                 "",
             ),
-            r#"{"schemaVersion":1}"#,
+            r#"{"schemaVersion":2}"#,
         ),
     );
     let node = g.node(1).expect("node 1");
@@ -281,14 +281,14 @@ fn a_tainted_character_is_found_by_id_when_its_name_is_shared() {
         "achievements.xml" => Some(TAINTED_ACHIEVEMENTS.as_bytes().to_vec()),
         _ => None,
     });
-    let requirements = r#"{"schemaVersion":1,
+    let requirements = r#"{"schemaVersion":2,
         "generatedFrom":{"snapshotAt":"","maxRevid":0},
         "achievements":{"1":{"refs":[
             {"target":{"kind":"character","id":21},"label":"Tainted Isaac"},
             {"target":{"kind":"entity","id":0,"variant":0,"subtype":0},"label":"Mother"}
         ]}},
         "targets":[]}"#;
-    let corrections = r#"{"schemaVersion":1,"verdicts":{"entity:Mother":{"progress":{
+    let corrections = r#"{"schemaVersion":2,"verdicts":{"entity:Mother":{"progress":{
         "mark":{"column":"mother","level":"base"},
         "counter":{"name":"motherKills","atLeast":1}}}}}"#;
     let g = Graph::build(&c, &rules(requirements, corrections));
@@ -320,14 +320,14 @@ fn a_base_character_is_found_by_id_even_though_its_name_also_resolves() {
         _ => None,
     });
     // Character 0 is base Isaac; 21 is Tainted Isaac, and both are named "Isaac".
-    let requirements = r#"{"schemaVersion":1,
+    let requirements = r#"{"schemaVersion":2,
         "generatedFrom":{"snapshotAt":"","maxRevid":0},
         "achievements":{"1":{"refs":[
             {"target":{"kind":"character","id":0},"label":"Isaac"},
             {"target":{"kind":"entity","id":0,"variant":0,"subtype":0},"label":"Mother"}
         ]}},
         "targets":[]}"#;
-    let corrections = r#"{"schemaVersion":1,"verdicts":{"entity:Mother":{"progress":{
+    let corrections = r#"{"schemaVersion":2,"verdicts":{"entity:Mother":{"progress":{
         "mark":{"column":"mother","level":"base"}}}}}"#;
     let g = Graph::build(&c, &rules(requirements, corrections));
     let node = g.node(1).expect("node 1");

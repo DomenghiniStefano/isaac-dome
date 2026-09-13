@@ -35,7 +35,7 @@ fn catalog() -> Catalog {
 
 fn rules(corrections: &str) -> Rules {
     let r: Requirements = serde_json::from_str(
-        r#"{"schemaVersion":1,
+        r#"{"schemaVersion":2,
             "generatedFrom":{"snapshotAt":"","maxRevid":0},
             "achievements":{},"targets":[]}"#,
     )
@@ -65,7 +65,7 @@ fn entity(id: u32, label: &str) -> RefRow {
 #[test]
 fn an_entity_ref_resolves_to_a_boss_by_name_not_by_id() {
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":1}"#);
+    let rules = rules(r#"{"schemaVersion":2}"#);
     assert_eq!(
         requirement(&c, &rules, &entity(43, "Gish"), None),
         Requirement::Boss { id: BossId(19) },
@@ -79,7 +79,7 @@ fn a_boss_the_game_does_not_gate_is_judged_not_assumed() {
     // `Requirement::Boss` here would produce no edge and no unknown, and the node would
     // read as "nothing in the way" — which is how Delirium looked available.
     let c = catalog();
-    let unjudged = rules(r#"{"schemaVersion":1}"#);
+    let unjudged = rules(r#"{"schemaVersion":2}"#);
     assert_eq!(
         requirement(&c, &unjudged, &entity(84, "Satan"), None),
         Requirement::Unknown {
@@ -88,7 +88,7 @@ fn a_boss_the_game_does_not_gate_is_judged_not_assumed() {
         "a boss with no unlocker and no verdict is unknown, never 'available'"
     );
     let judged =
-        rules(r#"{"schemaVersion":1,"verdicts":{"entity:Satan":{"alwaysAvailable":true}}}"#);
+        rules(r#"{"schemaVersion":2,"verdicts":{"entity:Satan":{"alwaysAvailable":true}}}"#);
     assert_eq!(
         requirement(&c, &judged, &entity(84, "Satan"), None),
         Requirement::None,
@@ -99,7 +99,7 @@ fn a_boss_the_game_does_not_gate_is_judged_not_assumed() {
 #[test]
 fn an_alias_is_applied_before_the_lookup() {
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":1,"aliases":{"Jacob and Esau":"Jacob & Esau"}}"#);
+    let rules = rules(r#"{"schemaVersion":2,"aliases":{"Jacob and Esau":"Jacob & Esau"}}"#);
     assert_eq!(
         requirement(
             &c,
@@ -117,7 +117,7 @@ fn an_alias_is_applied_before_the_lookup() {
 fn always_available_drops_the_requirement() {
     let c = catalog();
     let rules =
-        rules(r#"{"schemaVersion":1,"verdicts":{"room:Boss Rush":{"alwaysAvailable":true}}}"#);
+        rules(r#"{"schemaVersion":2,"verdicts":{"room:Boss Rush":{"alwaysAvailable":true}}}"#);
     assert_eq!(
         requirement(
             &c,
@@ -138,7 +138,7 @@ fn always_available_drops_the_requirement() {
 #[test]
 fn a_target_with_no_verdict_stays_unknown() {
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":1}"#);
+    let rules = rules(r#"{"schemaVersion":2}"#);
     assert_eq!(
         requirement(
             &c,
@@ -162,7 +162,7 @@ fn a_target_with_no_verdict_stays_unknown() {
 fn a_verdict_of_unknown_behaves_like_no_verdict_but_was_judged() {
     let c = catalog();
     let rules = rules(
-        r#"{"schemaVersion":1,"verdicts":{
+        r#"{"schemaVersion":2,"verdicts":{
              "transformation:Guppy":{"unknown":{"reason":"three items"}}}}"#,
     );
     assert_eq!(
@@ -182,7 +182,7 @@ fn a_verdict_of_unknown_behaves_like_no_verdict_but_was_judged() {
 #[test]
 fn a_name_the_catalog_does_not_know_is_unknown_not_dropped() {
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":1}"#);
+    let rules = rules(r#"{"schemaVersion":2}"#);
     assert_eq!(
         requirement(&c, &rules, &entity(999, "Nobody"), None),
         Requirement::Unknown {
@@ -195,7 +195,7 @@ fn a_name_the_catalog_does_not_know_is_unknown_not_dropped() {
 fn an_entity_that_is_not_a_boss_takes_its_verdict() {
     let c = catalog();
     let rules =
-        rules(r#"{"schemaVersion":1,"verdicts":{"entity:Red Heart":{"notAPrerequisite":true}}}"#);
+        rules(r#"{"schemaVersion":2,"verdicts":{"entity:Red Heart":{"notAPrerequisite":true}}}"#);
     assert_eq!(
         requirement(&c, &rules, &entity(5, "Red Heart"), None),
         Requirement::None,
@@ -206,7 +206,7 @@ fn an_entity_that_is_not_a_boss_takes_its_verdict() {
 #[test]
 fn an_item_resolves_across_the_collectible_kinds() {
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":1}"#);
+    let rules = rules(r#"{"schemaVersion":2}"#);
     assert_eq!(
         requirement(&c, &rules, &row(Target::Item { id: 35 }, "The Bible"), None),
         Requirement::Item {
@@ -220,7 +220,7 @@ fn an_item_resolves_across_the_collectible_kinds() {
 // --- answered by the profile (spec 2026-09-12, §4.2) ---------------------------------
 
 const PROGRESS: &str = r#"{
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "verdicts": {
     "entity:Hush": { "progress": {
       "mark": { "column": "hush", "level": "base" },
@@ -288,7 +288,7 @@ fn the_half_a_reference_needs_may_be_absent_and_then_it_is_unknown() {
 fn a_game_gated_boss_still_wins_over_a_progress_verdict() {
     let c = catalog();
     let rules = rules(
-        r#"{"schemaVersion":1,"verdicts":{"entity:Gish":{"progress":{
+        r#"{"schemaVersion":2,"verdicts":{"entity:Gish":{"progress":{
              "counter":{"name":"hushKills","atLeast":1}}}}}"#,
     );
     assert_eq!(
