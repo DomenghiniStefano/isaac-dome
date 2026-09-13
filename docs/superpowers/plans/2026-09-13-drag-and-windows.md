@@ -2854,7 +2854,9 @@ Run: `pnpm dev`. For each line, write what happened:
 2. drag it back over the first window's strip: the marker appears between the tabs, the release
    merges it there
 3. dock into a **second** secondary window, not only into `main`
-4. the last tab of a window: the drag is a no-op, nothing opens, nothing closes
+4. the last tab of a window dropped on the **desktop**: a no-op, nothing opens, nothing closes
+4b. the last tab of a **secondary** window dropped on another window's **strip**: it joins, and
+    the window it left closes — the two gestures are not the same rule (spec §5)
 5. a secondary window whose last tab is docked elsewhere closes; `main` keeps a fresh tab
 6. two windows on the Plan: a move in one is visible in the other
 7. change the profile in one window: the other's indicator and screens follow
