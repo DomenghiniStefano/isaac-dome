@@ -7,10 +7,10 @@ use rusqlite::Connection;
 use crate::StoreError;
 
 /// The version this binary knows how to read and write.
-pub const SCHEMA_VERSION: u32 = 2;
+pub const SCHEMA_VERSION: u32 = 3;
 
 /// Index = version − 1. Append at the end, never modify a migration that's already shipped.
-const MIGRATIONS: [&str; 2] = [
+const MIGRATIONS: [&str; 3] = [
     // 1: the user's goals. `target_json` is the serialized `ipc::TargetKey` -- identity
     // alone, never name or icon: a column per variant would be a schema that changes
     // with every new kind of unlock.
@@ -30,6 +30,14 @@ const MIGRATIONS: [&str; 2] = [
     "CREATE TABLE plan_queue (
         id INTEGER PRIMARY KEY CHECK (id = 1),
         rows_json TEXT NOT NULL
+    );",
+    // 3: the window session, one JSON document written by the main window. An object with a
+    // version, not a bare array of tabs: 3.7 adds the sidebar's width and each table's size
+    // (B27) as named parts of the same document, and a named part costs no migration. What
+    // the parts mean is the frontend's business -- this crate stores the string.
+    "CREATE TABLE window_session (
+        id INTEGER PRIMARY KEY CHECK (id = 1),
+        document TEXT NOT NULL
     );",
 ];
 
