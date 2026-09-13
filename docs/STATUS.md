@@ -23,11 +23,14 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-13. **N1 and N2 merged into `develop`**. The test-only
-public API has one notation — one `pub mod for_tests` per crate, seven of them — and **why a
-command failed is a variant, not a sentence**: four enums, the numbers travelling as numbers,
-the wording in `it.ts` / `en.ts`. **M4's design reorders the cleanup**, and the order is
-written into that section: N1 → N2 → N7 → N6 → M4 sub-project 1 → N8 → N3, N4, N5.
+**Last update:** 2026-09-13. **N1, N2 and N6 done**; N1 and N2 are in `develop`, N6 waits on
+`feature/app-wiring`. The test-only public API has one notation — one `pub mod for_tests` per
+crate, seven of them; **why a command failed is a variant, not a sentence** — four enums, the
+numbers travelling as numbers, the wording in `it.ts` / `en.ts`; and **the Tauri crate is
+wiring again** — eleven files, none over 220 lines, `cargo test -p app` reporting zero.
+**N7 is the one left before M4**, and it is blocked on `feature/wiki-infobox`: it generates
+TypeScript from Rust types that are still moving in `crates/wiki`. Order:
+N1 → N2 → N6 → N7 → M4 sub-project 1 → N8 → N3, N4, N5.
 **Sub-project 3.5d merged into `develop`** (`4406c49`), suite green on the merge result: a
 blocked badge opens a menu whose entries are the wiki pages of what is in the way.
 **M4's first sub-project has its design** (`cac6914`): the run model, the `run` and
@@ -727,6 +730,13 @@ written out here instead:
 
 > **N1 → N2 → N7 → N6 → M4 sub-project 1 → N8 → N3, N4, N5**
 
+**N6 and N7 swapped in the event, on 2026-09-13, and not because the argument changed.**
+N7 generates TypeScript from the Rust types, and `feature/wiki-infobox` is reshaping
+`crates/wiki` — `wiki::Target` is one of the five types generation has to reach. Generating
+from a moving target means generating twice, which is the same reason N7 went in front of M4
+in the first place. N6 touches no file of that branch, so it went first. **The order below
+is the argument; what actually ran is N1 → N2 → N6 → N7.**
+
 Three of the items are cheap *now* and expensive after M4, and that is the whole of the
 reason:
 
@@ -878,21 +888,30 @@ reason:
       **Two files stop existing. Done when** no store writes that `try` / `catch` again and
       `LoadStatus` is imported from a file that holds nothing else.
 
-- [ ] **N6. `crates/app` goes back to being wiring.** *Two or three sessions. After N2,
-      before M4 adds commands to it.*
-      964 lines, 21 commands, and about ten functions that are logic — `plan_parts`,
-      `queue_view_now`, `queue_pieces`, `queue_mutate`, `ids_for`, `icon_url` — plus
-      **80 lines of `#[cfg(test)] mod tests` at the bottom of the file**. That block is the
-      proof, written in-house, that the rule is already broken: *if a return value is worth
-      checking it lives in a pure crate, and the Tauri crate is not tested*. The comment
-      above `plan_parts` admits it in as many words.
-      **What:** the pure halves go to `ipc` with their tests, beside the view-models they
-      build — `GraphDeps` made exactly this trip on 2026-09-08 and gained three tests it
-      never had while it sat here. What is left is split by area: `state.rs` for the five
-      `OnceLock`s, `icons.rs` for the protocol and its crop, `commands/` one file per
-      screen family.
-      **Done when** `crates/app/src/` holds no `#[cfg(test)]`, no file over ~250 lines, and
-      `cargo test -p app` reports zero tests because there is nothing left in it to test.
+- [x] **N6. `crates/app` goes back to being wiring.** *Done 2026-09-13, `feature/app-wiring`.*
+      964 lines in one file became **eleven, none over 220**: `state.rs` for the six
+      `OnceLock`s — the item said five, `SearchState` was not on the list — plus the two
+      save reads they share, `icons.rs` for the `isaac://` protocol and its crop, and
+      `commands/` with one file per screen family: profile, completion, wiki, graph, queue,
+      plan. `lib.rs` keeps `run()` and nothing else.
+      **`IpcError` had to move first, and that is what the item had not seen.** The tested
+      functions return it, and it lived in the Tauri crate: they could not leave while the
+      type they are about could not be imported. It is a wire type and `ipc` is the only
+      contract, so that is where it belongs — and N7 will generate it from there.
+      **The pure halves went to `store`, not to `ipc`.** `plan_parts`, `store_error` and
+      `store_unavailable` all take a `StoreError` or a `GoalsRead`, and `ipc` cannot depend
+      on `store` — the dependency runs the other way. They are not wiring either: each has a
+      return value worth checking, which is the rule that says they may not stay in `app`.
+      `crates/store/src/degrade.rs`, with the five tests that were `app`'s only
+      `#[cfg(test)]` block.
+      **`icon_url` stays in `app` on purpose**, against the item's list. `CLAUDE.md` already
+      records why: on Windows the webview sees a rewritten `http://isaac.localhost` origin,
+      and knowing that is the Tauri crate's job, not a pure crate's. It is wiring, not logic
+      that escaped — and moving it because a list named it would have undone a decision the
+      repo had already argued.
+      **Closed against all three criteria, checked rather than assumed**: no `#[cfg(test)]`
+      under `crates/app/src/`, largest file **220** lines, and `cargo test -p app` reports
+      zero tests because there is nothing left in it to test.
 
 - [ ] **N7. `types.ts` generated — this is B2 of `docs/IMPROVEMENTS.md`.** *Two sessions.
       After N2, and before M4 writes into the contract.*
@@ -1164,6 +1183,40 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-13 (last) — N6, and a second copy that is not a second-class one
+
+Two sessions wanted the one working copy. The wiki-infobox session needed it intrinsically —
+its task 7 compares the wiki against the game's own files — so it kept it, and N6 ran in a
+**git worktree** instead, on `feature/app-wiring` cut from `develop`.
+
+- [x] **The worktree limitation was a setup gap, not a fact.** The other session had tried
+      one and reported that `samples/` and `node_modules` are missing, so the real-data tests
+      skip in silence — the failure `CLAUDE.md` names by incident. But `samples/packed` in the
+      main copy *is already a junction* to the installed game: the same mechanism gives a
+      worktree the whole folder. 9 MB of loose samples copied, `packed` junctioned,
+      `pnpm install`, done.
+      **Proved rather than assumed**: `scripts/check` in the worktree reports **7 skips and
+      1265 real files touched**, the same numbers as the main copy, with the same three
+      reasons — the two absent historical saves. A suite that passes by skipping reports a
+      smaller number, so the match is what says the instrument can speak.
+- [x] **`IpcError` moved to `ipc` first, and the item had not seen that it had to.** The
+      tested functions return it and it lived in the Tauri crate: they could not leave while
+      the type they assert on could not be imported. It is a wire type and `ipc` is the only
+      contract — where N7 will generate it from.
+- [x] **The pure halves went to `store`, not to `ipc`.** `plan_parts`, `store_error` and
+      `store_unavailable` all take a `StoreError` or a `GoalsRead`, and the dependency runs
+      `store → ipc`, never back. Not wiring either: each has a return value worth checking.
+      They live in `crates/store/src/degrade.rs` with the five tests that were `app`'s only
+      `#[cfg(test)]` block — the proof, written in-house, that the rule was broken.
+- [x] **`icon_url` stayed in `app`, against the item's own list.** `CLAUDE.md` records why:
+      on Windows the webview sees a rewritten `http://isaac.localhost` origin, and knowing
+      that is the Tauri crate's job. Moving it because a list named it would have undone a
+      decision the repo had already argued. A cleanup item is a description, not a warrant.
+- [x] **Eleven files, none over 220 lines**, and all three closing criteria checked rather
+      than asserted. The item said five `OnceLock`s; there were six — `SearchState` arrived
+      with 3.5b and nobody added it to the list. Same shape as N1's count moving twice: a
+      survey is where an item starts, not where it ends.
 
 ### 2026-09-13 (later) — N2: the reason stops being a sentence
 
