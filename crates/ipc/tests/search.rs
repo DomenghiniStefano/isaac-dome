@@ -3,7 +3,8 @@
 //! current code happens to answer.
 
 use catalog::Catalog;
-use ipc::for_tests::{self, ProgressMark};
+use ipc::for_tests;
+use ipc::ProgressMark;
 use ipc::{
     search, IconRef, SaveFlags, SearchDiagnostic, SearchIndex, SearchMatch, SearchView, Target,
 };

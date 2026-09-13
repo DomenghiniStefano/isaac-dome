@@ -14,7 +14,7 @@ use crate::target_sprite::{target_sprite, TargetSprite};
 
 /// One page of the dataset: its identity, its own title, and the link to its figure when
 /// the catalog draws one.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct WikiPageRef {
     pub target: Target,
@@ -24,7 +24,7 @@ pub struct WikiPageRef {
 
 /// Every page the dataset has, once per window (spec 3.5, Decision 2): what the tab labels,
 /// the category lists and the icon of every reference inside a page are read from.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct WikiIndex {
     pub info: WikiInfo,
@@ -105,7 +105,7 @@ pub(crate) fn boss_target(key: &str) -> Option<Target> {
 }
 
 /// A game patch, as the wiki knows it.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct PatchView {
     pub number: String,
@@ -113,7 +113,7 @@ pub struct PatchView {
 }
 
 /// Per-type entry counts in the embedded dataset.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct WikiCounts {
     pub items: u32,
@@ -126,7 +126,7 @@ pub struct WikiCounts {
 }
 
 /// Why the embedded dataset failed to load. Fieldless: a bare string.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum WikiMissingReason {
     SchemaMismatch,
@@ -135,7 +135,7 @@ pub enum WikiMissingReason {
 
 /// The state of the wiki dataset: what the verification screen shows, and the basis
 /// for saying "is it worth updating?".
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",

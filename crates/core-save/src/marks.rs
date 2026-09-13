@@ -65,7 +65,7 @@ impl Column {
 
 /// Which block family a row belongs to. It is the file's structure, not the player's way
 /// of grouping characters: the three families are where the unread cells live.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum CharacterGroup {
     /// The 14 originals: 14-cell blocks, verified.

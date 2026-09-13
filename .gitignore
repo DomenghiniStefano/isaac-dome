@@ -23,3 +23,6 @@ crates/app/gen/schemas/
 # A screenshot taken while looking at the app by eye: it lands wherever the tool was run,
 # and it is a look, not an artefact of the project.
 /*.png
+
+# Scratch copy of the generated contract, written by `scripts/check` and removed by it.
+ui/.ipc-types-check/
