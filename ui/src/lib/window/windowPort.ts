@@ -118,8 +118,14 @@ const tauriPort: WindowPort = {
   broadcast: async (message) => {
     await emit(WindowEventName, message)
   },
+  // **A window listens for what was sent to it.** `listen` defaults to `{ kind: 'Any' }` — it
+  // hears every message on the channel, whoever it was addressed to — so a tab docked into one
+  // window was docked into every window at once. Naming the target on both sides is what makes
+  // `send` mean send, and it is the whole of the duplication the owner kept seeing.
   listen: (handler) =>
-    listen<WindowMessage>(WindowEventName, (e) => handler(e.payload)),
+    listen<WindowMessage>(WindowEventName, (e) => handler(e.payload), {
+      target: { kind: 'WebviewWindow', label: getCurrentWindow().label },
+    }),
   focus: async (label) => {
     const all = await getAllWebviewWindows()
     await all.find((w) => w.label === label)?.setFocus()

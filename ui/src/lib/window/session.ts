@@ -8,10 +8,14 @@ import type { WindowMessage } from './messages'
 import { takeSeed } from './seeds'
 import { windowPort } from './windowPort'
 
-// How long a newborn window waits for the seed that says what it holds. If the window that
-// created it died in between, nobody will ever answer: it opens on the landing page rather
-// than showing a bar with no tabs. Degrade, never fail.
-const SeedTimeout = 3000
+// How long a newborn window waits for the seed that says what it holds before falling back to
+// its landing tab. **It is a deadline, not a delay**: whoever owes the seed is another window of
+// the same process and answers in the time it takes to deliver one event, so this number is only
+// ever paid by a window nobody owes anything to — which is every window that *reloads*, because
+// its creator settled the debt the first time. At three seconds that was three seconds of empty
+// bar on every reload (owner, 2026-09-13). Short enough not to be noticed, long enough that an
+// answer in flight is never cut off.
+const SeedTimeout = 700
 
 // A window's whole cross-window life: one listener, one exhaustive switch. Mounted once, by
 // App.vue. Docking and hovering fill the arms that are empty here.
