@@ -6,11 +6,44 @@
 
 ## Task 1 — the spike
 
-**Not run yet, and it needs a hand on the mouse.** The measurement is what the webview does once
-the cursor has left the window, so it needs a real cursor: synthetic events cannot leave the
-window, and driving the OS cursor would take the mouse away from whoever is at the machine. The
-probe is written (plan, Task 1, steps 1–7) and the phases that do not depend on the answer were
-built first — only `lib/window/pointerSource.ts` waits on it.
+**Run on 2026-09-13, on this machine, with the owner's hand on the mouse. The answer is yes: the
+webview keeps talking.** A tab dragged up and to the left, out of the window, released on the
+desktop:
+
+```
+[spike] OUTSIDE move 100  -1  buttons 1 — outside events so far 1
+[spike] OUTSIDE move  -6 -76  buttons 1 — outside events so far 81
+[spike] OUTSIDE move -43 -56  buttons 1 — outside events so far 101
+[spike] UP OUTSIDE the window at -45 -54 — moves 255 of which outside 105
+```
+
+Three things that together settle it, and each mattered:
+
+1. **The coordinates go negative and keep changing.** They are not clamped at the window's edge,
+   which is the shape the failure would have had: a stream of events all reading `0` or
+   `innerWidth` would have looked like delivery and been none.
+2. **`buttons` stays 1** through all 105 outside events: the webview still believes the drag is
+   happening, so the state the gesture reads is not stale.
+3. **The `pointerup` arrives outside**, at (-45, -54) — the event the whole question was about,
+   since a gesture that never hears the release hangs with the button already up.
+
+**So `lib/window/pointerSource.ts` keeps its DOM implementation and `crates/app` gains nothing.**
+The Rust variant the spec describes (§2) is not needed on this machine; it stays written down
+there, behind the same interface, in case another machine or a later WebView2 says otherwise.
+The 10-second silence timeout stays as a safety net rather than as the mechanism.
+
+**What this measurement does *not* say.** It is one machine, one WebView2 version, one monitor at
+`dpr 1`, and one direction (up and left, into negative coordinates). It says nothing about a
+second monitor at another scale factor, which is Task 17's ninth line.
+
+**How the instrument was proved before its silence was read**: the probe first reported drags
+*inside* the window (`UP inside the window … moves 83 of which outside 0`), so a later "no outside
+events" would have been a measurement and not a broken listener.
+
+**One defect the probe itself caused, worth remembering**: its first version called
+`setPointerCapture` on the strip for **every** `pointerdown` in the document, which retargets
+every click in the app — the "+" button and the tabs stopped answering, and it read as a bug in
+the app. An instrument that changes what it measures is worse than no instrument.
 
 **What the attempt did measure**, on 2026-09-13, before it was stopped:
 
@@ -28,6 +61,39 @@ built first — only `lib/window/pointerSource.ts` waits on it.
   tab left open on the dev server reconnects over HMR and reports its own errors into the same
   log, which is how the `isTauri` hole surfaced in the first place.
 
+## What the machine found, 2026-09-13
+
+The gesture was driven by the owner on a real window while the probe reported into the `pnpm dev`
+terminal. **Five defects, none of which any test had caught**, and each one is a rule that was
+wrong rather than a line that was mistyped:
+
+1. **A drag that starts straight down never starts at all.** The threshold read the list's axis —
+   x for a strip — so the one movement that tears a tab off was the one that could not begin a
+   drag. It passed unnoticed in the browser because the scripted test nudged sideways by 6 px
+   first: *the instrument made the gesture possible*. Now a drag begins on movement in any
+   direction, and the axis decides only the hit test.
+2. **The gesture waited for its own picture.** `detach` awaited the preview window's creation
+   before installing the pointer watch, so a preview that never resolved took the whole gesture
+   with it — no error, no window, nothing. The watch is what the gesture *is*; the preview is
+   what it looks like. Watch first.
+3. **The tear-off re-attached itself in a loop.** "Back over my own window means the tab comes
+   home" fired one frame after detaching, because the tear band is crossed while the pointer is
+   still inside the window. Dozens of detach/attach cycles per drag.
+4. **A closed window is still listed, and answers `window not found`.** `getAllWebviewWindows()`
+   keeps a window for a while after it closes; asking it anything throws, and thrown from inside
+   a drag it killed the gesture. A window that is not there is one fewer target, not an error.
+   This also explains a mismatch seen earlier and left open: the gesture counted four windows
+   while the desktop showed one.
+5. **"Cancelled" and "ended" cannot be told apart by "is the drag still running".** A guard added
+   for `Escape` watched exactly that, so every successful release undid itself — the tab popped
+   out and straight back. `useDragList` now reports a cancellation explicitly, and a release never
+   reaches that path.
+
+**What the owner found by using it**, and what it changed: a tab must be draggable even when it is
+the only one, and it must leave the strip as soon as it is torn off. Both are in the spec now
+(§5), and they replaced two rules of mine — the second one removed a class of bug rather than
+fixing an instance of it, since a tab in flight exists in exactly one place.
+
 ## Verification on the machine
 
-(filled in by Task 17)
+(filled in by Task 17: the eleven checks, once the gesture is settled)
