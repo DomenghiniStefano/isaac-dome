@@ -127,7 +127,7 @@ pub struct Doc {
 
 /// Every document, keyed by target so the order is the kind's and then the id's, and a target
 /// the two sides share is one row.
-fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTreeMap<Target, Doc> {
+pub(crate) fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTreeMap<Target, Doc> {
     let mut docs: BTreeMap<Target, Doc> = index
         .pages
         .iter()
@@ -203,7 +203,7 @@ fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTreeMap<Target,
 /// Where the target stands in the profile: section 1 for an achievement, section 4 for a
 /// collectible, nothing for anything else. A slot past a section's end reads as not done —
 /// the save has no record of it — while a section that didn't read is `Unknown`.
-fn progress(target: &Target, flags: Option<SaveFlags<'_>>) -> ProgressMark {
+pub(crate) fn progress(target: &Target, flags: Option<SaveFlags<'_>>) -> ProgressMark {
     let mark = |slots: Option<&[bool]>, id: u32| match slots {
         None => ProgressMark::Unknown,
         Some(f) => {
@@ -234,21 +234,6 @@ fn progress(target: &Target, flags: Option<SaveFlags<'_>>) -> ProgressMark {
         | Target::Room { .. }
         | Target::Pickup { .. } => ProgressMark::None,
     }
-}
-
-/// The two halves above, reachable from the integration test: they are what a query is built
-/// on, and a test that could only see the ranked answer would say nothing about them.
-#[doc(hidden)]
-pub fn documents_for_tests(
-    index: &SearchIndex,
-    catalog: Option<&Catalog>,
-) -> BTreeMap<Target, Doc> {
-    documents(index, catalog)
-}
-
-#[doc(hidden)]
-pub fn progress_for_tests(target: &Target, flags: Option<SaveFlags<'_>>) -> ProgressMark {
-    progress(target, flags)
 }
 
 /// The characters kept before and after a match in a section fragment: enough to read the

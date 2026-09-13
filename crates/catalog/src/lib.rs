@@ -6,6 +6,7 @@ mod bossportraits;
 mod catalog;
 mod challenges;
 mod diagnostics;
+pub mod for_tests;
 mod heads;
 mod ids;
 mod itempools;
@@ -27,9 +28,6 @@ pub use catalog::Catalog;
 pub use catalog::SOURCES;
 pub use challenges::Challenge;
 pub use diagnostics::{Diagnostic, SkipReason, Source};
-/// Only for the `dump_heads` example: not part of the API.
-#[doc(hidden)]
-pub use heads::parse as __heads_parse;
 pub use ids::{AchievementId, BossId, ChallengeId, CharacterId, ItemId};
 pub use itempools::{Pool, PoolEntry, PoolMembership};
 pub use items::{Item, ItemKind};

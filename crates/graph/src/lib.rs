@@ -8,6 +8,7 @@
 
 pub mod build;
 pub mod evaluate;
+pub mod for_tests;
 pub mod generate;
 pub mod model;
 pub mod resolve;
