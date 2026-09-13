@@ -284,6 +284,31 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
                 out.close();
             }
         }
+        // The text is in a *named* parameter, which neither `resolve` nor the positional
+        // recursion reaches: 157 of these sentences used to arrive empty. The item is named
+        // too, because the template's meaning is "with Book of Virtues, this happens" and a
+        // section shown on its own would otherwise lose the half that says with what.
+        // Two templates, one shape: the item is in the name and the text is in a `description`
+        // parameter, spelled that way in all 197 uses. The label is written out per arm rather
+        // than derived from the name, so a third "X synergy" template cannot silently inherit
+        // the wrong item.
+        name @ ("book of virtues synergy" | "book of belial synergy") => {
+            let label = if name == "book of virtues synergy" {
+                "Book of Virtues"
+            } else {
+                "Book of Belial"
+            };
+            if let Resolution::Target(target) = r.resolve("i", label) {
+                out.push(Inline::Ref {
+                    target,
+                    label: label.to_string(),
+                });
+                out.buf.push_str(": ");
+            }
+            if let Some(description) = t.named.get("description") {
+                recurse_into_arg(description, r, d, out, depth);
+            }
+        }
         // The only template whose argument is a *list*: a boss page names the achievements
         // that boss unlocks, comma-separated. `resolve` answers with one `Resolution`, so
         // this cannot go through it — it has to push a node per name.
@@ -613,6 +638,43 @@ mod tests {
             Inline::Concept { page, label }
                 if page == "Blood Donation Machine" && label == "the machine"
         )));
+    }
+
+    /// `{{Book of Virtues synergy|description=…}}` carries its text in a **named** parameter,
+    /// so neither `resolve` nor the positional recursion reaches it: 157 sentences arrived
+    /// empty. All 164 uses spell the parameter `description`.
+    ///
+    /// The item reference is emitted too. The template's whole content is "with Book of
+    /// Virtues, this happens", and the app shows a section on its own — a bare description
+    /// would leave the reader without the half that says *with what*.
+    #[test]
+    fn the_book_of_virtues_synergy_keeps_its_description() {
+        let (v, d) = p("{{Book of Virtues synergy|description=Spawns {{i|Breakfast}} wisps}}");
+        let mut flat = String::new();
+        for i in &v {
+            if let Inline::Text { text, .. } = i {
+                flat.push_str(text);
+            }
+        }
+        assert!(flat.contains("Spawns"), "the description is lost: {v:?}");
+        assert!(flat.contains("wisps"));
+        // The item the synergy is with, named rather than left implicit.
+        assert!(v.iter().any(|i| matches!(
+            i,
+            Inline::Ref {
+                target: Target::Item { id: 584 },
+                ..
+            }
+        )));
+        // Links inside the description keep working: it is parsed, not pasted.
+        assert!(v.iter().any(|i| matches!(
+            i,
+            Inline::Ref {
+                target: Target::Item { id: 25 },
+                ..
+            }
+        )));
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
     }
 
     /// `{{achievement text | I RULE!, Backasswards, Ultra Hard}}` is the odd one out: it
