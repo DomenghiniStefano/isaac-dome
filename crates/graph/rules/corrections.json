@@ -157,6 +157,9 @@
         "reason": "filling the bestiary is a collection goal, not one achievement"
       }
     },
+    "pickup:Blood Donation Machine": {
+      "alwaysAvailable": true
+    },
     "pickup:Blue Flies": {
       "notAPrerequisite": true
     },
@@ -195,7 +198,13 @@
     "pickup:Daily Challenge": {
       "alwaysAvailable": true
     },
+    "pickup:Donation Machine": {
+      "alwaysAvailable": true
+    },
     "pickup:Deals with the Devil": {
+      "alwaysAvailable": true
+    },
+    "pickup:Greed Donation Machine": {
       "alwaysAvailable": true
     },
     "pickup:Gulp!": {
@@ -212,6 +221,9 @@
     },
     "pickup:I - The Magician": {
       "notAPrerequisite": true
+    },
+    "pickup:Slot Machine": {
+      "alwaysAvailable": true
     },
     "pickup:Tinted Rock": {
       "notAPrerequisite": true
