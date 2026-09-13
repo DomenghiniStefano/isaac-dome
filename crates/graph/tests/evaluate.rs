@@ -6,7 +6,7 @@ use graph::build::{Graph, GraphDiagnostic};
 use graph::evaluate::NodeInfo;
 
 fn graph(edges: &[(u32, &[u32])], unknown: &[(u32, &[&str])]) -> Graph {
-    Graph::from_edges_for_tests(edges, unknown)
+    graph::for_tests::from_edges(edges, unknown)
 }
 
 fn flags(done: &[u32], slots: usize) -> Vec<bool> {
@@ -170,7 +170,7 @@ fn an_uninterpreted_gate_stops_blocking_once_something_behind_it_is_done() {
     // Two nodes need the same thing the graph can't express — "Delirium". One of them is
     // already done, which is proof the player can reach Delirium: the other is no longer
     // waiting on an unknown.
-    let g = Graph::from_edges_for_tests(
+    let g = graph::for_tests::from_edges(
         &[(1, &[]), (2, &[])],
         &[(1, &["Delirium"]), (2, &["Delirium"])],
     );
@@ -189,7 +189,7 @@ fn an_uninterpreted_gate_stops_blocking_once_something_behind_it_is_done() {
 
 #[test]
 fn a_gate_with_no_evidence_behind_it_still_blocks() {
-    let g = Graph::from_edges_for_tests(
+    let g = graph::for_tests::from_edges(
         &[(1, &[]), (2, &[])],
         &[(1, &["Bestiary"]), (2, &["Bestiary"])],
     );
@@ -204,7 +204,7 @@ fn a_gate_with_no_evidence_behind_it_still_blocks() {
 #[test]
 fn evidence_is_per_gate_not_per_node() {
     // Node 1 proves "Delirium"; node 3 waits on "Bestiary", which nobody has passed.
-    let g = Graph::from_edges_for_tests(
+    let g = graph::for_tests::from_edges(
         &[(1, &[]), (2, &[]), (3, &[])],
         &[(1, &["Delirium"]), (2, &["Delirium"]), (3, &["Bestiary"])],
     );
@@ -218,7 +218,7 @@ fn evidence_is_per_gate_not_per_node() {
 
 #[test]
 fn a_node_waiting_on_two_gates_needs_evidence_for_both() {
-    let g = Graph::from_edges_for_tests(
+    let g = graph::for_tests::from_edges(
         &[(1, &[]), (2, &[])],
         &[(1, &["Delirium"]), (2, &["Delirium", "Bestiary"])],
     );
@@ -232,7 +232,7 @@ fn a_node_waiting_on_two_gates_needs_evidence_for_both() {
 
 #[test]
 fn the_inference_is_declared_not_silent() {
-    let g = Graph::from_edges_for_tests(
+    let g = graph::for_tests::from_edges(
         &[(1, &[]), (2, &[])],
         &[(1, &["Delirium"]), (2, &["Delirium"])],
     );
@@ -323,7 +323,7 @@ impl Fake {
 }
 
 fn one_node(r: Requirement) -> Graph {
-    Graph::from_requirements_for_tests(&[(1, vec![r])])
+    graph::for_tests::from_requirements(&[(1, vec![r])])
 }
 
 fn mother_of(id: u32) -> Requirement {

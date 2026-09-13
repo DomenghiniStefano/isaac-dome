@@ -23,7 +23,7 @@ fn achievement(id: u32, requirements: Vec<Inline>) -> (u32, Entry) {
 }
 
 fn dataset(entries: Vec<(u32, Entry)>) -> Dataset {
-    let mut d = Dataset::empty_for_tests();
+    let mut d = wiki::for_tests::empty_dataset();
     d.achievements = entries.into_iter().collect::<BTreeMap<_, _>>();
     d
 }

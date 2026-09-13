@@ -4,7 +4,7 @@
 use catalog::Catalog;
 use ipc::{collection_view, CollectionDiagnostic, CollectionView, LockView};
 use serde_json::{json, to_value};
-use wiki::{Dataset, Entry, Infobox, Target};
+use wiki::{Entry, Infobox, Target};
 
 const ITEMS: &[u8] = b"<items gfxroot=\"gfx/items/\"><passive id=\"1\" gfx=\"a.png\" name=\"A\" achievement=\"1\" /><active id=\"2\" gfx=\"b.png\" name=\"B\" /><familiar id=\"5\" gfx=\"c.png\" name=\"C\" achievement=\"2\" /><trinket id=\"1\" gfx=\"t.png\" name=\"T\" /></items>";
 const META: &[u8] = b"<items><item id=\"1\" quality=\"4\" tags=\"\"/><item id=\"2\" quality=\"1\" tags=\"\"/></items>";
@@ -193,7 +193,7 @@ fn without_a_catalog_only_the_totals_speak() {
 /// no page because nothing unlocks the item — a different sentence from "no page".
 #[test]
 fn a_lock_carries_the_achievement_page_only_when_the_dataset_has_it() {
-    let mut ds = Dataset::empty_for_tests();
+    let mut ds = wiki::for_tests::empty_dataset();
     // Achievement 2 has a page, achievement 1 has none: one of each, in one view.
     ds.achievements.insert(
         2,

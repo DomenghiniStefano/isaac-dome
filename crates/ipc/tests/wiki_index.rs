@@ -26,7 +26,7 @@ fn entry(title: &str, infobox: Infobox) -> Entry {
 }
 
 fn dataset() -> Dataset {
-    let mut ds = Dataset::empty_for_tests();
+    let mut ds = wiki::for_tests::empty_dataset();
     ds.items.insert(2, entry("A", Infobox::Item));
     ds.items.insert(9, entry("Nine", Infobox::Item));
     ds.trinkets.insert(1, entry("T", Infobox::Trinket));
