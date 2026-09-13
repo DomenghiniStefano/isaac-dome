@@ -6,7 +6,7 @@ import {
   pastTearBand,
   toClient,
   toDesktop,
-  windowUnderPoint,
+  stripUnderPoint,
 } from './tearOff'
 import type { WindowBox } from './windowPort'
 
@@ -39,41 +39,43 @@ describe('desktop pixels and client pixels are not the same pixels', () => {
   })
 })
 
-describe('which window holds the point', () => {
+// **A tab docks onto a strip, never onto a window.** This used to answer for a window's whole
+// surface, and that was wrong twice over: the card that follows the cursor hides itself when a
+// strip is going to show the marker instead, so it vanished whenever the cursor crossed any
+// window (the owner saw it: "ogni tanto la card scompare"); and a drop on a window's content
+// has no obvious place to land, so it had to invent one. Over a body, the answer is now the
+// same as over the desktop — nothing — and a release there opens a window of its own.
+describe('which strip a point is over', () => {
   const a = win('a', 0, 0)
   const b = win('b', 500, 300)
 
   it('answers null over the bare desktop', () => {
-    expect(windowUnderPoint([a, b], { x: 5000, y: 5000 }, [])).toBeNull()
-    expect(windowUnderPoint([], { x: 10, y: 10 }, [])).toBeNull()
+    expect(stripUnderPoint([a, b], { x: 5000, y: 5000 }, [])).toBeNull()
+    expect(stripUnderPoint([], { x: 10, y: 10 }, [])).toBeNull()
   })
 
-  it('answers the only window holding the point', () => {
-    expect(windowUnderPoint([a, b], { x: 100, y: 100 }, [])).toBe('a')
-    expect(windowUnderPoint([a, b], { x: 1400, y: 1000 }, [])).toBe('b')
+  it('answers the window whose strip holds the point', () => {
+    expect(stripUnderPoint([a, b], { x: 100, y: 10 }, [])).toBe('a')
+    expect(stripUnderPoint([a, b], { x: 700, y: 310 }, [])).toBe('b')
   })
 
-  it('prefers the window whose strip band holds the point, over one holding it in its body', () => {
-    // 520,310 is inside both: deep in a's body, and on b's strip. The focus order says `a`,
-    // and the strip still wins — a drop on a strip is a more deliberate thing than a drop
-    // on a window.
-    expect(windowUnderPoint([a, b], { x: 520, y: 310 }, ['a'])).toBe('b')
+  it('answers null over a window that is not its strip', () => {
+    // Deep in a's content, and in b's too: neither is a landing.
+    expect(stripUnderPoint([a, b], { x: 520, y: 400 }, ['a', 'b'])).toBeNull()
+    expect(stripUnderPoint([a, b], { x: 100, y: 400 }, [])).toBeNull()
   })
 
-  it('falls back to the most recently focused when both hold it the same way', () => {
-    // 520,400 is in both bodies. There is no z-order API (tauri#5656), so the focus order
-    // is the only thing that can decide.
-    expect(windowUnderPoint([a, b], { x: 520, y: 400 }, ['b', 'a'])).toBe('b')
-    expect(windowUnderPoint([a, b], { x: 520, y: 400 }, ['a', 'b'])).toBe('a')
-  })
-
-  it('with no focus order at all still answers a window, not null', () => {
-    // A drop that lands somewhere beats a drop that vanishes.
-    expect(windowUnderPoint([a, b], { x: 520, y: 400 }, [])).not.toBeNull()
+  it('prefers the most recently focused when two strips overlap', () => {
+    // b's strip sits over a's content; only b is a strip here, so the order does not even come
+    // up. Two strips on the same point is the case it does: there is no z-order API
+    // (tauri#5656), so the focus order is the only thing that can decide.
+    const c = win('c', 500, 300)
+    expect(stripUnderPoint([b, c], { x: 700, y: 310 }, ['c', 'b'])).toBe('c')
+    expect(stripUnderPoint([b, c], { x: 700, y: 310 }, ['b', 'c'])).toBe('b')
   })
 
   it('ignores a window the order knows but the list does not', () => {
-    expect(windowUnderPoint([a], { x: 100, y: 100 }, ['ghost', 'a'])).toBe('a')
+    expect(stripUnderPoint([a], { x: 100, y: 10 }, ['ghost', 'a'])).toBe('a')
   })
 })
 

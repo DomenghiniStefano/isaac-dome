@@ -1,9 +1,9 @@
 import type { Box, Point } from '@/lib/drag/dragList'
 import type { WindowBox } from './windowPort'
 
-// The top of a window, in its own logical pixels: where its tab strip is drawn. A drop there
-// joins that window's strip; a drop lower down is a drop on a window, which means the same
-// thing but reads as less deliberate — so the band wins ties in `windowUnderPoint`.
+// The top of a window, in its own logical pixels: where its tab strip is drawn. **This band is
+// the only landing a window offers** — a drop lower down is a drop on content, and content has
+// no place to put a tab (see `stripUnderPoint`).
 export const StripBand = 40
 
 // How far from the strip the pointer travels before the tab leaves the window. Only
@@ -37,20 +37,23 @@ const rank = (order: string[], label: string): number => {
   return at < 0 ? order.length : at
 }
 
-// Which window a point belongs to. There is no z-order API (tauri#5656), so overlapping windows
-// are ambiguous and the rule is ours: a strip beats a body, and among equals the most recently
-// focused wins. With nothing to go on it still answers a window rather than null — a drop that
-// lands somewhere beats a drop that vanishes.
-export const windowUnderPoint = (
+// Which window's **strip** a point is over, and only a strip: a tab docks onto a bar of tabs,
+// never onto a window's content. Answering for the whole window was wrong twice — the card that
+// follows the cursor hides itself wherever a marker will speak instead, so it disappeared every
+// time the cursor crossed any window; and a drop on a body has no place to land, so the rule had
+// to invent one. Over a body the answer is the same as over the desktop: nothing, and a release
+// there opens a window of its own.
+//
+// Two strips over one point can happen (a small window over another's title bar). There is no
+// z-order API (tauri#5656), so the most recently focused wins — the only ordering we can observe.
+export const stripUnderPoint = (
   windows: WindowBox[],
   p: Point,
   order: string[],
 ): string | null => {
-  const holding = windows.filter((w) => holdsPoint(w, p))
-  if (holding.length === 0) return null
-  const strips = holding.filter((w) => inStripBand(w, p))
-  const candidates = strips.length > 0 ? strips : holding
-  const ranked = [...candidates].sort(
+  const strips = windows.filter((w) => inStripBand(w, p))
+  if (strips.length === 0) return null
+  const ranked = [...strips].sort(
     (a, b) => rank(order, a.label) - rank(order, b.label),
   )
   return ranked[0]?.label ?? null
