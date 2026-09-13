@@ -38,6 +38,13 @@ blocked badge opens a menu whose entries are the wiki pages of what is in the wa
 **M4's first sub-project has its design** (`cac6914`): the run model, the `run` and
 `log-watch` crates, and the backfill that makes the archive born full from the logs already
 on disk.
+**The landing page and the achievement detail are done** on `feature/screens-goals-detail`,
+waiting to merge: "Prossimi passi" is **"Obiettivi consigliati"**, grouped by the reason a row
+is suggested, and an achievement's wiki page carries a block saying where the profile stands.
+**B32 and B35 closed.** Two contract changes travel with it — `NextSteps` in sections with a
+`Closeness` basis, and `AchievementRef`'s `hint` renamed `condition` because it now answers
+from the wiki where the game file is silent (283 of 637 before, all 637 after). **N7 has that
+much more to absorb**, and `UnlockTarget` gained a field as well.
 
 ---
 
@@ -74,10 +81,18 @@ on disk.
             by name alone 141 of 396 character references resolved to nothing, and by
             name-first "Ultra Greedier as Keeper" picked row 29 — T. Keeper. Resolution goes
             by the wiki's id first now, pinned by two tests in `crates/graph/tests/build.rs`.
-      - [ ] **Handed to the design system**: `RequirementView` gained `mark` and `counter`,
-            and a node held only by one of them is `availableNow` — nothing is locked, the
-            content only has to be played. **Unlock's "unlockable now" count rises**, and
-            such nodes are now eligible as Next steps.
+      - [x] **Handed to the design system** on 2026-09-13: `RequirementView` gained `mark` and
+            `counter`, and a node held only by one of them is `availableNow` — nothing is
+            locked, the content only has to be played. The landing page consumes it as a
+            section of its own, **Ci sei quasi**, ordered by how far the tally still is: a
+            counter is the only requirement that carries a distance.
+            **With the measurement that came out of it**: on the reference profile (379 of 642
+            done) the whole view holds **zero** `Counter` requirements — a counter is reported
+            only while `current < at_least`, and every threshold there was crossed long ago.
+            The co-op partner's profile, the one `online_logs\` leaves at the start of the
+            progression, holds 4 and 4 nodes held by nothing else, so the property is asserted
+            there; a second test pins *why* the reference profile has none, so that "empty"
+            stays a fact about the profile.
 - [ ] **M3 — Derived plan** ← in progress. The **plan queue** is done (2026-09-08): an
       ordered series of achievements whose order is yours and can never contradict the
       graph. Report in `docs/superpowers/plans/2026-09-07-plan-queue-report.md`. What
@@ -1240,7 +1255,44 @@ save against the dated backup the game wrote before it, and read which cells mov
 
 ## Session log
 
-### 2026-09-13 (last) — N5, and a `try` that was right to stay
+### 2026-09-13 (last) — the landing page gets a name, and an achievement gets a page
+
+`feature/screens-goals-detail`, cut from `develop` in its own worktree, `pnpm check` green on
+the result: 53 frontend test files / 345 tests, 7 skips all named and none of them this
+sub-project's. Spec `docs/superpowers/specs/2026-09-13-goals-and-achievement-detail-design.md`,
+report `docs/superpowers/plans/2026-09-13-goals-and-achievement-detail-report.md`.
+**B32 and B35 closed.**
+
+- [x] **An achievement's wiki page is its detail.** `/wiki?page=achievement:<id>` grows a
+      "Il tuo profilo" block — state, what is missing with its links, what you get with its
+      links, how much it opens, add to the Plan. No new route and no new tab identity, so
+      every link that already pointed at an achievement page became the detail for free. The
+      block sits **outside** the branch that draws the wiki's answer: what the profile knows
+      does not depend on the dataset, and a page the dataset never heard of still has a state.
+- [x] **"Prossimi passi" is now "Obiettivi consigliati"**, grouped by the reason a row is
+      there, with a card that leads with *what you get* and links to the detail. `NextSteps`
+      became sections on the contract, and `StepsBasis` gained the `Closeness` it was left
+      open for.
+- [x] **The wait on `feature/wiki-infobox` was imaginary, and was checked rather than
+      believed.** The spec said this work had to follow that branch; `git diff
+      develop...feature/wiki-infobox --name-only` touches no frontend file at all. Corrected
+      in the spec before any code was written.
+- [x] **The card's "how" line could not come from the game file.** `achievements.xml` states
+      an `unlock_condition` for 283 of 637 achievements and for **16 of the 119 unlockable
+      now** — none of the five rows that motivated B32. The wiki answers where the file is
+      silent and all **637** now carry a line. `hint` was **renamed** `condition` rather than
+      widened in place: the rename is what forced every reader to be revisited, and two nobody
+      had listed turned up printing it under the label "indizio del gioco:".
+- [x] **`crates/wiki` gained `plain`, not a second copy of it.** The private `flatten` in
+      `infobox.rs` is now public API with its own tests, and the copy is gone.
+- [ ] **The design pack is five fields behind.** `unlock.json` and `next_steps.json` predate
+      the character's form, the requirement's page, the target's page, the steps' sections and
+      the resolved condition. All five are backfilled in the fixtures **with a console
+      warning**, so the development screens are poorer than the app in ways that are declared
+      rather than mysterious. One `pnpm design:export` on a machine with the game clears all
+      five, and nothing else does.
+
+### 2026-09-13 (earlier) — N5, and a `try` that was right to stay
 
 `feature/ui-view-stores`, cut from `develop` after N4 merged, suite green.
 

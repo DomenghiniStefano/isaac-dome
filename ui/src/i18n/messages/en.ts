@@ -24,7 +24,7 @@ export const en: MessageSchema = {
   },
   routes: {
     search: 'Search',
-    nextSteps: 'Next steps',
+    goals: 'Suggested goals',
     completion: 'Completion',
     unlock: 'Unlock',
     plan: 'Plan',
@@ -56,7 +56,7 @@ export const en: MessageSchema = {
   },
   collection: {
     intro:
-      "The items this save's collection doesn't hold yet, by quality and pool: not a wall of icons. Quality and pool come from the game's files, not guessed from the name. Trinkets aren't here: the save keeps no collection of them.",
+      "The items this save doesn't hold yet, with their quality and the pools they turn up in. Trinkets aren't here: the game keeps no record of which ones you have found.",
     state: {
       inCollection: 'in the collection',
       available: 'to find',
@@ -97,22 +97,22 @@ export const en: MessageSchema = {
     activeFilters: 'active filters',
     reset: 'Reset',
     diagnostics: {
-      noCatalogTitle: 'The catalogue is missing',
+      noCatalogTitle: "We can't find the game",
       noCatalog:
-        "Without the game installed the items have no name and no quality: the save's collection reads, but there's no telling what it holds.",
-      noCollectionSectionTitle: "The save's collection can't be read",
+        'Without the game files the items have no name and no quality: we know how many you have, not which. Install The Binding of Isaac from Steam and reopen the app.',
+      noCollectionSectionTitle: "The save doesn't say what you picked up",
       noCollectionSection:
-        "Every item reads as unreadable: it doesn't mean you never found it, it means that part of the save wasn't read.",
-      noAchievementSectionTitle: "The save's achievements can't be read",
+        "Every item reads as unreadable. It doesn't mean you never found it: it means that part of the save would not open.",
+      noAchievementSectionTitle: "The save doesn't say what you unlocked",
       noAchievementSection:
-        "There's no telling which items are still locked: the ones an achievement unlocks read as unreadable.",
+        'We cannot tell which items are still locked: the ones that come from an achievement stay uncertain.',
       itemsBeyondSlots:
-        "{count} catalogue items beyond the save's collection, shown as unreadable",
+        '{count} items the game knows and this save does not name: we show them as unreadable',
     },
   },
   wiki: {
     intro:
-      "The dataset is compiled into the binary: it works without the game installed and without a save chosen. It's the one piece of the app that depends on nothing.",
+      'A copy of the Isaac wiki inside the app: items, characters, bosses, challenges and achievements. It works without the game installed and without a save chosen.',
     provenance: {
       title: 'Where it comes from',
       snapshot: 'Snapshot of',
@@ -129,7 +129,7 @@ export const en: MessageSchema = {
     categories: 'Categories',
     pages: 'pages',
     noCatalog:
-      'Without the game installed the pages have no picture: names come from the wiki titles.',
+      'Without the game installed the pages have no picture: the artwork comes from your own copy of Isaac, not from the app.',
     search: 'search a page',
     noResults: 'No page with this name.',
     resetFilters: 'Clear the search',
@@ -190,19 +190,19 @@ export const en: MessageSchema = {
     },
     states: {
       unknownTitle: 'Unknown page',
-      unknown: "The dataset doesn't know this page.",
+      unknown: 'This page is not in our copy of the wiki.',
       unknownHint:
-        "The tab's key matches no page of the embedded dataset: it may come from a different version of the dataset.",
-      noSections: 'This page has no text sections in the dataset.',
+        'It may have been added since: the copy is from the date above, and it updates with the app.',
+      noSections: 'For this page we only have the card, with no text.',
       failedTitle: "The Wiki didn't answer",
-      missingTitle: "The wiki dataset didn't load",
+      missingTitle: "The Wiki didn't open",
       missing:
-        "The binary carries a dataset that doesn't read: the Wiki has no pages to show.",
+        'The copy of the wiki inside the app will not read, so there are no pages to show. Restarting the app usually clears it; if it does not, it is worth reporting.',
     },
   },
   search: {
     intro:
-      "One index over everything the app knows by name or by text: the game's names, achievement conditions, wiki titles and the body of wiki pages.",
+      "One search over everything: the game's names, achievement conditions, wiki titles and the body of wiki pages.",
     placeholder: 'Search screens, achievements, items, wiki pages…',
     empty: 'No results.',
     allResults: 'All results ({count})',
@@ -225,18 +225,18 @@ export const en: MessageSchema = {
     diagnostics: {
       noProfileTitle: 'No profile chosen',
       noCatalogTitle: 'Game not installed',
-      noWikiTitle: 'Wiki dataset not loaded',
-      noAchievementSectionTitle: 'Achievement section not read',
-      noCollectionSectionTitle: 'Collection section not read',
+      noWikiTitle: "The Wiki didn't open",
+      noAchievementSectionTitle: "The save doesn't say what you unlocked",
+      noCollectionSectionTitle: "The save doesn't say what you picked up",
       noProfile:
-        'The results do not say what you have already done: choose one in the settings.',
+        'The results do not say what you have already done: choose a save in the settings.',
       noCatalog:
         'Only wiki titles and text are searched, with no pictures, and no result opens Unlock or the Collection.',
       noWiki: "Only the game's names are searched, and no result opens a page.",
       noAchievementSection:
-        'What is done is unknown for achievements: unread is not undone.',
+        'Achievements carry no "done" or "to do". It does not mean you have not done them: it means we cannot tell.',
       noCollectionSection:
-        'What you already have is unknown for items: unread is not not-found.',
+        'Items do not say whether you already have them. It does not mean you do not: it means we cannot tell.',
     },
   },
   appearance: {
@@ -290,7 +290,7 @@ export const en: MessageSchema = {
   },
   plan: {
     intro:
-      'The goals are the set of what you want, the queue is the order you mean to do it in: the rows you asked for, plus the prerequisites they dragged in. Drag a row and the queue repairs itself around the constraint: prerequisites are a wall it stops against, not a refusal.',
+      'The order you mean to do things in: what you asked for, plus what has to come first. Drag a row wherever you like — if something it needs is still missing it settles just below, instead of refusing the move.',
     summary: {
       rows: 'rows',
       wanted: 'asked for',
@@ -298,8 +298,8 @@ export const en: MessageSchema = {
     },
     queueTitle: 'The queue',
     hint: {
-      idle: 'drag to reorder — a move repairs, it never fails',
-      dragging: 'drop it anywhere: the queue repairs itself',
+      idle: 'drag to reorder — no move is ever refused',
+      dragging: 'drop it anywhere: the queue sorts itself out',
       stoppedUnder: 'it stopped under',
       prerequisite: "that's a prerequisite",
     },
@@ -310,7 +310,7 @@ export const en: MessageSchema = {
       unlocks: 'unlocks',
       fanOut: 'unlocks',
       outsideQueue: 'steps outside the queue',
-      hint: "the game's hint:",
+      condition: 'how to get it:',
     },
     achievement: 'achievement',
     empty: 'The queue is empty.',
@@ -319,7 +319,7 @@ export const en: MessageSchema = {
       closed: 'rows closed by playing',
       wanted: 'among the ones asked for',
     },
-    unresolved: 'is no longer in the catalogue',
+    unresolved: 'the game no longer knows it',
     alerts: {
       storeUnavailableTitle: "The plan isn't available",
       unreadableTitle: "This version can't read the saved queue",
@@ -327,7 +327,7 @@ export const en: MessageSchema = {
         'It stays as it is in the file and is never overwritten: a newer version of the app may be able to read it.',
       noCatalogTitle: 'The game has to be installed',
       noCatalog:
-        "Without the catalogue there's no telling which achievement each row is or what it still needs: the queue stays saved and comes back as soon as the game is there.",
+        'Without the game files we cannot tell which achievement each row is, or what it still needs. The queue stays saved: it comes back as it was as soon as the game is there.',
       goalsPendingTitle: 'Saved goals to import: {count}',
       goalsPending:
         'Goals saved before the queue existed: nothing moves them in on its own.',
@@ -355,7 +355,7 @@ export const en: MessageSchema = {
         'Characters who started every one of their readable cells: a character with unreadable cells is complete over fewer columns.',
       unknown: 'unreadable',
       unknownExplain:
-        "Cells whose column isn't located in the save for that character. It doesn't mean \"never done\": we can't read it.",
+        'Cells we cannot yet find in the save. It does not mean "never done": it means we cannot tell.',
     },
     card: {
       title: 'Marks matrix',
@@ -382,18 +382,50 @@ export const en: MessageSchema = {
       normal: 'normal',
       hard: 'hard',
       both: 'normal and hard',
-      unknown: "unreadable: the column isn't located for this character",
-      unexpected: 'a value outside the expected ones:',
+      unknown: "we can't tell for this character",
+      unexpected: 'a value we did not expect:',
     },
     nothingReadable:
-      'The save lets us read no mark: the counters section is missing or cut short.',
+      'We cannot read a single mark from this save: the part that holds them is missing, or stops half way.',
+  },
+  // The landing screen: what you get, how, why it is worth it, and the one action.
+  goals: {
+    intro:
+      'Things you can unlock right now. At the top the ones that open the most, below the ones you are closest to.',
+    fanOut: 'They open the most',
+    closeness: 'Almost there',
+    inPlan: 'In your Plan',
+    openPlan: 'Open the Plan',
+    seeAll: 'See them all',
+    opens: 'Opens {count} more things',
+    opensNothing: 'Opens nothing else',
+    noCatalogTitle: "We can't find the game",
+    noCatalog:
+      "IsaacDome reads The Binding of Isaac's own files to know which achievement unlocks what, and it cannot find them on this computer. Install the game from Steam and reopen the app: this is where you'll find what's worth playing tonight.",
+    nothingNow:
+      'There is nothing to unlock right now: either it is all done, or everything waits on something else.',
+  },
+  // The block an achievement's wiki page gains when a profile is active. It says only where
+  // you stand: what the thing is and what it asks is already in the infobox below.
+  profileBlock: {
+    title: 'Your profile',
+    missing: 'What you are missing',
+    unlocks: 'What you get',
+    opens: 'Unlocking it opens {count} more things.',
+    // A node already done will not open: it opened. The future tense under an "Already
+    // done" reads as if something were still left to do.
+    opened: 'It opened {count} more things.',
+    opensNothing: 'It opens nothing else: this is the end of a branch.',
+    openedNothing: 'It opened nothing else: this is the end of a branch.',
+    stepsMissing: '{count} unlocks are needed first.',
+    done: 'Already done.',
   },
   graph: {
     state: {
       done: 'done',
       now: 'unlockable now',
       blocked: 'blocked by',
-      partial: 'partial graph',
+      partial: "we can't tell",
     },
     why: {
       title: 'What it still needs',
@@ -404,7 +436,7 @@ export const en: MessageSchema = {
       gate: 'Conditions',
       mark: 'Completion marks',
       counter: 'Bosses to beat',
-      unknown: "Requirements we can't interpret",
+      unknown: "Conditions we can't read",
     },
     kinds: {
       passive: 'passive item',
@@ -414,13 +446,13 @@ export const en: MessageSchema = {
       character: 'character',
       boss: 'boss',
       challenge: 'challenge',
-      nothing: 'nothing catalogued',
+      nothing: 'nothing the game names',
     },
     stateName: {
       done: 'done',
       now: 'unlockable now',
       blocked: 'blocked',
-      partial: 'partial graph',
+      partial: "we can't tell",
     },
     // One cell of the matrix: the boss, and the character to beat it with.
     markName: '{boss} as {character}',
@@ -429,19 +461,9 @@ export const en: MessageSchema = {
     slot: 'slot',
     taintedName: 'Tainted {name}',
   },
-  nextSteps: {
-    intro:
-      "At most five rows, all unlockable now: the five that open the most further down. A node the graph can only call partial isn't a step, because we can't vouch for it.",
-    unlocks: 'unlocks',
-    noCatalogTitle: 'No steps: the catalogue is missing',
-    noCatalog:
-      "Without the game installed there's no telling what unlocks what: the list is empty on purpose, not five guessed rows.",
-    nothingNow:
-      'Nothing is unlockable right now: everything is done, or everything waits on something else.',
-  },
   unlock: {
     intro:
-      'Every node of the graph, filterable. One filter matters more than the rest: unlockable now.',
+      'Every achievement in the game, filter it however you like. The filter that matters most is "unlockable now".',
     rows: 'rows',
     search: 'search name, condition or what it unlocks',
     sortBy: 'sort by',
@@ -469,19 +491,19 @@ export const en: MessageSchema = {
       state: 'State',
       fanOut: 'Unlocks',
     },
-    unlocksNothing: 'nothing catalogued',
-    noCondition: 'no condition in the file',
+    unlocksNothing: 'nothing the game names',
+    noCondition: "we don't know",
     diagnostics: {
-      noCatalogTitle: 'The catalogue is missing',
+      noCatalogTitle: "We can't find the game",
       noCatalog:
-        'Without the game installed the achievements have no name and no condition: the rows only say which slots are done.',
-      noAchievementSectionTitle: "The achievements section can't be read",
+        'Without the game files the achievements have no name and no condition: the rows only say which ones you have already done.',
+      noAchievementSectionTitle: "The save doesn't say what you unlocked",
       noAchievementSection:
-        "Zero rows doesn't mean zero achievements done: it means that part of the save wasn't read.",
+        "Zero rows done doesn't mean zero achievements: it means that part of the save would not open.",
       slotsBeyondCatalog:
-        '{count} save slots beyond the catalogue, shown as unknown achievements',
+        '{count} achievements the save knows and your copy of the game does not: they are probably from a newer version',
       catalogBeyondSlots:
-        "{count} catalogue achievements beyond the save, which don't appear",
+        '{count} achievements the game has and this save does not name: they are left out of the list',
     },
   },
   gate: {
@@ -498,8 +520,8 @@ export const en: MessageSchema = {
     intro:
       'Choose the save you are playing with: every number on the other screens is read from it. You can change it whenever you like.',
     chain: {
-      title: 'The chain of three requirements',
-      summary: 'each level can be missing on its own',
+      title: 'The three things it takes',
+      summary: 'any one of them can be the one missing',
       steam: 'Steam',
       game: 'Game',
       saves: 'Saves',
@@ -513,7 +535,7 @@ export const en: MessageSchema = {
     none: {
       title: 'No save found',
       steamNotFound:
-        "Steam isn't in the system registry: without Steam we can't find the game folder, and without that we can't find the saves.",
+        "We can't find Steam on this computer, and that is where we start to reach the game folder and then the saves.",
       gameNotFound:
         "Steam is there, but the game isn't in any of its libraries: without the game folder we can't find the saves.",
       noSaves:
@@ -563,7 +585,7 @@ export const en: MessageSchema = {
     read: {
       title: 'What we could read',
       sections: 'sections',
-      note: "Some sections we don't know the content of yet, and the counts change with every patch: no number is hardcoded, here or anywhere in the app. The screens show what the file declares today.",
+      note: 'Some parts of the save we do not know the content of yet, and the quantities change with every patch of the game. What you see here and everywhere else in the app is always what your own file declares, never a number we decided.',
       diagnostics: "The file holds something we didn't expect",
     },
     saveDiagnostics: {

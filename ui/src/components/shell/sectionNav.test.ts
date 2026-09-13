@@ -30,7 +30,7 @@ describe('sectionNav', () => {
   it('matches an entry by route', () => {
     const [nextSteps] = sidebarEntries[SidebarSection.Progress]
     expect(
-      nextSteps && isEntryActive(nextSteps, { name: RouteName.NextSteps }),
+      nextSteps && isEntryActive(nextSteps, { name: RouteName.Goals }),
     ).toBe(true)
     expect(
       nextSteps && isEntryActive(nextSteps, { name: RouteName.Plan }),
@@ -71,7 +71,7 @@ describe('the wiki overview', () => {
 describe('the first entry of a section', () => {
   it('is where clicking the section goes (B24)', () => {
     expect(firstEntry(SidebarSection.Progress).location).toEqual({
-      name: RouteName.NextSteps,
+      name: RouteName.Goals,
     })
     expect(firstEntry(SidebarSection.Wiki).location).toEqual({
       name: RouteName.Wiki,

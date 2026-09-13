@@ -12,7 +12,7 @@ const node = (missing: RequirementView[]): UnlockNode => ({
     kind: 'known',
     id: 1,
     text: 'Dad’s Note',
-    hint: null,
+    condition: null,
     iconUrl: null,
   },
   done: false,

@@ -2,6 +2,7 @@
 import { InfoIcon } from '@lucide/vue'
 import { computed, watch } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
+import ProfileBlock from '@/components/graph/ProfileBlock.vue'
 import { Badge } from '@/components/ui/badge'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -13,12 +14,17 @@ import {
 import WikiFigure from '@/components/wiki/WikiFigure.vue'
 import { WikiFigureSize } from '@/components/wiki/figureSize'
 import { useMessages } from '@/i18n'
+import { achievementNode } from '@/lib/graph/achievementNode'
+import { nodeSlot } from '@/lib/graph/unlockFilter'
 import type { Target } from '@/lib/ipc/types'
+import { canQueue, isQueued, queuedIds } from '@/lib/plan/queueRows'
 import { categoryOf, pageLocation } from '@/lib/wiki/category'
 import { parsePageKey } from '@/lib/wiki/pageKey'
 import { RouteName } from '@/router/routeTable'
-import type { WikiCategory } from '@/router/routeTable'
+import type { TabLocation, WikiCategory } from '@/router/routeTable'
+import { useQueueStore } from '@/stores/queue'
 import { useTabsStore } from '@/stores/tabs'
+import { useGraphStore } from '@/stores/views'
 import { useWikiStore } from '@/stores/wiki'
 import WikiInfobox from './WikiInfobox.vue'
 import WikiSections from './WikiSections.vue'
@@ -30,6 +36,8 @@ const props = defineProps<{
 }>()
 const wiki = useWikiStore()
 const tabs = useTabsStore()
+const graph = useGraphStore()
+const queue = useQueueStore()
 const { t } = useMessages()
 
 // The key is the tab's; a key that doesn't parse is a page the dataset doesn't know, the
@@ -70,6 +78,25 @@ const onNavigate = (next: Target, newTab: boolean) => {
 const back = () => {
   if (category.value)
     tabs.navigate({ name: RouteName.Wiki, query: { category: category.value } })
+}
+
+// The profile's half of an achievement page (spec §3). This screen deliberately does **not**
+// load the graph: the wiki is reachable without a profile, and a wiki tab must not pull a
+// profile-shaped command. It reads what the progress screens have already put there, and
+// `achievementNode` answers `null` for every state where the block would lie.
+const node = computed(() =>
+  achievementNode(graph.view?.unlock ?? null, target.value),
+)
+const queued = computed(() => queuedIds(queue.view))
+const canAdd = computed(
+  () =>
+    queue.view?.storeAvailable === true &&
+    node.value !== null &&
+    canQueue(node.value, queued.value),
+)
+const onOpen = (location: TabLocation, newTab: boolean) => {
+  if (newTab) tabs.open(location)
+  else tabs.navigate(location)
 }
 </script>
 
@@ -113,6 +140,18 @@ const back = () => {
         </Tooltip>
       </div>
     </header>
+    <!-- Above the wiki's own answer, and outside it: what the profile knows does not depend
+         on the dataset. A page the dataset has never heard of still has a state, still says
+         what it unlocks, and can still go in the Plan (spec §3). -->
+    <ProfileBlock
+      v-if="node"
+      :node="node"
+      :queued="isQueued(node, queued)"
+      :can-add="canAdd"
+      :busy="queue.busy"
+      @add="queue.add(nodeSlot(node))"
+      @navigate="onOpen"
+    />
     <template v-if="unknown">
       <EmptyCategory
         >{{ t('wiki.states.unknown') }}

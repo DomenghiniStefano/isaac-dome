@@ -35,8 +35,10 @@ const known = computed(() =>
 )
 const byId = (id: number): string => `${t('plan.achievement')} ${id}`
 const text = computed(() => knownText(props.row.node) ?? byId(rowId(props.row)))
-const hint = computed(() =>
-  known.value?.hint ? `${t('plan.row.hint')} ${known.value.hint}` : null,
+const condition = computed(() =>
+  known.value?.condition
+    ? `${t('plan.row.condition')} ${known.value.condition}`
+    : null,
 )
 // The wishes this row serves, by their text when the queue shows them.
 const originText = (id: number, row: QueueRow | null): string =>
@@ -82,8 +84,8 @@ const fanOut = computed(() => props.row.node.graph.fanOut)
     <AchievementArt :url="known?.iconUrl ?? null" :size="ArtSize.Thumb" />
     <div class="flex min-w-0 flex-1 flex-col items-start gap-1.5">
       <span class="text-row text-foreground">{{ text }}</span>
-      <span v-if="hint" class="text-caption text-subtle-foreground">{{
-        hint
+      <span v-if="condition" class="text-caption text-subtle-foreground">{{
+        condition
       }}</span>
       <div class="flex flex-wrap items-center gap-1.5">
         <Badge v-if="row.wanted" :variant="BadgeVariant.Wanted">{{

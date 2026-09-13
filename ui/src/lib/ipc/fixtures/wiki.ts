@@ -198,8 +198,8 @@ export const packPages = (): Page[] => {
 export const packConditions = (): Map<number, string> =>
   new Map(
     (Object.values(unlocks)[0]?.nodes ?? []).flatMap((node) =>
-      node.achievement.kind === 'known' && node.achievement.hint !== null
-        ? [[node.achievement.id, node.achievement.hint] as const]
+      node.achievement.kind === 'known' && node.achievement.condition !== null
+        ? [[node.achievement.id, node.achievement.condition] as const]
         : [],
     ),
   )

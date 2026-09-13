@@ -25,6 +25,7 @@ import TableSection from './sections/TableSection.vue'
 import ProgressSection from './sections/ProgressSection.vue'
 import TitleBarSection from './sections/app/TitleBarSection.vue'
 import NavBarSection from './sections/app/NavBarSection.vue'
+import ProfileBlockSection from './sections/app/ProfileBlockSection.vue'
 import SectionSidebarSection from './sections/app/SectionSidebarSection.vue'
 import KpiTileSection from './sections/app/KpiTileSection.vue'
 import MarkCellSection from './sections/app/MarkCellSection.vue'
@@ -76,6 +77,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
       <WikiSection />
       <SearchRowSection />
       <CollapsibleCardSection />
+      <ProfileBlockSection />
     </main>
   </TooltipProvider>
 </template>
