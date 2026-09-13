@@ -877,7 +877,15 @@
       ]
     },
     "59": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Donation Machine"
+          },
+          "label": "Donation Machine"
+        }
+      ]
     },
     "60": {
       "refs": [
@@ -2060,19 +2068,59 @@
       ]
     },
     "134": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Donation Machine"
+          },
+          "label": "Donation Machine"
+        }
+      ]
     },
     "135": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Donation Machine"
+          },
+          "label": "Donation Machine"
+        }
+      ]
     },
     "136": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Donation Machine"
+          },
+          "label": "Donation Machine"
+        }
+      ]
     },
     "137": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Donation Machine"
+          },
+          "label": "Donation Machine"
+        }
+      ]
     },
     "138": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Donation Machine"
+          },
+          "label": "Donation Machine"
+        }
+      ]
     },
     "139": {
       "refs": [
@@ -2165,10 +2213,26 @@
       "refs": []
     },
     "147": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Blood Donation Machine"
+          },
+          "label": "Blood Donation Machine"
+        }
+      ]
     },
     "148": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Slot Machine"
+          },
+          "label": "Slot Machine"
+        }
+      ]
     },
     "149": {
       "refs": [
@@ -2204,16 +2268,48 @@
       ]
     },
     "151": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Donation Machine"
+          },
+          "label": "Donation Machine"
+        }
+      ]
     },
     "152": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Donation Machine"
+          },
+          "label": "Donation Machine"
+        }
+      ]
     },
     "153": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Donation Machine"
+          },
+          "label": "Donation Machine"
+        }
+      ]
     },
     "154": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Donation Machine"
+          },
+          "label": "Donation Machine"
+        }
+      ]
     },
     "155": {
       "refs": [
@@ -4116,34 +4212,114 @@
       ]
     },
     "242": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "243": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "244": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "245": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "246": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "247": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "248": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "249": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "250": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "251": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "252": {
       "refs": [
@@ -4713,7 +4889,15 @@
       ]
     },
     "275": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "276": {
       "refs": [
@@ -5878,7 +6062,15 @@
       ]
     },
     "341": {
-      "refs": []
+      "refs": [
+        {
+          "target": {
+            "kind": "pickup",
+            "name": "Greed Donation Machine"
+          },
+          "label": "Greed Donation Machine"
+        }
+      ]
     },
     "342": {
       "refs": [
@@ -12292,6 +12484,12 @@
       "verdictRequired": true
     },
     {
+      "key": "pickup:Blood Donation Machine",
+      "label": "Blood Donation Machine",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
       "key": "pickup:Blue Flies",
       "label": "Blue Flies",
       "uses": 1,
@@ -12370,6 +12568,18 @@
       "verdictRequired": true
     },
     {
+      "key": "pickup:Donation Machine",
+      "label": "Donation Machine",
+      "uses": 10,
+      "verdictRequired": true
+    },
+    {
+      "key": "pickup:Greed Donation Machine",
+      "label": "Greed Donation Machine",
+      "uses": 12,
+      "verdictRequired": true
+    },
+    {
       "key": "pickup:Gulp!",
       "label": "Gulp!",
       "uses": 1,
@@ -12396,6 +12606,12 @@
     {
       "key": "pickup:I - The Magician",
       "label": "I - The Magician",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "pickup:Slot Machine",
+      "label": "Slot Machine",
       "uses": 1,
       "verdictRequired": true
     },

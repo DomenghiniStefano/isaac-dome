@@ -372,18 +372,38 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
 - [x] **Contract handed on**: `DESIGN-BRIEF.md` and `ui/src/lib/ipc/types.ts` carry the new
       `Entry` and all six variants, checked field-for-field. `WikiInfobox.vue` takes the entry
       instead of the infobox and draws the three common facts once.
-- [ ] **Phase 2, the templates**: 25 are still unknown, seven of them above 50 occurrences
-      (`m` 373, `transformation contribution` 186, `book of virtues synergy` 157,
-      `achievement text` 127, `ip` 110, `bc` 59, `machine`). Their sentences reach the
-      frontend mangled. Tasks 10–16 of the plan.
-- [ ] **Task 7**: the wiki-versus-game agreement test (`quality`, `tags`, and `quote` against
-      `items_metadata.xml` / `items.xml`), counting disagreements rather than failing on them.
-- [ ] **Task 8**: measure what the lower bits of the Cargo `dlc` mask mean. The encoding is
-      **not** open — `resolver.rs` documents it (1 Rebirth … 16 Repentance+) and
-      `in_current_edition` depends on bit 16. What is open is that Blue Cap (342), the first
-      Afterbirth collectible, has bit 1 set, so "valid in" cannot be right for the lower four.
-      The repo reads bit 16 alone, which no counter-example touches; reading the rest is the
-      step nobody has earned.
+- [x] **Phase 2, the templates**: **25 unknown over 1290 occurrences → 17 over 200.** Seven
+      taught: `m`/`machine` (a machine or beggar has no id, so `Inline::Concept` — and a new
+      `Resolution::Concept` so it is not counted as a *failed* lookup), `ip` (item pools are
+      keyed by name), `transformation contribution` (resolves like `{{tf}}`),
+      `achievement text` (the only one whose argument is a comma-separated **list**, so it
+      cannot go through `resolve`), the two `book of … synergy` templates (text in a named
+      `description` parameter, plus the item, because a section is read on its own), and `bc`
+      (a champion variant: the index is kept verbatim and **the colour is not invented** —
+      which index is which colour lives in the wiki's template and nowhere we can read).
+      `crates/wiki/tests/templates_understood.rs` holds both the >50 line and the total.
+      What stays unknown is listed in the spec with a reason per group: icons whose word is
+      already in the text, editorial marks with no content, and two table generators that
+      would need the wiki's data modules.
+- [x] **The wiki against the game** (`crates/ipc/tests/wiki_agrees_with_catalog.rs`): quality
+      equal (0 of 576 disagree), every wiki tag a word the game's own vocabulary uses (9 of
+      714), the game's pickup quote contained in the wiki's (8 of 719). It failed on its first
+      run and found **three** defects: `tags` and `quote` were being read as raw text, so
+      unparsed wikitext reached the dataset dressed as a tag and as a quote — and fixing those
+      exposed a third, older one below.
+- [x] **`{{dlc|code|text}}` was dropping its own text** (`crates/wiki/src/inline.rs`). The
+      two-argument form is a marker that opens an edition scope; the three-argument form
+      carries its own span and closes itself, and its second argument was never read.
+      **313 occurrences across the snapshot**, in every kind of parsed text, with no
+      diagnostic. `Boomerang tears {{dlc|r|+ DMG up + luck down}}` arrived as "Boomerang tears".
+- [x] **The Cargo `dlc` mask is measured** (`crates/ipc/examples/dlc_mask.rs`, no game and no
+      network needed). Every mask seen is a contiguous suffix of the editions — 31, 30, 28, 24
+      — which is the shape of "valid from this edition onward" and of nothing else; the lowest
+      set bit agrees with `catalog::origin_of` on **712 of 720** collectibles. The eight
+      exceptions are one five-id editing slip on the wiki (342–346, Blue Cap among them), the
+      two id-reuse rows where the id-range lookup is the limited side, and one boundary row.
+      `in_current_edition`'s reading was right; the mask stays **unused** here all the same,
+      because adopting a second source is its own change. `catalog::origin_of` is now exported.
 - [x] `ipc::wiki`: `WikiInfo`, `PatchView`, `WikiCounts`, `wiki_info(dataset, game_updated_unix)`;
       `discovery::GameInstall.updated_unix` to check freshness against the `appmanifest`'s
       `LastUpdated`.

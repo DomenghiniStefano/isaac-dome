@@ -83,6 +83,10 @@ impl Corrections {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Resolution {
     Target(Target),
+    /// A wiki page the game gives no id, and never would: machines, beggars, item pools.
+    /// Distinct from `Unresolved`, which means "we looked for an id and did not find one" —
+    /// a failure worth a diagnostic. This one is the expected answer, so it gets none.
+    Concept,
     Unresolved,
     Ignore,
     Unknown,
@@ -312,7 +316,10 @@ impl Resolver {
                     variant: *variant,
                     subtype: *subtype,
                 }),
-            "tf" => self
+            // `{{transformation contribution|X}}` reads as a sentence on the page ("counts
+            // toward X"), but the only part of it with an identity is the transformation,
+            // which is exactly what `{{tf|X}}` names.
+            "tf" | "transformation contribution" => self
                 .transformations
                 .get(&k)
                 .map(|id| Target::Transformation { id: *id }),
@@ -324,6 +331,12 @@ impl Resolver {
                 .characters
                 .get(&k)
                 .map(|id| Target::Character { id: *id }),
+            // Machines and beggars: the game has no id for them, so they are wiki concepts
+            // rather than targets. `m` is the largest single entry `unknownTemplates` had.
+            "m" | "machine" => return Resolution::Concept,
+            // An item pool. `itempools.xml` keys pools by name and gives them no id, so
+            // there is no target to resolve to — the same shape as a machine.
+            "ip" => return Resolution::Concept,
             "s" | "floor" => {
                 return Resolution::Target(Target::Stage {
                     name: arg.trim().to_string(),
@@ -420,6 +433,12 @@ pub(crate) mod fixtures {
                     ("id", "25"),
                     ("alias", "Breakfast"),
                 ]),
+                // Named by `{{Book of Virtues synergy}}`, which resolves it by hand.
+                row(&[
+                    ("_pageName", "Book of Virtues"),
+                    ("id", "584"),
+                    ("alias", "Book of Virtues"),
+                ]),
                 // Afterbirth+'s collectible 474: no longer exists in Repentance+.
                 row(&[
                     ("_pageName", "Tonsil"),
@@ -471,12 +490,21 @@ pub(crate) mod fixtures {
                     ("alias", "Tonsil"),
                 ]),
             ],
-            achievement: vec![row(&[
-                ("_pageName", "Achievements/Rebirth 1"),
-                ("id", "62"),
-                ("name", "Epic Fetus"),
-                ("alias", "Epic Fetus"),
-            ])],
+            achievement: vec![
+                row(&[
+                    ("_pageName", "Achievements/Rebirth 1"),
+                    ("id", "62"),
+                    ("name", "Epic Fetus"),
+                    ("alias", "Epic Fetus"),
+                ]),
+                // A second one so a test about a *list* of achievements can have a list.
+                row(&[
+                    ("_pageName", "Achievements/Rebirth 1"),
+                    ("id", "2"),
+                    ("name", "Cain"),
+                    ("alias", "Cain"),
+                ]),
+            ],
             entity: vec![
                 row(&[
                     ("_pageName", "Mom"),
@@ -733,7 +761,14 @@ mod tests {
         assert_eq!(r.resolve("cit", "p"), Resolution::Ignore);
         assert_eq!(r.resolve("nav", ""), Resolution::Ignore);
         assert_eq!(r.resolve("#ev:youtube", "x"), Resolution::Ignore);
-        assert_eq!(r.resolve("m", "Donation Machine"), Resolution::Unknown);
+        // A name no template will ever have: see `unknown_and_layout_templates`.
+        assert_eq!(
+            r.resolve("notatemplate", "Donation Machine"),
+            Resolution::Unknown
+        );
+        // Machines are concepts by construction, not failed lookups.
+        assert_eq!(r.resolve("m", "Donation Machine"), Resolution::Concept);
+        assert_eq!(r.resolve("machine", "Beggar"), Resolution::Concept);
     }
 
     #[test]
