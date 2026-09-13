@@ -8,6 +8,7 @@ use ipc::{
     search, IconRef, SaveFlags, SearchDiagnostic, SearchIndex, SearchMatch, SearchView, Target,
 };
 use serde_json::{json, to_value};
+use wiki::for_tests::{empty_boss, empty_item, empty_trinket};
 use wiki::{
     Block, Dataset, DatasetError, Dlc, Entry, Infobox, Inline, ListItem, Section, SectionKind,
     Style,
@@ -22,10 +23,8 @@ fn text(s: &str) -> Inline {
 
 fn entry_with(title: &str, infobox: Infobox, sections: Vec<Section>) -> Entry {
     Entry {
-        title: title.into(),
-        revid: 1,
-        infobox,
         sections,
+        ..wiki::for_tests::entry(title, infobox)
     }
 }
 
@@ -75,19 +74,14 @@ fn d6_effects() -> Section {
 fn dataset() -> Dataset {
     let mut ds = wiki::for_tests::empty_dataset();
     ds.items
-        .insert(105, entry_with("The D6", Infobox::Item, vec![d6_effects()]));
+        .insert(105, entry_with("The D6", empty_item(), vec![d6_effects()]));
     ds.trinkets
-        .insert(97, entry_with("Tonsil", Infobox::Trinket, vec![]));
+        .insert(97, entry_with("Tonsil", empty_trinket(), vec![]));
     ds.bosses.insert(
         Dataset::boss_key(20, 0, 0),
         entry_with(
             "Monstro",
-            Infobox::Boss {
-                base_hp: None,
-                environment: vec![],
-                pool: vec![],
-                unlocked_by: None,
-            },
+            empty_boss(),
             vec![Section {
                 kind: SectionKind::Behavior,
                 blocks: vec![Block::Paragraph {
@@ -339,8 +333,7 @@ fn the_six_tiers_order_the_answer() {
     // it, and — "Mother" — the query buried inside a word, which is the weakest of the four.
     let mut ds = wiki::for_tests::empty_dataset();
     for (id, title) in [(1, "Mother"), (2, "The"), (3, "The Bible"), (4, "Of the")] {
-        ds.items
-            .insert(id, entry_with(title, Infobox::Item, vec![]));
+        ds.items.insert(id, entry_with(title, empty_item(), vec![]));
     }
     let index = SearchIndex::build(Ok(&ds));
     let v = search(&index, None, None, "the", 10, link);
@@ -352,9 +345,9 @@ fn the_six_tiers_order_the_answer() {
 fn not_done_comes_before_done_inside_a_tier() {
     let mut ds = wiki::for_tests::empty_dataset();
     ds.items
-        .insert(1, entry_with("Bomb One", Infobox::Item, vec![]));
+        .insert(1, entry_with("Bomb One", empty_item(), vec![]));
     ds.items
-        .insert(2, entry_with("Bomb Two", Infobox::Item, vec![]));
+        .insert(2, entry_with("Bomb Two", empty_item(), vec![]));
     let index = SearchIndex::build(Ok(&ds));
     // Item 1 is in the collection, item 2 isn't: the one still to find is listed first.
     let owned = [false, true, false];
@@ -372,7 +365,7 @@ fn the_limit_cuts_the_hits_and_total_says_how_many_there_were() {
     let mut ds = wiki::for_tests::empty_dataset();
     for id in 1..=5 {
         ds.items
-            .insert(id, entry_with(&format!("Bomb {id}"), Infobox::Item, vec![]));
+            .insert(id, entry_with(&format!("Bomb {id}"), empty_item(), vec![]));
     }
     let index = SearchIndex::build(Ok(&ds));
     let v = search(&index, None, None, "bomb", 2, link);

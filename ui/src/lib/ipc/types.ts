@@ -472,21 +472,50 @@ export type Block =
   | { kind: 'table'; header: Inline[][]; rows: Inline[][][] }
   | { kind: 'heading'; level: number; inline: Inline[] }
 
+// No fields: a bare camelCase string, like `SectionKind`. Which of the wiki's two
+// collectible templates the page used — not the game's three-way item kind, because the
+// wiki has no familiar template and writes familiars with the passive one.
+export const CollectibleTemplate = {
+  Passive: 'passive',
+  Activated: 'activated',
+} as const
+export type CollectibleTemplate =
+  (typeof CollectibleTemplate)[keyof typeof CollectibleTemplate]
+
 export type Infobox =
-  | { kind: 'item' }
-  | { kind: 'trinket' }
+  | {
+      kind: 'item'
+      /// The pickup quote — the same string as the game's own item description.
+      quote: string
+      template: CollectibleTemplate
+      quality: number | null
+      tags: string[]
+      /// Not a number: the real values include `unlimited`, `one time`, `4s`, and forms
+      /// that differ per edition.
+      recharge: Inline[]
+      devilPrice: Inline[]
+      shopPrice: Inline[]
+      /// Only what the wiki states — 45 of 720 pages. The game's own pools are the
+      /// complete source, and they arrive through the catalog, not here.
+      pools: Inline[]
+    }
+  | { kind: 'trinket'; quote: string; tags: string[]; pools: Inline[] }
   | {
       kind: 'achievement'
-      description: string
       requirements: Inline[]
+      /// Caveats on the requirement. An achievement has no sections of its own, so this is
+      /// the only prose it carries beyond the description and the requirement.
+      notes: Inline[]
       unlocks: Target | null
     }
   | {
       kind: 'boss'
       baseHp: number | null
+      /// Inline, not a number: the real values are per-stage notes.
+      stageHp: Inline[]
+      variant: number | null
       environment: Inline[]
       pool: Inline[]
-      unlockedBy: Target | null
     }
   | {
       kind: 'challenge'
@@ -499,20 +528,23 @@ export type Infobox =
       health: Inline[]
       curse: Inline[]
       goal: Inline[]
+      /// The character the challenge forces, when it forces one.
+      character: Target | null
       unlocks: Target | null
-      unlockedBy: Target | null
     }
   | {
       kind: 'character'
       health: Inline[]
       damage: string
+      tears: string
       range: string
       speed: string
       luck: string
       shotSpeed: string
       pickups: Inline[]
       collectibles: Inline[]
-      unlockedBy: Target | null
+      /// The character this one is a variant of.
+      parent: Target | null
     }
 
 export interface Section {
@@ -522,6 +554,15 @@ export interface Section {
 export interface Entry {
   title: string
   revid: number
+  /// The infobox's summary line. Plain text for achievements, wikitext elsewhere: one
+  /// shape for every kind, so reading it needs no switch.
+  description: Inline[]
+  /// The edition codes the infobox declares. Empty when it declares none — which is not
+  /// the same as "it exists everywhere": the wiki does not say which of the two it means.
+  dlc: Dlc[]
+  /// What the wiki states has to be unlocked first. `null` means the wiki does not state
+  /// one, never "it is free": that answer comes from the catalog, not from here.
+  unlockedBy: Target | null
   infobox: Infobox
   sections: Section[]
 }

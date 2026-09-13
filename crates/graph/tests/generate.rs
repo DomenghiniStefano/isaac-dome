@@ -9,16 +9,14 @@ use wiki::{Dataset, Entry, Infobox, Inline, Style, Target};
 fn achievement(id: u32, requirements: Vec<Inline>) -> (u32, Entry) {
     (
         id,
-        Entry {
-            title: format!("A{id}"),
-            revid: 1,
-            infobox: Infobox::Achievement {
-                description: String::new(),
+        wiki::for_tests::entry(
+            &format!("A{id}"),
+            Infobox::Achievement {
                 requirements,
+                notes: Vec::new(),
                 unlocks: None,
             },
-            sections: Vec::new(),
-        },
+        ),
     )
 }
 
