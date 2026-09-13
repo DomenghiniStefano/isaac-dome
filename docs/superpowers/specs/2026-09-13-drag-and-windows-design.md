@@ -216,13 +216,20 @@ tabs, and the preview hides. You see where the tab will land before you let go. 
 a grace period is what you need when hovering *merges by itself* — here the release merges, and
 a release is already an intention.
 
-**Closing rule one: the last tab does not tear off.** Dragging the only tab out of a window is a
-no-op — that window already *is* that tab alone. It holds for `main` and for every secondary
+**Closing rule one: the last tab does not tear off into a *new* window.** Dragging the only tab
+of a window onto the bare desktop is a no-op — that window already *is* that tab alone, and the
+gesture would close one window to open the same one. It holds for `main` and for every secondary
 window, and it is "the bar is never empty" one level up.
 
 **Closing rule two: a window whose last tab is docked elsewhere closes**, except `main`, which
 stays with a fresh default tab, as `closeTab` already does. The app exits when every window is
 closed, which is Tauri's own behaviour and needs nothing from us.
+
+**The two rules are about two different gestures, and the distinction is load-bearing** — it was
+found in execution, where rule one as first written made rule two unreachable. *Opening* a window
+for a tab that is already alone in one is a no-op; *joining* it to a window that exists is not,
+because something changes: two windows become one. So `tearOffTo` refuses the last tab and
+`giveAway` accepts it, and only the second can leave a window empty.
 
 ## Decision 6 — events from Rust carry no payload (owner)
 
