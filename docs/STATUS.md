@@ -23,9 +23,13 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-12. **Sub-project 3.5d merged into `develop`** (`4406c49`), suite
-green on the merge result: a blocked badge opens a menu whose entries are the wiki pages of
-what is in the way.
+**Last update:** 2026-09-13. **N1 closed** (`feature/cleanup-names`): the test-only public
+API has one notation and it is structural — one `pub mod for_tests` per crate, nothing
+test-only anywhere else in a public surface. **M4's design reorders the cleanup**, and the
+order is now written into that section: N1 → N2 → N7 → N6 → M4 sub-project 1 → N8 →
+N3, N4, N5.
+**Sub-project 3.5d merged into `develop`** (`4406c49`), suite green on the merge result: a
+blocked badge opens a menu whose entries are the wiki pages of what is in the way.
 **M4's first sub-project has its design** (`cac6914`): the run model, the `run` and
 `log-watch` crates, and the backfill that makes the archive born full from the logs already
 on disk.
@@ -695,20 +699,32 @@ reason:
   screen. They keep their place at the end, where they gate 3.6, 3.7 and B3 rather than
   anything here.
 
-- [ ] **N1. The names left over.** *One session.*
-      Two Italian identifiers survive B7 in a file that is otherwise English —
-      `ICONE_DI_ESEMPIO` (`crates/app/src/lib.rs:155`) and `SEGRETO` (`:890`). Test-only
-      public API carries three different notations for one idea: `documents_for_tests` and
-      `progress_for_tests`, which `ipc/src/lib.rs` re-exports into the crate's public
-      surface, alongside `from_edges_for_tests`, `empty_for_tests` and
-      `__corrupt_queue_for_tests`. Pick one notation, and keep it out of the public
-      re-export list: a name in `pub use` says "call me", which is exactly what these mean
-      not to say.
-      **Done when** `grep -riE '(icone|segreto|_di_)' crates` finds nothing and one
-      notation covers every test-only entry point. **Over `crates` and not `ui/src`**: the
-      Italian locale file legitimately contains the Italian word *icone* in its prose, so a
-      grep that spans it can never go quiet — a closing criterion that cannot be met is
-      worse than none, because it gets read as "still open" forever.
+- [x] **N1. The names left over.** *Done 2026-09-13, `feature/cleanup-names`.*
+      `ICONE_DI_ESEMPIO` is `SAMPLE_ICONS` and `SEGRETO` is `SECRET_PATH`, with the path it
+      holds spelled in the language of the assert that reads it. That constant also gained
+      the comment it needed: there are **two** asserts, on the whole path and on the word
+      inside it, because a `reason` that re-rendered or escaped the path would slip past the
+      first on its own. The coupling was load-bearing and unwritten, which is how a rename
+      turns a leak test into a test of nothing.
+      **One notation, and it is structural**: each crate with a test-only entry point has
+      exactly one `pub mod for_tests`, and nothing test-only appears anywhere else in its
+      public surface. Six crates have one — `catalog`, `graph`, `ipc`, `store`, `unpack`,
+      `wiki`. The inner items went back to being internal: `Graph::from_edges` and
+      `from_requirements` are `pub(crate)` constructors again, `search`'s `documents` and
+      `progress` are `pub(crate)` instead of wearing `#[doc(hidden)]` twins, and `Doc` and
+      `ProgressMark` left `ipc`'s contract — they are the return types of test-only calls
+      and nothing else reads them.
+      **The survey had found four entry points; there were six.** `unpack::__lzw_decompress`
+      and `catalog::__heads_parse` carried the same `__` prefix and were not on the list.
+      The second serves an **example** rather than a test, and the module's doc says so
+      rather than inventing a second word for it: a second word here would rebuild the thing
+      this item removes.
+      **Closed against** `grep -riE '(icone|segreto|_di_)' crates` and
+      `grep -rn 'pub fn __\|as __' crates`, both silent, and no `pub use` naming a
+      `for_tests` item. **Over `crates` and not `ui/src`**: the Italian locale file
+      legitimately contains the Italian word *icone* in its prose, so a grep that spans it
+      can never go quiet — a closing criterion that cannot be met is worse than none,
+      because it gets read as "still open" forever.
 
 - [ ] **N2. `reason: String` leaves the IPC.** *Two sessions. Before N7.*
       `IpcError::UnreadableSave`, `SettingsNotWritable` and `StoreUnavailable` carry a
@@ -1070,6 +1086,46 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-13 — N1, and the order the cleanup runs in
+
+Two things, and the first decided the second. **M4's design reorders the structural
+cleanup**, because three of its eight items are cheap now and expensive once M4 is written.
+The order is written into the section rather than expressed by renumbering — the numbers are
+names, and other items and `docs/IMPROVEMENTS.md` point at them:
+
+> **N1 → N2 → N7 → N6 → M4 sub-project 1 → N8 → N3, N4, N5**
+
+- [x] **N7 moves from last to third.** It was last because it is expensive, and it runs
+      after N2 because generating the contract while the error type still moves means
+      generating it twice — that half stands. What M4 changes is the other half: M4 adds a
+      family of view-models to the contract, and every one written before N7 is hand-mirrored
+      into `types.ts` and then regenerated. The repository's largest silent risk gets
+      *larger* between now and M4, not smaller.
+- [x] **N6 moves in front of M4** so its commands land in `commands/` instead of growing the
+      964-line file that then has to be split. **N8 moves behind M4**: its `SaveState` has to
+      invalidate when the `.dat` is rewritten, and M4's watcher exists because the game
+      announces exactly that — doing N8 first means inventing a heuristic M4 then replaces
+      with the game's own statement. N8's free half is not held back by this. N3, N4 and N5
+      are frontend and M4 has no screen, so they keep their place.
+- [x] **N1 closed** (`feature/cleanup-names`, two commits, suite green). The two Italian
+      names went, and the test-only public API went from three notations to one that is
+      **structural rather than agreed**: each crate with such an entry point has exactly one
+      `pub mod for_tests` and nothing test-only anywhere else in its public surface. Six
+      crates have one. The inner items went back to `pub(crate)`, and `Doc` and `ProgressMark`
+      left `ipc`'s contract — they were only ever the return types of test-only calls.
+- [x] **The survey had counted four such entry points and there were six.**
+      `unpack::__lzw_decompress` and `catalog::__heads_parse` wore the same `__` prefix and
+      were not on the list. The second serves an **example**, not a test, and the module's
+      doc says so rather than inventing a second word: a second word would rebuild exactly
+      the problem the item removes. This is the shape the whole section is supposed to have —
+      *unification is measured in what stops existing*, and a survey's list is a starting
+      point, not the boundary.
+- [x] **N1's closing criterion was unmeetable and was corrected before the work, not after.**
+      It read `grep -riE '(icone|segreto|_di_)' crates ui/src`, and `ui/src/i18n/messages/it.ts`
+      legitimately contains the Italian word *icone* in its prose: the grep could never go
+      quiet. A criterion that cannot be met is worse than none — it reads as "still open"
+      forever, and the item would have been re-opened by whoever ran it next.
 
 ### 2026-09-12 (last) — M4 designed as a model, not as a screen
 

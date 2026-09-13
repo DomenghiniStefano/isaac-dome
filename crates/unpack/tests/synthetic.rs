@@ -79,7 +79,7 @@ fn lzw_garbage_bytes_returns_none() {
     // Random/garbage byte stream: must produce no output and must not panic.
     let garbage = [0xDE, 0xAD, 0xBE, 0xEF, 0x13, 0x37, 0xCA, 0xFE, 0x00, 0xFF];
     assert!(
-        unpack::__lzw_decompress(&garbage, 0, 100).is_none(),
+        unpack::for_tests::lzw_decompress(&garbage, 0, 100).is_none(),
         "garbage must not produce output"
     );
 }
@@ -91,7 +91,7 @@ fn lzw_chunk_len_overflows_slice_returns_none() {
     data.extend_from_slice(&u32::MAX.to_le_bytes()); // huge chunk_len
     data.extend_from_slice(&[0xAA, 0xBB, 0xCC]); // insufficient data
     assert!(
-        unpack::__lzw_decompress(&data, 0, 16).is_none(),
+        unpack::for_tests::lzw_decompress(&data, 0, 16).is_none(),
         "a chunk_len that overruns the end of the buffer must give None"
     );
 }
@@ -101,7 +101,7 @@ fn lzw_truncated_data_returns_none() {
     // decompressed_len much larger than the available bytes: None, no panic.
     let tiny = [0x00u8; 8]; // too short to produce megabytes
     assert!(
-        unpack::__lzw_decompress(&tiny, 0, 1_000_000).is_none(),
+        unpack::for_tests::lzw_decompress(&tiny, 0, 1_000_000).is_none(),
         "truncated data must give None"
     );
 }

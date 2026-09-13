@@ -5,6 +5,7 @@ mod blocks;
 mod build;
 mod dataset;
 mod diagnostics;
+pub mod for_tests;
 mod infobox;
 mod inline;
 mod model;

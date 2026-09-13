@@ -44,8 +44,7 @@ fn a_fresh_database_has_an_empty_queue_and_that_is_not_an_error() {
 fn a_document_that_does_not_parse_is_declared_not_flattened_to_empty() {
     let dir = tempdir().expect("temp dir");
     let s = Store::open(&dir.path().join("isaacdome.db")).expect("opens");
-    s.__corrupt_queue_for_tests("{ not json")
-        .expect("writes garbage");
+    store::for_tests::corrupt_queue(&s, "{ not json").expect("writes garbage");
     let inner = s.queue().expect("the query itself works");
     assert!(
         inner.is_err(),

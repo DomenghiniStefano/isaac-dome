@@ -4,8 +4,8 @@
 //! second copy of that rule would be wrong within a release.
 
 use catalog::Catalog;
-use ipc::{documents_for_tests, SearchIndex};
-use wiki::{Dataset, Target};
+use ipc::SearchIndex;
+use wiki::Target;
 
 const ITEMS: &[u8] = b"<items gfxroot=\"gfx/items/\"><passive id=\"105\" gfx=\"d6.png\" name=\"The D6\" /><trinket id=\"97\" gfx=\"t.png\" name=\"Tonsil\" /></items>";
 const BOSSES: &[u8] = b"<bossportraits gfxroot=\"gfx/ui/boss/\"><boss id=\"1\" name=\"Monstro\" portrait=\"Portrait_20.0_Monstro.png\" /><boss id=\"2\" name=\"Nameless\" portrait=\"no_key.png\" /></bossportraits>";
@@ -30,8 +30,8 @@ fn catalog() -> Catalog {
 /// the test states them, it does not read them back from the code that produced them.
 #[test]
 fn the_catalog_entities_are_keyed_by_their_wiki_target() {
-    let ds = Dataset::empty_for_tests();
-    let docs = documents_for_tests(&SearchIndex::build(Ok(&ds)), Some(&catalog()));
+    let ds = wiki::for_tests::empty_dataset();
+    let docs = ipc::for_tests::documents(&SearchIndex::build(Ok(&ds)), Some(&catalog()));
     let keys: Vec<&Target> = docs.keys().collect();
 
     assert!(
