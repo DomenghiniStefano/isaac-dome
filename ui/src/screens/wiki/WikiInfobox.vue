@@ -43,6 +43,12 @@ const drawn = computed(() => {
   switch (infobox.value.kind) {
     case 'item':
     case 'trinket':
+    // A transformation's card has no rows yet: `requires`, `contributors` and `target` are
+    // in the contract and nothing draws them. Until they are drawn, no card — an empty one
+    // would say the page has nothing. This variant reached the union when the contract
+    // started being generated; before that the mirror did not have it and this switch
+    // reached `assertNever`, which throws.
+    case 'transformation':
       return false
     case 'achievement':
     case 'boss':
