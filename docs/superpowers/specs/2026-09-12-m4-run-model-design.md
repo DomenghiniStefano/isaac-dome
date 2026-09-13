@@ -5,6 +5,14 @@ boundaries). Sections 2 to 4 were written after the owner said "mi fido, scrivi 
 they follow from the three decisions below, but they were not walked through one by one, so
 they are the part of this document most worth disagreeing with.
 
+**Split into two plans on 2026-09-13**, when the TDD plan was written and the size was visible.
+**1a — the run model** (`docs/superpowers/plans/2026-09-13-run-model.md`): the `run` crate
+alone — `Tail`, the rules file, the events, the fold. Pure, and finished software on its own.
+**1b — it goes live**: `log-watch`, the store's migration, run identity and the backfill of
+`online_logs\`, the agreement with the save's own counters, and the view-models. This document
+is the spec for both; §3's identity and §3's *Agreeing with the game* belong entirely to 1b,
+because a source is a file and `run` never sees one.
+
 **Scope.** The data: what a run *is*, and the machinery that builds one from `log.txt`.
 **Not** in scope: the `Live` and `Runs` screens. Both routes already exist in the shell as
 placeholders and both are views of this model; designing them first would let a layout
@@ -88,7 +96,10 @@ Nothing in this crate is worth a test; everything that is has been moved into `r
 warnings. Offset tailing is the repo's rule about not loading a game file into memory, not
 an optimisation.
 
-### `store` — one migration, the third
+### `store` — one migration, the fourth
+
+*(Written as "the third" on 2026-09-12 and corrected on 2026-09-13: `SCHEMA_VERSION` is
+already 3, since the window session landed with `feature/background-and-tray`.)*
 
 `events` as rows, and `runs` as a **derived cache** carrying the rules version that produced
 it. A newer rules file invalidates the cache and the runs are folded again. This is decision
@@ -104,6 +115,14 @@ it. A newer rules file invalidates the cache and the runs are folded again. This
 fold.** This matters because the rules file is data the user can update: a rule that could
 decide *meaning* would let a bad file change what a run is, and would put untestable logic
 outside the crate that is tested.
+
+**The lines below are quoted without the prefix they actually carry**, and that was found on
+2026-09-13 while planning 1a rather than while reading them. A real line is
+`[INFO] - RNG Start Seed: …`, and some carry a frame marker too —
+`[INFO] - [Frame 74] Starting room transition (type 0)`. About 1% carry no `[INFO] -` at all:
+the `Framebuffer Width:` block and the library banners. **No pattern may be anchored at the
+start of a line**, or it matches nothing at all. `CLAUDE.md` quoted them the same way and is
+corrected with this.
 
 The events, from lines verified in M0 and re-verified by B8:
 
@@ -204,6 +223,12 @@ exist in the repo's ignored `samples/logs/`:
 ```
 
 Those three cover, between them, every outcome except `Died`, which needs one more log.
+
+**Checked on 2026-09-13, and it is worse than "one more log" implies:** `grep -c "Game Over"`
+returns **0 on all four** files in `samples/logs/` — the fourth, `20260908-s1.log.txt`, included.
+So `Died` has no real-data coverage at all, only the line shape recorded in M0. The plan for 1a
+asserts that absence in a test that fails the day a log with a death arrives, rather than
+letting a green suite imply the event is covered.
 
 **`test-support` needs one new accessor.** Its functions today reach saves
 (`sample`, `dated_series`); the logs need the same treatment, declaring `sample: …` or
