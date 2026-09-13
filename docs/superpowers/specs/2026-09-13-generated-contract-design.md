@@ -141,10 +141,13 @@ that turns the item from a deduplication into a move: after it, the knowledge li
 
 ## 7. What is tested
 
-- **The generated file equals the committed one.** This is the first test and the spine of the
-  work. It is not "testing against the code's current output": `types.ts` *is* the live
-  contract, so every difference is a change to the wire and has to be explained one by one
-  before it is accepted. §0.5 says the expected count of systematic differences is zero.
+- **The generated file equals the committed one.** This is the spine of the work. It is not
+  "testing against the code's current output": `types.ts` *is* the live contract, so every
+  difference is a change to the wire and has to be explained one by one before it is accepted.
+  §0.5 says the expected count of systematic differences is zero.
+  **It is the gate of §5 that asserts it, not a Rust test**, and not for convenience: the
+  committed file is prettier's output, and a Rust test cannot run prettier. The comparison has
+  to happen after formatting, which is the shell's side of the fence.
 - **A renamed Rust variant makes the check fail.** A test that renames a variant of the type
   the incident was about — `core_save::Kind` — and asserts the generated declaration changes.
   Without it, the item's whole claim rests on inspection.
