@@ -23,7 +23,7 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-13. **N1 and N2 done**, N1 merged into `develop`. The test-only
+**Last update:** 2026-09-13. **N1 and N2 merged into `develop`**. The test-only
 public API has one notation — one `pub mod for_tests` per crate, seven of them — and **why a
 command failed is a variant, not a sentence**: four enums, the numbers travelling as numbers,
 the wording in `it.ts` / `en.ts`. **M4's design reorders the cleanup**, and the order is
