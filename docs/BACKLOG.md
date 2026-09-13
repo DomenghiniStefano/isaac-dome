@@ -1832,3 +1832,49 @@ decision, in words, for the two that are not entities.
 Closes when: a mark's entry in the blocked menu opens the boss's page for the ten that have one,
 the other two say what they are without pretending to be entities, and the mapping is pinned by
 a test that reads it from the catalog rather than from a literal table.
+
+---
+
+## B37 — A tab carries its state between windows: filters, scroll, what it was showing (implementation, `ui`, after 3.7's shape)
+
+Logged 2026-09-13, from the owner while checking the tear-off: *"si devono tenere anche filtri,
+scroll ecc quando tratti uno spostamento di tab"*. A tab dragged into another window arrives at
+the right page and **forgets everything about how it was being read** — the Unlock facets, the
+search text, the sort, where the virtualized table was scrolled to.
+
+### Why it is not a small fix
+
+What crosses between windows today is `TabSeed` — everything a tab *is*, minus its identity. And
+a tab, today, **is a location**: a route name and a query. Everything else lives somewhere that
+is not the tab:
+
+- the **facets and the search text** are the screens' own `ref`s, recreated when the screen
+  mounts (`screens/unlock/`, `composables/useSearch.ts`);
+- the **scroll offset** belongs to the DOM element, and to `@tanstack/vue-virtual`'s measurement
+  of it;
+- the **view stores** (`stores/graph.ts`, `collection.ts`, `wiki.ts`) are per window, and keyed
+  by nothing: two tabs on the same screen already share them.
+
+So "a tab keeps its state" means **a tab owns its state**, which is a different shape from the
+one the shell has had since 3.1. It is the same shape 3.7 needs in order to save a session — a
+tab that can be written down and read back — which is why this waits for that decision rather
+than inventing a second one.
+
+### What it probably looks like
+
+1. A tab's state becomes an object it owns: `{ location, view? }`, where `view` is a small,
+   serializable record a screen declares for itself (facets, query, sort, scroll offset).
+2. A screen reads it on mount and writes it back as it changes — through one composable, so no
+   screen invents its own storage, and so the shape is uniform enough for 3.7 to persist.
+3. `TabSeed` needs no change at all: it is `Omit<Tab, 'id'>`, so the day a tab holds its view the
+   view crosses windows with it. That property was built in on purpose (2026-09-13) and this is
+   the case it was built for.
+4. Scroll is the awkward one: an offset only means something against a list of the same length,
+   so it is restored **after** the data is there, and a list that changed underneath keeps the
+   top rather than guessing.
+
+### Done when
+
+A tab dragged into another window comes back showing what it was showing: the same facets, the
+same text in the search, the same sort, and the same place in the list — and the same is true of
+a tab that survives a restart, because it is the same mechanism.

@@ -133,4 +133,28 @@ fixing an instance of it, since a tab in flight exists in exactly one place.
 
 ## Verification on the machine
 
-(filled in by Task 17: the eleven checks, once the gesture is settled)
+Driven by the owner on a real window, 2026-09-13. **Four of the eleven checks pass**, and three
+defects were found and fixed in the doing — each one a rule, not a slip.
+
+- [x] **1. A tab torn onto the bare desktop opens a window there.** The window is now drawn
+      **around the tab**: where the hand holds it inside the tab, and where a tab sits inside a
+      window, are both measured while the tab is still in the strip, and the new window is placed
+      so the tab lands under the cursor. It used to put its own top-left corner there, which the
+      owner named exactly: *"preferisco si posizionasse lì la tab e poi si crei la scheda"*. The
+      same change fixed a unit confusion nobody had noticed: creation coordinates are logical and
+      the point we hold is the desktop's physical ones — the same number until a screen is
+      scaled. The window is now born hidden, placed in physical pixels, then shown.
+- [x] **2. A tab dragged back onto another window's strip merges there**, arrives once, and the
+      window it leaves closes. It used to arrive **always at the end**, wherever it was dropped,
+      and that was a race of mine: at the release the origin told the target "the tab left" —
+      taking with it the index the marker was aiming at — and only then handed the tab over. The
+      target now keeps its aim until the tab has landed on it.
+- [x] **3. `Escape` in mid-flight puts the tab back where it sat.** Right the first time.
+- [x] **The close button on the last tab closes the window** (a secondary one; the first keeps
+      its landing tab). The old rule — "the bar is never empty", so the last tab is replaced by a
+      fresh one — had survived the owner's decision that an emptied window closes. For a
+      secondary window those are the same sentence, and it now says so.
+
+Still to check: docking into a *second* secondary window; two windows on the Plan and a move in
+one; a profile change and a scale change crossing windows; two monitors at different scale
+factors; the target window closed while a tab is in flight; and the cold start's first tear-off.
