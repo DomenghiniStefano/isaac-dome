@@ -23,11 +23,11 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-13. **N1 merged into `develop`** (`feature/cleanup-names`): the
-test-only public API has one notation and it is structural — one `pub mod for_tests` per
-crate, nothing test-only anywhere else in a public surface. **M4's design reorders the
-cleanup**, and the order is now written into that section: N1 → N2 → N7 → N6 →
-M4 sub-project 1 → N8 → N3, N4, N5.
+**Last update:** 2026-09-13. **N1 and N2 done**, N1 merged into `develop`. The test-only
+public API has one notation — one `pub mod for_tests` per crate, seven of them — and **why a
+command failed is a variant, not a sentence**: four enums, the numbers travelling as numbers,
+the wording in `it.ts` / `en.ts`. **M4's design reorders the cleanup**, and the order is
+written into that section: N1 → N2 → N7 → N6 → M4 sub-project 1 → N8 → N3, N4, N5.
 **Sub-project 3.5d merged into `develop`** (`4406c49`), suite green on the merge result: a
 blocked badge opens a menu whose entries are the wiki pages of what is in the way.
 **M4's first sub-project has its design** (`cac6914`): the run model, the `run` and
@@ -708,42 +708,69 @@ reason:
       turns a leak test into a test of nothing.
       **One notation, and it is structural**: each crate with a test-only entry point has
       exactly one `pub mod for_tests`, and nothing test-only appears anywhere else in its
-      public surface. Six crates have one — `catalog`, `graph`, `ipc`, `store`, `unpack`,
-      `wiki`. The inner items went back to being internal: `Graph::from_edges` and
-      `from_requirements` are `pub(crate)` constructors again, `search`'s `documents` and
-      `progress` are `pub(crate)` instead of wearing `#[doc(hidden)]` twins, and `Doc` and
-      `ProgressMark` left `ipc`'s contract — they are the return types of test-only calls
-      and nothing else reads them.
-      **The survey had found four entry points; there were six.** `unpack::__lzw_decompress`
-      and `catalog::__heads_parse` carried the same `__` prefix and were not on the list.
-      The second serves an **example** rather than a test, and the module's doc says so
-      rather than inventing a second word for it: a second word here would rebuild the thing
-      this item removes.
+      public surface. **Seven crates** have one — `catalog`, `discovery`, `graph`, `ipc`,
+      `store`, `unpack`, `wiki`. The inner items went back to being internal:
+      `Graph::from_edges` and `from_requirements` are `pub(crate)` constructors again,
+      `search`'s `documents` and `progress` are `pub(crate)` instead of wearing
+      `#[doc(hidden)]` twins, and `Doc` and `ProgressMark` left `ipc`'s contract — they are
+      the return types of test-only calls and nothing else reads them.
+      **The survey had found four entry points; there were seven, and the count moved
+      twice.** `unpack::__lzw_decompress` and `catalog::__heads_parse` carried the same `__`
+      prefix and were not on the list; `catalog`'s serves an **example** rather than a test,
+      and the module's doc says so rather than inventing a second word, which would rebuild
+      the thing this item removes. The seventh, **`discovery::testing`**, was found a session
+      later while N2 typed that crate's diagnostic: a `#[doc(hidden)] pub mod` under a
+      different word, matching neither the `__` prefix nor the `_for_tests` suffix the
+      closing grep looked for. **The lesson is about the report, not the code**: "one
+      notation" was written as a closed fact when what had actually been established was
+      "the two spellings I grepped for are gone". A closing criterion states what it can
+      see, and this one could not see a third spelling.
       **Closed against** `grep -riE '(icone|segreto|_di_)' crates` and
-      `grep -rn 'pub fn __\|as __' crates`, both silent, and no `pub use` naming a
-      `for_tests` item. **Over `crates` and not `ui/src`**: the Italian locale file
-      legitimately contains the Italian word *icone* in its prose, so a grep that spans it
-      can never go quiet — a closing criterion that cannot be met is worse than none,
-      because it gets read as "still open" forever.
+      `grep -rn 'pub fn __\|as __\|pub mod testing\|_for_tests' crates`, both silent, and no
+      `pub use` naming a `for_tests` item. **Over `crates` and not `ui/src`**: the Italian
+      locale file legitimately contains the Italian word *icone* in its prose, so a grep that
+      spans it can never go quiet — a closing criterion that cannot be met is worse than
+      none, because it gets read as "still open" forever.
 
-- [ ] **N2. `reason: String` leaves the IPC.** *Two sessions. Before N7.*
-      `IpcError::UnreadableSave`, `SettingsNotWritable` and `StoreUnavailable` carry a
-      `String` built in Rust that `useIpcErrorText.ts` concatenates onto an i18n key
-      (lines 17, 19, 25) and `PlanAlerts.vue:48` prints raw. It is the defect `CLAUDE.md`
-      charges `format!("{:?}")` with, only hand-written: **not translatable**. An untyped
-      field is also what lets the wording drift — `store_reason` and `describe_open_error`
-      answer in English while `"coda del piano illeggibile"` (`lib.rs:533`) and
-      `"database illeggibile"` (`:642`, `:648`) answer in Italian, so the language of an
-      error depends on which line produced it.
-      **What:** an enum we define, per case — `StoreReason::{Unreadable, NewerSchema {
-      found, supported }, QueueUnparseable, DataDirUnknown }` — numbers travelling as
-      numbers and the wording living in `it.ts` / `en.ts`. `store_reason` and
-      `describe_open_error` then have nothing left to do: they exist only to produce a
-      `String`.
-      **Done when** no field of `IpcError` is a `String` the UI concatenates, those two
-      functions are gone, and the two anti-leak tests in `app` assert on a variant instead
-      of on a substring — which is what makes them structural rather than a search for a
-      word.
+- [x] **N2. `reason: String` leaves the IPC.** *Done 2026-09-13, `feature/typed-ipc-reasons`.*
+      **Four enums, not one.** The item named `StoreReason`; the boundary carried the same
+      defect in three more shapes, so `crates/ipc/src/reasons.rs` holds `IoReason`,
+      `SaveReason`, `SettingsReason` and `StoreReason`. `IoReason` has no variant with a
+      field and is therefore a **bare camelCase string** by the repo's own rule; the other
+      three carry one and are tagged. `StoreReason` gained `DataDirNotCreatable` beyond the
+      four the item listed — "the folder is unknown" and "the folder would not be created"
+      are two things, and the item's list was written from a skim.
+      **`store_reason` and `describe_open_error` are gone**, and so are the two Italian
+      sentences. The mappings live where they can be tested — `OpenError` and
+      `io::ErrorKind` in `ipc`, `StoreError` in `store`, which already depends on it — and
+      each is pinned by a **property**, not only by a table: whatever the OS or SQLite
+      wrote, none of it survives into the serialized reason.
+      **One case was answering with a sentence that hid which case it was.**
+      `queue_import_goals` used `"database illeggibile"` in *both* arms: a database that
+      would not open and a query that failed read identically, and the reason the first arm
+      already had was thrown away. Each says what it knows now. This is the item's own
+      charge — an untyped field lets the wording drift — in its worst form, where the drift
+      had eaten the information.
+      **The defect had an instance outside `IpcError`, and the UI was printing it.**
+      `SetupDiagnostic::UnreadablePath` carried `io::Error::to_string()` and
+      `NoSavesCard.vue` concatenated it. `discovery::Diagnostic` carries the
+      `io::ErrorKind` now. On the way, `Discovery` and `Diagnostic` lost their `Serialize`
+      derive: nothing used it, and both hold a `PathBuf`, so serializing either would have
+      put a full path on the wire — the one thing the boundary forbids.
+      **The frontend maps to keys, not to text.** `ui/src/lib/ipc/errorText.ts` is a pure
+      function beside the wire types: `useIpcErrorText` joins the parts it returns and
+      `PlanAlerts` asks it for the store reason. It is pure because the UI suite tests logic
+      and not components — a composable calling `useI18n` needs an app context, and the
+      mapping is the part worth checking. `storeNewerSchema` interpolates `{found}` and
+      `{supported}`: the word order around a value is the translation's business.
+      **The test walks every variant of every error** and asserts each key exists in `en`
+      **and** `it`. A missing key renders as the key itself — it reads as a bug report to
+      the user and fails nothing — so a new variant with no text breaks the test rather than
+      the app.
+      **Done when** — all met: no field of `IpcError` is a `String` the UI concatenates,
+      the two functions are gone, and the two anti-leak tests in `app` assert on a variant.
+      The last one is what makes them structural: a unit variant has no string for a path to
+      hide in, so the test stopped being a search for a word.
 
 - [ ] **N3. One faceted list, not two.** *Two or three sessions.*
       `ui/src/lib/graph/unlockFilter.ts` and `ui/src/lib/collection/collectionFilter.ts`
@@ -1086,6 +1113,54 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-13 (later) — N2: the reason stops being a sentence
+
+`feature/typed-ipc-reasons`, five commits, suite green. The item asked for one enum and the
+boundary turned out to carry the same defect in four shapes.
+
+- [x] **Four enums in `crates/ipc/src/reasons.rs`** — `IoReason`, `SaveReason`,
+      `SettingsReason`, `StoreReason`. The numbers travel as numbers: `NewerSchema` carries
+      `found` and `supported` instead of the sentence that already spelled them, and the
+      sentence is written in `it.ts` / `en.ts` where the word order is the translation's
+      business. `IoReason` keeps only the two `io` kinds a user can act on — anything else
+      is `Other`, because a third guess at what the OS meant is wording, not information.
+- [x] **`store_reason` and `describe_open_error` are gone**, which is what the item asked
+      for: they existed only to produce a `String`. The mappings moved to where they can be
+      tested — `OpenError` and `io::ErrorKind` in `ipc`, `StoreError` in `store`, which
+      already depends on it — and each is kept by a **property**: whatever the OS or SQLite
+      wrote, none of it survives into the serialized reason.
+- [x] **A sentence had already eaten the information it was hiding.** `queue_import_goals`
+      answered `"database illeggibile"` in *both* arms — a database that would not open and
+      a query that failed read identically, and the reason the first arm already had was
+      discarded to print it. That is the item's own charge (an untyped field lets the
+      wording drift) in its worst form, and it is the strongest argument in the whole
+      cleanup for typing a field rather than agreeing on its contents.
+- [x] **The defect had an instance outside `IpcError`, and the UI was printing it.**
+      `SetupDiagnostic::UnreadablePath` carried `io::Error::to_string()` and
+      `NoSavesCard.vue` concatenated it onto a label. `discovery::Diagnostic` carries the
+      `io::ErrorKind` now. On the way, `Discovery` and `Diagnostic` lost their `Serialize`
+      derive: nothing used it, and both hold a `PathBuf` — serializing either would have put
+      a full path on the wire, which is the one thing the boundary forbids. An unused derive
+      on a type full of paths is a loaded gun, not a leftover.
+- [x] **The frontend maps to keys, not to text.** `ui/src/lib/ipc/errorText.ts` is pure and
+      sits beside the wire types; `useIpcErrorText` only joins what it returns. Pure because
+      the UI suite tests logic and not components — a composable calling `useI18n` needs an
+      app context, and the mapping is the part worth checking. The test walks **every**
+      variant of every error and asserts each key exists in `en` and in `it`: a missing key
+      renders as the key itself, which reads as a bug report to the user and fails nothing.
+- [x] **N1's report was corrected, not quietly patched.** It said "one notation" over six
+      crates; there were seven. `discovery::testing` — a `#[doc(hidden)] pub mod` under a
+      different word — matched neither spelling N1's closing grep looked for, and surfaced
+      only because N2 had to touch that crate. The code is fixed and the entry now says what
+      happened. **The lesson is about the report**: "one notation" was written as a closed
+      fact when what had been established was "the two spellings I grepped for are gone". A
+      closing criterion states what it can see, and a grep cannot see a spelling nobody
+      thought of.
+- [ ] **N7 is next, and it is the reason this went first.** The contract is still
+      hand-mirrored: `types.ts` gained the four reason types by hand, which is four more
+      chances for the failure `CLAUDE.md` already records. With the error type finally still,
+      generating it has nothing left to chase.
 
 ### 2026-09-13 — N1, and the order the cleanup runs in
 

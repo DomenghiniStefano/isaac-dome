@@ -37,8 +37,9 @@ pub struct QueueRow {
     rename_all_fields = "camelCase"
 )]
 pub enum QueueDiagnostic {
-    /// The database failed to open, and why (text of our own, never SQLite's).
-    StoreUnavailable { reason: String },
+    /// The database failed to open, and which case it is: a variant, never a sentence,
+    /// and never SQLite's own message.
+    StoreUnavailable { reason: crate::StoreReason },
     /// The saved document didn't parse: the queue is empty because it couldn't be read,
     /// which is not the same as being empty.
     Unreadable,
@@ -102,8 +103,9 @@ pub struct QueueInputs<'a> {
     pub progress: Option<&'a dyn graph::Profile>,
     pub queue: Result<&'a plan::Queue, &'a plan::QueueError>,
     pub goals_pending: u32,
-    /// `Some` when the database itself failed: the text is ours, never SQLite's.
-    pub store_reason: Option<String>,
+    /// `Some` when the database itself failed, as the case it is: never a sentence, and
+    /// never SQLite's own message.
+    pub store_reason: Option<crate::StoreReason>,
 }
 
 pub fn queue_view(

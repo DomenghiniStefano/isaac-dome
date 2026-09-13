@@ -1,6 +1,6 @@
 use std::collections::BTreeSet;
 
-use discovery::testing::{dlcs_from_appids, edition_from_appids, parse_save_filename};
+use discovery::for_tests::{dlcs_from_appids, edition_from_appids, parse_save_filename};
 use discovery::{Dlc, Edition, SavePrefix};
 
 fn set(ids: &[u32]) -> BTreeSet<u32> {
@@ -117,7 +117,7 @@ const REAL_ACF: &str = r#"
 #[test]
 fn parses_installdir_and_dlc_appids_from_real_acf() {
     let (installdir, dlcs) =
-        discovery::testing::parse_manifest_fields(REAL_ACF).expect("valid manifest");
+        discovery::for_tests::parse_manifest_fields(REAL_ACF).expect("valid manifest");
     assert_eq!(installdir, "The Binding of Isaac Rebirth");
     assert_eq!(
         dlcs,
@@ -128,7 +128,7 @@ fn parses_installdir_and_dlc_appids_from_real_acf() {
 #[test]
 fn malformed_acf_returns_none() {
     assert_eq!(
-        discovery::testing::parse_manifest_fields("this is not vdf {{{"),
+        discovery::for_tests::parse_manifest_fields("this is not vdf {{{"),
         None
     );
 }

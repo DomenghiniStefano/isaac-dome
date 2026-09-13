@@ -36,6 +36,20 @@ impl StoreError {
     }
 }
 
+/// The reason as it crosses the IPC. SQLite's message stops here: `Unreadable` carries it
+/// so this crate's own callers can log it, and it can contain the database's path.
+impl From<&StoreError> for ipc::StoreReason {
+    fn from(e: &StoreError) -> Self {
+        match e {
+            StoreError::Unreadable { .. } => ipc::StoreReason::Unreadable,
+            StoreError::NewerSchema { found, supported } => ipc::StoreReason::NewerSchema {
+                found: *found,
+                supported: *supported,
+            },
+        }
+    }
+}
+
 pub struct Store {
     conn: Connection,
 }

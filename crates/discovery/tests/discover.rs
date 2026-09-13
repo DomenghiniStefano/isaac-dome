@@ -3,7 +3,7 @@
 use std::fs;
 use std::path::Path;
 
-use discovery::testing::{find_game, scan_override};
+use discovery::for_tests::{find_game, scan_override};
 use discovery::{Diagnostic, Edition, Options, SteamInstall, SteamSource};
 
 fn mkdir(path: &Path) {
