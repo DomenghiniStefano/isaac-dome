@@ -1,85 +1,92 @@
 <script setup lang="ts">
 import { PlusIcon } from '@lucide/vue'
-import { nextTick, ref } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
+import { DragGhost } from '@/components/ui/drag'
+import { useTabDrag } from '@/composables/useTabDrag'
 import { useMessages } from '@/i18n'
 import { EventKey } from '@/lib/constants/eventKeys'
+import { Axis, boxAt } from '@/lib/drag/dragList'
+import type { Point } from '@/lib/drag/dragList'
+import { toClient } from '@/lib/window/tearOff'
 import TabItem from './TabItem.vue'
-import type { DropSide, TabView } from './tabs'
-import { TabDrag, TabRole, dropSide, moveIndex } from './tabs'
+import type { IncomingHover, TabView } from './tabs'
+import { DropSide, TabRole, dropSide } from './tabs'
 
-const props = defineProps<{ tabs: TabView[]; activeId: string | null }>()
+const props = withDefaults(
+  defineProps<{
+    tabs: TabView[]
+    activeId: string | null
+    // Optional because most of the app has no second window in sight — the Kit draws a strip
+    // with no drag in flight, and nothing should have to say "nothing is arriving".
+    incoming?: IncomingHover | null
+  }>(),
+  { incoming: null },
+)
 const emit = defineEmits<{
   select: [id: string]
   close: [id: string]
   move: [from: number, to: number]
   add: []
+  aim: [index: number | null]
+  // The tab left the strip, landed, or came back: the three endings of a tear-off.
+  lift: [index: number]
+  settle: [target: string | null, at: Point, origin: Point]
+  putBack: []
 }>()
 const { t } = useMessages()
-
-interface Drag {
-  from: number
-  startX: number
-  moving: boolean
-}
-interface Drop {
-  index: number
-  side: DropSide
-}
 
 const tabSelector = `[role="${TabRole}"]`
 
 const strip = ref<HTMLElement | null>(null)
-const drag = ref<Drag | null>(null)
-const drop = ref<Drop | null>(null)
-// Where the tabs are, read once when a press becomes a drag: nothing moves until the drag
-// ends, and a layout read for every tab on every pointermove would be waste.
-let tabRects: DOMRect[] = []
 
 const tabElements = (): HTMLElement[] =>
   strip.value ? [...strip.value.querySelectorAll<HTMLElement>(tabSelector)] : []
 
-const dropAt = (x: number, from: number): Drop | null => {
-  for (const [index, r] of tabRects.entries()) {
-    if (x >= r.left && x < r.right)
-      return index === from
-        ? null
-        : { index, side: dropSide(x, r.left, r.width) }
-  }
-  return null
-}
+// Inside the strip this is the reorder; past the tear band the same gesture becomes a window.
+// Which of the two is `useTabDrag`'s business — the strip only says what its tabs are and what
+// each ending means.
+const { drag, detached } = useTabDrag({
+  strip,
+  items: tabElements,
+  labelOf: (index) => props.tabs[index]?.label ?? '',
+  reorder: (from, to) => emit('move', from, to),
+  lift: (index) => {
+    if (!props.tabs[index]) return false
+    emit('lift', index)
+    return true
+  },
+  settle: (target, at, origin) => emit('settle', target, at, origin),
+  putBack: () => emit('putBack'),
+})
 
-// A press becomes a drag only past the threshold, and only then is the pointer captured:
-// a capture from the first pixel would send the click to the strip instead of the tab.
-const onPointerDown = (index: number, e: PointerEvent) => {
-  if (e.button !== 0) return
-  drag.value = { from: index, startX: e.clientX, moving: false }
-}
+// The tab the ghost draws: the grabbed one, as it is — an inactive tab lifted as if it were
+// the active one would read as a different tab.
+const grabbed = computed(() =>
+  drag.from.value === null ? null : props.tabs[drag.from.value],
+)
 
-const onPointerMove = (e: PointerEvent) => {
-  const d = drag.value
-  if (!d) return
-  if (!d.moving) {
-    if (Math.abs(e.clientX - d.startX) < TabDrag.Threshold) return
-    d.moving = true
-    tabRects = tabElements().map((el) => el.getBoundingClientRect())
-    strip.value?.setPointerCapture(e.pointerId)
-  }
-  drop.value = dropAt(e.clientX, d.from)
-}
+// A tab arriving from another window. Only this window can turn the desktop point into a gap
+// in its own strip — it owns the rectangles — and the gap the marker is drawn in **is** where
+// the drop lands: one computation, so what you saw is what you get. The index is handed back
+// so the window can dock there without measuring anything a second time.
+const incomingGap = computed((): number | null => {
+  const hover = props.incoming
+  if (!hover) return null
+  const p = toClient(hover.at, hover.window)
+  const boxes = tabElements().map((el) => {
+    const r = el.getBoundingClientRect()
+    return { left: r.left, top: r.top, width: r.width, height: r.height }
+  })
+  const index = boxAt(boxes, p, Axis.X)
+  const box = index === null ? undefined : boxes[index]
+  if (index === null || !box) return props.tabs.length
+  return dropSide(p.x, box.left, box.width) === DropSide.Before
+    ? index
+    : index + 1
+})
 
-const onPointerUp = (e: PointerEvent) => {
-  const d = drag.value
-  const target = drop.value
-  drag.value = null
-  drop.value = null
-  tabRects = []
-  if (strip.value?.hasPointerCapture(e.pointerId))
-    strip.value.releasePointerCapture(e.pointerId)
-  if (!d?.moving || !target) return
-  const to = moveIndex(d.from, target.index, target.side)
-  if (to !== d.from) emit('move', d.from, to)
-}
+watch(incomingGap, (gap) => emit('aim', gap))
 
 const neighbour = (key: string): number | null => {
   const index = props.tabs.findIndex((tab) => tab.id === props.activeId)
@@ -106,23 +113,46 @@ const onKeydown = (e: KeyboardEvent) => {
       ref="strip"
       role="tablist"
       class="flex min-w-0 items-end gap-px"
-      @pointermove="onPointerMove"
-      @pointerup="onPointerUp"
-      @pointercancel="onPointerUp"
+      @pointermove="drag.move"
+      @pointerup="drag.end"
+      @pointercancel="drag.end"
       @keydown="onKeydown"
     >
-      <TabItem
-        v-for="(tab, index) in tabs"
-        :key="tab.id"
-        :tab="tab"
-        :active="tab.id === activeId"
-        :dragging="drag?.moving === true && drag.from === index"
-        :drop="drop?.index === index ? drop.side : null"
-        @pointerdown="onPointerDown(index, $event)"
-        @select="emit('select', tab.id)"
-        @close="emit('close', tab.id)"
+      <template v-for="(tab, index) in tabs" :key="tab.id">
+        <!-- Where a tab from another window would land: the same 2px primary line the queue
+             draws, in the gap the marker is aimed at. -->
+        <span
+          v-if="incomingGap === index"
+          class="h-tab w-0.5 shrink-0 self-end bg-primary"
+        />
+        <TabItem
+          :tab="tab"
+          :active="tab.id === activeId"
+          :dragging="drag.moving.value && drag.from.value === index"
+          :drop="drag.drop.value?.index === index ? drag.drop.value.side : null"
+          @pointerdown="drag.start(index, $event)"
+          @select="emit('select', tab.id)"
+          @close="emit('close', tab.id)"
+        />
+      </template>
+      <span
+        v-if="incomingGap === tabs.length"
+        class="h-tab w-0.5 shrink-0 self-end bg-primary"
       />
     </div>
+    <!-- Outside the window the preview has taken over: two things following one cursor would
+         be two answers to "where is the tab". -->
+    <DragGhost
+      v-if="drag.ghost.value && grabbed && !detached"
+      :box="drag.ghost.value"
+    >
+      <TabItem
+        :tab="grabbed"
+        :active="grabbed.id === activeId"
+        :dragging="false"
+        :drop="null"
+      />
+    </DragGhost>
     <Button
       :variant="ButtonVariant.Chrome"
       :size="ButtonSize.IconCompact"

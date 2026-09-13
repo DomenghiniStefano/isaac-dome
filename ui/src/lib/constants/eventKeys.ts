@@ -2,6 +2,7 @@
 // to the user): these are what the browser reports, and never displayed.
 export const EventKey = {
   K: 'k',
+  Escape: 'Escape',
   ArrowLeft: 'ArrowLeft',
   ArrowRight: 'ArrowRight',
   ArrowUp: 'ArrowUp',

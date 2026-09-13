@@ -1255,7 +1255,49 @@ save against the dated backup the game wrote before it, and read which cells mov
 
 ## Session log
 
-### 2026-09-13 (last) — you name what you want, and the app says what to play
+### 2026-09-13 (last) — one drag everywhere, and a tab that leaves the window
+
+`feature/drag-and-windows`, cut from `develop` in its own worktree (`C:/Projects/isaac-dome-drag`)
+so the wiki infobox work kept the main checkout. Spec
+`docs/superpowers/specs/2026-09-13-drag-and-windows-design.md`, plan and report beside it.
+**B31 and B15 together**, because the tear-off *is* the tab strip's drag continued past the edge.
+
+- [x] **B31 closed.** `lib/drag/dragList.ts` (pure, tested), `composables/useDragList.ts` (the
+      choreography, plus the `Escape` neither screen had), `components/ui/drag/DragGhost.vue`
+      (`aria-hidden`: it is a picture of the row, not a second one). The queue and the strip are
+      its two callers; no pointer choreography is left in a screen. **No shadow token was
+      invented** — the flat skin is a decision — so the lift is a `primary` border on an opaque
+      sheet, looked at on the Kit, in the strip and in the Plan.
+- [x] **The multiwindow structure.** `lib/window/` grew from one module to seven: the port and
+      its fake (`?windows=fake`), the messages between windows, the seed handshake, the focus
+      order (kept in the frontend, not in Rust as the spec had it — every window already watches
+      its own focus), the hit test with its DPI conversion, the preview window, the pointer
+      source. `tabModel` gained insert/detach/seed, written **by subtraction** (`Omit<Tab, 'id'>`)
+      so another session's rewrite of what a tab *is* merges without touching them.
+- [x] **What one window writes, every window reads again.** Three events from Rust
+      (`crates/app/src/events.rs`), **payload-free by rule**: they say "read again", so no second
+      wire shape exists to keep in camelCase and nothing new can leak across the boundary.
+- [x] **Two contradictions found while building, both fixed in the contracts, not patched.** The
+      spec's two closing rules made each other unreachable — *opening* a window for a tab already
+      alone is a no-op, *joining* it to one that exists is not — and the scanner's "window API
+      outside `src/lib/window/`" rule matched one namespace of the three, so it promised a check
+      it never made. Verified with a bait file before and after.
+- [x] **A defect found by running it, not by reading it**: `watchAppEvents` called `listen()`
+      with no `isTauri()` guard, which outside Tauri throws from inside a mounted hook and takes
+      the shell down. `preview.ts` had the same hole. Fixed; the rule was already ours.
+- [ ] **The spike is not run, and it is the one thing that decides a module.** Whether WebView2
+      keeps delivering pointer events with the cursor outside the window needs a real window and
+      a hand on the mouse. `pointerSource.ts` is written as if the answer were yes, behind the
+      interface that is all the other answer changes, with a silence timeout that **cancels** the
+      drag rather than landing a tab nobody released.
+- [ ] **Not verified on the machine**: the eleven checks of the plan's Task 17 — tear off, dock
+      back, the last tab, the window that closes, two windows on the Plan, a profile change, a
+      scale change, two monitors at different factors, a target window closed mid-drag.
+- [x] **A worktree runs a dimmed suite in silence.** `samples/` is git-ignored, so a fresh
+      worktree starts with `144 skipped, 0 real files touched` and says nothing. The samples were
+      copied in and the `packed` junction recreated: `7 skipped, 1266 real files touched`.
+
+### 2026-09-13 (later still) — you name what you want, and the app says what to play
 
 `feature/goals-want`, cut from `develop` at `a83a7ef` in its own worktree, `pnpm check` green
 on the result: 55 frontend test files / 356 tests, 7 skips all pre-existing and named. Spec

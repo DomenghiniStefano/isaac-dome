@@ -318,7 +318,12 @@ Five non-negotiable rules, the rest is in the document:
    (Tailwind v4: no longer also in a config file). `@theme` can span multiple files
    imported from `main.css`, one per token family; what never gets duplicated is the
    token.
-3. **No `invoke()` in components** — only typed wrappers in `ui/src/lib/ipc/`.
+3. **No `invoke()` in components** — only typed wrappers in `ui/src/lib/ipc/`. The same for
+   windows: **nothing outside `ui/src/lib/window/` imports `@tauri-apps/api`'s `window`,
+   `webviewWindow` or `event`**, and every one of those modules degrades outside Tauri instead
+   of throwing — `listen()` does not answer "no", it explodes inside whatever hook called it.
+   **One composable drags every list** (`useDragList`, decisions in `lib/drag/dragList.ts`): a
+   screen brings where its items are and what a drop there means, nothing else.
 4. **No raw `<button>` / `<input>`** — use the primitives in `ui/src/components/ui/`, and
    extend them with a prop instead of styling by hand.
 5. **No string unions** — `const X = { … } as const`, never `type X = 'a' | 'b'`. Also
