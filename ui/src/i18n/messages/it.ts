@@ -682,6 +682,8 @@ export const it = {
     catalogUnavailable: 'Il catalogo del gioco non è disponibile.',
     storeUnavailable: "Il database dell'app non è disponibile.",
     wikiUnavailable: 'Il dataset della wiki non è disponibile.',
+    sessionTooLarge:
+      'La sessione delle tab è troppo grande per essere salvata.',
   },
 }
 
