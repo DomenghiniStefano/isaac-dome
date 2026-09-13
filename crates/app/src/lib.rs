@@ -2,6 +2,7 @@
 //! I/O job that belongs to it (the settings file). The real logic lives in `ipc`.
 
 mod commands;
+mod events;
 mod icons;
 mod settings_file;
 mod state;
