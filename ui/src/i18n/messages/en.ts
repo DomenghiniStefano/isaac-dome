@@ -593,6 +593,23 @@ export const en: MessageSchema = {
     removeShort: 'Remove',
     errorTitle: "The queue didn't change",
   },
+  // Why a command could not answer. Since N2 these are variants on the wire, not a sentence
+  // built in Rust: the numbers arrive as numbers and the wording lives here.
+  ipcReasons: {
+    ioNotFound: "The file isn't there.",
+    ioPermissionDenied: "Windows won't let us open it.",
+    ioOther: "The system wouldn't open it.",
+    saveTooShort: "It's too short to hold a save.",
+    saveBadMagic: "It doesn't look like an Isaac save.",
+    settingsConfigDirUnknown: "Windows won't say where settings go.",
+    settingsEncoding: "The settings wouldn't be written out.",
+    storeDataDirUnknown: "Windows won't say where app data goes.",
+    storeDataDirNotCreatable: "The app's folder can't be created.",
+    storeUnreadable: "The file won't open, or isn't a database.",
+    storeNewerSchema:
+      'It comes from a newer version of the app ({found} against {supported}).',
+    storeQueueUnparseable: "The saved plan can't be read.",
+  },
   ipcErrors: {
     noBackend: "The backend didn't answer.",
     noActiveProfile: 'No active profile.',
