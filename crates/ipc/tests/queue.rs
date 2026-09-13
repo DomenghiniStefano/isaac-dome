@@ -190,3 +190,25 @@ fn a_saved_target_resolves_to_the_achievement_that_unlocks_it() {
         "a target nothing unlocks is skipped, not guessed at"
     );
 }
+
+#[test]
+fn a_target_named_by_two_achievements_has_two_routes() {
+    use ipc::TargetKey;
+    // A challenge's `achievements` attribute is a list, so a target really can have two ways
+    // in. `achievement_unlocking` answers with the first and says nothing about the second;
+    // a view that promises to say *how* you get a thing has to be able to show both.
+    let c = Catalog::build(|p| {
+        match p {
+        "achievements.xml" => Some(ACH.to_vec()),
+        "challenges.xml" => Some(
+            b"<challenges version=\"1\"><challenge id=\"4\" name=\"Both\" achievements=\"1,2\" endstage=\"1\" /></challenges>"
+                .to_vec(),
+        ),
+        _ => None,
+    }
+    });
+    let key = TargetKey::Challenge { id: 4 };
+    assert_eq!(ipc::achievements_unlocking(&c, &key), vec![1, 2]);
+    // The old function keeps its contract: the first, and only the first.
+    assert_eq!(ipc::achievement_unlocking(&c, &key), Some(1));
+}
