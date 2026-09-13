@@ -331,6 +331,9 @@ impl Resolver {
             // Machines and beggars: the game has no id for them, so they are wiki concepts
             // rather than targets. `m` is the largest single entry `unknownTemplates` had.
             "m" | "machine" => return Resolution::Concept,
+            // An item pool. `itempools.xml` keys pools by name and gives them no id, so
+            // there is no target to resolve to — the same shape as a machine.
+            "ip" => return Resolution::Concept,
             "s" | "floor" => {
                 return Resolution::Target(Target::Stage {
                     name: arg.trim().to_string(),

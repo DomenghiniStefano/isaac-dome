@@ -593,6 +593,19 @@ mod tests {
         )));
     }
 
+    /// `{{ip|Boss}}` names an item pool — "Boss" 81 times, then the rooms and the chests.
+    /// The game keys its pools by name in `itempools.xml` and gives them no id, so they are
+    /// concepts for the same reason machines are.
+    #[test]
+    fn the_item_pool_template_becomes_a_concept() {
+        let (v, d) = p("Found in the {{ip|Boss}} pool");
+        assert!(v
+            .iter()
+            .any(|i| matches!(i, Inline::Concept { page, .. } if page == "Boss")));
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+        assert!(d.unresolved.is_empty());
+    }
+
     /// `{{dlc|r}}` is a marker: it opens an edition scope that runs to the end of the value
     /// or to `{{dlc-}}`. But the template also has a **three-argument** form that carries its
     /// own text, and until 2026-09-13 the parser opened the scope and dropped the text on the
