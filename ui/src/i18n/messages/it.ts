@@ -164,6 +164,7 @@ export const it = {
       title: 'Scheda',
       description: 'Descrizione',
       requirements: 'Requisiti',
+      notes: 'Note',
       unlocks: 'Sblocca',
       unlockedBy: 'Sbloccato da',
       baseHp: 'Vita base',

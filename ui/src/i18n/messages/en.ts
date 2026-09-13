@@ -162,6 +162,7 @@ export const en: MessageSchema = {
       title: 'Card',
       description: 'Description',
       requirements: 'Requirements',
+      notes: 'Notes',
       unlocks: 'Unlocks',
       unlockedBy: 'Unlocked by',
       baseHp: 'Base HP',

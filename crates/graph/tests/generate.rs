@@ -13,6 +13,7 @@ fn achievement(id: u32, requirements: Vec<Inline>) -> (u32, Entry) {
             &format!("A{id}"),
             Infobox::Achievement {
                 requirements,
+                notes: Vec::new(),
                 unlocks: None,
             },
         ),
