@@ -29,23 +29,16 @@ export type GhostBox = Box
 // chosen 4 independently.
 export const DragThreshold = 4
 
-const travel = (axis: Axis, from: Point, to: Point): number => {
-  switch (axis) {
-    case Axis.X:
-      return Math.abs(to.x - from.x)
-    case Axis.Y:
-      return Math.abs(to.y - from.y)
-    default:
-      return assertNever(axis)
-  }
-}
-
+// A press becomes a drag on travel in **any** direction, and the list's axis has nothing to do
+// with it. It used to read the axis alone, and that was wrong in the one case that matters:
+// the strip runs along x, the tear-off is a vertical gesture, so dragging a tab straight down
+// out of the window never started a drag at all. Measured on the machine, 2026-09-13. The axis
+// still decides the hit test; it does not decide what a drag is.
 export const crossedThreshold = (
-  axis: Axis,
   from: Point,
   to: Point,
   threshold: number,
-): boolean => travel(axis, from, to) >= threshold
+): boolean => Math.hypot(to.x - from.x, to.y - from.y) >= threshold
 
 const holds = (box: Box, p: Point, axis: Axis): boolean => {
   switch (axis) {
