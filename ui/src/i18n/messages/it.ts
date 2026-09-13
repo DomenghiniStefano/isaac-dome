@@ -410,6 +410,30 @@ export const it = {
     nothingNow:
       'Non c’è niente da sbloccare adesso: o è tutto fatto, o tutto aspetta qualcos’altro.',
   },
+  // B37: la stessa schermata, chiesta dall'altro capo. Dici cosa vuoi e la risposta è la
+  // serie da giocare, nell'ordine in cui il Piano la giocherebbe.
+  want: {
+    placeholder:
+      'Voglio… (un oggetto, un personaggio, una sfida, un achievement)',
+    clear: 'Annulla',
+    chain: 'Cosa devi giocare',
+    availableNow: 'Puoi giocarlo adesso',
+    done: 'Ce l’hai già',
+    noProfile: 'Non sappiamo a che punto sei',
+    wayOf: 'Strada {index} di {total}',
+    unknown:
+      'Più {count} requisiti che non riusciamo a leggere: la serie potrebbe essere più lunga.',
+    addAll: 'Metti tutto nel Piano',
+    diagnostics: {
+      noCatalog:
+        'Senza i file del gioco non sappiamo quale achievement sblocchi cosa. Installa The Binding of Isaac e riapri l’app.',
+      noProfile:
+        'Nessun profilo letto: possiamo dirti come si ottiene, non a che punto sei.',
+      nothingUnlocks:
+        'Niente lo sblocca: o ce l’hai da sempre, o si ottiene giocando e non da un achievement.',
+      notUnlockable: 'Questo non è qualcosa che si sblocca.',
+    },
+  },
   // Il blocco che la pagina wiki di un achievement guadagna quando c'è un profilo attivo.
   // Dice soltanto dove sei tu: cos'è e cosa chiede lo dice già l'infobox sotto.
   profileBlock: {

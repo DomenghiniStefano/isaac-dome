@@ -1862,6 +1862,70 @@ a test that reads it from the catalog rather than from a literal table.
 
 ---
 
+## B37 — Searching from the goal: "voglio giocare Greed Mode, cosa devo giocare?" (implementation, `ipc` and `ui`) ✅ closed on 2026-09-13
+
+Logged and closed the same day. Spec
+`docs/superpowers/specs/2026-09-13-goals-want-design.md`, plan
+`docs/superpowers/plans/2026-09-13-goals-want.md`, report
+`docs/superpowers/plans/2026-09-13-goals-want-report.md`. Three things execution measured that
+the entry below didn't know:
+
+- **14 of the 45 challenges are named by more than one achievement.** `routes` being a list is
+  not a precaution: `achievement_unlocking`'s `.find()` was hiding a second way in on a third
+  of them.
+- **The graph is flat, and flatter the further you get.** The deepest chain anywhere in the
+  sample collection is four steps, on the *youngest* profile; on the reference profile it is
+  one. A prerequisite already earned leaves the chain, so this answer gets shorter as a player
+  advances.
+- **The order is not `missing_chain`'s.** That returns a set in id order; the order that means
+  something comes from `plan::Queue::enqueue`, which is why the preview builds a throwaway
+  queue instead of sorting by hand — the preview and "metti nel Piano" are one computation.
+
+*The original entry, for the record:*
+
+Logged on 2026-09-13, an explicit request. Unlock reads one way today: from a node to what it
+unlocks. Its four facets — state, what it unlocks *by kind*, origin, character — are all
+properties of the node, and none of them is "this particular thing I want". A player doesn't
+arrive with an achievement id; they arrive with a want: Greedier, The Forgotten, the D6.
+
+**What exists.** The traversal itself is done: `graph::Eval::missing_chain(achievement,
+profile)` returns exactly the ordered list of what still stands between a profile and a node,
+and the queue already uses it (`crates/app/src/commands/queue.rs:142,214`) to enqueue an
+achievement with its chain. `UnlockTarget` names the four kinds of thing a node unlocks and
+carries its wiki page (B35, in 3.6's plan); the search index of 3.5b already resolves a typed
+name to a thing; `unlockFilter.ts` keeps the facets as pure functions.
+
+**What's missing** is the way in, and it is four things, not one:
+
+1. **A facet on a named value, not on a kind** — "unlocks = Greedier", not "unlocks =
+   character". The values run to the hundreds, so it's a typeahead, which Unlock's drawer
+   doesn't have (and which B29 already wants for Collection).
+2. **Target → node**, the reverse of `target_of`. It has to answer for a target unlocked by
+   more than one achievement, and for a target no achievement unlocks at all — plenty are
+   already yours, or come from playing rather than from a node.
+3. **The answer is a chain, not a filtered table.** Filtering Unlock's rows to the chain's ids
+   is the cheap half; the readable half is an ordered series of cards and one gesture to put
+   the whole thing in the plan, which `enqueue` already accepts as a chain.
+4. **Not every want is a node.** "Play Greed Mode" is a game mode and Boss Rush a
+   room-and-event — the same two exceptions as B36. A goal search that silently returns
+   nothing for Greed is worse than one that says Greed Mode isn't unlocked, Greedier is, and
+   here's how. The vocabulary of wants the app accepts gets written down, not inferred from
+   the catalog.
+
+**Decide before starting:** whether this is a facet inside Unlock or the second entry point of
+the Goals screen ("voglio…" beside the recommended goals). After 3.6 rewrites that screen
+(B32) the second looks more likely — the answer is a chain of cards, and a table is not a
+chain.
+
+Closes when: naming a thing you want — a character, an item, a challenge, and the modes the app
+has decided it accepts — gives the ordered list of what's still missing for it, each row
+linking to its page, with one gesture that puts the whole chain in the plan; a want nothing
+unlocks says so in the player's terms instead of showing an empty table; and the target → node
+lookup is pinned by a test on the real catalog covering its three cases — one node, several,
+none.
+
+---
+
 ## B38 — Three pickup quotes ship an undecoded HTML entity (implementation, `wiki`, small)
 
 Logged on 2026-09-13, found by `crates/ipc/tests/wiki_agrees_with_catalog.rs`: of the quote

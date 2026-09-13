@@ -55,6 +55,7 @@ pub fn run() {
             graph::unlock,
             graph::next_steps,
             graph::collection,
+            graph::want,
             queue::queue,
             queue::queue_add,
             queue::queue_remove,
