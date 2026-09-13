@@ -450,7 +450,7 @@ pub fn unlock_view(
                 let unlocks: Vec<UnlockTarget> = c
                     .unlocks(a.id)
                     .iter()
-                    .map(|u| target_of(c, u, &mut icon))
+                    .map(|u| target_of(c, u, dataset, &mut icon))
                     .collect();
                 let origin = first_item_origin(c, c.unlocks(a.id));
                 (
@@ -562,6 +562,7 @@ pub fn unlock_view(
 pub fn resolve_target(
     c: &Catalog,
     key: &TargetKey,
+    dataset: Option<&Dataset>,
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> Option<UnlockTarget> {
     let english = catalog::Language::English;
@@ -571,6 +572,7 @@ pub fn resolve_target(
             let i = c.item(item_kind(k), ItemId(id))?;
             resolved.name = c.text(&i.name, english).to_string();
             resolved.icon_url = icon(&IconRef::Item { kind: k, id });
+            resolved.page = page_of(dataset, Some(wiki_target::item(i)));
         }
         TargetKey::Character { id } => {
             let ch = c.character(CharacterId(id))?;
@@ -578,12 +580,20 @@ pub fn resolve_target(
             // The base and Tainted forms carry the same name key: without the flag the two
             // go out as one character (`docs/BACKLOG.md` B28).
             resolved.tainted = ch.tainted;
+            resolved.page = page_of(dataset, Some(wiki_target::character(ch)));
         }
-        TargetKey::Boss { id } => resolved.name = c.boss(BossId(id))?.name.clone(),
+        TargetKey::Boss { id } => {
+            let b = c.boss(BossId(id))?;
+            resolved.name = b.name.clone();
+            // A portrait that declares no entity key names no page: `None`, never a guessed
+            // variant (`wiki_target::boss`).
+            resolved.page = page_of(dataset, wiki_target::boss(b));
+        }
         TargetKey::Challenge { id } => {
             let ch = c.challenge(ChallengeId(id))?;
             resolved.rewards = ch.rewards.iter().map(|a| a.0).collect();
             resolved.name = ch.name.clone();
+            resolved.page = page_of(dataset, Some(wiki_target::challenge(ch)));
         }
     }
     Some(key.view(resolved))
@@ -595,10 +605,12 @@ pub fn resolve_target(
 pub fn target_of(
     c: &Catalog,
     u: &Unlock,
+    dataset: Option<&Dataset>,
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> UnlockTarget {
     let key = key_of(u);
-    resolve_target(c, &key, icon).unwrap_or_else(|| key.view(crate::goals::Resolved::default()))
+    resolve_target(c, &key, dataset, icon)
+        .unwrap_or_else(|| key.view(crate::goals::Resolved::default()))
 }
 
 /// The key of a catalog edge. The catalog's ids are newtypes; at the boundary they aren't.
@@ -678,6 +690,7 @@ pub fn next_steps(view: &UnlockView) -> NextSteps {
 /// explains the least.
 pub fn plan_view(
     catalog: Option<&Catalog>,
+    dataset: Option<&Dataset>,
     goals: Vec<Goal>,
     unreadable: Vec<GoalId>,
     store_unavailable: Option<crate::StoreReason>,
@@ -688,7 +701,7 @@ pub fn plan_view(
     let goals: Vec<GoalView> = goals
         .into_iter()
         .map(|g| {
-            let target = catalog.and_then(|c| resolve_target(c, &g.target, &mut icon));
+            let target = catalog.and_then(|c| resolve_target(c, &g.target, dataset, &mut icon));
             // Without a catalog nothing resolves, and `NoCatalog` already says so:
             // flagging every goal would just repeat the same news one row at a time.
             if target.is_none() && catalog.is_some() {
