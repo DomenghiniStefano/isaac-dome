@@ -61,7 +61,9 @@ pub use resources::{
 pub use search::{
     search, SaveFlags, SearchDiagnostic, SearchHit, SearchIndex, SearchMatch, SearchView,
 };
-pub use settings::{snap_percent, Settings, DEFAULT_SCALE, SCALE_PERCENTS};
+pub use settings::{
+    session_document_fits, snap_percent, Settings, DEFAULT_SCALE, MAX_SESSION_BYTES, SCALE_PERCENTS,
+};
 pub use sprite_png::{crop_png, decode_rgba};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
