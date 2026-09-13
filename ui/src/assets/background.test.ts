@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import colors from './theme/colors.css?raw'
 import html from '../../index.html?raw'
 import tauri from '../../../crates/app/tauri.conf.json'
+import { hexToColor } from '@/lib/window/windowBackground'
 
 // The window's background is declared in three places by necessity — a CSS token, the
 // Tauri window's config (JSON, not CSS), and the document itself, which the webview paints
@@ -23,5 +24,23 @@ describe('the window opens on the app colour', () => {
   it("gives the window the same colour, so the frame isn't white either", () => {
     const [window] = tauri.app.windows
     expect(window?.backgroundColor?.toLowerCase()).toBe(token)
+  })
+
+  // A window born from a tear-off is created at runtime, where the config's colour is not
+  // available: it takes the token itself, as a triple, so there is no fourth copy of the
+  // value to drift. The conversion is the only new thing, and it is pinned here rather than
+  // in its own file, because this is the drift it would cause.
+  it('turns the token into the triple a window is created with', () => {
+    expect(hexToColor('#150e0d')).toEqual([21, 14, 13])
+    expect(hexToColor('#ffffff')).toEqual([255, 255, 255])
+    expect(token).toBeDefined()
+    expect(hexToColor(token ?? '')).not.toBeNull()
+  })
+
+  it('answers null for anything that is not a six-digit hex colour', () => {
+    expect(hexToColor('')).toBeNull()
+    expect(hexToColor('150e0d')).toBeNull()
+    expect(hexToColor('#150e0')).toBeNull()
+    expect(hexToColor('#gggggg')).toBeNull()
   })
 })

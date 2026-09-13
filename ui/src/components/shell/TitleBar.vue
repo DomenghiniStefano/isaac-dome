@@ -1,13 +1,20 @@
 <script setup lang="ts">
+import type { Point } from '@/lib/drag/dragList'
 import TabStrip from './TabStrip.vue'
 import WindowControls from './WindowControls.vue'
-import type { TabView } from './tabs'
+import type { IncomingHover, TabView } from './tabs'
 
-defineProps<{
-  tabs: TabView[]
-  activeId: string | null
-  focused: boolean
-}>()
+withDefaults(
+  defineProps<{
+    tabs: TabView[]
+    activeId: string | null
+    focused: boolean
+    // Where a tab dragged from another window is hovering over this strip, in desktop pixels,
+    // with the window's own geometry to convert it. Null when nothing is coming.
+    incoming?: IncomingHover | null
+  }>(),
+  { incoming: null },
+)
 const emit = defineEmits<{
   select: [id: string]
   close: [id: string]
@@ -16,6 +23,12 @@ const emit = defineEmits<{
   minimize: []
   toggleMaximize: []
   closeWindow: []
+  // The gap the marker is drawn in: where an arriving tab would land if it were dropped now.
+  aim: [index: number | null]
+  // A tab dragged out of this window: onto another window's strip, or onto the bare desktop.
+  lift: [index: number]
+  settle: [target: string | null, at: Point, origin: Point]
+  putBack: []
 }>()
 </script>
 
@@ -30,10 +43,15 @@ const emit = defineEmits<{
     <TabStrip
       :tabs="tabs"
       :active-id="activeId"
+      :incoming="incoming"
       @select="emit('select', $event)"
       @close="emit('close', $event)"
       @move="(from, to) => emit('move', from, to)"
       @add="emit('add')"
+      @aim="emit('aim', $event)"
+      @lift="emit('lift', $event)"
+      @settle="(target, at, origin) => emit('settle', target, at, origin)"
+      @put-back="emit('putBack')"
     />
     <div data-tauri-drag-region class="min-w-drag-region flex-1" />
     <WindowControls

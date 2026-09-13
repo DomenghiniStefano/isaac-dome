@@ -5,6 +5,7 @@ use tauri::AppHandle;
 use discovery::{discover, Options};
 use ipc::{IpcError, ProfileId, Settings, SetupState};
 
+use crate::events::{announce, PROFILE_CHANGED, SETTINGS_CHANGED};
 use crate::settings_file;
 
 #[tauri::command]
@@ -30,6 +31,8 @@ pub fn select_profile(app: AppHandle, id: ProfileId) -> Result<SetupState, IpcEr
         ..settings_file::load(&app)
     };
     settings_file::save(&app, &settings)?;
+    // The active profile is the app's, not this window's, now that there can be more than one.
+    announce(&app, PROFILE_CHANGED);
     Ok(ipc::setup_state(&d, settings.active_profile_id.as_ref()))
 }
 
@@ -48,5 +51,7 @@ pub fn settings(app: AppHandle) -> Result<Settings, IpcError> {
 pub fn set_scale(app: AppHandle, percent: u16) -> Result<Settings, IpcError> {
     let settings = settings_file::load(&app).with_scale(percent);
     settings_file::save(&app, &settings)?;
+    // One interface, one size: the other windows resize with this one.
+    announce(&app, SETTINGS_CHANGED);
     Ok(settings)
 }
