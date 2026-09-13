@@ -286,6 +286,16 @@ tab to the other — which is the reason the feature exists.
 
 ### Where it's saved
 
+**Settled on 2026-09-13, and built**: the recommendation below was taken whole, with the
+background and tray work (`docs/superpowers/specs/2026-09-13-background-and-tray-design.md`).
+The flag is `resumeTabs` in `settings.json`, the tabs are `store` migration 3 — one JSON
+document in one row, an object with a `version` so the sidebar width and table sizes of B27 can
+join it without a migration. What this entry still holds open: a **limit on the number of tabs**
+and what happens when the bar can't fit them, and **how a restored tab states a gap** when its
+target no longer exists — a tab whose *route* is gone is dropped alone today, but a tab pointing
+at a missing item opens and lets the screen say so, which is the case that has never been seen
+happen.
+
 A declared fork, with a recommendation:
 
 - **The flag** "reopen tabs on startup" in `settings.json` (`crates/app/src/settings_file.rs`),

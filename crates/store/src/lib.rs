@@ -176,6 +176,42 @@ impl Store {
         self.write_queue_json(&q.to_json())
     }
 
+    /// The session document, as it was written, or `None` when there isn't one.
+    ///
+    /// **No nested `Result` here, unlike `queue()`**: this crate cannot tell a good document
+    /// from a bad one — the shape belongs to the frontend — so "it doesn't parse" is not a
+    /// state it can report. The frontend answers that question, and answers it with the
+    /// landing tab.
+    pub fn session(&self) -> Result<Option<String>, StoreError> {
+        self.conn
+            .query_row(
+                "SELECT document FROM window_session WHERE id = 1",
+                [],
+                |r| r.get(0),
+            )
+            .optional()
+            .map_err(StoreError::from_sqlite)
+    }
+
+    /// Replaces the document, or removes it when there is nothing to keep.
+    pub fn set_session(&self, document: Option<&str>) -> Result<(), StoreError> {
+        match document {
+            Some(raw) => self
+                .conn
+                .execute(
+                    "INSERT INTO window_session (id, document) VALUES (1, ?1)
+                     ON CONFLICT(id) DO UPDATE SET document = excluded.document",
+                    params![raw],
+                )
+                .map(|_| ()),
+            None => self
+                .conn
+                .execute("DELETE FROM window_session WHERE id = 1", [])
+                .map(|_| ()),
+        }
+        .map_err(StoreError::from_sqlite)
+    }
+
     fn write_queue_json(&self, raw: &str) -> Result<(), StoreError> {
         self.conn
             .execute(
