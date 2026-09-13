@@ -24,6 +24,7 @@ import type { TabView } from '@/components/shell/tabs'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { useShortcut } from '@/composables/useShortcut'
 import { i18n, useMessages } from '@/i18n'
+import type { Point } from '@/lib/drag/dragList'
 import { indicator } from '@/lib/profile/profileView'
 import { shortcutAction } from '@/lib/scale/shortcut'
 import {
@@ -31,10 +32,14 @@ import {
   minimizeWindow,
   toggleMaximizeWindow,
   watchWindowFocus,
+  windowSize,
 } from '@/lib/window/appWindow'
+import { AppEvent, watchAppEvents } from '@/lib/window/appEvents'
+import { useWindowSession } from '@/lib/window/session'
 import { RouteName, routeOrigin } from '@/router/routeTable'
 import ProgressGate from '@/screens/ProgressGate.vue'
 import { useProfileStore } from '@/stores/profile'
+import { useQueueStore } from '@/stores/queue'
 import { useSettingsStore } from '@/stores/settings'
 import { tabLabel } from '@/stores/tabModel'
 import { useTabsStore } from '@/stores/tabs'
@@ -44,17 +49,51 @@ const router = useRouter()
 const tabs = useTabsStore()
 const profile = useProfileStore()
 const wiki = useWikiStore()
+// Read again when another window writes: the plan's queue, and the size of the interface.
+const queue = useQueueStore()
+const settings = useSettingsStore()
 const { t } = useMessages()
+
+// Everything this window says to the others, and hears from them: a window born from a
+// tear-off asks for its tabs here, and any window can be handed one.
+useWindowSession()
 
 const focused = ref(true)
 let stopWatchingFocus: (() => void) | undefined
+let stopAppEvents: (() => void) | undefined
 onMounted(async () => {
   void profile.load()
   stopWatchingFocus = await watchWindowFocus((value) => {
     focused.value = value
   })
+  // A window never learns of a write it did not make, so it is told. The profile carries
+  // through to every screen that reads the save (`useOnActiveProfile`); the queue store is
+  // read again wherever it is mounted.
+  stopAppEvents = await watchAppEvents({
+    [AppEvent.ProfileChanged]: () => void profile.load(),
+    [AppEvent.SettingsChanged]: () => void settings.load(),
+    [AppEvent.PlanChanged]: () => void queue.load(),
+  })
 })
-onUnmounted(() => stopWatchingFocus?.())
+onUnmounted(() => {
+  stopWatchingFocus?.()
+  stopAppEvents?.()
+})
+
+// A tab torn out of the strip. It leaves the bar at once and belongs to nobody until the drag
+// ends: the store keeps it in flight, and the two endings below dispose of it.
+const liftTab = (index: number) => {
+  const tab = tabs.tabs[index]
+  if (tab) tabs.liftOut(tab.id)
+}
+
+// Where it landed. A label is a strip — this window's own included — and null is the bare
+// desktop, where it gets a window of its own, sized like this one: the size the user chose, in
+// the place they dropped it.
+const settleTab = async (target: string | null, at: Point, origin: Point) => {
+  if (target !== null) await tabs.settleTo(target, at)
+  else await tabs.settleInNewWindow(origin, await windowSize())
+}
 
 // The router shows the active tab: selecting, closing or navigating a tab moves it.
 watch(
@@ -117,7 +156,6 @@ const paletteOpen = ref(false)
 
 // `Ctrl` `+` / `-` / `0` move the interface's size from anywhere, on the same ladder and the
 // same saved value as the slider in Settings: a shortcut is not a second scale.
-const settings = useSettingsStore()
 void settings.load()
 useShortcut((event) => {
   const action = shortcutAction(event)
@@ -142,10 +180,15 @@ const indicatorView = computed(() =>
         :tabs="tabViews"
         :active-id="tabs.activeId"
         :focused="focused"
+        :incoming="tabs.incoming"
         @select="tabs.select"
         @close="tabs.close"
         @move="tabs.move"
         @add="tabs.open()"
+        @aim="tabs.aim"
+        @lift="liftTab"
+        @settle="settleTab"
+        @put-back="tabs.putBack"
         @minimize="minimizeWindow"
         @toggle-maximize="toggleMaximizeWindow"
         @close-window="closeWindow"
