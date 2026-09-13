@@ -1839,7 +1839,26 @@ a test that reads it from the catalog rather than from a literal table.
 
 ---
 
-## B37 — Searching from the goal: "voglio giocare Greed Mode, cosa devo giocare?" (implementation, `ipc` and `ui`, after B32/B35)
+## B37 — Searching from the goal: "voglio giocare Greed Mode, cosa devo giocare?" (implementation, `ipc` and `ui`) ✅ closed on 2026-09-13
+
+Logged and closed the same day. Spec
+`docs/superpowers/specs/2026-09-13-goals-want-design.md`, plan
+`docs/superpowers/plans/2026-09-13-goals-want.md`, report
+`docs/superpowers/plans/2026-09-13-goals-want-report.md`. Three things execution measured that
+the entry below didn't know:
+
+- **14 of the 45 challenges are named by more than one achievement.** `routes` being a list is
+  not a precaution: `achievement_unlocking`'s `.find()` was hiding a second way in on a third
+  of them.
+- **The graph is flat, and flatter the further you get.** The deepest chain anywhere in the
+  sample collection is four steps, on the *youngest* profile; on the reference profile it is
+  one. A prerequisite already earned leaves the chain, so this answer gets shorter as a player
+  advances.
+- **The order is not `missing_chain`'s.** That returns a set in id order; the order that means
+  something comes from `plan::Queue::enqueue`, which is why the preview builds a throwaway
+  queue instead of sorting by hand — the preview and "metti nel Piano" are one computation.
+
+*The original entry, for the record:*
 
 Logged on 2026-09-13, an explicit request. Unlock reads one way today: from a node to what it
 unlocks. Its four facets — state, what it unlocks *by kind*, origin, character — are all
