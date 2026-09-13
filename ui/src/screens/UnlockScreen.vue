@@ -21,14 +21,15 @@ import {
 } from '@/lib/graph/unlockFilter'
 import type { UnlockFilter } from '@/lib/graph/unlockFilter'
 import { queuedIds } from '@/lib/plan/queueRows'
-import { useGraphStore } from '@/stores/graph'
-import { LoadStatus } from '@/stores/profile'
+import { useGraphStore } from '@/stores/views'
+import { LoadStatus } from '@/stores/loadStatus'
 import { useQueueStore } from '@/stores/queue'
 import ScreenHeader from './ScreenHeader.vue'
 import ProfileError from './profile/ProfileError.vue'
 import FacetDrawer from './unlock/FacetDrawer.vue'
 import StateToggle from './unlock/StateToggle.vue'
-import UnlockDiagnostics from './unlock/UnlockDiagnostics.vue'
+import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
+import { unlockEntries } from '@/lib/diagnostics/unlock'
 import UnlockTable from './unlock/UnlockTable.vue'
 import UnlockToolbar from './unlock/UnlockToolbar.vue'
 
@@ -55,7 +56,7 @@ watch(
 )
 const sort = ref<UnlockSort>(UnlockSort.FanOut)
 
-const nodes = computed(() => graph.unlock?.nodes ?? [])
+const nodes = computed(() => graph.view?.unlock.nodes ?? [])
 const counts = computed(() => stateCounts(nodes.value))
 // The character facet's labels: the value is an id, the name is read from the nodes.
 const characters = computed(() => characterForms(nodes.value))
@@ -107,8 +108,10 @@ const reset = () => {
       :error="graph.error"
       @retry="graph.load()"
     />
-    <template v-else-if="graph.unlock">
-      <UnlockDiagnostics :diagnostics="graph.unlock.diagnostics" />
+    <template v-else-if="graph.view">
+      <DiagnosticsList
+        :entries="unlockEntries(graph.view.unlock.diagnostics)"
+      />
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
       <StateToggle
         :counts="counts"
