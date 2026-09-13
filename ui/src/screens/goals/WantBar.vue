@@ -7,7 +7,7 @@ import { useSearch } from '@/composables/useSearch'
 import { useMessages } from '@/i18n'
 import { SearchLimit } from '@/lib/ipc/search'
 import type { Target } from '@/lib/ipc/types'
-import { pageKey } from '@/lib/wiki/pageKey'
+import { wantable } from '@/lib/graph/wantLocation'
 
 const emit = defineEmits<{ pick: [target: Target]; clear: [] }>()
 const { t } = useMessages()
@@ -18,11 +18,9 @@ const { view, ask } = useSearch(SearchLimit.Palette)
 const typed = ref('')
 watch(typed, (query) => ask(String(query)))
 
-// Only what the app can be asked for: `pageKey` answers `null` for exactly the four kinds
-// nothing unlocks, so the filter *is* the vocabulary rather than a second list of kinds.
-const hits = computed(() =>
-  (view.value?.hits ?? []).filter((hit) => pageKey(hit.target) !== null),
-)
+// Only what the app can be asked for. The rule is `wantable`'s, tested there: a second list
+// of kinds in this component would be a second answer to the same question.
+const hits = computed(() => wantable(view.value?.hits ?? []))
 
 const pick = (target: Target) => {
   typed.value = ''
