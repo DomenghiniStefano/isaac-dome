@@ -13,7 +13,7 @@
 * Gives Isaac a chance to shoot fires alongside his regular tears that block enemy shots and deal damage to enemies that touch them, similar to those shot by {{I|Red Candle}}.
 ** Fires can block up to four shots and/or deal four ticks of damage before being destroyed, and last up to 10 seconds.
 ** Fires deal 4× Isaac's [[damage]] at full durability, 3× Isaac's damage after taking damage once, and 2× Isaac's damage otherwise, for a max possible damage output of 11× Isaac's damage per fire.
-** Any fart-related effect that occurs will also generate a flame, like using {{I|The Poop}} or when generating a bomb with {{I|Number Two}}.
+** Any fart-related effect that occurs will also generate a flame, like using {{I|The Poop}} or when generating a bomb with {{I|No. 2}}.
 
 == Notes ==
 * {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Singe}}.{{dlc-}}

@@ -20,7 +20,14 @@ Singe always spawns with 4 damaging {{e|Singe's Ball}}s that can be pushed aroun
 ** Multiple spiked rocks can be removed at a time, but Singe only spawns one back at a time per each explosion.
 * After performing his second large explosion, Singe gains a new attack where he lights a match and places it in front of his butt, farting to produce a large stream of fire that follows Isaac's movement.
 * Singe's explosion upon death can also damage Isaac.
+
+== Notes ==
 * {{dlc|r+}} Singe's Balls can be destroyed by {{p|Hagalaz}}, greatly simplifying this fight.
+
+== Gallery ==
+<gallery>
+File:Repentance Boss Designs 3.jpg|Concept art of Singe by Edmund McMillen.
+</gallery>
 
 == Trivia ==
 * A singe is a superficial burn.

@@ -93,7 +93,7 @@ Other interactions:
 * {{i|Jacob's Ladder}}: Both the sword shots and sword swings create electricity.
 * {{c|Jacob and Esau}}: Knockback from the sword will separate the brother carrying the sword from the other.
 * {{I|Marked}}/{{I|Tractor Beam}}: Overridden by Spirit Sword. Stat upgrades still apply.
-* {{I|Mysterious Liquid}}: The charged sword attack spawns creep, the projectiles do not.
+* {{I|Mysterious Liquid}}: The charged sword attack spawns creep, the projectiles do not / {{dlc_|r+}} projectiles spawn creep as well.
 * {{I|Parasitoid}}: The sword projectiles can still spawn flies and spiders, but the swings themselves won't / {{dlc|r+}} the swings can now leave slowing creep and spawn flies and spiders.
 * {{I|Playdough Cookie}}: Every sword swing gains a different color and effect based on that color.
 * {{I|Pupula Duplex}}: No effect.

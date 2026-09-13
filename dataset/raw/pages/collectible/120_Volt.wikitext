@@ -24,7 +24,9 @@
 ** {{I|Sharp Plug}} / {{I|Car Battery}}: Electricity deals 100% of Isaac's tear damage if he owns 1 of these items, and 150% if Isaac owns both.
 ** {{I|The Battery}} / {{I|Jumper Cables}} / {{T|AAA Battery}}: Increases amount of arcs a zap can generate.
 ** {{T|Old Capacitor}}: Allows zaps to arc on the same enemy multiple times.
-* {{I|Abyss}}: When Isaac uses Abyss to absorb 120 Volt, it turns into a pale blue locust. The locust can create arcs of electricity dealing 0.1 damage per tick.
+* {{I|Abyss}}: When Isaac uses Abyss to absorb 120 Volt, it turns into a pale blue locust.
+**{{dlc|nr+}} The locust can create arcs of electricity dealing 0.1 damage per tick.
+**{{dlc|r+}} The locust can create arcs of electricity dealing 25% of Isaac's damage per tick.
 * {{i|Camo Undies}}: Enemies won't target Isaac, thus he can safely zap enemies while standing near them. However, this won't work with bosses.
 * {{i|Isaac's Heart}}: 120 Volt becomes much safer to use offensively as Isaac's body no longer takes damage.
 * Items granting [[invulnerability]] or a [[shield]]: 120 Volt zaps enemies while Isaac is invincible.

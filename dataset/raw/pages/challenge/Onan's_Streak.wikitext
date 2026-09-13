@@ -68,7 +68,7 @@ Not hitting anything with tears causes Judas to take damage. This makes accuracy
 * {{i|Mom's Wig}} will keep spawning friendly spiders until there are five of them when charging the shot.
 ** The same goes for the {{tf|Guppy}} transformation or {{i|The Mulligan}}.
 *** Be careful, however, as there is the possibility of friendly spiders/flies killing a target before Judas' fired tear connects.
-** The same goes for {{i|Number Two}} and {{i|Bob's Brain}}, as spawning bombs under Judas while charging and the explosions from the brain, respectively, can easily end the run.
+** The same goes for {{i|No. 2}} and {{i|Bob's Brain}}, as spawning bombs under Judas while charging and the explosions from the brain, respectively, can easily end the run.
 * One well-timed charge of the {{i|White Pony}} could be enough to insta-kill {{E|It Lives!}} and seriously damage {{E|Isaac}}.
 * Tears that have passed through an {{i|Angelic Prism}} familiar do not deal damage to Judas even if all the split tears miss.
 * If you find {{i|Butter Bean}}, do not leave behind bomb-giving items such as {{i|Pyro}}. Placing bombs and pushing them towards the enemy with a fart is a viable alternative for shooting tears.
