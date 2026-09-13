@@ -4,16 +4,19 @@ import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
 import { assertNever } from '@/lib/assertNever'
-import type { Infobox, Inline, Target } from '@/lib/ipc/types'
+import type { Entry, Inline, Target } from '@/lib/ipc/types'
 import { pageKey } from '@/lib/wiki/pageKey'
 import { useWikiStore } from '@/stores/wiki'
 import InfoboxRow from './InfoboxRow.vue'
 
+// The whole entry, not just its infobox: since 2026-09-13 the description, the editions and
+// "unlocked by" live on the entry, because they are not specific to a kind.
 const props = defineProps<{
-  infobox: Infobox
+  entry: Entry
   iconFor?: (target: Target) => string | null
   canOpen?: (target: Target) => boolean
 }>()
+const infobox = computed(() => props.entry.infobox)
 const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
 const wiki = useWikiStore()
 const { t } = useMessages()
@@ -37,7 +40,7 @@ const refOf = (target: Target | null): Inline[] => {
 
 // Items and trinkets carry no card: their infobox is the figure and the title.
 const drawn = computed(() => {
-  switch (props.infobox.kind) {
+  switch (infobox.value.kind) {
     case 'item':
     case 'trinket':
       return false
@@ -47,13 +50,13 @@ const drawn = computed(() => {
     case 'character':
       return true
     default:
-      return assertNever(props.infobox)
+      return assertNever(infobox.value)
   }
 })
 
 // A challenge's restrictions, as the export lists them: only the ones that apply.
 const restrictions = computed((): string[] => {
-  const box = props.infobox
+  const box = infobox.value
   if (box.kind !== 'challenge') return []
   return [
     ...(box.blindfolded ? [t('wiki.infobox.blindfolded')] : []),
@@ -63,7 +66,7 @@ const restrictions = computed((): string[] => {
 })
 
 const stats = computed(() => {
-  const box = props.infobox
+  const box = infobox.value
   if (box.kind !== 'character') return []
   return [
     { label: t('wiki.infobox.damage'), value: box.damage },
@@ -82,11 +85,21 @@ const stats = computed(() => {
       <CardTitle>{{ t('wiki.infobox.title') }}</CardTitle>
     </CardHeader>
     <CardContent>
-      <dl v-if="infobox.kind === 'achievement'" class="flex flex-col gap-2">
+      <!-- The three facts every kind declares, drawn once: they live on the entry, not in
+           the variant, so repeating them per kind would repeat the same markup four times. -->
+      <dl class="flex flex-col gap-2">
         <InfoboxRow
           :label="t('wiki.infobox.description')"
-          :text="infobox.description"
+          :inline="entry.description"
+          v-bind="forward"
         />
+        <InfoboxRow
+          :label="t('wiki.infobox.unlockedBy')"
+          :inline="refOf(entry.unlockedBy)"
+          v-bind="forward"
+        />
+      </dl>
+      <dl v-if="infobox.kind === 'achievement'" class="flex flex-col gap-2">
         <InfoboxRow
           :label="t('wiki.infobox.requirements')"
           :inline="infobox.requirements"
@@ -111,11 +124,6 @@ const stats = computed(() => {
         <InfoboxRow
           :label="t('wiki.infobox.pool')"
           :inline="infobox.pool"
-          v-bind="forward"
-        />
-        <InfoboxRow
-          :label="t('wiki.infobox.unlockedBy')"
-          :inline="refOf(infobox.unlockedBy)"
           v-bind="forward"
         />
       </dl>
@@ -173,11 +181,6 @@ const stats = computed(() => {
           :inline="refOf(infobox.unlocks)"
           v-bind="forward"
         />
-        <InfoboxRow
-          :label="t('wiki.infobox.unlockedBy')"
-          :inline="refOf(infobox.unlockedBy)"
-          v-bind="forward"
-        />
       </dl>
       <dl v-else-if="infobox.kind === 'character'" class="flex flex-col gap-2">
         <InfoboxRow
@@ -207,11 +210,6 @@ const stats = computed(() => {
         <InfoboxRow
           :label="t('wiki.infobox.collectibles')"
           :inline="infobox.collectibles"
-          v-bind="forward"
-        />
-        <InfoboxRow
-          :label="t('wiki.infobox.unlockedBy')"
-          :inline="refOf(infobox.unlockedBy)"
           v-bind="forward"
         />
       </dl>

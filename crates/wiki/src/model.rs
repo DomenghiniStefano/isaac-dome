@@ -12,6 +12,17 @@ pub struct Entry {
     pub title: String,
     /// Wiki revision the page was read from: says how stale the data is.
     pub revid: u64,
+    /// The infobox's summary line. Plain text for achievements, wikitext everywhere else:
+    /// both arrive as inline so the frontend has one shape and no switch on the kind.
+    pub description: Vec<Inline>,
+    /// The edition codes the infobox declares, parsed. Empty when the parameter is absent.
+    /// Deliberately NOT called "introduced in" nor "exists in": which of the two it means
+    /// is unmeasured — Blue Cap (342), the first Afterbirth item, declares neither — and a
+    /// name would be a guess.
+    pub dlc: Vec<Dlc>,
+    /// What the wiki states has to be unlocked first. `None` means "the wiki does not state
+    /// one", NEVER "it is free from the start": that answer belongs to `catalog` and `graph`.
+    pub unlocked_by: Option<Target>,
     pub infobox: Infobox,
     pub sections: Vec<Section>,
 }
@@ -189,15 +200,15 @@ pub enum Infobox {
     Item,
     Trinket,
     Achievement {
-        description: String,
         requirements: Vec<Inline>,
+        /// The thing this achievement unlocks. It does NOT rise to `Entry`: it points the
+        /// opposite way from `unlocked_by`, and putting the two in one place is a trap.
         unlocks: Option<Target>,
     },
     Boss {
         base_hp: Option<u32>,
         environment: Vec<Inline>,
         pool: Vec<Inline>,
-        unlocked_by: Option<Target>,
     },
     Challenge {
         blindfolded: bool,
@@ -210,7 +221,6 @@ pub enum Infobox {
         curse: Vec<Inline>,
         goal: Vec<Inline>,
         unlocks: Option<Target>,
-        unlocked_by: Option<Target>,
     },
     Character {
         health: Vec<Inline>,
@@ -221,7 +231,6 @@ pub enum Infobox {
         shot_speed: String,
         pickups: Vec<Inline>,
         collectibles: Vec<Inline>,
-        unlocked_by: Option<Target>,
     },
 }
 
@@ -345,15 +354,15 @@ mod tests {
     #[test]
     fn infobox_and_section_shapes() {
         assert_eq!(to_value(Infobox::Item).unwrap(), json!({"kind":"item"}));
+        // `unlockedBy` is gone from the variant: it rose to `Entry` on 2026-09-13.
         assert_eq!(
             to_value(Infobox::Boss {
                 base_hp: Some(6666),
                 environment: vec![],
                 pool: vec![],
-                unlocked_by: None
             })
             .unwrap(),
-            json!({"kind":"boss","baseHp":6666,"environment":[],"pool":[],"unlockedBy":null})
+            json!({"kind":"boss","baseHp":6666,"environment":[],"pool":[]})
         );
         assert_eq!(
             to_value(SectionKind::ChampionVersions).unwrap(),
@@ -362,12 +371,24 @@ mod tests {
         let e = Entry {
             title: "Hush".into(),
             revid: 1,
+            description: vec![],
+            dlc: vec![Dlc::Repentance],
+            unlocked_by: None,
             infobox: Infobox::Item,
             sections: vec![],
         };
+        // `unlockedBy` here is the assertion that `rename_all` is doing its job on `Entry`.
         assert_eq!(
             to_value(e).unwrap(),
-            json!({"title":"Hush","revid":1,"infobox":{"kind":"item"},"sections":[]})
+            json!({
+                "title": "Hush",
+                "revid": 1,
+                "description": [],
+                "dlc": ["repentance"],
+                "unlockedBy": null,
+                "infobox": {"kind": "item"},
+                "sections": []
+            })
         );
     }
 
@@ -376,6 +397,12 @@ mod tests {
         let e = Entry {
             title: "X".into(),
             revid: 2,
+            description: vec![Inline::Text {
+                text: "d".into(),
+                style: Style::Plain,
+            }],
+            dlc: vec![Dlc::Rebirth, Dlc::RepentancePlus],
+            unlocked_by: Some(Target::Achievement { id: 3 }),
             infobox: Infobox::Trinket,
             sections: vec![Section {
                 kind: SectionKind::Effects,
