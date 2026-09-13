@@ -406,9 +406,9 @@ export const it = {
     seeAll: 'Vedile tutte',
     opens: 'Apre altre {count} cose',
     opensNothing: 'Non apre altro',
-    noCatalogTitle: 'Niente da consigliare senza il gioco',
+    noCatalogTitle: 'Non troviamo il gioco',
     noCatalog:
-      'Senza il gioco installato non si sa cosa sblocca cosa: meglio una lista vuota che cinque righe indovinate.',
+      'IsaacDome legge i file di The Binding of Isaac per sapere quale achievement sblocca cosa, e sul computer non li trova. Installa il gioco da Steam e riapri l’app: qui troverai cosa conviene giocare stasera.',
     nothingNow:
       'Non c’è niente da sbloccare adesso: o è tutto fatto, o tutto aspetta qualcos’altro.',
   },

@@ -399,9 +399,9 @@ export const en: MessageSchema = {
     seeAll: 'See them all',
     opens: 'Opens {count} more things',
     opensNothing: 'Opens nothing else',
-    noCatalogTitle: 'Nothing to suggest without the game',
+    noCatalogTitle: "We can't find the game",
     noCatalog:
-      "Without the game installed there's no telling what unlocks what: an empty list beats five guessed rows.",
+      "IsaacDome reads The Binding of Isaac's own files to know which achievement unlocks what, and it cannot find them on this computer. Install the game from Steam and reopen the app: this is where you'll find what's worth playing tonight.",
     nothingNow:
       'There is nothing to unlock right now: either it is all done, or everything waits on something else.',
   },
