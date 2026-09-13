@@ -15,3 +15,9 @@ export const wantLocation = (target: Target): TabLocation | null => {
 // had been named.
 export const wantOf = (query: TabLocation['query']): Target | null =>
   query?.want === undefined ? null : parsePageKey(query.want)
+
+// The vocabulary, as a filter: a hit you can ask about is one that has a page key, which is
+// exactly the set of kinds something in the graph can grant. A second list of kinds here
+// would be a second answer to the same question.
+export const wantable = <T extends { target: Target }>(hits: T[]): T[] =>
+  hits.filter((hit) => pageKey(hit.target) !== null)
