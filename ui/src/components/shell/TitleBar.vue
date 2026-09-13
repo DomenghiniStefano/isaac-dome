@@ -12,9 +12,8 @@ withDefaults(
     // Where a tab dragged from another window is hovering over this strip, in desktop pixels,
     // with the window's own geometry to convert it. Null when nothing is coming.
     incoming?: IncomingHover | null
-    canTear?: boolean
   }>(),
-  { incoming: null, canTear: false },
+  { incoming: null },
 )
 const emit = defineEmits<{
   select: [id: string]
@@ -27,8 +26,9 @@ const emit = defineEmits<{
   // The gap the marker is drawn in: where an arriving tab would land if it were dropped now.
   aim: [index: number | null]
   // A tab dragged out of this window: onto another window's strip, or onto the bare desktop.
-  giveTo: [index: number, label: string, at: Point]
-  openWith: [index: number, at: Point]
+  lift: [index: number]
+  settle: [target: string | null, at: Point]
+  putBack: []
 }>()
 </script>
 
@@ -44,14 +44,14 @@ const emit = defineEmits<{
       :tabs="tabs"
       :active-id="activeId"
       :incoming="incoming"
-      :can-tear="canTear"
       @select="emit('select', $event)"
       @close="emit('close', $event)"
       @move="(from, to) => emit('move', from, to)"
       @add="emit('add')"
       @aim="emit('aim', $event)"
-      @give-to="(index, label, at) => emit('giveTo', index, label, at)"
-      @open-with="(index, at) => emit('openWith', index, at)"
+      @lift="emit('lift', $event)"
+      @settle="(target, at) => emit('settle', target, at)"
+      @put-back="emit('putBack')"
     />
     <div data-tauri-drag-region class="min-w-drag-region flex-1" />
     <WindowControls
