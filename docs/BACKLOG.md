@@ -1905,3 +1905,38 @@ time a field is added.
 The three entries read as `:(`, `,` and `'`; `grep -c '&[a-zA-Z][a-zA-Z0-9]*;' dataset/wiki.json`
 is zero; an entity the list does not cover is counted and visible instead of shipped; and the
 rebuilt `dataset/wiki.json` travels in its own commit, as every regenerated artefact does.
+
+---
+
+## B39 — Two Cargo tables are downloaded, committed, and read by nothing (implementation, `wiki`, small)
+
+Logged on 2026-09-13, noticed while adding the transformations' five fields to the same
+query. `crates/wiki-snapshot/src/api.rs` downloads ten Cargo tables; `Raw::load` puts seven
+of them in `Tables`, plus `version`. **`player.json` and `stage.json` are written to
+`dataset/raw/cargo/` and nothing ever opens them.**
+
+### Why it is worth an entry rather than a deletion
+
+`player` carries **`parent`** — the relation from a Tainted character to the base form it is
+a variant of. That is exactly the fact behind the two identity bugs M2 found on 2026-09-12:
+the game gives a Tainted character the base form's name, so by name alone 141 of 396
+character references resolved to nothing and "Ultra Greedier as Keeper" picked T. Keeper.
+Resolution goes by the wiki's id now, and this table is a second, independent source for the
+same relation — `Infobox::Character.parent` reads it from the page, and nobody has checked
+the two against each other.
+
+`stage` carries `chapter`, which nothing needs today; the 1444 `stage:` references resolve by
+name and have no entries at all.
+
+### What it needs
+
+A decision, not code first: either the two tables earn a reader — `player.parent` as a
+cross-check on the character map, with the disagreements counted the way the transformations'
+two item lists are — or they leave the query. What must not continue is the third state, a
+committed artefact nobody reads and no test would notice going stale.
+
+### Closes when
+
+Either both tables are read by something with a test that would fail if they stopped
+agreeing, or they are gone from `TABLES` and from `dataset/raw/cargo/`, with the reason in
+the commit body.
