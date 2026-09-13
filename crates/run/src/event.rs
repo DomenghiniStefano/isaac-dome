@@ -5,7 +5,7 @@
 /// discriminator we have for co-op.
 ///
 /// `Unknown` keeps a word we have not met rather than dropping the run around it.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub enum SeedKind {
     New,
     Continue,
@@ -29,7 +29,10 @@ impl SeedKind {
 /// One thing the log said, with nothing read into it. Every judgment belongs to the fold: the
 /// rules file is data a user can edit, and a rule that could decide meaning would put
 /// untestable logic outside the crate that is tested.
-#[derive(Debug, Clone, PartialEq, Eq)]
+///
+/// Stored as a JSON row by `store`, which is why it serializes. **A storage format, not a wire
+/// one**: it never reaches TypeScript, so it does not carry the IPC's `camelCase` rules.
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub enum Event {
     RunStarted {
         seed_words: String,

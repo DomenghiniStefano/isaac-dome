@@ -1183,6 +1183,77 @@ export type QueueView = {
 }
 
 /**
+ * Where a run came from. Tagged, because one variant carries a name and the other cannot.
+ */
+export type RunSource = { kind: 'live' } | { kind: 'session'; name: string }
+
+/**
+ * How a run ended, as the UI draws it. `Open` is not a failure and must never be drawn as one.
+ */
+export type RunOutcomeView =
+  | { kind: 'won'; ending: string }
+  | { kind: 'died'; killer: string }
+  | { kind: 'abandoned' }
+  | { kind: 'open' }
+
+/**
+ * An item in a run. `name` is `None` without a catalog.
+ */
+export type RunItemRef = { id: number; name: string | null }
+
+/**
+ * One run.
+ */
+export type RunView = {
+  source: RunSource
+  /**
+   * The position in its own source. A run is `(source, ordinal)`.
+   */
+  ordinal: number
+  /**
+   * `None` when no item line ever named the character: it is not in the seed line.
+   */
+  character: string | null
+  seedWords: string
+  /**
+   * The game called this run online. The only free discriminator we have for co-op.
+   */
+  online: boolean
+  outcome: RunOutcomeView
+  floors: number
+  startingItems: Array<RunItemRef>
+  collected: Array<RunItemRef>
+  heldActive: RunItemRef | null
+  achievements: Array<number>
+}
+
+/**
+ * How many runs, and how they ended.
+ */
+export type RunTotals = {
+  runs: number
+  won: number
+  died: number
+  abandoned: number
+  open: number
+}
+
+/**
+ * Every way the archive can be less than whole, said out loud.
+ */
+export type RunsDiagnostic =
+  | { kind: 'noLogFolder' }
+  | { kind: 'storeUnavailable'; reason: StoreReason }
+  | { kind: 'unreadableEvents'; count: number }
+  | { kind: 'noCatalog' }
+
+export type RunsView = {
+  runs: Array<RunView>
+  totals: RunTotals
+  diagnostics: Array<RunsDiagnostic>
+}
+
+/**
  * What stands between the item and a run. Tagged: three of the four variants carry data.
  */
 export type LockView =

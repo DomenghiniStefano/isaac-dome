@@ -24,3 +24,6 @@ pub const PLAN_CHANGED: &str = "plan-changed";
 pub fn announce(app: &AppHandle, event: &str) {
     let _ = app.emit(event, ());
 }
+
+/// The run archive changed: a run was imported, or the one being played moved on.
+pub const RUNS_CHANGED: &str = "runs-changed";

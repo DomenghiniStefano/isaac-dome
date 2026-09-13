@@ -180,3 +180,34 @@ pub(crate) fn progress_sections(
     let (_, save) = active_save(app)?;
     Ok((save.flags(Kind::Achievements), save.u32s(Kind::Counters)))
 }
+
+/// The rules that turn a log line into an event, parsed once, and the watcher's handle — which
+/// is kept only because dropping it would end the watch.
+#[derive(Default)]
+pub(crate) struct ArchiveState {
+    rules: OnceLock<run::Rules>,
+    watcher: Mutex<Option<log_watch::LogWatcher>>,
+}
+
+impl ArchiveState {
+    pub(crate) fn rules(&self) -> &run::Rules {
+        self.rules.get_or_init(run::Rules::embedded)
+    }
+
+    pub(crate) fn keep(&self, watcher: log_watch::LogWatcher) {
+        if let Ok(mut guard) = self.watcher.lock() {
+            *guard = Some(watcher);
+        }
+    }
+}
+
+/// When the game is not installed there is no catalog, and the fold still needs item kinds.
+/// Everything accumulates: reading an unknown item as an active would silently drop whatever the
+/// player was carrying, which is the same reading `ipc::CatalogKinds` gives an id it cannot find.
+pub(crate) struct AllPassive;
+
+impl run::ItemKinds for AllPassive {
+    fn kind_of(&self, _id: u32) -> run::ItemKind {
+        run::ItemKind::Passive
+    }
+}

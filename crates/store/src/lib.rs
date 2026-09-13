@@ -2,6 +2,7 @@
 //! schema. Writes exclusively to its own file; it doesn't even know the game's saves
 //! exist. The frontend never touches disk itself: it goes through here via `ipc`.
 
+mod archive;
 mod degrade;
 pub mod for_tests;
 mod migrations;
@@ -11,6 +12,7 @@ use std::path::Path;
 use ipc::{Goal, GoalId, TargetKey};
 use rusqlite::{params, Connection, OptionalExtension};
 
+pub use archive::{EventsRead, SourceKind, StoredSource};
 pub use degrade::{plan_parts, store_error, store_unavailable};
 pub use migrations::SCHEMA_VERSION;
 

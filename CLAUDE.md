@@ -60,7 +60,7 @@ frontend knows nothing about offsets, file names, or log strings.
 | `unpack` | Extracts the game's `.a` archives into the local cache. |
 | `core-save` | Parser for the `.dat`, read-only. |
 | `run` | Pure crate: `Tail` (bytes into lines, and a shorter file is a relaunch), the rules file that maps a line to one of nine events and judges nothing, and the fold that makes every judgment a log cannot — the starting item, the active that replaced the last one, the outcome nobody wrote down. Item kinds arrive through a trait, so it never depends on `catalog`. |
-| `log-watch` | **Doesn't exist yet (M4, sub-project 1b).** `notify`, an offset and a read; everything worth testing already lives in `run`. |
+| `log-watch` | The half of the archive that touches the disk: positional reads, which folders under `online_logs\` are sessions, `notify` on the **folder** (the game replaces `log.txt`, and a watch on the file goes deaf at the one moment that matters), and the ingest where **backfill and live are one function**. Every judgment is elsewhere: `run::resume` says whether a file is the launch we were reading, `run`'s fold says what a run is, `store` says what is kept. |
 | `catalog` | Normalizes the game's XML files. |
 | `wiki` | Pure crate: wikitext parser, typed tree, embedded compressed dataset. Only reads `dataset/raw/`. |
 | `wiki-snapshot` | Tool, the only one that talks to the network: `pnpm wiki:fetch` / `pnpm wiki:build`. |
@@ -68,7 +68,7 @@ frontend knows nothing about offsets, file names, or log strings.
 | `plan` | Pure crate: the plan queue — an ordered series of achievements. One document, not a table: the order is the position in the array. A move never fails, it repairs — dependents are dragged, prerequisites are a wall — and it names the row it lands under (`move_after`), never an index: the view hides completed rows the document keeps. |
 | `ipc` | Pure crate, no I/O: turns `discovery`, `core-save`, `catalog`, `wiki` and `graph` into JSON view-models. It's the only contract between Rust and Vue, generated into `ui/src/lib/ipc/types.ts` by `pnpm ipc:types` (never edited by hand). |
 | `app` | Tauri wiring only: commands, managed state, `settings_file.rs`. Not tested. |
-| `store` | SQLite, one file (`isaacdome.db`) with a versioned schema. Migration 1: the Plan's goals. Migration 2: the plan queue, as one JSON document. Snapshots and the run archive arrive as later migrations. |
+| `store` | SQLite, one file (`isaacdome.db`) with a versioned schema. Migration 1: the Plan's goals. Migration 2: the plan queue, as one JSON document. Migration 3: the window session. Migration 4: the run archive — `sources`, `events` (which *are* the archive) and `runs`, a cache carrying the rules version that produced it. A session's key is its folder name; a launch of `log.txt` has **no** name, so its key is `NULL` and two launches are two rows. Snapshots arrive as a later migration. |
 | `test-support` | Dev-dependency only. Access to `samples/` for tests on real data: every function **declares** on stderr which file it used (`sample: …`) or why it skipped (`skip: …`). No real test opens `samples/` by hand. |
 
 ---
@@ -218,6 +218,26 @@ With Steam Cloud active, the save is **not** in the Documents folder. What stays
 `log.txt`, `options.ini`, and two useful subfolders: `save_backups\` (dated backups
 created by the game: a free historical series) and `online_logs\` (one folder per online
 co-op session, with the full log and two profile snapshots).
+
+**`discovery` finds that folder on its own** since 2026-09-13, and until then it could not:
+it walked `My Games` only to look for `.dat` files, so the folder surfaced only inside
+`SaveSource::Documents { folder }` — that is, only when a save happened to live there, which
+with Steam Cloud on it never does. `Discovery::game_data` names the three things in it and
+never crosses the IPC: they are paths.
+
+**`online_logs\` is not flat, and reading it as flat finds nothing.** Measured on 2026-09-13:
+
+```
+online_logs\sessions\MM_DD_YYYY__HH_MM_SS\      the session: log.txt, persistentgamedata1_{begin,end}.dat,
+                                                sharedsave_{begin,end}.dat
+online_logs\desyncs\MM_DD_YYYY__HH_MM_SS__Name\ a crash report — desync_log.txt, not a run log
+online_logs\desyncs\sessions\MM_DD_YYYY__HH_MM_SS\   two more real sessions, nested here
+```
+
+A walk of the first level finds two directories and no sessions; one that takes any folder
+under `desyncs\` files crash reports as runs. **28 sessions** on this machine today, not the
+22 the M4 spec counted, and a session's log is `<folder>\log.txt`. The folder's name carries a
+wall clock, which the log itself does not have.
 
 Those two snapshots are **not** the same profile before and after, whatever the names say.
 Measured on 2026-09-08: `persistentgamedata1_end.dat` is the local profile, counter for
