@@ -25,7 +25,7 @@ export const it = {
   },
   routes: {
     search: 'Cerca',
-    nextSteps: 'Prossimi passi',
+    goals: 'Obiettivi consigliati',
     completion: 'Completamento',
     unlock: 'Unlock',
     plan: 'Piano',
@@ -393,10 +393,22 @@ export const it = {
     nothingReadable:
       'Il salvataggio non lascia leggere nessun marchio: la sezione dei contatori manca o è troncata.',
   },
-  // La schermata di atterraggio: cosa ottieni, come, perché conviene, e l'azione.
+  // La schermata di atterraggio: cosa ottieni, come, perché conviene, e l'azione. L'intro
+  // dice *cos'è* la lista, non come è stata calcolata: il calcolo sta nelle promesse della
+  // finestra Informazioni, dove chi vuole lo trova (B32 §2).
   goals: {
+    intro:
+      'Cose che puoi sbloccare adesso. In alto quelle che aprono di più, sotto quelle a cui sei più vicino.',
+    fanOut: 'Aprono di più',
+    closeness: 'Ci sei quasi',
+    seeAll: 'Vedile tutte',
     opens: 'Apre altre {count} cose',
     opensNothing: 'Non apre altro',
+    noCatalogTitle: 'Niente da consigliare senza il gioco',
+    noCatalog:
+      'Senza il gioco installato non si sa cosa sblocca cosa: meglio una lista vuota che cinque righe indovinate.',
+    nothingNow:
+      'Non c’è niente da sbloccare adesso: o è tutto fatto, o tutto aspetta qualcos’altro.',
   },
   // Il blocco che la pagina wiki di un achievement guadagna quando c'è un profilo attivo.
   // Dice soltanto dove sei tu: cos'è e cosa chiede lo dice già l'infobox sotto.
@@ -455,16 +467,6 @@ export const it = {
     // La forma Tainted di un personaggio: il gioco scrive lo stesso nome per le due forme.
     // "Tainted" resta in inglese come ogni nome del gioco (DESIGN-BRIEF.md §12).
     taintedName: 'Tainted {name}',
-  },
-  nextSteps: {
-    intro:
-      'Al massimo cinque righe, tutte sbloccabili adesso: le cinque che aprono più cose a valle. Un nodo che il grafo sa dire solo parziale non è un passo, perché non possiamo garantirlo.',
-    unlocks: 'sblocca',
-    noCatalogTitle: 'Nessun passo: manca il catalogo',
-    noCatalog:
-      'Senza il gioco installato non si può sapere cosa sblocca cosa: la lista è vuota di proposito, non cinque righe indovinate.',
-    nothingNow:
-      "Niente è sbloccabile adesso: è tutto fatto, oppure tutto aspetta qualcos'altro.",
   },
   unlock: {
     intro:

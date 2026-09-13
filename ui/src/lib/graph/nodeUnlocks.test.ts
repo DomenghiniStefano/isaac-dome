@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { UnlockNode, UnlockTarget } from '@/lib/ipc/types'
 import { RouteName, WikiCategory } from '@/router/routeTable'
-import { unlockEntries } from './unlockEntries'
+import { nodeUnlocks } from './nodeUnlocks'
 
 // The real `t` formats `graph.taintedName`; here the key is enough to see which one was used.
 const t = ((key: string, params?: Record<string, unknown>) =>
@@ -22,9 +22,9 @@ const nodeWith = (unlocks: UnlockTarget[]): UnlockNode => ({
   },
 })
 
-describe('unlockEntries', () => {
+describe('nodeUnlocks', () => {
   it('sends an entry to the page its target carries', () => {
-    const [entry] = unlockEntries(
+    const [entry] = nodeUnlocks(
       nodeWith([
         {
           kind: 'item',
@@ -49,7 +49,7 @@ describe('unlockEntries', () => {
 
   // Never a link that leads nowhere: the row shows, it just does not go anywhere.
   it('leaves a target with no page without a location', () => {
-    const [entry] = unlockEntries(
+    const [entry] = nodeUnlocks(
       nodeWith([{ kind: 'boss', id: 3, name: 'Nameless', page: null }]),
       t,
     )
@@ -60,7 +60,7 @@ describe('unlockEntries', () => {
   // A boss's page is an entity key taken from its portrait's file name, which the frontend
   // cannot build: it either arrives on the target or the row is text (B35).
   it('follows a boss to its entity page when the target carries one', () => {
-    const [entry] = unlockEntries(
+    const [entry] = nodeUnlocks(
       nodeWith([
         {
           kind: 'boss',
@@ -79,7 +79,7 @@ describe('unlockEntries', () => {
 
   // B28: the two forms share the game's name, so the name alone names both.
   it('names a tainted character by its form', () => {
-    const [entry] = unlockEntries(
+    const [entry] = nodeUnlocks(
       nodeWith([
         {
           kind: 'character',
@@ -95,7 +95,7 @@ describe('unlockEntries', () => {
   })
 
   it('keys a row by its kind and id, so two targets never collide', () => {
-    const entries = unlockEntries(
+    const entries = nodeUnlocks(
       nodeWith([
         { kind: 'boss', id: 3, name: 'A', page: null },
         { kind: 'character', id: 3, name: 'B', tainted: false, page: null },
@@ -106,6 +106,6 @@ describe('unlockEntries', () => {
   })
 
   it('has no rows for a node that unlocks nothing catalogued', () => {
-    expect(unlockEntries(nodeWith([]), t)).toEqual([])
+    expect(nodeUnlocks(nodeWith([]), t)).toEqual([])
   })
 })
