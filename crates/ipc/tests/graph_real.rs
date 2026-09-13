@@ -590,3 +590,71 @@ fn the_reference_profile_has_crossed_every_counter_threshold() {
         "no counter standing, so no section: the two facts are one"
     );
 }
+
+/// The one line that says **how to get it**, and why it needs two sources.
+///
+/// Measured 2026-09-13 on the reference profile's 637 known achievements: the game states an
+/// `unlock_condition` for 283 of them and nothing for 354 — and among the 119 that are
+/// unlockable *now*, the pool the landing page draws from, only **16**. A card whose "how"
+/// line came from the file alone would be blank seven rows out of eight, which is what B32
+/// asked to fix, not a fix for it.
+///
+/// So the dataset answers where the file is silent, and this pins both halves: with a dataset
+/// strictly more achievements carry a line, and the ones the file already answered keep the
+/// game's own words.
+#[test]
+fn the_wiki_answers_how_to_get_it_where_the_game_file_is_silent() {
+    let Some((c, _, s)) = real() else { return };
+    let flags = s.flags(Kind::Achievements).expect("section 1");
+
+    let conditions = |dataset: Option<&wiki::Dataset>| -> Vec<(u32, Option<String>)> {
+        unlock_view(Some(&c), dataset, Some(&flags), None, None, None, |_| None)
+            .nodes
+            .iter()
+            .filter_map(|n| match &n.achievement {
+                AchievementRef::Known { id, condition, .. } => Some((*id, condition.clone())),
+                AchievementRef::Unknown { .. } => None,
+            })
+            .collect()
+    };
+
+    let from_file = conditions(None);
+    let with_wiki = conditions(wiki::Dataset::embedded().ok());
+    let answered = |v: &[(u32, Option<String>)]| v.iter().filter(|(_, c)| c.is_some()).count();
+
+    assert!(
+        !from_file.is_empty(),
+        "the real catalog has achievements, or this test asserts nothing"
+    );
+    // Declared, not only asserted: how far the two sources reach is the fact this test is
+    // about, and a number nobody can read is a number nobody checks.
+    eprintln!(
+        "condition: {} of {} known achievements from the game file, {} once the wiki answers",
+        answered(&from_file),
+        from_file.len(),
+        answered(&with_wiki)
+    );
+    assert!(
+        answered(&with_wiki) > answered(&from_file),
+        "the dataset has to answer for some of the ones the file leaves silent: {} with the \
+         wiki against {} from the file alone",
+        answered(&with_wiki),
+        answered(&from_file)
+    );
+
+    // The game's own words win where it has any: the wiki is the fallback, never the rewrite.
+    for ((id, file), (_, wiki_too)) in from_file.iter().zip(&with_wiki) {
+        if let Some(file) = file {
+            assert_eq!(
+                wiki_too.as_ref(),
+                Some(file),
+                "achievement {id}: the file stated a condition and it was replaced"
+            );
+        }
+    }
+    // A line that goes out is a line worth reading: never an empty string.
+    assert!(with_wiki
+        .iter()
+        .filter_map(|(_, c)| c.as_ref())
+        .all(|c| !c.trim().is_empty()));
+}

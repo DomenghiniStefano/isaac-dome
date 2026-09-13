@@ -379,8 +379,8 @@ onMounted(() => load().catch(handleIpcError))
               class="h-achievement"
             />
             <span>{{ n.achievement.text }}</span>
-            <span v-if="n.achievement.hint" class="opacity-muted">
-              — {{ n.achievement.hint }}
+            <span v-if="n.achievement.condition" class="opacity-muted">
+              — {{ n.achievement.condition }}
             </span>
           </template>
           <span v-else class="opacity-muted">

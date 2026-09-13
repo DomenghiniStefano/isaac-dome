@@ -8,7 +8,13 @@ const t = ((key: string, params?: Record<string, unknown>) =>
   params ? `${key}:${String(params.name)}` : key) as never
 
 const nodeWith = (unlocks: UnlockTarget[]): UnlockNode => ({
-  achievement: { kind: 'known', id: 1, text: 't', hint: null, iconUrl: null },
+  achievement: {
+    kind: 'known',
+    id: 1,
+    text: 't',
+    condition: null,
+    iconUrl: null,
+  },
   done: false,
   unlocks,
   origin: null,

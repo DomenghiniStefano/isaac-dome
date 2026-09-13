@@ -11,7 +11,7 @@ const base: UnlockNode = {
     kind: 'known',
     id: 484,
     text: 'You unlocked "The Lost"',
-    hint: 'Arriva a Home e usa la Red Key',
+    condition: 'Arriva a Home e usa la Red Key',
     iconUrl: null,
   },
   done: false,

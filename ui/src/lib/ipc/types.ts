@@ -195,7 +195,11 @@ export type AchievementRef =
       kind: 'known'
       id: number
       text: string
-      hint: string | null
+      // How to get it, in one line: the game's own `unlock_condition` where it states one,
+      // and the wiki's requirement where it does not. It was called `hint` while it was only
+      // the file's — 283 of 637 achievements, and 16 of the 119 unlockable now — and the name
+      // changed with the meaning so that every reader had to be revisited.
+      condition: string | null
       // A link the app serves, never an embedded image: `isaac://achievement/19` (on Windows
       // the same thing arrives rewritten as `http://isaac.localhost/achievement/19`). Put it
       // straight into an `<img src>` — the browser does the lazy loading, the caching and the
