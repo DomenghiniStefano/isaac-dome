@@ -1251,10 +1251,11 @@ bound by default.
 - [x] `ButtonVariant.Chrome` keeps its transparency when disabled. The base style gives every
       disabled button a filled surface, which inside a bar that has none reads as a box, and
       the chrome had no disabled button until today.
-- [ ] **Not verified with a real mouse.** The side buttons were checked with dispatched
-      events on the dev server, which proves the wiring and not that WebView2 delivers
-      buttons 3 and 4 to the DOM. It sits beside the chrome's own unchecked line: `pnpm dev`
-      on the machine, one click of each.
+- [x] **WebView2 does deliver buttons 3 and 4 to the DOM**, checked by the owner with a real
+      mouse in a `pnpm dev` window on 2026-09-13. The question was open because dispatched
+      events prove the wiring and not the delivery: a webview that swallowed the side buttons
+      would have left the keyboard and the arrows working and the gesture dead, with the whole
+      suite green. No native handler is needed.
 
 ### 2026-09-13 (last) — N5, and a `try` that was right to stay
 
