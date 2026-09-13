@@ -1113,7 +1113,20 @@ git commit -m "feat(graph): a threshold answers at evaluation and never draws an
 
 ---
 
-## Task 11: the pickup rule, and the regenerated rules
+## Task 11: the pickup rule — **abandoned on 2026-09-13, do not implement**
+
+> The rule was written, and then checked against the sentences the thirteen references come
+> from. They are not words: node 69 reads "unlock all non-DLC secrets and **endings**", 324
+> "Collect every entry in the **Bestiary**", 276 "as every character (**tainted
+> character**)". Dropping them removes each node's only uninterpreted requirement, which
+> stops it being `Partial` and makes it read **available now** — a silent optimistic
+> regression that the shrinking count of uninterpreted references would have looked like
+> progress. The rule also dropped 45 of 49 pickup targets, `Hard mode` (38 uses) among them.
+>
+> Spec §4 carries the measurement and what B34 needs instead. The steps below are left
+> unexecuted on purpose; the perimeter of this sub-project is now the transformations alone.
+
+### The steps as they were written
 
 **Files:**
 - Modify: `crates/graph/src/generate.rs` (`collect_refs`)
