@@ -4,7 +4,7 @@ use crate::{SaveReason, SettingsReason, StoreReason};
 
 /// Error that crosses the IPC boundary. Tagged, not a string: the UI must be able to
 /// tell "no active profile" apart from "unreadable file" without parsing text.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
