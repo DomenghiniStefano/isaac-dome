@@ -6,8 +6,8 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
 import { completionKpis } from '@/lib/completion/completionView'
-import { useCompletionStore } from '@/stores/completion'
-import { LoadStatus } from '@/stores/profile'
+import { useCompletionStore } from '@/stores/views'
+import { LoadStatus } from '@/stores/loadStatus'
 import ScreenHeader from './ScreenHeader.vue'
 import CompletionKpis from './completion/CompletionKpis.vue'
 import MarksMatrixCard from './completion/MarksMatrixCard.vue'
@@ -19,7 +19,7 @@ const { t } = useMessages()
 useOnActiveProfile(() => completion.load())
 
 const kpis = computed(() =>
-  completion.matrix ? completionKpis(completion.matrix) : null,
+  completion.view ? completionKpis(completion.view) : null,
 )
 </script>
 
@@ -33,7 +33,7 @@ const kpis = computed(() =>
       :error="completion.error"
       @retry="completion.load()"
     />
-    <template v-else-if="completion.matrix && kpis">
+    <template v-else-if="completion.view && kpis">
       <CompletionKpis :kpis="kpis" />
       <!-- Nothing readable is a state, not an empty grid: the cells still say "unknown". -->
       <Alert v-if="kpis.readable === 0">
@@ -42,7 +42,7 @@ const kpis = computed(() =>
           t('completion.nothingReadable')
         }}</AlertDescription>
       </Alert>
-      <MarksMatrixCard :matrix="completion.matrix" />
+      <MarksMatrixCard :matrix="completion.view" />
     </template>
     <div v-else class="flex flex-col gap-4">
       <Skeleton class="h-22 w-full" />
