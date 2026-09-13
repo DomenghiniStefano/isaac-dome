@@ -89,3 +89,31 @@ fn a_source_read_from_zero_has_an_empty_anchor_and_still_resumes() {
         Resume::Continue { offset: 0 }
     );
 }
+
+#[test]
+fn a_log_still_shorter_than_the_prefix_window_is_the_same_launch_when_it_grows() {
+    // Found by a test on 2026-09-13, and it is the failure that duplicates runs. A log is a few
+    // hundred bytes for its first instants, so "the first 4 KiB" of it is the whole file: read
+    // that window again once the game has written more and the hash is a different number, the
+    // source reads as new, and everything already in the archive is imported a second time.
+    // The window is stored with its length, so it stays the window it was.
+    let early = b"[INFO] - OpenGL version 4.6.0\n[INFO] - RNG Start Seed: FYQ8 QQ8G (1) [New, 1]\n";
+    let stored = SourceKey::new(early, &window("Seed 408474304"), 80);
+
+    // Later the same file is far longer, but the first 80 bytes are the bytes they always were.
+    assert_eq!(
+        resume(&stored, early, 900_000, &window("Seed 408474304")),
+        Resume::Continue { offset: 80 }
+    );
+}
+
+#[test]
+fn a_prefix_read_over_a_different_number_of_bytes_is_not_the_same_prefix() {
+    // The guard that makes the rule above hold: a hash over 80 bytes and a hash over 4,096 are
+    // not comparable, and comparing them is how the bug got in.
+    let early = b"[INFO] - OpenGL version 4.6.0\n";
+    let stored = SourceKey::new(early, &[], 0);
+    let mut longer = early.to_vec();
+    longer.extend_from_slice(b"[INFO] - and more of it\n");
+    assert_eq!(resume(&stored, &longer, 900_000, &[]), Resume::Fresh);
+}

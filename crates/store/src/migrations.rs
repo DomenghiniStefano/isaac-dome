@@ -55,6 +55,7 @@ const MIGRATIONS: [&str; 4] = [
         kind TEXT NOT NULL,
         key TEXT,
         prefix_hash TEXT NOT NULL,
+        prefix_len INTEGER NOT NULL,
         anchor_hash TEXT NOT NULL,
         read_offset INTEGER NOT NULL,
         UNIQUE (kind, key)
