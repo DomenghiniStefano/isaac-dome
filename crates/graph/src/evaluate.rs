@@ -6,7 +6,14 @@ use std::collections::{BTreeMap, BTreeSet};
 use catalog::CharacterId;
 
 use crate::build::{Graph, GraphDiagnostic};
-use crate::model::Requirement;
+use crate::model::{Requirement, ThresholdItem};
+
+/// What a threshold says about one profile: met, not met, or not answerable at all.
+enum ThresholdState {
+    Met,
+    Unmet { current: u32 },
+    Unanswerable,
+}
 use crate::rules::{CounterName, MarkColumn, MarkLevel};
 
 /// What the graph is allowed to ask a save. Three questions, all already resolved by the
@@ -77,6 +84,31 @@ impl Eval {
 }
 
 impl Graph {
+    /// What a threshold says about a profile.
+    ///
+    /// Satisfaction is tested **first**, and that order is the whole design: an unresolved
+    /// contributor is an item this catalog does not have, so it can only ever *add* to the
+    /// tally. Asking about it first would turn "you can do this" into "we cannot say" for a
+    /// profile that already can.
+    fn state(
+        done: &impl Fn(u32) -> bool,
+        at_least: u32,
+        of: &[ThresholdItem],
+        unresolved: u32,
+    ) -> ThresholdState {
+        // An item nothing gates is always available; one that is gated counts once its
+        // achievement is done. This is the same question `Requirement::Item` answers with
+        // an edge, asked here because a threshold has none.
+        let current = of.iter().filter(|i| i.unlocked_by.is_none_or(done)).count() as u32;
+        if current >= at_least {
+            ThresholdState::Met
+        } else if unresolved > 0 {
+            ThresholdState::Unanswerable
+        } else {
+            ThresholdState::Unmet { current }
+        }
+    }
+
     pub fn evaluate(&self, profile: &dyn Profile) -> Eval {
         let Some(flags) = profile.done() else {
             // Section 1 wasn't read. No nodes: "unread" must not become "not done".
@@ -124,6 +156,7 @@ impl Graph {
             );
         }
 
+        let mut unmet: Vec<GraphDiagnostic> = Vec::new();
         let mut infos = BTreeMap::new();
         for n in self.nodes() {
             let id = n.achievement;
@@ -139,14 +172,35 @@ impl Graph {
             // unread section 2 and one of the 40 unlocated cells are both "we can't say",
             // and neither is allowed to read as satisfied — which is what would happen if
             // an unanswerable mark simply fell out of the count.
-            let unanswerable = n
-                .requirements
-                .iter()
-                .filter(|r| match r {
+            let mut unanswerable = 0u32;
+            for r in &n.requirements {
+                let cannot_say = match r {
                     Requirement::Mark {
                         character, column, ..
                     } => profile.mark(*character, *column).is_none(),
                     Requirement::Counter { name, .. } => profile.counter(*name).is_none(),
+                    Requirement::Threshold {
+                        label,
+                        at_least,
+                        of,
+                        unresolved,
+                        ..
+                    } => match Self::state(&done, *at_least, of, *unresolved) {
+                        ThresholdState::Met => false,
+                        ThresholdState::Unanswerable => true,
+                        ThresholdState::Unmet { current } => {
+                            // Declared rather than folded into a count of unknowns: "this
+                            // node is Partial because you have two of the three Guppy
+                            // items" is on the record, the way an inferred gate is.
+                            unmet.push(GraphDiagnostic::ThresholdUnmet {
+                                node: id,
+                                label: label.clone(),
+                                current,
+                                at_least: *at_least,
+                            });
+                            true
+                        }
+                    },
                     Requirement::Character { .. }
                     | Requirement::Boss { .. }
                     | Requirement::Challenge { .. }
@@ -154,8 +208,11 @@ impl Graph {
                     | Requirement::Gate { .. }
                     | Requirement::Unknown { .. }
                     | Requirement::None => false,
-                })
-                .count() as u32;
+                };
+                if cannot_say {
+                    unanswerable += 1;
+                }
+            }
             let info = match (unproven + unanswerable, transitive_known) {
                 (0, Some(set)) => NodeInfo::Computed {
                     available_now: blocked_by == 0 && !done(id),
@@ -175,6 +232,7 @@ impl Graph {
         }
 
         let mut diagnostics = self.diagnostics().to_vec();
+        diagnostics.extend(unmet);
         for nodes in cycles {
             diagnostics.push(GraphDiagnostic::Cycle { nodes });
         }
