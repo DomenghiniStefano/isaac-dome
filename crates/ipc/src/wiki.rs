@@ -122,6 +122,7 @@ pub struct WikiCounts {
     pub bosses: u32,
     pub challenges: u32,
     pub characters: u32,
+    pub transformations: u32,
 }
 
 /// Why the embedded dataset failed to load. Fieldless: a bare string.
@@ -178,6 +179,7 @@ pub fn wiki_info(
                     bosses: meta.counts.bosses,
                     challenges: meta.counts.challenges,
                     characters: meta.counts.characters,
+                    transformations: meta.counts.transformations,
                 },
                 unresolved: meta.diagnostics.unresolved.values().sum(),
                 unknown_templates: meta.diagnostics.unknown_templates.values().sum(),

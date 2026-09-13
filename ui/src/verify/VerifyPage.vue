@@ -168,7 +168,7 @@ const freshnessText = (newerThanSnapshot: boolean | null) => {
 }
 
 const countsText = (counts: Extract<WikiInfo, { kind: 'loaded' }>['counts']) =>
-  `items ${counts.items} · trinkets ${counts.trinkets} · achievements ${counts.achievements} · bosses ${counts.bosses} · challenges ${counts.challenges} · characters ${counts.characters}`
+  `items ${counts.items} · trinkets ${counts.trinkets} · achievements ${counts.achievements} · bosses ${counts.bosses} · challenges ${counts.challenges} · characters ${counts.characters} · transformations ${counts.transformations}`
 
 onMounted(() => load().catch(handleIpcError))
 </script>

@@ -85,8 +85,38 @@ pub enum RequirementView {
         current: u32,
         at_least: u32,
     },
+    /// A transformation: N of a set of items, in any combination. Like `Counter`, it is not
+    /// a wall — it appears only while the profile is short of the count — and unlike every
+    /// other member here it lists the things that would satisfy it rather than the one thing
+    /// that blocks it.
+    Threshold {
+        transformation: u32,
+        label: String,
+        current: u32,
+        at_least: u32,
+        of: Vec<ThresholdItemView>,
+        /// How many of the wiki's contributors this catalog does not have. They can only
+        /// ever add to `current`, never subtract, so a non-zero value means the count shown
+        /// is a floor.
+        unresolved: u32,
+        /// The transformation's own wiki page.
+        page: Option<Target>,
+    },
     /// Not interpreted. A node carrying one cannot claim "available now".
     Unknown { label: String },
+}
+
+/// One item of a threshold's set, with where the profile stands on it.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ThresholdItemView {
+    /// `itemKind` and not `kind`, for the same reason as `RequirementView::Item`.
+    pub item_kind: ItemKindView,
+    pub id: u32,
+    pub name: String,
+    /// Whether the profile can already find it: its achievement is done, or nothing gates it.
+    pub unlocked: bool,
+    pub page: Option<Target>,
 }
 
 /// The twelve columns, as a value on the wire. Fieldless, so it is a bare camelCase string
@@ -450,6 +480,46 @@ fn missing_view(
                     });
                 }
             }
+            graph::model::Requirement::Threshold {
+                transformation,
+                label,
+                at_least,
+                of,
+                unresolved,
+            } => {
+                let items: Vec<ThresholdItemView> = of
+                    .iter()
+                    .filter_map(|t| {
+                        let i = c.item(t.kind, t.id)?;
+                        Some(ThresholdItemView {
+                            item_kind: kind_view(t.kind),
+                            id: t.id.0,
+                            name: c.text(&i.name, en).to_string(),
+                            unlocked: done(i.unlocked_by),
+                            page: page_of(dataset, Some(wiki_target::item(i))),
+                        })
+                    })
+                    .collect();
+                let current = items.iter().filter(|i| i.unlocked).count() as u32;
+                // Like `Counter`: it appears only while it is not met. A threshold already
+                // reached is not in the way, and the list here is what is in the way.
+                if current < *at_least {
+                    out.push(RequirementView::Threshold {
+                        transformation: *transformation,
+                        label: label.clone(),
+                        current,
+                        at_least: *at_least,
+                        of: items,
+                        unresolved: *unresolved,
+                        page: page_of(
+                            dataset,
+                            Some(Target::Transformation {
+                                id: *transformation,
+                            }),
+                        ),
+                    });
+                }
+            }
             graph::model::Requirement::Gate { gate } => out.push(RequirementView::Gate {
                 label: gate
                     .split_once(':')
@@ -712,6 +782,11 @@ fn counter_remaining(r: &RequirementView) -> Option<u32> {
         | RequirementView::Item { .. }
         | RequirementView::Gate { .. }
         | RequirementView::Mark { .. }
+        // A threshold looks like a distance and is not one. A tally's remainder counts
+        // events the player performs; a threshold's counts items that have to *drop*, and
+        // one item away can be a hundred runs or the next room. Putting the two on one
+        // scale would order the list by a number that means two different things.
+        | RequirementView::Threshold { .. }
         | RequirementView::Unknown { .. } => None,
     }
 }

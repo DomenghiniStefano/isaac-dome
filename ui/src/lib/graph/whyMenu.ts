@@ -34,6 +34,7 @@ const kindLabel: Record<RequirementKind, MessageKey<MessageSchema>> = {
   [RequirementKind.Gate]: 'graph.why.gate',
   [RequirementKind.Mark]: 'graph.why.mark',
   [RequirementKind.Counter]: 'graph.why.counter',
+  [RequirementKind.Threshold]: 'graph.why.threshold',
   [RequirementKind.Unknown]: 'graph.why.unknown',
 }
 
