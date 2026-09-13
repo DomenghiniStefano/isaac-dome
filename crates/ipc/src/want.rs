@@ -82,8 +82,8 @@ pub enum WantDiagnostic {
 pub fn want_view(
     catalog: Option<&Catalog>,
     view: &UnlockView,
-    _flags: Option<&[bool]>,
-    _eval: Option<&graph::evaluate::Eval>,
+    flags: Option<&[bool]>,
+    eval: Option<&graph::evaluate::Eval>,
     target: &Target,
     mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> WantView {
@@ -125,17 +125,50 @@ pub fn want_view(
         .iter()
         .filter_map(|id| node_of(view, *id))
         .map(|node| WantRoute {
+            state: route_state(node, flags, eval, view),
             node: node.clone(),
-            state: WantState::NoProfile,
         })
         .collect();
     if routes.is_empty() {
         return unresolved(WantDiagnostic::NothingUnlocks);
     }
+    // The banner and the rows are two readings of one fact, so one produces the other: the
+    // screen never has to scan the rows to know whether it may say where you stand.
+    let diagnostics = routes
+        .iter()
+        .all(|r| r.state == WantState::NoProfile)
+        .then_some(WantDiagnostic::NoProfile)
+        .into_iter()
+        .collect();
     WantView {
         wanted,
         routes,
-        diagnostics: Vec::new(),
+        diagnostics,
+    }
+}
+
+/// The state of one route, read from what the node already says. Never from the length of a
+/// chain: `missing_chain` answers with an empty list for four different situations, and
+/// telling those apart is this view's whole job.
+fn route_state(
+    node: &UnlockNode,
+    flags: Option<&[bool]>,
+    _eval: Option<&graph::evaluate::Eval>,
+    _view: &UnlockView,
+) -> WantState {
+    if flags.is_none() {
+        return WantState::NoProfile;
+    }
+    if node.done {
+        return WantState::Done;
+    }
+    match node.graph {
+        crate::graph::GraphInfo::Computed {
+            available_now: true,
+            ..
+        } => WantState::AvailableNow,
+        // Task 5 replaces this with the chain.
+        _ => WantState::NoProfile,
     }
 }
 
