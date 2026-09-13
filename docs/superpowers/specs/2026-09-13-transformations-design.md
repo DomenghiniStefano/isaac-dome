@@ -224,6 +224,16 @@ Threshold {
 instead, resolving each contributor against the catalog the way `Requirement::Item` already
 does.
 
+**A set smaller than its own count is not a threshold either.** Found on 2026-09-13, on the
+first real build: Stompy's page says "Pick up 3 items or pills from the following list" and
+then lists two collectibles and **a pill**, as a bullet rather than in a table — and a pill
+is not something this model has. Two contributors with a count of three is a requirement
+nothing can ever satisfy, and evaluating it would report "you are one item away" forever. So
+`graph` refuses to build a `Threshold` when `items.len() < at_least` and produces `Unknown`
+instead. The dataset keeps both numbers, because both are what the page says; it is the
+crate that has to *answer* that declines to answer with a number it knows is unreachable.
+No achievement references Stompy today, so this is a trap disarmed rather than a bug fixed.
+
 `at_least` is a `u32` and not an `Option`, so **a transformation whose `requires` is `None`
 never becomes a `Threshold` at all**: it resolves straight to `Requirement::Unknown` with
 the transformation's label. A variant that can be constructed without the number it is
