@@ -82,9 +82,14 @@ const checks = [
     test: (file, body) => /\binvoke\s*\(/.test(body) && !isUnder(file, IPC_DIR),
   },
   {
+    // Three namespaces, not one: `window` was the whole story while there was one window.
+    // A tab torn off into a window of its own brought `webviewWindow` (creating them) and
+    // `event` (what they say to each other), and the rule that keeps all of it in one module
+    // is worth nothing if it only knows the first name.
     name: 'window API outside src/lib/window/',
     test: (file, body) =>
-      /@tauri-apps\/api\/window/.test(body) && !isUnder(file, WINDOW_DIR),
+      /@tauri-apps\/api\/(window|webviewWindow|event)/.test(body) &&
+      !isUnder(file, WINDOW_DIR),
   },
   {
     name: 'arbitrary pixel value in a class',
