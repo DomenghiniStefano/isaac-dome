@@ -1256,7 +1256,7 @@ and trinkets; Behavior, Strategies, Damage Scaling for bosses; condition and rew
 achievements and challenges) arrives as a **typed tree**, already resolved: every reference
 to another entity is one of our own `id`s, not a text link. The dataset is embedded in the
 binary (backlog item B1, implementation closed on 2026-09-05:
-`docs/superpowers/plans/2026-09-05-wiki-dataset-report.md`), so it's always available, even
+`docs/superpowers/reports/2026-09-05-wiki-dataset-report.md`), so it's always available, even
 offline; some references stay unresolved (`Concept`) or come from templates the parser
 doesn't know yet — they're the same kind of "declared unknown data" as the rest of the
 contract, not an error to hide.
