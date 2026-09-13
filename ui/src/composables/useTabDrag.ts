@@ -17,7 +17,7 @@ import {
 } from '@/lib/window/preview'
 import { watchPointer } from '@/lib/window/pointerSource'
 import type { PointerWatch } from '@/lib/window/pointerSource'
-import { pastTearBand, toDesktop, windowUnderPoint } from '@/lib/window/tearOff'
+import { pastTearBand, stripUnderPoint, toDesktop } from '@/lib/window/tearOff'
 import { windowPort } from '@/lib/window/windowPort'
 import type { WindowBox } from '@/lib/window/windowPort'
 
@@ -104,10 +104,11 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
   }
 
   const onOutsideMove = (p: Point) => {
-    // Our own window is a target like any other now: the tab has already left its strip, so
-    // putting it back there is a landing, not a special case. The marker in our own strip says
-    // where, exactly as another window's would.
-    const target = windowUnderPoint(targets(), p, focusOrder.value)
+    // A **strip** under the cursor, not a window: over a window's content the card keeps
+    // following the pointer, because nothing else is going to say where the tab would land.
+    // Our own strip counts like any other — the tab has already left it, so putting it back
+    // there is a landing and not a special case.
+    const target = stripUnderPoint(targets(), p, focusOrder.value)
     tellHovered(target, p)
     if (target) void hidePreview()
     else void movePreview(p)
