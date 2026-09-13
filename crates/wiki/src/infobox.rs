@@ -46,6 +46,7 @@ pub enum InfoboxKind {
     Boss,
     Challenge,
     Character,
+    Transformation,
 }
 
 impl InfoboxKind {
@@ -61,6 +62,7 @@ impl InfoboxKind {
             "infobox boss" => InfoboxKind::Boss,
             "infobox challenge" => InfoboxKind::Challenge,
             "infobox character" => InfoboxKind::Character,
+            "infobox transformation" => InfoboxKind::Transformation,
             _ => return None, // allowed: template name, an open-ended string
         })
     }
@@ -80,6 +82,11 @@ impl InfoboxKind {
 ///   two copies to disagree.
 /// - **Editorial** (`hidden`, `appearance`, `behavior`, `is mini-boss`, `oldpool`,
 ///   `special goal`): presentation switches and prose the sections already carry.
+/// - **`requirement`**, on a transformation: it looks like data and is not. All sixteen
+///   rows of the Cargo table hold the identical string `three items from this set` — Adult,
+///   whose infobox has no such parameter, included — so it is the template's default and
+///   states nothing about any row. The count is read from the page body instead
+///   (`transformation::requires`), where each page says its own.
 pub const IGNORED_PARAMS: &[&str] = &[
     "image name",
     "costume name",
@@ -105,6 +112,7 @@ pub const IGNORED_PARAMS: &[&str] = &[
     "is mini-boss",
     "oldpool",
     "special goal",
+    "requirement",
 ];
 
 fn param<'a>(ib: &'a RawInfobox, name: &str) -> &'a str {
@@ -192,9 +200,16 @@ fn item_from(
 
 /// Converts a raw infobox into the `Infobox` of its kind. Missing parameters count as an
 /// empty string: a missing field degrades, it doesn't block the page.
+///
+/// `page` is the whole page text, and six of the seven arms ignore it. Only a transformation
+/// needs it: its count and its item set are stated in the body, not in the box (spec §2.2).
+/// The alternative — building that one variant outside this function — would cost the
+/// property that one place builds every infobox, which is worth more than an unused
+/// parameter.
 pub fn infobox_from(
     kind: InfoboxKind,
     ib: &RawInfobox,
+    page: &str,
     r: &Resolver,
     d: &mut Diagnostics,
 ) -> Infobox {
@@ -237,6 +252,14 @@ pub fn infobox_from(
                 .by_page_title(param(ib, "unlocks"))
                 .or_else(|| r.achievement_by_name(param(ib, "unlocks"))),
         },
+        InfoboxKind::Transformation => {
+            let c = crate::transformation::contributors(ib, page, r, d);
+            Infobox::Transformation {
+                requires: crate::transformation::requires(page),
+                contributors: c,
+                target: inline(ib, "target", r, d),
+            }
+        }
         InfoboxKind::Character => Infobox::Character {
             health: inline(ib, "health", r, d),
             damage: text(ib, "damage"),
@@ -266,6 +289,62 @@ mod tests {
                 .map(|(k, v)| (k.to_string(), v.to_string()))
                 .collect(),
         }
+    }
+
+    #[test]
+    fn the_transformation_template_is_a_kind() {
+        assert_eq!(
+            InfoboxKind::of("infobox transformation"),
+            Some(InfoboxKind::Transformation)
+        );
+    }
+
+    /// Super Bum's real infobox, read on 2026-09-13: `id = n/a`, no `requirement`, and its
+    /// item list written as positional arguments so `items` is absent altogether. It is the
+    /// degradation case and it degrades to "no count, no contributors" — not to a panic, and
+    /// not to the three a default would have produced.
+    #[test]
+    fn a_malformed_transformation_infobox_degrades_to_unknown() {
+        let r = test_resolver();
+        let mut d = Diagnostics::default();
+        let ib = raw(
+            "infobox transformation",
+            &[("dlc", "a"), ("target", "Isaac's bums")],
+        );
+        let Infobox::Transformation {
+            requires,
+            contributors,
+            target,
+        } = infobox_from(InfoboxKind::Transformation, &ib, "", &r, &mut d)
+        else {
+            panic!()
+        };
+        assert_eq!(requires, None);
+        assert!(contributors.is_empty());
+        assert!(
+            matches!(target.first(), Some(Inline::Text { text, .. }) if text == "Isaac's bums")
+        );
+    }
+
+    /// The count comes from the page body, which is why `infobox_from` takes the text: the
+    /// transformation is the only kind whose infobox is completed from outside itself.
+    #[test]
+    fn a_transformation_reads_its_count_and_its_set_from_the_page() {
+        let r = test_resolver();
+        let mut d = Diagnostics::default();
+        let ib = raw("infobox transformation", &[("items", "{{i|Breakfast}}")]);
+        let text =
+            "Pick up 3 [[item]]s from the following list.\n{{collectible table | Breakfast }}";
+        let Infobox::Transformation {
+            requires,
+            contributors,
+            ..
+        } = infobox_from(InfoboxKind::Transformation, &ib, text, &r, &mut d)
+        else {
+            panic!()
+        };
+        assert_eq!(requires, Some(3));
+        assert_eq!(contributors, vec![Target::Item { id: 25 }]);
     }
 
     #[test]
@@ -301,7 +380,7 @@ mod tests {
             devil_price,
             shop_price,
             pools,
-        } = infobox_from(InfoboxKind::Passive, &ib, &r, &mut d)
+        } = infobox_from(InfoboxKind::Passive, &ib, "", &r, &mut d)
         else {
             panic!()
         };
@@ -329,7 +408,7 @@ mod tests {
         let ib = raw("infobox activated collectible", &[("recharge", "6")]);
         let Infobox::Item {
             template, recharge, ..
-        } = infobox_from(InfoboxKind::Activated, &ib, &r, &mut d)
+        } = infobox_from(InfoboxKind::Activated, &ib, "", &r, &mut d)
         else {
             panic!()
         };
@@ -346,7 +425,7 @@ mod tests {
             &[("quote", "Imaginary Friend"), ("tags", "offensive")],
         );
         let Infobox::Trinket { quote, tags, pools } =
-            infobox_from(InfoboxKind::Trinket, &ib, &r, &mut d)
+            infobox_from(InfoboxKind::Trinket, &ib, "", &r, &mut d)
         else {
             panic!()
         };
@@ -392,7 +471,7 @@ mod tests {
             requirements,
             notes,
             unlocks,
-        } = infobox_from(InfoboxKind::Achievement, &ib, &r, &mut d)
+        } = infobox_from(InfoboxKind::Achievement, &ib, "", &r, &mut d)
         else {
             panic!()
         };
@@ -417,7 +496,8 @@ mod tests {
             "infobox boss",
             &[("base hp", "250 (x2)"), ("unlocked by", "Epic Fetus")],
         );
-        let Infobox::Boss { base_hp, .. } = infobox_from(InfoboxKind::Boss, &ib, &r, &mut d) else {
+        let Infobox::Boss { base_hp, .. } = infobox_from(InfoboxKind::Boss, &ib, "", &r, &mut d)
+        else {
             panic!()
         };
         assert_eq!(base_hp, Some(250));
@@ -479,7 +559,7 @@ mod tests {
         );
         let Infobox::Boss {
             variant, stage_hp, ..
-        } = infobox_from(InfoboxKind::Boss, &ib, &r, &mut d)
+        } = infobox_from(InfoboxKind::Boss, &ib, "", &r, &mut d)
         else {
             panic!()
         };
@@ -490,7 +570,7 @@ mod tests {
         // 2026-09-13 the field did not exist, so none of them reached the frontend.
         let ib = raw("infobox challenge", &[("character", "Isaac")]);
         let Infobox::Challenge { character, .. } =
-            infobox_from(InfoboxKind::Challenge, &ib, &r, &mut d)
+            infobox_from(InfoboxKind::Challenge, &ib, "", &r, &mut d)
         else {
             panic!()
         };
@@ -501,7 +581,7 @@ mod tests {
             &[("tears", "2.73"), ("parent", "Tainted Isaac")],
         );
         let Infobox::Character { tears, parent, .. } =
-            infobox_from(InfoboxKind::Character, &ib, &r, &mut d)
+            infobox_from(InfoboxKind::Character, &ib, "", &r, &mut d)
         else {
             panic!()
         };
@@ -527,7 +607,7 @@ mod tests {
             has_treasure_rooms,
             unlocks,
             ..
-        } = infobox_from(InfoboxKind::Challenge, &ib, &r, &mut d)
+        } = infobox_from(InfoboxKind::Challenge, &ib, "", &r, &mut d)
         else {
             panic!()
         };

@@ -417,6 +417,14 @@ impl Resolver {
     pub fn boss_key(&self, page_title: &str) -> Option<(u32, u32, u32)> {
         self.bosses_by_title.get(&key(page_title)).copied()
     }
+
+    /// A transformation's id from its page title. The Cargo table is the only source that
+    /// has one for every page: Super Bum's infobox says `id = n/a`, and the table maps that
+    /// onto 1000 — a sentinel for "no id in the game", not a `PlayerForm` beside 0…15.
+    /// Without this the page would be dropped as having no id.
+    pub fn transformation_of_page(&self, page_title: &str) -> Option<u32> {
+        self.transformations.get(&key(page_title)).copied()
+    }
 }
 
 #[cfg(test)]

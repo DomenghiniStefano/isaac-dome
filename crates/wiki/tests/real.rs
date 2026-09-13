@@ -365,6 +365,9 @@ fn raw_brace_texts_in_infobox(infobox: &Infobox, out: &mut Vec<String>) {
                 raw_brace_texts(v, out);
             }
         }
+        // `contributors` is a list of resolved targets, not text, and `requires` a number:
+        // `target` is the only field here that can carry wikitext through.
+        Infobox::Transformation { target, .. } => raw_brace_texts(target, out),
     }
 }
 
