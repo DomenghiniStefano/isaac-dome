@@ -40,7 +40,7 @@ const node = (slot: number, over: Partial<UnlockNode> = {}): UnlockNode => ({
     kind: 'known',
     id: slot,
     text: `achievement ${slot}`,
-    hint: null,
+    condition: null,
     iconUrl: null,
   },
   done: false,
@@ -57,12 +57,14 @@ const passive = (name: string): UnlockTarget => ({
   id: 1,
   name,
   iconUrl: null,
+  page: null,
 })
 const character = (name: string): UnlockTarget => ({
   kind: 'character',
   id: 2,
   name,
   tainted: false,
+  page: null,
 })
 
 const reference = graphAnswers({ withArt: false, withCatalog: true }).unlock
@@ -115,7 +117,7 @@ describe('matchesFilter', () => {
       kind: 'known',
       id: 1,
       text: 'You unlocked "The Lost"',
-      hint: 'die 4 times',
+      condition: 'die 4 times',
       iconUrl: null,
     },
     unlocks: [character('The Lost')],
@@ -281,7 +283,7 @@ describe('sortNodes', () => {
           kind: 'known',
           id: slot,
           text,
-          hint: null,
+          condition: null,
           iconUrl: null,
         },
       })

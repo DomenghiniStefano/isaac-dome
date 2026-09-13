@@ -195,7 +195,11 @@ export type AchievementRef =
       kind: 'known'
       id: number
       text: string
-      hint: string | null
+      // How to get it, in one line: the game's own `unlock_condition` where it states one,
+      // and the wiki's requirement where it does not. It was called `hint` while it was only
+      // the file's — 283 of 637 achievements, and 16 of the 119 unlockable now — and the name
+      // changed with the meaning so that every reader had to be revisited.
+      condition: string | null
       // A link the app serves, never an embedded image: `isaac://achievement/19` (on Windows
       // the same thing arrives rewritten as `http://isaac.localhost/achievement/19`). Put it
       // straight into an `<img src>` — the browser does the lazy loading, the caching and the
@@ -260,13 +264,30 @@ export type UnlockTarget =
       name: string
       // The same kind of link as `AchievementRef.known.iconUrl` above: `isaac://item/passive/92`.
       iconUrl: string | null
+      // Where to read about it. `null` means the dataset has no page: the name shows and
+      // does not link, never a link that leads nowhere. The same field and the same rule as
+      // `RequirementView.page` — what a node unlocks and what blocks it are two halves of
+      // one row, and they answer alike (B35).
+      page: Target | null
     }
-  | { kind: 'character'; id: number; name: string; tainted: boolean }
-  | { kind: 'boss'; id: number; name: string }
+  | {
+      kind: 'character'
+      id: number
+      name: string
+      tainted: boolean
+      page: Target | null
+    }
+  | { kind: 'boss'; id: number; name: string; page: Target | null }
   // The challenge's reward: the ids of the achievements that completing it grants.
   // Each one's node (done or not, what it unlocks) already lives in UnlockView.nodes,
   // indexed by id.
-  | { kind: 'challenge'; id: number; name: string; rewards: number[] }
+  | {
+      kind: 'challenge'
+      id: number
+      name: string
+      rewards: number[]
+      page: Target | null
+    }
 
 // Value, not discriminator: the origin DLC as `OriginView` serializes it in Rust.
 // It's not the wiki's `Dlc`, which also has `repentancePlus`: here the variants are
@@ -362,14 +383,23 @@ export interface UnlockView {
   diagnostics: UnlockDiagnostic[]
 }
 
-// What the steps list is ordered by. No fields: a string, like `OriginView`. One value
-// today; the next basis (closeness, once the counters land) arrives as a value here.
-export const StepsBasis = { FanOut: 'fanOut' } as const
+// What a section is ordered by. No fields: a string, like `OriginView`. `closeness` is the
+// one a counter makes possible — it is the only requirement that carries a distance.
+export const StepsBasis = {
+  FanOut: 'fanOut',
+  Closeness: 'closeness',
+} as const
 export type StepsBasis = (typeof StepsBasis)[keyof typeof StepsBasis]
 
-export interface NextSteps {
-  steps: UnlockNode[]
+// One reason and the steps it produced. A section is never emitted empty — the rule lives in
+// Rust — so the screen never has to draw a heading over nothing.
+export interface StepsSection {
   basis: StepsBasis
+  steps: UnlockNode[]
+}
+
+export interface NextSteps {
+  sections: StepsSection[]
 }
 
 // `GoalId` is a transparent newtype in Rust: on the wire it's an opaque string,

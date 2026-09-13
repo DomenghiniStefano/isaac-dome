@@ -344,6 +344,31 @@ fn link(inner: &str, r: &Resolver, out: &mut Out) {
     }
 }
 
+/// An inline run as **the reader would read it**: a reference and a concept become their
+/// label, an edition wrapper is unwrapped and its words kept.
+///
+/// It is the one place that answers "what does this say, as a sentence". `infobox::tags`
+/// used a private copy; a caller outside this crate needs the same answer for an
+/// achievement's requirement, and two copies of a rule are wrong within a release.
+///
+/// What it deliberately loses: style, which page a reference points at, and which editions a
+/// wrapper declared. Anything that needs those reads the tree.
+pub fn plain(inline: &[Inline]) -> String {
+    let mut out = String::new();
+    write_plain(inline, &mut out);
+    out
+}
+
+fn write_plain(inline: &[Inline], out: &mut String) {
+    for i in inline {
+        match i {
+            Inline::Text { text, .. } => out.push_str(text),
+            Inline::Ref { label, .. } | Inline::Concept { label, .. } => out.push_str(label),
+            Inline::Edition { inline, .. } => write_plain(inline, out),
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -652,5 +677,42 @@ mod tests {
                 inline: vec![text("unknown code", Style::Plain)]
             }]
         );
+    }
+
+    #[test]
+    fn plain_reads_a_run_the_way_a_reader_would() {
+        assert_eq!(
+            plain(&[
+                text("Defeat ", Style::Plain),
+                Inline::Ref {
+                    target: Target::Achievement { id: 1 },
+                    label: "Mom's Heart".into()
+                },
+                text(" as ", Style::Plain),
+                Inline::Concept {
+                    page: "The Lost".into(),
+                    label: "The Lost".into()
+                },
+            ]),
+            "Defeat Mom's Heart as The Lost",
+            "a reference and a concept are their label, never their target"
+        );
+    }
+
+    #[test]
+    fn plain_keeps_the_words_inside_an_edition_wrapper() {
+        assert_eq!(
+            plain(&[Inline::Edition {
+                only: vec![Dlc::Repentance],
+                inline: vec![text("use the Red Key", Style::Plain)],
+            }]),
+            "use the Red Key",
+            "the wrapper says which edition, not something the sentence needs to lose"
+        );
+    }
+
+    #[test]
+    fn plain_of_nothing_is_nothing() {
+        assert_eq!(plain(&[]), "");
     }
 }
