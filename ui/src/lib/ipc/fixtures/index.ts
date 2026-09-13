@@ -172,6 +172,13 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     whenActive(scenario, async () => (await graph()).unlock),
   [Command.NextSteps]: (_args, scenario) =>
     whenActive(scenario, async () => (await graph()).steps),
+  [Command.Want]: (args, scenario) =>
+    whenActive(scenario, async () =>
+      (await import('./graph')).wantAnswer(
+        { withArt: artShown(), withCatalog: catalogShown() },
+        args?.target as Target,
+      ),
+    ),
   [Command.Collection]: (_args, scenario) =>
     whenActive(scenario, () => collection()),
   [Command.WikiIndex]: async () =>
