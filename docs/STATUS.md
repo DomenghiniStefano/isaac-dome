@@ -352,10 +352,19 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
 - [x] **Contract handed on**: `DESIGN-BRIEF.md` and `ui/src/lib/ipc/types.ts` carry the new
       `Entry` and all six variants, checked field-for-field. `WikiInfobox.vue` takes the entry
       instead of the infobox and draws the three common facts once.
-- [ ] **Phase 2, the templates**: 25 are still unknown, seven of them above 50 occurrences
-      (`m` 373, `transformation contribution` 186, `book of virtues synergy` 157,
-      `achievement text` 127, `ip` 110, `bc` 59, `machine`). Their sentences reach the
-      frontend mangled. Tasks 10–16 of the plan.
+- [x] **Phase 2, the templates**: **25 unknown over 1290 occurrences → 17 over 200.** Seven
+      taught: `m`/`machine` (a machine or beggar has no id, so `Inline::Concept` — and a new
+      `Resolution::Concept` so it is not counted as a *failed* lookup), `ip` (item pools are
+      keyed by name), `transformation contribution` (resolves like `{{tf}}`),
+      `achievement text` (the only one whose argument is a comma-separated **list**, so it
+      cannot go through `resolve`), the two `book of … synergy` templates (text in a named
+      `description` parameter, plus the item, because a section is read on its own), and `bc`
+      (a champion variant: the index is kept verbatim and **the colour is not invented** —
+      which index is which colour lives in the wiki's template and nowhere we can read).
+      `crates/wiki/tests/templates_understood.rs` holds both the >50 line and the total.
+      What stays unknown is listed in the spec with a reason per group: icons whose word is
+      already in the text, editorial marks with no content, and two table generators that
+      would need the wiki's data modules.
 - [x] **The wiki against the game** (`crates/ipc/tests/wiki_agrees_with_catalog.rs`): quality
       equal (0 of 576 disagree), every wiki tag a word the game's own vocabulary uses (9 of
       714), the game's pickup quote contained in the wiki's (8 of 719). It failed on its first
