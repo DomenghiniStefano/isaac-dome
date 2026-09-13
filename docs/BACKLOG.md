@@ -2084,3 +2084,24 @@ committed artefact nobody reads and no test would notice going stale.
 Either both tables are read by something with a test that would fail if they stopped
 agreeing, or they are gone from `TABLES` and from `dataset/raw/cargo/`, with the reason in
 the commit body.
+
+---
+
+## B40 — A transformation's infobox has no rows (implementation, `ui`, small)
+
+Logged 2026-09-13, found by N7: generating the contract added the `transformation` variant to
+`Infobox`, and `WikiInfobox.vue` had no case for it. Before that the union did not carry the
+variant at all, so the switch reached `assertNever` — a transformation page's infobox **threw**
+rather than degrading.
+
+The card is not drawn for now, which is the honest state and not the intended one: the variant
+carries `requires` (how many contributors are needed, `null` when the page does not say it in a
+form we can read), `contributors` (the items and trinkets that count, in page order) and
+`target` (what the transformation acts on). All three are in the dataset and on the wire, and
+nothing puts them on screen.
+
+### Closes when
+
+A transformation page draws a card with those three rows, `contributors` linking like any other
+`Target`, and `requires` saying nothing rather than "3" when it is `null` — the Rust comment on
+that field records why a default would be invisible against the pages that do say it.
