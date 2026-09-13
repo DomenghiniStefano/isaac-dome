@@ -26,6 +26,16 @@ describe('the window opens on the app colour', () => {
     expect(window?.backgroundColor?.toLowerCase()).toBe(token)
   })
 
+  // The window is declared there and built by Rust on demand (`crates/app/src/window.rs`), so
+  // that the tray and the first launch open the same window from the same recipe. Were it
+  // created at startup too, Tauri would build it *and* `setup` would try to build a second one
+  // under the same label — a startup error, which this test explains before anyone reads it.
+  it('leaves the window for Rust to create', () => {
+    const [window] = tauri.app.windows
+    expect(window?.create).toBe(false)
+    expect(window?.label).toBe('main')
+  })
+
   // A window born from a tear-off is created at runtime, where the config's colour is not
   // available: it takes the token itself, as a triple, so there is no fourth copy of the
   // value to drift. The conversion is the only new thing, and it is pinned here rather than
