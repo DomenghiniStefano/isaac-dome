@@ -40,7 +40,7 @@ export const goalCard = (node: UnlockNode, t: Translate): GoalCardModel => {
     : `${t('graph.unknownAchievement')} · ${t('graph.slot')} ${a.slot}`
   return {
     headline: unlocked === '' ? fallback : unlocked,
-    condition: known ? a.hint : null,
+    condition: known ? a.condition : null,
     art: known ? a.iconUrl : null,
     fanOut: node.graph.fanOut,
     location: known ? pageLocation({ kind: 'achievement', id: a.id }) : null,

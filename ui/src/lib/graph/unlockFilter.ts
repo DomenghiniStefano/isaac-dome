@@ -134,7 +134,7 @@ export const facetValues = (node: UnlockNode, facet: FacetId): string[] => {
 const searchText = (node: UnlockNode): string =>
   [
     node.achievement.kind === 'known' ? node.achievement.text : '',
-    node.achievement.kind === 'known' ? (node.achievement.hint ?? '') : '',
+    node.achievement.kind === 'known' ? (node.achievement.condition ?? '') : '',
     ...node.unlocks.map((t) => t.name),
   ]
     .join('\n')

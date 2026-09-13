@@ -97,11 +97,34 @@ const withPage = (requirement: RequirementView): RequirementView => {
   }
 }
 
+// The pack's payload predates the resolved condition: it carries the game file's `hint`, and
+// the wiki's requirement is filled in by Rust, which the fixtures do not run. So the old key
+// becomes the new one where it has something to say — and where the file was silent the line
+// is `null`, which is a real state of the card, only far more common here than in the app:
+// measured 2026-09-13, the file answers for 283 of 637 achievements and the wiki for the rest.
+let warnedAboutConditions = false
+const withCondition = (
+  a: UnlockNode['achievement'],
+): UnlockNode['achievement'] => {
+  if (a.kind !== 'known' || a.condition !== undefined) return a
+  if (!warnedAboutConditions) {
+    warnedAboutConditions = true
+    console.warn(
+      "graph fixture: the design pack's payloads predate the resolved condition; only the achievements the game file itself describes show one, where the app shows all of them",
+    )
+  }
+  const { hint } = a as unknown as { hint: string | null | undefined }
+  return { ...a, condition: hint ?? null }
+}
+
 const nodeWithIcons = (node: UnlockNode, icon: IconOf): UnlockNode => ({
   ...node,
   achievement:
     node.achievement.kind === 'known'
-      ? { ...node.achievement, iconUrl: icon(node.achievement.iconUrl) }
+      ? withCondition({
+          ...node.achievement,
+          iconUrl: icon(node.achievement.iconUrl),
+        })
       : node.achievement,
   unlocks: node.unlocks.map((t) =>
     targetWithPage(withForm(targetWithIcon(t, icon))),

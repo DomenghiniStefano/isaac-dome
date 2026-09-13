@@ -127,7 +127,17 @@ pub enum AchievementRef {
     Known {
         id: u32,
         text: String,
-        hint: Option<String>,
+        /// **How to get it**, in one line: the game's own `unlock_condition` when
+        /// `achievements.xml` states one, and the wiki's requirement when it does not.
+        ///
+        /// Two sources, because the file alone is not enough. Measured 2026-09-13 on the
+        /// reference profile: of 637 known achievements the file answers for 283, and among
+        /// the 119 unlockable *now* — what the landing page draws from — for only 16. It was
+        /// called `hint` while it was only the file's; the name changed with the meaning, so
+        /// that every reader had to be revisited rather than silently widened.
+        ///
+        /// The game's words win where it has any: the wiki is the fallback, never a rewrite.
+        condition: Option<String>,
         icon_url: Option<String>,
     },
     /// In the save but not in the catalog: a patch newer than the file.
@@ -307,6 +317,25 @@ use crate::catalog_view::{item_kind, kind_view, ItemKindView};
 use crate::icon::IconRef;
 use crate::wiki_target;
 
+/// How to get an achievement, in one line. The game's `unlock_condition` first — it is the
+/// game's own words about its own unlock — and the wiki's requirement only where the file
+/// says nothing, which is 354 of 637 achievements on the reference profile.
+///
+/// The wiki's requirement is an inline tree; `wiki::plain` reads it the way a reader would,
+/// so a reference becomes its label and an edition wrapper keeps its words. Whitespace-only
+/// is no answer: a blank line under a headline reads as a condition nobody wrote.
+fn condition_of(a: &catalog::Achievement, dataset: Option<&Dataset>) -> Option<String> {
+    if let Some(from_file) = a.unlock_condition.clone() {
+        return Some(from_file);
+    }
+    let entry = dataset?.entry(&wiki_target::achievement(a.id))?;
+    let wiki::Infobox::Achievement { requirements, .. } = &entry.infobox else {
+        return None;
+    };
+    let line = wiki::plain(requirements).trim().to_string();
+    (!line.is_empty()).then_some(line)
+}
+
 /// A page, only when the dataset really has one. `Some(target)` is a link the screen can
 /// follow; `None` is a name it draws without one — never a link that leads nowhere.
 fn page_of(dataset: Option<&Dataset>, target: Option<Target>) -> Option<Target> {
@@ -468,7 +497,7 @@ pub fn unlock_view(
                     AchievementRef::Known {
                         id: a.id.0,
                         text: a.text.clone(),
-                        hint: a.unlock_condition.clone(),
+                        condition: condition_of(a, dataset),
                         icon_url: icon(&IconRef::Achievement { id: a.id.0 }),
                     },
                     unlocks,

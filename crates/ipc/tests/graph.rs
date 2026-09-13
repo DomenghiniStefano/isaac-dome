@@ -10,7 +10,7 @@ fn node(done: bool) -> UnlockNode {
         achievement: AchievementRef::Known {
             id: 1,
             text: "You unlocked \"Magdalene\"".into(),
-            hint: Some("have 7 or more max red hearts at one time".into()),
+            condition: Some("have 7 or more max red hearts at one time".into()),
             icon_url: None,
         },
         done,
@@ -37,7 +37,7 @@ fn unlock_node_json_shape_is_pinned() {
     assert_eq!(v["achievement"]["kind"], "known");
     assert_eq!(v["achievement"]["id"], 1);
     assert_eq!(
-        v["achievement"]["hint"],
+        v["achievement"]["condition"],
         "have 7 or more max red hearts at one time"
     );
     assert_eq!(v["achievement"]["iconUrl"], Value::Null);
@@ -233,7 +233,7 @@ fn unlock_view_maps_slots_to_achievements_and_marks_the_ones_beyond_the_catalog(
     );
     assert_eq!(v.nodes.len(), 5, "one per slot 1..=5");
     assert!(
-        matches!(&v.nodes[0].achievement, AchievementRef::Known { id: 1, hint: Some(h), .. } if h == "c1")
+        matches!(&v.nodes[0].achievement, AchievementRef::Known { id: 1, condition: Some(h), .. } if h == "c1")
     );
     assert!(v.nodes[0].done);
     assert!(!v.nodes[1].done);

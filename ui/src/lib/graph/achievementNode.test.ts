@@ -3,7 +3,13 @@ import type { UnlockNode, UnlockView } from '@/lib/ipc/types'
 import { achievementNode } from './achievementNode'
 
 const node = (id: number): UnlockNode => ({
-  achievement: { kind: 'known', id, text: `t${id}`, hint: null, iconUrl: null },
+  achievement: {
+    kind: 'known',
+    id,
+    text: `t${id}`,
+    condition: null,
+    iconUrl: null,
+  },
   done: false,
   unlocks: [],
   origin: null,

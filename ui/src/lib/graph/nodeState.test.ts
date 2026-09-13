@@ -24,7 +24,13 @@ const partial: GraphInfo = {
 }
 
 const node = (over: Partial<UnlockNode>): UnlockNode => ({
-  achievement: { kind: 'known', id: 1, text: 'a', hint: null, iconUrl: null },
+  achievement: {
+    kind: 'known',
+    id: 1,
+    text: 'a',
+    condition: null,
+    iconUrl: null,
+  },
   done: false,
   unlocks: [],
   origin: null,

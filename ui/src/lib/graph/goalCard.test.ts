@@ -11,7 +11,7 @@ const base: UnlockNode = {
     kind: 'known',
     id: 484,
     text: 'You unlocked "The Lost"',
-    hint: 'Arriva a Home e usa la Red Key',
+    condition: 'Arriva a Home e usa la Red Key',
     iconUrl: 'isaac://achievement/484',
   },
   done: false,
@@ -80,7 +80,7 @@ describe('goalCard', () => {
     const card = goalCard(
       {
         ...base,
-        achievement: { ...base.achievement, hint: null },
+        achievement: { ...base.achievement, condition: null },
       } as UnlockNode,
       t,
     )
