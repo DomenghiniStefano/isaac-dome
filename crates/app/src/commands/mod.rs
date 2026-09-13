@@ -10,4 +10,5 @@ pub(crate) mod graph;
 pub(crate) mod plan;
 pub(crate) mod profile;
 pub(crate) mod queue;
+pub(crate) mod session;
 pub(crate) mod wiki;

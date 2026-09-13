@@ -33,9 +33,17 @@ fn a_step_is_kept_and_anything_else_reads_as_the_default() {
 fn the_default_settings_are_the_default_scale() {
     let settings = Settings::default();
     assert_eq!(settings.scale(), DEFAULT_SCALE);
+    // The whole object, not the fields one by one: this is the file's shape, and a field that
+    // appears without anyone deciding to add it is what this catches.
     assert_eq!(
         to_value(&settings).unwrap(),
-        json!({ "activeProfileId": null, "scale": 100 })
+        json!({
+            "activeProfileId": null,
+            "scale": 100,
+            "stayInBackground": true,
+            "resumeTabs": true,
+            "backgroundNoticeShown": false
+        })
     );
 }
 

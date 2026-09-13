@@ -635,8 +635,11 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
             - [ ] 3.6 Settings and About — provenance, credits, the three promises; About
                   becomes a dialog, not a page (B25); the profile screen becomes a welcome
                   flow (B17); the KPI and matrix changes of B20, B22, B23
-            - [ ] 3.7 Tabs that survive a restart (B6) — the same session document holds
-                  the sidebar's width and every table's dragged size, per table (B27)
+            - [ ] 3.7 Tabs that survive a restart (B6) — **the session document and the two
+                  settings landed early, on 2026-09-13, with the tray** (`store` migration 3,
+                  `lib/window/sessionDocument.ts`, `/settings/background`). What is left for
+                  3.7 is the rest of what that document is meant to hold: the sidebar's width
+                  and every table's dragged size, per table (B27)
 
 ---
 
@@ -1281,6 +1284,49 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-13 (last) — the app outlives its windows
+
+`feature/background-and-tray`, cut from `develop` in the main checkout (not a worktree: the
+`samples/packed` junction makes one expensive to throw away). Spec
+`docs/superpowers/specs/2026-09-13-background-and-tray-design.md`, plan beside it. An explicit
+request from the owner: closing every window must leave the app running, reachable from the
+notification area, and launching the executable twice must never make a second process.
+
+- [x] **The exit is prevented, and only the right one.** `RunEvent::ExitRequested` carries
+      `code: None` for "the user closed the last window" and `Some` for `AppHandle::exit`
+      (`tauri-2.11.5/src/app.rs:225-232`), so the tray's **Quit** needs no flag to get past the
+      guard — it simply doesn't match the arm. The one `_ =>` arm the repo allows: `RunEvent` is
+      `#[non_exhaustive]` and is not ours.
+- [x] **One window recipe, three callers.** `WindowConfig::create: false` plus
+      `WebviewWindowBuilder::from_config` means the window's shape stays in `tauri.conf.json` —
+      no constant moved into Rust, no third copy of the background colour (B18).
+      `crates/app/src/window.rs` is the only place a window is opened: startup, the tray, and
+      the second-instance callback. `background.test.ts` now pins `create === false`.
+- [x] **The tray, always present.** Left click opens or focuses, right click is Open / Quit, in
+      the system's language (`sys-locale`, mapped by the same primary-subtag rule as
+      `i18n/locale.ts`). Which window a click means is a pure function in `ipc::tray_action`,
+      with `tab-preview` filtered out: focusing the drag's preview would hand the user a ghost.
+- [x] **One instance.** `tauri-plugin-single-instance`, registered first, calling the same
+      `open_or_focus`.
+- [x] **Part of 3.7 landed early: the session document.** `store` migration 3, one JSON document
+      in one row, the shape migration 2 already used for the queue. **An object with a version,
+      not a bare array**, so 3.7's sidebar width and per-table sizes (B27) join as named keys
+      without a migration. Written only by `main`, only as its tabs change, debounced —
+      **never on close**, where a write races the webview's teardown. `main` now starts pending
+      like every other window and is seeded from its session; an empty seed was already the
+      landing tab, so "no session", "the setting is off" and "the document is unreadable" all
+      arrive at today's behaviour through code that already existed.
+- [x] **Two settings and a screen.** `stayInBackground` and `resumeTabs`, both on by default, in
+      `settings.json` where B6 said the flag belongs. `/settings/background`, and a new property
+      in `sectionNav.test.ts` — *every Settings route is listed in the Settings sidebar* — which
+      caught the screen being reachable only by typing its path. A count would not have.
+- [ ] **Not yet checked on the machine.** `pnpm check` is green (436 frontend tests, 7 skips, all
+      for samples that were already missing), but nothing here has been clicked: the tray icon,
+      the left click, Quit, the second launch, the toast, and the setting turned off. The
+      notification is the part most likely not to work — a Windows toast wants a registered
+      AppUserModelID, which an installed build has and `pnpm dev` may not — and it degrades to
+      the icon's tooltip rather than blocking the exit.
 
 ### 2026-09-13 (last) — one drag everywhere, and a tab that leaves the window
 

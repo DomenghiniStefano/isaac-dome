@@ -17,7 +17,7 @@ path = "src/main.rs"
 tauri-build = { version = "2", features = [] }
 
 [dependencies]
-tauri = { version = "2", features = [] }
+tauri = { version = "2", features = ["tray-icon"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 ipc = { path = "../ipc" }
@@ -29,3 +29,6 @@ graph = { path = "../graph" }
 plan = { path = "../plan" }
 store = { path = "../store" }
 wiki = { path = "../wiki" }
+tauri-plugin-single-instance = "2.4.4"
+tauri-plugin-notification = "2.4.0"
+sys-locale = "0.3.2"

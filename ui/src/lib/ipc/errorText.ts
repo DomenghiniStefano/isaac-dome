@@ -97,6 +97,11 @@ export const ipcErrorParts = (e: IpcError | null): MessagePart[] => {
       return [{ key: 'ipcErrors.storeUnavailable' }, storeReasonPart(e.reason)]
     case 'wikiUnavailable':
       return [{ key: 'ipcErrors.wikiUnavailable' }]
+    // Nothing the user did and nothing they can do: the tabs are on screen either way, and
+    // this is only ever seen on the verification page. It still gets a sentence, because a
+    // branch that returned nothing would be the one case with no text at all.
+    case 'sessionTooLarge':
+      return [{ key: 'ipcErrors.sessionTooLarge' }]
     default:
       return assertNever(e)
   }
