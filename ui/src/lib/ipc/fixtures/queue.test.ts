@@ -81,7 +81,7 @@ describe("the queue's other states", () => {
   })
 
   it('says the database is unavailable, and refuses to write', async () => {
-    const reason = 'database from a newer version (3 > 2)'
+    const reason = { kind: 'newerSchema', found: 3, supported: 2 }
     expect(readQueue(options(QueueScenario.Unavailable))).toEqual({
       rows: [],
       diagnostics: [{ kind: 'storeUnavailable', reason }],
