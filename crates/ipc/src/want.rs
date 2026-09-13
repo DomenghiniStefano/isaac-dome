@@ -81,11 +81,11 @@ pub enum WantDiagnostic {
 
 pub fn want_view(
     catalog: Option<&Catalog>,
-    _view: &UnlockView,
+    view: &UnlockView,
     _flags: Option<&[bool]>,
     _eval: Option<&graph::evaluate::Eval>,
     target: &Target,
-    _icon: impl FnMut(&IconRef) -> Option<String>,
+    mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> WantView {
     let unresolved = |d: WantDiagnostic| WantView {
         wanted: WantedView::Unresolved,
@@ -95,10 +95,97 @@ pub fn want_view(
     if !unlockable(target) {
         return unresolved(WantDiagnostic::NotUnlockable);
     }
-    let Some(_c) = catalog else {
+    let Some(c) = catalog else {
         return unresolved(WantDiagnostic::NoCatalog);
     };
-    unresolved(WantDiagnostic::NothingUnlocks)
+    // Naming an achievement reaches the node directly: it is the only way to ask for what the
+    // catalog models no target for — a mode, an event. *Greedier!* is that case.
+    let (wanted, ids) = match target {
+        Target::Achievement { id } => match node_of(view, *id) {
+            Some(n) => (
+                WantedView::Achievement {
+                    achievement: n.achievement.clone(),
+                },
+                vec![*id],
+            ),
+            None => return unresolved(WantDiagnostic::NothingUnlocks),
+        },
+        _ => {
+            let Some(key) = key_of(c, target) else {
+                return unresolved(WantDiagnostic::NothingUnlocks);
+            };
+            let ids = crate::queue::achievements_unlocking(c, &key);
+            match crate::graph::resolve_target(c, &key, None, &mut icon) {
+                Some(t) if !ids.is_empty() => (WantedView::Target { target: t }, ids),
+                _ => return unresolved(WantDiagnostic::NothingUnlocks),
+            }
+        }
+    };
+    let routes: Vec<WantRoute> = ids
+        .iter()
+        .filter_map(|id| node_of(view, *id))
+        .map(|node| WantRoute {
+            node: node.clone(),
+            state: WantState::NoProfile,
+        })
+        .collect();
+    if routes.is_empty() {
+        return unresolved(WantDiagnostic::NothingUnlocks);
+    }
+    WantView {
+        wanted,
+        routes,
+        diagnostics: Vec::new(),
+    }
+}
+
+/// The node for an achievement, or nothing: `UnlockView` has one node per save slot, so an
+/// achievement the catalog knows and this save has no slot for simply has no route.
+fn node_of(view: &UnlockView, achievement: u32) -> Option<&UnlockNode> {
+    view.nodes
+        .iter()
+        .find(|n| matches!(n.achievement, AchievementRef::Known { id, .. } if id == achievement))
+}
+
+/// The name you typed, as the key the catalog indexes unlocks by. The conversion lives here
+/// and not on the frontend: an item's kind and a boss's entity triple are things only the
+/// catalog knows, and a key assembled from a page identity would be a second mapping.
+fn key_of(c: &Catalog, t: &Target) -> Option<crate::goals::TargetKey> {
+    use crate::catalog_view::{kind_view, ItemKindView};
+    use crate::goals::TargetKey;
+    use catalog::{ChallengeId, CharacterId, ItemId, ItemKind};
+    match t {
+        Target::Item { id } => [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar]
+            .into_iter()
+            .find_map(|k| c.item(k, ItemId(*id)))
+            .map(|i| TargetKey::Item {
+                item_kind: kind_view(i.kind),
+                id: i.id.0,
+            }),
+        Target::Trinket { id } => c
+            .item(ItemKind::Trinket, ItemId(*id))
+            .map(|i| TargetKey::Item {
+                item_kind: ItemKindView::Trinket,
+                id: i.id.0,
+            }),
+        Target::Character { id } => c
+            .character(CharacterId(*id))
+            .map(|ch| TargetKey::Character { id: ch.id.0 }),
+        Target::Challenge { number } => c
+            .challenge(ChallengeId(*number))
+            .map(|ch| TargetKey::Challenge { id: ch.id.0 }),
+        // The boss is found by the same portrait-derived key `wiki_target` writes, never by a
+        // name match: one mapping, read in both directions.
+        Target::Entity { .. } => c
+            .bosses()
+            .find(|b| crate::wiki_target::boss(b).as_ref() == Some(t))
+            .map(|b| TargetKey::Boss { id: b.id.0 }),
+        Target::Achievement { .. }
+        | Target::Transformation { .. }
+        | Target::Stage { .. }
+        | Target::Room { .. }
+        | Target::Pickup { .. } => None,
+    }
 }
 
 /// The four kinds the graph never grants. Written as a `match` with no `_` arm so that a new
