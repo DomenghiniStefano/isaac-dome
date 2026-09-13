@@ -1611,7 +1611,7 @@ the same composable; and no drag-specific pointer choreography is left in a scre
 
 ---
 
-## B32 — "Prossimi passi" is hard to read: a name that says what it is, and cards rewritten (implementation, `ui`, after design)
+## B32 — "Prossimi passi" is hard to read: a name that says what it is, and cards rewritten (implementation, `ui`, after design) ✅ closed on 2026-09-13
 
 Logged 2026-09-12, from the owner's review: the Next steps screen is hard to understand. The
 name itself doesn't say what the list is — the owner proposes **"Passi consigliati"** or
@@ -1659,6 +1659,23 @@ name itself doesn't say what the list is — the owner proposes **"Passi consigl
 The landing page has a name a player understands, an intro of one sentence in their words,
 and cards that read "what, how, why, add" top to bottom; and the reference profile's five
 rows name the Tainted characters and their condition.
+
+**Closed on 2026-09-13**
+(`docs/superpowers/plans/2026-09-13-goals-and-achievement-detail-report.md`). The screen is
+**"Obiettivi consigliati"** — a step implies a sequence and the rows are independent — its
+intro says what the list is rather than how it was computed, and the body is grouped by the
+reason a row is there (`Aprono di più`, `Ci sei quasi`), each group ending on Unlock with the
+filter already picked. The card leads with what you get, drops the state badge that said
+nothing on a list where every row is unlockable now, and links to the achievement's detail.
+
+**The last clause is what cost the most.** "Their condition" could not come from the game
+file: measured here, `achievements.xml` states an `unlock_condition` for 283 of 637
+achievements, and for only **16 of the 119 unlockable now** — including none of the five.
+This item had already named the answer ("the wiki's requirement where the file has none") and
+it is now built: `AchievementRef::Known.hint` became `condition`, resolved from the file first
+and the wiki second, and **all 637** carry a line. The rename was the point — widening `hint`
+in place would have changed the meaning of a field two screens print under the label "indizio
+del gioco:".
 
 ---
 
@@ -1767,7 +1784,7 @@ generator change with the coverage test green.
 
 ---
 
-## B35 — What a node unlocks links to its page too (implementation, `ipc` and `ui`, small)
+## B35 — What a node unlocks links to its page too (implementation, `ipc` and `ui`, small) ✅ closed on 2026-09-13
 
 Logged on 2026-09-12, while closing 3.5d. That sub-project made every **blocker** a link: a
 requirement carries `page: Target | null` and the badge's menu opens it. The other half of the
@@ -1786,6 +1803,17 @@ name itself could be the link. That decision belongs to the first look at 3.5d, 
 Closes when: Unlock's "Cosa sblocca" cell and a queue row open the page of what they name, with
 the same one gesture (click navigates, Ctrl opens beside), and an entry the dataset has no page
 for is drawn as plain text rather than as a link that leads nowhere.
+
+**Closed on 2026-09-13**, with the sub-project that made an achievement's wiki page its detail
+(`docs/superpowers/plans/2026-09-13-goals-and-achievement-detail-report.md`). `page:
+Option<Target>` sits on all four variants, `Some` only when `Dataset::entry` answers, through
+the same `crates/ipc/src/wiki_target.rs` the requirements use; pinned on real data by
+`what_a_node_unlocks_links_to_the_pages_the_dataset_has`.
+
+**The decision this item asked for**: a single target is **its own link — the name is the
+link**, not a menu of one. The menu shape belongs to the blocked badge, which names a group;
+one thing needs no group. The rows it appears in are the profile block's "Cosa ottieni" and
+the card's headline.
 
 ---
 

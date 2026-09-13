@@ -127,7 +127,17 @@ pub enum AchievementRef {
     Known {
         id: u32,
         text: String,
-        hint: Option<String>,
+        /// **How to get it**, in one line: the game's own `unlock_condition` when
+        /// `achievements.xml` states one, and the wiki's requirement when it does not.
+        ///
+        /// Two sources, because the file alone is not enough. Measured 2026-09-13 on the
+        /// reference profile: of 637 known achievements the file answers for 283, and among
+        /// the 119 unlockable *now* — what the landing page draws from — for only 16. It was
+        /// called `hint` while it was only the file's; the name changed with the meaning, so
+        /// that every reader had to be revisited rather than silently widened.
+        ///
+        /// The game's words win where it has any: the wiki is the fallback, never a rewrite.
+        condition: Option<String>,
         icon_url: Option<String>,
     },
     /// In the save but not in the catalog: a patch newer than the file.
@@ -209,18 +219,29 @@ pub enum UnlockDiagnostic {
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct NextSteps {
-    pub steps: Vec<UnlockNode>,
-    pub basis: StepsBasis,
+    pub sections: Vec<StepsSection>,
 }
 
-/// What the steps are ordered by. A fieldless enum: on the wire it's `"fanOut"`, not a
-/// tagged object — the same rule as `ItemKindView` and `OriginView`. One variant today,
-/// and it stays an enum because the ordering is a decision the screen reads: the next
-/// basis — closeness, once the counters land — has to arrive as a value, not a rename.
+/// One reason, and the steps it produced. The screen draws the basis as a heading, because a
+/// row is worth showing only together with why it is being suggested.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct StepsSection {
+    pub basis: StepsBasis,
+    pub steps: Vec<UnlockNode>,
+}
+
+/// What a section is ordered by. A fieldless enum: on the wire it's `"fanOut"`, not a
+/// tagged object — the same rule as `ItemKindView` and `OriginView`.
+///
+/// `Closeness` is the basis this type was left open for. A counter is the **only**
+/// requirement that carries a distance — a mark is binary and a character is a wall — so it
+/// is the only one that can order a list by how near the profile is.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub enum StepsBasis {
     FanOut,
+    Closeness,
 }
 
 /// A goal as the UI sees it: the saved key plus whatever the current catalog knows
@@ -295,6 +316,25 @@ use catalog::{AchievementId, BossId, Catalog, ChallengeId, CharacterId, ItemId, 
 use crate::catalog_view::{item_kind, kind_view, ItemKindView};
 use crate::icon::IconRef;
 use crate::wiki_target;
+
+/// How to get an achievement, in one line. The game's `unlock_condition` first — it is the
+/// game's own words about its own unlock — and the wiki's requirement only where the file
+/// says nothing, which is 354 of 637 achievements on the reference profile.
+///
+/// The wiki's requirement is an inline tree; `wiki::plain` reads it the way a reader would,
+/// so a reference becomes its label and an edition wrapper keeps its words. Whitespace-only
+/// is no answer: a blank line under a headline reads as a condition nobody wrote.
+fn condition_of(a: &catalog::Achievement, dataset: Option<&Dataset>) -> Option<String> {
+    if let Some(from_file) = a.unlock_condition.clone() {
+        return Some(from_file);
+    }
+    let entry = dataset?.entry(&wiki_target::achievement(a.id))?;
+    let wiki::Infobox::Achievement { requirements, .. } = &entry.infobox else {
+        return None;
+    };
+    let line = wiki::plain(requirements).trim().to_string();
+    (!line.is_empty()).then_some(line)
+}
 
 /// A page, only when the dataset really has one. `Some(target)` is a link the screen can
 /// follow; `None` is a name it draws without one — never a link that leads nowhere.
@@ -450,14 +490,14 @@ pub fn unlock_view(
                 let unlocks: Vec<UnlockTarget> = c
                     .unlocks(a.id)
                     .iter()
-                    .map(|u| target_of(c, u, &mut icon))
+                    .map(|u| target_of(c, u, dataset, &mut icon))
                     .collect();
                 let origin = first_item_origin(c, c.unlocks(a.id));
                 (
                     AchievementRef::Known {
                         id: a.id.0,
                         text: a.text.clone(),
-                        hint: a.unlock_condition.clone(),
+                        condition: condition_of(a, dataset),
                         icon_url: icon(&IconRef::Achievement { id: a.id.0 }),
                     },
                     unlocks,
@@ -562,6 +602,7 @@ pub fn unlock_view(
 pub fn resolve_target(
     c: &Catalog,
     key: &TargetKey,
+    dataset: Option<&Dataset>,
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> Option<UnlockTarget> {
     let english = catalog::Language::English;
@@ -571,6 +612,7 @@ pub fn resolve_target(
             let i = c.item(item_kind(k), ItemId(id))?;
             resolved.name = c.text(&i.name, english).to_string();
             resolved.icon_url = icon(&IconRef::Item { kind: k, id });
+            resolved.page = page_of(dataset, Some(wiki_target::item(i)));
         }
         TargetKey::Character { id } => {
             let ch = c.character(CharacterId(id))?;
@@ -578,12 +620,20 @@ pub fn resolve_target(
             // The base and Tainted forms carry the same name key: without the flag the two
             // go out as one character (`docs/BACKLOG.md` B28).
             resolved.tainted = ch.tainted;
+            resolved.page = page_of(dataset, Some(wiki_target::character(ch)));
         }
-        TargetKey::Boss { id } => resolved.name = c.boss(BossId(id))?.name.clone(),
+        TargetKey::Boss { id } => {
+            let b = c.boss(BossId(id))?;
+            resolved.name = b.name.clone();
+            // A portrait that declares no entity key names no page: `None`, never a guessed
+            // variant (`wiki_target::boss`).
+            resolved.page = page_of(dataset, wiki_target::boss(b));
+        }
         TargetKey::Challenge { id } => {
             let ch = c.challenge(ChallengeId(id))?;
             resolved.rewards = ch.rewards.iter().map(|a| a.0).collect();
             resolved.name = ch.name.clone();
+            resolved.page = page_of(dataset, Some(wiki_target::challenge(ch)));
         }
     }
     Some(key.view(resolved))
@@ -595,10 +645,12 @@ pub fn resolve_target(
 pub fn target_of(
     c: &Catalog,
     u: &Unlock,
+    dataset: Option<&Dataset>,
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> UnlockTarget {
     let key = key_of(u);
-    resolve_target(c, &key, icon).unwrap_or_else(|| key.view(crate::goals::Resolved::default()))
+    resolve_target(c, &key, dataset, icon)
+        .unwrap_or_else(|| key.view(crate::goals::Resolved::default()))
 }
 
 /// The key of a catalog edge. The catalog's ids are newtypes; at the boundary they aren't.
@@ -630,14 +682,66 @@ pub(crate) fn origin_view(o: Origin) -> OriginView {
     }
 }
 
-/// The steps worth playing tonight: what is unlockable **now**, ordered by how much it
-/// opens. A node that is merely not-done isn't a step — if it's blocked, tonight can't
-/// touch it; if the graph can't say (`Partial`), suggesting it would be a guess.
+/// The slot a node occupies: its achievement's id, or the bare slot when the catalog names
+/// none. What ties break on, so the order never depends on the nodes' arrival.
+fn slot_of(n: &UnlockNode) -> u32 {
+    match n.achievement {
+        AchievementRef::Known { id, .. } => id,
+        AchievementRef::Unknown { slot } => slot,
+    }
+}
+
+fn fan_out_of(n: &UnlockNode) -> u32 {
+    match n.graph {
+        GraphInfo::Computed { fan_out, .. } | GraphInfo::Partial { fan_out, .. } => fan_out,
+    }
+}
+
+/// How far the profile is from a requirement, when the requirement is a tally. Every other
+/// kind answers `None`, and says why: a mark is binary, a character or an item is a wall, a
+/// gate and an uninterpreted label are conditions nobody measured. None of them is a
+/// distance, and a list ordered by nearness can only hold things that have one.
+fn counter_remaining(r: &RequirementView) -> Option<u32> {
+    match *r {
+        RequirementView::Counter {
+            current, at_least, ..
+        } => Some(at_least.saturating_sub(current)),
+        RequirementView::Character { .. }
+        | RequirementView::Boss { .. }
+        | RequirementView::Challenge { .. }
+        | RequirementView::Item { .. }
+        | RequirementView::Gate { .. }
+        | RequirementView::Mark { .. }
+        | RequirementView::Unknown { .. } => None,
+    }
+}
+
+/// `Some(distance)` when the node still has requirements and **every one of them** is a
+/// counter: the sum is how far the profile is from the whole set. One requirement of any
+/// other kind and the answer is `None` — `Option`'s `Sum` short-circuits, which is exactly
+/// the rule, and a node with nothing missing has no distance to speak of either.
+fn closeness(n: &UnlockNode) -> Option<u32> {
+    if n.missing.is_empty() {
+        return None;
+    }
+    n.missing.iter().map(counter_remaining).sum()
+}
+
+/// The steps worth playing tonight, in sections. **Unlockable now** is the gate for all of
+/// them: a node that is merely not-done isn't a step — if it's blocked, tonight can't touch
+/// it; if the graph can't say (`Partial`), suggesting it would be a guess.
 ///
-/// Ties break by achievement id ascending, so two calls on the same profile give the same
-/// list: an order that shuffles reads as the app changing its mind.
+/// `Closeness` claims first, because "two runs from it" says more about a node than its
+/// fan-out does. It claims only the ones that actually fit under `STEPS`, so a candidate
+/// beyond the cap falls back to the other section instead of vanishing from both.
+///
+/// A section with no steps is not emitted: "absent" is decided once, here, rather than by
+/// each screen deciding what an empty array means.
+///
+/// Ties break by slot ascending, so two calls on the same profile give the same list: an
+/// order that shuffles reads as the app changing its mind.
 pub fn next_steps(view: &UnlockView) -> NextSteps {
-    let mut candidates: Vec<&UnlockNode> = view
+    let available: Vec<&UnlockNode> = view
         .nodes
         .iter()
         .filter(|n| {
@@ -650,20 +754,41 @@ pub fn next_steps(view: &UnlockView) -> NextSteps {
             )
         })
         .collect();
-    candidates.sort_by_key(|n| {
-        let fan = match n.graph {
-            GraphInfo::Computed { fan_out, .. } | GraphInfo::Partial { fan_out, .. } => fan_out,
-        };
-        let id = match &n.achievement {
-            AchievementRef::Known { id, .. } => *id,
-            AchievementRef::Unknown { slot } => *slot,
-        };
-        (std::cmp::Reverse(fan), id)
-    });
-    NextSteps {
-        steps: candidates.into_iter().take(STEPS).cloned().collect(),
-        basis: StepsBasis::FanOut,
-    }
+
+    let mut close: Vec<(u32, &UnlockNode)> = available
+        .iter()
+        .filter_map(|n| closeness(n).map(|d| (d, *n)))
+        .collect();
+    close.sort_by_key(|(d, n)| (*d, std::cmp::Reverse(fan_out_of(n)), slot_of(n)));
+    close.truncate(STEPS);
+
+    let claimed: std::collections::HashSet<u32> = close.iter().map(|(_, n)| slot_of(n)).collect();
+    let mut open: Vec<&UnlockNode> = available
+        .into_iter()
+        .filter(|n| !claimed.contains(&slot_of(n)))
+        .collect();
+    open.sort_by_key(|n| (std::cmp::Reverse(fan_out_of(n)), slot_of(n)));
+    open.truncate(STEPS);
+
+    let sections = [
+        (
+            StepsBasis::FanOut,
+            open.into_iter().cloned().collect::<Vec<_>>(),
+        ),
+        (
+            StepsBasis::Closeness,
+            close
+                .into_iter()
+                .map(|(_, n)| n.clone())
+                .collect::<Vec<_>>(),
+        ),
+    ]
+    .into_iter()
+    .filter(|(_, steps)| !steps.is_empty())
+    .map(|(basis, steps)| StepsSection { basis, steps })
+    .collect();
+
+    NextSteps { sections }
 }
 
 /// The plan: the saved goals resolved against the current catalog, and an expansion
@@ -678,6 +803,7 @@ pub fn next_steps(view: &UnlockView) -> NextSteps {
 /// explains the least.
 pub fn plan_view(
     catalog: Option<&Catalog>,
+    dataset: Option<&Dataset>,
     goals: Vec<Goal>,
     unreadable: Vec<GoalId>,
     store_unavailable: Option<crate::StoreReason>,
@@ -688,7 +814,7 @@ pub fn plan_view(
     let goals: Vec<GoalView> = goals
         .into_iter()
         .map(|g| {
-            let target = catalog.and_then(|c| resolve_target(c, &g.target, &mut icon));
+            let target = catalog.and_then(|c| resolve_target(c, &g.target, dataset, &mut icon));
             // Without a catalog nothing resolves, and `NoCatalog` already says so:
             // flagging every goal would just repeat the same news one row at a time.
             if target.is_none() && catalog.is_some() {

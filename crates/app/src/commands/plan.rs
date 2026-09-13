@@ -26,7 +26,14 @@ pub fn plan(
         Ok(guard) => plan_parts(guard.goals()),
         Err(reason) => (Vec::new(), Vec::new(), Some(reason)),
     };
-    Ok(ipc::plan_view(c, goals, unreadable, unavailable, icon_url))
+    Ok(ipc::plan_view(
+        c,
+        wiki::Dataset::embedded().ok(),
+        goals,
+        unreadable,
+        unavailable,
+        icon_url,
+    ))
 }
 
 #[tauri::command]
@@ -62,6 +69,7 @@ pub fn add_goal(
     let read = guard.goals().map_err(store_error)?;
     Ok(ipc::plan_view(
         c,
+        wiki::Dataset::embedded().ok(),
         read.goals,
         read.unreadable,
         None,
@@ -87,6 +95,7 @@ pub fn remove_goal(
     let read = guard.goals().map_err(store_error)?;
     Ok(ipc::plan_view(
         c,
+        wiki::Dataset::embedded().ok(),
         read.goals,
         read.unreadable,
         None,
