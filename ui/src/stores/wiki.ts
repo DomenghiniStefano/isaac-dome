@@ -11,7 +11,8 @@ import type {
   WikiPageRef,
 } from '@/lib/ipc/types'
 import { pageKey } from '@/lib/wiki/pageKey'
-import { LoadStatus } from './profile'
+import { LoadStatus } from './loadStatus'
+import { tracked } from './tracked'
 
 // The wiki, window-wide and profile-free (DESIGN-BRIEF.md §4.2): the index once, every page
 // once. Nothing here is cleared on a profile change, because nothing here depends on one.
@@ -34,21 +35,18 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
       ),
   )
 
-  const loadIndex = async (): Promise<void> => {
+  // The index is read once for the window's life: the dataset is compiled into the binary and
+  // cannot change under us, so a second call while one is in flight — or after it landed — is
+  // not a refresh, it is the same answer asked for twice.
+  const loadIndex = (): Promise<void> => {
     if (
       status.value === LoadStatus.Ready ||
       status.value === LoadStatus.Loading
     )
-      return
-    status.value = LoadStatus.Loading
-    error.value = null
-    try {
+      return Promise.resolve()
+    return tracked(status, error, async () => {
       index.value = await wikiIndex()
-      status.value = LoadStatus.Ready
-    } catch (e) {
-      error.value = isIpcError(e) ? e : null
-      status.value = LoadStatus.Failed
-    }
+    })
   }
 
   const titleOf = (key: string): string | null =>
@@ -70,6 +68,11 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
   const entry = (key: string): Entry | null | undefined =>
     entries.value.get(key)
 
+  // The one read here that is **not** `tracked`, and deliberately: a page that arrives must
+  // not set the status to `Ready`, because the status belongs to the index. This reports a
+  // failure without ever claiming a success, which is a shape `tracked` cannot express.
+  //
+  // That a page's failure lands on the index's `error` is inherited, not decided here.
   const loadEntry = async (target: Target): Promise<void> => {
     const key = pageKey(target)
     if (key === null || entries.value.has(key) || pending.has(key)) return
