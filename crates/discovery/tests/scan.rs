@@ -1,7 +1,7 @@
 use std::fs;
 use std::path::Path;
 
-use discovery::testing::{scan_documents, scan_override, scan_userdata};
+use discovery::for_tests::{scan_documents, scan_override, scan_userdata};
 use discovery::{Diagnostic, SavePrefix, SaveSource};
 
 fn touch(path: &Path) {

@@ -41,7 +41,7 @@ pub(crate) fn scan_dir(
             if err.kind() != std::io::ErrorKind::NotFound {
                 diags.push(Diagnostic::UnreadablePath {
                     path: dir.to_path_buf(),
-                    reason: err.to_string(),
+                    kind: err.kind(),
                 });
             }
             return (saves, diags);
@@ -82,7 +82,7 @@ pub(crate) fn scan_userdata(steam_root: &Path) -> (Vec<SaveCandidate>, Vec<Diagn
             if err.kind() != std::io::ErrorKind::NotFound {
                 diags.push(Diagnostic::UnreadablePath {
                     path: userdata,
-                    reason: err.to_string(),
+                    kind: err.kind(),
                 });
             }
             return (saves, diags);

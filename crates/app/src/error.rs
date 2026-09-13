@@ -15,10 +15,10 @@ pub enum IpcError {
         id: String,
     },
     UnreadableSave {
-        reason: String,
+        reason: ipc::SaveReason,
     },
     SettingsNotWritable {
-        reason: String,
+        reason: ipc::SettingsReason,
     },
     /// A goal's target doesn't exist in the catalog: it isn't saved.
     UnknownTarget,
@@ -30,7 +30,7 @@ pub enum IpcError {
     CatalogUnavailable,
     /// The app's database won't open: goals can neither be read nor written.
     StoreUnavailable {
-        reason: String,
+        reason: ipc::StoreReason,
     },
     /// The embedded dataset failed to load: `wiki_entry` can't answer;
     /// `ExtractionReport.wiki` says why.

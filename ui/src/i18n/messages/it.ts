@@ -600,6 +600,23 @@ export const it = {
     removeShort: 'Togli',
     errorTitle: 'La coda non è cambiata',
   },
+  // Perché un comando non ha potuto rispondere. Da N2 sono varianti sul filo, non una frase
+  // costruita in Rust: i numeri arrivano come numeri e le parole stanno qui.
+  ipcReasons: {
+    ioNotFound: 'Il file non c’è.',
+    ioPermissionDenied: 'Windows non ci lascia aprirlo.',
+    ioOther: 'Il sistema non lo ha aperto.',
+    saveTooShort: 'È troppo corto per contenere un salvataggio.',
+    saveBadMagic: 'Non sembra un salvataggio di Isaac.',
+    settingsConfigDirUnknown: 'Windows non dice dove vanno le impostazioni.',
+    settingsEncoding: 'Le impostazioni non si sono scritte.',
+    storeDataDirUnknown: 'Windows non dice dove vanno i dati dell’app.',
+    storeDataDirNotCreatable: 'La cartella dell’app non si crea.',
+    storeUnreadable: 'Il file non si apre, o non è un database.',
+    storeNewerSchema:
+      'Viene da una versione più recente dell’app ({found} contro {supported}).',
+    storeQueueUnparseable: 'Il piano salvato non si legge.',
+  },
   // One sentence per IpcError, for every screen that has to say why a command failed.
   ipcErrors: {
     noBackend: 'Il backend non ha risposto.',

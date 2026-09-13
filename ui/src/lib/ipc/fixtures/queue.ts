@@ -4,6 +4,7 @@ import type {
   QueueDiagnostic,
   QueueRow,
   QueueView,
+  StoreReason,
   UnlockNode,
 } from '../types'
 import type { Requires } from './queueRepair'
@@ -31,9 +32,14 @@ interface StoredRow {
   stepsNotQueued: number
 }
 
-// The app's own texts (crates/app/src/lib.rs, `store_reason` and `queue_mutate`).
-const newerDatabase = 'database from a newer version (3 > 2)'
-const unreadableQueue = 'coda del piano illeggibile'
+// The two cases `crates/app/src/lib.rs` answers with, as the variants they are since N2:
+// the fixture no longer carries a sentence the app used to build in Rust.
+const newerDatabase: StoreReason = {
+  kind: 'newerSchema',
+  found: 3,
+  supported: 2,
+}
+const unreadableQueue: StoreReason = { kind: 'queueUnparseable' }
 const pendingGoals = 3
 
 // contracts/payload/queue.with_rows.json's rows, with achievement 1 — done — above them: the

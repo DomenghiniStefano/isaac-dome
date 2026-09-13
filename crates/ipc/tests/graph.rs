@@ -141,14 +141,20 @@ fn views_and_diagnostics_are_pinned() {
         Some(&c),
         vec![],
         vec![],
-        Some("database from a newer version (7 > 1)".into()),
+        Some(ipc::StoreReason::NewerSchema {
+            found: 7,
+            supported: 1,
+        }),
         |_| None,
     ))
     .unwrap();
     assert_eq!(v["storeAvailable"], false);
     assert_eq!(
         v["diagnostics"],
-        json!([{ "kind": "storeUnavailable", "reason": "database from a newer version (7 > 1)" }])
+        json!([{
+            "kind": "storeUnavailable",
+            "reason": { "kind": "newerSchema", "found": 7, "supported": 1 },
+        }])
     );
 
     // A database row that fails to read: the UI receives the id, not the broken JSON.
@@ -170,8 +176,8 @@ fn views_and_diagnostics_are_pinned() {
 #[test]
 fn store_available_and_the_store_diagnostic_cannot_disagree() {
     let c = catalog_with_achievements();
-    for reason in [None, Some("database unreadable".to_string())] {
-        let p = plan_view(Some(&c), vec![], vec![], reason.clone(), |_| None);
+    for reason in [None, Some(ipc::StoreReason::Unreadable)] {
+        let p = plan_view(Some(&c), vec![], vec![], reason, |_| None);
         let says_unavailable = p
             .diagnostics
             .iter()
@@ -498,7 +504,16 @@ fn plan_view_keeps_goal_order_and_reports_the_store() {
     assert_eq!(p.expansion, PlanExpansion::Stub);
     assert!(p.store_available);
     assert!(p.diagnostics.is_empty());
-    assert!(!plan_view(Some(&c), vec![], vec![], Some("x".into()), |_| None).store_available);
+    assert!(
+        !plan_view(
+            Some(&c),
+            vec![],
+            vec![],
+            Some(ipc::StoreReason::Unreadable),
+            |_| None
+        )
+        .store_available
+    );
     // Unreadable ids become diagnostics, one per row, in the order received.
     let bad = |s: &str| ipc::GoalId::from_str_unchecked(s);
     let p = plan_view(

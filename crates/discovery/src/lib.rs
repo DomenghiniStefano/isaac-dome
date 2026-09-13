@@ -18,7 +18,10 @@ pub struct Options {
     pub save_dir: Option<PathBuf>,
 }
 
-#[derive(Debug, Clone, Serialize)]
+/// Not `Serialize`, and deliberately: it holds a `PathBuf`, which the IPC boundary forbids —
+/// a path under `userdata\` carries the Steam account id, and always the Windows username.
+/// `ipc::SetupState` is what crosses, and it carries only a path's last component.
+#[derive(Debug, Clone)]
 pub struct Discovery {
     pub steam: Option<SteamInstall>,
     pub game: Option<GameInstall>,
@@ -97,14 +100,22 @@ pub enum SavePrefix {
     RepPlus,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "snake_case", tag = "type")]
+/// Same as `Discovery`: not `Serialize`, because `UnreadablePath` and `MalformedManifest`
+/// name a full path and a path never crosses the boundary.
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Diagnostic {
     SteamNotFound,
     GameNotFound,
     NoSavesFound,
-    UnreadablePath { path: PathBuf, reason: String },
-    MalformedManifest { path: PathBuf },
+    /// The `io::ErrorKind` and not the message: the message is written by the OS, is not
+    /// translatable, and on some platforms repeats the path it was given.
+    UnreadablePath {
+        path: PathBuf,
+        kind: std::io::ErrorKind,
+    },
+    MalformedManifest {
+        path: PathBuf,
+    },
 }
 
 /// Entry point. Enumerates everything it finds; never chooses; never returns `Err`.
@@ -147,9 +158,12 @@ pub fn discover(opts: &Options) -> Discovery {
     }
 }
 
-/// Internal API exposed only for integration tests. Not part of the public contract.
-#[doc(hidden)]
-pub mod testing {
+/// Entry points that exist only so tests can reach a shape the public API doesn't build.
+///
+/// One module per crate, and nothing test-only anywhere else in the public surface: a name
+/// in the crate's `pub use` list says "call me", which is the opposite of what these mean.
+/// Nothing outside a `tests/` target may call them.
+pub mod for_tests {
     use std::collections::BTreeSet;
 
     use crate::{Dlc, Edition};
