@@ -23,7 +23,7 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-13. **N1, N2, N4 and N6 done** — N1, N2 and N6 merged into `develop`, N4 on `feature/ui-diagnostics`, each on its own
+**Last update:** 2026-09-13. **N1, N2, N4 and N6 done** — N1, N2 and N6 merged into `develop`, N4 merged too, each on its own
 branch cut from it. The test-only public API has one notation — one `pub mod for_tests` per
 crate, seven of them; **why a command failed is a variant, not a sentence** — four enums, the
 numbers travelling as numbers, the wording in `it.ts` / `en.ts`; and **the Tauri crate is
