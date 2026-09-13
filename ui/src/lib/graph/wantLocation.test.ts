@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { RouteName } from '@/router/routeTable'
-import { wantLocation, wantOf } from './wantLocation'
+import type { Target } from '@/lib/ipc/types'
+import { wantLocation, wantOf, wantable } from './wantLocation'
 
 describe('wantLocation', () => {
   it('names the Goals screen and carries the page key', () => {
@@ -25,5 +26,22 @@ describe('wantLocation', () => {
     expect(wantOf({ want: 'mode:greed' })).toBeNull()
     expect(wantOf({})).toBeNull()
     expect(wantOf(undefined)).toBeNull()
+  })
+})
+
+describe('wantable', () => {
+  const hit = (target: Target) => ({ target })
+
+  it('keeps what something can grant and drops what nothing does', () => {
+    const hits = [
+      hit({ kind: 'item', id: 105 }),
+      hit({ kind: 'achievement', id: 509 }),
+      hit({ kind: 'stage', name: 'Basement' }),
+      hit({ kind: 'transformation', id: 1 }),
+    ]
+    expect(wantable(hits).map((h) => h.target.kind)).toEqual([
+      'item',
+      'achievement',
+    ])
   })
 })
