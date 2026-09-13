@@ -112,6 +112,21 @@ pub enum Inline {
     },
 }
 
+/// Which of the wiki's two collectible templates the page used. Fieldless, so a bare
+/// camelCase string like `SectionKind` and `Style`.
+///
+/// It is deliberately NOT `catalog`'s three-way item kind. The wiki has exactly two
+/// templates and no familiar one, so a familiar is written with the passive template: this
+/// type reports which template was read, and claims nothing about what the item is. A
+/// `bool` would have been worse than either — `activated: false` would silently mean both
+/// "passive" and "familiar".
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub enum CollectibleTemplate {
+    Passive,
+    Activated,
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub enum Style {
@@ -197,8 +212,31 @@ impl Dlc {
     rename_all_fields = "camelCase"
 )]
 pub enum Infobox {
-    Item,
-    Trinket,
+    Item {
+        /// The pickup quote — the same string as `items.xml`'s `description` attribute.
+        quote: String,
+        /// From the template name: the wiki has `infobox passive collectible` and
+        /// `infobox activated collectible`, and until 2026-09-13 we merged the two.
+        template: CollectibleTemplate,
+        /// `-1..=4`, as `catalog::Metadata::quality`.
+        quality: Option<i8>,
+        /// The game's vocabulary, open by nature: a closed enum breaks the day it grows.
+        tags: Vec<String>,
+        /// Not a number. The real values include `unlimited`, `one time`, `4s` and
+        /// `{{dlcalt|6|r=4}}`; a numeric parse would discard about a third of them.
+        recharge: Vec<Inline>,
+        /// Not a number either: 36 of the 56 real `devil price` values are per-edition.
+        devil_price: Vec<Inline>,
+        shop_price: Vec<Inline>,
+        /// What the wiki says about the pools. Present on only 45 of 720 pages: the
+        /// game's `itempools.xml` is the source that knows them all.
+        pools: Vec<Inline>,
+    },
+    Trinket {
+        quote: String,
+        tags: Vec<String>,
+        pools: Vec<Inline>,
+    },
     Achievement {
         requirements: Vec<Inline>,
         /// The thing this achievement unlocks. It does NOT rise to `Entry`: it points the
@@ -353,7 +391,42 @@ mod tests {
 
     #[test]
     fn infobox_and_section_shapes() {
-        assert_eq!(to_value(Infobox::Item).unwrap(), json!({"kind":"item"}));
+        // `Item` stopped being a fieldless variant on 2026-09-13. It is tagged, so this is
+        // additive on the wire: a TypeScript `switch` on `kind === 'item'` keeps narrowing.
+        // Every camelCase key here is the assertion that `rename_all_fields` is applied.
+        assert_eq!(
+            to_value(Infobox::Item {
+                quote: "Blood laser barrage".into(),
+                template: CollectibleTemplate::Passive,
+                quality: Some(4),
+                tags: vec!["devil".into()],
+                recharge: vec![],
+                devil_price: vec![],
+                shop_price: vec![],
+                pools: vec![],
+            })
+            .unwrap(),
+            json!({
+                "kind": "item",
+                "quote": "Blood laser barrage",
+                "template": "passive",
+                "quality": 4,
+                "tags": ["devil"],
+                "recharge": [],
+                "devilPrice": [],
+                "shopPrice": [],
+                "pools": []
+            })
+        );
+        assert_eq!(
+            to_value(Infobox::Trinket {
+                quote: "Imaginary Friend".into(),
+                tags: vec![],
+                pools: vec![],
+            })
+            .unwrap(),
+            json!({"kind":"trinket","quote":"Imaginary Friend","tags":[],"pools":[]})
+        );
         // `unlockedBy` is gone from the variant: it rose to `Entry` on 2026-09-13.
         assert_eq!(
             to_value(Infobox::Boss {
@@ -374,7 +447,16 @@ mod tests {
             description: vec![],
             dlc: vec![Dlc::Repentance],
             unlocked_by: None,
-            infobox: Infobox::Item,
+            infobox: Infobox::Item {
+                quote: String::new(),
+                template: CollectibleTemplate::Passive,
+                quality: None,
+                tags: vec![],
+                recharge: vec![],
+                devil_price: vec![],
+                shop_price: vec![],
+                pools: vec![],
+            },
             sections: vec![],
         };
         // `unlockedBy` here is the assertion that `rename_all` is doing its job on `Entry`.
@@ -386,7 +468,17 @@ mod tests {
                 "description": [],
                 "dlc": ["repentance"],
                 "unlockedBy": null,
-                "infobox": {"kind": "item"},
+                "infobox": {
+                    "kind": "item",
+                    "quote": "",
+                    "template": "passive",
+                    "quality": null,
+                    "tags": [],
+                    "recharge": [],
+                    "devilPrice": [],
+                    "shopPrice": [],
+                    "pools": []
+                },
                 "sections": []
             })
         );
@@ -403,7 +495,11 @@ mod tests {
             }],
             dlc: vec![Dlc::Rebirth, Dlc::RepentancePlus],
             unlocked_by: Some(Target::Achievement { id: 3 }),
-            infobox: Infobox::Trinket,
+            infobox: Infobox::Trinket {
+                quote: String::new(),
+                tags: vec![],
+                pools: vec![],
+            },
             sections: vec![Section {
                 kind: SectionKind::Effects,
                 blocks: vec![Block::Paragraph {

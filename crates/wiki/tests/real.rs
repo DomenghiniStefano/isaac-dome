@@ -322,7 +322,19 @@ fn raw_brace_texts_in_blocks(blocks: &[Block], out: &mut Vec<String>) {
 /// The infoboxes' `Vec<Inline>` fields: the only ones that can carry text from the wikitext.
 fn raw_brace_texts_in_infobox(infobox: &Infobox, out: &mut Vec<String>) {
     match infobox {
-        Infobox::Item | Infobox::Trinket => {}
+        Infobox::Item {
+            recharge,
+            devil_price,
+            shop_price,
+            pools,
+            ..
+        } => {
+            raw_brace_texts(recharge, out);
+            raw_brace_texts(devil_price, out);
+            raw_brace_texts(shop_price, out);
+            raw_brace_texts(pools, out);
+        }
+        Infobox::Trinket { pools, .. } => raw_brace_texts(pools, out),
         Infobox::Achievement { requirements, .. } => raw_brace_texts(requirements, out),
         Infobox::Boss {
             environment, pool, ..

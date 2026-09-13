@@ -4,7 +4,7 @@
 use catalog::Catalog;
 use ipc::{collection_view, CollectionDiagnostic, CollectionView, LockView};
 use serde_json::{json, to_value};
-use wiki::{Entry, Infobox, Target};
+use wiki::{Infobox, Target};
 
 const ITEMS: &[u8] = b"<items gfxroot=\"gfx/items/\"><passive id=\"1\" gfx=\"a.png\" name=\"A\" achievement=\"1\" /><active id=\"2\" gfx=\"b.png\" name=\"B\" /><familiar id=\"5\" gfx=\"c.png\" name=\"C\" achievement=\"2\" /><trinket id=\"1\" gfx=\"t.png\" name=\"T\" /></items>";
 const META: &[u8] = b"<items><item id=\"1\" quality=\"4\" tags=\"\"/><item id=\"2\" quality=\"1\" tags=\"\"/></items>";
@@ -197,16 +197,13 @@ fn a_lock_carries_the_achievement_page_only_when_the_dataset_has_it() {
     // Achievement 2 has a page, achievement 1 has none: one of each, in one view.
     ds.achievements.insert(
         2,
-        Entry {
-            title: "t2".into(),
-            revid: 1,
-            infobox: Infobox::Achievement {
-                description: String::new(),
+        wiki::for_tests::entry(
+            "t2",
+            Infobox::Achievement {
                 requirements: vec![],
                 unlocks: None,
             },
-            sections: vec![],
-        },
+        ),
     );
 
     let v = collection_view(

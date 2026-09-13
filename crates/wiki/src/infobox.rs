@@ -5,7 +5,7 @@ use std::collections::BTreeMap;
 use crate::inline::parse_inline;
 use crate::resolver::Resolver;
 use crate::template::parse_template_at;
-use crate::{Diagnostics, Dlc, Infobox, Inline, Target};
+use crate::{CollectibleTemplate, Diagnostics, Dlc, Infobox, Inline, Target};
 
 /// An `{{infobox …}}` template as-is: lowercase name and raw named parameters.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -39,7 +39,8 @@ pub fn extract_infoboxes(text: &str) -> Vec<RawInfobox> {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum InfoboxKind {
-    Collectible,
+    Passive,
+    Activated,
     Trinket,
     Achievement,
     Boss,
@@ -51,9 +52,10 @@ impl InfoboxKind {
     /// From the template name (already lowercase) to the infobox kind.
     pub fn of(name: &str) -> Option<InfoboxKind> {
         Some(match name {
-            "infobox passive collectible"
-            | "infobox activated collectible"
-            | "infobox collectible" => InfoboxKind::Collectible,
+            // `infobox collectible` with no adjective is the generic form, and the game
+            // has no third kind of collectible: it counts as passive.
+            "infobox passive collectible" | "infobox collectible" => InfoboxKind::Passive,
+            "infobox activated collectible" => InfoboxKind::Activated,
             "infobox trinket" => InfoboxKind::Trinket,
             "infobox achievement" => InfoboxKind::Achievement,
             "infobox boss" => InfoboxKind::Boss,
@@ -78,6 +80,15 @@ fn inline(ib: &RawInfobox, name: &str, r: &Resolver, d: &mut Diagnostics) -> Vec
 
 fn yes(ib: &RawInfobox, name: &str) -> bool {
     param(ib, name).trim().eq_ignore_ascii_case("yes")
+}
+
+/// `"devil summonable offensive"` → three tags. The vocabulary is the game's and open, so
+/// this stays a list of strings: a closed enum breaks the day the game adds a tag.
+fn tags(ib: &RawInfobox, name: &str) -> Vec<String> {
+    param(ib, name)
+        .split_whitespace()
+        .map(str::to_string)
+        .collect()
 }
 
 /// The leading digits: `"250 (x2)"` → 250, `"6666"` → 6666, no digits → `None`.
@@ -110,6 +121,26 @@ pub fn entry_facts(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> EntryF
     }
 }
 
+/// A collectible's infobox. The template it came from is passed in rather than read again,
+/// because only the caller's `match` knows which of the two names the page used.
+fn item_from(
+    ib: &RawInfobox,
+    template: CollectibleTemplate,
+    r: &Resolver,
+    d: &mut Diagnostics,
+) -> Infobox {
+    Infobox::Item {
+        quote: text(ib, "quote"),
+        template,
+        quality: param(ib, "quality").trim().parse().ok(),
+        tags: tags(ib, "tags"),
+        recharge: inline(ib, "recharge", r, d),
+        devil_price: inline(ib, "devil price", r, d),
+        shop_price: inline(ib, "shop price", r, d),
+        pools: inline(ib, "pool", r, d),
+    }
+}
+
 /// Converts a raw infobox into the `Infobox` of its kind. Missing parameters count as an
 /// empty string: a missing field degrades, it doesn't block the page.
 pub fn infobox_from(
@@ -119,8 +150,16 @@ pub fn infobox_from(
     d: &mut Diagnostics,
 ) -> Infobox {
     match kind {
-        InfoboxKind::Collectible => Infobox::Item,
-        InfoboxKind::Trinket => Infobox::Trinket,
+        // Two arms rather than one with an inner `match kind`: an inner match would need a
+        // `_` arm for the kinds this branch cannot see, and a `_` on a closed enum is what
+        // stops a new variant from breaking the build.
+        InfoboxKind::Passive => item_from(ib, CollectibleTemplate::Passive, r, d),
+        InfoboxKind::Activated => item_from(ib, CollectibleTemplate::Activated, r, d),
+        InfoboxKind::Trinket => Infobox::Trinket {
+            quote: text(ib, "quote"),
+            tags: tags(ib, "tags"),
+            pools: inline(ib, "pool", r, d),
+        },
         InfoboxKind::Achievement => Infobox::Achievement {
             requirements: inline(ib, "requirements", r, d),
             unlocks: r.by_page_title(param(ib, "link")),
@@ -185,14 +224,88 @@ mod tests {
     }
 
     #[test]
+    fn a_collectible_infobox_keeps_its_parameters() {
+        let r = test_resolver();
+        let mut d = Diagnostics::default();
+        // Brimstone's real infobox, trimmed to the parameters this type holds.
+        let ib = raw(
+            "infobox passive collectible",
+            &[
+                ("quote", "Blood laser barrage"),
+                ("quality", "4"),
+                ("tags", "devil summonable offensive"),
+                ("devil price", "2"),
+            ],
+        );
+        let Infobox::Item {
+            quote,
+            template,
+            quality,
+            tags,
+            recharge,
+            devil_price,
+            shop_price,
+            pools,
+        } = infobox_from(InfoboxKind::Passive, &ib, &r, &mut d)
+        else {
+            panic!()
+        };
+        assert_eq!(quote, "Blood laser barrage");
+        assert_eq!(template, CollectibleTemplate::Passive);
+        assert_eq!(quality, Some(4));
+        assert_eq!(tags, vec!["devil", "summonable", "offensive"]);
+        assert!(recharge.is_empty());
+        assert!(shop_price.is_empty());
+        assert!(pools.is_empty());
+        // A price is inline, not a number: 36 of the 56 real values are `{{dlcalt|…}}`.
+        assert!(matches!(
+            devil_price.first(),
+            Some(Inline::Text { text, .. }) if text.trim() == "2"
+        ));
+    }
+
+    #[test]
+    fn an_activated_collectible_is_marked_activated() {
+        let r = test_resolver();
+        let mut d = Diagnostics::default();
+        let ib = raw("infobox activated collectible", &[("recharge", "6")]);
+        let Infobox::Item {
+            template, recharge, ..
+        } = infobox_from(InfoboxKind::Activated, &ib, &r, &mut d)
+        else {
+            panic!()
+        };
+        assert_eq!(template, CollectibleTemplate::Activated);
+        assert!(!recharge.is_empty());
+    }
+
+    #[test]
+    fn a_trinket_infobox_keeps_its_parameters() {
+        let r = test_resolver();
+        let mut d = Diagnostics::default();
+        let ib = raw(
+            "infobox trinket",
+            &[("quote", "Imaginary Friend"), ("tags", "offensive")],
+        );
+        let Infobox::Trinket { quote, tags, pools } =
+            infobox_from(InfoboxKind::Trinket, &ib, &r, &mut d)
+        else {
+            panic!()
+        };
+        assert_eq!(quote, "Imaginary Friend");
+        assert_eq!(tags, vec!["offensive"]);
+        assert!(pools.is_empty());
+    }
+
+    #[test]
     fn kinds() {
         assert_eq!(
             InfoboxKind::of("infobox passive collectible"),
-            Some(InfoboxKind::Collectible)
+            Some(InfoboxKind::Passive)
         );
         assert_eq!(
             InfoboxKind::of("infobox activated collectible"),
-            Some(InfoboxKind::Collectible)
+            Some(InfoboxKind::Activated)
         );
         assert_eq!(
             InfoboxKind::of("infobox trinket"),

@@ -472,9 +472,34 @@ export type Block =
   | { kind: 'table'; header: Inline[][]; rows: Inline[][][] }
   | { kind: 'heading'; level: number; inline: Inline[] }
 
+// No fields: a bare camelCase string, like `SectionKind`. Which of the wiki's two
+// collectible templates the page used — not the game's three-way item kind, because the
+// wiki has no familiar template and writes familiars with the passive one.
+export const CollectibleTemplate = {
+  Passive: 'passive',
+  Activated: 'activated',
+} as const
+export type CollectibleTemplate =
+  (typeof CollectibleTemplate)[keyof typeof CollectibleTemplate]
+
 export type Infobox =
-  | { kind: 'item' }
-  | { kind: 'trinket' }
+  | {
+      kind: 'item'
+      /// The pickup quote — the same string as the game's own item description.
+      quote: string
+      template: CollectibleTemplate
+      quality: number | null
+      tags: string[]
+      /// Not a number: the real values include `unlimited`, `one time`, `4s`, and forms
+      /// that differ per edition.
+      recharge: Inline[]
+      devilPrice: Inline[]
+      shopPrice: Inline[]
+      /// Only what the wiki states — 45 of 720 pages. The game's own pools are the
+      /// complete source, and they arrive through the catalog, not here.
+      pools: Inline[]
+    }
+  | { kind: 'trinket'; quote: string; tags: string[]; pools: Inline[] }
   | {
       kind: 'achievement'
       requirements: Inline[]

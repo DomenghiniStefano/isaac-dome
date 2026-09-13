@@ -84,7 +84,9 @@ fn number(ib: &RawInfobox, name: &str) -> Option<u32> {
 /// Repentance+ is Broken Glass Cannon).
 fn entry_key(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) -> Option<EntryKey> {
     Some(match kind {
-        InfoboxKind::Collectible => EntryKey::Item(r.item_id_of_page(title, number(ib, "id")?)?),
+        InfoboxKind::Passive | InfoboxKind::Activated => {
+            EntryKey::Item(r.item_id_of_page(title, number(ib, "id")?)?)
+        }
         InfoboxKind::Trinket => EntryKey::Trinket(r.trinket_id_of_page(title, number(ib, "id")?)?),
         InfoboxKind::Achievement => EntryKey::Achievement(number(ib, "id")?),
         InfoboxKind::Challenge => EntryKey::Challenge(number(ib, "number")?),
@@ -148,7 +150,8 @@ fn entry_title(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) ->
             .map(str::to_string)
             .or_else(|| character(title, ib, r).map(|(_, n)| n))
             .unwrap_or_else(|| title.to_string()),
-        InfoboxKind::Collectible
+        InfoboxKind::Passive
+        | InfoboxKind::Activated
         | InfoboxKind::Trinket
         | InfoboxKind::Boss
         | InfoboxKind::Challenge => title.to_string(),
@@ -178,7 +181,8 @@ pub fn parse_page(
         };
         let sections = match kind {
             InfoboxKind::Achievement => Vec::new(),
-            InfoboxKind::Collectible
+            InfoboxKind::Passive
+            | InfoboxKind::Activated
             | InfoboxKind::Trinket
             | InfoboxKind::Boss
             | InfoboxKind::Challenge
