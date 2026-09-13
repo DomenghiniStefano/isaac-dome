@@ -25,16 +25,18 @@ pub enum PageKind {
     Boss,
     Challenge,
     Character,
+    Transformation,
 }
 
 impl PageKind {
-    pub const ALL: [PageKind; 6] = [
+    pub const ALL: [PageKind; 7] = [
         PageKind::Collectible,
         PageKind::Trinket,
         PageKind::Achievement,
         PageKind::Boss,
         PageKind::Challenge,
         PageKind::Character,
+        PageKind::Transformation,
     ];
 
     /// The subfolder of `raw/pages/`.
@@ -46,6 +48,7 @@ impl PageKind {
             PageKind::Boss => "boss",
             PageKind::Challenge => "challenge",
             PageKind::Character => "character",
+            PageKind::Transformation => "transformation",
         }
     }
 
@@ -58,6 +61,7 @@ impl PageKind {
             PageKind::Boss => "Template:Infobox boss",
             PageKind::Challenge => "Template:Infobox challenge",
             PageKind::Character => "Template:Infobox character",
+            PageKind::Transformation => "Template:Infobox transformation",
         }
     }
 }
@@ -212,6 +216,20 @@ mod tests {
     use super::*;
     use crate::resolver::fixtures::test_resolver;
     use crate::{Block, Diagnostics, SectionKind};
+
+    /// Measured on 2026-09-13: `Template:Infobox transformation` exists and is transcluded by
+    /// exactly the sixteen pages the Cargo table has rows for. The kind is declared like the
+    /// other six so that `fetch`, which walks `PageKind::ALL`, picks the pages up without a
+    /// special case — until it exists, no transformation page is downloaded at all.
+    #[test]
+    fn the_transformation_kind_names_its_template_and_its_folder() {
+        assert_eq!(PageKind::Transformation.dir(), "transformation");
+        assert_eq!(
+            PageKind::Transformation.template(),
+            "Template:Infobox transformation"
+        );
+        assert!(PageKind::ALL.contains(&PageKind::Transformation));
+    }
 
     #[test]
     fn the_three_common_facts_land_on_the_entry_not_the_infobox() {
