@@ -39,8 +39,10 @@ const { view, ask } = useSearch(SearchLimit.Screen)
 // waits, so the caret never jumps.
 const typed = ref(singleQuery(route.query.q) ?? '')
 
+// `refine` and not `navigate`: the debounce can land after the user has gone back or moved
+// to another tab, and what was typed here has no business dragging a tab elsewhere.
 const navigate = useDebounceFn((q: string) => {
-  tabs.navigate({ name: RouteName.Search, query: q === '' ? {} : { q } })
+  tabs.refine({ name: RouteName.Search, query: q === '' ? {} : { q } })
 }, Timing.SearchDebounce)
 
 watch(

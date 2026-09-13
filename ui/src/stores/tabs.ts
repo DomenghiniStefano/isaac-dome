@@ -9,15 +9,21 @@ import type { TabLocation } from '@/router/routeTable'
 import type { IncomingHover } from '@/components/shell/tabs'
 import { WindowMessageKind } from '@/lib/window/messages'
 import {
+  backTab,
+  canGoBack,
+  canGoForward,
   closeTab,
   firstState,
+  forwardTab,
   insertTab,
   moveTab,
   navigateTab,
   openTab,
+  refineTab,
   removeTab,
   seedState,
   selectTab,
+  tabLocation,
   tabSeed,
 } from './tabModel'
 import type { Tab, TabSeed, TabsState } from './tabModel'
@@ -27,7 +33,11 @@ import type { Tab, TabSeed, TabsState } from './tabModel'
 export const useTabsStore = defineStore(StoreId.Tabs, () => {
   let counter = 0
   const nextId = (): string => `tab-${++counter}`
-  const fresh = (): Tab => ({ id: nextId(), location: defaultLocation })
+  const fresh = (): Tab => ({
+    id: nextId(),
+    entries: [defaultLocation],
+    index: 0,
+  })
 
   // `main` starts with its landing tab, as it always has. A window born from a tear-off starts
   // empty and waits for its seed (`lib/window/session.ts`): what it holds is decided by the
@@ -44,6 +54,12 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   const active = computed(() =>
     state.value.tabs.find((tab) => tab.id === state.value.activeId),
   )
+  // Where the active tab is: the entry its history is showing, not the last one it reached.
+  const location = computed(() =>
+    active.value ? tabLocation(active.value) : undefined,
+  )
+  const canBack = computed(() => canGoBack(active.value))
+  const canForward = computed(() => canGoForward(active.value))
 
   const open = (location: TabLocation = defaultLocation): void => {
     state.value = openTab(state.value, nextId(), location)
@@ -66,6 +82,15 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   }
   const navigate = (location: TabLocation): void => {
     state.value = navigateTab(state.value, location)
+  }
+  const refine = (location: TabLocation): void => {
+    state.value = refineTab(state.value, location)
+  }
+  const back = (): void => {
+    state.value = backTab(state.value)
+  }
+  const forward = (): void => {
+    state.value = forwardTab(state.value)
   }
 
   // What this window was told to hold. Called once, by the session, and never again: the ids
@@ -197,6 +222,9 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     activeId,
     active,
     pending,
+    location,
+    canBack,
+    canForward,
     open,
     select,
     close,
@@ -214,5 +242,8 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     settleTo,
     settleInNewWindow,
     openWindowWith,
+    refine,
+    back,
+    forward,
   }
 })
