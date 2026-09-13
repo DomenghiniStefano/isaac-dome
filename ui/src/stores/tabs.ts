@@ -4,12 +4,18 @@ import { StoreId } from '@/lib/constants/stores'
 import { defaultLocation } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import {
+  backTab,
+  canGoBack,
+  canGoForward,
   closeTab,
   firstState,
+  forwardTab,
   moveTab,
   navigateTab,
   openTab,
+  refineTab,
   selectTab,
+  tabLocation,
 } from './tabModel'
 import type { Tab } from './tabModel'
 
@@ -18,7 +24,11 @@ import type { Tab } from './tabModel'
 export const useTabsStore = defineStore(StoreId.Tabs, () => {
   let counter = 0
   const nextId = (): string => `tab-${++counter}`
-  const fresh = (): Tab => ({ id: nextId(), location: defaultLocation })
+  const fresh = (): Tab => ({
+    id: nextId(),
+    entries: [defaultLocation],
+    index: 0,
+  })
 
   const state = ref(firstState(nextId(), defaultLocation))
 
@@ -27,6 +37,12 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   const active = computed(() =>
     state.value.tabs.find((tab) => tab.id === state.value.activeId),
   )
+  // Where the active tab is: the entry its history is showing, not the last one it reached.
+  const location = computed(() =>
+    active.value ? tabLocation(active.value) : undefined,
+  )
+  const canBack = computed(() => canGoBack(active.value))
+  const canForward = computed(() => canGoForward(active.value))
 
   const open = (location: TabLocation = defaultLocation): void => {
     state.value = openTab(state.value, nextId(), location)
@@ -43,6 +59,30 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   const navigate = (location: TabLocation): void => {
     state.value = navigateTab(state.value, location)
   }
+  const refine = (location: TabLocation): void => {
+    state.value = refineTab(state.value, location)
+  }
+  const back = (): void => {
+    state.value = backTab(state.value)
+  }
+  const forward = (): void => {
+    state.value = forwardTab(state.value)
+  }
 
-  return { tabs, activeId, active, open, select, close, move, navigate }
+  return {
+    tabs,
+    activeId,
+    active,
+    location,
+    canBack,
+    canForward,
+    open,
+    select,
+    close,
+    move,
+    navigate,
+    refine,
+    back,
+    forward,
+  }
 })
