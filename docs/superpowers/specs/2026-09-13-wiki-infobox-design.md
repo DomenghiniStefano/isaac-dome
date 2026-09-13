@@ -94,7 +94,9 @@ pub struct Entry {
     /// The infobox's summary line. Plain text for achievements, wikitext elsewhere: both
     /// arrive as inline so the frontend has one shape and no switch on the kind.
     pub description: Vec<Inline>,
-    /// The editions the thing exists in. Empty when the wiki does not say.
+    /// The edition codes the infobox declares, parsed. Empty when the parameter is absent.
+    /// It is deliberately NOT called "introduced in" or "exists in": which of the two it
+    /// means is unmeasured (see decision 5), and a name would be a guess.
     pub dlc: Vec<Dlc>,
     /// What the wiki states has to be unlocked first. `None` means "the wiki does not state
     /// one", NEVER "it is free from the start": that answer belongs to `catalog` and `graph`.
@@ -121,8 +123,8 @@ pub enum Infobox {
         quality: Option<i8>,
         tags: Vec<String>,
         recharge: Vec<Inline>,
-        devil_price: Option<u32>,
-        shop_price: Option<u32>,
+        devil_price: Vec<Inline>,
+        shop_price: Vec<Inline>,
         pools: Vec<Inline>,
     },
     Trinket { quote: String, tags: Vec<String>, pools: Vec<Inline> },
@@ -162,11 +164,19 @@ The tag vocabulary is the game's, it is open, and `catalog::Metadata` already mo
 `Vec<String>`. Deriving a closed enum from 716 lines of wiki would be naming from a guess, and
 a closed enum is exactly what breaks when the game adds a tag.
 
-## Decision 4 — `recharge` is `Vec<Inline>`, not a number (delegated)
+## Decision 4 — `recharge` and the two prices are `Vec<Inline>`, not numbers (delegated)
 
-The 171 values are not integers. Censused on the committed wikitext, they are room counts
-(`4`, `6`, `12`), `unlimited`, `one time`, seconds (`4s`, `3s`, `10s`), and per-edition forms
-like `{{dlcalt|6|r=4}}`. An `Option<u32>` would silently discard about a third of them.
+The 171 `recharge` values are not integers. Censused on the committed wikitext, they are room
+counts (`4`, `6`, `12`), `unlimited`, `one time`, seconds (`4s`, `3s`, `10s`), and per-edition
+forms like `{{dlcalt|6|r=4}}`. An `Option<u32>` would silently discard about a third of them.
+
+The same census killed the first draft of this spec, which had `devil_price` and `shop_price`
+as `Option<u32>`. They are not numbers either: of 56 `devil price` values, 20 are a bare `2`
+but the rest are per-edition (`{{dlcalt|1|r=2}}` 15, `{{dlcalt|1|r+=0}}` 9, …). One
+`shop price` reads `{{dlcalt|15|r=1}}0` — a template followed by a stray digit, a wiki-side
+authoring quirk that a numeric parse would turn into a confident wrong answer, and that inline
+parsing carries through unharmed.
+
 `Vec<Inline>` is what the crate already uses for free wiki values, and `{{dlc|…}}` inside one
 becomes `Inline::Edition` for free.
 
@@ -176,22 +186,45 @@ parsed. The plan checks which, and if it is the second, `dlcalt` joins phase 2's
 
 ## Decision 5 — the `dlc` bitmask is a hypothesis until `catalog` confirms it (delegated)
 
-The Cargo tables carry `dlc` as an **integer**, not as the letter code the wikitext uses:
-`1up!` → 31, `120 Volt` → 24. Read as a five-bit mask over the editions, 31 is all five and
-24 = `0b11000` is Repentance and Repentance+ only. That fits both items, but two points are an
-anecdote, not a measurement.
+The Cargo tables carry `dlc` as an **integer**, not as the letter code the wikitext uses.
+Read as a five-bit mask over the editions, 31 is all five and 24 = `0b11000` is Repentance and
+Repentance+ only. Five items, checked against `catalog::origin`'s verified id boundaries:
+
+| item | id | origin (game) | cargo `dlc` | wikitext `dlc` |
+|---|---|---|---|---|
+| 1up! | 11 | Rebirth | 31 | *absent* |
+| Brimstone | 118 | Rebirth | 31 | *absent* |
+| **Blue Cap** | **342** | **Afterbirth** (its first item) | **31** | ***absent*** |
+| Mucormycosis | 553 | Repentance (its first item) | 24 | `r` |
+| 120 Volt | 559 | Repentance | 24 | `r` |
+
+**Blue Cap is the counter-example, and it was found before a line of code was written.** It is
+the first Afterbirth collectible — it does not exist in vanilla Rebirth — yet its mask says all
+five editions and its wikitext parameter is absent. So the mask is *not* "the editions it
+exists in", or the wiki is lax about the Afterbirth era, and the two cannot be told apart from
+here. Meanwhile 96 pages carry `dlc = a` and 111 carry `a+`, so the parameter is not simply
+unused for those editions.
 
 Therefore: **phase 1 takes `dlc` from the wikitext parameter**, through the existing and tested
-`Dlc::from_code`. The bitmask reading is verified separately, against `catalog::Origin`, which
-is computed from the user's own `items.xml` for all 733 collectibles — an independent source,
-which is the point. Only if that check passes does the mask become an accepted second source,
-in its own commit.
+`Dlc::from_code`, and the field is documented as "the codes the infobox declares" — not as
+"introduced in" and not as "exists in". Naming it would be the guess the repo keeps paying for.
 
-The check has a known asymmetry the plan must handle rather than paper over: `catalog::Origin`
-has **four** variants (`Rebirth`, `Afterbirth`, `AfterbirthPlus`, `Repentance`) and `wiki::Dlc`
-has **five** (it also has `RepentancePlus`). It is not a bijection. The spec's position: the
-check compares only the four editions both sides name, and the number of items whose wiki `dlc`
-includes `RepentancePlus` is reported, not asserted.
+One shape the parser must handle: the parameter is not always a single code. One page carries
+`a+nr`, three codes concatenated. `Dlc::from_code` takes one code, so the plan adds a
+`Dlc::parse_codes` that splits the string and **counts the leftovers in `Diagnostics`** rather
+than dropping them, because a code we cannot read is exactly the kind of thing that should
+surface in `meta` instead of vanishing.
+
+The bitmask is measured over all 733 collectibles against `catalog::Origin` — an independent
+source, computed from the user's own `items.xml`, which is the point — and the result is
+**reported, not asserted**: the Blue Cap row above says the naive reading already fails, so a
+passing assertion would mean the test is wrong. The check has a second asymmetry it must not
+paper over: `catalog::Origin` has **four** variants and `wiki::Dlc` has **five**. It is not a
+bijection. The comparison covers the four editions both sides name, and the count of items
+whose wiki `dlc` includes `RepentancePlus` is printed alongside.
+
+The mask becomes a second source only in a later commit, only if that measurement explains
+Blue Cap. Until then it is a number we store nowhere.
 
 ## Decision 6 — where both sources speak, the test counts the disagreements (delegated)
 
