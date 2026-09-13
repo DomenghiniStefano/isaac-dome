@@ -256,9 +256,10 @@ pub struct PlanView {
     rename_all_fields = "camelCase"
 )]
 pub enum PlanDiagnostic {
-    /// The database failed to open, and why (text of our own, never SQLite's):
-    /// "newer version" is the only case the user can act on, and it must be said.
-    StoreUnavailable { reason: String },
+    /// The database failed to open, and which case it is. `NewerSchema` is the only one
+    /// the user can act on, which is why its versions travel as numbers and not inside a
+    /// sentence built in Rust.
+    StoreUnavailable { reason: crate::StoreReason },
     /// A `store` row whose target this version can't read: it stays in the file and
     /// is named by id, so the user can remove it.
     UnreadableGoal { id: GoalId },
@@ -679,7 +680,7 @@ pub fn plan_view(
     catalog: Option<&Catalog>,
     goals: Vec<Goal>,
     unreadable: Vec<GoalId>,
-    store_unavailable: Option<String>,
+    store_unavailable: Option<crate::StoreReason>,
     mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> PlanView {
     let store_available = store_unavailable.is_none();
