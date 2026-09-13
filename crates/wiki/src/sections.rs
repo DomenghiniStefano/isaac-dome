@@ -75,19 +75,24 @@ fn normalize_title(title: &str) -> String {
 pub fn section_kind(title: &str) -> Option<SectionKind> {
     Some(match normalize_title(title).as_str() {
         "effects" | "effect" | "no effect" => SectionKind::Effects,
-        "notes" => SectionKind::Notes,
+        // "Excluded Items" is a note about the subject ("the following items cannot be
+        // found while playing as…"); its list comes from a table template we don't expand.
+        "notes" | "excluded items" => SectionKind::Notes,
         "synergies" => SectionKind::Synergies,
-        "interactions" | "item interactions" => SectionKind::Interactions,
-        "bugs" => SectionKind::Bugs,
+        "interactions" | "item interactions" | "interaction" => SectionKind::Interactions,
+        "bugs" | "bug" => SectionKind::Bugs,
         "behavior" => SectionKind::Behavior,
         "champion versions" => SectionKind::ChampionVersions,
         "damage scaling" => SectionKind::DamageScaling,
         "strategies" | "strategy" | "tips" => SectionKind::Strategies,
         "difficulty" => SectionKind::Difficulty,
-        "reward" => SectionKind::Reward,
-        "unlockable achievements" | "unlockable achievement" | "unlockable starting items" => {
-            SectionKind::Unlockable
-        }
+        "reward" | "rewards" => SectionKind::Reward,
+        "unlockable achievements"
+        | "unlockable achievement"
+        | "unlockable starting items"
+        | "unlockable items"
+        // "How to Acquire" describes how a thing is reached, which is what this kind is.
+        | "how to acquire" => SectionKind::Unlockable,
         _ => return None, // allowed: free-form wiki title
     })
 }
@@ -106,6 +111,41 @@ mod tests {
         assert_eq!(secs[0].title, "Behavior");
         assert_eq!(secs[0].body.trim(), "=== Phase 1 ===\na");
         assert_eq!(secs[1].title, "Notes");
+    }
+
+    /// `discardedSections` in the built dataset mixes two different things, and only one of
+    /// them was a decision. These six were falling through by oversight: five are a plural
+    /// or singular of a title the mapping already knew, and "How to Acquire" describes how
+    /// a thing is reached, which is what `Unlockable` is.
+    #[test]
+    fn titles_that_used_to_fall_through_now_map() {
+        assert_eq!(
+            section_kind("Unlockable Items"),
+            Some(SectionKind::Unlockable)
+        );
+        assert_eq!(
+            section_kind("How to Acquire"),
+            Some(SectionKind::Unlockable)
+        );
+        assert_eq!(section_kind("Bug"), Some(SectionKind::Bugs));
+        assert_eq!(section_kind("Interaction"), Some(SectionKind::Interactions));
+        assert_eq!(section_kind("Rewards"), Some(SectionKind::Reward));
+        // "The following items cannot be found while playing as Tainted Lost" — a note
+        // about the subject, whose list comes from a table template we do not expand.
+        assert_eq!(section_kind("Excluded Items"), Some(SectionKind::Notes));
+    }
+
+    /// The other half of `discardedSections`, and the half worth protecting: these are out
+    /// on purpose, and this test is what keeps a later "let's map everything" from taking
+    /// 2248 lines of trivia and video embeds into the dataset.
+    #[test]
+    fn the_deliberate_discards_stay_discarded() {
+        assert_eq!(section_kind("Trivia"), None);
+        assert_eq!(section_kind("Gallery"), None);
+        assert_eq!(section_kind("In-game Footage"), None);
+        assert_eq!(section_kind("References"), None);
+        // A page-specific heading is not a kind, however often it appears.
+        assert_eq!(section_kind("Blood Clots"), None);
     }
 
     #[test]

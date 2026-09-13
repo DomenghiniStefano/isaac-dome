@@ -139,12 +139,21 @@ Expected: PASS.
 - [ ] **Step 7: Run the crate's whole suite**
 
 Run: `cargo test -p wiki`
-Expected: all pass. No parser output changed yet, so `derived` is still green and `wiki.json` needs no rebuild.
+Expected: the 64 unit tests pass, and **`derived` FAILS**. This step's first draft claimed no rebuild was needed "because no parser output changed yet" — that was wrong. `Diagnostics` is serialized into `meta.diagnostics`, so adding a counter changes `wiki.json` even while the counter is still empty. The rule has no exception: touch the parser crate, rebuild the dataset.
 
-- [ ] **Step 8: Commit**
+- [ ] **Step 8: Rebuild and confirm the diff is only the new counter**
 
 ```bash
-git add crates/wiki/src/model.rs crates/wiki/src/diagnostics.rs
+pnpm wiki:build
+git diff dataset/wiki.json
+```
+
+Expected: two lines, adding `"unknownDlcCodes": {}` after `orphanClosers`. The camelCase spelling is the proof that `rename_all` is doing its job on `Diagnostics`; if it reads `unknown_dlc_codes`, stop and fix the attribute.
+
+- [ ] **Step 9: Commit**
+
+```bash
+git add crates/wiki/src/model.rs crates/wiki/src/diagnostics.rs dataset/wiki.json
 git commit -m "feat(wiki): parse concatenated dlc codes, count the unreadable ones"
 ```
 
@@ -319,7 +328,15 @@ export interface Entry {
 }
 ```
 
-Delete `description` from the `achievement` variant and `unlockedBy` from `boss`, `challenge` and `character`. If `Dlc` is not already exported there, add it as a value-union per the repo's rule (`const Dlc = { … } as const`), not a `type X = 'a' | 'b'`.
+Delete `description` from the `achievement` variant and `unlockedBy` from `boss`, `challenge` and `character`. `Dlc` is already exported there as a value-union (line ~436), so nothing to add.
+
+**The mirror is not the end of it, and this step's first draft implied it was.** `pnpm typecheck` then names four lines in `ui/src/screens/wiki/WikiInfobox.vue` that read the hoisted fields off the infobox. That is the contract change being *caught* rather than going silent, which is the good outcome — but it has to be finished:
+
+- `WikiInfobox.vue` takes `entry: Entry` instead of `infobox: Infobox`, with `const infobox = computed(() => props.entry.infobox)` so the rest of the script is untouched.
+- The description row and the three `unlockedBy` rows come out of the per-kind `<dl>`s and become **one pair of rows above the switch** — the same move as in Rust, for the same reason.
+- `WikiPage.vue` passes `:entry="entry"` instead of `:infobox="entry.infobox"`.
+- The achievement's description row changes from `:text` to `:inline`: it is `Inline[]` now, so its links resolve like any other.
+- `entry.dlc` is deliberately **not** rendered yet. Showing edition codes needs a label and a visual treatment, which is the design's call, not the parser's. The data is on the wire; Task 9 hands it on.
 
 - [ ] **Step 9: Regenerate the dataset**
 
@@ -348,7 +365,15 @@ This is the defect the whole plan exists for: 907 of 1727 entries carry `{"kind"
 
 **Interfaces:**
 - Consumes: `param`, `text`, `inline`, `leading_number` (all private helpers already in `infobox.rs`)
-- Produces: `Infobox::Item { quote, activated, quality, tags, recharge, devil_price, shop_price, pools }`, `Infobox::Trinket { quote, tags, pools }`, and `InfoboxKind::{Passive, Activated}` replacing `InfoboxKind::Collectible`
+- Produces: `Infobox::Item { quote, template, quality, tags, recharge, devil_price, shop_price, pools }`, `Infobox::Trinket { quote, tags, pools }`, `InfoboxKind::{Passive, Activated}` replacing `InfoboxKind::Collectible`, and the fieldless enum `CollectibleTemplate { Passive, Activated }`
+
+**Not `activated: bool`**, which is what this plan's first draft said. Two reasons, and the
+repo already decided both: a fieldless enum on the IPC is a bare camelCase string (`SectionKind`,
+`Style`, `OriginView` — zero exceptions), and a bool would be a trap on top of that, since
+`activated: false` would silently mean both "passive" and "familiar". The wiki has no familiar
+template and writes familiars with the passive one, so the type reports **which template was
+read** and claims nothing about what the item is. The TypeScript mirror is a
+`const CollectibleTemplate = { … } as const`, never a string union.
 
 - [ ] **Step 1: Write the failing test**
 

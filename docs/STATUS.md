@@ -313,6 +313,57 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
       behind the `embedded` cargo feature (on by default); `wiki-snapshot` builds without it.
 - [x] Derived test (`tests/derived.rs`): `wiki.json` byte-for-byte equal to `build(raw/)`, so
       the two can never drift apart without the suite noticing.
+
+#### The infobox, and the templates we already downloaded (2026-09-13) — phase 1 landed
+
+Spec `docs/superpowers/specs/2026-09-13-wiki-infobox-design.md`, plan
+`docs/superpowers/plans/2026-09-13-wiki-infobox.md` (16 tasks, two phases). The parser read
+every infobox parameter and then threw most of them away: **907 of 1727 entries reached the
+frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
+`Infobox::Trinket` were unit variants. No new download — every byte was already in
+`dataset/raw/`, fetched 2026-09-04.
+
+- [x] **`Dlc::parse_codes`**: the `dlc` parameter concatenates codes without a separator (one
+      page reads `a+nr`), so the two-character codes are matched first; what matches nothing
+      is counted in `Diagnostics::unknown_dlc_codes` rather than dropped.
+- [x] **Three facts rose to `Entry`**: `description`, `dlc`, `unlocked_by`. They are not
+      specific to a kind — `description` is on 723 collectibles, 184 trinkets, 17 challenges,
+      9 achievements — and the edition a thing exists in is a property of the thing.
+      `unlocked_by` is documented as "what the wiki states", never "it is free".
+- [x] **`Infobox::Item` and `Trinket` carry their box**: quote, template, quality, tags,
+      recharge, devil/shop price, pools. **Empty infoboxes: 907 → 0.**
+- [x] **`CollectibleTemplate { Passive, Activated }`**, a fieldless enum as a bare camelCase
+      string. Not a `bool`: `activated: false` would have meant both "passive" and "familiar",
+      since the wiki has no familiar template. `InfoboxKind::of` merged the two names until now.
+- [x] **The four parsed kinds keep what they dropped**: boss `stage_hp`/`variant` (30 have a
+      variant), challenge `character` (14), character `tears` (12) and `parent` (2).
+      `recharge` and the two prices are `Vec<Inline>`, not numbers — the real values include
+      `unlimited`, `one time`, `4s` and `{{dlcalt|6|r=4}}`.
+- [x] **`tests/no_silent_parameter.rs`**: every wikitext parameter is either in a type or in
+      `IGNORED_PARAMS` with a reason. It failed on its first run and found **`notes` on 17
+      achievement infoboxes** — prose that existed nowhere else, because achievements are rows
+      on storage pages and carry no sections at all.
+- [x] **`tests/infobox_filled.rs`**: no entry has an empty infobox, with the counts asserted
+      first so an empty dataset cannot pass the question trivially.
+- [x] **Six section titles were falling through**: `Unlockable Items`, `How to Acquire`, `Bug`,
+      `Interaction`, `Rewards`, `Excluded Items`. Discards: 65 entries / 2248 occurrences →
+      59 / 2220. A second test pins the *deliberate* discards (`Trivia` 875, `Gallery` 346,
+      `In-game Footage`, `References`) so a later "map everything" cannot quietly undo them.
+- [x] **Contract handed on**: `DESIGN-BRIEF.md` and `ui/src/lib/ipc/types.ts` carry the new
+      `Entry` and all six variants, checked field-for-field. `WikiInfobox.vue` takes the entry
+      instead of the infobox and draws the three common facts once.
+- [ ] **Phase 2, the templates**: 25 are still unknown, seven of them above 50 occurrences
+      (`m` 373, `transformation contribution` 186, `book of virtues synergy` 157,
+      `achievement text` 127, `ip` 110, `bc` 59, `machine`). Their sentences reach the
+      frontend mangled. Tasks 10–16 of the plan.
+- [ ] **Task 7**: the wiki-versus-game agreement test (`quality`, `tags`, and `quote` against
+      `items_metadata.xml` / `items.xml`), counting disagreements rather than failing on them.
+- [ ] **Task 8**: measure what the lower bits of the Cargo `dlc` mask mean. The encoding is
+      **not** open — `resolver.rs` documents it (1 Rebirth … 16 Repentance+) and
+      `in_current_edition` depends on bit 16. What is open is that Blue Cap (342), the first
+      Afterbirth collectible, has bit 1 set, so "valid in" cannot be right for the lower four.
+      The repo reads bit 16 alone, which no counter-example touches; reading the rest is the
+      step nobody has earned.
 - [x] `ipc::wiki`: `WikiInfo`, `PatchView`, `WikiCounts`, `wiki_info(dataset, game_updated_unix)`;
       `discovery::GameInstall.updated_unix` to check freshness against the `appmanifest`'s
       `LastUpdated`.
