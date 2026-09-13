@@ -26,7 +26,11 @@ run() {
 
 output=$(mktemp)
 declarations=$(mktemp)
-trap 'rm -f "$output" "$declarations"' EXIT
+# The scratch lives under `ui/` and not in the system temp on purpose: prettier resolves its
+# configuration by walking up from the file, so a copy anywhere else is formatted by other
+# rules and reads as stale. On Windows it also never sees an MSYS `/tmp` path.
+types_scratch=ui/.ipc-types-check
+trap 'rm -f "$output" "$declarations"; rm -rf "$types_scratch"' EXIT
 
 run 'cargo fmt' cargo fmt --check
 run 'cargo clippy' cargo clippy --all-targets -- -D warnings
@@ -54,6 +58,22 @@ run 'pnpm ui:test' pnpm ui:test
 run 'pnpm lint' pnpm lint
 run 'pnpm format:check' pnpm format:check
 run 'pnpm scan' pnpm scan
+
+# The contract is generated (N7, B2 in docs/IMPROVEMENTS.md): this is what makes a Rust type
+# and its TypeScript disagree loudly instead of silently. It regenerates into a scratch copy
+# and compares — it never writes the real file, because a check that repairs what it is
+# checking cannot report on it.
+printf '\n=== ipc types\n'
+mkdir -p "$types_scratch"
+if ISAACDOME_TYPES_OUT="$types_scratch/types.ts" cargo run -q -p ipc --bin ipc-types >/dev/null &&
+	pnpm --filter ui exec prettier --write .ipc-types-check/types.ts >/dev/null 2>&1 &&
+	diff -u ui/src/lib/ipc/types.ts "$types_scratch/types.ts"; then
+	printf 'types.ts matches the Rust types\n'
+else
+	printf 'types.ts is stale: run `pnpm ipc:types`\n'
+	failed="$failed ipc-types"
+fi
+rm -rf "$types_scratch"
 
 skipped=$(grep -c '^skip:' "$declarations")
 real_files=$(grep -c '^sample:' "$declarations")
