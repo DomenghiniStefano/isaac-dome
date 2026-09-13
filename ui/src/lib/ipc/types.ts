@@ -477,7 +477,6 @@ export type Infobox =
   | { kind: 'trinket' }
   | {
       kind: 'achievement'
-      description: string
       requirements: Inline[]
       unlocks: Target | null
     }
@@ -486,7 +485,6 @@ export type Infobox =
       baseHp: number | null
       environment: Inline[]
       pool: Inline[]
-      unlockedBy: Target | null
     }
   | {
       kind: 'challenge'
@@ -500,7 +498,6 @@ export type Infobox =
       curse: Inline[]
       goal: Inline[]
       unlocks: Target | null
-      unlockedBy: Target | null
     }
   | {
       kind: 'character'
@@ -512,7 +509,6 @@ export type Infobox =
       shotSpeed: string
       pickups: Inline[]
       collectibles: Inline[]
-      unlockedBy: Target | null
     }
 
 export interface Section {
@@ -522,6 +518,15 @@ export interface Section {
 export interface Entry {
   title: string
   revid: number
+  /// The infobox's summary line. Plain text for achievements, wikitext elsewhere: one
+  /// shape for every kind, so reading it needs no switch.
+  description: Inline[]
+  /// The edition codes the infobox declares. Empty when it declares none — which is not
+  /// the same as "it exists everywhere": the wiki does not say which of the two it means.
+  dlc: Dlc[]
+  /// What the wiki states has to be unlocked first. `null` means the wiki does not state
+  /// one, never "it is free": that answer comes from the catalog, not from here.
+  unlockedBy: Target | null
   infobox: Infobox
   sections: Section[]
 }
