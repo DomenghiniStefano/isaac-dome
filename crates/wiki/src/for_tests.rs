@@ -44,6 +44,17 @@ pub fn empty_item() -> Infobox {
     }
 }
 
+/// A boss infobox that says nothing.
+pub fn empty_boss() -> Infobox {
+    Infobox::Boss {
+        base_hp: None,
+        stage_hp: Vec::new(),
+        variant: None,
+        environment: Vec::new(),
+        pool: Vec::new(),
+    }
+}
+
 /// A trinket infobox that says nothing.
 pub fn empty_trinket() -> Infobox {
     Infobox::Trinket {

@@ -166,6 +166,8 @@ pub fn infobox_from(
         },
         InfoboxKind::Boss => Infobox::Boss {
             base_hp: leading_number(param(ib, "base hp")),
+            stage_hp: inline(ib, "stage hp", r, d),
+            variant: leading_number(param(ib, "variant")),
             environment: inline(ib, "environment", r, d),
             pool: inline(ib, "pool", r, d),
         },
@@ -179,6 +181,7 @@ pub fn infobox_from(
             health: inline(ib, "health", r, d),
             curse: inline(ib, "curse", r, d),
             goal: inline(ib, "goal", r, d),
+            character: r.by_page_title(param(ib, "character")),
             // `unlocks` is usually a page title; for achievements it's the name.
             unlocks: r
                 .by_page_title(param(ib, "unlocks"))
@@ -187,12 +190,14 @@ pub fn infobox_from(
         InfoboxKind::Character => Infobox::Character {
             health: inline(ib, "health", r, d),
             damage: text(ib, "damage"),
+            tears: text(ib, "tears"),
             range: text(ib, "range"),
             speed: text(ib, "speed"),
             luck: text(ib, "luck"),
             shot_speed: text(ib, "shot speed"),
             pickups: inline(ib, "pickups", r, d),
             collectibles: inline(ib, "collectibles", r, d),
+            parent: r.by_page_title(param(ib, "parent")),
         },
     }
 }
@@ -398,6 +403,52 @@ mod tests {
         assert!(facts.description.is_empty());
         assert!(facts.dlc.is_empty());
         assert_eq!(facts.unlocked_by, None);
+    }
+
+    #[test]
+    fn the_four_parsed_kinds_keep_the_parameters_they_used_to_drop() {
+        let r = test_resolver();
+        let mut d = Diagnostics::default();
+
+        // A boss's variant and its per-stage hp: 26 and 2 real pages carry them.
+        let ib = raw(
+            "infobox boss",
+            &[
+                ("base hp", "250 (x2)"),
+                ("variant", "1"),
+                ("stage hp", "300"),
+            ],
+        );
+        let Infobox::Boss {
+            variant, stage_hp, ..
+        } = infobox_from(InfoboxKind::Boss, &ib, &r, &mut d)
+        else {
+            panic!()
+        };
+        assert_eq!(variant, Some(1));
+        assert!(!stage_hp.is_empty());
+
+        // The character a challenge is played as: 14 real pages say it, and until
+        // 2026-09-13 the field did not exist, so none of them reached the frontend.
+        let ib = raw("infobox challenge", &[("character", "Isaac")]);
+        let Infobox::Challenge { character, .. } =
+            infobox_from(InfoboxKind::Challenge, &ib, &r, &mut d)
+        else {
+            panic!()
+        };
+        assert_eq!(character, Some(Target::Character { id: 0 }));
+
+        let ib = raw(
+            "infobox character",
+            &[("tears", "2.73"), ("parent", "Tainted Isaac")],
+        );
+        let Infobox::Character { tears, parent, .. } =
+            infobox_from(InfoboxKind::Character, &ib, &r, &mut d)
+        else {
+            panic!()
+        };
+        assert_eq!(tears, "2.73");
+        assert_eq!(parent, Some(Target::Character { id: 21 }));
     }
 
     #[test]

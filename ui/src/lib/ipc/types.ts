@@ -508,6 +508,9 @@ export type Infobox =
   | {
       kind: 'boss'
       baseHp: number | null
+      /// Inline, not a number: the real values are per-stage notes.
+      stageHp: Inline[]
+      variant: number | null
       environment: Inline[]
       pool: Inline[]
     }
@@ -522,18 +525,23 @@ export type Infobox =
       health: Inline[]
       curse: Inline[]
       goal: Inline[]
+      /// The character the challenge forces, when it forces one.
+      character: Target | null
       unlocks: Target | null
     }
   | {
       kind: 'character'
       health: Inline[]
       damage: string
+      tears: string
       range: string
       speed: string
       luck: string
       shotSpeed: string
       pickups: Inline[]
       collectibles: Inline[]
+      /// The character this one is a variant of.
+      parent: Target | null
     }
 
 export interface Section {

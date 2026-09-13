@@ -4,7 +4,7 @@
 use catalog::Catalog;
 use ipc::{wiki_index, IconRef, Target, WikiIndex};
 use serde_json::{json, to_value};
-use wiki::{Dataset, Infobox};
+use wiki::Dataset;
 
 const ITEMS: &[u8] =
     b"<items gfxroot=\"gfx/items/\"><passive id=\"2\" gfx=\"a.png\" name=\"A\" /></items>";
@@ -16,24 +16,15 @@ fn catalog() -> Catalog {
     })
 }
 
-use wiki::for_tests::{empty_item, empty_trinket, entry};
+use wiki::for_tests::{empty_boss, empty_item, empty_trinket, entry};
 
 fn dataset() -> Dataset {
     let mut ds = wiki::for_tests::empty_dataset();
     ds.items.insert(2, entry("A", empty_item()));
     ds.items.insert(9, entry("Nine", empty_item()));
     ds.trinkets.insert(1, entry("T", empty_trinket()));
-    ds.bosses.insert(
-        Dataset::boss_key(20, 0, 0),
-        entry(
-            "Monstro",
-            Infobox::Boss {
-                base_hp: None,
-                environment: vec![],
-                pool: vec![],
-            },
-        ),
-    );
+    ds.bosses
+        .insert(Dataset::boss_key(20, 0, 0), entry("Monstro", empty_boss()));
     ds.meta.counts.items = 2;
     ds.meta.counts.trinkets = 1;
     ds.meta.counts.bosses = 1;

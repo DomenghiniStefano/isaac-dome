@@ -181,6 +181,7 @@ export const it = {
       noTreasureRooms: 'senza stanze del tesoro',
       noRestrictions: 'nessuna restrizione',
       damage: 'Danno',
+      tears: 'Lacrime',
       range: 'Gittata',
       speed: 'Velocità',
       luck: 'Fortuna',

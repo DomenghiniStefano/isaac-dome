@@ -179,6 +179,7 @@ export const en: MessageSchema = {
       noTreasureRooms: 'no treasure rooms',
       noRestrictions: 'no restrictions',
       damage: 'Damage',
+      tears: 'Tears',
       range: 'Range',
       speed: 'Speed',
       luck: 'Luck',

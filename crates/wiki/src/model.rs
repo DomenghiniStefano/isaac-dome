@@ -245,6 +245,10 @@ pub enum Infobox {
     },
     Boss {
         base_hp: Option<u32>,
+        /// Inline, not a number: the two real values are per-stage notes, not a scalar.
+        stage_hp: Vec<Inline>,
+        /// The bestiary variant, when the infobox states one.
+        variant: Option<u32>,
         environment: Vec<Inline>,
         pool: Vec<Inline>,
     },
@@ -258,17 +262,23 @@ pub enum Infobox {
         health: Vec<Inline>,
         curse: Vec<Inline>,
         goal: Vec<Inline>,
+        /// The character the challenge is played as, when it forces one.
+        character: Option<Target>,
         unlocks: Option<Target>,
     },
     Character {
         health: Vec<Inline>,
         damage: String,
+        /// The fire-rate stat. It was the only one of the six the type did not carry.
+        tears: String,
         range: String,
         speed: String,
         luck: String,
         shot_speed: String,
         pickups: Vec<Inline>,
         collectibles: Vec<Inline>,
+        /// The character this one is a variant of (Lazarus Risen's Lazarus, Tainted's base).
+        parent: Option<Target>,
     },
 }
 
@@ -431,11 +441,16 @@ mod tests {
         assert_eq!(
             to_value(Infobox::Boss {
                 base_hp: Some(6666),
+                stage_hp: vec![],
+                variant: Some(1),
                 environment: vec![],
                 pool: vec![],
             })
             .unwrap(),
-            json!({"kind":"boss","baseHp":6666,"environment":[],"pool":[]})
+            json!({
+                "kind": "boss", "baseHp": 6666, "stageHp": [], "variant": 1,
+                "environment": [], "pool": []
+            })
         );
         assert_eq!(
             to_value(SectionKind::ChampionVersions).unwrap(),

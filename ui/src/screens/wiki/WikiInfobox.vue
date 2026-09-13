@@ -70,6 +70,7 @@ const stats = computed(() => {
   if (box.kind !== 'character') return []
   return [
     { label: t('wiki.infobox.damage'), value: box.damage },
+    { label: t('wiki.infobox.tears'), value: box.tears },
     { label: t('wiki.infobox.range'), value: box.range },
     { label: t('wiki.infobox.speed'), value: box.speed },
     { label: t('wiki.infobox.luck'), value: box.luck },
