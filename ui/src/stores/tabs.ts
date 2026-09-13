@@ -6,6 +6,7 @@ import { oweSeed } from '@/lib/window/seeds'
 import { newWindowLabel, windowPort } from '@/lib/window/windowPort'
 import { defaultLocation } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
+import type { IncomingHover } from '@/components/shell/tabs'
 import { WindowMessageKind } from '@/lib/window/messages'
 import {
   canDetach,
@@ -90,9 +91,35 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   // tab: the gesture is refused before it starts.
   const canTear = computed(() => canDetach(state.value))
 
-  // A tab arriving from another window, at an index in this strip.
-  const dock = (seed: TabSeed, at: number): void => {
+  // A tab from another window, hovering over this strip. The point arrives in desktop pixels
+  // because the sender cannot know our scale factor; the geometry to convert it is ours, read
+  // once per hover and not per frame — a window does not move while a tab is over it.
+  const incoming = ref<IncomingHover | null>(null)
+  // Where the strip says it would land. The strip owns the rectangles, so it owns the answer,
+  // and the gap the marker is drawn in is the gap the tab is docked into: one computation.
+  const aimed = ref<number | null>(null)
+
+  const aimIncoming = async (at: Point): Promise<void> => {
+    const window = incoming.value?.window ?? (await windowPort.self())
+    incoming.value = { at, window }
+  }
+
+  const clearIncoming = (): void => {
+    incoming.value = null
+    aimed.value = null
+  }
+
+  const aim = (index: number | null): void => {
+    aimed.value = index
+  }
+
+  // A tab arriving from another window. It lands where the marker said — the strip aimed it
+  // while the tab hovered — and at the end of the strip when it was never aimed, which is a
+  // drop from a window that never passed over this one.
+  const dock = (seed: TabSeed): void => {
+    const at = aimed.value ?? state.value.tabs.length
     state.value = insertTab(state.value, at, { id: nextId(), ...seed })
+    clearIncoming()
   }
 
   // A tab leaving for another window. **The last tab may leave this way**: joining a window
@@ -151,6 +178,10 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     seed,
     seedAt,
     canTear,
+    incoming,
+    aimIncoming,
+    clearIncoming,
+    aim,
     dock,
     giveAway,
     tearOffTo,

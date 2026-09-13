@@ -44,14 +44,16 @@ export const useWindowSession = (): void => {
         tabs.seed(m.tabs, m.activeIndex)
         return
       case WindowMessageKind.Docked:
-        // The end of the strip until the hit test can say where the marker was.
-        tabs.dock(m.tab, tabs.tabs.length)
+        tabs.dock(m.tab)
         return
       case WindowMessageKind.Focused:
         focusOrder.value = rememberFocus(focusOrder.value, m.label)
         return
       case WindowMessageKind.Hovering:
+        void tabs.aimIncoming(m.at)
+        return
       case WindowMessageKind.HoverLeft:
+        tabs.clearIncoming()
         return
       default:
         return assertNever(m)
