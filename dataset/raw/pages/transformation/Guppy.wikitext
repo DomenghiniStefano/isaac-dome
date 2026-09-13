@@ -1,0 +1,47 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 0
+ | description = {{dlc|nr}} Grants [[flight]] and spawns a [[Blue Fly]] each time a tear hits an enemy.<br/>{{dlc|r}} Grants [[flight]] and adds a 66% chance to spawn a [[Blue Fly]] when a tear hits an enemy.
+ | appearance  = Guppy
+ | requirement = three items from this set
+ | items       = {{i|Dead Cat}}, {{i|Guppy's Collar}}, {{i|Guppy's Tail}}, {{i|Guppy's Hairball}}, {{i|Guppy's Eye}}, {{i|Guppy's Head}}, {{i|Guppy's Paw}}
+}}
+
+'''Guppy''' is a [[transformation]], turning Isaac into his cat Guppy after picking up 3 Guppy-related items.
+
+== Effects ==
+* Grants [[flight]].
+* {{dlc|nr}} Spawns a [[Blue Fly]] each time a tear from Isaac or one of its familiars hits an enemy.
+* {{dlc|r}} Grants a 66% chance to spawn a [[Blue Fly]] each time a tear from Isaac or one of its familiars hits an enemy.
+
+== Requirements ==
+Pick up 3 [[item]]s or [[trinket]]s from the following list ({{dlc|r}} with the [[Item Tags guppy|{{code|guppy}} tag]]).
+
+=== Activated Collectibles ===
+{{collectible table | Guppy's Head, Guppy's Paw }}
+
+=== Passive Collectibles ===
+{{collectible table | Dead Cat, Guppy's Collar, Guppy's Tail, Guppy's Hairball, Guppy's Eye }}
+
+=== Trinkets ===
+{{trinket table | Kid's Drawing }}
+
+== Notes ==
+* {{i|Technology 2}} spawns flies only very rarely.
+* {{dlc|na+r}} If Isaac has transformed into Guppy, Guppy's Hairball spawns Blue Flies when it deals damage.
+* {{dlc|r}} If all the 9 extra lives have been consumed, {{I|Dead Cat}} is removed from Isaac's inventory. This causes the transformation to be removed.
+* {{dlc|r}} Blue flies will only spawn if Isaac has less than 30 blue flies.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Guppy's Hairball, Cat Got Your Tongue }}
+
+== Trivia ==
+* This transformation is a reference to Edmund's first cat, as seen in some of his early videos on his personal channel.<ref>https://www.youtube.com/watch?v=trUCcvtN1lA</ref>
+** Guppy the cat passed away in 2014.<ref>https://twitter.com/edmundmcmillen/status/501914984285077504</ref>
+* {{dlc|a+}} Transforming into Guppy as {{c|The Forgotten}} will give him the appearance of a cat's skeleton.
+* {{dlc|r}} The [[Item Tags guppy|<code>guppy</code> item tag]] determines if an item counts towards the transformation, except for {{t|Kid's Drawing|n}} which seems to be hard-coded to count as a Guppy item despite not having the tag.
+
+== References ==
+{{reflist}}
+
+{{nav|guppy}}

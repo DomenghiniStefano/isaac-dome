@@ -1,0 +1,29 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 2
+ | dlc         = a
+ | description = +1 Red [[Heart Container]].
+ | appearance  = a walking mushroom
+ | items       = {{i|1up!}}, {{i|Blue Cap}}, {{i|God's Flesh}}, {{i|Magic Mushroom}}, {{i|Mega Mush}}, {{i|Mini Mush}}, {{i|Mucormycosis}}, {{i|Odd Mushroom (Large)}}, {{i|Odd Mushroom (Thin)}}, {{i|Wavy Cap}}
+}}
+
+'''Fun Guy''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth]]'', turning Isaac into a walking mushroom after picking up 3 mushroom-related items.
+
+== Effects ==
+* Grants one full [[Red Heart container]].
+
+== Requirements ==
+Pick up 3 [[item]]s from the following list ({{dlc|r}} with the [[Item Tags mushroom|{{code|mushroom}} tag]]).
+
+=== Active Collectibles ===
+{{collectible table | Mega Mush, Wavy Cap }}
+
+=== Passive Collectibles ===
+{{collectible table | 1up!, Blue Cap, God's Flesh, Magic Mushroom, Mini Mush, Mucormycosis, Odd Mushroom (Large), Odd Mushroom (Thin) }}
+
+== Trivia ==
+* The name Fun Guy is a slang term for psychedelic [[wikipedia:Psilocybin mushroom|Psilocybin mushrooms]] and a wordplay on "fungi".
+* Fun Guy's appearance may be a reference to the character ''Toad'', a humanoid mushroom from the [[wikipedia:Super Mario|''Super Mario'']] franchise.
+* When obtaining this transformation with [[Keeper]] or [[Tainted Keeper]], it will look different than with any other characters, as the mushroom in it's head will slightly bend at the bottom and it's face will look more scarecrow-ish, making their eyes and mouth get smaller and lower on their face.
+
+{{nav|fun guy|fr=Fan de Spore}}

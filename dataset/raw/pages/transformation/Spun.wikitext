@@ -1,0 +1,33 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 5
+ | dlc         = a
+ | description = Gives +2 [[damage]] and +0.15 [[speed]], and spawns a random [[pill]] upon transformation.
+ | appearance  = a buff berserker
+ | Adrenaline | Euthanasia | Experimental Treatment | Growth Hormones | Roid Rage | Speed Ball | Synthoil | The Virus
+}}
+
+'''Spun''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth]]'', turning Isaac into a buff berserker after picking up 3 syringe items.
+
+== Effects ==
+* Drops a random [[pill]].
+* +2 [[damage]].
+* +0.15 [[speed]].
+** {{dlc|nr}} Also affects maximum Speed. Maximum Speed may never exceed 2.0.
+
+== Requirements ==
+Pick up 3 [[item]]s from the following list ({{dlc|r}} with the [[Item Tags syringe|{{code|syringe}} tag]]).
+
+=== Passive Collectibles ===
+{{collectible table | Adrenaline, Euthanasia, Experimental Treatment, Growth Hormones, Roid Rage, Speed Ball, Synthoil, The Virus }}
+
+== Gallery ==
+<gallery>
+File:Transformations Afterbirth.jpg|Concept art for Spun (labeled "Experiment I") and other transformations for the Afterbirth DLC by Edmund McMillen.
+</gallery>
+
+== Trivia ==
+* [https://www.urbandictionary.com/define.php?term=Spun Spun] is a slang used to describe someone who is extremely high on methamphetamine.
+* In [https://en.wikipedia.org/wiki/Mewgenics Mewgenics] (another game made by Edmund McMillen), an enemy called the [https://mewgenics.wiki.gg/wiki/Spun_Cat Spun Cat] takes the same appearence as the Spun transformation, even having "Spun" in it's name.
+
+{{nav|spun|fr=Addict}}
