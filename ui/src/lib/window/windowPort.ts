@@ -107,7 +107,13 @@ const tauriPort: WindowPort = {
     })
   },
   send: async (label, message) => {
-    await emitTo(label, WindowEventName, message)
+    // **The target is named by kind, not by label alone.** A bare string means "whatever
+    // carries this label", and a `WebviewWindow` carries it three times over — as a window, as
+    // a webview, and as the pair — so the same message arrived twice and a docked tab was
+    // inserted twice. The other messages hid it: `Ready` is answered once because the debt is
+    // consumed, `Seed` because a seeded window is no longer pending. `Docked` had nothing to
+    // make it idempotent, and it was the one the owner saw duplicate.
+    await emitTo({ kind: 'WebviewWindow', label }, WindowEventName, message)
   },
   broadcast: async (message) => {
     await emit(WindowEventName, message)
