@@ -2,14 +2,17 @@
 import { computed, ref } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import { DragGhost } from '@/components/ui/drag'
+import { useDragList } from '@/composables/useDragList'
 import { useMessages } from '@/i18n'
 import { EventKey } from '@/lib/constants/eventKeys'
+import { Axis, boxAt } from '@/lib/drag/dragList'
+import type { Box, Point } from '@/lib/drag/dragList'
 import type {
   QueueDiagnostic,
   QueueRow as QueueRowView,
   UnlockNode,
 } from '@/lib/ipc/types'
-import type { Anchor } from '@/lib/plan/queueDrop'
 import {
   DropEdge,
   StepDirection,
@@ -35,82 +38,56 @@ const emit = defineEmits<{
 }>()
 const { t } = useMessages()
 
-interface Drag {
-  from: number
-  startY: number
-  moving: boolean
-}
 interface Drop {
   index: number
   edge: DropEdge
 }
 
-// Pixels the pointer travels before a press on the grip becomes a drag: below it, a click.
-const dragThreshold = 4
 const rowSelector = '[data-queue-row]'
 
 const list = ref<HTMLElement | null>(null)
-const drag = ref<Drag | null>(null)
-const drop = ref<Drop | null>(null)
-// Where the rows are, read once when a press becomes a drag: nothing moves until the drop.
-let rowRects: DOMRect[] = []
 
 const ids = computed(() => props.rows.map(rowId))
 
 const rowElements = (): HTMLElement[] =>
   list.value ? [...list.value.querySelectorAll<HTMLElement>(rowSelector)] : []
 
-const dropAt = (y: number): Drop | null => {
-  for (const [index, r] of rowRects.entries()) {
-    if (y >= r.top && y < r.bottom)
-      return { index, edge: dropEdge(y, r.top, r.height) }
-  }
-  return null
+// The half of the row under the pointer decides the edge; `dropAnchor` then says whether that
+// edge means anything — the gaps either side of the dragged row are where it already is.
+const resolve = (p: Point, boxes: Box[]): Drop | null => {
+  const index = boxAt(boxes, p, Axis.Y)
+  const box = index === null ? undefined : boxes[index]
+  if (index === null || !box) return null
+  return { index, edge: dropEdge(p.y, box.top, box.height) }
 }
 
-const anchorOf = (d: Drag, target: Drop | null): Anchor | null =>
-  target ? dropAnchor(ids.value, d.from, target.index, target.edge) : null
+const drag = useDragList<Drop>({
+  axis: Axis.Y,
+  container: list,
+  items: rowElements,
+  enabled: () => !props.busy,
+  resolve,
+  commit: (from, landing) => {
+    const anchor = landing
+      ? dropAnchor(ids.value, from, landing.index, landing.edge)
+      : null
+    const moved = ids.value[from]
+    if (anchor && moved !== undefined) emit('move', moved, anchor.after)
+  },
+})
 
 // The gap the line is drawn in, only for a drop that would move something.
 const gap = computed((): number | null => {
-  const d = drag.value
-  const target = drop.value
-  if (!d?.moving || !target || !anchorOf(d, target)) return null
-  return target.edge === DropEdge.Above ? target.index : target.index + 1
+  const landing = drag.drop.value
+  const from = drag.from.value
+  if (!drag.moving.value || !landing || from === null) return null
+  if (!dropAnchor(ids.value, from, landing.index, landing.edge)) return null
+  return landing.edge === DropEdge.Above ? landing.index : landing.index + 1
 })
 
-// A press becomes a drag only past the threshold, and only then is the pointer captured, as
-// on the tab strip.
-const onGrab = (index: number, e: PointerEvent) => {
-  if (e.button !== 0 || props.busy) return
-  drag.value = { from: index, startY: e.clientY, moving: false }
-}
-
-const onPointerMove = (e: PointerEvent) => {
-  const d = drag.value
-  if (!d) return
-  if (!d.moving) {
-    if (Math.abs(e.clientY - d.startY) < dragThreshold) return
-    d.moving = true
-    rowRects = rowElements().map((el) => el.getBoundingClientRect())
-    list.value?.setPointerCapture(e.pointerId)
-  }
-  drop.value = dropAt(e.clientY)
-}
-
-const onPointerUp = (e: PointerEvent) => {
-  const d = drag.value
-  const target = drop.value
-  drag.value = null
-  drop.value = null
-  rowRects = []
-  if (list.value?.hasPointerCapture(e.pointerId))
-    list.value.releasePointerCapture(e.pointerId)
-  if (!d?.moving) return
-  const anchor = anchorOf(d, target)
-  const moved = ids.value[d.from]
-  if (anchor && moved !== undefined) emit('move', moved, anchor.after)
-}
+const grabbed = computed(() =>
+  drag.from.value === null ? null : props.rows[drag.from.value],
+)
 
 const directionOf = (key: string): StepDirection | null => {
   if (key === EventKey.ArrowUp) return StepDirection.Up
@@ -129,7 +106,7 @@ const onStep = (index: number, e: KeyboardEvent) => {
 
 // What the band says: how to drag, what a drop will do, or where the last move stopped and why.
 const hint = computed((): string => {
-  if (drag.value?.moving) return t('plan.hint.dragging')
+  if (drag.moving.value) return t('plan.hint.dragging')
   const last = props.lastMove
   const wall = last
     ? stoppedUnder(props.rows, last.achievement, last.after)
@@ -150,9 +127,9 @@ const hint = computed((): string => {
       v-if="rows.length > 0"
       ref="list"
       class="flex flex-col py-1"
-      @pointermove="onPointerMove"
-      @pointerup="onPointerUp"
-      @pointercancel="onPointerUp"
+      @pointermove="drag.move"
+      @pointerup="drag.end"
+      @pointercancel="drag.end"
     >
       <div
         v-for="(row, index) in rows"
@@ -168,9 +145,9 @@ const hint = computed((): string => {
           :row="row"
           :rows="rows"
           :position="index + 1"
-          :dragging="drag?.moving === true && drag.from === index"
+          :dragging="drag.moving.value && drag.from.value === index"
           :busy="busy"
-          @grab="onGrab(index, $event)"
+          @grab="drag.start(index, $event)"
           @step="onStep(index, $event)"
           @remove="emit('remove', rowId(row))"
         />
@@ -186,6 +163,17 @@ const hint = computed((): string => {
         t('plan.emptyHint')
       }}</span>
     </div>
+    <!-- The lifted copy, drawn `busy` on purpose: its grip and its remove button are a picture
+         of the row's, and must not answer a pointer that is in the middle of a drag. -->
+    <DragGhost v-if="drag.ghost.value && grabbed" :box="drag.ghost.value">
+      <QueueRow
+        :row="grabbed"
+        :rows="rows"
+        :position="(drag.from.value ?? 0) + 1"
+        :dragging="false"
+        :busy="true"
+      />
+    </DragGhost>
     <QueueFootnotes
       :diagnostics="diagnostics"
       :nodes="nodes"
