@@ -1,6 +1,6 @@
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
-import { locationTitle } from '@/router/routeTable'
+import { defaultLocation, locationTitle } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 
 type Message = MessageKey<MessageSchema>
@@ -60,6 +60,66 @@ export const closeTab = (
   if (id !== state.activeId) return { tabs, activeId: state.activeId }
   const next = tabs[Math.min(index, tabs.length - 1)]
   return next ? { tabs, activeId: next.id } : state
+}
+
+// A tab arriving from another window lands at an index and takes the focus: you dropped it
+// where you wanted to look at it. The index is clamped, never rejected — a drop a pixel past
+// the last tab is a drop on the end, not a lost tab.
+export const insertTab = (
+  state: TabsState,
+  at: number,
+  tab: Tab,
+): TabsState => {
+  const index = Math.max(0, Math.min(at, state.tabs.length))
+  const tabs = [...state.tabs]
+  tabs.splice(index, 0, tab)
+  return { tabs, activeId: tab.id }
+}
+
+// A window holding one tab *is* that tab: taking it out would leave a bar with nothing in it,
+// the one state the rules forbid. The gesture is refused before it starts rather than repaired
+// after — "the bar is never empty", one level up.
+export const canDetach = (state: TabsState): boolean => state.tabs.length > 1
+
+export interface Detached {
+  tab: Tab
+  state: TabsState
+}
+
+export const detachTab = (state: TabsState, id: string): Detached | null => {
+  if (!canDetach(state)) return null
+  const tab = state.tabs.find((t) => t.id === id)
+  if (!tab) return null
+  // As far as what is left behind is concerned, leaving is closing: the same neighbour rule.
+  // `fresh` is never reached — `canDetach` has already refused the last tab.
+  return { tab, state: closeTab(state, id, () => tab) }
+}
+
+// Everything a tab is except its identity: what crosses to another window, which mints ids of
+// its own. Written by subtraction so that a tab gaining a field needs no line here.
+export type TabSeed = Omit<Tab, 'id'>
+
+// The id is **removed**, not merely left out of the type: `seedState` spreads the seed over a
+// fresh id, and a seed still carrying the old one would overwrite it — two windows holding the
+// same tab id, with nothing to say so.
+export const tabSeed = (tab: Tab): TabSeed => {
+  const seed = { ...tab }
+  delete (seed as { id?: string }).id
+  return seed
+}
+
+// The state a window born from a tear-off starts in. An empty seed would leave a bar with no
+// tabs, so it becomes one default tab: a window showing the landing page beats a window
+// showing nothing.
+export const seedState = (
+  seeds: TabSeed[],
+  activeIndex: number,
+  id: (n: number) => string,
+): TabsState => {
+  if (seeds.length === 0) return firstState(id(0), defaultLocation)
+  const tabs = seeds.map((seed, n) => ({ id: id(n), ...seed }))
+  const active = tabs[Math.max(0, Math.min(activeIndex, tabs.length - 1))]
+  return { tabs, activeId: active?.id ?? '' }
 }
 
 // `to` is the tab's final index, as TabStrip computes it with moveIndex.
