@@ -7,10 +7,10 @@ use rusqlite::Connection;
 use crate::StoreError;
 
 /// The version this binary knows how to read and write.
-pub const SCHEMA_VERSION: u32 = 3;
+pub const SCHEMA_VERSION: u32 = 4;
 
 /// Index = version − 1. Append at the end, never modify a migration that's already shipped.
-const MIGRATIONS: [&str; 3] = [
+const MIGRATIONS: [&str; 4] = [
     // 1: the user's goals. `target_json` is the serialized `ipc::TargetKey` -- identity
     // alone, never name or icon: a column per variant would be a schema that changes
     // with every new kind of unlock.
@@ -38,6 +38,40 @@ const MIGRATIONS: [&str; 3] = [
     "CREATE TABLE window_session (
         id INTEGER PRIMARY KEY CHECK (id = 1),
         document TEXT NOT NULL
+    );",
+    // 4: the run archive. `events` are the archive and a run is a fold over them (M4's second
+    // decision), so `runs` is a cache and says so by carrying the rules version that produced
+    // it: a newer rules file finds nothing and the fold runs again.
+    //
+    // `key` is NULL for a launch of log.txt and the folder's name for an online session. A
+    // launch has no name — and SQLite counts NULLs as distinct in a UNIQUE, so two launches are
+    // two rows and the older one keeps its events when the game rewrites the file. A schema
+    // that keyed a launch by its prefix hash would have the second launch overwrite the first,
+    // which is the archive losing what it exists to keep.
+    //
+    // `read_offset`, not `offset`: OFFSET is a keyword.
+    "CREATE TABLE sources (
+        id INTEGER PRIMARY KEY,
+        kind TEXT NOT NULL,
+        key TEXT,
+        prefix_hash TEXT NOT NULL,
+        prefix_len INTEGER NOT NULL,
+        anchor_hash TEXT NOT NULL,
+        read_offset INTEGER NOT NULL,
+        UNIQUE (kind, key)
+    );
+    CREATE TABLE events (
+        source_id INTEGER NOT NULL REFERENCES sources(id),
+        seq INTEGER NOT NULL,
+        event_json TEXT NOT NULL,
+        PRIMARY KEY (source_id, seq)
+    );
+    CREATE TABLE runs (
+        source_id INTEGER NOT NULL REFERENCES sources(id),
+        ordinal INTEGER NOT NULL,
+        rules_version INTEGER NOT NULL,
+        run_json TEXT NOT NULL,
+        PRIMARY KEY (source_id, ordinal)
     );",
 ];
 

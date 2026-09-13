@@ -8,9 +8,11 @@
 mod event;
 mod fold;
 mod rules;
+mod source;
 mod tail;
 
 pub use event::{Event, SeedKind};
 pub use fold::{Floor, ItemKind, ItemKinds, Outcome, Run};
 pub use rules::{Rules, RulesError};
+pub use source::{fingerprint, resume, Resume, SourceKey, ANCHOR_BYTES, PREFIX_BYTES};
 pub use tail::Tail;

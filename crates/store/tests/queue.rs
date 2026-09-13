@@ -65,12 +65,9 @@ fn writing_twice_replaces_the_document_instead_of_keeping_two() {
     assert_eq!(q.rows()[0].achievement, 2);
 }
 
-#[test]
-fn the_schema_version_moved_to_three() {
-    let dir = tempdir().expect("temp dir");
-    let s = Store::open(&dir.path().join("isaacdome.db")).expect("opens");
-    assert_eq!(s.schema_version().expect("reads"), 3);
-}
+// `the_schema_version_moved_to_three` lived here and was a fixture of its era. It is superseded
+// by `the_schema_is_at_version_four` in `tests/archive.rs`, which pins the same two things —
+// the constant, and that an opened file actually reaches it — for the version that ships now.
 
 #[test]
 fn migration_two_leaves_the_goals_table_alone() {
@@ -108,7 +105,9 @@ fn a_version_one_database_gains_the_queue_without_losing_its_goals() {
         .expect("builds a version 1 file");
     }
     let s = Store::open(&path).expect("upgrades");
-    assert_eq!(s.schema_version().expect("reads"), 3);
+    // The current version, not a number of the day: this test is about the chain arriving, and
+    // it has to keep holding when a fifth migration is added.
+    assert_eq!(s.schema_version().expect("reads"), store::SCHEMA_VERSION);
     let goals = s.goals().expect("goals still readable");
     assert_eq!(
         goals.goals.len(),

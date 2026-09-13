@@ -18,7 +18,7 @@ pub trait ItemKinds {
 /// How a run ended. Three of the four are stated by the log; `Abandoned` is inferred, and
 /// `Open` is a run whose stream simply stopped — the one being played right now, or a log that
 /// ends mid-run. **`Open` is not a failure state.**
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub enum Outcome {
     Won { ending: String },
     Died { killer: String },
@@ -27,7 +27,7 @@ pub enum Outcome {
 }
 
 /// One floor, as the game announced it.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub struct Floor {
     pub stage: u32,
     pub stage_type: u32,
@@ -35,7 +35,7 @@ pub struct Floor {
 }
 
 /// One run: what was played, with what, and how it ended.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub struct Run {
     pub seed_words: String,
     pub seed_numeric: u32,
