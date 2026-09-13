@@ -81,6 +81,7 @@ export const sidebarEntries: Record<SidebarSection, SidebarEntry[]> = {
   [SidebarSection.Settings]: [
     RouteName.Profile,
     RouteName.Appearance,
+    RouteName.Background,
     RouteName.TabsSettings,
   ].map(routeEntry),
 }
