@@ -394,6 +394,8 @@ export const en: MessageSchema = {
       'Things you can unlock right now. At the top the ones that open the most, below the ones you are closest to.',
     fanOut: 'They open the most',
     closeness: 'Almost there',
+    inPlan: 'In your Plan',
+    openPlan: 'Open the Plan',
     seeAll: 'See them all',
     opens: 'Opens {count} more things',
     opensNothing: 'Opens nothing else',

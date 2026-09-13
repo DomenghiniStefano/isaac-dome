@@ -10,6 +10,7 @@ import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
 import { NodeState } from '@/lib/graph/nodeState'
 import { nodeSlot } from '@/lib/graph/unlockFilter'
+import { planNow } from '@/lib/plan/planNow'
 import { canQueue, isQueued, queuedIds } from '@/lib/plan/queueRows'
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
@@ -26,6 +27,9 @@ const graph = useGraphStore()
 const queue = useQueueStore()
 const tabs = useTabsStore()
 const { t } = useMessages()
+
+// The same cap a section has: this is a reminder, not the queue.
+const PLAN_ROWS = 5
 
 useOnActiveProfile(async () => {
   await Promise.all([graph.load(), queue.load()])
@@ -49,6 +53,11 @@ const seeAll: TabLocation = {
   name: RouteName.Unlock,
   query: { state: NodeState.Now },
 }
+const plan: TabLocation = { name: RouteName.Plan }
+
+// At most as many as one section: the landing page reminds, the Plan is where the queue is
+// read and moved.
+const inPlan = computed(() => planNow(queue.view, PLAN_ROWS))
 const open = (location: TabLocation, newTab: boolean) => {
   if (newTab) tabs.open(location)
   else tabs.navigate(location)
@@ -103,6 +112,32 @@ const open = (location: TabLocation, newTab: boolean) => {
         <AlertDescription>{{ t('goals.noCatalog') }}</AlertDescription>
       </Alert>
       <EmptyCategory v-else>{{ t('goals.nothingNow') }}</EmptyCategory>
+
+      <!-- Outside the chain above on purpose: what *you* had decided is worth showing even
+           on a page with nothing to suggest. Absent when the queue holds nothing playable
+           now, or could not be read at all (spec §4.3). -->
+      <section v-if="inPlan.length > 0" class="flex flex-col gap-2">
+        <h2 class="text-label text-subtle-foreground">
+          {{ t('goals.inPlan') }}
+        </h2>
+        <GoalCard
+          v-for="row in inPlan"
+          :key="nodeSlot(row.node)"
+          :node="row.node"
+          :queued="true"
+          :can-add="false"
+          :busy="queue.busy"
+          compact
+          @navigate="open"
+        />
+        <Button
+          :variant="ButtonVariant.Ref"
+          :size="ButtonSize.Inline"
+          class="self-start"
+          @click="open(plan, $event.ctrlKey)"
+          >{{ t('goals.openPlan') }}</Button
+        >
+      </section>
     </template>
     <div v-else class="flex flex-col gap-2">
       <Skeleton class="h-28 w-full" />

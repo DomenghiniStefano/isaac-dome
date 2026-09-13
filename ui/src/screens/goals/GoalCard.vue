@@ -15,6 +15,9 @@ const props = defineProps<{
   queued: boolean
   canAdd: boolean
   busy: boolean
+  // The row under a heading that already says these are in the Plan: it drops the drawing
+  // and the queue line, which would repeat the heading on every row.
+  compact?: boolean
 }>()
 const emit = defineEmits<{
   add: []
@@ -41,16 +44,18 @@ const open = (newTab: boolean) => {
        button: a card that is itself a link and contains one is a trap for the keyboard, and
        `Ref` is already the app's way of saying "this goes to a page". -->
   <Card class="flex-row items-start gap-3 p-3">
-    <Button
-      v-if="card.location"
-      :variant="ButtonVariant.Ghost"
-      :size="ButtonSize.IconCompact"
-      class="h-auto w-auto p-0"
-      @click="open($event.ctrlKey)"
-    >
-      <AchievementArt :url="card.art" :size="ArtSize.Card" />
-    </Button>
-    <AchievementArt v-else :url="card.art" :size="ArtSize.Card" />
+    <template v-if="!compact">
+      <Button
+        v-if="card.location"
+        :variant="ButtonVariant.Ghost"
+        :size="ButtonSize.IconCompact"
+        class="h-auto w-auto p-0"
+        @click="open($event.ctrlKey)"
+      >
+        <AchievementArt :url="card.art" :size="ArtSize.Card" />
+      </Button>
+      <AchievementArt v-else :url="card.art" :size="ArtSize.Card" />
+    </template>
 
     <div class="flex min-w-0 flex-1 flex-col items-start gap-1.5">
       <Button
@@ -73,11 +78,13 @@ const open = (newTab: boolean) => {
         opensText
       }}</span>
 
-      <span v-if="queued" class="text-caption text-state-done-foreground">{{
-        t('queue.inPlan')
-      }}</span>
+      <span
+        v-if="queued && !compact"
+        class="text-caption text-state-done-foreground"
+        >{{ t('queue.inPlan') }}</span
+      >
       <Button
-        v-else-if="canAdd"
+        v-else-if="canAdd && !compact"
         :variant="ButtonVariant.Outline"
         :size="ButtonSize.Compact"
         :disabled="busy"
