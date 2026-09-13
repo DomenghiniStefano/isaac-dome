@@ -36,6 +36,7 @@ export const en: MessageSchema = {
     wiki: 'Wiki',
     profile: 'Game profile',
     appearance: 'Appearance',
+    background: 'Background',
     tabsSettings: 'Tabs',
     about: 'About',
   },
@@ -240,6 +241,19 @@ export const en: MessageSchema = {
       noCollectionSection:
         'Items do not say whether you already have them. It does not mean you do not: it means we cannot tell.',
     },
+  },
+  background: {
+    intro:
+      'What the app does when you close the last window, and what you find when you open it again.',
+    stayTitle: 'Keep running in the background',
+    stayHint:
+      'Closing the last window leaves the app next to the clock, in the notification area: one click on the icon brings the window back. Off, closing the last window closes the app.',
+    resumeTitle: "Reopen the last session's tabs",
+    resumeHint:
+      'The first window reopens on the tabs it had. Off, it starts on the landing screen and what was saved is deleted.',
+    saveFailedTitle: 'The setting was not saved',
+    saveFailed:
+      'The app already behaves this way, but we could not write it down: it will be back as it was next time you start it.',
   },
   appearance: {
     intro:
