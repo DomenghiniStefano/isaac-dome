@@ -55,7 +55,14 @@ export type WikiCategory = (typeof WikiCategory)[keyof typeof WikiCategory]
 // that a link can land on Unlock showing only what is unlockable now.
 export interface TabLocation {
   name: RouteName
-  query?: { category?: WikiCategory; page?: string; q?: string; state?: string }
+  query?: {
+    category?: WikiCategory
+    page?: string
+    q?: string
+    state?: string
+    /** B37: what you said you want, keyed exactly the way `page` is. */
+    want?: string
+  }
 }
 
 type Message = MessageKey<MessageSchema>
