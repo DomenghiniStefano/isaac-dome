@@ -70,14 +70,23 @@ const tauriPort: WindowPort = {
   isMain: () => getCurrentWindow().label === MainLabel,
   list: async () => {
     const all = await getAllWebviewWindows()
-    const shown = await Promise.all(
-      all.map(async (w) =>
-        (await w.isVisible()) && !(await w.isMinimized()) ? w : null,
-      ),
+    const boxes = await Promise.all(
+      all.map(async (w) => {
+        try {
+          if (!(await w.isVisible())) return null
+          if (await w.isMinimized()) return null
+          return await boxOf(w)
+        } catch {
+          // **A window that is not there is not an error.** `getAllWebviewWindows` keeps
+          // listing a window for a while after it closes, and every call on it then answers
+          // `window not found` — which, thrown from inside a drag, killed the gesture and put
+          // the tab back. Measured on the machine, 2026-09-13: a stale window is one fewer
+          // target, nothing more.
+          return null
+        }
+      }),
     )
-    return Promise.all(
-      shown.filter((w): w is WebviewWindow => w !== null).map(boxOf),
-    )
+    return boxes.filter((box) => box !== null)
   },
   create: async (label, at, size) => {
     // The app's own page, with no state in its URL: what the window holds arrives through the

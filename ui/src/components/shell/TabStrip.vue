@@ -20,10 +20,8 @@ const props = withDefaults(
     // Optional because most of the app has no second window in sight — the Kit draws a strip
     // with no drag in flight, and nothing should have to say "nothing is arriving".
     incoming?: IncomingHover | null
-    // A window holding one tab is that tab: it has nothing to tear off.
-    canTear?: boolean
   }>(),
-  { incoming: null, canTear: false },
+  { incoming: null },
 )
 const emit = defineEmits<{
   select: [id: string]
@@ -31,8 +29,10 @@ const emit = defineEmits<{
   move: [from: number, to: number]
   add: []
   aim: [index: number | null]
-  giveTo: [index: number, label: string, at: Point]
-  openWith: [index: number, at: Point]
+  // The tab left the strip, landed, or came back: the three endings of a tear-off.
+  lift: [index: number]
+  settle: [target: string | null, at: Point]
+  putBack: []
 }>()
 const { t } = useMessages()
 
@@ -50,10 +50,14 @@ const { drag, detached } = useTabDrag({
   strip,
   items: tabElements,
   labelOf: (index) => props.tabs[index]?.label ?? '',
-  canTear: () => props.canTear,
   reorder: (from, to) => emit('move', from, to),
-  giveTo: (index, label, at) => emit('giveTo', index, label, at),
-  openWith: (index, at) => emit('openWith', index, at),
+  lift: (index) => {
+    if (!props.tabs[index]) return false
+    emit('lift', index)
+    return true
+  },
+  settle: (target, at) => emit('settle', target, at),
+  putBack: () => emit('putBack'),
 })
 
 // The tab the ghost draws: the grabbed one, as it is — an inactive tab lifted as if it were
