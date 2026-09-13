@@ -5,6 +5,7 @@ use tauri::AppHandle;
 use ipc::IpcError;
 use store::{plan_parts, store_error, store_unavailable};
 
+use crate::events::{announce, PLAN_CHANGED};
 use crate::icons::icon_url;
 
 use crate::state::*;
@@ -59,6 +60,8 @@ pub fn add_goal(
     };
     let guard = store.lock(&app).map_err(store_unavailable)?;
     guard.add_goal(&goal).map_err(store_error)?;
+    // The goals and the queue are one screen: one event for both.
+    announce(&app, PLAN_CHANGED);
     let read = guard.goals().map_err(store_error)?;
     Ok(ipc::plan_view(
         c,
@@ -84,6 +87,7 @@ pub fn remove_goal(
     let guard = store.lock(&app).map_err(store_unavailable)?;
     // Idempotent: removing an id that's already gone isn't an error.
     let _removed = guard.remove_goal(&id).map_err(store_error)?;
+    announce(&app, PLAN_CHANGED);
     let read = guard.goals().map_err(store_error)?;
     Ok(ipc::plan_view(
         c,
