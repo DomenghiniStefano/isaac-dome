@@ -145,7 +145,7 @@ fn view_with(c: &catalog::Catalog, done: &[u32], info: GraphInfo) -> ipc::Unlock
     }
     let mut v = ipc::unlock_view(Some(c), None, Some(&flags), None, None, None, |_| None);
     for n in v.nodes.iter_mut() {
-        n.graph = info.clone();
+        n.graph = info;
     }
     v
 }
