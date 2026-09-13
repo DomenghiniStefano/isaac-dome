@@ -67,6 +67,7 @@ pub enum Edition {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[ts(rename = "InstalledDlc")]
 #[serde(rename_all = "snake_case")]
 pub enum Dlc {
     Afterbirth,
@@ -93,6 +94,8 @@ pub enum SaveSource {
     Override,
 }
 
+/// The two save-file name prefixes, `rep_` and `rep+`. A domain enum: it keeps its own
+/// `snake_case` on the wire, unlike the ones the boundary defines for itself.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "snake_case")]
 pub enum SavePrefix {
