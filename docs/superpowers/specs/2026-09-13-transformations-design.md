@@ -32,6 +32,25 @@ the committed dataset. All on 2026-09-13.
    `Special:CargoTables/transformation` lists `id`, `alias`, `dlc`, `requirement`, `items`,
    `description`, `target`, `appearance`. `crates/wiki-snapshot/src/api.rs` asks for
    `_pageName,id,alias,dlc`. The five it does not ask for are most of the content.
+
+   > **Amended on 2026-09-13, after downloading them.** Two of those five carry nothing
+   > usable, and this paragraph was wrong to count them as content.
+   >
+   > - **`requirement` is a template default.** All sixteen rows read the identical string
+   >   `three items from this set` — Adult, whose infobox has no `requirement` parameter at
+   >   all, included. A field with one value across the whole table states nothing about any
+   >   row, and a numeral read from it would hand every transformation a 3 that looks
+   >   measured and is not.
+   > - **`items` is rendered HTML, and mostly absent.** Ten of the sixteen are empty; of the
+   >   rest, four are markup Cargo produced rather than wikitext an editor wrote
+   >   (`<span class="tooltip" data-tooltip="i%2Ftooltip…">`,
+   >   `[[File:Dlc a indicator.png|link=|class=dlc…]]`). Only Adult's `[[Puberty]] pill` and
+   >   Stompy's `Leo, Magic Mushroom` are plain, and neither is a complete set.
+   >
+   > `description`, `target` and `appearance` are plain text and are kept. The two dead
+   > fields stay in the query — sixteen rows cost nothing, and dropping them would leave the
+   > next person to rediscover why — but **nothing reads them**. §2.4 says where the count
+   > comes from instead.
 3. **The infobox's `items` is not the whole set.** Guppy's, verbatim, is seven `{{i|…}}` —
    Dead Cat, Guppy's Collar, Guppy's Tail, Guppy's Hairball, Guppy's Eye, Guppy's Head,
    Guppy's Paw. The page's body additionally carries `{{trinket table | Kid's Drawing }}`,
@@ -138,15 +157,26 @@ diagnostic, as everywhere else.
 
 ### 2.4 Reading the count
 
-`requirement` is English prose — Guppy's is `three items from this set`. The number is read
-from its leading word through a **closed map of numerals** (`one` … `ten`). Anything the map
-does not cover leaves `requires` at `None`, and `None` propagates all the way to a `Partial`
-node. There is no fallback to three: sixteen pages of which two are already known to be
-irregular is exactly the population where a default silently becomes an answer.
+**Rewritten on 2026-09-13** after §0.2's amendment. The count was to be read from
+`requirement` through a closed map of English numerals; that field turns out to hold one
+constant across all sixteen rows, so the map would have returned 3 for everything and the
+`None` branch would never have run. A rule that cannot fail is not a rule.
 
-Adult (no `requirement`) and Super Bum (a malformed item list) are expected to land at
-`None`, and §6 pins that they do — an expected degradation nobody looked at is the same as
-an unmeasured one.
+The per-page statement is in the **body**, and it is a digit: Guppy's page reads *"Pick up 3
+[[item]]s or [[trinket]]s from the following list"*, Super Bum's *"Pick up 3 [[item]]s from
+the following list."* So `requires` is the number in that sentence, matched on the phrase
+that introduces it, and **nothing else is tried**.
+
+Adult stays unread on purpose, and is the reason the rule stays narrow: its page says
+*"turns Isaac into an adult upon taking three [[Puberty]] pills"* — a different sentence
+about a different kind of thing, a pickup rather than a set of collectibles. Widening the
+pattern until Adult matches would mean inventing a set for it too. `requires: None` is the
+honest answer there, it costs nothing (no achievement references Adult), and it keeps the
+"some read, some unread" property of §6.4 from becoming vacuous.
+
+There is still no fallback to three, for the reason the original paragraph gave and the
+amendment strengthens: three is exactly the number a default would produce, so a wrong
+default here is invisible.
 
 ---
 
