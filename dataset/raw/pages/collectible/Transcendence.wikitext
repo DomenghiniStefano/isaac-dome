@@ -27,6 +27,7 @@
 * This item is used in {{chal|Solar System}}.
 * In the original Binding Of Isaac, Transcendence was unlocked by beating {{E|Mom's Heart}} two times instead of three.
 * The item sprite is a reference to the suicide method of one hanging themselves with a rope connected to an anchor point on top.
-** This is further supported with [[Endings#Ending 3 (Mom's Heart Ending 3)|Ending 3]]
+** This is further supported with [[Endings#Ending 3 (Mom's Heart Ending 3)|Ending 3]].
+* This is the only [[flight]] granting item to not give Isaac any extra attributes, such as stats or health.
 {{nav|moms heart unlock|fr=Transcendance}}
 [[Category:Flight-granting items]]

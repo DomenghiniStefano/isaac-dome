@@ -21,14 +21,15 @@ Turdlet consists of 5 separate segments that travel together similar to {{e|Larr
 ** The health each split Turdlet has is equal to the health the original Turdlet had when it split, plus 15.
 ** While both parts are alive they coordinate the launch attack by huddling together.
 
-== Gallery ==
-<gallery>
-File:Boss Turdlet secondphase ingame.png|Turdlet in its second phase.
-</gallery>
-
 == Notes ==
 * Using the {{i|Meat Cleaver}} on Turdlet instantly skips its first phase.
 * Since the health Turdlet's split segments have scales depending on how much health the original Turdlet have when it split, if a strong attack (like a {{e|Bomb}} or {{p|II - The High Priestess}}) causes Turdlet to split, its split segments will have significantly less health. 
+
+== Gallery ==
+<gallery>
+File:Boss Turdlet secondphase ingame.png|Turdlet in its second phase.
+File:Repentance Boss Designs 4.jpg|Concept art of Turdlet and {{e|Colostomia}} by Edmund McMillen.
+</gallery>
 
 == Trivia ==
 * Turdlet resembles a grounded {{e|Pin}}, albeit with a happier expression.

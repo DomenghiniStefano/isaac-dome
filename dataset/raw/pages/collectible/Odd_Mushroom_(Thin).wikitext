@@ -20,6 +20,7 @@
 * x0.9 total damage up multiplier.
 ** This penalty is not a total damage multiplier and applies only to certain "standard" damage ups, the specific details are available in the [[Damage#The_order_that_damage_multipliers_and_flat_damage_are_applied|damage order]] list.
 * Decreases Isaac's size.
+*This item DOES break tear cap. It stacks with itself continuously.
 * {{transformation contribution|Fun Guy}}
 
 == Notes ==

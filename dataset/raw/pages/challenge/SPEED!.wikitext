@@ -42,7 +42,7 @@ This is arguably one of the hardest challenges in the game, for two major reason
 === Slow and Steady ===
 After 16 minutes, the periodic damage taken every 10 seconds can be counteracted by generating enough health or obtaining enough protection against said damage.
 * The timed damage can be absorbed by the {{i|Holy Mantle}}, making it an even more valuable asset since Isaac can leave the just-cleared room the way he came, re-enter it, wait until the timed damage is dealt, and proceed. By doing so, Isaac can get a 20-second buffer (10s if hit) to rinse and repeat the process without taking any damage.
-* {{i|Pyromaniac}} and explosives ({{i|Curse of the Tower|n}} or any other way to get a lot of bombs) allows Isaac to survive long after the 16-minute limit, and in the case of Pyromaniac with automatically-replenishing explosives such as {{i|Number Two|n}}, very likely the entirety of the run.
+* {{i|Pyromaniac}} and explosives ({{i|Curse of the Tower|n}} or any other way to get a lot of bombs) allows Isaac to survive long after the 16-minute limit, and in the case of Pyromaniac with automatically-replenishing explosives such as {{i|No. 2|n}}, very likely the entirety of the run.
 * {{i|Guppy's Paw}} in the late game can potentially give the player up to 6 minutes of borrowed time, 12 minutes with The Wafer, and even more if the player happens to find HP upgrades in the final moments of the run.
 * {{i|Isaac's Heart}} makes Isaac '''completely immune''' to the timed damage. However, because of the increased speed of your player and enemies, beware that dodging may be more difficult.
 ** {{dlc|r}} Isaac's Heart no longer provides immunity to the timed damage.

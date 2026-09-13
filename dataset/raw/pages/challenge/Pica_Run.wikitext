@@ -29,6 +29,7 @@ Certain Trinkets are much more valuable than others at the beginning of a run, e
 * {{T|Mother's Kiss}} - Adds two heart containers which are normally unobtainable.
 * {{T|Maggy's Faith}} - Gives an eternal heart each floor.
 * {{T|Brain Worm}} - Grants tears an effect similar to homing.
+* {{T|AAA Battery}} - Effectively makes Mom's Box a 2-room charge item, allowing fast accumulation of trinkets.
 
 There are also a number of trinkets you may wish to avoid picking up at all, including (but not limited to):
 

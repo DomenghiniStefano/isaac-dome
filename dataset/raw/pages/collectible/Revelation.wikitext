@@ -26,7 +26,7 @@
 * Having any charged tear effects like {{I|Monstro's Lung}} or '''Brimstone''' will lower their DPS if their charge time is under 2.35 seconds, in order to use Revelation's laser.
 
 == Synergies ==
-* Revelation, {{I|Maw Of The Void}}, {{I|Number Two}}, and {{I|Montezuma's Revenge}} all have the same charge time, allowing Isaac to easily utilize them at the same time.
+* Revelation, {{I|Maw Of The Void}}, {{I|No. 2}}, and {{I|Montezuma's Revenge}} all have the same charge time, allowing Isaac to easily utilize them at the same time.
 * {{I|Angelic Prism}}: When the laser hits the prism, it will split in four.
 * {{T|Brain Worm}}: The laser can bend completely to hit an enemy, effectively acting as a better form of homing on single enemies and bosses.
 * {{I|Continuum}} The laser loops around. The laser cannot hit the same enemy twice.
