@@ -5,6 +5,7 @@ use tauri::AppHandle;
 use ipc::{GraphDeps, IpcError};
 use store::{store_error, store_unavailable};
 
+use crate::events::{announce, PLAN_CHANGED};
 use crate::icons::icon_url;
 
 use crate::state::*;
@@ -105,7 +106,11 @@ fn queue_mutate(
         Err(e) => return Err(store_error(e)),
     };
     edit(&mut q, g, pieces.flags.as_deref());
-    guard.set_queue(&q).map_err(store_error)
+    guard.set_queue(&q).map_err(store_error)?;
+    // Every write to the queue passes through here, so every write tells the other windows:
+    // announcing at the four call sites instead would be four chances to forget one.
+    announce(app, PLAN_CHANGED);
+    Ok(())
 }
 
 /// The ids a move has to reason about: what is already queued, plus what is about to be.
