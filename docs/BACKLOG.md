@@ -1719,6 +1719,29 @@ game does, and the entry names the sheet and frame it came from.
 
 ## B34 — Seventeen references the wiki never meant as targets (implementation, `graph` and `dataset`)
 
+> **Corrected on 2026-09-13. Half of this entry is closed and the other half is wrong.**
+>
+> - **The 4 `transformation:` references are done.** The wiki's sixteen transformation pages
+>   are in the dataset, their item sets and counts travel in `requirements.json`, and
+>   `Requirement::Threshold` answers them against the profile. Nodes 65, 161, 178 and 352 no
+>   longer carry a hand-written `Verdict::Unknown`. Spec
+>   `docs/superpowers/specs/2026-09-13-transformations-design.md`.
+> - **The 13 `pickup:` references are NOT noise, and the filter below must not be built.**
+>   Checked against the sentences they come from: node 69 reads "unlock all non-DLC secrets
+>   and **endings**", 324 "Collect every entry in the **Bestiary**", 276 "as every character
+>   (**tainted character**)". They are real requirements the model cannot express, which is
+>   precisely what their `Verdict::Unknown` records. Dropping them removes each node's only
+>   uninterpreted requirement, so the node stops being `Partial` and reads **available now** —
+>   and the count of uninterpreted references falls, which looks like progress. The rule
+>   drafted below ("only a concept the pickup table knows") was also far wider than this
+>   entry asks: 45 of 49 pickup targets dropped, `Hard mode` (38 uses) among them.
+>
+>   What is actually wrong is the **name**: `Target::Pickup` is what a linked concept with no
+>   id becomes, and calling it `Pickup` is what made "pickups that are not pickups" look like
+>   the problem. The remaining work is that rename in `wiki`, with its own measurement.
+>
+> Everything below is the entry as written on 2026-09-12, kept for the reasoning.
+
 Logged 2026-09-12, left out on purpose by
 `docs/superpowers/specs/2026-09-12-graph-mark-requirements-design.md` §6: that sub-project
 took the graph's uninterpreted references from **195 to 17**, and these are the 17.
