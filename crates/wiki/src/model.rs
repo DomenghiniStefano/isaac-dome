@@ -3,6 +3,8 @@
 
 use serde::{Deserialize, Serialize};
 
+use crate::Diagnostics;
+
 /// A wiki page reduced to what's needed: the infobox and the text sections that are kept.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -137,6 +139,33 @@ pub enum Dlc {
 }
 
 impl Dlc {
+    /// The infobox's `dlc` parameter, which concatenates codes without a separator: one
+    /// page reads `a+nr`, three of them. The two-character codes are tried first, because
+    /// matching `r` before `r+` would read every `r+` as `r`. What matches nothing is
+    /// counted one character at a time rather than dropped: a code we cannot read means an
+    /// entry declaring fewer editions than the wiki says, and that has to surface in `meta`.
+    pub fn parse_codes(s: &str, d: &mut Diagnostics) -> Vec<Dlc> {
+        const CODES: [&str; 5] = ["a+", "r+", "n", "a", "r"];
+        let mut out = Vec::new();
+        let mut rest = s.trim();
+        while !rest.is_empty() {
+            match CODES.iter().find(|c| rest.starts_with(**c)) {
+                Some(c) => {
+                    if let Some(dlc) = Dlc::from_code(c) {
+                        out.push(dlc);
+                    }
+                    rest = &rest[c.len()..];
+                }
+                None => {
+                    let bad = rest.chars().next().map_or(rest.len(), char::len_utf8);
+                    d.unknown_dlc_code(&rest[..bad]);
+                    rest = &rest[bad..];
+                }
+            }
+        }
+        out
+    }
+
     /// The `{{dlc|…}}` template codes: `n`, `a`, `a+`, `r`, `r+`. Anything else → `None`.
     pub fn from_code(code: &str) -> Option<Dlc> {
         match code.trim() {
@@ -200,6 +229,27 @@ pub enum Infobox {
 mod tests {
     use super::*;
     use serde_json::{json, to_value};
+
+    #[test]
+    fn dlc_codes_split_longest_first_and_leftovers_are_counted() {
+        let mut d = Diagnostics::default();
+        // One code, the common case: 175 collectible pages say exactly this.
+        assert_eq!(Dlc::parse_codes("r", &mut d), vec![Dlc::Repentance]);
+        // `r+` must win over `r`: shortest-first would read every `r+` as `r`.
+        assert_eq!(Dlc::parse_codes("r+", &mut d), vec![Dlc::RepentancePlus]);
+        // The real page that forced this function to exist.
+        assert_eq!(
+            Dlc::parse_codes("a+nr", &mut d),
+            vec![Dlc::AfterbirthPlus, Dlc::Rebirth, Dlc::Repentance]
+        );
+        // An absent parameter is an empty list, not an error.
+        assert_eq!(Dlc::parse_codes("", &mut d), Vec::<Dlc>::new());
+        assert!(d.unknown_dlc_codes.is_empty());
+
+        // What we cannot read is counted, never dropped in silence.
+        assert_eq!(Dlc::parse_codes("zz", &mut d), Vec::<Dlc>::new());
+        assert_eq!(d.unknown_dlc_codes.get("z"), Some(&2));
+    }
 
     #[test]
     fn inline_shapes() {

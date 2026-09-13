@@ -139,12 +139,21 @@ Expected: PASS.
 - [ ] **Step 7: Run the crate's whole suite**
 
 Run: `cargo test -p wiki`
-Expected: all pass. No parser output changed yet, so `derived` is still green and `wiki.json` needs no rebuild.
+Expected: the 64 unit tests pass, and **`derived` FAILS**. This step's first draft claimed no rebuild was needed "because no parser output changed yet" — that was wrong. `Diagnostics` is serialized into `meta.diagnostics`, so adding a counter changes `wiki.json` even while the counter is still empty. The rule has no exception: touch the parser crate, rebuild the dataset.
 
-- [ ] **Step 8: Commit**
+- [ ] **Step 8: Rebuild and confirm the diff is only the new counter**
 
 ```bash
-git add crates/wiki/src/model.rs crates/wiki/src/diagnostics.rs
+pnpm wiki:build
+git diff dataset/wiki.json
+```
+
+Expected: two lines, adding `"unknownDlcCodes": {}` after `orphanClosers`. The camelCase spelling is the proof that `rename_all` is doing its job on `Diagnostics`; if it reads `unknown_dlc_codes`, stop and fix the attribute.
+
+- [ ] **Step 9: Commit**
+
+```bash
+git add crates/wiki/src/model.rs crates/wiki/src/diagnostics.rs dataset/wiki.json
 git commit -m "feat(wiki): parse concatenated dlc codes, count the unreadable ones"
 ```
 
