@@ -13,6 +13,15 @@ alone — `Tail`, the rules file, the events, the fold. Pure, and finished softw
 is the spec for both; §3's identity and §3's *Agreeing with the game* belong entirely to 1b,
 because a source is a file and `run` never sees one.
 
+**Corrected in place on 2026-09-13, before 1b was planned**, by four decisions taken in
+conversation and one measurement that contradicted the document. §1 gains the game's data folder,
+which `discovery` does not expose today unless a save happens to sit in it; §1 moves the resume
+decision into `run`, where a return value worth checking belongs; §3's identity rests on an
+anchor inside the run content, because the 4 KiB prefix turned out to be the machine describing
+itself and one millisecond timing; §3 names the single window that can answer the counters
+without asserting a vacuous truth; §5 says how far the app side goes. The measurement also cost
+the sample set a file: the two logs of 2026-09-08 are one launch, not two.
+
 **Scope.** The data: what a run *is*, and the machinery that builds one from `log.txt`.
 **Not** in scope: the `Live` and `Runs` screens. Both routes already exist in the shell as
 placeholders and both are views of this model; designing them first would let a layout
@@ -88,6 +97,42 @@ Tail::restarted(&self, len: u64) -> bool               // shorter than we had: a
 replace one another, so summing `Adding collectible` lines gives a player holding five books
 — and it takes them as a trait object the caller supplies. `ipc` wires the real catalog in.
 
+**1b adds one thing to this crate, and the reason it lands here rather than in `log-watch` is
+the same rule.** *Is this the same launch, or a new one?* is a return value worth checking, so
+it is decided by a pure function and not by the code that holds the file handle:
+
+```rust
+SourceKey { prefix: u64, anchor: u64, offset: u64 }
+Resume { Continue { offset: u64 }, Fresh }
+run::resume(stored: &SourceKey, prefix: &[u8], len: u64, at_offset: &[u8]) -> Resume
+```
+
+`log-watch` supplies the bytes — 4 KiB from the head, and the 64 that end at the stored offset
+— and asks. §3 says why the second window exists.
+
+### `discovery` — the game's data folder stops being a side effect
+
+*(Added 2026-09-13, while planning 1b. It is not a refinement: without it the watcher has
+nowhere to watch.)*
+
+`discovery` reaches `Documents\My Games\Binding of Isaac Repentance[+]\` only to look for
+`.dat` files, and the folder surfaces **only inside `SaveSource::Documents { folder }` — that
+is, only when a save happens to live there.** With Steam Cloud on, which is the ordinary case
+and this machine's, the save is under `userdata\` and no candidate is `Documents`: nothing in
+`Discovery` names the folder that holds `log.txt` and `online_logs\`.
+
+So `Discovery` gains `game_data: Option<GameDataFolder>`, probed always and independently of
+the saves:
+
+```rust
+GameDataFolder { dir: PathBuf, log: Option<PathBuf>, online_logs: Option<PathBuf>, save_backups: Option<PathBuf> }
+```
+
+Each of the three is an `Option` because each can be absent on a real machine. Like `Discovery`
+itself it is **not `Serialize`**: these are paths, and a path never crosses the IPC. Its absence
+is a `Diagnostic`, never an `Err` — the app starts without the game's logs the way it starts
+without the game.
+
 ### `log-watch` — new, deliberately thin
 
 `notify`, an offset, and a read. The trigger is B8 finding (a): the game logs
@@ -107,6 +152,13 @@ already 3, since the window session landed with `feature/background-and-tray`.)*
 `events` as rows, and `runs` as a **derived cache** carrying the rules version that produced
 it. A newer rules file invalidates the cache and the runs are folded again. This is decision
 2 made structural instead of promised.
+
+**Three tables, not one** (1b): `sources` — one row per log file read, holding the key of §3 and
+the offset reached; `events`, keyed `(source_id, seq)`, which *are* the archive; `runs`, keyed
+`(source_id, ordinal)` and carrying the `rules_version` that produced the row. Only the third is
+disposable, and it says so by carrying the number that makes it stale. `Event` and `SeedKind`
+need `Serialize`/`Deserialize`, which 1a did not give them: an event is stored, not sent, so this
+is a storage format and not an IPC one — it is under no obligation to be `camelCase`.
 
 ### `ipc` — the view-models, as always the only contract with Vue
 
@@ -189,6 +241,35 @@ of the game. A run is `(source, ordinal)`.
 This is the weakest part of the design and it is stated here so it gets attacked rather than
 discovered: a prefix hash is a heuristic, not an identity.
 
+**It was attacked on 2026-09-13, before 1b was planned, and it does not survive as written.**
+The first 4 KiB of a log is the machine speaking about itself — OpenGL version, driver, the
+OpenAL banner, the path of the game's own DLL — and none of it changes between two launches on
+one machine. Measured on the four logs in `samples/logs/`: the only byte that separates the two
+of 2026-09-12 inside that window is `load archives: 2633 milliseconds` against `2549`, at byte
+1633. **The discriminating power of the prefix is a millisecond timing**, which is an accident
+and can collide; everything around it is constant by construction.
+
+The same measurement corrected the sample set: `20260908-run-megasatan-judas.log.txt` is a
+**strict prefix** of `20260908-s1.log.txt` (`cmp` reports EOF on the shorter with no differing
+byte). They are not two launches, they are one launch copied twice at different moments — so
+the folder holds three distinct launches, not four, and it contains **no pair of different
+launches of the same machine at all**. The direction that matters most cannot be tested on real
+data today, which is itself a reason not to rest the design on the prefix.
+
+The two mistakes do not cost the same. A false *same launch* resumes at an offset into a new
+file and loses the runs before it; a false *different launch* **re-imports runs that are already
+in the archive**, and a duplicated run is wrong in the win rate and the streak forever. The
+second is the one to make impossible.
+
+**So the prefix stays as a cheap filter and the proof is an anchor.** A source stores
+`(prefix, anchor, offset)`, where `anchor` hashes the 64 bytes that *end* at the offset already
+consumed — bytes inside the run content, not inside the banner. The watcher resumes only when
+the prefix matches, `len >= offset`, and the anchor still hashes the same; anything else is a
+new source read from zero. The anchor costs one 64-byte read and removes the constant-banner
+weakness entirely, because two different launches never write the same bytes at the same offset
+past the header. It is still a heuristic — but it is one whose failure mode is re-reading a log,
+not merging two.
+
 ### Outcome — four values, one of them inferred
 
 `Won { ending }` · `Died { killer }` · `Abandoned` · `Open`
@@ -209,6 +290,20 @@ The online co-op Greed win of 2026-09-12 did **not** move counter 22. Either co-
 count toward the streak — consistent with everything else measured about co-op the same day
 — or Greed mode does not. Until that is separated, the property is asserted for solo,
 non-Greed runs only, and the archive does not claim to mirror 22 for the rest.
+
+**Which window can actually answer, named so the test is not written against nothing** (1b).
+Of the three sources on disk, two cannot: the co-op Greed session is excluded by the paragraph
+above, and `20260912-solo-judas.log.txt` is an `Open` run with neither a death nor an ending, so
+every counter correctly stays put and a test that checks it passes while saying nothing — the
+vacuity the repo has a rule about. The one live case is **2026-09-08**: the Mega Satan win with
+Judas, with `20260907` and `20260908` in `samples/` making the window around the log of that day.
+
+The task is a measurement with an open outcome, not an assertion waiting for a green tick. If
+the archive's numbers move with the save's, the property is written **with its non-vacuity
+guard** — it asserts that the window contains the win it is about. If they do not move together,
+that is a measured fact for the report and an `Unknown` in the documents, and no rule is
+invented to cover the gap. Either way the archive stops claiming, in code, an agreement nobody
+has checked.
 
 ---
 
@@ -242,6 +337,11 @@ So `Died` has no real-data coverage at all, only the line shape recorded in M0. 
 asserts that absence in a test that fails the day a log with a death arrives, rather than
 letting a green suite imply the event is covered.
 
+**And the four files are three sources** (measured 2026-09-13, see §3): the two of 2026-09-08 are
+one launch copied at two moments, the shorter being a byte-for-byte prefix of the longer. That is
+a gift for one test and a hole for another — the pair is exactly the *same launch, grown* case
+the resume rule is about, and there is no *different launch* pair anywhere in the folder.
+
 **`test-support` needs one new accessor.** Its functions today reach saves
 (`sample`, `dated_series`); the logs need the same treatment, declaring `sample: …` or
 `skip: …` on stderr, because a test on real data has to say which slice of the domain it
@@ -250,6 +350,13 @@ ran on. No test opens `samples/logs/` by hand.
 ---
 
 ## 5. What this sub-project does not do
+
+**Where 1b stops, said as a boundary rather than as a list of absences** (decided 2026-09-13):
+it goes as far as the watcher running in the real Tauri process — managed state, started at
+launch, the backfill once — the commands and the view-models, and the runs shown on the
+development-only `#verify` page. That is the furthest one can go and still verify the thing by
+playing a game, without a layout getting a vote on the contract. The page is not a screen and
+does not become one: `Live` and `Runs` are designed later, on a model that has been used.
 
 - Neither screen. `Live` and `Runs` stay placeholders.
 - No secret-room finder: the backlog puts it in a different product and nothing here moves
