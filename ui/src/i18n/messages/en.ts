@@ -310,7 +310,7 @@ export const en: MessageSchema = {
       unlocks: 'unlocks',
       fanOut: 'unlocks',
       outsideQueue: 'steps outside the queue',
-      hint: "the game's hint:",
+      condition: 'how to get it:',
     },
     achievement: 'achievement',
     empty: 'The queue is empty.',

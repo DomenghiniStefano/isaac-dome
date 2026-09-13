@@ -313,7 +313,7 @@ export const it = {
       unlocks: 'sblocca',
       fanOut: 'sblocca',
       outsideQueue: 'passi fuori dalla coda',
-      hint: 'indizio del gioco:',
+      condition: 'come si prende:',
     },
     achievement: 'achievement',
     empty: 'La coda è vuota.',
