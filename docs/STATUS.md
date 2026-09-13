@@ -23,15 +23,16 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-13. **N1, N2, N4 and N6 done** — N1, N2 and N6 merged into `develop`, N4 merged too, each on its own
-branch cut from it. The test-only public API has one notation — one `pub mod for_tests` per
-crate, seven of them; **why a command failed is a variant, not a sentence** — four enums, the
-numbers travelling as numbers, the wording in `it.ts` / `en.ts`; and **the Tauri crate is
-wiring again** — eleven files, none over 220 lines, `cargo test -p app` reporting zero.
-**N7 is the last cleanup item before M4** and is blocked on `feature/wiki-infobox`: it
-generates TypeScript from Rust types that branch is still reshaping. Order:
-N1 → N2 → N6 → N4 → N7 → M4 sub-project 1 → N8 → N3, N5. N4 was pulled forward: it is
-frontend, it touches no file `feature/wiki-infobox` has, and N7 is blocked.
+**Last update:** 2026-09-13. **Five of the eight cleanup items are done** — N1, N2, N4, N5
+and N6, each on its own branch cut from `develop`. The test-only public API has one notation
+(one `pub mod for_tests` per crate, seven of them); **why a command failed is a variant, not
+a sentence** (four enums, the numbers travelling as numbers, the wording in `it.ts` / `en.ts`);
+**the Tauri crate is wiring again** (eleven files, none over 220 lines, `cargo test -p app`
+reporting zero); one diagnostics list instead of four; and one view store instead of three.
+**N7 is the last one before M4** and is blocked on `feature/wiki-infobox`: it generates
+TypeScript from Rust types that branch is still reshaping. **N3 is the only other one left.**
+Order: N1 → N2 → N6 → N4 → N5 → N7 → M4 sub-project 1 → N8 → N3. N4 and N5 were pulled
+forward because they are frontend, touch no file that branch has, and N7 is blocked.
 **Sub-project 3.5d merged into `develop`** (`4406c49`), suite green on the merge result: a
 blocked badge opens a menu whose entries are the wiki pages of what is in the way.
 **M4's first sub-project has its design** (`cac6914`): the run model, the `run` and
@@ -898,16 +899,30 @@ reason:
       their file counts really do fall, because what they delete is a *copy*, not a copy plus
       the machinery that replaced it.
 
-- [ ] **N5. The stores stop repeating themselves.** *One session.*
-      `stores/collection.ts`, `stores/completion.ts`, `stores/graph.ts` and half of
-      `stores/wiki.ts` are the same `view` / `status` / `error` triad, the same `load()`,
-      the same `try` / `catch`; only the call in the middle changes. And `LoadStatus` is
-      exported from `stores/profile.ts`, so every other store imports a shared enum out of
-      one particular store.
-      **What:** `defineViewStore(id, loader)`, and `LoadStatus` in a file that is only
-      that. The three collapse into one `stores/views.ts`, a line each.
-      **Two files stop existing. Done when** no store writes that `try` / `catch` again and
-      `LoadStatus` is imported from a file that holds nothing else.
+- [x] **N5. The stores stop repeating themselves.** *Done 2026-09-13, `feature/ui-view-stores`.*
+      `collection.ts`, `completion.ts` and `graph.ts` are **three lines of `stores/views.ts`**,
+      and `LoadStatus` lives in `stores/loadStatus.ts`, which holds nothing else.
+      **The factory was not enough on its own, which the item had not seen.**
+      `defineViewStore` fits a store whose whole shape is the triad; three others carry more —
+      the profile loads two things under one status, the queue clears its mutation state
+      first, the wiki skips a read it has already made. They use the half underneath it,
+      **`tracked(status, error, read)`**, so the `try` / `catch` is written once for all six
+      rather than once for three.
+      **One read keeps its own, and the code says why.** `wiki`'s `loadEntry` reports a
+      failure *without ever claiming a success*: the status belongs to the index, and a page
+      arriving must not mark the index `Ready`. `tracked` cannot express that shape, and
+      forcing it would have been a behaviour change wearing a cleanup's clothes. That a
+      page's failure lands on the index's `error` is inherited and left alone — changing it
+      needs a decision, not a refactor.
+      **The graph's two answers became one `view` object**, which is what they always were:
+      one read, so `unlock` and `steps` cannot straddle a profile change. Call sites say
+      `graph.view?.unlock` instead of `graph.unlock`, and two guards that checked both
+      halves now check the one object.
+      **Done when** — both met: no store writes that `try` / `catch` by hand, and
+      `LoadStatus` is imported from a file that holds nothing else. **Three files stopped
+      existing** and three arrived (`views.ts`, `tracked.ts`, `loadStatus.ts`), so the count
+      is flat — for the reason N4 records: what is deleted here is a copy *plus* the
+      machinery that replaces it.
 
 - [x] **N6. `crates/app` goes back to being wiring.** *Done 2026-09-13, `feature/app-wiring`.*
       964 lines in one file became **eleven, none over 220**: `state.rs` for the six
@@ -1204,6 +1219,34 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-13 (last) — N5, and a `try` that was right to stay
+
+`feature/ui-view-stores`, cut from `develop` after N4 merged, suite green.
+
+- [x] **Three stores became three lines.** `collection.ts`, `completion.ts` and `graph.ts`
+      wrote the same `view` / `status` / `error` triad and the same `try` / `catch`, with
+      only the call in the middle different. `LoadStatus` left `profile.ts` for a file that
+      holds nothing else: every other store had been importing a shared enum out of one
+      particular store, which said, wrongly, that the profile owns the idea.
+- [x] **The factory alone would have left half the duplication standing.** `defineViewStore`
+      fits a store whose whole shape is the triad, and three others carry more — the profile
+      loads two things under one status, the queue clears its mutation state first, the wiki
+      skips a read it has already made. Extracting `tracked(status, error, read)` from under
+      the factory is what makes the item's own criterion true: **no** store writes that
+      `try` / `catch` by hand, not just the three the item named.
+- [ ] **One read kept its `try`, and that is the finding.** `wiki`'s `loadEntry` reports a
+      failure *without ever claiming a success* — the status belongs to the index, and a page
+      arriving must not mark the index `Ready`. `tracked` always sets `Ready`, so forcing it
+      there would have been a behaviour change wearing a cleanup's clothes, and one that
+      nothing would have caught: the suite is green either way.
+      **What is left open is the thing underneath it**: a page's failure lands on the
+      *index's* `error`, so one missing wiki page can make the whole index look failed. That
+      is inherited, not decided here, and it needs a decision rather than a refactor —
+      `feature/wiki-infobox` is in that code now and is the right place to settle it.
+- [x] **The graph's two answers became one `view` object**, which is what they always were:
+      a single read, so `unlock` and `steps` cannot straddle a profile change. Two guards
+      that checked both halves now check the one object.
 
 ### 2026-09-13 (later still) — N4, and a counting rule that disagrees with itself
 
