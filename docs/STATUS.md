@@ -29,12 +29,22 @@ and N6, each on its own branch cut from `develop`. The test-only public API has 
 a sentence** (four enums, the numbers travelling as numbers, the wording in `it.ts` / `en.ts`);
 **the Tauri crate is wiring again** (eleven files, none over 220 lines, `cargo test -p app`
 reporting zero); one diagnostics list instead of four; and one view store instead of three.
-**N7 is the last one before M4** and is blocked on `feature/wiki-infobox`: it generates
-TypeScript from Rust types that branch is still reshaping. **N3 is the only other one left.**
+**N7 is the last one before M4** and is **no longer blocked**: `feature/wiki-infobox` merged
+into `develop` on 2026-09-13, and the transformations that reshaped the same types merged
+after it. It generates TypeScript from Rust types, and it now has more to absorb than when it
+was written — `Infobox::Transformation`, `RequirementView::Threshold` and
+`ThresholdItemView`. **N3 is the only other one left.**
 Order: N1 → N2 → N6 → N4 → N5 → N7 → M4 sub-project 1 → N8 → N3. N4 and N5 were pulled
 forward because they are frontend, touch no file that branch has, and N7 is blocked.
 **Sub-project 3.5d merged into `develop`** (`4406c49`), suite green on the merge result: a
 blocked badge opens a menu whose entries are the wiki pages of what is in the way.
+**The wiki's transformations merged into `develop`** on 2026-09-13, suite green on the merge
+result: sixteen pages, a seventh `PageKind`, and `Requirement::Threshold` — the shape the
+model could never say, *N of these items*. The four nodes behind Guppy and Beelzebub are
+answered. **The other half of B34 was written and thrown away**: the thirteen `pickup:`
+references are real requirements, not noise, and dropping them would have made their nodes
+read *available now*. Report in
+`docs/superpowers/plans/2026-09-13-transformations-report.md`.
 **M4's first sub-project has its design** (`cac6914`): the run model, the `run` and
 `log-watch` crates, and the backfill that makes the archive born full from the logs already
 on disk.
