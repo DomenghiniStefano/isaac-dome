@@ -13,7 +13,6 @@ import {
   canGoBack,
   canGoForward,
   closeTab,
-  firstState,
   forwardTab,
   insertTab,
   moveTab,
@@ -22,14 +21,15 @@ import {
   refineTab,
   removeTab,
   seedState,
+  sessionOf,
   selectTab,
   tabLocation,
   tabSeed,
 } from './tabModel'
 import type { Tab, TabSeed, TabsState } from './tabModel'
 
-// The open tabs, window-wide. The rules are tabModel's; this holds the result. Nothing is
-// saved yet: tabs surviving a restart is sub-project 7.
+// The open tabs, window-wide. The rules are tabModel's; this holds the result. What a window
+// holds is saved and restored by `lib/window/session.ts` (part of 3.7, landed with the tray).
 export const useTabsStore = defineStore(StoreId.Tabs, () => {
   let counter = 0
   const nextId = (): string => `tab-${++counter}`
@@ -39,15 +39,16 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     index: 0,
   })
 
-  // `main` starts with its landing tab, as it always has. A window born from a tear-off starts
-  // empty and waits for its seed (`lib/window/session.ts`): what it holds is decided by the
-  // window that created it and never travels in its URL.
-  const born = windowPort.isMain()
+  // **Every window starts empty and waits to be told what it holds** (`lib/window/session.ts`).
+  // A window born from a tear-off is told by the window that created it; `main` is told by its
+  // own last session. Neither ever travels in a URL.
+  //
+  // `main` used to start on its landing tab instead. It doesn't any more because the landing
+  // tab would then be painted and replaced a moment later by the session — a tab appearing and
+  // vanishing, which is worse than a bar that is empty for the length of one read.
   const empty: TabsState = { tabs: [], activeId: '' }
-  const state = ref<TabsState>(
-    born ? firstState(nextId(), defaultLocation) : empty,
-  )
-  const pending = ref(!born)
+  const state = ref<TabsState>(empty)
+  const pending = ref(true)
 
   const tabs = computed(() => state.value.tabs)
   const activeId = computed(() => state.value.activeId)
@@ -117,6 +118,10 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     // cannot keep this window alive.
     await paid
   }
+
+  // What this window would be restored from. The rule is `tabModel`'s, as every other rule
+  // about tabs is; this only reads it.
+  const session = computed(() => sessionOf(state.value))
 
   // The tab at that index, as it travels: everything but its identity.
   const seedAt = (index: number): TabSeed | null => {
@@ -232,6 +237,7 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     navigate,
     seed,
     seedAt,
+    session,
     incoming,
     aimIncoming,
     clearIncoming,
