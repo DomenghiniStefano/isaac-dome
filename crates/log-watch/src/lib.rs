@@ -8,10 +8,12 @@
 mod archive;
 mod read;
 mod sessions;
+mod watch;
 
 pub use archive::{Ingest, Ingested};
 pub use read::{chunk, head, len, window_ending_at, CHUNK};
 pub use sessions::sessions;
+pub use watch::{watch, LogWatcher};
 
 /// What can go wrong down here. An `io::ErrorKind`, never the OS's own sentence: it is not
 /// translatable and on some platforms it repeats the path it was given.
