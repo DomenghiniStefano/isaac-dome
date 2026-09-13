@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { PlusIcon } from '@lucide/vue'
-import { nextTick, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
+import { DragGhost } from '@/components/ui/drag'
+import { useDragList } from '@/composables/useDragList'
 import { useMessages } from '@/i18n'
 import { EventKey } from '@/lib/constants/eventKeys'
+import { Axis, boxAt } from '@/lib/drag/dragList'
+import type { Box, Point } from '@/lib/drag/dragList'
 import TabItem from './TabItem.vue'
 import type { DropSide, TabView } from './tabs'
 import { TabDrag, TabRole, dropSide, moveIndex } from './tabs'
@@ -17,11 +21,6 @@ const emit = defineEmits<{
 }>()
 const { t } = useMessages()
 
-interface Drag {
-  from: number
-  startX: number
-  moving: boolean
-}
 interface Drop {
   index: number
   side: DropSide
@@ -30,56 +29,37 @@ interface Drop {
 const tabSelector = `[role="${TabRole}"]`
 
 const strip = ref<HTMLElement | null>(null)
-const drag = ref<Drag | null>(null)
-const drop = ref<Drop | null>(null)
-// Where the tabs are, read once when a press becomes a drag: nothing moves until the drag
-// ends, and a layout read for every tab on every pointermove would be waste.
-let tabRects: DOMRect[] = []
 
 const tabElements = (): HTMLElement[] =>
   strip.value ? [...strip.value.querySelectorAll<HTMLElement>(tabSelector)] : []
 
-const dropAt = (x: number, from: number): Drop | null => {
-  for (const [index, r] of tabRects.entries()) {
-    if (x >= r.left && x < r.right)
-      return index === from
-        ? null
-        : { index, side: dropSide(x, r.left, r.width) }
-  }
-  return null
+// Which side of which tab the drop lands on. A pointer over the dragged tab itself means
+// nothing to do; `dropSide` and `moveIndex` stay the strip's own semantics.
+const resolve = (p: Point, boxes: Box[], from: number): Drop | null => {
+  const index = boxAt(boxes, p, Axis.X)
+  const box = index === null ? undefined : boxes[index]
+  if (index === null || index === from || !box) return null
+  return { index, side: dropSide(p.x, box.left, box.width) }
 }
 
-// A press becomes a drag only past the threshold, and only then is the pointer captured:
-// a capture from the first pixel would send the click to the strip instead of the tab.
-const onPointerDown = (index: number, e: PointerEvent) => {
-  if (e.button !== 0) return
-  drag.value = { from: index, startX: e.clientX, moving: false }
-}
+const drag = useDragList<Drop>({
+  axis: Axis.X,
+  container: strip,
+  items: tabElements,
+  threshold: TabDrag.Threshold,
+  resolve,
+  commit: (from, landing) => {
+    if (!landing) return
+    const to = moveIndex(from, landing.index, landing.side)
+    if (to !== from) emit('move', from, to)
+  },
+})
 
-const onPointerMove = (e: PointerEvent) => {
-  const d = drag.value
-  if (!d) return
-  if (!d.moving) {
-    if (Math.abs(e.clientX - d.startX) < TabDrag.Threshold) return
-    d.moving = true
-    tabRects = tabElements().map((el) => el.getBoundingClientRect())
-    strip.value?.setPointerCapture(e.pointerId)
-  }
-  drop.value = dropAt(e.clientX, d.from)
-}
-
-const onPointerUp = (e: PointerEvent) => {
-  const d = drag.value
-  const target = drop.value
-  drag.value = null
-  drop.value = null
-  tabRects = []
-  if (strip.value?.hasPointerCapture(e.pointerId))
-    strip.value.releasePointerCapture(e.pointerId)
-  if (!d?.moving || !target) return
-  const to = moveIndex(d.from, target.index, target.side)
-  if (to !== d.from) emit('move', d.from, to)
-}
+// The tab the ghost draws: the grabbed one, as it is — an inactive tab lifted as if it were
+// the active one would read as a different tab.
+const grabbed = computed(() =>
+  drag.from.value === null ? null : props.tabs[drag.from.value],
+)
 
 const neighbour = (key: string): number | null => {
   const index = props.tabs.findIndex((tab) => tab.id === props.activeId)
@@ -106,9 +86,9 @@ const onKeydown = (e: KeyboardEvent) => {
       ref="strip"
       role="tablist"
       class="flex min-w-0 items-end gap-px"
-      @pointermove="onPointerMove"
-      @pointerup="onPointerUp"
-      @pointercancel="onPointerUp"
+      @pointermove="drag.move"
+      @pointerup="drag.end"
+      @pointercancel="drag.end"
       @keydown="onKeydown"
     >
       <TabItem
@@ -116,13 +96,21 @@ const onKeydown = (e: KeyboardEvent) => {
         :key="tab.id"
         :tab="tab"
         :active="tab.id === activeId"
-        :dragging="drag?.moving === true && drag.from === index"
-        :drop="drop?.index === index ? drop.side : null"
-        @pointerdown="onPointerDown(index, $event)"
+        :dragging="drag.moving.value && drag.from.value === index"
+        :drop="drag.drop.value?.index === index ? drag.drop.value.side : null"
+        @pointerdown="drag.start(index, $event)"
         @select="emit('select', tab.id)"
         @close="emit('close', tab.id)"
       />
     </div>
+    <DragGhost v-if="drag.ghost.value && grabbed" :box="drag.ghost.value">
+      <TabItem
+        :tab="grabbed"
+        :active="grabbed.id === activeId"
+        :dragging="false"
+        :drop="null"
+      />
+    </DragGhost>
     <Button
       :variant="ButtonVariant.Chrome"
       :size="ButtonSize.IconCompact"

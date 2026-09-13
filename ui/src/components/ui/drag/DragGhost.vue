@@ -13,6 +13,7 @@ defineProps<{ box: GhostBox }>()
        size are CSS variables bound here — convention 1's one exception to "no inline style". -->
   <Teleport to="body">
     <div
+      aria-hidden="true"
       class="pointer-events-none fixed top-(--drag-top) left-(--drag-left) z-50 h-(--drag-height) w-(--drag-width) overflow-hidden border-2 border-primary bg-sheet"
       :style="{
         '--drag-left': `${box.left}px`,
