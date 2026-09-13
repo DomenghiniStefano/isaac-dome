@@ -354,8 +354,19 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // is a comma-separated list of names, and `resolve` answers with one target. They
         // are how a transformation page states what counts toward it, which is the only
         // complete statement of that set — the infobox's `items` misses Guppy's trinket.
-        k @ ("collectible table" | "trinket table") => {
-            let kind = if k == "collectible table" { "i" } else { "t" };
+        k @ ("collectible table" | "collectible rows" | "trinket table" | "trinket rows") => {
+            let kind = if k.starts_with("collectible") {
+                "i"
+            } else {
+                "t"
+            };
+            // `rows` takes an optional `dlc =`: Conjoined splits its list by edition, one
+            // `rows` each under a shared header, and those items count only in that
+            // edition — which is what `Inline::Edition` says everywhere else.
+            let edition = t.named.get("dlc").map(|c| dlc_codes(c));
+            if let Some(only) = edition.clone() {
+                out.open(only);
+            }
             for (n, item) in arg.split(',').enumerate() {
                 let item = item.trim();
                 if item.is_empty() {
@@ -379,6 +390,9 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
                         out.buf.push_str(item);
                     }
                 }
+            }
+            if edition.is_some() {
+                out.close();
             }
         }
         name if CONTENT_WRAPPERS.contains(&name) => recurse_into_arg(&arg, r, d, out, depth),
@@ -855,6 +869,46 @@ mod tests {
         assert!(matches!(targets[0], Target::Item { id: 25 }));
         assert!(matches!(targets[1], Target::Item { id: 584 }));
         assert!(matches!(targets[2], Target::Trinket { id: 1 }));
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// Censused on the sixteen transformation pages, 2026-09-13: the item lists come in two
+    /// shapes, and `rows` is the **more common** one — 25 occurrences against 14 for
+    /// `table`, because a page that splits its list by edition uses one `rows` per edition
+    /// under a shared header.
+    #[test]
+    fn the_rows_form_of_the_two_tables_resolves_the_same_way() {
+        let (v, d) = p("{{collectible rows | Breakfast, Book of Virtues }} {{trinket rows | Swallowed Penny }}");
+        let refs = v.iter().filter(|i| matches!(i, Inline::Ref { .. })).count();
+        assert_eq!(refs, 3, "{v:?}");
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// `{{collectible rows | dlc = r | … }}` is Conjoined's real markup: those items count
+    /// toward the transformation **only in that edition**, which is what `Inline::Edition`
+    /// already says everywhere else. Flattening it away would claim they always count.
+    #[test]
+    fn a_rows_list_qualified_by_edition_stays_qualified() {
+        let (v, _) = p("{{collectible rows | dlc = r | Breakfast }}");
+        assert!(
+            v.iter().any(|i| matches!(
+                i,
+                Inline::Edition { only, inline }
+                    if only == &vec![Dlc::Repentance]
+                        && inline.iter().any(|n| matches!(n, Inline::Ref { .. }))
+            )),
+            "{v:?}"
+        );
+    }
+
+    /// The header half of the same markup draws a table head and names nothing. It has to be
+    /// layout, not unknown: an unknown template recurses into its argument, and these pages
+    /// carry twelve of them.
+    #[test]
+    fn the_table_headers_are_layout_and_not_unknown() {
+        let (v, d) =
+            p("{{Collectible table/header}}{{trinket table/header}}{{header transformations}}");
+        assert!(v.is_empty(), "{v:?}");
         assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
     }
 

@@ -141,6 +141,12 @@ const LAYOUT: &[&str] = &[
     "header characters",
     "storage page",
     "unlockable",
+    "header transformations",
+    // The head of the two-part item table: `{{Collectible table/header}}` draws the row of
+    // column titles and `{{collectible rows|…}}` carries the names. Layout and not unknown,
+    // because an unknown template recurses into its argument and these have none to give.
+    "collectible table/header",
+    "trinket table/header",
     "reflist",
     "clear",
     "main",
