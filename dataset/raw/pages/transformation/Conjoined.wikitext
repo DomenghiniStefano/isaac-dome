@@ -1,0 +1,38 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 7
+ | dlc         = a
+ | description = Adds two tumors that fire diagonally from Isaac's head. -0.3 [[Damage]], -0.3 [[Tears]].
+ | appearance  = a three-faced version of himself
+ | Brother Bobby | Harlequin Baby | Headless Baby | Little Steven | Mongo Baby | Rotten Baby | Sister Maggy
+}}
+
+'''Conjoined''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth]]'', grows two tumor faces from Isaac's cheeks after picking up 3 baby familiar items.
+
+== Effects ==
+* Isaac fires tears from the tumor faces simultaneously and diagonally (similar to the effect of {{i|The Wiz}}), while continuing to shoot forwards.
+* -0.3 [[damage]] and [[tears]].
+
+== Requirements ==
+Pick up 3 [[item]]s from the following list ({{dlc|r}} with the [[Item Tags baby|{{code|baby}} tag]]).
+
+=== Passive Collectibles ===
+{{Collectible table/header}}
+{{collectible rows | Brother Bobby, Harlequin Baby, Headless Baby, Little Steven, Mongo Baby, Rotten Baby, Sister Maggy }}
+{{collectible rows | dlc = r | Abel, Acid Baby, Boiled Baby, Buddy in a Box, Cube Baby, Demon Baby, Dry Baby, Farting Baby, Freezer Baby, Ghost Baby, Guardian Angel, Incubus, King Baby, Lil Abaddon, Lil Brimstone, Lil Loki, Multidimensional Baby, Quints, Rainbow Baby, Robo-Baby, Robo-Baby 2.0, Seraphim, Sworn Protector, Twisted Pair }}
+{{collectible rows | dlc = r+ | Lil Delirium }}
+|}
+
+== Notes ==
+* Isaac starts with this transformation in [[The Family Man]] challenge, but due to the challenge's [[blindfolded]] property, it's useless without {{i|Incubus}}.
+* {{I|Little Gish}}, {{i|Lil Monstro}}, {{I|Lil Delirium|nr+}}, and {{c|Lilith}}'s {{i|Incubus}} do not contribute toward the transformation.
+* Familiars obtained from {{i|Cambion Conception}}, {{I|Immaculate Conception}} or {{I|Monster Manual}} do not contribute toward the transformation.
+* {{dlc+|r}} Familiars obtained from {{P|Soul of Lilith|n}} contribute toward the transformation.{{dlc-}}
+* {{dlc+|r}} Using {{I|Sacrificial Altar}} can remove Conjoined if it lowers the number of familiars below 3.{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Transformations Afterbirth.jpg|Concept art for the Conjoined transformation and other Afterbirth transformations by Edmund McMillen.
+</gallery>
+
+{{nav|conjoined|fr=Siamois}}

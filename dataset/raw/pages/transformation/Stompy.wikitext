@@ -1,0 +1,38 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 13
+ | dlc         = a+
+ | description = Taking damage has a chance to spawn rock waves. {{dlc|r}} Isaac can break obstacles by walking over them.
+ | pickup      = [[One Makes You Larger]] pill
+ | items       = Leo, Magic Mushroom
+}}
+
+'''Stompy''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth †]]'', making Isaac larger after picking up 3 items or pills that increase his size.
+
+== Effects ==
+* Gives a chance to spawn rock waves around Isaac upon taking damage.
+* {{dlc+|r}} Isaac can crush rocks and other destructible obstacles by walking over them.
+** Touching [[Rocks#Spiked Rocks|spiked rocks]] sometimes doesn't deal damage, depending on Isaac's size, speed and angle they're touched from.
+** Isaac can also crush {{e|Rock Spider}}s and {{e|Tinted Rock Spider}}s by stepping on them. Killing a Rock Spider this way ''will'' spawn a {{e|Spider}} which is extremely likely to deal damage to Isaac.{{dlc-}}
+* Creates dust clouds when walking.
+
+== Requirements ==
+Pick up 3 [[item]]s or [[pill]]s from the following list.
+
+=== Passive Collectibles ===
+{{collectible table | Leo, Magic Mushroom }}
+
+=== Pills ===
+* [[One Makes You Larger]] (each pill taken will count towards the transformation)
+
+== Notes ==
+* While the {{I|Thunder Thighs}} item does not contribute to the {{tf|Stompy}} transformation, it still grants the ability to crush rocks and other destructible obstacles.
+* Picking up items that decrease size do not count against progress for this transformation.
+* {{dlc|nr}} This transformation makes it more difficult to effectively use {{Machine|Blood Donation Machine}}s and {{Machine|Devil Beggar}}s, as the rock waves will destroy them.
+
+== Trivia ==
+* This transformation and {{tf|Adult}} are the only transformations that [[pill]]s count towards.
+* This is the only transformation that doesn't add to Isaac's costume, and instead only changes his size and adds dust trails when he walks, as if kicking up dirt by stomping.
+
+{{nav|stompy|booster pack|fr=Poids Lourd}}
+[[Category:Added in Booster Pack 2]]

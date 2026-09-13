@@ -245,6 +245,12 @@
     "revid": 265848,
     "timestamp": "2026-07-22T17:21:56Z"
   },
+  "Adult": {
+    "kind": "transformation",
+    "pageid": 2452,
+    "revid": 262556,
+    "timestamp": "2026-03-31T06:41:00Z"
+  },
   "Akeldama": {
     "kind": "collectible",
     "pageid": 10690,
@@ -478,6 +484,12 @@
     "pageid": 1752,
     "revid": 265089,
     "timestamp": "2026-06-25T22:02:09Z"
+  },
+  "Beelzebub": {
+    "kind": "transformation",
+    "pageid": 6592,
+    "revid": 266812,
+    "timestamp": "2026-07-28T10:43:11Z"
   },
   "Belly Button": {
     "kind": "collectible",
@@ -779,6 +791,12 @@
     "revid": 261678,
     "timestamp": "2026-03-26T13:57:05Z"
   },
+  "Bob": {
+    "kind": "transformation",
+    "pageid": 3803,
+    "revid": 262459,
+    "timestamp": "2026-03-31T04:51:41Z"
+  },
   "Bob's Bladder": {
     "kind": "trinket",
     "pageid": 11201,
@@ -862,6 +880,12 @@
     "pageid": 9914,
     "revid": 268567,
     "timestamp": "2026-08-23T19:57:04Z"
+  },
+  "Bookworm": {
+    "kind": "transformation",
+    "pageid": 6685,
+    "revid": 262546,
+    "timestamp": "2026-03-31T06:24:49Z"
   },
   "Boom!": {
     "kind": "collectible",
@@ -1360,6 +1384,12 @@
     "pageid": 10488,
     "revid": 267212,
     "timestamp": "2026-07-30T08:21:29Z"
+  },
+  "Conjoined": {
+    "kind": "transformation",
+    "pageid": 7409,
+    "revid": 262491,
+    "timestamp": "2026-03-31T05:17:35Z"
   },
   "Conquest": {
     "kind": "boss",
@@ -2351,6 +2381,12 @@
     "revid": 265898,
     "timestamp": "2026-07-22T17:22:09Z"
   },
+  "Fun Guy": {
+    "kind": "transformation",
+    "pageid": 11179,
+    "revid": 269273,
+    "timestamp": "2026-09-12T06:09:59Z"
+  },
   "G FUEL!": {
     "kind": "collectible",
     "pageid": 12381,
@@ -2554,6 +2590,12 @@
     "pageid": 1190,
     "revid": 268393,
     "timestamp": "2026-08-19T14:52:27Z"
+  },
+  "Guppy": {
+    "kind": "transformation",
+    "pageid": 2344,
+    "revid": 262417,
+    "timestamp": "2026-03-31T03:48:52Z"
   },
   "Guppy's Collar": {
     "kind": "collectible",
@@ -3220,6 +3262,12 @@
     "pageid": 10644,
     "revid": 261918,
     "timestamp": "2026-03-26T17:27:24Z"
+  },
+  "Leviathan": {
+    "kind": "transformation",
+    "pageid": 4629,
+    "revid": 262479,
+    "timestamp": "2026-03-31T05:09:18Z"
   },
   "Liberty Cap": {
     "kind": "trinket",
@@ -4127,6 +4175,12 @@
     "revid": 264830,
     "timestamp": "2026-06-02T20:00:22Z"
   },
+  "Necromancer": {
+    "kind": "transformation",
+    "pageid": 15591,
+    "revid": 262562,
+    "timestamp": "2026-03-31T06:47:21Z"
+  },
   "Neptunus": {
     "kind": "collectible",
     "pageid": 6766,
@@ -4198,6 +4252,12 @@
     "pageid": 4614,
     "revid": 269257,
     "timestamp": "2026-09-11T04:58:34Z"
+  },
+  "Oh Crap": {
+    "kind": "transformation",
+    "pageid": 7330,
+    "revid": 269205,
+    "timestamp": "2026-09-09T14:49:11Z"
   },
   "Old Bandage": {
     "kind": "collectible",
@@ -5009,6 +5069,12 @@
     "revid": 266049,
     "timestamp": "2026-07-22T17:45:58Z"
   },
+  "Seraphim (Transformation)": {
+    "kind": "transformation",
+    "pageid": 4346,
+    "revid": 262529,
+    "timestamp": "2026-03-31T06:12:17Z"
+  },
   "Serpent's Kiss": {
     "kind": "collectible",
     "pageid": 2646,
@@ -5183,6 +5249,12 @@
     "revid": 253113,
     "timestamp": "2025-11-10T14:34:03Z"
   },
+  "Spider Baby (Transformation)": {
+    "kind": "transformation",
+    "pageid": 1059,
+    "revid": 262550,
+    "timestamp": "2026-03-31T06:31:16Z"
+  },
   "Spider Bite": {
     "kind": "collectible",
     "pageid": 4848,
@@ -5248,6 +5320,12 @@
     "pageid": 1606,
     "revid": 266638,
     "timestamp": "2026-07-26T09:19:24Z"
+  },
+  "Spun": {
+    "kind": "transformation",
+    "pageid": 12196,
+    "revid": 263464,
+    "timestamp": "2026-04-23T14:07:42Z"
   },
   "Squeezy": {
     "kind": "collectible",
@@ -5320,6 +5398,12 @@
     "pageid": 6839,
     "revid": 266639,
     "timestamp": "2026-07-26T09:19:32Z"
+  },
+  "Stompy": {
+    "kind": "transformation",
+    "pageid": 10949,
+    "revid": 267364,
+    "timestamp": "2026-08-03T14:17:16Z"
   },
   "Stop Watch": {
     "kind": "collectible",
@@ -5410,6 +5494,12 @@
     "pageid": 10879,
     "revid": 253154,
     "timestamp": "2025-11-10T14:52:27Z"
+  },
+  "Super Bum": {
+    "kind": "transformation",
+    "pageid": 677,
+    "revid": 269131,
+    "timestamp": "2026-09-08T09:34:01Z"
   },
   "Super Magnet": {
     "kind": "trinket",
@@ -6532,6 +6622,12 @@
     "pageid": 6108,
     "revid": 267422,
     "timestamp": "2026-08-08T05:47:07Z"
+  },
+  "Yes Mother?": {
+    "kind": "transformation",
+    "pageid": 13032,
+    "revid": 262431,
+    "timestamp": "2026-03-31T04:12:37Z"
   },
   "Your Soul": {
     "kind": "trinket",

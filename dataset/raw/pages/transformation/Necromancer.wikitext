@@ -1,0 +1,42 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 15
+ | dlc         = r+
+ | description = {{i|The Necronomicon}} becomes empowered. It can be used 10 times with no recharge between uses per floor, after which it turns back to normal for the rest of the floor.
+ | requirement = three items from this set
+ | appearance  = an upgraded form
+ | target      = {{i|The Necronomicon}}
+ | items       = {{i|The Necronomicon}}, {{i|Missing Page 2}}, {{t|A Missing Page}}
+}}
+
+'''Necromancer''' is a [[transformation]] added in ''[[The Binding of Isaac: Repentance+]]'', upgrading Isaac's Necronomicon after picking up its page item and trinket.
+
+== Effects ==
+* {{i|The Necronomicon}} charge becomes a special purple bar that depletes by 10% each use.
+* In this state, The Necronomicon cannot be recharged in any usual manner, but instead recharges fully upon reaching the next floor.
+** If the charge is fully depleted, The Necronomicon turns back to normal for the rest of the floor, starting with an empty charge bar.
+** If the charge is not fully depleted upon reaching the next floor, the purple bar can be overcharged, up to one extra full bar.
+
+== Requirements ==
+Pick up each of the 3 [[item]]s and [[trinket]]s from the following list.
+
+=== Activated Collectibles ===
+{{collectible table/header}}
+{{collectible rows | The Necronomicon }}
+|}
+
+=== Passive Collectibles ===
+{{collectible table/header}}
+{{collectible rows | Missing Page 2 }}
+|}
+
+=== Trinkets ===
+{{Trinket table | A Missing Page }}
+
+== Gallery ==
+<gallery>
+File:Collectible The Necronomicon Necromancer icon.png|The Necronomicon appearance while having the Necromancer transformation.
+File:Collectible The Necronomicon Necromancer activated.png|Image of The Necronomicon when gaining the Necromancer transformation.
+</gallery>
+
+{{nav|necromancer|fr=Nécromancien}}
