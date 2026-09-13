@@ -83,6 +83,10 @@ impl Corrections {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Resolution {
     Target(Target),
+    /// A wiki page the game gives no id, and never would: machines, beggars, item pools.
+    /// Distinct from `Unresolved`, which means "we looked for an id and did not find one" —
+    /// a failure worth a diagnostic. This one is the expected answer, so it gets none.
+    Concept,
     Unresolved,
     Ignore,
     Unknown,
@@ -324,6 +328,9 @@ impl Resolver {
                 .characters
                 .get(&k)
                 .map(|id| Target::Character { id: *id }),
+            // Machines and beggars: the game has no id for them, so they are wiki concepts
+            // rather than targets. `m` is the largest single entry `unknownTemplates` had.
+            "m" | "machine" => return Resolution::Concept,
             "s" | "floor" => {
                 return Resolution::Target(Target::Stage {
                     name: arg.trim().to_string(),
@@ -733,7 +740,14 @@ mod tests {
         assert_eq!(r.resolve("cit", "p"), Resolution::Ignore);
         assert_eq!(r.resolve("nav", ""), Resolution::Ignore);
         assert_eq!(r.resolve("#ev:youtube", "x"), Resolution::Ignore);
-        assert_eq!(r.resolve("m", "Donation Machine"), Resolution::Unknown);
+        // A name no template will ever have: see `unknown_and_layout_templates`.
+        assert_eq!(
+            r.resolve("notatemplate", "Donation Machine"),
+            Resolution::Unknown
+        );
+        // Machines are concepts by construction, not failed lookups.
+        assert_eq!(r.resolve("m", "Donation Machine"), Resolution::Concept);
+        assert_eq!(r.resolve("machine", "Beggar"), Resolution::Concept);
     }
 
     #[test]
