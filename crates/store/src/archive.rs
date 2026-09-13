@@ -118,34 +118,75 @@ impl Store {
         Ok(out)
     }
 
-    pub fn insert_session_source(&self, name: &str, key: &SourceKey) -> Result<i64, StoreError> {
-        self.insert_source(SourceKind::Session, Some(name), key)
-    }
-
+    /// A launch of `log.txt` nobody has read yet.
     pub fn insert_log_source(&self, key: &SourceKey) -> Result<i64, StoreError> {
-        self.insert_source(SourceKind::Log, None, key)
+        let tx = self
+            .conn
+            .unchecked_transaction()
+            .map_err(StoreError::from_sqlite)?;
+        let id = self.insert_source(SourceKind::Log, None, key)?;
+        tx.commit().map_err(StoreError::from_sqlite)?;
+        Ok(id)
     }
 
-    /// Where this source has been read to, after a read advanced it.
-    pub fn set_source_key(&self, id: i64, key: &SourceKey) -> Result<(), StoreError> {
+    /// A session, with its source row and its events written **together**.
+    ///
+    /// One write, because a source row with no events is a session marked imported for ever
+    /// while holding nothing — and nothing would ever read that folder again.
+    pub fn import_session(
+        &self,
+        name: &str,
+        key: &SourceKey,
+        events: &[Event],
+    ) -> Result<i64, StoreError> {
+        let tx = self
+            .conn
+            .unchecked_transaction()
+            .map_err(StoreError::from_sqlite)?;
+        let id = self.insert_source(SourceKind::Session, Some(name), key)?;
+        self.write_events(id, events)?;
+        tx.commit().map_err(StoreError::from_sqlite)?;
+        Ok(id)
+    }
+
+    /// Appends to a launch and moves its offset, **in one write**, answering how many rows it
+    /// wrote.
+    ///
+    /// The two halves cannot be separate statements. Events written with the offset left behind
+    /// are events the next read finds again and files a second time — the duplicate-runs failure
+    /// the anchor exists to prevent, reached through a crash instead of through a bad guess.
+    pub fn append_to_log(
+        &self,
+        source_id: i64,
+        key: &SourceKey,
+        events: &[Event],
+    ) -> Result<u32, StoreError> {
+        let tx = self
+            .conn
+            .unchecked_transaction()
+            .map_err(StoreError::from_sqlite)?;
+        let written = self.write_events(source_id, events)?;
         self.conn
             .execute(
                 "UPDATE sources SET prefix_hash = ?2, prefix_len = ?3, anchor_hash = ?4,
                  read_offset = ?5 WHERE id = ?1",
                 params![
-                    id,
+                    source_id,
                     hex(key.prefix),
                     key.prefix_len as i64,
                     hex(key.anchor),
                     key.offset as i64
                 ],
             )
-            .map(|_| ())
-            .map_err(StoreError::from_sqlite)
+            .map_err(StoreError::from_sqlite)?;
+        tx.commit().map_err(StoreError::from_sqlite)?;
+        Ok(written)
     }
 
-    /// Appends after whatever is already there, and answers how many rows it wrote.
-    pub fn append_events(&self, source_id: i64, events: &[Event]) -> Result<u32, StoreError> {
+    /// Appends after whatever is already there. Inside a transaction opened by the caller: on
+    /// its own, one `INSERT` per event is one commit per event, which is both slow and a way to
+    /// leave half a read behind.
+    fn write_events(&self, source_id: i64, events: &[Event]) -> Result<u32, StoreError> {
         let next: i64 = self
             .conn
             .query_row(
@@ -154,6 +195,10 @@ impl Store {
                 |r| r.get(0),
             )
             .map_err(StoreError::from_sqlite)?;
+        let mut stmt = self
+            .conn
+            .prepare_cached("INSERT INTO events (source_id, seq, event_json) VALUES (?1, ?2, ?3)")
+            .map_err(StoreError::from_sqlite)?;
         let mut written = 0;
         for (i, event) in events.iter().enumerate() {
             // An event that will not serialize cannot happen (no maps, no floats), and if it
@@ -161,11 +206,7 @@ impl Store {
             let Ok(json) = serde_json::to_string(event) else {
                 continue;
             };
-            self.conn
-                .execute(
-                    "INSERT INTO events (source_id, seq, event_json) VALUES (?1, ?2, ?3)",
-                    params![source_id, next + i as i64, json],
-                )
+            stmt.execute(params![source_id, next + i as i64, json])
                 .map_err(StoreError::from_sqlite)?;
             written += 1;
         }
@@ -193,12 +234,19 @@ impl Store {
     }
 
     /// Replaces the fold of this source. The ordinal is the position in the log.
+    ///
+    /// One write like the others: a cache half replaced is a source that reads as having fewer
+    /// runs than it has, which is worse than one that reads as having none.
     pub fn cache_runs(
         &self,
         source_id: i64,
         rules_version: u32,
         runs: &[Run],
     ) -> Result<(), StoreError> {
+        let tx = self
+            .conn
+            .unchecked_transaction()
+            .map_err(StoreError::from_sqlite)?;
         self.conn
             .execute("DELETE FROM runs WHERE source_id = ?1", params![source_id])
             .map_err(StoreError::from_sqlite)?;
@@ -214,6 +262,7 @@ impl Store {
                 )
                 .map_err(StoreError::from_sqlite)?;
         }
+        tx.commit().map_err(StoreError::from_sqlite)?;
         Ok(())
     }
 
