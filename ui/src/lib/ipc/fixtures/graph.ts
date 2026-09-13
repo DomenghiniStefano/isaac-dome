@@ -4,9 +4,13 @@ import type {
   RequirementView,
   StepsBasis,
   StepsSection,
+  Target,
   UnlockNode,
   UnlockTarget,
   UnlockView,
+  WantState,
+  WantView,
+  WantedView,
 } from '../types'
 import { packIconUrl } from './graphArt'
 
@@ -216,4 +220,68 @@ export const graphAnswers = ({
       })),
     },
   }
+}
+
+// B37, development only: the same question the `want` command answers, over the payload the
+// other two fixtures read. Deliberately simple — it resolves the name and then takes the
+// first two not-done nodes as the chain — but it never invents a state: done is done, and
+// without a catalog nothing resolves, exactly as Rust answers.
+const namesTarget = (node: UnlockNode, target: Target): boolean => {
+  if (target.kind === 'achievement')
+    return (
+      node.achievement.kind === 'known' && node.achievement.id === target.id
+    )
+  return node.unlocks.some((u) => {
+    switch (u.kind) {
+      case 'item':
+        return (
+          u.id ===
+          (target.kind === 'item' || target.kind === 'trinket' ? target.id : -1)
+        )
+      case 'character':
+        return target.kind === 'character' && u.id === target.id
+      case 'challenge':
+        return target.kind === 'challenge' && u.id === target.number
+      case 'boss':
+        return false
+      default:
+        return assertNever(u)
+    }
+  })
+}
+
+export const wantAnswer = (
+  { withArt, withCatalog }: GraphAnswerOptions,
+  target: Target,
+): WantView => {
+  if (!withCatalog)
+    return {
+      wanted: { kind: 'unresolved' },
+      routes: [],
+      diagnostics: [{ kind: 'noCatalog' }],
+    }
+  const icon: IconOf = (url) => (withArt ? packIconUrl(url) : null)
+  const nodes = payload<UnlockView>('unlock').nodes.map((n) =>
+    nodeWithIcons(n, icon),
+  )
+  const node = nodes.find((n) => namesTarget(n, target))
+  if (node === undefined)
+    return {
+      wanted: { kind: 'unresolved' },
+      routes: [],
+      diagnostics: [{ kind: 'nothingUnlocks' }],
+    }
+  const first = node.unlocks[0]
+  const wanted: WantedView =
+    target.kind === 'achievement' || first === undefined
+      ? { kind: 'achievement', achievement: node.achievement }
+      : { kind: 'target', target: first }
+  const state: WantState = node.done
+    ? { kind: 'done' }
+    : {
+        kind: 'chain',
+        steps: nodes.filter((n) => !n.done).slice(0, 2),
+        unknown: 0,
+      }
+  return { wanted, routes: [{ node, state }], diagnostics: [] }
 }

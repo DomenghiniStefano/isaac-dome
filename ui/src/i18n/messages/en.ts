@@ -405,6 +405,29 @@ export const en: MessageSchema = {
     nothingNow:
       'There is nothing to unlock right now: either it is all done, or everything waits on something else.',
   },
+  // B37: the same screen asked from the other end. You name what you want, and the answer is
+  // the series to play, in the order the Plan would play it.
+  want: {
+    placeholder: 'I want… (an item, a character, a challenge, an achievement)',
+    clear: 'Cancel',
+    chain: 'What you have to play',
+    availableNow: 'You can play it now',
+    done: 'You already have it',
+    noProfile: 'We don’t know where you stand',
+    wayOf: 'Way {index} of {total}',
+    unknown:
+      'Plus {count} requirements we cannot read: the series may be longer.',
+    addAll: 'Put it all in the Plan',
+    diagnostics: {
+      noCatalog:
+        'Without the game files we don’t know which achievement unlocks what. Install The Binding of Isaac and reopen the app.',
+      noProfile:
+        'No profile read: we can tell you how it is obtained, not where you stand.',
+      nothingUnlocks:
+        'Nothing unlocks it: either you have always had it, or it comes from playing rather than from an achievement.',
+      notUnlockable: 'This is not something you unlock.',
+    },
+  },
   // The block an achievement's wiki page gains when a profile is active. It says only where
   // you stand: what the thing is and what it asks is already in the infobox below.
   profileBlock: {

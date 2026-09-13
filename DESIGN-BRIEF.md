@@ -989,6 +989,51 @@ we can't vouch for it; and without a catalog the list is **empty**, with a `noCa
 diagnostic saying why, rather than five rows of something else. An empty Next steps is a
 state to design, not an error.
 
+### 7.3.1 The want — naming what you're after (B37)
+
+```ts
+type WantState =
+  | { kind: 'done' }              // already yours
+  | { kind: 'availableNow' }      // nothing in the way: play it
+  | { kind: 'chain'; steps: UnlockNode[]; unknown: number }
+  | { kind: 'noProfile' }         // section 1 unread: the route is named, your position isn't
+
+interface WantRoute { node: UnlockNode; state: WantState }
+
+type WantedView =
+  | { kind: 'target'; target: UnlockTarget }
+  | { kind: 'achievement'; achievement: AchievementRef }
+  | { kind: 'unresolved' }
+
+type WantDiagnostic =
+  | { kind: 'noCatalog' } | { kind: 'noProfile' }
+  | { kind: 'nothingUnlocks' } | { kind: 'notUnlockable' }
+
+interface WantView {
+  wanted: WantedView
+  routes: WantRoute[]
+  diagnostics: WantDiagnostic[]
+}
+```
+
+You name a thing — an item, a character, a boss, a challenge, or an achievement by its own
+name — and the answer is the ordered series of what is still missing for it. Four things the
+screen has to carry:
+
+- **`routes` is a list.** A challenge can be named by two achievements: **14 of 45** are
+  (measured 2026-09-13). Two ways in draw as two blocks, each with its own button; one is
+  never picked for you.
+- **`steps` is an order, not a set.** It is the order the Plan would play, produced by the
+  queue's own `enqueue`: the preview and the "add to the Plan" button are one computation.
+- **An empty `steps` never means "nothing missing".** That state is `availableNow` and says
+  so. `unknown > 0` means the chain holds requirements the app cannot fully read.
+- **Naming an achievement is how you ask for a mode.** *Greed Mode* and *Greedier* are not
+  targets the catalog models; the achievement that grants them is, and `wanted` carries that
+  case as a variant of its own.
+
+The want is a place: `#/goals?want=item:105`, the same key a wiki page is addressed by, so
+back, forward and tab restore all reach it.
+
 ### 7.4 Plan
 
 ```ts

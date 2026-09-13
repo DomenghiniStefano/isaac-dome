@@ -8,6 +8,7 @@ export const Command = {
   ExtractionReport: 'extraction_report',
   Unlock: 'unlock',
   NextSteps: 'next_steps',
+  Want: 'want',
   Collection: 'collection',
   Plan: 'plan',
   AddGoal: 'add_goal',
