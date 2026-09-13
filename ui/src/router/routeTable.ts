@@ -26,7 +26,7 @@ import type { MessageSchema } from '@/i18n/messages/it'
 // sight: tab labels and the sidebar are built and tested from this alone.
 export const RouteName = {
   Search: 'search',
-  NextSteps: 'nextSteps',
+  Goals: 'goals',
   Completion: 'completion',
   Unlock: 'unlock',
   Plan: 'plan',
@@ -51,18 +51,20 @@ export const WikiCategory = {
 export type WikiCategory = (typeof WikiCategory)[keyof typeof WikiCategory]
 
 // A tab's identity: a route and its query, never the view's content (B6).
+// `state` is the same kind of thing as `q`: a list opened with a filter already applied, so
+// that a link can land on Unlock showing only what is unlockable now.
 export interface TabLocation {
   name: RouteName
-  query?: { category?: WikiCategory; page?: string; q?: string }
+  query?: { category?: WikiCategory; page?: string; q?: string; state?: string }
 }
 
 type Message = MessageKey<MessageSchema>
 
-export const defaultLocation: TabLocation = { name: RouteName.NextSteps }
+export const defaultLocation: TabLocation = { name: RouteName.Goals }
 
 export const routePath: Record<RouteName, string> = {
   [RouteName.Search]: '/search',
-  [RouteName.NextSteps]: '/progress/next-steps',
+  [RouteName.Goals]: '/progress/goals',
   [RouteName.Completion]: '/progress/completion',
   [RouteName.Unlock]: '/progress/unlock',
   [RouteName.Plan]: '/progress/plan',
@@ -77,7 +79,7 @@ export const routePath: Record<RouteName, string> = {
 
 export const routeTitle: Record<RouteName, Message> = {
   [RouteName.Search]: 'routes.search',
-  [RouteName.NextSteps]: 'routes.nextSteps',
+  [RouteName.Goals]: 'routes.goals',
   [RouteName.Completion]: 'routes.completion',
   [RouteName.Unlock]: 'routes.unlock',
   [RouteName.Plan]: 'routes.plan',
@@ -92,7 +94,7 @@ export const routeTitle: Record<RouteName, Message> = {
 
 export const routeOrigin: Record<RouteName, TabOrigin> = {
   [RouteName.Search]: TabOrigin.Search,
-  [RouteName.NextSteps]: TabOrigin.Progress,
+  [RouteName.Goals]: TabOrigin.Progress,
   [RouteName.Completion]: TabOrigin.Progress,
   [RouteName.Unlock]: TabOrigin.Progress,
   [RouteName.Plan]: TabOrigin.Progress,
@@ -107,7 +109,7 @@ export const routeOrigin: Record<RouteName, TabOrigin> = {
 
 export const routeIcon: Record<RouteName, Component> = {
   [RouteName.Search]: tabOriginIcon[TabOrigin.Search],
-  [RouteName.NextSteps]: ListChecksIcon,
+  [RouteName.Goals]: ListChecksIcon,
   [RouteName.Completion]: Grid2x2Icon,
   [RouteName.Unlock]: LockOpenIcon,
   [RouteName.Plan]: MapIcon,
