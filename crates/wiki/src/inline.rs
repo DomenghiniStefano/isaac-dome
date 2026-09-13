@@ -290,6 +290,10 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
                 let label = label_of(t, &arg);
                 out.push(Inline::Ref { target, label });
             }
+            Resolution::Concept => {
+                let label = label_of(t, &arg);
+                out.push(Inline::Concept { page: arg, label });
+            }
             Resolution::Unresolved => {
                 d.unresolved(name);
                 let label = label_of(t, &arg);
@@ -457,9 +461,12 @@ mod tests {
 
     #[test]
     fn unknown_and_layout_templates() {
-        let (v, d) = p("{{cit|p|r}}x {{m|Donation Machine}} y");
+        // A name no template will ever have: this test is about what happens to a template
+        // we do not know, and using a real one means it breaks the day we learn that one.
+        // It used to use `{{m|…}}`, which is exactly what happened on 2026-09-13.
+        let (v, d) = p("{{cit|p|r}}x {{notatemplate|Donation Machine}} y");
         assert_eq!(v, vec![text("x Donation Machine y", Style::Plain)]);
-        assert_eq!(d.unknown_templates.get("m"), Some(&1));
+        assert_eq!(d.unknown_templates.get("notatemplate"), Some(&1));
         assert!(d.unresolved.is_empty());
     }
 
@@ -551,6 +558,39 @@ mod tests {
                 }
             ]
         );
+    }
+
+    /// `{{m|Donation Machine}}` and `{{machine|Greed Donation Machine}}` name a machine or a
+    /// beggar: a wiki page the game gives no id, which is exactly `Inline::Concept`. Together
+    /// they were the largest entry in `unknownTemplates` — 373 and 52 — so their sentences
+    /// reached the frontend with the name in place but no link and a diagnostic against them.
+    ///
+    /// They must not be counted as *unresolved*: that word means "we looked for an id and did
+    /// not find one", and here there was never an id to find.
+    #[test]
+    fn machine_templates_become_concept_links() {
+        let (v, d) = p("Use the {{m|Donation Machine}} here");
+        assert!(v.iter().any(|i| matches!(
+            i,
+            Inline::Concept { page, label }
+                if page == "Donation Machine" && label == "Donation Machine"
+        )));
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+        assert!(d.unresolved.is_empty(), "a concept is not a failed lookup");
+
+        let (v, d) = p("{{machine|Greed Donation Machine}}");
+        assert!(v.iter().any(
+            |i| matches!(i, Inline::Concept { page, .. } if page == "Greed Donation Machine")
+        ));
+        assert!(d.unknown_templates.is_empty());
+
+        // The label still wins when the page is written under another name.
+        let (v, _) = p("{{m|Blood Donation Machine|the machine}}");
+        assert!(v.iter().any(|i| matches!(
+            i,
+            Inline::Concept { page, label }
+                if page == "Blood Donation Machine" && label == "the machine"
+        )));
     }
 
     /// `{{dlc|r}}` is a marker: it opens an edition scope that runs to the end of the value
