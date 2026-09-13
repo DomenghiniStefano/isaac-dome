@@ -1,16 +1,11 @@
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
-import type { TabSeed } from '@/stores/tabModel'
+import type { Session, TabSeed } from '@/stores/tabModel'
 
 // The document's version. It is bumped when an older app could read the new shape and be wrong
 // about it — never for a part it can simply ignore, which is why 3.7's sidebar width and table
 // sizes will join as named keys without touching this number.
 const Version = 1
-
-export interface Session {
-  tabs: TabSeed[]
-  activeIndex: number
-}
 
 const routeNames: readonly string[] = Object.values(RouteName)
 
