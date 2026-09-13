@@ -51,7 +51,7 @@ paragraphs above them.
 | `crates/wiki-snapshot/src/api.rs` | `TABLES`: five more fields on the `transformation` query |
 | `crates/wiki/src/page.rs` | `PageKind::Transformation`, `EntryKey::Transformation`, wiring in `parse_page` |
 | `crates/wiki/src/inline.rs` | `{{collectible table}}` and `{{trinket table}}` → one `Inline::Ref` per name |
-| `crates/wiki/src/transformation.rs` | **new**: the numeral map, the contributors union, the disagreement flag |
+| `crates/wiki/src/transformation.rs` | **new**: the count read from the body sentence, the contributors union, the disagreement flag |
 | `crates/wiki/src/infobox.rs` | `InfoboxKind::Transformation`, the new arm of `infobox_from` |
 | `crates/wiki/src/model.rs` | `Infobox::Transformation` |
 | `crates/wiki/src/dataset.rs` | `transformations` map, `Counts.transformations`, the `entry()` arm |
@@ -70,6 +70,17 @@ paragraphs above them.
 ---
 
 ## Task 1: the five Cargo fields, and the snapshot refreshed
+
+> **Done on 2026-09-13, and it taught something the spec had wrong.** Once downloaded, two of
+> the five fields turned out to carry nothing: `requirement` is the identical template
+> default on all sixteen rows, and `items` is rendered HTML, empty on ten of them. See the
+> amendment in the spec's §0.2. The fields stay in the query and **nothing reads them**; the
+> count comes from the page body instead (spec §2.4, Task 4 below). The steps are left as
+> they were run.
+>
+> The refresh also caught wiki churn worth naming: collectible **378 was renamed from
+> "Number Two" to "No. 2"**, same id, so a page was deleted and another written. Nothing was
+> lost, and the rename is what the deletion in `fetch`'s output means.
 
 **Files:**
 - Modify: `crates/wiki-snapshot/src/api.rs` (the `transformation` row of `TABLES`)
@@ -294,6 +305,23 @@ git add crates/wiki/src/page.rs
 git commit -m "feat(wiki): a seventh page kind for the transformations"
 ```
 
+- [ ] **Step 6: Now fetch the pages — Task 1's run could not**
+
+`fetch` walks `PageKind::ALL`, and until this task the kind did not exist, so Task 1's pass
+downloaded the Cargo fields and **no transformation page at all**. Run it again:
+
+Run: `pnpm wiki:fetch`
+Expected: a new `transformation:` line reporting sixteen pages written, and
+`dataset/raw/pages/transformation/` with sixteen `.wikitext` files. Everything else should be
+unchanged, since Task 1 just refreshed it.
+
+- [ ] **Step 7: Commit the artefact separately**
+
+```bash
+git add dataset/raw
+git commit -m "chore(dataset): the sixteen transformation pages"
+```
+
 ---
 
 ## Task 4: the count, the contributors, and the disagreement
@@ -307,7 +335,7 @@ git commit -m "feat(wiki): a seventh page kind for the transformations"
 - Consumes: `RawInfobox`, the page text, `Resolver`, `Diagnostics`.
 - Produces:
   ```rust
-  pub fn requires(ib: &RawInfobox) -> Option<u32>
+  pub fn requires(text: &str) -> Option<u32>
   pub struct Contributors { pub targets: Vec<Target>, pub disagree: bool }
   pub fn contributors(ib: &RawInfobox, text: &str, r: &Resolver, d: &mut Diagnostics) -> Contributors
   ```
@@ -326,20 +354,25 @@ fn ib(pairs: &[(&str, &str)]) -> RawInfobox {
     }
 }
 
-/// Guppy's real parameter, read from the wiki on 2026-09-13: the count is an English word
-/// in a free-text field, not a number.
+/// Guppy's real sentence. The count lives in the page body, not in the infobox's
+/// `requirement`, which holds the same template default on all sixteen rows (spec §0.2).
 #[test]
-fn the_count_is_read_from_the_numeral() {
-    assert_eq!(requires(&ib(&[("requirement", "three items from this set")])), Some(3));
+fn the_count_is_read_from_the_body_sentence() {
+    assert_eq!(
+        requires("Pick up 3 [[item]]s or [[trinket]]s from the following list"),
+        Some(3)
+    );
+    assert_eq!(requires("Pick up 3 [[item]]s from the following list."), Some(3));
 }
 
-/// Adult has no `requirement` at all and Super Bum's is absent too. `None` is the answer,
-/// and it must never become three: a default in a population of sixteen where two are
-/// already irregular is an invented answer, not a fallback.
+/// Adult's real sentence, which is about pickups and not about a set. It stays unread, and
+/// the count must never fall back to three — three is exactly what a default would produce,
+/// so a wrong default here would be invisible.
 #[test]
-fn a_requirement_we_cannot_read_is_none_and_never_three() {
-    assert_eq!(requires(&ib(&[])), None);
-    assert_eq!(requires(&ib(&[("requirement", "a Puberty pill, three times")])), None);
+fn a_sentence_that_is_not_the_pattern_is_none_and_never_three() {
+    assert_eq!(requires("turns Isaac into an adult upon taking three [[Puberty]] pills"), None);
+    assert_eq!(requires(""), None);
+    assert_eq!(requires("three items from this set"), None);
 }
 
 /// The union of the two sources on the same page. The body's tables carry the trinket the
@@ -400,19 +433,19 @@ use crate::inline::parse_inline;
 use crate::resolver::Resolver;
 use crate::{Diagnostics, Inline, Target};
 
-/// The numerals the `requirement` field actually uses, as a closed list. Anything else
-/// leaves the count unread — never defaulted.
-const NUMERALS: [(&str, u32); 10] = [
-    ("one", 1), ("two", 2), ("three", 3), ("four", 4), ("five", 5),
-    ("six", 6), ("seven", 7), ("eight", 8), ("nine", 9), ("ten", 10),
-];
+/// The sentence that states the count, and the only one read. The infobox's `requirement`
+/// is **not** a source: it holds `three items from this set` on all sixteen rows, a template
+/// default that would hand every transformation the same number (spec §0.2).
+const PICK_UP: &str = "Pick up ";
 
-/// `"three items from this set"` → 3. The numeral has to be the **first** word: a sentence
-/// that mentions a number somewhere in the middle is a sentence, not a declaration.
-pub fn requires(ib: &RawInfobox) -> Option<u32> {
-    let field = ib.params.get("requirement")?;
-    let first = field.trim().split_whitespace().next()?.to_lowercase();
-    NUMERALS.iter().find(|(w, _)| *w == first).map(|(_, n)| *n)
+/// `"Pick up 3 [[item]]s or [[trinket]]s from the following list"` → 3. Narrow on purpose:
+/// Adult's page says "upon taking three [[Puberty]] pills", which is a different claim about
+/// a different kind of thing, and widening the pattern until it matched would mean inventing
+/// a set of collectibles for an item that has none.
+pub fn requires(text: &str) -> Option<u32> {
+    let after = text.find(PICK_UP).map(|i| &text[i + PICK_UP.len()..])?;
+    let digits: String = after.chars().take_while(char::is_ascii_digit).collect();
+    digits.parse().ok()
 }
 
 pub struct Contributors {
@@ -557,7 +590,7 @@ and `infobox_from` takes five arguments, not six.
    InfoboxKind::Transformation => {
        let c = crate::transformation::contributors(ib, text, r, d);
        Infobox::Transformation {
-           requires: crate::transformation::requires(ib),
+           requires: crate::transformation::requires(text),
            contributors: c.targets,
            target: inline(ib, "target", r, d),
        }
