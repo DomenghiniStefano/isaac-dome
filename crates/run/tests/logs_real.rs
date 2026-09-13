@@ -109,29 +109,38 @@ fn judas_starts_with_the_book_of_belial_and_it_is_not_a_treasure_find() {
 }
 
 #[test]
-fn no_sample_log_contains_a_death() {
-    // **A gap, asserted so it cannot be forgotten.** All four logs in `samples/logs/` are wins
-    // or open runs: `Event::Died` is covered only by `crates/run/tests/rules.rs`, against the
-    // line shape recorded in M0, and by the fold's hand-written sequence. When a log with a
-    // death arrives this test fails — and that failure is the signal to write the real one.
-    let rules = Rules::embedded();
-    let mut with_a_death = Vec::new();
-    for path in test_support::log_samples() {
-        let Ok(bytes) = std::fs::read(&path) else {
-            continue;
-        };
-        let mut tail = Tail::default();
-        if tail
-            .advance(&bytes)
-            .iter()
-            .filter_map(|line| rules.event(line))
-            .any(|e| matches!(e, Event::Died { .. }))
-        {
-            with_a_death.push(path);
-        }
-    }
+fn a_death_the_game_wrote_becomes_a_run_that_ended_in_one() {
+    // **This test replaced the one that asserted the gap**, and the way it arrived is the point.
+    // `no_sample_log_contains_a_death` said `samples/logs/` held no `Game Over` and failed the
+    // day one did — which happened on 2026-09-13, when the archive was run against this
+    // machine's real `online_logs\` and folded **23 deaths out of 28 sessions**. The gap was
+    // never in the data: it was in which files had been copied into `samples/`.
+    let Some(events) = events_of("20260824-online-deaths.log.txt") else {
+        return;
+    };
+    let deaths: Vec<&Event> = events
+        .iter()
+        .filter(|e| matches!(e, Event::Died { .. }))
+        .collect();
+    assert_eq!(deaths.len(), 2, "this session ends two runs in a death");
+
+    // The killer is the entity the game names, kept as it wrote it — `type.variant`, which is
+    // the same shape `crates/wiki` indexes bosses by. Nothing here interprets it.
+    let Event::Died { killer, spawner } = deaths[0] else {
+        unreachable!("filtered above")
+    };
     assert!(
-        with_a_death.is_empty(),
-        "a log with a death exists now: write the real test for it — {with_a_death:?}"
+        killer.contains('.') && !killer.is_empty(),
+        "the killer keeps the game's own pair: {killer}"
+    );
+    assert!(!spawner.is_empty());
+
+    // And the fold reaches the outcome, which is the half the rules cannot do.
+    let runs = Run::fold(events.into_iter(), &AllPassive);
+    assert_eq!(
+        runs.iter()
+            .filter(|r| matches!(r.outcome, Outcome::Died { .. }))
+            .count(),
+        2
     );
 }
