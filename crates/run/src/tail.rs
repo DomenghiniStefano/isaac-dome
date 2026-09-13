@@ -27,6 +27,17 @@ impl Tail {
         lines
     }
 
+    /// Bytes held back because the last line is not finished.
+    ///
+    /// The watcher stores the end of the last **complete** line as its offset: counting a
+    /// half-written line as read would lose it, since the next read starts after it. Measured in
+    /// bytes of the decoded remainder, which differs from the raw bytes only where the log held
+    /// invalid UTF-8 — and there the anchor and the offset drift together, so the next read
+    /// still lines up.
+    pub fn pending(&self) -> usize {
+        self.remainder.len()
+    }
+
     /// The file is shorter than what we have read from it: the game relaunched and rewrote it.
     pub fn restarted(&self, len: u64) -> bool {
         len < self.read

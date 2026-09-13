@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { selectProfile, setupState } from '@/lib/ipc/setup'
+import { runs } from '@/lib/ipc/runs'
+import { AppEvent, watchAppEvent } from '@/lib/window/appEvents'
 import { completion, saveSummary } from '@/lib/ipc/save'
 import { extractionReport } from '@/lib/ipc/resources'
 import { nextSteps, unlock } from '@/lib/ipc/graph'
@@ -13,6 +15,10 @@ import type {
   IpcError,
   MarksMatrix,
   NextSteps,
+  RunOutcomeView,
+  RunSource,
+  RunView,
+  RunsView,
   SaveSummary,
   SetupState,
   Target,
@@ -32,6 +38,7 @@ const matrix = ref<MarksMatrix | null>(null)
 const extraction = ref<ExtractionReport | null>(null)
 const unlockView = ref<UnlockView | null>(null)
 const steps = ref<NextSteps | null>(null)
+const runsView = ref<RunsView | null>(null)
 const error = ref<IpcError | null>(null)
 
 // The default target to load: Binge Eater, so there's right away an entry with
@@ -40,8 +47,15 @@ const wikiTarget = ref<Target>({ kind: 'item', id: 664 })
 const wikiEntryView = ref<Entry | null>(null)
 const wikiId = ref<string | number>('664')
 
+// The archive does not need a profile: it is built from the logs on disk, and it fills itself
+// in the background — which is why it is read again on `runs-changed` rather than only here.
+const loadRuns = async () => {
+  runsView.value = await runs()
+}
+
 const load = async () => {
   state.value = await setupState()
+  await loadRuns()
   // Extraction doesn't depend on the active profile: it reads the game's archives,
   // not the save file. So it must be loaded even when no profile is selected.
   extraction.value = await extractionReport()
@@ -171,7 +185,47 @@ const freshnessText = (newerThanSnapshot: boolean | null) => {
 const countsText = (counts: Extract<WikiInfo, { kind: 'loaded' }>['counts']) =>
   `items ${counts.items} · trinkets ${counts.trinkets} · achievements ${counts.achievements} · bosses ${counts.bosses} · challenges ${counts.challenges} · characters ${counts.characters} · transformations ${counts.transformations}`
 
-onMounted(() => load().catch(handleIpcError))
+const sourceText = (s: RunSource) => {
+  switch (s.kind) {
+    case 'live':
+      return 'log.txt'
+    case 'session':
+      return s.name
+    default:
+      return assertNever(s)
+  }
+}
+
+const outcomeText = (o: RunOutcomeView) => {
+  switch (o.kind) {
+    case 'won':
+      return `won (${o.ending})`
+    case 'died':
+      return `died (${o.killer})`
+    case 'abandoned':
+      return 'abandoned'
+    // Not a failure state, and not drawn as one.
+    case 'open':
+      return 'open'
+    default:
+      return assertNever(o)
+  }
+}
+
+const runKey = (r: RunView) => `${sourceText(r.source)}#${r.ordinal}`
+
+let stopRunsEvent: (() => void) | undefined
+
+onMounted(async () => {
+  await load().catch(handleIpcError)
+  // The archive fills itself in the background: without this the page shows whatever had been
+  // imported by the time it mounted, which on a first launch is nothing.
+  stopRunsEvent = await watchAppEvent(AppEvent.RunsChanged, () => {
+    void loadRuns().catch(handleIpcError)
+  })
+})
+
+onUnmounted(() => stopRunsEvent?.())
 </script>
 
 <template>
@@ -388,6 +442,26 @@ onMounted(() => load().catch(handleIpcError))
             slot {{ n.achievement.slot }}: done or not, the catalog does not
             know what it is
           </span>
+        </li>
+      </ul>
+    </section>
+
+    <section v-if="runsView" class="flex flex-col gap-2">
+      <h2 class="text-foreground">Runs</h2>
+      <p>
+        {{ runsView.totals.runs }} runs — won {{ runsView.totals.won }}, died
+        {{ runsView.totals.died }}, abandoned {{ runsView.totals.abandoned }},
+        open {{ runsView.totals.open }}
+      </p>
+      <p v-for="(d, i) in runsView.diagnostics" :key="i" class="opacity-muted">
+        {{ JSON.stringify(d) }}
+      </p>
+      <ul class="flex flex-col gap-1">
+        <li v-for="r in runsView.runs.slice(0, 40)" :key="runKey(r)">
+          <span class="opacity-muted">{{ sourceText(r.source) }}</span>
+          #{{ r.ordinal }} — {{ r.character ?? '?' }} — {{ r.seedWords }} —
+          {{ outcomeText(r.outcome) }} — {{ r.floors }} floors
+          <span v-if="r.online" class="opacity-muted">(online)</span>
         </li>
       </ul>
     </section>

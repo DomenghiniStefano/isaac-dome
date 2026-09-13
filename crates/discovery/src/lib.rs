@@ -5,6 +5,7 @@ use std::time::SystemTime;
 
 use serde::Serialize;
 
+mod data_folder;
 mod edition;
 mod game;
 mod saves;
@@ -26,7 +27,27 @@ pub struct Discovery {
     pub steam: Option<SteamInstall>,
     pub game: Option<GameInstall>,
     pub saves: Vec<SaveCandidate>,
+    /// Where the game writes its logs, when Documents has the folder at all.
+    pub game_data: Option<GameDataFolder>,
     pub diagnostics: Vec<Diagnostic>,
+}
+
+/// The game's folder under Documents — where `log.txt` and `online_logs\` live, which is **not**
+/// where the saves live when Steam Cloud is on.
+///
+/// Not `Serialize`, for `Discovery`'s own reason: these are paths, and a path under Documents
+/// carries the Windows username. What crosses the IPC about the logs is the runs view, which
+/// names a session by its folder's name and never by its path.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct GameDataFolder {
+    pub dir: PathBuf,
+    /// The log the game rewrites on every launch.
+    pub log: Option<PathBuf>,
+    /// One folder per online session. Not flat: see `log_watch::sessions`.
+    pub online_logs: Option<PathBuf>,
+    /// The game's own dated backups. Not read by this sub-project; named here because this is
+    /// the one place that knows where it is.
+    pub save_backups: Option<PathBuf>,
 }
 
 #[derive(Debug, Clone, Serialize)]
@@ -143,10 +164,14 @@ pub fn discover(opts: &Options) -> Discovery {
         saves.append(&mut c);
         diagnostics.append(&mut d);
     }
+    // The data folder is probed **whether or not** a save was found there: with Steam Cloud on
+    // there never is one, and that is the ordinary machine.
+    let mut game_data = None;
     if let Some(documents) = dirs::document_dir() {
         let (mut c, mut d) = saves::scan_documents(&documents);
         saves.append(&mut c);
         diagnostics.append(&mut d);
+        game_data = data_folder::scan_game_data(&documents);
     }
 
     if saves.is_empty() {
@@ -157,6 +182,7 @@ pub fn discover(opts: &Options) -> Discovery {
         steam,
         game,
         saves,
+        game_data,
         diagnostics,
     }
 }
@@ -170,6 +196,10 @@ pub mod for_tests {
     use std::collections::BTreeSet;
 
     use crate::{Dlc, Edition};
+
+    pub fn scan_game_data(documents: &std::path::Path) -> Option<crate::GameDataFolder> {
+        crate::data_folder::scan_game_data(documents)
+    }
 
     pub fn edition_from_appids(appids: &BTreeSet<u32>) -> Edition {
         crate::edition::edition_from_appids(appids)

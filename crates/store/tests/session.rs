@@ -15,7 +15,12 @@ fn store() -> (TempDir, Store) {
 
 #[test]
 fn the_schema_knows_the_session() {
-    assert_eq!(SCHEMA_VERSION, 3);
+    // The session arrived with migration 3, so every version from there on knows it. The number
+    // of the day is pinned in `tests/archive.rs`; what this one is about is that the table is
+    // not behind us.
+    // A `const` block: the claim is about the constant and nothing about a running database, so
+    // it is checked when the test is compiled rather than when it runs.
+    const { assert!(SCHEMA_VERSION >= 3) };
 }
 
 #[test]
@@ -72,7 +77,9 @@ fn a_version_two_database_gains_the_session_without_losing_its_queue() {
         .expect("builds a version 2 file");
     }
     let s = Store::open(&path).expect("upgrades");
-    assert_eq!(s.schema_version().expect("reads"), 3);
+    // The current version, not a number of the day: this test is about the chain arriving from
+    // version 2, and it has to keep holding when a fifth migration is added.
+    assert_eq!(s.schema_version().expect("reads"), SCHEMA_VERSION);
     assert_eq!(
         s.queue().expect("query").expect("parses").rows().len(),
         1,

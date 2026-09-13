@@ -2105,3 +2105,56 @@ nothing puts them on screen.
 A transformation page draws a card with those three rows, `contributors` linking like any other
 `Target`, and `requires` saying nothing rather than "3" when it is `null` — the Rust comment on
 that field records why a default would be invisible against the pages that do say it.
+
+---
+
+## B41 — Starting with Windows, so no run is lost to a launch the app missed (implementation, `ipc`, `app` and `ui`, after design)
+
+Logged on 2026-09-14, from the owner: *"aggiungiamo opzione avvio al lancio in impostazioni in
+modo che a prescindere da quando apro il gioco IsaacDome può essere sempre aperto e leggere tutte
+le run"*. Design written the same day —
+`docs/superpowers/specs/2026-09-14-autostart-design.md`. It is §11 of the background design coming
+due: starting with Windows was deferred there *"to the same conversation as M4's watcher"*, and
+the watcher has landed.
+
+### What already exists
+
+Everything except the login entry. The app outlives its windows, the tray brings one back, a
+second launch is handed to the instance already running, and `start_archive` backfills
+`online_logs\sessions\` and then watches `log.txt` — backfill and live being one function is what
+makes a late start harmless *within* a game launch.
+
+### What is missing, precisely
+
+`log.txt` is rewritten at every launch of the game, so the hole is narrow and real: **a game
+launch followed by another game launch, with the app never having run in between.** Play, quit,
+play again, open IsaacDome — the first session is gone and nothing can bring it back. The switch
+closes that one case, and the prose under it has to say that rather than promise "no run is ever
+lost".
+
+### The three decisions the design takes
+
+1. **The registry is the only source of truth.** `ipc::Settings` gains no field. `is_enabled()`
+   reads `StartupApproved\Run` as well as `Run`, so the app can see the user disable the entry
+   from Task Manager's Startup tab — a mirrored boolean in `settings.json` would report "on" for a
+   login that never happens.
+2. **A login launch is silent.** The plugin writes one argument into the Run value; `setup` builds
+   the tray and starts the archive either way, and only opens a window when that argument is
+   absent. The decision is `ipc::launch_intent`, a pure function, because `app` is not tested.
+3. **The switch is inert in development builds.** `current_exe()` in a `pnpm dev` run is
+   `target\debug\app.exe`, and a switch flipped once while testing leaves that path in the
+   developer's login, surviving `cargo clean` and failing silently at every boot.
+
+### Closes when
+
+The Background screen carries a third switch, first of the three; an installed build turned on
+and logged out of comes back with the icon in the tray, no window, and the archive already
+following the log; disabling the entry from Task Manager shows as off the next time the screen is
+opened; turning the switch off twice raises nothing; and a `pnpm dev` run leaves the registry
+untouched.
+
+**Not closed by the above, and not lost either**: the uninstaller does not remove the Run value —
+nothing tells a running app it is being uninstalled, and there is no installer configuration in
+the repo yet (`tauri.conf.json` says `"targets": "all"` and nothing more). The day that
+configuration is written, an NSIS uninstall hook deletes the value from both keys. That is part of
+this entry, not a new one.
