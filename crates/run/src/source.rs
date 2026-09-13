@@ -25,8 +25,16 @@ pub const ANCHOR_BYTES: usize = 64;
 /// What a source is remembered by, between one run of the app and the next.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct SourceKey {
-    /// FNV-1a of the first [`PREFIX_BYTES`] bytes.
+    /// FNV-1a of the first `prefix_len` bytes.
     pub prefix: u64,
+    /// How many bytes that hash covers — at most [`PREFIX_BYTES`], and fewer when the file was
+    /// shorter than that the first time we read it.
+    ///
+    /// **It is stored because the window has to stay the same window.** A log is a few hundred
+    /// bytes for its first instants, so "the first 4 KiB" of it is the whole file: hash that and
+    /// the number changes with every line the game writes, every read looks like a new file, and
+    /// every run already in the archive is imported again. Found by a test on 2026-09-13.
+    pub prefix_len: u64,
     /// FNV-1a of the [`ANCHOR_BYTES`] that end at `offset`.
     pub anchor: u64,
     /// How far we had read.
@@ -40,6 +48,7 @@ impl SourceKey {
     pub fn new(prefix: &[u8], at_offset: &[u8], offset: u64) -> Self {
         Self {
             prefix: fingerprint(prefix),
+            prefix_len: prefix.len() as u64,
             anchor: fingerprint(at_offset),
             offset,
         }
@@ -72,11 +81,15 @@ pub fn fingerprint(bytes: &[u8]) -> u64 {
 }
 
 /// The decision. Three ways to be a new file and one way to be the old one.
+///
+/// `prefix` must be read as **`stored.prefix_len` bytes**, not as [`PREFIX_BYTES`]: the window
+/// has to be the one the stored hash covers, or a file that has merely grown stops matching
+/// itself.
 pub fn resume(stored: &SourceKey, prefix: &[u8], len: u64, at_offset: &[u8]) -> Resume {
     if len < stored.offset {
         return Resume::Fresh;
     }
-    if fingerprint(prefix) != stored.prefix {
+    if prefix.len() as u64 != stored.prefix_len || fingerprint(prefix) != stored.prefix {
         return Resume::Fresh;
     }
     if fingerprint(at_offset) != stored.anchor {

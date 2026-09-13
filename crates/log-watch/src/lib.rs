@@ -5,9 +5,11 @@
 //! is decided by `run::resume`; what a line means is decided by `run`'s fold; what is stored is
 //! decided by `store`. What is left here is an offset, a read, and `notify`.
 
+mod archive;
 mod read;
 mod sessions;
 
+pub use archive::{Ingest, Ingested};
 pub use read::{chunk, head, len, window_ending_at, CHUNK};
 pub use sessions::sessions;
 
