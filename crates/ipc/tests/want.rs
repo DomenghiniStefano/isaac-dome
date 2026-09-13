@@ -324,3 +324,46 @@ fn no_route_is_an_empty_chain_that_claims_nothing_is_missing() {
         }
     }
 }
+
+#[test]
+fn want_view_json_shape_is_pinned() {
+    // `SectionCount` once carried a `core_save::Kind` across the wire and a rename changed
+    // the payload with the whole suite green (`summary_shape.rs`). A field that comes out
+    // snake_case, or a struct variant whose fields were not renamed, reads as `undefined` in
+    // TypeScript with no error at all.
+    use serde_json::{json, to_value};
+    let c = catalog_with_achievements();
+    let g = chained_graph();
+    let v = view_with(&c, &[], BLOCKED);
+    let w = to_value(ipc::want_view(
+        Some(&c),
+        &v,
+        Some(&READ),
+        Some(&g),
+        &Target::Trinket { id: 1 },
+        |_| None,
+    ))
+    .unwrap();
+    assert_eq!(w["wanted"]["kind"], "target");
+    assert_eq!(w["wanted"]["target"]["kind"], "item");
+    assert_eq!(w["wanted"]["target"]["itemKind"], "trinket");
+    assert_eq!(w["routes"][0]["state"]["kind"], "chain");
+    assert_eq!(w["routes"][0]["state"]["unknown"], 0);
+    assert!(w["routes"][0]["state"]["steps"].is_array());
+    assert!(w["routes"][0]["node"]["achievement"].is_object());
+    assert_eq!(w["diagnostics"], json!([]));
+
+    // The shapes that have no route, each naming which empty it is.
+    let none = to_value(ipc::want_view(
+        None,
+        &v,
+        Some(&READ),
+        Some(&g),
+        &Target::Item { id: 2 },
+        |_| None,
+    ))
+    .unwrap();
+    assert_eq!(none["wanted"], json!({ "kind": "unresolved" }));
+    assert_eq!(none["diagnostics"], json!([{ "kind": "noCatalog" }]));
+    assert_eq!(none["routes"], json!([]));
+}
