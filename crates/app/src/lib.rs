@@ -1,7 +1,6 @@
 //! app — Tauri binary crate. Registers the IPC commands and does the one
 //! I/O job that belongs to it (the settings file). The real logic lives in `ipc`.
 
-mod error;
 mod settings_file;
 
 use std::sync::{Mutex, MutexGuard, OnceLock};
@@ -10,11 +9,11 @@ use catalog::Catalog;
 use core_save::{Kind, Save};
 use discovery::{discover, Options};
 use ipc::{ActiveProfile, GraphDeps, MarksMatrix, ProfileId, SaveSummary, Settings, SetupState};
-use store::{GoalsRead, Store, StoreError};
+use store::{plan_parts, store_error, store_unavailable, Store};
 use tauri::{AppHandle, Manager};
 use unpack::ResourceSet;
 
-pub use error::IpcError;
+pub use ipc::IpcError;
 
 /// The catalog of the installed game, built on first use and then kept: reading it costs
 /// milliseconds, but building it (`Catalog::build` reads every source) doesn't. It
@@ -328,14 +327,6 @@ impl StoreState {
     }
 }
 
-fn store_error(e: StoreError) -> IpcError {
-    store_unavailable((&e).into())
-}
-
-fn store_unavailable(reason: ipc::StoreReason) -> IpcError {
-    IpcError::StoreUnavailable { reason }
-}
-
 /// Section 1 of the active profile, or `None` if it can't be read. It's never flattened
 /// into an empty vector: "section missing" and "zero achievements" are two different
 /// things, and the view has to be able to say which one applies.
@@ -409,21 +400,6 @@ fn collection(
         achievements.as_deref(),
         icon_url,
     ))
-}
-
-/// What the plan receives from `store`, however things went: the goals that were read,
-/// the ones that couldn't be, and the reason there are none. A database that won't open
-/// and a query that fails are the same case for the user — "the goals can't be seen, and
-/// here's why" — and neither one is an `Err`: the Plan degrades, it doesn't disappear.
-/// Kept pure because in the Tauri crate everything else is wiring, and this mapping is
-/// worth verifying.
-fn plan_parts(
-    read: Result<GoalsRead, StoreError>,
-) -> (Vec<ipc::Goal>, Vec<ipc::GoalId>, Option<ipc::StoreReason>) {
-    match read {
-        Ok(r) => (r.goals, r.unreadable, None),
-        Err(e) => (Vec::new(), Vec::new(), Some((&e).into())),
-    }
 }
 
 /// What every queue command needs, gathered once so the five read the same way.
@@ -854,95 +830,4 @@ pub fn run() {
         ])
         .run(tauri::generate_context!())
         .expect("failed to start the application");
-}
-
-#[cfg(test)]
-mod tests {
-
-    use super::*;
-    /// A recognizable input: if any of it came through, the boundary leaked. Since N2 the
-    /// reason is a **variant**, so there is no string for it to hide in — these tests assert
-    /// on the variant rather than hunting for a word, which is what makes them structural.
-    const SECRET_PATH: &str = r"C:\secret\isaacdome.db";
-
-    fn reason_of(e: IpcError) -> ipc::StoreReason {
-        match e {
-            IpcError::StoreUnavailable { reason } => reason,
-            other => panic!("expected StoreUnavailable, got {other:?}"),
-        }
-    }
-
-    #[test]
-    fn an_unreadable_database_is_a_variant_and_not_sqlites_message() {
-        assert_eq!(
-            reason_of(store_error(StoreError::Unreadable {
-                reason: SECRET_PATH.to_string(),
-            })),
-            ipc::StoreReason::Unreadable
-        );
-    }
-
-    #[test]
-    fn a_newer_schema_carries_both_versions_as_numbers() {
-        assert_eq!(
-            reason_of(store_error(StoreError::NewerSchema {
-                found: 7,
-                supported: 1,
-            })),
-            ipc::StoreReason::NewerSchema {
-                found: 7,
-                supported: 1,
-            }
-        );
-    }
-
-    fn goal(id: &str) -> ipc::Goal {
-        ipc::Goal {
-            id: ipc::GoalId::from_str_unchecked(id),
-            target: ipc::TargetKey::Boss { id: 1 },
-            created_unix: 0,
-            note: None,
-        }
-    }
-
-    #[test]
-    fn a_successful_read_passes_goals_and_unreadable_rows_through() {
-        let read = Ok(GoalsRead {
-            goals: vec![goal("a")],
-            unreadable: vec![ipc::GoalId::from_str_unchecked("b")],
-        });
-        let (goals, unreadable, unavailable) = plan_parts(read);
-        assert_eq!(goals, vec![goal("a")]);
-        assert_eq!(unreadable, vec![ipc::GoalId::from_str_unchecked("b")]);
-        assert_eq!(unavailable, None);
-    }
-
-    /// A failed query is not a plan that disappears: the Plan degrades and says why,
-    /// just like when the database doesn't open at all.
-    #[test]
-    fn a_failed_query_degrades_into_the_reason_not_into_an_error() {
-        let (goals, unreadable, unavailable) = plan_parts(Err(StoreError::NewerSchema {
-            found: 7,
-            supported: 1,
-        }));
-        assert!(goals.is_empty());
-        assert!(unreadable.is_empty());
-        assert_eq!(
-            unavailable,
-            Some(ipc::StoreReason::NewerSchema {
-                found: 7,
-                supported: 1,
-            })
-        );
-    }
-
-    /// And SQLite's message doesn't get through: `plan_parts` maps the same way the write
-    /// commands do, so the Plan can never end up with a reason the rest of the app can't.
-    #[test]
-    fn a_failed_query_reports_the_variant_not_sqlites_message() {
-        let (_, _, unavailable) = plan_parts(Err(StoreError::Unreadable {
-            reason: SECRET_PATH.to_string(),
-        }));
-        assert_eq!(unavailable, Some(ipc::StoreReason::Unreadable));
-    }
 }
