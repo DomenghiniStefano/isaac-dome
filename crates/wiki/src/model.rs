@@ -213,8 +213,11 @@ impl Dlc {
 )]
 pub enum Infobox {
     Item {
-        /// The pickup quote — the same string as `items.xml`'s `description` attribute.
-        quote: String,
+        /// The pickup quote. Inline, not a string: 78 of 719 carry edition markup
+        /// (`Boomerang tears {{dlc|r|+ DMG up + luck down}}`), and read as raw text they
+        /// put wikitext on screen. Flattened, it is `items.xml`'s `description` attribute —
+        /// which `wiki_agrees_with_catalog` checks rather than assumes.
+        quote: Vec<Inline>,
         /// From the template name: the wiki has `infobox passive collectible` and
         /// `infobox activated collectible`, and until 2026-09-13 we merged the two.
         template: CollectibleTemplate,
@@ -233,7 +236,7 @@ pub enum Infobox {
         pools: Vec<Inline>,
     },
     Trinket {
-        quote: String,
+        quote: Vec<Inline>,
         tags: Vec<String>,
         pools: Vec<Inline>,
     },
@@ -410,7 +413,10 @@ mod tests {
         // Every camelCase key here is the assertion that `rename_all_fields` is applied.
         assert_eq!(
             to_value(Infobox::Item {
-                quote: "Blood laser barrage".into(),
+                quote: vec![Inline::Text {
+                    text: "Blood laser barrage".into(),
+                    style: Style::Plain,
+                }],
                 template: CollectibleTemplate::Passive,
                 quality: Some(4),
                 tags: vec!["devil".into()],
@@ -422,7 +428,7 @@ mod tests {
             .unwrap(),
             json!({
                 "kind": "item",
-                "quote": "Blood laser barrage",
+                "quote": [{"kind": "text", "text": "Blood laser barrage", "style": "plain"}],
                 "template": "passive",
                 "quality": 4,
                 "tags": ["devil"],
@@ -434,12 +440,12 @@ mod tests {
         );
         assert_eq!(
             to_value(Infobox::Trinket {
-                quote: "Imaginary Friend".into(),
+                quote: vec![],
                 tags: vec![],
                 pools: vec![],
             })
             .unwrap(),
-            json!({"kind":"trinket","quote":"Imaginary Friend","tags":[],"pools":[]})
+            json!({"kind":"trinket","quote":[],"tags":[],"pools":[]})
         );
         // `unlockedBy` is gone from the variant: it rose to `Entry` on 2026-09-13.
         assert_eq!(
@@ -467,7 +473,7 @@ mod tests {
             dlc: vec![Dlc::Repentance],
             unlocked_by: None,
             infobox: Infobox::Item {
-                quote: String::new(),
+                quote: vec![],
                 template: CollectibleTemplate::Passive,
                 quality: None,
                 tags: vec![],
@@ -489,7 +495,7 @@ mod tests {
                 "unlockedBy": null,
                 "infobox": {
                     "kind": "item",
-                    "quote": "",
+                    "quote": [],
                     "template": "passive",
                     "quality": null,
                     "tags": [],
@@ -515,7 +521,7 @@ mod tests {
             dlc: vec![Dlc::Rebirth, Dlc::RepentancePlus],
             unlocked_by: Some(Target::Achievement { id: 3 }),
             infobox: Infobox::Trinket {
-                quote: String::new(),
+                quote: vec![],
                 tags: vec![],
                 pools: vec![],
             },
