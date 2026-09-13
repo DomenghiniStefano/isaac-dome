@@ -4,6 +4,7 @@ import { TabOrigin } from '@/components/shell/tabs'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import AppearanceScreen from '@/screens/AppearanceScreen.vue'
+import BackgroundScreen from '@/screens/BackgroundScreen.vue'
 import CollectionScreen from '@/screens/CollectionScreen.vue'
 import CompletionScreen from '@/screens/CompletionScreen.vue'
 import GoalsScreen from '@/screens/GoalsScreen.vue'
@@ -43,6 +44,7 @@ const screens: Partial<Record<RouteName, Component>> = {
   [RouteName.Search]: SearchScreen,
   [RouteName.Profile]: ProfileScreen,
   [RouteName.Appearance]: AppearanceScreen,
+  [RouteName.Background]: BackgroundScreen,
 }
 
 export const routes: RouteRecordRaw[] = [

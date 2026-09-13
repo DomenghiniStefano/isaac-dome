@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { RouteName, WikiCategory } from '@/router/routeTable'
+import { RouteName, WikiCategory, routeOrigin } from '@/router/routeTable'
 import { NavSection } from './navSection'
 import {
   SidebarSection,
@@ -87,5 +87,19 @@ describe('a tab that belongs to no section', () => {
     // Search sits above the two sections (DESIGN-BRIEF.md §4.2): it belongs to neither.
     expect(sectionOfOrigin(TabOrigin.Search)).toBeNull()
     expect(sectionOfOrigin(TabOrigin.Wiki)).toBe(SidebarSection.Wiki)
+  })
+})
+
+describe('nothing is reachable only by typing its path', () => {
+  it('lists every Settings route in the Settings sidebar', () => {
+    // A route added to the table and forgotten here is a screen that exists and cannot be
+    // opened. The count would not have said so; this does.
+    const listed = sidebarEntries[SidebarSection.Settings].map(
+      (e) => e.location.name,
+    )
+    const settingsRoutes = Object.values(RouteName).filter(
+      (name) => routeOrigin[name] === TabOrigin.Settings,
+    )
+    expect([...listed].sort()).toEqual([...settingsRoutes].sort())
   })
 })

@@ -37,4 +37,7 @@ pub enum IpcError {
     /// The embedded dataset failed to load: `wiki_entry` can't answer;
     /// `ExtractionReport.wiki` says why.
     WikiUnavailable,
+    /// The session document offered is past `MAX_SESSION_BYTES`. Nothing the user did: a
+    /// frontend bug, reported rather than truncated, because half a document is not a session.
+    SessionTooLarge,
 }

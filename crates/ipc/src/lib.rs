@@ -19,6 +19,7 @@ mod settings;
 mod sprite_png;
 mod summary;
 mod target_sprite;
+mod tray;
 mod want;
 mod wiki;
 mod wiki_target;
@@ -60,10 +61,13 @@ pub use resources::{
 pub use search::{
     search, SaveFlags, SearchDiagnostic, SearchHit, SearchIndex, SearchMatch, SearchView,
 };
-pub use settings::{snap_percent, Settings, DEFAULT_SCALE, SCALE_PERCENTS};
+pub use settings::{
+    session_document_fits, snap_percent, Settings, DEFAULT_SCALE, MAX_SESSION_BYTES, SCALE_PERCENTS,
+};
 pub use sprite_png::{crop_png, decode_rgba};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
+pub use tray::{tray_action, tray_locale, tray_text, TrayAction, TrayLocale, TrayText};
 pub use want::{want_view, WantDiagnostic, WantRoute, WantState, WantView, WantedView};
 pub use wiki::{
     rfc3339_to_unix, wiki_index, wiki_info, Block, Dlc, Entry, Infobox, Inline, ListItem,

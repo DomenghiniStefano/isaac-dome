@@ -9,6 +9,7 @@ import {
   ListChecksIcon,
   LockOpenIcon,
   MapIcon,
+  MonitorDotIcon,
   PackageIcon,
   PlayIcon,
   SaveIcon,
@@ -36,6 +37,7 @@ export const RouteName = {
   Wiki: 'wiki',
   Profile: 'profile',
   Appearance: 'appearance',
+  Background: 'background',
   TabsSettings: 'tabsSettings',
 } as const
 export type RouteName = (typeof RouteName)[keyof typeof RouteName]
@@ -81,6 +83,7 @@ export const routePath: Record<RouteName, string> = {
   [RouteName.Wiki]: '/wiki',
   [RouteName.Profile]: '/settings/profile',
   [RouteName.Appearance]: '/settings/appearance',
+  [RouteName.Background]: '/settings/background',
   [RouteName.TabsSettings]: '/settings/tabs',
 }
 
@@ -96,6 +99,7 @@ export const routeTitle: Record<RouteName, Message> = {
   [RouteName.Wiki]: 'routes.wiki',
   [RouteName.Profile]: 'routes.profile',
   [RouteName.Appearance]: 'routes.appearance',
+  [RouteName.Background]: 'routes.background',
   [RouteName.TabsSettings]: 'routes.tabsSettings',
 }
 
@@ -111,6 +115,7 @@ export const routeOrigin: Record<RouteName, TabOrigin> = {
   [RouteName.Wiki]: TabOrigin.Wiki,
   [RouteName.Profile]: TabOrigin.Settings,
   [RouteName.Appearance]: TabOrigin.Settings,
+  [RouteName.Background]: TabOrigin.Settings,
   [RouteName.TabsSettings]: TabOrigin.Settings,
 }
 
@@ -126,6 +131,7 @@ export const routeIcon: Record<RouteName, Component> = {
   [RouteName.Wiki]: tabOriginIcon[TabOrigin.Wiki],
   [RouteName.Profile]: SaveIcon,
   [RouteName.Appearance]: SlidersHorizontalIcon,
+  [RouteName.Background]: MonitorDotIcon,
   [RouteName.TabsSettings]: AppWindowIcon,
 }
 
