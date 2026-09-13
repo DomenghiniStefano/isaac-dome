@@ -1392,6 +1392,43 @@ report `docs/superpowers/plans/2026-09-13-goals-and-achievement-detail-report.md
       rather than mysterious. One `pnpm design:export` on a machine with the game clears all
       five, and nothing else does.
 
+### 2026-09-13 (evening) — back and forward, one history per tab
+
+`feature/tab-history`, cut from `develop`, suite green (335 Vitest tests). An explicit
+request from the owner: browser navigation, **per tab**, with the side buttons of the mouse
+bound by default.
+
+- [x] **A tab is its own little browser.** `Tab` stopped being one location and became
+      `entries` plus `index`; `tabLocation(tab)` is what it shows. Navigating stacks and drops
+      whatever forward was left, back and forward move the index and do nothing at the ends,
+      a tab opened from another starts with a single entry, and the history stops at
+      `HistoryDepth` (50) so what sub-project 7 will persist stays small.
+- [x] **What counts as a location is the decision, and the owner made it**: the route, the
+      wiki category, the page — **not** `q`. The search navigates on every keystroke, so
+      without that exclusion "back" walked backwards through what had been typed; with it,
+      one back leaves the search for the route the tab came from. Two wiki pages of the same
+      category remain two entries: the page is what the tab *is*.
+- [x] **Three gestures, one action.** `lib/shell/navigation.ts` reads `Alt` with an arrow and
+      the two side buttons (`MouseEvent.button` 3 and 4) into the same `HistoryAction`; a bare
+      arrow stays with whatever table has the focus. `usePointerShortcut` is `useShortcut`'s
+      twin: it stops the press, where the webview would navigate on its own, and acts on the
+      click. The NavBar carries the two arrows, disabled when the stack ends.
+- [x] **A finding the unit tests could not have produced.** On the dev server, one back from
+      the search bounced straight back to it: the debounced navigation lands *after* the
+      gesture and dragged the tab to a screen the user had just left — back was unusable on
+      the one screen the rule was written for. `refineTab` is the answer: a keystroke changes
+      the entry the tab is showing, and reaches no tab at all when the tab has moved on.
+      The bug predates the history — a sidebar click right after typing had the same race —
+      but only a back makes it visible.
+- [x] `ButtonVariant.Chrome` keeps its transparency when disabled. The base style gives every
+      disabled button a filled surface, which inside a bar that has none reads as a box, and
+      the chrome had no disabled button until today.
+- [x] **WebView2 does deliver buttons 3 and 4 to the DOM**, checked by the owner with a real
+      mouse in a `pnpm dev` window on 2026-09-13. The question was open because dispatched
+      events prove the wiring and not the delivery: a webview that swallowed the side buttons
+      would have left the keyboard and the arrows working and the gesture dead, with the whole
+      suite green. No native handler is needed.
+
 ### 2026-09-13 (earlier) — N5, and a `try` that was right to stay
 
 `feature/ui-view-stores`, cut from `develop` after N4 merged, suite green.
