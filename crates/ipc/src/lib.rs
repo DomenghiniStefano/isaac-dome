@@ -11,6 +11,7 @@ mod marks;
 mod profile;
 mod progress;
 mod queue;
+mod reasons;
 mod resources;
 mod search;
 mod settings;
@@ -47,6 +48,7 @@ pub use progress::SaveProgress;
 pub use queue::{
     achievement_unlocking, queue_view, GraphDeps, QueueDiagnostic, QueueInputs, QueueRow, QueueView,
 };
+pub use reasons::{IoReason, SaveReason, SettingsReason, StoreReason};
 pub use resources::{
     archive_views, data_url, extraction_report, ArchiveMode, ArchiveView, ExtractionReport,
     SpriteView,
