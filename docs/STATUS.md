@@ -1022,7 +1022,7 @@ reason:
       `crates/ipc/src/bin/ipc-types.rs` over an ordered list of the types that cross, then
       prettier. `scripts/check` regenerates into a scratch copy under `ui/` and fails on a
       difference. Spec `docs/superpowers/specs/2026-09-13-generated-contract-design.md`, plan
-      `docs/superpowers/plans/2026-09-13-generated-contract.md`.
+      `docs/superpowers/plans/archive/2026-09-13-generated-contract.md`.
       **The item said five foreign types; there are nine.** `wiki` contributes `SectionKind`,
       `CollectibleTemplate` and `Style` beside `Target`, and `core_save::marks::CharacterGroup`
       is the ninth. The list in B2 was written from a skim, the same way N2's was — the
