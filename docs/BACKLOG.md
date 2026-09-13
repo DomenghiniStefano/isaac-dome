@@ -793,7 +793,21 @@ persisted in the settings file, and `discovery` trying it before its own search.
 
 ---
 
-## B15 — Tearing a tab off into its own window, and back (implementation, after 3.7)
+## B15 — Tearing a tab off into its own window, and back (implementation, after 3.7) — 🟡 built on 2026-09-13, **not yet measured on the machine**
+
+**Built on `feature/drag-and-windows`, ahead of 3.7 rather than after it** (spec
+`docs/superpowers/specs/2026-09-13-drag-and-windows-design.md`): the window port and its fake,
+the handshake that seeds a newborn window, docking with the marker drawn in the target's strip,
+the two closing rules, the payload-free events that make the profile, the scale and the plan the
+app's rather than the window's, the hit test with its DPI conversion, the preview page, and the
+gesture itself.
+
+**What is still open is the one thing the entry said would decide it**: whether WebView2 keeps
+delivering pointer events with the cursor outside the window. It needs a real window and a hand
+on the mouse, and it has not been run. `lib/window/pointerSource.ts` is written as if the answer
+were yes, behind an interface that is the only thing the other answer changes, with a 10-second
+silence timeout that **cancels** the drag rather than landing a tab nobody released. The plan's
+Task 1 is written to be run by the owner; Task 17's eleven checks wait on the same session.
 
 Logged 2026-09-11, a product requirement from the owner: drag a tab out of the window and, on
 drop, it opens in a new window; drag it back over the first window's tab strip and the two
@@ -1561,7 +1575,17 @@ crashed on; and no full path has crossed the IPC boundary.
 
 ---
 
-## B31 — Dragging a row lifts the whole card, and one component does it everywhere (implementation, `ui`, after design)
+## B31 — Dragging a row lifts the whole card, and one component does it everywhere (implementation, `ui`, after design) ✅ closed on 2026-09-13
+
+**Closed on `feature/drag-and-windows`.** `lib/drag/dragList.ts` holds the decisions (threshold,
+hit test, the grab's offset, the ghost's origin) with its own tests; `composables/useDragList.ts`
+owns the choreography and adds `Escape`, which neither screen had; `components/ui/drag/DragGhost.vue`
+draws the lifted copy — `aria-hidden`, because it is a picture of the row, not a second one. The
+queue and the tab strip are its two callers and keep their own pure drop semantics. **The kit has
+no shadow token and that is a decision** (`assets/theme/shadow.css`: `--shadow-*: initial`), so
+the lift is a `primary` border on an opaque sheet. Looked at on the Kit, in the strip and in the
+Plan, with the drag driven through the real DOM: the marker still names the landing, the drop is
+still instant, `Escape` puts everything back and commits nothing.
 
 Logged 2026-09-12, from the owner's review of the Plan: dragging a queue row doesn't feel
 right. What the owner wants is the **whole card lifted and floating above the rest**,
@@ -1972,7 +1996,53 @@ rebuilt `dataset/wiki.json` travels in its own commit, as every regenerated arte
 
 ---
 
-## B39 — Two Cargo tables are downloaded, committed, and read by nothing (implementation, `wiki`, small)
+## B39 — A tab carries its state between windows: filters, scroll, what it was showing (implementation, `ui`, after 3.7's shape)
+
+Logged 2026-09-13, from the owner while checking the tear-off: *"si devono tenere anche filtri,
+scroll ecc quando tratti uno spostamento di tab"*. A tab dragged into another window arrives at
+the right page and **forgets everything about how it was being read** — the Unlock facets, the
+search text, the sort, where the virtualized table was scrolled to.
+
+### Why it is not a small fix
+
+What crosses between windows today is `TabSeed` — everything a tab *is*, minus its identity. And
+a tab, today, **is a location**: a route name and a query. Everything else lives somewhere that
+is not the tab:
+
+- the **facets and the search text** are the screens' own `ref`s, recreated when the screen
+  mounts (`screens/unlock/`, `composables/useSearch.ts`);
+- the **scroll offset** belongs to the DOM element, and to `@tanstack/vue-virtual`'s measurement
+  of it;
+- the **view stores** (`stores/graph.ts`, `collection.ts`, `wiki.ts`) are per window, and keyed
+  by nothing: two tabs on the same screen already share them.
+
+So "a tab keeps its state" means **a tab owns its state**, which is a different shape from the
+one the shell has had since 3.1. It is the same shape 3.7 needs in order to save a session — a
+tab that can be written down and read back — which is why this waits for that decision rather
+than inventing a second one.
+
+### What it probably looks like
+
+1. A tab's state becomes an object it owns: `{ location, view? }`, where `view` is a small,
+   serializable record a screen declares for itself (facets, query, sort, scroll offset).
+2. A screen reads it on mount and writes it back as it changes — through one composable, so no
+   screen invents its own storage, and so the shape is uniform enough for 3.7 to persist.
+3. `TabSeed` needs no change at all: it is `Omit<Tab, 'id'>`, so the day a tab holds its view the
+   view crosses windows with it. That property was built in on purpose (2026-09-13) and this is
+   the case it was built for.
+4. Scroll is the awkward one: an offset only means something against a list of the same length,
+   so it is restored **after** the data is there, and a list that changed underneath keeps the
+   top rather than guessing.
+
+### Done when
+
+A tab dragged into another window comes back showing what it was showing: the same facets, the
+same text in the search, the same sort, and the same place in the list — and the same is true of
+a tab that survives a restart, because it is the same mechanism.
+
+---
+
+## B40 — Two Cargo tables are downloaded, committed, and read by nothing (implementation, `wiki`, small)
 
 Logged on 2026-09-13, noticed while adding the transformations' five fields to the same
 query. `crates/wiki-snapshot/src/api.rs` downloads ten Cargo tables; `Raw::load` puts seven
