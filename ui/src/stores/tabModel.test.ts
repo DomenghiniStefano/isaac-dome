@@ -2,13 +2,18 @@ import { describe, expect, it } from 'vitest'
 import { RouteName, WikiCategory } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import {
+  canDetach,
   closeTab,
+  detachTab,
   firstState,
+  insertTab,
   moveTab,
   navigateTab,
   openTab,
+  seedState,
   selectTab,
   tabLabel,
+  tabSeed,
 } from './tabModel'
 import type { Tab, TabsState } from './tabModel'
 
@@ -105,5 +110,79 @@ describe('tabLabel', () => {
         titleOf,
       ),
     ).toBe('wikiCategories.bosses')
+  })
+})
+
+// A tab that travels between windows carries everything but its identity: these say so without
+// naming a single field of a tab, so what a tab is made of can change under them.
+const seedOf = (tab: Tab) => tabSeed(tab)
+const someTab = (id: string): Tab => ({ id, ...seedOf(three().tabs[0] as Tab) })
+
+describe('a tab that leaves, and one that arrives', () => {
+  it('inserts an arriving tab at the index and selects it: a dropped tab is the one you want', () => {
+    const after = insertTab(three(), 1, someTab('d'))
+    expect(ids(after)).toEqual(['a', 'd', 'b', 'c'])
+    expect(after.activeId).toBe('d')
+  })
+
+  it('clamps an index past either end rather than dropping the tab', () => {
+    expect(ids(insertTab(three(), 99, someTab('d')))).toEqual([
+      'a',
+      'b',
+      'c',
+      'd',
+    ])
+    expect(ids(insertTab(three(), -3, someTab('d')))).toEqual([
+      'd',
+      'a',
+      'b',
+      'c',
+    ])
+  })
+
+  it('detaching hands back the tab and the state without it', () => {
+    const out = detachTab(three(), 'b')
+    expect(out?.tab.id).toBe('b')
+    expect(out ? ids(out.state) : null).toEqual(['a', 'c'])
+    // The active tab left, so its right neighbour takes over, exactly as closing does.
+    expect(out?.state.activeId).toBe('c')
+  })
+
+  it('detaching a tab that is not there answers null and changes nothing', () => {
+    expect(detachTab(three(), 'zzz')).toBeNull()
+  })
+
+  it('the last tab does not detach: that window already is that tab', () => {
+    const one: TabsState = { tabs: [someTab('a')], activeId: 'a' }
+    expect(canDetach(one)).toBe(false)
+    expect(detachTab(one, 'a')).toBeNull()
+    expect(canDetach(three())).toBe(true)
+  })
+
+  it('a seeded window holds what it was given, active where it was told', () => {
+    const seeds = three().tabs.map(seedOf)
+    const state = seedState(seeds, 1, (n) => `tab-${n}`)
+    expect(state.tabs).toHaveLength(3)
+    expect(state.activeId).toBe(state.tabs[1]?.id)
+    // The seeds carried everything but the identity, and the identity is this window's.
+    expect(state.tabs.map(seedOf)).toEqual(seeds)
+    expect(ids(state)).toEqual(['tab-0', 'tab-1', 'tab-2'])
+  })
+
+  it('drops the identity from the seed, so a fresh id cannot be overwritten by an old one', () => {
+    const seed = tabSeed(someTab('a'))
+    expect('id' in seed).toBe(false)
+    expect({ id: 'b', ...seed }.id).toBe('b')
+  })
+
+  it('a seed with nothing in it still leaves a bar with one tab', () => {
+    const state = seedState([], 0, (n) => `tab-${n}`)
+    expect(state.tabs).toHaveLength(1)
+    expect(state.activeId).toBe(state.tabs[0]?.id)
+  })
+
+  it('an active index past the seeds still selects a tab that exists', () => {
+    const state = seedState(three().tabs.map(seedOf), 9, (n) => `tab-${n}`)
+    expect(state.activeId).toBe('tab-2')
   })
 })
