@@ -365,7 +365,15 @@ This is the defect the whole plan exists for: 907 of 1727 entries carry `{"kind"
 
 **Interfaces:**
 - Consumes: `param`, `text`, `inline`, `leading_number` (all private helpers already in `infobox.rs`)
-- Produces: `Infobox::Item { quote, activated, quality, tags, recharge, devil_price, shop_price, pools }`, `Infobox::Trinket { quote, tags, pools }`, and `InfoboxKind::{Passive, Activated}` replacing `InfoboxKind::Collectible`
+- Produces: `Infobox::Item { quote, template, quality, tags, recharge, devil_price, shop_price, pools }`, `Infobox::Trinket { quote, tags, pools }`, `InfoboxKind::{Passive, Activated}` replacing `InfoboxKind::Collectible`, and the fieldless enum `CollectibleTemplate { Passive, Activated }`
+
+**Not `activated: bool`**, which is what this plan's first draft said. Two reasons, and the
+repo already decided both: a fieldless enum on the IPC is a bare camelCase string (`SectionKind`,
+`Style`, `OriginView` — zero exceptions), and a bool would be a trap on top of that, since
+`activated: false` would silently mean both "passive" and "familiar". The wiki has no familiar
+template and writes familiars with the passive one, so the type reports **which template was
+read** and claims nothing about what the item is. The TypeScript mirror is a
+`const CollectibleTemplate = { … } as const`, never a string union.
 
 - [ ] **Step 1: Write the failing test**
 
