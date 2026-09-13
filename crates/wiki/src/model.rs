@@ -276,6 +276,21 @@ pub enum Infobox {
         character: Option<Target>,
         unlocks: Option<Target>,
     },
+    /// A transformation, and the only variant completed from outside its own infobox: the
+    /// count and the set are stated in the page body, not in the box (spec §2.2, §2.4).
+    Transformation {
+        /// How many of `contributors` are needed. `None` when the page does not say it in a
+        /// form we can read — never defaulted to three, which is what every page that does
+        /// say it says, and therefore what a wrong default would be invisible against.
+        requires: Option<u32>,
+        /// The items and trinkets that count, in page order, deduplicated. The union of the
+        /// infobox's `items` and the body's own tables: each loses something the other has.
+        contributors: Vec<Target>,
+        /// What the transformation acts on ("Isaac's bums"). Kept because the Cargo table
+        /// declares it, and `no_silent_parameter` fails on a parameter that is neither a
+        /// field nor deliberately ignored.
+        target: Vec<Inline>,
+    },
     Character {
         health: Vec<Inline>,
         damage: String,

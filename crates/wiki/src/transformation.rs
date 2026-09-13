@@ -47,16 +47,6 @@ pub fn requires(text: &str) -> Option<u32> {
     digits.parse().ok()
 }
 
-/// The items and trinkets that count toward a transformation, and whether the page's two
-/// statements of them agree.
-pub struct Contributors {
-    pub targets: Vec<Target>,
-    /// The infobox's `items` and the body's tables named different sets. Recorded, not
-    /// resolved: on the live snapshot Guppy's infobox lists seven collectibles and its body
-    /// adds the trinket Kid's Drawing, and the set is the union of the two.
-    pub disagree: bool,
-}
-
 /// Every item and trinket target of an inline run, in order, edition wrappers included: a
 /// list qualified by `dlc =` still names items that count, in that edition.
 fn refs(inline: &[Inline], out: &mut Vec<Target>) {
@@ -87,12 +77,11 @@ fn refs(inline: &[Inline], out: &mut Vec<Target>) {
 /// an infobox list the Cargo table renders as empty. The body is read **only** from the
 /// lines that carry one of `TABLES`, never from the page's prose: an Effects section naming
 /// an item is a mention, and mentions are what make the item-side index useless.
-pub fn contributors(
-    ib: &RawInfobox,
-    text: &str,
-    r: &Resolver,
-    d: &mut Diagnostics,
-) -> Contributors {
+/// Whether the two sources agreed is not returned: it is recorded in
+/// `Diagnostics::transformation_sources_disagree`, which is where the snapshot's report
+/// reads it and where a test can see it. Returning it as well would be a second copy of one
+/// fact, free to drift from the first.
+pub fn contributors(ib: &RawInfobox, text: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Target> {
     let mut body = Vec::new();
     for line in text
         .lines()
@@ -115,7 +104,7 @@ pub fn contributors(
             targets.push(t);
         }
     }
-    Contributors { targets, disagree }
+    targets
 }
 
 #[cfg(test)]
@@ -177,9 +166,9 @@ mod tests {
             &r,
             &mut d,
         );
-        assert_eq!(c.targets.len(), 2, "{:?}", c.targets);
-        assert!(matches!(c.targets[1], Target::Trinket { id: 1 }));
-        assert!(c.disagree);
+        assert_eq!(c.len(), 2, "{c:?}");
+        assert!(matches!(c[1], Target::Trinket { id: 1 }));
+
         assert_eq!(d.transformation_sources_disagree, 1);
     }
 
@@ -195,8 +184,8 @@ mod tests {
             &r,
             &mut d,
         );
-        assert_eq!(c.targets.len(), 1);
-        assert!(!c.disagree);
+        assert_eq!(c.len(), 1);
+
         assert_eq!(d.transformation_sources_disagree, 0);
     }
 
@@ -212,6 +201,6 @@ mod tests {
             &r,
             &mut d,
         );
-        assert!(c.targets.is_empty(), "{:?}", c.targets);
+        assert!(c.is_empty(), "{c:?}");
     }
 }

@@ -75,6 +75,7 @@ pub enum EntryKey {
     Boss(u32, u32, u32),
     Challenge(u32),
     Character(u32),
+    Transformation(u32),
 }
 
 /// A numeric infobox parameter: the leading digits, because the wiki can follow the
@@ -106,6 +107,13 @@ fn entry_key(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) -> O
             Some((id, variant, subtype)) => EntryKey::Boss(id, variant, subtype),
             None => EntryKey::Boss(number(ib, "id")?, 0, 0),
         },
+        // The Cargo table first, because it is the only source with an id for every page:
+        // Super Bum's infobox says `id = n/a` and the table maps that onto 1000. By the
+        // infobox alone that page would be dropped as having no id.
+        InfoboxKind::Transformation => EntryKey::Transformation(
+            r.transformation_of_page(title)
+                .or_else(|| number(ib, "id"))?,
+        ),
     })
 }
 
@@ -158,7 +166,8 @@ fn entry_title(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) ->
         | InfoboxKind::Activated
         | InfoboxKind::Trinket
         | InfoboxKind::Boss
-        | InfoboxKind::Challenge => title.to_string(),
+        | InfoboxKind::Challenge
+        | InfoboxKind::Transformation => title.to_string(),
     }
 }
 
@@ -190,7 +199,8 @@ pub fn parse_page(
             | InfoboxKind::Trinket
             | InfoboxKind::Boss
             | InfoboxKind::Challenge
-            | InfoboxKind::Character => page_sections
+            | InfoboxKind::Character
+            | InfoboxKind::Transformation => page_sections
                 .get_or_insert_with(|| sections(text, r, d))
                 .clone(),
         };
@@ -203,7 +213,7 @@ pub fn parse_page(
                 description: facts.description,
                 dlc: facts.dlc,
                 unlocked_by: facts.unlocked_by,
-                infobox: infobox_from(kind, &ib, r, d),
+                infobox: infobox_from(kind, &ib, text, r, d),
                 sections,
             },
         ));
