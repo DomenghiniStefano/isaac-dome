@@ -1,15 +1,15 @@
 # Wiki dataset — design
 
 **Date:** 2026-09-05
-**Origin:** `docs/superpowers/plans/2026-09-05-b1-sources-effects-report.md` (B1 analysis), with
+**Origin:** `docs/superpowers/reports/2026-09-05-b1-sources-effects-report.md` (B1 analysis), with
 the decisions made in chat the same day: all entities in the first cycle, Rust, raw and
 derived both in the repo, up to the IPC with a verification screen, typed tree.
 
 ## What changed during execution
 
-The plan (`docs/superpowers/plans/2026-09-05-wiki-dataset.md`) and its twelve tasks
+The plan (`docs/superpowers/plans/archive/2026-09-05-wiki-dataset.md`) and its twelve tasks
 turned up facts this spec didn't know. Full report:
-`docs/superpowers/plans/2026-09-05-wiki-dataset-report.md`.
+`docs/superpowers/reports/2026-09-05-wiki-dataset-report.md`.
 
 - **Characters are resolved from our own map, not from the wiki's infoboxes.** The ids
   the `Infobox character` infoboxes declare are unreliable (Isaac carries Keeper's id,

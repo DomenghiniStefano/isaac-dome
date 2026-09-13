@@ -13,7 +13,7 @@ Logged on 2026-09-05. Reference for shape/format: the wiki page for *False PHD*
 (`bindingofisaacrebirth.fandom.com/wiki/False_PHD`).
 
 **Closed the same day.** Report —
-`docs/superpowers/plans/2026-09-05-b1-sources-effects-report.md`. What came out of it, that the entry
+`docs/superpowers/reports/2026-09-05-b1-sources-effects-report.md`. What came out of it, that the entry
 below didn't know:
 
 - The fandom wiki is the **copy abandoned** by the 2023 migration: stuck at 2025, HTTP 403
@@ -29,8 +29,8 @@ below didn't know:
   *(Corrected on 2026-09-05: it's not a wiki error. The page has two infoboxes — the current trinket
   97 and the Afterbirth+ collectible 474, replaced by Broken Glass Cannon in
   Repentance — and the Cargo table confirms it with the `dlc` bitmask. See
-  `docs/superpowers/plans/2026-09-05-b1-sources-effects-report.md` and
-  `docs/superpowers/plans/2026-09-05-wiki-dataset-report.md`.)*
+  `docs/superpowers/reports/2026-09-05-b1-sources-effects-report.md` and
+  `docs/superpowers/reports/2026-09-05-wiki-dataset-report.md`.)*
 - **EID** covers 100% of items and trinkets, Italian included, and has the Italian names
   that the stringtable doesn't; but it **has no license** and can't be redistributed without the author's
   consent. The Italian fandom wiki is made of empty skeleton pages.
@@ -39,7 +39,7 @@ below didn't know:
   GitHub. The implementation waits for the screen design, like B3.
 
 Dataset implementation closed on 2026-09-05: report —
-`docs/superpowers/plans/2026-09-05-wiki-dataset-report.md`.
+`docs/superpowers/reports/2026-09-05-wiki-dataset-report.md`.
 
 *The original entry, for the record:*
 
@@ -153,7 +153,7 @@ already filtered.
 ## B4 — An item's unlock tree (this is M2) ✅ closed on 2026-09-07
 
 Logged on 2026-09-05. **Closed 2026-09-07** — report in
-`docs/superpowers/plans/2026-09-07-unlock-graph-report.md`.
+`docs/superpowers/reports/2026-09-07-unlock-graph-report.md`.
 
 What execution answered, that the entry below got wrong: **the 283 English conditions were
 never the source.** The wiki dataset already in the repo carries typed requirements for
@@ -215,7 +215,7 @@ The index, the IPC command that queries it, and the two views. Nothing else.
 
 ### Closed as sub-project 3.5b
 
-Implemented on 2026-09-12 (`docs/superpowers/plans/2026-09-12-screens-search-report.md`), and
+Implemented on 2026-09-12 (`docs/superpowers/reports/2026-09-12-screens-search-report.md`), and
 every question below was answered where it said it would be:
 
 - **The index lives in `crates/ipc/src/search.rs`**, pure, with the wiki half built once and
@@ -438,7 +438,7 @@ two conventions at once.
 ## B8 — What a real `log.txt` actually contains (a **spike**, blocks M4) ✅ closed on 2026-09-08
 
 **Closed on 2026-09-08.** Report:
-`docs/superpowers/plans/2026-09-08-b8-log-spike-report.md`, from one real run (Judas, hard,
+`docs/superpowers/reports/2026-09-08-b8-log-spike-report.md`, from one real run (Judas, hard,
 Mega Satan, won) watched live with a throwaway probe. Both open questions answered — **rooms
 are logged**, and the flush is immediate — plus five findings the entry wasn't looking for,
 of which two change M4's design: the log **announces every save write** (132 times in one
@@ -534,7 +534,7 @@ last session; `RNG Start Seed` gives the dedup key that makes re-reading safe.
 ## B9 — Re-identify the save's sections from the game's own names (implementation, delicate)
 
 Logged on 2026-09-08, out of the B8 spike. Evidence and the full table in
-`docs/superpowers/plans/2026-09-08-b8-log-spike-report.md`.
+`docs/superpowers/reports/2026-09-08-b8-log-spike-report.md`.
 
 ### What we found
 
@@ -1695,7 +1695,7 @@ and cards that read "what, how, why, add" top to bottom; and the reference profi
 rows name the Tainted characters and their condition.
 
 **Closed on 2026-09-13**
-(`docs/superpowers/plans/2026-09-13-goals-and-achievement-detail-report.md`). The screen is
+(`docs/superpowers/reports/2026-09-13-goals-and-achievement-detail-report.md`). The screen is
 **"Obiettivi consigliati"** — a step implies a sequence and the rows are independent — its
 intro says what the list is rather than how it was computed, and the body is grouped by the
 reason a row is there (`Aprono di più`, `Ci sei quasi`), each group ending on Unlock with the
@@ -1862,7 +1862,7 @@ the same one gesture (click navigates, Ctrl opens beside), and an entry the data
 for is drawn as plain text rather than as a link that leads nowhere.
 
 **Closed on 2026-09-13**, with the sub-project that made an achievement's wiki page its detail
-(`docs/superpowers/plans/2026-09-13-goals-and-achievement-detail-report.md`). `page:
+(`docs/superpowers/reports/2026-09-13-goals-and-achievement-detail-report.md`). `page:
 Option<Target>` sits on all four variants, `Some` only when `Dataset::entry` answers, through
 the same `crates/ipc/src/wiki_target.rs` the requirements use; pinned on real data by
 `what_a_node_unlocks_links_to_the_pages_the_dataset_has`.
@@ -1900,8 +1900,8 @@ a test that reads it from the catalog rather than from a literal table.
 
 Logged and closed the same day. Spec
 `docs/superpowers/specs/2026-09-13-goals-want-design.md`, plan
-`docs/superpowers/plans/2026-09-13-goals-want.md`, report
-`docs/superpowers/plans/2026-09-13-goals-want-report.md`. Three things execution measured that
+`docs/superpowers/plans/archive/2026-09-13-goals-want.md`, report
+`docs/superpowers/reports/2026-09-13-goals-want-report.md`. Three things execution measured that
 the entry below didn't know:
 
 - **14 of the 45 challenges are named by more than one achievement.** `routes` being a list is

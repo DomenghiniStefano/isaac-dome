@@ -2,7 +2,9 @@
 
 Single source of truth for the project status. Updated every session.
 Narrative summary and design decisions live elsewhere: `docs/PROJECT.md` (project),
-`docs/superpowers/specs/` (module design), `docs/superpowers/plans/` (plans and reports).
+`docs/superpowers/specs/` (module design), `docs/superpowers/plans/` (the plan being executed
+now, the ones already merged under `archive/`), `docs/superpowers/reports/` (what execution
+measured).
 The quality tasks that came out of the 2026-09-05 review (local verification, scanner, IPC
 contract, memory, test data) live in `docs/IMPROVEMENTS.md`, with closing criteria and order.
 
@@ -44,7 +46,7 @@ model could never say, *N of these items*. The four nodes behind Guppy and Beelz
 answered. **The other half of B34 was written and thrown away**: the thirteen `pickup:`
 references are real requirements, not noise, and dropping them would have made their nodes
 read *available now*. Report in
-`docs/superpowers/plans/2026-09-13-transformations-report.md`.
+`docs/superpowers/reports/2026-09-13-transformations-report.md`.
 **M4's first sub-project has its design** (`cac6914`): the run model, the `run` and
 `log-watch` crates, and the backfill that makes the archive born full from the logs already
 on disk.
@@ -66,10 +68,10 @@ much more to absorb**, and `UnlockTarget` gained a field as well.
 - [ ] **M1 — Rust parser, discovery, unpack, Completion screen** ← in progress
 - [x] **M2 — Unlock graph** (2026-09-07). The Unlock *section* is frontend work and
       waits for the design system; the graph behind it is done — report in
-      `docs/superpowers/plans/2026-09-07-unlock-graph-report.md`.
+      `docs/superpowers/reports/2026-09-07-unlock-graph-report.md`.
       **Reopened and closed again on 2026-09-12** for the one kind of prerequisite it could
       not say. Spec `docs/superpowers/specs/2026-09-12-graph-mark-requirements-design.md`,
-      plan `docs/superpowers/plans/2026-09-12-graph-mark-requirements.md`.
+      plan `docs/superpowers/plans/archive/2026-09-12-graph-mark-requirements.md`.
       - [x] Five targets — Mother, The Beast, Hush, Delirium, Ultra Greedier — held **178 of
             the 195** uninterpreted references, and none of them for want of curation: every
             one was a hand-written `Verdict::Unknown`. They are not behind an achievement,
@@ -82,7 +84,7 @@ much more to absorb**, and `UnlockTarget` gained a field as well.
       - [x] **17 → 13 on 2026-09-13**: the four `transformation:` references are answered by
             `Requirement::Threshold`, and the wiki's sixteen transformations are in the
             dataset. Report in
-            `docs/superpowers/plans/2026-09-13-transformations-report.md`.
+            `docs/superpowers/reports/2026-09-13-transformations-report.md`.
             **The remaining 13 are not noise and are not going away**: checked against their
             sentences, `ending`, `Bestiary` and `tainted character` are real requirements the
             model cannot express — dropping them would make their nodes read *available now*.
@@ -113,7 +115,7 @@ much more to absorb**, and `UnlockTarget` gained a field as well.
             stays a fact about the profile.
 - [ ] **M3 — Derived plan** ← in progress. The **plan queue** is done (2026-09-08): an
       ordered series of achievements whose order is yours and can never contradict the
-      graph. Report in `docs/superpowers/plans/2026-09-07-plan-queue-report.md`. What
+      graph. Report in `docs/superpowers/reports/2026-09-07-plan-queue-report.md`. What
       remains of M3 is the screen, which waits for the design system.
 - [ ] **M4 — Log watcher and run archive** ← designed, not started. Four pieces and not a
       screen: a pure `run` crate (typed events, the fold, the rules file, and the part of
@@ -144,23 +146,23 @@ report → post-review fixes.
 ### `core-save` — `.dat` parser, read-only ✅
 
 - [x] Design spec — `docs/superpowers/specs/2026-09-01-core-save-parser-design.md`
-- [x] TDD plan — `docs/superpowers/plans/2026-09-01-core-save-parser.md`
+- [x] TDD plan — `docs/superpowers/plans/archive/2026-09-01-core-save-parser.md`
 - [x] Implementation — `crates/core-save/` (`parse.rs`, `section.rs`, `diff.rs`)
-- [x] Report — `docs/superpowers/plans/2026-09-01-core-save-parser-report.md`
+- [x] Report — `docs/superpowers/reports/2026-09-01-core-save-parser-report.md`
 - [x] Post-review fixes
 - [x] `Cargo.lock` checked in for reproducible builds (`da615dd`)
 
 ### `discovery` — finds Steam, the game, the saves ✅
 
 - [x] Design spec — `docs/superpowers/specs/2026-09-01-discovery-design.md`
-- [x] TDD plan — `docs/superpowers/plans/2026-09-01-discovery.md`
+- [x] TDD plan — `docs/superpowers/plans/archive/2026-09-01-discovery.md`
 - [x] DLC → edition map
 - [x] Save file name parsing
 - [x] `appmanifest .acf` parsing (installdir + DLC)
 - [x] Save scanning (multi-account userdata, Documents, override)
 - [x] Steam location (`steamlocate` + `winreg` HKCU fallback)
 - [x] `discover()` orchestration + integration test on the real machine
-- [x] Report — `docs/superpowers/plans/2026-09-01-discovery-report.md`
+- [x] Report — `docs/superpowers/reports/2026-09-01-discovery-report.md`
 - [x] Post-review fixes (registry fallback, malformed `.acf` fallback, degradation)
 
 ### `unpack` — targeted extraction from `.a` archives ✅
@@ -168,9 +170,9 @@ report → post-review fixes.
 - [x] Design spec — `docs/superpowers/specs/2026-09-01-unpack-design.md`
       (ARCH000 format, djb2 + FNV hashing — **the spec needs a correction**: it gives the
       version as a constant, while byte `0x07` is actually the compression mode)
-- [x] TDD plan — `docs/superpowers/plans/2026-09-01-unpack.md`
+- [x] TDD plan — `docs/superpowers/plans/archive/2026-09-01-unpack.md`
 - [x] Scaffold, public types, hashing
-- [x] Report — `docs/superpowers/plans/2026-09-01-unpack-report.md`
+- [x] Report — `docs/superpowers/reports/2026-09-01-unpack-report.md`
 - [x] Post-review fixes (absolute-path guard, no-panic test, spec alignment)
 - [x] **All three compression modes** (2026-09-03), dispatched on byte `0x07`:
       `Lzw` (already there), `MiniZ` (deflate + ISAAC cipher, `miniz.rs` + `isaac.rs`) and
@@ -187,7 +189,7 @@ report → post-review fixes.
 
 - [x] Design spec — `docs/superpowers/specs/2026-09-03-catalog-design.md` (the whole
       catalog in one spec, two plans: A closes M1, B prepares M2)
-- [x] TDD plan (A) — `docs/superpowers/plans/2026-09-03-catalog-a.md`, 10 tasks
+- [x] TDD plan (A) — `docs/superpowers/plans/archive/2026-09-03-catalog-a.md`, 10 tasks
 - [x] **Character head icons: map written, checked by eye** (task 6). The `Main`
       layer of `gfx/ui/coop menu.anm2` gives 38 frames; cropped from `coop menu.png` (192×224,
       32×32 cells) and inspected one by one. Frame 0 is the menu's "?" placeholder, then the
@@ -212,7 +214,7 @@ report → post-review fixes.
       188 trinkets), not 911: the old 911 came from a `grep` over the text that counted
       them by mistake. With this, **all** name keys resolve — no exceptions.
 - [x] Implementation (plan A) — 42 tests, 0 failed.
-- [x] Report — `docs/superpowers/plans/2026-09-03-catalog-a-report.md`
+- [x] Report — `docs/superpowers/reports/2026-09-03-catalog-a-report.md`
 - [x] **Plan B** (prepares M2, and **closes the static data base**): `metadata.rs`
       (quality and tags, actually in `items_metadata.xml` not `items.xml`); `achievements.rs`
       with the unlock-condition comments and the `achievement="N"` link from items;
@@ -222,8 +224,8 @@ report → post-review fixes.
       slots). Found and fixed a real bug in the challenge parser (mixed separators,
       negative ids); fixed four measurement numbers that were wrong in the brief, which had
       propagated into the spec. 81 tests in the `catalog` crate (51 unit, 15 on `build.rs`, 15 on `real_data.rs`).
-- [x] TDD plan (B) — `docs/superpowers/plans/2026-09-04-catalog-b.md`, 8 tasks
-- [x] Report (B) — `docs/superpowers/plans/2026-09-04-catalog-b-report.md`
+- [x] TDD plan (B) — `docs/superpowers/plans/archive/2026-09-04-catalog-b.md`, 8 tasks
+- [x] Report (B) — `docs/superpowers/reports/2026-09-04-catalog-b-report.md`
 - [x] **A challenge's reward** (backlog B2, 2026-09-05): `Challenge.rewards`, collected by
       `Catalog::build` from the achievement notes. Three forms in the file, not one: comment
       `Beat Challenge #N` (challenges 1–20), comment `beat Challenge N (Name)` (21–30), attribute
@@ -245,7 +247,7 @@ Pure crate, no I/O and no Tauri dependency: turns `discovery`, `core-save` and
 `catalog` types into already-resolved JSON. **83 tests.**
 
 - [x] Design spec — `docs/superpowers/specs/2026-09-02-app-shell-ipc-design.md`
-- [x] TDD plan in 12 tasks — `docs/superpowers/plans/2026-09-02-app-shell-ipc.md`
+- [x] TDD plan in 12 tasks — `docs/superpowers/plans/archive/2026-09-02-app-shell-ipc.md`
 - [x] Opaque profile id, deterministic and case/separator insensitive
 - [x] Presentable candidates, sorted by date, with exactly one suggestion
 - [x] Active profile resolution: **no silent fallback**, ever
@@ -329,8 +331,8 @@ Implementation of backlog item B1 (analysis closed on 2026-09-05). Pure crate `w
 standalone tool, `wiki-snapshot`, the only place in the repo that talks to the network.
 
 - [x] Design spec — `docs/superpowers/specs/2026-09-05-wiki-dataset-design.md`
-- [x] TDD plan in 12 tasks — `docs/superpowers/plans/2026-09-05-wiki-dataset.md`
-- [x] Report — `docs/superpowers/plans/2026-09-05-wiki-dataset-report.md`
+- [x] TDD plan in 12 tasks — `docs/superpowers/plans/archive/2026-09-05-wiki-dataset.md`
+- [x] Report — `docs/superpowers/reports/2026-09-05-wiki-dataset-report.md`
 - [x] `crates/wiki`: tree types (`Entry`, `Section`, `Block`, `Inline`, `Target`,
       `Infobox`, `Dlc`, `Style`), wikitext parser (templates, inline, blocks, sections,
       infoboxes), `Resolver` over the Cargo tables and corrections, `build(raw, corrections) ->
@@ -355,7 +357,7 @@ standalone tool, `wiki-snapshot`, the only place in the repo that talks to the n
 #### The infobox, and the templates we already downloaded (2026-09-13) — phase 1 landed
 
 Spec `docs/superpowers/specs/2026-09-13-wiki-infobox-design.md`, plan
-`docs/superpowers/plans/2026-09-13-wiki-infobox.md` (16 tasks, two phases). The parser read
+`docs/superpowers/plans/archive/2026-09-13-wiki-infobox.md` (16 tasks, two phases). The parser read
 every infobox parameter and then threw most of them away: **907 of 1727 entries reached the
 frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
 `Infobox::Trinket` were unit variants. No new download — every byte was already in
@@ -445,7 +447,7 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
       **13 of the 16 pages state their item set twice and differently**, which
       `transformationSourcesDisagree` counts rather than resolves. Adult has neither count
       nor set on purpose: its page is about pills. Report in
-      `docs/superpowers/plans/2026-09-13-transformations-report.md`.
+      `docs/superpowers/reports/2026-09-13-transformations-report.md`.
 - [ ] Resolver and parser polish deferred from the review: listed by theme in the
       execution report, "What's left out" section. **Two of the three named there closed
       on 2026-09-08**, and the third turned out not to be polish at all.
@@ -546,12 +548,12 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
       - [x] **1. Foundations and primitives** (2026-09-10) — tokens, font, motion, i18n,
             `cn()`, 23 primitives on a development-only Kit page. Spec
             `docs/superpowers/specs/2026-09-10-design-system-foundations-design.md`, plan
-            `docs/superpowers/plans/2026-09-10-design-system-foundations.md`
+            `docs/superpowers/plans/archive/2026-09-10-design-system-foundations.md`
       - [x] **2. App components** (2026-09-10) — title bar and tabs, navbar, section
             sidebar, KPI tile, matrix cell in sprites or bars, wiki tokens and blocks, data
             states, collapsible card; presentational, on the Kit page. Spec
             `docs/superpowers/specs/2026-09-10-design-system-components-design.md`, plan
-            `docs/superpowers/plans/2026-09-10-design-system-components.md`
+            `docs/superpowers/plans/archive/2026-09-10-design-system-components.md`
       - [ ] **3. Screens** — decomposed into seven sub-projects in
             `docs/superpowers/specs/2026-09-11-screens-shell-profile-design.md`, each with
             its own spec → plan → execution; decisions marked "(delegated)" wait for the
@@ -559,32 +561,32 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
             - [x] 3.1 Shell and profile selection (2026-09-11) — tabs owning locations, Vue Router in
                   memory, Pinia, the live window chrome, the profile indicator, the profile
                   screen and its gate, placeholders, fixtures for `pnpm ui:dev`. Plan
-                  `docs/superpowers/plans/2026-09-11-screens-shell-profile.md` (its
+                  `docs/superpowers/plans/archive/2026-09-11-screens-shell-profile.md` (its
                   checkboxes are the step-by-step state)
             - [x] 3.2 Completion (2026-09-11) — the marks matrix on the active profile: four
                   KPIs with their denominators, base and Tainted groups, the unknown block,
                   a tooltip per cell, sprites or bars; B13 closed (the marks map in `ipc`, the
                   icon protocol serving crops). Spec
                   `docs/superpowers/specs/2026-09-11-screens-completion-design.md`, plan
-                  `docs/superpowers/plans/2026-09-11-screens-completion.md`
+                  `docs/superpowers/plans/archive/2026-09-11-screens-completion.md`
             - [x] 3.3 Next steps, Unlock, Plan — split in two halves
                   (`docs/superpowers/specs/2026-09-11-screens-graph-design.md`):
                   - [x] 3.3a the node, Next steps and Unlock (2026-09-11) — a node's state and
                         its why, the Badge's partial state, four facets with data and their
                         counts, search, three sorts, a virtualized table; plan
-                        `docs/superpowers/plans/2026-09-11-screens-graph.md`
+                        `docs/superpowers/plans/archive/2026-09-11-screens-graph.md`
                   - [x] 3.3b Plan (2026-09-11) — the queue you drag, a repair that says where a
                         row stopped, the diagnostics as alerts and footnotes, the proposal
                         beside it; "in coda" and one click to add on Next steps and Unlock; a
                         move names the row it lands under (`queue_move(achievement, after)`).
                         Spec `docs/superpowers/specs/2026-09-11-screens-plan-design.md`, plan
-                        `docs/superpowers/plans/2026-09-11-screens-plan.md`
+                        `docs/superpowers/plans/archive/2026-09-11-screens-plan.md`
             - [x] 3.4 Collection (2026-09-11) — the save's item collection joined with the
                   catalog's collectibles (`ipc::collection_view`, the `collection` command, a
                   pack payload), one state per item, facets on quality, pool, kind and origin
                   over a virtualized table. Spec
                   `docs/superpowers/specs/2026-09-11-screens-collection-design.md`, plan
-                  `docs/superpowers/plans/2026-09-11-screens-collection.md`, branch
+                  `docs/superpowers/plans/archive/2026-09-11-screens-collection.md`, branch
                   `feature/screens-collection`
             - [x] 3.5 Wiki in tabs, search (2026-09-12, both halves) — spec
                   `docs/superpowers/specs/2026-09-12-screens-wiki-search-design.md`, branch
@@ -593,7 +595,7 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
                         provenance, a category's list, a page in a tab (figure, infobox per
                         kind, sections, references that open in place or beside), the
                         `wiki_index` command and `IconRef::Page`. Plan
-                        `docs/superpowers/plans/2026-09-12-screens-wiki.md`
+                        `docs/superpowers/plans/archive/2026-09-12-screens-wiki.md`
                   - [x] 3.5b search (2026-09-12) — one index over the catalog's names, the
                         achievements' conditions, the wiki's titles and the body of its
                         sections; `search(query, limit)` with the wiki half built once;
@@ -601,13 +603,13 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
                         and the Search screen, whose rows are **destinations** and not hits.
                         B5 closed, and measured rather than assumed: 1,727 pages indexed in
                         15 ms, a query in 15–19 ms, so the FTS5 fallback is not needed. Plan
-                        `docs/superpowers/plans/2026-09-12-screens-search.md`, report
+                        `docs/superpowers/plans/archive/2026-09-12-screens-search.md`, report
                         `…-screens-search-report.md`, branch `feature/screens-search`
             - [x] **3.5c Interface scale (2026-09-12, B26)** — pulled ahead of 3.6 on the
                   owner's request; numbered `c` because `b` was already the search half
                   of 3.5, which it now precedes. Spec
                   `docs/superpowers/specs/2026-09-12-screens-scale-design.md`, plan
-                  `docs/superpowers/plans/2026-09-12-screens-scale.md`. The whole interface
+                  `docs/superpowers/plans/archive/2026-09-12-screens-scale.md`. The whole interface
                   scales from Settings **as
                   Discord's zoom level does** — a slider over its eleven steps 50–200,
                   `Ctrl` `+`/`-`, a preview card pinned at the top of the page — persisted
@@ -630,7 +632,7 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
                   disabled: never a link that leads nowhere. A mark and a counter carry none
                   (B36), and what a node *unlocks* is B35. Spec
                   `docs/superpowers/specs/2026-09-12-blocked-menu-design.md`, plan
-                  `docs/superpowers/plans/2026-09-12-blocked-menu.md`, report
+                  `docs/superpowers/plans/archive/2026-09-12-blocked-menu.md`, report
                   `…-blocked-menu-report.md`, branch `feature/blocked-menu`
             - [ ] 3.6 Settings and About — provenance, credits, the three promises; About
                   becomes a dialog, not a page (B25); the profile screen becomes a welcome
@@ -672,8 +674,8 @@ Path, in order:
       game's files is normalized and the crate has its final shape.
 - [x] **2. IPC contracts for the M2 and M3 screens** — spec dated 2026-09-05
       (`docs/superpowers/specs/2026-09-05-graph-contracts-design.md`), plan in nine tasks
-      (`docs/superpowers/plans/2026-09-05-graph-contracts.md`) executed the same day,
-      report in `docs/superpowers/plans/2026-09-05-graph-contracts-report.md`. Types in `ipc`
+      (`docs/superpowers/plans/archive/2026-09-05-graph-contracts.md`) executed the same day,
+      report in `docs/superpowers/reports/2026-09-05-graph-contracts-report.md`. Types in `ipc`
       and TypeScript mirror in `ui/src/lib/ipc/`: a single node for the three screens, with the
       data that already exists (catalog, save, goals in `store`) **real** and whatever the
       graph doesn't know yet as a **declared** `{ kind: "stub" }` — not "fake data", which
@@ -1216,9 +1218,9 @@ save against the dated backup the game wrote before it, and read which cells mov
 - [ ] **Backlog of registered, not-yet-started tasks: `docs/BACKLOG.md`** (2026-09-05).
       ~~B1 analysis on sources for item effects~~ **closed on 2026-09-05**: the
       source is wiki.gg (CC BY-SA 4.0, not the fandom copy), dataset in the build, report in
-      `docs/superpowers/plans/2026-09-05-b1-sources-effects-report.md`. **Implementation closed
+      `docs/superpowers/reports/2026-09-05-b1-sources-effects-report.md`. **Implementation closed
       the same day** (at night): crate `wiki`, tool `wiki-snapshot`, embedded dataset —
-      report in `docs/superpowers/plans/2026-09-05-wiki-dataset-report.md`. All that's left is the
+      report in `docs/superpowers/reports/2026-09-05-wiki-dataset-report.md`. All that's left is the
       design of the screen that shows the text. ~~B2 challenge rewards~~ **closed on
       2026-09-05** (three forms in the
       file, not one: see the entry); B3 lists and search after design; B4 is M2; **B8 is
@@ -1375,7 +1377,7 @@ so the wiki infobox work kept the main checkout. Spec
 `feature/goals-want`, cut from `develop` at `a83a7ef` in its own worktree, `pnpm check` green
 on the result: 55 frontend test files / 356 tests, 7 skips all pre-existing and named. Spec
 `docs/superpowers/specs/2026-09-13-goals-want-design.md`, report
-`docs/superpowers/plans/2026-09-13-goals-want-report.md`. **B37 closed.**
+`docs/superpowers/reports/2026-09-13-goals-want-report.md`. **B37 closed.**
 
 - [x] **The graph reads from the other end.** `crates/ipc/src/want.rs` takes a `wiki::Target`,
       resolves it to every achievement that grants it, and answers with the series still
@@ -1406,7 +1408,7 @@ on the result: 55 frontend test files / 356 tests, 7 skips all pre-existing and 
 `feature/screens-goals-detail`, cut from `develop` in its own worktree, `pnpm check` green on
 the result: 53 frontend test files / 345 tests, 7 skips all named and none of them this
 sub-project's. Spec `docs/superpowers/specs/2026-09-13-goals-and-achievement-detail-design.md`,
-report `docs/superpowers/plans/2026-09-13-goals-and-achievement-detail-report.md`.
+report `docs/superpowers/reports/2026-09-13-goals-and-achievement-detail-report.md`.
 **B32 and B35 closed.**
 
 - [x] **An achievement's wiki page is its detail.** `/wiki?page=achievement:<id>` grows a
@@ -2493,7 +2495,7 @@ while a run was in progress, reporting each change through `core_save::diff` (ev
 - **Zero mod noise on this machine** (no `Lua Debug` at all), unlike the 2024 log B8 was
   written from.
 
-- [x] **B8 closed** — report in `docs/superpowers/plans/2026-09-08-b8-log-spike-report.md`,
+- [x] **B8 closed** — report in `docs/superpowers/reports/2026-09-08-b8-log-spike-report.md`,
       written from one complete run (Judas, hard, Mega Satan, won). Both open questions
       answered: **rooms are logged**, with a frame number on every transition, and the flush
       is immediate. Two findings change M4's shape — the log **announces every save write**
@@ -2716,7 +2718,7 @@ code touched: the suite was reporting green on work it had stopped doing.
 New pure crate `crates/plan` (26 tests), `store` migration 2, the `ipc` view-model, five
 Tauri commands and the TypeScript mirror. Spec
 `docs/superpowers/specs/2026-09-07-plan-queue-design.md`, report
-`docs/superpowers/plans/2026-09-07-plan-queue-report.md`.
+`docs/superpowers/reports/2026-09-07-plan-queue-report.md`.
 
 - [x] **The order is an array, not a `seq` column** — the user's own proposal, and it
       removes a class of bug: a set of sequence numbers can contradict itself, a position
@@ -2740,7 +2742,7 @@ Tauri commands and the TypeScript mirror. Spec
 ### 2026-09-07 — M2: the unlock graph
 
 New pure crate `crates/graph`, 42 tests. Full report in
-`docs/superpowers/plans/2026-09-07-unlock-graph-report.md`; spec in
+`docs/superpowers/reports/2026-09-07-unlock-graph-report.md`; spec in
 `docs/superpowers/specs/2026-09-07-unlock-graph-design.md`. Branch
 `feature/unlock-graph`, 13 commits, `pnpm check` green with one pre-existing skip
 (the Python cross-check, on a machine with no Python).
@@ -2998,7 +3000,7 @@ A documents-only session, no code. Two explicit requests, logged as
 ### 2026-09-05 (night) — B1, sources for item effects
 
 - [x] **Backlog B1 closed**, an analysis task with no code. Report —
-      `docs/superpowers/plans/2026-09-05-b1-sources-effects-report.md`. The original entry compared
+      `docs/superpowers/reports/2026-09-05-b1-sources-effects-report.md`. The original entry compared
       against the fandom wiki (CC BY-NC-SA): that's the **abandoned copy** since the 2023
       migration. The living wiki is **wiki.gg**, CC BY-SA 4.0, already cited in `PROJECT.md`
       for the graph; the NC clause no longer applies to us. MediaWiki API with no credentials and **Cargo
@@ -3025,7 +3027,7 @@ A documents-only session, no code. Two explicit requests, logged as
 ### 2026-09-05 (night) — wiki dataset
 
 - [x] **Implementation of B1 closed**, TDD plan in 12 tasks, all passed review.
-      Full report — `docs/superpowers/plans/2026-09-05-wiki-dataset-report.md`. Born: the
+      Full report — `docs/superpowers/reports/2026-09-05-wiki-dataset-report.md`. Born: the
       pure crate `wiki` (tree types, wikitext parser, `Resolver`, `build`,
       `Dataset::embedded()`) and the tool `wiki-snapshot` (`fetch`/`build`, the only one talking to the
       network, dependencies only `wiki` and `ureq`).
@@ -3093,7 +3095,7 @@ A documents-only session, no code. Two explicit requests, logged as
       `ipc`; `store` crate with migration 1; real tests on the mapping; five commands in
       `app` with `Store` in managed state; TypeScript types and wrapper, and a verification
       screen with Unlock and Next Steps. Report —
-      `docs/superpowers/plans/2026-09-05-graph-contracts-report.md`.
+      `docs/superpowers/reports/2026-09-05-graph-contracts-report.md`.
 - [x] **A number in the plan corrected by execution, not adjusted after the fact**: the slots unknown
       to the catalog are **4**, not 5 (`c1d492e`, `814e7cb`): the 5 came from 642 − 637 and counted
       slot 0, which isn't a node. The test was stopped and investigated before touching the
@@ -3137,8 +3139,8 @@ A documents-only session, no code. Two explicit requests, logged as
       over the text): quality −1 (2 → 0, they were `craftquality`), pool orphans (26 → 24),
       id gaps (9 → 11), multi-achievement challenges (13 → 14) — the same methodological error
       as plan A, which had propagated into the spec (`7c0798a`, `b534bd7`).
-- [x] TDD plan (B) and report — `docs/superpowers/plans/2026-09-04-catalog-b.md`,
-      `docs/superpowers/plans/2026-09-04-catalog-b-report.md`. Full suite: **196 tests,
+- [x] TDD plan (B) and report — `docs/superpowers/plans/archive/2026-09-04-catalog-b.md`,
+      `docs/superpowers/reports/2026-09-04-catalog-b-report.md`. Full suite: **196 tests,
       0 failed** (`cargo test --workspace`).
 
 ### 2026-09-04
@@ -3241,7 +3243,7 @@ A documents-only session, no code. Two explicit requests, logged as
       with a `Catalog::build` that degrades, a single XML reader on `quick-xml`, stringtable
       resolved, `items.xml` and `players.xml` normalized, the head-icon spike closed, real-data
       tests, wired into `ipc` and `app`, verification screen with real names.
-      Report — `docs/superpowers/plans/2026-09-03-catalog-a-report.md`. Final suite:
+      Report — `docs/superpowers/reports/2026-09-03-catalog-a-report.md`. Final suite:
       **156 tests, 0 failed** (`cargo fmt --check` and `cargo clippy --all-targets -- -D
       warnings` clean).
 
@@ -3271,7 +3273,7 @@ A documents-only session, no code. Two explicit requests, logged as
       `@lucide/vue` sized with `size-*` instead of the prop, `prettier-plugin-tailwindcss`
       from the first commit. The five non-negotiable rules are also in `CLAUDE.md`.
 - [x] **TDD implementation plan** in 12 tasks
-      (`docs/superpowers/plans/2026-09-02-app-shell-ipc.md`). Tasks 1–7 are Rust and need
+      (`docs/superpowers/plans/archive/2026-09-02-app-shell-ipc.md`). Tasks 1–7 are Rust and need
       no Node: executable right away.
 - [x] Spec corrected on five points that came up while writing the plan: `modifiedUnix` instead of an
       already-formatted date, `CandidateSource` not exposing the Steam account id,
