@@ -41,6 +41,12 @@ paragraphs above them.
   Conventional Commits, `type(scope): subject`, English, no attribution trailer.
 - Committed artefacts — `dataset/raw/`, `dataset/wiki.json`, `crates/graph/rules/*.json` —
   are regenerated in **their own commit**, never folded into the code change that caused it.
+- **Anything that changes `dataset/raw/` or the wiki parser leaves `derived` red until
+  `pnpm wiki:build` runs.** `crates/wiki/tests/derived.rs` asserts
+  `wiki.json == build(raw, corrections)`, so a fetch or a new template breaks it immediately.
+  Rebuild and commit the artefact **in the same sitting as the change that caused it**, not
+  at the end: this plan originally scheduled the only rebuild at Task 6 and would have left
+  the suite red across four tasks. Added on 2026-09-13, after doing exactly that.
 
 ---
 
