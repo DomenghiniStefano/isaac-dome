@@ -9,8 +9,8 @@ import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
 import { nodeSlot } from '@/lib/graph/unlockFilter'
 import { canQueue, isQueued, queuedIds } from '@/lib/plan/queueRows'
-import { useGraphStore } from '@/stores/graph'
-import { LoadStatus } from '@/stores/profile'
+import { useGraphStore } from '@/stores/views'
+import { LoadStatus } from '@/stores/loadStatus'
 import { useQueueStore } from '@/stores/queue'
 import ScreenHeader from './ScreenHeader.vue'
 import StepCard from './nextSteps/StepCard.vue'
@@ -27,7 +27,8 @@ useOnActiveProfile(async () => {
 // An empty list has two reasons, and the steps don't say which: the unlock view's diagnostics
 // do (DESIGN-BRIEF.md §7.3).
 const noCatalog = computed(
-  () => graph.unlock?.diagnostics.some((d) => d.kind === 'noCatalog') ?? false,
+  () =>
+    graph.view?.unlock.diagnostics.some((d) => d.kind === 'noCatalog') ?? false,
 )
 
 // A queue that couldn't be read or saved offers nothing: the steps still show, without the
@@ -46,11 +47,11 @@ const canWrite = computed(() => queue.view?.storeAvailable === true)
       :error="graph.error"
       @retry="graph.load()"
     />
-    <template v-else-if="graph.steps && graph.unlock">
+    <template v-else-if="graph.view">
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
-      <div v-if="graph.steps.steps.length > 0" class="flex flex-col gap-2">
+      <div v-if="graph.view.steps.steps.length > 0" class="flex flex-col gap-2">
         <StepCard
-          v-for="(step, index) in graph.steps.steps"
+          v-for="(step, index) in graph.view.steps.steps"
           :key="nodeSlot(step)"
           :rank="index + 1"
           :node="step"
