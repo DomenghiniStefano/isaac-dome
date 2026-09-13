@@ -461,6 +461,12 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   the probe with `--release` leaves the debug build `scripts/check` uses free, which is the
   cheap way to keep measuring while the suite runs — verified 2026-09-12. Otherwise stop the
   probe and restart it after; the `.dat` watcher covers the gap.
+- Don't start `pnpm dev` while a build of the app is sitting in the tray: since 2026-09-13 the
+  app survives its last window and `tauri-plugin-single-instance` hands the launch to the
+  process that is already there — the new one brings the old window forward and exits, with no
+  error and no hint that the code you just wrote never ran. **Quit from the tray first**, which
+  is the only thing that ends the process. The same shape catches `pnpm dev` twice: the second
+  fails earlier and more loudly, on port 1420.
 - Don't commit by `git add -A` on this repo: specs under `docs/superpowers/` are edited in
   parallel by other sessions, and a clean `git status` at the start of a session is no
   promise it's still clean at the end. Stage by explicit path, and say so when the tree
