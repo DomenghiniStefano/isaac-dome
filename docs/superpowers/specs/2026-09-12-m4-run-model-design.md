@@ -6,7 +6,7 @@ they follow from the three decisions below, but they were not walked through one
 they are the part of this document most worth disagreeing with.
 
 **Split into two plans on 2026-09-13**, when the TDD plan was written and the size was visible.
-**1a — the run model** (`docs/superpowers/plans/2026-09-13-run-model.md`): the `run` crate
+**1a — the run model** (`docs/superpowers/plans/archive/2026-09-13-run-model.md`): the `run` crate
 alone — `Tail`, the rules file, the events, the fold. Pure, and finished software on its own.
 **1b — it goes live**: `log-watch`, the store's migration, run identity and the backfill of
 `online_logs\`, the agreement with the save's own counters, and the view-models. This document
@@ -68,8 +68,11 @@ Owns the typed events, the fold, and the rules file.
 ```rust
 Rules::parse(text: &str) -> Result<Rules, RulesError>
 Rules::event(&self, line: &str) -> Option<Event>
-Run::fold(events: impl Iterator<Item = Event>, kinds: &dyn ItemKinds) -> Run
+Run::fold(events: impl Iterator<Item = Event>, kinds: &dyn ItemKinds) -> Vec<Run>
 ```
+
+*(Written `-> Run` on 2026-09-12; one stream contains every run in a log, so 1a returns them
+all.)*
 
 It also owns the part of tailing that is not I/O, because that is where the mistakes are:
 the last line read may be half-written, one event can span several physical lines (B8: the
@@ -138,7 +141,16 @@ The events, from lines verified in M0 and re-verified by B8:
 | `AchievementUnlocked { id }` | `unlock steam achievement '19'` |
 | `SaveWritten { file }` | `Saving PersistentGameData to Steam Cloud: …` |
 
-Two judgments the fold owns, both from B8:
+**The `kind` on `RunStarted` has three values and they are not decoration**, which was measured
+on 2026-09-13 and is not in the row above. The logs contain `New`, `Continue` and `Net`. A
+**`Continue` is a run resumed** from an earlier launch, and the game logs it with the seed the
+run already had — so the abandonment rule of §3 below, read literally, marks a run that is still
+being played as abandoned and then counts it twice. `20260912-solo-judas.log.txt` opens with
+one. **The fold decides by seed, not by label**: the same seed on a run still open is that run
+resumed. `Net` is an online run, and it is the only free discriminator we have for the co-op
+question §3 leaves open.
+
+Three judgments the fold owns — the third is the one above; the first two are B8's:
 
 - **The starting item.** `from pool X` lies: Judas starts with Book of Belial and the line
   claims `pool treasure`, identical in shape to a real pickup. The only discriminator is

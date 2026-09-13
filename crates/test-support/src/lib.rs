@@ -99,6 +99,53 @@ pub fn sample_bytes(name: &str) -> Option<Vec<u8>> {
     }
 }
 
+/// The `samples/logs/` folder: the game's own `log.txt`, kept per session. Ignored by git
+/// like the rest of `samples/`.
+pub fn logs_dir() -> PathBuf {
+    samples_dir().join("logs")
+}
+
+/// One log by name, declaring which file it is or why there is none.
+pub fn log_sample(name: &str) -> Option<PathBuf> {
+    let path = logs_dir().join(name);
+    if path.is_file() {
+        declare(&format!("sample: logs/{name}"));
+        return Some(path);
+    }
+    declare(&format!("skip: logs/{name} missing from samples/logs/"));
+    None
+}
+
+/// Every real log, in name order. The folder also holds probe output (`probe*.tsv`) and a
+/// watcher trace, which are measurements and not logs: the filter lives here rather than in
+/// each test, for the reason `is_dated` exists — a looser one somewhere else eventually picks
+/// up a file that is not a point in the series.
+pub fn log_samples() -> Vec<PathBuf> {
+    let Ok(entries) = std::fs::read_dir(logs_dir()) else {
+        declare("skip: samples/logs/ is missing");
+        return Vec::new();
+    };
+    let mut found: Vec<PathBuf> = entries
+        .flatten()
+        .map(|entry| entry.path())
+        .filter(|path| {
+            path.file_name()
+                .and_then(|name| name.to_str())
+                .is_some_and(|name| name.ends_with(".log.txt"))
+        })
+        .collect();
+    found.sort();
+    for path in &found {
+        if let Some(name) = path.file_name().and_then(|name| name.to_str()) {
+            declare(&format!("sample: logs/{name}"));
+        }
+    }
+    if found.is_empty() {
+        declare("skip: no *.log.txt in samples/logs/");
+    }
+    found
+}
+
 /// Skips for a reason that isn't a missing file: a tool absent from the machine, a
 /// junction that wasn't created. The text ends up in `scripts/check`'s summary.
 pub fn skip(reason: &str) {
