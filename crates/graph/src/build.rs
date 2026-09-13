@@ -36,6 +36,15 @@ pub enum GraphDiagnostic {
     /// meaningless as an edge. Dropped rather than treated as a cycle, because a cycle
     /// makes every node downstream unknowable and this is just a self-reference.
     SelfPrerequisite { node: u32 },
+    /// A transformation whose set the profile has not reached: `current` of `at_least` of
+    /// its items are unlocked. The node is `Partial`, and this says why — otherwise "we
+    /// cannot say" and "you are one item short" would look the same from outside.
+    ThresholdUnmet {
+        node: u32,
+        label: String,
+        current: u32,
+        at_least: u32,
+    },
     /// A requirement the graph can't express, treated as passed because the profile has
     /// already earned `done` achievements that carry it. Evidence read from the save, not
     /// an optimistic guess — and declared, so the inference is visible rather than magic.
@@ -97,7 +106,16 @@ impl Graph {
                     // not unknown either. It travels in `requirements` and evaluation asks
                     // the profile about it — which is why it must not join `unknown`, or
                     // the node would stay `Partial` with the answer sitting right there.
-                    Requirement::Mark { .. } | Requirement::Counter { .. } => {}
+                    // A threshold joins them for a sharper reason: the prerequisites of
+                    // *any three of these eight* are a disjunction of subsets, and this
+                    // model has no way to say one. The repo has met that shape before — a
+                    // challenge unlocked by several achievements — and answered it with an
+                    // unknown rather than an invented conjunction. Here the answer comes at
+                    // evaluation, where the profile is, so it is not unknown either: it is
+                    // simply not an edge.
+                    Requirement::Mark { .. }
+                    | Requirement::Counter { .. }
+                    | Requirement::Threshold { .. } => {}
                     Requirement::Character { id: cid } => {
                         if let Some(by) = c.character(*cid).and_then(|ch| ch.unlocked_by) {
                             prerequisites.push(by.0);
