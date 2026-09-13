@@ -9,9 +9,9 @@ use std::collections::BTreeMap;
 use catalog::Catalog;
 use wiki::Target;
 
-use crate::search::{self, SaveFlags, SearchIndex};
+use crate::search::{self, ProgressMark, SaveFlags, SearchIndex};
 
-pub use crate::search::{Doc, ProgressMark};
+pub use crate::search::Doc;
 
 /// The two halves a query is built on, reachable from the integration test: a test that
 /// could only see the ranked answer would say nothing about them.
