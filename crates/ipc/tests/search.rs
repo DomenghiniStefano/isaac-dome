@@ -3,9 +3,9 @@
 //! current code happens to answer.
 
 use catalog::Catalog;
+use ipc::for_tests::{self, ProgressMark};
 use ipc::{
-    documents_for_tests, progress_for_tests, search, IconRef, ProgressMark, SaveFlags,
-    SearchDiagnostic, SearchIndex, SearchMatch, SearchView, Target,
+    search, IconRef, SaveFlags, SearchDiagnostic, SearchIndex, SearchMatch, SearchView, Target,
 };
 use serde_json::{json, to_value};
 use wiki::{
@@ -73,7 +73,7 @@ fn d6_effects() -> Section {
 }
 
 fn dataset() -> Dataset {
-    let mut ds = Dataset::empty_for_tests();
+    let mut ds = wiki::for_tests::empty_dataset();
     ds.items
         .insert(105, entry_with("The D6", Infobox::Item, vec![d6_effects()]));
     ds.trinkets
@@ -157,7 +157,7 @@ fn catalog() -> Catalog {
 fn a_target_both_sides_know_is_one_document_with_the_catalog_name_as_its_title() {
     let ds = dataset();
     let index = SearchIndex::build(Ok(&ds));
-    let docs = documents_for_tests(&index, Some(&catalog()));
+    let docs = for_tests::documents(&index, Some(&catalog()));
     let d6 = docs
         .get(&Target::Item { id: 105 })
         .expect("the item is on both sides");
@@ -184,7 +184,7 @@ fn a_target_both_sides_know_is_one_document_with_the_catalog_name_as_its_title()
 fn without_a_catalog_the_documents_are_the_wiki_pages_alone() {
     let ds = dataset();
     let index = SearchIndex::build(Ok(&ds));
-    let docs = documents_for_tests(&index, None);
+    let docs = for_tests::documents(&index, None);
     assert_eq!(docs.len(), index.len());
     assert_eq!(
         docs.get(&Target::Trinket { id: 97 })
@@ -203,25 +203,25 @@ fn a_mark_is_read_from_the_section_that_holds_it() {
         items: Some(&owned),
     };
     assert_eq!(
-        progress_for_tests(&Target::Achievement { id: 1 }, Some(flags)),
+        for_tests::progress(&Target::Achievement { id: 1 }, Some(flags)),
         ProgressMark::Done
     );
     assert_eq!(
-        progress_for_tests(&Target::Achievement { id: 2 }, Some(flags)),
+        for_tests::progress(&Target::Achievement { id: 2 }, Some(flags)),
         ProgressMark::Pending
     );
     assert_eq!(
-        progress_for_tests(&Target::Item { id: 105 }, Some(flags)),
+        for_tests::progress(&Target::Item { id: 105 }, Some(flags)),
         ProgressMark::Pending
     );
     // A trinket has no slot in section 4, and a boss none anywhere: no mark, not "unknown".
     assert_eq!(
-        progress_for_tests(&Target::Trinket { id: 97 }, Some(flags)),
+        for_tests::progress(&Target::Trinket { id: 97 }, Some(flags)),
         ProgressMark::None
     );
     // No profile, and a profile whose section didn't read, are both "unknown".
     assert_eq!(
-        progress_for_tests(&Target::Achievement { id: 1 }, None),
+        for_tests::progress(&Target::Achievement { id: 1 }, None),
         ProgressMark::Unknown
     );
     let unread = SaveFlags {
@@ -229,7 +229,7 @@ fn a_mark_is_read_from_the_section_that_holds_it() {
         items: None,
     };
     assert_eq!(
-        progress_for_tests(&Target::Item { id: 105 }, Some(unread)),
+        for_tests::progress(&Target::Item { id: 105 }, Some(unread)),
         ProgressMark::Unknown
     );
 }
@@ -337,7 +337,7 @@ fn every_word_of_the_query_must_be_in_one_field() {
 fn the_six_tiers_order_the_answer() {
     // Four titles that all contain "the": the whole title, its start, the start of a word in
     // it, and — "Mother" — the query buried inside a word, which is the weakest of the four.
-    let mut ds = Dataset::empty_for_tests();
+    let mut ds = wiki::for_tests::empty_dataset();
     for (id, title) in [(1, "Mother"), (2, "The"), (3, "The Bible"), (4, "Of the")] {
         ds.items
             .insert(id, entry_with(title, Infobox::Item, vec![]));
@@ -350,7 +350,7 @@ fn the_six_tiers_order_the_answer() {
 
 #[test]
 fn not_done_comes_before_done_inside_a_tier() {
-    let mut ds = Dataset::empty_for_tests();
+    let mut ds = wiki::for_tests::empty_dataset();
     ds.items
         .insert(1, entry_with("Bomb One", Infobox::Item, vec![]));
     ds.items
@@ -369,7 +369,7 @@ fn not_done_comes_before_done_inside_a_tier() {
 
 #[test]
 fn the_limit_cuts_the_hits_and_total_says_how_many_there_were() {
-    let mut ds = Dataset::empty_for_tests();
+    let mut ds = wiki::for_tests::empty_dataset();
     for id in 1..=5 {
         ds.items
             .insert(id, entry_with(&format!("Bomb {id}"), Infobox::Item, vec![]));

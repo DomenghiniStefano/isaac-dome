@@ -26,7 +26,8 @@ fn decompresses_achievements_xml_entry() {
         return;
     };
     // achievements.xml in config.a: offset 14, decompressed size 25894 (verified).
-    let out = unpack::__lzw_decompress(&bytes, 14, 25894).expect("decompression succeeded");
+    let out =
+        unpack::for_tests::lzw_decompress(&bytes, 14, 25894).expect("decompression succeeded");
     assert_eq!(
         out.len(),
         25894,
