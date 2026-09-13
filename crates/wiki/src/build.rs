@@ -73,6 +73,9 @@ pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
                 EntryKey::Character(id) => {
                     ds.characters.entry(id).or_insert(entry);
                 }
+                EntryKey::Transformation(id) => {
+                    ds.transformations.entry(id).or_insert(entry);
+                }
             }
         }
         diagnostics.merge(&d);
@@ -99,6 +102,7 @@ pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
         bosses: ds.bosses.len() as u32,
         challenges: ds.challenges.len() as u32,
         characters: ds.characters.len() as u32,
+        transformations: ds.transformations.len() as u32,
     };
     ds.meta.diagnostics = diagnostics;
     ds
@@ -145,6 +149,13 @@ mod tests {
                     3,
                     "{{infobox character|id=2}}\n== Notes ==\nn\n",
                 ),
+                page(
+                    PageKind::Transformation,
+                    "Guppy",
+                    "2026-01-15T00:00:00Z",
+                    5,
+                    "{{infobox transformation|id=0|items={{i|Breakfast}}}}\nPick up 3 [[item]]s from the following list.\n{{collectible table | Breakfast }}\n",
+                ),
             ],
             tables: Tables {
                 collectible: vec![row(&[
@@ -181,12 +192,42 @@ mod tests {
         assert!(ds.entry(&Target::Stage { name: "x".into() }).is_none());
     }
 
+    /// The kind that used to answer `None` by construction now answers, and its count
+    /// travels in `meta` beside the other six. `Stage` stays `None`: it has no page.
+    #[test]
+    fn a_transformation_has_an_entry_a_count_and_its_set() {
+        let ds = build(&raw(), &Corrections::default());
+        assert_eq!(ds.meta.counts.transformations, 1);
+        let e = ds.entry(&Target::Transformation { id: 0 }).unwrap();
+        assert_eq!(e.title, "Guppy");
+        let crate::Infobox::Transformation {
+            requires,
+            contributors,
+            ..
+        } = &e.infobox
+        else {
+            panic!("a transformation page carries a transformation infobox")
+        };
+        assert_eq!(*requires, Some(3));
+        assert_eq!(contributors, &vec![Target::Item { id: 25 }]);
+        assert!(ds.entry(&Target::Stage { name: "x".into() }).is_none());
+    }
+
     #[test]
     fn json_roundtrip_and_schema_check() {
         let ds = build(&raw(), &Corrections::default());
         let s = ds.to_json();
         assert_eq!(Dataset::from_json(&s).unwrap(), ds);
-        let bad = s.replacen(r#""schemaVersion": 1"#, r#""schemaVersion": 99"#, 1);
+        // Written against the constant, not against the literal it happens to hold: this
+        // test used to pin `"schemaVersion": 1` and went silently no-op the day the schema
+        // moved — `replacen` found nothing, the JSON stayed valid, and the assertion below
+        // passed for the wrong reason.
+        let current = format!(r#""schemaVersion": {SCHEMA_VERSION}"#);
+        assert!(
+            s.contains(&current),
+            "the shape of the field changed: {current}"
+        );
+        let bad = s.replacen(&current, r#""schemaVersion": 99"#, 1);
         assert!(matches!(
             Dataset::from_json(&bad),
             Err(DatasetError::SchemaMismatch { found: 99, .. })

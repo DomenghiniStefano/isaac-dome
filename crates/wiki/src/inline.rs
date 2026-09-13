@@ -350,6 +350,51 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
                 }
             }
         }
+        // Two more list templates, and the same reason as `achievement text`: the argument
+        // is a comma-separated list of names, and `resolve` answers with one target. They
+        // are how a transformation page states what counts toward it, which is the only
+        // complete statement of that set — the infobox's `items` misses Guppy's trinket.
+        k @ ("collectible table" | "collectible rows" | "trinket table" | "trinket rows") => {
+            let kind = if k.starts_with("collectible") {
+                "i"
+            } else {
+                "t"
+            };
+            // `rows` takes an optional `dlc =`: Conjoined splits its list by edition, one
+            // `rows` each under a shared header, and those items count only in that
+            // edition — which is what `Inline::Edition` says everywhere else.
+            let edition = t.named.get("dlc").map(|c| dlc_codes(c));
+            if let Some(only) = edition.clone() {
+                out.open(only);
+            }
+            for (n, item) in arg.split(',').enumerate() {
+                let item = item.trim();
+                if item.is_empty() {
+                    continue;
+                }
+                if n > 0 {
+                    out.buf.push_str(", ");
+                }
+                match r.resolve(kind, item) {
+                    Resolution::Target(target) => out.push(Inline::Ref {
+                        target,
+                        label: item.to_string(),
+                    }),
+                    // Not dropped: a name we cannot resolve is still what the page says,
+                    // and the miss is counted where every other failed lookup is counted.
+                    Resolution::Concept
+                    | Resolution::Unresolved
+                    | Resolution::Ignore
+                    | Resolution::Unknown => {
+                        d.unresolved(kind);
+                        out.buf.push_str(item);
+                    }
+                }
+            }
+            if edition.is_some() {
+                out.close();
+            }
+        }
         name if CONTENT_WRAPPERS.contains(&name) => recurse_into_arg(&arg, r, d, out, depth),
         name => match r.resolve(name, &arg) {
             Resolution::Target(target) => {
@@ -804,6 +849,76 @@ mod tests {
             }
         )));
         assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// A transformation page states what counts toward it as two tables, each one template
+    /// whose argument is a comma-separated list of names — the same shape as
+    /// `achievement text`, and the same reason it cannot go through `resolve`: that answers
+    /// with one target, and this needs one per name.
+    #[test]
+    fn the_two_tables_push_one_reference_per_name() {
+        let (v, d) = p("{{collectible table | Breakfast, Book of Virtues }} {{trinket table | Swallowed Penny }}");
+        let targets: Vec<&Target> = v
+            .iter()
+            .filter_map(|i| match i {
+                Inline::Ref { target, .. } => Some(target),
+                _ => None,
+            })
+            .collect();
+        assert_eq!(targets.len(), 3, "{v:?}");
+        assert!(matches!(targets[0], Target::Item { id: 25 }));
+        assert!(matches!(targets[1], Target::Item { id: 584 }));
+        assert!(matches!(targets[2], Target::Trinket { id: 1 }));
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// Censused on the sixteen transformation pages, 2026-09-13: the item lists come in two
+    /// shapes, and `rows` is the **more common** one — 25 occurrences against 14 for
+    /// `table`, because a page that splits its list by edition uses one `rows` per edition
+    /// under a shared header.
+    #[test]
+    fn the_rows_form_of_the_two_tables_resolves_the_same_way() {
+        let (v, d) = p("{{collectible rows | Breakfast, Book of Virtues }} {{trinket rows | Swallowed Penny }}");
+        let refs = v.iter().filter(|i| matches!(i, Inline::Ref { .. })).count();
+        assert_eq!(refs, 3, "{v:?}");
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// `{{collectible rows | dlc = r | … }}` is Conjoined's real markup: those items count
+    /// toward the transformation **only in that edition**, which is what `Inline::Edition`
+    /// already says everywhere else. Flattening it away would claim they always count.
+    #[test]
+    fn a_rows_list_qualified_by_edition_stays_qualified() {
+        let (v, _) = p("{{collectible rows | dlc = r | Breakfast }}");
+        assert!(
+            v.iter().any(|i| matches!(
+                i,
+                Inline::Edition { only, inline }
+                    if only == &vec![Dlc::Repentance]
+                        && inline.iter().any(|n| matches!(n, Inline::Ref { .. }))
+            )),
+            "{v:?}"
+        );
+    }
+
+    /// The header half of the same markup draws a table head and names nothing. It has to be
+    /// layout, not unknown: an unknown template recurses into its argument, and these pages
+    /// carry twelve of them.
+    #[test]
+    fn the_table_headers_are_layout_and_not_unknown() {
+        let (v, d) =
+            p("{{Collectible table/header}}{{trinket table/header}}{{header transformations}}");
+        assert!(v.is_empty(), "{v:?}");
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// A name the resolver does not know stays on the page as text — the reader still sees
+    /// what the wiki said — and the miss is counted rather than swallowed.
+    #[test]
+    fn an_unknown_name_in_a_table_is_text_and_is_counted() {
+        let (v, d) = p("{{collectible table | Nope }}");
+        assert!(v.iter().all(|i| !matches!(i, Inline::Ref { .. })), "{v:?}");
+        assert_eq!(d.unresolved.get("i"), Some(&1));
     }
 
     /// `{{ip|Boss}}` names an item pool — "Boss" 81 times, then the rooms and the chests.

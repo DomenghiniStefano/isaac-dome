@@ -6,7 +6,7 @@ use std::collections::HashMap;
 use catalog::{BossId, Catalog, ChallengeId, CharacterId, ItemId, ItemKind, Language};
 use wiki::Target;
 
-use crate::model::Requirement;
+use crate::model::{Requirement, ThresholdItem};
 use crate::rules::{target_key, RefRow, Rules, Verdict};
 
 /// English names to ids. Built once per graph: resolution is by name, so this is the hot
@@ -132,10 +132,88 @@ pub fn requirement_with(
         Target::Achievement { id } => Requirement::Gate {
             gate: format!("achievement:{id}"),
         },
-        Target::Transformation { .. }
+        // A transformation no longer reaches the verdict table: the rules file carries its
+        // count and its items, so it can be answered rather than judged.
+        Target::Transformation { id } => threshold(c, rules, *id, &label, unknown),
+        Target::Stage { .. } | Target::Room { .. } | Target::Pickup { .. } => {
+            from_verdict(rules, &verdict_key, character, unknown)
+        }
+    }
+}
+
+/// One contributor of a transformation, by **id alone**. Unlike a reference in a sentence
+/// there is no label to resolve by: the id comes from the wiki's own collectible table,
+/// which numbers items the way the game does.
+fn contributor(c: &Catalog, t: &Target) -> Option<ThresholdItem> {
+    let id = match t {
+        Target::Item { id } | Target::Trinket { id } => ItemId(*id),
+        Target::Character { .. }
+        | Target::Achievement { .. }
+        | Target::Challenge { .. }
+        | Target::Entity { .. }
+        | Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Pickup { .. } => from_verdict(rules, &verdict_key, character, unknown),
+        | Target::Pickup { .. } => return None,
+    };
+    [
+        ItemKind::Passive,
+        ItemKind::Active,
+        ItemKind::Familiar,
+        ItemKind::Trinket,
+    ]
+    .into_iter()
+    .find_map(|k| {
+        c.item(k, id).map(|i| ThresholdItem {
+            kind: i.kind,
+            id: i.id,
+            unlocked_by: i.unlocked_by.map(|a| a.0),
+        })
+    })
+}
+
+/// A transformation becomes a `Threshold` only when the rules file states a count **and**
+/// names at least that many items. Two refusals, and each has its reason:
+///
+/// - **no count** — `at_least` is a number, not an option, because a threshold that can be
+///   built without one would let "unknown" be mistaken for "zero", which everything meets;
+/// - **fewer items than the count** — Stompy's shape on the real snapshot: two collectibles
+///   and a count of three, because its third contributor is a pill and this model carries
+///   no pills. A threshold nothing can ever meet would say "you are one item away" forever.
+///
+/// The length checked is the **wiki's** list, not the resolved one: an item missing from
+/// this catalog is `unresolved`, which evaluation treats as "can only help", and is a
+/// different thing from a page that never named enough items at all.
+fn threshold(
+    c: &Catalog,
+    rules: &Rules,
+    id: u32,
+    label: &str,
+    unknown: impl Fn() -> Requirement,
+) -> Requirement {
+    let Some(row) = rules.transformation(id) else {
+        return unknown();
+    };
+    let Some(at_least) = row.at_least else {
+        return unknown();
+    };
+    if (row.items.len() as u32) < at_least {
+        return unknown();
+    }
+    let mut of = Vec::new();
+    let mut unresolved = 0;
+    for t in &row.items {
+        match contributor(c, t) {
+            Some(item) => of.push(item),
+            None => unresolved += 1,
+        }
+    }
+    Requirement::Threshold {
+        transformation: id,
+        label: label.to_string(),
+        at_least,
+        of,
+        unresolved,
     }
 }
 

@@ -49,7 +49,7 @@
 * {{i|Incubus}}: Fires red tears like Blood Clot with Cain, but without increased damage.
 ** {{dlc|r}} Incubus is capable of firing the barrage of tears like Isaac.
 * {{Dlc|nr}}{{i|Mom's Knife}}: Overrides Lead Pencil.
-** {{dlc|r}} The Lead Pencil tears fire alongside alongside the knife, every 15th throw.
+** {{dlc|r}} The Lead Pencil tears fire alongside the knife, every 15th throw.
 * {{i|Spirit Sword}}: The effect from Lead Pencil fires separately to {{i|Spirit Sword}} slashes.
 * {{i|Sprinkler|r}}: No effect.
 * {{I|Stye}}: The tears from the barrage will never have the bonus damage from Stye.

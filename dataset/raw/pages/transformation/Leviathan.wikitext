@@ -1,0 +1,38 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 8
+ | dlc         = a
+ | description = Grants [[flight]] and gives +2 {{e|Black Heart}}s.
+ | The Nail | Abaddon | Brimstone | The Mark | Maw of the Void | The Pact | Pentagram | Spirit of the Night
+}}
+
+'''Leviathan''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth]]'', turning Isaac into a [[wikipedia:Lovecraftian horror|Lovecraftian horror]] after picking up 3 devil-related items.
+
+== Effects ==
+* Grants 2 {{e|Black Heart}}s and [[flight]].
+
+== Requirements ==
+Pick up 3 [[item]]s from the following list ({{dlc|r}} with the [[Item Tags devil|{{code|devil}} tag]]).
+
+=== Activated Collectibles ===
+{{collectible table | The Nail, Sulfur }}
+
+=== Passive Collectibles ===
+{{collectible table/header}}
+{{collectible rows | Abaddon, Brimstone, The Mark, The Pact, Pentagram, Spirit of the Night, Maw Of The Void }}
+{{collectible rows | dlc = r | Eye of the Occult, Lord of the Pit }}
+|}
+
+== Notes ==
+* {{I|Sanguine Bond}}'s spikes have a 2% chance to transform Isaac into Leviathan.
+
+== Gallery ==
+<gallery>
+File:Transformations Afterbirth.jpg|Concept art for Leviathan along with other transformations that would be implemented into the Afterbirth DLC, by Edmund McMillen. Note that "Sistanis" is an early name of this transformation concept.
+</gallery>
+
+== Trivia ==
+* This transformation is based on the [[wikipedia:Leviathan|biblical creature of the same name]].
+* This transformation was initially misspelled as "Levathian" in Afterbirth but has been fixed in Afterbirth+.
+
+{{nav|leviathan|fr=Léviathan}}

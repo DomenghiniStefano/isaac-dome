@@ -134,3 +134,59 @@ describe('lockWhy', () => {
     )
   })
 })
+
+describe('a threshold', () => {
+  const guppy: RequirementView = {
+    kind: 'threshold',
+    transformation: 0,
+    label: 'Guppy',
+    current: 1,
+    atLeast: 3,
+    of: [
+      {
+        itemKind: 'passive',
+        id: 211,
+        name: "Guppy's Head",
+        unlocked: true,
+        page: null,
+      },
+      {
+        itemKind: 'passive',
+        id: 212,
+        name: "Guppy's Tail",
+        unlocked: false,
+        page: null,
+      },
+      {
+        itemKind: 'trinket',
+        id: 46,
+        name: "Kid's Drawing",
+        unlocked: false,
+        page: null,
+      },
+    ],
+    unresolved: 0,
+    page: null,
+  }
+
+  it('answers with its own row and one per item still locked', () => {
+    const [group] = nodeWhy(node([guppy]), t)
+    expect(group.label).toBe('graph.why.threshold')
+    expect(group.entries.map((e) => e.name)).toEqual([
+      'graph.thresholdName',
+      "Guppy's Tail",
+      "Kid's Drawing",
+    ])
+  })
+
+  it('leaves out the items already unlocked: they are not in the way', () => {
+    const [group] = nodeWhy(node([guppy]), t)
+    expect(group.entries.map((e) => e.name)).not.toContain("Guppy's Head")
+  })
+
+  it('gives every row a key of its own', () => {
+    const [group] = nodeWhy(node([guppy]), t)
+    const keys = group.entries.map((e) => e.key)
+    expect(new Set(keys).size).toBe(keys.length)
+  })
+})

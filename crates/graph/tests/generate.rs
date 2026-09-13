@@ -149,6 +149,52 @@ fn the_inventory_counts_uses_and_is_deterministic() {
     );
 }
 
+/// `Graph::build` never sees a `Dataset`: the wiki reaches this crate only through the
+/// generated rules file. A threshold needs its number and its items at runtime, so they have
+/// to travel there — one row per transformation, emitted even when the page did not state a
+/// count, because "we have it and cannot read its count" has to stay visible rather than
+/// silently absent.
+#[test]
+fn the_generator_emits_a_row_per_transformation() {
+    let mut d = dataset(vec![achievement(1, Vec::new())]);
+    d.transformations = [
+        (
+            0,
+            wiki::for_tests::entry(
+                "Guppy",
+                Infobox::Transformation {
+                    requires: Some(3),
+                    contributors: vec![Target::Item { id: 211 }, Target::Trinket { id: 46 }],
+                    target: Vec::new(),
+                },
+            ),
+        ),
+        (
+            11,
+            wiki::for_tests::entry(
+                "Adult",
+                Infobox::Transformation {
+                    requires: None,
+                    contributors: Vec::new(),
+                    target: Vec::new(),
+                },
+            ),
+        ),
+    ]
+    .into_iter()
+    .collect::<BTreeMap<_, _>>();
+
+    let r = generate(&d);
+    let guppy = r.transformations.get(&0).expect("Guppy");
+    assert_eq!(guppy.label, "Guppy");
+    assert_eq!(guppy.at_least, Some(3));
+    assert_eq!(guppy.items.len(), 2);
+
+    let adult = r.transformations.get(&11).expect("Adult is emitted too");
+    assert_eq!(adult.at_least, None);
+    assert!(adult.items.is_empty());
+}
+
 #[test]
 fn the_snapshot_the_file_was_generated_from_travels_with_it() {
     let mut d = dataset(vec![achievement(1, Vec::new())]);

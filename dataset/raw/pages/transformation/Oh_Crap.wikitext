@@ -1,0 +1,45 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 9
+ | dlc         = a
+ | description = Whenever a pile of [[poop]] is destroyed, restores half of a [[red heart]].
+ | appearance  = a walking pile of poop
+ | Flush! | The Poop | E. Coli
+}}
+
+'''Oh Crap''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth]]'', turning Isaac into poop after picking up 3 poop-related items.
+
+== Effects ==
+* Heals Isaac half of a red heart each time a [[poop|pile of poop]] is destroyed.
+
+== Requirements ==
+Pick up 3 [[item]]s from the following list ({{dlc|r}} with the [[Item Tags poop|{{code|poop}} tag]]).
+
+=== Activated Collectibles ===
+{{collectible table/header}}
+{{collectible rows | Flush!, The Poop }}
+{{collectible rows | dlc = r | Brown Nugget }}
+|}
+
+=== Passive Collectibles ===
+{{collectible table/header}}
+{{collectible rows | E. Coli }}
+{{collectible rows | dlc = r | Butt Bombs, Dirty Mind, Hallowed Ground, Montezuma's Revenge, No. 2, Skatole }}
+{{collectible rows | dlc = r+ | IBS }}
+|}
+
+== Notes ==
+* In an uncleared room, Isaac has 1/15 chance every 30 seconds to use the effect of {{i|The Poop}}.
+* {{dlc|nr}} Despite being poop-themed, {{i|Skatole}}, {{i|Butt Bombs}}, and {{i|No. 2|n}} do not count towards the transformation.
+* {{dlc+|rnr+}} Despite being poop-themed, {{I|IBS}} does not count towards the transformation.{{dlc-}}
+* {{dlc|nr}} Poop created with {{i|Flush!}} and {{i|E. Coli}} do not heal Isaac when he has this transformation.
+* Oh Crap! is useless for any character that cannot have Red Heart Containers such as {{c|???}}, {{c|The Lost}}, {{c|Black Judas}}, {{c|Keeper}}, {{C|Tainted ???}}, {{c|Tainted Keeper}}, {{c|Tainted Judas}}, and {{c|Tainted Lost}}.
+** {{c|Tainted Bethany}} will get blood charges for destroying poops.
+* {{dlc|r}} The [[Scat Man]] and [[High Brow]] challenges start with this transformation.
+
+== Gallery ==
+<gallery>
+File:Transformations Afterbirth.jpg|Concept art for Oh Crap (labeled "Poop Form") and other Afterbirth transformations by Edmund McMillen.
+</gallery>
+
+{{nav|oh crap|fr=Crotte Alors}}

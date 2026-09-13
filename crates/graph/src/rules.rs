@@ -7,7 +7,7 @@ use std::collections::BTreeMap;
 use serde::{Deserialize, Serialize};
 use wiki::Target;
 
-pub const SCHEMA_VERSION: u32 = 1;
+pub const SCHEMA_VERSION: u32 = 2;
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -18,6 +18,30 @@ pub struct Requirements {
     /// Every target that doesn't reduce to an achievement on its own: the form the
     /// curation fills in, not a list anyone has to invent.
     pub targets: Vec<TargetRow>,
+    /// The transformations, by the wiki's id. `Graph::build` never sees a `Dataset` — the
+    /// wiki reaches this crate only through this file — so a threshold's number and its
+    /// item list have to travel here to be answerable at runtime.
+    ///
+    /// `default` is **not** leniency towards an older file — `SCHEMA_VERSION` rejects those
+    /// outright. It is so a hand-written fixture that is not about transformations does not
+    /// have to spell an empty map to parse.
+    #[serde(default)]
+    pub transformations: BTreeMap<u32, TransformationRow>,
+}
+
+/// One transformation: what it is called, how many of its items are needed, and which.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct TransformationRow {
+    pub label: String,
+    /// `None` when the wiki page did not state a count in a form the parser reads. The row
+    /// is emitted anyway: "we have this transformation and cannot read its count" is a
+    /// different thing from "there is no such transformation", and only one of them is true
+    /// of Adult.
+    pub at_least: Option<u32>,
+    /// The items and trinkets that count toward it, as the wiki names them. No id of ours:
+    /// this file deliberately knows nothing about the user's catalog.
+    pub items: Vec<Target>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -253,6 +277,13 @@ impl Rules {
 
     pub fn targets(&self) -> &[TargetRow] {
         &self.requirements.targets
+    }
+
+    /// A transformation's row, by the wiki's id. `None` means the snapshot has no such
+    /// transformation, which is not the same as one whose count could not be read: that one
+    /// is present with `at_least: None`.
+    pub fn transformation(&self, id: u32) -> Option<&TransformationRow> {
+        self.requirements.transformations.get(&id)
     }
 
     pub fn refs(&self, achievement: u32) -> &[RefRow] {

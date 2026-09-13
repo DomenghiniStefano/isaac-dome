@@ -1,0 +1,37 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = n/a
+ | dlc         = a
+ | description = Replaces {{i|Bum Friend}}, {{i|Dark Bum}}, and {{i|Key Bum|n}} with Super Bum. This bum collects any of the other beggars' pickups, and offers twice the rewards.
+ | target      = Isaac's bums
+ | appearance  = Super Bum
+ | Bum Friend | Dark Bum | Key Bum
+}}
+
+'''Super Bum''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth]]'', turning Isaac's three bums into Super Bum.
+
+== Effects ==
+* Replaces all bum familiars obtained before or after the transformation with a Super Bum [[familiar]], who automatically collects all coins, red hearts, and keys in the room and drops twice as many rewards as the regular bums would have produced.
+
+== Requirements ==
+Pick up 3 [[item]]s from the following list.
+
+=== Passive Collectibles ===
+{{collectible table | Bum Friend, Dark Bum, Key Bum }}
+
+== Notes ==
+* This transformation has a unique animation sequence when the third bum is picked up.
+* When Dark Bum is obtained through {{i|Cambion Conception|n}}, it does not count towards the transformation.
+* If multiple bums of the same kind were present before the transformation, e.g. via {{i|Box of Friends}}, all of them will be replaced with only one Super Bum when three different bums are obtained.
+* {{Dlc|anr}} From a scoring perspective, consumables that Super Bum picks up count towards your Schwag bonus on daily runs.
+* {{Dlc|r}} Whenever Super Bum drops items, it will drop 2 copies of the same item.
+
+== Videos ==
+{{#ev:youtube|MQizbusCDNw|280}}
+
+== Trivia ==
+* This is the only transformation that does not affect Isaac himself, but instead transforms (and even fuses) certain [[familiar]]s.
+* This is the only transformation that has a unique animation.
+* {{Dlc|r}} This is the only transformation that {{c|Tainted Isaac|n}} is required to have 3 pieces of in his inventory in order to obtain it.
+
+{{nav|super bum|bum|fr=Super Mendiant}}

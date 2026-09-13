@@ -3,6 +3,20 @@
 
 use catalog::{BossId, ChallengeId, CharacterId, ItemId, ItemKind};
 
+/// One item of a `Threshold`'s set, resolved against the catalog. A struct and not a tuple
+/// because the two halves are read together at four call sites, and `(kind, id)` reversed
+/// is a bug the compiler cannot see.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct ThresholdItem {
+    pub kind: ItemKind,
+    pub id: ItemId,
+    /// The achievement that gates this item, if the game gates it at all. Resolved when the
+    /// graph is built, because `Graph::evaluate` has a profile and **no catalog**: every
+    /// other requirement answers that question by turning it into a prerequisite edge, and
+    /// a threshold is precisely the one that must not draw edges.
+    pub unlocked_by: Option<u32>,
+}
+
 /// What an achievement demands. The type is the point: it says whether the prerequisite
 /// has an achievement of its own behind it (character, challenge, item) or is content
 /// available from the start (Satan, Mom).
@@ -48,6 +62,22 @@ pub enum Requirement {
     Counter {
         name: crate::rules::CounterName,
         at_least: u32,
+    },
+    /// N of a set of items, in any combination: a transformation.
+    ///
+    /// Not a wall like the others, and it never draws a prerequisite edge: the
+    /// prerequisites of *any three of these eight* are a disjunction of subsets, which this
+    /// model cannot say and must not fake. `Graph::evaluate` answers it against the profile,
+    /// the way `Mark` and `Counter` are answered.
+    Threshold {
+        transformation: u32,
+        label: String,
+        at_least: u32,
+        of: Vec<ThresholdItem>,
+        /// Contributors the wiki names and this catalog does not have. Carried as a number
+        /// rather than dropped, because evaluation has to know the tally is incomplete —
+        /// an unresolved item can only ever *add* to it.
+        unresolved: u32,
     },
     /// Judged as gating nothing — `alwaysAvailable` or `notAPrerequisite`. A variant
     /// rather than a ref filtered away at the source, so that resolution is **total**:

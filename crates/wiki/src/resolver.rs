@@ -141,6 +141,12 @@ const LAYOUT: &[&str] = &[
     "header characters",
     "storage page",
     "unlockable",
+    "header transformations",
+    // The head of the two-part item table: `{{Collectible table/header}}` draws the row of
+    // column titles and `{{collectible rows|…}}` carries the names. Layout and not unknown,
+    // because an unknown template recurses into its argument and these have none to give.
+    "collectible table/header",
+    "trinket table/header",
     "reflist",
     "clear",
     "main",
@@ -410,6 +416,14 @@ impl Resolver {
     /// Only entities with `type = boss`: the bestiary key for a boss's page.
     pub fn boss_key(&self, page_title: &str) -> Option<(u32, u32, u32)> {
         self.bosses_by_title.get(&key(page_title)).copied()
+    }
+
+    /// A transformation's id from its page title. The Cargo table is the only source that
+    /// has one for every page: Super Bum's infobox says `id = n/a`, and the table maps that
+    /// onto 1000 — a sentinel for "no id in the game", not a `PlayerForm` beside 0…15.
+    /// Without this the page would be dropped as having no id.
+    pub fn transformation_of_page(&self, page_title: &str) -> Option<u32> {
+        self.transformations.get(&key(page_title)).copied()
     }
 }
 

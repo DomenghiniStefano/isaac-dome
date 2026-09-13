@@ -57,6 +57,11 @@ const KEPT: &[&str] = &[
     "pickups",
     "collectibles",
     "parent",
+    // Transformation. `requirement` is deliberately NOT here: it is in `IGNORED_PARAMS`,
+    // because all sixteen rows hold the same template default and the count is read from
+    // the page body instead.
+    "items",
+    "target",
 ];
 
 #[test]

@@ -30,7 +30,7 @@
 * {{Book of Virtues synergy|description=Spawns wisps in the inner ring when bombs placed by Isaac explode. Using Remote Detonator also causes the wisps' tears to explode, dealing 16.5 damage to enemies that are close to them (24 if Isaac has {{I|BFFS!}}).}}
 * {{i|Curse of the Tower}} / {{p|XVI - The Tower}}: The Troll Bombs generated will not explode until the Remote Detonator is used, unlike normal Troll Bombs.
 * {{i|Dr. Fetus}}: Remote Detonator can be used to detonate the fired bombs early, which can be useful against moving enemies.
-* {{i|Number Two}}: The bombs automatically dropped by No. 2 will not detonate on their own, greatly reducing the risk of accidental explosive self-damage.
+* {{i|No. 2}}: The bombs automatically dropped by No. 2 will not detonate on their own, greatly reducing the risk of accidental explosive self-damage.
 * {{I|Rocket in a Jar}}: Rockets do not explode on impact with surfaces, requiring manual detonation.
 ** '''Rocket in a Jar + Dr. Fetus:''' Rockets fired with Dr. Fetus will still explode on impact, but can be manually detonated.
 

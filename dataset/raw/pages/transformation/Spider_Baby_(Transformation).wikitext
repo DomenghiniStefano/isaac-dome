@@ -1,0 +1,36 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 12
+ | dlc         = a+
+ | description = Spawns a spider familiar that applies random status effects to enemies it comes in contact with.
+ | appearance  = a humanoid spider
+ | Box of Spiders | Spider Butt | Mutant Spider | Spider Baby | Spider Bite | Spider Mod
+}} {{disambig msg|the transformation|the passive item|Spiderbaby}}
+
+'''Spider Baby''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth †]]'', giving Isaac a spider familiar after picking up 3 spider-related items.
+
+== Effects ==
+* Spawns a spider [[familiar]] that applies random [[status effect]]s to enemies it comes into contact with.
+** Contrary to popular belief, this transformation does not generate friendly spiders on hit.
+** Confusingly, that effect is given by the item of the same name, which also contributes to this transformation.
+
+== Requirements ==
+Pick up 3 [[item]]s from the following list ({{dlc|r}} with the [[Item Tags spider|{{code|spider}} tag]]).
+
+=== Activated Collectibles ===
+{{collectible table/header}}
+{{collectible rows | Box of Spiders, Spider Butt }}
+|}
+
+=== Passive Collectibles ===
+{{collectible table/header}}
+{{collectible rows | Mutant Spider, Spider Bite, Spider Mod, Spiderbaby }}
+{{collectible rows | dlc = r | Bursting Sack, Daddy Longlegs, Hive Mind, Infestation 2, The Intruder, Juicy Sack, Keeper's Kin, Parasitoid, Sissy Longlegs, Sticky Bombs }}
+|}
+
+== Gallery ==
+<gallery>
+File:Familiar_Spiderbaby.png|The familiar given by the transformation.
+</gallery>
+
+{{nav|spider baby|fr=Homme Araignée}}

@@ -170,7 +170,7 @@
 * {{i|Neptunus}}: A locust that ticks damage slightly quicker.
 * {{i|Notched Axe}} / {{i|Samson's Chains}} / {{i|Mom's Bracelet}}: A rocky, grey locust that has a 20% chance to destroy rocks it flies over.
 * {{i|Number One}} / {{i|Stem Cells}} / {{i|Tooth Picks}} / {{i|Magic 8 Ball}}: A fast locust that ticks damage slightly quicker.
-* {{i|Number Two}}: A grey bomb locust that explodes on every tick.
+* {{i|No. 2}}: A grey bomb locust that explodes on every tick.
 * {{i|Ocular Rift}} / {{i|Black Hole}}: A grey locust surrounded by a rift that has a 10% chance to create a small {{i|Ocular Rift}} rift. The rift deals 25% of Isaac's damage per tick.
 * {{i|The Parasite}}: A locust and 2 tiny locusts.
 * {{i|Pluto}}: A tiny fast locust that ticks damage slightly quicker.

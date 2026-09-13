@@ -1,0 +1,21 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 11
+ | dlc         = a+
+ | description = +1 Red [[Heart container]].
+ | items       = [[Puberty]] pill
+}}
+
+'''Adult''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth †]]'', turns Isaac into an adult upon taking three [[Puberty]] pills.
+
+== Effects ==
+* Grants one full [[Red Heart container]].
+* Makes Isaac's voice deeper.
+
+== Notes ==
+* Consuming further Puberty pills has no effect.
+
+== Trivia ==
+* This transformation and [[Stompy]] are the only transformations that [[pill]]s count towards.
+
+{{nav|adult|fr=Adulte}}

@@ -1,0 +1,29 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 4
+ | dlc         = a
+ | description = Isaac leaves a trail of [[Green Creep|green poisonous creep]] as he walks that deals 6 damage per second.
+ | Bob's Rotten Head | Bob's Brain | Bob's Curse | Ipecac
+}}
+
+'''Bob''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth]]'', turning Isaac into Bob after picking up 3 Bob-related items.
+
+== Effects ==
+* Isaac leaves a trail of [[Green Creep|green poisonous creep]] as he walks that deals {{dlc|nr}} 6 / {{dlc|r}} 20 damage per second.
+* {{dlc|r}} Grants [[poison]] immunity.
+
+== Requirements ==
+Pick up 3 [[item]]s or [[trinket]]s from the following list ({{dlc|r}} with the [[Item Tags bob|{{code|bob}} tag]]).
+
+=== Activated Collectibles ===
+{{collectible table | Bob's Rotten Head }}
+
+=== Passive Collectibles ===
+{{collectible table | Bob's Brain, Bob's Curse, Ipecac }}
+
+=== Trinkets ===
+{{trinket table/header}}
+{{trinket rows | dlc = r+ | Bob's Bladder }}
+|}
+
+{{nav|bob}}

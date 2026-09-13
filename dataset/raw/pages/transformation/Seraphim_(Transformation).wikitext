@@ -1,0 +1,35 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 3
+ | dlc         = a
+ | description = Grants [[flight]] and gives +3 {{e|Soul Heart}}s.
+ | appearance  = an angel
+ | The Bible | Dead Dove | Guardian Angel | The Halo | Holy Grail | Holy Mantle | Mitre | Rosary | Sworn Protector
+}}
+
+'''Seraphim''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth]]'', giving Isaac wings after picking up 3 angel-related items.
+
+== Effects ==
+* Grants [[flight]] and 3 {{e|Soul Heart}}s.
+
+== Requirements ==
+Pick up 3 [[item]]s from the following list ({{dlc|r}} with the [[Item Tags angel|{{code|angel}} tag]]).
+
+=== Activated Collectibles ===
+{{collectible table/header}}
+{{collectible rows | The Bible }}
+|}
+
+=== Passive Collectibles ===
+{{collectible table/header}}
+{{collectible rows | Dead Dove, The Halo, Holy Grail, Holy Mantle, Mitre, Rosary }}
+{{collectible rows | dlc = nr | Guardian Angel, Sworn Protector }}
+{{collectible rows | dlc = r | Celtic Cross, Divine Intervention, Godhead, Holy Light, Immaculate Heart, Revelation, Sacred Heart, Salvation, Sacred Orb, Scapular }}
+{{collectible rows | dlc = r+ | Seraphim }}
+|}
+
+== Notes ==
+* {{dlc|nr+}} Despite having the same name, the familiar {{i|Seraphim}} does not contribute to the Seraphim transformation.
+* Picking up and dropping multiple, distinct copies of {{i|The Bible}} will count each copy towards the transformation. This makes {{i|Rosary}} and to a lesser degree, {{t|Rosary Bead}} especially helpful in gaining the transformation.
+
+{{nav|seraphim|fr=Séraphin (Transformation)}}

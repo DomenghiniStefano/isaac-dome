@@ -19,6 +19,9 @@
 * {{c|The Lost}} starts with this item, even if it hasn't been unlocked yet.
 * Killing Florian last in an {{E|Ultra Pride}} fight has a chance to drop the Eternal D6 if unlocked.
 * In rooms with multiple item pedestals, each pedestal has a separate chance of disappearing when rerolled.
+* Despite being described as a 25% chance, whether a pedestal disappears is determined by its InitSeed.
+** The result can be predicted by applying a 32-bit xorshift to the InitSeed with shifts 5, 27, and 8. If the resulting unsigned value is less than 2<sup>30</sup> (1,073,741,824), the pedestal disappears; otherwise, it is rerolled.
+** InitSeeds 8, 41, 74, 107, 140, and 173 are observed edge cases that also cause the pedestal to disappear. Including these edge cases, the actual probability is slightly higher than 25%: approximately 25.0000014%.
 * [[Luck]] has no effect on the item.
 
 == Synergies ==

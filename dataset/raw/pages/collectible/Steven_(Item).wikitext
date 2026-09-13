@@ -19,7 +19,7 @@ Finding '''Steven''' for the [[collection page]] can be difficult, as the boss {
 * Make sure {{E|Steven}} is unlocked.
 * Play as {{C|Azazel}}.
 ** His [[flight|fly ability]] and his version of {{i|Brimstone}} grants fast progress.
-* Restart until {{s|Basement}} appears.
+* Restart until {{s|Basement}} {{dlc|r|or {{s|Burning Basement}}}} appears.
 * Rush to the {{R|Boss Room}}.
 ** The given {{p|0 - The Fool}} can return Azazel instantly to the start if he went a wrong way.
 ** By using {{E|Black Heart}}s, slow rooms can be cleared quickly.

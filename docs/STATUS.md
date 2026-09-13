@@ -69,6 +69,14 @@ much more to absorb**, and `UnlockTarget` gained a field as well.
             alongside the boss, so they are one cell of the completion matrix, and 8 name the
             boss alone, which a kill tally answers. The 17 that remain are the 13 `pickup:`
             and 4 `transformation:` references §6 of the spec leaves out.
+      - [x] **17 → 13 on 2026-09-13**: the four `transformation:` references are answered by
+            `Requirement::Threshold`, and the wiki's sixteen transformations are in the
+            dataset. Report in
+            `docs/superpowers/plans/2026-09-13-transformations-report.md`.
+            **The remaining 13 are not noise and are not going away**: checked against their
+            sentences, `ending`, `Bestiary` and `tainted character` are real requirements the
+            model cannot express — dropping them would make their nodes read *available now*.
+            B34 is corrected in place.
       - [x] **New measurement**: in the **Greed** column, bit 1 of a cell is **Ultra
             Greedier** — three days, three characters, each time the right character's cell.
             Recorded in `CLAUDE.md` and `reference/isaac_counters.py`, kept by a property in
@@ -419,6 +427,15 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
       template and into `{{dlcalt|…}}` — references previously trapped in raw text are now
       parsed and simply remain unresolved); 2 pages with no id; snapshot
       2026-09-04T17:33:31Z, known patch v1.9.7.17.
+- [x] **A seventh kind, and a fresher snapshot** (2026-09-13, snapshot
+      2026-09-13T14:01:45Z). **16 transformations**, each with the count its page states and
+      the set of items that counts toward it — the union of the infobox's list and the body's
+      own tables, because each loses something the other has: Guppy's infobox omits the
+      trinket its body lists. `dataset::SCHEMA_VERSION` 2. Unknown templates 200 → 196, and
+      **13 of the 16 pages state their item set twice and differently**, which
+      `transformationSourcesDisagree` counts rather than resolves. Adult has neither count
+      nor set on purpose: its page is about pills. Report in
+      `docs/superpowers/plans/2026-09-13-transformations-report.md`.
 - [ ] Resolver and parser polish deferred from the review: listed by theme in the
       execution report, "What's left out" section. **Two of the three named there closed
       on 2026-09-08**, and the third turned out not to be polish at all.

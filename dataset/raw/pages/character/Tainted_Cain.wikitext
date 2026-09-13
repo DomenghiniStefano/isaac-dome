@@ -94,7 +94,7 @@ This applies to items and trinkets that expand the number of pickups generated t
 * {{i|Scapular}}: Gives a soul heart whenever damage reduces Tainted Cain to half a heart of health. Can be used repeatedly by leaving and re-entering a room, allowing for infinite items if paired with {{i|Piggy Bank}}, {{i|Fanny Pack}}, or {{i|Old Bandage}}.
 * {{I|Sworn Protector}}: Allows for repeated generation of {{e|Eternal Heart}}s through blocking enemy projectiles, which allow crafting high quality {{R|Angel Room}} items.
 * {{i|Everything Jar}}: Produces a number of useful pickups for crafting, in particular {{e|Golden Bomb}}s, {{E|Gold Heart}}s and {{e|Golden Key}}s which are harder to find. Furthermore, the gold bombs and keys allow Tainted Cain greater access to further resources without needing to expend normal bombs and keys.
-* {{I|Glitter Bombs}}: Produces more pickups, especially if combined with {{I|Dr. Fetus}}, {{I|Epic Fetus}}, or {{I|Number Two}}.
+* {{I|Glitter Bombs}}: Produces more pickups, especially if combined with {{I|Dr. Fetus}}, {{I|Epic Fetus}}, or {{I|No. 2}}.
 * {{i|Sack Head}}: Increases the amount of pickups from almost all sources.
 * '''Sacks''' (eg; {{I|Sack of Pennies}}, {{I|Mystery Sack}}, {{I|Rune Bag}}): Reliable sources of a particular pickup type.
 * {{i|Clicker}}: Transforms Tainted Cain into another tainted character. This allows for easy completion marks as {{C|Tainted Lost}}, especially since {{i|Holy Mantle}}, {{i|Dead Cat}}, and {{i|Gnawed Leaf}} can be crafted before transforming. If {{i|Lazarus' Rags}} or {{i|Ankh}} is activated while Clicker is held, it can be used to transform into non-tainted characters as well.

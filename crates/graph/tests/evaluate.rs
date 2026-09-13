@@ -435,3 +435,125 @@ fn a_flags_only_profile_cannot_answer_and_says_so() {
     let e = g.evaluate(&graph::FlagsOnly(Some(&f)));
     assert!(matches!(e.node(1), Some(NodeInfo::Partial { .. })));
 }
+
+// --- Thresholds: a transformation, answered against the profile and never as an edge. ---
+
+use catalog::{ItemId, ItemKind};
+use graph::model::ThresholdItem;
+
+/// One contributor: `gate` is the achievement that unlocks it, `None` when nothing does.
+fn contributor(id: u32, gate: Option<u32>) -> ThresholdItem {
+    ThresholdItem {
+        kind: ItemKind::Passive,
+        id: ItemId(id),
+        unlocked_by: gate,
+    }
+}
+
+/// Node 65 held by nothing but Guppy's threshold: three of the items listed, each behind an
+/// achievement of its own, plus however many the catalog could not resolve.
+fn guppy_node(gates: &[Option<u32>], unresolved: u32) -> graph::build::Graph {
+    graph::for_tests::from_requirements(&[(
+        65,
+        vec![Requirement::Threshold {
+            transformation: 0,
+            label: "Guppy".into(),
+            at_least: 3,
+            of: gates
+                .iter()
+                .enumerate()
+                .map(|(n, g)| contributor(200 + n as u32, *g))
+                .collect(),
+            unresolved,
+        }],
+    )])
+}
+
+/// Above the line the threshold costs nothing: no edge, nothing unknown. A node held by
+/// nothing else is available now — the reading `Mark` and `Counter` already have.
+#[test]
+fn a_met_threshold_leaves_the_node_available_now() {
+    let g = guppy_node(&[Some(1), Some(2), Some(3)], 0);
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1, 2, 3], 66))));
+    assert_eq!(
+        e.node(65),
+        Some(&NodeInfo::Computed {
+            available_now: true,
+            blocked_by: 0,
+            fan_out: 0,
+            steps_missing: 0
+        })
+    );
+}
+
+/// An item nothing gates counts without any achievement being done.
+#[test]
+fn an_ungated_contributor_counts_on_its_own() {
+    let g = guppy_node(&[None, None, None], 0);
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 66))));
+    assert!(matches!(
+        e.node(65),
+        Some(NodeInfo::Computed {
+            available_now: true,
+            ..
+        })
+    ));
+}
+
+/// Below the line the node cannot be done, and the graph still draws no edge: `blocked_by`
+/// stays zero because the prerequisites of "any three of these" are a disjunction. What it
+/// does instead is say why.
+#[test]
+fn an_unmet_threshold_makes_the_node_partial_and_says_why() {
+    let g = guppy_node(&[Some(1), Some(2), Some(3)], 0);
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1, 2], 66))));
+    assert!(
+        matches!(e.node(65), Some(NodeInfo::Partial { blocked_by: 0, .. })),
+        "{:?}",
+        e.node(65)
+    );
+    assert!(
+        e.diagnostics().iter().any(|d| matches!(
+            d,
+            GraphDiagnostic::ThresholdUnmet {
+                node: 65,
+                current: 2,
+                at_least: 3,
+                ..
+            }
+        )),
+        "{:?}",
+        e.diagnostics()
+    );
+}
+
+/// Monotonicity, and the property the ordering exists for: an unresolved contributor can
+/// only ever add to the tally, so a threshold already met stays met when one of the items it
+/// did not need turns out to be outside this catalog.
+#[test]
+fn an_unresolved_contributor_never_unmeets_a_met_threshold() {
+    let g = guppy_node(&[Some(1), Some(2), Some(3)], 1);
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1, 2, 3], 66))));
+    assert!(matches!(
+        e.node(65),
+        Some(NodeInfo::Computed {
+            available_now: true,
+            ..
+        })
+    ));
+}
+
+/// Below the line **and** with something unresolved, the honest answer is "we cannot say"
+/// rather than "you are one short": the missing item might have been the third.
+#[test]
+fn an_unresolved_contributor_below_the_line_is_unanswerable_not_unmet() {
+    let g = guppy_node(&[Some(1), Some(2), Some(3)], 1);
+    let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 66))));
+    assert!(matches!(e.node(65), Some(NodeInfo::Partial { .. })));
+    assert!(
+        !e.diagnostics()
+            .iter()
+            .any(|d| matches!(d, GraphDiagnostic::ThresholdUnmet { .. })),
+        "an unanswerable threshold must not claim a count it does not have"
+    );
+}

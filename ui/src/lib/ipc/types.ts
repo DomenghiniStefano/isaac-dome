@@ -351,7 +351,31 @@ export type RequirementView =
   // A tally and its threshold, with where the profile stands. The one requirement that is
   // not a wall: the content is already reachable, it only has to be played.
   | { kind: 'counter'; label: string; current: number; atLeast: number }
+  // A transformation: N of a set of items, in any combination. Like a counter it is not a
+  // wall and appears only while `current < atLeast`; unlike everything else here it lists
+  // what would satisfy it rather than the one thing blocking it. `unresolved` is how many of
+  // the wiki's items this catalog does not have — they can only add to `current`, so a
+  // non-zero value means the count shown is a floor.
+  | {
+      kind: 'threshold'
+      transformation: number
+      label: string
+      current: number
+      atLeast: number
+      of: ThresholdItemView[]
+      unresolved: number
+      page: Target | null
+    }
   | { kind: 'unknown'; label: string }
+
+export interface ThresholdItemView {
+  itemKind: ItemKindView
+  id: number
+  name: string
+  /** Whether the profile can already find it: its achievement is done, or nothing gates it. */
+  unlocked: boolean
+  page: Target | null
+}
 
 export interface UnlockNode {
   achievement: AchievementRef
@@ -659,6 +683,7 @@ export type WikiInfo =
         bosses: number
         challenges: number
         characters: number
+        transformations: number
       }
       unresolved: number
       unknownTemplates: number
