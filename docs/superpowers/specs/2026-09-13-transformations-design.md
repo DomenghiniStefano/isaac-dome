@@ -83,24 +83,38 @@ gains a folder of sixteen files. The `transformation` entry in `TABLES` becomes
 
 ### 2.2 The record
 
-One map, not two. The page and the set of items derived from it cannot be allowed to drift,
-so they are one value:
+**Amended on 2026-09-13 while writing the plan**, against the code rather than against a
+sketch of it. The first version of this section invented a `Transformation { page, requires,
+contributors }` struct and a map of it. It is not needed: `Entry` already carries an
+`infobox: Infobox`, an enum with one variant per kind, and that is precisely where
+infobox-derived facts live for the other six kinds. So the transformation gets a variant
+like everyone else —
 
 ```rust
-pub struct Transformation {
-    pub page: Entry,
-    /// How many of `contributors` are needed. `None` when the page does not say in a form
-    /// we can read — NEVER defaulted to three.
-    pub requires: Option<u32>,
+Transformation {
+    /// How many of `contributors` are needed. `None` when the page does not say it in a
+    /// form we can read — NEVER defaulted to three.
+    requires: Option<u32>,
     /// The items and trinkets that count, in page order, deduplicated.
-    pub contributors: Vec<Target>,
-}
+    contributors: Vec<Target>,
+    /// The infobox's `target`: what the transformation acts on ("Isaac's bums"). Kept
+    /// because the Cargo table declares it, and `no_silent_parameter` fails on a
+    /// parameter that is neither a field nor deliberately ignored.
+    target: Vec<Inline>,
+},
 ```
 
-`Dataset` gains `transformations: BTreeMap<u32, Transformation>`, and `Dataset::entry()`
-answers `Target::Transformation` with `&t.page`. That arm leaves the group documented as
-"`None` by construction"; `Stage`, `Room` and `Pickup` stay in it, and the comment has to
-stop claiming transformations belong there.
+— and `Dataset` gains `transformations: BTreeMap<u32, Entry>`, shaped like its six
+siblings. Page and set are then the same value by construction rather than by discipline,
+which is what the original wording was reaching for. `Dataset::entry()` answers
+`Target::Transformation` from that map; `Stage`, `Room` and `Pickup` stay in the "`None` by
+construction" group and the comment has to stop claiming transformations belong there.
+
+One consequence to accept with open eyes: `infobox_from` currently sees only the infobox,
+and `contributors` needs the page body too (§2.3). It gains a `text: &str` parameter that
+six of the seven arms ignore. The alternative — building this one variant outside
+`infobox_from` — would break the property that one function builds every infobox, which is
+worth more than the unused parameter.
 
 ### 2.3 Where `contributors` comes from
 
@@ -138,6 +152,28 @@ an unmeasured one.
 
 ## 3. `graph` — the threshold
 
+### 3.0 How the data reaches `graph`, which is not through the dataset
+
+**Amended on 2026-09-13 while writing the plan.** `Graph::build(c: &Catalog, rules: &Rules)`
+never sees a `Dataset`: the wiki reaches this crate only through `requirements.json`,
+generated offline by `graph::generate` and read at runtime by `rules.rs`. A threshold needs
+its number and its item list at runtime, so they travel there, as a third top-level map
+beside `achievements` and `targets`:
+
+```rust
+pub struct TransformationRow {
+    pub label: String,
+    /// `None` when the wiki page did not say. A row with no number is still emitted, so
+    /// that "we have the transformation and cannot read its count" stays visible.
+    pub at_least: Option<u32>,
+    pub items: Vec<Target>,
+}
+```
+
+`Requirements` gains `transformations: BTreeMap<u32, TransformationRow>`, and the generator
+fills it from `Dataset.transformations`. This is a schema change to a committed artefact, so
+`rules::SCHEMA_VERSION` goes to 2 and the regeneration is its own commit.
+
 ### 3.1 The variant
 
 ```rust
@@ -164,18 +200,35 @@ the transformation's label. A variant that can be constructed without the number
 about would let "unknown threshold" be mistaken for "threshold of zero", which is satisfied
 by everything.
 
-### 3.2 Evaluation, and why it is monotone
+### 3.2 Evaluation, and why there is never an edge
 
-Count the contributors the profile has unlocked. Then, in this order:
+**Amended on 2026-09-13 while writing the plan.** The first version said the third outcome
+was "blocked, naming which contributors are still locked". Against `build.rs` that is not
+expressible and it would have been wrong: being blocked is carried by `prerequisites`, and
+the prerequisites of *any three of these eight items* are a disjunction of subsets. This
+repo has already met that shape once — a challenge unlocked by several achievements — and
+its answer is `GraphDiagnostic::Disjunction` plus an unknown, never an invented conjunction.
+A `Threshold` therefore **never produces a prerequisite edge**, exactly like `Mark` and
+`Counter`.
 
-1. **at or above `at_least` → satisfied.** The node is not blocked; like `Mark` and
-   `Counter` it is content that only has to be played, so a node held by nothing else
-   becomes `availableNow`.
-2. **otherwise, if `unresolved` is not zero → `Unknown`**, and the node drops to `Partial`.
-3. **otherwise → blocked**, naming which contributors are still locked.
+Which leaves the answer to evaluation, where the profile is. In `Graph::evaluate`, a
+`Threshold` is one more requirement the `unanswerable` closure judges. Count the
+contributors the profile has unlocked, then, in this order:
+
+1. **at or above `at_least` → answered and met.** It contributes nothing: no edge, not
+   unknown, not unanswerable. A node held by nothing else is then `availableNow` — the same
+   reading `Mark` and `Counter` already have, "nothing is locked, the content only has to be
+   played".
+2. **otherwise, if `unresolved` is not zero, or `at_least` is `None` → unanswerable.** The
+   node drops to `Partial`.
+3. **otherwise → unanswerable as well, and declared**: a new
+   `GraphDiagnostic::ThresholdUnmet { node, label, current, at_least }`, so that "this node
+   is `Partial` because you have two of the three Guppy items" is on the record rather than
+   folded into a generic count of unknowns. The view still draws `2 di 3` and the missing
+   items (§5): what the graph refuses to invent is the *edge*, not the information.
 
 The order matters and it is the whole design. An unresolved contributor can only ever *add*
-to the count, so checking satisfaction first means an incomplete catalog can never turn a
+to the count, so testing satisfaction first means an incomplete catalog can never turn a
 "you can do this" into a "you cannot". Testing the unknown first would have produced exactly
 the pessimistic wrong answer the repo's honesty rules exist to prevent, and the property in
 §6 pins the order rather than trusting the reading.
