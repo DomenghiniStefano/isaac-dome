@@ -56,17 +56,17 @@ pub enum QueueDiagnostic {
     NoCatalog,
 }
 
-/// The achievement that unlocks a saved target, if the catalog says one does.
+/// Every achievement whose `unlocks` names this target, in the catalog's order.
 ///
-/// The inverse of `Catalog::unlocks`, and the bridge the goals import needs: a goal is a
-/// target, a queue row is an achievement. A target nothing unlocks answers `None` and is
-/// skipped rather than guessed at.
-pub fn achievement_unlocking(c: &Catalog, key: &crate::goals::TargetKey) -> Option<u32> {
+/// The inverse of `Catalog::unlocks`. A list and not an `Option`: a challenge's
+/// `unlocked_by` is a list in the game's own file, so two ways in is a shape the data has,
+/// and picking one silently is a wrong answer wearing a right one's clothes.
+pub fn achievements_unlocking(c: &Catalog, key: &crate::goals::TargetKey) -> Vec<u32> {
     use crate::catalog_view::item_kind;
     use crate::goals::TargetKey;
     use catalog::Unlock;
     c.achievements()
-        .find(|a| {
+        .filter(|a| {
             c.unlocks(a.id).iter().any(|u| match (u, key) {
                 (
                     Unlock::Item { kind, id },
@@ -85,6 +85,13 @@ pub fn achievement_unlocking(c: &Catalog, key: &crate::goals::TargetKey) -> Opti
             })
         })
         .map(|a| a.id.0)
+        .collect()
+}
+
+/// The first way in, which is all the goals import needs: it resolves a goal to one queue
+/// row. Anything that has to *show* the ways uses `achievements_unlocking`.
+pub fn achievement_unlocking(c: &Catalog, key: &crate::goals::TargetKey) -> Option<u32> {
+    achievements_unlocking(c, key).first().copied()
 }
 
 /// Everything `queue_view` needs. A struct rather than eight parameters: past seven
