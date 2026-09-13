@@ -190,6 +190,13 @@ pub fn render() -> String {
     decl::<crate::QueueRow>(&cfg, &mut out);
     decl::<crate::QueueDiagnostic>(&cfg, &mut out);
     decl::<crate::QueueView>(&cfg, &mut out);
+    decl::<crate::RunSource>(&cfg, &mut out);
+    decl::<crate::RunOutcomeView>(&cfg, &mut out);
+    decl::<crate::RunItemRef>(&cfg, &mut out);
+    decl::<crate::RunView>(&cfg, &mut out);
+    decl::<crate::RunTotals>(&cfg, &mut out);
+    decl::<crate::RunsDiagnostic>(&cfg, &mut out);
+    decl::<crate::RunsView>(&cfg, &mut out);
     decl::<crate::LockView>(&cfg, &mut out);
     decl::<crate::CollectionItem>(&cfg, &mut out);
     decl::<crate::CollectionTotals>(&cfg, &mut out);

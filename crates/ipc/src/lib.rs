@@ -15,6 +15,7 @@ mod progress;
 mod queue;
 mod reasons;
 mod resources;
+mod runs;
 mod search;
 mod settings;
 mod sprite_png;
@@ -58,6 +59,10 @@ pub use reasons::{IoReason, SaveReason, SettingsReason, StoreReason};
 pub use resources::{
     archive_views, data_url, extraction_report, ArchiveMode, ArchiveView, ExtractionReport,
     SpriteView,
+};
+pub use runs::{
+    runs_view, CatalogKinds, RunItemRef, RunOutcomeView, RunSource, RunTotals, RunView,
+    RunsDiagnostic, RunsInputs, RunsView,
 };
 pub use search::{
     search, ProgressMark, SaveFlags, SearchDiagnostic, SearchHit, SearchIndex, SearchMatch,
