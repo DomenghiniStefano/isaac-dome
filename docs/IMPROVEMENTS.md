@@ -87,8 +87,8 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
       says what stays out of scope: the tag of a tagged union, which TypeScript narrows on
       its own.
 
-- [ ] **B2. Generate `types.ts` from the Rust types.** *Weight M, to do when the webapp
-      kicks off.*
+- [x] **B2. Generate `types.ts` from the Rust types.** *Done 2026-09-13 as N7,
+      `feature/generated-contract`.*
       **Why:** the contract lives twice, in the `#[serde]` attributes and in the
       hand-written `types.ts`. The shape tests in `crates/ipc/tests/` are the glue and they
       work, but every new type means two edits and an extra test, and an oversight is
@@ -131,6 +131,26 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
       outcome that makes the whole item pointless.
       **Done when:** changing an enum in Rust without regenerating makes `scripts/check`
       fail, and `types.ts` has no more hand edits in its subsequent history.
+      **Closed 2026-09-13.** Both criteria met and the first one demonstrated rather than
+      assumed: `#[serde(rename = "bestiaryy")]` on one variant of `core_save::Kind` — a change
+      that alters the wire and leaves every Rust call site compiling — fails `cargo-test` and
+      `ipc-types` together, and the diff names the line. The spike's shape held: generate, then
+      rewrite the one case, then prettier.
+      **The spike's count of foreign types was wrong, and in the direction that mattered.** It
+      said five; there are nine (`wiki::SectionKind`, `CollectibleTemplate` and `Style` beside
+      `Target`, plus `core_save::marks::CharacterGroup`). Having chosen to derive on the real
+      types, the compiler named the missing four in one pass — the alternative the spike
+      rejected, declaring them by hand in the post-step, would have left four types
+      hand-written and silent instead of one.
+      **Four defects found on the day it landed**, listed with N7 in `docs/STATUS.md`: two
+      fields typed `string` that are unions (`GameView.edition`, `SectionCount.kind`), one
+      missing `Infobox` variant that made a wiki page throw (now **B40**), and `ProgressMark`
+      exposed only through `for_tests` while being a field of `SearchHit`. None of them was
+      visible to any test, which is the whole of the argument the item was making.
+      **Two consequences to live with.** A `///` on a wire type is UI source and obeys
+      `pnpm scan`; and `ts-rs` prints a permanent warning about `#[serde(transparent)]`, which
+      it ignores and whose effect it reproduces anyway — left standing, because
+      `no-serde-warnings` would hide the next one too.
 
 - [x] **B3. Shared fixtures for the `ipc` tests.** *Weight S.*
       **Why:** the shape tests hand-build fake nodes, achievements and goals. The literal
