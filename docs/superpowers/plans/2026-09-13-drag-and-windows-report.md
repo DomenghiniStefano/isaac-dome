@@ -100,6 +100,32 @@ card still had to be created, and during those hundreds of milliseconds nothing 
 cursor at all. The card is now built when the drag *starts*, off-screen and hidden, so leaving
 the strip costs only a `show`.
 
+**The duplication, and the three wrong answers before the right one.** A tab dropped on another
+window's strip arrived twice. The first two fixes were reasonable and did nothing, which is the
+useful part of the story:
+
+1. *"`emitTo` with a bare label matches window, webview and pair"* — true, and named the target
+   by kind. Still duplicated.
+2. *"stale listeners from a day of hot reloads"* — plausible, so the app was restarted clean.
+   Still duplicated.
+3. The probe then said it plainly: `win-…svsf DOCK at 0 had 0` and `win-…skdo DOCK at 1 had 1` —
+   **two different windows docked the same tab**. Not one message delivered twice: one message
+   heard by everyone. `listen` defaults to `{ kind: 'Any' }`, so every window had been hearing
+   every message on the channel, whoever it was addressed to. Each window now listens for its own
+   label.
+
+The reason it survived so long is worth keeping: **the other messages were idempotent by
+accident**. `Ready` is answered once because the debt is consumed; `Seed` is ignored by a window
+that is no longer pending. `Docked` had nothing of the kind, so it was the only one that showed.
+A protocol where being heard twice is harmless hides a transport that delivers twice.
+
+**Two more, from the same session.** A window that gave away its last tab closed *before* its
+newborn asked for its seed — and the debt lives in the creator's memory, so the new window opened
+with an empty bar; a creator now waits until the seed is taken, with a timeout of its own. And
+the newborn's wait was three seconds: not a delay but a deadline, paid only by a window nobody
+owes anything to — which is every window that **reloads**. It is 700 ms now: whoever answers is
+another window of the same process.
+
 **What the owner found by using it**, and what it changed: a tab must be draggable even when it is
 the only one, and it must leave the strip as soon as it is torn off. Both are in the spec now
 (§5), and they replaced two rules of mine — the second one removed a class of bug rather than
