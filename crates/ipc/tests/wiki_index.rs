@@ -4,7 +4,7 @@
 use catalog::Catalog;
 use ipc::{wiki_index, IconRef, Target, WikiIndex};
 use serde_json::{json, to_value};
-use wiki::{Dataset, Entry, Infobox};
+use wiki::Dataset;
 
 const ITEMS: &[u8] =
     b"<items gfxroot=\"gfx/items/\"><passive id=\"2\" gfx=\"a.png\" name=\"A\" /></items>";
@@ -16,32 +16,15 @@ fn catalog() -> Catalog {
     })
 }
 
-fn entry(title: &str, infobox: Infobox) -> Entry {
-    Entry {
-        title: title.into(),
-        revid: 1,
-        infobox,
-        sections: vec![],
-    }
-}
+use wiki::for_tests::{empty_boss, empty_item, empty_trinket, entry};
 
 fn dataset() -> Dataset {
     let mut ds = wiki::for_tests::empty_dataset();
-    ds.items.insert(2, entry("A", Infobox::Item));
-    ds.items.insert(9, entry("Nine", Infobox::Item));
-    ds.trinkets.insert(1, entry("T", Infobox::Trinket));
-    ds.bosses.insert(
-        Dataset::boss_key(20, 0, 0),
-        entry(
-            "Monstro",
-            Infobox::Boss {
-                base_hp: None,
-                environment: vec![],
-                pool: vec![],
-                unlocked_by: None,
-            },
-        ),
-    );
+    ds.items.insert(2, entry("A", empty_item()));
+    ds.items.insert(9, entry("Nine", empty_item()));
+    ds.trinkets.insert(1, entry("T", empty_trinket()));
+    ds.bosses
+        .insert(Dataset::boss_key(20, 0, 0), entry("Monstro", empty_boss()));
     ds.meta.counts.items = 2;
     ds.meta.counts.trinkets = 1;
     ds.meta.counts.bosses = 1;
@@ -104,7 +87,7 @@ fn a_missing_dataset_is_an_empty_index_that_says_why() {
 fn a_boss_key_that_is_not_three_numbers_is_left_out_not_guessed() {
     let mut ds = dataset();
     ds.bosses
-        .insert("Cadavra".to_string(), entry("Cadavra", Infobox::Item));
+        .insert("Cadavra".to_string(), entry("Cadavra", empty_item()));
     let index = wiki_index(Ok(&ds), None, None, link);
     assert_eq!(index.pages.len(), 4);
 }

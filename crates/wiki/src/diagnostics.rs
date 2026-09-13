@@ -26,6 +26,13 @@ pub struct Diagnostics {
     /// the opposite of degrading. Any counter added here later wants the same.
     #[serde(default)]
     pub orphan_closers: u32,
+    /// `dlc` codes the parser does not recognize, by code. The parameter concatenates them
+    /// without a separator (`a+nr`), so a wiki-side typo or a new edition would otherwise
+    /// leave an entry with fewer editions than it declares, and nothing would say so.
+    ///
+    /// `default` for the same reason as `orphan_closers`.
+    #[serde(default)]
+    pub unknown_dlc_codes: BTreeMap<String, u32>,
 }
 
 impl Diagnostics {
@@ -39,6 +46,10 @@ impl Diagnostics {
 
     pub fn orphan_closer(&mut self) {
         self.orphan_closers += 1;
+    }
+
+    pub fn unknown_dlc_code(&mut self, code: &str) {
+        *self.unknown_dlc_codes.entry(code.to_string()).or_default() += 1;
     }
 
     pub fn discarded_section(&mut self, title: &str) {
@@ -58,6 +69,9 @@ impl Diagnostics {
         }
         for (k, v) in &other.discarded_sections {
             *self.discarded_sections.entry(k.clone()).or_default() += v;
+        }
+        for (k, v) in &other.unknown_dlc_codes {
+            *self.unknown_dlc_codes.entry(k.clone()).or_default() += v;
         }
         self.pages_without_id += other.pages_without_id;
         self.orphan_closers += other.orphan_closers;

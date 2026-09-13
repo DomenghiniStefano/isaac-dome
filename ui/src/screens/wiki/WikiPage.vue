@@ -133,7 +133,7 @@ const back = () => {
     </div>
     <template v-else-if="entry">
       <WikiInfobox
-        :infobox="entry.infobox"
+        :entry="entry"
         :icon-for="wiki.iconFor"
         :can-open="wiki.hasPage"
         @navigate="onNavigate"

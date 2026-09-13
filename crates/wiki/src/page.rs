@@ -6,7 +6,9 @@
 use serde::{Deserialize, Serialize};
 
 use crate::blocks::parse_blocks;
-use crate::infobox::{extract_infoboxes, infobox_from, leading_number, InfoboxKind, RawInfobox};
+use crate::infobox::{
+    entry_facts, extract_infoboxes, infobox_from, leading_number, InfoboxKind, RawInfobox,
+};
 use crate::resolver::Resolver;
 use crate::sections::{section_kind, split_page};
 use crate::{Diagnostics, Entry, Section};
@@ -82,7 +84,9 @@ fn number(ib: &RawInfobox, name: &str) -> Option<u32> {
 /// Repentance+ is Broken Glass Cannon).
 fn entry_key(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) -> Option<EntryKey> {
     Some(match kind {
-        InfoboxKind::Collectible => EntryKey::Item(r.item_id_of_page(title, number(ib, "id")?)?),
+        InfoboxKind::Passive | InfoboxKind::Activated => {
+            EntryKey::Item(r.item_id_of_page(title, number(ib, "id")?)?)
+        }
         InfoboxKind::Trinket => EntryKey::Trinket(r.trinket_id_of_page(title, number(ib, "id")?)?),
         InfoboxKind::Achievement => EntryKey::Achievement(number(ib, "id")?),
         InfoboxKind::Challenge => EntryKey::Challenge(number(ib, "number")?),
@@ -146,7 +150,8 @@ fn entry_title(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) ->
             .map(str::to_string)
             .or_else(|| character(title, ib, r).map(|(_, n)| n))
             .unwrap_or_else(|| title.to_string()),
-        InfoboxKind::Collectible
+        InfoboxKind::Passive
+        | InfoboxKind::Activated
         | InfoboxKind::Trinket
         | InfoboxKind::Boss
         | InfoboxKind::Challenge => title.to_string(),
@@ -176,7 +181,8 @@ pub fn parse_page(
         };
         let sections = match kind {
             InfoboxKind::Achievement => Vec::new(),
-            InfoboxKind::Collectible
+            InfoboxKind::Passive
+            | InfoboxKind::Activated
             | InfoboxKind::Trinket
             | InfoboxKind::Boss
             | InfoboxKind::Challenge
@@ -184,11 +190,15 @@ pub fn parse_page(
                 .get_or_insert_with(|| sections(text, r, d))
                 .clone(),
         };
+        let facts = entry_facts(&ib, r, d);
         out.push((
             key,
             Entry {
                 title: entry_title(kind, title, &ib, r),
                 revid,
+                description: facts.description,
+                dlc: facts.dlc,
+                unlocked_by: facts.unlocked_by,
                 infobox: infobox_from(kind, &ib, r, d),
                 sections,
             },
@@ -202,6 +212,20 @@ mod tests {
     use super::*;
     use crate::resolver::fixtures::test_resolver;
     use crate::{Block, Diagnostics, SectionKind};
+
+    #[test]
+    fn the_three_common_facts_land_on_the_entry_not_the_infobox() {
+        let src = "{{infobox passive collectible\n | id = 25\n | dlc = r\n | description = Tears up\n | unlocked by = Epic Fetus\n}}\n== Effects ==\n* a\n";
+        let mut d = Diagnostics::default();
+        let v = parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
+        let e = &v[0].1;
+        assert_eq!(e.dlc, vec![crate::Dlc::Repentance]);
+        assert_eq!(e.unlocked_by, Some(crate::Target::Achievement { id: 62 }));
+        assert!(matches!(
+            e.description.first(),
+            Some(crate::Inline::Text { text, .. }) if text.contains("Tears up")
+        ));
+    }
 
     #[test]
     fn collectible_page_yields_one_entry_with_kept_sections() {
