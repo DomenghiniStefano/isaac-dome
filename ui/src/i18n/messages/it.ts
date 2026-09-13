@@ -37,6 +37,7 @@ export const it = {
     wiki: 'Wiki',
     profile: 'Profilo di gioco',
     appearance: 'Aspetto',
+    background: 'Background',
     tabsSettings: 'Tab',
     about: 'Informazioni',
   },
@@ -242,6 +243,19 @@ export const it = {
       noCollectionSection:
         'Accanto agli oggetti non compare se ce l’hai già. Non vuol dire di no: vuol dire che non lo sappiamo.',
     },
+  },
+  background: {
+    intro:
+      "Cosa fa l'app quando chiudi l'ultima finestra, e cosa ritrovi quando la riapri.",
+    stayTitle: 'Resta aperta in background',
+    stayHint:
+      "Chiudendo l'ultima finestra l'app resta accanto all'orologio, nell'area di notifica: un clic sull'icona riapre la finestra. Spenta, chiudere l'ultima finestra chiude l'app.",
+    resumeTitle: "Riapri le tab dell'ultima sessione",
+    resumeHint:
+      'La prima finestra si riapre sulle tab che aveva. Spenta, riparte dalla schermata iniziale e quello che era salvato viene cancellato.',
+    saveFailedTitle: "L'impostazione non è stata salvata",
+    saveFailed:
+      "L'app si comporta già così, ma non siamo riusciti a scriverlo: al prossimo avvio torna com'era.",
   },
   appearance: {
     intro:
