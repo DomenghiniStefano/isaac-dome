@@ -126,7 +126,7 @@ pub fn counter_index(character: usize, boss: usize) -> Option<usize> {
 
 /// A cell of the matrix. The three variants are the module's reason for existing:
 /// "never done", "not readable", and "suspicious value" are three different things.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -141,7 +141,7 @@ pub enum Cell {
     Unexpected { value: u32 },
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct CharacterRow {
     pub character: String,
@@ -157,14 +157,14 @@ pub struct CharacterRow {
 
 /// The symbol URLs of one column, one per tier. Both `None` when the game's archives
 /// aren't open: the screen draws the fallback outfit instead.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkArtView {
     pub normal_url: Option<String>,
     pub hard_url: Option<String>,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct MarksTotals {
     pub cells: usize,
@@ -174,7 +174,7 @@ pub struct MarksTotals {
     pub started: usize,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct MarksMatrix {
     pub characters: Vec<CharacterRow>,
