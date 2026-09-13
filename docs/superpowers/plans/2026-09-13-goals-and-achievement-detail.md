@@ -12,8 +12,8 @@
 
 ## Global Constraints
 
-- **Branch:** cut from `develop` **after `feature/wiki-infobox` is merged**. One sub-project, one branch (`docs/STATUS.md`, 2026-09-11). Suggested name: `feature/screens-goals-detail`.
-- **The tree may hold other sessions' work.** Never `git add -A`; stage by explicit path, exactly the paths each task's commit step lists.
+- **Branch:** `feature/screens-goals-detail`, cut from `develop` on 2026-09-13, in the worktree `C:\Projects\isaac-dome-goals`. One sub-project, one branch (`docs/STATUS.md`, 2026-09-11). The wait on `feature/wiki-infobox` was dropped: that branch touches no frontend file (spec §8).
+- **The working copy is shared with other sessions that switch branches under you.** That is why this runs in its own worktree. Never `git add -A`; stage by explicit path, exactly the paths each task's commit step lists.
 - **Every struct crossing the IPC** carries `#[serde(rename_all = "camelCase")]`; enums with struct variants also need `rename_all_fields = "camelCase"`.
 - **Fieldless enums on the IPC are bare camelCase strings**, and their TypeScript is a union of values built with `const X = { … } as const`. `StepsBasis` is one of these — zero exceptions in the repo.
 - **Exhaustiveness is mandatory**: no `_ =>` arm on a closed enum, in Rust or in a TypeScript `switch` (use `assertNever`).
