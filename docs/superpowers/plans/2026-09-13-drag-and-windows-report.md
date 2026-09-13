@@ -89,6 +89,17 @@ wrong rather than a line that was mistyped:
    out and straight back. `useDragList` now reports a cancellation explicitly, and a release never
    reaches that path.
 
+**A sixth thing that turned out not to be a defect, and the measurement that said so.** The card
+was suspected of passing behind the tabs, and a 16×16 window at `0,0` looked like a preview born
+broken. Measured with `EnumWindows` on the app's own process: the preview is `200x39 at 876,484`
+— exactly where it was asked for — with `WS_EX_TOPMOST` set, and the 16×16 is a window the
+webview keeps for itself, present whether or not a drag ever happens. The DOM ghost, measured in
+the browser, is `z-50` on `fixed` with no stacking context between it and the body. **Both are in
+front by construction**, so what was seen was the gap between them: at the first tear-off the
+card still had to be created, and during those hundreds of milliseconds nothing followed the
+cursor at all. The card is now built when the drag *starts*, off-screen and hidden, so leaving
+the strip costs only a `show`.
+
 **What the owner found by using it**, and what it changed: a tab must be draggable even when it is
 the only one, and it must leave the strip as soon as it is torn off. Both are in the spec now
 (§5), and they replaced two rules of mine — the second one removed a class of bug rather than
