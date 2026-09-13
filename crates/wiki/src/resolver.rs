@@ -316,7 +316,10 @@ impl Resolver {
                     variant: *variant,
                     subtype: *subtype,
                 }),
-            "tf" => self
+            // `{{transformation contribution|X}}` reads as a sentence on the page ("counts
+            // toward X"), but the only part of it with an identity is the transformation,
+            // which is exactly what `{{tf|X}}` names.
+            "tf" | "transformation contribution" => self
                 .transformations
                 .get(&k)
                 .map(|id| Target::Transformation { id: *id }),
