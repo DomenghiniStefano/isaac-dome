@@ -22,10 +22,16 @@ import type { SidebarEntry } from '@/components/shell/sectionNav'
 import { SidebarWidth } from '@/components/shell/sidebarWidth'
 import type { TabView } from '@/components/shell/tabs'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import { usePointerShortcut } from '@/composables/usePointerShortcut'
 import { useShortcut } from '@/composables/useShortcut'
 import { i18n, useMessages } from '@/i18n'
 import { indicator } from '@/lib/profile/profileView'
 import { shortcutAction } from '@/lib/scale/shortcut'
+import {
+  HistoryAction,
+  historyAction,
+  pointerHistoryAction,
+} from '@/lib/shell/navigation'
 import {
   closeWindow,
   minimizeWindow,
@@ -36,7 +42,7 @@ import { RouteName, routeOrigin } from '@/router/routeTable'
 import ProgressGate from '@/screens/ProgressGate.vue'
 import { useProfileStore } from '@/stores/profile'
 import { useSettingsStore } from '@/stores/settings'
-import { tabLabel } from '@/stores/tabModel'
+import { tabLabel, tabLocation } from '@/stores/tabModel'
 import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
 
@@ -56,24 +62,41 @@ onMounted(async () => {
 })
 onUnmounted(() => stopWatchingFocus?.())
 
-// The router shows the active tab: selecting, closing or navigating a tab moves it.
+// The router shows the active tab: selecting, closing, navigating a tab or walking its
+// history moves it.
 watch(
-  () => tabs.active?.location,
+  () => tabs.location,
   (location) => {
     if (location) void router.replace(location)
   },
   { immediate: true },
 )
 
+// Back and forward, on the two gestures a browser has taught: the side buttons of the mouse
+// and Alt with an arrow. Both walk the active tab's own history, so switching tab finds each
+// one where it was left.
+const walk = (action: HistoryAction) => {
+  if (action === HistoryAction.Back) tabs.back()
+  else tabs.forward()
+}
+useShortcut((event) => {
+  const action = historyAction(event)
+  if (action === null) return false
+  walk(action)
+  return true
+})
+usePointerShortcut(pointerHistoryAction, walk)
+
 // A page tab reads as its page's title once the wiki index knows it; every other label is
 // a message.
 const tabViews = computed<TabView[]>(() =>
   tabs.tabs.map((tab) => {
-    const label = tabLabel(tab.location, wiki.titleOf)
+    const location = tabLocation(tab)
+    const label = tabLabel(location, wiki.titleOf)
     return {
       id: tab.id,
       label: typeof label === 'string' ? t(label) : label.text,
-      origin: routeOrigin[tab.location.name],
+      origin: routeOrigin[location.name],
     }
   }),
 )
@@ -81,7 +104,7 @@ const tabViews = computed<TabView[]>(() =>
 // The sidebar shows the active tab's section, until the navbar or the cog picks another.
 const browsing = ref<SidebarSection>(SidebarSection.Progress)
 watch(
-  () => tabs.active?.location.name,
+  () => tabs.location?.name,
   (name) => {
     if (!name) return
     // A search tab belongs to neither section: the sidebar stays where the user left it.
@@ -154,6 +177,10 @@ const indicatorView = computed(() =>
         :section="navSectionOf(browsing)"
         :settings-active="browsing === SidebarSection.Settings"
         :focused="focused"
+        :can-back="tabs.canBack"
+        :can-forward="tabs.canForward"
+        @back="tabs.back"
+        @forward="tabs.forward"
         @update:section="
           (section, event) => openSection(sidebarSectionOf(section), event)
         "
@@ -179,7 +206,7 @@ const indicatorView = computed(() =>
           <SidebarItem
             v-for="entry in entries"
             :key="entry.key"
-            :active="isEntryActive(entry, tabs.active?.location)"
+            :active="isEntryActive(entry, tabs.location)"
             @click="openEntry(entry, $event)"
           >
             <template #icon><component :is="entry.icon" /></template>

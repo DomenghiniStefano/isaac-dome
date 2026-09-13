@@ -8,6 +8,8 @@ export const it = {
   shell: {
     newTab: 'Nuova tab',
     closeTab: 'Chiudi tab',
+    back: 'Indietro',
+    forward: 'Avanti',
     minimize: 'Riduci a icona',
     maximize: 'Ingrandisci',
     closeWindow: 'Chiudi finestra',

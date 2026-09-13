@@ -59,8 +59,10 @@ export const buttonVariants = cva(
         // A resolved wiki reference: cream over a solid underline edge.
         [ButtonVariant.Ref]:
           'border-0 border-b border-secondary-edge bg-transparent text-highlight hover:border-highlight',
+        // Disabled keeps the chrome's transparency: a filled square inside the navbar or
+        // the title bar would read as a surface, and the bar has none.
         [ButtonVariant.Chrome]:
-          'border-transparent bg-transparent text-muted-foreground hover:bg-secondary',
+          'border-transparent bg-transparent text-muted-foreground hover:bg-secondary disabled:border-transparent disabled:bg-transparent',
         [ButtonVariant.ChromeDanger]:
           'border-transparent bg-transparent text-muted-foreground hover:bg-primary hover:text-primary-foreground',
         // Looks like a field, opens something else: the navbar's search trigger.
