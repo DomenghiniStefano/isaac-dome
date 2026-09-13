@@ -206,22 +206,39 @@ CREATE TABLE window_session (
 );
 ```
 
-**What the document is.** The seed the tear-off already sends between windows —
-`{ tabs, activeIndex }`, the payload of `WindowMessageKind.Seed` — serialized. Its shape is
+**This is part of 3.7, landing early.** B6 declares the fork and picks the same two sides
+this does — the flag in `settings.json` "next to the other global preferences", the tabs in "a
+`store` migration", because `isaacdome.db` "has a versioned schema for exactly this". So this
+section does not invent a home; it opens the one 3.7 had already chosen, and 3.7 keeps the
+rest: the sidebar's width and every table's dragged size (B27), which are deferred to "the
+sub-project that saves the session". The document is therefore **an object with a version and
+named parts**, not a bare array, so those parts join without a migration:
+
+```json
+{ "version": 1, "tabs": [ … ], "activeIndex": 0 }
+```
+
+**What the tabs part is.** The seed the tear-off already sends between windows —
+`TabSeed[]` and an index, the payload of `WindowMessageKind.Seed` — serialized. Its shape is
 the frontend's (`TabLocation` is a route name and a query; mirroring it into Rust would be a
-second router to keep in step), so **Rust carries it as an opaque string** and the frontend is
-the only thing that parses it. The boundary rule it has to answer to is "no paths, no offsets,
-no raw bytes", and a JSON document the frontend wrote is none of those.
+second router to keep in step), so **Rust carries the whole document as an opaque string** and
+the frontend is the only thing that parses it. The boundary rule it has to answer to is "no
+paths, no offsets, no raw bytes", and a JSON document the frontend wrote is none of those.
 
 Three things keep that honest:
 
 - **A cap.** `ipc::MAX_SESSION_BYTES = 64 * 1024`, checked by a pure function on the way in; a
   longer document is refused, not truncated. Nothing should ever approach it, and a database
   that grows without a bound is how you find out that something did.
-- **A parse that can fail.** The frontend's `restoreSeed(document)` answers `null` for
-  anything it doesn't recognise — a document from a newer version, a hand-edited row, a route
-  name that no longer exists — and `null` means the landing tab. Tested with each of those
-  three shapes.
+- **A parse that can fail, one tab at a time.** The frontend's `readSession(document)` answers
+  `null` for what it cannot read at all — malformed JSON, a `version` it doesn't know, a
+  missing `tabs` — and `null` means the landing tab. A **single** tab it can't read, because
+  its route name no longer exists, is dropped **alone**: the other tabs are not punished for
+  it, and a session of eight tabs does not vanish because one screen was renamed. A document
+  whose tabs all drop ends up empty, which `seedState` already turns into the landing tab.
+  Note the limit of that leniency, which B6 names: a tab pointing at an item or a page that no
+  longer exists is *not* this case and is not dropped — it opens and its screen states the
+  gap, as every screen already does for a target it can't resolve.
 - **One writer.** Only the window labelled `main` writes, and only when `resume_tabs` is on. A
   torn-off window's tabs are not the session.
 
@@ -230,10 +247,19 @@ Three things keep that honest:
 write that sometimes doesn't happen. Turning `resume_tabs` off clears the row once and stops
 writing: the app should not keep a record the user has just said they don't want.
 
-**When it is read**: by a newborn `main` that nobody owes a seed to. `useWindowSession`
-already has that moment — the `SeedTimeout` fallback that today lands on the default tab. It
-becomes: the stored session if there is one and it parses, the landing tab otherwise. Windows
-born from a tear-off are untouched, because they are owed a seed and never reach the fallback.
+**When it is read**: by a newborn `main`, which nobody owes a seed to. Today `main` is the one
+window that starts *not* pending — it is born holding its landing tab — so this is the one
+place the mechanism has to change: `main` starts pending too, and `useWindowSession` seeds it
+from the session instead of from a sibling window. Nothing else moves. `seedState` already
+turns an empty seed into the landing tab, so "no session", "the setting is off" and "the
+document was unreadable" all arrive at today's behaviour through code that already exists, and
+the `SeedTimeout` deadline covers a read that never answers. Windows born from a tear-off are
+untouched: they are owed a seed and never reach this path.
+
+The cost of that change is a bar that is empty for the length of one SQLite read instead of
+painting the landing tab immediately. The alternative — paint the landing tab, then swap it for
+the session — shows the user a tab appearing and being replaced, which is worse than a few
+milliseconds of nothing.
 
 Two commands: `window_session() -> Option<String>` and `set_window_session(Option<String>)`,
 where `None` means "clear". Both `Result<_, IpcError>`; an unreadable store is already a
@@ -265,8 +291,9 @@ Pure, and therefore tested first:
 - `ipc`'s session cap — at the limit, over it.
 - `store` migration 3 — `SCHEMA_VERSION` becomes 3, a round trip, the single-row `CHECK`, and
   a file at version 2 that migrates without losing its goals or its queue.
-- `ui`: `restoreSeed` on a good document, on malformed JSON, on an unknown route name; the
-  tabs store writing only from `main` and only with the setting on.
+- `ui`: `readSession` on a good document, on malformed JSON, on an unknown `version`, on one
+  tab with an unknown route name among three good ones, and on a document whose tabs all drop;
+  `writeSession` round-tripping what `readSession` reads.
 - `ui/src/assets/background.test.ts` — plus `create === false`.
 
 Wiring, and therefore **not** tested: `open_or_focus`, the tray builder, the `RunEvent` arm,
