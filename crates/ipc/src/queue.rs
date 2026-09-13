@@ -17,6 +17,8 @@ pub struct QueueView {
     pub store_available: bool,
 }
 
+/// A queue row is an **achievement**, not a target: wanting Tainted Lost and wanting the
+/// achievement that unlocks it are the same wish seen from two sides.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct QueueRow {
@@ -30,6 +32,8 @@ pub struct QueueRow {
     pub steps_not_queued: u32,
 }
 
+/// Every way a row can be absent, said out loud. `Unreadable` and an empty queue are
+/// different things, and so are `Completed` and a row that just vanished.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",

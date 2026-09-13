@@ -147,6 +147,9 @@ pub enum MarkLevelView {
     Second,
 }
 
+/// One rule for the enums on this boundary: those whose variants carry different data are
+/// tagged on `kind`; those with no fields travel as a bare string. `UnlockTarget::Item`
+/// carries `item_kind`, not `kind`, because `kind` is the tag.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
@@ -174,6 +177,10 @@ pub enum AchievementRef {
     Unknown { slot: u32 },
 }
 
+/// `Partial` carries no count of the steps still missing, on purpose: with a requirement
+/// uninterpreted, or a node caught in a cycle, the transitive count is not knowable, and a zero
+/// would read as "nothing in the way". A node that is `Partial` must never be drawn as
+/// unlockable.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
@@ -227,6 +234,8 @@ pub struct UnlockTotals {
     pub unknown: u32,
 }
 
+/// `NoAchievementSection` means section 1 of the save was not read: nodes and totals are
+/// zero, and that does not mean "zero achievements done".
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
@@ -300,6 +309,10 @@ pub struct PlanView {
     pub store_available: bool,
 }
 
+/// The plan degrades and says why. `store_available` is derived from the absence of
+/// `StoreUnavailable`: the UI uses it as a gate and reads the diagnostics for the text.
+/// `UnreadableGoal` and `UnresolvedGoal` carry the id, so the UI can offer to remove them.
+/// `NoCatalog` arrives once, not once per goal.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",

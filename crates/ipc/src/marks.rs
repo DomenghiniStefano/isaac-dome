@@ -141,6 +141,9 @@ pub enum Cell {
     Unexpected { value: u32 },
 }
 
+/// `tainted` groups the rows the way a player does, while `group` stays the three blocks the
+/// file itself has. Every URL is `None` when the game archives are not open, and the screen
+/// draws the fallback outfit.
 #[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct CharacterRow {

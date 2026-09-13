@@ -42,6 +42,10 @@ pub struct WantRoute {
     pub state: WantState,
 }
 
+/// B37 — a want read from the other end of the graph: you name a thing, and these are the
+/// ways to it. `routes` is a list because a challenge can be named by two achievements (14 of
+/// 45 are, measured 2026-09-13); an empty list always travels with the diagnostic that says
+/// which empty it is.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",

@@ -162,7 +162,7 @@ impl CandidateView {
     }
 }
 
-/// Where the Steam → game → saves chain broke down. A fieldless enum: on the wire it's
+/// Where the chain from Steam to the game to the saves broke down. A fieldless enum: on the wire it's
 /// a bare camelCase string, `"steamNotFound"` and neither `"SteamNotFound"` nor
 /// `{"kind":"steamNotFound"}`. The convention holds for **every** enum on the IPC —
 /// `rename_all = "camelCase"` always, the tag only where variants carry data: if two
