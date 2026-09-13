@@ -24,6 +24,11 @@ export interface DragListOptions<D> {
   items: () => HTMLElement[]
   resolve: (p: Point, boxes: Box[], from: number) => D | null
   commit: (from: number, drop: D | null) => void
+  // The drag was **called off** — Escape, or the pointer cancelled — as opposed to released.
+  // The two cannot be told apart by watching whether a drag is still running: that goes false
+  // either way, and a caller who guessed from it undid its own successful drops. Measured on
+  // the machine, 2026-09-13.
+  cancelled?: () => void
   // A busy screen refuses to start a drag; nothing else stops one.
   enabled?: () => boolean
   threshold?: number
@@ -62,7 +67,9 @@ export const useDragList = <D>(options: DragListOptions<D>): DragList<D> => {
   const onKeydown = (e: KeyboardEvent) => {
     if (e.key !== EventKey.Escape) return
     e.preventDefault()
+    const wasMoving = moving.value
     clear()
+    if (wasMoving) options.cancelled?.()
   }
 
   function clear() {
@@ -111,14 +118,7 @@ export const useDragList = <D>(options: DragListOptions<D>): DragList<D> => {
     if (from.value === null || !press) return
     const p = { x: e.clientX, y: e.clientY }
     if (!moving.value) {
-      if (
-        !crossedThreshold(
-          options.axis,
-          press,
-          p,
-          options.threshold ?? DragThreshold,
-        )
-      )
+      if (!crossedThreshold(press, p, options.threshold ?? DragThreshold))
         return
       begin(p)
       if (!moving.value) return

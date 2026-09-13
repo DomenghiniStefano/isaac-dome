@@ -16,20 +16,31 @@ const box = (left: number, top: number, width: number, height: number) => ({
 })
 
 describe('crossedThreshold', () => {
-  it('reads only the axis the list runs along', () => {
+  // It reads travel in **any** direction, not along the list's axis. Measured on the machine
+  // on 2026-09-13: with an axis-bound threshold, a tab dragged straight down out of the window
+  // never began a drag at all — the strip runs along x, and the tear-off is a vertical gesture,
+  // so the one movement the user makes to tear a tab off was the one movement that could not
+  // start it. The axis still decides the hit test (`boxAt`); it no longer decides what a drag
+  // is.
+  it('starts a drag on movement in any direction', () => {
     const from = { x: 100, y: 100 }
-    // A tab strip runs along x: ten pixels down is still a click.
-    expect(crossedThreshold(Axis.X, from, { x: 100, y: 110 }, 4)).toBe(false)
-    expect(crossedThreshold(Axis.X, from, { x: 105, y: 100 }, 4)).toBe(true)
-    // A queue runs along y, and the two swap.
-    expect(crossedThreshold(Axis.Y, from, { x: 110, y: 100 }, 4)).toBe(false)
-    expect(crossedThreshold(Axis.Y, from, { x: 100, y: 105 }, 4)).toBe(true)
+    expect(crossedThreshold(from, { x: 100, y: 110 }, 4)).toBe(true)
+    expect(crossedThreshold(from, { x: 105, y: 100 }, 4)).toBe(true)
+    expect(crossedThreshold(from, { x: 103, y: 103 }, 4)).toBe(true)
+  })
+
+  it('does not start one on a hand that did not move', () => {
+    const from = { x: 100, y: 100 }
+    expect(crossedThreshold(from, { x: 100, y: 100 }, 4)).toBe(false)
+    expect(crossedThreshold(from, { x: 102, y: 102 }, 4)).toBe(false)
+    expect(crossedThreshold(from, { x: 103, y: 100 }, 4)).toBe(false)
   })
 
   it('counts travel in both directions, and the threshold itself is a drag', () => {
     const from = { x: 100, y: 100 }
-    expect(crossedThreshold(Axis.X, from, { x: 97, y: 100 }, 4)).toBe(false)
-    expect(crossedThreshold(Axis.X, from, { x: 96, y: 100 }, 4)).toBe(true)
+    expect(crossedThreshold(from, { x: 97, y: 100 }, 4)).toBe(false)
+    expect(crossedThreshold(from, { x: 96, y: 100 }, 4)).toBe(true)
+    expect(crossedThreshold(from, { x: 100, y: 104 }, 4)).toBe(true)
   })
 
   it('is 4 pixels by default, the number both screens had chosen', () => {
