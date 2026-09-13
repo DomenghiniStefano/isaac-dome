@@ -19,6 +19,9 @@ let preview: WebviewWindow | null = null
 let shownLabel: string | null = null
 
 const found = async (): Promise<WebviewWindow | null> => {
+  // Same reason as `appEvents`: outside Tauri these APIs do not answer "no", they throw from
+  // inside whatever hook called them.
+  if (!isTauri()) return null
   if (preview) return preview
   const all = await getAllWebviewWindows()
   preview = all.find((w) => w.label === PreviewLabel) ?? null
