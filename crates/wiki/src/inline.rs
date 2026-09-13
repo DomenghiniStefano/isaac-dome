@@ -284,6 +284,28 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
                 out.close();
             }
         }
+        // The only template whose argument is a *list*: a boss page names the achievements
+        // that boss unlocks, comma-separated. `resolve` answers with one `Resolution`, so
+        // this cannot go through it — it has to push a node per name.
+        "achievement text" => {
+            for (n, name) in arg.split(',').enumerate() {
+                let name = name.trim();
+                if name.is_empty() {
+                    continue;
+                }
+                if n > 0 {
+                    out.buf.push_str(", ");
+                }
+                match r.achievement_by_name(name) {
+                    Some(target) => out.push(Inline::Ref {
+                        target,
+                        label: name.to_string(),
+                    }),
+                    // Not dropped: a name we cannot resolve is still what the page says.
+                    None => out.buf.push_str(name),
+                }
+            }
+        }
         name if CONTENT_WRAPPERS.contains(&name) => recurse_into_arg(&arg, r, d, out, depth),
         name => match r.resolve(name, &arg) {
             Resolution::Target(target) => {
@@ -591,6 +613,42 @@ mod tests {
             Inline::Concept { page, label }
                 if page == "Blood Donation Machine" && label == "the machine"
         )));
+    }
+
+    /// `{{achievement text | I RULE!, Backasswards, Ultra Hard}}` is the odd one out: it
+    /// carries a **comma-separated list**, so it cannot go through `resolve`, which answers
+    /// with one `Resolution`. It sits on boss pages, naming the achievements that boss
+    /// unlocks — 82 of the 143 uses name exactly one, but the longest names seventeen.
+    #[test]
+    fn achievement_text_lists_every_achievement_it_names() {
+        let (v, d) = p("{{achievement text | Epic Fetus, Cain}}");
+        let refs: Vec<&Inline> = v
+            .iter()
+            .filter(|i| {
+                matches!(
+                    i,
+                    Inline::Ref {
+                        target: Target::Achievement { .. },
+                        ..
+                    }
+                )
+            })
+            .collect();
+        assert_eq!(refs.len(), 2, "both names must resolve, got {v:?}");
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+
+        // A name we cannot resolve keeps its words rather than disappearing.
+        let (v, _) = p("{{achievement text | Epic Fetus, Not An Achievement}}");
+        let mut flat = String::new();
+        for i in &v {
+            if let Inline::Text { text, .. } = i {
+                flat.push_str(text);
+            }
+        }
+        assert!(
+            flat.contains("Not An Achievement"),
+            "an unresolved name must stay readable, got {v:?}"
+        );
     }
 
     /// `{{transformation contribution|Beelzebub}}` is a whole sentence on the page ("counts

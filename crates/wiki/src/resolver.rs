@@ -484,12 +484,21 @@ pub(crate) mod fixtures {
                     ("alias", "Tonsil"),
                 ]),
             ],
-            achievement: vec![row(&[
-                ("_pageName", "Achievements/Rebirth 1"),
-                ("id", "62"),
-                ("name", "Epic Fetus"),
-                ("alias", "Epic Fetus"),
-            ])],
+            achievement: vec![
+                row(&[
+                    ("_pageName", "Achievements/Rebirth 1"),
+                    ("id", "62"),
+                    ("name", "Epic Fetus"),
+                    ("alias", "Epic Fetus"),
+                ]),
+                // A second one so a test about a *list* of achievements can have a list.
+                row(&[
+                    ("_pageName", "Achievements/Rebirth 1"),
+                    ("id", "2"),
+                    ("name", "Cain"),
+                    ("alias", "Cain"),
+                ]),
+            ],
             entity: vec![
                 row(&[
                     ("_pageName", "Mom"),
