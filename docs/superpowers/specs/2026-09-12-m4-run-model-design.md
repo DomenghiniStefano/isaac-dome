@@ -342,6 +342,15 @@ one launch copied at two moments, the shorter being a byte-for-byte prefix of th
 a gift for one test and a hole for another — the pair is exactly the *same launch, grown* case
 the resume rule is about, and there is no *different launch* pair anywhere in the folder.
 
+**The `Died` gap was a fact about `samples/logs/`, not about the game** — corrected the same day,
+by 1b, and it is the more instructive half. Running the archive against this machine's real
+`online_logs\` folded **23 deaths out of 28 sessions**; 16 of those session logs contain
+`Game Over`. Not one had been copied into `samples/`. The absence 1a asserted was real and its
+guard test did its job, but the sentence above — *`Died` has no real-data coverage at all* —
+described the sample folder while sounding like a statement about the data. A fifth sample
+(`20260824-online-deaths.log.txt`) closes it, and `crates/run/tests/logs_real.rs` reads two real
+deaths.
+
 **`test-support` needs one new accessor.** Its functions today reach saves
 (`sample`, `dated_series`); the logs need the same treatment, declaring `sample: …` or
 `skip: …` on stderr, because a test on real data has to say which slice of the domain it
