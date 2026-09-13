@@ -29,13 +29,15 @@ export interface TabDragOptions {
   strip: Ref<HTMLElement | null>
   items: () => HTMLElement[]
   labelOf: (index: number) => string
-  // A window holding one tab refuses to open a second one for it.
-  canTear: () => boolean
   reorder: (from: number, to: number) => void
-  // The tab at `index` joins that window, at that desktop point.
-  giveTo: (index: number, label: string, at: Point) => void
-  // The tab at `index` gets a window of its own, its top-left at that desktop point.
-  openWith: (index: number, at: Point) => void
+  // Takes the tab at `index` out of the strip: from here on it is in flight and belongs to no
+  // window. False when there was no such tab.
+  lift: (index: number) => boolean
+  // The drag ended. A label lands the tab on that window's strip — this window's own included,
+  // since the tab has already left it — and null lands it on the bare desktop.
+  settle: (target: string | null, at: Point) => void
+  // The drag was called off or lost: the tab goes back where it sat.
+  putBack: () => void
 }
 
 export interface TabDrag {
@@ -53,7 +55,7 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
   // the backend for the list on every frame would be a command per frame.
   const windows = shallowRef<WindowBox[]>([])
   const self = shallowRef<WindowBox | null>(null)
-  let watch: PointerWatch | null = null
+  let pointer: PointerWatch | null = null
   let hovered: string | null = null
   let grabbed: number | null = null
 
@@ -77,62 +79,74 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
   const targets = (): WindowBox[] =>
     windows.value.filter((w) => w.label !== PreviewLabel)
 
-  const attach = () => {
+  // Ends the detached half of the gesture without deciding what becomes of the tab.
+  const stopWatching = () => {
     detached.value = false
-    watch?.stop()
-    watch = null
+    pointer?.stop()
+    pointer = null
     void hidePreview()
-  }
-
-  const finish = () => {
     tellHovered(null, { x: 0, y: 0 })
-    attach()
     grabbed = null
     drag.cancel()
   }
 
+  // The drag died on us — Escape, a lost pointer, a silent webview. The tab is in flight and
+  // belongs to nobody: it goes back where it sat rather than landing where nobody dropped it.
+  const abort = () => {
+    const wasDetached = detached.value
+    stopWatching()
+    if (wasDetached) options.putBack()
+  }
+
   const onOutsideMove = (p: Point) => {
-    const mine = self.value
+    // Our own window is a target like any other now: the tab has already left its strip, so
+    // putting it back there is a landing, not a special case. The marker in our own strip says
+    // where, exactly as another window's would.
     const target = windowUnderPoint(targets(), p, focusOrder.value)
-    // Back over our own window: the tab comes home and the gesture is a reorder again. The
-    // composable never stopped following the pointer inside, so nothing has to be restarted.
-    if (mine && target === mine.label) {
-      tellHovered(null, p)
-      attach()
-      return
-    }
     tellHovered(target, p)
     if (target) void hidePreview()
     else void movePreview(p)
   }
 
   const onOutsideRelease = (p: Point) => {
-    const index = grabbed
     const target = hovered
-    finish()
-    if (index === null) return
-    if (target) options.giveTo(index, target, p)
-    else options.openWith(index, p)
+    stopWatching()
+    options.settle(target, p)
   }
 
   const detach = async (p: Point) => {
-    if (detached.value || grabbed === null || !options.canTear()) return
+    if (detached.value || grabbed === null) return
+    // The tab leaves the strip here, not at the release: from now on it is in flight.
+    const label = options.labelOf(grabbed)
+    if (!options.lift(grabbed)) return
     detached.value = true
-    const [all, mine] = await Promise.all([
-      windowPort.list(),
-      windowPort.self(),
-    ])
+    // Anything that goes wrong between the tab leaving the strip and the watch being installed
+    // leaves the tab in flight with nobody holding it: put it back rather than lose it. This
+    // is not caution — it is the shape of a real failure, seen on the machine (a closed window
+    // still listed, answering `window not found` to every question).
+    let all: WindowBox[]
+    let mine: WindowBox
+    try {
+      ;[all, mine] = await Promise.all([windowPort.list(), windowPort.self()])
+    } catch {
+      abort()
+      return
+    }
     windows.value = all
     self.value = mine
-    const desktop = toDesktop(p, mine)
-    await showPreview(options.labelOf(grabbed), desktop)
-    watch = watchPointer({
+    // **The watch first, the picture second.** The preview is what the gesture looks like; the
+    // watch is what the gesture *is*. Waiting for a window to be created before listening for
+    // the release means a preview that never opens takes the whole gesture down with it — no
+    // error, no window, nothing at all. Measured on the machine, 2026-09-13.
+    pointer = watchPointer({
       onMove: onOutsideMove,
       onRelease: onOutsideRelease,
       // The webview went silent, or the cursor cannot be read: put the tab back rather than
       // land it somewhere nobody released it.
-      onLost: finish,
+      onLost: abort,
     })
+    const desktop = toDesktop(p, mine)
+    void showPreview(label, desktop).catch(() => undefined)
   }
 
   const resolve = (p: Point, boxes: Box[], from: number): TabDrop | null => {
@@ -160,6 +174,11 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
       if (detached.value || !landing) return
       const to = moveIndex(from, landing.index, landing.side)
       if (to !== from) options.reorder(from, to)
+    },
+    // Escape while the tab is out of the strip: it has nowhere to be, so it goes back. Only a
+    // real cancellation reaches here — a release, inside or outside, does not.
+    cancelled: () => {
+      if (detached.value) abort()
     },
   })
 

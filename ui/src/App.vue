@@ -80,20 +80,19 @@ onUnmounted(() => {
   stopAppEvents?.()
 })
 
-// A tab dragged out of this window. Which of the two endings it is was decided by where the
-// pointer was released; the store owns what each one does to the bar.
-const giveTab = (index: number, label: string, at: Point) => {
+// A tab torn out of the strip. It leaves the bar at once and belongs to nobody until the drag
+// ends: the store keeps it in flight, and the two endings below dispose of it.
+const liftTab = (index: number) => {
   const tab = tabs.tabs[index]
-  if (tab) void tabs.giveAway(tab.id, label, at)
+  if (tab) tabs.liftOut(tab.id)
 }
 
-// A window of its own, born under the cursor and sized like this one: the size the user chose,
-// in the place they dropped it.
-const tearTabOff = async (index: number, at: Point) => {
-  const tab = tabs.tabs[index]
-  if (!tab) return
-  const mine = await windowSize()
-  await tabs.tearOffTo(tab.id, at, mine)
+// Where it landed. A label is a strip — this window's own included — and null is the bare
+// desktop, where it gets a window of its own, sized like this one: the size the user chose, in
+// the place they dropped it.
+const settleTab = async (target: string | null, at: Point) => {
+  if (target !== null) await tabs.settleTo(target, at)
+  else await tabs.settleInNewWindow(at, await windowSize())
 }
 
 // The router shows the active tab: selecting, closing or navigating a tab moves it.
@@ -182,14 +181,14 @@ const indicatorView = computed(() =>
         :active-id="tabs.activeId"
         :focused="focused"
         :incoming="tabs.incoming"
-        :can-tear="tabs.canTear"
         @select="tabs.select"
         @close="tabs.close"
         @move="tabs.move"
         @add="tabs.open()"
         @aim="tabs.aim"
-        @give-to="giveTab"
-        @open-with="tearTabOff"
+        @lift="liftTab"
+        @settle="settleTab"
+        @put-back="tabs.putBack"
         @minimize="minimizeWindow"
         @toggle-maximize="toggleMaximizeWindow"
         @close-window="closeWindow"
