@@ -12,3 +12,9 @@ use crate::{Store, StoreError};
 pub fn corrupt_queue(store: &Store, raw: &str) -> Result<(), StoreError> {
     store.write_queue_json(raw)
 }
+
+/// Writes a row that will not parse as an event, for the test that says an unreadable row is
+/// counted rather than hiding the run around it. There is no other way to reach that state.
+pub fn corrupt_event(store: &Store, source_id: i64, seq: i64, raw: &str) -> Result<(), StoreError> {
+    store.replace_event_json(source_id, seq, raw)
+}
