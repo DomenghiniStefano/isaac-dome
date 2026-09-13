@@ -671,5 +671,6 @@ export const en: MessageSchema = {
     catalogUnavailable: "The game's catalogue isn't available.",
     storeUnavailable: "The app's database isn't available.",
     wikiUnavailable: "The wiki dataset isn't available.",
+    sessionTooLarge: 'The tab session is too large to be saved.',
   },
 }

@@ -6,7 +6,11 @@ import { completionMatrix } from './completion'
 import { candidates, noneSetup, setupWith, summary } from './profile'
 import {
   resetSettingsFixture,
+  sessionAnswer,
+  setResumeTabsAnswer,
   setScaleAnswer,
+  setSessionAnswer,
+  setStayInBackgroundAnswer,
   settingsAnswer,
 } from './settings'
 import type { QueueOptions } from './queue'
@@ -159,6 +163,14 @@ type Handler = (
 const handlers: Partial<Record<CommandName, Handler>> = {
   [Command.Settings]: () => settingsAnswer(),
   [Command.SetScale]: (args) => setScaleAnswer(Number(args?.percent)),
+  [Command.SetStayInBackground]: (args) =>
+    setStayInBackgroundAnswer(Boolean(args?.stay)),
+  [Command.SetResumeTabs]: (args) => setResumeTabsAnswer(Boolean(args?.resume)),
+  [Command.WindowSession]: () => sessionAnswer(),
+  [Command.SetWindowSession]: (args) => {
+    setSessionAnswer((args?.document as string | null) ?? null)
+    return undefined
+  },
   [Command.SetupState]: (_args, scenario) => setupFor(scenario),
   [Command.SelectProfile]: (args, scenario) => {
     chosenId = String(args?.id ?? '')

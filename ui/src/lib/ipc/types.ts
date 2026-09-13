@@ -142,6 +142,7 @@ export type IpcError =
   | { kind: 'catalogUnavailable' }
   | { kind: 'storeUnavailable'; reason: StoreReason }
   | { kind: 'wikiUnavailable' }
+  | { kind: 'sessionTooLarge' }
 
 // Mirrors crates/ipc/src/resources.rs. The variant labels are pinned by a test
 // on the JSON shape: `miniZ` is not a typo.
@@ -857,4 +858,8 @@ export interface CollectionView {
 export interface Settings {
   activeProfileId: string | null
   scale: number
+  stayInBackground: boolean
+  resumeTabs: boolean
+  /** Written by the backend when it shows the one-time notice; never displayed. */
+  backgroundNoticeShown: boolean
 }
