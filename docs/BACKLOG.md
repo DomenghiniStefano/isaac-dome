@@ -1836,3 +1836,49 @@ decision, in words, for the two that are not entities.
 Closes when: a mark's entry in the blocked menu opens the boss's page for the ten that have one,
 the other two say what they are without pretending to be entities, and the mapping is pinned by
 a test that reads it from the catalog rather than from a literal table.
+
+---
+
+## B38 — Three pickup quotes ship an undecoded HTML entity (implementation, `wiki`, small)
+
+Logged on 2026-09-13, found by `crates/ipc/tests/wiki_agrees_with_catalog.rs`: of the quote
+disagreements between the wiki and the game, this is the only one that is **ours**. Every
+other one is the wiki being behind the game — five items still carrying the pre-Repentance
+wording ("penetrative shot" for "piercing shots"), a plural, and TMTRAINER's deliberately
+corrupted string.
+
+### What was measured
+
+`dataset/raw/pages/` holds **36 HTML entities over 7 pages**, five distinct: `&nbsp;` (29),
+`&times;` (4), and one each of `&comma;`, `&colon;`, `&apos;`. Only **three reach
+`dataset/wiki.json`**, and all three are pickup quotes:
+
+| entry | in the dataset | should read |
+|---|---|---|
+| item 469, Depression | `&colon;(` | `:(` |
+| item 601, Act of Contrition | `Tears up&comma; you feel forgiven` | `Tears up, you feel forgiven` |
+| trinket 138, 'M | `t&apos;s broken…` | `t's broken…` |
+
+The other two never arrive: `&nbsp;` and `&times;` sit in text the parser already discards.
+
+### Why the wiki writes them
+
+They protect characters that template syntax would otherwise eat — a comma or a colon
+inside a template argument, an apostrophe against italic markup. MediaWiki decodes them when
+it renders; our inline parser passes them through as literal text, so they reach the screen
+as `&comma;`.
+
+### What it needs
+
+Decoding in `crates/wiki/src/inline.rs`, on a **closed list of the entities actually seen**,
+with anything outside the list counted in `Diagnostics` rather than passed through. Not a
+general HTML-entity decoder — the input is wikitext, not HTML, and a decoder that also ate
+`&amp;lt;` would be inventing a rule nobody measured. Not a regex over the finished string
+either: the decoding belongs where the text is read, or the same entity comes back the next
+time a field is added.
+
+### Closes when
+
+The three entries read as `:(`, `,` and `'`; `grep -c '&[a-zA-Z][a-zA-Z0-9]*;' dataset/wiki.json`
+is zero; an entity the list does not cover is counted and visible instead of shipped; and the
+rebuilt `dataset/wiki.json` travels in its own commit, as every regenerated artefact does.

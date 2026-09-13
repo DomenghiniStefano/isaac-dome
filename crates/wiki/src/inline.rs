@@ -284,11 +284,81 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
                 out.close();
             }
         }
+        // The text is in a *named* parameter, which neither `resolve` nor the positional
+        // recursion reaches: 157 of these sentences used to arrive empty. The item is named
+        // too, because the template's meaning is "with Book of Virtues, this happens" and a
+        // section shown on its own would otherwise lose the half that says with what.
+        // A boss's champion variant, always under `== Champion Versions ==`. The number is
+        // the variant's index; which colour each index is lives in the wiki's own template
+        // and nowhere we can read, and `catalog` has no champion table — so the index is
+        // kept verbatim and nothing is invented around it. `dlc=` makes the variant belong
+        // to one edition, which is what `Inline::Edition` already says.
+        "bc" => {
+            let edition = t.named.get("dlc").map(|c| dlc_codes(c));
+            if let Some(only) = edition.clone() {
+                out.open(only);
+            }
+            let index = arg.trim();
+            out.push(Inline::Concept {
+                page: "Champion".to_string(),
+                label: format!("Champion {index}"),
+            });
+            if edition.is_some() {
+                out.close();
+            }
+        }
+        // Two templates, one shape: the item is in the name and the text is in a `description`
+        // parameter, spelled that way in all 197 uses. The label is written out per arm rather
+        // than derived from the name, so a third "X synergy" template cannot silently inherit
+        // the wrong item.
+        name @ ("book of virtues synergy" | "book of belial synergy") => {
+            let label = if name == "book of virtues synergy" {
+                "Book of Virtues"
+            } else {
+                "Book of Belial"
+            };
+            if let Resolution::Target(target) = r.resolve("i", label) {
+                out.push(Inline::Ref {
+                    target,
+                    label: label.to_string(),
+                });
+                out.buf.push_str(": ");
+            }
+            if let Some(description) = t.named.get("description") {
+                recurse_into_arg(description, r, d, out, depth);
+            }
+        }
+        // The only template whose argument is a *list*: a boss page names the achievements
+        // that boss unlocks, comma-separated. `resolve` answers with one `Resolution`, so
+        // this cannot go through it — it has to push a node per name.
+        "achievement text" => {
+            for (n, name) in arg.split(',').enumerate() {
+                let name = name.trim();
+                if name.is_empty() {
+                    continue;
+                }
+                if n > 0 {
+                    out.buf.push_str(", ");
+                }
+                match r.achievement_by_name(name) {
+                    Some(target) => out.push(Inline::Ref {
+                        target,
+                        label: name.to_string(),
+                    }),
+                    // Not dropped: a name we cannot resolve is still what the page says.
+                    None => out.buf.push_str(name),
+                }
+            }
+        }
         name if CONTENT_WRAPPERS.contains(&name) => recurse_into_arg(&arg, r, d, out, depth),
         name => match r.resolve(name, &arg) {
             Resolution::Target(target) => {
                 let label = label_of(t, &arg);
                 out.push(Inline::Ref { target, label });
+            }
+            Resolution::Concept => {
+                let label = label_of(t, &arg);
+                out.push(Inline::Concept { page: arg, label });
             }
             Resolution::Unresolved => {
                 d.unresolved(name);
@@ -482,9 +552,12 @@ mod tests {
 
     #[test]
     fn unknown_and_layout_templates() {
-        let (v, d) = p("{{cit|p|r}}x {{m|Donation Machine}} y");
+        // A name no template will ever have: this test is about what happens to a template
+        // we do not know, and using a real one means it breaks the day we learn that one.
+        // It used to use `{{m|…}}`, which is exactly what happened on 2026-09-13.
+        let (v, d) = p("{{cit|p|r}}x {{notatemplate|Donation Machine}} y");
         assert_eq!(v, vec![text("x Donation Machine y", Style::Plain)]);
-        assert_eq!(d.unknown_templates.get("m"), Some(&1));
+        assert_eq!(d.unknown_templates.get("notatemplate"), Some(&1));
         assert!(d.unresolved.is_empty());
     }
 
@@ -576,6 +649,174 @@ mod tests {
                 }
             ]
         );
+    }
+
+    /// `{{m|Donation Machine}}` and `{{machine|Greed Donation Machine}}` name a machine or a
+    /// beggar: a wiki page the game gives no id, which is exactly `Inline::Concept`. Together
+    /// they were the largest entry in `unknownTemplates` — 373 and 52 — so their sentences
+    /// reached the frontend with the name in place but no link and a diagnostic against them.
+    ///
+    /// They must not be counted as *unresolved*: that word means "we looked for an id and did
+    /// not find one", and here there was never an id to find.
+    #[test]
+    fn machine_templates_become_concept_links() {
+        let (v, d) = p("Use the {{m|Donation Machine}} here");
+        assert!(v.iter().any(|i| matches!(
+            i,
+            Inline::Concept { page, label }
+                if page == "Donation Machine" && label == "Donation Machine"
+        )));
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+        assert!(d.unresolved.is_empty(), "a concept is not a failed lookup");
+
+        let (v, d) = p("{{machine|Greed Donation Machine}}");
+        assert!(v.iter().any(
+            |i| matches!(i, Inline::Concept { page, .. } if page == "Greed Donation Machine")
+        ));
+        assert!(d.unknown_templates.is_empty());
+
+        // The label still wins when the page is written under another name.
+        let (v, _) = p("{{m|Blood Donation Machine|the machine}}");
+        assert!(v.iter().any(|i| matches!(
+            i,
+            Inline::Concept { page, label }
+                if page == "Blood Donation Machine" && label == "the machine"
+        )));
+    }
+
+    /// `{{bc|7}}` marks a boss's champion variant. All 59 uses sit under
+    /// `== Champion Versions ==`, and the number is the variant's index — the wiki renders it
+    /// as a coloured swatch, and **which colour each index is cannot be read from anything we
+    /// have**: it lives in the wiki's own template, and `catalog` has no champion table.
+    ///
+    /// So the number is kept as the wiki wrote it and the concept is named, which is the
+    /// whole of what is known. Giving index 7 a colour name would be the kind of guess this
+    /// repo keeps paying for.
+    #[test]
+    fn the_champion_template_names_the_variant_without_naming_its_colour() {
+        let (v, d) = p("{{bc|7}}: 15% larger and slower");
+        assert!(
+            v.iter().any(|i| matches!(
+                i,
+                Inline::Concept { page, label } if page == "Champion" && label == "Champion 7"
+            )),
+            "got {v:?}"
+        );
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+
+        // `{{bc|18|dlc=a+}}` says the variant is of one edition: that is `Inline::Edition`,
+        // the same node every other per-edition span uses.
+        let (v, _) = p("{{bc|18|dlc=a+}}");
+        assert!(
+            v.iter().any(|i| matches!(
+                i,
+                Inline::Edition { only, .. } if only == &vec![Dlc::AfterbirthPlus]
+            )),
+            "got {v:?}"
+        );
+    }
+
+    /// `{{Book of Virtues synergy|description=…}}` carries its text in a **named** parameter,
+    /// so neither `resolve` nor the positional recursion reaches it: 157 sentences arrived
+    /// empty. All 164 uses spell the parameter `description`.
+    ///
+    /// The item reference is emitted too. The template's whole content is "with Book of
+    /// Virtues, this happens", and the app shows a section on its own — a bare description
+    /// would leave the reader without the half that says *with what*.
+    #[test]
+    fn the_book_of_virtues_synergy_keeps_its_description() {
+        let (v, d) = p("{{Book of Virtues synergy|description=Spawns {{i|Breakfast}} wisps}}");
+        let mut flat = String::new();
+        for i in &v {
+            if let Inline::Text { text, .. } = i {
+                flat.push_str(text);
+            }
+        }
+        assert!(flat.contains("Spawns"), "the description is lost: {v:?}");
+        assert!(flat.contains("wisps"));
+        // The item the synergy is with, named rather than left implicit.
+        assert!(v.iter().any(|i| matches!(
+            i,
+            Inline::Ref {
+                target: Target::Item { id: 584 },
+                ..
+            }
+        )));
+        // Links inside the description keep working: it is parsed, not pasted.
+        assert!(v.iter().any(|i| matches!(
+            i,
+            Inline::Ref {
+                target: Target::Item { id: 25 },
+                ..
+            }
+        )));
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// `{{achievement text | I RULE!, Backasswards, Ultra Hard}}` is the odd one out: it
+    /// carries a **comma-separated list**, so it cannot go through `resolve`, which answers
+    /// with one `Resolution`. It sits on boss pages, naming the achievements that boss
+    /// unlocks — 82 of the 143 uses name exactly one, but the longest names seventeen.
+    #[test]
+    fn achievement_text_lists_every_achievement_it_names() {
+        let (v, d) = p("{{achievement text | Epic Fetus, Cain}}");
+        let refs: Vec<&Inline> = v
+            .iter()
+            .filter(|i| {
+                matches!(
+                    i,
+                    Inline::Ref {
+                        target: Target::Achievement { .. },
+                        ..
+                    }
+                )
+            })
+            .collect();
+        assert_eq!(refs.len(), 2, "both names must resolve, got {v:?}");
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+
+        // A name we cannot resolve keeps its words rather than disappearing.
+        let (v, _) = p("{{achievement text | Epic Fetus, Not An Achievement}}");
+        let mut flat = String::new();
+        for i in &v {
+            if let Inline::Text { text, .. } = i {
+                flat.push_str(text);
+            }
+        }
+        assert!(
+            flat.contains("Not An Achievement"),
+            "an unresolved name must stay readable, got {v:?}"
+        );
+    }
+
+    /// `{{transformation contribution|Beelzebub}}` is a whole sentence on the page ("counts
+    /// toward Beelzebub"), but the only part of it we can resolve is the transformation —
+    /// which `{{tf|…}}` already resolves. 186 occurrences, every one of them an item's
+    /// Effects section saying which transformation it feeds.
+    #[test]
+    fn transformation_contribution_resolves_like_tf() {
+        let (v, d) = p("{{transformation contribution|Beelzebub}}");
+        assert!(v.iter().any(|i| matches!(
+            i,
+            Inline::Ref {
+                target: Target::Transformation { .. },
+                ..
+            }
+        )));
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// `{{ip|Boss}}` names an item pool — "Boss" 81 times, then the rooms and the chests.
+    /// The game keys its pools by name in `itempools.xml` and gives them no id, so they are
+    /// concepts for the same reason machines are.
+    #[test]
+    fn the_item_pool_template_becomes_a_concept() {
+        let (v, d) = p("Found in the {{ip|Boss}} pool");
+        assert!(v
+            .iter()
+            .any(|i| matches!(i, Inline::Concept { page, .. } if page == "Boss")));
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+        assert!(d.unresolved.is_empty());
     }
 
     /// `{{dlc|r}}` is a marker: it opens an edition scope that runs to the end of the value

@@ -15,10 +15,13 @@ pub struct Entry {
     /// The infobox's summary line. Plain text for achievements, wikitext everywhere else:
     /// both arrive as inline so the frontend has one shape and no switch on the kind.
     pub description: Vec<Inline>,
-    /// The edition codes the infobox declares, parsed. Empty when the parameter is absent.
-    /// Deliberately NOT called "introduced in" nor "exists in": which of the two it means
-    /// is unmeasured — Blue Cap (342), the first Afterbirth item, declares neither — and a
-    /// name would be a guess.
+    /// The edition codes the **infobox** declares, parsed. Empty when the parameter is
+    /// absent, which is not the same as "it exists everywhere".
+    ///
+    /// Not to be confused with the Cargo tables' `dlc` integer, which is a different source
+    /// and a different question: that one is a bitmask over the editions a row is valid in,
+    /// measured on 2026-09-13 to agree with the game on 712 of 720 collectibles
+    /// (`cargo run -q -p ipc --example dlc_mask`). This field does not use it.
     pub dlc: Vec<Dlc>,
     /// What the wiki states has to be unlocked first. `None` means "the wiki does not state
     /// one", NEVER "it is free from the start": that answer belongs to `catalog` and `graph`.
