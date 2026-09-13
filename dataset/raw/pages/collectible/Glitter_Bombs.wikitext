@@ -17,7 +17,7 @@
 * Isaac's bombs have a 15% chance to [[charm]] random enemies in the room when they explode.
 
 == Notes ==
-* {{dlc|nr}} Picking up a {{e|Golden Bomb}}, {{i|Dr. Fetus}}, {{i|Epic Fetus}}, or {{i|Number Two}} with Glitter Bombs allows infinite pickup generation.
+* {{dlc|nr}} Picking up a {{e|Golden Bomb}}, {{i|Dr. Fetus}}, {{i|Epic Fetus}}, or {{i|No. 2}} with Glitter Bombs allows infinite pickup generation.
 ** {{dlc|nr}} In [[Greed Mode]], Glitter Bombs cannot generate coins. Infinite pickup generation that isn't coins is still possible, however, so this can be worked around if Isaac has the {{t|Swallowed Penny}} or {{i|Piggy Bank}}, since it does still produce health.
 
 == Synergies ==
@@ -27,7 +27,7 @@
 * {{I|Doctor's Remote}}/{{i|Epic Fetus}}: Missiles have a chance of spawning a pickup or trinket upon exploding.
 * {{I|Dr. Fetus}}: Bombs have a chance of spawning pickups or trinkets upon exploding.
 * {{I|Everything Jar}}: At eleven charges guarantees a golden bomb.
-* {{I|Number Two}}: The butt bombs have a chance of spawning pickups or trinkets upon exploding.
+* {{I|No. 2}}: The butt bombs have a chance of spawning pickups or trinkets upon exploding.
 * {{dlc|r}}[[Familiars#Locusts|Red Locusts]]: Red locust explosions have a chance to spawn a pickup or trinket.
 * {{I|Scatter Bombs}}: Each smaller bomb also has a chance of dropping a pickup or trinket.
 * {{t|Swallowed M80}}: Swallowed M80 explosions have a chance of spawning pickups or trinkets.

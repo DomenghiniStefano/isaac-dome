@@ -58,7 +58,7 @@
 {{#ev:youtube|3Ek-uDOuK8w||inline}} {{#ev:youtube|TH9rOVHzg2Q||inline}}
 
 == Trivia ==
-* "Number One" is a euphemism for urination and mirrors {{i|Number Two}} being an euphemism for defecation.
+* "Number One" is a euphemism for urination and mirrors {{i|No. 2}} being an euphemism for defecation.
 ** This is why the tears fired after collecting this item are no longer fired from the head, but the lower waist.
 * In the original ''Binding of Isaac'', Number One had the effect of turning all future Range Down pills into Range Up pills. This was presumably designed to reduce the risk of players being stuck in situations where their range would become too low to clear certain rooms. However, in ''Rebirth'', Number One no longer has this effect, and will not turn Range Down pills into Range Up pills.
 * This item is used in {{chal|High Brow}}.

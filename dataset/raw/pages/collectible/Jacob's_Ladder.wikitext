@@ -26,7 +26,9 @@
 ** {{I|9 Volt}} / {{T|Watch Battery}} / {{T|Hairpin}}: Increases arcing distance of sparks.
 ** {{I|The Battery}} / {{I|Jumper Cables}} / {{T|AAA Battery}}: Increases amount of arcs a spark can generate.
 ** {{T|Old Capacitor|n}}: Allows sparks to arc on the same enemy multiple times.
-* {{I|Abyss}}: When Isaac uses Abyss to absorb Jacob's Ladder it turns into a pale blue locust. The locust can create arcs of electricity dealing 0.1 damage per tick.
+* {{I|Abyss}}: When Isaac uses Abyss to absorb Jacob's Ladder it turns into a pale blue locust. 
+**{{dlc|nr+}}The locust can create arcs of electricity dealing 0.1 damage per tick.
+**{{dlc|r+}} The locust can create arcs of electricity dealing 25% of Isaac's damage per tick.
 * {{I|Angelic Prism}}: All of the split tears will be electrified. {{Dlc|nr}} Also, the sparks that pass through the prism will be split.
 * {{dlc|r}} {{I|Brimstone}} / {{c|Azazel}} / {{c|Tainted Azazel}}: The beam gains a light blue tint, spawning sparks at the end of the beam and near enemies hit by the beam.
 * {{I|C Section}}: Spawns the sparks for each tick they hit.

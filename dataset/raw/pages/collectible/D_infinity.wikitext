@@ -101,6 +101,6 @@
 {{#ev:youtube|https://www.youtube.com/watch?v=ydN-p2TCxCU|||||start=494}}
 
 == Trivia ==
-* {{dlc|r}} The D infinity when transformed into another die looks similar to {{E|Delirium}}.
+* {{dlc|r}} When transformed into another die, the D infinity looks similar to {{E|Delirium}}. In its regular form that it appears as on item pedestals, the item resembles one of Delirium's eyes. 
 
 {{nav|isaac unlock|delirium unlock|dice|fr=Dé Infini}}

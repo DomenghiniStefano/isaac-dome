@@ -33,7 +33,7 @@ File:Dingle Concept.png|More concept art of Dingle.
 
 == Notes ==
 * {{i|Flush!}} kills Dingle instantly and causes him to leave behind 6 {{e|Dip}}s.
-* If a Bomb from {{I|Butt Bombs}} goes off in the same room as Dingle, it will heal him. {{dlc+|a}} This is especially bad if Isaac happens to have {{i|Number Two}}, which causes him to drop butt bombs while firing tears.{{dlc-}}
+* If a Bomb from {{I|Butt Bombs}} goes off in the same room as Dingle, it will heal him. {{dlc+|a}} This is especially bad if Isaac happens to have {{i|No. 2}}, which causes him to drop butt bombs while firing tears.{{dlc-}}
 ** {{dlc|a+}} Butt Bombs fired by {{I|Dr. Fetus}} and {{I|Epic Fetus}} do not heal Dingle.
 
 == Trivia ==

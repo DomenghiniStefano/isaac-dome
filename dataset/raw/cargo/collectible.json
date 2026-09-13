@@ -3752,6 +3752,14 @@
     "unlocked by": ""
   },
   {
+    "_pageName": "No. 2",
+    "alias": "No. 2",
+    "dlc": "30",
+    "id": "378",
+    "is activated": "0",
+    "unlocked by": ""
+  },
+  {
     "_pageName": "Notched Axe",
     "alias": "Notched Axe",
     "dlc": "31",
@@ -3764,14 +3772,6 @@
     "alias": "Number One",
     "dlc": "31",
     "id": "6",
-    "is activated": "0",
-    "unlocked by": ""
-  },
-  {
-    "_pageName": "Number Two",
-    "alias": "Number Two",
-    "dlc": "30",
-    "id": "378",
     "is activated": "0",
     "unlocked by": ""
   },

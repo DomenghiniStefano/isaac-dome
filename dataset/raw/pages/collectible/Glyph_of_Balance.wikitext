@@ -34,7 +34,7 @@
 
 == Notes ==
 * When the conditions for specific drop is met, you can intentionally not pick up the drop to guarantee that same drop (or a chest) every room.
-* {{Dlc|r}} Staying at low luck (but not below 0) is recommended to take full advantage of Glyph of Balance, as higher luck will make chest drops more common.
+* {{Dlc|r}} Staying at low luck (but not below 0) is recommended to take full advantage of Glyph of Balance, as higher luck will make chest drops more common and override the effect of the Glyph.
 * The Glyph has no effect in [[Greed Mode]] or Greedier Mode aside from the {{E|Soul Heart}}s granted upon pickup; champions still never drop anything.
 * {{dlc|nr}} Because of how the item works in the priorities listed above, this item is not recommended for {{c|The Lost}} (except in combination with {{i|Immaculate Conception}}) as he is always considered to be at half a Soul Heart, and all drops ''from champions'' are replaced with Soul Hearts.
 ** {{dlc+|r}}{{c|The Lost}} and {{c|Tainted Lost}} ignore both rules for Soul Heart generation. This prevents the item from generating mostly useless Soul Hearts.{{dlc-}}
