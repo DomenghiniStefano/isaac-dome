@@ -388,6 +388,21 @@ export const en: MessageSchema = {
     nothingReadable:
       'The save lets us read no mark: the counters section is missing or cut short.',
   },
+  // The block an achievement's wiki page gains when a profile is active. It says only where
+  // you stand: what the thing is and what it asks is already in the infobox below.
+  profileBlock: {
+    title: 'Your profile',
+    missing: 'What you are missing',
+    unlocks: 'What you get',
+    opens: 'Unlocking it opens {count} more things.',
+    // A node already done will not open: it opened. The future tense under an "Already
+    // done" reads as if something were still left to do.
+    opened: 'It opened {count} more things.',
+    opensNothing: 'It opens nothing else: this is the end of a branch.',
+    openedNothing: 'It opened nothing else: this is the end of a branch.',
+    stepsMissing: '{count} unlocks are needed first.',
+    done: 'Already done.',
+  },
   graph: {
     state: {
       done: 'done',

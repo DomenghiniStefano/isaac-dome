@@ -393,6 +393,21 @@ export const it = {
     nothingReadable:
       'Il salvataggio non lascia leggere nessun marchio: la sezione dei contatori manca o è troncata.',
   },
+  // Il blocco che la pagina wiki di un achievement guadagna quando c'è un profilo attivo.
+  // Dice soltanto dove sei tu: cos'è e cosa chiede lo dice già l'infobox sotto.
+  profileBlock: {
+    title: 'Il tuo profilo',
+    missing: 'Cosa ti manca',
+    unlocks: 'Cosa ottieni',
+    opens: 'Sbloccarlo apre altre {count} cose.',
+    // Un nodo già fatto non "aprirà": ha aperto. La stessa frase al futuro, sotto un
+    // "Già fatto", si legge come se ci fosse ancora qualcosa da fare.
+    opened: 'Ha aperto altre {count} cose.',
+    opensNothing: 'Non apre nient’altro: è una fine di ramo.',
+    openedNothing: 'Non ha aperto nient’altro: è una fine di ramo.',
+    stepsMissing: 'Prima servono ancora {count} sblocchi.',
+    done: 'Già fatto.',
+  },
   graph: {
     state: {
       done: 'fatto',

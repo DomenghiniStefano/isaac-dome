@@ -12,9 +12,13 @@ const mounted = () => document.getElementById('splash')?.remove()
 
 // The development pages (the Kit, the verification page) sit behind import.meta.env.DEV:
 // the production build drops their imports entirely.
+// Pinia, and no router: the Kit's "Componenti app" half hosts components that read a store —
+// a state badge opens the menu naming what is in the way, and that menu asks the tabs store
+// where a click would go. That store is pure state over a `TabLocation`, so a click in the
+// Kit moves a tab nobody is drawing, which is the right amount of nothing to happen.
 const mountKit = async () => {
   const { default: KitPage } = await import('./kit/KitPage.vue')
-  createApp(KitPage).use(i18n).mount('#app')
+  createApp(KitPage).use(createPinia()).use(i18n).mount('#app')
   mounted()
 }
 
