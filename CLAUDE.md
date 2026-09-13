@@ -46,7 +46,7 @@ The full project document is in `docs/PROJECT.md`.
 frontend knows nothing about offsets, file names, or log strings.
 
 **Layout.** Rust crates live in `crates/` (`core-save`, `discovery`, `unpack`, `catalog`,
-`wiki`, `wiki-snapshot`, `graph`, `plan`, `ipc`, `store`, `app`, `test-support`). The Tauri crate is
+`wiki`, `wiki-snapshot`, `graph`, `plan`, `run`, `ipc`, `store`, `app`, `test-support`). The Tauri crate is
 `crates/app`, not `src-tauri`: every `tauri` command needs
 `--config crates/app/tauri.conf.json`, and the root scripts already do that (`pnpm dev`,
 `pnpm build`). The frontend is the pnpm workspace `ui/`; from the root, `pnpm typecheck`,
@@ -59,7 +59,8 @@ frontend knows nothing about offsets, file names, or log strings.
 | `discovery` | Finds Steam, the game, the saves. Manual fallback at every step. |
 | `unpack` | Extracts the game's `.a` archives into the local cache. |
 | `core-save` | Parser for the `.dat`, read-only. |
-| `log-watch` | **Doesn't exist yet (M4).** Will follow `log.txt` in append mode, patterns in a versioned rule file. |
+| `run` | Pure crate: `Tail` (bytes into lines, and a shorter file is a relaunch), the rules file that maps a line to one of nine events and judges nothing, and the fold that makes every judgment a log cannot — the starting item, the active that replaced the last one, the outcome nobody wrote down. Item kinds arrive through a trait, so it never depends on `catalog`. |
+| `log-watch` | **Doesn't exist yet (M4, sub-project 1b).** `notify`, an offset and a read; everything worth testing already lives in `run`. |
 | `catalog` | Normalizes the game's XML files. |
 | `wiki` | Pure crate: wikitext parser, typed tree, embedded compressed dataset. Only reads `dataset/raw/`. |
 | `wiki-snapshot` | Tool, the only one that talks to the network: `pnpm wiki:fetch` / `pnpm wiki:build`. |
@@ -179,16 +180,28 @@ Rewritten on every game launch: untracked runs are lost forever, so the app has 
 running while you play. Verified lines:
 
 ```
-Adding collectible 225 (Gimpy) to player 0 (Cain) from pool treasure
-RNG Start Seed: FYQ8 QQ8G (586324166) [New, 1]
-Level::Init m_Stage 2, m_StageType 1 Seed 408474304
-Game Over. Killed by (9.0) spawned by (84.0) damage flags (0)
-playing cutscene 15 (Sheol).
+[INFO] - Adding collectible 225 (Gimpy) to player 0 (Cain) from pool treasure
+[INFO] - RNG Start Seed: FYQ8 QQ8G (586324166) [New, 1]
+[INFO] - Level::Init m_Stage 2, m_StageType 1 Seed 408474304
+[INFO] - Game Over. Killed by (9.0) spawned by (84.0) damage flags (0)
+[INFO] - playing cutscene 15 (Sheol).
+[INFO] - [Frame 74] Starting room transition (type 0)
 ```
 
+**The `[INFO] - ` prefix is part of the line**, and until 2026-09-13 this block dropped it —
+so did the M4 spec's table. Some lines carry a frame marker on top of it, and about 1% carry
+no prefix at all (the `Framebuffer Width:` block, the library banners). **No pattern may be
+anchored at the start of a line**, or it matches nothing at all.
+
 One line gives the item's id and name, the character, and the pool; the death line gives
-the killing entity and what spawned it. The patterns go into a versioned rule file,
-updatable without recompiling.
+the killing entity and what spawned it. The patterns live in `crates/run/rules/events.json`,
+embedded at build time and updatable without recompiling.
+
+**The seed line has three kinds and they are not interchangeable**: `[New, …]`,
+`[Continue, …]` — a run resumed from an earlier launch, logged with the seed it already had —
+and `[Net, …]`, an online run. Reading a `Continue` as a fresh start abandons a run still being
+played and counts it twice, so `run`'s fold decides by **seed**, not by label. `Net` is the only
+free discriminator we have for co-op.
 
 ## Real-world paths
 
