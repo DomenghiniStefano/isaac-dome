@@ -430,12 +430,23 @@ are a `computed`, the row height is a number pinned against its spacing token by
 `translate-y-(--row-start)`.
 
 **Added with sub-project 3.3b**: `BadgeVariant.Wanted` — a queue row you asked for, a square tag
-in the primary colours, told apart from a step a wish dragged in. The queue reorders the way the
-tab strip does — a press becomes a drag past a threshold, the pointer is captured only then, the
-rows' rects are read once — and a drop sends **the row it lands under**, never an index
-(`lib/plan/queueDrop.ts`); what the screen draws next is the order the command answers with. The
+in the primary colours, told apart from a step a wish dragged in. A drop sends **the row it lands
+under**, never an index (`lib/plan/queueDrop.ts`); what the screen draws next is the order the
+command answers with. The
 IpcError sentences live in `useIpcErrorText` and `ipcErrors.*`, shared by every screen that has
 to say why a command failed.
+
+**One composable drags every list.** `composables/useDragList.ts` owns the choreography — a press
+becomes a drag past a threshold, the pointer is captured only then, the items' rects are read
+once, nothing moves until the release — plus the lifted copy and `Escape`, which calls a drag off
+and commits nothing. The decisions it makes are pure and tested in `lib/drag/dragList.ts`. A
+screen brings two things and nothing else: where its items are, and what a drop there means —
+`components/shell/tabs.ts` for the strip, `lib/plan/queueDrop.ts` for the queue. A third
+hand-written pointer drag inside a screen is a bug, not a variant. The lifted copy is
+`components/ui/drag/DragGhost.vue`, teleported to the body and `aria-hidden`: it is a picture of
+the row, not a second one. The skin is flat by decision (`assets/theme/shadow.css` sets
+`--shadow-*: initial`), so it lifts with a `primary` border on an opaque sheet and never with a
+shadow token. The sidebar's resize stays outside it: same choreography, no list and no drop.
 
 ### How a primitive is written
 
