@@ -1,5 +1,5 @@
 import type { Point } from '@/lib/drag/dragList'
-import type { Tab } from '@/stores/tabModel'
+import type { TabSeed } from '@/stores/tabModel'
 
 // What windows say to each other. These never pass through Rust: they are frontend types on a
 // frontend channel, not the IPC contract, and the rules that govern view-models do not apply.
@@ -18,10 +18,10 @@ export type WindowMessageKind =
   (typeof WindowMessageKind)[keyof typeof WindowMessageKind]
 
 // A tab as it travels between windows: everything a tab is **except its identity**, which the
-// receiving window mints for itself — two windows must never hold the same tab id. Defined by
-// subtraction on purpose: the day a tab gains a field, it crosses to the other window without
-// a line changing here, and nothing in this module has to know what a tab is made of.
-export type TabSeed = Omit<Tab, 'id'>
+// receiving window mints for itself — two windows must never hold the same tab id. It is
+// defined by subtraction in `stores/tabModel.ts`, so the day a tab gains a field it crosses to
+// the other window without a line changing here.
+export type { TabSeed }
 
 // "I exist and I hold nothing": broadcast by a window that is not `main` when it mounts.
 export interface ReadyMessage {
