@@ -66,10 +66,10 @@ fn writing_twice_replaces_the_document_instead_of_keeping_two() {
 }
 
 #[test]
-fn the_schema_version_moved_to_two() {
+fn the_schema_version_moved_to_three() {
     let dir = tempdir().expect("temp dir");
     let s = Store::open(&dir.path().join("isaacdome.db")).expect("opens");
-    assert_eq!(s.schema_version().expect("reads"), 2);
+    assert_eq!(s.schema_version().expect("reads"), 3);
 }
 
 #[test]
@@ -108,12 +108,19 @@ fn a_version_one_database_gains_the_queue_without_losing_its_goals() {
         .expect("builds a version 1 file");
     }
     let s = Store::open(&path).expect("upgrades");
-    assert_eq!(s.schema_version().expect("reads"), 2);
+    assert_eq!(s.schema_version().expect("reads"), 3);
     let goals = s.goals().expect("goals still readable");
     assert_eq!(
         goals.goals.len(),
         1,
         "migration 2 must not touch what migration 1 wrote"
+    );
+    // The chain runs the whole way, not just one step: a query against a table that migration
+    // 3 never created would be an error, not a `None`.
+    assert_eq!(
+        s.session()
+            .expect("the session table exists at the end of the chain"),
+        None
     );
     assert_eq!(
         s.queue().expect("query").expect("parses").rows().len(),
