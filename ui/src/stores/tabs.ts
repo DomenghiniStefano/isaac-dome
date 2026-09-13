@@ -76,8 +76,14 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     size: Point,
   ): Promise<void> => {
     const label = newWindowLabel()
-    oweSeed(label, seeds, seeds.length - 1)
+    const paid = oweSeed(label, seeds, seeds.length - 1)
     await windowPort.create(label, at, size)
+    // **The debt is waited for, not just registered.** It lives in this window's memory, and
+    // this window may be about to close — it just gave away its last tab. Closing first leaves
+    // the newborn asking a window that no longer exists, and it opens with an empty bar: seen
+    // on the machine, 2026-09-13. The wait has its own timeout, so a newborn that never asks
+    // cannot keep this window alive.
+    await paid
   }
 
   // The tab at that index, as it travels: everything but its identity.
