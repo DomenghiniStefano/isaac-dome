@@ -158,9 +158,12 @@ pub fn discover(opts: &Options) -> Discovery {
     }
 }
 
-/// Internal API exposed only for integration tests. Not part of the public contract.
-#[doc(hidden)]
-pub mod testing {
+/// Entry points that exist only so tests can reach a shape the public API doesn't build.
+///
+/// One module per crate, and nothing test-only anywhere else in the public surface: a name
+/// in the crate's `pub use` list says "call me", which is the opposite of what these mean.
+/// Nothing outside a `tests/` target may call them.
+pub mod for_tests {
     use std::collections::BTreeSet;
 
     use crate::{Dlc, Edition};
