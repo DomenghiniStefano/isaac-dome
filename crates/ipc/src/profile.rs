@@ -299,8 +299,15 @@ pub enum SetupDiagnostic {
     SteamNotFound,
     GameNotFound,
     NoSavesFound,
-    UnreadablePath { name: String, reason: String },
-    MalformedManifest { name: String },
+    /// `name` is the path's last component, never the path. `reason` is which `io` case it
+    /// was: the system's own message is not translatable and can repeat the path.
+    UnreadablePath {
+        name: String,
+        reason: crate::IoReason,
+    },
+    MalformedManifest {
+        name: String,
+    },
 }
 
 /// Last component of a path, for diagnostics: never the full path.
@@ -315,9 +322,9 @@ fn setup_diagnostic_of(d: &DiscoveryDiagnostic) -> SetupDiagnostic {
         DiscoveryDiagnostic::SteamNotFound => SetupDiagnostic::SteamNotFound,
         DiscoveryDiagnostic::GameNotFound => SetupDiagnostic::GameNotFound,
         DiscoveryDiagnostic::NoSavesFound => SetupDiagnostic::NoSavesFound,
-        DiscoveryDiagnostic::UnreadablePath { path, reason } => SetupDiagnostic::UnreadablePath {
+        DiscoveryDiagnostic::UnreadablePath { path, kind } => SetupDiagnostic::UnreadablePath {
             name: last_component(path),
-            reason: reason.clone(),
+            reason: (*kind).into(),
         },
         DiscoveryDiagnostic::MalformedManifest { path } => SetupDiagnostic::MalformedManifest {
             name: last_component(path),

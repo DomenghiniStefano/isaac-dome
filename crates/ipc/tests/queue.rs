@@ -77,7 +77,10 @@ fn an_unreadable_queue_is_empty_and_says_so() {
 fn a_store_that_will_not_open_is_a_different_case_from_an_unreadable_document() {
     let q = plan::Queue::default();
     let mut i = inputs(None, None, Ok(&q));
-    i.store_reason = Some("database from a newer version (7 > 2)".into());
+    i.store_reason = Some(ipc::StoreReason::NewerSchema {
+        found: 7,
+        supported: 2,
+    });
     let v = ipc::queue_view(i, |_| None);
     assert!(!v.store_available);
     assert!(v

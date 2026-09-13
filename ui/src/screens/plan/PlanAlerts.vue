@@ -10,7 +10,8 @@ import {
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
 import { assertNever } from '@/lib/assertNever'
-import type { QueueDiagnostic } from '@/lib/ipc/types'
+import { storeReasonPart } from '@/lib/ipc/errorText'
+import type { QueueDiagnostic, StoreReason } from '@/lib/ipc/types'
 
 const props = defineProps<{ diagnostics: QueueDiagnostic[]; busy: boolean }>()
 const emit = defineEmits<{ importGoals: [] }>()
@@ -34,6 +35,13 @@ const isAlert = (d: QueueDiagnostic): boolean => {
 }
 
 const alerts = computed(() => props.diagnostics.filter(isAlert))
+
+// The reason is a variant, so the sentence is built here from a key and its values —
+// "a newer version, 7 against 1" is the translation's word order, not Rust's.
+const reasonText = (reason: StoreReason): string => {
+  const part = storeReasonPart(reason)
+  return t(part.key, part.params)
+}
 </script>
 
 <template>
@@ -45,7 +53,8 @@ const alerts = computed(() => props.diagnostics.filter(isAlert))
       <TriangleAlertIcon />
       <AlertTitle>{{ t('plan.alerts.storeUnavailableTitle') }}</AlertTitle>
       <AlertDescription
-        >{{ t('ipcErrors.storeUnavailable') }} {{ d.reason }}</AlertDescription
+        >{{ t('ipcErrors.storeUnavailable') }}
+        {{ reasonText(d.reason) }}</AlertDescription
       >
     </Alert>
     <Alert v-else-if="d.kind === 'unreadable'">
