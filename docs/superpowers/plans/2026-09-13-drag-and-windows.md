@@ -2138,6 +2138,20 @@ git commit -m "feat(ui): where a point is when there is more than one window"
 events outside the window, do step 1 and skip steps 2–4. If it says the events stop, skip step 1
 and do steps 2–4. Either way, do step 5.
 
+**Amendment, 2026-09-13.** The spike could not be run — it needs a hand on the mouse (report,
+Task 1) — so step 1's implementation was written **as the provisional answer**, with two changes
+the plan had not foreseen, both forced by the fact that the answer is unknown:
+
+- the **position** comes from `cursorPosition()` polled once per animation frame in *both*
+  variants, not from the events. It is the same source the hit test compares against, and it
+  removes one thing the spike's answer could change.
+- a third callback, **`onLost`**: if no pointer event arrives for 10 s, or the cursor cannot be
+  read, the drag is **cancelled and the tab goes back**. That is exactly the failure the spike
+  is about, and a gesture that hangs forever would be worse than one that gives up — landing a
+  tab where nobody released it would be worse still. When the measurement is made, either it
+  confirms the DOM source and the timeout stays as a safety net, or it forces the Rust source
+  and the timeout becomes unreachable.
+
 - [ ] **Step 1: The DOM source (only if the spike said the events arrive)**
 
 `ui/src/lib/window/pointerSource.ts`:
