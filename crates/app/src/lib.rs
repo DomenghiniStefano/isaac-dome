@@ -7,7 +7,7 @@ mod settings_file;
 use std::sync::{Mutex, MutexGuard, OnceLock};
 
 use catalog::Catalog;
-use core_save::{Kind, OpenError, Save};
+use core_save::{Kind, Save};
 use discovery::{discover, Options};
 use ipc::{ActiveProfile, GraphDeps, MarksMatrix, ProfileId, SaveSummary, Settings, SetupState};
 use store::{GoalsRead, Store, StoreError};
@@ -265,19 +265,6 @@ fn search(
     ))
 }
 
-/// Describes an `OpenError` without letting its `Debug` cross the IPC boundary: that
-/// `Debug` is defined by `core-save`, not by us, and there's no guarantee its variants
-/// will stay free of raw data in the future. The text here never contains a path:
-/// `Io` wraps a system `std::io::Error` (permissions, missing file), not the path
-/// that caused it.
-fn describe_open_error(e: &OpenError) -> String {
-    match e {
-        OpenError::TooShort => "file too short to hold a save".to_string(),
-        OpenError::BadMagic { .. } => "file signature not recognized".to_string(),
-        OpenError::Io(io) => format!("error reading the file: {io}"),
-    }
-}
-
 /// Opens the active profile's save. `NoActiveProfile` when there isn't one:
 /// for the UI that means "go to selection", not an error to display.
 fn active_save(app: &AppHandle) -> Result<(ProfileId, Save), IpcError> {
@@ -299,42 +286,41 @@ fn active_save(app: &AppHandle) -> Result<(ProfileId, Save), IpcError> {
         .find(|s| ipc::profile_id(&s.path) == profile.id)
         .ok_or(IpcError::NoActiveProfile)?;
     let save = Save::open(&candidate.path).map_err(|e| IpcError::UnreadableSave {
-        reason: describe_open_error(&e),
+        reason: (&e).into(),
     })?;
     Ok((profile.id, save))
 }
 
-/// The app's database, opened once on first use. If it doesn't open (permissions,
-/// corrupt file, newer schema), what's left is the reason, already in our own wording:
-/// the commands return it instead of retrying on every call. It's a `String` and not an
-/// `IpcError` because the only variant that would make sense here is `StoreUnavailable`:
-/// the type pins that down, and `plan` puts it straight into the plan without a `match`
-/// that would have to discard impossible variants.
+/// The app's database, opened once on first use. If it doesn't open (permissions, corrupt
+/// file, newer schema), what's left is the reason as a variant: the commands return it
+/// instead of retrying on every call. It's a `StoreReason` and not an `IpcError` because
+/// the only variant that would make sense here is `StoreUnavailable` — the type pins that
+/// down, and `plan` puts it straight into the plan without a `match` that would have to
+/// discard impossible variants.
 #[derive(Default)]
-struct StoreState(OnceLock<Result<Mutex<Store>, String>>);
+struct StoreState(OnceLock<Result<Mutex<Store>, ipc::StoreReason>>);
 
 impl StoreState {
-    fn get_or_open(&self, app: &AppHandle) -> Result<&Mutex<Store>, String> {
+    fn get_or_open(&self, app: &AppHandle) -> Result<&Mutex<Store>, ipc::StoreReason> {
         self.0
             .get_or_init(|| {
                 let dir = app
                     .path()
                     .app_data_dir()
-                    .map_err(|_| "app data folder unknown".to_string())?;
-                std::fs::create_dir_all(&dir)
-                    .map_err(|_| "app data folder cannot be created".to_string())?;
+                    .map_err(|_| ipc::StoreReason::DataDirUnknown)?;
+                std::fs::create_dir_all(&dir).map_err(|_| ipc::StoreReason::DataDirNotCreatable)?;
                 Store::open(&dir.join("isaacdome.db"))
                     .map(Mutex::new)
-                    .map_err(store_reason)
+                    .map_err(|e| (&e).into())
             })
             .as_ref()
-            .map_err(Clone::clone)
+            .map_err(|r| *r)
     }
 
     /// The store, open and locked, or the reason there isn't one. Fails only if it
     /// couldn't be opened: a poisoned mutex is recovered from, because `Store` has no
     /// invariants that a panic partway through could break.
-    fn lock(&self, app: &AppHandle) -> Result<MutexGuard<'_, Store>, String> {
+    fn lock(&self, app: &AppHandle) -> Result<MutexGuard<'_, Store>, ipc::StoreReason> {
         Ok(self
             .get_or_open(app)?
             .lock()
@@ -342,22 +328,11 @@ impl StoreState {
     }
 }
 
-/// The reason behind a `store` error, in our own wording: `Unreadable` carries SQLite's
-/// message, which can contain the file path, so it never crosses the IPC boundary.
-fn store_reason(e: StoreError) -> String {
-    match e {
-        StoreError::Unreadable { .. } => "database unreadable".to_string(),
-        StoreError::NewerSchema { found, supported } => {
-            format!("database from a newer version ({found} > {supported})")
-        }
-    }
-}
-
 fn store_error(e: StoreError) -> IpcError {
-    store_unavailable(store_reason(e))
+    store_unavailable((&e).into())
 }
 
-fn store_unavailable(reason: String) -> IpcError {
+fn store_unavailable(reason: ipc::StoreReason) -> IpcError {
     IpcError::StoreUnavailable { reason }
 }
 
@@ -444,10 +419,10 @@ fn collection(
 /// worth verifying.
 fn plan_parts(
     read: Result<GoalsRead, StoreError>,
-) -> (Vec<ipc::Goal>, Vec<ipc::GoalId>, Option<String>) {
+) -> (Vec<ipc::Goal>, Vec<ipc::GoalId>, Option<ipc::StoreReason>) {
     match read {
         Ok(r) => (r.goals, r.unreadable, None),
-        Err(e) => (Vec::new(), Vec::new(), Some(store_reason(e))),
+        Err(e) => (Vec::new(), Vec::new(), Some((&e).into())),
     }
 }
 
@@ -502,7 +477,7 @@ fn queue_view_now(
             };
             match read {
                 Ok(inner) => (inner, pending, None),
-                Err(e) => (Ok(plan::Queue::default()), pending, Some(store_reason(e))),
+                Err(e) => (Ok(plan::Queue::default()), pending, Some((&e).into())),
             }
         }
         Err(reason) => (Ok(plan::Queue::default()), 0, Some(reason)),
@@ -543,21 +518,11 @@ fn queue_mutate(
     // editing would destroy a plan written by a version that knew more than this one.
     let mut q = match guard.queue() {
         Ok(Ok(q)) => q,
-        Ok(Err(_)) => {
-            return Err(IpcError::StoreUnavailable {
-                reason: "coda del piano illeggibile".to_string(),
-            })
-        }
-        Err(e) => {
-            return Err(IpcError::StoreUnavailable {
-                reason: store_reason(e),
-            })
-        }
+        Ok(Err(_)) => return Err(store_unavailable(ipc::StoreReason::QueueUnparseable)),
+        Err(e) => return Err(store_error(e)),
     };
     edit(&mut q, g, pieces.flags.as_deref());
-    guard.set_queue(&q).map_err(|e| IpcError::StoreUnavailable {
-        reason: store_reason(e),
-    })
+    guard.set_queue(&q).map_err(store_error)
 }
 
 /// The ids a move has to reason about: what is already queued, plus what is about to be.
@@ -649,20 +614,14 @@ fn queue_import_goals(
     let Some(c) = pieces.catalog else {
         return Err(IpcError::CatalogUnavailable);
     };
+    // Both arms used to answer with the same sentence, which threw away which of the two
+    // had happened. The reason is a variant now, so each says what it actually knows.
     let targets: Vec<ipc::TargetKey> = match store.lock(&app) {
         Ok(guard) => match guard.goals() {
             Ok(read) => read.goals.into_iter().map(|g| g.target).collect(),
-            Err(_) => {
-                return Err(IpcError::StoreUnavailable {
-                    reason: "database illeggibile".to_string(),
-                })
-            }
+            Err(e) => return Err(store_error(e)),
         },
-        Err(_) => {
-            return Err(IpcError::StoreUnavailable {
-                reason: "database illeggibile".to_string(),
-            })
-        }
+        Err(reason) => return Err(store_unavailable(reason)),
     };
     queue_mutate(&app, &store, &pieces, |q, g, flags| {
         for target in &targets {
@@ -899,14 +858,14 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
 
-    /// A recognizable input: if the outgoing `reason` contains it, the boundary leaks. The
-    /// tests assert on the whole path **and** on the word inside it, because a `reason` that
-    /// re-rendered or escaped the path would slip past the first check on its own.
+    use super::*;
+    /// A recognizable input: if any of it came through, the boundary leaked. Since N2 the
+    /// reason is a **variant**, so there is no string for it to hide in — these tests assert
+    /// on the variant rather than hunting for a word, which is what makes them structural.
     const SECRET_PATH: &str = r"C:\secret\isaacdome.db";
 
-    fn reason_of(e: IpcError) -> String {
+    fn reason_of(e: IpcError) -> ipc::StoreReason {
         match e {
             IpcError::StoreUnavailable { reason } => reason,
             other => panic!("expected StoreUnavailable, got {other:?}"),
@@ -914,23 +873,27 @@ mod tests {
     }
 
     #[test]
-    fn unreadable_does_not_leak_the_sqlite_message() {
-        let reason = reason_of(store_error(StoreError::Unreadable {
-            reason: SECRET_PATH.to_string(),
-        }));
-        assert!(!reason.contains(SECRET_PATH), "{reason}");
-        assert!(!reason.contains("secret"), "{reason}");
-        assert!(!reason.is_empty());
+    fn an_unreadable_database_is_a_variant_and_not_sqlites_message() {
+        assert_eq!(
+            reason_of(store_error(StoreError::Unreadable {
+                reason: SECRET_PATH.to_string(),
+            })),
+            ipc::StoreReason::Unreadable
+        );
     }
 
     #[test]
-    fn newer_schema_names_both_versions_and_nothing_else() {
-        let reason = reason_of(store_error(StoreError::NewerSchema {
-            found: 7,
-            supported: 1,
-        }));
-        assert!(reason.contains('7') && reason.contains('1'), "{reason}");
-        assert!(!reason.contains('\\'), "{reason}");
+    fn a_newer_schema_carries_both_versions_as_numbers() {
+        assert_eq!(
+            reason_of(store_error(StoreError::NewerSchema {
+                found: 7,
+                supported: 1,
+            })),
+            ipc::StoreReason::NewerSchema {
+                found: 7,
+                supported: 1,
+            }
+        );
     }
 
     fn goal(id: &str) -> ipc::Goal {
@@ -964,18 +927,22 @@ mod tests {
         }));
         assert!(goals.is_empty());
         assert!(unreadable.is_empty());
-        let reason = unavailable.expect("the reason reaches the view");
-        assert!(reason.contains('7') && reason.contains('1'), "{reason}");
+        assert_eq!(
+            unavailable,
+            Some(ipc::StoreReason::NewerSchema {
+                found: 7,
+                supported: 1,
+            })
+        );
     }
 
-    /// And SQLite's message doesn't get through: `plan_parts` uses the same
-    /// `store_reason` as the write commands.
+    /// And SQLite's message doesn't get through: `plan_parts` maps the same way the write
+    /// commands do, so the Plan can never end up with a reason the rest of the app can't.
     #[test]
-    fn a_failed_query_does_not_leak_the_sqlite_message() {
+    fn a_failed_query_reports_the_variant_not_sqlites_message() {
         let (_, _, unavailable) = plan_parts(Err(StoreError::Unreadable {
             reason: SECRET_PATH.to_string(),
         }));
-        let reason = unavailable.expect("the reason reaches the view");
-        assert!(!reason.contains("secret"), "{reason}");
+        assert_eq!(unavailable, Some(ipc::StoreReason::Unreadable));
     }
 }
