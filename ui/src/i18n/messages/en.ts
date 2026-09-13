@@ -7,6 +7,8 @@ export const en: MessageSchema = {
   shell: {
     newTab: 'New tab',
     closeTab: 'Close tab',
+    back: 'Back',
+    forward: 'Forward',
     minimize: 'Minimize',
     maximize: 'Maximize',
     closeWindow: 'Close window',

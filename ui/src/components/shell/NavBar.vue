@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { CogIcon, InfoIcon, SearchIcon } from '@lucide/vue'
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  CogIcon,
+  InfoIcon,
+  SearchIcon,
+} from '@lucide/vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Kbd, KbdGroup } from '@/components/ui/kbd'
 import { useMessages } from '@/i18n'
@@ -16,6 +22,8 @@ const props = defineProps<{
   section: NavSection | null
   settingsActive: boolean
   focused: boolean
+  canBack: boolean
+  canForward: boolean
 }>()
 // The click's event travels with the section: Ctrl opens the section's first page in a new
 // tab, as a sidebar entry does.
@@ -24,6 +32,8 @@ const emit = defineEmits<{
   search: []
   settings: [event: MouseEvent]
   about: []
+  back: []
+  forward: []
 }>()
 const { t } = useMessages()
 
@@ -47,6 +57,29 @@ const current = (s: NavSection) =>
         class="truncate text-control text-foreground group-data-[focused=false]:text-faint-foreground"
         >{{ AppName }}</span
       >
+    </div>
+    <!-- Back and forward walk the active tab's own history, never the window's: each tab
+         remembers where it has been, and the two arrows are the same gesture as the side
+         buttons of the mouse and Alt with an arrow. -->
+    <div class="flex items-center gap-0.5">
+      <Button
+        :variant="ButtonVariant.Chrome"
+        :size="ButtonSize.Icon"
+        :aria-label="t('shell.back')"
+        :disabled="!canBack"
+        @click="emit('back')"
+      >
+        <ArrowLeftIcon class="size-3.5" />
+      </Button>
+      <Button
+        :variant="ButtonVariant.Chrome"
+        :size="ButtonSize.Icon"
+        :aria-label="t('shell.forward')"
+        :disabled="!canForward"
+        @click="emit('forward')"
+      >
+        <ArrowRightIcon class="size-3.5" />
+      </Button>
     </div>
     <div class="flex h-full items-stretch gap-0.5">
       <Button
