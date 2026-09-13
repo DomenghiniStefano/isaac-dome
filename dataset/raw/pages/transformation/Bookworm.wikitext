@@ -1,0 +1,34 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 10
+ | dlc         = a+
+ | description = Roughly 25% of the time, Isaac shoots an extra tear, like {{i|20/20}}.
+ | Anarchist Cookbook | The Bible | The Book of Belial | Book of Revelations | Book of Secrets | Book of Shadows | The Book of Sin | Book of the Dead | How to Jump | The Necronomicon | Monster Manual | Satanic Bible | Telepathy for Dummies
+}}
+
+'''Bookworm''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth †]]'', giving Isaac a monocle after picking up 3 book items.
+
+== Effects ==
+* Isaac fires tears from both eyes simultaneously 25% of the time.
+** This effect stacks with items such as {{i|20/20}}, {{i|The Inner Eye}} and {{i|Mutant Spider}}, multiplying the number of tears.
+** The chance of firing double tears is not affected by [[Luck]].
+
+== Requirements ==
+Pick up 3 [[item]]s from the following list ({{dlc|r}} with the [[Item Tags book|{{code|book}} tag]]).
+
+=== Activated Collectibles ===
+{{collectible table | Anarchist Cookbook, The Bible, The Book of Belial, Book of Revelations, Book of Secrets, Book of Shadows, The Book of Sin, Book of the Dead, How to Jump, The Necronomicon, Monster Manual, Satanic Bible, Telepathy For Dummies, Lemegeton }}
+
+=== Passive Collectibles ===
+{{collectible table|Book of Virtues}}
+
+== Notes ==
+* As {{c|Jacob and Esau}} / {{c|Tainted Lazarus}}, it's not possible to cycle between three books to give both characters the transformation's effect. Each character needs to pick up three different books, meaning six books in total.
+* {{Dlc|r}} Unlike {{I|20/20}}, the damage of doubled tears is not reduced. Each of the doubled tear shots does full damage.
+
+== Trivia ==
+* A bookworm is a person who's devoted to reading, especially books.
+* {{i|Book of Virtues}} is the only passive item to contribute to the transformation.
+* Bookworm can be very easily attained by going into a {{r|Library}}.
+
+{{nav|bookworm|fr=Rat de Bibliothèque}}

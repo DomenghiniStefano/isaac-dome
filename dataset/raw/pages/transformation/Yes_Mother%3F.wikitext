@@ -1,0 +1,45 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 6
+ | dlc         = a
+ | description = Isaac gains a stationary knife that trails directly behind him. It synergizes like {{i|Mom's Knife}} would.
+ | appearance  = his mother
+ | Mom's Bottle of Pills | Mom's Bra | Mom's Pad | Mom's Shovel | Mom's Coin Purse | Mom's Contacts | Mom's Eye | Mom's Eyeshadow | Mom's Heels | Mom's Key | Mom's Knife | Mom's Lipstick | Mom's Pearls | Mom's Perfume | Mom's Purse | Mom's Razor | Mom's Underwear | Mom's Wig
+}}
+
+'''Yes Mother?''' is a [[transformation]] added in ''[[The Binding of Isaac: Afterbirth]]'', dressing Isaac with his Mom's dress after picking up 3 Mom-related items.
+
+== Effects ==
+* Gives Isaac a stationary {{i|Mom's Knife}} that trails behind him as he moves, dealing 2x Isaac's tear damage on contact.
+** The knife synergizes like Mom's Knife would.
+
+== Requirements ==
+Pick up 3 [[item]]s from the following list ({{dlc|r}} with the [[Item Tags mom|{{code|mom}} tag]]).
+
+=== Activated Collectibles ===
+{{Collectible table/header}}
+{{collectible rows | Mom's Bottle of Pills, Mom's Bra, Mom's Pad, Mom's Shovel }}
+{{collectible rows | dlc = r | Mom's Box, Mom's Bracelet }}
+|}
+
+=== Passive Collectibles ===
+{{collectible table | Mom's Coin Purse, Mom's Contacts, Mom's Eye, Mom's Eyeshadow, Mom's Heels, Mom's Key, Mom's Knife, Mom's Lipstick, Mom's Pearls, Mom's Perfume, Mom's Purse, Mom's Razor, Mom's Ring, Mom's Underwear, Mom's Wig }}
+
+== Notes ==
+* This is a reference to the horror film ''[[wikipedia:Psycho (1960 film)|Psycho]]''.
+* {{i|Mom's Box|nr}} does not count towards this transformation even though it has the name "Mom" in it.
+* The Yes Mother? transformation was originally going to have the effect in which mom's foot would be called down when Isaac reaches one heart.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Mom's Contact }}
+
+== Gallery ==
+<gallery>
+File:Mom Transformation Concept.jpg|Concept art for the Mom transformation.
+File:Transformations Afterbirth.jpg|Concept art of the Yes Mother transformation (labeled "Mom") and other transformations for the Afterbirth DLC by Edmund McMillen.
+</gallery>
+
+== Trivia ==
+* The Yes Mother? transformation resembles the original Flash costume for {{i|Mom's Knife}}.
+
+{{nav|yes mother|fr=Oui Maman ?}}
