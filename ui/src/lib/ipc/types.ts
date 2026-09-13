@@ -260,13 +260,30 @@ export type UnlockTarget =
       name: string
       // The same kind of link as `AchievementRef.known.iconUrl` above: `isaac://item/passive/92`.
       iconUrl: string | null
+      // Where to read about it. `null` means the dataset has no page: the name shows and
+      // does not link, never a link that leads nowhere. The same field and the same rule as
+      // `RequirementView.page` — what a node unlocks and what blocks it are two halves of
+      // one row, and they answer alike (B35).
+      page: Target | null
     }
-  | { kind: 'character'; id: number; name: string; tainted: boolean }
-  | { kind: 'boss'; id: number; name: string }
+  | {
+      kind: 'character'
+      id: number
+      name: string
+      tainted: boolean
+      page: Target | null
+    }
+  | { kind: 'boss'; id: number; name: string; page: Target | null }
   // The challenge's reward: the ids of the achievements that completing it grants.
   // Each one's node (done or not, what it unlocks) already lives in UnlockView.nodes,
   // indexed by id.
-  | { kind: 'challenge'; id: number; name: string; rewards: number[] }
+  | {
+      kind: 'challenge'
+      id: number
+      name: string
+      rewards: number[]
+      page: Target | null
+    }
 
 // Value, not discriminator: the origin DLC as `OriginView` serializes it in Rust.
 // It's not the wiki's `Dlc`, which also has `repentancePlus`: here the variants are

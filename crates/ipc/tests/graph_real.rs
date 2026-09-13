@@ -179,6 +179,7 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
             item_kind: ItemKindView::Passive,
             id: 1,
         },
+        None,
         &mut icon,
     )
     .expect("item 1 is The Sad Onion");
@@ -188,7 +189,11 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
             id,
             name,
             icon_url,
+            page,
         } => {
+            // No dataset was passed here: this test is about the name and the icon. What a
+            // page carries when a dataset *is* there is the next test's subject.
+            assert_eq!(page, &None);
             assert_eq!((*item_kind, *id), (ItemKindView::Passive, 1));
             assert_eq!(name, "The Sad Onion");
             assert_eq!(
@@ -216,25 +221,27 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
         other => panic!("expected an item, got {other:?}"),
     }
     let character =
-        resolve_target(&c, &TargetKey::Character { id: 0 }, &mut icon).expect("character 0");
+        resolve_target(&c, &TargetKey::Character { id: 0 }, None, &mut icon).expect("character 0");
     assert_eq!(
         character,
         UnlockTarget::Character {
             id: 0,
             name: "Isaac".into(),
-            tainted: false
+            tainted: false,
+            page: None
         }
     );
-    let boss = resolve_target(&c, &TargetKey::Boss { id: 1 }, &mut icon).expect("boss 1");
+    let boss = resolve_target(&c, &TargetKey::Boss { id: 1 }, None, &mut icon).expect("boss 1");
     assert_eq!(
         boss,
         UnlockTarget::Boss {
             id: 1,
-            name: "Monstro".into()
+            name: "Monstro".into(),
+            page: None
         }
     );
     let challenge =
-        resolve_target(&c, &TargetKey::Challenge { id: 1 }, &mut icon).expect("challenge 1");
+        resolve_target(&c, &TargetKey::Challenge { id: 1 }, None, &mut icon).expect("challenge 1");
     assert_eq!(
         challenge,
         UnlockTarget::Challenge {
@@ -242,13 +249,14 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
             name: "Pitch Black".into(),
             // achievements.xml: `<!-- Beat Challenge #1 -->` right above achievement 89 (Rune of Hagalaz).
             rewards: vec![89],
+            page: None,
         }
     );
 
     // `key()` and `resolve_target` are each other's inverse, on real data.
     for t in [item, character, boss, challenge] {
         assert_eq!(
-            resolve_target(&c, &t.key(), &mut icon).as_ref(),
+            resolve_target(&c, &t.key(), None, &mut icon).as_ref(),
             Some(&t),
             "resolving a target's key gives back the same target"
         );
@@ -270,7 +278,7 @@ fn an_absurd_key_resolves_to_nothing() {
         TargetKey::Boss { id: 999_999 },
         TargetKey::Challenge { id: 999_999 },
     ] {
-        assert_eq!(resolve_target(&c, &key, &mut icon), None, "{key:?}");
+        assert_eq!(resolve_target(&c, &key, None, &mut icon), None, "{key:?}");
     }
 }
 
@@ -293,9 +301,9 @@ fn the_tainted_form_of_a_character_is_a_different_target_under_the_same_name() {
         test_support::skip("this catalog has no character unlocked by 82 and 484");
         return;
     };
-    let base = resolve_target(&c, &TargetKey::Character { id: base }, &mut icon)
+    let base = resolve_target(&c, &TargetKey::Character { id: base }, None, &mut icon)
         .expect("the base character");
-    let tainted = resolve_target(&c, &TargetKey::Character { id: tainted }, &mut icon)
+    let tainted = resolve_target(&c, &TargetKey::Character { id: tainted }, None, &mut icon)
         .expect("the tainted character");
     let (
         UnlockTarget::Character {
@@ -384,5 +392,51 @@ fn a_blocked_node_links_to_the_pages_the_dataset_has() {
         without.nodes.iter().map(|n| n.missing.len()).sum::<usize>(),
         v.nodes.iter().map(|n| n.missing.len()).sum::<usize>(),
         "a missing page never removes a requirement"
+    );
+}
+
+/// The other half of the same rule (`docs/BACKLOG.md` B35): what a node **unlocks** links to
+/// the page the dataset really has, and to nothing else. Deliberately the same shape as the
+/// test above — one mapping, two readers, and a single place where it could drift.
+#[test]
+fn what_a_node_unlocks_links_to_the_pages_the_dataset_has() {
+    let Some((c, _, s)) = real() else { return };
+    let flags = s.flags(Kind::Achievements).expect("section 1");
+    let ds = wiki::Dataset::embedded().expect("the dataset is embedded at build time");
+
+    let page_of = |t: &UnlockTarget| match t {
+        UnlockTarget::Item { page, .. }
+        | UnlockTarget::Character { page, .. }
+        | UnlockTarget::Boss { page, .. }
+        | UnlockTarget::Challenge { page, .. } => page.clone(),
+    };
+
+    let v = unlock_view(Some(&c), Some(ds), Some(&flags), None, None, None, |_| None);
+    let targets = || v.nodes.iter().flat_map(|n| n.unlocks.iter());
+    let linked = targets()
+        .filter_map(&page_of)
+        .inspect(|t| assert!(ds.entry(t).is_some(), "a page that goes out has to exist"))
+        .count();
+    assert!(
+        targets().count() > 0,
+        "the real catalog has edges, or this test asserts nothing"
+    );
+    assert!(
+        linked > 0,
+        "the dataset documents most of what the game unlocks: zero links means the mapping \
+         stopped working, not that the wiki is empty"
+    );
+
+    // No dataset: the names still come out, and nothing links.
+    let without = unlock_view(Some(&c), None, Some(&flags), None, None, None, |_| None);
+    assert!(without
+        .nodes
+        .iter()
+        .flat_map(|n| n.unlocks.iter())
+        .all(|t| page_of(t).is_none()));
+    assert_eq!(
+        without.nodes.iter().map(|n| n.unlocks.len()).sum::<usize>(),
+        v.nodes.iter().map(|n| n.unlocks.len()).sum::<usize>(),
+        "a missing page never removes a target"
     );
 }
