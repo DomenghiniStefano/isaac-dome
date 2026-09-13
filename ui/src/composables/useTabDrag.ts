@@ -13,6 +13,7 @@ import {
   hidePreview,
   movePreview,
   showPreview,
+  warmPreview,
 } from '@/lib/window/preview'
 import { watchPointer } from '@/lib/window/pointerSource'
 import type { PointerWatch } from '@/lib/window/pointerSource'
@@ -58,6 +59,9 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
   let pointer: PointerWatch | null = null
   let hovered: string | null = null
   let grabbed: number | null = null
+  // Whether the card for this drag has been built yet. Reset when the drag ends, so the next
+  // one builds its own — the label on the card is the tab being dragged.
+  let warmed = false
 
   const stripBox = (): Box | null => {
     const el = options.strip.value
@@ -87,6 +91,7 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
     void hidePreview()
     tellHovered(null, { x: 0, y: 0 })
     grabbed = null
+    warmed = false
     drag.cancel()
   }
 
@@ -151,6 +156,12 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
 
   const resolve = (p: Point, boxes: Box[], from: number): TabDrop | null => {
     grabbed = from
+    // The card is built while the drag is still a reorder, so that leaving the strip costs
+    // nothing but showing it. Once per drag, and idempotent besides.
+    if (!warmed) {
+      warmed = true
+      void warmPreview(options.labelOf(from)).catch(() => undefined)
+    }
     const strip = stripBox()
     if (!detached.value && strip && pastTearBand(p, strip)) {
       void detach(p)
