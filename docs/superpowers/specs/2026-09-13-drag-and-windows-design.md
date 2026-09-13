@@ -216,20 +216,32 @@ tabs, and the preview hides. You see where the tab will land before you let go. 
 a grace period is what you need when hovering *merges by itself* — here the release merges, and
 a release is already an intention.
 
-**Closing rule one: the last tab does not tear off into a *new* window.** Dragging the only tab
-of a window onto the bare desktop is a no-op — that window already *is* that tab alone, and the
-gesture would close one window to open the same one. It holds for `main` and for every secondary
-window, and it is "the bar is never empty" one level up.
+**A tab in flight belongs to no window (owner, 2026-09-13).** The owner overturned both closing
+rules as first written, and the new shape is simpler than either:
 
-**Closing rule two: a window whose last tab is docked elsewhere closes**, except `main`, which
-stays with a fresh default tab, as `closeTab` already does. The app exits when every window is
-closed, which is Tauri's own behaviour and needs nothing from us.
+- **Any tab can be torn off, the last one included.** "That window already is that tab" was an
+  argument, not a requirement, and the owner does not want the gesture refused.
+- **The tab leaves the strip the moment it is torn off**, not when it is dropped. What you are
+  dragging is no longer in the bar — which is what a browser does, and what makes the rest of
+  this section fall out rather than be legislated.
 
-**The two rules are about two different gestures, and the distinction is load-bearing** — it was
-found in execution, where rule one as first written made rule two unreachable. *Opening* a window
-for a tab that is already alone in one is a no-op; *joining* it to a window that exists is not,
-because something changes: two windows become one. So `tearOffTo` refuses the last tab and
-`giveAway` accepts it, and only the second can leave a window empty.
+So a tab is in exactly one place at a time: in a strip, or in flight. Three endings dispose of
+it, and only these three:
+
+| ending | what happens |
+|---|---|
+| dropped on a strip (**including its own**) | it lands where that strip's marker says |
+| dropped on the bare desktop | a window of its own, there, sized like the one it left |
+| cancelled — `Escape`, a lost pointer, a failure mid-gesture | it goes back to the exact index it sat at |
+
+**A window left empty closes**, except the first one, which keeps a fresh landing tab exactly as
+closing its last tab already does. The app exits when every window is closed, which is Tauri's
+own behaviour and needs nothing from us.
+
+What this removes: `canDetach` as a gate on the gesture, the special case for coming back over
+your own strip (it is now a landing like any other), and the duplication that the two-sided
+hand-over invited — the origin no longer has to *remember* to remove a tab the target has
+already taken, because it gave it up before anyone else could hold it.
 
 ## Decision 6 — events from Rust carry no payload (owner)
 
