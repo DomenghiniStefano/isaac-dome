@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PlusIcon } from '@lucide/vue'
-import { computed, nextTick, ref } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { DragGhost } from '@/components/ui/drag'
 import { useDragList } from '@/composables/useDragList'
@@ -8,16 +8,27 @@ import { useMessages } from '@/i18n'
 import { EventKey } from '@/lib/constants/eventKeys'
 import { Axis, boxAt } from '@/lib/drag/dragList'
 import type { Box, Point } from '@/lib/drag/dragList'
+import { toClient } from '@/lib/window/tearOff'
 import TabItem from './TabItem.vue'
-import type { DropSide, TabView } from './tabs'
-import { TabDrag, TabRole, dropSide, moveIndex } from './tabs'
+import type { IncomingHover, TabView } from './tabs'
+import { DropSide, TabDrag, TabRole, dropSide, moveIndex } from './tabs'
 
-const props = defineProps<{ tabs: TabView[]; activeId: string | null }>()
+const props = withDefaults(
+  defineProps<{
+    tabs: TabView[]
+    activeId: string | null
+    // Optional because most of the app has no second window in sight — the Kit draws a strip
+    // with no drag in flight, and nothing should have to say "nothing is arriving".
+    incoming?: IncomingHover | null
+  }>(),
+  { incoming: null },
+)
 const emit = defineEmits<{
   select: [id: string]
   close: [id: string]
   move: [from: number, to: number]
   add: []
+  aim: [index: number | null]
 }>()
 const { t } = useMessages()
 
@@ -61,6 +72,28 @@ const grabbed = computed(() =>
   drag.from.value === null ? null : props.tabs[drag.from.value],
 )
 
+// A tab arriving from another window. Only this window can turn the desktop point into a gap
+// in its own strip — it owns the rectangles — and the gap the marker is drawn in **is** where
+// the drop lands: one computation, so what you saw is what you get. The index is handed back
+// so the window can dock there without measuring anything a second time.
+const incomingGap = computed((): number | null => {
+  const hover = props.incoming
+  if (!hover) return null
+  const p = toClient(hover.at, hover.window)
+  const boxes = tabElements().map((el) => {
+    const r = el.getBoundingClientRect()
+    return { left: r.left, top: r.top, width: r.width, height: r.height }
+  })
+  const index = boxAt(boxes, p, Axis.X)
+  const box = index === null ? undefined : boxes[index]
+  if (index === null || !box) return props.tabs.length
+  return dropSide(p.x, box.left, box.width) === DropSide.Before
+    ? index
+    : index + 1
+})
+
+watch(incomingGap, (gap) => emit('aim', gap))
+
 const neighbour = (key: string): number | null => {
   const index = props.tabs.findIndex((tab) => tab.id === props.activeId)
   if (index < 0) return null
@@ -91,16 +124,26 @@ const onKeydown = (e: KeyboardEvent) => {
       @pointercancel="drag.end"
       @keydown="onKeydown"
     >
-      <TabItem
-        v-for="(tab, index) in tabs"
-        :key="tab.id"
-        :tab="tab"
-        :active="tab.id === activeId"
-        :dragging="drag.moving.value && drag.from.value === index"
-        :drop="drag.drop.value?.index === index ? drag.drop.value.side : null"
-        @pointerdown="drag.start(index, $event)"
-        @select="emit('select', tab.id)"
-        @close="emit('close', tab.id)"
+      <template v-for="(tab, index) in tabs" :key="tab.id">
+        <!-- Where a tab from another window would land: the same 2px primary line the queue
+             draws, in the gap the marker is aimed at. -->
+        <span
+          v-if="incomingGap === index"
+          class="h-tab w-0.5 shrink-0 self-end bg-primary"
+        />
+        <TabItem
+          :tab="tab"
+          :active="tab.id === activeId"
+          :dragging="drag.moving.value && drag.from.value === index"
+          :drop="drag.drop.value?.index === index ? drag.drop.value.side : null"
+          @pointerdown="drag.start(index, $event)"
+          @select="emit('select', tab.id)"
+          @close="emit('close', tab.id)"
+        />
+      </template>
+      <span
+        v-if="incomingGap === tabs.length"
+        class="h-tab w-0.5 shrink-0 self-end bg-primary"
       />
     </div>
     <DragGhost v-if="drag.ghost.value && grabbed" :box="drag.ghost.value">
