@@ -288,6 +288,25 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // recursion reaches: 157 of these sentences used to arrive empty. The item is named
         // too, because the template's meaning is "with Book of Virtues, this happens" and a
         // section shown on its own would otherwise lose the half that says with what.
+        // A boss's champion variant, always under `== Champion Versions ==`. The number is
+        // the variant's index; which colour each index is lives in the wiki's own template
+        // and nowhere we can read, and `catalog` has no champion table — so the index is
+        // kept verbatim and nothing is invented around it. `dlc=` makes the variant belong
+        // to one edition, which is what `Inline::Edition` already says.
+        "bc" => {
+            let edition = t.named.get("dlc").map(|c| dlc_codes(c));
+            if let Some(only) = edition.clone() {
+                out.open(only);
+            }
+            let index = arg.trim();
+            out.push(Inline::Concept {
+                page: "Champion".to_string(),
+                label: format!("Champion {index}"),
+            });
+            if edition.is_some() {
+                out.close();
+            }
+        }
         // Two templates, one shape: the item is in the name and the text is in a `description`
         // parameter, spelled that way in all 197 uses. The label is written out per arm rather
         // than derived from the name, so a third "X synergy" template cannot silently inherit
@@ -638,6 +657,38 @@ mod tests {
             Inline::Concept { page, label }
                 if page == "Blood Donation Machine" && label == "the machine"
         )));
+    }
+
+    /// `{{bc|7}}` marks a boss's champion variant. All 59 uses sit under
+    /// `== Champion Versions ==`, and the number is the variant's index — the wiki renders it
+    /// as a coloured swatch, and **which colour each index is cannot be read from anything we
+    /// have**: it lives in the wiki's own template, and `catalog` has no champion table.
+    ///
+    /// So the number is kept as the wiki wrote it and the concept is named, which is the
+    /// whole of what is known. Giving index 7 a colour name would be the kind of guess this
+    /// repo keeps paying for.
+    #[test]
+    fn the_champion_template_names_the_variant_without_naming_its_colour() {
+        let (v, d) = p("{{bc|7}}: 15% larger and slower");
+        assert!(
+            v.iter().any(|i| matches!(
+                i,
+                Inline::Concept { page, label } if page == "Champion" && label == "Champion 7"
+            )),
+            "got {v:?}"
+        );
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+
+        // `{{bc|18|dlc=a+}}` says the variant is of one edition: that is `Inline::Edition`,
+        // the same node every other per-edition span uses.
+        let (v, _) = p("{{bc|18|dlc=a+}}");
+        assert!(
+            v.iter().any(|i| matches!(
+                i,
+                Inline::Edition { only, .. } if only == &vec![Dlc::AfterbirthPlus]
+            )),
+            "got {v:?}"
+        );
     }
 
     /// `{{Book of Virtues synergy|description=…}}` carries its text in a **named** parameter,
