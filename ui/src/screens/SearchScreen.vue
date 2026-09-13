@@ -24,7 +24,8 @@ import type { SearchRow } from '@/lib/search/rows'
 import { RouteName } from '@/router/routeTable'
 import { useTabsStore } from '@/stores/tabs'
 import ScreenHeader from './ScreenHeader.vue'
-import SearchDiagnostics from './search/SearchDiagnostics.vue'
+import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
+import { searchEntries } from '@/lib/diagnostics/search'
 import SearchResults from './search/SearchResults.vue'
 import SearchToolbar from './search/SearchToolbar.vue'
 
@@ -96,7 +97,7 @@ const open = (row: SearchRow, event: MouseEvent) => {
       t('search.intro')
     }}</ScreenHeader>
     <Input v-model="typed" :placeholder="t('search.placeholder')" />
-    <SearchDiagnostics v-if="hasQuery" :diagnostics="diagnostics" />
+    <DiagnosticsList v-if="hasQuery" :entries="searchEntries(diagnostics)" />
     <template v-if="hasQuery">
       <SearchToolbar
         :counts="counts"

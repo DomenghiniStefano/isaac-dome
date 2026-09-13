@@ -109,7 +109,7 @@ export const it = {
       noAchievementSection:
         'Non si sa quali oggetti siano ancora bloccati: quelli che dipendono da un achievement risultano non leggibili.',
       itemsBeyondSlots:
-        'oggetti del catalogo oltre la collezione del salvataggio, mostrati come non leggibili',
+        '{count} oggetti del catalogo oltre la collezione del salvataggio, mostrati come non leggibili',
     },
   },
   wiki: {
@@ -331,7 +331,7 @@ export const it = {
       noCatalogTitle: 'Serve il gioco installato',
       noCatalog:
         'Senza catalogo non si sa quale achievement sia ogni riga né cosa le manchi: la coda resta salvata e torna appena il gioco c’è.',
-      goalsPendingTitle: 'Obiettivi salvati da importare',
+      goalsPendingTitle: 'Obiettivi salvati da importare: {count}',
       goalsPending:
         'Obiettivi salvati prima che esistesse la coda: nessuno li sposta da solo.',
       import: 'Importa nella coda',
@@ -486,9 +486,9 @@ export const it = {
       noAchievementSection:
         'Zero righe non vuol dire zero achievement fatti: vuol dire che quella parte del salvataggio non è stata letta.',
       slotsBeyondCatalog:
-        'slot del salvataggio oltre il catalogo, mostrati come achievement sconosciuti',
+        '{count} slot del salvataggio oltre il catalogo, mostrati come achievement sconosciuti',
       catalogBeyondSlots:
-        'achievement del catalogo oltre il salvataggio, che non compaiono',
+        '{count} achievement del catalogo oltre il salvataggio, che non compaiono',
     },
   },
   gate: {

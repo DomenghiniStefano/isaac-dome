@@ -10,7 +10,9 @@ import { useGraphStore } from '@/stores/graph'
 import { LoadStatus } from '@/stores/profile'
 import { useQueueStore } from '@/stores/queue'
 import ScreenHeader from './ScreenHeader.vue'
-import PlanAlerts from './plan/PlanAlerts.vue'
+import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
+import { Button, ButtonVariant } from '@/components/ui/button'
+import { planEntries } from '@/lib/diagnostics/plan'
 import ProposalAside from './plan/ProposalAside.vue'
 import QueueCard from './plan/QueueCard.vue'
 import ProfileError from './profile/ProfileError.vue'
@@ -58,11 +60,16 @@ const nodes = computed(() => graph.unlock?.nodes ?? [])
         {{ t('plan.summary.wanted') }}: {{ summary.wanted }} ·
         {{ t('plan.summary.pulledIn') }}: {{ summary.pulledIn }}
       </p>
-      <PlanAlerts
-        :diagnostics="queue.view.diagnostics"
-        :busy="queue.busy"
-        @import-goals="queue.importGoals()"
-      />
+      <DiagnosticsList :entries="planEntries(queue.view.diagnostics)">
+        <template #action>
+          <Button
+            :variant="ButtonVariant.Outline"
+            :disabled="queue.busy"
+            @click="queue.importGoals()"
+            >{{ t('plan.alerts.import') }}</Button
+          >
+        </template>
+      </DiagnosticsList>
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
       <div v-if="readable" class="flex flex-col items-start gap-4 lg:flex-row">
         <QueueCard

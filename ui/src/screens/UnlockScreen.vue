@@ -28,7 +28,8 @@ import ScreenHeader from './ScreenHeader.vue'
 import ProfileError from './profile/ProfileError.vue'
 import FacetDrawer from './unlock/FacetDrawer.vue'
 import StateToggle from './unlock/StateToggle.vue'
-import UnlockDiagnostics from './unlock/UnlockDiagnostics.vue'
+import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
+import { unlockEntries } from '@/lib/diagnostics/unlock'
 import UnlockTable from './unlock/UnlockTable.vue'
 import UnlockToolbar from './unlock/UnlockToolbar.vue'
 
@@ -108,7 +109,7 @@ const reset = () => {
       @retry="graph.load()"
     />
     <template v-else-if="graph.unlock">
-      <UnlockDiagnostics :diagnostics="graph.unlock.diagnostics" />
+      <DiagnosticsList :entries="unlockEntries(graph.unlock.diagnostics)" />
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
       <StateToggle
         :counts="counts"
