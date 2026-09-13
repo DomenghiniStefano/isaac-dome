@@ -15,6 +15,16 @@ export const closeWindow = async (): Promise<void> => {
   if (isTauri()) await getCurrentWindow().close()
 }
 
+// This window's size in logical pixels — what `new WebviewWindow` takes. `outerSize` answers in
+// physical ones, and on a scaled screen handing those over would open a window twice as large as
+// the one it was born from. Outside Tauri, the size the config gives the first window.
+export const windowSize = async (): Promise<{ x: number; y: number }> => {
+  if (!isTauri()) return { x: 1280, y: 800 }
+  const w = getCurrentWindow()
+  const [size, factor] = await Promise.all([w.outerSize(), w.scaleFactor()])
+  return { x: size.width / factor, y: size.height / factor }
+}
+
 // Calls `onChange` whenever the window gains or loses focus; resolves to the unsubscribe.
 export const watchWindowFocus = async (
   onChange: (focused: boolean) => void,

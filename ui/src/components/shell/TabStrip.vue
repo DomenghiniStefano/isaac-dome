@@ -3,15 +3,15 @@ import { PlusIcon } from '@lucide/vue'
 import { computed, nextTick, ref, watch } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { DragGhost } from '@/components/ui/drag'
-import { useDragList } from '@/composables/useDragList'
+import { useTabDrag } from '@/composables/useTabDrag'
 import { useMessages } from '@/i18n'
 import { EventKey } from '@/lib/constants/eventKeys'
 import { Axis, boxAt } from '@/lib/drag/dragList'
-import type { Box, Point } from '@/lib/drag/dragList'
+import type { Point } from '@/lib/drag/dragList'
 import { toClient } from '@/lib/window/tearOff'
 import TabItem from './TabItem.vue'
 import type { IncomingHover, TabView } from './tabs'
-import { DropSide, TabDrag, TabRole, dropSide, moveIndex } from './tabs'
+import { DropSide, TabRole, dropSide } from './tabs'
 
 const props = withDefaults(
   defineProps<{
@@ -20,8 +20,10 @@ const props = withDefaults(
     // Optional because most of the app has no second window in sight — the Kit draws a strip
     // with no drag in flight, and nothing should have to say "nothing is arriving".
     incoming?: IncomingHover | null
+    // A window holding one tab is that tab: it has nothing to tear off.
+    canTear?: boolean
   }>(),
-  { incoming: null },
+  { incoming: null, canTear: false },
 )
 const emit = defineEmits<{
   select: [id: string]
@@ -29,13 +31,10 @@ const emit = defineEmits<{
   move: [from: number, to: number]
   add: []
   aim: [index: number | null]
+  giveTo: [index: number, label: string, at: Point]
+  openWith: [index: number, at: Point]
 }>()
 const { t } = useMessages()
-
-interface Drop {
-  index: number
-  side: DropSide
-}
 
 const tabSelector = `[role="${TabRole}"]`
 
@@ -44,26 +43,17 @@ const strip = ref<HTMLElement | null>(null)
 const tabElements = (): HTMLElement[] =>
   strip.value ? [...strip.value.querySelectorAll<HTMLElement>(tabSelector)] : []
 
-// Which side of which tab the drop lands on. A pointer over the dragged tab itself means
-// nothing to do; `dropSide` and `moveIndex` stay the strip's own semantics.
-const resolve = (p: Point, boxes: Box[], from: number): Drop | null => {
-  const index = boxAt(boxes, p, Axis.X)
-  const box = index === null ? undefined : boxes[index]
-  if (index === null || index === from || !box) return null
-  return { index, side: dropSide(p.x, box.left, box.width) }
-}
-
-const drag = useDragList<Drop>({
-  axis: Axis.X,
-  container: strip,
+// Inside the strip this is the reorder; past the tear band the same gesture becomes a window.
+// Which of the two is `useTabDrag`'s business — the strip only says what its tabs are and what
+// each ending means.
+const { drag, detached } = useTabDrag({
+  strip,
   items: tabElements,
-  threshold: TabDrag.Threshold,
-  resolve,
-  commit: (from, landing) => {
-    if (!landing) return
-    const to = moveIndex(from, landing.index, landing.side)
-    if (to !== from) emit('move', from, to)
-  },
+  labelOf: (index) => props.tabs[index]?.label ?? '',
+  canTear: () => props.canTear,
+  reorder: (from, to) => emit('move', from, to),
+  giveTo: (index, label, at) => emit('giveTo', index, label, at),
+  openWith: (index, at) => emit('openWith', index, at),
 })
 
 // The tab the ghost draws: the grabbed one, as it is — an inactive tab lifted as if it were
@@ -146,7 +136,12 @@ const onKeydown = (e: KeyboardEvent) => {
         class="h-tab w-0.5 shrink-0 self-end bg-primary"
       />
     </div>
-    <DragGhost v-if="drag.ghost.value && grabbed" :box="drag.ghost.value">
+    <!-- Outside the window the preview has taken over: two things following one cursor would
+         be two answers to "where is the tab". -->
+    <DragGhost
+      v-if="drag.ghost.value && grabbed && !detached"
+      :box="drag.ghost.value"
+    >
       <TabItem
         :tab="grabbed"
         :active="grabbed.id === activeId"
