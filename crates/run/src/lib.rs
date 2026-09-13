@@ -5,6 +5,10 @@
 //! touch the disk. [`Tail`] turns bytes into lines and recognizes a relaunch; the rules turn a
 //! line into an event; the fold makes the judgments the log does not make.
 
+mod event;
+mod rules;
 mod tail;
 
+pub use event::{Event, SeedKind};
+pub use rules::{Rules, RulesError};
 pub use tail::Tail;
