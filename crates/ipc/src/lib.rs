@@ -65,7 +65,7 @@ pub use settings::{snap_percent, Settings, DEFAULT_SCALE, SCALE_PERCENTS};
 pub use sprite_png::{crop_png, decode_rgba};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
-pub use tray::{tray_action, TrayAction};
+pub use tray::{tray_action, tray_locale, tray_text, TrayAction, TrayLocale, TrayText};
 pub use want::{want_view, WantDiagnostic, WantRoute, WantState, WantView, WantedView};
 pub use wiki::{
     rfc3339_to_unix, wiki_index, wiki_info, Block, Dlc, Entry, Infobox, Inline, ListItem,
