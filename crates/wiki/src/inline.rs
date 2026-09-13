@@ -350,6 +350,37 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
                 }
             }
         }
+        // Two more list templates, and the same reason as `achievement text`: the argument
+        // is a comma-separated list of names, and `resolve` answers with one target. They
+        // are how a transformation page states what counts toward it, which is the only
+        // complete statement of that set — the infobox's `items` misses Guppy's trinket.
+        k @ ("collectible table" | "trinket table") => {
+            let kind = if k == "collectible table" { "i" } else { "t" };
+            for (n, item) in arg.split(',').enumerate() {
+                let item = item.trim();
+                if item.is_empty() {
+                    continue;
+                }
+                if n > 0 {
+                    out.buf.push_str(", ");
+                }
+                match r.resolve(kind, item) {
+                    Resolution::Target(target) => out.push(Inline::Ref {
+                        target,
+                        label: item.to_string(),
+                    }),
+                    // Not dropped: a name we cannot resolve is still what the page says,
+                    // and the miss is counted where every other failed lookup is counted.
+                    Resolution::Concept
+                    | Resolution::Unresolved
+                    | Resolution::Ignore
+                    | Resolution::Unknown => {
+                        d.unresolved(kind);
+                        out.buf.push_str(item);
+                    }
+                }
+            }
+        }
         name if CONTENT_WRAPPERS.contains(&name) => recurse_into_arg(&arg, r, d, out, depth),
         name => match r.resolve(name, &arg) {
             Resolution::Target(target) => {
@@ -804,6 +835,36 @@ mod tests {
             }
         )));
         assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// A transformation page states what counts toward it as two tables, each one template
+    /// whose argument is a comma-separated list of names — the same shape as
+    /// `achievement text`, and the same reason it cannot go through `resolve`: that answers
+    /// with one target, and this needs one per name.
+    #[test]
+    fn the_two_tables_push_one_reference_per_name() {
+        let (v, d) = p("{{collectible table | Breakfast, Book of Virtues }} {{trinket table | Swallowed Penny }}");
+        let targets: Vec<&Target> = v
+            .iter()
+            .filter_map(|i| match i {
+                Inline::Ref { target, .. } => Some(target),
+                _ => None,
+            })
+            .collect();
+        assert_eq!(targets.len(), 3, "{v:?}");
+        assert!(matches!(targets[0], Target::Item { id: 25 }));
+        assert!(matches!(targets[1], Target::Item { id: 584 }));
+        assert!(matches!(targets[2], Target::Trinket { id: 1 }));
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// A name the resolver does not know stays on the page as text — the reader still sees
+    /// what the wiki said — and the miss is counted rather than swallowed.
+    #[test]
+    fn an_unknown_name_in_a_table_is_text_and_is_counted() {
+        let (v, d) = p("{{collectible table | Nope }}");
+        assert!(v.iter().all(|i| !matches!(i, Inline::Ref { .. })), "{v:?}");
+        assert_eq!(d.unresolved.get("i"), Some(&1));
     }
 
     /// `{{ip|Boss}}` names an item pool — "Boss" 81 times, then the rooms and the chests.
