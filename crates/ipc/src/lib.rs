@@ -19,6 +19,7 @@ mod settings;
 mod sprite_png;
 mod summary;
 mod target_sprite;
+mod want;
 mod wiki;
 mod wiki_target;
 
@@ -48,7 +49,8 @@ pub use profile::{
 };
 pub use progress::SaveProgress;
 pub use queue::{
-    achievement_unlocking, queue_view, GraphDeps, QueueDiagnostic, QueueInputs, QueueRow, QueueView,
+    achievement_unlocking, achievements_unlocking, queue_view, GraphDeps, QueueDiagnostic,
+    QueueInputs, QueueRow, QueueView,
 };
 pub use reasons::{IoReason, SaveReason, SettingsReason, StoreReason};
 pub use resources::{
@@ -62,6 +64,7 @@ pub use settings::{snap_percent, Settings, DEFAULT_SCALE, SCALE_PERCENTS};
 pub use sprite_png::{crop_png, decode_rgba};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
+pub use want::{want_view, WantDiagnostic, WantRoute, WantState, WantView, WantedView};
 pub use wiki::{
     rfc3339_to_unix, wiki_index, wiki_info, Block, Dlc, Entry, Infobox, Inline, ListItem,
     PatchView, Section, SectionKind, Style, Target, WikiCounts, WikiIndex, WikiInfo,

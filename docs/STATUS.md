@@ -1272,7 +1272,38 @@ save against the dated backup the game wrote before it, and read which cells mov
 
 ## Session log
 
-### 2026-09-13 (last) — the landing page gets a name, and an achievement gets a page
+### 2026-09-13 (last) — you name what you want, and the app says what to play
+
+`feature/goals-want`, cut from `develop` at `a83a7ef` in its own worktree, `pnpm check` green
+on the result: 55 frontend test files / 356 tests, 7 skips all pre-existing and named. Spec
+`docs/superpowers/specs/2026-09-13-goals-want-design.md`, report
+`docs/superpowers/plans/2026-09-13-goals-want-report.md`. **B37 closed.**
+
+- [x] **The graph reads from the other end.** `crates/ipc/src/want.rs` takes a `wiki::Target`,
+      resolves it to every achievement that grants it, and answers with the series still
+      missing — four states (`done`, `availableNow`, `chain { steps, unknown }`, `noProfile`),
+      none of them deduced from the length of a list, because an empty `missing_chain` means
+      four different things.
+- [x] **The order is the queue's, asked rather than reinvented.** The preview builds an empty
+      throwaway `plan::Queue` and enqueues the want with its chain, so the series shown and the
+      series "metti tutto nel Piano" writes are one computation, not two rules to keep aligned.
+- [x] **A target names every achievement that grants it.** `achievement_unlocking`'s `.find()`
+      became `achievements_unlocking -> Vec<u32>`: **14 of the 45 challenges** are named by
+      more than one achievement, so the singular version was hiding a second way in on a third
+      of them. The old function stays, rewritten over the new one, and the goals import is
+      unchanged.
+- [x] **A vacuity guard moved the test, and taught us something about the product.** The
+      reference profile's deepest chain is **one step**; measured over five samples the deepest
+      anywhere is **four**, on the *youngest* profile (the co-op partner's, 128 done). Chains
+      shorten as a profile advances, because an earned prerequisite leaves them. The ordering
+      property now runs where there is an order to check, and the Kit page is the only place
+      the multi-step shape can be looked at.
+- [x] **The want is a place.** `#/goals?want=item:105`, with `pageKey` — the codec wiki pages
+      already travel by — so back, forward and tab restore reach it without a line of new
+      plumbing, and `wantable()` makes the vocabulary a tested function rather than a filter
+      inline in a component.
+
+### 2026-09-13 — the landing page gets a name, and an achievement gets a page
 
 `feature/screens-goals-detail`, cut from `develop` in its own worktree, `pnpm check` green on
 the result: 53 frontend test files / 345 tests, 7 skips all named and none of them this
