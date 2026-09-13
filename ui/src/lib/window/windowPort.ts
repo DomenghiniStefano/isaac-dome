@@ -1,4 +1,5 @@
 import { isTauri } from '@tauri-apps/api/core'
+import { PhysicalPosition } from '@tauri-apps/api/dpi'
 import { emit, emitTo, listen } from '@tauri-apps/api/event'
 import { getCurrentWindow } from '@tauri-apps/api/window'
 import {
@@ -92,19 +93,27 @@ const tauriPort: WindowPort = {
     // The app's own page, with no state in its URL: what the window holds arrives through the
     // handshake. Its own title bar, like the first window's, and the app's colour under the
     // webview so it never opens on a white frame.
+    //
+    // It is born **hidden and placed afterwards**, for two reasons: `x`/`y` at creation are
+    // logical pixels while the point we hold is the desktop's physical ones — the same number
+    // until a screen is scaled, and then not — and a window that appears before it is placed
+    // jumps across the desktop in front of the user.
     const w = new WebviewWindow(label, {
       url: 'index.html',
-      x: at.x,
-      y: at.y,
       width: size.x,
       height: size.y,
       decorations: false,
       backgroundColor: windowBackground(),
+      visible: false,
     })
     await new Promise<void>((resolve, reject) => {
       void w.once('tauri://created', () => resolve())
       void w.once('tauri://error', (e) => reject(new Error(String(e.payload))))
     })
+    await w.setPosition(
+      new PhysicalPosition(Math.round(at.x), Math.round(at.y)),
+    )
+    await w.show()
   },
   send: async (label, message) => {
     // **The target is named by kind, not by label alone.** A bare string means "whatever

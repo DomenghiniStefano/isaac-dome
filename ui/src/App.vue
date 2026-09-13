@@ -90,9 +90,9 @@ const liftTab = (index: number) => {
 // Where it landed. A label is a strip — this window's own included — and null is the bare
 // desktop, where it gets a window of its own, sized like this one: the size the user chose, in
 // the place they dropped it.
-const settleTab = async (target: string | null, at: Point) => {
+const settleTab = async (target: string | null, at: Point, origin: Point) => {
   if (target !== null) await tabs.settleTo(target, at)
-  else await tabs.settleInNewWindow(at, await windowSize())
+  else await tabs.settleInNewWindow(origin, await windowSize())
 }
 
 // The router shows the active tab: selecting, closing or navigating a tab moves it.

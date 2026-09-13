@@ -31,7 +31,7 @@ const emit = defineEmits<{
   aim: [index: number | null]
   // The tab left the strip, landed, or came back: the three endings of a tear-off.
   lift: [index: number]
-  settle: [target: string | null, at: Point]
+  settle: [target: string | null, at: Point, origin: Point]
   putBack: []
 }>()
 const { t } = useMessages()
@@ -56,7 +56,7 @@ const { drag, detached } = useTabDrag({
     emit('lift', index)
     return true
   },
-  settle: (target, at) => emit('settle', target, at),
+  settle: (target, at, origin) => emit('settle', target, at, origin),
   putBack: () => emit('putBack'),
 })
 
