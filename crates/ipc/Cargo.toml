@@ -11,6 +11,7 @@ discovery = { path = "../discovery" }
 core-save = { path = "../core-save" }
 unpack = { path = "../unpack" }
 catalog = { path = "../catalog" }
+run = { path = "../run" }
 graph = { path = "../graph" }
 plan = { path = "../plan" }
 wiki = { path = "../wiki" }
