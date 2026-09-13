@@ -31,7 +31,9 @@ pub use diagnostics::{Diagnostic, SkipReason, Source};
 pub use ids::{AchievementId, BossId, ChallengeId, CharacterId, ItemId};
 pub use itempools::{Pool, PoolEntry, PoolMembership};
 pub use items::{Item, ItemKind};
-pub use origin::Origin;
+// `origin_of` alongside `Origin`: it is a pure lookup over id boundaries verified against
+// `items.xml`, so a caller can ask which edition introduced an id without a game installed.
+pub use origin::{origin_of, Origin};
 pub use players::Character;
 pub use sprite::{Rect, SpriteRef};
 pub use text::{Language, Text};
