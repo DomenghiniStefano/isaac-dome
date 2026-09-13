@@ -13,7 +13,7 @@ use serde::Serialize;
 /// Sections 5, 8 and 9 have such a name (Mini Bosses, Cutscene Counters, GameSettings) and
 /// stay `Unknown` here until one of them is checked against the bytes, which is the whole
 /// point of the distinction.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "snake_case")]
 pub enum Kind {
     Achievements,

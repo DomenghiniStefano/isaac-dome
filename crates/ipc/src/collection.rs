@@ -13,7 +13,7 @@ use crate::graph::origin_view;
 use crate::wiki_target;
 use crate::{IconRef, ItemKindView, OriginView};
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionView {
     pub items: Vec<CollectionItem>,
@@ -23,7 +23,7 @@ pub struct CollectionView {
     pub diagnostics: Vec<CollectionDiagnostic>,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionTotals {
     /// Section 4's length; 0 when it wasn't read.
@@ -32,7 +32,7 @@ pub struct CollectionTotals {
     pub in_collection: u32,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionItem {
     pub id: u32,
@@ -49,7 +49,7 @@ pub struct CollectionItem {
 }
 
 /// What stands between the item and a run. Tagged: three of the four variants carry data.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
@@ -79,7 +79,7 @@ pub enum LockView {
     },
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
     rename_all = "camelCase",
