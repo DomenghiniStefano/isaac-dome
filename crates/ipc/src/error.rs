@@ -1,5 +1,7 @@
 use serde::Serialize;
 
+use crate::{SaveReason, SettingsReason, StoreReason};
+
 /// Error that crosses the IPC boundary. Tagged, not a string: the UI must be able to
 /// tell "no active profile" apart from "unreadable file" without parsing text.
 #[derive(Debug, Clone, Serialize)]
@@ -15,10 +17,10 @@ pub enum IpcError {
         id: String,
     },
     UnreadableSave {
-        reason: ipc::SaveReason,
+        reason: SaveReason,
     },
     SettingsNotWritable {
-        reason: ipc::SettingsReason,
+        reason: SettingsReason,
     },
     /// A goal's target doesn't exist in the catalog: it isn't saved.
     UnknownTarget,
@@ -30,7 +32,7 @@ pub enum IpcError {
     CatalogUnavailable,
     /// The app's database won't open: goals can neither be read nor written.
     StoreUnavailable {
-        reason: ipc::StoreReason,
+        reason: StoreReason,
     },
     /// The embedded dataset failed to load: `wiki_entry` can't answer;
     /// `ExtractionReport.wiki` says why.

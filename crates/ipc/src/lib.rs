@@ -2,6 +2,7 @@
 
 mod catalog_view;
 mod collection;
+mod error;
 pub mod for_tests;
 mod goals;
 mod graph;
@@ -26,6 +27,7 @@ pub use collection::{
     collection_view, CollectionDiagnostic, CollectionItem, CollectionTotals, CollectionView,
     LockView,
 };
+pub use error::IpcError;
 pub use goals::{target_exists, Goal, GoalId, TargetKey, UnlockTarget};
 pub use graph::{
     next_steps, plan_view, resolve_target, target_of, unlock_view, AchievementRef, GoalView,

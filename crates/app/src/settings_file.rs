@@ -6,7 +6,7 @@ use ipc::{Settings, SettingsReason};
 use std::path::PathBuf;
 use tauri::{AppHandle, Manager};
 
-use crate::error::IpcError;
+use ipc::IpcError;
 
 fn not_writable(reason: SettingsReason) -> IpcError {
     IpcError::SettingsNotWritable { reason }
