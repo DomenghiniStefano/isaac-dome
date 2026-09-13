@@ -31,6 +31,22 @@ type IconOf = (url: string | null) => string | null
 const targetWithIcon = (target: UnlockTarget, icon: IconOf): UnlockTarget =>
   target.kind === 'item' ? { ...target, iconUrl: icon(target.iconUrl) } : target
 
+// The same story as `withPage` below, on the other half of the row (B35): a pack exported
+// before a target carried its page has none, and an absent key would read in a template
+// exactly like "the dataset has no page". Filled with `null` — which is that sentence, said
+// on purpose — and declared once in the console. All four variants, because all four carry it.
+let warnedAboutTargetPages = false
+const targetWithPage = (target: UnlockTarget): UnlockTarget => {
+  if (target.page !== undefined) return target
+  if (!warnedAboutTargetPages) {
+    warnedAboutTargetPages = true
+    console.warn(
+      "graph fixture: the design pack's unlock.json predates the page a target links to; nothing a node unlocks links until the next pnpm design:export on a machine with the game",
+    )
+  }
+  return { ...target, page: null }
+}
+
 // The pack's payload was written before a character carried its form (`docs/BACKLOG.md`
 // B28), so the field is absent there: absent reads as the base form, which is right for
 // every base character and wrong for the Tainted ones. Declared once in the console, and it
@@ -85,7 +101,9 @@ const nodeWithIcons = (node: UnlockNode, icon: IconOf): UnlockNode => ({
     node.achievement.kind === 'known'
       ? { ...node.achievement, iconUrl: icon(node.achievement.iconUrl) }
       : node.achievement,
-  unlocks: node.unlocks.map((t) => withForm(targetWithIcon(t, icon))),
+  unlocks: node.unlocks.map((t) =>
+    targetWithPage(withForm(targetWithIcon(t, icon))),
+  ),
   missing: node.missing.map((r) => withPage(withForm(r))),
 })
 

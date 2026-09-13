@@ -57,12 +57,14 @@ const passive = (name: string): UnlockTarget => ({
   id: 1,
   name,
   iconUrl: null,
+  page: null,
 })
 const character = (name: string): UnlockTarget => ({
   kind: 'character',
   id: 2,
   name,
   tainted: false,
+  page: null,
 })
 
 const reference = graphAnswers({ withArt: false, withCatalog: true }).unlock
