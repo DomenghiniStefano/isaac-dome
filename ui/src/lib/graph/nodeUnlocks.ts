@@ -25,7 +25,7 @@ export interface UnlockEntry {
 const iconOf = (target: UnlockTarget): string | null =>
   target.kind === 'item' ? target.iconUrl : null
 
-export const unlockEntries = (node: UnlockNode, t: Translate): UnlockEntry[] =>
+export const nodeUnlocks = (node: UnlockNode, t: Translate): UnlockEntry[] =>
   node.unlocks.map((target) => ({
     // Kind and id together: a boss and a character can share a number.
     key: `${target.kind}-${target.id}`,

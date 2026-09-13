@@ -24,7 +24,7 @@ export const en: MessageSchema = {
   },
   routes: {
     search: 'Search',
-    nextSteps: 'Next steps',
+    goals: 'Suggested goals',
     completion: 'Completion',
     unlock: 'Unlock',
     plan: 'Plan',
@@ -390,8 +390,18 @@ export const en: MessageSchema = {
   },
   // The landing screen: what you get, how, why it is worth it, and the one action.
   goals: {
+    intro:
+      'Things you can unlock right now. At the top the ones that open the most, below the ones you are closest to.',
+    fanOut: 'They open the most',
+    closeness: 'Almost there',
+    seeAll: 'See them all',
     opens: 'Opens {count} more things',
     opensNothing: 'Opens nothing else',
+    noCatalogTitle: 'Nothing to suggest without the game',
+    noCatalog:
+      "Without the game installed there's no telling what unlocks what: an empty list beats five guessed rows.",
+    nothingNow:
+      'There is nothing to unlock right now: either it is all done, or everything waits on something else.',
   },
   // The block an achievement's wiki page gains when a profile is active. It says only where
   // you stand: what the thing is and what it asks is already in the infobox below.
@@ -448,16 +458,6 @@ export const en: MessageSchema = {
     unknownAchievement: 'Unknown achievement',
     slot: 'slot',
     taintedName: 'Tainted {name}',
-  },
-  nextSteps: {
-    intro:
-      "At most five rows, all unlockable now: the five that open the most further down. A node the graph can only call partial isn't a step, because we can't vouch for it.",
-    unlocks: 'unlocks',
-    noCatalogTitle: 'No steps: the catalogue is missing',
-    noCatalog:
-      "Without the game installed there's no telling what unlocks what: the list is empty on purpose, not five guessed rows.",
-    nothingNow:
-      'Nothing is unlockable right now: everything is done, or everything waits on something else.',
   },
   unlock: {
     intro:

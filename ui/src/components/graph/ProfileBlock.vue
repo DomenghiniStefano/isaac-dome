@@ -6,7 +6,7 @@ import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
 import { NodeState, nodeState } from '@/lib/graph/nodeState'
-import { unlockEntries } from '@/lib/graph/unlockEntries'
+import { nodeUnlocks } from '@/lib/graph/nodeUnlocks'
 import { nodeWhy } from '@/lib/graph/whyMenu'
 import type { UnlockNode } from '@/lib/ipc/types'
 import type { TabLocation } from '@/router/routeTable'
@@ -26,7 +26,7 @@ const { t } = useMessages()
 // The page has room, so what is in the way is rows and not a menu: the menu exists because a
 // badge is small (spec §3.1). Same model as the badge's, same links, same gesture.
 const groups = computed(() => nodeWhy(props.node, t))
-const gets = computed(() => unlockEntries(props.node, t))
+const gets = computed(() => nodeUnlocks(props.node, t))
 const fanOut = computed(() => props.node.graph.fanOut)
 
 // Only a **blocked** node has steps left before it. Not `!availableNow`: a node that is done
