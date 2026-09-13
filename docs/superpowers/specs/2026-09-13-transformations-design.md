@@ -282,7 +282,38 @@ in `crates/graph/rules/corrections.json`, and `transformation` stops being one o
 
 ---
 
-## 4. The other half of B34 — the pickup noise
+## 4. The other half of B34 — abandoned, because the premise is wrong
+
+> **Measured on 2026-09-13, with the rule already written, and it is not going in.** The
+> section below is kept as it was agreed; everything in it rests on B34's claim that the
+> thirteen `pickup:` references are "words that became targets", and that claim does not
+> survive being checked against the sentences they come from:
+>
+> | node | the wiki's requirement | the reference |
+> |---|---|---|
+> | 69, 84 | "Collect all non-DLC items, and unlock all non-DLC secrets and **endings**" | `ending` |
+> | 324 | "Collect every entry in the **Bestiary**" | `Bestiary` |
+> | 276 | "Defeat Mega Satan as every character (**tainted character**…)" | `tainted character` |
+>
+> These are **real requirements the model cannot express**, which is exactly what
+> `Verdict::Unknown` is for and exactly what they carry. Dropping the reference would remove
+> the node's `unknown`, and a node whose only uninterpreted requirement disappears stops
+> being `Partial` — it reads as **available now**. That is the optimistic direction this
+> repository has rules against, and it would be a silent regression: no test names those
+> nodes, and the count of uninterpreted references would go *down*, which looks like progress.
+>
+> The rule was also far wider than B34 asked. Against the real inventory it keeps 4 of 49
+> pickup targets and drops 45 — including `Donation Machine` (10 uses), `Completion Mark`
+> (19) and `Hard mode` (38), every one of them a judged `alwaysAvailable` or
+> `notAPrerequisite`. Dropping those changes no answer, but it deletes forty-five recorded
+> judgements from `corrections.json` and the references that motivated them.
+>
+> **What B34 needs instead** is not a filter but a name: `Target::Pickup` is the wrong type
+> for a linked concept with no id, and calling it `Pickup` is what made "these are pickups
+> that are not pickups" look like the problem. That is a rename in `wiki`, with its own
+> measurement, and it is not this sub-project. B34 stays open with its premise corrected.
+
+## 4.1 What was agreed, before the measurement
 
 `generate.rs` promotes an `Inline::Concept` to `Target::Pickup`, which is right for *Red
 Heart* and wrong for *collect*, *ending*, *Bestiary*, *collection* and *tainted character*.
