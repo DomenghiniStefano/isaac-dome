@@ -32,6 +32,7 @@ import WikiSection from './sections/app/WikiSection.vue'
 import SearchRowSection from './sections/app/SearchRowSection.vue'
 import DataStateSection from './sections/app/DataStateSection.vue'
 import CollapsibleCardSection from './sections/app/CollapsibleCardSection.vue'
+import DragListSection from './sections/app/DragListSection.vue'
 import { TooltipProvider } from '@/components/ui/tooltip'
 </script>
 
@@ -76,6 +77,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
       <WikiSection />
       <SearchRowSection />
       <CollapsibleCardSection />
+      <DragListSection />
     </main>
   </TooltipProvider>
 </template>
