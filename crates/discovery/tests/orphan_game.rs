@@ -10,7 +10,7 @@
 use std::fs;
 use std::path::{Path, PathBuf};
 
-use discovery::testing::{find_game, find_steam};
+use discovery::for_tests::{find_game, find_steam};
 use discovery::{Diagnostic, Options};
 
 const INSTALLDIR: &str = "The Binding of Isaac Rebirth";
