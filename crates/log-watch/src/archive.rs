@@ -40,10 +40,10 @@ impl Ingest<'_> {
         }
         let log = folder.join("log.txt");
         let (events, offset) = self.read_events(&log, 0)?;
+        let written = events.len() as u32;
         let id = self
             .store
-            .insert_session_source(name, &self.key_at(&log, offset)?)?;
-        let written = self.store.append_events(id, &events)?;
+            .import_session(name, &self.key_at(&log, offset)?, &events)?;
         let runs = self.refold(id)?;
         Ok(Some(Ingested {
             source_id: id,
@@ -72,8 +72,9 @@ impl Ingest<'_> {
             None => (self.new_log_source(log)?, 0),
         };
         let (events, offset) = self.read_events(log, from)?;
-        let written = self.store.append_events(id, &events)?;
-        self.store.set_source_key(id, &self.key_at(log, offset)?)?;
+        let written = self
+            .store
+            .append_to_log(id, &self.key_at(log, offset)?, &events)?;
         let runs = self.refold(id)?;
         Ok(Ingested {
             source_id: id,

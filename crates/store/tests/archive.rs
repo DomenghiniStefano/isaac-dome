@@ -60,7 +60,7 @@ fn a_session_is_found_again_by_its_folder_name() {
         .unwrap()
         .is_none());
     let id = store
-        .insert_session_source("09_12_2026__13_34_26", &key(0))
+        .import_session("09_12_2026__13_34_26", &key(0), &[])
         .unwrap();
     let found = store
         .session_source("09_12_2026__13_34_26")
@@ -77,9 +77,13 @@ fn two_launches_are_two_sources_and_the_first_keeps_its_events() {
     // first: that is the archive losing exactly what it exists to keep.
     let (_d, store) = open();
     let first = store.insert_log_source(&key(0)).unwrap();
-    store.append_events(first, &[started("AAA AAA")]).unwrap();
+    store
+        .append_to_log(first, &key(0), &[started("AAA AAA")])
+        .unwrap();
     let second = store.insert_log_source(&key(0)).unwrap();
-    store.append_events(second, &[started("BBB BBB")]).unwrap();
+    store
+        .append_to_log(second, &key(0), &[started("BBB BBB")])
+        .unwrap();
 
     assert_ne!(first, second);
     assert_eq!(
@@ -93,10 +97,15 @@ fn two_launches_are_two_sources_and_the_first_keeps_its_events() {
 fn appending_twice_continues_the_sequence_instead_of_starting_over() {
     let (_d, store) = open();
     let id = store.insert_log_source(&key(0)).unwrap();
-    assert_eq!(store.append_events(id, &[started("AAA AAA")]).unwrap(), 1);
     assert_eq!(
         store
-            .append_events(id, &[Event::RoomTransition, started("BBB BBB")])
+            .append_to_log(id, &key(0), &[started("AAA AAA")])
+            .unwrap(),
+        1
+    );
+    assert_eq!(
+        store
+            .append_to_log(id, &key(0), &[Event::RoomTransition, started("BBB BBB")])
             .unwrap(),
         2
     );
@@ -114,7 +123,7 @@ fn appending_twice_continues_the_sequence_instead_of_starting_over() {
 fn the_offset_a_source_reached_survives_being_written_again() {
     let (_d, store) = open();
     let id = store.insert_log_source(&key(0)).unwrap();
-    store.set_source_key(id, &key(40_000)).unwrap();
+    store.append_to_log(id, &key(40_000), &[]).unwrap();
     assert_eq!(
         store.latest_log_source().unwrap().unwrap().source_key,
         key(40_000)
@@ -127,7 +136,7 @@ fn an_event_row_that_does_not_parse_is_counted_and_the_others_still_read() {
     let (_d, store) = open();
     let id = store.insert_log_source(&key(0)).unwrap();
     store
-        .append_events(id, &[started("AAA AAA"), Event::RoomTransition])
+        .append_to_log(id, &key(0), &[started("AAA AAA"), Event::RoomTransition])
         .unwrap();
     store::for_tests::corrupt_event(&store, id, 1, "{\"NotAnEvent\":{}}").unwrap();
 
@@ -167,7 +176,7 @@ fn every_source_comes_back_in_the_order_it_was_inserted() {
     let (_d, store) = open();
     let first = store.insert_log_source(&key(0)).unwrap();
     let second = store
-        .insert_session_source("09_12_2026__13_34_26", &key(0))
+        .import_session("09_12_2026__13_34_26", &key(0), &[])
         .unwrap();
     let ids: Vec<i64> = store.sources().unwrap().iter().map(|s| s.id).collect();
     assert_eq!(ids, vec![first, second]);
@@ -213,4 +222,52 @@ fn a_file_from_a_newer_app_is_still_refused_untouched() {
         }
         other => panic!("expected NewerSchema, got {other:?}"),
     }
+}
+
+#[test]
+fn the_events_and_the_offset_they_belong_to_move_in_the_same_write() {
+    // Atomicity here is not a speed concern, it is the duplicate-runs failure by another road:
+    // events written while the offset stays behind are events the next read finds again and
+    // files a second time. So there is **one** call that does both, and no way through this API
+    // to do either alone — which is why this test reads the pair after each write rather than
+    // trying to tear them apart.
+    let (_d, store) = open();
+    let id = store.insert_log_source(&key(0)).unwrap();
+
+    store
+        .append_to_log(id, &key(10), &[started("AAAA AAAA")])
+        .unwrap();
+    assert_eq!(store.events(id).unwrap().events.len(), 1);
+    assert_eq!(
+        store.latest_log_source().unwrap().unwrap().source_key,
+        key(10)
+    );
+
+    store
+        .append_to_log(id, &key(90), &[Event::RoomTransition, started("BBBB BBBB")])
+        .unwrap();
+    assert_eq!(store.events(id).unwrap().events.len(), 3);
+    assert_eq!(
+        store.latest_log_source().unwrap().unwrap().source_key,
+        key(90)
+    );
+}
+
+#[test]
+fn importing_a_session_writes_its_source_and_its_events_together() {
+    // The same rule on the other path: a source row with no events would be a session marked
+    // imported for ever, holding nothing.
+    let (_d, store) = open();
+    let id = store
+        .import_session("09_12_2026__13_34_26", &key(500), &[started("AAAA AAAA")])
+        .unwrap();
+    assert_eq!(store.events(id).unwrap().events, vec![started("AAAA AAAA")]);
+    assert_eq!(
+        store
+            .session_source("09_12_2026__13_34_26")
+            .unwrap()
+            .unwrap()
+            .source_key,
+        key(500)
+    );
 }

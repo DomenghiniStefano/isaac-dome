@@ -18,7 +18,9 @@ fn the_schema_knows_the_session() {
     // The session arrived with migration 3, so every version from there on knows it. The number
     // of the day is pinned in `tests/archive.rs`; what this one is about is that the table is
     // not behind us.
-    assert!(SCHEMA_VERSION >= 3);
+    // A `const` block: the claim is about the constant and nothing about a running database, so
+    // it is checked when the test is compiled rather than when it runs.
+    const { assert!(SCHEMA_VERSION >= 3) };
 }
 
 #[test]
