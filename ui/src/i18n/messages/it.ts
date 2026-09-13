@@ -401,6 +401,8 @@ export const it = {
       'Cose che puoi sbloccare adesso. In alto quelle che aprono di più, sotto quelle a cui sei più vicino.',
     fanOut: 'Aprono di più',
     closeness: 'Ci sei quasi',
+    inPlan: 'Nel tuo Piano',
+    openPlan: 'Apri il Piano',
     seeAll: 'Vedile tutte',
     opens: 'Apre altre {count} cose',
     opensNothing: 'Non apre altro',
