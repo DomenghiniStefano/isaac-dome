@@ -186,9 +186,22 @@ parsed. The plan checks which, and if it is the second, `dlcalt` joins phase 2's
 
 ## Decision 5 — the `dlc` bitmask is a hypothesis until `catalog` confirms it (delegated)
 
-The Cargo tables carry `dlc` as an **integer**, not as the letter code the wikitext uses.
-Read as a five-bit mask over the editions, 31 is all five and 24 = `0b11000` is Repentance and
-Repentance+ only. Five items, checked against `catalog::origin`'s verified id boundaries:
+**Correction, found during execution (2026-09-13).** This decision was written as though the
+bitmask reading were a fresh hypothesis. It is not: `crates/wiki/src/resolver.rs` documents it
+and *relies* on it —
+
+```rust
+/// The Repentance+ bit in the `dlc` field of the Cargo tables, a bitmask: 1 Rebirth,
+/// 2 Afterbirth, 4 Afterbirth+, 8 Repentance, 16 Repentance+.
+pub const DLC_REPENTANCE_PLUS: u32 = 16;
+```
+
+— and `in_current_edition` reads bit 16 to keep Tonsil's trinket 97 and drop its collectible
+474. The encoding is therefore settled and load-bearing. What is open is narrower and more
+interesting: the repo reads **only bit 16**, and never asks what the lower four mean.
+
+The Cargo tables carry `dlc` as an integer, not as the letter code the wikitext uses. Five
+items, checked against `catalog::origin`'s verified id boundaries:
 
 | item | id | origin (game) | cargo `dlc` | wikitext `dlc` |
 |---|---|---|---|---|
@@ -199,11 +212,16 @@ Repentance+ only. Five items, checked against `catalog::origin`'s verified id bo
 | 120 Volt | 559 | Repentance | 24 | `r` |
 
 **Blue Cap is the counter-example, and it was found before a line of code was written.** It is
-the first Afterbirth collectible — it does not exist in vanilla Rebirth — yet its mask says all
-five editions and its wikitext parameter is absent. So the mask is *not* "the editions it
-exists in", or the wiki is lax about the Afterbirth era, and the two cannot be told apart from
-here. Meanwhile 96 pages carry `dlc = a` and 111 carry `a+`, so the parameter is not simply
-unused for those editions.
+the first Afterbirth collectible — it does not exist in vanilla Rebirth — yet its mask sets
+bit 1 (Rebirth) and its wikitext parameter is absent. `in_current_edition`'s own comment reads
+the mask as "valid in", so under that reading the row claims Blue Cap exists in Rebirth, which
+is false. Either the wiki is lax below bit 16, or the lower bits mean something else. Meanwhile
+96 pages carry `dlc = a` and 111 carry `a+`, so the wikitext parameter is not simply unused for
+those editions.
+
+This is why the repo's existing use is safe and this spec's is not: reading **bit 16 alone**
+asks "does this row survive into Repentance+", which no counter-example touches. Reading the
+lower bits as editions is the step nobody has earned.
 
 Therefore: **phase 1 takes `dlc` from the wikitext parameter**, through the existing and tested
 `Dlc::from_code`, and the field is documented as "the codes the infobox declares" — not as
