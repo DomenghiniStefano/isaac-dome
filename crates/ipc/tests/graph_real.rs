@@ -31,6 +31,43 @@ fn real() -> Option<(Catalog, ResourceSet, Save)> {
     Some((c, rs, s))
 }
 
+/// One named profile, with the real catalog. `real()` above is this for the one sample whose
+/// numbers are pinned; this is for a question that needs a *different* point of the
+/// progression — a young profile still has thresholds it hasn't crossed.
+fn profile(name: &str) -> Option<(Catalog, Save)> {
+    let packed = test_support::packed_dir()?;
+    let path = test_support::sample(name)?;
+    let c = Catalog::build(|p| ResourceSet::open(&packed).read(p));
+    match Save::open(&path) {
+        Ok(s) => Some((c, s)),
+        Err(_) => {
+            test_support::skip(&format!("{name} exists but doesn't read"));
+            None
+        }
+    }
+}
+
+/// The whole view for a profile, built exactly the way `crates/app/src/commands/graph.rs`
+/// builds it: catalog, dataset, flags, graph, evaluation **and the counters**. Without the
+/// counters a `Counter` requirement has no `current`, and the question this answers would be
+/// decided by the fixture rather than by the profile.
+fn view_of(c: &Catalog, s: &Save) -> Option<ipc::UnlockView> {
+    let flags = s.flags(Kind::Achievements)?;
+    let counters = s.u32s(Kind::Counters)?;
+    let g = graph::Graph::build(c, graph::rules::embedded().expect("embedded rules"));
+    let progress = ipc::SaveProgress::new(Some(&flags), Some(&counters), Some(c));
+    let e = g.evaluate(&progress);
+    Some(unlock_view(
+        Some(c),
+        wiki::Dataset::embedded().ok(),
+        Some(&flags),
+        Some(&g),
+        Some(&e),
+        Some(&progress),
+        |_| None,
+    ))
+}
+
 #[test]
 fn the_real_profile_has_379_done_637_known_and_4_unknown_slots() {
     let Some((c, _, s)) = real() else { return };
@@ -122,10 +159,20 @@ fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
         |r: &ipc::IconRef| Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path())),
     );
     let steps = next_steps(&v);
-    assert_eq!(steps.basis, ipc::StepsBasis::FanOut);
-    assert_eq!(steps.steps.len(), 5, "the real profile has work left to do");
-    assert!(steps.steps.iter().all(|n| !n.done));
-    let fans: Vec<u32> = steps
+    let all: Vec<&ipc::UnlockNode> = steps.sections.iter().flat_map(|s| s.steps.iter()).collect();
+    assert!(!all.is_empty(), "the real profile has work left to do");
+    assert!(all.iter().all(|n| !n.done));
+    // Every section is capped at STEPS, and every emitted section holds something.
+    assert!(steps
+        .sections
+        .iter()
+        .all(|s| !s.steps.is_empty() && s.steps.len() <= ipc::STEPS));
+    let by_fan_out = steps
+        .sections
+        .iter()
+        .find(|s| s.basis == ipc::StepsBasis::FanOut)
+        .expect("the real profile has nodes with nothing at all in the way");
+    let fans: Vec<u32> = by_fan_out
         .steps
         .iter()
         .map(|n| match n.graph {
@@ -148,8 +195,9 @@ fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
         fans.windows(2).all(|w| w[0] >= w[1]),
         "fan-out descending: {fans:?}"
     );
-    // Every step has a readable name and, if it unlocks an item, its icon.
-    for n in &steps.steps {
+    // Every step has a readable name and, if it unlocks an item, its icon — in every
+    // section, not only the one whose order was just checked.
+    for n in &all {
         for t in &n.unlocks {
             match t {
                 UnlockTarget::Item { name, icon_url, .. } => {
@@ -179,6 +227,7 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
             item_kind: ItemKindView::Passive,
             id: 1,
         },
+        None,
         &mut icon,
     )
     .expect("item 1 is The Sad Onion");
@@ -188,7 +237,11 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
             id,
             name,
             icon_url,
+            page,
         } => {
+            // No dataset was passed here: this test is about the name and the icon. What a
+            // page carries when a dataset *is* there is the next test's subject.
+            assert_eq!(page, &None);
             assert_eq!((*item_kind, *id), (ItemKindView::Passive, 1));
             assert_eq!(name, "The Sad Onion");
             assert_eq!(
@@ -216,25 +269,27 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
         other => panic!("expected an item, got {other:?}"),
     }
     let character =
-        resolve_target(&c, &TargetKey::Character { id: 0 }, &mut icon).expect("character 0");
+        resolve_target(&c, &TargetKey::Character { id: 0 }, None, &mut icon).expect("character 0");
     assert_eq!(
         character,
         UnlockTarget::Character {
             id: 0,
             name: "Isaac".into(),
-            tainted: false
+            tainted: false,
+            page: None
         }
     );
-    let boss = resolve_target(&c, &TargetKey::Boss { id: 1 }, &mut icon).expect("boss 1");
+    let boss = resolve_target(&c, &TargetKey::Boss { id: 1 }, None, &mut icon).expect("boss 1");
     assert_eq!(
         boss,
         UnlockTarget::Boss {
             id: 1,
-            name: "Monstro".into()
+            name: "Monstro".into(),
+            page: None
         }
     );
     let challenge =
-        resolve_target(&c, &TargetKey::Challenge { id: 1 }, &mut icon).expect("challenge 1");
+        resolve_target(&c, &TargetKey::Challenge { id: 1 }, None, &mut icon).expect("challenge 1");
     assert_eq!(
         challenge,
         UnlockTarget::Challenge {
@@ -242,13 +297,14 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
             name: "Pitch Black".into(),
             // achievements.xml: `<!-- Beat Challenge #1 -->` right above achievement 89 (Rune of Hagalaz).
             rewards: vec![89],
+            page: None,
         }
     );
 
     // `key()` and `resolve_target` are each other's inverse, on real data.
     for t in [item, character, boss, challenge] {
         assert_eq!(
-            resolve_target(&c, &t.key(), &mut icon).as_ref(),
+            resolve_target(&c, &t.key(), None, &mut icon).as_ref(),
             Some(&t),
             "resolving a target's key gives back the same target"
         );
@@ -270,7 +326,7 @@ fn an_absurd_key_resolves_to_nothing() {
         TargetKey::Boss { id: 999_999 },
         TargetKey::Challenge { id: 999_999 },
     ] {
-        assert_eq!(resolve_target(&c, &key, &mut icon), None, "{key:?}");
+        assert_eq!(resolve_target(&c, &key, None, &mut icon), None, "{key:?}");
     }
 }
 
@@ -293,9 +349,9 @@ fn the_tainted_form_of_a_character_is_a_different_target_under_the_same_name() {
         test_support::skip("this catalog has no character unlocked by 82 and 484");
         return;
     };
-    let base = resolve_target(&c, &TargetKey::Character { id: base }, &mut icon)
+    let base = resolve_target(&c, &TargetKey::Character { id: base }, None, &mut icon)
         .expect("the base character");
-    let tainted = resolve_target(&c, &TargetKey::Character { id: tainted }, &mut icon)
+    let tainted = resolve_target(&c, &TargetKey::Character { id: tainted }, None, &mut icon)
         .expect("the tainted character");
     let (
         UnlockTarget::Character {
@@ -385,4 +441,220 @@ fn a_blocked_node_links_to_the_pages_the_dataset_has() {
         v.nodes.iter().map(|n| n.missing.len()).sum::<usize>(),
         "a missing page never removes a requirement"
     );
+}
+
+/// The other half of the same rule (`docs/BACKLOG.md` B35): what a node **unlocks** links to
+/// the page the dataset really has, and to nothing else. Deliberately the same shape as the
+/// test above — one mapping, two readers, and a single place where it could drift.
+#[test]
+fn what_a_node_unlocks_links_to_the_pages_the_dataset_has() {
+    let Some((c, _, s)) = real() else { return };
+    let flags = s.flags(Kind::Achievements).expect("section 1");
+    let ds = wiki::Dataset::embedded().expect("the dataset is embedded at build time");
+
+    let page_of = |t: &UnlockTarget| match t {
+        UnlockTarget::Item { page, .. }
+        | UnlockTarget::Character { page, .. }
+        | UnlockTarget::Boss { page, .. }
+        | UnlockTarget::Challenge { page, .. } => page.clone(),
+    };
+
+    let v = unlock_view(Some(&c), Some(ds), Some(&flags), None, None, None, |_| None);
+    let targets = || v.nodes.iter().flat_map(|n| n.unlocks.iter());
+    let linked = targets()
+        .filter_map(&page_of)
+        .inspect(|t| assert!(ds.entry(t).is_some(), "a page that goes out has to exist"))
+        .count();
+    assert!(
+        targets().count() > 0,
+        "the real catalog has edges, or this test asserts nothing"
+    );
+    assert!(
+        linked > 0,
+        "the dataset documents most of what the game unlocks: zero links means the mapping \
+         stopped working, not that the wiki is empty"
+    );
+
+    // No dataset: the names still come out, and nothing links.
+    let without = unlock_view(Some(&c), None, Some(&flags), None, None, None, |_| None);
+    assert!(without
+        .nodes
+        .iter()
+        .flat_map(|n| n.unlocks.iter())
+        .all(|t| page_of(t).is_none()));
+    assert_eq!(
+        without.nodes.iter().map(|n| n.unlocks.len()).sum::<usize>(),
+        v.nodes.iter().map(|n| n.unlocks.len()).sum::<usize>(),
+        "a missing page never removes a target"
+    );
+}
+
+/// The vacuity guard for the closeness section, and the reason it is aimed at **this**
+/// profile rather than the reference one.
+///
+/// Measured 2026-09-13: on `live` (379 of 642 done) the whole view holds **zero** `Counter`
+/// requirements — not zero closeness steps, zero counters. A counter is only reported while
+/// `current < at_least`, and that profile crossed every one of those thresholds long ago. The
+/// co-op partner's profile, the one `online_logs\` leaves at the start of the progression
+/// (`CLAUDE.md`, "Real-world paths"), holds 4 of them and 4 nodes held by nothing else.
+///
+/// So the property is asserted where the thing it is about exists. A test that cannot fail
+/// reports coverage that is not there.
+#[test]
+fn a_young_profile_has_a_closeness_section_and_it_is_ordered_by_distance() {
+    let Some((c, s)) = profile("20260912.coop-partner.persistentgamedata1.dat") else {
+        return;
+    };
+    let Some(v) = view_of(&c, &s) else {
+        test_support::skip("the young profile has no achievement or counter section");
+        return;
+    };
+
+    let steps = next_steps(&v);
+    let Some(close) = steps
+        .sections
+        .iter()
+        .find(|x| x.basis == ipc::StepsBasis::Closeness)
+    else {
+        panic!(
+            "the young profile had 4 nodes held only by counters when this was measured: no \
+             closeness section means the model stopped producing them"
+        )
+    };
+    assert!(!close.steps.is_empty(), "an emitted section is never empty");
+    for n in &close.steps {
+        assert!(
+            !n.missing.is_empty()
+                && n.missing
+                    .iter()
+                    .all(|r| matches!(r, ipc::RequirementView::Counter { .. })),
+            "a closeness step is held by counters and nothing else"
+        );
+    }
+    // The order the section promises, read back from the requirements themselves.
+    let distances: Vec<u32> = close
+        .steps
+        .iter()
+        .map(|n| {
+            n.missing
+                .iter()
+                .map(|r| match r {
+                    ipc::RequirementView::Counter {
+                        current, at_least, ..
+                    } => at_least.saturating_sub(*current),
+                    // Unreachable: the loop above asserted every one of them is a counter.
+                    // Spelled out all the same — a new variant has to break this build.
+                    ipc::RequirementView::Character { .. }
+                    | ipc::RequirementView::Boss { .. }
+                    | ipc::RequirementView::Challenge { .. }
+                    | ipc::RequirementView::Item { .. }
+                    | ipc::RequirementView::Gate { .. }
+                    | ipc::RequirementView::Mark { .. }
+                    | ipc::RequirementView::Unknown { .. } => 0,
+                })
+                .sum()
+        })
+        .collect();
+    assert!(
+        distances.windows(2).all(|w| w[0] <= w[1]),
+        "nearest the threshold first: {distances:?}"
+    );
+}
+
+/// Why the reference profile has no closeness section — pinned, so that "it's empty" stays a
+/// fact about the profile and never becomes an unnoticed fact about the code.
+///
+/// An empty section and a broken model look identical from the outside. This tells them
+/// apart: on `live` there is no `Counter` requirement left standing at all, because every
+/// threshold has been crossed. The day one appears, this test fails and the answer is to move
+/// the expectation, not to wonder why a section reappeared.
+#[test]
+fn the_reference_profile_has_crossed_every_counter_threshold() {
+    let Some((c, _, s)) = real() else { return };
+    let Some(v) = view_of(&c, &s) else { return };
+    let counters: Vec<&ipc::RequirementView> = v
+        .nodes
+        .iter()
+        .flat_map(|n| n.missing.iter())
+        .filter(|r| matches!(r, ipc::RequirementView::Counter { .. }))
+        .collect();
+    assert!(
+        counters.is_empty(),
+        "measured 2026-09-13: none stood on this profile, and these do: {counters:?}"
+    );
+    assert!(
+        next_steps(&v)
+            .sections
+            .iter()
+            .all(|x| x.basis != ipc::StepsBasis::Closeness),
+        "no counter standing, so no section: the two facts are one"
+    );
+}
+
+/// The one line that says **how to get it**, and why it needs two sources.
+///
+/// Measured 2026-09-13 on the reference profile's 637 known achievements: the game states an
+/// `unlock_condition` for 283 of them and nothing for 354 — and among the 119 that are
+/// unlockable *now*, the pool the landing page draws from, only **16**. A card whose "how"
+/// line came from the file alone would be blank seven rows out of eight, which is what B32
+/// asked to fix, not a fix for it.
+///
+/// So the dataset answers where the file is silent, and this pins both halves: with a dataset
+/// strictly more achievements carry a line, and the ones the file already answered keep the
+/// game's own words.
+#[test]
+fn the_wiki_answers_how_to_get_it_where_the_game_file_is_silent() {
+    let Some((c, _, s)) = real() else { return };
+    let flags = s.flags(Kind::Achievements).expect("section 1");
+
+    let conditions = |dataset: Option<&wiki::Dataset>| -> Vec<(u32, Option<String>)> {
+        unlock_view(Some(&c), dataset, Some(&flags), None, None, None, |_| None)
+            .nodes
+            .iter()
+            .filter_map(|n| match &n.achievement {
+                AchievementRef::Known { id, condition, .. } => Some((*id, condition.clone())),
+                AchievementRef::Unknown { .. } => None,
+            })
+            .collect()
+    };
+
+    let from_file = conditions(None);
+    let with_wiki = conditions(wiki::Dataset::embedded().ok());
+    let answered = |v: &[(u32, Option<String>)]| v.iter().filter(|(_, c)| c.is_some()).count();
+
+    assert!(
+        !from_file.is_empty(),
+        "the real catalog has achievements, or this test asserts nothing"
+    );
+    // Declared, not only asserted: how far the two sources reach is the fact this test is
+    // about, and a number nobody can read is a number nobody checks.
+    eprintln!(
+        "condition: {} of {} known achievements from the game file, {} once the wiki answers",
+        answered(&from_file),
+        from_file.len(),
+        answered(&with_wiki)
+    );
+    assert!(
+        answered(&with_wiki) > answered(&from_file),
+        "the dataset has to answer for some of the ones the file leaves silent: {} with the \
+         wiki against {} from the file alone",
+        answered(&with_wiki),
+        answered(&from_file)
+    );
+
+    // The game's own words win where it has any: the wiki is the fallback, never the rewrite.
+    for ((id, file), (_, wiki_too)) in from_file.iter().zip(&with_wiki) {
+        if let Some(file) = file {
+            assert_eq!(
+                wiki_too.as_ref(),
+                Some(file),
+                "achievement {id}: the file stated a condition and it was replaced"
+            );
+        }
+    }
+    // A line that goes out is a line worth reading: never an empty string.
+    assert!(with_wiki
+        .iter()
+        .filter_map(|(_, c)| c.as_ref())
+        .all(|c| !c.trim().is_empty()));
 }

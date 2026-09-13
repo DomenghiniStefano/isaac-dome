@@ -245,9 +245,18 @@ the empty-section case has to be lookable-at without a real save.
 
 ## 8. Branch, and what is out of scope
 
-This work touches `WikiPage.vue`, which `feature/wiki-infobox` is reshaping right now, and it
-builds on the very fields that branch adds. So: **the branch is cut from `develop` after the
-infobox merges**, one sub-project per branch as decided on 2026-09-11.
+The branch is **`feature/screens-goals-detail`, cut from `develop`** on 2026-09-13, one
+sub-project per branch as decided on 2026-09-11.
+
+This paragraph first said the work had to wait for `feature/wiki-infobox` to merge, because it
+"builds on the very fields that branch adds". That was assumed, not checked, and it is wrong:
+`git diff develop...feature/wiki-infobox --name-only` touches **no frontend file at all** —
+`crates/wiki`, `crates/catalog`, the graph's rules, `dataset/wiki.json` and docs. The infobox
+this design leans on — `Entry.description`, `Entry.unlockedBy`, `Infobox::Achievement`'s
+`requirements` and `notes`, and `WikiInfobox.vue` inside `WikiPage.vue` — is already on
+`develop`. What that branch is still doing is teaching the wikitext parser more templates,
+which changes the dataset's *content* and not the page's shape. There is no file in common,
+so there is nothing to wait for.
 
 Out of scope, on purpose:
 

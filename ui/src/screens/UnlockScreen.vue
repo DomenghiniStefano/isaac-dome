@@ -11,7 +11,7 @@ import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
 import { singleQuery } from '@/lib/search/queryParam'
 import { characterForms } from '@/lib/graph/characterName'
-import { stateCounts } from '@/lib/graph/nodeState'
+import { stateCounts, stateOrder } from '@/lib/graph/nodeState'
 import {
   FacetId,
   UnlockSort,
@@ -51,6 +51,22 @@ watch(
   (value) => {
     const q = singleQuery(value)
     if (q !== null) filter.value = { ...filter.value, query: q }
+  },
+  { immediate: true },
+)
+// "Vedile tutte" on the landing page lands here with the state facet already picked. A value
+// we never wrote is ignored rather than picked: the facet holds `NodeState`s, and an unknown
+// string would filter everything away and read as an empty profile.
+watch(
+  () => route.query.state,
+  (value) => {
+    const wanted = singleQuery(value)
+    const state = stateOrder.find((s) => s === wanted)
+    if (state)
+      filter.value = {
+        ...filter.value,
+        picks: { ...filter.value.picks, [FacetId.State]: [state] },
+      }
   },
   { immediate: true },
 )

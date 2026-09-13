@@ -20,10 +20,11 @@ describe('graphAnswers with the game installed', () => {
     ])
   })
 
-  it('answers the five steps, most fan-out first', () => {
-    expect(steps.basis).toBe('fanOut')
+  it('answers the five steps, most fan-out first, as one section', () => {
+    // The pack's payload predates the sections, so it reads as the one basis it carries.
+    expect(steps.sections.map((s) => s.basis)).toEqual(['fanOut'])
     expect(
-      steps.steps.map((s) =>
+      steps.sections[0].steps.map((s) =>
         s.achievement.kind === 'known' ? s.achievement.id : null,
       ),
     ).toEqual([484, 488, 489, 479, 480])
@@ -97,7 +98,8 @@ describe('graphAnswers without the game', () => {
       unknown: 641,
     })
     expect(unlock.diagnostics).toEqual([{ kind: 'noCatalog' }])
-    expect(steps).toEqual({ steps: [], basis: 'fanOut' })
+    // No sections at all, not an empty section: a heading over nothing is not a state.
+    expect(steps).toEqual({ sections: [] })
   })
 })
 

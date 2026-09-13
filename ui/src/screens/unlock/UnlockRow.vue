@@ -72,7 +72,7 @@ const more = computed(() => Math.max(0, props.node.unlocks.length - 1))
     <EmptyValue v-else>{{ t('unlock.unlocksNothing') }}</EmptyValue>
   </span>
   <span class="min-w-0 truncate px-2 text-caption text-foreground-soft">
-    <template v-if="known?.hint">{{ known.hint }}</template>
+    <template v-if="known?.condition">{{ known.condition }}</template>
     <EmptyValue v-else>{{ t('unlock.noCondition') }}</EmptyValue>
   </span>
   <span class="px-2">

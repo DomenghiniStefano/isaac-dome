@@ -134,20 +134,10 @@ fn yes(ib: &RawInfobox, name: &str) -> bool {
 /// game's `items_metadata.xml` already states what holds for the installed edition, and it
 /// is the better source for that question.
 fn tags(ib: &RawInfobox, name: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<String> {
-    let mut flat = String::new();
-    flatten(&parse_inline(param(ib, name), r, d), &mut flat);
-    flat.split_whitespace().map(str::to_string).collect()
-}
-
-/// The words of an inline run, edition wrappers unwrapped: what the reader would read.
-fn flatten(inline: &[Inline], out: &mut String) {
-    for i in inline {
-        match i {
-            Inline::Text { text, .. } => out.push_str(text),
-            Inline::Ref { label, .. } | Inline::Concept { label, .. } => out.push_str(label),
-            Inline::Edition { inline, .. } => flatten(inline, out),
-        }
-    }
+    crate::inline::plain(&parse_inline(param(ib, name), r, d))
+        .split_whitespace()
+        .map(str::to_string)
+        .collect()
 }
 
 /// The leading digits: `"250 (x2)"` → 250, `"6666"` → 6666, no digits → `None`.
