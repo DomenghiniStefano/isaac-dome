@@ -212,7 +212,10 @@ A point over no window at all means a new window.
 
 **Live re-docking.** While the preview passes over another window's strip, that window receives
 the point (throttled to one animation frame) and draws the insertion marker between its own
-tabs, and the preview hides. You see where the tab will land before you let go. No grace period:
+tabs. **The preview stays** (owner, 2026-09-13): it used to hide there, on the grounds that the
+marker says the same thing, and it does not — the marker says *where among these tabs*, the card
+says *what you are holding*, and the hand holding it must never look empty. The card leaves the
+cursor at the release and at no other moment. No grace period:
 a grace period is what you need when hovering *merges by itself* — here the release merges, and
 a release is already an intention.
 
