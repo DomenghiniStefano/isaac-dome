@@ -32,10 +32,12 @@ import {
   toggleMaximizeWindow,
   watchWindowFocus,
 } from '@/lib/window/appWindow'
+import { AppEvent, watchAppEvents } from '@/lib/window/appEvents'
 import { useWindowSession } from '@/lib/window/session'
 import { RouteName, routeOrigin } from '@/router/routeTable'
 import ProgressGate from '@/screens/ProgressGate.vue'
 import { useProfileStore } from '@/stores/profile'
+import { useQueueStore } from '@/stores/queue'
 import { useSettingsStore } from '@/stores/settings'
 import { tabLabel } from '@/stores/tabModel'
 import { useTabsStore } from '@/stores/tabs'
@@ -45,6 +47,9 @@ const router = useRouter()
 const tabs = useTabsStore()
 const profile = useProfileStore()
 const wiki = useWikiStore()
+// Read again when another window writes: the plan's queue, and the size of the interface.
+const queue = useQueueStore()
+const settings = useSettingsStore()
 const { t } = useMessages()
 
 // Everything this window says to the others, and hears from them: a window born from a
@@ -53,13 +58,25 @@ useWindowSession()
 
 const focused = ref(true)
 let stopWatchingFocus: (() => void) | undefined
+let stopAppEvents: (() => void) | undefined
 onMounted(async () => {
   void profile.load()
   stopWatchingFocus = await watchWindowFocus((value) => {
     focused.value = value
   })
+  // A window never learns of a write it did not make, so it is told. The profile carries
+  // through to every screen that reads the save (`useOnActiveProfile`); the queue store is
+  // read again wherever it is mounted.
+  stopAppEvents = await watchAppEvents({
+    [AppEvent.ProfileChanged]: () => void profile.load(),
+    [AppEvent.SettingsChanged]: () => void settings.load(),
+    [AppEvent.PlanChanged]: () => void queue.load(),
+  })
 })
-onUnmounted(() => stopWatchingFocus?.())
+onUnmounted(() => {
+  stopWatchingFocus?.()
+  stopAppEvents?.()
+})
 
 // The router shows the active tab: selecting, closing or navigating a tab moves it.
 watch(
@@ -122,7 +139,6 @@ const paletteOpen = ref(false)
 
 // `Ctrl` `+` / `-` / `0` move the interface's size from anywhere, on the same ladder and the
 // same saved value as the slider in Settings: a shortcut is not a second scale.
-const settings = useSettingsStore()
 void settings.load()
 useShortcut((event) => {
   const action = shortcutAction(event)
