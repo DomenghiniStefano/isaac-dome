@@ -3,6 +3,7 @@
 mod arch;
 mod bogocrypt;
 mod extract;
+pub mod for_tests;
 mod hash;
 mod isaac;
 mod lzw;
@@ -13,8 +14,3 @@ pub use arch::{Archive, CompressionMode, Entry, OpenError};
 pub use extract::{extract_subset, Diagnostic, ExtractReport};
 pub use hash::{path_key, PathKey};
 pub use resource_set::{ArchiveInfo, ResourceSet};
-
-#[doc(hidden)]
-pub fn __lzw_decompress(archive: &[u8], start: usize, decompressed_len: usize) -> Option<Vec<u8>> {
-    crate::lzw::decompress(archive, start, decompressed_len)
-}
