@@ -25,19 +25,18 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-13. **Five of the eight cleanup items are done** — N1, N2, N4, N5
-and N6, each on its own branch cut from `develop`. The test-only public API has one notation
+**Last update:** 2026-09-13. **Six of the eight cleanup items are done** — N1, N2, N4, N5, N6
+and N7, each on its own branch cut from `develop`. The test-only public API has one notation
 (one `pub mod for_tests` per crate, seven of them); **why a command failed is a variant, not
 a sentence** (four enums, the numbers travelling as numbers, the wording in `it.ts` / `en.ts`);
 **the Tauri crate is wiring again** (eleven files, none over 220 lines, `cargo test -p app`
-reporting zero); one diagnostics list instead of four; and one view store instead of three.
-**N7 is the last one before M4** and is **no longer blocked**: `feature/wiki-infobox` merged
-into `develop` on 2026-09-13, and the transformations that reshaped the same types merged
-after it. It generates TypeScript from Rust types, and it now has more to absorb than when it
-was written — `Infobox::Transformation`, `RequirementView::Threshold` and
-`ThresholdItemView`. **N3 is the only other one left.**
-Order: N1 → N2 → N6 → N4 → N5 → N7 → M4 sub-project 1 → N8 → N3. N4 and N5 were pulled
-forward because they are frontend, touch no file that branch has, and N7 is blocked.
+reporting zero); one diagnostics list instead of four; one view store instead of three; and
+**the IPC contract is generated from the Rust types**.
+**M4's sub-project 1 is closed**, 1a and 1b both: the run model, then the watcher, the archive
+and the fourth migration (`feature/log-watch`). **N8 and N3 are what remain**, in that order —
+N8 is where it is because it says *after M4*, and M4's first sub-project is now behind it.
+Order: N1 → N2 → N6 → N4 → N5 → N7 → M4 sub-project 1 → **N8 → N3**. N4 and N5 were pulled
+forward because they are frontend, touch no file that branch has, and N7 was blocked then.
 **Sub-project 3.5d merged into `develop`** (`4406c49`), suite green on the merge result: a
 blocked badge opens a menu whose entries are the wiki pages of what is in the way.
 **The wiki's transformations merged into `develop`** on 2026-09-13, suite green on the merge
@@ -125,7 +124,8 @@ much more to absorb**, and `UnlockTarget` gained a field as well.
       - [x] **Sub-project 1, the run model and the log watcher — design** (2026-09-12),
             `docs/superpowers/specs/2026-09-12-m4-run-model-design.md`. Three decisions
             taken in conversation: **backfill everything**, so the archive is born full from
-            the 22 `online_logs\` sessions on the disk today; **events are the archive and a
+            the `online_logs\` sessions on the disk (22 by that day's count, **28** once 1b
+            measured the folder and found it three levels deep); **events are the archive and a
             run is a fold over them**, which makes backfill and live one function instead of
             two paths that have to agree forever; **abandoned runs are kept and marked**, and
             whether they count is measured against the save's own `STREAK_COUNTER [22]`,
@@ -153,9 +153,31 @@ much more to absorb**, and `UnlockTarget` gained a field as well.
             as abandoned and counted it twice, so the fold decides by seed and not by label.
             `Net` is the free discriminator for co-op, which §3's open question about
             `STREAK_COUNTER [22]` will need.
-      - [ ] **1b — it goes live**: `log-watch`, the store's fourth migration, run identity and
-            the `(source, ordinal)` key, the backfill of the 22 `online_logs\` sessions, the
-            agreement with the save's own counters, and the view-models.
+      - [x] **1b — it goes live** (2026-09-13), `feature/log-watch`: `log-watch`, the store's
+            fourth migration, run identity, the backfill, the view-models, and the archive
+            filling itself at launch. Plan
+            `docs/superpowers/plans/archive/2026-09-13-log-watch.md`, report
+            `docs/superpowers/reports/2026-09-13-log-watch-report.md`.
+            **Five measurements, four of which contradicted a document.** The 4 KiB prefix the
+            spec identified a launch by is the machine describing itself — OpenGL, driver, the
+            game's DLL path — and the only byte separating two launches inside it is a load
+            timing, so identity rests on an **anchor** in the run content instead. The two logs
+            of 2026-09-08 are one launch copied twice (a strict prefix), so `samples/logs/` holds
+            three launches and no pair of *different* ones. `online_logs\` is not flat and is
+            **28 sessions**, not 22: `sessions\`, `desyncs\` holding crash reports, and two more
+            sessions nested under `desyncs\sessions\`. And `discovery` could not name the folder
+            at all — it reached `My Games` only to look for `.dat` files, which with Steam Cloud
+            on it never finds there.
+            **The bug a test found is the one that mattered**: `head(log, 4096)` on a file
+            shorter than 4 KiB returns the whole file, so the prefix changed with every line the
+            game wrote and every read looked like a new source — which would have imported the
+            whole archive a second time. The window is stored with its length now.
+      - [ ] **The agreement with the game's own counters stays open**, and that is a measured
+            result rather than a gap. The spec named 2026-09-08 as the one window that could
+            answer it; measured, the window does not contain the run — the log calls
+            `unlock steam achievement` twice and **no slot of 642 turns on** across it, while 2
+            counters out of 523 move by one each. The backup of the 8th predates the run. One
+            solo, non-Greed win with a snapshot either side closes it; `live_probe` takes them.
       - [ ] The `Live` and `Runs` screens, on the contract this model fixes
 - [ ] **M5 — Public release**
 
@@ -1208,6 +1230,14 @@ running, or both, and every one of them is cheap once you are at that machine. T
 instrument they mostly share is the **matched window**: play a run, then compare the live
 save against the dated backup the game wrote before it, and read which cells moved.
 
+- [ ] **Whether the archive's runs agree with `STREAK_COUNTER [22]` and `DEATHS [10]`** — one
+      **solo, non-Greed** win with a snapshot either side, which `live_probe` already takes.
+      Added 2026-09-13 by M4 1b, after measuring that no window on disk can answer it: the
+      2026-09-08 window the spec named does not contain its own run (the log unlocks two
+      achievements and not one slot of 642 turns on across it), the online Greed run of
+      2026-09-12 does not move counter 22 at all, and `20260912-solo-judas` is an `Open` run
+      where nothing moving is correct. Until then the archive claims no agreement, and
+      `crates/ipc/tests/runs_real.rs` fails the day a window finally holds a run.
 - [ ] **Section 8's index 2** — one solo run with a known ending, watching index 2.
       Twenty minutes. Index 19 is already the identity mapping for cutscene 19; index 2 is
       either cutscene 1 under an off-by-one or a count of launches, and one run separates
@@ -1337,7 +1367,49 @@ save against the dated backup the game wrote before it, and read which cells mov
 
 ## Session log
 
-### 2026-09-13 (last) — a run, from the game's own log
+### 2026-09-13 (last) — the archive fills itself
+
+`feature/log-watch`, cut from `develop`. M4 sub-project **1b**: `discovery` learns where the
+game writes, `log-watch` reads it, `store` keeps it in a fourth migration, `ipc` shows it, and a
+thread at launch backfills every session and then follows `log.txt`. Full entry with M4 in
+*Milestones*; report in `docs/superpowers/reports/2026-09-13-log-watch-report.md`.
+
+**Four of the five measurements contradicted a document, and the fifth was a bug a test found.**
+The 4 KiB prefix the spec identified a launch by is the machine describing itself — OpenGL, the
+driver, the game's own DLL path — and the only byte separating two launches inside it is
+`load archives: N milliseconds`, so identity rests on an **anchor** in the run content instead.
+The two logs of 2026-09-08 are one launch copied twice. `online_logs\` is **28 sessions** and
+three levels deep, not 22 in a flat folder. `discovery` could not name the folder at all.
+And `head(log, 4096)` on a file shorter than 4 KiB returns the whole file, so the prefix changed
+with every line the game wrote and **every read looked like a new source** — which would have
+imported the whole archive a second time, every time.
+
+**Run against the real folders, which found two more things.** 28 sessions, 0 errors, 95 runs —
+16 won, 23 died, 36 abandoned, 20 open — and a second backfill that imports nothing. The first
+pass took **212 seconds** because every event was its own commit; with the events and the offset
+they belong to written as one transaction it is **0.67 s**. Speed is the smaller half: events
+written while the offset stays behind are events the next read files a second time, which is the
+duplicate-runs failure by another road.
+
+**And `Died` had coverage all along, in files nobody had copied.** 1a asserted that no log in
+`samples/logs/` held a `Game Over` and wrote a test to fail the day one did. It failed here: the
+real folder has deaths in 16 of its 28 sessions. The gap was in the sampling, not in the game.
+A fifth sample closes it and the guard test is replaced by the real one.
+
+- [ ] **The agreement with the game's own counters could not be measured**, and that is the
+      result rather than a gap. The spec named 2026-09-08 as the one window that could answer it;
+      the window does not contain its own run — the log calls `unlock steam achievement` twice
+      and **no slot of 642 turns on** across it. One solo, non-Greed win with a snapshot either
+      side closes it, and `crates/ipc/tests/runs_real.rs` fails the day a window holds a run.
+- [ ] **Not seen in a real Tauri window.** The archive was verified against this machine's real
+      folders outside the app; the watcher firing while a game is actually being played has not
+      been watched, and neither has the `#verify` section drawing it.
+- [ ] **Neither screen**, on purpose: `Live` and `Runs` stay placeholders, which is the spec's
+      own boundary — a layout written now would get a vote on a contract nobody has used yet.
+- [ ] **Identity is still a heuristic**, said plainly rather than hidden: 64 bytes of run content
+      at the offset already read. Its failure mode is re-reading a log, never merging two.
+
+### 2026-09-13 — a run, from the game's own log
 
 `feature/run-model`, cut from `develop`. M4 sub-project 1 split in two when the plan was
 written and the size was visible: **1a**, the pure `run` crate, is this. 41 tests in `run`
@@ -1362,7 +1434,7 @@ it, and it is the discriminator the open question about co-op and `STREAK_COUNTE
 as a resumption, including one replayed deliberately after the run had ended. `Open` in that
 condition is load-bearing, and it is there because the test was written before the code.
 
-Next is **1b**: the watcher, the fourth migration, run identity, the backfill of the 22
+Next is **1b**: the watcher, the fourth migration, run identity, the backfill of the
 `online_logs\` sessions, and the agreement with the save's own counters.
 
 ### 2026-09-13 — the contract stops being written twice
