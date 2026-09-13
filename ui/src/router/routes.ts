@@ -6,7 +6,7 @@ import type { MessageSchema } from '@/i18n/messages/it'
 import AppearanceScreen from '@/screens/AppearanceScreen.vue'
 import CollectionScreen from '@/screens/CollectionScreen.vue'
 import CompletionScreen from '@/screens/CompletionScreen.vue'
-import NextStepsScreen from '@/screens/NextStepsScreen.vue'
+import GoalsScreen from '@/screens/GoalsScreen.vue'
 import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
 import PlanScreen from '@/screens/PlanScreen.vue'
 import ProfileScreen from '@/screens/ProfileScreen.vue'
@@ -34,7 +34,7 @@ declare module 'vue-router' {
 
 // The screens that exist. Every other route renders its placeholder until its sub-project.
 const screens: Partial<Record<RouteName, Component>> = {
-  [RouteName.NextSteps]: NextStepsScreen,
+  [RouteName.Goals]: GoalsScreen,
   [RouteName.Completion]: CompletionScreen,
   [RouteName.Unlock]: UnlockScreen,
   [RouteName.Plan]: PlanScreen,
@@ -46,7 +46,7 @@ const screens: Partial<Record<RouteName, Component>> = {
 }
 
 export const routes: RouteRecordRaw[] = [
-  { path: '/', redirect: { name: RouteName.NextSteps } },
+  { path: '/', redirect: { name: RouteName.Goals } },
   ...Object.values(RouteName).map((name): RouteRecordRaw => ({
     path: routePath[name],
     name,
