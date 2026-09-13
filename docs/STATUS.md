@@ -23,11 +23,11 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-13. **N1 closed** (`feature/cleanup-names`): the test-only public
-API has one notation and it is structural — one `pub mod for_tests` per crate, nothing
-test-only anywhere else in a public surface. **M4's design reorders the cleanup**, and the
-order is now written into that section: N1 → N2 → N7 → N6 → M4 sub-project 1 → N8 →
-N3, N4, N5.
+**Last update:** 2026-09-13. **N1 merged into `develop`** (`feature/cleanup-names`): the
+test-only public API has one notation and it is structural — one `pub mod for_tests` per
+crate, nothing test-only anywhere else in a public surface. **M4's design reorders the
+cleanup**, and the order is now written into that section: N1 → N2 → N7 → N6 →
+M4 sub-project 1 → N8 → N3, N4, N5.
 **Sub-project 3.5d merged into `develop`** (`4406c49`), suite green on the merge result: a
 blocked badge opens a menu whose entries are the wiki pages of what is in the way.
 **M4's first sub-project has its design** (`cac6914`): the run model, the `run` and
