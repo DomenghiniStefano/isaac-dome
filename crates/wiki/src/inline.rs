@@ -593,6 +593,23 @@ mod tests {
         )));
     }
 
+    /// `{{transformation contribution|Beelzebub}}` is a whole sentence on the page ("counts
+    /// toward Beelzebub"), but the only part of it we can resolve is the transformation —
+    /// which `{{tf|…}}` already resolves. 186 occurrences, every one of them an item's
+    /// Effects section saying which transformation it feeds.
+    #[test]
+    fn transformation_contribution_resolves_like_tf() {
+        let (v, d) = p("{{transformation contribution|Beelzebub}}");
+        assert!(v.iter().any(|i| matches!(
+            i,
+            Inline::Ref {
+                target: Target::Transformation { .. },
+                ..
+            }
+        )));
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
     /// `{{ip|Boss}}` names an item pool — "Boss" 81 times, then the rooms and the chests.
     /// The game keys its pools by name in `itempools.xml` and gives them no id, so they are
     /// concepts for the same reason machines are.
