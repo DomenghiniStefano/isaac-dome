@@ -84,6 +84,10 @@ const withPage = (requirement: RequirementView): RequirementView => {
     case 'counter':
     case 'unknown':
       return requirement
+    // A pack exported before the transformations has no threshold in it at all, so there is
+    // nothing to fill in: what arrives already carries its own page.
+    case 'threshold':
+      return requirement
     case 'character':
     case 'boss':
     case 'challenge':

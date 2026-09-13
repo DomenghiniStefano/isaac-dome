@@ -33,6 +33,17 @@ pub struct Diagnostics {
     /// `default` for the same reason as `orphan_closers`.
     #[serde(default)]
     pub unknown_dlc_codes: BTreeMap<String, u32>,
+    /// Transformation pages whose two statements of the item set do not agree: the
+    /// infobox's `items` and the body's own tables. Neither is dropped — the set is their
+    /// union — and this counts how often the wiki contradicts itself, which on the live
+    /// snapshot it does (Guppy's infobox omits the trinket its body lists).
+    ///
+    /// A counter and not an error: it is the wiki's inconsistency, not ours, and a
+    /// disagreement that never happened would mean the cross-check has gone silent.
+    ///
+    /// `default` for the same reason as `orphan_closers`.
+    #[serde(default)]
+    pub transformation_sources_disagree: u32,
 }
 
 impl Diagnostics {
@@ -75,5 +86,6 @@ impl Diagnostics {
         }
         self.pages_without_id += other.pages_without_id;
         self.orphan_closers += other.orphan_closers;
+        self.transformation_sources_disagree += other.transformation_sources_disagree;
     }
 }

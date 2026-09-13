@@ -1,0 +1,74 @@
+{{header transformations}}
+{{infobox transformation
+ | id          = 1
+ | description = Grants [[flight]]. Converts small enemy [[fly|flies]] into [[Blue Fly|Blue Flies]]. {{dlc|r}} Larger flies become [[friendly]] and follow Isaac between rooms.
+ | appearance  = a giant humanoid fly
+ | requirement = three items from this set
+ | items       = {{I|Jar of Flies}}, {{I|???'s Only Friend}}, {{I|Angry Fly}}, {{I|BBF}}, {{I|Best Bud}}, {{I|Big Fan}}, {{I|Distant Admiration}}, {{I|Forever Alone}}, {{I|Friend Zone}}, {{I|Halo of Flies}}, {{I|Hive Mind}}, {{I|Infestation}}, {{I|Jar of Flies}}, {{I|Lost Fly}}, {{I|The Mulligan}}, {{I|Obsessed Fan}}, {{I|Papa Fly}}, {{I|Parasitoid}}, {{I|Plum Flute}}, {{I|Skatole}}, {{I|Smart Fly}}, {{I|Bot Fly}}, {{I|Psy Fly}}, {{I|The Swarm}}, {{I|Fruity Plum}}, {{I|YO LISTEN!}}
+}}
+
+'''Beelzebub''' is a [[transformation]], turning Isaac into a giant humanoid fly after picking up 3 fly-related items.
+
+== Effects ==
+* Grants [[flight]].
+* The following flies transform into [[Blue Fly|Blue Flies]]: {{column list | width = 15em | content =
+** {{e|Fly}}
+** {{e|Attack Fly}}
+** {{e|Level 2 Fly}}
+** {{e|Ring Fly}}
+** {{e|Full Fly}}
+** {{e|Dart Fly}}
+** {{e|Swarm}}
+** {{e|Army Fly}}
+}}
+* {{dlc+|r}} The following flies become friendly and are brought with Isaac to other rooms and floors: {{column list | width = 15em | content =
+** {{e|Pooter}}
+** {{e|Super Pooter}}
+** {{e|Tainted Pooter}}
+** {{e|Boom Fly}}
+** {{e|Red Boom Fly}}
+** {{e|Drowned Boom Fly}}
+** {{e|Dragon Fly}}
+** {{e|Dragon Fly X}}
+** {{e|Bone Fly}}
+** {{e|Sick Boom Fly}}
+** {{e|Tainted Boom Fly}}
+** {{e|Sucker}}
+** {{e|Spit}}
+** {{e|Soul Sucker}}
+** {{e|Ink}}
+** {{e|Mama Fly}}
+** {{e|Bulb}}
+** {{e|Bloodfly}}
+** {{e|Tainted Sucker}}
+** {{e|Moter}}
+** {{e|Fly Bomb}}
+** {{e|Eternal Fly Bomb}}
+}}{{dlc-}}
+
+== Requirements ==
+Pick up 3 [[item]]s from the following list ({{dlc|r}} with the [[Item Tags fly|{{code|fly}} tag]]).
+
+=== Active Collectibles ===
+{{collectible table | Jar of Flies, Plum Flute }}
+
+=== Passive Collectibles ===
+{{Collectible table/header}}
+{{collectible rows | ???'s Only Friend, Angry Fly, BBF, Best Bud, Big Fan, Distant Admiration, Forever alone, Friend Zone, Halo of Flies, Hive Mind, Lost Fly, The Mulligan, Obsessed Fan, Papa Fly, Skatole, Smart Fly }}
+{{collectible rows | dlc = r | Bot Fly, Fruity Plum, Parasitoid, Psy Fly, The Swarm, YO LISTEN! }}
+{{collectible rows | dlc = r+ | Infestation }}
+|}
+
+== Notes ==
+* Isaac starts with this transformation in the [[Solar System]] challenge.
+* Since [[Champions|violet and rainbow champions]] still pull Isaac towards them even when turned friendly, caution should be taken to avoid unnecessary damage.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Lord of the Flies, Angry Fly }}
+
+== Trivia ==
+* [[wikipedia:Beelzebub|Beelzebub]], also known by "Lord of the Flies" and many other names, is known as one of the 7 princes of hell. Beelzebub is also another name for the devil.
+* In modern Catholic tradition, Beelzebub is regarded as one of the 7 princes of Hell; however, the origins of the name Beelzebub actually dates back to an early Jewish insult for worshippers of a Canaanite Deity Ba'al 'Lord', or Ba'al-Zvul 'Lord of the manor/dwelling', calling him Ba'al-Zvuv, 'Lord of the flies'.
+** The achievement 'Lord of the Flies' is a reference to this.
+
+{{nav|beelzebub|fr=Belzébuth}}

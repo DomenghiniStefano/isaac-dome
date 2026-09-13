@@ -390,7 +390,9 @@ fn a_blocked_node_links_to_the_pages_the_dataset_has() {
         ipc::RequirementView::Character { page, .. }
         | ipc::RequirementView::Boss { page, .. }
         | ipc::RequirementView::Challenge { page, .. }
-        | ipc::RequirementView::Item { page, .. } => page.clone(),
+        | ipc::RequirementView::Item { page, .. }
+        // A transformation does have a page, and since 2026-09-13 the dataset has it.
+        | ipc::RequirementView::Threshold { page, .. } => page.clone(),
         // A gate, a mark, a counter and an uninterpreted label are conditions, not entities:
         // there is no page to carry (plan amendment, 2026-09-12).
         ipc::RequirementView::Gate { .. }
@@ -550,6 +552,7 @@ fn a_young_profile_has_a_closeness_section_and_it_is_ordered_by_distance() {
                     | ipc::RequirementView::Item { .. }
                     | ipc::RequirementView::Gate { .. }
                     | ipc::RequirementView::Mark { .. }
+                    | ipc::RequirementView::Threshold { .. }
                     | ipc::RequirementView::Unknown { .. } => 0,
                 })
                 .sum()

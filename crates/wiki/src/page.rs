@@ -25,16 +25,18 @@ pub enum PageKind {
     Boss,
     Challenge,
     Character,
+    Transformation,
 }
 
 impl PageKind {
-    pub const ALL: [PageKind; 6] = [
+    pub const ALL: [PageKind; 7] = [
         PageKind::Collectible,
         PageKind::Trinket,
         PageKind::Achievement,
         PageKind::Boss,
         PageKind::Challenge,
         PageKind::Character,
+        PageKind::Transformation,
     ];
 
     /// The subfolder of `raw/pages/`.
@@ -46,6 +48,7 @@ impl PageKind {
             PageKind::Boss => "boss",
             PageKind::Challenge => "challenge",
             PageKind::Character => "character",
+            PageKind::Transformation => "transformation",
         }
     }
 
@@ -58,6 +61,7 @@ impl PageKind {
             PageKind::Boss => "Template:Infobox boss",
             PageKind::Challenge => "Template:Infobox challenge",
             PageKind::Character => "Template:Infobox character",
+            PageKind::Transformation => "Template:Infobox transformation",
         }
     }
 }
@@ -71,6 +75,7 @@ pub enum EntryKey {
     Boss(u32, u32, u32),
     Challenge(u32),
     Character(u32),
+    Transformation(u32),
 }
 
 /// A numeric infobox parameter: the leading digits, because the wiki can follow the
@@ -102,6 +107,13 @@ fn entry_key(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) -> O
             Some((id, variant, subtype)) => EntryKey::Boss(id, variant, subtype),
             None => EntryKey::Boss(number(ib, "id")?, 0, 0),
         },
+        // The Cargo table first, because it is the only source with an id for every page:
+        // Super Bum's infobox says `id = n/a` and the table maps that onto 1000. By the
+        // infobox alone that page would be dropped as having no id.
+        InfoboxKind::Transformation => EntryKey::Transformation(
+            r.transformation_of_page(title)
+                .or_else(|| number(ib, "id"))?,
+        ),
     })
 }
 
@@ -154,7 +166,8 @@ fn entry_title(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) ->
         | InfoboxKind::Activated
         | InfoboxKind::Trinket
         | InfoboxKind::Boss
-        | InfoboxKind::Challenge => title.to_string(),
+        | InfoboxKind::Challenge
+        | InfoboxKind::Transformation => title.to_string(),
     }
 }
 
@@ -186,7 +199,8 @@ pub fn parse_page(
             | InfoboxKind::Trinket
             | InfoboxKind::Boss
             | InfoboxKind::Challenge
-            | InfoboxKind::Character => page_sections
+            | InfoboxKind::Character
+            | InfoboxKind::Transformation => page_sections
                 .get_or_insert_with(|| sections(text, r, d))
                 .clone(),
         };
@@ -199,7 +213,7 @@ pub fn parse_page(
                 description: facts.description,
                 dlc: facts.dlc,
                 unlocked_by: facts.unlocked_by,
-                infobox: infobox_from(kind, &ib, r, d),
+                infobox: infobox_from(kind, &ib, text, r, d),
                 sections,
             },
         ));
@@ -212,6 +226,20 @@ mod tests {
     use super::*;
     use crate::resolver::fixtures::test_resolver;
     use crate::{Block, Diagnostics, SectionKind};
+
+    /// Measured on 2026-09-13: `Template:Infobox transformation` exists and is transcluded by
+    /// exactly the sixteen pages the Cargo table has rows for. The kind is declared like the
+    /// other six so that `fetch`, which walks `PageKind::ALL`, picks the pages up without a
+    /// special case — until it exists, no transformation page is downloaded at all.
+    #[test]
+    fn the_transformation_kind_names_its_template_and_its_folder() {
+        assert_eq!(PageKind::Transformation.dir(), "transformation");
+        assert_eq!(
+            PageKind::Transformation.template(),
+            "Template:Infobox transformation"
+        );
+        assert!(PageKind::ALL.contains(&PageKind::Transformation));
+    }
 
     #[test]
     fn the_three_common_facts_land_on_the_entry_not_the_infobox() {

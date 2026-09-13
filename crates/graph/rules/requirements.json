@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generatedFrom": {
-    "snapshotAt": "2026-09-04T17:33:31Z",
-    "maxRevid": 269057
+    "snapshotAt": "2026-09-13T14:01:45Z",
+    "maxRevid": 269297
   },
   "achievements": {
     "1": {
@@ -12855,5 +12855,862 @@
       "uses": 2,
       "verdictRequired": true
     }
-  ]
+  ],
+  "transformations": {
+    "0": {
+      "label": "Guppy",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 145
+        },
+        {
+          "kind": "item",
+          "id": 133
+        },
+        {
+          "kind": "item",
+          "id": 81
+        },
+        {
+          "kind": "item",
+          "id": 212
+        },
+        {
+          "kind": "item",
+          "id": 134
+        },
+        {
+          "kind": "item",
+          "id": 187
+        },
+        {
+          "kind": "item",
+          "id": 665
+        },
+        {
+          "kind": "trinket",
+          "id": 169
+        }
+      ]
+    },
+    "1": {
+      "label": "Beelzebub",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 434
+        },
+        {
+          "kind": "item",
+          "id": 650
+        },
+        {
+          "kind": "item",
+          "id": 320
+        },
+        {
+          "kind": "item",
+          "id": 511
+        },
+        {
+          "kind": "item",
+          "id": 272
+        },
+        {
+          "kind": "item",
+          "id": 274
+        },
+        {
+          "kind": "item",
+          "id": 279
+        },
+        {
+          "kind": "item",
+          "id": 57
+        },
+        {
+          "kind": "item",
+          "id": 128
+        },
+        {
+          "kind": "item",
+          "id": 364
+        },
+        {
+          "kind": "item",
+          "id": 10
+        },
+        {
+          "kind": "item",
+          "id": 248
+        },
+        {
+          "kind": "item",
+          "id": 365
+        },
+        {
+          "kind": "item",
+          "id": 151
+        },
+        {
+          "kind": "item",
+          "id": 426
+        },
+        {
+          "kind": "item",
+          "id": 430
+        },
+        {
+          "kind": "item",
+          "id": 9
+        },
+        {
+          "kind": "item",
+          "id": 264
+        },
+        {
+          "kind": "item",
+          "id": 629
+        },
+        {
+          "kind": "item",
+          "id": 649
+        },
+        {
+          "kind": "item",
+          "id": 461
+        },
+        {
+          "kind": "item",
+          "id": 581
+        },
+        {
+          "kind": "item",
+          "id": 693
+        },
+        {
+          "kind": "item",
+          "id": 492
+        },
+        {
+          "kind": "item",
+          "id": 148
+        }
+      ]
+    },
+    "2": {
+      "label": "Fun Guy",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 625
+        },
+        {
+          "kind": "item",
+          "id": 582
+        },
+        {
+          "kind": "item",
+          "id": 11
+        },
+        {
+          "kind": "item",
+          "id": 342
+        },
+        {
+          "kind": "item",
+          "id": 398
+        },
+        {
+          "kind": "item",
+          "id": 12
+        },
+        {
+          "kind": "item",
+          "id": 71
+        },
+        {
+          "kind": "item",
+          "id": 553
+        },
+        {
+          "kind": "item",
+          "id": 121
+        },
+        {
+          "kind": "item",
+          "id": 120
+        }
+      ]
+    },
+    "3": {
+      "label": "Seraphim (Transformation)",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 33
+        },
+        {
+          "kind": "item",
+          "id": 185
+        },
+        {
+          "kind": "item",
+          "id": 101
+        },
+        {
+          "kind": "item",
+          "id": 184
+        },
+        {
+          "kind": "item",
+          "id": 313
+        },
+        {
+          "kind": "item",
+          "id": 173
+        },
+        {
+          "kind": "item",
+          "id": 72
+        },
+        {
+          "kind": "item",
+          "id": 112
+        },
+        {
+          "kind": "item",
+          "id": 363
+        },
+        {
+          "kind": "item",
+          "id": 162
+        },
+        {
+          "kind": "item",
+          "id": 568
+        },
+        {
+          "kind": "item",
+          "id": 331
+        },
+        {
+          "kind": "item",
+          "id": 374
+        },
+        {
+          "kind": "item",
+          "id": 573
+        },
+        {
+          "kind": "item",
+          "id": 643
+        },
+        {
+          "kind": "item",
+          "id": 182
+        },
+        {
+          "kind": "item",
+          "id": 696
+        },
+        {
+          "kind": "item",
+          "id": 691
+        },
+        {
+          "kind": "item",
+          "id": 142
+        },
+        {
+          "kind": "item",
+          "id": 390
+        }
+      ]
+    },
+    "4": {
+      "label": "Bob",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 42
+        },
+        {
+          "kind": "item",
+          "id": 273
+        },
+        {
+          "kind": "item",
+          "id": 140
+        },
+        {
+          "kind": "item",
+          "id": 149
+        },
+        {
+          "kind": "trinket",
+          "id": 71
+        }
+      ]
+    },
+    "5": {
+      "label": "Spun",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 493
+        },
+        {
+          "kind": "item",
+          "id": 496
+        },
+        {
+          "kind": "item",
+          "id": 240
+        },
+        {
+          "kind": "item",
+          "id": 70
+        },
+        {
+          "kind": "item",
+          "id": 14
+        },
+        {
+          "kind": "item",
+          "id": 143
+        },
+        {
+          "kind": "item",
+          "id": 345
+        },
+        {
+          "kind": "item",
+          "id": 13
+        }
+      ]
+    },
+    "6": {
+      "label": "Yes Mother?",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 102
+        },
+        {
+          "kind": "item",
+          "id": 39
+        },
+        {
+          "kind": "item",
+          "id": 41
+        },
+        {
+          "kind": "item",
+          "id": 552
+        },
+        {
+          "kind": "item",
+          "id": 439
+        },
+        {
+          "kind": "item",
+          "id": 604
+        },
+        {
+          "kind": "item",
+          "id": 195
+        },
+        {
+          "kind": "item",
+          "id": 110
+        },
+        {
+          "kind": "item",
+          "id": 55
+        },
+        {
+          "kind": "item",
+          "id": 200
+        },
+        {
+          "kind": "item",
+          "id": 30
+        },
+        {
+          "kind": "item",
+          "id": 199
+        },
+        {
+          "kind": "item",
+          "id": 114
+        },
+        {
+          "kind": "item",
+          "id": 31
+        },
+        {
+          "kind": "item",
+          "id": 355
+        },
+        {
+          "kind": "item",
+          "id": 228
+        },
+        {
+          "kind": "item",
+          "id": 139
+        },
+        {
+          "kind": "item",
+          "id": 508
+        },
+        {
+          "kind": "item",
+          "id": 732
+        },
+        {
+          "kind": "item",
+          "id": 29
+        },
+        {
+          "kind": "item",
+          "id": 217
+        }
+      ]
+    },
+    "7": {
+      "label": "Conjoined",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 8
+        },
+        {
+          "kind": "item",
+          "id": 167
+        },
+        {
+          "kind": "item",
+          "id": 269
+        },
+        {
+          "kind": "item",
+          "id": 100
+        },
+        {
+          "kind": "item",
+          "id": 322
+        },
+        {
+          "kind": "item",
+          "id": 268
+        },
+        {
+          "kind": "item",
+          "id": 67
+        },
+        {
+          "kind": "item",
+          "id": 188
+        },
+        {
+          "kind": "item",
+          "id": 491
+        },
+        {
+          "kind": "item",
+          "id": 607
+        },
+        {
+          "kind": "item",
+          "id": 518
+        },
+        {
+          "kind": "item",
+          "id": 652
+        },
+        {
+          "kind": "item",
+          "id": 113
+        },
+        {
+          "kind": "item",
+          "id": 265
+        },
+        {
+          "kind": "item",
+          "id": 404
+        },
+        {
+          "kind": "item",
+          "id": 608
+        },
+        {
+          "kind": "item",
+          "id": 163
+        },
+        {
+          "kind": "item",
+          "id": 112
+        },
+        {
+          "kind": "item",
+          "id": 360
+        },
+        {
+          "kind": "item",
+          "id": 472
+        },
+        {
+          "kind": "item",
+          "id": 679
+        },
+        {
+          "kind": "item",
+          "id": 275
+        },
+        {
+          "kind": "item",
+          "id": 435
+        },
+        {
+          "kind": "item",
+          "id": 431
+        },
+        {
+          "kind": "item",
+          "id": 661
+        },
+        {
+          "kind": "item",
+          "id": 174
+        },
+        {
+          "kind": "item",
+          "id": 95
+        },
+        {
+          "kind": "item",
+          "id": 267
+        },
+        {
+          "kind": "item",
+          "id": 390
+        },
+        {
+          "kind": "item",
+          "id": 363
+        },
+        {
+          "kind": "item",
+          "id": 698
+        },
+        {
+          "kind": "item",
+          "id": 519
+        }
+      ]
+    },
+    "8": {
+      "label": "Leviathan",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 83
+        },
+        {
+          "kind": "item",
+          "id": 556
+        },
+        {
+          "kind": "item",
+          "id": 230
+        },
+        {
+          "kind": "item",
+          "id": 118
+        },
+        {
+          "kind": "item",
+          "id": 79
+        },
+        {
+          "kind": "item",
+          "id": 80
+        },
+        {
+          "kind": "item",
+          "id": 51
+        },
+        {
+          "kind": "item",
+          "id": 159
+        },
+        {
+          "kind": "item",
+          "id": 399
+        },
+        {
+          "kind": "item",
+          "id": 572
+        },
+        {
+          "kind": "item",
+          "id": 82
+        }
+      ]
+    },
+    "9": {
+      "label": "Oh Crap",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 291
+        },
+        {
+          "kind": "item",
+          "id": 36
+        },
+        {
+          "kind": "item",
+          "id": 504
+        },
+        {
+          "kind": "item",
+          "id": 236
+        },
+        {
+          "kind": "item",
+          "id": 209
+        },
+        {
+          "kind": "item",
+          "id": 576
+        },
+        {
+          "kind": "item",
+          "id": 543
+        },
+        {
+          "kind": "item",
+          "id": 680
+        },
+        {
+          "kind": "item",
+          "id": 378
+        },
+        {
+          "kind": "item",
+          "id": 9
+        },
+        {
+          "kind": "item",
+          "id": 725
+        }
+      ]
+    },
+    "10": {
+      "label": "Bookworm",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 65
+        },
+        {
+          "kind": "item",
+          "id": 33
+        },
+        {
+          "kind": "item",
+          "id": 34
+        },
+        {
+          "kind": "item",
+          "id": 78
+        },
+        {
+          "kind": "item",
+          "id": 287
+        },
+        {
+          "kind": "item",
+          "id": 58
+        },
+        {
+          "kind": "item",
+          "id": 97
+        },
+        {
+          "kind": "item",
+          "id": 545
+        },
+        {
+          "kind": "item",
+          "id": 282
+        },
+        {
+          "kind": "item",
+          "id": 35
+        },
+        {
+          "kind": "item",
+          "id": 123
+        },
+        {
+          "kind": "item",
+          "id": 292
+        },
+        {
+          "kind": "item",
+          "id": 192
+        },
+        {
+          "kind": "item",
+          "id": 712
+        },
+        {
+          "kind": "item",
+          "id": 584
+        }
+      ]
+    },
+    "11": {
+      "label": "Adult",
+      "atLeast": null,
+      "items": []
+    },
+    "12": {
+      "label": "Spider Baby (Transformation)",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 288
+        },
+        {
+          "kind": "item",
+          "id": 171
+        },
+        {
+          "kind": "item",
+          "id": 153
+        },
+        {
+          "kind": "item",
+          "id": 89
+        },
+        {
+          "kind": "item",
+          "id": 403
+        },
+        {
+          "kind": "item",
+          "id": 211
+        },
+        {
+          "kind": "item",
+          "id": 377
+        },
+        {
+          "kind": "item",
+          "id": 170
+        },
+        {
+          "kind": "item",
+          "id": 248
+        },
+        {
+          "kind": "item",
+          "id": 234
+        },
+        {
+          "kind": "item",
+          "id": 575
+        },
+        {
+          "kind": "item",
+          "id": 266
+        },
+        {
+          "kind": "item",
+          "id": 717
+        },
+        {
+          "kind": "item",
+          "id": 461
+        },
+        {
+          "kind": "item",
+          "id": 280
+        },
+        {
+          "kind": "item",
+          "id": 367
+        }
+      ]
+    },
+    "13": {
+      "label": "Stompy",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 302
+        },
+        {
+          "kind": "item",
+          "id": 12
+        }
+      ]
+    },
+    "15": {
+      "label": "Necromancer",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 35
+        },
+        {
+          "kind": "item",
+          "id": 262
+        },
+        {
+          "kind": "trinket",
+          "id": 48
+        }
+      ]
+    },
+    "1000": {
+      "label": "Super Bum",
+      "atLeast": 3,
+      "items": [
+        {
+          "kind": "item",
+          "id": 144
+        },
+        {
+          "kind": "item",
+          "id": 278
+        },
+        {
+          "kind": "item",
+          "id": 388
+        }
+      ]
+    }
+  }
 }

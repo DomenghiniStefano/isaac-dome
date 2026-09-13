@@ -96,6 +96,7 @@ fn the_graph_has_the_shape_this_era_measured() {
                 graph::model::Requirement::Gate { .. } => "gate",
                 graph::model::Requirement::Mark { .. } => "mark",
                 graph::model::Requirement::Counter { .. } => "counter",
+                graph::model::Requirement::Threshold { .. } => "threshold",
                 graph::model::Requirement::Unknown { .. } => "unknown",
                 graph::model::Requirement::None => "none",
             };
@@ -178,6 +179,7 @@ fn every_resolvable_requirement_produced_its_edge() {
                 | graph::model::Requirement::Gate { .. }
                 | graph::model::Requirement::Mark { .. }
                 | graph::model::Requirement::Counter { .. }
+                | graph::model::Requirement::Threshold { .. }
                 | graph::model::Requirement::Unknown { .. }
                 | graph::model::Requirement::None => continue,
             };
@@ -195,4 +197,42 @@ fn every_resolvable_requirement_produced_its_edge() {
             );
         }
     }
+}
+
+/// The four nodes B34 left unanswerable: 65 and 161 behind Guppy, 178 and 352 behind
+/// Beelzebub. Until 2026-09-13 each carried a hand-written `Verdict::Unknown` reading "three
+/// items, and the model can't say N of these".
+///
+/// What is asserted is not that they are available — that depends on the profile — but that
+/// the transformation is no longer an *uninterpreted* requirement on them. The vacuity guard
+/// is the second assertion: at least one of the four has to carry a real threshold, or a
+/// generator that emitted nothing would pass the first one trivially.
+#[test]
+fn the_four_transformation_nodes_are_answered_and_not_uninterpreted() {
+    let Some((_c, g)) = support::real_graph() else {
+        return;
+    };
+    let mut thresholds = 0;
+    for id in [65u32, 161, 178, 352] {
+        let Some(n) = g.nodes().iter().find(|n| n.achievement == id) else {
+            panic!("node {id} is not in the graph")
+        };
+        for r in &n.requirements {
+            if let graph::model::Requirement::Unknown { label } = r {
+                assert!(
+                    !label.eq_ignore_ascii_case("guppy")
+                        && !label.eq_ignore_ascii_case("beelzebub"),
+                    "node {id} still carries an uninterpreted transformation: {label}"
+                );
+            }
+            if matches!(r, graph::model::Requirement::Threshold { .. }) {
+                thresholds += 1;
+            }
+        }
+    }
+    assert_eq!(
+        thresholds, 4,
+        "each of the four names exactly one transformation, and each has to have become a \
+         threshold: {thresholds} did"
+    );
 }

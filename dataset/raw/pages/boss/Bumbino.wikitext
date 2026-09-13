@@ -39,6 +39,11 @@ Additionally, Bumbino attempts to pick up any dropped [[Coins]], similar to {{e|
 == Notes ==
 * Bumbino cannot spawn copies of items that Isaac has already encountered/collected. Once Bumbino's item pool is exhausted, he will only drop {{i|The Poop}}.
 
+== Gallery ==
+<gallery>
+File:Repentance Boss Designs 2.jpg|Concept art of Bumbino by Edmund McMillen.
+</gallery>
+
 == Trivia ==
 * Bumbino is based on {{I|Bumbo}}, an item in-game and the main character in ''[[Wikipedia:The Legend of Bum-bo|The Legend of Bum-bo]]'', another game developed by Edmund McMillen in 2019.
 * All items dropped by Bumbino reference the [[thelegendofbumbo:Puzzle Board|gameplay symbols]] from ''The Legend of Bum-bo'': Pee, Poop, Hearts, Bones, Snot, and Teeth.

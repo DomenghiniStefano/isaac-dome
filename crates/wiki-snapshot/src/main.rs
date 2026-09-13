@@ -279,8 +279,14 @@ fn print_meta(ds: &Dataset) {
     let m = &ds.meta;
     let c = &m.counts;
     println!(
-        "entries: {} items, {} trinkets, {} achievements, {} bosses, {} challenges, {} characters",
-        c.items, c.trinkets, c.achievements, c.bosses, c.challenges, c.characters
+        "entries: {} items, {} trinkets, {} achievements, {} bosses, {} challenges, {} characters, {} transformations",
+        c.items,
+        c.trinkets,
+        c.achievements,
+        c.bosses,
+        c.challenges,
+        c.characters,
+        c.transformations
     );
     println!("snapshotAt: {} (max revid {})", m.snapshot_at, m.max_revid);
     match &m.last_known_patch {
@@ -288,6 +294,10 @@ fn print_meta(ds: &Dataset) {
         None => println!("last known patch: none"),
     }
     println!("pages without id: {}", m.diagnostics.pages_without_id);
+    println!(
+        "transformations whose two item lists disagree: {}",
+        m.diagnostics.transformation_sources_disagree
+    );
     print_diagnostic("unresolved references", &m.diagnostics.unresolved);
     print_diagnostic("unknown templates", &m.diagnostics.unknown_templates);
     print_diagnostic("discarded sections", &m.diagnostics.discarded_sections);

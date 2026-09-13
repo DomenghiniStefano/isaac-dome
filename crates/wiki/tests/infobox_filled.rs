@@ -24,6 +24,14 @@ fn says_nothing(e: &Entry) -> bool {
         } => base_hp.is_none() && environment.is_empty(),
         Infobox::Challenge { goal, .. } => goal.is_empty(),
         Infobox::Character { health, .. } => health.is_empty(),
+        // A transformation says nothing when it names neither a count nor a single item.
+        // Adult is exactly that and it is not a defect: its page states its condition in
+        // prose about pills, which this model does not carry.
+        Infobox::Transformation {
+            requires,
+            contributors,
+            ..
+        } => requires.is_none() && contributors.is_empty(),
     }
 }
 

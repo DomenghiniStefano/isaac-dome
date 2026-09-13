@@ -20,7 +20,7 @@
 * {{dlc+|r+}} This item has a 1% chance to drop when defeating {{e|Dangle}}.{{dlc-}}
 
 == Synergies ==
-* Montezuma's Revenge, {{I|Number Two}}, {{I|Maw Of The Void}} and {{I|Revelation}} all have the same charge time, allowing Isaac to easily utilize them at same time.
+* Montezuma's Revenge, {{I|No. 2}}, {{I|Maw Of The Void}} and {{I|Revelation}} all have the same charge time, allowing Isaac to easily utilize them at same time.
 * {{T|Brain Worm}}: Can cause the poop beam to hook to a target anywhere in the room, potentially hitting a target far outside of its usual range.
 * {{I|Dark Arts}}: The corn Isaac poops out can be sliced, giving Isaac an insane damage up in seconds.
 * {{i|Hemoptysis}}: Enemies hit by the sneeze will gain a curse that increases the damage the poop beam deals to 2x and +3 flat damage. Enemies who die to the poop beam under the curse will damage and spread the curse to nearby enemies.

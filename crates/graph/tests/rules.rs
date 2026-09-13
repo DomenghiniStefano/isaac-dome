@@ -7,7 +7,7 @@ use graph::rules::{
 };
 
 const REQS: &str = r#"{
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generatedFrom": { "snapshotAt": "2026-09-04T17:33:31Z", "maxRevid": 269057 },
   "achievements": {
     "1": { "refs": [{ "target": { "kind": "entity", "id": 5, "variant": 10, "subtype": 1 },
@@ -18,7 +18,7 @@ const REQS: &str = r#"{
 }"#;
 
 const CORR: &str = r#"{
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "aliases": { "Jacob and Esau": "Jacob & Esau" },
   "verdicts": { "entity:Red Heart": { "notAPrerequisite": true } }
 }"#;
@@ -46,9 +46,18 @@ fn reads_the_two_files_and_joins_them() {
     );
 }
 
+/// Written against the constant, not against the literal it happens to hold: pinning
+/// `"schemaVersion": 1` made this test go silently no-op the day the schema moved — the
+/// replace found nothing, the fixture stayed current, and `Rules::build` succeeded while the
+/// assertion below claimed to have seen it refuse.
 #[test]
 fn a_file_from_another_schema_is_refused_whole() {
-    let bumped = REQS.replace("\"schemaVersion\": 1", "\"schemaVersion\": 2");
+    let current = format!("\"schemaVersion\": {SCHEMA_VERSION}");
+    assert!(
+        REQS.contains(&current),
+        "the fixture is not on the current schema: {current}"
+    );
+    let bumped = REQS.replace(&current, "\"schemaVersion\": 99");
     let r: Requirements = serde_json::from_str(&bumped).expect("parses");
     let c: Corrections = serde_json::from_str(CORR).expect("parses");
     let err = Rules::build(r, c).expect_err("a newer schema must not be read half-broken");
@@ -83,7 +92,7 @@ fn refs_are_read_for_the_achievement_that_owns_them() {
 // --- the profile-answered verdict (spec 2026-09-12, §4.2) -----------------------------
 
 const CORR_PROGRESS: &str = r#"{
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "verdicts": {
     "entity:Hush": { "progress": {
       "mark": { "column": "hush", "level": "base" },
@@ -137,7 +146,7 @@ fn the_base_level_sorts_below_the_second() {
 #[test]
 fn a_progress_verdict_with_neither_half_is_malformed() {
     let empty = r#"{
-      "schemaVersion": 1,
+      "schemaVersion": 2,
       "verdicts": { "entity:Nothing": { "progress": {} } }
     }"#;
     let r: Requirements = serde_json::from_str(REQS).expect("parses");
