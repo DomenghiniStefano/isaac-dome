@@ -183,8 +183,8 @@ impl Graph {
         Graph { nodes, diagnostics }
     }
 
-    /// A graph straight from edges, for tests on the walk that don't need a catalog.
-    pub fn from_edges_for_tests(edges: &[(u32, &[u32])], unknown: &[(u32, &[&str])]) -> Graph {
+    /// Reachable only through `crate::for_tests`, which is where the reason lives.
+    pub(crate) fn from_edges(edges: &[(u32, &[u32])], unknown: &[(u32, &[&str])]) -> Graph {
         let nodes = edges
             .iter()
             .map(|(id, prerequisites)| Node {
@@ -204,10 +204,8 @@ impl Graph {
         }
     }
 
-    /// A graph whose nodes carry requirements directly, for tests about evaluation rather
-    /// than about building. Prerequisites stay empty: these nodes are held by the profile,
-    /// not by other achievements.
-    pub fn from_requirements_for_tests(rows: &[(u32, Vec<Requirement>)]) -> Graph {
+    /// Reachable only through `crate::for_tests`, which is where the reason lives.
+    pub(crate) fn from_requirements(rows: &[(u32, Vec<Requirement>)]) -> Graph {
         Graph {
             nodes: rows
                 .iter()

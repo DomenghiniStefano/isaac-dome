@@ -152,7 +152,7 @@ fn completion(
 }
 
 /// How many icons to extract for the verification screen: a sample, not the whole catalog.
-const ICONE_DI_ESEMPIO: usize = 60;
+const SAMPLE_ICONS: usize = 60;
 
 /// What we managed to extract from the game's archives. The catalog (names, sprites)
 /// is the real one, built once and kept in `CatalogState`.
@@ -177,7 +177,7 @@ fn extraction_report(
     // The icons are extracted here, where I/O is allowed, and go out already resolved.
     let sprites = catalog
         .map(|c| {
-            ipc::item_views(c, |p| resources.read(p), ICONE_DI_ESEMPIO)
+            ipc::item_views(c, |p| resources.read(p), SAMPLE_ICONS)
                 .into_iter()
                 .filter_map(|i| i.data_url.map(|u| (i.id, i.name, u)))
                 .collect()
@@ -901,8 +901,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// A recognizable input: if the outgoing `reason` contains it, the boundary leaks.
-    const SEGRETO: &str = r"C:\segreto\isaacdome.db";
+    /// A recognizable input: if the outgoing `reason` contains it, the boundary leaks. The
+    /// tests assert on the whole path **and** on the word inside it, because a `reason` that
+    /// re-rendered or escaped the path would slip past the first check on its own.
+    const SECRET_PATH: &str = r"C:\secret\isaacdome.db";
 
     fn reason_of(e: IpcError) -> String {
         match e {
@@ -914,10 +916,10 @@ mod tests {
     #[test]
     fn unreadable_does_not_leak_the_sqlite_message() {
         let reason = reason_of(store_error(StoreError::Unreadable {
-            reason: SEGRETO.to_string(),
+            reason: SECRET_PATH.to_string(),
         }));
-        assert!(!reason.contains(SEGRETO), "{reason}");
-        assert!(!reason.contains("segreto"), "{reason}");
+        assert!(!reason.contains(SECRET_PATH), "{reason}");
+        assert!(!reason.contains("secret"), "{reason}");
         assert!(!reason.is_empty());
     }
 
@@ -971,9 +973,9 @@ mod tests {
     #[test]
     fn a_failed_query_does_not_leak_the_sqlite_message() {
         let (_, _, unavailable) = plan_parts(Err(StoreError::Unreadable {
-            reason: SEGRETO.to_string(),
+            reason: SECRET_PATH.to_string(),
         }));
         let reason = unavailable.expect("the reason reaches the view");
-        assert!(!reason.contains("segreto"), "{reason}");
+        assert!(!reason.contains("secret"), "{reason}");
     }
 }

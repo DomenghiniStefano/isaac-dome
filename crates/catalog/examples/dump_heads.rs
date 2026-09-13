@@ -11,7 +11,7 @@ fn main() {
         return;
     };
     let mut d = Vec::new();
-    let frames = catalog::__heads_parse(&anm2, &mut d);
+    let frames = catalog::for_tests::parse_heads(&anm2, &mut d);
     println!("{} frames in the Main layer", frames.len());
     let out = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../samples/sprites/heads");
     println!(

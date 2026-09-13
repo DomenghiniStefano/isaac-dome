@@ -2,6 +2,7 @@
 //! schema. Writes exclusively to its own file; it doesn't even know the game's saves
 //! exist. The frontend never touches disk itself: it goes through here via `ipc`.
 
+pub mod for_tests;
 mod migrations;
 
 use std::path::Path;
@@ -157,13 +158,6 @@ impl Store {
     /// there is no half-applied reorder to recover from.
     pub fn set_queue(&self, q: &plan::Queue) -> Result<(), StoreError> {
         self.write_queue_json(&q.to_json())
-    }
-
-    /// Writes a document straight in, for the test that an unreadable queue is declared
-    /// rather than flattened to an empty one. There is no other way to reach that state
-    /// through the public API, which is the point of the API.
-    pub fn __corrupt_queue_for_tests(&self, raw: &str) -> Result<(), StoreError> {
-        self.write_queue_json(raw)
     }
 
     fn write_queue_json(&self, raw: &str) -> Result<(), StoreError> {
