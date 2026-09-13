@@ -79,6 +79,10 @@ onMounted(async () => {
     [AppEvent.ProfileChanged]: () => void profile.load(),
     [AppEvent.SettingsChanged]: () => void settings.load(),
     [AppEvent.PlanChanged]: () => void queue.load(),
+    // The run archive has no screen yet (M4 keeps `Live` and `Runs` placeholders on purpose):
+    // the only thing that draws it is the development-only verification page, which listens
+    // for itself. The entry stays so that every event is accounted for here.
+    [AppEvent.RunsChanged]: () => undefined,
   })
 })
 onUnmounted(() => {
