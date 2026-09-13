@@ -8,7 +8,7 @@ use ipc::{
     search, IconRef, SaveFlags, SearchDiagnostic, SearchIndex, SearchMatch, SearchView, Target,
 };
 use serde_json::{json, to_value};
-use wiki::for_tests::{empty_item, empty_trinket};
+use wiki::for_tests::{empty_boss, empty_item, empty_trinket};
 use wiki::{
     Block, Dataset, DatasetError, Dlc, Entry, Infobox, Inline, ListItem, Section, SectionKind,
     Style,
@@ -81,11 +81,7 @@ fn dataset() -> Dataset {
         Dataset::boss_key(20, 0, 0),
         entry_with(
             "Monstro",
-            Infobox::Boss {
-                base_hp: None,
-                environment: vec![],
-                pool: vec![],
-            },
+            empty_boss(),
             vec![Section {
                 kind: SectionKind::Behavior,
                 blocks: vec![Block::Paragraph {
