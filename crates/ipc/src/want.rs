@@ -83,7 +83,7 @@ pub fn want_view(
     catalog: Option<&Catalog>,
     view: &UnlockView,
     flags: Option<&[bool]>,
-    eval: Option<&graph::evaluate::Eval>,
+    g: Option<&graph::Graph>,
     target: &Target,
     mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> WantView {
@@ -125,7 +125,7 @@ pub fn want_view(
         .iter()
         .filter_map(|id| node_of(view, *id))
         .map(|node| WantRoute {
-            state: route_state(node, flags, eval, view),
+            state: route_state(node, flags, g, view),
             node: node.clone(),
         })
         .collect();
@@ -153,23 +153,62 @@ pub fn want_view(
 fn route_state(
     node: &UnlockNode,
     flags: Option<&[bool]>,
-    _eval: Option<&graph::evaluate::Eval>,
-    _view: &UnlockView,
+    g: Option<&graph::Graph>,
+    view: &UnlockView,
 ) -> WantState {
-    if flags.is_none() {
+    let Some(flags) = flags else {
         return WantState::NoProfile;
-    }
+    };
     if node.done {
         return WantState::Done;
     }
-    match node.graph {
+    if matches!(
+        node.graph,
         crate::graph::GraphInfo::Computed {
             available_now: true,
             ..
-        } => WantState::AvailableNow,
-        // Task 5 replaces this with the chain.
-        _ => WantState::NoProfile,
+        }
+    ) {
+        return WantState::AvailableNow;
     }
+    let AchievementRef::Known { id, .. } = node.achievement else {
+        return WantState::NoProfile;
+    };
+    // No graph is not a fifth situation: `unlock_view` already writes `Partial { unknown: 1 }`
+    // for a slot the graph says nothing about, so the chain comes out empty and `unknown`
+    // counts it. The route then reads "I can't tell you the series", never "nothing missing".
+    let chain = g
+        .map(|g| g.missing_chain(id, &graph::FlagsOnly(Some(flags))))
+        .unwrap_or_default();
+    // The order is the queue's, asked rather than reinvented: `enqueue` appends the chain,
+    // then the wish, then runs the repair that pulls the prerequisites above it. An empty
+    // throwaway queue makes this preview and the write the Plan performs one computation.
+    let mut rows = chain.clone();
+    rows.push(id);
+    let mut queue = plan::Queue::from_rows(Vec::new());
+    let deps = match g {
+        Some(g) => crate::queue::GraphDeps::new(g, Some(flags), &rows),
+        None => crate::queue::GraphDeps::from_chains([]),
+    };
+    queue.enqueue(id, &chain, &deps);
+    let steps: Vec<UnlockNode> = queue
+        .rows()
+        .iter()
+        .filter(|r| r.achievement != id)
+        .filter_map(|r| node_of(view, r.achievement))
+        .cloned()
+        .collect();
+    let unknown = steps
+        .iter()
+        .chain(std::iter::once(node))
+        .filter(|n| matches!(n.graph, crate::graph::GraphInfo::Partial { .. }))
+        .count() as u32;
+    // An empty chain with nothing unreadable is not a chain: it is the node being playable
+    // right now, which is a different sentence and has its own state.
+    if steps.is_empty() && unknown == 0 {
+        return WantState::AvailableNow;
+    }
+    WantState::Chain { steps, unknown }
 }
 
 /// The node for an achievement, or nothing: `UnlockView` has one node per save slot, so an
