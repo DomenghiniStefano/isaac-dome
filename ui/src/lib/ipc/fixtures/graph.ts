@@ -231,7 +231,8 @@ const namesTarget = (node: UnlockNode, target: Target): boolean => {
     switch (u.kind) {
       case 'item':
         return (
-          u.id === (target.kind === 'item' || target.kind === 'trinket' ? target.id : -1)
+          u.id ===
+          (target.kind === 'item' || target.kind === 'trinket' ? target.id : -1)
         )
       case 'character':
         return target.kind === 'character' && u.id === target.id
@@ -273,6 +274,10 @@ export const wantAnswer = (
       : { kind: 'target', target: first }
   const state: WantState = node.done
     ? { kind: 'done' }
-    : { kind: 'chain', steps: nodes.filter((n) => !n.done).slice(0, 2), unknown: 0 }
+    : {
+        kind: 'chain',
+        steps: nodes.filter((n) => !n.done).slice(0, 2),
+        unknown: 0,
+      }
   return { wanted, routes: [{ node, state }], diagnostics: [] }
 }
