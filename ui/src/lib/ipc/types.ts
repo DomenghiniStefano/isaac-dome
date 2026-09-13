@@ -105,16 +105,42 @@ export type SaveDiagnostic =
   | { kind: 'sectionOverrun'; section: number }
   | { kind: 'trailingBytes' }
 
+// Mirrors crates/ipc/src/reasons.rs. Why a command could not answer, as variants: a
+// reason built with `format!` in Rust is not translatable, and the system's own message
+// can name a path. The numbers travel as numbers and the sentence is built here.
+// No fields: a bare string, like `MissingReason`.
+export const IoReason = {
+  NotFound: 'notFound',
+  PermissionDenied: 'permissionDenied',
+  Other: 'other',
+} as const
+export type IoReason = (typeof IoReason)[keyof typeof IoReason]
+
+export type SaveReason =
+  { kind: 'tooShort' } | { kind: 'badMagic' } | { kind: 'io'; reason: IoReason }
+
+export type SettingsReason =
+  | { kind: 'configDirUnknown' }
+  | { kind: 'io'; reason: IoReason }
+  | { kind: 'encoding' }
+
+export type StoreReason =
+  | { kind: 'dataDirUnknown' }
+  | { kind: 'dataDirNotCreatable' }
+  | { kind: 'unreadable' }
+  | { kind: 'newerSchema'; found: number; supported: number }
+  | { kind: 'queueUnparseable' }
+
 // Mirrors crates/app/src/error.rs. The tag is "kind" in camelCase; the fields
 // of the struct variants are also camelCase (rename_all_fields).
 export type IpcError =
   | { kind: 'noActiveProfile' }
   | { kind: 'unknownProfile'; id: string }
-  | { kind: 'unreadableSave'; reason: string }
-  | { kind: 'settingsNotWritable'; reason: string }
+  | { kind: 'unreadableSave'; reason: SaveReason }
+  | { kind: 'settingsNotWritable'; reason: SettingsReason }
   | { kind: 'unknownTarget' }
   | { kind: 'catalogUnavailable' }
-  | { kind: 'storeUnavailable'; reason: string }
+  | { kind: 'storeUnavailable'; reason: StoreReason }
   | { kind: 'wikiUnavailable' }
 
 // Mirrors crates/ipc/src/resources.rs. The variant labels are pinned by a test
@@ -375,7 +401,7 @@ export type PlanExpansion =
 // for the text. `unreadableGoal` and `unresolvedGoal` carry the id: the UI can offer
 // to remove them. `noCatalog` arrives once, not once per goal.
 export type PlanDiagnostic =
-  | { kind: 'storeUnavailable'; reason: string }
+  | { kind: 'storeUnavailable'; reason: StoreReason }
   | { kind: 'unreadableGoal'; id: GoalId }
   | { kind: 'noCatalog' }
   | { kind: 'unresolvedGoal'; id: GoalId }
@@ -613,7 +639,7 @@ export interface QueueRow {
 // Every way a row can be absent, said out loud. `unreadable` and an empty queue are
 // different things, and so are `completed` and a row that just vanished.
 export type QueueDiagnostic =
-  | { kind: 'storeUnavailable'; reason: string }
+  | { kind: 'storeUnavailable'; reason: StoreReason }
   | { kind: 'unreadable' }
   | { kind: 'completed'; count: number; wanted: number[] }
   | { kind: 'unresolved'; achievement: number }
