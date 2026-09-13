@@ -51,7 +51,14 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   const select = (id: string): void => {
     state.value = selectTab(state.value, id)
   }
-  const close = (id: string): void => {
+  // Closing the last tab of a secondary window closes the window: that window *is* its tabs,
+  // and an empty one has nothing to be (owner, 2026-09-13). The first window keeps its landing
+  // tab instead — the app is still running, and its bar is never empty.
+  const close = async (id: string): Promise<void> => {
+    if (state.value.tabs.length === 1 && !windowPort.isMain()) {
+      await windowPort.closeSelf()
+      return
+    }
     state.value = closeTab(state.value, id, fresh)
   }
   const move = (from: number, to: number): void => {
