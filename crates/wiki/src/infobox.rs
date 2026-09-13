@@ -125,11 +125,29 @@ fn yes(ib: &RawInfobox, name: &str) -> bool {
 
 /// `"devil summonable offensive"` → three tags. The vocabulary is the game's and open, so
 /// this stays a list of strings: a closed enum breaks the day the game adds a tag.
-fn tags(ib: &RawInfobox, name: &str) -> Vec<String> {
-    param(ib, name)
-        .split_whitespace()
-        .map(str::to_string)
-        .collect()
+///
+/// The value is **parsed before it is split**. 64 of 714 pages qualify a tag by edition
+/// (`nolostbr summonable {{dlc|r+|fly}}`), and splitting the raw string on whitespace made
+/// `{{dlc|r+|fly}}` a tag in its own right — wikitext, presented as a tag, in the dataset.
+/// Parsing first turns it into `Inline::Edition` around the word `fly`; flattening then
+/// gives the tag the game also knows. The edition qualification is dropped on purpose: the
+/// game's `items_metadata.xml` already states what holds for the installed edition, and it
+/// is the better source for that question.
+fn tags(ib: &RawInfobox, name: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<String> {
+    let mut flat = String::new();
+    flatten(&parse_inline(param(ib, name), r, d), &mut flat);
+    flat.split_whitespace().map(str::to_string).collect()
+}
+
+/// The words of an inline run, edition wrappers unwrapped: what the reader would read.
+fn flatten(inline: &[Inline], out: &mut String) {
+    for i in inline {
+        match i {
+            Inline::Text { text, .. } => out.push_str(text),
+            Inline::Ref { label, .. } | Inline::Concept { label, .. } => out.push_str(label),
+            Inline::Edition { inline, .. } => flatten(inline, out),
+        }
+    }
 }
 
 /// The leading digits: `"250 (x2)"` → 250, `"6666"` → 6666, no digits → `None`.
@@ -171,10 +189,10 @@ fn item_from(
     d: &mut Diagnostics,
 ) -> Infobox {
     Infobox::Item {
-        quote: text(ib, "quote"),
+        quote: inline(ib, "quote", r, d),
         template,
         quality: param(ib, "quality").trim().parse().ok(),
-        tags: tags(ib, "tags"),
+        tags: tags(ib, "tags", r, d),
         recharge: inline(ib, "recharge", r, d),
         devil_price: inline(ib, "devil price", r, d),
         shop_price: inline(ib, "shop price", r, d),
@@ -197,8 +215,8 @@ pub fn infobox_from(
         InfoboxKind::Passive => item_from(ib, CollectibleTemplate::Passive, r, d),
         InfoboxKind::Activated => item_from(ib, CollectibleTemplate::Activated, r, d),
         InfoboxKind::Trinket => Infobox::Trinket {
-            quote: text(ib, "quote"),
-            tags: tags(ib, "tags"),
+            quote: inline(ib, "quote", r, d),
+            tags: tags(ib, "tags", r, d),
             pools: inline(ib, "pool", r, d),
         },
         InfoboxKind::Achievement => Infobox::Achievement {
@@ -297,7 +315,10 @@ mod tests {
         else {
             panic!()
         };
-        assert_eq!(quote, "Blood laser barrage");
+        assert!(matches!(
+            quote.first(),
+            Some(Inline::Text { text, .. }) if text == "Blood laser barrage"
+        ));
         assert_eq!(template, CollectibleTemplate::Passive);
         assert_eq!(quality, Some(4));
         assert_eq!(tags, vec!["devil", "summonable", "offensive"]);
@@ -339,7 +360,10 @@ mod tests {
         else {
             panic!()
         };
-        assert_eq!(quote, "Imaginary Friend");
+        assert!(matches!(
+            quote.first(),
+            Some(Inline::Text { text, .. }) if text == "Imaginary Friend"
+        ));
         assert_eq!(tags, vec!["offensive"]);
         assert!(pools.is_empty());
     }

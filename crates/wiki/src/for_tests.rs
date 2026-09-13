@@ -33,7 +33,7 @@ pub fn entry(title: &str, infobox: Infobox) -> Entry {
 /// item, any item" should not have to name eight fields to get one.
 pub fn empty_item() -> Infobox {
     Infobox::Item {
-        quote: String::new(),
+        quote: Vec::new(),
         template: CollectibleTemplate::Passive,
         quality: None,
         tags: Vec::new(),
@@ -58,7 +58,7 @@ pub fn empty_boss() -> Infobox {
 /// A trinket infobox that says nothing.
 pub fn empty_trinket() -> Infobox {
     Infobox::Trinket {
-        quote: String::new(),
+        quote: Vec::new(),
         tags: Vec::new(),
         pools: Vec::new(),
     }

@@ -1288,7 +1288,7 @@ export type CollectibleTemplate =
 export type Infobox =
   | {
       kind: 'item'
-      quote: string                 // the pickup quote: the game's own item description
+      quote: Inline[]                // the pickup quote; carries edition markup on 78 of 719
       template: CollectibleTemplate
       quality: number | null
       tags: string[]
@@ -1297,7 +1297,7 @@ export type Infobox =
       shopPrice: Inline[]
       pools: Inline[]               // only what the wiki states: 45 of 720 pages
     }
-  | { kind: 'trinket'; quote: string; tags: string[]; pools: Inline[] }
+  | { kind: 'trinket'; quote: Inline[]; tags: string[]; pools: Inline[] }
   | {
       kind: 'achievement'
       requirements: Inline[]
