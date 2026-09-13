@@ -793,7 +793,21 @@ persisted in the settings file, and `discovery` trying it before its own search.
 
 ---
 
-## B15 — Tearing a tab off into its own window, and back (implementation, after 3.7)
+## B15 — Tearing a tab off into its own window, and back (implementation, after 3.7) — 🟡 built on 2026-09-13, **not yet measured on the machine**
+
+**Built on `feature/drag-and-windows`, ahead of 3.7 rather than after it** (spec
+`docs/superpowers/specs/2026-09-13-drag-and-windows-design.md`): the window port and its fake,
+the handshake that seeds a newborn window, docking with the marker drawn in the target's strip,
+the two closing rules, the payload-free events that make the profile, the scale and the plan the
+app's rather than the window's, the hit test with its DPI conversion, the preview page, and the
+gesture itself.
+
+**What is still open is the one thing the entry said would decide it**: whether WebView2 keeps
+delivering pointer events with the cursor outside the window. It needs a real window and a hand
+on the mouse, and it has not been run. `lib/window/pointerSource.ts` is written as if the answer
+were yes, behind an interface that is the only thing the other answer changes, with a 10-second
+silence timeout that **cancels** the drag rather than landing a tab nobody released. The plan's
+Task 1 is written to be run by the owner; Task 17's eleven checks wait on the same session.
 
 Logged 2026-09-11, a product requirement from the owner: drag a tab out of the window and, on
 drop, it opens in a new window; drag it back over the first window's tab strip and the two
@@ -1561,7 +1575,17 @@ crashed on; and no full path has crossed the IPC boundary.
 
 ---
 
-## B31 — Dragging a row lifts the whole card, and one component does it everywhere (implementation, `ui`, after design)
+## B31 — Dragging a row lifts the whole card, and one component does it everywhere (implementation, `ui`, after design) ✅ closed on 2026-09-13
+
+**Closed on `feature/drag-and-windows`.** `lib/drag/dragList.ts` holds the decisions (threshold,
+hit test, the grab's offset, the ghost's origin) with its own tests; `composables/useDragList.ts`
+owns the choreography and adds `Escape`, which neither screen had; `components/ui/drag/DragGhost.vue`
+draws the lifted copy — `aria-hidden`, because it is a picture of the row, not a second one. The
+queue and the tab strip are its two callers and keep their own pure drop semantics. **The kit has
+no shadow token and that is a decision** (`assets/theme/shadow.css`: `--shadow-*: initial`), so
+the lift is a `primary` border on an opaque sheet. Looked at on the Kit, in the strip and in the
+Plan, with the drag driven through the real DOM: the marker still names the landing, the drop is
+still instant, `Escape` puts everything back and commits nothing.
 
 Logged 2026-09-12, from the owner's review of the Plan: dragging a queue row doesn't feel
 right. What the owner wants is the **whole card lifted and floating above the rest**,
