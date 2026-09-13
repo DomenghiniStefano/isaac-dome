@@ -24,6 +24,7 @@ import type { TabView } from '@/components/shell/tabs'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { useShortcut } from '@/composables/useShortcut'
 import { i18n, useMessages } from '@/i18n'
+import type { Point } from '@/lib/drag/dragList'
 import { indicator } from '@/lib/profile/profileView'
 import { shortcutAction } from '@/lib/scale/shortcut'
 import {
@@ -31,6 +32,7 @@ import {
   minimizeWindow,
   toggleMaximizeWindow,
   watchWindowFocus,
+  windowSize,
 } from '@/lib/window/appWindow'
 import { AppEvent, watchAppEvents } from '@/lib/window/appEvents'
 import { useWindowSession } from '@/lib/window/session'
@@ -77,6 +79,22 @@ onUnmounted(() => {
   stopWatchingFocus?.()
   stopAppEvents?.()
 })
+
+// A tab dragged out of this window. Which of the two endings it is was decided by where the
+// pointer was released; the store owns what each one does to the bar.
+const giveTab = (index: number, label: string, at: Point) => {
+  const tab = tabs.tabs[index]
+  if (tab) void tabs.giveAway(tab.id, label, at)
+}
+
+// A window of its own, born under the cursor and sized like this one: the size the user chose,
+// in the place they dropped it.
+const tearTabOff = async (index: number, at: Point) => {
+  const tab = tabs.tabs[index]
+  if (!tab) return
+  const mine = await windowSize()
+  await tabs.tearOffTo(tab.id, at, mine)
+}
 
 // The router shows the active tab: selecting, closing or navigating a tab moves it.
 watch(
@@ -164,11 +182,14 @@ const indicatorView = computed(() =>
         :active-id="tabs.activeId"
         :focused="focused"
         :incoming="tabs.incoming"
+        :can-tear="tabs.canTear"
         @select="tabs.select"
         @close="tabs.close"
         @move="tabs.move"
         @add="tabs.open()"
         @aim="tabs.aim"
+        @give-to="giveTab"
+        @open-with="tearTabOff"
         @minimize="minimizeWindow"
         @toggle-maximize="toggleMaximizeWindow"
         @close-window="closeWindow"
