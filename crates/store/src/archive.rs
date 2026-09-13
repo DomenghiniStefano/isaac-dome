@@ -71,7 +71,7 @@ impl Store {
     pub fn session_source(&self, name: &str) -> Result<Option<StoredSource>, StoreError> {
         self.conn
             .query_row(
-                "SELECT id, kind, key, prefix_hash, anchor_hash, read_offset
+                "SELECT id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset
                  FROM sources WHERE kind = 'session' AND key = ?1",
                 params![name],
                 source_row,
@@ -86,7 +86,7 @@ impl Store {
     pub fn latest_log_source(&self) -> Result<Option<StoredSource>, StoreError> {
         self.conn
             .query_row(
-                "SELECT id, kind, key, prefix_hash, anchor_hash, read_offset
+                "SELECT id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset
                  FROM sources WHERE kind = 'log' ORDER BY id DESC LIMIT 1",
                 [],
                 source_row,
@@ -101,7 +101,7 @@ impl Store {
         let mut stmt = self
             .conn
             .prepare(
-                "SELECT id, kind, key, prefix_hash, anchor_hash, read_offset
+                "SELECT id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset
                  FROM sources ORDER BY id",
             )
             .map_err(StoreError::from_sqlite)?;
@@ -130,9 +130,15 @@ impl Store {
     pub fn set_source_key(&self, id: i64, key: &SourceKey) -> Result<(), StoreError> {
         self.conn
             .execute(
-                "UPDATE sources SET prefix_hash = ?2, anchor_hash = ?3, read_offset = ?4
-                 WHERE id = ?1",
-                params![id, hex(key.prefix), hex(key.anchor), key.offset as i64],
+                "UPDATE sources SET prefix_hash = ?2, prefix_len = ?3, anchor_hash = ?4,
+                 read_offset = ?5 WHERE id = ?1",
+                params![
+                    id,
+                    hex(key.prefix),
+                    key.prefix_len as i64,
+                    hex(key.anchor),
+                    key.offset as i64
+                ],
             )
             .map(|_| ())
             .map_err(StoreError::from_sqlite)
@@ -249,12 +255,13 @@ impl Store {
     ) -> Result<i64, StoreError> {
         self.conn
             .execute(
-                "INSERT INTO sources (kind, key, prefix_hash, anchor_hash, read_offset)
-                 VALUES (?1, ?2, ?3, ?4, ?5)",
+                "INSERT INTO sources (kind, key, prefix_hash, prefix_len, anchor_hash, read_offset)
+                 VALUES (?1, ?2, ?3, ?4, ?5, ?6)",
                 params![
                     kind.as_str(),
                     key,
                     hex(source_key.prefix),
+                    source_key.prefix_len as i64,
                     hex(source_key.anchor),
                     source_key.offset as i64
                 ],
@@ -286,8 +293,9 @@ fn source_row(r: &rusqlite::Row<'_>) -> rusqlite::Result<Option<StoredSource>> {
     let kind: String = r.get(1)?;
     let key: Option<String> = r.get(2)?;
     let prefix: String = r.get(3)?;
-    let anchor: String = r.get(4)?;
-    let offset: i64 = r.get(5)?;
+    let prefix_len: i64 = r.get(4)?;
+    let anchor: String = r.get(5)?;
+    let offset: i64 = r.get(6)?;
     Ok(
         match (SourceKind::parse(&kind), unhex(&prefix), unhex(&anchor)) {
             (Some(kind), Some(prefix), Some(anchor)) => Some(StoredSource {
@@ -296,6 +304,7 @@ fn source_row(r: &rusqlite::Row<'_>) -> rusqlite::Result<Option<StoredSource>> {
                 key,
                 source_key: SourceKey {
                     prefix,
+                    prefix_len: prefix_len as u64,
                     anchor,
                     offset: offset as u64,
                 },

@@ -49,3 +49,15 @@ fn a_relaunch_drops_the_remainder_of_the_old_file() {
     tail.restart();
     assert_eq!(tail.advance(b"[INFO] - new\n"), vec!["[INFO] - new"]);
 }
+
+#[test]
+fn a_half_written_line_is_counted_as_not_yet_read() {
+    // What the watcher stores as its offset is the end of the last **complete** line: a read
+    // that stopped mid-line must not leave that line behind for ever.
+    let mut tail = run::Tail::default();
+    let lines = tail.advance(b"first\nsecond\nthi");
+    assert_eq!(lines, vec!["first", "second"]);
+    assert_eq!(tail.pending(), 3);
+    tail.advance(b"rd\n");
+    assert_eq!(tail.pending(), 0);
+}
