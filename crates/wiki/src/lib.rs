@@ -19,7 +19,10 @@ pub use blocks::parse_blocks;
 pub use build::build;
 pub use dataset::{Counts, Dataset, DatasetError, Meta, Patch, Source, SCHEMA_VERSION};
 pub use diagnostics::Diagnostics;
-pub use infobox::{extract_infoboxes, infobox_from, InfoboxKind, RawInfobox};
+pub use infobox::{
+    entry_facts, extract_infoboxes, infobox_from, EntryFacts, InfoboxKind, RawInfobox,
+    IGNORED_PARAMS,
+};
 pub use inline::parse_inline;
 pub use model::{
     Block, CollectibleTemplate, Dlc, Entry, Infobox, Inline, ListItem, Section, SectionKind, Style,

@@ -66,6 +66,47 @@ impl InfoboxKind {
     }
 }
 
+/// Parameters the infoboxes declare that no type keeps, each covered by a reason below. A
+/// parameter in neither this list nor a field is a bug, and `no_silent_parameter` says so —
+/// because "parsed, then dropped, with a green suite" is exactly the defect fixed on
+/// 2026-09-13, and it was invisible for months.
+///
+/// - **Asset names** (`image name`, `costume name`, `files name`, `tear app*`, `costume*`,
+///   `bomb app`, `portrait*`, `image`, `character appearance`): they name files inside the
+///   user's own copy of the game. `unpack` extracts sprites from there and no wiki image is
+///   ever shipped, so a file name from the wiki has nothing to open.
+/// - **Identity** (`name`, `id`, `number`, `link`, `alias`): already resolved into the
+///   entry's key and title before the infobox is converted. Keeping them twice invites the
+///   two copies to disagree.
+/// - **Editorial** (`hidden`, `appearance`, `behavior`, `is mini-boss`, `oldpool`,
+///   `special goal`): presentation switches and prose the sections already carry.
+pub const IGNORED_PARAMS: &[&str] = &[
+    "image name",
+    "costume name",
+    "files name",
+    "tear app name",
+    "tear app",
+    "tear app scale",
+    "costume",
+    "costume scale",
+    "bomb app",
+    "portrait",
+    "portrait name",
+    "image",
+    "character appearance",
+    "name",
+    "id",
+    "number",
+    "link",
+    "alias",
+    "hidden",
+    "appearance",
+    "behavior",
+    "is mini-boss",
+    "oldpool",
+    "special goal",
+];
+
 fn param<'a>(ib: &'a RawInfobox, name: &str) -> &'a str {
     ib.params.get(name).map(String::as_str).unwrap_or("")
 }
@@ -162,6 +203,7 @@ pub fn infobox_from(
         },
         InfoboxKind::Achievement => Infobox::Achievement {
             requirements: inline(ib, "requirements", r, d),
+            notes: inline(ib, "notes", r, d),
             unlocks: r.by_page_title(param(ib, "link")),
         },
         InfoboxKind::Boss => Infobox::Boss {
@@ -334,6 +376,7 @@ mod tests {
         );
         let Infobox::Achievement {
             requirements,
+            notes,
             unlocks,
         } = infobox_from(InfoboxKind::Achievement, &ib, &r, &mut d)
         else {
@@ -353,6 +396,7 @@ mod tests {
                 ..
             }
         )));
+        assert!(notes.is_empty(), "this fixture declares no notes");
         assert_eq!(unlocks, Some(Target::Item { id: 25 }));
 
         let ib = raw(

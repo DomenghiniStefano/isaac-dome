@@ -239,6 +239,10 @@ pub enum Infobox {
     },
     Achievement {
         requirements: Vec<Inline>,
+        /// Caveats on the requirement ("Possession of The Polaroid is required…"). An
+        /// achievement is a row on a storage page and carries no sections of its own, so
+        /// this is the only prose it has beyond `description` and `requirements`.
+        notes: Vec<Inline>,
         /// The thing this achievement unlocks. It does NOT rise to `Entry`: it points the
         /// opposite way from `unlocked_by`, and putting the two in one place is a trap.
         unlocks: Option<Target>,

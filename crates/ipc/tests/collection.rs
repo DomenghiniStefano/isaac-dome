@@ -201,6 +201,7 @@ fn a_lock_carries_the_achievement_page_only_when_the_dataset_has_it() {
             "t2",
             Infobox::Achievement {
                 requirements: vec![],
+                notes: vec![],
                 unlocks: None,
             },
         ),

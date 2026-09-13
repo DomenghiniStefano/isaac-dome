@@ -107,6 +107,11 @@ const stats = computed(() => {
           v-bind="forward"
         />
         <InfoboxRow
+          :label="t('wiki.infobox.notes')"
+          :inline="infobox.notes"
+          v-bind="forward"
+        />
+        <InfoboxRow
           :label="t('wiki.infobox.unlocks')"
           :inline="refOf(infobox.unlocks)"
           v-bind="forward"

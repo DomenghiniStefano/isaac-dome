@@ -503,6 +503,9 @@ export type Infobox =
   | {
       kind: 'achievement'
       requirements: Inline[]
+      /// Caveats on the requirement. An achievement has no sections of its own, so this is
+      /// the only prose it carries beyond the description and the requirement.
+      notes: Inline[]
       unlocks: Target | null
     }
   | {
