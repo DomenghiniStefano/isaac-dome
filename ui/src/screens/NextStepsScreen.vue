@@ -49,18 +49,24 @@ const canWrite = computed(() => queue.view?.storeAvailable === true)
     />
     <template v-else-if="graph.view">
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
-      <div v-if="graph.view.steps.steps.length > 0" class="flex flex-col gap-2">
-        <StepCard
-          v-for="(step, index) in graph.view.steps.steps"
-          :key="nodeSlot(step)"
-          :rank="index + 1"
-          :node="step"
-          :queued="isQueued(step, queued)"
-          :can-add="canWrite && canQueue(step, queued)"
-          :busy="queue.busy"
-          @add="queue.add(nodeSlot(step))"
-        />
-      </div>
+      <template v-if="graph.view.steps.sections.length > 0">
+        <div
+          v-for="section in graph.view.steps.sections"
+          :key="section.basis"
+          class="flex flex-col gap-2"
+        >
+          <StepCard
+            v-for="(step, index) in section.steps"
+            :key="nodeSlot(step)"
+            :rank="index + 1"
+            :node="step"
+            :queued="isQueued(step, queued)"
+            :can-add="canWrite && canQueue(step, queued)"
+            :busy="queue.busy"
+            @add="queue.add(nodeSlot(step))"
+          />
+        </div>
+      </template>
       <Alert v-else-if="noCatalog">
         <InfoIcon />
         <AlertTitle>{{ t('nextSteps.noCatalogTitle') }}</AlertTitle>

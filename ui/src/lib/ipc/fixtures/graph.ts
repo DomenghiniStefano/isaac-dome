@@ -2,6 +2,8 @@ import { assertNever } from '@/lib/assertNever'
 import type {
   NextSteps,
   RequirementView,
+  StepsBasis,
+  StepsSection,
   UnlockNode,
   UnlockTarget,
   UnlockView,
@@ -143,23 +145,48 @@ export interface GraphAnswers {
   steps: NextSteps
 }
 
+// The pack's payload predates the sections: it is one flat list and the basis that made it.
+// That shape *is* one section — the one it always was — so it is read as such and declared
+// once, until the next `pnpm design:export` on a machine with the game.
+interface FlatNextSteps {
+  steps: UnlockNode[]
+  basis: StepsBasis
+}
+let warnedAboutSections = false
+const sectionsOf = (value: NextSteps | FlatNextSteps): StepsSection[] => {
+  if ('sections' in value) return value.sections
+  if (!warnedAboutSections) {
+    warnedAboutSections = true
+    console.warn(
+      "graph fixture: the design pack's next_steps.json predates the steps' sections; the whole list reads as its one basis",
+    )
+  }
+  // Never a heading over nothing: an empty list is no section, exactly as in Rust.
+  return value.steps.length === 0
+    ? []
+    : [{ basis: value.basis, steps: value.steps }]
+}
+
 export const graphAnswers = ({
   withArt,
   withCatalog,
 }: GraphAnswerOptions): GraphAnswers => {
   const unlock = payload<UnlockView>('unlock')
-  const steps = payload<NextSteps>('next_steps')
+  const sections = sectionsOf(payload<NextSteps | FlatNextSteps>('next_steps'))
+  // No catalog, nothing to recommend: no sections at all, which is what Rust answers too.
   if (!withCatalog)
-    return {
-      unlock: withoutCatalog(unlock),
-      steps: { steps: [], basis: steps.basis },
-    }
+    return { unlock: withoutCatalog(unlock), steps: { sections: [] } }
   const icon: IconOf = (url) => (withArt ? packIconUrl(url) : null)
   return {
     unlock: {
       ...unlock,
       nodes: unlock.nodes.map((n) => nodeWithIcons(n, icon)),
     },
-    steps: { ...steps, steps: steps.steps.map((n) => nodeWithIcons(n, icon)) },
+    steps: {
+      sections: sections.map((s) => ({
+        ...s,
+        steps: s.steps.map((n) => nodeWithIcons(n, icon)),
+      })),
+    },
   }
 }

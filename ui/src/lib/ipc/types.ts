@@ -379,14 +379,23 @@ export interface UnlockView {
   diagnostics: UnlockDiagnostic[]
 }
 
-// What the steps list is ordered by. No fields: a string, like `OriginView`. One value
-// today; the next basis (closeness, once the counters land) arrives as a value here.
-export const StepsBasis = { FanOut: 'fanOut' } as const
+// What a section is ordered by. No fields: a string, like `OriginView`. `closeness` is the
+// one a counter makes possible — it is the only requirement that carries a distance.
+export const StepsBasis = {
+  FanOut: 'fanOut',
+  Closeness: 'closeness',
+} as const
 export type StepsBasis = (typeof StepsBasis)[keyof typeof StepsBasis]
 
-export interface NextSteps {
-  steps: UnlockNode[]
+// One reason and the steps it produced. A section is never emitted empty — the rule lives in
+// Rust — so the screen never has to draw a heading over nothing.
+export interface StepsSection {
   basis: StepsBasis
+  steps: UnlockNode[]
+}
+
+export interface NextSteps {
+  sections: StepsSection[]
 }
 
 // `GoalId` is a transparent newtype in Rust: on the wire it's an opaque string,
