@@ -259,7 +259,18 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
     let arg = t.args.first().cloned().unwrap_or_default();
     match t.name.as_str() {
         "!" => out.buf.push('|'),
-        "dlc+" | "dlc" => out.open(dlc_codes(&arg)),
+        // Two shapes share this name. `{{dlc|r}}` is a marker: it opens a scope that runs to
+        // the end of the value or to `{{dlc-}}`. `{{dlc|r|text}}` carries its own text and
+        // closes itself — and until 2026-09-13 that second argument was never read, so 313
+        // spans across the snapshot lost their words without a diagnostic.
+        "dlc+" | "dlc" => match t.args.get(1) {
+            Some(content) => {
+                out.open(dlc_codes(&arg));
+                recurse_into_arg(content, r, d, out, depth);
+                out.close();
+            }
+            None => out.open(dlc_codes(&arg)),
+        },
         "dlc-" => out.close(),
         "dlcalt" => {
             // Both the positional argument and every per-edition variant are content
@@ -539,6 +550,50 @@ mod tests {
                     inline: vec![text(" 4.5", Style::Plain)]
                 }
             ]
+        );
+    }
+
+    /// `{{dlc|r}}` is a marker: it opens an edition scope that runs to the end of the value
+    /// or to `{{dlc-}}`. But the template also has a **three-argument** form that carries its
+    /// own text, and until 2026-09-13 the parser opened the scope and dropped the text on the
+    /// floor — 313 times across the snapshot, silently. The item quotes are where it showed:
+    /// `Boomerang tears {{dlc|r|+ DMG up + luck down}}` arrived as "Boomerang tears".
+    #[test]
+    fn the_three_argument_dlc_form_keeps_its_own_text() {
+        let (v, _) = p("Boomerang tears{{dlc|r|+ DMG up}}");
+        assert_eq!(
+            v,
+            vec![
+                text("Boomerang tears", Style::Plain),
+                Inline::Edition {
+                    only: vec![Dlc::Repentance],
+                    inline: vec![text("+ DMG up", Style::Plain)]
+                }
+            ]
+        );
+
+        // The span closes itself: text after it is not swallowed into the edition.
+        let (v, _) = p("{{dlc|r|only in Repentance}} and after");
+        assert_eq!(
+            v,
+            vec![
+                Inline::Edition {
+                    only: vec![Dlc::Repentance],
+                    inline: vec![text("only in Repentance", Style::Plain)]
+                },
+                text(" and after", Style::Plain)
+            ]
+        );
+
+        // The two-argument form still opens a scope that runs on: that is the common use,
+        // and this half of the test is what stops the fix from breaking it.
+        let (v, _) = p("{{dlc|r}}everything after this");
+        assert_eq!(
+            v,
+            vec![Inline::Edition {
+                only: vec![Dlc::Repentance],
+                inline: vec![text("everything after this", Style::Plain)]
+            }]
         );
     }
 

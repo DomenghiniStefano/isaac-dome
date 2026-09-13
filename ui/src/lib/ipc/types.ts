@@ -486,7 +486,7 @@ export type Infobox =
   | {
       kind: 'item'
       /// The pickup quote — the same string as the game's own item description.
-      quote: string
+      quote: Inline[]
       template: CollectibleTemplate
       quality: number | null
       tags: string[]
@@ -499,7 +499,7 @@ export type Infobox =
       /// complete source, and they arrive through the catalog, not here.
       pools: Inline[]
     }
-  | { kind: 'trinket'; quote: string; tags: string[]; pools: Inline[] }
+  | { kind: 'trinket'; quote: Inline[]; tags: string[]; pools: Inline[] }
   | {
       kind: 'achievement'
       requirements: Inline[]
