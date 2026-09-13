@@ -23,8 +23,8 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-13. **N1, N2 and N6 done**; N1 and N2 are in `develop`, N6 waits on
-`feature/app-wiring`. The test-only public API has one notation — one `pub mod for_tests` per
+**Last update:** 2026-09-13. **N1, N2 and N6 done**; N1, N2 and N6 are all in `develop`. Cut from
+`develop`, one branch per item. The test-only public API has one notation — one `pub mod for_tests` per
 crate, seven of them; **why a command failed is a variant, not a sentence** — four enums, the
 numbers travelling as numbers, the wording in `it.ts` / `en.ts`; and **the Tauri crate is
 wiring again** — eleven files, none over 220 lines, `cargo test -p app` reporting zero.
