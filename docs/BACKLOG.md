@@ -1835,7 +1835,7 @@ a test that reads it from the catalog rather than from a literal table.
 
 ---
 
-## B37 — A tab carries its state between windows: filters, scroll, what it was showing (implementation, `ui`, after 3.7's shape)
+## B39 — A tab carries its state between windows: filters, scroll, what it was showing (implementation, `ui`, after 3.7's shape)
 
 Logged 2026-09-13, from the owner while checking the tear-off: *"si devono tenere anche filtri,
 scroll ecc quando tratti uno spostamento di tab"*. A tab dragged into another window arrives at
