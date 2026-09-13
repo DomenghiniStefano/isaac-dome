@@ -660,10 +660,40 @@ has doubled. Every item closes on a file count going *down*, and the count is wr
 the item. Where a pair must stay two files, the item says which and why, so nobody has to
 wonder whether it was forgotten.
 
-Cheapest and safest first. Nothing here is a feature and nothing changes what a screen
-shows. Each item gets its own branch cut from `develop`, like any sub-project (the rule
-of 2026-09-11): none of this starts on top of a sub-project in flight. **N7 is not a new
-item**: it is B2 of `docs/IMPROVEMENTS.md`, placed here in the order it has to run in.
+Nothing here is a feature and nothing changes what a screen shows. Each item gets its own
+branch cut from `develop`, like any sub-project (the rule of 2026-09-11): none of this
+starts on top of a sub-project in flight. **N7 is not a new item**: it is B2 of
+`docs/IMPROVEMENTS.md`, placed here in the order it has to run in.
+
+**The order was "cheapest and safest first" until M4 got its design (2026-09-12), and that
+is what reorders it.** The numbers N1–N8 are names, not positions — renumbering them would
+break the references other items and `docs/IMPROVEMENTS.md` make to them — so the order is
+written out here instead:
+
+> **N1 → N2 → N7 → N6 → M4 sub-project 1 → N8 → N3, N4, N5**
+
+Three of the items are cheap *now* and expensive after M4, and that is the whole of the
+reason:
+
+- **N7 moves from last to third.** It was last because it is expensive and because
+  generating the contract while the error type is still moving means generating it twice —
+  the first half of that still holds, which is why N2 keeps its place in front of it. What
+  changed is the second half: M4 adds a new family of view-models to the contract, and every
+  one of them written before N7 is hand-mirrored into `types.ts` and then regenerated. The
+  repository's largest silent risk gets *larger* between now and M4, not smaller.
+- **N6 moves in front of M4.** M4 adds commands to `crates/app`. Splitting the 964-line file
+  first means they land in `commands/` already; splitting it after means splitting a bigger
+  file, and the new commands spend that time in the place the rule says they may not be.
+- **N8 moves behind M4, not in front of it.** Its expensive half and M4's watcher are the
+  same subject seen twice: a `SaveState` has to invalidate when the `.dat` is rewritten, and
+  M4's log watcher exists because the game announces exactly that
+  (`Saving PersistentGameData to Steam Cloud: …`, B8 finding (a)). Doing N8 first means
+  inventing an mtime heuristic that M4 then replaces with the game's own statement. **N8's
+  free half is not held back by this** — `next_steps` taking the `UnlockView` it is a filter
+  over is half a screen load for no new state, and can be lifted out whenever.
+- **N3, N4 and N5 are untouched by M4** — they are frontend, and M4 sub-project 1 has no
+  screen. They keep their place at the end, where they gate 3.6, 3.7 and B3 rather than
+  anything here.
 
 - [ ] **N1. The names left over.** *One session.*
       Two Italian identifiers survive B7 in a file that is otherwise English —
@@ -674,8 +704,11 @@ item**: it is B2 of `docs/IMPROVEMENTS.md`, placed here in the order it has to r
       `__corrupt_queue_for_tests`. Pick one notation, and keep it out of the public
       re-export list: a name in `pub use` says "call me", which is exactly what these mean
       not to say.
-      **Done when** `grep -riE '(icone|segreto|_di_)' crates ui/src` finds nothing and one
-      notation covers every test-only entry point.
+      **Done when** `grep -riE '(icone|segreto|_di_)' crates` finds nothing and one
+      notation covers every test-only entry point. **Over `crates` and not `ui/src`**: the
+      Italian locale file legitimately contains the Italian word *icone* in its prose, so a
+      grep that spans it can never go quiet — a closing criterion that cannot be met is
+      worse than none, because it gets read as "still open" forever.
 
 - [ ] **N2. `reason: String` leaves the IPC.** *Two sessions. Before N7.*
       `IpcError::UnreadableSave`, `SettingsNotWritable` and `StoreUnavailable` carry a
@@ -751,7 +784,8 @@ item**: it is B2 of `docs/IMPROVEMENTS.md`, placed here in the order it has to r
       **Two files stop existing. Done when** no store writes that `try` / `catch` again and
       `LoadStatus` is imported from a file that holds nothing else.
 
-- [ ] **N6. `crates/app` goes back to being wiring.** *Two or three sessions. After N2.*
+- [ ] **N6. `crates/app` goes back to being wiring.** *Two or three sessions. After N2,
+      before M4 adds commands to it.*
       964 lines, 21 commands, and about ten functions that are logic — `plan_parts`,
       `queue_view_now`, `queue_pieces`, `queue_mutate`, `ids_for`, `icon_url` — plus
       **80 lines of `#[cfg(test)] mod tests` at the bottom of the file**. That block is the
@@ -767,7 +801,7 @@ item**: it is B2 of `docs/IMPROVEMENTS.md`, placed here in the order it has to r
       `cargo test -p app` reports zero tests because there is nothing left in it to test.
 
 - [ ] **N7. `types.ts` generated — this is B2 of `docs/IMPROVEMENTS.md`.** *Two sessions.
-      Last on purpose.*
+      After N2, and before M4 writes into the contract.*
       627 hand-written lines mirroring the `#[serde]` attributes. Registered since
       2026-09-05 and still the repository's largest silent risk: `CLAUDE.md` already
       records the case where renaming a `core_save::Kind` variant changed the wire with the
@@ -778,7 +812,7 @@ item**: it is B2 of `docs/IMPROVEMENTS.md`, placed here in the order it has to r
       stops being a file anybody opens.
 
 - [ ] **N8. The save read once per screen, not twice.** *Two sessions, one of them a
-      measurement.*
+      measurement. After M4 — the free half whenever.*
       `active_save()` does, on every command that needs the profile: `settings_file::load`
       (I/O), `discover()` (a walk of the Steam libraries), `fs::read` of the whole `.dat`,
       and a full parse. Nothing caches it, while the catalog, the graph, the resources, the
