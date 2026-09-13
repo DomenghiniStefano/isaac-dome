@@ -26,6 +26,9 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
 **Last update:** 2026-09-12. **Sub-project 3.5d merged into `develop`** (`4406c49`), suite
 green on the merge result: a blocked badge opens a menu whose entries are the wiki pages of
 what is in the way.
+**M4's first sub-project has its design** (`cac6914`): the run model, the `run` and
+`log-watch` crates, and the backfill that makes the archive born full from the logs already
+on disk.
 
 ---
 
@@ -70,7 +73,23 @@ what is in the way.
       ordered series of achievements whose order is yours and can never contradict the
       graph. Report in `docs/superpowers/plans/2026-09-07-plan-queue-report.md`. What
       remains of M3 is the screen, which waits for the design system.
-- [ ] **M4 — Log watcher and run archive**
+- [ ] **M4 — Log watcher and run archive** ← designed, not started. Four pieces and not a
+      screen: a pure `run` crate (typed events, the fold, the rules file, and the part of
+      tailing that is not I/O), a thin `log-watch`, the store's third migration — `events`
+      as rows, `runs` as a derived cache carrying the rules version that produced it — and
+      the two routes the shell already reserves as placeholders.
+      - [x] **Sub-project 1, the run model and the log watcher — design** (2026-09-12),
+            `docs/superpowers/specs/2026-09-12-m4-run-model-design.md`. Three decisions
+            taken in conversation: **backfill everything**, so the archive is born full from
+            the 22 `online_logs\` sessions on the disk today; **events are the archive and a
+            run is a fold over them**, which makes backfill and live one function instead of
+            two paths that have to agree forever; **abandoned runs are kept and marked**, and
+            whether they count is measured against the save's own `STREAK_COUNTER [22]`,
+            `BEST_STREAK [23]` and `DEATHS [10]` rather than decided. The screens are
+            deliberately out of scope: `Live` and `Runs` are both views of this model, and
+            designing them first would let a layout shape the IPC contract.
+      - [ ] TDD plan, implementation, report — sub-project 1
+      - [ ] The `Live` and `Runs` screens, on the contract this model fixes
 - [ ] **M5 — Public release**
 
 ---
@@ -1017,6 +1036,65 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-12 (last) — M4 designed as a model, not as a screen
+
+M4 had been one line in this document since it was written. It is four pieces, and this
+session designed the first: `docs/superpowers/specs/2026-09-12-m4-run-model-design.md`.
+What it deliberately does **not** design is either screen. `Live` and `Runs` are both views
+of this model, and designing them first would let a layout shape the IPC contract — the
+failure this repo has a rule against.
+
+- [x] **Three decisions taken in conversation, and the document says which parts are which.**
+      Sections 2 to 4 were written after "mi fido, scrivi un doc": they follow from the three
+      decisions, but they were not walked through one by one, and the spec's own header names
+      them as the part most worth disagreeing with. That line is there so a reader knows where
+      the agreement stops.
+- [x] **Backfill everything.** The log is rewritten on every launch, so an archive holding
+      only what the app was running to see starts empty. `online_logs\` has 22 sessions on the
+      disk today and `log.txt` holds the current launch: the archive is born full instead. The
+      cost is bought knowingly — two ways to produce a run, and a run identity that cannot
+      lean on a clock the log does not have.
+- [x] **Events are the archive; a run is a fold over them.** Backfill and live become the same
+      function over a stream that is finished in one case and growing in the other. The rules
+      file was already required to be updatable without recompiling, so re-derivation is a
+      consequence of a decision already taken rather than a feature invented here: `store`'s
+      third migration keeps `events` as rows and `runs` as a derived cache carrying the rules
+      version that produced it, and a newer rules file invalidates the cache.
+- [x] **Abandoned runs are kept and marked, and whether they count is measured, not chosen.**
+      The save keeps `STREAK_COUNTER [22]`, `BEST_STREAK [23]`,
+      `NEGATIVE_STREAK_COUNTER [113]` and `DEATHS [10]`, so "do abandoned runs count?" is a
+      property to test against the game's own numbers rather than a product opinion.
+- [x] **The boundary is the repo's own rule, applied to a watcher: in a file watcher the
+      parts worth checking are not the ones that touch the disk.** The last line read may be
+      half-written, one event spans six physical lines (B8's `Framebuffer Width:` block), and
+      a file that got *shorter* is a new launch rather than a file that grew. All three live
+      in the pure `run` crate, as `Tail`. `log-watch` keeps `notify`, an offset and a read,
+      and is thin enough to go untested like the Tauri crate. Its trigger is B8 finding (a):
+      the game logs `Saving PersistentGameData to Steam Cloud: …` 132 times in one run, which
+      beats watching the directory because it also names the file.
+- [x] **The rules file maps text to events and does nothing else.** Every judgment lives in
+      the fold, because the rules file is data a user can edit and a rule that decided
+      *meaning* would let a bad file change what a run is — and would put untestable logic
+      outside the crate that is tested. Two judgments, both B8's. The starting item is told
+      from a treasure-room find by **position** alone — `from pool treasure` lies for Judas's
+      Book of Belial, in a line identical in shape to a real pickup — which is the only reason
+      `RoomTransition` is an event at all; getting it wrong over-counts finds by one per run,
+      with well-formed data and nothing failing. And actives replace one another, so summing
+      `Adding collectible` lines gives a player holding five books.
+- [ ] **Two weaknesses written into the document rather than left to be discovered.** Run
+      identity rests on a **prefix hash** — the log has frame numbers, not timestamps, and a
+      seed can be replayed deliberately — which is a heuristic, not an identity, and is stated
+      as such so it gets attacked. And the streak property cannot yet be asserted for co-op or
+      Greed: today's online Greed win did **not** move counter 22, and nothing so far separates
+      "co-op does not count" from "Greed does not". Until it is separated the property holds
+      for solo, non-Greed runs only, and the archive does not claim to mirror 22 for the rest.
+- [ ] **One log still missing, and one accessor.** `samples/logs/` holds the three the spec
+      names — a won solo run with an unlock mid-run, the online Greed win, and a run with
+      neither death nor ending, which is the `Open` case. Every outcome except `Died` is
+      covered; that one needs one more log. And `test-support` needs an accessor for logs
+      beside the ones it has for saves, declaring `sample: …` or `skip: …` on stderr: no test
+      opens `samples/logs/` by hand.
 
 ### 2026-09-12 (late) — a blocker stops being a dead end
 
