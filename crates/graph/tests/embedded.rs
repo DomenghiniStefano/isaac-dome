@@ -16,7 +16,7 @@ fn the_embedded_rules_are_the_committed_ones() {
     );
     assert_eq!(
         rules.generated_from().snapshot_at,
-        "2026-09-04T17:33:31Z",
+        "2026-09-13T14:01:45Z",
         "era of the numbers pinned across this suite"
     );
 }
