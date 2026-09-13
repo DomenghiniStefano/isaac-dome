@@ -99,6 +99,36 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
       renders all of them faithfully, adopt it and `types.ts` becomes a generated,
       committed file, with a check in `scripts/check` that fails if it's stale. The shape
       tests stay where the case is delicate.
+      **Spike run 2026-09-13 (N7), and the answer is "four of the five".** `ts-rs` 12.0.1,
+      on copies of the real types with the real serde attributes:
+      - `rename_all_fields` → `autoSelected: boolean`. **Faithful.**
+      - `miniZ` → `{ "kind": "miniZ" }`. **Faithful** — serde's own rename is read, so the
+        case B9 turned into a rule is not something the generator can get wrong.
+      - transparent `GoalId` → `export type GoalId = string`. **Faithful.**
+      - **Doc comments survive as JSDoc**, which is better than faithful: the knowledge
+        that today lives in `types.ts` comments ("`miniZ` is not a typo") moves next to the
+        Rust type and stops being a second copy that can drift.
+      - Several types can share one `export_to`, so the output is **one file**, not one per
+        type. No import graph, no barrel, no change to any call site.
+      - **A fieldless enum renders as a string union** — `"steamNotFound" | "gameNotFound"
+        | "noSaves"` — and that is the one gap. Frontend rule 5 forbids it, the scanner
+        catches it, and every component compares against `MissingReason.SteamNotFound`, so
+        the union would break call sites as well as the rule.
+      **Only `ts-rs` was evaluated, and `specta` was not, on purpose.** The gap is not in
+      either tool: both target idiomatic TypeScript, and the `const … as const` form rule 5
+      asks for is this repo's own convention. A second general-purpose generator would emit
+      the same union. What the gap needs is a post-step, not a different crate.
+      **So the shape is: generate, then rewrite the one case.** `ts-rs` writes the raw file
+      during `cargo test`; a script turns each bare string union into the `const … as const`
+      pair and formats; `scripts/check` regenerates into a temp file and fails if the
+      committed `types.ts` differs.
+      **One decision the spike surfaced and the item had not.** Five types cross the
+      boundary from crates that are not `ipc`: `core_save::Kind` — the one `CLAUDE.md`
+      records as having changed the wire with the suite green — plus `wiki::Target`,
+      `discovery::SavePrefix`, `Edition` and `Dlc`. Generation has to cover exactly those,
+      so `ts-rs` reaches `core-save`, `wiki` and `discovery`. Declaring them by hand in the
+      post-step instead would leave the documented incident hand-written, which is the one
+      outcome that makes the whole item pointless.
       **Done when:** changing an enum in Rust without regenerating makes `scripts/check`
       fail, and `types.ts` has no more hand edits in its subsequent history.
 

@@ -107,7 +107,7 @@ export const en: MessageSchema = {
       noAchievementSection:
         "There's no telling which items are still locked: the ones an achievement unlocks read as unreadable.",
       itemsBeyondSlots:
-        "catalogue items beyond the save's collection, shown as unreadable",
+        "{count} catalogue items beyond the save's collection, shown as unreadable",
     },
   },
   wiki: {
@@ -328,7 +328,7 @@ export const en: MessageSchema = {
       noCatalogTitle: 'The game has to be installed',
       noCatalog:
         "Without the catalogue there's no telling which achievement each row is or what it still needs: the queue stays saved and comes back as soon as the game is there.",
-      goalsPendingTitle: 'Saved goals to import',
+      goalsPendingTitle: 'Saved goals to import: {count}',
       goalsPending:
         'Goals saved before the queue existed: nothing moves them in on its own.',
       import: 'Import into the queue',
@@ -479,9 +479,9 @@ export const en: MessageSchema = {
       noAchievementSection:
         "Zero rows doesn't mean zero achievements done: it means that part of the save wasn't read.",
       slotsBeyondCatalog:
-        'save slots beyond the catalogue, shown as unknown achievements',
+        '{count} save slots beyond the catalogue, shown as unknown achievements',
       catalogBeyondSlots:
-        "catalogue achievements beyond the save, which don't appear",
+        "{count} catalogue achievements beyond the save, which don't appear",
     },
   },
   gate: {

@@ -10,7 +10,8 @@ import {
   queueRemove,
 } from '@/lib/ipc/queue'
 import type { IpcError, QueueView } from '@/lib/ipc/types'
-import { LoadStatus } from './profile'
+import { LoadStatus } from './loadStatus'
+import { tracked } from './tracked'
 
 export interface QueueMove {
   achievement: number
@@ -30,20 +31,16 @@ export const useQueueStore = defineStore(StoreId.Queue, () => {
   // The last move that succeeded, so the Plan can say where the row stopped.
   const lastMove = ref<QueueMove | null>(null)
 
-  const load = async (): Promise<void> => {
+  // A reload clears what the last edit left behind as well as the rows: a failure from the
+  // previous queue must not be read as a failure of this one.
+  const load = (): Promise<void> => {
     view.value = null
-    status.value = LoadStatus.Loading
-    error.value = null
     mutationFailed.value = false
     mutationError.value = null
     lastMove.value = null
-    try {
+    return tracked(status, error, async () => {
       view.value = await readQueue()
-      status.value = LoadStatus.Ready
-    } catch (e) {
-      error.value = isIpcError(e) ? e : null
-      status.value = LoadStatus.Failed
-    }
+    })
   }
 
   const write = async (run: () => Promise<QueueView>): Promise<boolean> => {

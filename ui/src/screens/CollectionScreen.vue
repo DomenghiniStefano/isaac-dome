@@ -20,10 +20,11 @@ import {
 } from '@/lib/collection/collectionFilter'
 import type { CollectionFilter } from '@/lib/collection/collectionFilter'
 import { itemStateCounts } from '@/lib/collection/itemState'
-import { useCollectionStore } from '@/stores/collection'
-import { LoadStatus } from '@/stores/profile'
+import { useCollectionStore } from '@/stores/views'
+import { LoadStatus } from '@/stores/loadStatus'
 import ScreenHeader from './ScreenHeader.vue'
-import CollectionDiagnostics from './collection/CollectionDiagnostics.vue'
+import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
+import { collectionEntries } from '@/lib/diagnostics/collection'
 import CollectionFacetDrawer from './collection/CollectionFacetDrawer.vue'
 import CollectionStateToggle from './collection/CollectionStateToggle.vue'
 import CollectionTable from './collection/CollectionTable.vue'
@@ -97,7 +98,7 @@ const reset = () => {
       @retry="store.load()"
     />
     <template v-else-if="store.view">
-      <CollectionDiagnostics :diagnostics="store.view.diagnostics" />
+      <DiagnosticsList :entries="collectionEntries(store.view.diagnostics)" />
       <CollectionStateToggle
         :counts="counts"
         :picked="filter.picks[CollectionFacet.State]"

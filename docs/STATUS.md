@@ -23,11 +23,16 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-13. **N1 and N2 merged into `develop`**. The test-only
-public API has one notation — one `pub mod for_tests` per crate, seven of them — and **why a
-command failed is a variant, not a sentence**: four enums, the numbers travelling as numbers,
-the wording in `it.ts` / `en.ts`. **M4's design reorders the cleanup**, and the order is
-written into that section: N1 → N2 → N7 → N6 → M4 sub-project 1 → N8 → N3, N4, N5.
+**Last update:** 2026-09-13. **Five of the eight cleanup items are done** — N1, N2, N4, N5
+and N6, each on its own branch cut from `develop`. The test-only public API has one notation
+(one `pub mod for_tests` per crate, seven of them); **why a command failed is a variant, not
+a sentence** (four enums, the numbers travelling as numbers, the wording in `it.ts` / `en.ts`);
+**the Tauri crate is wiring again** (eleven files, none over 220 lines, `cargo test -p app`
+reporting zero); one diagnostics list instead of four; and one view store instead of three.
+**N7 is the last one before M4** and is blocked on `feature/wiki-infobox`: it generates
+TypeScript from Rust types that branch is still reshaping. **N3 is the only other one left.**
+Order: N1 → N2 → N6 → N4 → N5 → N7 → M4 sub-project 1 → N8 → N3. N4 and N5 were pulled
+forward because they are frontend, touch no file that branch has, and N7 is blocked.
 **Sub-project 3.5d merged into `develop`** (`4406c49`), suite green on the merge result: a
 blocked badge opens a menu whose entries are the wiki pages of what is in the way.
 **M4's first sub-project has its design** (`cac6914`): the run model, the `run` and
@@ -747,6 +752,13 @@ written out here instead:
 
 > **N1 → N2 → N7 → N6 → M4 sub-project 1 → N8 → N3, N4, N5**
 
+**N6 and N7 swapped in the event, on 2026-09-13, and not because the argument changed.**
+N7 generates TypeScript from the Rust types, and `feature/wiki-infobox` is reshaping
+`crates/wiki` — `wiki::Target` is one of the five types generation has to reach. Generating
+from a moving target means generating twice, which is the same reason N7 went in front of M4
+in the first place. N6 touches no file of that branch, so it went first. **The order below
+is the argument; what actually ran is N1 → N2 → N6 → N7.**
+
 Three of the items are cheap *now* and expensive after M4, and that is the whole of the
 reason:
 
@@ -875,44 +887,87 @@ reason:
       `screens/unlock/`, adding a facet to one screen touches no file of the other, and
       B3's third list costs one spec object.
 
-- [ ] **N4. One diagnostics list, not four.** *One session. After N2.*
-      `SearchDiagnostics.vue` (73), `UnlockDiagnostics.vue` (67),
-      `CollectionDiagnostics.vue` (77) and `PlanAlerts.vue` (77) all do one thing: map a
-      diagnostic's `kind` onto an alert with a title and a body, or onto a line of note,
-      sometimes with a count. 294 lines for one idea, and the fourth copy already differs
-      from the first in ways nobody decided.
-      **What:** one `DiagnosticsList` reading a table
-      `kind → { severity, titleKey, bodyKey, count }`. Each screen keeps the table, which
-      is the part that is actually its own.
-      **Three of the four components stop existing. Done when** a new diagnostic kind is
-      one row in one table, and no screen owns a component whose job is drawing alerts.
+- [x] **N4. One diagnostics list, not four.** *Done 2026-09-13, `feature/ui-diagnostics`.*
+      **All four stopped existing**, not three: `PlanAlerts.vue` went too, and its one
+      button — the only alert that asks for something — is handed in through a slot, so the
+      Plan keeps the action without keeping a component. `DiagnosticsList` draws; each
+      screen keeps a `Record<kind, DiagnosticRow>`.
+      **A diagnostic's scalar fields are now the translation's values**, which is what makes
+      a kind one row: `{count}` is placed by the string instead of concatenated in front of
+      it. That change found a real defect — the four count-bearing strings were sentence
+      *fragments* written for `${d.count} ${t(...)}` and carried no placeholder at all, so
+      passing the number as a value would have made it vanish with nothing failing. They are
+      whole sentences now, and the word order around the number is the translation's
+      business: the same argument as N2's `storeNewerSchema`.
+      **Two invariants, and each caught something while being written.** Every key a table
+      can produce exists in `en` **and** `it`. And every value handed to a translation is
+      spent by it — an object or a list has no rendering a translator chose, so `reason` and
+      `wanted` are dropped rather than passed unused, and the check is **per entry**, because
+      the builder hands a diagnostic's values to the title and the body alike and it is
+      enough that one of them places each.
+      **Done when** — both met: a new diagnostic kind is one row in one table, and no screen
+      owns a component whose job is drawing alerts (`find ui/src/screens -name '*Diagnostics.vue'
+      -o -name '*Alerts.vue'` finds nothing).
+      **Measured against this section's own rule, and it does not pass it.** 4 files and 303
+      lines became **6 files and 278**: lines down 25, **files up 2**. The rule says
+      unification closes on a file count going *down*, and here it cannot: one idea needs a
+      spec, a component and one table per screen, which is the item's own prescription.
+      The rule is a proxy for "did the duplication actually go", and it did — the four copies
+      are deleted and `git` records no survivor. **The proxy disagrees with the thing it
+      proxies, and the honest entry is this one rather than four tables merged into a file
+      nobody wanted just to make a count fall.** N3 and N5 should be measured knowing that:
+      their file counts really do fall, because what they delete is a *copy*, not a copy plus
+      the machinery that replaced it.
 
-- [ ] **N5. The stores stop repeating themselves.** *One session.*
-      `stores/collection.ts`, `stores/completion.ts`, `stores/graph.ts` and half of
-      `stores/wiki.ts` are the same `view` / `status` / `error` triad, the same `load()`,
-      the same `try` / `catch`; only the call in the middle changes. And `LoadStatus` is
-      exported from `stores/profile.ts`, so every other store imports a shared enum out of
-      one particular store.
-      **What:** `defineViewStore(id, loader)`, and `LoadStatus` in a file that is only
-      that. The three collapse into one `stores/views.ts`, a line each.
-      **Two files stop existing. Done when** no store writes that `try` / `catch` again and
-      `LoadStatus` is imported from a file that holds nothing else.
+- [x] **N5. The stores stop repeating themselves.** *Done 2026-09-13, `feature/ui-view-stores`.*
+      `collection.ts`, `completion.ts` and `graph.ts` are **three lines of `stores/views.ts`**,
+      and `LoadStatus` lives in `stores/loadStatus.ts`, which holds nothing else.
+      **The factory was not enough on its own, which the item had not seen.**
+      `defineViewStore` fits a store whose whole shape is the triad; three others carry more —
+      the profile loads two things under one status, the queue clears its mutation state
+      first, the wiki skips a read it has already made. They use the half underneath it,
+      **`tracked(status, error, read)`**, so the `try` / `catch` is written once for all six
+      rather than once for three.
+      **One read keeps its own, and the code says why.** `wiki`'s `loadEntry` reports a
+      failure *without ever claiming a success*: the status belongs to the index, and a page
+      arriving must not mark the index `Ready`. `tracked` cannot express that shape, and
+      forcing it would have been a behaviour change wearing a cleanup's clothes. That a
+      page's failure lands on the index's `error` is inherited and left alone — changing it
+      needs a decision, not a refactor.
+      **The graph's two answers became one `view` object**, which is what they always were:
+      one read, so `unlock` and `steps` cannot straddle a profile change. Call sites say
+      `graph.view?.unlock` instead of `graph.unlock`, and two guards that checked both
+      halves now check the one object.
+      **Done when** — both met: no store writes that `try` / `catch` by hand, and
+      `LoadStatus` is imported from a file that holds nothing else. **Three files stopped
+      existing** and three arrived (`views.ts`, `tracked.ts`, `loadStatus.ts`), so the count
+      is flat — for the reason N4 records: what is deleted here is a copy *plus* the
+      machinery that replaces it.
 
-- [ ] **N6. `crates/app` goes back to being wiring.** *Two or three sessions. After N2,
-      before M4 adds commands to it.*
-      964 lines, 21 commands, and about ten functions that are logic — `plan_parts`,
-      `queue_view_now`, `queue_pieces`, `queue_mutate`, `ids_for`, `icon_url` — plus
-      **80 lines of `#[cfg(test)] mod tests` at the bottom of the file**. That block is the
-      proof, written in-house, that the rule is already broken: *if a return value is worth
-      checking it lives in a pure crate, and the Tauri crate is not tested*. The comment
-      above `plan_parts` admits it in as many words.
-      **What:** the pure halves go to `ipc` with their tests, beside the view-models they
-      build — `GraphDeps` made exactly this trip on 2026-09-08 and gained three tests it
-      never had while it sat here. What is left is split by area: `state.rs` for the five
-      `OnceLock`s, `icons.rs` for the protocol and its crop, `commands/` one file per
-      screen family.
-      **Done when** `crates/app/src/` holds no `#[cfg(test)]`, no file over ~250 lines, and
-      `cargo test -p app` reports zero tests because there is nothing left in it to test.
+- [x] **N6. `crates/app` goes back to being wiring.** *Done 2026-09-13, `feature/app-wiring`.*
+      964 lines in one file became **eleven, none over 220**: `state.rs` for the six
+      `OnceLock`s — the item said five, `SearchState` was not on the list — plus the two
+      save reads they share, `icons.rs` for the `isaac://` protocol and its crop, and
+      `commands/` with one file per screen family: profile, completion, wiki, graph, queue,
+      plan. `lib.rs` keeps `run()` and nothing else.
+      **`IpcError` had to move first, and that is what the item had not seen.** The tested
+      functions return it, and it lived in the Tauri crate: they could not leave while the
+      type they are about could not be imported. It is a wire type and `ipc` is the only
+      contract, so that is where it belongs — and N7 will generate it from there.
+      **The pure halves went to `store`, not to `ipc`.** `plan_parts`, `store_error` and
+      `store_unavailable` all take a `StoreError` or a `GoalsRead`, and `ipc` cannot depend
+      on `store` — the dependency runs the other way. They are not wiring either: each has a
+      return value worth checking, which is the rule that says they may not stay in `app`.
+      `crates/store/src/degrade.rs`, with the five tests that were `app`'s only
+      `#[cfg(test)]` block.
+      **`icon_url` stays in `app` on purpose**, against the item's list. `CLAUDE.md` already
+      records why: on Windows the webview sees a rewritten `http://isaac.localhost` origin,
+      and knowing that is the Tauri crate's job, not a pure crate's. It is wiring, not logic
+      that escaped — and moving it because a list named it would have undone a decision the
+      repo had already argued.
+      **Closed against all three criteria, checked rather than assumed**: no `#[cfg(test)]`
+      under `crates/app/src/`, largest file **220** lines, and `cargo test -p app` reports
+      zero tests because there is nothing left in it to test.
 
 - [ ] **N7. `types.ts` generated — this is B2 of `docs/IMPROVEMENTS.md`.** *Two sessions.
       After N2, and before M4 writes into the contract.*
@@ -1184,6 +1239,97 @@ save against the dated backup the game wrote before it, and read which cells mov
 ---
 
 ## Session log
+
+### 2026-09-13 (last) — N5, and a `try` that was right to stay
+
+`feature/ui-view-stores`, cut from `develop` after N4 merged, suite green.
+
+- [x] **Three stores became three lines.** `collection.ts`, `completion.ts` and `graph.ts`
+      wrote the same `view` / `status` / `error` triad and the same `try` / `catch`, with
+      only the call in the middle different. `LoadStatus` left `profile.ts` for a file that
+      holds nothing else: every other store had been importing a shared enum out of one
+      particular store, which said, wrongly, that the profile owns the idea.
+- [x] **The factory alone would have left half the duplication standing.** `defineViewStore`
+      fits a store whose whole shape is the triad, and three others carry more — the profile
+      loads two things under one status, the queue clears its mutation state first, the wiki
+      skips a read it has already made. Extracting `tracked(status, error, read)` from under
+      the factory is what makes the item's own criterion true: **no** store writes that
+      `try` / `catch` by hand, not just the three the item named.
+- [ ] **One read kept its `try`, and that is the finding.** `wiki`'s `loadEntry` reports a
+      failure *without ever claiming a success* — the status belongs to the index, and a page
+      arriving must not mark the index `Ready`. `tracked` always sets `Ready`, so forcing it
+      there would have been a behaviour change wearing a cleanup's clothes, and one that
+      nothing would have caught: the suite is green either way.
+      **What is left open is the thing underneath it**: a page's failure lands on the
+      *index's* `error`, so one missing wiki page can make the whole index look failed. That
+      is inherited, not decided here, and it needs a decision rather than a refactor —
+      `feature/wiki-infobox` is in that code now and is the right place to settle it.
+- [x] **The graph's two answers became one `view` object**, which is what they always were:
+      a single read, so `unlock` and `steps` cannot straddle a profile change. Two guards
+      that checked both halves now check the one object.
+
+### 2026-09-13 (later still) — N4, and a counting rule that disagrees with itself
+
+`feature/ui-diagnostics`, cut from `develop` after N6 merged, suite green.
+
+- [x] **All four components stopped existing**, where the item expected three. `PlanAlerts`
+      went too: its button is the only alert that asks for something, and a slot carries it,
+      so the Plan keeps the action without keeping a component of its own.
+- [x] **A defect the change found rather than caused.** Making a diagnostic's scalar fields
+      the translation's values means `{count}` is placed by the string. The four
+      count-bearing strings had no placeholder — they were fragments written for
+      `${d.count} ${t(...)}` — so the number would have disappeared with **nothing failing**.
+      Whole sentences now, the number placed where each language wants it.
+- [x] **Two invariants, both of which caught something while being written.** Every key a
+      table can produce exists in `en` and `it`. And every value handed to a translation is
+      spent by it — which failed twice before it passed: first because `reason` and `wanted`
+      are an object and a list, which no sentence can place, and then because the builder
+      hands a diagnostic's values to the title *and* the body, so the check belongs to the
+      entry and not to each part. A test that has to be argued into shape twice is a test
+      that was worth writing.
+- [ ] **The section's counting rule does not survive this item, and the entry says so.**
+      "Unification is measured in files that stop existing", and N4 goes from **4 files and
+      303 lines to 6 files and 278** — lines down, files **up two**. It cannot go the other
+      way: one idea needs a spec, a component, and one table per screen, which is the item's
+      own prescription. The rule is a proxy for "did the duplication actually go", and it
+      did — all four copies are deleted. **Merging the four tables into one file to make the
+      count fall would have been gaming a metric, and the count would have been the only
+      thing improved.** N3 and N5 delete a *copy* rather than a copy plus its replacement,
+      so their counts really do fall; the rule holds there and it is worth keeping for them.
+
+### 2026-09-13 (last) — N6, and a second copy that is not a second-class one
+
+Two sessions wanted the one working copy. The wiki-infobox session needed it intrinsically —
+its task 7 compares the wiki against the game's own files — so it kept it, and N6 ran in a
+**git worktree** instead, on `feature/app-wiring` cut from `develop`.
+
+- [x] **The worktree limitation was a setup gap, not a fact.** The other session had tried
+      one and reported that `samples/` and `node_modules` are missing, so the real-data tests
+      skip in silence — the failure `CLAUDE.md` names by incident. But `samples/packed` in the
+      main copy *is already a junction* to the installed game: the same mechanism gives a
+      worktree the whole folder. 9 MB of loose samples copied, `packed` junctioned,
+      `pnpm install`, done.
+      **Proved rather than assumed**: `scripts/check` in the worktree reports **7 skips and
+      1265 real files touched**, the same numbers as the main copy, with the same three
+      reasons — the two absent historical saves. A suite that passes by skipping reports a
+      smaller number, so the match is what says the instrument can speak.
+- [x] **`IpcError` moved to `ipc` first, and the item had not seen that it had to.** The
+      tested functions return it and it lived in the Tauri crate: they could not leave while
+      the type they assert on could not be imported. It is a wire type and `ipc` is the only
+      contract — where N7 will generate it from.
+- [x] **The pure halves went to `store`, not to `ipc`.** `plan_parts`, `store_error` and
+      `store_unavailable` all take a `StoreError` or a `GoalsRead`, and the dependency runs
+      `store → ipc`, never back. Not wiring either: each has a return value worth checking.
+      They live in `crates/store/src/degrade.rs` with the five tests that were `app`'s only
+      `#[cfg(test)]` block — the proof, written in-house, that the rule was broken.
+- [x] **`icon_url` stayed in `app`, against the item's own list.** `CLAUDE.md` records why:
+      on Windows the webview sees a rewritten `http://isaac.localhost` origin, and knowing
+      that is the Tauri crate's job. Moving it because a list named it would have undone a
+      decision the repo had already argued. A cleanup item is a description, not a warrant.
+- [x] **Eleven files, none over 220 lines**, and all three closing criteria checked rather
+      than asserted. The item said five `OnceLock`s; there were six — `SearchState` arrived
+      with 3.5b and nobody added it to the list. Same shape as N1's count moving twice: a
+      survey is where an item starts, not where it ends.
 
 ### 2026-09-13 (later) — N2: the reason stops being a sentence
 
