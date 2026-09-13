@@ -2,6 +2,7 @@
 
 mod catalog_view;
 mod collection;
+pub mod contract;
 mod error;
 pub mod for_tests;
 mod goals;
