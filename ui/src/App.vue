@@ -32,6 +32,7 @@ import {
   toggleMaximizeWindow,
   watchWindowFocus,
 } from '@/lib/window/appWindow'
+import { useWindowSession } from '@/lib/window/session'
 import { RouteName, routeOrigin } from '@/router/routeTable'
 import ProgressGate from '@/screens/ProgressGate.vue'
 import { useProfileStore } from '@/stores/profile'
@@ -45,6 +46,10 @@ const tabs = useTabsStore()
 const profile = useProfileStore()
 const wiki = useWikiStore()
 const { t } = useMessages()
+
+// Everything this window says to the others, and hears from them: a window born from a
+// tear-off asks for its tabs here, and any window can be handed one.
+useWindowSession()
 
 const focused = ref(true)
 let stopWatchingFocus: (() => void) | undefined
