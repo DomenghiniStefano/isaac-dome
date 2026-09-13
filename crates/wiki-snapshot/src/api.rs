@@ -29,7 +29,10 @@ pub const TABLES: &[(&str, &str)] = &[
     ),
     ("player", "_pageName,id,alias,dlc,parent"),
     ("stage", "_pageName,alias,chapter,dlc"),
-    ("transformation", "_pageName,id,alias,dlc"),
+    (
+        "transformation",
+        "_pageName,id,alias,dlc,requirement,items,description,target,appearance",
+    ),
     ("pickup", "_pageName,id,alias,type,dlc"),
     ("version", "_pageName,number,name,date,dlc"),
 ];
@@ -279,6 +282,27 @@ pub fn parse_cargo(json: &str) -> Result<Vec<Row>, String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// The `transformation` table declares eight fields — `Special:CargoTables/transformation`,
+    /// read on 2026-09-13 — and the page's own content lives in five of them. Asking for four
+    /// was enough while a transformation was only a name on a link; it is not enough to state
+    /// how many items it takes and which ones.
+    #[test]
+    fn the_transformation_query_asks_for_the_fields_that_carry_the_content() {
+        let (_, fields) = TABLES
+            .iter()
+            .find(|(t, _)| *t == "transformation")
+            .expect("the transformation table is downloaded");
+        for f in [
+            "requirement",
+            "items",
+            "description",
+            "target",
+            "appearance",
+        ] {
+            assert!(fields.contains(f), "missing field {f} in {fields}");
+        }
+    }
 
     #[test]
     fn urls() {
