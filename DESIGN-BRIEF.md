@@ -262,16 +262,26 @@ Four design consequences, all mandatory:
    screens inside them are the orientation (where I can go); the tabs are what I have open
    right now. The design has to say how they coexist without becoming two overlapping rows
    of tabs.
-3. **There's exactly one active profile for the whole window**, not one per tab. §4.1
-   establishes that every number in the app depends on that choice; tabs with different
-   profiles side by side would break that promise. The indicator therefore lives **outside**
-   the tab bar, not inside a tab, and changing it updates every tab together. Note that Wiki
-   tabs **don't** depend on the profile: switching saves leaves them where they are, and
-   that's correct.
+3. **There's exactly one active profile for the whole app**, not one per tab — and since
+   2026-09-13, not one per *window* either. §4.1 establishes that every number in the app
+   depends on that choice; tabs with different profiles side by side would break that promise,
+   and so would two windows. The indicator therefore lives **outside** the tab bar, not inside
+   a tab, and changing it updates every tab **in every window** together. The same holds for
+   the interface's size and for the plan's queue: one app, one answer. Note that Wiki tabs
+   **don't** depend on the profile: switching saves leaves them where they are, and that's
+   correct.
 4. **A restored tab may point at something that no longer exists** (profile changed,
    different edition, dataset updated). It opens **declaring the gap** — this is a state to
    design for, not an edge case: the tab doesn't silently disappear and doesn't turn into
    another view.
+5. **A tab can be torn off into a window of its own, and dragged back** (2026-09-13, B15).
+   Drag it past the strip and a light preview follows the cursor; release it on the desktop
+   and it opens a window, release it on another window's strip — which draws a marker where it
+   would land — and the two merge. **A secondary window is the whole app**: title bar, strip,
+   navbar, sidebar, and the "+" that opens tabs of its own. Two rules bound it: the last tab
+   of a window does not open a *second* window for itself (that window already is that tab),
+   and a window whose last tab joins another one closes — except the first window, which keeps
+   a fresh tab, because the bar is never empty.
 
 **Search finds anything the app knows about**: items, trinkets, characters, bosses,
 achievements with their condition, challenges, the text of wiki sections, nodes in the unlock
