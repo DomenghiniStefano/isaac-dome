@@ -1275,21 +1275,42 @@ export type Block =
   | { kind: 'table'; header: Inline[][]; rows: Inline[][][] }
   | { kind: 'heading'; level: number; inline: Inline[] }
 
+// No fields: a bare camelCase string. Which of the wiki's two collectible templates the
+// page used — not the game's three-way item kind, because the wiki has no familiar
+// template and writes familiars with the passive one.
+export const CollectibleTemplate = {
+  Passive: 'passive',
+  Activated: 'activated',
+} as const
+export type CollectibleTemplate =
+  (typeof CollectibleTemplate)[keyof typeof CollectibleTemplate]
+
 export type Infobox =
-  | { kind: 'item' }
-  | { kind: 'trinket' }
+  | {
+      kind: 'item'
+      quote: string                 // the pickup quote: the game's own item description
+      template: CollectibleTemplate
+      quality: number | null
+      tags: string[]
+      recharge: Inline[]            // `unlimited`, `one time`, `4s`, per-edition forms
+      devilPrice: Inline[]
+      shopPrice: Inline[]
+      pools: Inline[]               // only what the wiki states: 45 of 720 pages
+    }
+  | { kind: 'trinket'; quote: string; tags: string[]; pools: Inline[] }
   | {
       kind: 'achievement'
-      description: string
       requirements: Inline[]
+      notes: Inline[]               // an achievement has no sections: this is its only prose
       unlocks: Target | null
     }
   | {
       kind: 'boss'
       baseHp: number | null
+      stageHp: Inline[]
+      variant: number | null
       environment: Inline[]
       pool: Inline[]
-      unlockedBy: Target | null
     }
   | {
       kind: 'challenge'
@@ -1302,20 +1323,21 @@ export type Infobox =
       health: Inline[]
       curse: Inline[]
       goal: Inline[]
+      character: Target | null      // the character the challenge forces, when it forces one
       unlocks: Target | null
-      unlockedBy: Target | null
     }
   | {
       kind: 'character'
       health: Inline[]
       damage: string
+      tears: string
       range: string
       speed: string
       luck: string
       shotSpeed: string
       pickups: Inline[]
       collectibles: Inline[]
-      unlockedBy: Target | null
+      parent: Target | null
     }
 
 export interface Section {
@@ -1325,6 +1347,10 @@ export interface Section {
 export interface Entry {
   title: string
   revid: number
+  // Three facts every kind declares, so they sit here and not in the variants.
+  description: Inline[]  // the infobox's summary line, inline everywhere
+  dlc: Dlc[]             // the codes the infobox declares; empty is not "exists everywhere"
+  unlockedBy: Target | null  // what the WIKI states; null never means "free from the start"
   infobox: Infobox
   sections: Section[]
 }
