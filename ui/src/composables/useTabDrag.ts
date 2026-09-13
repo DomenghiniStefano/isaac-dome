@@ -104,14 +104,16 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
   }
 
   const onOutsideMove = (p: Point) => {
-    // A **strip** under the cursor, not a window: over a window's content the card keeps
-    // following the pointer, because nothing else is going to say where the tab would land.
-    // Our own strip counts like any other — the tab has already left it, so putting it back
-    // there is a landing and not a special case.
+    // A **strip** under the cursor, not a window: over a window's content there is no landing,
+    // so nothing is aimed. Our own strip counts like any other — the tab has already left it,
+    // so putting it back there is a landing and not a special case.
     const target = stripUnderPoint(targets(), p, focusOrder.value)
     tellHovered(target, p)
-    if (target) void hidePreview()
-    else void movePreview(p)
+    // **The card never leaves the cursor until the release** (owner, 2026-09-13). It used to
+    // hide itself over a strip, on the grounds that the marker there says the same thing — but
+    // the two say different things: the marker says *where among these tabs*, the card says
+    // *what you are holding*, and the hand holding it should never look empty.
+    void movePreview(p)
   }
 
   const onOutsideRelease = (p: Point) => {
