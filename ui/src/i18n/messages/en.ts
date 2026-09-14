@@ -58,6 +58,72 @@ export const en: MessageSchema = {
     settingsTitle: 'Settings',
     settingsHint: 'The save you are playing, and how it opens tabs.',
   },
+  runs: {
+    intro:
+      'The runs the app has read: this session’s, and the online sessions the game had already recorded. The log carries no clock, so the order is by session and not by time.',
+    rows: 'runs',
+    facets: 'Filters',
+    activeFilters: 'active filters',
+    noFilters: 'no filter',
+    reset: 'Reset the filters',
+    search: 'search a seed or a character',
+    facet: {
+      outcome: 'Outcome',
+      character: 'Character',
+      online: 'With whom',
+      source: 'From where',
+    },
+    outcome: {
+      won: 'won',
+      died: 'died',
+      abandoned: 'abandoned',
+      open: 'in progress',
+    },
+    online: {
+      online: 'online',
+      solo: 'alone',
+    },
+    source: {
+      live: 'this session',
+      session: 'online session',
+    },
+    totals: {
+      runs: 'runs read',
+      won: 'won',
+      died: 'died',
+      abandoned: 'abandoned',
+      open: 'in progress',
+    },
+    column: {
+      character: 'Character',
+      outcome: 'Outcome',
+      floors: 'Floors',
+      seed: 'Seed',
+      source: 'From where',
+    },
+    noCharacter: 'character not named',
+    noItems: 'none',
+    floors: 'floors',
+    killedBy: 'killed by {killer}',
+    endedWith: 'ending {ending}',
+    startingItems: 'Starting items',
+    collected: 'Collected',
+    heldActive: 'Active held',
+    unnamedItem: 'item {id}',
+    empty:
+      'Nothing in the archive: no run has been played since the app was installed.',
+    noMatch: 'No run matches these filters.',
+    diagnostic: {
+      noLogFolder:
+        'We cannot find the folder the game writes its logs to, so there is nothing to read.',
+      storeUnavailable:
+        'The app’s database will not open, so the archive cannot be read.',
+      unreadableEvents:
+        '{count} log lines were not understood: the runs holding them may be incomplete.',
+      noCatalog:
+        'The game is not installed: items carry their number and not their name.',
+    },
+  },
   collection: {
     intro:
       "The items this save doesn't hold yet, with their quality and the pools they turn up in. Trinkets aren't here: the game keeps no record of which ones you have found.",
