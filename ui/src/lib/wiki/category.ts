@@ -20,10 +20,11 @@ export const categoryOf = (target: Target): WikiCategory | null => {
       return WikiCategory.Challenges
     case 'character':
       return WikiCategory.Characters
+    case 'transformation':
+      return WikiCategory.Transformations
     case 'stage':
     case 'room':
     case 'concept':
-    case 'transformation':
       return null
     default:
       return assertNever(target)

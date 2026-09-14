@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { RouteName } from '@/router/routeTable'
 import type { Target } from '@/lib/ipc/types'
+import { pageKey } from '@/lib/wiki/pageKey'
 import { wantLocation, wantOf, wantable } from './wantLocation'
 
 describe('wantLocation', () => {
@@ -43,5 +44,23 @@ describe('wantable', () => {
       'item',
       'achievement',
     ])
+  })
+})
+
+// B46. A transformation gained a wiki page on 2026-09-13 and became openable on
+// 2026-09-14, which is not the same as becoming askable: nothing in the graph unlocks one,
+// you collect three items. The two questions used to share `pageKey` because their answers
+// coincided; these pin that they no longer do.
+describe('a page that is not a want', () => {
+  it('builds no want location for a transformation', () => {
+    expect(wantLocation({ kind: 'transformation', id: 1 })).toBeNull()
+  })
+
+  it('still opens as a wiki page', () => {
+    expect(pageKey({ kind: 'transformation', id: 1 })).toBe('transformation:1')
+  })
+
+  it('reads a transformation key in the url as no want at all', () => {
+    expect(wantOf({ want: 'transformation:1' })).toBeNull()
   })
 })
