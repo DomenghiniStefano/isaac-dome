@@ -1,21 +1,16 @@
 import { describe, expect, it } from 'vitest'
 import { graphAnswers } from '@/lib/ipc/fixtures/graph'
 import type { GraphInfo, UnlockNode, UnlockTarget } from '@/lib/ipc/types'
+import { OriginValue, TargetKind } from '@/lib/ipc/values'
 import { characterForms } from './characterName'
 import { NodeState, stateOrder } from './nodeState'
 import {
   FacetId,
-  OriginValue,
-  UnlockKind,
   UnlockSort,
-  activeFilterCount,
-  emptyFilter,
-  facetCounts,
-  facetOptions,
   facetValues,
-  matchesFilter,
   sortNodes,
-} from './unlockFilter'
+  unlockFaceting,
+} from './unlockFacets'
 
 const computed = (
   availableNow: boolean,
@@ -74,13 +69,13 @@ describe('facetValues', () => {
   it('reads what a node unlocks by kind, once each', () => {
     const n = node(1, { unlocks: [passive('A'), character('B'), passive('C')] })
     expect(facetValues(n, FacetId.Unlocks)).toEqual([
-      UnlockKind.Passive,
-      UnlockKind.Character,
+      TargetKind.Passive,
+      TargetKind.Character,
     ])
   })
 
   it('says a node unlocks nothing rather than no value', () => {
-    expect(facetValues(node(1), FacetId.Unlocks)).toEqual([UnlockKind.Nothing])
+    expect(facetValues(node(1), FacetId.Unlocks)).toEqual([TargetKind.Nothing])
   })
 
   it('names a missing origin', () => {
@@ -111,7 +106,11 @@ describe('facetValues', () => {
   })
 })
 
-describe('matchesFilter', () => {
+// Matching itself — a value within a facet, every facet at once, a blank query — belongs to
+// `lib/facets/faceting.test.ts` and is tested there on a row neither screen owns. What is
+// Unlock's here is *what the search reads*, which is the one part of the pair that was never
+// shared: three fields joined, against the Collection's single name.
+describe('the search', () => {
   const lost = node(1, {
     achievement: {
       kind: 'known',
@@ -124,110 +123,65 @@ describe('matchesFilter', () => {
     origin: 'rebirth',
   })
 
-  it('lets everything through an empty filter', () => {
-    expect(matchesFilter(lost, emptyFilter())).toBe(true)
-  })
-
-  it('takes any value within a facet, and every facet at once', () => {
-    const picks = (unlocks: string[], origin: string[]) => ({
-      ...emptyFilter(),
-      picks: {
-        ...emptyFilter().picks,
-        [FacetId.Unlocks]: unlocks,
-        [FacetId.Origin]: origin,
-      },
-    })
-    expect(
-      matchesFilter(
-        lost,
-        picks([UnlockKind.Passive, UnlockKind.Character], []),
-      ),
-    ).toBe(true)
-    expect(
-      matchesFilter(lost, picks([UnlockKind.Character], [OriginValue.Rebirth])),
-    ).toBe(true)
-    expect(
-      matchesFilter(
-        lost,
-        picks([UnlockKind.Character], [OriginValue.Repentance]),
-      ),
-    ).toBe(false)
-  })
-
   it('searches the text, the condition and what it unlocks, in any case', () => {
-    const query = (q: string) => ({ ...emptyFilter(), query: q })
-    expect(matchesFilter(lost, query('LOST'))).toBe(true)
-    expect(matchesFilter(lost, query('4 times'))).toBe(true)
+    const query = (q: string) => ({ ...unlockFaceting.empty(), query: q })
+    expect(unlockFaceting.matches(lost, query('LOST'))).toBe(true)
+    expect(unlockFaceting.matches(lost, query('4 times'))).toBe(true)
     expect(
-      matchesFilter(
+      unlockFaceting.matches(
         node(2, { unlocks: [passive('Cube of Meat')] }),
         query('cube'),
       ),
     ).toBe(true)
-    expect(matchesFilter(lost, query('onion'))).toBe(false)
-    expect(matchesFilter(lost, query('   '))).toBe(true)
+    expect(unlockFaceting.matches(lost, query('onion'))).toBe(false)
+    expect(unlockFaceting.matches(lost, query('   '))).toBe(true)
   })
 })
 
-describe('facetCounts', () => {
-  const nodes = [
-    node(1, { unlocks: [passive('A'), passive('B')], origin: 'rebirth' }),
-    node(2, { unlocks: [character('C')], origin: 'rebirth' }),
-    node(3, { unlocks: [passive('D')], origin: 'repentance' }),
-  ]
-  const filter = {
-    ...emptyFilter(),
-    picks: { ...emptyFilter().picks, [FacetId.Unlocks]: [UnlockKind.Passive] },
-  }
-
-  it('leaves its own facet out, so a count says what picking it would give', () => {
-    const counts = facetCounts(nodes, filter, FacetId.Unlocks)
-    expect(counts.get(UnlockKind.Passive)).toBe(2)
-    expect(counts.get(UnlockKind.Character)).toBe(1)
-  })
-
-  it('applies every other facet', () => {
-    const counts = facetCounts(nodes, filter, FacetId.Origin)
-    expect(counts.get(OriginValue.Rebirth)).toBe(1)
-    expect(counts.get(OriginValue.Repentance)).toBe(1)
-  })
-
+// How a count is taken is the engine's; that it lands on the right numbers for *these* nodes
+// is Unlock's, and only real data can say so.
+describe('the counts on the reference profile', () => {
   // Counted on the committed unlock.json outside our code: 231 nodes unlock nothing the
   // catalog knows, 274 have no origin, 119 are unlockable now (one origin value each).
   it('counts the reference profile', () => {
     expect(
-      facetCounts(reference, emptyFilter(), FacetId.Unlocks).get(
-        UnlockKind.Nothing,
-      ),
+      unlockFaceting
+        .counts(reference, unlockFaceting.empty(), FacetId.Unlocks)
+        .get(TargetKind.Nothing),
     ).toBe(231)
     expect(
-      facetCounts(reference, emptyFilter(), FacetId.Origin).get(
-        OriginValue.None,
-      ),
+      unlockFaceting
+        .counts(reference, unlockFaceting.empty(), FacetId.Origin)
+        .get(OriginValue.None),
     ).toBe(274)
     const now = {
-      ...emptyFilter(),
-      picks: { ...emptyFilter().picks, [FacetId.State]: [NodeState.Now] },
+      ...unlockFaceting.empty(),
+      picks: {
+        ...unlockFaceting.empty().picks,
+        [FacetId.State]: [NodeState.Now],
+      },
     }
-    const byOrigin = [...facetCounts(reference, now, FacetId.Origin).values()]
+    const byOrigin = [
+      ...unlockFaceting.counts(reference, now, FacetId.Origin).values(),
+    ]
     expect(byOrigin.reduce((sum, n) => sum + n, 0)).toBe(119)
   })
 })
 
-describe('facetOptions', () => {
+describe('the options a facet offers', () => {
   it('keeps the fixed orders', () => {
-    expect(facetOptions(reference, FacetId.State)).toEqual(stateOrder)
-    expect(facetOptions(reference, FacetId.Unlocks)).toEqual([
-      UnlockKind.Passive,
-      UnlockKind.Active,
-      UnlockKind.Familiar,
-      UnlockKind.Trinket,
-      UnlockKind.Character,
-      UnlockKind.Boss,
-      UnlockKind.Challenge,
-      UnlockKind.Nothing,
+    expect(unlockFaceting.options(reference, FacetId.State)).toEqual(stateOrder)
+    expect(unlockFaceting.options(reference, FacetId.Unlocks)).toEqual([
+      TargetKind.Passive,
+      TargetKind.Active,
+      TargetKind.Familiar,
+      TargetKind.Trinket,
+      TargetKind.Character,
+      TargetKind.Boss,
+      TargetKind.Challenge,
+      TargetKind.Nothing,
     ])
-    expect(facetOptions(reference, FacetId.Origin)).toEqual([
+    expect(unlockFaceting.options(reference, FacetId.Origin)).toEqual([
       OriginValue.Rebirth,
       OriginValue.Afterbirth,
       OriginValue.AfterbirthPlus,
@@ -237,7 +191,7 @@ describe('facetOptions', () => {
   })
 
   it('lists the required characters found in the nodes, ordered by their name', () => {
-    const characters = facetOptions(reference, FacetId.Character)
+    const characters = unlockFaceting.options(reference, FacetId.Character)
     expect(characters).toHaveLength(10)
     // The values are ids (B28); what they are sorted by is the name the player reads.
     const forms = characterForms(reference)
@@ -296,20 +250,6 @@ describe('sortNodes', () => {
   })
 })
 
-describe('activeFilterCount', () => {
-  it('counts the picked values, not the search', () => {
-    const filter = {
-      query: 'lost',
-      picks: {
-        ...emptyFilter().picks,
-        [FacetId.State]: [NodeState.Now],
-        [FacetId.Origin]: [OriginValue.Rebirth, OriginValue.None],
-      },
-    }
-    expect(activeFilterCount(filter)).toBe(3)
-  })
-})
-
 function slots(nodes: UnlockNode[]): number[] {
   return nodes.map((n) =>
     n.achievement.kind === 'known' ? n.achievement.id : n.achievement.slot,
@@ -327,15 +267,18 @@ describe('the character facet keeps the two forms apart', () => {
 
   it('offers one option per character, not one per name', () => {
     const nodes = [lost(10, false), lost(31, true)]
-    expect(facetOptions(nodes, FacetId.Character)).toEqual(['10', '31'])
+    expect(unlockFaceting.options(nodes, FacetId.Character)).toEqual([
+      '10',
+      '31',
+    ])
   })
 
   it('a pick on one form leaves the other out', () => {
     const filter = {
-      ...emptyFilter(),
-      picks: { ...emptyFilter().picks, [FacetId.Character]: ['31'] },
+      ...unlockFaceting.empty(),
+      picks: { ...unlockFaceting.empty().picks, [FacetId.Character]: ['31'] },
     }
-    expect(matchesFilter(lost(31, true), filter)).toBe(true)
-    expect(matchesFilter(lost(10, false), filter)).toBe(false)
+    expect(unlockFaceting.matches(lost(31, true), filter)).toBe(true)
+    expect(unlockFaceting.matches(lost(10, false), filter)).toBe(false)
   })
 })

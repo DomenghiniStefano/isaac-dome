@@ -1,18 +1,19 @@
 import { unlockKindText } from '@/components/graph/unlockKindText'
-import { dlcNames } from '@/components/wiki/dlcNames'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
+import { oneOf } from '@/lib/oneOf'
 import { characterLabel } from '@/lib/graph/characterName'
 import type { CharacterForm } from '@/lib/graph/characterName'
 import { NodeState } from '@/lib/graph/nodeState'
-import { FacetId, OriginValue, UnlockKind } from '@/lib/graph/unlockFilter'
-import { Dlc } from '@/lib/ipc/types'
-
-type Translate = (
-  key: MessageKey<MessageSchema>,
-  params?: Record<string, unknown>,
-) => string
+import { originLabel } from '@/components/facets/labels'
+import type {
+  DrawerLabels,
+  ToolbarLabels,
+  Translate,
+} from '@/components/facets/labels'
+import { FacetId, UnlockSort } from '@/lib/graph/unlockFacets'
+import { TargetKind } from '@/lib/ipc/values'
 
 export const facetTitle: Record<FacetId, MessageKey<MessageSchema>> = {
   [FacetId.State]: 'unlock.facet.state',
@@ -29,19 +30,6 @@ export const stateText: Record<NodeState, MessageKey<MessageSchema>> = {
   [NodeState.Partial]: 'graph.stateName.partial',
 }
 
-// The origin DLC's names are game data, the same as the wiki's editions; only "not stated"
-// is ours to say.
-const originName: Record<OriginValue, string | null> = {
-  [OriginValue.Rebirth]: dlcNames[Dlc.Rebirth],
-  [OriginValue.Afterbirth]: dlcNames[Dlc.Afterbirth],
-  [OriginValue.AfterbirthPlus]: dlcNames[Dlc.AfterbirthPlus],
-  [OriginValue.Repentance]: dlcNames[Dlc.Repentance],
-  [OriginValue.None]: null,
-}
-
-const find = <T extends string>(values: Record<string, T>, value: string) =>
-  Object.values(values).find((v) => v === value)
-
 // A facet value in words. Values come back from the filter as strings; one that isn't in its
 // set is shown as it came rather than dropped.
 export const facetValueLabel = (
@@ -54,18 +42,15 @@ export const facetValueLabel = (
 ): string => {
   switch (facet) {
     case FacetId.State: {
-      const state = find(NodeState, value)
+      const state = oneOf(NodeState, value)
       return state ? t(stateText[state]) : value
     }
     case FacetId.Unlocks: {
-      const kind = find(UnlockKind, value)
+      const kind = oneOf(TargetKind, value)
       return kind ? t(unlockKindText[kind]) : value
     }
-    case FacetId.Origin: {
-      const origin = find(OriginValue, value)
-      if (!origin) return value
-      return originName[origin] ?? t('graph.originNone')
-    }
+    case FacetId.Origin:
+      return originLabel(t, value)
     case FacetId.Character: {
       const form = characters?.get(value)
       return form ? characterLabel(t, form) : value
@@ -73,4 +58,46 @@ export const facetValueLabel = (
     default:
       return assertNever(facet)
   }
+}
+
+// A state is never colour alone: the square carries its colour, the name says it. Partial's
+// square is the blocked colour with a dashed edge, like its badge.
+export const stateDot: Record<NodeState, string> = {
+  [NodeState.Done]: 'bg-state-done',
+  [NodeState.Now]: 'bg-state-now',
+  [NodeState.Blocked]: 'bg-state-blocked',
+  [NodeState.Partial]: 'border border-dashed border-state-blocked',
+}
+
+// The facets the drawer holds: the state has its own control above the table.
+export const drawerFacets: FacetId[] = [
+  FacetId.Unlocks,
+  FacetId.Origin,
+  FacetId.Character,
+]
+
+export const sortOrder: UnlockSort[] = [
+  UnlockSort.FanOut,
+  UnlockSort.Steps,
+  UnlockSort.Name,
+]
+
+export const sortText: Record<UnlockSort, MessageKey<MessageSchema>> = {
+  [UnlockSort.FanOut]: 'unlock.sort.fanOut',
+  [UnlockSort.Steps]: 'unlock.sort.steps',
+  [UnlockSort.Name]: 'unlock.sort.name',
+}
+
+export const toolbarLabels: ToolbarLabels = {
+  rows: 'unlock.rows',
+  search: 'unlock.search',
+  sortBy: 'unlock.sortBy',
+  activeFilters: 'unlock.activeFilters',
+}
+
+export const drawerLabels: DrawerLabels = {
+  facets: 'unlock.facets',
+  activeFilters: 'unlock.activeFilters',
+  noFilters: 'unlock.noFilters',
+  reset: 'unlock.reset',
 }

@@ -1,16 +1,16 @@
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
-import { UnlockKind } from '@/lib/graph/unlockFilter'
+import { TargetKind } from '@/lib/ipc/values'
 
 // What a node unlocks, in words. A record over the whole set: a kind with no words fails to
 // compile.
-export const unlockKindText: Record<UnlockKind, MessageKey<MessageSchema>> = {
-  [UnlockKind.Passive]: 'graph.kinds.passive',
-  [UnlockKind.Active]: 'graph.kinds.active',
-  [UnlockKind.Familiar]: 'graph.kinds.familiar',
-  [UnlockKind.Trinket]: 'graph.kinds.trinket',
-  [UnlockKind.Character]: 'graph.kinds.character',
-  [UnlockKind.Boss]: 'graph.kinds.boss',
-  [UnlockKind.Challenge]: 'graph.kinds.challenge',
-  [UnlockKind.Nothing]: 'graph.kinds.nothing',
+export const unlockKindText: Record<TargetKind, MessageKey<MessageSchema>> = {
+  [TargetKind.Passive]: 'graph.kinds.passive',
+  [TargetKind.Active]: 'graph.kinds.active',
+  [TargetKind.Familiar]: 'graph.kinds.familiar',
+  [TargetKind.Trinket]: 'graph.kinds.trinket',
+  [TargetKind.Character]: 'graph.kinds.character',
+  [TargetKind.Boss]: 'graph.kinds.boss',
+  [TargetKind.Challenge]: 'graph.kinds.challenge',
+  [TargetKind.Nothing]: 'graph.kinds.nothing',
 }
