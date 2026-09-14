@@ -1,0 +1,136 @@
+{{header tainted characters}}
+{{infobox characters
+ | dlc          = r
+ | id           = 35
+ | health       = ''Invulnerable''
+ | damage       = 3.5 (* 1.50)
+ | tears        = +0; x1/2
+ | speed        = －
+ | name 2       = Tainted Soul
+ | health 2     = {{hearts|soul=3}}
+ | damage 2     = －
+ | tears 2      = －
+ | shot speed 2 = －
+ | range 2      = －
+ | speed 2      = 1.0
+ | unlocked by  = The Fettered
+}}
+'''Tainted Forgotten''' and '''Tainted Soul''' are [[Characters]] added in [[The Binding of Isaac: Repentance]]. They are the tainted versions of {{c|The Forgotten}} and {{c|The Soul}}. Tainted Forgotten is unlocked by reaching {{s|Home}} and using the {{I|Red Key}}, {{P|Cracked Key}}, or {{P|1=Soul of Cain}} to access a special room in the left hallway while playing as The Forgotten.
+
+== Notes ==
+* Both characters always co-exist and depend on each other; Tainted Soul is incapable of firing tears or dealing damage in almost any manner, and likewise, Tainted Forgotten is incapable of moving on their own. Tainted Soul is able to pick up and move around with, or throw, Tainted Forgotten, similar to how one holds and throws {{i|Bob's Rotten Head}}. Otherwise, Tainted Forgotten has a melee bone weapon like {{c|The Forgotten}} does, which he can swing and throw while on the ground.
+** Tainted Forgotten will swing his bone at the same time Tainted Soul throws him, and this swing will deal 3x the normal damage, and the impact itself will deal 5 damage.
+* Tainted Forgotten is also completely invulnerable, and instead, Tainted Soul acts as his 'hitbox' and will take damage like any character. Both characters share the same pool of {{e|Soul Heart}}s (they cannot have {{e|Red Heart}} Containers), and if the last one is lost, they both die.
+* Enemies almost always target Tainted Soul and ignore Tainted Forgotten, but the latter's body can be used to block enemy projectiles and movement.
+* Both share the same pool of pickups, similar to {{c|The Forgotten}}. Tainted Forgotten can pick up items and consumables when he's thrown at them, as well as open Chests or unlock doors.
+* Tainted Forgotten can be thrown into a door to enter the next room (including {{r|Curse Room}}s, which deal no damage to Tainted Forgotten), and after entering a room, Tainted Soul will always be holding him. With practice, they can very rapidly traverse the floor, spending a fraction of a second in any cleared room.
+* When placing a {{e|Bomb}}, it will be placed underneath Tainted Forgotten, and the same is true when dropping trinkets or Cards, etc.
+* Any items picked up will normally behave as if Tainted Forgotten picked them up and don't directly affect Tainted Soul; for example, orbital [[familiars]] will orbit Tainted Forgotten. Speed upgrades on the other hand will apply to Tainted Soul, among other examples. Effects that grant invincibility, i.e. {{i|Book of Shadows}}, will apply to Tainted Soul, whether or not there's visual indication of this.
+* Tainted Soul can open the door to {{s|Mausoleum}} / {{s|Gehenna}} without losing any health while not holding Tainted Forgotten.
+* If Tainted Soul picks up Tainted Forgotten while the latter is charging a bone toss, it will throw it once the player releases the attack button.
+* If Tainted Forgotten's range reaches high enough numbers, his melee bone swing will occur away from him, which can result in an inability to deal damage to enemies too close to him.
+* {{E|Bulb}}s will never attack both Tainted Forgotten or Tainted Soul.
+
+== Strategy ==
+* In order to one-throw-kill as many enemies as possible, Tainted Forgotten's build should focus on [[Damage]]. Having high [[Speed]] is also important, as it allows Tainted Soul to pick Tainted Forgotten up easier. [[Tears]] and [[Range]] are less useful than normal for Tainted Forgotten.
+* Items that enhance melee attack radius (such as size-up items, {{i|Chocolate Milk}}, {{i|Mutant Spider}}, {{i|Technology}}) are also recommended. Items that split tears on hit like {{i|Haemolacria}} are beneficial as well.
+* Items with area of effect damage such as {{i|Monstrance}} and {{i|120 Volt}} apply their effect to Tainted Forgotten, making them incredibly powerful for large crowds and stationary bosses.
+* Care should be taken when fighting enemies spawned in {{r|Devil Room}}s, {{r|Shop}}s and {{r|Black Market}}s, as Tainted Forgotten will buy anything he's thrown into if possible, with potentially fatal results.
+* Some [[pills]] don't work or are irrelevant because they apply their effects to Tainted Forgotten. Paralysis is one example.
+* Be careful of {{e|Mom's Hand}}s, because they can grab Tainted Forgotten. This will deal no damage, but will still teleport Tainted Forgotten back to the starting room.
+* Tainted Soul can open {{E|Mimic Chest}}s without taking damage.
+* Tainted Soul can activate the stop button in [[Greed Mode]] without taking damage, at the price of one less coin spawning in the next wave's reward. Tainted Forgotten's body can also be used to activate the button, which does not cost a coin.
+* Tainted Soul can pass through the mirror in {{s|Downpour}} / {{s|Dross}} II without touching the {{E|White Fire Place}} (in fact, nothing happens when he flies over it), and will keep his life bar, which makes the trek considerably safer.
+** If Tainted Forgotten is thrown into the White Fire Place, he transforms into {{c|The Lost}} (though he is still invulnerable); Tainted Soul will have {{i|Holy Mantle}} protection (if unlocked), but will die if damage is taken after it's broken like normal.
+* Items that inflict Fear like {{i|Mom's Perfume}} and {{i|2Spooky}} should be avoided because enemies will flee from Tainted Forgotten instead of Tainted Soul, making it harder to hit enemies while also offering Tainted Soul little protection.
+* [[Status Effects#Charm|Charmed]] enemies may pursue Tainted Forgotten instead of other enemies, which can be ideal for bringing and keeping them within range of his melee attack.
+* [[Tear Effects|Tear effects]] from items such as {{i|Euthanasia}} and {{i|Sulfuric Acid}} will activate on both body throws and melee attacks.
+* All contact damage attacks such as {{i|Aries}} and {{i|The Virus}} are tripled in strength and will apply when throwing Tainted Forgotten. The damage is added on top of the normal 5 points his body impact does. Tainted Soul however does not benefit from them at all.
+
+== Item Interactions ==
+<!-- no need to list items and put "works as if Tainted Forgotten is using it"; this should be assumed by default -->
+* {{i|Birthright}}: Gives the pocket item {{i|Recall}}, which will pull Tainted Forgotten into Tainted Soul's hands regardless of distance.
+** {{i|Habit}}, {{i|9 Volt}} and {{i|The Battery}} are extremely useful for speeding up recharge time, allowing for quicker room clearing.
+* {{i|Brimstone}}: Replaces the bone throw with a short-range brimstone orb.
+* {{i|Bum Friend}}, {{i|Dark Bum}} and {{i|Key Bum}} will drop pickup to Tainted Forgotten, not Tainted Soul.
+* {{i|Gnawed Leaf}}: Activates when Tainted Forgotten is not moving. While active, Tainted Soul is also invulnerable. Carrying Tainted Forgotten around by Tainted Soul does not count for it as moving, which means that Tainted Soul will be invulnerable while moving with Tainted Forgotten above its head.
+* {{i|Chocolate Milk}}: Instead of throwing Tainted Forgotten instantly, the throw can be charged, which powers up Tainted Forgotten's bone club before throwing them.
+* {{i|Damocles}}: Hangs over the Forgotten. Despite Forgotten's invulnerability, the sword will kill him, necessitating an external source of invulnerability from items such as {{i|Gnawed Leaf}}, {{t|Sigil of Baphomet}}, {{I|Book of Shadows}}, etc. Damage negating items such as {{i|Holy Mantle}} will not stop the sword either.
+* {{i|Dr. Fetus}}: Charging an attack will spawn a bomb underneath Tainted Forgotten, which he can fling by swinging again.
+** The bomb will stay attached to Tainted Forgotten until it explodes or is flung, even when he is picked up.
+** {{i|A Lump of Coal}}: When flung, the bomb will gradually increase in size. If large enough, the bomb will explode like a {{i|Mr. Mega}} bomb.
+* {{i|E. Coli}} / {{I|Midas' Touch}}: Applies when Tainted Forgotten is thrown, dealing much more damage.
+* {{i|Epic Fetus}}: After being thrown or while sitting around, holding a fire button will prompt Tainted Forgotten to hold a missile and draw a crosshair that travels in the direction being 'fired' in (similar to how {{i|Marked}} works). When the desired distance is reached, let go of the fire button and Tainted Forgotten will chuck the missile in an arc to that location. The missile will not be thrown until the fire button is released. This has no effect on the melee attack.
+* {{i|Esau Jr.}}: The Forgotten turns into Esau who gains 3 black hearts and greatly enhanced melee speed. Best if used as early as possible to avoid having future items randomized.
+* {{i|Guillotine}}: Potentially adds more contact damage when the skeleton is thrown on an enemy.
+* {{i|How to Jump}}: Will drastically increase Tainted Forgotten's launch distance when used while being thrown.
+* {{i|Ipecac}}: Tainted Forgotten's bone club will cause explosion when hitting enemies. When he is thrown the explosion may also cause him to ricochet backwards, making retrieval much easier.
+* {{i|Isaac's Heart}}: Causes the heart to follow Tainted Soul instead.
+* {{i|Jupiter}}: Acts solely as a speed boost with no fart effects.
+* {{i|Kamikaze!}}: Tainted Forgotten is the one who explodes, not Tainted Soul, allowing unlimited use with no downsides as long as the latter keeps his distance.
+* {{i|Kidney Stone}}: Similarly to {{c|The Forgotten}}, passing a kidney stone will fire a projectile and cause Tainted Forgotten to swing the bone club rapidly for the effect's duration.
+* {{i|Lead Pencil}}: Will fire the Lead pencil shot on the 15th swing of the bone club. Holding down the fire button will cause Tainted Forgotten to both swing and charge the bone club. Swinging, then charging and firing, counts as two swings.
+* {{i|Lemegeton}}: Despite the Wisps orbiting the invulnerable Tainted Forgotten, they still take damage unless the Tainted Soul is invulnerable.
+* {{i|Lost Soul}}: It is almost impossible to keep the ghost alive, as it follows Tainted Forgotten into danger, not Tainted Soul.
+* {{i|Tooth and Nail}}: Contact damage applies only to Tainted Forgotten, but invincibility is applied to Tainted Soul.
+* {{i|The Ludovico Technique}}: Spawns a floating tear that slowly and loosely floats towards Tainted Forgotten. If struck with a melee attack, it will grow in size and be launched outwards, dealing damage if it strikes something, before returning again.
+* {{i|Mars}}: Tainted Forgotten will dash when Tainted Soul triggers it; can be used to control him from a distance. It doesn't trigger when Tainted Soul holds Tainted Forgotten.
+* {{i|Mercurius}}: Allows Tainted Soul to enter a room and immediately throw Tainted Forgotten into the next door, rapidly skipping most of the floor.
+* {{i|Montezuma's Revenge}}: The beam is always directed left from Tainted Forgotten.
+* {{i|My Reflection}}: All projectiles that would be affected by this item will return to where Tainted Forgotten is.
+* {{i|My Shadow}}: The shadow follows Tainted Forgotten, not Tainted soul; this allows My Shadow to trigger multiple times while being thrown through enemies or sitting next to an enemy. 
+* {{i|Night Light}}: The light held by Tainted Forgotten will always face right.
+* {{t|Panic Button}}: Active item is used whenever Tainted Forgotten touches an enemy, regardless of damage taken.
+* {{i|Pluto}} (or any size down effect): Makes Tainted Forgotten smaller, thus making it harder to hit anything by throwing him, while leaving Tainted Soul the same size.
+* {{i|Rocket in a Jar}}: The bomb will be a rocket only if placed while Tainted Forgotten is being thrown in the air or while charging the bone throw attack, and will follow the same direction.
+* {{i|Salvation}}: Incredibly powerful, as the ring will be around the Forgotten.
+* {{i|Samson's Chains}}: The chain will attach itself to Tainted Forgotten, allowing Tainted Soul to hide in rocks after throwing him. This also allows safe destruction of potentially damaging objects such as Mushrooms and Polyps.
+* {{i|Serpent's Kiss}}: The poison touch will affect Tainted Forgotten and will have a chance to drop black hearts upon the foe's death.
+* {{i|Stitches}}: Will only teleport Tainted Forgotten, which can be used to more accurately reposition Tainted Forgotten without putting Tainted Soul in a difficult position.
+* {{i|Strange Attractor}}: Will cause enemies to be pulled towards Tainted Forgotten. This is very useful, since it makes dealing damage to enemies easier and protects Tainted Soul, pulling them away and blocking more of their shots.
+* {{i|Technology 2}} / {{i|Tech.5}}: Gives Tainted Forgotten long-range laser attack.
+* {{i|Tech X}}: If thrown, Tainted Forgotten's club is surrounded by a ring-shaped laser.
+** '''Tech X''' + {{I|Cursed Eye}}: Overrides Tech X. When charged, Tainted Forgotten swings club rapidly without the laser.
+* {{i|Uranus}}: Enemies that die due to Tainted Forgotten being thrown at them will also be frozen, and their frozen bodies will usually be knocked into other enemies, causing an ice cascade.
+* {{i|Ventricle Razor}}: Portals created can be used both while Tainted Soul is holding Tainted Forgotten, which will warp them both, and when Tainted Forgotten is thrown in the portal by himself, which will not warp Tainted Soul; can be very effective for repositioning, especially during boss fights.
+* {{i|Venus}}: Perpetually charms enemies close to Tainted Forgotten, which synergizes well with the fact that charmed enemies can home in on him, keeping them charmed and in melee range (and away from Tainted Soul) until killed or distracted by another target.
+* {{i|White Pony}}: Can be used only when Tainted Soul is holding Tainted Forgotten or when Tainted Forgotten was just thrown. Doing so will make a trail of light beams behind Tainted Forgotten as he moves instead of executing the usual charge attack. This makes it possible to deal much more damage with one charge, as Tainted Soul can move the Tainted Forgotten on top of an enemy to make every light beam land on them.
+* {{T|RC Remote}}: Familiars will move with Tainted Soul, and not follow behind Tainted Forgotten like they normally do. This is massively beneficial as it allows Tainted Soul to have actual protection against enemies. Orbitals still remain orbiting Tainted Forgotten as expected.
+* {{I|Broken Shovel 1}}: The feet stomping down on Isaac will aim for Tainted Forgotten, not Tainted Soul.
+* {{i|Spirit Sword}}: No effect.
+* {{i|Cursed Eye}}: Holding down the fire button while Tainted Forgotten is on the ground will charge the bone swing. Releasing it will swing the bone club up to 5 times. Holding down the fire button while holding Tainted Forgotten will charge the throw. Releasing it will throw Tainted Forgotten, which will then swing the bone club up to 5 times.
+
+== Unlockable Items ==
+{{achievement text | Polished Bone, Death, Soul of the Forgotten, Golden Battery, Decap Attack, Hollow Heart, Isaac's Tomb }}
+
+== Gallery ==
+<gallery>
+File:Transition_Forgotten_Tainted.png|Tainted Forgotten's transition screen portrait.
+File:Start_Tainted_Forgotten.png|The spawn floor when playing Tainted Forgotten.
+File: Tainted Forgotten Menu Icon (Locked).png|Tainted Forgotten's locked character icon, depicting a closet with some bones sitting outside of it, with the Tainted Soul peeking out of the door.
+</gallery>
+
+== Trivia ==
+* Using the console command "<code>restart 40</code>" starts a new run as only Tainted Soul; he's still unable to fire and otherwise acts identically to {{c|The Lost}}, dying in one hit. It's not normally possible to play the game this way, and the game will crash if Tainted Soul dies while not linked to Tainted Forgotten.
+* Tainted Soul bears resemblance to a scrapped character from ''Antibirth'' named [[anti:Edith|Edith]]. The mechanic used by Tainted Forgotten also resembles one planned mechanic Edith was going to have.
+** It was confirmed by both Kilburn<ref>https://media.discordapp.net/attachments/485133685881045014/835354592409681970/unknown.png</ref> and Edmund McMillen<ref>https://twitter.com/edmundmcmillen/status/1389477631716958208</ref> that Edith ultimately evolved into Tainted Forgotten during development.
+* Certain transformations such as {{tf|Guppy}} cause Tainted Forgotten to have the transformation's body sprite, making him stand up-right.
+* The achievement for unlocking Tainted Forgotten is "The Fettered", a possible title for the character.
+** "Fettered" means "bound" or "shackled", which may be linked to how Tainted Forgotten cannot move on his own and only through Tainted Soul.
+** "Fettered" can also mean "restrained with chains", in a complete irony that while Tainted Forgotten and Tainted Soul are no longer physically connected to each other by chains, they are unable to progress the basement without each other, making them metaphorically chained to each other.
+** According to the Binding of Isaac card game: four souls, the Tainted Soul Is labeled As “The Fettered” while Tainted Forgotten Alone is the Dead Weight.
+* The character's main mechanic of picking up and carrying around a pile of bones could be a reference to [https://biblehub.com/bsb/exodus/13.htm Exodus 13:19], in which Moses carries the bones of Joseph with him on his journey with the other Israelites.
+* Defeating {{E|Ultra Greedier}} as Tainted Forgotten unlocks {{P|XIII - Death?}}, a reversed Major Arcana card associated with longing for an end but not getting it and having to persist without that satisfaction. This could be seen as Isaac not getting an end to his story and having to exist while carrying his bones with him.
+* Like all characters that start with only soul/black hearts, Tainted Forgotten's starting health is listed as "-I" on the character selection screen.
+* Tainted Forgotten briefly gains flight when he is thrown. This can be noticed if you make a clot with [[Sumptorium]], as the clots will briefly float whenever The Forgotten is thrown.
+
+== Bugs ==
+{{bug|{{e|Evis}} can grab Tainted Soul. If Tainted Forgotten is not nearby, it can result in Tainted Soul having no way to kill the enemy.}}
+{{bug|{{e|Gaping Maw}}s and {{e|Broken Gaping Maw}}s can pull Tainted Forgotten inside them, rendering Tainted Soul unable to pick him up.}}
+{{bug|In rooms with reflective floors, while the Tainted Forgotten is being held, the reflection shows it below the Tainted Soul instead of over it, though its bone club is in the correct position.}}
+{{bug|dlc=nr+|If Tainted Soul is hit while Tainted Forgotten is holding {{i|Glass Cannon}} above his head, Tainted Forgotten will not be able to fire anymore.}}
+
+== References ==
+{{reflist}}
+
+{{nav|character|the forgotten unlock|tainted forgotten unlock|fr=Le Délaissé Impur}}

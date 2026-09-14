@@ -87,7 +87,7 @@
 * {{Book of Virtues synergy|description=Spawns a normal wisp in addition to having an extra effect based on the current die selected.}}
 
 == Interactions ==
-* {{i|Car Battery|nr}}:  Activates 2 dice. The second activation die cannot be predicted.
+* {{i|Car Battery}}:  Activates 2 dice. {{dlc|nr}}The second activation die cannot be predicted.
 ** {{dlc|r}} The second activation die is determined by the seed and never changes.
 * {{i|Void|nr}}: When absorbed and Void is used, replicates the effect of a random die item.
 ** {{dlc|r}} Acts as a copy of one of the 10 dice D infinity can replicate. This die is randomly chosen and does not change.

@@ -50,8 +50,8 @@
   "8 Inch Nails": {
     "kind": "collectible",
     "pageid": 12497,
-    "revid": 261623,
-    "timestamp": "2026-03-26T13:39:27Z"
+    "revid": 269306,
+    "timestamp": "2026-09-14T00:45:15Z"
   },
   "9 Volt": {
     "kind": "collectible",
@@ -1232,8 +1232,8 @@
   "Cat-o-nine-tails": {
     "kind": "collectible",
     "pageid": 6132,
-    "revid": 253119,
-    "timestamp": "2025-11-10T14:35:44Z"
+    "revid": 269307,
+    "timestamp": "2026-09-14T00:45:33Z"
   },
   "Celtic Cross": {
     "kind": "collectible",
@@ -1574,8 +1574,8 @@
   "D infinity": {
     "kind": "collectible",
     "pageid": 11298,
-    "revid": 269075,
-    "timestamp": "2026-09-06T02:53:52Z"
+    "revid": 269333,
+    "timestamp": "2026-09-14T17:31:43Z"
   },
   "D1": {
     "kind": "collectible",
@@ -1616,8 +1616,8 @@
   "D7": {
     "kind": "collectible",
     "pageid": 11566,
-    "revid": 266551,
-    "timestamp": "2026-07-26T09:06:48Z"
+    "revid": 269309,
+    "timestamp": "2026-09-14T02:08:11Z"
   },
   "D8": {
     "kind": "collectible",
@@ -2390,8 +2390,8 @@
   "G FUEL!": {
     "kind": "collectible",
     "pageid": 12381,
-    "revid": 264597,
-    "timestamp": "2026-05-17T14:28:43Z"
+    "revid": 269299,
+    "timestamp": "2026-09-13T16:14:21Z"
   },
   "GB Bug": {
     "kind": "collectible",
@@ -2999,6 +2999,12 @@
     "revid": 241206,
     "timestamp": "2025-01-24T19:12:53Z"
   },
+  "Jacob & Esau": {
+    "kind": "character",
+    "pageid": 12720,
+    "revid": 269256,
+    "timestamp": "2026-09-10T19:24:24Z"
+  },
   "Jacob's Ladder": {
     "kind": "collectible",
     "pageid": 4361,
@@ -3038,8 +3044,8 @@
   "Judas": {
     "kind": "character",
     "pageid": 1005,
-    "revid": 269010,
-    "timestamp": "2026-09-02T09:19:20Z"
+    "revid": 269301,
+    "timestamp": "2026-09-13T21:42:57Z"
   },
   "Judas' Shadow": {
     "kind": "collectible",
@@ -3362,8 +3368,8 @@
   "Lil Spewer": {
     "kind": "collectible",
     "pageid": 10634,
-    "revid": 257163,
-    "timestamp": "2025-12-15T19:39:51Z"
+    "revid": 269310,
+    "timestamp": "2026-09-14T04:11:03Z"
   },
   "Lilith": {
     "kind": "character",
@@ -5591,6 +5597,12 @@
     "revid": 268680,
     "timestamp": "2026-08-27T16:56:05Z"
   },
+  "Tainted Forgotten": {
+    "kind": "character",
+    "pageid": 1350,
+    "revid": 263647,
+    "timestamp": "2026-04-28T19:53:56Z"
+  },
   "Tainted Isaac": {
     "kind": "character",
     "pageid": 2952,
@@ -5614,6 +5626,12 @@
     "pageid": 8189,
     "revid": 267349,
     "timestamp": "2026-08-02T19:16:50Z"
+  },
+  "Tainted Lazarus": {
+    "kind": "character",
+    "pageid": 11117,
+    "revid": 268681,
+    "timestamp": "2026-08-27T16:58:56Z"
   },
   "Tainted Lilith": {
     "kind": "character",
@@ -5872,6 +5890,12 @@
     "pageid": 9942,
     "revid": 253308,
     "timestamp": "2025-11-11T07:35:05Z"
+  },
+  "The Forgotten": {
+    "kind": "character",
+    "pageid": 7573,
+    "revid": 269083,
+    "timestamp": "2026-09-06T14:42:14Z"
   },
   "The Forsaken": {
     "kind": "boss",

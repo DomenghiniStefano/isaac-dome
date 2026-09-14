@@ -62,7 +62,8 @@ File:Judas_Menu_Icon_(Locked).png|Judas' locked character icon.
 == Trivia ==
 * Judas appeared in the original ''Binding of Isaac'', where he was unlocked by beating {{s|Womb}} for the first time.
 * Judas is a reference to [[wikipedia:Judas Iscariot|Judas Iscariot]], the Twelfth Disciple of Jesus Christ. Judas betrayed Jesus to the Romans in exchange for thirty pieces of silver, represented by the three coins Judas starts the game with. Moreover, the coins are also believed to represent the three Abrahamic faiths: Judaism, Christianity, and Islam.
-* Contrary to popular belief, Judas' fez is not a reference to the game [[wikipedia:Fez (video game)|Fez]], created by Phil Fish. Edmund McMillen has stated that the initial statement was a joke and that he used the fez due to it being easily recognizable.
+* According to Edmund, Judas wears a Fez because they wanted to give him an iconic hat and that was the most like a wizard hat without being a wizard hat. This was done to communicate that his low health and high damage is similar to a wizard.<ref>[https://www.tumblr.com/edmundmcmillen/85245824130/why-does-judas-wear-a-fez-is-it-some-biblical Edmund's Tumblr blog, May 9th 2014]</ref>
+** Contrary to popular belief, Judas' fez is not a reference to the game [[wikipedia:Fez (video game)|Fez]], created by Phil Fish. Edmund McMillen has stated that the initial statement was a joke and that he used the fez due to it being easily recognizable.<ref>[https://www.tumblr.com/edmundmcmillen/85254517860/wasnt-judas-fez-because-of-phil-fish Edmund's old Tumblr blog, May 20th 2014]</ref>
 * When reviving using Judas' Shadow, entering a miniboss fight will refer to the player as "Black Judas".
 * Judas' locked character icon is a locked box with his fez placed on it.
 ** He shares the locked box design with {{C|Azazel}}, {{C|Lilith}}, and {{C|Apollyon}}.

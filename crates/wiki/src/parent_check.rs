@@ -36,8 +36,15 @@ pub struct ParentCrossCheck {
     /// Named forms present on both sides: a wiki character-infobox, and a `player` row
     /// with that name as its `alias`.
     pub compared: u32,
-    /// Same name, resolved `parent` differs.
+    /// Same name, **both** sources state a parent, and the two differ. This is the
+    /// disagreement the guard is about.
     pub mismatches: Vec<ParentMismatch>,
+    /// Names where exactly one source states a parent, in page order. Not a disagreement
+    /// and not nothing: silence is a third answer, and since B45 it has a known cause —
+    /// `{{infobox characters}}` has **no `parent` parameter at all**, so the second form of
+    /// a two-character page cannot say what `player` knows. Reported rather than tolerated,
+    /// so the test can pin *which* names are silent and go red when a new one joins them.
+    pub stated_by_one: Vec<ParentMismatch>,
 }
 
 /// Compares every character-infobox's own `parent` against the `player` table's `parent`
@@ -73,11 +80,15 @@ pub fn cross_check_character_parents(pages: &[RawPage], r: &Resolver) -> ParentC
             };
             out.compared += 1;
             if wiki_parent != player_parent {
-                out.mismatches.push(ParentMismatch {
+                let differing = ParentMismatch {
                     name,
                     wiki_parent,
                     player_parent,
-                });
+                };
+                match (&differing.wiki_parent, &differing.player_parent) {
+                    (Some(_), Some(_)) => out.mismatches.push(differing),
+                    _ => out.stated_by_one.push(differing),
+                }
             }
         }
     }
@@ -177,6 +188,37 @@ mod tests {
                 name: "Black Judas".to_string(),
                 wiki_parent: Some(Target::Character { id: 3 }),
                 player_parent: Some(Target::Character { id: 8 }),
+            }]
+        );
+    }
+
+    /// B45. The page that states two characters cannot state the second one's parent —
+    /// `{{infobox characters}}` has no `parent` parameter — while `player` does. That is a
+    /// silence, not a contradiction, and it belongs in its own list: counting it among the
+    /// disagreements would make the guard cry wolf four times and stop being read.
+    #[test]
+    fn a_parent_only_one_source_states_is_not_a_disagreement() {
+        let pages = vec![page(
+            "Jacob & Esau",
+            "{{infobox character | name = Esau }}\n",
+        )];
+        let r = resolver(
+            vec![row(&[
+                ("_pageName", "Jacob & Esau"),
+                ("alias", "Esau"),
+                ("parent", "Jacob"),
+            ])],
+            corrections(&[("Jacob", 19), ("Esau", 20)]),
+        );
+        let result = cross_check_character_parents(&pages, &r);
+        assert_eq!(result.compared, 1);
+        assert!(result.mismatches.is_empty(), "{:?}", result.mismatches);
+        assert_eq!(
+            result.stated_by_one,
+            vec![ParentMismatch {
+                name: "Esau".to_string(),
+                wiki_parent: None,
+                player_parent: Some(Target::Character { id: 19 }),
             }]
         );
     }
