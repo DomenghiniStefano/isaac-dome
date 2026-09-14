@@ -6,7 +6,7 @@ import { assertNever } from '@/lib/assertNever'
 import { characterLabel } from '@/lib/graph/characterName'
 import type { CharacterForm } from '@/lib/graph/characterName'
 import { NodeState } from '@/lib/graph/nodeState'
-import { FacetId } from '@/lib/graph/unlockFilter'
+import { FacetId } from '@/lib/graph/unlockFacets'
 import { OriginValue, TargetKind } from '@/lib/ipc/values'
 import { Dlc } from '@/lib/ipc/types'
 
