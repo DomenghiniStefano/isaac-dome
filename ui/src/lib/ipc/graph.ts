@@ -2,17 +2,17 @@ import { Command } from '../constants/commands'
 import { call } from './transport'
 import type {
   GoalId,
-  NextSteps,
+  GraphViews,
   PlanView,
   Target,
   TargetKey,
-  UnlockView,
   WantView,
 } from './types'
 
-export const unlock = (): Promise<UnlockView> => call(Command.Unlock)
-
-export const nextSteps = (): Promise<NextSteps> => call(Command.NextSteps)
+// N8: one call, one reading of the profile. They were two commands and the store asked
+// for both together — which two commands could not honour, because between them a save
+// written mid-load made the steps disagree with the list they are a filter over.
+export const graphViews = (): Promise<GraphViews> => call(Command.GraphViews)
 
 export const plan = (): Promise<PlanView> => call(Command.Plan)
 

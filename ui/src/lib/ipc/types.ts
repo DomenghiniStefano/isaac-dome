@@ -668,6 +668,22 @@ export type StepsSection = { basis: StepsBasis; steps: Array<UnlockNode> }
 export type NextSteps = { sections: Array<StepsSection> }
 
 /**
+ * Both answers the graph's screens need, from one reading of the profile (N8).
+ *
+ * They were two commands, and the frontend asked for them together — with a comment saying
+ * why: *"one read, because both answers belong to the same profile and asking twice could
+ * straddle a change"*. Two commands could not keep that promise. Each rebuilt the whole
+ * pipeline behind it: the settings file, a walk of the Steam libraries, the `.dat` read
+ * whole, its parse, 642 nodes and the evaluation — **twice for one screen load**, and
+ * across two moments, so a save written in between made the steps disagree with the list
+ * they are a filter over.
+ *
+ * One command is not a cache: there is nothing to invalidate, and nothing is remembered
+ * between calls. The steps stay a pure function of the view here, as they always were.
+ */
+export type GraphViews = { unlock: UnlockView; steps: NextSteps }
+
+/**
  * B37 — a want read from the other end of the graph: you name a thing, and these are the
  * ways to it. `routes` is a list because a challenge can be named by two achievements (14 of
  * 45 are, measured 2026-09-13); an empty list always travels with the diagnostic that says

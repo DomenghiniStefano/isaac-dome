@@ -180,10 +180,8 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     whenActive(scenario, () => summary),
   [Command.Completion]: (_args, scenario) =>
     whenActive(scenario, () => completionMatrix(artShown())),
-  [Command.Unlock]: (_args, scenario) =>
-    whenActive(scenario, async () => (await graph()).unlock),
-  [Command.NextSteps]: (_args, scenario) =>
-    whenActive(scenario, async () => (await graph()).steps),
+  [Command.GraphViews]: (_args, scenario) =>
+    whenActive(scenario, async () => await graph()),
   [Command.Want]: (args, scenario) =>
     whenActive(scenario, async () =>
       (await import('./graph')).wantAnswer(
