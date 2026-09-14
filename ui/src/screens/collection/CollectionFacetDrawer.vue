@@ -11,11 +11,9 @@ import { Label } from '@/components/ui/label'
 import { useMessages } from '@/i18n'
 import {
   CollectionFacet,
-  activeCollectionFilterCount,
-  collectionFacetCounts,
-  collectionFacetOptions,
-} from '@/lib/collection/collectionFilter'
-import type { CollectionFilter } from '@/lib/collection/collectionFilter'
+  collectionFaceting,
+} from '@/lib/collection/collectionFacets'
+import type { CollectionFilter } from '@/lib/collection/collectionFacets'
 import type { CollectionItem } from '@/lib/ipc/types'
 import {
   collectionFacetTitle,
@@ -44,13 +42,16 @@ const drawerFacets: CollectionFacet[] = [
 // Each count is over the items every other facet and the search leave: it says what picking the
 // value would give. A value that would give nothing, and isn't picked, is not offered at all:
 // it could not be picked, and reading it with a 0 beside it is noise (`docs/BACKLOG.md` B29).
+const faceting = computed(() => collectionFaceting(props.pools))
+
 const columns = computed(() =>
   drawerFacets.map((facet) => {
-    const counts = collectionFacetCounts(props.items, props.filter, facet)
+    const counts = faceting.value.counts(props.items, props.filter, facet)
     const picked = props.filter.picks[facet]
     return {
       facet,
-      values: collectionFacetOptions(props.pools, facet)
+      values: faceting.value
+        .options(props.items, facet)
         .map((value) => ({
           value,
           label: collectionFacetValueLabel(t, facet, value),
@@ -62,7 +63,7 @@ const columns = computed(() =>
   }),
 )
 
-const active = computed(() => activeCollectionFilterCount(props.filter))
+const active = computed(() => faceting.value.activeCount(props.filter))
 </script>
 
 <template>

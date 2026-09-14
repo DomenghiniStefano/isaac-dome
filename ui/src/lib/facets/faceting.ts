@@ -31,6 +31,21 @@ export interface Faceting<Row, Facet extends string> {
   activeCount: (filter: FacetFilter<Facet>) => number
 }
 
+// `order` is what the facets *are*: one left out of it is not part of the faceting, so a key
+// per entry is the whole record and the cast says only what the map already built.
+//
+// Built fresh each call: one shared object would carry a screen's picks into the next list
+// opened. It takes the order rather than an engine because a screen builds a filter before it
+// knows what its options will need — the Collection's pools arrive with the view.
+export const emptyFilter = <Facet extends string>(
+  order: Facet[],
+): FacetFilter<Facet> => ({
+  query: '',
+  picks: Object.fromEntries(
+    order.map((facet) => [facet, [] as string[]]),
+  ) as Record<Facet, string[]>,
+})
+
 export const createFaceting = <Row, Facet extends string>(
   spec: FacetSpec<Row, Facet>,
 ): Faceting<Row, Facet> => {
@@ -58,14 +73,7 @@ export const createFaceting = <Row, Facet extends string>(
   return {
     // Built fresh each call: one shared object would carry a screen's picks into the next
     // list opened on the same engine.
-    // `order` is what the facets *are*: one left out of it is not part of the faceting, so a
-    // key per entry is the whole record and the cast says only what the map already built.
-    empty: () => ({
-      query: '',
-      picks: Object.fromEntries(
-        spec.order.map((facet) => [facet, [] as string[]]),
-      ) as Record<Facet, string[]>,
-    }),
+    empty: () => emptyFilter(spec.order),
 
     matches: (row, filter) => matchesFacets(row, filter, spec.order),
 

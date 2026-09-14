@@ -1,18 +1,16 @@
 import { describe, expect, it } from 'vitest'
 import type { CollectionItem, LockView } from '@/lib/ipc/types'
-import type { CollectionFilter } from './collectionFilter'
+import type { CollectionFilter } from './collectionFacets'
 import {
   CollectionFacet,
   CollectionSort,
-  collectionFacetCounts,
-  collectionFacetOptions,
+  collectionFaceting,
   collectionFacetValues,
   defaultCollectionFilter,
   emptyCollectionFilter,
   filterForQuery,
-  matchesCollectionFilter,
   sortItems,
-} from './collectionFilter'
+} from './collectionFacets'
 
 const item = (over: Partial<CollectionItem> = {}): CollectionItem => ({
   id: 1,
@@ -59,14 +57,10 @@ const unrated = item({
 const rows = [sadOnion, innerEye, epicFetus, unrated]
 
 const ids = (xs: CollectionItem[]) => xs.map((x) => x.id)
-const picking = (
-  picks: Partial<CollectionFilter['picks']>,
-): CollectionFilter => {
-  const empty = emptyCollectionFilter()
-  return { ...empty, picks: { ...empty.picks, ...picks } }
-}
+// The pools a view of these four items would carry, in the catalog's order.
+const faceting = collectionFaceting(['treasure', 'boss'])
 const matching = (filter: CollectionFilter) =>
-  ids(rows.filter((r) => matchesCollectionFilter(r, filter)))
+  ids(rows.filter((r) => faceting.matches(r, filter)))
 
 describe('the Collection facets', () => {
   it('gives each item its values', () => {
@@ -91,25 +85,13 @@ describe('the Collection facets', () => {
     ])
   })
 
-  it('matches any value within a facet, and every facet at once', () => {
-    expect(matching(picking({ pool: ['boss', 'devil'] }))).toEqual([2, 600])
-    expect(matching(picking({ pool: ['treasure'], quality: ['3'] }))).toEqual([
-      1,
-    ])
-  })
-
+  // How matching and counting work is `lib/facets/faceting.test.ts`; what is the Collection's
+  // is *which* field the search reads — the name alone, where Unlock joins three.
   it('searches the name, whatever the case', () => {
     expect(matching({ ...emptyCollectionFilter(), query: 'EYE' })).toEqual([2])
-  })
-
-  it('counts a facet over what the other facets leave', () => {
-    const filter = picking({ quality: ['3'] })
-    const quality = collectionFacetCounts(rows, filter, CollectionFacet.Quality)
-    expect(quality.get('3')).toBe(1)
-    expect(quality.get('4')).toBe(1)
-    expect(
-      collectionFacetCounts(rows, filter, CollectionFacet.Pool).get('treasure'),
-    ).toBe(1)
+    expect(matching({ ...emptyCollectionFilter(), query: 'treasure' })).toEqual(
+      [],
+    )
   })
 
   it('opens on what has not been found: to find, and locked', () => {
@@ -117,10 +99,12 @@ describe('the Collection facets', () => {
   })
 
   it("offers the view's pools and then no pool, and the qualities from 4 down", () => {
-    expect(
-      collectionFacetOptions(['treasure', 'boss'], CollectionFacet.Pool),
-    ).toEqual(['treasure', 'boss', 'none'])
-    expect(collectionFacetOptions([], CollectionFacet.Quality)).toEqual([
+    expect(faceting.options(rows, CollectionFacet.Pool)).toEqual([
+      'treasure',
+      'boss',
+      'none',
+    ])
+    expect(faceting.options(rows, CollectionFacet.Quality)).toEqual([
       '4',
       '3',
       '2',

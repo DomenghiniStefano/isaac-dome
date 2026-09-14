@@ -1,8 +1,10 @@
-import { countBy, sortBy, sumBy } from 'lodash-es'
+import { sortBy } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
-import { OriginValue } from '@/lib/ipc/values'
+import { createFaceting, emptyFilter } from '@/lib/facets/faceting'
+import type { FacetFilter } from '@/lib/facets/faceting'
 import type { CollectionItem } from '@/lib/ipc/types'
 import { ItemKindView } from '@/lib/ipc/types'
+import { OriginValue, originOrder } from '@/lib/ipc/values'
 import { ItemState, itemState, itemStateOrder } from './itemState'
 
 // The Collection's facets: only what the contract answers (quality and pools from the game's
@@ -46,7 +48,6 @@ const kindOrder: string[] = [
   ItemKindView.Active,
   ItemKindView.Familiar,
 ]
-const originOrder: string[] = Object.values(OriginValue)
 
 export const CollectionSort = {
   Quality: 'quality',
@@ -56,21 +57,10 @@ export const CollectionSort = {
 export type CollectionSort =
   (typeof CollectionSort)[keyof typeof CollectionSort]
 
-export interface CollectionFilter {
-  query: string
-  picks: Record<CollectionFacet, string[]>
-}
+export type CollectionFilter = FacetFilter<CollectionFacet>
 
-export const emptyCollectionFilter = (): CollectionFilter => ({
-  query: '',
-  picks: {
-    [CollectionFacet.State]: [],
-    [CollectionFacet.Quality]: [],
-    [CollectionFacet.Pool]: [],
-    [CollectionFacet.Kind]: [],
-    [CollectionFacet.Origin]: [],
-  },
-})
+export const emptyCollectionFilter = (): CollectionFilter =>
+  emptyFilter(collectionFacetOrder)
 
 // The screen opens on what hasn't been found: what can be found tonight, and what can't yet.
 export const defaultCollectionFilter = (): CollectionFilter => {
@@ -117,49 +107,10 @@ export const collectionFacetValues = (
   }
 }
 
-const matchesQuery = (item: CollectionItem, query: string): boolean => {
-  const wanted = query.trim().toLowerCase()
-  return wanted === '' || item.name.toLowerCase().includes(wanted)
-}
-
-const matchesFacet = (
-  item: CollectionItem,
-  facet: CollectionFacet,
-  picked: string[],
-): boolean =>
-  picked.length === 0 ||
-  collectionFacetValues(item, facet).some((value) => picked.includes(value))
-
-const matchesFacets = (
-  item: CollectionItem,
-  filter: CollectionFilter,
-  facets: CollectionFacet[],
-): boolean =>
-  matchesQuery(item, filter.query) &&
-  facets.every((facet) => matchesFacet(item, facet, filter.picks[facet]))
-
-// Any value within a facet, every facet at once, and the search.
-export const matchesCollectionFilter = (
-  item: CollectionItem,
-  filter: CollectionFilter,
-): boolean => matchesFacets(item, filter, collectionFacetOrder)
-
-// A value's count leaves its own facet out: it says how many rows picking it would give.
-export const collectionFacetCounts = (
-  items: CollectionItem[],
-  filter: CollectionFilter,
-  facet: CollectionFacet,
-): Map<string, number> => {
-  const others = collectionFacetOrder.filter((f) => f !== facet)
-  const values = items
-    .filter((item) => matchesFacets(item, filter, others))
-    .flatMap((item) => collectionFacetValues(item, facet))
-  return new Map(Object.entries(countBy(values)))
-}
-
-// A facet's values in the order they are offered. The pools are the view's: the ones its items
-// belong to, in the catalog's order.
-export const collectionFacetOptions = (
+// A facet's values in the order they are offered. The pools are the view's — the catalog's own
+// order, filtered to the ones its items belong to — and that is why this is a factory and not a
+// constant: the order cannot be read back off the items, only the set can.
+const collectionFacetOptions = (
   pools: string[],
   facet: CollectionFacet,
 ): string[] => {
@@ -179,6 +130,17 @@ export const collectionFacetOptions = (
   }
 }
 
+// The Collection's half of a faceted list. Matching, the counts and the active count are the
+// engine's; what is here is the five facets, how an item answers one, the name the search
+// reads, and the options — which need the view's pools, so this takes them.
+export const collectionFaceting = (pools: string[]) =>
+  createFaceting<CollectionItem, CollectionFacet>({
+    order: collectionFacetOrder,
+    values: collectionFacetValues,
+    text: (item) => item.name,
+    options: (_items, facet) => collectionFacetOptions(pools, facet),
+  })
+
 // Every order ends on the id, so equal rows never swap between two renders. An unrated item
 // goes after quality 0.
 export const sortItems = (
@@ -196,7 +158,3 @@ export const sortItems = (
       return assertNever(sort)
   }
 }
-
-// How many values are picked across the facets; the search is shown on its own.
-export const activeCollectionFilterCount = (filter: CollectionFilter): number =>
-  sumBy(collectionFacetOrder, (facet) => filter.picks[facet].length)

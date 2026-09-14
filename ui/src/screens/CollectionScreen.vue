@@ -12,13 +12,13 @@ import { singleQuery } from '@/lib/search/queryParam'
 import {
   CollectionFacet,
   CollectionSort,
+  collectionFaceting,
   defaultCollectionFilter,
   filterForQuery,
   emptyCollectionFilter,
-  matchesCollectionFilter,
   sortItems,
-} from '@/lib/collection/collectionFilter'
-import type { CollectionFilter } from '@/lib/collection/collectionFilter'
+} from '@/lib/collection/collectionFacets'
+import type { CollectionFilter } from '@/lib/collection/collectionFacets'
 import { itemStateCounts } from '@/lib/collection/itemState'
 import { useCollectionStore } from '@/stores/views'
 import { LoadStatus } from '@/stores/loadStatus'
@@ -53,10 +53,12 @@ watch(
 const sort = ref<CollectionSort>(CollectionSort.Quality)
 
 const items = computed(() => store.view?.items ?? [])
+// The pools are the view's, so the faceting is too: its options cannot be read off the items.
+const faceting = computed(() => collectionFaceting(store.view?.pools ?? []))
 const counts = computed(() => itemStateCounts(items.value))
 const rows = computed(() =>
   sortItems(
-    items.value.filter((item) => matchesCollectionFilter(item, filter.value)),
+    items.value.filter((item) => faceting.value.matches(item, filter.value)),
     sort.value,
   ),
 )
