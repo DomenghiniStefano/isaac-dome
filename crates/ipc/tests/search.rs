@@ -416,3 +416,30 @@ fn an_empty_query_answers_nothing_and_says_nothing() {
     assert_eq!(v.total, 0);
     assert!(v.diagnostics.is_empty());
 }
+
+/// B46's other half, found by typing "Guppy" into the app on 2026-09-14: the wiki index
+/// learned about the transformation pages and the **search index** did not, so the one place
+/// that answers "where is this thing" could not name a transformation at all. Six kinds were
+/// indexed of seven, the same arithmetic the wiki index was carrying — a page that exists
+/// and cannot be found is indistinguishable from a page that does not exist.
+#[test]
+fn a_transformation_is_a_document_of_the_search_index() {
+    let mut ds = dataset();
+    ds.transformations.insert(
+        1,
+        entry_with(
+            "Guppy",
+            Infobox::Transformation {
+                requires: Some(3),
+                contributors: Vec::new(),
+                target: Vec::new(),
+            },
+            vec![],
+        ),
+    );
+    let index = SearchIndex::build(Ok(&ds));
+    assert!(
+        index.title(&Target::Transformation { id: 1 }) == Some("Guppy"),
+        "the transformation is a document"
+    );
+}

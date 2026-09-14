@@ -61,6 +61,13 @@ impl SearchIndex {
         for (id, e) in &ds.characters {
             add(Target::Character { id: *id }, e);
         }
+        // B46: the sixteen transformations are pages like the others. Indexed here as well
+        // as in `wiki_index`, because a page that exists and cannot be found reads exactly
+        // like a page that does not exist — which is how this was found, by typing a name
+        // into the app and getting nothing.
+        for (id, e) in &ds.transformations {
+            add(Target::Transformation { id: *id }, e);
+        }
         SearchIndex {
             loaded: true,
             pages,
