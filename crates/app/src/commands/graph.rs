@@ -11,7 +11,7 @@ use crate::state::*;
 
 /// The Unlock view. Not a command since N8: it is built once per screen load, inside
 /// `graph_views`, and a second entry point is a second reading of the profile.
-fn unlock(
+pub(crate) fn unlock(
     app: AppHandle,
     state: tauri::State<'_, CatalogState>,
     resources: tauri::State<'_, ResourcesState>,
