@@ -129,74 +129,81 @@ fn fetch_kind(
     // Pages listed without text: the server relists in every batch the ones already
     // delivered too, and in a truncated batch it lists ahead of time the ones that will
     // arrive later. Only at the end of the kind do we know if any are still missing.
-    let mut pending = Pending::default();
-    let mut cont = BTreeMap::new();
-    loop {
-        let body = http::get(&pages_url(kind.template(), &cont)).map_err(Failure::Error)?;
-        let batch = parse_pages(&body).map_err(Failure::Error)?;
-        for (pageid, title) in &batch.without_revision {
-            pending.seen_without(*pageid, title);
-        }
-        for page in batch.pages {
-            pending.delivered(page.pageid);
-            // Translations (`Steven/de`) transclude the same infobox: they aren't pages of ours.
-            if is_translation_subpage(&page.title) {
-                continue;
+    // One generator run per template, and `Pending` belongs to a run: a page the server
+    // lists without text arrives in a later batch *of that same run*, so each template has
+    // to answer for its own before the next one starts (B45: the characters have two).
+    for template in kind.templates() {
+        let mut pending = Pending::default();
+        let mut cont = BTreeMap::new();
+        loop {
+            let body = http::get(&pages_url(template, &cont)).map_err(Failure::Error)?;
+            let batch = parse_pages(&body).map_err(Failure::Error)?;
+            for (pageid, title) in &batch.without_revision {
+                pending.seen_without(*pageid, title);
             }
-            // A page that reappears with text within the same kind silently replaces the
-            // entry; the same page under a different kind stays with the first one and warns.
-            if let Some(prev) = index.get(&page.title).filter(|prev| prev.kind != kind) {
-                eprintln!(
-                    "  warning: «{}» is already of kind {}; ignored as {}",
-                    page.title,
-                    prev.kind.dir(),
-                    kind.dir()
-                );
-                continue;
-            }
-            let name = format!("{}.wikitext", page_file_name(&page.title));
-            if let Some(first) = seen_lower
-                .get(&name.to_lowercase())
-                .filter(|first| **first != page.title)
-            {
-                eprintln!(
-                    "  warning: «{}» and «{}» have the same file name on a case-insensitive \
+            for page in batch.pages {
+                pending.delivered(page.pageid);
+                // Translations (`Steven/de`) transclude the same infobox: they aren't pages of ours.
+                if is_translation_subpage(&page.title) {
+                    continue;
+                }
+                // A page that reappears with text within the same kind silently replaces the
+                // entry; the same page under a different kind stays with the first one and warns.
+                if let Some(prev) = index.get(&page.title).filter(|prev| prev.kind != kind) {
+                    eprintln!(
+                        "  warning: «{}» is already of kind {}; ignored as {}",
+                        page.title,
+                        prev.kind.dir(),
+                        kind.dir()
+                    );
+                    continue;
+                }
+                let name = format!("{}.wikitext", page_file_name(&page.title));
+                if let Some(first) = seen_lower
+                    .get(&name.to_lowercase())
+                    .filter(|first| **first != page.title)
+                {
+                    eprintln!(
+                        "  warning: «{}» and «{}» have the same file name on a case-insensitive \
                      filesystem; keeping the first one",
-                    first, page.title
+                        first, page.title
+                    );
+                    continue;
+                }
+                seen_lower.insert(name.to_lowercase(), page.title.clone());
+                let path = dir.join(&name);
+                if write_if_changed(&path, &page_bytes(&page.text))
+                    .map_err(|e| io_error(&path, e))?
+                {
+                    written += 1;
+                }
+                if keep.insert(name) {
+                    pages += 1;
+                }
+                index.insert(
+                    page.title,
+                    IndexEntry {
+                        kind,
+                        pageid: page.pageid,
+                        revid: page.revid,
+                        timestamp: page.timestamp,
+                    },
                 );
-                continue;
             }
-            seen_lower.insert(name.to_lowercase(), page.title.clone());
-            let path = dir.join(&name);
-            if write_if_changed(&path, &page_bytes(&page.text)).map_err(|e| io_error(&path, e))? {
-                written += 1;
+            match batch.cont {
+                Some(c) => cont = c,
+                None => break,
             }
-            if keep.insert(name) {
-                pages += 1;
-            }
-            index.insert(
-                page.title,
-                IndexEntry {
-                    kind,
-                    pageid: page.pageid,
-                    revid: page.revid,
-                    timestamp: page.timestamp,
-                },
-            );
         }
-        match batch.cont {
-            Some(c) => cont = c,
-            None => break,
+        let unresolved = pending.unresolved();
+        if !unresolved.is_empty() {
+            return Err(Failure::Error(format!(
+                "{}: {} pages listed by {template} but never arrived with text: {}",
+                kind.dir(),
+                unresolved.len(),
+                unresolved.join(", ")
+            )));
         }
-    }
-    let unresolved = pending.unresolved();
-    if !unresolved.is_empty() {
-        return Err(Failure::Error(format!(
-            "{}: {} pages listed but never arrived with text: {}",
-            kind.dir(),
-            unresolved.len(),
-            unresolved.join(", ")
-        )));
     }
     Ok((pages, written, keep))
 }

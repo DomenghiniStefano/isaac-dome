@@ -52,16 +52,19 @@ impl PageKind {
         }
     }
 
-    /// The wiki template whose transclusions list the pages of this kind.
-    pub fn template(self) -> &'static str {
+    /// The wiki templates whose transclusions list the pages of this kind. Plural because
+    /// the characters need two: `Infobox characters` is a different template, not a
+    /// spelling of the first, and it holds the four pages that state two playable forms
+    /// (B45). A kind with one template is the ordinary case and reads the same.
+    pub fn templates(self) -> &'static [&'static str] {
         match self {
-            PageKind::Collectible => "Template:Infobox collectible",
-            PageKind::Trinket => "Template:Infobox trinket",
-            PageKind::Achievement => "Template:Infobox achievement",
-            PageKind::Boss => "Template:Infobox boss",
-            PageKind::Challenge => "Template:Infobox challenge",
-            PageKind::Character => "Template:Infobox character",
-            PageKind::Transformation => "Template:Infobox transformation",
+            PageKind::Collectible => &["Template:Infobox collectible"],
+            PageKind::Trinket => &["Template:Infobox trinket"],
+            PageKind::Achievement => &["Template:Infobox achievement"],
+            PageKind::Boss => &["Template:Infobox boss"],
+            PageKind::Challenge => &["Template:Infobox challenge"],
+            PageKind::Character => &["Template:Infobox character", "Template:Infobox characters"],
+            PageKind::Transformation => &["Template:Infobox transformation"],
         }
     }
 }
@@ -186,6 +189,7 @@ pub fn parse_page(
     let mut page_sections: Option<Vec<Section>> = None;
     for ib in extract_infoboxes(text) {
         let Some(kind) = InfoboxKind::of(&ib.name) else {
+            d.unknown_infobox(&ib.name);
             continue;
         };
         let Some(key) = entry_key(kind, title, &ib, r) else {
@@ -235,10 +239,59 @@ mod tests {
     fn the_transformation_kind_names_its_template_and_its_folder() {
         assert_eq!(PageKind::Transformation.dir(), "transformation");
         assert_eq!(
-            PageKind::Transformation.template(),
-            "Template:Infobox transformation"
+            PageKind::Transformation.templates(),
+            ["Template:Infobox transformation"]
         );
         assert!(PageKind::ALL.contains(&PageKind::Transformation));
+    }
+
+    /// B45: a kind's pages are the transclusions of **its templates**, plural, because the
+    /// characters are listed by two — `Infobox character` for the thirty pages that hold
+    /// one form, and `Infobox characters` for the four that hold two. Enumerating only the
+    /// singular is not a query that *misses* those four, it is a query they are not in,
+    /// which is why the fetch reported no error while losing eight playable characters.
+    ///
+    /// Measured 2026-09-14 against the wiki: `Infobox characters` has exactly 4
+    /// transclusions in namespace 0, and they are those four pages.
+    #[test]
+    fn the_characters_are_listed_by_two_templates_not_one() {
+        assert_eq!(
+            PageKind::Character.templates(),
+            ["Template:Infobox character", "Template:Infobox characters"]
+        );
+        // Every other kind still has exactly one, so nothing else changed shape.
+        for kind in PageKind::ALL {
+            let n = kind.templates().len();
+            assert_eq!(
+                n,
+                if kind == PageKind::Character { 2 } else { 1 },
+                "{kind:?}"
+            );
+        }
+    }
+
+    /// B45's mechanism, not its symptom. `extract_infoboxes` takes any template whose name
+    /// starts with `infobox`, and `InfoboxKind::of` answers `None` for the ones we do not
+    /// know — after which the page simply produces nothing, with no error and no counter.
+    /// That is how four character pages could have been downloaded and parsed into zero
+    /// entries without a word. Counted now, the way `unknown_entities` counts the entities
+    /// that shipped undecoded for months.
+    #[test]
+    fn an_infobox_whose_template_we_do_not_know_is_counted() {
+        let src = "{{infobox rune\n | id = 1\n}}\n== Effects ==\n* a\n";
+        let mut d = Diagnostics::default();
+        let v = parse_page("Rune of Hagalaz", 7, src, &test_resolver(), &mut d);
+        assert!(v.is_empty());
+        assert_eq!(d.unknown_infoboxes.get("infobox rune"), Some(&1));
+    }
+
+    /// The counter has to be able to stay quiet, or it says nothing by saying nothing.
+    #[test]
+    fn a_template_we_know_is_not_counted_as_unknown() {
+        let src = "{{infobox passive collectible\n | id = 25\n}}\n";
+        let mut d = Diagnostics::default();
+        parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
+        assert!(d.unknown_infoboxes.is_empty());
     }
 
     #[test]
