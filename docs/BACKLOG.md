@@ -2317,8 +2317,13 @@ snapshot**.
 
 **`stage.json` is the open half**, and it is a decision, not code: unlike `player` it has no second
 source anywhere in the repo to be checked against, so there is no reader for it to earn. The
-recommendation is to drop it from `TABLES` and from `dataset/raw/cargo/`, with the reason in the
-commit body — removing a committed artefact is the owner's call.
+recommendation was to drop it from `TABLES` and from `dataset/raw/cargo/`.
+
+**The owner decided on 2026-09-14 to keep it, and this entry stays open with it.** So the third
+state the entry was written against — a committed artefact nobody reads — is now a *chosen* state
+rather than an unnoticed one, and that is the only part that changed. What would close the entry is
+unchanged: either `chapter` earns a reader with a test behind it, or the file goes. Nothing else in
+the repo reads `stage:` references by anything but name.
 
 **Needs:** nothing, then a decision — `wiki-snapshot`'s query and `dataset/raw/cargo/`, both committed.
 
