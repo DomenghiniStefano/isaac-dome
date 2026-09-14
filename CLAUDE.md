@@ -556,7 +556,15 @@ passed whole-branch review, and **merged into `develop`** on 2026-09-06.
 
 Other documents: `DESIGN-BRIEF.md` (the design system's contract, with the TypeScript
 types); `docs/IMPROVEMENTS.md` (quality tasks with closing criteria); `docs/BACKLOG.md`
-(registered, not-yet-started tasks). Every module follows spec → TDD plan → execution →
+(registered, not-yet-started tasks).
+
+**Every open backlog entry says what it needs before you can start it** — a `**Needs:**` line
+under its heading, one of `nothing`, `a real save`, `the game`, `a measurement`, with
+`, then a window` where finishing it means looking at the built app. The vocabulary, the reason
+each value exists and the current counts are at the top of `docs/BACKLOG.md`; N8 in
+`docs/STATUS.md` carries one too. **On a machine without the game, read those first**: sixteen
+of the twenty-six open entries need nothing but a clone, and finding that out by trying is how
+the session of 2026-09-14 started. Every module follows spec → TDD plan → execution →
 report, one folder per stage: `docs/superpowers/specs/`, `docs/superpowers/plans/`,
 `docs/superpowers/reports/`. A plan is an execution script, single-use: **when its
 sub-project merges into `develop`, the plan moves to `docs/superpowers/plans/archive/`**, so
