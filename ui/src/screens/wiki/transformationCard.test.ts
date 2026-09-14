@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import type { Infobox } from '@/lib/ipc/types'
-import { hasRows } from './transformationCard'
+import type { Entry, Infobox } from '@/lib/ipc/types'
+import { hasCard, hasRows } from './transformationCard'
 
 type Transformation = Extract<Infobox, { kind: 'transformation' }>
 
@@ -39,5 +39,46 @@ describe('hasRows', () => {
   // `wiki::transformation::requires` refuses to do one layer down.
   it('draws no card when the page filled none of the three', () => {
     expect(hasRows(infobox({}))).toBe(false)
+  })
+})
+
+// The card carries the two facts every kind declares — the description and what unlocks it
+// — above the three that belong to a transformation. Suppressing it by the three alone was
+// a defect of a few hours: Adult has a description and lost it along with the rows it does
+// not have.
+describe('hasCard', () => {
+  const entry = (fields: Partial<Entry>): Entry => ({
+    title: 'Adult',
+    revid: 1,
+    description: [],
+    dlc: [],
+    unlockedBy: null,
+    infobox: infobox({}),
+    sections: [],
+    ...fields,
+  })
+
+  it('draws the card for a description even with none of the three rows', () => {
+    expect(
+      hasCard(
+        infobox({}),
+        entry({
+          description: [{ kind: 'text', text: 'three pills', style: 'plain' }],
+        }),
+      ),
+    ).toBe(true)
+  })
+
+  it('draws the card for what unlocks it even with none of the three rows', () => {
+    expect(
+      hasCard(
+        infobox({}),
+        entry({ unlockedBy: { kind: 'achievement', id: 1 } }),
+      ),
+    ).toBe(true)
+  })
+
+  it('draws no card when the page filled nothing at all', () => {
+    expect(hasCard(infobox({}), entry({}))).toBe(false)
   })
 })
