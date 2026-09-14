@@ -10,7 +10,7 @@ import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import { targetName } from '@/lib/graph/characterName'
-import { nodeSlot } from '@/lib/graph/unlockFilter'
+import { nodeSlot } from '@/lib/graph/unlockFacets'
 import type { UnlockNode } from '@/lib/ipc/types'
 
 const props = defineProps<{

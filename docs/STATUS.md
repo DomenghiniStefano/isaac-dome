@@ -25,18 +25,21 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-13. **Six of the eight cleanup items are done** — N1, N2, N4, N5, N6
-and N7, each on its own branch cut from `develop`. The test-only public API has one notation
+**Last update:** 2026-09-14. **Seven of the eight cleanup items are done** — N1, N2, N3, N4, N5,
+N6 and N7, each on its own branch cut from `develop`. The test-only public API has one notation
 (one `pub mod for_tests` per crate, seven of them); **why a command failed is a variant, not
 a sentence** (four enums, the numbers travelling as numbers, the wording in `it.ts` / `en.ts`);
 **the Tauri crate is wiring again** (eleven files, none over 220 lines, `cargo test -p app`
-reporting zero); one diagnostics list instead of four; one view store instead of three; and
-**the IPC contract is generated from the Rust types**.
+reporting zero); one diagnostics list instead of four; one view store instead of three;
+**the IPC contract is generated from the Rust types**; and **one faceted list instead of two**,
+six components become three and five modules two.
 **M4's sub-project 1 is closed**, 1a and 1b both: the run model, then the watcher, the archive
-and the fourth migration (`feature/log-watch`). **N8 and N3 are what remain**, in that order —
-N8 is where it is because it says *after M4*, and M4's first sub-project is now behind it.
-Order: N1 → N2 → N6 → N4 → N5 → N7 → M4 sub-project 1 → **N8 → N3**. N4 and N5 were pulled
-forward because they are frontend, touch no file that branch has, and N7 was blocked then.
+and the fourth migration (`feature/log-watch`). **N8 is what remains**, and it is where it is
+because it says *after M4* — which is now behind it.
+Order: N1 → N2 → N6 → N4 → N5 → N7 → M4 sub-project 1 → **N3 → N8**. N4 and N5 were pulled
+forward because they are frontend, touch no file that branch has, and N7 was blocked then;
+**N3 ran before N8 rather than after**, on a machine without the game, because it is the one of
+the two that needs neither the game nor a real save to be finished or believed.
 **Sub-project 3.5d merged into `develop`** (`4406c49`), suite green on the merge result: a
 blocked badge opens a menu whose entries are the wiki pages of what is in the way.
 **The wiki's transformations merged into `develop`** on 2026-09-13, suite green on the merge
@@ -832,6 +835,14 @@ has doubled. Every item closes on a file count going *down*, and the count is wr
 the item. Where a pair must stay two files, the item says which and why, so nobody has to
 wonder whether it was forgotten.
 
+> **Corrected on 2026-09-14, by N3, the last item to run under it.** The rule catches what it was
+> written against and nothing else. N3 created seven files and deleted three, and left the source
+> 78 lines lighter: the duplicated engine became one engine plus the specs, values and helpers it
+> had always needed, and no count of files tells that apart from the failure above. **Read it as a
+> smell, not a criterion.** What decides an item is its own "done when" — for N3, that no file
+> under `screens/collection/` is a copy of one under `screens/unlock/` and that adding a facet to
+> one screen touches no file of the other.
+
 Nothing here is a feature and nothing changes what a screen shows. Each item gets its own
 branch cut from `develop`, like any sub-project (the rule of 2026-09-11): none of this
 starts on top of a sub-project in flight. **N7 is not a new item**: it is B2 of
@@ -947,7 +958,56 @@ reason:
       The last one is what makes them structural: a unit variant has no string for a path to
       hide in, so the test stopped being a search for a word.
 
-- [ ] **N3. One faceted list, not two.** *Two or three sessions.*
+- [x] **N3. One faceted list, not two.** *Done 2026-09-14, `feature/shared-facets`.*
+      `lib/facets/faceting.ts` holds `createFaceting({ order, values, text, options })`, and
+      `components/facets/` holds one drawer, one toolbar and one state toggle. **Six components
+      became three**, and the source lost **78 lines net** (551 added, 629 removed, tests
+      excluded) while the tests gained 143 — the engine has 167 lines it never had, and 145 lines
+      of tests that existed twice are gone.
+      **Read literally, this item's own rule says it failed**: "unification is measured in files
+      that stop existing", and seven files were created against three deleted. The rule is still
+      right about what it was written against — a shared module added *beside* the two it
+      generalizes — and it is wrong as arithmetic here, because a duplicated engine that becomes
+      one engine plus five specs, values and helpers is more files and less code. The half of the
+      item that does answer is the behavioural one it also writes down: **no file under
+      `screens/collection/` is a copy of one under `screens/unlock/`, and adding a facet to one
+      screen touches no file of the other.** Both hold, and the second is measured rather than
+      asserted: `FacetId` appears in exactly four files, all of them Unlock's — none of the
+      Collection's, and none of the three shared components. The rest is the diff, above, and it is
+      the honest number rather than the flattering one.
+      Its tests run on a **row type neither screen owns** — tested through `UnlockNode` the engine
+      would be proven to work for Unlock and say nothing about being generic, which is the whole
+      claim and the one B3 leans on.
+      **Three things the item's own description had wrong**, each found by doing it:
+      `matchesQuery` was *not* identical — Unlock searches a text built from three fields, the
+      Collection a name — so the search text is a function the spec brings, not a field the engine
+      assumes. **Two** values crossed between the screens, not one: `OriginValue` and the kind set,
+      the latter read by `CollectionRow.vue`, `QueueRow.vue` and a *component* module, which is the
+      clearest sign it was never Unlock's. It is `TargetKind` now, in `lib/ipc/values.ts`, its
+      first four values bound to `ItemKindView` rather than retyped. And the two label modules,
+      listed as staying two, shared twenty lines nobody counted — `originLabel` and `oneOf` are
+      shared now, with the tests neither had.
+      **Unlike Unlock's, the Collection's faceting is a factory.** `CollectionView.pools` is the
+      catalog's own order filtered to the items listed, built in Rust from `c.pools()`, and it
+      cannot be read back off the rows: first appearance in id order is a different sequence. So
+      the options take an input the view brings, and `emptyFilter(order)` exists because a filter
+      has to be built before any pools do.
+      The drawer's column count is `facets.length` reaching the grid as `--facet-columns`, the way
+      `MarksGrid` already passes the boss count — and `grid-cols-facets` was **checked in the built
+      CSS**, because an `@utility` nothing references generates nothing and a grid with no template
+      would have failed silently. The two shared components are the repo's first **generic SFCs**:
+      with `string` props each screen would narrow the emitted sort back to its own union, which is
+      the same small duplication moved rather than removed.
+      **What stays two, and what it cost to know**: `UnlockRow`/`CollectionRow` and
+      `UnlockTable`/`CollectionTable`, as the item says. Measuring the tables found 27 of 84 lines
+      still shared — not columns but the scroll box around them — and four screens reading
+      `--spacing-unlock-body`. Both are **B43**, not this branch: different subject.
+      **Not verified here**: nothing in the suite draws these components, and this machine has no
+      game. The three unified components are behaviour-preserving by construction — same template,
+      same classes — except the drawer's grid, which changed mechanism. One look at `pnpm ui:dev`
+      closes that.
+
+      *The original entry, for the record:*
       `ui/src/lib/graph/unlockFilter.ts` and `ui/src/lib/collection/collectionFilter.ts`
       hold `matchesQuery`, `matchesFacet`, `matchesFacets`, the facet counts and the active
       count **identical word for word, comments included**: only the row type differs. The
@@ -1390,6 +1450,49 @@ before, and **on a series that reaches that era, this skip line appearing at all
 regression**. The reasoning is in the doc comment, not only here.
 
 Baseline after the fix: `pnpm check` green, **127 skips** declared, 79 real files touched.
+
+**Then N3, on `feature/shared-facets`** — chosen because it is the one remaining cleanup item
+that needs neither the game nor a save: pure frontend, Vitest, fixtures. Full entry in *Next up —
+structural cleanup*. Six commits; **six components become three**, the source loses 78 lines net
+and the tests gain 143.
+
+**What the doing corrected in the item that described it.** `matchesQuery` was listed as
+identical in the two modules and is not — Unlock searches three fields joined, the Collection a
+name — which decides the engine's signature rather than decorating it: written assuming a `name`
+field, B3's third list walks into it on day one. Two values crossed between the screens and the
+item named one. The two label modules, listed as *staying two*, shared twenty lines the inventory
+did not count. **The pattern is the same each time: an inventory taken by reading is right about
+what is duplicated and wrong about the edges**, and the edges are where the design decisions are.
+
+**The measuring rule the cleanup section gives itself does not survive its own last item, and
+that is worth more than the item.** "Unification is measured in files that stop existing" was
+written against a real failure — a shared module added beside the two it generalizes — and it
+catches that one. It does not catch this one: seven files created against three deleted, and the
+source 78 lines lighter. A duplicated engine becoming one engine plus the specs, values and
+helpers it needed all along **is** more files and less code, and no count of files can tell that
+apart from the failure it was written to catch. The half that answers is the behavioural one each
+item also carries — here, no file under `screens/collection/` is a copy of one under
+`screens/unlock/`, and adding a facet to one screen touches no file of the other. **The rule
+should be read as a smell, not a criterion**; the criteria are the per-item "done when" lines,
+which is where they already are.
+
+**Measuring for that criterion found the next item.** `UnlockTable`/`CollectionTable` stay two, as
+the item decides — but 27 of their 84 lines are shared, and they are not columns, they are the
+scroll box around them; and `--spacing-unlock-body` is read by four screens. Registered as
+**B43**, not folded into the branch: a virtualized list is a different subject from a faceted one.
+Registered the same day: the BACKLOG had **two entries numbered B40**. Four documents reference
+that number meaning the infobox one, none the other, so the other became **B42**.
+
+**What this machine cannot say.** Nothing in the suite draws these components, and `pnpm ui:dev`
+needs eyes. The three unified components are behaviour-preserving by construction — same
+template, same classes, same tokens — with one exception that changed mechanism: the drawer's
+`grid-cols-3`/`grid-cols-4` became `--facet-columns`. That one was checked as far as a machine
+can, in the **built CSS** rather than the source, because an `@utility` nothing references
+generates nothing and the grid would have collapsed in silence.
+
+`pnpm check` green on the branch: 448 frontend tests over 64 files, 127 skips declared, and the
+generated contract still agreeing — `lib/ipc/values.ts` is hand-written *beside* `types.ts`, and
+`pnpm ipc:types` leaves it alone.
 
 ### 2026-09-13 — the archive fills itself
 

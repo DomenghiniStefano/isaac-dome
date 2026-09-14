@@ -66,3 +66,9 @@
     var(--color-state-unknown-stripe-b) var(--spacing) calc(var(--spacing) * 2)
   );
 }
+
+/* A faceted list's drawer: one column per facet it shows, each sharing the width. The count is
+   data, bound from the template as --facet-columns. */
+@utility grid-cols-facets {
+  grid-template-columns: repeat(var(--facet-columns), minmax(0, 1fr));
+}

@@ -12,23 +12,37 @@ import { singleQuery } from '@/lib/search/queryParam'
 import {
   CollectionFacet,
   CollectionSort,
+  collectionFaceting,
+  collectionFacetOrder,
   defaultCollectionFilter,
   filterForQuery,
   emptyCollectionFilter,
-  matchesCollectionFilter,
   sortItems,
-} from '@/lib/collection/collectionFilter'
-import type { CollectionFilter } from '@/lib/collection/collectionFilter'
-import { itemStateCounts } from '@/lib/collection/itemState'
+} from '@/lib/collection/collectionFacets'
+import type { CollectionFilter } from '@/lib/collection/collectionFacets'
+import { itemStateCounts, itemStateOrder } from '@/lib/collection/itemState'
 import { useCollectionStore } from '@/stores/views'
 import { LoadStatus } from '@/stores/loadStatus'
 import ScreenHeader from './ScreenHeader.vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import { collectionEntries } from '@/lib/diagnostics/collection'
-import CollectionFacetDrawer from './collection/CollectionFacetDrawer.vue'
-import CollectionStateToggle from './collection/CollectionStateToggle.vue'
+
+import StateToggle from '@/components/facets/StateToggle.vue'
+import FacetDrawer from '@/components/facets/FacetDrawer.vue'
+import FilterToolbar from '@/components/facets/FilterToolbar.vue'
+import {
+  collectionFacetTitle,
+  collectionFacetValueLabel,
+  drawerFacets,
+  drawerLabels,
+  itemStateDot,
+  itemStateText,
+  sortOrder,
+  sortText,
+  toolbarLabels,
+} from './collection/collectionLabels'
 import CollectionTable from './collection/CollectionTable.vue'
-import CollectionToolbar from './collection/CollectionToolbar.vue'
+
 import ProfileError from './profile/ProfileError.vue'
 
 const store = useCollectionStore()
@@ -53,10 +67,14 @@ watch(
 const sort = ref<CollectionSort>(CollectionSort.Quality)
 
 const items = computed(() => store.view?.items ?? [])
+// The pools are the view's, so the faceting is too: its options cannot be read off the items.
+const faceting = computed(() => collectionFaceting(store.view?.pools ?? []))
+const valueLabel = (facet: CollectionFacet, value: string) =>
+  collectionFacetValueLabel(t, facet, value)
 const counts = computed(() => itemStateCounts(items.value))
 const rows = computed(() =>
   sortItems(
-    items.value.filter((item) => matchesCollectionFilter(item, filter.value)),
+    items.value.filter((item) => faceting.value.matches(item, filter.value)),
     sort.value,
   ),
 )
@@ -99,25 +117,37 @@ const reset = () => {
     />
     <template v-else-if="store.view">
       <DiagnosticsList :entries="collectionEntries(store.view.diagnostics)" />
-      <CollectionStateToggle
+      <StateToggle
+        :order="itemStateOrder"
         :counts="counts"
         :picked="filter.picks[CollectionFacet.State]"
+        :dot="itemStateDot"
+        :text="itemStateText"
         @update="setPicks(CollectionFacet.State, $event)"
       />
-      <CollectionFacetDrawer
-        :items="items"
-        :pools="store.view.pools"
+      <FacetDrawer
+        :rows="items"
+        :faceting="faceting"
+        :facets="drawerFacets"
         :filter="filter"
+        :title="collectionFacetTitle"
+        :value-label="valueLabel"
+        :labels="drawerLabels"
         @toggle="toggle"
         @reset="reset"
       />
       <Card>
-        <CollectionToolbar
+        <FilterToolbar
           :shown="rows.length"
           :total="items.length"
-          :filter="filter"
           :query="filter.query"
           :sort="sort"
+          :sorts="sortOrder"
+          :sort-text="sortText"
+          :order="collectionFacetOrder"
+          :picks="filter.picks"
+          :value-label="valueLabel"
+          :labels="toolbarLabels"
           @update:query="setQuery"
           @update:sort="setSort"
           @toggle="toggle"

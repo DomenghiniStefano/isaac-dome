@@ -13,25 +13,36 @@ import { singleQuery } from '@/lib/search/queryParam'
 import { characterForms } from '@/lib/graph/characterName'
 import { stateCounts, stateOrder } from '@/lib/graph/nodeState'
 import {
+  drawerFacets,
+  drawerLabels,
+  facetTitle,
+  facetValueLabel,
+  sortOrder,
+  sortText,
+  stateDot,
+  stateText,
+  toolbarLabels,
+} from './unlock/facetLabels'
+import {
   FacetId,
   UnlockSort,
-  emptyFilter,
-  matchesFilter,
+  facetOrder,
   sortNodes,
-} from '@/lib/graph/unlockFilter'
-import type { UnlockFilter } from '@/lib/graph/unlockFilter'
+  unlockFaceting,
+} from '@/lib/graph/unlockFacets'
+import type { UnlockFilter } from '@/lib/graph/unlockFacets'
 import { queuedIds } from '@/lib/plan/queueRows'
 import { useGraphStore } from '@/stores/views'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useQueueStore } from '@/stores/queue'
 import ScreenHeader from './ScreenHeader.vue'
 import ProfileError from './profile/ProfileError.vue'
-import FacetDrawer from './unlock/FacetDrawer.vue'
-import StateToggle from './unlock/StateToggle.vue'
+import FacetDrawer from '@/components/facets/FacetDrawer.vue'
+import FilterToolbar from '@/components/facets/FilterToolbar.vue'
+import StateToggle from '@/components/facets/StateToggle.vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import { unlockEntries } from '@/lib/diagnostics/unlock'
 import UnlockTable from './unlock/UnlockTable.vue'
-import UnlockToolbar from './unlock/UnlockToolbar.vue'
 
 const graph = useGraphStore()
 const queue = useQueueStore()
@@ -42,7 +53,7 @@ useOnActiveProfile(async () => {
 })
 
 // The filter belongs to this screen: leaving the tab resets it, until tabs keep their state.
-const filter = ref<UnlockFilter>(emptyFilter())
+const filter = ref<UnlockFilter>(unlockFaceting.empty())
 
 // A Search row opens this list already filtered on the name it found (B3, spec 3.5 Decision 8).
 const route = useRoute()
@@ -76,9 +87,14 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
 const counts = computed(() => stateCounts(nodes.value))
 // The character facet's labels: the value is an id, the name is read from the nodes.
 const characters = computed(() => characterForms(nodes.value))
+
+// A picked value in words. The Character facet stores ids (B28), so the label needs the forms
+// the nodes carry: it is the screen that has them, not the control that draws the chip.
+const valueLabel = (facet: FacetId, value: string) =>
+  facetValueLabel(t, facet, value, characters.value)
 const rows = computed(() =>
   sortNodes(
-    nodes.value.filter((node) => matchesFilter(node, filter.value)),
+    nodes.value.filter((node) => unlockFaceting.matches(node, filter.value)),
     sort.value,
   ),
 )
@@ -110,7 +126,7 @@ const setSort = (next: UnlockSort) => {
   sort.value = next
 }
 const reset = () => {
-  filter.value = emptyFilter()
+  filter.value = unlockFaceting.empty()
 }
 </script>
 
@@ -130,24 +146,36 @@ const reset = () => {
       />
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
       <StateToggle
+        :order="stateOrder"
         :counts="counts"
         :picked="filter.picks[FacetId.State]"
+        :dot="stateDot"
+        :text="stateText"
         @update="setPicks(FacetId.State, $event)"
       />
       <FacetDrawer
-        :nodes="nodes"
+        :rows="nodes"
+        :faceting="unlockFaceting"
+        :facets="drawerFacets"
         :filter="filter"
+        :title="facetTitle"
+        :value-label="valueLabel"
+        :labels="drawerLabels"
         @toggle="toggle"
         @reset="reset"
       />
       <Card>
-        <UnlockToolbar
+        <FilterToolbar
           :shown="rows.length"
           :total="nodes.length"
-          :filter="filter"
           :query="filter.query"
           :sort="sort"
-          :characters="characters"
+          :sorts="sortOrder"
+          :sort-text="sortText"
+          :order="facetOrder"
+          :picks="filter.picks"
+          :value-label="valueLabel"
+          :labels="toolbarLabels"
           @update:query="setQuery"
           @update:sort="setSort"
           @toggle="toggle"

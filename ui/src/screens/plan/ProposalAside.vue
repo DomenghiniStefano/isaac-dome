@@ -6,7 +6,7 @@ import { ArtSize } from '@/components/graph/artSize'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
-import { nodeSlot } from '@/lib/graph/unlockFilter'
+import { nodeSlot } from '@/lib/graph/unlockFacets'
 import type { UnlockNode } from '@/lib/ipc/types'
 import {
   canQueue,
