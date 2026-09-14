@@ -53,6 +53,16 @@
     var(--spacing-collection-state);
 }
 
+/* The Run diary: the character, how it ended, the floors, the seed, where it came from. */
+@utility grid-cols-runs {
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1.4fr)
+    var(--spacing-runs-floors)
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+}
+
 /* A column header read bottom to top. */
 @utility writing-vertical {
   writing-mode: vertical-rl;
