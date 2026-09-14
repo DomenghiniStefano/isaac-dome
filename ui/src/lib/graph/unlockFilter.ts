@@ -1,6 +1,7 @@
 import { countBy, sortBy, sumBy, uniq } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
 import type { UnlockNode, UnlockTarget } from '@/lib/ipc/types'
+import { OriginValue, TargetKind, originOrder } from '@/lib/ipc/values'
 import { characterForms, characterValue } from './characterName'
 import { NodeState, nodeState, stateOrder } from './nodeState'
 
@@ -21,47 +22,15 @@ export const facetOrder: FacetId[] = [
   FacetId.Character,
 ]
 
-// What a node unlocks, by kind. "Nothing" is a value of its own: 231 nodes on the reference
-// profile unlock nothing the catalog knows, and that is something to filter on.
-export const UnlockKind = {
-  Passive: 'passive',
-  Active: 'active',
-  Familiar: 'familiar',
-  Trinket: 'trinket',
-  Character: 'character',
-  Boss: 'boss',
-  Challenge: 'challenge',
-  Nothing: 'nothing',
-} as const
-export type UnlockKind = (typeof UnlockKind)[keyof typeof UnlockKind]
-
-const unlockKindOrder: UnlockKind[] = [
-  UnlockKind.Passive,
-  UnlockKind.Active,
-  UnlockKind.Familiar,
-  UnlockKind.Trinket,
-  UnlockKind.Character,
-  UnlockKind.Boss,
-  UnlockKind.Challenge,
-  UnlockKind.Nothing,
-]
-
-// The origin DLC as the catalog infers it, plus the nodes it can't say for.
-export const OriginValue = {
-  Rebirth: 'rebirth',
-  Afterbirth: 'afterbirth',
-  AfterbirthPlus: 'afterbirthPlus',
-  Repentance: 'repentance',
-  None: 'none',
-} as const
-export type OriginValue = (typeof OriginValue)[keyof typeof OriginValue]
-
-const originOrder: OriginValue[] = [
-  OriginValue.Rebirth,
-  OriginValue.Afterbirth,
-  OriginValue.AfterbirthPlus,
-  OriginValue.Repentance,
-  OriginValue.None,
+const targetKindOrder: TargetKind[] = [
+  TargetKind.Passive,
+  TargetKind.Active,
+  TargetKind.Familiar,
+  TargetKind.Trinket,
+  TargetKind.Character,
+  TargetKind.Boss,
+  TargetKind.Challenge,
+  TargetKind.Nothing,
 ]
 
 export const UnlockSort = {
@@ -91,16 +60,16 @@ export const nodeSlot = (node: UnlockNode): number =>
     ? node.achievement.id
     : node.achievement.slot
 
-export const targetKind = (target: UnlockTarget): UnlockKind => {
+export const targetKind = (target: UnlockTarget): TargetKind => {
   switch (target.kind) {
     case 'item':
       return target.itemKind
     case 'character':
-      return UnlockKind.Character
+      return TargetKind.Character
     case 'boss':
-      return UnlockKind.Boss
+      return TargetKind.Boss
     case 'challenge':
-      return UnlockKind.Challenge
+      return TargetKind.Challenge
     default:
       return assertNever(target)
   }
@@ -115,7 +84,7 @@ export const facetValues = (node: UnlockNode, facet: FacetId): string[] => {
     case FacetId.Unlocks:
       return node.unlocks.length > 0
         ? uniq(node.unlocks.map(targetKind))
-        : [UnlockKind.Nothing]
+        : [TargetKind.Nothing]
     case FacetId.Origin:
       return [node.origin ?? OriginValue.None]
     case FacetId.Character:
@@ -185,7 +154,7 @@ export const facetOptions = (nodes: UnlockNode[], facet: FacetId): string[] => {
     case FacetId.State:
       return stateOrder
     case FacetId.Unlocks:
-      return unlockKindOrder
+      return targetKindOrder
     case FacetId.Origin:
       return originOrder
     case FacetId.Character: {

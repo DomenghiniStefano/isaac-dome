@@ -6,7 +6,8 @@ import { assertNever } from '@/lib/assertNever'
 import { characterLabel } from '@/lib/graph/characterName'
 import type { CharacterForm } from '@/lib/graph/characterName'
 import { NodeState } from '@/lib/graph/nodeState'
-import { FacetId, OriginValue, UnlockKind } from '@/lib/graph/unlockFilter'
+import { FacetId } from '@/lib/graph/unlockFilter'
+import { OriginValue, TargetKind } from '@/lib/ipc/values'
 import { Dlc } from '@/lib/ipc/types'
 
 type Translate = (
@@ -58,7 +59,7 @@ export const facetValueLabel = (
       return state ? t(stateText[state]) : value
     }
     case FacetId.Unlocks: {
-      const kind = find(UnlockKind, value)
+      const kind = find(TargetKind, value)
       return kind ? t(unlockKindText[kind]) : value
     }
     case FacetId.Origin: {

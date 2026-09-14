@@ -9,7 +9,7 @@ import {
   QualityValue,
 } from '@/lib/collection/collectionFilter'
 import { ItemState } from '@/lib/collection/itemState'
-import { OriginValue, UnlockKind } from '@/lib/graph/unlockFilter'
+import { OriginValue, TargetKind } from '@/lib/ipc/values'
 import { Dlc } from '@/lib/ipc/types'
 
 type Translate = (key: MessageKey<MessageSchema>) => string
@@ -64,7 +64,7 @@ export const collectionFacetValueLabel = (
     case CollectionFacet.Pool:
       return value === NoPool ? t('collection.poolNone') : value
     case CollectionFacet.Kind: {
-      const kind = find(UnlockKind, value)
+      const kind = find(TargetKind, value)
       return kind ? t(unlockKindText[kind]) : value
     }
     case CollectionFacet.Origin: {

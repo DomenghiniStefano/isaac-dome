@@ -1,6 +1,6 @@
 import { countBy, sortBy, sumBy } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
-import { OriginValue } from '@/lib/graph/unlockFilter'
+import { OriginValue } from '@/lib/ipc/values'
 import type { CollectionItem } from '@/lib/ipc/types'
 import { ItemKindView } from '@/lib/ipc/types'
 import { ItemState, itemState, itemStateOrder } from './itemState'
