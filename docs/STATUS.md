@@ -63,7 +63,7 @@ much more to absorb**, and `UnlockTarget` gained a field as well.
 entries run in parallel on disjoint files. The cross-check B42 asked for opened **B45**: four
 characters — Jacob & Esau, The Forgotten, Tainted Forgotten, Tainted Lazarus — **have no page in
 the wiki snapshot**, 47 requirements point at them, and the fetch cannot see it because it
-enumerates what transcludes the character infobox.
+enumerates the singular `Infobox character` while those four pages carry the plural one, two forms in a block.
 
 ---
 
@@ -1487,12 +1487,37 @@ because it enumerates `embeddedin` over `Template:Infobox character`: a page tha
 character another way is not *missed* by that query, it is **not in it**. What B45 asks for is the
 guard as much as the four pages — the names the repo knows, counted against the pages fetched.
 
+**The wiki was then asked, and the hypothesis is a measurement.** All four pages transclude
+`Template:Infobox characters` — **plural** — which holds two forms in one block, the second's
+parameters suffixed ` 2` (`name 2`, `health 2`, `collectibles 2`). They are exactly the four pages
+that carry **two characters**, and 4 × 2 is the 8 `player` rows the cross-check could not compare.
+Nothing is missing from the wiki: one template name is missing from our query, and the second half
+is a shape the parser has never seen — where a page holds two forms today (Judas, Black Judas)
+they are two separate blocks, which `extract_infoboxes` already handles.
+
 **`stage.json` is the open half of B42 and stays open on purpose**: unlike `player` it has no
 second source to be checked against, so there is no reader for it to earn, and dropping a
 committed artefact is the owner's call.
 
-**What this session did not do:** look at any of it in a window. Nothing in the suite draws the
-card or scrolls the four lists.
+**Then the window, and it answered one half and refused the other.** B43's four screens were
+driven in a real browser over the dev fixtures: Unlock, the Collection, a wiki category list and
+the search results all resolve `max-height: 560px` — the renamed token reaching the DOM, not just
+the built CSS — hold **22 rows** of a 641-row list, and redraw a different window on scroll. B43's
+"Closes when" is satisfied in full, which no test in this repo could have said.
+
+**B40's card could not be looked at, and finding out why is the evening's real result.** The dev
+fixtures carry no transformation page, so the app itself was built and run — and the page cannot
+be opened there either. `pageKey` and `categoryOf` in `ui/src/lib/wiki/` still answer `null` for
+a transformation, so `pageLocation` is `null` and **no route in the app reaches one**; the wiki's
+six categories do not include them. The premise was true when it was written — the wiki-search
+spec of 2026-09-12 says those kinds have no page — and **the transformations sub-project of
+2026-09-13 made it false**: `Dataset::entry` answers `Target::Transformation` now. Rust answers,
+the frontend never asks, and the `assertNever` guarding those switches cannot see it because the
+variant *is* handled, handled as nothing. Registered as **B46**. The card merged this afternoon is
+finished and unreachable.
+
+**What this evening did not do:** see the card. It exists, it is tested, and B46 is what stands
+between it and a screen.
 
 ### 2026-09-14 — the suite was green on one machine
 
