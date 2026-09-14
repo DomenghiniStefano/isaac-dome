@@ -56,7 +56,15 @@ const clear = () => {
           class="w-full justify-start gap-2"
           @click="pick(hit.target)"
         >
-          <PixelSprite :url="hit.iconUrl" />
+          <!-- The size has to come from here: `PixelSprite` draws the picture at whatever
+               size the file is, and an achievement's sheet is not an item's icon. Without
+               it the tall ones overlapped the rows under them, which no fixture showed
+               until a transformation search put achievements next to items. -->
+          <PixelSprite
+            :url="hit.iconUrl"
+            placeholder
+            class="size-icon-compact shrink-0"
+          />
           <span class="truncate">{{ hit.title }}</span>
         </Button>
       </li>

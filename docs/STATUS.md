@@ -1580,6 +1580,34 @@ stopped at achievements, and an empty category draws *"nessuna pagina con questo
 reset button when nothing was searched — the Collection's own correction, one screen over, now
 **B48**. Neither is visible to any test in this repo.
 
+**Then the owner opened the app and read the screen, and one message was worth more than the
+evening's own checking.** Six observations, four of them defects, and the two that were mine to
+fix went in the same hour:
+
+- **the global search did not know the transformations.** The wiki index learned about the
+  sixteen pages and the search index did not — six kinds of seven, the same arithmetic one layer
+  over. A page that exists and cannot be found reads exactly like a page that does not exist,
+  which is how it was noticed: typing a name and getting nothing.
+- **an achievement's drawing overlapped the want suggestions.** `PixelSprite` draws a picture at
+  the size the file is and says so in its own comment — *the size comes from the parent* — and
+  `WantBar` gave it none. Item icons are small and looked right by luck; achievement sheets are
+  not. It took a transformation's name to put achievements next to items in that list. It
+  reproduces on the fixtures, so the fix was seen in a browser and not argued.
+
+The other three are entries. **B49**: Beelzebub's page prints `{{column list | width = 15em |
+content = …}}` where the enemies should be — the block-level template defect the suite has counted
+for a week, which until now lived in item sections below the fold and is on a short page's first
+screen. **B50**: a transformation has no picture anywhere, and whether the game's own archives
+hold one is **unmeasured** — a `grep` over the packed archives found nothing and then found
+nothing for `gfx/items` either, which is certainly there, so the instrument was mute and says
+nothing at all. **B51**: Adult's page never says how you become an adult — the sentence is the
+page's *preamble*, which the parser drops by a rule written for "X is a passive item…", and
+`transformation::requires` reads that very line for its digit before throwing the sentence away.
+
+**What confirmed itself**: clicking a contributor opens that item's page, and Guppy is **not**
+offered among the things you can want while being findable as a page — the separation made hours
+earlier, checked by the person it was made for.
+
 ### 2026-09-14 — the suite was green on one machine
 
 `fix/marks-real-partial-series`, cut from `develop`. Opened on a second machine, **without the
