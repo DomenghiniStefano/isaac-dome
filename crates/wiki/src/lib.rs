@@ -10,6 +10,7 @@ mod infobox;
 mod inline;
 mod model;
 mod page;
+mod parent_check;
 mod raw;
 mod resolver;
 mod sections;
