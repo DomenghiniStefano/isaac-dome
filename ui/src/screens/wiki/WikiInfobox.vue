@@ -8,7 +8,7 @@ import type { Entry, Inline, Target } from '@/lib/ipc/types'
 import { useWikiStore } from '@/stores/wiki'
 import InfoboxRow from './InfoboxRow.vue'
 import { refsOf } from './infoboxRefs'
-import { hasRows } from './transformationCard'
+import { hasCard } from './transformationCard'
 
 // The whole entry, not just its infobox: since 2026-09-13 the description, the editions and
 // "unlocked by" live on the entry, because they are not specific to a kind.
@@ -44,7 +44,7 @@ const drawn = computed(() => {
     case 'trinket':
       return false
     case 'transformation':
-      return hasRows(infobox.value)
+      return hasCard(infobox.value, props.entry)
     case 'achievement':
     case 'boss':
     case 'challenge':
