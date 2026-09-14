@@ -165,6 +165,14 @@ fn page_path(target: &Target) -> Option<String> {
             variant,
             subtype,
         } => Some(format!("entity/{id}/{variant}/{subtype}")),
+        // A transformation stays without a picture, and that is measured rather than
+        // assumed (B50, 2026-09-14). The game holds no icon for one: what it has is the
+        // costume Isaac wears — `gfx/characters/costumes/transformation_*.png`, present in
+        // `afterbirthp.a`, verified by reading two of them — and an animation per
+        // transformation, `n020…n034_transformation_*.anm2`. Both are the game's **internal**
+        // names, twelve of them for sixteen pages, with holes in the numbering: mushroom,
+        // angel, mom, poop, drugs, evilangel, iwata. Mapping those onto the wiki's names is
+        // a guess, and a guess is what this repo spends its corrections on.
         Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
