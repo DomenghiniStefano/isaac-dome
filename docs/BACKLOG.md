@@ -2708,7 +2708,25 @@ seen without the game.
 
 ---
 
-## B49 — A block-level template reaches the screen as its own source (implementation, `wiki`, then `ipc` and `ui`)
+## B49 — A block-level template reaches the screen as its own source (implementation, `wiki`, then `ipc` and `ui`) 🟡 the layout half closed on 2026-09-14
+
+**`column list` is gone** (`fix/column-list`): it is unwrapped into the list it already holds,
+before the line-by-line pass, because the pass cannot see a template that spans a dozen lines and
+`parse_template_at` can. Beelzebub's page lists its flies. Raw template syntax **87 → 35**, one
+family exactly, and `Diagnostics::orphan_closers` **50 → 0** in the same move: the lone `}}` lines
+it counted were that wrapper's closers and no longer exist to be dropped.
+
+**What is left is the half that is not layout**, and it is the half that needs the contract:
+`Book of Virtues synergy` 6, `Book of Belial synergy` 1, multi-line `{{bug|…}}` 4 — templates whose
+content is prose, not a list, so unwrapping them would lose what they say. Plus the 8 that are
+genuine text and never go to zero. The `Block` variant this entry asks for is for those.
+
+**Two newlines decided the fix, and the second one broke a test before it was right.** A
+parameter's value arrives trimmed, so the content's own newline has to be put back or the first
+`**` lands on the line the wrapper opened on; and adding one *after* the content unconditionally
+leaves a blank line where the wrapper closed — which flushes the list, the very cut this pass has
+a rule against, arriving from the other side. The test that caught it was written for that rule in
+September and is now load-bearing for a change it never saw coming.
 
 **Needs:** nothing — the wikitext is committed, the defect is in `blocks.rs`, and the last step is
 a contract decision about one `Block` variant.
