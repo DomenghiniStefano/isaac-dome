@@ -1,6 +1,6 @@
 import { uniq } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
-import { createFaceting } from './faceting'
+import { createFaceting, emptyFilter } from './faceting'
 
 // A row that belongs to neither screen, on purpose. Tested through `UnlockNode` the engine
 // would be proven to work for Unlock and nothing would be said about whether it is generic —
@@ -151,5 +151,17 @@ describe('options', () => {
       'white',
       'ginger',
     ])
+  })
+})
+
+// A filter is data, not a method on an engine: the Collection builds one before it knows the
+// pools its options need, and asking it to make an engine to get an empty object would be the
+// shape telling us the API is wrong.
+describe('emptyFilter', () => {
+  it('picks nothing in every facet of the order it is given', () => {
+    expect(emptyFilter([PetFacet.Species, PetFacet.Colour])).toEqual({
+      query: '',
+      picks: { [PetFacet.Species]: [], [PetFacet.Colour]: [] },
+    })
   })
 })
