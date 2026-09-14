@@ -11,14 +11,18 @@ const PageKind = {
   Challenge: 'challenge',
   Character: 'character',
   Entity: 'entity',
+  Transformation: 'transformation',
 } as const
 type PageKind = (typeof PageKind)[keyof typeof PageKind]
 
 const Separator = ':'
 const EntitySeparator = '.'
 
-// The four kinds the dataset has no page for get no key: `Dataset::entry` answers nothing
-// for them by construction, so a key would name a page that can't exist.
+// The three kinds the dataset has no page for get no key: `Dataset::entry` answers nothing
+// for them by construction, so a key would name a page that can't exist. It was four until
+// B46: a transformation gained a page on 2026-09-13 and this list was not read again, so
+// the sixteen were unreachable — handled, and handled as nothing, which is the one shape
+// `assertNever` cannot see.
 export const pageKey = (target: Target): string | null => {
   switch (target.kind) {
     case 'item':
@@ -33,10 +37,11 @@ export const pageKey = (target: Target): string | null => {
       return `${PageKind.Character}${Separator}${target.id}`
     case 'entity':
       return `${PageKind.Entity}${Separator}${[target.id, target.variant, target.subtype].join(EntitySeparator)}`
+    case 'transformation':
+      return `${PageKind.Transformation}${Separator}${target.id}`
     case 'stage':
     case 'room':
     case 'concept':
-    case 'transformation':
       return null
     default:
       return assertNever(target)
@@ -84,6 +89,8 @@ export const parsePageKey = (key: string): Target | null => {
       return { kind: 'challenge', number: id }
     case PageKind.Character:
       return { kind: 'character', id }
+    case PageKind.Transformation:
+      return { kind: 'transformation', id }
     default:
       return assertNever(kind)
   }

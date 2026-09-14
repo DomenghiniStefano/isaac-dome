@@ -8,6 +8,7 @@ const pages: [Target, string][] = [
   [{ kind: 'achievement', id: 1 }, 'achievement:1'],
   [{ kind: 'challenge', number: 19 }, 'challenge:19'],
   [{ kind: 'character', id: 0 }, 'character:0'],
+  [{ kind: 'transformation', id: 1 }, 'transformation:1'],
   [{ kind: 'entity', id: 20, variant: 0, subtype: 0 }, 'entity:20.0.0'],
 ]
 
@@ -21,7 +22,6 @@ describe('pageKey', () => {
     expect(pageKey({ kind: 'stage', name: 'Basement' })).toBeNull()
     expect(pageKey({ kind: 'room', name: 'Devil Room' })).toBeNull()
     expect(pageKey({ kind: 'concept', name: 'Chest' })).toBeNull()
-    expect(pageKey({ kind: 'transformation', id: 1 })).toBeNull()
   })
 
   it('refuses what it never wrote', () => {
@@ -33,7 +33,7 @@ describe('pageKey', () => {
       'item:1.5',
       'item:-1',
       'stage:Basement',
-      'transformation:1',
+      'transformation:',
       'entity:20.0',
       'entity:20.0.0.0',
       'item:1:2',
