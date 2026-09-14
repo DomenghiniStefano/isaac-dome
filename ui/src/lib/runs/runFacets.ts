@@ -26,7 +26,16 @@ const facetOrder: RunFacet[] = [
 // `open` is the run being played and is never a failure — sub-project 1's spec says so and
 // the order says it too, by not putting it beside `died`.
 const outcomeOrder = ['won', 'died', 'abandoned', 'open']
-const onlineOrder = ['online', 'solo']
+// Ours, not the wire's: the archive says  and a facet needs two values with
+// names. A const object and not a union of strings — the repo's rule, and the same reason the
+// wire's own fieldless enums are objects.
+export const RunCompany = {
+  Online: 'online',
+  Solo: 'solo',
+} as const
+export type RunCompany = (typeof RunCompany)[keyof typeof RunCompany]
+
+const onlineOrder: RunCompany[] = [RunCompany.Online, RunCompany.Solo]
 const sourceOrder = ['live', 'session']
 
 const facetValues = (run: RunView, facet: RunFacet): string[] => {
@@ -39,7 +48,7 @@ const facetValues = (run: RunView, facet: RunFacet): string[] => {
     case RunFacet.Character:
       return run.character === null ? [] : [run.character]
     case RunFacet.Online:
-      return [run.online ? 'online' : 'solo']
+      return [run.online ? RunCompany.Online : RunCompany.Solo]
     case RunFacet.Source:
       return [run.source.kind]
     default:

@@ -1215,7 +1215,16 @@ export type RunOutcomeView =
 /**
  * An item in a run. `name` is `None` without a catalog.
  */
-export type RunItemRef = { id: number; name: string | null }
+export type RunItemRef = {
+  id: number
+  name: string | null
+  /**
+   * The sprite from the user's own copy of the game, `None` without it. A run draws its
+   * items the way every other list does; the id stays, because a picture nobody can serve
+   * must not take the place of the one thing we know.
+   */
+  iconUrl: string | null
+}
 
 /**
  * One run.
@@ -1270,6 +1279,12 @@ export type RunsView = {
 }
 
 /**
+ * One achievement this run could open, and how much it opens in turn: the graph already
+ * counts that for Unlock, and a run is worth more when what it gives unlocks more.
+ */
+export type LiveAchievement = { achievement: AchievementRef; fanOut: number }
+
+/**
  * One cell of the matrix, and what beating it with this character would open.
  */
 export type LiveOpen = {
@@ -1277,7 +1292,32 @@ export type LiveOpen = {
   characterName: string
   column: MarkColumnView
   level: MarkLevelView
-  achievements: Array<AchievementRef>
+  achievements: Array<LiveAchievement>
+}
+
+/**
+ * One character's row of the completion matrix, as Live draws it: what this character has
+ * taken, and what it still has to. The screen puts it beside what the run could open, which
+ * is the only place in the app where the two questions meet.
+ */
+export type LiveMarkRow = {
+  character: string
+  headUrl: string | null
+  cells: Array<Cell>
+  /**
+   * Cells with nothing taken yet. Not a percentage: an unread cell is not a zero, and the
+   * matrix already refuses to average the two (B22/B23).
+   */
+  missing: number
+}
+
+/**
+ * The rows Live shows, with the columns they are read against.
+ */
+export type LiveMarks = {
+  bosses: Array<string>
+  art: Array<MarkArtView>
+  rows: Array<LiveMarkRow>
 }
 
 /**
@@ -1294,6 +1334,11 @@ export type LiveDiagnostic =
 
 export type LiveView = {
   run: RunView | null
+  /**
+   * The completion row of the character being played — two rows when the name reaches two
+   * forms. `None` without a profile or without the sections that hold the marks.
+   */
+  marks: LiveMarks | null
   /**
    * Grouped by the cell it needs: "beat Mom's Heart with Cain" once, with everything it
    * opens under it, instead of the same boss read five times.

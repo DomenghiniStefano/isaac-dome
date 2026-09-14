@@ -2,7 +2,7 @@ import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import type { RunOutcomeView, RunSource, RunsDiagnostic } from '@/lib/ipc/types'
-import { RunFacet } from './runFacets'
+import { RunCompany, RunFacet } from './runFacets'
 
 type Key = MessageKey<MessageSchema>
 
@@ -46,7 +46,9 @@ export const facetValueLabel = (
     case RunFacet.Outcome:
       return t(outcomeText(value as RunOutcomeView['kind']))
     case RunFacet.Online:
-      return t(value === 'online' ? 'runs.online.online' : 'runs.online.solo')
+      return t(
+        value === RunCompany.Online ? 'runs.online.online' : 'runs.online.solo',
+      )
     case RunFacet.Source:
       return t(sourceText(value as RunSource['kind']))
     // The characters are names the log printed: there is nothing to translate, and the same
