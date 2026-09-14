@@ -1604,6 +1604,21 @@ nothing at all. **B51**: Adult's page never says how you become an adult — the
 page's *preamble*, which the parser drops by a rule written for "X is a passive item…", and
 `transformation::requires` reads that very line for its digit before throwing the sentence away.
 
+**And B49's layout half closed**: `column list` is unwrapped into the list it already holds,
+before the line pass, so Beelzebub's page lists its flies instead of printing the wrapper's
+source. Raw template syntax **87 → 35**, one family exactly, and `orphan_closers` **50 → 0** —
+the lone `}}` lines it counted were that wrapper's closers. What stays open is the half that
+is not layout: `Book of Virtues synergy`, `Book of Belial synergy` and multi-line `{{bug|…}}`
+wrap prose, not a list, so unwrapping would lose what they say, and that is the `Block`
+variant — a contract change — the entry has asked for since 2026-09-08.
+
+**The fix turned on two newlines, and the second broke a test before it was right.** A
+parameter arrives trimmed, so the content's own newline has to be put back; and adding one
+after it unconditionally leaves a blank line where the wrapper closed, which flushes the list
+— the same cut `a_lone_template_closer_does_not_cut_the_list_in_two` was written against in
+September, arriving from the other side. A test written for one mechanism caught a different
+one, which is the argument for pinning behaviour rather than implementations.
+
 **B50 closed as a measurement, and the first instrument was mute.** A `grep` over the packed
 archives found nothing for `transform` — and nothing for `gfx/items` either, which is certainly
 there: **the archives index by hash, not by name**, so that search could never have answered.

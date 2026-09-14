@@ -423,7 +423,7 @@ fn text_nodes_carry_no_raw_template_syntax() {
     //   Egg's `{{e|Mask + Heart||Heart}}` became two half templates (2 entries).
     // - a line of nothing but `}}` became a `}}` paragraph *and* cut the list around it
     //   in two, because any non-list line flushes the list (40 entries). It's dropped and
-    //   counted in `Diagnostics::orphan_closers`, at 50 on this snapshot.
+    //   counted in `Diagnostics::orphan_closers`, at 50 on that snapshot and **0 since B49**.
     //
     // Threshold pinned on purpose: don't loosen it silently, and if it grows, understand
     // where it comes from before raising it. Each drop so far matched the size its family
@@ -435,8 +435,17 @@ fn text_nodes_carry_no_raw_template_syntax() {
     // carry the page's sections, as Judas and Black Judas already did. The other three
     // pages that arrived with it contribute none. Nothing changed in the parser's handling
     // of templates; one page's text is now counted twice because it belongs to two forms.
+    //
+    // **87 → 35 on 2026-09-14** (B49), and the 52 are one family exactly: `column list` is
+    // unwrapped before the line pass now — its content is already a wiki list, so the
+    // wrapper was never anything but width. 51 openers and their tails went with it, and
+    // `Diagnostics::orphan_closers` fell from **50 to 0**: the lone `}}` lines it counted
+    // were that wrapper's closers, and they no longer exist to be dropped. The families
+    // left are the ones that are not pure layout — `Book of Virtues synergy` 6,
+    // `Book of Belial synergy` 1, multi-line `{{bug|…}}` 4 — plus the 8 that are genuine
+    // text. Those still want the `Block` variant this comment asks for.
     assert!(
-        offenders.len() <= 87,
+        offenders.len() <= 35,
         "{} nodes with raw template syntax: {offenders:?}",
         offenders.len()
     );
