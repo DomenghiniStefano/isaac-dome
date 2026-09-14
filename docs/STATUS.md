@@ -141,6 +141,24 @@ enumerated the singular `Infobox character` while those four pages carry the plu
             `BEST_STREAK [23]` and `DEATHS [10]` rather than decided. The screens are
             deliberately out of scope: `Live` and `Runs` are both views of this model, and
             designing them first would let a layout shape the IPC contract.
+      - [ ] **Sub-project 2, the two screens — design taken on 2026-09-14**,
+            `docs/superpowers/specs/2026-09-14-m4-run-screens-design.md`. Three decisions in
+            conversation plus one word: **Run is a diary** (a row per run, what happened, not
+            whether you are improving — the alternative was declined and the offer was weak,
+            because with no clock in the log and no floor on a death a "bilancio" could only
+            group by killer and character); **Live shows the run in progress and what
+            finishing it would open**; **abandoned runs stay in the list, marked**; and the
+            list is **filterable**, which lands on N3's unified engine — this is the third
+            list it was unified for.
+            **The design's hard part is not the join, it is the character.** The archive has
+            the name the log prints, `player 0 (Cain)` — where `player` is the *slot*, not an
+            id — and the game gives a Tainted character the base form's name. So Live cannot
+            say which Cain you are playing: the spec chooses to **say both** rather than infer
+            from the starting items, and registers the measurement that would replace the
+            ambiguity (one Tainted run with its log kept).
+            Run needs **nothing new on the wire**; Live needs the marks a character is still
+            missing, and where that join happens is the plan's decision, with N8's lesson
+            pointing at the backend.
       - [x] **Sub-project 1 splits in two on 2026-09-13**, when the plan was written and the
             size was visible. **1a — the run model** is done, `feature/run-model`: the pure
             `run` crate, 41 tests, plan
