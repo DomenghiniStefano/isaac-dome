@@ -1556,6 +1556,30 @@ enumerate, **591 pages** behind them — 247 entities, 126 monsters, 97 pickups,
 of them, a fact about our fetch and not about the wiki. Whether any of it belongs in a dataset
 that ships inside the binary is a product decision, which is why it is an entry and not a task.
 
+**Then B46 closed too**, on `feature/transformation-pages`, and with it B40's card is reachable.
+`pageKey` writes `transformation:1`, `categoryOf` answers a seventh category, and the IPC index
+carries the sixteen pages — **it was listing six kinds of seven**, and the test that checks the
+index against the dataset did not catch it because *its own sum left out the same kind*. It sums
+every count now: a count missing there is a kind the index may quietly stop carrying.
+
+**The design call the entry named answered itself.** `pageLocation` needs a category as much as a
+key, so the alternative to a seventh category was leaving the pages shut — the mechanism decided,
+not the taste.
+
+**And opening them made them askable, which they are not.** `wantable` and `wantLocation` derived
+from `pageKey` deliberately: "has a wiki page" and "the graph can grant it" were the same set of
+kinds, and the comment said a second list would be a second answer to one question. B46 ended that
+coincidence — nothing unlocks a transformation, you collect three items — so `canBeWanted` is its
+own switch, where a `Target` variant added later breaks the build. **The test that caught it was
+already written and already right**: it lists a transformation among the hits `wantable` must
+drop, and went red the moment the key appeared. `want_view` would have answered `nothingUnlocks`:
+true, and a question the app should never have offered.
+
+**The window earned its keep twice more**: the wiki's intro sentence lists what the copy holds and
+stopped at achievements, and an empty category draws *"nessuna pagina con questo nome"* with a
+reset button when nothing was searched — the Collection's own correction, one screen over, now
+**B48**. Neither is visible to any test in this repo.
+
 ### 2026-09-14 — the suite was green on one machine
 
 `fix/marks-real-partial-series`, cut from `develop`. Opened on a second machine, **without the
