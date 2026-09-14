@@ -29,16 +29,19 @@ the session log is full of entries that say *"not seen in a real Tauri window"*.
 `the game` work can be written against fixtures; what it cannot do there is be verified, and a
 half of a task that cannot be verified is not a half that should be shipped.
 
-**Snapshot of 2026-09-14**, 24 open entries — it was 26 that morning. **B34 closed because
-tagging it meant reading it** and it turned out not to be finished; B38 closed; B44 opened and
-closed the same hour, as not a defect. Regenerate rather than trust this list — the command
+**Snapshot of 2026-09-14 (evening)**, 23 open entries — it was 26 that morning. **B34 closed
+because tagging it meant reading it** and it turned out not to be finished; B38 closed; B44 opened
+and closed the same hour, as not a defect; then B40 and B43 closed and B42 half closed on
+`feature/small-three`, which opened **B45** — four characters with no page, found by the
+cross-check B42 asked for and not by anyone looking for them. Regenerate rather than trust this
+list — the command
 prints each open entry's heading with its tag under it, and was run before it was written down:
 
 ```
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B40, B41, B42, B43
+- **`nothing` (13)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B45
 - **`a real save` (3)** — B21, B22, B23
 - **`the game` (5)** — B3, B10, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -2203,7 +2206,23 @@ a tab that survives a restart, because it is the same mechanism.
 
 ---
 
-## B40 — A transformation's infobox has no rows (implementation, `ui`, small)
+## B40 — A transformation's infobox has no rows (implementation, `ui`, small) ✅ closed on 2026-09-14
+
+**Closed on `feature/small-three`** (`c4dfee6`). The card draws the three rows, `contributors`
+linking like any other target.
+
+**Measuring the dataset before drawing changed the design, and that is the part worth keeping.**
+The entry asks for three rows and says only that `requires` must say nothing rather than "3" when
+it is `null`. On the sixteen pages: `requires` is `null` on **one** (Adult, whose transformation
+is taking three pills and not picking up items) and `target` is empty on **fourteen**. `InfoboxRow`
+draws "nessuno" for an empty value — true of a character with no starting items, **a claim nobody
+measured** about a transformation. So a row is drawn only where the page filled it, and a page
+that filled none of the three carries no card at all — which is what the suppressed variant's own
+comment said an empty card would do.
+
+The decision lives in `hasRows`, a pure function with its test, because nothing in `ui/` mounts a
+component: there is no `@vue/test-utils` and no DOM environment in the suite, so a rule left in
+the template is a rule no test can see.
 
 **Needs:** nothing, then a window — the three fields are in the embedded dataset and on the wire already; only the card is missing.
 
@@ -2281,9 +2300,27 @@ this entry, not a new one.
 
 ---
 
-## B42 — Two Cargo tables are downloaded, committed, and read by nothing (implementation, `wiki`, small)
+## B42 — Two Cargo tables are downloaded, committed, and read by nothing (implementation, `wiki`, small) 🟡 half closed on 2026-09-14
 
-**Needs:** nothing — `wiki-snapshot`'s query and `dataset/raw/cargo/`, both committed.
+**`player.json` has its reader** (`feature/small-three`, `5da5296`): its `parent` is cross-checked
+against the `parent` every character page states in its own infobox, and the test goes red the day
+the two stop agreeing. Measured on the committed snapshot: **32 named forms carry both, all 32
+agree.** Matching the two by `player`'s own `id` column was tried first and is a trap — that column
+is as unreliable as the infoboxes' (`Isaac` 14, `Magdalene` 2, the bug the character map exists to
+route around) — so an id match agreed by accident on names it was never comparing. Names are what
+the two sources share. The check enters through `for_tests`: it asks a question about the data we
+ship and no command of the app ever asks it.
+
+**It also found what nobody was looking for**, which is now **B45**: the eight `player` rows it
+could not compare are not eight facts but one — **four character pages are missing from the
+snapshot**.
+
+**`stage.json` is the open half**, and it is a decision, not code: unlike `player` it has no second
+source anywhere in the repo to be checked against, so there is no reader for it to earn. The
+recommendation is to drop it from `TABLES` and from `dataset/raw/cargo/`, with the reason in the
+commit body — removing a committed artefact is the owner's call.
+
+**Needs:** nothing, then a decision — `wiki-snapshot`'s query and `dataset/raw/cargo/`, both committed.
 
 Logged on 2026-09-13, noticed while adding the transformations' five fields to the same
 query. `crates/wiki-snapshot/src/api.rs` downloads ten Cargo tables; `Raw::load` puts seven
@@ -2318,7 +2355,17 @@ the commit body.
 
 ---
 
-## B43 — Four screens virtualize a list under Unlock's name (implementation, `ui`, small)
+## B43 — Four screens virtualize a list under Unlock's name (implementation, `ui`, small) ✅ closed on 2026-09-14
+
+**Closed on `feature/small-three`** (`0f4e6aa`), both halves as the entry demands. `VirtualRows`
+owns the scroll box, the total height and the window; the four screens lose 26 lines each and
+bring only their rows. The columns stay two files — N3's reasoning is untouched. The tokens say
+*virtualized list*: `--spacing-unlock-body` is `--spacing-virtual-rows-body` and `--unlock-total`
+is `--virtual-rows-total`.
+
+**The rename was checked in the built CSS, not in the source** — a utility nothing references
+generates nothing, and the grid would have collapsed in silence. What is still only argued and
+not seen: that the four screens scroll as they did. Nothing in the suite draws them.
 
 **Needs:** nothing, then a window — the scaffolding and the two tokens are `ui`; that four screens still scroll with the rows they had is what only a window says.
 
@@ -2402,3 +2449,43 @@ applied here: **read the whole page before calling it corrupt** — the infobox 
 Trivia three sections below was not — and **a thing that looks wrong on data we did not write is
 a hypothesis, not a finding**, until the source is asked. It was the owner who asked it.
 
+
+---
+
+## B45 — Four characters have no page in the snapshot, and nothing notices (implementation, `wiki-snapshot`)
+
+**Needs:** nothing — the snapshot's own index says it, and closing it is one `pnpm wiki:fetch`
+against the wiki, which no part of the app ever talks to.
+
+Found on 2026-09-14 while closing B42's first half, and not by looking for it. The cross-check
+between `player.json` and the pages could compare 32 named forms and left **8 rows out**. Those
+eight are not eight facts, they are one: **`Jacob & Esau`, `The Forgotten`, `Tainted Forgotten`
+and `Tainted Lazarus` have no page in `dataset/raw/pages/character/`** and no entry in
+`dataset/raw/index.json`. `player`, a Cargo table rather than a page fetch, still knows all of
+them.
+
+### What was measured
+
+- `dataset/raw/pages/character/`: **30 files**; `dataset/wiki.json`: **32 characters** (Judas and
+  Lazarus each carry a second infobox, for Black Judas and Lazarus Risen).
+- The four missing names are in `dataset/corrections.json` with their ids — 16, 19, 29, 35 — so
+  **a reference to them resolves**; what does not exist is the page it resolves to.
+- `crates/graph/rules/requirements.json` holds **47 references** to those four ids: 17 to The
+  Forgotten, 15 to Jacob & Esau, 8 to Tainted Forgotten, 7 to Tainted Lazarus. Every one of them
+  is a requirement a screen draws, with a target whose page the wiki screen cannot open.
+
+### The hypothesis about the cause, which is not measured yet
+
+`wiki-snapshot` enumerates a kind's pages with `generator=embeddedin` over
+`Template:Infobox character` (`pages_url`, `PageKind::template`). A page that states its character
+another way is not *missed* by that query, it is **not in it** — which is why the fetch reports no
+error: `Pending` only fails on a page the server listed and never delivered. One query asking what
+those four pages transclude settles it.
+
+### Closes when
+
+The four pages are in the snapshot **and** the fetch can no longer lose a character silently: the
+set of characters the repo knows (`dataset/corrections.json`, `player.json`) is checked against the
+pages fetched, and a name with no page fails the snapshot rather than waiting for a cross-check
+written for something else to trip over it. The same guard belongs to every kind that has a Cargo
+table to be counted against.

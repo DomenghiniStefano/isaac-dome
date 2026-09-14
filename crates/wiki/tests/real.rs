@@ -6,6 +6,7 @@ use std::collections::BTreeMap;
 use std::path::PathBuf;
 use std::sync::OnceLock;
 
+use wiki::for_tests::cross_check_character_parents;
 use wiki::{
     build, Block, Corrections, Dataset, Entry, Infobox, Inline, Raw, Resolution, Resolver,
     SectionKind, Target,
@@ -526,4 +527,28 @@ fn the_glitch_themed_trinkets_quote_is_meant_to_look_broken() {
         panic!("trinket 138 carries a trinket infobox");
     };
     assert_eq!(wiki::plain(quote), "t's broken9Reroll your dest");
+}
+
+/// B42: `player`'s own `parent` and `Infobox::Character.parent` are two independent
+/// statements of the same relation — a Tainted character's Soul form, Black Judas, Lazarus
+/// Risen — and until this test nobody had checked them against each other.
+///
+/// Measured 2026-09-14 on this snapshot: 32 named forms carry both a character-infobox and
+/// a `player` row, and all 32 agree. This is the guard: it goes red the day a page's
+/// `parent` parameter and the wiki's own Cargo table stop saying the same thing. The lower
+/// bound on `compared` is the vacuity guard — without it, four missing pages (Jacob & Esau,
+/// The Forgotten, Tainted Forgotten, Tainted Lazarus; also measured 2026-09-14, see
+/// `parent_check`'s module doc) silently emptying `compared` would read as "nothing to
+/// disagree about" instead of "the cross-check ran on nothing".
+#[test]
+fn the_player_tables_parent_agrees_with_the_infoboxes_own() {
+    let raw = raw();
+    let r = Resolver::new(&raw.tables, &BTreeMap::new(), &corrections());
+    let result = cross_check_character_parents(&raw.pages, &r);
+    assert!(result.compared >= 30, "compared {}", result.compared);
+    assert!(
+        result.mismatches.is_empty(),
+        "player.json and the infoboxes disagree: {:#?}",
+        result.mismatches
+    );
 }
