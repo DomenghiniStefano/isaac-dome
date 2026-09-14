@@ -19,6 +19,7 @@ const runs: RunView[] = [
     source: { kind: 'live' },
     ordinal: 2,
     character: 'Cain',
+    characterId: 23,
     seedWords: 'FYQ8 QQ8G',
     online: false,
     outcome: { kind: 'open' },
@@ -32,6 +33,7 @@ const runs: RunView[] = [
     source: { kind: 'live' },
     ordinal: 1,
     character: 'Judas',
+    characterId: 3,
     seedWords: 'AB12 CD34',
     online: false,
     outcome: { kind: 'died', killer: 'Monstro' },
@@ -45,6 +47,7 @@ const runs: RunView[] = [
     source: { kind: 'session', name: '09_12_2026__13_34_26' },
     ordinal: 2,
     character: 'Keeper',
+    characterId: 14,
     seedWords: 'ZZ99 XX11',
     online: true,
     outcome: { kind: 'won', ending: 'Mother' },
@@ -58,6 +61,7 @@ const runs: RunView[] = [
     source: { kind: 'session', name: '09_12_2026__13_34_26' },
     ordinal: 1,
     character: null,
+    characterId: null,
     seedWords: 'QW34 ER56',
     online: true,
     outcome: { kind: 'abandoned' },
@@ -71,6 +75,7 @@ const runs: RunView[] = [
     source: { kind: 'session', name: '09_10_2026__08_00_00' },
     ordinal: 1,
     character: 'Cain',
+    characterId: 2,
     seedWords: 'MN78 OP90',
     online: true,
     outcome: { kind: 'won', ending: 'The Beast' },
@@ -125,24 +130,6 @@ export const liveAnswer = (): LiveView => ({
   },
   opens: [
     {
-      character: 2,
-      characterName: 'Cain',
-      column: MarkColumnView.MomsHeart,
-      level: MarkLevelView.Base,
-      achievements: [
-        {
-          achievement: {
-            kind: 'known' as const,
-            id: 19,
-            text: 'The Family Man',
-            condition: null,
-            iconUrl: null,
-          },
-          fanOut: 4,
-        },
-      ],
-    },
-    {
       character: 23,
       characterName: 'Tainted Cain',
       column: MarkColumnView.MomsHeart,
@@ -161,7 +148,7 @@ export const liveAnswer = (): LiveView => ({
       ],
     },
   ],
-  diagnostics: [
-    { kind: 'ambiguousCharacter' as const, name: 'Cain', forms: 2 },
-  ],
+  // No ambiguity any more: the log stated Subtype 23, so only that form is offered. The
+  // diagnostic stays in the table for a run folded before that line was read.
+  diagnostics: [],
 })
