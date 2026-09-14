@@ -1,7 +1,8 @@
 //! From a wiki page to dataset entries: each infobox gives an entry, of the kind the
 //! infobox itself declares (not the folder the page was listed under), and level-2
 //! sections with a recognized title give the text. The preamble is discarded: it's the
-//! "X is a passive item…" sentence that `catalog` already covers.
+//! "X is a passive item…" sentence that `catalog` already covers — **except on a
+//! transformation**, where it is the only place the wiki says how you become one (B51).
 
 use serde::{Deserialize, Serialize};
 
@@ -9,7 +10,7 @@ use crate::blocks::parse_blocks;
 use crate::infobox::{
     entry_facts, extract_infoboxes, infobox_from, leading_number, InfoboxKind, RawInfobox,
 };
-use crate::resolver::Resolver;
+use crate::resolver::{is_layout_template, Resolver};
 use crate::sections::{section_kind, split_page};
 use crate::{Diagnostics, Entry, Section};
 
@@ -120,6 +121,46 @@ fn entry_key(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) -> O
     })
 }
 
+/// The page's opening sentence, as inline text: what `split_page` puts before the first
+/// level-2 heading, with the infobox and the header template gone — `parse_inline` resolves
+/// the links and skips the layout templates, and an empty preamble gives an empty list.
+///
+/// Discarded for every other kind, where it is the "X is a passive item…" sentence that
+/// `catalog` already covers. B51: on a transformation it carries the requirement.
+fn preamble(text: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<crate::Inline> {
+    let (pre, _) = split_page(text);
+    crate::inline::parse_inline(without_the_boxes(&pre).trim(), r, d)
+}
+
+/// The preamble text with the infobox and the page header taken out, and **nothing else**:
+/// a `{{i|Flip}}` in the same sentence is a reference the prose needs. `parse_template_at`
+/// is what says where a template ends, which a line-by-line pass cannot — an infobox spans
+/// a dozen lines and a header one.
+fn without_the_boxes(text: &str) -> String {
+    let mut out = String::new();
+    let mut i = 0;
+    while let Some(pos) = text.get(i..).and_then(|rest| rest.find("{{")) {
+        let at = i + pos;
+        out.push_str(&text[i..at]);
+        match crate::template::parse_template_at(text, at) {
+            Some((t, end)) if t.name.starts_with("infobox") || is_layout_template(&t.name) => {
+                i = end
+            }
+            // Any other template is prose: leave it for `parse_inline` to resolve.
+            Some((_, end)) => {
+                out.push_str(&text[at..end]);
+                i = end;
+            }
+            None => {
+                out.push_str("{{");
+                i = at + 2;
+            }
+        }
+    }
+    out.push_str(&text[i..]);
+    out
+}
+
 /// The page's kept sections, in the order they appear; ones with an unrecognized title
 /// count among the discarded.
 fn sections(text: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Section> {
@@ -209,12 +250,40 @@ pub fn parse_page(
                 .clone(),
         };
         let facts = entry_facts(&ib, r, d);
+        let description = match kind {
+            // B51: a transformation's preamble is the only place the wiki says **how you
+            // become one** — Adult's "upon taking three Puberty pills" is there and nowhere
+            // else on the page — so for this kind alone the discarded sentence is kept, in
+            // front of the infobox's own `description`. That parameter restates the Effects
+            // section on all sixteen pages (Guppy's is empty) and on none of them says how
+            // the transformation happens, so nothing is dropped by putting it second.
+            InfoboxKind::Transformation => {
+                let mut out = preamble(text, r, d);
+                // Two sentences written in two places meet in one field, and nothing in
+                // either carries the space between them.
+                if !out.is_empty() && !facts.description.is_empty() {
+                    out.push(crate::Inline::Text {
+                        text: " ".to_string(),
+                        style: crate::Style::Plain,
+                    });
+                }
+                out.extend(facts.description);
+                out
+            }
+            InfoboxKind::Passive
+            | InfoboxKind::Activated
+            | InfoboxKind::Trinket
+            | InfoboxKind::Achievement
+            | InfoboxKind::Boss
+            | InfoboxKind::Challenge
+            | InfoboxKind::Character => facts.description,
+        };
         out.push((
             key,
             Entry {
                 title: entry_title(kind, title, &ib, r),
                 revid,
-                description: facts.description,
+                description,
                 dlc: facts.dlc,
                 unlocked_by: facts.unlocked_by,
                 infobox: infobox_from(kind, &ib, text, r, d),
@@ -235,6 +304,40 @@ mod tests {
     /// exactly the sixteen pages the Cargo table has rows for. The kind is declared like the
     /// other six so that `fetch`, which walks `PageKind::ALL`, picks the pages up without a
     /// special case — until it exists, no transformation page is downloaded at all.
+    /// B51: a transformation's preamble is the only place the wiki says **how you become
+    /// one** — Adult states "upon taking three Puberty pills" there and nowhere else — and the
+    /// parser drops preambles by a rule written for the "X is a passive item…" sentence that
+    /// `catalog` already covers. `transformation::requires` even reads that same line for its
+    /// digit and throws the sentence away.
+    ///
+    /// It is kept ahead of the infobox's own `description`, which on all sixteen pages
+    /// restates the Effects section (Guppy's is empty) and on none of them says how the
+    /// transformation happens.
+    #[test]
+    fn a_transformations_preamble_is_kept_ahead_of_its_description() {
+        let src = "{{header transformations}}
+{{infobox transformation
+ | id = 1
+ | description = Grants flight.
+}}
+
+'''Beelzebub''' is a [[transformation]], turning Isaac into a fly after picking up 3 fly items.
+
+== Effects ==
+* a
+";
+        let mut d = Diagnostics::default();
+        let v = parse_page("Beelzebub", 7, src, &test_resolver(), &mut d);
+        let text = crate::plain(&v[0].1.description);
+        assert!(
+            text.starts_with("Beelzebub is a transformation, turning Isaac into a fly after picking up 3 fly items."),
+            "{text}"
+        );
+        // The two sentences are written in two places and meet in one field: the space
+        // between them belongs to neither, so it is put here.
+        assert!(text.ends_with("3 fly items. Grants flight."), "{text}");
+    }
+
     #[test]
     fn the_transformation_kind_names_its_template_and_its_folder() {
         assert_eq!(PageKind::Transformation.dir(), "transformation");
