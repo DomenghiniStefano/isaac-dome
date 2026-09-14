@@ -336,7 +336,7 @@ pub fn target_key(t: &Target, label: &str) -> String {
         Target::Transformation { .. } => "transformation",
         Target::Stage { .. } => "stage",
         Target::Room { .. } => "room",
-        Target::Pickup { .. } => "pickup",
+        Target::Concept { .. } => "concept",
     };
     format!("{kind}:{label}")
 }
