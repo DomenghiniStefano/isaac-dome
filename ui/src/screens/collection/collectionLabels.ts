@@ -3,8 +3,10 @@ import { dlcNames } from '@/components/wiki/dlcNames'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
+import type { DrawerLabels, ToolbarLabels } from '@/components/facets/labels'
 import {
   CollectionFacet,
+  CollectionSort,
   NoPool,
   QualityValue,
 } from '@/lib/collection/collectionFacets'
@@ -75,4 +77,48 @@ export const collectionFacetValueLabel = (
     default:
       return assertNever(facet)
   }
+}
+
+// A state is never colour alone: the square carries its colour, the name says it. Unreadable
+// wears the unknown hatch, as its badge does.
+export const itemStateDot: Record<ItemState, string> = {
+  [ItemState.InCollection]: 'bg-state-done',
+  [ItemState.Available]: 'bg-state-now',
+  [ItemState.Locked]: 'bg-state-blocked',
+  [ItemState.Unknown]:
+    'hatch-unknown border border-dashed border-state-unknown',
+}
+
+// The facets the drawer holds: the state has its own control above the table.
+export const drawerFacets: CollectionFacet[] = [
+  CollectionFacet.Quality,
+  CollectionFacet.Pool,
+  CollectionFacet.Kind,
+  CollectionFacet.Origin,
+]
+
+export const sortOrder: CollectionSort[] = [
+  CollectionSort.Quality,
+  CollectionSort.Id,
+  CollectionSort.Name,
+]
+
+export const sortText: Record<CollectionSort, MessageKey<MessageSchema>> = {
+  [CollectionSort.Quality]: 'collection.sort.quality',
+  [CollectionSort.Id]: 'collection.sort.id',
+  [CollectionSort.Name]: 'collection.sort.name',
+}
+
+export const toolbarLabels: ToolbarLabels = {
+  rows: 'collection.items',
+  search: 'collection.search',
+  sortBy: 'collection.sortBy',
+  activeFilters: 'collection.activeFilters',
+}
+
+export const drawerLabels: DrawerLabels = {
+  facets: 'collection.facets',
+  activeFilters: 'collection.activeFilters',
+  noFilters: 'collection.noFilters',
+  reset: 'collection.reset',
 }
