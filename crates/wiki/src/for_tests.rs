@@ -63,3 +63,9 @@ pub fn empty_trinket() -> Infobox {
         pools: Vec::new(),
     }
 }
+
+/// B42's cross-check between the `player` Cargo table's `parent` and the one every
+/// character page states in its own infobox. It reads the committed snapshot and answers a
+/// question about it, which no command of the app ever asks: a disagreement is a fact about
+/// the data we ship, and the place that has to go red for it is the suite.
+pub use crate::parent_check::{cross_check_character_parents, ParentCrossCheck, ParentMismatch};
