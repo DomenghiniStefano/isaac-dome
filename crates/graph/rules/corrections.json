@@ -376,12 +376,12 @@
     },
     "transformation:Beelzebub": {
       "unknown": {
-        "reason": "a transformation is three items, and the model can't say 'N of these'"
+        "reason": "required of every target and never read: a transformation resolves through the count in requirements.json, not through this table"
       }
     },
     "transformation:Guppy": {
       "unknown": {
-        "reason": "a transformation is three items, and the model can't say 'N of these'"
+        "reason": "required of every target and never read: a transformation resolves through the count in requirements.json, not through this table"
       }
     }
   }
