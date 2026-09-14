@@ -26,11 +26,14 @@ fn a_run(seed: &str, outcome: Outcome) -> Run {
 }
 
 fn view_of(sources: Vec<(RunSource, Vec<Run>)>) -> ipc::RunsView {
-    runs_view(RunsInputs {
-        sources,
-        catalog: None,
-        diagnostics: vec![],
-    })
+    runs_view(
+        RunsInputs {
+            sources,
+            catalog: None,
+            diagnostics: vec![],
+        },
+        |_| None,
+    )
 }
 
 #[test]

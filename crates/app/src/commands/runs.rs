@@ -55,11 +55,14 @@ pub(crate) fn runs(
         Err(reason) => diagnostics.push(RunsDiagnostic::StoreUnavailable { reason }),
     }
 
-    Ok(ipc::runs_view(RunsInputs {
-        sources,
-        catalog,
-        diagnostics,
-    }))
+    Ok(ipc::runs_view(
+        RunsInputs {
+            sources,
+            catalog,
+            diagnostics,
+        },
+        crate::icons::icon_url,
+    ))
 }
 
 /// What the run being watched would open (M4 2b). One command, because the archive's open run
@@ -77,6 +80,7 @@ pub(crate) fn live(
     archive: tauri::State<'_, ArchiveState>,
     graph: tauri::State<'_, GraphState>,
 ) -> Result<ipc::LiveView, IpcError> {
+    let app_for_marks = app.clone();
     let archive_view = runs(
         app.clone(),
         store,
@@ -113,5 +117,28 @@ pub(crate) fn live(
             })
             .collect()
     };
-    Ok(ipc::live_view(open, nodes, by_name))
+
+    // The row of the completion matrix for whoever is being played — two rows when the name
+    // reaches two forms. Built from the same counters the Completion screen reads, through the
+    // same function: a second reading would be a second chance to disagree with it.
+    let marks = match (open.as_ref().and_then(|r| r.character.as_deref()), cat) {
+        (Some(name), Some(c)) => {
+            progress_sections(&app_for_marks)
+                .ok()
+                .and_then(|(_, counters)| {
+                    let counters = counters?;
+                    let matrix = ipc::marks_matrix(&counters, Some(c), crate::icons::icon_url);
+                    let wanted: Vec<u32> = by_name(name).into_iter().map(|(id, _)| id).collect();
+                    let rows: Vec<usize> = (0..ipc::CHARACTERS.len())
+                        .filter(|row| {
+                            ipc::character_for(*row, c).is_some_and(|ch| wanted.contains(&ch.id.0))
+                        })
+                        .collect();
+                    (!rows.is_empty()).then(|| ipc::live_marks(&matrix, &rows))
+                })
+        }
+        _ => None,
+    };
+
+    Ok(ipc::live_view(open, nodes, marks, by_name))
 }
