@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="Facet extends string, Sort extends string">
 import { XIcon } from '@lucide/vue'
 import { computed } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
@@ -10,53 +10,46 @@ import {
   ToggleGroupType,
 } from '@/components/ui/toggle-group'
 import { useMessages } from '@/i18n'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
-import {
-  CollectionFacet,
-  CollectionSort,
-  collectionFacetOrder,
-} from '@/lib/collection/collectionFacets'
-import type { CollectionFilter } from '@/lib/collection/collectionFacets'
-import { collectionFacetValueLabel } from './collectionLabels'
+import type { Label, ToolbarLabels } from './labels'
 
+// How many rows are shown, the search, the sort, and a chip per picked value.
+//
+// Generic over the screen's facet and sort so a call site stays typed end to end: with `string`
+// props each screen would narrow the emitted sort back to its own union, which is the small
+// duplication this component exists to remove.
 const props = defineProps<{
   shown: number
   total: number
-  filter: CollectionFilter
   query: string
-  sort: CollectionSort
+  sort: Sort
+  sorts: Sort[]
+  sortText: Record<Sort, Label>
+  order: Facet[]
+  picks: Record<Facet, string[]>
+  // A picked value in words: the Character facet stores ids (`docs/BACKLOG.md` B28), so no
+  // component can label one on its own.
+  valueLabel: (facet: Facet, value: string) => string
+  labels: ToolbarLabels
 }>()
 const emit = defineEmits<{
   'update:query': [query: string]
-  'update:sort': [sort: CollectionSort]
-  toggle: [facet: CollectionFacet, value: string]
+  'update:sort': [sort: Sort]
+  toggle: [facet: Facet, value: string]
 }>()
 const { t } = useMessages()
 
-const sorts: CollectionSort[] = [
-  CollectionSort.Quality,
-  CollectionSort.Id,
-  CollectionSort.Name,
-]
-const sortText: Record<CollectionSort, MessageKey<MessageSchema>> = {
-  [CollectionSort.Quality]: 'collection.sort.quality',
-  [CollectionSort.Id]: 'collection.sort.id',
-  [CollectionSort.Name]: 'collection.sort.name',
-}
-
 // A single-choice group empties when its chosen item is clicked again; a sort always has one.
 const onSort = (value: unknown) => {
-  const next = sorts.find((s) => s === value)
+  const next = props.sorts.find((s) => s === value)
   if (next) emit('update:sort', next)
 }
 
 const chips = computed(() =>
-  collectionFacetOrder.flatMap((facet) =>
-    props.filter.picks[facet].map((value) => ({
+  props.order.flatMap((facet) =>
+    props.picks[facet].map((value) => ({
       facet,
       value,
-      label: collectionFacetValueLabel(t, facet, value),
+      label: props.valueLabel(facet, value),
     })),
   ),
 )
@@ -65,16 +58,16 @@ const chips = computed(() =>
 <template>
   <CardHeader class="flex-wrap">
     <CardTitle class="tabular-nums"
-      >{{ shown }} / {{ total }} {{ t('collection.items') }}</CardTitle
+      >{{ shown }} / {{ total }} {{ t(labels.rows) }}</CardTitle
     >
     <div class="flex flex-wrap items-center gap-2">
       <Input
         :model-value="query"
-        :placeholder="t('collection.search')"
+        :placeholder="t(labels.search)"
         class="w-search"
         @update:model-value="emit('update:query', String($event))"
       />
-      <span class="text-label">{{ t('collection.sortBy') }}</span>
+      <span class="text-label">{{ t(labels.sortBy) }}</span>
       <ToggleGroup
         :type="ToggleGroupType.Single"
         :model-value="sort"
@@ -91,7 +84,7 @@ const chips = computed(() =>
     class="flex flex-wrap items-center gap-1.5 border-b border-hairline bg-muted px-3 py-2"
   >
     <span class="text-label text-subtle-foreground">{{
-      t('collection.activeFilters')
+      t(labels.activeFilters)
     }}</span>
     <Button
       v-for="chip in chips"

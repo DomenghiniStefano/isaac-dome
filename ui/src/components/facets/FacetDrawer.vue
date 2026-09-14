@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="Row, Facet extends string">
 import { computed } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import {
@@ -9,52 +9,46 @@ import {
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { useMessages } from '@/i18n'
-import {
-  CollectionFacet,
-  collectionFaceting,
-} from '@/lib/collection/collectionFacets'
-import type { CollectionFilter } from '@/lib/collection/collectionFacets'
-import type { CollectionItem } from '@/lib/ipc/types'
-import {
-  collectionFacetTitle,
-  collectionFacetValueLabel,
-} from './collectionLabels'
+import type { FacetFilter, Faceting } from '@/lib/facets/faceting'
+import type { DrawerLabels, Label as MessageLabel } from './labels'
 
 const props = defineProps<{
-  items: CollectionItem[]
-  pools: string[]
-  filter: CollectionFilter
+  rows: Row[]
+  faceting: Faceting<Row, Facet>
+  // The facets this drawer holds. The state has its own control above the table, so it is a
+  // screen's decision which facets come here and not the whole order.
+  facets: Facet[]
+  filter: FacetFilter<Facet>
+  title: Record<Facet, MessageLabel>
+  // A value in words: the Character facet stores ids (`docs/BACKLOG.md` B28) and a quality is
+  // a number, so no component can label a value on its own.
+  valueLabel: (facet: Facet, value: string) => string
+  labels: DrawerLabels
 }>()
 const emit = defineEmits<{
-  toggle: [facet: CollectionFacet, value: string]
+  toggle: [facet: Facet, value: string]
   reset: []
 }>()
 const { t } = useMessages()
 
-// The state has its own control above the table; the drawer holds the other four.
-const drawerFacets: CollectionFacet[] = [
-  CollectionFacet.Quality,
-  CollectionFacet.Pool,
-  CollectionFacet.Kind,
-  CollectionFacet.Origin,
-]
+// One column per facet shown: the count is data, and reaches the grid as a CSS variable rather
+// than as a `grid-cols-N` typed once per screen.
+const columns = computed(() => ({ '--facet-columns': props.facets.length }))
 
-// Each count is over the items every other facet and the search leave: it says what picking the
+// Each count is over the rows every other facet and the search leave: it says what picking the
 // value would give. A value that would give nothing, and isn't picked, is not offered at all:
 // it could not be picked, and reading it with a 0 beside it is noise (`docs/BACKLOG.md` B29).
-const faceting = computed(() => collectionFaceting(props.pools))
-
-const columns = computed(() =>
-  drawerFacets.map((facet) => {
-    const counts = faceting.value.counts(props.items, props.filter, facet)
+const drawn = computed(() =>
+  props.facets.map((facet) => {
+    const counts = props.faceting.counts(props.rows, props.filter, facet)
     const picked = props.filter.picks[facet]
     return {
       facet,
-      values: faceting.value
-        .options(props.items, facet)
+      values: props.faceting
+        .options(props.rows, facet)
         .map((value) => ({
           value,
-          label: collectionFacetValueLabel(t, facet, value),
+          label: props.valueLabel(facet, value),
           count: counts.get(value) ?? 0,
           picked: picked.includes(value),
         }))
@@ -63,28 +57,29 @@ const columns = computed(() =>
   }),
 )
 
-const active = computed(() => faceting.value.activeCount(props.filter))
+const active = computed(() => props.faceting.activeCount(props.filter))
 </script>
 
 <template>
+  <!-- Schermate.dc.html, "Faccette": the facets live in a drawer, not in a panel always open. -->
   <CardCollapsible>
     <CardCollapsibleTrigger>
-      {{ t('collection.facets') }}
+      {{ t(labels.facets) }}
       <template #summary>{{
         active > 0
-          ? `${t('collection.activeFilters')}: ${active}`
-          : t('collection.noFilters')
+          ? `${t(labels.activeFilters)}: ${active}`
+          : t(labels.noFilters)
       }}</template>
     </CardCollapsibleTrigger>
     <CardCollapsibleContent class="flex flex-col gap-3">
-      <div class="grid grid-cols-4 gap-4">
+      <div class="grid grid-cols-facets gap-4" :style="columns">
         <div
-          v-for="column in columns"
+          v-for="column in drawn"
           :key="column.facet"
           class="flex min-w-0 flex-col gap-1.5"
         >
           <span class="text-label text-subtle-foreground">{{
-            t(collectionFacetTitle[column.facet])
+            t(title[column.facet])
           }}</span>
           <Label
             v-for="entry in column.values"
@@ -111,7 +106,7 @@ const active = computed(() => faceting.value.activeCount(props.filter))
         class="self-start"
         :disabled="active === 0"
         @click="emit('reset')"
-        >{{ t('collection.reset') }}</Button
+        >{{ t(labels.reset) }}</Button
       >
     </CardCollapsibleContent>
   </CardCollapsible>

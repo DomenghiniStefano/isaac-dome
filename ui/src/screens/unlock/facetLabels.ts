@@ -6,7 +6,8 @@ import { assertNever } from '@/lib/assertNever'
 import { characterLabel } from '@/lib/graph/characterName'
 import type { CharacterForm } from '@/lib/graph/characterName'
 import { NodeState } from '@/lib/graph/nodeState'
-import { FacetId } from '@/lib/graph/unlockFacets'
+import type { DrawerLabels, ToolbarLabels } from '@/components/facets/labels'
+import { FacetId, UnlockSort } from '@/lib/graph/unlockFacets'
 import { OriginValue, TargetKind } from '@/lib/ipc/values'
 import { Dlc } from '@/lib/ipc/types'
 
@@ -74,4 +75,46 @@ export const facetValueLabel = (
     default:
       return assertNever(facet)
   }
+}
+
+// A state is never colour alone: the square carries its colour, the name says it. Partial's
+// square is the blocked colour with a dashed edge, like its badge.
+export const stateDot: Record<NodeState, string> = {
+  [NodeState.Done]: 'bg-state-done',
+  [NodeState.Now]: 'bg-state-now',
+  [NodeState.Blocked]: 'bg-state-blocked',
+  [NodeState.Partial]: 'border border-dashed border-state-blocked',
+}
+
+// The facets the drawer holds: the state has its own control above the table.
+export const drawerFacets: FacetId[] = [
+  FacetId.Unlocks,
+  FacetId.Origin,
+  FacetId.Character,
+]
+
+export const sortOrder: UnlockSort[] = [
+  UnlockSort.FanOut,
+  UnlockSort.Steps,
+  UnlockSort.Name,
+]
+
+export const sortText: Record<UnlockSort, MessageKey<MessageSchema>> = {
+  [UnlockSort.FanOut]: 'unlock.sort.fanOut',
+  [UnlockSort.Steps]: 'unlock.sort.steps',
+  [UnlockSort.Name]: 'unlock.sort.name',
+}
+
+export const toolbarLabels: ToolbarLabels = {
+  rows: 'unlock.rows',
+  search: 'unlock.search',
+  sortBy: 'unlock.sortBy',
+  activeFilters: 'unlock.activeFilters',
+}
+
+export const drawerLabels: DrawerLabels = {
+  facets: 'unlock.facets',
+  activeFilters: 'unlock.activeFilters',
+  noFilters: 'unlock.noFilters',
+  reset: 'unlock.reset',
 }
