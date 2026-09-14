@@ -42,7 +42,10 @@ pub use graph::{
     ThresholdItemView, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
 pub use icon::{icon_source, IconRef, MarkTier, ICON_SCHEME};
-pub use live::{live_view, LiveDiagnostic, LiveGraph, LiveOpen, LiveView};
+pub use live::{
+    live_marks, live_view, LiveAchievement, LiveDiagnostic, LiveGraph, LiveMarkRow, LiveMarks,
+    LiveOpen, LiveView,
+};
 pub use mark_art::{mark_source, MarkFrames, LOBBY_ANM2, WIDGET_ANM2};
 pub use marks::{
     character_for, counter_index, marks_matrix, Cell, CharacterGroup, CharacterRow, MarkArtView,
