@@ -498,3 +498,32 @@ fn the_correction_check_detects_a_correction_that_matches_nothing() {
         "the page check has to see it: {orphans:?}"
     );
 }
+
+/// Trinket 138 (`'M`) ships a quote that reads like a parse gone wrong —
+/// `t's broken9Reroll your dest` — and it is **the game's own text, on purpose**. It was
+/// filed as a wiki defect on 2026-09-14 and that was wrong: the page explains itself three
+/// lines below the infobox, under Trivia.
+///
+/// > The description is a combination of Broken Remote's, Dataminer's and The D6's
+/// > descriptions, "It's broken", "109", and "Reroll your destiny". This may be because it
+/// > triggers when an active item is used (like Broken Remote), is a glitch-themed item
+/// > (like Dataminer) and it rerolls the active item (like D6).
+///
+/// So `t's broken` is the tail of *It's broken*, `9` the tail of *109*, and
+/// `Reroll your dest` a truncated *Reroll your destiny*. The trinket is named after the
+/// Generation I Pokémon glitch `'M` and the page carries the `glitch` nav tag: looking
+/// broken is the content.
+///
+/// This test exists to stop the next reader fixing it. The repo already knew the shape —
+/// B38's own second paragraph names "TMTRAINER's deliberately corrupted string" among the
+/// quote disagreements that are not defects — and a distorted string with no guard invites
+/// exactly one wrong edit.
+#[test]
+fn the_glitch_themed_trinkets_quote_is_meant_to_look_broken() {
+    let ds = dataset();
+    let e = ds.trinkets.get(&138).expect("trinket 138 in the snapshot");
+    let Infobox::Trinket { quote, .. } = &e.infobox else {
+        panic!("trinket 138 carries a trinket infobox");
+    };
+    assert_eq!(wiki::plain(quote), "t's broken9Reroll your dest");
+}

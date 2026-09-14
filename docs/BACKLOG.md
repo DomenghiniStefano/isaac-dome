@@ -29,16 +29,16 @@ the session log is full of entries that say *"not seen in a real Tauri window"*.
 `the game` work can be written against fixtures; what it cannot do there is be verified, and a
 half of a task that cannot be verified is not a half that should be shipped.
 
-**Snapshot of 2026-09-14**, 25 open entries. It was 26: **B34 closed the same day, because
-tagging it meant reading it** and it turned out not to be finished. Regenerate rather than trust
-this list — the command prints each open entry's heading with its tag under it, and was run
-before it was written down:
+**Snapshot of 2026-09-14**, 24 open entries — it was 26 that morning. **B34 closed because
+tagging it meant reading it** and it turned out not to be finished; B38 closed; B44 opened and
+closed the same hour, as not a defect. Regenerate rather than trust this list — the command
+prints each open entry's heading with its tag under it, and was run before it was written down:
 
 ```
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-- **`nothing` (15)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B40, B41, B42, B43, B44
+- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B40, B41, B42, B43
 - **`a real save` (3)** — B21, B22, B23
 - **`the game` (5)** — B3, B10, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -2359,43 +2359,46 @@ test cannot say and `pnpm ui:dev` can.
 A merge of `UnlockTable` and `CollectionTable`. The columns stay two files; N3's reasoning for
 that is unchanged and this entry does not reopen it.
 
-## B44 — The wiki's own page for 'M carries a corrupt quote (implementation, `dataset`, small)
+## B44 — The `'M` quote looks broken because it is meant to (analysis) ✅ closed on 2026-09-14, not a defect
 
-**Needs:** nothing — `dataset/raw/` and `dataset/corrections.json` are committed; deciding it
-needs the live wiki page, which is a browser, not the game.
+Opened and closed the same hour, and kept because the wrong diagnosis is the useful part.
 
-Found on 2026-09-14 while closing B38. Trinket 138 (`'M`) ships the quote
-`t's broken9Reroll your dest`: missing its opening, a stray `9` in the middle, and cut short at
-the end.
+Trinket 138 (`'M`) ships the quote `t's broken9Reroll your dest` — missing its opening, a stray
+digit in the middle, cut short at the end. Found while closing B38, it was filed as *the wiki's
+own page is corrupt*, on the evidence that the raw page is intact (6240 bytes, a well-formed
+infobox) and says exactly that on line 4.
 
-### What was measured
+**That was wrong, and the answer was in the same file, forty lines further down.** The page's
+Trivia says it:
 
-**It is not ours.** `dataset/raw/pages/trinket/'M.wikitext` is 6240 bytes, its infobox is
-well-formed, every other parameter reads correctly — and line 4 says, literally:
+> The description is a combination of Broken Remote's, Dataminer's and The D6's descriptions,
+> "It's broken", "109", and "Reroll your destiny". This may be because it triggers when an active
+> item is used (like Broken Remote), is a glitch-themed item (like Dataminer) and it rerolls the
+> active item (like D6).
 
-```
- | quote       = t&apos;s broken9Reroll your dest
-```
+So `t's broken` is the tail of *It's broken*, `9` the tail of *109*, and `Reroll your dest` a
+truncated *Reroll your destiny*. The trinket is named after the Generation I Pokémon glitch `'M`
+— the page says that too — and carries the `glitch` nav tag. **Looking broken is the content.**
+The snapshot is faithful to the page, the parser to the snapshot, and the app should show it
+exactly as it is.
 
-So the snapshot is faithful to the page and the parser is faithful to the snapshot. What is
-wrong is the wiki. The shape suggests two parameters merged and truncated — `description` for
-this trinket is "Using an activated item rerolls it", and "Reroll your destiny" is the kind of
-line a quote would be.
+### What it produced instead of a fix
 
-### What it needs
+`the_glitch_themed_trinkets_quote_is_meant_to_look_broken` in `crates/wiki/tests/real.rs`, which
+pins the string and carries the wiki's explanation in its doc comment. It was shown able to fail:
+replacing the expectation with the plausible-looking *"It's broken. Reroll your destiny"* turns it
+red. **A distorted string with no guard invites exactly one wrong edit**, and the next reader
+would have made it with the best of intentions.
 
-A row in `dataset/corrections.json`, which exists for exactly this: a wiki-side error our
-snapshot would otherwise carry, fixed where the fix travels with the data and the `derived` test
-keeps the three files from drifting.
+### The lesson, which is why this entry stays
 
-**What it must not be is a guess.** The right quote has to be read off the live page — or off the
-game, which prints an item's quote itself — and written down with where it came from. Writing a
-plausible sentence in that row would be inventing content and calling it a correction, which is
-worse than shipping the wiki's own mistake.
+The repo already knew the shape. **B38's own second paragraph** lists "TMTRAINER's deliberately
+corrupted string" among the quote disagreements that are not defects — one paragraph above the
+work being done when this was filed. Isaac has text that is meant to look broken, it is written
+down, and it was still read as corruption.
 
-### Closes when
+Two rules came out of it, both of which this project already holds and neither of which was
+applied here: **read the whole page before calling it corrupt** — the infobox was read and the
+Trivia three sections below was not — and **a thing that looks wrong on data we did not write is
+a hypothesis, not a finding**, until the source is asked. It was the owner who asked it.
 
-Trinket 138's quote reads what the source says it reads, the correction names where it was read,
-and `dataset/wiki.json` is rebuilt in its own commit. If the live page turns out to say the same
-thing, the entry closes as **the wiki's bug, reported upstream and recorded here** — an honest
-outcome, and the one this task is most likely to have.
