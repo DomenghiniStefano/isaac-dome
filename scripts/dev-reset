@@ -1,0 +1,14 @@
+#!/bin/sh
+# Entry point for scripts/dev-reset.ps1, so `pnpm dev` reaches it the same way `pnpm check`
+# reaches scripts/check. The work itself is Windows-only — it reads listening sockets and
+# process command lines — and everywhere else this is a no-op rather than a failed predev.
+
+set -u
+cd "$(dirname "$0")/.." || exit 0
+
+case "$(uname -s 2>/dev/null || echo Windows)" in
+MINGW* | MSYS* | CYGWIN* | Windows*) ;;
+*) exit 0 ;;
+esac
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/dev-reset.ps1 || exit 0

@@ -1270,6 +1270,39 @@ export type RunsView = {
 }
 
 /**
+ * One cell of the matrix, and what beating it with this character would open.
+ */
+export type LiveOpen = {
+  character: number
+  characterName: string
+  column: MarkColumnView
+  level: MarkLevelView
+  achievements: Array<AchievementRef>
+}
+
+/**
+ * Everything that stops this screen from answering, said out loud. None of them may be
+ * drawn as "this run opens nothing": that is an answer, and these are the absence of one.
+ */
+export type LiveDiagnostic =
+  | { kind: 'noRun' }
+  | { kind: 'characterNotNamed' }
+  | { kind: 'unknownCharacter'; name: string }
+  | { kind: 'ambiguousCharacter'; name: string; forms: number }
+  | { kind: 'noGraph' }
+  | { kind: 'noProfile' }
+
+export type LiveView = {
+  run: RunView | null
+  /**
+   * Grouped by the cell it needs: "beat Mom's Heart with Cain" once, with everything it
+   * opens under it, instead of the same boss read five times.
+   */
+  opens: Array<LiveOpen>
+  diagnostics: Array<LiveDiagnostic>
+}
+
+/**
  * What stands between the item and a run. Tagged: three of the four variants carry data.
  */
 export type LockView =

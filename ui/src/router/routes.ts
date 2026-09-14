@@ -9,6 +9,7 @@ import CollectionScreen from '@/screens/CollectionScreen.vue'
 import CompletionScreen from '@/screens/CompletionScreen.vue'
 import GoalsScreen from '@/screens/GoalsScreen.vue'
 import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
+import LiveScreen from '@/screens/LiveScreen.vue'
 import RunsScreen from '@/screens/RunsScreen.vue'
 import PlanScreen from '@/screens/PlanScreen.vue'
 import ProfileScreen from '@/screens/ProfileScreen.vue'
@@ -41,6 +42,7 @@ const screens: Partial<Record<RouteName, Component>> = {
   [RouteName.Unlock]: UnlockScreen,
   [RouteName.Plan]: PlanScreen,
   [RouteName.Collection]: CollectionScreen,
+  [RouteName.Live]: LiveScreen,
   [RouteName.Runs]: RunsScreen,
   [RouteName.Wiki]: WikiScreen,
   [RouteName.Search]: SearchScreen,

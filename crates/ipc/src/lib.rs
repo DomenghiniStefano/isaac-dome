@@ -8,6 +8,7 @@ pub mod for_tests;
 mod goals;
 mod graph;
 mod icon;
+mod live;
 mod mark_art;
 mod marks;
 mod profile;
@@ -41,6 +42,7 @@ pub use graph::{
     ThresholdItemView, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
 pub use icon::{icon_source, IconRef, MarkTier, ICON_SCHEME};
+pub use live::{live_view, LiveDiagnostic, LiveGraph, LiveOpen, LiveView};
 pub use mark_art::{mark_source, MarkFrames, LOBBY_ANM2, WIDGET_ANM2};
 pub use marks::{
     character_for, counter_index, marks_matrix, Cell, CharacterGroup, CharacterRow, MarkArtView,

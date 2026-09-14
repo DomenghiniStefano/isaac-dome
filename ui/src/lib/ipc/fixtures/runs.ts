@@ -83,3 +83,45 @@ export const runsAnswer = (): RunsView => ({
   // where a name would be.
   diagnostics: [{ kind: 'noCatalog' }],
 })
+
+// Live, with the case a real machine shows only while a Tainted character is being played:
+// the log writes "Cain" and the game calls two characters that, so the answer holds both and
+// says so. Inventing a single form here would make the screen look decided.
+export const liveAnswer = () => ({
+  run: runs[0],
+  opens: [
+    {
+      character: 2,
+      characterName: 'Cain',
+      column: 'momsHeart' as const,
+      level: 'base' as const,
+      achievements: [
+        {
+          kind: 'known' as const,
+          id: 19,
+          text: 'The Family Man',
+          condition: null,
+          iconUrl: null,
+        },
+      ],
+    },
+    {
+      character: 23,
+      characterName: 'Tainted Cain',
+      column: 'momsHeart' as const,
+      level: 'base' as const,
+      achievements: [
+        {
+          kind: 'known' as const,
+          id: 509,
+          text: 'The Fettered',
+          condition: null,
+          iconUrl: null,
+        },
+      ],
+    },
+  ],
+  diagnostics: [
+    { kind: 'ambiguousCharacter' as const, name: 'Cain', forms: 2 },
+  ],
+})

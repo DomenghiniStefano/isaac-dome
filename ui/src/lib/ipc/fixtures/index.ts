@@ -181,6 +181,7 @@ const handlers: Partial<Record<CommandName, Handler>> = {
   [Command.Completion]: (_args, scenario) =>
     whenActive(scenario, () => completionMatrix(artShown())),
   [Command.Runs]: async () => (await import('./runs')).runsAnswer(),
+  [Command.Live]: async () => (await import('./runs')).liveAnswer(),
   [Command.GraphViews]: (_args, scenario) =>
     whenActive(scenario, async () => await graph()),
   [Command.Want]: (args, scenario) =>

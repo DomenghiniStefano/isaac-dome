@@ -82,7 +82,8 @@ pub fn run() {
             plan::plan,
             plan::add_goal,
             plan::remove_goal,
-            runs::runs
+            runs::runs,
+            runs::live
         ])
         // The first window is built here, not by the config: one recipe, and the same call
         // the tray and a second launch make.
