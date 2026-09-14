@@ -501,7 +501,7 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   from the other side: it is pinned to 1420 by `strictPort`, because `devUrl` names that port
   and nothing else, so the second one can't step aside, only die — and it is a grandchild under
   two `cmd.exe`, which is why killing the session that started it orphans it instead of ending
-  it. **Since 2026-09-14 `pnpm dev` clears both on its own**: `predev` runs `scripts/dev-reset`,
+  it. **Since 2026-09-14 `pnpm dev` clears both on its own**: `predev` runs `scripts/dev-reset.mjs`,
   which ends the tray app and whoever holds 1420 — the latter **only if that process's command
   line points inside this repo**, otherwise it says who has the port and leaves it alone. It
   never fails the build; it is a cleaner, not a gate. What it cannot do is tell your leftovers
