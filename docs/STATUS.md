@@ -1688,6 +1688,20 @@ readable ones the comparator has a cycle, and `Array.sort` given a contradictory
 does not fail — it answers something arbitrary, which is the worst way to be wrong. Sorting
 only the readable names into the slots they already hold is a total order.
 
+**And then the ambiguity ended, because the log was asked.** Live had been saying *"il log
+scrive «Cain», e il gioco chiama così 2 personaggi"* — the honest answer while the archive only
+had a name. The owner asked for better and one grep over this machine's logs answered:
+`Initialized player with Variant 0 and Subtype 3`, and **the subtype is the character's own
+id**. A Tainted form has its own, so the game itself tells the two apart.
+
+**What the fold had to learn is the part worth keeping**: the line arrives *before* the seed on a
+solo run and *after* it online, so a fold looking only forward loses every solo run and one
+looking only back loses every online one. An init with no run yet is held for the run about to
+start, and cleared by it. In co-op the line repeats per player and the first is the run's. The
+rules version goes to 2, so the store folds again rather than serving runs produced before the
+line was read. **The refusal to infer the form from the starting items — written twice — is now
+unnecessary rather than overruled**, which is the ending that kind of rule waits for.
+
 **Then Live became a dashboard**, on the owner's ask — *"più carine e complete di dati"*.
 Three facts were added to the wire, each because the screen could not say something true
 without it: a run item's **sprite**, an offered achievement's **fan-out**, and the
