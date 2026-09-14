@@ -63,6 +63,16 @@
     minmax(0, 1fr);
 }
 
+/* Live’s table of what a run could open: the achievement, the cell it needs, how the game
+   words it, and how much it opens in turn. */
+@utility grid-cols-live-opens {
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(0, 0.8fr)
+    minmax(0, 1.4fr)
+    var(--spacing-live-opens);
+}
+
 /* A column header read bottom to top. */
 @utility writing-vertical {
   writing-mode: vertical-rl;
