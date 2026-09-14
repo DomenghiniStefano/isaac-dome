@@ -28,7 +28,7 @@ fn family(t: &Target) -> &'static str {
         Target::Transformation { .. } => "transformation",
         Target::Stage { .. } => "stage",
         Target::Room { .. } => "room",
-        Target::Pickup { .. } => "pickup",
+        Target::Concept { .. } => "concept",
     }
 }
 

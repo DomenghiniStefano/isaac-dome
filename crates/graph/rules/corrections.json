@@ -4,6 +4,165 @@
     "Jacob and Esau": "Jacob & Esau"
   },
   "verdicts": {
+    "concept:'stars' item tag": {
+      "notAPrerequisite": true
+    },
+    "concept:7 Deadly Sins": {
+      "alwaysAvailable": true
+    },
+    "concept:Angel Room items": {
+      "notAPrerequisite": true
+    },
+    "concept:Angel Rooms items": {
+      "notAPrerequisite": true
+    },
+    "concept:Bestiary": {
+      "unknown": {
+        "reason": "filling the bestiary is a collection goal, not one achievement"
+      }
+    },
+    "concept:Blood Donation Machine": {
+      "alwaysAvailable": true
+    },
+    "concept:Blue Flies": {
+      "notAPrerequisite": true
+    },
+    "concept:Cards and Runes": {
+      "notAPrerequisite": true
+    },
+    "concept:Chapter 1": {
+      "alwaysAvailable": true
+    },
+    "concept:Chapter 2": {
+      "alwaysAvailable": true
+    },
+    "concept:Chapter 3": {
+      "alwaysAvailable": true
+    },
+    "concept:Chapter 4": {
+      "alwaysAvailable": true
+    },
+    "concept:Chapter 6": {
+      "alwaysAvailable": true
+    },
+    "concept:Character": {
+      "notAPrerequisite": true
+    },
+    "concept:Coin": {
+      "notAPrerequisite": true
+    },
+    "concept:Collect": {
+      "unknown": {
+        "reason": "'collect all items' is a set, and the model can't say how many"
+      }
+    },
+    "concept:Completion Mark": {
+      "notAPrerequisite": true
+    },
+    "concept:Daily Challenge": {
+      "alwaysAvailable": true
+    },
+    "concept:Deals with the Devil": {
+      "alwaysAvailable": true
+    },
+    "concept:Donation Machine": {
+      "alwaysAvailable": true
+    },
+    "concept:Greed Donation Machine": {
+      "alwaysAvailable": true
+    },
+    "concept:Gulp!": {
+      "notAPrerequisite": true
+    },
+    "concept:Harbinger": {
+      "alwaysAvailable": true
+    },
+    "concept:Hard mode": {
+      "alwaysAvailable": true
+    },
+    "concept:Horf!": {
+      "notAPrerequisite": true
+    },
+    "concept:I - The Magician": {
+      "notAPrerequisite": true
+    },
+    "concept:Slot Machine": {
+      "alwaysAvailable": true
+    },
+    "concept:Tinted Rock": {
+      "notAPrerequisite": true
+    },
+    "concept:Victory Lap": {
+      "alwaysAvailable": true
+    },
+    "concept:XIII - Death": {
+      "notAPrerequisite": true
+    },
+    "concept:XIX - The Sun": {
+      "notAPrerequisite": true
+    },
+    "concept:XV - The Devil?": {
+      "notAPrerequisite": true
+    },
+    "concept:Yes Mother? items": {
+      "notAPrerequisite": true
+    },
+    "concept:bed": {
+      "notAPrerequisite": true
+    },
+    "concept:character": {
+      "notAPrerequisite": true
+    },
+    "concept:collect": {
+      "unknown": {
+        "reason": "'collect all items' is a set, and the model can't say how many"
+      }
+    },
+    "concept:collection": {
+      "unknown": {
+        "reason": "the collection page is a set, not one achievement"
+      }
+    },
+    "concept:ending": {
+      "unknown": {
+        "reason": "'all endings' is a set, and the model can't say how many"
+      }
+    },
+    "concept:familiar": {
+      "notAPrerequisite": true
+    },
+    "concept:hard mode": {
+      "alwaysAvailable": true
+    },
+    "concept:heart": {
+      "notAPrerequisite": true
+    },
+    "concept:homing": {
+      "notAPrerequisite": true
+    },
+    "concept:item": {
+      "notAPrerequisite": true
+    },
+    "concept:items": {
+      "notAPrerequisite": true
+    },
+    "concept:items from Devil Rooms": {
+      "notAPrerequisite": true
+    },
+    "concept:pills": {
+      "notAPrerequisite": true
+    },
+    "concept:rock": {
+      "notAPrerequisite": true
+    },
+    "concept:tainted character": {
+      "unknown": {
+        "reason": "any of the 17 tainted, each behind its own achievement: a disjunction"
+      }
+    },
+    "concept:technology": {
+      "notAPrerequisite": true
+    },
     "entity:???": {
       "alwaysAvailable": true
     },
@@ -23,8 +182,14 @@
     },
     "entity:Delirium": {
       "progress": {
-        "mark": { "column": "delirium", "level": "base" },
-        "counter": { "name": "deliriumKills", "atLeast": 1 }
+        "mark": {
+          "column": "delirium",
+          "level": "base"
+        },
+        "counter": {
+          "name": "deliriumKills",
+          "atLeast": 1
+        }
       }
     },
     "entity:Die": {
@@ -43,8 +208,14 @@
     },
     "entity:Hush": {
       "progress": {
-        "mark": { "column": "hush", "level": "base" },
-        "counter": { "name": "hushKills", "atLeast": 1 }
+        "mark": {
+          "column": "hush",
+          "level": "base"
+        },
+        "counter": {
+          "name": "hushKills",
+          "atLeast": 1
+        }
       }
     },
     "entity:Isaac": {
@@ -81,8 +252,14 @@
     },
     "entity:Mother": {
       "progress": {
-        "mark": { "column": "mother", "level": "base" },
-        "counter": { "name": "motherKills", "atLeast": 1 }
+        "mark": {
+          "column": "mother",
+          "level": "base"
+        },
+        "counter": {
+          "name": "motherKills",
+          "atLeast": 1
+        }
       }
     },
     "entity:Portal": {
@@ -110,8 +287,14 @@
     },
     "entity:The Beast": {
       "progress": {
-        "mark": { "column": "theBeast", "level": "base" },
-        "counter": { "name": "beastKills", "atLeast": 1 }
+        "mark": {
+          "column": "theBeast",
+          "level": "base"
+        },
+        "counter": {
+          "name": "beastKills",
+          "atLeast": 1
+        }
       }
     },
     "entity:The Lamb": {
@@ -125,7 +308,10 @@
     },
     "entity:Ultra Greedier": {
       "progress": {
-        "mark": { "column": "greed", "level": "second" }
+        "mark": {
+          "column": "greed",
+          "level": "second"
+        }
       }
     },
     "entity:Ultra Pride": {
@@ -138,165 +324,6 @@
       "notAPrerequisite": true
     },
     "entity:rainbow poop": {
-      "notAPrerequisite": true
-    },
-    "pickup:'stars' item tag": {
-      "notAPrerequisite": true
-    },
-    "pickup:7 Deadly Sins": {
-      "alwaysAvailable": true
-    },
-    "pickup:Angel Room items": {
-      "notAPrerequisite": true
-    },
-    "pickup:Angel Rooms items": {
-      "notAPrerequisite": true
-    },
-    "pickup:Bestiary": {
-      "unknown": {
-        "reason": "filling the bestiary is a collection goal, not one achievement"
-      }
-    },
-    "pickup:Blood Donation Machine": {
-      "alwaysAvailable": true
-    },
-    "pickup:Blue Flies": {
-      "notAPrerequisite": true
-    },
-    "pickup:Cards and Runes": {
-      "notAPrerequisite": true
-    },
-    "pickup:Chapter 1": {
-      "alwaysAvailable": true
-    },
-    "pickup:Chapter 2": {
-      "alwaysAvailable": true
-    },
-    "pickup:Chapter 3": {
-      "alwaysAvailable": true
-    },
-    "pickup:Chapter 4": {
-      "alwaysAvailable": true
-    },
-    "pickup:Chapter 6": {
-      "alwaysAvailable": true
-    },
-    "pickup:Character": {
-      "notAPrerequisite": true
-    },
-    "pickup:Coin": {
-      "notAPrerequisite": true
-    },
-    "pickup:Collect": {
-      "unknown": {
-        "reason": "'collect all items' is a set, and the model can't say how many"
-      }
-    },
-    "pickup:Completion Mark": {
-      "notAPrerequisite": true
-    },
-    "pickup:Daily Challenge": {
-      "alwaysAvailable": true
-    },
-    "pickup:Donation Machine": {
-      "alwaysAvailable": true
-    },
-    "pickup:Deals with the Devil": {
-      "alwaysAvailable": true
-    },
-    "pickup:Greed Donation Machine": {
-      "alwaysAvailable": true
-    },
-    "pickup:Gulp!": {
-      "notAPrerequisite": true
-    },
-    "pickup:Harbinger": {
-      "alwaysAvailable": true
-    },
-    "pickup:Hard mode": {
-      "alwaysAvailable": true
-    },
-    "pickup:Horf!": {
-      "notAPrerequisite": true
-    },
-    "pickup:I - The Magician": {
-      "notAPrerequisite": true
-    },
-    "pickup:Slot Machine": {
-      "alwaysAvailable": true
-    },
-    "pickup:Tinted Rock": {
-      "notAPrerequisite": true
-    },
-    "pickup:Victory Lap": {
-      "alwaysAvailable": true
-    },
-    "pickup:XIII - Death": {
-      "notAPrerequisite": true
-    },
-    "pickup:XIX - The Sun": {
-      "notAPrerequisite": true
-    },
-    "pickup:XV - The Devil?": {
-      "notAPrerequisite": true
-    },
-    "pickup:Yes Mother? items": {
-      "notAPrerequisite": true
-    },
-    "pickup:bed": {
-      "notAPrerequisite": true
-    },
-    "pickup:character": {
-      "notAPrerequisite": true
-    },
-    "pickup:collect": {
-      "unknown": {
-        "reason": "'collect all items' is a set, and the model can't say how many"
-      }
-    },
-    "pickup:collection": {
-      "unknown": {
-        "reason": "the collection page is a set, not one achievement"
-      }
-    },
-    "pickup:ending": {
-      "unknown": {
-        "reason": "'all endings' is a set, and the model can't say how many"
-      }
-    },
-    "pickup:familiar": {
-      "notAPrerequisite": true
-    },
-    "pickup:hard mode": {
-      "alwaysAvailable": true
-    },
-    "pickup:heart": {
-      "notAPrerequisite": true
-    },
-    "pickup:homing": {
-      "notAPrerequisite": true
-    },
-    "pickup:item": {
-      "notAPrerequisite": true
-    },
-    "pickup:items": {
-      "notAPrerequisite": true
-    },
-    "pickup:items from Devil Rooms": {
-      "notAPrerequisite": true
-    },
-    "pickup:pills": {
-      "notAPrerequisite": true
-    },
-    "pickup:rock": {
-      "notAPrerequisite": true
-    },
-    "pickup:tainted character": {
-      "unknown": {
-        "reason": "any of the 17 tainted, each behind its own achievement: a disjunction"
-      }
-    },
-    "pickup:technology": {
       "notAPrerequisite": true
     },
     "room:Arcade": {

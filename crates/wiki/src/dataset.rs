@@ -169,7 +169,7 @@ impl Dataset {
                 subtype,
             } => self.bosses.get(&Self::boss_key(*id, *variant, *subtype)),
             Target::Transformation { id } => self.transformations.get(id),
-            Target::Stage { .. } | Target::Room { .. } | Target::Pickup { .. } => None,
+            Target::Stage { .. } | Target::Room { .. } | Target::Concept { .. } => None,
         }
     }
 

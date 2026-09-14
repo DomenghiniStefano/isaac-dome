@@ -61,7 +61,7 @@ fn refs(inline: &[Inline], out: &mut Vec<Target>) {
                 | Target::Transformation { .. }
                 | Target::Stage { .. }
                 | Target::Room { .. }
-                | Target::Pickup { .. } => {}
+                | Target::Concept { .. } => {}
             },
             Inline::Edition { inline, .. } => refs(inline, out),
             Inline::Text { .. } | Inline::Concept { .. } => {}

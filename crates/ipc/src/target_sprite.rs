@@ -69,7 +69,7 @@ pub fn target_sprite<'a>(c: &'a Catalog, t: &Target) -> TargetSprite<'a> {
         Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Pickup { .. } => TargetSprite::NoArt,
+        | Target::Concept { .. } => TargetSprite::NoArt,
     }
 }
 

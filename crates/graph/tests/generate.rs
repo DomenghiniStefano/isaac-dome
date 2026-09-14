@@ -117,8 +117,10 @@ fn only_unreducible_targets_reach_the_inventory() {
         "a character reduces through the catalog: it needs no verdict"
     );
     assert!(keys.contains(&"stage:The Void"), "got {keys:?}");
+    // The key said `pickup:` until 2026-09-14 while this very message said "a concept":
+    // the assertion had been documenting the mismatch it was asserting past.
     assert!(
-        keys.contains(&"pickup:Hard mode"),
+        keys.contains(&"concept:Hard mode"),
         "a concept has no id: {keys:?}"
     );
 }

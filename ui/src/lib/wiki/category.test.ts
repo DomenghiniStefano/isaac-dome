@@ -18,7 +18,7 @@ describe('categoryOf', () => {
   it('has no category for a target with no page', () => {
     expect(categoryOf({ kind: 'stage', name: 'Basement' })).toBeNull()
     expect(categoryOf({ kind: 'room', name: 'x' })).toBeNull()
-    expect(categoryOf({ kind: 'pickup', name: 'x' })).toBeNull()
+    expect(categoryOf({ kind: 'concept', name: 'x' })).toBeNull()
     expect(categoryOf({ kind: 'transformation', id: 1 })).toBeNull()
   })
 })
