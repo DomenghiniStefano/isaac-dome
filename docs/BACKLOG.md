@@ -29,7 +29,7 @@ the session log is full of entries that say *"not seen in a real Tauri window"*.
 `the game` work can be written against fixtures; what it cannot do there is be verified, and a
 half of a task that cannot be verified is not a half that should be shipped.
 
-**Snapshot of 2026-09-14 (evening)**, 27 open entries — it was 26 that morning. **B34 closed
+**Snapshot of 2026-09-14 (evening)**, 26 open entries — it was 26 that morning. **B34 closed
 because tagging it meant reading it** and it turned out not to be finished; B38 closed; B44 opened
 and closed the same hour, as not a defect; then B40 and B43 closed and B42 half closed on
 `feature/small-three`, which opened **B45** — four characters with no page, found by the
@@ -45,7 +45,9 @@ category tells you your search found nothing when you never searched.
 two of them were fixed the same hour (the search that did not know the transformations, an
 achievement's drawing overlapping the want suggestions). The other two, plus a missing picture,
 are **B49**, **B50** and **B51** — and the only reason this list grew by three is that somebody
-looked at the screen.
+looked at the screen. **B51 closed within the hour**, and half of what it reported was a defect
+of mine from the same afternoon: the card that draws a transformation's rows was suppressed whole,
+taking the description and "sbloccato da" — which belong to every kind — down with it.
 Regenerate rather than trust this
 list — the command
 prints each open entry's heading with its tag under it, and was run before it was written down:
@@ -54,7 +56,7 @@ prints each open entry's heading with its tag under it, and was run before it wa
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-- **`nothing` (16)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B48, B49, B51
+- **`nothing` (15)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B48, B49
 - **`a real save` (3)** — B21, B22, B23
 - **`the game` (6)** — B3, B10, B19, B33, B36, B50
 - **`a measurement` (2)** — B9, B20
@@ -2772,7 +2774,24 @@ archive, and what was found — so nobody greps for it a second time.
 
 ---
 
-## B51 — The sentence that says how you become a transformation is thrown away (implementation, `wiki`, small)
+## B51 — The sentence that says how you become a transformation is thrown away (implementation, `wiki`, small) ✅ closed on 2026-09-14
+
+**Closed on `feature/transformation-preamble`**, the same evening it was reported. The preamble
+is kept for this kind alone and lands ahead of the infobox's `description`. Adult's page now
+reads *"Adult is a transformation added in The Binding of Isaac: Afterbirth †, turns Isaac into an
+adult upon taking three Puberty pills. +1 Red Heart container."*
+
+**The order was measured, not assumed.** The infobox's `description` restates the Effects section
+on all sixteen pages — Guppy's is empty — and on none of them says how the transformation happens,
+so it goes second and nothing is dropped. The space between two sentences written in two places
+belongs to neither, and is put in by the parser.
+
+**And the entry was half right about the cause.** The missing sentence was one half; the other was
+mine, from the same afternoon: B40's `hasRows` decided whether the transformation's three rows had
+anything to say, and was used to decide whether **the card** is drawn — while the card also holds
+the description and what unlocks it, the two facts that live on the entry. Adult's description went
+dark along with the rows it does not have. `hasCard` is a second question now, asked separately,
+and the rows keep their own rule.
 
 **Needs:** nothing, then a rebuild — the fix is in the parser and travels with a
 `pnpm wiki:build`.

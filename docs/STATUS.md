@@ -1604,6 +1604,16 @@ nothing at all. **B51**: Adult's page never says how you become an adult — the
 page's *preamble*, which the parser drops by a rule written for "X is a passive item…", and
 `transformation::requires` reads that very line for its digit before throwing the sentence away.
 
+**B51 closed within the hour, and half of it was mine.** The preamble is kept for the
+transformation kind alone, ahead of the infobox's `description` — measured first: that
+parameter restates the Effects section on all sixteen pages, Guppy's is empty, and none of
+them says how the transformation happens. Adult's page now says the pills. **The other half
+was a defect of the same afternoon**: `hasRows` decided whether the three transformation rows
+had anything to say, and was used to decide whether *the card* is drawn — while the card also
+carries the description and "sbloccato da", the two facts that live on the entry. Adult's
+description went dark along with the rows it does not have. `hasCard` is a second question
+now, and it was shown able to fail before it was believed.
+
 **What confirmed itself**: clicking a contributor opens that item's page, and Guppy is **not**
 offered among the things you can want while being findable as a page — the separation made hours
 earlier, checked by the person it was made for.
