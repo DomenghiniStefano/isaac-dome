@@ -76,6 +76,7 @@ fn a_folded_run_survives_the_round_trip() {
         seed_numeric: 586_324_166,
         seed_kind: SeedKind::Net,
         character: Some("Judas".to_string()),
+        character_id: Some(3),
         starting_items: vec![34],
         collected: vec![225, 105],
         passives: vec![225],

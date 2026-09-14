@@ -10,6 +10,7 @@ const run = (
   source,
   ordinal,
   character: 'Cain',
+  characterId: 2,
   seedWords,
   online: false,
   outcome: { kind: 'abandoned' },

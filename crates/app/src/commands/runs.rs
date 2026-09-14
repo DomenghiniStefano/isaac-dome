@@ -105,10 +105,16 @@ pub(crate) fn live(
     // and `live_view` says there were two rather than choosing one.
     let rs = resources.get();
     let cat = rs.and_then(|rs| catalog.get_or_build(rs));
-    let by_name = |name: &str| -> Vec<(u32, String)> {
+    // Given the id the log stated, exactly that character; given only a name, everyone who
+    // answers to it — which is two whenever a Tainted form is involved, because the game gives
+    // it the base form's name.
+    let by_name = |name: &str, id: Option<u32>| -> Vec<(u32, String)> {
         let Some(c) = cat else { return Vec::new() };
         c.characters()
-            .filter(|ch| c.text(&ch.name, catalog::Language::English) == name)
+            .filter(|ch| match id {
+                Some(id) => ch.id.0 == id,
+                None => c.text(&ch.name, catalog::Language::English) == name,
+            })
             .map(|ch| {
                 (
                     ch.id.0,
@@ -128,7 +134,11 @@ pub(crate) fn live(
                 .and_then(|(_, counters)| {
                     let counters = counters?;
                     let matrix = ipc::marks_matrix(&counters, Some(c), crate::icons::icon_url);
-                    let wanted: Vec<u32> = by_name(name).into_iter().map(|(id, _)| id).collect();
+                    let wanted: Vec<u32> =
+                        by_name(name, open.as_ref().and_then(|r| r.character_id))
+                            .into_iter()
+                            .map(|(id, _)| id)
+                            .collect();
                     let rows: Vec<usize> = (0..ipc::CHARACTERS.len())
                         .filter(|row| {
                             ipc::character_for(*row, c).is_some_and(|ch| wanted.contains(&ch.id.0))
