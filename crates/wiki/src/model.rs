@@ -155,7 +155,7 @@ pub enum Target {
     Transformation { id: u32 },
     Stage { name: String },
     Room { name: String },
-    Pickup { name: String },
+    Concept { name: String },
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize, ts_rs::TS)]

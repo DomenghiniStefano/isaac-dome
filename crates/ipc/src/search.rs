@@ -232,7 +232,7 @@ pub(crate) fn progress(target: &Target, flags: Option<SaveFlags<'_>>) -> Progres
         | Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Pickup { .. } => ProgressMark::None,
+        | Target::Concept { .. } => ProgressMark::None,
     }
 }
 

@@ -260,7 +260,7 @@ fn key_of(c: &Catalog, t: &Target) -> Option<crate::goals::TargetKey> {
         | Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Pickup { .. } => None,
+        | Target::Concept { .. } => None,
     }
 }
 
@@ -277,6 +277,6 @@ fn unlockable(t: &Target) -> bool {
         Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Pickup { .. } => false,
+        | Target::Concept { .. } => false,
     }
 }

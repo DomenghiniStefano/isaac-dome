@@ -35,7 +35,7 @@ export const pageKey = (target: Target): string | null => {
       return `${PageKind.Entity}${Separator}${[target.id, target.variant, target.subtype].join(EntitySeparator)}`
     case 'stage':
     case 'room':
-    case 'pickup':
+    case 'concept':
     case 'transformation':
       return null
     default:

@@ -204,7 +204,7 @@ fn the_targets_the_game_does_not_illustrate_say_so_instead_of_guessing() {
     assert!(matches!(
         target_sprite(
             &c,
-            &Target::Pickup {
+            &Target::Concept {
                 name: "Black Heart".into()
             }
         ),
@@ -255,7 +255,7 @@ fn an_empty_catalog_never_panics_and_never_invents() {
         Target::Stage {
             name: "Depths".into(),
         },
-        Target::Pickup {
+        Target::Concept {
             name: "Black Heart".into(),
         },
     ] {

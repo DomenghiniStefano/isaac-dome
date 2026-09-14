@@ -21,10 +21,17 @@ pub fn collect_refs(inline: &[Inline], out: &mut Vec<RefRow>) {
                 target: target.clone(),
                 label: label.clone(),
             }),
-            // A concept page is a named thing with no id in the game — exactly what
-            // `Pickup` already models — so it travels as one instead of gaining a variant.
+            // A concept page is a named thing the game gives no id, and `Target::Concept`
+            // is that and nothing else — the same word `Inline::Concept` and
+            // `Resolution::Concept` already use, so the chain reads one way through.
+            // It was `Target::Pickup` until 2026-09-14, and the name did real damage:
+            // 45 of the 49 targets it holds are not in the wiki's pickup table at all
+            // (`Hard mode` 38 uses, `Completion Mark` 19, `Donation Machine`, `Chapter 2`,
+            // `bed`), so "pickups that are not pickups" read as the bug, and the filter
+            // drafted against it would have dropped every one of them — including the
+            // thirteen that are real requirements this model cannot express.
             Inline::Concept { page, label } => out.push(RefRow {
-                target: Target::Pickup { name: page.clone() },
+                target: Target::Concept { name: page.clone() },
                 label: label.clone(),
             }),
             Inline::Edition { only: _, inline } => collect_refs(inline, out),
@@ -45,7 +52,7 @@ fn reduces_by_id(t: &Target) -> bool {
         | Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Pickup { .. } => false,
+        | Target::Concept { .. } => false,
     }
 }
 
