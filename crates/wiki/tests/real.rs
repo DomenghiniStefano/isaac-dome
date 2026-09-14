@@ -618,3 +618,77 @@ fn every_character_the_repo_names_has_a_page_in_the_dataset() {
         "characters the repo names with no page in the dataset: {missing:?}"
     );
 }
+
+/// B45's guard for the kinds that have a Cargo table to be counted against, which is what
+/// the entry asks for beyond the characters: a table row is the wiki's own statement that
+/// the thing exists, so a row whose id has no entry is a page we never read or never
+/// understood. The characters are the one kind with no usable table — `player`'s ids are
+/// as wrong as the infoboxes' (B42) — and they have their own test above.
+///
+/// The exceptions are named, never a tolerance: each is a row the wiki writes about
+/// something that is not an entry of ours, and a new one has to be argued for here rather
+/// than absorbed by a threshold.
+#[test]
+fn every_cargo_row_with_an_id_has_a_page_in_the_dataset() {
+    let raw = raw();
+    let ds = dataset();
+    let id = |row: &wiki::Row, field: &str| row.get(field).and_then(|v| v.parse::<i64>().ok());
+
+    // `G FUEL!` is id -1 on the wiki: an item that is not in the game. Tonsil's page is a
+    // trinket's and carries the Afterbirth+ collectible 474 as a second infobox, which in
+    // Repentance+ is Broken Glass Cannon — both already pinned by their own tests.
+    let mut missing: Vec<String> = Vec::new();
+    let mut checked = 0usize;
+    for row in &raw.tables.collectible {
+        if let Some(n) = id(row, "id").filter(|n| *n > 0) {
+            checked += 1;
+            if ds.entry(&Target::Item { id: n as u32 }).is_none() {
+                missing.push(format!("item {n}"));
+            }
+        }
+    }
+    for row in &raw.tables.trinket {
+        if let Some(n) = id(row, "id").filter(|n| *n > 0) {
+            checked += 1;
+            if ds.entry(&Target::Trinket { id: n as u32 }).is_none() {
+                missing.push(format!("trinket {n}"));
+            }
+        }
+    }
+    for row in &raw.tables.achievement {
+        if let Some(n) = id(row, "id").filter(|n| *n > 0) {
+            checked += 1;
+            if ds.entry(&Target::Achievement { id: n as u32 }).is_none() {
+                missing.push(format!("achievement {n}"));
+            }
+        }
+    }
+    for row in &raw.tables.challenge {
+        if let Some(n) = id(row, "number").filter(|n| *n > 0) {
+            checked += 1;
+            if ds.entry(&Target::Challenge { number: n as u32 }).is_none() {
+                missing.push(format!("challenge {n}"));
+            }
+        }
+    }
+    for row in &raw.tables.transformation {
+        if let Some(n) = id(row, "id") {
+            checked += 1;
+            if ds.entry(&Target::Transformation { id: n as u32 }).is_none() {
+                missing.push(format!("transformation {n}"));
+            }
+        }
+    }
+    // Vacuity guard: the tables are this test's subject, and a `Raw::load` that stopped
+    // reading one of them would make it pass by checking nothing. 720 + 188 + 641 + 45 + 16
+    // on this snapshot, minus the handful of rows with no usable id.
+    assert!(
+        checked >= 1550,
+        "the tables offered {checked} rows with an id"
+    );
+    assert!(
+        missing.is_empty(),
+        "{} Cargo rows whose id has no page: {missing:?}",
+        missing.len()
+    );
+}
