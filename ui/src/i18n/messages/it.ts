@@ -59,6 +59,72 @@ export const it = {
     settingsTitle: 'Impostazioni',
     settingsHint: 'Il salvataggio che stai giocando, e come apre le tab.',
   },
+  runs: {
+    intro:
+      'Le run che l’app ha letto: quelle di questa sessione e quelle delle partite online che il gioco ha già registrato. Il log non ha un orologio, quindi l’ordine è per sessione e non per ora.',
+    rows: 'run',
+    facets: 'Filtri',
+    activeFilters: 'filtri attivi',
+    noFilters: 'nessun filtro',
+    reset: 'Azzera i filtri',
+    search: 'cerca un seed o un personaggio',
+    facet: {
+      outcome: 'Esito',
+      character: 'Personaggio',
+      online: 'Con chi',
+      source: 'Da dove',
+    },
+    outcome: {
+      won: 'vinta',
+      died: 'morta',
+      abandoned: 'abbandonata',
+      open: 'in corso',
+    },
+    online: {
+      online: 'online',
+      solo: 'da solo',
+    },
+    source: {
+      live: 'questa sessione',
+      session: 'sessione online',
+    },
+    totals: {
+      runs: 'run lette',
+      won: 'vinte',
+      died: 'morte',
+      abandoned: 'abbandonate',
+      open: 'in corso',
+    },
+    column: {
+      character: 'Personaggio',
+      outcome: 'Esito',
+      floors: 'Piani',
+      seed: 'Seed',
+      source: 'Da dove',
+    },
+    noCharacter: 'personaggio non nominato',
+    noItems: 'nessuno',
+    floors: 'piani',
+    killedBy: 'uccisa da {killer}',
+    endedWith: 'finale {ending}',
+    startingItems: 'Oggetti iniziali',
+    collected: 'Raccolti',
+    heldActive: 'Attivo in mano',
+    unnamedItem: 'oggetto {id}',
+    empty:
+      'Nessuna run nell’archivio: non è ancora stata giocata una partita da quando l’app è installata.',
+    noMatch: 'Nessuna run con questi filtri.',
+    diagnostic: {
+      noLogFolder:
+        'Non troviamo la cartella dove il gioco scrive i log, quindi non c’è niente da leggere.',
+      storeUnavailable:
+        'Il database dell’app non si apre, quindi l’archivio non si può leggere.',
+      unreadableEvents:
+        '{count} righe del log non sono state capite: le run che le contengono possono essere incomplete.',
+      noCatalog:
+        'Il gioco non è installato: gli oggetti hanno il loro numero e non il nome.',
+    },
+  },
   collection: {
     intro:
       'Gli oggetti che questo salvataggio non ha ancora, con la loro qualità e i pool in cui compaiono. I trinket non ci sono: il gioco non tiene traccia di quali hai trovato.',

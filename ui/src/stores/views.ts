@@ -6,8 +6,14 @@ import { collection } from '@/lib/ipc/collection'
 import { tracked } from './tracked'
 import { graphViews } from '@/lib/ipc/graph'
 import { completion } from '@/lib/ipc/save'
+import { runs } from '@/lib/ipc/runs'
 import { LoadStatus } from './loadStatus'
-import type { IpcError, MarksMatrix, GraphViews } from '@/lib/ipc/types'
+import type {
+  IpcError,
+  MarksMatrix,
+  GraphViews,
+  RunsView,
+} from '@/lib/ipc/types'
 import type { CollectionView } from '@/lib/ipc/types'
 
 export interface ViewStore<T> {
@@ -51,6 +57,10 @@ export const useCompletionStore = defineViewStore<MarksMatrix>(
   StoreId.Completion,
   completion,
 )
+
+// The run archive. It is not a view of the profile: it fills itself in the background and
+// says so with `runs-changed`, so the screen listens rather than polls.
+export const useRunsStore = defineViewStore<RunsView>(StoreId.Runs, runs)
 
 // The active profile's unlock graph, read by Next steps and Unlock alike. One read, and
 // since N8 one *command*: the promise this comment makes — that both answers belong to the

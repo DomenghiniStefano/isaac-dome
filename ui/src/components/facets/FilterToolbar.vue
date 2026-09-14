@@ -21,9 +21,12 @@ const props = defineProps<{
   shown: number
   total: number
   query: string
-  sort: Sort
-  sorts: Sort[]
-  sortText: Record<Sort, Label>
+  // A list with nothing to choose between has no sort group: the Run diary's order is
+  // decided by the archive (`runOrder.ts`), not by the reader. Optional rather than a
+  // single fake choice, which would offer a control that changes nothing.
+  sort?: Sort
+  sorts?: Sort[]
+  sortText?: Record<Sort, Label>
   order: Facet[]
   picks: Record<Facet, string[]>
   // A picked value in words: the Character facet stores ids (`docs/BACKLOG.md` B28), so no
@@ -40,7 +43,7 @@ const { t } = useMessages()
 
 // A single-choice group empties when its chosen item is clicked again; a sort always has one.
 const onSort = (value: unknown) => {
-  const next = props.sorts.find((s) => s === value)
+  const next = props.sorts?.find((s) => s === value)
   if (next) emit('update:sort', next)
 }
 
@@ -67,16 +70,18 @@ const chips = computed(() =>
         class="w-search"
         @update:model-value="emit('update:query', String($event))"
       />
-      <span class="text-label">{{ t(labels.sortBy) }}</span>
-      <ToggleGroup
-        :type="ToggleGroupType.Single"
-        :model-value="sort"
-        @update:model-value="onSort"
-      >
-        <ToggleGroupItem v-for="s in sorts" :key="s" :value="s">{{
-          t(sortText[s])
-        }}</ToggleGroupItem>
-      </ToggleGroup>
+      <template v-if="sorts && sorts.length > 0 && sortText">
+        <span class="text-label">{{ t(labels.sortBy) }}</span>
+        <ToggleGroup
+          :type="ToggleGroupType.Single"
+          :model-value="sort"
+          @update:model-value="onSort"
+        >
+          <ToggleGroupItem v-for="s in sorts" :key="s" :value="s">{{
+            t(sortText[s])
+          }}</ToggleGroupItem>
+        </ToggleGroup>
+      </template>
     </div>
   </CardHeader>
   <div

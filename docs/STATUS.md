@@ -141,6 +141,23 @@ enumerated the singular `Infobox character` while those four pages carry the plu
             `BEST_STREAK [23]` and `DEATHS [10]` rather than decided. The screens are
             deliberately out of scope: `Live` and `Runs` are both views of this model, and
             designing them first would let a layout shape the IPC contract.
+      - [x] **2a — the Run screen** is done the same evening, `feature/run-screen`: the diary,
+            four filters on N3's engine, the totals, and the chosen run's items under the
+            list. **Nothing new crossed the IPC**, which is why 2a could be split off at all.
+            Plan `docs/superpowers/plans/2026-09-14-run-screen.md`, report
+            `docs/superpowers/reports/2026-09-14-run-screen-report.md`.
+            **The order was wrong the first time and the way it was wrong is the finding**:
+            "newest session first" and "a name that is not a clock keeps its place" read as
+            compatible in prose and **contradict each other as one comparison** — with an
+            unreadable name in the middle the comparator has a cycle, and `Array.sort` given
+            one does not fail, it answers something arbitrary. Only the readable names are
+            sorted, into the slots they already hold.
+            Three more corrections to its own plan: the detail moved **under** the list
+            because a virtualized row is measured at one height; `FilterToolbar`'s sort group
+            became optional, because this list has nothing to choose between and a single
+            fake option is a control that changes nothing; and two badges wore the `Unknown`
+            variant — the question mark this design keeps for what could not be read — for
+            **online** and **abandoned**, which are facts. Only a window said so.
       - [ ] **Sub-project 2, the two screens — design taken on 2026-09-14**,
             `docs/superpowers/specs/2026-09-14-m4-run-screens-design.md`. Three decisions in
             conversation plus one word: **Run is a diary** (a row per run, what happened, not
@@ -1642,6 +1659,23 @@ nothing for `gfx/items` either, which is certainly there, so the instrument was 
 nothing at all. **B51**: Adult's page never says how you become an adult — the sentence is the
 page's *preamble*, which the parser drops by a rule written for "X is a passive item…", and
 `transformation::requires` reads that very line for its digit before throwing the sentence away.
+
+**And M4's second sub-project opened and its first half closed.** The design was taken in
+conversation — Run is a diary, Live shows the run in progress *and what finishing it would
+open*, abandoned runs stay in the list marked, and the list is filterable — then **2a** was
+planned and built the same evening: the archive that fills itself has a screen, and nothing
+new crossed the IPC.
+
+**The order of the list was wrong the first time, and that is the evening's last lesson.**
+"Newest session first" and "a name that is not a clock keeps its place" read as compatible
+in prose and **cannot both be obeyed by one comparison**: with an unreadable name between two
+readable ones the comparator has a cycle, and `Array.sort` given a contradictory comparator
+does not fail — it answers something arbitrary, which is the worst way to be wrong. Sorting
+only the readable names into the slots they already hold is a total order.
+
+**And the window earned its keep again**: two badges wore the `Unknown` variant — the
+question mark this design keeps for *what the app could not read* — on **online** and
+**abandoned**, which are facts about a run. Nothing in the suite draws a badge.
 
 **N8 closed, both halves, and the last cleanup item with it.** The two graph screens became
 **one command** — a screen load reads the profile once, by construction and not by a counter,
