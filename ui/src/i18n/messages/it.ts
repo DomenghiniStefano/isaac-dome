@@ -134,6 +134,8 @@ export const it = {
     },
     noCharacter: 'personaggio non nominato',
     noItems: 'nessuno',
+    openPage: 'Clic per la pagina, Ctrl+clic per aprirla di fianco',
+    itemId: 'oggetto {id}',
     floors: 'piani',
     killedBy: 'uccisa da {killer}',
     endedWith: 'finale {ending}',

@@ -95,27 +95,18 @@ export const runsAnswer = (): RunsView => ({
   diagnostics: [{ kind: 'noCatalog' }],
 })
 
-// Live, with the case a real machine shows only while a Tainted character is being played:
-// the log writes "Cain" and the game calls two characters that, so the answer holds both and
-// says so. Inventing a single form here would make the screen look decided.
+// Live while a Tainted character is being played — the case that used to be ambiguous. The
+// item line writes "Cain" for both forms, and since 2026-09-15 the log's `Initialized player`
+// line states the id: this answer is what the screen shows once it knows, one form and no
+// note about two.
 export const liveAnswer = (): LiveView => ({
   run: runs[0],
-  // Two rows, because the name reaches two forms — and an empty profile, so every cell is
-  // still to take: the state a player is in when this screen matters most.
+  // One row: the log stated Subtype 23, so the screen knows it is the Tainted form. An empty
+  // profile, so every cell is still to take — the state a player is in when this matters most.
   marks: {
     bosses: ["Mom's Heart", 'Isaac', 'Satan'],
     art: [{}, {}, {}].map(() => ({ normalUrl: null, hardUrl: null })),
     rows: [
-      {
-        character: 'Cain',
-        headUrl: null,
-        cells: [
-          { kind: 'known' as const, bits: 3 },
-          { kind: 'known' as const, bits: 0 },
-          { kind: 'unknown' as const },
-        ],
-        missing: 1,
-      },
       {
         character: 'Tainted Cain',
         headUrl: null,
