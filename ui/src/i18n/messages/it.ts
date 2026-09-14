@@ -190,6 +190,9 @@ export const it = {
       luck: 'Fortuna',
       shotSpeed: 'Velocità del colpo',
       collectibles: 'Oggetti iniziali',
+      requires: 'Ne servono',
+      contributors: 'Contano',
+      target: 'Agisce su',
       none: 'nessuno',
     },
     states: {

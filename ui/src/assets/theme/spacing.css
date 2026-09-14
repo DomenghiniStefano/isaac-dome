@@ -31,12 +31,14 @@
   /* A wiki page's figure (Schermate.dc.html): a 32px sprite at 3x, a 192px portrait at half. */
   --spacing-wiki-figure: 6rem;
   /* Unlock's table (Schermate.dc.html): the drawing column, the state badge column, the
-     fan-out column, the add-to-the-queue column, and the height of the scrolling body. */
+     fan-out column, the add-to-the-queue column. */
   --spacing-unlock-art: 4rem;
   --spacing-unlock-state: 8.5rem;
   --spacing-unlock-fan: 3.5rem;
   --spacing-unlock-queue: 2.5rem;
-  --spacing-unlock-body: 35rem;
+  /* The scroll body of any virtualized list — Unlock, the Collection, Search, the wiki's
+     category lists — read by `VirtualRows.vue` alone (`docs/BACKLOG.md` B43). */
+  --spacing-virtual-rows-body: 35rem;
   /* The Collection's table (Schermate.dc.html, "Collezione"): the sprite column, the quality
      pips, the origin DLC and the state badge; a quality pip's side. */
   --spacing-collection-sprite: 3.5rem;

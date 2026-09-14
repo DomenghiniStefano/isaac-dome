@@ -33,6 +33,12 @@ pub struct Tables {
     pub achievement: Vec<Row>,
     pub entity: Vec<Row>,
     pub challenge: Vec<Row>,
+    /// Not used to build the character map (`Resolver.characters` reads pages and
+    /// `corrections.json`, because this table's own `id` column is exactly as unreliable as
+    /// the infoboxes' — B42, measured 2026-09-14). Read for one field only: `parent`, a
+    /// second, independent statement of the relation `Infobox::Character.parent` reads from
+    /// the page — see `parent_check`.
+    pub player: Vec<Row>,
     pub transformation: Vec<Row>,
     pub pickup: Vec<Row>,
 }
@@ -113,6 +119,10 @@ pub struct Resolver {
     characters: BTreeMap<String, u32>,
     /// Key → name as written in our own map, for the entries' title.
     character_names: BTreeMap<String, String>,
+    /// Key (a form's own name, `player`'s `alias` column) → its `parent` field, raw. Empty
+    /// string is a row that states no parent, distinct from the key being absent (no row at
+    /// all — see `player_table_parent`).
+    player_parent: BTreeMap<String, String>,
 }
 
 /// A character page's title without the disambiguation suffix
@@ -272,6 +282,13 @@ impl Resolver {
                 r.pickups.insert(key(a), a.to_string());
             }
         }
+        for row in current(&tables.player) {
+            if let Some(a) = get(row, "alias") {
+                r.player_parent
+                    .entry(key(a))
+                    .or_insert_with(|| get(row, "parent").unwrap_or("").to_string());
+            }
+        }
         for (name, id) in characters {
             r.characters.insert(key(name), *id);
         }
@@ -385,6 +402,15 @@ impl Resolver {
             });
         }
         None
+    }
+
+    /// The `player` Cargo table's own `parent` for `name` (its `alias` column), resolved
+    /// the same way an infobox's `parent` parameter is. `None` means the table has no row
+    /// for this name at all — not a disagreement, since there is nothing to compare against
+    /// (see `parent_check`) — distinct from `Some(None)`, a row that states no parent.
+    pub(crate) fn player_table_parent(&self, name: &str) -> Option<Option<Target>> {
+        let raw = self.player_parent.get(&key(name))?;
+        Some(self.by_page_title(raw))
     }
 
     /// The id page `title` enters the items with, if the table (already filtered by
@@ -542,6 +568,7 @@ pub(crate) mod fixtures {
                 ("number", "19"),
                 ("alias", "The Family Man"),
             ])],
+            player: vec![],
             transformation: vec![row(&[
                 ("_pageName", "Beelzebub"),
                 ("id", "1"),
