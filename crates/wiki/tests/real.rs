@@ -62,9 +62,14 @@ fn counts_match_the_index() {
     // 102 pages, with Ultra Greedier colliding with Ultra Greed on the same key.
     assert!((97..=107).contains(&c.bosses), "bosses {}", c.bosses);
     assert_eq!(c.challenges, 45);
-    // 30 pages and 32 infoboxes, with our own map replacing the wiki's wrong ids.
+    // 34 pages and 40 forms, with our own map replacing the wiki's wrong ids. It was 30
+    // pages and 32 forms until B45 (2026-09-14): four pages state two playable characters
+    // each with `{{infobox characters}}`, and the fetch enumerated only the singular
+    // template, so eight characters — Jacob, Esau, The Forgotten, The Soul and the four
+    // Tainted halves — had no page at all. The band is wide on purpose, like the others
+    // here: it catches a parser losing ground, not a wiki gaining a page.
     assert!(
-        (25..=35).contains(&c.characters),
+        (36..=44).contains(&c.characters),
         "characters {}",
         c.characters
     );
@@ -423,8 +428,15 @@ fn text_nodes_carry_no_raw_template_syntax() {
     // Threshold pinned on purpose: don't loosen it silently, and if it grows, understand
     // where it comes from before raising it. Each drop so far matched the size its family
     // predicted, which is the evidence the change hit that family and nothing else.
+    // 83 → **87 on 2026-09-14**, and the four are attributed rather than absorbed, which is
+    // what the paragraph above asks of anyone who raises this. They are **two** nodes, not
+    // four: Tainted Lazarus's page carries two multi-line `{{Bug|…}}`, and B45 made that
+    // page produce two entries — Tainted Lazarus and Dead Tainted Lazarus — which each
+    // carry the page's sections, as Judas and Black Judas already did. The other three
+    // pages that arrived with it contribute none. Nothing changed in the parser's handling
+    // of templates; one page's text is now counted twice because it belongs to two forms.
     assert!(
-        offenders.len() <= 83,
+        offenders.len() <= 87,
         "{} nodes with raw template syntax: {offenders:?}",
         offenders.len()
     );
@@ -550,5 +562,59 @@ fn the_player_tables_parent_agrees_with_the_infoboxes_own() {
         result.mismatches.is_empty(),
         "player.json and the infoboxes disagree: {:#?}",
         result.mismatches
+    );
+
+    // The silent side, pinned by name rather than tolerated as a category. These four are
+    // the second form of a two-character page, where `{{infobox characters}}` offers no
+    // `parent` parameter at all: the wiki cannot say what `player` says, so the cross-check
+    // reports it here instead of among the disagreements. **A fifth name appearing means a
+    // page that could have stated its parent stopped doing it**, which is the regression
+    // this list exists to catch — and 32 of the 40 forms still state one on both sides.
+    let silent: Vec<&str> = result
+        .stated_by_one
+        .iter()
+        .map(|m| m.name.as_str())
+        .collect();
+    // In page order, which here is the order of the four files under
+    // `raw/pages/character/` — `Jacob_&_Esau`, `Tainted_Forgotten`, `Tainted_Lazarus`,
+    // `The_Forgotten` — each contributing its second form.
+    assert_eq!(
+        silent,
+        ["Esau", "Tainted Soul", "Dead Tainted Lazarus", "The Soul"],
+        "{:#?}",
+        result.stated_by_one
+    );
+}
+
+/// B45's guard, and the half of the entry worth more than the four pages. Every character
+/// the repo knows by name is in `dataset/corrections.json` with its id — that map is what
+/// resolves a requirement like "Ultra Greedier as Keeper" — and until 2026-09-14 **eight of
+/// those ids had no entry in the dataset at all**: Jacob, Esau, The Forgotten, The Soul,
+/// Tainted Forgotten, Tainted Soul, Tainted Lazarus, Dead Tainted Lazarus. Four pages
+/// stating two characters each, listed by a template the fetch did not enumerate.
+///
+/// Nothing said so. The references resolved — by id, through this very map — so the graph
+/// was right and only the page was missing, which is the shape that hides: 47 requirements
+/// in `crates/graph/rules/requirements.json` point at those four ids, every one of them a
+/// row a screen draws with a target whose page cannot be opened.
+///
+/// A name knows its id here or it is not a character we can talk about; an id with no entry
+/// is a page we never read. Both halves have to hold, and this is the test that says so
+/// rather than a cross-check written for something else tripping over it.
+#[test]
+fn every_character_the_repo_names_has_a_page_in_the_dataset() {
+    let ds = dataset();
+    let ids: std::collections::BTreeSet<u32> = corrections().characters.values().copied().collect();
+    // Vacuity guard: the map is the source of this test's subject, and an empty one would
+    // make it pass while asserting nothing.
+    assert!(ids.len() >= 40, "the character map holds {} ids", ids.len());
+    let missing: Vec<u32> = ids
+        .iter()
+        .copied()
+        .filter(|id| ds.entry(&Target::Character { id: *id }).is_none())
+        .collect();
+    assert!(
+        missing.is_empty(),
+        "characters the repo names with no page in the dataset: {missing:?}"
     );
 }
