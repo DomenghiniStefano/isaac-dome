@@ -26,6 +26,60 @@ struct Parser<'a> {
     table: Option<Vec<String>>,
 }
 
+/// Templates that wrap blocks and say nothing: the content they hold is already a wiki
+/// list, and the wrapper only decides how wide the columns are. Unwrapped before the pass
+/// below, because that pass reads one line at a time and one of these spans a dozen — the
+/// opener stayed in the text as its own source and the `}}` that closed it became a
+/// paragraph, cutting the list in two (B49).
+///
+/// A closed list on purpose: a wrapper whose content is *not* already a list would need a
+/// shape to become, which is a `Block` variant and a contract change.
+const LAYOUT_WRAPPERS: &[&str] = &["column list"];
+
+/// The body with those wrappers replaced by the content they hold, and nothing else
+/// touched. `parse_template_at` is what says where one ends: a line-by-line pass cannot.
+fn unwrapped(body: &str) -> String {
+    let mut out = String::new();
+    let mut i = 0;
+    while let Some(pos) = body.get(i..).and_then(|rest| rest.find("{{")) {
+        let at = i + pos;
+        out.push_str(&body[i..at]);
+        match crate::template::parse_template_at(body, at) {
+            Some((t, end)) if LAYOUT_WRAPPERS.contains(&t.name.as_str()) => {
+                if let Some(content) = t.named.get("content") {
+                    // The content is block-level and a parameter's value arrives trimmed,
+                    // so the newline it opened with is gone: without putting one back, the
+                    // first `**` lands on the line the wrapper opened on and the list it
+                    // holds becomes one item of text.
+                    if !out.ends_with('\n') {
+                        out.push('\n');
+                    }
+                    out.push_str(content);
+                    // …and one after it only when the page does not already continue on a
+                    // new line. An unconditional one leaves a blank line where the wrapper
+                    // closed, and a blank line flushes the list — the same cut this pass
+                    // already has a rule against, arriving from the other side.
+                    if !body[end..].starts_with('\n') {
+                        out.push('\n');
+                    }
+                }
+                i = end;
+            }
+            // Every other template is content: it belongs to the line it is on.
+            Some((_, end)) => {
+                out.push_str(&body[at..end]);
+                i = end;
+            }
+            None => {
+                out.push_str("{{");
+                i = at + 2;
+            }
+        }
+    }
+    out.push_str(&body[i..]);
+    out
+}
+
 pub fn parse_blocks(body: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Block> {
     let mut p = Parser {
         r,
@@ -35,7 +89,7 @@ pub fn parse_blocks(body: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Block>
         list: Vec::new(),
         table: None,
     };
-    for raw in body.lines() {
+    for raw in unwrapped(body).lines() {
         p.line(raw.trim_end());
     }
     p.finish()
@@ -345,6 +399,31 @@ mod tests {
         }]
     }
 
+    /// B49: `{{column list | width = … | content = …}}` opens in the middle of a list item
+    /// and closes on a line of its own several lines below, which a line-by-line pass cannot
+    /// see as one template: the opener stayed in the text as itself and the `}}` became a
+    /// paragraph that cut the list in two. Reported from the running app on 2026-09-14,
+    /// where Beelzebub's page printed the wrapper's own source where the flies should be.
+    ///
+    /// It is pure layout — the content it wraps is already a wiki list — so it is unwrapped
+    /// before the pass, and what is left is the list the page meant.
+    #[test]
+    fn a_column_list_is_unwrapped_into_the_list_it_holds() {
+        let blocks =
+            p("* The flies: {{column list | width = 15em | content =\n** one\n** two\n}}\n");
+        let Block::List { items, .. } = &blocks[0] else {
+            panic!("a list, got {blocks:?}")
+        };
+        assert_eq!(items.len(), 1, "{items:?}");
+        let Block::List { items: inner, .. } = &items[0].children[0] else {
+            panic!("a nested list, got {:?}", items[0].children)
+        };
+        assert_eq!(inner.len(), 2);
+        assert_eq!(inner[0].inline, t("one"));
+        // Nothing of the wrapper survives, neither its opener nor the line that closed it.
+        assert_eq!(blocks.len(), 1, "{blocks:?}");
+        assert_eq!(items[0].inline, t("The flies:"));
+    }
     #[test]
     fn paragraphs_join_lines_and_split_on_blank() {
         assert_eq!(
