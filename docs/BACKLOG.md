@@ -1827,9 +1827,37 @@ game does, and the entry names the sheet and frame it came from.
 
 ---
 
-## B34 — Seventeen references the wiki never meant as targets (implementation, `graph` and `dataset`)
+## B34 — A linked concept with no id is called a `Pickup`, and that name was the whole confusion (implementation, `wiki`)
 
-**Needs:** nothing — `graph` and `dataset` are pure crates over the committed snapshot. Half of it is closed and the other half says not to build the filter: see the correction at the top before starting.
+**Needs:** nothing — `crates/wiki` and the committed rules files; the check that decides it
+(`cargo test -p graph`) reads the embedded snapshot and wants no game.
+
+> **Checked on 2026-09-14, because the entry read as finished and is not.** Two things remain,
+> both small and both measured rather than inferred. The title above is the second of them.
+>
+> 1. **The rename has not been done.** `Target::Pickup` still exists — **22 occurrences** across
+>    `crates/`, in `model.rs`, `resolver.rs`, `dataset.rs` and `transformation.rs`. The
+>    correction of 2026-09-13 named it "the remaining work" and nothing has touched it since.
+> 2. **The two transformation verdicts now carry a reason that is false.**
+>    `corrections.json` still holds `transformation:Guppy` and `transformation:Beelzebub` as
+>    `unknown`, reading *"a transformation is three items, and the model can't say 'N of
+>    these'"*. The model **can** say it since 2026-09-13: `requirements.json` gives Guppy
+>    `at_least: 3` over 8 items and Beelzebub `at_least: 3` over 25, and
+>    `Target::Transformation` resolves through `threshold()`, never through `from_verdict`.
+>    The row itself must stay — `verdict_required` is `true` for every target on purpose, and
+>    removing the two makes `every_target_that_needs_a_verdict_has_one` fail, which was run to
+>    check rather than assumed. What has to change is the **text**: it should say the row is
+>    required and never read, not restate a limit that has been lifted.
+>
+> **The count in the old title was right and is no longer**: 17 references became **13**, all
+> of them `pickup:`, over six distinct targets. The four `transformation:` ones are answered.
+>
+> **Closes when** no type in `crates/wiki` calls a linked concept with no id a `Pickup`, the
+> two transformation verdicts say why they are there instead of why they were, and
+> `cargo test -p graph` is green. The 13 `pickup:` references stay exactly as they are: they
+> are real requirements the model cannot express, and the count going down would be the bug.
+> **"Done when" further down belongs to the plan that was thrown away** — it asks for the
+> filter this box forbids.
 
 > **Corrected on 2026-09-13. Half of this entry is closed and the other half is wrong.**
 >

@@ -1506,6 +1506,25 @@ generates nothing and the grid would have collapsed in silence.
 generated contract still agreeing — `lib/ipc/values.ts` is hand-written *beside* `types.ts`, and
 `pnpm ipc:types` leaves it alone.
 
+**Then every open backlog entry was tagged with what it needs before you can start it** — the
+`**Needs:**` line, its vocabulary and its counts are at the top of `docs/BACKLOG.md`, and
+`CLAUDE.md` points at them. Sixteen of the twenty-six need nothing but a clone, which is the
+answer this session spent its first minutes finding out by hand.
+
+**Tagging B34 meant reading it, and reading it said it was not closed.** The entry looked
+finished — half done, half explicitly forbidden — and two things remained, both checked against
+the code rather than the prose. `Target::Pickup`, which the 2026-09-13 correction called "the
+remaining work", is still there in **22 places**. And `corrections.json` still judges
+`transformation:Guppy` and `transformation:Beelzebub` `unknown` for the reason *"the model can't
+say 'N of these'"* — which the transformations sub-project made false the same day it was
+written: `requirements.json` gives both `at_least: 3`, and `Target::Transformation` resolves
+through `threshold()` and never reaches `from_verdict`. **The row has to stay**: `verdict_required`
+is `true` for every target by decision, and removing the two turns
+`every_target_that_needs_a_verdict_has_one` red — run, not assumed. Only the text is wrong.
+The entry now says both at its top, with a `Closes when` that replaces the one belonging to the
+plan that was thrown away. **A correction box is where a finished-looking entry hides what it
+still owes**, and nothing re-reads it until someone needs the entry.
+
 ### 2026-09-13 — the archive fills itself
 
 `feature/log-watch`, cut from `develop`. M4 sub-project **1b**: `discovery` learns where the
