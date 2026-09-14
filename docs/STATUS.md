@@ -59,6 +59,11 @@ is suggested, and an achievement's wiki page carries a block saying where the pr
 `Closeness` basis, and `AchievementRef`'s `hint` renamed `condition` because it now answers
 from the wiki where the game file is silent (283 of 637 before, all 637 after). **N7 has that
 much more to absorb**, and `UnlockTarget` gained a field as well.
+**B40, B43 and half of B42 closed** on `feature/small-three` (2026-09-14, evening), three small
+entries run in parallel on disjoint files. The cross-check B42 asked for opened **B45**: four
+characters — Jacob & Esau, The Forgotten, Tainted Forgotten, Tainted Lazarus — **have no page in
+the wiki snapshot**, 47 requirements point at them, and the fetch cannot see it because it
+enumerates what transcludes the character infobox.
 
 ---
 
@@ -1439,7 +1444,57 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
 
 ## Session log
 
-### 2026-09-14 (last) — the suite was green on one machine
+### 2026-09-14 (last, evening) — three small entries at once, and the one nobody was looking for
+
+`feature/small-three`, cut from `develop`, on the machine **with** the game and the full sample
+series. Three backlog entries with disjoint file sets, run in parallel and committed one per
+entry: **B40** (the transformation's infobox card), **B43** (the virtualized scroll box and its
+two tokens), **B42** (the `player` Cargo table read by nothing). `pnpm ui:test` 461 tests over
+67 files, `cargo test -p wiki` 131, scan / typecheck / lint / format green.
+
+**B40: measuring the dataset before drawing changed what to draw.** The entry asks for three rows
+and warns only about `requires` defaulting to "3". On the sixteen pages, `requires` is `null` on
+**one** and `target` is empty on **fourteen** — and `InfoboxRow` draws "nessuno" for an empty
+value, which is true of a character with no starting items and **a claim nobody measured** about a
+transformation. A row is drawn only where the page filled it; Adult, which filled none of the
+three, carries no card at all — exactly what the suppressed variant's own comment said an empty
+card would do. The decision is a pure function with its test, because **nothing in `ui/` mounts a
+component**: no `@vue/test-utils`, no DOM environment, so a rule left in a template is a rule no
+test can see.
+
+**B43 closed both halves**, as the entry demands: `VirtualRows` owns the scroll box, the total
+height and the window, the four screens lose 26 lines each, the columns stay two files. The token
+rename was checked **in the built CSS** and not in the source — a utility nothing references
+generates nothing. One thing the extraction had dropped was put back: the comment saying why the
+row count is a getter, without which the reason a new filter reaches the virtualizer disappears.
+
+**B42 is half closed, and the half that ran found something else.** `player.parent` and the
+`parent` each character page states in its own infobox are two independent statements of one
+relation, never compared: **32 named forms carry both and all 32 agree**, now guarded by a test
+with a floor on what it compared. Matching them by `player`'s own `id` column was tried first and
+is a trap — that column is as unreliable as the infoboxes' (`Isaac` 14, `Magdalene` 2), so an id
+match *agreed* by accident on names it was never comparing. The check enters through `for_tests`:
+it asks a question about the data we ship, and no command of the app asks it.
+
+**The eight rows it could not compare were not eight facts but one**, and it is now **B45**:
+`Jacob & Esau`, `The Forgotten`, `Tainted Forgotten` and `Tainted Lazarus` **have no page in the
+snapshot** — 30 files under `dataset/raw/pages/character/`, no entry in `index.json`, while
+`player`, a Cargo table rather than a page fetch, knows all four. They resolve by id through
+`dataset/corrections.json`, so nothing ever complained; `requirements.json` holds **47 references**
+to them (17 The Forgotten, 15 Jacob & Esau, 8 Tainted Forgotten, 7 Tainted Lazarus), every one a
+requirement a screen draws with a target whose page cannot be opened. The fetch reports no error
+because it enumerates `embeddedin` over `Template:Infobox character`: a page that states its
+character another way is not *missed* by that query, it is **not in it**. What B45 asks for is the
+guard as much as the four pages — the names the repo knows, counted against the pages fetched.
+
+**`stage.json` is the open half of B42 and stays open on purpose**: unlike `player` it has no
+second source to be checked against, so there is no reader for it to earn, and dropping a
+committed artefact is the owner's call.
+
+**What this session did not do:** look at any of it in a window. Nothing in the suite draws the
+card or scrolls the four lists.
+
+### 2026-09-14 — the suite was green on one machine
 
 `fix/marks-real-partial-series`, cut from `develop`. Opened on a second machine, **without the
 game and with four old samples**, to take the work that does not need either. The first thing
