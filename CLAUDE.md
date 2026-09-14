@@ -497,9 +497,16 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
 - Don't start `pnpm dev` while a build of the app is sitting in the tray: since 2026-09-13 the
   app survives its last window and `tauri-plugin-single-instance` hands the launch to the
   process that is already there — the new one brings the old window forward and exits, with no
-  error and no hint that the code you just wrote never ran. **Quit from the tray first**, which
-  is the only thing that ends the process. The same shape catches `pnpm dev` twice: the second
-  fails earlier and more loudly, on port 1420.
+  error and no hint that the code you just wrote never ran. An orphaned vite is the same trap
+  from the other side: it is pinned to 1420 by `strictPort`, because `devUrl` names that port
+  and nothing else, so the second one can't step aside, only die — and it is a grandchild under
+  two `cmd.exe`, which is why killing the session that started it orphans it instead of ending
+  it. **Since 2026-09-14 `pnpm dev` clears both on its own**: `predev` runs `scripts/dev-reset`,
+  which ends the tray app and whoever holds 1420 — the latter **only if that process's command
+  line points inside this repo**, otherwise it says who has the port and leaves it alone. It
+  never fails the build; it is a cleaner, not a gate. What it cannot do is tell your leftovers
+  from another session's, so on a machine running several, `pnpm dev` now evicts a dev server
+  somebody else is using, in silence. `pnpm dev:reset` is the same thing by hand.
 - Don't commit by `git add -A` on this repo: specs under `docs/superpowers/` are edited in
   parallel by other sessions, and a clean `git status` at the start of a session is no
   promise it's still clean at the end. Stage by explicit path, and say so when the tree
