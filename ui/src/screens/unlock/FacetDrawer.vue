@@ -10,13 +10,8 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { useMessages } from '@/i18n'
 import { characterForms } from '@/lib/graph/characterName'
-import {
-  FacetId,
-  activeFilterCount,
-  facetCounts,
-  facetOptions,
-} from '@/lib/graph/unlockFilter'
-import type { UnlockFilter } from '@/lib/graph/unlockFilter'
+import { FacetId, unlockFaceting } from '@/lib/graph/unlockFacets'
+import type { UnlockFilter } from '@/lib/graph/unlockFacets'
 import type { UnlockNode } from '@/lib/ipc/types'
 import { facetTitle, facetValueLabel } from './facetLabels'
 
@@ -42,11 +37,12 @@ const characters = computed(() => characterForms(props.nodes))
 // all: it could not be picked, and reading it with a 0 beside it is noise (B29).
 const columns = computed(() =>
   drawerFacets.map((facet) => {
-    const counts = facetCounts(props.nodes, props.filter, facet)
+    const counts = unlockFaceting.counts(props.nodes, props.filter, facet)
     const picked = props.filter.picks[facet]
     return {
       facet,
-      values: facetOptions(props.nodes, facet)
+      values: unlockFaceting
+        .options(props.nodes, facet)
         .map((value) => ({
           value,
           label: facetValueLabel(t, facet, value, characters.value),
@@ -58,7 +54,7 @@ const columns = computed(() =>
   }),
 )
 
-const active = computed(() => activeFilterCount(props.filter))
+const active = computed(() => unlockFaceting.activeCount(props.filter))
 </script>
 
 <template>

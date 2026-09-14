@@ -1,5 +1,7 @@
-import { countBy, sortBy, sumBy, uniq } from 'lodash-es'
+import { sortBy, uniq } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
+import { createFaceting } from '@/lib/facets/faceting'
+import type { FacetFilter } from '@/lib/facets/faceting'
 import type { UnlockNode, UnlockTarget } from '@/lib/ipc/types'
 import { OriginValue, TargetKind, originOrder } from '@/lib/ipc/values'
 import { characterForms, characterValue } from './characterName'
@@ -40,20 +42,7 @@ export const UnlockSort = {
 } as const
 export type UnlockSort = (typeof UnlockSort)[keyof typeof UnlockSort]
 
-export interface UnlockFilter {
-  query: string
-  picks: Record<FacetId, string[]>
-}
-
-export const emptyFilter = (): UnlockFilter => ({
-  query: '',
-  picks: {
-    [FacetId.State]: [],
-    [FacetId.Unlocks]: [],
-    [FacetId.Origin]: [],
-    [FacetId.Character]: [],
-  },
-})
+export type UnlockFilter = FacetFilter<FacetId>
 
 export const nodeSlot = (node: UnlockNode): number =>
   node.achievement.kind === 'known'
@@ -100,56 +89,16 @@ export const facetValues = (node: UnlockNode, facet: FacetId): string[] => {
   }
 }
 
+// What the search reads: an achievement's text, the condition the wiki answers where the game
+// file is silent, and the names of what it unlocks. The engine lowercases it.
 const searchText = (node: UnlockNode): string =>
   [
     node.achievement.kind === 'known' ? node.achievement.text : '',
     node.achievement.kind === 'known' ? (node.achievement.condition ?? '') : '',
     ...node.unlocks.map((t) => t.name),
-  ]
-    .join('\n')
-    .toLowerCase()
+  ].join('\n')
 
-const matchesQuery = (node: UnlockNode, query: string): boolean => {
-  const wanted = query.trim().toLowerCase()
-  return wanted === '' || searchText(node).includes(wanted)
-}
-
-const matchesFacet = (
-  node: UnlockNode,
-  facet: FacetId,
-  picked: string[],
-): boolean =>
-  picked.length === 0 ||
-  facetValues(node, facet).some((value) => picked.includes(value))
-
-const matchesFacets = (
-  node: UnlockNode,
-  filter: UnlockFilter,
-  facets: FacetId[],
-): boolean =>
-  matchesQuery(node, filter.query) &&
-  facets.every((facet) => matchesFacet(node, facet, filter.picks[facet]))
-
-// Any value within a facet, every facet at once, and the search.
-export const matchesFilter = (
-  node: UnlockNode,
-  filter: UnlockFilter,
-): boolean => matchesFacets(node, filter, facetOrder)
-
-// A value's count leaves its own facet out: it says how many rows picking it would give.
-export const facetCounts = (
-  nodes: UnlockNode[],
-  filter: UnlockFilter,
-  facet: FacetId,
-): Map<string, number> => {
-  const others = facetOrder.filter((f) => f !== facet)
-  const values = nodes
-    .filter((node) => matchesFacets(node, filter, others))
-    .flatMap((node) => facetValues(node, facet))
-  return new Map(Object.entries(countBy(values)))
-}
-
-export const facetOptions = (nodes: UnlockNode[], facet: FacetId): string[] => {
+const facetOptions = (nodes: UnlockNode[], facet: FacetId): string[] => {
   switch (facet) {
     case FacetId.State:
       return stateOrder
@@ -170,6 +119,15 @@ export const facetOptions = (nodes: UnlockNode[], facet: FacetId): string[] => {
       return assertNever(facet)
   }
 }
+
+// Unlock's half of a faceted list: which facets it has, how a node answers one, what the search
+// reads, what each facet offers. Matching, the counts and the active count are the engine's.
+export const unlockFaceting = createFaceting<UnlockNode, FacetId>({
+  order: facetOrder,
+  values: facetValues,
+  text: searchText,
+  options: facetOptions,
+})
 
 // Steps: what can be done now and what is closest first, then what the graph can't vouch for,
 // then what is already done.
@@ -212,7 +170,3 @@ export const sortNodes = (
       return assertNever(sort)
   }
 }
-
-// How many values are picked across the facets; the search is shown on its own.
-export const activeFilterCount = (filter: UnlockFilter): number =>
-  sumBy(facetOrder, (facet) => filter.picks[facet].length)

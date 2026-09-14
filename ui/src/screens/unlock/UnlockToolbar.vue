@@ -13,8 +13,8 @@ import { useMessages } from '@/i18n'
 import type { CharacterForm } from '@/lib/graph/characterName'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
-import { FacetId, UnlockSort, facetOrder } from '@/lib/graph/unlockFilter'
-import type { UnlockFilter } from '@/lib/graph/unlockFilter'
+import { FacetId, UnlockSort, facetOrder } from '@/lib/graph/unlockFacets'
+import type { UnlockFilter } from '@/lib/graph/unlockFacets'
 import { facetValueLabel } from './facetLabels'
 
 const props = defineProps<{
