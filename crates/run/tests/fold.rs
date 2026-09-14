@@ -303,3 +303,84 @@ fn an_achievement_unlocked_mid_run_belongs_to_that_run() {
     );
     assert_eq!(runs[0].achievements, vec![19]);
 }
+
+/// `Initialized player with Variant 0 and Subtype N` is the only line that says **which**
+/// character is being played: the item line gives a name, and the game gives a Tainted
+/// character the base form's name. The subtype is the id, so the app stops having to say
+/// "Cain or Tainted Cain".
+#[test]
+fn a_run_takes_the_character_id_the_log_states() {
+    let runs = Run::fold(
+        [
+            Event::PlayerInitialized {
+                variant: 0,
+                subtype: 3,
+            },
+            seed(1, SeedKind::New),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(runs[0].character_id, Some(3));
+}
+
+/// **The line comes before the seed on a solo run and after it online**, measured on this
+/// machine's logs. A fold that only looked forward would miss every solo run, and one that
+/// only looked back would miss every online one, so the pending init is kept until a run
+/// starts — and cleared by the run that takes it, or nobody would ever play a second
+/// character.
+#[test]
+fn the_line_is_taken_whether_it_arrives_before_or_after_the_seed() {
+    let after = Run::fold(
+        [
+            seed(1, SeedKind::New),
+            Event::PlayerInitialized {
+                variant: 0,
+                subtype: 7,
+            },
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(after[0].character_id, Some(7));
+
+    let two = Run::fold(
+        [
+            Event::PlayerInitialized {
+                variant: 0,
+                subtype: 3,
+            },
+            seed(1, SeedKind::New),
+            seed(2, SeedKind::New),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(two[0].character_id, Some(3));
+    assert_eq!(
+        two[1].character_id, None,
+        "the second run did not say who was playing it"
+    );
+}
+
+/// In co-op the line appears once per player. The run keeps the **first**: the others are
+/// other people at the same table, and the app speaks about the profile it reads.
+#[test]
+fn a_second_player_does_not_take_the_runs_character() {
+    let runs = Run::fold(
+        [
+            seed(1, SeedKind::Net),
+            Event::PlayerInitialized {
+                variant: 0,
+                subtype: 30,
+            },
+            Event::PlayerInitialized {
+                variant: 0,
+                subtype: 7,
+            },
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(runs[0].character_id, Some(30));
+}
