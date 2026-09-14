@@ -1,0 +1,118 @@
+{{header characters}}
+{{infobox characters
+ | dlc          = r
+ | name         = Jacob
+ | name 2       = Esau
+ | health       = {{hearts|red=3}}
+ | health 2     = {{hearts|red=1}}{{hearts|soul=1}}
+ | tears        = +0.277
+ | tears 2      = -0.1
+ | damage       = 2.75 (*1.00)
+ | damage 2     = 3.75 (*1.00)
+ | range        = 5.00
+ | range 2      = 8.00
+ | shot speed   = 1.15
+ | shot speed 2 = 0.85
+ | luck         = 1.00
+ | luck 2       = -1.00
+ | unlocked by  = Jacob and Esau
+}}
+'''Jacob and Esau''' are a [[character]] pair added in ''[[The Binding of Isaac: Repentance]]''. They are unlocked by defeating {{E|Mother}} with any character.
+
+'''Jacob and Esau''' are controlled as one, move at the same [[speed]], and use the same [[coins]], {{e|Bomb}}s, and {{e|Key}}s. Otherwise, they are completely independent in terms of [[Attributes|stats]], [[items]], and [[health]]. Both characters have collision and can be separated, though the "Drop" button can be held to keep Esau in place while Jacob is free to move around the room.
+
+If either Jacob or Esau die, they both die regardless of the other character's remaining health.
+
+== Notes ==
+* Classic controls:
+** Jacob's active item and pill/card are both bound to the Item button, while Esau's are bound to the Pill/Card button.
+** Hold the Drop button to switch from using active items to using pills/cards.
+* {{dlc|r+}} "Better" controls:
+** Items and pills/cards are bound to their normal buttons.
+** Hold the Drop button to switch from using Jacob's item/card/pill to using Esau's item/card/pill.
+* If one character passes through a door, both characters move to the next room. {{r|Curse Room}} door damage will only be applied to the character that moves through the door.
+* With careful positioning, it is possible to take two items in rooms with multiple items that usually disappear upon collecting one (Ex: {{i|The Polaroid}} & {{i|The Negative}}). As a result, if the player can handle the increased difficulty from these optional chapter paths, {{r|Treasure Room}}s in {{s|Downpour}}, {{s|Mines}}, and {{s|Mausoleum}} (including their alternative variants) have double their normal value.
+* Changes to the speed stat are only half as effective, but the stat is shared between the two characters.
+* When placing a bomb, both Jacob and Esau place one, but only one bomb will be consumed. This allows each bomb to cover double the area by positioning the characters in different locations. If they are aligned properly, this also allows Jacob & Esau to open barricaded doors with only one bomb.
+* {{dlc|nr+}} When Jacob and Esau sleep in a [[bed]], only the one who touched the bed will be healed.
+* Jacob and Esau can carry 2 active items, [[trinkets]] and [[Cards and Runes|cards]]/[[pills]] naturally (one for each).
+* Active items involved in [[Transformations]] count only for the character who touched the item first. This is most notable with books for the {{tf|Bookworm}} transformation: each character needs 3 different books. For example, if a {{R|Library}} is encountered, and there are 3 book active items, once Jacob picks up all 3 books, Esau can't get the {{tf|Bookworm}} transformation unless the pedestal is rerolled through {{I|The D6}} or other similar pedestal rolling items.
+* Transforming into a new character with items like {{i|Clicker}} or {{i|Judas' Shadow}} will grant both of Jacob and Esau's collected items to the new character. All of Esau's held cards/pills/trinkets are dropped on the ground. Esau's active item disappears.
+* Dice rooms with 6 pips will reroll held items of both characters regardless of whoever triggered the room. Dice rooms with 1 pip will only reroll the items of the character that triggered the room.
+* {{I|Key Piece 1}}/{{I|Key Piece 2}} and {{I|Knife Piece 1}}/{{I|Knife Piece 2}} will combine regardless of whether they are split up or carried by one character.
+** This does not work with {{i|Broken Shovel 1}}/{{i|Broken Shovel 2}}. {{i|Mom's Shovel}} will only form if both pieces are held by the same character.
+* [[Devil deal]]s are variable for Jacob and Esau, as the prices may dynamically change based on either of them, which can make it so the other may not be able to take the deal, but can also allow the deals to be underpaid.
+** Examples:
+*** Jacob takes a deal that leaves him with no red hearts, the deals may change prices to accommodate for the lack of red hearts, so if the deal requires all soul hearts and Esau only has red heart containers, he will not be able to take the deal.
+*** Contrarily, if one has 1 red heart container, he can pay for a 2 red heart deal with only 1 red heart, {{dlc|nr+}} or if one has 2+ red heart containers and half a soul heart he can pay for a 3 soul heart deal with only half a soul heart. The extra required hearts will not be removed from the other character.
+**** {{dlc|r+}} If the character doesn't have enough {{e|Soul Heart}}s, red containers will be removed at a rate of 1 container per missing soul heart. For example, if Esau only has 1 soul heart, he will pay 2 red containers in addition to the soul heart. This is likely a bug.
+* Despite flying items like {{I|Transcendence}} only affecting the one who picked it up, it's still very useful if you only focus on the brother that is NOT using it, as the flying one will never get caught on obstacles.
+* For the purposes of [[Room Clear Awards]], the room drop rate depends on the total luck the 2 characters have. Meaning at base stats, they effectively start with 0 Luck for this purpose.
+* Resurrection items activate in a [[:Category:Revival items|set order]], regardless of who owns which item. If the two characters each own a copy of the same resurrection item, the game prioritizes removing Jacob's item.
+* If either Jacob or Esau have familiars and the other has {{T|Extension Cord}}, electricity will also arc between both characters, and between familiars and the character that didn't pick them up.
+* When entering the [[Mirrored World]], only either Jacob or Esau need to be {{C|The Lost}} while the other can enter it with full health.
+* The items that can be unlocked by getting certain endings as Jacob and Esau are very good for future runs (Ex: {{I|Birthright}}), so unlocking those items could be a priority as soon as Jacob and Esau are unlocked.
+* Jacob & Esau inherently get an exploration boost in [[Daily Challenges]] since Esau is considered an extra player.
+* The damage of a [[Blue Spider]] or a [[Blue Fly]] will depend on whichever brother made it spawn.
+** For example, spawning a [[Blue Fly]] as Jacob by using {{i|Jar of Flies}} while having 2.75 [[Damage|damage]] will make it deal 5.5 (2.75*2) damage.
+** For {{i|Hive Mind}}, the damage boost will only apply to whichever brother has it in his own inventory.
+
+== Item Interactions ==
+''If not listed here, and if applicable, an item will always apply all its effects on the character who picks/uses it only.''
+
+* {{i|Birthright}}: The character who picks up the item gains copies of three of the other character's latest picked up passive items. Note that items that add pickups, such as {{I|A Quarter}}, will not add pickups again when copied.
+* {{I|Bone Spurs}}: Bone projectiles spawn when either brother kills an enemy.
+* {{I|Dead Cat}}: Only the character that takes it will be reduced to one heart container, but if either of the characters die, both characters are resurrected with one heart container.
+* {{I|Death Certificate}}: Two items can be taken from any given room, one for each character, if they're taken at the same time.
+* {{I|Dr. Fetus}}: Tears from Jacob can interfere with aiming bombs fired by Esau and vice versa. Be cautious when taking this item.
+* {{I|Eden's Blessing}}: Items gained through Eden's Blessing at the start of the run will only be given to Jacob.
+* {{T|Found Soul}}: When the ghost dies for one character, it will still be there for the other. Hence if the ghost dies, it is a reliable strategy to switch the 2 character's trinkets to make him reappear.
+* {{I|Gnawed Leaf}}: If Esau is the one holding the Gnawed Leaf, he can turn to stone while Jacob is moving (by holding the drop button). Jacob is able to ''slowly'' push Esau around the room without deactivating Esau's invincibility, which can be used to enter {{R|Curse Room}}s, open {{E|Spiked Chest}}s, etc. without taking damage.
+* {{I|Hive Mind}}: Only the brother who picked up the item will have his [[Blue Fly|blue flies]] and [[Blue Spider|blue spiders]] enhanced, as stated previously.
+* {{I|Infestation 2}}: Blue Spiders will spawn from enemies killed by either character.
+* {{I|Isaac's Heart}}: Only the character who picks up the item gets the benefits.
+* {{I|Lachryphagy}}: Both character's tears will feed the shot, regardless of which character picked it up.
+* {{I|Luna}}: The character who doesn't have Luna can also use the beams of light.
+* {{I|Lusty Blood}}: The character who picked up the item will get a damage boost when an enemy is killed regardless of which character gets the kill.
+* {{I|PHD}} / {{I|False PHD}}: All pills will be identified for both characters, but only the character who picked up the item will have the negative effects turned into the good ones and vice versa.
+* {{I|Redemption}}: The brother that didn't take the item can take [[Devil Deal]]s without preventing the other brother from receiving the damage and {{e|Soul Heart}}.
+* {{i|Remote Detonator}}: Only the bombs placed by that character are affected; bombs placed by the other will explode as normal and cannot be controlled by the detonator.
+* {{I|Star of Bethlehem}}: Both Jacob and Esau gain the stats of this item, making it extremely favorable as it essentially is twice as effective.
+* {{I|Taurus}}: The speed changes apply for both characters, but only the character that is holding Taurus gains invincibility.
+* {{I|Technology Zero}}: Connects both characters' tears with electricity, even if only one character has the item.
+* {{I|There's Options}}/{{I|More Options}}: If both characters are lined up and touch both item pedestals at the same time, they can both get an item.
+* {{I|Yum Heart}}: Heals the character who uses it for a full red heart and the other for half a red heart.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Rock Bottom, Double Baby, Red Stew, The Stairway, Damocles, Birthright, Inner Child, Genesis, Vanishing Twin, Illusion Baby, Suplex!, Magic Skin, Friend Finder, The Deserter, Solomon's Baby }}
+
+== Gallery ==
+<gallery>
+File:Transition JacobEsau.png|Jacob & Esau's transition screen portrait.
+File:Start_Jacob_and_Esau.png|The spawn floor when playing Jacob & Esau.
+File:Jacob Menu Icon (Locked).png|Jacob & Esau's locked character icon.
+</gallery>
+
+== Trivia ==
+* Jacob & Esau are the twin sons of Isaac from the Book of Genesis. Esau is described as being "red all over" when he was born, hence why his skin is red in the game. The reason why Esau has a sorrowful grimace may be of a story in Genesis in which Esau traded his birthright to Jacob in exchange for a stew, a decision which he later regretted and hated his brother for.
+** This is the reason for both the {{I|Birthright}} and {{I|Red Stew}} items.
+** Jacob & Esau's parents both had a "favorite" son. Their mom favored Jacob, which might be why they are unlocked by beating {{e|Mother}}, since the character is referred to as Jacob before he is unlocked.
+** "Esau" also translates to "red" from Hebrew.
+* Jacob & Esau's stats reflect how they are described in the Book of Genesis, where Esau is stronger but more unfortunate than Jacob.
+* Esau resembles the {{E|Dople}} monster (in both coloration and the distinct face pattern visible on the cheeks on Esau), who mimics Isaac's movements in a similar way to how Esau mimics Jacob's movements. On top of this, they both fire blood shots.
+* Only Jacob's items will be listed in the pause menu. On [[Isaac's Last Will]], only items of the brother who died will be listed.
+* Esau can be played alone by using the debug console command "'''restart 20'''"
+* Before they are unlocked, they are only shown as "Jacob" on the character select screen.
+* Jacob's locked icon shows him bound in chains, with Esau hidden behind him.
+** He shares this with {{C|Magdalene}}, {{C|Cain}}, {{C|Samson}}, {{C|Eve}}, {{C|Lazarus}}, and {{C|Bethany}}.
+* On Game Over, Jacob and Esau's name appear as "Jacob + Esau" on [[Isaac's Last Will]].
+* Besides {{c|Eden}} and {{c|Tainted Eden}}, Jacob and Esau are the only playable characters to start with a flat change to their base damage, rather than a stat multiplier.
+** As such, Jacob has the lowest flat starting damage of any character, while Esau has the highest, again besides Eden and Tainted Eden.
+** Despite this, {{c|Tainted Magdalene}} has a lower starting damage than Jacob, and several characters have a higher starting damage than Esau, owing to their starting damage multipliers.
+* Esau is the only character to have higher starting range than the default of 6.5, besides {{c|Eden}} and {{c|Tainted Eden}}.
+
+== Bugs ==
+{{Bug|Resuming a Jacob and Esau run with {{t|Found Soul}} equipped in Esau's trinket slot will require a controller to continue. If a controller is available and plugged in, Found Soul can be controlled like a [[Co-op]] baby and won't mimic either brother's movements. This effect won't happen if Jacob holds the trinket. If no controller is available, the run is softlocked and cannot be continued.}}
+{{Bug|Reviving as {{C|Lazarus}} via {{I|Lazarus' Rags}} gives 2 copies of {{I|Anemic}} instead of 1.}}
+
+{{nav|character|mother unlock|jacob and esau unlock|fr=Jacob & Ésaü|es=Jacob & Esaú}}
