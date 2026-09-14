@@ -19,7 +19,7 @@ const natures: Inline[][] = [
     { kind: 'text', text: 'e in grassetto', style: Style.Bold },
   ],
   [{ kind: 'ref', target: d6, label: 'The D6' }],
-  [{ kind: 'ref', target: { kind: 'pickup', name: 'Chest' }, label: 'Chest' }],
+  [{ kind: 'ref', target: { kind: 'concept', name: 'Chest' }, label: 'Chest' }],
   [{ kind: 'concept', page: 'Devil Room', label: 'Devil Room' }],
   [{ kind: 'edition', only: [Dlc.Repentance], inline: [] }],
 ]
@@ -77,8 +77,8 @@ const blocks: Block[] = [
 const iconFor = (target: Target): string | null =>
   target.kind === 'item' ? (kitMarkArt.heart?.normal ?? null) : null
 
-// Which references lead to a page: items do, a pickup reads like a concept.
-const canOpen = (target: Target): boolean => target.kind !== 'pickup'
+// Which references lead to a page: items do, a concept has no id to open one with.
+const canOpen = (target: Target): boolean => target.kind !== 'concept'
 </script>
 
 <template>

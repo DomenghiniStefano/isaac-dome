@@ -332,7 +332,7 @@ impl Resolver {
             "p" => self
                 .pickups
                 .get(&k)
-                .map(|n| Target::Pickup { name: n.clone() }),
+                .map(|n| Target::Concept { name: n.clone() }),
             "c" => self
                 .characters
                 .get(&k)
@@ -731,7 +731,7 @@ mod tests {
         );
         assert_eq!(
             r.resolve("p", "The Fool"),
-            Resolution::Target(Target::Pickup {
+            Resolution::Target(Target::Concept {
                 name: "The Fool".into()
             })
         );

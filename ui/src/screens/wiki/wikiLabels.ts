@@ -50,7 +50,7 @@ export const pageId = (target: Target): string | null => {
       return String(target.number)
     case 'stage':
     case 'room':
-    case 'pickup':
+    case 'concept':
       return null
     default:
       return assertNever(target)
