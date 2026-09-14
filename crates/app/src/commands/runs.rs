@@ -61,3 +61,57 @@ pub(crate) fn runs(
         diagnostics,
     }))
 }
+
+/// What the run being watched would open (M4 2b). One command, because the archive's open run
+/// and the graph's marks have to describe **the same profile**: two commands cannot promise
+/// that, which is the lesson N8 spent itself on.
+///
+/// The run draws whatever the rest answers: a missing profile and a missing game are two
+/// different sentences, and both leave the run on screen.
+#[tauri::command]
+pub(crate) fn live(
+    app: AppHandle,
+    store: tauri::State<'_, StoreState>,
+    catalog: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+    archive: tauri::State<'_, ArchiveState>,
+    graph: tauri::State<'_, GraphState>,
+) -> Result<ipc::LiveView, IpcError> {
+    let archive_view = runs(
+        app.clone(),
+        store,
+        catalog.clone(),
+        resources.clone(),
+        archive,
+    )?;
+    // At most one: the fold never leaves two runs open on the launch it is following.
+    let open = archive_view.runs.into_iter().find(|r| {
+        matches!(r.source, RunSource::Live) && matches!(r.outcome, ipc::RunOutcomeView::Open)
+    });
+
+    let unlocked = crate::commands::graph::unlock(app, catalog.clone(), resources.clone(), graph);
+    let nodes = match &unlocked {
+        Ok(view) => ipc::LiveGraph::Nodes(&view.nodes),
+        Err(IpcError::NoActiveProfile) => ipc::LiveGraph::NoProfile,
+        Err(_) => ipc::LiveGraph::NoGraph,
+    };
+
+    // The catalog's own names, which is where the ambiguity comes from: a Tainted character
+    // answers to the base form's name, so this hands back every character that name reaches
+    // and `live_view` says there were two rather than choosing one.
+    let rs = resources.get();
+    let cat = rs.and_then(|rs| catalog.get_or_build(rs));
+    let by_name = |name: &str| -> Vec<(u32, String)> {
+        let Some(c) = cat else { return Vec::new() };
+        c.characters()
+            .filter(|ch| c.text(&ch.name, catalog::Language::English) == name)
+            .map(|ch| {
+                (
+                    ch.id.0,
+                    c.text(&ch.name, catalog::Language::English).to_string(),
+                )
+            })
+            .collect()
+    };
+    Ok(ipc::live_view(open, nodes, by_name))
+}
