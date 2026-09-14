@@ -88,7 +88,9 @@ const requirementOrder: RequirementKind[] = [
 
 // What the game calls each column of the completion matrix. Game names, so they stay in
 // English like every other one (`DESIGN-BRIEF.md` §12) — data, not something to translate.
-const columnName: Record<MarkColumnView, string> = {
+// Exported since Live: the same twelve names, and a second table would be a second chance to
+// disagree with the matrix about what a column is called.
+export const columnName: Record<MarkColumnView, string> = {
   [MarkColumnView.MomsHeart]: "Mom's Heart",
   [MarkColumnView.Isaac]: 'Isaac',
   [MarkColumnView.Satan]: 'Satan',

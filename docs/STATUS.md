@@ -141,6 +141,21 @@ enumerated the singular `Infobox character` while those four pages carry the plu
             `BEST_STREAK [23]` and `DEATHS [10]` rather than decided. The screens are
             deliberately out of scope: `Live` and `Runs` are both views of this model, and
             designing them first would let a layout shape the IPC contract.
+      - [x] **2b — Live** followed it the same evening, `feature/live-screen`: the run being
+            watched, and what finishing it would open, grouped by the cell it needs. Plan
+            `docs/superpowers/plans/2026-09-14-live-screen.md`, report
+            `docs/superpowers/reports/2026-09-14-live-screen-report.md`.
+            **The join is one command**, as N8 pointed: the archive's open run and the
+            graph's marks have to describe the same profile, and two commands cannot promise
+            that. **The rule is narrow** — a run opens an achievement only when *everything*
+            still missing from it is a mark for this character — and the test was mutated to
+            check the wider rule turns it red.
+            **The character stayed ambiguous on purpose.** The log prints a name, the game
+            gives a Tainted character the base form's name, so the view holds both forms and
+            says it holds both; inferring the right one from the starting items was refused
+            twice, in the spec and again here. And the plan's single absence became two:
+            *no profile* and *no graph* are different sentences to whoever is reading, which
+            the spec's own "the run draws either way" is what made visible.
       - [x] **2a — the Run screen** is done the same evening, `feature/run-screen`: the diary,
             four filters on N3's engine, the totals, and the chosen run's items under the
             list. **Nothing new crossed the IPC**, which is why 2a could be split off at all.
@@ -1660,7 +1675,7 @@ nothing at all. **B51**: Adult's page never says how you become an adult — the
 page's *preamble*, which the parser drops by a rule written for "X is a passive item…", and
 `transformation::requires` reads that very line for its digit before throwing the sentence away.
 
-**And M4's second sub-project opened and its first half closed.** The design was taken in
+**And M4's second sub-project opened and closed, both halves.** The design was taken in
 conversation — Run is a diary, Live shows the run in progress *and what finishing it would
 open*, abandoned runs stay in the list marked, and the list is filterable — then **2a** was
 planned and built the same evening: the archive that fills itself has a screen, and nothing
@@ -1672,6 +1687,19 @@ in prose and **cannot both be obeyed by one comparison**: with an unreadable nam
 readable ones the comparator has a cycle, and `Array.sort` given a contradictory comparator
 does not fail — it answers something arbitrary, which is the worst way to be wrong. Sorting
 only the readable names into the slots they already hold is a total order.
+
+**Then 2b — Live — the same evening.** The run being watched, and what finishing it would
+open, grouped by the cell it needs. The join is **one command**, as N8 pointed. The rule is
+narrow — a run opens an achievement only when *everything* still missing from it is a mark
+for this character — and the test was mutated to check the wider rule turns it red.
+
+**The character stayed ambiguous, deliberately.** The log prints a name and the game gives a
+Tainted character the base form's name, so the screen says *"il log scrive «Cain», e il gioco
+chiama così 2 personaggi"* and shows both. Inferring the right one from the starting items
+was refused twice — in the spec and again in the code — because it is an inference, and this
+repo pays for those. **And the plan's single absence became two**: *no profile* and *no
+graph* are different sentences to whoever is reading, which the spec's own "the run draws
+either way" is what made visible.
 
 **And the window earned its keep again**: two badges wore the `Unknown` variant — the
 question mark this design keeps for *what the app could not read* — on **online** and
