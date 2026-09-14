@@ -110,6 +110,14 @@ fn dlc_codes(s: &str) -> Vec<Dlc> {
         .collect()
 }
 
+/// A closed list, and deliberately not a general HTML-entity decoder: the input is
+/// wikitext, not HTML, and a decoder that also ate `&amp;lt;` would be inventing a rule
+/// nobody measured. What is outside the list is counted by the caller, not guessed at.
+///
+/// The last three are the ones the wiki writes to protect **template syntax**: a comma or a
+/// colon inside a template argument would be read as a separator, an apostrophe would run
+/// into italic markup. MediaWiki decodes them when it renders, and until 2026-09-14 this
+/// parser passed them through, so three pickup quotes shipped reading `&comma;`.
 fn entity(name: &str) -> Option<&'static str> {
     Some(match name {
         "nbsp" | "#32" => " ",
@@ -120,8 +128,23 @@ fn entity(name: &str) -> Option<&'static str> {
         "quot" => "\"",
         "ndash" => "–",
         "mdash" => "—",
+        "comma" => ",",
+        "colon" => ":",
+        "apos" => "'",
         _ => return None, // allowed: HTML entity, an open-ended set
     })
+}
+
+/// Whether a run between `&` and `;` is shaped like an entity name at all — a letter then
+/// letters and digits, or `#` and digits. Without this an ordinary `&` in a sentence
+/// ("R&D; more") would be counted as an entity nobody knows, and the counter that exists to
+/// show a real gap would fill up with prose.
+fn looks_like_entity_name(name: &str) -> bool {
+    if let Some(digits) = name.strip_prefix('#') {
+        return !digits.is_empty() && digits.bytes().all(|b| b.is_ascii_digit());
+    }
+    let mut cs = name.bytes();
+    cs.next().is_some_and(|b| b.is_ascii_alphabetic()) && cs.all(|b| b.is_ascii_alphanumeric())
 }
 
 /// A reference's label: `text=`, then the second positional argument if it isn't a `k=v`
@@ -234,15 +257,25 @@ fn parse_inline_at(src: &str, r: &Resolver, d: &mut Diagnostics, depth: u32) -> 
             }
         }
         if rest.starts_with('&') {
-            if let Some((rep, end)) = rest
+            if let Some((name, end)) = rest
                 .get(1..)
                 .and_then(|s| s.find(';'))
                 .filter(|e| *e <= 8)
-                .and_then(|end| Some((entity(rest.get(1..1 + end)?)?, end)))
+                .and_then(|end| Some((rest.get(1..1 + end)?, end)))
+                .filter(|(name, _)| looks_like_entity_name(name))
             {
-                out.buf.push_str(rep);
-                i += end + 2;
-                continue;
+                match entity(name) {
+                    Some(rep) => {
+                        out.buf.push_str(rep);
+                        i += end + 2;
+                        continue;
+                    }
+                    // Counted, and the text kept: it is the wiki's content, and dropping a
+                    // run because we do not know one name in it would destroy more than it
+                    // fixes. The counter is what makes the next one visible instead of
+                    // shipped — which is how the three below it shipped.
+                    None => d.unknown_entity(name),
+                }
             }
         }
         let Some(ch) = rest.chars().next() else {
@@ -501,6 +534,35 @@ mod tests {
             text: t.into(),
             style,
         }
+    }
+
+    /// The three entities that reach `dataset/wiki.json`, measured on the snapshot of
+    /// 2026-09-13: item 469 reads `&colon;(`, item 601 "Tears up&comma; you feel forgiven",
+    /// trinket 138 "t&apos;s broken". All three are pickup quotes, and the wiki writes them
+    /// to protect a comma or a colon inside a template argument and an apostrophe against
+    /// italic markup. MediaWiki decodes them when it renders; this parser passed them
+    /// through, so they reached the screen as `&comma;`.
+    #[test]
+    fn the_entities_that_protect_template_syntax_are_decoded() {
+        let (v, d) = p("&colon;( Tears up&comma; you feel forgiven t&apos;s broken");
+        assert_eq!(
+            v,
+            vec![text(
+                ":( Tears up, you feel forgiven t's broken",
+                Style::Plain
+            )]
+        );
+        assert!(d.unknown_entities.is_empty(), "{:?}", d.unknown_entities);
+    }
+
+    /// An entity the closed list does not cover is **kept and counted**, never dropped: the
+    /// text is the wiki's content and `&` is an ordinary character in it. Counting is what
+    /// makes the next one visible instead of shipped, which is the whole of B38.
+    #[test]
+    fn an_entity_outside_the_closed_list_is_counted_and_kept() {
+        let (v, d) = p("a &hearts; b");
+        assert_eq!(v, vec![text("a &hearts; b", Style::Plain)]);
+        assert_eq!(d.unknown_entities.get("hearts"), Some(&1));
     }
 
     #[test]
