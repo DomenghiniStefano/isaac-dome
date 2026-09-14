@@ -5,6 +5,46 @@ already exists, what's missing, and what kind of task it is (analysis or impleme
 it follows the usual cycle: spec → plan → execution → report, and the entry here closes with a
 pointer to the report.
 
+## What an entry needs before you can start it
+
+Every open entry carries a **`**Needs:**` line under its heading**, added 2026-09-14 after a
+session opened on a machine with no game installed and spent its first minutes finding out which
+tasks were even possible. It answers one question — *what does this need beyond a clone of this
+repo?* — and it always says why, because a label with no reason is the thing this project spends
+its corrections on.
+
+| value | means | who has it |
+|---|---|---|
+| `nothing` | pure crates, the frontend, the committed dataset, packaging | anyone who clones |
+| `a real save` | a `.dat` in `samples/`, sometimes of a stated era | whoever plays, once |
+| `the game` | the installed game: `samples/packed`, the catalog, the art | whoever has it installed |
+| `a measurement` | the game **played**: a run, a matched window, `live_probe` | one session at the machine |
+
+`, then a window` is added where finishing it means looking at the built app. It is **not** about
+the game — the app runs and degrades without it — it is about the thing no test in this repo does,
+which is draw a screen. It is the second most common reason a task cannot be closed remotely, and
+the session log is full of entries that say *"not seen in a real Tauri window"*.
+
+**The tag names what it takes to finish and believe the entry, not to start typing.** Plenty of
+`the game` work can be written against fixtures; what it cannot do there is be verified, and a
+half of a task that cannot be verified is not a half that should be shipped.
+
+**Snapshot of 2026-09-14**, 26 open entries. Regenerate rather than trust it — this prints each
+open entry's heading with its tag under it, and was run before being written down:
+
+```
+grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
+```
+
+- **`nothing` (16)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B34, B38, B39, B40, B41, B42, B43
+- **`a real save` (3)** — B21, B22, B23
+- **`the game` (5)** — B3, B10, B19, B33, B36
+- **`a measurement` (2)** — B9, B20
+
+The `a measurement` bucket is the same subject as *"What only a machine with the game can answer"*
+in `docs/STATUS.md`, which collects the ones that are instruments rather than entries. Closed
+entries carry no tag: nobody goes looking for a task that is done.
+
 ---
 
 ## B1 — Item detail: primary and secondary effects (an **analysis** task) ✅ closed on 2026-09-05
@@ -139,6 +179,8 @@ while executing it, that the original entry didn't know:
 
 ## B3 — Lists and search: challenges and items (implementation, after design)
 
+**Needs:** the game — it lists challenges and items, and both come out of the catalog the game's XML builds.
+
 Logged on 2026-09-05. The data is there; what's missing is the IPC commands that list challenges and
 items with B1's fields and the filterable grid (TanStack Table) on the frontend side. It depends on the
 screen design, so it waits on the design system rather than on the handoff — which
@@ -260,6 +302,8 @@ every question below was answered where it said it would be:
 ---
 
 ## B6 — Multiple tabs and session restore (implementation, after design)
+
+**Needs:** nothing, then a window — tabs and the session document are `ui` and `store`; whether a restart reopens what you had is seen, not asserted.
 
 Logged on 2026-09-06, an explicit request. The shell behaves **like a browser**: several tabs
 open together, you switch between them, reorder them, close them. In the
@@ -533,6 +577,8 @@ last session; `RNG Start Seed` gives the dedup key that makes re-reading safe.
 
 ## B9 — Re-identify the save's sections from the game's own names (implementation, delicate)
 
+**Needs:** a measurement — naming a section is reading bytes move while the game runs; three of the four are still `Unknown` for want of a run.
+
 Logged on 2026-09-08, out of the B8 spike. Evidence and the full table in
 `docs/superpowers/reports/2026-09-08-b8-log-spike-report.md`.
 
@@ -694,6 +740,8 @@ to stop calling it `Unknown8`.
 
 ## B10 — The design export pack: what the design tool had to measure by hand (implementation, `design-export`)
 
+**Needs:** the game — `pnpm design:export` reads `samples/packed`, so the pack cannot be regenerated without it.
+
 Logged on 2026-09-10, from `design-export.md` inside the Claude Design export: the places
 where the pack `pnpm design:export` produces forced the design tool to measure, crop or
 guess. They aren't bugs in the app, but cycle 2's matrix cell leans on the first four, and
@@ -724,6 +772,8 @@ every later export repeats the work until the pack says what it knows.
 
 ## B11 — Third-party licences travel with the bundle (implementation, packaging)
 
+**Needs:** nothing — `bundle.resources` and two licence files; a bundle build says whether they travel.
+
 Logged 2026-09-10: Vite copies only the hashed `determination-*.ttf` into `ui/dist`;
 `ui/src/assets/fonts/determination/license.txt` and `readme.txt` stay in the source tree,
 while the font's readme requires all files of the archive to accompany any redistribution
@@ -735,6 +785,8 @@ About (cycle 3).
 ---
 
 ## B12 — Design system cycle 1 follow-ups (implementation, cycles 2 and 3)
+
+**Needs:** nothing — frontend, `cn()` and the scanner. Items 3 and 10 are contrast and state readability: they need a look before they can be decided, not the game.
 
 Logged 2026-09-10, a list:
 
@@ -793,6 +845,8 @@ columns resolves to two tiers.
 
 ## B14 — Choosing the game or saves folder by hand (implementation, cycle 3)
 
+**Needs:** nothing, then a window — it is the *broken* chain it serves, which is this machine's normal state; the dialog plugin and a folder are all it takes.
+
 Logged 2026-09-11, from sub-project 3.1: when the chain breaks (Steam missing, the game not
 found, no saves) the profile screen says where and offers "Riprova", but not the two buttons
 of `Schermate.dc.html` ("Scegli la cartella del gioco", "Scegli la cartella dei
@@ -804,6 +858,8 @@ persisted in the settings file, and `discovery` trying it before its own search.
 ---
 
 ## B15 — Tearing a tab off into its own window, and back (implementation, after 3.7) — 🟡 built on 2026-09-13, **not yet measured on the machine**
+
+**Needs:** nothing, then a window — the one open question is whether WebView2 keeps delivering pointer events outside the window, and only a hand on a mouse answers it.
 
 **Built on `feature/drag-and-windows`, ahead of 3.7 rather than after it** (spec
 `docs/superpowers/specs/2026-09-13-drag-and-windows-design.md`): the window port and its fake,
@@ -913,6 +969,8 @@ The navbar shows the Dome mark, red, and the taskbar and installer show the same
 
 ## B17 — The profile screen is a welcome flow, not "Screen 0" (implementation, after design) ⏳ copy done on 2026-09-12
 
+**Needs:** nothing, then a window — the welcome flow draws against fixtures (`?fixture=pick`); a real preview wants a real profile.
+
 **Item 1 is done** (2026-09-12): the eyebrow "Schermata 0" and the intro that called the
 screen a permanent state are gone, and the sidebar hint no longer says the app finds the game
 from there. The screen now says what it is for — choose the save you are playing with.
@@ -999,6 +1057,8 @@ background with the mark, and the shell replaces it without a jump.
 
 ## B19 — The marked cell sits on the game's paper, not on a flat panel (implementation, `ipc` and `ui`)
 
+**Needs:** the game — the paper sheet is a game asset, extracted from the user's copy at runtime, and the entry forbids a colour that resembles it.
+
 Logged 2026-09-12, from the owner's review of Completion: a taken mark is drawn on a flat
 light panel, and it should sit on the game's own paper sheet, the one the completion widget
 draws under every symbol.
@@ -1038,6 +1098,8 @@ page's legend row shows the same. Without the game, nothing changes.
 ---
 
 ## B20 — "Non leggibile" leaves the matrix: close the 40 cells (measurement, then `core-save` and `ui`)
+
+**Needs:** a measurement — one run of Mother with a Tainted character closes the 20 × 2 block; the dated series has been walked and cannot.
 
 Logged 2026-09-12, a product decision from the owner: the matrix shouldn't say "non
 leggibile". The state has to be resolved, not restyled.
@@ -1080,6 +1142,8 @@ draws every cell unknown and says why.
 ---
 
 ## B21 — A mark taken in multiplayer says so (`ipc` and `ui`; **two of three measured 2026-09-12**)
+
+**Needs:** a real save — the bit only exists from the era the profile first won online, so a 642-era save is what makes the tests speak. The third measurement (local co-op) still wants a run.
 
 Logged 2026-09-12, a product requirement from the owner: the matrix has to show whether a
 mark was taken in multiplayer or alone. Today a cell knows only its level.
@@ -1147,6 +1211,8 @@ half already is, by `the_online_bit_never_stands_without_the_cleared_bit` in
 
 ## B22 — Two counts per row: normal and hard, where hard implies normal (implementation, `ipc` and `ui`)
 
+**Needs:** a real save — "hard implies normal" is logic over bits, but the two counts per row are only answerable against a profile.
+
 Logged 2026-09-12, two product rules from the owner, one entry because they are the same
 number:
 
@@ -1195,6 +1261,8 @@ expected number from the previous single count.
 ---
 
 ## B23 — The Completion KPIs: no "120 celle", no "40 non leggibili" (implementation, after design, with B20 and B22)
+
+**Needs:** a real save, then a window — the tiles are what the strip above the matrix reads, and the matrix needs a profile to have a number in it.
 
 Logged 2026-09-12, from the owner's review of the strip above the matrix
 (`screens/completion/CompletionKpis.vue`, spec §"KPIs"): of the four tiles, two say nothing
@@ -1386,6 +1454,8 @@ has a rule that a px token needs a reason.
 
 ## B27 — A table fills the page, or the mouse sizes it and the size is remembered per table (implementation, `ui` and `app`)
 
+**Needs:** nothing, then a window — a table that fills the page or is sized by the mouse is judged at the size a window actually has.
+
 Logged 2026-09-12, a product rule from the owner: a table either **scales with the page it
 is open in**, or it is **resizable with the mouse**; in the second case its size is saved in
 state, **per table**, so it never has to be resized again after a restart.
@@ -1481,6 +1551,8 @@ character row in Unlock shares its label with another.
 
 ## B29 — The Collection's filter: no "Faccette", no values with nothing behind them (implementation, `ui`, after design) ⏳ the two sight fixes done on 2026-09-12
 
+**Needs:** nothing, then a window — one filter bar with a fold and multi-select dropdowns: a new primitive and a design pass, both frontend.
+
 **The two things wrong on sight are fixed** (2026-09-12), on both screens: the drawer says
 "Filtri" / "Filters", and a value with nothing behind it is no longer offered at all — it used
 to sit there with a 0 and a disabled checkbox. **The shape the owner wants stays open**: one
@@ -1530,6 +1602,8 @@ currently picked; and the word "Faccette" appears nowhere in the app.
 ---
 
 ## B30 — Where the app writes, in Settings, and movable (implementation, `app`, `store` and `ui`)
+
+**Needs:** nothing, then a window — the folder, its size and the button that moves it are `app`, `store` and `ui`; the move is watched once.
 
 Logged 2026-09-12, from the owner while reading the About dialog: About says the app writes
 one file, `isaacdome.db`, in the app's data folder — and the owner wants to **see that folder
@@ -1715,6 +1789,8 @@ del gioco:".
 
 ## B33 — The achievement drawing sits on the game's own backing, as the game shows it (implementation, `ipc` and `ui`)
 
+**Needs:** the game — the backing "has to be looked for in the game's files", which is the whole point of the entry.
+
 Logged 2026-09-12, from the owner's review of the cards: the achievement picture is drawn on
 a flat colour, and it should sit on **the image the game itself puts behind it** — the
 right one has to be looked for in the game's files, not approximated.
@@ -1752,6 +1828,8 @@ game does, and the entry names the sheet and frame it came from.
 ---
 
 ## B34 — Seventeen references the wiki never meant as targets (implementation, `graph` and `dataset`)
+
+**Needs:** nothing — `graph` and `dataset` are pure crates over the committed snapshot. Half of it is closed and the other half says not to build the filter: see the correction at the top before starting.
 
 > **Corrected on 2026-09-13. Half of this entry is closed and the other half is wrong.**
 >
@@ -1876,6 +1954,8 @@ the card's headline.
 
 ## B36 — A mark and a counter say which boss they mean, and link to it (measurement, then `ipc` and `ui`)
 
+**Needs:** the game — the ten bosses' keys come from the dataset and need none, but the counters resolve through the catalog, and that half does.
+
 Logged on 2026-09-12, with 3.5d. `RequirementView::Mark` names a cell of the completion matrix
 ("beat Delirium with Cain") and `Counter` a threshold on a tally; both draw in the blocked menu
 as names you cannot follow, because neither carries a page.
@@ -1962,6 +2042,8 @@ none.
 
 ## B38 — Three pickup quotes ship an undecoded HTML entity (implementation, `wiki`, small)
 
+**Needs:** nothing — `crates/wiki` is pure and reads only `dataset/raw/`; `pnpm wiki:build` rebuilds the derivative without the network.
+
 Logged on 2026-09-13, found by `crates/ipc/tests/wiki_agrees_with_catalog.rs`: of the quote
 disagreements between the wiki and the game, this is the only one that is **ours**. Every
 other one is the wiki being behind the game — five items still carrying the pre-Repentance
@@ -2007,6 +2089,8 @@ rebuilt `dataset/wiki.json` travels in its own commit, as every regenerated arte
 ---
 
 ## B39 — A tab carries its state between windows: filters, scroll, what it was showing (implementation, `ui`, after 3.7's shape)
+
+**Needs:** nothing, then a window — what a tab carries between windows is `ui`; that it survives the move is seen.
 
 Logged 2026-09-13, from the owner while checking the tear-off: *"si devono tenere anche filtri,
 scroll ecc quando tratti uno spostamento di tab"*. A tab dragged into another window arrives at
@@ -2054,6 +2138,8 @@ a tab that survives a restart, because it is the same mechanism.
 
 ## B40 — A transformation's infobox has no rows (implementation, `ui`, small)
 
+**Needs:** nothing, then a window — the three fields are in the embedded dataset and on the wire already; only the card is missing.
+
 Logged 2026-09-13, found by N7: generating the contract added the `transformation` variant to
 `Infobox`, and `WikiInfobox.vue` had no case for it. Before that the union did not carry the
 variant at all, so the switch reached `assertNever` — a transformation page's infobox **threw**
@@ -2074,6 +2160,8 @@ that field records why a default would be invisible against the pages that do sa
 ---
 
 ## B41 — Starting with Windows, so no run is lost to a launch the app missed (implementation, `ipc`, `app` and `ui`, after design)
+
+**Needs:** nothing, then a window — the registry, a pure `launch_intent`, and a switch. Closing it wants an installed build, a logout and a login.
 
 Logged on 2026-09-14, from the owner: *"aggiungiamo opzione avvio al lancio in impostazioni in
 modo che a prescindere da quando apro il gioco IsaacDome può essere sempre aperto e leggere tutte
@@ -2128,6 +2216,8 @@ this entry, not a new one.
 
 ## B42 — Two Cargo tables are downloaded, committed, and read by nothing (implementation, `wiki`, small)
 
+**Needs:** nothing — `wiki-snapshot`'s query and `dataset/raw/cargo/`, both committed.
+
 Logged on 2026-09-13, noticed while adding the transformations' five fields to the same
 query. `crates/wiki-snapshot/src/api.rs` downloads ten Cargo tables; `Raw::load` puts seven
 of them in `Tables`, plus `version`. **`player.json` and `stage.json` are written to
@@ -2162,6 +2252,8 @@ the commit body.
 ---
 
 ## B43 — Four screens virtualize a list under Unlock's name (implementation, `ui`, small)
+
+**Needs:** nothing, then a window — the scaffolding and the two tokens are `ui`; that four screens still scroll with the rows they had is what only a window says.
 
 Logged on 2026-09-14, measured while closing N3. N3 declares `UnlockTable.vue` and
 `CollectionTable.vue` as **staying two on purpose** — they draw different columns, and one
