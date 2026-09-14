@@ -1,0 +1,244 @@
+{{header characters}}
+{{infobox characters
+ | dlc         = a+
+ | name 2      = The Soul
+ | id          = 16
+ | health      = {{hearts|bone=2}}
+ | health 2    = {{heart|soul}}
+ | damage      = 3.5 (*1.50)
+ | damage 2    = 3.5 (*1.00)
+ | tears       = +0; x1/2
+ | tears 2     = +0
+ | speed 2     = 1.30
+ | unlocked by = The Forgotten
+}}
+'''The Forgotten''' is a secret [[character]] added in [[Booster Pack#5]] that resembles a {{E|Bony}}. He cannot fire regular tears, and instead has a bone club that can be swung as a melee weapon or charged to be thrown.
+
+The Forgotten cannot acquire regular heart containers. Any regular heart containers acquired will be turned into {{e|Bone Heart}}s, and any {{e|Soul Heart}}s or {{e|Black Heart}}s will be given to The Soul. The Forgotten and The Soul share a health bar, so each form has a maximum of 6 hearts instead of the regular 12. The run ends if either the Forgotten or The Soul die, regardless of the other's health.
+
+== The Soul ==
+Pressing the swap key ({{plat|PC}} CTRL / {{plat|PS4}} R2 / {{plat|XboxOne}} RT / {{plat|Switch}} ZR) will switch control to '''The Soul''', a blue ghost chained to The Forgotten who fires spectral tears and can fly.
+
+While controlling The Soul, The Forgotten will remain stationary and cannot take damage, blocks all normal shots that touch it, and attracts shots in a small <1 tile radius. If The Soul or The Forgotten dies, the run will end.
+
+== Notes ==
+* The Forgotten's bone club deals 3× his damage when swung and 1.5× his damage when thrown. The melee attack deals knockback to enemies ({{Dlc|r}} and occasionally The Forgotten himself) if it hits.
+** Thus, just using melee is usually better. However, it is worth to alternate between melee and ranged attacks with some builds (such as with {{i|Polyphemus}}, {{i|Mutant Spider}} or {{i|The Inner Eye}}) to maximize damage.
+** {{Dlc|r}} At 30.00 [[Tears|fire rate]] or above, the melee attack is automatically performed while holding shoot key; releasing shoot key makes him immediately throw his bone club (without the usual delay).
+** {{Dlc|r}} If The Forgotten's damage stat is lower than 3.5, the bone toss attack deals 1x his damage + 1.75 instead, which can be more helpful when he has low damage.
+** A bone toss attack has the exact same property (base damage, triggering of [[Tear Effects|tear effects]], etc.) as the melee attack right before it.
+** The Forgotten's bone club passes through walls, obstacles, and enemies. The thrown bone club can hit an enemy up to two times (once after throwing and once whilst returning).
+* The Forgotten has some unique [[deal with the Devil]] mechanics:
+** {{dlc|nr}} The Forgotten cannot take deals with the Devil as he only has bone hearts, but The Soul can with its soul hearts.
+*** {{dlc|r}} The Forgotten can take devil deals at the cost of Bone Hearts, equally to normal Red Hearts.
+**** {{dlc|r}} As such, it is possible to softlock the game by taking a deal that would kill The Forgotten and switching to The Soul.
+***** {{dlc+|r}} It may be possible to avoid this softlock with {{i|Birthright}}, since the Soul won't be chained to the Forgotten.{{dlc-}}
+** If a deal would deal lethal damage to The Soul, quickly switching to The Forgotten will keep him alive. This can even be done to take 3-heart deals for one soul heart.
+*** If The Soul has no Hearts, switching to The Soul is disabled until another Soul or Black Heart is acquired.
+** Losing red hearts inside bone heart containers does not count as red heart damage for devil deal chances, but breaking bone heart containers does. ({{dlc|nr}} This includes breaking them through self-damaging items, Curse Room usage, Sacrifice Rooms, Devil Beggars, Blood Donation Machines, etc.)
+* The Forgotten's melee attack can collect pickups and open chests.
+** Opening a {{E|Mimic Chest}} this way deals no damage.
+** {{e|Bomb Chest}}s cannot be opened this way. {{E|Locked Chest}}s and {{E|Eternal Chest}}s still require a {{e|Key}} or the {{t|Paper Clip}} to open.
+** Items that can be moved but cannot be picked up are pushed. This can launch {{e|Bomb}}s {{i|Dr. Fetus}}-style or knock {{e|Troll Bomb}}s away.
+* The Forgotten has +20% chance to replace a Soul Heart drop with a Bone Heart.
+* The [[shot speed]] and [[tear falling speed]] stats have no effect on The Forgotten's melee attack or bone toss.
+* The [[range]] stat increases how far away from The Forgotten the melee attack's arcs appear. It doesn't affect the bone toss.
+** {{Dlc|r}} Range of the bone toss is very slightly affected by range stat.
+* The range of the melee attack scales with character size, but if character size is smaller than initial size, the melee attack range does not become smaller than initial.
+* To switch between two pills/cards, press the swap key twice quickly.
+* Picking up health upgrades as The Soul will convert them into soul hearts, just like {{C|???}}. It's generally advisable to pick up health as The Forgotten, since bone hearts are much rarer.
+* Bone Hearts cannot be broken if filled with at least a Half Red Heart, even if a full heart of damage is taken. This can be abused to repeatedly pay a half-red heart to step on a spike in a {{r|Sacrifice Room}}, for example.
+* {{dlc|nr}} Unidentified pills are more safely consumed in Soul form, as a [[Hematemesis]] pill can be very detrimental for The Forgotten but has no negative effect when consumed as The Soul.
+** {{dlc|nr}} [[Health Down]] pills are converted to [[Health Up]] for both forms, but the empty bone heart gained may be risky for retaining Devil Room chances.
+*** {{dlc|r}} Health Down pills aren't converted to Health Up anymore.
+* {{dlc+|r}} With {{i|Birthright}}, the player can leave The Forgotten's body in a room and move to a different room with The Soul. When the player switches control back to The Forgotten, The Soul instantly teleports back to the other room where the body was left in.{{dlc-}}
+** {{dlc+|r}} This makes it possible to enter and leave {{R|Curse Room}}s entirely without taking damage - leave the body outside of the Curse Room, go into the Curse Room as The Soul, then switch control to leave.{{dlc-}}
+** {{dlc+|r}} This behavior can possibly complicate things at the {{E|Rotgut}} fight if the body is brought inside Rotgut - after the player defeats the third phase of the boss as The Soul and is ejected back into the boss room, switching control back to The Forgotten will teleport the player back into the third phase of the fight, with that phase of the boss having respawned.{{dlc-}}
+* {{dlc+|r}} In Co-Op mode, if The Forgotten dies, their ghost baby will wield the bone club instead of firing tears.{{dlc-}}
+* For the purpose of entering Challenge rooms such as {{R|Boss Challenge Room}}s, the health of the Forgotten and The Soul are treated separately, bypassing the usual restrictions on these rooms in Repentance. This means that the player can lower the health of either The Forgotten or The Soul to a single heart to enter, and switch to the other once inside for a larger health pool.
+* Broken hearts are added to the current form, and are kept there when switching.
+
+== {{anchor|Unlocking the Forgotten|Unlocking The Forgotten}} ==
+{{E|The Lamb}} must have been defeated previously before The Forgotten can be unlocked, and unlocking The Forgotten can be done in both Normal and Hard difficulty. Having {{I|The Negative}} unlocked is recommended.
+
+{{dlc+|r}} Step 1 and Step 2 can be circumvented entirely if the player manages to use {{i|Spindown Dice}} on {{i|Mucormycosis}}, as it will reroll into the completed Shovel. In addition, the {{t|Myosotis}} trinket can be used to carry the Broken Shovel pickup across floors until Depths II as long as it is not picked up and there is not too many other pickups on the floor.{{dlc-}}
+
+# First, start a new unseeded run as any character. Defeat the first floor's boss within 1 minute. If done correctly, Mom will yell and the sound of running footsteps will play, then a large shadow of a shovel handle will loom over the floor of the starting room. Bombing anywhere in the starting room will spawn the {{i|Broken Shovel 1}}. Initially the shovel piece behaves like a pickup, laying on the floor, and turns into an active collectible only when touched for the first time.
+#* Holding the Broken Shovel will cause Mom to continually try to stomp Isaac. Using the Broken Shovel will stop the stomping for the current room, but will only stop the stomping for the current boss wave in the {{R|Boss Rush}}.
+#** The stomps won't happen in the {{e|Mom}} fight.
+#** {{dlc|nr}} Stomps count as explosions, so {{i|Pyromaniac}} or {{i|Host Hat}} provide immunity to them.
+#** Stomps break rocks and damage enemies. If the player has {{I|Gnawed Leaf}} and a lot of patience, the stomps will eventually clear most rooms.
+#** Stomps will open secret rooms.
+#* On XL floors, only the last boss must be defeated. {{P|IV - The Emperor}} Card allows the first boss to be skipped.
+#* Once the Broken Shovel is picked up, it '''''must not''''' be replaced by another active item. If it is on an item pedestal when Isaac leaves the room, it will disappear.
+#** If Isaac has {{i|Schoolbag}}, another active item can still be carried safely.
+#*** {{Dlc|r}} Mom still stomps if the Broken Shovel is carried in either Schoolbag slot.
+#** The stomps can be prevented if {{i|Broken Shovel 1}} is carried inside {{i|Moving Box}} and then unpacked right before the {{e|Mom}} fight.
+#* If playing in Co-op, Mom will only target the player with the Broken Shovel. If this character dies, the stomps will still continue, targeting only the dead player. If Mom is defeated while the character holding the Broken Shovel is dead, the Boss Rush door will still open after resurrection and the womb entrance will be sealed. However the player holding the shovel cannot die during boss rush or else the second piece of the shovel will not spawn. If playing Co-op to unlock the forgotten and the player holding the shovel was resurrected it is recommended to have that player only focus on dodging, or better, if there is an active item in boss rush to replace the shovel (make sure to pick it up again before completing boss rush).
+#* {{Dlc|r}} {{I|Mama Mega!}} can also be used to spawn the {{i|Broken Shovel 1}}.
+# Next, clear {{R|Boss Rush}}. This will grant the second piece of the {{i|Broken Shovel 2}}, completing {{i|Mom's Shovel}}.
+#* {{Dlc|r}} The player should be careful if they are playing as {{C|Tainted Isaac}}, due to the fact that the 2nd piece of the broken shovel will be shifting between the shovel piece and a random item.
+#* The Broken Shovel '''''must''''' be held when the boss rush is beaten. Otherwise, only a normal boss rush completion item will drop.
+#* After defeating Mom, if it is unlocked, only {{i|The Negative}} will spawn, otherwise a standard boss item will spawn.
+#* If {{i|The Negative}} is not unlocked, the player must use a {{R|Sacrifice Room}} to proceed to {{s|Dark Room}}, '''''this is not guaranteed to happen on every run.'''''
+#* The normal 20-minute time limit to reach Boss Rush does not apply. The hole to {{s|Womb}} after Mom will be sealed until the Boss Rush is completed.
+#* After Mom's Shovel is acquired, Mom's feet will stop attempting to stomp Isaac.
+# Finally, a single [[Grave Room]] with a [[Dirt Patch]] in its center will appear in the {{s|Dark Room}}. Using Mom's Shovel while standing on the Dirt Patch unlocks The Forgotten.
+#* If the Grave Room is exited before the soul reaches the top of the screen, The Forgotten may not unlock.
+#* Holding Mom's Shovel prevents the beam of light to the Cathedral from appearing, forcing Isaac into the trapdoor to {{s|Sheol}}.
+#* If stuck, confused, or frustrated, check the {{i|Broken Shovel 1}} page for tips and help.
+
+== Item Interactions ==
+Many items have unique interactions with The Forgotten's bone club or The Soul and The Forgotten's unique health system. The Soul's tears are affected normally.
+
+* {{i|Abaddon}}: Grants 2 black hearts to The Soul and empties The Forgotten's bone hearts, but doesn't remove them.
+* {{i|Adrenaline}}: Empty bone hearts increase damage, but the damage buff is removed if the bone heart breaks.
+* {{I|Almond Milk}}: Holding shoot key makes The Forgotten constantly perform his melee attack and releasing the key makes him throw his bone club. The delay between melee and bone toss attack is also removed.
+* {{dlc|nr}} {{i|Angelic Prism}}: When the bone club hits the prism, the prism fires 4 bone clubs while the original bone club travels back to The Forgotten. The bone club will quadruple when passing through prism whether traveling away from or back towards The Forgotten. However, bone clubs fired from the prism will travel and spread out very quickly, making it hard to hit enemies with them unless they are close to the prism.
+** {{dlc|r}} The bone club is only quadrupled when traveling away from The Forgotten. The 4 bone clubs travel back to Forgotten.
+* {{i|Anti-Gravity}}: The bone's melee attack will linger in place briefly and can damage enemies, or even pick up items that move into the arc. Will not damage enemies more than once per swing. The throw is unaffected.
+** '''Anti-Gravity''' + '''Mom's Knife''': As Mom's Knife allows hitting enemies more than once in a single swing, with Anti-Gravity it will hit enemies up to 4 times. The throw is unaffected.
+* {{i|Birthright}}: The Soul is unchained and free to move. It can leave The Forgotten behind and leave the room and switching back teleports to the skeletal body even from hostile, closed rooms.
+* {{i|Blood Clot}}: The Forgotten has a 50% chance for Blood Clot effects to apply to melee or ranged attack. When Blood Clot effects are applied the bone will turn red.
+* {{tf|Bookworm}}: Bookworm transformation will make the bone swing go twice sometimes.
+* {{i|Brimstone}}: The charged attack will spawn a Brimstone ball which will float in front of The Forgotten for a few seconds before disappearing. The Forgotten will still melee attack while performing this action.
+** '''Brimstone''' + {{i|Hemoptysis}}: Brimstone ball deals 2x and +3 flat damage and will spread curse to nearby enemy.
+** '''Brimstone''' + {{i|Eye of the Occult}}: Brimstone ball after launched can be moved in similar fashion to Ludovico Technique and will disappeared after a few seconds
+* {{i|C Section}}: Fetuses are skeletons that attack with bone clubs in addition to contact damage.
+* {{i|Chocolate Milk}}: The bone grows in size and damage as it is charged, but it cannot be thrown. Unlike regular tears, the bone swing cannot be spammed by rapidly tapping the attack button.
+* {{i|Compound Fracture}}/{{i|Cricket's Body}}: Smaller bone shots appear whenever an enemy is hit with the melee attack. {{dlc|nr}} The throw is unaffected.
+** {{Dlc|r}} {{i|Compound Fracture}}: Bone toss attack also creates bone tears.
+* {{i|Converter}}: Takes {{Dlc|nr}}two or {{Dlc|r}}one soul or black hearts and gives a bone heart if used in Soul form. If The Soul runs out of hearts this way, it will not cause death but instead just automatically swap back to The Forgotten.
+* {{t|Crow Heart}}: prevents The Forgotten from losing bone heart containers as long as he still has red health.
+* {{i|Cursed Eye}}: The Forgotten's bone toss attack is replaced with multiple rapid melee attacks, the number depending on how long the attack buttons are held.
+* {{i|Dark Prince's Crown}}: The crown activates at one full bone heart.
+* {{i|Dead Cat}}: Sets The Forgotten's bone hearts or The Soul's soul hearts to 1 depending on which form The Forgotten is in when picking the item up. If it's picked up as The Soul, The Forgotten is healed by 1 red heart.
+** However, both The Forgotten and The Soul will respawn with one bone heart and one soul heart respectively regardless of the form they died in.
+* {{i|Dead Eye}}: Each successful hit with the bone club will increase the damage multiplier.
+* {{i|Dead Tooth}}: The green aura will become active when using melee and charging throw attack.
+* {{i|Dr. Fetus}}: A live bomb will spawn on top of The Forgotten when he starts charging his attack. The Forgotten will toss bombs after releasing the charge, airborne bombs deal 1.5× his damage if they collide with an enemy with enough speed. The bomb is dropped if he is put into an animation (taking damage, using pocket items, etc.). Max distance is obtained with minimal charge. If the bomb explodes while charging, a normal ranged bone attack happens after releasing it. The melee is unaffected.
+** '''Dr. Fetus''' + {{I|Rocket in a Jar}}: The bomb is replaced with a rocket and can be held indefinitely.
+* {{i|Epic Fetus}}: The charge attack is replaced by a missile in The Forgotten's hand and a crosshair that may be moved. The missile is thrown at the crosshair when all attack buttons are released, with an additional melee swing in the same direction. Unlike Dr. Fetus, the missile can be held indefinitely without exploding in his hand. The melee attack is unaffected.
+** {{Dlc|r}} '''Epic Fetus''' + {{I|Stop Watch}}: The missile is slowed and falls to the ground before reaching the crosshair, causing a slight range down on the missile attack.
+* {{i|Euthanasia}}: Adds a chance for melee or throw to do triple damage. {{dlc|nr}} Attacks will not split into burst bone clubs or be able to kill normally unkillable enemies.
+** {{Dlc|r}} The insta-kill ability from Euthanasia works as expected.
+* {{i|Evil Eye}}: As the Evil Eye projectile launches, it mimics The Forgotten's melee attack. After launching an Evil Eye projectile as The Forgotten and switching to The Soul, the Evil Eye projectile will continue the melee attack from The Forgotten. After launching an Evil Eye projectile as The Soul and switching to The Forgotten, the Evil Eye projectile will fire bones.
+* {{i|Explosivo}}: The Forgotten's club swing can attach explosives.
+** The short range of the club also increases the risk of attached explosives detonating and damaging the player.
+* {{t|Extension Cord}}: The Forgotten's body is treated as a familiar while controlling The Soul, causing electricity to bounce to it.
+* {{dlc|nr}}{{i|Eye of Greed}}: No effect on The Forgotten's bone club.
+** {{Dlc|r}} Every 20th attack fires a golden tear.
+* {{i|Fate's Reward}}/{{dlc|nr}}{{i|Incubus}}: The familiars will fire smaller bone shots even when The Forgotten uses their charged attack.
+** {{Dlc|r}} {{I|Incubus}} attacks with a smaller bone club like The Forgotten does.
+* {{i|Fire Mind}}: Melee and throw have a chance to inflict [[burn]]ing. However, neither melee nor throw attacks trigger the explosive effect.
+* {{i|Flat Stone}}: The bone bounces on the ground a few times when thrown, dealing splash damage that is equal to The Forgotten's damage.
+* {{i|Fruit Cake}}: The {{i|Ipecac}} explosion effect may activate on melee attacks. Unlike with actual Ipecac, the explosion will hurt The Forgotten.
+* {{I|Giant Cell}}: The familiars spawned will attack with a club like The Forgotten.
+* {{dlc|nr}} {{i|Glass Cannon}}: Only the active character's health is affected: The Forgotten is set to one empty bone heart and The Soul is set to half a soul heart.
+* {{i|Ghost Pepper}}: Fire is occasionally spawned while attacking or throwing the bone club.
+* {{i|Godhead}}: Gives The Forgotten's bone homing when thrown but does not grant an aura.
+* {{i|Guillotine}}: The Forgotten will fire from its body, while The Soul is affected normally.
+* {{i|Guppy's Paw}}/{{i|Potato Peeler}}: The Forgotten cannot use either of these items, as neither bone hearts or soul/black hearts qualify for them.
+* {{i|Haemolacria}}: A burst of blood shots appears whenever an enemy is hit with the melee attack. The throw is unaffected. Size and reach of the melee attack are increased.
+* {{dlc|nr}}{{i|Head of the Keeper}}: Head of the Keeper will not work with either the melee attack or throw.
+** {{Dlc|r}} Both melee and bone throw attack have a chance to spawn a coin when hitting an enemy.
+* {{i|Holy Light}}: The melee and ranged attack can create beams of light.
+* [[Homing tears]]: The thrown bone homes in on enemies.
+* {{i|How to Jump}}: Swapping from his soul form into his bone form can be used to cancel the book's jump, creating a super dash that allows you to hit enemies while being fully invincible.
+* {{I|Immaculate Heart}}: Every melee swing has a chance to create an orbiting bone tear.
+* {{i|Ipecac}}: The Forgotten's melee attack will trigger an explosion when it makes contact with an enemy, but The Forgotten will not be harmed by it. This does not make The Forgotten impervious to other types of explosions.
+** '''Ipecac''' + {{i|Pyromaniac}}: The Forgotten will be healed by the explosion whenever they hit an enemy.
+** {{Dlc|r}} The thrown bone club will also trigger an explosion in the first contact with an enemy (but not on its way returning) and will not hurt The Forgotten himself. The explosion damage scales with charge state of the club.
+* {{i|IV Bag}}/{{m|Blood Donation Machine}}s: Will empty bone hearts without destroying them while in skeletal form.
+* {{i|Jacob's Ladder}}: Both the melee and thrown attacks cause 1-2 arcs of electricity to zap out when they hit an enemy.
+* {{i|Kidney Stone}}: The Forgotten launches a quick series of melee attacks after firing the kidney stone.
+* {{i|Lead Pencil|nr}}: No effect on The Forgotten's bone club.
+** {{dlc|r}} Every 15 attacks with the club results in a barrage of bones to be fired from The Forgotten's body. The bone toss is counted as a different attack from its previous melee attack.
+* {{i|Libra}}: Barring combinations with other items, The Forgotten's heavy attack rate penalty is mitigated but all other stats consequently become lower. The Soul is less affected, gaining a small all stats up from the speed bonus.
+* {{i|Little Horn|nr}}: The club arcs occasionally turn black, but they do not instantly kill enemies.
+** {{Dlc|r}} The club arcs occasionally turn black and summon {{E|Big Horn}}'s hand.
+* {{i|Loki's Horns}}: The Forgotten holds four bones, one in each cardinal direction. There is a chance for the melee or throw attacks to be triggered in all cardinal directions.
+* {{i|Lost Contact}}: The melee attack can deflect enemy shots. Deflected shots may hit enemies for fairly small damage depending on the enemy shot's size.
+* {{i|The Ludovico Technique}}: The large tear will follow The Forgotten. It can be hit with the melee attack to propel it, which also increases its damage for a short time.
+** '''The Ludovico Technique''' + {{i|Multidimensional Baby}}: Creates a second large tear when the first tear touches Multidimensional Baby.
+** '''The Ludovico Technique''' + {{i|Eye of the Occult}}: The large tear shoots out bone tears that have the effect of {{i|Eye of the Occult}}
+** '''The Ludovico Technique''' + {{i|Tiny Planet}}: causes the tear to move really fast and will not follow The Forgotten. Switching to the soul will bring it back to normal
+* {{i|A Lump of Coal}}: The melee attack is unaffected regardless of range. The bone toss attack does extra damage from further away.
+* {{i|Marked}}: The Forgotten will get stat upgrades but is otherwise unaffected.
+** {{Dlc|r}} The Forgotten can attack in any direction as well.
+* {{I|Mega Mush}}: The Forgotten turns into Isaac with grey skin, retaining the melee attack with all the benefits of the massive size.
+* {{i|Mom's Eye}}: The Forgotten holds two bones, one behind and one in front. There is a chance for the melee or throw attacks to be triggered in both directions.
+* {{i|Mom's Knife}}: The knife will attach to The Forgotten's bone club, forming a scythe. Increases the size of both the melee swing and the bone throw and allows a single melee swing to deal damage to an enemy twice instead of just once and bone toss attack to deal damage multiple times. +4 flat damage.
+* {{i|Monstro's Lung}}: The Forgotten's bone toss attack is replaced by a typical Monstro's Lung shot, though the tears are all bones.
+** {{dlc|r}} Each additional copy of Monstro's Lung adds 5 bone clubs to the swing melee, up to 16 bone clubs.
+* {{i|My Reflection}}: The Forgotten will get stat upgrades but is otherwise unaffected.
+* {{i|Mysterious Liquid}}: Throwing the bone creates a trail of damaging green creep.
+* {{i|The Parasite}}: Smaller bone shots and normal split tears appear whenever an enemy is hit with the melee attack. The bone throw will cause smaller bone shots to appear when it hits an enemy.
+* {{I|Playdough Cookie}} Each swing of the bone club will have a random effect.  The Soul's tears work as expected.
+* {{i|Polyphemus}}: The bone club becomes a lot larger, causing hits to cover a larger area.
+* {{i|Proptosis}}: Damage is doubled ({{Dlc|r}} tripled) for melee, while damage reduces normally with range when thrown.
+* {{I|Rotten Tomato}} Hitting an enemy with The Forgotten's bone club can mark them.
+* {{I|Scapular}}: The Soul gains a Soul Heart every time the Forgotten takes damage while having half or no red heart, regardless of the Soul's HP. Works normally on the Soul.
+* {{i|Schoolbag}}/{{i|Starter Deck}}/{{i|Little Baggy}}/{{i|Polydactyly}}/{{i|Deep Pockets|nr}}: The swap key must be double tapped to switch active items/consumables.
+* {{i|Sinus Infection|nr}}: No effect on The Forgotten's bone club.
+** {{dlc|r}} Hitting an enemy with The Forgotten's bone club can create a sticky booger like normal tears.
+* One Makes You Larger pills cause The Forgotten's bone club to become a lot larger.
+* {{i|Soy Milk}}: The bone's melee attack is extremely fast and the charge for throwing is short.
+** {{Dlc|r}} Holding shoot key makes The Forgotten constantly performing his melee attack and releasing the key makes him throw his bone club. The delay between melee and bone toss attack is also removed.
+* {{i|Sprinkler}}: Sprinkler fires bone tears that do The Forgotten's tear damage without the multiplier.
+* {{i|Strange Attractor}}: Melee will attract pickups and throw will attract enemies to the bone club making them easier to kill.
+* {{i|Sulfuric Acid}}: Increases damage. Melee swings and throws occasionally turn yellow {{dlc|nr}} but no other effect.
+** {{Dlc|r}} Thrown bone club has a chance to destroy rocks and open doors and secret rooms no matter whether it's yellow or not.
+* {{i|Technology}}: A laser ring will appear around The Forgotten whenever he swings, and a laser is fired between The Forgotten and the bone club whenever it is thrown.
+** '''Technology''' + {{i|Proptosis}}: Size of the laser ring is doubled.
+** '''Technology''' + {{I|Ipecac}}: The thrown bone club constantly explodes and causes unavoidable self-damage.
+** Any effects that cause the forgotten to swing multiple times at once (e.g. {{i|Loki's Horns}}) will manifest multiple laser rings.
+* {{i|Tech X}}: A laser ring appears around the bone club whenever it is thrown.
+** '''Tech X''' + {{i|Brimstone}}: The laser ring appears around the brimstone ball instead.
+** '''Tech X''' + {{i|Dr. Fetus}}: The laser ring appears around the thrown bomb instead.
+* {{i|Tech.5}}: Lasers occasionally fire when using melee or charging throw.
+* {{I|Terra}}: Thrown bone club has a chance to destroy rocks and open doors and secret rooms.
+* {{i|Tiny Planet}}: The bone throw now spins around in a circle and can be thrown further than normal with range upgrades.
+** {{Dlc|r}} The thrown bone club orbits The Forgotten at a very high speed until its max range is reached, then circles back at the same speed. However, the bone club still hits the same enemy no more than twice and does not receive a larger hitbox, effectively lowering the DPS and accuracy of the bone throw.
+* {{i|Trisagion}}: No effect on The Forgotten's bone club.
+** {{Dlc|r}} '''Trisagion''' + {{I|Explosivo}}/{{I|Sinus Infection}}/{{I|Mucormycosis}}: Hitting an enemy with The Forgotten's bone club has a chance to create a Trisagion blast that sticks on the enemy, doing damage and rapidly creating Explosivo tears, boogers or spores, respectively.
+*** Other Trisagion synergies also work on this Trisagion blast.
+* {{i|Varicose Veins}}: Fires ten bone tears in all directions that deal high damage.
+* {{i|The Wiz}}: The Forgotten wields two clubs, one in each hand, pointing diagonally outwards.
+* {{i|Eye of Belial}}/{{i|Pop!}}/{{i|Pupula Duplex}}/{{i|Rubber Cement}}/{{i|Technology Zero}}/{{i|Parasitoid}}/{{i|Tropicamide}}: No effect on The Forgotten's bone club.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Divorce Papers, Marrow, Pointy Rib, Slipped Rib, Brittle Bones, Jaw Bone, Finger Bone, Dad's Ring, Hallowed Ground, Bound Baby, Book of the Dead, Bone Spurs, Spirit Shackles, The Fettered, Bone Baby }}
+
+== Gallery ==
+<gallery>
+File:Transition_Forgotten.png|The Forgotten's transition screen portrait.
+File:Start_Forgotten.png|The spawn floor when playing The Forgotten.
+File:DarkRoomTreasure_opened.jpg|The dirt mound, now opened with Mom's Shovel.
+File:TheForgottenMomsKnifeComparison.png|A comparison between The Forgotten's bone swing attack with and without Mom's Knife.
+File:TheForgottenSoftlocked.png|The Forgotten now softlocked as The Soul, by killing off The Forgotten with a devil deal.
+File:Dogma_cutscene_The_Forgotten.png|Isaac briefly appears as The Forgotten during the cutscene preceding the fight with The Beast.
+File:AfterbirthPlus_Booster_Pack_5_Concepts.jpg|Concept art for The Forgotten in the top right corner, along with Booster pack items, including Booster Pack 5 items and trinkets that are unlocked as a result of defeating final bosses as The Forgotten.
+File:Forgotten_Items_Concept.png|Concept art for The Forgotten's item synergies, by _Kilburn.
+</gallery>
+
+== Trivia ==
+* Like most of the characters that start with only soul/black (or bone, in this case) hearts, The Forgotten's starting health is listed as "-I" on the character selection screen.
+* The Forgotten is Isaac's withered body.
+* The Forgotten's concept is confirmed to have originally been an [https://twitter.com/edmundmcmillen/status/1227014568028696581 old concept for a direct sequel to The Binding of Isaac: Rebirth].
+* If his bone club is big enough, the screen will shake when he swings it. The duration of the shaking depends on how big his club is.
+** {{plat|PS4}} {{plat|XboxOne}} {{plat|Switch}} The controller will also vibrate if his bone club is big enough.
+* As a secret character, The Forgotten does not appear on the character select screen until unlocked.
+** He shares this trait with {{C|???}}, {{C|The Lost}} and the {{C|Keeper}}.
+* The Forgotten has an unused sprite in his sprite sheet of him lying down.
+* The name of the achievement to unlock the Forgotten, "It's complicated," was originally the name of the achievement to unlocking {{C|The Lost}} in base Rebirth. However, since the Lost received a new unlock method in Afterbirth, this was changed.
+
+== Bugs ==
+{{Bug|Making a deal with the devil that kills The Forgotten and switching into The Soul before ending the animation will make only The Soul playable, and vice versa. If The Forgotten is no longer playable, The Soul will be locked to the range of the chain. This will effectively softlock the run unless you also have {{i|Birthright}}.}}
+{{Bug|If The Forgotten obtains {{i|Brimstone}} right after the bone club is thrown (via effects like {{i|D4}} or {{r|Dice Room}} or [[debug console]]), a barrage of knives is fired instead of a brimstone ball.}}
+{{Bug|If The Forgotten obtains multiple copies of {{i|Monstro's Lung}}, he will swing 5 additional bone clubs in his melee attack per copy, up to a limit of 16.}}
+{{Bug|plat=PS4|dlc=a+|Very rarely, The Forgotten's head will permanently vanish when picking up his first passive item. This bug remains unfixed even after restarting the game.}}
+{{Bug|Switching into The Soul and spawning enough entities will despawn the chain's links and let him fly around the room freely as if {{i|Birthright}} was obtained. This lasts until The Soul enters a different room or switches back into The Forgotten.}}
+
+{{nav|booster pack|character|the forgotten unlock|fr=Le Délaissé}}
+[[Category:Added in Booster Pack 5]]

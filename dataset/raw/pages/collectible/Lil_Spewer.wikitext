@@ -29,6 +29,8 @@
 * {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Lil Spewer having {{dlc|nr+}} 5th / {{dlc|r+}} 7th priority.
 * The Ipecac shot created by {{t|Torn Card}} works for unlocking the Lil Spewer achievement.
 * The explosive shots from the wisps summoned by Bob's Rotten Head and the {{I|Book of Virtues}} count for the Lil Spewer achievement
+* Dying to an Ipecac shot with {{I|Brimstone}} does not unlock Lil Spewer.
+** {{dlc+|r}} The same applies to {{I|Sulfur}}.
 
 == Interactions ==
 * {{t|Baby-Bender|n}}: Has no effect on Lil Spewer.
