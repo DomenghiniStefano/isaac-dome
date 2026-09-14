@@ -25,8 +25,9 @@ commits on `develop` directly: it is where finished work lands, through a `--no-
 a piece that has to be redone is thrown away without touching the others.
 `feature/design-system-screens` had grown to hold 3.1 through 3.3b under a name that no longer
 said what it carried; it is fully merged and kept, its deletion waiting for the owner.
-**Last update:** 2026-09-14. **Seven of the eight cleanup items are done** — N1, N2, N3, N4, N5,
-N6 and N7, each on its own branch cut from `develop`. The test-only public API has one notation
+**Last update:** 2026-09-14. **All eight cleanup items are done** — N1, N2, N3, N4, N5,
+N6, N7 and N8, each on its own branch cut from `develop` — the last two on the evening of
+2026-09-14. The test-only public API has one notation
 (one `pub mod for_tests` per crate, seven of them); **why a command failed is a variant, not
 a sentence** (four enums, the numbers travelling as numbers, the wording in `it.ts` / `en.ts`);
 **the Tauri crate is wiring again** (eleven files, none over 220 lines, `cargo test -p app`
@@ -34,8 +35,8 @@ reporting zero); one diagnostics list instead of four; one view store instead of
 **the IPC contract is generated from the Rust types**; and **one faceted list instead of two**,
 six components become three and five modules two.
 **M4's sub-project 1 is closed**, 1a and 1b both: the run model, then the watcher, the archive
-and the fourth migration (`feature/log-watch`). **N8 is what remains**, and it is where it is
-because it says *after M4* — which is now behind it.
+and the fourth migration (`feature/log-watch`). **N8 ran last**, as its own order says — *after
+M4* — and closed on the evening of 2026-09-14, which empties the cleanup list.
 Order: N1 → N2 → N6 → N4 → N5 → N7 → M4 sub-project 1 → **N3 → N8**. N4 and N5 were pulled
 forward because they are frontend, touch no file that branch has, and N7 was blocked then;
 **N3 ran before N8 rather than after**, on a machine without the game, because it is the one of
@@ -1164,8 +1165,8 @@ reason:
       every Rust call site still compiling (`#[serde(rename = "bestiaryy")]`) fails both
       `cargo-test` and `ipc-types`, and `pnpm check` is green.
 
-- [ ] **N8. The save read once per screen, not twice.** 🟡 *The free half landed on
-      2026-09-14 (`feature/one-graph-read`); the expensive one is what is left.*
+- [x] **N8. The save read once per screen, not twice.** *Closed 2026-09-14, both halves —
+      `feature/one-graph-read` then `feature/save-state`.*
       **The two graph screens are one command.** `graph_views` returns the Unlock view and
       the steps together, so a screen load reads the profile **once** — and the "done when"
       below is answered by construction rather than by a counter: there is no second entry
@@ -1173,10 +1174,19 @@ reason:
       *"one read, because both answers belong to the same profile and asking twice could
       straddle a change"* — was a promise two commands could not keep: between them a save
       written mid-load made the steps describe a profile the list no longer showed.
-      **What remains is the `SaveState` in `tauri::State`**, which is about the *other*
-      commands: Completion, the Collection, `want` and the wiki's progress block each still
-      pay for their own `active_save()`. That half is the one that needs mtime invalidation,
-      the counter, and the rule that "no profile" is never cached.
+      **And the profile is kept between commands**, in `ipc::SaveCache` — a cache and not a
+      `OnceLock` for one reason: the game rewrites the save while the app is open, so a
+      reader that remembers the first read shows a profile that no longer exists. Three
+      rules, each with a test **shown able to fail**: the same profile the settings name (no
+      name means the active one is whatever is on disk, which is the thing that changes),
+      the modified time the cached read saw (which covers the file disappearing — no time is
+      not the same time), and never a remembered failure. The time is read **after** the
+      load, so a file written *during* the read is already stale rather than trusted as a
+      value that saw half of each version. Completion, the Collection, `want` and the wiki's
+      progress block stop paying for their own read of the same file in the same second.
+      **The counter the item asked for is a call count over the policy**, not over a Tauri
+      command: the wiring stays untested by the rule that put it in `crates/app`, and what
+      was worth checking moved to the pure crate where a test can reach it.
       **Needs:** the game — its "done when" is a counter in a test showing the `.dat` opened
       once across Next steps and Unlock, and both commands go through the catalog, which on a
       machine without the game skips instead of counting. The free half (`next_steps` taking
@@ -1615,15 +1625,25 @@ nothing at all. **B51**: Adult's page never says how you become an adult — the
 page's *preamble*, which the parser drops by a rule written for "X is a passive item…", and
 `transformation::requires` reads that very line for its digit before throwing the sentence away.
 
-**And N8's free half landed**, which is the last cleanup item and the one that had been
-waiting for M4. Unlock and Next steps are **one command**: a screen load reads the profile
-once, and the "done when" is answered by construction rather than by a counter, because
-`unlock` stopped being a command and there is no second entry point left to count. The
-frontend's own comment said the two answers belong to the same profile — a promise a pair of
-commands could not keep, since a save written between them made the steps describe a profile
-the list no longer showed. **It is not a cache**: nothing is remembered and nothing has to be
-invalidated. The `SaveState` half remains, and it is about the other commands — Completion,
-the Collection, `want`, the wiki's progress block — which still pay for their own read.
+**N8 closed, both halves, and the last cleanup item with it.** The two graph screens became
+**one command** — a screen load reads the profile once, by construction and not by a counter,
+because `unlock` stopped being a command and there is no second entry point left to count.
+The frontend's own comment said the two answers belong to the same profile: a promise a pair
+of commands could not keep, since a save written between them made the steps describe a
+profile the list no longer showed.
+
+**Then the profile itself is kept between commands**, and the interesting part is what makes
+it a cache rather than a `OnceLock`: **the game rewrites that file while the app is open**.
+Three rules in `ipc::SaveCache`, each with a test that was mutated to check it could fail —
+the same profile the settings name, the modified time the cached read saw, and never a
+remembered failure. And one detail that is a decision: the time is read **after** the load,
+so a save written *during* a read is stale immediately instead of being trusted as a value
+that saw half of each version.
+
+**The counter N8 asked for is a call count over the policy**, not over a Tauri command. That
+is not a shortcut: `crates/app` is untested by the rule that put the wiring there, so the
+part with a return value worth checking moved to the pure crate where a test can reach it —
+which is the same rule, applied instead of worked around.
 
 **And B49's layout half closed**: `column list` is unwrapped into the list it already holds,
 before the line pass, so Beelzebub's page lists its flies instead of printing the wrapper's

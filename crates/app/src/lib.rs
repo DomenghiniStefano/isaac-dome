@@ -11,7 +11,7 @@ mod window;
 use crate::commands::{completion, graph, plan, profile, queue, runs, session, wiki};
 use crate::icons::icon_bytes;
 use crate::state::{
-    AllPassive, ArchiveState, CatalogState, GraphState, MarkFramesState, ResourcesState,
+    AllPassive, ArchiveState, CatalogState, GraphState, MarkFramesState, ResourcesState, SaveState,
     SearchState, StoreState,
 };
 
@@ -35,6 +35,7 @@ pub fn run() {
         .manage(ResourcesState::default())
         .manage(MarkFramesState::default())
         .manage(SearchState::default())
+        .manage(SaveState::default())
         .manage(ArchiveState::default())
         // Icons don't travel inside the payloads any more: rows carry a link, and this
         // serves it. Asynchronous on purpose — a grid asks for a hundred at once, and each
