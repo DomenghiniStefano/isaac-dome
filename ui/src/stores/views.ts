@@ -4,15 +4,10 @@ import type { Ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
 import { collection } from '@/lib/ipc/collection'
 import { tracked } from './tracked'
-import { nextSteps, unlock } from '@/lib/ipc/graph'
+import { graphViews } from '@/lib/ipc/graph'
 import { completion } from '@/lib/ipc/save'
 import { LoadStatus } from './loadStatus'
-import type {
-  IpcError,
-  MarksMatrix,
-  NextSteps,
-  UnlockView,
-} from '@/lib/ipc/types'
+import type { IpcError, MarksMatrix, GraphViews } from '@/lib/ipc/types'
 import type { CollectionView } from '@/lib/ipc/types'
 
 export interface ViewStore<T> {
@@ -57,12 +52,10 @@ export const useCompletionStore = defineViewStore<MarksMatrix>(
   completion,
 )
 
-// The active profile's unlock graph, read by Next steps and Unlock alike. One read, because
-// both answers belong to the same profile and asking twice could straddle a change.
-export const useGraphStore = defineViewStore<{
-  unlock: UnlockView
-  steps: NextSteps
-}>(StoreId.Graph, async () => {
-  const [view, next] = await Promise.all([unlock(), nextSteps()])
-  return { unlock: view, steps: next }
-})
+// The active profile's unlock graph, read by Next steps and Unlock alike. One read, and
+// since N8 one *command*: the promise this comment makes — that both answers belong to the
+// same profile — is one a pair of commands could not keep.
+export const useGraphStore = defineViewStore<GraphViews>(
+  StoreId.Graph,
+  graphViews,
+)

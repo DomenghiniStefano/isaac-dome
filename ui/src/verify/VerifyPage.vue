@@ -5,7 +5,7 @@ import { runs } from '@/lib/ipc/runs'
 import { AppEvent, watchAppEvent } from '@/lib/window/appEvents'
 import { completion, saveSummary } from '@/lib/ipc/save'
 import { extractionReport } from '@/lib/ipc/resources'
-import { nextSteps, unlock } from '@/lib/ipc/graph'
+import { graphViews } from '@/lib/ipc/graph'
 import { wikiEntry } from '@/lib/ipc/wiki'
 import type {
   ArchiveMode,
@@ -63,8 +63,9 @@ const load = async () => {
   if (state.value.active.kind !== 'active') return
   summary.value = await saveSummary()
   matrix.value = await completion()
-  unlockView.value = await unlock()
-  steps.value = await nextSteps()
+  const views = await graphViews()
+  unlockView.value = views.unlock
+  steps.value = views.steps
 }
 
 // `null` means "the dataset doesn't know this target": the view stays empty, with no error.

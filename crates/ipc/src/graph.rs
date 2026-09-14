@@ -261,6 +261,32 @@ pub struct NextSteps {
     pub sections: Vec<StepsSection>,
 }
 
+/// Both answers the graph's screens need, from one reading of the profile (N8).
+///
+/// They were two commands, and the frontend asked for them together — with a comment saying
+/// why: *"one read, because both answers belong to the same profile and asking twice could
+/// straddle a change"*. Two commands could not keep that promise. Each rebuilt the whole
+/// pipeline behind it: the settings file, a walk of the Steam libraries, the `.dat` read
+/// whole, its parse, 642 nodes and the evaluation — **twice for one screen load**, and
+/// across two moments, so a save written in between made the steps disagree with the list
+/// they are a filter over.
+///
+/// One command is not a cache: there is nothing to invalidate, and nothing is remembered
+/// between calls. The steps stay a pure function of the view here, as they always were.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub struct GraphViews {
+    pub unlock: UnlockView,
+    pub steps: NextSteps,
+}
+
+/// The pair, built from one view: the steps are the filter over exactly the list that
+/// travels beside them.
+pub fn graph_views(unlock: UnlockView) -> GraphViews {
+    let steps = next_steps(&unlock);
+    GraphViews { unlock, steps }
+}
+
 /// One reason, and the steps it produced. The screen draws the basis as a heading, because a
 /// row is worth showing only together with why it is being suggested.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]

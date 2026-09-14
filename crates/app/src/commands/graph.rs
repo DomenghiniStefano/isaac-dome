@@ -9,8 +9,9 @@ use crate::icons::icon_url;
 
 use crate::state::*;
 
-#[tauri::command]
-pub fn unlock(
+/// The Unlock view. Not a command since N8: it is built once per screen load, inside
+/// `graph_views`, and a second entry point is a second reading of the profile.
+fn unlock(
     app: AppHandle,
     state: tauri::State<'_, CatalogState>,
     resources: tauri::State<'_, ResourcesState>,
@@ -34,16 +35,18 @@ pub fn unlock(
     ))
 }
 
+/// Both graph screens in one answer (N8). They used to be two commands, which the frontend
+/// called together and which rebuilt the same pipeline twice — settings, a walk of the Steam
+/// libraries, the `.dat` read whole and parsed, 642 nodes, the evaluation — for one screen
+/// load. One command reads the profile once, by construction rather than by a cache.
 #[tauri::command]
-pub fn next_steps(
+pub fn graph_views(
     app: AppHandle,
     state: tauri::State<'_, CatalogState>,
     resources: tauri::State<'_, ResourcesState>,
     graph: tauri::State<'_, GraphState>,
-) -> Result<ipc::NextSteps, IpcError> {
-    // The steps are a filter over the full view: same state, no extra work.
-    let view = unlock(app, state, resources, graph)?;
-    Ok(ipc::next_steps(&view))
+) -> Result<ipc::GraphViews, IpcError> {
+    Ok(ipc::graph_views(unlock(app, state, resources, graph)?))
 }
 
 #[tauri::command]
