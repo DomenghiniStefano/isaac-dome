@@ -29,11 +29,14 @@ the session log is full of entries that say *"not seen in a real Tauri window"*.
 `the game` work can be written against fixtures; what it cannot do there is be verified, and a
 half of a task that cannot be verified is not a half that should be shipped.
 
-**Snapshot of 2026-09-14 (evening)**, 23 open entries — it was 26 that morning. **B34 closed
+**Snapshot of 2026-09-14 (evening)**, 24 open entries — it was 26 that morning. **B34 closed
 because tagging it meant reading it** and it turned out not to be finished; B38 closed; B44 opened
 and closed the same hour, as not a defect; then B40 and B43 closed and B42 half closed on
 `feature/small-three`, which opened **B45** — four characters with no page, found by the
-cross-check B42 asked for and not by anyone looking for them. Regenerate rather than trust this
+cross-check B42 asked for and not by anyone looking for them — and then **B46**, found by trying
+to look at B40's card in a window and discovering nothing in the app can open the page that draws
+it. Both came out of checking finished work, which is where this list keeps finding things.
+Regenerate rather than trust this
 list — the command
 prints each open entry's heading with its tag under it, and was run before it was written down:
 
@@ -41,7 +44,7 @@ prints each open entry's heading with its tag under it, and was run before it wa
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-- **`nothing` (13)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B45
+- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B45, B46
 - **`a real save` (3)** — B21, B22, B23
 - **`the game` (5)** — B3, B10, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -2224,6 +2227,10 @@ The decision lives in `hasRows`, a pure function with its test, because nothing 
 component: there is no `@vue/test-utils` and no DOM environment in the suite, so a rule left in
 the template is a rule no test can see.
 
+**And it cannot be looked at yet**, which is how **B46** was found the same evening: `pageKey` and
+`categoryOf` still answer `null` for a transformation, so no route in the app opens the page this
+card draws. The card is finished and unreachable; what is missing is not in this entry.
+
 **Needs:** nothing, then a window — the three fields are in the embedded dataset and on the wire already; only the card is missing.
 
 Logged 2026-09-13, found by N7: generating the contract added the `transformation` variant to
@@ -2479,13 +2486,40 @@ them.
   Forgotten, 15 to Jacob & Esau, 8 to Tainted Forgotten, 7 to Tainted Lazarus. Every one of them
   is a requirement a screen draws, with a target whose page the wiki screen cannot open.
 
-### The hypothesis about the cause, which is not measured yet
+### The cause, measured the same evening
 
 `wiki-snapshot` enumerates a kind's pages with `generator=embeddedin` over
 `Template:Infobox character` (`pages_url`, `PageKind::template`). A page that states its character
 another way is not *missed* by that query, it is **not in it** — which is why the fetch reports no
-error: `Pending` only fails on a page the server listed and never delivered. One query asking what
-those four pages transclude settles it.
+error: `Pending` only fails on a page the server listed and never delivered.
+
+The wiki was asked what those four pages transclude, and all four answer the same thing:
+**`Template:Infobox characters`, plural**, plus `Template:Infobox characters/infobox`. Not the
+singular the fetch enumerates. The plural template holds **two forms in one infobox**, the second
+one's parameters suffixed ` 2` — from `Tainted Lazarus`:
+
+```
+{{infobox characters
+ | name 2         = Dead Tainted Lazarus
+ | id             = 29
+ | health         = {{hearts|red=3}}
+ | health 2       = {{hearts|soul=2}}
+ | collectibles   = {{i|Flip}}
+ | collectibles 2 = [[File:Collectible Flip 2 icon.png|20x20px]] [[Flip]]
+}}
+```
+
+Which closes the arithmetic exactly: the four pages are **the four that carry two characters** —
+Jacob & Esau, The Forgotten + The Soul, Tainted Forgotten + Tainted Soul, Tainted Lazarus + Dead
+Tainted Lazarus — and 4 pages × 2 forms is the 8 `player` rows the cross-check could not compare.
+Nothing is missing from the wiki; one template name is missing from our query.
+
+**So the work is larger than adding a template to the list.** The pages the singular template
+brings carry one form each, and where a page holds two — Judas and Black Judas — they are two
+separate `{{infobox character}}` blocks, which `extract_infoboxes` already handles. The plural
+template is a shape the parser has never seen: **one block, two forms, told apart by a ` 2`
+suffix on every parameter**. Both halves are needed, and the second is where the test-first work
+is.
 
 ### Closes when
 
@@ -2494,3 +2528,46 @@ set of characters the repo knows (`dataset/corrections.json`, `player.json`) is 
 pages fetched, and a name with no page fails the snapshot rather than waiting for a cross-check
 written for something else to trip over it. The same guard belongs to every kind that has a Cargo
 table to be counted against.
+
+---
+
+## B46 — A transformation has a page and no way to open it (implementation, `ui`, then a design decision)
+
+**Needs:** nothing, then a window — the dataset answers already and the whole gap is in `ui/`;
+whether the wiki's sidebar grows a seventh category is a design call, not a code one.
+
+Found on 2026-09-14 while looking at B40's card in a window, and it is the reason that card could
+not be looked at. Two pure functions in `ui/src/lib/wiki/` still say a transformation has no page:
+
+```ts
+// pageKey.ts — "The four kinds the dataset has no page for get no key"
+case 'stage': case 'room': case 'concept': case 'transformation':
+  return null
+// category.ts — categoryOf, same four
+```
+
+`pageLocation` needs both, so it returns `null` and **no route in the app can open a
+transformation page**. `WikiCategory` has six values and none of them is transformations, so the
+sidebar has no door either.
+
+### Why the premise is stale rather than wrong
+
+It was true when it was written. The wiki-search spec of 2026-09-12 says it in as many words —
+*"stages, rooms, pickups and transformations have no page (`Dataset::entry` returns `None` by
+construction), so they have no key"* — and **the transformations sub-project of 2026-09-13 made
+it false**: sixteen pages entered the dataset and `Dataset::entry` gained
+`Target::Transformation { id } => self.transformations.get(id)`. Rust answers; the frontend still
+refuses to ask. The two `null`s are not a bug in either file, they are a premise nobody went back
+to after the fact it rested on changed — and the `assertNever` that guards those switches cannot
+see it, because the variant is handled, just handled as *nothing*.
+
+**B40's card is the visible cost**: it was written, tested and merged on 2026-09-14, and nothing
+in the app can reach a page that would draw it.
+
+### Closes when
+
+`pageKey` and `categoryOf` answer for a transformation, `pageLocation` builds a location for one,
+and opening a `transformation:` reference draws the page with B40's card. The seventh sidebar
+category is the design half: sixteen pages are a small list and the wiki's landing counts them
+already (`packPages` has a `transformations` count that nothing displays), so the choice is
+whether they get a card of their own or stay reachable only by link and by search.
