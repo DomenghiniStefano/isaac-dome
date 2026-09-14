@@ -168,7 +168,7 @@ fn page_path(target: &Target) -> Option<String> {
         Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Pickup { .. } => None,
+        | Target::Concept { .. } => None,
     }
 }
 

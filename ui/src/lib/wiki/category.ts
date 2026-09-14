@@ -22,7 +22,7 @@ export const categoryOf = (target: Target): WikiCategory | null => {
       return WikiCategory.Characters
     case 'stage':
     case 'room':
-    case 'pickup':
+    case 'concept':
     case 'transformation':
       return null
     default:
