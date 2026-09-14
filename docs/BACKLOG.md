@@ -29,14 +29,16 @@ the session log is full of entries that say *"not seen in a real Tauri window"*.
 `the game` work can be written against fixtures; what it cannot do there is be verified, and a
 half of a task that cannot be verified is not a half that should be shipped.
 
-**Snapshot of 2026-09-14**, 26 open entries. Regenerate rather than trust it — this prints each
-open entry's heading with its tag under it, and was run before being written down:
+**Snapshot of 2026-09-14**, 25 open entries. It was 26: **B34 closed the same day, because
+tagging it meant reading it** and it turned out not to be finished. Regenerate rather than trust
+this list — the command prints each open entry's heading with its tag under it, and was run
+before it was written down:
 
 ```
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-- **`nothing` (16)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B34, B38, B39, B40, B41, B42, B43
+- **`nothing` (15)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B38, B39, B40, B41, B42, B43
 - **`a real save` (3)** — B21, B22, B23
 - **`the game` (5)** — B3, B10, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -1827,37 +1829,49 @@ game does, and the entry names the sheet and frame it came from.
 
 ---
 
-## B34 — A linked concept with no id is called a `Pickup`, and that name was the whole confusion (implementation, `wiki`)
+## B34 — A linked concept with no id is called a `Pickup`, and that name was the whole confusion (implementation, `wiki`) ✅ closed on 2026-09-14
 
-**Needs:** nothing — `crates/wiki` and the committed rules files; the check that decides it
-(`cargo test -p graph`) reads the embedded snapshot and wants no game.
+**Closed on `feature/concept-not-pickup`**, after being read to be tagged and turning out not to
+be finished. `Target::Pickup` is **`Target::Concept`**, the word `Resolution::Concept` and
+`Inline::Concept` already used for the same thing — `inline.rs` defines it as *"a wiki page the
+game gives no id"* — so the chain now reads one way through instead of changing its mind at the
+generator. The key follows: `pickup:` is `concept:` in `corrections.json` (49 rows) and in the
+regenerated `requirements.json`, because leaving the old prefix in the data file would have kept
+the lie exactly where a human reads it.
 
-> **Checked on 2026-09-14, because the entry read as finished and is not.** Two things remain,
-> both small and both measured rather than inferred. The title above is the second of them.
->
-> 1. **The rename has not been done.** `Target::Pickup` still exists — **22 occurrences** across
->    `crates/`, in `model.rs`, `resolver.rs`, `dataset.rs` and `transformation.rs`. The
->    correction of 2026-09-13 named it "the remaining work" and nothing has touched it since.
-> 2. **The two transformation verdicts now carry a reason that is false.**
->    `corrections.json` still holds `transformation:Guppy` and `transformation:Beelzebub` as
->    `unknown`, reading *"a transformation is three items, and the model can't say 'N of
->    these'"*. The model **can** say it since 2026-09-13: `requirements.json` gives Guppy
->    `at_least: 3` over 8 items and Beelzebub `at_least: 3` over 25, and
->    `Target::Transformation` resolves through `threshold()`, never through `from_verdict`.
->    The row itself must stay — `verdict_required` is `true` for every target on purpose, and
->    removing the two makes `every_target_that_needs_a_verdict_has_one` fail, which was run to
->    check rather than assumed. What has to change is the **text**: it should say the row is
->    required and never read, not restate a limit that has been lifted.
->
-> **The count in the old title was right and is no longer**: 17 references became **13**, all
-> of them `pickup:`, over six distinct targets. The four `transformation:` ones are answered.
->
-> **Closes when** no type in `crates/wiki` calls a linked concept with no id a `Pickup`, the
-> two transformation verdicts say why they are there instead of why they were, and
-> `cargo test -p graph` is green. The 13 `pickup:` references stay exactly as they are: they
-> are real requirements the model cannot express, and the count going down would be the bug.
-> **"Done when" further down belongs to the plan that was thrown away** — it asks for the
-> filter this box forbids.
+**The measurement the 2026-09-13 correction asked for, and what it actually said.** Of the 49
+targets the variant holds, **4 are in the wiki's pickup table** and 45 are not — `Hard mode` (38
+uses), `Completion Mark` (19), `Greed Donation Machine` (12), `Donation Machine` (10), down to
+`bed`, `rock` and `technology`. The first reading of that split was wrong and is worth keeping:
+it is **not** "4 pickups and 45 non-pickups". `Coin`, `heart`, `pills` and `Blue Flies` are
+pickups by any account; they are simply not rows of that Cargo table, which holds the tarot
+cards under their formal names. The split is by table membership, and the honest reading is the
+one that made the name: the 49 have **nothing in common except being wiki pages with no id**, and
+that is what `Concept` says and `Pickup` did not.
+
+**The two transformation verdicts kept their row and lost their reason.**
+`transformation:Guppy` and `transformation:Beelzebub` read *"a transformation is three items, and
+the model can't say 'N of these'"* — false since the transformations sub-project landed:
+`requirements.json` gives both `at_least: 3`, and `Target::Transformation` resolves through
+`threshold()` and never reaches `from_verdict`. **The rows stay**: `verdict_required` is `true`
+for every target by decision, and removing the two turns
+`every_target_that_needs_a_verdict_has_one` red — run and restored, not reasoned about. They now
+say they are required of every target and never read.
+
+**The 13 `concept:` references are untouched and must stay that way.** They are real requirements
+this model cannot express — `ending`, `Bestiary`, `tainted character` — and the count going down
+would be the bug, not the progress.
+
+**What the rename cost, and what caught it.** 28 files, the wire type among them: `Target` is
+generated into `ui/src/lib/ipc/types.ts`, and the frontend's `assertNever` turned every one of
+its nine reading sites into a compile error rather than a silent empty branch. `dataset/wiki.json`
+and `requirements.json` were **regenerated, never edited** — `pnpm wiki:build` then
+`pnpm graph:rules`, both offline and neither needing the game. One test had been documenting the
+mismatch it asserted past: `only_unreducible_targets_reach_the_inventory` failed with
+*"a concept has no id"* while pinning the key `pickup:Hard mode`.
+
+**Everything below is the entry as it stood**, including a `Done when` that belongs to the plan
+that was thrown away — it asks for the filter the 2026-09-13 correction forbids.
 
 > **Corrected on 2026-09-13. Half of this entry is closed and the other half is wrong.**
 >

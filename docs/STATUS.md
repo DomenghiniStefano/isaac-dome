@@ -1525,6 +1525,34 @@ The entry now says both at its top, with a `Closes when` that replaces the one b
 plan that was thrown away. **A correction box is where a finished-looking entry hides what it
 still owes**, and nothing re-reads it until someone needs the entry.
 
+**Then B34 was closed** (`feature/concept-not-pickup`, 28 files). `Target::Pickup` is
+`Target::Concept` — the word `Resolution::Concept` and `Inline::Concept` already used for the
+same thing, `inline.rs` defining it as *"a wiki page the game gives no id"* — and the key
+followed it into `corrections.json` (49 rows) and the regenerated `requirements.json`, because
+the old prefix left in the data file would have kept the lie where a human reads it.
+
+**The measurement the correction asked for, and the mistake inside it.** Of the 49 targets the
+variant holds, 4 are rows of the wiki's pickup table and 45 are not — `Hard mode` at 38 uses,
+`Completion Mark` at 19, down to `bed` and `technology`. It was first read out as "4 pickups and
+45 non-pickups" **and that reading is wrong**: `Coin`, `heart`, `pills` and `Blue Flies` are
+pickups by any account and simply are not rows of that Cargo table, which holds the tarot cards
+under their formal names. The split is by table membership. The honest reading is the one that
+settled the name — the 49 have nothing in common except being wiki pages with no id — and it is
+the *stronger* argument, which is why the correction is worth keeping rather than quietly fixing.
+
+**What caught what.** The frontend's `assertNever` turned all nine reading sites of the wire type
+into compile errors instead of silent empty branches. `every_target_that_needs_a_verdict_has_one`
+went red the moment the key moved on one side only, which is how a half-migration was shown to be
+visible rather than assumed to be. And one test had been documenting the mismatch it asserted
+past: `only_unreducible_targets_reach_the_inventory` failed saying *"a concept has no id"* while
+pinning `pickup:Hard mode`. Both generated artefacts were **rebuilt, never edited** —
+`pnpm wiki:build` then `pnpm graph:rules`, offline, neither needing the game.
+
+**A contract change travels with this**, and per the rule at the top of this file it is handed on
+rather than merely committed: `Target`'s `pickup` variant is `concept` in
+`ui/src/lib/ipc/types.ts`. Nothing in the design depends on the name — the frontend's nine sites
+all answer "no page to open" for it — but the wire changed, and that is a fact about the design.
+
 ### 2026-09-13 — the archive fills itself
 
 `feature/log-watch`, cut from `develop`. M4 sub-project **1b**: `discovery` learns where the
