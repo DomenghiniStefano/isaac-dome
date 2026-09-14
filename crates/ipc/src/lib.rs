@@ -34,10 +34,10 @@ pub use collection::{
 pub use error::IpcError;
 pub use goals::{target_exists, Goal, GoalId, TargetKey, UnlockTarget};
 pub use graph::{
-    next_steps, plan_view, resolve_target, target_of, unlock_view, AchievementRef, GoalView,
-    GraphInfo, MarkColumnView, MarkLevelView, NextSteps, OriginView, PlanDiagnostic, PlanExpansion,
-    PlanStep, PlanView, RequirementView, StepsBasis, StepsSection, ThresholdItemView,
-    UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
+    graph_views, next_steps, plan_view, resolve_target, target_of, unlock_view, AchievementRef,
+    GoalView, GraphInfo, GraphViews, MarkColumnView, MarkLevelView, NextSteps, OriginView,
+    PlanDiagnostic, PlanExpansion, PlanStep, PlanView, RequirementView, StepsBasis, StepsSection,
+    ThresholdItemView, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
 pub use icon::{icon_source, IconRef, MarkTier, ICON_SCHEME};
 pub use mark_art::{mark_source, MarkFrames, LOBBY_ANM2, WIDGET_ANM2};

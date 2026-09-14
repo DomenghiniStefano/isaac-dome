@@ -154,6 +154,7 @@ pub fn render() -> String {
     decl::<crate::StepsBasis>(&cfg, &mut out);
     decl::<crate::StepsSection>(&cfg, &mut out);
     decl::<crate::NextSteps>(&cfg, &mut out);
+    decl::<crate::GraphViews>(&cfg, &mut out);
     decl::<crate::WantState>(&cfg, &mut out);
     decl::<crate::WantRoute>(&cfg, &mut out);
     decl::<crate::WantedView>(&cfg, &mut out);
