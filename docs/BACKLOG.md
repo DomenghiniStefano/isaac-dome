@@ -36,6 +36,9 @@ and closed the same hour, as not a defect; then B40 and B43 closed and B42 half 
 cross-check B42 asked for and not by anyone looking for them — and then **B46**, found by trying
 to look at B40's card in a window and discovering nothing in the app can open the page that draws
 it. Both came out of checking finished work, which is where this list keeps finding things.
+**B45 then closed the same evening it was opened** — the four pages are in the snapshot, with the
+guard that makes a missing one loud — and opened **B47**: the same query that explained it found
+seven more templates the fetch does not know, and 591 pages behind them.
 Regenerate rather than trust this
 list — the command
 prints each open entry's heading with its tag under it, and was run before it was written down:
@@ -44,7 +47,7 @@ prints each open entry's heading with its tag under it, and was run before it wa
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B45, B46
+- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B46, B47
 - **`a real save` (3)** — B21, B22, B23
 - **`the game` (5)** — B3, B10, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -2464,7 +2467,33 @@ a hypothesis, not a finding**, until the source is asked. It was the owner who a
 
 ---
 
-## B45 — Four characters have no page in the snapshot, and nothing notices (implementation, `wiki-snapshot`)
+## B45 — Four characters have no page in the snapshot, and nothing notices (implementation, `wiki-snapshot`) ✅ closed on 2026-09-14
+
+**Closed on `feature/plural-characters`**, the same evening it was opened. A kind names its
+templates, plural; `{{infobox characters}}` is split where it is extracted into the two ordinary
+character infoboxes it stands for, following the template's own source — `dlc`, `description`,
+`unlocked by` and `hidden` are shared, everything else including `id` belongs to one form. The
+refetch brought **34 character pages instead of 30**, the dataset **40 forms instead of 32**, and
+the eight that were missing — Jacob, Esau, The Forgotten, The Soul, Tainted Forgotten, Tainted
+Soul, Tainted Lazarus, Dead Tainted Lazarus — are pages now.
+
+**Both guards landed, which is the half this entry said was worth more than the four pages.**
+Every character the repo names in `dataset/corrections.json` must have a page, and every Cargo
+row with an id must have one too — 1610 rows checked across items, trinkets, achievements,
+challenges and transformations, with a floor just under it so a table that stopped being read
+cannot make the test pass by checking nothing. And the mechanism that hid all of this is counted:
+an `{{infobox …}}` whose template name is in no kind was skipped in silence, so a page could be
+downloaded and parsed into **zero entries** without a word. It now lands in
+`Diagnostics::unknown_infoboxes`.
+
+**What the doing said that the entry did not know.** The graph was right the whole time: the
+regenerated `requirements.json` differs only in `snapshotAt` and `maxRevid`, because those 47
+references were resolving by id through the corrections map while the pages did not exist. A
+missing page never broke anything that a test was watching — it only meant a row a screen draws
+with a target whose page cannot be opened. And the four pages cannot state the second form's
+parent at all: the plural template has no `parent` parameter, so `player.json` knows something
+the page cannot say. The cross-check reports that silence apart from disagreement, with the four
+names pinned in page order.
 
 **Needs:** nothing — the snapshot's own index says it, and closing it is one `pnpm wiki:fetch`
 against the wiki, which no part of the app ever talks to.
@@ -2571,3 +2600,50 @@ and opening a `transformation:` reference draws the page with B40's card. The se
 category is the design half: sixteen pages are a small list and the wiki's landing counts them
 already (`packPages` has a `transformations` count that nothing displays), so the choice is
 whether they get a card of their own or stay reachable only by link and by search.
+
+---
+
+## B47 — Seven infobox templates the snapshot does not know, and 591 pages behind them (analysis, then a product decision)
+
+**Needs:** nothing — one query against the wiki answers it, and the decision after it is about
+what belongs in the package, not about what is possible.
+
+Measured on 2026-09-14 while closing B45, by asking the wiki for every `Template:Infobox *` and
+counting the transclusions of each in namespace 0. The snapshot enumerates seven templates. The
+wiki has these as well:
+
+| template | pages | what they are |
+|---|---|---|
+| `Infobox entity` | 247 | entities that are not bosses |
+| `Infobox monster` | 126 | ordinary enemies |
+| `Infobox pickup` | 97 | pickups |
+| `Infobox card` | 66 | cards |
+| `Infobox rune` | 28 | runes |
+| `Infobox stage` | 27 | stages |
+| `Infobox grid entity` | 0 | nothing transcludes it |
+
+`Infobox characters` was the eighth and is B45, closed: 4 pages, and they were the four that
+mattered because the game's own save has a cell for each of those characters.
+
+### Why this is an entry and not a task
+
+**It corrects a sentence this repo says often.** `pageKey`, `categoryOf` and `Dataset::entry` all
+state that stages, rooms and concepts *have no page* — and for a part of them that is a fact about
+**our fetch**, not about the wiki. The 49 `Target::Concept` targets B34 measured are "wiki pages
+the game gives no id"; 97 pickup pages, 66 card pages and 28 rune pages are sitting behind a
+template nobody enumerates, and the 13 references the graph still cannot interpret live in that
+neighbourhood. Whether any of them resolves is unmeasured — that is this entry's analysis half.
+
+**And it is not obviously desirable.** The dataset ships inside the binary. 591 pages is a large
+fraction again of the 1113 we carry, for content the app has no screen for: the wiki section is
+built around what a profile can unlock, and an enemy's page is not that. Cards and runes are the
+plausible exception, because a challenge or an achievement condition names them.
+
+### Closes when
+
+Each of the seven is decided, in writing and with its reason: enumerated, or declared out of
+scope. A template we enumerate needs its `InfoboxKind` and its kind's folder; one we decline
+needs a line saying why, so the next person measuring this finds the answer instead of the
+measurement. `Diagnostics::unknown_infoboxes` (B45) is what will keep either decision honest: a
+template we never enumerate never appears there, but one we start fetching without teaching the
+parser will.
