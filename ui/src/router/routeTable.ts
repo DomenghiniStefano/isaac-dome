@@ -15,6 +15,7 @@ import {
   SaveIcon,
   SkullIcon,
   SlidersHorizontalIcon,
+  SparklesIcon,
   TrophyIcon,
   UserIcon,
 } from '@lucide/vue'
@@ -49,6 +50,9 @@ export const WikiCategory = {
   Bosses: 'bosses',
   Challenges: 'challenges',
   Characters: 'characters',
+  // B46: the sixteen transformation pages entered the dataset on 2026-09-13 and had no
+  // category, so `pageLocation` could not build one and no route opened them.
+  Transformations: 'transformations',
 } as const
 export type WikiCategory = (typeof WikiCategory)[keyof typeof WikiCategory]
 
@@ -149,6 +153,7 @@ export const wikiCategoryTitle: Record<WikiCategory, Message> = {
   [WikiCategory.Bosses]: 'wikiCategories.bosses',
   [WikiCategory.Challenges]: 'wikiCategories.challenges',
   [WikiCategory.Characters]: 'wikiCategories.characters',
+  [WikiCategory.Transformations]: 'wikiCategories.transformations',
 }
 
 export const wikiCategoryIcon: Record<WikiCategory, Component> = {
@@ -158,6 +163,7 @@ export const wikiCategoryIcon: Record<WikiCategory, Component> = {
   [WikiCategory.Bosses]: SkullIcon,
   [WikiCategory.Challenges]: FlagIcon,
   [WikiCategory.Characters]: UserIcon,
+  [WikiCategory.Transformations]: SparklesIcon,
 }
 
 // A tab's label: a wiki category names itself, every other location is its route.

@@ -48,6 +48,7 @@ export const it = {
     bosses: 'Boss',
     challenges: 'Sfide',
     characters: 'Personaggi',
+    transformations: 'Trasformazioni',
   },
   sidebar: {
     progressTitle: 'Progressi',
@@ -146,6 +147,7 @@ export const it = {
       boss: 'Boss',
       challenge: 'Sfida',
       character: 'Personaggio',
+      transformation: 'Trasformazione',
     },
     revision: 'rev.',
     section: {

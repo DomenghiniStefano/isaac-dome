@@ -32,6 +32,7 @@ export const kindText: Record<WikiCategory, Message> = {
   [WikiCategory.Bosses]: 'wiki.kind.boss',
   [WikiCategory.Challenges]: 'wiki.kind.challenge',
   [WikiCategory.Characters]: 'wiki.kind.character',
+  [WikiCategory.Transformations]: 'wiki.kind.transformation',
 }
 
 // The id a list row prints under the title: the number the game knows the page by; a boss
