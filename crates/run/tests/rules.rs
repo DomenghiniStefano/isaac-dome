@@ -164,5 +164,9 @@ fn a_rules_file_that_does_not_parse_says_so_instead_of_panicking() {
 fn the_embedded_file_is_the_one_that_ships() {
     // A pattern that stopped compiling would make its rule silently absent; `embedded()`
     // building at all is what turns that into a failure.
-    assert_eq!(Rules::embedded().version(), 1);
+    //
+    // **2 since 2026-09-15**, when `playerInitialized` was added: the store keeps a folded run
+    // beside the version that produced it, so a run folded without the character id is not
+    // served as though it had one — it is folded again.
+    assert_eq!(Rules::embedded().version(), 2);
 }
