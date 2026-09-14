@@ -1553,6 +1553,30 @@ rather than merely committed: `Target`'s `pickup` variant is `concept` in
 `ui/src/lib/ipc/types.ts`. Nothing in the design depends on the name — the frontend's nine sites
 all answer "no page to open" for it — but the wire changed, and that is a fact about the design.
 
+**Then B38** (`feature/decode-entities`): `&comma;`, `&colon;` and `&apos;` decode, the three
+pickup quotes read `:(`, "Tears up, you feel forgiven" and "t's broken", and
+`grep -c '&[a-zA-Z][a-zA-Z0-9]*;' dataset/wiki.json` is 0. The rebuilt dataset travelled in its
+own commit — four lines — the way every regenerated artefact here does, which was checked against
+the log rather than assumed: `chore(dataset): rebuild …` commits touch exactly one file.
+
+**The entry prescribed building something that already existed.** `fn entity` in `inline.rs` was
+already a closed list of eight, missing exactly the three that ship, so the work was three rows
+rather than a decoder. **An inventory written by reading is right about the symptom and wrong
+about the shape** — the third time that pattern showed today, after N3's `matchesQuery` and
+B34's "orphan" verdicts. Reading the code before the entry is what keeps finding it.
+
+What the entry was right about is the counter: an entity outside the list reaches
+`Diagnostics::unknown_entities` now, with the text **kept** rather than dropped, because nothing
+counting them is how three of them shipped. It is empty on this snapshot, and a unit test shows
+it able to speak rather than leaving an empty counter to be trusted. A run is only counted when
+it is shaped like an entity, or an ordinary `&` in prose would fill it.
+
+**And one finding that is not ours.** Trinket 138's quote reads `t's broken9Reroll your dest`.
+The raw page is intact and says exactly that on line 4, so the snapshot is faithful to the page
+and the parser to the snapshot: **the wiki's own page is corrupt**. Registered as **B44**, with
+the rule that the right text has to be read off a source and not written from a plausible guess —
+`dataset/corrections.json` exists for the wiki being wrong, not for us inventing content.
+
 ### 2026-09-13 — the archive fills itself
 
 `feature/log-watch`, cut from `develop`. M4 sub-project **1b**: `discovery` learns where the

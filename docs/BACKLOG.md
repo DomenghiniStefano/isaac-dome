@@ -38,7 +38,7 @@ before it was written down:
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-- **`nothing` (15)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B38, B39, B40, B41, B42, B43
+- **`nothing` (15)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B40, B41, B42, B43, B44
 - **`a real save` (3)** — B21, B22, B23
 - **`the game` (5)** — B3, B10, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -2082,9 +2082,34 @@ none.
 
 ---
 
-## B38 — Three pickup quotes ship an undecoded HTML entity (implementation, `wiki`, small)
+## B38 — Three pickup quotes ship an undecoded HTML entity (implementation, `wiki`, small) ✅ closed on 2026-09-14
 
-**Needs:** nothing — `crates/wiki` is pure and reads only `dataset/raw/`; `pnpm wiki:build` rebuilds the derivative without the network.
+**Closed on `feature/decode-entities`.** `&comma;`, `&colon;` and `&apos;` join the closed list
+in `inline.rs`; item 469 reads `:(`, item 601 "Tears up, you feel forgiven", trinket 138
+"t's broken"; `grep -c '&[a-zA-Z][a-zA-Z0-9]*;' dataset/wiki.json` is **0**, and the rebuilt
+dataset travelled in its own commit, four lines in it.
+
+**The work was narrower than this entry describes, and the reason is worth keeping.** A closed
+list already existed — `fn entity` in `inline.rs`, with `nbsp`, `times`, `amp`, `lt`, `gt`,
+`quot`, `ndash`, `mdash` — and it was missing exactly the three that ship. So this was never
+"add a decoder", it was **three rows in a list that was already the right shape**, and the entry
+prescribed building the thing that was there. Reading the code before the entry is what found
+that.
+
+**What the entry asked for and was right about**: an entity outside the list is counted now, in
+`Diagnostics::unknown_entities`. The text is **kept** rather than dropped — it is the wiki's
+content, and `&` is an ordinary character in it — so the counter is the whole of the fix: nothing
+counting them is how the three shipped. A run is only counted when it is *shaped* like an entity
+(a letter then alphanumerics, or `#` and digits); without that an ordinary `&` in prose
+("R&D; more") would fill the counter that exists to show a real gap. On the snapshot it is empty,
+and a unit test shows it able to speak rather than leaving that to trust.
+
+**One thing found on the way, and it is not ours**: trinket 138's quote reads
+`t's broken9Reroll your dest` — truncated at both ends with a stray digit in the middle. The raw
+page is intact (6240 bytes, a well-formed infobox) and says exactly that, so the parser is
+faithful and **the wiki's own page is corrupt**. Registered as **B44** rather than guessed at.
+
+---
 
 Logged on 2026-09-13, found by `crates/ipc/tests/wiki_agrees_with_catalog.rs`: of the quote
 disagreements between the wiki and the game, this is the only one that is **ours**. Every
@@ -2333,3 +2358,44 @@ test cannot say and `pnpm ui:dev` can.
 
 A merge of `UnlockTable` and `CollectionTable`. The columns stay two files; N3's reasoning for
 that is unchanged and this entry does not reopen it.
+
+## B44 — The wiki's own page for 'M carries a corrupt quote (implementation, `dataset`, small)
+
+**Needs:** nothing — `dataset/raw/` and `dataset/corrections.json` are committed; deciding it
+needs the live wiki page, which is a browser, not the game.
+
+Found on 2026-09-14 while closing B38. Trinket 138 (`'M`) ships the quote
+`t's broken9Reroll your dest`: missing its opening, a stray `9` in the middle, and cut short at
+the end.
+
+### What was measured
+
+**It is not ours.** `dataset/raw/pages/trinket/'M.wikitext` is 6240 bytes, its infobox is
+well-formed, every other parameter reads correctly — and line 4 says, literally:
+
+```
+ | quote       = t&apos;s broken9Reroll your dest
+```
+
+So the snapshot is faithful to the page and the parser is faithful to the snapshot. What is
+wrong is the wiki. The shape suggests two parameters merged and truncated — `description` for
+this trinket is "Using an activated item rerolls it", and "Reroll your destiny" is the kind of
+line a quote would be.
+
+### What it needs
+
+A row in `dataset/corrections.json`, which exists for exactly this: a wiki-side error our
+snapshot would otherwise carry, fixed where the fix travels with the data and the `derived` test
+keeps the three files from drifting.
+
+**What it must not be is a guess.** The right quote has to be read off the live page — or off the
+game, which prints an item's quote itself — and written down with where it came from. Writing a
+plausible sentence in that row would be inventing content and calling it a correction, which is
+worse than shipping the wiki's own mistake.
+
+### Closes when
+
+Trinket 138's quote reads what the source says it reads, the correction names where it was read,
+and `dataset/wiki.json` is rebuilt in its own commit. If the live page turns out to say the same
+thing, the entry closes as **the wiki's bug, reported upstream and recorded here** — an honest
+outcome, and the one this task is most likely to have.
