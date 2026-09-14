@@ -198,6 +198,9 @@ pub fn render() -> String {
     decl::<crate::RunTotals>(&cfg, &mut out);
     decl::<crate::RunsDiagnostic>(&cfg, &mut out);
     decl::<crate::RunsView>(&cfg, &mut out);
+    decl::<crate::LiveOpen>(&cfg, &mut out);
+    decl::<crate::LiveDiagnostic>(&cfg, &mut out);
+    decl::<crate::LiveView>(&cfg, &mut out);
     decl::<crate::LockView>(&cfg, &mut out);
     decl::<crate::CollectionItem>(&cfg, &mut out);
     decl::<crate::CollectionTotals>(&cfg, &mut out);
