@@ -198,7 +198,10 @@ pub fn render() -> String {
     decl::<crate::RunTotals>(&cfg, &mut out);
     decl::<crate::RunsDiagnostic>(&cfg, &mut out);
     decl::<crate::RunsView>(&cfg, &mut out);
+    decl::<crate::LiveAchievement>(&cfg, &mut out);
     decl::<crate::LiveOpen>(&cfg, &mut out);
+    decl::<crate::LiveMarkRow>(&cfg, &mut out);
+    decl::<crate::LiveMarks>(&cfg, &mut out);
     decl::<crate::LiveDiagnostic>(&cfg, &mut out);
     decl::<crate::LiveView>(&cfg, &mut out);
     decl::<crate::LockView>(&cfg, &mut out);

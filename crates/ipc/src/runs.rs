@@ -41,6 +41,10 @@ pub enum RunOutcomeView {
 pub struct RunItemRef {
     pub id: u32,
     pub name: Option<String>,
+    /// The sprite from the user's own copy of the game, `None` without it. A run draws its
+    /// items the way every other list does; the id stays, because a picture nobody can serve
+    /// must not take the place of the one thing we know.
+    pub icon_url: Option<String>,
 }
 
 /// One run.
@@ -131,12 +135,21 @@ impl run::ItemKinds for CatalogKinds<'_> {
 /// collectible kinds are the only ones that can be meant. Looking a trinket up here would put
 /// the wrong name on a run.
 fn collectible(catalog: &Catalog, id: u32) -> Option<&catalog::Item> {
-    [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar]
-        .into_iter()
-        .find_map(|kind| catalog.item(kind, ItemId(id)))
+    collectible_of(catalog, id).map(|(_, item)| item)
 }
 
-pub fn runs_view(inputs: RunsInputs<'_>) -> RunsView {
+/// The kind as well as the item: an icon is addressed by both, and trying the three kinds is
+/// how this crate has always found one — the run only carries the number.
+fn collectible_of(catalog: &Catalog, id: u32) -> Option<(ItemKind, &catalog::Item)> {
+    [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar]
+        .into_iter()
+        .find_map(|kind| catalog.item(kind, ItemId(id)).map(|item| (kind, item)))
+}
+
+pub fn runs_view(
+    inputs: RunsInputs<'_>,
+    mut icon: impl FnMut(&crate::icon::IconRef) -> Option<String>,
+) -> RunsView {
     let RunsInputs {
         sources,
         catalog,
@@ -145,12 +158,19 @@ pub fn runs_view(inputs: RunsInputs<'_>) -> RunsView {
     if catalog.is_none() {
         diagnostics.push(RunsDiagnostic::NoCatalog);
     }
-    let named = |id: u32| -> RunItemRef {
+    let mut named = |id: u32| -> RunItemRef {
+        let found = catalog.and_then(|c| collectible_of(c, id));
         RunItemRef {
             id,
-            name: catalog
-                .and_then(|c| collectible(c, id).map(|i| c.text(&i.name, Language::English)))
-                .map(|s| s.to_string()),
+            name: found
+                .zip(catalog)
+                .map(|((_, item), c)| c.text(&item.name, Language::English).to_string()),
+            icon_url: found.and_then(|(kind, _)| {
+                icon(&crate::icon::IconRef::Item {
+                    kind: crate::catalog_view::kind_view(kind),
+                    id,
+                })
+            }),
         }
     };
 
@@ -185,9 +205,9 @@ pub fn runs_view(inputs: RunsInputs<'_>) -> RunsView {
                 online: r.seed_kind == run::SeedKind::Net,
                 outcome,
                 floors: r.floors.len() as u32,
-                starting_items: r.starting_items.iter().copied().map(named).collect(),
-                collected: r.collected.iter().copied().map(named).collect(),
-                held_active: r.held_active.map(named),
+                starting_items: r.starting_items.iter().copied().map(&mut named).collect(),
+                collected: r.collected.iter().copied().map(&mut named).collect(),
+                held_active: r.held_active.map(&mut named),
                 achievements: r.achievements,
             });
         }
