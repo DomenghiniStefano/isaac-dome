@@ -6,6 +6,7 @@ export const StoreId = {
   Graph: 'graph',
   Queue: 'queue',
   Collection: 'collection',
+  Runs: 'runs',
   Wiki: 'wiki',
   Settings: 'settings',
 } as const
