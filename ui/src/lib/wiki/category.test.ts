@@ -11,6 +11,7 @@ describe('categoryOf', () => {
     [{ kind: 'entity', id: 20, variant: 0, subtype: 0 }, WikiCategory.Bosses],
     [{ kind: 'challenge', number: 1 }, WikiCategory.Challenges],
     [{ kind: 'character', id: 0 }, WikiCategory.Characters],
+    [{ kind: 'transformation', id: 1 }, WikiCategory.Transformations],
   ])('%o belongs to %s', (target, category) => {
     expect(categoryOf(target)).toBe(category)
   })
@@ -19,7 +20,6 @@ describe('categoryOf', () => {
     expect(categoryOf({ kind: 'stage', name: 'Basement' })).toBeNull()
     expect(categoryOf({ kind: 'room', name: 'x' })).toBeNull()
     expect(categoryOf({ kind: 'concept', name: 'x' })).toBeNull()
-    expect(categoryOf({ kind: 'transformation', id: 1 })).toBeNull()
   })
 })
 
