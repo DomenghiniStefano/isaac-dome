@@ -47,6 +47,7 @@ export const en: MessageSchema = {
     bosses: 'Bosses',
     challenges: 'Challenges',
     characters: 'Characters',
+    transformations: 'Transformations',
   },
   sidebar: {
     progressTitle: 'Progress',
@@ -145,6 +146,7 @@ export const en: MessageSchema = {
       boss: 'Boss',
       challenge: 'Challenge',
       character: 'Character',
+      transformation: 'Transformation',
     },
     revision: 'rev.',
     section: {
