@@ -116,7 +116,7 @@ export const en: MessageSchema = {
   },
   wiki: {
     intro:
-      'A copy of the Isaac wiki inside the app: items, characters, bosses, challenges and achievements. It works without the game installed and without a save chosen.',
+      'A copy of the Isaac wiki inside the app: items, characters, bosses, challenges, achievements and transformations. It works without the game installed and without a save chosen.',
     provenance: {
       title: 'Where it comes from',
       snapshot: 'Snapshot of',

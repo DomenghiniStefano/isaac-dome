@@ -117,7 +117,7 @@ export const it = {
   },
   wiki: {
     intro:
-      'Una copia della wiki di Isaac dentro l’app: oggetti, personaggi, boss, sfide e achievement. Funziona anche senza il gioco installato e senza aver scelto un salvataggio.',
+      'Una copia della wiki di Isaac dentro l’app: oggetti, personaggi, boss, sfide, achievement e trasformazioni. Funziona anche senza il gioco installato e senza aver scelto un salvataggio.',
     provenance: {
       title: 'Da dove viene',
       snapshot: 'Istantanea del',
