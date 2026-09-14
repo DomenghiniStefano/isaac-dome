@@ -39,6 +39,9 @@
   /* The scroll body of any virtualized list — Unlock, the Collection, Search, the wiki's
      category lists — read by `VirtualRows.vue` alone (`docs/BACKLOG.md` B43). */
   --spacing-virtual-rows-body: 35rem;
+  /* Live's "opens" column: it holds a count, or the words that say there is none — and the
+     words are what decides the width. */
+  --spacing-live-opens: 7.5rem;
   /* The Run diary's floor count: a number of two digits, and the column that holds it. */
   --spacing-runs-floors: 4rem;
   /* The Collection's table (Schermate.dc.html, "Collezione"): the sprite column, the quality
