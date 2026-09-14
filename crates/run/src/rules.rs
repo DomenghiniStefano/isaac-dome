@@ -48,6 +48,7 @@ enum Kind {
     Ended,
     AchievementUnlocked,
     SaveWritten,
+    PlayerInitialized,
 }
 
 impl Kind {
@@ -62,6 +63,7 @@ impl Kind {
             "ended" => Some(Self::Ended),
             "achievementUnlocked" => Some(Self::AchievementUnlocked),
             "saveWritten" => Some(Self::SaveWritten),
+            "playerInitialized" => Some(Self::PlayerInitialized),
             _ => None,
         }
     }
@@ -163,6 +165,10 @@ fn build(kind: Kind, c: &Captures<'_>) -> Option<Event> {
             player: number(c, "player")?,
             character: text(c, "character")?,
             pool: text(c, "pool")?,
+        },
+        Kind::PlayerInitialized => Event::PlayerInitialized {
+            variant: number(c, "variant")?,
+            subtype: number(c, "subtype")?,
         },
         Kind::Died => Event::Died {
             killer: text(c, "killer")?,
