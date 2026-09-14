@@ -4,16 +4,16 @@ import { computed } from 'vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import KpiTile from '@/components/kpi/KpiTile.vue'
-import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useMessages } from '@/i18n'
 import { liveEntries } from '@/lib/diagnostics/live'
 import { columnName } from '@/lib/graph/nodeState'
-import type { AchievementRef } from '@/lib/ipc/types'
+import type { AchievementRef, Target } from '@/lib/ipc/types'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useLiveStore } from '@/stores/views'
+import EntityChip from '@/components/runs/EntityChip.vue'
 import ItemChips from '@/components/runs/ItemChips.vue'
 import LiveMarksRow from './live/LiveMarksRow.vue'
 import ProfileError from './profile/ProfileError.vue'
@@ -35,10 +35,24 @@ const openCount = computed(() =>
   opens.value.reduce((n, o) => n + o.achievements.length, 0),
 )
 
+// Who is being played, in the words the app has: the matrix row knows the form — Tainted or
+// base — while the log's item line only ever writes the base name.
+const characterName = computed(
+  () =>
+    marks.value?.rows[0]?.character ??
+    run.value?.character ??
+    t('runs.noCharacter'),
+)
+
 const text = (a: AchievementRef): string =>
   a.kind === 'known' ? a.text : String(a.slot)
 const iconOf = (a: AchievementRef): string | null =>
   a.kind === 'known' ? a.iconUrl : null
+// The game's own line about how it is earned, which the tooltip can say before the click.
+const conditionOf = (a: AchievementRef): string | null =>
+  a.kind === 'known' ? a.condition : null
+const targetOf = (a: AchievementRef): Target | null =>
+  a.kind === 'known' ? { kind: 'achievement', id: a.id } : null
 </script>
 
 <template>
@@ -69,14 +83,19 @@ const iconOf = (a: AchievementRef): string | null =>
           <KpiTile :value="openCount" :label="t('live.wouldOpen')" />
         </div>
         <Card>
-          <CardHeader class="flex-wrap items-center gap-3">
-            <PixelSprite
-              v-if="marks !== null && marks.rows.length > 0"
-              :url="marks.rows[0].headUrl"
-              placeholder
-              class="size-icon-compact shrink-0"
+          <!-- The identity reads left to right like a line of prose: who, on what seed, with
+               whom. Centring it would make the seed look like a title. -->
+          <CardHeader class="flex-wrap items-center justify-start gap-3">
+            <EntityChip
+              :target="
+                run.characterId === null
+                  ? null
+                  : { kind: 'character', id: run.characterId }
+              "
+              :name="characterName"
+              :detail="null"
+              :icon-url="marks?.rows[0]?.headUrl ?? null"
             />
-            <CardTitle>{{ run.character ?? t('runs.noCharacter') }}</CardTitle>
             <span class="text-label text-subtle-foreground">{{
               run.seedWords
             }}</span>
@@ -117,36 +136,40 @@ const iconOf = (a: AchievementRef): string | null =>
           </CardContent>
         </Card>
       </template>
-      <!-- Grouped by the cell it needs: the same boss read once, with everything under it. -->
-      <Card v-for="open in opens" :key="`${open.character}-${open.column}`">
-        <CardHeader>
-          <CardTitle>{{
-            t('live.beat', {
-              column: columnName[open.column],
-              character: open.characterName,
-            })
-          }}</CardTitle>
-        </CardHeader>
-        <CardContent class="flex flex-col gap-2">
-          <span
-            v-for="a in open.achievements"
-            :key="text(a.achievement)"
-            class="flex items-center gap-2"
-          >
-            <PixelSprite
-              :url="iconOf(a.achievement)"
-              placeholder
-              class="size-icon-compact shrink-0"
-            />
-            <span class="text-row">{{ text(a.achievement) }}</span>
-            <span class="ml-auto text-label text-subtle-foreground">{{
-              a.fanOut > 0
-                ? t('live.opens', { count: a.fanOut })
-                : t('live.opensNothingMore')
-            }}</span>
-          </span>
-        </CardContent>
-      </Card>
+      <!-- Grouped by the cell it needs: the same boss read once, with everything under it.
+           Two columns where there is room: a cell’s list is short, and this screen is read
+           while something else has your attention. -->
+      <div class="grid gap-4 lg:grid-cols-2">
+        <Card v-for="open in opens" :key="`${open.character}-${open.column}`">
+          <CardHeader>
+            <CardTitle>{{
+              t('live.beat', {
+                column: columnName[open.column],
+                character: open.characterName,
+              })
+            }}</CardTitle>
+          </CardHeader>
+          <CardContent class="flex flex-col gap-2">
+            <span
+              v-for="a in open.achievements"
+              :key="text(a.achievement)"
+              class="flex items-center gap-2"
+            >
+              <EntityChip
+                :target="targetOf(a.achievement)"
+                :name="text(a.achievement)"
+                :detail="conditionOf(a.achievement)"
+                :icon-url="iconOf(a.achievement)"
+              />
+              <span class="ml-auto text-label text-subtle-foreground">{{
+                a.fanOut > 0
+                  ? t('live.opens', { count: a.fanOut })
+                  : t('live.opensNothingMore')
+              }}</span>
+            </span>
+          </CardContent>
+        </Card>
+      </div>
       <EmptyCategory v-if="run !== null && opens.length === 0">{{
         t('live.nothing')
       }}</EmptyCategory>

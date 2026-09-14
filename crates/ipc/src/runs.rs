@@ -56,6 +56,10 @@ pub struct RunView {
     pub ordinal: u32,
     /// `None` when no item line ever named the character: it is not in the seed line.
     pub character: Option<String>,
+    /// The character the log states by id — `Initialized player with Variant 0 and Subtype N`.
+    /// It tells a Tainted form from its base, which the name cannot: the game gives both the
+    /// same one.
+    pub character_id: Option<u32>,
     pub seed_words: String,
     /// The game called this run online. The only free discriminator we have for co-op.
     pub online: bool,
@@ -201,6 +205,7 @@ pub fn runs_view(
                 source: source.clone(),
                 ordinal: ordinal as u32,
                 character: r.character,
+                character_id: r.character_id,
                 seed_words: r.seed_words,
                 online: r.seed_kind == run::SeedKind::Net,
                 outcome,

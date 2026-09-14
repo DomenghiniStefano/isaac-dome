@@ -144,3 +144,49 @@ fn a_death_the_game_wrote_becomes_a_run_that_ended_in_one() {
         2
     );
 }
+
+/// The line the archive was not reading, and the one that ends an ambiguity the app has been
+/// declaring in words: **`Initialized player with Variant 0 and Subtype 3`**, where the
+/// subtype is the character's own id. The name is not enough — the game gives a Tainted
+/// character the base form's name — and this says which one it is.
+///
+/// Measured on this machine's logs: the solo Judas run says 3, and the online session says
+/// 30 (Tainted Eden) and 7 (Azazel) for the two players of one run.
+#[test]
+fn the_log_says_which_character_by_id_not_only_by_name() {
+    let Some(events) = events_of("20260912-solo-judas.log.txt") else {
+        return;
+    };
+    let subtypes: Vec<u32> = events
+        .iter()
+        .filter_map(|e| match e {
+            Event::PlayerInitialized { variant, subtype } if *variant == 0 => Some(*subtype),
+            _ => None,
+        })
+        .collect();
+    assert_eq!(subtypes, vec![3], "Judas is character 3");
+}
+
+/// In co-op the line appears once per player, and that is what makes it a *run's* character
+/// only for the first one: the second is somebody else at the same table.
+#[test]
+fn a_co_op_run_initializes_more_than_one_player() {
+    let Some(events) = events_of("20260824-online-deaths.log.txt") else {
+        return;
+    };
+    let subtypes: Vec<u32> = events
+        .iter()
+        .filter_map(|e| match e {
+            Event::PlayerInitialized { subtype, .. } => Some(*subtype),
+            _ => None,
+        })
+        .collect();
+    assert!(
+        subtypes.len() > 1,
+        "the online session has more than one player: {subtypes:?}"
+    );
+    assert!(
+        subtypes.contains(&25) || subtypes.contains(&30),
+        "a Tainted character has its own subtype: {subtypes:?}"
+    );
+}

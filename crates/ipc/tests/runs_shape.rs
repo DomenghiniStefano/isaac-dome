@@ -10,6 +10,7 @@ fn a_run(seed: &str, outcome: Outcome) -> Run {
         seed_numeric: 1,
         seed_kind: SeedKind::Net,
         character: Some("Judas".to_string()),
+        character_id: Some(3),
         starting_items: vec![34],
         collected: vec![105],
         passives: vec![],

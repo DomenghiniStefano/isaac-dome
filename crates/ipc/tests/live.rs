@@ -11,6 +11,7 @@ fn open_run(character: Option<&str>) -> RunView {
         source: RunSource::Live,
         ordinal: 1,
         character: character.map(str::to_string),
+        character_id: None,
         seed_words: "FYQ8 QQ8G".into(),
         online: false,
         outcome: RunOutcomeView::Open,
@@ -54,7 +55,15 @@ fn node(id: u32, missing: Vec<RequirementView>) -> UnlockNode {
 
 /// The names the catalog answers with: a name can reach two ids, because the game gives a
 /// Tainted character the base form's name.
-fn by_name(name: &str) -> Vec<(u32, String)> {
+fn by_name(name: &str, id: Option<u32>) -> Vec<(u32, String)> {
+    if let Some(id) = id {
+        return match id {
+            2 => vec![(2, "Cain".into())],
+            23 => vec![(23, "Tainted Cain".into())],
+            3 => vec![(3, "Judas".into())],
+            _ => Vec::new(),
+        };
+    }
     match name {
         "Cain" => vec![(2, "Cain".into()), (23, "Tainted Cain".into())],
         "Judas" => vec![(3, "Judas".into())],
@@ -229,4 +238,28 @@ fn the_marks_of_the_character_being_played_travel_with_the_run() {
     assert_eq!(marks.rows[0].cells.len(), marks.bosses.len());
     // Nothing done on an empty profile: every cell of the row is still to be taken.
     assert_eq!(marks.rows[0].missing as usize, marks.bosses.len());
+}
+
+/// The end of the ambiguity, measured rather than inferred: the log states the character by
+/// **id**, so when the archive carries one the screen stops saying "Cain or Tainted Cain" and
+/// says which. The name stays as the fallback for a run folded before this line was read.
+#[test]
+fn an_id_from_the_log_settles_which_character_it_is() {
+    let mut run = open_run(Some("Cain"));
+    run.character_id = Some(23); // Tainted Cain
+    let nodes = vec![
+        node(1, vec![mark(2, "Cain", MarkColumnView::MomsHeart)]),
+        node(2, vec![mark(23, "Tainted Cain", MarkColumnView::MomsHeart)]),
+    ];
+    let view = live_view(Some(run), LiveGraph::Nodes(&nodes), None, by_name);
+    assert_eq!(view.opens.len(), 1, "{:#?}", view.opens);
+    assert_eq!(view.opens[0].character, 23);
+    assert!(
+        !view
+            .diagnostics
+            .iter()
+            .any(|d| matches!(d, LiveDiagnostic::AmbiguousCharacter { .. })),
+        "nothing is ambiguous once the log has said it: {:#?}",
+        view.diagnostics
+    );
 }

@@ -134,6 +134,8 @@ export const en: MessageSchema = {
     },
     noCharacter: 'character not named',
     noItems: 'none',
+    openPage: 'Click for the page, Ctrl-click to open it beside',
+    itemId: 'item {id}',
     floors: 'floors',
     killedBy: 'killed by {killer}',
     endedWith: 'ending {ending}',

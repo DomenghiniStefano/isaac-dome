@@ -7,6 +7,7 @@ const run = (fields: Partial<RunView>): RunView => ({
   source: { kind: 'session', name: '09_12_2026__13_34_26' },
   ordinal: 1,
   character: 'Cain',
+  characterId: 2,
   seedWords: 'FYQ8 QQ8G',
   online: false,
   outcome: { kind: 'abandoned' },

@@ -43,6 +43,10 @@ pub struct Run {
     /// Not in the seed line: it arrives with the first item. A run with no item line keeps it
     /// `None` rather than guessing.
     pub character: Option<String>,
+    /// The character's own id, from `Initialized player with Variant 0 and Subtype N`. The
+    /// **only** line that tells a Tainted form from its base: the item line writes the name,
+    /// and the game gives both the same one.
+    pub character_id: Option<u32>,
     /// What the character began with. Not a find — see the starting window below.
     pub starting_items: Vec<u32>,
     /// Everything picked up after the first room transition, in order, including actives that
@@ -65,6 +69,7 @@ impl Run {
             seed_numeric,
             seed_kind,
             character: None,
+            character_id: None,
             starting_items: Vec::new(),
             collected: Vec::new(),
             passives: Vec::new(),
@@ -86,6 +91,10 @@ impl Run {
         // The starting window: open from the seed line to the first room transition. Inside it
         // an `ItemAdded` is the character's own gift, whatever pool the line claims.
         let mut starting = false;
+        // A solo run initializes its player **before** the seed line and an online one after
+        // it, measured on this machine's logs (2026-09-15). An init with no run yet is held
+        // for the run about to start, and taken by it — a run that states its own wins.
+        let mut pending_character: Option<u32> = None;
 
         for event in events {
             match event {
@@ -111,13 +120,20 @@ impl Run {
                         }
                         done.push(previous);
                     }
-                    current = Some(Run::open(seed_words, seed_numeric, kind));
+                    let mut run = Run::open(seed_words, seed_numeric, kind);
+                    run.character_id = pending_character.take();
+                    current = Some(run);
                     starting = true;
                 }
                 other => {
                     // Events arriving before the first seed line belong to no run: a log
-                    // begins mid-session, with menu lines and an intro cutscene.
+                    // begins mid-session, with menu lines and an intro cutscene. The one
+                    // exception is the player being initialized, which a solo run logs just
+                    // before its seed.
                     let Some(run) = current.as_mut() else {
+                        if let Event::PlayerInitialized { subtype, .. } = other {
+                            pending_character.get_or_insert(subtype);
+                        }
                         continue;
                     };
                     apply(run, other, kinds, &mut starting);
@@ -169,5 +185,10 @@ fn apply(run: &mut Run, event: Event, kinds: &dyn ItemKinds, starting: &mut bool
         // The watcher's trigger, and it tells the fold nothing. A field for it here would be a
         // promise this crate does not keep.
         Event::SaveWritten { .. } => {}
+        // The first one is the run's: in co-op the line repeats for every player at the
+        // table, and this app speaks about the profile it reads.
+        Event::PlayerInitialized { subtype, .. } => {
+            run.character_id.get_or_insert(subtype);
+        }
     }
 }
