@@ -1030,3 +1030,17 @@ fn the_threshold_view_is_camel_case_on_the_wire() {
         })
     );
 }
+
+/// N8: the pair the graph's screens are loaded with. The property is not that a struct holds
+/// two fields — it is that the steps are the filter over **the view beside them**, from one
+/// reading of the profile. Two commands could not say that: each rebuilt the pipeline, and a
+/// save written between them made the steps describe a profile the list no longer showed.
+#[test]
+fn the_pair_carries_the_steps_of_the_view_it_travels_with() {
+    let mut flags = vec![false; 10];
+    flags[2] = true;
+    let view = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
+    let pair = ipc::graph_views(view.clone());
+    assert_eq!(pair.unlock, view);
+    assert_eq!(pair.steps, next_steps(&view));
+}
