@@ -59,6 +59,28 @@ export const it = {
     settingsTitle: 'Impostazioni',
     settingsHint: 'Il salvataggio che stai giocando, e come apre le tab.',
   },
+  live: {
+    intro:
+      'Quello che stai giocando adesso, e cosa aprirebbe se lo finisci. L’app deve essere aperta mentre giochi: il gioco riscrive il log a ogni avvio.',
+    run: 'La run in corso',
+    floors: 'piani',
+    heldActive: 'in mano',
+    collected: 'raccolti',
+    wouldOpen: 'Se finisci questa run',
+    beat: 'Batti {column} con {character}',
+    nothing:
+      'Niente che questa run possa aprire da sola: quello che manca agli achievement non è un marchio di questo personaggio.',
+    diagnostic: {
+      noRun: 'Nessuna run in corso: l’app sta guardando, e non stai giocando.',
+      characterNotNamed:
+        'Non sappiamo ancora con chi stai giocando: il nome compare quando raccogli il primo oggetto.',
+      unknownCharacter: 'Il personaggio «{name}» non è nel catalogo del gioco.',
+      ambiguousCharacter:
+        'Il log scrive «{name}», e il gioco chiama così {forms} personaggi: la forma base e quella Tainted. Sotto trovi entrambe, perché indovinare quale sia sarebbe un’ipotesi.',
+      noGraph: 'Senza il gioco installato non sappiamo cosa aprirebbe.',
+      noProfile: 'Senza un salvataggio scelto non sappiamo cosa ti manca.',
+    },
+  },
   runs: {
     intro:
       'Le run che l’app ha letto: quelle di questa sessione e quelle delle partite online che il gioco ha già registrato. Il log non ha un orologio, quindi l’ordine è per sessione e non per ora.',

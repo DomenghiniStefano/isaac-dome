@@ -25,4 +25,5 @@ export const Command = {
   QueueMove: 'queue_move',
   QueueImportGoals: 'queue_import_goals',
   Runs: 'runs',
+  Live: 'live',
 } as const

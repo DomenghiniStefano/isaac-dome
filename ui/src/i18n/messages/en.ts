@@ -58,6 +58,29 @@ export const en: MessageSchema = {
     settingsTitle: 'Settings',
     settingsHint: 'The save you are playing, and how it opens tabs.',
   },
+  live: {
+    intro:
+      'What you are playing now, and what finishing it would open. The app has to be running while you play: the game rewrites the log on every launch.',
+    run: 'The run in progress',
+    floors: 'floors',
+    heldActive: 'held',
+    collected: 'collected',
+    wouldOpen: 'If you finish this run',
+    beat: 'Beat {column} with {character}',
+    nothing:
+      'Nothing this run can open on its own: what the achievements are missing is not a mark for this character.',
+    diagnostic: {
+      noRun:
+        'No run in progress: the app is watching, and you are not playing.',
+      characterNotNamed:
+        'We do not know who you are playing yet: the name appears when you pick up the first item.',
+      unknownCharacter: 'The character “{name}” is not in the game’s catalog.',
+      ambiguousCharacter:
+        'The log writes “{name}”, and the game calls {forms} characters that: the base form and the Tainted one. Both are below, because guessing which would be an inference.',
+      noGraph: 'Without the game installed we do not know what it would open.',
+      noProfile: 'Without a save chosen we do not know what you are missing.',
+    },
+  },
   runs: {
     intro:
       'The runs the app has read: this session’s, and the online sessions the game had already recorded. The log carries no clock, so the order is by session and not by time.',
