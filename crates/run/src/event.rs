@@ -70,4 +70,14 @@ pub enum Event {
     SaveWritten {
         file: String,
     },
+    /// `Initialized player with Variant 0 and Subtype 3`. **The subtype is the character's own
+    /// id**, which the item line never gives: there the game writes the name, and a Tainted
+    /// character wears the base form's name. Measured on this machine's logs 2026-09-15.
+    ///
+    /// One per player, so a co-op run has several — the first belongs to the run, the rest to
+    /// whoever else is at the table.
+    PlayerInitialized {
+        variant: u32,
+        subtype: u32,
+    },
 }

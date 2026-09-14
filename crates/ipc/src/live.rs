@@ -116,13 +116,14 @@ pub enum LiveGraph<'a> {
     NoGraph,
 }
 
-/// The join. `characters` answers what the catalog calls this name — one id, or two when the
-/// base and the Tainted form share it.
+/// The join. `characters` answers who the catalog says this is: given the id the log stated it
+/// answers exactly one, and given only a name it answers one — or two, when the base and the
+/// Tainted form share it, which is the ambiguity the id exists to end.
 pub fn live_view(
     run: Option<RunView>,
     nodes: LiveGraph<'_>,
     marks: Option<LiveMarks>,
-    characters: impl Fn(&str) -> Vec<(u32, String)>,
+    characters: impl Fn(&str, Option<u32>) -> Vec<(u32, String)>,
 ) -> LiveView {
     let mut diagnostics = Vec::new();
     let Some(run) = run else {
@@ -160,7 +161,10 @@ pub fn live_view(
             diagnostics: vec![LiveDiagnostic::CharacterNotNamed],
         };
     };
-    let forms = characters(&name);
+    // The log states the character by id when it says `Initialized player …`, and that is the
+    // only source that tells a Tainted form from its base. When it is there nothing is
+    // ambiguous; the name is the fallback for a run folded before that line was read.
+    let forms = characters(&name, run.character_id);
     if forms.is_empty() {
         return LiveView {
             run: Some(run),

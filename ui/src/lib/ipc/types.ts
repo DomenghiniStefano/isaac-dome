@@ -1239,6 +1239,12 @@ export type RunView = {
    * `None` when no item line ever named the character: it is not in the seed line.
    */
   character: string | null
+  /**
+   * The character the log states by id — `Initialized player with Variant 0 and Subtype N`.
+   * It tells a Tainted form from its base, which the name cannot: the game gives both the
+   * same one.
+   */
+  characterId: number | null
   seedWords: string
   /**
    * The game called this run online. The only free discriminator we have for co-op.
