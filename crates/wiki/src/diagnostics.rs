@@ -44,6 +44,15 @@ pub struct Diagnostics {
     /// `default` for the same reason as `orphan_closers`.
     #[serde(default)]
     pub transformation_sources_disagree: u32,
+    /// HTML entities the inline parser's closed list does not cover, by name. The text is
+    /// **kept** rather than dropped — it is the wiki's content, and `&` is an ordinary
+    /// character in it — so this is the only thing that makes a new entity visible instead
+    /// of shipped. Three of them reached the screen as `&comma;` until 2026-09-14, in
+    /// pickup quotes, because nothing counted them.
+    ///
+    /// `default` for the same reason as `orphan_closers`.
+    #[serde(default)]
+    pub unknown_entities: BTreeMap<String, u32>,
 }
 
 impl Diagnostics {
@@ -61,6 +70,10 @@ impl Diagnostics {
 
     pub fn unknown_dlc_code(&mut self, code: &str) {
         *self.unknown_dlc_codes.entry(code.to_string()).or_default() += 1;
+    }
+
+    pub fn unknown_entity(&mut self, name: &str) {
+        *self.unknown_entities.entry(name.to_string()).or_default() += 1;
     }
 
     pub fn discarded_section(&mut self, title: &str) {
@@ -83,6 +96,9 @@ impl Diagnostics {
         }
         for (k, v) in &other.unknown_dlc_codes {
             *self.unknown_dlc_codes.entry(k.clone()).or_default() += v;
+        }
+        for (k, v) in &other.unknown_entities {
+            *self.unknown_entities.entry(k.clone()).or_default() += v;
         }
         self.pages_without_id += other.pages_without_id;
         self.orphan_closers += other.orphan_closers;
