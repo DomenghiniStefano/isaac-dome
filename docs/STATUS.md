@@ -1367,7 +1367,31 @@ save against the dated backup the game wrote before it, and read which cells mov
 
 ## Session log
 
-### 2026-09-13 (last) — the archive fills itself
+### 2026-09-14 (last) — the suite was green on one machine
+
+`fix/marks-real-partial-series`, cut from `develop`. Opened on a second machine, **without the
+game and with four old samples**, to take the work that does not need either. The first thing
+that ran was `scripts/check`, and it was **red on a clean `develop`**:
+`the_online_bit_never_stands_without_the_cleared_bit` guarded against vacuity with an assert,
+and the assert fired.
+
+**The state it fired on is the one the guard was not about.** An empty `samples/` returns early
+and never reaches it; the owner's full series holds bit 2 and passes it. The failure needs
+exactly the state in between — some dated samples, none from the era the profile first won a run
+online — which is this machine (one `rep+` file, 2025-01-12) and every second machine after it.
+So the test was green where there was nothing and green where there was everything, and red only
+in the middle: a shape no amount of running it on the main machine can show.
+
+The absence is **declared** now, through `test_support::skip`, naming how many samples were read
+and the latest of them. `scripts/check` counts those lines, so the missing coverage stays visible
+instead of dissolving into an "N passed" — which is the same reason the skip convention exists at
+all. The guard keeps its teeth: where a cell does set bit 2 the property asserts exactly as
+before, and **on a series that reaches that era, this skip line appearing at all is the
+regression**. The reasoning is in the doc comment, not only here.
+
+Baseline after the fix: `pnpm check` green, **127 skips** declared, 79 real files touched.
+
+### 2026-09-13 — the archive fills itself
 
 `feature/log-watch`, cut from `develop`. M4 sub-project **1b**: `discovery` learns where the
 game writes, `log-watch` reads it, `store` keeps it in a fourth migration, `ipc` shows it, and a
