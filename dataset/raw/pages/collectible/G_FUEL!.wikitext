@@ -37,7 +37,7 @@
 * Replaces Isaac's nightmares during floor transition with G Fuel-themed versions.
 
 == Notes ==
-* G FUEL! is not a "real" item for nearly every purpose without activating the easter egg, and has no [[Collection Page (Repentance)|collection page]] entry. It is not accessible even via [[Debug Console]].
+* G FUEL! is not a "real" item for nearly every purpose without activating the easter egg, and has no [[Collection Page (Repentance)|collection page]] entry. It is not accessible even via [[Debug Console]] unless Isaac is in the special seed, in which case the command would be spawn 5.100.-1
 * G FUEL!'s tear effects cannot be copied by familiars such as {{i|Cain's Other Eye}} or {{t|Found Soul}}.
 * Item pedestals containing G FUEL! are unaffected by any attempt to reroll, duplicate, or remove them, including but not limited to {{i|The D6}}, {{i|Eternal D6}}, and {{i|Crooked Penny}}.
 

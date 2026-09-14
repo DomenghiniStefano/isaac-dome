@@ -63,7 +63,7 @@ much more to absorb**, and `UnlockTarget` gained a field as well.
 entries run in parallel on disjoint files. The cross-check B42 asked for opened **B45**: four
 characters — Jacob & Esau, The Forgotten, Tainted Forgotten, Tainted Lazarus — **have no page in
 the wiki snapshot**, 47 requirements point at them, and the fetch cannot see it because it
-enumerates the singular `Infobox character` while those four pages carry the plural one, two forms in a block.
+enumerated the singular `Infobox character` while those four pages carry the plural one, two forms in a block — closed the same evening.
 
 ---
 
@@ -1518,6 +1518,43 @@ finished and unreachable.
 
 **What this evening did not do:** see the card. It exists, it is tested, and B46 is what stands
 between it and a screen.
+
+**Then B45 closed the same evening it was opened**, on `feature/plural-characters`, with the
+owner's go-ahead for the refetch. A kind names its **templates**, plural; `{{infobox characters}}`
+is split where it is extracted into the two ordinary character infoboxes it stands for, following
+the template's own source rather than a guess — `dlc`, `description`, `unlocked by` and `hidden`
+are shared, everything else including `id` belongs to one form, because a second form inheriting
+`id` would take the first one's identity and both would key the same entry. **34 character pages
+instead of 30, 40 forms instead of 32**, and the eight that had no page are pages.
+
+**Both guards, which is the half the entry called worth more than the four pages.** Every
+character the repo names has to have a page; every Cargo row with an id has to have one too —
+**1610 rows** checked across items, trinkets, achievements, challenges and transformations, with
+a floor just under that so a table which stopped being read cannot make the test pass by checking
+nothing. And the mechanism that hid it is counted: an infobox whose template name is in no kind
+was skipped in silence, so a page could be downloaded and parsed into **zero entries** without a
+word. `Diagnostics::unknown_infoboxes`.
+
+**Three expectations moved, and each was attributed rather than absorbed** — the rule this repo
+gives itself when a pinned number grows. Characters 32 → 40. Raw template syntax 83 → **87**,
+which is **two** nodes and not four: Tainted Lazarus's page carries two multi-line bug templates
+and now yields two entries that each carry the page's sections, exactly as Judas and Black Judas
+already did; the other three new pages contribute none, measured by attributing every offender to
+its entry. And the graph's era, which moved **without a single requirement changing**: those 47
+references were resolving by id through `dataset/corrections.json` all along. The graph was right
+while the pages were missing, which is precisely why nothing ever complained.
+
+**What the pages cannot say.** `{{infobox characters}}` has no `parent` parameter, so the second
+form of a two-character page cannot state what `player.json` knows. The cross-check learned a
+third answer — silence, reported apart from disagreement — with the four names pinned in page
+order, so a fifth one, a page that *could* state its parent and stopped, goes red instead of
+joining a tolerated category.
+
+**And the query that explained B45 opened B47**: seven more `Infobox` templates the fetch does not
+enumerate, **591 pages** behind them — 247 entities, 126 monsters, 97 pickups, 66 cards, 28 runes,
+27 stages. It corrects a sentence this repo says often: *"that kind has no page"* is, for a part
+of them, a fact about our fetch and not about the wiki. Whether any of it belongs in a dataset
+that ships inside the binary is a product decision, which is why it is an entry and not a task.
 
 ### 2026-09-14 — the suite was green on one machine
 

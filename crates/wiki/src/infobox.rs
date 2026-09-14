@@ -14,6 +14,55 @@ pub struct RawInfobox {
     pub params: BTreeMap<String, String>,
 }
 
+/// The template that states **two** characters in one block (B45): Jacob & Esau, The
+/// Forgotten, Tainted Forgotten, Tainted Lazarus, and no other page on the wiki.
+const PLURAL_CHARACTER: &str = "infobox characters";
+const CHARACTER: &str = "infobox character";
+
+/// The second form's parameters carry this suffix: `name 2`, `health 2`, `collectibles 2`.
+const SECOND_FORM: &str = " 2";
+
+/// The parameters `Template:Infobox characters` reads **without** a ` 2` twin, measured on
+/// the template's own source (2026-09-14): they are stated once and describe the page, so
+/// both forms carry them. Everything else it reads — `name`, `alias`, `image`, `damage`,
+/// `tears`, `shot speed`, `range`, `speed`, `luck`, `health`, `collectibles`, `pickups`
+/// and `id` — exists in both, so an unsuffixed one of those belongs to the first form
+/// alone. `id` is the one that matters: the four pages state `id` and never `id 2`, and a
+/// second form inheriting it would take the first form's identity instead of resolving by
+/// name — silently, since both would then key the same entry.
+const SHARED_BY_BOTH_FORMS: &[&str] = &["dlc", "description", "unlocked by", "hidden"];
+
+/// The plural template as the two ordinary character infoboxes it stands for, in page
+/// order. Splitting here keeps `InfoboxKind` a closed set and leaves every reader —
+/// `entries_of`, `parent_check` — looking at what it already understands.
+fn character_forms(params: BTreeMap<String, String>) -> [RawInfobox; 2] {
+    let mut second = BTreeMap::new();
+    let mut first = BTreeMap::new();
+    for (key, value) in params {
+        match key.strip_suffix(SECOND_FORM) {
+            Some(base) => {
+                second.insert(base.to_string(), value);
+            }
+            None => {
+                if SHARED_BY_BOTH_FORMS.contains(&key.as_str()) {
+                    second.insert(key.clone(), value.clone());
+                }
+                first.insert(key, value);
+            }
+        }
+    }
+    [
+        RawInfobox {
+            name: CHARACTER.to_string(),
+            params: first,
+        },
+        RawInfobox {
+            name: CHARACTER.to_string(),
+            params: second,
+        },
+    ]
+}
+
 /// Every top-level `{{infobox …}}`, in the order they appear. Other templates are
 /// skipped whole, so an infobox nested inside another template does not count.
 pub fn extract_infoboxes(text: &str) -> Vec<RawInfobox> {
@@ -23,7 +72,9 @@ pub fn extract_infoboxes(text: &str) -> Vec<RawInfobox> {
         let at = i + pos;
         match parse_template_at(text, at) {
             Some((t, end)) => {
-                if t.name.starts_with("infobox") {
+                if t.name == PLURAL_CHARACTER {
+                    out.extend(character_forms(t.named));
+                } else if t.name.starts_with("infobox") {
                     out.push(RawInfobox {
                         name: t.name,
                         params: t.named,
@@ -355,6 +406,74 @@ mod tests {
         assert_eq!(v[0].name, "infobox achievement");
         assert_eq!(v[0].params.get("id").map(String::as_str), Some("62"));
         assert_eq!(v[1].params.get("name").map(String::as_str), Some("Cain"));
+    }
+
+    /// B45. `{{infobox characters}}`, plural, holds **two** characters in one block: the
+    /// second one's parameters carry a ` 2` suffix. Four pages use it — Jacob & Esau, The
+    /// Forgotten, Tainted Forgotten, Tainted Lazarus — and they are exactly the four pages
+    /// that carry two playable forms. Splitting here rather than downstream keeps
+    /// `InfoboxKind` a closed set and leaves every reader (`entries_of`, `parent_check`)
+    /// unchanged: what comes out is two ordinary character infoboxes.
+    ///
+    /// Tainted Lazarus's real block, trimmed to the parameters this test is about.
+    #[test]
+    fn the_plural_character_template_becomes_two_infoboxes() {
+        let src = "{{infobox characters\n | dlc = r\n | name 2 = Dead Tainted Lazarus\n | id = 29\n | health = {{hearts|red=3}}\n | health 2 = {{hearts|soul=2}}\n | unlocked by = The Enigma\n | collectibles = {{i|Flip}}\n | collectibles 2 = [[Flip]]\n}}";
+        let v = extract_infoboxes(src);
+        assert_eq!(v.len(), 2);
+        assert!(v.iter().all(|ib| ib.name == "infobox character"));
+
+        // The first form is the page's own: no `name`, so the entry takes the page title.
+        assert_eq!(v[0].params.get("name"), None);
+        assert_eq!(v[0].params.get("id").map(String::as_str), Some("29"));
+        assert_eq!(
+            v[0].params.get("health").map(String::as_str),
+            Some("{{hearts|red=3}}")
+        );
+
+        // The second: its own parameters with the suffix gone, and none of the first's.
+        assert_eq!(
+            v[1].params.get("name").map(String::as_str),
+            Some("Dead Tainted Lazarus")
+        );
+        assert_eq!(
+            v[1].params.get("health").map(String::as_str),
+            Some("{{hearts|soul=2}}")
+        );
+        assert_eq!(
+            v[1].params.get("collectibles").map(String::as_str),
+            Some("[[Flip]]")
+        );
+        // `id` has an `id 2` twin in the template and this page states none, so the second
+        // form must not inherit 29: it resolves by name, and a name that fails to resolve
+        // has to be loud (`pages_without_id`) rather than silently keep the first's id.
+        assert_eq!(v[1].params.get("id"), None);
+
+        // No ` 2` key survives on either side: they would reach `no_silent_parameter` as
+        // parameters no field keeps.
+        assert!(v
+            .iter()
+            .all(|ib| ib.params.keys().all(|k| !k.ends_with(" 2"))));
+    }
+
+    /// The four parameters the template reads without a ` 2` twin — `dlc`, `description`,
+    /// `unlocked by`, `hidden` — are stated once for the page and belong to both forms.
+    #[test]
+    fn the_parameters_with_no_second_form_are_shared_by_both() {
+        let src = "{{infobox characters\n | dlc = r\n | description = two of them\n | unlocked by = The Enigma\n | name 2 = Dead Tainted Lazarus\n}}";
+        let v = extract_infoboxes(src);
+        assert_eq!(v.len(), 2);
+        for ib in &v {
+            assert_eq!(ib.params.get("dlc").map(String::as_str), Some("r"));
+            assert_eq!(
+                ib.params.get("unlocked by").map(String::as_str),
+                Some("The Enigma")
+            );
+            assert_eq!(
+                ib.params.get("description").map(String::as_str),
+                Some("two of them")
+            );
+        }
     }
 
     #[test]

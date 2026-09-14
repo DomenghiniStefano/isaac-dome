@@ -53,6 +53,19 @@ pub struct Diagnostics {
     /// `default` for the same reason as `orphan_closers`.
     #[serde(default)]
     pub unknown_entities: BTreeMap<String, u32>,
+    /// `{{infobox …}}` templates whose name is in no kind, by name. The page is extracted,
+    /// the infobox is skipped, and until 2026-09-14 that skip was silent — which is how a
+    /// page could enter the snapshot and produce **zero** entries with nothing to show for
+    /// it (B45: four character pages state two characters with `infobox characters`, and
+    /// the whole shape was invisible from inside the repo).
+    ///
+    /// A page we never download cannot be counted here, so this does not replace the
+    /// snapshot's own coverage check. It answers the other half: what we downloaded and
+    /// did not understand.
+    ///
+    /// `default` for the same reason as `orphan_closers`.
+    #[serde(default)]
+    pub unknown_infoboxes: BTreeMap<String, u32>,
 }
 
 impl Diagnostics {
@@ -62,6 +75,10 @@ impl Diagnostics {
 
     pub fn unknown_template(&mut self, name: &str) {
         *self.unknown_templates.entry(name.to_string()).or_default() += 1;
+    }
+
+    pub fn unknown_infobox(&mut self, name: &str) {
+        *self.unknown_infoboxes.entry(name.to_string()).or_default() += 1;
     }
 
     pub fn orphan_closer(&mut self) {
