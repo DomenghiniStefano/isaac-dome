@@ -1571,11 +1571,26 @@ counting them is how three of them shipped. It is empty on this snapshot, and a 
 it able to speak rather than leaving an empty counter to be trusted. A run is only counted when
 it is shaped like an entity, or an ordinary `&` in prose would fill it.
 
-**And one finding that is not ours.** Trinket 138's quote reads `t's broken9Reroll your dest`.
-The raw page is intact and says exactly that on line 4, so the snapshot is faithful to the page
-and the parser to the snapshot: **the wiki's own page is corrupt**. Registered as **B44**, with
-the rule that the right text has to be read off a source and not written from a plausible guess —
-`dataset/corrections.json` exists for the wiki being wrong, not for us inventing content.
+**And one finding that was not a finding.** Trinket 138's quote reads `t's broken9Reroll your
+dest`, and it was filed as **B44 — the wiki's own page is corrupt**, on the evidence that the raw
+page is intact and says exactly that on line 4. **The owner asked for the link, and the answer
+was in the file already open**, forty lines below the infobox: the page's Trivia says the quote
+is a splice of three item descriptions — *"It's broken"*, *"109"*, *"Reroll your destiny"* —
+because `'M` is a glitch-themed trinket named after the Generation I Pokémon glitch. **Looking
+broken is the content.**
+
+The repo already knew the shape: **B38's own second paragraph** lists "TMTRAINER's deliberately
+corrupted string" among the quote disagreements that are not defects — one paragraph above the
+work being done when this was filed. Two rules this project already holds, neither applied:
+**read the whole page before calling it corrupt**, and **a thing that looks wrong on data we did
+not write is a hypothesis until the source is asked**.
+
+B44 closes as not a defect and stays for the wrong diagnosis, which is the useful half. What it
+produced is a guard rather than a fix: `the_glitch_themed_trinkets_quote_is_meant_to_look_broken`
+pins the string and carries the wiki's explanation, and was shown able to fail — replacing the
+expectation with the plausible *"It's broken. Reroll your destiny"* turns it red. A distorted
+string with no guard invites exactly one wrong edit, and the next reader would have made it with
+the best of intentions.
 
 ### 2026-09-13 — the archive fills itself
 
