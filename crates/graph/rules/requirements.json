@@ -22,7 +22,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Coin"
           },
           "label": "Coin"
@@ -85,7 +85,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "The Harbingers"
           },
           "label": "Harbinger"
@@ -153,7 +153,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Tinted Rock"
           },
           "label": "Tinted Rock"
@@ -164,7 +164,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 1"
           },
           "label": "Chapter 1"
@@ -175,7 +175,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 2"
           },
           "label": "Chapter 2"
@@ -210,7 +210,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 2"
           },
           "label": "Chapter 2"
@@ -221,7 +221,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 3"
           },
           "label": "Chapter 3"
@@ -283,7 +283,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "7 Deadly Sins"
           },
           "label": "7 Deadly Sins"
@@ -378,7 +378,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "XV - The Devil?"
           },
           "label": "XV - The Devil?"
@@ -389,7 +389,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Tinted Rock"
           },
           "label": "Tinted Rock"
@@ -475,7 +475,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "category:Yes Mother? items"
           },
           "label": "Yes Mother? items"
@@ -486,7 +486,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "XIII - Death"
           },
           "label": "XIII - Death"
@@ -497,7 +497,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 1"
           },
           "label": "Chapter 1"
@@ -508,7 +508,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 2"
           },
           "label": "Chapter 2"
@@ -519,7 +519,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 3"
           },
           "label": "Chapter 3"
@@ -530,7 +530,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 4"
           },
           "label": "Chapter 4"
@@ -563,7 +563,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "heart"
           },
           "label": "heart"
@@ -880,7 +880,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Donation Machine"
           },
           "label": "Donation Machine"
@@ -970,7 +970,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Angel Room (Item Pool)"
           },
           "label": "Angel Room items"
@@ -997,14 +997,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "collection page"
           },
           "label": "Collect"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "ending"
           },
           "label": "ending"
@@ -1202,7 +1202,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Devil Room"
           },
           "label": "Deals with the Devil"
@@ -1226,7 +1226,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 4"
           },
           "label": "Chapter 4"
@@ -1262,7 +1262,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 6"
           },
           "label": "Chapter 6"
@@ -1273,21 +1273,21 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Collection Page"
           },
           "label": "Collect"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "items"
           },
           "label": "items"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "ending"
           },
           "label": "ending"
@@ -1298,7 +1298,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "rock"
           },
           "label": "rock"
@@ -2071,7 +2071,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Donation Machine"
           },
           "label": "Donation Machine"
@@ -2082,7 +2082,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Donation Machine"
           },
           "label": "Donation Machine"
@@ -2093,7 +2093,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Donation Machine"
           },
           "label": "Donation Machine"
@@ -2104,7 +2104,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Donation Machine"
           },
           "label": "Donation Machine"
@@ -2115,7 +2115,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Donation Machine"
           },
           "label": "Donation Machine"
@@ -2165,7 +2165,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Devil Room"
           },
           "label": "items from Devil Rooms"
@@ -2216,7 +2216,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Blood Donation Machine"
           },
           "label": "Blood Donation Machine"
@@ -2227,7 +2227,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Slot Machine"
           },
           "label": "Slot Machine"
@@ -2271,7 +2271,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Donation Machine"
           },
           "label": "Donation Machine"
@@ -2282,7 +2282,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Donation Machine"
           },
           "label": "Donation Machine"
@@ -2293,7 +2293,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Donation Machine"
           },
           "label": "Donation Machine"
@@ -2304,7 +2304,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Donation Machine"
           },
           "label": "Donation Machine"
@@ -2315,7 +2315,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 6"
           },
           "label": "Chapter 6"
@@ -2326,14 +2326,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2559,7 +2559,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2595,7 +2595,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2631,7 +2631,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2667,7 +2667,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2703,7 +2703,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2739,7 +2739,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2771,7 +2771,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2807,7 +2807,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2839,7 +2839,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2875,7 +2875,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2911,7 +2911,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2947,7 +2947,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -2983,7 +2983,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -3908,7 +3908,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -4063,14 +4063,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "ending"
           },
           "label": "ending"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "collection page"
           },
           "label": "collect"
@@ -4197,7 +4197,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -4215,7 +4215,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -4226,7 +4226,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -4237,7 +4237,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -4248,7 +4248,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -4259,7 +4259,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -4270,7 +4270,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -4281,7 +4281,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -4292,7 +4292,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -4303,7 +4303,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -4314,7 +4314,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -4325,14 +4325,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4350,14 +4350,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4375,14 +4375,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4400,14 +4400,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4425,14 +4425,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4450,14 +4450,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4482,7 +4482,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "XIX - The Sun"
           },
           "label": "XIX - The Sun"
@@ -4493,14 +4493,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4518,14 +4518,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4543,14 +4543,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4568,14 +4568,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4593,14 +4593,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4618,14 +4618,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -4669,7 +4669,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Tinted Rock"
           },
           "label": "Tinted Rock"
@@ -4705,7 +4705,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Tinted Rock"
           },
           "label": "Tinted Rock"
@@ -4892,7 +4892,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -4912,7 +4912,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "tainted character"
           },
           "label": "tainted character"
@@ -5774,7 +5774,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -5792,14 +5792,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -5830,7 +5830,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Victory Lap"
           },
           "label": "Victory Lap"
@@ -5856,7 +5856,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Bestiary"
           },
           "label": "Bestiary"
@@ -5867,7 +5867,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Daily Challenge"
           },
           "label": "Daily Challenge"
@@ -5983,7 +5983,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Daily Challenge"
           },
           "label": "Daily Challenge"
@@ -5994,7 +5994,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Victory Lap"
           },
           "label": "Victory Lap"
@@ -6027,21 +6027,21 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Collection Page (Afterbirth †)"
           },
           "label": "Collect"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "ending"
           },
           "label": "ending"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Bestiary"
           },
           "label": "Bestiary"
@@ -6065,7 +6065,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Greed Donation Machine"
           },
           "label": "Greed Donation Machine"
@@ -6164,7 +6164,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Character"
           },
           "label": "Character"
@@ -6184,7 +6184,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Character"
           },
           "label": "Character"
@@ -6221,7 +6221,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "rock"
           },
           "label": "rock"
@@ -6232,7 +6232,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 1"
           },
           "label": "Chapter 1"
@@ -6267,7 +6267,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Daily Challenge"
           },
           "label": "Daily Challenge"
@@ -6278,7 +6278,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "familiar"
           },
           "label": "familiar"
@@ -6328,7 +6328,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "bed"
           },
           "label": "bed"
@@ -6339,7 +6339,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Victory Lap"
           },
           "label": "Victory Lap"
@@ -6362,7 +6362,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Cards and Runes"
           },
           "label": "Cards and Runes"
@@ -6387,7 +6387,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Collection Page"
           },
           "label": "collection"
@@ -6423,7 +6423,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 2"
           },
           "label": "Chapter 2"
@@ -6455,7 +6455,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 3"
           },
           "label": "Chapter 3"
@@ -6466,7 +6466,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Tech (Disambiguation)"
           },
           "label": "technology"
@@ -6508,7 +6508,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Harbinger"
           },
           "label": "Harbinger"
@@ -6532,7 +6532,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Chapter 4"
           },
           "label": "Chapter 4"
@@ -6554,7 +6554,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Devil Room"
           },
           "label": "Deals with the Devil"
@@ -6576,14 +6576,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Item Tags tearsup"
           },
           "label": "items"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Tears Up"
           },
           "label": "pills"
@@ -6605,7 +6605,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Angel Room (Item Pool)"
           },
           "label": "Angel Rooms items"
@@ -6652,7 +6652,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Devil Room"
           },
           "label": "Deals with the Devil"
@@ -6698,7 +6698,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Horf!"
           },
           "label": "Horf!"
@@ -6709,7 +6709,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "bed"
           },
           "label": "bed"
@@ -6720,7 +6720,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Gulp!"
           },
           "label": "Gulp!"
@@ -6734,7 +6734,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Blue Fly"
           },
           "label": "Blue Flies"
@@ -6745,7 +6745,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "I - The Magician"
           },
           "label": "I - The Magician"
@@ -6759,7 +6759,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "homing"
           },
           "label": "homing"
@@ -6810,7 +6810,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -7006,14 +7006,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -7069,7 +7069,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "hard mode"
           },
           "label": "hard mode"
@@ -7109,7 +7109,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Item Tags stars"
           },
           "label": "'stars' item tag"
@@ -7245,7 +7245,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -7441,14 +7441,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -7504,7 +7504,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
@@ -7700,14 +7700,14 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
@@ -9418,7 +9418,7 @@
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Battery Bum (Item Pool)"
           },
           "label": "item"
@@ -9839,21 +9839,21 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "character"
           },
           "label": "character"
@@ -12169,21 +12169,21 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Completion Mark"
           },
           "label": "Completion Mark"
         },
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "character"
           },
           "label": "character"
@@ -12194,7 +12194,7 @@
       "refs": [
         {
           "target": {
-            "kind": "pickup",
+            "kind": "concept",
             "name": "Collection Page (Repentance)"
           },
           "label": "collect"
@@ -12225,6 +12225,300 @@
     }
   },
   "targets": [
+    {
+      "key": "concept:'stars' item tag",
+      "label": "'stars' item tag",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:7 Deadly Sins",
+      "label": "7 Deadly Sins",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Angel Room items",
+      "label": "Angel Room items",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Angel Rooms items",
+      "label": "Angel Rooms items",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Bestiary",
+      "label": "Bestiary",
+      "uses": 2,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Blood Donation Machine",
+      "label": "Blood Donation Machine",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Blue Flies",
+      "label": "Blue Flies",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Cards and Runes",
+      "label": "Cards and Runes",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Chapter 1",
+      "label": "Chapter 1",
+      "uses": 3,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Chapter 2",
+      "label": "Chapter 2",
+      "uses": 4,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Chapter 3",
+      "label": "Chapter 3",
+      "uses": 3,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Chapter 4",
+      "label": "Chapter 4",
+      "uses": 3,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Chapter 6",
+      "label": "Chapter 6",
+      "uses": 2,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Character",
+      "label": "Character",
+      "uses": 2,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Coin",
+      "label": "Coin",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Collect",
+      "label": "Collect",
+      "uses": 3,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Completion Mark",
+      "label": "Completion Mark",
+      "uses": 19,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Daily Challenge",
+      "label": "Daily Challenge",
+      "uses": 3,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Deals with the Devil",
+      "label": "Deals with the Devil",
+      "uses": 3,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Donation Machine",
+      "label": "Donation Machine",
+      "uses": 10,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Greed Donation Machine",
+      "label": "Greed Donation Machine",
+      "uses": 12,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Gulp!",
+      "label": "Gulp!",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Harbinger",
+      "label": "Harbinger",
+      "uses": 2,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Hard mode",
+      "label": "Hard mode",
+      "uses": 38,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Horf!",
+      "label": "Horf!",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:I - The Magician",
+      "label": "I - The Magician",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Slot Machine",
+      "label": "Slot Machine",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Tinted Rock",
+      "label": "Tinted Rock",
+      "uses": 4,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Victory Lap",
+      "label": "Victory Lap",
+      "uses": 3,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:XIII - Death",
+      "label": "XIII - Death",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:XIX - The Sun",
+      "label": "XIX - The Sun",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:XV - The Devil?",
+      "label": "XV - The Devil?",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:Yes Mother? items",
+      "label": "Yes Mother? items",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:bed",
+      "label": "bed",
+      "uses": 2,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:character",
+      "label": "character",
+      "uses": 2,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:collect",
+      "label": "collect",
+      "uses": 2,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:collection",
+      "label": "collection",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:ending",
+      "label": "ending",
+      "uses": 4,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:familiar",
+      "label": "familiar",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:hard mode",
+      "label": "hard mode",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:heart",
+      "label": "heart",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:homing",
+      "label": "homing",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:item",
+      "label": "item",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:items",
+      "label": "items",
+      "uses": 2,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:items from Devil Rooms",
+      "label": "items from Devil Rooms",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:pills",
+      "label": "pills",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:rock",
+      "label": "rock",
+      "uses": 2,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:tainted character",
+      "label": "tainted character",
+      "uses": 1,
+      "verdictRequired": true
+    },
+    {
+      "key": "concept:technology",
+      "label": "technology",
+      "uses": 1,
+      "verdictRequired": true
+    },
     {
       "key": "entity:???",
       "label": "???",
@@ -12450,300 +12744,6 @@
     {
       "key": "entity:rainbow poop",
       "label": "rainbow poop",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:'stars' item tag",
-      "label": "'stars' item tag",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:7 Deadly Sins",
-      "label": "7 Deadly Sins",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Angel Room items",
-      "label": "Angel Room items",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Angel Rooms items",
-      "label": "Angel Rooms items",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Bestiary",
-      "label": "Bestiary",
-      "uses": 2,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Blood Donation Machine",
-      "label": "Blood Donation Machine",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Blue Flies",
-      "label": "Blue Flies",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Cards and Runes",
-      "label": "Cards and Runes",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Chapter 1",
-      "label": "Chapter 1",
-      "uses": 3,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Chapter 2",
-      "label": "Chapter 2",
-      "uses": 4,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Chapter 3",
-      "label": "Chapter 3",
-      "uses": 3,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Chapter 4",
-      "label": "Chapter 4",
-      "uses": 3,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Chapter 6",
-      "label": "Chapter 6",
-      "uses": 2,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Character",
-      "label": "Character",
-      "uses": 2,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Coin",
-      "label": "Coin",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Collect",
-      "label": "Collect",
-      "uses": 3,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Completion Mark",
-      "label": "Completion Mark",
-      "uses": 19,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Daily Challenge",
-      "label": "Daily Challenge",
-      "uses": 3,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Deals with the Devil",
-      "label": "Deals with the Devil",
-      "uses": 3,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Donation Machine",
-      "label": "Donation Machine",
-      "uses": 10,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Greed Donation Machine",
-      "label": "Greed Donation Machine",
-      "uses": 12,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Gulp!",
-      "label": "Gulp!",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Harbinger",
-      "label": "Harbinger",
-      "uses": 2,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Hard mode",
-      "label": "Hard mode",
-      "uses": 38,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Horf!",
-      "label": "Horf!",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:I - The Magician",
-      "label": "I - The Magician",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Slot Machine",
-      "label": "Slot Machine",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Tinted Rock",
-      "label": "Tinted Rock",
-      "uses": 4,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Victory Lap",
-      "label": "Victory Lap",
-      "uses": 3,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:XIII - Death",
-      "label": "XIII - Death",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:XIX - The Sun",
-      "label": "XIX - The Sun",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:XV - The Devil?",
-      "label": "XV - The Devil?",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:Yes Mother? items",
-      "label": "Yes Mother? items",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:bed",
-      "label": "bed",
-      "uses": 2,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:character",
-      "label": "character",
-      "uses": 2,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:collect",
-      "label": "collect",
-      "uses": 2,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:collection",
-      "label": "collection",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:ending",
-      "label": "ending",
-      "uses": 4,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:familiar",
-      "label": "familiar",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:hard mode",
-      "label": "hard mode",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:heart",
-      "label": "heart",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:homing",
-      "label": "homing",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:item",
-      "label": "item",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:items",
-      "label": "items",
-      "uses": 2,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:items from Devil Rooms",
-      "label": "items from Devil Rooms",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:pills",
-      "label": "pills",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:rock",
-      "label": "rock",
-      "uses": 2,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:tainted character",
-      "label": "tainted character",
-      "uses": 1,
-      "verdictRequired": true
-    },
-    {
-      "key": "pickup:technology",
-      "label": "technology",
       "uses": 1,
       "verdictRequired": true
     },

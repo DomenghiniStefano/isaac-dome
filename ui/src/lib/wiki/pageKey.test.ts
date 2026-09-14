@@ -20,7 +20,7 @@ describe('pageKey', () => {
   it('has no key for a target with no page', () => {
     expect(pageKey({ kind: 'stage', name: 'Basement' })).toBeNull()
     expect(pageKey({ kind: 'room', name: 'Devil Room' })).toBeNull()
-    expect(pageKey({ kind: 'pickup', name: 'Chest' })).toBeNull()
+    expect(pageKey({ kind: 'concept', name: 'Chest' })).toBeNull()
     expect(pageKey({ kind: 'transformation', id: 1 })).toBeNull()
   })
 

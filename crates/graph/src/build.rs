@@ -95,7 +95,7 @@ impl Graph {
                 | Target::Transformation { .. }
                 | Target::Stage { .. }
                 | Target::Room { .. }
-                | Target::Pickup { .. } => None,
+                | Target::Concept { .. } => None,
             });
             for row in rules.refs(id) {
                 let r = requirement_with(c, rules, &index, row, character);

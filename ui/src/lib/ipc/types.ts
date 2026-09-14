@@ -803,7 +803,7 @@ export type Target =
   | { kind: 'transformation'; id: number }
   | { kind: 'stage'; name: string }
   | { kind: 'room'; name: string }
-  | { kind: 'pickup'; name: string }
+  | { kind: 'concept'; name: string }
 
 export type Inline =
   | { kind: 'text'; text: string; style: Style }

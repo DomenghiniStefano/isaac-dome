@@ -116,7 +116,7 @@ export const iconOf = (
     case 'challenge':
     case 'stage':
     case 'room':
-    case 'pickup':
+    case 'concept':
     case 'transformation':
       return null
     default:

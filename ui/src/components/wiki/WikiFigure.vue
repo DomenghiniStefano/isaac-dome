@@ -35,7 +35,7 @@ const frame = computed((): Frame => {
     case 'character':
     case 'stage':
     case 'room':
-    case 'pickup':
+    case 'concept':
     case 'transformation':
       return Frame.Portrait
     default:
