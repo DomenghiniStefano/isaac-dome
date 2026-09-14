@@ -16,6 +16,7 @@ mod queue;
 mod reasons;
 mod resources;
 mod runs;
+mod save_cache;
 mod search;
 mod settings;
 mod sprite_png;
@@ -64,6 +65,7 @@ pub use runs::{
     runs_view, CatalogKinds, RunItemRef, RunOutcomeView, RunSource, RunTotals, RunView,
     RunsDiagnostic, RunsInputs, RunsView,
 };
+pub use save_cache::SaveCache;
 pub use search::{
     search, ProgressMark, SaveFlags, SearchDiagnostic, SearchHit, SearchIndex, SearchMatch,
     SearchView,
