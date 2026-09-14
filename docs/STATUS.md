@@ -1604,6 +1604,17 @@ nothing at all. **B51**: Adult's page never says how you become an adult — the
 page's *preamble*, which the parser drops by a rule written for "X is a passive item…", and
 `transformation::requires` reads that very line for its digit before throwing the sentence away.
 
+**B50 closed as a measurement, and the first instrument was mute.** A `grep` over the packed
+archives found nothing for `transform` — and nothing for `gfx/items` either, which is certainly
+there: **the archives index by hash, not by name**, so that search could never have answered.
+Asked properly, through `ResourceSet::read`, this copy of the game holds a **costume** per
+transformation (`transformation_adulthood.png`, 3,770 bytes out of `afterbirthp.a`) and an
+**animation** (`n020…n034_transformation_*.anm2`) — and no icon. Worse for drawing one: the
+twelve names are the game's internal ones for sixteen pages, with holes in the numbering —
+`mushroom`, `angel`, `mom`, `poop`, `drugs`, `evilangel`, `iwata` — and deciding which of the
+sixteen each is would be a guess of exactly the kind that cost this project sections 3 and 6.
+So the picture stays absent, with the measurement written into `icon.rs` beside the decision.
+
 **B51 closed within the hour, and half of it was mine.** The preamble is kept for the
 transformation kind alone, ahead of the infobox's `description` — measured first: that
 parameter restates the Effects section on all sixteen pages, Guppy's is empty, and none of
