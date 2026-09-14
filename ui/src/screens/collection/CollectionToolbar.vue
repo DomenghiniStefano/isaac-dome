@@ -16,8 +16,8 @@ import {
   CollectionFacet,
   CollectionSort,
   collectionFacetOrder,
-} from '@/lib/collection/collectionFilter'
-import type { CollectionFilter } from '@/lib/collection/collectionFilter'
+} from '@/lib/collection/collectionFacets'
+import type { CollectionFilter } from '@/lib/collection/collectionFacets'
 import { collectionFacetValueLabel } from './collectionLabels'
 
 const props = defineProps<{

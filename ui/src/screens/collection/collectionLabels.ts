@@ -7,7 +7,7 @@ import {
   CollectionFacet,
   NoPool,
   QualityValue,
-} from '@/lib/collection/collectionFilter'
+} from '@/lib/collection/collectionFacets'
 import { ItemState } from '@/lib/collection/itemState'
 import { OriginValue, TargetKind } from '@/lib/ipc/values'
 import { Dlc } from '@/lib/ipc/types'
