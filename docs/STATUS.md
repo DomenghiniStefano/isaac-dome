@@ -1161,6 +1161,11 @@ reason:
 
 - [ ] **N8. The save read once per screen, not twice.** *Two sessions, one of them a
       measurement. After M4 — the free half whenever.*
+      **Needs:** the game — its "done when" is a counter in a test showing the `.dat` opened
+      once across Next steps and Unlock, and both commands go through the catalog, which on a
+      machine without the game skips instead of counting. The free half (`next_steps` taking
+      the `UnlockView` it filters) can be written anywhere; it cannot be believed anywhere.
+      The vocabulary is the one at the top of `docs/BACKLOG.md`.
       `active_save()` does, on every command that needs the profile: `settings_file::load`
       (I/O), `discover()` (a walk of the Steam libraries), `fs::read` of the whole `.dat`,
       and a full parse. Nothing caches it, while the catalog, the graph, the resources, the
@@ -1289,6 +1294,13 @@ blocked on thinking or on code — each one is an instrument that needs the game
 running, or both, and every one of them is cheap once you are at that machine. The
 instrument they mostly share is the **matched window**: play a run, then compare the live
 save against the dated backup the game wrote before it, and read which cells moved.
+
+**This section is the `a measurement` bucket of `docs/BACKLOG.md`'s tags**, which since
+2026-09-14 mark every open entry there with what it needs beyond a clone of the repo —
+`nothing`, `a real save`, `the game`, `a measurement`. The vocabulary and the current counts
+are at the top of that file. What lives here rather than there is what is an **instrument**
+rather than an entry: no code to write, only a thing to go and read. The two that are both —
+B9 and B20 — are entries in the backlog and appear here as the measurement they wait on.
 
 - [ ] **Whether the archive's runs agree with `STREAK_COUNTER [22]` and `DEATHS [10]`** — one
       **solo, non-Greed** win with a snapshot either side, which `live_probe` already takes.
