@@ -29,7 +29,7 @@ the session log is full of entries that say *"not seen in a real Tauri window"*.
 `the game` work can be written against fixtures; what it cannot do there is be verified, and a
 half of a task that cannot be verified is not a half that should be shipped.
 
-**Snapshot of 2026-09-14 (evening)**, 24 open entries — it was 26 that morning. **B34 closed
+**Snapshot of 2026-09-14 (evening)**, 27 open entries — it was 26 that morning. **B34 closed
 because tagging it meant reading it** and it turned out not to be finished; B38 closed; B44 opened
 and closed the same hour, as not a defect; then B40 and B43 closed and B42 half closed on
 `feature/small-three`, which opened **B45** — four characters with no page, found by the
@@ -41,6 +41,11 @@ guard that makes a missing one loud — and opened **B47**: the same query that 
 seven more templates the fetch does not know, and 591 pages behind them.
 **B46 closed the same night**, which made B40's card reachable and opened **B48**: an empty
 category tells you your search found nothing when you never searched.
+**Then the owner opened the app and reported six things in one message**: four were defects, and
+two of them were fixed the same hour (the search that did not know the transformations, an
+achievement's drawing overlapping the want suggestions). The other two, plus a missing picture,
+are **B49**, **B50** and **B51** — and the only reason this list grew by three is that somebody
+looked at the screen.
 Regenerate rather than trust this
 list — the command
 prints each open entry's heading with its tag under it, and was run before it was written down:
@@ -49,9 +54,9 @@ prints each open entry's heading with its tag under it, and was run before it wa
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B48
+- **`nothing` (16)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B48, B49, B51
 - **`a real save` (3)** — B21, B22, B23
-- **`the game` (5)** — B3, B10, B19, B33, B36
+- **`the game` (6)** — B3, B10, B19, B33, B36, B50
 - **`a measurement` (2)** — B9, B20
 
 The `a measurement` bucket is the same subject as *"What only a machine with the game can answer"*
@@ -2698,3 +2703,97 @@ fixtures, which is every design pass.
 An empty list with no query says the category is empty and offers no reset; an empty result *with*
 a query keeps the sentence and the button it has. Both states are in `pnpm ui:dev`, so both can be
 seen without the game.
+
+---
+
+## B49 — A block-level template reaches the screen as its own source (implementation, `wiki`, then `ipc` and `ui`)
+
+**Needs:** nothing — the wikitext is committed, the defect is in `blocks.rs`, and the last step is
+a contract decision about one `Block` variant.
+
+Reported by the owner on 2026-09-14, from Beelzebub's page in the running app: where the list of
+contributing enemies should be, the page prints
+
+```
+{{column list | width = 15em | content =
+Pooter
+Super Pooter
+…
+}}
+```
+
+**The defect was known and counted; what was new is that it is now in front of a reader.** It is
+the 75 offenders `text_nodes_carry_no_raw_template_syntax` pins in `crates/wiki/tests/real.rs`: a
+template whose content is block-level opens on one line and closes several lines below, and
+`blocks.rs` walks the wikitext line by line, so `parse_template_at` never sees it as one template.
+`column list` is 51 of them, `Book of Virtues synergy` 6, `bug` 4.
+
+Until B46 those offenders lived on item pages, in sections a reader reaches after the fold. The
+transformation pages put one at the top of a short page, where it is the first thing you read.
+
+### What it needs
+
+The parser has to be able to say *a template wrapping blocks*, which is a new `Block` variant and
+therefore a change to the contract the design is built on. `column list` is pure layout and could
+be dropped whole; `{{bug|…}}` is content and the crate already models it in the single-line case.
+Deciding which of the two shapes each family takes is the design half.
+
+### Closes when
+
+No text node in the dataset carries `{{` or `}}` that the parser could have understood — the
+threshold in `text_nodes_carry_no_raw_template_syntax` falls to what genuine text leaves behind (8
+as of 2026-09-14: the `<math>` formulas and one wiki typo) — and Beelzebub's page lists its
+enemies as a list.
+
+---
+
+## B50 — A transformation has no picture (analysis, then `ipc`)
+
+**Needs:** the game — the question is whether the user's own copy holds anything to draw, and only
+`unpack` over `samples/packed` can answer it.
+
+Reported by the owner on 2026-09-14: the sixteen transformation pages draw no sprite anywhere —
+not in the category list, not on the page, not in a search row. `icon.rs` groups
+`Target::Transformation` with stages, rooms and concepts as targets with no icon, which was true
+when nothing could open one.
+
+**Whether it can be fixed at all is unmeasured.** No wiki image is ever shipped (the package
+carries none by decision), so a picture would have to come from the game's own archives. Whether
+those hold anything for a transformation — a costume sprite, an icon, an animation — was **not**
+established: a `grep` over the packed archives found nothing, and then found nothing for
+`gfx/items` either, which is certainly there. The index is compressed and the instrument is mute,
+so that search says nothing at all. The answer wants `unpack`, which reads the index properly.
+
+### Closes when
+
+Either a transformation carries an `iconUrl` served from the user's copy like every other target,
+or `icon.rs` keeps it at `None` with the measurement written down — what was looked for, in which
+archive, and what was found — so nobody greps for it a second time.
+
+---
+
+## B51 — The sentence that says how you become a transformation is thrown away (implementation, `wiki`, small)
+
+**Needs:** nothing, then a rebuild — the fix is in the parser and travels with a
+`pnpm wiki:build`.
+
+Reported by the owner on 2026-09-14, on Adult: the page says nothing about how the transformation
+happens. The wiki does say it — *"turns Isaac into an adult upon taking three Puberty pills"* — in
+the page's **preamble**, and the parser drops preambles by design: *"it's the 'X is a passive
+item…' sentence that `catalog` already covers"* (`page.rs`).
+
+**For a transformation the preamble is not that sentence.** It is where the wiki states the
+requirement, and the parser already reads it: `transformation::requires` finds "Pick up 3 …" in
+exactly that text and keeps the digit. It keeps the number and throws away the sentence that
+carries it.
+
+Fifteen of the sixteen survive that, because their requirement comes back as structured data —
+`requires: 3` and the contributors list, which B40 now draws. **Adult is the one where it does
+not**: no count the parser can read, no contributors, so after B40's rule (a row only where the
+page filled it) the page carries the effects, the notes, and nothing about pills.
+
+### Closes when
+
+A transformation's entry carries its preamble, and Adult's page says how you become an adult. The
+rule stays what it is for every other kind — this is a kind whose preamble is content, not a
+repetition of the catalog.
