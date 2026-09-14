@@ -1,12 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { graphAnswers } from '@/lib/ipc/fixtures/graph'
 import type { GraphInfo, UnlockNode, UnlockTarget } from '@/lib/ipc/types'
+import { OriginValue, TargetKind } from '@/lib/ipc/values'
 import { characterForms } from './characterName'
 import { NodeState, stateOrder } from './nodeState'
 import {
   FacetId,
-  OriginValue,
-  UnlockKind,
   UnlockSort,
   activeFilterCount,
   emptyFilter,
@@ -74,13 +73,13 @@ describe('facetValues', () => {
   it('reads what a node unlocks by kind, once each', () => {
     const n = node(1, { unlocks: [passive('A'), character('B'), passive('C')] })
     expect(facetValues(n, FacetId.Unlocks)).toEqual([
-      UnlockKind.Passive,
-      UnlockKind.Character,
+      TargetKind.Passive,
+      TargetKind.Character,
     ])
   })
 
   it('says a node unlocks nothing rather than no value', () => {
-    expect(facetValues(node(1), FacetId.Unlocks)).toEqual([UnlockKind.Nothing])
+    expect(facetValues(node(1), FacetId.Unlocks)).toEqual([TargetKind.Nothing])
   })
 
   it('names a missing origin', () => {
@@ -140,16 +139,16 @@ describe('matchesFilter', () => {
     expect(
       matchesFilter(
         lost,
-        picks([UnlockKind.Passive, UnlockKind.Character], []),
+        picks([TargetKind.Passive, TargetKind.Character], []),
       ),
     ).toBe(true)
     expect(
-      matchesFilter(lost, picks([UnlockKind.Character], [OriginValue.Rebirth])),
+      matchesFilter(lost, picks([TargetKind.Character], [OriginValue.Rebirth])),
     ).toBe(true)
     expect(
       matchesFilter(
         lost,
-        picks([UnlockKind.Character], [OriginValue.Repentance]),
+        picks([TargetKind.Character], [OriginValue.Repentance]),
       ),
     ).toBe(false)
   })
@@ -177,13 +176,13 @@ describe('facetCounts', () => {
   ]
   const filter = {
     ...emptyFilter(),
-    picks: { ...emptyFilter().picks, [FacetId.Unlocks]: [UnlockKind.Passive] },
+    picks: { ...emptyFilter().picks, [FacetId.Unlocks]: [TargetKind.Passive] },
   }
 
   it('leaves its own facet out, so a count says what picking it would give', () => {
     const counts = facetCounts(nodes, filter, FacetId.Unlocks)
-    expect(counts.get(UnlockKind.Passive)).toBe(2)
-    expect(counts.get(UnlockKind.Character)).toBe(1)
+    expect(counts.get(TargetKind.Passive)).toBe(2)
+    expect(counts.get(TargetKind.Character)).toBe(1)
   })
 
   it('applies every other facet', () => {
@@ -197,7 +196,7 @@ describe('facetCounts', () => {
   it('counts the reference profile', () => {
     expect(
       facetCounts(reference, emptyFilter(), FacetId.Unlocks).get(
-        UnlockKind.Nothing,
+        TargetKind.Nothing,
       ),
     ).toBe(231)
     expect(
@@ -218,14 +217,14 @@ describe('facetOptions', () => {
   it('keeps the fixed orders', () => {
     expect(facetOptions(reference, FacetId.State)).toEqual(stateOrder)
     expect(facetOptions(reference, FacetId.Unlocks)).toEqual([
-      UnlockKind.Passive,
-      UnlockKind.Active,
-      UnlockKind.Familiar,
-      UnlockKind.Trinket,
-      UnlockKind.Character,
-      UnlockKind.Boss,
-      UnlockKind.Challenge,
-      UnlockKind.Nothing,
+      TargetKind.Passive,
+      TargetKind.Active,
+      TargetKind.Familiar,
+      TargetKind.Trinket,
+      TargetKind.Character,
+      TargetKind.Boss,
+      TargetKind.Challenge,
+      TargetKind.Nothing,
     ])
     expect(facetOptions(reference, FacetId.Origin)).toEqual([
       OriginValue.Rebirth,
