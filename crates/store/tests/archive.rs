@@ -28,6 +28,7 @@ fn run_of(seed: &str) -> Run {
         seed_numeric: 1,
         seed_kind: SeedKind::New,
         character: None,
+        character_id: None,
         starting_items: vec![],
         collected: vec![],
         passives: vec![],
