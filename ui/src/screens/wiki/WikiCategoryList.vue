@@ -5,10 +5,12 @@ import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Skeleton } from '@/components/ui/skeleton'
+import { VirtualRows } from '@/components/ui/virtual'
 import WikiFigure from '@/components/wiki/WikiFigure.vue'
 import { WikiFigureSize } from '@/components/wiki/figureSize'
 import { useMessages } from '@/i18n'
 import type { WikiPageRef } from '@/lib/ipc/types'
+import { rowWidePx } from '@/lib/scale/rows'
 import { pageLocation } from '@/lib/wiki/category'
 import { filterPages } from '@/lib/wiki/listFilter'
 import { pageKey } from '@/lib/wiki/pageKey'
@@ -21,8 +23,6 @@ import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
 import ScreenHeader from '../ScreenHeader.vue'
 import { pageId } from './wikiLabels'
-import { useScaledRows } from '@/composables/useScaledRows'
-import { rowWidePx } from '@/lib/scale/rows'
 
 const props = defineProps<{ category: WikiCategory }>()
 const wiki = useWikiStore()
@@ -55,26 +55,6 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
   if (event.ctrlKey) tabs.open(location)
   else tabs.navigate(location)
 }
-
-const scroller = ref<HTMLElement | null>(null)
-
-// Up to some 900 pages in a category, drawn as many as fit plus a margin, the same rule as
-// Unlock and the Collection.
-const virtualizer = useScaledRows({
-  count: () => pages.value.length,
-  scroller,
-  rowPx: rowWidePx,
-})
-const visible = computed(() =>
-  virtualizer.value.getVirtualItems().flatMap((entry) => {
-    const page = pages.value[entry.index]
-    return page ? [{ entry, page }] : []
-  }),
-)
-const body = computed(() => ({
-  '--unlock-total': `${virtualizer.value.getTotalSize()}px`,
-}))
-const rowStart = (start: number) => ({ '--row-start': `${start}px` })
 </script>
 
 <template>
@@ -99,38 +79,37 @@ const rowStart = (start: number) => ({ '--row-start': `${start}px` })
           @update:model-value="query = String($event)"
         />
       </CardHeader>
-      <div
+      <VirtualRows
         v-if="pages.length > 0"
-        ref="scroller"
-        class="max-h-unlock-body overflow-auto"
+        v-slot="{ visible }"
+        :rows="pages"
+        :row-px="rowWidePx"
       >
-        <div :style="body" class="relative h-(--unlock-total)">
-          <Button
-            v-for="{ entry, page } in visible"
-            :key="pageKey(page.target) ?? entry.index"
-            :variant="ButtonVariant.Ghost"
-            :size="ButtonSize.Row"
-            :style="rowStart(entry.start)"
-            class="absolute inset-x-0 top-0 h-row-wide translate-y-(--row-start) gap-3 border-0 border-b border-hairline px-3 py-0"
-            @click="open(page, $event)"
+        <Button
+          v-for="{ index, style, row: page } in visible"
+          :key="pageKey(page.target) ?? index"
+          :variant="ButtonVariant.Ghost"
+          :size="ButtonSize.Row"
+          :style="style"
+          class="absolute inset-x-0 top-0 h-row-wide translate-y-(--row-start) gap-3 border-0 border-b border-hairline px-3 py-0"
+          @click="open(page, $event)"
+        >
+          <WikiFigure
+            :target="page.target"
+            :url="page.iconUrl"
+            :size="WikiFigureSize.Thumb"
+          />
+          <span
+            class="min-w-0 flex-1 truncate text-left text-row text-foreground"
+            >{{ page.title }}</span
           >
-            <WikiFigure
-              :target="page.target"
-              :url="page.iconUrl"
-              :size="WikiFigureSize.Thumb"
-            />
-            <span
-              class="min-w-0 flex-1 truncate text-left text-row text-foreground"
-              >{{ page.title }}</span
-            >
-            <span
-              v-if="pageId(page.target) !== null"
-              class="shrink-0 text-micro text-faint-foreground tabular-nums"
-              >{{ t('wiki.id') }} {{ pageId(page.target) }}</span
-            >
-          </Button>
-        </div>
-      </div>
+          <span
+            v-if="pageId(page.target) !== null"
+            class="shrink-0 text-micro text-faint-foreground tabular-nums"
+            >{{ t('wiki.id') }} {{ pageId(page.target) }}</span
+          >
+        </Button>
+      </VirtualRows>
       <div v-else class="flex flex-col items-start gap-3 p-4">
         <EmptyCategory>{{ t('wiki.noResults') }}</EmptyCategory>
         <Button :variant="ButtonVariant.Outline" @click="query = ''">{{
