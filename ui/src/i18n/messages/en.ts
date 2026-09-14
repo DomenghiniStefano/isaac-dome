@@ -189,6 +189,9 @@ export const en: MessageSchema = {
       luck: 'Luck',
       shotSpeed: 'Shot speed',
       collectibles: 'Starting items',
+      requires: 'Needs',
+      contributors: 'Counts',
+      target: 'Acts on',
       none: 'none',
     },
     states: {

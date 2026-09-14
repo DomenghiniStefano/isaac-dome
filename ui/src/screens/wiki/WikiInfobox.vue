@@ -5,9 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
 import { assertNever } from '@/lib/assertNever'
 import type { Entry, Inline, Target } from '@/lib/ipc/types'
-import { pageKey } from '@/lib/wiki/pageKey'
 import { useWikiStore } from '@/stores/wiki'
 import InfoboxRow from './InfoboxRow.vue'
+import { refsOf } from './infoboxRefs'
+import { hasRows } from './transformationCard'
 
 // The whole entry, not just its infobox: since 2026-09-13 the description, the editions and
 // "unlocked by" live on the entry, because they are not specific to a kind.
@@ -31,25 +32,19 @@ const forward = computed(() => ({
 
 // A `Target` field becomes a one-reference inline, so it links like any other; its label is
 // the page's title from the index, or its key while the index isn't known.
-const refOf = (target: Target | null): Inline[] => {
-  if (target === null) return []
-  const key = pageKey(target)
-  const label = (key === null ? null : wiki.titleOf(key)) ?? key ?? ''
-  return [{ kind: 'ref', target, label }]
-}
+const refOf = (target: Target | null): Inline[] =>
+  target === null ? [] : refsOf([target], wiki.titleOf)
 
-// Items and trinkets carry no card: their infobox is the figure and the title.
+// Items and trinkets carry no card: their infobox is the figure and the title. A
+// transformation carries one only where the page filled at least one of its three fields —
+// Adult filled none, and an empty card would say the page has nothing.
 const drawn = computed(() => {
   switch (infobox.value.kind) {
     case 'item':
     case 'trinket':
-    // A transformation's card has no rows yet: `requires`, `contributors` and `target` are
-    // in the contract and nothing draws them. Until they are drawn, no card — an empty one
-    // would say the page has nothing. This variant reached the union when the contract
-    // started being generated; before that the mirror did not have it and this switch
-    // reached `assertNever`, which throws.
-    case 'transformation':
       return false
+    case 'transformation':
+      return hasRows(infobox.value)
     case 'achievement':
     case 'boss':
     case 'challenge':
@@ -222,6 +217,34 @@ const stats = computed(() => {
         <InfoboxRow
           :label="t('wiki.infobox.collectibles')"
           :inline="infobox.collectibles"
+          v-bind="forward"
+        />
+      </dl>
+      <dl
+        v-else-if="infobox.kind === 'transformation'"
+        class="flex flex-col gap-2"
+      >
+        <!-- `null` says nothing, never "3": the page didn't state a count in a form we can
+             read, and defaulting it would be invisible against the pages that do. The row
+             goes away with it — the "nessuno" this box draws for an empty value would read
+             as "no item is needed", which is a claim about Adult that nobody measured. -->
+        <InfoboxRow
+          v-if="infobox.requires !== null"
+          :label="t('wiki.infobox.requires')"
+          :text="String(infobox.requires)"
+        />
+        <InfoboxRow
+          v-if="infobox.contributors.length > 0"
+          :label="t('wiki.infobox.contributors')"
+          :inline="refsOf(infobox.contributors, wiki.titleOf)"
+          v-bind="forward"
+        />
+        <!-- Fourteen of the sixteen pages say nothing here, and "nessuno" would read as a
+             claim that the transformation acts on nothing. -->
+        <InfoboxRow
+          v-if="infobox.target.length > 0"
+          :label="t('wiki.infobox.target')"
+          :inline="infobox.target"
           v-bind="forward"
         />
       </dl>

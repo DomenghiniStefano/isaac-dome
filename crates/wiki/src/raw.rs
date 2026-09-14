@@ -131,6 +131,7 @@ impl Raw {
             achievement: table("achievement")?,
             entity: table("entity")?,
             challenge: table("challenge")?,
+            player: table("player")?,
             transformation: table("transformation")?,
             pickup: table("pickup")?,
         };
