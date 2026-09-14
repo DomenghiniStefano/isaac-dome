@@ -16,6 +16,15 @@ use serde::Serialize;
 use crate::graph::{AchievementRef, MarkColumnView, MarkLevelView, RequirementView, UnlockNode};
 use crate::runs::RunView;
 
+/// One achievement this run could open, and how much it opens in turn: the graph already
+/// counts that for Unlock, and a run is worth more when what it gives unlocks more.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub struct LiveAchievement {
+    pub achievement: AchievementRef,
+    pub fan_out: u32,
+}
+
 /// One cell of the matrix, and what beating it with this character would open.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
@@ -24,7 +33,7 @@ pub struct LiveOpen {
     pub character_name: String,
     pub column: MarkColumnView,
     pub level: MarkLevelView,
-    pub achievements: Vec<AchievementRef>,
+    pub achievements: Vec<LiveAchievement>,
 }
 
 /// Everything that stops this screen from answering, said out loud. None of them may be
@@ -58,10 +67,25 @@ pub enum LiveDiagnostic {
 #[serde(rename_all = "camelCase")]
 pub struct LiveView {
     pub run: Option<RunView>,
+    /// The completion row of the character being played — two rows when the name reaches two
+    /// forms. `None` without a profile or without the sections that hold the marks.
+    pub marks: Option<LiveMarks>,
     /// Grouped by the cell it needs: "beat Mom's Heart with Cain" once, with everything it
     /// opens under it, instead of the same boss read five times.
     pub opens: Vec<LiveOpen>,
     pub diagnostics: Vec<LiveDiagnostic>,
+}
+
+/// The achievement as this screen offers it: with what it opens in turn, which is the graph's
+/// own count and not a second reading of it.
+fn offered(node: &UnlockNode) -> LiveAchievement {
+    LiveAchievement {
+        achievement: node.achievement.clone(),
+        fan_out: match node.graph {
+            crate::graph::GraphInfo::Computed { fan_out, .. }
+            | crate::graph::GraphInfo::Partial { fan_out, .. } => fan_out,
+        },
+    }
 }
 
 /// The mark a requirement is, when it is one.
@@ -97,12 +121,14 @@ pub enum LiveGraph<'a> {
 pub fn live_view(
     run: Option<RunView>,
     nodes: LiveGraph<'_>,
+    marks: Option<LiveMarks>,
     characters: impl Fn(&str) -> Vec<(u32, String)>,
 ) -> LiveView {
     let mut diagnostics = Vec::new();
     let Some(run) = run else {
         return LiveView {
             run: None,
+            marks: None,
             opens: Vec::new(),
             diagnostics: vec![LiveDiagnostic::NoRun],
         };
@@ -112,6 +138,7 @@ pub fn live_view(
         LiveGraph::NoProfile => {
             return LiveView {
                 run: Some(run),
+                marks,
                 opens: Vec::new(),
                 diagnostics: vec![LiveDiagnostic::NoProfile],
             }
@@ -119,6 +146,7 @@ pub fn live_view(
         LiveGraph::NoGraph => {
             return LiveView {
                 run: Some(run),
+                marks,
                 opens: Vec::new(),
                 diagnostics: vec![LiveDiagnostic::NoGraph],
             }
@@ -127,6 +155,7 @@ pub fn live_view(
     let Some(name) = run.character.clone() else {
         return LiveView {
             run: Some(run),
+            marks,
             opens: Vec::new(),
             diagnostics: vec![LiveDiagnostic::CharacterNotNamed],
         };
@@ -135,6 +164,7 @@ pub fn live_view(
     if forms.is_empty() {
         return LiveView {
             run: Some(run),
+            marks,
             opens: Vec::new(),
             diagnostics: vec![LiveDiagnostic::UnknownCharacter { name }],
         };
@@ -164,19 +194,67 @@ pub fn live_view(
             .iter_mut()
             .find(|o| o.character == character && o.column == column && o.level == level)
         {
-            Some(open) => open.achievements.push(node.achievement.clone()),
+            Some(open) => open.achievements.push(offered(node)),
             None => opens.push(LiveOpen {
                 character,
                 character_name: name,
                 column,
                 level,
-                achievements: vec![node.achievement.clone()],
+                achievements: vec![offered(node)],
             }),
         }
     }
     LiveView {
         run: Some(run),
+        marks,
         opens,
         diagnostics,
+    }
+}
+
+/// One character's row of the completion matrix, as Live draws it: what this character has
+/// taken, and what it still has to. The screen puts it beside what the run could open, which
+/// is the only place in the app where the two questions meet.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub struct LiveMarkRow {
+    pub character: String,
+    pub head_url: Option<String>,
+    pub cells: Vec<crate::marks::Cell>,
+    /// Cells with nothing taken yet. Not a percentage: an unread cell is not a zero, and the
+    /// matrix already refuses to average the two (B22/B23).
+    pub missing: u32,
+}
+
+/// The rows Live shows, with the columns they are read against.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub struct LiveMarks {
+    pub bosses: Vec<String>,
+    pub art: Vec<crate::marks::MarkArtView>,
+    pub rows: Vec<LiveMarkRow>,
+}
+
+/// The chosen rows of the matrix, copied rather than rebuilt: the matrix is the one place
+/// that knows how a cell is read, and a second reading of the same counters would be a second
+/// chance to disagree with the screen that draws them all.
+pub fn live_marks(matrix: &crate::marks::MarksMatrix, rows: &[usize]) -> LiveMarks {
+    LiveMarks {
+        bosses: matrix.bosses.clone(),
+        art: matrix.art.clone(),
+        rows: rows
+            .iter()
+            .filter_map(|r| matrix.characters.get(*r))
+            .map(|row| LiveMarkRow {
+                character: row.character.clone(),
+                head_url: row.head_url.clone(),
+                missing: row
+                    .cells
+                    .iter()
+                    .filter(|c| matches!(c, crate::marks::Cell::Known { bits: 0 }))
+                    .count() as u32,
+                cells: row.cells.clone(),
+            })
+            .collect(),
     }
 }
