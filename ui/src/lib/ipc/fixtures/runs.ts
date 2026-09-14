@@ -1,4 +1,5 @@
-import type { RunView, RunsView } from '../types'
+import { MarkColumnView, MarkLevelView } from '../types'
+import type { LiveView, RunView, RunsView } from '../types'
 
 // A handful of runs for the Run screen in the browser: the archive is a database on the
 // machine, so the fixtures are the only way to draw this list without the app.
@@ -6,7 +7,12 @@ import type { RunView, RunsView } from '../types'
 // Shaped to cover what the screen has to survive rather than to look full: the watched
 // launch and an online session, a win, a death, an abandonment and a run still open, a run
 // whose character was never named, and an item with no name — the game not installed.
-const item = (id: number, name: string | null) => ({ id, name })
+// The pack's own art, so the fixtures draw the same kind of picture the app does.
+const item = (id: number, name: string | null) => ({
+  id,
+  name,
+  iconUrl: null,
+})
 
 const runs: RunView[] = [
   {
@@ -87,36 +93,70 @@ export const runsAnswer = (): RunsView => ({
 // Live, with the case a real machine shows only while a Tainted character is being played:
 // the log writes "Cain" and the game calls two characters that, so the answer holds both and
 // says so. Inventing a single form here would make the screen look decided.
-export const liveAnswer = () => ({
+export const liveAnswer = (): LiveView => ({
   run: runs[0],
+  // Two rows, because the name reaches two forms — and an empty profile, so every cell is
+  // still to take: the state a player is in when this screen matters most.
+  marks: {
+    bosses: ["Mom's Heart", 'Isaac', 'Satan'],
+    art: [{}, {}, {}].map(() => ({ normalUrl: null, hardUrl: null })),
+    rows: [
+      {
+        character: 'Cain',
+        headUrl: null,
+        cells: [
+          { kind: 'known' as const, bits: 3 },
+          { kind: 'known' as const, bits: 0 },
+          { kind: 'unknown' as const },
+        ],
+        missing: 1,
+      },
+      {
+        character: 'Tainted Cain',
+        headUrl: null,
+        cells: [
+          { kind: 'known' as const, bits: 0 },
+          { kind: 'known' as const, bits: 0 },
+          { kind: 'known' as const, bits: 0 },
+        ],
+        missing: 3,
+      },
+    ],
+  },
   opens: [
     {
       character: 2,
       characterName: 'Cain',
-      column: 'momsHeart' as const,
-      level: 'base' as const,
+      column: MarkColumnView.MomsHeart,
+      level: MarkLevelView.Base,
       achievements: [
         {
-          kind: 'known' as const,
-          id: 19,
-          text: 'The Family Man',
-          condition: null,
-          iconUrl: null,
+          achievement: {
+            kind: 'known' as const,
+            id: 19,
+            text: 'The Family Man',
+            condition: null,
+            iconUrl: null,
+          },
+          fanOut: 4,
         },
       ],
     },
     {
       character: 23,
       characterName: 'Tainted Cain',
-      column: 'momsHeart' as const,
-      level: 'base' as const,
+      column: MarkColumnView.MomsHeart,
+      level: MarkLevelView.Base,
       achievements: [
         {
-          kind: 'known' as const,
-          id: 509,
-          text: 'The Fettered',
-          condition: null,
-          iconUrl: null,
+          achievement: {
+            kind: 'known' as const,
+            id: 509,
+            text: 'The Fettered',
+            condition: null,
+            iconUrl: null,
+          },
+          fanOut: 0,
         },
       ],
     },

@@ -86,13 +86,14 @@ fn a_run_opens_what_only_its_own_mark_is_missing_from() {
     let view = live_view(
         Some(open_run(Some("Judas"))),
         LiveGraph::Nodes(&nodes),
+        None,
         by_name,
     );
     let ids: Vec<u32> = view
         .opens
         .iter()
         .flat_map(|o| o.achievements.iter())
-        .filter_map(|a| match a {
+        .filter_map(|a| match &a.achievement {
             AchievementRef::Known { id, .. } => Some(*id),
             AchievementRef::Unknown { .. } => None,
         })
@@ -108,6 +109,7 @@ fn what_is_already_done_is_not_offered_again() {
     let view = live_view(
         Some(open_run(Some("Judas"))),
         LiveGraph::Nodes(&[done].to_vec()),
+        None,
         by_name,
     );
     assert!(view.opens.is_empty());
@@ -123,6 +125,7 @@ fn the_offers_are_grouped_by_the_cell_they_need() {
     let view = live_view(
         Some(open_run(Some("Judas"))),
         LiveGraph::Nodes(&nodes),
+        None,
         by_name,
     );
     assert_eq!(view.opens.len(), 2, "{:#?}", view.opens);
@@ -141,6 +144,7 @@ fn a_name_that_reaches_two_characters_is_said_to_be_both() {
     let view = live_view(
         Some(open_run(Some("Cain"))),
         LiveGraph::Nodes(&nodes),
+        None,
         by_name,
     );
     assert_eq!(view.opens.len(), 2);
@@ -155,12 +159,17 @@ fn a_name_that_reaches_two_characters_is_said_to_be_both() {
 #[test]
 fn every_way_of_not_knowing_says_so() {
     // Nothing is being played.
-    let idle = live_view(None, LiveGraph::Nodes(&Vec::new()), by_name);
+    let idle = live_view(None, LiveGraph::Nodes(&Vec::new()), None, by_name);
     assert!(idle.run.is_none());
     assert!(idle.diagnostics.contains(&LiveDiagnostic::NoRun));
 
     // A run whose character no item line has named yet.
-    let unnamed = live_view(Some(open_run(None)), LiveGraph::Nodes(&Vec::new()), by_name);
+    let unnamed = live_view(
+        Some(open_run(None)),
+        LiveGraph::Nodes(&Vec::new()),
+        None,
+        by_name,
+    );
     assert!(unnamed
         .diagnostics
         .contains(&LiveDiagnostic::CharacterNotNamed));
@@ -169,6 +178,7 @@ fn every_way_of_not_knowing_says_so() {
     let unknown = live_view(
         Some(open_run(Some("Nobody"))),
         LiveGraph::Nodes(&Vec::new()),
+        None,
         by_name,
     );
     assert!(unknown
@@ -179,7 +189,12 @@ fn every_way_of_not_knowing_says_so() {
 
     // No graph at all: the run still draws, and the screen must not read as "this opens
     // nothing".
-    let blind = live_view(Some(open_run(Some("Judas"))), LiveGraph::NoGraph, by_name);
+    let blind = live_view(
+        Some(open_run(Some("Judas"))),
+        LiveGraph::NoGraph,
+        None,
+        by_name,
+    );
     assert!(blind.run.is_some());
     assert!(blind.diagnostics.contains(&LiveDiagnostic::NoGraph));
     assert!(blind.opens.is_empty());
@@ -190,7 +205,28 @@ fn every_way_of_not_knowing_says_so() {
 /// either way.
 #[test]
 fn no_profile_is_not_the_same_as_no_graph() {
-    let view = live_view(Some(open_run(Some("Judas"))), LiveGraph::NoProfile, by_name);
+    let view = live_view(
+        Some(open_run(Some("Judas"))),
+        LiveGraph::NoProfile,
+        None,
+        by_name,
+    );
     assert!(view.run.is_some());
     assert_eq!(view.diagnostics, vec![LiveDiagnostic::NoProfile]);
+}
+
+/// The dashboard half: the row of the completion matrix for the character being played, so
+/// the screen can say *these are the marks you are missing* beside *this run could give you
+/// that one*. Two forms mean two rows, for the same reason the opens hold two.
+#[test]
+fn the_marks_of_the_character_being_played_travel_with_the_run() {
+    let counters = vec![0u32; 600];
+    let matrix = ipc::marks_matrix(&counters, None, |_| None);
+    // Cain is row 2 of the matrix's own table, Tainted Cain the row keyed as its tainted form.
+    let marks = ipc::live_marks(&matrix, &[2]);
+    assert_eq!(marks.rows.len(), 1);
+    assert_eq!(marks.rows[0].character, "Cain");
+    assert_eq!(marks.rows[0].cells.len(), marks.bosses.len());
+    // Nothing done on an empty profile: every cell of the row is still to be taken.
+    assert_eq!(marks.rows[0].missing as usize, marks.bosses.len());
 }

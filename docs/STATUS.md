@@ -1688,6 +1688,21 @@ readable ones the comparator has a cycle, and `Array.sort` given a contradictory
 does not fail — it answers something arbitrary, which is the worst way to be wrong. Sorting
 only the readable names into the slots they already hold is a total order.
 
+**Then Live became a dashboard**, on the owner's ask — *"più carine e complete di dati"*.
+Three facts were added to the wire, each because the screen could not say something true
+without it: a run item's **sprite**, an offered achievement's **fan-out**, and the
+**completion row of the character being played** — two rows when the name reaches two forms.
+The row is *copied from the matrix*, never rebuilt: the matrix is the one place that knows
+how a cell is read, and a second reading of the same counters would be a second chance to
+disagree with the screen that draws them all.
+
+**And two defects of the session's own making, both found by looking.** `size-icon-row` is
+not a token, so the character's head was an unsized sprite — the same failure as the want
+suggestions hours earlier, from the same cause. And `liveAnswer()` carried **no return
+type**, so TypeScript never compared the fixture to the contract: it sat in the old shape,
+the screen threw on it, and `pnpm typecheck` stayed green through all of it. Annotating the
+fixture found it in one run. **A fixture nobody typed is a fixture nobody checked.**
+
 **Then 2b — Live — the same evening.** The run being watched, and what finishing it would
 open, grouped by the cell it needs. The join is **one command**, as N8 pointed. The rule is
 narrow — a run opens an achievement only when *everything* still missing from it is a mark
