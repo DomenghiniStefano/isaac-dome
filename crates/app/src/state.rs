@@ -1,11 +1,12 @@
 //! The expensive things, opened once and kept: the catalog, the graph, the archives, the
-//! mark frames, the search index, the database. Plus the active profile's save, which is
-//! the one read that is deliberately **not** kept (N8).
+//! mark frames, the search index, the database. Plus the active profile's save, which since
+//! N8 is kept too — and is the only one of them that has to be **given up** again, because
+//! the game rewrites it while the app is open. The rule for that lives in `ipc::SaveCache`.
 //!
 //! All wiring. Nothing here has a return value worth checking that is not already checked
 //! in the pure crate it comes from.
 
-use std::sync::{Mutex, MutexGuard, OnceLock};
+use std::sync::{Arc, Mutex, MutexGuard, OnceLock};
 
 use catalog::Catalog;
 use core_save::{Kind, Save};
@@ -100,31 +101,51 @@ impl SearchState {
             .get_or_init(|| ipc::SearchIndex::build(wiki::Dataset::embedded()))
     }
 }
-/// Opens the active profile's save. `NoActiveProfile` when there isn't one:
-/// for the UI that means "go to selection", not an error to display.
-pub(crate) fn active_save(app: &AppHandle) -> Result<(ProfileId, Save), IpcError> {
+/// The active profile's save, from the one read a screen pays for (N8). `NoActiveProfile`
+/// when there isn't one: for the UI that means "go to selection", not an error to display.
+///
+/// Every rule about *when* the last read may stand lives in `ipc::SaveCache`, with its
+/// tests; what is here is the I/O it asks for — the settings file, the walk of the Steam
+/// libraries, `Save::open`, and the file's modified time. Both of the expensive ones run
+/// only on a miss.
+pub(crate) fn active_save(app: &AppHandle) -> Result<(ProfileId, Arc<Save>), IpcError> {
     let settings = settings_file::load(app);
-    let d = discover(&Options::default());
-    let views = ipc::candidates(&d.saves);
-    let state = ipc::resolve_active(
+    let cache = app.state::<SaveState>();
+    cache.0.get(
         settings.active_profile_id.as_ref(),
-        &views,
-        d.steam.is_some(),
-        d.game.is_some(),
-    );
-    let ActiveProfile::Active { profile, .. } = state else {
-        return Err(IpcError::NoActiveProfile);
-    };
-    let candidate = d
-        .saves
-        .iter()
-        .find(|s| ipc::profile_id(&s.path) == profile.id)
-        .ok_or(IpcError::NoActiveProfile)?;
-    let save = Save::open(&candidate.path).map_err(|e| IpcError::UnreadableSave {
-        reason: (&e).into(),
-    })?;
-    Ok((profile.id, save))
+        |path| std::fs::metadata(path).ok().and_then(|m| m.modified().ok()),
+        || {
+            let d = discover(&Options::default());
+            let views = ipc::candidates(&d.saves);
+            let state = ipc::resolve_active(
+                settings.active_profile_id.as_ref(),
+                &views,
+                d.steam.is_some(),
+                d.game.is_some(),
+            );
+            let ActiveProfile::Active { profile, .. } = state else {
+                return Err(IpcError::NoActiveProfile);
+            };
+            let candidate = d
+                .saves
+                .iter()
+                .find(|s| ipc::profile_id(&s.path) == profile.id)
+                .ok_or(IpcError::NoActiveProfile)?;
+            Ok((profile.id, candidate.path.clone()))
+        },
+        |path| {
+            Save::open(path).map_err(|e| IpcError::UnreadableSave {
+                reason: (&e).into(),
+            })
+        },
+    )
 }
+
+/// The active profile's save, kept between commands. One screen is several commands and
+/// they all ask for the same file in the same second; the game rewrites that file while the
+/// app is open, which is why this is a cache with a rule and not a `OnceLock`.
+#[derive(Default)]
+pub(crate) struct SaveState(pub(crate) ipc::SaveCache<Save>);
 /// The app's database, opened once on first use. If it doesn't open (permissions, corrupt
 /// file, newer schema), what's left is the reason as a variant: the commands return it
 /// instead of retrying on every call. It's a `StoreReason` and not an `IpcError` because
