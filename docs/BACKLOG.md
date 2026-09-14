@@ -29,7 +29,7 @@ the session log is full of entries that say *"not seen in a real Tauri window"*.
 `the game` work can be written against fixtures; what it cannot do there is be verified, and a
 half of a task that cannot be verified is not a half that should be shipped.
 
-**Snapshot of 2026-09-14 (evening)**, 26 open entries — it was 26 that morning. **B34 closed
+**Snapshot of 2026-09-14 (evening)**, 25 open entries — it was 26 that morning. **B34 closed
 because tagging it meant reading it** and it turned out not to be finished; B38 closed; B44 opened
 and closed the same hour, as not a defect; then B40 and B43 closed and B42 half closed on
 `feature/small-three`, which opened **B45** — four characters with no page, found by the
@@ -58,7 +58,7 @@ grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | gr
 
 - **`nothing` (15)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B48, B49
 - **`a real save` (3)** — B21, B22, B23
-- **`the game` (6)** — B3, B10, B19, B33, B36, B50
+- **`the game` (5)** — B3, B10, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
 
 The `a measurement` bucket is the same subject as *"What only a machine with the game can answer"*
@@ -2749,7 +2749,41 @@ enemies as a list.
 
 ---
 
-## B50 — A transformation has no picture (analysis, then `ipc`)
+## B50 — A transformation has no picture (analysis, then `ipc`) ✅ closed on 2026-09-14, measured
+
+**Measured on the machine with the game, and the answer is that it stays without one.** The
+measurement is written into `icon.rs` beside the decision, which is what this entry asked for.
+
+**How it was measured, after the first instrument turned out to be mute.** A `grep` over the packed
+archives finds nothing for `transform` — and nothing for `gfx/items` either, which is certainly
+there: **the archives index paths by hash, not by name**, so that search could never have answered.
+The dictionary is `samples/filelist.txt` (18,789 paths), and the truth is `ResourceSet::read`,
+which was asked directly.
+
+**What the game holds.** 115 paths mention a transformation, and they are two families:
+
+- the **costume** Isaac wears, `gfx/characters/costumes/transformation_*.png` — read from
+  `afterbirthp.a`: `transformation_adulthood.png` is 3,770 bytes and `transformation_bookworm.png`
+  3,234, so the files are real and reachable;
+- an **animation** per transformation, `n020_transformation mushroom.anm2` through
+  `n034_transformation_spiderbaby.anm2`, also read from `afterbirthp.a`.
+
+**What it does not hold: an icon.** A costume is the layer a character wears, not a portrait of the
+transformation, and an `.anm2` is an animation — every other target we draw is a single sprite or a
+crop of a sheet.
+
+**And the names are the game's own, not the wiki's.** Twelve of them for sixteen pages, with holes
+in the numbering (029–031 are absent from the dictionary): `mushroom`, `angel`, `mom`, `poop`,
+`drugs`, `evilangel`, `iwata`, `baby`, `bob`, `bookworm`, `adulthood`, `spider`. Guessing which of
+the sixteen each one is — is `mom` *Yes Mother?*, is `evilangel` *Leviathan*, what is `iwata`? — is
+precisely the kind of naming this repo has paid to undo twice (sections 3 and 6, a mark's bit 2).
+**Serving a picture would start from that guess**, so it is not served.
+
+### What would reopen it
+
+A source that states the mapping rather than suggesting it — the game's own `PlayerForm` enum
+through REPENTOGON, or a file that names both — plus a crop convention per sheet, the way the marks
+and the character heads already have one. Then it is an implementation task and not an inference.
 
 **Needs:** the game — the question is whether the user's own copy holds anything to draw, and only
 `unpack` over `samples/packed` can answer it.
