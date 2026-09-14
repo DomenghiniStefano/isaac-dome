@@ -1,4 +1,4 @@
-import { nodeSlot } from '@/lib/graph/unlockFilter'
+import { nodeSlot } from '@/lib/graph/unlockFacets'
 import type { QueueRow, QueueView, UnlockNode } from '@/lib/ipc/types'
 
 // A queue row is always a known achievement (the view leaves unresolved ones out), so its slot

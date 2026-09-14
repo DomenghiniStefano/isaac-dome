@@ -10,7 +10,7 @@ import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import { targetName } from '@/lib/graph/characterName'
-import { targetKind } from '@/lib/graph/unlockFilter'
+import { targetKind } from '@/lib/graph/unlockFacets'
 import type { QueueRow } from '@/lib/ipc/types'
 import { knownText, originRows, rowId } from '@/lib/plan/queueRows'
 

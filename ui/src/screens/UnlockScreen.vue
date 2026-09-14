@@ -15,11 +15,10 @@ import { stateCounts, stateOrder } from '@/lib/graph/nodeState'
 import {
   FacetId,
   UnlockSort,
-  emptyFilter,
-  matchesFilter,
   sortNodes,
-} from '@/lib/graph/unlockFilter'
-import type { UnlockFilter } from '@/lib/graph/unlockFilter'
+  unlockFaceting,
+} from '@/lib/graph/unlockFacets'
+import type { UnlockFilter } from '@/lib/graph/unlockFacets'
 import { queuedIds } from '@/lib/plan/queueRows'
 import { useGraphStore } from '@/stores/views'
 import { LoadStatus } from '@/stores/loadStatus'
@@ -42,7 +41,7 @@ useOnActiveProfile(async () => {
 })
 
 // The filter belongs to this screen: leaving the tab resets it, until tabs keep their state.
-const filter = ref<UnlockFilter>(emptyFilter())
+const filter = ref<UnlockFilter>(unlockFaceting.empty())
 
 // A Search row opens this list already filtered on the name it found (B3, spec 3.5 Decision 8).
 const route = useRoute()
@@ -78,7 +77,7 @@ const counts = computed(() => stateCounts(nodes.value))
 const characters = computed(() => characterForms(nodes.value))
 const rows = computed(() =>
   sortNodes(
-    nodes.value.filter((node) => matchesFilter(node, filter.value)),
+    nodes.value.filter((node) => unlockFaceting.matches(node, filter.value)),
     sort.value,
   ),
 )
@@ -110,7 +109,7 @@ const setSort = (next: UnlockSort) => {
   sort.value = next
 }
 const reset = () => {
-  filter.value = emptyFilter()
+  filter.value = unlockFaceting.empty()
 }
 </script>
 
