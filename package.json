@@ -4,6 +4,8 @@
   "license": "GPL-3.0-only",
   "scripts": {
     "check": "sh scripts/check",
+    "dev:reset": "sh scripts/dev-reset",
+    "predev": "sh scripts/dev-reset",
     "dev": "tauri dev --config crates/app/tauri.conf.json",
     "build": "tauri build --config crates/app/tauri.conf.json",
     "ui:dev": "pnpm --filter ui dev",
