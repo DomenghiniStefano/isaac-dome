@@ -39,6 +39,8 @@ it. Both came out of checking finished work, which is where this list keeps find
 **B45 then closed the same evening it was opened** — the four pages are in the snapshot, with the
 guard that makes a missing one loud — and opened **B47**: the same query that explained it found
 seven more templates the fetch does not know, and 591 pages behind them.
+**B46 closed the same night**, which made B40's card reachable and opened **B48**: an empty
+category tells you your search found nothing when you never searched.
 Regenerate rather than trust this
 list — the command
 prints each open entry's heading with its tag under it, and was run before it was written down:
@@ -47,7 +49,7 @@ prints each open entry's heading with its tag under it, and was run before it wa
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B46, B47
+- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B48
 - **`a real save` (3)** — B21, B22, B23
 - **`the game` (5)** — B3, B10, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -2560,7 +2562,28 @@ table to be counted against.
 
 ---
 
-## B46 — A transformation has a page and no way to open it (implementation, `ui`, then a design decision)
+## B46 — A transformation has a page and no way to open it (implementation, `ui`, then a design decision) ✅ closed on 2026-09-14
+
+**Closed on `feature/transformation-pages`.** `pageKey` writes `transformation:1`,
+`categoryOf` answers the seventh category, and the IPC index carries the sixteen pages — it was
+listing **six kinds of seven**, which no test noticed because the test that checks the index
+against the dataset summed the same six.
+
+**The seventh category was not a decision in the end, it was forced.** `pageLocation` needs a
+category as much as a key, so the alternative to adding one was leaving the pages shut. What the
+entry framed as a design call — a card in the sidebar or not — had already been answered by the
+mechanism.
+
+**And opening them made them askable, which they are not.** `wantable` and `wantLocation` derived
+from `pageKey` on purpose: "has a wiki page" and "the graph can grant it" were the same set of
+kinds, and the comment said a second list would be a second answer to the same question. It is not
+the same question any more — nothing unlocks a transformation, you collect three items — so
+`canBeWanted` is its own switch now, and a `Target` variant added later breaks the build there.
+**The test that caught it was already written and already right**: it lists a transformation among
+the hits `wantable` must drop, and it went red the moment the page key appeared.
+
+**What the window added, for the third time today:** the wiki's own intro sentence lists what the
+copy holds and stopped at achievements. Nothing in the suite reads that sentence.
 
 **Needs:** nothing, then a window — the dataset answers already and the whole gap is in `ui/`;
 whether the wiki's sidebar grows a seventh category is a design call, not a code one.
@@ -2647,3 +2670,31 @@ needs a line saying why, so the next person measuring this finds the answer inst
 measurement. `Diagnostics::unknown_infoboxes` (B45) is what will keep either decision honest: a
 template we never enumerate never appears there, but one we start fetching without teaching the
 parser will.
+
+---
+
+## B48 — An empty category says "no page with this name" when nothing was searched (implementation, `ui`, small)
+
+**Needs:** nothing — `WikiCategoryList.vue` and one message; seeing it wants `pnpm ui:dev` with the
+fixtures, where a category is empty for a reason the real dataset never has.
+
+Found on 2026-09-14 while looking at B46's new category. With the design pack's fixtures the
+transformations list is empty — the pack has no such pages, which the fixture says in as many
+words — and the screen draws **"Nessuna pagina con questo nome."** with an *Azzera la ricerca*
+button, while the search box is empty and nothing was ever typed.
+
+It is the same fault the Collection was corrected for: **what was never read must not be drawn as
+"not found"**. A list with `0 / 0` and no query is not a search that failed, it is a category with
+nothing in it, and the two want different sentences — one of them offers a button that undoes
+nothing.
+
+Reachable only where a category can be genuinely empty. That was nowhere until B46 added the
+seventh one, and in the shipped dataset it is still nowhere: sixteen transformations always
+answer. What it costs to leave is a wrong sentence in front of anyone running the frontend on
+fixtures, which is every design pass.
+
+### Closes when
+
+An empty list with no query says the category is empty and offers no reset; an empty result *with*
+a query keeps the sentence and the button it has. Both states are in `pnpm ui:dev`, so both can be
+seen without the game.

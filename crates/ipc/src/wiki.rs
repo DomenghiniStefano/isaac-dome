@@ -89,6 +89,14 @@ pub fn wiki_index(
             .iter()
             .map(|(id, e)| page(Target::Character { id: *id }, e)),
     );
+    // B46: a transformation is a page like the others since 2026-09-13, when the sixteen
+    // entered the dataset. Left out here, a category could not list one and a reference
+    // could not open one — the index is where both read from.
+    pages.extend(
+        ds.transformations
+            .iter()
+            .map(|(id, e)| page(Target::Transformation { id: *id }, e)),
+    );
     WikiIndex { info, pages }
 }
 

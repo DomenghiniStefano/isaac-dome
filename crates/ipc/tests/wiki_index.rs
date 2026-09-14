@@ -97,15 +97,50 @@ fn the_embedded_index_counts_match_its_meta_and_stay_small() {
     let ds = Dataset::embedded().expect("embedded dataset");
     let index = wiki_index(Ok(ds), None, None, link);
     let counts = &ds.meta.counts;
+    // Every kind the dataset counts, and the sum is the point: this test could have caught
+    // B46 the day the transformations entered the dataset, and did not, because the sum
+    // left the same kind out that the index did. A count that is not added here is a kind
+    // the index may quietly stop carrying.
     let expected = counts.items
         + counts.trinkets
         + counts.achievements
         + counts.bosses
         + counts.challenges
-        + counts.characters;
+        + counts.characters
+        + counts.transformations;
     assert_eq!(index.pages.len() as u32, expected);
     let json = serde_json::to_string(&index).unwrap();
     // A generous ceiling: the index is one load per window and must stay one order of
     // magnitude under `unlock`'s (crates/ipc/tests/unlock_size.rs).
     assert!(json.len() < 256_000, "wiki index is {} bytes", json.len());
+}
+
+/// B46. A transformation has had a page in the dataset since the transformations
+/// sub-project (2026-09-13) — `Dataset::entry` answers `Target::Transformation` — and the
+/// index was never told: it lists six kinds and leaves the sixteen out. Nothing downstream
+/// could show them, because the index is what the category lists and every reference's icon
+/// are read from. The premise that "a transformation has no page" was true when the index
+/// was written and stopped being true the next day.
+#[test]
+fn a_transformation_is_a_page_of_the_index() {
+    let mut ds = dataset();
+    ds.transformations.insert(
+        1,
+        entry(
+            "Guppy",
+            wiki::Infobox::Transformation {
+                requires: Some(3),
+                contributors: Vec::new(),
+                target: Vec::new(),
+            },
+        ),
+    );
+    ds.meta.counts.transformations = 1;
+    let index: WikiIndex = wiki_index(Ok(&ds), None, None, link);
+    let page = index
+        .pages
+        .iter()
+        .find(|p| p.target == Target::Transformation { id: 1 })
+        .expect("the transformation is a page of the index");
+    assert_eq!(page.title, "Guppy");
 }
