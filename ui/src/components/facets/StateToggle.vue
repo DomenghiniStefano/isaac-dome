@@ -5,30 +5,31 @@ import {
   ToggleGroupType,
 } from '@/components/ui/toggle-group'
 import { useMessages } from '@/i18n'
+import type { MessageKey } from '@/i18n/messageKey'
+import type { MessageSchema } from '@/i18n/messages/it'
 import { cn } from '@/lib/cn'
-import { NodeState, stateOrder } from '@/lib/graph/nodeState'
-import { stateText } from './facetLabels'
 
-defineProps<{ counts: Record<NodeState, number>; picked: string[] }>()
+// The filter that matters more than the others (DESIGN-BRIEF.md §6): a screen's states, each
+// with its count, any of them picked at once.
+//
+// What the states are, what they are called and what colour each square carries belong to the
+// screen and arrive as tables. A state is never colour alone: the square carries the colour,
+// the name says it.
+defineProps<{
+  order: string[]
+  counts: Record<string, number>
+  picked: string[]
+  dot: Record<string, string>
+  text: Record<string, MessageKey<MessageSchema>>
+}>()
 const emit = defineEmits<{ update: [picked: string[]] }>()
 const { t } = useMessages()
-
-// A state is never colour alone: the square carries its colour, the name says it. Partial's
-// square is the blocked colour with a dashed edge, like its badge.
-const dot: Record<NodeState, string> = {
-  [NodeState.Done]: 'bg-state-done',
-  [NodeState.Now]: 'bg-state-now',
-  [NodeState.Blocked]: 'bg-state-blocked',
-  [NodeState.Partial]: 'border border-dashed border-state-blocked',
-}
 
 const onUpdate = (value: unknown) =>
   emit('update', Array.isArray(value) ? value.map(String) : [])
 </script>
 
 <template>
-  <!-- The filter that matters more than the others (DESIGN-BRIEF.md §6): the four states, each
-       with its count, any of them picked at once. -->
   <ToggleGroup
     :type="ToggleGroupType.Multiple"
     :model-value="picked"
@@ -36,13 +37,13 @@ const onUpdate = (value: unknown) =>
     @update:model-value="onUpdate"
   >
     <ToggleGroupItem
-      v-for="state in stateOrder"
+      v-for="state in order"
       :key="state"
       :value="state"
       class="gap-2"
     >
       <span aria-hidden="true" :class="cn('size-2 shrink-0', dot[state])" />
-      {{ t(stateText[state]) }}
+      {{ t(text[state]) }}
       <span class="tabular-nums">{{ counts[state] }}</span>
     </ToggleGroupItem>
   </ToggleGroup>

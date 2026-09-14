@@ -2052,41 +2052,6 @@ a tab that survives a restart, because it is the same mechanism.
 
 ---
 
-## B40 — Two Cargo tables are downloaded, committed, and read by nothing (implementation, `wiki`, small)
-
-Logged on 2026-09-13, noticed while adding the transformations' five fields to the same
-query. `crates/wiki-snapshot/src/api.rs` downloads ten Cargo tables; `Raw::load` puts seven
-of them in `Tables`, plus `version`. **`player.json` and `stage.json` are written to
-`dataset/raw/cargo/` and nothing ever opens them.**
-
-### Why it is worth an entry rather than a deletion
-
-`player` carries **`parent`** — the relation from a Tainted character to the base form it is
-a variant of. That is exactly the fact behind the two identity bugs M2 found on 2026-09-12:
-the game gives a Tainted character the base form's name, so by name alone 141 of 396
-character references resolved to nothing and "Ultra Greedier as Keeper" picked T. Keeper.
-Resolution goes by the wiki's id now, and this table is a second, independent source for the
-same relation — `Infobox::Character.parent` reads it from the page, and nobody has checked
-the two against each other.
-
-`stage` carries `chapter`, which nothing needs today; the 1444 `stage:` references resolve by
-name and have no entries at all.
-
-### What it needs
-
-A decision, not code first: either the two tables earn a reader — `player.parent` as a
-cross-check on the character map, with the disagreements counted the way the transformations'
-two item lists are — or they leave the query. What must not continue is the third state, a
-committed artefact nobody reads and no test would notice going stale.
-
-### Closes when
-
-Either both tables are read by something with a test that would fail if they stopped
-agreeing, or they are gone from `TABLES` and from `dataset/raw/cargo/`, with the reason in
-the commit body.
-
----
-
 ## B40 — A transformation's infobox has no rows (implementation, `ui`, small)
 
 Logged 2026-09-13, found by N7: generating the contract added the `transformation` variant to
@@ -2158,3 +2123,79 @@ nothing tells a running app it is being uninstalled, and there is no installer c
 the repo yet (`tauri.conf.json` says `"targets": "all"` and nothing more). The day that
 configuration is written, an NSIS uninstall hook deletes the value from both keys. That is part of
 this entry, not a new one.
+
+---
+
+## B42 — Two Cargo tables are downloaded, committed, and read by nothing (implementation, `wiki`, small)
+
+Logged on 2026-09-13, noticed while adding the transformations' five fields to the same
+query. `crates/wiki-snapshot/src/api.rs` downloads ten Cargo tables; `Raw::load` puts seven
+of them in `Tables`, plus `version`. **`player.json` and `stage.json` are written to
+`dataset/raw/cargo/` and nothing ever opens them.**
+
+### Why it is worth an entry rather than a deletion
+
+`player` carries **`parent`** — the relation from a Tainted character to the base form it is
+a variant of. That is exactly the fact behind the two identity bugs M2 found on 2026-09-12:
+the game gives a Tainted character the base form's name, so by name alone 141 of 396
+character references resolved to nothing and "Ultra Greedier as Keeper" picked T. Keeper.
+Resolution goes by the wiki's id now, and this table is a second, independent source for the
+same relation — `Infobox::Character.parent` reads it from the page, and nobody has checked
+the two against each other.
+
+`stage` carries `chapter`, which nothing needs today; the 1444 `stage:` references resolve by
+name and have no entries at all.
+
+### What it needs
+
+A decision, not code first: either the two tables earn a reader — `player.parent` as a
+cross-check on the character map, with the disagreements counted the way the transformations'
+two item lists are — or they leave the query. What must not continue is the third state, a
+committed artefact nobody reads and no test would notice going stale.
+
+### Closes when
+
+Either both tables are read by something with a test that would fail if they stopped
+agreeing, or they are gone from `TABLES` and from `dataset/raw/cargo/`, with the reason in
+the commit body.
+
+---
+
+## B43 — Four screens virtualize a list under Unlock's name (implementation, `ui`, small)
+
+Logged on 2026-09-14, measured while closing N3. N3 declares `UnlockTable.vue` and
+`CollectionTable.vue` as **staying two on purpose** — they draw different columns, and one
+component with a column table would be a worse file than the two it replaced. That holds, and
+the measurement behind this entry does not contradict it: of their 84 lines, 57 differ. What the
+other 27 are is the point.
+
+### What was measured
+
+The shared part is not columns, it is the **scaffolding around them**: `useScaledRows`, the
+`scroller` ref, the `visible` computed, the `--…-total` style binding and the three nested divs
+that give a virtualized list its scroll box and its absolutely-positioned window. The composable
+that does the arithmetic was factored out long ago; the template around it was not.
+
+And it carries a name that stopped being true. **`--spacing-unlock-body` and `--unlock-total`
+are read by four screens** — `CollectionTable.vue`, `SearchResults.vue`,
+`WikiCategoryList.vue` and Unlock itself. A token named after one screen and used by four is the
+same fault N3 spent a sub-project on, one layer down: the Collection asking for
+`max-h-unlock-body` reads as a mistake to anyone who has not been told it isn't.
+
+### What it needs
+
+Both halves or neither, because the rename alone would leave the duplication and the extraction
+alone would carry the wrong name into the shared file. A `VirtualRows.vue` (or a slot on one) that
+owns the scroll box, the total height and the window, taking the rows and giving back the visible
+ones; and the two tokens renamed to say *virtualized list* rather than *unlock*.
+
+### Closes when
+
+No screen's table repeats the scroll-box scaffolding, no token named `unlock` is read outside
+`screens/unlock/`, and the four screens still scroll with the rows they had — which is the part a
+test cannot say and `pnpm ui:dev` can.
+
+### What it is NOT
+
+A merge of `UnlockTable` and `CollectionTable`. The columns stay two files; N3's reasoning for
+that is unchanged and this entry does not reopen it.

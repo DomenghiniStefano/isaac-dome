@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
-import { nodeSlot } from '@/lib/graph/unlockFilter'
+import { nodeSlot } from '@/lib/graph/unlockFacets'
 import type { UnlockNode } from '@/lib/ipc/types'
 import { canQueue, isQueued } from '@/lib/plan/queueRows'
 import UnlockRow from './UnlockRow.vue'
