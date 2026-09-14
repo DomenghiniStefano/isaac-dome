@@ -583,6 +583,13 @@ Related, and worth deciding in the open rather than discovering halfway: a secre
 finder is **a different product**. IsaacDome answers "what am I missing, and what's worth
 playing tonight"; that answers "where is the secret room right now".
 
+> **Decided the other way on 2026-09-15**, in the open and by the owner, who asked for it:
+> `docs/superpowers/specs/2026-09-15-floor-secret-rooms-design.md`. The paragraph above is
+> kept because it is the reasoning the new decision answers, not a claim that was wrong. The
+> belief this entry said to check — that those tools reason on the explored map plus
+> placement rules and **not** on the seed — was checked against the reference site that day
+> and holds; regenerating the map from the seed stays out of scope, unchanged.
+
 ### One finding already in hand
 
 The loss window for log data is narrower than `docs/PROJECT.md` implies. The game rewrites
