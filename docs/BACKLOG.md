@@ -514,6 +514,20 @@ because actives replace one another.
 as it reads it, which puts names on the four sections `CLAUDE.md` lists as "to be
 identified" and contradicts two we thought we knew. That's B9 below.
 
+> **The third idea this entry parked was built on 2026-09-15, as F1.** B8 wrote that a
+> secret-room finder "is **a different product**" and that the belief worth checking was that
+> such tools reason on the map you have already explored plus placement rules, **not** on the
+> seed. The belief was checked and holds; the scope decision was the owner's and is taken in
+> the open in §1 of `docs/superpowers/specs/2026-09-15-floor-secret-rooms-design.md`. Report:
+> `docs/superpowers/reports/2026-09-15-floor-report.md`. **This entry is not deleted**, because
+> the reasoning in it is what makes the new decision legible.
+>
+> What F1 does **not** do is the half B8's own §5 calls the verification: the log's
+> `N rooms in M loops` is not read, so the screen never says *the game generated 19 rooms and
+> you have painted 15*. That half is **F2**, and it needs a measurement — which of the several
+> generation attempts in a log describes the floor being played is a judgment, and it belongs
+> in `run`'s fold measured against the five real logs, not assumed from the ordering.
+
 Logged on 2026-09-08, out of the M4 brainstorming. **M4 shouldn't start before this
 closes**: the whole log watcher would otherwise be designed on five line types nobody has
 re-read since M0.
