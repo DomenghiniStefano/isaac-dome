@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PlayIcon } from '@lucide/vue'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import FacetDrawer from '@/components/facets/FacetDrawer.vue'
@@ -11,11 +11,14 @@ import KpiTile from '@/components/kpi/KpiTile.vue'
 import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useMessages } from '@/i18n'
+import { useTabView } from '@/composables/useTabView'
+import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { emptyFilter } from '@/lib/facets/faceting'
 import type { FacetFilter } from '@/lib/facets/faceting'
 import type { RunView } from '@/lib/ipc/types'
 import { runsEntries } from '@/lib/diagnostics/runs'
 import { orderRuns } from '@/lib/runs/runOrder'
+import { runKey } from '@/lib/runs/runKey'
 import { RunFacet, runFaceting } from '@/lib/runs/runFacets'
 import { facetTitle, facetValueLabel } from '@/lib/runs/runLabels'
 import { LoadStatus } from '@/stores/loadStatus'
@@ -23,6 +26,7 @@ import { useRunsStore } from '@/stores/views'
 import ProfileError from './profile/ProfileError.vue'
 import RunDetail from './runs/RunDetail.vue'
 import RunsTable from './runs/RunsTable.vue'
+import { runsView } from './runs/tabView'
 import ScreenHeader from './ScreenHeader.vue'
 
 const store = useRunsStore()
@@ -33,12 +37,36 @@ const { t } = useMessages()
 void store.load()
 
 const facetOrder = Object.values(RunFacet)
-const filter = ref<FacetFilter<RunFacet>>(emptyFilter<RunFacet>(facetOrder))
-const selected = ref<RunView | null>(null)
+// The filter and the selection belong to the tab, not to this component: leaving and coming
+// back — through a tear-off, a restart, or the back button — finds them where they were left
+// (B39).
+const reading = useTabView(runsView)
+const setOffset = (offset: ScrollOffset) => {
+  reading.value = { ...reading.value, offset }
+}
+const filter = computed({
+  get: () => reading.value.filter,
+  set: (value: FacetFilter<RunFacet>) => {
+    reading.value = { ...reading.value, filter: value }
+  },
+})
 
 const all = computed(() => store.view?.runs ?? [])
 const rows = computed(() =>
   orderRuns(all.value.filter((run) => runFaceting.matches(run, filter.value))),
+)
+// The selected run travels as its key, never as the row: a row is the archive's answer of the
+// moment, and a stored one would come back describing a run the fold has since re-derived. A
+// key that matches nothing — the run was filtered away, or the archive grew — is simply no
+// selection, which is what the screen already draws.
+const selectedKey = computed({
+  get: () => reading.value.selected,
+  set: (value: string | null) => {
+    reading.value = { ...reading.value, selected: value }
+  },
+})
+const selected = computed(
+  () => rows.value.find((run) => runKey(run) === selectedKey.value) ?? null,
 )
 const totals = computed(() => store.view?.totals ?? null)
 
@@ -64,7 +92,7 @@ const reset = () => {
   filter.value = emptyFilter<RunFacet>(facetOrder)
 }
 const select = (run: RunView) => {
-  selected.value = run
+  selectedKey.value = runKey(run)
 }
 
 const toolbarLabels: ToolbarLabels = {
@@ -142,6 +170,8 @@ const drawerLabels: DrawerLabels = {
           v-if="rows.length > 0"
           :runs="rows"
           :selected="selected"
+          :offset="reading.offset"
+          @offset-change="setOffset"
           @select="select"
         />
         <div v-else class="flex flex-col items-start gap-3 p-4">

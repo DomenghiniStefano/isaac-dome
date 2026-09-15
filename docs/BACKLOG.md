@@ -56,14 +56,16 @@ prints each open entry's heading with its tag under it, and was run before it wa
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-**Re-counted on 2026-09-15 (night)**, with the command above: **27 open**. B48, B49, B52 and B53
-closed since the snapshot below. **B53 opened out of B52** — a counter that had been reporting `{}`
+**Re-counted on 2026-09-16**, with the command above: **28 open**. B48, B49, B52 and B53
+closed before it. **B53 opened out of B52** — a counter that had been reporting `{}`
 since the day it was added — and **B54 out of B53**, which is where this list keeps finding things.
 **B55, B56 and B57** came from a sweep of what the machine actually keeps, run because a claim had
 been made from two folders and stated as though it came from all of them: none of the three is a
-run history, and all three are sources this project did not know it had.
+run history, and all three are sources this project did not know it had. **B59** is the newest, and
+it came out of writing a comment: the convention scanner matches its rules against the raw file,
+so a comment naming a forbidden call trips the rule that forbids it.
 
-- **`nothing` (16)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56
+- **`nothing` (17)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B59
 - **`a real save` (4)** — B21, B22, B23, B58
 - **`the game` (5)** — B3, B19, B33, B36, B57
 - **`a measurement` (2)** — B9, B20
@@ -122,11 +124,20 @@ tab to the other — which is the reason the feature exists.
 background and tray work (`docs/superpowers/specs/2026-09-13-background-and-tray-design.md`).
 The flag is `resumeTabs` in `settings.json`, the tabs are `store` migration 3 — one JSON
 document in one row, an object with a `version` so the sidebar width and table sizes of B27 can
-join it without a migration. What this entry still holds open: a **limit on the number of tabs**
-and what happens when the bar can't fit them, and **how a restored tab states a gap** when its
-target no longer exists — a tab whose *route* is gone is dropped alone today, but a tab pointing
-at a missing item opens and lets the screen say so, which is the case that has never been seen
-happen.
+join it without a migration.
+
+**Both of its open questions were answered by 3.7a** (2026-09-16, report
+`docs/superpowers/reports/2026-09-16-tabs-own-their-state-report.md`). There is **no limit on the
+number of tabs**: they shrink to `--spacing-tab-min` — which they already did — and below it the
+strip scrolls, with the active tab brought into view, because the shell says it behaves like a
+browser and a browser does not refuse to open what you ask it to. And **a restored tab states the
+gap** one notch more finely than before: a tab whose *route* is gone still falls whole, since
+there is nothing left to open, while a tab whose stored *reading* cannot be read opens on its
+screen with the screen's own empty state.
+
+What keeps this entry open is neither of those: it is **3.7b**, the windows of tabs the drag
+spec's Decision 8 declared and the document does not hold yet, and **3.7c**, B27's remembered
+sizes. And the window nobody has opened on any of it.
 
 A declared fork, with a recommendation:
 
@@ -140,11 +151,11 @@ A declared fork, with a recommendation:
 
 ### Questions the task has to close
 
-- **A restored tab that points to something that no longer exists** — the user changed profile or
+- ✅ **A restored tab that points to something that no longer exists** (3.7a) — the user changed profile or
   edition, the wiki dataset was updated, the item doesn't exist in that version of the
   game. The tab opens **stating the gap**, it doesn't silently vanish and doesn't turn into
   a different view: it's the same principle as "unknown data ≠ zero data".
-- **A limit on the number of tabs**, and what happens when the bar can't fit them anymore.
+- ✅ **A limit on the number of tabs** (3.7a): there is none. They shrink, then the strip scrolls.
 - **How a new tab opens**: from search (B5), from a wiki link, from a node
   in the tree, and with what gesture — middle click and `Ctrl+click` are the browser-like expectation.
 - **What the first launch does**, when there are no saved tabs yet: it opens on *Next
@@ -976,7 +987,7 @@ a test that reads it from the catalog rather than from a literal table.
 
 ---
 
-## B39 — A tab carries its state between windows: filters, scroll, what it was showing (implementation, `ui`, after 3.7's shape)
+## B39 — A tab carries its state between windows: filters, scroll, what it was showing (implementation, `ui`, after 3.7's shape) 🟡 built on 2026-09-16, **not yet seen in a window**
 
 **Needs:** nothing, then a window — what a tab carries between windows is `ui`; that it survives the move is seen.
 
@@ -1017,6 +1028,18 @@ than inventing a second one.
    top rather than guessing.
 
 ### Done when
+
+
+**Built on 3.7a** (`feature/tabs-state`), report
+`docs/superpowers/reports/2026-09-16-tabs-own-their-state-report.md`. The shape is the one this
+entry guessed at: a history entry became `{ location, view? }`, one composable hands a screen its
+reading, and `TabSeed` needed no change — which is the property it was written by subtraction to
+have. Unlock, the Collection, Runs and Search each declare what they keep; the scroll offset
+carries the row count it was taken at, so a list that changed underneath keeps its top.
+
+**It stays open until somebody looks at it**, which is what its own `Needs:` line asks for and
+what no test in this repo does. The five things to check are listed at the top of the report,
+unticked.
 
 A tab dragged into another window comes back showing what it was showing: the same facets, the
 same text in the search, the same sort, and the same place in the list — and the same is true of
@@ -1386,6 +1409,38 @@ Either the bases are checked against the 641 era — the section lengths of both
 side, which is one pass — or the tables declare the era they hold for and everything that walks a
 series says which files it may apply them to. A wrong cell here shows a mark nobody earned, which
 is the failure this project has already paid for twice.
+
+---
+
+## B59 — The convention scanner reads a comment as if it were code (implementation, `ui`, small)
+
+**Needs:** nothing — the scanner and its rules are `ui/scripts/scan-conventions.mjs`, committed.
+
+Found on 2026-09-16 while writing `useTabView` (3.7a). The rule that forbids calling a Tauri
+command outside `lib/ipc/` is `/\binvoke\s*\(/` tested against the **whole file**, so a comment
+saying *"a screen never calls `invoke()`"* trips the rule that forbids calling it. The comment was
+reworded and the branch is clean; what is left is the shape.
+
+It is small and it is not cosmetic: **a rule that cannot tell a mention from a call will
+eventually refuse a correct explanation of itself**, and the reflex it trains — reword the comment
+until the scanner stops complaining — is the opposite of what the comment is for. The same holds
+for every rule in that file matched against raw text, which is most of them.
+
+### What it probably looks like
+
+Strip line comments and block comments before testing, or test against a body with comment ranges
+blanked out. Not a parser: these are `.ts` and `.vue` files and the rules are regexes, so the
+cheap version is a pre-pass that blanks `//…`, `/*…*/` and the contents of `<!--…-->`. Strings are
+a different question and are deliberately left alone — a rule matching inside a string literal is
+usually matching a real thing.
+
+### Closes when
+
+A file whose only `invoke(` is inside a comment scans clean, and a test in the scanner's own
+fixtures says so. Every existing rule keeps its current verdict on the repository as it stands —
+if blanking comments changes an answer anywhere, that answer is a finding and goes in the report.
+
+---
 
 ## Closed entries
 

@@ -92,3 +92,15 @@
 @utility grid-cols-facets {
   grid-template-columns: repeat(var(--facet-columns), minmax(0, 1fr));
 }
+
+/* The tab strip scrolls once the tabs are at their minimum width, and it scrolls without a
+   scrollbar: the title bar is 30px tall and this app's scrollbar is 12, which would take nearly
+   half of it. `scrollbar-width` is deliberately not set — base.css records that in WebView2 a
+   non-initial value makes the ::-webkit rules be ignored, and hiding is exactly a ::-webkit
+   rule. What reaches a tab out of sight: dragging, the arrow keys, and being made active. */
+@utility strip-scroll {
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
