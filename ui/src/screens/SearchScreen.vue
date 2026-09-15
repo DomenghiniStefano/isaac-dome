@@ -8,6 +8,7 @@ import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { useSearch } from '@/composables/useSearch'
 import { useTabView } from '@/composables/useTabView'
+import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { useMessages } from '@/i18n'
 import { Timing } from '@/lib/constants/timing'
 import { SearchLimit } from '@/lib/ipc/search'
@@ -82,6 +83,9 @@ const allRows = computed(() =>
 // Which groups the search is narrowed to belongs to the tab, not to this component (B39). The
 // query is not here: it is in the location already, because a search is a place you can link to.
 const reading = useTabView(searchView)
+const setOffset = (offset: ScrollOffset) => {
+  reading.value = { ...reading.value, offset }
+}
 const picked = computed({
   get: () => reading.value.picked,
   set: (value: RowGroup[]) => {
@@ -120,7 +124,13 @@ const open = (row: SearchRow, event: MouseEvent) => {
         @update="picked = $event"
       />
       <Card>
-        <SearchResults v-if="rows.length > 0" :rows="rows" @open="open" />
+        <SearchResults
+          v-if="rows.length > 0"
+          :rows="rows"
+          :offset="reading.offset"
+          @open="open"
+          @offset-change="setOffset"
+        />
         <div v-else class="p-4">
           <EmptyCategory>{{ t('search.empty') }}</EmptyCategory>
         </div>
