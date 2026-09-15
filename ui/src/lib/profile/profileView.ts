@@ -185,7 +185,7 @@ const sectionLabels: Record<string, Message> = {
   unknown5: 'profile.sections.unknown',
   bosses: 'profile.sections.bosses',
   challenges: 'profile.sections.challenges',
-  unknown8: 'profile.sections.unknown',
+  cutscene_counters: 'profile.sections.unknown',
   unknown9: 'profile.sections.unknown',
   bestiary: 'profile.sections.bestiary',
 }

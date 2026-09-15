@@ -84,6 +84,31 @@ pub fn sample(name: &str) -> Option<PathBuf> {
     None
 }
 
+/// The `samples/windows/` folder: the halves of a **matched window** — a snapshot taken
+/// before a run and one taken after it.
+///
+/// It is a folder of its own rather than a prefix in `samples/` for the reason `is_dated`
+/// exists: a `20260912-pre.…` beside the series once won a dedup against the series entry of
+/// the same day, because `-` sorts before `.`, and a test compared against the wrong end of
+/// its own window. Nothing here is a point in the series, and nothing that walks the series
+/// can reach it.
+pub fn windows_dir() -> PathBuf {
+    samples_dir().join("windows")
+}
+
+/// One half of a matched window by name, declaring which file it is or why there is none.
+pub fn window_sample(name: &str) -> Option<PathBuf> {
+    let path = windows_dir().join(name);
+    if path.is_file() {
+        declare(&format!("sample: windows/{name}"));
+        return Some(path);
+    }
+    declare(&format!(
+        "skip: windows/{name} missing from samples/windows/"
+    ));
+    None
+}
+
 /// The bytes of a sample, with the same declaration as [`sample`].
 pub fn sample_bytes(name: &str) -> Option<Vec<u8>> {
     let path = sample(name)?;

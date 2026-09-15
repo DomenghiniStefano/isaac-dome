@@ -88,7 +88,7 @@ export const summary: SaveSummary = {
     { kind: 'unknown5', count: 7 },
     { kind: 'bosses', count: 104 },
     { kind: 'challenges', count: 46 },
-    { kind: 'unknown8', count: 27 },
+    { kind: 'cutscene_counters', count: 27 },
     { kind: 'unknown9', count: 2 },
     { kind: 'bestiary', count: 80 },
   ],

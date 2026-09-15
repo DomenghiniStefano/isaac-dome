@@ -1408,25 +1408,33 @@ are at the top of that file. What lives here rather than there is what is an **i
 rather than an entry: no code to write, only a thing to go and read. The two that are both —
 B9 and B20 — are entries in the backlog and appear here as the measurement they wait on.
 
-- [ ] **Whether the archive's runs agree with `STREAK_COUNTER [22]` and `DEATHS [10]`** — one
-      **solo, non-Greed** win with a snapshot either side, which `live_probe` already takes.
-      Added 2026-09-13 by M4 1b, after measuring that no window on disk can answer it: the
-      2026-09-08 window the spec named does not contain its own run (the log unlocks two
-      achievements and not one slot of 642 turns on across it), the online Greed run of
-      2026-09-12 does not move counter 22 at all, and `20260912-solo-judas` is an `Open` run
-      where nothing moving is correct. Until then the archive claims no agreement, and
-      `crates/ipc/tests/runs_real.rs` fails the day a window finally holds a run.
-- [ ] **Section 8's index 2** — one solo run with a known ending, watching index 2.
-      Twenty minutes. Index 19 is already the identity mapping for cutscene 19; index 2 is
-      either cutscene 1 under an off-by-one or a count of launches, and one run separates
-      them. Closing it lets sections 5, 8 and 9 be renamed the way 3 and 6 were. *Careful
-      with co-op*, now measured rather than suspected (2026-09-12): a won online Greed run
-      logged `playing cutscene 21` and **section 8 did not move a byte** — nor did 3, 5 or
-      9. A solo session the same day separated them further: **section 3 moved** (four stage
-      cells, +1 +1 +2 +1) while 5, 8 and 9 stayed put — so 3 is the one co-op diverts, and 8
-      is simply waiting for a run with an ending. The run has to be **solo** *and* has to
-      finish: the 2026-09-12 solo session had no cutscene and no `Game Over`, so it did not
-      close this.
+- [x] **Whether the archive's runs agree with `STREAK_COUNTER [22]` and `DEATHS [10]`** —
+      **answered on 2026-09-15**, by the owner playing one solo, non-Greed win: Eden, Mom,
+      Mother and Delirium, ending on The Void. `STREAK_COUNTER` 2 to 3 for the one win the log
+      folds to, `DEATHS` unmoved for the zero deaths it holds. Three tests in
+      `crates/ipc/tests/runs_real.rs`, each mutated to check it can go red.
+      **And the link the archive was missing came free**: the log's
+      `unlock steam achievement '<id>'` and the save's achievement slot are the **same
+      number** — two unlocks, two slots, the same two ids. The 2026-09-08 test says in as many
+      words that the numbering was unknown, because that window holds two unlocks and no slot
+      turning on.
+      *The window is a day wide, not tight around the run* — the backup of the 14th against the
+      live save of the 15th, with `live_probe` not running — and what licenses reading it as one
+      run is the single `+1` on the streak, plus Steam's own launch log saying exactly one
+      launch began inside it.
+- [ ] **Section 8's cell 2** — **the section earned its name on 2026-09-15** and is
+      `CutsceneCounters` now, not `Unknown8`: the log plays `playing cutscene 22 (The Void)`
+      once and cell 22 rises by exactly one, which is the second point on the identity mapping
+      after 19. The game's `Reading chunk 8 / Cutscene Counters` is finally agreeing with
+      something instead of standing alone.
+      **Cell 2 is still open, and both of the old hypotheses are gone.** It rose by one.
+      *Cutscene 1 under an off-by-one* is refuted — identity at 19 and 22 cannot coexist with an
+      offset at 1. *A count of launches* survives (exactly one launch began in the window) but
+      is not established, because a cutscene 2 could have played in the launch whose log the
+      game overwrote. And the sharpest fact against the simple reading: **cell 1 did not move**
+      although the Intro, cutscene 1, did play.
+      **Two minutes close it**: launch the game, reach the menu, quit without playing. If cell 2
+      moves, it counts launches. Sections 5 and 9 keep their printed names and stay `Unknown`.
 - [ ] **What the bestiary's four tallies count** (B9, structure closed 2026-09-09;
       **halved on 2026-09-12**). Section 10 holds four lists over the same entities — ids 4,
       2, 3, 1 — with a different number against each entity in each. One matched window on a
@@ -1444,6 +1452,12 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       minutes: tally 4 has to gain exactly 1 on the killer's key. Until then it keeps the id
       the file gives it. Naming 1, 2 and 3 apart still needs the original instrument: kill a
       known enemy a known number of times and read which moves by how much.
+      **A third flat window on 2026-09-15, and it is the best of the three**: a whole solo run
+      to The Void, tallies 1, 2 and 3 all moving (+1105, +937, +30, and tally 3 gaining four
+      new keys), tally 4 not moving a byte — with zero `Game Over` lines and `DEATHS` unmoved,
+      so the hypothesis's own precondition was satisfied and the instrument had demonstrably
+      spoken. Three for three. It is still not a confirmation, and saying otherwise is the trap
+      this section exists to avoid: only a death can produce one.
 - [ ] **What the bestiary's trailing word is.** One word after the last tally, in every
       save, growing 11,343 → 29,725 across the samples we hold, and 43,914 → **43,925** over
       the 2026-09-12 window. So it moves **+11 in one Greed run** — small, and not obviously
@@ -1544,6 +1558,48 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
 ---
 
 ## Session log
+
+### 2026-09-15 (night, later) — the window that finally held its run, and an eleventh chunk
+
+`feature/window-20260915`. **The owner played one solo, non-Greed run** — Eden, Mom, Mother and
+Delirium, ending on The Void — which is the measurement three open items had been waiting for since
+2026-09-12. Report `docs/superpowers/reports/2026-09-15-window-and-the-eleventh-chunk.md`.
+
+**M4's last open item is closed**: `STREAK_COUNTER` +1 for the one win the log folds to, `DEATHS`
+unmoved for its zero deaths. And the link the archive was missing came free — **the log's
+`unlock steam achievement '<id>'` is the save's achievement slot**, two unlocks and the same two
+slots, which the 2026-09-08 test could only say was unknown.
+
+**Section 8 earned its name.** The game has always printed `Reading chunk 8 / Cutscene Counters`
+and this repo has always refused it, because sections 3 and 6 carried wrong labels for months on
+exactly that evidence. Cell 22 rising once for the one `playing cutscene 22` is the measurement.
+`Unknown8` is `CutsceneCounters` now; 5 and 9 keep their printed names and stay `Unknown`.
+
+**Cell 2 killed both of its hypotheses and is still open.** *Off-by-one on cutscene 1* is refuted —
+identity at 19 and 22 cannot coexist with an offset at 1 — and *a count of launches* survives
+without being established. The fact that settles neither and sharpens both: **cell 1 did not move
+while the Intro played.**
+
+**Tally 4: a third flat window and the best of the three.** Tallies 1, 2 and 3 all moved (3 gaining
+four new keys) and 4 did not, with zero deaths — the instrument spoke and the silence had the
+hypothesis's precondition behind it. Three for three, and still not a confirmation.
+
+**The claim that started the sweep was mine and it was too wide.** Asked whether the game keeps a
+run history anywhere, an answer was given from two folders in the tone of one given from all of
+them. A full read-only sweep upheld it — no per-run record for solo play — and turned up three
+sources this project did not know it had: **Steam's launch log**, which is the wall clock
+`log.txt` has never had and which was used the same hour to prove one launch in the window;
+**Steam's achievement-unlock timestamps**; and **`savedatapath.txt`**, where the game writes down
+the save folder `discovery` reconstructs by search. **B55**, **B56**, **B57**.
+
+**And the game names eleven chunks where we parse ten sections** — the bestiary is its chunk *11*,
+and its chunk 10 is *Special Seed Counters*, a name this repo has never had. Recorded against B9 as
+a lead with its two coincidences (the bestiary payload's constant `words[20] = 11`, and section
+10's header describing nothing in the layout we decoded) and explicitly not as a finding.
+
+**One question is the owner's** and is left open rather than guessed: Mother's cell for Eden went
+0 to **3**, both bits from a single kill, and whether that measures bit 1 outside Greed depends on
+whether "in normal" meant *not Greed* or *Normal difficulty, not Hard*.
 
 ### 2026-09-15 (night) — the infobox was the wrong half
 

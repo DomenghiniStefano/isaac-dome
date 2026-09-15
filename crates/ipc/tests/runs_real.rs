@@ -135,3 +135,169 @@ fn the_window_of_2026_09_08_does_not_contain_the_run_its_log_holds() {
         );
     }
 }
+
+const W_BEFORE: &str = "20260915-pre.rep+persistentgamedata1.dat";
+const W_AFTER: &str = "20260915.rep+persistentgamedata1.dat";
+const W_LOG: &str = "20260915-eden-void-solo.log.txt";
+
+/// The half of the window that lives in `samples/windows/`: the snapshot from before the run.
+fn window_counters(name: &str) -> Option<Vec<u32>> {
+    let path = test_support::window_sample(name)?;
+    let bytes = std::fs::read(path).ok()?;
+    Save::parse(&bytes).ok()?.u32s(Kind::Counters)
+}
+
+fn window_flags(name: &str) -> Option<Vec<bool>> {
+    let path = test_support::window_sample(name)?;
+    let bytes = std::fs::read(path).ok()?;
+    Save::parse(&bytes).ok()?.flags(Kind::Achievements)
+}
+
+#[test]
+fn the_log_of_2026_09_15_folds_to_one_run_and_it_was_won() {
+    // The vacuity guard for the two tests below: without a won run in the log there is nothing
+    // to look for in the save. This log is a `Continue` — the run was resumed and this launch
+    // holds only its last floor, `Level::Init m_Stage 12` (The Void) — which is exactly the
+    // shape `Run::fold` decides by seed rather than by the label on the seed line.
+    let Some(runs) = runs_of(W_LOG) else {
+        test_support::skip("20260915-eden-void-solo.log.txt is missing");
+        return;
+    };
+    assert_eq!(runs.len(), 1, "one launch, one run: {runs:?}");
+    assert!(
+        matches!(runs[0].outcome, Outcome::Won { .. }),
+        "the run ended on The Void's cutscene: {:?}",
+        runs[0].outcome
+    );
+}
+
+/// **The log's `unlock steam achievement '<id>'` and the save's achievement slot are the same
+/// number.** Measured here for the first time on 2026-09-15: the 2026-09-08 window could not say
+/// so — it holds two unlocks in the log and **no** slot turning on in the save — and the test
+/// that reads it says as much, "whatever the numbering".
+///
+/// This window holds exactly two unlocks and exactly two slots turning on, and they are the same
+/// two numbers. It is the direct link between the two sources the archive is built on, and it
+/// cost nothing but a window that actually contains its run.
+#[test]
+fn the_logs_achievement_ids_are_the_saves_achievement_slots() {
+    let (Some(before), Some(after), Some(runs)) =
+        (window_flags(W_BEFORE), flags(W_AFTER), runs_of(W_LOG))
+    else {
+        test_support::skip("the 2026-09-14/15 window is missing");
+        return;
+    };
+
+    let turned_on: Vec<u32> = before
+        .iter()
+        .zip(after.iter())
+        .enumerate()
+        .filter(|(_, (b, a))| !**b && **a)
+        .map(|(i, _)| i as u32)
+        .collect();
+    let mut unlocked: Vec<u32> = runs.iter().flat_map(|r| r.achievements.clone()).collect();
+    unlocked.sort_unstable();
+
+    // Vacuity guard: a window where nothing was unlocked would pass this by comparing two empty
+    // lists, which is the failure mode of the 2026-09-08 window read carelessly.
+    assert!(
+        !unlocked.is_empty(),
+        "the log unlocks nothing: this test has no subject"
+    );
+    assert_eq!(
+        turned_on, unlocked,
+        "the slots the save turned on and the ids the log unlocked"
+    );
+}
+
+/// The agreement the spec asked for since 2026-09-12 and no window on disk could answer: **one
+/// solo, non-Greed win with a snapshot either side.** `STREAK_COUNTER` rises by exactly one and
+/// `DEATHS` does not move, which is what one win and no death mean.
+///
+/// **The window is a day wide, not tight around the run** — the "before" is the dated backup the
+/// game wrote at the end of the 14th and the "after" is the live save of the 15th — so it says
+/// the counters agree with *this* run because only one run was played in it, which the single
+/// `+1` on the streak is itself the evidence for. A tight window would need `live_probe`
+/// running, and this one was taken after the fact.
+#[test]
+fn the_window_of_2026_09_15_holds_one_win_and_no_death() {
+    let (Some(before), Some(after), Some(runs)) =
+        (window_counters(W_BEFORE), counters(W_AFTER), runs_of(W_LOG))
+    else {
+        test_support::skip("the 2026-09-14/15 window is missing");
+        return;
+    };
+
+    let wins = runs
+        .iter()
+        .filter(|r| matches!(r.outcome, Outcome::Won { .. }))
+        .count() as u32;
+    let deaths = runs
+        .iter()
+        .filter(|r| matches!(r.outcome, Outcome::Died { .. }))
+        .count() as u32;
+    eprintln!(
+        "log: {wins} won, {deaths} died | save: STREAK {} -> {}, DEATHS {} -> {}",
+        before[STREAK], after[STREAK], before[DEATHS], after[DEATHS]
+    );
+
+    // Vacuity guard: the whole point is a window that *does* contain its run.
+    assert_eq!(wins, 1, "this window is about one win");
+    assert_eq!(
+        after[STREAK] - before[STREAK],
+        wins,
+        "the streak rose by the number of wins the log folds to"
+    );
+    assert_eq!(
+        after[DEATHS], before[DEATHS],
+        "nothing died in the log, and DEATHS agrees"
+    );
+    assert_eq!(deaths, 0, "and the log says so too");
+}
+
+/// **Section 8 is indexed by cutscene number.** Index 19 was the identity mapping for cutscene
+/// 19; this window is the second point, and it is a different number on a different day: the log
+/// plays cutscene 22 (The Void) and cell 22 of section 8 rises by exactly one.
+///
+/// It does not close the section — index 2 also rose by one here and no cutscene 2 was played,
+/// so what that cell counts is still open — but it does close "the mapping might be offset":
+/// identity at two points and an offset at a third cannot both hold.
+#[test]
+fn section_8_counts_the_cutscene_the_log_played() {
+    let (Some(before), Some(after), Some(runs)) =
+        (window_section8(W_BEFORE), section8(W_AFTER), runs_of(W_LOG))
+    else {
+        test_support::skip("the 2026-09-14/15 window is missing");
+        return;
+    };
+
+    let endings: Vec<&str> = runs
+        .iter()
+        .filter_map(|r| match &r.outcome {
+            Outcome::Won { ending } => Some(ending.as_str()),
+            Outcome::Died { .. } | Outcome::Open | Outcome::Abandoned => None,
+        })
+        .collect();
+    assert_eq!(
+        endings,
+        vec!["The Void"],
+        "the run this window is about ended on The Void, cutscene 22"
+    );
+    assert_eq!(
+        after[22] - before[22],
+        1,
+        "cell 22 of section 8 rose once, for the one cutscene 22 the log played"
+    );
+}
+
+fn section8(name: &str) -> Option<Vec<u32>> {
+    let path = test_support::sample(name)?;
+    let bytes = std::fs::read(path).ok()?;
+    Save::parse(&bytes).ok()?.u32s(Kind::CutsceneCounters)
+}
+
+fn window_section8(name: &str) -> Option<Vec<u32>> {
+    let path = test_support::window_sample(name)?;
+    let bytes = std::fs::read(path).ok()?;
+    Save::parse(&bytes).ok()?.u32s(Kind::CutsceneCounters)
+}
