@@ -3191,6 +3191,23 @@ with `[Continue, …]` seed lines would let the fold tell a relaunch from a quit
 distinction `run::resume` currently cannot make and which is exactly what left cell 2 of section 8
 open.
 
+**And there is a per-run clock next to it, which is worth more.** `Steam\logs\cloud_log.txt` records
+every sync of the five remote files, including `rep+gamestate1.dat` — the mid-run save the game
+creates when a run starts and deletes when it **ends**. Measured on 2026-09-15, 27 lines name that
+file, and the end of the run this repo spent the evening on is in there to the second:
+
+```
+[2026-09-15 20:46:31] [AppID 250900] File is in sync rep+gamestate1.dat
+[2026-09-15 21:04:09] [AppID 250900] Need to delete file rep+gamestate1.dat
+[2026-09-15 21:04:10] [AppID 250900] Delete OK for file rep+gamestate1.dat
+```
+
+So the delete **is** synced and **is** dated: that is a run ending, not a launch ending, which is
+the limit the launch log cannot get past. Still unmeasured: how far back the file is kept (27 lines
+is not many for 93 launches, so it is either short or a run rarely crosses a sync), and whether a
+run *starting* is as visible as one ending — the line above says "in sync", not "created", because
+that run was already open when the game launched.
+
 **What has to be decided, not assumed**, and why this is an entry: it is a **rolling** log, so it is
 a window and not a history; its path is Steam's, not the game's, and `discovery` finds neither
 today; and a per-launch clock is not a per-run clock — a launch holding three runs dates all three
