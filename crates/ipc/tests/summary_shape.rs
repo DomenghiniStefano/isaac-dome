@@ -20,7 +20,7 @@ const ON_THE_WIRE: [(Kind, &str); 10] = [
     (Kind::Unknown5, "unknown5"),
     (Kind::Bosses, "bosses"),
     (Kind::Challenges, "challenges"),
-    (Kind::Unknown8, "unknown8"),
+    (Kind::CutsceneCounters, "cutscene_counters"),
     (Kind::Unknown9, "unknown9"),
     (Kind::Bestiary, "bestiary"),
 ];
