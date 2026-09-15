@@ -90,7 +90,7 @@ being built; the frontend code starts with it.
 ## Ideas and future features
 
 Registered, not promised. Details, with closing criteria, live in
-[`docs/BACKLOG.md`](docs/BACKLOG.md) and [`docs/IMPROVEMENTS.md`](docs/IMPROVEMENTS.md).
+[`docs/BACKLOG.md`](docs/BACKLOG.md) and [`docs/completed/quality-review.md`](docs/completed/quality-review.md).
 
 **The missing heart**
 
@@ -205,7 +205,7 @@ fixture of a known era, and a file named "live" invites overwriting it.
 - [`DESIGN-BRIEF.md`](DESIGN-BRIEF.md) — the design system's contract, with the TypeScript
   types.
 - [`docs/frontend-conventions.md`](docs/frontend-conventions.md) — the frontend rules.
-- [`docs/BACKLOG.md`](docs/BACKLOG.md), [`docs/IMPROVEMENTS.md`](docs/IMPROVEMENTS.md) —
+- [`docs/BACKLOG.md`](docs/BACKLOG.md), [`docs/completed/quality-review.md`](docs/completed/quality-review.md) —
   registered tasks.
 - `reference/` — reference implementation in Python.
 
