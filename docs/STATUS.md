@@ -1545,6 +1545,82 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
 
 ## Session log
 
+### 2026-09-15 (later) — the `Block` variant that was never needed, and the two losses found underneath it
+
+Three branches in parallel on a machine with **no game and no window** — port 1420 was held by
+another session's vite, and `pnpm dev` would have evicted it in silence, so nothing here was seen
+drawn. Said plainly because this repo's own backlog counts *"not seen in a real Tauri window"* as
+half a closure.
+
+**B49 closed, and the finding is that it needed no contract change.** The entry had carried since
+2026-09-08 the claim that saying *"a template wrapping blocks"* needs a `Block` variant — the
+sentence that made its second half a design decision and kept it waiting for one. A census of
+every span in `dataset/raw/` that opens on one line and closes on another refuted it: seventeen
+spans, four families, each with a shape the contract already has. The two `X synergy` templates
+open **on a list item** and hold nothing but `**` lines, which is `ListItem { inline, children }`;
+all nine multi-line `{{bug|…}}` sit under `== Bugs ==`, which is `SectionKind::Bugs`, and the
+single-line case had been dropped inline since `CONTENT_WRAPPERS` existed; `scroll box` is
+`column list`'s family and was missing from the list because the families were known from the
+offenders they left, which is a different list. Raw template syntax **35 → 9**, and the 9 are
+genuine text.
+
+**Two counts in that entry were wrong and could not have been noticed.** Multi-line `{{bug|…}}`
+is **9 spans, not 4** — 4 was the count of the offenders they left — and the genuine remainder is
+**9, not 8**: the 8 was measured on 2026-09-08, a formula arrived after it, and an assertion
+pinned at `<= 35` cannot see its own remainder drift.
+
+**The rule the fix needed and the spec did not know**: the pre-pass may touch only a template
+that **spans lines**. 538 of the 547 `{{bug|…}}` close on the line they opened on, most inside a
+list item, and moving one of those onto a line of its own cuts the item in two — a pass that
+repairs one family by breaking five hundred. The fence is
+`a_wrapper_that_closes_on_its_own_line_is_left_where_it_is`, the only one of the four new tests
+that was green before the code was written.
+
+**Then reading one `dlc=` opened something bigger.** The arm for `{{bug|…}}` never read a named
+parameter, so 204 of 547 showed a defect of one edition to every reader. Going to fix that
+surfaced the real number: this parser understands **2434 of the 4168 `{{dlc|…}}`** uses, and each
+of the other **1734** opened an `Inline::Edition` with an empty `only` — a span declaring itself
+valid in no edition at all. **1690 of them were in the shipped dataset, one edition node in
+three**, and the app draws no badge for an empty `only`, so the reader was told nothing and
+nothing recorded that a code had been dropped. `Out::close` now unwraps such a frame instead of
+emitting it and the code is counted: `meta.diagnostics.unknownDlcCodes` carries **1832**, `nr`
+1190 of them. **0 empty edition nodes remain.**
+
+**`Dlc::parse_codes` was deliberately not reused**, and that is the measurement worth keeping. It
+splits the *infobox* parameter, where concatenated codes are a set of editions, and would read
+`nr` as Rebirth + Repentance. The corpus refuses: every code appears both bare and `n`-prefixed
+(`r` 1687 / `nr` 1155, `r+` 446 / `nr+` 207, `a+` 165 / `na+` 149), a bare `n` appears **zero**
+times in 4168 uses, and **Abyss** — an item that exists only in Repentance, `dlc = r` in its own
+infobox — carries a line marked `{{dlc|nr+}}`, which as a set would be valid in an edition where
+the item does not exist. So `n` modifies the code beside it and what it means is unmeasured;
+"new in" and "not in" have the same shape and opposite consequences. **B52** carries the
+measurement and the single query that answers it.
+
+**And the same arm was losing the other book.** The item is *The* Book of Belial, with the
+article; the arm resolved `Book of Belial`, which is not an item, so **33 uses** dropped the
+reference and the `": "` that introduces the description — while the Virtues arm beside it worked,
+which is why nobody saw it. References in the dataset **27 → 60**. The 34th occurrence of the
+string is a different template inside a section the build discards, and `discardedSections`
+records it.
+
+**B48 closed on its own branch** (`fix/empty-category`): an empty category now says it is empty
+and offers no button that undoes nothing, while a search that genuinely found nothing keeps both.
+Five tests on a pure `emptyList(total, query)`, and the two halves are gated separately on purpose
+— the sentence follows the total, the button follows the query. It reported that **the same shape
+is still live in `CollectionScreen` and `UnlockScreen`**, where a reset is offered even when the
+unfiltered list is empty.
+
+**B47's analysis half was measured** against the committed data, and it is sharper than the entry
+hoped: `Infobox stage` answers **1552 dead reference tokens with 27 pages** — the best ratio in
+the repo by an order of magnitude — `Infobox entity` **3801 occurrences**, `Infobox pickup` with
+`card` and `rune` as one `PageKind` **675**, while `Infobox grid entity` has zero transclusions
+and can be declined permanently. Two things the entry did not expect: enumerating **all seven**
+would take only **6 of the 49** `Target::Concept` targets out of "a page we do not have", and
+**none of the 13** references the graph cannot interpret is behind any of them — they are words a
+sentence used, not things with a page. **Rooms are covered by none of the seven** (1464
+occurrences, 37 names), so "stages, rooms and concepts have no page" would become half true and
+wants its own entry. The decision itself is the owner's and is not taken here.
+
 ### 2026-09-15 — Floor: the grid you paint, and the rules that light it
 
 `feature/floor-grid`, cut from `develop`, F1 executed end to end. Nine commits. Rust **929
