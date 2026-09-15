@@ -60,7 +60,7 @@ grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | gr
 closed since the snapshot below; **B53** opened out of B52, which is where this list keeps finding
 things — a counter that had been reporting `{}` since the day it was added.
 
-- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B53
+- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54
 - **`a real save` (3)** — B21, B22, B23
 - **`the game` (5)** — B3, B10, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -3063,7 +3063,29 @@ unqualified are shown to the *wrong* readers, which raises this above a labellin
 
 ---
 
-## B53 — Three pages carry `{{infobox monster}}` and the parser skips them (analysis, then `wiki`)
+## B53 — Three pages carry `{{infobox monster}}` and the parser skips them (analysis, then `wiki`) ✅ closed on 2026-09-15, not worth a shape
+
+**Closed the same evening, and the reason is not "it is minor".** Each of the three boxes was read
+where it sits, and **all three sit inside something the page already loses, or that the wiki
+itself does not draw**:
+
+| page | where the box is | what that means |
+|---|---|---|
+| `collectible/Blood_Puppy` | the **foot of the page**, after `{{nav\|…}}`, marked **`hidden = yes`** | the wiki does not render it: it is there to register the entity in Cargo |
+| `collectible/My_Shadow` | at the head of `== Friendly Charger ==` | a level-2 section with an unrecognized title, discarded whole |
+| `character/Tainted_Jacob` | at the head of `== Dark Esau ==` | the same, and it is 28 lines of real behaviour |
+
+So **the infobox is the wrong half to rescue.** Reading one would put a box on screen — a name, an
+id, a one-line `behavior` — for a subject whose text the app has thrown away, or one its own source
+hides. A card with no page behind it is worse than no card.
+
+And Dark Esau's `behavior` is not even a loss on its own terms: *"Charges at Tainted Jacob. Upon
+collision, transforms him into The Lost for the remainder of the floor"* is a summary of what
+`== Dark Esau ==` says at length, and of two sentences the page's kept text already carries.
+
+**What the three boxes were pointing at is real, and it is a section, not an infobox** — see
+**B54**. The counter stays, because a fourth page adopting the template is still something to be
+told about; it now reads 3 for a reason that is written down.
 
 **Needs:** nothing — the pages are in the committed `dataset/raw/`.
 
@@ -3097,3 +3119,46 @@ is the product question here, and it is the owner's.
 Either the three boxes are read into something the app can draw, or the entry says in writing why
 a monster box on somebody else's page is not worth a shape — with the count re-measured, so
 "three" is not a number from a day that has passed.
+
+---
+
+## B54 — 54 sections are discarded once each, and they are not the noise the counter was built for (analysis, then `wiki`)
+
+**Needs:** nothing — the counter is in the committed `dataset/wiki.json`.
+
+Logged on 2026-09-15, out of B53. `discardedSections` reports **2267 occurrences over 63 titles**,
+and reading it as one number hides the shape: **2213 of them are six known titles** the build drops
+on purpose — `Trivia` 889, in-game footage 840 across three spellings, `Gallery` 359, `References`
+102, `Requirements` 15, `Audio` 7 — and the remaining **54 occurrences are 54 distinct titles, each
+appearing exactly once**.
+
+A title that appears once is not a category the parser declined. It is one page's own heading, and
+the whole section under it is gone. They fall into three families:
+
+- **A second subject the page describes.** `Dark Esau` (28 lines of behaviour on Tainted Jacob's
+  page), `Friendly Charger`, `Black Judas`, `Lazarus Risen`, `Blood Clots`. This is the family B53
+  came from, and it is the one that needs a decision rather than a line: a page has one entry, and
+  these sections belong to something else that shares it.
+- **A near-miss on a kind we already have.** `Items Interactions` beside the accepted
+  `Item Interactions`, `Active Item Interactions`, `General Strategies`, `Infinite Synergies` and
+  its three parenthesised variants. `section_kind` is a closed list of spellings, and these are
+  spellings.
+- **Genuinely something else.** `Algorithm`, `Modifiers`, `Combinations`,
+  `Component Types and Qualities`, `Drops`, `Item Exclusion`.
+
+**The second family is the cheap half and should not be done by reflex**: `Good Items` and
+`Bad items` are one page's editorial lists, not `Notes`, and folding them in would put a judgment
+into a kind that does not make one. Every spelling added has to be read on its own page first,
+which is why this is an analysis entry and not a patch.
+
+**What makes it worth doing at all** is that the counter cannot tell you any of this: 54 against
+2267 reads as rounding, and `discardedSections` was built to show a parser losing ground, which is
+exactly what a title seen once does not look like. This entry exists so the next reading of that
+number starts from the split rather than the total.
+
+### Closes when
+
+Each of the 54 is placed in one of the three families **by reading its page**, the near-misses are
+either accepted into `section_kind` or refused in writing with the page that refused them, and the
+second-subject family has a decision — with the counts re-measured, because 54 is a number from a
+snapshot and the wiki gains headings.
