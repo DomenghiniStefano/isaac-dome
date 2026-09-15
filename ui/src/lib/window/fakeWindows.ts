@@ -28,7 +28,12 @@ const otherBox: WindowBox = {
 }
 
 export const fakeWindows = (): WindowPort => {
+  // **`window` itself can be missing**, not only Tauri: Vitest runs these modules in node, where
+  // there is no document to read a query parameter from. The rule this file lives under is that
+  // it degrades instead of throwing, and an environment with no DOM is the case it did not
+  // cover — the fake simply turns its logging off there.
   const on =
+    typeof window !== 'undefined' &&
     new URLSearchParams(window.location.search).get(FakeParam) === FakeValue
   const handlers: ((m: WindowMessage) => void)[] = []
   const say = (what: string, detail: unknown) => {

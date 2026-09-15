@@ -21,6 +21,7 @@ import {
   refineTab,
   removeTab,
   seedState,
+  setEntryView,
   sessionOf,
   selectTab,
   tabLocation,
@@ -83,6 +84,11 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   }
   const navigate = (location: TabLocation): void => {
     state.value = navigateTab(state.value, location)
+  }
+  // How the active tab's current entry is being read. The rule is `tabModel`'s; this only holds
+  // the result, as with every other tab rule.
+  const setView = (location: TabLocation, view: unknown): void => {
+    state.value = setEntryView(state.value, location, view)
   }
   const refine = (location: TabLocation): void => {
     state.value = refineTab(state.value, location)
@@ -249,6 +255,7 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     settleInNewWindow,
     openWindowWith,
     refine,
+    setView,
     back,
     forward,
   }
