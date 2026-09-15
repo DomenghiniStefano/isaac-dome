@@ -94,7 +94,6 @@ The shell types `view` as `unknown` and knows nothing about any screen. Each scr
 
 ```ts
 interface TabViewSpec<T> {
-  key: string
   empty: () => T
   read: (value: unknown) => T | null
 }
@@ -103,6 +102,10 @@ interface TabViewSpec<T> {
 `read` is the same shape as `readLocation` in `sessionDocument.ts`, and for the same reason: this
 is data written by an **older version of this app**, and the only honest way to receive it is a
 validator that can answer "no".
+
+**No key in the spec.** A view record lives on a history entry and an entry has exactly one
+screen, so a key would name the thing the entry already names. The case a key would guard — a
+route renamed, a record meeting the wrong screen — is the case `read` exists to answer "no" to.
 
 **A record that cannot be read is dropped alone, and the location stays.** This is one notch
 finer than today's rule and it is the answer to B6's open question — *how a restored tab states a
