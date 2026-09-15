@@ -75,6 +75,14 @@ else
 fi
 rm -rf "$types_scratch"
 
+# Every file path the living documents name, against the files git tracks. **A report, not a
+# gate**: it cannot tell a name written as history from one written as a promise, so it prints
+# and never fails. Added 2026-09-15, after the same defect turned up in every document in the
+# repo — `frontend-conventions` had been citing a deleted test as the thing pinning a row
+# height, and three open backlog entries pointed at files a refactor had renamed under them.
+printf '\n=== doc references\n'
+node scripts/check-doc-refs.mjs || printf 'the reference report could not run\n'
+
 skipped=$(grep -c '^skip:' "$declarations")
 real_files=$(grep -c '^sample:' "$declarations")
 
