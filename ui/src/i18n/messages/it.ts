@@ -463,7 +463,6 @@ export const it = {
     font: 'Il carattere Determination Mono è distribuito con licenza CC BY 3.0.',
   },
   placeholder: {
-    runArchive: "Arriva con l'archivio delle run (M4).",
     tabs: 'Arriva con le tab che sopravvivono alla chiusura.',
   },
   plan: {

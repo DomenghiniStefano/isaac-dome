@@ -459,7 +459,6 @@ export const en: MessageSchema = {
     font: 'The Determination Mono typeface is licensed CC BY 3.0.',
   },
   placeholder: {
-    runArchive: 'Arrives with the run archive (M4).',
     tabs: 'Arrives with tabs that survive closing.',
   },
   plan: {
