@@ -18,11 +18,12 @@ import { tabOriginIcon } from './tabOriginIcon'
 
 type Message = MessageKey<MessageSchema>
 
-// The sidebar shows one section at a time (Schermate.dc.html): the two navbar sections,
+// The sidebar shows one section at a time (Schermate.dc.html): the three navbar sections,
 // plus Settings, reached from the cog.
 export const SidebarSection = {
-  Wiki: 'wiki',
   Progress: 'progress',
+  Tool: 'tool',
+  Wiki: 'wiki',
   Settings: 'settings',
 } as const
 export type SidebarSection =
@@ -71,9 +72,12 @@ export const sidebarEntries: Record<SidebarSection, SidebarEntry[]> = {
     RouteName.Unlock,
     RouteName.Plan,
     RouteName.Collection,
-    RouteName.Runs,
-    RouteName.Live,
   ].map(routeEntry),
+  // Live leads, because it is the only one of the three that answers about right now and
+  // clicking the section lands on its first entry (B24).
+  [SidebarSection.Tool]: [RouteName.Live, RouteName.Runs, RouteName.Floor].map(
+    routeEntry,
+  ),
   [SidebarSection.Wiki]: [
     overviewEntry,
     ...Object.values(WikiCategory).map(wikiEntry),
@@ -87,8 +91,8 @@ export const sidebarEntries: Record<SidebarSection, SidebarEntry[]> = {
 }
 
 // Where clicking a section goes (`docs/BACKLOG.md` B24): its first entry, which is the
-// section's own landing — Next steps, the Wiki's overview, the profile. A section always
-// has entries, so the fallback is only there to keep the type honest.
+// section's own landing — Next steps, Live, the Wiki's overview, the profile. A section
+// always has entries, so the fallback is only there to keep the type honest.
 export const firstEntry = (section: SidebarSection): SidebarEntry =>
   sidebarEntries[section][0] ?? routeEntry(RouteName.Goals)
 
@@ -97,6 +101,11 @@ export const sidebarHeaders: Record<SidebarSection, SidebarHeader> = {
     title: 'sidebar.progressTitle',
     hint: 'sidebar.progressHint',
     icon: tabOriginIcon[TabOrigin.Progress],
+  },
+  [SidebarSection.Tool]: {
+    title: 'sidebar.toolTitle',
+    hint: 'sidebar.toolHint',
+    icon: tabOriginIcon[TabOrigin.Tool],
   },
   [SidebarSection.Wiki]: {
     title: 'sidebar.wikiTitle',
@@ -110,7 +119,7 @@ export const sidebarHeaders: Record<SidebarSection, SidebarHeader> = {
   },
 }
 
-// `null` for a tab that belongs to neither section: search sits above the two
+// `null` for a tab that belongs to no section: search sits above the three
 // (DESIGN-BRIEF.md §4.2), and opening one leaves the sidebar where it was.
 export const sectionOfOrigin = (origin: TabOrigin): SidebarSection | null => {
   switch (origin) {
@@ -120,6 +129,8 @@ export const sectionOfOrigin = (origin: TabOrigin): SidebarSection | null => {
       return SidebarSection.Wiki
     case TabOrigin.Progress:
       return SidebarSection.Progress
+    case TabOrigin.Tool:
+      return SidebarSection.Tool
     case TabOrigin.Settings:
       return SidebarSection.Settings
     default:
@@ -127,13 +138,15 @@ export const sectionOfOrigin = (origin: TabOrigin): SidebarSection | null => {
   }
 }
 
-// The navbar marks Wiki or Progress; while Settings is shown it marks neither.
+// The navbar marks Progress, Tool or Wiki; while Settings is shown it marks none.
 export const navSectionOf = (section: SidebarSection): NavSection | null => {
   switch (section) {
     case SidebarSection.Wiki:
       return NavSection.Wiki
     case SidebarSection.Progress:
       return NavSection.Progress
+    case SidebarSection.Tool:
+      return NavSection.Tool
     case SidebarSection.Settings:
       return null
     default:
@@ -147,6 +160,8 @@ export const sidebarSectionOf = (section: NavSection): SidebarSection => {
       return SidebarSection.Wiki
     case NavSection.Progress:
       return SidebarSection.Progress
+    case NavSection.Tool:
+      return SidebarSection.Tool
     default:
       return assertNever(section)
   }
