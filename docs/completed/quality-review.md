@@ -1,3 +1,11 @@
+# Completed — the quality tasks of the 2026-09-05 review
+
+Fourteen items, **all fourteen closed**, each with the criterion it had to meet. **Searched,
+never read.** It was `docs/IMPROVEMENTS.md` until 2026-09-16: a finished document still listed
+among the living ones, which is how it came to contradict `docs/STATUS.md` for nine days — E1
+below closed the `unpack` spec correction on 2026-09-06 while a box in STATUS went on asking for
+it, and E1 even opens by naming that box.
+
 # Improvements — from the 2026-09-05 codebase review
 
 Tasks that take the foundation from "solid" to "ready for an external user". They come out of

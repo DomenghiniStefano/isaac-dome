@@ -30,16 +30,10 @@ import { execFileSync } from 'child_process'
 // a defect. A name that stops appearing here has either been fixed or the document changed.
 const EXEMPTIONS = [
   // A document recording a rename has to name the file that went away. Most of these left with
-  // the journal on 2026-09-16; `progetto.html` is named by an open backlog entry as well.
-  { path: 'docs/progetto.html', why: 'rewritten as docs/PROJECT.md; a backlog entry records it' },
-  // Entries quoting their own earlier text, marked as such in the document.
+  // the journal and the closed backlog entries on 2026-09-16.
   {
-    path: 'ui/src/lib/graph/unlockFilter.ts',
-    why: 'quoted under "the original entry, for the record"; became unlockFacets.ts with N8',
-  },
-  {
-    path: 'ui/src/lib/collection/collectionFilter.ts',
-    why: 'same entry; became collectionFacets.ts with N8',
+    path: 'docs/IMPROVEMENTS.md',
+    why: 'moved to docs/completed/quality-review.md; a dated spec names it as it was',
   },
   { path: 'stores/graph.ts', why: 'three view stores became one stores/views.ts with N8' },
   { path: 'stores/completion.ts', why: 'same' },
@@ -75,10 +69,7 @@ const EXEMPTIONS = [
   { path: 'components/marks/CharacterHead.vue', why: 'planned name; the component landed elsewhere' },
   { path: 'screens/profile/profileView.ts', why: 'landed as lib/profile/profileView.ts' },
   { path: 'screens/collection/CollectionFacetDrawer.vue', why: 'became components/facets/FacetDrawer.vue' },
-  { path: 'screens/NextStepsScreen.vue', why: 'became GoalsScreen.vue with B32' },
-  { path: 'nextsteps/StepCard.vue', why: 'became screens/goals/GoalCard.vue with B32' },
   { path: 'auto-launch-0.5.0/src/windows.rs', why: "a dependency's own source, not this repo's" },
-  { path: 'samples/filelist.txt', why: 'samples/ is git-ignored and not walked' },
 ]
 
 const DOCS = [
@@ -87,7 +78,6 @@ const DOCS = [
   'docs/PROJECT.md',
   'docs/STATUS.md',
   'docs/BACKLOG.md',
-  'docs/IMPROVEMENTS.md',
   'docs/frontend-conventions.md',
   ...readdirSync('docs/superpowers/specs').map((f) => 'docs/superpowers/specs/' + f),
 ]
