@@ -5,6 +5,7 @@ mod blocks;
 mod build;
 mod dataset;
 mod diagnostics;
+mod editions;
 pub mod for_tests;
 mod infobox;
 mod inline;
@@ -21,6 +22,7 @@ pub use blocks::parse_blocks;
 pub use build::build;
 pub use dataset::{Counts, Dataset, DatasetError, Meta, Patch, Source, SCHEMA_VERSION};
 pub use diagnostics::Diagnostics;
+pub use editions::{parse_code, Editions};
 pub use infobox::{
     entry_facts, extract_infoboxes, infobox_from, EntryFacts, InfoboxKind, RawInfobox,
     IGNORED_PARAMS,
