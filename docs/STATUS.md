@@ -823,8 +823,10 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
                         B39 built, B6's two open questions answered, B59 opened. Plan
                         `docs/superpowers/plans/2026-09-15-tabs-own-their-state.md`, report
                         `docs/superpowers/reports/2026-09-16-tabs-own-their-state-report.md`.
-                        **Not seen in a window yet**, which both entries' `Needs:` lines ask for,
-                        and **waiting to merge** for that reason.
+                        Merged into `develop` with the suite green on the merge result.
+                        **Not seen in a window yet**, which both entries' `Needs:` lines ask for:
+                        B39 stays open for that, and the five checks are listed unticked at the
+                        top of the report.
                   - [ ] **3.7b — windows of tabs**: document version 2, the ledger every window
                         keeps, the writer elected by a pure function — `main` writes today and
                         **`main` can be closed while other windows live**, so the session silently
