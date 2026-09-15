@@ -12,7 +12,7 @@ import { useMessages } from '@/i18n'
 import type { WikiPageRef } from '@/lib/ipc/types'
 import { rowWidePx } from '@/lib/scale/rows'
 import { pageLocation } from '@/lib/wiki/category'
-import { emptyList } from '@/lib/wiki/emptyList'
+import { emptyList, queryTyped } from '@/lib/facets/emptyList'
 import { filterPages } from '@/lib/wiki/listFilter'
 import { pageKey } from '@/lib/wiki/pageKey'
 import {
@@ -47,7 +47,12 @@ const pages = computed(() =>
 )
 // An empty list is not always a search that failed: a category with nothing in it says so,
 // and offers no button to clear a search nobody typed.
-const empty = computed(() => emptyList(total.value, query.value))
+const empty = computed(() =>
+  emptyList(total.value, queryTyped(query.value), {
+    empty: 'wiki.emptyCategory',
+    noResults: 'wiki.noResults',
+  }),
+)
 // No picture on any page is the game's absence, not 900 pages without art.
 const noCatalog = computed(
   () => all.value.length > 0 && all.value.every((p) => p.iconUrl === null),
