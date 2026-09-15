@@ -9,6 +9,7 @@ import {
   canGoForward,
   closeTab,
   detachTab,
+  entryView,
   firstState,
   forwardTab,
   insertTab,
@@ -18,18 +19,20 @@ import {
   refineTab,
   removeTab,
   seedState,
+  setEntryView,
   sessionOf,
   selectTab,
   tabLabel,
   tabLocation,
   tabSeed,
 } from './tabModel'
-import type { Tab, TabsState } from './tabModel'
+import type { Entry, Tab, TabsState } from './tabModel'
 
 const at = (name: TabLocation['name']): TabLocation => ({ name })
+const entry = (name: TabLocation['name']): Entry => ({ location: at(name) })
 const one = (id: string, name: TabLocation['name']): Tab => ({
   id,
-  entries: [at(name)],
+  entries: [entry(name)],
   index: 0,
 })
 const three = (): TabsState => ({
@@ -362,5 +365,92 @@ describe('what a window would save of itself', () => {
       tabs: [],
       activeIndex: 0,
     })
+  })
+})
+
+describe('the view a tab is holding', () => {
+  it('starts with no view at all', () => {
+    const state = firstState('a', at(RouteName.Unlock))
+    expect(entryView(activeTab(state))).toBeUndefined()
+  })
+
+  it('writes the view into the entry the tab is showing', () => {
+    const state = setEntryView(
+      firstState('a', at(RouteName.Unlock)),
+      at(RouteName.Unlock),
+      { sort: 'name' },
+    )
+    expect(entryView(activeTab(state))).toEqual({ sort: 'name' })
+    // The location is untouched: a view is not a navigation.
+    expect(tabLocation(activeTab(state))).toEqual(at(RouteName.Unlock))
+  })
+
+  // The same guard `refineTab` has, and for the same reason: a debounced write can land after
+  // the user has gone back or switched tab, and it must reach no tab rather than the wrong one.
+  it('refuses a view whose location is not the one the tab is showing', () => {
+    const state = firstState('a', at(RouteName.Unlock))
+    expect(
+      setEntryView(state, at(RouteName.Collection), { sort: 'name' }),
+    ).toBe(state)
+  })
+
+  it('leaves the views of the other entries alone when it writes', () => {
+    const start = navigateTab(
+      setEntryView(
+        firstState('a', at(RouteName.Unlock)),
+        at(RouteName.Unlock),
+        {
+          sort: 'name',
+        },
+      ),
+      at(RouteName.Collection),
+    )
+    const state = setEntryView(start, at(RouteName.Collection), { sort: 'id' })
+    const tab = activeTab(state)
+    expect(tab.entries[0]?.view).toEqual({ sort: 'name' })
+    expect(tab.entries[1]?.view).toEqual({ sort: 'id' })
+  })
+
+  // Going back is going back to what you were looking at, which is the whole reason the record
+  // sits on the entry and not on the tab.
+  it('gives back the view of the entry it returns to', () => {
+    const start = navigateTab(
+      setEntryView(
+        firstState('a', at(RouteName.Unlock)),
+        at(RouteName.Unlock),
+        {
+          sort: 'name',
+        },
+      ),
+      at(RouteName.Collection),
+    )
+    expect(entryView(activeTab(backTab(start)))).toEqual({ sort: 'name' })
+  })
+
+  // `tabSeed` is written by subtraction, so this holds without a line being added for it. The
+  // test exists because that is the property the tear-off rests on.
+  it('carries the view across a tear-off', () => {
+    const state = setEntryView(
+      firstState('a', at(RouteName.Unlock)),
+      at(RouteName.Unlock),
+      { sort: 'name' },
+    )
+    expect(tabSeed(activeTab(state)).entries[0]?.view).toEqual({ sort: 'name' })
+  })
+
+  // A refinement replaces the entry in place, and the view belongs to the view, not to the
+  // query string that refined it.
+  it('keeps the view when the same view is refined', () => {
+    const start = setEntryView(
+      firstState('a', at(RouteName.Unlock)),
+      at(RouteName.Unlock),
+      { sort: 'name' },
+    )
+    const state = refineTab(start, {
+      name: RouteName.Unlock,
+      query: { q: 'brim' },
+    })
+    expect(entryView(activeTab(state))).toEqual({ sort: 'name' })
+    expect(tabLocation(activeTab(state)).query?.q).toBe('brim')
   })
 })

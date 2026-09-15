@@ -2,7 +2,10 @@ import { describe, expect, it } from 'vitest'
 import { RouteName } from '@/router/routeTable'
 import { readSession, writeSession } from './sessionDocument'
 
-const tab = (name: RouteName) => ({ entries: [{ name }], index: 0 })
+const tab = (name: RouteName) => ({
+  entries: [{ location: { name } }],
+  index: 0,
+})
 
 describe('the session document', () => {
   it('reads back exactly what it wrote', () => {
@@ -17,7 +20,9 @@ describe('the session document', () => {
     const session = {
       tabs: [
         {
-          entries: [{ name: RouteName.Wiki, query: { q: 'brimstone' } }],
+          entries: [
+            { location: { name: RouteName.Wiki, query: { q: 'brimstone' } } },
+          ],
           index: 0,
         },
       ],
