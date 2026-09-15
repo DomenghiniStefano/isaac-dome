@@ -26,17 +26,65 @@ struct Parser<'a> {
     table: Option<Vec<String>>,
 }
 
-/// Templates that wrap blocks and say nothing: the content they hold is already a wiki
-/// list, and the wrapper only decides how wide the columns are. Unwrapped before the pass
-/// below, because that pass reads one line at a time and one of these spans a dozen — the
-/// opener stayed in the text as its own source and the `}}` that closed it became a
-/// paragraph, cutting the list in two (B49).
-///
-/// A closed list on purpose: a wrapper whose content is *not* already a list would need a
-/// shape to become, which is a `Block` variant and a contract change.
-const LAYOUT_WRAPPERS: &[&str] = &["column list"];
+/// A template whose content is block-level, and what this pass is allowed to do with it.
+/// Three kinds because three reasons — all of them ending in the same place, a shape the
+/// contract can already say, which is why closing B49 added no `Block` variant.
+enum Wrapper {
+    /// Layout and nothing else: the wrapper decides how wide the columns are
+    /// (`column list`) or that the box scrolls (`scroll box`), and the content it holds is
+    /// already blocks. Dropped whole, because nothing it says is lost.
+    Layout { param: &'static str },
+    /// Content whose wrapper the tree already carries somewhere else. Every `{{bug|…}}`
+    /// that spans lines sits under `== Bugs ==`, which is `SectionKind::Bugs`, and the
+    /// single-line case has been dropped inline since `CONTENT_WRAPPERS` existed: keeping
+    /// the multi-line one would model the same wrapper two ways. Its content is the
+    /// **positional** argument, not a named one.
+    Transparent,
+    /// A sentence, then the blocks it introduces. `{{Book of Virtues synergy|description=…}}`
+    /// means *with this item, this happens*, so dropping it whole loses the half that says
+    /// with what. Re-closed at the end of its first line instead: the inline pass then sees
+    /// the single-line shape it already models — the item's label keeps being built in one
+    /// place — and the `**` lines below stay the children of the item that opened.
+    Headed { param: &'static str },
+}
 
-/// The body with those wrappers replaced by the content they hold, and nothing else
+/// The wrappers whose content is block-level, and nothing else. Measured on the committed
+/// dataset on 2026-09-15, by spans that open on one line and close on another:
+/// `column list` 55, `bug` 9, `book of virtues synergy` 6, `scroll box` 1,
+/// `book of belial synergy` 1. A closed list on purpose — a family that is not here is
+/// counted by `text_nodes_carry_no_raw_template_syntax` rather than guessed at.
+fn wrapper(name: &str) -> Option<Wrapper> {
+    match name {
+        "column list" | "scroll box" => Some(Wrapper::Layout { param: "content" }),
+        "bug" => Some(Wrapper::Transparent),
+        "book of virtues synergy" | "book of belial synergy" => Some(Wrapper::Headed {
+            param: "description",
+        }),
+        _ => None,
+    }
+}
+
+/// A wrapper's content put back as the lines it is. A parameter's value arrives trimmed,
+/// so the newline it opened with is gone: without putting one back, the first `**` lands
+/// on the line the wrapper opened on and the list it holds becomes one item of text.
+/// And one after it only when the page does not already continue on a new line — an
+/// unconditional one leaves a blank line where the wrapper closed, and a blank line
+/// flushes the list, which is the same cut this pass has a rule against, arriving from the
+/// other side.
+fn push_content(out: &mut String, content: Option<&String>, after: &str) {
+    let Some(content) = content else {
+        return;
+    };
+    if !out.ends_with('\n') {
+        out.push('\n');
+    }
+    out.push_str(content);
+    if !after.starts_with('\n') {
+        out.push('\n');
+    }
+}
+
+/// The body with those wrappers replaced by what the line pass can read, and nothing else
 /// touched. `parse_template_at` is what says where one ends: a line-by-line pass cannot.
 fn unwrapped(body: &str) -> String {
     let mut out = String::new();
@@ -45,23 +93,42 @@ fn unwrapped(body: &str) -> String {
         let at = i + pos;
         out.push_str(&body[i..at]);
         match crate::template::parse_template_at(body, at) {
-            Some((t, end)) if LAYOUT_WRAPPERS.contains(&t.name.as_str()) => {
-                if let Some(content) = t.named.get("content") {
-                    // The content is block-level and a parameter's value arrives trimmed,
-                    // so the newline it opened with is gone: without putting one back, the
-                    // first `**` lands on the line the wrapper opened on and the list it
-                    // holds becomes one item of text.
-                    if !out.ends_with('\n') {
-                        out.push('\n');
+            // Only a template that spans lines. One that closes where it opened is already
+            // visible to the pass, and moving its content onto a line of its own would cut
+            // the list item it sits in — which is where 538 of the 547 `{{bug|…}}` live.
+            Some((t, end)) if body[at..end].contains('\n') => {
+                match wrapper(&t.name) {
+                    Some(Wrapper::Layout { param }) => {
+                        push_content(&mut out, t.named.get(param), &body[end..]);
                     }
-                    out.push_str(content);
-                    // …and one after it only when the page does not already continue on a
-                    // new line. An unconditional one leaves a blank line where the wrapper
-                    // closed, and a blank line flushes the list — the same cut this pass
-                    // already has a rule against, arriving from the other side.
-                    if !body[end..].starts_with('\n') {
-                        out.push('\n');
+                    Some(Wrapper::Transparent) => {
+                        push_content(&mut out, t.args.first(), &body[end..]);
                     }
+                    // The sentence goes back inside a template that closes on its line, so
+                    // the inline pass reads it; everything after the first newline is
+                    // already the lines it introduced.
+                    Some(Wrapper::Headed { param }) => {
+                        match t.named.get(param).and_then(|v| v.split_once('\n')) {
+                            Some((head, rest)) => {
+                                out.push_str("{{");
+                                out.push_str(&t.name);
+                                out.push('|');
+                                out.push_str(param);
+                                out.push('=');
+                                out.push_str(head.trim_end());
+                                out.push_str("}}\n");
+                                out.push_str(rest);
+                                if !body[end..].starts_with('\n') {
+                                    out.push('\n');
+                                }
+                            }
+                            // A headed wrapper whose sentence holds no newline of its own
+                            // spans lines for some other reason: left as it is rather than
+                            // reshaped on a guess.
+                            None => out.push_str(&body[at..end]),
+                        }
+                    }
+                    None => out.push_str(&body[at..end]),
                 }
                 i = end;
             }
@@ -424,6 +491,106 @@ mod tests {
         assert_eq!(blocks.len(), 1, "{blocks:?}");
         assert_eq!(items[0].inline, t("The flies:"));
     }
+
+    /// The half of B49 that is not layout. The two `X synergy` templates carry their
+    /// sentence in `description=`, and when that sentence ends in a colon the list it
+    /// introduces runs below it — inside the template, which therefore spans lines.
+    /// Dropping the wrapper whole would lose the half that says *with what*, so it is
+    /// re-closed at the end of its first line instead: the inline pass then sees the
+    /// single-line shape it already models, and the `**` lines stay what they already
+    /// are, the children of the item that opened.
+    #[test]
+    fn a_headed_wrapper_keeps_its_sentence_and_the_list_it_introduces() {
+        let blocks = p("* {{Book of Virtues synergy|description=One of these:\n** one\n** two}}\n");
+        let Block::List { items, .. } = &blocks[0] else {
+            panic!("a list, got {blocks:?}")
+        };
+        assert_eq!(blocks.len(), 1, "{blocks:?}");
+        assert_eq!(items.len(), 1, "{items:?}");
+        let flat: String = items[0]
+            .inline
+            .iter()
+            .filter_map(|i| match i {
+                Inline::Text { text, .. } => Some(text.as_str()),
+                _ => None,
+            })
+            .collect();
+        assert!(
+            flat.contains("One of these:"),
+            "the sentence is lost: {:?}",
+            items[0].inline
+        );
+        // …and it arrives as text, not as the source that produced it: the raw opener
+        // contains the sentence too, so a `contains` on its own passes while broken.
+        assert!(!flat.contains("{{"), "raw source in the item: {flat:?}");
+        let Block::List { items: inner, .. } = &items[0].children[0] else {
+            panic!("a nested list, got {:?}", items[0].children)
+        };
+        assert_eq!(inner.len(), 2);
+        assert_eq!(inner[1].inline, t("two"));
+    }
+
+    /// `{{bug|…}}` wraps content, and the single-line case has been dropped inline since
+    /// `CONTENT_WRAPPERS` existed: the wrapper says "this is a defect", which every one of
+    /// the nine that span lines already says by sitting under `== Bugs ==` —
+    /// `SectionKind::Bugs` in the tree. So they are dropped too, rather than the same
+    /// wrapper being modelled two ways, and what is left is the paragraph and the list the
+    /// page meant. `dlc=` goes with it, exactly as it does in the single-line case.
+    #[test]
+    fn a_bug_that_spans_lines_becomes_the_blocks_it_holds() {
+        let blocks = p("{{bug|dlc=r|Certain monsters do not:\n* one\n* two}}\n");
+        assert_eq!(
+            blocks[0],
+            Block::Paragraph {
+                inline: t("Certain monsters do not:")
+            },
+            "{blocks:?}"
+        );
+        let Block::List { items, .. } = &blocks[1] else {
+            panic!("a list, got {blocks:?}")
+        };
+        assert_eq!(items.len(), 2, "{items:?}");
+        assert_eq!(blocks.len(), 2, "{blocks:?}");
+    }
+
+    /// The second layout wrapper, found by the same census that closed the other two
+    /// families: one use, on The Lost's page, where it holds a section of seeds. It decides
+    /// that the box scrolls and nothing else, and unlike `column list` what it holds is not
+    /// a list — which costs nothing, because headings and paragraphs are what the pass
+    /// reads anyway.
+    #[test]
+    fn a_scroll_box_is_unwrapped_like_the_other_layout_wrapper() {
+        let blocks = p("{{scroll box | content =\n=== Seeds ===\nGPE3 2T1H\n}}\n");
+        assert_eq!(
+            blocks,
+            vec![
+                Block::Heading {
+                    level: 3,
+                    inline: t("Seeds")
+                },
+                Block::Paragraph {
+                    inline: t("GPE3 2T1H")
+                }
+            ]
+        );
+    }
+
+    /// Only a template that spans lines is this pass's business, and this is what the rule
+    /// costs when it is missing: 538 of the 547 `{{bug|…}}` in the dataset close on the
+    /// line they opened on, most of them inside a list item. Unwrapping one of those would
+    /// put its content on a line of its own — and any non-list line flushes the list — so
+    /// the item would be cut in two and the list with it. The pass would be repairing one
+    /// family by breaking five hundred.
+    #[test]
+    fn a_wrapper_that_closes_on_its_own_line_is_left_where_it_is() {
+        let blocks = p("* before {{bug|a known defect}} after\n* second\n");
+        let Block::List { items, .. } = &blocks[0] else {
+            panic!("a list, got {blocks:?}")
+        };
+        assert_eq!(blocks.len(), 1, "{blocks:?}");
+        assert_eq!(items.len(), 2, "{items:?}");
+    }
+
     #[test]
     fn paragraphs_join_lines_and_split_on_blank() {
         assert_eq!(

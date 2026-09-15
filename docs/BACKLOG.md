@@ -2729,7 +2729,43 @@ seen without the game.
 
 ---
 
-## B49 — A block-level template reaches the screen as its own source (implementation, `wiki`, then `ipc` and `ui`) 🟡 the layout half closed on 2026-09-14
+## B49 — A block-level template reaches the screen as its own source (implementation, `wiki`) ✅ closed on 2026-09-15
+
+**Closed with no contract change, and that is the finding.** The entry had carried since
+2026-09-08 the claim that the rest needs *"a way to say «a template wrapping blocks», and that is a
+`Block` variant"* — the sentence that made the second half a design decision and kept it waiting
+for one. It is false, and what says so is a census rather than an argument: every template in
+`dataset/raw/` that opens on one line and closes on another, by family and by the shape of what it
+holds. Seventeen spans, four families, and each family already has a shape the contract can say.
+
+- The two **`X synergy`** templates (6 + 1) open **on a list item**, always, and every line of
+  their content is a `**` line: that is `ListItem { inline, children }`, which has existed since
+  the first parser. The wrapper is re-closed at the end of its sentence — so the inline pass reads
+  the single-line shape it already models, and one place keeps building the *"with what"* label —
+  and the lines below stay the children they already were.
+- All nine multi-line **`{{bug|…}}`** sit under `== Bugs ==`, which the tree carries as
+  `SectionKind::Bugs`, and the single-line case had been dropped inline since `CONTENT_WRAPPERS`
+  existed. Modelling the multi-line one would have said the same thing twice.
+- **`scroll box`** (one use, The Lost's seeds) is `column list`'s family. It was not in the count
+  above because nobody had enumerated the spans — the families were known from the offenders they
+  left behind, which is a different list.
+
+**Raw template syntax 35 → 9**, and the 9 are the genuine text: eight `<math>` formulas and
+Keeper's `and}}` typo. Nothing is left that the parser could have understood.
+
+**Two numbers were wrong in this entry and are corrected here**, both of them counts nobody could
+have noticed being wrong: multi-line `{{bug|…}}` is **9 spans**, not 4 (4 was the count of the
+*offenders* they left, which is neither the same list nor the same size), and the genuine
+remainder is **9**, not 8 — the 8 was measured on 2026-09-08 and a formula arrived after it, under
+an assertion pinned at `<= 35` that could not see its own remainder drift.
+
+**One rule the fix needed and the entry did not know**: the pre-pass may only touch a template
+that **spans lines**. 538 of the 547 `{{bug|…}}` close on the line they opened on, most of them
+inside a list item, and moving one of those onto a line of its own cuts the item in two — a pass
+that repaired one family by breaking five hundred. `a_wrapper_that_closes_on_its_own_line_is_left_where_it_is`
+is that fence.
+
+*The history that led here, kept:*
 
 **`column list` is gone** (`fix/column-list`): it is unwrapped into the list it already holds,
 before the line-by-line pass, because the pass cannot see a template that spans a dozen lines and
@@ -2749,8 +2785,9 @@ leaves a blank line where the wrapper closed — which flushes the list, the ver
 a rule against, arriving from the other side. The test that caught it was written for that rule in
 September and is now load-bearing for a change it never saw coming.
 
-**Needs:** nothing — the wikitext is committed, the defect is in `blocks.rs`, and the last step is
-a contract decision about one `Block` variant.
+*(The `**Needs:**` line is gone with the closure: a closed entry carries no tag. It read "nothing —
+the wikitext is committed, the defect is in `blocks.rs`, and the last step is a contract decision
+about one `Block` variant", and the last clause is the half that turned out not to exist.)*
 
 Reported by the owner on 2026-09-14, from Beelzebub's page in the running app: where the list of
 contributing enemies should be, the page prints
