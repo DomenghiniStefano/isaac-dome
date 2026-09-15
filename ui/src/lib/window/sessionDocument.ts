@@ -1,6 +1,6 @@
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
-import type { Session, TabSeed } from '@/stores/tabModel'
+import type { Entry, Session, TabSeed } from '@/stores/tabModel'
 
 // The document's version. It is bumped when an older app could read the new shape and be wrong
 // about it — never for a part it can simply ignore, which is why 3.7's sidebar width and table
@@ -24,16 +24,28 @@ const readLocation = (value: unknown): TabLocation | null => {
     : { name, query: query as TabLocation['query'] }
 }
 
+// A stored history entry. The reading it carries is `unknown` here on purpose — what it means
+// is the screen's, and the screen validates it (`lib/tabs/tabView.ts`).
+const readEntry = (value: unknown): Entry | null => {
+  if (typeof value !== 'object' || value === null) return null
+  const { location, view } = value as { location?: unknown; view?: unknown }
+  const read = readLocation(location)
+  return read === null
+    ? null
+    : view === undefined
+      ? { location: read }
+      : { location: read, view }
+}
 const readTab = (value: unknown): TabSeed | null => {
   if (typeof value !== 'object' || value === null) return null
   const { entries, index } = value as { entries?: unknown; index?: unknown }
   if (!Array.isArray(entries) || entries.length === 0) return null
   if (typeof index !== 'number' || index < 0 || index >= entries.length)
     return null
-  const read = entries.map(readLocation)
+  const read = entries.map(readEntry)
   // A tab is its history: one entry we cannot open and the back button lies. All or nothing.
   if (read.some((entry) => entry === null)) return null
-  return { entries: read as TabLocation[], index }
+  return { entries: read as Entry[], index }
 }
 
 // What was stored, as far as it can be read. `null` means "nothing usable", which the caller

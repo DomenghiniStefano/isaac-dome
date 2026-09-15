@@ -35,7 +35,7 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   const nextId = (): string => `tab-${++counter}`
   const fresh = (): Tab => ({
     id: nextId(),
-    entries: [defaultLocation],
+    entries: [{ location: defaultLocation }],
     index: 0,
   })
 
