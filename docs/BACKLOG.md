@@ -56,7 +56,11 @@ prints each open entry's heading with its tag under it, and was run before it wa
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-- **`nothing` (15)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B48, B49
+**Re-counted on 2026-09-15 (evening)**, with the command above: **24 open**. B48, B49 and B52
+closed since the snapshot below; **B53** opened out of B52, which is where this list keeps finding
+things — a counter that had been reporting `{}` since the day it was added.
+
+- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B53
 - **`a real save` (3)** — B21, B22, B23
 - **`the game` (5)** — B3, B10, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -2947,7 +2951,50 @@ repetition of the catalog.
 
 ---
 
-## B52 — What `n` means in a `{{dlc|…}}` code, and the 1832 spans waiting on it (analysis, then `wiki`)
+## B52 — What `n` means in a `{{dlc|…}}` code, and the 1832 spans waiting on it (analysis, then `wiki`) ✅ closed on 2026-09-15
+
+**Answered: `n` means *not in* — removed from that edition on.** The query cost one `?action=raw`
+and returned more than the entry hoped for, so nothing below had to be inferred. Report —
+`docs/superpowers/reports/2026-09-15-dlc-ranges-report.md`.
+
+`Template:Dlc/format` names every code in prose, which is where the meaning is written down:
+row 7 is `nr`, `alt=(except in Repentance and Repentance+)`, titled **Removed in Repentance**.
+And `Template:Dlcset` is the **whole dictionary** — a `#switch` from thirty codes to a five-bit
+mask, with the bit order stated in a comment of its own:
+
+```
+<!-- <Repentance †><Repentance><Afterbirth †><Afterbirth><Rebirth> -->
+ |  1 | na       =  1 <!-- 00001 -->
+ | 24 | r        = 24 <!-- 11000 -->
+ | 31 | n | x |  = 31 <!-- 11111 -->
+ | 0 <!-- invalid string! -->
+```
+
+So a code is a **run of transitions** over the five editions, not a set of them: `r` names
+Repentance *and* Repentance+, `a+nr` names Afterbirth † alone, and a bare `n` — which the corpus
+never uses and the old parser read as Rebirth — names **every** edition. Rebirth is bit 0,
+Repentance+ bit 4; outside the thirty the wiki itself answers `0`, which is why `Editions::parse`
+returns `None` there rather than tokenizing.
+
+What the closure changed, all measured on the committed snapshot:
+
+- **`unknownDlcCodes` 1832 → 0.** All seventeen distinct codes the corpus uses are in the switch.
+- **The infobox was wrong too, and nothing said so**: the same splitter read its `dlc` parameter,
+  and 1078 of the 1083 values came out too narrow — `r` lost Repentance+ on 531 pages, `a+` lost
+  three editions on 292, `a` four on 254. Tonsil's `a+nr` gained Rebirth and Repentance outright.
+- **Abyss was never a contradiction.** The wiki narrows a span by its page (`{{context test}}`),
+  so `nr+` on an item that exists from Repentance names Repentance — *removed in Repentance+*.
+  847 of the 4831 spans narrow this way; the page's context is the **first** infobox's, because
+  `{{page dlc}}` carries an `{{assert once}}`.
+- The reading is pinned against 720 live rows by
+  `the_cargo_dlc_integer_is_the_infobox_code_through_the_wikis_own_switch`: the Cargo `dlc`
+  integer *is* `{{dlcset}}`'s output. That also closed the open question in
+  `crates/ipc/examples/dlc_mask.rs` — Blue Cap's mask is 31, "no range declared", not "exists in
+  Rebirth".
+- It opened **B53**: `Diagnostics::merge` was dropping `unknown_infoboxes`, and with that fixed
+  the dataset reports three pages carrying `{{infobox monster}}`.
+
+The entry as it was written, kept because its reasoning is what the query confirmed:
 
 **Needs:** nothing to measure the corpus, **one query** to answer it — the wiki's own
 `Template:Dlc`, which only `wiki-snapshot` may ask. Everything below was measured on the committed
@@ -2999,3 +3046,40 @@ why this is an entry and not a patch.
 codes are split accordingly; and `unknownDlcCodes` falls to what genuinely unknown codes leave
 behind. If the answer turns out to be "not in", note that the sentences currently shown
 unqualified are shown to the *wrong* readers, which raises this above a labelling task.
+
+---
+
+## B53 — Three pages carry `{{infobox monster}}` and the parser skips them (analysis, then `wiki`)
+
+**Needs:** nothing — the pages are in the committed `dataset/raw/`.
+
+Logged on 2026-09-15, while closing B52. The counter that reports it — `unknownInfoboxes`, added
+on 2026-09-14 by B45 so a page whose infobox has no kind would be **loud** — was shipping `{}`,
+because `Diagnostics::merge` never mentioned it: a page's counters are merged into the snapshot's,
+and a field the merge forgets reads zero however often it fires. `merge` destructures its argument
+with no `..` now, so the next one breaks the build instead.
+
+With it merged the snapshot reports `infobox monster: 3`:
+
+| page | what the box describes |
+|---|---|
+| `character/Tainted_Jacob` | **Dark Esau**, `id = 866`, `is mini-boss = yes` — the entity that chases Tainted Jacob |
+| `collectible/Blood_Puppy` | the familiar itself as an entity, `id = 802`, `hidden = yes` |
+| `collectible/My_Shadow` | the shadow it spawns, `id = 23`, `subtype = 1`, with `base hp` |
+
+Three infoboxes, and none of the three pages is lost — each also carries the infobox of its own
+kind, so the entry exists and only the monster's own box is dropped. What is dropped with it is a
+`behavior` sentence and, for Dark Esau, the only structured statement the snapshot has about an
+entity the game gives no achievement to.
+
+**This is not `Infobox entity`** (B47's 3801 occurrences) and should not be folded into that
+decision without checking: `monster` is a fourth template name, it appears on *collectible* and
+*character* pages rather than on pages of its own, and its rows describe something the page is
+about rather than the page itself. Whether an entry should carry a second, subordinate box at all
+is the product question here, and it is the owner's.
+
+### Closes when
+
+Either the three boxes are read into something the app can draw, or the entry says in writing why
+a monster box on somebody else's page is not worth a shape — with the count re-measured, so
+"three" is not a number from a day that has passed.
