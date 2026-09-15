@@ -18,8 +18,9 @@ export const it = {
     about: 'Informazioni',
     resizeSidebar: 'Ridimensiona la barra laterale',
     sections: {
-      wiki: 'Wiki',
       progress: 'Progressi',
+      tool: 'Tool',
+      wiki: 'Wiki',
     },
   },
   marks: {
@@ -34,6 +35,7 @@ export const it = {
     collection: 'Collezione',
     runs: 'Run',
     live: 'Live',
+    floor: 'Piano di gioco',
     wiki: 'Wiki',
     profile: 'Profilo di gioco',
     appearance: 'Aspetto',
@@ -53,6 +55,9 @@ export const it = {
   sidebar: {
     progressTitle: 'Progressi',
     progressHint: 'Ogni voce si legge sul profilo attivo.',
+    toolTitle: 'Tool',
+    toolHint:
+      'Funzionano senza salvataggio: leggono il log, o quello che disegni tu.',
     wikiTitle: 'Wiki',
     wikiHint: 'La Wiki funziona senza gioco né salvataggio.',
     wikiOverview: 'Panoramica',

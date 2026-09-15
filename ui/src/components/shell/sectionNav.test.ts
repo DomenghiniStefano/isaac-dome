@@ -20,11 +20,9 @@ describe('sectionNav', () => {
   it('marks no navbar section while browsing Settings', () => {
     expect(navSectionOf(SidebarSection.Settings)).toBeNull()
     expect(navSectionOf(SidebarSection.Wiki)).toBe(NavSection.Wiki)
+    expect(navSectionOf(SidebarSection.Tool)).toBe(NavSection.Tool)
     expect(sidebarSectionOf(NavSection.Progress)).toBe(SidebarSection.Progress)
-  })
-
-  it('lists the seven Progress screens', () => {
-    expect(sidebarEntries[SidebarSection.Progress]).toHaveLength(7)
+    expect(sidebarSectionOf(NavSection.Tool)).toBe(SidebarSection.Tool)
   })
 
   it('matches an entry by route', () => {
@@ -76,6 +74,9 @@ describe('the first entry of a section', () => {
     expect(firstEntry(SidebarSection.Wiki).location).toEqual({
       name: RouteName.Wiki,
     })
+    expect(firstEntry(SidebarSection.Tool).location).toEqual({
+      name: RouteName.Live,
+    })
     expect(firstEntry(SidebarSection.Settings).location).toEqual({
       name: RouteName.Profile,
     })
@@ -84,22 +85,69 @@ describe('the first entry of a section', () => {
 
 describe('a tab that belongs to no section', () => {
   it('leaves the sidebar where it was', () => {
-    // Search sits above the two sections (DESIGN-BRIEF.md §4.2): it belongs to neither.
+    // Search sits above the three sections (DESIGN-BRIEF.md §4.2): it belongs to none.
     expect(sectionOfOrigin(TabOrigin.Search)).toBeNull()
     expect(sectionOfOrigin(TabOrigin.Wiki)).toBe(SidebarSection.Wiki)
   })
 })
 
+// The Wiki is not here: its entries are categories of one route, not one entry per route.
+const routeSections: [SidebarSection, TabOrigin][] = [
+  [SidebarSection.Progress, TabOrigin.Progress],
+  [SidebarSection.Tool, TabOrigin.Tool],
+  [SidebarSection.Settings, TabOrigin.Settings],
+]
+
 describe('nothing is reachable only by typing its path', () => {
-  it('lists every Settings route in the Settings sidebar', () => {
-    // A route added to the table and forgotten here is a screen that exists and cannot be
-    // opened. The count would not have said so; this does.
-    const listed = sidebarEntries[SidebarSection.Settings].map(
-      (e) => e.location.name,
+  // A route added to the table and forgotten in the sidebar is a screen that exists and
+  // cannot be opened. A count would not have said so; this does. It is written over every
+  // section rather than over Settings alone because the section most likely to be forgotten
+  // is the one that did not exist when the test was written.
+  it.each(routeSections)(
+    'lists every %s route in that sidebar',
+    (section, origin) => {
+      const listed = sidebarEntries[section].map((e) => e.location.name)
+      const routes = Object.values(RouteName).filter(
+        (name) => routeOrigin[name] === origin,
+      )
+      expect([...listed].sort()).toEqual([...routes].sort())
+    },
+  )
+})
+
+describe('the three sections are three preconditions', () => {
+  it('gates exactly the screens that read the save', () => {
+    // DESIGN-BRIEF.md section 4: a section is not a folder, it is what a screen needs before
+    // it can answer. `router/routes.ts` derives `needsProfile` from the origin and from
+    // nothing else - no per-route exception - so this table *is* the list of screens behind
+    // the profile gate, and adding a screen forces whoever adds it to say which it is.
+    const of = (origin: TabOrigin) =>
+      Object.values(RouteName)
+        .filter((name) => routeOrigin[name] === origin)
+        .sort()
+    expect(of(TabOrigin.Progress)).toEqual(
+      [
+        RouteName.Goals,
+        RouteName.Completion,
+        RouteName.Unlock,
+        RouteName.Plan,
+        RouteName.Collection,
+      ].sort(),
     )
-    const settingsRoutes = Object.values(RouteName).filter(
-      (name) => routeOrigin[name] === TabOrigin.Settings,
+    // Live reads the log, Runs reads the archive, Floor reads what you painted. None of the
+    // three opens the .dat, which is why Live and Runs stopped asking for a profile.
+    expect(of(TabOrigin.Tool)).toEqual(
+      [RouteName.Live, RouteName.Runs, RouteName.Floor].sort(),
     )
-    expect([...listed].sort()).toEqual([...settingsRoutes].sort())
+  })
+
+  it('draws Progress, then Tool, then Wiki', () => {
+    // NavBar.vue reads `Object.values(NavSection)`: the order of the declaration is the
+    // order on screen, so it is pinned where someone would think to look for it.
+    expect(Object.values(NavSection)).toEqual([
+      NavSection.Progress,
+      NavSection.Tool,
+      NavSection.Wiki,
+    ])
   })
 })
