@@ -56,7 +56,7 @@ prints each open entry's heading with its tag under it, and was run before it wa
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-**Re-counted on 2026-09-15 (night)**, with the command above: **27 open**. B48, B49, B52 and B53
+**Re-counted on 2026-09-15 (night)**, with the command above: **28 open**. B48, B49, B52 and B53
 closed since the snapshot below. **B53 opened out of B52** — a counter that had been reporting `{}`
 since the day it was added — and **B54 out of B53**, which is where this list keeps finding things.
 **B55, B56 and B57** came from a sweep of what the machine actually keeps, run because a claim had
@@ -64,7 +64,7 @@ been made from two folders and stated as though it came from all of them: none o
 run history, and all three are sources this project did not know it had.
 
 - **`nothing` (16)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56
-- **`a real save` (3)** — B21, B22, B23
+- **`a real save` (4)** — B21, B22, B23, B58
 - **`the game` (6)** — B3, B10, B19, B33, B36, B57
 - **`a measurement` (2)** — B9, B20
 
@@ -3286,3 +3286,42 @@ small parsing fact and a large clue that it is generated text, not a contract. I
 
 `discovery` reads it when the install is known, prefers it as a candidate, and still finds the
 folder without it — with a test that turns red if the file becomes the only path that works.
+
+---
+
+## B58 — The mark tables were located on the 2026 series and are read on a 2025 save (analysis, `core-save` and `ipc`)
+
+**Needs:** **a real save** of the 641-achievement era — `samples/` has one, `20250626`.
+
+Logged on 2026-09-15, found by a property that would not hold and should not have been made to.
+
+`BLOCKS_14[10] = 423` (Mother) and `BLOCKS_14[11] = 457` (The Beast) came out of the **2026**
+historical series, each pinned three ways on a day its cell changed. Nothing checked whether those
+indices mean the same thing in the **June 2025** save, which is a different era — it declares 641
+achievements where the 2026 ones declare 642, so at least one section's length moved between them,
+and the marks live in the section *after* that one.
+
+**The evidence that this is not hypothetical.** Two shapes that occur nowhere in the 2026 saves
+occur in `20250626`:
+
+| cell | value | why it is odd |
+|---|---|---|
+| `Isaac × The Beast` | **1** | bit 0 alone outside Greed — 0 occurrences across the 2026 series |
+| `Isaac × Greed` | **2** | bit 1 alone *in* Greed — and in Greed bit 1 is Ultra Greedier, which implies Greed |
+
+Either the 2025 save genuinely holds those combinations, or **those two indices address something
+else in that era** and we are reading a neighbour's cell. The second is the cheaper explanation for
+a cell that is anomalous in exactly the two columns whose bases were derived rather than
+documented — and The Beast is the boss that did not exist before Repentance+.
+
+**What this puts at risk.** `marks_real.rs` walks `dated_series`, which includes the 2025 save, so
+every property there is already reading those cells; they pass because they compare counts and
+transitions, not values. `ipc`'s matrix would draw a mark for a 2025 profile from the same tables.
+Nobody has been told any of this, which is the part worth fixing first.
+
+### Closes when
+
+Either the bases are checked against the 641 era — the section lengths of both saves read side by
+side, which is one pass — or the tables declare the era they hold for and everything that walks a
+series says which files it may apply them to. A wrong cell here shows a mark nobody earned, which
+is the failure this project has already paid for twice.

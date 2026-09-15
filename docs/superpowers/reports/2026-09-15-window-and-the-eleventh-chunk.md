@@ -144,3 +144,50 @@ a measurement of bit 1 outside the Greed column depends on what "in normal" mean
 
 `graph::rules::MarkLevel` is named `Base`/`Second` after the bits precisely so that this question
 can stay open without a wrong label hardening underneath it.
+
+---
+
+## 8. The bits, after the owner said "hard" — and the property that would not hold
+
+The owner answered §7: the run was on **Hard**, and with it *"all the symbols of normal Eden"*.
+Both halves are checkable, and the second is the one that pays.
+
+**Eden's row, before and after** (`cargo run -q -p core-save --example row_marks -- 9 <before> <after>`):
+
+```
+MomsHeart 7   Isaac 3   Satan 7   BossRush 3   BlueBaby 3   TheLamb 2
+MegaSatan 3   Greed 3   Hush 2    Delirium 3   Mother 0->3  TheBeast 2
+before: bit 0 in 8 columns, bit 1 in 11
+after:  bit 0 in 9 columns, bit 1 in 12
+```
+
+So the run filled the **last cell of the row**, and after it Eden carries bit 1 in **all twelve**
+columns while bit 0 is in nine. The owner's "all the symbols" and the bytes agree, from two
+directions that know nothing about each other.
+
+**And the whole matrix splits cleanly by column** (`--example mark_values`, save of 2026-09-15):
+
+| | value 1 — bit 0 alone | value 2 — bit 1 alone |
+|---|---|---|
+| Greed | **7 cells** | **0** |
+| the other eleven columns | **0** | **29 cells** |
+
+A perfect mirror. In Greed the second bit is Ultra Greedier — measured on 2026-09-12 — so it
+implies the first, and Greed without Greedier is the ordinary case. Outside Greed the implication
+runs the other way: **bit 1 stands alone and bit 0 does not**, so bit 0 is the stronger of the two.
+`MarkLevel` names them `Base` (bit 0) and `Second` (bit 1) after the bit positions, and this is the
+reason those names must never be read as an order.
+
+**What it does not establish.** A Hard clear set both bits at once, which is consistent with bit 0
+being "on hard" and not more than consistent: a single observation cannot separate "bit 0 is hard"
+from "bit 0 is something this run also did". Two cells outside Greed hold **5** — bits 0 and 2, no
+bit 1 — and no reading here explains them.
+
+**The property was written, failed, and was deleted rather than tuned.** Asserting the mirror over
+`dated_series` goes red on the **June 2025** save twice: `Isaac × The Beast = 1`, and
+`Isaac × Greed = 2`. Both shapes are absent from every 2026 save. The cheap explanation is not that
+2025 was a stranger year but that **the tables do not address the same cells there** — 423 and 457
+were derived from the 2026 series, that era declares 641 achievements against 642, and The Beast
+did not exist before Repentance+. Narrowing the test to the era that suits it would have hidden
+exactly that. It is **B58** instead, and the property will be worth writing once the bases are
+checked against the older era.
