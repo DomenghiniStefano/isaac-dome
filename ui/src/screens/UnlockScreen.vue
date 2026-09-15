@@ -10,6 +10,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
 import { singleQuery } from '@/lib/search/queryParam'
+import { emptyList, isFiltering } from '@/lib/facets/emptyList'
 import { characterForms } from '@/lib/graph/characterName'
 import { stateCounts, stateOrder } from '@/lib/graph/nodeState'
 import {
@@ -119,6 +120,16 @@ const toggle = (facet: FacetId, value: string) => {
       : [...picked, value],
   )
 }
+// An empty list is not a filter that matched nothing: a view that came back with no nodes at
+// all has nothing to clear, and offering the button there would undo nothing. Unreachable
+// today — a machine without the game still gets every node, counted as unread — so this is the
+// guard that keeps the next view from reintroducing what B48 corrected.
+const empty = computed(() =>
+  emptyList(nodes.value.length, isFiltering(filter.value), {
+    empty: 'unlock.empty',
+    noResults: 'unlock.noResults',
+  }),
+)
 const setQuery = (query: string) => {
   filter.value = { ...filter.value, query }
 }
@@ -189,10 +200,13 @@ const reset = () => {
           @add="queue.add"
         />
         <div v-else class="flex flex-col items-start gap-3 p-4">
-          <EmptyCategory>{{ t('unlock.noResults') }}</EmptyCategory>
-          <Button :variant="ButtonVariant.Outline" @click="reset">{{
-            t('unlock.resetFilters')
-          }}</Button>
+          <EmptyCategory>{{ t(empty.text) }}</EmptyCategory>
+          <Button
+            v-if="empty.reset"
+            :variant="ButtonVariant.Outline"
+            @click="reset"
+            >{{ t('unlock.resetFilters') }}</Button
+          >
         </div>
       </Card>
     </template>
