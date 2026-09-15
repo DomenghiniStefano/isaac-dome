@@ -26,4 +26,5 @@ export const Command = {
   QueueImportGoals: 'queue_import_goals',
   Runs: 'runs',
   Live: 'live',
+  FloorCandidates: 'floor_candidates',
 } as const
