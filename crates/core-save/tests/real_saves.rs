@@ -85,7 +85,7 @@ fn some_counts_do_not_change_with_the_game_version() {
         assert_eq!(count(Kind::Unknown5), 7, "{name}");
         assert_eq!(count(Kind::Bosses), 104, "{name}");
         assert_eq!(count(Kind::Challenges), 46, "{name}");
-        assert_eq!(count(Kind::Unknown8), 27, "{name}");
+        assert_eq!(count(Kind::CutsceneCounters), 27, "{name}");
         assert_eq!(count(Kind::Unknown9), 2, "{name}");
     });
 }

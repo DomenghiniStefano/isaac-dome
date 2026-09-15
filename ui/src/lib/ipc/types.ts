@@ -199,9 +199,20 @@ export type MarksMatrix = {
  *
  * The game's own names, printed as `Reading chunk N` when it loads a profile, are strong
  * evidence but not a measurement — a log line says what the game thinks it is reading.
- * Sections 5, 8 and 9 have such a name (Mini Bosses, Cutscene Counters, GameSettings) and
- * stay `Unknown` here until one of them is checked against the bytes, which is the whole
- * point of the distinction.
+ * Sections 5 and 9 have such a name (Mini Bosses, GameSettings) and stay `Unknown` here
+ * until one of them is checked against the bytes, which is the whole point of the
+ * distinction.
+ *
+ * **Section 8 earned its name on 2026-09-15** and stopped being `Unknown8`. A matched
+ * window around one solo run: the log plays `playing cutscene 22 (The Void)` exactly once
+ * and cell **22** of this section rises by exactly one, which is the second point on the
+ * identity mapping after 19. The game's `Reading chunk 8 / Cutscene Counters` agrees, and
+ * now it is agreeing with something rather than standing alone.
+ *
+ * **What the name does not settle**: cell **2** also rose by one in that window, no
+ * cutscene 2 was played in the log that survives, and cell 1 did **not** move although the
+ * Intro (cutscene 1) did play. So the identity holds where it was checked and this section
+ * is not simply "cutscene N at index N" — see `docs/BACKLOG.md`, B9.
  */
 export const Kind = {
   Achievements: 'achievements',
@@ -211,7 +222,7 @@ export const Kind = {
   Unknown5: 'unknown5',
   Bosses: 'bosses',
   Challenges: 'challenges',
-  Unknown8: 'unknown8',
+  CutsceneCounters: 'cutscene_counters',
   Unknown9: 'unknown9',
   Bestiary: 'bestiary',
 } as const
