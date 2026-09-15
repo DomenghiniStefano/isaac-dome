@@ -12,6 +12,7 @@ import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useMessages } from '@/i18n'
 import { useTabView } from '@/composables/useTabView'
+import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { emptyFilter } from '@/lib/facets/faceting'
 import type { FacetFilter } from '@/lib/facets/faceting'
 import type { RunView } from '@/lib/ipc/types'
@@ -40,6 +41,9 @@ const facetOrder = Object.values(RunFacet)
 // back — through a tear-off, a restart, or the back button — finds them where they were left
 // (B39).
 const reading = useTabView(runsView)
+const setOffset = (offset: ScrollOffset) => {
+  reading.value = { ...reading.value, offset }
+}
 const filter = computed({
   get: () => reading.value.filter,
   set: (value: FacetFilter<RunFacet>) => {
@@ -166,6 +170,8 @@ const drawerLabels: DrawerLabels = {
           v-if="rows.length > 0"
           :runs="rows"
           :selected="selected"
+          :offset="reading.offset"
+          @offset-change="setOffset"
           @select="select"
         />
         <div v-else class="flex flex-col items-start gap-3 p-4">

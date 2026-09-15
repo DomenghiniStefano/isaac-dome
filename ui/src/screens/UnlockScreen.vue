@@ -9,6 +9,7 @@ import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useTabView } from '@/composables/useTabView'
+import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { useMessages } from '@/i18n'
 import { singleQuery } from '@/lib/search/queryParam'
 import { emptyList, isFiltering } from '@/lib/facets/emptyList'
@@ -58,6 +59,9 @@ useOnActiveProfile(async () => {
 // The filter and the sort belong to the tab, not to this component: leaving and coming back —
 // through a tear-off, a restart, or the back button — finds them where they were left (B39).
 const reading = useTabView(unlockView)
+const setOffset = (offset: ScrollOffset) => {
+  reading.value = { ...reading.value, offset }
+}
 const filter = computed({
   get: () => reading.value.filter,
   set: (value: UnlockFilter) => {
@@ -211,6 +215,8 @@ const reset = () => {
           :queued="queued"
           :can-write="canWrite"
           :busy="queue.busy"
+          :offset="reading.offset"
+          @offset-change="setOffset"
           @add="queue.add"
         />
         <div v-else class="flex flex-col items-start gap-3 p-4">

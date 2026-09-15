@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { VirtualRows } from '@/components/ui/virtual'
+import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
@@ -13,8 +14,12 @@ defineProps<{
   queued: Set<number>
   canWrite: boolean
   busy: boolean
+  offset: ScrollOffset | null
 }>()
-const emit = defineEmits<{ add: [achievement: number] }>()
+const emit = defineEmits<{
+  add: [achievement: number]
+  offsetChange: [offset: ScrollOffset]
+}>()
 const { t } = useMessages()
 </script>
 
@@ -33,7 +38,13 @@ const { t } = useMessages()
       }}</span>
       <span />
     </div>
-    <VirtualRows v-slot="{ visible }" :rows="nodes" :row-px="rowWidePx">
+    <VirtualRows
+      v-slot="{ visible }"
+      :rows="nodes"
+      :row-px="rowWidePx"
+      :offset="offset"
+      @offset-change="emit('offsetChange', $event)"
+    >
       <div
         v-for="{ index, style, row: node } in visible"
         :key="nodeSlot(node)"

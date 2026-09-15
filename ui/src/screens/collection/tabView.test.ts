@@ -13,6 +13,7 @@ describe("the Collection's reading", () => {
     expect(collectionView.empty()).toEqual({
       filter: defaultCollectionFilter(),
       sort: CollectionSort.Quality,
+      offset: null,
     })
   })
 
@@ -22,6 +23,7 @@ describe("the Collection's reading", () => {
     const reading = {
       filter: emptyCollectionFilter(),
       sort: CollectionSort.Name,
+      offset: null,
     }
     expect(collectionView.read(JSON.parse(JSON.stringify(reading)))).toEqual(
       reading,

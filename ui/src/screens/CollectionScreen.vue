@@ -8,6 +8,7 @@ import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useTabView } from '@/composables/useTabView'
+import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { useMessages } from '@/i18n'
 import { singleQuery } from '@/lib/search/queryParam'
 import { emptyList, isFiltering } from '@/lib/facets/emptyList'
@@ -56,6 +57,9 @@ useOnActiveProfile(() => store.load())
 // through a tear-off, a restart, or the back button — finds them where they were left (B39). It
 // opens on what hasn't been found.
 const reading = useTabView(collectionView)
+const setOffset = (offset: ScrollOffset) => {
+  reading.value = { ...reading.value, offset }
+}
 const filter = computed({
   get: () => reading.value.filter,
   set: (value: CollectionFilter) => {
@@ -175,7 +179,12 @@ const reset = () => {
           @update:sort="setSort"
           @toggle="toggle"
         />
-        <CollectionTable v-if="rows.length > 0" :items="rows" />
+        <CollectionTable
+          v-if="rows.length > 0"
+          :items="rows"
+          :offset="reading.offset"
+          @offset-change="setOffset"
+        />
         <div v-else class="flex flex-col items-start gap-3 p-4">
           <EmptyCategory>{{ t(empty.text) }}</EmptyCategory>
           <Button
