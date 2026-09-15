@@ -9,6 +9,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
 import { singleQuery } from '@/lib/search/queryParam'
+import { emptyList, isFiltering } from '@/lib/facets/emptyList'
 import {
   CollectionFacet,
   CollectionSort,
@@ -94,6 +95,15 @@ const toggle = (facet: CollectionFacet, value: string) => {
       : [...picked, value],
   )
 }
+// A machine without the game answers this view with no items at all (`noCatalog`), and an empty
+// list is not a filter that matched nothing: what was never read must not be drawn as "not
+// found", and the button that clears a filter belongs where there is a filter.
+const empty = computed(() =>
+  emptyList(items.value.length, isFiltering(filter.value), {
+    empty: 'collection.empty',
+    noResults: 'collection.noResults',
+  }),
+)
 const setQuery = (query: string) => {
   filter.value = { ...filter.value, query }
 }
@@ -154,10 +164,13 @@ const reset = () => {
         />
         <CollectionTable v-if="rows.length > 0" :items="rows" />
         <div v-else class="flex flex-col items-start gap-3 p-4">
-          <EmptyCategory>{{ t('collection.noResults') }}</EmptyCategory>
-          <Button :variant="ButtonVariant.Outline" @click="reset">{{
-            t('collection.resetFilters')
-          }}</Button>
+          <EmptyCategory>{{ t(empty.text) }}</EmptyCategory>
+          <Button
+            v-if="empty.reset"
+            :variant="ButtonVariant.Outline"
+            @click="reset"
+            >{{ t('collection.resetFilters') }}</Button
+          >
         </div>
       </Card>
     </template>
