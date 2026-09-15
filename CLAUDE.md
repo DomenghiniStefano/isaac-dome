@@ -520,6 +520,19 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   (`New-Item -ItemType Junction`), and read the count from `ISAACDOME_TEST_DECLARATIONS` —
   `scripts/check` does, because merging `--nocapture` stdout with `test-support`'s stderr
   splits lines and makes a hand-rolled `grep -c '^skip:'` wobble by several either way.
+- Don't delete a worktree before unlinking its junctions. The entry above tells you to junction
+  `samples/` into every worktree, which turns the cleanup command into a destructive one: both
+  `git worktree remove --force` and `Remove-Item -Recurse` can follow a directory junction and
+  take the **target's** contents with them — here, the fourteen months of saves that cannot be
+  re-collected, and whose absence the suite would report as a skip. Seen on 2026-09-15 while
+  tidying up, one command short of it. Remove the reparse point on its own
+  (`[System.IO.Directory]::Delete($path, $false)` deletes the link, never what it points at),
+  count the target's files either side, and only then delete the tree. List the rest first with
+  `Get-ChildItem -Recurse -Force -Attributes ReparsePoint` and check that none points outside
+  the worktree — pnpm's `node_modules` holds ~600, all internal, and it is the one that isn't
+  that matters. One more thing to know: `git worktree remove` deletes the administrative files
+  **before** the directory, so a removal that fails on "Directory not empty" leaves an orphan
+  `git worktree list` no longer shows. Finish it by hand, then `git worktree prune`.
 - Don't commit by `git add -A` on this repo: specs under `docs/superpowers/` are edited in
   parallel by other sessions, and a clean `git status` at the start of a session is no
   promise it's still clean at the end. Stage by explicit path, and say so when the tree
