@@ -49,10 +49,20 @@ worth being exact about what was looked at:
   `Room 1.88(New Room)` — the room's `type.variant` and its name. **No index, no coordinate.**
   So the only position the game ever states is the one it states before you have moved.
 
-That 84 is the **start room** follows from where it is printed. That the grid is 13 wide and
-that 84 is therefore its centre (`6*13 + 6`) is **an inference, not a measurement**, and the
-spec keeps it labelled as one: it is confirmed by painting one real floor by hand against the
-game's own minimap, which is a task in the plan, not an assumption in the code.
+That 84 is the **start room** follows from where it is printed.
+
+**The width is no longer ours to infer.** This paragraph read "that the grid is 13 wide … is an
+inference, not a measurement" until Task 1's research pass, on 2026-09-15, found the wiki stating
+the number: *"locations on the **13x13 border** where a red room would normally open to an I AM
+ERROR room are allowed"*
+(`docs/superpowers/reports/2026-09-15-secret-room-rules.md` §3). That is a citation, not a
+measurement of ours — but it is the game's own documentation, and it is the same standing as
+every rule in `placement.json`.
+
+What stays an inference is **the centre**: 84 being `6*13 + 6` rests on that width plus the
+assumption that the start room sits in the middle, and nothing read so far says so. One real
+floor painted by hand against the game's own minimap confirms it — a measurement, on the machine
+with the game, not an assumption in the code.
 
 **What it does carry, and nobody has used yet:**
 
@@ -98,9 +108,14 @@ The solver:
 ```rust
 pub fn candidates(grid: &Grid, target: Target) -> Solution
 pub enum Target { Secret, SuperSecret, UltraSecret }
-pub struct Candidate { pub cell: u16, pub tier: Tier, pub applied: Vec<RuleId> }
+pub struct Candidate { pub cell: u16, pub neighbours: u8, pub rank: u8, pub applied: Vec<RuleId> }
 pub struct Solution { pub candidates: Vec<Candidate>, pub unresolved: Vec<Unresolved> }
 ```
+
+**No `Tier`.** Its variants could only be invented names for probability bands, and the repo's
+rule is not to name a thing from a guess. A candidate carries a count and a rank — the rank
+being its position in the preference order the cited rule states — and the screen colours by
+the rank. Decided while writing the plan, 2026-09-15.
 
 `applied` is not decoration: the screen shows *why* a cell is lit, and a candidate that cannot
 name a rule is a candidate we should not be drawing. `unresolved` is `graph`'s `Partial` in
@@ -158,7 +173,7 @@ like everything else.
 
 - In: the painted grid — 169 cells, each `null` or a room kind. Not a path, not a file.
 - Out: `FloorSolutionView { candidates, unresolved, diagnostics }`, `camelCase`, tagged enums
-  with struct variants, bare camelCase strings for the fieldless ones (`Tier`, `RoomKindView`,
+  with struct variants, bare camelCase strings for the fieldless ones (`RoomKindView`,
   `TargetView`), exactly as `ItemKindView` and `StepsBasis` already are.
 - Command: `floor_candidates(grid) -> Result<FloorSolutionView, IpcError>`. The Tauri crate is
   wiring; the answer worth checking is in `floor` and `ipc`.
