@@ -422,9 +422,19 @@ that never happens.
   the comparison.
 - Before declaring anything done: **`pnpm check`** (i.e. `scripts/check`), which runs
   `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings`, `cargo test --workspace`,
-  `pnpm typecheck`, `pnpm ui:test`, `pnpm lint`, `pnpm format:check`, `pnpm scan`. **There's
+  `pnpm typecheck`, `pnpm ui:test`, `pnpm lint`, `pnpm format:check`, `pnpm scan`, the IPC
+  contract's regeneration, and `scripts/check-doc-refs.mjs`. **There's
   no CI**, by choice: the list of commands lives in that script and nowhere else. The two
   fast ones also run in the pre-commit hook (`git config core.hooksPath scripts/git-hooks`).
+- **The document reference report is a report, and never fails the run.** It checks every file
+  path the living documents name against the files git tracks, and it exists because on
+  2026-09-15 the same defect turned up in all of them: a document names a file, a refactor
+  renames it, and nothing notices. Two things it cannot do, which is why it does not gate — it
+  cannot tell a name written as *history* from one written as a *promise* (a rename record
+  **must** name the file that went), and it cannot read a condition ("only if the spike says
+  so"). **The signal is the delta**: what it already knows is listed with a reason each, like
+  `scan-conventions.mjs`'s exemptions, so a `NEW` line is a document that drifted and a `GONE`
+  line is an exemption to delete.
 - Skips on real data print `skip: …` on stderr and pass, but **`cargo test` alone doesn't
   show them**: the harness hides output from passing tests. You need
   `cargo test --workspace -- --nocapture`, which is what `scripts/check` runs before
