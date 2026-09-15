@@ -5,5 +5,7 @@
 //! `docs/superpowers/reports/2026-09-15-secret-room-rules.md`.
 
 mod grid;
+mod room;
 
-pub use grid::{neighbours, CELLS, HEIGHT, START, WIDTH};
+pub use grid::{neighbours, Grid, CELLS, HEIGHT, START, WIDTH};
+pub use room::{Cell, RoomKind, Shape};
