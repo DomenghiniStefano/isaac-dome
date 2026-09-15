@@ -56,7 +56,7 @@ prints each open entry's heading with its tag under it, and was run before it wa
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-**Re-counted on 2026-09-15 (night)**, with the command above: **28 open**. B48, B49, B52 and B53
+**Re-counted on 2026-09-15 (night)**, with the command above: **27 open**. B48, B49, B52 and B53
 closed since the snapshot below. **B53 opened out of B52** — a counter that had been reporting `{}`
 since the day it was added — and **B54 out of B53**, which is where this list keeps finding things.
 **B55, B56 and B57** came from a sweep of what the machine actually keeps, run because a claim had
@@ -65,7 +65,7 @@ run history, and all three are sources this project did not know it had.
 
 - **`nothing` (16)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56
 - **`a real save` (4)** — B21, B22, B23, B58
-- **`the game` (6)** — B3, B10, B19, B33, B36, B57
+- **`the game` (5)** — B3, B19, B33, B36, B57
 - **`a measurement` (2)** — B9, B20
 
 The `a measurement` bucket is the same subject as *"What only a machine with the game can answer"*
@@ -786,7 +786,21 @@ to stop calling it `Unknown8`.
 
 ---
 
-## B10 — The design export pack: what the design tool had to measure by hand (implementation, `design-export`)
+## B10 — The design export pack: what the design tool had to measure by hand (implementation, `design-export`) ✅ closed on 2026-09-15, declined
+
+**Closed because its subject was retired.** `pnpm design:export` is abandoned: the design is
+decided at runtime on the real screens now, and the pack's 6065 images left the repository with
+it. Every item below is a request to make the *exported package* easier for a design tool to
+read, and there is no longer an export or a tool reading it.
+
+**Nothing in it was a defect in the app**, which the entry said on the day it was logged: "they
+aren't bugs in the app". The one thing worth carrying forward is item 1's observation, because it
+is about the game's own sprites and not about the pack — `completion_widget/paper_00.png` is
+96×96 with the drawing at `x 0–84, y 3–82`, so anything that centres the frame centres empty
+pixels. Whoever draws those sheets at runtime meets the same untrimmed frames; `ipc::sprite_png`
+and `mark_art` are where that lands, not here.
+
+The entry as it was:
 
 **Needs:** the game — `pnpm design:export` reads `samples/packed`, so the pack cannot be regenerated without it.
 
@@ -1609,7 +1623,7 @@ the checkbox columns, which needs a new primitive and the design pass that redra
 Unlock and the Collection at once.
 
 Logged 2026-09-12, from the owner's review of the Collection's filter drawer
-(`screens/collection/CollectionFacetDrawer.vue`): the presentation is to be redone, and two
+(`components/facets/FacetDrawer.vue`, which was `screens/collection/CollectionFacetDrawer.vue` when this was written and became shared by N8): the presentation is to be redone, and two
 things are wrong on sight.
 
 - **"Faccette"** (`collection.facets`, and `unlock.facets` on Unlock) is the design file's
@@ -2220,7 +2234,7 @@ is not the tab:
   mounts (`screens/unlock/`, `composables/useSearch.ts`);
 - the **scroll offset** belongs to the DOM element, and to `@tanstack/vue-virtual`'s measurement
   of it;
-- the **view stores** (`stores/graph.ts`, `collection.ts`, `wiki.ts`) are per window, and keyed
+- the **view stores** (one `stores/views.ts` since N8, three files when this was written) are per window, and keyed
   by nothing: two tabs on the same screen already share them.
 
 So "a tab keeps its state" means **a tab owns its state**, which is a different shape from the
@@ -2711,7 +2725,7 @@ parser will.
 ## B48 — An empty category says "no page with this name" when nothing was searched (implementation, `ui`, small) ✅ closed on 2026-09-15
 
 **Closed on `fix/empty-category`.** The decision is a pure function — `emptyList(total, query)` in
-`ui/src/lib/wiki/emptyList.ts` — and `WikiCategoryList.vue` only draws its answer. A category whose
+`ui/src/lib/facets/emptyList.ts` — and `WikiCategoryList.vue` only draws its answer. A category whose
 unfiltered count is `0` now says **"Questa categoria non ha pagine."** (`wiki.emptyCategory`, added
 to both locales), and the *Azzera la ricerca* button appears only where there is a search to clear.
 

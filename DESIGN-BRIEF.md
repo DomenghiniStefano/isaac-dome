@@ -22,6 +22,14 @@ they land on individual screens — the app splits into **top-level sections** (
 **global search**, and **multiple tabs** with session restoration (§4.2). Logged
 as B5 and B6 in `docs/BACKLOG.md`. They change none of the contracts in §7.
 
+> **Superseded on 2026-09-15.** `pnpm design:export` is abandoned: the design is decided at
+> runtime on the real screens now, not on an exported package. What survives of the pack is a
+> **fixture corpus** — the committed IPC payloads, the two indexes and ten wiki pages, 28 files
+> and 2.8 MB — which `pnpm ui:dev` reads to run without a backend. Its **6065 images are gone
+> from the repository**, so everything below about sprites, sheets and their counts describes a
+> package that no longer exists. The contracts in §7 are unaffected: they are the IPC's shape,
+> and `ui/src/lib/ipc/types.ts` is generated from the Rust types regardless.
+
 **This document travels with a package.** `pnpm design:export` produces
 `isaacdome-design-pack/`: the real IPC payloads for every command, the game's images with
 their index (family, id, name, rectangle, **real dimensions**), and ten sample wiki pages
