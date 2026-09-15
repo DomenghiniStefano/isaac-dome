@@ -1,6 +1,13 @@
 # IsaacDome
 
-*Project document · v4 · M0 complete · September 2026*
+*Project document · v4 · written at M0 complete · September 2026*
+
+> **This is the design, not the state.** It was written when M0 was the only milestone done
+> and it still reads that way: §09's architecture lists seven modules where the repo has
+> sixteen crates, and §11's screens are the ones that were planned. **The state lives in
+> `docs/STATUS.md`** — M0, M2 and M4 are closed, M1 and M3 are in progress — and what is open
+> lives in `docs/BACKLOG.md`. Checked through on 2026-09-15; two claims inside it were not
+> merely old but wrong, and are corrected in place with the correction named.
 
 A desktop app you can ship with an installer: anyone who owns The Binding of Isaac on
 Steam opens it and sees their own progress, what they're missing, and what's worth
@@ -263,9 +270,12 @@ step.
 **`unpack`** *(Rust)* — Reads the game's `.a` archives and extracts XML and sprites into
 the user's local cache. Once, with a progress bar.
 
-**`core-save`** *(Rust)* — Parser for the `.dat`, derived from the Kaitai spec. Opens
-read-only, validates the signature, maps the sections from the metadata. No write
+**`core-save`** *(Rust)* — Parser for the `.dat`, translated from `reference/isaac_save.py`.
+Opens read-only, validates the signature, maps the sections from the metadata. No write
 function anywhere in the module, by construction.
+*(This read "derived from the Kaitai spec" until 2026-09-15, which named the one approach
+the module's own design rejected: "no Kaitai-generated code… Alternatives discarded: Kaitai
+(external tool + rigid generated code for 80 lines of parsing)".)*
 
 **`log-watch`** *(Rust)* — File watching with `notify` and incremental reading. The
 parsing rules are versioned data, not code.
@@ -273,8 +283,13 @@ parsing rules are versioned data, not code.
 **`graph`** *(Rust)* — Unlock graph: every node's status, computing "unlockable now",
 fan-out, expanding a goal into a plan, packing by run.
 
-**`store`** *(SQLite)* — Run archive, profile snapshots, normalized catalog, user plans.
-A single file, in the app's data folder.
+**`store`** *(SQLite)* — A single file in the app's data folder, six tables over four
+migrations: `goals` and `plan_queue` (the user's plans), `window_session`, and `sources`,
+`events` and `runs` (the run archive).
+*Two of the four things this line promised are not there and were never written*: **profile
+snapshots** are still an open item in `STATUS.md`, and the **normalized catalog** is not in
+SQLite at all — `catalog` reads the game's XML into memory at launch, because a cache would
+have to be invalidated against a game that patches itself.
 
 **UI** *(Vue 3 + Pinia)* — Dark-first, i18n from day one. Receives already-resolved data:
 knows nothing about offsets or log strings.
@@ -342,6 +357,14 @@ Better to start from accessible primitives and dress them ourselves.
 | **Live** | What I've collected in this run, current plan | log watcher |
 | **Profile selection** | Which save I'm looking at, and how to switch it | discovery |
 | **Search** | Where this thing lives: items, achievements, challenges, characters, bosses, wiki pages, unlock-tree nodes, and the screens themselves | catalog + wiki + save + graph |
+
+> **Three of those rows have since been decided differently**, and one of them was decided
+> *against*. **Runs** does not answer "win rate by character, most common ending and killer,
+> streaks": M4's spec chose a **diary** — a row per run, what happened — and declined the
+> scoreboard, because with no clock in the log and no floor recorded on a death the tally could
+> only group by killer and character. **Next steps** is called *Obiettivi consigliati* (B32) and
+> groups by the reason a row is suggested. And the table is missing **Wiki** and **Floor**, which
+> did not exist when it was written. Everything else in it was built as described.
 
 The opening screen is **Next steps**, not the collection: if the app opens on a grid of
 items, I've just rebuilt the game's own menu.

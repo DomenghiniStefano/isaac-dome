@@ -313,6 +313,11 @@ it needs to cost one command — that's what E2 (`scripts/check`) and A2 (the ho
       "2026-09-03 correction" box with the table of four values and commit `33ded43`. The
       spec also says *why* the error went unnoticed: `versione = 0x01` was true for the only
       two archives tested at the time.
+      **And the box it points at stayed open until 2026-09-15.** This entry opens by saying
+      *"already in `STATUS.md`"*, closing it did not close that one, and for nine days the two
+      documents said opposite things about the same file — one with a date on it. Nothing
+      compares them, which is the whole lesson: a cross-reference is only as good as the pass
+      that walks back along it.
 
 - [x] **E2. A single list of verification commands, in `scripts/check`.** *Weight S.*
       **Why:** the three Rust commands and the four `pnpm` ones are in `CLAUDE.md` and in
