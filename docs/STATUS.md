@@ -1545,6 +1545,51 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
 
 ## Session log
 
+### 2026-09-15 (evening) — a dlc code is a range, and `n` means *not in*
+
+`feature/dlc-ranges`, cut from `develop`. **B52 closed**, B53 opened. Report
+`docs/superpowers/reports/2026-09-15-dlc-ranges-report.md`. `scripts/check` all green, 7 skips,
+1306 real files touched.
+
+**One `?action=raw` answered more than the entry asked.** B52 had it right that `n` modifies the
+code beside it and right to refuse to guess which way — "new in" and "not in" have the same shape
+and opposite consequences. `Template:Dlc/format` names every code in prose (row 7 is `nr`,
+*Removed in Repentance*, `alt=(except in Repentance and Repentance+)`) and `Template:Dlcset` turns
+out to be **the whole dictionary**: a `#switch` from thirty codes to a five-bit mask, stating its
+own bit order in a comment. Nothing had to be derived, and a summarizer was not used — the Floor
+session of the same day had already measured that one returns a quotation cut in half.
+
+**A code is a run of transitions, not a set**, and both readers of one were wrong.
+`unknownDlcCodes` **1832 → 0**: all seventeen codes the corpus uses are in the thirty. The
+**infobox** was the quiet half — the same splitter read `dlc =`, so `r` lost Repentance+ on 531
+pages, `a+` lost three editions on 292, `a` four on 254, **1078 of 1083 too narrow**, and Tonsil's
+`a+nr` gained Rebirth and Repentance outright. An entry declaring fewer editions than it has looks
+exactly like an entry.
+
+**Abyss was never a contradiction**, which is the part B52 could not see: the wiki intersects a
+span with its page's range before drawing an icon, so `nr+` on an item that exists from Repentance
+names Repentance — *removed in Repentance+*. 847 of 4831 spans narrow. The context is the
+**first** infobox's, because `{{page dlc}}` carries an `{{assert once}}`, and **Ultra Greed is the
+page that said so**: two bosses, `a` then `a+`, one set of sections. Read as "each entry's own" it
+threw a note away — 1 span in 4831, caught by the new counter on its first run, and 0 after.
+
+**Two things found on the way, both about counters that were not counting.**
+`Diagnostics::merge` had been dropping `unknown_infoboxes` since the day B45 added it so a page
+with no kind would be *loud*; the dataset shipped `{}`. It destructures with no `..` now, and
+reports `infobox monster: 3` — **B53**. And `crates/ipc/examples/dlc_mask.rs` had this same
+question open since 2026-09-13: Blue Cap sets the Rebirth bit because its mask is **31**, "no
+range declared", not "exists in Rebirth". The Cargo integer *is* `{{dlcset}}`'s output, so 720
+live rows now answer for the transcribed switch; mutating one row turns that test red on 173.
+
+**The transcription's own guard found a mistake, in the right half.** Thirty rows copied by hand
+are where a typo hides, so a test re-derives each from the transitions its code spells. `ana+`
+disagreed on the first run: the state before the first transition is the *opposite* of that
+transition, not "present". The table was right and the explanation was wrong.
+
+**Left open on purpose**: `editionLabel` now renders `r` as "Repentance · Repentance+" where the
+wiki draws one icon reading *Added in Repentance*. Faithful, longer, and a question about what a
+reader wants — it wants a window.
+
 ### 2026-09-15 (later) — the `Block` variant that was never needed, and the two losses found underneath it
 
 Three branches in parallel on a machine with **no game and no window** — port 1420 was held by
