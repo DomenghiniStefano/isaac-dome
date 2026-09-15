@@ -7,7 +7,9 @@
 mod grid;
 mod room;
 mod rules;
+mod solve;
 
 pub use grid::{neighbours, Grid, CELLS, HEIGHT, START, WIDTH};
 pub use room::{Cell, RoomKind, Shape};
 pub use rules::{is_special, Constraint, Rule, Rules, RulesError, Target, SPECIAL_KINDS};
+pub use solve::{distance_from_start, solve, Candidate, Solution, Unresolved};
