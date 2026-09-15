@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { LayersIcon } from '@lucide/vue'
-import { computed, ref, watch } from 'vue'
+import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
+import { useTabView } from '@/composables/useTabView'
 import { useMessages } from '@/i18n'
 import { singleQuery } from '@/lib/search/queryParam'
 import { emptyList, isFiltering } from '@/lib/facets/emptyList'
@@ -15,7 +16,6 @@ import {
   CollectionSort,
   collectionFaceting,
   collectionFacetOrder,
-  defaultCollectionFilter,
   filterForQuery,
   emptyCollectionFilter,
   sortItems,
@@ -43,6 +43,7 @@ import {
   toolbarLabels,
 } from './collection/collectionLabels'
 import CollectionTable from './collection/CollectionTable.vue'
+import { collectionView } from './collection/tabView'
 
 import ProfileError from './profile/ProfileError.vue'
 
@@ -51,9 +52,16 @@ const { t } = useMessages()
 
 useOnActiveProfile(() => store.load())
 
-// The filter belongs to this screen: leaving the tab resets it, until tabs keep their state. It
+// The filter and the sort belong to the tab, not to this component: leaving and coming back —
+// through a tear-off, a restart, or the back button — finds them where they were left (B39). It
 // opens on what hasn't been found.
-const filter = ref<CollectionFilter>(defaultCollectionFilter())
+const reading = useTabView(collectionView)
+const filter = computed({
+  get: () => reading.value.filter,
+  set: (value: CollectionFilter) => {
+    reading.value = { ...reading.value, filter: value }
+  },
+})
 
 // A Search row opens this list already filtered on the name it found (B3, spec 3.5 Decision 8).
 const route = useRoute()
@@ -65,7 +73,12 @@ watch(
   },
   { immediate: true },
 )
-const sort = ref<CollectionSort>(CollectionSort.Quality)
+const sort = computed({
+  get: () => reading.value.sort,
+  set: (value: CollectionSort) => {
+    reading.value = { ...reading.value, sort: value }
+  },
+})
 
 const items = computed(() => store.view?.items ?? [])
 // The pools are the view's, so the faceting is too: its options cannot be read off the items.
