@@ -34,17 +34,14 @@ describe('the wiki fixture', () => {
     expect(index.info.counts.bosses).toBeGreaterThan(70)
   })
 
-  it('has no icons without art, and a link per illustrated page with it', () => {
+  // It used to check the other half too: with art, item 105 had a link and a challenge did
+  // not. The pack carries no images since 2026-09-15, so both halves answer null and the
+  // second says nothing — what is left is the half that still means something, plus the fact
+  // that asking for art changes nothing any more.
+  it('has no icons, with art or without, since the pack carries no images', () => {
     expect(index.pages.every((p) => p.iconUrl === null)).toBe(true)
     const illustrated = wikiIndexAnswer({ withArt: true, withWiki: true })
-    expect(
-      illustrated.pages.find(
-        (p) => p.target.kind === 'item' && p.target.id === 105,
-      )?.iconUrl,
-    ).not.toBeNull()
-    expect(
-      illustrated.pages.find((p) => p.target.kind === 'challenge')?.iconUrl,
-    ).toBeNull()
+    expect(illustrated.pages.every((p) => p.iconUrl === null)).toBe(true)
   })
 
   it('answers the eleven sample pages and no other', () => {
