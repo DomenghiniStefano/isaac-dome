@@ -88,6 +88,22 @@ const incomingGap = computed((): number | null => {
 
 watch(incomingGap, (gap) => emit('aim', gap))
 
+// A tab that became active without being clicked — restored from a session, docked from another
+// window, reached with the arrow keys — can be outside the scrolled strip. Active and invisible
+// is the one state a tab bar must not have.
+watch(
+  () => props.activeId,
+  async () => {
+    await nextTick()
+    const index = props.tabs.findIndex((tab) => tab.id === props.activeId)
+    tabElements()[index]?.scrollIntoView({
+      block: 'nearest',
+      inline: 'nearest',
+    })
+  },
+  { immediate: true },
+)
+
 const neighbour = (key: string): number | null => {
   const index = props.tabs.findIndex((tab) => tab.id === props.activeId)
   if (index < 0) return null
@@ -112,7 +128,7 @@ const onKeydown = (e: KeyboardEvent) => {
     <div
       ref="strip"
       role="tablist"
-      class="flex min-w-0 items-end gap-px"
+      class="strip-scroll flex min-w-0 items-end gap-px"
       @pointermove="drag.move"
       @pointerup="drag.end"
       @pointercancel="drag.end"
