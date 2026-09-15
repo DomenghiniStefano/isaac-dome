@@ -8,6 +8,7 @@ export const StoreId = {
   Collection: 'collection',
   Runs: 'runs',
   Live: 'live',
+  Floor: 'floor',
   Wiki: 'wiki',
   Settings: 'settings',
 } as const

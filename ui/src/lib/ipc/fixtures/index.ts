@@ -194,7 +194,8 @@ const handlers: Partial<Record<CommandName, Handler>> = {
   [Command.Runs]: async () => (await import('./runs')).runsAnswer(),
   [Command.Live]: async () => (await import('./runs')).liveAnswer(),
   // The floor reads no profile: it answers the drawing, whatever the save is doing.
-  [Command.FloorCandidates]: (args) => floorAnswer(currentFloorScenario(), args),
+  [Command.FloorCandidates]: (args) =>
+    floorAnswer(currentFloorScenario(), args),
   [Command.GraphViews]: (_args, scenario) =>
     whenActive(scenario, async () => await graph()),
   [Command.Want]: (args, scenario) =>
