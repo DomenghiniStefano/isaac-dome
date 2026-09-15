@@ -66,6 +66,21 @@ pub struct Diagnostics {
     /// `default` for the same reason as `orphan_closers`.
     #[serde(default)]
     pub unknown_infoboxes: BTreeMap<String, u32>,
+    /// `{{dlc|…}}` spans whose editions and their page's have none in common. The wiki
+    /// draws its own error there ("Incompatible DLC with current context"), so this counts
+    /// a contradiction on the wiki's side, not a gap on ours: the words are kept and the
+    /// badge is dropped, because a span valid in no edition is worse than the same span
+    /// unqualified.
+    ///
+    /// **0 on the snapshot of 2026-09-15**, and the one span that would have landed here is
+    /// worth knowing about: Lilith's `{{without context|{{dlc|na}}}}` — the wiki's own
+    /// wrapper for "ignore the page context here" — which sits under `== Trivia ==` and is
+    /// discarded before it is ever parsed. If this counter ever moves, that template is the
+    /// first thing to look for.
+    ///
+    /// `default` for the same reason as `orphan_closers`.
+    #[serde(default)]
+    pub spans_outside_their_page: u32,
 }
 
 impl Diagnostics {
@@ -101,24 +116,88 @@ impl Diagnostics {
     }
 
     /// Adds the counters of another pass (a page) into this one (the snapshot).
+    ///
+    /// `other` is **destructured field by field**, with no `..`, so a counter added to the
+    /// struct and not to this function breaks the build. It is not a style choice:
+    /// `unknown_infoboxes` was added on 2026-09-14 and left out here, and the dataset it
+    /// exists to fill shipped `{}` for it with the suite green.
     pub fn merge(&mut self, other: &Diagnostics) {
-        for (k, v) in &other.unresolved {
+        let Diagnostics {
+            unresolved,
+            unknown_templates,
+            discarded_sections,
+            pages_without_id,
+            orphan_closers,
+            unknown_dlc_codes,
+            transformation_sources_disagree,
+            unknown_entities,
+            unknown_infoboxes,
+            spans_outside_their_page,
+        } = other;
+        for (k, v) in unresolved {
             *self.unresolved.entry(k.clone()).or_default() += v;
         }
-        for (k, v) in &other.unknown_templates {
+        for (k, v) in unknown_templates {
             *self.unknown_templates.entry(k.clone()).or_default() += v;
         }
-        for (k, v) in &other.discarded_sections {
+        for (k, v) in discarded_sections {
             *self.discarded_sections.entry(k.clone()).or_default() += v;
         }
-        for (k, v) in &other.unknown_dlc_codes {
+        for (k, v) in unknown_dlc_codes {
             *self.unknown_dlc_codes.entry(k.clone()).or_default() += v;
         }
-        for (k, v) in &other.unknown_entities {
+        for (k, v) in unknown_entities {
             *self.unknown_entities.entry(k.clone()).or_default() += v;
         }
-        self.pages_without_id += other.pages_without_id;
-        self.orphan_closers += other.orphan_closers;
-        self.transformation_sources_disagree += other.transformation_sources_disagree;
+        for (k, v) in unknown_infoboxes {
+            *self.unknown_infoboxes.entry(k.clone()).or_default() += v;
+        }
+        self.pages_without_id += pages_without_id;
+        self.orphan_closers += orphan_closers;
+        self.transformation_sources_disagree += transformation_sources_disagree;
+        self.spans_outside_their_page += spans_outside_their_page;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// `build` counts a page into a fresh `Diagnostics` and merges it into the snapshot's,
+    /// so a counter this function forgets is a counter that reads **zero** in the shipped
+    /// dataset however often it fires. `unknown_infoboxes` was exactly that: added on
+    /// 2026-09-14 so a page whose infobox has no kind would be loud, and shipping `{}` ever
+    /// since, because the merge never mentioned it.
+    ///
+    /// The test is written on a value with every field set, so a field added later and not
+    /// merged fails here rather than in a reading of `meta` nobody does.
+    #[test]
+    fn a_merge_carries_every_counter_it_has() {
+        let mut page = Diagnostics::default();
+        page.unresolved("i");
+        page.unknown_template("m");
+        page.discarded_section("Trivia");
+        page.unknown_dlc_code("zz");
+        page.unknown_entity("frac");
+        page.unknown_infobox("infobox nothing");
+        page.pages_without_id = 1;
+        page.orphan_closers = 1;
+        page.transformation_sources_disagree = 1;
+        page.spans_outside_their_page = 1;
+
+        let mut all = Diagnostics::default();
+        all.merge(&page);
+        all.merge(&page);
+
+        assert_eq!(all.unresolved.get("i"), Some(&2));
+        assert_eq!(all.unknown_templates.get("m"), Some(&2));
+        assert_eq!(all.discarded_sections.get("Trivia"), Some(&2));
+        assert_eq!(all.unknown_dlc_codes.get("zz"), Some(&2));
+        assert_eq!(all.unknown_entities.get("frac"), Some(&2));
+        assert_eq!(all.unknown_infoboxes.get("infobox nothing"), Some(&2));
+        assert_eq!(all.pages_without_id, 2);
+        assert_eq!(all.orphan_closers, 2);
+        assert_eq!(all.transformation_sources_disagree, 2);
+        assert_eq!(all.spans_outside_their_page, 2);
     }
 }
