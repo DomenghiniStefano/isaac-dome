@@ -4,6 +4,14 @@
 **Sub-project:** M1 · first piece
 **Status:** approved in brainstorming, pending spec review
 
+
+> **Executed and merged.** The "pending spec review" above was never cleared and stayed on
+> this document after its work shipped; it is a note about how the design was agreed, not
+> about where the spec stands. The plan is archived as `docs/superpowers/plans/archive/2026-09-01-core-save-parser.md`
+> — which this project only does when a sub-project merges into `develop` — and the report is
+> `docs/superpowers/reports/2026-09-01-core-save-parser-report.md`. Read the report first: where the two disagree, it is
+> the one that measured. (Noted 2026-09-15, on a pass over all 32 specs.)
+
 ## Context
 
 First sub-project of M1. `core-save` is the Rust crate that reads the `.dat` files of
