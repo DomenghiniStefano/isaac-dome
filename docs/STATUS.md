@@ -1545,6 +1545,33 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
 
 ## Session log
 
+### 2026-09-15 (night) — the infobox was the wrong half
+
+**B53 closed as not worth a shape, B54 opened.** No code: the closure is a reading, and it is the
+kind this list exists to record.
+
+B53 asked whether an entry should carry a second, subordinate infobox. Reading where the three
+`{{infobox monster}}` actually sit answers it without the question: Blood Puppy's is at the **foot
+of the page after `{{nav}}`, marked `hidden = yes`** — the wiki does not draw it — and the other two
+sit at the head of `== Friendly Charger ==` and `== Dark Esau ==`, **level-2 sections with
+unrecognized titles, discarded whole**. Rescuing the box would put a name, an id and a one-line
+`behavior` on screen for a subject whose text the app threw away. A card with no page behind it is
+worse than no card.
+
+**What the three were pointing at is a section.** `discardedSections` reads 2267 over 63 titles,
+and as one number it hides its own shape: **2213 are six titles dropped on purpose** — Trivia 889,
+in-game footage 840 over three spellings, Gallery 359, References 102, Requirements 15, Audio 7 —
+and the other **54 occurrences are 54 distinct titles, each seen exactly once**. A title seen once
+is not a category declined, it is one page's heading with its whole section gone: a second subject
+(`Dark Esau`, 28 lines of behaviour), a near-miss spelling (`Items Interactions` beside the
+accepted `Item Interactions`), or something genuinely else (`Algorithm`, `Modifiers`, `Drops`).
+That is B54, and its cheap half is deliberately **not** done by reflex — `Good Items` and
+`Bad items` are one page's editorial lists, not `Notes`.
+
+**The counter could not have said any of this**: 54 against 2267 reads as rounding, and the
+diagnostic was built to show a parser losing ground, which is exactly what a heading seen once does
+not look like.
+
 ### 2026-09-15 (evening, after) — the half of B48 that was reported and not fixed
 
 `fix/empty-lists`, cut from `develop`. `scripts/check` green.
