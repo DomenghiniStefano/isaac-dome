@@ -1,0 +1,32 @@
+/* The painted floor's tokens. One theme, the dark one, like every other file here: values go
+   straight into @theme with no :root/.dark indirection (spec Decision 1).
+
+   Two notes on names. Dimensions are `--spacing-*`, because this repo has no `--size-*`
+   family and a second name for one idea is the thing the cleanup pass spent itself on. And
+   there is no `--color-chart-*` here to lean on, so the three ranks get a family of their
+   own below. */
+@theme {
+  /* A cell of the 13x13 grid, and the hairline between two of them. In rem against the 16px
+     base like every other dimension, so the grid grows with the interface's scale. */
+  --spacing-floor-cell: 2rem;
+  --spacing-floor-gap: 0.125rem;
+
+  /* An unpainted cell, and a painted one. Both borrow an existing surface on purpose: the
+     grid is furniture, and only the lit cells are an answer. */
+  --color-floor-empty: var(--color-muted);
+  --color-floor-room: var(--color-card);
+
+  /* The three ranks a candidate can carry, as one hue in three steps. A ranking is a
+     sequence, so it is drawn as one — and it is deliberately **none of the state colours**:
+     green, gold, brown, grey, red and purple are the brief's and mean done / unlockable now /
+     blocked / unreadable / unexpected / challenge, none of which is "the rule allows a secret
+     room here". Blue is otherwise unspoken for in this palette; the one cyan (--color-ring)
+     is a 1px focus outline, never a fill.
+
+     Not yet seen in a real window: this is a new family, and the design pass that confirms
+     or replaces it needs a screen, not a token file. */
+  --color-floor-candidate-first: #3d82c4;
+  --color-floor-candidate-second: #2b5a86;
+  --color-floor-candidate-third: #22405c;
+  --color-floor-candidate-foreground: #e8f1f8;
+}
