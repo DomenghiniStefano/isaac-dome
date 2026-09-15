@@ -13,8 +13,11 @@
 // which exists for the same reason — no linter enforces what a document promises.
 //
 // **What it checks**: the seven documents that describe the project as it is, plus the specs,
-// which this project calls the durable half. Not `plans/` or `reports/`: those are the record
-// of a day and say so, and a name inside them is history by construction.
+// which this project calls the durable half. Not `plans/`, `reports/` or `docs/completed/`:
+// those are the record of a day and say so, and a name inside them is history by construction.
+// Splitting the journal out of `STATUS.md` on 2026-09-16 moved five exemptions' worth of
+// references into it at once, and the GONE lines are what said so — which is the tool working,
+// not a problem with it.
 //
 // **The signal is the delta.** Everything below in EXEMPTIONS was read on 2026-09-15 and found
 // legitimate; anything else is printed as new. An exemption that no longer resolves to a
@@ -26,11 +29,9 @@ import { execFileSync } from 'child_process'
 // Known-legitimate unresolved references: `path` as the document writes it, and why it is not
 // a defect. A name that stops appearing here has either been fixed or the document changed.
 const EXEMPTIONS = [
-  // A session log recording a rename has to name the file that went away.
-  { path: 'docs/STATO.md', why: 'renamed to docs/STATUS.md; the log records the rename' },
-  { path: 'docs/MIGLIORIE.md', why: 'renamed to docs/IMPROVEMENTS.md; same' },
-  { path: 'docs/progetto.html', why: 'rewritten as docs/PROJECT.md; same' },
-  { path: 'docs/convenzioni-frontend.md', why: 'renamed to docs/frontend-conventions.md; same' },
+  // A document recording a rename has to name the file that went away. Most of these left with
+  // the journal on 2026-09-16; `progetto.html` is named by an open backlog entry as well.
+  { path: 'docs/progetto.html', why: 'rewritten as docs/PROJECT.md; a backlog entry records it' },
   // Entries quoting their own earlier text, marked as such in the document.
   {
     path: 'ui/src/lib/graph/unlockFilter.ts',
@@ -40,7 +41,6 @@ const EXEMPTIONS = [
     path: 'ui/src/lib/collection/collectionFilter.ts',
     why: 'same entry; became collectionFacets.ts with N8',
   },
-  { path: 'lib/graph/unlockFilter.ts', why: 'a closed item naming the file it was done in' },
   { path: 'stores/graph.ts', why: 'three view stores became one stores/views.ts with N8' },
   { path: 'stores/completion.ts', why: 'same' },
   { path: 'stores/collection.ts', why: 'same' },
@@ -79,7 +79,6 @@ const EXEMPTIONS = [
   { path: 'nextsteps/StepCard.vue', why: 'became screens/goals/GoalCard.vue with B32' },
   { path: 'auto-launch-0.5.0/src/windows.rs', why: "a dependency's own source, not this repo's" },
   { path: 'samples/filelist.txt', why: 'samples/ is git-ignored and not walked' },
-  { path: 'samples/filelist-completo.txt', why: 'same' },
 ]
 
 const DOCS = [
