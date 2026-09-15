@@ -1609,7 +1609,7 @@ the checkbox columns, which needs a new primitive and the design pass that redra
 Unlock and the Collection at once.
 
 Logged 2026-09-12, from the owner's review of the Collection's filter drawer
-(`screens/collection/CollectionFacetDrawer.vue`): the presentation is to be redone, and two
+(`components/facets/FacetDrawer.vue`, which was `screens/collection/CollectionFacetDrawer.vue` when this was written and became shared by N8): the presentation is to be redone, and two
 things are wrong on sight.
 
 - **"Faccette"** (`collection.facets`, and `unlock.facets` on Unlock) is the design file's
@@ -2220,7 +2220,7 @@ is not the tab:
   mounts (`screens/unlock/`, `composables/useSearch.ts`);
 - the **scroll offset** belongs to the DOM element, and to `@tanstack/vue-virtual`'s measurement
   of it;
-- the **view stores** (`stores/graph.ts`, `collection.ts`, `wiki.ts`) are per window, and keyed
+- the **view stores** (one `stores/views.ts` since N8, three files when this was written) are per window, and keyed
   by nothing: two tabs on the same screen already share them.
 
 So "a tab keeps its state" means **a tab owns its state**, which is a different shape from the
@@ -2711,7 +2711,7 @@ parser will.
 ## B48 — An empty category says "no page with this name" when nothing was searched (implementation, `ui`, small) ✅ closed on 2026-09-15
 
 **Closed on `fix/empty-category`.** The decision is a pure function — `emptyList(total, query)` in
-`ui/src/lib/wiki/emptyList.ts` — and `WikiCategoryList.vue` only draws its answer. A category whose
+`ui/src/lib/facets/emptyList.ts` — and `WikiCategoryList.vue` only draws its answer. A category whose
 unfiltered count is `0` now says **"Questa categoria non ha pagine."** (`wiki.emptyCategory`, added
 to both locales), and the *Azzera la ricerca* button appears only where there is a search to clear.
 
