@@ -8,7 +8,7 @@ mod settings_file;
 mod state;
 mod tray;
 mod window;
-use crate::commands::{completion, graph, plan, profile, queue, runs, session, wiki};
+use crate::commands::{completion, floor, graph, plan, profile, queue, runs, session, wiki};
 use crate::icons::icon_bytes;
 use crate::state::{
     AllPassive, ArchiveState, CatalogState, GraphState, MarkFramesState, ResourcesState, SaveState,
@@ -83,7 +83,8 @@ pub fn run() {
             plan::add_goal,
             plan::remove_goal,
             runs::runs,
-            runs::live
+            runs::live,
+            floor::floor_candidates
         ])
         // The first window is built here, not by the config: one recipe, and the same call
         // the tray and a second launch make.

@@ -8,5 +8,6 @@
 @import './theme/shadow.css';
 @import './theme/opacity.css';
 @import './theme/motion.css';
+@import './theme/floor.css';
 @import './base.css';
 @import './utilities.css';

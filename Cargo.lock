@@ -1110,6 +1110,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "floor"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "fnv"
 version = "1.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1906,6 +1914,7 @@ dependencies = [
  "catalog",
  "core-save",
  "discovery",
+ "floor",
  "graph",
  "plan",
  "png 0.17.16",

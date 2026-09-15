@@ -198,6 +198,14 @@ pub fn render() -> String {
     decl::<crate::RunTotals>(&cfg, &mut out);
     decl::<crate::RunsDiagnostic>(&cfg, &mut out);
     decl::<crate::RunsView>(&cfg, &mut out);
+    decl::<crate::RoomKindView>(&cfg, &mut out);
+    decl::<crate::TargetView>(&cfg, &mut out);
+    decl::<crate::AppliedRule>(&cfg, &mut out);
+    decl::<crate::FloorCandidate>(&cfg, &mut out);
+    decl::<crate::FloorUnresolved>(&cfg, &mut out);
+    decl::<crate::FloorSolutionView>(&cfg, &mut out);
+    decl::<crate::FloorDiagnostic>(&cfg, &mut out);
+    decl::<crate::FloorView>(&cfg, &mut out);
     decl::<crate::LiveAchievement>(&cfg, &mut out);
     decl::<crate::LiveOpen>(&cfg, &mut out);
     decl::<crate::LiveMarkRow>(&cfg, &mut out);

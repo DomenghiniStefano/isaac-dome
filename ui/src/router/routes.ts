@@ -7,6 +7,7 @@ import AppearanceScreen from '@/screens/AppearanceScreen.vue'
 import BackgroundScreen from '@/screens/BackgroundScreen.vue'
 import CollectionScreen from '@/screens/CollectionScreen.vue'
 import CompletionScreen from '@/screens/CompletionScreen.vue'
+import FloorScreen from '@/screens/FloorScreen.vue'
 import GoalsScreen from '@/screens/GoalsScreen.vue'
 import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
 import LiveScreen from '@/screens/LiveScreen.vue'
@@ -44,6 +45,7 @@ const screens: Partial<Record<RouteName, Component>> = {
   [RouteName.Collection]: CollectionScreen,
   [RouteName.Live]: LiveScreen,
   [RouteName.Runs]: RunsScreen,
+  [RouteName.Floor]: FloorScreen,
   [RouteName.Wiki]: WikiScreen,
   [RouteName.Search]: SearchScreen,
   [RouteName.Profile]: ProfileScreen,
