@@ -662,6 +662,10 @@ export const en: MessageSchema = {
   gate: {
     needsProfile:
       'Progress depends on the active profile: choose one to see this screen.',
+    blocked: {
+      title: 'Progress needs a save',
+      settings: 'Open the profile settings',
+    },
   },
   indicator: {
     noProfile: 'No active profile',
