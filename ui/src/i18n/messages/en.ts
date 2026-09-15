@@ -17,8 +17,9 @@ export const en: MessageSchema = {
     about: 'About',
     resizeSidebar: 'Resize the sidebar',
     sections: {
-      wiki: 'Wiki',
       progress: 'Progress',
+      tool: 'Tools',
+      wiki: 'Wiki',
     },
   },
   marks: {
@@ -33,6 +34,7 @@ export const en: MessageSchema = {
     collection: 'Collection',
     runs: 'Runs',
     live: 'Live',
+    floor: 'Floor',
     wiki: 'Wiki',
     profile: 'Game profile',
     appearance: 'Appearance',
@@ -52,6 +54,8 @@ export const en: MessageSchema = {
   sidebar: {
     progressTitle: 'Progress',
     progressHint: 'Every entry reads the active profile.',
+    toolTitle: 'Tools',
+    toolHint: 'They work without a save: they read the log, or what you draw.',
     wikiTitle: 'Wiki',
     wikiHint: 'The Wiki works without the game or a save.',
     wikiOverview: 'Overview',
