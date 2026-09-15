@@ -161,6 +161,106 @@ fn without_the_boxes(text: &str) -> String {
     out
 }
 
+/// The page's edition context: the range the **first** infobox declares, and not each
+/// entry's own.
+///
+/// That is the wiki's own rule rather than a convenience. `{{page dlc}}` carries
+/// `{{assert once|page dlc}}`, so the first infobox on a page sets the context every span
+/// below is tested against; a later infobox reaches `{{section dlc}}`'s other branch and
+/// narrows a section, not the page. Ultra Greed is the page that says so — two bosses in
+/// one file, `dlc = a` then `dlc = a+`, and the sections belong to the page, not to either
+/// of them. Read as "each entry's own", the note about the ending chest, marked `na+`, has
+/// nothing in common with Ultra Greedier's `a+` and is thrown away; it is the one span in
+/// 4831 that the counter caught the first time this pass ran.
+fn page_editions(text: &str) -> crate::editions::Editions {
+    extract_infoboxes(text)
+        .first()
+        .and_then(|ib| crate::editions::Editions::parse(ib.params.get("dlc")?))
+        .unwrap_or(crate::editions::Editions::ALL)
+}
+
+/// Narrows every `{{dlc|…}}` span on an entry by the page's range, the way the wiki's
+/// `{{context test}}` does before it draws an icon.
+///
+/// A code says what it says on its own; a page says what it says; and the reader is looking
+/// at one inside the other. Abyss exists from Repentance and carries a line marked
+/// `{{dlc|nr+}}` — "removed in Repentance+" — which read alone names the four editions
+/// before Repentance+, three of which never had the item. Narrowed, it names Repentance,
+/// which is what the line means. 847 of the snapshot's 4831 spans move this way.
+///
+/// A page that declares no range narrows nothing, which is half of them. When the two share
+/// no edition the span is dropped and counted: the wiki draws its own error there, so it is
+/// the wiki contradicting itself and not a code we failed to read.
+fn narrow_to_page(entry: &mut Entry, page: crate::editions::Editions, d: &mut Diagnostics) {
+    if page.is_all() {
+        return;
+    }
+    narrow_inline(&mut entry.description, page, d);
+    for field in entry.infobox.inlines_mut() {
+        narrow_inline(field, page, d);
+    }
+    for section in &mut entry.sections {
+        for block in &mut section.blocks {
+            narrow_block(block, page, d);
+        }
+    }
+}
+
+fn narrow_block(block: &mut crate::Block, page: crate::editions::Editions, d: &mut Diagnostics) {
+    match block {
+        crate::Block::Paragraph { inline } | crate::Block::Heading { inline, level: _ } => {
+            narrow_inline(inline, page, d)
+        }
+        crate::Block::List { ordered: _, items } => {
+            for item in items {
+                narrow_inline(&mut item.inline, page, d);
+                for child in &mut item.children {
+                    narrow_block(child, page, d);
+                }
+            }
+        }
+        crate::Block::Table { header, rows } => {
+            for cell in header {
+                narrow_inline(cell, page, d);
+            }
+            for row in rows {
+                for cell in row {
+                    narrow_inline(cell, page, d);
+                }
+            }
+        }
+    }
+}
+
+/// An `Edition` whose range survives narrowing keeps it; one left with nothing is unwrapped
+/// into its parent, words and all, exactly as an unreadable code is.
+fn narrow_inline(
+    inline: &mut Vec<crate::Inline>,
+    page: crate::editions::Editions,
+    d: &mut Diagnostics,
+) {
+    let mut out = Vec::with_capacity(inline.len());
+    for node in std::mem::take(inline) {
+        match node {
+            crate::Inline::Edition { only, mut inline } => {
+                narrow_inline(&mut inline, page, d);
+                let narrowed = crate::editions::Editions::of(&only).intersect(page);
+                if narrowed.is_empty() {
+                    d.spans_outside_their_page += 1;
+                    out.extend(inline);
+                } else {
+                    out.push(crate::Inline::Edition {
+                        only: narrowed.list(),
+                        inline,
+                    });
+                }
+            }
+            other => out.push(other),
+        }
+    }
+    *inline = out;
+}
+
 /// The page's kept sections, in the order they appear; ones with an unrecognized title
 /// count among the discarded.
 fn sections(text: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Section> {
@@ -228,6 +328,7 @@ pub fn parse_page(
 ) -> Vec<(EntryKey, Entry)> {
     let mut out = Vec::new();
     let mut page_sections: Option<Vec<Section>> = None;
+    let page = page_editions(text);
     for ib in extract_infoboxes(text) {
         let Some(kind) = InfoboxKind::of(&ib.name) else {
             d.unknown_infobox(&ib.name);
@@ -278,18 +379,17 @@ pub fn parse_page(
             | InfoboxKind::Challenge
             | InfoboxKind::Character => facts.description,
         };
-        out.push((
-            key,
-            Entry {
-                title: entry_title(kind, title, &ib, r),
-                revid,
-                description,
-                dlc: facts.dlc,
-                unlocked_by: facts.unlocked_by,
-                infobox: infobox_from(kind, &ib, text, r, d),
-                sections,
-            },
-        ));
+        let mut entry = Entry {
+            title: entry_title(kind, title, &ib, r),
+            revid,
+            description,
+            dlc: facts.dlc,
+            unlocked_by: facts.unlocked_by,
+            infobox: infobox_from(kind, &ib, text, r, d),
+            sections,
+        };
+        narrow_to_page(&mut entry, page, d);
+        out.push((key, entry));
     }
     out
 }
@@ -403,12 +503,129 @@ mod tests {
         let mut d = Diagnostics::default();
         let v = parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
         let e = &v[0].1;
-        assert_eq!(e.dlc, vec![crate::Dlc::Repentance]);
+        // `r` is "added in Repentance", so it names Repentance **and** Repentance+.
+        assert_eq!(
+            e.dlc,
+            vec![crate::Dlc::Repentance, crate::Dlc::RepentancePlus]
+        );
         assert_eq!(e.unlocked_by, Some(crate::Target::Achievement { id: 62 }));
         assert!(matches!(
             e.description.first(),
             Some(crate::Inline::Text { text, .. }) if text.contains("Tears up")
         ));
+    }
+
+    /// The editions of every `Edition` node under an entry, in the order they are found.
+    fn edition_nodes(inline: &[crate::Inline]) -> Vec<Vec<crate::Dlc>> {
+        let mut out = Vec::new();
+        for i in inline {
+            if let crate::Inline::Edition { only, inline } = i {
+                out.push(only.clone());
+                out.extend(edition_nodes(inline));
+            }
+        }
+        out
+    }
+
+    fn entry_editions(e: &Entry) -> Vec<Vec<crate::Dlc>> {
+        let mut out = edition_nodes(&e.description);
+        for s in &e.sections {
+            for b in &s.blocks {
+                if let crate::Block::List { items, .. } = b {
+                    for item in items {
+                        out.extend(edition_nodes(&item.inline));
+                    }
+                }
+            }
+        }
+        out
+    }
+
+    /// Abyss is the page that showed this: it exists from Repentance (`dlc = r`) and
+    /// carries a line marked `{{dlc|nr+}}`, "removed in Repentance+". Read on its own that
+    /// code names the four editions before Repentance+, three of which the item does not
+    /// exist in — so the line would be labelled for editions that never had it. The wiki
+    /// narrows a span by the page it sits on (`{{context test}}`), and what is left is
+    /// Repentance alone, which is what the line means.
+    ///
+    /// 847 of the 4831 spans in the snapshot are narrowed this way.
+    #[test]
+    fn a_span_is_narrowed_by_the_editions_its_page_declares() {
+        let src = "{{infobox passive collectible\n | id = 25\n | dlc = r\n | quote = {{dlc|nr+|gone later}}\n}}\n== Effects ==\n* {{dlc|nr+|gone later}}\n";
+        let mut d = Diagnostics::default();
+        let v = parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
+        assert_eq!(
+            entry_editions(&v[0].1),
+            vec![vec![crate::Dlc::Repentance]],
+            "the body's span"
+        );
+        // The infobox's fields go through the same pass: a quote carries editions too.
+        let crate::Infobox::Item { quote, .. } = &v[0].1.infobox else {
+            panic!("a collectible page carries an item infobox")
+        };
+        assert_eq!(edition_nodes(quote), vec![vec![crate::Dlc::Repentance]]);
+        assert_eq!(d.spans_outside_their_page, 0);
+    }
+
+    /// A page with two infoboxes has one context, and it is the **first** one's: the wiki
+    /// gives `{{page dlc}}` an `{{assert once}}`, so the second infobox narrows a section
+    /// rather than the page. Ultra Greed is the page that forced the rule — two bosses,
+    /// `dlc = a` then `dlc = a+`, sharing one set of sections. Read as "each entry's own",
+    /// the note marked `na+` shares no edition with Ultra Greedier's `a+` and is thrown
+    /// away; it was the one span in 4831 this pass dropped the first time it ran.
+    #[test]
+    fn a_page_with_two_infoboxes_takes_its_context_from_the_first() {
+        let src = "{{infobox boss\n | dlc = a\n | id = 1\n}}\ntext\n{{infobox boss\n | dlc = a+\n | id = 2\n}}\n";
+        assert_eq!(
+            page_editions(src).list(),
+            vec![
+                crate::Dlc::Afterbirth,
+                crate::Dlc::AfterbirthPlus,
+                crate::Dlc::Repentance,
+                crate::Dlc::RepentancePlus
+            ]
+        );
+    }
+
+    /// A page that declares no range narrows nothing: 492 of the 1113 pages in the
+    /// snapshot, and the reason an absent parameter has to read as "every edition" rather
+    /// than "none" — as "none" it would erase every badge on half the wiki.
+    #[test]
+    fn a_page_that_declares_no_range_leaves_its_spans_alone() {
+        let src = "{{infobox passive collectible\n | id = 25\n}}\n== Effects ==\n* {{dlc|r+|only the last}}\n";
+        let mut d = Diagnostics::default();
+        let v = parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
+        assert_eq!(
+            entry_editions(&v[0].1),
+            vec![vec![crate::Dlc::RepentancePlus]]
+        );
+    }
+
+    /// When the two ranges share no edition the wiki draws its own error, so the span is a
+    /// contradiction on the wiki's side and not a code we failed to read. The words stay,
+    /// the badge goes, and the counter says it happened — 0 times on the snapshot of
+    /// 2026-09-15.
+    #[test]
+    fn a_span_its_page_leaves_no_edition_for_keeps_its_words_and_is_counted() {
+        let src = "{{infobox passive collectible\n | id = 25\n | dlc = a\n}}\n== Effects ==\n* {{dlc|na|only in Rebirth}}\n";
+        let mut d = Diagnostics::default();
+        let v = parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
+        assert!(
+            entry_editions(&v[0].1).is_empty(),
+            "a badge naming no edition: {:?}",
+            v[0].1.sections
+        );
+        let crate::Block::List { items, .. } = &v[0].1.sections[0].blocks[0] else {
+            panic!("the Effects section holds a list")
+        };
+        assert!(
+            items[0]
+                .inline
+                .iter()
+                .any(|i| matches!(i, crate::Inline::Text { text, .. } if text.contains("only in Rebirth"))),
+            "the words went with it: {:?}", items[0]
+        );
+        assert_eq!(d.spans_outside_their_page, 1);
     }
 
     #[test]

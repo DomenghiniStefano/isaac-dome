@@ -1010,13 +1010,19 @@ export type Entry = {
    */
   description: Array<Inline>
   /**
-   * The edition codes the **infobox** declares, parsed. Empty when the parameter is
-   * absent, which is not the same as "it exists everywhere".
+   * The editions the **infobox** says the entry exists in, in release order. Empty when
+   * the parameter is absent, which is the wiki's "no restriction" and not "it exists
+   * nowhere"; a page that writes the restriction out as `n` lists all five.
    *
-   * Not to be confused with the Cargo tables' `dlc` integer, which is a different source
-   * and a different question: that one is a bitmask over the editions a row is valid in,
-   * measured on 2026-09-13 to agree with the game on 712 of 720 collectibles
-   * (`cargo run -q -p ipc --example dlc_mask`). This field does not use it.
+   * The parameter holds a code, and a code names a **range**: `r` is "added in
+   * Repentance", so it lists Repentance and Repentance+. Read one code at a time it came
+   * out too narrow on 1078 of the 1083 pages that carry one, until 2026-09-15.
+   *
+   * Same source as the Cargo tables' `dlc` integer, which is that code already resolved
+   * to its bitmask (1 Rebirth, 2 Afterbirth, 4 Afterbirth+, 8 Repentance,
+   * 16 Repentance+); the two agree row for row on the collectible table. This field
+   * still does not read it, because a page has an infobox whether or not it has a Cargo
+   * row.
    */
   dlc: Array<Dlc>
   /**
