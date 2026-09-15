@@ -78,10 +78,11 @@ impl Out {
     }
 
     /// Closes the innermost `Edition`; does nothing without any open frame. An edition with
-    /// no content is not emitted — and neither is one that names no **edition**: an empty
-    /// `only` means the codes could not be read, and a node declaring its text valid in no
-    /// edition at all is worse than the text on its own. Its words go back to the parent,
-    /// and `dlc_codes` counts the code that produced it.
+    /// no content is not emitted — and neither is one whose `only` is empty, which is how
+    /// `dlc_codes` says the code restricts **nothing**: either it named every edition, or it
+    /// could not be read and was counted. Either way the words go back to the parent, since
+    /// a node declaring its text valid in no edition at all is worse than the text on its
+    /// own.
     ///
     /// The frame is opened either way: `{{dlc+|…}}` is closed by a later `{{dlc-}}`, so
     /// skipping the open would leave the close popping somebody else's frame.
@@ -109,37 +110,25 @@ impl Out {
     }
 }
 
-/// `a+` is a whole code: it's tried as such first, then split on `,` and whitespace. What
-/// is left unread produces an empty list, which `Out::close` unwraps instead of emitting —
-/// a span valid in no edition is not a span.
+/// The editions a `{{dlc|…}}` code restricts its span to, or an **empty** list when it
+/// restricts nothing — which `Out::close` unwraps instead of emitting, because a badge
+/// naming every edition says as much as no badge at all.
+///
+/// Two things land on that empty list, and only one of them is a gap. `n`, `x` and a blank
+/// argument are the wiki's own row 31, "no restriction", and are silent. A code outside the
+/// switch is counted, because the wiki answers `0 <!-- invalid string! -->` there and a
+/// thirty-first code has to be visible rather than shipped.
+///
+/// Whole codes only: the argument is one code, never a list. 1734 of the uses in the
+/// wikitext were read one code at a time until 2026-09-15 — `nr` as nothing, `a+nr` as
+/// three editions including the two the `n` removes — and each opened a span valid in no
+/// edition at all.
 fn dlc_codes(s: &str, d: &mut Diagnostics) -> Vec<Dlc> {
-    let codes = match Dlc::from_code(s) {
-        Some(one) => vec![one],
-        None => s
-            .split(|c: char| c == ',' || c.is_whitespace())
-            .filter_map(Dlc::from_code)
-            .collect(),
-    };
-    // What this cannot read is counted, never dropped in silence: **1734 of the 4168**
-    // `{{dlc|…}}` uses in the wikitext concatenate their codes, and each one used to open a
-    // span valid in no edition at all. The build counts **1832**, not 1734, and the gap is
-    // not a disagreement: a page that belongs to two forms (Tainted Lazarus and its dead
-    // half) is read once per entry.
-    //
-    // **`Dlc::parse_codes` is not the answer here, and reading them as a set would ship
-    // 1734 wrong labels.** It splits the *infobox* parameter, where the codes are the
-    // editions an entry exists in. In this family every code appears both bare and with a
-    // leading `n` — `r` 1687 / `nr` 1155, `r+` 446 / `nr+` 207, `a+` 165 / `na+` 149,
-    // `a` 134 / `na` 69 — and a bare `n` appears **zero** times in 4168 uses, which is not
-    // what a set of editions looks like. Abyss settles it: the item exists only in
-    // Repentance (`dlc = r` in its own infobox) and carries a line marked `{{dlc|nr+}}`,
-    // which as a set would be valid in an edition where the item is not. So `n` modifies
-    // the code beside it; what it means is unmeasured, and one query against the wiki's
-    // own `Template:Dlc` answers it (B52).
-    if codes.is_empty() && !s.trim().is_empty() {
-        d.unknown_dlc_code(s.trim());
+    let editions = crate::editions::parse_code(s, d);
+    if editions.is_all() {
+        return Vec::new();
     }
-    codes
+    editions.list()
 }
 
 /// A closed list, and deliberately not a general HTML-entity decoder: the input is
@@ -773,7 +762,7 @@ mod tests {
             vec![
                 text("A ", Style::Plain),
                 Inline::Edition {
-                    only: vec![Dlc::Repentance],
+                    only: vec![Dlc::Repentance, Dlc::RepentancePlus],
                     inline: vec![
                         text("only rep ", Style::Plain),
                         Inline::Ref {
@@ -789,7 +778,7 @@ mod tests {
         assert_eq!(
             v,
             vec![Inline::Edition {
-                only: vec![Dlc::AfterbirthPlus],
+                only: vec![Dlc::AfterbirthPlus, Dlc::Repentance, Dlc::RepentancePlus],
                 inline: vec![text(" Isaac also starts with X", Style::Plain)]
             }]
         );
@@ -799,7 +788,7 @@ mod tests {
             vec![
                 text("17.75", Style::Plain),
                 Inline::Edition {
-                    only: vec![Dlc::Repentance],
+                    only: vec![Dlc::Repentance, Dlc::RepentancePlus],
                     inline: vec![text(" 4.5", Style::Plain)]
                 }
             ]
@@ -859,57 +848,88 @@ mod tests {
         );
         assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
 
-        // `{{bc|18|dlc=a+}}` says the variant is of one edition: that is `Inline::Edition`,
-        // the same node every other per-edition span uses.
+        // `{{bc|18|dlc=a+}}` says the variant belongs to an edition range: that is
+        // `Inline::Edition`, the same node every other per-edition span uses. `a+` is
+        // "added in Afterbirth †", so the range runs from there to the end.
         let (v, _) = p("{{bc|18|dlc=a+}}");
         assert!(
             v.iter().any(|i| matches!(
                 i,
-                Inline::Edition { only, .. } if only == &vec![Dlc::AfterbirthPlus]
+                Inline::Edition { only, .. } if only == &vec![Dlc::AfterbirthPlus, Dlc::Repentance, Dlc::RepentancePlus]
             )),
             "got {v:?}"
         );
     }
 
-    /// An edition that names no edition is not an edition. 1734 of the 4168 `{{dlc|…}}`
-    /// uses concatenate their codes — `nr` alone 1155 — and this parser reads whole codes
-    /// only, so every one of them opened a frame with an empty `only`: **1690 of those
-    /// reached `wiki.json`**, where `WikiInline.vue` draws no badge (`v-if="token.only.length"`)
-    /// and the text arrives saying nothing about which edition it belongs to. They are
-    /// **0** since, and `meta.diagnostics.unknownDlcCodes` carries 1832 of them by code.
+    /// A code names a range, and `n` is the half of it that says *removed*. `nr` is the
+    /// commonest code in the corpus — 1371 of 4831 uses — and it means "removed in
+    /// Repentance", so it names the three editions before it.
     ///
-    /// The words are kept and the node is not: a span that declares itself valid in no
-    /// edition is worse than the same span unwrapped. What could not be read is counted,
-    /// which is what `unknown_dlc_codes` exists for.
+    /// It named none of them until 2026-09-15: this parser read whole codes one at a time,
+    /// so 1734 uses opened a frame with an empty `only`, and **1690 of those reached
+    /// `wiki.json`**, where `WikiInline.vue` draws no badge (`v-if="token.only.length"`)
+    /// and the text arrives saying nothing about which edition it belongs to.
     #[test]
-    fn an_edition_that_names_no_edition_keeps_its_words_and_is_counted() {
-        let (v, d) = p("{{dlc|nr|Only since some edition}}");
-        assert!(
-            !v.iter().any(|i| matches!(i, Inline::Edition { .. })),
-            "an edition valid nowhere: {v:?}"
-        );
+    fn a_removal_code_names_the_editions_before_it() {
+        let (v, d) = p("{{dlc|nr|Gone in Repentance}}");
         assert!(
             v.iter().any(|i| matches!(
                 i,
-                Inline::Text { text, .. } if text.contains("Only since some edition")
+                Inline::Edition { only, .. }
+                    if only == &vec![Dlc::Rebirth, Dlc::Afterbirth, Dlc::AfterbirthPlus]
             )),
-            "the words went with it: {v:?}"
+            "got {v:?}"
         );
-        assert_eq!(d.unknown_dlc_codes.get("nr"), Some(&1));
+        assert!(d.unknown_dlc_codes.is_empty());
     }
 
-    /// `{{bug|dlc=r|…}}` says the defect exists only in Repentance, and **204 of the 547
-    /// uses** carry a `dlc`. The arm recursed into the positional argument and never looked
-    /// at a named one, so every one of those sentences reached the reader as if it applied
-    /// to their edition. 74 of the 204 spell a code this parser can read; the other 130 are
-    /// concatenated, and they are counted by the test above rather than guessed at.
+    /// `{{dlc|n}}` is the wiki's code for "no restriction" — row 31, beside `x` and the
+    /// empty string — and the wiki draws no icon for it. A span restricted to all five
+    /// editions is a span restricted to none, so the words come back out of the frame and
+    /// no badge is emitted. Zero uses in the corpus: this is the guard, not a fix.
+    ///
+    /// The same shape carries what could **not** be read: an unreadable code restricts
+    /// nothing either, and is counted, because a span declaring itself valid nowhere is
+    /// worse than the same span unwrapped.
+    #[test]
+    fn a_span_restricted_to_every_edition_draws_no_badge_and_an_unreadable_one_is_counted() {
+        let (v, d) = p("{{dlc|n|Everywhere}}");
+        assert!(
+            !v.iter().any(|i| matches!(i, Inline::Edition { .. })),
+            "a badge naming all five: {v:?}"
+        );
+        assert!(
+            v.iter()
+                .any(|i| matches!(i, Inline::Text { text, .. } if text.contains("Everywhere"))),
+            "the words went with it: {v:?}"
+        );
+        assert!(d.unknown_dlc_codes.is_empty());
+
+        let (v, d) = p("{{dlc|zz|Unreadable}}");
+        assert!(
+            !v.iter().any(|i| matches!(i, Inline::Edition { .. })),
+            "got {v:?}"
+        );
+        assert!(
+            v.iter()
+                .any(|i| matches!(i, Inline::Text { text, .. } if text.contains("Unreadable"))),
+            "the words went with it: {v:?}"
+        );
+        assert_eq!(d.unknown_dlc_codes.get("zz"), Some(&1));
+    }
+
+    /// `{{bug|dlc=r|…}}` says the defect belongs to the editions from Repentance on, and
+    /// **204 of the 547 uses** carry a `dlc`. The arm recursed into the positional argument
+    /// and never looked at a named one, so every one of those sentences reached the reader
+    /// as if it applied to their edition. All 204 spell a code the switch has: 130 of them
+    /// were unreadable here only while a code was read one letter at a time.
     #[test]
     fn a_bug_that_belongs_to_one_edition_says_so() {
         let (v, _) = p("{{bug|dlc=r|Only in Repentance}}");
         assert!(
             v.iter().any(|i| matches!(
                 i,
-                Inline::Edition { only, .. } if only == &vec![Dlc::Repentance]
+                Inline::Edition { only, .. } if only == &vec![Dlc::Repentance, Dlc::RepentancePlus]
             )),
             "got {v:?}"
         );
@@ -1069,7 +1089,7 @@ mod tests {
             v.iter().any(|i| matches!(
                 i,
                 Inline::Edition { only, inline }
-                    if only == &vec![Dlc::Repentance]
+                    if only == &vec![Dlc::Repentance, Dlc::RepentancePlus]
                         && inline.iter().any(|n| matches!(n, Inline::Ref { .. }))
             )),
             "{v:?}"
@@ -1122,7 +1142,7 @@ mod tests {
             vec![
                 text("Boomerang tears", Style::Plain),
                 Inline::Edition {
-                    only: vec![Dlc::Repentance],
+                    only: vec![Dlc::Repentance, Dlc::RepentancePlus],
                     inline: vec![text("+ DMG up", Style::Plain)]
                 }
             ]
@@ -1134,7 +1154,7 @@ mod tests {
             v,
             vec![
                 Inline::Edition {
-                    only: vec![Dlc::Repentance],
+                    only: vec![Dlc::Repentance, Dlc::RepentancePlus],
                     inline: vec![text("only in Repentance", Style::Plain)]
                 },
                 text(" and after", Style::Plain)
@@ -1147,7 +1167,7 @@ mod tests {
         assert_eq!(
             v,
             vec![Inline::Edition {
-                only: vec![Dlc::Repentance],
+                only: vec![Dlc::Repentance, Dlc::RepentancePlus],
                 inline: vec![text("everything after this", Style::Plain)]
             }]
         );
@@ -1166,7 +1186,7 @@ mod tests {
                     label: "Breakfast".into()
                 },
                 Inline::Edition {
-                    only: vec![Dlc::Repentance],
+                    only: vec![Dlc::Repentance, Dlc::RepentancePlus],
                     inline: vec![
                         text(" ", Style::Plain),
                         Inline::Ref {
@@ -1204,8 +1224,8 @@ mod tests {
         // which is not a degradation but a claim — the span says it is valid nowhere, and
         // the app draws no badge for it, so the reader is told nothing and cannot tell that
         // from text with no edition at all. Since 2026-09-15 the words come through plain
-        // and the code is counted, the way `Dlc::parse_codes` has always treated its own
-        // leftovers.
+        // and the code is counted: an unreadable code restricts nothing, which is the same
+        // shape as the wiki's own "no restriction" and a different reason for it.
         let (v, d) = p("{{dlc+|zz}}unknown code");
         assert_eq!(v, vec![text("unknown code", Style::Plain)]);
         assert_eq!(d.unknown_dlc_codes.get("zz"), Some(&1));
@@ -1235,7 +1255,7 @@ mod tests {
     fn plain_keeps_the_words_inside_an_edition_wrapper() {
         assert_eq!(
             plain(&[Inline::Edition {
-                only: vec![Dlc::Repentance],
+                only: vec![Dlc::Repentance, Dlc::RepentancePlus],
                 inline: vec![text("use the Red Key", Style::Plain)],
             }]),
             "use the Red Key",
