@@ -238,6 +238,36 @@ enumerated the singular `Infobox character` while those four pages carry the plu
             counters out of 523 move by one each. The backup of the 8th predates the run. One
             solo, non-Greed win with a snapshot either side closes it; `live_probe` takes them.
       - [ ] The `Live` and `Runs` screens, on the contract this model fixes
+- [ ] **F — Floor, the companion screen** ← F1 done, F2 open
+      - [x] **F1 — the painted grid and the cited rules** (2026-09-15), `feature/floor-grid`.
+            A new pure crate `floor` (the 13x13 grid, nine rules read from the wiki with their
+            quotations, and a solver that says what it cannot judge), `ipc::floor_view`, one
+            wiring command, and the screen — which lives under **Tool**, so it answers with no
+            profile and no save. Spec
+            `docs/superpowers/specs/2026-09-15-floor-secret-rooms-design.md`, plan
+            `docs/superpowers/plans/archive/2026-09-15-floor-grid-and-rules.md`, report
+            `docs/superpowers/reports/2026-09-15-floor-report.md`, and the rules with their
+            sources in `docs/superpowers/reports/2026-09-15-secret-room-rules.md`.
+            **It reopens a decision B8 had closed**, and §1 of the spec says so out loud: a
+            secret-room finder is a different product from "what am I missing tonight". The
+            owner asked for it anyway, which is a scope call and theirs.
+            **Reading the raw wikitext rather than a summary changed the file**: two rules the
+            plan's draft did not have — a 1-neighbour Secret Room, and a Super Secret Room that
+            "cannot be connected to the Secret Room" — and a summarizer had already returned
+            one of the quotations cut in half.
+            **One of the two forced a new constraint and a third solver phase.** The wiki says
+            2 neighbours is possible "even when" 3+ exist and 1 neighbour "only if" none do:
+            same rank, different shape. `NeighbourCountFallback` carries the `3` the sentence
+            states, and the fallback resolves **after** the narrowing rules, because "no
+            **valid** 3+ location" means none that survived them. Pinned by a test that was
+            mutated to check it turns red.
+            **The Start Room's membership is unstated and stays that way.** The wiki's `Rooms`
+            page files it under neither `Normal` nor `Special`, so `SPECIAL_KINDS` does not
+            carry it and a dead end hanging off the start room is not silently decided.
+      - [ ] **F2 — the log's half**: `N rooms in M loops` read back, so the screen can say the
+            game generated 19 rooms and you have painted 15. **Needs a measurement**: which
+            generation attempt in a log describes the floor actually played is a judgment, and
+            it belongs in `run`'s fold measured against the five real logs.
 - [ ] **M5 — Public release**
 
 ---
@@ -1514,6 +1544,57 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
 ---
 
 ## Session log
+
+### 2026-09-15 — Floor: the grid you paint, and the rules that light it
+
+`feature/floor-grid`, cut from `develop`, F1 executed end to end. Nine commits. Rust **929
+passed, 0 failed, 129 skips and 79 `sample:` lines — the same as `develop`'s**; frontend 499
+tests over 71 files; typecheck, lint, `format:check` and `scan` green with no new exemption.
+
+**The research pass is the finding.** Task 1 was run against `?action=raw` rather than a
+summarizer, and that alone changed the rules file: `Super_Secret_Room` and `Ultra_Secret_Room`
+turned out to be two `#REDIRECT` stubs of 44 bytes (so the plan's single URL was right, not
+lazy), two rules the plan's draft did not have came out of the full sentences, and a
+`WebFetch` on the same page had already handed back one quotation cut in half at the comma.
+For a file whose only purpose is to be citable, that is the whole failure.
+
+**The rule that would not fit forced the only real design change.** "2 neighbor locations are
+rare but possible, **even when** there are locations with 3+" and "1 neighbor locations can
+**only** happen **if** there are no valid 3+ locations" are not the same shape, and encoding
+both as ranks would assert what the second denies. Hence `NeighbourCountFallback`, carrying
+the `3` the sentence states — and a third solver phase, because *valid* means "survived the
+narrowing", which is not knowable in the pass that proposes. The test for it was **mutated
+against a solver that judges too early**: exactly one test went red, eleven stayed green.
+
+**Three token families the plan assumed and this repo does not have**, and the repo won each
+time: one theme rather than light/dark, `--spacing-*` rather than `--size-*`, and no
+`--color-chart-*` — so the three ranks got a family of their own, deliberately outside the
+brief's state colours, since none of done / unlockable now / blocked / unreadable / unexpected
+/ challenge means "a cited rule allows a secret room here". `ring-2` is in no file in this
+repo, so a candidate is drawn by its fill.
+
+**Two traps in how the work was verified, both worth more than the feature.** `samples/` is
+git-ignored, so a second worktree does not get it: the first suite run here reported 929 passed
+with **zero** `sample:` lines and nothing red — a green suite that verified nothing, which is
+D3's shape exactly. And counting skips by hand from `--nocapture` output is unreliable, because
+the harness's stdout and `test-support`'s stderr interleave; three runs read 121, 118 and 168
+where the truth was 129, 129 and 175. `scripts/check` never had that problem — it reads
+`ISAACDOME_TEST_DECLARATIONS` — and the first of the two is now a line in `CLAUDE.md`'s
+**Don't** list.
+
+**Three sessions shared one working directory**, and seven commits in, a third one ran
+`git checkout -b` in it: HEAD left `feature/floor-grid` and every tracked file reverted to
+`develop`. Nothing was lost — the commits were on origin — but a branch is a variable shared
+between sessions when `git worktree list` has one row, and a clean `git status` says only that
+your own work is committed. This branch moved to `.claude/worktrees/floor`, hidden through
+`.git/info/exclude` so the repository carries nothing.
+
+**The routing was split with the session doing the Tool refactor**, along the line that lets
+both branches compile: they own `RouteName.Floor` and the `routes.floor` key their `routeTitle`
+cannot typecheck without, this branch owns `[RouteName.Floor]: FloorScreen` and the `floor`
+message block. **Their refactor deleted a patch this plan asked for**: with Floor under an
+origin whose definition is "does not read the `.dat`", `needsProfile` derives from the origin
+with no exception and no comment explaining one.
 
 ### 2026-09-15 — a third section, and the exception that was pointing at it
 

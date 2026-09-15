@@ -102,6 +102,50 @@ export const it = {
       noProfile: 'Senza un salvataggio scelto non sappiamo cosa ti manca.',
     },
   },
+  floor: {
+    intro:
+      'Disegna la mappa del piano come la vedi sulla minimappa: le celle vuote si accendono dove le regole del gioco permettono una stanza segreta. Ogni cella accesa dice quale regola l’ha accesa e da dove è stata letta.',
+    erase: 'Cancella',
+    clear: 'Svuota la griglia',
+    painted: 'stanze disegnate',
+    neighbours: 'stanze adiacenti',
+    source: 'Fonte',
+    unresolved: 'Quello che la griglia non può giudicare',
+    none: 'Nessuna cella permessa dalle regole, con quello che hai disegnato finora.',
+    failed:
+      'Non è stato possibile calcolare i candidati. Quello che hai disegnato resta.',
+    target: {
+      secret: 'Stanza segreta',
+      superSecret: 'Super segreta',
+      ultraSecret: 'Ultra segreta',
+    },
+    room: {
+      start: 'Partenza',
+      normal: 'Normale',
+      boss: 'Boss',
+      treasure: 'Tesoro',
+      shop: 'Negozio',
+      curse: 'Maledetta',
+      challenge: 'Sfida',
+      sacrifice: 'Sacrificio',
+      arcade: 'Sala giochi',
+      library: 'Biblioteca',
+      miniboss: 'Miniboss',
+      secret: 'Segreta',
+      superSecret: 'Super segreta',
+      ultraSecret: 'Ultra segreta',
+    },
+    diagnostic: {
+      gridEmpty:
+        'Disegna almeno una stanza: senza, non c’è niente da giudicare.',
+      noStartRoom:
+        'Segna la stanza di partenza. Senza, la regola sui passi dalla partenza non si può leggere, e la Super segreta resta giudicata solo a metà.',
+      rulesUnreadable:
+        'Le regole di piazzamento non si sono caricate: {reason}.',
+      gridMalformed:
+        'La griglia arrivata non è un piano: {cells} celle invece di 169.',
+    },
+  },
   runs: {
     intro:
       'Le run che l’app ha letto: quelle di questa sessione e quelle delle partite online che il gioco ha già registrato. Il log non ha un orologio, quindi l’ordine è per sessione e non per ora.',

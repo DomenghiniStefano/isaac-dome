@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "license": "CC BY-SA 4.0, The Binding of Isaac: Rebirth Wiki",
+  "read": "2026-09-15",
+  "rules": [
+    {
+      "id": "secret-neighbours",
+      "target": "secret",
+      "quote": "Secret Rooms are equally as likely to be in a valid location with 3 neighbors, as it is with 4 neighbors.",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "neighbourCount", "allowed": [3, 4], "rank": 0 }
+    },
+    {
+      "id": "secret-neighbours-two",
+      "target": "secret",
+      "quote": "2 neighbor locations are rare but possible, even when there are locations with 3+ neighbors available.",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "neighbourCount", "allowed": [2], "rank": 1 }
+    },
+    {
+      "id": "secret-neighbours-one",
+      "target": "secret",
+      "quote": "1 neighbor locations can only happen if there are no valid 3+ neighbor locations, and are very rare.",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "neighbourCountFallback", "allowed": [1], "rank": 2, "supersededByAtLeast": 3 }
+    },
+    {
+      "id": "secret-forbidden-neighbours",
+      "target": "secret",
+      "quote": "Secret Rooms can exist next to all types of rooms except Boss Rooms, Super Secret Rooms, and other Secret Rooms",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "forbiddenNeighbour", "kinds": ["boss", "superSecret", "secret"] }
+    },
+    {
+      "id": "super-secret-dead-end",
+      "target": "superSecret",
+      "quote": "Super Secret Rooms are only located next to one other room",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "neighbourCount", "allowed": [1], "rank": 0 }
+    },
+    {
+      "id": "super-secret-neighbour-not-special",
+      "target": "superSecret",
+      "quote": "this room can't be a Special Room; in other words, it is placed on one of the floor's dead ends, like any other Special Room",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "neighbourNotSpecial" }
+    },
+    {
+      "id": "super-secret-not-next-to-secret",
+      "target": "superSecret",
+      "quote": "cannot be connected to the Secret Room",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "forbiddenNeighbour", "kinds": ["secret"] }
+    },
+    {
+      "id": "super-secret-second-longest",
+      "target": "superSecret",
+      "quote": "Super Secret Rooms replace the dead-end room that would require the 2nd most rooms walked through from the start room to access",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "deadEndDistanceRank", "rank": 1 }
+    },
+    {
+      "id": "ultra-secret-connections",
+      "target": "ultraSecret",
+      "quote": "Ultra Secret rooms are most likely generated in spots that connect to 3+ non-red rooms through its adjacent red rooms (different squares in L rooms count as 2).",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "unmodelled", "note": "red rooms are the Red Key mechanic, created during a run, and are not painted on this grid; the rule is stated two hops out" }
+    }
+  ]
+}
