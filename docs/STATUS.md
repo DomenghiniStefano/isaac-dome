@@ -811,11 +811,27 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
             - [ ] 3.6 Settings and About — provenance, credits, the three promises; About
                   becomes a dialog, not a page (B25); the profile screen becomes a welcome
                   flow (B17); the KPI and matrix changes of B20, B22, B23
-            - [ ] 3.7 Tabs that survive a restart (B6) — **the session document and the two
-                  settings landed early, on 2026-09-13, with the tray** (`store` migration 3,
-                  `lib/window/sessionDocument.ts`, `/settings/background`). What is left for
-                  3.7 is the rest of what that document is meant to hold: the sidebar's width
-                  and every table's dragged size, per table (B27)
+            - [ ] 3.7 Tabs that survive a restart (B6) — designed on 2026-09-15 as **one spec and
+                  three branches**, spec `docs/superpowers/specs/2026-09-15-tabs-session-design.md`.
+                  The session document and the two settings had landed early, on 2026-09-13, with
+                  the tray (`store` migration 3, `lib/window/sessionDocument.ts`,
+                  `/settings/background`).
+                  - [x] **3.7a — a tab owns its state** (2026-09-16), `feature/tabs-state`. A
+                        history entry is `{ location, view? }`; one composable gives a screen back
+                        its reading; Unlock, the Collection, Runs and Search declare what they
+                        keep; a list comes back where it was or at its top; the strip scrolls.
+                        B39 built, B6's two open questions answered, B59 opened. Plan
+                        `docs/superpowers/plans/2026-09-15-tabs-own-their-state.md`, report
+                        `docs/superpowers/reports/2026-09-16-tabs-own-their-state-report.md`.
+                        **Not seen in a window yet**, which both entries' `Needs:` lines ask for,
+                        and **waiting to merge** for that reason.
+                  - [ ] **3.7b — windows of tabs**: document version 2, the ledger every window
+                        keeps, the writer elected by a pure function — `main` writes today and
+                        **`main` can be closed while other windows live**, so the session silently
+                        stops being written from that moment — the monitor clamp, the restore at
+                        launch, and `SessionTooLarge` leaving the swallowed errors
+                  - [ ] **3.7c — the measured sizes** (B27): the sidebar's width and each table's
+                        dragged size, as named keys beside the windows
 
 ---
 
