@@ -671,6 +671,10 @@ export const it = {
   gate: {
     needsProfile:
       'Progressi dipende dal profilo attivo: scegline uno per vedere questa schermata.',
+    blocked: {
+      title: 'Progressi ha bisogno di un salvataggio',
+      settings: 'Apri le impostazioni del profilo',
+    },
   },
   indicator: {
     noProfile: 'Nessun profilo attivo',
