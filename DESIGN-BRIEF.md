@@ -18,7 +18,7 @@ From here the contract in §7 is live: it changes only deliberately, and a chang
 on rather than merely committed.
 
 **Added on 2026-09-06:** three new product requirements, which land on the shell before
-they land on individual screens — the app splits into **two top-level sections** (§4),
+they land on individual screens — the app splits into **top-level sections** (§4),
 **global search**, and **multiple tabs** with session restoration (§4.2). Logged
 as B5 and B6 in `docs/BACKLOG.md`. They change none of the contracts in §7.
 
@@ -125,18 +125,33 @@ variants of the components above.
 
 ---
 
-## 4. The two sections, and the eight screens inside
+## 4. The three sections, and the screens inside
 
-The app has **two top-level sections**, and it isn't a matter of taste: they have two
+The app has **three top-level sections**, and it isn't a matter of taste: they have three
 different preconditions, and that's the thing that most shapes the shell's design.
 
-| | **Wiki** | **Progress** |
-|---|---|---|
-| does it need the game installed? | **no** | yes — catalog, names, sprites |
-| does it need a save chosen? | **no** | yes |
-| where the data comes from | dataset compiled into the binary | `.dat` + XML + `.a` archives |
-| what it contains | ~1,727 pages: items, trinkets, achievements, bosses, challenges, characters | the seven screens in the table below |
-| if there's nothing | works in full, **without images** | shows the profile selection |
+| | **Progress** | **Tool** | **Wiki** |
+|---|---|---|---|
+| does it need the game installed? | yes — catalog, names, sprites | no, it degrades to ids | **no** |
+| does it need a save chosen? | yes | **no** | **no** |
+| where the data comes from | `.dat` + XML + `.a` archives | `log.txt`, the run archive, what you painted | dataset compiled into the binary |
+| what it contains | the five screens in the table below | Live, Runs, Floor | ~1,727 pages: items, trinkets, achievements, bosses, challenges, characters |
+| if there's nothing | shows the profile selection | answers anyway, with less in it | works in full, **without images** |
+
+**This read "two sections" until 2026-09-15, and the sentence was right when it was
+written.** What it got right is the method — a section is a precondition, not a folder — and
+what it missed is that a third precondition had been accumulating inside *Progress*. Live
+reads `log.txt` and Runs reads the run archive; neither has ever opened the `.dat`, and
+`RunsScreen.vue` said so in a comment while sitting behind the profile gate anyway. They were
+filed by resemblance — they are about playing — rather than by what they need, which is the
+mistake this table exists to prevent.
+
+The Floor screen (`docs/superpowers/specs/2026-09-15-floor-secret-rooms-design.md`) made it
+visible by being a third screen of the same kind, and the F1 plan's first answer was a
+per-route exception carved into `router/routes.ts`: `needsProfile` for the Progress origin
+*except* this one. **The exception is the symptom; the section is the fix.** `needsProfile` is
+still derived from the origin and from nothing else, and now with nothing carved out of it —
+which is the property `sectionNav.test.ts` keeps.
 
 Three consequences, all to be designed:
 
@@ -156,9 +171,9 @@ are destinations. They sit at the bottom of the shell bar and open as regular ta
 
 ### The screens
 
-Seven live inside *Progress*. Two don't, and it's worth saying up front: **Profile
-selection** (0) is what *Progress* shows until a choice is made, and **Search** (8)
-cuts across both sections — it searches the wiki and progress together (§4.2).
+Five live inside *Progress* and three inside *Tool*. Two live in neither, and it's worth
+saying up front: **Profile selection** (0) is what *Progress* shows until a choice is made,
+and **Search** (8) cuts across all three — it searches the wiki and progress together (§4.2).
 
 The traffic light = availability of real data, not priority.
 
@@ -171,6 +186,7 @@ The traffic light = availability of real data, not priority.
 | 5 | **Collection** | Items never touched, by pool and quality | save + catalog | 🟢 **real** (§7.7): the save's item collection joined with the catalog's collectibles — name, sprite, quality, pools, origin, whether the collection holds it, and the achievement that locks it. Trinkets have no slot in the save, and aren't listed |
 | 6 | **Runs** | Win rate, nemesis, streak | run archive | 🔴 M4 |
 | 7 | **Live** | What I've collected in this run | log watcher | 🔴 M4 |
+| 9 | **Floor** | Where the secret room can be on the floor I'm on | what you painted + the game's cited placement rules | 🔴 F1 (`docs/superpowers/specs/2026-09-15-floor-secret-rooms-design.md`) |
 | 8 | **Search** | Where this thing is, wherever the app knows it | catalog + wiki + save + graph | 🟢 designable now for catalog and wiki; graph nodes enter the results with M2 (B5) |
 | 0 | **Profile selection** | What am I looking at, and how do I change it | **discovery only** | 🟢 **designable now** |
 
@@ -258,7 +274,7 @@ Four design consequences, all mandatory:
    as soon as it passes five tabs. It needs a mark of origin on the tab itself — the
    section's icon, not color alone, which holds up neither in monochrome nor for someone
    who can't distinguish hues.
-2. **Main navigation and the tab bar aren't the same thing.** The two sections and the
+2. **Main navigation and the tab bar aren't the same thing.** The three sections and the
    screens inside them are the orientation (where I can go); the tabs are what I have open
    right now. The design has to say how they coexist without becoming two overlapping rows
    of tabs.
@@ -302,7 +318,7 @@ user can't tell why that row is there.
 A search result, on the IPC, is a `Target` (§8) plus the match's context: opening a
 result and following a wiki link are **the same action**, and they can look the same.
 
-**Search sits above the two sections, not inside one.** The field lives in the shell and
+**Search sits above the three sections, not inside one.** The field lives in the shell and
 is reachable from any tab; a result declares which section it comes from, because
 "Brimstone" exists as a wiki page *and* as a Collection row, and those are two different
 destinations. From here, the way search **degrades**, which is a state to design for:
@@ -1637,7 +1653,7 @@ the names that appear in the game and the ones the user searches for.
 ## 13. How to use this document
 
 **The shell comes first**, which since 2026-09-06 is the part carrying the most
-decisions: the two sections (§4), the mixed tab bar with its mark of origin, the profile
+decisions: the three sections (§4), the mixed tab bar with its mark of origin, the profile
 indicator, and the entry point to search (§4.2). It's also the one part that can't be put
 off, because every screen lives inside it.
 
@@ -1685,7 +1701,7 @@ Five questions the first round of visuals should answer:
    merge them into a single row of tabs would make all three unreadable. The opposite also
    holds: three stacked strips eat into the usable height of a 1280×800 window.
 
-6. How do the tabs of the **two sections** (§4) coexist in a single tab bar?
+6. How do the tabs of the **three sections** (§4) coexist in a single tab bar?
    Comparing a wiki page with your own collection is the whole reason the tabs exist, so
    filtering the bar by section is off the table. It needs a mark of origin that holds up
    with ten tabs open and that isn't just a color.
