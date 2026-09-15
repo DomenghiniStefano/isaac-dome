@@ -248,6 +248,7 @@ export const en: MessageSchema = {
     id: 'id',
     lockedBy: 'unlocked by',
     achievement: 'achievement',
+    empty: 'No items to show.',
     noResults: 'No items with these filters.',
     resetFilters: 'Reset the filters',
     noFilters: 'no filters',
@@ -676,6 +677,7 @@ export const en: MessageSchema = {
     activeFilters: 'active filters',
     reset: 'Reset',
     resetFilters: 'Reset the filters',
+    empty: 'No achievements to show.',
     noResults: 'No rows with these filters.',
     facet: {
       state: 'State',

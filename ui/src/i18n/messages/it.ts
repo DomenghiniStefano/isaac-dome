@@ -251,6 +251,7 @@ export const it = {
     id: 'id',
     lockedBy: 'si sblocca con',
     achievement: 'achievement',
+    empty: 'Nessun oggetto da mostrare.',
     noResults: 'Nessun oggetto con questi filtri.',
     resetFilters: 'Azzera i filtri',
     noFilters: 'nessun filtro',
@@ -688,6 +689,7 @@ export const it = {
     activeFilters: 'filtri attivi',
     reset: 'Azzera',
     resetFilters: 'Azzera i filtri',
+    empty: 'Nessun obiettivo da mostrare.',
     noResults: 'Nessuna riga con questi filtri.',
     facet: {
       state: 'Stato',
