@@ -100,6 +100,14 @@ impl Editions {
             .map(|(_, mask)| Editions(*mask))
     }
 
+    /// A mask as the Cargo tables store it, which is `{{dlcset}}`'s own return value: 1 to
+    /// 31 are the thirty-one sets the switch can produce — the thirty codes cover 1 to 30
+    /// and "no restriction" is 31. 0 is the switch's `invalid string!`, so it is `None` and
+    /// not an empty set.
+    pub fn of_mask(mask: u8) -> Option<Editions> {
+        (1..=31).contains(&mask).then_some(Editions(mask))
+    }
+
     /// The editions in release order, which is `Dlc`'s declaration order.
     pub fn list(self) -> Vec<Dlc> {
         BITS.iter()
