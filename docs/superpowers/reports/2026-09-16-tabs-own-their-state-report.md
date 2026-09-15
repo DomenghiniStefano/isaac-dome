@@ -2,7 +2,7 @@
 
 **Branch** `feature/tabs-state`, cut from `develop`. **Spec**
 `docs/superpowers/specs/2026-09-15-tabs-session-design.md`, **plan**
-`docs/superpowers/plans/2026-09-15-tabs-own-their-state.md`.
+`docs/superpowers/plans/archive/2026-09-15-tabs-own-their-state.md`.
 `pnpm check` all green: **7 skips, 1483 real files touched**, which is the number that says the
 tests on real data actually ran — this was executed in a second worktree, where `samples/` is a
 junction and an unjunctioned one would have reported 0 while still passing.
