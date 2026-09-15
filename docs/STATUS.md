@@ -73,7 +73,10 @@ enumerated the singular `Infobox character` while those four pages carry the plu
 - [x] **M0 — Format spike**
       `.dat` format decoded and verified on 28 real saves, working Python parser,
       counters labeled, marks matrix rebuilt, log verified.
-- [ ] **M1 — Rust parser, discovery, unpack, Completion screen** ← in progress
+- [ ] **M1 — Rust parser, discovery, unpack, Completion screen** ← in progress, and what keeps
+      it open is now **3.6 Settings and About** and **3.7 tabs that survive a restart**, plus the
+      wiki polish listed under `wiki`. Everything the title names is done: the parser, discovery,
+      unpack and the Completion screen, which landed as sub-project 3.2 on 2026-09-11.
 - [x] **M2 — Unlock graph** (2026-09-07). The Unlock *section* is frontend work and
       waits for the design system; the graph behind it is done — report in
       `docs/superpowers/reports/2026-09-07-unlock-graph-report.md`.
@@ -125,11 +128,16 @@ enumerated the singular `Infobox character` while those four pages carry the plu
       ordered series of achievements whose order is yours and can never contradict the
       graph. Report in `docs/superpowers/reports/2026-09-07-plan-queue-report.md`. What
       remains of M3 is the screen, which waits for the design system.
-- [ ] **M4 — Log watcher and run archive** ← designed, not started. Four pieces and not a
-      screen: a pure `run` crate (typed events, the fold, the rules file, and the part of
-      tailing that is not I/O), a thin `log-watch`, the store's third migration — `events`
-      as rows, `runs` as a derived cache carrying the rules version that produced it — and
-      the two routes the shell already reserves as placeholders.
+- [x] **M4 — Log watcher and run archive** — **closed on 2026-09-15**, when its last open
+      measurement was answered. It reads "designed, not started" no longer: that headline
+      survived both sub-projects and both screens, and was corrected only when somebody asked
+      what stage the project was at and the file could not say.
+      All four pieces are in: the pure `run` crate (typed events, the fold, the rules file, and
+      the part of tailing that is not I/O), a thin `log-watch`, the store's **fourth** migration
+      — `events` as rows, `runs` as a derived cache carrying the rules version that produced it
+      — and the two routes, which are `Live` and `Runs` and are real screens under **Tool**.
+      Every sub-item below it is closed, which is the check that was run before this box was
+      ticked rather than after.
       - [x] **Sub-project 1, the run model and the log watcher — design** (2026-09-12),
             `docs/superpowers/specs/2026-09-12-m4-run-model-design.md`. Three decisions
             taken in conversation: **backfill everything**, so the archive is born full from
@@ -173,7 +181,7 @@ enumerated the singular `Infobox character` while those four pages carry the plu
             fake option is a control that changes nothing; and two badges wore the `Unknown`
             variant — the question mark this design keeps for what could not be read — for
             **online** and **abandoned**, which are facts. Only a window said so.
-      - [ ] **Sub-project 2, the two screens — design taken on 2026-09-14**,
+      - [x] **Sub-project 2, the two screens — designed 2026-09-14, both merged the same day**,
             `docs/superpowers/specs/2026-09-14-m4-run-screens-design.md`. Three decisions in
             conversation plus one word: **Run is a diary** (a row per run, what happened, not
             whether you are improving — the alternative was declined and the offer was weak,
@@ -231,13 +239,20 @@ enumerated the singular `Infobox character` while those four pages carry the plu
             shorter than 4 KiB returns the whole file, so the prefix changed with every line the
             game wrote and every read looked like a new source — which would have imported the
             whole archive a second time. The window is stored with its length now.
-      - [ ] **The agreement with the game's own counters stays open**, and that is a measured
-            result rather than a gap. The spec named 2026-09-08 as the one window that could
-            answer it; measured, the window does not contain the run — the log calls
-            `unlock steam achievement` twice and **no slot of 642 turns on** across it, while 2
-            counters out of 523 move by one each. The backup of the 8th predates the run. One
-            solo, non-Greed win with a snapshot either side closes it; `live_probe` takes them.
-      - [ ] The `Live` and `Runs` screens, on the contract this model fixes
+      - [x] **The agreement with the game's own counters — closed on 2026-09-15.** It had been
+            open as a *measured* result rather than a gap: the spec named 2026-09-08 as the one
+            window that could answer it, and measuring it showed the window does not contain its
+            own run — the log calls `unlock steam achievement` twice and **no slot of 642 turns
+            on** across it. The owner played the run the entry asked for, solo and non-Greed, and
+            the window around it says `STREAK_COUNTER` +1 for the one win the log folds to and
+            `DEATHS` unmoved for its zero deaths.
+            **And the link the archive was missing came with it**: the log's
+            `unlock steam achievement '<id>'` and the save's achievement slot are the **same
+            number**, which the 2026-09-08 test could only record as unknown. Report
+            `docs/superpowers/reports/2026-09-15-window-and-the-eleventh-chunk.md`.
+      - [x] The `Live` and `Runs` screens, on the contract this model fixes — both merged on
+            2026-09-14 (2a and 2b above), and both moved under **Tool** on 2026-09-15 because
+            neither reads the `.dat`.
 - [ ] **F — Floor, the companion screen** ← F1 done, F2 open
       - [x] **F1 — the painted grid and the cited rules** (2026-09-15), `feature/floor-grid`.
             A new pure crate `floor` (the 13x13 grid, nine rules read from the wiki with their
@@ -456,8 +471,15 @@ A single SQLite file, `isaacdome.db`, in the app's data folder; schema versioned
       the same id twice failing while leaving the first row intact, a newer schema
       rejected, a non-SQLite file, an unreadable row among others, and the saved row that
       contains **only the key** (read with rusqlite: no `name`, no `iconUrl`).
-- [ ] **Migration 2, decided but not written**: the snapshots table (sections 1 and 4 of a
-      `.dat`, with date and origin) imported from `save_backups\` and `online_logs\`. Arrives with M3.
+- [ ] **The snapshots table, decided and still not written**: sections 1 and 4 of a `.dat`,
+      with date and origin, imported from `save_backups\` and `online_logs\`.
+      **It is not "migration 2" any more** — this line said so until 2026-09-15 and three other
+      migrations were written past it: 2 is the plan queue, 3 the window session, 4 the run
+      archive. It would be the **fifth**. It also said "arrives with M3", and M3's queue shipped
+      on 2026-09-08 without it.
+      What it is worth is unchanged and now larger: `save_backups\` holds **40 dated pairs** on
+      this machine and `online_logs\` **30 more** profile snapshots, which is a history the app
+      shows nothing of.
 
 ### `wiki` — wiki text as a typed tree, embedded in the binary ✅
 
@@ -593,8 +615,12 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
             reaching the paragraph branch is what flushes an open list. Dropped and
             counted in `Diagnostics::orphan_closers`. The raw-syntax count in
             `text_nodes_carry_no_raw_template_syntax` went 125 → 83.
-      - [ ] *Representing the multi-line wrapper itself* — **reclassified as a design
-            decision, not a parser fix.** The template's content is block-level, so
+      - [x] *Representing the multi-line wrapper itself* — **closed on 2026-09-15 as B49, and
+            the claim below was wrong.** No `Block` variant was needed: a census of every span in
+            `dataset/raw/` that opens on one line and closes on another found seventeen, in four
+            families, each with a shape the contract already has. The sentence that made this a
+            design decision is the one it refuted. What it reads as originally:
+            The template's content is block-level, so
             expressing it needs a `Block` variant, and `Block` crosses the IPC.
             `column list` (51 occurrences) is pure layout and could be dropped;
             `{{bug|…}}` (4) is not, and the crate already models it specially in the
@@ -663,18 +689,27 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
       the `samples/live.rep+persistentgamedata1.dat` snapshot from 2026-08-31, which the
       tests run against, has 379. The number on screen follows the file, it isn't a constant.
 - [ ] **Next steps for the webapp**, from the contracts review (2026-09-05):
-      - [ ] the string unions in `ui/src/lib/ipc/types.ts` — `CandidateView.prefix`,
+      - [x] the string unions in `ui/src/lib/ipc/types.ts` — **overtaken**: the file is
+            generated from the Rust types since 2026-09-13 and `pnpm scan` covers rules 4 and 5,
+            so `CandidateView.prefix` is `SavePrefix` and the six are enums on both sides. The
+            list below is the shape of the problem as it was, kept because it names the six:
+            `CandidateView.prefix`,
             `MissingReason`, `OriginView`, `ItemKindView`, `CandidateSource`, `StepsBasis`:
             that's six of them since fieldless enums travel as strings, and they will grow —
             they need converting to `const … as const`
             in the modules that own them (rule 5), and `ui/scripts/scan-conventions.mjs` needs
             to gain checks for rules 4 (raw `<button>`/`<input>`: `App.vue` still has one in the
             candidate list) and 5, unchecked by anything today;
-      - [ ] `next_steps` rebuilds the entire `UnlockView` (base64 icons twice on every
-            load): acceptable for the verification screen, needs rethinking for the real one;
+      - [x] `next_steps` rebuilds the entire `UnlockView` — **closed on 2026-09-08** by the icon
+            protocol (C2): no row carries base64 at all, each carries a reference the Tauri crate
+            serves, and `next_steps` went 124 KB to 3 KB. As written it read: "base64 icons twice
+            on every load, acceptable for the verification screen, needs rethinking for the real
+            one";
       - [ ] in the visual checks the on-screen number is compared against a dated reference
             file, not a constant: the app reads the live save, which changes as you play.
-- [ ] Real Completion screen — **this is webapp work**, not base work: starts after the
+- [x] Real Completion screen — **done as sub-project 3.2** (2026-09-11), with the mark symbols
+      and character heads cropped from the user's own sheets. It was webapp work and it started
+      after the handoff, exactly as this line said it would.
       handoff to design (see below)
 - [x] shadcn-vue, Reka UI, vue-i18n — arrived with the design system's first cycle
       (2026-09-10); Pinia, Vue Router and TanStack arrive with the screens
