@@ -5,11 +5,20 @@ import type { TabLocation } from '@/router/routeTable'
 
 type Message = MessageKey<MessageSchema>
 
-// A tab is its own little browser: the locations it has been through, and which one of them
-// it is showing. `entries` is never empty, so `index` always points at something.
+// A tab's history entry: where it is, and how it was being read there. `view` is `unknown` on
+// purpose — the shell stores it and never looks inside, and each screen validates its own
+// (`lib/tabs/tabView.ts`). It is optional so an entry of a screen with nothing to remember stays
+// exactly as small as it was.
+export interface Entry {
+  location: TabLocation
+  view?: unknown
+}
+
+// A tab is its own little browser: the views it has been through, and which one of them it is
+// showing. `entries` is never empty, so `index` always points at something.
 export interface Tab {
   id: string
-  entries: TabLocation[]
+  entries: Entry[]
   index: number
 }
 
@@ -22,11 +31,15 @@ export interface TabsState {
 // wiki reading has no reason to grow without a bound, and what B6 will persist stays small.
 export const HistoryDepth = 50
 
-export const tabLocation = (tab: Tab): TabLocation => tab.entries[tab.index]
+export const tabLocation = (tab: Tab): TabLocation =>
+  tab.entries[tab.index].location
+
+// How the entry a tab is showing was being read, or nothing when it was never read into.
+export const entryView = (tab: Tab): unknown => tab.entries[tab.index]?.view
 
 // The tab bar's rules, pure: the store only holds the result.
 export const firstState = (id: string, location: TabLocation): TabsState => ({
-  tabs: [{ id, entries: [location], index: 0 }],
+  tabs: [{ id, entries: [{ location }], index: 0 }],
   activeId: id,
 })
 
@@ -42,7 +55,7 @@ export const openTab = (
   return {
     tabs: [
       ...state.tabs.slice(0, at),
-      { id, entries: [location], index: 0 },
+      { id, entries: [{ location }], index: 0 },
       ...state.tabs.slice(at),
     ],
     activeId: id,
@@ -205,10 +218,12 @@ const sameView = (a: TabLocation, b: TabLocation): boolean =>
 const goTo = (tab: Tab, location: TabLocation): Tab => {
   if (sameView(tabLocation(tab), location)) {
     const entries = [...tab.entries]
-    entries[tab.index] = location
+    // The view survives a refinement of the same view: what was refined is the location, and
+    // the record describes the reading, not the query that reached it.
+    entries[tab.index] = { ...entries[tab.index], location }
     return { ...tab, entries }
   }
-  const entries = [...tab.entries.slice(0, tab.index + 1), location].slice(
+  const entries = [...tab.entries.slice(0, tab.index + 1), { location }].slice(
     -HistoryDepth,
   )
   return { ...tab, entries, index: entries.length - 1 }
@@ -236,6 +251,26 @@ export const refineTab = (
   return tab && sameView(tabLocation(tab), location)
     ? navigateTab(state, location)
     : state
+}
+
+// Changing how the entry the tab is showing is being read, and nothing else. The guard is
+// `refineTab`'s and exists for the same reason: a debounced write can land after the user has
+// gone back or switched tab, and what it says must reach no tab rather than the wrong one.
+export const setEntryView = (
+  state: TabsState,
+  location: TabLocation,
+  view: unknown,
+): TabsState => {
+  const tab = state.tabs.find((each) => each.id === state.activeId)
+  if (!tab || !sameView(tabLocation(tab), location)) return state
+  const entries = [...tab.entries]
+  entries[tab.index] = { ...entries[tab.index], view }
+  return {
+    ...state,
+    tabs: state.tabs.map((each) =>
+      each.id === tab.id ? { ...each, entries } : each,
+    ),
+  }
 }
 
 export const canGoBack = (tab: Tab | undefined): boolean =>
