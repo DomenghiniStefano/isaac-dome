@@ -3,8 +3,10 @@ import type { TabLocation } from '@/router/routeTable'
 import type { Entry, Session, TabSeed } from '@/stores/tabModel'
 
 // The document's version. It is bumped when an older app could read the new shape and be wrong
-// about it — never for a part it can simply ignore, which is why 3.7's sidebar width and table
-// sizes will join as named keys without touching this number.
+// about it — never for a part it can simply ignore. An entry gaining a `view` is such a part, so
+// 3.7a does not move it, and neither will 3.7c's sidebar width and table sizes. **3.7b does**:
+// the top level stops saying `tabs` and starts saying `windows`, which an older app would read
+// as a session it cannot use.
 const Version = 1
 
 const routeNames: readonly string[] = Object.values(RouteName)
@@ -24,18 +26,33 @@ const readLocation = (value: unknown): TabLocation | null => {
     : { name, query: query as TabLocation['query'] }
 }
 
-// A stored history entry. The reading it carries is `unknown` here on purpose — what it means
-// is the screen's, and the screen validates it (`lib/tabs/tabView.ts`).
+// A stored view, as far as it can be trusted here: an object, and nothing more. What it means
+// is the screen's, and the screen validates it (`lib/tabs/tabView.ts`). Anything else — a
+// string, a number, an array — is dropped, and **the entry survives without it**: a tab that
+// opens saying what it has beats a tab that vanishes (B6).
+const readView = (value: unknown): unknown =>
+  typeof value === 'object' && value !== null && !Array.isArray(value)
+    ? value
+    : undefined
+
+// Two shapes, one reader. Before 3.7a an entry *was* a location, and a document written by that
+// version must still open: losing somebody's tabs on an update is not a thing the app can
+// explain to them afterwards.
 const readEntry = (value: unknown): Entry | null => {
   if (typeof value !== 'object' || value === null) return null
   const { location, view } = value as { location?: unknown; view?: unknown }
+  if (location === undefined) {
+    const bare = readLocation(value)
+    return bare === null ? null : { location: bare }
+  }
   const read = readLocation(location)
-  return read === null
-    ? null
-    : view === undefined
-      ? { location: read }
-      : { location: read, view }
+  if (read === null) return null
+  const kept = readView(view)
+  return kept === undefined
+    ? { location: read }
+    : { location: read, view: kept }
 }
+
 const readTab = (value: unknown): TabSeed | null => {
   if (typeof value !== 'object' || value === null) return null
   const { entries, index } = value as { entries?: unknown; index?: unknown }
@@ -81,9 +98,21 @@ export const readSession = (raw: string | null): Session | null => {
   return { tabs: kept, activeIndex: kept.length === 0 ? 0 : active }
 }
 
+// Only the entry each tab is showing keeps its view. `MAX_SESSION_BYTES` is 64 KiB and its
+// budget was written for "fifty tabs of route names and queries"; a record on every one of a
+// tab's fifty entries is a different sum. Bounding it by construction beats raising a number,
+// and what it costs is that going back in a *restored* tab gets the screen's empty state — the
+// same thing that happened to every restored tab before 3.7a.
+const stored = (tab: TabSeed): TabSeed => ({
+  ...tab,
+  entries: tab.entries.map((entry, at) =>
+    at === tab.index ? entry : { location: entry.location },
+  ),
+})
+
 export const writeSession = (session: Session): string =>
   JSON.stringify({
     version: Version,
-    tabs: session.tabs,
+    tabs: session.tabs.map(stored),
     activeIndex: session.activeIndex,
   })
