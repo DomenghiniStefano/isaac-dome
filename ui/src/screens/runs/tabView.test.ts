@@ -10,6 +10,7 @@ describe("Runs' reading", () => {
     expect(runsView.empty()).toEqual({
       filter: emptyFilter<RunFacet>(order),
       selected: null,
+      offset: null,
     })
   })
 

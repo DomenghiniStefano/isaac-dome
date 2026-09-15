@@ -4,7 +4,7 @@ import { searchView } from './tabView'
 
 describe("Search's reading", () => {
   it('is nothing picked when there is nothing to read', () => {
-    expect(searchView.empty()).toEqual({ picked: [] })
+    expect(searchView.empty()).toEqual({ picked: [], offset: null })
   })
 
   it('reads back the groups that were picked', () => {
