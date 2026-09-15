@@ -821,7 +821,7 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
                         its reading; Unlock, the Collection, Runs and Search declare what they
                         keep; a list comes back where it was or at its top; the strip scrolls.
                         B39 built, B6's two open questions answered, B59 opened. Plan
-                        `docs/superpowers/plans/2026-09-15-tabs-own-their-state.md`, report
+                        `docs/superpowers/plans/archive/2026-09-15-tabs-own-their-state.md`, report
                         `docs/superpowers/reports/2026-09-16-tabs-own-their-state-report.md`.
                         Merged into `develop` with the suite green on the merge result.
                         **Not seen in a window yet**, which both entries' `Needs:` lines ask for:
