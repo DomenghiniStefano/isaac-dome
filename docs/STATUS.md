@@ -1545,6 +1545,33 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
 
 ## Session log
 
+### 2026-09-15 (evening, after) — the half of B48 that was reported and not fixed
+
+`fix/empty-lists`, cut from `develop`. `scripts/check` green.
+
+**In the Collection the state was real, not theoretical**, which is the finding. B48 had reported
+the shape as "still live in `CollectionScreen` and `UnlockScreen`" without saying whether anybody
+could reach it; a machine **without the game** reaches it on the first screen it opens — the view
+answers `items: []` with a `noCatalog` diagnostic, and the list under that banner said *"Nessun
+oggetto con questi filtri."* with a button to clear them. In **Unlock** it is not reachable:
+`withoutCatalog` keeps every node and counts it as unread, so that half is a guard and is written
+down as one.
+
+`emptyList` moved out of `lib/wiki/` and takes its two message keys, so the decision stays in one
+tested function and each screen names its own sentences. Its second argument stopped being the
+query and became **whether anything is filtering**, because here a reset clears the facets too —
+and `isFiltering` counts the picks a screen *opens* on, since a reset undoes those as well.
+
+**Seen in a window**, which this repo counts as the other half of a closure and which B48 could
+not do: port 1420 was free, so `pnpm ui:dev` evicted nobody. On `?catalog=none` the Collection's
+opening filter keeps the button (it clears the two chips the toolbar shows) and the sentence is
+right; cleared, the sentence stays and the button is gone. The wiki's empty category still says it
+is empty, with no reset, after the move.
+
+**The orphan the `Don't` list warns about is real**: stopping the task that ran `pnpm ui:dev` left
+vite holding 1420 as a grandchild under two `cmd.exe`. It was checked by command line before being
+stopped, the way `dev-reset.mjs` does it.
+
 ### 2026-09-15 (evening) — a dlc code is a range, and `n` means *not in*
 
 `feature/dlc-ranges`, cut from `develop`. **B52 closed**, B53 opened. Report
