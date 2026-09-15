@@ -381,9 +381,9 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
                 "Book of Virtues"
             } else {
                 // With the article: the item's page is "The Book of Belial", and without it
-                // the resolver answers nothing — 34 uses lost the reference, and the ": "
+                // the resolver answers nothing — 33 uses lost the reference, and the ": "
                 // that introduces the description with it.
-                "Book of Belial"
+                "The Book of Belial"
             };
             if let Resolution::Target(target) = r.resolve("i", label) {
                 out.push(Inline::Ref {
@@ -950,6 +950,27 @@ mod tests {
             }
         )));
         assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// The same arm, the same half of the sentence, lost for the other book: the item is
+    /// **The Book of Belial**, with the article, and the arm resolved `Book of Belial`,
+    /// which is not an item. All **33 uses** dropped the reference and with it the ": "
+    /// that introduces the description — while the Virtues arm right beside it worked,
+    /// which is why nobody saw it. The two names are written out per arm precisely so a
+    /// third template could not inherit the wrong item; one of the two *was* the wrong item.
+    #[test]
+    fn the_book_of_belial_synergy_names_the_item() {
+        let (v, _) = p("{{Book of Belial synergy|description=The axe glows}}");
+        assert!(
+            v.iter().any(|i| matches!(
+                i,
+                Inline::Ref {
+                    target: Target::Item { id: 34 },
+                    ..
+                }
+            )),
+            "the item the synergy is with is missing: {v:?}"
+        );
     }
 
     /// `{{achievement text | I RULE!, Backasswards, Ultra Hard}}` is the odd one out: it
