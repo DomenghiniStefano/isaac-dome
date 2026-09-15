@@ -289,6 +289,7 @@ export const en: MessageSchema = {
       'Without the game installed the pages have no picture: the artwork comes from your own copy of Isaac, not from the app.',
     search: 'search a page',
     noResults: 'No page with this name.',
+    emptyCategory: 'This category has no pages.',
     resetFilters: 'Clear the search',
     back: 'Back to the category',
     id: 'id',
