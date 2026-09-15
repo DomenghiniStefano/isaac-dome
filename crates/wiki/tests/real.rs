@@ -444,8 +444,27 @@ fn text_nodes_carry_no_raw_template_syntax() {
     // left are the ones that are not pure layout — `Book of Virtues synergy` 6,
     // `Book of Belial synergy` 1, multi-line `{{bug|…}}` 4 — plus the 8 that are genuine
     // text. Those still want the `Block` variant this comment asks for.
+    //
+    // **35 → 9 on 2026-09-15**, and the `Block` variant the paragraph above asks for was
+    // never needed: a census of every template that opens on one line and closes on
+    // another said the remainder is four families, and each one already has a shape the
+    // contract can say. The two `X synergy` templates open **on a list item** and their
+    // content is nothing but `**` lines — that is `ListItem { inline, children }`, so the
+    // wrapper is re-closed at the end of its sentence and the lines below stay the
+    // children they are. All nine multi-line `{{bug|…}}` sit under `== Bugs ==`, which the
+    // tree already carries as `SectionKind::Bugs`, and the single-line case had been
+    // dropped inline for as long as `CONTENT_WRAPPERS` existed — so they are dropped too,
+    // rather than one wrapper being modelled two ways. `scroll box`, one use on The Lost's
+    // page, is `column list`'s family and was not in the count above because nobody had
+    // enumerated the spans.
+    //
+    // **The 9 left are the genuine text, and the number was 9 before this change too**:
+    // 8 `<math>` formulas and Keeper's typo. The paragraph above says 8 because that was
+    // the count on 2026-09-08 and a formula arrived after it; an assertion at `<= 35`
+    // cannot notice its own remainder drifting, which is the argument for pinning it at
+    // what the data says and not at a round number.
     assert!(
-        offenders.len() <= 35,
+        offenders.len() <= 9,
         "{} nodes with raw template syntax: {offenders:?}",
         offenders.len()
     );
