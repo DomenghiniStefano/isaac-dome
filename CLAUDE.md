@@ -564,6 +564,12 @@ queue on 2026-09-08. **The design export arrived on 2026-09-10, and cycles 1 and
 system — tokens, font, `cn()`, i18n, 23 primitives, then the app components (title bar,
 navbar, sidebar, KPI, matrix cell, wiki tokens, data states) on the development-only Kit
 page — landed the same day.**
+**The export is retired since 2026-09-15**: the design is decided at runtime on the real
+screens, `pnpm design:export` is not run again, and the pack's 6065 images left the repository
+with it — 46 MB of a commercial game's sprites produced by a command nobody will run, against
+this file's own first promise. What stays committed is 28 files and 2.8 MB, and it stays because
+`ui/src/lib/ipc/fixtures/*` reads it: the real payloads for 720 items and 642 achievements, two
+indexes and ten wiki pages. `?art=none` is the only art there is now.
 
 **The IPC contract is live, and since 2026-09-13 it is generated.** `pnpm ipc:types` writes
 `ui/src/lib/ipc/types.ts` from the Rust types; `scripts/check` regenerates into a scratch copy
