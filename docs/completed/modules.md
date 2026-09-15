@@ -533,9 +533,10 @@ frontend as `{"kind":"item"}` and nothing else**, because `Infobox::Item` and
                   flow (B17); the KPI and matrix changes of B20, B22, B23
             - [ ] 3.7 Tabs that survive a restart (B6) — **the session document and the two
                   settings landed early, on 2026-09-13, with the tray** (`store` migration 3,
-                  `lib/window/sessionDocument.ts`, `/settings/background`). What is left for
-                  3.7 is the rest of what that document is meant to hold: the sidebar's width
-                  and every table's dragged size, per table (B27)
+                  `lib/window/sessionDocument.ts`, `/settings/background`). Designed on
+                  2026-09-15 as one spec and three branches; **3.7a — a tab owns its state —
+                  landed on 2026-09-16**, and 3.7b (the windows) and 3.7c (B27's sizes) are
+                  what is left. Where it stands today is in `docs/STATUS.md`, under M1.
 
 ---
 

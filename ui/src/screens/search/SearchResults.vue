@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import { VirtualRows } from '@/components/ui/virtual'
+import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import SearchRow from '@/components/search/SearchRow.vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { cn } from '@/lib/cn'
 import { rowResultPx } from '@/lib/scale/rows'
 import type { SearchRow as Row } from '@/lib/search/rows'
 
-defineProps<{ rows: Row[] }>()
-const emit = defineEmits<{ open: [row: Row, event: MouseEvent] }>()
+defineProps<{ rows: Row[]; offset: ScrollOffset | null }>()
+const emit = defineEmits<{
+  open: [row: Row, event: MouseEvent]
+  offsetChange: [offset: ScrollOffset]
+}>()
 
 // `text-left` is not decoration: the row is a pressable primitive, which the user agent
 // centres, and a row of text has to read from its left edge like every other table's rows.
@@ -16,7 +20,13 @@ const rowClass =
 </script>
 
 <template>
-  <VirtualRows v-slot="{ visible }" :rows="rows" :row-px="rowResultPx">
+  <VirtualRows
+    v-slot="{ visible }"
+    :rows="rows"
+    :row-px="rowResultPx"
+    :offset="offset"
+    @offset-change="emit('offsetChange', $event)"
+  >
     <Button
       v-for="{ index, style, row } in visible"
       :key="row.key"

@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { VirtualRows } from '@/components/ui/virtual'
+import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import type { CollectionItem } from '@/lib/ipc/types'
 import { rowWidePx } from '@/lib/scale/rows'
 import CollectionRow from './CollectionRow.vue'
 
-defineProps<{ items: CollectionItem[] }>()
+defineProps<{ items: CollectionItem[]; offset: ScrollOffset | null }>()
+const emit = defineEmits<{ offsetChange: [offset: ScrollOffset] }>()
 const { t } = useMessages()
 </script>
 
@@ -22,7 +24,13 @@ const { t } = useMessages()
       <span class="px-2 py-1.5">{{ t('collection.columns.origin') }}</span>
       <span class="px-2 py-1.5">{{ t('collection.columns.state') }}</span>
     </div>
-    <VirtualRows v-slot="{ visible }" :rows="items" :row-px="rowWidePx">
+    <VirtualRows
+      v-slot="{ visible }"
+      :rows="items"
+      :row-px="rowWidePx"
+      :offset="offset"
+      @offset-change="emit('offsetChange', $event)"
+    >
       <div
         v-for="{ index, style, row: item } in visible"
         :key="item.id"

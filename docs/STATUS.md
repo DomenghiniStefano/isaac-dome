@@ -38,6 +38,15 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
       it open is now **3.6 Settings and About** and **3.7 tabs that survive a restart**, plus the
       wiki polish listed under `wiki`. Everything the title names is done: the parser, discovery,
       unpack and the Completion screen, which landed as sub-project 3.2 on 2026-09-11.
+      **3.7 is one spec and three branches** (2026-09-15,
+      `docs/superpowers/specs/2026-09-15-tabs-session-design.md`). **3.7a landed on 2026-09-16** —
+      a history entry is `{ location, view? }`, so a tab keeps its facets, its sort, its selected
+      row and its scroll across a tear-off and a restart; report
+      `docs/superpowers/reports/2026-09-16-tabs-own-their-state-report.md`. **Nobody has opened a
+      window on it**, which is what B39 stays open for. Still to come: **3.7b**, the windows of
+      tabs the drag spec declared and the document does not hold — `main` writes the session and
+      `main` can be closed while other windows live, so it silently stops being written from that
+      moment — and **3.7c**, B27's remembered sizes.
 - [x] **M2 — Unlock graph** (2026-09-07). The Unlock *section* is frontend work and
       waits for the design system; the graph behind it is done — report in
       `docs/superpowers/reports/2026-09-07-unlock-graph-report.md`.
