@@ -1,18 +1,28 @@
-//! What do the lower bits of the Cargo `dlc` integer mean?
+//! What do the lower bits of the Cargo `dlc` integer mean? **Answered on 2026-09-15**, and
+//! kept as an example because what it prints is still worth looking at.
 //!
 //! Run: `cargo run -q -p ipc --example dlc_mask`
 //!
 //! Reads `dataset/raw/cargo/collectible.json` and `catalog::origin_of`, nothing else: no
-//! game install, no network. **It asserts nothing on purpose.** The encoding is already
-//! settled and load-bearing — `wiki::resolver` documents it (1 Rebirth, 2 Afterbirth,
-//! 4 Afterbirth+, 8 Repentance, 16 Repentance+) and `in_current_edition` filters on bit 16
-//! to keep Tonsil's trinket and drop its Afterbirth+ collectible. What is open is whether
-//! the four lower bits mean "exists in", the way `in_current_edition`'s comment reads them.
+//! game install, no network. **It asserts nothing on purpose** — `wiki`'s
+//! `the_cargo_dlc_integer_is_the_infobox_code_through_the_wikis_own_switch` is the test.
 //!
-//! Blue Cap (342) is the reason to doubt it: the first Afterbirth collectible, it does not
-//! exist in vanilla Rebirth, yet its mask sets bit 1. A test that asserted the naive
-//! reading would be a test that is wrong, so this is an example instead — its output is a
-//! measurement, and the answer belongs in the spec, written by a person.
+//! The integer is what the wiki's own `Template:Dlcset` returns for the page's `dlc` code:
+//! a five-bit set of the editions the row is valid in (1 Rebirth, 2 Afterbirth,
+//! 4 Afterbirth+, 8 Repentance, 16 Repentance+), which `wiki::Editions` transcribes and
+//! `in_current_edition` filters on bit 16 to keep Tonsil's trinket and drop its
+//! Afterbirth+ collectible. So yes, the lower bits mean "exists in".
+//!
+//! **Blue Cap (342) was the reason to doubt it, and it is the reason to believe it.** The
+//! first Afterbirth collectible does not exist in vanilla Rebirth, and its mask sets bit 1
+//! — because its mask is **31**, every bit, which is what the switch returns for a page
+//! that declares no range at all. 341 of the 720 collectible pages do. Nothing there claims
+//! Blue Cap exists in Rebirth; the naive reading of "the lowest set bit is the edition it
+//! first appears in" is what has no answer for a row that declares nothing.
+//!
+//! That accounts for five of the eight disagreements below. The other three are the id
+//! ranges, not the mask: 474 is Tonsil's slot reused by Broken Glass Cannon, and 263 and
+//! 441 are pages whose edition the wiki states differently from where the id falls.
 
 use std::collections::BTreeMap;
 use std::path::PathBuf;

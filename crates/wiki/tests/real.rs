@@ -720,3 +720,74 @@ fn every_cargo_row_with_an_id_has_a_page_in_the_dataset() {
         missing.len()
     );
 }
+
+/// The Cargo `dlc` integer and the infobox's `dlc` code are the same statement written
+/// twice: the wiki hands the code to `{{dlcset}}`, stores the mask it returns in the table,
+/// and renders the icon from it. So the transcription of that switch in `editions.rs` has
+/// 720 live rows to answer to, and a typo in it stops agreeing here.
+///
+/// **This is what closed the open question in `crates/ipc/examples/dlc_mask.rs`.** That
+/// example doubted the mask meant "exists in", because Blue Cap is the first Afterbirth
+/// collectible and its mask sets the Rebirth bit. It sets every bit: the mask is **31**, the
+/// value `{{dlcset}}` returns for a page that declares no range at all, which 341 of the
+/// 720 collectible pages do. Nothing claims Blue Cap exists in Rebirth.
+#[test]
+fn the_cargo_dlc_integer_is_the_infobox_code_through_the_wikis_own_switch() {
+    let raw = raw();
+    // The **collectible** infobox's code, not the page's first: Tonsil holds two infoboxes,
+    // a trinket marked `a+` and the collectible marked `a+nr`, and the Cargo row being
+    // compared is the collectible's. Taking whichever came first read the wrong half of the
+    // one page in 720 that has two.
+    let by_page: std::collections::BTreeMap<String, String> = raw
+        .pages
+        .iter()
+        .filter_map(|p| {
+            let ib = wiki::extract_infoboxes(&p.text)
+                .into_iter()
+                .find(|ib| ib.name.ends_with("collectible"))?;
+            Some((p.title.clone(), ib.params.get("dlc")?.trim().to_string()))
+        })
+        .collect();
+
+    let mut checked = 0;
+    let mut declared = 0;
+    let mut disagree = Vec::new();
+    let mut disagreements = 0;
+    for row in &raw.tables.collectible {
+        let (Some(page), Some(mask)) = (
+            row.get("_pageName").map(String::as_str),
+            row.get("dlc").and_then(|s| s.trim().parse::<u8>().ok()),
+        ) else {
+            continue;
+        };
+        let code = by_page.get(page).map(String::as_str).unwrap_or("");
+        if !code.is_empty() {
+            declared += 1;
+        }
+        checked += 1;
+        let ours = wiki::Editions::parse(code).map(|e| e.list());
+        let theirs = wiki::Editions::of_mask(mask).map(|e| e.list());
+        if ours != theirs {
+            if disagree.len() < 8 {
+                disagree.push(format!(
+                    "{page}: code {code:?} -> {ours:?}, table {mask} -> {theirs:?}"
+                ));
+            }
+            disagreements += 1;
+        }
+    }
+
+    // Vacuity guards: the rows have to be there, and enough of them have to actually carry
+    // a code — on a corpus where every page left the parameter out, every row would be 31
+    // and the switch would never be exercised.
+    assert!(
+        checked >= 700,
+        "the collectible table offered {checked} rows"
+    );
+    assert!(declared >= 300, "only {declared} of them declare a code");
+    assert!(
+        disagree.is_empty(),
+        "{disagreements} rows where the code and the table disagree, first {}: {disagree:?}",
+        disagree.len()
+    );
+}

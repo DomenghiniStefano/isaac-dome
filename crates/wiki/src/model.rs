@@ -3,8 +3,6 @@
 
 use serde::{Deserialize, Serialize};
 
-use crate::Diagnostics;
-
 /// A wiki page reduced to what's needed: the infobox and the text sections that are kept.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
@@ -15,13 +13,19 @@ pub struct Entry {
     /// The infobox's summary line. Plain text for achievements, wikitext everywhere else:
     /// both arrive as inline so the frontend has one shape and no switch on the kind.
     pub description: Vec<Inline>,
-    /// The edition codes the **infobox** declares, parsed. Empty when the parameter is
-    /// absent, which is not the same as "it exists everywhere".
+    /// The editions the **infobox** says the entry exists in, in release order. Empty when
+    /// the parameter is absent, which is the wiki's "no restriction" and not "it exists
+    /// nowhere"; a page that writes the restriction out as `n` lists all five.
     ///
-    /// Not to be confused with the Cargo tables' `dlc` integer, which is a different source
-    /// and a different question: that one is a bitmask over the editions a row is valid in,
-    /// measured on 2026-09-13 to agree with the game on 712 of 720 collectibles
-    /// (`cargo run -q -p ipc --example dlc_mask`). This field does not use it.
+    /// The parameter holds a code, and a code names a **range**: `r` is "added in
+    /// Repentance", so it lists Repentance and Repentance+. Read one code at a time it came
+    /// out too narrow on 1078 of the 1083 pages that carry one, until 2026-09-15.
+    ///
+    /// Same source as the Cargo tables' `dlc` integer, which is that code already resolved
+    /// to its bitmask (1 Rebirth, 2 Afterbirth, 4 Afterbirth+, 8 Repentance,
+    /// 16 Repentance+); the two agree row for row on the collectible table. This field
+    /// still does not read it, because a page has an infobox whether or not it has a Cargo
+    /// row.
     pub dlc: Vec<Dlc>,
     /// What the wiki states has to be unlocked first. `None` means "the wiki does not state
     /// one", NEVER "it is free from the start": that answer belongs to `catalog` and `graph`.
@@ -168,43 +172,69 @@ pub enum Dlc {
     RepentancePlus,
 }
 
-impl Dlc {
-    /// The infobox's `dlc` parameter, which concatenates codes without a separator: one
-    /// page reads `a+nr`, three of them. The two-character codes are tried first, because
-    /// matching `r` before `r+` would read every `r+` as `r`. What matches nothing is
-    /// counted one character at a time rather than dropped: a code we cannot read means an
-    /// entry declaring fewer editions than the wiki says, and that has to surface in `meta`.
-    pub fn parse_codes(s: &str, d: &mut Diagnostics) -> Vec<Dlc> {
-        const CODES: [&str; 5] = ["a+", "r+", "n", "a", "r"];
-        let mut out = Vec::new();
-        let mut rest = s.trim();
-        while !rest.is_empty() {
-            match CODES.iter().find(|c| rest.starts_with(**c)) {
-                Some(c) => {
-                    if let Some(dlc) = Dlc::from_code(c) {
-                        out.push(dlc);
-                    }
-                    rest = &rest[c.len()..];
-                }
-                None => {
-                    let bad = rest.chars().next().map_or(rest.len(), char::len_utf8);
-                    d.unknown_dlc_code(&rest[..bad]);
-                    rest = &rest[bad..];
-                }
-            }
-        }
-        out
-    }
-
-    /// The `{{dlc|…}}` template codes: `n`, `a`, `a+`, `r`, `r+`. Anything else → `None`.
-    pub fn from_code(code: &str) -> Option<Dlc> {
-        match code.trim() {
-            "n" => Some(Dlc::Rebirth),
-            "a" => Some(Dlc::Afterbirth),
-            "a+" => Some(Dlc::AfterbirthPlus),
-            "r" => Some(Dlc::Repentance),
-            "r+" => Some(Dlc::RepentancePlus),
-            _ => None, // allowed: the input is an open-ended string from the wiki
+impl Infobox {
+    /// Every inline field, so a pass over a page's text does not have to name them one by
+    /// one. The match destructures each variant **without `..`**, so a field added later
+    /// breaks the build instead of quietly staying outside every such pass.
+    pub fn inlines_mut(&mut self) -> Vec<&mut Vec<Inline>> {
+        match self {
+            Infobox::Item {
+                quote,
+                template: _,
+                quality: _,
+                tags: _,
+                recharge,
+                devil_price,
+                shop_price,
+                pools,
+            } => vec![quote, recharge, devil_price, shop_price, pools],
+            Infobox::Trinket {
+                quote,
+                tags: _,
+                pools,
+            } => vec![quote, pools],
+            Infobox::Achievement {
+                requirements,
+                notes,
+                unlocks: _,
+            } => vec![requirements, notes],
+            Infobox::Boss {
+                base_hp: _,
+                stage_hp,
+                variant: _,
+                environment,
+                pool,
+            } => vec![stage_hp, environment, pool],
+            Infobox::Challenge {
+                blindfolded: _,
+                has_shops: _,
+                has_treasure_rooms: _,
+                items,
+                trinkets,
+                pickups,
+                health,
+                curse,
+                goal,
+                character: _,
+                unlocks: _,
+            } => vec![items, trinkets, pickups, health, curse, goal],
+            Infobox::Transformation {
+                requires: _,
+                contributors: _,
+                target,
+            } => vec![target],
+            Infobox::Character {
+                health,
+                damage: _,
+                tears: _,
+                range: _,
+                speed: _,
+                luck: _,
+                shot_speed: _,
+                pickups,
+                collectibles,
+                parent: _,
+            } => vec![health, pickups, collectibles],
         }
     }
 }
@@ -312,27 +342,6 @@ pub enum Infobox {
 mod tests {
     use super::*;
     use serde_json::{json, to_value};
-
-    #[test]
-    fn dlc_codes_split_longest_first_and_leftovers_are_counted() {
-        let mut d = Diagnostics::default();
-        // One code, the common case: 175 collectible pages say exactly this.
-        assert_eq!(Dlc::parse_codes("r", &mut d), vec![Dlc::Repentance]);
-        // `r+` must win over `r`: shortest-first would read every `r+` as `r`.
-        assert_eq!(Dlc::parse_codes("r+", &mut d), vec![Dlc::RepentancePlus]);
-        // The real page that forced this function to exist.
-        assert_eq!(
-            Dlc::parse_codes("a+nr", &mut d),
-            vec![Dlc::AfterbirthPlus, Dlc::Rebirth, Dlc::Repentance]
-        );
-        // An absent parameter is an empty list, not an error.
-        assert_eq!(Dlc::parse_codes("", &mut d), Vec::<Dlc>::new());
-        assert!(d.unknown_dlc_codes.is_empty());
-
-        // What we cannot read is counted, never dropped in silence.
-        assert_eq!(Dlc::parse_codes("zz", &mut d), Vec::<Dlc>::new());
-        assert_eq!(d.unknown_dlc_codes.get("z"), Some(&2));
-    }
 
     #[test]
     fn inline_shapes() {
