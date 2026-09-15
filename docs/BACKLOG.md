@@ -3034,6 +3034,14 @@ The entry as it was written, kept because its reasoning is what the query confir
 Found while wiring `{{bug|dlc=…}}` into the edition it declares. The arm read the positional
 argument and never a named one, so 204 of the 547 `{{bug|…}}` showed a defect of one edition to
 every reader; fixing that meant reading a `dlc` code, and reading a code meant finding out that
+> **The denominators below are the lowercase spelling only**, measured 2026-09-15 in the round-3
+> document check. `{{dlc|…}}` occurs **4831** times in `dataset/raw/`, of which 4168 are `{{dlc`
+> and 663 are `{{Dlc` — and `template.rs` lowercases a template's name before matching, so the
+> parser has always read all 4831. The counts here and the 2434/1734 split are a subset, and the
+> conclusions drawn from them are not affected: the 1690 empty edition nodes were counted in the
+> built dataset, which has no such gap. Worth recording because the same family of entries counts
+> `{{bug` in **both** cases (547, of which 393 lowercase) and this one in one.
+
 **this parser understands 2434 of the 4168 `{{dlc|…}}` uses and silently mis-handled the other
 1734**.
 
