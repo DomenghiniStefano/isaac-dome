@@ -207,6 +207,15 @@ the strip scrolls horizontally, with the active tab always brought into view. **
 number of tabs.** The shell says it behaves like a browser, and a browser does not refuse to open
 what you ask it to; a hard limit would also need a number that no measurement here could produce.
 
+**Half of this is already built, found by reading and not assumed.** `TabItem` carries
+`max-w-tab-max min-w-tab-min shrink grow-0 basis-tab-max`, both tokens exist
+(`--spacing-tab-min: 2.125rem`, `--spacing-tab-max: 9.375rem`), the `tab-intrinsic` utility
+exists so that a strip sized by its tabs does not collapse every tab to the minimum, and a
+container query already drops the close button and then the icon below
+`--container-tab-narrow: 64px`. So **what is new is only the scroll below the minimum** and
+bringing the active tab into view — including when it became active by being restored. No token
+is added.
+
 Two things follow: the tear-off's hit test reads the strip's geometry, so a scrolled strip must
 report the same coordinates it draws (`stripUnderPoint`, `toClient`), and the drag-to-reorder
 must still work when the strip scrolls under the pointer.
@@ -282,11 +291,11 @@ that declares a spec.
 `ui/src/lib/window/sessionDocument.ts` (+ test) — version 2 and the pruning;
 `ui/src/lib/window/session.ts` — the ledger and the election; `ui/src/lib/window/windowPort.ts` —
 the monitors; `ui/src/lib/window/messages.ts` — the broadcast of a window's tabs and box;
-`ui/src/components/shell/TabStrip.vue` — shrink and scroll;
+`ui/src/components/shell/TabStrip.vue` — the scroll;
 `ui/src/components/ui/virtual/VirtualRows.vue` — the offset;
 `ui/src/screens/{UnlockScreen,CollectionScreen,RunsScreen,SearchScreen}.vue`;
-`ui/src/components/shell/SectionSidebar.vue` and the tables (3.7c); `@theme` gains the minimum
-tab width and nothing else gains a pixel.
+`ui/src/components/shell/SectionSidebar.vue` and the tables (3.7c). **No new token**: the minimum
+tab width and the narrow-tab container query are already in `@theme` (§7).
 
 **Unchanged, and worth saying.** `crates/store` (migration 3 already holds this), `crates/ipc`'s
 session settings, and every Tauri command: 3.7 adds no command and no migration.
