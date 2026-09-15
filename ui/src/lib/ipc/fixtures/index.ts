@@ -1,5 +1,6 @@
 import { Command } from '../../constants/commands'
 import { assertNever } from '../../assertNever'
+import { FloorScenario, floorAnswer } from './floor'
 import type { CommandArgs, CommandName } from '../transport'
 import type { IpcError, SetupState, Target } from '../types'
 import { completionMatrix } from './completion'
@@ -44,6 +45,8 @@ const QueueParam = 'queue'
 const CollectionParam = 'collection'
 // `?wiki=none` answers the wiki as a binary whose embedded dataset didn't load.
 const WikiParam = 'wiki'
+// `?floor=empty` answers the painted grid as one nobody has touched yet.
+const FloorParam = 'floor'
 const Off = 'none'
 const Unread = 'unread'
 
@@ -63,6 +66,14 @@ const currentQueueScenario = (): QueueScenario => {
   return (
     Object.values(QueueScenario).find((s) => s === requested) ??
     QueueScenario.Rows
+  )
+}
+
+const currentFloorScenario = (): FloorScenario => {
+  const requested = query().get(FloorParam)
+  return (
+    Object.values(FloorScenario).find((s) => s === requested) ??
+    FloorScenario.Solve
   )
 }
 
@@ -182,6 +193,8 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     whenActive(scenario, () => completionMatrix(artShown())),
   [Command.Runs]: async () => (await import('./runs')).runsAnswer(),
   [Command.Live]: async () => (await import('./runs')).liveAnswer(),
+  // The floor reads no profile: it answers the drawing, whatever the save is doing.
+  [Command.FloorCandidates]: (args) => floorAnswer(currentFloorScenario(), args),
   [Command.GraphViews]: (_args, scenario) =>
     whenActive(scenario, async () => await graph()),
   [Command.Want]: (args, scenario) =>
