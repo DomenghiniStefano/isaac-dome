@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { LockOpenIcon } from '@lucide/vue'
-import { computed, ref, watch } from 'vue'
+import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import QueueError from '@/components/plan/QueueError.vue'
@@ -8,6 +8,7 @@ import { Button, ButtonVariant } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
+import { useTabView } from '@/composables/useTabView'
 import { useMessages } from '@/i18n'
 import { singleQuery } from '@/lib/search/queryParam'
 import { emptyList, isFiltering } from '@/lib/facets/emptyList'
@@ -24,6 +25,7 @@ import {
   stateText,
   toolbarLabels,
 } from './unlock/facetLabels'
+import { unlockView } from './unlock/tabView'
 import {
   FacetId,
   UnlockSort,
@@ -53,8 +55,15 @@ useOnActiveProfile(async () => {
   await Promise.all([graph.load(), queue.load()])
 })
 
-// The filter belongs to this screen: leaving the tab resets it, until tabs keep their state.
-const filter = ref<UnlockFilter>(unlockFaceting.empty())
+// The filter and the sort belong to the tab, not to this component: leaving and coming back —
+// through a tear-off, a restart, or the back button — finds them where they were left (B39).
+const reading = useTabView(unlockView)
+const filter = computed({
+  get: () => reading.value.filter,
+  set: (value: UnlockFilter) => {
+    reading.value = { ...reading.value, filter: value }
+  },
+})
 
 // A Search row opens this list already filtered on the name it found (B3, spec 3.5 Decision 8).
 const route = useRoute()
@@ -82,7 +91,12 @@ watch(
   },
   { immediate: true },
 )
-const sort = ref<UnlockSort>(UnlockSort.FanOut)
+const sort = computed({
+  get: () => reading.value.sort,
+  set: (value: UnlockSort) => {
+    reading.value = { ...reading.value, sort: value }
+  },
+})
 
 const nodes = computed(() => graph.view?.unlock.nodes ?? [])
 const counts = computed(() => stateCounts(nodes.value))
