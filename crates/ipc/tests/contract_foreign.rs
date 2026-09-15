@@ -14,7 +14,7 @@ fn cfg() -> Config {
 fn the_sections_of_the_save_are_a_closed_set_of_names() {
     assert_eq!(
         <core_save::Kind as TS>::decl(&cfg()),
-        r#"type Kind = "achievements" | "counters" | "level_counters" | "items" | "unknown5" | "bosses" | "challenges" | "unknown8" | "unknown9" | "bestiary";"#
+        r#"type Kind = "achievements" | "counters" | "level_counters" | "items" | "unknown5" | "bosses" | "challenges" | "cutscene_counters" | "unknown9" | "bestiary";"#
     );
 }
 
