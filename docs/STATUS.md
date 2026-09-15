@@ -317,8 +317,11 @@ report → post-review fixes.
 ### `unpack` — targeted extraction from `.a` archives ✅
 
 - [x] Design spec — `docs/superpowers/specs/2026-09-01-unpack-design.md`
-      (ARCH000 format, djb2 + FNV hashing — **the spec needs a correction**: it gives the
-      version as a constant, while byte `0x07` is actually the compression mode)
+      (ARCH000 format, djb2 + FNV hashing. It **needed** a correction — it gave the version as a
+      constant where byte `0x07` is the compression mode — and got one: the spec has read
+      `0x07 u8 compression mode / is NOT a version number` since the three modes landed on
+      2026-09-03, and explains what it used to say. This line asked for it for twelve days
+      after it was done.)
 - [x] TDD plan — `docs/superpowers/plans/archive/2026-09-01-unpack.md`
 - [x] Scaffold, public types, hashing
 - [x] Report — `docs/superpowers/reports/2026-09-01-unpack-report.md`
@@ -1593,6 +1596,22 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
 ---
 
 ## Session log
+
+> **A `- [ ]` below this line is not an open task.** Everything under a `###` dated heading is a
+> **report**, written on its day and true on its day: `- [ ]` marks a caveat that session recorded
+> about its own work — *"not seen in a real Tauri window"*, *"the spike is not run"*, *"neither
+> screen, on purpose"* — and `- [x]` marks what it landed. Neither is re-checked as the project
+> moves, and neither should be read as the state of anything today.
+>
+> **The state lives above**, in the milestones and the module sections, and in `docs/BACKLOG.md`.
+>
+> This is written down on 2026-09-15 because the two notations had merged in practice and the
+> file had started lying with them. On that one day: **M4 read "designed, not started"** with all
+> nine of its sub-items closed; `- [ ] Fix the unpack spec` had been asking for a correction made
+> twelve days earlier; `- [ ] Real Completion screen` outlived the screen by four days; and the
+> report of the 13th says *"Live and Runs stay placeholders, which is the spec's decision"* while
+> both shipped on the 14th — correct as a record, and read as the present by anyone scrolling.
+> None of those were wrong when written, which is exactly why nothing caught them.
 
 ### 2026-09-15 (night, later) — the window that finally held its run, and an eleventh chunk
 
@@ -3132,7 +3151,8 @@ commit pushed as it lands.
       item's tooltip naming its achievement, a pool count falling from 67 to 15 when quality 4 is
       picked, the search, the last row reachable, `?collection=unread` (721 unreadable and the
       alert), `?catalog=none`, `?art=none`. No finding in the app; two in the script.
-- [ ] **The pack's real `collection.json`** waits for `pnpm design:export` on a machine with the
+- [ ] **Superseded 2026-09-15**: the export is retired and the pack carries no new payload.
+      As written it said the pack's real `collection.json` waits for `pnpm design:export` on a machine with the
       game and a save; until then the Collection has only been seen on synthetic quality, pools
       and flags. Not seen in a real Tauri window either.
 
@@ -3933,7 +3953,7 @@ New pure crate `crates/graph`, 42 tests. Full report in
       node the graph can't vouch for isn't either.
 - [x] **The historical series earned its keep**: 31 saves, 302 → 384 achievements done,
       and two properties that hold across every consecutive pair.
-- [ ] **Not done**: regenerating `design-export/isaacdome-design-pack/` (the generator now
+- [ ] **Superseded 2026-09-15**, the export being retired. As written: **not done**, regenerating `design-export/isaacdome-design-pack/` (the generator now
       puts real graph data in it, so the checked-in copy is a version behind).
 
 ### 2026-09-07 — B7 follow-up: the leftovers
@@ -4017,7 +4037,7 @@ the size (2,100+ comment lines across 116 Rust files, ~30 `.md` files).
       and logged there as "closed: it was a mislabeled fixture, not a bug" — it's back,
       which means either the fixture regressed or that resolution didn't stick. Needs a
       fresh look, not a fix from this session.
-- [ ] **Not done**: regenerating `design-export/isaacdome-design-pack/` (needs the game
+- [ ] **Superseded 2026-09-15**, the export being retired. As written: **not done**, regenerating `design-export/isaacdome-design-pack/` (needs the game
       installed); nothing else known to be missing — a full sweep for stray Italian across
       every translated file, minus the deliberate exceptions above, comes back clean.
 
@@ -4345,7 +4365,9 @@ A documents-only session, no code. Two explicit requests, logged as
 - [x] `DESIGN-BRIEF.md` §5.6 rewritten: from "0 extractable" to an inventory, real dimensions and
       the note that `completion_widget.png` already contains the game's own visual encoding of marks.
 - [x] Saved `ui/src/assets/logo.svg` (dome-dog), verified it renders.
-- [ ] **Fix the `unpack` spec**: it still states `0x07 u8 version = 0x01`.
+- [x] **Fix the `unpack` spec** — done on 2026-09-03 with the three compression modes: it reads
+      `0x07 u8 compression mode / is NOT a version number` and says what it used to claim. This
+      box stayed open until 2026-09-15, when somebody finally opened the spec to check.
 - [x] **Found Repentance's root**: `resources-dlc3/`. Index coverage from 92.5%
       to **97.1%** (18,914 of 19,473 entries).
 - [x] **Verified the coverage that actually matters**, the catalog's: 909 items
