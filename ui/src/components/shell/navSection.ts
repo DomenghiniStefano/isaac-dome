@@ -4,18 +4,27 @@ import type { MessageSchema } from '@/i18n/messages/it'
 import { TabOrigin } from './tabs'
 import { tabOriginIcon } from './tabOriginIcon'
 
-// The navbar's two sections (DESIGN-BRIEF.md §4): two preconditions, two places.
-export const NavSection = { Wiki: 'wiki', Progress: 'progress' } as const
+// The navbar's three sections (DESIGN-BRIEF.md §4): three preconditions, three places.
+// Progress reads the save, Tool reads the log or what you painted, the Wiki reads neither.
+// The order of these keys is the order on screen — NavBar.vue draws `Object.values` — so
+// moving a section is moving its line, and there is no index to keep in step with it.
+export const NavSection = {
+  Progress: 'progress',
+  Tool: 'tool',
+  Wiki: 'wiki',
+} as const
 export type NavSection = (typeof NavSection)[keyof typeof NavSection]
 
 // A section wears the icon of the tabs that come from it: the choice is made once, in
 // tabOriginIcon.
 export const navSectionIcon: Record<NavSection, Component> = {
-  [NavSection.Wiki]: tabOriginIcon[TabOrigin.Wiki],
   [NavSection.Progress]: tabOriginIcon[TabOrigin.Progress],
+  [NavSection.Tool]: tabOriginIcon[TabOrigin.Tool],
+  [NavSection.Wiki]: tabOriginIcon[TabOrigin.Wiki],
 }
 
 export const navSectionLabel: Record<NavSection, MessageKey<MessageSchema>> = {
-  [NavSection.Wiki]: 'shell.sections.wiki',
   [NavSection.Progress]: 'shell.sections.progress',
+  [NavSection.Tool]: 'shell.sections.tool',
+  [NavSection.Wiki]: 'shell.sections.wiki',
 }

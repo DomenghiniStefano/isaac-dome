@@ -1515,6 +1515,58 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
 
 ## Session log
 
+### 2026-09-15 — a third section, and the exception that was pointing at it
+
+`feature/nav-tool`, cut from `develop` **into a worktree of its own** — three sessions were
+sharing this checkout at the time, which is the second half of the entry.
+
+The request was a reordering: Progress before the Wiki, with a **Tool** section between them
+holding Live. What made it more than a reordering is what Tool had to be to deserve being a
+section at all. `DESIGN-BRIEF.md` §4 has always said a section is a **precondition**, not a
+folder, and the two-section table was built on that. The third precondition was already
+there, unnamed.
+
+- [x] **The exception was the evidence.** Floor's F1 plan (Task 8 Step 7) had to write
+      `needsProfile: routeOrigin[name] === TabOrigin.Progress && name !== RouteName.Floor`,
+      and said plainly why: gating Floor behind a profile *"is wrong for this screen"*. An
+      exception carved into a derivation reports that the derivation's input is missing a
+      case. The input was missing a section — so the fix deletes the exception instead of
+      generalising it, and `routes.ts` keeps the line it already had, now with nothing
+      carved out of it.
+- [x] **Live and Runs were gated for no reason, and both said so in their own source.**
+      `live` in `crates/app/src/commands/runs.rs` already returns `LiveGraph::NoProfile` and
+      carries the comment *"a missing profile and a missing game are two different sentences,
+      and both leave the run on screen"* — a branch `ProgressGate` made unreachable from the
+      UI. `RunsScreen.vue` carries *"the archive is not a view of the profile: it exists
+      without one."* The `runs` command takes neither the graph nor the profile. Both moved
+      to Tool; the split is exact — the five that stay in Progress are the five that open the
+      `.dat`, with no judgment call at any row.
+- [x] **Floor's route ships here, its screen does not.** F1 was mid-execution in another
+      session, so `RouteName.Floor`, its path, title, origin, icon, sidebar entry and the
+      `routes.floor` key land in this branch and the `screens` record entry stays with F1.
+      Until then Floor renders `PlaceholderScreen`, like every screen not yet built. Agreed
+      between the two sessions before either wrote a line, so the shared files have one author
+      each.
+- [x] **Saved tabs survived without a migration**, and that was checked rather than hoped: a
+      tab persists a `TabLocation` — a route *name* and its query — never a path, so
+      `/progress/live` becoming `/tool/live` reaches nothing in `store`'s migration 3.
+- [x] **The test that counted became a test that asks.** `sectionNav.test.ts` had
+      `lists the seven Progress screens`, a count that would have gone green on a wrong answer
+      and dies at the next screen either way. It is gone. In its place: every section lists
+      every route of its origin in its sidebar — generalised from the Settings-only version
+      that already existed — plus the two origin sets named, so adding a screen cannot compile
+      without someone answering whether it reads the save. `pnpm ui:test` 486 tests over 69
+      files.
+
+**The worktree is the entry's other half.** `git worktree list` gave one row for this repo,
+so the branch was a variable shared by three sessions: one executing Floor's F1, one rewriting
+the Progress gate into four states, and this one. A `git checkout -b` by any of them moved the
+tree under the other two, and it happened once — attributed to the wrong session at first, and
+settled by the reflog plus the content of the files left behind rather than by anyone's memory
+of what they had run. Nobody lost work, because everything was committed. **The lesson is not
+"commit often", it is that a checkout is a write to shared state that leaves no author.** All
+three sessions now hold separate worktrees under `.claude/worktrees/`.
+
 ### 2026-09-14 (last, evening) — three small entries at once, and the one nobody was looking for
 
 `feature/small-three`, cut from `develop`, on the machine **with** the game and the full sample
