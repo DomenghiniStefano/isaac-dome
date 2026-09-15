@@ -1441,6 +1441,14 @@ reason:
 
 ## What only a machine with the game can answer
 
+> **Checked against the machine on 2026-09-15**, which is where this list is meant to be read
+> and had never been read from. Two of its seven items were already satisfied and one was asking
+> for the wrong thing: the agreement with `STREAK_COUNTER` and `DEATHS` closed that evening with
+> a run the owner played, the `samples/packed` junction has been in place since 2026-09-03, and
+> the entry asking for a **642 / 523** save wanted an era that has been covered since
+> `20260905`. **An instrument list that nobody re-reads at the instrument is a list of things
+> that may already be done** — three of seven here, which is the reason this note exists.
+
 Collected here on 2026-09-09 because it had accumulated in five places. Nothing below is
 blocked on thinking or on code — each one is an instrument that needs the game installed,
 running, or both, and every one of them is cheap once you are at that machine. The
@@ -1510,6 +1518,11 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       proportional to the 805 the tallies gained, which is the useful part: it is not a
       fifth total. `Save::bestiary_tallies()` already hands it back as a value, so this is
       only a matter of watching it over a run whose rooms and floors are counted.
+      **A second window, 2026-09-15**: 45,146 → **45,344**, so **+198** over one solo run that
+      reached The Void, against +11 over one online Greed run. And it is not a fixed fraction of
+      the tallies either: they gained **1237** (432 + 805) in the first window and **2072**
+      (1105 + 937 + 30) in the second, so the tallies-per-trailing ratio goes **112 to 10.5** —
+      an eleven-fold move where the tallies themselves not quite doubled.
 - [ ] **The 40 unknown cells in the completion matrix** — Mother and The Beast for The
       Forgotten and the 19. One run of Mother with a Tainted character closes the whole
       20 × 2 block, because the base indices are already pinned and only the evidence that
@@ -1518,16 +1531,22 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       a walk of the whole dated series looking for *any* completion of Mother or The Beast by
       those 20 characters found none. The blocker is real, the series cannot close it, and it
       is what keeps 40 nodes of the unlock graph `Partial` instead of answered.
-- [ ] **A save of the 642 / 523 era in `samples/`** — a copy out of
-      `Steam\userdata\<id>\250900\remote\`, named `YYYYMMDD.rep+persistentgamedata1.dat`.
-      Costs nothing but the copy, and it switches on the era row in
-      `each_era_declares_its_own_counts` that today declares itself as missing coverage.
-      More snapshots of one profile are worth more than more profiles: the comparison
-      properties need two of the same.
-- [ ] **The `samples/packed` junction** to the installed game's `resources\packed`. One
-      command, and it switches ~60 skipped tests back on across `unpack`, `catalog`, `ipc`
-      and `graph` — plus it is what `pnpm design:export` needs to regenerate the design
-      package.
+- [x] **A save of the 642 / 523 era in `samples/`** — **already there, and this line asked for
+      the wrong era.** `each_era_declares_its_own_counts` reads that row from
+      `20260905.rep+persistentgamedata1.dat`, which has been in `samples/` for ten days; the row
+      runs. What the suite still declares missing is the **2024** era (638 / 496) and **January
+      2025** (641 / 521), and neither can come from this machine: the game's own
+      `save_backups\` start at 2025-06-26, so those two belong to the M0 collection that lives
+      outside the repo. Corrected on 2026-09-15, having been checked instead of read.
+      The rest of the entry still holds: more snapshots of one profile are worth more than more
+      profiles, because the comparison properties need two of the same. The series went 37 to 41
+      that day, four days of it having sat unread in `save_backups\`.
+- [x] **The `samples/packed` junction** to the installed game's `resources\packed` — **in place
+      on this machine since 2026-09-03**, which is why `scripts/check` reports 7 skips here and
+      not ~60. It stays in the list because it is the first thing to do on *any* machine with the
+      game, and it is one command: without it every test on a real archive skips, and with them
+      every `catalog`, `ipc` and `graph` test that needs a built catalog. The old second half —
+      that it is what `pnpm design:export` needs — went with the export on 2026-09-15.
 
 ---
 
