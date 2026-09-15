@@ -201,7 +201,7 @@ enumerated the singular `Infobox character` while those four pages carry the plu
             pointing at the backend.
       - [x] **Sub-project 1 splits in two on 2026-09-13**, when the plan was written and the
             size was visible. **1a — the run model** is done, `feature/run-model`: the pure
-            `run` crate, 41 tests, plan
+            `run` crate, 41 tests on the day (60 on 2026-09-15), plan
             `docs/superpowers/plans/archive/2026-09-13-run-model.md`, report
             `docs/superpowers/reports/2026-09-13-run-model-report.md`. `Tail` turns bytes into
             lines and reads a shorter file as a relaunch; `rules/events.json` maps a line to
@@ -375,7 +375,7 @@ report → post-review fixes.
       collectibles out of 733 slots, 11 unused ids identified; 637 achievements out of 642
       slots). Found and fixed a real bug in the challenge parser (mixed separators,
       negative ids); fixed four measurement numbers that were wrong in the brief, which had
-      propagated into the spec. 81 tests in the `catalog` crate (51 unit, 15 on `build.rs`, 15 on `real_data.rs`).
+      propagated into the spec. 81 tests in the `catalog` crate on 2026-09-04 (51 unit, 15 on `build.rs`, 15 on `real_data.rs`); **103 on 2026-09-15**.
 - [x] TDD plan (B) — `docs/superpowers/plans/archive/2026-09-04-catalog-b.md`, 8 tasks
 - [x] Report (B) — `docs/superpowers/reports/2026-09-04-catalog-b-report.md`
 - [x] **A challenge's reward** (backlog B2, 2026-09-05): `Challenge.rewards`, collected by
@@ -396,7 +396,9 @@ report → post-review fixes.
 ### `ipc` — view-model for the interface ✅
 
 Pure crate, no I/O and no Tauri dependency: turns `discovery`, `core-save` and
-`catalog` types into already-resolved JSON. **83 tests.**
+`catalog` types into already-resolved JSON. **276 tests on 2026-09-15**; it read "83 tests" from
+2026-09-05 until then, which is a count with no era on it in the section that describes the
+state. A number here is a fixture of a day, and the day belongs beside it.
 
 - [x] Design spec — `docs/superpowers/specs/2026-09-02-app-shell-ipc-design.md`
 - [x] TDD plan in 12 tasks — `docs/superpowers/plans/archive/2026-09-02-app-shell-ipc.md`
@@ -1381,9 +1383,15 @@ reason:
       > **a wrong path doesn't error, it goes silent**. `contains()` returned
       > `false` and it looked like the archive simply didn't have that file. Whenever a resource
       > is "missing", the first suspect should be the name, not the archive.
-- [ ] **563 archive entries remain unnamed** (out of 19,473, i.e. 2.9%): 248 in
-      `afterbirth.a`, 239 in `graphics.a`, the rest scattered. These are files none of our
+- [ ] **563 archive entries remain unnamed** (out of 19,473, i.e. 2.9%): 251 in
+      `afterbirth.a`, 240 in `graphics.a`, the rest scattered. These are files none of our
       sources names. **They don't affect the product**: the catalog is covered at 100% (see below).
+      **Re-measured on 2026-09-15** with `cargo run -p unpack --example probe_coverage`: 19,473
+      indexed, 18,910 named, 563 missing — the same total twelve days on, so the number is a
+      property of the install and not of one afternoon. The per-archive split was off by 3 on
+      `afterbirth.a` (248 for 251) and by 1 on `graphics.a` (239 for 240). The total stayed right
+      throughout because the third term is "the rest scattered": a sum with one unnumbered
+      remainder absorbs any error in the named rows and reports nothing.
       *A way to unblock this, if ever needed:* a more complete path list, or generating candidates
       from recurring name patterns.
 - [ ] **How much real data there is depends on the machine, and has to be re-checked on

@@ -45,8 +45,11 @@ The full project document is in `docs/PROJECT.md`.
 **Rust does everything that touches disk. Vue only ever receives resolved JSON**: the
 frontend knows nothing about offsets, file names, or log strings.
 
-**Layout.** Rust crates live in `crates/` (`core-save`, `discovery`, `unpack`, `catalog`,
-`wiki`, `wiki-snapshot`, `graph`, `plan`, `run`, `floor`, `ipc`, `store`, `app`, `test-support`). The Tauri crate is
+**Layout.** Sixteen Rust crates live in `crates/` — `core-save`, `discovery`, `unpack`,
+`catalog`, `wiki`, `wiki-snapshot`, `graph`, `plan`, `run`, `log-watch`, `floor`, `ipc`,
+`store`, `app`, `test-support`, `design-export`. The last two of those were missing from this
+list until 2026-09-15: `log-watch` has had a row in the table below since it landed, and
+`design-export` is retired but still a crate. The Tauri crate is
 `crates/app`, not `src-tauri`: every `tauri` command needs
 `--config crates/app/tauri.conf.json`, and the root scripts already do that (`pnpm dev`,
 `pnpm build`). The frontend is the pnpm workspace `ui/`; from the root, `pnpm typecheck`,

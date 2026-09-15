@@ -862,8 +862,13 @@ mod tests {
     }
 
     /// A code names a range, and `n` is the half of it that says *removed*. `nr` is the
-    /// commonest code in the corpus — 1371 of 4831 uses — and it means "removed in
+    /// commonest code in the corpus — 1371 of **4831** uses — and it means "removed in
     /// Repentance", so it names the three editions before it.
+    ///
+    /// 4831 counts both spellings: 4168 `{{dlc` and 663 `{{Dlc`, which `template.rs`
+    /// lowercases before matching, so the parser sees them alike. B52's own figures are the
+    /// lowercase subset and say 4168; the two are not a disagreement, and this is the note
+    /// that says which is which.
     ///
     /// It named none of them until 2026-09-15: this parser read whole codes one at a time,
     /// so 1734 uses opened a frame with an empty `only`, and **1690 of those reached
