@@ -508,9 +508,11 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   never fails the build; it is a cleaner, not a gate. What it cannot do is tell your leftovers
   from another session's, so on a machine running several, `pnpm dev` now evicts a dev server
   somebody else is using, in silence. `pnpm dev:reset` is the same thing by hand.
-- Don't trust a suite run from a **second worktree** until you have put `samples/` back. The
-  folder is git-ignored, so `git worktree add` leaves it out, and every test on real data skips
-  there — **silently, and still passing**, because a skip passes. Measured on 2026-09-15, same
+- Don't trust a suite run from a **second worktree** until you have put `samples/` back. Its
+  *contents* are git-ignored while `samples/.gitkeep` is tracked, so `git worktree add` gives
+  you the folder and nothing in it: not "missing, and you notice" but **"present, and it looks
+  right"**, which is the worse of the two. Every test on real data then skips there —
+  **silently, and still passing**, because a skip passes. Measured on 2026-09-15, same
   branch, same 929 passed either way: in a fresh worktree **79 `sample:` lines became 0** — not
   one test touched real data — while the skips went 129 → 175. The passed count says none of
   it. That is exactly the shape of "green suite, nothing verified" that D3 cost days for.
