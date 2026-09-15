@@ -1,6 +1,10 @@
 <script setup lang="ts" generic="T">
-import { computed, ref } from 'vue'
+import { useDebounceFn } from '@vueuse/core'
+import { computed, nextTick, ref, watch } from 'vue'
 import { useScaledRows } from '@/composables/useScaledRows'
+import { Timing } from '@/lib/constants/timing'
+import { offsetToApply } from '@/lib/scale/scrollOffset'
+import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import {
   totalHeightPx,
   visibleRows,
@@ -17,8 +21,11 @@ const props = defineProps<{
   /** The row's height in device pixels at a given scale, from its own token. */
   rowPx: (percent: number) => number
   overscan?: number
+  /** Where this list was left, and the list that number was measured against (3.7a). */
+  offset?: ScrollOffset | null
 }>()
 
+const emit = defineEmits<{ offsetChange: [ScrollOffset] }>()
 defineSlots<{
   default(props: { visible: VisibleRow<T>[] }): unknown
 }>()
@@ -43,10 +50,40 @@ const visible = computed(() =>
 const body = computed(() => ({
   '--virtual-rows-total': totalHeightPx(virtualizer.value.getTotalSize()),
 }))
+
+// Restored **after** the rows are there: an offset into an empty list scrolls nothing, and the
+// data arrives a tick after the component. Once only — a later change of the stored offset is
+// this component's own echo coming back, not somebody moving the list.
+let restored = false
+watch(
+  () => props.rows.length,
+  async (rows) => {
+    if (restored || rows === 0) return
+    restored = true
+    const top = offsetToApply(props.offset ?? null, rows)
+    if (top === null) return
+    await nextTick()
+    if (scroller.value) scroller.value.scrollTop = top
+  },
+  { immediate: true },
+)
+
+// The length travels with the position, because that is what makes the position mean anything.
+const onScroll = useDebounceFn(() => {
+  if (scroller.value)
+    emit('offsetChange', {
+      top: scroller.value.scrollTop,
+      rows: props.rows.length,
+    })
+}, Timing.ViewWrite)
 </script>
 
 <template>
-  <div ref="scroller" class="max-h-virtual-rows-body overflow-auto">
+  <div
+    ref="scroller"
+    class="max-h-virtual-rows-body overflow-auto"
+    @scroll="onScroll"
+  >
     <div :style="body" class="relative h-(--virtual-rows-total)">
       <slot :visible="visible" />
     </div>

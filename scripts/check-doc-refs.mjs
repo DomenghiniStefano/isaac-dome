@@ -53,10 +53,13 @@ const EXEMPTIONS = [
     path: 'screens/unlock/unlockLayout.test.ts',
     why: 'named inside the sentence that says the row height moved to lib/scale/rows.test.ts',
   },
-  // 3.7's spec, naming what it will create. These three become GONE when that lands, which is
-  // the line that says to delete this exemption.
-  { path: 'ui/src/composables/useTabView.ts', why: '3.7 tabs-session spec, not built yet' },
-  { path: 'ui/src/lib/window/sessionWriter.ts', why: 'same' },
+  // 3.7's spec, naming what it will create. `useTabView.ts` left this list on 2026-09-16, when
+  // 3.7a built it; the other two become GONE when 3.7b lands, which is the line that says to
+  // delete them.
+  {
+    path: 'ui/src/lib/window/sessionWriter.ts',
+    why: '3.7b tabs-session spec, not built yet',
+  },
   { path: 'ui/src/lib/window/monitorClamp.ts', why: 'same' },
   // Files a spec named before creating, under a name that later changed — or never created,
   // because the spec made them conditional.
