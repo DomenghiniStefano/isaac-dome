@@ -99,7 +99,7 @@ depends on the section.
 | 5 | 7 | 1 | to be identified |
 | 6 | 104 | 1 | bosses met |
 | 7 | 46 | 1 | challenges |
-| 8 | 27 | 4 | to be identified |
+| 8 | 27 | 4 | cutscene counters — **measured** 2026-09-15 |
 | 9 | 2 | 4 | to be identified |
 | 10 | variable | 8 | bestiary: four tallies over the same entities, self-describing |
 
@@ -113,6 +113,21 @@ depends on the section.
 > game prints its own names when it loads a profile (5 is "Mini Bosses", 8 "Cutscene
 > Counters", 9 "GameSettings"), which is strong evidence and **not** a measurement: those
 > stay `Unknown` until the bytes are checked.
+>
+> **8 was checked on 2026-09-15 and is `CutsceneCounters`**: one solo run's log plays
+> `playing cutscene 22 (The Void)` once and cell 22 rises by exactly one, the second point on
+> the identity mapping after 19. 5 and 9 still have only the printed name. What the name does
+> **not** settle: cell 2 also rose by one with no cutscene 2 in the surviving log, and cell 1
+> did not move although the Intro played — so it is not plainly "cutscene N at index N".
+
+> **The game reads ELEVEN chunks and we parse TEN sections**, and nothing yet explains the
+> gap. Loading a profile it prints, in order: Achievements, Counters, Level Counters,
+> Collectibles, Mini Bosses, Bosses, Challenge Counters, Cutscene Counters, GameSettings,
+> **Special Seed Counters**, Bestiary Counters. So the bestiary is its chunk **11**, and
+> chunk 10 carries a name this repo has never had. Either the file holds a section we stop
+> before, or one of our ten holds two of its chunks — a lead with two coincidences behind it
+> (the bestiary payload's constant `words[20]` is **11**, and section 10's header describes
+> nothing in the layout we decoded). Nothing here is measured; it lives in B9.
 
 ### Counters and marks
 

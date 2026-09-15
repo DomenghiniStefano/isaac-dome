@@ -56,13 +56,16 @@ prints each open entry's heading with its tag under it, and was run before it wa
 grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
 ```
 
-**Re-counted on 2026-09-15 (evening)**, with the command above: **24 open**. B48, B49 and B52
-closed since the snapshot below; **B53** opened out of B52, which is where this list keeps finding
-things — a counter that had been reporting `{}` since the day it was added.
+**Re-counted on 2026-09-15 (night)**, with the command above: **27 open**. B48, B49, B52 and B53
+closed since the snapshot below. **B53 opened out of B52** — a counter that had been reporting `{}`
+since the day it was added — and **B54 out of B53**, which is where this list keeps finding things.
+**B55, B56 and B57** came from a sweep of what the machine actually keeps, run because a claim had
+been made from two folders and stated as though it came from all of them: none of the three is a
+run history, and all three are sources this project did not know it had.
 
-- **`nothing` (14)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54
+- **`nothing` (16)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56
 - **`a real save` (3)** — B21, B22, B23
-- **`the game` (5)** — B3, B10, B19, B33, B36
+- **`the game` (6)** — B3, B10, B19, B33, B36, B57
 - **`a measurement` (2)** — B9, B20
 
 The `a measurement` bucket is the same subject as *"What only a machine with the game can answer"*
@@ -3162,3 +3165,107 @@ Each of the 54 is placed in one of the three families **by reading its page**, t
 either accepted into `section_kind` or refused in writing with the page that refused them, and the
 second-subject family has a decision — with the counts re-measured, because 54 is a number from a
 snapshot and the wiki gains headings.
+
+---
+
+## B55 — The log has no clock and Steam keeps one (analysis, then `run` and `log-watch`)
+
+**Needs:** nothing to read the file; **a machine with Steam** to have one at all.
+
+Logged on 2026-09-15. `Steam\logs\gameprocess_log.txt` records every launch and exit of
+`isaac-ng.exe` with a wall clock — **93 of them on this machine since 2025-06-26**, in the shape
+
+```
+[2026-09-15 20:46:34] AppID 250900 adding PID 4908 as a tracked process "...\isaac-ng.exe"
+[2026-09-15 21:04:08] AppID 250900 no longer tracking PID 4908, exit code 0
+```
+
+**This is the thing the archive does not have.** `CLAUDE.md` records it about `online_logs\`: *"The
+folder's name carries a wall clock, which the log itself does not have"* — and that is true of solo
+play too, where there is no folder name either. A run in the archive today can be ordered but not
+dated. It was used the day it was found: the window of 2026-09-15 could only be read as one run
+because this file said exactly one launch began inside it.
+
+It also gives the **exit code**, which separates a quit from a crash, and the pairing of launches
+with `[Continue, …]` seed lines would let the fold tell a relaunch from a quit-to-menu — a
+distinction `run::resume` currently cannot make and which is exactly what left cell 2 of section 8
+open.
+
+**What has to be decided, not assumed**, and why this is an entry: it is a **rolling** log, so it is
+a window and not a history; its path is Steam's, not the game's, and `discovery` finds neither
+today; and a per-launch clock is not a per-run clock — a launch holding three runs dates all three
+the same. None of that makes it useless, and all of it has to be in the model rather than in the
+reader's head.
+
+### Closes when
+
+Either the launch timeline is a source the archive reads, with the three limits above represented
+rather than smoothed over, or the entry says in writing why a rolling per-launch clock is not worth
+the dependency — with the retention measured, because "93 since June 2025" is one machine on one
+day.
+
+---
+
+## B56 — Steam knows when each achievement was unlocked (analysis, then `ipc`)
+
+**Needs:** nothing to read the files; **a machine with Steam**.
+
+Logged on 2026-09-15, from the same sweep as B55. Two files:
+
+- `Steam\appcache\stats\UserGameStats_<accountid>_250900.bin` — 3781 bytes here, binary KeyValues,
+  carrying `AchievementTimes`;
+- `Steam\appcache\stats\UserGameStatsSchema_250900.bin` — 181 KB, the achievement definitions
+  (`Magdalene`, `Basement Boy — Beat basement without taking damage.`, icon hashes).
+
+Together they are an **achievement timeline**: not *what* is unlocked, which the `.dat` already
+says better, but **when**. This app's whole question is "what am I missing, and what is worth
+playing tonight", and every ordering it offers today — Next steps, the plan queue — is derived from
+the graph, never from what the player has actually been doing lately.
+
+**What it is not.** It is Steam's cache of Steam achievements, so it covers the 637 that have a
+Steam achievement and says nothing about a profile the game keeps locally; it is per Steam account,
+not per save slot, so a machine with two profiles gets one timeline for both; and the format is
+binary KeyValues, which is a parser this repo does not have and would have to justify.
+
+**The cheap half first**: the schema file also maps achievement id to the game's own English name
+and description, which `catalog` currently reads out of the game's XML. Whether the two agree is a
+cross-check that costs one pass and would catch a drift nobody is watching.
+
+### Closes when
+
+The timeline is either a source with a stated scope (Steam-wide, achievement-only) or refused in
+writing, and the schema cross-check against `catalog` has been run once either way — a disagreement
+there is worth more than the timeline.
+
+---
+
+## B57 — The game writes down where it saves, and `discovery` guesses (implementation, `discovery`, small)
+
+**Needs:** **the game** — the file is in the install directory.
+
+Logged on 2026-09-15. `…\common\The Binding of Isaac Rebirth\savedatapath.txt`, rewritten on every
+launch:
+
+```
+This file is purely informational. Changing it will have no effect on saving or loading data.
+
+Save Data Path: C:\Users\stefa/Documents/My Games/Binding of Isaac Repentance+/
+Modding Data Path: D:\SteamLibrary\steamapps\common\The Binding of Isaac Rebirth/mods/
+```
+
+`discovery` covers four shapes of save location by construction — with and without the `+`, Steam
+Cloud and not — and it has to, because it must work at a stranger's house. **This file is the
+game's own answer**, and it is the one place that cannot be wrong about the spelling: the two
+Documents folders differ by a character, and which one exists depends on a history the app cannot
+see.
+
+**It does not replace the search**, and saying so is the point of the entry: the file is in the
+install directory, so it exists only when the game is found; it is informational, so a mismatch is
+possible in principle; and its separators are mixed (`C:\Users\stefa/Documents/...`), which is a
+small parsing fact and a large clue that it is generated text, not a contract. It belongs as a
+**first candidate**, checked and then verified like any other, never as the answer.
+
+### Closes when
+
+`discovery` reads it when the install is known, prefers it as a candidate, and still finds the
+folder without it — with a test that turns red if the file becomes the only path that works.
