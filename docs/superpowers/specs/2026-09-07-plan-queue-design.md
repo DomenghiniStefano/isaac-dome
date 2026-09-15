@@ -5,6 +5,14 @@
 **Depends on:** M2, the unlock graph — `docs/superpowers/specs/2026-09-07-unlock-graph-design.md`
 **Status:** design approved in conversation, section by section; pending spec review
 
+
+> **Executed and merged.** The "pending spec review" above was never cleared and stayed on
+> this document after its work shipped; it is a note about how the design was agreed, not
+> about where the spec stands. The plan is archived as `docs/superpowers/plans/archive/2026-09-07-plan-queue.md`
+> — which this project only does when a sub-project merges into `develop` — and the report is
+> `docs/superpowers/reports/2026-09-07-plan-queue-report.md`. Read the report first: where the two disagree, it is
+> the one that measured. (Noted 2026-09-15, on a pass over all 32 specs.)
+
 ## What this is
 
 One ordered list of achievements: **the things you want to unlock, in the order you intend
