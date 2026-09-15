@@ -38,12 +38,10 @@ describe('graphAnswers with the game installed', () => {
     expect(urls.every((u) => u === null)).toBe(true)
   })
 
-  it("answers the pack's image files with art", () => {
+  it('answers nothing even with art, since the pack carries no images', () => {
     const withArt = graphAnswers({ withArt: true, withCatalog: true })
     const first = withArt.unlock.nodes[0]?.achievement
-    expect(first?.kind === 'known' ? first.iconUrl : null).toMatch(
-      /\/0001_you_unlocked_magdalene\.png$/,
-    )
+    expect(first?.kind === 'known' ? first.iconUrl : null).toBeNull()
   })
 
   it('fills the page a pack exported before the field existed', () => {
@@ -104,16 +102,18 @@ describe('graphAnswers without the game', () => {
 })
 
 describe('packIconUrl', () => {
-  it('finds an achievement drawing by its four-digit id', () => {
-    expect(packIconUrl('isaac://achievement/1')).toMatch(
-      /\/0001_you_unlocked_magdalene\.png$/,
-    )
-  })
-
-  it('finds an item sprite by its kind and id', () => {
-    expect(packIconUrl('isaac://item/familiar/73')).toMatch(
-      /\/familiar_0073_[a-z0-9_]+\.png$/,
-    )
+  // **The pack carries no images since 2026-09-15**, when `pnpm design:export` was abandoned
+  // and its 6065 extracted PNGs left the repository: 46 MB of a commercial game's sprites,
+  // produced by a command nobody runs any more, against CLAUDE.md's first promise that
+  // images come from the user's own copy at runtime.
+  //
+  // These two used to assert that `isaac://achievement/1` found
+  // `0001_you_unlocked_magdalene.png` and `isaac://item/familiar/73` its sprite. They assert
+  // the opposite now, and they are kept rather than deleted because that is what makes them
+  // a guard: the day somebody commits the images back, this is what says so.
+  it('answers nothing for a drawing the pack no longer carries', () => {
+    expect(packIconUrl('isaac://achievement/1')).toBeNull()
+    expect(packIconUrl('isaac://item/familiar/73')).toBeNull()
   })
 
   it('answers nothing for a link that is not an icon of the pack', () => {

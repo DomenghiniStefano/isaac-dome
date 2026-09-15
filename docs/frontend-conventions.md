@@ -426,8 +426,11 @@ Reka's collapsible root.
 interpret: the blocked colours, a dashed edge and the lock, never the star of `Now` and never
 the hatch of `Unknown`. Long lists are virtualized with `@tanstack/vue-virtual`: the options
 are a `computed`, the row height is a number pinned against its spacing token by a test
-(`screens/unlock/unlockLayout.test.ts`), and each row's offset travels as a CSS variable read by
-`translate-y-(--row-start)`.
+(`ui/src/lib/scale/rows.test.ts`, which reads `--spacing-row-wide` out of the CSS), and each
+row's offset travels as a CSS variable read by `translate-y-(--row-start)`.
+The test used to be `screens/unlock/unlockLayout.test.ts` and this line still named it after it
+had gone: the height is **shared by three tables** now — Unlock, Collection and Runs — so it
+belongs to `lib/scale/`, not to the screen that needed it first.
 
 **Added with sub-project 3.3b**: `BadgeVariant.Wanted` — a queue row you asked for, a square tag
 in the primary colours, told apart from a step a wish dragged in. A drop sends **the row it lands
