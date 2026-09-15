@@ -292,6 +292,7 @@ export const it = {
       'Senza il gioco installato le pagine non hanno immagine: le figure vengono dalla tua copia di Isaac, non dall’app.',
     search: 'cerca una pagina',
     noResults: 'Nessuna pagina con questo nome.',
+    emptyCategory: 'Questa categoria non ha pagine.',
     resetFilters: 'Azzera la ricerca',
     back: 'Torna alla categoria',
     id: 'id',

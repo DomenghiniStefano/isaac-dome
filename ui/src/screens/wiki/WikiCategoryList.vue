@@ -12,6 +12,7 @@ import { useMessages } from '@/i18n'
 import type { WikiPageRef } from '@/lib/ipc/types'
 import { rowWidePx } from '@/lib/scale/rows'
 import { pageLocation } from '@/lib/wiki/category'
+import { emptyList } from '@/lib/wiki/emptyList'
 import { filterPages } from '@/lib/wiki/listFilter'
 import { pageKey } from '@/lib/wiki/pageKey'
 import {
@@ -44,6 +45,9 @@ const total = computed(() => filterPages(all.value, props.category, '').length)
 const pages = computed(() =>
   filterPages(all.value, props.category, query.value),
 )
+// An empty list is not always a search that failed: a category with nothing in it says so,
+// and offers no button to clear a search nobody typed.
+const empty = computed(() => emptyList(total.value, query.value))
 // No picture on any page is the game's absence, not 900 pages without art.
 const noCatalog = computed(
   () => all.value.length > 0 && all.value.every((p) => p.iconUrl === null),
@@ -111,10 +115,13 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
         </Button>
       </VirtualRows>
       <div v-else class="flex flex-col items-start gap-3 p-4">
-        <EmptyCategory>{{ t('wiki.noResults') }}</EmptyCategory>
-        <Button :variant="ButtonVariant.Outline" @click="query = ''">{{
-          t('wiki.resetFilters')
-        }}</Button>
+        <EmptyCategory>{{ t(empty.text) }}</EmptyCategory>
+        <Button
+          v-if="empty.reset"
+          :variant="ButtonVariant.Outline"
+          @click="query = ''"
+          >{{ t('wiki.resetFilters') }}</Button
+        >
       </div>
     </Card>
     <Skeleton v-else class="h-150 w-full" />
