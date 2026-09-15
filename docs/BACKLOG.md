@@ -2721,9 +2721,23 @@ because the box has something in it. Discriminating on the query alone would hav
 sentence in that corner; discriminating on the total alone would have left a typed search with no
 way back.
 
-**Not seen in a window.** Five tests in `ui/src/lib/wiki/emptyList.test.ts` pin the states, and the
-suite, typecheck, lint, format and scan are green; `pnpm ui:dev` was **not** run — another process
-may hold 1420 — so the fixture's empty transformations category was never actually looked at.
+**Not seen in a window** when it was written. Five tests pinned the states, and the suite,
+typecheck, lint, format and scan were green; `pnpm ui:dev` was not run, so the fixture's empty
+transformations category was never actually looked at.
+
+**Both halves closed the same day (evening).** What this entry reported as still live — the same
+shape in `CollectionScreen` and `UnlockScreen` — is fixed, and in the Collection it was **not
+theoretical**: a machine *without the game* gets the view with `items: []` and a `noCatalog`
+diagnostic, so the list said "Nessun oggetto con questi filtri." under a banner explaining that
+the game is missing. `emptyList` moved to `ui/src/lib/facets/emptyList.ts` and takes its two
+message keys, with `isFiltering` in place of the query, because here a reset clears the facets
+too.
+
+**And it was looked at**, on `?catalog=none`: with the Collection's opening filter the sentence is
+right and the button clears the two chips the toolbar shows; cleared, the sentence stays and the
+button is gone. The wiki's empty category still says it is empty with no reset after the move.
+Unlock's is a **guard** and says so — a machine with no catalog still receives every node, counted
+as unread, so the state is not reachable there today.
 
 **Needs:** nothing — `WikiCategoryList.vue` and one message; seeing it wants `pnpm ui:dev` with the
 fixtures, where a category is empty for a reason the real dataset never has.
