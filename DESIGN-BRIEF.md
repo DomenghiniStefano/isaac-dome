@@ -184,17 +184,20 @@ The traffic light = availability of real data, not priority.
 | 3 | **Plan** | My goals, in the order I mean to do them | graph + save diff | 🟢 **real** (§7.4, §7.6): saved goals, and a queue whose rows are the ones you asked for plus the prerequisites they dragged in. `expansion` is the one field still a declared stub |
 | 4 | **Completion** | Character × mark matrix, and how readable it is (see §5.3) | **save only** | 🟢 **designable now** |
 | 5 | **Collection** | Items never touched, by pool and quality | save + catalog | 🟢 **real** (§7.7): the save's item collection joined with the catalog's collectibles — name, sprite, quality, pools, origin, whether the collection holds it, and the achievement that locks it. Trinkets have no slot in the save, and aren't listed |
-| 6 | **Runs** | Win rate, nemesis, streak | run archive | 🔴 M4 |
-| 7 | **Live** | What I've collected in this run | log watcher | 🔴 M4 |
+| 6 | **Runs** | What I have played, and how each one ended | run archive | 🟢 **real** (M4): the folded runs of every source, ordered with the open one first — character, outcome, floors, seed, the online mark — with four facets and a search over a virtualized table. The wire carries no timestamp: a session is ordered by its folder's name |
+| 7 | **Live** | What I am playing, and what finishing it would open | log watcher + graph | 🟢 **real** (M4): the open run as four readings and no percentages, the character the log states, its row of the completion matrix, and the achievements this run would open — offered only where *every* still-missing requirement is a mark for the character being played |
 | 9 | **Floor** | Where the secret room can be on the floor I'm on | what you painted + the game's cited placement rules | 🔴 F1 (`docs/superpowers/specs/2026-09-15-floor-secret-rooms-design.md`) |
 | 8 | **Search** | Where this thing is, wherever the app knows it | catalog + wiki + save + graph | 🟢 designable now for catalog and wiki; graph nodes enter the results with M2 (B5) |
 | 0 | **Profile selection** | What am I looking at, and how do I change it | **discovery only** | 🟢 **designable now** |
 
-**To design first: Profile selection and Completion.** They're the two we can fill
-entirely with real data, so the ones where the design gets verified instead of merely
-looking plausible. Then Collection, Unlock, Next steps, and Plan: real data behind
-a fixed contract (§7), with a *partial* state that has to be designed as such. Runs and Live
-only need a *shell*: navigation, headers, empty state, loading skeleton.
+**The order this was designed in, and it held.** Profile selection and Completion first —
+the two that could be filled entirely with real data, so the ones where the design was
+verified instead of merely looking plausible. Then Collection, Unlock, Next steps and Plan:
+real data behind a fixed contract (§7), with a *partial* state designed as such. Then Runs
+and Live, which this paragraph expected to *"only need a shell: navigation, headers, empty
+state, loading skeleton"* and which turned out to carry the judgments the log cannot make.
+**Every screen in the table above is built as of 2026-09-15.** What the traffic light
+measures is data, and it was never a measure of design.
 
 **And now all of them can have the game's images.** The traffic light above measures
 *data*; *assets* are an independent axis, and it turned green today (§5.6). It remains
