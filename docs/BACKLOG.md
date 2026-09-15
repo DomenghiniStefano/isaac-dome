@@ -2701,7 +2701,25 @@ parser will.
 
 ---
 
-## B48 — An empty category says "no page with this name" when nothing was searched (implementation, `ui`, small)
+## B48 — An empty category says "no page with this name" when nothing was searched (implementation, `ui`, small) ✅ closed on 2026-09-15
+
+**Closed on `fix/empty-category`.** The decision is a pure function — `emptyList(total, query)` in
+`ui/src/lib/wiki/emptyList.ts` — and `WikiCategoryList.vue` only draws its answer. A category whose
+unfiltered count is `0` now says **"Questa categoria non ha pagine."** (`wiki.emptyCategory`, added
+to both locales), and the *Azzera la ricerca* button appears only where there is a search to clear.
+
+**The two halves are independent, which the entry did not say.** The sentence follows the total, the
+button follows the query, because they answer different questions: an empty category is a fact about
+the data, and a query is the only thing a reset can undo. That is what settles the corner the closing
+criterion does not name — a query typed *into* an empty category: the sentence still says the
+category is empty, because no other name would have answered either, and the button is still there,
+because the box has something in it. Discriminating on the query alone would have kept the wrong
+sentence in that corner; discriminating on the total alone would have left a typed search with no
+way back.
+
+**Not seen in a window.** Five tests in `ui/src/lib/wiki/emptyList.test.ts` pin the states, and the
+suite, typecheck, lint, format and scan are green; `pnpm ui:dev` was **not** run — another process
+may hold 1420 — so the fixture's empty transformations category was never actually looked at.
 
 **Needs:** nothing — `WikiCategoryList.vue` and one message; seeing it wants `pnpm ui:dev` with the
 fixtures, where a category is empty for a reason the real dataset never has.
