@@ -6,6 +6,7 @@
 //! `plan_parts` and the degradation logic have already made.
 
 pub(crate) mod completion;
+pub(crate) mod floor;
 pub(crate) mod graph;
 pub(crate) mod plan;
 pub(crate) mod profile;

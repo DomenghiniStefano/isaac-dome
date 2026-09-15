@@ -14,6 +14,7 @@ catalog = { path = "../catalog" }
 run = { path = "../run" }
 graph = { path = "../graph" }
 plan = { path = "../plan" }
+floor = { path = "../floor" }
 wiki = { path = "../wiki" }
 png = "0.17"
 ts-rs = "12.0.1"

@@ -4,6 +4,7 @@ mod catalog_view;
 mod collection;
 pub mod contract;
 mod error;
+mod floor;
 pub mod for_tests;
 mod goals;
 mod graph;
@@ -34,6 +35,10 @@ pub use collection::{
     LockView,
 };
 pub use error::IpcError;
+pub use floor::{
+    floor_view, AppliedRule, FloorCandidate, FloorDiagnostic, FloorSolutionView, FloorUnresolved,
+    FloorView, RoomKindView, TargetView,
+};
 pub use goals::{target_exists, Goal, GoalId, TargetKey, UnlockTarget};
 pub use graph::{
     graph_views, next_steps, plan_view, resolve_target, target_of, unlock_view, AchievementRef,

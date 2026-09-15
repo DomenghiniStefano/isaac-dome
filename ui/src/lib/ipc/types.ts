@@ -1285,6 +1285,82 @@ export type RunsView = {
 }
 
 /**
+ * A room as the screen paints it.
+ */
+export const RoomKindView = {
+  Start: 'start',
+  Normal: 'normal',
+  Boss: 'boss',
+  Treasure: 'treasure',
+  Shop: 'shop',
+  Curse: 'curse',
+  Challenge: 'challenge',
+  Sacrifice: 'sacrifice',
+  Arcade: 'arcade',
+  Library: 'library',
+  Miniboss: 'miniboss',
+  Secret: 'secret',
+  SuperSecret: 'superSecret',
+  UltraSecret: 'ultraSecret',
+} as const
+export type RoomKindView = (typeof RoomKindView)[keyof typeof RoomKindView]
+
+export const TargetView = {
+  Secret: 'secret',
+  SuperSecret: 'superSecret',
+  UltraSecret: 'ultraSecret',
+} as const
+export type TargetView = (typeof TargetView)[keyof typeof TargetView]
+
+/**
+ * One rule behind a candidate, with the sentence it was read from.
+ */
+export type AppliedRule = { id: string; quote: string; url: string }
+
+export type FloorCandidate = {
+  cell: number
+  neighbours: number
+  /**
+   * Its place in the preference order the cited rule states; 0 is that rule's first.
+   */
+  rank: number
+  applied: Array<AppliedRule>
+}
+
+export type FloorUnresolved = {
+  rule: string
+  note: string
+  quote: string
+  url: string
+}
+
+export type FloorSolutionView = {
+  target: TargetView
+  candidates: Array<FloorCandidate>
+  unresolved: Array<FloorUnresolved>
+}
+
+/**
+ * Everything that stops the screen from answering, said out loud. None of them may be drawn
+ * as "there is nowhere for a secret room": that is an answer, and these are the absence of one.
+ */
+export type FloorDiagnostic =
+  | { kind: 'gridEmpty' }
+  | { kind: 'noStartRoom' }
+  | { kind: 'rulesUnreadable'; reason: string }
+  | { kind: 'gridMalformed'; cells: number }
+
+export type FloorView = {
+  solutions: Array<FloorSolutionView>
+  /**
+   * How many cells are painted. A count, not a fraction: nothing here knows how many rooms
+   * the floor has.
+   */
+  painted: number
+  diagnostics: Array<FloorDiagnostic>
+}
+
+/**
  * One achievement this run could open, and how much it opens in turn: the graph already
  * counts that for Unlock, and a run is worth more when what it gives unlocks more.
  */
