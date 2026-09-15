@@ -56,10 +56,11 @@ ui/
       ipc/         typed wrappers around Tauri commands — the only place with invoke()
         transport.ts  call(): invoke() in Tauri, the fixtures under `pnpm ui:dev`
         errors.ts     isIpcError, shared by the stores
-        fixtures/     development answers, one scenario per `?fixture=`; `art.ts` globs the
-                      design pack's sprites, `?art=none` answers without them; `graph.ts`
+        fixtures/     development answers, one scenario per `?fixture=`; `art.ts` and
+                      `graphArt.ts` glob the pack's sprites, which since 2026-09-15 are not
+                      there, so every image answers null; `graph.ts`
                       answers the pack's real unlock payloads, `?catalog=none` without the
-                      game, and `graphArt.ts` holds their 1,500 images, loaded only then and
+                      game, and `graphArt.ts` held their 1,500 images, loaded only then and
                       indexed once; `queue.ts` keeps a plan queue in memory, repaired by a port
                       of the Rust rule (`queueRepair.ts`), `?queue=empty|unavailable|unreadable`;
                       `collection.ts` answers the pack's `collection.json` when it has one, and
@@ -381,9 +382,15 @@ so the shell can be looked at without the backend. `?fixture=none|pick|active` p
 scenario (no saves, a choice to make, an active profile); a command with no fixture throws
 `no fixture answers <command>` rather than returning something plausible. The fixtures are
 imported dynamically behind `import.meta.env.DEV`: the production build carries none of
-them. Their images come from the design pack, globbed once in `fixtures/art.ts` (the Kit
-reads it too); `?art=none` answers every image URL as `null`, which is what every user sees
-before the game's sprites are there, and a clone without the pack gets the same. The window works the same way: `src/lib/window/appWindow.ts` is the only module that
+them. Their data comes from the design pack's committed payloads — the real 720 items and
+642 achievements — globbed once per family.
+**Their images no longer do.** The pack's 6065 sprites left the repository on 2026-09-15
+with `pnpm design:export`, so `fixtures/art.ts` and `graphArt.ts` glob nothing and every
+image URL is `null`. That was already the documented fallback: it is what every user sees
+before the game's sprites are there, and what a clone without the pack always got. It is now
+the only case, which makes `?art=none` a switch with one reachable value — kept because the
+screens' fallback is still worth exercising by name, and because a `?art=` that answered
+differently would mean the images had come back. The window works the same way: `src/lib/window/appWindow.ts` is the only module that
 imports `@tauri-apps/api/window`, and outside Tauri its controls do nothing.
 
 A note on serde, which is the twin trap on the Rust side: every struct that crosses the
