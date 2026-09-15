@@ -97,6 +97,48 @@ export const en: MessageSchema = {
       noProfile: 'Without a save chosen we do not know what you are missing.',
     },
   },
+  floor: {
+    intro:
+      'Draw the floor the way you see it on the minimap: empty cells light up where the game’s own rules allow a secret room. Every lit cell says which rule lit it and where that rule was read.',
+    erase: 'Erase',
+    clear: 'Clear the grid',
+    painted: 'rooms drawn',
+    neighbours: 'adjacent rooms',
+    source: 'Source',
+    unresolved: 'What the grid cannot judge',
+    none: 'No cell the rules allow, with what you have drawn so far.',
+    failed: 'The candidates could not be computed. What you drew stays.',
+    target: {
+      secret: 'Secret Room',
+      superSecret: 'Super Secret Room',
+      ultraSecret: 'Ultra Secret Room',
+    },
+    room: {
+      start: 'Start',
+      normal: 'Normal',
+      boss: 'Boss',
+      treasure: 'Treasure',
+      shop: 'Shop',
+      curse: 'Curse',
+      challenge: 'Challenge',
+      sacrifice: 'Sacrifice',
+      arcade: 'Arcade',
+      library: 'Library',
+      miniboss: 'Miniboss',
+      secret: 'Secret',
+      superSecret: 'Super Secret',
+      ultraSecret: 'Ultra Secret',
+    },
+    diagnostic: {
+      gridEmpty:
+        'Draw at least one room: without one there is nothing to judge.',
+      noStartRoom:
+        'Mark the start room. Without it the rule about rooms walked from the start cannot be read, and the Super Secret Room is only half judged.',
+      rulesUnreadable: 'The placement rules did not load: {reason}.',
+      gridMalformed:
+        'The grid that arrived is not a floor: {cells} cells instead of 169.',
+    },
+  },
   runs: {
     intro:
       'The runs the app has read: this session’s, and the online sessions the game had already recorded. The log carries no clock, so the order is by session and not by time.',

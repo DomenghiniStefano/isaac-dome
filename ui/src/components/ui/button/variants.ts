@@ -14,6 +14,10 @@ export const ButtonVariant = {
   Chrome: 'chrome',
   ChromeDanger: 'chromeDanger',
   Field: 'field',
+  // One square of the Floor screen's 13x13 grid. The fill is the caller's: what a cell means
+  // — unpainted, a room, or a cell a cited rule allows — is the answer the screen computes,
+  // and cva cannot express a colour that changes per cell.
+  Cell: 'cell',
 } as const
 export type ButtonVariant = (typeof ButtonVariant)[keyof typeof ButtonVariant]
 
@@ -27,6 +31,7 @@ export const ButtonSize = {
   Window: 'window',
   Compact: 'compact',
   Section: 'section',
+  Cell: 'cell',
 } as const
 export type ButtonSize = (typeof ButtonSize)[keyof typeof ButtonSize]
 
@@ -68,6 +73,10 @@ export const buttonVariants = cva(
         // Looks like a field, opens something else: the navbar's search trigger.
         [ButtonVariant.Field]:
           'justify-start border-secondary bg-data text-faint-foreground hover:border-input',
+        // No fill and no edge of its own: the grid supplies the fill, and 169 borders would
+        // be a lattice the eye reads before it reads the answer.
+        [ButtonVariant.Cell]:
+          'border-transparent text-floor-candidate-foreground hover:border-input',
       },
       size: {
         [ButtonSize.Default]: 'h-control px-4',
@@ -87,6 +96,7 @@ export const buttonVariants = cva(
         // A navbar section: the navbar's full height.
         [ButtonSize.Section]:
           'h-full gap-1.75 px-3.25 [&_svg:not([class*=size-])]:size-3.5',
+        [ButtonSize.Cell]: 'size-floor-cell p-0 text-caption',
       },
     },
     compoundVariants: [
