@@ -479,6 +479,13 @@ pub(crate) mod fixtures {
                     ("id", "584"),
                     ("alias", "Book of Virtues"),
                 ]),
+                // Its twin, and the page's name carries the article: the arm that resolved
+                // `Book of Belial` found nothing for 33 uses.
+                row(&[
+                    ("_pageName", "The Book of Belial"),
+                    ("id", "34"),
+                    ("alias", "The Book of Belial"),
+                ]),
                 // Afterbirth+'s collectible 474: no longer exists in Repentance+.
                 row(&[
                     ("_pageName", "Tonsil"),

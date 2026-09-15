@@ -2729,7 +2729,43 @@ seen without the game.
 
 ---
 
-## B49 — A block-level template reaches the screen as its own source (implementation, `wiki`, then `ipc` and `ui`) 🟡 the layout half closed on 2026-09-14
+## B49 — A block-level template reaches the screen as its own source (implementation, `wiki`) ✅ closed on 2026-09-15
+
+**Closed with no contract change, and that is the finding.** The entry had carried since
+2026-09-08 the claim that the rest needs *"a way to say «a template wrapping blocks», and that is a
+`Block` variant"* — the sentence that made the second half a design decision and kept it waiting
+for one. It is false, and what says so is a census rather than an argument: every template in
+`dataset/raw/` that opens on one line and closes on another, by family and by the shape of what it
+holds. Seventeen spans, four families, and each family already has a shape the contract can say.
+
+- The two **`X synergy`** templates (6 + 1) open **on a list item**, always, and every line of
+  their content is a `**` line: that is `ListItem { inline, children }`, which has existed since
+  the first parser. The wrapper is re-closed at the end of its sentence — so the inline pass reads
+  the single-line shape it already models, and one place keeps building the *"with what"* label —
+  and the lines below stay the children they already were.
+- All nine multi-line **`{{bug|…}}`** sit under `== Bugs ==`, which the tree carries as
+  `SectionKind::Bugs`, and the single-line case had been dropped inline since `CONTENT_WRAPPERS`
+  existed. Modelling the multi-line one would have said the same thing twice.
+- **`scroll box`** (one use, The Lost's seeds) is `column list`'s family. It was not in the count
+  above because nobody had enumerated the spans — the families were known from the offenders they
+  left behind, which is a different list.
+
+**Raw template syntax 35 → 9**, and the 9 are the genuine text: eight `<math>` formulas and
+Keeper's `and}}` typo. Nothing is left that the parser could have understood.
+
+**Two numbers were wrong in this entry and are corrected here**, both of them counts nobody could
+have noticed being wrong: multi-line `{{bug|…}}` is **9 spans**, not 4 (4 was the count of the
+*offenders* they left, which is neither the same list nor the same size), and the genuine
+remainder is **9**, not 8 — the 8 was measured on 2026-09-08 and a formula arrived after it, under
+an assertion pinned at `<= 35` that could not see its own remainder drift.
+
+**One rule the fix needed and the entry did not know**: the pre-pass may only touch a template
+that **spans lines**. 538 of the 547 `{{bug|…}}` close on the line they opened on, most of them
+inside a list item, and moving one of those onto a line of its own cuts the item in two — a pass
+that repaired one family by breaking five hundred. `a_wrapper_that_closes_on_its_own_line_is_left_where_it_is`
+is that fence.
+
+*The history that led here, kept:*
 
 **`column list` is gone** (`fix/column-list`): it is unwrapped into the list it already holds,
 before the line-by-line pass, because the pass cannot see a template that spans a dozen lines and
@@ -2749,8 +2785,9 @@ leaves a blank line where the wrapper closed — which flushes the list, the ver
 a rule against, arriving from the other side. The test that caught it was written for that rule in
 September and is now load-bearing for a change it never saw coming.
 
-**Needs:** nothing — the wikitext is committed, the defect is in `blocks.rs`, and the last step is
-a contract decision about one `Block` variant.
+*(The `**Needs:**` line is gone with the closure: a closed entry carries no tag. It read "nothing —
+the wikitext is committed, the defect is in `blocks.rs`, and the last step is a contract decision
+about one `Block` variant", and the last clause is the half that turned out not to exist.)*
 
 Reported by the owner on 2026-09-14, from Beelzebub's page in the running app: where the list of
 contributing enemies should be, the page prints
@@ -2889,3 +2926,58 @@ page filled it) the page carries the effects, the notes, and nothing about pills
 A transformation's entry carries its preamble, and Adult's page says how you become an adult. The
 rule stays what it is for every other kind — this is a kind whose preamble is content, not a
 repetition of the catalog.
+
+---
+
+## B52 — What `n` means in a `{{dlc|…}}` code, and the 1832 spans waiting on it (analysis, then `wiki`)
+
+**Needs:** nothing to measure the corpus, **one query** to answer it — the wiki's own
+`Template:Dlc`, which only `wiki-snapshot` may ask. Everything below was measured on the committed
+`dataset/raw/` on 2026-09-15.
+
+Found while wiring `{{bug|dlc=…}}` into the edition it declares. The arm read the positional
+argument and never a named one, so 204 of the 547 `{{bug|…}}` showed a defect of one edition to
+every reader; fixing that meant reading a `dlc` code, and reading a code meant finding out that
+**this parser understands 2434 of the 4168 `{{dlc|…}}` uses and silently mis-handled the other
+1734**.
+
+### What was shipping, and is not any more
+
+Each unreadable code opened an `Inline::Edition` whose `only` was **empty** — a span declaring
+itself valid in *no* edition. **1690 of them were in `dataset/wiki.json`**, out of 4928 edition
+nodes: one in three. `WikiInline.vue` draws no badge for an empty `only`
+(`v-if="token.only.length"`), so the reader saw the sentence with nothing to say which edition it
+belongs to, and nothing anywhere recorded that a code had been dropped.
+
+Since 2026-09-15 `Out::close` unwraps such a frame instead of emitting it — the words are kept,
+the node is not — and `dlc_codes` counts the code. `meta.diagnostics.unknownDlcCodes` now carries
+**1832** of them: `nr` 1190, `nr+` 235, `na+` 96, `a+nr` 84, `anr` 77, `na` 75, `rnr+` 43, `ana+`
+21, and five rarer ones. (1832 against 1734 occurrences in the wikitext is not a disagreement: a
+page belonging to two forms is read once per entry.)
+
+### Why the existing splitter is not the answer
+
+`Dlc::parse_codes` splits the **infobox** parameter, where concatenated codes are the set of
+editions an entry exists in, and it would happily turn `nr` into `[Rebirth, Repentance]`. Applying
+it here would have shipped 1734 labels nobody measured, and the corpus says they would be wrong:
+
+- Every edition code appears **both bare and with a leading `n`** — `r` 1687 / `nr` 1155,
+  `r+` 446 / `nr+` 207, `a+` 165 / `na+` 149, `a` 134 / `na` 69 — which is not what a set looks
+  like.
+- A bare `n` appears **zero** times in 4168 uses. If `n` were Rebirth, an inline marker for
+  Rebirth would exist somewhere.
+- **Abyss settles it.** The item exists only in Repentance — `dlc = r` in its own infobox — and
+  its page carries a line marked `{{dlc|nr+}}`. Read as a set, that line is valid in Rebirth,
+  an edition where the item is not.
+
+So `n` modifies the code beside it, and every observed string decomposes cleanly under that
+reading (`anr` = a, nr; `a+nr` = a+, nr; `rnr+` = r, nr+; `nar` = na, r). **What it modifies is
+unmeasured** — "new in" and "not in" both fit the shape and mean opposite things, which is exactly
+why this is an entry and not a patch.
+
+### Closes when
+
+`Template:Dlc` has been read and `n` is named from it, in writing, with the source quoted; the
+codes are split accordingly; and `unknownDlcCodes` falls to what genuinely unknown codes leave
+behind. If the answer turns out to be "not in", note that the sentences currently shown
+unqualified are shown to the *wrong* readers, which raises this above a labelling task.
