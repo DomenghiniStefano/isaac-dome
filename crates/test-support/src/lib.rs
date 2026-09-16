@@ -145,9 +145,50 @@ pub fn log_sample(name: &str) -> Option<PathBuf> {
 /// watcher trace, which are measurements and not logs: the filter lives here rather than in
 /// each test, for the reason `is_dated` exists — a looser one somewhere else eventually picks
 /// up a file that is not a point in the series.
+///
+/// **Every log here holds at least one run**, and that is the folder's contract rather than an
+/// accident of what was collected: the guard that catches a rules file which stopped matching
+/// requires a run from each of them. A `log.txt` in which nobody started a run is in
+/// [`launches_dir`].
 pub fn log_samples() -> Vec<PathBuf> {
-    let Ok(entries) = std::fs::read_dir(logs_dir()) else {
-        declare("skip: samples/logs/ is missing");
+    declared_logs_in(&logs_dir(), "logs")
+}
+
+/// The `samples/launches/` folder: a `log.txt` the game wrote in which **nobody started a run** —
+/// the game was launched, it played the intro, it shut down.
+///
+/// It is a folder of its own for the same reason [`windows_dir`] is one (B60). `samples/logs/`
+/// means *logs of runs*, and the guard over it requires a run from every file it finds; filing a
+/// runless launch beside them would turn that guard into one that cannot fail, which is the
+/// vacuity rule read backwards. It is not a rare shape — it is the first launch of most evenings.
+pub fn launches_dir() -> PathBuf {
+    samples_dir().join("launches")
+}
+
+/// Every launch that produced no run, in name order, each one declared.
+pub fn launch_samples() -> Vec<PathBuf> {
+    declared_logs_in(&launches_dir(), "launches")
+}
+
+/// One launch by name, declaring which file it is or why there is none.
+pub fn launch_sample(name: &str) -> Option<PathBuf> {
+    let path = launches_dir().join(name);
+    if path.is_file() {
+        declare(&format!("sample: launches/{name}"));
+        return Some(path);
+    }
+    declare(&format!(
+        "skip: launches/{name} missing from samples/launches/"
+    ));
+    None
+}
+
+/// The `*.log.txt` of one folder, sorted, with every outcome declared. Shared by [`log_samples`]
+/// and [`launch_samples`]: a helper that declares which file it used is precisely the thing that
+/// must not exist twice with two behaviours.
+fn declared_logs_in(dir: &Path, label: &str) -> Vec<PathBuf> {
+    let Ok(entries) = std::fs::read_dir(dir) else {
+        declare(&format!("skip: samples/{label}/ is missing"));
         return Vec::new();
     };
     let mut found: Vec<PathBuf> = entries
@@ -162,11 +203,11 @@ pub fn log_samples() -> Vec<PathBuf> {
     found.sort();
     for path in &found {
         if let Some(name) = path.file_name().and_then(|name| name.to_str()) {
-            declare(&format!("sample: logs/{name}"));
+            declare(&format!("sample: {label}/{name}"));
         }
     }
     if found.is_empty() {
-        declare("skip: no *.log.txt in samples/logs/");
+        declare(&format!("skip: no *.log.txt in samples/{label}/"));
     }
     found
 }
