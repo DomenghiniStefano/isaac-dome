@@ -44,6 +44,14 @@ pub enum Event {
         stage_type: u32,
         seed: u32,
     },
+    /// `19 rooms in 12 loops`, the line that closes one generation pass. It belongs to the
+    /// floor the last `FloorEntered` announced — the log writes it four lines under its own
+    /// `Level::Init`, between `generate...` and `placing rooms...` — and which of several
+    /// passes describes the floor that was walked is the fold's problem, not this enum's.
+    RoomsGenerated {
+        rooms: u32,
+        loops: u32,
+    },
     RoomEntered {
         id: String,
         name: String,
