@@ -65,9 +65,16 @@ run history, and all three are sources this project did not know it had. **B59**
 it came out of writing a comment: the convention scanner matches its rules against the raw file,
 so a comment naming a forbidden call trips the rule that forbids it.
 
-- **`nothing` (17)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B59
+**Re-counted again the evening of 2026-09-16, on the second machine: 29 open.** The same sweep as
+B55–B57, run on the other machine because a `Needs:` tag is the one thing in this file that is
+about a machine and not about the work. It opened **B60** — a log the game wrote with no run in
+it, which the suite cannot hold — and it **retagged B57** from `the game` to `nothing`, because
+`savedatapath.txt` turns out to outlive the uninstall. One entry moved bucket and one entry is new,
+and both came from looking at a machine instead of at the list.
+
+- **`nothing` (19)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B57, B59, B60
 - **`a real save` (4)** — B21, B22, B23, B58
-- **`the game` (5)** — B3, B19, B33, B36, B57
+- **`the game` (4)** — B3, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
 
 The `a measurement` bucket is the same subject as *"What only a machine with the game can answer"*
@@ -1292,6 +1299,21 @@ is not many for 93 launches, so it is either short or a run rarely crosses a syn
 run *starting* is as visible as one ending — the line above says "in sync", not "created", because
 that run was already open when the game launched.
 
+**Half of that was measured on 2026-09-16, on the second machine, and the two logs came out
+nothing alike.** The game has not been launched there since Jan 2025 and has since been
+uninstalled, so it is the retention question asked from the other end:
+
+| file | size | AppID 250900 |
+|---|---|---|
+| `Steam\logs\gameprocess_log.txt` | 6.9 KB | **0 lines** |
+| `Steam\logs\cloud_log.txt` | 848 KB | 1760 lines, `2024-01-18` → `2025-01-14`, 181 naming a `gamestate1.dat` |
+
+So the **launch** clock is a short window — it rolled away an entire era of play and says the game
+was never run here — while the **cloud** clock held ~12 months on the same machine. That is the
+asymmetry this entry asks to decide rather than assume, and it points the same way the paragraph
+above does: the per-run clock is worth more than the per-launch one, and it is also the one that
+survives. It does not make it a history — 848 KB is still a size, not a promise.
+
 **What has to be decided, not assumed**, and why this is an entry: it is a **rolling** log, so it is
 a window and not a history; its path is Steam's, not the game's, and `discovery` finds neither
 today; and a per-launch clock is not a per-run clock — a launch holding three runs dates all three
@@ -1342,7 +1364,13 @@ there is worth more than the timeline.
 
 ## B57 — The game writes down where it saves, and `discovery` guesses (implementation, `discovery`, small)
 
-**Needs:** **the game** — the file is in the install directory.
+**Needs:** ~~**the game**~~ **nothing** — **retagged 2026-09-16**: the file **outlives the
+install**. On the second machine the game is uninstalled (no `appmanifest_250900.acf`) and
+`steamapps\common\The Binding of Isaac Rebirth\` is an orphan holding `data`, `mods` and
+`savedatapath.txt` — no `resources\`. So the fixture is available on a machine that cannot run
+anything else in the `the game` bucket, and writing the parser and its tests needs no install.
+What still needs one is watching the file be *rewritten on launch*, which is the sentence below
+and not the entry.
 
 Logged on 2026-09-15. `…\common\The Binding of Isaac Rebirth\savedatapath.txt`, rewritten on every
 launch:
@@ -1353,6 +1381,21 @@ This file is purely informational. Changing it will have no effect on saving or 
 Save Data Path: C:\Users\stefa/Documents/My Games/Binding of Isaac Repentance+/
 Modding Data Path: D:\SteamLibrary\steamapps\common\The Binding of Isaac Rebirth/mods/
 ```
+
+**And the second machine holds the other half of the entry's own argument** (2026-09-16), which is
+why the retag is worth more than one less skip. Same file, different machine:
+
+```
+Save Data Path: C:\Users\stefa/Documents/My Games/Binding of Isaac Repentance/
+Modding Data Path: C:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth/mods/
+```
+
+No `+`, and `Documents\My Games\` on that machine holds **only** that spelling — so the two
+samples are the two branches of the fork the entry says `discovery` cannot see, and both are now
+fixtures rather than an argument. The mixed separators reproduce exactly, on a second install and
+a different Steam library root, which promotes that from an observation to something a parser may
+rely on. The `Modding Data Path` also ends up naming an install the launcher no longer lists —
+another reason it is a *candidate to verify*, never the answer.
 
 `discovery` covers four shapes of save location by construction — with and without the `+`, Steam
 Cloud and not — and it has to, because it must work at a stranger's house. **This file is the
@@ -1375,7 +1418,12 @@ folder without it — with a test that turns red if the file becomes the only pa
 
 ## B58 — The mark tables were located on the 2026 series and are read on a 2025 save (analysis, `core-save` and `ipc`)
 
-**Needs:** **a real save** of the 641-achievement era — `samples/` has one, `20250626`.
+**Needs:** **a real save** of the 641-achievement era — `20250626` on the machine this was written
+on, `20250112` on the second one (2026-09-16). **The era is the requirement, not the file**: the
+sentence used to name one file and read as a property of `samples/`, which is the one thing in a
+`Needs:` line that is about a machine. That there are two independent 641-era saves is worth more
+than either — the two anomalous cells below are an argument from **one** profile, and a second one
+of the same era either repeats them or ends the hypothesis.
 
 Logged on 2026-09-15, found by a property that would not hold and should not have been made to.
 
@@ -1439,6 +1487,45 @@ usually matching a real thing.
 A file whose only `invoke(` is inside a comment scans clean, and a test in the scanner's own
 fixtures says so. Every existing rule keeps its current verdict on the repository as it stands —
 if blanking comments changes an answer anywhere, that answer is a finding and goes in the report.
+
+---
+
+## B60 — A log with no run in it, and the test that says there is no such log (implementation, `log-watch` and `test-support`, small)
+
+**Needs:** nothing — the log is 4 KB and the assertion is `crates/log-watch/tests/ingest.rs`.
+
+Found on 2026-09-16, on the second machine, by looking for what it kept rather than for what a
+task needed. `Documents\My Games\Binding of Isaac Repentance\log.txt`, 4025 bytes, last written
+2024-03-05: the game was launched, it played `cutscene 1 (Intro)`, it shut down. It is a log the
+game actually wrote and it holds **none of the nine events** — no seed line, no `Level::Init`, no
+`Game Over`.
+
+It cannot be added to `samples/logs/` as things stand, and that is the entry:
+
+```rust
+// the_logs_the_game_actually_wrote_import_into_runs
+assert!(runs.is_some_and(|r| !r.is_empty()), "{} produced no run at all", log.display());
+```
+
+Every log in the folder has to yield at least one run. **That is not a property of logs, it is a
+property of the three that were collected** — each one captured on purpose, during a run, to
+answer a question about runs. A launch that ends in the menu is the counter-example, and it is not
+an exotic one: it is the first launch of most evenings. This is the vacuity rule of `CLAUDE.md`
+read from the other side — there the worry is a property that cannot fail, here it is one that
+cannot hold, and both come from a sample chosen by the question rather than by the domain.
+
+**And the file is `v1.7.9b`, Repentance, not Repentance+.** No log in the repo predates the `+`.
+What `Rules::embedded()` makes of an older version's lines is untested; the answer may well be
+"nothing moved", and that is worth reading rather than assuming — `docs/log-format.md` describes
+one era.
+
+### Closes when
+
+`samples/logs/` can hold a log with no run in it. The property says what it actually means — the
+ingest answers, the cache is written, and **at least one** log in the folder holds a run, so the
+folder going quiet is still red — and the file is in it under its date and its era. If the older
+version's lines parse differently, that is a second finding and it belongs in
+`docs/log-format.md`, not in a patch to the rules.
 
 ---
 
