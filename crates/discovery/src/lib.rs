@@ -166,12 +166,20 @@ pub fn discover(opts: &Options) -> Discovery {
     }
     // The data folder is probed **whether or not** a save was found there: with Steam Cloud on
     // there never is one, and that is the ordinary machine.
+    //
+    // The game writes down where it saves (B57), so when the install is known that answer is
+    // asked for first: the two Documents folders differ by one character and which one exists
+    // depends on a history the app cannot see. It is a candidate and not the answer — without
+    // the game there is no file, and the search below is what every machine used before it.
+    let declared = game
+        .as_ref()
+        .and_then(|g| data_folder::declared_game_data(&g.dir));
     let mut game_data = None;
     if let Some(documents) = dirs::document_dir() {
         let (mut c, mut d) = saves::scan_documents(&documents);
         saves.append(&mut c);
         diagnostics.append(&mut d);
-        game_data = data_folder::scan_game_data(&documents);
+        game_data = data_folder::scan_game_data(&documents, declared.as_deref());
     }
 
     if saves.is_empty() {
@@ -197,8 +205,19 @@ pub mod for_tests {
 
     use crate::{Dlc, Edition};
 
-    pub fn scan_game_data(documents: &std::path::Path) -> Option<crate::GameDataFolder> {
-        crate::data_folder::scan_game_data(documents)
+    pub fn scan_game_data(
+        documents: &std::path::Path,
+        declared: Option<&std::path::Path>,
+    ) -> Option<crate::GameDataFolder> {
+        crate::data_folder::scan_game_data(documents, declared)
+    }
+
+    pub fn declared_game_data(game_dir: &std::path::Path) -> Option<std::path::PathBuf> {
+        crate::data_folder::declared_game_data(game_dir)
+    }
+
+    pub fn parse_save_data_path(contents: &str) -> Option<std::path::PathBuf> {
+        crate::data_folder::parse_save_data_path(contents)
     }
 
     pub fn edition_from_appids(appids: &BTreeSet<u32>) -> Edition {
