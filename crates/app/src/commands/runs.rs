@@ -36,9 +36,15 @@ pub(crate) fn runs(
                             (SourceKind::Session, None) | (SourceKind::Log, _) => RunSource::Live,
                         };
                         match guard.cached_runs(row.id, version) {
+                            // Including an empty fold, which is a source read under these rules
+                            // that holds no run: it contributes no row and no total, and saying
+                            // so is cheaper than a second rule about which sources may be here.
                             Ok(Some(runs)) => sources.push((name, runs)),
-                            // No cache under these rules is not an error: the source will be
-                            // folded again the next time its log is read.
+                            // Since migration 5 this is one state and not three: nobody has
+                            // folded this source under these rules. It is folded again the next
+                            // time its log is read — which for a launch with no run in it used
+                            // to be a promise that could not come true, because folding it
+                            // produced nothing and nothing was what it had cached.
                             Ok(None) => {}
                             Err(_) => unreadable += 1,
                         }
