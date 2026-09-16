@@ -22,7 +22,7 @@ describe('the session document', () => {
         box,
       },
     ]
-    expect(readSession(writeSession(windows))).toEqual(windows)
+    expect(readSession(writeSession({ windows }))?.windows).toEqual(windows)
   })
 
   it('keeps the query a tab was showing', () => {
@@ -39,7 +39,7 @@ describe('the session document', () => {
         activeIndex: 0,
       },
     ]
-    expect(readSession(writeSession(windows))).toEqual(windows)
+    expect(readSession(writeSession({ windows }))?.windows).toEqual(windows)
   })
 
   it('is nothing at all when there is nothing stored', () => {
@@ -66,9 +66,12 @@ describe('the session document', () => {
         2,
       ),
     )
-    expect(read?.[0]?.tabs).toEqual([tab(RouteName.Goals), tab(RouteName.Wiki)])
+    expect(read?.windows[0]?.tabs).toEqual([
+      tab(RouteName.Goals),
+      tab(RouteName.Wiki),
+    ])
     // The active tab was the third; with one dropped before it, it is now the second.
-    expect(read?.[0]?.activeIndex).toBe(1)
+    expect(read?.windows[0]?.activeIndex).toBe(1)
   })
 
   it('refuses a tab whose history index points outside its entries', () => {
@@ -90,15 +93,17 @@ describe('the document is windows of tabs', () => {
   // and this is the one test whose failure costs a real person theirs.
   it('reads a version 1 document as one window with no box', () => {
     const read = readSession(v1([tab(RouteName.Goals), tab(RouteName.Wiki)], 1))
-    expect(read).toHaveLength(1)
-    expect(read?.[0]?.tabs).toHaveLength(2)
-    expect(read?.[0]?.activeIndex).toBe(1)
-    expect(read?.[0]?.box).toBeUndefined()
+    expect(read?.windows).toHaveLength(1)
+    expect(read?.windows[0]?.tabs).toHaveLength(2)
+    expect(read?.windows[0]?.activeIndex).toBe(1)
+    expect(read?.windows[0]?.box).toBeUndefined()
   })
 
   it('writes version 2', () => {
     const stored = JSON.parse(
-      writeSession([{ tabs: [tab(RouteName.Goals)], activeIndex: 0 }]),
+      writeSession({
+        windows: [{ tabs: [tab(RouteName.Goals)], activeIndex: 0 }],
+      }),
     )
     expect(stored.version).toBe(2)
     expect(stored.windows).toHaveLength(1)
@@ -113,10 +118,10 @@ describe('the document is windows of tabs', () => {
         box: { ...box, left: 20 },
       },
     ]
-    const read = readSession(writeSession(windows))
-    expect(read).toHaveLength(2)
-    expect(read?.[0]?.box?.left).toBe(100)
-    expect(read?.[1]?.box?.left).toBe(20)
+    const read = readSession(writeSession({ windows }))
+    expect(read?.windows).toHaveLength(2)
+    expect(read?.windows[0]?.box?.left).toBe(100)
+    expect(read?.windows[1]?.box?.left).toBe(20)
   })
 
   it('drops a window whose every tab was unreadable, and keeps the others', () => {
@@ -130,8 +135,8 @@ describe('the document is windows of tabs', () => {
     const read = readSession(raw)
     // Not one empty window and one full one: a window with nothing in it is a window the user
     // never had, and restoring it would open a landing page they did not leave.
-    expect(read).toHaveLength(1)
-    expect(read?.[0]?.tabs).toEqual([tab(RouteName.Wiki)])
+    expect(read?.windows).toHaveLength(1)
+    expect(read?.windows[0]?.tabs).toEqual([tab(RouteName.Wiki)])
   })
 
   it('is nothing at all when every window dropped', () => {
@@ -158,8 +163,8 @@ describe('the document is windows of tabs', () => {
       ],
     })
     const read = readSession(raw)
-    expect(read?.[0]?.tabs).toHaveLength(1)
-    expect(read?.[0]?.box).toBeUndefined()
+    expect(read?.windows[0]?.tabs).toHaveLength(1)
+    expect(read?.windows[0]?.box).toBeUndefined()
   })
 
   it('refuses a version 2 document whose windows are not a list', () => {
@@ -172,7 +177,7 @@ describe('the view a stored entry carries', () => {
   // must not lose the tabs they had open.
   it('reads an entry written before entries had a view', () => {
     const raw = v1([{ entries: [{ name: RouteName.Unlock }], index: 0 }])
-    expect(readSession(raw)?.[0]?.tabs[0]?.entries[0]).toEqual({
+    expect(readSession(raw)?.windows[0]?.tabs[0]?.entries[0]).toEqual({
       location: { name: RouteName.Unlock },
     })
   })
@@ -186,7 +191,7 @@ describe('the view a stored entry carries', () => {
         index: 0,
       },
     ])
-    expect(readSession(raw)?.[0]?.tabs[0]?.entries[0]?.view).toEqual({
+    expect(readSession(raw)?.windows[0]?.tabs[0]?.entries[0]?.view).toEqual({
       sort: 'name',
     })
   })
@@ -203,7 +208,7 @@ describe('the view a stored entry carries', () => {
         index: 0,
       },
     ])
-    const entry = readSession(raw)?.[0]?.tabs[0]?.entries[0]
+    const entry = readSession(raw)?.windows[0]?.tabs[0]?.entries[0]
     expect(entry?.location).toEqual({ name: RouteName.Unlock })
     expect(entry?.view).toBeUndefined()
   })
@@ -216,7 +221,7 @@ describe('the view a stored entry carries', () => {
       ],
       1,
     )
-    expect(readSession(raw)?.[0]?.tabs).toHaveLength(1)
+    expect(readSession(raw)?.windows[0]?.tabs).toHaveLength(1)
   })
 
   // The document is bounded by construction rather than by a number: the cap is 64 KiB and its
@@ -231,10 +236,12 @@ describe('the view a stored entry carries', () => {
       index: 1,
     }
     const stored = JSON.parse(
-      writeSession([
-        { tabs: [one], activeIndex: 0 },
-        { tabs: [one], activeIndex: 0 },
-      ]),
+      writeSession({
+        windows: [
+          { tabs: [one], activeIndex: 0 },
+          { tabs: [one], activeIndex: 0 },
+        ],
+      }),
     )
     for (const window of stored.windows) {
       expect(window.tabs[0].entries[0].view).toBeUndefined()
@@ -249,7 +256,62 @@ describe('the view a stored entry carries', () => {
       ],
       index: 0,
     }
-    const back = readSession(writeSession([{ tabs: [one], activeIndex: 0 }]))
-    expect(back?.[0]?.tabs[0]?.entries[0]?.view).toEqual({ sort: 'name' })
+    const back = readSession(
+      writeSession({ windows: [{ tabs: [one], activeIndex: 0 }] }),
+    )
+    expect(back?.windows[0]?.tabs[0]?.entries[0]?.view).toEqual({
+      sort: 'name',
+    })
+  })
+})
+
+describe('the sizes the document remembers', () => {
+  const one = [{ tabs: [tab(RouteName.Goals)], activeIndex: 0 }]
+
+  it('round-trips the sidebar width', () => {
+    const back = readSession(writeSession({ windows: one, sidebarWidth: 260 }))
+    expect(back?.sidebarWidth).toBe(260)
+  })
+
+  it('has none when none was ever set', () => {
+    const stored = JSON.parse(writeSession({ windows: one }))
+    // Absent, not `null`: a key that is there and means nothing is a key somebody has to read.
+    expect('sidebarWidth' in stored).toBe(false)
+    expect(
+      readSession(writeSession({ windows: one }))?.sidebarWidth,
+    ).toBeUndefined()
+  })
+
+  it('drops a width that is not a finite number, and keeps the windows', () => {
+    const raw = JSON.stringify({
+      version: 2,
+      windows: [{ tabs: [tab(RouteName.Goals)], activeIndex: 0 }],
+      sidebarWidth: 'wide',
+    })
+    const read = readSession(raw)
+    expect(read?.windows).toHaveLength(1)
+    expect(read?.sidebarWidth).toBeUndefined()
+  })
+
+  // Beside `windows`, not inside it and not above it: an app that does not know this key ignores
+  // it and is wrong about nothing, which is the only thing the version number is for.
+  it('does not move the version', () => {
+    const stored = JSON.parse(writeSession({ windows: one, sidebarWidth: 260 }))
+    expect(stored.version).toBe(2)
+  })
+
+  it('reads a version 1 document, which never had one', () => {
+    expect(
+      readSession(v1([tab(RouteName.Goals)]))?.sidebarWidth,
+    ).toBeUndefined()
+  })
+
+  // The bounds are the sidebar's and stay there: a parser that knew 168 and 420 would be a
+  // parser holding the design's pixels.
+  it('keeps a width outside the sidebar bounds rather than judging it', () => {
+    expect(
+      readSession(writeSession({ windows: one, sidebarWidth: 9000 }))
+        ?.sidebarWidth,
+    ).toBe(9000)
   })
 })
