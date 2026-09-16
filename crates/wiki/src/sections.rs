@@ -42,7 +42,13 @@ pub fn split_page(text: &str) -> (String, Vec<RawSection>) {
 
 /// A comparable title: `{{…}}` gone (even nested), link brackets gone, lowercased,
 /// whitespace collapsed.
-fn normalize_title(title: &str) -> String {
+///
+/// **Public because the decision is made on this and `discardedSections` is keyed on the raw
+/// title** (B54): anything reading that counter and not normalizing first sees more distinct
+/// titles than there are — `{{dlc|nr}} Gallery` and `Gallery` are one title, and so are the two
+/// capitalisations of `{{dlc+|r}} Behavior in Mausoleum/Gehenna`. `examples/probe_discarded.rs`
+/// is the thing that needed it.
+pub fn normalize_title(title: &str) -> String {
     let mut s = String::new();
     let mut skip = 0usize;
     let mut chars = title.chars().peekable();
