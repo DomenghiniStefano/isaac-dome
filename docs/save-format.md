@@ -158,6 +158,18 @@ than the last win's. In the same window **`STREAK_COUNTER [22]` reset from 4 to 
 second point on that counter, whose first was +1 for a win on 2026-09-15, and the one that
 says it is a streak and not a total.
 
+**The two streak counters need two consecutive losses to be told apart**, measured the same
+evening on a second deliberate death. A single loss shows only half of it:
+
+| | first loss | second loss |
+|---|---|---|
+| `STREAK_COUNTER [22]` | **4 → 0** | unchanged at 0 |
+| `NEGATIVE_STREAK_COUNTER [113]` | unchanged at 0 | **0 → 1** |
+
+So the first loss *breaks* the positive streak without opening the negative one, and the second
+opens it. Both predictions made before the second run — that 22 and 188 would stay at 0 — held,
+which is what licenses reading 113's move as the new fact rather than as one of theirs.
+
 Still open: documented names reach 284; **40 cells** (Mother and The Beast for The Forgotten
 and the 19) sit inside 423–490 by spacing but are zero in every save collected, so they stay
 `Unknown` rather than pointing at a guess — one run of Mother with a Tainted character
@@ -196,6 +208,20 @@ tally 3  Clotty     2 -> 7     (+5)
 tally 4  Clotty     2 -> 3     (+1)   <- exactly one, on the killer, and on no other key
 ```
 
+**Confirmed the same evening by a second death to a different enemy**, which is the window that
+rules out the weak reading *"it is Clotty's row that moves"*. Judas, killed by a Ministro
+(`305.0.0`), and tally 4 gains a **new key** rather than incrementing an old one:
+
+```
+tally 1  Ministro  577 -> 580  (+3)
+tally 3  Ministro    6 -> 8    (+2)
+tally 4  Ministro    0 -> 1    (+1)   <- a new record; Clotty stayed at 3
+```
+
+Tally 4 went 159 records to 160, which is *an entity that had never killed you now has, once* —
+and it is the growth pattern the whole hypothesis rested on (130/240 on 06-29, 142/277 on 08-05,
+154/319 on 09-08: slowly, and by whole new keys).
+
 The hypothesis had stood since 2026-09-09 against three windows in which tally 4 did not move —
 and all three had **zero deaths in them**, so the instrument had never been handed the thing it
 reacts to. The first window that did produced exactly the predicted number. `DEATHS [10]` rose
@@ -210,6 +236,17 @@ on another.
 Read together on one entity the window says 5, 2 and 1 for tallies 3, 1 and 4 — the shape B9
 always asked for, *kill a known enemy a known number of times and read which moves by how much*,
 which needed a **named** killer to be worth anything.
+
+**Two entities are enough to kill every reading in which 1 and 3 bound each other:**
+
+| | tally 1 | tally 3 |
+|---|---|---|
+| Clotty | +2 | **+5** |
+| Ministro | **+3** | +2 |
+
+Neither is ever the larger, so they are not *seen* against *killed* in either direction — nothing
+can be killed more often than it was met. Any pair of names implying an order is out, on two rows
+that took four minutes to collect.
 
 **The other three tallies still have no names**, and must not be given one from a guess: they
 hold the same entities with different numbers against each. Same for the **one word left over**

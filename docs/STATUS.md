@@ -554,6 +554,15 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       New instrument: `cargo run -p core-save --example bestiary_diff -- <before> <after>`,
       which reports every key that moved, per tally — `matched_window` only ever said whether a
       tally moved, never which entity moved it, and that was the whole question.
+      **A second death the same evening, to a different enemy, is the one that closes it**: Judas
+      killed by a Ministro (`305.0.0`), and tally 4 gains a **new key** at 1 while Clotty stays at
+      3. That rules out the weak reading — *"it is Clotty's row that moves"* — which one window
+      could not. Records went 159 → 160, which is the growth pattern the hypothesis rested on.
+      **What is left of B9 is naming 1, 2 and 3**, and the two windows already narrow it: tally 2
+      was **flat in both** while 1 moved, so *"1 and 2 move constantly"* held only because every
+      earlier window had both moving. And 1 and 3 do not bound each other — Clotty +2 / +5,
+      Ministro +3 / +2 — so no *seen* against *killed* reading survives, in either direction.
+      The instrument for the rest is now cheap: kill a **counted** number of one named enemy.
 - [ ] **What the bestiary's trailing word is.** One word after the last tally, in every
       save, growing 11,343 → 29,725 across the samples we hold, and 43,914 → **43,925** over
       the 2026-09-12 window. So it moves **+11 in one Greed run** — small, and not obviously
