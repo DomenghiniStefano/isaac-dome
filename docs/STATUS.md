@@ -54,10 +54,11 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
       `.dat` format decoded and verified on 28 real saves, working Python parser,
       counters labeled, marks matrix rebuilt, log verified.
 - [ ] **M1 — Rust parser, discovery, unpack, Completion screen** ← in progress, and what keeps
-      it open is now **3.6 Settings and About** and **3.7 tabs that survive a restart**, plus the
-      wiki polish listed under `wiki`. Everything the title names is done: the parser, discovery,
-      unpack and the Completion screen, which landed as sub-project 3.2 on 2026-09-11.
-      **3.7 is one spec and three branches** (2026-09-15,
+      it open is now **3.6 Settings and About**, plus the wiki polish listed under `wiki` — and
+      **the window nobody has opened on 3.7**, which is one gap and not three. Everything the
+      title names is done: the parser, discovery, unpack and the Completion screen, which landed
+      as sub-project 3.2 on 2026-09-11.
+      **3.7 is one spec and three branches, and all three landed on 2026-09-16** (spec 2026-09-15,
       `docs/superpowers/specs/2026-09-15-tabs-session-design.md`). **3.7a landed on 2026-09-16** —
       a history entry is `{ location, view? }`, so a tab keeps its facets, its sort, its selected
       row and its scroll across a tear-off and a restart; report
@@ -70,7 +71,12 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
       document, and a remembered box is clamped onto a monitor that exists. Report
       `docs/superpowers/reports/2026-09-16-tabs-windows-report.md`. **Nobody has opened a window
       on this one either**, and here that gap costs most: what it fixes is a failure that is
-      invisible on screen by definition. Still to come: **3.7c**, B27's remembered sizes.
+      invisible on screen by definition. **3.7c landed the same evening** — the sidebar you sized
+      is the sidebar you get back, as a named key beside `windows` that costs no migration and no
+      version bump; report `docs/superpowers/reports/2026-09-16-tabs-sizes-report.md`. It stores
+      **one** of §8's two keys: `tables` is not added, because nothing in the app produces a table
+      size — B27's resizable tables are not built, and that is why **B27 stays open** with two of
+      its three parts untouched.
 - [x] **M2 — Unlock graph** (2026-09-07). The Unlock *section* is frontend work and
       waits for the design system; the graph behind it is done — report in
       `docs/superpowers/reports/2026-09-07-unlock-graph-report.md`.

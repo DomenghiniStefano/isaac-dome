@@ -161,10 +161,13 @@ top level is `windows`, so the drag spec's Decision 8 — *a session is windows 
 the app stores. A version 1 document still opens, as one window, because losing somebody's tabs
 on an update is not a thing this app can explain to them afterwards.
 
-What keeps this entry open is **3.7c**, B27's remembered sizes — and the window nobody has opened
-on any of it. That second half is the larger one now: 3.7b's own failure mode is a session that
-stops being written, which is invisible on screen by definition, so no amount of green says it
-works.
+**3.7c landed the same evening** (report
+`docs/superpowers/reports/2026-09-16-tabs-sizes-report.md`) and the sidebar's width is in the
+document too, beside the windows. So **every line of code 3.7 declared is written**.
+
+What keeps this entry open is the **window nobody has opened on any of it**, which is one gap and
+not three, and it is the larger half now: 3.7b's own failure mode is a session that stops being
+written, which is invisible on screen by definition, so no amount of green says it works.
 
 A declared fork, with a recommendation:
 
@@ -826,11 +829,17 @@ state, **per table**, so it never has to be resized again after a restart.
    pane): a grip on the table's bottom edge, the sidebar's gesture generalised into one
    composable (`useResize`), a minimum and a maximum in tokens, and the height stored **per
    table** under a key that names it (`unlock`, `collection`, …), never a shared number.
-3. **Where it is saved**: with the sidebar's width, in the same place 3.7 chooses for the
-   session — one `layout` document, keyed by table, in the store or in `settings.json`; the
-   decision is 3.7's, this entry only fixes that the table sizes belong in it. A missing or
-   unknown key reads as "fill the page". The value is in device-independent pixels and is
-   scaled with B26, not stored scaled.
+3. ✅ **Where it is saved** — **answered by 3.7c** (2026-09-16, report
+   `docs/superpowers/reports/2026-09-16-tabs-sizes-report.md`): a **named key beside `windows`**
+   in the session document, which costs no migration and no version bump. The sidebar's width is
+   in it and is the half of this entry that is done; a table's size joins it under a key that
+   names the table, the day a table has one. A missing or unknown key reads as "fill the page".
+   The value is in device-independent pixels and is scaled with B26, not stored scaled.
+
+**Two of the three are what is left**, which is worth saying plainly because 3.7c could look like
+this entry closing: the sizes have a home now and **nothing produces one**. A `tables` key was
+deliberately not added to the document for exactly that reason — a named place for a value nothing
+writes is one more thing to read and nothing to store.
 
 ### Done when
 
