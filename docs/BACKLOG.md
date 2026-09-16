@@ -85,7 +85,7 @@ everywhere except the bestiary, which makes it the clean instrument the eleven-c
 `docs/save-format.md` has been missing. Both closings began with a test going red against an
 expectation written an hour earlier.
 
-- **`nothing` (20)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B57, B59, B62, B63
+- **`nothing` (19)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B59, B62, B63 (B57 closed 2026-09-16)
 - **`a real save` (4)** — B21, B22, B23, B58
 - **`the game` (4)** — B3, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -1395,7 +1395,11 @@ there is worth more than the timeline.
 
 ---
 
-## B57 — The game writes down where it saves, and `discovery` guesses (implementation, `discovery`, small)
+## B57 — The game writes down where it saves, and `discovery` guessed (implementation, `discovery`, small) ✅ closed on 2026-09-16
+
+**Closed on 2026-09-16.** `discovery` reads `savedatapath.txt` when the install is known and prefers it as a candidate; the search still answers without it, and the test that says so is the one this entry asked for by name. Commit `feat(discovery): the game writes down where it saves, so stop guessing`.
+
+*The entry as it stood, kept because the retag is half of what it is worth:*
 
 **Needs:** ~~**the game**~~ **nothing** — **retagged 2026-09-16**: the file **outlives the
 install**. On the second machine the game is uninstalled (no `appmanifest_250900.acf`) and
