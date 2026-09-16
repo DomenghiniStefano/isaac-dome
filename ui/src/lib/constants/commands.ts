@@ -4,6 +4,8 @@ export const Command = {
   SetScale: 'set_scale',
   SetStayInBackground: 'set_stay_in_background',
   SetResumeTabs: 'set_resume_tabs',
+  Autostart: 'autostart',
+  SetAutostart: 'set_autostart',
   WindowSession: 'window_session',
   SetWindowSession: 'set_window_session',
   SelectProfile: 'select_profile',

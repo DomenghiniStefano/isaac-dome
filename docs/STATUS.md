@@ -307,6 +307,14 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
             *after* the summary line. That screen exists to find the secret room, so the
             subtraction says two different things depending on the answer. The instrument is a
             floor painted to exhaustion in the game.
+- [ ] **B41 — starting with Windows — landed on 2026-09-16**, `feature/autostart`, and it belongs
+      to M4's watcher rather than to a milestone of its own: the hole it closes is narrow and
+      real, a game launch followed by another game launch with the app never having run in
+      between, and `log.txt` is rewritten every time. The registry is the only source of truth —
+      `settings.json` gains nothing — a login launch is silent, and the switch is inert in
+      development builds because `current_exe()` there is `target\debug\app.exe`. Plan
+      `docs/superpowers/plans/2026-09-16-autostart.md`. **Nobody has seen it**: it needs an
+      installed build, a logout and a login, which is what its five lines below are for.
 - [ ] **M5 — Public release**. **The app can be packaged since 2026-09-16, and could not before**:
       `pnpm build` compiled and then stopped on `Couldn't find a .ico icon`, with
       `crates/app/icons/` holding exactly the set Tauri looks for. Declaring `bundle.icon`
@@ -726,6 +734,25 @@ a tray app and whoever holds port 1420 on its own.
       still be torn off a scrolled strip
 - [ ] on `?catalog=none` and `?fixture=none` a restored tab still opens and says what it has
       → `docs/superpowers/reports/2026-09-16-tabs-own-their-state-report.md`
+
+### Starting with Windows (B41, built 2026-09-16) — an **installed** build, a logout and a login
+
+**Not a `pnpm dev` run**, and that is the point of the last line: the plugin is registered only
+in a release build, on purpose. Straight from §7 of
+`docs/superpowers/specs/2026-09-14-autostart-design.md`.
+
+- [ ] switch on, then `reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v IsaacDome`.
+      **Read the value, do not reason about it**: the path is written unquoted by the plugin, so
+      an install under `C:\Program Files\…` is the case that has to be *seen* starting
+- [ ] log out and back in: no window, the icon in the tray, and a run played immediately after is
+      in the archive
+- [ ] Task Manager → Startup apps → disable IsaacDome, then open the Background screen: the switch
+      is off. **Then turn it on from the app**: it must refuse, and say to look in the Startup tab
+      — this is the case that gave the error its second variant
+- [ ] switch off, then off again: no error either time
+- [ ] a `pnpm dev` run: the switch is disabled with its own line under it, and the registry is
+      untouched
+      → `docs/superpowers/plans/2026-09-16-autostart.md`
 
 ### The tear-off gesture (B15, built 2026-09-13 and never run)
 
