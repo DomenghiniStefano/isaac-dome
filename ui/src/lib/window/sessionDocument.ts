@@ -34,6 +34,21 @@ export interface StoredWindow {
   box?: StoredBox
 }
 
+// The whole document. `sidebarWidth` is a **named key beside `windows`**, not window state and
+// not tab state: the sidebar is one width for the app, and this is what migration 3's comment
+// promised when it made the session an object with a version rather than a bare array of tabs —
+// *"the sidebar width and per-table sizes join as named parts of the same document, and a named
+// part costs no migration"*. It costs no version bump either: an older app ignores a key it does
+// not know and is wrong about nothing, which is the only thing the version is for.
+//
+// **`tables` is not here yet**, although §8 of the spec names it, because nothing in the app
+// produces a table size: B27's resizable tables are not built, and a named place for a value that
+// does not exist is one more thing to read and nothing to store.
+export interface StoredSession {
+  windows: StoredWindow[]
+  sidebarWidth?: number
+}
+
 const routeNames: readonly string[] = Object.values(RouteName)
 
 const isRouteName = (value: unknown): value is RouteName =>
@@ -143,7 +158,7 @@ const readWindow = (value: unknown): StoredWindow | null => {
 // tab. A window whose every tab dropped is dropped **whole** rather than restored empty: an empty
 // window is one the user never had, and opening it would put a landing page on their desktop
 // they did not leave there.
-export const readSession = (raw: string | null): StoredWindow[] | null => {
+export const readSession = (raw: string | null): StoredSession | null => {
   if (raw === null) return null
   let parsed: unknown
   try {
@@ -152,21 +167,25 @@ export const readSession = (raw: string | null): StoredWindow[] | null => {
     return null
   }
   if (typeof parsed !== 'object' || parsed === null) return null
-  const { version, tabs, activeIndex, windows } = parsed as Record<
-    string,
-    unknown
-  >
+  const { version, tabs, activeIndex, windows, sidebarWidth } =
+    parsed as Record<string, unknown>
   // Version 1 said `tabs` at the top level and knew nothing about windows. It is one window,
-  // wherever the window manager decides to put it.
+  // wherever the window manager decides to put it — and it never carried a sidebar width.
   if (version === FirstVersion) {
     const one = readTabs(tabs, activeIndex)
-    return one === null ? null : [one]
+    return one === null ? null : { windows: [one] }
   }
   if (version !== Version || !Array.isArray(windows)) return null
   const kept = windows
     .map(readWindow)
     .filter((window): window is StoredWindow => window !== null)
-  return kept.length === 0 ? null : kept
+  if (kept.length === 0) return null
+  // A number, and nothing more: the bounds are the sidebar's own and are enforced where it is
+  // drawn (`clampSidebarWidth`). A parser that knew 168 and 420 would be a parser holding the
+  // design's pixels.
+  return isFinite(sidebarWidth)
+    ? { windows: kept, sidebarWidth }
+    : { windows: kept }
 }
 
 // Only the entry each tab is showing keeps its view. `MAX_SESSION_BYTES` is 64 KiB and its
@@ -181,12 +200,17 @@ const stored = (tab: TabSeed): TabSeed => ({
   ),
 })
 
-export const writeSession = (windows: readonly StoredWindow[]): string =>
+export const writeSession = (session: StoredSession): string =>
   JSON.stringify({
     version: Version,
-    windows: windows.map((window) => ({
+    windows: session.windows.map((window) => ({
       tabs: window.tabs.map(stored),
       activeIndex: window.activeIndex,
       ...(window.box ? { box: window.box } : {}),
     })),
+    // Absent rather than `null` when nobody ever sized the sidebar: a key that is there and means
+    // nothing is a key every reader has to ask about.
+    ...(session.sidebarWidth === undefined
+      ? {}
+      : { sidebarWidth: session.sidebarWidth }),
   })
