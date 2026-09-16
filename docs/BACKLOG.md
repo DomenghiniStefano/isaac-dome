@@ -76,13 +76,16 @@ and both came from looking at a machine instead of at the list.
 meant opening the slot nobody plays, and it turns out to be the one profile shape this project has
 never read.
 
-**Still 30 at the end of that evening**, and the two moves are worth more than the total: **B60
-closed** — the log with no run is in `samples/launches/`, a folder of its own — and **B62 opened**
-out of the first test written for it. B60's own premise turned out to be wrong, which the weakened
-guard proved by going red for the wrong reason; the closing record says how. B62 is the defect that
-test found on the way past: a source folded into zero runs caches as one never folded.
+**29 at the end of that evening**, and the moves are worth more than the total. **B60 closed** —
+the log with no run is in `samples/launches/`, a folder of its own — and its own premise turned out
+to be wrong, which the weakened guard proved by going red for the wrong reason. **B62 opened** out
+of the first test written for it: a source folded into zero runs caches as one never folded.
+**B61 closed** the same evening and stopped being a fixture: an untouched profile is zero
+everywhere except the bestiary, which makes it the clean instrument the eleven-chunks gap in
+`docs/save-format.md` has been missing. Both closings began with a test going red against an
+expectation written an hour earlier.
 
-- **`nothing` (20)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B57, B59, B61, B62
+- **`nothing` (19)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B57, B59, B62
 - **`a real save` (4)** — B21, B22, B23, B58
 - **`the game` (4)** — B3, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -1500,39 +1503,6 @@ if blanking comments changes an answer anywhere, that answer is a finding and go
 
 ---
 
-## B61 — An empty profile is a shape `samples/` has never held (implementation, `test-support` and `ipc`, small)
-
-**Needs:** nothing — the file is 4 KB and sits on the second machine; any fresh install makes
-another one.
-
-Found on 2026-09-16, while measuring the header's `0x10`. `…persistentgamedata2.dat` is
-**byte-identical across all fourteen** 2024 backups, and the `rep+` slot 2 in Steam's `remote\` has
-the same shape: a save slot the game created and **nobody ever played**. That is the one profile
-this project has never read — every sample in `samples/` is a profile with progress on it, because
-every sample came from somebody playing.
-
-**It is the state the app opens in at a stranger's house**, on the evening they install the game,
-and it is the state nothing is tested against: Completion with no mark set, the plan queue with
-nothing behind it, the graph evaluated against a profile where every prerequisite is unmet, the
-KPI strip whose numerators are all zero. None of that is exotic and none of it is covered — the
-closest the suite gets is a hand-built fixture, which is a shape we chose rather than the shape the
-game writes.
-
-**It cannot arrive the way the other samples did.** `is_dated` excludes slot 2 by construction —
-*"Slot 2 is a different profile: same date, different series"* — so dropping the file into
-`samples/` adds an inert file that no test opens, which is the exact failure `test-support` exists
-to prevent. It has to be asked for by name.
-
-### Closes when
-
-`samples/` holds the empty profile under a name that says what it is, `test-support` hands it over
-by name with the usual declaration, and at least one test per surface asserts what zero actually
-produces rather than that it does not panic. The 2024 file is `rep_`, an era behind: whether a
-Repentance+ install writes the same empty shape is one file from anyone who has the game and an
-unused slot.
-
----
-
 ## B62 — A source folded into no runs cannot be told from one never folded (implementation, `store`, needs migration 5)
 
 **Needs:** nothing to write it — the fix is one nullable column and two functions. What it waits
@@ -1577,7 +1547,7 @@ it is dropping.
 
 ## Closed entries
 
-**32 entries have closed**, and they are in `docs/completed/backlog-closed.md` with
+**33 entries have closed**, and they are in `docs/completed/backlog-closed.md` with
 the reason and the numbers each one measured. The list below is so that a question starting
 "was this ever looked at?" does not need that file opened.
 
@@ -1613,3 +1583,4 @@ the reason and the numbers each one measured. The list below is so that a questi
 - **B52 — What `n` means in a `{{dlc|…}}` code, and the 1832 spans waiting on it** — closed 2026-09-15
 - **B53 — Three pages carry `{{infobox monster}}` and the parser skips them** — closed 2026-09-15
 - **B60 — A log with no run in it, and the test that says there is no such log** — closed 2026-09-16, and its own premise was wrong
+- **B61 — An empty profile is a shape `samples/` has never held** — closed 2026-09-16, and it is an instrument, not a fixture

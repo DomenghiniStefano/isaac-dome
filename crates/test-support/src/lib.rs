@@ -109,6 +109,41 @@ pub fn window_sample(name: &str) -> Option<PathBuf> {
     None
 }
 
+/// The `samples/empty/` folder: a save slot the game **created and nobody ever played**.
+///
+/// A folder of its own for the reason [`windows_dir`] and [`launches_dir`] are (B61). It is not a
+/// point in any series — laying an untouched profile end to end with a played one would read the
+/// difference as progress in reverse — and a `20240118-empty.…` beside the series is the exact
+/// shape that once won a dedup against the series entry of the same day, because `-` sorts before
+/// `.`. Inside, the file keeps the name the game gave it; the folder says what it is.
+pub fn empty_profiles_dir() -> PathBuf {
+    samples_dir().join("empty")
+}
+
+/// Every untouched profile, in name order, each one declared. It is the state the app opens in on
+/// the evening somebody installs the game, and every other sample here is a profile with progress.
+pub fn empty_profile_samples() -> Vec<PathBuf> {
+    let Ok(entries) = std::fs::read_dir(empty_profiles_dir()) else {
+        declare("skip: samples/empty/ is missing");
+        return Vec::new();
+    };
+    let mut found: Vec<PathBuf> = entries
+        .flatten()
+        .map(|entry| entry.path())
+        .filter(|path| path.extension().is_some_and(|e| e == "dat"))
+        .collect();
+    found.sort();
+    for path in &found {
+        if let Some(name) = path.file_name().and_then(|name| name.to_str()) {
+            declare(&format!("sample: empty/{name}"));
+        }
+    }
+    if found.is_empty() {
+        declare("skip: no *.dat in samples/empty/");
+    }
+    found
+}
+
 /// The bytes of a sample, with the same declaration as [`sample`].
 pub fn sample_bytes(name: &str) -> Option<Vec<u8>> {
     let path = sample(name)?;
