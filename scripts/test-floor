@@ -1,0 +1,27 @@
+# How many tests each suite must not fall below. Read by `scripts/check`.
+#
+# **Why a number in a file** (`docs/BACKLOG.md` B63): on 2026-09-12 one commit deleted
+# `crates/ipc/tests/profile.rs` — 647 lines, 27 tests — in the same diff that added
+# `progress.rs`, and every gate stayed green for four days. `cargo test` reports what ran and
+# never what stopped existing: a deleted test is not a dimmed suite, it is a shorter one, and it
+# makes no sound at all. The property this pins is the one that incident broke: **a commit that
+# removes tests must not be able to come out greener than one that does not.**
+#
+# **It counts tests that exist, not tests that passed** — passed plus failed plus ignored on the
+# Rust side, the parenthesised total on the Vitest one. A test that starts being skipped by the
+# harness is a test that stopped existing for this purpose, and should be as loud as a deleted
+# one. A `test-support` skip is a different thing and is counted in its own summary: those tests
+# ran and said what they could not reach.
+#
+# **Machine-independent by construction**, which is what makes a committed number honest: every
+# real-data test skips rather than vanishing when its sample is missing, so the totals are the
+# same on a machine with the game and on one without. Checked across the two: 992 on both before
+# the 27 came back.
+#
+# **Raising it is a deliberate line in a commit.** The check never fails for a suite that grew —
+# that would fail every commit adding a test — it prints the new number and the line to paste.
+# The limit of that, stated rather than discovered: a floor nobody raises goes stale, so adding
+# two hundred tests and later deleting fifty stays quiet. Closing that needs a per-commit
+# comparison, which is CI, and there is none here by decision.
+RUST_TESTS=1004
+UI_TESTS=591

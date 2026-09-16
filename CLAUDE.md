@@ -199,9 +199,14 @@ that never happens.
   reverse too: an "N passed" doesn't say how many were skipped — **nor how many disappeared**.
   On 2026-09-12 a commit added `crates/ipc/tests/progress.rs` and deleted
   `crates/ipc/tests/profile.rs` in the same diff, 647 lines and 27 tests of it, and every gate
-  stayed green for four days: **deleting a test fails nothing**. Nothing in `scripts/check`
-  counts tests, only skips (B63). A test file that leaves in the same commit that adds another
-  is the shape to look for in a diff, because no tool will.
+  stayed green for four days: **deleting a test fails nothing**. **It fails something since
+  2026-09-16** (B63): `scripts/check` totals the tests that *exist* — passed plus failed plus
+  ignored on the Rust side, Vitest's parenthesised total on the other — and compares both against
+  `scripts/test-floor`. A suite that shrank fails the run; one that grew prints the line to paste,
+  because failing on a rise would fail every commit that adds a test. **What it still cannot
+  see** is a floor nobody raises: two hundred tests added and fifty later deleted stays quiet, and
+  closing that needs a per-commit comparison, which is CI. So a test file that leaves in the same
+  commit that adds another is still the shape to look for in a diff.
 - **`samples/` is only opened from the `test-support` crate**, never by hand with
   `env!("CARGO_MANIFEST_DIR")`. Its functions always declare the outcome on stderr —
   `sample: <file>` when there is one, `skip: …` when there isn't — because a test on real
@@ -226,7 +231,7 @@ that never happens.
 - Before declaring anything done: **`pnpm check`** (i.e. `scripts/check`), which runs
   `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings`, `cargo test --workspace`,
   `pnpm typecheck`, `pnpm ui:test`, `pnpm lint`, `pnpm format:check`, `pnpm scan`, the IPC
-  contract's regeneration, and `scripts/check-doc-refs.mjs`. **There's
+  contract's regeneration, `scripts/check-doc-refs.mjs`, and the test-count floor. **There's
   no CI**, by choice: the list of commands lives in that script and nowhere else. The two
   fast ones also run in the pre-commit hook (`git config core.hooksPath scripts/git-hooks`).
 - **The document reference report is a report, and never fails the run.** It checks every file
