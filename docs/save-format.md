@@ -15,10 +15,46 @@ Reference implementation in `reference/isaac_save.py` — translate from there.
 
 ```
 0x00   "ISAACNGSAVE09R  "   signature, 16 bytes   # existing tools look for 06R and fail
-0x10   u32                  changes on every save, meaning unknown
+0x10   u32                  sometimes zero, meaning unknown   # NOT "changes on every save"
 0x14   first section header
 end-4  checksum             CRC32 with a custom polynomial, NOT identified (irrelevant)
 ```
+
+### `0x10` is zero more often than a hash could be (measured 2026-09-16)
+
+The line above used to read *"changes on every save"*, and so did `reference/isaac_save.py`, the
+implementation everything here was translated from — both corrected together, because a claim left
+in the source anyone translates from is the one that comes back. It does not hold on the Jan–Jun
+2024 series:
+
+| | |
+|---|---|
+| saves read | 16 — the 15 `rep_` of the 2024 series, plus `20250112` (`rep+`) |
+| `0x10 == 0` | **4** — `20240119`, `20240215`, `20240223`, and `20250112` |
+| pairs whose payload is identical | **0** — every consecutive pair differs, in length or in bytes |
+
+So zero is **not** "this save changed nothing", which was the obvious explanation and is the one
+the data refuses: the payload moved across all fifteen pairs, and three of them wrote a zero
+anyway. Nor is it a hash-like value that happened to land on zero — four times in sixteen is not
+2⁻³² four times over. **Zero is a state the field takes**, and what puts it there is unknown; it
+stays `unknown_0x10` in `parse.rs`, which reads it raw and validates nothing.
+
+Two things this touches, neither of them a defect today:
+
+- **The untouched slot.** `…persistentgamedata2.dat` is byte-identical across all fourteen 2024
+  backups — a save slot nobody ever played — and its `0x10` is zero too. It is the only **empty
+  profile** this project has seen, and nothing in `samples/` covers that shape: every sample is a
+  profile with progress, while the app has to open at a stranger's house on the day they install
+  the game.
+- **`live_probe`'s stock sentence.** When bytes move and no decoded field does, the example says
+  `0x10` "is the candidate" — resting on the claim this section just removed. The trailing
+  checksum at `end-4` changes on every write and is the nearer explanation; the comment now says
+  both.
+
+**What this does not say.** The claim it corrects came from the M0 spike's 28 `rep+` saves of
+2025–2026, which are not on this machine — it may well have held on all of them, and one `od` at
+offset 16 over that series says whether zero is a 2024 shape or a general one. Until then this is
+a measurement on the series that was read, which is exactly as far as it goes.
 
 Section header: three little-endian `u32`s — `kind` (sequential 1..10), `f2` (= count × 4,
 the "in-memory" size), `count`. Then the data: `count` entries, whose **on-disk** size
