@@ -72,7 +72,11 @@ it, which the suite cannot hold — and it **retagged B57** from `the game` to `
 `savedatapath.txt` turns out to outlive the uninstall. One entry moved bucket and one entry is new,
 and both came from looking at a machine instead of at the list.
 
-- **`nothing` (19)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B57, B59, B60
+**30 with B61**, opened the same evening out of the same series: measuring the header's `0x10`
+meant opening the slot nobody plays, and it turns out to be the one profile shape this project has
+never read.
+
+- **`nothing` (20)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B57, B59, B60, B61
 - **`a real save` (4)** — B21, B22, B23, B58
 - **`the game` (4)** — B3, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -1526,6 +1530,39 @@ ingest answers, the cache is written, and **at least one** log in the folder hol
 folder going quiet is still red — and the file is in it under its date and its era. If the older
 version's lines parse differently, that is a second finding and it belongs in
 `docs/log-format.md`, not in a patch to the rules.
+
+---
+
+## B61 — An empty profile is a shape `samples/` has never held (implementation, `test-support` and `ipc`, small)
+
+**Needs:** nothing — the file is 4 KB and sits on the second machine; any fresh install makes
+another one.
+
+Found on 2026-09-16, while measuring the header's `0x10`. `…persistentgamedata2.dat` is
+**byte-identical across all fourteen** 2024 backups, and the `rep+` slot 2 in Steam's `remote\` has
+the same shape: a save slot the game created and **nobody ever played**. That is the one profile
+this project has never read — every sample in `samples/` is a profile with progress on it, because
+every sample came from somebody playing.
+
+**It is the state the app opens in at a stranger's house**, on the evening they install the game,
+and it is the state nothing is tested against: Completion with no mark set, the plan queue with
+nothing behind it, the graph evaluated against a profile where every prerequisite is unmet, the
+KPI strip whose numerators are all zero. None of that is exotic and none of it is covered — the
+closest the suite gets is a hand-built fixture, which is a shape we chose rather than the shape the
+game writes.
+
+**It cannot arrive the way the other samples did.** `is_dated` excludes slot 2 by construction —
+*"Slot 2 is a different profile: same date, different series"* — so dropping the file into
+`samples/` adds an inert file that no test opens, which is the exact failure `test-support` exists
+to prevent. It has to be asked for by name.
+
+### Closes when
+
+`samples/` holds the empty profile under a name that says what it is, `test-support` hands it over
+by name with the usual declaration, and at least one test per surface asserts what zero actually
+produces rather than that it does not panic. The 2024 file is `rep_`, an era behind: whether a
+Repentance+ install writes the same empty shape is one file from anyone who has the game and an
+unused slot.
 
 ---
 

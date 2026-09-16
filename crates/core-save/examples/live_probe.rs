@@ -77,8 +77,11 @@ fn describe(previous: Option<&Save>, now: &Save) -> String {
         });
     }
     if parts.is_empty() {
-        // The bytes moved but nothing we decode did: the header's u32 at 0x10, which
-        // CLAUDE.md records as "changes on every save, meaning unknown", is the candidate.
+        // The bytes moved but nothing we decode did. Two undecoded fields can do it, and this
+        // line used to name only the second: the checksum at end-4, which changes on every
+        // write, and the header's u32 at 0x10. `docs/save-format.md` measured 0x10 as zero on
+        // 4 of 16 real saves on 2026-09-16, so it is not the "changes on every save" field the
+        // comment relied on — the checksum is the nearer explanation, and neither is decoded.
         "bytes moved, no decoded field changed".into()
     } else {
         parts.join("\t")
