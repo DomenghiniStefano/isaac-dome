@@ -2,6 +2,7 @@ import type { MessageSchema } from '@/i18n/messages/it'
 import type { MessageKey } from '@/i18n/messageKey'
 import { assertNever } from '@/lib/assertNever'
 import type {
+  AutostartFailure,
   IoReason,
   IpcError,
   SaveReason,
@@ -56,6 +57,20 @@ const settings = (reason: SettingsReason): MessagePart => {
   }
 }
 
+// Exported because the Background screen says this one itself, with the switch in front of the
+// user: there the sentence is the whole message, and on the verification page it is the second
+// half of one.
+export const autostartFailurePart = (reason: AutostartFailure): MessagePart => {
+  switch (reason) {
+    case 'writeRefused':
+      return { key: 'ipcReasons.autostartWriteRefused' }
+    case 'writeIgnored':
+      return { key: 'ipcReasons.autostartWriteIgnored' }
+    default:
+      return assertNever(reason)
+  }
+}
+
 export const storeReasonPart = (reason: StoreReason): MessagePart => {
   switch (reason.kind) {
     case 'dataDirUnknown':
@@ -102,6 +117,13 @@ export const ipcErrorParts = (e: IpcError | null): MessagePart[] => {
     // branch that returned nothing would be the one case with no text at all.
     case 'sessionTooLarge':
       return [{ key: 'ipcErrors.sessionTooLarge' }]
+    // The Background screen says this one itself, with the switch in front of the user. The
+    // sentence exists for the verification page, where every error has to have one.
+    case 'autostartNotWritable':
+      return [
+        { key: 'ipcErrors.autostartNotWritable' },
+        autostartFailurePart(e.reason),
+      ]
     default:
       return assertNever(e)
   }

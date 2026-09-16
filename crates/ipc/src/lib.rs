@@ -1,5 +1,6 @@
 //! ipc — view-models for the UI. Pure logic: no I/O, no dependency on Tauri.
 
+mod autostart;
 mod catalog_view;
 mod collection;
 pub mod contract;
@@ -29,6 +30,10 @@ mod want;
 mod wiki;
 mod wiki_target;
 
+pub use autostart::{
+    launch_intent, AutostartFailure, AutostartReason, AutostartView, LaunchIntent, AUTOSTART_ENTRY,
+    SILENT_ARG,
+};
 pub use catalog_view::{catalog_view, item_views, CatalogView, ItemKindView, ItemView, KindCounts};
 pub use collection::{
     collection_view, CollectionDiagnostic, CollectionItem, CollectionTotals, CollectionView,

@@ -407,7 +407,15 @@ export const it = {
     },
   },
   background: {
-    intro: "Cosa fa l'app quando chiudi l'ultima finestra.",
+    intro: "Quando parte l'app, e cosa fa quando chiudi l'ultima finestra.",
+    startTitle: 'Avvia con Windows',
+    startHint:
+      "IsaacDome deve essere aperta mentre giochi: il gioco riscrive il suo log a ogni avvio. Una sessione giocata prima di aprire l'app si recupera ancora — finché il gioco non viene riavviato, e da lì è persa.",
+    startDev:
+      'Non disponibile in questa build. Una build di sviluppo metterebbe nel tuo accesso un percorso temporaneo, che a ogni avvio fallirebbe senza dirlo.',
+    startWithoutBackground:
+      "Con «resta aperta in background» spenta, all'accesso trovi l'icona accanto all'orologio e nessuna finestra; la prima finestra che apri e chiudi chiude l'app, e la lettura si ferma con lei.",
+    startFailedTitle: 'Windows non ha accettato la voce',
     stayTitle: 'Resta aperta in background',
     stayHint:
       "Chiudendo l'ultima finestra l'app resta accanto all'orologio, nell'area di notifica: un clic sull'icona riapre la finestra. Spenta, chiudere l'ultima finestra chiude l'app.",
@@ -866,6 +874,10 @@ export const it = {
     storeNewerSchema:
       'Viene da una versione più recente dell’app ({found} contro {supported}).',
     storeQueueUnparseable: 'Il piano salvato non si legge.',
+    autostartWriteRefused:
+      "Windows ha rifiutato la voce: può esserci di mezzo un criterio di sistema o un antivirus. All'accesso non partirà niente.",
+    autostartWriteIgnored:
+      'La voce è stata scritta e Windows continua a dire di no. Guarda nel Task Manager, in App di avvio: se lì è disattivata, IsaacDome resta spenta qualunque cosa si scriva da qui.',
   },
   // One sentence per IpcError, for every screen that has to say why a command failed.
   ipcErrors: {
@@ -880,6 +892,8 @@ export const it = {
     wikiUnavailable: 'Il dataset della wiki non è disponibile.',
     sessionTooLarge:
       'La sessione delle tab è troppo grande per essere salvata.',
+    autostartNotWritable:
+      "Windows non ha accettato la voce di avvio all'accesso.",
   },
 }
 
