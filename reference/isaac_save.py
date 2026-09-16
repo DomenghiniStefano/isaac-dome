@@ -5,7 +5,9 @@ M0 — reader for The Binding of Isaac: Repentance+ save file (read-only).
 Structure discovered empirically from Stefano's backups (ISAACNGSAVE09R).
 
   0x00  magic "ISAACNGSAVE09R  "  (16 bytes)
-  0x10  u32   unknown (changes on every save)
+  0x10  u32   unknown, and sometimes zero -- see docs/save-format.md, measured 2026-09-16.
+              This line read "changes on every save" until then; it is zero on 4 of the 16
+              saves of the 2024 series, every one of which changed payload.
   0x14  first section header
 
   section header = 3 x little-endian u32:
