@@ -403,14 +403,30 @@ export const en: MessageSchema = {
     },
   },
   background: {
-    intro:
-      'What the app does when you close the last window, and what you find when you open it again.',
+    intro: 'What the app does when you close the last window.',
     stayTitle: 'Keep running in the background',
     stayHint:
       'Closing the last window leaves the app next to the clock, in the notification area: one click on the icon brings the window back. Off, closing the last window closes the app.',
+    saveFailedTitle: 'The setting was not saved',
+    saveFailed:
+      'The app already behaves this way, but we could not write it down: it will be back as it was next time you start it.',
+  },
+  tabsSettings: {
+    intro: 'What you find when you open the app again.',
     resumeTitle: "Reopen the last session's tabs",
     resumeHint:
-      'The first window reopens on the tabs it had. Off, it starts on the landing screen and what was saved is deleted.',
+      'At startup you find the windows you had, holding the same tabs. Off, the app starts on the landing screen and what was saved is deleted at once.',
+    keptTitle: 'What is saved',
+    keptWindows:
+      'The windows you had open, where they were and how big they were.',
+    keptTabs:
+      'The tabs of each window, in their order, and which one was in front.',
+    keptReading:
+      'How you were reading each tab: the filters, the sort, the selected row and how far you had scrolled.',
+    keptSidebar: 'The width of the sidebar.',
+    stoppedTitle: 'The session is no longer being saved',
+    stopped:
+      'The open tabs stay where they are, but they will not come back at the next start: what the windows are showing is past the room the session has. Closing a few tabs and opening any one again resumes the saving.',
     saveFailedTitle: 'The setting was not saved',
     saveFailed:
       'The app already behaves this way, but we could not write it down: it will be back as it was next time you start it.',
@@ -441,9 +457,6 @@ export const en: MessageSchema = {
       'IsaacDome is a fan-made project and is not affiliated with, endorsed or sponsored by Nicalis or Edmund McMillen.',
     version: 'Version',
     versionUnknown: 'development server',
-    sessionStoppedTitle: 'The session is no longer being saved',
-    sessionStopped:
-      'The open tabs stay where they are, but they will not come back at the next start: what the windows are showing is past the room the session has. Closing a few tabs and opening any one again resumes the saving.',
     promisesTitle: 'The three promises',
     promises: {
       readOnlyTitle: 'Saves are read only',

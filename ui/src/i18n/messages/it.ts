@@ -407,14 +407,30 @@ export const it = {
     },
   },
   background: {
-    intro:
-      "Cosa fa l'app quando chiudi l'ultima finestra, e cosa ritrovi quando la riapri.",
+    intro: "Cosa fa l'app quando chiudi l'ultima finestra.",
     stayTitle: 'Resta aperta in background',
     stayHint:
       "Chiudendo l'ultima finestra l'app resta accanto all'orologio, nell'area di notifica: un clic sull'icona riapre la finestra. Spenta, chiudere l'ultima finestra chiude l'app.",
+    saveFailedTitle: "L'impostazione non è stata salvata",
+    saveFailed:
+      "L'app si comporta già così, ma non siamo riusciti a scriverlo: al prossimo avvio torna com'era.",
+  },
+  tabsSettings: {
+    intro: "Cosa ritrovi quando riapri l'app.",
     resumeTitle: "Riapri le tab dell'ultima sessione",
     resumeHint:
-      'La prima finestra si riapre sulle tab che aveva. Spenta, riparte dalla schermata iniziale e quello che era salvato viene cancellato.',
+      "All'avvio ritrovi le finestre che avevi, con dentro le stesse tab. Spenta, l'app riparte dalla schermata iniziale e quello che era salvato viene cancellato subito.",
+    keptTitle: 'Cosa viene salvato',
+    keptWindows:
+      'Le finestre che avevi aperte, la loro posizione e la loro dimensione.',
+    keptTabs:
+      'Le tab di ogni finestra, nel loro ordine, e quale era in primo piano.',
+    keptReading:
+      "Come stavi leggendo ogni tab: i filtri, l'ordinamento, la riga selezionata e il punto in cui eri arrivato.",
+    keptSidebar: 'La larghezza della barra laterale.',
+    stoppedTitle: 'La sessione non viene più salvata',
+    stopped:
+      'Le tab aperte restano dove sono, ma non verranno riaperte al prossimo avvio: quello che le finestre stanno mostrando supera lo spazio riservato alla sessione. Chiudere qualche tab e riaprirne una qualsiasi riprende il salvataggio.',
     saveFailedTitle: "L'impostazione non è stata salvata",
     saveFailed:
       "L'app si comporta già così, ma non siamo riusciti a scriverlo: al prossimo avvio torna com'era.",
@@ -445,9 +461,6 @@ export const it = {
       'IsaacDome è un progetto realizzato dai fan e non è affiliato, approvato o sponsorizzato da Nicalis né da Edmund McMillen.',
     version: 'Versione',
     versionUnknown: 'server di sviluppo',
-    sessionStoppedTitle: 'La sessione non viene più salvata',
-    sessionStopped:
-      'Le tab aperte restano dove sono, ma non verranno riaperte al prossimo avvio: quello che le finestre stanno mostrando supera lo spazio riservato alla sessione. Chiudere qualche tab e riaprirne una qualsiasi riprende il salvataggio.',
     promisesTitle: 'Le tre promesse',
     promises: {
       readOnlyTitle: 'Salvataggi in sola lettura',
