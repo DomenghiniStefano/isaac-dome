@@ -76,7 +76,13 @@ and both came from looking at a machine instead of at the list.
 meant opening the slot nobody plays, and it turns out to be the one profile shape this project has
 never read.
 
-- **`nothing` (20)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B57, B59, B60, B61
+**Still 30 at the end of that evening**, and the two moves are worth more than the total: **B60
+closed** — the log with no run is in `samples/launches/`, a folder of its own — and **B62 opened**
+out of the first test written for it. B60's own premise turned out to be wrong, which the weakened
+guard proved by going red for the wrong reason; the closing record says how. B62 is the defect that
+test found on the way past: a source folded into zero runs caches as one never folded.
+
+- **`nothing` (20)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B57, B59, B61, B62
 - **`a real save` (4)** — B21, B22, B23, B58
 - **`the game` (4)** — B3, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -1494,45 +1500,6 @@ if blanking comments changes an answer anywhere, that answer is a finding and go
 
 ---
 
-## B60 — A log with no run in it, and the test that says there is no such log (implementation, `log-watch` and `test-support`, small)
-
-**Needs:** nothing — the log is 4 KB and the assertion is `crates/log-watch/tests/ingest.rs`.
-
-Found on 2026-09-16, on the second machine, by looking for what it kept rather than for what a
-task needed. `Documents\My Games\Binding of Isaac Repentance\log.txt`, 4025 bytes, last written
-2024-03-05: the game was launched, it played `cutscene 1 (Intro)`, it shut down. It is a log the
-game actually wrote and it holds **none of the nine events** — no seed line, no `Level::Init`, no
-`Game Over`.
-
-It cannot be added to `samples/logs/` as things stand, and that is the entry:
-
-```rust
-// the_logs_the_game_actually_wrote_import_into_runs
-assert!(runs.is_some_and(|r| !r.is_empty()), "{} produced no run at all", log.display());
-```
-
-Every log in the folder has to yield at least one run. **That is not a property of logs, it is a
-property of the three that were collected** — each one captured on purpose, during a run, to
-answer a question about runs. A launch that ends in the menu is the counter-example, and it is not
-an exotic one: it is the first launch of most evenings. This is the vacuity rule of `CLAUDE.md`
-read from the other side — there the worry is a property that cannot fail, here it is one that
-cannot hold, and both come from a sample chosen by the question rather than by the domain.
-
-**And the file is `v1.7.9b`, Repentance, not Repentance+.** No log in the repo predates the `+`.
-What `Rules::embedded()` makes of an older version's lines is untested; the answer may well be
-"nothing moved", and that is worth reading rather than assuming — `docs/log-format.md` describes
-one era.
-
-### Closes when
-
-`samples/logs/` can hold a log with no run in it. The property says what it actually means — the
-ingest answers, the cache is written, and **at least one** log in the folder holds a run, so the
-folder going quiet is still red — and the file is in it under its date and its era. If the older
-version's lines parse differently, that is a second finding and it belongs in
-`docs/log-format.md`, not in a patch to the rules.
-
----
-
 ## B61 — An empty profile is a shape `samples/` has never held (implementation, `test-support` and `ipc`, small)
 
 **Needs:** nothing — the file is 4 KB and sits on the second machine; any fresh install makes
@@ -1566,9 +1533,51 @@ unused slot.
 
 ---
 
+## B62 — A source folded into no runs cannot be told from one never folded (implementation, `store`, needs migration 5)
+
+**Needs:** nothing to write it — the fix is one nullable column and two functions. What it waits
+on is **approval for migration 5**, which is a decision and not a machine.
+
+Found on 2026-09-16, as the first test written for B60. The last line of `cached_runs` is
+
+```rust
+Ok((!runs.is_empty()).then_some(runs))
+```
+
+so a source that was read and folded into **zero** runs answers `None` — the same value as one
+that was never folded, and as one folded under older rules. Reproduced: a launch holding an intro
+cutscene and nothing else caches `None` where `Some(0)` is the truth.
+
+**No user sees this today**, which is why it is an entry and not a fix in flight. The only
+production caller is `crates/app/src/commands/runs.rs`, and it drops a `None` source from the runs
+list — which is the right thing to show for a launch with no run in it anyway. What is already
+wrong is the sentence next to it: *"the source will be folded again the next time its log is
+read"*. For a runless source that is not a consolation, it is a description of a loop — it will be
+folded again, produce nothing again, and cache nothing again, forever.
+
+**Why it needs a migration.** The `runs` table carries `rules_version` **per row**, and zero rows
+have nowhere to put one. The fold's version has to live on the source:
+
+```sql
+ALTER TABLE sources ADD COLUMN folded_rules_version INTEGER;
+```
+
+Nullable and additive, no data rewritten: an existing file gets `NULL`, which reads as "never
+folded" and is exactly right for every row that predates it. `cache_runs` sets it, `cached_runs`
+returns `Some(vec![])` when it matches and no rows are found.
+
+### Closes when
+
+Migration 5 is approved and applied, `cached_runs` tells the three states apart, the parked test
+`a_launch_with_no_run_in_it_caches_an_empty_list_and_not_nothing` is back in
+`crates/log-watch/tests/ingest.rs` and green, and the comment in `runs.rs` says which of the three
+it is dropping.
+
+---
+
 ## Closed entries
 
-**31 entries have closed**, and they are in `docs/completed/backlog-closed.md` with
+**32 entries have closed**, and they are in `docs/completed/backlog-closed.md` with
 the reason and the numbers each one measured. The list below is so that a question starting
 "was this ever looked at?" does not need that file opened.
 
@@ -1603,3 +1612,4 @@ the reason and the numbers each one measured. The list below is so that a questi
 - **B51 — The sentence that says how you become a transformation is thrown away** — closed 2026-09-14
 - **B52 — What `n` means in a `{{dlc|…}}` code, and the 1832 spans waiting on it** — closed 2026-09-15
 - **B53 — Three pages carry `{{infobox monster}}` and the parser skips them** — closed 2026-09-15
+- **B60 — A log with no run in it, and the test that says there is no such log** — closed 2026-09-16, and its own premise was wrong
