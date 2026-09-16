@@ -1,7 +1,7 @@
 //! The archive: sources, the events that are the archive, and the runs that are a cache of a
 //! fold over them.
 
-use run::{Event, Floor, Outcome, Run, SeedKind, SourceKey};
+use run::{Event, Floor, Generated, Outcome, Run, SeedKind, SourceKey};
 use store::{SourceKind, Store, StoreError, SCHEMA_VERSION};
 
 fn open() -> (tempfile::TempDir, Store) {
@@ -38,6 +38,7 @@ fn run_of(seed: &str) -> Run {
             stage: 1,
             stage_type: 0,
             seed: 7,
+            generated: Generated::NotSaid,
         }],
         achievements: vec![],
         outcome: Outcome::Open,

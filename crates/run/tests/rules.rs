@@ -168,5 +168,41 @@ fn the_embedded_file_is_the_one_that_ships() {
     // **2 since 2026-09-15**, when `playerInitialized` was added: the store keeps a folded run
     // beside the version that produced it, so a run folded without the character id is not
     // served as though it had one — it is folded again.
-    assert_eq!(Rules::embedded().version(), 2);
+    // **3 since 2026-09-16**, when `roomsGenerated` was added for F2: a run folded before it
+    // carries floors that say nothing about how they were generated, and "nothing was said"
+    // would be indistinguishable from "the log did not have the line yet".
+    assert_eq!(Rules::embedded().version(), 3);
+}
+
+#[test]
+fn the_generation_summary_is_a_room_count_and_a_loop_count() {
+    // The line the floor's half of F2 rests on, copied from
+    // `samples/logs/20260912-solo-judas.log.txt`. It sits four lines under its own
+    // `Level::Init`, inside the block `generate...` → `place_room: shape N` → this → `placing
+    // rooms...`.
+    let rules = Rules::embedded();
+    assert_eq!(
+        rules.event("[INFO] - 19 rooms in 12 loops"),
+        Some(Event::RoomsGenerated {
+            rooms: 19,
+            loops: 12
+        })
+    );
+}
+
+#[test]
+fn the_memory_pool_lines_are_not_a_generated_floor() {
+    // A real log says `allocate 1357 rooms.` and `delete 0 generated rooms.` dozens of times,
+    // and the Greed log says the second one on every floor while saying the summary on none.
+    // A pattern loose enough to catch them would report a floor of 1357 rooms — and would make
+    // Greed, which generates nothing this way, the loudest mode in the archive.
+    let rules = Rules::embedded();
+    for line in [
+        "[INFO] - allocate 1357 rooms.",
+        "[INFO] - delete 644 rooms.",
+        "[INFO] - delete 0 generated rooms.",
+        "[INFO] - placing rooms...",
+    ] {
+        assert_eq!(rules.event(line), None, "{line}");
+    }
 }
