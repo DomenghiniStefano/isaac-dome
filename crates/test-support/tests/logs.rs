@@ -8,6 +8,26 @@ fn a_named_log_is_found_or_skipped_with_a_note() {
     }
 }
 
+/// A launch that produced no run is a log the game wrote and is **not** a run, so it lives in
+/// `samples/launches/` — the separation `windows/` already makes for what is not a point in the
+/// series. Whatever walks the run logs must not reach it: `samples/logs/` means "logs of runs",
+/// and the guard that catches rules which stopped matching rests on that meaning (B60).
+#[test]
+fn a_launch_is_not_reachable_from_the_run_logs() {
+    let launches = test_support::launch_samples();
+    if launches.is_empty() {
+        return; // `launch_samples` has already said so on stderr
+    }
+    let logs = test_support::log_samples();
+    for launch in &launches {
+        assert!(
+            !logs.contains(launch),
+            "{} is reachable from samples/logs/, where every log has to hold a run",
+            launch.display()
+        );
+    }
+}
+
 #[test]
 fn the_probe_files_are_not_logs() {
     // `samples/logs/` also holds `probe*.tsv` and `watch.log`, which are measurements and not
