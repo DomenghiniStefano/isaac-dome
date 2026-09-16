@@ -15,6 +15,7 @@ import RunsScreen from '@/screens/RunsScreen.vue'
 import PlanScreen from '@/screens/PlanScreen.vue'
 import ProfileScreen from '@/screens/ProfileScreen.vue'
 import SearchScreen from '@/screens/SearchScreen.vue'
+import TabsSettingsScreen from '@/screens/TabsSettingsScreen.vue'
 import UnlockScreen from '@/screens/UnlockScreen.vue'
 import WikiScreen from '@/screens/WikiScreen.vue'
 import {
@@ -51,6 +52,7 @@ const screens: Partial<Record<RouteName, Component>> = {
   [RouteName.Profile]: ProfileScreen,
   [RouteName.Appearance]: AppearanceScreen,
   [RouteName.Background]: BackgroundScreen,
+  [RouteName.TabsSettings]: TabsSettingsScreen,
 }
 
 export const routes: RouteRecordRaw[] = [

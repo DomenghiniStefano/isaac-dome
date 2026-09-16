@@ -511,8 +511,12 @@ merge again — **exactly as a browser does**.
 **Item 1 is done** (2026-09-12): the eyebrow "Schermata 0" and the intro that called the
 screen a permanent state are gone, and the sidebar hint no longer says the app finds the game
 from there. The screen now says what it is for — choose the save you are playing with.
-**Items 2 and 3 stay open**: the welcome flow with a preview per save, and what remains under
-Settings, are a design pass (sub-project 3.6).
+**Item 3 closed on 2026-09-16** with sub-project 3.6a (report
+`docs/superpowers/reports/2026-09-16-settings-tabs-report.md`): what remained under Settings was
+the Tabs screen the sidebar had been pointing at since 3.1 with nothing behind it, and it exists.
+**Item 2 stays open and is the whole of what is left** — the welcome flow with a preview per save.
+It was deliberately not designed alongside 3.6a: it is a product decision about the first thing a
+stranger sees, and it is the owner's.
 
 Logged 2026-09-12, a product decision from the owner: the profile screen's copy describes a
 settings page, and the owner wants the opposite — **on launch the app asks which save to
