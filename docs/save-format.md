@@ -227,29 +227,41 @@ and all three had **zero deaths in them**, so the instrument had never been hand
 reacts to. The first window that did produced exactly the predicted number. `DEATHS [10]` rose
 269 → 270 in the same window, which is what says the death reached the file at all.
 
-**Tallies 1 and 2 part company here for the first time**: 1 gained 2 and **2 gained nothing**,
-in a window where enemies were killed. The reading recorded until then was that *"1 and 2 move
-constantly and in both modes"* — true of every window collected, because every one of them had
-both moving. One short run ending in a death is the case that separates them; what 2 is waits
-on another.
+**Tally 1 is what you met and tally 2 is what you killed** — measured the same evening over six
+windows, each with a **counted** number of a **named** entity, the name coming from the log's
+`Spawn Entity with Type(n), Variant(v)` lines and the count from the player. The instrument B9
+asked for was *kill a known enemy a known number of times*; the half it never had is **a known
+number left alive**, and that is what separates the two.
 
-Read together on one entity the window says 5, 2 and 1 for tallies 3, 1 and 4 — the shape B9
-always asked for, *kill a known enemy a known number of times and read which moves by how much*,
-which needed a **named** killer to be worth anything.
+| window | met | killed | tally 1 | tally 2 |
+|---|---|---|---|---|
+| Clotty, died on purpose | 2 | 0 | +2 | +0 |
+| Ministro, died on purpose | 3 | 0 | +3 | +0 |
+| Grilled Clotty, died on purpose | 3 | 0 | +3 | +0 |
+| Round Worm | 3 | 3 | +3 | +3 |
+| Skinny, one of them a champion | 4 | 4 | +4 | +4 |
+| Round Worm + Stoney, **one worm left alive, no Stoney touched** | 3 + 2 | 2 + 0 | +3 / +2 | +2 / — |
 
-**Two entities are enough to kill every reading in which 1 and 3 bound each other:**
+Six for six. The three death windows are the ones that read wrong until the last: dying on purpose
+without killing anything moves tally 1 alone, which had looked like *"1 counts kills and 2 is
+asleep"*.
 
-| | tally 1 | tally 3 |
-|---|---|---|
-| Clotty | +2 | **+5** |
-| Ministro | **+3** | +2 |
+**A champion counts on the entity's own key.** The log spawned all four Skinnies as `226.0.0` and
+the file counted four on one row, so the colour is not in the key.
 
-Neither is ever the larger, so they are not *seen* against *killed* in either direction — nothing
-can be killed more often than it was met. Any pair of names implying an order is out, on two rows
-that took four minutes to collect.
+**The totals contradict the behaviour, and that is not resolved.** Across the whole save, tally 2
+is larger than tally 1 on **213** shared keys, smaller on **132** and equal on **91** — and *met*
+can never be fewer than *killed*. So the six windows describe today's rule and the accumulated
+numbers do not obey it. The economical explanation is that one of the two changed meaning in a
+patch; **it is a hypothesis, and the practical consequence is not**: the totals may not be used to
+reason about what the tallies mean, only their movements may.
 
-**The other three tallies still have no names**, and must not be given one from a guess: they
-hold the same entities with different numbers against each. Same for the **one word left over**
+**Tally 3 is the one still unnamed.** It moved `+5` on Clotty and `+2` on Ministro, and **zero in
+the other four windows**, including every one with kills in it. It is smaller than tally 1 on
+**308** of the 311 keys they share. Nothing collected so far tells what it counts, and it must not
+be given a name from a guess.
+
+Same for the **one word left over**
 after the last tally, present in every save and growing (11,343 → 29,725 across the samples) —
 and since 2026-09-16 known to move **+8 on a launch with no run at all**, which is most of the
 +11 once attributed to a whole Greed run. `Save::bestiary_tallies()` hands both back;

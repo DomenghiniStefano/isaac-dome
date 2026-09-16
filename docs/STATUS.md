@@ -558,11 +558,24 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       killed by a Ministro (`305.0.0`), and tally 4 gains a **new key** at 1 while Clotty stays at
       3. That rules out the weak reading — *"it is Clotty's row that moves"* — which one window
       could not. Records went 159 → 160, which is the growth pattern the hypothesis rested on.
-      **What is left of B9 is naming 1, 2 and 3**, and the two windows already narrow it: tally 2
-      was **flat in both** while 1 moved, so *"1 and 2 move constantly"* held only because every
-      earlier window had both moving. And 1 and 3 do not bound each other — Clotty +2 / +5,
-      Ministro +3 / +2 — so no *seen* against *killed* reading survives, in either direction.
-      The instrument for the rest is now cheap: kill a **counted** number of one named enemy.
+      **Three of the four are named by the end of the evening.** Six windows, each with a counted
+      number of a named entity — the name from the log's `Spawn Entity with Type(n)` lines, the
+      count from the player — say **tally 1 is what you met and tally 2 is what you killed**. The
+      window that separates them is the one nobody had ever taken: *a known number left alive*.
+      Three Round Worms and two Stoneys met, two worms killed and nothing else: `1` gained 3 and 2,
+      `2` gained 2 and nothing. The three death windows, where the owner died on purpose without
+      killing anything, are the ones that had read as *"1 counts kills and 2 is asleep"*.
+      **A champion counts on the entity's own key**: four Skinnies spawned as `226.0.0`, one of
+      them purple, and the file counted four on one row.
+      **What is left is tally 3**, which moved `+5` on Clotty and `+2` on Ministro and **zero in
+      the other four windows**, including every one with kills in it — and is smaller than tally 1
+      on 308 of their 311 shared keys.
+      **And a contradiction that is recorded rather than resolved**: across the whole save tally 2
+      is larger than tally 1 on 213 keys, smaller on 132, equal on 91 — and *met* can never be
+      fewer than *killed*. The six windows describe today's rule and the accumulated totals do not
+      obey it. One of the two probably changed meaning in a patch; that is a hypothesis, and what
+      is not is the consequence: **the totals may not be used to reason about meaning, only the
+      movements may.**
 - [ ] **What the bestiary's trailing word is.** One word after the last tally, in every
       save, growing 11,343 → 29,725 across the samples we hold, and 43,914 → **43,925** over
       the 2026-09-12 window. So it moves **+11 in one Greed run** — small, and not obviously
