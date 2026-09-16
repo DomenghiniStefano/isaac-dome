@@ -40,41 +40,93 @@ pub fn split_page(text: &str) -> (String, Vec<RawSection>) {
     (pre, secs)
 }
 
-/// A comparable title: `{{…}}` gone (even nested), link brackets gone, lowercased,
-/// whitespace collapsed.
+/// Templates that render a marker or nothing at all, so a heading means the same without them.
+/// **Measured, not guessed** (B54): across the 1113 pages of the snapshot, exactly six template
+/// names appear in a heading — these four, plus `{{s|…}}` and `{{c|…}}`, which are a stage's and
+/// a character's *name* and are the whole point of the distinction below.
+const MARKER_TEMPLATES: [&str; 5] = ["dlc", "dlc+", "dlc-", "unlockable", "anchor"];
+
+/// A comparable title: link brackets gone, marker templates gone, a **content** template replaced
+/// by the text it renders, lowercased, whitespace collapsed.
 ///
 /// **Public because the decision is made on this and `discardedSections` is keyed on the raw
 /// title** (B54): anything reading that counter and not normalizing first sees more distinct
 /// titles than there are — `{{dlc|nr}} Gallery` and `Gallery` are one title, and so are the two
 /// capitalisations of `{{dlc+|r}} Behavior in Mausoleum/Gehenna`. `examples/probe_discarded.rs`
 /// is the thing that needed it.
+///
+/// **A template carrying a name used to be stripped exactly like one carrying a marker**, so
+/// `Interactions with {{c|Tainted Eve}}` came out as `interactions with` — a title truncated
+/// rather than cleaned, and a diagnostic that named something no page has. It cannot change which
+/// sections are kept: across the whole snapshot that is the only level-2 heading with a content
+/// template in it, and it is dropped either way. `{{anchor|…}}` stays a marker because it renders
+/// nothing at all, which is why a heading made only of one comes out **empty** — the wiki draws it
+/// blank too, and The Forgotten's unlock section is the page that proves it.
 pub fn normalize_title(title: &str) -> String {
+    let chars: Vec<char> = title.chars().collect();
     let mut s = String::new();
-    let mut skip = 0usize;
-    let mut chars = title.chars().peekable();
-    while let Some(c) = chars.next() {
-        if c == '{' && chars.peek() == Some(&'{') {
-            skip += 1;
-            chars.next();
+    let mut i = 0;
+    while i < chars.len() {
+        if chars[i] == '{' && chars.get(i + 1) == Some(&'{') {
+            let (inner, next) = template_at(&chars, i);
+            s.push_str(&rendered(&inner));
+            i = next;
             continue;
         }
-        if c == '}' && chars.peek() == Some(&'}') {
-            skip = skip.saturating_sub(1);
-            chars.next();
+        if chars[i] == '[' || chars[i] == ']' {
+            i += 1;
             continue;
         }
-        if skip > 0 {
-            continue;
-        }
-        if c == '[' || c == ']' {
-            continue;
-        }
-        s.push(c);
+        s.push(chars[i]);
+        i += 1;
     }
     s.to_lowercase()
         .split_whitespace()
         .collect::<Vec<_>>()
         .join(" ")
+}
+
+/// The text a `{{…}}` at `at` leaves behind, and the index just past it. Nesting is followed so
+/// a template inside an argument does not end the outer one early.
+fn template_at(chars: &[char], at: usize) -> (String, usize) {
+    let mut depth = 0usize;
+    let mut i = at;
+    let mut inner = String::new();
+    while i < chars.len() {
+        if chars[i] == '{' && chars.get(i + 1) == Some(&'{') {
+            depth += 1;
+            i += 2;
+            if depth > 1 {
+                inner.push_str("{{");
+            }
+            continue;
+        }
+        if chars[i] == '}' && chars.get(i + 1) == Some(&'}') {
+            depth -= 1;
+            i += 2;
+            if depth == 0 {
+                return (inner, i);
+            }
+            inner.push_str("}}");
+            continue;
+        }
+        inner.push(chars[i]);
+        i += 1;
+    }
+    // Unclosed: everything after it was inside the template as far as anyone can tell.
+    (inner, chars.len())
+}
+
+/// What a template puts on screen: nothing for a marker, its first argument otherwise — which is
+/// the name for `{{c|Tainted Eve}}` and `{{s|Ashpit}}`, the only two content templates any
+/// heading in the snapshot uses.
+fn rendered(inner: &str) -> String {
+    let mut parts = inner.split('|');
+    let name = parts.next().unwrap_or("").trim().to_lowercase();
+    if MARKER_TEMPLATES.contains(&name.as_str()) {
+        return String::new();
+    }
+    parts.next().unwrap_or("").trim().to_string()
 }
 
 /// The section kind for a wiki title; `None` for titles that aren't kept.
@@ -98,7 +150,16 @@ pub fn section_kind(title: &str) -> Option<SectionKind> {
         | "unlockable starting items"
         | "unlockable items"
         // "How to Acquire" describes how a thing is reached, which is what this kind is.
-        | "how to acquire" => SectionKind::Unlockable,
+        | "how to acquire"
+        // Three more of the same, each **read on its page first** — which is the rule B54 sets
+        // against adding spellings by reflex, and the reason these are three exact strings and
+        // not a prefix that would accept headings nobody has looked at.
+        //   "Unlock"                           — boss/Mega Satan, the criteria for the gate
+        //   "Unlocking The Lost in Rebirth"    — character/The Lost, the four deaths in order
+        //   "Unlocking The Lost in Afterbirth" — the same, for the earlier edition
+        | "unlock"
+        | "unlocking the lost in rebirth"
+        | "unlocking the lost in afterbirth" => SectionKind::Unlockable,
         _ => return None, // allowed: free-form wiki title
     })
 }
@@ -139,6 +200,65 @@ mod tests {
         // "The following items cannot be found while playing as Tainted Lost" — a note
         // about the subject, whose list comes from a table template we do not expand.
         assert_eq!(section_kind("Excluded Items"), Some(SectionKind::Notes));
+    }
+
+    /// B54. A template carrying a **name** used to be stripped exactly like one carrying a
+    /// **marker**, so a heading came out truncated rather than cleaned — and the diagnostic then
+    /// named a title no page has.
+    #[test]
+    fn a_template_carrying_a_name_leaves_the_name_behind() {
+        assert_eq!(
+            normalize_title("Interactions with {{c|Tainted Eve}}"),
+            "interactions with tainted eve"
+        );
+        assert_eq!(normalize_title("{{s|Ashpit}} Waves"), "ashpit waves");
+    }
+
+    /// The other half of the same rule, and the reason it is a list and not "strip nothing":
+    /// these render a marker or nothing, so a heading means the same without them.
+    #[test]
+    fn a_template_carrying_a_marker_leaves_nothing_behind() {
+        assert_eq!(normalize_title("{{dlc|nr}} Gallery"), "gallery");
+        assert_eq!(
+            normalize_title("Champion Versions {{unlockable}}"),
+            "champion versions"
+        );
+        // Two capitalisations of one heading, which `discardedSections` counts as two titles.
+        assert_eq!(
+            normalize_title("{{Dlc+|r}} Behavior in Mausoleum/Gehenna"),
+            normalize_title("{{dlc+|r}} Behavior in Mausoleum/Gehenna")
+        );
+    }
+
+    /// `{{anchor}}` renders nothing, so a heading made only of one **is** empty — the wiki draws
+    /// it blank too. The Forgotten's unlock section sits under one, and this pins that the
+    /// emptiness is the answer rather than a parse failure: what is lost there is lost on the
+    /// wiki's side, and the fix is a correction to the page, not to this function.
+    #[test]
+    fn a_heading_that_is_only_an_anchor_is_empty() {
+        assert_eq!(
+            normalize_title("{{anchor|Unlocking the Forgotten|Unlocking The Forgotten}}"),
+            ""
+        );
+        assert_eq!(section_kind(""), None);
+    }
+
+    /// Three spellings read on their own pages before being added (B54): Mega Satan's `Unlock`,
+    /// and The Lost's two editions. Each is a procedure for reaching something, which is what
+    /// `Unlockable` is — the same reasoning that let `How to Acquire` in.
+    #[test]
+    fn the_unlock_procedures_are_unlockable() {
+        assert_eq!(section_kind("Unlock"), Some(SectionKind::Unlockable));
+        assert_eq!(
+            section_kind("{{dlc|na}} Unlocking The Lost in Rebirth"),
+            Some(SectionKind::Unlockable)
+        );
+        assert_eq!(
+            section_kind("{{dlc|a}} Unlocking The Lost in Afterbirth"),
+            Some(SectionKind::Unlockable)
+        );
+        // Not a prefix rule: a spelling nobody has read stays out.
+        assert_eq!(section_kind("Unlocking Tainted Eden"), None);
     }
 
     /// The other half of `discardedSections`, and the half worth protecting: these are out
