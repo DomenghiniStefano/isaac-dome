@@ -403,7 +403,16 @@ export const en: MessageSchema = {
     },
   },
   background: {
-    intro: 'What the app does when you close the last window.',
+    intro:
+      'When the app starts, and what it does when you close the last window.',
+    startTitle: 'Start with Windows',
+    startHint:
+      'IsaacDome has to be running while you play: the game rewrites its log at every launch. A session you played before opening the app is still recoverable — until the game is launched again, and then it is gone.',
+    startDev:
+      'Not available in this build. A development build would put its own temporary path in your login, where it would fail at every boot without saying so.',
+    startWithoutBackground:
+      'With "keep running in the background" off, you get the icon next to the clock at login and no window; the first window you open and close ends the app, and the reading stops with it.',
+    startFailedTitle: 'Windows did not accept the entry',
     stayTitle: 'Keep running in the background',
     stayHint:
       'Closing the last window leaves the app next to the clock, in the notification area: one click on the icon brings the window back. Off, closing the last window closes the app.',
@@ -854,6 +863,10 @@ export const en: MessageSchema = {
     storeNewerSchema:
       'It comes from a newer version of the app ({found} against {supported}).',
     storeQueueUnparseable: "The saved plan can't be read.",
+    autostartWriteRefused:
+      'Windows refused the entry: a system policy or an antivirus may be standing in the way. Nothing will start at login.',
+    autostartWriteIgnored:
+      'The entry was written and Windows goes on saying no. Look in Task Manager, under Startup apps: switched off there, IsaacDome stays off whatever is written here.',
   },
   ipcErrors: {
     noBackend: "The backend didn't answer.",
@@ -866,5 +879,6 @@ export const en: MessageSchema = {
     storeUnavailable: "The app's database isn't available.",
     wikiUnavailable: "The wiki dataset isn't available.",
     sessionTooLarge: 'The tab session is too large to be saved.',
+    autostartNotWritable: 'Windows did not accept the start-at-login entry.',
   },
 }

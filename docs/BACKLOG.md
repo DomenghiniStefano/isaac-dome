@@ -1114,9 +1114,31 @@ a tab that survives a restart, because it is the same mechanism.
 
 ---
 
-## B41 — Starting with Windows, so no run is lost to a launch the app missed (implementation, `ipc`, `app` and `ui`, after design)
+## B41 — Starting with Windows, so no run is lost to a launch the app missed (implementation, `ipc`, `app` and `ui`, after design) 🟡 built on 2026-09-16, **not yet seen on an installed build**
 
 **Needs:** nothing, then a window — the registry, a pure `launch_intent`, and a switch. Closing it wants an installed build, a logout and a login.
+
+**Built on 2026-09-16**, `feature/autostart`, plan `docs/superpowers/plans/2026-09-16-autostart.md`.
+Everything the design named is in: the plugin behind `#[cfg(not(debug_assertions))]`, the two
+commands through `try_state` (never `app.autolaunch()`, which panics when the plugin is not
+registered), `ipc::launch_intent` with its three rules, the tray and the archive always and the
+window only when the arguments do not say `--silent`, and the switch first on the Background
+screen. **What is not done is the looking**: an installed build, a logout and a login, and the
+five checks of §7 — they are in *"What only a window can say"* in `docs/STATUS.md` now.
+
+**Two corrections the writing made to the design**, both in the plan's own §"where this departs":
+`AutostartReason` is a **bare camelCase string**, because it has no variant carrying data and
+`CLAUDE.md` admits no exception; and `available: bool` became
+`unavailable: AutostartReason | null`, because a development build and a registry that would not
+answer were otherwise the same answer with two different causes.
+
+**And one the owner made to mine.** The error was written fieldless — one write failure, nothing
+for a reason to add — and that was wrong for a reason the plugin's own source states: `is_enabled()`
+is `value && approved`, so an entry switched off in Task Manager's Startup tab reads as off
+**however well the value was written**. A write can be *refused* or *accepted and then ignored*,
+the app can tell them apart, and they send the user to two different places. Hence
+`AutostartFailure { WriteRefused, WriteIgnored }` on the error, and two sentences under the switch
+instead of one.
 
 Logged on 2026-09-14, from the owner: *"aggiungiamo opzione avvio al lancio in impostazioni in
 modo che a prescindere da quando apro il gioco IsaacDome può essere sempre aperto e leggere tutte

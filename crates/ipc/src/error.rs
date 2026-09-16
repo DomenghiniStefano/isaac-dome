@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::{SaveReason, SettingsReason, StoreReason};
+use crate::{AutostartFailure, SaveReason, SettingsReason, StoreReason};
 
 /// Error that crosses the IPC boundary. Tagged, not a string: the UI must be able to
 /// tell "no active profile" apart from "unreadable file" without parsing text.
@@ -40,4 +40,10 @@ pub enum IpcError {
     /// The session document offered is past `MAX_SESSION_BYTES`. Nothing the user did: a
     /// frontend bug, reported rather than truncated, because half a document is not a session.
     SessionTooLarge,
+    /// The switch would not move. The reason is the two cases the app can actually tell apart,
+    /// and they are two different things for the user to do: a write nothing accepted, and a
+    /// write that went in while the registry kept saying the opposite.
+    AutostartNotWritable {
+        reason: AutostartFailure,
+    },
 }

@@ -23,5 +23,5 @@
 # The limit of that, stated rather than discovered: a floor nobody raises goes stale, so adding
 # two hundred tests and later deleting fifty stays quiet. Closing that needs a per-commit
 # comparison, which is CI, and there is none here by decision.
-RUST_TESTS=1027
-UI_TESTS=591
+RUST_TESTS=1032
+UI_TESTS=596
