@@ -1,7 +1,7 @@
 //! The rules, against logs the game actually wrote. Skips with a note when `samples/logs/` is
 //! not there: the folder is git-ignored and the suite stays green for anyone who clones.
 
-use run::{Event, ItemKind, ItemKinds, Outcome, Rules, Run, Tail};
+use run::{Event, Generated, ItemKind, ItemKinds, Outcome, Pass, Rules, Run, Tail};
 
 /// The fold needs item kinds and this test has no catalog. Every id reads as a passive, which
 /// is wrong for actives and right for everything these tests assert: nothing here looks at
@@ -257,4 +257,97 @@ fn a_launch_nobody_played_speaks_and_folds_into_no_run() {
             path.display()
         );
     }
+}
+
+/// Every floor of a run on the normal path carries exactly one generation pass.
+///
+/// Counted on 2026-09-16 with `grep -c` on each file: `Level::Init`, `generate...`, the summary
+/// and `placing rooms...` are the same number in five of the six logs — 11, 10, 10, 4 and 1 —
+/// so the game never left a pass without its summary in anything we hold.
+#[test]
+fn a_floor_of_the_normal_path_is_generated_once() {
+    let Some(events) = events_of("20260908-run-megasatan-judas.log.txt") else {
+        return;
+    };
+    let runs = Run::fold(events.into_iter(), &AllPassive);
+    let floors = &runs[0].floors;
+    assert_eq!(floors.len(), 10);
+    for f in floors {
+        assert!(
+            matches!(f.generated, Generated::Once { .. }),
+            "stage {}/{} says {:?}",
+            f.stage,
+            f.stage_type,
+            f.generated
+        );
+    }
+}
+
+/// Greed mode describes no generation at all, and the archive must say so rather than report
+/// floors of no rooms.
+///
+/// **It is not the online that silences it**, which is the confound this file can close with
+/// what it holds: `20260824-online-deaths.log.txt` is `[Net]` too and carries 11 summaries over
+/// 11 floors. Greed is what differs.
+#[test]
+fn greed_floors_say_nothing_about_how_they_were_generated() {
+    let Some(events) = events_of("20260912-greed-online-coop.log.txt") else {
+        return;
+    };
+    let runs = Run::fold(events.into_iter(), &AllPassive);
+    let floors: Vec<_> = runs.iter().flat_map(|r| r.floors.iter()).collect();
+    assert_eq!(floors.len(), 7, "the seven floors the log announces");
+    for f in &floors {
+        assert_eq!(f.generated, Generated::NotSaid);
+    }
+
+    let Some(online) = events_of("20260824-online-deaths.log.txt") else {
+        return;
+    };
+    let spoke = Run::fold(online.into_iter(), &AllPassive)
+        .iter()
+        .flat_map(|r| r.floors.iter())
+        .filter(|f| matches!(f.generated, Generated::Once { .. }))
+        .count();
+    assert_eq!(
+        spoke, 11,
+        "an online run that is not Greed does describe them"
+    );
+}
+
+/// The one floor in the corpus generated more than once, and both passes are kept.
+///
+/// `m_Stage 4, m_StageType 4` is Mines II — the only floor in anything we hold that has an area
+/// of its own, and the only one with two passes. They report **the same 19 rooms** in 12 and 14
+/// loops, so this file cannot say which of them is the floor that was walked: what it can say
+/// is that choosing either would give the same number here, which is why nothing chooses.
+#[test]
+fn the_one_floor_generated_twice_keeps_both_passes() {
+    let Some(events) = events_of("20260912-solo-judas.log.txt") else {
+        return;
+    };
+    let runs = Run::fold(events.into_iter(), &AllPassive);
+    let floors = &runs[0].floors;
+    assert_eq!(floors.len(), 4);
+    let several: Vec<_> = floors
+        .iter()
+        .filter(|f| matches!(f.generated, Generated::Several { .. }))
+        .collect();
+    assert_eq!(several.len(), 1, "one floor, and only one");
+    assert_eq!((several[0].stage, several[0].stage_type), (4, 4));
+    assert_eq!(
+        several[0].generated,
+        Generated::Several {
+            passes: vec![
+                Pass {
+                    rooms: 19,
+                    loops: 12
+                },
+                Pass {
+                    rooms: 19,
+                    loops: 14
+                }
+            ]
+        }
+    );
 }

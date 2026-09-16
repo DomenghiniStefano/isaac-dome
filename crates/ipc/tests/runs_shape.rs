@@ -2,7 +2,7 @@
 //! nothing in it that could name a folder on this machine.
 
 use ipc::{runs_view, RunSource, RunsInputs};
-use run::{Floor, Outcome, Run, SeedKind};
+use run::{Floor, Generated, Outcome, Run, SeedKind};
 
 fn a_run(seed: &str, outcome: Outcome) -> Run {
     Run {
@@ -20,6 +20,7 @@ fn a_run(seed: &str, outcome: Outcome) -> Run {
             stage: 1,
             stage_type: 0,
             seed: 7,
+            generated: Generated::NotSaid,
         }],
         achievements: vec![19],
         outcome,

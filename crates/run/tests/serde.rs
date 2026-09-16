@@ -1,6 +1,6 @@
 //! Events and runs are stored as JSON rows. The archive is only as good as this round trip.
 
-use run::{Event, Floor, Outcome, Run, SeedKind};
+use run::{Event, Floor, Generated, Outcome, Pass, Run, SeedKind};
 
 fn round_trip_event(e: &Event) -> Event {
     let json = serde_json::to_string(e).expect("an event serializes");
@@ -86,6 +86,7 @@ fn a_folded_run_survives_the_round_trip() {
             stage: 2,
             stage_type: 1,
             seed: 408_474_304,
+            generated: Generated::NotSaid,
         }],
         achievements: vec![19],
         outcome: Outcome::Won {
@@ -112,5 +113,37 @@ fn each_outcome_survives_including_the_one_that_is_not_a_failure() {
         let json = serde_json::to_string(&o).expect("an outcome serializes");
         let back: Outcome = serde_json::from_str(&json).expect("and reads back");
         assert_eq!(back, o);
+    }
+}
+
+#[test]
+fn each_state_of_a_floors_generation_survives_including_the_one_that_is_not_a_zero() {
+    // `NotSaid` is the state the archive would lose first if it ever became a number, and it
+    // is the one that matters: a Greed floor read back as zero rooms would be a lie the screen
+    // could not tell from a floor with nothing in it.
+    for g in [
+        Generated::NotSaid,
+        Generated::Once {
+            rooms: 19,
+            loops: 12,
+        },
+        Generated::Several {
+            passes: vec![
+                Pass {
+                    rooms: 19,
+                    loops: 12,
+                },
+                Pass {
+                    rooms: 19,
+                    loops: 14,
+                },
+            ],
+        },
+    ] {
+        let json = serde_json::to_string(&g).expect("a generation state serializes");
+        assert_eq!(
+            serde_json::from_str::<Generated>(&json).expect("and reads back"),
+            g
+        );
     }
 }
