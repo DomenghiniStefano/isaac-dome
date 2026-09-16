@@ -91,7 +91,7 @@ everywhere except the bestiary, which makes it the clean instrument the eleven-c
 `docs/save-format.md` has been missing. Both closings began with a test going red against an
 expectation written an hour earlier.
 
-- **`nothing` (18)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B62, B63 (B57 and B59 closed 2026-09-16)
+- **`nothing` (17)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B62 (B57, B59 and B63 closed 2026-09-16)
 - **`a real save` (4)** — B21, B22, B23, B58
 - **`the game` (4)** — B3, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -1581,7 +1581,16 @@ it is dropping.
 
 ---
 
-## B63 — Nothing notices when a test disappears (implementation, `scripts/check`, small)
+## B63 — Nothing noticed when a test disappeared (implementation, `scripts/check`, small) ✅ closed on 2026-09-16
+
+**Closed on 2026-09-16.** `scripts/check` totals the tests that *exist* — passed plus failed plus
+ignored on the Rust side, Vitest's parenthesised total on the other — against `scripts/test-floor`.
+A suite that shrank fails the run; one that grew prints the line to paste. **Both branches were
+run**: deleting `crates/discovery/tests/save_data_path.rs` took the total to 992 against a floor of
+1004 and the gate said `FAILED: test-count` — 992 being exactly the number this entry measured for
+the original incident. What it still cannot see is a floor nobody raises, which needs a per-commit
+comparison and therefore CI; that limit is written in `scripts/test-floor` and in `CLAUDE.md`.
+Commit `chore: the suite says how many tests exist, and a shorter one fails`.
 
 **Needs:** nothing — `scripts/check` already parses the run's output for the skip summary.
 
