@@ -41,6 +41,7 @@ impl std::error::Error for RulesError {}
 enum Kind {
     RunStarted,
     FloorEntered,
+    RoomsGenerated,
     RoomTransition,
     RoomEntered,
     ItemAdded,
@@ -56,6 +57,7 @@ impl Kind {
         match name {
             "runStarted" => Some(Self::RunStarted),
             "floorEntered" => Some(Self::FloorEntered),
+            "roomsGenerated" => Some(Self::RoomsGenerated),
             "roomTransition" => Some(Self::RoomTransition),
             "roomEntered" => Some(Self::RoomEntered),
             "itemAdded" => Some(Self::ItemAdded),
@@ -153,6 +155,10 @@ fn build(kind: Kind, c: &Captures<'_>) -> Option<Event> {
             stage: number(c, "stage")?,
             stage_type: number(c, "stage_type")?,
             seed: number(c, "seed")?,
+        },
+        Kind::RoomsGenerated => Event::RoomsGenerated {
+            rooms: number(c, "rooms")?,
+            loops: number(c, "loops")?,
         },
         Kind::RoomTransition => Event::RoomTransition,
         Kind::RoomEntered => Event::RoomEntered {

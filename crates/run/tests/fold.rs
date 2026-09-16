@@ -1,7 +1,7 @@
 //! Hand-written event sequences: no log, no game, no catalog. That is the point of the crate
 //! being pure.
 
-use run::{Event, ItemKind, ItemKinds, Outcome, Run, SeedKind};
+use run::{Event, Generated, ItemKind, ItemKinds, Outcome, Pass, Run, SeedKind};
 
 /// The catalog stands in as a table, so a test says which kind each id is.
 struct Kinds(&'static [(u32, ItemKind)]);
@@ -383,4 +383,108 @@ fn a_second_player_does_not_take_the_runs_character() {
         &Kinds(&[]),
     );
     assert_eq!(runs[0].character_id, Some(30));
+}
+
+/// The floor the generation summary attaches to, and `Level::Init` is the only thing that says
+/// where one floor ends and the next begins.
+fn floor(stage: u32, stage_type: u32) -> Event {
+    Event::FloorEntered {
+        stage,
+        stage_type,
+        seed: 1,
+    }
+}
+
+fn generated(rooms: u32, loops: u32) -> Event {
+    Event::RoomsGenerated { rooms, loops }
+}
+
+#[test]
+fn a_floor_the_log_did_not_describe_says_so_and_does_not_say_zero() {
+    // Greed mode: seven floors and not one `generate...` line, measured on
+    // `samples/logs/20260912-greed-online-coop.log.txt`. A floor with no summary must not read
+    // as a floor of no rooms — that is the same error `Unmodelled` exists for in `floor` and
+    // `Partial` in `graph`.
+    let runs = Run::fold([started(), floor(1, 0)].into_iter(), &Kinds(&[]));
+    assert_eq!(runs[0].floors[0].generated, Generated::NotSaid);
+}
+
+#[test]
+fn one_generation_pass_belongs_to_the_floor_above_it() {
+    let runs = Run::fold(
+        [started(), floor(1, 0), generated(19, 12)].into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(
+        runs[0].floors[0].generated,
+        Generated::Once {
+            rooms: 19,
+            loops: 12
+        }
+    );
+}
+
+#[test]
+fn a_second_pass_under_one_floor_is_kept_beside_the_first_and_not_instead_of_it() {
+    // The one multi-pass floor in the whole corpus — `m_Stage 4, m_StageType 4`, Mines II,
+    // which is also the only floor in it that has an area of its own. Both passes report 19
+    // rooms, so the corpus cannot say which of them is the floor that was walked: keeping both
+    // is the only reading that does not invent the answer.
+    let runs = Run::fold(
+        [started(), floor(4, 4), generated(19, 12), generated(19, 14)].into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(
+        runs[0].floors[0].generated,
+        Generated::Several {
+            passes: vec![
+                Pass {
+                    rooms: 19,
+                    loops: 12
+                },
+                Pass {
+                    rooms: 19,
+                    loops: 14
+                }
+            ]
+        }
+    );
+}
+
+#[test]
+fn a_summary_attaches_to_the_last_floor_announced_and_not_to_the_next_one() {
+    let runs = Run::fold(
+        [
+            started(),
+            floor(1, 0),
+            generated(11, 8),
+            floor(2, 0),
+            generated(14, 8),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(
+        runs[0].floors[0].generated,
+        Generated::Once {
+            rooms: 11,
+            loops: 8
+        }
+    );
+    assert_eq!(
+        runs[0].floors[1].generated,
+        Generated::Once {
+            rooms: 14,
+            loops: 8
+        }
+    );
+}
+
+#[test]
+fn a_summary_before_any_floor_belongs_to_no_floor_and_invents_none() {
+    // A read can begin anywhere: `log.txt` is tailed from an offset and a session folder can
+    // hold a floor whose `Level::Init` the previous read already took. A summary with no floor
+    // to attach to is dropped, because the alternative is a floor the game never announced.
+    let runs = Run::fold([started(), generated(19, 12)].into_iter(), &Kinds(&[]));
+    assert!(runs[0].floors.is_empty());
 }
