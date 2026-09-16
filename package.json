@@ -5,7 +5,8 @@
   "scripts": {
     "check": "sh scripts/check",
     "dev:reset": "node scripts/dev-reset.mjs",
-    "predev": "node scripts/dev-reset.mjs",
+    "prune:incremental": "node scripts/prune-incremental.mjs --force",
+    "predev": "node scripts/dev-reset.mjs && node scripts/prune-incremental.mjs",
     "dev": "tauri dev --config crates/app/tauri.conf.json",
     "build": "tauri build --config crates/app/tauri.conf.json",
     "ui:dev": "pnpm --filter ui dev",
