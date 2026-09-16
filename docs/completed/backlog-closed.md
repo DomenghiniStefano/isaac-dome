@@ -1973,3 +1973,55 @@ a monster box on somebody else's page is not worth a shape — with the count re
 
 ---
 
+
+---
+
+## B60 — A log with no run in it, and the test that says there is no such log (implementation, `log-watch` and `test-support`, small) ✅ closed on 2026-09-16, **and its own premise was wrong**
+
+Found on 2026-09-16 on the second machine, by looking at what it keeps rather than at what a task
+needed. `Documents\My Games\Binding of Isaac Repentance\log.txt`, 4025 bytes, last written
+2024-03-05: the game was launched, it played `cutscene 1 (Intro)`, it shut down.
+
+**The entry said the guard over `samples/logs/` was too strong** — every log there has to yield at
+least one run, which it called a property of the three logs that had been collected rather than of
+logs. It proposed weakening the quantifier to *at least one log in the folder*.
+
+**That was wrong, and writing the weakened version is what showed it.** With the new file in
+`samples/logs/`, the weakened guard went red on this machine for a reason the strong one never
+would: the folder holds exactly one log here and it is the runless one, so *"at least one holds a
+run"* is legitimately false. Worse than red — on a machine that **does** have the three run logs, a
+rules file that stopped matching would zero every one of them, and the weakened guard would then
+report the same "no log holds a run" state. A guard that cannot tell a broken rules file from a
+thin sample is not a guard.
+
+**What was actually missing was a place to put a log that is not a run**, which this repo had
+already solved once: `samples/windows/` exists so that the halves of a matched window cannot be
+reached by anything walking the series. So:
+
+| | |
+|---|---|
+| `samples/logs/` | logs **of runs**. The strong guard stays exactly as it was: each one must yield a run |
+| `samples/launches/` | a `log.txt` in which nobody started a run. New, with `launch_samples()` and `launch_sample()` in `test-support`, declaring `sample: launches/…` like everything else |
+
+`declared_logs_in` is now shared by both, because a helper that declares which file it used is
+precisely the thing that must not exist twice with two behaviours — the crate's own docstring says
+so, about itself.
+
+**What the launch measures**, and it answers the entry's open question about the era:
+
+- `the_launch_of_20240305_holds_one_event_and_it_is_the_intro` — **exactly one event**,
+  `Ended { cutscene: 1, name: "Intro" }`. The count was derived from the file before it was
+  asserted: `grep -cE` with each of the ten patterns in `crates/run/rules/events.json` finds one
+  matching line, line 69, and zero for the other nine. Falsified on purpose before being trusted —
+  set to 2, it reports `left: 1, right: 2`.
+- `a_launch_nobody_played_speaks_and_folds_into_no_run` — the two halves that have to hold
+  together: the events are **not** empty, and the fold produces **no run**. An instrument that
+  reports nothing proves nothing until it has been shown able to report something.
+- **The era question is answered: nothing moved.** This is the only log in the repo from before
+  the `+` — Repentance **v1.7.9b**, 2024 — and the rules match it the same way. `docs/log-format.md`
+  says so now instead of describing one era silently.
+
+**And it opened B62.** The first test written for this was not the guard at all: it asked whether a
+launch that was read and holds no run is *cached* as an empty list. It is not — `cached_runs`
+answers `None`, which is the same value as "never folded". That is a defect in the archive's
+representation, its fix is a schema migration, and it left as its own entry.
