@@ -1289,12 +1289,42 @@ which is why this is an analysis entry and not a patch.
 exactly what a title seen once does not look like. This entry exists so the next reading of that
 number starts from the split rather than the total.
 
+### Re-measured on 2026-09-16, and the counter was the first thing wrong
+
+`cargo run -p wiki --example probe_discarded` — new, and it exists because **the counter cannot
+answer either half of this entry**: it is keyed on the **raw** title while `section_kind`'s
+decision is taken on the **normalized** one, and it never says which page lost a section, which is
+the only thing that lets a title be placed.
+
+- **63 raw spellings are 59 titles.** `{{dlc|nr}} Gallery` *is* `Gallery`; the two capitalisations
+  of `{{dlc+|r}} Behavior in Mausoleum/Gehenna` are one heading counted twice. "63 titles" was
+  never a count of titles.
+- **51 are seen exactly once, not 54.** The three that left the singles are those two plus
+  `In-Game Footage`, a **fourth raw spelling** of in-game footage that the entry's "840 across
+  three spellings" had not seen.
+- **`Ingame Footage` (2) does not fold in**, and that is a parser fact rather than an oversight:
+  it has no hyphen, and `normalize_title` does not collapse `ingame` to `in-game`.
+- **Two titles are destroyed by normalization rather than cleaned by it**, which is worth the most
+  here. `{{anchor|Unlocking the Forgotten|…}}` on **The Forgotten** normalizes to **the empty
+  string** — 29 lines lost under a heading that is only an anchor — and
+  `Interactions with {{c|Tainted Eve}}` on **Sumptorium** normalizes to `interactions with`,
+  truncated. The normalizer strips a template carrying a **name** exactly as it strips one
+  carrying a **marker**, and only the second is what it was written for.
+- **The largest single loss is 1339 lines**: `{{dlc+|r}} Monster Replacement Tables` on **D10**.
+- The probe walks all 1113 raw pages and reports **2270** dropped against the built dataset's
+  2267: three sections sit on pages the build does not turn into entries. Said rather than
+  reconciled, because the two are answering different questions.
+
+Every one of the 51 now carries its page and its size, which is what placing them needs. The
+placement, the near-misses' verdicts and the second-subject decision are still open — they are no
+longer blocked on an instrument.
+
 ### Closes when
 
-Each of the 54 is placed in one of the three families **by reading its page**, the near-misses are
+Each of the 51 is placed in one of the families **by reading its page**, the near-misses are
 either accepted into `section_kind` or refused in writing with the page that refused them, and the
-second-subject family has a decision — with the counts re-measured, because 54 is a number from a
-snapshot and the wiki gains headings.
+second-subject family has a decision. **Two are separable from all that** and are defects rather
+than judgments: the heading that normalizes to nothing, and the one normalization truncates.
 
 ---
 
