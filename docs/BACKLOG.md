@@ -1346,13 +1346,47 @@ recovered Mega Satan section mentions `{{e|Reward Plate}}`, so unresolved entiti
 Checked rather than assumed — a fourth occurrence of the same three grid-entity keys, not a fourth
 key — and the bound moved by one with the reason on it.
 
-**48 remain.**
+### The near-misses are read, and the line is written down
+
+2026-09-16, `feat(wiki): six spellings of a kind come in, and the qualifiers stay out`. The entry
+asked for them to be *"either accepted into `section_kind` or refused in writing with the page
+that refused them"*, and its own words are the rule that decided it: **`section_kind` is a closed
+list of spellings, and these are spellings.** A heading that adds *when*, *where* or a verdict is
+not a spelling.
+
+**In**, each with its page: `Syngergies` — a typo, and the only one in the snapshot
+(collectible/Blood Bombs); `Items Interactions`, the plural of one already there
+(character/Tainted Lost); `Active Item Interactions` (trinket/Found Soul) and `Other Interactions`
+(trinket/Broken Remote); `General Strategies` (character/The Lost, which opens with
+`{{main|The Lost (Strategy)}}`) and `Tips and strategies` (collectible/Isaac's Heart).
+
+**Out, and a test names each refusal with its page:**
+
+| refused | page | why |
+|---|---|---|
+| `Interactions with {{c|Tainted Eve}}` | collectible/Sumptorium | names **one subject**; a kind that names a subject stops being a kind |
+| `Infinite Synergies` + 3 parenthesised | trinket/Broken Remote | one page keeps four apart, and *infinite*, *conditional*, *pre-Repentance*, *with delay* are the whole of what they say |
+| `Behavior in Mausoleum/Gehenna` | boss/Mom, boss/Mom's Heart | adds **where** the behaviour applies |
+| `Good Items`, `Bad items`, `Neutral Items`, `Detrimental items` | challenge/Bloody Mary and others | an editorial verdict, which `Notes` does not make — the entry said so and the pages agree |
+
+Measured either side: **3813 kept and 2267 dropped before, 3819 and 2261 after.** Exactly the six.
+
+**42 remain**, and none of them is a near-miss: what is left is the second-subject family and the
+genuinely-something-else one.
 
 ### Closes when
 
-Each of the 48 is placed in one of the families **by reading its page**, the near-misses are
-either accepted into `section_kind` or refused in writing with the page that refused them, and the
-second-subject family has a decision.
+The **second-subject family has a decision** — `Black Judas` on character/Judas, `Blood Clots` on
+character/Tainted Eve, `Dark Esau` on character/Tainted Jacob, `Lazarus Risen` on
+character/Lazarus, `The Soul` on character/The Forgotten, `Ultra Greedier` on boss/Ultra Greed,
+`Friendly Charger` on collectible/My Shadow, `Special Locusts` on collectible/Abyss, and the two
+halves of collectible/Broken Shovel. **A page has one entry and these sections belong to something
+else that shares it**, which is a shape question about `Entry` and not a spelling. It is the same
+question B53 came from.
+
+The rest are the third family and need no decision, only the record that they were read: page-own
+content with no kind behind it — crafting tables, a reverse-engineered algorithm, reroll chains,
+pool probabilities, sound tables, poop varieties, a monster replacement table of 1339 lines.
 
 ---
 
