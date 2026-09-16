@@ -76,7 +76,7 @@ and both came from looking at a machine instead of at the list.
 meant opening the slot nobody plays, and it turns out to be the one profile shape this project has
 never read.
 
-**29 at the end of that evening**, and the moves are worth more than the total. **B60 closed** —
+**30 with B63**, opened the morning after while deciding what to do with the worktrees: a comparison against an abandoned branch turned up 27 tests that a commit had deleted four days earlier, with every gate green. **29 at the end of that evening**, and the moves are worth more than the total. **B60 closed** —
 the log with no run is in `samples/launches/`, a folder of its own — and its own premise turned out
 to be wrong, which the weakened guard proved by going red for the wrong reason. **B62 opened** out
 of the first test written for it: a source folded into zero runs caches as one never folded.
@@ -85,7 +85,7 @@ everywhere except the bestiary, which makes it the clean instrument the eleven-c
 `docs/save-format.md` has been missing. Both closings began with a test going red against an
 expectation written an hour earlier.
 
-- **`nothing` (19)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B57, B59, B62
+- **`nothing` (20)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B57, B59, B62, B63
 - **`a real save` (4)** — B21, B22, B23, B58
 - **`the game` (4)** — B3, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -1542,6 +1542,59 @@ Migration 5 is approved and applied, `cached_runs` tells the three states apart,
 `a_launch_with_no_run_in_it_caches_an_empty_list_and_not_nothing` is back in
 `crates/log-watch/tests/ingest.rs` and green, and the comment in `runs.rs` says which of the three
 it is dropping.
+
+---
+
+## B63 — Nothing notices when a test disappears (implementation, `scripts/check`, small)
+
+**Needs:** nothing — `scripts/check` already parses the run's output for the skip summary.
+
+Found on 2026-09-16, while deciding what to do with the worktrees. Comparing the abandoned branch
+`develop-old-it` against `develop` turned up one file present there and absent here:
+`crates/ipc/tests/profile.rs`, **647 lines, 27 tests**. It was not lost in the re-root of
+2026-09-07, which is what it looked like at first — `develop` had it, and
+
+```
+ed3c15d 2026-09-12 feat(ipc): answer the graph's profile questions from the save
+  crates/ipc/tests/profile.rs  | 647 ------------------------------------------
+  crates/ipc/tests/progress.rs |  95 +++++++
+```
+
+deleted it in the same diff that added `progress.rs`. The message says why the **new** file could
+not be called `profile` — *"`ipc::profile` already means something else … two meanings of the word
+in one crate is a trap"* — and the rename took the original with it.
+
+**Every gate stayed green for four days**, and this is the entry: `cargo test` reports what ran,
+never what stopped existing. `scripts/check` counts skips and declarations precisely, because a
+skip is the silence it was built to hear — but a **deleted** test makes no sound at all. It is not
+a dimmed suite, it is a shorter one.
+
+**What was gone**, which is why it is worth a tool and not just a note: `profile_id`'s properties,
+`resolve_active`'s choice logic, and the three that guard the rule `CLAUDE.md` states in full — the
+candidate view hiding the Steam account id, the Windows username masked whatever the source, and
+`setup_state`'s diagnostics leaking neither. `crates/ipc/tests/reasons.rs` keeps one narrow case of
+it (an `io::Error`'s message not reaching a `SaveReason`) and nothing else did.
+
+**Recovered on 2026-09-16** and green on today's code: the port needed four `game_data: None` and
+two reasons that had become typed since. No regression was hiding — the code kept honouring them —
+but for nine days nothing was checking.
+
+### Closes when
+
+A run says how many tests it ran, and a drop is loud. The cheap shape: `scripts/check` already
+reads `cargo test`'s output into a file for the skip summary, so it can total the `test result: ok.
+N passed` lines and compare against a committed floor, the way `unlock_size.rs` pins a ceiling.
+**Measured, and it is one line**: over the same file the script already keeps,
+
+```sh
+grep -oP 'test result: ok\. \K\d+' "$output" | awk '{s+=$1} END {print s}'
+```
+
+reads **965** before this recovery and **992** after — exactly the 27 that came back. The number
+that would have made the deletion loud was one `grep` away from a file the script had already
+written.
+Whatever the shape, the property is the one this incident breaks: **a commit that removes tests
+must not be able to come out greener than one that does not.**
 
 ---
 
