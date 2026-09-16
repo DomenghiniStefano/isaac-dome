@@ -505,8 +505,17 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       is not established, because a cutscene 2 could have played in the launch whose log the
       game overwrote. And the sharpest fact against the simple reading: **cell 1 did not move**
       although the Intro, cutscene 1, did play.
-      **Two minutes close it**: launch the game, reach the menu, quit without playing. If cell 2
-      moves, it counts launches. Sections 5 and 9 keep their printed names and stay `Unknown`.
+      **Measured on 2026-09-16, and a count of launches is refuted too.** The owner launched the
+      game, sat at the title screen, opened the file select, loaded slot 1 and quit, without
+      playing. **Cell 2 did not move, and neither did any other cell of any section.** Four
+      snapshots taken at each step and read with `matched_window`, which covers the four sections
+      still called `Unknown` — the instrument the 2026-09-08 error exists for.
+      The numbers agreed before the behaviour did: **cell 2 stands at 121** while Steam's
+      `gameprocess_log.txt` records **262 launches** of 250900 on this machine since 2025-06-26
+      (B55), so it could not have been counting them for this profile's lifetime either.
+      **What moves it happens while playing**, which is all the 2026-09-15 window ever said: it
+      rose by one, and it contained a whole run. Sections 5 and 9 keep their printed names and
+      stay `Unknown`.
 - [ ] **What the bestiary's four tallies count** (B9, structure closed 2026-09-09;
       **halved on 2026-09-12**). Section 10 holds four lists over the same entities — ids 4,
       2, 3, 1 — with a different number against each entity in each. One matched window on a
@@ -541,6 +550,17 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       the tallies either: they gained **1237** (432 + 805) in the first window and **2072**
       (1105 + 937 + 30) in the second, so the tallies-per-trailing ratio goes **112 to 10.5** —
       an eleven-fold move where the tallies themselves not quite doubled.
+      **It moves without any play at all, measured 2026-09-16**, and that corrects both numbers
+      above. A launch with no run — title screen, file select, slot 1 loaded, quit — moved it
+      **45,441 → 45,449, +8**, and moved **nothing else in the whole file**. It is the only thing
+      in the save that a bare launch touches.
+      Three writes, and the file select is not one of them: **+4** at the title screen, **0** at
+      the file select (the file is byte-identical), **+2** when slot 1 is loaded, **+2** on quit.
+      **So both windows above contained a launch, and the launch is most of the smaller one.**
+      Subtracting it, the Greed run is about **+3** and the solo run to The Void about **+190** —
+      the ratio between the two runs is not 11 to 198 but roughly **3 to 190**, which is a
+      different shape from the one the paragraph above reasons about. Whatever it counts, it is
+      not run-shaped and it is not idle either.
 - [ ] **The 40 unknown cells in the completion matrix** — Mother and The Beast for The
       Forgotten and the 19. One run of Mother with a Tainted character closes the whole
       20 × 2 block, because the base indices are already pinned and only the evidence that
