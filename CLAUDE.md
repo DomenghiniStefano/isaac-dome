@@ -293,7 +293,23 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   (`core-save`, `discovery`, `unpack`, `ipc`, `ui`, `wiki-snapshot`, `design-export`);
   drop the parentheses when the change is repo-wide (`docs:`, `chore:`, `build:`).
   Messages in English, atomic commits.
-- Integration branch: **`develop`**. `master` only receives releases.
+- Integration branch: **`develop`**. **`master` is the public face and is kept level with it**
+  (`--ff-only`, since 2026-09-16); a release is a **tag** on `master`, not the act of moving the
+  branch. It used to read "`master` only receives releases", and that cost something real: `master`
+  is GitHub's default branch, so under the old rule the repository's landing page sat 733 commits
+  behind on an Italian scaffold. Details and the two moves it took in `docs/STATUS.md`.
+- **A merged branch is closed in the same breath as the merge**, locally and on the remote —
+  unless work continues on it, which is the only exception. A branch that is merged holds nothing
+  `develop` does not, *by construction*, so keeping it buys no safety and costs the one thing that
+  matters: it hides the branches that **do** carry something. Measured on 2026-09-16, before the
+  first cleanup: **24 local branches and 52 on the remote**, and of all of them exactly one held a
+  commit that was not in `develop` — finding it meant checking seventy-six by hand.
+- **Verify a branch is merged at the moment you delete it, never from a list gathered earlier.**
+  Two conditions, both of them: nothing outside `develop`
+  (`git rev-list --count develop..<b>`) and nothing outside the remotes
+  (`git rev-list --count <b> --not --remotes`). The second is the one that catches a branch whose
+  commits live only on this machine, and it is the reason the 2026-09-16 sweep could delete
+  seventy-odd refs without losing a line.
 - **Never** a `Co-Authored-By` trailer or references to Claude, in any commit, PR, or
   issue.
 

@@ -35,6 +35,10 @@ const EXEMPTIONS = [
     path: 'docs/IMPROVEMENTS.md',
     why: 'moved to docs/completed/quality-review.md; a dated spec names it as it was',
   },
+  {
+    path: 'docs/progetto.html',
+    why: 'the original Italian project document, rewritten as docs/PROJECT.md on 2026-09-07; the status names it as what master used to show, which is history and not a promise',
+  },
   { path: 'stores/graph.ts', why: 'three view stores became one stores/views.ts with N8' },
   { path: 'stores/completion.ts', why: 'same' },
   { path: 'stores/collection.ts', why: 'same' },
