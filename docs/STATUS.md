@@ -19,7 +19,17 @@ What a session learns that will matter again is promoted out of it — a fact ab
 state sat underneath it: M4 read "designed, not started" with all nine of its sub-items closed,
 and nobody scrolled far enough to find out.
 
-**Integration branch:** `develop`. `master` is stopped at the initial commit.
+**Integration branch:** `develop`. `master` is stopped at the initial commit — and **as of
+2026-09-16 it is an ancestor of `develop`**, which it was not. The two had no common ancestor at
+all: `develop` was re-rooted on 2026-09-07 with a fresh history while `master` kept the import of
+2026-09-01, so the first release could not have been a normal merge. Fixed with one
+`git merge -s ours --allow-unrelated-histories master` on `develop`: it records `master` as a
+second parent and **changes no file** — the tree SHA is the same either side of it — so nothing was
+rewritten and nothing force-pushed. `master` stays at the initial commit because it holds releases
+and there is no release yet; what changed is that `git checkout master && git merge develop` is now
+a fast-forward, with no flags. A rebase was the alternative and was rejected: replaying 728 commits
+of the shared integration branch and force-pushing it, to gain an ancestor that is an abandoned
+scaffold.
 **Branches from 3.4 on: one per sub-project, cut from `develop`** (decided 2026-09-11). Nobody
 commits on `develop` directly: it is where finished work lands, through a `--no-ff` merge with
 `scripts/check` green. A sub-project gets its own `feature/<name>` branch — Collection is
