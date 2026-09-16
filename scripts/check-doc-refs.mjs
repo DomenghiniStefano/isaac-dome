@@ -52,6 +52,15 @@ const EXEMPTIONS = [
     path: 'crates/app/gen/schemas/desktop-schema.json',
     why: 'written by tauri-build on every compile; .gitignore keeps it out',
   },
+  // Paths **inside the built installer**, not inside the repo: B11 names where the licences land
+  // once the app is packaged, which is a fact about an artefact and can never be a file git
+  // tracks. The report reads paths, not what a path is about.
+  {
+    path: 'licenses/determination/license.txt',
+    why: 'a path inside the installer, verified by extracting the MSI (B11)',
+  },
+  { path: 'licenses/determination/readme.txt', why: 'same' },
+  { path: 'licenses/wiki/ATTRIBUTION.md', why: 'same' },
   // A document naming the file it is telling you went away.
   {
     path: 'screens/unlock/unlockLayout.test.ts',
