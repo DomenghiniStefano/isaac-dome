@@ -245,9 +245,15 @@ fn diagnostics_are_bounded() {
     let d = &ds.meta.diagnostics;
     // 19 as of 2026-09-08 (18 `{{e|…}}`, 1 `{{i|…}}`), down from 22, and what remains is
     // a **floor**, not a backlog — which is why the bounds below are per template and
-    // tight, instead of one loose sum:
+    // tight, instead of one loose sum.
     //
-    // - the 18 `{{e|…}}` are three keys, `Killswitch`, `Pressure Plate` and
+    // **20 as of 2026-09-16** (19 `{{e|…}}`), and the extra one is not a new problem: B54
+    // recovered three unlock sections into the dataset, and Mega Satan's mentions
+    // `{{e|Reward Plate}}` — a **fourth occurrence of the same three keys**, not a fourth
+    // key. This test going red is what made that get checked rather than assumed, which is
+    // what a tight bound is for.
+    //
+    // - the 19 `{{e|…}}` are three keys, `Killswitch`, `Pressure Plate` and
     //   `Reward Plate`. All three *are* in `entity.json`, as aliases of the page
     //   `Buttons`, and all three carry `id: ""` — they're grid entities, which the game
     //   gives no `EntityType`. `Target::Entity` needs an id and we can't invent one, so
@@ -271,7 +277,7 @@ fn diagnostics_are_bounded() {
         d.unresolved
     );
     assert!(
-        d.unresolved.get("e").copied().unwrap_or(0) <= 18,
+        d.unresolved.get("e").copied().unwrap_or(0) <= 19,
         "the unresolved entities are the three id-less buttons: {:?}",
         d.unresolved
     );

@@ -1319,12 +1319,40 @@ Every one of the 51 now carries its page and its size, which is what placing the
 placement, the near-misses' verdicts and the second-subject decision are still open — they are no
 longer blocked on an instrument.
 
+### The two defects are fixed, and three titles left with them
+
+2026-09-16, `fix(wiki): a template carrying a name is not a marker, and three unlocks come back`.
+
+**The truncation is gone**: a content template leaves its first argument behind, so
+`Interactions with {{c|Tainted Eve}}` normalizes to what it says. The marker list is measured
+rather than guessed — six template names appear in a heading anywhere in the snapshot, four that
+render a marker or nothing and two that render a name. It cannot change which sections are kept,
+and that is measured too: exactly one level-2 heading in the snapshot holds a content template,
+and it is dropped either way.
+
+**The empty heading stays empty**, because that is what the wiki draws: `{{anchor}}` renders
+nothing, so The Forgotten losing its unlock section is a defect **on the page** and not in the
+parser. A test pins the emptiness as the answer rather than a parse failure. Correcting it would
+need a section-title correction, and `dataset/corrections.json` has no shape for one — it is a
+`pageId` and `characters` map and nothing else.
+
+**Three of the 51 left, into `SectionKind::Unlockable`**: Mega Satan's `Unlock` and The Lost's two
+editions, each read on its page first, as three exact strings and not a prefix — a spelling nobody
+has read stays out, and a test says so. Measured either side on the same snapshot: **3810 kept and
+2270 dropped before, 3813 and 2267 after**, which is exactly the three and nothing else.
+
+`diagnostics_are_bounded` went red on it, which is the best moment this entry has had: the
+recovered Mega Satan section mentions `{{e|Reward Plate}}`, so unresolved entities went 18 to 19.
+Checked rather than assumed — a fourth occurrence of the same three grid-entity keys, not a fourth
+key — and the bound moved by one with the reason on it.
+
+**48 remain.**
+
 ### Closes when
 
-Each of the 51 is placed in one of the families **by reading its page**, the near-misses are
+Each of the 48 is placed in one of the families **by reading its page**, the near-misses are
 either accepted into `section_kind` or refused in writing with the page that refused them, and the
-second-subject family has a decision. **Two are separable from all that** and are defects rather
-than judgments: the heading that normalizes to nothing, and the one normalization truncates.
+second-subject family has a decision.
 
 ---
 
