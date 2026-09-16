@@ -21,10 +21,11 @@ pub use ipc::IpcError;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    tauri::Builder::default()
+    let builder = tauri::Builder::default()
         // **First, by the plugin's own requirement.** A second launch is the same gesture as a
-        // click on the icon: this app has no command line, so the arguments are nothing to act
-        // on.
+        // click on the icon, and its arguments are ignored **because** of what they can now
+        // contain: a login launch carries `--silent`, and a person double-clicking the icon
+        // while one is already running is asking for the app, not for the tray.
         .plugin(tauri_plugin_single_instance::init(|app, _argv, _cwd| {
             window::open_or_focus(app);
         }))
@@ -55,7 +56,25 @@ pub fn run() {
             std::thread::spawn(move || {
                 responder.respond(icon_bytes(&app, &path));
             });
-        })
+        });
+
+    // **Not in a development build**, and the reason is concrete: `current_exe()` there is
+    // `target\debug\app.exe`, so a switch flipped once while testing leaves that path in the
+    // developer's own login — surviving `cargo clean`, pointing at nothing, and failing
+    // silently at every boot. With no plugin the two commands answer `notSupported` and the
+    // switch is disabled, which is the truth about this build.
+    //
+    // `Builder` and not `init()`: the entry's name is what Task Manager shows in its Startup
+    // list, and the argument is what tells a login launch from a double-click.
+    #[cfg(not(debug_assertions))]
+    let builder = builder.plugin(
+        tauri_plugin_autostart::Builder::new()
+            .app_name(ipc::AUTOSTART_ENTRY)
+            .arg(ipc::SILENT_ARG)
+            .build(),
+    );
+
+    builder
         .invoke_handler(tauri::generate_handler![
             profile::setup_state,
             profile::select_profile,
@@ -63,6 +82,8 @@ pub fn run() {
             profile::set_scale,
             profile::set_stay_in_background,
             profile::set_resume_tabs,
+            profile::autostart,
+            profile::set_autostart,
             session::window_session,
             session::set_window_session,
             completion::save_summary,
@@ -90,9 +111,17 @@ pub fn run() {
         // the tray and a second launch make.
         .setup(|app| {
             // The tray before the window: if a window fails to open, the way back in still
-            // exists.
+            // exists. **Always**, and a silent launch is why it matters: a process with no
+            // window and no icon is one nobody can reach.
             tray::build(app.handle());
-            window::open_or_focus(app.handle());
+            if matches!(
+                ipc::launch_intent(&args_after_exe()),
+                ipc::LaunchIntent::Window
+            ) {
+                window::open_or_focus(app.handle());
+            }
+            // **Always**, whichever way the app was started. It is the feature: the login entry
+            // exists so the archive is following the log before the game is.
             start_archive(app.handle().clone());
             Ok(())
         })
@@ -112,6 +141,14 @@ pub fn run() {
             // repo's exhaustiveness rule cannot ask us to remove.
             _ => (),
         });
+}
+
+/// What this process was handed, without the executable's own argument.
+///
+/// `launch_intent` is given what follows `argv[0]` because that is the only part a login entry
+/// controls: the plugin writes `"<path> --silent"` into the registry value.
+fn args_after_exe() -> Vec<String> {
+    std::env::args().skip(1).collect()
 }
 
 /// Fills the run archive and then follows the log, off the main thread.

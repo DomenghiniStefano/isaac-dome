@@ -6,8 +6,10 @@ import type { IpcError, SetupState, Target } from '../types'
 import { completionMatrix } from './completion'
 import { candidates, noneSetup, setupWith, summary } from './profile'
 import {
+  autostartAnswer,
   resetSettingsFixture,
   sessionAnswer,
+  setAutostartAnswer,
   setResumeTabsAnswer,
   setScaleAnswer,
   setSessionAnswer,
@@ -177,6 +179,8 @@ const handlers: Partial<Record<CommandName, Handler>> = {
   [Command.SetStayInBackground]: (args) =>
     setStayInBackgroundAnswer(Boolean(args?.stay)),
   [Command.SetResumeTabs]: (args) => setResumeTabsAnswer(Boolean(args?.resume)),
+  [Command.Autostart]: () => autostartAnswer(),
+  [Command.SetAutostart]: (args) => setAutostartAnswer(Boolean(args?.on)),
   [Command.WindowSession]: () => sessionAnswer(),
   [Command.SetWindowSession]: (args) => {
     setSessionAnswer((args?.document as string | null) ?? null)

@@ -303,6 +303,7 @@ export type IpcError =
   | { kind: 'storeUnavailable'; reason: StoreReason }
   | { kind: 'wikiUnavailable' }
   | { kind: 'sessionTooLarge' }
+  | { kind: 'autostartNotWritable'; reason: AutostartFailure }
 
 /**
  * The compression mode, remapped onto an enum **of our own**.
@@ -1541,4 +1542,56 @@ export type Settings = {
    * never shown to the user.
    */
   backgroundNoticeShown: boolean
+}
+
+/**
+ * Why the switch cannot be offered.
+ *
+ * No variant carries a field, so this is a **bare camelCase string** on the wire and the
+ * TypeScript mirrors it as a union of values — the rule `CLAUDE.md` states with zero
+ * exceptions. The design asked for it tagged by analogy with `SettingsReason` and
+ * `StoreReason`, which are tagged because a variant of each carries data; this one has none,
+ * and a tag would add a key per answer to say what the value already says.
+ */
+export const AutostartReason = {
+  NotSupported: 'notSupported',
+  RegistryUnreadable: 'registryUnreadable',
+} as const
+export type AutostartReason =
+  (typeof AutostartReason)[keyof typeof AutostartReason]
+
+/**
+ * Why turning the switch did not take. Two answers because they are two different things for
+ * the user to do, and the app can tell them apart: the plugin says whether the write itself
+ * was refused, and the registry says whether it survived.
+ *
+ * Fieldless, so a bare camelCase string on the wire, like [`AutostartReason`] — and a type of
+ * its own rather than more variants on that one, because the two sets never meet: the view
+ * answers why the switch cannot be *offered*, this answers why it would not *move*, and a
+ * `switch` over either should not carry branches that cannot happen.
+ */
+export const AutostartFailure = {
+  WriteRefused: 'writeRefused',
+  WriteIgnored: 'writeIgnored',
+} as const
+export type AutostartFailure =
+  (typeof AutostartFailure)[keyof typeof AutostartFailure]
+
+/**
+ * The switch, as the registry answers it right now.
+ *
+ * Read when the Background screen mounts and not once at startup: the app sits in the tray for
+ * days, and the Startup tab can have changed underneath it.
+ */
+export type AutostartView = {
+  /**
+   * What the registry says, never what was asked for.
+   */
+  enabled: boolean
+  /**
+   * `None` when the switch can be offered. The design had a bare `available: bool` here,
+   * which made a development build and a registry that would not answer the same answer
+   * with two different causes.
+   */
+  unavailable: AutostartReason | null
 }
