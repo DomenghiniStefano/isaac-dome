@@ -190,3 +190,71 @@ fn a_co_op_run_initializes_more_than_one_player() {
         "a Tainted character has its own subtype: {subtypes:?}"
     );
 }
+
+/// The events of a launch that produced no run, from `samples/launches/`.
+fn launch_events(name: &str) -> Option<Vec<Event>> {
+    let path = test_support::launch_sample(name)?;
+    let bytes = std::fs::read(path).ok()?;
+    let rules = Rules::embedded();
+    let mut tail = Tail::default();
+    Some(
+        tail.advance(&bytes)
+            .iter()
+            .filter_map(|line| rules.event(line))
+            .collect(),
+    )
+}
+
+/// A launch nobody played, pinned line by line. Counted on the file **before** it was asserted:
+/// `grep -cE` with each of the ten patterns in `crates/run/rules/events.json` finds exactly one
+/// matching line — `[INFO] - playing cutscene 1 (Intro).`, line 69 — and zero for the other nine.
+///
+/// A fixture of the **Repentance v1.7.9b** era, which is the only log in this repo from before
+/// the `+`: that the rules match the same way on an older version is measured here and nowhere
+/// else (B60).
+#[test]
+fn the_launch_of_20240305_holds_one_event_and_it_is_the_intro() {
+    let Some(events) = launch_events("20240305-rep179b-launch-no-run.log.txt") else {
+        return;
+    };
+    assert_eq!(events.len(), 1, "{events:?}");
+    assert!(
+        matches!(events[0], Event::Ended { cutscene: 1, .. }),
+        "{:?}",
+        events[0]
+    );
+}
+
+/// Every launch in `samples/launches/` speaks and folds into nothing, and the guard has two
+/// halves because either one alone proves nothing.
+///
+/// **It speaks**: the events are not empty. `playing cutscene 1 (Intro).` is an `Ended` like any
+/// other, which `the_intro_cutscene_belongs_to_no_run` pins from the other side, on a log that
+/// does hold a run. An instrument that reports nothing proves nothing until it has been shown
+/// able to report something.
+///
+/// **And it says zero**: an ending with no run open belongs to no run. That is the whole shape,
+/// and nothing in `samples/logs/` has it — which is why the folder exists.
+#[test]
+fn a_launch_nobody_played_speaks_and_folds_into_no_run() {
+    let rules = Rules::embedded();
+    for path in test_support::launch_samples() {
+        let bytes = std::fs::read(&path).expect("a sample that is present must read");
+        let mut tail = Tail::default();
+        let events: Vec<Event> = tail
+            .advance(&bytes)
+            .iter()
+            .filter_map(|line| rules.event(line))
+            .collect();
+        assert!(
+            !events.is_empty(),
+            "{} matched no line at all: a silent instrument, not a launch with no run",
+            path.display()
+        );
+        assert!(
+            Run::fold(events.into_iter(), &AllPassive).is_empty(),
+            "{} is filed as a launch nobody played, and it folded into a run",
+            path.display()
+        );
+    }
+}
