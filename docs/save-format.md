@@ -151,6 +151,13 @@ that boss, the kill counter rising by exactly as many as the new marks, and inde
 a bitmask of the characters that won the run, which names the row. Two properties in
 `crates/ipc/tests/marks_real.rs` keep the tables answerable to the series.
 
+**Index 188 is cleared when a run is lost**, measured 2026-09-16 on a deliberate death:
+`268435968` → `0`, which is `0x10000100` going to nothing. So it is the *current* run's
+winners and not a cumulative record, and reading it after a loss finds an empty mask rather
+than the last win's. In the same window **`STREAK_COUNTER [22]` reset from 4 to 0** — the
+second point on that counter, whose first was +1 for a win on 2026-09-15, and the one that
+says it is a streak and not a total.
+
 Still open: documented names reach 284; **40 cells** (Mother and The Beast for The Forgotten
 and the 19) sit inside 423–490 by spacing but are zero in every save collected, so they stay
 `Unknown` rather than pointing at a guess — one run of Mother with a Tainted character
@@ -179,10 +186,35 @@ Read it as one list instead and you get three descents, 445 repeated keys and a 
 word — all three are artefacts of ignoring the boundaries, and all three have a plausible
 wrong explanation ready.
 
-**The four tallies have no names**, and must not be given one from a guess: they hold the
-same entities with different numbers against each, so they are four counts of one space and
-telling them apart needs a matched window against a live run. Same for the **one word left
-over** after the last tally, present in every save and growing (11,343 → 29,725 across the
-samples). `Save::bestiary_tallies()` hands both back; `docs/STATUS.md` lists what closing
-them needs.
+**Tally 4 counts the deaths an entity caused you** — measured 2026-09-16, and it is the first
+of the four to earn a name. The owner died once, on purpose, in the Basement. Across the whole
+save **three keys moved and all three are the same entity**, `15.0.0` = Clotty:
+
+```
+tally 1  Clotty  1090 -> 1092  (+2)
+tally 3  Clotty     2 -> 7     (+5)
+tally 4  Clotty     2 -> 3     (+1)   <- exactly one, on the killer, and on no other key
+```
+
+The hypothesis had stood since 2026-09-09 against three windows in which tally 4 did not move —
+and all three had **zero deaths in them**, so the instrument had never been handed the thing it
+reacts to. The first window that did produced exactly the predicted number. `DEATHS [10]` rose
+269 → 270 in the same window, which is what says the death reached the file at all.
+
+**Tallies 1 and 2 part company here for the first time**: 1 gained 2 and **2 gained nothing**,
+in a window where enemies were killed. The reading recorded until then was that *"1 and 2 move
+constantly and in both modes"* — true of every window collected, because every one of them had
+both moving. One short run ending in a death is the case that separates them; what 2 is waits
+on another.
+
+Read together on one entity the window says 5, 2 and 1 for tallies 3, 1 and 4 — the shape B9
+always asked for, *kill a known enemy a known number of times and read which moves by how much*,
+which needed a **named** killer to be worth anything.
+
+**The other three tallies still have no names**, and must not be given one from a guess: they
+hold the same entities with different numbers against each. Same for the **one word left over**
+after the last tally, present in every save and growing (11,343 → 29,725 across the samples) —
+and since 2026-09-16 known to move **+8 on a launch with no run at all**, which is most of the
++11 once attributed to a whole Greed run. `Save::bestiary_tallies()` hands both back;
+`docs/STATUS.md` lists what closing them needs.
 
