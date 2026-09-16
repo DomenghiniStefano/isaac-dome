@@ -99,6 +99,32 @@ depends on the section.
 > (the bestiary payload's constant `words[20]` is **11**, and section 10's header describes
 > nothing in the layout we decoded). Nothing here is measured; it lives in B9.
 
+#### The untouched profile is the clean view of that gap (measured 2026-09-16)
+
+A save slot the game created and **nobody ever played** — `samples/empty/`, byte-identical across
+fourteen 2024 backups, B61 — turns out to be an instrument rather than a fixture, for one reason:
+**everything that is not structure is zero**, so there is nothing to read past.
+
+Nine of the ten sections hold no set byte at all. The bestiary does, and it is the only section
+whose payload length moves — **128 bytes here against 7032** in the played profile of the same day,
+while its header declares `count = 80` on **both**. So the bestiary's `count` is not the number of
+entities recorded; the payload is self-describing and the header counts something else, which is
+the second of the two coincidences above stated as a measurement.
+
+Of those 128 bytes, the first 80 are zero and the **first non-zero word is `words[20]`, and it is
+`11`** — the constant the paragraph above names, here with no entity data anywhere near it. Eleven
+more words follow it, 48 bytes in all:
+
+```
+words[20..32] = 11, 0, 4, 4, 0, 2, 0, 3, 0, 1, 0, 5
+```
+
+**Nothing here is named**, and the rule about guessing applies with full force: this is what the
+bytes are, not what they mean. What changed is that the question now has a clean instrument, which
+is what B9 was missing. `crates/core-save/tests/empty_profile.rs` pins the zeros and the position
+of the constant, so a future decoding starts from a measurement and a change in that region is
+loud.
+
 ### Counters and marks
 
 Section 2 maps one-to-one to REPENTOGON's `EventCounter` enum. Labels in

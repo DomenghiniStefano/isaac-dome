@@ -2025,3 +2025,56 @@ so, about itself.
 launch that was read and holds no run is *cached* as an empty list. It is not — `cached_runs`
 answers `None`, which is the same value as "never folded". That is a defect in the archive's
 representation, its fix is a schema migration, and it left as its own entry.
+
+---
+
+## B61 — An empty profile is a shape `samples/` has never held (implementation, `test-support`, `core-save` and `ipc`, small) ✅ closed on 2026-09-16, and it is an instrument, not a fixture
+
+Found on 2026-09-16 while measuring the header's `0x10`. `…persistentgamedata2.dat` is
+**byte-identical across all fourteen** 2024 backups — a save slot the game created and nobody ever
+played, which is what says *never played* rather than *played little*. It is the state the app
+opens in at a stranger's house on the evening they install the game, and every other sample in
+`samples/` is a profile with progress on it, because every one of them came from somebody playing.
+
+**It lives in `samples/empty/`, not under a name in `samples/`.** The entry asked for "a name that
+says what it is", and the first attempt was `20240118-empty.rep_persistentgamedata2.dat` — which is
+character for character the shape that once won a dedup against the series entry of the same day,
+because `-` sorts before `.`. A folder of its own, like `windows/` and now `launches/`, and inside
+it the file keeps the name the game gave it.
+
+**The first expectation was wrong, and the test is what said so.** "No byte is set anywhere" was
+derived from `od` — of 3956 bytes, 16 are the signature, 4 the trailing checksum, and the rest
+looked like section headers. It went red: **the bestiary carries 7 non-zero bytes**. The whole-file
+count could not see that the bestiary's payload is not all header.
+
+**Which turned the sample into the thing B9 has been missing.** Everything that is not structure is
+zero, so there is nothing to read past:
+
+| | untouched | played, same day |
+|---|---|---|
+| nine sections | no byte set | 194, 99, 12, 446, 7, 72, 2, 21, 1 bytes set |
+| bestiary payload | **128 bytes** | **7032 bytes** |
+| bestiary header `count` | **80** | **80** |
+
+So the bestiary's `count` is not the number of entities recorded — which is one of the two
+coincidences `docs/save-format.md` listed under the eleven-chunks gap, now stated as a measurement.
+And the other one is visible with nothing around it: the first non-zero word of the section is
+`words[20]`, and it is `11`, followed by eleven more — `11, 0, 4, 4, 0, 2, 0, 3, 0, 1, 0, 5`.
+**Nothing is named**; the tests pin where the zeros stop, so a future decoding starts from a
+measurement.
+
+**Seven tests, two surfaces.** `crates/core-save/tests/empty_profile.rs`: every section a player
+fills is empty; it declares the **same counts** as the played profile of its era, which is the half
+"nothing is set" cannot see and the one a truncated file would pass; the bestiary is the only
+section whose length moves; the bestiary is structure and nothing else; and **not one cell of the
+34 × 12 matrix is set** — with the played profile walked first by the same code, because "no cell is
+set" holds trivially of a walk that reads nothing. `crates/ipc/tests/empty_profile.rs`: the summary
+**describes and does not diagnose** — ten sections, no diagnostic, every count above zero — and the
+same thing checked as JSON, because an empty profile is exactly where a field could serialize to
+nothing unnoticed.
+
+**What is left, and it needs the game.** The surfaces that draw the Completion matrix and the KPI
+strip resolve through the catalog, so they skip on a machine without an install: what an untouched
+profile *looks like* on those screens is unasserted here and is a `the game` job. The sample is
+`rep_`, an era behind; whether a Repentance+ install writes the same empty shape is one file from
+anyone with the game and an unused slot.
