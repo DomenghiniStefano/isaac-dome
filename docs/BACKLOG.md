@@ -29,6 +29,12 @@ the session log is full of entries that say *"not seen in a real Tauri window"*.
 `the game` work can be written against fixtures; what it cannot do there is be verified, and a
 half of a task that cannot be verified is not a half that should be shipped.
 
+**Every `, then a window` line is gathered in one place since 2026-09-16**: *"What only a window
+can say"* in `docs/STATUS.md`, beside the section that does the same for `a measurement`. It had
+accumulated across five reports and nobody could see how much of it there was. The reports keep
+their own copies as the record of their day; the gathered list is the live one, and **ticking a
+line there is what closes it**.
+
 **Snapshot of 2026-09-14 (evening)**, 25 open entries — it was 26 that morning. **B34 closed
 because tagging it meant reading it** and it turned out not to be finished; B38 closed; B44 opened
 and closed the same hour, as not a defect; then B40 and B43 closed and B42 half closed on

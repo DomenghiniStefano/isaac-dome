@@ -10,6 +10,7 @@ re-read: milestones, what is blocked, what needs a measurement, what is worth in
 | what was **already done** | `docs/completed/` — the journal, the modules, the cleanup, the merges |
 | the **design** | `docs/PROJECT.md`, and `docs/superpowers/specs/` per sub-project |
 | what an execution **measured** | `docs/superpowers/reports/` |
+| what **nobody has looked at yet** | *"What only a window can say"*, below — the built app in front of a pair of eyes |
 
 **Nothing in `docs/completed/` is re-checked as the project moves**: it is searched, never read.
 What a session learns that will matter again is promoted out of it — a fact about the game to
@@ -557,6 +558,111 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       game, and it is one command: without it every test on a real archive skips, and with them
       every `catalog`, `ipc` and `graph` test that needs a built catalog. The old second half —
       that it is what `pnpm design:export` needs — went with the export on 2026-09-15.
+
+---
+
+## What only a window can say
+
+**The second bucket of the same kind**, collected here on 2026-09-16 because it had accumulated
+in five reports and nobody could see how much of it there was. **It is 33 lines**, which is the
+number that made collecting it worth a section: five reports each said "half a report" and
+sounded like a footnote, and the sum is a session's work. It is the sibling of the section
+above and it earns the same warning, which that one paid for: *an instrument list that nobody
+re-reads at the instrument is a list of things that may already be done* — three of its seven
+were, and nobody knew until somebody stood at the machine and read it.
+
+**This is the live list; the reports are the record.** Each line below was written by the
+sub-project that produced it and is unticked *there* too, but a report is true on its day and is
+never re-checked — so ticking a line **here** is what closes it, and the report stays as it was
+written. This is `docs/BACKLOG.md`'s `, then a window` tag, gathered.
+
+**Nothing here is blocked on thinking or on code.** Every line needs the built app in front of a
+pair of eyes, and most of them need it for one minute. `pnpm dev` from the root; `predev` clears
+a tray app and whoever holds port 1420 on its own.
+
+### First, and it happens once
+
+- [ ] **The session on disk was written by version 1 of the document**, and the first launch after
+      3.7b reads it. The tabs that were open must still be there. It is the only line in this
+      section whose failure costs a real person something, and it cannot be run twice.
+      → `docs/superpowers/reports/2026-09-16-tabs-windows-report.md`
+
+### The Tabs settings screen (3.6a)
+
+- [ ] the Settings sidebar's fourth entry opens a screen and not a placeholder
+- [ ] the switch turns the session off and on, and the failure alert appears when the write fails
+- [ ] Background reads as one subject now that it holds one switch
+- [ ] the "what is saved" lines read as sentences and not as a list of fields
+      → `docs/superpowers/reports/2026-09-16-settings-tabs-report.md`
+
+### The sidebar's width (3.7c) — one line here is a *decision*, not a check
+
+- [ ] the sidebar sized, the app closed and reopened: it comes back at that width, on the first
+      paint and not by snapping to it a beat later
+- [ ] **two windows open: dragging one window's edge moves the other's.** This is decision 1 of
+      3.7c and the thing to judge rather than verify — the document holds one number, so two
+      windows holding two would mean it silently keeps whichever was written last. If it reads as
+      wrong, the fix is a width per window in the document, not a second hidden value.
+- [ ] a torn-off window opens with its creator's sidebar and not with the default
+- [ ] a width stored by a build with other bounds opens inside today's
+      → `docs/superpowers/reports/2026-09-16-tabs-sizes-report.md`
+
+### Windows of tabs (3.7b) — the sub-project whose failure is invisible by definition
+
+- [ ] two windows open, the app closed and reopened: two windows come back, in their places,
+      holding what they held
+- [ ] **`main` closed while a second window lives**: the session keeps being written, and
+      reopening the app afterwards comes back to what the survivor was holding. This is the whole
+      reason 3.7b exists — before it, the session stopped being written from that moment, in
+      silence, with the app alive in the tray to prove it.
+- [ ] a minimized window is still in the document after a restart — what `labels()` was added for
+- [ ] a window remembered on a screen that is no longer plugged in opens where it can be reached
+- [ ] **a window restored on a scaled monitor is the size it was, not twice it** — the one bug the
+      physical/logical asymmetry produces, and the one no test here can see
+- [ ] a tab torn off into a new window, then the app closed: the new window comes back
+      → `docs/superpowers/reports/2026-09-16-tabs-windows-report.md`
+
+### A tab's own state (3.7a)
+
+- [ ] a filtered, sorted, scrolled tab dragged into another window arrives filtered, sorted and
+      scrolled where it was
+- [ ] back and forward inside a tab restore the facets each entry was read with
+- [ ] the app closed with several tabs open reopens them showing what they were showing, and
+      going back in a restored tab lands on the screen's empty state — §6 of the spec says this is
+      what bounding the document costs
+- [ ] twenty tabs shrink, then the strip scrolls, the active one is always visible, and a tab can
+      still be torn off a scrolled strip
+- [ ] on `?catalog=none` and `?fixture=none` a restored tab still opens and says what it has
+      → `docs/superpowers/reports/2026-09-16-tabs-own-their-state-report.md`
+
+### The tear-off gesture (B15, built 2026-09-13 and never run)
+
+**The oldest unseen work in the repo**, and the one open question is whether WebView2 keeps
+delivering pointer events with the cursor outside the window. `lib/window/pointerSource.ts` is
+written as if the answer were yes, behind an interface that is the only thing the other answer
+changes. Eleven checks, from Task 17 of
+`docs/superpowers/plans/archive/2026-09-13-drag-and-windows.md`:
+
+- [ ] tear a tab off onto the empty desktop: a window opens under the cursor, sized like the origin
+- [ ] drag it back over the first window's strip: the marker appears between the tabs, the release
+      merges it there
+- [ ] dock into a **second** secondary window, not only into `main`
+- [ ] the last tab of a window dropped on the **desktop**: a no-op, nothing opens, nothing closes
+- [ ] the last tab of a **secondary** window dropped on another window's **strip**: it joins, and
+      the window it left closes — the two are not the same rule
+- [ ] a secondary window whose last tab is docked elsewhere closes; `main` keeps a fresh tab
+- [ ] two windows on the Plan: a move in one is visible in the other
+- [ ] change the profile in one window: the other's indicator and screens follow
+- [ ] change the scale in one window: the other follows
+- [ ] two monitors at different scale factors: the drop lands where the cursor is, not offset
+- [ ] the target window closed **while** a tab is in flight: the tab stays where it was, no crash
+- [ ] cold `pnpm dev`: how long the first tear-off's preview takes, and the second
+
+### One that is not a window, and is here because it is the same kind of answer
+
+- [ ] **the game rewrites `savedatapath.txt` on every launch** (B57). The parser and the fallback
+      are covered by tests; that the file is refreshed is the one sentence in the entry that no
+      test here can hold. Start the game, then read the file's modified time.
 
 ---
 
