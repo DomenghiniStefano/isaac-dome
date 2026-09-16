@@ -372,6 +372,19 @@ to this file.
       counts read with `od` on the headers. No save of the **642 / 523** era, which is why
       `each_era_declares_its_own_counts` carries that row as declared missing coverage —
       on a machine that has one, the row runs and nothing needs changing.
+
+      *Read again on 2026-09-16, and it is that same machine* — worth recording because the
+      paragraph above was written as an observation and is now a **second point on the same
+      machine**, eight days apart. Still no game, so `samples/packed` is still absent. What
+      changed is the other half: the eleven uncopied backups went into `samples/`, and a full
+      `scripts/check` came out **all green, 143 skips, 283 real files touched**. The 143 is not
+      comparable to that day's "~60 of ~81" — the suite has grown by three crates since — and
+      no before/after was measured at this level, only at `core-save`'s (below). What the list
+      says instead is where the skips live, counted from the summary: **94 of the 143 name
+      `samples/packed`** — one missing junction — and **21 name `samples/logs/`**, a folder
+      this machine does not have at all. Two absences, 115 of the 143. The remaining 28 are
+      saves and windows of the 2026 eras (12 and 7), five `config.a`, the two "a series of one"
+      and the vacuity guard that goes with them, and one "Isaac (250900) not installed".
 - [ ] **`samples/` never contained the M0 collection.** The 28 saves over 14 months used to
       decode the format live outside the repo, and the folder is git-ignored: whoever
       clones has none, and the suite has to stay green anyway. Two sources worth knowing
@@ -381,6 +394,24 @@ to this file.
       machine, of which only 3 had been copied over), and Steam's
       `userdata\<id>\250900\remote\` holds the live profiles. A denser series costs nothing
       but copying, and every copied snapshot is one more comparison the properties can make.
+
+      **Done on the 2026-09-16 machine, and it is the same machine**: the 11 uncopied backups
+      are now in `samples/`, so the `rep_` series is **15 files across Jan 2024 – Jun 2024**
+      instead of 3. The entry stays open because this is per-machine and the other half is
+      still short: the `rep+` series is **one** file, so `comparable_series` skips it and every
+      property about *change* on the Repentance+ profile still runs on nothing.
+
+      What the copy bought, measured rather than assumed — `core-save` alone, counted from
+      `ISAACDOME_TEST_DECLARATIONS` before and after, suite green either way:
+
+      | | `sample:` | `skip:` |
+      |---|---|---|
+      | before | 72 | 3 |
+      | after | 276 | 3 |
+
+      The skips did not move, which is the honest half of the result: no test switched on that
+      was off. What changed is how much each property that was **already running** had to hold
+      over — the same green, on five times the series.
 
 ## What only a machine with the game can answer
 
