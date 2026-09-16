@@ -1,6 +1,6 @@
 import type { Point } from '@/lib/drag/dragList'
 import type { WindowMessage } from './messages'
-import type { WindowBox, WindowPort } from './windowPort'
+import type { MonitorArea, WindowBox, WindowPort } from './windowPort'
 
 // `?windows=fake` invents a second window to the right of the first, so a tear-off and a dock
 // can be watched on the development server. Every message is logged rather than sent: there is
@@ -27,6 +27,16 @@ const otherBox: WindowBox = {
   scaleFactor: 1,
 }
 
+// One screen, wide enough to hold both fake windows, so a stored box invented here is never
+// clamped away by the very fixture that made it.
+const fakeMonitor: MonitorArea = {
+  left: 0,
+  top: 0,
+  width: 2560,
+  height: 1040,
+  scaleFactor: 1,
+}
+
 export const fakeWindows = (): WindowPort => {
   // **`window` itself can be missing**, not only Tauri: Vitest runs these modules in node, where
   // there is no document to read a query parameter from. The rule this file lives under is that
@@ -43,6 +53,9 @@ export const fakeWindows = (): WindowPort => {
     label: () => mainBox.label,
     isMain: () => true,
     list: () => Promise.resolve(on ? [mainBox, otherBox] : [mainBox]),
+    labels: () =>
+      Promise.resolve(on ? [mainBox.label, otherBox.label] : [mainBox.label]),
+    monitors: () => Promise.resolve([fakeMonitor]),
     create: (label: string, at: Point, size: Point) => {
       say('create', { label, at, size })
       return Promise.resolve()
