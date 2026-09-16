@@ -290,7 +290,14 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
             game generated 19 rooms and you have painted 15. **Needs a measurement**: which
             generation attempt in a log describes the floor actually played is a judgment, and
             it belongs in `run`'s fold measured against the five real logs.
-- [ ] **M5 — Public release**
+- [ ] **M5 — Public release**. **The app can be packaged since 2026-09-16, and could not before**:
+      `pnpm build` compiled and then stopped on `Couldn't find a .ico icon`, with
+      `crates/app/icons/` holding exactly the set Tauri looks for. Declaring `bundle.icon`
+      explicitly fixes it, and the first MSI and NSIS installers this project has ever produced
+      came out of that run. **Nothing runs `pnpm build` to the end** — `scripts/check` does not, by
+      design, since it downloads WiX and NSIS and takes minutes — so the next thing that breaks
+      packaging will be just as quiet. B11 closed with it: the font's licence and readme and
+      `dataset/ATTRIBUTION.md` are inside both installers, checked by extracting them.
 
 ---
 

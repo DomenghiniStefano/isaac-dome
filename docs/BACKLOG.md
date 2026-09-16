@@ -91,7 +91,7 @@ everywhere except the bestiary, which makes it the clean instrument the eleven-c
 `docs/save-format.md` has been missing. Both closings began with a test going red against an
 expectation written an hour earlier.
 
-- **`nothing` (17)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B62 (B57, B59 and B63 closed 2026-09-16)
+- **`nothing` (16)** — B6, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B62 (B11, B57, B59 and B63 closed 2026-09-16)
 - **`a real save` (4)** — B21, B22, B23, B58
 - **`the game` (4)** — B3, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -362,7 +362,25 @@ to stop calling it `Unknown8`.
 
 ---
 
-## B11 — Third-party licences travel with the bundle (implementation, packaging)
+## B11 — Third-party licences travel with the bundle (implementation, packaging) ✅ closed on 2026-09-16
+
+**Closed on 2026-09-16**, and it found an M5 blocker on the way: **`pnpm build` could not produce a
+bundle at all.** It compiled and then stopped on `Couldn't find a .ico icon`, although
+`crates/app/icons/` holds exactly the default set Tauri looks for. Declaring `bundle.icon`
+explicitly fixes it. Nothing ever runs `pnpm build` to the end — `scripts/check` does not, by
+design, since it downloads WiX and NSIS and takes minutes — which is why it had been sitting there.
+
+**The second finding could only come from extracting an installer.** A resource's target *name* is
+honoured when files are staged beside the exe and **dropped** when they are packaged: mapping
+`ATTRIBUTION.md` to `wiki-ATTRIBUTION.md` staged it renamed and shipped it as `ATTRIBUTION.md`,
+beside a `license.txt` and a `readme.txt` that no longer said whose they were. So the subject goes
+in the **directory** and the basename is left alone — the only shape where the staged layout and
+the installed one agree.
+
+Verified end to end: `msiexec /a` on the MSI and `7z l` on the NSIS setup both list
+`licenses/determination/license.txt`, `licenses/determination/readme.txt` and
+`licenses/wiki/ATTRIBUTION.md`. Commit `fix(app): the installer can be built, and the licences
+travel inside it`.
 
 **Needs:** nothing — `bundle.resources` and two licence files; a bundle build says whether they travel.
 
