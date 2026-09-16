@@ -445,6 +445,9 @@ export const it = {
       'IsaacDome è un progetto realizzato dai fan e non è affiliato, approvato o sponsorizzato da Nicalis né da Edmund McMillen.',
     version: 'Versione',
     versionUnknown: 'server di sviluppo',
+    sessionStoppedTitle: 'La sessione non viene più salvata',
+    sessionStopped:
+      'Le tab aperte restano dove sono, ma non verranno riaperte al prossimo avvio: quello che le finestre stanno mostrando supera lo spazio riservato alla sessione. Chiudere qualche tab e riaprirne una qualsiasi riprende il salvataggio.',
     promisesTitle: 'Le tre promesse',
     promises: {
       readOnlyTitle: 'Salvataggi in sola lettura',

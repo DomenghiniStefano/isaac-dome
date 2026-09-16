@@ -25,6 +25,22 @@ export const windowSize = async (): Promise<{ x: number; y: number }> => {
   return { x: size.width / factor, y: size.height / factor }
 }
 
+// Calls back whenever this window is moved or resized: what the session stores about a window,
+// besides its tabs, is where it is. Resolves to the unsubscribe. Outside Tauri it never calls
+// back and unsubscribing does nothing, like everything else here — the rule this folder lives
+// under is that it degrades instead of throwing.
+export const watchWindowBox = async (
+  onChange: () => void,
+): Promise<() => void> => {
+  if (!isTauri()) return () => undefined
+  const w = getCurrentWindow()
+  const stops = await Promise.all([
+    w.onMoved(() => onChange()),
+    w.onResized(() => onChange()),
+  ])
+  return () => stops.forEach((stop) => stop())
+}
+
 // Calls `onChange` whenever the window gains or loses focus; resolves to the unsubscribe.
 export const watchWindowFocus = async (
   onChange: (focused: boolean) => void,

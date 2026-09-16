@@ -441,6 +441,9 @@ export const en: MessageSchema = {
       'IsaacDome is a fan-made project and is not affiliated with, endorsed or sponsored by Nicalis or Edmund McMillen.',
     version: 'Version',
     versionUnknown: 'development server',
+    sessionStoppedTitle: 'The session is no longer being saved',
+    sessionStopped:
+      'The open tabs stay where they are, but they will not come back at the next start: what the windows are showing is past the room the session has. Closing a few tabs and opening any one again resumes the saving.',
     promisesTitle: 'The three promises',
     promises: {
       readOnlyTitle: 'Saves are read only',
