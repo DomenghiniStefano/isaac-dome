@@ -1503,11 +1503,47 @@ binary KeyValues, which is a parser this repo does not have and would have to ju
 and description, which `catalog` currently reads out of the game's XML. Whether the two agree is a
 cross-check that costs one pass and would catch a drift nobody is watching.
 
+### The cheap half is run, 2026-09-16, and it was worth more than the timeline
+
+`cargo run -p catalog --example probe_steam_schema` — the KeyValues reader lives **in the probe**,
+because this entry says the format is a parser the repo would have to justify and an instrument
+justifies nothing.
+
+**Three sources, three counts, each inside the next.** Steam's schema holds **641**, the installed
+game's XML holds **637**, and the save declares **642**. `only in Steam: [638, 639, 640, 641]`,
+`only in the XML: []` — the XML is a strict prefix, so nothing is missing from Steam and four ids
+have no name or sprite in the catalog.
+
+**Seven descriptions disagree, and none of them is punctuation:**
+
+| id | the game's XML | Steam |
+|---|---|---|
+| 404 | Beat the game as Lazarus without losing a life | Beat **Hard mode** as Lazarus without losing a life |
+| 470 | Complete the Corpse with **the Forgotten** | Complete the Corpse with **Bethany** |
+| 471 | Complete the final chapter with **the Forgotten** | Complete the final chapter with **Bethany** |
+| 523 | `They will charge you u` | They will charge you up… for a small fee. |
+| 538 | `INVALID_DESCRIPTION` | ??? |
+| 406, 410 | the requirement | flavour text |
+
+**404 is a different requirement** and **470/471 name a different character** — on a project that
+has already paid twice for character identity. **523 is truncated mid-word and 538 is a
+placeholder**, both shipped in the game's own data.
+
+**62 of 637 names are not in the XML's text.** Most are an apostrophe (`Lil Chubby` / `Lil' Chubby`,
+`Mamas Boy` / `Mama's Boy`) or a plural (`A Forgotten Horsemen` / `A Forgotten Horseman`), and a
+few are a different word entirely: `The Crucifix` / `Celtic Cross`, `Blood Lust` / `Bloody Lust`,
+`Demon Isaac` / `Azazel`, and **`The Soul` / `The Lost`**.
+
+**The probe's own first answer was wrong and is worth recording**: it reported 232 descriptions
+differing, which were almost all the XML carrying the attribute *empty*. An absence counted as a
+disagreement, and the real number is 7 out of 233 the XML fills at all.
+
 ### Closes when
 
 The timeline is either a source with a stated scope (Steam-wide, achievement-only) or refused in
-writing, and the schema cross-check against `catalog` has been run once either way — a disagreement
-there is worth more than the timeline.
+writing. **The cross-check is done**; what is left of it is what to do about the seven, which is a
+question about which source the app should believe and belongs with B58's era work rather than
+here.
 
 ---
 
