@@ -339,6 +339,17 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   never fails the build; it is a cleaner, not a gate. What it cannot do is tell your leftovers
   from another session's, so on a machine running several, `pnpm dev` now evicts a dev server
   somebody else is using, in silence. `pnpm dev:reset` is the same thing by hand.
+
+  **Since 2026-09-16 `predev` runs a second cleaner**, `scripts/prune-incremental.mjs`, which
+  empties `target/debug/incremental` **once a week** and is silent on every other launch. It is
+  there because nothing else does it: Cargo's automatic garbage collection is stable since 1.88
+  and cleans `~/.cargo` only, collecting `target/` is still an open issue (rust-lang/cargo#13136),
+  and `cargo-sweep` is unmaintained *and* leaves `incremental/` alone by its own issue #50. Left
+  to itself the folder reached **16.9 GB across 76,692 files**. Incremental is kept rather than
+  disabled because it is worth having — 9s against 15s on `cargo clippy --all-targets` after
+  touching one crate, measured both ways round — so the week after a prune costs a few seconds on
+  the first build and nothing after. `pnpm prune:incremental` forces it and says what it did;
+  `ISAACDOME_INCREMENTAL_MAX_AGE_DAYS` moves the cadence.
 - Don't trust a suite run from a **second worktree** until you have put `samples/` back. Its
   *contents* are git-ignored while `samples/.gitkeep` is tracked, so `git worktree add` gives
   you the folder and nothing in it: not "missing, and you notice" but **"present, and it looks
