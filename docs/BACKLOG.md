@@ -1469,12 +1469,48 @@ today; and a per-launch clock is not a per-run clock — a launch holding three 
 the same. None of that makes it useless, and all of it has to be in the model rather than in the
 reader's head.
 
+### The retention is measured, 2026-09-16, and it is the other way round
+
+Re-measured on the machine with the game, one day after the entry. The commands are here so the
+next reading is a paste and not a new instrument:
+
+```sh
+S="/c/Program Files (x86)/Steam/logs"
+grep -c "AppID 250900 adding PID" "$S/gameprocess_log.txt"
+grep -oE '^\[[0-9]{4}-[0-9]{2}-[0-9]{2}' "$S/gameprocess_log.txt" | sort -u | wc -l
+grep -oE '^\[[0-9]{4}-[0-9]{2}-[0-9]{2}' "$S/cloud_log.txt" | sort -u | wc -l
+grep "gamestate1.dat" "$S/cloud_log.txt"
+```
+
+| | window | volume |
+|---|---|---|
+| `gameprocess_log.txt` | **325 distinct days**, 2025-06-25 → 2026-09-16 | 262 launches of 250900 |
+| `cloud_log.txt` | **4 distinct days**, 2026-09-13 → 2026-09-16 | 32 lines naming a `gamestate1.dat` |
+
+**So the asymmetry this entry drew is backwards.** It concluded *"the launch clock is a short
+window … while the cloud clock held ~12 months"*, from a machine where the game had been
+uninstalled and last played in January 2025. **A log that has stopped being written keeps
+everything**: the twelve months there is a frozen file, not a retained window. On a machine in
+daily use it is the **launch** clock that survives fifteen months and the **cloud** clock that is
+four days deep.
+
+**And the 93 does not reproduce.** Today the same file gives **262** launches with the *same* first
+date, 2025-06-26 — so nothing rolled away and the difference is not retention. Whatever 93 counted,
+it was not `AppID 250900 adding PID` in this file.
+
+**A run starting is *not* as visible as one ending**, which the entry left open. Over the four-day
+window: 6 `Need to delete` → `Delete OK` pairs and only **4** `Need to upload` → `Upload OK` ones,
+and the three deletes of 2026-09-13 evening have no upload after 20:58 to pair with. The delete is
+emitted when the game removes the mid-run save; the upload only appears if a sync happens to run
+while the file exists. **The end of a run is dated reliably, the start is not.**
+
 ### Closes when
 
 Either the launch timeline is a source the archive reads, with the three limits above represented
 rather than smoothed over, or the entry says in writing why a rolling per-launch clock is not worth
-the dependency — with the retention measured, because "93 since June 2025" is one machine on one
-day.
+the dependency. **The retention is now measured and it points the other way**: if either clock is
+read, the durable one is the per-launch log, and the per-run clock is the one that will not be
+there tomorrow.
 
 ---
 
