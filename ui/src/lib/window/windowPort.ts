@@ -1,7 +1,12 @@
 import { isTauri } from '@tauri-apps/api/core'
 import { PhysicalPosition } from '@tauri-apps/api/dpi'
 import { emit, emitTo, listen } from '@tauri-apps/api/event'
-import { getCurrentWindow } from '@tauri-apps/api/window'
+import {
+  availableMonitors,
+  getCurrentWindow,
+  primaryMonitor,
+} from '@tauri-apps/api/window'
+import type { Monitor } from '@tauri-apps/api/window'
 import {
   WebviewWindow,
   getAllWebviewWindows,
@@ -26,10 +31,24 @@ export interface WindowBox {
   scaleFactor: number
 }
 
+// A monitor as the clamp needs it: its **work area** — the screen minus the taskbar and the
+// docks — in desktop physical pixels, and the factor that turns a physical size into the logical
+// one `new WebviewWindow` takes. The monitor's full `size` is deliberately not what travels: a
+// window restored under the taskbar is a window whose title bar cannot be grabbed.
+export interface MonitorArea {
+  left: number
+  top: number
+  width: number
+  height: number
+  scaleFactor: number
+}
+
 export interface WindowPort {
   label: () => string
   isMain: () => boolean
   list: () => Promise<WindowBox[]>
+  labels: () => Promise<string[]>
+  monitors: () => Promise<MonitorArea[]>
   create: (label: string, at: Point, size: Point) => Promise<void>
   send: (label: string, message: WindowMessage) => Promise<void>
   broadcast: (message: WindowMessage) => Promise<void>
@@ -66,6 +85,14 @@ const boxOf = async (w: Measurable): Promise<WindowBox> => {
   }
 }
 
+const areaOf = (m: Monitor): MonitorArea => ({
+  left: m.workArea.position.x,
+  top: m.workArea.position.y,
+  width: m.workArea.size.width,
+  height: m.workArea.size.height,
+  scaleFactor: m.scaleFactor,
+})
+
 const tauriPort: WindowPort = {
   label: () => getCurrentWindow().label,
   isMain: () => getCurrentWindow().label === MainLabel,
@@ -88,6 +115,28 @@ const tauriPort: WindowPort = {
       }),
     )
     return boxes.filter((box) => box !== null)
+  },
+  // **Every window there is, including the ones `list()` hides.** `list()` answers the hit test,
+  // so it drops what is minimized or invisible — right for "where can a tab land", wrong for
+  // "which windows are open". A minimized window is still part of the session, and a roster that
+  // forgot it would write a document that loses it on the next start.
+  labels: async () => (await getAllWebviewWindows()).map((w) => w.label),
+  // Primary first: it is where a box with nowhere left to go lands.
+  monitors: async () => {
+    const [all, primary] = await Promise.all([
+      availableMonitors(),
+      primaryMonitor(),
+    ])
+    const at = primary
+      ? all.findIndex(
+          (m) =>
+            m.position.x === primary.position.x &&
+            m.position.y === primary.position.y,
+        )
+      : -1
+    const ordered =
+      at <= 0 ? all : [all[at]!, ...all.filter((_, n) => n !== at)]
+    return ordered.map(areaOf)
   },
   create: async (label, at, size) => {
     // The app's own page, with no state in its URL: what the window holds arrives through the
