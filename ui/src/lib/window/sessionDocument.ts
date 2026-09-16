@@ -1,13 +1,38 @@
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
-import type { Entry, Session, TabSeed } from '@/stores/tabModel'
+import type { Entry, TabSeed } from '@/stores/tabModel'
 
 // The document's version. It is bumped when an older app could read the new shape and be wrong
 // about it — never for a part it can simply ignore. An entry gaining a `view` is such a part, so
-// 3.7a does not move it, and neither will 3.7c's sidebar width and table sizes. **3.7b does**:
-// the top level stops saying `tabs` and starts saying `windows`, which an older app would read
-// as a session it cannot use.
-const Version = 1
+// 3.7a did not move it, and neither will 3.7c's sidebar width and table sizes. **3.7b did**: the
+// top level stopped saying `tabs` and started saying `windows`, and an older app reading a new
+// document finds no `tabs` and answers the landing page — which is exactly the "could read it
+// and be wrong" a version number exists for.
+const Version = 2
+
+// **Version 1 is still read**, as one window with no box. The alternative is that everybody who
+// updates the app loses the tabs they had open, on a day when the app has no way to tell them
+// why.
+const FirstVersion = 1
+
+// Where a window was, in **desktop physical pixels** — the units `WindowBox` reports and the ones
+// `windowPort.create` takes for a position. The size it takes is logical, so whoever restores
+// divides by the scale factor of the monitor the window lands on: getting that backwards opens a
+// window twice the size it had on a scaled screen.
+export interface StoredBox {
+  left: number
+  top: number
+  width: number
+  height: number
+}
+
+// One window of the session. `box` is optional because a version 1 document has none, and because
+// a window whose geometry could not be read still has tabs worth restoring.
+export interface StoredWindow {
+  tabs: TabSeed[]
+  activeIndex: number
+  box?: StoredBox
+}
 
 const routeNames: readonly string[] = Object.values(RouteName)
 
@@ -65,24 +90,30 @@ const readTab = (value: unknown): TabSeed | null => {
   return { entries: read as Entry[], index }
 }
 
-// What was stored, as far as it can be read. `null` means "nothing usable", which the caller
-// turns into the landing tab. A single unreadable tab is dropped **alone** — eight tabs do not
-// vanish because one screen was renamed — and the active index follows what is left.
-export const readSession = (raw: string | null): Session | null => {
-  if (raw === null) return null
-  let parsed: unknown
-  try {
-    parsed = JSON.parse(raw)
-  } catch {
-    return null
+// A number we can place a window by. `NaN` and `Infinity` are numbers to `typeof` and are not
+// coordinates to anybody else.
+const isFinite = (value: unknown): value is number =>
+  typeof value === 'number' && Number.isFinite(value)
+
+// Half a box is not a position: a window placed at a left with no top is a window somewhere
+// nobody asked for, so the four travel together or not at all.
+const readBox = (value: unknown): StoredBox | undefined => {
+  if (typeof value !== 'object' || value === null) return undefined
+  const { left, top, width, height } = value as Record<string, unknown>
+  if (![left, top, width, height].every(isFinite)) return undefined
+  return {
+    left: left as number,
+    top: top as number,
+    width: width as number,
+    height: height as number,
   }
-  if (typeof parsed !== 'object' || parsed === null) return null
-  const { version, tabs, activeIndex } = parsed as {
-    version?: unknown
-    tabs?: unknown
-    activeIndex?: unknown
-  }
-  if (version !== Version || !Array.isArray(tabs)) return null
+}
+
+// One window's tabs. A single unreadable tab is dropped **alone** — eight tabs do not vanish
+// because one screen was renamed — and the active index follows what is left. `null` is a window
+// with nothing in it, which is a window the user never had.
+const readTabs = (tabs: unknown, activeIndex: unknown): StoredWindow | null => {
+  if (!Array.isArray(tabs)) return null
   const wanted = typeof activeIndex === 'number' ? activeIndex : 0
   const kept: TabSeed[] = []
   let active = 0
@@ -95,7 +126,47 @@ export const readSession = (raw: string | null): Session | null => {
     if (at <= wanted) active = kept.length
     kept.push(tab)
   })
-  return { tabs: kept, activeIndex: kept.length === 0 ? 0 : active }
+  return kept.length === 0 ? null : { tabs: kept, activeIndex: active }
+}
+
+const readWindow = (value: unknown): StoredWindow | null => {
+  if (typeof value !== 'object' || value === null) return null
+  const { tabs, activeIndex, box } = value as Record<string, unknown>
+  const read = readTabs(tabs, activeIndex)
+  if (read === null) return null
+  const where = readBox(box)
+  return where === undefined ? read : { ...read, box: where }
+}
+
+// What was stored, as far as it can be read: the windows, in the order they were written, `main`
+// first. `null` means "nothing usable", which the caller turns into one window on its landing
+// tab. A window whose every tab dropped is dropped **whole** rather than restored empty: an empty
+// window is one the user never had, and opening it would put a landing page on their desktop
+// they did not leave there.
+export const readSession = (raw: string | null): StoredWindow[] | null => {
+  if (raw === null) return null
+  let parsed: unknown
+  try {
+    parsed = JSON.parse(raw)
+  } catch {
+    return null
+  }
+  if (typeof parsed !== 'object' || parsed === null) return null
+  const { version, tabs, activeIndex, windows } = parsed as Record<
+    string,
+    unknown
+  >
+  // Version 1 said `tabs` at the top level and knew nothing about windows. It is one window,
+  // wherever the window manager decides to put it.
+  if (version === FirstVersion) {
+    const one = readTabs(tabs, activeIndex)
+    return one === null ? null : [one]
+  }
+  if (version !== Version || !Array.isArray(windows)) return null
+  const kept = windows
+    .map(readWindow)
+    .filter((window): window is StoredWindow => window !== null)
+  return kept.length === 0 ? null : kept
 }
 
 // Only the entry each tab is showing keeps its view. `MAX_SESSION_BYTES` is 64 KiB and its
@@ -110,9 +181,12 @@ const stored = (tab: TabSeed): TabSeed => ({
   ),
 })
 
-export const writeSession = (session: Session): string =>
+export const writeSession = (windows: readonly StoredWindow[]): string =>
   JSON.stringify({
     version: Version,
-    tabs: session.tabs.map(stored),
-    activeIndex: session.activeIndex,
+    windows: windows.map((window) => ({
+      tabs: window.tabs.map(stored),
+      activeIndex: window.activeIndex,
+      ...(window.box ? { box: window.box } : {}),
+    })),
   })

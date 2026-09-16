@@ -155,9 +155,16 @@ gap** one notch more finely than before: a tab whose *route* is gone still falls
 there is nothing left to open, while a tab whose stored *reading* cannot be read opens on its
 screen with the screen's own empty state.
 
-What keeps this entry open is neither of those: it is **3.7b**, the windows of tabs the drag
-spec's Decision 8 declared and the document does not hold yet, and **3.7c**, B27's remembered
-sizes. And the window nobody has opened on any of it.
+**3.7b closed the second half of it** (2026-09-16, report
+`docs/superpowers/reports/2026-09-16-tabs-windows-report.md`): the document is version 2 and its
+top level is `windows`, so the drag spec's Decision 8 — *a session is windows of tabs* — is what
+the app stores. A version 1 document still opens, as one window, because losing somebody's tabs
+on an update is not a thing this app can explain to them afterwards.
+
+What keeps this entry open is **3.7c**, B27's remembered sizes — and the window nobody has opened
+on any of it. That second half is the larger one now: 3.7b's own failure mode is a session that
+stops being written, which is invisible on screen by definition, so no amount of green says it
+works.
 
 A declared fork, with a recommendation:
 

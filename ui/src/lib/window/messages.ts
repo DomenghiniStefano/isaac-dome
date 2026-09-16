@@ -1,5 +1,6 @@
 import type { Point } from '@/lib/drag/dragList'
 import type { TabSeed } from '@/stores/tabModel'
+import type { StoredBox } from './sessionDocument'
 
 // What windows say to each other. These never pass through Rust: they are frontend types on a
 // frontend channel, not the IPC contract, and the rules that govern view-models do not apply.
@@ -13,6 +14,8 @@ export const WindowMessageKind = {
   Hovering: 'hovering',
   HoverLeft: 'hoverLeft',
   Focused: 'focused',
+  Holding: 'holding',
+  Closing: 'closing',
 } as const
 export type WindowMessageKind =
   (typeof WindowMessageKind)[keyof typeof WindowMessageKind]
@@ -62,6 +65,28 @@ export interface FocusedMessage {
   label: string
 }
 
+// What a window holds and where it is, broadcast whenever either changes. **Every window sends
+// it and every window keeps them all**, so whichever window turns out to be the elected writer
+// already has the whole session in hand: an election that had to ask the others for their tabs
+// first would be a round trip at exactly the moment a window is closing.
+export interface HoldingMessage {
+  kind: typeof WindowMessageKind.Holding
+  label: string
+  tabs: TabSeed[]
+  activeIndex: number
+  box?: StoredBox
+}
+
+// "I am going." Broadcast as a window unmounts, and **it is not what makes the ledger correct**:
+// the writer reconciles against the live roster before every write, so a message lost to the
+// teardown costs nothing. It is what makes the survivors write *now* rather than at the next tab
+// change — closing a window changes nothing in the others, and without this the document would
+// keep describing a window that has gone until something else happened.
+export interface ClosingMessage {
+  kind: typeof WindowMessageKind.Closing
+  label: string
+}
+
 export type WindowMessage =
   | ReadyMessage
   | SeedMessage
@@ -69,3 +94,5 @@ export type WindowMessage =
   | HoveringMessage
   | HoverLeftMessage
   | FocusedMessage
+  | HoldingMessage
+  | ClosingMessage
