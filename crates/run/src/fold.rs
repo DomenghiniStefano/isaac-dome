@@ -26,12 +26,46 @@ pub enum Outcome {
     Open,
 }
 
+/// One generation pass: what it built and how long it took to build it. The loop count is kept
+/// because the line states it — dropping half of a measured line is a decision, and this crate
+/// makes none about what the numbers mean.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
+pub struct Pass {
+    pub rooms: u32,
+    pub loops: u32,
+}
+
+/// What the log said about how a floor was built.
+///
+/// Three states and not an `Option<u32>`, for the reason `graph` has `Partial` and `floor` has
+/// `Unmodelled`: **a floor nobody described must never read as a floor of no rooms.**
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
+pub enum Generated {
+    /// The log described no pass for this floor. Greed mode never does — seven floors and not
+    /// one `generate...` line, measured 2026-09-16 on
+    /// `samples/logs/20260912-greed-online-coop.log.txt`, and it is not the online that
+    /// silences it: the other `[Net]` log describes all eleven of its floors. A floor whose
+    /// `Level::Init` was read in an earlier pass is the other way to land here.
+    NotSaid,
+    /// One pass, which is every floor of the normal path in everything we hold.
+    Once { rooms: u32, loops: u32 },
+    /// Several passes under one `Level::Init`, in the order the log wrote them.
+    ///
+    /// **Which of them is the floor that was walked is not established**, and this crate does
+    /// not pick: the only such floor in the corpus is `m_Stage 4, m_StageType 4` — Mines II,
+    /// the one floor in it that has an area of its own — and its two passes report the *same*
+    /// 19 rooms, so nothing measured here can tell "first" from "last". A reader that needs
+    /// one number has to say which it took.
+    Several { passes: Vec<Pass> },
+}
+
 /// One floor, as the game announced it.
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub struct Floor {
     pub stage: u32,
     pub stage_type: u32,
     pub seed: u32,
+    pub generated: Generated,
 }
 
 /// One run: what was played, with what, and how it ended.
@@ -160,7 +194,36 @@ fn apply(run: &mut Run, event: Event, kinds: &dyn ItemKinds, starting: &mut bool
             stage,
             stage_type,
             seed,
+            generated: Generated::NotSaid,
         }),
+        // The summary belongs to the floor the game last announced. With no floor to attach it
+        // to it is dropped rather than made into one: a read begins wherever the last one
+        // stopped, so a pass whose `Level::Init` was taken by an earlier read is the ordinary
+        // case, and inventing a floor for it would put a stage nobody played in the archive.
+        Event::RoomsGenerated { rooms, loops } => {
+            if let Some(floor) = run.floors.last_mut() {
+                floor.generated = match std::mem::replace(&mut floor.generated, Generated::NotSaid)
+                {
+                    Generated::NotSaid => Generated::Once { rooms, loops },
+                    Generated::Once {
+                        rooms: first,
+                        loops: first_loops,
+                    } => Generated::Several {
+                        passes: vec![
+                            Pass {
+                                rooms: first,
+                                loops: first_loops,
+                            },
+                            Pass { rooms, loops },
+                        ],
+                    },
+                    Generated::Several { mut passes } => {
+                        passes.push(Pass { rooms, loops });
+                        Generated::Several { passes }
+                    }
+                };
+            }
+        }
         // Kept for the rules to be complete; nothing is read from it yet.
         Event::RoomEntered { .. } => {}
         Event::RoomTransition => *starting = false,

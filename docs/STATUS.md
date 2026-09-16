@@ -287,9 +287,26 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
             page files it under neither `Normal` nor `Special`, so `SPECIAL_KINDS` does not
             carry it and a dead end hanging off the start room is not silently decided.
       - [ ] **F2 — the log's half**: `N rooms in M loops` read back, so the screen can say the
-            game generated 19 rooms and you have painted 15. **Needs a measurement**: which
-            generation attempt in a log describes the floor actually played is a judgment, and
-            it belongs in `run`'s fold measured against the five real logs.
+            game generated 19 rooms and you have painted 15. **`run`'s half landed on
+            2026-09-16**, `feature/floor-rooms-read`: an eleventh event, and a floor that carries
+            `Generated` — `NotSaid`, `Once` or `Several` — which is three states and not an
+            `Option<u32>` for the reason `graph` has `Partial`.
+            **The measurement the entry asked for is done, and it made the question narrower
+            than the entry had it.** There is one generation pass per floor in five of the six
+            logs, and the corpus holds **one** multi-pass floor: `m_Stage 4, m_StageType 4` —
+            Mines II, the only floor in it with an area of its own — whose two passes report
+            the *same* 19 rooms. So "first" and "last" cannot be told apart on this data, and
+            nothing picks: both are kept and the reader has to say which it took.
+            **And a mode the entry did not know about**: Greed describes no generation at all —
+            seven floors, zero `generate...` lines — and it is not the online that silences it,
+            since the other `[Net]` log describes all eleven of its floors. A Greed floor has no
+            number, which is not a floor of no rooms.
+            The block and its traps are in `docs/log-format.md`.
+            **What is left is the screen**, and it is blocked on one thing nobody has measured:
+            whether the count includes the Secret and Super Secret rooms, which the game places
+            *after* the summary line. That screen exists to find the secret room, so the
+            subtraction says two different things depending on the answer. The instrument is a
+            floor painted to exhaustion in the game.
 - [ ] **M5 — Public release**. **The app can be packaged since 2026-09-16, and could not before**:
       `pnpm build` compiled and then stopped on `Couldn't find a .ico icon`, with
       `crates/app/icons/` holding exactly the set Tauri looks for. Declaring `bundle.icon`
@@ -598,6 +615,17 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       the ratio between the two runs is not 11 to 198 but roughly **3 to 190**, which is a
       different shape from the one the paragraph above reasons about. Whatever it counts, it is
       not run-shaped and it is not idle either.
+- [ ] **Whether `19 rooms in 12 loops` counts the Secret and Super Secret rooms.** Opened
+      2026-09-16 with F2's first half, and it is the one thing between `run`'s count and a
+      sentence on the Floor screen. The game places the two secret rooms in the `placing
+      rooms...` phase, **after** the summary line, so the number may or may not include them —
+      and that screen exists to find the secret room, which makes "the game generated 19, you
+      painted 15" mean two different things. **Nothing in the log settles it**: the summary is
+      the only total the file states, and `place_room: shape N` counts only the rooms that are
+      not one cell. The instrument is a floor painted to exhaustion — walk every room of one
+      floor, secret rooms included, count them, and read the line for that `Level::Init`. One
+      floor answers it; a second on the alternative path would say whether the rule holds there
+      too.
 - [ ] **The 40 unknown cells in the completion matrix** — Mother and The Beast for The
       Forgotten and the 19. One run of Mother with a Tainted character closes the whole
       20 × 2 block, because the base indices are already pinned and only the evidence that

@@ -62,7 +62,7 @@ list until 2026-09-15: `log-watch` has had a row in the table below since it lan
 | `discovery` | Finds Steam, the game, the saves. Manual fallback at every step. |
 | `unpack` | Extracts the game's `.a` archives into the local cache. |
 | `core-save` | Parser for the `.dat`, read-only. |
-| `run` | Pure crate: `Tail` (bytes into lines, and a shorter file is a relaunch), the rules file that maps a line to one of nine events and judges nothing, and the fold that makes every judgment a log cannot — the starting item, the active that replaced the last one, the outcome nobody wrote down. Item kinds arrive through a trait, so it never depends on `catalog`. |
+| `run` | Pure crate: `Tail` (bytes into lines, and a shorter file is a relaunch), the rules file that maps a line to one of eleven events and judges nothing, and the fold that makes every judgment a log cannot — the starting item, the active that replaced the last one, the outcome nobody wrote down. Item kinds arrive through a trait, so it never depends on `catalog`. |
 | `log-watch` | The half of the archive that touches the disk: positional reads, which folders under `online_logs\` are sessions, `notify` on the **folder** (the game replaces `log.txt`, and a watch on the file goes deaf at the one moment that matters), and the ingest where **backfill and live are one function**. Every judgment is elsewhere: `run::resume` says whether a file is the launch we were reading, `run`'s fold says what a run is, `store` says what is kept. |
 | `catalog` | Normalizes the game's XML files. |
 | `wiki` | Pure crate: wikitext parser, typed tree, embedded compressed dataset. Only reads `dataset/raw/`. |
@@ -89,7 +89,7 @@ into every one of them. **The rule stays here; the detail is one `Read` away.**
   > achievements and a 2026 one 642: a patch added one, and any hardcoded count breaks itself.
   > **A section's name is structural or measured, never taken from a log line** — 3 and 6 carried
   > wrong labels for months on exactly that evidence.
-- **[`docs/log-format.md`](docs/log-format.md)** — `log.txt`, the nine events, and the three kinds
+- **[`docs/log-format.md`](docs/log-format.md)** — `log.txt`, the eleven events, the floor-generation block, and the three kinds
   of seed line.
   > **The `[INFO] - ` prefix is part of the line**, and about 1% of lines carry no prefix at all:
   > **no pattern may be anchored at the start of a line**, or it matches nothing.
