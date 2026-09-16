@@ -159,6 +159,12 @@ export const useWindowSession = (): void => {
   // before it is registered opens with an empty bar.
   const reopen = async (rest: readonly StoredWindow[]): Promise<void> => {
     if (rest.length === 0) return
+    // **Only at a launch, and a launch is one window.** `main` re-runs this whole mount whenever
+    // its webview reloads — which is every save on the development server — and there it would
+    // find the session it wrote a moment ago and open a second copy of every window in it. At a
+    // real launch the roster is `main` alone, which is the difference between the two, and
+    // reading it costs one call.
+    if ((await windowPort.labels()).length > 1) return
     const monitors = await windowPort.monitors()
     const self = await windowPort.self()
     let step = 0
