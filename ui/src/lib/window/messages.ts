@@ -16,6 +16,7 @@ export const WindowMessageKind = {
   Focused: 'focused',
   Holding: 'holding',
   Closing: 'closing',
+  Layout: 'layout',
 } as const
 export type WindowMessageKind =
   (typeof WindowMessageKind)[keyof typeof WindowMessageKind]
@@ -87,6 +88,14 @@ export interface ClosingMessage {
   label: string
 }
 
+// The sidebar's width, as whoever just dragged it now has it. One value for the app, so this is
+// how the others come to hold the same one — and how a window born after the change is told, when
+// its creator answers the Ready that says somebody new exists.
+export interface LayoutMessage {
+  kind: typeof WindowMessageKind.Layout
+  sidebarWidth: number
+}
+
 export type WindowMessage =
   | ReadyMessage
   | SeedMessage
@@ -96,3 +105,4 @@ export type WindowMessage =
   | FocusedMessage
   | HoldingMessage
   | ClosingMessage
+  | LayoutMessage

@@ -19,7 +19,10 @@ import {
   sidebarSectionOf,
 } from '@/components/shell/sectionNav'
 import type { SidebarEntry } from '@/components/shell/sectionNav'
-import { SidebarWidth } from '@/components/shell/sidebarWidth'
+import {
+  SidebarWidth,
+  clampSidebarWidth,
+} from '@/components/shell/sidebarWidth'
 import type { TabView } from '@/components/shell/tabs'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { usePointerShortcut } from '@/composables/usePointerShortcut'
@@ -41,6 +44,10 @@ import {
   windowSize,
 } from '@/lib/window/appWindow'
 import { AppEvent, watchAppEvents } from '@/lib/window/appEvents'
+import {
+  setSidebarWidth,
+  sidebarWidth as storedWidth,
+} from '@/lib/window/layout'
 import { useWindowSession } from '@/lib/window/session'
 import { RouteName, routeOrigin } from '@/router/routeTable'
 import ProgressGate from '@/screens/ProgressGate.vue'
@@ -157,7 +164,18 @@ watch(
   { immediate: true },
 )
 
-const sidebarWidth = ref<number>(SidebarWidth.Default)
+// **Not this window's number.** The sidebar's width is one value for the app, kept in
+// `lib/window/layout.ts` and written into the session beside the windows (3.7c): what is here is
+// only the reading of it. `null` is "nobody ever sized it", which is the default and not a stored
+// width; anything stored goes through the clamp, so a number written by an older build with other
+// bounds comes back inside today's.
+const sidebarWidth = computed<number>({
+  get: () =>
+    storedWidth.value === null
+      ? SidebarWidth.Default
+      : clampSidebarWidth(storedWidth.value),
+  set: (px) => setSidebarWidth(px),
+})
 const header = computed(() => sidebarHeaders[browsing.value])
 const entries = computed(() => sidebarEntries[browsing.value])
 
