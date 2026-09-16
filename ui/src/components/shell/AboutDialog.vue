@@ -1,12 +1,5 @@
 <script setup lang="ts">
-import { TriangleAlertIcon } from '@lucide/vue'
 import { onMounted, ref } from 'vue'
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-  AlertVariant,
-} from '@/components/ui/alert'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import {
   Dialog,
@@ -20,7 +13,6 @@ import {
 import { useMessages } from '@/i18n'
 import { appVersion } from '@/lib/app/version'
 import { AppName } from '@/lib/constants/app'
-import { sessionStopped } from '@/lib/window/sessionHealth'
 
 // What "Informazioni" has to say is short — the name, the version, what the app promises and
 // where its text comes from — so it is a dialog over the tab, not a tab of its own
@@ -60,16 +52,9 @@ const promises = [
       </DialogHeader>
       <DialogDescription>{{ t('about.fanMade') }}</DialogDescription>
       <div class="flex flex-col gap-3 px-4">
-        <!-- The one write error that is not swallowed. It says the tabs are safe and that they
-             will not come back, because the failure it reports is otherwise invisible until the
-             next start. Here and not on a screen: it is the shell's own fact, and one click from
-             every window. It moves next to the switch that turns the session off when 3.6
-             builds Settings. -->
-        <Alert v-if="sessionStopped" :variant="AlertVariant.Destructive">
-          <TriangleAlertIcon />
-          <AlertTitle>{{ t('about.sessionStoppedTitle') }}</AlertTitle>
-          <AlertDescription>{{ t('about.sessionStopped') }}</AlertDescription>
-        </Alert>
+        <!-- The session's diagnostic was here from 3.7b until 3.6a built the Tabs screen, which
+             is where it belongs: next to the switch that turns the session off. A diagnostic in
+             two places is the same mistake as a setting in two places. -->
         <div class="flex flex-col gap-0.75">
           <span class="text-label text-subtle-foreground">{{
             t('about.version')

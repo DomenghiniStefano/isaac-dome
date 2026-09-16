@@ -41,18 +41,8 @@ const { t } = useMessages()
       </div>
       <FieldDescription>{{ t('background.stayHint') }}</FieldDescription>
     </Field>
-    <Field>
-      <div class="flex items-center gap-2">
-        <Switch
-          id="background-resume"
-          :model-value="settings.resumeTabs"
-          @update:model-value="settings.setResumeTabs"
-        />
-        <FieldLabel for="background-resume">{{
-          t('background.resumeTitle')
-        }}</FieldLabel>
-      </div>
-      <FieldDescription>{{ t('background.resumeHint') }}</FieldDescription>
-    </Field>
+    <!-- "Reopen the tabs" was here until 3.6a and is on the Tabs screen now. It was never this
+         screen's subject: the intro had to say "and what you find when you open it again" to
+         cover it, which is a sentence carrying two subjects. -->
   </div>
 </template>
