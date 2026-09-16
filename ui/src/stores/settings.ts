@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
 import { isIpcError } from '@/lib/ipc/errors'
 import {
@@ -7,8 +7,11 @@ import {
   setScale as saveScale,
   setStayInBackground as saveStayInBackground,
   settings,
+  autostart as readAutostart,
+  setAutostart as saveAutostart,
 } from '@/lib/ipc/settings'
-import type { IpcError } from '@/lib/ipc/types'
+import type { AutostartView, IpcError } from '@/lib/ipc/types'
+import { AutostartReason } from '@/lib/ipc/types'
 import { applyScale } from '@/lib/scale/apply'
 import { ScaleAction } from '@/lib/scale/shortcut'
 import {
@@ -30,6 +33,13 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
   // app actually does.
   const stayInBackground = ref(true)
   const resumeTabs = ref(true)
+  // The registry is the truth and nothing here mirrors it: until it answers, the switch is not
+  // offered at all.
+  const autostart = ref(false)
+  const autostartUnavailable = ref<AutostartView['unavailable']>(
+    AutostartReason.NotSupported,
+  )
+  const autostartAvailable = computed(() => autostartUnavailable.value === null)
 
   const apply = (percent: number): number => {
     const wanted = snapPercent(percent)
@@ -80,6 +90,38 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
     }
   }
 
+  // Starting with Windows, and it is the one switch here that **moves after the answer**.
+  //
+  // The three above it change what the app is doing *now*, so the honest thing is to do it and
+  // report a failed write. This one changes what happens at the next login: there is nothing to
+  // already be doing, the truth is in the registry and not in `settings.json`, and a switch left
+  // on because it was clicked would be a promise nothing kept.
+  const refreshAutostart = async (): Promise<void> => {
+    try {
+      const view = await readAutostart()
+      autostart.value = view.enabled
+      autostartUnavailable.value = view.unavailable
+    } catch {
+      // Nothing answered, so nothing is offered. The switch showing "off" here would be a
+      // position the registry never took.
+      autostart.value = false
+      autostartUnavailable.value = AutostartReason.NotSupported
+    }
+  }
+
+  const setAutostart = async (on: boolean): Promise<void> => {
+    saveFailed.value = false
+    saveError.value = null
+    try {
+      const view = await saveAutostart(on)
+      autostart.value = view.enabled
+      autostartUnavailable.value = view.unavailable
+    } catch (e) {
+      saveFailed.value = true
+      saveError.value = isIpcError(e) ? e : null
+    }
+  }
+
   const setResumeTabs = async (resume: boolean): Promise<void> => {
     resumeTabs.value = resume
     saveFailed.value = false
@@ -117,6 +159,11 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
     setScale,
     setStayInBackground,
     setResumeTabs,
+    autostart,
+    autostartUnavailable,
+    autostartAvailable,
+    refreshAutostart,
+    setAutostart,
     step,
   }
 })
