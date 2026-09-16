@@ -45,10 +45,10 @@ fn run_of(seed: &str) -> Run {
 }
 
 #[test]
-fn the_schema_is_at_version_four() {
+fn the_schema_is_at_version_five() {
     let (_d, store) = open();
-    assert_eq!(SCHEMA_VERSION, 4);
-    assert_eq!(store.schema_version().unwrap(), 4);
+    assert_eq!(SCHEMA_VERSION, 5);
+    assert_eq!(store.schema_version().unwrap(), 5);
 }
 
 #[test]
@@ -173,6 +173,89 @@ fn caching_again_replaces_the_fold_instead_of_adding_to_it() {
 }
 
 #[test]
+fn a_source_nobody_has_folded_has_no_cache() {
+    // The first of the three states the one `Option` has to carry, and the only one it was ever
+    // right about: nothing has been folded here, so there is nothing to answer with.
+    let (_d, store) = open();
+    let id = store.insert_log_source(&key(0)).unwrap();
+    assert_eq!(store.cached_runs(id, 1).unwrap(), None);
+}
+
+#[test]
+fn a_source_folded_into_no_run_reads_back_as_an_empty_fold() {
+    // A launch that holds the intro and nothing else folds to zero runs. That is an answer, and
+    // it used to be indistinguishable from never having been read — which is not a missing cache
+    // but a loop: fold again, produce nothing again, cache nothing again, for ever.
+    let (_d, store) = open();
+    let id = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(id, 1, &[]).unwrap();
+    assert_eq!(store.cached_runs(id, 1).unwrap(), Some(vec![]));
+}
+
+#[test]
+fn an_empty_fold_under_one_rules_version_is_not_returned_for_another() {
+    // The third state. `runs` carries the rules version per row and zero rows have nowhere to
+    // put one, so the version of the fold lives on the source: a newer rules file still finds
+    // nothing here and folds again.
+    let (_d, store) = open();
+    let id = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(id, 1, &[]).unwrap();
+    assert_eq!(store.cached_runs(id, 2).unwrap(), None);
+}
+
+#[test]
+fn a_fold_that_used_to_hold_runs_and_now_holds_none_reads_as_empty() {
+    // Replacement in the direction the test above it does not cover: `DELETE` with nothing
+    // written after leaves no row behind, so the fold's own version is the only thing left that
+    // says this source was read at all.
+    let (_d, store) = open();
+    let id = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(id, 1, &[run_of("AAA AAA")]).unwrap();
+    store.cache_runs(id, 1, &[]).unwrap();
+    assert_eq!(store.cached_runs(id, 1).unwrap(), Some(vec![]));
+}
+
+#[test]
+fn a_database_from_before_the_fold_version_keeps_its_archive_and_reads_it_as_unfolded() {
+    // Migration 5 on somebody's file, not on an empty one. The column is nullable and additive:
+    // every row that predates it gets NULL, and NULL reads as "never folded" — which is exactly
+    // right for all of them, since nothing recorded which rules produced what they hold.
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("isaacdome.db");
+    {
+        let conn = rusqlite::Connection::open(&path).unwrap();
+        conn.execute_batch(
+            "CREATE TABLE goals (id TEXT PRIMARY KEY, target_json TEXT NOT NULL,
+                created_unix INTEGER NOT NULL, note TEXT, seq INTEGER NOT NULL);
+             CREATE TABLE plan_queue (id INTEGER PRIMARY KEY CHECK (id = 1), rows_json TEXT NOT NULL);
+             CREATE TABLE window_session (id INTEGER PRIMARY KEY CHECK (id = 1), document TEXT NOT NULL);
+             CREATE TABLE sources (id INTEGER PRIMARY KEY, kind TEXT NOT NULL, key TEXT,
+                prefix_hash TEXT NOT NULL, prefix_len INTEGER NOT NULL, anchor_hash TEXT NOT NULL,
+                read_offset INTEGER NOT NULL, UNIQUE (kind, key));
+             CREATE TABLE events (source_id INTEGER NOT NULL REFERENCES sources(id),
+                seq INTEGER NOT NULL, event_json TEXT NOT NULL, PRIMARY KEY (source_id, seq));
+             CREATE TABLE runs (source_id INTEGER NOT NULL REFERENCES sources(id),
+                ordinal INTEGER NOT NULL, rules_version INTEGER NOT NULL, run_json TEXT NOT NULL,
+                PRIMARY KEY (source_id, ordinal));
+             INSERT INTO sources (id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset)
+                VALUES (1, 'log', NULL, '0000000000000001', 8, '0000000000000002', 0);
+             PRAGMA user_version = 4;",
+        )
+        .unwrap();
+    }
+
+    let store = Store::open(&path).unwrap();
+    assert_eq!(store.schema_version().unwrap(), 5);
+    let sources = store.sources().unwrap();
+    assert_eq!(sources.len(), 1, "the row survived the migration");
+    assert_eq!(
+        store.cached_runs(sources[0].id, 1).unwrap(),
+        None,
+        "NULL reads as never folded, not as folded into nothing"
+    );
+}
+
+#[test]
 fn every_source_comes_back_in_the_order_it_was_inserted() {
     let (_d, store) = open();
     let first = store.insert_log_source(&key(0)).unwrap();
@@ -202,7 +285,7 @@ fn a_database_from_before_the_archive_gains_the_tables_and_keeps_its_plan() {
     }
 
     let store = Store::open(&path).unwrap();
-    assert_eq!(store.schema_version().unwrap(), 4);
+    assert_eq!(store.schema_version().unwrap(), 5);
     assert!(store.queue().unwrap().is_ok());
     assert!(store.latest_log_source().unwrap().is_none());
 }
@@ -219,7 +302,7 @@ fn a_file_from_a_newer_app_is_still_refused_untouched() {
     }
     match Store::open(&path) {
         Err(StoreError::NewerSchema { found, supported }) => {
-            assert_eq!((found, supported), (99, 4));
+            assert_eq!((found, supported), (99, 5));
         }
         other => panic!("expected NewerSchema, got {other:?}"),
     }

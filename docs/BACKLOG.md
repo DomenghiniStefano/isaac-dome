@@ -91,7 +91,10 @@ everywhere except the bestiary, which makes it the clean instrument the eleven-c
 `docs/save-format.md` has been missing. Both closings began with a test going red against an
 expectation written an hour earlier.
 
-- **`nothing` (16)** — B6, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B62 (B11, B57, B59 and B63 closed 2026-09-16)
+**28 later that same evening**: **B62 closed** with migration 5, the one entry in this file that
+was waiting on an approval rather than on a machine or on an idea.
+
+- **`nothing` (15)** — B6, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56 (B11, B57, B59, B62 and B63 closed 2026-09-16)
 - **`a real save` (4)** — B21, B22, B23, B58
 - **`the game` (4)** — B3, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -1721,7 +1724,23 @@ if blanking comments changes an answer anywhere, that answer is a finding and go
 
 ---
 
-## B62 — A source folded into no runs cannot be told from one never folded (implementation, `store`, needs migration 5)
+## B62 — A source folded into no runs cannot be told from one never folded (implementation, `store`, needs migration 5) ✅ closed on 2026-09-16
+
+**Closed on 2026-09-16**, the same day it was opened, once migration 5 was approved. It is one
+nullable column — `folded_rules_version` on `sources`, written by `cache_runs` inside the
+transaction that replaces the fold — and `cached_runs` now answers `Some(vec![])` for a source
+these rules read and found no run in, `None` only for one no fold under these rules has touched.
+The parked test is back in `crates/log-watch/tests/ingest.rs` and green, and five tests in
+`crates/store/tests/archive.rs` hold the three states apart, the migration on somebody's file
+among them. Commit `fix(store): a source folded into no run is not a source nobody folded`.
+
+**What the writing added to the plan above.** The entry described two states and there are
+**three**, which is why the column is compared and not read as a boolean: *never folded*, *folded
+under other rules*, and *folded into nothing under these*. The first two are the same answer to
+the caller — fold it — and only the third is new. And a fourth case the entry did not name is the
+one that made the extra test worth writing: a source that **used to** hold runs and folds to none
+after a rules change leaves no row behind either, so the version on the source is the only thing
+that says it was read at all.
 
 **Needs:** nothing to write it — the fix is one nullable column and two functions. What it waits
 on is **approval for migration 5**, which is a decision and not a machine.

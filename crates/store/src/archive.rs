@@ -237,6 +237,10 @@ impl Store {
     ///
     /// One write like the others: a cache half replaced is a source that reads as having fewer
     /// runs than it has, which is worse than one that reads as having none.
+    ///
+    /// The rules version is written **twice**: on each row, where it invalidates that row, and
+    /// on the source, where it is the only record that the fold ran at all. A fold that produces
+    /// no run writes no row, and a source with no rows is otherwise a source nobody has read.
     pub fn cache_runs(
         &self,
         source_id: i64,
@@ -262,12 +266,23 @@ impl Store {
                 )
                 .map_err(StoreError::from_sqlite)?;
         }
+        self.conn
+            .execute(
+                "UPDATE sources SET folded_rules_version = ?2 WHERE id = ?1",
+                params![source_id, rules_version],
+            )
+            .map_err(StoreError::from_sqlite)?;
         tx.commit().map_err(StoreError::from_sqlite)?;
         Ok(())
     }
 
     /// The cached fold, **only** if it was produced by these rules. A newer rules file finds
     /// nothing here, which is how the cache invalidates itself.
+    ///
+    /// Three states in one `Option`, and the empty fold is the one that used to be lost:
+    /// `None` is *nobody has folded this source under these rules*, and `Some(vec![])` is
+    /// *these rules read it and it holds no run* — a launch that played the intro and shut
+    /// down. The first asks the caller to fold; the second answers.
     pub fn cached_runs(
         &self,
         source_id: i64,
@@ -293,7 +308,22 @@ impl Store {
                 Err(_) => return Ok(None),
             }
         }
-        Ok((!runs.is_empty()).then_some(runs))
+        if !runs.is_empty() {
+            return Ok(Some(runs));
+        }
+        // No rows, which `runs` alone cannot explain: a fold that produced nothing and a source
+        // nobody has folded leave the same absence there. The source says which.
+        let folded: Option<u32> = self
+            .conn
+            .query_row(
+                "SELECT folded_rules_version FROM sources WHERE id = ?1",
+                params![source_id],
+                |r| r.get(0),
+            )
+            .optional()
+            .map_err(StoreError::from_sqlite)?
+            .flatten();
+        Ok((folded == Some(rules_version)).then(Vec::new))
     }
 
     fn insert_source(
