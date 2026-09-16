@@ -235,3 +235,33 @@ fn the_logs_the_game_actually_wrote_import_into_runs() {
         );
     }
 }
+
+#[test]
+fn a_launch_with_no_run_in_it_caches_an_empty_list_and_not_nothing() {
+    // The shape B60 put in `samples/launches/`: the game was launched, it played the intro, it
+    // shut down. The fold answers zero runs — an answer, not an absence — and until migration 5
+    // the cache could not hold it: the source read back exactly like one nobody had ever folded,
+    // so the next pass folded the same nothing again, and the one after that too.
+    let (_d, store) = open();
+    let rules = Rules::embedded();
+    let tmp = tempfile::tempdir().unwrap();
+    let log = tmp.path().join("log.txt");
+    fs::write(
+        &log,
+        "[INFO] - OpenGL version 4.6.0 NVIDIA 610.88\n\
+         [INFO] - playing cutscene 1 (Intro).\n",
+    )
+    .unwrap();
+
+    let done = ingest(&store, &rules, &Table).live_log(&log).unwrap();
+    assert_eq!(done.runs, 0, "nobody started a run");
+    assert!(
+        done.events > 0,
+        "the launch spoke: a silent instrument would prove nothing about the fold"
+    );
+    assert_eq!(
+        store.cached_runs(done.source_id, rules.version()).unwrap(),
+        Some(vec![]),
+        "folded into nothing, which is not the same as never folded"
+    );
+}

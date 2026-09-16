@@ -7,10 +7,10 @@ use rusqlite::Connection;
 use crate::StoreError;
 
 /// The version this binary knows how to read and write.
-pub const SCHEMA_VERSION: u32 = 4;
+pub const SCHEMA_VERSION: u32 = 5;
 
 /// Index = version − 1. Append at the end, never modify a migration that's already shipped.
-const MIGRATIONS: [&str; 4] = [
+const MIGRATIONS: [&str; 5] = [
     // 1: the user's goals. `target_json` is the serialized `ipc::TargetKey` -- identity
     // alone, never name or icon: a column per variant would be a schema that changes
     // with every new kind of unlock.
@@ -73,6 +73,16 @@ const MIGRATIONS: [&str; 4] = [
         run_json TEXT NOT NULL,
         PRIMARY KEY (source_id, ordinal)
     );",
+    // 5: which rules folded a source, on the source itself. `runs` carries `rules_version` per
+    // row and a fold that produced **zero** rows has nowhere to put one, so a source read and
+    // folded into nothing was indistinguishable from one nobody had ever read — and for a
+    // runless launch that is not a missing cache, it is a loop: fold again, produce nothing
+    // again, cache nothing again, for ever (B62).
+    //
+    // Nullable and additive, no data rewritten: an existing row gets NULL, which reads as
+    // "never folded" and is exactly right for every row that predates it — nothing recorded
+    // which rules produced what those rows hold.
+    "ALTER TABLE sources ADD COLUMN folded_rules_version INTEGER;",
 ];
 
 pub fn current_version(conn: &Connection) -> Result<u32, StoreError> {
