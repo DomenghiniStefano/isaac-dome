@@ -6,10 +6,11 @@ import { watchWindowBox, watchWindowFocus } from './appWindow'
 import { focusOrder, rememberFocus } from './focusOrder'
 import { WindowMessageKind } from './messages'
 import type { WindowMessage } from './messages'
+import { setSidebarWidth, sidebarWidth } from './layout'
 import { clampToMonitors } from './monitorClamp'
 import { oweSeed, takeSeed } from './seeds'
 import { readSession, writeSession } from './sessionDocument'
-import type { StoredBox, StoredWindow } from './sessionDocument'
+import type { StoredBox, StoredSession, StoredWindow } from './sessionDocument'
 import { noteSessionError } from './sessionHealth'
 import { SessionAction, decideSessionWrite } from './sessionWriter'
 import { newWindowLabel, windowPort } from './windowPort'
@@ -70,6 +71,19 @@ export const useWindowSession = (): void => {
   const gone = new Set<string>()
   let box: StoredBox | undefined
   let postponed = 0
+  // The sidebar width this window has already told the others about, so that hearing it back —
+  // or hearing it from somebody else — is not a reason to say it again.
+  let announced: number | null = null
+
+  // One width for the app, so a window that changes it tells the rest. Also the answer a newborn
+  // gets, which is why it is a function and not a line inside the watcher.
+  const tellLayout = (): void => {
+    if (sidebarWidth.value === null) return
+    void windowPort.broadcast({
+      kind: WindowMessageKind.Layout,
+      sidebarWidth: sidebarWidth.value,
+    })
+  }
 
   const forget = () => {
     if (timer !== null) window.clearTimeout(timer)
@@ -128,7 +142,14 @@ export const useWindowSession = (): void => {
       case SessionAction.Write:
         postponed = 0
         try {
-          await setWindowSession(writeSession(decision.windows))
+          await setWindowSession(
+            writeSession({
+              windows: decision.windows,
+              ...(sidebarWidth.value === null
+                ? {}
+                : { sidebarWidth: sidebarWidth.value }),
+            }),
+          )
         } catch (e) {
           // Swallowed, with one exception: `SessionTooLarge` is the only error that means the
           // session has stopped being saved, and the only one the user has to be told about.
@@ -202,6 +223,9 @@ export const useWindowSession = (): void => {
           tabs: seed.tabs,
           activeIndex: seed.activeIndex,
         })
+        // Somebody new exists, and the layout is one value for the app: a torn-off window must
+        // open with the sidebar its creator has, not with the default.
+        tellLayout()
         return
       }
       case WindowMessageKind.Seed:
@@ -234,6 +258,15 @@ export const useWindowSession = (): void => {
         ledger.delete(m.label)
         remember()
         return
+      case WindowMessageKind.Layout:
+        // **Taken as already said.** The assignment wakes this window's own watcher, which would
+        // broadcast it back, which would wake everyone else's: one drag would cost a round of
+        // messages per window. Recording it as announced *before* setting it is what stops that,
+        // and it does not depend on when the watcher happens to flush — a synchronous flag would.
+        announced = m.sidebarWidth
+        setSidebarWidth(m.sidebarWidth)
+        remember()
+        return
       default:
         return assertNever(m)
     }
@@ -243,6 +276,15 @@ export const useWindowSession = (): void => {
     // Deep: a tab navigating changes an entry inside the array, not the array itself, and a
     // shallow watch would save the bar's shape and never what it is showing.
     watch(() => tabs.session, held, { deep: true })
+    // The sidebar is not a tab and not a window: one value, beside them in the document, and the
+    // others hear it change.
+    watch(sidebarWidth, (px) => {
+      if (px !== announced) {
+        announced = px
+        tellLayout()
+      }
+      remember()
+    })
     stop = await windowPort.listen(onMessage)
     // Who is in front, told by the only thing that observes it: this window's own focus.
     // Broadcast, so every window keeps the same order and the hit test agrees everywhere.
@@ -281,7 +323,7 @@ export const useWindowSession = (): void => {
       // **Nobody owes the first window a seed**: what it holds is its own last session.
       // Everything that can go wrong — no session, the setting off, a document we can't read,
       // a read that throws — ends at the same empty seed.
-      let restored: StoredWindow[] | null = null
+      let restored: StoredSession | null = null
       try {
         restored = readSession(await windowSession())
       } catch {
@@ -292,11 +334,17 @@ export const useWindowSession = (): void => {
       // appeared.
       if (!tabs.pending) return
       forget()
+      // The sidebar you sized is the sidebar you get back. Set before the seeding, so the first
+      // paint is already at the right width rather than snapping to it.
+      const stored = restored?.sidebarWidth ?? null
+      announced = stored
+      setSidebarWidth(stored)
       // `main` takes the first window of the document and reopens the rest — a restored window
       // is a torn-off window that nobody dragged, so this is the tear-off's own machinery.
-      tabs.seed(restored?.[0]?.tabs ?? [], restored?.[0]?.activeIndex ?? 0)
+      const windows = restored?.windows ?? []
+      tabs.seed(windows[0]?.tabs ?? [], windows[0]?.activeIndex ?? 0)
       held()
-      void reopen(restored?.slice(1) ?? [])
+      void reopen(windows.slice(1))
       return
     }
     await windowPort.broadcast({
