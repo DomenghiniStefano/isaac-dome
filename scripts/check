@@ -25,12 +25,13 @@ run() {
 }
 
 output=$(mktemp)
+ui_output=$(mktemp)
 declarations=$(mktemp)
 # The scratch lives under `ui/` and not in the system temp on purpose: prettier resolves its
 # configuration by walking up from the file, so a copy anywhere else is formatted by other
 # rules and reads as stale. On Windows it also never sees an MSYS `/tmp` path.
 types_scratch=ui/.ipc-types-check
-trap 'rm -f "$output" "$declarations"; rm -rf "$types_scratch"' EXIT
+trap 'rm -f "$output" "$ui_output" "$declarations"; rm -rf "$types_scratch"' EXIT
 
 run 'cargo fmt' cargo fmt --check
 run 'cargo clippy' cargo clippy --all-targets -- -D warnings
@@ -54,7 +55,16 @@ fi
 cat "$output"
 
 run 'pnpm typecheck' pnpm typecheck
-run 'pnpm ui:test' pnpm ui:test
+
+# Kept in a file for the same reason `cargo test`'s output is: the totals are counted below, and
+# the frontend suite is exactly as deletable as the Rust one — 82 files of it (B63).
+printf '\n=== pnpm ui:test\n'
+pnpm ui:test >"$ui_output" 2>&1
+if [ $? -ne 0 ]; then
+	failed="$failed pnpm-ui:test"
+fi
+cat "$ui_output"
+
 run 'pnpm lint' pnpm lint
 run 'pnpm format:check' pnpm format:check
 run 'pnpm scan' pnpm scan
@@ -86,10 +96,43 @@ node scripts/check-doc-refs.mjs || printf 'the reference report could not run\n'
 skipped=$(grep -c '^skip:' "$declarations")
 real_files=$(grep -c '^sample:' "$declarations")
 
+# **How many tests exist**, which is the one thing `cargo test` never reports (B63): it says what
+# ran, and a deleted test is not a dimmed suite but a shorter one. Passed plus failed plus
+# ignored, so a test that stops running is as loud as one that stops existing.
+rust_tests=$(awk '/^test result:/ {
+	for (i = 1; i <= NF; i++)
+		if ($i == "passed;" || $i == "failed;" || $i == "ignored;") s += $(i - 1)
+} END { print s + 0 }' "$output")
+# Vitest's own total, in the parentheses: `Tests  591 passed (591)`. The parenthesised number
+# counts the skipped ones too, which is the number this is about.
+ui_tests=$(awk '/Tests +[0-9]/ { n = $NF; gsub(/[()]/, "", n); t = n } END { print t + 0 }' "$ui_output")
+
+floor_rust=0
+floor_ui=0
+if [ -f scripts/test-floor ]; then
+	# shellcheck source=scripts/test-floor
+	. ./scripts/test-floor
+	floor_rust=$RUST_TESTS
+	floor_ui=$UI_TESTS
+fi
+
 printf '\n=== summary\n'
 printf 'tests skipped (sample or missing tool): %s\n' "$skipped"
 printf 'real files touched: %s\n' "$real_files"
 [ "$skipped" -gt 0 ] && grep '^skip:' "$declarations" | sort | uniq -c | sed 's/^/  /'
+printf 'tests that exist: %s rust, %s ui (floor %s and %s)\n' \
+	"$rust_tests" "$ui_tests" "$floor_rust" "$floor_ui"
+
+# A suite that shrank is the failure. A suite that grew is a line to paste, never a failure —
+# failing on a rise would fail every commit that adds a test. What it cannot see is a floor
+# nobody raises: see the comment in `scripts/test-floor`.
+if [ "$rust_tests" -lt "$floor_rust" ] || [ "$ui_tests" -lt "$floor_ui" ]; then
+	printf '  a suite is SHORTER than it was. If a test was meant to go, say so and lower the floor.\n'
+	failed="$failed test-count"
+elif [ "$rust_tests" -gt "$floor_rust" ] || [ "$ui_tests" -gt "$floor_ui" ]; then
+	printf '  raise the floor in scripts/test-floor: RUST_TESTS=%s UI_TESTS=%s\n' \
+		"$rust_tests" "$ui_tests"
+fi
 
 if [ -n "$failed" ]; then
 	printf '\nFAILED:%s\n' "$failed"
