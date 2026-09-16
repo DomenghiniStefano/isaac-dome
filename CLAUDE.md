@@ -196,7 +196,12 @@ that never happens.
   expectation to fix.
 - Tests on real data **skip with a note** if the sample is missing: `samples/` is
   git-ignored and the suite has to stay green for anyone who clones the repo. Watch the
-  reverse too: an "N passed" doesn't say how many were skipped.
+  reverse too: an "N passed" doesn't say how many were skipped — **nor how many disappeared**.
+  On 2026-09-12 a commit added `crates/ipc/tests/progress.rs` and deleted
+  `crates/ipc/tests/profile.rs` in the same diff, 647 lines and 27 tests of it, and every gate
+  stayed green for four days: **deleting a test fails nothing**. Nothing in `scripts/check`
+  counts tests, only skips (B63). A test file that leaves in the same commit that adds another
+  is the shape to look for in a diff, because no tool will.
 - **`samples/` is only opened from the `test-support` crate**, never by hand with
   `env!("CARGO_MANIFEST_DIR")`. Its functions always declare the outcome on stderr —
   `sample: <file>` when there is one, `skip: …` when there isn't — because a test on real
