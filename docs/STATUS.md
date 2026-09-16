@@ -539,6 +539,21 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       so the hypothesis's own precondition was satisfied and the instrument had demonstrably
       spoken. Three for three. It is still not a confirmation, and saying otherwise is the trap
       this section exists to avoid: only a death can produce one.
+      **The death happened on 2026-09-16, and tally 4 is named.** One deliberate death in the
+      Basement, and across the whole save **three keys moved and all three are one entity**,
+      `15.0.0` = Clotty: tally 1 `+2`, tally 3 `+5`, **tally 4 `2 → 3`, exactly one, on the
+      killer, and on no other key anywhere**. `DEATHS [10]` 269 → 270 says the death reached the
+      file. **Tally 4 counts the deaths an entity caused you**, and it is the first of the four
+      to earn a name.
+      **And the same window separates 1 from 2 for the first time**: tally 1 gained 2 while
+      **tally 2 gained nothing**, in a window with kills in it. *"1 and 2 move constantly and in
+      both modes"* was true of every window collected only because every one of them had both
+      moving; one short run ending in a death is the case that tells them apart. What 2 is waits
+      on another window, and 3 with it — though read on one entity this one says 5, 2 and 1 for
+      3, 1 and 4, which is the shape B9 always asked for and never had with a *named* killer.
+      New instrument: `cargo run -p core-save --example bestiary_diff -- <before> <after>`,
+      which reports every key that moved, per tally — `matched_window` only ever said whether a
+      tally moved, never which entity moved it, and that was the whole question.
 - [ ] **What the bestiary's trailing word is.** One word after the last tally, in every
       save, growing 11,343 → 29,725 across the samples we hold, and 43,914 → **43,925** over
       the 2026-09-12 window. So it moves **+11 in one Greed run** — small, and not obviously
