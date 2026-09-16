@@ -54,10 +54,16 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
       `.dat` format decoded and verified on 28 real saves, working Python parser,
       counters labeled, marks matrix rebuilt, log verified.
 - [ ] **M1 — Rust parser, discovery, unpack, Completion screen** ← in progress, and what keeps
-      it open is now **3.6 Settings and About**, plus the wiki polish listed under `wiki` — and
-      **the window nobody has opened on 3.7**, which is one gap and not three. Everything the
-      title names is done: the parser, discovery, unpack and the Completion screen, which landed
-      as sub-project 3.2 on 2026-09-11.
+      it open is now **B17's welcome flow**, which is the half of 3.6 nobody but the owner can
+      decide, plus the wiki polish listed under `wiki` — and **the window nobody has opened on any
+      of it**. Everything the title names is done: the parser, discovery, unpack and the
+      Completion screen, which landed as sub-project 3.2 on 2026-09-11.
+      **3.6a landed on 2026-09-16**, the half that could be decided: the Tabs settings screen the
+      sidebar had been pointing at since 3.1 with nothing behind it, the switch moved off
+      Background where it never belonged, and the session's diagnostic beside it. Spec
+      `docs/superpowers/specs/2026-09-16-settings-tabs-design.md`, report
+      `docs/superpowers/reports/2026-09-16-settings-tabs-report.md`. **3.6 is not closed**: the
+      welcome flow is untouched on purpose.
       **3.7 is one spec and three branches, and all three landed on 2026-09-16** (spec 2026-09-15,
       `docs/superpowers/specs/2026-09-15-tabs-session-design.md`). **3.7a landed on 2026-09-16** —
       a history entry is `{ location, view? }`, so a tab keeps its facets, its sort, its selected
