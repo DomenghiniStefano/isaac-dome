@@ -62,10 +62,15 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
       a history entry is `{ location, view? }`, so a tab keeps its facets, its sort, its selected
       row and its scroll across a tear-off and a restart; report
       `docs/superpowers/reports/2026-09-16-tabs-own-their-state-report.md`. **Nobody has opened a
-      window on it**, which is what B39 stays open for. Still to come: **3.7b**, the windows of
-      tabs the drag spec declared and the document does not hold — `main` writes the session and
-      `main` can be closed while other windows live, so it silently stops being written from that
-      moment — and **3.7c**, B27's remembered sizes.
+      window on it**, which is what B39 stays open for. **3.7b landed on 2026-09-16** — the
+      session is windows of tabs, version 2 of the document, and **the window that writes it is
+      elected** instead of being `main`: `main` can be closed while other windows live, so under
+      the old rule the session stopped being written from that moment, silently, with the app
+      alive in the tray to prove it. Restoring is the tear-off's own machinery run against the
+      document, and a remembered box is clamped onto a monitor that exists. Report
+      `docs/superpowers/reports/2026-09-16-tabs-windows-report.md`. **Nobody has opened a window
+      on this one either**, and here that gap costs most: what it fixes is a failure that is
+      invisible on screen by definition. Still to come: **3.7c**, B27's remembered sizes.
 - [x] **M2 — Unlock graph** (2026-09-07). The Unlock *section* is frontend work and
       waits for the design system; the graph behind it is done — report in
       `docs/superpowers/reports/2026-09-07-unlock-graph-report.md`.
