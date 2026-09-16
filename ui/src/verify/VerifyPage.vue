@@ -96,6 +96,7 @@ const handleIpcError = (e: unknown) => {
     case 'catalogUnavailable':
     case 'storeUnavailable':
     case 'wikiUnavailable':
+    case 'autostartNotWritable':
     case 'sessionTooLarge':
       error.value = err
       return
