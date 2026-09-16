@@ -85,7 +85,7 @@ everywhere except the bestiary, which makes it the clean instrument the eleven-c
 `docs/save-format.md` has been missing. Both closings began with a test going red against an
 expectation written an hour earlier.
 
-- **`nothing` (19)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B59, B62, B63 (B57 closed 2026-09-16)
+- **`nothing` (18)** — B6, B11, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56, B62, B63 (B57 and B59 closed 2026-09-16)
 - **`a real save` (4)** — B21, B22, B23, B58
 - **`the game` (4)** — B3, B19, B33, B36
 - **`a measurement` (2)** — B9, B20
@@ -1497,7 +1497,13 @@ is the failure this project has already paid for twice.
 
 ---
 
-## B59 — The convention scanner reads a comment as if it were code (implementation, `ui`, small)
+## B59 — The convention scanner read a comment as if it were code (implementation, `ui`, small) ✅ closed on 2026-09-16
+
+**Closed on 2026-09-16.** Comments become spaces before a rule sees a file; the style-block check
+opts out and says why, because its exemption *is* a comment. The repository's verdict is unchanged
+— 0 either way, and it could not be otherwise — so the pre-pass is worth what its fixtures are
+worth: **ten, counted in the scanner's output**, each branch removed in turn to see which go red.
+Commit `fix(ui): the convention scanner stops reading a comment as code`.
 
 **Needs:** nothing — the scanner and its rules are `ui/scripts/scan-conventions.mjs`, committed.
 
