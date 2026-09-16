@@ -136,13 +136,29 @@ pub fn section_kind(title: &str) -> Option<SectionKind> {
         // "Excluded Items" is a note about the subject ("the following items cannot be
         // found while playing as…"); its list comes from a table template we don't expand.
         "notes" | "excluded items" => SectionKind::Notes,
-        "synergies" => SectionKind::Synergies,
-        "interactions" | "item interactions" | "interaction" => SectionKind::Interactions,
+        // "Syngergies" is a typo, on collectible/Blood Bombs, and the only one in the snapshot.
+        "synergies" | "syngergies" => SectionKind::Synergies,
+        // Six spellings read on their own pages (B54), and the line drawn there: **a spelling of
+        // a kind comes in, a qualifier does not.** "Items Interactions" is the plural of one
+        // already here (character/Tainted Lost); "Active Item Interactions" is the same kind
+        // narrowed to actives (trinket/Found Soul); "Other Interactions" is the leftovers of a
+        // page that has several (trinket/Broken Remote).
+        //
+        // Refused in the same reading, and each with its page: "Interactions with
+        // {{c|Tainted Eve}}" (collectible/Sumptorium) names **one subject**, and a kind that
+        // names a subject stops being a kind.
+        "interactions" | "item interactions" | "items interactions" | "active item interactions"
+        | "other interactions" | "interaction" => SectionKind::Interactions,
         "bugs" | "bug" => SectionKind::Bugs,
         "behavior" => SectionKind::Behavior,
         "champion versions" => SectionKind::ChampionVersions,
         "damage scaling" => SectionKind::DamageScaling,
-        "strategies" | "strategy" | "tips" => SectionKind::Strategies,
+        // "General Strategies" (character/The Lost, which opens with `{{main|The Lost (Strategy)}}`)
+        // and "Tips and strategies" (collectible/Isaac's Heart) are both spellings of the two
+        // words already here.
+        "strategies" | "strategy" | "tips" | "general strategies" | "tips and strategies" => {
+            SectionKind::Strategies
+        }
         "difficulty" => SectionKind::Difficulty,
         "reward" | "rewards" => SectionKind::Reward,
         "unlockable achievements"
@@ -241,6 +257,60 @@ mod tests {
             ""
         );
         assert_eq!(section_kind(""), None);
+    }
+
+    /// B54's near-miss family, with the line the reading drew: **a spelling of a kind comes in,
+    /// a qualifier does not.** Six came in; the refusals below are the same reading and are what
+    /// stop the list from growing by reflex.
+    #[test]
+    fn a_spelling_of_a_kind_comes_in() {
+        // collectible/Blood Bombs, the snapshot's only typo of the word.
+        assert_eq!(section_kind("Syngergies"), Some(SectionKind::Synergies));
+        // character/Tainted Lost, trinket/Found Soul, trinket/Broken Remote.
+        for t in [
+            "Items Interactions",
+            "Active Item Interactions",
+            "Other Interactions",
+        ] {
+            assert_eq!(section_kind(t), Some(SectionKind::Interactions), "{t}");
+        }
+        // character/The Lost, collectible/Isaac's Heart.
+        for t in ["General Strategies", "Tips and strategies"] {
+            assert_eq!(section_kind(t), Some(SectionKind::Strategies), "{t}");
+        }
+    }
+
+    /// The refusals, each with the page that refused it. A qualifier is content: folding it in
+    /// would make the kind assert something the page distinguishes.
+    #[test]
+    fn a_qualifier_is_not_a_spelling() {
+        // collectible/Sumptorium: a kind that names one subject stops being a kind.
+        assert_eq!(section_kind("Interactions with {{c|Tainted Eve}}"), None);
+        // trinket/Broken Remote keeps four of these apart on one page, and "infinite",
+        // "conditional", "pre-Repentance" and "with delay" are the whole of what they say.
+        for t in [
+            "Infinite Synergies",
+            "Infinite Synergies (Conditional)",
+            "Infinite Synergies (Pre-Repentance)",
+            "Infinite Synergies (With Delay)",
+        ] {
+            assert_eq!(section_kind(t), None, "{t}");
+        }
+        // boss/Mom and boss/Mom's Heart: where the behaviour applies is what the heading adds.
+        assert_eq!(
+            section_kind("{{dlc+|r}} Behavior in Mausoleum/Gehenna"),
+            None
+        );
+        // challenge/Bloody Mary and others: an editorial verdict on items, which `Notes` does
+        // not make. The entry says so and the pages say so.
+        for t in [
+            "Good Items",
+            "Bad items",
+            "Neutral Items",
+            "Detrimental items",
+        ] {
+            assert_eq!(section_kind(t), None, "{t}");
+        }
     }
 
     /// Three spellings read on their own pages before being added (B54): Mega Satan's `Unlock`,
