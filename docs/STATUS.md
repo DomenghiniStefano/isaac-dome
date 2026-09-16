@@ -664,12 +664,14 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
 ## What only a window can say
 
 **The second bucket of the same kind**, collected here on 2026-09-16 because it had accumulated
-in five reports and nobody could see how much of it there was. **It is 33 lines**, which is the
-number that made collecting it worth a section: five reports each said "half a report" and
-sounded like a footnote, and the sum is a session's work. It is the sibling of the section
-above and it earns the same warning, which that one paid for: *an instrument list that nobody
-re-reads at the instrument is a list of things that may already be done* — three of its seven
-were, and nobody knew until somebody stood at the machine and read it.
+in five reports and nobody could see how much of it there was. It was **33 lines** that day,
+which is the number that made collecting it worth a section: five reports each said "half a
+report" and sounded like a footnote, and the sum is a session's work. **It is 40 in eight groups
+at the end of the same day**, and the growth is the point rather than a complaint — three
+sub-projects landed since, and each of them can only be finished by somebody looking. It is the
+sibling of the section above and it earns the same warning, which that one paid for: *an
+instrument list that nobody re-reads at the instrument is a list of things that may already be
+done* — three of its seven were, and nobody knew until somebody stood at the machine and read it.
 
 **This is the live list; the reports are the record.** Each line below was written by the
 sub-project that produced it and is unticked *there* too, but a report is true on its day and is
@@ -678,20 +680,49 @@ written. This is `docs/BACKLOG.md`'s `, then a window` tag, gathered.
 
 **Nothing here is blocked on thinking or on code.** Every line needs the built app in front of a
 pair of eyes, and most of them need it for one minute. `pnpm dev` from the root; `predev` clears
-a tray app and whoever holds port 1420 on its own.
+a tray app and whoever holds port 1420 on its own. **One group is the exception and says so**:
+starting with Windows is registered only in a release build, so those five need `pnpm build`, a
+logout and a login.
 
 ### First, and it happens once
+
+Three lines, and what they share is that they run against **data that already exists on this
+machine** — a session, a database, an archive written by the version before. Each of them can be
+read wrong exactly once, and then the evidence is gone.
+
+**One launch answers all three**, which is the trap: the next start of the app migrates the
+database, refolds the archive and restores the session, and after that every one of them looks
+like it has always been that way. **And it does not have to be the installed build** — `pnpm dev`
+opens the same `app_data_dir()`, so the first `pnpm dev` of the next session spends all three
+without asking. Read them on whichever launch comes first, before touching anything else — and if
+the archive matters more than the minute it costs, copy
+`%APPDATA%\dev.isaacdome.app\isaacdome.db` first (Tauri's `app_data_dir()`, and the identifier is
+in `crates/app/tauri.conf.json`).
 
 - [ ] **The session on disk was written by version 1 of the document**, and the first launch after
       3.7b reads it. The tabs that were open must still be there. It is the only line in this
       section whose failure costs a real person something, and it cannot be run twice.
       → `docs/superpowers/reports/2026-09-16-tabs-windows-report.md`
+- [ ] **Migration 5 runs on the real `isaacdome.db`** (B62). The Plan's goals, the plan queue, the
+      window session and the whole run archive are still there afterwards: the column is nullable
+      and additive and a test builds a version-4 file to prove it, but the file that test builds
+      is not the one on this machine.
+- [ ] **The rules file went from 2 to 3** with F2, which **invalidates every folded run in the
+      cache on purpose**. So the first launch refolds the whole archive: the Runs screen must come
+      back holding the same runs it held, and the totals must not move. If a run is missing after
+      that, the fold lost it — and the cache that would have hidden the loss is exactly what the
+      version bump threw away.
 
 ### The Tabs settings screen (3.6a)
 
 - [ ] the Settings sidebar's fourth entry opens a screen and not a placeholder
 - [ ] the switch turns the session off and on, and the failure alert appears when the write fails
-- [ ] Background reads as one subject now that it holds one switch
+- [ ] ~~Background reads as one subject now that it holds one switch~~ — **the premise went the
+      same day**: B41 put a second switch there, and the intro had to grow a second clause to
+      cover it ("when the app starts, and what it does when you close the last window"). The
+      question is the same one and the answer may now be different: **does Background still read
+      as one screen, or is "when it starts" a screen of its own?** A judgment, and it is the
+      owner's.
 - [ ] the "what is saved" lines read as sentences and not as a list of fields
       → `docs/superpowers/reports/2026-09-16-settings-tabs-report.md`
 
