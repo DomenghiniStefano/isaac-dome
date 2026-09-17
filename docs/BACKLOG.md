@@ -765,6 +765,13 @@ number:
   "hard" as if normal were missing.
 - The observed values include a bare 2: the game does write hard without normal, so rule 1
   is a rule of ours, not a reading of the file. The count keeps the bit; the label doesn't.
+  **Measured 2026-09-17 (B58), and it makes rule 1 a little less ours**: a cell goes
+  **1 → 2**, four times across the 638-era series. The bare 2 is not a mark taken on hard by
+  someone who never took it on normal — it is the normal mark *overwritten*, because the
+  value replaces the one before it instead of accumulating. That is only evidence about how
+  the file is written, not about what the bits are called, so `MarkLevel` stays `Base` /
+  `Second`; but `normal = bit 0 or bit 1` below is now corroborated by the file rather than
+  only by the product rule.
 
 ### What's missing
 
@@ -1666,7 +1673,52 @@ folder without it — with a test that turns red if the file becomes the only pa
 
 ---
 
-## B58 — The mark tables were located on the 2026 series and are read on a 2025 save (analysis, `core-save` and `ipc`)
+## B58 — The mark tables were located on the 2026 series and are read on a 2025 save (analysis, `core-save` and `ipc`) ✅ closed on 2026-09-17
+
+**Closed on 2026-09-17, and the hypothesis did not survive the measurement.** The two cells
+the entry called anomalous are ordinary, the tables are right, and what was actually broken
+was something the entry did not suspect. Three findings, in the order they arrived:
+
+1. **Both "anomalous shapes" occur in the 638 era too**, on a different profile, and one of
+   them is an observed *transition*: `[457] 0 → 1`, `Isaac × The Beast`, on 2024-03-05, with
+   `[492] 0 → 2` counting it and Eden's mark together. A shape that appears in two eras is
+   not an argument for the tables being wrong in one of them.
+2. **A cell's value replaces the one before it; the bits are not latched flags.** Four cells
+   go **1 → 2** across the 638 series — `Isaac × Greed` and `Cain × Greed` on 2024-02-23,
+   `Isaac × TheLamb` and `BlueBaby × BossRush` on 2024-01-29 — which is bit 0 going out as
+   bit 1 comes in. So `Isaac × Greed = 2` is a Greedier clear that overwrote the Greed one,
+   which is what "Ultra Greedier implies Greed" looks like in a file that overwrites. The
+   entry's second row rested on reading "implies" as "accumulates", and
+   `docs/save-format.md` had the same reading written into it as the *reason* for a
+   property; the reason is corrected there, the property stands.
+3. **The bases are measured at both ends, so the era between them is bracketed.** Section 2
+   is 496 cells in the 638 era, 521 in the 641, 523 in the 642 — it only grew. The 638 series
+   re-derives Mother at **423** and The Beast at **457** by the kill counters, two of three
+   windows exact. A cell inserted before 423 by one patch and removed by the next is not how
+   patches work. **It is an inference from two measured eras, not a third measurement**: this
+   machine holds one 641-era snapshot and therefore no window in that era at all.
+
+**What was actually broken.** The three properties in `crates/ipc/tests/marks_real.rs` that
+"keep the tables answerable to the series" walked the `rep+` series **only**, by an explicit
+decision in the file. On any machine whose `rep+` series is a single file — which is this one,
+and every machine that has not collected 2026 snapshots — they returned early and the tables
+were guarded by **nothing**, with the suite green. They now walk each series on its own, which
+is what puts the 638 era under them.
+
+**And the off-by-one they still cannot see, which is the part worth keeping.** Moving Mother's
+base to **422** leaves every real-data property green here: the counters compare counts, so the
+neighbour lights on the same day and the arithmetic works. Only index 188 separates identities,
+and the 638 series offers one qualifying window, an Azazel one that never touches Mother. What
+catches 422 is arithmetic on the tables — Delirium's 19-block runs 404..=422, so the two would
+claim one index. `no_two_cells_of_the_matrix_share_an_index` and
+`the_three_derived_blocks_tile_against_their_neighbours` in
+`crates/core-save/tests/marks_layout.rs` are that check, and they need **no sample**, which is
+why they are the answer: `samples/` is per-machine and a table's arithmetic is not.
+
+**What is still owed, and it is not this entry:** what bits 0 and 1 *mean* outside Greed is
+unmeasured, and B22 is where that is owed. Nothing here names them.
+
+*The entry as it stood:*
 
 **Needs:** **a real save** of the 641-achievement era — `20250626` on the machine this was written
 on, `20250112` on the second one (2026-09-16). **The era is the requirement, not the file**: the
