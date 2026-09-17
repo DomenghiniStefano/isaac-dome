@@ -161,10 +161,6 @@ export const it = {
     intro:
       'Le run che l’app ha letto: quelle di questa sessione e quelle delle partite online che il gioco ha già registrato. Il log non ha un orologio, quindi l’ordine è per sessione e non per ora.',
     rows: 'run',
-    facets: 'Filtri',
-    activeFilters: 'filtri attivi',
-    noFilters: 'nessun filtro',
-    reset: 'Azzera i filtri',
     search: 'cerca un seed o un personaggio',
     facet: {
       outcome: 'Esito',
@@ -234,7 +230,6 @@ export const it = {
       locked: 'bloccato',
       unknown: 'non leggibile',
     },
-    facets: 'Filtri',
     facet: {
       state: 'Stato',
       quality: 'Qualità',
@@ -264,10 +259,6 @@ export const it = {
     achievement: 'achievement',
     empty: 'Nessun oggetto da mostrare.',
     noResults: 'Nessun oggetto con questi filtri.',
-    resetFilters: 'Azzera i filtri',
-    noFilters: 'nessun filtro',
-    activeFilters: 'filtri attivi',
-    reset: 'Azzera',
     diagnostics: {
       noCatalogTitle: 'Non troviamo il gioco',
       noCatalog:
@@ -716,11 +707,6 @@ export const it = {
       steps: 'passi mancanti',
       name: 'nome',
     },
-    facets: 'Filtri',
-    noFilters: 'nessun filtro',
-    activeFilters: 'filtri attivi',
-    reset: 'Azzera',
-    resetFilters: 'Azzera i filtri',
     empty: 'Nessun obiettivo da mostrare.',
     noResults: 'Nessuna riga con questi filtri.',
     facet: {

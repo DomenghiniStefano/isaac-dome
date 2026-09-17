@@ -1041,7 +1041,27 @@ table its own; and no fixed body height survives in the tokens.
 
 ---
 
-## B29 — The Collection's filter: no "Faccette", no values with nothing behind them (implementation, `ui`, after design) the two sight fixes done on 2026-09-12
+## B29 — The Collection's filter: no "Faccette", no values with nothing behind them (implementation, `ui`, after design) ✅ closed on 2026-09-17, built and **not yet seen in a window**
+
+**Closed as sub-project 3.10.** Spec `docs/superpowers/specs/2026-09-17-filter-bar-design.md`,
+plan `docs/superpowers/plans/2026-09-17-filter-bar.md`, report
+`docs/superpowers/reports/2026-09-17-filter-bar-report.md`. One `FilterBar.vue` replaces the
+drawer and the toolbar on **three** screens, a `MultiSelect` primitive joins the kit, and the
+judgment that used to live in a `computed` is a tested module.
+
+**Two things this entry had wrong, corrected by reading rather than by guessing:**
+
+- **It says "both screens" and the screens are three.** It was written before N3 unified the
+  engine and the Run diary became the third list on it. All three moved together — two ways of
+  filtering in one app was the thing worth ending.
+- **"Faccette" was already gone.** The 2026-09-12 fix had renamed the key's *value* to `Filtri`
+  in all three blocks, so the fourth line of the card was satisfied before the work began. The
+  keys themselves went with the control that named them.
+
+**And one the work found, which only the new shape made visible**: the state row counted every
+row while the dropdowns counted what the rest of the filter leaves, so with a character picked
+the Run diary said `2 / 5` above a row summing to 5. The owner's call, mid-work, was to make the
+whole bar say one kind of thing; the three screens' own tallies went with the prop they fed.
 
 **Needs:** nothing, then a window — one filter bar with a fold and multi-select dropdowns: a new primitive and a design pass, both frontend.
 
