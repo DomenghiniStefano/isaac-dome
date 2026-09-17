@@ -7,11 +7,8 @@ import { characterLabel } from '@/lib/graph/characterName'
 import type { CharacterForm } from '@/lib/graph/characterName'
 import { NodeState } from '@/lib/graph/nodeState'
 import { originLabel } from '@/components/facets/labels'
-import type {
-  DrawerLabels,
-  ToolbarLabels,
-  Translate,
-} from '@/components/facets/labels'
+import type { FilterBarLabels, Translate } from '@/components/facets/labels'
+import type { FacetSlot } from '@/lib/facets/facetOptions'
 import { FacetId, UnlockSort } from '@/lib/graph/unlockFacets'
 import { TargetKind } from '@/lib/ipc/values'
 
@@ -69,11 +66,12 @@ export const stateDot: Record<NodeState, string> = {
   [NodeState.Partial]: 'border border-dashed border-state-blocked',
 }
 
-// The facets the drawer holds: the state has its own control above the table.
-export const drawerFacets: FacetId[] = [
-  FacetId.Unlocks,
-  FacetId.Origin,
-  FacetId.Character,
+// Spec 3.10 §3: what a node unlocks is the filter a reader reaches for here; the origin and
+// the character are behind the fold. The state is not one of these — it has its own row.
+export const unlockSlots: FacetSlot<FacetId>[] = [
+  { facet: FacetId.Unlocks, inView: true },
+  { facet: FacetId.Origin, inView: false },
+  { facet: FacetId.Character, inView: false },
 ]
 
 export const sortOrder: UnlockSort[] = [
@@ -88,16 +86,8 @@ export const sortText: Record<UnlockSort, MessageKey<MessageSchema>> = {
   [UnlockSort.Name]: 'unlock.sort.name',
 }
 
-export const toolbarLabels: ToolbarLabels = {
+export const barLabels: FilterBarLabels = {
   rows: 'unlock.rows',
   search: 'unlock.search',
   sortBy: 'unlock.sortBy',
-  activeFilters: 'unlock.activeFilters',
-}
-
-export const drawerLabels: DrawerLabels = {
-  facets: 'unlock.facets',
-  activeFilters: 'unlock.activeFilters',
-  noFilters: 'unlock.noFilters',
-  reset: 'unlock.reset',
 }

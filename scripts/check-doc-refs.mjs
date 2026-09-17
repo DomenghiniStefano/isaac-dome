@@ -77,6 +77,7 @@ const EXEMPTIONS = [
   { path: 'components/marks/CharacterHead.vue', why: 'planned name; the component landed elsewhere' },
   { path: 'screens/profile/profileView.ts', why: 'landed as lib/profile/profileView.ts' },
   { path: 'screens/collection/CollectionFacetDrawer.vue', why: 'became components/facets/FacetDrawer.vue' },
+  { path: 'components/facets/FacetDrawer.vue', why: 'the drawer 3.10 replaced with FilterBar.vue; B29 records where it went' },
   { path: 'auto-launch-0.5.0/src/windows.rs', why: "a dependency's own source, not this repo's" },
 ]
 

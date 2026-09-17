@@ -16,32 +16,28 @@ import {
   CollectionFacet,
   CollectionSort,
   collectionFaceting,
-  collectionFacetOrder,
   filterForQuery,
   emptyCollectionFilter,
   sortItems,
 } from '@/lib/collection/collectionFacets'
 import type { CollectionFilter } from '@/lib/collection/collectionFacets'
-import { itemStateCounts, itemStateOrder } from '@/lib/collection/itemState'
+import { itemStateOrder } from '@/lib/collection/itemState'
 import { useCollectionStore } from '@/stores/views'
 import { LoadStatus } from '@/stores/loadStatus'
 import ScreenHeader from './ScreenHeader.vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import { collectionEntries } from '@/lib/diagnostics/collection'
 
-import StateToggle from '@/components/facets/StateToggle.vue'
-import FacetDrawer from '@/components/facets/FacetDrawer.vue'
-import FilterToolbar from '@/components/facets/FilterToolbar.vue'
+import FilterBar from '@/components/facets/FilterBar.vue'
 import {
+  barLabels,
   collectionFacetTitle,
   collectionFacetValueLabel,
-  drawerFacets,
-  drawerLabels,
+  collectionSlots,
   itemStateDot,
   itemStateText,
   sortOrder,
   sortText,
-  toolbarLabels,
 } from './collection/collectionLabels'
 import CollectionTable from './collection/CollectionTable.vue'
 import { collectionView } from './collection/tabView'
@@ -89,7 +85,6 @@ const items = computed(() => store.view?.items ?? [])
 const faceting = computed(() => collectionFaceting(store.view?.pools ?? []))
 const valueLabel = (facet: CollectionFacet, value: string) =>
   collectionFacetValueLabel(t, facet, value)
-const counts = computed(() => itemStateCounts(items.value))
 const rows = computed(() =>
   sortItems(
     items.value.filter((item) => faceting.value.matches(item, filter.value)),
@@ -102,15 +97,6 @@ const setPicks = (facet: CollectionFacet, picked: string[]) => {
     ...filter.value,
     picks: { ...filter.value.picks, [facet]: picked },
   }
-}
-const toggle = (facet: CollectionFacet, value: string) => {
-  const picked = filter.value.picks[facet]
-  setPicks(
-    facet,
-    picked.includes(value)
-      ? picked.filter((v) => v !== value)
-      : [...picked, value],
-  )
 }
 // A machine without the game answers this view with no items at all (`noCatalog`), and an empty
 // list is not a filter that matched nothing: what was never read must not be drawn as "not
@@ -144,40 +130,31 @@ const reset = () => {
     />
     <template v-else-if="store.view">
       <DiagnosticsList :entries="collectionEntries(store.view.diagnostics)" />
-      <StateToggle
-        :order="itemStateOrder"
-        :counts="counts"
-        :picked="filter.picks[CollectionFacet.State]"
-        :dot="itemStateDot"
-        :text="itemStateText"
-        @update="setPicks(CollectionFacet.State, $event)"
-      />
-      <FacetDrawer
-        :rows="items"
-        :faceting="faceting"
-        :facets="drawerFacets"
-        :filter="filter"
-        :title="collectionFacetTitle"
-        :value-label="valueLabel"
-        :labels="drawerLabels"
-        @toggle="toggle"
-        @reset="reset"
-      />
       <Card>
-        <FilterToolbar
+        <FilterBar
           :shown="rows.length"
           :total="items.length"
           :query="filter.query"
           :sort="sort"
           :sorts="sortOrder"
           :sort-text="sortText"
-          :order="collectionFacetOrder"
-          :picks="filter.picks"
+          :rows="items"
+          :faceting="faceting"
+          :filter="filter"
+          :facets="collectionSlots"
+          :state="{
+            facet: CollectionFacet.State,
+            order: itemStateOrder,
+            dot: itemStateDot,
+            text: itemStateText,
+          }"
+          :title="collectionFacetTitle"
           :value-label="valueLabel"
-          :labels="toolbarLabels"
+          :labels="barLabels"
           @update:query="setQuery"
           @update:sort="setSort"
-          @toggle="toggle"
+          @update:picks="setPicks"
+          @reset="reset"
         />
         <CollectionTable
           v-if="rows.length > 0"
@@ -191,7 +168,7 @@ const reset = () => {
             v-if="empty.reset"
             :variant="ButtonVariant.Outline"
             @click="reset"
-            >{{ t('collection.resetFilters') }}</Button
+            >{{ t('filters.reset') }}</Button
           >
         </div>
       </Card>
