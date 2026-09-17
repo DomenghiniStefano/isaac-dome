@@ -35,16 +35,6 @@ export const outcomeOrder: RunOutcomeView['kind'][] = [
   'open',
 ]
 
-// How many runs each outcome holds, over **every** run: a state row counts the archive, while
-// a facet's own count is over what the other facets leave. Two different questions, and the
-// screen must not answer one with the other.
-export const outcomeCounts = (runs: RunView[]): Record<string, number> =>
-  Object.fromEntries(
-    outcomeOrder.map((kind) => [
-      kind,
-      runs.filter((run) => run.outcome.kind === kind).length,
-    ]),
-  )
 // Ours, not the wire's: the archive says  and a facet needs two values with
 // names. A const object and not a union of strings — the repo's rule, and the same reason the
 // wire's own fieldless enums are objects.
