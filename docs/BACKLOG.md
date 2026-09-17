@@ -34,10 +34,17 @@ half of a task that cannot be verified is not a half that should be shipped.
 nobody could see how much of it there was. The reports keep their own copies as the record of their
 day; the gathered list is the live one, and **ticking a line there is what closes it**.
 
-That list is **not** the board's `UAT`, though the two are about the same thing. `UAT` holds the
-*entries* that are built and waiting to be looked at; the gathered list holds the individual
-*checks* — forty of them in eight groups, most from sub-projects that were never entries here.
-Merging them would mean a card per check, and nobody has asked for that.
+That list and the board's `UAT` were two things until the evening of 2026-09-17, when the owner
+asked that **every change pass through Trello**. `UAT` now holds **one card per group** of that
+list — twelve of them, one per sub-project — with the group's checks written out in the card's
+description. Not one card per check: sixty-five cards would be a wall, and the two copies would
+have to be kept in step by hand with nothing checking them.
+
+**So the two are now the same subject in two shapes, and the drift is real**: a check ticked on a
+card does not tick itself here, and nothing compares them. The gathered list in `docs/STATUS.md`
+stays the one that is *read*, because it is beside the reports that produced it; the card is what
+makes the work visible on the board. If they disagree, the file is right about what was written
+and the card about what was done.
 
 ## Where the state lives, since 2026-09-17
 
