@@ -174,7 +174,12 @@ pub struct MarksTotals {
     pub readable: usize,
     pub unknown: usize,
     pub unexpected: usize,
-    pub started: usize,
+    /// Cells that reached *a* level — bit 0 or bit 1. A mark taken on hard counts as taken
+    /// on normal too (B22), so this is the larger of the two and `hard` is a subset of it,
+    /// never a tally beside it.
+    pub normal: usize,
+    /// Cells that reached the second level — bit 1. `hard <= normal <= readable` always.
+    pub hard: usize,
 }
 
 #[derive(Debug, Clone, Serialize, ts_rs::TS)]
@@ -263,6 +268,10 @@ fn totals_of(rows: &[CharacterRow]) -> MarksTotals {
         unexpected: count(|c| matches!(c, Cell::Unexpected { .. })),
         // Bit 0 or bit 1: the unconfirmed bit alone draws nothing in the grid (the
         // frontend's `markVisual`), and a total that counts what its grid doesn't show lies.
-        started: count(|c| matches!(c, Cell::Known { bits } if *bits & 3 != 0)),
+        normal: count(|c| matches!(c, Cell::Known { bits } if *bits & 3 != 0)),
+        // Bit 1 alone decides hard, and a bare 2 is hard: the value replaces the one before
+        // it rather than accumulating, so requiring bit 0 as well would drop the cells where
+        // the second level overwrote the first (B58, 2026-09-17).
+        hard: count(|c| matches!(c, Cell::Known { bits } if *bits & 2 != 0)),
     }
 }

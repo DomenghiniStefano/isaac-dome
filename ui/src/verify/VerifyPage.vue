@@ -368,7 +368,8 @@ onUnmounted(() => stopRunsEvent?.())
 
     <section v-if="matrix" class="flex flex-col gap-2 overflow-x-auto">
       <h2 class="text-foreground">
-        Marks: {{ matrix.totals.started }} started out of
+        Marks: {{ matrix.totals.normal }} with a level,
+        {{ matrix.totals.hard }} hard, out of
         {{ matrix.totals.readable }} readable ({{
           matrix.totals.unknown
         }}

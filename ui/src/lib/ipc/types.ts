@@ -174,7 +174,16 @@ export type MarksTotals = {
   readable: number
   unknown: number
   unexpected: number
-  started: number
+  /**
+   * Cells that reached *a* level — bit 0 or bit 1. A mark taken on hard counts as taken
+   * on normal too (B22), so this is the larger of the two and `hard` is a subset of it,
+   * never a tally beside it.
+   */
+  normal: number
+  /**
+   * Cells that reached the second level — bit 1. `hard <= normal <= readable` always.
+   */
+  hard: number
 }
 
 export type MarksMatrix = {
