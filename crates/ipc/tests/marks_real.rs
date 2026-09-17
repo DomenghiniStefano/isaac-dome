@@ -15,9 +15,23 @@ use core_save::{Kind, Save};
 use ipc::{counter_index, BOSSES, CHARACTERS};
 use test_support::dated_series;
 
-/// Slot 1 of the Repentance+ profile. Deliberately one series and not both: the two
-/// editions are two profiles, and a jump between them would read as progress.
-const SERIES: &str = "rep+persistentgamedata1.dat";
+/// The dated series `samples/` can hold, **each walked on its own**. Never one series
+/// spanning both: the two editions are two profiles, and a jump between them would read
+/// as progress.
+///
+/// The `rep_` row arrived on 2026-09-17, with B58, and it is the point of this table.
+/// The three bases below were derived on the **642** era and were checked nowhere else,
+/// so on a machine whose `rep+` series is a single file every property here had no window
+/// to walk and returned early: the tables were guarded by nothing at all, and the suite
+/// was green. The 638-era series re-derives Mother and The Beast on its own — three
+/// windows, and on two of them the kill counter rises by exactly the number of new marks.
+///
+/// That is what answers B58's question about the era in between. 638 and 642 both put the
+/// bases at 423 and 457; a cell cannot be inserted before 423 by one patch and removed by
+/// the next, so 641 is bracketed rather than assumed. It is an inference from two measured
+/// eras and not a third measurement, which is the most a machine with one 641-era snapshot
+/// can say.
+const SERIES: [&str; 2] = ["rep_persistentgamedata1.dat", "rep+persistentgamedata1.dat"];
 
 /// The columns whose position was derived, and the counter that counts that boss's
 /// kills. Only these three: the other nine columns have no single kill counter to check
@@ -33,46 +47,49 @@ fn counters(path: &std::path::Path) -> Option<Vec<u32>> {
     Save::open(path).ok()?.u32s(Kind::Counters)
 }
 
-#[test]
-fn no_mark_appears_without_a_kill_of_that_boss() {
-    let files = dated_series(SERIES);
-    if files.len() < 2 {
-        return; // `dated_series` has already said why on stderr
-    }
-    let series: Vec<(String, Vec<u32>)> = files
+/// Every snapshot of one series, as `(file name, section 2)`. Empty when the series isn't
+/// stocked — `dated_series` has already declared why on stderr.
+fn series_of(suffix: &str) -> Vec<(String, Vec<u32>)> {
+    dated_series(suffix)
         .iter()
         .filter_map(|p| {
             let name = p.file_name()?.to_string_lossy().into_owned();
             Some((name, counters(p)?))
         })
-        .collect();
+        .collect()
+}
 
-    for pair in series.windows(2) {
-        let (before_name, before) = &pair[0];
-        let (after_name, after) = &pair[1];
-        for (column, boss, kill_index) in KILLS {
-            let appeared: Vec<&str> = (0..CHARACTERS.len())
-                .filter(|&row| {
-                    counter_index(row, column)
-                        .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
-                        .is_some_and(|(was, now)| was == 0 && now != 0)
-                })
-                .map(|row| CHARACTERS[row].0)
-                .collect();
-            let kills = after
-                .get(kill_index)
-                .zip(before.get(kill_index))
-                .map(|(now, was)| now.saturating_sub(*was))
-                .unwrap_or(0);
-            assert!(
-                appeared.len() as u32 <= kills,
-                "{before_name} → {after_name}: {} new {boss} mark(s) ({}) but the kill \
-                 counter at {kill_index} only rose by {kills}. Either the block's base is \
-                 wrong and these cells belong to something else, or {kill_index} isn't \
-                 {boss}'s kills.",
-                appeared.len(),
-                appeared.join(", "),
-            );
+#[test]
+fn no_mark_appears_without_a_kill_of_that_boss() {
+    for suffix in SERIES {
+        let series = series_of(suffix);
+        for pair in series.windows(2) {
+            let (before_name, before) = &pair[0];
+            let (after_name, after) = &pair[1];
+            for (column, boss, kill_index) in KILLS {
+                let appeared: Vec<&str> = (0..CHARACTERS.len())
+                    .filter(|&row| {
+                        counter_index(row, column)
+                            .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
+                            .is_some_and(|(was, now)| was == 0 && now != 0)
+                    })
+                    .map(|row| CHARACTERS[row].0)
+                    .collect();
+                let kills = after
+                    .get(kill_index)
+                    .zip(before.get(kill_index))
+                    .map(|(now, was)| now.saturating_sub(*was))
+                    .unwrap_or(0);
+                assert!(
+                    appeared.len() as u32 <= kills,
+                    "{before_name} → {after_name}: {} new {boss} mark(s) ({}) but the \
+                     kill counter at {kill_index} only rose by {kills}. Either the \
+                     block's base is wrong and these cells belong to something else, or \
+                     {kill_index} isn't {boss}'s kills.",
+                    appeared.len(),
+                    appeared.join(", "),
+                );
+            }
         }
     }
 }
@@ -96,52 +113,56 @@ const WINNER_MASK: usize = 188;
 /// series qualify, and all six agree.
 #[test]
 fn the_character_that_won_is_the_character_whose_mark_appeared() {
-    let files = dated_series(SERIES);
-    if files.len() < 2 {
-        return;
-    }
-    let series: Vec<(String, Vec<u32>)> = files
-        .iter()
-        .filter_map(|p| {
-            let name = p.file_name()?.to_string_lossy().into_owned();
-            Some((name, counters(p)?))
-        })
-        .collect();
-
     let mut agreed = 0;
-    for pair in series.windows(2) {
-        let (before_name, before) = &pair[0];
-        let (after_name, after) = &pair[1];
-        // Rows among the 14 originals with a mark that went from absent to present,
-        // whichever column it was in.
-        let rows: std::collections::BTreeSet<usize> = (0..14)
-            .filter(|&row| {
-                (0..BOSSES.len()).any(|column| {
-                    counter_index(row, column)
-                        .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
-                        .is_some_and(|(was, now)| was == 0 && now != 0)
+    for suffix in SERIES {
+        let series = series_of(suffix);
+        for pair in series.windows(2) {
+            let (before_name, before) = &pair[0];
+            let (after_name, after) = &pair[1];
+            // Rows among the 14 originals with a mark that went from absent to present,
+            // whichever column it was in.
+            let rows: std::collections::BTreeSet<usize> = (0..14)
+                .filter(|&row| {
+                    (0..BOSSES.len()).any(|column| {
+                        counter_index(row, column)
+                            .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
+                            .is_some_and(|(was, now)| was == 0 && now != 0)
+                    })
                 })
-            })
-            .collect();
-        let mask = after.get(WINNER_MASK).copied().unwrap_or(0);
-        let winners: Vec<usize> = (0..14).filter(|b| mask & (1 << b) != 0).collect();
-        if rows.len() != 1 || winners.len() != 1 {
-            continue;
+                .collect();
+            let mask = after.get(WINNER_MASK).copied().unwrap_or(0);
+            let winners: Vec<usize> = (0..14).filter(|b| mask & (1 << b) != 0).collect();
+            if rows.len() != 1 || winners.len() != 1 {
+                continue;
+            }
+            let (row, winner) = (*rows.iter().next().unwrap_or(&0), winners[0]);
+            assert_eq!(
+                row, winner,
+                "{before_name} → {after_name}: the mark that appeared belongs to row \
+                 {row} ({}), but the winner mask names {winner} ({}). One of the two \
+                 tables is off.",
+                CHARACTERS[row].0, CHARACTERS[winner].0,
+            );
+            agreed += 1;
         }
-        let (row, winner) = (*rows.iter().next().unwrap_or(&0), winners[0]);
-        assert_eq!(
-            row, winner,
-            "{before_name} → {after_name}: the mark that appeared belongs to row {row} \
-             ({}), but the winner mask names {winner} ({}). One of the two tables is off.",
-            CHARACTERS[row].0, CHARACTERS[winner].0,
-        );
-        agreed += 1;
     }
-    assert!(
-        agreed >= 2,
-        "only {agreed} transition(s) could be checked: this series no longer pins the \
-         bases by identity, and a base off by one would go unnoticed"
-    );
+    // Two is the floor at which this property pins anything, and falling under it is a
+    // statement about `samples/`, not about the tables — so it is **declared**, the way
+    // the online bit's absence is below, and not asserted away. It used to be an
+    // assertion, which was right while the only series walked was the 2026 one that
+    // carries six qualifying windows: it could only go off on a machine that had that
+    // series and had lost most of it. Now that a 638-era series is walked too, the same
+    // assertion fires on a perfectly ordinary machine — this one, where the whole `rep_`
+    // series offers exactly one window with a single winner and a single new mark. The
+    // warning is what the skip keeps: on a series that does reach 2026, this line
+    // appearing at all is the regression.
+    if agreed < 2 {
+        test_support::skip(&format!(
+            "only {agreed} window(s) pin a base by identity across {} series: a base off \
+             by one would not be noticed by this property here",
+            SERIES.len()
+        ));
+    }
 }
 
 /// The converse of the property above, and the reason the columns are worth having: on
@@ -149,29 +170,32 @@ fn the_character_that_won_is_the_character_whose_mark_appeared() {
 /// never move would satisfy the property above trivially — this is what keeps it honest.
 #[test]
 fn the_three_located_columns_are_not_dead_cells() {
-    let files = dated_series(SERIES);
-    let Some(last) = files.last().and_then(|p| counters(p)) else {
-        return; // already declared on stderr
-    };
-    for (column, boss, kill_index) in KILLS {
-        let started = (0..CHARACTERS.len())
-            .filter_map(|row| counter_index(row, column))
-            .filter(|&i| last.get(i).is_some_and(|&v| v != 0))
-            .count();
-        let kills = last.get(kill_index).copied().unwrap_or(0);
-        assert!(
-            started > 0,
-            "no {boss} mark on the most recent save, yet the column is declared located"
-        );
-        assert!(
-            started as u32 <= kills,
-            "{boss}: {started} characters carry the mark but only {kills} kills are \
-             recorded at {kill_index}"
-        );
-        assert_eq!(
-            BOSSES[column], boss,
-            "the column order moved: this table names it by position"
-        );
+    for suffix in SERIES {
+        let series = series_of(suffix);
+        let Some((name, last)) = series.last() else {
+            continue; // already declared on stderr
+        };
+        for (column, boss, kill_index) in KILLS {
+            let started = (0..CHARACTERS.len())
+                .filter_map(|row| counter_index(row, column))
+                .filter(|&i| last.get(i).is_some_and(|&v| v != 0))
+                .count();
+            let kills = last.get(kill_index).copied().unwrap_or(0);
+            assert!(
+                started > 0,
+                "{name}: no {boss} mark on the most recent save of the *.{suffix} \
+                 series, yet the column is declared located"
+            );
+            assert!(
+                started as u32 <= kills,
+                "{name}: {boss}: {started} characters carry the mark but only {kills} \
+                 kills are recorded at {kill_index}"
+            );
+            assert_eq!(
+                BOSSES[column], boss,
+                "the column order moved: this table names it by position"
+            );
+        }
     }
 }
 
@@ -185,9 +209,20 @@ fn the_three_located_columns_are_not_dead_cells() {
 /// marks the ordinary way and leaves bit 2 alone. So bit 2 reads **won online**.
 ///
 /// The property below is the structural half of that reading, and the half a sample can
-/// still check once the logs are gone: an online clear is also a clear, so bit 2 can
-/// never stand without bit 0. Values 4 and 6 must not exist. If one ever does, "won
-/// online" is the wrong name and the tooltip has to go back to saying so.
+/// still check once the logs are gone: no located cell has ever held 4 or 6, so bit 2 has
+/// never been seen standing without bit 0. If one ever does, "won online" is the wrong
+/// name and the tooltip has to go back to saying so.
+///
+/// **The reason written here used to be "an online clear is also a clear, so bit 2 can
+/// never stand without bit 0", and that reason was wrong** — corrected 2026-09-17 with
+/// B58. It reads bit 0 as *the* cleared bit, and the 638-era series says it is not: four
+/// located cells go **1 → 2** across it (`Isaac × Greed` and `Cain × Greed` on 2024-02-23,
+/// `Isaac × TheLamb` and `BlueBaby × BossRush` on 2024-01-29), which is bit 0 going out as
+/// bit 1 comes in. A mark is not a set of flags that accumulate; a higher value replaces a
+/// lower one, and 2 without 0 is an ordinary cell, not a contradiction. So the absence of
+/// 4 and 6 is an **observation held over every sample**, which is worth pinning, and not a
+/// law derived from what the bits mean — nobody has measured what they mean outside Greed,
+/// and B22 is where that is owed.
 ///
 /// A series holding no bit 2 at all makes that property vacuous, and a vacuous property
 /// reports coverage it does not have — so the absence is **declared**, not asserted away.
@@ -198,47 +233,42 @@ fn the_three_located_columns_are_not_dead_cells() {
 /// which is every second machine. What the skip keeps is the warning — on a series that
 /// does reach the era, this line appearing at all is the regression.
 #[test]
-fn the_online_bit_never_stands_without_the_cleared_bit() {
-    let files = dated_series(SERIES);
-    if files.is_empty() {
-        return; // `dated_series` has already said why on stderr
-    }
-    let (mut checked, mut online) = (0, 0);
-    for path in &files {
-        let Some(values) = counters(path) else {
-            continue;
-        };
-        let name = path.file_name().unwrap_or_default().to_string_lossy();
-        for (row, (character, _)) in CHARACTERS.iter().enumerate() {
-            for (column, boss) in BOSSES.iter().enumerate() {
-                let Some(v) = counter_index(row, column).and_then(|i| values.get(i)) else {
-                    continue;
-                };
-                checked += 1;
-                online += u32::from(v & 4 != 0);
-                assert!(
-                    v & 4 == 0 || v & 1 != 0,
-                    "{name}: {character} × {boss} holds {v}, which sets the online bit \
-                     without the cleared bit. A run cannot be won online and not won.",
-                );
+fn the_online_bit_never_stands_without_the_first_level_bit() {
+    let (mut checked, mut online, mut read) = (0, 0, 0);
+    for suffix in SERIES {
+        let series = series_of(suffix);
+        read += series.len();
+        for (name, values) in &series {
+            for (row, (character, _)) in CHARACTERS.iter().enumerate() {
+                for (column, boss) in BOSSES.iter().enumerate() {
+                    let Some(v) = counter_index(row, column).and_then(|i| values.get(i)) else {
+                        continue;
+                    };
+                    checked += 1;
+                    online += u32::from(v & 4 != 0);
+                    assert!(
+                        v & 4 == 0 || v & 1 != 0,
+                        "{name}: {character} × {boss} holds {v}, which sets the online \
+                         bit with bit 0 clear — a value of 4 or 6, which no sample has \
+                         ever held. Either \"won online\" is the wrong name for bit 2, or \
+                         the tables are addressing something that is not a mark.",
+                    );
+                }
             }
         }
+    }
+    if read == 0 {
+        return; // `dated_series` has already said why on stderr
     }
     assert!(
         checked > 0,
         "no mark cell was read: the series is there but the tables no longer address it"
     );
     if online == 0 {
-        let latest = files
-            .last()
-            .and_then(|p| p.file_name())
-            .unwrap_or_default()
-            .to_string_lossy()
-            .into_owned();
         test_support::skip(&format!(
-            "no cell sets bit 2 in the {} sample(s) of the *.{SERIES} series (latest \
-             {latest}): the online bit held vacuously and checked nothing",
-            files.len()
+            "no cell sets bit 2 in the {read} sample(s) across {} series: the online bit \
+             held vacuously and checked nothing",
+            SERIES.len()
         ));
     }
 }
