@@ -124,6 +124,18 @@ zero everywhere except the bestiary, which makes it the clean instrument the ele
 expectation written an hour earlier. **B62 closed** with migration 5, the one entry in this file
 that was waiting on an approval rather than on a machine or on an idea.
 
+**And on 2026-09-17 the top of the board was stale twice in a row.** B3 was picked up as the next
+entry and two of its three halves turned out to be closed already — the items are the Collection,
+the "search inside a list" is 3.10's filter bar — leaving only the challenges, which became 3.11.
+The entry immediately under it, B6, is **built in full** across 3.7a, 3.7b and 3.7c, and what
+holds it open is the window nobody has opened, which lives in `docs/STATUS.md` and not here: its
+card moved to `UAT` without a line of code. Neither entry had been re-read since it was written —
+B3 is from 2026-09-05 and still asked for TanStack Table, which 3.3a had declined for a measured
+reason.
+**The defence is cheap and it is what happened here**: read the entry against the code before
+designing anything. A position in a list is a priority somebody set on a day, and the work done
+since can have overtaken it.
+
 The `a measurement` tag is the same subject as *"What only a machine with the game can answer"* in
 `docs/STATUS.md`, which collects the ones that are instruments rather than entries. Closed entries
 carry no tag: nobody goes looking for a task that is done.
@@ -159,7 +171,7 @@ confirmation:
 
 ---
 
-## B6 — Multiple tabs and session restore (implementation, after design)
+## B6 — Multiple tabs and session restore (implementation, after design) built across 3.7a, 3.7b and 3.7c on 2026-09-16, **not yet seen in a window**
 
 **Needs:** nothing, then a window — tabs and the session document are `ui` and `store`; whether a restart reopens what you had is seen, not asserted.
 
