@@ -57,6 +57,11 @@ list until 2026-09-15: `log-watch` has had a row in the table below since it lan
 
 ## Modules
 
+**Drawn, in [`docs/architecture.md`](docs/architecture.md)**: four diagrams — the data flow from
+the disk to the screens, the crate graph, the fourteen routes with the commands behind each, and
+the build. It is the state and not the design, so it is wrong the moment a crate or a route
+moves; the table below stays the authority on *what a module is for*.
+
 | Module | Responsibility |
 |---|---|
 | `discovery` | Finds Steam, the game, the saves. Manual fallback at every step. |
