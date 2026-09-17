@@ -40,6 +40,7 @@ export const en: MessageSchema = {
     unlock: 'Unlock',
     plan: 'Plan',
     collection: 'Collection',
+    challenges: 'Challenges',
     runs: 'Runs',
     live: 'Live',
     floor: 'Floor',
@@ -213,6 +214,56 @@ export const en: MessageSchema = {
         '{count} log lines were not understood: the runs holding them may be incomplete.',
       noCatalog:
         'The game is not installed: items carry their number and not their name.',
+    },
+  },
+  challenges: {
+    intro:
+      'The game’s 45 challenges: which ones you have finished, what it takes to open them and what they unlock. The conditions — who you play as, how far you go, whether it is blindfolded — come from the wiki; each challenge’s page has the rest.',
+    rows: 'challenges',
+    search: 'search a challenge or its number',
+    state: {
+      done: 'done',
+      available: 'to do',
+      blocked: 'blocked',
+      unknown: 'unreadable',
+    },
+    blockedBy: 'blocked by {count}',
+    facet: {
+      state: 'State',
+      character: 'Character',
+      rewards: 'Unlocks',
+      blindfolded: 'Blindfolded',
+    },
+    rewardsSome: 'unlocks something',
+    rewardsNone: 'unlocks nothing',
+    blindfoldedYes: 'blindfolded',
+    blindfoldedNo: 'not blindfolded',
+    blindfolded: 'blindfolded',
+    noCondition: 'we do not know',
+    unlocksNothing: 'unlocks nothing',
+    unnamedReward: 'achievement {id}',
+    columns: {
+      number: '#',
+      challenge: 'Challenge',
+      character: 'Character',
+      goal: 'Goal',
+      state: 'State',
+    },
+    empty: 'No challenge to show.',
+    noResults: 'No challenge matches these filters.',
+    diagnostics: {
+      noCatalogTitle: 'We cannot find the game',
+      noCatalog:
+        'The challenges live in the game’s own files: without them we know how many you have finished, not which. Install The Binding of Isaac from Steam and reopen the app.',
+      noChallengesSectionTitle:
+        'The save does not say which challenges you finished',
+      noChallengesSection:
+        'The section holding the challenges could not be read: every challenge is listed below, and none of them can say whether you have done it.',
+      noAchievementSectionTitle: 'The save does not say what you have unlocked',
+      noAchievementSection:
+        'Without the achievements we do not know which challenges are already open, nor which rewards you already hold.',
+      noWiki:
+        'The wiki dataset did not load: the challenges stay, without their character, goal and blindfold.',
     },
   },
   collection: {

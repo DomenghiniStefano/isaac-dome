@@ -130,18 +130,32 @@ carry no tag: nobody goes looking for a task that is done.
 
 ---
 
-## B3 — Lists and search: challenges and items (implementation, after design)
+## B3 — Lists and search: challenges and items (implementation, after design) ✅ closed on 2026-09-17, built and **not yet seen against the game's own menu**
 
-**Needs:** the game — it lists challenges and items, and both come out of the catalog the game's XML builds.
+**Closed as sub-project 3.11.** Spec `docs/superpowers/specs/2026-09-17-challenges-screen-design.md`,
+plan `docs/superpowers/plans/2026-09-17-challenges-screen.md`, report
+`docs/superpowers/reports/2026-09-17-challenges-report.md`.
 
-Logged on 2026-09-05. The data is there; what's missing is the IPC commands that list challenges and
-items with B1's fields and the filterable grid (TanStack Table) on the frontend side. It depends on the
-screen design, so it waits on the design system rather than on the handoff — which
-happened on 2026-09-09.
+**Two of its three halves were already closed, and nobody had read the entry since 2026-09-05.**
+The items are the Collection screen; "search inside a list" is the filter bar (3.10) — the entry
+was written before either existed, and it still asked for TanStack Table, which 3.3a had already
+declined for a measured reason. What was actually missing was the **challenges**: `core-save`
+read section 7 and `catalog` parsed `challenges.xml` with their rewards, and nothing in front of
+them. The app could say *"Godhead si sblocca con Sfida 33"* and had no way to say what Sfida 33
+was, whether you had done it, or what it took.
 
-The "search" in this entry is the **filter inside a list**; searching across the whole app is a different
-matter and is **B5**. The two meet only at the point where a global result opens the list
-already filtered.
+**What it took to believe it** — three measurements, one of which is deliberately *not* a
+confirmation:
+
+- **Challenge `n` is cell `n`, cell 0 unused.** 39 of 39 rows agree, 21 from one side and 18 from
+  the other; the off-by-one reading breaks 13 of the same 39. In `docs/save-format.md`, guarded by
+  `crates/ipc/tests/challenges_real.rs`, and the guard was mutated to check it goes red.
+- **The wiki has a page for all 45**, so every row can carry its conditions — with the guard for
+  the day that stops being true.
+- **Whether `unlocked_by` is "all of" or "any of" is undecided.** All 13 finished-and-gated
+  challenges have every gate done, which satisfies *both* readings. It is read as "all of", the
+  blocked rows **name** the achievements they wait for so the claim can be disbelieved, and the
+  measurement that would settle it is registered in `docs/STATUS.md`.
 
 ---
 

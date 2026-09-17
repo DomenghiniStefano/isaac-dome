@@ -5,6 +5,7 @@ import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import AppearanceScreen from '@/screens/AppearanceScreen.vue'
 import BackgroundScreen from '@/screens/BackgroundScreen.vue'
+import ChallengesScreen from '@/screens/ChallengesScreen.vue'
 import CollectionScreen from '@/screens/CollectionScreen.vue'
 import CompletionScreen from '@/screens/CompletionScreen.vue'
 import FloorScreen from '@/screens/FloorScreen.vue'
@@ -44,6 +45,7 @@ const screens: Partial<Record<RouteName, Component>> = {
   [RouteName.Unlock]: UnlockScreen,
   [RouteName.Plan]: PlanScreen,
   [RouteName.Collection]: CollectionScreen,
+  [RouteName.Challenges]: ChallengesScreen,
   [RouteName.Live]: LiveScreen,
   [RouteName.Runs]: RunsScreen,
   [RouteName.Floor]: FloorScreen,

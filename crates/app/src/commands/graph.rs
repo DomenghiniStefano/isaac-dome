@@ -105,3 +105,26 @@ pub fn want(
         icon_url,
     ))
 }
+
+/// The forty-five challenges for the active profile. Wiring only: the join is `ipc`'s, and
+/// the section's own length is what the totals state — never the constant 46.
+#[tauri::command]
+pub fn challenges(
+    app: AppHandle,
+    state: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+) -> Result<ipc::ChallengesView, IpcError> {
+    let (_, save) = active_save(&app)?;
+    // Game not installed is expected: the view goes out without a catalog and says so.
+    let resources = resources.get();
+    let catalog = resources.and_then(|rs| state.get_or_build(rs));
+    let challenges = save.flags(Kind::Challenges);
+    let achievements = save.flags(Kind::Achievements);
+    Ok(ipc::challenges_view(
+        catalog,
+        wiki::Dataset::embedded().ok(),
+        challenges.as_deref(),
+        achievements.as_deref(),
+        icon_url,
+    ))
+}

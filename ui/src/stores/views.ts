@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import type { Ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
+import { challenges } from '@/lib/ipc/challenges'
 import { collection } from '@/lib/ipc/collection'
 import { tracked } from './tracked'
 import { graphViews } from '@/lib/ipc/graph'
@@ -15,7 +16,7 @@ import type {
   LiveView,
   RunsView,
 } from '@/lib/ipc/types'
-import type { CollectionView } from '@/lib/ipc/types'
+import type { ChallengesView, CollectionView } from '@/lib/ipc/types'
 
 export interface ViewStore<T> {
   view: Ref<T | null>
@@ -51,6 +52,12 @@ export const defineViewStore = <T>(id: StoreId, read: () => Promise<T>) =>
 export const useCollectionStore = defineViewStore<CollectionView>(
   StoreId.Collection,
   collection,
+)
+
+// The active profile's forty-five challenges.
+export const useChallengesStore = defineViewStore<ChallengesView>(
+  StoreId.Challenges,
+  challenges,
 )
 
 // The active profile's completion matrix.

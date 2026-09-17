@@ -219,6 +219,12 @@ pub fn render() -> String {
     decl::<crate::CollectionTotals>(&cfg, &mut out);
     decl::<crate::CollectionDiagnostic>(&cfg, &mut out);
     decl::<crate::CollectionView>(&cfg, &mut out);
+    decl::<crate::ChallengeStateView>(&cfg, &mut out);
+    decl::<crate::RewardView>(&cfg, &mut out);
+    decl::<crate::ChallengeRow>(&cfg, &mut out);
+    decl::<crate::ChallengeTotals>(&cfg, &mut out);
+    decl::<crate::ChallengesDiagnostic>(&cfg, &mut out);
+    decl::<crate::ChallengesView>(&cfg, &mut out);
     decl::<crate::Settings>(&cfg, &mut out);
     decl::<crate::AutostartReason>(&cfg, &mut out);
     decl::<crate::AutostartFailure>(&cfg, &mut out);

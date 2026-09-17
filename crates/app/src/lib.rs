@@ -101,6 +101,7 @@ pub fn run() {
             wiki::search,
             graph::graph_views,
             graph::collection,
+            graph::challenges,
             graph::want,
             queue::queue,
             queue::queue_add,
