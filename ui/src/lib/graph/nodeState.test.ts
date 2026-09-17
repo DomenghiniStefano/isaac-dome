@@ -1,12 +1,14 @@
 import { describe, expect, it } from 'vitest'
 import { graphAnswers } from '@/lib/ipc/fixtures/graph'
 import type { GraphInfo, UnlockNode } from '@/lib/ipc/types'
+import { stateRowCounts } from '@/lib/facets/facetOptions'
+import { FacetId, unlockFaceting } from '@/lib/graph/unlockFacets'
 import {
   NodeState,
   RequirementKind,
   missingGroups,
   nodeState,
-  stateCounts,
+  stateOrder,
 } from './nodeState'
 
 const computed = (availableNow: boolean): GraphInfo => ({
@@ -66,10 +68,21 @@ describe('nodeState', () => {
   })
 })
 
-describe('stateCounts on the reference profile', () => {
+describe('the state row on the reference profile', () => {
+  // The four numbers of the committed payload, through the path the bar actually walks since
+  // 3.10: the screens' own tally is gone, and these numbers are the fixture's shape rather than
+  // that function's, so they are pinned where they are now read.
   it('counts the four states of the committed payload', () => {
     const { unlock } = graphAnswers({ withArt: false, withCatalog: true })
-    expect(stateCounts(unlock.nodes)).toEqual({
+    expect(
+      stateRowCounts(
+        unlockFaceting,
+        unlock.nodes,
+        unlockFaceting.empty(),
+        FacetId.State,
+        stateOrder,
+      ),
+    ).toEqual({
       [NodeState.Done]: 387,
       [NodeState.Now]: 119,
       [NodeState.Blocked]: 117,

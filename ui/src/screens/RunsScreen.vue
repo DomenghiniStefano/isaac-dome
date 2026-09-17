@@ -17,7 +17,11 @@ import type { RunView } from '@/lib/ipc/types'
 import { runsEntries } from '@/lib/diagnostics/runs'
 import { orderRuns } from '@/lib/runs/runOrder'
 import { runKey } from '@/lib/runs/runKey'
-import { RunFacet, outcomeCounts, outcomeOrder, runFaceting } from '@/lib/runs/runFacets'
+import {
+  RunFacet,
+  outcomeOrder,
+  runFaceting,
+} from '@/lib/runs/runFacets'
 import {
   barLabels,
   facetTitle,
@@ -77,11 +81,6 @@ const totals = computed(() => store.view?.totals ?? null)
 
 const valueLabel = (facet: RunFacet, value: string) =>
   facetValueLabel(t, facet, value)
-
-// The state row counts the archive, over every run; a facet's own counts are over what the
-// other facets leave. The KPI tiles above say the first number too, and the two part company
-// the moment anything is picked — which is what the row is for.
-const counts = computed(() => outcomeCounts(all.value))
 
 const setPicks = (facet: RunFacet, picked: string[]) => {
   filter.value = {
@@ -145,7 +144,6 @@ const select = (run: RunView) => {
           :state="{
             facet: RunFacet.Outcome,
             order: outcomeOrder,
-            counts,
             dot: outcomeDot,
             text: outcomeTextByKind,
           }"

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { createFaceting, emptyFilter } from './faceting'
-import { facetOptions, foldStartsOpen } from './facetOptions'
+import { facetOptions, foldStartsOpen, stateRowCounts } from './facetOptions'
 import type { FacetSlot } from './facetOptions'
 
 // Two facets over three rows, which is the smallest shape that has a value nobody can reach:
@@ -63,6 +63,42 @@ describe('facetOptions', () => {
     // And the value that *does* have rows behind it is still offered: the rule drops what is
     // empty, never what the reader could still reach.
     expect(options.map((o) => o.value)).toEqual(['passive', 'trinket'])
+  })
+})
+
+describe('stateRowCounts', () => {
+  const order = ['passive', 'trinket', 'familiar']
+
+  // Every value of the row always has a number, including one no row answers: a control whose
+  // squares appear and disappear with the data moves under the reader's cursor.
+  it('gives a value nobody has a zero rather than leaving it out', () => {
+    expect(stateRowCounts(faceting, rows, empty(), Facet.Kind, order)).toEqual({
+      passive: 2,
+      trinket: 1,
+      familiar: 0,
+    })
+  })
+
+  // The state row sits in the same bar as the dropdowns and has to say the same kind of thing:
+  // what is left once the rest of the filter is applied (spec 3.10 §5, corrected 2026-09-17).
+  it('counts what the other facets leave', () => {
+    const filter = { ...empty(), picks: { pool: ['shop'], kind: [] } }
+    expect(stateRowCounts(faceting, rows, filter, Facet.Kind, order)).toEqual({
+      passive: 0,
+      trinket: 1,
+      familiar: 0,
+    })
+  })
+
+  // …and never counts itself: a row where picking one value zeroed the others could never be
+  // used to pick a second one, which is the whole point of a multiple state control.
+  it('ignores its own picks, so a second value can still be reached', () => {
+    const filter = { ...empty(), picks: { pool: [], kind: ['passive'] } }
+    expect(stateRowCounts(faceting, rows, filter, Facet.Kind, order)).toEqual({
+      passive: 2,
+      trinket: 1,
+      familiar: 0,
+    })
   })
 })
 

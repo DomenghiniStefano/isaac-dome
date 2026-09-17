@@ -11,7 +11,11 @@ import {
   ToggleGroupType,
 } from '@/components/ui/toggle-group'
 import { useMessages } from '@/i18n'
-import { facetOptions, foldStartsOpen } from '@/lib/facets/facetOptions'
+import {
+  facetOptions,
+  foldStartsOpen,
+  stateRowCounts,
+} from '@/lib/facets/facetOptions'
 import type { FacetSlot } from '@/lib/facets/facetOptions'
 import type { FacetFilter, Faceting } from '@/lib/facets/faceting'
 import StateToggle from './StateToggle.vue'
@@ -39,13 +43,12 @@ const props = defineProps<{
   filter: FacetFilter<Facet>
   // The facets, in order, each marked as in view at rest or behind the fold.
   facets: FacetSlot<Facet>[]
-  // The filter that matters more than the others (DESIGN-BRIEF.md §6). Its counts are over
-  // *every* row, not over what the other facets leave: that is a different question, and the
-  // bar must not answer one with the other.
+  // The filter that matters more than the others (DESIGN-BRIEF.md §6). The screen brings what
+  // its states are, what they are called and what colour each square carries; the numbers are
+  // the bar's, counted exactly like a dropdown's — see `stateRowCounts`.
   state: {
     facet: Facet
     order: string[]
-    counts: Record<string, number>
     dot: Record<string, string>
     text: Record<string, Label>
   }
@@ -72,6 +75,16 @@ watch(
   (must) => {
     if (must) open.value = true
   },
+)
+
+const stateCounts = computed(() =>
+  stateRowCounts(
+    props.faceting,
+    props.rows,
+    props.filter,
+    props.state.facet,
+    props.state.order,
+  ),
 )
 
 const inView = computed(() => props.facets.filter((slot) => slot.inView))
@@ -127,7 +140,7 @@ const drop = (facet: Facet, value: string) =>
     </div>
     <StateToggle
       :order="state.order"
-      :counts="state.counts"
+      :counts="stateCounts"
       :picked="filter.picks[state.facet]"
       :dot="state.dot"
       :text="state.text"

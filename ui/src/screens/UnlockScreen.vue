@@ -14,7 +14,7 @@ import { useMessages } from '@/i18n'
 import { singleQuery } from '@/lib/search/queryParam'
 import { emptyList, isFiltering } from '@/lib/facets/emptyList'
 import { characterForms } from '@/lib/graph/characterName'
-import { stateCounts, stateOrder } from '@/lib/graph/nodeState'
+import { stateOrder } from '@/lib/graph/nodeState'
 import {
   barLabels,
   facetTitle,
@@ -99,7 +99,6 @@ const sort = computed({
 })
 
 const nodes = computed(() => graph.view?.unlock.nodes ?? [])
-const counts = computed(() => stateCounts(nodes.value))
 // The character facet's labels: the value is an id, the name is read from the nodes.
 const characters = computed(() => characterForms(nodes.value))
 
@@ -176,7 +175,6 @@ const reset = () => {
           :state="{
             facet: FacetId.State,
             order: stateOrder,
-            counts,
             dot: stateDot,
             text: stateText,
           }"
