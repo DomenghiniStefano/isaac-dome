@@ -4,11 +4,8 @@ import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import { oneOf } from '@/lib/oneOf'
 import { originLabel } from '@/components/facets/labels'
-import type {
-  DrawerLabels,
-  ToolbarLabels,
-  Translate,
-} from '@/components/facets/labels'
+import type { FilterBarLabels, Translate } from '@/components/facets/labels'
+import type { FacetSlot } from '@/lib/facets/facetOptions'
 import {
   CollectionFacet,
   CollectionSort,
@@ -75,12 +72,13 @@ export const itemStateDot: Record<ItemState, string> = {
     'hatch-unknown border border-dashed border-state-unknown',
 }
 
-// The facets the drawer holds: the state has its own control above the table.
-export const drawerFacets: CollectionFacet[] = [
-  CollectionFacet.Quality,
-  CollectionFacet.Pool,
-  CollectionFacet.Kind,
-  CollectionFacet.Origin,
+// Which filters are on screen at rest and which are behind the fold (spec 3.10 §3). The state
+// is not one of these: it has its own row, and reaches the bar as its `state` prop.
+export const collectionSlots: FacetSlot<CollectionFacet>[] = [
+  { facet: CollectionFacet.Quality, inView: true },
+  { facet: CollectionFacet.Pool, inView: false },
+  { facet: CollectionFacet.Kind, inView: false },
+  { facet: CollectionFacet.Origin, inView: false },
 ]
 
 export const sortOrder: CollectionSort[] = [
@@ -95,16 +93,8 @@ export const sortText: Record<CollectionSort, MessageKey<MessageSchema>> = {
   [CollectionSort.Name]: 'collection.sort.name',
 }
 
-export const toolbarLabels: ToolbarLabels = {
+export const barLabels: FilterBarLabels = {
   rows: 'collection.items',
   search: 'collection.search',
   sortBy: 'collection.sortBy',
-  activeFilters: 'collection.activeFilters',
-}
-
-export const drawerLabels: DrawerLabels = {
-  facets: 'collection.facets',
-  activeFilters: 'collection.activeFilters',
-  noFilters: 'collection.noFilters',
-  reset: 'collection.reset',
 }
