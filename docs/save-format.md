@@ -90,6 +90,15 @@ depends on the section.
 > **not** settle: cell 2 also rose by one with no cutscene 2 in the surviving log, and cell 1
 > did not move although the Intro played — so it is not plainly "cutscene N at index N".
 
+> **Section 7: challenge `n` is cell `n`, and cell 0 is unused** — measured 2026-09-17, so the
+> 46 cells are `challenges.xml`'s 45 challenges plus an index nobody fills, the same shape as
+> section 3's stages. The instrument is the catalog's own reward link: finishing a challenge
+> grants a known set of achievements, so "the cell is set" and "every reward achievement is done"
+> have to agree. On `20260915` they agree on **39 of 39** judged rows — **21 of them both true
+> and 18 both false**, which is what makes the agreement a result and not an empty row of
+> zeroes — while the off-by-one reading breaks 13 of the same 39.
+> `cargo run -p ipc --example probe_challenges` is the instrument.
+
 > **The game reads ELEVEN chunks and we parse TEN sections**, and nothing yet explains the
 > gap. Loading a profile it prints, in order: Achievements, Counters, Level Counters,
 > Collectibles, Mini Bosses, Bosses, Challenge Counters, Cutscene Counters, GameSettings,
