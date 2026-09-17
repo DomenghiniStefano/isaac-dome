@@ -72,19 +72,30 @@ fn a_series_never_regresses_and_at_least_one_window_moves() {
 
 #[test]
 fn the_two_editions_declare_different_totals_and_the_later_one_declares_more() {
+    // **A series is not an era.** This test used to require one declared total per series, and
+    // that is the very thing the module's own header says a patch moves: the June 2025 `rep+`
+    // saves declare 641 and the 2026 ones 642 (`docs/save-format.md`). It held only while
+    // `samples/` happened to stop short of the patch — a fixture of a machine, asserted as a
+    // property. What holds over any series is that the declared total never *shrinks*: a patch
+    // adds an achievement, it does not take one away.
     let declared = |suffix: &str| -> Option<u32> {
         let all: Vec<u32> = previews(suffix)
             .iter()
             .filter_map(|p| read(p.achievements))
             .map(|(_, of)| of)
             .collect();
-        let first = *all.first()?;
-        assert!(
-            all.iter().all(|&of| of == first),
-            "{suffix}: one series, two declared totals"
-        );
-        Some(first)
+        for pair in all.windows(2) {
+            assert!(
+                pair[1] >= pair[0],
+                "{suffix}: declares {} and then {}",
+                pair[0],
+                pair[1]
+            );
+        }
+        all.last().copied()
     };
+    // The latest of each series, which is where the two editions are furthest apart and the
+    // comparison this test exists for is sharpest.
     match (declared(SERIES[0]), declared(SERIES[1])) {
         (Some(rep), Some(rep_plus)) => assert!(
             rep_plus > rep,

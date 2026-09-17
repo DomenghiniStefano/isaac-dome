@@ -56,7 +56,19 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
       counters labeled, marks matrix rebuilt, log verified.
 - [ ] **M1 — Rust parser, discovery, unpack, Completion screen** ← in progress, and what keeps it
       open is now the wiki polish listed under `wiki` — and **the window nobody has opened on any
-      of it**. **B17's welcome flow landed on 2026-09-17 as sub-project 3.8**, with B14 folded
+      of it**.
+      **3.9 landed on 2026-09-17**, the evening of the same day: the Completion screen counts
+      twice. B22's item 4 — the matrix's two number columns, each over the cells it can read —
+      and B23 — the strip is three tiles and no longer counts cells — closed together, because
+      they are one design pass and the entries say so. Plan
+      `docs/superpowers/plans/2026-09-17-completion-columns.md`, report
+      `docs/superpowers/reports/2026-09-17-completion-columns-report.md`.
+      **`Schermate.dc.html` had one column**, so there was nothing to copy: the shape is the
+      sub-project's own, and the one defect of it was found by a browser rather than by a test —
+      the group header's totals landed 130px past their own columns, because a flex row's
+      `ml-auto` ends at the container and the container is wider than the tracks. Nothing red,
+      and nothing a unit test can see.
+      **B17's welcome flow landed on 2026-09-17 as sub-project 3.8**, with B14 folded
       into the same branch: the app opens by asking which save you are playing with and showing
       what each one holds, a full-screen takeover that is a **state above the router** and never a
       route — here a route is a tab, and 3.7b's session document would have saved and restored it.
@@ -701,7 +713,10 @@ done* — three of its seven were, and nobody knew until somebody stood at the m
 **46 in nine groups on 2026-09-17**, when 3.8 added six of its own: the growth keeps being the
 point, and the new group is the first one a *browser* can answer most of — `pnpm ui:dev` draws the
 welcome's every state with no game, no save and no Tauri, and only its last two lines need the
-real window.
+real window. **50 in ten groups the same evening**, with 3.9's four — and that group is the first
+whose sub-project **already looked**: a browser found and fixed an alignment defect there before
+the lines were written, which is why there are four of them and not eight. Looking early does not
+empty this list, it shortens it.
 
 **This is the live list; the reports are the record.** Each line below was written by the
 sub-project that produced it and is unticked *there* too, but a report is true on its day and is
@@ -742,6 +757,26 @@ in `crates/app/tauri.conf.json`).
       back holding the same runs it held, and the totals must not move. If a run is missing after
       that, the fold lost it — and the cache that would have hidden the loss is exactly what the
       version bump threw away.
+
+### The Completion screen's two columns (3.9, B22 item 4 and B23)
+
+**The group that was looked at first**: `pnpm ui:dev` with `?fixture=active` drew every state
+this sub-project produces, and it found the one defect — the group header's totals landing past
+their own columns — before the branch was merged. What is left is what a fixture cannot reach
+and what a person has to judge.
+
+- [ ] **a save with an unreadable section**: the pair reads `0/0` in the faint colour and not as
+      a finished row. The tone is pinned by a test and no fixture draws it on screen — only a
+      profile whose section is missing does
+- [ ] the matrix in a narrow window: the card scrolls sideways and the two columns stay attached
+      to the last boss instead of drifting away from it
+- [ ] **does the footer's two rows read as one statement?** `Personaggi con il marchio` and
+      `Di cui in hard` — a judgement, and it is the owner's. The alternative was two numbers
+      stacked inside each 40px column, which fits and says nothing about which is which
+- [ ] **far down the matrix, nothing says which of the two columns you are reading.** Whether
+      that wants a sticky heading is a design call nobody has made, and it only shows up on a
+      screen shorter than 34 rows
+      → `docs/superpowers/reports/2026-09-17-completion-columns-report.md`
 
 ### The welcome flow (3.8, with B14) — the first thing a stranger meets
 

@@ -819,13 +819,33 @@ half already is, by `the_online_bit_never_stands_without_the_cleared_bit` in
 
 ---
 
-## B22 — Two counts per row: normal and hard, where hard implies normal (implementation, `ipc` and `ui`) items 1–3 done on 2026-09-17
+## B22 — Two counts per row: normal and hard, where hard implies normal (implementation, `ipc` and `ui`) ✅ closed on 2026-09-17, built and **not yet seen in a window**
 
-**Items 1, 2 and 3 landed on 2026-09-17. Item 4 — the layout — is what is left**, and it is
-left because it is the only part that needs something nobody here has: the two number columns
-come from `Schermate.dc.html`, and judging them needs a window.
+**Items 1, 2 and 3 landed on 2026-09-17 in the morning; item 4 the same evening**, with B23,
+report `docs/superpowers/reports/2026-09-17-completion-columns-report.md`.
 
-What landed:
+**What item 4 turned out to be, and what it was not.** The entry said "layout from
+`Schermate.dc.html`" — that file has **one** total column, so there was no layout to copy and
+the shape is a decision this sub-project took: each column carries **its own denominator**
+(`12/12 · 12/12`, which is what this entry's own "Done when" writes), the group header became
+the matrix's own grid so its two numbers land *under* their headings, and the footer became
+**two rows** rather than two numbers stacked in a 40px column — the name column was already
+there to say which row is which, and it states the relation the pair exists for.
+
+**One thing only a browser could say, and it changed the markup.** The group header was a flex
+row ending in `ml-auto`, which lands at the *container's* right edge; the container is
+`min-w-full` so the rows paint the whole card, and it is wider than the tracks. The numbers sat
+some 130px past their own columns — invisible in every test, obvious in the first screenshot.
+It is a grid now, with everything that is not a total sharing one cell (`col-start-1
+-col-end-3`).
+
+**And the colour moved from the row to the number.** It was `tally.complete` — hard everywhere
+— painted on the single slot; it is now per number, so a number that fills its denominator is
+done and `0/0` is unreadable rather than finished. Isaac reads full at normal and short at
+hard, which is exactly what he is. The `0/0` guard is a test, not a hope: an equality alone
+calls an unreadable row complete.
+
+What landed earlier the same day:
 
 - **The reading.** `CellStatus.Both` is gone. A cell with bit 1 is `Hard`, whatever bit 0
   says, and the tooltip says "hard" once — `completion.cell.both` is deleted in both
@@ -848,9 +868,9 @@ What landed:
   denominator — because `both` could not survive `CellStatus.Both`. That tile counted the
   overlap of a set with its own superset.
 
-What the grid does **until item 4**: the pair lives in the one number slot the grid already
-has, as `normal/readable · hard`. It is truthful and it is not the layout; the second column
-is item 4's.
+What the grid did **until item 4**: the pair lived in the one number slot the grid already
+had, as `normal/readable · hard`. It was truthful and it was not the layout; the second column
+is item 4's, and it is there now.
 
 **Needs:** a real save — "hard implies normal" is logic over bits, but the two counts per row are only answerable against a profile.
 
@@ -899,10 +919,10 @@ number:
    pinned). The struck name is the entry's own error, kept because it is worth knowing why
    it was harmless: `CharacterRow` has no count at all, the frontend tallies `row.cells`
    itself, so the wire only ever carried the whole-matrix totals.
-4. **The grid** — **the one still open**: two number columns on the right of every row, two
-   in the group header, two per boss in the footer. Layout from `Schermate.dc.html`, which
-   today has one column. The KPI strip **is** split already: `both` could not outlive
-   `CellStatus.Both`, so it went with item 1 rather than waiting here.
+4. ✅ **The grid**: two number columns on the right of every row, two in the group header, two
+   rows in the footer — `Schermate.dc.html` has one column, so the shape was decided here and
+   not copied (see the head of this entry). The KPI strip was split already: `both` could not
+   outlive `CellStatus.Both`, so it went with item 1 rather than waiting here.
 
 ### Done when
 
@@ -912,7 +932,27 @@ expected number from the previous single count.
 
 ---
 
-## B23 — The Completion KPIs: no "120 celle", no "40 non leggibili" (implementation, after design, with B20 and B22)
+## B23 — The Completion KPIs: no "120 celle", no "40 non leggibili" (implementation, after design, with B20 and B22) ✅ closed on 2026-09-17, built and **not yet seen in a window**
+
+**Closed with B22 item 4**, in the same pass and the same branch, report
+`docs/superpowers/reports/2026-09-17-completion-columns-report.md`. The strip is **three**
+tiles: marks at normal, marks at hard, complete characters.
+
+**The fourth tile was offered by this entry and is declined.** "Characters complete at normal"
+would put back, on the same line, the number B22 had just taken away — the reference profile
+differs by exactly one character between the two readings (Isaac), and a strip holding both
+readings of the same word argues with itself. Three tiles, the same three facts the rows show.
+
+**Where the unreadable count went**, since this entry asks that it not vanish: it is a gap in
+our tables and not a fact about the player, so it stays where it happens — every group header
+prints its own (`6 non leggibili`, `34 non leggibili`), every unreadable cell says so, and
+`readable` is still on the model because the alert above the grid reads it. What left the
+model is `unknown` and `cells`, which no tile drew any more; a field nothing reads is the
+shape B42 is an entry about.
+
+**B20 is not a prerequisite and never was.** This entry reads as though it waits on the 40
+cells being closed; it does not — removing the tile is what stops the 40 from being reported
+as the player's progress, and closing them is B20's own business.
 
 **Needs:** a real save, then a window — the tiles are what the strip above the matrix reads, and the matrix needs a profile to have a number in it.
 
