@@ -131,6 +131,10 @@ pub enum Diagnostic {
     SteamNotFound,
     GameNotFound,
     NoSavesFound,
+    /// A folder was supplied through [`Options::save_dir`] and holds no save. Not
+    /// `NoSavesFound`: "we looked in the usual places" and "you pointed there, and there is
+    /// nothing there" are two sentences, and only one of them is about a choice the user made.
+    NoSavesInChosenFolder,
     /// The `io::ErrorKind` and not the message: the message is written by the OS, is not
     /// translatable, and on some platforms repeats the path it was given.
     UnreadablePath {
@@ -140,6 +144,17 @@ pub enum Diagnostic {
     MalformedManifest {
         path: PathBuf,
     },
+}
+
+/// Which "nothing found" this is. Pure, and public so it can be checked without a machine:
+/// `discover` reads whatever Steam and Documents happen to hold on the computer running it,
+/// so the decision is tested here and the scan only feeds it.
+pub fn no_saves(chosen_folder: bool) -> Diagnostic {
+    if chosen_folder {
+        Diagnostic::NoSavesInChosenFolder
+    } else {
+        Diagnostic::NoSavesFound
+    }
 }
 
 /// Entry point. Enumerates everything it finds; never chooses; never returns `Err`.
@@ -183,7 +198,7 @@ pub fn discover(opts: &Options) -> Discovery {
     }
 
     if saves.is_empty() {
-        diagnostics.push(Diagnostic::NoSavesFound);
+        diagnostics.push(no_saves(opts.save_dir.is_some()));
     }
 
     Discovery {

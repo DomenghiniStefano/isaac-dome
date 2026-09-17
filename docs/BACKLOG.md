@@ -462,7 +462,7 @@ Logged 2026-09-10, a list:
 
 ---
 
-## B14 — Choosing the game or saves folder by hand (implementation, cycle 3)
+## B14 — Choosing the game or saves folder by hand (implementation, cycle 3) ✅ closed on 2026-09-17, built and **not yet seen in a window**
 
 **Needs:** nothing, then a window — it is the *broken* chain it serves, which is this machine's normal state; the dialog plugin and a folder are all it takes.
 
@@ -473,6 +473,43 @@ salvataggi"). A button that does nothing is worse than none, so they wait for wh
 them work: the Tauri dialog plugin with its capability, a command that accepts a folder and
 hands back a `SetupState` (the path travels inward only, never back out), the chosen folder
 persisted in the settings file, and `discovery` trying it before its own search.
+
+**Closed on 2026-09-17**, inside 3.8 rather than on a branch of its own: the welcome's "nothing
+found" branch is where the two buttons belong, and shipping it without them would have been that
+very button. Report `docs/superpowers/reports/2026-09-17-welcome-flow-report.md`.
+
+Three things the entry did not know. **Half its backend already existed** — `discovery::Options`
+carried `game_dir` and `save_dir`, `scan_override` was written, and `SaveSource::Override` already
+reached the wire as `CandidateSource::Manual`. **No capability is needed**: the dialog is opened
+in Rust, and capabilities gate `invoke` from the webview, so the npm package is not installed
+either. And the folders **cannot live in `ipc::Settings`**, which crosses the IPC — they are in
+`settings_file::Stored`, whose `save` preserves them, so moving the scale slider cannot forget the
+folder you chose.
+
+**The case the entry did not name, and the app now does**: a folder you pointed at that holds no
+save is not "we found nothing". `discovery::Diagnostic::NoSavesInChosenFolder` and
+`MissingReason::NoSavesInChosenFolder` keep the two sentences apart, because only one of them is
+about a choice the reader made.
+
+It still owes the window, and it is the one line of 3.8 a browser cannot answer: a dialog is not
+a fixture.
+
+**Closed on 2026-09-17**, inside 3.8 rather than on a branch of its own: the welcome's "nothing
+found" branch is where the two buttons belong, and shipping it without them would have been that
+very button. Report `docs/superpowers/reports/2026-09-17-welcome-flow-report.md`.
+
+Three things it did not know. **Half its backend already existed** — `discovery::Options` carried
+`game_dir` and `save_dir`, `scan_override` was written, and `SaveSource::Override` already reached
+the wire as `CandidateSource::Manual`. **No capability is needed**: the dialog is opened in Rust,
+and capabilities gate `invoke` from the webview, so the npm package is not installed either.
+And the folders **cannot live in `ipc::Settings`**, which crosses the IPC — they are in
+`settings_file::Stored`, whose `save` preserves them so that moving the scale slider cannot
+forget the folder you chose.
+
+**The case the entry did not name, and now the app does**: a folder you pointed at that holds no
+save is not "we found nothing". `discovery::Diagnostic::NoSavesInChosenFolder` and
+`MissingReason::NoSavesInChosenFolder` keep the two sentences apart, because only one of them is
+about a choice the reader made.
 
 ---
 
@@ -556,7 +593,7 @@ merge again — **exactly as a browser does**.
 
 ---
 
-## B17 — The profile screen is a welcome flow, not "Screen 0" (implementation, after design) copy done on 2026-09-12
+## B17 — The profile screen is a welcome flow, not "Screen 0" (implementation, after design) ✅ closed on 2026-09-17, built and **not yet seen in a window**
 
 **Needs:** nothing, then a window — the welcome flow draws against fixtures (`?fixture=pick`); a real preview wants a real profile.
 
@@ -608,6 +645,23 @@ play with and shows a preview of it**, a welcome flow.
 
 A first launch on a machine with two saves shows the two, each with its numbers, and no text
 anywhere says "Schermata 0". Design first (`Schermate.dc.html`), then the usual spec → plan.
+
+**Built on 2026-09-17 as sub-project 3.8** — spec
+`docs/superpowers/specs/2026-09-17-welcome-flow-design.md`, report
+`docs/superpowers/reports/2026-09-17-welcome-flow-report.md`. The four decisions the owner took:
+the welcome is a **full-screen takeover**, living as a state **above the router** and never as a
+route; it takes both "you have to choose" and "nothing was found"; a card carries three counts
+plus a line for what could not be read; and the **same takeover is the way back**, from the
+profile indicator, so `ProfileScreen` keeps the chain and the sections and lost the candidate
+table.
+
+**The "KPI strip already drawn by Progress" this entry named did not exist** — what exists is
+`CompletionKpis` on Completion and the indicator's edition, slot and date — so the strip was
+designed rather than reused. It is the same shape of error as B22's item 3 the same morning: an
+entry that names something it has not opened.
+
+The line it still owes is the window: the flow draws on `?fixture=pick` in a browser, and nobody
+has seen it in the app.
 
 ---
 

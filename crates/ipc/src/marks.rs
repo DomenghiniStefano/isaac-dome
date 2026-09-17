@@ -256,13 +256,25 @@ fn cell_at(counters: &[u32], character: usize, boss: usize) -> Cell {
     }
 }
 
+/// The totals alone, without the matrix. The welcome's preview needs the numbers and none of
+/// the art (`docs/superpowers/specs/2026-09-17-welcome-flow-design.md` §4), and a second
+/// definition of "a mark is taken" would drift from this one.
+pub fn marks_totals(counters: &[u32]) -> MarksTotals {
+    let cells: Vec<Cell> = (0..CHARACTERS.len())
+        .flat_map(|c| (0..BOSSES.len()).map(move |b| cell_at(counters, c, b)))
+        .collect();
+    totals_from(&cells)
+}
+
 fn totals_of(rows: &[CharacterRow]) -> MarksTotals {
-    let cells = || rows.iter().flat_map(|r| r.cells.iter());
-    // `cells()` returns a fresh iterator on every call: counting one category
-    // consumes the iterator, so a single one can't be reused.
-    let count = |f: fn(&Cell) -> bool| cells().filter(|&c| f(c)).count();
+    let cells: Vec<Cell> = rows.iter().flat_map(|r| r.cells.iter().copied()).collect();
+    totals_from(&cells)
+}
+
+fn totals_from(cells: &[Cell]) -> MarksTotals {
+    let count = |f: fn(&Cell) -> bool| cells.iter().filter(|&c| f(c)).count();
     MarksTotals {
-        cells: cells().count(),
+        cells: cells.len(),
         readable: count(|c| matches!(c, Cell::Known { .. })),
         unknown: count(|c| matches!(c, Cell::Unknown)),
         unexpected: count(|c| matches!(c, Cell::Unexpected { .. })),

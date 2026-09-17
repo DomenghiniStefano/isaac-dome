@@ -5,7 +5,12 @@ import { LoadStatus } from './loadStatus'
 import { tracked } from './tracked'
 import { isIpcError } from '@/lib/ipc/errors'
 import { saveSummary } from '@/lib/ipc/save'
-import { selectProfile, setupState } from '@/lib/ipc/setup'
+import {
+  chooseGameFolder,
+  chooseSavesFolder,
+  selectProfile,
+  setupState,
+} from '@/lib/ipc/setup'
 import type { IpcError, SaveSummary, SetupState } from '@/lib/ipc/types'
 
 // The active profile is the window's, never a tab's (DESIGN-BRIEF.md §4.1, §4.2): one store,
@@ -15,6 +20,11 @@ export const useProfileStore = defineStore(StoreId.Profile, () => {
   const summary = ref<SaveSummary | null>(null)
   const status = ref<LoadStatus>(LoadStatus.Idle)
   const error = ref<IpcError | null>(null)
+  // The welcome, asked for over a profile that is already settled. Not a route and not a
+  // tab: it is a state this window is in, and another window's choice takes it out of it —
+  // `App.vue` clears it when `ProfileChanged` arrives, because the settled profile is the
+  // app's and one answer settles every window.
+  const picking = ref(false)
 
   const isActive = computed(() => setup.value?.active.kind === 'active')
 
@@ -40,7 +50,35 @@ export const useProfileStore = defineStore(StoreId.Profile, () => {
     })
 
   const load = (): Promise<void> => run(setupState)
-  const choose = (id: string): Promise<void> => run(() => selectProfile(id))
+  const pick = (): void => {
+    picking.value = true
+  }
+  const stopPicking = (): void => {
+    picking.value = false
+  }
+  // A choice made is a picker closed: the welcome is a question, and it has been answered.
+  const choose = async (id: string): Promise<void> => {
+    await run(() => selectProfile(id))
+    stopPicking()
+  }
 
-  return { setup, summary, status, error, isActive, load, choose }
+  // B14: the dialog opens in Rust and the folder never reaches this side. Cancelling answers
+  // the state as it already was, so there is no case to tell apart here.
+  const pickGameFolder = (): Promise<void> => run(chooseGameFolder)
+  const pickSavesFolder = (): Promise<void> => run(chooseSavesFolder)
+
+  return {
+    setup,
+    summary,
+    status,
+    error,
+    isActive,
+    picking,
+    load,
+    pick,
+    stopPicking,
+    choose,
+    pickGameFolder,
+    pickSavesFolder,
+  }
 })

@@ -58,6 +58,13 @@ pub struct CandidateView {
     pub suggested: bool,
     /// Display-only detail. No command accepts it as input.
     pub path_hint: String,
+    /// What the file says about itself, for the welcome's cards. `None` when it could not be
+    /// opened or parsed **at all**: the row is still offered — "degrade, never fail" shows it
+    /// and says so, it does not decide a stranger has no save.
+    ///
+    /// Filled by [`setup_state`], never by [`candidates`]: that list is the one
+    /// `select_profile` validates against, and it reads no files.
+    pub preview: Option<crate::CandidatePreview>,
 }
 
 /// Presentable candidates, most recent to least recent.
@@ -95,6 +102,7 @@ fn view_of(save: &SaveCandidate) -> CandidateView {
         size_bytes: save.size,
         suggested: false,
         path_hint: redacted_path(&save.path, &save.source),
+        preview: None,
     }
 }
 
@@ -174,6 +182,9 @@ pub enum MissingReason {
     SteamNotFound,
     GameNotFound,
     NoSaves,
+    /// A folder the user chose, holding no save. Not `NoSaves`: that one is about the places
+    /// we know to look, and this one is about a place they pointed at.
+    NoSavesInChosenFolder,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
@@ -250,6 +261,26 @@ pub fn resolve_active(
     }
 }
 
+/// Which absence it is, when the chain reached the saves and found none.
+///
+/// `resolve_active` decides *that* nothing is active, from the chain alone. Which "nothing"
+/// it is comes from the scan: a folder the user pointed at that holds no save is a sentence
+/// they can act on, and "we looked where saves usually are" is not the same one. Kept here,
+/// out of `resolve_active`, so that function keeps saying one thing.
+fn named_absence(active: ActiveProfile, diagnostics: &[DiscoveryDiagnostic]) -> ActiveProfile {
+    let chosen = diagnostics
+        .iter()
+        .any(|d| matches!(d, DiscoveryDiagnostic::NoSavesInChosenFolder));
+    match active {
+        ActiveProfile::None {
+            reason: MissingReason::NoSaves,
+        } if chosen => ActiveProfile::None {
+            reason: MissingReason::NoSavesInChosenFolder,
+        },
+        other => other,
+    }
+}
+
 fn missing_reason(steam_found: bool, game_found: bool) -> MissingReason {
     if !steam_found {
         MissingReason::SteamNotFound
@@ -299,6 +330,7 @@ pub enum SetupDiagnostic {
     SteamNotFound,
     GameNotFound,
     NoSavesFound,
+    NoSavesInChosenFolder,
     /// `name` is the path's last component, never the path. `reason` is which `io` case it
     /// was: the system's own message is not translatable and can repeat the path.
     UnreadablePath {
@@ -322,6 +354,7 @@ fn setup_diagnostic_of(d: &DiscoveryDiagnostic) -> SetupDiagnostic {
         DiscoveryDiagnostic::SteamNotFound => SetupDiagnostic::SteamNotFound,
         DiscoveryDiagnostic::GameNotFound => SetupDiagnostic::GameNotFound,
         DiscoveryDiagnostic::NoSavesFound => SetupDiagnostic::NoSavesFound,
+        DiscoveryDiagnostic::NoSavesInChosenFolder => SetupDiagnostic::NoSavesInChosenFolder,
         DiscoveryDiagnostic::UnreadablePath { path, kind } => SetupDiagnostic::UnreadablePath {
             name: last_component(path),
             reason: (*kind).into(),
@@ -332,9 +365,35 @@ fn setup_diagnostic_of(d: &DiscoveryDiagnostic) -> SetupDiagnostic {
     }
 }
 
-pub fn setup_state(d: &Discovery, saved: Option<&ProfileId>) -> SetupState {
-    let views = candidates(&d.saves);
-    let active = resolve_active(saved, &views, d.steam.is_some(), d.game.is_some());
+/// The whole answer the welcome and the indicator read, in **one** command.
+///
+/// The previews arrive here rather than in [`candidates`] because this is the only entry
+/// point that is allowed to know what a file holds — and they are matched **by id**: that
+/// list is sorted, so matching by position would hand a row its neighbour's numbers.
+///
+/// `read` is the I/O, as a closure, which is how [`crate::SaveCache`] already takes its own:
+/// the crate stays pure and the policy is testable without a disk.
+pub fn setup_state(
+    d: &Discovery,
+    saved: Option<&ProfileId>,
+    read: impl Fn(&Path) -> Option<core_save::Save>,
+) -> SetupState {
+    let views: Vec<CandidateView> = candidates(&d.saves)
+        .into_iter()
+        .map(|v| CandidateView {
+            preview: d
+                .saves
+                .iter()
+                .find(|s| profile_id(&s.path) == v.id)
+                .and_then(|s| read(&s.path))
+                .map(|save| crate::preview_of(&save)),
+            ..v
+        })
+        .collect();
+    let active = named_absence(
+        resolve_active(saved, &views, d.steam.is_some(), d.game.is_some()),
+        &d.diagnostics,
+    );
     SetupState {
         steam: d.steam.as_ref().map(|s| SteamView {
             root_hint: mask_user_dir(&s.root.display().to_string()),

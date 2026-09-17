@@ -742,12 +742,38 @@ export const it = {
         '{count} achievement che il gioco ha e questo salvataggio non nomina: non compaiono nella lista',
     },
   },
-  gate: {
-    needsProfile:
-      'Progressi dipende dal profilo attivo: scegline uno per vedere questa schermata.',
-    blocked: {
-      title: 'Progressi ha bisogno di un salvataggio',
-      settings: 'Apri le impostazioni del profilo',
+  // La prima cosa che si incontra, quando nessun salvataggio è ancora scelto. Ha preso il
+  // posto delle chiavi `gate.*`: la scelta non vive più dentro Progressi.
+  welcome: {
+    title: 'Con quale salvataggio giochi?',
+    subtitle:
+      'I numeri di tutta l’app vengono dal file che scegli qui. Puoi cambiarlo quando vuoi.',
+    savedGone:
+      'Il salvataggio che usavi non esiste più dove stava. Non ne abbiamo scelto un altro al suo posto: i numeri di un profilo diverso, mostrati senza dirlo, sono l’errore che non ti accorgi di avere.',
+    hint: 'Il più recente è solo un suggerimento: scegli tu quale leggere.',
+    use: 'Entra',
+    cancel: 'Annulla',
+    card: {
+      slot: 'slot',
+      achievements: 'achievement',
+      items: 'oggetti',
+      marks: 'marchi',
+      unread: 'non si legge',
+      suggested: 'più recente',
+      never: 'data sconosciuta',
+      unreadableCells: '{count} celle non lette',
+      unreadable: 'Questo file non si è lasciato leggere',
+    },
+    nothing: {
+      title: 'Non abbiamo trovato nessun salvataggio',
+      retry: 'Riprova la ricerca',
+      diagnostics: 'Diagnostica — cosa abbiamo provato',
+      chooseGame: 'Scegli la cartella del gioco',
+      chooseSaves: 'Scegli la cartella dei salvataggi',
+    },
+    failed: {
+      title: 'Non siamo riusciti a leggere',
+      retry: 'Riprova',
     },
   },
   indicator: {
@@ -758,7 +784,7 @@ export const it = {
   profile: {
     title: 'Profilo di gioco',
     intro:
-      'Scegli il salvataggio con cui stai giocando: ogni numero delle altre schermate si legge su questo. Puoi cambiarlo quando vuoi.',
+      'Da dove arrivano i numeri: quale salvataggio stai leggendo, dove lo abbiamo trovato e cosa il file si è lasciato leggere. Per cambiarlo, l’indicatore in alto.',
     chain: {
       title: 'Le tre cose che servono',
       summary: 'può mancarne una sola',
@@ -773,20 +799,21 @@ export const it = {
       candidates: 'file candidati',
     },
     none: {
-      title: 'Nessun salvataggio trovato',
       steamNotFound:
         'Non troviamo Steam su questo computer, e partiamo da lì per arrivare alla cartella del gioco e poi ai salvataggi.',
       gameNotFound:
         'Steam c’è, ma il gioco non è in nessuna delle sue librerie: senza la cartella del gioco non troviamo i salvataggi.',
       noSaves:
         'Il gioco c’è, ma nelle posizioni note non c’è nessun file di salvataggio.',
-      retry: 'Riprova la ricerca',
-      diagnostics: 'Diagnostica — cosa abbiamo provato',
+      noSavesInChosenFolder:
+        'Nella cartella che hai indicato non c’è nessun salvataggio. Il gioco li chiama `rep_persistentgamedata1.dat` o `rep+persistentgamedata1.dat`: se non sono lì, la cartella è un’altra.',
     },
     diagnostics: {
       steamNotFound: 'Steam: nessuna installazione trovata',
       gameNotFound: 'Gioco: non presente nelle librerie di Steam',
       noSavesFound: 'Salvataggi: nessun file nelle posizioni note',
+      noSavesInChosenFolder:
+        'Salvataggi: nessun file nella cartella che hai indicato',
       unreadablePath: 'Percorso non leggibile',
       malformedManifest: 'Manifest di Steam non leggibile',
     },
