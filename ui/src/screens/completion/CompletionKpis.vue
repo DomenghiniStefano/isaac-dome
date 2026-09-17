@@ -13,18 +13,18 @@ const { t } = useMessages()
        percentage (DESIGN-BRIEF.md §5.3); the explanations live in the tooltips. -->
   <div class="grid grid-cols-4 gap-2.5">
     <KpiTile
-      :value="kpis.started"
+      :value="kpis.normal"
       :denominator="kpis.readable"
-      :label="t('completion.kpi.started')"
+      :label="t('completion.kpi.normal')"
     >
-      <template #explain>{{ t('completion.kpi.startedExplain') }}</template>
+      <template #explain>{{ t('completion.kpi.normalExplain') }}</template>
     </KpiTile>
     <KpiTile
-      :value="kpis.both"
-      :unit="t('completion.kpi.cells')"
-      :label="t('completion.kpi.both')"
+      :value="kpis.hard"
+      :denominator="kpis.readable"
+      :label="t('completion.kpi.hard')"
     >
-      <template #explain>{{ t('completion.kpi.bothExplain') }}</template>
+      <template #explain>{{ t('completion.kpi.hardExplain') }}</template>
     </KpiTile>
     <KpiTile
       :value="kpis.completeCharacters"

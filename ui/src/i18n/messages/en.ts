@@ -544,15 +544,16 @@ export const en: MessageSchema = {
     intro:
       'Every character, every mark, and how much of it the save lets us read.',
     kpi: {
-      started: 'marks started',
-      startedExplain:
-        'Cells with at least one mark, normal or hard, among those the save lets us read. Unreadable cells stay out of the denominator.',
-      both: 'normal + hard',
-      bothExplain: 'Cells holding both the normal and the hard mark.',
+      normal: 'marks at normal',
+      normalExplain:
+        'Cells with a mark, among those the save lets us read. A mark taken on hard counts here too, because beating a boss on hard is the harder of the two. Unreadable cells stay out of the denominator.',
+      hard: 'marks at hard',
+      hardExplain:
+        'Cells with the second level, over the same denominator. Never more than the count beside it: every hard mark is also a normal one.',
       cells: 'cells',
       complete: 'complete characters',
       completeExplain:
-        'Characters who started every one of their readable cells: a character with unreadable cells is complete over fewer columns.',
+        'Characters with every one of their readable cells at hard, which is what the game’s own widget means by a full row. A character with unreadable cells is complete over fewer columns.',
       unknown: 'unreadable',
       unknownExplain:
         'Cells we cannot yet find in the save. It does not mean "never done": it means we cannot tell.',
@@ -569,7 +570,7 @@ export const en: MessageSchema = {
     },
     grid: {
       character: 'Character',
-      started: 'started',
+      levels: 'normal · hard',
       unreadable: 'unreadable',
       columnTotals: 'Characters with the mark',
     },
@@ -581,7 +582,6 @@ export const en: MessageSchema = {
       empty: 'never done',
       normal: 'normal',
       hard: 'hard',
-      both: 'normal and hard',
       unknown: "we can't tell for this character",
       unexpected: 'a value we did not expect:',
     },

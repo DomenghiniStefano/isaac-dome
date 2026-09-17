@@ -105,7 +105,8 @@ fn matrix_has_the_expected_shape_and_totals() {
     assert_eq!(m.totals.unknown, 40);
     assert_eq!(m.totals.readable, 368);
     assert_eq!(m.totals.unexpected, 0);
-    assert_eq!(m.totals.started, 0);
+    assert_eq!(m.totals.normal, 0);
+    assert_eq!(m.totals.hard, 0);
 }
 
 #[test]
@@ -127,7 +128,7 @@ fn a_read_value_becomes_a_bit_mask() {
     let m = marks_matrix(&counters(523, &[(27, 3), (41, 7)]), None, no_icon);
     assert_eq!(m.characters[0].cells[0], Cell::Known { bits: 3 });
     assert_eq!(m.characters[0].cells[1], Cell::Known { bits: 7 });
-    assert_eq!(m.totals.started, 2, "only readable, non-zero cells count");
+    assert_eq!(m.totals.normal, 2, "only readable, non-zero cells count");
 }
 
 #[test]
@@ -139,10 +140,7 @@ fn a_value_outside_the_mask_range_is_flagged_not_truncated() {
         "49 isn't a mask: the table would be wrong, it must not be truncated to 1"
     );
     assert_eq!(m.totals.unexpected, 1);
-    assert_eq!(
-        m.totals.started, 0,
-        "a suspicious cell doesn't count as a started mark"
-    );
+    assert_eq!(m.totals.normal, 0, "a suspicious cell has no level at all");
 }
 
 #[test]
@@ -203,9 +201,40 @@ fn cell_and_totals_json_shape_is_pinned() {
             "readable": 367,
             "unknown": 40,
             "unexpected": 1,
-            "started": 0
+            "normal": 0,
+            "hard": 0
         }),
         "MarksTotals's field names must stay these, in camelCase"
+    );
+}
+
+/// B22: one count became two, because a row says how many bosses at normal and how many at
+/// hard. `started` is gone rather than kept beside them — it was `normal` under another
+/// name, and two spellings of one number is how the two drift.
+///
+/// Hard is a subset of normal, never a second, disjoint tally: a mark taken on hard counts
+/// as taken on normal too. The file corroborates the rule instead of merely allowing it —
+/// a cell goes 1 → 2, so a bare 2 is the normal mark overwritten and not a hard mark taken
+/// by someone who never took the normal one (B58, measured 2026-09-17 on the 638-era
+/// series). What bit 1 *means* outside Greed is still unmeasured, which is why nothing here
+/// is named after a mode.
+#[test]
+fn the_totals_count_hard_inside_normal_and_never_beside_it() {
+    // 3 = both bits, 7 = both plus the unconfirmed one, 1 = the first level alone,
+    // 2 = the second alone. Four cells with a level, three of them hard.
+    let m = marks_matrix(
+        &counters(523, &[(27, 3), (41, 7), (55, 1), (69, 2)]),
+        None,
+        no_icon,
+    );
+    assert_eq!(m.totals.normal, 4, "every cell that reached a level");
+    assert_eq!(m.totals.hard, 3, "the three that reached the second");
+    assert!(
+        m.totals.hard <= m.totals.normal && m.totals.normal <= m.totals.readable,
+        "hard {} <= normal {} <= readable {}",
+        m.totals.hard,
+        m.totals.normal,
+        m.totals.readable
     );
 }
 
@@ -305,12 +334,16 @@ fn with_a_catalog_urls_follow_what_it_knows() {
 }
 
 #[test]
-fn a_cell_holding_only_the_unconfirmed_bit_is_not_started() {
+fn a_cell_holding_only_the_unconfirmed_bit_counts_on_neither_side() {
     // 4 has never been observed; if it appears, the grid draws it empty, and so must the total.
     let m = marks_matrix(&counters(523, &[(27, 4), (41, 5)]), None, no_icon);
     assert_eq!(
-        m.totals.started, 1,
-        "5 carries the normal mark, 4 carries nothing the grid draws"
+        m.totals.normal, 1,
+        "5 carries the first level, 4 carries nothing the grid draws"
+    );
+    assert_eq!(
+        m.totals.hard, 0,
+        "neither of them reached the second level: 5 is bits 0 and 2"
     );
 }
 
