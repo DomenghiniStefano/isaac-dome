@@ -1561,6 +1561,70 @@ export type CollectionView = {
 }
 
 /**
+ * Tagged, because `Blocked` carries the gates it waits for — the repo's rule, and the shape
+ * `LockView` already has.
+ */
+export type ChallengeStateView =
+  | { kind: 'done' }
+  | { kind: 'available' }
+  | { kind: 'blocked'; missing: Array<number> }
+  | { kind: 'unknown' }
+
+export type RewardView = {
+  achievement: number
+  text: string | null
+  iconUrl: string | null
+  page: Target | null
+  /**
+   * Whether the save says it is earned. `None` when section 1 wasn't read: unread is never
+   * "not earned".
+   */
+  done: boolean | null
+}
+
+export type ChallengeRow = {
+  number: number
+  name: string
+  state: ChallengeStateView
+  /**
+   * What finishing it grants. Empty for the challenges that grant nothing.
+   */
+  rewards: Array<RewardView>
+  /**
+   * The character the wiki says it forces. `None` is "the dataset has no page for this
+   * challenge, or the page names no character" — never "any character".
+   */
+  character: Target | null
+  goal: Array<Inline> | null
+  /**
+   * `None` when there is no page. It must not draw as "not blindfolded".
+   */
+  blindfolded: boolean | null
+  page: Target | null
+}
+
+export type ChallengeTotals = {
+  /**
+   * Section 7's own length; 0 when it wasn't read. Never the constant 46.
+   */
+  slots: number
+  challenges: number
+  done: number
+}
+
+export type ChallengesDiagnostic =
+  | { kind: 'noCatalog' }
+  | { kind: 'noChallengesSection' }
+  | { kind: 'noAchievementSection' }
+  | { kind: 'noWiki' }
+
+export type ChallengesView = {
+  challenges: Array<ChallengeRow>
+  totals: ChallengeTotals
+  diagnostics: Array<ChallengesDiagnostic>
+}
+
+/**
  * Persisted settings. The type and its serialization live here;
  * reading and writing the file live in the app crate.
  */
