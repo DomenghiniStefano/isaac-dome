@@ -422,7 +422,7 @@ fn setup_state_without_steam_reports_the_missing_chain() {
         game_data: None,
         diagnostics: vec![Diagnostic::SteamNotFound],
     };
-    let state = setup_state(&discovery, None);
+    let state = setup_state(&discovery, None, |_: &Path| None);
 
     assert!(state.steam.is_none());
     assert!(state.game.is_none());
@@ -452,7 +452,7 @@ fn setup_state_never_leaks_the_steam_account_id_through_diagnostics() {
             kind: std::io::ErrorKind::PermissionDenied,
         }],
     };
-    let state = setup_state(&discovery, None);
+    let state = setup_state(&discovery, None, |_: &Path| None);
     let json = serde_json::to_string(&state).unwrap();
 
     assert!(
@@ -503,7 +503,7 @@ fn setup_state_with_two_candidates_needs_a_choice_and_hides_library_paths() {
         game_data: None,
         diagnostics: vec![],
     };
-    let state = setup_state(&discovery, None);
+    let state = setup_state(&discovery, None, |_: &Path| None);
 
     assert_eq!(state.candidates.len(), 2);
     match state.active {
@@ -643,7 +643,7 @@ fn setup_state_hides_the_username_in_the_steam_and_game_hints() {
         game_data: None,
         diagnostics: vec![],
     };
-    let json = serde_json::to_string(&setup_state(&discovery, None)).unwrap();
+    let json = serde_json::to_string(&setup_state(&discovery, None, |_: &Path| None)).unwrap();
 
     assert!(
         !json.contains("carol"),
@@ -652,5 +652,151 @@ fn setup_state_hides_the_username_in_the_steam_and_game_hints() {
     assert!(
         json.contains("the binding of isaac"),
         "what orients the user stays: the game's folder"
+    );
+}
+
+// --- The preview travels with the candidates -------------------------------------------
+//
+// One command, not two: a save that appears or disappears between two calls would leave a
+// card showing the numbers of a file no longer offered, and the join would sit in the
+// frontend where nothing can check it (N8, M4's Live screen).
+
+/// Four flags: slot 0, which is no achievement, plus three achievements, two of them done.
+fn a_save() -> core_save::Save {
+    core_save::Save {
+        unknown_0x10: 0,
+        sections: vec![core_save::Section {
+            kind: core_save::Kind::Achievements,
+            count: 4,
+            f2: 0,
+            offset: 0,
+            bytes: vec![1, 1, 0, 1],
+        }],
+        diagnostics: Vec::new(),
+    }
+}
+
+fn with_saves(saves: Vec<SaveCandidate>) -> Discovery {
+    Discovery {
+        steam: None,
+        game: None,
+        saves,
+        game_data: None,
+        diagnostics: vec![],
+    }
+}
+
+#[test]
+fn every_candidate_carries_what_its_own_file_says() {
+    let d = with_saves(vec![candidate(
+        "rep+persistentgamedata1.dat",
+        1,
+        SavePrefix::RepPlus,
+        Some(1_000),
+    )]);
+    let state = setup_state(&d, None, |_: &Path| Some(a_save()));
+    let preview = state.candidates[0].preview.expect("the reader answered");
+    assert_eq!(
+        preview.achievements,
+        ipc::PreviewCount::Read { done: 2, of: 3 }
+    );
+}
+
+#[test]
+fn a_candidate_whose_file_cannot_be_read_still_travels() {
+    let d = with_saves(vec![candidate(
+        "rep+persistentgamedata1.dat",
+        1,
+        SavePrefix::RepPlus,
+        Some(1_000),
+    )]);
+    let state = setup_state(&d, None, |_: &Path| None);
+    assert_eq!(state.candidates.len(), 1, "it is still offered");
+    assert!(
+        state.candidates[0].preview.is_none(),
+        "and it says it could not be read, rather than showing zeros"
+    );
+}
+
+#[test]
+fn a_preview_follows_its_own_candidate_and_not_the_row_it_was_sorted_into() {
+    // `candidates` sorts by date, so slot 1 comes first. The reader answers only for slot 2:
+    // matched by position instead of by id, the preview would land on slot 1.
+    let d = with_saves(vec![
+        candidate(
+            "rep+persistentgamedata1.dat",
+            1,
+            SavePrefix::RepPlus,
+            Some(2_000),
+        ),
+        candidate(
+            "rep+persistentgamedata2.dat",
+            2,
+            SavePrefix::RepPlus,
+            Some(1_000),
+        ),
+    ]);
+    let state = setup_state(&d, None, |p: &Path| {
+        p.ends_with("rep+persistentgamedata2.dat").then(a_save)
+    });
+    assert_eq!(state.candidates[0].slot, 1, "the newer one sorts first");
+    let by_slot = |slot: u8| {
+        state
+            .candidates
+            .iter()
+            .find(|c| c.slot == slot)
+            .expect("both travel")
+    };
+    assert!(by_slot(1).preview.is_none());
+    assert_eq!(
+        by_slot(2)
+            .preview
+            .expect("the reader answered")
+            .achievements,
+        ipc::PreviewCount::Read { done: 2, of: 3 }
+    );
+}
+
+#[test]
+fn a_folder_you_pointed_at_that_holds_no_save_is_a_different_sentence() {
+    // Two "nothing found" that a reader can act on differently: one is "we looked where saves
+    // usually are", the other "you chose that folder, and there is nothing in it".
+    let nowhere = Discovery {
+        steam: None,
+        game: None,
+        saves: vec![],
+        game_data: None,
+        diagnostics: vec![Diagnostic::NoSavesFound],
+    };
+    let chosen = Discovery {
+        diagnostics: vec![Diagnostic::NoSavesInChosenFolder],
+        ..nowhere.clone()
+    };
+    let reason = |d: &Discovery| match setup_state(d, None, |_: &Path| None).active {
+        ActiveProfile::None { reason } => reason,
+        other => panic!("expected None, got {other:?}"),
+    };
+    // With no Steam the chain breaks earlier, and that answer stays: this is about the last
+    // link, so both machines below have Steam and the game.
+    let with_chain = |d: &Discovery| Discovery {
+        steam: Some(SteamInstall {
+            root: PathBuf::from("c:/steam"),
+            libraries: vec![],
+            source: SteamSource::Registry,
+        }),
+        game: Some(GameInstall {
+            dir: PathBuf::from("c:/steam/game"),
+            library: PathBuf::from("c:/steam"),
+            manifest: PathBuf::from("c:/steam/appmanifest_250900.acf"),
+            edition: Edition::Repentance,
+            dlcs: vec![],
+            updated_unix: None,
+        }),
+        ..d.clone()
+    };
+    assert_eq!(reason(&with_chain(&nowhere)), MissingReason::NoSaves);
+    assert_eq!(
+        reason(&with_chain(&chosen)),
+        MissingReason::NoSavesInChosenFolder
     );
 }

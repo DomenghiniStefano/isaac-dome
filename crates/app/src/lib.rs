@@ -30,6 +30,11 @@ pub fn run() {
             window::open_or_focus(app);
         }))
         .plugin(tauri_plugin_notification::init())
+        // Opened from Rust only, so no `dialog:*` capability is needed and the npm package
+        // is not installed: capabilities gate `invoke` from the webview, and a command that
+        // calls the plugin in Rust never crosses that boundary. It also keeps frontend rule 3
+        // — the path stays inside the backend and never reaches JavaScript.
+        .plugin(tauri_plugin_dialog::init())
         .manage(CatalogState::default())
         .manage(GraphState::default())
         .manage(StoreState::default())
@@ -78,6 +83,8 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             profile::setup_state,
             profile::select_profile,
+            profile::choose_game_folder,
+            profile::choose_saves_folder,
             profile::settings,
             profile::set_scale,
             profile::set_stay_in_background,

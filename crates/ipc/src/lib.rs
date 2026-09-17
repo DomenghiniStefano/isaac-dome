@@ -13,6 +13,7 @@ mod icon;
 mod live;
 mod mark_art;
 mod marks;
+mod preview;
 mod profile;
 mod progress;
 mod queue;
@@ -58,9 +59,10 @@ pub use live::{
 };
 pub use mark_art::{mark_source, MarkFrames, LOBBY_ANM2, WIDGET_ANM2};
 pub use marks::{
-    character_for, counter_index, marks_matrix, Cell, CharacterGroup, CharacterRow, MarkArtView,
-    MarksMatrix, MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
+    character_for, counter_index, marks_matrix, marks_totals, Cell, CharacterGroup, CharacterRow,
+    MarkArtView, MarksMatrix, MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
 };
+pub use preview::{preview_of, CandidatePreview, PreviewCount};
 pub use profile::{
     candidates, profile_id, resolve_active, setup_state, ActiveProfile, CandidateSource,
     CandidateView, ChoiceReason, GameView, MissingReason, ProfileId, SetupDiagnostic, SetupState,
