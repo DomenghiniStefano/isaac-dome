@@ -10,8 +10,13 @@ that takes, what the screens are, and what it takes to build and check the thing
 > **What keeps it true, and what does not.** Every path named here is checked by
 > `scripts/check-doc-refs.mjs`, which is why the nodes carry real paths instead of pretty
 > names. That catches a file renamed under the document and *nothing else*: an edge that
-> stopped existing is still only a person away from being noticed. Redraw when a crate is
-> added, a route lands, or a command joins `generate_handler!` in `crates/app/src/lib.rs`.
+> stopped existing leaves its arrow drawn, and only a person ever notices.
+>
+> **Redraw it in the same commit as the change**, and `CLAUDE.md` names the five that trigger
+> it: a crate added or removed, a route added or removed from `RouteName`, a command joining or
+> leaving `generate_handler!` in `crates/app/src/lib.rs`, an event in
+> `crates/app/src/events.rs`, a migration in `crates/store/src/migrations.rs`. The five counts
+> just below are the tripwire — if one of them is wrong, so is the drawing.
 
 Counted at that commit, and every number below is derived from the code, not from prose:
 **16 crates**, **30 Tauri commands**, **4 events**, **14 routes**, **5 store migrations**.
