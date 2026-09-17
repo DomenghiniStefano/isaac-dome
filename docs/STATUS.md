@@ -454,6 +454,19 @@ to this file.
       this machine does not have at all. Two absences, 115 of the 143. The remaining 28 are
       saves and windows of the 2026 eras (12 and 7), five `config.a`, the two "a series of one"
       and the vacuity guard that goes with them, and one "Isaac (250900) not installed".
+
+      **A `sample:` line does not mean the test used it** — found on 2026-09-17 closing B58, and
+      it is the sharper version of everything above. The three properties in
+      `crates/ipc/tests/marks_real.rs` that keep the mark tables answerable to the series each
+      began with `dated_series(SERIES)`, which **declares** every file it hands back, and then
+      `if files.len() < 2 { return; }`. On this machine that series is one file. So the run
+      printed `sample: 20250112.rep+persistentgamedata1.dat` three times, counted three real-data
+      declarations, emitted **no skip**, passed — and guarded nothing. That is not a thin sample
+      reporting itself honestly; it is a test claiming a file it never compared. The declaration
+      is made where the sample is *opened*, and a property needs **two** of them: any test that
+      walks windows can fall into the same gap, and the shape to look for is a `sample:` count
+      that does not move when a property stops being able to run. The three now walk each series
+      on its own and declare a skip when the coverage is not there.
 - [ ] **`samples/` never contained the M0 collection.** The 28 saves over 14 months used to
       decode the format live outside the repo, and the folder is git-ignored: whoever
       clones has none, and the suite has to stay green anyway. Two sources worth knowing
