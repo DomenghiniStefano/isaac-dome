@@ -740,7 +740,38 @@ half already is, by `the_online_bit_never_stands_without_the_cleared_bit` in
 
 ---
 
-## B22 — Two counts per row: normal and hard, where hard implies normal (implementation, `ipc` and `ui`)
+## B22 — Two counts per row: normal and hard, where hard implies normal (implementation, `ipc` and `ui`) ⏳ items 1–3 done on 2026-09-17
+
+**Items 1, 2 and 3 landed on 2026-09-17. Item 4 — the layout — is what is left**, and it is
+left because it is the only part that needs something nobody here has: the two number columns
+come from `Schermate.dc.html`, and judging them needs a window.
+
+What landed:
+
+- **The reading.** `CellStatus.Both` is gone. A cell with bit 1 is `Hard`, whatever bit 0
+  says, and the tooltip says "hard" once — `completion.cell.both` is deleted in both
+  languages. The legend needed no change at all: it already listed five rows with no "both"
+  and drew `bits: 3` as hard, so the drawing had been right and only the *reading* was wrong,
+  exactly as the entry's "What we already have" says.
+- **The tally.** `{ normal, hard, readable, complete }`, with `hard <= normal <= readable`
+  asserted as a property over every row and column of the reference profile — and guarded
+  against vacuity, because that inequality holds trivially on a profile that never took a
+  hard mark. `complete` is `hard === readable`. **The reference profile loses a complete
+  character to that**, 3 → 2: Isaac's last cell is a bare 1, so he has a level everywhere and
+  the second level in eleven of twelve. Losing him is the point of the change.
+- **The IPC.** The field is on `MarksTotals`, not `CharacterRow` — this entry named the wrong
+  struct, and the frontend never read a per-row count off the wire at all, it tallies
+  `row.cells` itself. `started` becomes `normal` and `hard`; `types.ts` regenerated,
+  `cell_and_totals_json_shape_is_pinned` updated, and `cross_check.rs` now asks the Python
+  reference for **both** counts instead of one, which is the assertion that would catch
+  `hard` being "fixed" to require bit 0 as well.
+- **The KPI strip** splits the same way — `marks at normal` and `marks at hard` over the same
+  denominator — because `both` could not survive `CellStatus.Both`. That tile counted the
+  overlap of a set with its own superset.
+
+What the grid does **until item 4**: the pair lives in the one number slot the grid already
+has, as `normal/readable · hard`. It is truthful and it is not the layout; the second column
+is item 4's.
 
 **Needs:** a real save — "hard implies normal" is logic over bits, but the two counts per row are only answerable against a profile.
 
@@ -775,20 +806,24 @@ number:
 
 ### What's missing
 
-1. **The reading**: `CellStatus.Both` goes; `Hard` means "hard, hence normal", and the
+1. ✅ **The reading**: `CellStatus.Both` goes; `Hard` means "hard, hence normal", and the
    tooltip and legend say so once ("hard" — the legend's "normale e hard" row disappears).
    `cellReading` is pure and tested: the expected values come from the rule above.
-2. **The tally**: `Tally` becomes `{ normal, hard, readable, complete }` with
+2. ✅ **The tally**: `Tally` becomes `{ normal, hard, readable, complete }` with
    `normal = cells where bit 0 or bit 1`, `hard = cells where bit 1`, so `hard ≤ normal ≤
    readable` always — a property to test on the fixtures and on `marks_real.rs`'s series.
    `complete` means `hard === readable`: the row is done when every boss is done on hard,
    which is what the game's own widget means by a full row. Whether a second, weaker
    "complete at normal" colour exists is the design's call.
-3. **The IPC**: `CharacterRow.started` becomes `normal` and `hard` (a contract change,
-   handed on with the mirror in `types.ts` and `summary_shape.rs`'s kin pinned).
-4. **The grid**: two number columns on the right of every row, two in the group header, two
-   per boss in the footer, and the KPI strip splits the same way. Layout from
-   `Schermate.dc.html`, which today has one column.
+3. ✅ **The IPC**: ~~`CharacterRow.started`~~ **`MarksTotals.started`** becomes `normal` and
+   `hard` (a contract change, handed on with the mirror in `types.ts` and the JSON shape
+   pinned). The struck name is the entry's own error, kept because it is worth knowing why
+   it was harmless: `CharacterRow` has no count at all, the frontend tallies `row.cells`
+   itself, so the wire only ever carried the whole-matrix totals.
+4. **The grid** — **the one still open**: two number columns on the right of every row, two
+   in the group header, two per boss in the footer. Layout from `Schermate.dc.html`, which
+   today has one column. The KPI strip **is** split already: `both` could not outlive
+   `CellStatus.Both`, so it went with item 1 rather than waiting here.
 
 ### Done when
 
