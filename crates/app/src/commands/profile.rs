@@ -12,11 +12,22 @@ use crate::events::{announce, PROFILE_CHANGED, SETTINGS_CHANGED};
 use crate::settings_file;
 use crate::state::StoreState;
 
+/// The I/O the pure crate does not do. A save is 11–12 KB and there is a handful of
+/// candidates, so this is one small read per candidate per answer and nothing worth caching:
+/// `SaveCache` holds one slot, for the active profile, and a failed read is never remembered.
+fn read_save(path: &std::path::Path) -> Option<core_save::Save> {
+    core_save::Save::open(path).ok()
+}
+
 #[tauri::command]
 pub fn setup_state(app: AppHandle) -> Result<SetupState, IpcError> {
     let settings = settings_file::load(&app);
     let d = discover(&Options::default());
-    Ok(ipc::setup_state(&d, settings.active_profile_id.as_ref()))
+    Ok(ipc::setup_state(
+        &d,
+        settings.active_profile_id.as_ref(),
+        read_save,
+    ))
 }
 
 #[tauri::command]
@@ -37,7 +48,11 @@ pub fn select_profile(app: AppHandle, id: ProfileId) -> Result<SetupState, IpcEr
     settings_file::save(&app, &settings)?;
     // The active profile is the app's, not this window's, now that there can be more than one.
     announce(&app, PROFILE_CHANGED);
-    Ok(ipc::setup_state(&d, settings.active_profile_id.as_ref()))
+    Ok(ipc::setup_state(
+        &d,
+        settings.active_profile_id.as_ref(),
+        read_save,
+    ))
 }
 
 /// The persisted settings, as the app will act on them: the scale comes back snapped to the

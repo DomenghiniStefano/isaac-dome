@@ -8,6 +8,12 @@ import type {
 
 // DESIGN-BRIEF.md §5.4, the reference machine: Steam on C:, the game on a second library,
 // four candidates whose sizes tell a played profile from a new one. Hints, not paths.
+//
+// The four previews cover the four shapes a welcome card can take: whole, with a count the
+// file did not let us read, with unreadable cells, and a file that could not be parsed at
+// all. **Illustrative, not measured** — the real numbers are read from the `.dat`, and the
+// denominators differ per era on purpose: 640 is the 641-achievement Repentance+ file minus
+// its slot 0, 637 the 638 of a Repentance one.
 const unix = (year: number, month: number, day: number): number =>
   Math.floor(new Date(year, month - 1, day, 18).getTime() / 1000)
 
@@ -23,6 +29,12 @@ export const candidates: CandidateView[] = [
     sizeBytes: 14948,
     suggested: true,
     pathHint: remote,
+    preview: {
+      achievements: { kind: 'read', done: 379, of: 640 },
+      items: { kind: 'read', done: 612, of: 732 },
+      marks: { kind: 'read', done: 148, of: 368 },
+      unreadableCells: 40,
+    },
   },
   {
     id: 'rep_plus-2',
@@ -33,6 +45,12 @@ export const candidates: CandidateView[] = [
     sizeBytes: 4068,
     suggested: false,
     pathHint: remote,
+    preview: {
+      achievements: { kind: 'read', done: 12, of: 640 },
+      items: { kind: 'read', done: 74, of: 732 },
+      marks: { kind: 'read', done: 3, of: 368 },
+      unreadableCells: 40,
+    },
   },
   {
     id: 'rep-1',
@@ -43,6 +61,12 @@ export const candidates: CandidateView[] = [
     sizeBytes: 14172,
     suggested: false,
     pathHint: remote,
+    preview: {
+      achievements: { kind: 'read', done: 210, of: 637 },
+      items: { kind: 'unread' },
+      marks: { kind: 'read', done: 96, of: 368 },
+      unreadableCells: 40,
+    },
   },
   {
     id: 'rep-2',
@@ -53,6 +77,7 @@ export const candidates: CandidateView[] = [
     sizeBytes: 3956,
     suggested: false,
     pathHint: remote,
+    preview: null,
   },
 ]
 
