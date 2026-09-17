@@ -106,6 +106,8 @@ pub fn render() -> String {
     decl::<crate::ProfileId>(&cfg, &mut out);
     decl::<crate::CandidateSource>(&cfg, &mut out);
     decl::<discovery::SavePrefix>(&cfg, &mut out);
+    decl::<crate::PreviewCount>(&cfg, &mut out);
+    decl::<crate::CandidatePreview>(&cfg, &mut out);
     decl::<crate::CandidateView>(&cfg, &mut out);
     decl::<crate::MissingReason>(&cfg, &mut out);
     decl::<crate::ChoiceReason>(&cfg, &mut out);
