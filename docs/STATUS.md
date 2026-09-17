@@ -661,6 +661,16 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       the ratio between the two runs is not 11 to 198 but roughly **3 to 190**, which is a
       different shape from the one the paragraph above reasons about. Whatever it counts, it is
       not run-shaped and it is not idle either.
+- [ ] **Whether a challenge's `unlocked_by` means "all of these achievements" or "any of them".**
+      Opened 2026-09-17 with 3.11, and it is the one thing the save cannot answer: the file
+      records what you *finished*, never what the game *offered*. On the reference profile all 13
+      finished challenges that have gates have every gate done — which is consistent with both
+      readings, because "all done" satisfies "any", so the corpus cannot separate them and saying
+      it confirms "all of" would be the trap this section exists to avoid.
+      **The instrument is the game's own challenge menu**: find a challenge with *some* of its
+      gates done — the Challenges screen now lists its missing ones by name — and look at whether
+      the menu offers it. If it does, `unlocked_by` is "any of", and the screen is calling
+      blocked something you could have played tonight. One challenge answers it.
 - [ ] **Whether `19 rooms in 12 loops` counts the Secret and Super Secret rooms.** Opened
       2026-09-16 with F2's first half, and it is the one thing between `run`'s count and a
       sentence on the Floor screen. The game places the two secret rooms in the `placing
@@ -717,7 +727,9 @@ real window. **50 in ten groups the same evening**, with 3.9's four — and that
 whose sub-project **already looked**: a browser found and fixed an alignment defect there before
 the lines were written, which is why there are four of them and not eight. Looking early does not
 empty this list, it shortens it.
-**54 in eleven groups on 2026-09-17**, with 3.10's four, and that group is the shortest yet for
+**59 in twelve groups on 2026-09-17**, with 3.11's five — and one of them is not a check but the
+measurement §4 of that spec waits on, which is why it appears in both lists.
+**54 in eleven groups**, with 3.10's four, and that group is the shortest yet for
 the same reason carried further: a browser drove all three bars while they were being written, so
 what a *window* still owes is only what a browser cannot judge — the widths, the wrapping, and
 whether a word is the right word. The five checks that would otherwise be here were answered on
@@ -763,6 +775,25 @@ in `crates/app/tauri.conf.json`).
       back holding the same runs it held, and the totals must not move. If a run is missing after
       that, the fold lost it — and the cache that would have hidden the loss is exactly what the
       version bump threw away.
+
+### The Challenges screen (3.11, B3) — the four conditions against the game's own menu
+
+A browser drew every state, including the two a real profile never shows together: a blocked row
+naming its gates, and the row the wiki knows nothing about. What is left needs the game running
+beside the app, or a person's judgment.
+
+- [ ] **the conditions against the game's own challenge menu**: is `Samson, fino a Mom's Heart,
+      bendata` what the menu says? Four rows is enough to know whether the wiki's words and the
+      game's agree
+- [ ] **a challenge with only *some* of its gates done, checked against the menu.** This is the
+      one that settles §4: if the game offers it, `unlocked_by` is "any of" and the screen is
+      calling it blocked wrongly. It is also in *"What only a machine with the game can answer"*
+- [ ] the reward added to the Plan from here, and the row saying it is queued afterwards
+- [ ] forty-five rows without a virtual list, on a short window: the page scrolls and the bar's
+      state row stays where it was
+- [ ] the row's goal at a narrow width: the inline text truncates instead of pushing the state
+      badge out of the row
+      → `docs/superpowers/reports/2026-09-17-challenges-report.md`
 
 ### The one filter bar (3.10, B29) — what a browser could not judge
 

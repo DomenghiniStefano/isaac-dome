@@ -5,7 +5,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 
 > **This is the state, not the design.** `docs/PROJECT.md` is the design and freezes at M0 by
 > its own header — it says so in its first paragraph — so a diagram of *today* could not live
-> there without breaking that promise. Drawn on 2026-09-17 against `6e6b57c`, the `develop` it
+> there without breaking that promise. Drawn on 2026-09-17 against `2ed4820`, the branch it
 > lands on.
 >
 > **What keeps it true, and what does not.** Every path named here is checked by
@@ -20,7 +20,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 > just below are the tripwire — if one of them is wrong, so is the drawing.
 
 Counted at that commit, and every number below is derived from the code, not from prose:
-**16 crates**, **30 Tauri commands**, **4 events**, **14 routes**, **5 store migrations**.
+**16 crates**, **31 Tauri commands**, **4 events**, **15 routes**, **5 store migrations**.
 
 ---
 
@@ -60,10 +60,10 @@ flowchart LR
   end
 
   ipc["ipc<br/>view-models — the only contract"]
-  app["crates/app<br/>30 commands, 4 events"]
+  app["crates/app<br/>31 commands, 4 events"]
 
   subgraph vue["Vue — never touches the disk"]
-    wrappers["lib/ipc/*.ts<br/>typed wrappers, one call()"]
+     app -->|"invoke — 31 commands"| wrappers["lib/ipc/*.ts<br/>typed wrappers, one call()"]
     stores["Pinia stores"]
     screens["14 screens"]
   end
@@ -124,7 +124,7 @@ the typed wrappers in `ui/src/lib/ipc/`, and every wrapper goes through the sing
 `SearchScreen.vue` is today the only screen that reaches a wrapper directly; every other one
 stops at a store. `pnpm scan` is what keeps a component from taking the shortcut.
 
-**Pull, then a nudge.** The 30 commands are pull: a window asks, the backend answers. The 4
+**Pull, then a nudge.** The 31 commands are pull: a window asks, the backend answers. The 4
 events (`profile-changed`, `settings-changed`, `plan-changed`, `runs-changed`) are the nudge,
 and they carry **no payload** on purpose — a payload would be a copy of state the next command
 could contradict. A second window only ever learns of a write it did not make this way.
@@ -235,6 +235,7 @@ flowchart TD
     unlock["/progress/unlock"]
     planr["/progress/plan"]
     collection["/progress/collection"]
+    challengesr["/progress/challenges"]
   end
 
   subgraph toolGroup["tool — answers without a save"]
@@ -264,6 +265,7 @@ outside it.
 | Unlock | `/progress/unlock` | progress | `views`, `queue` | `graph_views`, `want`, the five `queue_*` |
 | Plan | `/progress/plan` | progress | `views`, `queue` | `plan`, `add_goal`, `remove_goal`, the five `queue_*` |
 | Collection | `/progress/collection` | progress | `views` | `collection` |
+| Challenges | `/progress/challenges` | progress | `views`, `queue`, `tabs` | `challenges`, the five `queue_*` |
 | Runs | `/tool/runs` | tool | `views` | `runs` |
 | Live | `/tool/live` | tool | `views` | `live` |
 | Floor | `/tool/floor` | tool | `floor` | `floor_candidates` |
