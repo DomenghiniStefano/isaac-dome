@@ -1473,6 +1473,55 @@ The rest are the third family and need no decision, only the record that they we
 content with no kind behind it — crafting tables, a reverse-engineered algorithm, reroll chains,
 pool probabilities, sound tables, poop varieties, a monster replacement table of 1339 lines.
 
+### ✅ The third family is read, and the record is a test — 2026-09-17
+
+All 22 read on their own pages. The record is `a_page_own_heading_is_read_and_stays_out` in
+`crates/wiki/src/sections.rs`, not prose: a document does not fail when somebody adds one of
+these spellings by reflex, and that test does — shown by adding `"strategy and items"` to the
+`Strategies` arm and watching it go red. Each line names its page. They divide four ways, which
+is the part worth having:
+
+| family | what they are |
+|---|---|
+| **game data in a table, and no kind names it** (13) | Bag of Crafting's three, D10's 1339-line replacement table, Tainted ???'s poop tables, Lemegeton's pool probabilities, Damocles' survival table, Spindown Dice's reroll chains, Metronome's per-item effects, Bum Friend's drops, Ultra Hard's modifiers, Mom's Heart's post-5-kills changes, Tainted Lost's item exclusion |
+| **the heading is not a heading** (5) | `[[Monsters]]` on boss/Great Gideon is a **link**, and its section has no body at all — the 54 lines are two `=== … Waves ===` tables *under* it; `Videos` is one YouTube embed and `Sounds` a table of `.wav`s, which is what `Gallery` is already dropped for; the two `Combinations` are a single list template each, so the content is not on the page to keep |
+| **research that lives off the wiki** (2) | GB Bug's Lua listing, credited to a wiki user; Missing Poster's puzzle lore, pointing at imgur and reddit |
+| **an editorial verdict** (2) | `Items` on character/Tainted Eden — "there are some that should be of special notice" is `Good Items` in a shorter word |
+
+**One is a close call and is recorded as one**: `Strategy and Items` (character/Tainted Apollyon)
+is strategy prose from the first bullet to the last, and `General Strategies` and `Tips and
+strategies` are both in. What keeps it out is the line collectible/Sumptorium drew — the heading
+names what the strategy is *about*, and every accepted spelling names only the kind. If that line
+ever moves, this is the page to move it on.
+
+### The second-subject decision is still open, and three findings make it cheaper
+
+None of these was measured before today, and each narrows the question:
+
+1. **`entity:Ultra Greedier` is already corrected by hand** in
+   `crates/graph/rules/corrections.json`, to `mark: { column: "greed", level: "second" }` — which
+   is exactly what bit 1 of the Greed column means, the one bit B58 confirmed on 2026-09-17. The
+   correction is hand-written *because* the page's own section is dropped: the wiki states this
+   and we re-state it in a rules file.
+2. **The game has a player id for four of them.** `crates/catalog/src/heads.rs` names Lazarus
+   Risen (11), Black Judas (12), The Soul (17) and Dark Esau (39), and folds the first three onto
+   the base character's matrix cell. These are not "a second subject the page mentions" — they
+   are subjects the game itself enumerates.
+3. **Broken Shovel is not one page with one entry, which inverts this entry's premise.** The
+   Cargo table carries `Broken Shovel 1` and `Broken Shovel 2`; `dataset/wiki.json` already holds
+   **two** entries titled "Broken Shovel", both built from the one page. The two dropped sections,
+   `Activated Collectible` and `Passive Collectible`, are precisely the two halves that tell the
+   ids apart — so the two entries carry the same text today where they are meant to differ.
+
+So the family is not one decision. **Six have a subject the game already enumerates** — the four
+players, Ultra Greedier as an entity, the two shovel ids — and the shape question for them is
+whether an `Entry` may be built from a **section** rather than from a page. **The other three are
+not named anywhere in `graph`'s rules or in `catalog`**: `Blood Clots` (character/Tainted Eve),
+`Friendly Charger` (collectible/My Shadow) and `Special Locusts` (collectible/Abyss, 173 lines)
+are page-own mechanics text. Splitting the family that way is the recommendation; **making the
+call is the owner's**, because it decides the shape of `Entry` and nothing should decide that
+quietly.
+
 ---
 
 ## B55 — The log has no clock and Steam keeps one (analysis, then `run` and `log-watch`)
