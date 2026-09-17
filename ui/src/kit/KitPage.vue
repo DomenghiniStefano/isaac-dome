@@ -11,6 +11,7 @@ import SwitchSection from './sections/SwitchSection.vue'
 import ToggleGroupSection from './sections/ToggleGroupSection.vue'
 import TabsSection from './sections/TabsSection.vue'
 import SelectSection from './sections/SelectSection.vue'
+import MultiSelectSection from './sections/MultiSelectSection.vue'
 import KbdSection from './sections/KbdSection.vue'
 import SeparatorSection from './sections/SeparatorSection.vue'
 import SkeletonSection from './sections/SkeletonSection.vue'
@@ -59,6 +60,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
       <ToggleGroupSection />
       <TabsSection />
       <SelectSection />
+      <MultiSelectSection />
       <TooltipSection />
       <PopoverSection />
       <DropdownMenuSection />
