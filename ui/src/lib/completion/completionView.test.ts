@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { completionMatrix } from '@/lib/ipc/fixtures/completion'
-import type { MarksMatrix } from '@/lib/ipc/types'
+import type { Cell, MarksMatrix } from '@/lib/ipc/types'
 import {
   CellStatus,
   MatrixGroup,
@@ -11,10 +11,11 @@ import {
   rowTally,
 } from './completionView'
 
-// The reference profile of DESIGN-BRIEF.md §5.4. The expected values below come from the
-// brief and the Kit page's tiles (166 of 368 started, 120 cells with both levels, 3 of 34
-// complete characters, 40 of 408 unreadable), and the per-row and per-column ones are
-// counted by hand on the digit strings of the export's completion.json.
+// The reference profile of DESIGN-BRIEF.md §5.4. The expected values below are counted on
+// the digit strings of the export's completion.json — the fixture's own data, read with a
+// different tool — and never taken from this module's output. The four that the brief and
+// the Kit page already printed (368 readable, 166 with a level, 40 unreadable, 408 cells)
+// come out of that count unchanged, which is what says the count is right.
 const reference = completionMatrix(false)
 
 const row = (name: string) => {
@@ -24,12 +25,12 @@ const row = (name: string) => {
 }
 
 describe('completionKpis on the reference profile', () => {
-  it('states the totals §5.4 printed, and no percentage', () => {
+  it('states the totals §5.4 printed, split in two, and no percentage', () => {
     expect(completionKpis(reference)).toEqual({
-      started: 166,
+      normal: 166,
+      hard: 152,
       readable: 368,
-      both: 120,
-      completeCharacters: 3,
+      completeCharacters: 2,
       characters: 34,
       unknown: 40,
       cells: 408,
@@ -38,17 +39,35 @@ describe('completionKpis on the reference profile', () => {
 })
 
 describe('rowTally', () => {
-  it('calls a row complete when every readable cell is started', () => {
-    expect(rowTally(row('Isaac'))).toEqual({
-      started: 12,
+  // B22: a mark taken on hard counts as taken on normal too, so `normal` is the cells with
+  // either level and `hard` the ones with the second. The file corroborates it rather than
+  // only the product rule: a cell goes 1 → 2, so a bare 2 is the normal mark overwritten
+  // and not a hard mark taken by someone who never took the normal one (B58, 2026-09-17).
+  it('calls a row complete only when every readable cell is hard', () => {
+    // Magdalene is hard in all twelve: 12/12 · 12/12.
+    expect(rowTally(row('Magdalene'))).toEqual({
+      normal: 12,
+      hard: 12,
       readable: 12,
       complete: true,
     })
   })
 
-  it('keeps unreadable cells out of the denominator', () => {
+  it('does not call a row complete that is short of one hard mark', () => {
+    // Isaac's last cell is a bare 1: every boss has a level, one of them only the first.
+    // Under the old single count this row read 12/12 and complete; it is not.
+    expect(rowTally(row('Isaac'))).toEqual({
+      normal: 12,
+      hard: 11,
+      readable: 12,
+      complete: false,
+    })
+  })
+
+  it('keeps unreadable cells out of both numerators and the denominator', () => {
     expect(rowTally(row('The Forgotten'))).toEqual({
-      started: 9,
+      normal: 9,
+      hard: 8,
       readable: 10,
       complete: false,
     })
@@ -56,10 +75,45 @@ describe('rowTally', () => {
 
   it('counts an untouched row as zero of its readable cells', () => {
     expect(rowTally(row('T. Magdalene'))).toEqual({
-      started: 0,
+      normal: 0,
+      hard: 0,
       readable: 10,
       complete: false,
     })
+  })
+
+  it('reads a single hard cell as one on both counts, never as zero and one', () => {
+    // B22's own acceptance sentence. A bare 2 is hard, and hard is also normal.
+    const cells: Cell[] = [
+      { kind: 'known', bits: 2 },
+      ...Array.from({ length: 11 }, (): Cell => ({ kind: 'known', bits: 0 })),
+    ]
+    expect(rowTally({ ...row('Isaac'), cells })).toEqual({
+      normal: 1,
+      hard: 1,
+      readable: 12,
+      complete: false,
+    })
+  })
+})
+
+describe('the two counts never cross', () => {
+  // The property that makes the pair readable at a glance: hard ≤ normal ≤ readable, on
+  // every row and every column of the reference. It holds by construction — bit 1 implies
+  // "has a level" — and it is the assertion that catches the two being swapped.
+  it('holds hard ≤ normal ≤ readable on every row and column', () => {
+    const tallies = [
+      ...reference.characters.map(rowTally),
+      ...columnTallies(reference),
+    ]
+    expect(tallies).toHaveLength(34 + 12)
+    tallies.forEach((t) => {
+      expect(t.hard).toBeLessThanOrEqual(t.normal)
+      expect(t.normal).toBeLessThanOrEqual(t.readable)
+    })
+    // Not a vacuous pass: the reference has to contain a row where the two differ, or the
+    // property above would hold on any profile that never took a hard mark at all.
+    expect(tallies.some((t) => t.hard < t.normal)).toBe(true)
   })
 })
 
@@ -68,9 +122,27 @@ describe('columnTallies', () => {
     const tallies = columnTallies(reference)
     expect(tallies).toHaveLength(12)
     // Mom's Heart: all 17 base characters, and 4 of the 17 Tainted.
-    expect(tallies[0]).toEqual({ started: 21, readable: 34, complete: false })
+    expect(tallies[0]).toEqual({
+      normal: 21,
+      hard: 21,
+      readable: 34,
+      complete: false,
+    })
+    // Greed, where the two numbers are furthest apart and the reason for splitting them is
+    // visible: bit 1 there is Ultra Greedier, not a harder run of the same mode.
+    expect(tallies[7]).toEqual({
+      normal: 16,
+      hard: 5,
+      readable: 34,
+      complete: false,
+    })
     // The Beast: readable for the 14 originals only.
-    expect(tallies[11]).toEqual({ started: 5, readable: 14, complete: false })
+    expect(tallies[11]).toEqual({
+      normal: 5,
+      hard: 4,
+      readable: 14,
+      complete: false,
+    })
   })
 
   it('never calls a column with nothing readable complete', () => {
@@ -82,7 +154,8 @@ describe('columnTallies', () => {
       })),
     }
     expect(columnTallies(unread)[0]).toEqual({
-      started: 0,
+      normal: 0,
+      hard: 0,
       readable: 0,
       complete: false,
     })
@@ -107,27 +180,36 @@ describe('matrixGroups', () => {
     })
     expect(tainted?.rows[0]?.index).toBe(17)
     expect(tainted?.rows[0]?.tally).toEqual({
-      started: 1,
+      normal: 1,
+      hard: 1,
       readable: 10,
       complete: false,
     })
+  })
+
+  it('carries both counts on the group header too', () => {
+    const [base] = matrixGroups(reference)
+    // 151 + 15 = 166 and 138 + 14 = 152 across the two groups, which is the totals above.
+    expect(base).toMatchObject({ normal: 151, hard: 138, readable: 198 })
   })
 })
 
 describe('cellReading', () => {
   const known = (bits: number) => cellReading({ kind: 'known', bits })
 
-  it('reads the two levels apart and together', () => {
+  // `Both` is gone (B22): a cell with bit 1 is hard, and hard is also normal, so "normal
+  // and hard" was never a third thing to say — it was the same cell said twice.
+  it('reads a cell with the second level as hard, whatever bit 0 says', () => {
     expect(known(0)).toEqual({ status: CellStatus.Empty, third: false })
     expect(known(1)).toEqual({ status: CellStatus.Normal, third: false })
     expect(known(2)).toEqual({ status: CellStatus.Hard, third: false })
-    expect(known(3)).toEqual({ status: CellStatus.Both, third: false })
+    expect(known(3)).toEqual({ status: CellStatus.Hard, third: false })
   })
 
   it('carries the unconfirmed bit beside the level, never as one', () => {
     expect(known(4)).toEqual({ status: CellStatus.Empty, third: true })
     expect(known(5)).toEqual({ status: CellStatus.Normal, third: true })
-    expect(known(7)).toEqual({ status: CellStatus.Both, third: true })
+    expect(known(7)).toEqual({ status: CellStatus.Hard, third: true })
   })
 
   it('keeps what it cannot read, and what it should not see, apart', () => {
