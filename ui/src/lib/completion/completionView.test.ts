@@ -4,11 +4,13 @@ import type { Cell, MarksMatrix } from '@/lib/ipc/types'
 import {
   CellStatus,
   MatrixGroup,
+  TallyTone,
   cellReading,
   columnTallies,
   completionKpis,
   matrixGroups,
   rowTally,
+  tallyColumns,
 } from './completionView'
 
 // The reference profile of DESIGN-BRIEF.md §5.4. The expected values below are counted on
@@ -32,8 +34,6 @@ describe('completionKpis on the reference profile', () => {
       readable: 368,
       completeCharacters: 2,
       characters: 34,
-      unknown: 40,
-      cells: 408,
     })
   })
 })
@@ -117,6 +117,48 @@ describe('the two counts never cross', () => {
   })
 })
 
+describe('tallyColumns', () => {
+  // B22's "Done when": a row with twelve hard marks reads 12/12 · 12/12, and a row with a
+  // bare 2 in one cell reads 1/12 · 1/12 — not 0 and 1. Each number carries the denominator
+  // because the two columns are read apart: under its own heading, `hard` is not "the number
+  // after the dot", it is how many bosses reached the second level.
+  it('gives every readable cell to both columns when the row is hard everywhere', () => {
+    expect(tallyColumns(rowTally(row('Magdalene')))).toEqual({
+      normal: { value: 12, readable: 12, tone: TallyTone.Full },
+      hard: { value: 12, readable: 12, tone: TallyTone.Full },
+    })
+  })
+
+  it('is full at normal and short at hard one mark from the end', () => {
+    expect(tallyColumns(rowTally(row('Isaac')))).toEqual({
+      normal: { value: 12, readable: 12, tone: TallyTone.Full },
+      hard: { value: 11, readable: 12, tone: TallyTone.Partial },
+    })
+  })
+
+  it('counts a bare 2 in both columns', () => {
+    const cells: Cell[] = row('Isaac').cells.map((_, i) => ({
+      kind: 'known' as const,
+      bits: i === 0 ? 2 : 0,
+    }))
+    expect(tallyColumns(rowTally({ ...row('Isaac'), cells }))).toEqual({
+      normal: { value: 1, readable: 12, tone: TallyTone.Partial },
+      hard: { value: 1, readable: 12, tone: TallyTone.Partial },
+    })
+  })
+
+  // 0 === 0 is not "full": a row we cannot read has to look unreadable, not finished.
+  it('calls a row with nothing readable unreadable, never full', () => {
+    const cells: Cell[] = row('Isaac').cells.map(() => ({
+      kind: 'unknown' as const,
+    }))
+    expect(tallyColumns(rowTally({ ...row('Isaac'), cells }))).toEqual({
+      normal: { value: 0, readable: 0, tone: TallyTone.Unreadable },
+      hard: { value: 0, readable: 0, tone: TallyTone.Unreadable },
+    })
+  })
+})
+
 describe('columnTallies', () => {
   it('counts each boss over the characters whose cell is readable', () => {
     const tallies = columnTallies(reference)
@@ -190,7 +232,11 @@ describe('matrixGroups', () => {
   it('carries both counts on the group header too', () => {
     const [base] = matrixGroups(reference)
     // 151 + 15 = 166 and 138 + 14 = 152 across the two groups, which is the totals above.
-    expect(base).toMatchObject({ normal: 151, hard: 138, readable: 198 })
+    expect(base?.tally).toMatchObject({
+      normal: 151,
+      hard: 138,
+      readable: 198,
+    })
   })
 })
 
