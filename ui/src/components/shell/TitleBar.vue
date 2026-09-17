@@ -12,8 +12,12 @@ withDefaults(
     // Where a tab dragged from another window is hovering over this strip, in desktop pixels,
     // with the window's own geometry to convert it. Null when nothing is coming.
     incoming?: IncomingHover | null
+    // No tabs: the welcome is up and the app has not opened on anything yet (3.8). The drag
+    // region and the window controls stay — a window nobody can move or close is worse than
+    // one with no tabs.
+    bare?: boolean
   }>(),
-  { incoming: null },
+  { incoming: null, bare: false },
 )
 const emit = defineEmits<{
   select: [id: string]
@@ -41,6 +45,7 @@ const emit = defineEmits<{
     class="group flex h-titlebar items-stretch border-b border-hairline bg-titlebar"
   >
     <TabStrip
+      v-if="!bare"
       :tabs="tabs"
       :active-id="activeId"
       :incoming="incoming"
