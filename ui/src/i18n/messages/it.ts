@@ -553,13 +553,9 @@ export const it = {
       hard: 'marchi in hard',
       hardExplain:
         'Celle con il secondo livello, sullo stesso denominatore. Mai più del numero accanto: ogni marchio hard è anche un marchio normale.',
-      cells: 'celle',
       complete: 'personaggi completi',
       completeExplain:
         'Personaggi con tutte le celle leggibili in hard, che è quello che il widget del gioco intende per riga piena. Chi ha celle non leggibili risulta completo su meno colonne.',
-      unknown: 'non leggibili',
-      unknownExplain:
-        'Caselle che nel salvataggio non sappiamo ancora dove stiano. Non vuol dire "mai fatto": vuol dire che non lo sappiamo dire.',
     },
     card: {
       title: 'Matrice dei marchi',
@@ -573,9 +569,11 @@ export const it = {
     },
     grid: {
       character: 'Personaggio',
-      levels: 'normale · hard',
+      normal: 'normale',
+      hard: 'hard',
       unreadable: 'non leggibili',
       columnTotals: 'Personaggi con il marchio',
+      columnTotalsHard: 'Di cui in hard',
     },
     groups: {
       base: 'Personaggi base',
