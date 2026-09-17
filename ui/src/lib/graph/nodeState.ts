@@ -1,4 +1,4 @@
-import { countBy, groupBy } from 'lodash-es'
+import { groupBy } from 'lodash-es'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
@@ -44,17 +44,6 @@ export const nodeState = (node: UnlockNode): NodeState => {
       return NodeState.Partial
     default:
       return assertNever(graph)
-  }
-}
-
-export const stateCounts = (nodes: UnlockNode[]): Record<NodeState, number> => {
-  const counted = countBy(nodes, nodeState)
-  const count = (state: NodeState): number => counted[state] ?? 0
-  return {
-    [NodeState.Done]: count(NodeState.Done),
-    [NodeState.Now]: count(NodeState.Now),
-    [NodeState.Blocked]: count(NodeState.Blocked),
-    [NodeState.Partial]: count(NodeState.Partial),
   }
 }
 

@@ -1,4 +1,3 @@
-import { countBy } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
 import type { CollectionItem } from '@/lib/ipc/types'
 
@@ -38,15 +37,3 @@ export const itemState = (item: CollectionItem): ItemState => {
   }
 }
 
-export const itemStateCounts = (
-  items: CollectionItem[],
-): Record<ItemState, number> => {
-  const counted = countBy(items, itemState)
-  const count = (state: ItemState): number => counted[state] ?? 0
-  return {
-    [ItemState.InCollection]: count(ItemState.InCollection),
-    [ItemState.Available]: count(ItemState.Available),
-    [ItemState.Locked]: count(ItemState.Locked),
-    [ItemState.Unknown]: count(ItemState.Unknown),
-  }
-}
