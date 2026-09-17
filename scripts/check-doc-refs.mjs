@@ -84,6 +84,7 @@ const DOCS = [
   'CLAUDE.md',
   'DESIGN-BRIEF.md',
   'docs/PROJECT.md',
+  'docs/architecture.md',
   'docs/STATUS.md',
   'docs/BACKLOG.md',
   'docs/frontend-conventions.md',
