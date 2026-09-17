@@ -28,6 +28,16 @@ export interface DrawerLabels {
   reset: Label
 }
 
+// What stays a screen's own: the noun for one of its rows, what its search reads, and how it
+// words "ordina per". Everything else the bar says is shared and read from `filters.*`, because
+// three screens writing "filtri attivi" three times is how two of them end up disagreeing.
+export interface FilterBarLabels {
+  rows: Label
+  search: Label
+  // Absent on a list with nothing to choose between: the Run diary's order is the archive's.
+  sortBy?: Label
+}
+
 // The origin DLC's names are game data, the same as the wiki's editions; only "not stated" is
 // ours to say. Both screens carry an origin facet over the same value set, so they word it the
 // same way or they disagree with each other on the same row.
