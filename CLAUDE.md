@@ -59,8 +59,18 @@ list until 2026-09-15: `log-watch` has had a row in the table below since it lan
 
 **Drawn, in [`docs/architecture.md`](docs/architecture.md)**: four diagrams — the data flow from
 the disk to the screens, the crate graph, the fourteen routes with the commands behind each, and
-the build. It is the state and not the design, so it is wrong the moment a crate or a route
-moves; the table below stays the authority on *what a module is for*.
+the build. It is the state and not the design, so the table below stays the authority on *what a
+module is for*.
+
+**It is kept up to date, and that is not a suggestion.** Its header pins five counts — 16 crates,
+30 commands, 4 events, 14 routes, 5 store migrations — so a change that makes one of them wrong
+makes the document wrong. **Redraw it in the same commit**, and five things trigger that: a crate
+added or removed, a route added or removed from `RouteName`, a command joining or leaving
+`generate_handler!`, an event in `crates/app/src/events.rs`, a migration in
+`crates/store/src/migrations.rs`. Nothing enforces it — `scripts/check-doc-refs.mjs` catches a
+**renamed path** and nothing else, so an edge that stopped existing leaves its arrow drawn on the
+page and only a person ever notices. That is the whole risk: a diagram nobody maintains is worse
+than no diagram, because it is read as true.
 
 | Module | Responsibility |
 |---|---|
