@@ -155,10 +155,19 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
             progression, holds 4 and 4 nodes held by nothing else, so the property is asserted
             there; a second test pins *why* the reference profile has none, so that "empty"
             stays a fact about the profile.
-- [ ] **M3 — Derived plan** ← in progress. The **plan queue** is done (2026-09-08): an
-      ordered series of achievements whose order is yours and can never contradict the
-      graph. Report in `docs/superpowers/reports/2026-09-07-plan-queue-report.md`. What
-      remains of M3 is the screen, which waits for the design system.
+- [x] **M3 — Derived plan** — **closed on 2026-09-18, and it had been done since 2026-09-11.**
+      The **plan queue** landed on 2026-09-08: an ordered series of achievements whose order is
+      yours and can never contradict the graph, report in
+      `docs/superpowers/reports/2026-09-07-plan-queue-report.md`. The line under it read *"what
+      remains of M3 is the screen, which waits for the design system"* until today — and the
+      screen landed with 3.3 on 2026-09-11 (`05dadcb`, *the Plan, a queue you drag and a repair
+      that says where it stopped*): `PlanScreen.vue` with `QueueCard`, `QueueRow`,
+      `ProposalAside` and `QueueFootnotes`, on `/progress/plan`, behind `plan`, `add_goal`,
+      `remove_goal` and the five `queue_*`.
+      **It is the third headline found stale on 2026-09-17**, after B3 and B6, and the three
+      share one cause: the sentence that says what remains was true when it was written and
+      nobody read it again against the code. A milestone says "in progress" for as long as
+      somebody believes its last paragraph.
 - [x] **M4 — Log watcher and run archive** — **closed on 2026-09-15**, when its last open
       measurement was answered. It reads "designed, not started" no longer: that headline
       survived both sub-projects and both screens, and was corrected only when somebody asked
@@ -740,6 +749,13 @@ the spot, and one of them turned into a decision the owner took mid-work (the st
 sub-project that produced it and is unticked *there* too, but a report is true on its day and is
 never re-checked — so ticking a line **here** is what closes it, and the report stays as it was
 written. This is `docs/BACKLOG.md`'s `, then a window` tag, gathered.
+
+**Since 2026-09-17 every group below is also a card in the board's `UAT`**, one per group, with
+its checks copied into the card's description — the owner's rule is that every change passes
+through Trello, and work waiting to be looked at is work. **Nothing keeps the two in step**: a
+check ticked on a card does not tick itself here. This file stays the one that is *read*, because
+it sits beside the reports that produced each line; the card is what makes the work visible
+on the board.
 
 **Nothing here is blocked on thinking or on code.** Every line needs the built app in front of a
 pair of eyes, and most of them need it for one minute. `pnpm dev` from the root; `predev` clears
