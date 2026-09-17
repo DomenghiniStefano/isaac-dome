@@ -16,6 +16,7 @@ export const missingReasonLabel: Record<MissingReason, Message> = {
   [MissingReason.SteamNotFound]: 'profile.none.steamNotFound',
   [MissingReason.GameNotFound]: 'profile.none.gameNotFound',
   [MissingReason.NoSaves]: 'profile.none.noSaves',
+  [MissingReason.NoSavesInChosenFolder]: 'profile.none.noSavesInChosenFolder',
 }
 
 export const chainLinkLabel: Record<ChainLink, Message> = {

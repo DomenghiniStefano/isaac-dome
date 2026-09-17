@@ -1,9 +1,12 @@
 //! Profile selection and settings: the two commands that write, and the two that read them back.
 
+use std::path::PathBuf;
+
 use tauri::{AppHandle, Manager};
 use tauri_plugin_autostart::AutoLaunchManager;
+use tauri_plugin_dialog::DialogExt;
 
-use discovery::{discover, Options};
+use discovery::discover;
 use ipc::{
     AutostartFailure, AutostartReason, AutostartView, IpcError, ProfileId, Settings, SetupState,
 };
@@ -19,20 +22,62 @@ fn read_save(path: &std::path::Path) -> Option<core_save::Save> {
     core_save::Save::open(path).ok()
 }
 
+/// The state as it is now: discovery run with the folders the user pointed at, and the saved
+/// choice. Shared by the three commands that answer it, so they cannot drift apart.
+fn state_now(app: &AppHandle) -> SetupState {
+    let settings = settings_file::load(app);
+    let d = discover(&settings_file::options(app));
+    ipc::setup_state(&d, settings.active_profile_id.as_ref(), read_save)
+}
+
 #[tauri::command]
 pub fn setup_state(app: AppHandle) -> Result<SetupState, IpcError> {
-    let settings = settings_file::load(&app);
-    let d = discover(&Options::default());
-    Ok(ipc::setup_state(
-        &d,
-        settings.active_profile_id.as_ref(),
-        read_save,
-    ))
+    Ok(state_now(&app))
+}
+
+/// Asks for a folder and answers the discovery that comes out of it. **The path travels
+/// inward only**: what goes back is a `SetupState`, whose `pathHint` is redacted.
+///
+/// `async` plus the **callback** form is the documented-safe pair (checked 2026-09-17 against
+/// `v2.tauri.app/plugin/dialog/`): `blocking_pick_folder` *"should NOT be used when running on
+/// the main thread"*, and which thread a synchronous command runs on is not documented, so
+/// this takes the form that needs no inference. `try_send` and never `blocking_send`: the
+/// channel has room for the one message, and `blocking_send` panics if the callback happens
+/// to run inside a runtime thread.
+async fn ask_for_folder(app: &AppHandle) -> Option<PathBuf> {
+    let (tx, mut rx) = tauri::async_runtime::channel(1);
+    app.dialog().file().pick_folder(move |picked| {
+        let _ = tx.try_send(picked);
+    });
+    rx.recv().await.flatten().and_then(|p| p.into_path().ok())
+}
+
+#[tauri::command]
+pub async fn choose_game_folder(app: AppHandle) -> Result<SetupState, IpcError> {
+    // Cancelled is not an error and not a change: the state as it already was.
+    let Some(dir) = ask_for_folder(&app).await else {
+        return Ok(state_now(&app));
+    };
+    settings_file::save_folders(&app, Some(dir), None)?;
+    announce(&app, PROFILE_CHANGED);
+    Ok(state_now(&app))
+}
+
+#[tauri::command]
+pub async fn choose_saves_folder(app: AppHandle) -> Result<SetupState, IpcError> {
+    let Some(dir) = ask_for_folder(&app).await else {
+        return Ok(state_now(&app));
+    };
+    settings_file::save_folders(&app, None, Some(dir))?;
+    announce(&app, PROFILE_CHANGED);
+    Ok(state_now(&app))
 }
 
 #[tauri::command]
 pub fn select_profile(app: AppHandle, id: ProfileId) -> Result<SetupState, IpcError> {
-    let d = discover(&Options::default());
+    // The same options `setup_state` answered with: a candidate found in a folder chosen by
+    // hand must be choosable, and searching without them here would refuse it as unknown.
+    let d = discover(&settings_file::options(&app));
     let views = ipc::candidates(&d.saves);
     if !views.iter().any(|c| c.id == id) {
         return Err(IpcError::UnknownProfile {

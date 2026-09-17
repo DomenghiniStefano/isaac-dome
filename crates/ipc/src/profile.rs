@@ -182,6 +182,9 @@ pub enum MissingReason {
     SteamNotFound,
     GameNotFound,
     NoSaves,
+    /// A folder the user chose, holding no save. Not `NoSaves`: that one is about the places
+    /// we know to look, and this one is about a place they pointed at.
+    NoSavesInChosenFolder,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
@@ -258,6 +261,26 @@ pub fn resolve_active(
     }
 }
 
+/// Which absence it is, when the chain reached the saves and found none.
+///
+/// `resolve_active` decides *that* nothing is active, from the chain alone. Which "nothing"
+/// it is comes from the scan: a folder the user pointed at that holds no save is a sentence
+/// they can act on, and "we looked where saves usually are" is not the same one. Kept here,
+/// out of `resolve_active`, so that function keeps saying one thing.
+fn named_absence(active: ActiveProfile, diagnostics: &[DiscoveryDiagnostic]) -> ActiveProfile {
+    let chosen = diagnostics
+        .iter()
+        .any(|d| matches!(d, DiscoveryDiagnostic::NoSavesInChosenFolder));
+    match active {
+        ActiveProfile::None {
+            reason: MissingReason::NoSaves,
+        } if chosen => ActiveProfile::None {
+            reason: MissingReason::NoSavesInChosenFolder,
+        },
+        other => other,
+    }
+}
+
 fn missing_reason(steam_found: bool, game_found: bool) -> MissingReason {
     if !steam_found {
         MissingReason::SteamNotFound
@@ -307,6 +330,7 @@ pub enum SetupDiagnostic {
     SteamNotFound,
     GameNotFound,
     NoSavesFound,
+    NoSavesInChosenFolder,
     /// `name` is the path's last component, never the path. `reason` is which `io` case it
     /// was: the system's own message is not translatable and can repeat the path.
     UnreadablePath {
@@ -330,6 +354,7 @@ fn setup_diagnostic_of(d: &DiscoveryDiagnostic) -> SetupDiagnostic {
         DiscoveryDiagnostic::SteamNotFound => SetupDiagnostic::SteamNotFound,
         DiscoveryDiagnostic::GameNotFound => SetupDiagnostic::GameNotFound,
         DiscoveryDiagnostic::NoSavesFound => SetupDiagnostic::NoSavesFound,
+        DiscoveryDiagnostic::NoSavesInChosenFolder => SetupDiagnostic::NoSavesInChosenFolder,
         DiscoveryDiagnostic::UnreadablePath { path, kind } => SetupDiagnostic::UnreadablePath {
             name: last_component(path),
             reason: (*kind).into(),
@@ -365,7 +390,10 @@ pub fn setup_state(
             ..v
         })
         .collect();
-    let active = resolve_active(saved, &views, d.steam.is_some(), d.game.is_some());
+    let active = named_absence(
+        resolve_active(saved, &views, d.steam.is_some(), d.game.is_some()),
+        &d.diagnostics,
+    );
     SetupState {
         steam: d.steam.as_ref().map(|s| SteamView {
             root_hint: mask_user_dir(&s.root.display().to_string()),
