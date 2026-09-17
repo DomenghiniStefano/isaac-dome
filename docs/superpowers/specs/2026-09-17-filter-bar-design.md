@@ -29,6 +29,16 @@ choices the owner made are §2, §3, §4 and §5.
   `itemStateCounts(items)`, over every row; a dropdown's counts come from
   `faceting.counts(...)`, over the rows the *other* facets leave. Two different questions, and
   the bar must not quietly answer one with the other.
+
+  **Corrected on 2026-09-17, during the work, and it is the finding this sub-project produced.**
+  Putting the two side by side in one bar is what made the difference visible: with a character
+  picked, the Run diary's list said `2 / 5` while the state row above it said 2 + 1 + 1 + 1 —
+  five runs, three of which were no longer in the table. The owner's call is that **the state row
+  counts like every other control**, over what the rest of the filter leaves, so the whole bar
+  says one kind of thing. It never counts its own picks, or picking one state would zero the
+  others and a second could never be reached. `stateRowCounts` in §8; the three screens' own
+  tallies — `itemStateCounts`, `stateCounts`, `outcomeCounts` — are deleted with the prop they
+  fed.
 - **Reka `ListboxRoot` has what this needs**: `multiple`, `selectionBehavior: 'toggle'`,
   `highlightOnHover`, `by`.
 - **`ListboxFilter` does not filter.** Read in `reka-ui@2.10.4`'s own build: it is an input that
@@ -111,7 +121,9 @@ The esito becomes Runs' state row: squares, counts, all four values in view, on 
 
 The KPI tiles above the table stay, and they are not the same statement: they count the archive,
 the state row counts what the search and the other facets have left. The two numbers differ the
-moment anything else is picked, which is exactly why the row is not a repetition.
+moment anything else is picked, which is exactly why the row is not a repetition — and which is
+only true since the correction in §1: until then the row counted the archive too, and the tiles
+were the same four numbers twice.
 
 ## 6. The fold remembers nothing, and can never hide an active filter
 
@@ -136,6 +148,8 @@ it filters.
 - **the options of a facet**: value, label, count, picked — dropping a value with no count unless
   it is picked, which is the rule that has never had a test
 - **which facets are in view and which are folded**, from the screen's description
+- **the state row's numbers** (`stateRowCounts`), zero-filled over the row's own order, counted
+  like a dropdown's and never over its own picks — the correction in §1
 - **whether the fold starts open**: true when any folded facet holds a pick
 
 The components stay drawing. Anything worth checking lives in that module, which is the frontend

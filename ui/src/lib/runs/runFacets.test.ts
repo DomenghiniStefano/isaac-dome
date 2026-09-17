@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { RunView } from '@/lib/ipc/types'
 import { emptyFilter } from '@/lib/facets/faceting'
-import { RunFacet, outcomeCounts, runFaceting } from './runFacets'
+import { RunFacet, runFaceting } from './runFacets'
 
 const run = (fields: Partial<RunView>): RunView => ({
   source: { kind: 'session', name: '09_12_2026__13_34_26' },
@@ -104,32 +104,5 @@ describe('the run facets', () => {
       'live',
       'session',
     ])
-  })
-})
-
-describe('outcomeCounts', () => {
-  it('counts every outcome, and says zero for one nothing reached', () => {
-    const runs = [
-      run({ outcome: { kind: 'won', ending: 'The Void' } }),
-      run({ outcome: { kind: 'won', ending: 'Mother' } }),
-      run({ outcome: { kind: 'abandoned' } }),
-    ]
-    expect(outcomeCounts(runs)).toEqual({
-      won: 2,
-      died: 0,
-      abandoned: 1,
-      open: 0,
-    })
-  })
-
-  // An empty archive still draws four controls: a state row whose values come and go with the
-  // data would move under the reader's cursor.
-  it('answers for an archive with nothing in it', () => {
-    expect(outcomeCounts([])).toEqual({
-      won: 0,
-      died: 0,
-      abandoned: 0,
-      open: 0,
-    })
   })
 })

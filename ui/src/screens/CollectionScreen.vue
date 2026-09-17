@@ -21,7 +21,7 @@ import {
   sortItems,
 } from '@/lib/collection/collectionFacets'
 import type { CollectionFilter } from '@/lib/collection/collectionFacets'
-import { itemStateCounts, itemStateOrder } from '@/lib/collection/itemState'
+import { itemStateOrder } from '@/lib/collection/itemState'
 import { useCollectionStore } from '@/stores/views'
 import { LoadStatus } from '@/stores/loadStatus'
 import ScreenHeader from './ScreenHeader.vue'
@@ -85,7 +85,6 @@ const items = computed(() => store.view?.items ?? [])
 const faceting = computed(() => collectionFaceting(store.view?.pools ?? []))
 const valueLabel = (facet: CollectionFacet, value: string) =>
   collectionFacetValueLabel(t, facet, value)
-const counts = computed(() => itemStateCounts(items.value))
 const rows = computed(() =>
   sortItems(
     items.value.filter((item) => faceting.value.matches(item, filter.value)),
@@ -146,7 +145,6 @@ const reset = () => {
           :state="{
             facet: CollectionFacet.State,
             order: itemStateOrder,
-            counts,
             dot: itemStateDot,
             text: itemStateText,
           }"
