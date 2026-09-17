@@ -513,8 +513,9 @@ save against the dated backup the game wrote before it, and read which cells mov
 
 **This section is the `a measurement` bucket of `docs/BACKLOG.md`'s tags**, which since
 2026-09-14 mark every open entry there with what it needs beyond a clone of the repo —
-`nothing`, `a real save`, `the game`, `a measurement`. The vocabulary and the current counts
-are at the top of that file. What lives here rather than there is what is an **instrument**
+`nothing`, `a real save`, `the game`, `a measurement`. The vocabulary is at the top of that file;
+since 2026-09-17 the counts are on the board, because a total written by hand goes stale the moment
+the next entry is opened. What lives here rather than there is what is an **instrument**
 rather than an entry: no code to write, only a thing to go and read. The two that are both —
 B9 and B20 — are entries in the backlog and appear here as the measurement they wait on.
 
