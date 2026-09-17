@@ -45,6 +45,8 @@ const CatalogParam = 'catalog'
 const QueueParam = 'queue'
 // `?collection=unread` answers the Collection as a save whose section 4 wasn't read.
 const CollectionParam = 'collection'
+// `?challenges=unread` answers the Challenges as a save whose section 7 wasn't read.
+const ChallengesParam = 'challenges'
 // `?wiki=none` answers the wiki as a binary whose embedded dataset didn't load.
 const WikiParam = 'wiki'
 // `?floor=empty` answers the painted grid as one nobody has touched yet.
@@ -82,6 +84,7 @@ const currentFloorScenario = (): FloorScenario => {
 const artShown = (): boolean => query().get(ArtParam) !== Off
 const catalogShown = (): boolean => query().get(CatalogParam) !== Off
 const collectionRead = (): boolean => query().get(CollectionParam) !== Unread
+const challengesRead = (): boolean => query().get(ChallengesParam) !== Unread
 const wikiShown = (): boolean => query().get(WikiParam) !== Off
 
 // A profile chosen through select_profile stays chosen for the page's life, as in the app.
@@ -149,6 +152,13 @@ const collection = async () => {
   })
 }
 
+// The challenges follow the same `?challenges=unread` switch the Collection has: section 7
+// unread is a state a screen gets wrong, and it is one query parameter away.
+const challenges = async () => {
+  const { challengesAnswer, challengesUnread } = await import('./challenges')
+  return challengesRead() ? challengesAnswer() : challengesUnread()
+}
+
 // The wiki needs neither a profile nor the catalog: the pack's image index and sample pages
 // load when the Wiki, or a tab label, first asks.
 const wiki = async () => import('./wiki')
@@ -211,6 +221,8 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     ),
   [Command.Collection]: (_args, scenario) =>
     whenActive(scenario, () => collection()),
+  [Command.Challenges]: (_args, scenario) =>
+    whenActive(scenario, () => challenges()),
   [Command.WikiIndex]: async () =>
     (await wiki()).wikiIndexAnswer({
       withArt: artShown() && catalogShown(),
