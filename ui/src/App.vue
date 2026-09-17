@@ -30,6 +30,7 @@ import { useShortcut } from '@/composables/useShortcut'
 import { i18n, useMessages } from '@/i18n'
 import type { Point } from '@/lib/drag/dragList'
 import { indicator } from '@/lib/profile/profileView'
+import { welcomeState } from '@/lib/profile/welcomeView'
 import { shortcutAction } from '@/lib/scale/shortcut'
 import {
   HistoryAction,
@@ -49,8 +50,9 @@ import {
   sidebarWidth as storedWidth,
 } from '@/lib/window/layout'
 import { useWindowSession } from '@/lib/window/session'
-import { RouteName, routeOrigin } from '@/router/routeTable'
+import { routeOrigin } from '@/router/routeTable'
 import ProgressGate from '@/screens/ProgressGate.vue'
+import WelcomeScreen from '@/screens/welcome/WelcomeScreen.vue'
 import { useProfileStore } from '@/stores/profile'
 import { useQueueStore } from '@/stores/queue'
 import { useSettingsStore } from '@/stores/settings'
@@ -83,7 +85,12 @@ onMounted(async () => {
   // through to every screen that reads the save (`useOnActiveProfile`); the queue store is
   // read again wherever it is mounted.
   stopAppEvents = await watchAppEvents({
-    [AppEvent.ProfileChanged]: () => void profile.load(),
+    // One answer settles every window: a picker this window opened on purpose closes when
+    // another window chooses, because the settled profile is the app's and not the window's.
+    [AppEvent.ProfileChanged]: () => {
+      profile.stopPicking()
+      void profile.load()
+    },
     [AppEvent.SettingsChanged]: () => void settings.load(),
     [AppEvent.PlanChanged]: () => void queue.load(),
     // The run archive has no screen yet (M4 keeps `Live` and `Runs` placeholders on purpose):
@@ -214,6 +221,13 @@ const indicatorView = computed(() =>
     ? indicator(profile.setup.active, new Date(), i18n.global.locale.value)
     : null,
 )
+
+// Whether this window draws the welcome instead of the shell. Every case is decided in
+// `welcomeView`, where it is tested; here it only chooses which half of the template runs.
+const welcome = computed(() =>
+  welcomeState(profile.setup, profile.status, profile.picking),
+)
+const takeover = computed(() => welcome.value.kind !== 'hidden')
 </script>
 
 <template>
@@ -226,6 +240,7 @@ const indicatorView = computed(() =>
         :active-id="tabs.activeId"
         :focused="focused"
         :incoming="tabs.incoming"
+        :bare="takeover"
         @select="tabs.select"
         @close="tabs.close"
         @move="tabs.move"
@@ -238,57 +253,62 @@ const indicatorView = computed(() =>
         @toggle-maximize="toggleMaximizeWindow"
         @close-window="closeWindow"
       />
-      <NavBar
-        :section="navSectionOf(browsing)"
-        :settings-active="browsing === SidebarSection.Settings"
-        :focused="focused"
-        :can-back="tabs.canBack"
-        :can-forward="tabs.canForward"
-        @back="tabs.back"
-        @forward="tabs.forward"
-        @update:section="
-          (section, event) => openSection(sidebarSectionOf(section), event)
-        "
-        @search="paletteOpen = true"
-        @settings="openSection(SidebarSection.Settings, $event)"
-        @about="aboutOpen = true"
-      >
-        <template #status>
-          <ProfileIndicator
-            :view="indicatorView"
-            @open="tabs.navigate({ name: RouteName.Profile })"
-          />
-        </template>
-      </NavBar>
-      <div class="flex min-h-0 flex-1">
-        <SectionSidebar
-          v-model:width="sidebarWidth"
-          :title="t(header.title)"
-          :hint="t(header.hint)"
-          class="border-y-0 border-l-0"
+      <!-- The welcome is the whole window while it is up: no navigation bar, no sidebar, no
+           tabs. `useWindowSession()` keeps running in the setup above, so this window goes on
+           holding its tabs behind it — which is why the takeover is a state and not a route. -->
+      <WelcomeScreen v-if="takeover" :state="welcome" />
+      <template v-else>
+        <NavBar
+          :section="navSectionOf(browsing)"
+          :settings-active="browsing === SidebarSection.Settings"
+          :focused="focused"
+          :can-back="tabs.canBack"
+          :can-forward="tabs.canForward"
+          @back="tabs.back"
+          @forward="tabs.forward"
+          @update:section="
+            (section, event) => openSection(sidebarSectionOf(section), event)
+          "
+          @search="paletteOpen = true"
+          @settings="openSection(SidebarSection.Settings, $event)"
+          @about="aboutOpen = true"
         >
-          <template #icon><component :is="header.icon" /></template>
-          <SidebarItem
-            v-for="entry in entries"
-            :key="entry.key"
-            :active="isEntryActive(entry, tabs.location)"
-            @click="openEntry(entry, $event)"
+          <template #status>
+            <!-- The indicator opens the same welcome, over the app: one implementation of the
+               choice, and the card you picked last time is the one already selected. -->
+            <ProfileIndicator :view="indicatorView" @open="profile.pick()" />
+          </template>
+        </NavBar>
+        <div class="flex min-h-0 flex-1">
+          <SectionSidebar
+            v-model:width="sidebarWidth"
+            :title="t(header.title)"
+            :hint="t(header.hint)"
+            class="border-y-0 border-l-0"
           >
-            <template #icon><component :is="entry.icon" /></template>
-            {{ t(entry.label) }}
-          </SidebarItem>
-        </SectionSidebar>
-        <main class="min-w-0 flex-1 overflow-auto px-5.5 pt-5 pb-15">
-          <RouterView v-slot="{ Component, route }">
-            <ProgressGate v-if="route.meta.needsProfile">
-              <component :is="Component" />
-            </ProgressGate>
-            <component :is="Component" v-else />
-          </RouterView>
-        </main>
-      </div>
-      <AboutDialog v-model:open="aboutOpen" />
-      <SearchPalette v-model:open="paletteOpen" />
+            <template #icon><component :is="header.icon" /></template>
+            <SidebarItem
+              v-for="entry in entries"
+              :key="entry.key"
+              :active="isEntryActive(entry, tabs.location)"
+              @click="openEntry(entry, $event)"
+            >
+              <template #icon><component :is="entry.icon" /></template>
+              {{ t(entry.label) }}
+            </SidebarItem>
+          </SectionSidebar>
+          <main class="min-w-0 flex-1 overflow-auto px-5.5 pt-5 pb-15">
+            <RouterView v-slot="{ Component, route }">
+              <ProgressGate v-if="route.meta.needsProfile">
+                <component :is="Component" />
+              </ProgressGate>
+              <component :is="Component" v-else />
+            </RouterView>
+          </main>
+        </div>
+        <AboutDialog v-model:open="aboutOpen" />
+        <SearchPalette v-model:open="paletteOpen" />
+      </template>
     </div>
   </TooltipProvider>
 </template>

@@ -732,12 +732,36 @@ export const en: MessageSchema = {
         '{count} achievements the game has and this save does not name: they are left out of the list',
     },
   },
-  gate: {
-    needsProfile:
-      'Progress depends on the active profile: choose one to see this screen.',
-    blocked: {
-      title: 'Progress needs a save',
-      settings: 'Open the profile settings',
+  welcome: {
+    title: 'Which save are you playing with?',
+    subtitle:
+      'Every number in the app comes from the file you choose here. You can change it whenever you like.',
+    savedGone:
+      'The save you were using is no longer where it was. We have not picked another one in its place: the numbers of a different profile, shown without saying so, are the mistake you never notice you have.',
+    hint: 'The most recent one is only a suggestion: you choose which to read.',
+    use: 'Continue',
+    cancel: 'Cancel',
+    card: {
+      slot: 'slot',
+      achievements: 'achievements',
+      items: 'items',
+      marks: 'marks',
+      unread: 'unreadable',
+      suggested: 'most recent',
+      never: 'date unknown',
+      unreadableCells: '{count} cells not read',
+      unreadable: 'This file would not let us read it',
+    },
+    nothing: {
+      title: 'We found no save at all',
+      retry: 'Search again',
+      diagnostics: 'Diagnostics — what we tried',
+      chooseGame: 'Choose the game folder',
+      chooseSaves: 'Choose the saves folder',
+    },
+    failed: {
+      title: 'We could not read it',
+      retry: 'Try again',
     },
   },
   indicator: {
@@ -748,7 +772,7 @@ export const en: MessageSchema = {
   profile: {
     title: 'Game profile',
     intro:
-      'Choose the save you are playing with: every number on the other screens is read from it. You can change it whenever you like.',
+      'Where the numbers come from: which save is being read, where we found it, and what the file let us read. To change it, the indicator at the top.',
     chain: {
       title: 'The three things it takes',
       summary: 'any one of them can be the one missing',
