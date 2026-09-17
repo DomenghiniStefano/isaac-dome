@@ -5,7 +5,8 @@ that takes, what the screens are, and what it takes to build and check the thing
 
 > **This is the state, not the design.** `docs/PROJECT.md` is the design and freezes at M0 by
 > its own header — it says so in its first paragraph — so a diagram of *today* could not live
-> there without breaking that promise. Drawn on 2026-09-17 against `bb4a131`.
+> there without breaking that promise. Drawn on 2026-09-17 against `6e6b57c`, the `develop` it
+> lands on.
 >
 > **What keeps it true, and what does not.** Every path named here is checked by
 > `scripts/check-doc-refs.mjs`, which is why the nodes carry real paths instead of pretty
@@ -52,7 +53,7 @@ flowchart LR
 
   subgraph purecrates["Rust — pure, no I/O of their own"]
     wiki["wiki"]
-    graph["graph"]
+    graphc["graph"]
     plan["plan"]
     runc["run"]
     floor["floor"]
@@ -78,10 +79,10 @@ flowchart LR
   unpack -->|"extracted XML and sprites"| catalog
   logs --> logwatch
   wikijson --> wiki
-  rulesjson --> graph
-  catalog --> graph
-  wiki --> graph
-  graph --> plan
+  rulesjson --> graphc
+  catalog --> graphc
+  wiki --> graphc
+  graphc --> plan
   logwatch --> runc
   runc --> store
   plan --> store
@@ -91,7 +92,7 @@ flowchart LR
   discovery --> ipc
   unpack --> ipc
   catalog --> ipc
-  graph --> ipc
+  graphc --> ipc
   plan --> ipc
   wiki --> ipc
   runc --> ipc
@@ -152,7 +153,7 @@ flowchart TD
 
   subgraph purecrates["Pure — no I/O of their own"]
     ipc["ipc"]
-    graph["graph"]
+    graphc["graph"]
     plan["plan"]
     runc["run"]
     floor["floor"]
@@ -174,7 +175,7 @@ flowchart TD
   ipc --> unpack
   ipc --> catalog
   ipc --> runc
-  ipc --> graph
+  ipc --> graphc
   ipc --> plan
   ipc --> floor
   ipc --> wiki
@@ -186,9 +187,9 @@ flowchart TD
   logwatch --> runc
   logwatch --> store
 
-  graph --> catalog
-  graph --> wiki
-  plan --> graph
+  graphc --> catalog
+  graphc --> wiki
+  plan --> graphc
 
   wikisnap --> wiki
 ```
