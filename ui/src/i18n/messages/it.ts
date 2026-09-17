@@ -799,20 +799,21 @@ export const it = {
       candidates: 'file candidati',
     },
     none: {
-      title: 'Nessun salvataggio trovato',
       steamNotFound:
         'Non troviamo Steam su questo computer, e partiamo da lì per arrivare alla cartella del gioco e poi ai salvataggi.',
       gameNotFound:
         'Steam c’è, ma il gioco non è in nessuna delle sue librerie: senza la cartella del gioco non troviamo i salvataggi.',
       noSaves:
         'Il gioco c’è, ma nelle posizioni note non c’è nessun file di salvataggio.',
-      retry: 'Riprova la ricerca',
-      diagnostics: 'Diagnostica — cosa abbiamo provato',
+      noSavesInChosenFolder:
+        'Nella cartella che hai indicato non c’è nessun salvataggio. Il gioco li chiama `rep_persistentgamedata1.dat` o `rep+persistentgamedata1.dat`: se non sono lì, la cartella è un’altra.',
     },
     diagnostics: {
       steamNotFound: 'Steam: nessuna installazione trovata',
       gameNotFound: 'Gioco: non presente nelle librerie di Steam',
       noSavesFound: 'Salvataggi: nessun file nelle posizioni note',
+      noSavesInChosenFolder:
+        'Salvataggi: nessun file nella cartella che hai indicato',
       unreadablePath: 'Percorso non leggibile',
       malformedManifest: 'Manifest di Steam non leggibile',
     },

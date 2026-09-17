@@ -787,20 +787,20 @@ export const en: MessageSchema = {
       candidates: 'candidate files',
     },
     none: {
-      title: 'No save found',
       steamNotFound:
         "We can't find Steam on this computer, and that is where we start to reach the game folder and then the saves.",
       gameNotFound:
         "Steam is there, but the game isn't in any of its libraries: without the game folder we can't find the saves.",
       noSaves:
         'The game is there, but there is no save file in the known places.',
-      retry: 'Search again',
-      diagnostics: 'Diagnostics — what we tried',
+      noSavesInChosenFolder:
+        'The folder you pointed at holds no save. The game calls them `rep_persistentgamedata1.dat` or `rep+persistentgamedata1.dat`: if they are not there, it is a different folder.',
     },
     diagnostics: {
       steamNotFound: 'Steam: no installation found',
       gameNotFound: "Game: not in Steam's libraries",
       noSavesFound: 'Saves: no file in the known places',
+      noSavesInChosenFolder: 'Saves: no file in the folder you pointed at',
       unreadablePath: 'Unreadable path',
       malformedManifest: 'Unreadable Steam manifest',
     },
