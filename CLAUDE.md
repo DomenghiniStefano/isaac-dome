@@ -318,6 +318,13 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   branch. It used to read "`master` only receives releases", and that cost something real: `master`
   is GitHub's default branch, so under the old rule the repository's landing page sat 733 commits
   behind on an Italian scaffold. Details and the two moves it took in `docs/STATUS.md`.
+- **`master` is frozen: do not merge into it, do not move it, until told to in so many words.**
+  Suspended on 2026-09-17, and it suspends only the *moving* — the rule above still describes what
+  `master` is for and how it is brought level when the freeze lifts. Finishing a sub-project ends
+  at `develop`: merge there, push, and stop. "The check is green" is not the instruction, and
+  neither is "`develop` has moved ahead" — the only thing that lifts this is the owner saying so,
+  for that one time. Nothing enforces it: no hook, no branch protection, by decision, the same way
+  there is no CI. It holds because it is read.
 - **A merged branch is closed in the same breath as the merge**, locally and on the remote —
   unless work continues on it, which is the only exception. A branch that is merged holds nothing
   `develop` does not, *by construction*, so keeping it buys no safety and costs the one thing that
