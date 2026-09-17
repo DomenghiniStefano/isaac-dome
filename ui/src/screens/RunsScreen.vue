@@ -3,9 +3,7 @@ import { PlayIcon } from '@lucide/vue'
 import { computed } from 'vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
-import FacetDrawer from '@/components/facets/FacetDrawer.vue'
-import FilterToolbar from '@/components/facets/FilterToolbar.vue'
-import type { DrawerLabels, ToolbarLabels } from '@/components/facets/labels'
+import FilterBar from '@/components/facets/FilterBar.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import KpiTile from '@/components/kpi/KpiTile.vue'
 import { Card } from '@/components/ui/card'
@@ -19,8 +17,15 @@ import type { RunView } from '@/lib/ipc/types'
 import { runsEntries } from '@/lib/diagnostics/runs'
 import { orderRuns } from '@/lib/runs/runOrder'
 import { runKey } from '@/lib/runs/runKey'
-import { RunFacet, runFaceting } from '@/lib/runs/runFacets'
-import { facetTitle, facetValueLabel } from '@/lib/runs/runLabels'
+import { RunFacet, outcomeCounts, outcomeOrder, runFaceting } from '@/lib/runs/runFacets'
+import {
+  barLabels,
+  facetTitle,
+  facetValueLabel,
+  outcomeDot,
+  outcomeTextByKind,
+  runSlots,
+} from '@/lib/runs/runLabels'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useRunsStore } from '@/stores/views'
 import ProfileError from './profile/ProfileError.vue'
@@ -73,16 +78,15 @@ const totals = computed(() => store.view?.totals ?? null)
 const valueLabel = (facet: RunFacet, value: string) =>
   facetValueLabel(t, facet, value)
 
-const toggle = (facet: RunFacet, value: string) => {
-  const picked = filter.value.picks[facet]
+// The state row counts the archive, over every run; a facet's own counts are over what the
+// other facets leave. The KPI tiles above say the first number too, and the two part company
+// the moment anything is picked — which is what the row is for.
+const counts = computed(() => outcomeCounts(all.value))
+
+const setPicks = (facet: RunFacet, picked: string[]) => {
   filter.value = {
     ...filter.value,
-    picks: {
-      ...filter.value.picks,
-      [facet]: picked.includes(value)
-        ? picked.filter((v) => v !== value)
-        : [...picked, value],
-    },
+    picks: { ...filter.value.picks, [facet]: picked },
   }
 }
 const setQuery = (query: string) => {
@@ -95,20 +99,6 @@ const select = (run: RunView) => {
   selectedKey.value = runKey(run)
 }
 
-const toolbarLabels: ToolbarLabels = {
-  rows: 'runs.rows',
-  search: 'runs.search',
-  // No sort group on this list: the archive decides the order (runOrder.ts). The key is
-  // required by the type and unused by the template, which is why the group is optional.
-  sortBy: 'runs.column.source',
-  activeFilters: 'runs.activeFilters',
-}
-const drawerLabels: DrawerLabels = {
-  facets: 'runs.facets',
-  activeFilters: 'runs.activeFilters',
-  noFilters: 'runs.noFilters',
-  reset: 'runs.reset',
-}
 </script>
 
 <template>
@@ -143,28 +133,28 @@ const drawerLabels: DrawerLabels = {
           :label="t('runs.totals.abandoned')"
         />
       </div>
-      <FacetDrawer
-        :rows="all"
-        :faceting="runFaceting"
-        :facets="facetOrder"
-        :filter="filter"
-        :title="facetTitle"
-        :value-label="valueLabel"
-        :labels="drawerLabels"
-        @toggle="toggle"
-        @reset="reset"
-      />
       <Card>
-        <FilterToolbar
+        <FilterBar
           :shown="rows.length"
           :total="all.length"
           :query="filter.query"
-          :order="facetOrder"
-          :picks="filter.picks"
+          :rows="all"
+          :faceting="runFaceting"
+          :filter="filter"
+          :facets="runSlots"
+          :state="{
+            facet: RunFacet.Outcome,
+            order: outcomeOrder,
+            counts,
+            dot: outcomeDot,
+            text: outcomeTextByKind,
+          }"
+          :title="facetTitle"
           :value-label="valueLabel"
-          :labels="toolbarLabels"
+          :labels="barLabels"
           @update:query="setQuery"
-          @toggle="toggle"
+          @update:picks="setPicks"
+          @reset="reset"
         />
         <RunsTable
           v-if="rows.length > 0"
