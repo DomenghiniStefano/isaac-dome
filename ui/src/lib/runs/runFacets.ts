@@ -1,7 +1,7 @@
 import { sortBy, uniq } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
 import { createFaceting } from '@/lib/facets/faceting'
-import type { RunView } from '@/lib/ipc/types'
+import type { RunOutcomeView, RunView } from '@/lib/ipc/types'
 
 // The Run diary's half of a faceted list: which facets it has, how a run answers one, what the
 // search reads, what each facet offers. Matching, the counts and the active count are the
@@ -25,7 +25,26 @@ const facetOrder: RunFacet[] = [
 // The four outcomes in the order the screen offers them: what finished, then what did not.
 // `open` is the run being played and is never a failure — sub-project 1's spec says so and
 // the order says it too, by not putting it beside `died`.
-const outcomeOrder = ['won', 'died', 'abandoned', 'open']
+//
+// Exported since 3.10, when the outcome became the Run diary's state row: the control draws
+// all four whatever the archive holds, so it needs the order and not just the values present.
+export const outcomeOrder: RunOutcomeView['kind'][] = [
+  'won',
+  'died',
+  'abandoned',
+  'open',
+]
+
+// How many runs each outcome holds, over **every** run: a state row counts the archive, while
+// a facet's own count is over what the other facets leave. Two different questions, and the
+// screen must not answer one with the other.
+export const outcomeCounts = (runs: RunView[]): Record<string, number> =>
+  Object.fromEntries(
+    outcomeOrder.map((kind) => [
+      kind,
+      runs.filter((run) => run.outcome.kind === kind).length,
+    ]),
+  )
 // Ours, not the wire's: the archive says  and a facet needs two values with
 // names. A const object and not a union of strings — the repo's rule, and the same reason the
 // wire's own fieldless enums are objects.
