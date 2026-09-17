@@ -202,7 +202,7 @@ const reset = () => {
             v-if="empty.reset"
             :variant="ButtonVariant.Outline"
             @click="reset"
-            >{{ t('unlock.resetFilters') }}</Button
+            >{{ t('filters.reset') }}</Button
           >
         </div>
       </Card>

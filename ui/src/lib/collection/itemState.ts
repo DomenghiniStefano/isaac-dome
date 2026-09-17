@@ -36,4 +36,3 @@ export const itemState = (item: CollectionItem): ItemState => {
       return assertNever(lock)
   }
 }
-
