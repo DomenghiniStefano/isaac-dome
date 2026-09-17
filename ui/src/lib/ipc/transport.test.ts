@@ -63,13 +63,16 @@ describe('the completion fixture', () => {
     )
     expect(m.characters).toHaveLength(34)
     expect(m.art).toHaveLength(m.bosses.length)
-    // DESIGN-BRIEF.md §5.4: 166 started out of 368 readable, 40 unknown, 0 suspect.
+    // DESIGN-BRIEF.md §5.4: 166 cells with a level out of 368 readable, 40 unknown, 0
+    // suspect. 152 of the 166 reached the second level — counted on the fixture's own digit
+    // strings, not read back out of this code.
     expect(m.totals).toEqual({
       cells: 408,
       readable: 368,
       unknown: 40,
       unexpected: 0,
-      started: 166,
+      normal: 166,
+      hard: 152,
     })
   })
 

@@ -5,8 +5,8 @@ use std::path::{Path, PathBuf};
 use std::process::Command;
 
 /// The profile the numbers at the bottom of this file were measured on. It has to stay
-/// the same file: `readable` and `started` are a fixture of one save at one moment, and
-/// pointing the constant at a different era while leaving them alone turns an
+/// the same file: `readable` and the two mark counts are a fixture of one save at one
+/// moment, and pointing the constant at a different era while leaving them alone turns an
 /// independent check into an accident. That is what had happened — the constant named a
 /// 2026 snapshot while the assertion still said "measured on the January 2025 sample" —
 /// and nothing caught it, because a sample that isn't in `samples/` makes the whole test
@@ -148,15 +148,26 @@ fn rust_matrix_agrees_with_the_python_reference() {
     // cells, so it is an oracle outside the code under test. A column added tomorrow moves
     // both sides at once, and a disagreement stays visible instead of turning into a
     // stale constant.
-    let started_in_reference = CHARACTERS
-        .iter()
-        .flat_map(|&(name, _)| BOSSES.iter().map(move |boss| (name, *boss)))
-        .filter(|&(name, boss)| {
-            reference
-                .get(boss)
-                .and_then(|row| row.get(name))
-                .is_some_and(|&v| v != 0)
-        })
-        .count();
-    assert_eq!(matrix.totals.started, started_in_reference, "{SAMPLE}");
+    // Counted twice since B22 split the total, and the second count is the one worth
+    // having: `hard` is bit 1 alone, so a cell holding a bare 2 lands in both tallies here
+    // and in neither if somebody ever "fixes" it to require bit 0 as well. The reference
+    // carries the values, so it can answer both questions.
+    let count_where = |keep: fn(u32) -> bool| {
+        CHARACTERS
+            .iter()
+            .flat_map(|&(name, _)| BOSSES.iter().map(move |boss| (name, *boss)))
+            .filter(|&(name, boss)| {
+                reference
+                    .get(boss)
+                    .and_then(|row| row.get(name))
+                    .is_some_and(|&v| keep(v))
+            })
+            .count()
+    };
+    assert_eq!(
+        matrix.totals.normal,
+        count_where(|v| v & 3 != 0),
+        "{SAMPLE}"
+    );
+    assert_eq!(matrix.totals.hard, count_where(|v| v & 2 != 0), "{SAMPLE}");
 }
