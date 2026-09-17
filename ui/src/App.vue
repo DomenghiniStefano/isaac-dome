@@ -280,10 +280,7 @@ const indicatorView = computed(() =>
         </SectionSidebar>
         <main class="min-w-0 flex-1 overflow-auto px-5.5 pt-5 pb-15">
           <RouterView v-slot="{ Component, route }">
-            <ProgressGate
-              v-if="route.meta.needsProfile"
-              @open-profile="tabs.navigate({ name: RouteName.Profile })"
-            >
+            <ProgressGate v-if="route.meta.needsProfile">
               <component :is="Component" />
             </ProgressGate>
             <component :is="Component" v-else />
