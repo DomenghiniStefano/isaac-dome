@@ -547,16 +547,16 @@ export const it = {
     intro:
       'Ogni personaggio, ogni marchio, e quanto il salvataggio lascia leggere.',
     kpi: {
-      started: 'marchi iniziati',
-      startedExplain:
-        'Celle con almeno un segno, normale o hard, fra quelle che il salvataggio lascia leggere. Le celle non leggibili restano fuori dal denominatore.',
-      both: 'normale + hard',
-      bothExplain:
-        'Celle in cui sono presenti sia il segno normale sia quello hard.',
+      normal: 'marchi in normale',
+      normalExplain:
+        'Celle con un segno, fra quelle che il salvataggio lascia leggere. Un marchio preso in hard conta anche qui, perché battere un boss in hard è la più difficile delle due. Le celle non leggibili restano fuori dal denominatore.',
+      hard: 'marchi in hard',
+      hardExplain:
+        'Celle con il secondo livello, sullo stesso denominatore. Mai più del numero accanto: ogni marchio hard è anche un marchio normale.',
       cells: 'celle',
       complete: 'personaggi completi',
       completeExplain:
-        'Personaggi che hanno iniziato tutte le loro celle leggibili: chi ha celle non leggibili risulta completo su meno colonne.',
+        'Personaggi con tutte le celle leggibili in hard, che è quello che il widget del gioco intende per riga piena. Chi ha celle non leggibili risulta completo su meno colonne.',
       unknown: 'non leggibili',
       unknownExplain:
         'Caselle che nel salvataggio non sappiamo ancora dove stiano. Non vuol dire "mai fatto": vuol dire che non lo sappiamo dire.',
@@ -573,7 +573,7 @@ export const it = {
     },
     grid: {
       character: 'Personaggio',
-      started: 'iniziati',
+      levels: 'normale · hard',
       unreadable: 'non leggibili',
       columnTotals: 'Personaggi con il marchio',
     },
@@ -585,7 +585,6 @@ export const it = {
       empty: 'mai fatto',
       normal: 'normale',
       hard: 'hard',
-      both: 'normale e hard',
       unknown: 'non lo sappiamo dire per questo personaggio',
       unexpected: 'un valore che non ci aspettavamo:',
     },

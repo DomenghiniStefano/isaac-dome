@@ -26,7 +26,8 @@ const bosses = [
 
 // DESIGN-BRIEF.md §5.4's reference profile (Rep+ slot 1), as the design export's
 // completion.json carries it: one digit per boss in the order above, `?` where the column
-// isn't located for that character. Its totals: 166 started out of 368 readable, 40 unknown.
+// isn't located for that character. Its totals: 166 with a level and 152 hard out of 368
+// readable, 40 unknown.
 const rows: [string, string, Group, boolean][] = [
   ['Isaac', '773223227331', Group.Original, false],
   ['Magdalene', '737333333333', Group.Original, false],
@@ -67,9 +68,12 @@ const rows: [string, string, Group, boolean][] = [
 const cellOf = (digit: string): Cell =>
   digit === '?' ? { kind: 'unknown' } : { kind: 'known', bits: Number(digit) }
 
-// Started as the backend counts it: bit 0 or bit 1.
-const isStarted = (cell: Cell): boolean =>
+// The two counts as the backend makes them (`ipc::totals_of`): a level is bit 0 or bit 1,
+// and hard is bit 1 — a subset, because a mark taken on hard counts as taken on normal too.
+const hasLevel = (cell: Cell): boolean =>
   cell.kind === 'known' && (cell.bits & 3) !== 0
+const isHard = (cell: Cell): boolean =>
+  cell.kind === 'known' && (cell.bits & 2) !== 0
 
 const noArt = { normalUrl: null, hardUrl: null }
 
@@ -97,7 +101,8 @@ export const completionMatrix = (withArt: boolean): MarksMatrix => {
       readable: count((c) => c.kind === 'known'),
       unknown: count((c) => c.kind === 'unknown'),
       unexpected: count((c) => c.kind === 'unexpected'),
-      started: count(isStarted),
+      normal: count(hasLevel),
+      hard: count(isHard),
     },
   }
 }

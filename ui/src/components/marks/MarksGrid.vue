@@ -43,7 +43,6 @@ const statusText: Record<CellStatus, MessageKey<MessageSchema>> = {
   [CellStatus.Empty]: 'completion.cell.empty',
   [CellStatus.Normal]: 'completion.cell.normal',
   [CellStatus.Hard]: 'completion.cell.hard',
-  [CellStatus.Both]: 'completion.cell.both',
   [CellStatus.Unknown]: 'completion.cell.unknown',
   [CellStatus.Unexpected]: 'completion.cell.unexpected',
 }
@@ -80,13 +79,21 @@ const tallyClass = (tally: Tally): string => {
   return 'text-subtle-foreground'
 }
 
+// Two numbers over one denominator (B22): how many bosses have a level at all, and how many
+// have the second. `hard` is a subset of the first, so stating the denominator twice would
+// say nothing the pair does not.
+//
+// **This is not B22's layout, which is item 4 of that entry**: the design file gives the
+// grid a second number column on the right of every row, in the group header and per boss
+// in the footer. Until it does, the pair lives in the one slot the grid already has, which
+// keeps it truthful without inventing the columns.
 const tallyLabel = (tally: Tally): string =>
-  `${tally.started}/${tally.readable}`
+  `${tally.normal}/${tally.readable} · ${tally.hard}`
 </script>
 
 <template>
   <!-- Schermate.dc.html, "Matrice dei marchi": the name column, one cell per boss, the row's
-       started over readable, then each boss's started over readable in the footer. -->
+       levels over readable, then each boss's in the footer. -->
   <div class="overflow-x-auto">
     <div :style="columns" class="flex w-max min-w-full flex-col">
       <div
@@ -111,7 +118,7 @@ const tallyLabel = (tally: Tally): string =>
         </div>
         <span
           class="justify-self-end pr-0.5 text-label text-subtle-foreground"
-          >{{ t('completion.grid.started') }}</span
+          >{{ t('completion.grid.levels') }}</span
         >
       </div>
 
@@ -130,8 +137,8 @@ const tallyLabel = (tally: Tally): string =>
             >{{ group.first }} – {{ group.last }}</span
           >
           <span class="ml-auto text-label text-subtle-foreground tabular-nums"
-            >{{ group.started }}/{{ group.readable }}
-            {{ t('completion.grid.started') }}</span
+            >{{ group.normal }}/{{ group.readable }} · {{ group.hard }}
+            {{ t('completion.grid.levels') }}</span
           >
           <span
             v-if="group.unknown > 0"

@@ -2,13 +2,19 @@ import { compact, first, last } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
 import type { Cell, CharacterRow, MarksMatrix } from '@/lib/ipc/types'
 
-// What a cell says, in the tooltip's words: the two levels apart and together, and the two
-// ways of not knowing. The unconfirmed bit travels beside the status, never as a level.
+// What a cell says, in the tooltip's words: the level it reached, and the two ways of not
+// knowing. The unconfirmed bit travels beside the status, never as a level.
+//
+// There is no `Both` (B22). A mark taken on hard counts as taken on normal too, so "normal
+// and hard" was never a third thing a cell could say — it was the same cell said twice, and
+// it made a bare 2 read as "hard, normal missing". The file agrees rather than merely
+// permitting it: a cell goes 1 → 2, so a bare 2 is the normal mark *overwritten* (B58,
+// 2026-09-17). What bit 1 means beyond "the second level" is unmeasured outside Greed,
+// which is why the name here stops at the level.
 export const CellStatus = {
   Empty: 'empty',
   Normal: 'normal',
   Hard: 'hard',
-  Both: 'both',
   Unknown: 'unknown',
   Unexpected: 'unexpected',
 } as const
@@ -25,7 +31,6 @@ const Bit = { Normal: 1, Hard: 2, Third: 4 } as const
 const knownBits = Bit.Normal | Bit.Hard | Bit.Third
 
 const levelStatus = (normal: boolean, hard: boolean): CellStatus => {
-  if (normal && hard) return CellStatus.Both
   if (hard) return CellStatus.Hard
   if (normal) return CellStatus.Normal
   return CellStatus.Empty
@@ -51,18 +56,18 @@ export const cellReading = (cell: Cell): CellReading => {
   }
 }
 
-const startedStatuses: CellStatus[] = [
-  CellStatus.Normal,
-  CellStatus.Hard,
-  CellStatus.Both,
-]
+const levelledStatuses: CellStatus[] = [CellStatus.Normal, CellStatus.Hard]
 const unreadableStatuses: CellStatus[] = [
   CellStatus.Unknown,
   CellStatus.Unexpected,
 ]
 
-const isStarted = (cell: Cell): boolean =>
-  startedStatuses.includes(cellReading(cell).status)
+// Normal counts every cell that reached *a* level, because hard is also normal. Hard counts
+// the ones that reached the second, so `hard <= normal` holds by construction.
+const isNormal = (cell: Cell): boolean =>
+  levelledStatuses.includes(cellReading(cell).status)
+const isHard = (cell: Cell): boolean =>
+  cellReading(cell).status === CellStatus.Hard
 // Readable is what the save lets us read: a column not located and a value outside the mask
 // both stay outside every denominator.
 const isReadable = (cell: Cell): boolean =>
@@ -70,17 +75,24 @@ const isReadable = (cell: Cell): boolean =>
 const isUnknown = (cell: Cell): boolean =>
   cellReading(cell).status === CellStatus.Unknown
 
-// Started over readable: a count with its denominator, never a percentage (§5.3).
+// Two counts over one denominator, never a percentage (§5.3): `hard <= normal <= readable`.
+//
+// `complete` is hard over readable and not normal over readable (B22): a row is done when
+// every boss is done on hard, which is what the game's own widget means by a full row. The
+// reference profile loses one complete character to that change — Isaac, whose last cell is
+// a bare 1 — and losing it is the point.
 export interface Tally {
-  started: number
+  normal: number
+  hard: number
   readable: number
   complete: boolean
 }
 
 const tallyOf = (cells: Cell[]): Tally => {
-  const started = cells.filter(isStarted).length
+  const normal = cells.filter(isNormal).length
+  const hard = cells.filter(isHard).length
   const readable = cells.filter(isReadable).length
-  return { started, readable, complete: readable > 0 && started === readable }
+  return { normal, hard, readable, complete: readable > 0 && hard === readable }
 }
 
 export const rowTally = (row: CharacterRow): Tally => tallyOf(row.cells)
@@ -107,7 +119,8 @@ export interface GroupView {
   rows: GroupRow[]
   first: string
   last: string
-  started: number
+  normal: number
+  hard: number
   readable: number
   unknown: number
 }
@@ -124,7 +137,8 @@ const groupView = (matrix: MarksMatrix, group: MatrixGroup): GroupView => {
     rows,
     first: first(rows)?.row.character ?? '',
     last: last(rows)?.row.character ?? '',
-    started: tally.started,
+    normal: tally.normal,
+    hard: tally.hard,
     readable: tally.readable,
     unknown: cells.filter(isUnknown).length,
   }
@@ -136,11 +150,14 @@ export const matrixGroups = (matrix: MarksMatrix): GroupView[] =>
     .map((group) => groupView(matrix, group))
     .filter((g) => g.rows.length > 0)
 
+// The strip splits the same way the rows do. `both` is gone with `CellStatus.Both`: under
+// B22 a hard cell is also a normal one, so "cells with both levels" counted the overlap of
+// a set with its own superset — a number that could only ever be `hard` minus the bare 2s,
+// which is a fact about how a profile was played and not about its progress.
 export interface CompletionKpis {
-  started: number
+  normal: number
+  hard: number
   readable: number
-  // Cells with both the normal and the hard level.
-  both: number
   completeCharacters: number
   characters: number
   unknown: number
@@ -151,9 +168,9 @@ export const completionKpis = (matrix: MarksMatrix): CompletionKpis => {
   const cells = matrix.characters.flatMap((r) => r.cells)
   const tally = tallyOf(cells)
   return {
-    started: tally.started,
+    normal: tally.normal,
+    hard: tally.hard,
     readable: tally.readable,
-    both: cells.filter((c) => cellReading(c).status === CellStatus.Both).length,
     completeCharacters: matrix.characters.filter((r) => rowTally(r).complete)
       .length,
     characters: matrix.characters.length,
