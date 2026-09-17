@@ -38,6 +38,10 @@ pub struct ChallengeRow {
     /// The character the wiki says it forces. `None` is "the dataset has no page for this
     /// challenge, or the page names no character" — never "any character".
     pub character: Option<Target>,
+    /// That character's name, read from **its own** wiki page's title. The reference the
+    /// infobox carries is an id, and a screen cannot name an id: without this the row would
+    /// have to invent a word. `None` when the dataset has no page for that character.
+    pub character_name: Option<String>,
     pub goal: Option<Vec<Inline>>,
     /// `None` when there is no page. It must not draw as "not blindfolded".
     pub blindfolded: Option<bool>,
@@ -170,6 +174,11 @@ pub fn challenges_view(
                 blindfolded = Some(*ch_blindfolded);
             }
 
+            let character_name = character
+                .as_ref()
+                .and_then(|t| dataset.and_then(|d| d.entry(t)))
+                .map(|e| e.title.clone());
+
             ChallengeRow {
                 number,
                 name: ch.name.clone(),
@@ -186,6 +195,7 @@ pub fn challenges_view(
                     })
                     .collect(),
                 character,
+                character_name,
                 goal,
                 blindfolded,
                 page: page_of(Target::Challenge { number }),

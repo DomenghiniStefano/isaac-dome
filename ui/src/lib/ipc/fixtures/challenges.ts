@@ -25,6 +25,7 @@ const row = (
   state: { kind: 'available' },
   rewards: [],
   character: null,
+  characterName: null,
   goal: null,
   blindfolded: null,
   page: { kind: 'challenge', number },
@@ -48,11 +49,13 @@ const rows: ChallengeRow[] = [
       },
     ],
     character: { kind: 'character', id: 0 },
+    characterName: 'Isaac',
     goal: text('Mom'),
     blindfolded: false,
   }),
   row(6, 'Solar System', {
     character: { kind: 'character', id: 3 },
+    characterName: 'Judas',
     goal: text('Mom'),
     blindfolded: false,
     rewards: [
@@ -68,6 +71,7 @@ const rows: ChallengeRow[] = [
   row(18, 'The Host', {
     state: { kind: 'blocked', missing: [61, 62] },
     character: { kind: 'character', id: 5 },
+    characterName: 'Samson',
     goal: text('Mom’s Heart'),
     blindfolded: true,
     rewards: [
