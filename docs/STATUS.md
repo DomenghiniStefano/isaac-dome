@@ -717,6 +717,12 @@ real window. **50 in ten groups the same evening**, with 3.9's four — and that
 whose sub-project **already looked**: a browser found and fixed an alignment defect there before
 the lines were written, which is why there are four of them and not eight. Looking early does not
 empty this list, it shortens it.
+**54 in eleven groups on 2026-09-17**, with 3.10's four, and that group is the shortest yet for
+the same reason carried further: a browser drove all three bars while they were being written, so
+what a *window* still owes is only what a browser cannot judge — the widths, the wrapping, and
+whether a word is the right word. The five checks that would otherwise be here were answered on
+the spot, and one of them turned into a decision the owner took mid-work (the state row's counts,
+§1 of the spec).
 
 **This is the live list; the reports are the record.** Each line below was written by the
 sub-project that produced it and is unticked *there* too, but a report is true on its day and is
@@ -757,6 +763,23 @@ in `crates/app/tauri.conf.json`).
       back holding the same runs it held, and the totals must not move. If a run is missing after
       that, the fold lost it — and the cache that would have hidden the loss is exactly what the
       version bump threw away.
+
+### The one filter bar (3.10, B29) — what a browser could not judge
+
+A browser drove all three bars as they were written, on the fixtures: the fold, the search that
+appears by itself, the counts a menu promises against the rows the list then shows, and the chip
+that survives the fold being closed. What is left needs a real window, or a person's judgment.
+
+- [ ] the three bars in a **narrow** window: the dropdowns wrap, the chips row stays readable, and
+      the sort group does not collide with the `N / M` beside it
+- [ ] **does the fold's button read as a control?** It is a ghost button between the last dropdown
+      and nothing, and at rest it can read as a label. A judgment, and it is the owner's
+- [ ] **the menu clears what you typed when you pick a value.** It is `CommandItem`'s own
+      behaviour, the one the search palette wants; in a multi-select it means picking two values
+      out of thirty costs typing twice. Whether that is worth owning the rows for is a call
+- [ ] the real Pool and Personaggio lists — 30-odd and 39 values against the fixtures' 12 and 10 —
+      with the menu open on a short window: it must scroll and not push the page
+      → `docs/superpowers/reports/2026-09-17-filter-bar-report.md`
 
 ### The Completion screen's two columns (3.9, B22 item 4 and B23)
 
