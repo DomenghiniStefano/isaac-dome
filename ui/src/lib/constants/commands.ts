@@ -17,6 +17,7 @@ export const Command = {
   GraphViews: 'graph_views',
   Want: 'want',
   Collection: 'collection',
+  Challenges: 'challenges',
   Plan: 'plan',
   AddGoal: 'add_goal',
   RemoveGoal: 'remove_goal',
