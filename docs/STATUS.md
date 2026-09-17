@@ -54,10 +54,22 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
 - [x] **M0 — Format spike**
       `.dat` format decoded and verified on 28 real saves, working Python parser,
       counters labeled, marks matrix rebuilt, log verified.
-- [ ] **M1 — Rust parser, discovery, unpack, Completion screen** ← in progress, and what keeps
-      it open is now **B17's welcome flow**, which is the half of 3.6 nobody but the owner can
-      decide, plus the wiki polish listed under `wiki` — and **the window nobody has opened on any
-      of it**. Everything the title names is done: the parser, discovery, unpack and the
+- [ ] **M1 — Rust parser, discovery, unpack, Completion screen** ← in progress, and what keeps it
+      open is now the wiki polish listed under `wiki` — and **the window nobody has opened on any
+      of it**. **B17's welcome flow landed on 2026-09-17 as sub-project 3.8**, with B14 folded
+      into the same branch: the app opens by asking which save you are playing with and showing
+      what each one holds, a full-screen takeover that is a **state above the router** and never a
+      route — here a route is a tab, and 3.7b's session document would have saved and restored it.
+      The preview travels **with** the candidates in one command (N8's rule), computed from the
+      `.dat` alone so it answers with no game installed, and a count the file did not let us read
+      says so rather than showing a zero. B14 came with it because the "nothing found" branch is
+      where its two buttons belong, and shipping that branch without them is the
+      button-that-does-nothing its own entry warns about. Spec
+      `docs/superpowers/specs/2026-09-17-welcome-flow-design.md`, plan
+      `docs/superpowers/plans/2026-09-17-welcome-flow.md`, report
+      `docs/superpowers/reports/2026-09-17-welcome-flow-report.md`. **Nobody has opened a window on
+      it**, and the folder dialog is the one check the documentation could not settle on paper.
+      Everything the title names is done: the parser, discovery, unpack and the
       Completion screen, which landed as sub-project 3.2 on 2026-09-11.
       **3.6a landed on 2026-09-16**, the half that could be decided: the Tabs settings screen the
       sidebar had been pointing at since 3.1 with nothing behind it, the switch moved off
@@ -686,6 +698,10 @@ sub-projects landed since, and each of them can only be finished by somebody loo
 sibling of the section above and it earns the same warning, which that one paid for: *an
 instrument list that nobody re-reads at the instrument is a list of things that may already be
 done* — three of its seven were, and nobody knew until somebody stood at the machine and read it.
+**46 in nine groups on 2026-09-17**, when 3.8 added six of its own: the growth keeps being the
+point, and the new group is the first one a *browser* can answer most of — `pnpm ui:dev` draws the
+welcome's every state with no game, no save and no Tauri, and only its last two lines need the
+real window.
 
 **This is the live list; the reports are the record.** Each line below was written by the
 sub-project that produced it and is unticked *there* too, but a report is true on its day and is
@@ -726,6 +742,24 @@ in `crates/app/tauri.conf.json`).
       back holding the same runs it held, and the totals must not move. If a run is missing after
       that, the fold lost it — and the cache that would have hidden the loss is exactly what the
       version bump threw away.
+
+### The welcome flow (3.8, with B14) — the first thing a stranger meets
+
+The only group here that a **browser** can answer most of: `pnpm ui:dev` and `?fixture=pick`,
+`?fixture=none`, `?fixture=active` draw every state with no game, no save and no Tauri. The last
+two lines are the exception and need the real window, because a dialog is not a fixture.
+
+- [ ] the takeover on a first launch: no sidebar, no tabs, and the window still moves and closes
+- [ ] the four card shapes, all drawn by `?fixture=pick` — whole, a count that could not be read,
+      unreadable cells, and a file that could not be parsed at all
+- [ ] the picker reopened from the profile indicator over a settled profile, and `Annulla`
+      closing it without changing anything
+- [ ] two windows with no profile: choosing in one frees the other, through `ProfileChanged`
+- [ ] **the folder dialog opens and the app stays responsive while it is up** — the one check the
+      Tauri documentation could not settle on paper, which is why the commands are `async` with
+      the callback form rather than `blocking_pick_folder`
+- [ ] a folder chosen that holds no save says so, and does not read as "we found nothing"
+      → `docs/superpowers/reports/2026-09-17-welcome-flow-report.md`
 
 ### The Tabs settings screen (3.6a)
 
