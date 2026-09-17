@@ -313,6 +313,90 @@ mod tests {
         }
     }
 
+    /// B54's third family, **read on 2026-09-17 and recorded here rather than summarised**.
+    ///
+    /// The entry asks for these to carry "the record that they were read", and a test is where
+    /// that record survives: prose in a document does not fail when somebody adds one of these
+    /// spellings by reflex, and this does. Each line is one page's own heading, seen exactly
+    /// once in the whole snapshot, with the page it is on and what the section actually holds.
+    ///
+    /// None of them is a near-miss. They divide four ways, and the division is the useful part:
+    /// a table of game data with no kind behind it, a heading that is not a heading, research
+    /// that lives off the wiki, and an editorial verdict of the kind already refused.
+    #[test]
+    fn a_page_own_heading_is_read_and_stays_out() {
+        // 1. Game data in a table or list, with no kind in `SectionKind` that names it. Adding
+        //    one would mean inventing a kind per page, which is the opposite of a closed list.
+        for (title, page) in [
+            (
+                "Component Types and Qualities",
+                "collectible/Bag of Crafting",
+            ),
+            ("Recipes", "collectible/Bag of Crafting"),
+            ("Uncraftable Items", "collectible/Bag of Crafting"),
+            ("{{dlc+|r}} Monster Replacement Tables", "collectible/D10"),
+            ("Poop Varieties", "character/Tainted ???"),
+            ("Random pool choices", "collectible/Lemegeton"),
+            ("Survival", "collectible/Damocles"),
+            ("Notable Rerolls", "collectible/Spindown Dice"),
+            ("Specific Item Effects", "collectible/Metronome"),
+            ("Drops", "collectible/Bum Friend"),
+            ("Modifiers", "challenge/Ultra Hard"),
+            ("Everything Is Terrible!!! changes", "boss/Mom's Heart"),
+            ("Item Exclusion", "character/Tainted Lost"),
+        ] {
+            assert_eq!(section_kind(title), None, "{title} — {page}");
+        }
+
+        // 2. The heading is not a heading. `[[Monsters]]` (boss/Great Gideon) is a **link**, and
+        //    its section has no body at all: the 54 lines are two `=== … Waves ===` tables under
+        //    it. `Videos` is one `{{#ev:youtube}}` and `Sounds` is a table of `.wav` files —
+        //    media, which is what `Gallery` and in-game footage are already dropped for. The two
+        //    `Combinations` are a single list template each, so the content is not on the page
+        //    to keep.
+        for (title, page) in [
+            ("[[Monsters]]", "boss/Great Gideon"),
+            ("Videos", "trinket/Super Bum"),
+            ("Sounds", "trinket/Dog Tooth"),
+            ("Combinations", "collectible/Book of Virtues"),
+            (
+                "{{dlc+|r}} Judas' Birthright Combinations",
+                "collectible/The Book of Belial",
+            ),
+        ] {
+            assert_eq!(section_kind(title), None, "{title} — {page}");
+        }
+
+        // 3. Research that lives off the wiki. `Algorithm` is a Lua listing credited to a wiki
+        //    user, `Puzzle Pieces` is lore pointing at imgur and reddit. Neither is the game
+        //    saying something about itself, which is what this dataset carries.
+        for (title, page) in [
+            ("Algorithm", "collectible/GB Bug"),
+            ("Puzzle Pieces {{dlc|na}}", "collectible/Missing Poster"),
+        ] {
+            assert_eq!(section_kind(title), None, "{title} — {page}");
+        }
+
+        // 4. An editorial verdict, which is the family `Good Items` and its three were already
+        //    refused for. `Items` on character/Tainted Eden opens "there are some that should be
+        //    of special notice", which is the verdict in a shorter word.
+        assert_eq!(section_kind("Items"), None, "character/Tainted Eden");
+
+        // **The closest call of the 22, recorded as one so it can be overturned cheaply.**
+        // `Strategy and Items` (character/Tainted Apollyon, 22 lines) is strategy prose from the
+        // first bullet to the last, and `General Strategies` and `Tips and strategies` are both
+        // in. What keeps it out is the line collectible/Sumptorium drew: the heading names what
+        // the strategy is *about*, and every accepted spelling names only the kind. If that line
+        // ever moves, this is the page to move it on — and the reason it is written here rather
+        // than decided quietly is that the entry's own rule is to read the page first, which is
+        // exactly what makes this one arguable.
+        assert_eq!(
+            section_kind("Strategy and Items"),
+            None,
+            "character/Tainted Apollyon"
+        );
+    }
+
     /// Three spellings read on their own pages before being added (B54): Mega Satan's `Unlock`,
     /// and The Lost's two editions. Each is a procedure for reaching something, which is what
     /// `Unlockable` is — the same reasoning that let `How to Acquire` in.
