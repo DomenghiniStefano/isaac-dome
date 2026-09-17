@@ -9,9 +9,11 @@ const { t } = useMessages()
 </script>
 
 <template>
-  <!-- Four numbers of four natures, each with its own denominator and none fused into a
-       percentage (DESIGN-BRIEF.md §5.3); the explanations live in the tooltips. -->
-  <div class="grid grid-cols-4 gap-2.5">
+  <!-- Three numbers of three natures, each with its own denominator and none fused into a
+       percentage (DESIGN-BRIEF.md §5.3); the explanations live in the tooltips. The count of
+       unreadable cells is not one of them (B23): it is a gap in our own tables, not a fact
+       about the player, and the grid says it where it happens. -->
+  <div class="grid grid-cols-3 gap-2.5">
     <KpiTile
       :value="kpis.normal"
       :denominator="kpis.readable"
@@ -33,15 +35,6 @@ const { t } = useMessages()
       :tone="KpiTone.Done"
     >
       <template #explain>{{ t('completion.kpi.completeExplain') }}</template>
-    </KpiTile>
-    <KpiTile
-      :value="kpis.unknown"
-      :denominator="kpis.cells"
-      :unit="t('completion.kpi.cells')"
-      :label="t('completion.kpi.unknown')"
-      :tone="KpiTone.Unknown"
-    >
-      <template #explain>{{ t('completion.kpi.unknownExplain') }}</template>
     </KpiTile>
   </div>
 </template>

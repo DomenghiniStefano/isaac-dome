@@ -14,11 +14,13 @@ import { cn } from '@/lib/cn'
 import {
   CellStatus,
   MatrixGroup,
+  TallyTone,
   cellReading,
   columnTallies,
   matrixGroups,
+  tallyColumns,
 } from '@/lib/completion/completionView'
-import type { Tally } from '@/lib/completion/completionView'
+import type { Tally, TallyColumn } from '@/lib/completion/completionView'
 import type { Cell, MarksMatrix } from '@/lib/ipc/types'
 import MarkCell from './MarkCell.vue'
 import { markArtOf } from './markVisual'
@@ -71,24 +73,21 @@ const cellState = (cell: Cell): string => {
   return reading.third ? `${said} · ${t('marks.thirdLevel')}` : said
 }
 
-// Complete in the done colour; nothing readable fainter than a count that has a denominator.
-// Gold is not used for "almost there": gold means unlockable now, and nothing else.
-const tallyClass = (tally: Tally): string => {
-  if (tally.complete) return 'text-state-done-foreground'
-  if (tally.readable === 0) return 'text-faint-foreground'
-  return 'text-subtle-foreground'
+// A number that fills its denominator in the done colour, one with no denominator at all
+// fainter than one that has progress to show. Gold is not used for "almost there": gold
+// means unlockable now, and nothing else. A record over the whole set, so a tone with no
+// colour fails to compile.
+const toneClass: Record<TallyTone, string> = {
+  [TallyTone.Full]: 'text-state-done-foreground',
+  [TallyTone.Partial]: 'text-subtle-foreground',
+  [TallyTone.Unreadable]: 'text-faint-foreground',
 }
 
-// Two numbers over one denominator (B22): how many bosses have a level at all, and how many
-// have the second. `hard` is a subset of the first, so stating the denominator twice would
-// say nothing the pair does not.
-//
-// **This is not B22's layout, which is item 4 of that entry**: the design file gives the
-// grid a second number column on the right of every row, in the group header and per boss
-// in the footer. Until it does, the pair lives in the one slot the grid already has, which
-// keeps it truthful without inventing the columns.
-const tallyLabel = (tally: Tally): string =>
-  `${tally.normal}/${tally.readable} · ${tally.hard}`
+// B22 item 4: two number columns, not one slot holding a pair. Each carries its own
+// denominator because each sits under its own heading.
+const columnsOf = (tally: Tally) => tallyColumns(tally)
+const label = (column: TallyColumn): string =>
+  `${column.value}/${column.readable}`
 </script>
 
 <template>
@@ -118,7 +117,11 @@ const tallyLabel = (tally: Tally): string =>
         </div>
         <span
           class="justify-self-end pr-0.5 text-label text-subtle-foreground"
-          >{{ t('completion.grid.levels') }}</span
+          >{{ t('completion.grid.normal') }}</span
+        >
+        <span
+          class="justify-self-end pr-0.5 text-label text-subtle-foreground"
+          >{{ t('completion.grid.hard') }}</span
         >
       </div>
 
@@ -127,23 +130,47 @@ const tallyLabel = (tally: Tally): string =>
         :key="group.group"
         class="mt-1.5 flex flex-col"
       >
+        <!-- The group header is the matrix's own grid, not a flex row: the container is wider
+             than the tracks (min-w-full, so the rows paint the whole card), so anything pushed
+             to its right edge lands past the two columns instead of under them. Everything
+             that is not a total shares one cell, from the first column to the last boss. -->
         <div
-          class="flex flex-wrap items-center gap-2.5 border-t border-hairline pt-1 pb-1.5"
+          class="grid grid-cols-matrix items-center gap-0.5 border-t border-hairline pt-1 pb-1.5"
         >
-          <span class="text-label text-highlight">{{
-            t(groupTitle[group.group])
-          }}</span>
-          <span class="text-label text-subtle-foreground"
-            >{{ group.first }} – {{ group.last }}</span
+          <div
+            class="col-start-1 -col-end-3 flex flex-wrap items-center gap-2.5"
           >
-          <span class="ml-auto text-label text-subtle-foreground tabular-nums"
-            >{{ group.normal }}/{{ group.readable }} · {{ group.hard }}
-            {{ t('completion.grid.levels') }}</span
+            <span class="text-label text-highlight">{{
+              t(groupTitle[group.group])
+            }}</span>
+            <span class="text-label text-subtle-foreground"
+              >{{ group.first }} – {{ group.last }}</span
+            >
+            <!-- What the group cannot read sits before the totals, where it is not read as a
+                 third one. -->
+            <span
+              v-if="group.unknown > 0"
+              class="ml-auto text-label text-state-unknown-foreground tabular-nums"
+              >{{ group.unknown }} {{ t('completion.grid.unreadable') }}</span
+            >
+          </div>
+          <span
+            :class="
+              cn(
+                'justify-self-end pr-0.5 text-label tabular-nums',
+                toneClass[columnsOf(group.tally).normal.tone],
+              )
+            "
+            >{{ label(columnsOf(group.tally).normal) }}</span
           >
           <span
-            v-if="group.unknown > 0"
-            class="text-label text-state-unknown-foreground tabular-nums"
-            >{{ group.unknown }} {{ t('completion.grid.unreadable') }}</span
+            :class="
+              cn(
+                'justify-self-end pr-0.5 text-label tabular-nums',
+                toneClass[columnsOf(group.tally).hard.tone],
+              )
+            "
+            >{{ label(columnsOf(group.tally).hard) }}</span
           >
         </div>
 
@@ -186,14 +213,26 @@ const tallyLabel = (tally: Tally): string =>
             :class="
               cn(
                 'justify-self-end pr-0.5 text-label tabular-nums',
-                tallyClass(entry.tally),
+                toneClass[columnsOf(entry.tally).normal.tone],
               )
             "
-            >{{ tallyLabel(entry.tally) }}</span
+            >{{ label(columnsOf(entry.tally).normal) }}</span
+          >
+          <span
+            :class="
+              cn(
+                'justify-self-end pr-0.5 text-label tabular-nums',
+                toneClass[columnsOf(entry.tally).hard.tone],
+              )
+            "
+            >{{ label(columnsOf(entry.tally).hard) }}</span
           >
         </div>
       </section>
 
+      <!-- Two rows rather than two numbers stacked in a 40px column: the name column is
+           already there to say which of the two each row is, and it states the relation the
+           pair exists for — every hard mark is also a normal one. -->
       <div
         class="mt-2 grid grid-cols-matrix items-center justify-items-center gap-0.5 border-t border-border pt-1.5"
       >
@@ -203,9 +242,33 @@ const tallyLabel = (tally: Tally): string =>
         <span
           v-for="(tally, b) in totals"
           :key="b"
-          :class="cn('text-micro tabular-nums', tallyClass(tally))"
-          >{{ tallyLabel(tally) }}</span
+          :class="
+            cn(
+              'text-micro tabular-nums',
+              toneClass[columnsOf(tally).normal.tone],
+            )
+          "
+          >{{ label(columnsOf(tally).normal) }}</span
         >
+        <span />
+        <span />
+      </div>
+      <div
+        class="grid grid-cols-matrix items-center justify-items-center gap-0.5 pt-1"
+      >
+        <span
+          class="justify-self-start pr-1.5 text-label text-subtle-foreground"
+          >{{ t('completion.grid.columnTotalsHard') }}</span
+        >
+        <span
+          v-for="(tally, b) in totals"
+          :key="b"
+          :class="
+            cn('text-micro tabular-nums', toneClass[columnsOf(tally).hard.tone])
+          "
+          >{{ label(columnsOf(tally).hard) }}</span
+        >
+        <span />
         <span />
       </div>
     </div>

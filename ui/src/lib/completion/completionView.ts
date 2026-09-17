@@ -102,6 +102,45 @@ export const columnTallies = (matrix: MarksMatrix): Tally[] =>
     tallyOf(compact(matrix.characters.map((row) => row.cells[column]))),
   )
 
+// What a number is worth reading as: full, on its way, or not readable at all. `0/0` is the
+// case this exists for — an equality alone would call an unreadable row finished.
+export const TallyTone = {
+  Full: 'full',
+  Partial: 'partial',
+  Unreadable: 'unreadable',
+} as const
+export type TallyTone = (typeof TallyTone)[keyof typeof TallyTone]
+
+export interface TallyColumn {
+  value: number
+  readable: number
+  tone: TallyTone
+}
+
+export interface TallyColumns {
+  normal: TallyColumn
+  hard: TallyColumn
+}
+
+const toneOf = (value: number, readable: number): TallyTone => {
+  if (readable === 0) return TallyTone.Unreadable
+  return value === readable ? TallyTone.Full : TallyTone.Partial
+}
+
+const column = (value: number, readable: number): TallyColumn => ({
+  value,
+  readable,
+  tone: toneOf(value, readable),
+})
+
+// B22 item 4: two columns, each over the readable cells. The denominator is stated twice
+// because the columns are read apart — under its own heading `hard` is not "the number after
+// the dot", it is how many bosses reached the second level.
+export const tallyColumns = (tally: Tally): TallyColumns => ({
+  normal: column(tally.normal, tally.readable),
+  hard: column(tally.hard, tally.readable),
+})
+
 // The two groups a player thinks in (Schermate.dc.html), read from `tainted` rather than
 // from a row index: the file's own three blocks stay in `group`.
 export const MatrixGroup = { Base: 'base', Tainted: 'tainted' } as const
@@ -119,9 +158,9 @@ export interface GroupView {
   rows: GroupRow[]
   first: string
   last: string
-  normal: number
-  hard: number
-  readable: number
+  // The group's own cells, read the way a row's are: its header draws the same two columns,
+  // so it carries the same Tally rather than three numbers that have to be reassembled.
+  tally: Tally
   unknown: number
 }
 
@@ -131,15 +170,12 @@ const groupView = (matrix: MarksMatrix, group: MatrixGroup): GroupView => {
     row.tainted === tainted ? [{ row, index, tally: rowTally(row) }] : [],
   )
   const cells = rows.flatMap((r) => r.row.cells)
-  const tally = tallyOf(cells)
   return {
     group,
     rows,
     first: first(rows)?.row.character ?? '',
     last: last(rows)?.row.character ?? '',
-    normal: tally.normal,
-    hard: tally.hard,
-    readable: tally.readable,
+    tally: tallyOf(cells),
     unknown: cells.filter(isUnknown).length,
   }
 }
@@ -154,19 +190,21 @@ export const matrixGroups = (matrix: MarksMatrix): GroupView[] =>
 // B22 a hard cell is also a normal one, so "cells with both levels" counted the overlap of
 // a set with its own superset — a number that could only ever be `hard` minus the bare 2s,
 // which is a fact about how a profile was played and not about its progress.
+//
+// The unreadable count left with B23, and it is not lost: it is a gap in our own tables and
+// not a fact about the player, so it belongs where it happens — every group header prints
+// its own, every unreadable cell says so, and `readable` still speaks for the alert above
+// the grid when there is nothing at all to read.
 export interface CompletionKpis {
   normal: number
   hard: number
   readable: number
   completeCharacters: number
   characters: number
-  unknown: number
-  cells: number
 }
 
 export const completionKpis = (matrix: MarksMatrix): CompletionKpis => {
-  const cells = matrix.characters.flatMap((r) => r.cells)
-  const tally = tallyOf(cells)
+  const tally = tallyOf(matrix.characters.flatMap((r) => r.cells))
   return {
     normal: tally.normal,
     hard: tally.hard,
@@ -174,7 +212,5 @@ export const completionKpis = (matrix: MarksMatrix): CompletionKpis => {
     completeCharacters: matrix.characters.filter((r) => rowTally(r).complete)
       .length,
     characters: matrix.characters.length,
-    unknown: cells.filter(isUnknown).length,
-    cells: cells.length,
   }
 }
