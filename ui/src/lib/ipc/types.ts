@@ -1595,6 +1595,12 @@ export type ChallengeRow = {
    * challenge, or the page names no character" — never "any character".
    */
   character: Target | null
+  /**
+   * That character's name, read from **its own** wiki page's title. The reference the
+   * infobox carries is an id, and a screen cannot name an id: without this the row would
+   * have to invent a word. `None` when the dataset has no page for that character.
+   */
+  characterName: string | null
   goal: Array<Inline> | null
   /**
    * `None` when there is no page. It must not draw as "not blindfolded".

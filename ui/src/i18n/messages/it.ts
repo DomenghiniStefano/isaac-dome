@@ -44,6 +44,7 @@ export const it = {
     unlock: 'Unlock',
     plan: 'Piano',
     collection: 'Collezione',
+    challenges: 'Sfide',
     runs: 'Run',
     live: 'Live',
     floor: 'Piano di gioco',
@@ -219,6 +220,56 @@ export const it = {
         '{count} righe del log non sono state capite: le run che le contengono possono essere incomplete.',
       noCatalog:
         'Il gioco non è installato: gli oggetti hanno il loro numero e non il nome.',
+    },
+  },
+  challenges: {
+    intro:
+      'Le 45 sfide del gioco: quali hai finito, cosa serve per aprirle e cosa sbloccano. Le condizioni — con chi si gioca, fin dove si arriva, se è bendata — vengono dalla wiki; la pagina di ogni sfida ha il resto.',
+    rows: 'sfide',
+    search: 'cerca una sfida o il suo numero',
+    state: {
+      done: 'fatta',
+      available: 'da fare',
+      blocked: 'bloccata',
+      unknown: 'non leggibile',
+    },
+    blockedBy: 'bloccata da {count}',
+    facet: {
+      state: 'Stato',
+      character: 'Personaggio',
+      rewards: 'Cosa sblocca',
+      blindfolded: 'Bendata',
+    },
+    rewardsSome: 'sblocca qualcosa',
+    rewardsNone: 'non sblocca niente',
+    blindfoldedYes: 'bendata',
+    blindfoldedNo: 'non bendata',
+    blindfolded: 'bendata',
+    noCondition: 'non lo sappiamo',
+    unlocksNothing: 'non sblocca niente',
+    unnamedReward: 'achievement {id}',
+    columns: {
+      number: '#',
+      challenge: 'Sfida',
+      character: 'Personaggio',
+      goal: 'Fin dove',
+      state: 'Stato',
+    },
+    empty: 'Nessuna sfida da mostrare.',
+    noResults: 'Nessuna sfida con questi filtri.',
+    diagnostics: {
+      noCatalogTitle: 'Non troviamo il gioco',
+      noCatalog:
+        'Le sfide sono scritte nei file del gioco: senza, sappiamo quante ne hai finite ma non quali. Installa The Binding of Isaac da Steam e riapri l’app.',
+      noChallengesSectionTitle:
+        'Il salvataggio non dice quali sfide hai finito',
+      noChallengesSection:
+        'La sezione che tiene le sfide non si è letta: le sfide qui sotto ci sono tutte, ma nessuna sa dire se l’hai già fatta.',
+      noAchievementSectionTitle: 'Il salvataggio non dice cosa hai sbloccato',
+      noAchievementSection:
+        'Senza gli achievement non sappiamo quali sfide sono già aperte, né quali premi hai già preso.',
+      noWiki:
+        'Il dataset della wiki non si è caricato: le sfide restano, senza personaggio, obiettivo e bendatura.',
     },
   },
   collection: {

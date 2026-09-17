@@ -72,6 +72,7 @@ export const sidebarEntries: Record<SidebarSection, SidebarEntry[]> = {
     RouteName.Unlock,
     RouteName.Plan,
     RouteName.Collection,
+    RouteName.Challenges,
   ].map(routeEntry),
   // Live leads, because it is the only one of the three that answers about right now and
   // clicking the section lands on its first entry (B24).
