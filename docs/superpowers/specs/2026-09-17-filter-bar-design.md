@@ -35,6 +35,10 @@ choices the owner made are §2, §3, §4 and §5.
   keeps the keyboard wiring and highlights the first item, and it narrows nothing. The narrowing
   is ours, over the options we hand the list. A design that assumed otherwise would have found
   out in the browser.
+- **And it is already written here.** `components/ui/command/` is a `Command` on `ListboxRoot`
+  with `filter.ts` scoring the options, `CommandInput` on `ListboxFilter`, `CommandList`,
+  `CommandItem` and `CommandEmpty`. `SearchPalette.vue` and a Kit section use it. The
+  multi-select is built on it (§4), not beside it.
 - `ListboxVirtualizer` exists and is **not** used: the longest option list in the app is 39
   characters, and the virtual list this repo already has is for 733 rows, not 39.
 - **Runs' outcome already carries the four state tones**, in `ui/src/screens/runs/RunRow.vue`:
@@ -75,10 +79,17 @@ mean opening a menu to find out how many items are still missing.
 
 ## 4. Decision — one multi-select, and the search appears by itself
 
-`ui/src/components/ui/multi-select/`, a kit primitive on Reka `Listbox` inside `Popover`, in the
-shape the other primitives have (`index.ts`, the component, `variants.ts` if it earns one). It
-takes `{ value, label, count }` options, the picked values and a label; the trigger reads
+`ui/src/components/ui/multi-select/`, a kit primitive built on **the kit's own `Command`** inside
+`Popover`, in the shape the other primitives have (`index.ts`, the component). It takes
+`{ value, label, count }` options, the picked values and a label; the trigger reads
 `Qualità · 3, 4`. Its own row on the Kit page.
+
+**Not on raw `Listbox`, which is what this spec said first.** `Command` *is* `ListboxRoot` —
+it forwards `ListboxRootProps`, so `multiple` and `selectionBehavior: 'toggle'` come free — with
+the scored search (`command/filter.ts`), `CommandInput` on `ListboxFilter`, `CommandList` and a
+`CommandEmpty` for the case where the typing matches nothing. The search palette already uses all
+of it. Writing a second listbox beside it would be two keyboard behaviours to keep agreeing
+forever, which is the shape of defect this sub-project is removing from the filter itself.
 
 **The search field inside it appears from a named threshold on the number of options, not from a
 per-facet flag.** How many pools exist is a property of the user's install — on a machine with no
