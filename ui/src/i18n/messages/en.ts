@@ -4,6 +4,14 @@ export const en: MessageSchema = {
   ui: {
     close: 'Close',
   },
+  filters: {
+    more: 'More filters',
+    fewer: 'Fewer filters',
+    active: 'active filters',
+    reset: 'Clear filters',
+    inMenu: 'filter the values',
+    noMatch: 'No value matches that text.',
+  },
   shell: {
     newTab: 'New tab',
     closeTab: 'Close tab',
