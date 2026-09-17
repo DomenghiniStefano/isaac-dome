@@ -22,12 +22,14 @@
   );
 }
 
-/* The completion matrix: the name column, one mark cell per boss, the row total. The column
-   count is data, bound from the template as --matrix-columns. */
+/* The completion matrix: the name column, one mark cell per boss, then the row's two totals —
+   how many bosses have a level at all, and how many have the second (B22). The column count is
+   data, bound from the template as --matrix-columns. */
 @utility grid-cols-matrix {
   grid-template-columns:
     var(--spacing-matrix-name)
     repeat(var(--matrix-columns), var(--spacing-mark-cell))
+    var(--spacing-matrix-total)
     var(--spacing-matrix-total);
 }
 

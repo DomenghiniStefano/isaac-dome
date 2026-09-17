@@ -550,13 +550,9 @@ export const en: MessageSchema = {
       hard: 'marks at hard',
       hardExplain:
         'Cells with the second level, over the same denominator. Never more than the count beside it: every hard mark is also a normal one.',
-      cells: 'cells',
       complete: 'complete characters',
       completeExplain:
         'Characters with every one of their readable cells at hard, which is what the game’s own widget means by a full row. A character with unreadable cells is complete over fewer columns.',
-      unknown: 'unreadable',
-      unknownExplain:
-        'Cells we cannot yet find in the save. It does not mean "never done": it means we cannot tell.',
     },
     card: {
       title: 'Marks matrix',
@@ -570,9 +566,11 @@ export const en: MessageSchema = {
     },
     grid: {
       character: 'Character',
-      levels: 'normal · hard',
+      normal: 'normal',
+      hard: 'hard',
       unreadable: 'unreadable',
       columnTotals: 'Characters with the mark',
+      columnTotalsHard: 'Of those, at hard',
     },
     groups: {
       base: 'Base characters',
