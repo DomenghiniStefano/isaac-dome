@@ -58,6 +58,13 @@ pub struct CandidateView {
     pub suggested: bool,
     /// Display-only detail. No command accepts it as input.
     pub path_hint: String,
+    /// What the file says about itself, for the welcome's cards. `None` when it could not be
+    /// opened or parsed **at all**: the row is still offered — "degrade, never fail" shows it
+    /// and says so, it does not decide a stranger has no save.
+    ///
+    /// Filled by [`setup_state`], never by [`candidates`]: that list is the one
+    /// `select_profile` validates against, and it reads no files.
+    pub preview: Option<crate::CandidatePreview>,
 }
 
 /// Presentable candidates, most recent to least recent.
@@ -95,6 +102,7 @@ fn view_of(save: &SaveCandidate) -> CandidateView {
         size_bytes: save.size,
         suggested: false,
         path_hint: redacted_path(&save.path, &save.source),
+        preview: None,
     }
 }
 
@@ -332,8 +340,31 @@ fn setup_diagnostic_of(d: &DiscoveryDiagnostic) -> SetupDiagnostic {
     }
 }
 
-pub fn setup_state(d: &Discovery, saved: Option<&ProfileId>) -> SetupState {
-    let views = candidates(&d.saves);
+/// The whole answer the welcome and the indicator read, in **one** command.
+///
+/// The previews arrive here rather than in [`candidates`] because this is the only entry
+/// point that is allowed to know what a file holds — and they are matched **by id**: that
+/// list is sorted, so matching by position would hand a row its neighbour's numbers.
+///
+/// `read` is the I/O, as a closure, which is how [`crate::SaveCache`] already takes its own:
+/// the crate stays pure and the policy is testable without a disk.
+pub fn setup_state(
+    d: &Discovery,
+    saved: Option<&ProfileId>,
+    read: impl Fn(&Path) -> Option<core_save::Save>,
+) -> SetupState {
+    let views: Vec<CandidateView> = candidates(&d.saves)
+        .into_iter()
+        .map(|v| CandidateView {
+            preview: d
+                .saves
+                .iter()
+                .find(|s| profile_id(&s.path) == v.id)
+                .and_then(|s| read(&s.path))
+                .map(|save| crate::preview_of(&save)),
+            ..v
+        })
+        .collect();
     let active = resolve_active(saved, &views, d.steam.is_some(), d.game.is_some());
     SetupState {
         steam: d.steam.as_ref().map(|s| SteamView {

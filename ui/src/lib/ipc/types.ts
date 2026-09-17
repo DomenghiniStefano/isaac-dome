@@ -33,6 +33,30 @@ export const SavePrefix = {
 } as const
 export type SavePrefix = (typeof SavePrefix)[keyof typeof SavePrefix]
 
+/**
+ * A count the file may not let us make. **Never `Read { done: 0 }` for a section that was
+ * not read**: a zero is a profile at the start, and the two are not one sentence. Same
+ * choice as `Verdict::Partial` in `graph` and `Generated::NotSaid` in `run`.
+ */
+export type PreviewCount =
+  { kind: 'read'; done: number; of: number } | { kind: 'unread' }
+
+export type CandidatePreview = {
+  achievements: PreviewCount
+  items: PreviewCount
+  /**
+   * Cells that reached a level, out of the cells the file lets us read — the denominator
+   * Completion already uses, where what cannot be read stays outside it.
+   */
+  marks: PreviewCount
+  /**
+   * Cells the file does not let us read. Zero when the matrix is whole, and zero as well
+   * when there is no counters section at all: that absence is `marks: Unread`, not 408
+   * unreadable cells.
+   */
+  unreadableCells: number
+}
+
 export type CandidateView = {
   id: ProfileId
   prefix: SavePrefix
@@ -45,6 +69,15 @@ export type CandidateView = {
    * Display-only detail. No command accepts it as input.
    */
   pathHint: string
+  /**
+   * What the file says about itself, for the welcome's cards. `None` when it could not be
+   * opened or parsed **at all**: the row is still offered — "degrade, never fail" shows it
+   * and says so, it does not decide a stranger has no save.
+   *
+   * Filled by [`setup_state`], never by [`candidates`]: that list is the one
+   * `select_profile` validates against, and it reads no files.
+   */
+  preview: CandidatePreview | null
 }
 
 /**
