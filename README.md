@@ -201,6 +201,8 @@ fixture of a known era, and a file named "live" invites overwriting it.
 
 - [`CLAUDE.md`](CLAUDE.md) — operating context: constraints, save format, conventions.
 - [`docs/PROJECT.md`](docs/PROJECT.md) — the full project document.
+- [`docs/architecture.md`](docs/architecture.md) — four diagrams: data flow, the crates, the
+  screens, the build.
 - [`docs/STATUS.md`](docs/STATUS.md) — checkbox state, open blockers, session log.
 - [`DESIGN-BRIEF.md`](DESIGN-BRIEF.md) — the design system's contract, with the TypeScript
   types.
