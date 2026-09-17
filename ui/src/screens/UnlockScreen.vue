@@ -16,21 +16,19 @@ import { emptyList, isFiltering } from '@/lib/facets/emptyList'
 import { characterForms } from '@/lib/graph/characterName'
 import { stateCounts, stateOrder } from '@/lib/graph/nodeState'
 import {
-  drawerFacets,
-  drawerLabels,
+  barLabels,
   facetTitle,
   facetValueLabel,
   sortOrder,
   sortText,
   stateDot,
   stateText,
-  toolbarLabels,
+  unlockSlots,
 } from './unlock/facetLabels'
 import { unlockView } from './unlock/tabView'
 import {
   FacetId,
   UnlockSort,
-  facetOrder,
   sortNodes,
   unlockFaceting,
 } from '@/lib/graph/unlockFacets'
@@ -41,9 +39,7 @@ import { LoadStatus } from '@/stores/loadStatus'
 import { useQueueStore } from '@/stores/queue'
 import ScreenHeader from './ScreenHeader.vue'
 import ProfileError from './profile/ProfileError.vue'
-import FacetDrawer from '@/components/facets/FacetDrawer.vue'
-import FilterToolbar from '@/components/facets/FilterToolbar.vue'
-import StateToggle from '@/components/facets/StateToggle.vue'
+import FilterBar from '@/components/facets/FilterBar.vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import { unlockEntries } from '@/lib/diagnostics/unlock'
 import UnlockTable from './unlock/UnlockTable.vue'
@@ -129,15 +125,6 @@ const setPicks = (facet: FacetId, picked: string[]) => {
     picks: { ...filter.value.picks, [facet]: picked },
   }
 }
-const toggle = (facet: FacetId, value: string) => {
-  const picked = filter.value.picks[facet]
-  setPicks(
-    facet,
-    picked.includes(value)
-      ? picked.filter((v) => v !== value)
-      : [...picked, value],
-  )
-}
 // An empty list is not a filter that matched nothing: a view that came back with no nodes at
 // all has nothing to clear, and offering the button there would undo nothing. Unreachable
 // today — a machine without the game still gets every node, counted as unread — so this is the
@@ -174,40 +161,32 @@ const reset = () => {
         :entries="unlockEntries(graph.view.unlock.diagnostics)"
       />
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
-      <StateToggle
-        :order="stateOrder"
-        :counts="counts"
-        :picked="filter.picks[FacetId.State]"
-        :dot="stateDot"
-        :text="stateText"
-        @update="setPicks(FacetId.State, $event)"
-      />
-      <FacetDrawer
-        :rows="nodes"
-        :faceting="unlockFaceting"
-        :facets="drawerFacets"
-        :filter="filter"
-        :title="facetTitle"
-        :value-label="valueLabel"
-        :labels="drawerLabels"
-        @toggle="toggle"
-        @reset="reset"
-      />
       <Card>
-        <FilterToolbar
+        <FilterBar
           :shown="rows.length"
           :total="nodes.length"
           :query="filter.query"
           :sort="sort"
           :sorts="sortOrder"
           :sort-text="sortText"
-          :order="facetOrder"
-          :picks="filter.picks"
+          :rows="nodes"
+          :faceting="unlockFaceting"
+          :filter="filter"
+          :facets="unlockSlots"
+          :state="{
+            facet: FacetId.State,
+            order: stateOrder,
+            counts,
+            dot: stateDot,
+            text: stateText,
+          }"
+          :title="facetTitle"
           :value-label="valueLabel"
-          :labels="toolbarLabels"
+          :labels="barLabels"
           @update:query="setQuery"
           @update:sort="setSort"
-          @toggle="toggle"
+          @update:picks="setPicks"
+          @reset="reset"
         />
         <UnlockTable
           v-if="rows.length > 0"
