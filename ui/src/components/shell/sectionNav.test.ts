@@ -132,6 +132,9 @@ describe('the three sections are three preconditions', () => {
         RouteName.Unlock,
         RouteName.Plan,
         RouteName.Collection,
+        // Challenges reads section 7 of the .dat, so it is behind the profile gate like the
+        // rest of Progress — and not beside Floor, which only reads what you painted.
+        RouteName.Challenges,
       ].sort(),
     )
     // Live reads the log, Runs reads the archive, Floor reads what you painted. None of the
