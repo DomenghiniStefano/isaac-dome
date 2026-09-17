@@ -36,3 +36,10 @@ crates/app/gen/schemas/
 
 # Scratch copy of the generated contract, written by `scripts/check` and removed by it.
 ui/.ipc-types-check/
+
+# Configurazione MCP con scope `project`. I server si registrano con `claude mcp add`, il cui
+# default è lo scope `local`: quello finisce in ~/.claude.json, fuori da qualunque repo. Un
+# `.mcp.json` nella root è invece l'unico scope pensato per essere committato, e l'`env` di un
+# server stdio porta le credenziali in chiaro. Questo repo è pubblico, e la riga sta qui e non
+# solo nel gitignore globale di una macchina perché quello non protegge chi clona.
+.mcp.json
