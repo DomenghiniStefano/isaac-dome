@@ -277,3 +277,24 @@ fn a_leftover_game_folder_without_a_manifest_is_not_an_installation() {
     assert!(game.is_none(), "the leftover is not an installation");
     assert_eq!(diags, vec![Diagnostic::GameNotFound]);
 }
+
+// ---------------------------------------------------------------------------
+// Which "nothing found" this is
+// ---------------------------------------------------------------------------
+
+/// A folder the user pointed at that holds no save is **not** "we looked in the usual places
+/// and found none". The reader can act on one of those and not on the other, so they are two
+/// sentences and two diagnostics.
+///
+/// The decision is tested here rather than through `discover`, which reads the machine it
+/// runs on: a test that asked `discover` for this would pass or fail depending on what is in
+/// the tester's Documents folder.
+#[test]
+fn an_empty_chosen_folder_is_not_the_same_as_finding_nothing_anywhere() {
+    assert_eq!(discovery::no_saves(false), Diagnostic::NoSavesFound);
+    assert_eq!(
+        discovery::no_saves(true),
+        Diagnostic::NoSavesInChosenFolder,
+        "a folder was pointed at, and it holds no save"
+    );
+}

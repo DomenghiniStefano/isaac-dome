@@ -9,6 +9,8 @@ export const Command = {
   WindowSession: 'window_session',
   SetWindowSession: 'set_window_session',
   SelectProfile: 'select_profile',
+  ChooseGameFolder: 'choose_game_folder',
+  ChooseSavesFolder: 'choose_saves_folder',
   SaveSummary: 'save_summary',
   Completion: 'completion',
   ExtractionReport: 'extraction_report',

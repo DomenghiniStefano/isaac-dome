@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RefreshCwIcon, TriangleAlertIcon } from '@lucide/vue'
+import { FolderSearchIcon, RefreshCwIcon, TriangleAlertIcon } from '@lucide/vue'
 import {
   Alert,
   AlertDescription,
@@ -11,9 +11,11 @@ import { useMessages } from '@/i18n'
 import { assertNever } from '@/lib/assertNever'
 import type { MissingReason, SetupDiagnostic } from '@/lib/ipc/types'
 import { missingReasonLabel } from '@/lib/profile/profileLabels'
+import { useProfileStore } from '@/stores/profile'
 
 defineProps<{ reason: MissingReason; diagnostics: SetupDiagnostic[] }>()
 const emit = defineEmits<{ retry: [] }>()
+const profile = useProfileStore()
 const { t } = useMessages()
 
 const diagnosticText = (d: SetupDiagnostic): string => {
@@ -24,6 +26,8 @@ const diagnosticText = (d: SetupDiagnostic): string => {
       return t('profile.diagnostics.gameNotFound')
     case 'noSavesFound':
       return t('profile.diagnostics.noSavesFound')
+    case 'noSavesInChosenFolder':
+      return t('profile.diagnostics.noSavesInChosenFolder')
     case 'unreadablePath':
       return `${t('profile.diagnostics.unreadablePath')} · ${d.name} · ${d.reason}`
     case 'malformedManifest':
@@ -35,18 +39,31 @@ const diagnosticText = (d: SetupDiagnostic): string => {
 </script>
 
 <template>
-  <!-- The chain broke: say where, and what we tried. Choosing a folder by hand needs a
-       command that accepts a path; until then there is no button that does nothing. -->
+  <!-- The chain broke: say where, what we tried, and offer the two folders by hand. Since
+       3.8 the buttons work (B14) — before that there were none at all, because a button that
+       does nothing is worse than no button. -->
   <div class="flex flex-col gap-3">
     <Alert :variant="AlertVariant.Destructive">
       <TriangleAlertIcon />
-      <AlertTitle>{{ t('profile.none.title') }}</AlertTitle>
+      <AlertTitle>{{ t('welcome.nothing.title') }}</AlertTitle>
       <AlertDescription>{{ t(missingReasonLabel[reason]) }}</AlertDescription>
     </Alert>
     <div class="flex flex-col gap-3 border border-border bg-sheet p-3">
-      <div>
+      <div class="flex flex-wrap gap-2">
         <Button :variant="ButtonVariant.Outline" @click="emit('retry')">
-          <RefreshCwIcon />{{ t('profile.none.retry') }}
+          <RefreshCwIcon />{{ t('welcome.nothing.retry') }}
+        </Button>
+        <Button
+          :variant="ButtonVariant.Outline"
+          @click="profile.pickGameFolder()"
+        >
+          <FolderSearchIcon />{{ t('welcome.nothing.chooseGame') }}
+        </Button>
+        <Button
+          :variant="ButtonVariant.Outline"
+          @click="profile.pickSavesFolder()"
+        >
+          <FolderSearchIcon />{{ t('welcome.nothing.chooseSaves') }}
         </Button>
       </div>
       <div
@@ -54,7 +71,7 @@ const diagnosticText = (d: SetupDiagnostic): string => {
         class="flex flex-col gap-1 border border-hairline bg-data px-3 py-2.5"
       >
         <span class="text-label text-subtle-foreground">{{
-          t('profile.none.diagnostics')
+          t('welcome.nothing.diagnostics')
         }}</span>
         <span
           v-for="(d, i) in diagnostics"

@@ -756,3 +756,47 @@ fn a_preview_follows_its_own_candidate_and_not_the_row_it_was_sorted_into() {
         ipc::PreviewCount::Read { done: 2, of: 3 }
     );
 }
+
+#[test]
+fn a_folder_you_pointed_at_that_holds_no_save_is_a_different_sentence() {
+    // Two "nothing found" that a reader can act on differently: one is "we looked where saves
+    // usually are", the other "you chose that folder, and there is nothing in it".
+    let nowhere = Discovery {
+        steam: None,
+        game: None,
+        saves: vec![],
+        game_data: None,
+        diagnostics: vec![Diagnostic::NoSavesFound],
+    };
+    let chosen = Discovery {
+        diagnostics: vec![Diagnostic::NoSavesInChosenFolder],
+        ..nowhere.clone()
+    };
+    let reason = |d: &Discovery| match setup_state(d, None, |_: &Path| None).active {
+        ActiveProfile::None { reason } => reason,
+        other => panic!("expected None, got {other:?}"),
+    };
+    // With no Steam the chain breaks earlier, and that answer stays: this is about the last
+    // link, so both machines below have Steam and the game.
+    let with_chain = |d: &Discovery| Discovery {
+        steam: Some(SteamInstall {
+            root: PathBuf::from("c:/steam"),
+            libraries: vec![],
+            source: SteamSource::Registry,
+        }),
+        game: Some(GameInstall {
+            dir: PathBuf::from("c:/steam/game"),
+            library: PathBuf::from("c:/steam"),
+            manifest: PathBuf::from("c:/steam/appmanifest_250900.acf"),
+            edition: Edition::Repentance,
+            dlcs: vec![],
+            updated_unix: None,
+        }),
+        ..d.clone()
+    };
+    assert_eq!(reason(&with_chain(&nowhere)), MissingReason::NoSaves);
+    assert_eq!(
+        reason(&with_chain(&chosen)),
+        MissingReason::NoSavesInChosenFolder
+    );
+}

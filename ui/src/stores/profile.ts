@@ -5,7 +5,12 @@ import { LoadStatus } from './loadStatus'
 import { tracked } from './tracked'
 import { isIpcError } from '@/lib/ipc/errors'
 import { saveSummary } from '@/lib/ipc/save'
-import { selectProfile, setupState } from '@/lib/ipc/setup'
+import {
+  chooseGameFolder,
+  chooseSavesFolder,
+  selectProfile,
+  setupState,
+} from '@/lib/ipc/setup'
 import type { IpcError, SaveSummary, SetupState } from '@/lib/ipc/types'
 
 // The active profile is the window's, never a tab's (DESIGN-BRIEF.md §4.1, §4.2): one store,
@@ -57,6 +62,11 @@ export const useProfileStore = defineStore(StoreId.Profile, () => {
     stopPicking()
   }
 
+  // B14: the dialog opens in Rust and the folder never reaches this side. Cancelling answers
+  // the state as it already was, so there is no case to tell apart here.
+  const pickGameFolder = (): Promise<void> => run(chooseGameFolder)
+  const pickSavesFolder = (): Promise<void> => run(chooseSavesFolder)
+
   return {
     setup,
     summary,
@@ -68,5 +78,7 @@ export const useProfileStore = defineStore(StoreId.Profile, () => {
     pick,
     stopPicking,
     choose,
+    pickGameFolder,
+    pickSavesFolder,
   }
 })

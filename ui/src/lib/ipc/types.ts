@@ -92,6 +92,7 @@ export const MissingReason = {
   SteamNotFound: 'steamNotFound',
   GameNotFound: 'gameNotFound',
   NoSaves: 'noSaves',
+  NoSavesInChosenFolder: 'noSavesInChosenFolder',
 } as const
 export type MissingReason = (typeof MissingReason)[keyof typeof MissingReason]
 
@@ -151,6 +152,7 @@ export type SetupDiagnostic =
   | { kind: 'steamNotFound' }
   | { kind: 'gameNotFound' }
   | { kind: 'noSavesFound' }
+  | { kind: 'noSavesInChosenFolder' }
   | { kind: 'unreadablePath'; name: string; reason: IoReason }
   | { kind: 'malformedManifest'; name: string }
 
