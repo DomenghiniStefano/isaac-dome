@@ -2,6 +2,7 @@
 
 mod autostart;
 mod catalog_view;
+mod challenges;
 mod collection;
 pub mod contract;
 mod error;
@@ -36,6 +37,10 @@ pub use autostart::{
     SILENT_ARG,
 };
 pub use catalog_view::{catalog_view, item_views, CatalogView, ItemKindView, ItemView, KindCounts};
+pub use challenges::{
+    challenges_view, ChallengeRow, ChallengeStateView, ChallengeTotals, ChallengesDiagnostic,
+    ChallengesView, RewardView,
+};
 pub use collection::{
     collection_view, CollectionDiagnostic, CollectionItem, CollectionTotals, CollectionView,
     LockView,
