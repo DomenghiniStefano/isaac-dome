@@ -103,6 +103,78 @@ fn main() {
         }
     }
 
+    // Is `unlocked_by` "all of these achievements" or "any of them"? Nothing in the file says,
+    // and the save cannot show a challenge being *offered* — but a challenge you have **finished**
+    // must have been reachable, so every done challenge is a case. If one of them sits behind a
+    // gate that is not done, "all of" is refuted.
+    let mut gated_done = 0;
+    let mut all_of_holds = 0;
+    let mut any_of_only = 0;
+    for ch in &challenges {
+        let finished = cells.get(ch.id.0 as usize).copied().unwrap_or(0) != 0;
+        if !finished || ch.unlocked_by.is_empty() {
+            continue;
+        }
+        gated_done += 1;
+        let all = ch
+            .unlocked_by
+            .iter()
+            .all(|a| done.get(a.0 as usize).copied().unwrap_or(false));
+        let any = ch
+            .unlocked_by
+            .iter()
+            .any(|a| done.get(a.0 as usize).copied().unwrap_or(false));
+        if all {
+            all_of_holds += 1;
+        } else if any {
+            any_of_only += 1;
+            println!(
+                "  any-of only: {:>2} {:<28} gates={:?}",
+                ch.id.0,
+                ch.name,
+                ch.unlocked_by.iter().map(|a| a.0).collect::<Vec<_>>()
+            );
+        } else {
+            println!(
+                "  NO gate done: {:>2} {:<28} gates={:?}",
+                ch.id.0,
+                ch.name,
+                ch.unlocked_by.iter().map(|a| a.0).collect::<Vec<_>>()
+            );
+        }
+    }
+    println!(
+        "\ndone challenges that have gates: {gated_done} — all gates done on {all_of_holds}, only some on {any_of_only}"
+    );
+    println!(
+        "challenges with no gate at all: {}",
+        challenges
+            .iter()
+            .filter(|c| c.unlocked_by.is_empty())
+            .count()
+    );
+
+    // Does the embedded dataset have a page for every challenge? A row that shows the wiki's
+    // conditions has to say when it has none, and a missing page must be loud (B45).
+    let dataset = wiki::Dataset::embedded();
+    let missing: Vec<u32> = challenges
+        .iter()
+        .filter(|ch| {
+            dataset
+                .as_ref()
+                .ok()
+                .and_then(|d| d.entry(&wiki::Target::Challenge { number: ch.id.0 }))
+                .is_none()
+        })
+        .map(|ch| ch.id.0)
+        .collect();
+    println!(
+        "wiki pages: {} of {} challenges, missing {:?}",
+        challenges.len() - missing.len(),
+        challenges.len(),
+        missing
+    );
+
     // The disagreements of the identity mapping, named, so a pattern is visible rather than
     // summarised away.
     println!("\nunder offset 0, the rows that disagree:");
