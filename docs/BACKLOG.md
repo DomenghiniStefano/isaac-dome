@@ -29,16 +29,55 @@ the session log is full of entries that say *"not seen in a real Tauri window"*.
 `the game` work can be written against fixtures; what it cannot do there is be verified, and a
 half of a task that cannot be verified is not a half that should be shipped.
 
-**Every `, then a window` line is gathered in one place since 2026-09-16**: *"What only a window
-can say"* in `docs/STATUS.md`, beside the section that does the same for `a measurement`. It had
-accumulated across five reports and nobody could see how much of it there was. The reports keep
-their own copies as the record of their day; the gathered list is the live one, and **ticking a
-line there is what closes it**.
+**Every `, then a window` line is gathered in one place**: *"What only a window can say"* in
+`docs/STATUS.md`, written on 2026-09-16 because the lines had accumulated across five reports and
+nobody could see how much of it there was. The reports keep their own copies as the record of their
+day; the gathered list is the live one, and **ticking a line there is what closes it**.
 
-**Snapshot of 2026-09-14 (evening)**, 25 open entries — it was 26 that morning. **B34 closed
-because tagging it meant reading it** and it turned out not to be finished; B38 closed; B44 opened
-and closed the same hour, as not a defect; then B40 and B43 closed and B42 half closed on
-`feature/small-three`, which opened **B45** — four characters with no page, found by the
+That list is **not** the board's `UAT`, though the two are about the same thing. `UAT` holds the
+*entries* that are built and waiting to be looked at; the gathered list holds the individual
+*checks* — forty of them in eight groups, most from sub-projects that were never entries here.
+Merging them would mean a card per check, and nobody has asked for that.
+
+## Where the state lives, since 2026-09-17
+
+**Whether an entry is open, started, built or closed is on the Trello board, not in this file.**
+This document had been keeping it in prose, and it had stopped being true: on the morning of
+2026-09-17 the preamble declared the total **eight times** — 25, 28, 29, 30, 30, 29, 28, and "26
+that morning" — the bucket list under it summed to 25, and counting the headings gave 24. Three
+answers, one file, one day. A running total written by hand is stale the moment the next entry is
+opened, and this one had a command in it telling the reader not to trust the list above it.
+
+The division of labour:
+
+- **The board holds what changes.** One card per open entry: the `Needs` line with its reason in
+  the description, `### Done when` as a checklist, and what blocks it as labels — `READY`,
+  `WAITING`, `NEEDS SAVE`, `NEEDS GAME`, `NEEDS RUN`, `NEEDS STEAM`, `NEEDS WINDOW`, plus `BUG`
+  and `STOPPED`. The lists are `Inbox`, `BACKLOG`, `In Progress`, `UAT` and `Done`, and a card's
+  position inside a list is its priority — the same rule the `plan` crate states for its own
+  queue.
+- **This file holds what doesn't.** What an entry is, what already exists, what is missing, what
+  it would take to believe it, and how it got here. That is prose, it belongs in git beside the
+  code, and no card would carry it.
+
+A heading no longer carries `⏳` or `🟡`: that is the column its card is in. It keeps the
+sentence, because *"built on 2026-09-16, not yet seen in a window"* is a dated fact and not a
+state. `✅` stays on closed entries, for the same reason — a closed entry never changes again, and
+closed entries are history this file keeps rather than state the board tracks.
+
+**Nothing checks the two against each other.** A card and an entry can drift and only a reader
+would notice. A script could compare them, but it would need the network and a personal token, so
+it could only ever be a report on the machine that has both — never a gate. `scripts/check` has to
+stay green on a fresh clone, and there is no CI here by choice.
+
+## How this list keeps growing
+
+The chronicle below is the part worth keeping, and its lesson is in it: almost nothing here was
+found by looking for it.
+
+**B34 closed because tagging it meant reading it** and it turned out not to be finished; B38
+closed; B44 opened and closed the same hour, as not a defect; then B40 and B43 closed and B42 half
+closed on `feature/small-three`, which opened **B45** — four characters with no page, found by the
 cross-check B42 asked for and not by anyone looking for them — and then **B46**, found by trying
 to look at B40's card in a window and discovering nothing in the app can open the page that draws
 it. Both came out of checking finished work, which is where this list keeps finding things.
@@ -47,6 +86,7 @@ guard that makes a missing one loud — and opened **B47**: the same query that 
 seven more templates the fetch does not know, and 591 pages behind them.
 **B46 closed the same night**, which made B40's card reachable and opened **B48**: an empty
 category tells you your search found nothing when you never searched.
+
 **Then the owner opened the app and reported six things in one message**: four were defects, and
 two of them were fixed the same hour (the search that did not know the transformations, an
 achievement's drawing overlapping the want suggestions). The other two, plus a missing picture,
@@ -54,54 +94,39 @@ are **B49**, **B50** and **B51** — and the only reason this list grew by three
 looked at the screen. **B51 closed within the hour**, and half of what it reported was a defect
 of mine from the same afternoon: the card that draws a transformation's rows was suppressed whole,
 taking the description and "sbloccato da" — which belong to every kind — down with it.
-Regenerate rather than trust this
-list — the command
-prints each open entry's heading with its tag under it, and was run before it was written down:
 
-```
-grep -E '^## B[0-9]+ —|^\*\*Needs:\*\*' docs/BACKLOG.md | grep -A1 '^## ' | grep -B1 Needs
-```
+B48, B49, B52 and B53 closed on 2026-09-16. **B53 opened out of B52** — a counter that had been
+reporting `{}` since the day it was added — and **B54 out of B53**, which is where this list keeps
+finding things. **B55, B56 and B57** came from a sweep of what the machine actually keeps, run
+because a claim had been made from two folders and stated as though it came from all of them: none
+of the three is a run history, and all three are sources this project did not know it had. **B59**
+came out of writing a comment: the convention scanner matches its rules against the raw file, so a
+comment naming a forbidden call trips the rule that forbids it.
 
-**Re-counted on 2026-09-16**, with the command above: **28 open**. B48, B49, B52 and B53
-closed before it. **B53 opened out of B52** — a counter that had been reporting `{}`
-since the day it was added — and **B54 out of B53**, which is where this list keeps finding things.
-**B55, B56 and B57** came from a sweep of what the machine actually keeps, run because a claim had
-been made from two folders and stated as though it came from all of them: none of the three is a
-run history, and all three are sources this project did not know it had. **B59** is the newest, and
-it came out of writing a comment: the convention scanner matches its rules against the raw file,
-so a comment naming a forbidden call trips the rule that forbids it.
+**The same sweep, run that evening on the second machine**, because a `Needs:` tag is the one thing
+in this file that is about a machine and not about the work. It opened **B60** — a log the game
+wrote with no run in it, which the suite cannot hold — and it **retagged B57** from `the game` to
+`nothing`, because `savedatapath.txt` turns out to outlive the uninstall. One entry changed tag and
+one entry is new, and both came from looking at a machine instead of at the list.
 
-**Re-counted again the evening of 2026-09-16, on the second machine: 29 open.** The same sweep as
-B55–B57, run on the other machine because a `Needs:` tag is the one thing in this file that is
-about a machine and not about the work. It opened **B60** — a log the game wrote with no run in
-it, which the suite cannot hold — and it **retagged B57** from `the game` to `nothing`, because
-`savedatapath.txt` turns out to outlive the uninstall. One entry moved bucket and one entry is new,
-and both came from looking at a machine instead of at the list.
+**B61** opened the same evening out of the same series: measuring the header's `0x10` meant opening
+the slot nobody plays, and it turns out to be the one profile shape this project has never read.
+**B63** the morning after, while deciding what to do with the worktrees: a comparison against an
+abandoned branch turned up 27 tests that a commit had deleted four days earlier, with every gate
+green.
 
-**30 with B61**, opened the same evening out of the same series: measuring the header's `0x10`
-meant opening the slot nobody plays, and it turns out to be the one profile shape this project has
-never read.
-
-**30 with B63**, opened the morning after while deciding what to do with the worktrees: a comparison against an abandoned branch turned up 27 tests that a commit had deleted four days earlier, with every gate green. **29 at the end of that evening**, and the moves are worth more than the total. **B60 closed** —
-the log with no run is in `samples/launches/`, a folder of its own — and its own premise turned out
-to be wrong, which the weakened guard proved by going red for the wrong reason. **B62 opened** out
-of the first test written for it: a source folded into zero runs caches as one never folded.
-**B61 closed** the same evening and stopped being a fixture: an untouched profile is zero
-everywhere except the bestiary, which makes it the clean instrument the eleven-chunks gap in
+**B60 closed** — the log with no run is in `samples/launches/`, a folder of its own — and its own
+premise turned out to be wrong, which the weakened guard proved by going red for the wrong reason.
+**B62 opened** out of the first test written for it: a source folded into zero runs caches as one
+never folded. **B61 closed** the same evening and stopped being a fixture: an untouched profile is
+zero everywhere except the bestiary, which makes it the clean instrument the eleven-chunks gap in
 `docs/save-format.md` has been missing. Both closings began with a test going red against an
-expectation written an hour earlier.
+expectation written an hour earlier. **B62 closed** with migration 5, the one entry in this file
+that was waiting on an approval rather than on a machine or on an idea.
 
-**28 later that same evening**: **B62 closed** with migration 5, the one entry in this file that
-was waiting on an approval rather than on a machine or on an idea.
-
-- **`nothing` (15)** — B6, B12, B14, B15, B17, B27, B29, B30, B39, B41, B42, B47, B54, B55, B56 (B11, B57, B59, B62 and B63 closed 2026-09-16)
-- **`a real save` (4)** — B21, B22, B23, B58
-- **`the game` (4)** — B3, B19, B33, B36
-- **`a measurement` (2)** — B9, B20
-
-The `a measurement` bucket is the same subject as *"What only a machine with the game can answer"*
-in `docs/STATUS.md`, which collects the ones that are instruments rather than entries. Closed
-entries carry no tag: nobody goes looking for a task that is done.
+The `a measurement` tag is the same subject as *"What only a machine with the game can answer"* in
+`docs/STATUS.md`, which collects the ones that are instruments rather than entries. Closed entries
+carry no tag: nobody goes looking for a task that is done.
 
 ---
 
@@ -451,7 +476,7 @@ persisted in the settings file, and `discovery` trying it before its own search.
 
 ---
 
-## B15 — Tearing a tab off into its own window, and back (implementation, after 3.7) — 🟡 built on 2026-09-13, **not yet measured on the machine**
+## B15 — Tearing a tab off into its own window, and back (implementation, after 3.7) — built on 2026-09-13, **not yet measured on the machine**
 
 **Needs:** nothing, then a window — the one open question is whether WebView2 keeps delivering pointer events outside the window, and only a hand on a mouse answers it.
 
@@ -531,7 +556,7 @@ merge again — **exactly as a browser does**.
 
 ---
 
-## B17 — The profile screen is a welcome flow, not "Screen 0" (implementation, after design) ⏳ copy done on 2026-09-12
+## B17 — The profile screen is a welcome flow, not "Screen 0" (implementation, after design) copy done on 2026-09-12
 
 **Needs:** nothing, then a window — the welcome flow draws against fixtures (`?fixture=pick`); a real preview wants a real profile.
 
@@ -740,7 +765,7 @@ half already is, by `the_online_bit_never_stands_without_the_cleared_bit` in
 
 ---
 
-## B22 — Two counts per row: normal and hard, where hard implies normal (implementation, `ipc` and `ui`) ⏳ items 1–3 done on 2026-09-17
+## B22 — Two counts per row: normal and hard, where hard implies normal (implementation, `ipc` and `ui`) items 1–3 done on 2026-09-17
 
 **Items 1, 2 and 3 landed on 2026-09-17. Item 4 — the layout — is what is left**, and it is
 left because it is the only part that needs something nobody here has: the two number columns
@@ -922,7 +947,7 @@ table its own; and no fixed body height survives in the tokens.
 
 ---
 
-## B29 — The Collection's filter: no "Faccette", no values with nothing behind them (implementation, `ui`, after design) ⏳ the two sight fixes done on 2026-09-12
+## B29 — The Collection's filter: no "Faccette", no values with nothing behind them (implementation, `ui`, after design) the two sight fixes done on 2026-09-12
 
 **Needs:** nothing, then a window — one filter bar with a fold and multi-select dropdowns: a new primitive and a design pass, both frontend.
 
@@ -1096,7 +1121,7 @@ a test that reads it from the catalog rather than from a literal table.
 
 ---
 
-## B39 — A tab carries its state between windows: filters, scroll, what it was showing (implementation, `ui`, after 3.7's shape) 🟡 built on 2026-09-16, **not yet seen in a window**
+## B39 — A tab carries its state between windows: filters, scroll, what it was showing (implementation, `ui`, after 3.7's shape) built on 2026-09-16, **not yet seen in a window**
 
 **Needs:** nothing, then a window — what a tab carries between windows is `ui`; that it survives the move is seen.
 
@@ -1156,7 +1181,7 @@ a tab that survives a restart, because it is the same mechanism.
 
 ---
 
-## B41 — Starting with Windows, so no run is lost to a launch the app missed (implementation, `ipc`, `app` and `ui`, after design) 🟡 built on 2026-09-16, **not yet seen on an installed build**
+## B41 — Starting with Windows, so no run is lost to a launch the app missed (implementation, `ipc`, `app` and `ui`, after design) built on 2026-09-16, **not yet seen on an installed build**
 
 **Needs:** nothing, then a window — the registry, a pure `launch_intent`, and a switch. Closing it wants an installed build, a logout and a login.
 
@@ -1233,7 +1258,7 @@ this entry, not a new one.
 
 ---
 
-## B42 — Two Cargo tables are downloaded, committed, and read by nothing (implementation, `wiki`, small) 🟡 half closed on 2026-09-14
+## B42 — Two Cargo tables are downloaded, committed, and read by nothing (implementation, `wiki`, small) half closed on 2026-09-14
 
 **`player.json` has its reader** (`feature/small-three`, `5da5296`): its `parent` is cross-checked
 against the `parent` every character page states in its own infobox, and the test goes red the day
