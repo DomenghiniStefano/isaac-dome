@@ -57,8 +57,7 @@ const onValue = (value: unknown) =>
     <PopoverTrigger as-child>
       <Button :variant="ButtonVariant.Outline" class="gap-2">
         <span class="truncate"
-          >{{ label
-          }}<template v-if="summary"> · {{ summary }}</template></span
+          >{{ label }}<template v-if="summary"> · {{ summary }}</template></span
         >
         <ChevronDownIcon />
       </Button>

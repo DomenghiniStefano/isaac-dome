@@ -1,4 +1,8 @@
-<script setup lang="ts" generic="Row, Facet extends string, Sort extends string">
+<script
+  setup
+  lang="ts"
+  generic="Row, Facet extends string, Sort extends string"
+>
 import { XIcon } from '@lucide/vue'
 import { computed, ref, watch } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
@@ -90,7 +94,13 @@ const stateCounts = computed(() =>
 const inView = computed(() => props.facets.filter((slot) => slot.inView))
 const folded = computed(() => props.facets.filter((slot) => !slot.inView))
 const optionsOf = (facet: Facet) =>
-  facetOptions(props.faceting, props.rows, props.filter, facet, props.valueLabel)
+  facetOptions(
+    props.faceting,
+    props.rows,
+    props.filter,
+    facet,
+    props.valueLabel,
+  )
 
 // A single-choice group empties when its chosen item is clicked again; a sort always has one.
 const onSort = (value: unknown) => {

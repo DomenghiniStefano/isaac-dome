@@ -13,21 +13,6 @@ export type Translate = (key: Label, params?: Record<string, unknown>) => string
 // from. `t(`${prefix}.rows`)` would be a key neither the i18n types nor `pnpm scan` can see: a
 // screen naming a key that does not exist would ship, and show the key.
 
-export interface ToolbarLabels {
-  // The noun for a row of this list: "obiettivi", "oggetti".
-  rows: Label
-  search: Label
-  sortBy: Label
-  activeFilters: Label
-}
-
-export interface DrawerLabels {
-  facets: Label
-  activeFilters: Label
-  noFilters: Label
-  reset: Label
-}
-
 // What stays a screen's own: the noun for one of its rows, what its search reads, and how it
 // words "ordina per". Everything else the bar says is shared and read from `filters.*`, because
 // three screens writing "filtri attivi" three times is how two of them end up disagreeing.

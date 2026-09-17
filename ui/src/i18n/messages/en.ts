@@ -155,10 +155,6 @@ export const en: MessageSchema = {
     intro:
       'The runs the app has read: this session’s, and the online sessions the game had already recorded. The log carries no clock, so the order is by session and not by time.',
     rows: 'runs',
-    facets: 'Filters',
-    activeFilters: 'active filters',
-    noFilters: 'no filter',
-    reset: 'Reset the filters',
     search: 'search a seed or a character',
     facet: {
       outcome: 'Outcome',
@@ -228,7 +224,6 @@ export const en: MessageSchema = {
       locked: 'locked',
       unknown: 'unreadable',
     },
-    facets: 'Filters',
     facet: {
       state: 'State',
       quality: 'Quality',
@@ -258,10 +253,6 @@ export const en: MessageSchema = {
     achievement: 'achievement',
     empty: 'No items to show.',
     noResults: 'No items with these filters.',
-    resetFilters: 'Reset the filters',
-    noFilters: 'no filters',
-    activeFilters: 'active filters',
-    reset: 'Reset',
     diagnostics: {
       noCatalogTitle: "We can't find the game",
       noCatalog:
@@ -703,11 +694,6 @@ export const en: MessageSchema = {
       steps: 'steps missing',
       name: 'name',
     },
-    facets: 'Filters',
-    noFilters: 'no filters',
-    activeFilters: 'active filters',
-    reset: 'Reset',
-    resetFilters: 'Reset the filters',
     empty: 'No achievements to show.',
     noResults: 'No rows with these filters.',
     facet: {

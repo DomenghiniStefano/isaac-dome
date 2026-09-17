@@ -17,11 +17,7 @@ import type { RunView } from '@/lib/ipc/types'
 import { runsEntries } from '@/lib/diagnostics/runs'
 import { orderRuns } from '@/lib/runs/runOrder'
 import { runKey } from '@/lib/runs/runKey'
-import {
-  RunFacet,
-  outcomeOrder,
-  runFaceting,
-} from '@/lib/runs/runFacets'
+import { RunFacet, outcomeOrder, runFaceting } from '@/lib/runs/runFacets'
 import {
   barLabels,
   facetTitle,
@@ -97,7 +93,6 @@ const reset = () => {
 const select = (run: RunView) => {
   selectedKey.value = runKey(run)
 }
-
 </script>
 
 <template>
@@ -170,7 +165,7 @@ const select = (run: RunView) => {
             v-if="all.length > 0"
             :variant="ButtonVariant.Outline"
             @click="reset"
-            >{{ t('runs.reset') }}</Button
+            >{{ t('filters.reset') }}</Button
           >
         </div>
       </Card>
