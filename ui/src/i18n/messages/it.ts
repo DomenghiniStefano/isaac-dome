@@ -5,6 +5,17 @@ export const it = {
   ui: {
     close: 'Chiudi',
   },
+  // The filter bar's own words, shared by every list that has one. They were written once per
+  // screen until 3.10, with the same values three times over: that is how two of them end up
+  // disagreeing. What stays a screen's own is the noun for its rows and what its search reads.
+  filters: {
+    more: 'Altri filtri',
+    fewer: 'Meno filtri',
+    active: 'filtri attivi',
+    reset: 'Azzera i filtri',
+    inMenu: 'filtra i valori',
+    noMatch: 'Nessun valore con questo testo.',
+  },
   shell: {
     newTab: 'Nuova tab',
     closeTab: 'Chiudi tab',
@@ -150,10 +161,6 @@ export const it = {
     intro:
       'Le run che l’app ha letto: quelle di questa sessione e quelle delle partite online che il gioco ha già registrato. Il log non ha un orologio, quindi l’ordine è per sessione e non per ora.',
     rows: 'run',
-    facets: 'Filtri',
-    activeFilters: 'filtri attivi',
-    noFilters: 'nessun filtro',
-    reset: 'Azzera i filtri',
     search: 'cerca un seed o un personaggio',
     facet: {
       outcome: 'Esito',
@@ -223,7 +230,6 @@ export const it = {
       locked: 'bloccato',
       unknown: 'non leggibile',
     },
-    facets: 'Filtri',
     facet: {
       state: 'Stato',
       quality: 'Qualità',
@@ -253,10 +259,6 @@ export const it = {
     achievement: 'achievement',
     empty: 'Nessun oggetto da mostrare.',
     noResults: 'Nessun oggetto con questi filtri.',
-    resetFilters: 'Azzera i filtri',
-    noFilters: 'nessun filtro',
-    activeFilters: 'filtri attivi',
-    reset: 'Azzera',
     diagnostics: {
       noCatalogTitle: 'Non troviamo il gioco',
       noCatalog:
@@ -705,11 +707,6 @@ export const it = {
       steps: 'passi mancanti',
       name: 'nome',
     },
-    facets: 'Filtri',
-    noFilters: 'nessun filtro',
-    activeFilters: 'filtri attivi',
-    reset: 'Azzera',
-    resetFilters: 'Azzera i filtri',
     empty: 'Nessun obiettivo da mostrare.',
     noResults: 'Nessuna riga con questi filtri.',
     facet: {

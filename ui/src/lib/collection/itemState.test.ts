@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { CollectionItem, LockView } from '@/lib/ipc/types'
-import { ItemState, itemState, itemStateCounts } from './itemState'
+import { ItemState, itemState } from './itemState'
 
 const item = (over: Partial<CollectionItem> = {}): CollectionItem => ({
   id: 1,
@@ -52,16 +52,5 @@ describe('itemState', () => {
         }),
       ),
     ).toBe(ItemState.Unknown)
-  })
-
-  it('counts every state', () => {
-    expect(
-      itemStateCounts([
-        item({ inCollection: true }),
-        item(),
-        item({ lock: locked }),
-        item({ lock: locked }),
-      ]),
-    ).toEqual({ inCollection: 1, available: 1, locked: 2, unknown: 0 })
   })
 })
