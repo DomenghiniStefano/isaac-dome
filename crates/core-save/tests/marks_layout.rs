@@ -77,3 +77,81 @@ fn the_four_named_tallies_have_their_indices() {
     assert_eq!(counter_index_of(CounterKey::MotherKills), 491);
     assert_eq!(counter_index_of(CounterKey::BeastKills), 492);
 }
+
+/// No two cells of the matrix may share an index, and no cell may land on a located
+/// tally. Added 2026-09-17 with B58, and it is the guard that does **not** need a sample.
+///
+/// The properties in `crates/ipc/tests/marks_real.rs` compare counts, and the file says
+/// so: a base off by one lights the neighbour's cell on the same day and the arithmetic
+/// still works. Only the identity check separates them, and it needs a window where one
+/// character won and one mark appeared — the 638-era series offers exactly one, and it is
+/// an Azazel window that says nothing about Mother. Measured while closing B58: moving
+/// Mother's base from 423 to **422** leaves every real-data property green on this
+/// machine.
+///
+/// What catches it is arithmetic on the tables themselves. The blocks tile: Delirium's
+/// 19-block runs 404..=422, Mother's 14-block starts at 423. A base off by one downwards
+/// makes two different cells answer the same index, which is a contradiction no sample is
+/// needed to see. This test costs nothing and holds on every machine, which is the point —
+/// `samples/` is per-machine and this is not.
+#[test]
+fn no_two_cells_of_the_matrix_share_an_index() {
+    use std::collections::BTreeMap;
+
+    let mut owner: BTreeMap<usize, String> = BTreeMap::new();
+    for row in 0..34 {
+        for column in Column::ALL {
+            let Some(index) = cell_index(row, column) else {
+                continue;
+            };
+            let who = format!("row {row} × {column:?}");
+            if let Some(other) = owner.insert(index, who.clone()) {
+                panic!("index {index} is claimed by both {other} and {who}");
+            }
+        }
+    }
+    for key in [
+        CounterKey::HushKills,
+        CounterKey::DeliriumKills,
+        CounterKey::MotherKills,
+        CounterKey::BeastKills,
+    ] {
+        let index = counter_index_of(key);
+        if let Some(other) = owner.get(&index) {
+            panic!("the tally {key:?} sits at {index}, which is also {other}");
+        }
+    }
+}
+
+/// The blocks tile without a hole where the file says they do. Same day, same reason: this
+/// is the other half of the arithmetic that pins a base without a sample.
+///
+/// Only the three runs the series actually established are asserted. The gaps elsewhere
+/// are real and documented — 111..=115, 158..=172 (158 is Hush's kills), 385..=403 — and
+/// asserting a tiling across them would be inventing a rule the file does not follow.
+#[test]
+fn the_three_derived_blocks_tile_against_their_neighbours() {
+    // Delirium's 19-block ends where Mother's 14-block begins.
+    assert_eq!(
+        cell_index(33, Column::Delirium).map(|i| i + 1),
+        cell_index(0, Column::Mother),
+        "404..=422 then 423: a Mother base one lower would overlap Delirium's block"
+    );
+    // Mother's 14-block, the 20 unlocated cells, then The Beast's: 14 + 1 + 19 = 34.
+    assert_eq!(
+        cell_index(0, Column::Mother).map(|i| i + 34),
+        cell_index(0, Column::TheBeast),
+        "the spacing that located The Beast in the first place"
+    );
+    // The Beast's own 34 run up to its kills tally, which is the cell after it.
+    assert_eq!(
+        cell_index(0, Column::TheBeast).map(|i| i + 34),
+        Some(counter_index_of(CounterKey::MotherKills)),
+        "457..=490 then 491: Mother's kills are the cell after the last mark"
+    );
+    assert_eq!(
+        counter_index_of(CounterKey::MotherKills) + 1,
+        counter_index_of(CounterKey::BeastKills),
+        "the two tallies are adjacent, which is how they were found"
+    );
+}

@@ -131,8 +131,8 @@ Section 2 maps one-to-one to REPENTOGON's `EventCounter` enum. Labels in
 `reference/isaac_counters.py`. The `PROGRESSION_*` cells aren't counters but **bitmasks**:
 observed values are only 0, 1, 2, 3, 5, 7. Bits 0 and 1 are the mark's levels; **bit 2 is
 "won online"**, measured on 2026-09-12 (see below). That the set holds no 4 and no 6 is the
-structural half of that reading — an online clear is also a clear, so bit 2 never stands
-without bit 0 — and it is pinned by `the_online_bit_never_stands_without_the_cleared_bit`
+structural half of that reading, and it is pinned by
+`the_online_bit_never_stands_without_the_first_level_bit`
 in `crates/ipc/tests/marks_real.rs`. The two **levels** are the unmeasured half **except in
 one column**: in **Greed**, bit 1 is **Ultra Greedier**, measured on 2026-09-12 on three days
 with three different characters (Keeper, Judas, Magdalene), each time the right character's
@@ -142,6 +142,18 @@ property is kept by `winning_greedier_sets_the_second_bit_of_that_characters_gre
 `crates/ipc/tests/progress_real.rs`. Still **don't compute completion percentages**: what
 forbids them now is B22/B23, not an unread bit.
 
+> **A cell's bits are not latched flags, and the reason given above until 2026-09-17 was
+> wrong.** It read "an online clear is also a clear, so bit 2 never stands without bit 0",
+> which treats bit 0 as *the* cleared bit and makes a bare 2 a contradiction. The 638-era
+> series says otherwise: four located cells go **1 → 2** across it — `Isaac × Greed` and
+> `Cain × Greed` on 2024-02-23, `Isaac × TheLamb` and `BlueBaby × BossRush` on 2024-01-29 —
+> which is bit 0 going *out* as bit 1 comes in. A value replaces the one before it rather
+> than accumulating, which is also what makes `1 → 2` in Greed the same event as "Ultra
+> Greedier implies Greed" rather than its refutation. So a cell holding 2 is an ordinary
+> cell and **never** evidence that the tables address the wrong thing — that reading is what
+> raised B58 — and the absence of 4 and 6 is an observation held over every sample, worth
+> pinning as such, not a law derived from what the bits mean.
+
 **The matrix is 34 × 12** since 2026-09-08: the last three columns were located on the
 historical series, not read off a document. Delirium for the 19 later characters starts at
 **404** (not the 386 the pattern predicted), Mother for the 14 originals at **423**, The
@@ -150,6 +162,35 @@ three independent facts on the day a cell changed: an achievement whose wiki req
 that boss, the kill counter rising by exactly as many as the new marks, and index **188** —
 a bitmask of the characters that won the run, which names the row. Two properties in
 `crates/ipc/tests/marks_real.rs` keep the tables answerable to the series.
+
+**Those bases hold in the 638 era too, measured 2026-09-17** (B58), and that is what says
+they hold in the 641 era nobody can walk. Section 2 is **496** cells in the 638 era, **521**
+in the 641 and **523** in the 642, so it only ever grew, and a base derived on the newest era
+says nothing on its own about the ones before it. The 638-era series re-derives both by the
+same method, on a different profile:
+
+| window | mark cells | that boss's kills |
+|---|---|---|
+| 2024-02-08 → 02-15 | `[423] 0→2`, Mother + Isaac | `[491] 0→1` |
+| 2024-02-23 → 03-05 | `[457] 0→1`, `[466] 0→2`, Beast + Isaac and + Eden | `[492] 0→2` |
+| 2024-03-05 → 06-06 | `[461] 0→2`, Beast + Blue Baby | `[492] 2→3` |
+
+Two of the three are exact, with no slack. So 423 and 457 are measured at **both ends** and
+the era between them is **bracketed**: a cell inserted before 423 by one patch and removed by
+the next is not how patches work. It is an inference from two measured eras and not a third
+measurement, which is the most a machine holding one 641-era snapshot can say.
+
+**What the kill counters cannot see is an off-by-one, and this is where that was measured.**
+They compare *counts*: with Mother's base moved to 422, the cell that lights on 2024-02-15
+is read as Magdalene's instead of Isaac's, the counter still rises by one, and every
+real-data property stays green. Only index 188 separates them, and it needs a window where
+one character won and one mark appeared — the 638 series offers exactly one, an Azazel window
+that says nothing about Mother. What catches 422 is arithmetic on the tables themselves:
+Delirium's 19-block runs 404..=422, so a Mother base one lower makes two cells answer the same
+index. `no_two_cells_of_the_matrix_share_an_index` and
+`the_three_derived_blocks_tile_against_their_neighbours` in `crates/core-save/tests/marks_layout.rs`
+are that check, and they need no sample at all — which matters, because `samples/` is
+per-machine and a table's arithmetic is not.
 
 **Index 188 is cleared when a run is lost**, measured 2026-09-16 on a deliberate death:
 `268435968` → `0`, which is `0x10000100` going to nothing. So it is the *current* run's
