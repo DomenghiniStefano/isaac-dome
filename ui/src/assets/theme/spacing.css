@@ -51,6 +51,11 @@
   --spacing-collection-origin: 6.5rem;
   --spacing-collection-state: 8.5rem;
   --spacing-quality-pip: 0.375rem;
+  /* The Challenges table: the number, the state badge and the add-to-the-queue column. The
+     three that are not flexible; the name, the character and the goal share what is left. */
+  --spacing-challenge-number: 3rem;
+  --spacing-challenge-state: 8.5rem;
+  --spacing-challenge-queue: 2.5rem;
   /* The Plan's proposal column (Schermate.dc.html, 246px, on the 4px grid). */
   --spacing-plan-aside: 15.5rem;
   /* The window (Chrome e Stati.dc.html, "Finestra"): tab strip, tabs, drag region,

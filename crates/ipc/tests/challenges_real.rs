@@ -71,6 +71,37 @@ fn a_finished_challenge_has_earned_every_achievement_it_rewards() {
 }
 
 #[test]
+fn a_challenge_that_forces_a_character_can_name_it() {
+    let Some(c) = real_catalog() else {
+        test_support::skip("samples/packed is missing, no challenge list to check");
+        return;
+    };
+    let view = challenges_view(Some(&c), wiki::Dataset::embedded().ok(), None, None, |_| {
+        None
+    });
+    let forced: Vec<&ipc::ChallengeRow> = view
+        .challenges
+        .iter()
+        .filter(|r| r.character.is_some())
+        .collect();
+    // The guard before the property: if no challenge named a character, the loop below would
+    // pass over nothing and report a coverage it does not have.
+    assert!(
+        !forced.is_empty(),
+        "no challenge names a character: the name lookup is never exercised"
+    );
+    let unnamed: Vec<u32> = forced
+        .iter()
+        .filter(|r| r.character_name.is_none())
+        .map(|r| r.number)
+        .collect();
+    assert!(
+        unnamed.is_empty(),
+        "{unnamed:?} force a character the dataset cannot name — the row would have to invent a word"
+    );
+}
+
+#[test]
 fn every_challenge_has_a_wiki_page_in_the_committed_snapshot() {
     let Some(c) = real_catalog() else {
         test_support::skip("samples/packed is missing, no challenge list to check");
