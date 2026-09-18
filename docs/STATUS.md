@@ -57,6 +57,20 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
 - [ ] **M1 — Rust parser, discovery, unpack, Completion screen** ← in progress, and what keeps it
       open is now the wiki polish listed under `wiki` — and **the window nobody has opened on any
       of it**.
+      **3.12 landed on 2026-09-18**: the Roll screen — *Stasera* / *Tonight* — draws one target
+      from the completion matrix, kept in a new pure crate (`roll`: the space, the deck a preset
+      leaves in it, and the draw itself, a function of `(deck, seed)` with the clock kept in
+      `app` so the crate has none of its own) and one document — `store` migration 6, a single
+      row pinning the preset and the current draw together, because a second row would be a
+      second answer to "what is the preset". Spec
+      `docs/superpowers/specs/2026-09-17-roll-design.md`, plan
+      `docs/superpowers/plans/2026-09-18-roll.md`.
+      **This machine cannot look at half of it.** It holds the saves and not the installed game,
+      so `NoCatalog` and `PlayabilityUnknown` are the ordinary path here rather than an edge
+      case, and the card's `headUrl` and `artUrl` come back `null` on every draw — only the
+      fallback-outfit path has ever run. `crates/ipc/tests/roll_real.rs` still ran on real data:
+      48 `sample:` lines across its 3 tests, zero skips, because the deck and the draw need only
+      the save, never the archives.
       **3.9 landed on 2026-09-17**, the evening of the same day: the Completion screen counts
       twice. B22's item 4 — the matrix's two number columns, each over the cells it can read —
       and B23 — the strip is three tiles and no longer counts cells — closed together, because
@@ -760,6 +774,11 @@ appear at all.** The counts above are of checks somebody wrote down, never of th
 one, and that is the one blind spot the section cannot see from the inside. Both entries close with
 a line that puts their group here before the branch does.
 
+**61 in twelve groups, the same day**, with 3.12's seven. One of the seven carries a label none of
+the others do — `NEEDS GAME` — because it is not "nobody has looked yet", it is "this machine
+cannot": the card's character head and mark symbol need a catalog this session never had. The
+other six are the ordinary kind, answerable by anyone with the built app and a save.
+
 **This is the live list; the reports are the record.** Each line below was written by the
 sub-project that produced it and is unticked *there* too, but a report is true on its day and is
 never re-checked — so ticking a line **here** is what closes it, and the report stays as it was
@@ -975,6 +994,23 @@ changes. Eleven checks, from Task 17 of
 - [ ] two monitors at different scale factors: the drop lands where the cursor is, not offset
 - [ ] the target window closed **while** a tab is in flight: the tab stays where it was, no crash
 - [ ] cold `pnpm dev`: how long the first tear-off's preview takes, and the second
+
+### The Roll screen (3.12) — what a save without a catalog can settle, and what needs one
+
+A browser cannot mount it — `useRollStore` calls three commands through `invoke`, and there is no
+fixture path for that outside Tauri here — so every line below needs the built app, and the last
+one needs the game installed too.
+
+- [ ] the layout
+- [ ] the sentence the card shows for each diagnostic `RollDiagnostic` can carry
+- [ ] the draw button in both states — idle and mid-draw
+- [ ] the empty-deck state and its four sentences
+- [ ] the preset panel's counts moving as a tick is toggled
+- [ ] two windows agreeing through `roll-changed`: a draw in one is a read in the other
+- [ ] **NEEDS GAME** — the character head and the mark's own symbol on the card. `headUrl` and
+      `artUrl` come back `null` without a catalog, so only the fallback-outfit path has been
+      looked at; this line stays open until a machine with the game draws the real ones
+      → `.superpowers/sdd/2026-09-18-roll/task-10-report.md`
 
 ### One that is not a window, and is here because it is the same kind of answer
 

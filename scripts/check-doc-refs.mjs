@@ -52,6 +52,12 @@ const EXEMPTIONS = [
     path: 'crates/app/gen/schemas/desktop-schema.json',
     why: 'written by tauri-build on every compile; .gitignore keeps it out',
   },
+  // `.superpowers/` is git-ignored whole, so a task report under it can never appear in
+  // `git ls-files` no matter how real it is on the machine that wrote it.
+  {
+    path: '.superpowers/sdd/2026-09-18-roll/task-10-report.md',
+    why: "this task's own report; .superpowers/ is git-ignored on purpose",
+  },
   // Paths **inside the built installer**, not inside the repo: B11 names where the licences land
   // once the app is packaged, which is a fact about an artefact and can never be a file git
   // tracks. The report reads paths, not what a path is about.
