@@ -265,6 +265,24 @@ pub fn preset_view(preset: &roll::Preset) -> PresetView {
     }
 }
 
+fn selection_from_view(view: &SelectionView) -> roll::Selection {
+    match view {
+        SelectionView::All => roll::Selection::All,
+        SelectionView::Only { ids } => roll::Selection::Only { ids: ids.clone() },
+    }
+}
+
+/// The inbound half of the mapping `preset_view` makes outbound: what `set_roll_preset`
+/// (Task 7) receives from the client, turned into the type `roll` actually works with.
+pub fn preset_from_view(view: &PresetView) -> roll::Preset {
+    roll::Preset {
+        characters: selection_from_view(&view.characters),
+        columns: selection_from_view(&view.columns),
+        include_taken: view.include_taken,
+        only_playable: view.only_playable,
+    }
+}
+
 fn status_view(status: roll::Status) -> StatusView {
     match status {
         roll::Status::Missing => StatusView::Missing,

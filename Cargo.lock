@@ -58,6 +58,7 @@ dependencies = [
  "ipc",
  "log-watch",
  "plan",
+ "roll",
  "run",
  "serde",
  "serde_json",

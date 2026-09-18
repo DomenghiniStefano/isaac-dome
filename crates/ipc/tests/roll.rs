@@ -389,3 +389,15 @@ fn view_with_catalog(
         |_| None,
     )
 }
+
+#[test]
+fn a_preset_survives_the_trip_out_to_the_frontend_and_back() {
+    let preset = roll::Preset {
+        characters: roll::Selection::Only { ids: vec![3, 9] },
+        columns: roll::Selection::All,
+        include_taken: true,
+        only_playable: false,
+    };
+    let out = ipc::preset_view(&preset);
+    assert_eq!(ipc::preset_from_view(&out), preset);
+}
