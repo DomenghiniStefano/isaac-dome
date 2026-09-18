@@ -118,6 +118,11 @@ one entry is new, and both came from looking at a machine instead of at the list
 
 **B61** opened the same evening out of the same series: measuring the header's `0x10` meant opening
 the slot nobody plays, and it turns out to be the one profile shape this project has never read.
+
+**B67 is the exception that proves the paragraph above**: nobody found it, the owner asked for it
+on 2026-09-18. It is worth marking, because a list that only grows by discovery drifts towards
+what the code happens to expose — and "there is no way to find a word on this page" is the kind of
+gap that only somebody *using* the app ever feels.
 **B63** the morning after, while deciding what to do with the worktrees: a comparison against an
 abandoned branch turned up 27 tests that a commit had deleted four days earlier, with every gate
 green.
@@ -2425,6 +2430,64 @@ is a guess that slipped past the `MarkLevel::Second` naming it was supposed to d
 - [ ] Bit 1's meaning outside Greed is either measured or explicitly left open in the wording.
 - [ ] `en.ts` and `it.ts` agree with whatever `docs/save-format.md` is willing to state.
 - [ ] `graph::rules::MarkLevel`'s naming and the Completion screen's naming say the same thing.
+
+---
+
+## B67 — There is no way to find a word on the page, and the browser's own would not be one (implementation, `ui`, small)
+
+**Needs:** nothing — the frontend and the rows the screen already holds, then a window, because a
+find bar is judged by whether it gets in the way.
+
+Asked for by the owner on **2026-09-18**. `Ctrl+K` is the only search the app has, and it is the
+other kind: the palette **goes somewhere** — it leaves the screen you are on and opens a result in
+a tab. What is missing is the one that **stays here**: the word you are looking at, on the page
+you are already reading, with the next and the previous one.
+
+### Why it cannot be the webview's own
+
+Two reasons, and the second is the one that matters.
+
+**Nothing binds `Ctrl+F` today** — that half is measured: `useShortcut` is called three times in
+`src/` (the palette's `Ctrl+K`, the history's back and forward, the interface scale's `+` `-`
+`0`) and none of them reads `F`. Whether WebView2 puts a find bar of its own in a Tauri window is
+the half a window answers in one second, and the answer is expected to be no.
+
+**Five lists are virtualized** — `CollectionTable`, `UnlockTable`, `RunsTable`,
+`SearchResults`, `WikiCategoryList` — so of 733 items or 642 achievements only the twenty-odd
+rows in view are in the DOM at all. **A find that walks the document answers a question about the
+scroll position, not about the list**: it would say "not found" for a row that exists and is
+three thousand pixels down, which is worse than having no find at all. This is the whole reason
+the entry says *custom*: the search has to ask the screen for its rows, not the browser for its
+nodes, and then move the virtualizer to the hit.
+
+### The shape
+
+- **A bar, not a dialog.** It sits over the page without taking it: a dialog is the palette's
+  shape and the palette is the thing this is not.
+- **The screen supplies the haystack.** A screen says what its rows are and what text each one
+  carries; the bar knows nothing about items, achievements or wiki blocks. The matching itself is
+  a pure function — *which rows match, and which is the current one* — which is where anything
+  worth checking goes in this repo.
+- **`Enter` next, `Shift+Enter` previous, `Esc` closes**, and the count reads "3 di 17". A find
+  with no count is a find you cannot tell from a broken one.
+- **Scrolling to a hit is the virtualizer's `scrollToIndex`**, not `scrollIntoView` on a node
+  that may not exist.
+- **Not in scope**: regex, case options, searching screens you are not on — the palette is that
+  one. `B27`'s table sizing and this share a neighbourhood and should not be built together.
+
+### Closes when
+
+- [ ] `Ctrl+F` opens a find bar on the current screen, and `Esc` closes it and gives the keyboard
+      back to whatever had it.
+- [ ] A word that matches a row **outside the rendered window** is found and scrolled to. This is
+      the check that says the find asks the model and not the DOM: pick a row far down the
+      Collection and search for it from the top.
+- [ ] `Enter` and `Shift+Enter` walk the hits in both directions, the count says which one, and
+      the last one wraps to the first.
+- [ ] Whatever the bar decides about the keyboard is written where B65's decision is, because
+      that is now the second entry about who owns a key inside a screen.
+- [ ] A screen with nothing to search either has no bar or says so — a bar that never matches
+      anything is the button-that-does-nothing B14 warns about.
 
 ---
 
