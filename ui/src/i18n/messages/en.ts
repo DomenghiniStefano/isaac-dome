@@ -41,6 +41,7 @@ export const en: MessageSchema = {
     plan: 'Plan',
     collection: 'Collection',
     challenges: 'Challenges',
+    roll: 'Tonight',
     runs: 'Runs',
     live: 'Live',
     floor: 'Floor',
@@ -264,6 +265,62 @@ export const en: MessageSchema = {
         'Without the achievements we do not know which challenges are already open, nor which rewards you already hold.',
       noWiki:
         'The wiki dataset did not load: the challenges stay, without their character, goal and blindfold.',
+    },
+  },
+  roll: {
+    intro:
+      'One target, drawn from the 442-cell matrix: what is worth playing tonight, without choosing between hundreds of cells yourself.',
+    draw: 'Draw',
+    drawAgain: 'Draw again',
+    notDrawnYet: 'Nothing drawn yet tonight.',
+    status: {
+      missing: 'to do',
+      taken: 'already taken',
+      unreadable: 'unreadable',
+    },
+    card: {
+      mark: '{character} against {column}',
+      greedier: '{character} — Greedier!',
+      drawnFrom: 'Drawn from {size} possible targets',
+    },
+    emptyDeck: {
+      taken:
+        'The deck is empty: {count} targets are left out because they are already taken.',
+      unreadable:
+        'The deck is empty: {count} targets cannot be read from the save.',
+      locked:
+        'The deck is empty: {count} targets are locked to a character that is not playable yet.',
+      filtered:
+        'The deck is empty: {count} targets are left out by the filters below.',
+      nothing: 'The deck is empty: there is nothing to offer yet.',
+    },
+    panel: {
+      characters: 'Characters',
+      columns: 'Columns',
+      includeTaken: 'Include already-taken targets',
+      includeTakenHint:
+        'Otherwise the deck only draws from what is still to do.',
+      onlyPlayable: 'Only already-playable characters',
+      onlyPlayableHint:
+        'Hides the characters the save does not let you pick yet.',
+    },
+    diagnostics: {
+      noCounterSectionTitle: 'The save does not say which marks you took',
+      noCounterSection:
+        'The section holding the marks could not be read: the matrix stays, but every cell reads as unreadable.',
+      documentUnreadableTitle: "Tonight's choices could not be read",
+      documentUnreadable:
+        'The saved document could not be parsed: the default preset was used instead.',
+      documentFromTheFutureTitle: 'Your choices come from a newer version',
+      documentFromTheFuture:
+        'The document is at version {version}, and this app reads up to {supported}: the default preset was used instead.',
+      noCatalogTitle: "We can't find the game",
+      noCatalog:
+        'Without the game installed there are no names, no art, and no way to tell who is already playable.',
+      playabilityUnknownTitle: "We don't know who is already playable",
+      playabilityUnknown:
+        'The "only already-playable characters" filter was turned off for this draw: without the catalog or the achievements there is no way to tell.',
+      storeUnavailableTitle: 'Your choices cannot be saved',
     },
   },
   collection: {

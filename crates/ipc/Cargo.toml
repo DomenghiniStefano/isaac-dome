@@ -16,6 +16,7 @@ graph = { path = "../graph" }
 plan = { path = "../plan" }
 floor = { path = "../floor" }
 wiki = { path = "../wiki" }
+roll = { path = "../roll" }
 png = "0.17"
 ts-rs = "12.0.1"
 

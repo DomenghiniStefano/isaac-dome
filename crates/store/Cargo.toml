@@ -12,6 +12,7 @@ serde_json = "1"
 ipc = { path = "../ipc" }
 run = { path = "../run" }
 plan = { path = "../plan" }
+roll = { path = "../roll" }
 
 [dev-dependencies]
 rusqlite = { version = "0.40", features = ["bundled"] }

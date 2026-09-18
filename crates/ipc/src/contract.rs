@@ -124,6 +124,15 @@ pub fn render() -> String {
     decl::<crate::MarkArtView>(&cfg, &mut out);
     decl::<crate::MarksTotals>(&cfg, &mut out);
     decl::<crate::MarksMatrix>(&cfg, &mut out);
+    decl::<crate::StatusView>(&cfg, &mut out);
+    decl::<crate::DrawnTargetView>(&cfg, &mut out);
+    decl::<crate::SelectionView>(&cfg, &mut out);
+    decl::<crate::DrawnView>(&cfg, &mut out);
+    decl::<crate::DeckView>(&cfg, &mut out);
+    decl::<crate::RollRowView>(&cfg, &mut out);
+    decl::<crate::PresetView>(&cfg, &mut out);
+    decl::<crate::RollDiagnostic>(&cfg, &mut out);
+    decl::<crate::RollView>(&cfg, &mut out);
     decl::<core_save::Kind>(&cfg, &mut out);
     decl::<crate::SectionCount>(&cfg, &mut out);
     decl::<crate::SaveSummary>(&cfg, &mut out);

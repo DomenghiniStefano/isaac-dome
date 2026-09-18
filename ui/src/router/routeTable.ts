@@ -2,6 +2,7 @@ import type { Component } from 'vue'
 import {
   ActivityIcon,
   AppWindowIcon,
+  DicesIcon,
   FlagIcon,
   GemIcon,
   Grid2x2Icon,
@@ -35,6 +36,7 @@ export const RouteName = {
   Plan: 'plan',
   Collection: 'collection',
   Challenges: 'challenges',
+  Roll: 'roll',
   Runs: 'runs',
   Live: 'live',
   Floor: 'floor',
@@ -86,6 +88,7 @@ export const routePath: Record<RouteName, string> = {
   [RouteName.Plan]: '/progress/plan',
   [RouteName.Collection]: '/progress/collection',
   [RouteName.Challenges]: '/progress/challenges',
+  [RouteName.Roll]: '/progress/roll',
   [RouteName.Runs]: '/tool/runs',
   [RouteName.Live]: '/tool/live',
   [RouteName.Floor]: '/tool/floor',
@@ -104,6 +107,7 @@ export const routeTitle: Record<RouteName, Message> = {
   [RouteName.Plan]: 'routes.plan',
   [RouteName.Collection]: 'routes.collection',
   [RouteName.Challenges]: 'routes.challenges',
+  [RouteName.Roll]: 'routes.roll',
   [RouteName.Runs]: 'routes.runs',
   [RouteName.Live]: 'routes.live',
   [RouteName.Floor]: 'routes.floor',
@@ -122,6 +126,7 @@ export const routeOrigin: Record<RouteName, TabOrigin> = {
   [RouteName.Plan]: TabOrigin.Progress,
   [RouteName.Collection]: TabOrigin.Progress,
   [RouteName.Challenges]: TabOrigin.Progress,
+  [RouteName.Roll]: TabOrigin.Progress,
   // The three that answer without the save: the log, the archive, and your own drawing.
   // This is what puts them outside the profile gate — `routes.ts` derives it from here.
   [RouteName.Runs]: TabOrigin.Tool,
@@ -142,6 +147,7 @@ export const routeIcon: Record<RouteName, Component> = {
   [RouteName.Plan]: MapIcon,
   [RouteName.Collection]: LayersIcon,
   [RouteName.Challenges]: FlagIcon,
+  [RouteName.Roll]: DicesIcon,
   [RouteName.Runs]: PlayIcon,
   [RouteName.Live]: ActivityIcon,
   [RouteName.Floor]: Grid3x3Icon,

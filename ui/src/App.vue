@@ -97,6 +97,10 @@ onMounted(async () => {
     // the only thing that draws it is the development-only verification page, which listens
     // for itself. The entry stays so that every event is accounted for here.
     [AppEvent.RunsChanged]: () => undefined,
+    // The Roll screen listens for this one itself (`RollScreen.vue`'s own `watchAppEvent`),
+    // so that two windows agree through a draw made in either. The entry stays here so that
+    // every event is accounted for in this one registry, exactly like `RunsChanged` above.
+    [AppEvent.RollChanged]: () => undefined,
   })
 })
 onUnmounted(() => {

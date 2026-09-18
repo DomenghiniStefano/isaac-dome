@@ -58,6 +58,7 @@ dependencies = [
  "ipc",
  "log-watch",
  "plan",
+ "roll",
  "run",
  "serde",
  "serde_json",
@@ -1951,6 +1952,7 @@ dependencies = [
  "graph",
  "plan",
  "png 0.17.16",
+ "roll",
  "run",
  "serde",
  "serde_json",
@@ -3254,6 +3256,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "roll"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "rsqlite-vfs"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3758,6 +3768,7 @@ version = "0.1.0"
 dependencies = [
  "ipc",
  "plan",
+ "roll",
  "run",
  "rusqlite",
  "serde",
