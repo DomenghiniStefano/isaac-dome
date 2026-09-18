@@ -222,6 +222,26 @@ fn a_drawn_target_the_matrix_no_longer_holds_simply_stops_being_drawn() {
 }
 
 #[test]
+fn a_drawn_mark_with_an_out_of_range_column_simply_stops_being_drawn() {
+    // Same rule as the row above, on the other axis: `target_view` indexes `BOSSES[column as
+    // usize]` directly, so this has to be filtered out by `space.status` returning `None`
+    // *before* `target_view` is ever reached — otherwise this is a panic, not a missing card.
+    let c = zeroed_counters();
+    let doc = Document {
+        current: Some(Drawn {
+            target: Target::Mark {
+                character: 0,
+                column: 200,
+            },
+            deck_size: 1,
+            drawn_unix: 0,
+        }),
+        ..Document::default()
+    };
+    assert!(view(Some(&c), &doc).drawn.is_none());
+}
+
+#[test]
 fn an_unreadable_document_opens_on_the_default_preset_and_says_so() {
     let v = view_of_error(&roll::DocumentError::Unreadable {
         reason: "expected value".to_string(),
@@ -287,9 +307,9 @@ fn an_unticked_row_still_reports_what_ticking_it_would_be_worth() {
 
 #[test]
 fn the_json_shape_is_camel_case_all_the_way_into_the_struct_variants() {
-    // `rename_all` on an enum renames the variants, not the fields inside them:
-    // `rename_all_fields` is what keeps `deckSize` from going out as `deck_size`, and it fails
-    // silently — TypeScript reads `undefined` with no error at all.
+    // `deckSize`, `drawnUnix`, `includeTaken`, `onlyPlayable`, `headUrl` and `artUrl` all live
+    // on plain structs (`DrawnView`, `PresetView`), so `rename_all` alone is what renames them
+    // — this loop is the ordinary struct-field guard, not a `rename_all_fields` one.
     let c = zeroed_counters();
     let doc = Document {
         current: Some(Drawn {
@@ -316,6 +336,13 @@ fn the_json_shape_is_camel_case_all_the_way_into_the_struct_variants() {
             "missing {key} in {json}"
         );
     }
+    // This sweep is the one place that would also catch a `rename_all_fields` failure — the
+    // rule for fields *inside* a tagged enum's struct variants, which `rename_all` alone does
+    // not rename and which fails just as silently as forgetting it on a struct. It is vacuous
+    // for that today: none of the three tagged enums here (`DrawnTargetView`, `SelectionView`,
+    // `RollDiagnostic`) has a struct variant with a multi-word field in this fixture, so it
+    // currently only re-proves the struct-field guard above. It becomes a real guard on
+    // `rename_all_fields` the day one of them gains a multi-word field.
     assert!(!json.contains('_'), "snake_case survived somewhere: {json}");
 }
 
@@ -388,6 +415,61 @@ fn view_with_catalog(
         },
         |_| None,
     )
+}
+
+#[test]
+fn deck_preset_keeps_only_playable_when_it_is_derivable() {
+    // The one judgment `roll_view` and `roll_draw` must not write twice: with playability
+    // known, the deck is built from the user's own choice, whatever it is.
+    let on = Preset {
+        only_playable: true,
+        ..Preset::default()
+    };
+    assert_eq!(ipc::deck_preset(&on, true), on);
+
+    let off = Preset {
+        only_playable: false,
+        ..Preset::default()
+    };
+    assert_eq!(ipc::deck_preset(&off, true), off);
+}
+
+#[test]
+fn deck_preset_forces_only_playable_off_when_it_is_not_derivable() {
+    // Without a catalog or achievement flags there is no way to tell a locked character from
+    // an unlocked one, so the filter is forced off for the deck the draw actually uses — the
+    // document's own choice still shows on `preset` (`RollView::preset`), only the deck build
+    // is affected.
+    let doc = Preset {
+        only_playable: true,
+        ..Preset::default()
+    };
+    let effective = ipc::deck_preset(&doc, false);
+    assert!(!effective.only_playable);
+    assert_eq!(
+        effective,
+        Preset {
+            only_playable: false,
+            ..doc
+        }
+    );
+}
+
+#[test]
+fn greed_is_where_the_save_layout_expects() {
+    // `roll_space`'s `greed_column()` reads this position from the table on purpose, rather
+    // than writing 7 as a literal, so that a column inserted before it would move the column
+    // read and not silently keep reading Mom's Heart. But its own fallback (`unwrap_or(0)`) is
+    // the guess that comment argues against: if `"Greed"` is ever renamed or removed, every
+    // `Greedier` target quietly starts reading bit 1 of column 0 instead, with no error and
+    // every other test still green. Pinning the position here is what turns that rename into a
+    // loud failure instead of a plausible wrong answer.
+    assert_eq!(
+        ipc::BOSSES.iter().position(|b| *b == "Greed"),
+        Some(7),
+        "\"Greed\" moved (or vanished) in BOSSES: greed_column()'s unwrap_or(0) fallback would \
+         now silently read Mom's Heart's bits for every Greedier target"
+    );
 }
 
 #[test]
