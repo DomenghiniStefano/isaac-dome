@@ -319,6 +319,13 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
             **The Start Room's membership is unstated and stays that way.** The wiki's `Rooms`
             page files it under neither `Normal` nor `Special`, so `SPECIAL_KINDS` does not
             carry it and a dead end hanging off the start room is not silently decided.
+            **The first window opened on this screen was the owner's, on 2026-09-18, and it found
+            it unreadable** → **B64**. Fourteen room kinds paint the same grey square, so the grid
+            cannot show what you drew on it; the start room is marked for a screen reader and for
+            nobody else; and what is called the legend is the brush picker, so no colour on that
+            screen is ever explained. **F1 wrote no window checks**, which is why none of this was
+            waiting in *"What only a window can say"* — a sub-project that draws a screen and
+            gathers no checks does not appear there as a gap, it does not appear at all.
       - [ ] **F2 — the log's half**: `N rooms in M loops` read back, so the screen can say the
             game generated 19 rooms and you have painted 15. **`run`'s half landed on
             2026-09-16**, `feature/floor-rooms-read`: an eleventh event, and a floor that carries
@@ -744,6 +751,14 @@ what a *window* still owes is only what a browser cannot judge — the widths, t
 whether a word is the right word. The five checks that would otherwise be here were answered on
 the spot, and one of them turned into a decision the owner took mid-work (the state row's counts,
 §1 of the spec).
+
+**2026-09-18 says the thing this list cannot say about itself.** The owner opened the Floor screen
+and the `Ctrl+K` palette and found a defect in each — **B64** and **B65** — and neither screen has
+a group below, nor ever had one: F1 (2026-09-15) and the search sub-project both shipped without
+writing a single check. **A screen that writes no checks does not appear here as a gap; it does not
+appear at all.** The counts above are of checks somebody wrote down, never of the screens that owe
+one, and that is the one blind spot the section cannot see from the inside. Both entries close with
+a line that puts their group here before the branch does.
 
 **This is the live list; the reports are the record.** Each line below was written by the
 sub-project that produced it and is unticked *there* too, but a report is true on its day and is
