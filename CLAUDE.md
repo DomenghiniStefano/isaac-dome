@@ -115,6 +115,33 @@ into every one of them. **The rule stays here; the detail is one `Read` away.**
   > With Steam Cloud on, the save is **not** in the Documents folder. `online_logs\` is **not
   > flat**, and reading it as flat finds nothing.
 
+## The board
+
+**Every change passes through Trello, and the board is updated as the work happens — not
+afterwards.** The board is `IsaacDome` (`6aabb64f6116b936f1f8a762`); `get_active_board_info`
+answers 401, so pass the `boardId` explicitly. What the lists mean, what the labels are and why
+the state left `docs/BACKLOG.md` is in that file's *"Where the state lives"* section — **the rule
+is here, the detail is one `Read` away.**
+
+Three moves, and none of them is optional:
+
+- **Taking a card on moves it to `In Progress`**, before the first line of code. A card still in
+  `BACKLOG` while its branch exists is a board that has stopped describing the work, and the
+  board is where "what do I do next" is read from — by the next session, and by the owner.
+- **Something learned is a comment on the card, the same day.** A decision taken, a constraint
+  measured, a deviation from the spec, a defect found in the plan itself: the card carries it.
+  A session's memory does not survive the session; the card does.
+- **Finishing moves it to `UAT`, not to `Done`.** `Done` is for work that has been *looked at*.
+  A merged branch with a green `pnpm check` is built, not seen — and on a machine without the
+  game installed, half of what a screen shows cannot be seen at all. Tick the checklist items
+  that are really done, leave open the ones that are not, and say in a comment what is still
+  unverified and what would settle it.
+
+The checklist on a card is the plan's task list: tick an item when its task is reviewed and
+committed, never when it is merely written. A card whose checklist is fully ticked and whose
+last item is a window nobody opened belongs in `UAT` with the `NEEDS WINDOW` or `NEEDS GAME`
+label, and the open item is the honest record of why.
+
 ## Code rules
 
 ### Rust and the IPC boundary
