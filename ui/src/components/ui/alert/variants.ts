@@ -1,6 +1,13 @@
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
 
+// How loudly assistive tech reads it. `role="alert"` is an assertive live region: a screen
+// reader drops what it was saying mid-word. That is right for the answer to something the
+// user just did and wrong for a diagnostic that was on the page before the reader arrived —
+// and most Alerts here are the second kind, drawn with their screen.
+export const AlertLive = { Polite: 'status', Assertive: 'alert' } as const
+export type AlertLive = (typeof AlertLive)[keyof typeof AlertLive]
+
 export const AlertVariant = {
   Default: 'default',
   Destructive: 'destructive',

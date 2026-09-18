@@ -5,6 +5,7 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
+  AlertLive,
   AlertVariant,
 } from '@/components/ui/alert'
 import { useIpcErrorText } from '@/composables/useIpcErrorText'
@@ -21,7 +22,7 @@ const message = computed((): string => errorText(props.error))
 <template>
   <!-- A write the backend refused: the queue on screen is still the one it had, and this says
        why it didn't change. It goes away with the next write that succeeds. -->
-  <Alert :variant="AlertVariant.Destructive">
+  <Alert :variant="AlertVariant.Destructive" :live="AlertLive.Assertive">
     <TriangleAlertIcon />
     <AlertTitle>{{ t('queue.errorTitle') }}</AlertTitle>
     <AlertDescription>{{ message }}</AlertDescription>

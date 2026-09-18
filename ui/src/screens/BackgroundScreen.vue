@@ -4,6 +4,7 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
+  AlertLive,
   AlertVariant,
 } from '@/components/ui/alert'
 import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'
@@ -41,12 +42,20 @@ const startFailure = computed(() =>
          failed write leaves the app behaving the way the user just asked; the one above is
          about a login that has not happened, so a refused write means nothing happened at
          all. -->
-    <Alert v-if="startFailure" :variant="AlertVariant.Destructive">
+    <Alert
+      v-if="startFailure"
+      :variant="AlertVariant.Destructive"
+      :live="AlertLive.Assertive"
+    >
       <TriangleAlertIcon />
       <AlertTitle>{{ t('background.startFailedTitle') }}</AlertTitle>
       <AlertDescription>{{ t(startFailure.key) }}</AlertDescription>
     </Alert>
-    <Alert v-else-if="settings.saveFailed" :variant="AlertVariant.Destructive">
+    <Alert
+      v-else-if="settings.saveFailed"
+      :variant="AlertVariant.Destructive"
+      :live="AlertLive.Assertive"
+    >
       <TriangleAlertIcon />
       <AlertTitle>{{ t('background.saveFailedTitle') }}</AlertTitle>
       <AlertDescription>{{ t('background.saveFailed') }}</AlertDescription>

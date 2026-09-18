@@ -3,7 +3,7 @@ import type { ListboxRootEmits, ListboxRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import { ListboxRoot, useFilter, useForwardPropsEmits } from 'reka-ui'
-import { reactive, ref, watch } from 'vue'
+import { reactive, ref, useTemplateRef, watch } from 'vue'
 import { cn } from '@/lib/cn'
 import type { CommandFilterState } from './context'
 import { provideCommandContext } from './context'
@@ -74,10 +74,20 @@ watch(
 )
 
 provideCommandContext({ allItems, allGroups, filterState })
+
+// The listbox owns the highlight — it draws it and the arrows move it — but it only ever
+// places it by itself on the first item, and a caller whose rows arrive after the keystroke
+// needs to put it back. One function out, nothing else: a caller cannot reach the collection,
+// the DOM element, or anything it could hold a stale reference to.
+const listbox = useTemplateRef('listbox')
+defineExpose({
+  highlightItem: (value: string) => listbox.value?.highlightItem(value),
+})
 </script>
 
 <template>
   <ListboxRoot
+    ref="listbox"
     data-slot="command"
     v-bind="forwarded"
     :class="
