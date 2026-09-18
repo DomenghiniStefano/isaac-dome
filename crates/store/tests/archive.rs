@@ -46,10 +46,10 @@ fn run_of(seed: &str) -> Run {
 }
 
 #[test]
-fn the_schema_is_at_version_five() {
+fn the_schema_is_at_version_six() {
     let (_d, store) = open();
-    assert_eq!(SCHEMA_VERSION, 5);
-    assert_eq!(store.schema_version().unwrap(), 5);
+    assert_eq!(SCHEMA_VERSION, 6);
+    assert_eq!(store.schema_version().unwrap(), 6);
 }
 
 #[test]
@@ -246,7 +246,7 @@ fn a_database_from_before_the_fold_version_keeps_its_archive_and_reads_it_as_unf
     }
 
     let store = Store::open(&path).unwrap();
-    assert_eq!(store.schema_version().unwrap(), 5);
+    assert_eq!(store.schema_version().unwrap(), SCHEMA_VERSION);
     let sources = store.sources().unwrap();
     assert_eq!(sources.len(), 1, "the row survived the migration");
     assert_eq!(
@@ -286,7 +286,7 @@ fn a_database_from_before_the_archive_gains_the_tables_and_keeps_its_plan() {
     }
 
     let store = Store::open(&path).unwrap();
-    assert_eq!(store.schema_version().unwrap(), 5);
+    assert_eq!(store.schema_version().unwrap(), SCHEMA_VERSION);
     assert!(store.queue().unwrap().is_ok());
     assert!(store.latest_log_source().unwrap().is_none());
 }
@@ -303,7 +303,7 @@ fn a_file_from_a_newer_app_is_still_refused_untouched() {
     }
     match Store::open(&path) {
         Err(StoreError::NewerSchema { found, supported }) => {
-            assert_eq!((found, supported), (99, 5));
+            assert_eq!((found, supported), (99, SCHEMA_VERSION));
         }
         other => panic!("expected NewerSchema, got {other:?}"),
     }
