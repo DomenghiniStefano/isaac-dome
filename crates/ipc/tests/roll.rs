@@ -2,8 +2,11 @@
 //!
 //! Without the game's archives there are no names, no art, and no way to tell which characters
 //! are unlocked; none of that may stop the screen answering, because a target is an index
-//! pair, not a sprite. Every assertion here is about that path.
+//! pair, not a sprite. Every assertion but the last is about that path; the last one builds a
+//! synthetic catalog (no game needed — `Catalog::build` reads inline XML) to cover the other
+//! half of the two-preset rule, which `catalog: None` can never exercise.
 
+use catalog::Catalog;
 use ipc::{roll_view, RollDiagnostic, RollInputs, RollView, StatusView};
 use roll::{Document, Drawn, Preset, Selection, Target};
 
@@ -314,4 +317,75 @@ fn the_json_shape_is_camel_case_all_the_way_into_the_struct_variants() {
         );
     }
     assert!(!json.contains('_'), "snake_case survived somewhere: {json}");
+}
+
+/// Row 0 (`ISAAC`) is unlocked by nothing and always playable; row 1 (`MAGDALENE`) is unlocked
+/// by achievement 5, which `flags` marks as not yet earned. Neither portrait carries the `_b`
+/// token, so both resolve to their non-Tainted form — `character_for` matches `CHARACTER_KEYS`
+/// by key and Tainted flag together.
+const PLAYERS: &[u8] = b"<players portraitroot=\"gfx/ui/stage/\"><player id=\"0\" name=\"#ISAAC_NAME\" portrait=\"isaac.png\" /><player id=\"1\" name=\"#MAGDALENE_NAME\" portrait=\"magdalene.png\" achievement=\"5\" /></players>";
+
+fn catalog_with_two_characters() -> Catalog {
+    Catalog::build(|p| match p {
+        "players.xml" => Some(PLAYERS.to_vec()),
+        _ => None,
+    })
+}
+
+#[test]
+fn with_a_catalog_the_characters_you_have_not_unlocked_are_locked_out() {
+    // Achievement 5 is not earned: Magdalene (row 1) is not playable. Isaac (row 0) is
+    // unlocked by nothing, so he stays playable regardless of `flags`. The other 32 rows are
+    // not named by this catalog at all, so "unknown must never hide a row" says they stay
+    // playable too — nothing but Magdalene's own targets may end up `locked`.
+    let c = zeroed_counters();
+    let catalog = catalog_with_two_characters();
+    let flags = [true, true, true, true, true, false];
+    let with_only_playable = view_with_catalog(&c, &catalog, &flags, &Document::default());
+
+    // The other half of the two-preset rule: playability is known here, so the document's own
+    // `only_playable: true` (the default) is applied, not forced off — this is what the count
+    // below proves.
+    assert!(
+        !with_only_playable
+            .diagnostics
+            .contains(&RollDiagnostic::PlayabilityUnknown),
+        "playability was derivable this time"
+    );
+    // Her twelve marks plus her one Greedier, read from the tables rather than written as 13.
+    let targets_of_one_row = ipc::BOSSES.len() + 1;
+    assert_eq!(
+        with_only_playable.deck.locked, targets_of_one_row,
+        "only Magdalene's own targets are locked — the unnamed rows and Isaac are not"
+    );
+
+    // The flag is what drives `locked`, not merely the catalog's presence: with the same
+    // catalog and the same flags but `only_playable: false`, nothing is locked at all.
+    let doc = Document {
+        preset: Preset {
+            only_playable: false,
+            ..Preset::default()
+        },
+        ..Document::default()
+    };
+    let without_only_playable = view_with_catalog(&c, &catalog, &flags, &doc);
+    assert_eq!(without_only_playable.deck.locked, 0);
+}
+
+fn view_with_catalog(
+    counters: &[u32],
+    catalog: &Catalog,
+    flags: &[bool],
+    doc: &Document,
+) -> RollView {
+    roll_view(
+        RollInputs {
+            counters: Some(counters),
+            flags: Some(flags),
+            catalog: Some(catalog),
+            document: Ok(doc),
+            store_reason: None,
+        },
+        |_| None,
+    )
 }
