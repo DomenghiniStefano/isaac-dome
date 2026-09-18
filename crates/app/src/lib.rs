@@ -8,7 +8,7 @@ mod settings_file;
 mod state;
 mod tray;
 mod window;
-use crate::commands::{completion, floor, graph, plan, profile, queue, runs, session, wiki};
+use crate::commands::{completion, floor, graph, plan, profile, queue, roll, runs, session, wiki};
 use crate::icons::icon_bytes;
 use crate::state::{
     AllPassive, ArchiveState, CatalogState, GraphState, MarkFramesState, ResourcesState, SaveState,
@@ -108,6 +108,9 @@ pub fn run() {
             queue::queue_remove,
             queue::queue_move,
             queue::queue_import_goals,
+            roll::roll,
+            roll::roll_draw,
+            roll::set_roll_preset,
             plan::plan,
             plan::add_goal,
             plan::remove_goal,

@@ -5,7 +5,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 
 > **This is the state, not the design.** `docs/PROJECT.md` is the design and freezes at M0 by
 > its own header — it says so in its first paragraph — so a diagram of *today* could not live
-> there without breaking that promise. Drawn on 2026-09-17 against `2ed4820`, the branch it
+> there without breaking that promise. Drawn on 2026-09-18 against `20f04a5`, the branch it
 > lands on.
 >
 > **What keeps it true, and what does not.** Every path named here is checked by
@@ -20,7 +20,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 > just below are the tripwire — if one of them is wrong, so is the drawing.
 
 Counted at that commit, and every number below is derived from the code, not from prose:
-**16 crates**, **31 Tauri commands**, **4 events**, **15 routes**, **5 store migrations**.
+**17 crates**, **36 Tauri commands**, **5 events**, **16 routes**, **6 store migrations**.
 
 ---
 
@@ -57,15 +57,16 @@ flowchart LR
     plan["plan"]
     runc["run"]
     floor["floor"]
+    rollc["roll"]
   end
 
   ipc["ipc<br/>view-models — the only contract"]
-  app["crates/app<br/>31 commands, 4 events"]
+  app["crates/app<br/>36 commands, 5 events"]
 
   subgraph vue["Vue — never touches the disk"]
-     app -->|"invoke — 31 commands"| wrappers["lib/ipc/*.ts<br/>typed wrappers, one call()"]
+     app -->|"invoke — 36 commands"| wrappers["lib/ipc/*.ts<br/>typed wrappers, one call()"]
     stores["Pinia stores"]
-    screens["14 screens"]
+    screens["16 screens"]
   end
 
   db[("isaacdome.db<br/>the only file written")]
@@ -97,13 +98,14 @@ flowchart LR
   wiki --> ipc
   runc --> ipc
   floor --> ipc
+  rollc --> ipc
 
   ipc --> app
   store --> app
   logwatch --> app
 
-  app -->|"invoke — 30 commands"| wrappers
-  app -.->|"4 events, no payload"| wrappers
+  app -->|"invoke — 36 commands"| wrappers
+  app -.->|"5 events, no payload"| wrappers
   ipc -.->|"pnpm ipc:types, build time"| wrappers
   wrappers --> stores
   stores --> screens
@@ -124,10 +126,11 @@ the typed wrappers in `ui/src/lib/ipc/`, and every wrapper goes through the sing
 `SearchScreen.vue` is today the only screen that reaches a wrapper directly; every other one
 stops at a store. `pnpm scan` is what keeps a component from taking the shortcut.
 
-**Pull, then a nudge.** The 31 commands are pull: a window asks, the backend answers. The 4
-events (`profile-changed`, `settings-changed`, `plan-changed`, `runs-changed`) are the nudge,
-and they carry **no payload** on purpose — a payload would be a copy of state the next command
-could contradict. A second window only ever learns of a write it did not make this way.
+**Pull, then a nudge.** The 36 commands are pull: a window asks, the backend answers. The 5
+events (`profile-changed`, `settings-changed`, `plan-changed`, `runs-changed`, `roll-changed`)
+are the nudge, and they carry **no payload** on purpose — a payload would be a copy of state the
+next command could contradict. A second window only ever learns of a write it did not make this
+way.
 
 ---
 
@@ -158,6 +161,7 @@ flowchart TD
     runc["run"]
     floor["floor"]
     wiki["wiki"]
+    rollc["roll"]
   end
 
   subgraph aside["Tools and dev-only"]
@@ -179,6 +183,7 @@ flowchart TD
   ipc --> plan
   ipc --> floor
   ipc --> wiki
+  ipc --> rollc
 
   store --> ipc
   store --> runc
@@ -198,19 +203,20 @@ flowchart TD
 `discovery`, `core-save` and `unpack`: it reads their *types* and shapes them, it opens nothing.
 That distinction is what lets `ipc` be a crate whose return values are all worth checking.
 
-**`app` depends on eleven crates, and only three edges are drawn.** `ipc`, `store` and
-`log-watch` are the ones it orchestrates; the other eight it names to pass their types through.
-The full list is `crates/app/Cargo.toml`, and it is the one place where reading the manifest
-beats reading a diagram.
+**`app` depends on twelve crates, and only three edges are drawn.** `ipc`, `store` and
+`log-watch` are the ones it orchestrates; the other nine — `roll` among them, since 3.12 — it
+names to pass their types through. The full list is `crates/app/Cargo.toml`, and it is the one
+place where reading the manifest beats reading a diagram.
 
 **`store` depends on `ipc`, which is the edge worth pausing on** — persistence pointing at the
 boundary crate, not the other way round. The plan queue is stored as one JSON document of the
 same view-models the frontend receives, so the shape has exactly one definition. `ipc` does not
 depend on `store` in return: nothing in the contract knows there is a database.
 
-**Seven crates depend on nothing of ours**: `discovery`, `core-save`, `unpack`, `catalog`,
-`run`, `wiki`, `floor`. Each is a leaf that can be read, tested and replaced on its own — which
-is the whole reason a patch to the game's format is a patch here and not a rewrite.
+**Eight crates depend on nothing of ours**: `discovery`, `core-save`, `unpack`, `catalog`,
+`run`, `wiki`, `floor`, `roll`. Each is a leaf that can be read, tested and replaced on its
+own — which is the whole reason a patch to the game's format is a patch here and not a
+rewrite.
 
 ---
 
@@ -236,6 +242,7 @@ flowchart TD
     planr["/progress/plan"]
     collection["/progress/collection"]
     challengesr["/progress/challenges"]
+    rollr["/progress/roll"]
   end
 
   subgraph toolGroup["tool — answers without a save"]
@@ -253,7 +260,7 @@ flowchart TD
 ```
 
 The grouping is not decoration: `routes.ts` derives `needsProfile` from the origin being
-`progress`, so the five screens in that box are exactly the ones the gate covers. The three
+`progress`, so the seven screens in that box are exactly the ones the gate covers. The three
 tools answer from the log, the archive and the user's own drawing, which is why they sit
 outside it.
 
@@ -266,6 +273,7 @@ outside it.
 | Plan | `/progress/plan` | progress | `views`, `queue` | `plan`, `add_goal`, `remove_goal`, the five `queue_*` |
 | Collection | `/progress/collection` | progress | `views` | `collection` |
 | Challenges | `/progress/challenges` | progress | `views`, `queue`, `tabs` | `challenges`, the five `queue_*` |
+| Roll | `/progress/roll` | progress | `roll` | `roll`, `roll_draw`, `set_roll_preset` |
 | Runs | `/tool/runs` | tool | `views` | `runs` |
 | Live | `/tool/live` | tool | `views` | `live` |
 | Floor | `/tool/floor` | tool | `floor` | `floor_candidates` |
@@ -279,11 +287,14 @@ The `settings` store is shared by its three screens and holds all six between th
 `set_scale`, `set_stay_in_background`, `set_resume_tabs`, `autostart`, `set_autostart`. A
 column splitting those per screen would be a guess, and the store is the honest granularity.
 
-**Twenty-seven of the thirty commands are reachable from a screen.** The other three are not
+**Thirty-one of the thirty-six commands are reachable from a screen.** The other five are not
 loose ends: `window_session` and `set_window_session` belong to the shell and travel through
-`ui/src/lib/window/session.ts`, and `extraction_report` is called only by the development-only
-verification page, `ui/src/verify/VerifyPage.vue`. 27 + 2 + 1 = 30, which is the kind of sum
-worth recomputing whenever this table is edited.
+`ui/src/lib/window/session.ts`; `extraction_report` is called only by the development-only
+verification page, `ui/src/verify/VerifyPage.vue`; and `choose_game_folder` and
+`choose_saves_folder` belong to the welcome flow that runs before any screen is routed,
+`ui/src/screens/welcome/NothingFound.vue`. 31 + 2 + 1 + 2 = 36, which is the kind of sum worth
+recomputing whenever this table is edited — it was wrong before this branch too, the two
+`choose_*` commands were never in it.
 
 ---
 
