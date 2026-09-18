@@ -214,6 +214,38 @@ impl Store {
         .map_err(StoreError::from_sqlite)
     }
 
+    /// The saved draw, or the default document when there is no row yet.
+    ///
+    /// The nested `Result` mirrors [`Store::queue`]: the outer one is "the database will not
+    /// answer", the inner one is "the document will not parse", and the screen says something
+    /// different for each. Unlike the session document, this crate *can* tell a good one from
+    /// a bad one — the shape belongs to `roll`, which is a dependency — so it reports it.
+    pub fn roll(&self) -> Result<Result<roll::Document, roll::DocumentError>, StoreError> {
+        let found: Option<String> = self
+            .conn
+            .query_row("SELECT document FROM roll WHERE id = 1", [], |r| r.get(0))
+            .optional()
+            .map_err(StoreError::from_sqlite)?;
+        // No row yet is the default preset, not a failure: a fresh database has no draw.
+        Ok(match found {
+            Some(json) => roll::Document::from_json(&json),
+            None => Ok(roll::Document::default()),
+        })
+    }
+
+    /// Replaces the document. The preset and the draw are one value, so a write is one
+    /// statement and there is no half-applied change to recover from.
+    pub fn set_roll(&self, doc: &roll::Document) -> Result<(), StoreError> {
+        self.conn
+            .execute(
+                "INSERT INTO roll (id, document) VALUES (1, ?1)
+                 ON CONFLICT(id) DO UPDATE SET document = excluded.document",
+                [doc.to_json()],
+            )
+            .map(|_| ())
+            .map_err(StoreError::from_sqlite)
+    }
+
     fn write_queue_json(&self, raw: &str) -> Result<(), StoreError> {
         self.conn
             .execute(
