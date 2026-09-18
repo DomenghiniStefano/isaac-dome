@@ -2326,15 +2326,22 @@ entry pointed. `docs/save-format.md`'s "Counters and marks" section says `graph:
 is named `Base` / `Second` **on purpose**, after the bits and not after a meaning: bit 1 is
 measured only in Greed, where it is Ultra Greedier, and "what bit 1 means in the other eleven is
 still unmeasured". The Completion screen does not carry that caution one layer up — it names the
-column `hard` outright, in four places, in both languages:
+column `hard` outright, in five places, in both languages:
 
 - `ui/src/i18n/messages/en.ts:656-662` — `kpi.hard: 'marks at hard'`, `kpi.hardExplain` ("Cells
   with the second level…"), and `kpi.completeExplain`, which reads "every one of their readable
-  cells at hard"; further uses at `:670` (`legend.hard`), `:677` (`grid.hard`) and `:680`
-  (`grid.columnTotalsHard`, "Of those, at hard").
+  cells at hard"; further uses at `:670` (`legend.hard`), `:677` (`grid.hard`), `:680`
+  (`grid.columnTotalsHard`, "Of those, at hard") and `:689` (`cell.hard: 'hard'`).
 - `ui/src/i18n/messages/it.ts:663-669` — the same three keys in Italian (`marchi in hard`,
-  `hardExplain`, `completeExplain`), plus `:677`, `:684` and `:687` for the same three further
-  uses.
+  `hardExplain`, `completeExplain`), plus `:677`, `:684`, `:687` and `:696` for the same four
+  further uses.
+
+`cell.hard` is the one this entry first missed, and it is not a minor one: it is the **per-cell**
+status text, rendered through `ui/src/components/marks/MarksGrid.vue:47`
+(`[CellStatus.Hard]: 'completion.cell.hard'`) for every individual cell in the matrix, rather
+than a column header read once. A fix that renamed `kpi.hard` / `legend.hard` / `grid.hard`
+without this one would leave the most-repeated instance of the claim untouched — the exact
+half-migration this entry exists to prevent.
 
 So a player reading the screen is told a specific thing — this column is the hard difficulty —
 that the crate one door over declines to assert for eleven of the twelve columns it draws. Either
@@ -2350,9 +2357,9 @@ is a guess that slipped past the `MarkLevel::Second` naming it was supposed to d
   none. A matched window on a character clearing hard mode, the way Greed's was found, would settle
   it the same way.
 - **If it can't be measured soon**, the wording moves toward the crate's own restraint —
-  `kpi.hard` / `legend.hard` / `grid.hard` become something that names the bit rather than the
-  difficulty ("second level", matching `MarkLevel::Second`), until the day it is measured and the
-  screen can say `hard` honestly.
+  `kpi.hard` / `legend.hard` / `grid.hard` / `grid.columnTotalsHard` / `cell.hard` become
+  something that names the bit rather than the difficulty ("second level", matching
+  `MarkLevel::Second`), until the day it is measured and the screen can say `hard` honestly.
 
 ### Closes when
 
