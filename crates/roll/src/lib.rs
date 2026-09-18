@@ -10,9 +10,11 @@
 //! here say something.
 
 mod deck;
+mod draw;
 mod space;
 mod target;
 
 pub use deck::{contributions, deck, Contributions, Deck, Excluded, Preset, Selection};
+pub use draw::draw;
 pub use space::{CellValue, Space, SpaceError};
 pub use target::{Status, Target};
