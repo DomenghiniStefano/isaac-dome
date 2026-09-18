@@ -774,7 +774,7 @@ appear at all.** The counts above are of checks somebody wrote down, never of th
 one, and that is the one blind spot the section cannot see from the inside. Both entries close with
 a line that puts their group here before the branch does.
 
-**61 in twelve groups, the same day**, with 3.12's seven. One of the seven carries a label none of
+**65 in twelve groups, the same day**, with 3.12's seven. One of the seven carries a label none of
 the others do — `NEEDS GAME` — because it is not "nobody has looked yet", it is "this machine
 cannot": the card's character head and mark symbol need a catalog this session never had. The
 other six are the ordinary kind, answerable by anyone with the built app and a save.
