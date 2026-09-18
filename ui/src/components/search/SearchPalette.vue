@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { CornerDownLeftIcon } from '@lucide/vue'
-import { computed, ref, watch } from 'vue'
+import { computed, ref, useTemplateRef, watch } from 'vue'
 import {
   CommandDialog,
   CommandEmpty,
@@ -21,6 +21,7 @@ import { SearchLimit } from '@/lib/ipc/search'
 import { SearchDiagnostic } from '@/lib/ipc/types'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
+import { keyAfterAnswer } from '@/lib/search/highlight'
 import {
   RowGroup,
   matchingScreens,
@@ -49,9 +50,13 @@ useShortcut((event) => {
 // What is typed lives here, not in the Command: the query is debounced before it reaches the
 // backend, and the answer that comes back is the backend's order, shown as it is.
 const typed = ref('')
+// The row the keyboard is on, mirrored from the listbox (see the keyboard section below).
+const highlighted = ref<string | null>(null)
 watch(typed, (query) => ask(query))
 watch(open, (isOpen) => {
-  if (!isOpen) typed.value = ''
+  if (isOpen) return
+  typed.value = ''
+  highlighted.value = null
 })
 
 const catalog = computed(
@@ -94,27 +99,76 @@ const hasQuery = computed(() => typed.value.trim() !== '')
 const { ctrl } = useGestureModifiers()
 
 // Enter navigates the active tab; Ctrl opens the row beside it, as a browser does.
-const openAt = (location: TabLocation) => {
-  if (ctrl.value) tabs.open(location)
+const openAt = (location: TabLocation, newTab: boolean) => {
+  if (newTab) tabs.open(location)
   else tabs.navigate(location)
   open.value = false
 }
 
-const go = (row: SearchRow) => openAt(row.location)
+const go = (row: SearchRow) => openAt(row.location, ctrl.value)
 
-const allResults = () =>
-  openAt({ name: RouteName.Search, query: { q: typed.value } })
+// The last row of the list, and the only one that is not in `rows`: it goes to the Search
+// screen with the query, rather than to a result.
+const AllResultsKey = 'all-results'
+const allResultsLocation = (): TabLocation => ({
+  name: RouteName.Search,
+  query: { q: typed.value },
+})
+const allResults = () => openAt(allResultsLocation(), ctrl.value)
+
+// **Who owns the keyboard in here** (B65): the listbox owns the highlight — it draws it and
+// the arrows move it — the palette owns *what the highlight is*, and Enter is read off it.
+// The plain key stays the listbox's, which clicks the row and arrives at `@select`; the
+// modified one is the palette's, because `ListboxRoot.onKeydownEnter` returns on a modifier
+// before it clicks and never hears it at all.
+const onHighlight = (payload: { value: unknown } | undefined) => {
+  highlighted.value = typeof payload?.value === 'string' ? payload.value : null
+}
+
+const palette = useTemplateRef('palette')
+
+// An answer replaces every row. The listbox highlighted the first row of the *previous* one,
+// 120 ms ago, and that row has just unmounted — a highlight on a detached row is invisible
+// and does not open. So it is put back, after the new rows are in the DOM, which is what
+// `flush: 'post'` is for.
+watch(
+  rows,
+  (list) => {
+    const key = keyAfterAnswer(list, highlighted.value)
+    highlighted.value = key
+    if (key !== null) palette.value?.highlightItem(key)
+  },
+  { flush: 'post' },
+)
+
+const locationOf = (key: string | null): TabLocation | undefined => {
+  if (key === AllResultsKey) return allResultsLocation()
+  return rows.value.find((row) => row.key === key)?.location
+}
+
+const onKeydown = (event: KeyboardEvent) => {
+  if (event.key !== EventKey.Enter) return
+  if (!event.ctrlKey && !event.metaKey) return
+  const location = locationOf(highlighted.value)
+  if (location === undefined) return
+  event.preventDefault()
+  openAt(location, true)
+}
 </script>
 
 <template>
   <CommandDialog
+    ref="palette"
     v-model:open="open"
     v-model:search="typed"
     :filter="false"
     :title="t('routes.search')"
     :description="t('search.intro')"
+    @highlight="onHighlight"
   >
-    <CommandInput :placeholder="t('search.placeholder')" />
+    <!-- The keydown sits on the input because that is where the focus is: the listbox's own
+         Enter handler runs first and ignores the modified key, so the two never both fire. -->
+    <CommandInput :placeholder="t('search.placeholder')" @keydown="onKeydown" />
     <CommandList>
       <CommandEmpty>{{ t('search.empty') }}</CommandEmpty>
       <CommandGroup
@@ -132,7 +186,7 @@ const allResults = () =>
         </CommandItem>
       </CommandGroup>
       <CommandGroup v-if="hasQuery && total > 0">
-        <CommandItem value="all-results" @select="allResults()">
+        <CommandItem :value="AllResultsKey" @select="allResults()">
           {{ t('search.allResults', { count: total }) }}
         </CommandItem>
       </CommandGroup>

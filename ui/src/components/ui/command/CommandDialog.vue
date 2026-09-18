@@ -1,8 +1,13 @@
 <script setup lang="ts">
-import type { DialogRootEmits, DialogRootProps } from 'reka-ui'
+import type {
+  DialogRootEmits,
+  DialogRootProps,
+  ListboxRootEmits,
+} from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
 import { useForwardPropsEmits } from 'reka-ui'
+import { useTemplateRef } from 'vue'
 import {
   Dialog,
   DialogContent,
@@ -25,9 +30,20 @@ const props = defineProps<
     search?: string
   }
 >()
+// `highlight` and `highlightItem` are the Command's, relayed: the dialog is a wrapper, and a
+// caller that mounts the palette must not have to reach past it to know which row is under
+// the keyboard.
 const emits = defineEmits<
-  DialogRootEmits & { 'update:search': [value: string] }
+  DialogRootEmits & {
+    'update:search': [value: string]
+    highlight: ListboxRootEmits['highlight']
+  }
 >()
+
+const command = useTemplateRef('command')
+defineExpose({
+  highlightItem: (value: string) => command.value?.highlightItem(value),
+})
 
 const delegatedProps = reactiveOmit(
   props,
@@ -51,10 +67,12 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         <DialogDescription>{{ description }}</DialogDescription>
       </DialogHeader>
       <Command
+        ref="command"
         class="border-0"
         :filter="props.filter"
         :search="props.search"
         @update:search="emits('update:search', $event)"
+        @highlight="emits('highlight', $event)"
       >
         <slot v-bind="slotProps" />
       </Command>
