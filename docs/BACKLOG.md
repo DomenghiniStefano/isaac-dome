@@ -459,6 +459,40 @@ About (cycle 3).
 
 **Needs:** nothing — frontend, `cn()` and the scanner. Items 3 and 10 are contrast and state readability: they need a look before they can be decided, not the game.
 
+**Seven of the ten landed on 2026-09-18** on `feature/small-follow-ups` (plan
+`docs/superpowers/plans/2026-09-18-small-follow-ups.md`, report
+`docs/superpowers/reports/2026-09-18-small-follow-ups-report.md`): 1, 2, 5, 6, 7, 8 and 9, each
+its own commit. **Three things the list did not know**, kept here because the list is what the
+next session reads:
+
+- **Item 9 named the wrong prop.** On reka-ui 2.10.4 `getValueLabel` becomes the `aria-label`
+  (its default is `"40%"`); the one that replaces the spoken value is `getValueText` →
+  `aria-valuetext`. Implemented to the letter, the item would have labelled the bar and left it
+  still announcing a percentage that counts the hatched segment as *not done*. Done as a
+  `value-text` prop. And **no caller in the app has an unknown share today**: the Completion KPIs
+  count against `readable` (B23), so the only hatched bar is the Kit's, which is where the prop
+  is exercised.
+- **Item 1 was bigger than "two classes survive".** With `opacity-muted` and `opacity-disabled`
+  both on an element the specificity is tied, so the winner is whichever rule the stylesheet
+  emits later — the caller's order stops deciding anything. `cn()` merges them now, and a number
+  still beats a token either way round.
+- **Item 5's last rule found two dead classes**, both `text-sm`, in
+  `ui/src/screens/goals/WantAnswer.vue`: inert since `--text-*` was reset to `initial`. They are
+  `text-body` now, which is the size they were already rendering at — `body` carries it — so
+  nothing on screen moves and the class finally says something. Item 5 also gained the
+  `outline-none` rule, the stacked-`dark:` fix, and five more scanned attributes; eighteen
+  fixtures, up from ten.
+
+**Item 2 measured**: same command either side, the `index` chunk goes 687,984 → 679,234 bytes and
+`createVueI18n` stops appearing. `__INTLIFY_DROP_MESSAGE_COMPILER__` stays at its default on
+purpose — dropping the compiler needs the messages pre-compiled to AST, and ours are TS objects
+read at runtime.
+
+**What is still open: 3, 10, and half of 4.** Items 3 and 10 are back-to-design and need a
+window; half of item 4 closed itself when `Command.vue` started watching `allItems.size`, and
+what remains of it is `CommandItem` not pruning its id from its group's set on unmount and
+`CommandInput`'s unconditional auto-focus.
+
 Logged 2026-09-10, a list:
 
 1. `cn()` doesn't register `--opacity-*` tokens (`opacity-muted opacity-disabled` both
@@ -2246,7 +2280,7 @@ room-kind palette is a token family in `@theme` beside the ranks, not fourteen c
 
 ---
 
-## B65 — `Ctrl+Enter` in the palette is swallowed by the listbox, and the footer promises it (bug, `ui`, small)
+## B65 — `Ctrl+Enter` in the palette is swallowed by the listbox, and the footer promises it (bug, `ui`, small) built on 2026-09-18, **not yet seen in a window**
 
 **Needs:** nothing to fix — the library is in `ui/node_modules` and the palette is one file —
 **then a window**, because nothing in this repo can mount a component (see below).
@@ -2303,6 +2337,31 @@ DOM environment: no test mounts a component, so the palette's keyboard path has 
 write. The gate is a window. If the fix ends up owning the keyboard, the part worth a unit test is
 the pure one — *which row does this keystroke open* — and that is a function, which is where this
 project puts anything worth checking.
+
+### What was decided, and what landed on 2026-09-18
+
+**The palette owns what the highlight *is*; the listbox keeps drawing it.** That is the one
+decision, taken for both keys at once, on `feature/small-follow-ups` (plan
+`docs/superpowers/plans/2026-09-18-small-follow-ups.md`, report
+`docs/superpowers/reports/2026-09-18-small-follow-ups-report.md`):
+
+- **Plain `Enter` stays the listbox's.** It clicks the highlighted row, which arrives at
+  `@select` — one path and one open, which is the property that kept a click from opening two
+  tabs in the first place.
+- **`Ctrl+Enter` is the palette's**, on a `keydown` on the input. The library's own handler runs
+  first and returns on the modifier without preventing anything, so the two never both fire.
+- **The highlight is put back when an answer lands** (`lib/search/highlight.ts`,
+  `keyAfterAnswer`, four tests). This is the second half's predicted cause, fixed rather than
+  confirmed: the listbox highlights the first row on every keystroke, the rows arrive 120 ms
+  later, and the row it chose unmounts — a detached row is not drawn and does not open. The
+  user's own position is kept when the row survived the new answer.
+- `Command` and `CommandDialog` relay exactly one function out (`highlightItem`) and one event
+  in (`highlight`). No collection, no element, nothing a caller can hold stale.
+
+**The prediction is untested, not disproved.** Nothing here mounts a component, so what a window
+says about plain `Enter` on a backend row is still the only evidence there will be — and now it
+is a *regression* check rather than a diagnosis. The group is in `docs/STATUS.md`'s *"What only
+a window can say"*.
 
 ### Closes when
 

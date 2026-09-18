@@ -11,6 +11,7 @@ export const ThemeNamespace = {
   Ease: 'ease',
   Animate: 'animate',
   TransitionDuration: 'transition-duration',
+  Opacity: 'opacity',
 } as const
 export type ThemeNamespace =
   (typeof ThemeNamespace)[keyof typeof ThemeNamespace]

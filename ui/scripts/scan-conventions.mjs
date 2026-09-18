@@ -218,8 +218,10 @@ const checks = [
   {
     // One theme. Without `@custom-variant dark`, Tailwind's built-in `dark:` compiles to
     // `prefers-color-scheme`, so a leftover class would switch on with the OS setting.
+    // The variant chain in front of it is part of the class: `hover:dark:bg-x` is the same
+    // leftover, and the first version of this rule could not see it.
     name: 'dark: variant in a one-theme app',
-    test: (_f, body) => /(^|[\s"'`])dark:[a-z[*]/m.test(body),
+    test: (_f, body) => /(^|[\s"'`])(?:[a-z0-9-]+:)*dark:[a-z[*]/m.test(body),
   },
   {
     name: 'literal colour in a class: colours are tokens',
@@ -242,11 +244,38 @@ const checks = [
       ),
   },
   {
+    // Every one of these names a constant: `ButtonVariant`, `ProgressTone`, `AlertLive`, and
+    // `Orientation`, `Align`, `Side` in `lib/constants/placement.ts`. Measured when the last
+    // five were added (2026-09-18): no file outside `components/ui/` wrote any of them as a
+    // literal, so this is a guard and not a cleanup.
     name: "literal variant on a primitive: use the component's constant",
     test: (file, body) =>
       file.endsWith('.vue') &&
       !isUnder(file, UI_DIR) &&
-      /\s(variant|size|density|orientation)="[a-z]/.test(body),
+      /\s(variant|size|density|orientation|position|align|side|tone|live)="[a-z]/.test(
+        body,
+      ),
+  },
+  {
+    // Cyan means focus, and it is the only thing that says where the keyboard is. A primitive
+    // may take the outline off because it puts something in its place — Reka moves real DOM
+    // focus through a listbox and draws a highlight instead, which is what the four in
+    // `components/ui/` do. A screen has nothing to put in its place.
+    name: 'outline-none outside a primitive',
+    test: (file, body) =>
+      /\boutline-none\b/.test(body) && !isUnder(file, UI_DIR),
+  },
+  {
+    // `@theme` resets `--text-*`, `--font-weight-*`, `--radius-*` and `--shadow-*` to
+    // `initial` (typography.css, radius.css, shadow.css), so these classes generate no CSS at
+    // all: the element keeps whatever it inherited and nothing says otherwise. `rounded-full`
+    // and `rounded-none` are not theme values and still work. Found two on the day it was
+    // written, both `text-sm`, both inert since the scale was reset.
+    name: 'class of a reset default scale: it generates nothing',
+    test: (_f, body) =>
+      /\b(text-(xs|sm|base|lg|[2-9]xl|xl)|font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)|rounded-(xs|sm|md|lg|[2-4]xl|xl)|shadow-(2xs|xs|sm|md|lg|[2-4]xl|xl|inner))\b/.test(
+        body,
+      ),
   },
   {
     name: 'glyph missing from Determination: use an icon',
@@ -341,6 +370,57 @@ const FIXTURES = [
     file: 'src/screens/Fixture.ts',
     body: 'export const L = /^isaac:\\/\\/item\\/(\\d+)$/, gap = "w-[12px]"\n',
     expect: ['arbitrary pixel value in a class'],
+  },
+  {
+    name: 'a stacked dark: variant is still a dark: variant',
+    file: 'src/screens/Fixture.vue',
+    body: '<template>\n  <div class="hover:dark:bg-data" />\n</template>\n',
+    expect: ['dark: variant in a one-theme app'],
+  },
+  {
+    // The guard on the chain: `dark` has to be the whole variant, not the tail of a word.
+    name: 'a class ending in dark is not the dark: variant',
+    file: 'src/screens/Fixture.vue',
+    body: '<template>\n  <div class="bg-sky-dark" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a literal side on a primitive is caught like a literal variant',
+    file: 'src/screens/Fixture.vue',
+    body: '<template>\n  <TooltipContent side="top" />\n</template>\n',
+    expect: ["literal variant on a primitive: use the component's constant"],
+  },
+  {
+    name: 'outline-none in a screen has nothing to replace the ring',
+    file: 'src/screens/Fixture.vue',
+    body: '<template>\n  <div class="outline-none" />\n</template>\n',
+    expect: ['outline-none outside a primitive'],
+  },
+  {
+    name: 'outline-none in a primitive is allowed: a highlight replaces the ring',
+    file: 'src/components/ui/command/Fixture.vue',
+    body: '<template>\n  <div class="outline-none" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a class of a reset scale generates nothing and is caught',
+    file: 'src/screens/Fixture.vue',
+    body: '<template>\n  <p class="text-sm font-bold rounded-md" />\n</template>\n',
+    expect: ['class of a reset default scale: it generates nothing'],
+  },
+  {
+    name: 'rounded-full is not a theme value and still generates',
+    file: 'src/screens/Fixture.vue',
+    body: '<template>\n  <span class="rounded-full rounded-none" />\n</template>\n',
+    expect: [],
+  },
+  {
+    // The guard on that rule's own names: our tokens share the namespaces and must not be
+    // caught by it. `text-body` is ours, `text-base` is the one that is gone.
+    name: 'a token of ours in the same namespace is not a reset scale',
+    file: 'src/screens/Fixture.vue',
+    body: '<template>\n  <p class="text-body rounded-input" />\n</template>\n',
+    expect: [],
   },
   {
     name: 'a declared style exemption is still read from its comment',

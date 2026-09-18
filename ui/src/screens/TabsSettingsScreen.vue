@@ -4,6 +4,7 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
+  AlertLive,
   AlertVariant,
 } from '@/components/ui/alert'
 import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'
@@ -46,7 +47,11 @@ const kept = [
     </Alert>
     <!-- The switch is moved first and saved after, so a failed write leaves the app behaving
          the way the user just asked and says what didn't happen. -->
-    <Alert v-if="settings.saveFailed" :variant="AlertVariant.Destructive">
+    <Alert
+      v-if="settings.saveFailed"
+      :variant="AlertVariant.Destructive"
+      :live="AlertLive.Assertive"
+    >
       <TriangleAlertIcon />
       <AlertTitle>{{ t('tabsSettings.saveFailedTitle') }}</AlertTitle>
       <AlertDescription>{{ t('tabsSettings.saveFailed') }}</AlertDescription>

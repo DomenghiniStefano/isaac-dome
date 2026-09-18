@@ -59,7 +59,7 @@ const bannerText: Record<WantDiagnostic['kind'], Message> = {
       <h2 class="text-label text-subtle-foreground">
         {{ t(heading[block.kind]) }}
       </h2>
-      <p v-if="blocks.length > 1" class="text-sm text-subtle-foreground">
+      <p v-if="blocks.length > 1" class="text-body text-subtle-foreground">
         {{ t('want.wayOf', { index: index + 1, total: blocks.length }) }}
       </p>
       <!-- The steps in order, then the thing you asked for. The position is the meaning, so
@@ -97,7 +97,7 @@ const bannerText: Record<WantDiagnostic['kind'], Message> = {
           />
         </li>
       </ol>
-      <p v-if="block.unknown > 0" class="text-sm text-subtle-foreground">
+      <p v-if="block.unknown > 0" class="text-body text-subtle-foreground">
         {{ t('want.unknown', { count: block.unknown }) }}
       </p>
       <Button

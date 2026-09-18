@@ -34,6 +34,9 @@
   --color-data: #1b120e;
   --color-row-alt: #20140f;
   --color-row-hover: #241812;
+  /* A field's hover, which is a row's by value and never by role: a Select's trigger is not
+     a row of a table, and the day a row's hover moves the fields must not move with it. */
+  --color-field-hover: #241812;
   --color-hairline: #2e1e17;
   --color-primary-hover: #a81c00;
   --color-primary-active: #6c0c00;
