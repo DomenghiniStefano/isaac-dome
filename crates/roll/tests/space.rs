@@ -4,7 +4,7 @@
 //! status table comes from `docs/save-format.md`: a cell's bits **replace** one another
 //! rather than accumulating, so any non-zero value is taken and there is no "cleared bit".
 
-use roll::{CellValue, Space, SpaceError, Status, Target};
+use roll::{deck, CellValue, Preset, Space, SpaceError, Status, Target};
 
 /// A 2x3 space whose Greed column is 1. Small on purpose: every cell can be named in a
 /// comment, which a 34x12 one cannot.
@@ -165,4 +165,20 @@ fn a_greed_column_outside_the_space_is_refused() {
             found: 3
         })
     );
+}
+
+#[test]
+fn empty_holds_nothing_to_draw() {
+    // The one shape `Space::new` can never reject (0 rows, 1 column, nothing to draw), built
+    // directly rather than through a `Result` nobody can fail to unwrap. It stands in for the
+    // fallback path `ipc::unreadable_space` is documented to never reach.
+    let space = Space::empty();
+    assert_eq!(space.target_count(), 0);
+
+    let d = deck(&space, &Preset::default());
+    assert!(d.targets.is_empty());
+    assert_eq!(d.excluded.taken, 0);
+    assert_eq!(d.excluded.unreadable, 0);
+    assert_eq!(d.excluded.locked, 0);
+    assert_eq!(d.excluded.filtered, 0);
 }

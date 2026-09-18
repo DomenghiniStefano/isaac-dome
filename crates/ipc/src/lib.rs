@@ -85,8 +85,9 @@ pub use resources::{
     SpriteView,
 };
 pub use roll::{
-    preset_from_view, preset_view, roll_space, roll_view, DeckView, DrawnTargetView, DrawnView,
-    PresetView, RollDiagnostic, RollInputs, RollRowView, RollView, SelectionView, StatusView,
+    deck_preset, preset_from_view, preset_view, roll_space, roll_view, DeckView, DrawnTargetView,
+    DrawnView, PresetView, RollDiagnostic, RollInputs, RollRowView, RollView, SelectionView,
+    StatusView,
 };
 pub use runs::{
     runs_view, CatalogKinds, RunItemRef, RunOutcomeView, RunSource, RunTotals, RunView,

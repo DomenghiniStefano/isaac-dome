@@ -90,6 +90,21 @@ impl Space {
         })
     }
 
+    /// The one shape with nothing to draw, built directly rather than through `new` — no rows,
+    /// no columns, no cells. Infallible on purpose: the caller of this is exactly the path
+    /// where a `Result` would have nothing sane to do with an `Err` (`ipc::unreadable_space`'s
+    /// fallback of a fallback), and "degrade, never fail" cannot spend a stack frame per retry
+    /// on a branch that is already provably unreachable.
+    pub fn empty() -> Space {
+        Space {
+            rows: 0,
+            columns: 0,
+            greed_column: 0,
+            cells: Vec::new(),
+            playable: Vec::new(),
+        }
+    }
+
     pub fn rows(&self) -> usize {
         self.rows
     }
