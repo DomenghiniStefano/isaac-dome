@@ -254,6 +254,14 @@ fn a_database_from_before_the_fold_version_keeps_its_archive_and_reads_it_as_unf
         None,
         "NULL reads as never folded, not as folded into nothing"
     );
+    // Migration 6 on the same file: this database predates the `roll` table entirely, not only
+    // the fold version column. No row exists yet, which reads as the default document rather
+    // than a failure — the same rule a fresh database's `roll()` follows.
+    assert_eq!(
+        store.roll().unwrap().unwrap(),
+        roll::Document::default(),
+        "an existing database must gain the roll table and read its default document"
+    );
 }
 
 #[test]

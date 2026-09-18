@@ -88,14 +88,23 @@ fn a_real_save_shows_both_a_taken_target_and_a_drawable_one() {
 
 #[test]
 fn the_deck_only_ever_shrinks_as_a_profile_progresses() {
-    // Marks are taken and never given back, so with the default preset the drawable deck
-    // cannot grow across the dated series. The progression property, applied to this screen.
+    // Not an unconditional property: a save that *locates* a cell this crate previously read as
+    // `Unreadable` can legitimately grow the drawable deck, since an unreadable cell excludes a
+    // target the same way a taken one does. It holds on this series because nothing in it is
+    // known to cross such a boundary — measured, not assumed — which is exactly why the vacuity
+    // guard below asks the series to show at least one pair, not merely at least one sample.
+    // `samples/` holds 15 `rep_` files and 1 `rep+`: the `rep_` half genuinely walks 14 pairs,
+    // the `rep+` half is a no-op on its own.
+    let mut any_sample = false;
+    let mut any_pair = false;
     for name in SERIES {
         let sizes: Vec<usize> = dated_series(name)
             .iter()
             .filter_map(|p| counters(p))
             .map(|c| deck_of(&c, false).size)
             .collect();
+        any_sample |= !sizes.is_empty();
+        any_pair |= sizes.windows(2).next().is_some();
         for pair in sizes.windows(2) {
             assert!(
                 pair[1] <= pair[0],
@@ -105,4 +114,13 @@ fn the_deck_only_ever_shrinks_as_a_profile_progresses() {
             );
         }
     }
+    if !any_sample {
+        // `dated_series` has already declared the skip on stderr.
+        return;
+    }
+    assert!(
+        any_pair,
+        "every name in the series had fewer than two samples: the progression property was \
+         never actually exercised"
+    );
 }
