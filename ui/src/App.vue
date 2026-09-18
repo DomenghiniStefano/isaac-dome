@@ -97,6 +97,9 @@ onMounted(async () => {
     // the only thing that draws it is the development-only verification page, which listens
     // for itself. The entry stays so that every event is accounted for here.
     [AppEvent.RunsChanged]: () => undefined,
+    // The Roll screen has no store yet: the three commands exist, the screen doesn't. The
+    // entry stays so that every event is accounted for here, exactly like `RunsChanged` above.
+    [AppEvent.RollChanged]: () => undefined,
   })
 })
 onUnmounted(() => {

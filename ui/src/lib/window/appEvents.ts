@@ -6,13 +6,14 @@ import { listen } from '@tauri-apps/api/event'
 // crosses the IPC boundary, so nothing new can leak across it — no path, no id, no `Debug`
 // string in a channel that has no view-models.
 //
-// The four names are mirrored by hand in `crates/app/src/events.rs`, as the IPC types are:
+// The five names are mirrored by hand in `crates/app/src/events.rs`, as the IPC types are:
 // change one and change the other.
 export const AppEvent = {
   ProfileChanged: 'profile-changed',
   SettingsChanged: 'settings-changed',
   PlanChanged: 'plan-changed',
   RunsChanged: 'runs-changed',
+  RollChanged: 'roll-changed',
 } as const
 export type AppEvent = (typeof AppEvent)[keyof typeof AppEvent]
 
