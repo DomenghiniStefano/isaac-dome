@@ -57,6 +57,14 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
 - [ ] **M1 — Rust parser, discovery, unpack, Completion screen** ← in progress, and what keeps it
       open is now the wiki polish listed under `wiki` — and **the window nobody has opened on any
       of it**.
+      **The small follow-ups landed on 2026-09-18**, on `feature/small-follow-ups`: seven of
+      B12's ten design-system items and both halves of **B65**, the palette's `Ctrl+Enter` — one
+      commit each, and no sub-project number, because they are backlog entries and not a screen.
+      Plan `docs/superpowers/plans/2026-09-18-small-follow-ups.md`. Three of the four things the
+      entries did not know are in B12's own entry; the fourth is that **the two `text-sm` in
+      `WantAnswer.vue` had been generating no CSS at all**, which nothing would ever have said —
+      the scanner rule written the same hour is what found them. B12 keeps items 3, 10 and half
+      of 4, all three of which need a window before anything can be decided.
       **3.12 landed on 2026-09-18**: the Roll screen — *Stasera* / *Tonight* — draws one target
       from the completion matrix, kept in a new pure crate (`roll`: the space, the deck a preset
       leaves in it, and the draw itself, a function of `(deck, seed)` with the clock kept in
@@ -779,6 +787,12 @@ the others do — `NEEDS GAME` — because it is not "nobody has looked yet", it
 cannot": the card's character head and mark symbol need a catalog this session never had. The
 other six are the ordinary kind, answerable by anyone with the built app and a save.
 
+**72 in thirteen groups on 2026-09-18**, with the small follow-ups' seven — and that group is the
+answer to the paragraph above it. It is the first one written by work that had **no screen of its
+own**: B12 and B65 are a design-system list and a keyboard defect, and the group exists because
+the entry that reported the defect said the screen owed one. Four of its lines are the palette's
+keyboard, which is exactly the kind of thing this repo cannot test and only a window can judge.
+
 **This is the live list; the reports are the record.** Each line below was written by the
 sub-project that produced it and is unticked *there* too, but a report is true on its day and is
 never re-checked — so ticking a line **here** is what closes it, and the report stays as it was
@@ -825,6 +839,37 @@ in `crates/app/tauri.conf.json`).
       back holding the same runs it held, and the totals must not move. If a run is missing after
       that, the fold lost it — and the cache that would have hidden the loss is exactly what the
       version bump threw away.
+
+### The small follow-ups (B12 and B65) — a keyboard nobody can test, and three colours
+
+The first group that comes from a **defect the owner found in a window**, which is why it exists
+at all: the search sub-project never wrote a check, and B65 says so. Four of the seven are the
+palette's keyboard and none of them can be pinned red first — `ui/` mounts no component — so the
+decidable half was moved into a pure function with its own tests and **the rest is this list**.
+The last three are the cheap kind: two need only `pnpm ui:dev`, and one needs a screen reader.
+
+- [ ] **`Ctrl+Enter` on the highlighted row opens it beside the active tab**, the palette closes,
+      and the tab you were on has not moved. This is the gesture the footer has been drawing
+      since the palette existed, and it did nothing at all until 2026-09-18.
+- [ ] **Plain `Enter` on a row that came from the backend.** Type something whose first row is
+      *not* a screen — a wiki page or a collection row — wait out the 120 ms, press `Enter`: the
+      active tab navigates. B65 predicted this was broken and the fix does not prove it was, so
+      this line is now a regression check rather than a diagnosis.
+- [ ] **The highlight stays where you put it.** Arrow down two rows, then type one more letter
+      that keeps that row in the answer: the highlight must still be on it, not back at the top.
+      That is `keyAfterAnswer`'s only promise and a window is the only place it shows.
+- [ ] `Ctrl+Enter` on the **last** row — *tutti i risultati* — opens the Search screen beside the
+      tab, with the query in it. It is the one row that is not a result, and it takes a different
+      path through the same handler.
+- [ ] **The Kit's Progress bar, read by Narrator**: "166 su 408, 40 non leggibili", and not
+      "40%". `aria-valuetext` is the only part of that bar no eye can check, and the only bar in
+      the repo with a hatched segment is that one.
+- [ ] **A Select's hover is the colour it was.** `--color-field-hover` is `--color-row-hover`'s
+      value under a name of its own, so the check is that *nothing moved* — on the Kit page, a
+      trigger hovered beside a table row.
+- [ ] The two paragraphs in the **Want** answer — "modo 1 di 2" and the unknown-steps line — are
+      the size they were: their `text-sm` generated nothing and is `text-body` now. A browser
+      answers it (`pnpm ui:dev`).
 
 ### The Challenges screen (3.11, B3) — the four conditions against the game's own menu
 
