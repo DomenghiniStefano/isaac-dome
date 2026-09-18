@@ -460,9 +460,10 @@ About (cycle 3).
 **Needs:** nothing — frontend, `cn()` and the scanner. Items 3 and 10 are contrast and state readability: they need a look before they can be decided, not the game.
 
 **Seven of the ten landed on 2026-09-18** on `feature/small-follow-ups` (plan
-`docs/superpowers/plans/2026-09-18-small-follow-ups.md`): 1, 2, 5, 6, 7, 8 and 9, each its own
-commit. **Three things the list did not know**, kept here because the list is what the next
-session reads:
+`docs/superpowers/plans/2026-09-18-small-follow-ups.md`, report
+`docs/superpowers/reports/2026-09-18-small-follow-ups-report.md`): 1, 2, 5, 6, 7, 8 and 9, each
+its own commit. **Three things the list did not know**, kept here because the list is what the
+next session reads:
 
 - **Item 9 named the wrong prop.** On reka-ui 2.10.4 `getValueLabel` becomes the `aria-label`
   (its default is `"40%"`); the one that replaces the spoken value is `getValueText` →
@@ -2341,7 +2342,8 @@ project puts anything worth checking.
 
 **The palette owns what the highlight *is*; the listbox keeps drawing it.** That is the one
 decision, taken for both keys at once, on `feature/small-follow-ups` (plan
-`docs/superpowers/plans/2026-09-18-small-follow-ups.md`):
+`docs/superpowers/plans/2026-09-18-small-follow-ups.md`, report
+`docs/superpowers/reports/2026-09-18-small-follow-ups-report.md`):
 
 - **Plain `Enter` stays the listbox's.** It clicks the highlighted row, which arrives at
   `@select` — one path and one open, which is the property that kept a click from opening two

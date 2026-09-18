@@ -60,7 +60,8 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
       **The small follow-ups landed on 2026-09-18**, on `feature/small-follow-ups`: seven of
       B12's ten design-system items and both halves of **B65**, the palette's `Ctrl+Enter` — one
       commit each, and no sub-project number, because they are backlog entries and not a screen.
-      Plan `docs/superpowers/plans/2026-09-18-small-follow-ups.md`. Three of the four things the
+      Plan `docs/superpowers/plans/2026-09-18-small-follow-ups.md`, report
+      `docs/superpowers/reports/2026-09-18-small-follow-ups-report.md`. Three of the four things the
       entries did not know are in B12's own entry; the fourth is that **the two `text-sm` in
       `WantAnswer.vue` had been generating no CSS at all**, which nothing would ever have said —
       the scanner rule written the same hour is what found them. B12 keeps items 3, 10 and half
