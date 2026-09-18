@@ -22,7 +22,7 @@ const forwardedProps = useForwardProps(delegatedProps)
     v-bind="forwardedProps"
     :class="
       cn(
-        'group flex h-control w-fit min-w-40 cursor-pointer items-center justify-between gap-2 rounded-input border border-input bg-data px-3 text-body whitespace-nowrap text-foreground hover:bg-row-hover disabled:cursor-not-allowed disabled:border-secondary disabled:bg-muted data-[placeholder]:text-faint-foreground *:data-[slot=select-value]:line-clamp-1 [&_svg]:pointer-events-none [&_svg]:shrink-0',
+        'group flex h-control w-fit min-w-40 cursor-pointer items-center justify-between gap-2 rounded-input border border-input bg-data px-3 text-body whitespace-nowrap text-foreground hover:bg-field-hover disabled:cursor-not-allowed disabled:border-secondary disabled:bg-muted data-[placeholder]:text-faint-foreground *:data-[slot=select-value]:line-clamp-1 [&_svg]:pointer-events-none [&_svg]:shrink-0',
         props.class,
       )
     "
