@@ -4,6 +4,7 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
+  AlertLive,
   AlertVariant,
 } from '@/components/ui/alert'
 import { useMessages } from '@/i18n'
@@ -26,7 +27,11 @@ const { t } = useMessages()
     <ScalePreview />
     <!-- The size is applied first and saved after, so a failed write leaves the interface
          where the user put it and says what didn't happen. -->
-    <Alert v-if="settings.saveFailed" :variant="AlertVariant.Destructive">
+    <Alert
+      v-if="settings.saveFailed"
+      :variant="AlertVariant.Destructive"
+      :live="AlertLive.Assertive"
+    >
       <TriangleAlertIcon />
       <AlertTitle>{{ t('appearance.saveFailedTitle') }}</AlertTitle>
       <AlertDescription>{{ t('appearance.saveFailed') }}</AlertDescription>
