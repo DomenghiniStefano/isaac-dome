@@ -27,6 +27,7 @@ unpack = { path = "../unpack" }
 catalog = { path = "../catalog" }
 graph = { path = "../graph" }
 plan = { path = "../plan" }
+roll = { path = "../roll" }
 store = { path = "../store" }
 log-watch = { path = "../log-watch" }
 run = { path = "../run" }
