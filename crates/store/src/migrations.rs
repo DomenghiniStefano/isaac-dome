@@ -7,10 +7,10 @@ use rusqlite::Connection;
 use crate::StoreError;
 
 /// The version this binary knows how to read and write.
-pub const SCHEMA_VERSION: u32 = 5;
+pub const SCHEMA_VERSION: u32 = 6;
 
 /// Index = version − 1. Append at the end, never modify a migration that's already shipped.
-const MIGRATIONS: [&str; 5] = [
+const MIGRATIONS: [&str; 6] = [
     // 1: the user's goals. `target_json` is the serialized `ipc::TargetKey` -- identity
     // alone, never name or icon: a column per variant would be a schema that changes
     // with every new kind of unlock.
@@ -83,6 +83,17 @@ const MIGRATIONS: [&str; 5] = [
     // "never folded" and is exactly right for every row that predates it — nothing recorded
     // which rules produced what those rows hold.
     "ALTER TABLE sources ADD COLUMN folded_rules_version INTEGER;",
+    // 6: the draw. One preset, always saved, with the current draw beside it, as one JSON
+    // document — migration 2's shape for migration 2's reason: one row pinned by the CHECK,
+    // because a second row would be a second answer to "what is the preset".
+    //
+    // The document carries a `version` of its own, which is not this schema's: a field added
+    // to the preset is a document version and costs no migration, exactly as the window
+    // session's does.
+    "CREATE TABLE roll (
+        id INTEGER PRIMARY KEY CHECK (id = 1),
+        document TEXT NOT NULL
+    );",
 ];
 
 pub fn current_version(conn: &Connection) -> Result<u32, StoreError> {

@@ -32,4 +32,7 @@ export const Command = {
   Runs: 'runs',
   Live: 'live',
   FloorCandidates: 'floor_candidates',
+  Roll: 'roll',
+  RollDraw: 'roll_draw',
+  SetRollPreset: 'set_roll_preset',
 } as const

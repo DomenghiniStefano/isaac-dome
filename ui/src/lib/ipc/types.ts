@@ -233,6 +233,115 @@ export type MarksMatrix = {
 }
 
 /**
+ * Recomputed from the save on every read, never stored: the card closes itself, and nothing
+ * can be ticked off wrongly.
+ */
+export const StatusView = {
+  Missing: 'missing',
+  Taken: 'taken',
+  Unreadable: 'unreadable',
+} as const
+export type StatusView = (typeof StatusView)[keyof typeof StatusView]
+
+/**
+ * One target as the card names it: a mark names its column, a Greedier says so it is one —
+ * there is no level number, because the second level only exists in the Greed column
+ * (`roll::Target`'s own reasoning, carried into the view).
+ */
+export type DrawnTargetView =
+  { kind: 'mark'; column: string } | { kind: 'greedier' }
+
+/**
+ * Every value of an axis, or the ones named — the view's mirror of `roll::Selection`.
+ */
+export type SelectionView =
+  { kind: 'all' } | { kind: 'only'; ids: Array<number> }
+
+/**
+ * The card on screen, if a draw is on file and the matrix still holds its target.
+ */
+export type DrawnView = {
+  target: DrawnTargetView
+  character: string
+  /**
+   * The co-op menu head. `None` without a catalog, or when the game has none for this row.
+   */
+  headUrl: string | null
+  /**
+   * The mark's own symbol, at the tier the game draws for this cell. `None` without a
+   * catalog: a URL nothing can serve draws a broken image where the fallback belongs.
+   */
+  artUrl: string | null
+  status: StatusView
+  /**
+   * The deck at the moment of the draw. Stored, not recomputed: the deck as it stood then
+   * is gone once the save moves.
+   */
+  deckSize: number
+  drawnUnix: number
+}
+
+/**
+ * What a preset leaves to draw, and the size of everything it took out. `size + taken +
+ * unreadable + locked + filtered` accounts for every target of the matrix — a property
+ * checked in `crates/ipc/tests/roll.rs` and `roll_real.rs`, not a fact this type enforces on
+ * its own.
+ */
+export type DeckView = {
+  size: number
+  taken: number
+  unreadable: number
+  locked: number
+  filtered: number
+}
+
+/**
+ * One row of either axis: a character or a column, with what ticking it would be worth. `id`
+ * is the row's position — index *is* id, the way `roll::Contributions` already keys it.
+ */
+export type RollRowView = {
+  id: number
+  name: string
+  selected: boolean
+  targets: number
+}
+
+/**
+ * The view's mirror of `roll::Preset`. Also `Deserialize`: `set_roll_preset` (Task 7) takes
+ * one inbound, and it is the only type on this screen that travels inward.
+ */
+export type PresetView = {
+  characters: SelectionView
+  columns: SelectionView
+  includeTaken: boolean
+  onlyPlayable: boolean
+}
+
+/**
+ * Everything that can make the screen answer with less than the whole picture.
+ */
+export type RollDiagnostic =
+  | { kind: 'noCounterSection' }
+  | { kind: 'documentUnreadable' }
+  | { kind: 'documentFromTheFuture'; version: number; supported: number }
+  | { kind: 'noCatalog' }
+  | { kind: 'playabilityUnknown' }
+  | { kind: 'storeUnavailable'; reason: StoreReason }
+  | { kind: 'emptyDeck' }
+
+/**
+ * The whole screen.
+ */
+export type RollView = {
+  drawn: DrawnView | null
+  deck: DeckView
+  characters: Array<RollRowView>
+  columns: Array<RollRowView>
+  preset: PresetView
+  diagnostics: Array<RollDiagnostic>
+}
+
+/**
  * The ten sections of the save.
  *
  * A name here is either **structural** — the position in the file, nothing claimed about

@@ -15,6 +15,7 @@ import LiveScreen from '@/screens/LiveScreen.vue'
 import RunsScreen from '@/screens/RunsScreen.vue'
 import PlanScreen from '@/screens/PlanScreen.vue'
 import ProfileScreen from '@/screens/ProfileScreen.vue'
+import RollScreen from '@/screens/RollScreen.vue'
 import SearchScreen from '@/screens/SearchScreen.vue'
 import TabsSettingsScreen from '@/screens/TabsSettingsScreen.vue'
 import UnlockScreen from '@/screens/UnlockScreen.vue'
@@ -46,6 +47,7 @@ const screens: Partial<Record<RouteName, Component>> = {
   [RouteName.Plan]: PlanScreen,
   [RouteName.Collection]: CollectionScreen,
   [RouteName.Challenges]: ChallengesScreen,
+  [RouteName.Roll]: RollScreen,
   [RouteName.Live]: LiveScreen,
   [RouteName.Runs]: RunsScreen,
   [RouteName.Floor]: FloorScreen,
