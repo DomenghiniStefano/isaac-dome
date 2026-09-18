@@ -2174,6 +2174,148 @@ must not be able to come out greener than one that does not.**
 
 ---
 
+## B64 — The Floor grid draws fourteen room kinds as one grey square, and the legend is a brush (implementation, `ui`, after design)
+
+**Needs:** nothing to write — the screen lives under **Tool** and answers with no game and no save
+— **then a window** to judge it, which is the whole point of the entry: it was opened by somebody
+looking at it.
+
+Reported by the owner on **2026-09-18**, the first time anybody opened this screen in a window:
+*the whole interface needs reviewing, you cannot tell where the rooms are, and the legend needs
+improving too*. F1 landed on 2026-09-15 and **wrote no window checks**, so the Floor screen has no
+group in `docs/STATUS.md`'s *"What only a window can say"* — nothing was waiting to be looked at,
+and what the first look found is this entry. A sub-project that writes no checks does not appear in
+that list as a gap; it simply does not appear.
+
+### What the screen does today, in five places
+
+1. **Every painted cell is the same colour.** `ui/src/screens/floor/FloorGrid.vue`'s `fillOf`
+   returns `bg-floor-room` for any cell that is not empty and not a candidate, and
+   `--color-floor-room` is `var(--color-card)` (`ui/src/assets/theme/floor.css`). Fourteen kinds go
+   in through the brush and one square comes out: a Boss room, a Shop and a Secret Room you painted
+   yourself are indistinguishable. **The grid cannot show what you drew on it**, which is exactly
+   the sentence the owner used.
+2. **The start room is invisible.** It carries `aria-current="location"` and nothing else — an
+   attribute with no paint. It is not decoration: `floor.diagnostic.noStartRoom` says the Super
+   Secret Room is judged only half way without it, so the screen asks for a cell it never shows.
+3. **`FloorLegend.vue` is not a legend**, it is the brush picker: a `ToggleGroup` of fourteen labels
+   plus *Cancella*. It says what you are **about to paint** and never what the colours on the grid
+   **mean**. Nothing on the screen maps `--color-floor-candidate-first/second/third`,
+   `--color-floor-empty` or `--color-floor-room` onto words, and nothing says that the `1` in a cell
+   is the likeliest or that past the third rank the ramp stops counting — which is a claim the rules
+   deliberately do not make, and therefore one the screen has to word.
+4. **Only one of the three targets is drawn.** `FloorScreen.vue` passes
+   `solutionFor('secret')?.candidates` to the grid, while the three cards below list Secret, Super
+   Secret and Ultra Secret. The other two exist as rows of numbers and never touch the map.
+5. **A candidate row is keyed by a raw cell index**, 0 to 168, printed as-is. A number is not a
+   position: nothing connects "cell 97" to a square on a 13x13 grid, and reading the row lights
+   nothing up.
+
+### Why it is a design pass and not five fixes
+
+Four of the five are one missing decision: **what a cell is allowed to say at once**. Today it says
+one thing — a rank, or "painted", or "empty". The screen needs it to say two, *what you drew* and
+*what the rules make of it*, for three targets, with a start marker, in 2rem squares.
+
+Three constraints the redesign inherits, all of them already paid for:
+
+- **The rank ramp is deliberately none of the state colours** (`floor.css` says so): green, gold,
+  brown, grey, red and purple mean done / unlockable now / blocked / unreadable / unexpected /
+  challenge everywhere else in the app. A room-kind palette has to stay off them too, or "a Boss
+  room" and "unlockable now" become the same colour in a product whose whole subject is the second
+  one.
+- **Every candidate row carries the quotation and the URL of the rule that lit it.** That is the
+  CC BY-SA attribution reaching the person reading the screen, not a layout detail. A denser grid
+  must not drop it.
+- **F2 will add a sentence to this screen** — *the game generated 19 rooms, you have painted 15* —
+  so the shape needs somewhere to put it.
+
+And `docs/frontend-conventions.md` applies unchanged: no `<style>`, no hardcoded visual constants. A
+room-kind palette is a token family in `@theme` beside the ranks, not fourteen classes.
+
+### Closes when
+
+- [ ] A painted cell says which kind it is, on the grid, without hovering it.
+- [ ] The start room is visible as a room and not only to a screen reader.
+- [ ] Something on the screen says what the colours and the numbers mean, in words, including what
+      the third step does **not** claim.
+- [ ] Each of the three targets can be seen on the grid, or the screen says which one it is drawing.
+- [ ] A candidate row and its cell are connected: reading the row finds the square.
+- [ ] Judged in a window — and this time the group is added to *"What only a window can say"* before
+      the branch closes.
+
+---
+
+## B65 — `Ctrl+Enter` in the palette is swallowed by the listbox, and the footer promises it (bug, `ui`, small)
+
+**Needs:** nothing to fix — the library is in `ui/node_modules` and the palette is one file —
+**then a window**, because nothing in this repo can mount a component (see below).
+
+Reported by the owner on **2026-09-18**: in the `Ctrl+K` palette, `Ctrl+Enter` opens no second tab,
+and whether plain `Enter` works at all is unclear.
+
+### The first half is certain, and it is in the library
+
+`reka-ui@2.10.4`, `Listbox/ListboxRoot.js` — `onKeydownEnter` opens with
+`if (event.ctrlKey || event.metaKey || event.altKey) return;`, **before** it clicks the highlighted
+element. The palette's input is a `ListboxFilter`, whose own `handleKeydownEnter` forwards straight
+to that same function. So with `Ctrl` held there is no click, no `select`, and
+`SearchPalette.openAt` is never reached: the screen is not wrong about what `Ctrl` means, **it never
+hears the key**. `useGestureModifiers` reads the modifier correctly and nothing asks it.
+
+`Ctrl`+click on the same row **does** work: that path goes through the item's own click, which is
+precisely the one the library filters out for the keyboard.
+
+**And the screen advertises the gesture.** `SearchPalette.vue`'s footer draws `Ctrl` and the return
+arrow beside `search.hint.newTab` — *apri in una nuova tab* — which the design asked for
+(`docs/superpowers/specs/2026-09-12-screens-wiki-search-design.md`, and the plan
+`docs/superpowers/plans/archive/2026-09-12-screens-search.md`). A key drawn in the footer and
+swallowed by the library is worse than a missing feature: the screen is documenting a gesture that
+does nothing.
+
+### The second half is a prediction, and it needs the window
+
+*Whether `Enter` works* is a fair question and the code answers it only halfway.
+`ListboxFilter.handleInput` calls `highlightFirstItem()` on **every keystroke**, while the palette's
+rows come back from the backend **120 ms later** (`Timing.SearchDebounce`). So at the moment the
+highlight is placed, the rows for what was typed are usually not mounted yet: either nothing is
+highlighted, or what is highlighted belongs to the previous answer and unmounts when the new one
+lands — and `onKeydownEnter` skips a `highlightedElement` that is no longer `isConnected`.
+
+The Screens group is the exception: those rows are computed synchronously from the typed text
+(`matchingScreens`), so a query naming a screen highlights at once. **The predicted shape is
+therefore: `Enter` works when the first row is a screen, and does nothing when the answer came from
+the backend.** One minute in a window says whether that is right; it is written down here so the
+check has something to disagree with.
+
+### What the fix probably looks like
+
+The Enter path has to be taken **before** the library sees it. `useShortcut` already owns `Ctrl+K`
+on the window; the palette can own `Ctrl+Enter` the same way, provided the handler can name the row
+the highlight is on. The alternative is to stop leaning on the listbox's Enter altogether and hold
+the highlighted row ourselves. Either way it is one decision about **who owns the keyboard inside
+that dialog**, and it should be taken for `Enter` and `Ctrl+Enter` together rather than patched on
+one of them — the two are the same gesture with a modifier, which is why the palette reads the
+modifier from the window in the first place.
+
+**Nothing in this repo can pin it red first.** `ui/` runs Vitest with no `@vue/test-utils` and no
+DOM environment: no test mounts a component, so the palette's keyboard path has no failing test to
+write. The gate is a window. If the fix ends up owning the keyboard, the part worth a unit test is
+the pure one — *which row does this keystroke open* — and that is a function, which is where this
+project puts anything worth checking.
+
+### Closes when
+
+- [ ] `Ctrl+Enter` on the highlighted row opens it beside the current tab, the palette closes, and
+      the active tab has not moved.
+- [ ] Plain `Enter` navigates the active tab, **including on a row that arrived after the
+      debounce** — the case this entry predicts is broken.
+- [ ] Both hints in the footer are true, or the one that is not is taken out.
+- [ ] What the fix decides about who owns the keyboard is written where the next list of this kind
+      will read it.
+
+---
+
 ## Closed entries
 
 **33 entries have closed**, and they are in `docs/completed/backlog-closed.md` with
