@@ -199,18 +199,10 @@ fn cell_value(counters: Option<&[u32]>, character: usize, boss: usize) -> roll::
     }
 }
 
-/// The one shape `Space::new` can never reject: no rows, one column, nothing to draw. Reached
-/// only if the all-`Unreadable` fallback below is itself refused, which is one impossibility
-/// further than `roll_space` is already documented to never hit.
-fn empty_space() -> roll::Space {
-    match roll::Space::new(0, 1, 0, Vec::new(), Vec::new()) {
-        Ok(space) => space,
-        Err(_) => empty_space(),
-    }
-}
-
 /// The all-`Unreadable` space of the same shape `roll_space` tried to build. Exists for the
-/// error it is documented never to reach, rather than a panic standing in its place.
+/// error it is documented never to reach, rather than a panic standing in its place. Falls back
+/// to `roll::Space::empty()` — infallible, no recursion — for the one impossibility further
+/// than that: this constructor being refused too.
 fn unreadable_space(rows: usize, columns: usize, greed: usize) -> roll::Space {
     roll::Space::new(
         rows,
@@ -219,7 +211,24 @@ fn unreadable_space(rows: usize, columns: usize, greed: usize) -> roll::Space {
         vec![roll::CellValue::Unreadable; rows * columns],
         vec![true; rows],
     )
-    .unwrap_or_else(|_| empty_space())
+    .unwrap_or_else(|_| roll::Space::empty())
+}
+
+/// The one judgment for which preset the deck is actually built with, shared by `roll_view`
+/// (the count it reports) and `roll_draw` (the deck it draws from): "only playable" cannot be
+/// applied when nothing says which characters are unlocked, so it is forced off there, while
+/// the document's own choice always still shows on `preset`. Written once and called from both
+/// sites — `crates/app` is untested by design, so a rule with two independently written copies
+/// would let the two decks drift apart with nothing here to notice.
+pub fn deck_preset(preset: &roll::Preset, playability_known: bool) -> roll::Preset {
+    if playability_known {
+        preset.clone()
+    } else {
+        roll::Preset {
+            only_playable: false,
+            ..preset.clone()
+        }
+    }
 }
 
 /// The matrix as a `roll::Space`, and whether playability could be determined at all.
@@ -421,16 +430,9 @@ pub fn roll_view(
 
     // The document's own choice always shows in `preset`; only the deck build is forced off
     // when playability cannot be determined.
-    let deck_preset = if playability_known {
-        document.preset.clone()
-    } else {
-        roll::Preset {
-            only_playable: false,
-            ..document.preset.clone()
-        }
-    };
-    let deck = roll::deck(&space, &deck_preset);
-    let contributions = roll::contributions(&space, &deck_preset);
+    let effective = deck_preset(&document.preset, playability_known);
+    let deck = roll::deck(&space, &effective);
+    let contributions = roll::contributions(&space, &effective);
 
     let characters = CHARACTERS
         .iter()

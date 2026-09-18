@@ -13,16 +13,27 @@ use crate::state::*;
 
 /// Everything the view needs, read once. The catalog may be absent — the game is not
 /// installed — and that is a diagnostic, never an error.
+///
+/// `write_failed` is the one thing a read of the store cannot discover on its own: the lock
+/// can still succeed and `guard.roll()` can still return the old document, so a failed write
+/// would otherwise be indistinguishable from "nothing changed" and no diagnostic would fire at
+/// all. When it is `true` the reason is forced to `Unreadable`, whatever the read itself found.
 fn view_now(
     app: &AppHandle,
     catalog: &CatalogState,
     resources: &ResourcesState,
     store: &StoreState,
+    write_failed: bool,
 ) -> Result<ipc::RollView, IpcError> {
     let (flags, counters) = progress_sections(app)?;
     let rs = resources.get();
     let cat = rs.and_then(|rs| catalog.get_or_build(rs));
-    let (document, store_reason) = read_document(app, store);
+    let (document, read_reason) = read_document(app, store);
+    let store_reason = if write_failed {
+        Some(ipc::StoreReason::Unreadable)
+    } else {
+        read_reason
+    };
     Ok(ipc::roll_view(
         ipc::RollInputs {
             counters: counters.as_deref(),
@@ -71,7 +82,7 @@ pub fn roll(
     resources: tauri::State<'_, ResourcesState>,
     store: tauri::State<'_, StoreState>,
 ) -> Result<ipc::RollView, IpcError> {
-    view_now(&app, &state, &resources, &store)
+    view_now(&app, &state, &resources, &store, false)
 }
 
 #[tauri::command]
@@ -85,14 +96,15 @@ pub fn roll_draw(
     let rs = resources.get();
     let cat = rs.and_then(|rs| state.get_or_build(rs));
     let (document, _) = read_document(&app, &store);
+    // An unreadable document is replaced here too, exactly as `set_roll_preset` replaces one
+    // below: pressing Pesca is asking for something new just as much as changing the preset
+    // is, so there is nothing for the old, unparseable document to contribute.
     let mut doc = document.unwrap_or_default();
     let (space, playability_known) = ipc::roll_space(counters.as_deref(), flags.as_deref(), cat);
-    // The preset the deck is actually built with: "only playable" cannot be applied when
-    // nothing says which characters are unlocked, and `ipc` reports that on the view.
-    let effective = roll::Preset {
-        only_playable: doc.preset.only_playable && playability_known,
-        ..doc.preset.clone()
-    };
+    // The same judgment `roll_view` makes for the count it reports, from the one place it is
+    // written (`ipc::deck_preset`): the deck the draw picks from and the deck size the card
+    // later reports must never be two independently maintained rules.
+    let effective = ipc::deck_preset(&doc.preset, playability_known);
     let deck = roll::deck(&space, &effective);
     doc.current = roll::draw(&deck, seed_now()).map(|target| roll::Drawn {
         target,
@@ -102,8 +114,8 @@ pub fn roll_draw(
             .map(|d| d.as_secs() as i64)
             .unwrap_or(0),
     });
-    write_document(&app, &store, &doc);
-    view_now(&app, &state, &resources, &store)
+    let wrote = write_document(&app, &store, &doc);
+    view_now(&app, &state, &resources, &store, !wrote)
 }
 
 #[tauri::command]
@@ -115,21 +127,27 @@ pub fn set_roll_preset(
     preset: ipc::PresetView,
 ) -> Result<ipc::RollView, IpcError> {
     let (document, _) = read_document(&app, &store);
-    // An unreadable document is **not** overwritten by a read. It is overwritten here, and
-    // only here, because the user just changed something: that is the one moment where
-    // replacing it is what they asked for (spec §7).
+    // An unreadable document is **not** overwritten by a read. It is overwritten by a preset
+    // change or by a draw (`roll_draw`, above) — never by anything else — because both are the
+    // user asking for something new, and replacing it is what they asked for (spec §7).
+    // `queue_mutate` takes the opposite stance on the same question because there a parse
+    // failure would destroy a plan a newer version wrote and this one cannot read; a roll
+    // document holds nothing a freshly built default can't stand in for just as well.
     let mut doc = document.unwrap_or_default();
     doc.preset = ipc::preset_from_view(&preset);
-    write_document(&app, &store, &doc);
-    view_now(&app, &state, &resources, &store)
+    let wrote = write_document(&app, &store, &doc);
+    view_now(&app, &state, &resources, &store, !wrote)
 }
 
-/// Writes and tells the other windows. A write that cannot land is not an error the screen can
-/// act on — the view that follows is read from the same store and will show what is really
-/// there.
-fn write_document(app: &AppHandle, store: &StoreState, doc: &roll::Document) {
-    if let Ok(guard) = store.lock(app) {
-        let _ = guard.set_roll(doc);
+/// Writes and tells the other windows — but only once the write has actually landed: a failed
+/// write changed nothing, so announcing it would tell every other window to re-read for no
+/// reason. Reports whether it landed, so the caller's own `view_now` can say so when it didn't
+/// — a lock that succeeds and a `set_roll` that fails would otherwise read back the old
+/// document with no diagnostic at all, since nothing on disk actually changed.
+fn write_document(app: &AppHandle, store: &StoreState, doc: &roll::Document) -> bool {
+    let wrote = matches!(store.lock(app), Ok(guard) if guard.set_roll(doc).is_ok());
+    if wrote {
+        announce(app, ROLL_CHANGED);
     }
-    announce(app, ROLL_CHANGED);
+    wrote
 }
