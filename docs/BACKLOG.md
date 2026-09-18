@@ -2316,6 +2316,52 @@ project puts anything worth checking.
 
 ---
 
+## B66 — The Completion screen calls bit 1 `hard`, in both languages, where `docs/save-format.md` refuses to (analysis, `ui`)
+
+**Needs:** nothing — it is wording in two files and a read of what the save actually measures.
+
+Found while touching `ui/src/i18n/messages/en.ts` and `it.ts` for 3.12 (Roll), which landed roughly
+fifty-seven lines above this block in each file and moved it from where an earlier draft of this
+entry pointed. `docs/save-format.md`'s "Counters and marks" section says `graph::rules::MarkLevel`
+is named `Base` / `Second` **on purpose**, after the bits and not after a meaning: bit 1 is
+measured only in Greed, where it is Ultra Greedier, and "what bit 1 means in the other eleven is
+still unmeasured". The Completion screen does not carry that caution one layer up — it names the
+column `hard` outright, in four places, in both languages:
+
+- `ui/src/i18n/messages/en.ts:656-662` — `kpi.hard: 'marks at hard'`, `kpi.hardExplain` ("Cells
+  with the second level…"), and `kpi.completeExplain`, which reads "every one of their readable
+  cells at hard"; further uses at `:670` (`legend.hard`), `:677` (`grid.hard`) and `:680`
+  (`grid.columnTotalsHard`, "Of those, at hard").
+- `ui/src/i18n/messages/it.ts:663-669` — the same three keys in Italian (`marchi in hard`,
+  `hardExplain`, `completeExplain`), plus `:677`, `:684` and `:687` for the same three further
+  uses.
+
+So a player reading the screen is told a specific thing — this column is the hard difficulty —
+that the crate one door over declines to assert for eleven of the twelve columns it draws. Either
+the claim is right and the screen is ahead of a measurement nobody has written down, or the wording
+is a guess that slipped past the `MarkLevel::Second` naming it was supposed to defer to.
+
+### What would close it
+
+- **Analysis first**: is bit 1 actually the hard difficulty everywhere, or only demonstrably so in
+  Greed? The Greed measurement
+  (`winning_greedier_sets_the_second_bit_of_that_characters_greed_cell`,
+  `crates/ipc/tests/progress_real.rs`) is the only evidence on file; the other eleven columns have
+  none. A matched window on a character clearing hard mode, the way Greed's was found, would settle
+  it the same way.
+- **If it can't be measured soon**, the wording moves toward the crate's own restraint —
+  `kpi.hard` / `legend.hard` / `grid.hard` become something that names the bit rather than the
+  difficulty ("second level", matching `MarkLevel::Second`), until the day it is measured and the
+  screen can say `hard` honestly.
+
+### Closes when
+
+- [ ] Bit 1's meaning outside Greed is either measured or explicitly left open in the wording.
+- [ ] `en.ts` and `it.ts` agree with whatever `docs/save-format.md` is willing to state.
+- [ ] `graph::rules::MarkLevel`'s naming and the Completion screen's naming say the same thing.
+
+---
+
 ## Closed entries
 
 **33 entries have closed**, and they are in `docs/completed/backlog-closed.md` with
