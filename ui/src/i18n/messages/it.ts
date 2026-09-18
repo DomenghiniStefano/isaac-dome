@@ -273,6 +273,63 @@ export const it = {
         'Il dataset della wiki non si è caricato: le sfide restano, senza personaggio, obiettivo e bendatura.',
     },
   },
+  roll: {
+    intro:
+      'Un bersaglio solo, pescato dalla matrice dei 442: cosa vale la pena giocare stasera, senza dover scegliere tra centinaia di caselle.',
+    draw: 'Pesca',
+    drawAgain: 'Pesca di nuovo',
+    notDrawnYet: 'Non hai ancora pescato niente stasera.',
+    status: {
+      missing: 'da fare',
+      taken: 'già preso',
+      unreadable: 'non leggibile',
+    },
+    card: {
+      mark: '{character} contro {column}',
+      greedier: '{character} — Greedier!',
+      drawnFrom: 'Pescato da {size} bersagli possibili',
+    },
+    emptyDeck: {
+      taken:
+        'Il mazzo è vuoto: {count} bersagli restano fuori perché già presi.',
+      unreadable:
+        'Il mazzo è vuoto: {count} bersagli non si leggono dal salvataggio.',
+      locked:
+        'Il mazzo è vuoto: {count} bersagli sono bloccati per un personaggio non ancora sbloccato.',
+      filtered:
+        'Il mazzo è vuoto: {count} bersagli restano fuori dai filtri scelti qui sotto.',
+      nothing: 'Il mazzo è vuoto: non c’è ancora nessun bersaglio da proporre.',
+    },
+    panel: {
+      characters: 'Personaggi',
+      columns: 'Colonne',
+      includeTaken: 'Includi i bersagli già presi',
+      includeTakenHint:
+        'Altrimenti il mazzo pesca solo tra quelli ancora da fare.',
+      onlyPlayable: 'Solo personaggi già giocabili',
+      onlyPlayableHint:
+        'Nasconde i personaggi che il salvataggio non lascia ancora scegliere.',
+    },
+    diagnostics: {
+      noCounterSectionTitle: 'Il salvataggio non dice quali marchi hai preso',
+      noCounterSection:
+        'La sezione che tiene i marchi non si è letta: la matrice resta, ma ogni cella è segnata come non leggibile.',
+      documentUnreadableTitle: 'Le tue scelte di stasera non si sono lette',
+      documentUnreadable:
+        'Il documento salvato non si è capito: è stato usato il preset di partenza al suo posto.',
+      documentFromTheFutureTitle:
+        'Le tue scelte vengono da una versione più recente',
+      documentFromTheFuture:
+        'Il documento è alla versione {version}, questa app legge fino alla {supported}: è stato usato il preset di partenza al suo posto.',
+      noCatalogTitle: 'Non troviamo il gioco',
+      noCatalog:
+        'Senza il gioco installato non ci sono nomi, simboli né modo di sapere chi è già giocabile.',
+      playabilityUnknownTitle: 'Non sappiamo chi è già giocabile',
+      playabilityUnknown:
+        'Il filtro "solo personaggi già giocabili" è stato spento per questa pescata: senza il catalogo o gli achievement non c’è modo di saperlo.',
+      storeUnavailableTitle: 'Le tue scelte non si possono salvare',
+    },
+  },
   collection: {
     intro:
       'Gli oggetti che questo salvataggio non ha ancora, con la loro qualità e i pool in cui compaiono. I trinket non ci sono: il gioco non tiene traccia di quali hai trovato.',
