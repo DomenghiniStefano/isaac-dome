@@ -34,6 +34,14 @@ describe('cn', () => {
     )
   })
 
+  it('lets a later opacity token replace an earlier one', () => {
+    expect(cn('opacity-muted', 'opacity-disabled')).toBe('opacity-disabled')
+  })
+
+  it('still lets a number replace an opacity token', () => {
+    expect(cn('opacity-muted', 'opacity-0')).toBe('opacity-0')
+  })
+
   it('lets a later letter spacing replace an earlier one', () => {
     expect(cn('tracking-nav', 'tracking-caps')).toBe('tracking-caps')
   })
