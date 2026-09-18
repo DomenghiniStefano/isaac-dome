@@ -41,6 +41,7 @@ export const en: MessageSchema = {
     plan: 'Plan',
     collection: 'Collection',
     challenges: 'Challenges',
+    roll: 'Tonight',
     runs: 'Runs',
     live: 'Live',
     floor: 'Floor',

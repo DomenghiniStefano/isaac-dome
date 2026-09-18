@@ -45,6 +45,7 @@ export const it = {
     plan: 'Piano',
     collection: 'Collezione',
     challenges: 'Sfide',
+    roll: 'Stasera',
     runs: 'Run',
     live: 'Live',
     floor: 'Piano di gioco',
