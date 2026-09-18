@@ -1010,7 +1010,6 @@ one needs the game installed too.
 - [ ] **NEEDS GAME** — the character head and the mark's own symbol on the card. `headUrl` and
       `artUrl` come back `null` without a catalog, so only the fallback-outfit path has been
       looked at; this line stays open until a machine with the game draws the real ones
-      → `.superpowers/sdd/2026-09-18-roll/task-10-report.md`
 
 ### One that is not a window, and is here because it is the same kind of answer
 
