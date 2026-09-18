@@ -15,6 +15,7 @@ const props = withDefaults(
       unknown?: number
       size?: ProgressSize
       tone?: ProgressTone
+      valueText?: string
       class?: HTMLAttributes['class']
     }
   >(),
@@ -24,6 +25,7 @@ const props = withDefaults(
     unknown: 0,
     size: undefined,
     tone: undefined,
+    valueText: undefined,
   },
 )
 
@@ -35,9 +37,24 @@ const delegatedProps = reactiveOmit(
   'max',
   'size',
   'tone',
+  'valueText',
+  'getValueText',
 )
 
 const bounds = computed(() => progressBounds(props.modelValue ?? 0, props.max))
+
+// A bar with a hatched segment lies to a screen reader unless somebody says otherwise: the
+// percentage it computes from value and max counts the unreadable part as "not done", which
+// is the one thing this bar exists to deny. `getValueText` is what Reka renders as
+// `aria-valuetext`, and it replaces that percentage — `getValueLabel`, despite the name,
+// becomes the `aria-label`. The words are the caller's: a primitive holds no string, and only
+// the screen knows what its own unreadable part is. A caller with its own function still has
+// it honoured.
+const getValueText = computed(() =>
+  props.valueText === undefined
+    ? props.getValueText
+    : () => props.valueText ?? '',
+)
 
 const shares = computed(() =>
   progressShares(props.modelValue ?? 0, props.unknown, props.max),
@@ -56,6 +73,7 @@ const shareVariables = computed(() => ({
     v-bind="delegatedProps"
     :model-value="bounds.value"
     :max="bounds.max"
+    :get-value-text="getValueText"
     :style="shareVariables"
     :class="cn(progressVariants({ size }), props.class)"
   >
