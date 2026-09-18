@@ -1951,6 +1951,7 @@ dependencies = [
  "graph",
  "plan",
  "png 0.17.16",
+ "roll",
  "run",
  "serde",
  "serde_json",

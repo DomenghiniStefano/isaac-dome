@@ -248,7 +248,10 @@ pub fn marks_matrix(
     }
 }
 
-fn cell_at(counters: &[u32], character: usize, boss: usize) -> Cell {
+// `pub(crate)`, not private: `crate::roll::roll_space` reads the same cell the matrix
+// draws. A second definition of "what a cell holds" would drift from the matrix the
+// Completion screen draws, the same argument `marks_totals` already carries.
+pub(crate) fn cell_at(counters: &[u32], character: usize, boss: usize) -> Cell {
     match counter_index(character, boss).and_then(|i| counters.get(i)) {
         None => Cell::Unknown,
         Some(&value) if value <= 7 => Cell::Known { bits: value as u8 },
