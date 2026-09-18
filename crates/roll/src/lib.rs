@@ -9,8 +9,10 @@
 //! function of `(deck, seed)` and the seed comes from `app`, which is what makes every test
 //! here say something.
 
+mod deck;
 mod space;
 mod target;
 
+pub use deck::{contributions, deck, Contributions, Deck, Excluded, Preset, Selection};
 pub use space::{CellValue, Space, SpaceError};
 pub use target::{Status, Target};
