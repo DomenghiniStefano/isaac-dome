@@ -24,4 +24,4 @@
 # two hundred tests and later deleting fifty stays quiet. Closing that needs a per-commit
 # comparison, which is CI, and there is none here by decision.
 RUST_TESTS=1130
-UI_TESTS=652
+UI_TESTS=669
