@@ -510,6 +510,16 @@ export const en: MessageSchema = {
         'Items do not say whether you already have them. It does not mean you do not: it means we cannot tell.',
     },
   },
+  find: {
+    label: 'Find on this page',
+    placeholder: 'Find on this page',
+    count: '{position} of {total}',
+    empty: 'No matches',
+    previous: 'Previous match',
+    next: 'Next match',
+    close: 'Close find',
+    nothingToSearch: 'There is nothing here to search.',
+  },
   background: {
     intro:
       'When the app starts, and what it does when you close the last window.',

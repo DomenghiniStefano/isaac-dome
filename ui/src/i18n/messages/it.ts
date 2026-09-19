@@ -518,6 +518,16 @@ export const it = {
         'Accanto agli oggetti non compare se ce l’hai già. Non vuol dire di no: vuol dire che non lo sappiamo.',
     },
   },
+  find: {
+    label: 'Cerca in questa pagina',
+    placeholder: 'Cerca in questa pagina',
+    count: '{position} di {total}',
+    empty: 'Nessuna corrispondenza',
+    previous: 'Risultato precedente',
+    next: 'Risultato successivo',
+    close: 'Chiudi la ricerca',
+    nothingToSearch: 'Qui non c’è niente in cui cercare.',
+  },
   background: {
     intro: "Quando parte l'app, e cosa fa quando chiudi l'ultima finestra.",
     startTitle: 'Avvia con Windows',
