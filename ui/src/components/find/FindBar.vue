@@ -64,9 +64,12 @@ const nothingFound = computed(() => searching.value && state.value.total === 0)
       :aria-label="t('find.label')"
       :placeholder="t('find.placeholder')"
       :disabled="barren"
+      class="w-search"
       @keydown="onKeydown"
     />
-    <span class="text-caption text-faint-foreground">
+    <span
+      class="text-caption whitespace-nowrap text-faint-foreground tabular-nums"
+    >
       <template v-if="barren">{{ t('find.nothingToSearch') }}</template>
       <template v-else-if="nothingFound">{{ t('find.empty') }}</template>
       <template v-else-if="searching">{{
