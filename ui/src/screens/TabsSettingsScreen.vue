@@ -7,8 +7,9 @@ import {
   AlertLive,
   AlertVariant,
 } from '@/components/ui/alert'
-import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'
+import { Field, FieldLabel } from '@/components/ui/field'
 import { Switch } from '@/components/ui/switch'
+import { HelpTip } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import { sessionStopped } from '@/lib/window/sessionHealth'
 import { useSettingsStore } from '@/stores/settings'
@@ -66,19 +67,25 @@ const kept = [
         <FieldLabel for="tabs-resume">{{
           t('tabsSettings.resumeTitle')
         }}</FieldLabel>
+        <!-- The list of what is kept belongs to this switch and nothing else, so it is in the
+             switch's own explanation rather than in a block below it with a heading of its
+             own: a heading is what you give a section, and this was never one. -->
+        <HelpTip>
+          <span class="flex flex-col gap-1.5">
+            <span>{{ t('tabsSettings.resumeHint') }}</span>
+            <span
+              class="text-label tracking-caps text-subtle-foreground uppercase"
+              >{{ t('tabsSettings.keptTitle') }}</span
+            >
+            <span
+              v-for="line in kept"
+              :key="line"
+              class="text-caption text-foreground-soft"
+              >{{ t(line) }}</span
+            >
+          </span>
+        </HelpTip>
       </div>
-      <FieldDescription>{{ t('tabsSettings.resumeHint') }}</FieldDescription>
     </Field>
-    <div class="flex flex-col gap-1.5">
-      <span class="text-label tracking-caps text-subtle-foreground uppercase">{{
-        t('tabsSettings.keptTitle')
-      }}</span>
-      <span
-        v-for="line in kept"
-        :key="line"
-        class="text-caption text-foreground-soft"
-        >{{ t(line) }}</span
-      >
-    </div>
   </div>
 </template>

@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/alert'
 import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'
 import { Switch } from '@/components/ui/switch'
+import { HelpTip } from '@/components/ui/tooltip'
 import { computed, onMounted } from 'vue'
 import { autostartFailurePart } from '@/lib/ipc/errorText'
 import { useMessages } from '@/i18n'
@@ -73,8 +74,8 @@ const startFailure = computed(() =>
         <FieldLabel for="background-start">{{
           t('background.startTitle')
         }}</FieldLabel>
+        <HelpTip>{{ t('background.startHint') }}</HelpTip>
       </div>
-      <FieldDescription>{{ t('background.startHint') }}</FieldDescription>
       <FieldDescription v-if="!settings.autostartAvailable">{{
         t('background.startDev')
       }}</FieldDescription>
@@ -94,8 +95,8 @@ const startFailure = computed(() =>
         <FieldLabel for="background-stay">{{
           t('background.stayTitle')
         }}</FieldLabel>
+        <HelpTip>{{ t('background.stayHint') }}</HelpTip>
       </div>
-      <FieldDescription>{{ t('background.stayHint') }}</FieldDescription>
     </Field>
     <!-- "Reopen the tabs" was here until 3.6a and is on the Tabs screen now. It was never this
          screen's subject: the intro had to say "and what you find when you open it again" to

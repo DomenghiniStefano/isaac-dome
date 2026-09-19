@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
+import { HelpTip } from '@/components/ui/tooltip'
 
+// The screen says what it is in its title; what it is *for* is one hover away. The slot is the
+// same one the screens have always passed — the paragraph moved into the tooltip here, so none
+// of the fourteen callers changed. A screen that passes nothing (Placeholder) gets no mark.
 defineProps<{ icon: Component; title: string; eyebrow?: string }>()
 </script>
 
@@ -12,9 +16,7 @@ defineProps<{ icon: Component; title: string; eyebrow?: string }>()
     <div class="flex items-center gap-2.75">
       <component :is="icon" class="size-6 shrink-0 text-foreground-soft" />
       <h1 class="text-title text-foreground">{{ title }}</h1>
+      <HelpTip v-if="$slots.default"><slot /></HelpTip>
     </div>
-    <p v-if="$slots.default" class="max-w-155 text-row text-foreground-soft">
-      <slot />
-    </p>
   </header>
 </template>
