@@ -15,6 +15,11 @@ import TooltipTrigger from './TooltipTrigger.vue'
 //
 // Wider than the default tooltip because what it holds is prose — the Plan's intro is two
 // sentences, and `max-w-xs` would break it into a column.
+//
+// It opens downwards, against the tooltip's own default. All four marks sit at the top of
+// what they explain — the screen's title, the sidebar's section, a switch's label — so
+// upwards is where the chrome is: on the screen header it covered the tab bar, and a tooltip
+// that hides the navigation to explain the page is trading one confusion for another.
 defineProps<{ label?: string }>()
 const { t } = useMessages()
 </script>
@@ -27,6 +32,8 @@ const { t } = useMessages()
     >
       <CircleHelpIcon class="size-3.5" />
     </TooltipTrigger>
-    <TooltipContent class="max-w-110 text-row"><slot /></TooltipContent>
+    <TooltipContent side="bottom" class="max-w-110 text-row"
+      ><slot
+    /></TooltipContent>
   </Tooltip>
 </template>
