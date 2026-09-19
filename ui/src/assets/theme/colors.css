@@ -86,4 +86,13 @@
   --color-challenge: #a855a8;
   --color-challenge-foreground: #dda8dd;
   --color-challenge-surface: #25102a;
+
+  /* The word you are looking for, painted where it sits (B67). It has to win against the
+     row's own background and against the hover, and it must not read as a state: green,
+     gold, brown, grey, red and purple are all taken and mean something about the game. */
+  --color-find-match: #6d5a12;
+  --color-find-match-foreground: #f7edc4;
+  /* The one you are standing on, out of the seventeen that matched. */
+  --color-find-current: #b08900;
+  --color-find-current-foreground: #1a1205;
 }
