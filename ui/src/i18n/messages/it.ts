@@ -4,6 +4,7 @@
 export const it = {
   ui: {
     close: 'Chiudi',
+    explain: 'Cosa vuol dire',
   },
   // The filter bar's own words, shared by every list that has one. They were written once per
   // screen until 3.10, with the same values three times over: that is how two of them end up
