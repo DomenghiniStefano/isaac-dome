@@ -3,6 +3,7 @@ import type { MessageSchema } from './it'
 export const en: MessageSchema = {
   ui: {
     close: 'Close',
+    explain: 'What this means',
   },
   filters: {
     more: 'More filters',
