@@ -68,6 +68,14 @@ watch(
   { immediate: true },
 )
 
+// Moving to a row somebody else picked — today the find bar (B67). It is `scrollToIndex` and
+// never `scrollIntoView`: of 733 rows only the twenty in view are nodes at all, so the node to
+// scroll into does not exist until the virtualizer has been told to make it.
+defineExpose({
+  scrollToIndex: (index: number) =>
+    virtualizer.value.scrollToIndex(index, { align: 'center' }),
+})
+
 // The length travels with the position, because that is what makes the position mean anything.
 const onScroll = useDebounceFn(() => {
   if (scroller.value)

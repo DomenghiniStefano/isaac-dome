@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ChevronDownIcon, ChevronUpIcon, XIcon } from '@lucide/vue'
-import { computed, ref, watch } from 'vue'
+import { computed, watch } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useMessages } from '@/i18n'
@@ -14,13 +14,14 @@ import type { FindRow } from '@/lib/find/matches'
 // The screen brings its rows and nothing else — this component does not know what an item, an
 // achievement or a wiki block is. Where the current match should be scrolled to is the
 // screen's job too: it owns the virtualizer, so it gets an index and calls `scrollToIndex`.
+// The query and the current row are the screen's, not the bar's: the rows have to paint the
+// match themselves, and a row cannot ask a sibling what is being searched.
 const props = defineProps<{ rows: readonly FindRow[] }>()
 const emit = defineEmits<{ move: [index: number]; close: [] }>()
+const typed = defineModel<string>('query', { required: true })
+const current = defineModel<string | null>('current', { required: true })
 
 const { t } = useMessages()
-
-const typed = ref('')
-const current = ref<string | null>(null)
 
 const state = computed(() =>
   findMatches(props.rows, typed.value, current.value),

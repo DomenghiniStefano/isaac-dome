@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { LayersIcon } from '@lucide/vue'
-import { computed, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
+import FindBar from '@/components/find/FindBar.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
+import { useShortcut } from '@/composables/useShortcut'
 import { useTabView } from '@/composables/useTabView'
+import { opensFind } from '@/lib/find/keyboard'
 import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { useMessages } from '@/i18n'
 import { singleQuery } from '@/lib/search/queryParam'
@@ -92,6 +95,40 @@ const rows = computed(() =>
   ),
 )
 
+// Find-in-page (B67). It does not compete with the filter above it, it composes with it: the
+// filter decides which rows exist, and the find walks the ones that are left. That is why the
+// haystack is `rows` and not `items` — searching rows a filter has hidden would scroll to
+// something that is not on the screen.
+const findOpen = ref(false)
+const findQuery = ref('')
+const findCurrent = ref<string | null>(null)
+const table = ref<InstanceType<typeof CollectionTable> | null>(null)
+
+// The key is a string because the bar is not the Collection's: a wiki page and a run do not
+// have numeric ids, and the bar must not learn what kind of thing it is walking.
+const haystack = computed(() =>
+  rows.value.map((item) => ({ key: String(item.id), text: item.name })),
+)
+
+useShortcut((event) => {
+  if (!opensFind(event)) return false
+  findOpen.value = true
+  return true
+})
+
+const closeFind = () => {
+  findOpen.value = false
+  findQuery.value = ''
+  findCurrent.value = null
+}
+
+// The row exists in the model before it exists as a node, so the scroll waits a tick for the
+// virtualizer to have been told the list it is scrolling in.
+const goToMatch = async (index: number) => {
+  await nextTick()
+  table.value?.scrollToIndex(index)
+}
+
 const setPicks = (facet: CollectionFacet, picked: string[]) => {
   filter.value = {
     ...filter.value,
@@ -156,10 +193,22 @@ const reset = () => {
           @update:picks="setPicks"
           @reset="reset"
         />
+        <FindBar
+          v-if="findOpen"
+          v-model:query="findQuery"
+          v-model:current="findCurrent"
+          :rows="haystack"
+          class="px-4 py-2"
+          @move="goToMatch"
+          @close="closeFind"
+        />
         <CollectionTable
           v-if="rows.length > 0"
+          ref="table"
           :items="rows"
           :offset="reading.offset"
+          :find-query="findOpen ? findQuery : ''"
+          :find-current="findCurrent"
           @offset-change="setOffset"
         />
         <div v-else class="flex flex-col items-start gap-3 p-4">
