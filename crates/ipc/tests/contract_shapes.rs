@@ -21,7 +21,10 @@ fn a_serde_rename_is_read_and_not_guessed() {
 }
 
 #[test]
-fn a_transparent_newtype_is_its_inner_type() {
+fn a_one_field_newtype_is_its_inner_type() {
+    // It used to be called `a_transparent_newtype_…`, after a `#[serde(transparent)]`
+    // ts-rs never read: the declaration comes from the shape of the struct, not from
+    // the attribute, which is why removing the attribute left this line untouched.
     assert_eq!(<ipc::GoalId as TS>::decl(&cfg()), "type GoalId = string;");
 }
 

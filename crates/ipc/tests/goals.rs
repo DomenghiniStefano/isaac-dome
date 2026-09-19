@@ -164,6 +164,32 @@ fn fresh_goal_ids_are_distinct_and_opaque() {
     assert!(a.as_str().len() >= 16);
 }
 
+/// The id crosses the IPC as a bare string — `type GoalId = string` on the TypeScript
+/// side — and nothing else: no wrapper object, no array of one. Pinned *before* the
+/// type is touched, so it says what must not move instead of photographing what comes
+/// out. (`store` writes the column through `as_str()`, not through serde: this is the
+/// wire, not the database.)
+#[test]
+fn a_goal_id_is_a_bare_json_string_in_both_directions() {
+    let id = GoalId::from_str_unchecked("g1");
+    assert_eq!(serde_json::to_string(&id).unwrap(), r#""g1""#);
+    assert_eq!(serde_json::to_value(&id).unwrap(), serde_json::json!("g1"));
+    let back: GoalId = serde_json::from_str(r#""g1""#).unwrap();
+    assert_eq!(back, id);
+
+    // The control: an instrument that can't say "no" proves nothing. One field, same
+    // type, not a newtype — serde writes an object, so the assertions above are about
+    // the shape and not about any JSON whatsoever.
+    #[derive(serde::Serialize)]
+    struct OneNamedField {
+        id: String,
+    }
+    assert_eq!(
+        serde_json::to_value(OneNamedField { id: "g1".into() }).unwrap(),
+        serde_json::json!({ "id": "g1" })
+    );
+}
+
 // --- target_exists ---------------------------------------------------------------
 
 fn item(item_kind: ItemKindView, id: u32) -> TargetKey {
