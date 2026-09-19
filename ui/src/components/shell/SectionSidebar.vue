@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { HelpTip } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import { EventKey } from '@/lib/constants/eventKeys'
 import { currentFactor } from '@/lib/scale/apply'
@@ -58,17 +59,15 @@ const onKeydown = (e: KeyboardEvent) => {
     class="flex w-(--sidebar-width) shrink-0 border border-secondary bg-data"
   >
     <div class="flex min-w-0 flex-1 flex-col">
-      <div class="flex items-center gap-2 px-2.75 pt-2.5 pb-1.5">
+      <div class="flex items-center gap-2 px-2.75 pt-2.5 pb-2.25">
         <span class="text-highlight [&_svg]:size-3.5"
           ><slot name="icon"
         /></span>
         <span class="text-caption tracking-caps text-foreground uppercase">{{
           title
         }}</span>
+        <HelpTip v-if="hint">{{ hint }}</HelpTip>
       </div>
-      <p v-if="hint" class="px-2.75 pb-2.25 text-label text-faint-foreground">
-        {{ hint }}
-      </p>
       <slot />
     </div>
     <div
