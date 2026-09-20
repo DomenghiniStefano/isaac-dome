@@ -120,23 +120,20 @@ export const it = {
   floor: {
     intro:
       'Disegna la mappa del piano come la vedi sulla minimappa: le celle vuote si accendono dove le regole del gioco permettono una stanza segreta. Ogni cella accesa dice quale regola l’ha accesa e da dove è stata letta.',
-    erase: 'Cancella',
-    rub: 'il tasto destro cancella',
+    erase: 'Gomma',
     clear: 'Svuota la griglia',
-    painted: 'stanze disegnate',
+    clearConfirm: {
+      title: 'Svuotare la griglia?',
+      body: 'Il piano che hai disegnato sparisce e non si può recuperare.',
+      cancel: 'Annulla',
+      confirm: 'Svuota',
+    },
     neighbours: 'stanze adiacenti',
     empty: 'vuota',
     cell: 'Riga {row}, colonna {column}: {room}',
     at: 'Riga {row}, colonna {column}',
-    scaleStops:
-      'Il terzo gradino è dove la scala si ferma. Le regole mettono i candidati in ordine, non dicono mai quanto il quarto sia meno probabile del terzo: la sfumatura nemmeno.',
-    cornerFree:
-      'L’angolo in basso a destra resta libero di proposito: lì non si nasconde niente.',
-    step: {
-      first: 'primo candidato',
-      second: 'secondo',
-      third: 'terzo, e tutti quelli dopo',
-    },
+    brush: 'Stanza scelta',
+    wiki: 'Wiki',
     source: 'Fonte',
     unresolved: 'Quello che la griglia non può giudicare',
     none: 'Nessuna cella permessa dalle regole, con quello che hai disegnato finora.',

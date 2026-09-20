@@ -116,23 +116,20 @@ export const en: MessageSchema = {
   floor: {
     intro:
       'Draw the floor the way you see it on the minimap: empty cells light up where the game’s own rules allow a secret room. Every lit cell says which rule lit it and where that rule was read.',
-    erase: 'Erase',
-    rub: 'right-click rubs out',
+    erase: 'Eraser',
     clear: 'Clear the grid',
-    painted: 'rooms drawn',
+    clearConfirm: {
+      title: 'Clear the grid?',
+      body: 'The floor you drew goes, and it cannot be brought back.',
+      cancel: 'Cancel',
+      confirm: 'Clear',
+    },
     neighbours: 'adjacent rooms',
     empty: 'empty',
     cell: 'Row {row}, column {column}: {room}',
     at: 'Row {row}, column {column}',
-    scaleStops:
-      'The third step is where the scale stops. The rules put the candidates in order; they never say how much less likely the fourth is than the third, so neither does the shading.',
-    cornerFree:
-      'The bottom-right corner is left free on purpose: nothing is hidden there.',
-    step: {
-      first: 'first candidate',
-      second: 'second',
-      third: 'third, and every one after it',
-    },
+    brush: 'Chosen room',
+    wiki: 'Wiki',
     source: 'Source',
     unresolved: 'What the grid cannot judge',
     none: 'No cell the rules allow, with what you have drawn so far.',

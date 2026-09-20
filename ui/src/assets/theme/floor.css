@@ -3,30 +3,76 @@
 
    Two notes on names. Dimensions are `--spacing-*`, because this repo has no `--size-*`
    family and a second name for one idea is the thing the cleanup pass spent itself on. And
-   there is no `--color-chart-*` here to lean on, so the three ranks get a family of their
-   own below. */
+   there is no `--color-chart-*` here to lean on, so both families below are this screen's
+   own. */
 @theme {
   /* A cell of the 13x13 grid, and the hairline between two of them. In rem against the 16px
      base like every other dimension, so the grid grows with the interface's scale. */
   --spacing-floor-cell: 2rem;
   --spacing-floor-gap: 0.125rem;
 
-  /* An unpainted cell, and a painted one. Both borrow an existing surface on purpose: the
-     grid is furniture, and only the lit cells are an answer. */
+  /* The drawing inside a cell, and the pip a rule puts in one of its corners. Both are
+     fractions of the cell above and move with it. */
+  --spacing-floor-symbol: 1.0625rem;
+  --spacing-floor-pip: 0.8125rem;
+
+  /* An unpainted cell: the grid is furniture, and only what you drew is an answer. */
   --color-floor-empty: var(--color-muted);
-  --color-floor-room: var(--color-card);
 
-  /* The three ranks a candidate can carry, as one hue in three steps. A ranking is a
-     sequence, so it is drawn as one — and it is deliberately **none of the state colours**:
-     green, gold, brown, grey, red and purple are the brief's and mean done / unlockable now /
-     blocked / unreadable / unexpected / challenge, none of which is "the rule allows a secret
-     room here". Blue is otherwise unspoken for in this palette; the one cyan (--color-ring)
-     is a 1px focus outline, never a fill.
+  /* The fourteen room kinds, each with the ink its fill can carry.
 
-     Not yet seen in a real window: this is a new family, and the design pass that confirms
-     or replaces it needs a screen, not a token file. */
-  --color-floor-candidate-first: #3d82c4;
-  --color-floor-candidate-second: #2b5a86;
-  --color-floor-candidate-third: #22405c;
-  --color-floor-candidate-foreground: #e8f1f8;
+     These are **not** the app's state colours, and the collision is only apparent: this
+     screen paints no state at all — nothing on it is done, unlockable, blocked or
+     unreadable — so red here means Boss and gold means Treasure, which is what the game
+     itself has meant by them for fifteen years. The alternative was fourteen hues invented
+     to avoid six, on the one screen where the player already knows the answer by heart.
+
+     Not yet seen in a real window: it is a new family, and the pass that confirms or
+     replaces it needs a screen, not a token file. */
+  --color-floor-room-normal: #cfc4b0;
+  --color-floor-room-normal-foreground: #3a2f22;
+  --color-floor-room-start: #cfc4b0;
+  --color-floor-room-start-foreground: #3a2f22;
+  --color-floor-room-boss: #b0443a;
+  --color-floor-room-boss-foreground: #ffe9e4;
+  --color-floor-room-miniboss: #8f5248;
+  --color-floor-room-miniboss-foreground: #ffe9e4;
+  --color-floor-room-treasure: #d9a63c;
+  --color-floor-room-treasure-foreground: #3a2a08;
+  --color-floor-room-shop: #b98a46;
+  --color-floor-room-shop-foreground: #3a2a08;
+  --color-floor-room-arcade: #c98f2e;
+  --color-floor-room-arcade-foreground: #3a2a08;
+  --color-floor-room-library: #7d95b4;
+  --color-floor-room-library-foreground: #16202c;
+  --color-floor-room-curse: #6a4a6e;
+  --color-floor-room-curse-foreground: #f0e4f2;
+  --color-floor-room-challenge: #8a6acb;
+  --color-floor-room-challenge-foreground: #120c22;
+  --color-floor-room-sacrifice: #8e3340;
+  --color-floor-room-sacrifice-foreground: #ffe4e8;
+  --color-floor-room-secret: #8a7d6b;
+  --color-floor-room-secret-foreground: #241c12;
+  --color-floor-room-super-secret: #6f6455;
+  --color-floor-room-super-secret-foreground: #f0ead8;
+  --color-floor-room-ultra-secret: #55503f;
+  --color-floor-room-ultra-secret-foreground: #f0ead8;
+
+  /* The pips: one hue per target, three steps down it for the first three ranks. A ranking is
+     a sequence, so it is drawn as one — and the step stops at the third because the rules
+     order candidates without ever saying how much less likely the fourth is than the third.
+
+     The steps are three colours and not one colour at three opacities: a pip sits on top of
+     whichever room you painted, and a translucent one would take the hue of the floor under
+     it — the same rank reading teal over the Treasure Room and green over the Library. */
+  --color-floor-pip-secret-first: #3d82c4;
+  --color-floor-pip-secret-second: #2b5a86;
+  --color-floor-pip-secret-third: #22405c;
+  --color-floor-pip-super-first: #2a8f80;
+  --color-floor-pip-super-second: #1e6459;
+  --color-floor-pip-super-third: #17463e;
+  --color-floor-pip-ultra-first: #b0568f;
+  --color-floor-pip-ultra-second: #7d3c65;
+  --color-floor-pip-ultra-third: #5a2b49;
+  --color-floor-pip-foreground: #f4eef2;
 }
