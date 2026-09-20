@@ -129,6 +129,20 @@ pub fn set_stay_in_background(app: AppHandle, stay: bool) -> Result<Settings, Ip
     Ok(settings)
 }
 
+/// Whether the app asks GitHub for a newer version when it starts.
+///
+/// **Turning it off stops the request, not a notice**: the launch reads this before it spawns
+/// anything, so with it off nothing leaves the machine unless somebody presses the button on
+/// the Updates screen. Turning it on does not check now — the button is there for that, and a
+/// switch that also acted would be two things on one control.
+#[tauri::command]
+pub fn set_auto_update(app: AppHandle, on: bool) -> Result<Settings, IpcError> {
+    let settings = settings_file::load(&app).with_auto_update(on);
+    settings_file::save(&app, &settings)?;
+    announce(&app, SETTINGS_CHANGED);
+    Ok(settings)
+}
+
 /// Whether a window born with nothing owed to it opens on the last session's tabs.
 ///
 /// Turning it off clears what was stored: the app should not keep a record the user has just

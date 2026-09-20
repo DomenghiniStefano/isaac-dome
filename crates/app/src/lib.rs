@@ -8,7 +8,9 @@ mod settings_file;
 mod state;
 mod tray;
 mod window;
-use crate::commands::{completion, floor, graph, plan, profile, queue, roll, runs, session, wiki};
+use crate::commands::{
+    completion, floor, graph, plan, profile, queue, roll, runs, session, update, wiki,
+};
 use crate::icons::icon_bytes;
 use crate::state::{
     AllPassive, ArchiveState, CatalogState, GraphState, MarkFramesState, ResourcesState, SaveState,
@@ -43,6 +45,7 @@ pub fn run() {
         .manage(SearchState::default())
         .manage(SaveState::default())
         .manage(ArchiveState::default())
+        .manage(update::UpdaterState::default())
         // Icons don't travel inside the payloads any more: rows carry a link, and this
         // serves it. Asynchronous on purpose — a grid asks for a hundred at once, and each
         // one reads from an archive; on the main thread they would queue up behind the
@@ -79,6 +82,14 @@ pub fn run() {
             .build(),
     );
 
+    // **Not in a development build either**, and for a sharper reason than autostart's: an
+    // installer run from here replaces the build you are working on with a release, silently.
+    // The condition is mirrored by `update::UPDATER_BUILD`, which is what the commands read —
+    // the plugin's own state type is private, so there is no `try_state` to ask, and the two
+    // have to say the same thing or `app.updater()` panics on a state nobody managed.
+    #[cfg(not(debug_assertions))]
+    let builder = builder.plugin(tauri_plugin_updater::Builder::new().build());
+
     builder
         .invoke_handler(tauri::generate_handler![
             profile::setup_state,
@@ -89,6 +100,7 @@ pub fn run() {
             profile::set_scale,
             profile::set_stay_in_background,
             profile::set_resume_tabs,
+            profile::set_auto_update,
             profile::autostart,
             profile::set_autostart,
             session::window_session,
@@ -116,7 +128,10 @@ pub fn run() {
             plan::remove_goal,
             runs::runs,
             runs::live,
-            floor::floor_candidates
+            floor::floor_candidates,
+            update::update_status,
+            update::check_update,
+            update::install_update
         ])
         // The first window is built here, not by the config: one recipe, and the same call
         // the tray and a second launch make.
@@ -134,6 +149,9 @@ pub fn run() {
             // **Always**, whichever way the app was started. It is the feature: the login entry
             // exists so the archive is following the log before the game is.
             start_archive(app.handle().clone());
+            // After the archive, and only if the switch is on. With it off this spawns nothing
+            // at all: the setting is about the request, not about a notice.
+            update::check_at_launch(app.handle());
             Ok(())
         })
         .build(tauri::generate_context!())
