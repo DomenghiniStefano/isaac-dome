@@ -283,7 +283,11 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
             <ProfileIndicator :view="indicatorView" @open="profile.pick()" />
           </template>
         </NavBar>
-        <div class="flex min-h-0 flex-1">
+        <!-- The `shell` container is the window's width, and stays the window's width when the
+             sidebar collapses inside it — which is why the sidebar's threshold hangs here and not
+             on `page`, where a collapse would widen the content, re-cross the threshold and
+             oscillate (spec 3.13a §6). -->
+        <div class="@container/shell flex min-h-0 flex-1">
           <SectionSidebar
             v-model:width="sidebarWidth"
             :title="t(header.title)"
@@ -301,7 +305,14 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
               {{ t(entry.label) }}
             </SidebarItem>
           </SectionSidebar>
-          <main class="min-w-0 flex-1 overflow-auto px-5.5 pt-5 pb-15">
+          <!-- The page box (spec 3.13a §4): it scrolls nothing and carries the horizontal padding
+               only. The vertical padding is the screen's, because on a screen that fills its
+               height a bottom padding here would be sixty pixels of nothing under a list that
+               could have used them. It is also the `page` container every threshold is measured
+               against. -->
+          <main
+            class="@container/page min-h-0 min-w-0 flex-1 overflow-hidden px-5.5"
+          >
             <RouterView v-slot="{ Component, route }">
               <ProgressGate v-if="route.meta.needsProfile">
                 <component :is="Component" />
