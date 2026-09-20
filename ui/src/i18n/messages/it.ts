@@ -119,7 +119,7 @@ export const it = {
   },
   floor: {
     intro:
-      'Disegna la mappa del piano come la vedi sulla minimappa: le celle vuote si accendono dove le regole del gioco permettono una stanza segreta. Ogni cella accesa dice quale regola l’ha accesa e da dove è stata letta.',
+      'Disegna la mappa del piano come la vedi sulla minimappa: le celle vuote si accendono dove le regole del gioco permettono una stanza segreta, super segreta o ultra segreta.',
     erase: 'Gomma',
     clear: 'Svuota la griglia',
     clearConfirm: {
@@ -133,8 +133,6 @@ export const it = {
     cell: 'Riga {row}, colonna {column}: {room}',
     at: 'Riga {row}, colonna {column}',
     brush: 'Stanza scelta',
-    wiki: 'Wiki',
-    source: 'Fonte',
     unresolved: 'Quello che la griglia non può giudicare',
     none: 'Nessuna cella permessa dalle regole, con quello che hai disegnato finora.',
     failed:
