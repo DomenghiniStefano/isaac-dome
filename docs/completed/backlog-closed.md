@@ -2078,3 +2078,106 @@ strip resolve through the catalog, so they skip on a machine without an install:
 profile *looks like* on those screens is unasserted here and is a `the game` job. The sample is
 `rep_`, an era behind; whether a Repentance+ install writes the same empty shape is one file from
 anyone with the game and an unused slot.
+
+---
+
+## B68 — The Ultra Secret finder answers nothing, on every grid there is (bug, `floor`) ✅ closed on 2026-09-20, opened and closed the same day
+
+**Needs:** nothing — the wikitext was already read on 2026-09-15, and re-read on 2026-09-20 at the
+same 39,230 bytes.
+
+`crates/floor/rules/placement.json` gave the `ultraSecret` target **one** rule, and its constraint
+was `unmodelled`. `floor::solve` turns an `Unmodelled` into an `Unresolved` and never proposes a
+cell for one, so the screen's Ultra tab read **0 on any grid**, painted or empty, by construction
+— and a test pinned it that way.
+
+The reasoning is in `docs/superpowers/reports/2026-09-15-secret-room-rules.md` §3: *"a red room is
+the Red Key mechanic, created by an item during the run. The grid paints rooms that exist; it does
+not paint rooms an item could create."* True about red rooms, and not about the rule: the rule is
+about the **sides where one could open**, and such a side is an **empty cell**, which is the thing
+a painted minimap knows best. Two hops is a distance; it was read as an obstacle.
+
+Dismissing the hard sentence took the easy one with it. *"Ultra Secret Rooms are special rooms
+that are not connected to any other room on the map directly"* is the first line of that wiki
+section, it is a plain adjacency test on painted cells, and it appears in neither §2 nor §3 of the
+report. **A paragraph judged whole is a paragraph half-read** — the rule of sourcing it sentence
+by sentence is what this entry costs.
+
+### How it was found, and why nothing else could have
+
+The owner put the screen beside https://tboisecretroomfinder.com on **2026-09-20** — a page that
+answers the same question from the same painted grid, with its logic inline
+(`isValidUltraPosition`, `countUltraConnections`), and lights cells where ours lit none.
+
+Nothing in the suite could have said it. A target that answers nothing looks exactly like a target
+answering, correctly, that there is nowhere — which is the same shape as the `unpack` tests that
+all ran on `config.a`: green, and measuring a slice nobody named. The instrument has to be shown
+able to speak before its silence is evidence, and for this one it never was.
+
+### What was done
+
+Five rules replace the one, each with its own sentence, and three new constraints in
+`floor::Constraint` — `redRoomConnections` (with an `atMost` that is `null` for the "3+" band,
+because the page states no ceiling), `redRoomForbiddenNeighbour` and `noPaintedNeighbour`. The
+whole correction, including the one band that is deliberately **not** a fallback the way
+`secret-neighbours-one` is, is §6 of the rules report.
+
+Nothing crosses the IPC differently: `Constraint` lives inside `floor`, and a candidate still
+leaves as `cell` / `neighbours` / `rank` / `applied`.
+
+### What is still unmodelled, and stays so
+
+The four conditions about a room's **shape** — *"different squares in L rooms count as 2"*,
+*"next to the sides of narrow rooms"*, *"any room that can't have a red room opened on that
+specific side"*. `floor::Shape` has one variant by the spec's decision 4, so every room on this
+grid is one square and none of those can be drawn, let alone judged. They keep the target's
+`Unmodelled` seat as `ultra-secret-shapes`, and reach the screen under *"What the grid cannot
+judge"*.
+
+### Closes when
+
+- [x] The Ultra target proposes cells, with the three bands the wiki ranks.
+- [x] Each lit cell cites its sentences, and the shape rule still says it cannot be judged.
+- [x] §3 of the rules report carries the correction rather than losing the wrong reasoning.
+- [x] **NEEDS WINDOW** — the Ultra tab looked at in a real window against the reference site, on a
+      floor painted from a real run. Ticked by the owner on 2026-09-20; until that morning the
+      three fill levels had never been seen with anything in them for this target.
+
+
+### How it closed
+
+`ef3c2d5` (the crate), `c45cdd7` (the record), merged into `develop` with `e4b8bad` along with
+the rest of `feature/floor-grid`. `pnpm check` green **on the merge** and not only on the branch:
+Rust 1160, UI 741.
+
+**The last box was ticked by the owner on the same day**, at a window. That is the one thing this
+entry could not close by itself, and it is worth saying why: the defect was invisible to every
+gate there is. A target that proposes nothing produces an empty list, and an empty list is what a
+correct answer looks like on a floor with nowhere to put a secret room. The suite was green for
+five days across it. What found it was a person putting our screen beside somebody else's.
+
+### What it measured
+
+- **300 random grids, our solver against the reference site's algorithm ported to JS: 300/300
+  identical**, cell for cell and band for band. Not two silences agreeing — 4741 candidates in
+  all, **231 / 999 / 3511** across the three bands.
+- **Those 3511 are 74% of the candidates**, which is what made the window check worth writing:
+  the 1-room band is the one deliberately *not* suppressed by a better cell, so it is the one
+  that could have turned the map into noise. The window says it does not. **Nobody counted the
+  bands on a painted floor**, so that is an observation and not a measurement, and if the grid
+  ever does read as noise the rank is still right and the drawing is what changes.
+- **The page was re-read at 39,230 bytes**, byte-for-byte what §1 of the rules report records for
+  2026-09-15. The wiki had not changed; the reading had been wrong.
+
+### What it left behind, beyond the code
+
+Two rules that are not about this screen at all:
+
+- **A paragraph judged whole is a paragraph half-read.** Dismissing the hard sentence took the
+  easy one with it — *"not connected to any other room on the map directly"* is the first line of
+  that wiki section, is a plain adjacency test, and appeared in neither §2 nor §3 because the
+  paragraph had been decided on as a unit. Source a paragraph sentence by sentence.
+- **A floor written as an absolute number conflicts on merge; a delta does not.** `scripts/test-floor`
+  was the only conflict of the merge, and it conflicted because two branches described the same
+  day as `1130 → 1115` and as `−15` — the same event measured from different bases. The five
+  entries of 2026-09-20 are deltas now, and the file says why.
