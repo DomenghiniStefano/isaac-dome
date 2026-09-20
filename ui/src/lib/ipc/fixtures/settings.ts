@@ -9,12 +9,14 @@ import { AutostartFailure, AutostartReason } from '../types'
 let scale = DefaultScale
 let stayInBackground = true
 let resumeTabs = true
+let autoUpdate = true
 let session: string | null = null
 
 export const resetSettingsFixture = (): void => {
   scale = DefaultScale
   stayInBackground = true
   resumeTabs = true
+  autoUpdate = true
   session = null
   autostart = null
 }
@@ -25,6 +27,7 @@ export const settingsAnswer = (): Settings => ({
   stayInBackground,
   resumeTabs,
   backgroundNoticeShown: false,
+  autoUpdate,
 })
 
 // The backend snaps before it writes, so the fixture does too: what comes back is always a

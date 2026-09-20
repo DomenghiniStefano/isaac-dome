@@ -1015,5 +1015,6 @@ export const en: MessageSchema = {
     wikiUnavailable: "The wiki dataset isn't available.",
     sessionTooLarge: 'The tab session is too large to be saved.',
     autostartNotWritable: 'Windows did not accept the start-at-login entry.',
+    updateNotReady: 'There is no downloaded update to install.',
   },
 }

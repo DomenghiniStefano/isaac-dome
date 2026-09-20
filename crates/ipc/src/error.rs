@@ -46,4 +46,12 @@ pub enum IpcError {
     AutostartNotWritable {
         reason: AutostartFailure,
     },
+    /// Install was asked for while there are no verified bytes to install.
+    ///
+    /// **The one case here that is a frontend defect and not a thing that happened to the
+    /// user**: the button only exists in `Ready`, so reaching this means a window acted on a
+    /// phase it no longer had. It is an `Err` for that reason — everything the user can
+    /// actually run into, an endpoint that will not answer included, travels in the payload as
+    /// a phase.
+    UpdateNotReady,
 }

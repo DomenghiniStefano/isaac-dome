@@ -1035,6 +1035,7 @@ export const it = {
       'La sessione delle tab è troppo grande per essere salvata.',
     autostartNotWritable:
       "Windows non ha accettato la voce di avvio all'accesso.",
+    updateNotReady: "Non c'è nessun aggiornamento scaricato da installare.",
   },
 }
 
