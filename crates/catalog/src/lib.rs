@@ -12,6 +12,7 @@ mod ids;
 mod itempools;
 mod items;
 mod metadata;
+mod minimap;
 mod origin;
 mod players;
 mod reward;

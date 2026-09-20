@@ -7,7 +7,11 @@ import { CELLS, START, WIDTH } from '@/lib/floor/painting'
 import type { PaintedCells } from '@/lib/floor/painting'
 import { cornerAt, pipFill } from '@/lib/floor/pips'
 import { roomFill } from '@/lib/floor/rooms'
-import type { FloorSolutionView, TargetView } from '@/lib/ipc/types'
+import type {
+  FloorSolutionView,
+  RoomKindView,
+  TargetView,
+} from '@/lib/ipc/types'
 import RoomSymbol from './RoomSymbol.vue'
 
 // The grid says two things at once, and keeping them apart is the whole design: the **fill and
@@ -19,6 +23,7 @@ const props = defineProps<{
   cells: PaintedCells
   solutions: FloorSolutionView[]
   shown: TargetView[]
+  icons: Map<RoomKindView, string>
 }>()
 const emit = defineEmits<{ stroke: [path: number[]]; erase: [cell: number] }>()
 const { t } = useMessages()
@@ -100,7 +105,11 @@ const rub = (cell: number): void => {
       @pointerenter="over(i)"
       @contextmenu.prevent="rub(i)"
     >
-      <RoomSymbol v-if="cells[i]" :kind="cells[i]!" />
+      <RoomSymbol
+        v-if="cells[i]"
+        :kind="cells[i]!"
+        :url="icons.get(cells[i]!) ?? null"
+      />
       <span
         v-for="pip in pips[i]"
         :key="pip.target"

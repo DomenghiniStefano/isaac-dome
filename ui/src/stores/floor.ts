@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, shallowRef } from 'vue'
-import { floorCandidates } from '@/lib/ipc/floor'
+import { floorCandidates, roomIcons } from '@/lib/ipc/floor'
 import { toggled } from '@/lib/floor/cellView'
 import {
   emptyCells,
@@ -17,6 +17,24 @@ export const useFloorStore = defineStore(StoreId.Floor, () => {
   const brush = ref<RoomKindView | null>(null)
   const view = shallowRef<FloorView | null>(null)
   const failed = ref(false)
+
+  // The game's own picture per room kind, asked once. Empty until it answers and empty for
+  // good on a machine without the game: the grid draws its own symbols either way, so there
+  // is nothing here to wait for and nothing to report when it stays empty.
+  const icons = ref<Map<RoomKindView, string>>(new Map())
+
+  const loadIcons = async (): Promise<void> => {
+    try {
+      const rows = await roomIcons()
+      icons.value = new Map(
+        rows
+          .filter((row) => row.iconUrl !== null)
+          .map((row) => [row.kind, row.iconUrl as string]),
+      )
+    } catch {
+      icons.value = new Map()
+    }
+  }
 
   // All three on to begin with: the fixed corners are what lets them be read together, and a
   // screen that opens with two of them hidden would teach that they cannot be.
@@ -63,6 +81,8 @@ export const useFloorStore = defineStore(StoreId.Floor, () => {
     view,
     failed,
     shown,
+    icons,
+    loadIcons,
     stroke,
     erase,
     clear,

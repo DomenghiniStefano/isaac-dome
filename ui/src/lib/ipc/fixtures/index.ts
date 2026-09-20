@@ -210,6 +210,9 @@ const handlers: Partial<Record<CommandName, Handler>> = {
   // The floor reads no profile: it answers the drawing, whatever the save is doing.
   [Command.FloorCandidates]: (args) =>
     floorAnswer(currentFloorScenario(), args),
+  // No game in a browser, so no picture: the grid draws its own symbols, which is exactly
+  // what it does at a stranger's house without the game installed.
+  [Command.RoomIcons]: async () => (await import('./floor')).roomIconsAnswer(),
   [Command.GraphViews]: (_args, scenario) =>
     whenActive(scenario, async () => await graph()),
   [Command.Want]: (args, scenario) =>

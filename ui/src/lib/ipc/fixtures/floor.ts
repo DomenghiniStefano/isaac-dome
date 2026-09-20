@@ -1,5 +1,6 @@
 import type { CommandArgs } from '../transport'
-import type { FloorView, RoomKindView } from '../types'
+import { RoomKindView } from '../types'
+import type { FloorView, RoomIconView } from '../types'
 
 // `?floor=empty` answers an untouched grid; absent, the fixture solves whatever the screen
 // sends, the way the backend does — with one rule, so the development server can draw the
@@ -57,3 +58,9 @@ export const floorAnswer = (
     diagnostics: [],
   }
 }
+
+// The fourteen kinds with no picture at all. A browser has no game to crop one from, and that
+// is the case worth having in front of us by default: it is what a machine without the game
+// shows, and the screen has to be complete without a single icon.
+export const roomIconsAnswer = (): RoomIconView[] =>
+  Object.values(RoomKindView).map((kind) => ({ kind, iconUrl: null }))

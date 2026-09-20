@@ -49,8 +49,8 @@ pub use collection::{
 };
 pub use error::IpcError;
 pub use floor::{
-    floor_view, AppliedRule, FloorCandidate, FloorDiagnostic, FloorSolutionView, FloorUnresolved,
-    FloorView, RoomKindView, TargetView,
+    floor_view, room_icons, AppliedRule, FloorCandidate, FloorDiagnostic, FloorSolutionView,
+    FloorUnresolved, FloorView, RoomIconView, RoomKindView, TargetView,
 };
 pub use goals::{target_exists, Goal, GoalId, TargetKey, UnlockTarget};
 pub use graph::{
