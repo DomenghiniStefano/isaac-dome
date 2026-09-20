@@ -35,7 +35,14 @@ if (-not $plain) {
     exit 1
 }
 
-$env:TAURI_SIGNING_PRIVATE_KEY_PATH = $key
+# **`TAURI_SIGNING_PRIVATE_KEY`, and the key's contents.** Measured on 2026-09-20: setting
+# `TAURI_SIGNING_PRIVATE_KEY_PATH` alone builds both installers and then fails with "A public key
+# has been found, but no private key. Make sure to set `TAURI_SIGNING_PRIVATE_KEY`". That
+# variable is the one the bundler reads; `_PATH` is named in the `signer` subcommand's help and
+# is not a substitute for it. The contents rather than the path because that is what the
+# variable is named for -- the documentation says it takes either, and there is nothing to gain
+# from taking the ambiguous half of that sentence twice in one day.
+$env:TAURI_SIGNING_PRIVATE_KEY = (Get-Content $key -Raw).Trim()
 $env:TAURI_SIGNING_PRIVATE_KEY_PASSWORD = $plain
 
 try {
@@ -51,9 +58,10 @@ try {
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 }
 finally {
-    # **Always**, including on a failed build and on Ctrl-C: the password does not outlive the
-    # command that needed it.
+    # **Always**, including on a failed build and on Ctrl-C: neither the password nor the key
+    # itself outlives the command that needed them.
     $env:TAURI_SIGNING_PRIVATE_KEY_PASSWORD = $null
+    $env:TAURI_SIGNING_PRIVATE_KEY = $null
     $plain = $null
     $secure = $null
     [System.GC]::Collect()
