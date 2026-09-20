@@ -31,7 +31,7 @@
 # guarded `packIconUrl` against the game's sprites coming back. That last guard is not lost,
 # it moved and got wider: `scripts/check-no-game-assets.mjs` fails on any tracked picture, not
 # just on one the design pack would have carried.
-RUST_TESTS=1150
+RUST_TESTS=1158
 UI_TESTS=741
 #
 # **Lowered again on 2026-09-20**, UI 738 → 733, and this is the deliberate line for it. Five
@@ -44,3 +44,9 @@ UI_TESTS=741
 # whole drawing one cell under the grid. Seven of them are about the one thing that function
 # has to get right — refusing rather than dropping a room over the edge — because there is no
 # undo on that screen.
+#
+# **Raised on 2026-09-20**, Rust 1150 → 1158: the eight tests of B68, which gave the Ultra
+# Secret target something to answer. Seven are in `crates/floor/tests/solve.rs` and one in
+# `rules.rs`; all eight were written after the code, so all eight were shown red by mutating
+# the three new constraints in turn — the dedup in `reached_rooms`, `noPaintedNeighbour` and
+# `redRoomForbiddenNeighbour` — rather than by being written first.
