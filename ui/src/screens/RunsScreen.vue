@@ -96,7 +96,7 @@ const select = (run: RunView) => {
 </script>
 
 <template>
-  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15">
+  <div class="flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5">
     <ScreenHeader :icon="PlayIcon" :title="t('routes.runs')">{{
       t('runs.intro')
     }}</ScreenHeader>
@@ -127,7 +127,7 @@ const select = (run: RunView) => {
           :label="t('runs.totals.abandoned')"
         />
       </div>
-      <Card>
+      <Card class="min-h-0 flex-1">
         <FilterBar
           :shown="rows.length"
           :total="all.length"
