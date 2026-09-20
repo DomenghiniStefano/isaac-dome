@@ -54,19 +54,26 @@ const onKeydown = (e: KeyboardEvent) => {
 <template>
   <!-- One sidebar, its content decided by the section (Chrome e Stati.dc.html, "Sidebar di
        sezione"). The width travels as a CSS variable bound here, never an inline pixel. -->
+  <!-- Collapsed to its icons when the shell is too narrow for it, or when somebody asked for it
+       (spec 3.13a §6). The inline style above sets the *variable*, never the width, so a variant
+       class wins by ordinary cascade — which is what lets the collapse be pure CSS, and lets the
+       button's own card write `data-sidebar="collapsed"` and touch nothing else. -->
   <aside
     :style="widthVariable"
-    class="flex w-(--sidebar-width) shrink-0 border border-secondary bg-data"
+    class="flex w-(--sidebar-width) shrink-0 border border-secondary bg-data @max-compact/shell:w-sidebar-icons group-data-[sidebar=collapsed]/shell:w-sidebar-icons"
   >
     <div class="flex min-w-0 flex-1 flex-col">
-      <div class="flex items-center gap-2 px-2.75 pt-2.5 pb-2.25">
+      <div
+        class="flex items-center gap-2 px-2.75 pt-2.5 pb-2.25 sidebar-collapsed-center"
+      >
         <span class="text-highlight [&_svg]:size-3.5"
           ><slot name="icon"
         /></span>
-        <span class="text-caption tracking-caps text-foreground uppercase">{{
-          title
-        }}</span>
-        <HelpTip v-if="hint">{{ hint }}</HelpTip>
+        <span
+          class="sidebar-collapsed-hidden text-caption tracking-caps text-foreground uppercase"
+          >{{ title }}</span
+        >
+        <HelpTip v-if="hint" class="sidebar-collapsed-hidden">{{ hint }}</HelpTip>
       </div>
       <slot />
     </div>
@@ -79,7 +86,7 @@ const onKeydown = (e: KeyboardEvent) => {
       :aria-valuemax="SidebarWidth.Max"
       :aria-valuenow="width"
       :data-resizing="resizing !== null"
-      class="w-1.25 shrink-0 cursor-col-resize hover:bg-input data-[resizing=true]:bg-input"
+      class="sidebar-collapsed-hidden w-1.25 shrink-0 cursor-col-resize hover:bg-input data-[resizing=true]:bg-input"
       @pointerdown="onPointerDown"
       @pointermove="onPointerMove"
       @pointerup="onPointerUp"
