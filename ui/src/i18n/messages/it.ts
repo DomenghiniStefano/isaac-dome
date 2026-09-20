@@ -146,6 +146,11 @@ export const it = {
       superSecret: 'Super segreta',
       ultraSecret: 'Ultra segreta',
     },
+    targetShort: {
+      secret: 'Segreta',
+      superSecret: 'Super',
+      ultraSecret: 'Ultra',
+    },
     room: {
       start: 'Partenza',
       normal: 'Normale',
