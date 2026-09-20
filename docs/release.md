@@ -122,6 +122,8 @@ been broken for everybody at once:
 | no `*-setup.exe` | there is nothing to publish; the build did not run |
 | the installer's name does not carry the version | a manifest saying 0.3.0 beside a 0.2.0 installer installs the wrong build, and the app then reports itself up to date for ever, because the plugin compares against what is *running* |
 | no `.sig` beside the installer | the build ran unsigned (step 2), and the signature is not optional |
+| the signature carries no `version:` | `requireSignedVersion` is on, so every installation would refuse the update with `MissingSignedVersion`. The Tauri CLI writes that field **from 2.11.5**, which is why `package.json` asks for it |
+| the signature's version is not this one | the bundle belongs to another release |
 
 ### 4. Publish
 
@@ -156,6 +158,14 @@ own default: a progress bar, no questions, and the app restarts itself afterward
 4. The button launches the installer, and **Windows ends the app's process at that moment** —
    that is a limitation of Windows installers, not a choice. The installer restarts the app when
    it is done.
+
+**`requireSignedVersion` needs a Tauri CLI of at least 2.11.5**, and `package.json` pins that
+floor for exactly this reason. The version the signature was made for lives in minisign's trusted
+comment, which the global signature covers; a CLI older than 2.11.5 writes only `timestamp:` and
+`file:` there, and an app with the flag on rejects such a signature outright. Measured on
+2026-09-20 on 2.11.4: the first signed build produced a signature with no version, which would
+have been an update every installation refused — and nothing would have said so until it was
+published. Step 3 now opens the signature and checks, so it cannot happen quietly again.
 
 `requireSignedVersion` is on. The manifest travels over TLS but is **not itself signed**, so
 without that flag anyone able to serve a crafted response could pair an inflated version number

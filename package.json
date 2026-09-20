@@ -23,7 +23,7 @@
     "ipc:types": "cargo run -q -p ipc --bin ipc-types && pnpm --filter ui exec prettier --write src/lib/ipc/types.ts"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^2.11.4"
+    "@tauri-apps/cli": "^2.11.5"
   },
   "engines": {
     "node": ">=22 <23"
