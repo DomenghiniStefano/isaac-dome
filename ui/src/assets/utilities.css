@@ -116,3 +116,34 @@
     display: none;
   }
 }
+
+/* The section sidebar is collapsed by either of two inputs (spec 3.13a §6): the shell is too
+   narrow for it, or somebody asked for it. Written once as a utility because the pair *is* the
+   state — repeating two variants on six elements is six chances to write only half of it, and the
+   half that is missing only shows under one of the two conditions.
+
+   The width is `--container-compact` spelled out: a `@utility` cannot carry a Tailwind variant, so
+   this is the one place the number is written by hand instead of read from the token. Moving the
+   threshold means moving it here too — `lib/design/thresholds.test.ts` guards the other two
+   copies and cannot see this one. */
+@utility sidebar-collapsed-hidden {
+  @container shell (width < 560px) {
+    display: none;
+  }
+  [data-sidebar='collapsed'] & {
+    display: none;
+  }
+}
+
+/* The other half of the same state: what is left in a collapsed sidebar is centred in it. Its own
+   utility rather than a variant on each element, for the reason above — the two conditions have
+   to travel together, or the manual collapse centres nothing and only the narrow one looks right.
+   Same hand-written 560px, same reason. */
+@utility sidebar-collapsed-center {
+  @container shell (width < 560px) {
+    justify-content: center;
+  }
+  [data-sidebar='collapsed'] & {
+    justify-content: center;
+  }
+}

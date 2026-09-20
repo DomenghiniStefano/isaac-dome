@@ -287,7 +287,9 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
              sidebar collapses inside it — which is why the sidebar's threshold hangs here and not
              on `page`, where a collapse would widen the content, re-cross the threshold and
              oscillate (spec 3.13a §6). -->
-        <div class="@container/shell flex min-h-0 flex-1">
+        <!-- `group/shell` is the sidebar's second input: nothing writes `data-sidebar` here yet,
+             and the button's own card will write it and nothing else (spec 3.13a §6). -->
+        <div class="group/shell @container/shell flex min-h-0 flex-1">
           <SectionSidebar
             v-model:width="sidebarWidth"
             :title="t(header.title)"
@@ -299,10 +301,10 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
               v-for="entry in entries"
               :key="entry.key"
               :active="isEntryActive(entry, tabs.location)"
+              :label="t(entry.label)"
               @click="openEntry(entry, $event)"
             >
               <template #icon><component :is="entry.icon" /></template>
-              {{ t(entry.label) }}
             </SidebarItem>
           </SectionSidebar>
           <!-- The page box (spec 3.13a §4): it scrolls nothing and carries the horizontal padding
