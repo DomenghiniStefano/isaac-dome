@@ -11,16 +11,18 @@
   --spacing-floor-cell: 2rem;
   --spacing-floor-gap: 0.125rem;
 
-  /* The drawing inside a cell, and the pip a rule puts in one of its corners. Both are
-     fractions of the cell above and move with it. */
+  /* Our own drawing inside a cell, when the game is not here to lend its own. A fraction of
+     the cell above, and it moves with it. */
   --spacing-floor-symbol: 1.0625rem;
-  --spacing-floor-pip: 0.8125rem;
 
-  /* The game's own minimap icon, which is **not** a fraction of anything: it is a 16x16
-     sprite, so it is drawn at exactly twice its pixels and fills the cell. Pixel art at 1.06x
-     is pixel art with the edges smeared — the one scale that is wrong is the one that looks
-     like a reasonable compromise. Stays at 2rem whatever the cell does, because a cell that
-     grew would want 3x and not 1.4x. */
+  /* The box the game's own minimap icon is centred in — the cell's own size, so the two
+     branches of `RoomSymbol` occupy the same square and the cell does not jump.
+
+     The icon **inside** it is not sized here and must not be: it is served trimmed to its own
+     drawing (`ipc::trim_opaque`), so it arrives a different number of pixels wide for every
+     room kind, and it is drawn at exactly twice its pixels by the `pixel-2x` utility. Pixel
+     art at 1.06x is pixel art with the edges smeared — the one scale that is wrong is the one
+     that looks like a reasonable compromise. */
   --spacing-floor-icon: 2rem;
 
   /* An unpainted cell: the grid is furniture, and only what you drew is an answer. */
