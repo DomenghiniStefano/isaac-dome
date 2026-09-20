@@ -246,27 +246,30 @@ describe('cellReading', () => {
   // `Both` is gone (B22): a cell with bit 1 is hard, and hard is also normal, so "normal
   // and hard" was never a third thing to say — it was the same cell said twice.
   it('reads a cell with the second level as hard, whatever bit 0 says', () => {
-    expect(known(0)).toEqual({ status: CellStatus.Empty, third: false })
-    expect(known(1)).toEqual({ status: CellStatus.Normal, third: false })
-    expect(known(2)).toEqual({ status: CellStatus.Hard, third: false })
-    expect(known(3)).toEqual({ status: CellStatus.Hard, third: false })
+    expect(known(0)).toEqual({ status: CellStatus.Empty, online: false })
+    expect(known(1)).toEqual({ status: CellStatus.Normal, online: false })
+    expect(known(2)).toEqual({ status: CellStatus.Hard, online: false })
+    expect(known(3)).toEqual({ status: CellStatus.Hard, online: false })
   })
 
-  it('carries the unconfirmed bit beside the level, never as one', () => {
-    expect(known(4)).toEqual({ status: CellStatus.Empty, third: true })
-    expect(known(5)).toEqual({ status: CellStatus.Normal, third: true })
-    expect(known(7)).toEqual({ status: CellStatus.Hard, third: true })
+  // Bit 2 is the boss beaten online, and it is not a level: it says where a mark was taken,
+  // not how high it is. It travelled here as `third` while its meaning was unsettled; the
+  // meaning was measured on 2026-09-12 and the name followed only on 2026-09-20.
+  it('carries the online win beside the level, never as one', () => {
+    expect(known(4)).toEqual({ status: CellStatus.Empty, online: true })
+    expect(known(5)).toEqual({ status: CellStatus.Normal, online: true })
+    expect(known(7)).toEqual({ status: CellStatus.Hard, online: true })
   })
 
   it('keeps what it cannot read, and what it should not see, apart', () => {
-    expect(known(8)).toEqual({ status: CellStatus.Unexpected, third: false })
+    expect(known(8)).toEqual({ status: CellStatus.Unexpected, online: false })
     expect(cellReading({ kind: 'unknown' })).toEqual({
       status: CellStatus.Unknown,
-      third: false,
+      online: false,
     })
     expect(cellReading({ kind: 'unexpected', value: 49 })).toEqual({
       status: CellStatus.Unexpected,
-      third: false,
+      online: false,
     })
   })
 })

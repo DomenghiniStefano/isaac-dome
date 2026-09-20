@@ -5,14 +5,14 @@ const known = (bits: number) => markVisual({ kind: 'known', bits })
 
 describe('markVisual', () => {
   it('reads 0 as never done', () => {
-    expect(known(0)).toEqual({ kind: 'empty', third: false })
+    expect(known(0)).toEqual({ kind: 'empty', online: false })
   })
 
   it('reads bit 0 alone as the normal mark', () => {
     expect(known(1)).toEqual({
       kind: 'marked',
       tier: MarkTier.Normal,
-      third: false,
+      online: false,
     })
   })
 
@@ -20,7 +20,7 @@ describe('markVisual', () => {
     expect(known(2)).toEqual({
       kind: 'marked',
       tier: MarkTier.Hard,
-      third: false,
+      online: false,
     })
   })
 
@@ -28,32 +28,35 @@ describe('markVisual', () => {
     expect(known(3)).toEqual({
       kind: 'marked',
       tier: MarkTier.Hard,
-      third: false,
+      online: false,
     })
   })
 
-  it('carries bit 2 alone on an empty cell', () => {
-    expect(known(4)).toEqual({ kind: 'empty', third: true })
+  // 4 and 6 are shapes no real save has shown — the observed set is 0, 1, 2, 3, 5, 7. They
+  // are handled rather than assumed away: a value the tables can represent has to draw
+  // something, and "never seen" is not "cannot happen".
+  it('carries the online win on a cell with no mark of its own', () => {
+    expect(known(4)).toEqual({ kind: 'empty', online: true })
   })
 
-  it('carries bit 2 beside the normal mark', () => {
+  it('carries the online win beside the normal mark', () => {
     expect(known(5)).toEqual({
       kind: 'marked',
       tier: MarkTier.Normal,
-      third: true,
+      online: true,
     })
   })
 
-  it('carries bit 2 beside the hard mark', () => {
+  it('carries the online win beside the hard mark', () => {
     expect(known(6)).toEqual({
       kind: 'marked',
       tier: MarkTier.Hard,
-      third: true,
+      online: true,
     })
     expect(known(7)).toEqual({
       kind: 'marked',
       tier: MarkTier.Hard,
-      third: true,
+      online: true,
     })
   })
 
