@@ -12,14 +12,16 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { HelpTip } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import { floorEntries } from '@/lib/diagnostics/floor'
-import { cellPosition } from '@/lib/floor/cellView'
+import { TARGET_ORDER, cellPosition } from '@/lib/floor/cellView'
 import { useFloorStore } from '@/stores/floor'
 import { TargetView } from '@/lib/ipc/types'
 import type { FloorSolutionView } from '@/lib/ipc/types'
 import FloorClear from './floor/FloorClear.vue'
 import FloorGrid from './floor/FloorGrid.vue'
+import FloorLegend from './floor/FloorLegend.vue'
 import FloorPalette from './floor/FloorPalette.vue'
 import FloorTargets from './floor/FloorTargets.vue'
 import ScreenHeader from './ScreenHeader.vue'
@@ -37,13 +39,17 @@ const solutions = computed(() => store.view?.solutions ?? [])
 const solutionFor = (target: TargetView): FloorSolutionView | null =>
   solutions.value.find((s) => s.target === target) ?? null
 
-// The order the three targets are read in: the one a player looks for on every floor, then
-// the one that needs the whole map painted, then the one this grid can only partly judge.
-const order = [
-  TargetView.Secret,
-  TargetView.SuperSecret,
-  TargetView.UltraSecret,
-]
+// The rules of all three stay open below, whichever one the grid is drawing: the answer is on
+// the grid and this is the reasoning behind it, which is worth reading side by side.
+
+// The missing start room is a hint and it was drawn as an alert: a full-width box, above
+// everything, saying a sentence that qualifies one of three answers. It is a mark beside the
+// switch now, with the sentence a hover away — the same shape every other explanation on this
+// app takes. `floorEntries` maps the kind to `null` for exactly this, so the list below cannot
+// also draw it and say it twice.
+const noStartRoom = computed(() =>
+  (store.view?.diagnostics ?? []).some((d) => d.kind === 'noStartRoom'),
+)
 
 // A candidate names a cell, and a cell index is not a place. "Cell 97" sends you counting
 // along the grid; row 8, column 7 is where you were already looking.
@@ -68,9 +74,15 @@ const placeOf = (cell: number): string => {
          because a command did not answer would be the app throwing away your work. -->
     <EmptyCategory v-if="store.failed">{{ t('floor.failed') }}</EmptyCategory>
 
-    <!-- The drawing on the left, the switches that change it on the right. The grid is a fixed
-         27.5rem wide and will never be anything else, so a page that stacks the two leaves
-         that much of itself empty down the whole length of the floor.
+    <!-- The drawing on the left with its own controls, the rooms you can draw with on the
+         right. The grid is a fixed 27.5rem wide and will never be anything else, so a page
+         that stacks the two leaves that much of itself empty down the whole length of it.
+
+         **The rooms crossed the page**, and that is the second arrangement this screen has
+         had. They were a row of fourteen swatches above the grid, which is the one place with
+         no width to write a name in; the right-hand column meanwhile held a switch and three
+         lines of legend, and was the emptiest part of the screen. Down a column each room has
+         its key, its picture and its name on one line.
 
          **What used to be on the right and no longer is: the rules.** Three open-ended lists
          of quotations beside a fixed-width drawing made the right-hand column the longer of
@@ -79,11 +91,16 @@ const placeOf = (cell: number): string => {
     <div class="flex flex-col items-start gap-4 lg:flex-row">
       <Card class="w-full lg:w-fit lg:shrink-0">
         <CardContent class="flex flex-col gap-3">
-          <FloorPalette
-            :brush="store.brush"
-            :icons="store.icons"
-            @pick="store.brush = $event"
-          />
+          <div class="flex items-center gap-2">
+            <FloorTargets
+              :solutions="solutions"
+              :shown="store.shown"
+              @show="store.show($event)"
+            />
+            <HelpTip v-if="noStartRoom" :label="t('floor.startRoomMissing')">{{
+              t('floor.diagnostic.noStartRoom')
+            }}</HelpTip>
+          </div>
           <FloorGrid
             :cells="store.cells"
             :icons="store.icons"
@@ -92,9 +109,11 @@ const placeOf = (cell: number): string => {
             @stroke="store.stroke($event)"
             @erase="store.erase($event)"
           />
-          <!-- Under the grid, because that is what it empties. Beside the filters it read as
-               one more thing you could do to the answer. -->
-          <div class="flex justify-end">
+          <!-- The legend under what it explains, and the button that empties the grid under
+               what it empties. Beside the switch that one read as one more thing you could do
+               to the answer. -->
+          <div class="flex items-center justify-between gap-3">
+            <FloorLegend :shown="store.shown" />
             <FloorClear @clear="store.clear()" />
           </div>
         </CardContent>
@@ -102,13 +121,13 @@ const placeOf = (cell: number): string => {
 
       <Card class="w-full min-w-0 flex-1">
         <CardHeader>
-          <CardTitle>{{ t('floor.show') }}</CardTitle>
+          <CardTitle>{{ t('floor.rooms') }}</CardTitle>
         </CardHeader>
         <CardContent>
-          <FloorTargets
-            :solutions="solutions"
-            :shown="store.shown"
-            @toggle="store.toggle($event)"
+          <FloorPalette
+            :brush="store.brush"
+            :icons="store.icons"
+            @pick="store.brush = $event"
           />
         </CardContent>
       </Card>
@@ -123,7 +142,7 @@ const placeOf = (cell: number): string => {
          screen. -->
     <div class="flex flex-col gap-4">
       <CardCollapsible
-        v-for="target in order"
+        v-for="target in TARGET_ORDER"
         :key="target"
         :default-open="false"
       >

@@ -1,50 +1,36 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useShortcut } from '@/composables/useShortcut'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Kbd } from '@/components/ui/kbd'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import { isTyping } from '@/lib/keyboard/typing'
 import { brushFor, paletteKey, paletteOrder, roomFill } from '@/lib/floor/rooms'
 import type { RoomKindView } from '@/lib/ipc/types'
 import RoomSymbol from './RoomSymbol.vue'
 
-// The brush: fourteen swatches in one row, above the grid they paint. A swatch carries the
-// colour and the drawing the cell will get, so what you pick and what you paint are the same
-// picture — a list of names asks you to remember the mapping instead.
+// The brush: fourteen rooms, one per line, beside the grid they paint.
 //
-// One row and not three. Three rows are a list wearing a grid's clothes: the eye has to find
-// the row before it finds the swatch, and the keys already run 1 to 9 left to right, which is
-// only true if there is a left to right.
+// It was a single row of swatches above the grid, and it cost the name. Fourteen squares wide
+// leaves no room to write anything, so the name was a hover away and the shortcut was a digit
+// printed on top of the room's own colour — barely there on the Treasure Room's gold. A column
+// has the width the row never had: **the key, the picture and the name on the same line**, and
+// nothing has to be remembered or hovered to be read.
 //
-// **The chosen one is marked outside its own fill**, not on it: a cream border on the cream
-// Normal Room is a border nobody sees, and that is the swatch the screen opens on. An outline
-// with an offset sits on the card behind the row, where one colour reads against all fourteen.
+// It sits on the right because the right-hand column was holding the least of the screen while
+// the grid's own controls crowded the top of the left one. The order is the keys' order, 1 to 9
+// and on, which is only a reading order if there is a direction to read in — down the column
+// now rather than across the row.
 //
-// The name is a hover away rather than printed on all fourteen — a label under every swatch is
-// the list again, and the name is wanted once, while choosing. The tooltip is the repo's own
-// and not a `title` attribute: that one is invisible to the keyboard and arrives a second late
-// with none of our styling.
-//
-// **The key sits above its swatch, not inside it.** It used to be a micro digit in the
-// bottom-right corner of the square, and it cost twice: the digit landed on whatever colour
-// the room happened to be, so on the Treasure Room's gold it was barely there, and the icon
-// had to leave it room instead of sitting in the middle. Above the square it is on the card's
-// own surface, always the same contrast, and the swatch below it holds nothing but the room.
+// **The chosen one is marked outside its own fill**: a cream border on the cream Normal Room is
+// a border nobody sees, and that is the row the screen opens on. An outline with an offset sits
+// on the card behind the row, where one colour reads against all fourteen.
 
-const props = defineProps<{
+defineProps<{
   brush: RoomKindView
   icons: Map<RoomKindView, string>
 }>()
 const emit = defineEmits<{ pick: [brush: RoomKindView] }>()
 const { t } = useMessages()
-
-const chosen = computed(() => t(`floor.room.${props.brush}`))
 
 useShortcut((event) => {
   if (event.ctrlKey || event.altKey || event.metaKey) return false
@@ -57,46 +43,30 @@ useShortcut((event) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-1.5">
-    <div class="flex gap-floor-gap">
-      <div
-        v-for="kind in paletteOrder"
-        :key="kind"
-        class="flex flex-col items-center gap-0.5"
-      >
-        <!-- The button already says the room's name out loud; read on its own this would be a
-             stray letter between two of them. -->
-        <span aria-hidden="true" class="text-micro text-subtle-foreground">{{
-          paletteKey[kind]
-        }}</span>
-        <Tooltip>
-          <TooltipTrigger as-child>
-            <Button
-              :variant="ButtonVariant.Cell"
-              :size="ButtonSize.Cell"
-              :class="[
-                roomFill[kind],
-                brush === kind
-                  ? 'outline-2 outline-offset-1 outline-highlight'
-                  : '',
-              ]"
-              :aria-pressed="brush === kind"
-              :aria-label="t(`floor.room.${kind}`)"
-              @click="emit('pick', kind)"
-            >
-              <RoomSymbol :kind="kind" :url="icons.get(kind) ?? null" />
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent class="flex items-center gap-2"
-            ><span>{{ t(`floor.room.${kind}`) }}</span
-            ><Kbd>{{ paletteKey[kind] }}</Kbd></TooltipContent
-          >
-        </Tooltip>
-      </div>
-    </div>
-
-    <span class="text-caption text-subtle-foreground"
-      >{{ t('floor.brush') }}: {{ chosen }}</span
+  <div class="flex flex-col gap-1">
+    <Button
+      v-for="kind in paletteOrder"
+      :key="kind"
+      :variant="ButtonVariant.Ghost"
+      :size="ButtonSize.Row"
+      class="gap-3"
+      :class="
+        brush === kind ? 'outline-2 -outline-offset-2 outline-highlight' : ''
+      "
+      :aria-pressed="brush === kind"
+      @click="emit('pick', kind)"
     >
+      <Kbd>{{ paletteKey[kind] }}</Kbd>
+      <!-- The swatch is the cell this brush paints, at the size it will be: the colour and the
+           drawing together, so what you pick and what lands on the grid are one picture. -->
+      <span
+        aria-hidden="true"
+        class="grid size-floor-cell shrink-0 place-items-center"
+        :class="roomFill[kind]"
+      >
+        <RoomSymbol :kind="kind" :url="icons.get(kind) ?? null" />
+      </span>
+      <span>{{ t(`floor.room.${kind}`) }}</span>
+    </Button>
   </div>
 </template>

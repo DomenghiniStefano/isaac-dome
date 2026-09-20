@@ -2,7 +2,13 @@ import { describe, expect, it } from 'vitest'
 import { TargetView } from '@/lib/ipc/types'
 import type { FloorSolutionView } from '@/lib/ipc/types'
 import { START } from './painting'
-import { RankStep, bandsFor, cellPosition, rankStep, toggled } from './cellView'
+import {
+  RankStep,
+  TARGET_ORDER,
+  candidateFor,
+  cellPosition,
+  rankStep,
+} from './cellView'
 
 const solution = (
   target: TargetView,
@@ -18,7 +24,17 @@ const solution = (
   unresolved: [],
 })
 
-const all = [TargetView.Secret, TargetView.SuperSecret, TargetView.UltraSecret]
+describe('TARGET_ORDER', () => {
+  it('holds the three targets once each: the switch is drawn from it', () => {
+    expect([...TARGET_ORDER].sort()).toEqual(
+      [...Object.values(TargetView)].sort(),
+    )
+  })
+
+  it('opens on the one a player looks for on every floor', () => {
+    expect(TARGET_ORDER[0]).toBe(TargetView.Secret)
+  })
+})
 
 describe('rankStep', () => {
   it('walks the first three ranks down its own step', () => {
@@ -33,7 +49,7 @@ describe('rankStep', () => {
   })
 })
 
-describe('bandsFor', () => {
+describe('candidateFor', () => {
   const solutions = [
     solution(TargetView.UltraSecret, [[57, 0]]),
     solution(TargetView.Secret, [
@@ -44,45 +60,30 @@ describe('bandsFor', () => {
   ]
 
   it('says nothing about a cell no rule lit', () => {
-    expect(bandsFor(9, solutions, all)).toEqual([])
+    expect(candidateFor(9, solutions, TargetView.Secret)).toBeNull()
   })
 
-  it('carries one band per target that lit the cell', () => {
-    expect(bandsFor(57, solutions, all)).toHaveLength(3)
+  it('answers the target being shown and never another one', () => {
+    // Cell 57 is a candidate for all three at three different ranks, which is exactly the
+    // case the old design tried to draw at once and could not.
+    expect(candidateFor(57, solutions, TargetView.Secret)?.rank).toBe(2)
+    expect(candidateFor(57, solutions, TargetView.SuperSecret)?.rank).toBe(3)
+    expect(candidateFor(57, solutions, TargetView.UltraSecret)?.rank).toBe(1)
   })
 
-  it('gives a cell one target lit a single band, which is the cell filled edge to edge', () => {
-    // The whole reason the corner went: a cell only the Secret Room can be in is a Secret
-    // Room's colour, not a small square in the top-left of an otherwise empty square.
-    const bands = bandsFor(58, solutions, all)
-    expect(bands).toHaveLength(1)
-    expect(bands[0].target).toBe(TargetView.Secret)
+  it('says nothing when the target being shown has no answer at all', () => {
+    const only = [solution(TargetView.Secret, [[58, 0]])]
+    expect(candidateFor(58, only, TargetView.UltraSecret)).toBeNull()
   })
 
-  it('orders them by the reading order and not by the order the answers arrived in', () => {
-    // The solutions above are deliberately out of order: ultra, secret, super.
-    const targets = bandsFor(57, solutions, all).map((band) => band.target)
-    expect(targets).toEqual([
-      TargetView.Secret,
-      TargetView.SuperSecret,
-      TargetView.UltraSecret,
-    ])
+  it('fills the cell for the best place the rules allow', () => {
+    expect(candidateFor(58, solutions, TargetView.Secret)?.step).toBe(
+      RankStep.First,
+    )
   })
 
-  it('prints the rank one-based, the way the legend reads it', () => {
-    const [secret] = bandsFor(58, solutions, all)
-    expect(secret.rank).toBe(1)
-    expect(secret.step).toBe(RankStep.First)
-  })
-
-  it('drops a target that is switched off, which is the whole point of the filter', () => {
-    const shown = [TargetView.Secret, TargetView.UltraSecret]
-    const targets = bandsFor(57, solutions, shown).map((band) => band.target)
-    expect(targets).toEqual([TargetView.Secret, TargetView.UltraSecret])
-  })
-
-  it('says nothing at all when every target is switched off', () => {
-    expect(bandsFor(57, solutions, [])).toEqual([])
+  it('counts the place from one, the way the legend reads it', () => {
+    expect(candidateFor(58, solutions, TargetView.Secret)?.rank).toBe(1)
   })
 })
 
@@ -102,33 +103,5 @@ describe('cellPosition', () => {
   it('walks along a row before dropping to the next', () => {
     expect(cellPosition(12)).toEqual({ row: 1, column: 13 })
     expect(cellPosition(13)).toEqual({ row: 2, column: 1 })
-  })
-})
-
-describe('toggled', () => {
-  it('takes a target out', () => {
-    expect(toggled(all, TargetView.SuperSecret)).toEqual([
-      TargetView.Secret,
-      TargetView.UltraSecret,
-    ])
-  })
-
-  it('puts one back where it belongs, not at the end', () => {
-    // The filters are drawn from this list. A target that came back at the end would move
-    // the row under the hand that is using it.
-    const without = [TargetView.Secret, TargetView.UltraSecret]
-    expect(toggled(without, TargetView.SuperSecret)).toEqual(all)
-  })
-
-  it('answers a new list, never the one it was given', () => {
-    const before = [...all]
-    expect(toggled(all, TargetView.Secret)).not.toBe(all)
-    expect(all).toEqual(before)
-  })
-
-  it('can end up showing nothing, which is a filter and not a broken state', () => {
-    expect(
-      all.reduce<TargetView[]>((shown, target) => toggled(shown, target), all),
-    ).toEqual([])
   })
 })

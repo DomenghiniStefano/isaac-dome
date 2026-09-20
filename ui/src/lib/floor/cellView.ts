@@ -9,15 +9,14 @@ import { WIDTH, xy } from './painting'
 // reached the map. It now says two: **what you drew** (a colour and a drawing, both in the
 // component) and **what the rules make of it**, which is this file.
 //
-// The rules' half was four small squares in the corners, and that was wrong twice over: four
-// pips on a 2rem square print four numbers too small to read, and a cell nobody painted still
-// looked unpainted. **A cell a rule allows is filled with that rule's colour** — one target
-// fills it whole, two split it in half, three in thirds, always left to right in the reading
-// order below. The corner is gone, and with it `Corner`, `cornerOf` and `cornerAt`: the width
-// of a band says how many targets want that cell, which the corners never could.
+// Two shapes were tried and thrown away in front of a real window, and both failed for the
+// same reason — a 2rem square is not enough room to print a number in. First four pips in the
+// corners, one per target, each with its rank inside it. Then the cell divided into a band per
+// target, the rank still printed. **The screen shows one target at a time now**, and the rank
+// is not written at all: it is how full the square is. Nothing has to be read.
 
-/** The order the targets are read in, and therefore the order the bands are laid out in. */
-const targetOrder: readonly TargetView[] = [
+/** The order the targets are read in: the switch's order, and the rules' order below it. */
+export const TARGET_ORDER: readonly TargetView[] = [
   TargetView.Secret,
   TargetView.SuperSecret,
   TargetView.UltraSecret,
@@ -40,40 +39,29 @@ export const rankStep = (rank: number): RankStep => {
   return RankStep.Third
 }
 
-/** One target's claim on one cell: the slice of it that target colours, and what it prints. */
-export interface Band {
-  readonly target: TargetView
+/** What the rules make of one cell, for the one target being shown. */
+export interface Candidate {
   readonly step: RankStep
-  /** One-based: the number the cell prints, and the one the legend explains. */
+  /** One-based: the place in the order, for the cell's own label. */
   readonly rank: number
 }
 
 /**
- * What a cell shows of the rules, for the targets currently switched on. The bands share the
- * cell equally, so an empty list is a cell the rules say nothing about and a list of one is a
- * cell filled edge to edge.
+ * What a cell shows of the rules, or `null` when the rules say nothing about it.
  *
- * The order is the reading order above, never the order the solutions arrived in: a cell two
- * targets claim has to look the same whichever answer landed first.
+ * One target, not three. Showing them together was the first design and it is gone: three
+ * answers laid over one 2rem square could only be drawn small enough to be unreadable,
+ * whether as pips in the corners or as bands side by side.
  */
-export const bandsFor = (
+export const candidateFor = (
   cell: number,
   solutions: readonly FloorSolutionView[],
-  shown: readonly TargetView[],
-): Band[] => {
-  const bands: Band[] = []
-  for (const target of targetOrder) {
-    if (!shown.includes(target)) continue
-    const solution = solutions.find((one) => one.target === target)
-    const candidate = solution?.candidates.find((one) => one.cell === cell)
-    if (candidate === undefined) continue
-    bands.push({
-      target,
-      step: rankStep(candidate.rank),
-      rank: candidate.rank + 1,
-    })
-  }
-  return bands
+  target: TargetView,
+): Candidate | null => {
+  const solution = solutions.find((one) => one.target === target)
+  const candidate = solution?.candidates.find((one) => one.cell === cell)
+  if (candidate === undefined) return null
+  return { step: rankStep(candidate.rank), rank: candidate.rank + 1 }
 }
 
 export interface CellPosition {
@@ -95,18 +83,3 @@ export const rowOf = (cell: number): number[] => {
   const start = Math.floor(cell / WIDTH) * WIDTH
   return Array.from({ length: WIDTH }, (_, i) => start + i)
 }
-
-/**
- * A target switched on or off, as a new list in the reading order.
- *
- * The order is kept because the list is read as well as used: the filters are drawn from it,
- * and a target that jumped to the end of the row every time it was switched back on would make
- * the toolbar move under the hand that is using it.
- */
-export const toggled = (
-  shown: readonly TargetView[],
-  target: TargetView,
-): TargetView[] =>
-  shown.includes(target)
-    ? shown.filter((one) => one !== target)
-    : targetOrder.filter((one) => one === target || shown.includes(one))
