@@ -48,9 +48,11 @@ fn the_forgotten_uses_single_cells() {
     assert_eq!(counter_index(14, 8), Some(211)); // Hush
                                                  // Delirium: 212 belongs to another family.
     assert_eq!(counter_index(14, 9), Some(213));
-    // Mother and The Beast for The Forgotten: derived from the spacing, never observed
-    // moving, so they stay unlocated rather than pointing at a guess.
-    assert_eq!(counter_index(14, 10), None);
+    // Mother closed on 2026-09-20: T. Eden's cell moved at 449, which puts the 19-block at
+    // 438 and leaves 437 — the one cell over — to The Forgotten.
+    assert_eq!(counter_index(14, 10), Some(437));
+    // The Beast is still derived from the spacing and never observed moving, so it stays
+    // unlocated rather than pointing at a guess.
     assert_eq!(counter_index(14, 11), None);
 }
 
@@ -70,16 +72,17 @@ fn later_characters_now_reach_delirium() {
 }
 
 #[test]
-fn exactly_forty_cells_are_unlocated() {
+fn exactly_twenty_cells_are_unlocated() {
     let unlocated = (0..CHARACTERS.len())
         .flat_map(|c| (0..BOSSES.len()).map(move |b| (c, b)))
         .filter(|&(c, b)| counter_index(c, b).is_none())
         .count();
     assert_eq!(
-        unlocated, 40,
-        "The Forgotten and the 19 later characters, for Mother and for The Beast: \
-         40 cells whose position is derived from the spacing and confirmed by nothing, \
-         because they are zero in every save we have"
+        unlocated, 20,
+        "The Forgotten and the 19 later characters, for The Beast alone: 20 cells whose \
+         position is derived from the spacing and confirmed by nothing. It was 40 until \
+         2026-09-20, when a window on T. Eden beating Mother closed that half; what closes \
+         this one is the same run against The Beast"
     );
 }
 
@@ -102,22 +105,24 @@ fn matrix_has_the_expected_shape_and_totals() {
     assert_eq!(m.characters.len(), 34);
     assert_eq!(m.bosses.len(), 12);
     assert_eq!(m.totals.cells, 408);
-    assert_eq!(m.totals.unknown, 40);
-    assert_eq!(m.totals.readable, 368);
+    assert_eq!(m.totals.unknown, 20);
+    assert_eq!(m.totals.readable, 388);
     assert_eq!(m.totals.unexpected, 0);
     assert_eq!(m.totals.normal, 0);
     assert_eq!(m.totals.hard, 0);
 }
 
 #[test]
-fn the_hole_is_now_mother_and_the_beast_for_the_last_twenty_rows() {
+fn the_hole_is_now_the_beast_alone_for_the_last_twenty_rows() {
     let m = marks_matrix(&counters(523, &[]), None, no_icon);
     // row 15 = Bethany, column 9 = Delirium: located since 2026-09-08.
     assert_eq!(m.characters[15].cells[9], Cell::Known { bits: 0 });
-    // Columns 10 and 11 for the same row, and for The Forgotten: still unlocated.
-    assert_eq!(m.characters[15].cells[10], Cell::Unknown);
+    // Column 10 is Mother, located since 2026-09-20 for these rows too.
+    assert_eq!(m.characters[15].cells[10], Cell::Known { bits: 0 });
+    assert_eq!(m.characters[14].cells[10], Cell::Known { bits: 0 });
+    // Column 11 is The Beast, and it is what is left of the hole.
     assert_eq!(m.characters[15].cells[11], Cell::Unknown);
-    assert_eq!(m.characters[14].cells[10], Cell::Unknown);
+    assert_eq!(m.characters[14].cells[11], Cell::Unknown);
     // Row 0 = Isaac: the original characters have all twelve columns.
     assert_eq!(m.characters[0].cells[10], Cell::Known { bits: 0 });
     assert_eq!(m.characters[0].cells[11], Cell::Known { bits: 0 });
@@ -198,8 +203,8 @@ fn cell_and_totals_json_shape_is_pinned() {
         json["totals"],
         serde_json::json!({
             "cells": 408,
-            "readable": 367,
-            "unknown": 40,
+            "readable": 387,
+            "unknown": 20,
             "unexpected": 1,
             "normal": 0,
             "hard": 0

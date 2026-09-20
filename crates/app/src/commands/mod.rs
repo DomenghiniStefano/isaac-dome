@@ -14,4 +14,5 @@ pub(crate) mod queue;
 pub(crate) mod roll;
 pub(crate) mod runs;
 pub(crate) mod session;
+pub(crate) mod update;
 pub(crate) mod wiki;
