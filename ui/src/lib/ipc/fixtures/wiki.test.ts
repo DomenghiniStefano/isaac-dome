@@ -2,13 +2,13 @@ import { describe, expect, it } from 'vitest'
 import { wikiEntryAnswer, wikiIndexAnswer } from './wiki'
 
 describe('the wiki fixture', () => {
-  const index = wikiIndexAnswer({ withArt: false, withWiki: true })
+  const index = wikiIndexAnswer({ withWiki: true })
   const find = (kind: string, id: number) =>
     index.pages.find(
       (p) => p.target.kind === kind && 'id' in p.target && p.target.id === id,
     )
 
-  it("lists the pack's pages with their titles, by kind", () => {
+  it('lists the pages with their titles, by kind', () => {
     expect(find('item', 105)).toMatchObject({ title: 'The D6' })
     expect(find('trinket', 1)).toMatchObject({ title: 'Swallowed Penny' })
     expect(find('achievement', 1)).toMatchObject({ title: 'Magdalene' })
@@ -35,13 +35,10 @@ describe('the wiki fixture', () => {
   })
 
   // It used to check the other half too: with art, item 105 had a link and a challenge did
-  // not. The pack carries no images since 2026-09-15, so both halves answer null and the
-  // second says nothing — what is left is the half that still means something, plus the fact
-  // that asking for art changes nothing any more.
-  it('has no icons, with art or without, since the pack carries no images', () => {
+  // not. Nothing here carries a drawing any more — the app cuts its sprites from the user's
+  // own copy of the game at runtime, and the development server has no copy to cut from.
+  it('has no icons at all', () => {
     expect(index.pages.every((p) => p.iconUrl === null)).toBe(true)
-    const illustrated = wikiIndexAnswer({ withArt: true, withWiki: true })
-    expect(illustrated.pages.every((p) => p.iconUrl === null)).toBe(true)
   })
 
   it('answers the eleven sample pages and no other', () => {
@@ -55,7 +52,7 @@ describe('the wiki fixture', () => {
   })
 
   it('is a missing dataset on request', () => {
-    const none = wikiIndexAnswer({ withArt: true, withWiki: false })
+    const none = wikiIndexAnswer({ withWiki: false })
     expect(none.info.kind).toBe('missing')
     expect(none.pages).toHaveLength(0)
   })

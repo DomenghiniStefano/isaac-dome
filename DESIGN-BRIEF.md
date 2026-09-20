@@ -22,13 +22,19 @@ they land on individual screens — the app splits into **top-level sections** (
 **global search**, and **multiple tabs** with session restoration (§4.2). Logged
 as B5 and B6 in `docs/BACKLOG.md`. They change none of the contracts in §7.
 
-> **Superseded on 2026-09-15.** `pnpm design:export` is abandoned: the design is decided at
-> runtime on the real screens now, not on an exported package. What survives of the pack is a
-> **fixture corpus** — the committed IPC payloads, the two indexes and ten wiki pages, 28 files
-> and 2.8 MB — which `pnpm ui:dev` reads to run without a backend. Its **6065 images are gone
-> from the repository**, so everything below about sprites, sheets and their counts describes a
-> package that no longer exists. The contracts in §7 are unaffected: they are the IPC's shape,
-> and `ui/src/lib/ipc/types.ts` is generated from the Rust types regardless.
+> **Superseded on 2026-09-15, and the package is gone since 2026-09-20.** `pnpm design:export`
+> was abandoned first — the design is decided at runtime on the real screens now, not on an
+> exported package — and then the pack, the crate that wrote it and its 6065 images left the
+> repository entirely, the history included: a commercial game's sprites, on a public
+> repository, against the third promise in `CLAUDE.md`.
+>
+> What survives is a **fixture corpus**, sixteen files that carry no pixel: the index, three
+> IPC payloads and eleven wiki pages, now in `ui/fixtures/`, which `pnpm ui:dev` reads to run
+> without a backend. **Everything below about sprites, sheets, atlases and their counts
+> describes a package that no longer exists**, and no command rebuilds it. It is kept as the
+> record of what was measured, and because the section numbers here are cited from the code.
+> The contracts in §7 are unaffected: they are the IPC's shape, and `ui/src/lib/ipc/types.ts`
+> is generated from the Rust types regardless.
 
 **This document travels with a package.** `pnpm design:export` produces
 `isaacdome-design-pack/`: the real IPC payloads for every command, the game's images with
@@ -1270,9 +1276,10 @@ subset of its slots. What a set byte means in play — picked up, or merely seen
 measured, so the contract uses the section's own name, **in the collection**. **Trinkets have no
 slot**, and the Collection lists collectibles only. **Unread is never "not in the collection"**:
 a missing section, or a slot past its end, gives `inCollection: null`, and the design has to draw
-that as unreadable, not as "never found". The design pack carries the real payload as
-`contracts/payload/collection.json` once `pnpm design:export` has run on a machine with the game
-and a save.
+that as unreadable, not as "never found". No recorded payload carries this view: writing one
+needed a machine with the game and a save, and the command that would have written it is gone,
+so the fixture builds the Collection from the index and says on the console which of its
+fields are synthetic.
 
 ---
 

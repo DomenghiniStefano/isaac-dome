@@ -1,0 +1,35 @@
+{
+  "title": "Magdalene",
+  "revid": 262276,
+  "infobox": {
+    "kind": "achievement",
+    "description": "Unlocked a new character.",
+    "requirements": [
+      {
+        "kind": "text",
+        "text": "Have 7 or more ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "entity",
+          "id": 5,
+          "variant": 10,
+          "subtype": 1
+        },
+        "label": "Red Heart"
+      },
+      {
+        "kind": "text",
+        "text": " Containers at one time",
+        "style": "plain"
+      }
+    ],
+    "unlocks": {
+      "kind": "character",
+      "id": 1
+    }
+  },
+  "sections": []
+}

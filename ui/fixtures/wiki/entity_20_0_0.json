@@ -1,0 +1,615 @@
+{
+  "title": "Monstro",
+  "revid": 267047,
+  "infobox": {
+    "kind": "boss",
+    "baseHp": 250,
+    "environment": [
+      {
+        "kind": "text",
+        "text": "Boss ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "stage",
+          "name": "Basement"
+        },
+        "label": "Basement"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "stage",
+          "name": "Burning Basement"
+        },
+        "label": "Burning Basement"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "room",
+          "name": "challenge"
+        },
+        "label": "challenge"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "room",
+          "name": "boss challenge"
+        },
+        "label": "boss challenge"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "room",
+          "name": "boss rush"
+        },
+        "label": "boss rush"
+      },
+      {
+        "kind": "text",
+        "text": " Double Trouble ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "stage",
+          "name": "Caves"
+        },
+        "label": "Caves"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "stage",
+          "name": "Catacombs"
+        },
+        "label": "Catacombs"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "stage",
+          "name": "Flooded Caves"
+        },
+        "label": "Flooded Caves"
+      },
+      {
+        "kind": "text",
+        "text": " (With Another Monstro, ",
+        "style": "plain"
+      },
+      {
+        "kind": "edition",
+        "only": [
+          "afterbirth"
+        ],
+        "inline": [
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "entity",
+              "id": 67,
+              "variant": 0,
+              "subtype": 0
+            },
+            "label": "The Duke of Flies"
+          },
+          {
+            "kind": "text",
+            "text": ", ",
+            "style": "plain"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "entity",
+              "id": 19,
+              "variant": 0,
+              "subtype": 0
+            },
+            "label": "Larry Jr."
+          },
+          {
+            "kind": "text",
+            "text": ", or ",
+            "style": "plain"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "entity",
+              "id": 71,
+              "variant": 0,
+              "subtype": 0
+            },
+            "label": "Fistula"
+          },
+          {
+            "kind": "text",
+            "text": ") Degraded Boss ",
+            "style": "plain"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "stage",
+              "name": "Depths"
+            },
+            "label": "Depths"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "stage",
+              "name": "Necropolis"
+            },
+            "label": "Necropolis"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "stage",
+              "name": "Dank Depths"
+            },
+            "label": "Dank Depths"
+          },
+          {
+            "kind": "text",
+            "text": " ",
+            "style": "plain"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "stage",
+              "name": "Womb"
+            },
+            "label": "Womb"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "stage",
+              "name": "Utero"
+            },
+            "label": "Utero"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "stage",
+              "name": "Scarred Womb"
+            },
+            "label": "Scarred Womb"
+          },
+          {
+            "kind": "text",
+            "text": " ",
+            "style": "plain"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "stage",
+              "name": "Cathedral"
+            },
+            "label": "Cathedral"
+          },
+          {
+            "kind": "text",
+            "text": " ",
+            "style": "plain"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "stage",
+              "name": "Chest"
+            },
+            "label": "Chest"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "stage",
+              "name": "Dark Room"
+            },
+            "label": "Dark Room"
+          }
+        ]
+      }
+    ],
+    "pool": [
+      {
+        "kind": "text",
+        "text": "Boss  ",
+        "style": "plain"
+      },
+      {
+        "kind": "edition",
+        "only": [
+          "repentancePlus"
+        ],
+        "inline": [
+          {
+            "kind": "text",
+            "text": " ",
+            "style": "plain"
+          },
+          {
+            "kind": "ref",
+            "target": {
+              "kind": "item",
+              "id": 86
+            },
+            "label": "Monstro's Tooth"
+          },
+          {
+            "kind": "text",
+            "text": " (1% chance)",
+            "style": "plain"
+          }
+        ]
+      }
+    ],
+    "unlockedBy": null
+  },
+  "sections": [
+    {
+      "kind": "behavior",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Hops towards Isaac.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Coughs up a large number of disorganized projectiles towards Isaac.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Jumps off-screen, aiming to land on top of Isaac. Create a burst of disorganized projectiles in all directions on landing.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "championVersions",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "inline": [
+            {
+              "kind": "text",
+              "text": "2: 15% larger and has 25% more HP (312.5). Uses projectile volleys much more often and is unable to jump off-screen. 1: Two 20% smaller Monstros, each with 55% less HP than the original one (112.5), replace the normal Monstro.",
+              "style": "plain"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "notes",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "In the boss room, Monstro can be paired with ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 13,
+                    "variant": 0,
+                    "subtype": 0
+                  },
+                  "label": "Flies"
+                },
+                {
+                  "kind": "text",
+                  "text": ", ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 18,
+                    "variant": 0,
+                    "subtype": 0
+                  },
+                  "label": "Attack Flies"
+                },
+                {
+                  "kind": "text",
+                  "text": ", ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 10,
+                    "variant": 1,
+                    "subtype": 0
+                  },
+                  "label": "Gaper"
+                },
+                {
+                  "kind": "text",
+                  "text": "s, ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 29,
+                    "variant": 0,
+                    "subtype": 0
+                  },
+                  "label": "Hopper"
+                },
+                {
+                  "kind": "text",
+                  "text": "s, ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 10,
+                    "variant": 0,
+                    "subtype": 0
+                  },
+                  "label": "Frowning Gaper"
+                },
+                {
+                  "kind": "text",
+                  "text": "s, ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 16,
+                    "variant": 0,
+                    "subtype": 0
+                  },
+                  "label": "Mulligan"
+                },
+                {
+                  "kind": "text",
+                  "text": "s, ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 284,
+                    "variant": 0,
+                    "subtype": 0
+                  },
+                  "label": "Cyclopia"
+                },
+                {
+                  "kind": "text",
+                  "text": "s, or ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 305,
+                    "variant": 0,
+                    "subtype": 0
+                  },
+                  "label": "Ministro"
+                },
+                {
+                  "kind": "text",
+                  "text": "s.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "When Monstro jumps off-screen, he is cured of all status effects.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " Monstro can't hop over ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "concept",
+                      "page": "Obstacles",
+                      "label": "Obstacles"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ".",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Larger ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "Tears",
+                  "label": "Tears"
+                },
+                {
+                  "kind": "text",
+                  "text": " that Monstro shoots deal 1 ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "Heart",
+                  "label": "Heart"
+                },
+                {
+                  "kind": "text",
+                  "text": " of damage, while the smaller ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "Tears",
+                  "label": "Tears"
+                },
+                {
+                  "kind": "text",
+                  "text": " only deal half a ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "Heart",
+                  "label": "Heart"
+                },
+                {
+                  "kind": "text",
+                  "text": " of damage.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "If Isaac is somewhere that Monstro cannot reach, Monstro will jump in place.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "If Isaac has flight and is over an obstacle, Monstro will essentially be unable to perform any attacks.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "text",
+                                  "text": "While Monstro can hit Isaac with his tear barrage because of its tear height, it is very unlikely.",
+                                  "style": "plain"
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [
+                    "afterbirthPlus"
+                  ],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " Monstro can rarely spawn in a room with two Blood Donation Machines.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

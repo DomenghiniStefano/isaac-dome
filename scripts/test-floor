@@ -23,5 +23,13 @@
 # The limit of that, stated rather than discovered: a floor nobody raises goes stale, so adding
 # two hundred tests and later deleting fifty stays quiet. Closing that needs a per-commit
 # comparison, which is CI, and there is none here by decision.
-RUST_TESTS=1158
-UI_TESTS=742
+#
+# **Lowered on 2026-09-20**, and this is the deliberate line the paragraph above asks for.
+# Rust −15: the fifteen tests of `crates/design-export` went with the crate. UI −4: four tests
+# whose subject stopped existing — the Collection fixture's "pack or synthetic" source, which
+# has only one answer now; the wiki index asked for art a second time; and the two that
+# guarded `packIconUrl` against the game's sprites coming back. That last guard is not lost,
+# it moved and got wider: `scripts/check-no-game-assets.mjs` fails on any tracked picture, not
+# just on one the design pack would have carried.
+RUST_TESTS=1143
+UI_TESTS=738

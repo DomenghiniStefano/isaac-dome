@@ -1,0 +1,4876 @@
+{
+  "title": "Brimstone",
+  "revid": 265889,
+  "infobox": {
+    "kind": "item"
+  },
+  "sections": [
+    {
+      "kind": "effects",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Isaac's tears are replaced with a charged blood laser beam. The beam is ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "piercing",
+                  "label": "piercing"
+                },
+                {
+                  "kind": "text",
+                  "text": " and ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "spectral",
+                  "label": "spectral"
+                },
+                {
+                  "kind": "text",
+                  "text": ", dealing damage to all enemies and ignoring all obstacles in its path.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "The laser deals damage equal to Isaac's damage and deals damage each tick.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "text",
+                                  "text": "These ticks occur every 1/15th of a second (once every 4 frames). However, after the first damage tick, there is an additional pause for ~0.12 seconds (7 frames). Damage ticks work normally after that.",
+                                  "style": "plain"
+                                }
+                              ],
+                              "children": []
+                            },
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": "Brimstone ticks 13 times over the course of 0.9 seconds (54 frames).",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            },
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [
+                                    "repentance"
+                                  ],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": "Brimstone ticks 9 times over the course of ~0.63 seconds (38 frames).",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "\\text{Charge Time (s)} = \\frac{1}{30}(Roundup(\\text{Tear Delay)}) \\approx \\frac{1}{\\text{Fire Rate}}",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "Starting from 15.00 ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "concept",
+                              "page": "fire rate",
+                              "label": "fire rate"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ", the beam can last indefinitely as long as the fire key is held, and higher fire rate results in higher damage and larger scale.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "text",
+                                  "text": "\\text{Damage per Tick} = \\frac{6 \\times \\text{Damage}}{\\text{Tear Delay} + 1} = \\frac{\\text{Damage} \\times \\text{Fire Rate}}{5}",
+                                  "style": "plain"
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "concept",
+                  "page": "Tears",
+                  "label": "Tears"
+                },
+                {
+                  "kind": "text",
+                  "text": " down: ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " Tear Delay × 3 / ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "edition",
+                      "only": [
+                        "repentance"
+                      ],
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": " Fire Rate ÷ 3.",
+                          "style": "plain"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Leviathan",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "notes",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " Brimstone is a ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "concept",
+                      "page": "special item",
+                      "label": "special item"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ".",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 7
+                  },
+                  "label": "Azazel"
+                },
+                {
+                  "kind": "text",
+                  "text": " starts the game with a short-ranged, slower-charging version of Brimstone. Without the long-range version, his mini-brimstone won't have enough length to use any ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "homing",
+                  "label": "homing"
+                },
+                {
+                  "kind": "text",
+                  "text": " items.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "afterbirth"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "His Brimstone's shorter range can be increased with ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "concept",
+                              "page": "range",
+                              "label": "range"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "-",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "concept",
+                              "page": "Range",
+                              "label": "increasing"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " items or ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "concept",
+                              "page": "pill",
+                              "label": "pill"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "s.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Multi-shot effects like ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 245
+                  },
+                  "label": "20/20"
+                },
+                {
+                  "kind": "text",
+                  "text": " will increase the number of beams accordingly, with exceptions listed below.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Although extremely unlikely, Isaac can shoot a total of 16 blood beams at a time via multi-shot items. If the number of blood beams would exceed this number, the beams' span will instead widen.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [
+                    "repentance"
+                  ],
+                  "inline": [
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "character",
+                        "id": 28
+                      },
+                      "label": "Tainted Azazel"
+                    },
+                    {
+                      "kind": "text",
+                      "text": " has a full-range, but thinner beam whose damage is halved unless enemies are cursed by his inherent ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "item",
+                        "id": 726
+                      },
+                      "label": "Hemoptysis"
+                    },
+                    {
+                      "kind": "text",
+                      "text": " sneeze.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "The beam will apply ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "Tear effect",
+                  "label": "Tear effect"
+                },
+                {
+                  "kind": "text",
+                  "text": "s and does so frequently thanks to its high tick rate.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Any item that grants ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "homing",
+                  "label": "homing"
+                },
+                {
+                  "kind": "text",
+                  "text": " tears: will cause the beam to make sharp turns and even loops to hit enemies, which is extremely powerful. ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 7
+                  },
+                  "label": "Azazel"
+                },
+                {
+                  "kind": "text",
+                  "text": "'s mini-brimstone does not home unless he has a high range stat.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "This item can be crafted from ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 710
+                  },
+                  "label": "Bag of Crafting"
+                },
+                {
+                  "kind": "text",
+                  "text": " with eight ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 5,
+                    "variant": 10,
+                    "subtype": 6
+                  },
+                  "label": "Black Heart"
+                },
+                {
+                  "kind": "text",
+                  "text": "s.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "synergies",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 245
+                  },
+                  "label": "a"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 2
+                  },
+                  "label": "The Inner Eye"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 153
+                  },
+                  "label": "Mutant Spider"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Fires a spread of 2/3/4 Brimstone beams.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Despite the fire rate penalty caused by The Inner Eye and Mutant Spider, the overall DPS increase is more significant compared to 20/20. ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "However, if combined, 20/20 negates the fire rate penalty of the aforementioned items, which results in enormous damage output.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 561
+                  },
+                  "label": "Almond Milk"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Fires automatically upon reaching full charge. The beam lasts indefinitely as long as the fire key is held. The beam can change its direction while being fired, and can be aimed in any direction with joystick controls. The beam will also gain random worm trinket effects.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Increasing the tears stat will increase the damage and width of Brimstone as well.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "text",
+                                  "text": "Damage per Tick = (Damage × Fire Rate) ÷ 5",
+                                  "style": "plain"
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 7
+                  },
+                  "label": "Azazel"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 28
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Picking up Brimstone with him will give him the regular version.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 443
+                  },
+                  "label": "a+nr"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 496
+                  },
+                  "label": "a+nr"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 150
+                  },
+                  "label": "nr"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The beam can gain the damage multiplier from each of the items, although there is no visual difference. The bonus applies for the whole beam and not on a per-tick basis. Euthanasia loses its instant kill ability, however.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "The bonus applies randomly on every tick of the beam, including the insta-kill ability from Euthanasia.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 222
+                  },
+                  "label": "Anti-Gravity"
+                },
+                {
+                  "kind": "text",
+                  "text": ": An orb of energy expands, then shrinks while firing the beam after a delay. The orb still hurts enemies if they touch it. Isaac can start charging a new shot immediately after releasing the fire key without canceling the first shot, effectively allowing for a faster firing rate. It makes it harder to hit enemies with ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 7
+                  },
+                  "label": "Azazel"
+                },
+                {
+                  "kind": "text",
+                  "text": " as the beam does not increase in range. ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "edition",
+                  "only": [
+                    "repentance"
+                  ],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": "Size and damage of the beams no longer scales with fire rate, nor is it possible to sustain a perpetual beam at above 15 fire rate.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "Anti-Gravity",
+                              "style": "bold"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " + ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 330
+                              },
+                              "label": "Soy Milk"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " / ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 561
+                              },
+                              "label": "n"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ": Allows auto-firing upon full charge, but without permanent beam uptime.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "Anti-Gravity",
+                              "style": "bold"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " + ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 360
+                              },
+                              "label": "n"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ": Isaac will fire Brimstone orbs, while Incubus will fire regular Brimstone beams.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [
+                                    "repentance"
+                                  ],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": " Both Isaac and Incubus fire Brimstone orbs.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "trinket",
+                    "id": 144
+                  },
+                  "label": "Brain Worm"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The beam will curve 90 degrees in order to attack opponents, effectively acting as a stronger form of homing. Very strong against multi-segment bosses such as ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 62,
+                    "variant": 0,
+                    "subtype": 0
+                  },
+                  "label": "Pin"
+                },
+                {
+                  "kind": "text",
+                  "text": " or ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 912,
+                    "variant": 0,
+                    "subtype": 0
+                  },
+                  "label": "n"
+                },
+                {
+                  "kind": "text",
+                  "text": ".",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 118
+                  },
+                  "label": "Brimstone"
+                },
+                {
+                  "kind": "text",
+                  "text": ":",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " Additional copies of this item, such as from ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 347
+                              },
+                              "label": "Diplopia"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " / ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 485
+                              },
+                              "label": "Crooked Penny"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ", adds another beam, with no increase in charge time.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " The first additional copy of this item grants a 1.2× damage multiplier and +1 ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "concept",
+                              "page": "damage",
+                              "label": "damage"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " and doubles the beam's width. Further copies will only grant +1 ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "concept",
+                              "page": "damage",
+                              "label": "damage"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ".",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "text",
+                                  "text": "If combined with ",
+                                  "style": "plain"
+                                },
+                                {
+                                  "kind": "ref",
+                                  "target": {
+                                    "kind": "character",
+                                    "id": 7
+                                  },
+                                  "label": "Azazel"
+                                },
+                                {
+                                  "kind": "text",
+                                  "text": "'s ",
+                                  "style": "plain"
+                                },
+                                {
+                                  "kind": "ref",
+                                  "target": {
+                                    "kind": "item",
+                                    "id": 619
+                                  },
+                                  "label": "n"
+                                },
+                                {
+                                  "kind": "text",
+                                  "text": " effect, the laser beam will be 4× wider.",
+                                  "style": "plain"
+                                }
+                              ],
+                              "children": []
+                            },
+                            {
+                              "inline": [
+                                {
+                                  "kind": "text",
+                                  "text": "The bigger beam granted by double Brimstone synergizes with other items as expected.",
+                                  "style": "plain"
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 69
+                  },
+                  "label": "Chocolate Milk"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Brimstone laser takes longer to fully charge, but can be released at any point. Width and damage of the laser increases with charge, from 25% damage and 50% width at minimum charge to 250% damage and 160% width at maximum charge.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 369
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Brimstone laser travels through the wall and appears out the other side once.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Continuum",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 221
+                          },
+                          "label": "r"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": Instead of Continuum being overridden, the beam is reflected the second time it hits the wall. This results in it potentially overlapping with itself a total of three times.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 224
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Spawns split tears on the first enemy or obstacle the beam hits.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 678
+                  },
+                  "label": "C Section"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Shoots 4 fetus tears along with the Brimstone beam.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "C Section",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 330
+                          },
+                          "label": "r"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " / ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 561
+                          },
+                          "label": "Almond Milk"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": Small fetuses fire continuously alongside the beam.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "C Section",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 329
+                          },
+                          "label": "The Ludovico Technique"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": Fetus tears no longer fire with the Brimstone circle, even on doing damage.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 373
+                  },
+                  "label": "Dead Eye"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The damage multiplier that was gained before picking up Brimstone will now be permanent. However, saving and quitting the run will result in this damage multiplier being permanently lost (which is a bug).",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 481
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Dataminer can be used to underflow Isaac's tears to immediately bring it to 120, maxing out Brimstone's width and damage via tears.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 168
+                  },
+                  "label": "a"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Adds a Brimstone Sad Bombs effect: missile explosions shoot ten beams in all directions, massively increasing damage and area of effect.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 401
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 459
+                  },
+                  "label": "n"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The beam has a chance to stick tears to enemies on every other tick.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [
+                    "repentance"
+                  ],
+                  "inline": [
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "item",
+                        "id": 572
+                      },
+                      "label": "Eye of the Occult"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ": Creates a controllable crosshair similar to ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "item",
+                        "id": 394
+                      },
+                      "label": "Marked"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ". Fires automatically upon reaching full charge. The beam curves towards the crosshair and then attempts to hit the wall Isaac is facing.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Eye of the Occult",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 244
+                          },
+                          "label": "Tech.5"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " / ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 152
+                          },
+                          "label": "Technology 2"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": Tech.5 and Technology 2 lasers are also affected by the crosshair but cannot create the crosshair on their own.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "transformation",
+                    "id": 0
+                  },
+                  "label": "Guppy"
+                },
+                {
+                  "kind": "text",
+                  "text": ": ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "Blue Flies",
+                  "label": "Blue Flies"
+                },
+                {
+                  "kind": "text",
+                  "text": " are spawned at a rate of approximately one blue fly per tick (",
+                  "style": "plain"
+                },
+                {
+                  "kind": "edition",
+                  "only": [
+                    "repentance"
+                  ],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": "every other tick) of damage for each enemy it hits, up to 13 flies. The spawned blue flies will also move to attack the targeted enemy immediately.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 531
+                  },
+                  "label": "Haemolacria"
+                },
+                {
+                  "kind": "text",
+                  "text": ": +20 Tear Delay after Haemolacria's tears down. Tears burst into 4-7 Brimstone beams that do Isaac's damage per tick.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "character",
+                            "id": 7
+                          },
+                          "label": "Azazel"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " / ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "character",
+                            "id": 28
+                          },
+                          "label": "r"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": Overrides these characters' Brimstone. Tears do not burst into Brimstone beams.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " Double ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "Brimstone",
+                              "style": "bold"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ": Grants +1 Damage but not the 1.2× damage multiplier. The width of the beams doubles.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Haemolacria",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 69
+                          },
+                          "label": "Chocolate Milk"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": The Brimstone beams deal full damage regardless of charge.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "Haemolacria",
+                              "style": "bold"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " + ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 68
+                              },
+                              "label": "Technology"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ": The lasers coil the beams. This is purely visual and does not grant a 1.5× damage multiplier.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 429
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Makes the laser yellow and each tick has a chance to drop a coin.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 726
+                  },
+                  "label": "Hemoptysis"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Enemies hit by the sneeze will gain a curse that increases the damage Brimstone deals to 2× and +3 flat damage. Enemies who die to Brimstone under the curse will damage and spread the curse to nearby enemies.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 374
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Every tick of the beam has a chance of summoning a beam of light.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "trinket",
+                    "id": 26
+                  },
+                  "label": "Hook Worm"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Beam shifts left to right while firing straight and forms angles that constantly flatten and expand, effectively increasing its width.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 494
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Upon hitting an enemy, wall, or obstacle, the beam generates sparks that home in on enemies.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 444
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Lead Pencil triggers approximately every 2 seconds as the beam is fired (charge time is not counted).",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 87
+                  },
+                  "label": "Loki's Horns"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Adds a chance to shoot a beam from all four cardinal directions, similarly to ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 293
+                  },
+                  "label": "Head of Krampus"
+                },
+                {
+                  "kind": "text",
+                  "text": "'s effect.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 213
+                  },
+                  "label": "Lost Contact"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Beam destroys projectiles, although only during its damage tick interval. The projectiles are not instantly destroyed when they touch the beam.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 329
+                  },
+                  "label": "The Ludovico Technique"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The Ludovico Technique has priority. The beam forms a large ring that is controllable and does not need to be charged. The damage is dealt 15 times per second, unaffected by ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "Tears",
+                  "label": "Tears"
+                },
+                {
+                  "kind": "text",
+                  "text": ". Enemies inside the ring without touching it are not hurt.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "The Ludovico Technique",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 118
+                          },
+                          "label": "Brimstone"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " same size and damage output multiplier as 2 copies of Brimstone, but applied to the laser ring.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "The Ludovico Technique",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + multi-shot effect: No effect.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "The Ludovico Technique",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 443
+                          },
+                          "label": "Apple!"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " / ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 374
+                          },
+                          "label": "Holy Light"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " / Other tear effects: no effect.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "The Ludovico Technique",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 678
+                          },
+                          "label": "C Section"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": Disables C Section. Fetuses no longer spawn.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "The Ludovico Technique",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 360
+                          },
+                          "label": "Incubus"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ":",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": " Incubus' Brimstone laser is not affected by Ludovico Technique.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            },
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [
+                                    "repentance"
+                                  ],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": " Adds a smaller controllable laser ring in addition to the main one.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "The Ludovico Technique",
+                              "style": "bold"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " + ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 698
+                              },
+                              "label": "Twisted Pair"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ": Adds 2 even smaller controllable laser rings in addition to the main one.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "The Ludovico Technique",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 132
+                          },
+                          "label": "A Lump of Coal"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": The ring increases in diameter when Isaac is further; 100% when he is on the center, 1.25× when he is 12.5 tiles of distance away.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": " The damage increases with distance but is reduced while Isaac is in the ring.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            },
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [
+                                    "repentance"
+                                  ],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": " The damage increases 20% per tile of distance.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "The Ludovico Technique",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 114
+                          },
+                          "label": "Mom's Knife"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": Overrides Brimstone.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "The Ludovico Technique",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 261
+                          },
+                          "label": "Proptosis"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": The ring deals 1.5× Isaac's Damage at its largest, and 50% at its smallest. The ring increases in diameter when Isaac is closer; 1.25× when he is on the center, 100% when he is 12.5 tiles of distance away.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 132
+                  },
+                  "label": "A Lump of Coal"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The beam gradually increases in size and damage the farther it travels, with the damage increasing on a multiplier that is +20% per tile of distance. This allows for a huge damage increase from longer distances.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 394
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Fires automatically upon reaching full charge. Fires at the direction of the crosshair.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 55
+                  },
+                  "label": "Mom's Eye"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Adds a chance to shoot a beam from the back of Isaac's head.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 114
+                  },
+                  "label": "Mom's Knife"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Mom's Knife has priority. Does not apply Brimstone's tears down. Adds a small barrage of knives after the main knife is fired, with each knife doing ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " 80% of / ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "edition",
+                      "only": [
+                        "repentance"
+                      ],
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": " 2× Isaac's tear damage.",
+                          "style": "plain"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "The barrage of knives goes all the way across the screen and does not return.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Charge amount increases the barrage size; 2-4 knives at 0%, 8-10 knives 100%.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "This effect does not work with ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "character",
+                            "id": 7
+                          },
+                          "label": "Azazel"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " or ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "character",
+                            "id": 28
+                          },
+                          "label": "Tainted Azazel"
+                        },
+                        {
+                          "kind": "text",
+                          "text": "'s versions of Brimstone.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 217
+                  },
+                  "label": "Mom's Wig"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Holding down a fire button to charge the attack very rapidly rolls the probability to spawn ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "Blue Spider",
+                  "label": "Blue Spider"
+                },
+                {
+                  "kind": "text",
+                  "text": "s; releasing to fire the beam, however, does not.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "afterbirthPlus"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " The blue spiders only spawn while the beam is firing.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 229
+                  },
+                  "label": "a"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Brimstone has priority. Does not apply Monstro's Lung's tears down. Fires 3-5 additional beams in random directions around Isaac. This effect also applies to ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 7
+                  },
+                  "label": "Azazel"
+                },
+                {
+                  "kind": "text",
+                  "text": " and ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 28
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": "'s Brimstone.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " Charging a new Brimstone beam removes the original from in front of Isaac, but not the additional ones added by Monstro's Lung.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 431
+                  },
+                  "label": "Multidimensional Baby"
+                },
+                {
+                  "kind": "text",
+                  "text": ": If a brimstone laser is shot through the baby, it will double the laser.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 5
+                  },
+                  "label": "anr"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Makes the beam curve when moving. It has the same effect on ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 7
+                  },
+                  "label": "Azazel"
+                },
+                {
+                  "kind": "text",
+                  "text": "'s mini-brimstone but doubles the range.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "Makes the beam shoot from the back. An oval beam is shot from the front instead.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 553
+                  },
+                  "label": "Mucormycosis"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The beam has 25% chance to spawn spore to enemies on every other tick.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 317
+                  },
+                  "label": "a"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Leaves a creep for each enemy and obstacle the beam hits, on every other tick. ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 7
+                  },
+                  "label": "Azazel"
+                },
+                {
+                  "kind": "text",
+                  "text": "'s Brimstone leaves creeps at the end of its range.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 606
+                  },
+                  "label": "Ocular Rift"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Rifts may appear where the beam hits rocks, walls, or enemies.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "trinket",
+                    "id": 96
+                  },
+                  "label": "Ouroboros Worm"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The beam will make large loops on itself. The homing is present, but unreliable.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 104
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Spawns two perpendicular beams on the first enemy or obstacle the beam hits.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentancePlus"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " Also spawns small split tears.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 618
+                  },
+                  "label": "Rotten Tomato"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Each tick of the beam's damage can mark enemies.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 221
+                  },
+                  "label": "a"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Beams bounce off of walls once, creating a second beam that deals ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": "half/",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "edition",
+                      "only": [
+                        "repentance"
+                      ],
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "full damage.",
+                          "style": "plain"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "If ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "character",
+                                "id": 7
+                              },
+                              "label": "Azazel"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "'s mini Brimstone beam bounces off a wall, it effectively becomes a full-length Brimstone beam, but it will still only deal half damage.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [
+                                    "afterbirthPlus"
+                                  ],
+                                  "inline": [
+                                    {
+                                      "kind": "ref",
+                                      "target": {
+                                        "kind": "character",
+                                        "id": 7
+                                      },
+                                      "label": "Azazel"
+                                    },
+                                    {
+                                      "kind": "text",
+                                      "text": "'s Brimstone no longer becomes a full length beam after bouncing, instead bouncing as a regular mini-Brimstone.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 330
+                          },
+                          "label": "Soy Milk"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": The Brimstone beam bounces off the wall at a perpendicular angle to where the beam was fired.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 220
+                  },
+                  "label": "Sad Bombs"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Upon exploding, bombs release ten beams in all directions.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "Brimstone does not benefit from Sad Bombs' flat damage bonus.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 330
+                  },
+                  "label": "Soy Milk"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Fires automatically upon reaching full charge. The beam lasts indefinitely as long as the fire key is held. The beam can change its direction while being fired, and can be aimed in any direction with joystick controls.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Increasing tears will also increase damage.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "text",
+                                  "text": "Damage per Tick = Damage × Fire Rate / 5",
+                                  "style": "plain"
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 330
+                          },
+                          "label": "Soy Milk"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 69
+                          },
+                          "label": "Chocolate Milk"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": The beam does 25% more damage. Does not increase Isaac's damage stat itself.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 315
+                  },
+                  "label": "Strange Attractor"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Enemies are attracted towards the beam, improving its consistency. Consumables will also be moved by the beam.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 556
+                  },
+                  "label": "Sulfur"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Grants a larger beam with a 1.2× damage multiplier and +1 damage (same effect as picking up a second Brimstone).",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 463
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 592
+                  },
+                  "label": "n"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The beam has a chance to destroy rocks every tick. The laser will not destroy sealed doors or open secret rooms.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentancePlus"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " The beam can now open doors.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 38
+                  },
+                  "label": "Tammy's Head"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Shoots ten beams in all directions. Given the item's single room charge, this makes for an extremely powerful synergy.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " Brimstone does not benefit from Tammy's Head's flat damage bonus.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 244
+                  },
+                  "label": "a"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Tech.5 fires normally while charging Brimstone.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 68
+                  },
+                  "label": "a"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The Technology laser coils around the Brimstone beam, granting a 1.5x damage multiplier (it stacks with other similar multipliers like ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 4
+                  },
+                  "label": "Cricket's Head"
+                },
+                {
+                  "kind": "text",
+                  "text": " or ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 12
+                  },
+                  "label": "Magic Mushroom"
+                },
+                {
+                  "kind": "text",
+                  "text": ").",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "Technology's damage multiplier will be overridden if Isaac has the powered up version (from picking up Brimstone twice or using ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 556
+                              },
+                              "label": "n"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " with Brimstone); this can decrease Isaac's damage.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 152
+                  },
+                  "label": "a"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Both fire normally; the Technology laser fires while charging Brimstone.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 395
+                  },
+                  "label": "Tech X"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Tech X has priority. Does not apply Brimstone's tears down. Fires a Brimstone ring. This Brimstone ring is larger than the laser ring and has a much wider hitbox.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " Double Brimstone: Further increases the width of the ring, and grants +1 Damage.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Tech X",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "character",
+                            "id": 7
+                          },
+                          "label": "Azazel"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ":",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": " Overridden by Azazel's Brimstone.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            },
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": " Overrides Azazel's Brimstone. This works quite well with Azazel's good initial damage stat and also negates his initial range penalty.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            },
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [
+                                    "repentance"
+                                  ],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": " Applies 35% damage penalty and fires a Brimstone ring instead of Tech X ring. If combined with Brimstone, the damage penalty is negated.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": [
+                                {
+                                  "kind": "list",
+                                  "ordered": false,
+                                  "items": [
+                                    {
+                                      "inline": [
+                                        {
+                                          "kind": "text",
+                                          "text": "The same applies to ",
+                                          "style": "plain"
+                                        },
+                                        {
+                                          "kind": "ref",
+                                          "target": {
+                                            "kind": "character",
+                                            "id": 28
+                                          },
+                                          "label": "Tainted Azazel"
+                                        },
+                                        {
+                                          "kind": "text",
+                                          "text": ".",
+                                          "style": "plain"
+                                        }
+                                      ],
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Tech X +",
+                          "style": "bold"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " Homing Shots: The ring bends itself to hit enemies if they are nearby.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "Tech X",
+                              "style": "bold"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " + ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 114
+                              },
+                              "label": "Mom's Knife"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ": Mom's Knife and a Mom's Knife + Brimstone barrage are shot alongside the rings.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "Tech X",
+                              "style": "bold"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " + ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 68
+                              },
+                              "label": "Technology"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ": The 1.5× damage multiplier from Brimstone + Technology is lost, but the laser fires while charging the Brimstone ring.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [
+                                    "repentance"
+                                  ],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": " Fires a Brimstone ring coiled by a laser. The 1.5× damage multiplier from Brimstone + Technology is retained.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 233
+                  },
+                  "label": "Tiny Planet"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The beam will wrap around Isaac once and then shoot straight forward.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "Tiny Planet",
+                              "style": "bold"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " + ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 5
+                              },
+                              "label": "My Reflection"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ": The beam will first wrap around Isaac, form an oval beam in a longer range, then shoot backward. Interestingly enough, the beam will look like a G clef symbol.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 596
+                  },
+                  "label": "Uranus"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The beam will freeze any enemies killed by it, so long as they are not immune to the freeze effect.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "trinket",
+                    "id": 10
+                  },
+                  "label": "Wiggle Worm"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Beam becomes wavy while firing straight, effectively increasing its width.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "interactions",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Overridden by Brimstone:",
+              "style": "plain"
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 245
+                  },
+                  "label": "na"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 316
+                  },
+                  "label": "Cursed Eye"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 410
+                  },
+                  "label": "Evil Eye"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 462
+                  },
+                  "label": "Eye of Belial"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 401
+                  },
+                  "label": "anr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 540
+                  },
+                  "label": "Flat Stone"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 429
+                  },
+                  "label": "anr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 374
+                  },
+                  "label": "anr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 494
+                  },
+                  "label": "a+nr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 440
+                  },
+                  "label": "Kidney Stone"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 532
+                  },
+                  "label": "a+nr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 444
+                  },
+                  "label": "a+nr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 229
+                  },
+                  "label": "na"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 317
+                  },
+                  "label": "na"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 597
+                  },
+                  "label": "Neptunus"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 104
+                  },
+                  "label": "nr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 461
+                  },
+                  "label": "a+nr+"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 529
+                  },
+                  "label": "a+nr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 379
+                  },
+                  "label": "Pupula Duplex"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 221
+                  },
+                  "label": "na"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 459
+                  },
+                  "label": "a+nr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 244
+                  },
+                  "label": "na"
+                },
+                {
+                  "kind": "text",
+                  "text": ", unless using ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 7
+                  },
+                  "label": "Azazel"
+                },
+                {
+                  "kind": "text",
+                  "text": ", in which case it will fire normally while charging Brimstone",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 68
+                  },
+                  "label": "na"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 524
+                  },
+                  "label": "Technology Zero"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 533
+                  },
+                  "label": "Trisagion"
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Only stat effects are applied; otherwise overridden by Brimstone:",
+              "style": "plain"
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 453
+                  },
+                  "label": "Compound Fracture"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 369
+                  },
+                  "label": "anr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 224
+                  },
+                  "label": "nr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 237
+                  },
+                  "label": "Death's Touch"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 394
+                  },
+                  "label": "anr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 5
+                  },
+                  "label": "na"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 463
+                  },
+                  "label": "a+nr"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 152
+                  },
+                  "label": "na"
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Other interactions:",
+              "style": "plain"
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 359
+                  },
+                  "label": "8 Inch Nails"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Beams gain knockback, pushing enemies away in the direction they travel but not out of their path. This increases its consistency.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 706
+                  },
+                  "label": "Abyss"
+                },
+                {
+                  "kind": "text",
+                  "text": ": When Isaac uses Abyss to absorb Brimstone, it turns into a larger gray locust, but otherwise acts like normal locusts created by Abyss.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 616
+                  },
+                  "label": "Bird's Eye"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Will occasionally spawn a fire when firing.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 69
+                  },
+                  "label": "Chocolate Milk"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Reduces Isaac's tear delay by 20%. Does not increase damage.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 52
+                  },
+                  "label": "nar"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Overrides Brimstone.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " Isaac continuously fires bombs while charging the beam.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 168
+                  },
+                  "label": "na"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Overrides Brimstone.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 368
+                  },
+                  "label": "Epiphora"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Effect only activates when holding charge in a specific direction, and deactivates when the charge is released, effectively making Epiphora useless unless Isaac has exceedingly high tear delay.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 257
+                  },
+                  "label": "Fire Mind"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The beam will not cause explosions, but will still set enemies on ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "burn",
+                  "label": "fire"
+                },
+                {
+                  "kind": "text",
+                  "text": ".",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 16
+                  },
+                  "label": "a+"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The charged attack will spawn a Brimstone ball that will float in front of The Forgotten for a few seconds before disappearing. The Forgotten will still melee attack while performing this action.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 495
+                  },
+                  "label": "a+nr"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The flames can still shoot from Isaac while holding the fire button.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " Has a chance to shoot flames for every other tick while the beam is being fired.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 331
+                  },
+                  "label": "Godhead"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Homing and stat bonuses apply, but the beam does not have a damaging aura.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 149
+                  },
+                  "label": "na+"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Does not apply Ipecac's stat changes. The beam poisons enemies.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "Isaac shoots Ipecac tears while charging Brimstone. Stat changes from both items are applied as normal, meaning that Ipecac fires slower and Brimstone charges slower, but Brimstone deals drastically increased damage.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "Applies +2 flat damage, instead of Ipecac's damage up. Does not apply Ipecac's tears down. The beam explodes on the first enemy or obstacle it hits every other tick, dealing 10 + twice of Isaac's Damage. The beam gains a poison effect. The explosions do not occur when the beam narrows, meaning that they occur only twice per shot without ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 330
+                              },
+                              "label": "Soy Milk"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " / ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 561
+                              },
+                              "label": "Almond Milk"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ". The beam and its explosions poison enemies. ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "item",
+                                "id": 60
+                              },
+                              "label": "The Ladder"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ", when placed, will trigger the Ipecac-Brimstone explosions. (possibly a bug)",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "text",
+                                  "text": "Ipecac",
+                                  "style": "bold"
+                                },
+                                {
+                                  "kind": "text",
+                                  "text": " + ",
+                                  "style": "plain"
+                                },
+                                {
+                                  "kind": "ref",
+                                  "target": {
+                                    "kind": "item",
+                                    "id": 531
+                                  },
+                                  "label": "Haemolacria"
+                                },
+                                {
+                                  "kind": "text",
+                                  "text": ": The flat damage bonus is +40 instead of +2. Tears will explode into multiple brimstone beams, each of which explodes and has a chance to hit Isaac.",
+                                  "style": "plain"
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 323
+                  },
+                  "label": "na+"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Fires normal tears, but nearly instantly charges when charging Brimstone.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "Fires normal tears. Charges at the same rate as Isaac's fire rate while charging Brimstone.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "Fires normal tears. Charges when firing Brimstone.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 637
+                  },
+                  "label": "Knockout Drops"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Gives the lasers high knockback.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 532
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Brimstone's range is lowered, but Lachryphagy tears will form at the end of the beam, which can be fed.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 502
+                  },
+                  "label": "Large Zit"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Creep shots will still be fired occasionally while holding the fire button.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 617
+                  },
+                  "label": "Lodestone"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Changes the beam to gray, can still apply the magnetized effect. The beams are not attracted to enemies with the magnetized effect.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 6
+                  },
+                  "label": "Number One"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Although Number One is otherwise purely beneficial with standard Brimstone, ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 7
+                  },
+                  "label": "Azazel"
+                },
+                {
+                  "kind": "text",
+                  "text": "'s range is severely affected.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 570
+                  },
+                  "label": "Playdough Cookie"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Brimstone will start cycling through colors and applies the standard chance of tear-effect on hit, with the homing effect occurring intermittently.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 529
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Brimstone has shorter range, a bit longer than the default range of ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 7
+                  },
+                  "label": "Azazel"
+                },
+                {
+                  "kind": "text",
+                  "text": "'s mini-Brimstone, and it is not affected by ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "range",
+                  "label": "range"
+                },
+                {
+                  "kind": "text",
+                  "text": ". The beam fires Pop! tears at the end, which are ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "piercing",
+                  "label": "piercing"
+                },
+                {
+                  "kind": "text",
+                  "text": ".",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 261
+                  },
+                  "label": "na"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Does not apply distance penalty.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "The beam deals 2× Isaac's Damage, which is already doubled from the item's effect, at point blank-range. The damage quickly drops further along the beam, at about 0.8× per tile of distance.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "The beam deals 6× Isaac's Damage at point-blank range. Decreases 13.3% of the damage per tile of distance, to the minimum of 0.1 point of damage at 7.5 tiles of distance.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 579
+                  },
+                  "label": "Spirit Sword"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Overrides Brimstone.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 27
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Greatly decreases attack speed for Samson's rage mode melee attack and replaces the thrown jawbone with a large laser sphere (similarly to ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 16
+                  },
+                  "label": "The Forgotten"
+                },
+                {
+                  "kind": "text",
+                  "text": ").",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "bugs",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Picking up Brimstone before picking up ",
+              "style": "plain"
+            },
+            {
+              "kind": "ref",
+              "target": {
+                "kind": "item",
+                "id": 305
+              },
+              "label": "Scorpio"
+            },
+            {
+              "kind": "text",
+              "text": " will not change the beam's color. Picking up Scorpio before Brimstone, however, will properly change it to green. When having Brimstone + ",
+              "style": "plain"
+            },
+            {
+              "kind": "ref",
+              "target": {
+                "kind": "item",
+                "id": 5
+              },
+              "label": "My Reflection"
+            },
+            {
+              "kind": "text",
+              "text": " and facing towards an east/west wall, standing directly in front of it will make Isaac shoot in reverse — the front-facing oval Brimstone beam will shoot from the back, and the back-facing beam will shoot from the front.",
+              "style": "plain"
+            }
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "inline": [
+            {
+              "kind": "text",
+              "text": " ",
+              "style": "plain"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
