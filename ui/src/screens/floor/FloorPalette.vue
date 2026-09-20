@@ -22,6 +22,10 @@ import RoomSymbol from './RoomSymbol.vue'
 // the row before it finds the swatch, and the keys already run 1 to 9 left to right, which is
 // only true if there is a left to right.
 //
+// **The chosen one is marked outside its own fill**, not on it: a cream border on the cream
+// Normal Room is a border nobody sees, and that is the swatch the screen opens on. An outline
+// with an offset sits on the card behind the row, where one colour reads against all fourteen.
+//
 // The name is a hover away rather than printed on all fourteen — a label under every swatch is
 // the list again, and the name is wanted once, while choosing. The tooltip is the repo's own
 // and not a `title` attribute: that one is invisible to the keyboard and arrives a second late
@@ -55,7 +59,12 @@ useShortcut((event) => {
             :variant="ButtonVariant.Cell"
             :size="ButtonSize.Cell"
             class="relative"
-            :class="[roomFill[kind], brush === kind ? 'border-highlight' : '']"
+            :class="[
+              roomFill[kind],
+              brush === kind
+                ? 'outline-2 outline-offset-1 outline-highlight'
+                : '',
+            ]"
             :aria-pressed="brush === kind"
             :aria-label="t(`floor.room.${kind}`)"
             @click="emit('pick', kind)"

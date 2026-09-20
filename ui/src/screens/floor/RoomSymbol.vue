@@ -21,7 +21,12 @@ const path = computed(() => roomSymbol[props.kind])
 </script>
 
 <template>
-  <PixelSprite :url="url ?? null" class="size-floor-symbol">
+  <!-- The box is the icon's size in both branches, so the cell does not jump when the game
+       is there; the stroke drawing keeps its own smaller size and is centred inside it. -->
+  <PixelSprite
+    :url="url ?? null"
+    class="grid size-floor-icon shrink-0 place-items-center"
+  >
     <template #fallback>
       <svg
         v-if="path !== ''"
