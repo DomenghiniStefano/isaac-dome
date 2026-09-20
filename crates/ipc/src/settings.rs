@@ -96,6 +96,13 @@ impl Settings {
         }
     }
 
+    pub fn with_auto_update(&self, on: bool) -> Settings {
+        Settings {
+            auto_update: on,
+            ..self.clone()
+        }
+    }
+
     pub fn with_resume_tabs(&self, resume: bool) -> Settings {
         Settings {
             resume_tabs: resume,
