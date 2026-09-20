@@ -2511,73 +2511,9 @@ nodes, and then move the virtualizer to the hit.
 
 ---
 
-## B68 — The Ultra Secret finder answers nothing, on every grid there is (bug, `floor`, built 2026-09-20)
-
-**Needs:** nothing — the wikitext was already read on 2026-09-15, and re-read on 2026-09-20 at the
-same 39,230 bytes.
-
-`crates/floor/rules/placement.json` gave the `ultraSecret` target **one** rule, and its constraint
-was `unmodelled`. `floor::solve` turns an `Unmodelled` into an `Unresolved` and never proposes a
-cell for one, so the screen's Ultra tab read **0 on any grid**, painted or empty, by construction
-— and a test pinned it that way.
-
-The reasoning is in `docs/superpowers/reports/2026-09-15-secret-room-rules.md` §3: *"a red room is
-the Red Key mechanic, created by an item during the run. The grid paints rooms that exist; it does
-not paint rooms an item could create."* True about red rooms, and not about the rule: the rule is
-about the **sides where one could open**, and such a side is an **empty cell**, which is the thing
-a painted minimap knows best. Two hops is a distance; it was read as an obstacle.
-
-Dismissing the hard sentence took the easy one with it. *"Ultra Secret Rooms are special rooms
-that are not connected to any other room on the map directly"* is the first line of that wiki
-section, it is a plain adjacency test on painted cells, and it appears in neither §2 nor §3 of the
-report. **A paragraph judged whole is a paragraph half-read** — the rule of sourcing it sentence
-by sentence is what this entry costs.
-
-### How it was found, and why nothing else could have
-
-The owner put the screen beside https://tboisecretroomfinder.com on **2026-09-20** — a page that
-answers the same question from the same painted grid, with its logic inline
-(`isValidUltraPosition`, `countUltraConnections`), and lights cells where ours lit none.
-
-Nothing in the suite could have said it. A target that answers nothing looks exactly like a target
-answering, correctly, that there is nowhere — which is the same shape as the `unpack` tests that
-all ran on `config.a`: green, and measuring a slice nobody named. The instrument has to be shown
-able to speak before its silence is evidence, and for this one it never was.
-
-### What was done
-
-Five rules replace the one, each with its own sentence, and three new constraints in
-`floor::Constraint` — `redRoomConnections` (with an `atMost` that is `null` for the "3+" band,
-because the page states no ceiling), `redRoomForbiddenNeighbour` and `noPaintedNeighbour`. The
-whole correction, including the one band that is deliberately **not** a fallback the way
-`secret-neighbours-one` is, is §6 of the rules report.
-
-Nothing crosses the IPC differently: `Constraint` lives inside `floor`, and a candidate still
-leaves as `cell` / `neighbours` / `rank` / `applied`.
-
-### What is still unmodelled, and stays so
-
-The four conditions about a room's **shape** — *"different squares in L rooms count as 2"*,
-*"next to the sides of narrow rooms"*, *"any room that can't have a red room opened on that
-specific side"*. `floor::Shape` has one variant by the spec's decision 4, so every room on this
-grid is one square and none of those can be drawn, let alone judged. They keep the target's
-`Unmodelled` seat as `ultra-secret-shapes`, and reach the screen under *"What the grid cannot
-judge"*.
-
-### Closes when
-
-- [x] The Ultra target proposes cells, with the three bands the wiki ranks.
-- [x] Each lit cell cites its sentences, and the shape rule still says it cannot be judged.
-- [x] §3 of the rules report carries the correction rather than losing the wrong reasoning.
-- [ ] **NEEDS WINDOW** — the Ultra tab looked at in a real window against the reference site, on a
-      floor painted from a real run. The three fill levels have never been seen with anything in
-      them for this target.
-
----
-
 ## Closed entries
 
-**33 entries have closed**, and they are in `docs/completed/backlog-closed.md` with
+**34 entries have closed**, and they are in `docs/completed/backlog-closed.md` with
 the reason and the numbers each one measured. The list below is so that a question starting
 "was this ever looked at?" does not need that file opened.
 
@@ -2614,3 +2550,4 @@ the reason and the numbers each one measured. The list below is so that a questi
 - **B53 — Three pages carry `{{infobox monster}}` and the parser skips them** — closed 2026-09-15
 - **B60 — A log with no run in it, and the test that says there is no such log** — closed 2026-09-16, and its own premise was wrong
 - **B61 — An empty profile is a shape `samples/` has never held** — closed 2026-09-16, and it is an instrument, not a fixture
+- **B68 — The Ultra Secret finder answers nothing, on every grid there is** — closed 2026-09-20, opened and closed the same day
