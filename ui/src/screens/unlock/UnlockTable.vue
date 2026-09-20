@@ -24,7 +24,9 @@ const { t } = useMessages()
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <!-- A link in the filling chain (spec 3.13a §4): the header keeps its own height, the rows take
+       the rest. `min-h-0` here as on every link, or the scroll box below never shrinks. -->
+  <div class="flex min-h-0 flex-1 flex-col">
     <div
       class="grid grid-cols-unlock items-center border-b border-hairline bg-muted text-label text-subtle-foreground"
     >
