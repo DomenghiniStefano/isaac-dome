@@ -45,7 +45,7 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
 </script>
 
 <template>
-  <div class="flex max-w-300 flex-col gap-4">
+  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15">
     <ScreenHeader :icon="MapIcon" :title="t('routes.plan')">{{
       t('plan.intro')
     }}</ScreenHeader>

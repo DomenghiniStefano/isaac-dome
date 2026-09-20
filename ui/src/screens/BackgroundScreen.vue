@@ -35,7 +35,7 @@ const startFailure = computed(() =>
 </script>
 
 <template>
-  <div class="flex max-w-250 flex-col gap-4">
+  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15">
     <ScreenHeader :icon="MonitorDotIcon" :title="t('routes.background')">{{
       t('background.intro')
     }}</ScreenHeader>
