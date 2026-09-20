@@ -17,6 +17,9 @@
   --spacing-control: 2.125rem;
   /* Side of a compact icon button: the tab strip's "+" inside the 30px title bar. */
   --spacing-icon-compact: 1.375rem;
+  /* A section sidebar with nothing but its icons (spec 3.13a §6): the row button's own height,
+     so the column of icons reads as a column of squares. */
+  --spacing-sidebar-icons: 3rem;
   /* The OS's furniture in the app's clothes: one size at every scale, like a hairline. */
   --spacing-scrollbar: 12px;
   /* The game's icons are 32x32 native, drawn at a whole multiple of themselves: at a
@@ -36,9 +39,6 @@
   --spacing-unlock-state: 8.5rem;
   --spacing-unlock-fan: 3.5rem;
   --spacing-unlock-queue: 2.5rem;
-  /* The scroll body of any virtualized list — Unlock, the Collection, Search, the wiki's
-     category lists — read by `VirtualRows.vue` alone (`docs/BACKLOG.md` B43). */
-  --spacing-virtual-rows-body: 35rem;
   /* Live's "opens" column: it holds a count, or the words that say there is none — and the
      words are what decides the width. */
   --spacing-live-opens: 7.5rem;

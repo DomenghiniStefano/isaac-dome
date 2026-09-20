@@ -33,7 +33,7 @@ const kept = [
 </script>
 
 <template>
-  <div class="flex max-w-250 flex-col gap-4">
+  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15">
     <ScreenHeader
       :icon="LayoutPanelTopIcon"
       :title="t('routes.tabsSettings')"
