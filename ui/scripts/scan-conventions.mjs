@@ -227,6 +227,27 @@ const checks = [
       !isUnder(file, WINDOW_DIR),
   },
   {
+    // Spec 3.13a §2 and §9. The first half is the rejected approach: a media query measures the
+    // window, which is not what the content has — the sidebar alone is 252px the window cannot
+    // account for — and its `rem` cannot see the interface's scale at all.
+    //
+    // The second half is the hole the first one leaves: `containers.css` does not reset Tailwind's
+    // own `--container-*` scale, so `@max-md/page:` is writable today and would be a fourth
+    // threshold nobody declared, measured against a number nobody chose.
+    //
+    // **A Vue event binding has the same shape as a variant** — `@update:open="x"` — so the two
+    // are told apart the only way that is honest here: a container variant names its container
+    // with a `/`, and an event binding never does. That naming is §5's rule, which is what makes
+    // this rule possible at all.
+    name: 'media query variant, or a container size that is not ours',
+    test: (_f, body) => {
+      const media = /(^|[\s"'`])(?:[a-z0-9-]+:)*(?:sm|md|lg|xl|2xl):/m.test(body)
+      const ours = new Set(['compact', 'regular', 'wide', 'tab-narrow'])
+      const named = [...body.matchAll(/@(?:max-)?([a-z0-9-]+)\/[a-z-]+:/g)]
+      return media || named.some(([, size]) => !ours.has(size))
+    },
+  },
+  {
     // Spec 3.13a §4. Two shapes and not twenty: a screen either flows and scrolls, or fills and
     // hands the height that is left to one region inside it. A root that is neither is a screen
     // whose height nobody decided — which fails nothing, and looks like a bug in the list inside
@@ -532,6 +553,35 @@ const FIXTURES = [
     name: 'a part under screens/ is not a screen',
     file: 'src/screens/unlock/UnlockRow.vue',
     body: '<template>\n  <span class="px-2" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a media query variant is caught',
+    file: 'src/screens/GoalsScreen.vue',
+    body: '<template>\n  <div class="grid grid-cols-2 sm:grid-cols-4" />\n</template>\n',
+    expect: [
+      'media query variant, or a container size that is not ours',
+      'screen root is neither flowing nor filling',
+    ],
+  },
+  {
+    name: 'one of our container variants is allowed',
+    file: 'src/screens/unlock/UnlockRow.vue',
+    body: '<template>\n  <span class="flex flex-col @wide/page:flex-row @max-compact/page:hidden" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a container size that is not ours is caught',
+    file: 'src/screens/unlock/UnlockRow.vue',
+    body: '<template>\n  <span class="@max-md/page:hidden" />\n</template>\n',
+    expect: ['media query variant, or a container size that is not ours'],
+  },
+  {
+    // The guard on the half that could not tell them apart: an event binding wears the same shape
+    // as a variant, and only the container's name separates them.
+    name: 'a Vue event binding is not a container variant',
+    file: 'src/screens/unlock/UnlockRow.vue',
+    body: '<template>\n  <Thing @update:open="go" @update:model-value="go" />\n</template>\n',
     expect: [],
   },
   {
