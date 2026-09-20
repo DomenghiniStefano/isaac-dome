@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import EmptyValue from '@/components/data-state/EmptyValue.vue'
+import FindHighlight from '@/components/find/FindHighlight.vue'
 import { unlockKindText } from '@/components/graph/unlockKindText'
 import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import WhyMenu from '@/components/graph/WhyMenu.vue'
@@ -13,7 +14,13 @@ import type { CollectionItem } from '@/lib/ipc/types'
 import QualityPips from './QualityPips.vue'
 import { collectionFacetValueLabel, itemStateText } from './collectionLabels'
 
-const props = defineProps<{ item: CollectionItem }>()
+const props = defineProps<{
+  item: CollectionItem
+  /** What the find bar is looking for; empty while it is closed (B67). */
+  findQuery: string
+  /** Whether this row is the match the bar is standing on. */
+  findCurrent: boolean
+}>()
 const { t } = useMessages()
 
 const state = computed(() => itemState(props.item))
@@ -49,7 +56,12 @@ const groups = computed(() => lockWhy(props.item.lock, t))
     <PixelSprite :url="item.iconUrl" placeholder class="size-8 shrink-0" />
   </span>
   <span class="flex min-w-0 flex-col px-2">
-    <span class="truncate text-row text-foreground">{{ item.name }}</span>
+    <span class="truncate text-row text-foreground"
+      ><FindHighlight
+        :text="item.name"
+        :query="findQuery"
+        :current="findCurrent"
+    /></span>
     <span class="text-micro text-faint-foreground tabular-nums">{{
       subtitle
     }}</span>
