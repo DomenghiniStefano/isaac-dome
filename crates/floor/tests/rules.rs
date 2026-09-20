@@ -35,9 +35,16 @@ const FIXTURE: &str = r#"{
     {
       "id": "ultra-secret-connections",
       "target": "ultraSecret",
-      "quote": "through its adjacent red rooms",
+      "quote": "connect to 3+ non-red rooms through its adjacent red rooms",
       "url": "https://example.invalid/Ultra_Secret_Room",
-      "constraint": { "kind": "unmodelled", "note": "red rooms are not painted on this grid" }
+      "constraint": { "kind": "redRoomConnections", "atLeast": 3, "atMost": null, "rank": 0 }
+    },
+    {
+      "id": "ultra-secret-shapes",
+      "target": "ultraSecret",
+      "quote": "next to the sides of narrow rooms",
+      "url": "https://example.invalid/Ultra_Secret_Room",
+      "constraint": { "kind": "unmodelled", "note": "red rooms open on a side, and a side belongs to a shape this grid does not draw" }
     }
   ]
 }"#;
@@ -79,11 +86,35 @@ fn a_constraint_the_grid_cannot_evaluate_parses_as_unmodelled_rather_than_being_
     let rules = Rules::parse(FIXTURE).expect("the fixture parses");
     let r = rules
         .for_target(Target::UltraSecret)
-        .next()
-        .expect("one rule");
+        .find(|r| r.id == "ultra-secret-shapes")
+        .expect("the rule is there");
     match &r.constraint {
         Constraint::Unmodelled { note } => assert!(note.contains("red rooms")),
         other => panic!("expected Unmodelled, got {other:?}"),
+    }
+}
+
+#[test]
+fn an_open_band_of_red_room_connections_carries_no_ceiling() {
+    // "3+" is what the sentence says. A `null` ceiling is that plus sign; writing [3,4,…,12]
+    // instead would put a number in the file the wiki never states, and silently drop the
+    // thirteenth if the grid ever grew one.
+    let rules = Rules::parse(FIXTURE).expect("the fixture parses");
+    let r = rules
+        .for_target(Target::UltraSecret)
+        .find(|r| r.id == "ultra-secret-connections")
+        .expect("the rule is there");
+    match &r.constraint {
+        Constraint::RedRoomConnections {
+            at_least,
+            at_most,
+            rank,
+        } => {
+            assert_eq!(*at_least, 3);
+            assert_eq!(*at_most, None);
+            assert_eq!(*rank, 0);
+        }
+        other => panic!("expected RedRoomConnections, got {other:?}"),
     }
 }
 
@@ -135,11 +166,19 @@ fn the_embedded_file_parses_and_every_rule_in_it_is_sourced() {
 }
 
 #[test]
-fn the_embedded_file_is_the_nine_rules_the_report_sourced() {
+fn the_embedded_file_is_the_fourteen_rules_the_report_sourced() {
     // The list is §2 of docs/superpowers/reports/2026-09-15-secret-room-rules.md, in its order.
     // Two of them — secret-neighbours-one and super-secret-not-next-to-secret — were found by
     // the research pass and are not in the plan's draft: a rule dropped here would read on the
     // screen as "nothing in the way".
+    //
+    // The last five are B68's: the Ultra Secret paragraph used to be one `unmodelled` row, so
+    // that target answered nothing on every grid there is. Only the sentence about room
+    // shapes is still unmodelled, and it kept the target's `Unmodelled` seat.
+    //
+    // **Order is not decoration here.** `solve` walks the rules in this order and a narrowing
+    // rule only ever removes, so a rule that narrows before anything has been proposed narrows
+    // an empty list — every `ultraSecret` proposer has to come before the two that cut.
     let rules = Rules::embedded().expect("the embedded rules parse");
     let ids: Vec<&str> = rules.all().map(|r| r.id.as_str()).collect();
     assert_eq!(
@@ -154,6 +193,11 @@ fn the_embedded_file_is_the_nine_rules_the_report_sourced() {
             "super-secret-not-next-to-secret",
             "super-secret-second-longest",
             "ultra-secret-connections",
+            "ultra-secret-connections-two",
+            "ultra-secret-connections-one",
+            "ultra-secret-not-connected",
+            "ultra-secret-red-room-invalid",
+            "ultra-secret-shapes",
         ]
     );
 }
