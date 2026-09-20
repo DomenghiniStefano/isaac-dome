@@ -71,7 +71,10 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
         </template>
       </DiagnosticsList>
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
-      <div v-if="readable" class="flex flex-col items-start gap-4 @wide/page:flex-row">
+      <div
+        v-if="readable"
+        class="flex flex-col items-start gap-4 @wide/page:flex-row"
+      >
         <QueueCard
           class="w-full min-w-0 flex-1"
           :rows="queue.view.rows"

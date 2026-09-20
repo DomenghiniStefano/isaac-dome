@@ -241,8 +241,16 @@ const checks = [
     // this rule possible at all.
     name: 'media query variant, or a container size that is not ours',
     test: (_f, body) => {
-      const media = /(^|[\s"'`])(?:[a-z0-9-]+:)*(?:sm|md|lg|xl|2xl):/m.test(body)
-      const ours = new Set(['compact', 'regular', 'wide', 'tab-narrow'])
+      const media = /(^|[\s"'`])(?:[a-z0-9-]+:)*(?:sm|md|lg|xl|2xl):/m.test(
+        body,
+      )
+      const ours = new Set([
+        'compact',
+        'regular',
+        'wide',
+        'tab-narrow',
+        'sidebar-room',
+      ])
       const named = [...body.matchAll(/@(?:max-)?([a-z0-9-]+)\/[a-z-]+:/g)]
       return media || named.some(([, size]) => !ours.has(size))
     },
