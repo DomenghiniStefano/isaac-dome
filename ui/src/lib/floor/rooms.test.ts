@@ -1,10 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import { RoomKindView } from '@/lib/ipc/types'
 import {
-  ERASE_KEY,
   brushFor,
   paletteKey,
-  paletteRows,
+  paletteOrder,
   roomFill,
   roomSymbol,
 } from './rooms'
@@ -48,15 +47,13 @@ describe('roomSymbol', () => {
   })
 })
 
-describe('paletteRows', () => {
+describe('paletteOrder', () => {
   it('offers every kind exactly once', () => {
-    const offered = paletteRows.flat()
-    expect([...offered].sort()).toEqual([...kinds].sort())
+    expect([...paletteOrder].sort()).toEqual([...kinds].sort())
   })
 
-  it('stays three rows, which is what makes it a palette and not a list of fourteen', () => {
-    expect(paletteRows).toHaveLength(3)
-    for (const row of paletteRows) expect(row.length).toBeLessThanOrEqual(5)
+  it('is one row, because fourteen swatches in three rows is a list again', () => {
+    expect(paletteOrder).toHaveLength(kinds.length)
   })
 })
 
@@ -71,7 +68,7 @@ describe('paletteKey', () => {
   })
 
   it('runs the keys in the order the palette is read, so left to right is 1 to 9', () => {
-    const read = paletteRows.flat().map((kind) => paletteKey[kind])
+    const read = paletteOrder.map((kind) => paletteKey[kind])
     expect(read).toEqual([
       '1',
       '2',
@@ -101,15 +98,12 @@ describe('brushFor', () => {
     expect(brushFor('q')).toBe(RoomKindView.Sacrifice)
   })
 
-  it('answers the eraser as null, a brush that paints nothing', () => {
-    expect(brushFor(ERASE_KEY)).toBeNull()
-  })
-
-  it('answers undefined for a key that is not ours, never the eraser', () => {
-    // Folding "not ours" into "erase" would rub out a room the day a field lands on
+  it('answers nothing for a key that is not ours, and never a brush', () => {
+    // Folding "not ours" into anything else would repaint the grid the day a field lands on
     // this screen, and nothing here would fail.
     expect(brushFor('a')).toBeUndefined()
     expect(brushFor('Enter')).toBeUndefined()
+    expect(brushFor('Backspace')).toBeUndefined()
     expect(brushFor('')).toBeUndefined()
   })
 })

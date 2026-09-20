@@ -7,14 +7,17 @@ import {
   paintStroke,
   type PaintedCells,
 } from '@/lib/floor/painting'
-import { TargetView, type FloorView, type RoomKindView } from '@/lib/ipc/types'
+import { RoomKindView, TargetView, type FloorView } from '@/lib/ipc/types'
 import { StoreId } from '@/lib/constants/stores'
 
 // The painted floor is a scratchpad, not a document: it lives here and nowhere else, and it is
 // gone when the app closes. Persisting it would outlive the floor it describes.
 export const useFloorStore = defineStore(StoreId.Floor, () => {
   const cells = ref<PaintedCells>(emptyCells())
-  const brush = ref<RoomKindView | null>(null)
+  // The Normal Room to begin with, and never nothing: the palette has no eraser on it, so a
+  // brush that paints nothing would be a state the screen cannot show and cannot leave.
+  // Rubbing out is the right button on the grid.
+  const brush = ref<RoomKindView>(RoomKindView.Normal)
   const view = shallowRef<FloorView | null>(null)
   const failed = ref(false)
 
