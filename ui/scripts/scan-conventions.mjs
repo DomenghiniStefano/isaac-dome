@@ -272,6 +272,16 @@ const checks = [
       /\bmax-w-/.test(rootClasses(body)),
   },
   {
+    // Spec 3.13a §7 and §9. It does not prove the *right* columns fell — nothing in a script can.
+    // It proves both edits were made: a narrow template with no hidden cell is a grid that dropped
+    // a track while every cell stayed, which slides the rest into the wrong columns. The header
+    // and the row live in two files, so each has to pass on its own.
+    name: 'narrow grid template with no column hidden',
+    test: (_f, body) =>
+      /\bgrid-cols-[a-z-]+-narrow\b/.test(body) &&
+      !/@max-compact\/page:hidden/.test(body),
+  },
+  {
     name: 'arbitrary pixel value in a class',
     test: (_f, body) => /\[\d+px\]/.test(body),
   },
@@ -583,6 +593,18 @@ const FIXTURES = [
     file: 'src/screens/unlock/UnlockRow.vue',
     body: '<template>\n  <Thing @update:open="go" @update:model-value="go" />\n</template>\n',
     expect: [],
+  },
+  {
+    name: 'a narrow template with its hidden cells is allowed',
+    file: 'src/screens/unlock/UnlockRow.vue',
+    body: '<template>\n  <div class="grid grid-cols-unlock @max-compact/page:grid-cols-unlock-narrow">\n    <span class="@max-compact/page:hidden" />\n  </div>\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a narrow template with no hidden cell is half the work',
+    file: 'src/screens/unlock/UnlockRow.vue',
+    body: '<template>\n  <div class="grid grid-cols-unlock @max-compact/page:grid-cols-unlock-narrow" />\n</template>\n',
+    expect: ['narrow grid template with no column hidden'],
   },
   {
     name: 'a width cap on a screen root is caught',
