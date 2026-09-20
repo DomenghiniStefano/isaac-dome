@@ -51,6 +51,7 @@ export const en: MessageSchema = {
     appearance: 'Appearance',
     background: 'Background',
     tabsSettings: 'Tabs',
+    updates: 'Updates',
     about: 'About',
   },
   wikiCategories: {
@@ -116,9 +117,22 @@ export const en: MessageSchema = {
     intro:
       'Draw the floor the way you see it on the minimap: empty cells light up where the game’s own rules allow a secret room. Every lit cell says which rule lit it and where that rule was read.',
     erase: 'Erase',
+    rub: 'right-click rubs out',
     clear: 'Clear the grid',
     painted: 'rooms drawn',
     neighbours: 'adjacent rooms',
+    empty: 'empty',
+    cell: 'Row {row}, column {column}: {room}',
+    at: 'Row {row}, column {column}',
+    scaleStops:
+      'The third step is where the scale stops. The rules put the candidates in order; they never say how much less likely the fourth is than the third, so neither does the shading.',
+    cornerFree:
+      'The bottom-right corner is left free on purpose: nothing is hidden there.',
+    step: {
+      first: 'first candidate',
+      second: 'second',
+      third: 'third, and every one after it',
+    },
     source: 'Source',
     unresolved: 'What the grid cannot judge',
     none: 'No cell the rules allow, with what you have drawn so far.',
@@ -534,6 +548,40 @@ export const en: MessageSchema = {
     stayTitle: 'Keep running in the background',
     stayHint:
       'Closing the last window leaves the app next to the clock, in the notification area: one click on the icon brings the window back. Off, closing the last window closes the app.',
+    saveFailedTitle: 'The setting was not saved',
+    saveFailed:
+      'The app already behaves this way, but we could not write it down: it will be back as it was next time you start it.',
+  },
+  updates: {
+    intro:
+      'Which version you have, and whether a newer one is out. The app downloads the update while you keep using it, and installs it when you say so.',
+    currentVersion: 'Installed version: {version}',
+    autoTitle: 'Update automatically',
+    autoHint:
+      'On, the app asks GitHub at every start whether there is a newer version and downloads it if there is. Off, no request is made at all: nothing leaves this computer unless you press “Check now”.',
+    unsupported: 'This build does not update itself.',
+    unsupportedHint:
+      'Not available in this build. An installer run from here would silently replace the development build with a release, and nobody would notice.',
+    idle: 'We have not checked yet since this app started.',
+    checking: 'Checking…',
+    upToDate: 'You have the newest version.',
+    downloading: 'Downloading {version}…',
+    ready: '{version} is ready to install.',
+    // Not bad luck like the others: what arrived is not what it claims to be.
+    failedRejected:
+      'The update was refused: the signature does not match. Nothing was installed. Download the installer from the releases page rather than trying again here.',
+    failedOffline:
+      'We could not reach GitHub. Try again when you are back online.',
+    failedNotPublished: 'There is no published version to download.',
+    failedInstall:
+      'The update was downloaded and the installation did not start. The file is still here: you can try again.',
+    failedUnknown: 'The update did not work.',
+    failedTitle: 'Could not install',
+    notesTitle: 'What changes',
+    check: 'Check now',
+    install: 'Restart and install',
+    installHint:
+      'The app closes, the installer carries on by itself, and the app opens again on its own.',
     saveFailedTitle: 'The setting was not saved',
     saveFailed:
       'The app already behaves this way, but we could not write it down: it will be back as it was next time you start it.',

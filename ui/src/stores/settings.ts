@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
 import { isIpcError } from '@/lib/ipc/errors'
 import {
+  setAutoUpdate as saveAutoUpdate,
   setResumeTabs as saveResumeTabs,
   setScale as saveScale,
   setStayInBackground as saveStayInBackground,
@@ -33,6 +34,7 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
   // app actually does.
   const stayInBackground = ref(true)
   const resumeTabs = ref(true)
+  const autoUpdate = ref(true)
   // The registry is the truth and nothing here mirrors it: until it answers, the switch is not
   // offered at all.
   const autostart = ref(false)
@@ -56,6 +58,7 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
       apply(stored.scale)
       stayInBackground.value = stored.stayInBackground
       resumeTabs.value = stored.resumeTabs
+      autoUpdate.value = stored.autoUpdate
     } catch {
       apply(DefaultScale)
     }
@@ -122,6 +125,21 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
     }
   }
 
+  // Whether the app looks for a new version when it starts. Same rule as the two above —
+  // moved first, saved after — and it is a promise about the *next* launch, so nothing here
+  // goes and checks: the button on the same screen is what checks now.
+  const setAutoUpdate = async (on: boolean): Promise<void> => {
+    autoUpdate.value = on
+    saveFailed.value = false
+    saveError.value = null
+    try {
+      autoUpdate.value = (await saveAutoUpdate(on)).autoUpdate
+    } catch (e) {
+      saveFailed.value = true
+      saveError.value = isIpcError(e) ? e : null
+    }
+  }
+
   const setResumeTabs = async (resume: boolean): Promise<void> => {
     resumeTabs.value = resume
     saveFailed.value = false
@@ -159,6 +177,8 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
     setScale,
     setStayInBackground,
     setResumeTabs,
+    autoUpdate,
+    setAutoUpdate,
     autostart,
     autostartUnavailable,
     autostartAvailable,

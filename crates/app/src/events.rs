@@ -5,7 +5,7 @@
 //! next command could contradict, and a second wire shape to keep in `camelCase` for nothing.
 //! Each window answers by calling the commands it already calls.
 //!
-//! The five names are mirrored by hand in `ui/src/lib/window/appEvents.ts`, as the IPC types
+//! The six names are mirrored by hand in `ui/src/lib/window/appEvents.ts`, as the IPC types
 //! are: change one and change the other.
 
 use tauri::{AppHandle, Emitter};
