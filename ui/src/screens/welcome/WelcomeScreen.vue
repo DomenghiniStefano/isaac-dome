@@ -42,7 +42,7 @@ const confirm = () => {
   <main
     class="flex min-h-0 flex-1 flex-col items-center overflow-auto px-5.5 py-10"
   >
-    <div class="flex w-full max-w-250 flex-col gap-6">
+    <div class="flex w-full flex-col gap-6">
       <template v-if="state.kind === 'choose'">
         <div class="flex flex-col gap-1">
           <h1 class="text-title">{{ t('welcome.title') }}</h1>
