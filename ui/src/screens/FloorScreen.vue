@@ -61,7 +61,7 @@ const placeOf = (cell: number): string => {
 </script>
 
 <template>
-  <div class="flex max-w-250 flex-col gap-4">
+  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15">
     <ScreenHeader :icon="Grid3x3Icon" :title="t('routes.floor')">{{
       t('floor.intro')
     }}</ScreenHeader>
@@ -89,8 +89,8 @@ const placeOf = (cell: number): string => {
          of quotations beside a fixed-width drawing made the right-hand column the longer of
          the two and put the reasoning where the answer belongs. They are under both columns
          now, across the full width, where a quotation has a line to live on. -->
-    <div class="flex flex-col items-start gap-4 lg:flex-row">
-      <Card class="w-full lg:w-fit lg:shrink-0">
+    <div class="flex flex-col items-start gap-4 @wide/page:flex-row">
+      <Card class="w-full @wide/page:w-fit @wide/page:shrink-0">
         <!-- The card is sized to its content and the grid is the widest thing in it, which is
              what decides this column's width. **The cap belongs on the prose, not here**: a
              width on this box is its border box, so the padding comes out of it and the grid

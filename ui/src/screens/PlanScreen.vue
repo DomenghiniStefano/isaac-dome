@@ -45,7 +45,7 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
 </script>
 
 <template>
-  <div class="flex max-w-300 flex-col gap-4">
+  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15">
     <ScreenHeader :icon="MapIcon" :title="t('routes.plan')">{{
       t('plan.intro')
     }}</ScreenHeader>
@@ -71,7 +71,10 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
         </template>
       </DiagnosticsList>
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
-      <div v-if="readable" class="flex flex-col items-start gap-4 lg:flex-row">
+      <div
+        v-if="readable"
+        class="flex flex-col items-start gap-4 @wide/page:flex-row"
+      >
         <QueueCard
           class="w-full min-w-0 flex-1"
           :rows="queue.view.rows"
@@ -83,7 +86,7 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
           @remove="queue.remove"
         />
         <ProposalAside
-          class="w-full lg:w-plan-aside lg:shrink-0"
+          class="w-full @wide/page:w-plan-aside @wide/page:shrink-0"
           :steps="graph.view?.steps.sections.flatMap((s) => s.steps) ?? []"
           :queued="queued"
           :can-write="queue.view.storeAvailable"

@@ -16,6 +16,7 @@ import { fakeWindows } from './fakeWindows'
 import { WindowEventName } from './messages'
 import type { WindowMessage } from './messages'
 import { windowBackground } from './windowBackground'
+import { WindowFloor } from './windowFloor'
 
 // The first window's label, fixed by `tauri.conf.json`. Every other window is born here.
 export const MainLabel = 'main'
@@ -151,6 +152,11 @@ const tauriPort: WindowPort = {
       url: 'index.html',
       width: size.x,
       height: size.y,
+      // The same floor as the window it was torn out of: a window born here never goes through
+      // `tauri.conf.json`, so a minimum written only there would hold for every window except
+      // the ones the user makes by hand (spec 3.13a §8).
+      minWidth: WindowFloor.Width,
+      minHeight: WindowFloor.Height,
       decorations: false,
       backgroundColor: windowBackground(),
       visible: false,

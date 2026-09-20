@@ -66,14 +66,16 @@ ui/
                       `collection.ts` answers the pack's `collection.json` when it has one, and
                       until then real names and locks with **declared synthetic** quality, pools
                       and flags (`collectionSource()`), `?collection=unread`
-      window/      appWindow: the only module that talks to the window
+      window/      appWindow: the only module that talks to the window; windowFloor: the
+                   smallest window the layout is designed against, 640x480
       profile/     what the profile screen and the indicator show, as pure functions
       completion/  what the Completion screen counts, as pure functions
       graph/       a node's state and why, Unlock's facets, search and sort, as pure functions
       plan/        the queue's drops and anchors, the row a move stopped under, as pure functions
       collection/  a collectible's state and the Collection's facets, as pure functions
       constants/   magic strings: command names, dev routes, key names, placement
-      design/      themeKeys: the token names cn() reads from the theme CSS
+      design/      themeKeys: the token names cn() reads from the theme CSS;
+                   thresholds: the three widths a screen changes shape at
       cn.ts        class merging that knows our tokens
     i18n/          it (the schema), en, locale, useMessages()
     assets/
@@ -277,6 +279,86 @@ and active never lag. No exit animations. `prefers-reduced-motion` collapses eve
 
 > The **values** of the tokens are set by the design system, not this document. Here we
 > only establish that they exist and that nobody writes a visual value anywhere else.
+
+---
+
+## Responsive layout
+
+The reasoning, and the two approaches that were rejected, are in
+[`docs/superpowers/specs/2026-09-20-responsive-layout-design.md`](superpowers/specs/2026-09-20-responsive-layout-design.md).
+What follows is the contract.
+
+### A screen is one of two shapes
+
+`<main>` is the **page box**: it scrolls nothing, carries the horizontal padding only, and is the
+size container named `page`. Under it every screen declares itself:
+
+| shape | root classes | who |
+|---|---|---|
+| **flowing** | `flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15` | content flows and the screen scrolls: Profile, Appearance, Background, Goals, Tabs settings, Completion, Plan, Floor, Live, Roll, the wiki landing and page |
+| **filling** | `flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5`, with **exactly one** descendant carrying `min-h-0 flex-1` | a screen with a list: Unlock, Collection, Challenges, Runs, Search, the wiki's category lists |
+
+**`min-h-0` on every link of a filling chain is not decoration.** A flex item's default
+`min-height:auto` refuses to shrink below its content, so one missing `min-h-0` between the page
+box and the scroll body makes `flex-1` grow instead of fit: the list pushes the screen, and it
+reads as a bug in the virtualizer. Unlock's chain is
+root → `Card class="min-h-0 flex-1"` → the table's root → `VirtualRows`.
+
+**No `max-w-*` on a screen root.** The cap was removed by decision and prose is not excepted: a
+long line on the wiki page is an accepted cost, not an oversight.
+
+### A fold is measured against a box, never against the window
+
+Every threshold is a **container query**. Media query variants (`sm:` `md:` `lg:` `xl:` `2xl:`)
+are forbidden in `ui/`, for two reasons either of which decides it alone: the section sidebar is
+252px of width the window cannot account for, and a media query's `rem` resolves against the
+initial 16px rather than the root, so it cannot see the interface's scale — at 150% a media-query
+layout never folds, which is the one situation that needed it most.
+
+Two named containers, and **every variant names the one it means**:
+
+| container | is | measures |
+|---|---|---|
+| `page` | `<main>` | everything a screen draws |
+| `shell` | the row holding the sidebar and `<main>` | the sidebar's own collapse |
+
+The sidebar's threshold hangs on `shell` and not on `page` **on purpose**: on `page` a collapse
+would widen the content, re-cross the threshold and oscillate.
+
+Three shared sizes in `assets/theme/containers.css` — `compact` (800px), `regular` (960px),
+`wide` (1280px) — written `@max-compact/page:hidden`, `@wide/page:flex-row`. They are px and
+measured at scale 100, because a container query is compared against a used width.
+
+A component whose break is a fact about **itself** rather than about the page declares its own
+token beside itself, with the scale it was measured at in the comment. Two do:
+`--container-tab-narrow` and `--container-sidebar-room`.
+
+### A table drops columns by priority
+
+Per table, two edits that are one change:
+
+1. a **pair of `@utility` declarations adjacent in `utilities.css`** — `grid-cols-unlock` and
+   `grid-cols-unlock-narrow` — with a comment naming which columns fall and why those;
+2. `@max-compact/page:hidden` on the cells that fall, in the header **and** in the row.
+
+A template that drops a track while its cell stays slides every cell after it into the wrong
+column: it reads as a styling bug and is a counting one. Collapsing the track to `0px` instead —
+one edit, nothing to keep in step — is **rejected**: a zero-width cell stays in the accessibility
+tree, and a screen reader would read the columns the eye was told it could do without.
+
+### The window has a floor
+
+640 × 480 logical pixels, declared in **two** places because windows are born in two:
+`crates/app/tauri.conf.json` for the main window and the one the tray rebuilds, and
+`ui/src/lib/window/windowFloor.ts` for a window torn off a tab, which never goes through that
+config. A test holds the two to the same number. At the floor the page box has about 428px.
+
+### What checks it
+
+`scan-conventions.mjs`, four rules: no media-query variant and no container size that is not ours;
+a screen root is one of the two shapes; no width cap on a screen root; a narrow grid template with
+no hidden cell. A screen, for the middle two, is **what the router mounts** — read from
+`routes.ts`, because `src/screens/` also holds the parts only one screen uses.
 
 ---
 
@@ -620,9 +702,17 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **Literal `variant`/`size`/`density`/`orientation` on a primitive** | `ui/scripts/scan-conventions.mjs` |
 | **Glyph missing from Determination** | `ui/scripts/scan-conventions.mjs` |
 | **A px token in `assets/` with no reason beside it** | `ui/scripts/scan-conventions.mjs` |
+| **A media query variant, or a container size that is not ours** | `ui/scripts/scan-conventions.mjs` |
+| **A screen root that is neither flowing nor filling** | `ui/scripts/scan-conventions.mjs` |
+| **A width cap on a screen root** | `ui/scripts/scan-conventions.mjs` |
+| **A narrow grid template with no column hidden** | `ui/scripts/scan-conventions.mjs` |
 
 Three rows arrived on 2026-09-06 — before that, the document declared five rules and the
-script checked three — and six more on 2026-09-10, with the design system. On the same day
+script checked three — six more on 2026-09-10 with the design system, and **four on
+2026-09-20 with the responsive frame** (3.13a), which also gave the script something it had
+not needed before: a rule whose scope is *read from the code* rather than guessed from a
+path, since `src/screens/` holds screens and parts alike and only `routes.ts` knows which
+is which. On the same day
 the visible-string heuristic learned to skip quoted attribute values: a class such as
 `has-[>svg]:grid-cols-2` used to end the tag early and leave half a class list behind as
 "visible text". **This table and the script's `checks` array must have the
@@ -630,10 +720,12 @@ same rows**, and that's the only thing keeping the document from promising a che
 doesn't happen.
 
 **The exceptions live in the script, not in the head of whoever runs it.** At the top of
-`scan-conventions.mjs` there's an `EXEMPTIONS` array with file, check, and reason: today it
-only contains `App.vue` and `WikiInline.vue`, which are declared verification pages and
-will be replaced by the real frontend. An empty list is the goal; an exception with no
-written reason is an untracked violation.
+`scan-conventions.mjs` there's an `EXEMPTIONS` array with file, check, and reason. It stood empty
+for months; since 2026-09-20 it holds two, both against the screen-shape rule and both permanent
+rather than temporary: `WelcomeScreen.vue`, a takeover drawn outside `<main>` with no page box to
+fill, and `WikiScreen.vue`, which has no root of its own and picks one of four bodies that each
+carry the shape. An empty list is the goal; an exception with no written reason is an untracked
+violation.
 
 Two known limits, stated so as not to pretend the script is a compiler: the
 visible-strings check is a text heuristic (it strips tags, comments, and `{{ … }}`, then

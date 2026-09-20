@@ -96,7 +96,7 @@ const select = (run: RunView) => {
 </script>
 
 <template>
-  <div class="flex max-w-250 flex-col gap-4">
+  <div class="flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5">
     <ScreenHeader :icon="PlayIcon" :title="t('routes.runs')">{{
       t('runs.intro')
     }}</ScreenHeader>
@@ -109,7 +109,10 @@ const select = (run: RunView) => {
       <!-- The archive says what it could not read before it says what it holds: a short list
            with an unread source behind it must never read as "you have played nothing". -->
       <DiagnosticsList :entries="runsEntries(store.view.diagnostics)" />
-      <div v-if="totals !== null" class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div
+        v-if="totals !== null"
+        class="grid grid-cols-2 gap-3 @regular/page:grid-cols-4"
+      >
         <KpiTile :value="totals.runs" :label="t('runs.totals.runs')" />
         <KpiTile
           :value="totals.won"
@@ -127,7 +130,7 @@ const select = (run: RunView) => {
           :label="t('runs.totals.abandoned')"
         />
       </div>
-      <Card>
+      <Card class="min-h-0 flex-1">
         <FilterBar
           :shown="rows.length"
           :total="all.length"
