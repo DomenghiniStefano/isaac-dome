@@ -120,7 +120,6 @@ export const it = {
   floor: {
     intro:
       'Disegna la mappa del piano come la vedi sulla minimappa: le celle vuote si accendono dove le regole del gioco permettono una stanza segreta, super segreta o ultra segreta.',
-    erase: 'Gomma',
     clear: 'Svuota la griglia',
     clearConfirm: {
       title: 'Svuotare la griglia?',
