@@ -9,6 +9,8 @@ import {
   CardCollapsibleContent,
   CardCollapsibleTrigger,
   CardContent,
+  CardHeader,
+  CardTitle,
 } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
 import { floorEntries } from '@/lib/diagnostics/floor'
@@ -66,9 +68,14 @@ const placeOf = (cell: number): string => {
          because a command did not answer would be the app throwing away your work. -->
     <EmptyCategory v-if="store.failed">{{ t('floor.failed') }}</EmptyCategory>
 
-    <!-- The drawing on the left, the answers about it on the right. The grid is a fixed
+    <!-- The drawing on the left, the switches that change it on the right. The grid is a fixed
          27.5rem wide and will never be anything else, so a page that stacks the two leaves
-         that much of itself empty down the whole length of the floor. -->
+         that much of itself empty down the whole length of the floor.
+
+         **What used to be on the right and no longer is: the rules.** Three open-ended lists
+         of quotations beside a fixed-width drawing made the right-hand column the longer of
+         the two and put the reasoning where the answer belongs. They are under both columns
+         now, across the full width, where a quotation has a line to live on. -->
     <div class="flex flex-col items-start gap-4 lg:flex-row">
       <Card class="w-full lg:w-fit lg:shrink-0">
         <CardContent class="flex flex-col gap-3">
@@ -93,81 +100,87 @@ const placeOf = (cell: number): string => {
         </CardContent>
       </Card>
 
-      <div class="flex w-full min-w-0 flex-1 flex-col gap-4">
-        <FloorTargets
-          :solutions="solutions"
-          :shown="store.shown"
-          @toggle="store.toggle($event)"
-        />
+      <Card class="w-full min-w-0 flex-1">
+        <CardHeader>
+          <CardTitle>{{ t('floor.show') }}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <FloorTargets
+            :solutions="solutions"
+            :shown="store.shown"
+            @toggle="store.toggle($event)"
+          />
+        </CardContent>
+      </Card>
+    </div>
 
-        <!-- Closed by default, and each one opens on its own. What the rules say is
-             the tool's reasoning rather than its answer — the answer is on the grid — so it
-             is there for whoever wants to check it and out of the way of whoever does not.
+    <!-- Closed by default, and each one opens on its own. What the rules say is
+         the tool's reasoning rather than its answer — the answer is on the grid — so it
+         is there for whoever wants to check it and out of the way of whoever does not.
 
-             No source line, on purpose: the wiki's attribution is carried once, in
-             Information, where a licence belongs, and not repeated on every row of every
-             screen. -->
-        <CardCollapsible
-          v-for="target in order"
-          :key="target"
-          :default-open="false"
-        >
-          <CardCollapsibleTrigger>
-            {{ t(`floor.target.${target}`) }}
-            <template #summary>
-              <span class="text-caption text-subtle-foreground tabular-nums">{{
-                solutionFor(target)?.candidates.length ?? 0
-              }}</span>
-            </template>
-          </CardCollapsibleTrigger>
-          <CardCollapsibleContent class="flex flex-col gap-3">
-            <template v-if="(solutionFor(target)?.candidates.length ?? 0) > 0">
-              <div
-                v-for="candidate in solutionFor(target)?.candidates ?? []"
-                :key="candidate.cell"
-                class="flex flex-col gap-1 border-b border-hairline pb-2"
-              >
-                <div class="flex items-center gap-3">
-                  <span class="text-label tabular-nums">{{
-                    placeOf(candidate.cell)
-                  }}</span>
-                  <span class="text-caption text-subtle-foreground"
-                    >{{ candidate.neighbours }}
-                    {{ t('floor.neighbours') }}</span
-                  >
-                </div>
-                <span
-                  v-for="rule in candidate.applied"
-                  :key="rule.id"
-                  class="text-caption text-foreground-soft"
-                  >{{ rule.quote }}</span
+         No source line, on purpose: the wiki's attribution is carried once, in
+         Information, where a licence belongs, and not repeated on every row of every
+         screen. -->
+    <div class="flex flex-col gap-4">
+      <CardCollapsible
+        v-for="target in order"
+        :key="target"
+        :default-open="false"
+      >
+        <CardCollapsibleTrigger>
+          {{ t(`floor.target.${target}`) }}
+          <template #summary>
+            <span class="text-caption text-subtle-foreground tabular-nums">{{
+              solutionFor(target)?.candidates.length ?? 0
+            }}</span>
+          </template>
+        </CardCollapsibleTrigger>
+        <CardCollapsibleContent class="flex flex-col gap-3">
+          <template v-if="(solutionFor(target)?.candidates.length ?? 0) > 0">
+            <div
+              v-for="candidate in solutionFor(target)?.candidates ?? []"
+              :key="candidate.cell"
+              class="flex flex-col gap-1 border-b border-hairline pb-2"
+            >
+              <div class="flex items-center gap-3">
+                <span class="text-label tabular-nums">{{
+                  placeOf(candidate.cell)
+                }}</span>
+                <span class="text-caption text-subtle-foreground"
+                  >{{ candidate.neighbours }} {{ t('floor.neighbours') }}</span
                 >
               </div>
-            </template>
-            <EmptyCategory v-else>{{ t('floor.none') }}</EmptyCategory>
-
-            <!-- What the grid cannot judge is shown under what it can, never instead of it: a
-                 rule we cannot evaluate is not a rule that allows everything. -->
-            <template v-if="(solutionFor(target)?.unresolved.length ?? 0) > 0">
-              <span class="text-label text-subtle-foreground">{{
-                t('floor.unresolved')
-              }}</span>
-              <div
-                v-for="item in solutionFor(target)?.unresolved ?? []"
-                :key="item.rule"
-                class="flex flex-col"
+              <span
+                v-for="rule in candidate.applied"
+                :key="rule.id"
+                class="text-caption text-foreground-soft"
+                >{{ rule.quote }}</span
               >
-                <span class="text-caption text-foreground-soft">{{
-                  item.quote
-                }}</span>
-                <span class="text-caption text-faint-foreground">{{
-                  item.note
-                }}</span>
-              </div>
-            </template>
-          </CardCollapsibleContent>
-        </CardCollapsible>
-      </div>
+            </div>
+          </template>
+          <EmptyCategory v-else>{{ t('floor.none') }}</EmptyCategory>
+
+          <!-- What the grid cannot judge is shown under what it can, never instead of it: a
+                 rule we cannot evaluate is not a rule that allows everything. -->
+          <template v-if="(solutionFor(target)?.unresolved.length ?? 0) > 0">
+            <span class="text-label text-subtle-foreground">{{
+              t('floor.unresolved')
+            }}</span>
+            <div
+              v-for="item in solutionFor(target)?.unresolved ?? []"
+              :key="item.rule"
+              class="flex flex-col"
+            >
+              <span class="text-caption text-foreground-soft">{{
+                item.quote
+              }}</span>
+              <span class="text-caption text-faint-foreground">{{
+                item.note
+              }}</span>
+            </div>
+          </template>
+        </CardCollapsibleContent>
+      </CardCollapsible>
     </div>
   </div>
 </template>

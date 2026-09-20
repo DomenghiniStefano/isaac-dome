@@ -132,6 +132,13 @@ export const it = {
     cell: 'Riga {row}, colonna {column}: {room}',
     at: 'Riga {row}, colonna {column}',
     brush: 'Stanza scelta',
+    show: 'Mostrato sulla griglia',
+    rank: {
+      title: 'Cosa vuol dire un colore',
+      first: '1 — il posto più probabile fra quelli permessi',
+      second: '2 — il successivo',
+      third: '3 e oltre — qui la scala si ferma, le regole non dicono altro',
+    },
     unresolved: 'Quello che la griglia non può giudicare',
     none: 'Nessuna cella permessa dalle regole, con quello che hai disegnato finora.',
     failed:
