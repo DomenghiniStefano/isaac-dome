@@ -44,6 +44,23 @@
     var(--spacing-unlock-queue);
 }
 
+/* Unlock at compact (spec 3.13a §7): the drawing, the name, the state, the queue button. What
+   falls is what the row unlocks, its condition, and the fan-out — the two widest, whose absence
+   costs least because the row is still named, and a number that means nothing without the columns
+   beside it. Each of the three carries `@max-compact/page:hidden` on its cell, in
+   `UnlockTable.vue` for the header and `UnlockRow.vue` for the row.
+
+   **The two edits are one change.** A template that drops a track while its cell stays slides
+   every cell after it into the wrong column: it reads as a styling bug and is a counting one.
+   `scan-conventions.mjs` catches the half where the template moves and nothing is hidden. */
+@utility grid-cols-unlock-narrow {
+  grid-template-columns:
+    var(--spacing-unlock-art)
+    minmax(0, 1fr)
+    var(--spacing-unlock-state)
+    var(--spacing-unlock-queue);
+}
+
 /* The Collection's table: the sprite, the name, the quality, the pools, the origin, the state. */
 @utility grid-cols-collection {
   grid-template-columns:
