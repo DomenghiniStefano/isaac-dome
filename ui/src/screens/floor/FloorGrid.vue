@@ -2,10 +2,10 @@
 import { computed } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
-import { bandsFor, cellPosition } from '@/lib/floor/cellView'
+import { candidateFor, cellPosition } from '@/lib/floor/cellView'
 import { CELLS, START, WIDTH } from '@/lib/floor/painting'
 import type { PaintedCells } from '@/lib/floor/painting'
-import { bandFill } from '@/lib/floor/bands'
+import { levelHeight, targetAura, targetFill } from '@/lib/floor/targets'
 import { roomFill } from '@/lib/floor/rooms'
 import type {
   FloorSolutionView,
@@ -15,21 +15,25 @@ import type {
 import RoomSymbol from './RoomSymbol.vue'
 
 // The grid says two things at once, and keeping them apart is the whole design: the **fill and
-// the drawing** are what you painted, the **bands** are what the rules make of it. Before this
+// the drawing** are what you painted, the **level** is what the rules make of it. Before this
 // it said one — a rank, or "painted", or "empty" — so fourteen room kinds came out one grey
 // square and only the Secret Room's answer ever reached the map.
 //
-// The rules' half was four small squares in the corners, and a second look at a real window
-// killed it: four numbers that small are four numbers nobody reads, and a cell the rules allow
-// still looked like a cell nobody had touched. **A cell a rule allows is now filled with that
-// rule's colour.** One target fills it whole, two split it down the middle, three in thirds,
-// always in the reading order — so the width of a band says how many targets want that cell,
-// which is a thing the corners could not say at all.
+// The rules' half went through two shapes in front of a real window and both failed the same
+// way. Four pips in the corners, one per target with its rank printed inside: four numbers
+// that small are four numbers nobody reads. Then the cell split into a band per target, the
+// rank still printed: better, still a number in a 2rem square, and still three answers laid
+// over one cell.
+//
+// **One target at a time, and the rank is not written down.** A cell the rules allow fills
+// with that target's colour, to the brim for the best place and less for each step after it.
+// There is nothing to read: a fuller square is a better place, which is the sentence the
+// screen exists to say.
 
 const props = defineProps<{
   cells: PaintedCells
   solutions: FloorSolutionView[]
-  shown: TargetView[]
+  shown: TargetView
   icons: Map<RoomKindView, string>
 }>()
 const emit = defineEmits<{ stroke: [path: number[]]; erase: [cell: number] }>()
@@ -37,10 +41,10 @@ const { t } = useMessages()
 
 const indexes = Array.from({ length: CELLS }, (_, i) => i)
 
-// Every cell's bands, built once per answer rather than searched per cell: 169 cells against
-// three candidate lists is the one place on this screen where that would show.
-const bands = computed(() =>
-  indexes.map((cell) => bandsFor(cell, props.solutions, props.shown)),
+// Every cell's answer, built once per answer rather than searched per cell: 169 cells against
+// a candidate list is the one place on this screen where that would show.
+const candidates = computed(() =>
+  indexes.map((cell) => candidateFor(cell, props.solutions, props.shown)),
 )
 
 const fillOf = (cell: number): string => {
@@ -50,6 +54,10 @@ const fillOf = (cell: number): string => {
 
 // What the cell is called out loud. A cell index is not a position — "cell 97" connects to
 // nothing on a drawing — so it is read the way it is looked at, by row and column.
+//
+// The answer is said here as well, because it is now drawn and never written: a height and a
+// hue reach the eye and nothing else. The place in the order is the one thing a label can
+// carry that the square cannot.
 const nameOf = (cell: number): string => {
   const kind = props.cells[cell]
   const { row, column } = cellPosition(cell)
@@ -57,7 +65,14 @@ const nameOf = (cell: number): string => {
     kind === null || kind === undefined
       ? t('floor.empty')
       : t(`floor.room.${kind}`)
-  return t('floor.cell', { row, column, room })
+  const name = t('floor.cell', { row, column, room })
+  const candidate = candidates.value[cell]
+  if (candidate === null) return name
+  return t('floor.cellCandidate', {
+    cell: name,
+    target: t(`floor.target.${props.shown}`),
+    rank: candidate.rank,
+  })
 }
 
 // A stroke is one press and everything the pointer crossed before release, so dragging paints
@@ -117,17 +132,21 @@ const rub = (cell: number): void => {
         :kind="cells[i]!"
         :url="icons.get(cells[i]!) ?? null"
       />
-      <!-- Over the cell and not inside its flow: a band covers the square edge to edge, and
-           `flex-1` is what makes one band the whole cell and three of them its thirds
-           without either count being written down anywhere. -->
-      <span v-if="bands[i].length > 0" class="absolute inset-0 flex">
+      <!-- Two layers, and they answer two different questions. The glow covers the cell and
+           says it is in play at all; the level is anchored to the cell's floor and says how
+           good a place it is. Both rise from the bottom, because a level hanging from the top
+           would be read as something draining. -->
+      <span
+        v-if="candidates[i]"
+        aria-hidden="true"
+        class="absolute inset-0"
+        :class="targetAura[shown]"
+      >
         <span
-          v-for="band in bands[i]"
-          :key="band.target"
-          class="flex flex-1 items-center justify-center text-micro tabular-nums"
-          :class="bandFill[band.target][band.step]"
-          >{{ band.rank }}</span
-        >
+          class="absolute inset-x-0 bottom-0"
+          :class="targetFill[shown]"
+          :style="{ height: levelHeight[candidates[i]!.step] }"
+        />
       </span>
     </Button>
   </div>

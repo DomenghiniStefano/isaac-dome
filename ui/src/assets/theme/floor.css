@@ -67,42 +67,60 @@
   --color-floor-room-ultra-secret: #55503f;
   --color-floor-room-ultra-secret-foreground: #f0ead8;
 
-  /* The bands: one hue per target, three steps down it for the first three ranks. A ranking is
-     a sequence, so it is drawn as one — and the step stops at the third because the rules
-     order candidates without ever saying how much less likely the fourth is than the third.
+  /* One colour per target. The screen shows one target at a time, so the hue is not there to
+     separate three answers on one square — it is there so you know which of the three you are
+     looking at without going back to read the switch.
 
-     The steps are three colours and not one colour at three opacities: a band covers the cell
-     it is in, and a translucent one would take the hue of whatever is under it.
+     **They are as far apart as three hues can be**, and that is a correction. Secret was blue
+     and Super was teal, about forty degrees between them, and the first person to open this
+     screen said the two could not be told apart. Blue, green and magenta sit a little over a
+     hundred degrees from one another.
 
-     **The three hues are as far apart as three hues can be**, and that is a correction. Secret
-     was blue and Super was teal, about forty degrees of hue between them, and the first person
-     to open this screen said the two could not be told apart. Nothing else distinguishes two
-     bands now that the corner is gone — position said which target and no longer does, because
-     the band's width says how many targets want the cell instead. Blue, green and magenta sit
-     a little over a hundred degrees from one another.
+     Solid, never translucent: a candidate sits on the dark of an unpainted cell today, and an
+     alpha would make the hue a function of whatever ends up underneath it later. */
+  --color-floor-target-secret: #3f8fd6;
+  --color-floor-target-super: #4fa538;
+  --color-floor-target-ultra: #c2569b;
 
-     **Every step carries its own ink**, and it changes between the steps on purpose: a band
-     prints its rank, the first step is the brightest of its ramp and the third the darkest, so
-     one foreground across the three is a digit that vanishes at one end. Fill and ink travel
-     together through `bandFill`, exactly like the room kinds above.
+  /* The same three, translucent: a veil over the **whole** cell, under the solid level.
 
-     Not yet seen in a real window. */
-  --color-floor-band-secret-first: #5fb0f2;
-  --color-floor-band-secret-first-foreground: #08243b;
-  --color-floor-band-secret-second: #2f6fae;
-  --color-floor-band-secret-second-foreground: #eaf3fb;
-  --color-floor-band-secret-third: #1d4570;
-  --color-floor-band-secret-third-foreground: #eaf3fb;
-  --color-floor-band-super-first: #6ed24f;
-  --color-floor-band-super-first-foreground: #0d2a08;
-  --color-floor-band-super-second: #357f2a;
-  --color-floor-band-super-second-foreground: #ecf7e8;
-  --color-floor-band-super-third: #1f5219;
-  --color-floor-band-super-third-foreground: #ecf7e8;
-  --color-floor-band-ultra-first: #f06bbe;
-  --color-floor-band-ultra-first-foreground: #3a0b2a;
-  --color-floor-band-ultra-second: #ad3d84;
-  --color-floor-band-ultra-second-foreground: #fbe9f4;
-  --color-floor-band-ultra-third: #712655;
-  --color-floor-band-ultra-third-foreground: #fbe9f4;
+     It is there because the level alone answers "how good" and never "is this cell in play at
+     all" — the third step fills less than a third of the square, and on a dark grid a stripe
+     that small reads as a stripe rather than as an answer. The veil marks the cell edge to
+     edge, so a candidate is seen as a candidate before its height is read.
+
+     **Flat, and not a gradient rising from the floor.** That was the first attempt and it made
+     the cell's own top edge disappear into the grid: a wash that fades out has no boundary,
+     and a boundary is exactly what "this square, not that one" needs.
+
+     The alpha is in the token and not a `/20` on the class, which is the repo's own rule: an
+     alpha written at the call site is a colour that exists only there, and the scan refuses
+     it. */
+  --color-floor-aura-secret: #3f8fd63d;
+  --color-floor-aura-super: #4fa5383d;
+  --color-floor-aura-ultra: #c2569b3d;
+
+  /* The edge of a candidate cell, lit from inside. The border alone is one pixel of colour on
+     a dark square; the glow inside it is what makes the square read as switched on rather than
+     as outlined.
+
+     **Inset, never outward.** The grid's cells are two pixels apart, so a glow thrown outwards
+     lands on the neighbours — and in a corner of the map where every second cell is a
+     candidate, that is one smear rather than nine answers. */
+  --shadow-floor-glow-secret: inset 0 0 0.5rem #3f8fd6cc;
+  --shadow-floor-glow-super: inset 0 0 0.5rem #4fa538cc;
+  --shadow-floor-glow-ultra: inset 0 0 0.5rem #c2569bcc;
+
+  /* How much of the cell the answer fills: full for the best place the rules allow, less for
+     each step after it. It replaces the rank printed inside the square — a 2rem cell is not
+     enough room for a number, which is what two designs found out in a window before this one.
+
+     **Three heights, and not a percentage of anything.** The rules put candidates in an order
+     and never say by how much: the wiki has no number for "how much likelier than the next",
+     so neither has this. The height is that order drawn as a quantity, and it stops at the
+     third exactly where the order stops meaning anything. Reading 30% here as "thirty per cent
+     likely" is reading a number nobody measured. */
+  --floor-level-first: 100%;
+  --floor-level-second: 60%;
+  --floor-level-third: 30%;
 }
