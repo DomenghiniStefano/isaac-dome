@@ -36,7 +36,11 @@ const props = defineProps<{
   shown: TargetView
   icons: Map<RoomKindView, string>
 }>()
-const emit = defineEmits<{ stroke: [path: number[]]; erase: [cell: number] }>()
+const emit = defineEmits<{
+  paint: [cells: number[]]
+  settle: []
+  erase: [cell: number]
+}>()
 const { t } = useMessages()
 
 const indexes = Array.from({ length: CELLS }, (_, i) => i)
@@ -76,23 +80,30 @@ const nameOf = (cell: number): string => {
 }
 
 // A stroke is one press and everything the pointer crossed before release, so dragging paints
-// a corridor. The path is collected here and handed over whole: one answer per stroke, not one
-// per cell.
-let path: number[] = []
+// a corridor.
+//
+// **The paint lands as the pointer passes, not when it lifts.** It used to collect the path
+// and hand it over whole, so a drag across ten cells was ten cells appearing at once at the
+// end — the corridor was drawn blind, and a hand that had gone one cell too far only found out
+// after letting go.
+//
+// What is still handed over once is the *question*: the rules are asked on release, in a
+// single `settle`. Asking them per cell would be a round trip to Rust for every cell the
+// pointer brushes past, and the answer for a corridor half-drawn is not an answer anyone is
+// reading — the hand is still moving.
 let painting = false
 
 const start = (cell: number): void => {
   painting = true
-  path = [cell]
+  emit('paint', [cell])
 }
 const over = (cell: number): void => {
-  if (painting) path.push(cell)
+  if (painting) emit('paint', [cell])
 }
 const end = (): void => {
   if (!painting) return
   painting = false
-  if (path.length > 0) emit('stroke', path)
-  path = []
+  emit('settle')
 }
 
 // The right button rubs out, whatever the brush is. Erasing by picking "nothing" in the
@@ -100,7 +111,6 @@ const end = (): void => {
 // it costs a trip to the palette and back for every correction if it is not there.
 const rub = (cell: number): void => {
   painting = false
-  path = []
   emit('erase', cell)
 }
 </script>

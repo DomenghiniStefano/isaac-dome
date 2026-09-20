@@ -21,6 +21,7 @@ import { TargetView } from '@/lib/ipc/types'
 import type { FloorSolutionView } from '@/lib/ipc/types'
 import FloorClear from './floor/FloorClear.vue'
 import FloorGrid from './floor/FloorGrid.vue'
+import FloorMove from './floor/FloorMove.vue'
 import FloorLegend from './floor/FloorLegend.vue'
 import FloorPalette from './floor/FloorPalette.vue'
 import FloorTargets from './floor/FloorTargets.vue'
@@ -101,6 +102,9 @@ const placeOf = (cell: number): string => {
               :shown="store.shown"
               @show="store.show($event)"
             />
+            <!-- Two marks and they are never both here: this one appears only while the start
+                 room is missing, the legend's lives under the grid beside the arrows. Two
+                 identical question marks in one row would be one question mark too many. -->
             <HelpTip v-if="noStartRoom" :label="t('floor.startRoomMissing')">{{
               t('floor.diagnostic.noStartRoom')
             }}</HelpTip>
@@ -117,17 +121,23 @@ const placeOf = (cell: number): string => {
               :icons="store.icons"
               :solutions="solutions"
               :shown="store.shown"
-              @stroke="store.stroke($event)"
+              @paint="store.paint($event)"
+              @settle="store.settle()"
               @erase="store.erase($event)"
             />
           </div>
-          <!-- The legend under what it explains, on a line of its own: sharing one with the
-               button put a sentence and a control in the same 27.5rem and left the sentence
-               about five words. The button that empties the grid goes under what it empties;
-               beside the switch it read as one more thing you could do to the answer. -->
-          <FloorLegend :shown="store.shown" />
-          <div class="flex justify-end">
-            <FloorClear @clear="store.clear()" />
+          <!-- Under the grid, the two things you can do to the whole of it and the one mark
+               that explains what it is showing. The arrows are on the left because they move
+               the drawing and the drawing starts there; the button that empties it is as far
+               from them as the row allows, which is the point. -->
+          <div class="flex items-center gap-2">
+            <FloorMove :cells="store.cells" @move="store.move($event)" />
+            <FloorLegend :shown="store.shown" />
+            <!-- The wrapper carries the margin, not the component: `FloorClear`'s root is a
+                 Dialog, which renders no element of its own for a class to land on. -->
+            <div class="ml-auto">
+              <FloorClear @clear="store.clear()" />
+            </div>
           </div>
         </CardContent>
       </Card>
