@@ -1,0 +1,1064 @@
+{
+  "title": "False PHD",
+  "revid": 267225,
+  "infobox": {
+    "kind": "item"
+  },
+  "sections": [
+    {
+      "kind": "effects",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Identifies all ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "pills",
+                  "label": "pills"
+                },
+                {
+                  "kind": "text",
+                  "text": " upon pickup.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Spawns a pill.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Grants one ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 5,
+                    "variant": 10,
+                    "subtype": 6
+                  },
+                  "label": "Black Heart"
+                },
+                {
+                  "kind": "text",
+                  "text": " on pickup.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Converts all good pills into their bad counterparts.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Grants +0.6 ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "damage",
+                  "label": "damage"
+                },
+                {
+                  "kind": "text",
+                  "text": " for each stat down pill and +1.2 ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "damage",
+                  "label": "damage"
+                },
+                {
+                  "kind": "text",
+                  "text": " for each stat down ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "Pills",
+                  "label": "horse pill"
+                },
+                {
+                  "kind": "text",
+                  "text": " Isaac has taken, including those taken before acquiring False PHD.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Using a non-stat down bad pill drops a ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 5,
+                    "variant": 10,
+                    "subtype": 6
+                  },
+                  "label": "Black Heart"
+                },
+                {
+                  "kind": "text",
+                  "text": ".",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "header": [
+            [
+              {
+                "kind": "text",
+                "text": "Pill",
+                "style": "plain"
+              }
+            ],
+            [
+              {
+                "kind": "text",
+                "text": "Changes Into",
+                "style": "plain"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Stat up pill",
+                  "style": "plain"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Stat down pill",
+                  "style": "plain"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Bad Gas",
+                  "style": "italic"
+                },
+                {
+                  "kind": "text",
+                  "text": " & ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "text",
+                  "text": "Friends Till the End!",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Health Down",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "I can see forever!",
+                  "style": "italic"
+                },
+                {
+                  "kind": "text",
+                  "text": " & ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "text",
+                  "text": "Lemon Party",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Amnesia",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Explosive Diarrhea",
+                  "style": "italic"
+                },
+                {
+                  "kind": "text",
+                  "text": " & ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "text",
+                  "text": "One makes you larger",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Range Down",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Bombs are Key",
+                  "style": "italic"
+                },
+                {
+                  "kind": "text",
+                  "text": " & ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "text",
+                  "text": "Infested!",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Tears Down",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "48 Hour Energy",
+                  "style": "italic"
+                },
+                {
+                  "kind": "text",
+                  "text": " & ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "text",
+                  "text": "One makes you small",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Speed Down",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Pretty Fly",
+                  "style": "italic"
+                },
+                {
+                  "kind": "text",
+                  "text": " & ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "text",
+                  "text": "Infested?",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Luck Down",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Balls of Steel",
+                  "style": "italic"
+                },
+                {
+                  "kind": "text",
+                  "text": ", ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "text",
+                  "text": "Full Health",
+                  "style": "italic"
+                },
+                {
+                  "kind": "text",
+                  "text": ", & ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "text",
+                  "text": "Hematemesis",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Bad Trip",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Pheromones",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Paralysis",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Telepills",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "???",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "I'm Drowsy...",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "I'm Excited!!!",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Percs!",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Addicted!",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Feels Like I'm Walking on Sunshine!",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Retro Vision",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Power Pill!",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "R U A Wizard?",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Something's wrong...",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "X-Lax",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Gulp!",
+                  "style": "italic"
+                },
+                {
+                  "kind": "text",
+                  "text": " & ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "text",
+                  "text": "Vurp!",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Horf!",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Experimental Pill",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Only grants a stat down",
+                  "style": "plain"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Gold Pill",
+                  "style": "italic"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "Only has negative effects",
+                  "style": "plain"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Neutral pills",
+                  "style": "plain"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "I Found Pills",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Puberty",
+                  "style": "italic"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "kind": "text",
+                  "text": "Re-Lax",
+                  "style": "italic"
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "notes",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Bad Trip and Health Down pills will turn into I Found Pills when Isaac is at one heart.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Neutral pills will not have a secondary effect.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Telepills will be converted to ??? even if the latter has not yet been unlocked.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Gulp! and Vurp! will be converted to Horf! even if the latter has not yet been unlocked.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Pills are only converted while held by a character with False PHD. For example: If playing as ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 19
+                  },
+                  "label": "Jacob and Esau"
+                },
+                {
+                  "kind": "text",
+                  "text": " and ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 19
+                  },
+                  "label": "Jacob"
+                },
+                {
+                  "kind": "text",
+                  "text": " has this item, pills that got converted into 'bad' pills like a Tears Down pill can be given to ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 20
+                  },
+                  "label": "Esau"
+                },
+                {
+                  "kind": "text",
+                  "text": " to convert them back into whatever the pill was originally.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Losing the item by either dropping it as ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 21
+                  },
+                  "label": "Tainted Isaac"
+                },
+                {
+                  "kind": "text",
+                  "text": " or re-rolling it via ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 284
+                  },
+                  "label": "D4"
+                },
+                {
+                  "kind": "text",
+                  "text": ", etc., causes the damage buffs given to be removed.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "With ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 252
+                  },
+                  "label": "Little Baggy"
+                },
+                {
+                  "kind": "text",
+                  "text": " and False PHD, the ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "Rocks",
+                  "label": "Marked Skull"
+                },
+                {
+                  "kind": "text",
+                  "text": " in ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "stage",
+                    "name": "Depths"
+                  },
+                  "label": "Depths"
+                },
+                {
+                  "kind": "text",
+                  "text": " II will drop a ??? pill, making it much harder to open ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "achievement",
+                    "id": 635
+                  },
+                  "label": "A Strange Door"
+                },
+                {
+                  "kind": "text",
+                  "text": " that run.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "This item can be crafted from ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 710
+                  },
+                  "label": "Bag of Crafting"
+                },
+                {
+                  "kind": "text",
+                  "text": " with seven ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "pill",
+                  "label": "pill"
+                },
+                {
+                  "kind": "text",
+                  "text": "s and one ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 5,
+                    "variant": 10,
+                    "subtype": 6
+                  },
+                  "label": "Black Heart"
+                },
+                {
+                  "kind": "text",
+                  "text": ".",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "synergies",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 130
+                  },
+                  "label": "A Pony"
+                },
+                {
+                  "kind": "text",
+                  "text": "/",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 181
+                  },
+                  "label": "White Pony"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Effectively converts all Speed Down pills into Damage Up as long as one of the ponies are being held, since they will always give a minimum of 1.5 speed.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "trinket",
+                    "id": 80
+                  },
+                  "label": "Black Feather"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Counts as an evil item, granting a damage up.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 46
+                  },
+                  "label": "Lucky Foot"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 75
+                  },
+                  "label": "PHD"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 303
+                  },
+                  "label": "Virgo"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Pills can now be both good and bad again. The other effects of False PHD still apply when taking bad pills.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Getting multiple of the pill-upgrading items has no effect, bad pills can still appear.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 108
+                  },
+                  "label": "The Wafer"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Using a Bad Trip pill will only deal half a heart of damage and spawn a full Black Heart, resulting in a net gain of health.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "The Wafer + ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 348
+                          },
+                          "label": "Placebo"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ": Allows for farming infinite health using Bad Trip pills.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 562
+                  },
+                  "label": "Rock Bottom"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Prevents stat-decreasing pills from decreasing your current stats. They still have an effect in the background, making it more difficult to raise that stat in the future.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "interactions",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 304
+                  },
+                  "label": "Libra"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The balancing of stats mostly leads to a net decrease between Stat Downs and +0.6 ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "damage",
+                  "label": "damage"
+                },
+                {
+                  "kind": "text",
+                  "text": " up, while Luck Down provides +0.6 damage and -1 ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "luck",
+                  "label": "luck"
+                },
+                {
+                  "kind": "text",
+                  "text": ".",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

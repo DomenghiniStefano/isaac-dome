@@ -13,7 +13,7 @@ import {
   stoppedUnder,
 } from './queueRows'
 
-const nodes = graphAnswers({ withArt: false, withCatalog: true }).unlock.nodes
+const nodes = graphAnswers({ withCatalog: true }).unlock.nodes
 const node = (id: number): UnlockNode => {
   const found = nodes.find(
     (n) => n.achievement.kind === 'known' && n.achievement.id === id,

@@ -1,0 +1,727 @@
+{
+  "title": "The D6",
+  "revid": 267421,
+  "infobox": {
+    "kind": "item"
+  },
+  "sections": [
+    {
+      "kind": "effects",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Upon use, replaces every item in the current ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "room",
+                  "label": "room"
+                },
+                {
+                  "kind": "text",
+                  "text": " (not ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "pickups",
+                  "label": "pickups"
+                },
+                {
+                  "kind": "text",
+                  "text": " or ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "trinkets",
+                  "label": "trinkets"
+                },
+                {
+                  "kind": "text",
+                  "text": ") with other random items corresponding to the current room's ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "item pool",
+                  "label": "item pool"
+                },
+                {
+                  "kind": "text",
+                  "text": ".",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "notes",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " The D6 is a ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "concept",
+                      "page": "special item",
+                      "label": "special item"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ".",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 0
+                  },
+                  "label": "Isaac"
+                },
+                {
+                  "kind": "text",
+                  "text": " starts with this item once it is unlocked.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Since it re-rolls every item in the room, it can be more efficient to use it in rooms where multiple items are in the same room. For instance:",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "In the ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "room",
+                            "name": "Shop"
+                          },
+                          "label": "Shop"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ", when multiple items are available for purchase.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "In the ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "room",
+                            "name": "Devil Room"
+                          },
+                          "label": "Devil Room"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ", when there are multiple deals offered.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "In the ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "room",
+                            "name": "Boss Room"
+                          },
+                          "label": "Boss Room"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " after the ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "entity",
+                            "id": 45,
+                            "variant": 0,
+                            "subtype": 0
+                          },
+                          "label": "Mom"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " fight, where both ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 327
+                          },
+                          "label": "The Polaroid"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " and ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 328
+                          },
+                          "label": "The Negative"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " can be rerolled, at the cost of the opportunity to go to the ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "stage",
+                            "name": "Chest"
+                          },
+                          "label": "Chest"
+                        },
+                        {
+                          "kind": "text",
+                          "text": "/",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "stage",
+                            "name": "Dark Room"
+                          },
+                          "label": "Dark Room"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ". Once one item is picked up the other will disappear.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "In the ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "room",
+                            "name": "Angel Room"
+                          },
+                          "label": "Angel Room"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ", when there is a choice between multiple items.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "In the ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "room",
+                            "name": "Boss Rush"
+                          },
+                          "label": "Boss Rush"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " Room, where all items can be rerolled at once.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "When ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 249
+                          },
+                          "label": "There's Options"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " or ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 414
+                          },
+                          "label": "More Options"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " spawn two items.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Items from ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 5,
+                    "variant": 50,
+                    "subtype": 0
+                  },
+                  "label": "Chest"
+                },
+                {
+                  "kind": "text",
+                  "text": "s can be rerolled.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "When an item from a chest is rerolled, the item is rolled from the current room's item pool, and not the chest's",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "When an ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "item pool",
+                  "label": "item pool"
+                },
+                {
+                  "kind": "text",
+                  "text": " is exhausted, the pool will start to use the Treasure Room.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "When the Treasure Room is exhausted, every item in it will be rerolled to ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 25
+                          },
+                          "label": "Breakfast"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ".",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "With ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 402
+                          },
+                          "label": "Chaos"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ", every fully depleted item pool will only contain ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 25
+                          },
+                          "label": "Breakfast"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ".",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " If Isaac runs out of red hearts in the ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "room",
+                        "name": "Devil Room"
+                      },
+                      "label": "Devil Room"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ", then rerolls, the prices of the items switch over to soul hearts.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " Using the D6 on an active item yields different rerolls depending on whether you picked up the active item first.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Using the D6 to reroll items duplicated with ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 347
+                  },
+                  "label": "Diplopia"
+                },
+                {
+                  "kind": "text",
+                  "text": " will reroll all the items into different items. The copied item will not be rerolled into the same one as the original item.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Be careful when rerolling, as it will replace the item with another item from the ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "text",
+                  "text": "current",
+                  "style": "bold"
+                },
+                {
+                  "kind": "text",
+                  "text": " room's item pool, even if the item came from a different pool, or is a set drop. This can be used as an advantage in various ways; for example, after defeating ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 81,
+                    "variant": 0,
+                    "subtype": 0
+                  },
+                  "label": "The Fallen"
+                },
+                {
+                  "kind": "text",
+                  "text": ", the item will be drawn from the Devil Room, so Isaac can safely roll the item into another from that pool. This behavior can also be an advantage in ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "room",
+                    "name": "Angel Room"
+                  },
+                  "label": "Angel Room"
+                },
+                {
+                  "kind": "text",
+                  "text": "s since ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 238
+                  },
+                  "label": "Key Piece 1"
+                },
+                {
+                  "kind": "text",
+                  "text": " and ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 239
+                  },
+                  "label": "Key Piece 2"
+                },
+                {
+                  "kind": "text",
+                  "text": " can be rerolled to get a free Angel Room item.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Normal rooms use the Treasure Room.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "synergies",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "interactions",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 356
+                  },
+                  "label": "Car Battery"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Re-rolls twice instantly without any benefits, doubling the speed of depleting item pools.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 689
+                  },
+                  "label": "Glitched Crown"
+                },
+                {
+                  "kind": "text",
+                  "text": ": When the D6 is used, all 5 items will be re-rolled.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "pickup",
+                    "name": "Soul of Isaac"
+                  },
+                  "label": "Soul of Isaac"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Using the D6 re-rolls the current item and cancels alternation.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

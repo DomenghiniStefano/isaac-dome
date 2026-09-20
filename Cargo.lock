@@ -802,23 +802,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "design-export"
-version = "0.1.0"
-dependencies = [
- "catalog",
- "core-save",
- "discovery",
- "graph",
- "ipc",
- "plan",
- "png 0.17.16",
- "serde",
- "serde_json",
- "unpack",
- "wiki",
-]
-
-[[package]]
 name = "digest"
 version = "0.10.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"

@@ -37,8 +37,6 @@ export type FixtureScenario =
 
 // `?fixture=none|pick|active` on the development server; active when absent.
 const ScenarioParam = 'fixture'
-// `?art=none` answers every image URL as null: every user's first launch, before any art.
-const ArtParam = 'art'
 // `?catalog=none` answers the graph as a machine without the game gets it.
 const CatalogParam = 'catalog'
 // `?queue=empty|unavailable|unreadable` answers the plan queue in one of its other states.
@@ -81,7 +79,6 @@ const currentFloorScenario = (): FloorScenario => {
   )
 }
 
-const artShown = (): boolean => query().get(ArtParam) !== Off
 const catalogShown = (): boolean => query().get(CatalogParam) !== Off
 const collectionRead = (): boolean => query().get(CollectionParam) !== Unread
 const challengesRead = (): boolean => query().get(ChallengesParam) !== Unread
@@ -135,18 +132,17 @@ const whenActive = (scenario: FixtureScenario, read: () => unknown): unknown =>
     ? read()
     : Promise.reject(noActiveProfile)
 
-// The graph's payloads and its 1,500 images load only when a screen asks for the graph: every
+// The graph's payloads load only when a screen asks for the graph: every
 // read of the profile would otherwise wait for them.
 const graph = async () => {
   const { graphAnswers } = await import('./graph')
-  return graphAnswers({ withArt: artShown(), withCatalog: catalogShown() })
+  return graphAnswers({ withCatalog: catalogShown() })
 }
 
-// The Collection's image index loads only when the Collection asks for it, like the graph.
+// The Collection's index loads only when the Collection asks for it, like the graph.
 const collection = async () => {
   const { collectionAnswer } = await import('./collection')
   return collectionAnswer({
-    withArt: artShown(),
     withCatalog: catalogShown(),
     collectionRead: collectionRead(),
   })
@@ -159,7 +155,7 @@ const challenges = async () => {
   return challengesRead() ? challengesAnswer() : challengesUnread()
 }
 
-// The wiki needs neither a profile nor the catalog: the pack's image index and sample pages
+// The wiki needs neither a profile nor the catalog: the index and the sample pages
 // load when the Wiki, or a tab label, first asks.
 const wiki = async () => import('./wiki')
 
@@ -204,7 +200,7 @@ const handlers: Partial<Record<CommandName, Handler>> = {
   [Command.SaveSummary]: (_args, scenario) =>
     whenActive(scenario, () => summary),
   [Command.Completion]: (_args, scenario) =>
-    whenActive(scenario, () => completionMatrix(artShown())),
+    whenActive(scenario, () => completionMatrix()),
   [Command.Runs]: async () => (await import('./runs')).runsAnswer(),
   [Command.Live]: async () => (await import('./runs')).liveAnswer(),
   // The floor reads no profile: it answers the drawing, whatever the save is doing.
@@ -215,7 +211,7 @@ const handlers: Partial<Record<CommandName, Handler>> = {
   [Command.Want]: (args, scenario) =>
     whenActive(scenario, async () =>
       (await import('./graph')).wantAnswer(
-        { withArt: artShown(), withCatalog: catalogShown() },
+        { withCatalog: catalogShown() },
         args?.target as Target,
       ),
     ),
@@ -225,7 +221,6 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     whenActive(scenario, () => challenges()),
   [Command.WikiIndex]: async () =>
     (await wiki()).wikiIndexAnswer({
-      withArt: artShown() && catalogShown(),
       withWiki: wikiShown(),
     }),
   [Command.WikiEntry]: async (args) => {
@@ -237,7 +232,6 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     const { searchAnswer } = await import('./search')
     return searchAnswer(
       {
-        withArt: artShown(),
         withCatalog: catalogShown(),
         withWiki: wikiShown(),
       },

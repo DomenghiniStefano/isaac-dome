@@ -18,8 +18,7 @@
     "wiki:fetch": "cargo run -q -p wiki-snapshot -- fetch",
     "wiki:build": "cargo run -q -p wiki-snapshot -- build",
     "graph:rules": "cargo run -q -p graph --bin graph-rules",
-    "ipc:types": "cargo run -q -p ipc --bin ipc-types && pnpm --filter ui exec prettier --write src/lib/ipc/types.ts",
-    "design:export": "cargo run -q -p design-export"
+    "ipc:types": "cargo run -q -p ipc --bin ipc-types && pnpm --filter ui exec prettier --write src/lib/ipc/types.ts"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.11.4"
