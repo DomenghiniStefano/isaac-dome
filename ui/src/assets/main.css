@@ -1,4 +1,11 @@
 @import 'tailwindcss';
+
+/* The scanner's fixtures are class lists that never existed (`scripts/scan-conventions.mjs`), and
+   Tailwind's source detection reads that file like any other: before this line the bundle carried
+   a real `sm:grid-cols-4` rule generated from the fixture that proves media query variants are
+   refused — the banned thing, shipped by the rule banning it (spec 3.13a §9). */
+@source not "../../scripts";
+
 @import './theme/colors.css';
 @import './theme/typography.css';
 @import './theme/spacing.css';

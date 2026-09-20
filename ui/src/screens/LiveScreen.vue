@@ -59,7 +59,7 @@ const characterName = computed(
       <template v-if="run !== null">
         <!-- The run itself, as four readings and no percentages: floors walked, items held,
              achievements the log announced during it, and what finishing it would open. -->
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div class="grid grid-cols-2 gap-3 @regular/page:grid-cols-4">
           <KpiTile :value="run.floors" :label="t('live.floors')" />
           <KpiTile
             :value="run.collected.length"
