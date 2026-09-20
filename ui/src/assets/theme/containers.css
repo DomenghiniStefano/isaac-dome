@@ -6,4 +6,17 @@
      scale 100 (cycle 3.5c, Decision 4): a container query is compared against a used width,
      and what this number means is a fact about the drawn tab, which scales with it. */
   --container-tab-narrow: 64px;
+
+  /* The three widths a screen changes shape at (spec 3.13a §5), used as `@max-compact/page:` and
+     `@wide/page:` against the `page` container, and `@max-compact/shell:` against `shell`. In px
+     and measured at scale 100, for the reason the tab's token gives above.
+
+     compact — below it, one column: a table at its minimum column set, a KPI strip stacked, the
+       section sidebar down to its icons. It sits above the ~428px the page box has at the 640
+       window floor, so the narrowest window the app allows is inside it.
+     regular — the shape the screens are drawn at today, near the `max-w-250` they all carried.
+     wide — above it, what sat under something may sit beside it. */
+  --container-compact: 560px;
+  --container-regular: 960px;
+  --container-wide: 1280px;
 }
