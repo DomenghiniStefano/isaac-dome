@@ -29,6 +29,10 @@ import { execFileSync } from 'child_process'
 // Known-legitimate unresolved references: `path` as the document writes it, and why it is not
 // a defect. A name that stops appearing here has either been fixed or the document changed.
 const EXEMPTIONS = [
+  {
+    path: 'target/release/latest.json',
+    why: 'the updater manifest `pnpm release:manifest` writes; a build output under target/, never tracked, and the release design names where it lands',
+  },
   // A document recording a rename has to name the file that went away. Most of these left with
   // the journal and the closed backlog entries on 2026-09-16.
   {
