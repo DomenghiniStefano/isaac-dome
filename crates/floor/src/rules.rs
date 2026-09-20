@@ -42,6 +42,31 @@ pub enum Constraint {
         kinds: Vec<RoomKind>,
     },
     NeighbourNotSpecial,
+    /// The cell touches no painted room at all. Its own rule rather than a count of zero,
+    /// because the sentence behind it is about doors — "not connected to any other room on the
+    /// map directly" — and a candidate has to be able to cite it.
+    NoPaintedNeighbour,
+    /// How many rooms a spot reaches **through the red rooms that could open beside it**. The
+    /// count is taken two cells out, and what sits in between is an empty cell, which is
+    /// exactly what this grid draws: a red room is not a painted room, it is a side where one
+    /// could open.
+    ///
+    /// `at_least` and not a list of counts, because the sentence says "3+" and names no
+    /// ceiling. `at_most` is `None` for that open band and the exact count for each of the two
+    /// the wiki ranks below it — without it a cell reaching five rooms would be proposed once
+    /// per band.
+    RedRoomConnections {
+        at_least: u8,
+        at_most: Option<u8>,
+        rank: u8,
+    },
+    /// The location is out when **any** of the red rooms that could open beside it would touch
+    /// one of `kinds`. One sentence with two halves — a red room that connects to a Secret,
+    /// Super Secret or Curse Room, and a red room that is invalid to begin with, "such as next
+    /// to a Boss Room" — and both halves reject the location rather than that one side.
+    RedRoomForbiddenNeighbour {
+        kinds: Vec<RoomKind>,
+    },
     DeadEndDistanceRank {
         rank: u8,
     },

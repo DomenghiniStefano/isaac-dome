@@ -51,6 +51,7 @@ export const en: MessageSchema = {
     appearance: 'Appearance',
     background: 'Background',
     tabsSettings: 'Tabs',
+    updates: 'Updates',
     about: 'About',
   },
   wikiCategories: {
@@ -114,12 +115,31 @@ export const en: MessageSchema = {
   },
   floor: {
     intro:
-      'Draw the floor the way you see it on the minimap: empty cells light up where the game’s own rules allow a secret room. Every lit cell says which rule lit it and where that rule was read.',
-    erase: 'Erase',
+      'Draw the floor the way you see it on the minimap: empty cells light up where the game’s own rules allow a Secret, Super Secret or Ultra Secret Room.',
     clear: 'Clear the grid',
-    painted: 'rooms drawn',
+    clearConfirm: {
+      title: 'Clear the grid?',
+      body: 'The floor you drew goes, and it cannot be brought back.',
+      cancel: 'Cancel',
+      confirm: 'Clear',
+    },
     neighbours: 'adjacent rooms',
-    source: 'Source',
+    empty: 'empty',
+    cell: 'Row {row}, column {column}: {room}',
+    at: 'Row {row}, column {column}',
+    rooms: 'Rooms',
+    startRoomMissing: 'About the start room',
+    cellCandidate: '{cell} — {target}, place {rank}',
+    move: {
+      left: 'Move everything left',
+      up: 'Move everything up',
+      down: 'Move everything down',
+      right: 'Move everything right',
+    },
+    rank: {
+      title: 'What a colour means',
+      note: 'The fuller the square, the likelier the place. Past the third the rules say no more.',
+    },
     unresolved: 'What the grid cannot judge',
     none: 'No cell the rules allow, with what you have drawn so far.',
     failed: 'The candidates could not be computed. What you drew stays.',
@@ -127,6 +147,11 @@ export const en: MessageSchema = {
       secret: 'Secret Room',
       superSecret: 'Super Secret Room',
       ultraSecret: 'Ultra Secret Room',
+    },
+    targetShort: {
+      secret: 'Secret',
+      superSecret: 'Super',
+      ultraSecret: 'Ultra',
     },
     room: {
       start: 'Start',
@@ -534,6 +559,40 @@ export const en: MessageSchema = {
     stayTitle: 'Keep running in the background',
     stayHint:
       'Closing the last window leaves the app next to the clock, in the notification area: one click on the icon brings the window back. Off, closing the last window closes the app.',
+    saveFailedTitle: 'The setting was not saved',
+    saveFailed:
+      'The app already behaves this way, but we could not write it down: it will be back as it was next time you start it.',
+  },
+  updates: {
+    intro:
+      'Which version you have, and whether a newer one is out. The app downloads the update while you keep using it, and installs it when you say so.',
+    currentVersion: 'Installed version: {version}',
+    autoTitle: 'Update automatically',
+    autoHint:
+      'On, the app asks GitHub at every start whether there is a newer version and downloads it if there is. Off, no request is made at all: nothing leaves this computer unless you press “Check now”.',
+    unsupported: 'This build does not update itself.',
+    unsupportedHint:
+      'Not available in this build. An installer run from here would silently replace the development build with a release, and nobody would notice.',
+    idle: 'We have not checked yet since this app started.',
+    checking: 'Checking…',
+    upToDate: 'You have the newest version.',
+    downloading: 'Downloading {version}…',
+    ready: '{version} is ready to install.',
+    // Not bad luck like the others: what arrived is not what it claims to be.
+    failedRejected:
+      'The update was refused: the signature does not match. Nothing was installed. Download the installer from the releases page rather than trying again here.',
+    failedOffline:
+      'We could not reach GitHub. Try again when you are back online.',
+    failedNotPublished: 'There is no published version to download.',
+    failedInstall:
+      'The update was downloaded and the installation did not start. The file is still here: you can try again.',
+    failedUnknown: 'The update did not work.',
+    failedTitle: 'Could not install',
+    notesTitle: 'What changes',
+    check: 'Check now',
+    install: 'Restart and install',
+    installHint:
+      'The app closes, the installer carries on by itself, and the app opens again on its own.',
     saveFailedTitle: 'The setting was not saved',
     saveFailed:
       'The app already behaves this way, but we could not write it down: it will be back as it was next time you start it.',
@@ -1015,5 +1074,6 @@ export const en: MessageSchema = {
     wikiUnavailable: "The wiki dataset isn't available.",
     sessionTooLarge: 'The tab session is too large to be saved.',
     autostartNotWritable: 'Windows did not accept the start-at-login entry.',
+    updateNotReady: 'There is no downloaded update to install.',
   },
 }

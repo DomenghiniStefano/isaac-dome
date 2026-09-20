@@ -5,7 +5,7 @@
 //! next command could contradict, and a second wire shape to keep in `camelCase` for nothing.
 //! Each window answers by calling the commands it already calls.
 //!
-//! The five names are mirrored by hand in `ui/src/lib/window/appEvents.ts`, as the IPC types
+//! The six names are mirrored by hand in `ui/src/lib/window/appEvents.ts`, as the IPC types
 //! are: change one and change the other.
 
 use tauri::{AppHandle, Emitter};
@@ -31,3 +31,9 @@ pub const RUNS_CHANGED: &str = "runs-changed";
 /// The draw changed: a new target, or the preset behind it. With two windows open, a draw in
 /// one is a read in the other.
 pub const ROLL_CHANGED: &str = "roll-changed";
+
+/// The update moved: a check started or answered, a download advanced a whole percentage
+/// point, the bytes are ready, or the whole thing failed. Progress is the one place the
+/// payload-free convention costs something, which is why the percentage point is the unit —
+/// a hundred of these over a download instead of one per chunk.
+pub const UPDATE_CHANGED: &str = "update-changed";

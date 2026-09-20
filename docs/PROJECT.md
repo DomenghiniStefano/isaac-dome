@@ -120,10 +120,11 @@ explained.
 > regular — a 19-cell block per boss, with Bethany, Jacob & Esau and the 17 Tainted — and
 > holds up to Hush. The tail beyond it was read on 2026-09-08: Delirium for the 19 later
 > characters starts at **404**, Mother for the 14 originals at **423**, The Beast at
-> **457**, and **491**/**492** are those two bosses' kills. What stays unread is **40
-> cells** — Mother and The Beast for The Forgotten and the 19 — which the spacing puts
-> inside 423–490 but which are zero in every save collected, so they are drawn as
-> *unknown* rather than guessed; one run of Mother with a Tainted character closes them.
+> **457**, and **491**/**492** are those two bosses' kills. Mother's own group of 34 was
+> read on 2026-09-20, on a window where T. Eden beat Mother: The Forgotten at **437** and
+> the 19 from **438**. What stays unread is **20 cells** — The Beast for The Forgotten and
+> the 19 — which the spacing puts inside 471–490 but which are zero in every save collected,
+> so they are drawn as *unknown* rather than guessed; one run of The Beast closes them.
 > Index 385 is a counter on its own, 386–403 are eighteen cells never seen moving, and
 > 493–522 is a family of counters that move several per session.
 >

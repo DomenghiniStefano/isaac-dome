@@ -5,8 +5,11 @@ that takes, what the screens are, and what it takes to build and check the thing
 
 > **This is the state, not the design.** `docs/PROJECT.md` is the design and freezes at M0 by
 > its own header — it says so in its first paragraph — so a diagram of *today* could not live
-> there without breaking that promise. Drawn on 2026-09-18 against `20f04a5`, the branch it
-> lands on; the crate graph redrawn on 2026-09-20, `design-export` having left the repository.
+> there without breaking that promise. Drawn on 2026-09-18 against `20f04a5`; redrawn on
+> 2026-09-20 on `feature/app-update`, which added the seventeenth route, four commands, the
+> sixth event and the one arrow that leaves the machine, again the same day on
+> `feature/floor-grid`, which gave the Floor screen the game's own minimap icons and the
+> command that fetches them, and once more when `design-export` left the repository.
 >
 > **What keeps it true, and what does not.** Every path named here is checked by
 > `scripts/check-doc-refs.mjs`, which is why the nodes carry real paths instead of pretty
@@ -20,7 +23,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 > just below are the tripwire — if one of them is wrong, so is the drawing.
 
 Counted at that commit, and every number below is derived from the code, not from prose:
-**16 crates**, **36 Tauri commands**, **5 events**, **16 routes**, **6 store migrations**.
+**16 crates**, **41 Tauri commands**, **6 events**, **17 routes**, **6 store migrations**.
 
 ---
 
@@ -61,15 +64,17 @@ flowchart LR
   end
 
   ipc["ipc<br/>view-models — the only contract"]
-  app["crates/app<br/>36 commands, 5 events"]
+  app["crates/app<br/>41 commands, 6 events"]
 
   subgraph vue["Vue — never touches the disk"]
-     app -->|"invoke — 36 commands"| wrappers["lib/ipc/*.ts<br/>typed wrappers, one call()"]
+     app -->|"invoke — 41 commands"| wrappers["lib/ipc/*.ts<br/>typed wrappers, one call()"]
     stores["Pinia stores"]
-    screens["16 screens"]
+    screens["17 screens"]
   end
 
   db[("isaacdome.db<br/>the only file written")]
+
+  github["github.com — releases<br/>latest.json + the signed installer"]
 
   steam --> discovery
   discovery -->|"resolved paths"| coresave
@@ -103,13 +108,20 @@ flowchart LR
   ipc --> app
   store --> app
   logwatch --> app
+  github -.->|"only if the switch is on,<br/>signature checked before install"| app
 
-  app -->|"invoke — 36 commands"| wrappers
-  app -.->|"5 events, no payload"| wrappers
+  app -->|"invoke — 41 commands"| wrappers
+  app -.->|"6 events, no payload"| wrappers
   ipc -.->|"pnpm ipc:types, build time"| wrappers
   wrappers --> stores
   stores --> screens
 ```
+
+**The dotted arrow from `github.com` is the only one that leaves the machine**, and it is the
+only one anybody can switch off. It carries the app's own update: a manifest, then a signed
+installer whose signature is checked before a byte of it is run. With "aggiorna automaticamente"
+off, no request is made at all — not a quiet one. `docs/release.md` is the whole of what happens
+on the other end of it.
 
 **Everything that opens a file sits to the left of `ipc`.** That is the project's oldest rule
 made visible: the frontend has no path, no offset and no log string to get wrong, because none
@@ -126,9 +138,9 @@ the typed wrappers in `ui/src/lib/ipc/`, and every wrapper goes through the sing
 `SearchScreen.vue` is today the only screen that reaches a wrapper directly; every other one
 stops at a store. `pnpm scan` is what keeps a component from taking the shortcut.
 
-**Pull, then a nudge.** The 36 commands are pull: a window asks, the backend answers. The 5
-events (`profile-changed`, `settings-changed`, `plan-changed`, `runs-changed`, `roll-changed`)
-are the nudge, and they carry **no payload** on purpose — a payload would be a copy of state the
+**Pull, then a nudge.** The 41 commands are pull: a window asks, the backend answers. The 6
+events (`profile-changed`, `settings-changed`, `plan-changed`, `runs-changed`, `roll-changed`,
+`update-changed`) are the nudge, and they carry **no payload** on purpose — a payload would be a copy of state the
 next command could contradict. A second window only ever learns of a write it did not make this
 way.
 
@@ -255,6 +267,7 @@ flowchart TD
     appearance["/settings/appearance"]
     background["/settings/background"]
     tabsr["/settings/tabs"]
+    updatesr["/settings/updates"]
   end
 ```
 
@@ -275,23 +288,26 @@ outside it.
 | Roll | `/progress/roll` | progress | `roll` | `roll`, `roll_draw`, `set_roll_preset` |
 | Runs | `/tool/runs` | tool | `views` | `runs` |
 | Live | `/tool/live` | tool | `views` | `live` |
-| Floor | `/tool/floor` | tool | `floor` | `floor_candidates` |
+| Floor | `/tool/floor` | tool | `floor` | `floor_candidates`, `room_icons` |
 | Wiki | `/wiki` | wiki | `wiki` | `wiki_entry`, `wiki_index` |
 | Profile | `/settings/profile` | settings | `profile` | `setup_state`, `select_profile`, `save_summary`, `completion` |
 | Appearance | `/settings/appearance` | settings | `settings` | the six below |
 | Background | `/settings/background` | settings | `settings` | the six below |
-| Tabs | `/settings/tabs` | settings | `settings` | the six below |
+| Tabs | `/settings/tabs` | settings | `settings` | the seven below |
+| Updates | `/settings/updates` | settings | `update`, `settings` | `update_status`, `check_update`, `install_update`, `set_auto_update` |
 
-The `settings` store is shared by its three screens and holds all six between them: `settings`,
-`set_scale`, `set_stay_in_background`, `set_resume_tabs`, `autostart`, `set_autostart`. A
-column splitting those per screen would be a guess, and the store is the honest granularity.
+The `settings` store is shared by its four screens and holds all seven between them: `settings`,
+`set_scale`, `set_stay_in_background`, `set_resume_tabs`, `set_auto_update`, `autostart`,
+`set_autostart`. A column splitting those per screen would be a guess, and the store is the
+honest granularity. Updates is the one settings screen with a store of its own beside it,
+because the phase it draws is held in the backend and changes without anybody asking.
 
-**Thirty-one of the thirty-six commands are reachable from a screen.** The other five are not
+**Thirty-six of the forty-one commands are reachable from a screen.** The other five are not
 loose ends: `window_session` and `set_window_session` belong to the shell and travel through
 `ui/src/lib/window/session.ts`; `extraction_report` is called only by the development-only
 verification page, `ui/src/verify/VerifyPage.vue`; and `choose_game_folder` and
 `choose_saves_folder` belong to the welcome flow that runs before any screen is routed,
-`ui/src/screens/welcome/NothingFound.vue`. 31 + 2 + 1 + 2 = 36, which is the kind of sum worth
+`ui/src/screens/welcome/NothingFound.vue`. 36 + 2 + 1 + 2 = 41, which is the kind of sum worth
 recomputing whenever this table is edited — it was wrong before this branch too, the two
 `choose_*` commands were never in it.
 

@@ -49,7 +49,13 @@ this repo before F1 existed and no second answer was invented.
 
 ## 2. The rules
 
-Nine rows. Each one is a sentence the wiki states and this grid can be held to.
+Fourteen rows — nine on 2026-09-15, and five more on 2026-09-20 when §3's dismissal of the whole
+Ultra Secret paragraph turned out to be wrong. §6 is that correction. Each one is a sentence the
+wiki states and this grid can be held to.
+
+**The order is the file's order and the file's order is load-bearing.** `floor::solve` walks the
+rules once, and a narrowing rule only ever removes: one that runs before anything has been
+proposed narrows an empty list. Within a target, every rule that proposes comes first.
 
 | id | target | constraint, in one sentence | quotation | url |
 |---|---|---|---|---|
@@ -61,7 +67,12 @@ Nine rows. Each one is a sentence the wiki states and this grid can be held to.
 | `super-secret-neighbour-not-special` | superSecret | That one room is not a Special Room. | "this room can't be a Special Room; in other words, it is placed on one of the floor's dead ends, like any other Special Room" | https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room |
 | `super-secret-not-next-to-secret` | superSecret | The cell does not touch the Secret Room. | "cannot be connected to the Secret Room" | https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room |
 | `super-secret-second-longest` | superSecret | Among the dead ends, it is the one needing the 2nd most rooms walked from the start room. | "Super Secret Rooms replace the dead-end room that would require the 2nd most rooms walked through from the start room to access" | https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room |
-| `ultra-secret-connections` | ultraSecret | Unmodelled — see §3. | "Ultra Secret rooms are most likely generated in spots that connect to 3+ non-red rooms through its adjacent red rooms (different squares in L rooms count as 2)." | https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room |
+| `ultra-secret-connections` | ultraSecret | The cell reaches 3 or more rooms through the red rooms that could open beside it. | "Ultra Secret rooms are most likely generated in spots that connect to 3+ non-red rooms through its adjacent red rooms (different squares in L rooms count as 2)." | https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room |
+| `ultra-secret-connections-two` | ultraSecret | It reaches exactly 2, ranked below. | "They can be connected to 2 or 1 non-red rooms through its adjacent red rooms, but a specific 3+ room location is 11.5x more likely than a specific 2 room location" | https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room |
+| `ultra-secret-connections-one` | ultraSecret | It reaches exactly 1, ranked below that — and **not** switched off by a better cell. See §6. | "If there is no 3+ room location available then a specific 2 room location is 11.5x more likely than a specific 1 room location." | https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room |
+| `ultra-secret-not-connected` | ultraSecret | The cell touches no painted room at all. | "Ultra Secret Rooms are special rooms that are not connected to any other room on the map directly." | https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room |
+| `ultra-secret-red-room-invalid` | ultraSecret | None of the red rooms that could open beside it touches a Secret, Super Secret, Curse or Boss Room. | "Ultra Secret Rooms can't be connected to red rooms that connect to Secret Rooms, Super Secret Rooms, or Curse Rooms, and can't be in a location where any of its adjacent red rooms are invalid, such as next to a Boss Room" | https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room |
+| `ultra-secret-shapes` | ultraSecret | Unmodelled — see §3. | "next to the sides of narrow rooms, or any room that can't have a red room opened on that specific side, however locations on the 13x13 border where a red room would normally open to an I AM ERROR room are allowed" | https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room |
 
 ### Two rules the plan's list did not have
 
@@ -127,9 +138,10 @@ screen as `Unmodelled` rather than as silence.
 |---|---|
 | "Entrances to Secret Rooms will never have rocks or gaps in the way." | A fact about the room's **contents**. A painted minimap carries which cells are rooms, never what is inside one. |
 | "Rooms adjacent to Secret Rooms will always have a clear, walkable path to the middle of the wall where Isaac can place a bomb." | Same: the interior of the neighbour, which nothing on this screen draws. |
-| The whole Ultra Secret rule. | It is stated **two hops out** — "connect to 3+ non-red rooms *through its adjacent red rooms*" — and a red room is the Red Key mechanic, created by an item during the run. The grid paints rooms that exist; it does not paint rooms an item could create. |
-| "Ultra Secret Rooms can't be connected to red rooms that connect to Secret Rooms, Super Secret Rooms, or Curse Rooms" | Same two hops. Evaluating it would mean modelling where a red room may open, which is its own set of rules (the same note lists four more conditions, including narrow rooms and blocked sides). |
-| "a specific 3+ room location is 11.5x more likely than a specific 2 room location" | A ratio, and the wiki's own HTML comment says it is carried over from the regular Secret Room and is "based on testing". This screen ranks; it does not state odds. Nothing on it would be more true for carrying an 11.5. |
+| ~~The whole Ultra Secret rule.~~ **Withdrawn on 2026-09-20 — see §6.** | ~~It is stated **two hops out** — "connect to 3+ non-red rooms *through its adjacent red rooms*" — and a red room is the Red Key mechanic, created by an item during the run. The grid paints rooms that exist; it does not paint rooms an item could create.~~ Two hops is a distance, not an obstacle, and the cell in between is an **empty** one — which is the thing this grid knows best. |
+| ~~"Ultra Secret Rooms can't be connected to red rooms that connect to Secret Rooms, Super Secret Rooms, or Curse Rooms"~~ **Withdrawn on 2026-09-20 — see §6.** | ~~Same two hops. Evaluating it would mean modelling where a red room may open, which is its own set of rules (the same note lists four more conditions, including narrow rooms and blocked sides).~~ Four of the conditions are about a room's **shape**, and only those four are out of reach. |
+| "next to the sides of narrow rooms, or any room that can't have a red room opened on that specific side" | Whether a side can open depends on the shape of the room behind it, and `floor::Shape` has one variant: every room on this grid is one square. An L room's two squares — which the counting sentence says "count as 2" — and a narrow room's long side cannot be drawn here, so they cannot be judged. This is what is left of the row above it, and it keeps the Ultra Secret target's `Unmodelled` seat. |
+| "a specific 3+ room location is 11.5x more likely than a specific 2 room location" | A ratio, and the wiki's own HTML comment says it is carried over from the regular Secret Room and is "based on testing". This screen ranks; it does not state odds. Nothing on it would be more true for carrying an 11.5. **Since 2026-09-20 the sentence is the quotation on `ultra-secret-connections-two`**, because it is where the page puts 2 below 3+ — the ordering is the rule, and the number is still nowhere in the file. |
 | "are particularly likely to appear near the Boss Room" / "likely to spawn in between the shop and the Boss Room" | A **tendency**, and the page states it as a consequence of generation order rather than as a constraint. A tendency cannot reject a cell, and this screen's whole claim is that a lit cell is allowed by a cited rule. |
 | "Loops and large rooms connected to more than one room on any given side can tamper with this logic, however." | The wiki's own caveat on `super-secret-second-longest`. It is not a rule; it is the page saying its rule has exceptions it does not enumerate. Recorded so nobody reads that rule as exact. |
 | Whether the Start Room is a Special Room. | Not stated anywhere. See §4. |
@@ -250,3 +262,102 @@ and a phase-3 proposal would have skipped that filter with nothing going red.
 within a phase. The file lists the three secret count rules, then the narrowing one, then the
 super secret rules; Task 5's tests keep both halves of the boss check, the grid that must be
 rejected and the one that must not.
+
+---
+
+## 6. The Ultra Secret correction, 2026-09-20 (B68)
+
+**What was wrong.** §3 dismissed the entire Ultra Secret paragraph as unmodellable, on this
+reasoning: *"a red room is the Red Key mechanic, created by an item during the run. The grid
+paints rooms that exist; it does not paint rooms an item could create."* Every word of that is
+true about **red rooms**, and none of it is true about the rule, because the rule is not about
+red rooms that exist. It is about the **sides where one could open**, and a side where a red room
+could open is an **empty cell** — the one thing a painted minimap has more of than anything else.
+Two hops is a distance. It was read as an obstacle.
+
+The cost was not an approximation, it was silence: the target had exactly one rule, that rule was
+`Unmodelled`, and `solve` never proposes a cell for one. The Ultra tab read **0 on every grid
+there is**, including a fully painted floor — and it read that way for five days without anything
+going red, because a target answering nothing is indistinguishable from a target answering
+correctly that there is nowhere.
+
+**And §3 never looked at the first sentence of the section.** *"Ultra Secret Rooms are special
+rooms that are not connected to any other room on the map directly"* is a plain adjacency
+constraint on painted cells, the simplest thing on this page to evaluate, and it was not in §2 or
+§3 at all. Dismissing the hard sentence took the easy one with it: that is the shape of the
+mistake, and it is why the rule here is to source a paragraph sentence by sentence rather than to
+judge it whole.
+
+**How it surfaced.** The owner opened the screen on 2026-09-20 and put it beside
+https://tboisecretroomfinder.com, which answers the same question from the same painted grid and
+lights cells where ours lit none. The comparison is what made the silence visible; nothing in the
+suite could have.
+
+### What was re-read
+
+The same page, the same way — `?action=raw` — on **2026-09-20**. **39,230 bytes, byte-for-byte
+the size §1 records for 2026-09-15**: the page has not changed, so this is a correction to how it
+was read and not to what it said. `crates/floor/rules/placement.json` carries `"read":
+"2026-09-20"` and `"version": 2` for that second reading.
+
+### What a red room is, on this grid
+
+For a candidate cell:
+
+- its **red rooms** are its empty orthogonal neighbours — a painted neighbour is not one, because
+  the room is already there, and a side off the edge of the grid is not one either;
+- the rooms it **reaches** are the painted cells touching those red rooms, counted **distinct**
+  and never counting the candidate itself. Two red rooms beside the same room are one way in.
+  Nothing on this grid is a red room, so "non-red rooms" is every painted room it reaches;
+- the ceiling is **twelve** — four sides, three rooms each — which is why the count is a `u8`.
+
+A side off the edge is the sentence the page states outright: *"locations on the 13x13 border
+where a red room would normally open to an I AM ERROR room are allowed."* Two of a corner cell's
+four sides are off the grid, and that is not two sides that failed.
+
+### The one that is deliberately not a fallback
+
+`secret-neighbours-one` and `ultra-secret-connections-one` look like the same sentence and are
+not:
+
+> "1 neighbor locations **can only happen if** there are no valid 3+ neighbor locations"
+> — Secret Room, and `NeighbourCountFallback` switches it off
+
+> "1 room locations being **virtually impossible** if there is a 3+ location available"
+> — Ultra Secret Room, and nothing switches it off
+
+*Virtually*, and the page's own HTML comment says why: *"It seems sometimes the last dead end
+created cannot connect to the Ultra Secret Room, which can create a scenario where a 1 room
+location is chosen when a 3+ location is available."* A fallback here would drop the cells the
+wiki says are sometimes the answer. So the 1-room band is a plain `redRoomConnections` at rank 2:
+it ranks last, it is never removed. `a_one_room_spot_still_stands_while_a_three_room_spot_does`
+is that decision, pinned.
+
+### The phases, with the five new rules in them
+
+| phase | rules | what it does |
+|---|---|---|
+| propose | `neighbourCount`, `neighbourCountFallback`, `redRoomConnections` | add cells, each with its rank |
+| narrow | `forbiddenNeighbour`, `neighbourNotSpecial`, `noPaintedNeighbour`, `redRoomForbiddenNeighbour`, `deadEndDistanceRank` | remove and re-rank |
+| resolve | `neighbourCountFallback` again | drop its cells if any surviving candidate has `neighbours >= superseded_by_at_least` |
+
+`redRoomConnections` carries `at_least` with an `at_most` that is `null` for the open band: "3+"
+is what the sentence says, and writing `[3, 4, … 12]` would put a ceiling in the file that the
+wiki does not state. Without `at_most` on the two bands below it, a cell reaching five rooms
+would be proposed once per band.
+
+`Candidate.neighbours` stays what it has always been — the rooms **touching** the cell, which is
+zero for every Ultra candidate once `ultra-secret-not-connected` has run. The count that earned
+it is measured two cells out and is not the same thing, so it does not go in that field; the rank
+carries the band, which is all the screen draws.
+
+### Where the reference site goes further than the page
+
+`tboisecretroomfinder.com` also drops any location with a painted orthogonal neighbour, which is
+`ultra-secret-not-connected` above and is the same call — but the page has a bullet that reads
+against it: *"If other rooms exist adjacent to it, the doors will not open from inside the Ultra
+Secret Room."* That sentence presupposes the adjacency it forbids. It is about **doors**, and the
+rule we encode is about doors too, so both readings survive it; the reason the strict one wins is
+the other sentence, *"can't be in a location where **any** of its adjacent red rooms are
+invalid"* — a painted neighbour is a side that can never host a red room. Recorded because it is
+the line to suspect first if a real floor ever shows an Ultra Secret Room with a room against it.

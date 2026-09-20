@@ -13,5 +13,6 @@ export const StoreId = {
   Wiki: 'wiki',
   Settings: 'settings',
   Roll: 'roll',
+  Update: 'update',
 } as const
 export type StoreId = (typeof StoreId)[keyof typeof StoreId]

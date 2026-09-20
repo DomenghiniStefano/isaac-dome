@@ -16,6 +16,7 @@ pub enum Source {
     ItemPools,
     Challenges,
     BossPortraits,
+    MinimapIcons,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]

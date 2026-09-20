@@ -98,6 +98,7 @@ const handleIpcError = (e: unknown) => {
     case 'wikiUnavailable':
     case 'autostartNotWritable':
     case 'sessionTooLarge':
+    case 'updateNotReady':
       error.value = err
       return
     default:
