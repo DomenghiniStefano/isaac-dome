@@ -389,14 +389,32 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
       development builds because `current_exe()` there is `target\debug\app.exe`. Plan
       `docs/superpowers/plans/2026-09-16-autostart.md`. **Nobody has seen it**: it needs an
       installed build, a logout and a login, which is what its five lines below are for.
-- [ ] **M5 — Public release**. **The app can be packaged since 2026-09-16, and could not before**:
-      `pnpm build` compiled and then stopped on `Couldn't find a .ico icon`, with
-      `crates/app/icons/` holding exactly the set Tauri looks for. Declaring `bundle.icon`
-      explicitly fixes it, and the first MSI and NSIS installers this project has ever produced
-      came out of that run. **Nothing runs `pnpm build` to the end** — `scripts/check` does not, by
-      design, since it downloads WiX and NSIS and takes minutes — so the next thing that breaks
-      packaging will be just as quiet. B11 closed with it: the font's licence and readme and
-      `dataset/ATTRIBUTION.md` are inside both installers, checked by extracting them.
+- [x] **M5 — Public release, done on 2026-09-20.** The repository is public, `v0.1.0` to `v0.1.3`
+      are published, and **an installed build has been watched updating itself** — the one link
+      of that feature nothing here can test. `docs/release.md` is the procedure, `pnpm release`
+      builds and signs, `pnpm release --publish` also tags and uploads, and publishing stays
+      behind its own flag because a build can be repeated and a release cannot be taken back.
+      Card B64.
+
+      **The app could not be packaged at all before 2026-09-16**: `pnpm build` compiled and then
+      stopped on `Couldn't find a .ico icon`, with `crates/app/icons/` holding exactly the set
+      Tauri looks for. Declaring `bundle.icon` explicitly fixed it. B11 closed with it: the
+      font's licence and readme and `dataset/ATTRIBUTION.md` are inside both installers, checked
+      by extracting them.
+
+      **What the four releases cost, and it is the part worth keeping.** `scripts/check` still
+      never runs `pnpm build` to the end, by design, so everything about packaging and signing is
+      found at release time — and on this day it was found four times. A build without the private
+      key builds both installers *and then* fails, so `target/release/bundle/` is never evidence
+      that anything was signed. A Tauri CLI older than 2.11.5 signs without recording the version,
+      which `requireSignedVersion` then rejects on every machine at once. And `target/` is never
+      emptied, so picking "the first installer there" uploads whichever sorts first. Each of those
+      is a guard in `scripts/release-manifest.mjs` now, and each was written after it happened.
+
+      **The release that mattered most carried no code.** 0.1.3 is 0.1.2 with a different number,
+      published so that an installed build had something to update to with nothing else moving.
+      That is the only way this repository has to see the updater work, and it is worth doing
+      once.
 
 ---
 
