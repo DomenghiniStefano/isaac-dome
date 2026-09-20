@@ -58,14 +58,26 @@ config names one, so there is nothing to keep in step.
 ### 2. Build, signed
 
 ```powershell
-$env:TAURI_SIGNING_PRIVATE_KEY = "$HOME\.tauri\isaacdome.key"
+$env:TAURI_SIGNING_PRIVATE_KEY_PATH = "$HOME\.tauri\isaacdome.key"
 $env:TAURI_SIGNING_PRIVATE_KEY_PASSWORD = "<the password>"
 pnpm build
 ```
 
+**`_PATH`, not `TAURI_SIGNING_PRIVATE_KEY`.** The CLI's own help distinguishes the two:
+`TAURI_SIGNING_PRIVATE_KEY` is *"String of your private key"* — its contents — and
+`TAURI_SIGNING_PRIVATE_KEY_PATH` is the path to the file. The documentation page says the first
+accepts either, which is true and is exactly why naming the right one costs nothing and removes
+the question.
+
 `bundle.createUpdaterArtifacts` is on, so the NSIS setup comes out with a `.sig` beside it under
-`target/release/bundle/nsis/`. **Without the two variables the build still succeeds and produces
-no signature**, which is the quiet failure the next step exists to catch.
+`target/release/bundle/nsis/`.
+
+**What a build without those variables does is not yet known here.** Tauri is expected to refuse
+outright — a public key configured and no private key to match it — rather than quietly produce
+an unsigned bundle. That has not been observed on this machine, because `pnpm build` has never
+been run to the end since the key existed, so it is written as the open question it is and the
+first release settles it. Either way step 3 catches it: a bundle with no `.sig` beside it cannot
+be published.
 
 ### 3. Write the manifest
 
