@@ -18,6 +18,22 @@ what this cycle leaves ready for it.
 Decided in conversation on 2026-09-20. Five choices are the owner's and are marked as such: §3,
 §4, §6, §7 and §8.
 
+> **What building it changed**, recorded here rather than left to rot in the diff. Four things:
+>
+> - **Twenty screen roots, not twenty-two.** The count was taken on `feature/floor-grid`;
+>   `UpdatesScreen.vue` lives on `feature/app-update` and is not on `develop` yet. It will need
+>   the flowing shape when that branch integrates, and the scanner will say so.
+> - **`compact` is 800px, not the provisional 560.** Measured as §5 said to: Unlock's fixed
+>   columns are 296px and its three flexible ones want ~160 each, so the full table needs ~780.
+> - **The sidebar got its own token**, `--container-sidebar-room` (560px). Tying it to an 800px
+>   `compact` would have collapsed it on a 900px window, where there is room to spare, only
+>   because a table elsewhere needs 780. §5 already allowed this; the measurement is what showed
+>   it was needed.
+> - **All six list screens took the filling chain, not Unlock alone.** Removing the 35rem cap from
+>   `VirtualRows` without giving the other five a bounded height would have let their scroll box
+>   grow to the full list and the virtualizer render all 733 rows. Their *columns* are still
+>   3.13b's work; only the height moved here.
+
 ---
 
 ## 1. What is already built, read rather than assumed
