@@ -353,18 +353,21 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   (`core-save`, `discovery`, `unpack`, `ipc`, `ui`, `wiki-snapshot`);
   drop the parentheses when the change is repo-wide (`docs:`, `chore:`, `build:`).
   Messages in English, atomic commits.
-- Integration branch: **`develop`**. **`master` is the public face and is kept level with it**
-  (`--ff-only`, since 2026-09-16); a release is a **tag** on `master`, not the act of moving the
-  branch. It used to read "`master` only receives releases", and that cost something real: `master`
-  is GitHub's default branch, so under the old rule the repository's landing page sat 733 commits
-  behind on an Italian scaffold. Details and the two moves it took in `docs/STATUS.md`.
-- **`master` is frozen: do not merge into it, do not move it, until told to in so many words.**
-  Suspended on 2026-09-17, and it suspends only the *moving* — the rule above still describes what
-  `master` is for and how it is brought level when the freeze lifts. Finishing a sub-project ends
-  at `develop`: merge there, push, and stop. "The check is green" is not the instruction, and
-  neither is "`develop` has moved ahead" — the only thing that lifts this is the owner saying so,
-  for that one time. Nothing enforces it: no hook, no branch protection, by decision, the same way
-  there is no CI. It holds because it is read.
+- Integration branch: **`develop`**. Work lands there and stops there: finishing a sub-project is
+  merge, push, and done.
+- **`master` is the release branch, since 2026-09-20.** It is fast-forwarded to `develop`
+  (`--ff-only`) **at the moment of a release**, and the tag goes on it; between releases it sits
+  at the last one. So `master` is what somebody who opens the repository gets, and what they get
+  is the version they can actually download — which is the whole reason it is not just a mirror
+  of `develop`.
+  **Two earlier readings, both paid for.** It once said "`master` only receives releases" while no
+  release existed, and since `master` is GitHub's default branch the landing page sat 733 commits
+  behind on an Italian scaffold. It was then frozen outright on 2026-09-17, which was right while
+  nothing shipped and stopped being right on 2026-09-20, when four releases went out in an evening
+  and every one of them needed the branch moved. `docs/STATUS.md` has the moves; `docs/release.md`
+  has the procedure.
+  Nothing enforces any of this: no hook, no branch protection, by decision, the same way there is
+  no CI. It holds because it is read.
 - **A merged branch is closed in the same breath as the merge**, locally and on the remote —
   unless work continues on it, which is the only exception. A branch that is merged holds nothing
   `develop` does not, *by construction*, so keeping it buys no safety and costs the one thing that
