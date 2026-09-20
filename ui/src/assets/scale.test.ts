@@ -27,6 +27,8 @@ const keepsPx: Record<string, string> = {
     'the same: a threshold is compared against a used width, and this one is measured at scale 100 (spec 3.13a §5)',
   '--container-regular': 'the same',
   '--container-wide': 'the same',
+  '--container-sidebar-room':
+    "the same, and measured on the sidebar rather than on the page: where it stops being worth its width is the sidebar's own fact",
 }
 
 describe('the size tokens', () => {

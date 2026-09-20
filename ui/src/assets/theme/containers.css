@@ -11,12 +11,23 @@
      `@wide/page:` against the `page` container, and `@max-compact/shell:` against `shell`. In px
      and measured at scale 100, for the reason the tab's token gives above.
 
-     compact — below it, one column: a table at its minimum column set, a KPI strip stacked, the
-       section sidebar down to its icons. It sits above the ~428px the page box has at the 640
-       window floor, so the narrowest window the app allows is inside it.
+     compact — below it, one column: a table at its minimum column set, a KPI strip stacked.
+       **Measured on Unlock**, the densest table: its fixed columns are 296px (art 4rem, state
+       8.5rem, fan-out 3.5rem, queue 2.5rem) and the three flexible ones want ~160px each to say
+       anything, so the full table needs ~780. Below that it is the narrow set. It sits far above
+       the ~428px the page box has at the 640 window floor, so the narrowest window the app allows
+       is comfortably inside it.
      regular — the shape the screens are drawn at today, near the `max-w-250` they all carried.
      wide — above it, what sat under something may sit beside it. */
-  --container-compact: 560px;
+  --container-compact: 800px;
   --container-regular: 960px;
   --container-wide: 1280px;
+
+  /* The section sidebar's own break, and **not** `compact` — the same reason the tab has a token
+     of its own (spec 3.13a §5): where the sidebar stops being worth its width is a fact about the
+     sidebar, not about the page. Tying it to `compact` would collapse it on a 900px window, where
+     there is room for it and to spare, only because Unlock's table needs 780 to hold seven
+     columns. Measured at scale 100: 168px of sidebar at its minimum against a shell narrow enough
+     that the content is the thing in trouble. */
+  --container-sidebar-room: 560px;
 }

@@ -139,7 +139,7 @@
    state — repeating two variants on six elements is six chances to write only half of it, and the
    half that is missing only shows under one of the two conditions.
 
-   The width is `--container-compact` spelled out: a `@utility` cannot carry a Tailwind variant, so
+   The width is `--container-sidebar-room` spelled out: a `@utility` cannot carry a Tailwind variant, so
    this is the one place the number is written by hand instead of read from the token. Moving the
    threshold means moving it here too — `lib/design/thresholds.test.ts` guards the other two
    copies and cannot see this one. */
@@ -155,7 +155,7 @@
 /* The other half of the same state: what is left in a collapsed sidebar is centred in it. Its own
    utility rather than a variant on each element, for the reason above — the two conditions have
    to travel together, or the manual collapse centres nothing and only the narrow one looks right.
-   Same hand-written 560px, same reason. */
+   Same hand-written 560px — `--container-sidebar-room` — same reason. */
 @utility sidebar-collapsed-center {
   @container shell (width < 560px) {
     justify-content: center;

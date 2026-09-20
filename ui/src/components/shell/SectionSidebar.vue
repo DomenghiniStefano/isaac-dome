@@ -60,7 +60,7 @@ const onKeydown = (e: KeyboardEvent) => {
        button's own card write `data-sidebar="collapsed"` and touch nothing else. -->
   <aside
     :style="widthVariable"
-    class="flex w-(--sidebar-width) shrink-0 border border-secondary bg-data @max-compact/shell:w-sidebar-icons group-data-[sidebar=collapsed]/shell:w-sidebar-icons"
+    class="flex w-(--sidebar-width) shrink-0 border border-secondary bg-data @max-sidebar-room/shell:w-sidebar-icons group-data-[sidebar=collapsed]/shell:w-sidebar-icons"
   >
     <div class="flex min-w-0 flex-1 flex-col">
       <div
