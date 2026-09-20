@@ -62,7 +62,8 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
         ipc::IconRef::Achievement { .. }
         | ipc::IconRef::Item { .. }
         | ipc::IconRef::Head { .. }
-        | ipc::IconRef::Page { .. } => app
+        | ipc::IconRef::Page { .. }
+        | ipc::IconRef::Room { .. } => app
             .state::<CatalogState>()
             .get_or_build(rs)
             .and_then(|c| ipc::icon_source(c, &reference).cloned()),

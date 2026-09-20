@@ -1533,6 +1533,19 @@ export type FloorView = {
 }
 
 /**
+ * A room kind and the game's own picture of it, when the game is there to have one.
+ */
+export type RoomIconView = {
+  kind: RoomKindView
+  /**
+   * `None` means "draw your own symbol": the game is not installed, the icon is not in the
+   * sheet, or the kind never had one. The screen cannot tell those apart and does not need
+   * to — all three end in the same drawing.
+   */
+  iconUrl: string | null
+}
+
+/**
  * One achievement this run could open, and how much it opens in turn: the graph already
  * counts that for Unlock, and a run is worth more when what it gives unlocks more.
  */

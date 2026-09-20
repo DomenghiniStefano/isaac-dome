@@ -217,6 +217,7 @@ pub fn render() -> String {
     decl::<crate::FloorSolutionView>(&cfg, &mut out);
     decl::<crate::FloorDiagnostic>(&cfg, &mut out);
     decl::<crate::FloorView>(&cfg, &mut out);
+    decl::<crate::RoomIconView>(&cfg, &mut out);
     decl::<crate::LiveAchievement>(&cfg, &mut out);
     decl::<crate::LiveOpen>(&cfg, &mut out);
     decl::<crate::LiveMarkRow>(&cfg, &mut out);

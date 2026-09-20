@@ -13,6 +13,7 @@ use catalog::{AchievementId, Catalog, ItemId, SpriteRef};
 use wiki::Target;
 
 use crate::catalog_view::{item_kind, ItemKindView};
+use crate::floor::{minimap_icon_name, RoomKindView, ROOM_KINDS};
 use crate::marks::{character_for, BOSSES, CHARACTERS};
 use crate::target_sprite::{target_sprite, TargetSprite};
 
@@ -54,6 +55,15 @@ pub enum IconRef {
     Page {
         target: Target,
     },
+    /// A room kind's minimap icon, the one the **game** draws on its own map.
+    ///
+    /// Which animation a kind wears is `floor::minimap_icon_name`, and three kinds wear
+    /// none: this reference is still built for them and still resolves to nothing, because
+    /// "the game has no icon for a Normal Room" and "the game is not installed" end in the
+    /// same drawing and the boundary has no reason to tell them apart.
+    Room {
+        kind: RoomKindView,
+    },
 }
 
 fn kind_token(k: ItemKindView) -> &'static str {
@@ -75,6 +85,33 @@ fn kind_from_token(s: &str) -> Option<ItemKindView> {
         // `kind_token`, which is the pair of this one, so it can't be forgotten silently.
         _ => None,
     }
+}
+
+/// The token a room kind travels as. The same strings `serde` writes for `RoomKindView`, so a
+/// URL and a payload say the same word for the same thing.
+fn room_token(k: RoomKindView) -> &'static str {
+    match k {
+        RoomKindView::Start => "start",
+        RoomKindView::Normal => "normal",
+        RoomKindView::Boss => "boss",
+        RoomKindView::Treasure => "treasure",
+        RoomKindView::Shop => "shop",
+        RoomKindView::Curse => "curse",
+        RoomKindView::Challenge => "challenge",
+        RoomKindView::Sacrifice => "sacrifice",
+        RoomKindView::Arcade => "arcade",
+        RoomKindView::Library => "library",
+        RoomKindView::Miniboss => "miniboss",
+        RoomKindView::Secret => "secret",
+        RoomKindView::SuperSecret => "superSecret",
+        RoomKindView::UltraSecret => "ultraSecret",
+    }
+}
+
+fn room_from_token(s: &str) -> Option<RoomKindView> {
+    // Paired with `room_token`, which is exhaustive: a new kind breaks that one, and this one
+    // is written from it.
+    ROOM_KINDS.into_iter().find(|&k| room_token(k) == s)
 }
 
 fn tier_token(t: MarkTier) -> &'static str {
@@ -102,6 +139,7 @@ impl IconRef {
             IconRef::Item { kind, id } => format!("item/{}/{id}", kind_token(*kind)),
             IconRef::Mark { column, tier } => format!("mark/{column}/{}", tier_token(*tier)),
             IconRef::Head { row } => format!("head/{row}"),
+            IconRef::Room { kind } => format!("room/{}", room_token(*kind)),
             // `page/none` is what a target with no page renders to; `parse` refuses it, so
             // the handler answers "no image" rather than a guess. The index never builds
             // such a reference (spec 3.5, Decision 2).
@@ -131,6 +169,9 @@ impl IconRef {
             ("mark", column, Some(tier)) => IconRef::Mark {
                 column: column.parse::<usize>().ok().filter(|&c| c < BOSSES.len())?,
                 tier: tier_from_token(tier)?,
+            },
+            ("room", kind, None) => IconRef::Room {
+                kind: room_from_token(kind)?,
             },
             ("head", row, None) => IconRef::Head {
                 row: row
@@ -222,6 +263,9 @@ pub fn icon_source<'a>(c: &'a Catalog, r: &IconRef) -> Option<&'a SpriteRef> {
             TargetSprite::Found(s) => Some(s),
             TargetSprite::NoArt | TargetSprite::Unknown => None,
         },
+        // The game's own minimap icon, by the name the game gave it. A kind with no icon and
+        // a game that is not installed both answer None, and the screen draws its own symbol.
+        IconRef::Room { kind } => minimap_icon_name(*kind).and_then(|n| c.minimap_icon(n)),
         // Not the catalog's: the symbols are pieces of the widget's sheets, see `mark_source`.
         IconRef::Mark { .. } => None,
     }
