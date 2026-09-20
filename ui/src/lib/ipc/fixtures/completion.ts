@@ -27,6 +27,12 @@ const bosses = [
 // completion.json carries it: one digit per boss in the order above, `?` where the column
 // isn't located for that character. Its totals: 166 with a level and 152 hard out of 368
 // readable, 40 unknown.
+//
+// Those totals are counted on the digit strings below and describe **this fixture**, which
+// is a fixture of its era. They are not the layout's current count: since 2026-09-20 the
+// tables locate Mother for the last twenty rows, so a real profile now has 20 unknown cells
+// and not 40. Turning these `?` into digits would be inventing marks the reference profile
+// was never measured to have.
 const rows: [string, string, Group, boolean][] = [
   ['Isaac', '773223227331', Group.Original, false],
   ['Magdalene', '737333333333', Group.Original, false],

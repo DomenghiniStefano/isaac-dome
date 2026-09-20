@@ -31,5 +31,10 @@
 # time; and the two that guarded `packIconUrl` against the game's sprites coming back. That
 # last guard is not lost, it moved and got wider: `scripts/check-no-game-assets.mjs` fails on
 # any tracked picture, not just on one the design pack would have carried.
-RUST_TESTS=1115
+#
+# **Raised on 2026-09-20**, Rust 1115 → 1117: the window on T. Eden beating Mother closed half
+# of B20's block, and the two new tests are what it bought — where those cells are, and that
+# Mother's group of 34 tiles end to end without a hole. Both are sample-free arithmetic, so
+# they count the same on a machine without the game.
+RUST_TESTS=1117
 UI_TESTS=684
