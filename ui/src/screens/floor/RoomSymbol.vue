@@ -21,25 +21,32 @@ const path = computed(() => roomSymbol[props.kind])
 </script>
 
 <template>
-  <!-- The box is the icon's size in both branches, so the cell does not jump when the game
-       is there; the stroke drawing keeps its own smaller size and is centred inside it. -->
-  <PixelSprite
-    :url="url ?? null"
-    class="grid size-floor-icon shrink-0 place-items-center"
+  <!-- The box is the cell's own size in both branches, so the cell does not jump when the game
+       is there; the drawing and the icon are each centred inside it.
+
+       **The zoom is on the picture and not on the box.** The icon arrives trimmed to its own
+       drawing (`ipc::trim_opaque`), so it is a different number of pixels wide for every room
+       kind and there is no width to write down — it is drawn at twice its own pixels, whatever
+       those are, and the box centres what comes out. The fallback drawing keeps its own size
+       and must not be doubled, which is why the utility is aimed at the image alone. -->
+  <div
+    class="grid size-floor-icon shrink-0 place-items-center [&>img]:pixel-2x"
   >
-    <template #fallback>
-      <svg
-        v-if="path !== ''"
-        class="size-floor-symbol stroke-2"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <path :d="path" />
-      </svg>
-    </template>
-  </PixelSprite>
+    <PixelSprite :url="url ?? null">
+      <template #fallback>
+        <svg
+          v-if="path !== ''"
+          class="size-floor-symbol stroke-2"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path :d="path" />
+        </svg>
+      </template>
+    </PixelSprite>
+  </div>
 </template>
