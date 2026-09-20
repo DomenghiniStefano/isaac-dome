@@ -189,6 +189,29 @@ impl IconRef {
         // A trailing segment means the string isn't ours, whatever the prefix said.
         parts.next().is_none().then_some(out)
     }
+
+    /// Whether the picture is served shrunk to its own drawing (`sprite_png::trim_opaque`)
+    /// rather than as the rectangle the anm2 declared.
+    ///
+    /// **Only the room kinds**, and the reason is where the picture is drawn rather than
+    /// which sheet it comes from. The Floor's cell draws a sprite at a fixed pixel scale in a
+    /// 2rem square and centres it; centring the declared square puts the drawing off-centre,
+    /// because `minimap_icons.anm2` leaves its icons in the upper-left of their sixteen
+    /// pixels. Everywhere else a sprite is fitted to a box, and trimming there would make the
+    /// same drawing bigger on whichever row happened to have the wider margin — a rescale on
+    /// six screens to fix one.
+    ///
+    /// Exhaustive on purpose: a new kind of icon has to say which of the two it is.
+    pub fn trims_to_drawing(&self) -> bool {
+        match self {
+            IconRef::Room { .. } => true,
+            IconRef::Achievement { .. }
+            | IconRef::Item { .. }
+            | IconRef::Mark { .. }
+            | IconRef::Head { .. }
+            | IconRef::Page { .. } => false,
+        }
+    }
 }
 
 /// The path segments of a page's figure, `item/105` or `entity/20/0/0`. `None` for the

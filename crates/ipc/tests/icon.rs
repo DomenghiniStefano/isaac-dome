@@ -312,3 +312,52 @@ fn a_page_icon_resolves_through_target_sprite() {
     )
     .is_none());
 }
+
+// Which references are served trimmed to their drawing, and which are served as the anm2
+// cut them. It is a reading of the game and not a preference, so it lives in the pure crate
+// and `app/icons.rs` only obeys it.
+//
+// Only the room kinds. Their sheet is the one measured off-centre (`sprite_png::trim_opaque`),
+// and the Floor's cell is the one place that draws a sprite at a fixed pixel scale inside a
+// 2rem square. Everywhere else a sprite is fitted to a box, so trimming would rescale
+// pictures on six screens to fix one — the same drawing bigger on the row whose margin
+// happened to be wider.
+
+#[test]
+fn only_a_room_icon_is_trimmed_to_its_drawing() {
+    assert!(IconRef::Room {
+        kind: ipc::RoomKindView::Boss
+    }
+    .trims_to_drawing());
+    let fitted = [
+        IconRef::Achievement { id: 19 },
+        IconRef::Item {
+            kind: ItemKindView::Passive,
+            id: 92,
+        },
+        IconRef::Mark {
+            column: 0,
+            tier: MarkTier::Hard,
+        },
+        IconRef::Head { row: 0 },
+        IconRef::Page {
+            target: Target::Item { id: 105 },
+        },
+    ];
+    for reference in fitted {
+        assert!(
+            !reference.trims_to_drawing(),
+            "{reference:?} is fitted to a box: trimming would rescale it"
+        );
+    }
+}
+
+#[test]
+fn every_room_kind_is_trimmed_not_only_the_ones_with_an_icon() {
+    // Start and Normal have no icon in the game's file. The rule is about the reference, not
+    // about whether it resolves: a kind that gains an icon in a patch must not need a second
+    // decision here to be drawn like its thirteen neighbours.
+    for kind in ipc::ROOM_KINDS {
+        assert!(IconRef::Room { kind }.trims_to_drawing(), "{kind:?}");
+    }
+}

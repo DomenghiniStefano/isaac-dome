@@ -50,7 +50,7 @@ pub use collection::{
 pub use error::IpcError;
 pub use floor::{
     floor_view, room_icons, AppliedRule, FloorCandidate, FloorDiagnostic, FloorSolutionView,
-    FloorUnresolved, FloorView, RoomIconView, RoomKindView, TargetView,
+    FloorUnresolved, FloorView, RoomIconView, RoomKindView, TargetView, ROOM_KINDS,
 };
 pub use goals::{target_exists, Goal, GoalId, TargetKey, UnlockTarget};
 pub use graph::{
@@ -102,7 +102,7 @@ pub use search::{
 pub use settings::{
     session_document_fits, snap_percent, Settings, DEFAULT_SCALE, MAX_SESSION_BYTES, SCALE_PERCENTS,
 };
-pub use sprite_png::{crop_png, decode_rgba};
+pub use sprite_png::{crop_png, decode_rgba, trim_opaque};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
 pub use tray::{tray_action, tray_locale, tray_text, TrayAction, TrayLocale, TrayText};

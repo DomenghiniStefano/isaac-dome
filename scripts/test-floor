@@ -31,5 +31,5 @@
 # guarded `packIconUrl` against the game's sprites coming back. That last guard is not lost,
 # it moved and got wider: `scripts/check-no-game-assets.mjs` fails on any tracked picture, not
 # just on one the design pack would have carried.
-RUST_TESTS=1143
+RUST_TESTS=1150
 UI_TESTS=738

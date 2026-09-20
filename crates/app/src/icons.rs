@@ -71,7 +71,7 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
     let Some(sprite) = sprite else {
         return no_icon(404);
     };
-    let Some(png) = sprite_bytes(rs, &sprite) else {
+    let Some(png) = sprite_bytes(rs, &sprite, reference.trims_to_drawing()) else {
         return no_icon(404);
     };
     let mut r = tauri::http::Response::new(png);
@@ -82,11 +82,19 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
     r
 }
 
-/// The file a sprite names, cropped when it names a piece of a sheet.
-fn sprite_bytes(rs: &ResourceSet, sprite: &catalog::SpriteRef) -> Option<Vec<u8>> {
+/// The file a sprite names, cropped when it names a piece of a sheet, and shrunk to its own
+/// drawing when the reference asks for that (`IconRef::trims_to_drawing`).
+///
+/// **A trim that fails keeps the crop.** The picture is then drawn where the game's rectangle
+/// puts it, which is what every build before this one did: degrade, never fail.
+fn sprite_bytes(rs: &ResourceSet, sprite: &catalog::SpriteRef, trim: bool) -> Option<Vec<u8>> {
     let file = rs.read(&sprite.path)?;
-    match sprite.rect {
-        None => Some(file),
-        Some(r) => ipc::crop_png(&file, r.x, r.y, r.w, r.h),
+    let png = match sprite.rect {
+        None => file,
+        Some(r) => ipc::crop_png(&file, r.x, r.y, r.w, r.h)?,
+    };
+    if !trim {
+        return Some(png);
     }
+    Some(ipc::trim_opaque(&png).unwrap_or(png))
 }
