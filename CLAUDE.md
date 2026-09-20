@@ -20,7 +20,11 @@ The full project document is in `docs/PROJECT.md`.
    credential-free APIs are allowed.
 3. **No game assets in the package.** Images are extracted from the user's own copy at
    runtime. Same for datasets derived from the wiki, which ship with their own license and
-   attribution.
+   attribution. **This one is checked since 2026-09-20**, by
+   `scripts/check-no-game-assets.mjs` inside `scripts/check`: no tracked picture, sound or
+   game archive outside `crates/app/icons/`. It is a gate because for two weeks the promise
+   was false and nothing looked — 6065 sprites cut out of the game sat in `design-export/`
+   on a public repository, and they had to be removed from the history, not just the tree.
 4. **No accounts, no backend, no telemetry.** The app works offline; the network is used for
    exactly two things, and both are the user's to switch off. **Optional dataset updates**, and
    since 2026-09-20 **the app's own updates** — one HTTPS request to `github.com` at launch,
@@ -53,11 +57,10 @@ The full project document is in `docs/PROJECT.md`.
 **Rust does everything that touches disk. Vue only ever receives resolved JSON**: the
 frontend knows nothing about offsets, file names, or log strings.
 
-**Layout.** Seventeen Rust crates live in `crates/` — `core-save`, `discovery`, `unpack`,
+**Layout.** Sixteen Rust crates live in `crates/` — `core-save`, `discovery`, `unpack`,
 `catalog`, `wiki`, `wiki-snapshot`, `graph`, `plan`, `run`, `log-watch`, `floor`, `roll`, `ipc`,
-`store`, `app`, `test-support`, `design-export`. The last two of those were missing from this
-list until 2026-09-15: `log-watch` has had a row in the table below since it landed, and
-`design-export` is retired but still a crate. The Tauri crate is
+`store`, `app`, `test-support`. `log-watch` and `test-support` were missing from this list
+until 2026-09-15; `design-export` was removed from the repository on 2026-09-20. The Tauri crate is
 `crates/app`, not `src-tauri`: every `tauri` command needs
 `--config crates/app/tauri.conf.json`, and the root scripts already do that (`pnpm dev`,
 `pnpm build`). The frontend is the pnpm workspace `ui/`; from the root, `pnpm typecheck`,
@@ -66,12 +69,12 @@ list until 2026-09-15: `log-watch` has had a row in the table below since it lan
 ## Modules
 
 **Drawn, in [`docs/architecture.md`](docs/architecture.md)**: four diagrams — the data flow from
-the disk to the screens, the crate graph, the sixteen routes with the commands behind each, and
+the disk to the screens, the crate graph, the seventeen routes with the commands behind each, and
 the build. It is the state and not the design, so the table below stays the authority on *what a
 module is for*.
 
-**It is kept up to date, and that is not a suggestion.** Its header pins five counts — 17 crates,
-36 commands, 5 events, 16 routes, 6 store migrations — so a change that makes one of them wrong
+**It is kept up to date, and that is not a suggestion.** Its header pins five counts — 16 crates,
+41 commands, 6 events, 17 routes, 6 store migrations — so a change that makes one of them wrong
 makes the document wrong. **Redraw it in the same commit**, and five things trigger that: a crate
 added or removed, a route added or removed from `RouteName`, a command joining or leaving
 `generate_handler!`, an event in `crates/app/src/events.rs`, a migration in
@@ -281,8 +284,9 @@ that never happens.
   the comparison.
 - Before declaring anything done: **`pnpm check`** (i.e. `scripts/check`), which runs
   `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings`, `cargo test --workspace`,
-  `pnpm typecheck`, `pnpm ui:test`, `pnpm lint`, `pnpm format:check`, `pnpm scan`, the IPC
-  contract's regeneration, `scripts/check-doc-refs.mjs`, and the test-count floor. **There's
+  `pnpm typecheck`, `pnpm ui:test`, `pnpm lint`, `pnpm format:check`, `pnpm scan`,
+  `scripts/check-no-game-assets.mjs`, the IPC contract's regeneration,
+  `scripts/check-doc-refs.mjs`, and the test-count floor. **There's
   no CI**, by choice: the list of commands lives in that script and nowhere else. The two
   fast ones also run in the pre-commit hook (`git config core.hooksPath scripts/git-hooks`).
 - **The document reference report is a report, and never fails the run.** It checks every file
@@ -346,7 +350,7 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
 
 - Conventional Commits, **`type(scope): subject`** — `feat(core-save): …`,
   `fix(discovery): …`, `chore(dataset): …`. The scope is the crate or package
-  (`core-save`, `discovery`, `unpack`, `ipc`, `ui`, `wiki-snapshot`, `design-export`);
+  (`core-save`, `discovery`, `unpack`, `ipc`, `ui`, `wiki-snapshot`);
   drop the parentheses when the change is repo-wide (`docs:`, `chore:`, `build:`).
   Messages in English, atomic commits.
 - Integration branch: **`develop`**. **`master` is the public face and is kept level with it**

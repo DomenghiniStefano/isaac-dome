@@ -1,5 +1,4 @@
 import type { Cell, CharacterRow, MarksMatrix } from '../types'
-import { packHeadUrl, packMarkArt } from './art'
 
 // The file's three blocks, as CharacterGroup serializes them.
 const Group = {
@@ -77,16 +76,17 @@ const isHard = (cell: Cell): boolean =>
 
 const noArt = { normalUrl: null, hardUrl: null }
 
-// The matrix the `completion` command answers for that profile; without art it is what a
-// machine without the game receives.
-export const completionMatrix = (withArt: boolean): MarksMatrix => {
+// The matrix the `completion` command answers for that profile. Every drawing is null: the
+// app cuts its sprites from the user's own copy of the game at runtime, and the development
+// server has no copy to cut from — which is also what a machine without the game receives.
+export const completionMatrix = (): MarksMatrix => {
   const characters: CharacterRow[] = rows.map(
-    ([character, digits, group, tainted], row) => ({
+    ([character, digits, group, tainted]) => ({
       character,
       group,
       tainted,
       cells: [...digits].map(cellOf),
-      headUrl: withArt ? packHeadUrl(row) : null,
+      headUrl: null,
     }),
   )
   const cells = characters.flatMap((r) => r.cells)
@@ -95,7 +95,7 @@ export const completionMatrix = (withArt: boolean): MarksMatrix => {
   return {
     characters,
     bosses,
-    art: packMarkArt.map((art) => (withArt ? art : noArt)),
+    art: bosses.map(() => noArt),
     totals: {
       cells: cells.length,
       readable: count((c) => c.kind === 'known'),

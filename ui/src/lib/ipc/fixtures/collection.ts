@@ -6,17 +6,12 @@ import type {
   OriginView,
 } from '../types'
 import { graphAnswers } from './graph'
-import { packIconUrl } from './graphArt'
 
-// Development only. The pack's real collection.json once design-export has written it (it needs
-// a machine with the game and a save). Until then the items come from the pack's image index —
-// ids, kinds and names, real — their locks from unlock.json, real, their origin from the catalog's
-// id ranges, real, and their quality, pools and collection flag from the id: synthetic, and said.
-const payloads = import.meta.glob<CollectionView>(
-  '../../../../../design-export/isaacdome-design-pack/contracts/payload/collection.json',
-  { eager: true, import: 'default' },
-)
-
+// Development only. There is no recorded `collection` payload to read — writing one needs a
+// machine with the game and a save, and nothing in the repository produces it — so the items
+// are built here: ids, kinds and names from the fixtures' index, real; their locks from
+// unlock.json, real; their origin from the catalog's id ranges, real; and their quality,
+// pools and collection flag from the id: synthetic, and said so on the console.
 interface IndexEntry {
   family: string
   id: number
@@ -24,24 +19,11 @@ interface IndexEntry {
   name?: string
 }
 const indexes = import.meta.glob<IndexEntry[]>(
-  '../../../../../design-export/isaacdome-design-pack/images/INDEX.json',
+  '../../../../fixtures/index.json',
   { eager: true, import: 'default' },
 )
 
-export const CollectionSource = {
-  Pack: 'pack',
-  Synthetic: 'synthetic',
-} as const
-export type CollectionSource =
-  (typeof CollectionSource)[keyof typeof CollectionSource]
-
-const packed = (): CollectionView | null => Object.values(payloads)[0] ?? null
-
-export const collectionSource = (): CollectionSource =>
-  packed() ? CollectionSource.Pack : CollectionSource.Synthetic
-
 export interface CollectionAnswerOptions {
-  withArt: boolean
   withCatalog: boolean
   collectionRead: boolean
 }
@@ -86,7 +68,7 @@ const free: LockView = { kind: 'free' }
 // The locks the reference profile's unlock view implies: an item a node unlocks is unlocked or
 // locked by that node's done; any other item is free.
 const locksFrom = (): Map<string, LockView> => {
-  const nodes = graphAnswers({ withArt: false, withCatalog: true }).unlock.nodes
+  const nodes = graphAnswers({ withCatalog: true }).unlock.nodes
   return new Map(
     nodes.flatMap((node) => {
       const a = node.achievement
@@ -109,13 +91,14 @@ const itemOf = (
   entry: IndexEntry,
   kind: ItemKindView,
   lock: LockView,
-  withArt: boolean,
   collectionRead: boolean,
 ): CollectionItem => ({
   id: entry.id,
   kind,
   name: entry.name ?? '',
-  iconUrl: withArt ? packIconUrl(`isaac://item/${kind}/${entry.id}`) : null,
+  // Null, as everywhere in the fixtures: the app cuts its sprites from the user's own copy
+  // of the game at runtime, and the development server has no copy to cut from.
+  iconUrl: null,
   quality: qualityOf(entry.id),
   pools: poolsOf(entry.id),
   origin: originOf(entry.id),
@@ -126,10 +109,7 @@ const itemOf = (
   lock,
 })
 
-const synthetic = (
-  withArt: boolean,
-  collectionRead: boolean,
-): CollectionView => {
+const synthetic = (collectionRead: boolean): CollectionView => {
   const locks = locksFrom()
   const entries = (Object.values(indexes)[0] ?? [])
     .filter((e) => e.family === 'item')
@@ -141,7 +121,6 @@ const synthetic = (
             e,
             e.kind,
             locks.get(`${e.kind}-${e.id}`) ?? free,
-            withArt,
             collectionRead,
           ),
         ]
@@ -166,12 +145,11 @@ const warnSynthetic = (): void => {
   if (warned || typeof window === 'undefined') return
   warned = true
   console.warn(
-    'Collection fixture: quality, pools and collection flags are synthetic until the design pack carries collection.json (pnpm design:export)',
+    'Collection fixture: quality, pools and collection flags are synthetic, the fixtures carrying no recorded collection payload',
   )
 }
 
 export const collectionAnswer = ({
-  withArt,
   withCatalog,
   collectionRead,
 }: CollectionAnswerOptions): CollectionView => {
@@ -186,8 +164,6 @@ export const collectionAnswer = ({
       },
       diagnostics: [{ kind: 'noCatalog' }],
     }
-  const pack = packed()
-  if (pack) return pack
   warnSynthetic()
-  return synthetic(withArt, collectionRead)
+  return synthetic(collectionRead)
 }

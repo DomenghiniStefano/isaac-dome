@@ -1,0 +1,40 @@
+{
+  "title": "Wooden Spoon",
+  "revid": 244371,
+  "infobox": {
+    "kind": "item"
+  },
+  "sections": [
+    {
+      "kind": "effects",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "+0.3 ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "speed",
+                  "label": "speed"
+                },
+                {
+                  "kind": "text",
+                  "text": ".",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
