@@ -35,7 +35,11 @@ const node = (id: number, text: string, done: boolean): UnlockNode => ({
 const nodes = [
   node(1, 'Il Cubo di Ghiaccio', false),
   node(2, 'La Sacca del Diavolo', true),
-  node(3, 'Un nome lungo che deve troncarsi quando la colonna si stringe', false),
+  node(
+    3,
+    'Un nome lungo che deve troncarsi quando la colonna si stringe',
+    false,
+  ),
 ]
 const queued = new Set<number>()
 </script>

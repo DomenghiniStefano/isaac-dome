@@ -60,11 +60,11 @@ const onKeydown = (e: KeyboardEvent) => {
        button's own card write `data-sidebar="collapsed"` and touch nothing else. -->
   <aside
     :style="widthVariable"
-    class="flex w-(--sidebar-width) shrink-0 border border-secondary bg-data @max-sidebar-room/shell:w-sidebar-icons group-data-[sidebar=collapsed]/shell:w-sidebar-icons"
+    class="flex w-(--sidebar-width) shrink-0 border border-secondary bg-data group-data-[sidebar=collapsed]/shell:w-sidebar-icons @max-sidebar-room/shell:w-sidebar-icons"
   >
     <div class="flex min-w-0 flex-1 flex-col">
       <div
-        class="flex items-center gap-2 px-2.75 pt-2.5 pb-2.25 sidebar-collapsed-center"
+        class="flex items-center sidebar-collapsed-center gap-2 px-2.75 pt-2.5 pb-2.25"
       >
         <span class="text-highlight [&_svg]:size-3.5"
           ><slot name="icon"
@@ -73,7 +73,9 @@ const onKeydown = (e: KeyboardEvent) => {
           class="sidebar-collapsed-hidden text-caption tracking-caps text-foreground uppercase"
           >{{ title }}</span
         >
-        <HelpTip v-if="hint" class="sidebar-collapsed-hidden">{{ hint }}</HelpTip>
+        <HelpTip v-if="hint" class="sidebar-collapsed-hidden">{{
+          hint
+        }}</HelpTip>
       </div>
       <slot />
     </div>
