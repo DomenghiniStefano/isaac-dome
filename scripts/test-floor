@@ -31,5 +31,16 @@
 # time; and the two that guarded `packIconUrl` against the game's sprites coming back. That
 # last guard is not lost, it moved and got wider: `scripts/check-no-game-assets.mjs` fails on
 # any tracked picture, not just on one the design pack would have carried.
+#
+# **Raised on 2026-09-20**, UI 684 → 690, and this is the deliberate line for it. 3.13a's six:
+# two on the window floor — the constant, and the Tauri config agreeing with it, which is the one
+# thing standing between two files that declare the same number and cannot see each other — and
+# three on the page thresholds: that they are declared in the CSS at the px the constants say,
+# that they ascend, and that the window floor falls inside compact. The sixth is not new, it is
+# the old `--spacing-virtual-rows-body` test **rewritten rather than deleted**: its subject — a
+# token capping every virtualized list at 35rem — stopped existing when the scroll body started
+# taking the height that is left, so what it pins now is the replacement, `min-h-0 flex-1` on the
+# box and no `max-h-` left in it. Rust does not move: nothing in this sub-project is Rust except
+# two keys in `tauri.conf.json`, and it is a UI test that reads them.
 RUST_TESTS=1115
-UI_TESTS=684
+UI_TESTS=690
