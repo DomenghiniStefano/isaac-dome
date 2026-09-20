@@ -46,16 +46,76 @@ fn the_located_cells_are_where_the_series_put_them() {
     );
 }
 
-/// Spec §2.4: Mother and The Beast for The Forgotten and the 19 are **not located**. The
-/// spacing says they sit inside 423..=490, but every candidate cell is zero in every save
-/// collected, and on 2026-09-12 a walk of the whole series found no completion of either
-/// boss by any of those 20 characters. The layout says "I can't tell you" rather than
-/// returning a plausible index, which would show a mark nobody earned.
+/// Measured on 2026-09-20, and it is the window B20 had been asking for since 2026-09-12:
+/// Mother beaten with T. Eden, on `20260919-pre-tainted-mother` →
+/// `20260920-post-tainted-eden-mother`. Three facts agree, the way 423 and 457 were pinned:
+/// achievement `[567]`, whose requirement in `graph`'s rules is *Mother* + *Tainted Eden*;
+/// the Mother kills tally `[491] 6→7`, up by exactly the one new mark; and index 188 at
+/// `1 << 30`, naming character 30, which is what `requirements.json` calls T. Eden.
+///
+/// `[449]` is the **only** cell that moved in all of 423..=490. T. Eden is row 26, so
+/// `449 = base + (26 - 15)` puts the 19-block at **438**, and the one cell left over in
+/// 437..=456 is The Forgotten's, at **437**. Values, not a formula, like the bases above.
+#[test]
+fn mothers_cells_for_the_forgotten_and_the_nineteen_are_where_the_window_put_them() {
+    assert_eq!(
+        cell_index(26, Column::Mother),
+        Some(449),
+        "the cell that moved: T. Eden"
+    );
+    assert_eq!(
+        cell_index(15, Column::Mother),
+        Some(438),
+        "the 19-block's base: Bethany"
+    );
+    assert_eq!(
+        cell_index(33, Column::Mother),
+        Some(456),
+        "T. Jacob & Esau closes the block"
+    );
+    assert_eq!(
+        cell_index(14, Column::Mother),
+        Some(437),
+        "The Forgotten: the cell left over, by difference"
+    );
+}
+
+/// Mother's group of 34 now tiles end to end, and this is the half of the arithmetic that
+/// needs no sample. 423..=436 are the 14 originals, 437 is The Forgotten, 438..=456 are the
+/// 19, and 457 is where The Beast's own 14-block starts. A base off by one anywhere in
+/// there either opens a hole or lands two rows on one cell; the first is what this test
+/// sees, the second is `no_two_cells_of_the_matrix_share_an_index`.
+#[test]
+fn mothers_group_of_34_tiles_from_its_own_base_to_the_beasts() {
+    assert_eq!(
+        cell_index(13, Column::Mother).map(|i| i + 1),
+        cell_index(14, Column::Mother),
+        "the 14 originals end, The Forgotten's single cell begins"
+    );
+    assert_eq!(
+        cell_index(14, Column::Mother).map(|i| i + 1),
+        cell_index(15, Column::Mother),
+        "The Forgotten's one cell, then the 19-block"
+    );
+    assert_eq!(
+        cell_index(33, Column::Mother).map(|i| i + 1),
+        cell_index(0, Column::TheBeast),
+        "438..=456 then 457: the 19-block ends where The Beast's block was measured"
+    );
+}
+
+/// Spec §2.4, now **half true**: The Beast for The Forgotten and the 19 is still not
+/// located. The spacing says those cells sit inside 471..=490, and the layout of Mother's
+/// own group of 34 — measured on 2026-09-20 — says which of them is which. That is an
+/// inference from one worked example, not a window on this half, so it stays `None`: a
+/// derived index and a measured one must not be told apart only by reading the git log.
+///
+/// Mother's half left this test on 2026-09-20. What closes this one is a run of The Beast
+/// with any of those 20 characters.
 #[test]
 fn the_unlocated_cells_answer_none() {
-    assert_eq!(cell_index(14, Column::Mother), None, "The Forgotten");
     assert_eq!(cell_index(14, Column::TheBeast), None, "The Forgotten");
-    assert_eq!(cell_index(15, Column::Mother), None, "Bethany");
+    assert_eq!(cell_index(15, Column::TheBeast), None, "Bethany");
     assert_eq!(cell_index(33, Column::TheBeast), None, "T. Jacob");
 }
 

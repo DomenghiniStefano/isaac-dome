@@ -37,12 +37,20 @@ fn a_cell_reports_the_highest_level_its_bits_show() {
     );
 }
 
-/// One of the 40 cells nobody has located. The layout says `None`, and so does the profile.
+/// One of the 20 cells nobody has located. The layout says `None`, and so does the profile.
+///
+/// It was Bethany × Mother until 2026-09-20, when that half of the block was measured and
+/// this test had to move to a cell that is still genuinely unlocated. A test whose subject
+/// stops being unlocated has to change subject, not expectation.
 #[test]
 fn an_unlocated_cell_cannot_be_answered() {
     let counters = vec![0u32; 600];
     let p = SaveProgress::new(None, Some(&counters), None);
-    assert_eq!(p.level_at(15, MarkColumn::Mother), None, "Bethany × Mother");
+    assert_eq!(
+        p.level_at(15, MarkColumn::TheBeast),
+        None,
+        "Bethany × The Beast"
+    );
 }
 
 #[test]
