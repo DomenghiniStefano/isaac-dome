@@ -32,10 +32,15 @@
 # it moved and got wider: `scripts/check-no-game-assets.mjs` fails on any tracked picture, not
 # just on one the design pack would have carried.
 RUST_TESTS=1150
-UI_TESTS=733
+UI_TESTS=741
 #
 # **Lowered again on 2026-09-20**, UI 738 → 733, and this is the deliberate line for it. Five
 # tests whose subject stopped existing when the Floor screen went from three answers at once to
 # one at a time: `toggled` and its four (there is nothing to toggle in a choice of one), and one
 # of the colour map's (a target has one colour now instead of three steps with an ink each,
 # because the rank is how full the square is and there is no digit left to make readable).
+#
+# **Raised on 2026-09-20**, UI 733 → 741: the eight tests of `shift`, the arrows that move the
+# whole drawing one cell under the grid. Seven of them are about the one thing that function
+# has to get right — refusing rather than dropping a room over the edge — because there is no
+# undo on that screen.
