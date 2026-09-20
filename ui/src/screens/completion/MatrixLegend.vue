@@ -15,7 +15,7 @@ const entries: { cell: Cell; label: MessageKey<MessageSchema> }[] = [
   { cell: { kind: 'known', bits: 0 }, label: 'completion.legend.empty' },
   { cell: { kind: 'known', bits: 1 }, label: 'completion.legend.normal' },
   { cell: { kind: 'known', bits: 3 }, label: 'completion.legend.hard' },
-  { cell: { kind: 'known', bits: 7 }, label: 'completion.legend.third' },
+  { cell: { kind: 'known', bits: 7 }, label: 'completion.legend.online' },
   { cell: { kind: 'unknown' }, label: 'completion.legend.unknown' },
 ]
 </script>

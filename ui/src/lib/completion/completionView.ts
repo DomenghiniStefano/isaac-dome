@@ -22,13 +22,14 @@ export type CellStatus = (typeof CellStatus)[keyof typeof CellStatus]
 
 export interface CellReading {
   status: CellStatus
-  third: boolean
+  online: boolean
 }
 
-// The same bit rules as markVisual (DESIGN-BRIEF.md §5.3): bit 0 the normal mark, bit 1 the
-// hard one, bit 2 unconfirmed, anything higher unexpected.
-const Bit = { Normal: 1, Hard: 2, Third: 4 } as const
-const knownBits = Bit.Normal | Bit.Hard | Bit.Third
+// The same bit rules as markVisual: bit 0 the normal mark, bit 1 the hard one, bit 2 the
+// boss beaten online, anything higher unexpected. Bit 2 sits outside `CellStatus` on
+// purpose — it is not a level, so it cannot be one of the statuses.
+const Bit = { Normal: 1, Hard: 2, Online: 4 } as const
+const knownBits = Bit.Normal | Bit.Hard | Bit.Online
 
 const levelStatus = (normal: boolean, hard: boolean): CellStatus => {
   if (hard) return CellStatus.Hard
@@ -39,16 +40,16 @@ const levelStatus = (normal: boolean, hard: boolean): CellStatus => {
 export const cellReading = (cell: Cell): CellReading => {
   switch (cell.kind) {
     case 'unknown':
-      return { status: CellStatus.Unknown, third: false }
+      return { status: CellStatus.Unknown, online: false }
     case 'unexpected':
-      return { status: CellStatus.Unexpected, third: false }
+      return { status: CellStatus.Unexpected, online: false }
     case 'known': {
       const { bits } = cell
       if ((bits & ~knownBits) !== 0)
-        return { status: CellStatus.Unexpected, third: false }
+        return { status: CellStatus.Unexpected, online: false }
       return {
         status: levelStatus((bits & Bit.Normal) !== 0, (bits & Bit.Hard) !== 0),
-        third: (bits & Bit.Third) !== 0,
+        online: (bits & Bit.Online) !== 0,
       }
     }
     default:
