@@ -42,11 +42,36 @@ const EXEMPTIONS = [
   { path: 'stores/graph.ts', why: 'three view stores became one stores/views.ts with N8' },
   { path: 'stores/completion.ts', why: 'same' },
   { path: 'stores/collection.ts', why: 'same' },
-  // The design pack: its export was retired on 2026-09-15 and its payloads are named
-  // conditionally ("once `pnpm design:export` has run"), which is now never.
-  { path: 'contracts/payload/collection.json', why: 'design export retired 2026-09-15' },
+  // The design pack: its export was retired on 2026-09-15 and the pack itself left the
+  // repository, working tree and history both, on 2026-09-20. `docs/completed/` records what
+  // it was and what it carried, which is history and not a promise.
+  { path: 'contracts/payload/collection.json', why: 'design pack removed 2026-09-20' },
   { path: 'contracts/payload/wiki_index.json', why: 'same' },
+  { path: 'contracts/types.ts', why: 'same' },
   { path: 'data/marks.json', why: 'design pack data/, removed with the export' },
+  { path: 'images/INDEX.json', why: 'moved to ui/fixtures/index.json with the removal' },
+  {
+    path: 'contracts/payload/unlock.json',
+    why: 'moved to ui/fixtures/payload/unlock.json on 2026-09-20; a dated spec names where it was',
+  },
+  {
+    path: 'contracts/payload/queue.with_rows.json',
+    why: 'a pack payload no fixture read; removed 2026-09-20',
+  },
+  {
+    path: 'design-export/src/sheets.rs',
+    why: 'the exporter, removed 2026-09-20; a dated spec names it as it was',
+  },
+  { path: 'crates/design-export/src/atlas.rs', why: 'same' },
+  { path: 'crates/design-export/src/payload.rs', why: 'same' },
+  // The three modules that served the pack's images. They went with it on 2026-09-20 — every
+  // URL they answered was already null — and the documents that name them are recording that,
+  // which is history and not a promise.
+  { path: 'fixtures/art.ts', why: 'art fixtures removed with the design pack, 2026-09-20' },
+  { path: 'lib/ipc/fixtures/art.ts', why: 'same' },
+  { path: 'fixtures/graphArt.ts', why: 'same' },
+  { path: 'kit/markArt.ts', why: 'same' },
+  { path: 'src/kit/markArt.ts', why: 'same' },
   // Generated, and git-ignored on purpose: real on a built checkout, absent from `git ls-files`.
   {
     path: 'crates/app/gen/schemas/desktop-schema.json',
@@ -93,10 +118,10 @@ const DOCS = [
 ]
 
 // **Tracked files, not the working tree.** Walking the disk made this answer differently on
-// the machine that wrote it: `data/marks.json` resolved to a file under
-// `design-export/design-system/`, which is git-ignored and exists only there, so a fresh clone
-// would have reported a miss the author never saw. That is `samples/`'s lesson — present and
-// looking right is worse than absent and noticed — and it applies to the checker too.
+// the machine that wrote it: `data/marks.json` resolved to a file under the design pack's
+// git-ignored half, which existed only there, so a fresh clone would have reported a miss the
+// author never saw. That is `samples/`'s lesson — present and looking right is worse than
+// absent and noticed — and it applies to the checker too.
 const files = execFileSync('git', ['ls-files'], { encoding: 'utf8' })
   .split('\n')
   .filter(Boolean)

@@ -66,7 +66,7 @@ pub struct MarkFrames {
     pub lobby: Vec<Anm2Frame>,
 }
 
-/// A tier is a frame of its layer: the rectangles the design pack cut into `heart_00.png` and
+/// A tier is a frame of its layer: the rectangles cut into `heart_00.png` and
 /// `heart_02.png`, drawn as the two levels on the Kit page. Frame 0 is declared hidden (the
 /// "not taken" state); whether frame 1 repeats its rectangle waits for a machine with the
 /// game, and if it doesn't, `Normal` becomes frame 1 here and nowhere else.
@@ -77,7 +77,7 @@ fn frame_index(tier: MarkTier) -> usize {
     }
 }
 
-/// A sheet named by an anm2 sits in the anm2's folder, as `design-export` reads it.
+/// A sheet named by an anm2 sits in the anm2's folder, which is how the game stores it.
 fn sheet_path(anm2: &str, sheet: &str) -> String {
     match anm2.rsplit_once('/') {
         Some((dir, _)) => format!("{dir}/{sheet}"),

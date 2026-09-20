@@ -1,0 +1,945 @@
+{
+  "title": "The Family Man",
+  "revid": 253308,
+  "infobox": {
+    "kind": "challenge",
+    "blindfolded": true,
+    "hasShops": true,
+    "hasTreasureRooms": false,
+    "items": [
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 247
+        },
+        "label": "BFFS!"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 8
+        },
+        "label": "Brother Bobby"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 175
+        },
+        "label": "Dad's Key"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 268
+        },
+        "label": "Rotten Baby"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 67
+        },
+        "label": "Sister Maggy"
+      }
+    ],
+    "trinkets": [],
+    "pickups": [],
+    "health": [],
+    "curse": [],
+    "goal": [
+      {
+        "kind": "text",
+        "text": "Isaac",
+        "style": "plain"
+      }
+    ],
+    "unlocks": {
+      "kind": "item",
+      "id": 168
+    },
+    "unlockedBy": {
+      "kind": "achievement",
+      "id": 165
+    }
+  },
+  "sections": [
+    {
+      "kind": "difficulty",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "inline": [
+            {
+              "kind": "text",
+              "text": "The slow fire rate of the familiars makes this challenge difficult, especially in ",
+              "style": "plain"
+            },
+            {
+              "kind": "ref",
+              "target": {
+                "kind": "stage",
+                "name": "Womb"
+              },
+              "label": "Womb"
+            },
+            {
+              "kind": "text",
+              "text": " and ",
+              "style": "plain"
+            },
+            {
+              "kind": "ref",
+              "target": {
+                "kind": "stage",
+                "name": "Cathedral"
+              },
+              "label": "Cathedral"
+            },
+            {
+              "kind": "text",
+              "text": ". The familiars can also be hard to aim, as they linger behind Isaac.",
+              "style": "plain"
+            }
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "inline": [
+            {
+              "kind": "edition",
+              "only": [
+                "repentance"
+              ],
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": " Both Brother Bobby and Sister Maggy have been buffed, making this challenge markedly easier: Brother Bobby now has a higher fire rate; while Sister Maggy has an increased damage of 6 (with BFFS! a respectable 12)",
+                  "style": "plain"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "strategies",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Dad's Key allows the player to enter ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "room",
+                    "name": "Secret Room"
+                  },
+                  "label": "Secret Room"
+                },
+                {
+                  "kind": "text",
+                  "text": "s and ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "room",
+                    "name": "Shop"
+                  },
+                  "label": "Shop"
+                },
+                {
+                  "kind": "text",
+                  "text": "s without using ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 5,
+                    "variant": 40,
+                    "subtype": 1
+                  },
+                  "label": "Bomb"
+                },
+                {
+                  "kind": "text",
+                  "text": "s or ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 5,
+                    "variant": 30,
+                    "subtype": 1
+                  },
+                  "label": "Key"
+                },
+                {
+                  "kind": "text",
+                  "text": "s. Saving and obtaining extra pickups via Dad's Key can be leveraged for items from Beggars and ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "room",
+                    "name": "Arcade"
+                  },
+                  "label": "Arcade"
+                },
+                {
+                  "kind": "text",
+                  "text": " machines to offset the challenge's lack of treasure rooms.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Also, Dad's Key can be used to exit the ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "room",
+                            "name": "Boss Rush"
+                          },
+                          "label": "Boss Rush"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " without having to fight any bosses, granting a free item if the Boss Rush is reached in time.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Gaining ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "flight",
+                  "label": "flight"
+                },
+                {
+                  "kind": "text",
+                  "text": " will allow Isaac to stay safely out of range while the familiars deal damage.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Damage from ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "blue fly",
+                  "label": "blue flies"
+                },
+                {
+                  "kind": "text",
+                  "text": " scales with Isaac's damage, allowing more damage into the late game. Several items can help achieve this.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "transformation",
+                                "id": 0
+                              },
+                              "label": "Guppy"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " spawns a fly whenever a familiar's tear hits an enemy, providing a continuous supply of extra damage.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 268
+                          },
+                          "label": "Rotten Baby"
+                        },
+                        {
+                          "kind": "text",
+                          "text": "'s Blue Flies can seek enemies at range.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 248
+                          },
+                          "label": "Hive Mind"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " doubles all Blue Fly damage.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 169
+                          },
+                          "label": "Polyphemus"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " or ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 149
+                          },
+                          "label": "nr"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " will also greatly increase the damage of Blue Flies.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 172
+                  },
+                  "label": "Sacrificial Dagger"
+                },
+                {
+                  "kind": "text",
+                  "text": " is extremely useful, because with BFFS! it deals 30 damage per tick, making it extremely useful against bosses.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Getting this combined with invincibility such as ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "pickup",
+                            "name": "Algiz"
+                          },
+                          "label": "Algiz"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " will allow a guaranteed kill on bosses.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Additional damage-dealing familiars can be leveraged against enemies.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 275
+                          },
+                          "label": "Lil Brimstone"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " is particularly useful for its significant damage, unlimited range, and attacks that pierce obstacles and enemies.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 320
+                          },
+                          "label": "???'s Only Friend"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " can also deal high damage and can be controlled to attack enemies anywhere in the room.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 273
+                          },
+                          "label": "Bob's Brain"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " can be tricky to use effectively but offers a tremendous boost to damage.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 400
+                  },
+                  "label": "Spear Of Destiny"
+                },
+                {
+                  "kind": "text",
+                  "text": " can provide an easy-to-use alternative for dealing damage, but does not benefit from BFFS!",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Damage-dealing active items, such as ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 164
+                  },
+                  "label": "The Candle"
+                },
+                {
+                  "kind": "text",
+                  "text": ", ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 289
+                  },
+                  "label": "Red Candle"
+                },
+                {
+                  "kind": "text",
+                  "text": ", or ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 338
+                  },
+                  "label": "The Boomerang"
+                },
+                {
+                  "kind": "text",
+                  "text": " also offer a reliable amount of damage, and are all obtainable from the Shop.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Defensive orbitals block projectiles and some can be used to deal damage. Using Slot Machines is a relatively reliable method to get 2-3 defensive flies.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " Re-rolling Isaac's Items with a ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "room",
+                        "name": "Dice Room"
+                      },
+                      "label": "Dice Room"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ", the ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "item",
+                        "id": 284
+                      },
+                      "label": "D4"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ", the ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "item",
+                        "id": 283
+                      },
+                      "label": "D100"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ", or ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "item",
+                        "id": 258
+                      },
+                      "label": "Missing No."
+                    },
+                    {
+                      "kind": "text",
+                      "text": " is not recommended as it can leave Isaac without means of dealing damage.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [
+                    "afterbirth"
+                  ],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " Most of ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "character",
+                        "id": 13
+                      },
+                      "label": "Lilith"
+                    },
+                    {
+                      "kind": "text",
+                      "text": "'s unlockable items will make the challenge easier:",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 360
+                          },
+                          "label": "Incubus"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " enables Isaac to fire as ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "character",
+                            "id": 13
+                          },
+                          "label": "Lilith"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " does, and also benefits from the ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "concept",
+                          "page": "Conjoined",
+                          "label": "Conjoined"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " transformation.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 357
+                          },
+                          "label": "Box of Friends"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " doubles familiars, and therefore allows Isaac to double his tear output.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 412
+                          },
+                          "label": "Cambion Conception"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " and ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 413
+                          },
+                          "label": "Immaculate Conception"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " are reliable methods of generating new familiars.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 417
+                          },
+                          "label": "Succubus"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " can deal high amounts of damage and help clear rooms.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "trinket",
+                    "id": 127
+                  },
+                  "label": "Baby-Bender"
+                },
+                {
+                  "kind": "text",
+                  "text": " gives all familiar's tears homing ability.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 497
+                  },
+                  "label": "Camo Undies"
+                },
+                {
+                  "kind": "text",
+                  "text": ", when combined with Rotten Baby allows Isaac to snipe enemies from safety.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 487
+                  },
+                  "label": "Potato Peeler"
+                },
+                {
+                  "kind": "text",
+                  "text": " will convert health into a ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 73
+                  },
+                  "label": "Cube of Meat"
+                },
+                {
+                  "kind": "text",
+                  "text": " that benefit from BFFS! and the damage upgrade increases the damage of flies.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 78
+                          },
+                          "label": "Book of Revelations"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " will do the same in a slower rate by guaranteeing the Harbingers to spawn at the cost of leaving Dad's Key behind if you don't have ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "ref",
+                          "target": {
+                            "kind": "item",
+                            "id": 534
+                          },
+                          "label": "Schoolbag"
+                        },
+                        {
+                          "kind": "text",
+                          "text": ".",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "reward",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Epic Fetus, Glass Cannon",
+              "style": "plain"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

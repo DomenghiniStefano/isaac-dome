@@ -1,7 +1,7 @@
 import { assertNever } from '@/lib/assertNever'
 import type { Target } from '@/lib/ipc/types'
 
-// A page's identity as one string, the way the design pack names its sample files and the
+// A page's identity as one string, the way ui/fixtures/wiki/ names its sample files and the
 // dataset keys its bosses: `item:105`, `entity:20.0.0`. It's what a tab location carries
 // (spec 3.5, Decision 1) — the identity, never the page.
 const PageKind = {

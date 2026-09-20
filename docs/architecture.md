@@ -6,7 +6,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 > **This is the state, not the design.** `docs/PROJECT.md` is the design and freezes at M0 by
 > its own header — it says so in its first paragraph — so a diagram of *today* could not live
 > there without breaking that promise. Drawn on 2026-09-18 against `20f04a5`, the branch it
-> lands on.
+> lands on; the crate graph redrawn on 2026-09-20, `design-export` having left the repository.
 >
 > **What keeps it true, and what does not.** Every path named here is checked by
 > `scripts/check-doc-refs.mjs`, which is why the nodes carry real paths instead of pretty
@@ -20,7 +20,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 > just below are the tripwire — if one of them is wrong, so is the drawing.
 
 Counted at that commit, and every number below is derived from the code, not from prose:
-**17 crates**, **36 Tauri commands**, **5 events**, **16 routes**, **6 store migrations**.
+**16 crates**, **36 Tauri commands**, **5 events**, **16 routes**, **6 store migrations**.
 
 ---
 
@@ -166,7 +166,6 @@ flowchart TD
 
   subgraph aside["Tools and dev-only"]
     wikisnap["wiki-snapshot<br/>the only crate that talks to the network"]
-    designexport["design-export<br/>retired 2026-09-15"]
     testsupport["test-support<br/>dev-dependency only"]
   end
 
