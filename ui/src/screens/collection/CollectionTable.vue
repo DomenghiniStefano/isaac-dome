@@ -30,7 +30,7 @@ defineExpose({
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex min-h-0 flex-1 flex-col">
     <div
       class="grid grid-cols-collection items-center border-b border-hairline bg-muted text-label text-subtle-foreground"
     >

@@ -117,7 +117,7 @@ const navigate = (target: Target, newTab: boolean) => {
 </script>
 
 <template>
-  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15">
+  <div class="flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5">
     <ScreenHeader :icon="FlagIcon" :title="t('routes.challenges')">{{
       t('challenges.intro')
     }}</ScreenHeader>
@@ -129,7 +129,7 @@ const navigate = (target: Target, newTab: boolean) => {
     <template v-else-if="store.view">
       <DiagnosticsList :entries="challengeEntries(store.view.diagnostics)" />
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
-      <Card>
+      <Card class="min-h-0 flex-1">
         <FilterBar
           :shown="rows.length"
           :total="all.length"

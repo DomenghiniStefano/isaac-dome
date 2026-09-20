@@ -108,7 +108,7 @@ const open = (row: SearchRow, event: MouseEvent) => {
 </script>
 
 <template>
-  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15">
+  <div class="flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5">
     <ScreenHeader :icon="SearchIcon" :title="t('routes.search')">{{
       t('search.intro')
     }}</ScreenHeader>
@@ -123,7 +123,7 @@ const open = (row: SearchRow, event: MouseEvent) => {
         :limited="limited"
         @update="picked = $event"
       />
-      <Card>
+      <Card class="min-h-0 flex-1">
         <SearchResults
           v-if="rows.length > 0"
           :rows="rows"

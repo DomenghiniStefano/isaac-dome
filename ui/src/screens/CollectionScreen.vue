@@ -156,7 +156,7 @@ const reset = () => {
 </script>
 
 <template>
-  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15">
+  <div class="flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5">
     <ScreenHeader :icon="LayersIcon" :title="t('routes.collection')">{{
       t('collection.intro')
     }}</ScreenHeader>
@@ -167,7 +167,7 @@ const reset = () => {
     />
     <template v-else-if="store.view">
       <DiagnosticsList :entries="collectionEntries(store.view.diagnostics)" />
-      <Card>
+      <Card class="min-h-0 flex-1">
         <FilterBar
           :shown="rows.length"
           :total="items.length"
