@@ -16,9 +16,9 @@ const { t } = useMessages()
 
 const visual = computed(() => markVisual(props.cell))
 
-const third = computed(() => {
+const online = computed(() => {
   const v = visual.value
-  return (v.kind === 'empty' || v.kind === 'marked') && v.third
+  return (v.kind === 'empty' || v.kind === 'marked') && v.online
 })
 
 // A symbol that fails to load (a layer a patch renamed, an archive gone) drops the cell to
@@ -45,7 +45,7 @@ const barHeight = computed(() => {
 
 const accessibleName = computed(() => {
   if (props.label === undefined) return undefined
-  return third.value ? `${props.label}, ${t('marks.thirdLevel')}` : props.label
+  return online.value ? `${props.label}, ${t('marks.wonOnline')}` : props.label
 })
 </script>
 
@@ -95,7 +95,7 @@ const accessibleName = computed(() => {
       class="size-4"
     />
     <span
-      v-if="third"
+      v-if="online"
       :class="
         cn(
           'absolute right-0.75 size-1.5',
