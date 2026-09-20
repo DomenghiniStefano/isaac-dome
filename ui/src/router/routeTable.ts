@@ -14,6 +14,7 @@ import {
   MonitorDotIcon,
   PackageIcon,
   PlayIcon,
+  RefreshCwIcon,
   SaveIcon,
   SkullIcon,
   SlidersHorizontalIcon,
@@ -45,6 +46,7 @@ export const RouteName = {
   Appearance: 'appearance',
   Background: 'background',
   TabsSettings: 'tabsSettings',
+  Updates: 'updates',
 } as const
 export type RouteName = (typeof RouteName)[keyof typeof RouteName]
 
@@ -97,6 +99,7 @@ export const routePath: Record<RouteName, string> = {
   [RouteName.Appearance]: '/settings/appearance',
   [RouteName.Background]: '/settings/background',
   [RouteName.TabsSettings]: '/settings/tabs',
+  [RouteName.Updates]: '/settings/updates',
 }
 
 export const routeTitle: Record<RouteName, Message> = {
@@ -116,6 +119,7 @@ export const routeTitle: Record<RouteName, Message> = {
   [RouteName.Appearance]: 'routes.appearance',
   [RouteName.Background]: 'routes.background',
   [RouteName.TabsSettings]: 'routes.tabsSettings',
+  [RouteName.Updates]: 'routes.updates',
 }
 
 export const routeOrigin: Record<RouteName, TabOrigin> = {
@@ -137,6 +141,7 @@ export const routeOrigin: Record<RouteName, TabOrigin> = {
   [RouteName.Appearance]: TabOrigin.Settings,
   [RouteName.Background]: TabOrigin.Settings,
   [RouteName.TabsSettings]: TabOrigin.Settings,
+  [RouteName.Updates]: TabOrigin.Settings,
 }
 
 export const routeIcon: Record<RouteName, Component> = {
@@ -156,6 +161,7 @@ export const routeIcon: Record<RouteName, Component> = {
   [RouteName.Appearance]: SlidersHorizontalIcon,
   [RouteName.Background]: MonitorDotIcon,
   [RouteName.TabsSettings]: AppWindowIcon,
+  [RouteName.Updates]: RefreshCwIcon,
 }
 
 // Which sub-project brings a screen that is still a placeholder; absent once it's real.

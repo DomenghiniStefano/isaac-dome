@@ -3,30 +3,149 @@
 
    Two notes on names. Dimensions are `--spacing-*`, because this repo has no `--size-*`
    family and a second name for one idea is the thing the cleanup pass spent itself on. And
-   there is no `--color-chart-*` here to lean on, so the three ranks get a family of their
-   own below. */
+   there is no `--color-chart-*` here to lean on, so both families below are this screen's
+   own. */
 @theme {
   /* A cell of the 13x13 grid, and the hairline between two of them. In rem against the 16px
      base like every other dimension, so the grid grows with the interface's scale. */
   --spacing-floor-cell: 2rem;
   --spacing-floor-gap: 0.125rem;
 
-  /* An unpainted cell, and a painted one. Both borrow an existing surface on purpose: the
-     grid is furniture, and only the lit cells are an answer. */
+  /* The grid's own width, 27.5rem, derived rather than written: thirteen cells and the twelve
+     hairlines between them. It exists because everything stacked with the grid has to be that
+     wide and no wider — the card is sized to its content, so one long line under the grid (the
+     legend's sentence) widened the whole card and took the right-hand column's room with it.
+     A number typed here instead of the calc would be a number to keep in step with two others. */
+  --spacing-floor-grid: calc(
+    13 * var(--spacing-floor-cell) + 12 * var(--spacing-floor-gap)
+  );
+
+  /* Our own drawing inside a cell, when the game is not here to lend its own. A fraction of
+     the cell above, and it moves with it. */
+  --spacing-floor-symbol: 1.0625rem;
+
+  /* The box the game's own minimap icon is centred in — the cell's own size, so the two
+     branches of `RoomSymbol` occupy the same square and the cell does not jump.
+
+     The icon **inside** it is not sized here and must not be: it is served trimmed to its own
+     drawing (`ipc::trim_opaque`), so it arrives a different number of pixels wide for every
+     room kind, and it is drawn at exactly twice its pixels by the `pixel-2x` utility. Pixel
+     art at 1.06x is pixel art with the edges smeared — the one scale that is wrong is the one
+     that looks like a reasonable compromise. */
+  --spacing-floor-icon: 2rem;
+
+  /* An unpainted cell: the grid is furniture, and only what you drew is an answer. */
   --color-floor-empty: var(--color-muted);
-  --color-floor-room: var(--color-card);
 
-  /* The three ranks a candidate can carry, as one hue in three steps. A ranking is a
-     sequence, so it is drawn as one — and it is deliberately **none of the state colours**:
-     green, gold, brown, grey, red and purple are the brief's and mean done / unlockable now /
-     blocked / unreadable / unexpected / challenge, none of which is "the rule allows a secret
-     room here". Blue is otherwise unspoken for in this palette; the one cyan (--color-ring)
-     is a 1px focus outline, never a fill.
+  /* The fourteen room kinds, each with the ink its fill can carry.
 
-     Not yet seen in a real window: this is a new family, and the design pass that confirms
-     or replaces it needs a screen, not a token file. */
-  --color-floor-candidate-first: #3d82c4;
-  --color-floor-candidate-second: #2b5a86;
-  --color-floor-candidate-third: #22405c;
-  --color-floor-candidate-foreground: #e8f1f8;
+     These are **not** the app's state colours, and the collision is only apparent: this
+     screen paints no state at all — nothing on it is done, unlockable, blocked or
+     unreadable — so red here means Boss and gold means Treasure, which is what the game
+     itself has meant by them for fifteen years. The alternative was fourteen hues invented
+     to avoid six, on the one screen where the player already knows the answer by heart.
+
+     Not yet seen in a real window: it is a new family, and the pass that confirms or
+     replaces it needs a screen, not a token file. */
+  --color-floor-room-normal: #cfc4b0;
+  --color-floor-room-normal-foreground: #3a2f22;
+  --color-floor-room-start: #cfc4b0;
+  --color-floor-room-start-foreground: #3a2f22;
+  --color-floor-room-boss: #b0443a;
+  --color-floor-room-boss-foreground: #ffe9e4;
+  --color-floor-room-miniboss: #8f5248;
+  --color-floor-room-miniboss-foreground: #ffe9e4;
+  --color-floor-room-treasure: #d9a63c;
+  --color-floor-room-treasure-foreground: #3a2a08;
+  --color-floor-room-shop: #b98a46;
+  --color-floor-room-shop-foreground: #3a2a08;
+  --color-floor-room-arcade: #c98f2e;
+  --color-floor-room-arcade-foreground: #3a2a08;
+  --color-floor-room-library: #7d95b4;
+  --color-floor-room-library-foreground: #16202c;
+  --color-floor-room-curse: #6a4a6e;
+  --color-floor-room-curse-foreground: #f0e4f2;
+  --color-floor-room-challenge: #8a6acb;
+  --color-floor-room-challenge-foreground: #120c22;
+  --color-floor-room-sacrifice: #8e3340;
+  --color-floor-room-sacrifice-foreground: #ffe4e8;
+  --color-floor-room-secret: #8a7d6b;
+  --color-floor-room-secret-foreground: #241c12;
+  --color-floor-room-super-secret: #6f6455;
+  --color-floor-room-super-secret-foreground: #f0ead8;
+  --color-floor-room-ultra-secret: #55503f;
+  --color-floor-room-ultra-secret-foreground: #f0ead8;
+
+  /* One colour per target. The screen shows one target at a time, so the hue is not there to
+     separate three answers on one square — it is there so you know which of the three you are
+     looking at without going back to read the switch.
+
+     **They are as far apart as three hues can be**, and that is a correction. Secret was blue
+     and Super was teal, about forty degrees between them, and the first person to open this
+     screen said the two could not be told apart. Blue, green and magenta sit a little over a
+     hundred degrees from one another.
+
+     Solid, never translucent: a candidate sits on the dark of an unpainted cell today, and an
+     alpha would make the hue a function of whatever ends up underneath it later. */
+  --color-floor-target-secret: #3f8fd6;
+  --color-floor-target-super: #4fa538;
+  --color-floor-target-ultra: #c2569b;
+
+  /* The same three, translucent: a veil over the **whole** cell, under the solid level.
+
+     It is there because the level alone answers "how good" and never "is this cell in play at
+     all" — the third step fills less than a third of the square, and on a dark grid a stripe
+     that small reads as a stripe rather than as an answer. The veil marks the cell edge to
+     edge, so a candidate is seen as a candidate before its height is read.
+
+     **Flat, and not a gradient rising from the floor.** That was the first attempt and it made
+     the cell's own top edge disappear into the grid: a wash that fades out has no boundary,
+     and a boundary is exactly what "this square, not that one" needs.
+
+     The alpha is in the token and not a `/20` on the class, which is the repo's own rule: an
+     alpha written at the call site is a colour that exists only there, and the scan refuses
+     it. */
+  --color-floor-aura-secret: #3f8fd63d;
+  --color-floor-aura-super: #4fa5383d;
+  --color-floor-aura-ultra: #c2569b3d;
+
+  /* The edge of a candidate cell, lit from inside. The border alone is one pixel of colour on
+     a dark square; the glow inside it is what makes the square read as switched on rather than
+     as outlined.
+
+     **Inset, never outward.** The grid's cells are two pixels apart, so a glow thrown outwards
+     lands on the neighbours — and in a corner of the map where every second cell is a
+     candidate, that is one smear rather than nine answers. */
+  --shadow-floor-glow-secret: inset 0 0 0.5rem #3f8fd6cc;
+  --shadow-floor-glow-super: inset 0 0 0.5rem #4fa538cc;
+  --shadow-floor-glow-ultra: inset 0 0 0.5rem #c2569bcc;
+
+  /* The place in the order, printed in the middle of the cell — and the halo that is what
+     makes printing it possible at all.
+
+     **One ink cannot read on this cell**, which is why the two earlier designs put the number
+     somewhere small and dark instead. The digit sits at the cell's centre and what is behind
+     it depends on the answer: the bright fill for the best place, the dark veil for the third,
+     and the fill's own edge crossing the glyph for the second. A pale ink disappears on the
+     first, a dark one on the third, and there is no third colour that survives both.
+
+     A dark halo around a pale digit does. It is the same trick a game HUD uses over a moving
+     background and for the same reason: the contrast travels with the glyph instead of being
+     borrowed from whatever it lands on. Two shadows rather than one, because a single blur
+     wide enough to cover is too faint at the glyph's own edge. */
+  --color-floor-rank-foreground: #f6f2ea;
+  --text-shadow-floor-rank: 0 0 0.1875rem #000000e6, 0 0 0.375rem #000000cc;
+
+  /* How much of the cell the answer fills: full for the best place the rules allow, less for
+     each step after it. It replaces the rank printed inside the square — a 2rem cell is not
+     enough room for a number, which is what two designs found out in a window before this one.
+
+     **Three heights, and not a percentage of anything.** The rules put candidates in an order
+     and never say by how much: the wiki has no number for "how much likelier than the next",
+     so neither has this. The height is that order drawn as a quantity, and it stops at the
+     third exactly where the order stops meaning anything. Reading 30% here as "thirty per cent
+     likely" is reading a number nobody measured. */
+  --floor-level-first: 100%;
+  --floor-level-second: 60%;
+  --floor-level-third: 30%;
 }

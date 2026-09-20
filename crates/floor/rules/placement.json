@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "license": "CC BY-SA 4.0, The Binding of Isaac: Rebirth Wiki",
-  "read": "2026-09-15",
+  "read": "2026-09-20",
   "rules": [
     {
       "id": "secret-neighbours",
@@ -64,7 +64,42 @@
       "target": "ultraSecret",
       "quote": "Ultra Secret rooms are most likely generated in spots that connect to 3+ non-red rooms through its adjacent red rooms (different squares in L rooms count as 2).",
       "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
-      "constraint": { "kind": "unmodelled", "note": "red rooms are the Red Key mechanic, created during a run, and are not painted on this grid; the rule is stated two hops out" }
+      "constraint": { "kind": "redRoomConnections", "atLeast": 3, "atMost": null, "rank": 0 }
+    },
+    {
+      "id": "ultra-secret-connections-two",
+      "target": "ultraSecret",
+      "quote": "They can be connected to 2 or 1 non-red rooms through its adjacent red rooms, but a specific 3+ room location is 11.5x more likely than a specific 2 room location",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "redRoomConnections", "atLeast": 2, "atMost": 2, "rank": 1 }
+    },
+    {
+      "id": "ultra-secret-connections-one",
+      "target": "ultraSecret",
+      "quote": "If there is no 3+ room location available then a specific 2 room location is 11.5x more likely than a specific 1 room location.",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "redRoomConnections", "atLeast": 1, "atMost": 1, "rank": 2 }
+    },
+    {
+      "id": "ultra-secret-not-connected",
+      "target": "ultraSecret",
+      "quote": "Ultra Secret Rooms are special rooms that are not connected to any other room on the map directly.",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "noPaintedNeighbour" }
+    },
+    {
+      "id": "ultra-secret-red-room-invalid",
+      "target": "ultraSecret",
+      "quote": "Ultra Secret Rooms can't be connected to red rooms that connect to Secret Rooms, Super Secret Rooms, or Curse Rooms, and can't be in a location where any of its adjacent red rooms are invalid, such as next to a Boss Room",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "redRoomForbiddenNeighbour", "kinds": ["secret", "superSecret", "curse", "boss"] }
+    },
+    {
+      "id": "ultra-secret-shapes",
+      "target": "ultraSecret",
+      "quote": "next to the sides of narrow rooms, or any room that can't have a red room opened on that specific side, however locations on the 13x13 border where a red room would normally open to an I AM ERROR room are allowed",
+      "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room",
+      "constraint": { "kind": "unmodelled", "note": "a side that cannot open depends on the shape of the room behind it, and every room on this grid is one square: `floor::Shape` has one variant, so an L room's two squares and a narrow room's long side cannot be drawn and cannot be judged" }
     }
   ]
 }

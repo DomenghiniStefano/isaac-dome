@@ -124,6 +124,11 @@ export const ipcErrorParts = (e: IpcError | null): MessagePart[] => {
         { key: 'ipcErrors.autostartNotWritable' },
         autostartFailurePart(e.reason),
       ]
+    // A window asked to install with nothing downloaded: a defect of ours, not something that
+    // happened to the user, and the only error the updater can raise at all — everything they
+    // can really run into is a phase on the Updates screen.
+    case 'updateNotReady':
+      return [{ key: 'ipcErrors.updateNotReady' }]
     default:
       return assertNever(e)
   }

@@ -101,6 +101,10 @@ onMounted(async () => {
     // so that two windows agree through a draw made in either. The entry stays here so that
     // every event is accounted for in this one registry, exactly like `RunsChanged` above.
     [AppEvent.RollChanged]: () => undefined,
+    // The Updates screen listens for this one itself, like the Roll screen: a download tells
+    // every window a hundred times, and a window with that screen closed has nothing to draw
+    // with it. The entry stays here so that every event is accounted for in this one registry.
+    [AppEvent.UpdateChanged]: () => undefined,
   })
 })
 onUnmounted(() => {

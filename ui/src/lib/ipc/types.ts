@@ -457,6 +457,7 @@ export type IpcError =
   | { kind: 'wikiUnavailable' }
   | { kind: 'sessionTooLarge' }
   | { kind: 'autostartNotWritable'; reason: AutostartFailure }
+  | { kind: 'updateNotReady' }
 
 /**
  * The compression mode, remapped onto an enum **of our own**.
@@ -1532,6 +1533,19 @@ export type FloorView = {
 }
 
 /**
+ * A room kind and the game's own picture of it, when the game is there to have one.
+ */
+export type RoomIconView = {
+  kind: RoomKindView
+  /**
+   * `None` means "draw your own symbol": the game is not installed, the icon is not in the
+   * sheet, or the kind never had one. The screen cannot tell those apart and does not need
+   * to — all three end in the same drawing.
+   */
+  iconUrl: string | null
+}
+
+/**
  * One achievement this run could open, and how much it opens in turn: the graph already
  * counts that for Unlock, and a run is worth more when what it gives unlocks more.
  */
@@ -1765,6 +1779,19 @@ export type Settings = {
    * never shown to the user.
    */
   backgroundNoticeShown: boolean
+  /**
+   * Whether the app asks GitHub for a newer version when it starts.
+   *
+   * **On by default, and that costs one HTTPS request per launch** — an IP address and a
+   * user agent, nothing of ours and nothing about the save. Off means *nothing leaves the
+   * machine*: the startup check does not run, and only the button on the Updates screen
+   * reaches the network. A switch that still checked would be a switch about a notice, and
+   * this one is about the request.
+   *
+   * Unlike starting with Windows, nothing outside the app holds this, so the file is the
+   * only source of truth and there is nothing to go stale.
+   */
+  autoUpdate: boolean
 }
 
 /**
@@ -1817,4 +1844,63 @@ export type AutostartView = {
    * with two different causes.
    */
   unavailable: AutostartReason | null
+}
+
+/**
+ * Why an update could not even be offered.
+ *
+ * One variant today, and an enum rather than a `bool` for the reason the autostart design
+ * recorded: a boolean makes a development build and a genuine failure the same answer with
+ * two different causes. Fieldless, so a **bare camelCase string** on the wire.
+ */
+export const UpdateReason = {
+  NotSupported: 'notSupported',
+} as const
+export type UpdateReason = (typeof UpdateReason)[keyof typeof UpdateReason]
+
+/**
+ * Why an update did not happen. Five answers because they are five different things for the
+ * user to do, and everything the plugin can say falls into one of them.
+ *
+ * Fieldless, so a bare camelCase string on the wire, like [`UpdateReason`]. The moment a
+ * variant gains a field the whole enum becomes tagged, TypeScript included.
+ */
+export const UpdateFailure = {
+  Offline: 'offline',
+  NotPublished: 'notPublished',
+  Rejected: 'rejected',
+  InstallFailed: 'installFailed',
+  Unknown: 'unknown',
+} as const
+export type UpdateFailure = (typeof UpdateFailure)[keyof typeof UpdateFailure]
+
+/**
+ * Where the update stands, as a window draws it.
+ *
+ * **There is no `Available`**: an update that is found is downloaded at once, on the
+ * automatic path and on the button alike, so the phase would never rest anywhere a screen
+ * could show it.
+ */
+export type UpdatePhase =
+  | { kind: 'idle' }
+  | { kind: 'checking' }
+  | { kind: 'upToDate' }
+  | { kind: 'downloading'; version: string; percent: number | null }
+  | { kind: 'ready'; version: string; notes: string | null }
+  | { kind: 'failed'; reason: UpdateFailure }
+
+/**
+ * What the `update_status` command answers.
+ */
+export type UpdateView = {
+  /**
+   * What is running. The screen answers "which build is this" with no network at all, and
+   * that has to hold when everything else failed.
+   */
+  currentVersion: string
+  phase: UpdatePhase
+  /**
+   * `None` when updating can be offered.
+   */
+  unavailable: UpdateReason | null
 }

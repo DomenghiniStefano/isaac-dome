@@ -7,6 +7,10 @@ export const ButtonVariant = {
   Outline: 'outline',
   Ghost: 'ghost',
   Link: 'link',
+  // Throws something away and cannot put it back. Red is the app's warning colour and it is
+  // reserved: a button wearing it is saying the action is not undoable, so it is worth a
+  // confirmation and the confirmation is worth writing.
+  Destructive: 'destructive',
   // Cycle 2: the chrome and the wiki (Chrome e Stati.dc.html).
   Nav: 'nav',
   Section: 'section',
@@ -54,6 +58,11 @@ export const buttonVariants = cva(
           'border-transparent bg-transparent text-foreground hover:border-secondary-edge hover:bg-secondary active:bg-band',
         [ButtonVariant.Link]:
           'border-transparent bg-transparent text-highlight underline disabled:border-transparent disabled:bg-transparent',
+        // The same two colours the destructive Alert uses, so the button and the box that
+        // explains it are visibly the same warning. It fills with the red on hover, which is
+        // the one moment the pointer is on top of something irreversible.
+        [ButtonVariant.Destructive]:
+          'border-destructive bg-destructive-surface text-destructive-foreground hover:bg-destructive hover:text-foreground active:bg-destructive',
         // A sidebar item: the red bar on the left says which one, the fill alone doesn't
         // on an already dark row.
         [ButtonVariant.Nav]:
@@ -73,10 +82,10 @@ export const buttonVariants = cva(
         // Looks like a field, opens something else: the navbar's search trigger.
         [ButtonVariant.Field]:
           'justify-start border-secondary bg-data text-faint-foreground hover:border-input',
-        // No fill and no edge of its own: the grid supplies the fill, and 169 borders would
-        // be a lattice the eye reads before it reads the answer.
-        [ButtonVariant.Cell]:
-          'border-transparent text-floor-candidate-foreground hover:border-input',
+        // No fill, no ink and no edge of its own: the cell is handed the colour of the room
+        // that was painted on it, and 169 borders would be a lattice the eye reads before it
+        // reads the answer.
+        [ButtonVariant.Cell]: 'border-transparent hover:border-input',
       },
       size: {
         [ButtonSize.Default]: 'h-control px-4',
