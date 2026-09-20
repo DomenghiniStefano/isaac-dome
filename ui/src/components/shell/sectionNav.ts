@@ -89,6 +89,7 @@ export const sidebarEntries: Record<SidebarSection, SidebarEntry[]> = {
     RouteName.Appearance,
     RouteName.Background,
     RouteName.TabsSettings,
+    RouteName.Updates,
   ].map(routeEntry),
 }
 

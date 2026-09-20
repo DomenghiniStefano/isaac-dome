@@ -55,6 +55,7 @@ export const it = {
     appearance: 'Aspetto',
     background: 'Background',
     tabsSettings: 'Tab',
+    updates: 'Aggiornamenti',
     about: 'Informazioni',
   },
   wikiCategories: {
@@ -120,9 +121,22 @@ export const it = {
     intro:
       'Disegna la mappa del piano come la vedi sulla minimappa: le celle vuote si accendono dove le regole del gioco permettono una stanza segreta. Ogni cella accesa dice quale regola l’ha accesa e da dove è stata letta.',
     erase: 'Cancella',
+    rub: 'il tasto destro cancella',
     clear: 'Svuota la griglia',
     painted: 'stanze disegnate',
     neighbours: 'stanze adiacenti',
+    empty: 'vuota',
+    cell: 'Riga {row}, colonna {column}: {room}',
+    at: 'Riga {row}, colonna {column}',
+    scaleStops:
+      'Il terzo gradino è dove la scala si ferma. Le regole mettono i candidati in ordine, non dicono mai quanto il quarto sia meno probabile del terzo: la sfumatura nemmeno.',
+    cornerFree:
+      'L’angolo in basso a destra resta libero di proposito: lì non si nasconde niente.',
+    step: {
+      first: 'primo candidato',
+      second: 'secondo',
+      third: 'terzo, e tutti quelli dopo',
+    },
     source: 'Fonte',
     unresolved: 'Quello che la griglia non può giudicare',
     none: 'Nessuna cella permessa dalle regole, con quello che hai disegnato finora.',
@@ -541,6 +555,40 @@ export const it = {
     stayTitle: 'Resta aperta in background',
     stayHint:
       "Chiudendo l'ultima finestra l'app resta accanto all'orologio, nell'area di notifica: un clic sull'icona riapre la finestra. Spenta, chiudere l'ultima finestra chiude l'app.",
+    saveFailedTitle: "L'impostazione non è stata salvata",
+    saveFailed:
+      "L'app si comporta già così, ma non siamo riusciti a scriverlo: al prossimo avvio torna com'era.",
+  },
+  updates: {
+    intro:
+      "Che versione hai, e se ne è uscita una nuova. L'app scarica l'aggiornamento mentre continui a usarla e lo installa quando lo dici tu.",
+    currentVersion: 'Versione installata: {version}',
+    autoTitle: 'Aggiorna automaticamente',
+    autoHint:
+      "Accesa, a ogni avvio l'app chiede a GitHub se c'è una versione più nuova e, se c'è, la scarica. Spenta non parte nessuna richiesta: niente esce da questo computer se non premi «Controlla ora».",
+    unsupported: 'Questa build non si aggiorna da sola.',
+    unsupportedHint:
+      'Non disponibile in questa build. Un installer lanciato da qui sostituirebbe in silenzio la build di sviluppo con una di release, e nessuno se ne accorgerebbe.',
+    idle: 'Non abbiamo ancora controllato in questo avvio.',
+    checking: 'Sto controllando…',
+    upToDate: 'Hai la versione più recente.',
+    downloading: 'Sto scaricando la {version}…',
+    ready: 'La {version} è pronta da installare.',
+    // Non è sfortuna come le altre: quello che è arrivato non è quello che dice di essere.
+    failedRejected:
+      "L'aggiornamento è stato rifiutato: la firma non corrisponde. Non è stato installato niente. Scarica l'installer dalla pagina delle release invece di riprovare da qui.",
+    failedOffline:
+      'Non siamo riusciti a raggiungere GitHub. Riprova quando la connessione torna.',
+    failedNotPublished: 'Non c’è nessuna versione pubblicata da scaricare.',
+    failedInstall:
+      "L'aggiornamento è stato scaricato e l'installazione non è partita. Il file è ancora qui: puoi riprovare.",
+    failedUnknown: "L'aggiornamento non è riuscito.",
+    failedTitle: 'Non è stato possibile installare',
+    notesTitle: 'Cosa cambia',
+    check: 'Controlla ora',
+    install: 'Riavvia e installa',
+    installHint:
+      "L'app si chiude, l'installer va avanti da solo e l'app si riapre da sé.",
     saveFailedTitle: "L'impostazione non è stata salvata",
     saveFailed:
       "L'app si comporta già così, ma non siamo riusciti a scriverlo: al prossimo avvio torna com'era.",
