@@ -55,10 +55,23 @@
 # constraints in turn — the dedup in `reached_rooms`, `noPaintedNeighbour` and
 # `redRoomForbiddenNeighbour` — rather than by being written first.
 #
-# **The five entries above are one day's worth, and they are written as deltas rather than as
-# `1150 → 1158`.** They landed on two branches at once and were merged here: an absolute number
+# **Raised on 2026-09-20**, UI +6: 3.13a's, the responsive frame. Two on the window floor — the
+# constant, and the Tauri config agreeing with it, which is the one thing standing between two
+# files that declare the same number and cannot see each other — and three on the page thresholds:
+# that they are declared in the CSS at the px the constants say, that they ascend, and that the
+# window floor falls inside compact. The sixth is not new, it is the old
+# `--spacing-virtual-rows-body` test **rewritten rather than deleted**: its subject — a token
+# capping every virtualized list at 35rem — stopped existing when the scroll body started taking
+# the height that is left, so what it pins now is the replacement, `min-h-0 flex-1` on the box and
+# no `max-h-` left in it. Rust does not move: nothing in that sub-project is Rust except two keys
+# in `tauri.conf.json`, and it is a UI test that reads them.
+#
+# **The six entries above are one day's worth, and they are written as deltas rather than as
+# `1150 → 1158`.** They landed on three branches at once and were merged here: an absolute number
 # on each side is a number measured against a different base, and the pair of them conflicted in
-# this file for exactly that reason. A delta survives a merge; an arrow between two totals does
-# not. The totals below are the ones `scripts/check` counted on the merge itself.
+# this file for exactly that reason — twice, the second time with 3.13a, which had written its own
+# entry as an arrow and had to rewrite it as a delta to resolve. A delta survives a merge; an arrow
+# between two totals does not. The totals below are the ones `scripts/check` counted on the merge
+# itself.
 RUST_TESTS=1160
-UI_TESTS=741
+UI_TESTS=747

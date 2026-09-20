@@ -96,7 +96,7 @@ const open = (location: TabLocation, newTab: boolean) => {
 </script>
 
 <template>
-  <div class="flex max-w-190 flex-col gap-4">
+  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15">
     <ScreenHeader :icon="ListChecksIcon" :title="t('routes.goals')">{{
       t('goals.intro')
     }}</ScreenHeader>
