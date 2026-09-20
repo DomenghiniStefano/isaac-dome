@@ -2,10 +2,10 @@
 import { computed } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
-import { cellPosition, pipsFor } from '@/lib/floor/cellView'
+import { bandsFor, cellPosition } from '@/lib/floor/cellView'
 import { CELLS, START, WIDTH } from '@/lib/floor/painting'
 import type { PaintedCells } from '@/lib/floor/painting'
-import { cornerAt, pipFill } from '@/lib/floor/pips'
+import { bandFill } from '@/lib/floor/bands'
 import { roomFill } from '@/lib/floor/rooms'
 import type {
   FloorSolutionView,
@@ -15,9 +15,16 @@ import type {
 import RoomSymbol from './RoomSymbol.vue'
 
 // The grid says two things at once, and keeping them apart is the whole design: the **fill and
-// the drawing** are what you painted, the **pips in the corners** are what the rules make of
-// it. Before this it said one — a rank, or "painted", or "empty" — so fourteen room kinds came
-// out one grey square and only the Secret Room's answer ever reached the map.
+// the drawing** are what you painted, the **bands** are what the rules make of it. Before this
+// it said one — a rank, or "painted", or "empty" — so fourteen room kinds came out one grey
+// square and only the Secret Room's answer ever reached the map.
+//
+// The rules' half was four small squares in the corners, and a second look at a real window
+// killed it: four numbers that small are four numbers nobody reads, and a cell the rules allow
+// still looked like a cell nobody had touched. **A cell a rule allows is now filled with that
+// rule's colour.** One target fills it whole, two split it down the middle, three in thirds,
+// always in the reading order — so the width of a band says how many targets want that cell,
+// which is a thing the corners could not say at all.
 
 const props = defineProps<{
   cells: PaintedCells
@@ -30,10 +37,10 @@ const { t } = useMessages()
 
 const indexes = Array.from({ length: CELLS }, (_, i) => i)
 
-// Every cell's pips, built once per answer rather than searched per cell: 169 cells against
+// Every cell's bands, built once per answer rather than searched per cell: 169 cells against
 // three candidate lists is the one place on this screen where that would show.
-const pips = computed(() =>
-  indexes.map((cell) => pipsFor(cell, props.solutions, props.shown)),
+const bands = computed(() =>
+  indexes.map((cell) => bandsFor(cell, props.solutions, props.shown)),
 )
 
 const fillOf = (cell: number): string => {
@@ -110,13 +117,18 @@ const rub = (cell: number): void => {
         :kind="cells[i]!"
         :url="icons.get(cells[i]!) ?? null"
       />
-      <span
-        v-for="pip in pips[i]"
-        :key="pip.target"
-        class="absolute flex size-floor-pip items-center justify-center rounded-cell text-micro text-floor-pip-foreground tabular-nums"
-        :class="[cornerAt[pip.corner], pipFill[pip.target][pip.step]]"
-        >{{ pip.rank }}</span
-      >
+      <!-- Over the cell and not inside its flow: a band covers the square edge to edge, and
+           `flex-1` is what makes one band the whole cell and three of them its thirds
+           without either count being written down anywhere. -->
+      <span v-if="bands[i].length > 0" class="absolute inset-0 flex">
+        <span
+          v-for="band in bands[i]"
+          :key="band.target"
+          class="flex flex-1 items-center justify-center text-micro tabular-nums"
+          :class="bandFill[band.target][band.step]"
+          >{{ band.rank }}</span
+        >
+      </span>
     </Button>
   </div>
 </template>

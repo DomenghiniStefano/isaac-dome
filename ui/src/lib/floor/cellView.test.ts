@@ -2,15 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { TargetView } from '@/lib/ipc/types'
 import type { FloorSolutionView } from '@/lib/ipc/types'
 import { START } from './painting'
-import {
-  Corner,
-  RankStep,
-  cellPosition,
-  cornerOf,
-  pipsFor,
-  rankStep,
-  toggled,
-} from './cellView'
+import { RankStep, bandsFor, cellPosition, rankStep, toggled } from './cellView'
 
 const solution = (
   target: TargetView,
@@ -28,19 +20,6 @@ const solution = (
 
 const all = [TargetView.Secret, TargetView.SuperSecret, TargetView.UltraSecret]
 
-describe('cornerOf', () => {
-  it('gives each target a corner of its own', () => {
-    expect(cornerOf[TargetView.Secret]).toBe(Corner.TopLeft)
-    expect(cornerOf[TargetView.SuperSecret]).toBe(Corner.TopRight)
-    expect(cornerOf[TargetView.UltraSecret]).toBe(Corner.BottomLeft)
-  })
-
-  it('never puts two targets in the same corner, which is what makes the corner the answer', () => {
-    const corners = all.map((target) => cornerOf[target])
-    expect(new Set(corners).size).toBe(corners.length)
-  })
-})
-
 describe('rankStep', () => {
   it('walks the first three ranks down its own step', () => {
     expect(rankStep(0)).toBe(RankStep.First)
@@ -54,7 +33,7 @@ describe('rankStep', () => {
   })
 })
 
-describe('pipsFor', () => {
+describe('bandsFor', () => {
   const solutions = [
     solution(TargetView.UltraSecret, [[57, 0]]),
     solution(TargetView.Secret, [
@@ -65,16 +44,24 @@ describe('pipsFor', () => {
   ]
 
   it('says nothing about a cell no rule lit', () => {
-    expect(pipsFor(9, solutions, all)).toEqual([])
+    expect(bandsFor(9, solutions, all)).toEqual([])
   })
 
-  it('carries one pip per target that lit the cell', () => {
-    expect(pipsFor(57, solutions, all)).toHaveLength(3)
+  it('carries one band per target that lit the cell', () => {
+    expect(bandsFor(57, solutions, all)).toHaveLength(3)
   })
 
-  it('orders them by corner and not by the order the answers arrived in', () => {
+  it('gives a cell one target lit a single band, which is the cell filled edge to edge', () => {
+    // The whole reason the corner went: a cell only the Secret Room can be in is a Secret
+    // Room's colour, not a small square in the top-left of an otherwise empty square.
+    const bands = bandsFor(58, solutions, all)
+    expect(bands).toHaveLength(1)
+    expect(bands[0].target).toBe(TargetView.Secret)
+  })
+
+  it('orders them by the reading order and not by the order the answers arrived in', () => {
     // The solutions above are deliberately out of order: ultra, secret, super.
-    const targets = pipsFor(57, solutions, all).map((pip) => pip.target)
+    const targets = bandsFor(57, solutions, all).map((band) => band.target)
     expect(targets).toEqual([
       TargetView.Secret,
       TargetView.SuperSecret,
@@ -83,19 +70,19 @@ describe('pipsFor', () => {
   })
 
   it('prints the rank one-based, the way the legend reads it', () => {
-    const [secret] = pipsFor(58, solutions, all)
+    const [secret] = bandsFor(58, solutions, all)
     expect(secret.rank).toBe(1)
     expect(secret.step).toBe(RankStep.First)
   })
 
   it('drops a target that is switched off, which is the whole point of the filter', () => {
     const shown = [TargetView.Secret, TargetView.UltraSecret]
-    const targets = pipsFor(57, solutions, shown).map((pip) => pip.target)
+    const targets = bandsFor(57, solutions, shown).map((band) => band.target)
     expect(targets).toEqual([TargetView.Secret, TargetView.UltraSecret])
   })
 
   it('says nothing at all when every target is switched off', () => {
-    expect(pipsFor(57, solutions, [])).toEqual([])
+    expect(bandsFor(57, solutions, [])).toEqual([])
   })
 })
 
