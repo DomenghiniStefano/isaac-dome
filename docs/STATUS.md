@@ -721,14 +721,17 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       floor, secret rooms included, count them, and read the line for that `Level::Init`. One
       floor answers it; a second on the alternative path would say whether the rule holds there
       too.
-- [ ] **The 40 unknown cells in the completion matrix** — Mother and The Beast for The
-      Forgotten and the 19. One run of Mother with a Tainted character closes the whole
-      20 × 2 block, because the base indices are already pinned and only the evidence that
-      those cells move is missing.
-      **Measured on 2026-09-12, and the absence is now a finding rather than an assumption**:
+- [ ] **The 20 unknown cells in the completion matrix** — The Beast for The Forgotten and the
+      19. It was 40, and **half of it closed on 2026-09-20**: T. Eden beat Mother on hard,
+      `[449]` was the only cell to move in all of 423–490, and that put the 19-block at 438
+      with The Forgotten's cell at 437. The three facts all held exactly — achievement 567
+      (*Mother* + *Tainted Eden* in the rules), `[491] 6 → 7`, index 188 at `1 << 30`.
+      **Measured on 2026-09-12, and the absence is a finding rather than an assumption**:
       a walk of the whole dated series looking for *any* completion of Mother or The Beast by
-      those 20 characters found none. The blocker is real, the series cannot close it, and it
-      is what keeps 40 nodes of the unlock graph `Partial` instead of answered.
+      those 20 characters found none. That is still why the remaining half needs a run rather
+      than a re-read, and it keeps 20 nodes of the unlock graph `Partial` instead of answered.
+      The symmetry with Mother's group says where each of the 20 sits; the tables keep `None`
+      anyway, because one worked example is not a window on this half.
 - [x] **A save of the 642 / 523 era in `samples/`** — **already there, and this line asked for
       the wrong era.** `each_era_declares_its_own_counts` reads that row from
       `20260905.rep+persistentgamedata1.dat`, which has been in `samples/` for ten days; the row
