@@ -128,6 +128,13 @@ export const en: MessageSchema = {
     cell: 'Row {row}, column {column}: {room}',
     at: 'Row {row}, column {column}',
     brush: 'Chosen room',
+    show: 'Shown on the grid',
+    rank: {
+      title: 'What a colour means',
+      first: '1 — the likeliest place the rules allow',
+      second: '2 — the next one',
+      third: '3 and beyond — the scale stops here, the rules say no more',
+    },
     unresolved: 'What the grid cannot judge',
     none: 'No cell the rules allow, with what you have drawn so far.',
     failed: 'The candidates could not be computed. What you drew stays.',

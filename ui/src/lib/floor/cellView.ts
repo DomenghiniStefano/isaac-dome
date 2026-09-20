@@ -8,29 +8,15 @@ import { WIDTH, xy } from './painting'
 // kinds came out as one grey square, and of the three targets only the Secret Room ever
 // reached the map. It now says two: **what you drew** (a colour and a drawing, both in the
 // component) and **what the rules make of it**, which is this file.
+//
+// The rules' half was four small squares in the corners, and that was wrong twice over: four
+// pips on a 2rem square print four numbers too small to read, and a cell nobody painted still
+// looked unpainted. **A cell a rule allows is filled with that rule's colour** — one target
+// fills it whole, two split it in half, three in thirds, always left to right in the reading
+// order below. The corner is gone, and with it `Corner`, `cornerOf` and `cornerAt`: the width
+// of a band says how many targets want that cell, which the corners never could.
 
-/**
- * A corner belongs to a target and to nothing else. That is the whole idea: the **position**
- * says which target, so the colour is a reinforcement rather than the only signal — it still
- * reads when two hues sit close, on a bad screen, or for someone who tells them apart poorly.
- *
- * Bottom-right is deliberately left empty. Its absence is visible, and a fourth target would
- * have somewhere to go without moving the other three.
- */
-export const Corner = {
-  TopLeft: 'topLeft',
-  TopRight: 'topRight',
-  BottomLeft: 'bottomLeft',
-} as const
-export type Corner = (typeof Corner)[keyof typeof Corner]
-
-export const cornerOf: Record<TargetView, Corner> = {
-  [TargetView.Secret]: Corner.TopLeft,
-  [TargetView.SuperSecret]: Corner.TopRight,
-  [TargetView.UltraSecret]: Corner.BottomLeft,
-}
-
-/** The order the corners are drawn in, and therefore the order the pips come back in. */
+/** The order the targets are read in, and therefore the order the bands are laid out in. */
 const targetOrder: readonly TargetView[] = [
   TargetView.Secret,
   TargetView.SuperSecret,
@@ -54,39 +40,40 @@ export const rankStep = (rank: number): RankStep => {
   return RankStep.Third
 }
 
-export interface Pip {
+/** One target's claim on one cell: the slice of it that target colours, and what it prints. */
+export interface Band {
   readonly target: TargetView
-  readonly corner: Corner
   readonly step: RankStep
   /** One-based: the number the cell prints, and the one the legend explains. */
   readonly rank: number
 }
 
 /**
- * What a cell shows of the rules, for the targets currently switched on.
+ * What a cell shows of the rules, for the targets currently switched on. The bands share the
+ * cell equally, so an empty list is a cell the rules say nothing about and a list of one is a
+ * cell filled edge to edge.
  *
- * The order is the corners' own, never the order the solutions arrived in: a cell lit by two
- * targets has to look the same whichever answer landed first.
+ * The order is the reading order above, never the order the solutions arrived in: a cell two
+ * targets claim has to look the same whichever answer landed first.
  */
-export const pipsFor = (
+export const bandsFor = (
   cell: number,
   solutions: readonly FloorSolutionView[],
   shown: readonly TargetView[],
-): Pip[] => {
-  const pips: Pip[] = []
+): Band[] => {
+  const bands: Band[] = []
   for (const target of targetOrder) {
     if (!shown.includes(target)) continue
     const solution = solutions.find((one) => one.target === target)
     const candidate = solution?.candidates.find((one) => one.cell === cell)
     if (candidate === undefined) continue
-    pips.push({
+    bands.push({
       target,
-      corner: cornerOf[target],
       step: rankStep(candidate.rank),
       rank: candidate.rank + 1,
     })
   }
-  return pips
+  return bands
 }
 
 export interface CellPosition {
@@ -110,7 +97,7 @@ export const rowOf = (cell: number): number[] => {
 }
 
 /**
- * A target switched on or off, as a new list in the corners' own order.
+ * A target switched on or off, as a new list in the reading order.
  *
  * The order is kept because the list is read as well as used: the filters are drawn from it,
  * and a target that jumped to the end of the row every time it was switched back on would make

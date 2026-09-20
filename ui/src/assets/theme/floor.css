@@ -67,21 +67,42 @@
   --color-floor-room-ultra-secret: #55503f;
   --color-floor-room-ultra-secret-foreground: #f0ead8;
 
-  /* The pips: one hue per target, three steps down it for the first three ranks. A ranking is
+  /* The bands: one hue per target, three steps down it for the first three ranks. A ranking is
      a sequence, so it is drawn as one — and the step stops at the third because the rules
      order candidates without ever saying how much less likely the fourth is than the third.
 
-     The steps are three colours and not one colour at three opacities: a pip sits on top of
-     whichever room you painted, and a translucent one would take the hue of the floor under
-     it — the same rank reading teal over the Treasure Room and green over the Library. */
-  --color-floor-pip-secret-first: #3d82c4;
-  --color-floor-pip-secret-second: #2b5a86;
-  --color-floor-pip-secret-third: #22405c;
-  --color-floor-pip-super-first: #2a8f80;
-  --color-floor-pip-super-second: #1e6459;
-  --color-floor-pip-super-third: #17463e;
-  --color-floor-pip-ultra-first: #b0568f;
-  --color-floor-pip-ultra-second: #7d3c65;
-  --color-floor-pip-ultra-third: #5a2b49;
-  --color-floor-pip-foreground: #f4eef2;
+     The steps are three colours and not one colour at three opacities: a band covers the cell
+     it is in, and a translucent one would take the hue of whatever is under it.
+
+     **The three hues are as far apart as three hues can be**, and that is a correction. Secret
+     was blue and Super was teal, about forty degrees of hue between them, and the first person
+     to open this screen said the two could not be told apart. Nothing else distinguishes two
+     bands now that the corner is gone — position said which target and no longer does, because
+     the band's width says how many targets want the cell instead. Blue, green and magenta sit
+     a little over a hundred degrees from one another.
+
+     **Every step carries its own ink**, and it changes between the steps on purpose: a band
+     prints its rank, the first step is the brightest of its ramp and the third the darkest, so
+     one foreground across the three is a digit that vanishes at one end. Fill and ink travel
+     together through `bandFill`, exactly like the room kinds above.
+
+     Not yet seen in a real window. */
+  --color-floor-band-secret-first: #5fb0f2;
+  --color-floor-band-secret-first-foreground: #08243b;
+  --color-floor-band-secret-second: #2f6fae;
+  --color-floor-band-secret-second-foreground: #eaf3fb;
+  --color-floor-band-secret-third: #1d4570;
+  --color-floor-band-secret-third-foreground: #eaf3fb;
+  --color-floor-band-super-first: #6ed24f;
+  --color-floor-band-super-first-foreground: #0d2a08;
+  --color-floor-band-super-second: #357f2a;
+  --color-floor-band-super-second-foreground: #ecf7e8;
+  --color-floor-band-super-third: #1f5219;
+  --color-floor-band-super-third-foreground: #ecf7e8;
+  --color-floor-band-ultra-first: #f06bbe;
+  --color-floor-band-ultra-first-foreground: #3a0b2a;
+  --color-floor-band-ultra-second: #ad3d84;
+  --color-floor-band-ultra-second-foreground: #fbe9f4;
+  --color-floor-band-ultra-third: #712655;
+  --color-floor-band-ultra-third-foreground: #fbe9f4;
 }
