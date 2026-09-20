@@ -102,12 +102,16 @@ const BLOCKS_14: [usize; 12] = [27, 41, 55, 69, 83, 97, 116, 130, 144, 173, 423,
 
 /// Single cells for The Forgotten, per boss. 212 belongs to another family.
 ///
-/// Mother and The Beast are `None` on purpose: the spacing between the two 14-blocks is
-/// exactly 34 = 14 + 1 + 19, so their cells are certainly inside 423..=490, but which
-/// cell is The Forgotten's cannot be told from any save we have — those 40 cells are
-/// zero in every one of them. A walk of the whole dated series on 2026-09-12 found no
-/// completion of either boss by The Forgotten or any of the 19, so the absence is
-/// measured and not merely assumed. A guess here would show a mark nobody earned.
+/// Mother closed on 2026-09-20, on a window where T. Eden beat Mother: `[449]` was the only
+/// cell to move in all of 423..=490, which puts the 19-block at 438 and leaves **437** — the
+/// one cell over in 437..=456 — to The Forgotten. Not a cell anybody was seen earning, but
+/// the only one the measured block does not claim.
+///
+/// The Beast is still `None`, and on purpose. The spacing between the two 14-blocks is
+/// exactly 34 = 14 + 1 + 19, so its cell is certainly inside 471..=490, and Mother's group
+/// now says where a group of 34 puts The Forgotten. That is an inference from one worked
+/// example and not a window on this half: a run of The Beast with any of those 20
+/// characters is what closes it. A guess here would show a mark nobody earned.
 const FORGOTTEN: [Option<usize>; 12] = [
     Some(203),
     Some(204),
@@ -119,7 +123,7 @@ const FORGOTTEN: [Option<usize>; 12] = [
     Some(210),
     Some(211),
     Some(213),
-    None,
+    Some(437),
     None,
 ];
 
@@ -130,6 +134,14 @@ const FORGOTTEN: [Option<usize>; 12] = [
 /// four characters agree on it — Bethany (+0), Jacob & Esau (+1), T. Cain (+4) and
 /// T. Azazel (+9), each on a day the Delirium kill counter also rose. What sits in
 /// 386..=403 is still unread.
+///
+/// Mother closed on 2026-09-20, and on **one** character rather than four: T. Eden (+11),
+/// row 26, whose cell `[449]` was the only one to move in 423..=490 across the window. The
+/// three facts that pinned 423 and 457 all agree on it — achievement 567, whose requirement
+/// is *Mother* + *Tainted Eden*; the Mother kills tally up by exactly one; and index 188 at
+/// `1 << 30`, which is that character's id and not its row here. One character is enough
+/// where four were needed for Delirium because this block is bracketed on both sides by
+/// measured bases: 423..=436 below it, 457 above, with no slack for it to sit anywhere else.
 const BLOCKS_19: [Option<usize>; 12] = [
     Some(214),
     Some(233),
@@ -141,7 +153,7 @@ const BLOCKS_19: [Option<usize>; 12] = [
     Some(347),
     Some(366),
     Some(404),
-    None,
+    Some(438),
     None,
 ];
 
