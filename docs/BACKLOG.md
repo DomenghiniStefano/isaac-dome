@@ -779,20 +779,34 @@ page's legend row shows the same. Without the game, nothing changes.
 
 ---
 
-## B20 — "Non leggibile" leaves the matrix: close the 40 cells (measurement, then `core-save` and `ui`)
+## B20 — "Non leggibile" leaves the matrix: close the cells (measurement, then `core-save` and `ui`)
 
-**Needs:** a measurement — one run of Mother with a Tainted character closes the 20 × 2 block; the dated series has been walked and cannot.
+**Needs:** a measurement — one run of **The Beast** with any of those 20 characters. Mother's half was measured on 2026-09-20; the dated series has been walked and cannot give the other.
 
 Logged 2026-09-12, a product decision from the owner: the matrix shouldn't say "non
 leggibile". The state has to be resolved, not restyled.
 
 ### What we already have
 
-- **40 cells** the app can't place: Mother and The Beast for The Forgotten and the 19
-  Tainted characters, a 20 × 2 block in the bottom-right corner. Spacing puts them inside
-  423–490 (Mother for the 14 originals starts at 423, The Beast at 457), but they are zero
-  in every save collected, so `counter_index` answers `None` and the cell draws `unknown`
-  (CLAUDE.md, "Counters and marks"; `docs/STATUS.md`).
+- **20 cells** the app can't place: The Beast for The Forgotten and the 19 Tainted
+  characters, at 471–490 by spacing, zero in every save collected, so `counter_index`
+  answers `None` and the cell draws `unknown`.
+- **Mother's half, measured 2026-09-20** and the reason the number above is 20 and not 40.
+  T. Eden beat Mother on hard; `[449]` was the only cell to move in all of 423–490. Row 26
+  is `+11` into the 19-block, so the block starts at **438** and the cell left over in
+  437–456 is The Forgotten's, at **437**. Three facts, all exact: achievement **567**, whose
+  requirement in `graph`'s rules is *Mother* + *Tainted Eden*; `[491] 6 → 7`, up by exactly
+  the one new mark; and index 188 at `1 << 30`. The window is
+  `samples/windows/20260919-pre-tainted-mother.…` → `…/20260920-post-tainted-eden-mother.…`,
+  with that run's `log.txt` beside it.
+- **Two findings that came with it**, neither of them what the entry was looking for.
+  Index 188 is indexed by the **game's character id**, not by our row order — T. Eden is row
+  26 and the bit was 30 — which no window on an original character could have shown, because
+  there the two coincide. And `[449] 0 → 3` on a **hard** win is the first observation of
+  bit 1 outside Greed: it corroborates B22's reading of `hard` as a subset of `normal`, and
+  it explains why Greed's bit 1 *replaced* instead of adding — a mode is alternative to the
+  mode below it, a difficulty is not alternative to the run. One observation is not a name:
+  what would close it is a win on **normal** on a cell still at zero.
 - The rendering of that state: the dashed hatched cell in `MarkCell.vue`, the legend entry
   `completion.legend.unknown`, the KPI `completion.grid.unreadable`, the tooltip
   `completion.cell.unknown` ("la colonna non è localizzata per questo personaggio"), all in
@@ -802,14 +816,20 @@ leggibile". The state has to be resolved, not restyled.
 
 ### What's missing
 
-1. **The measurement, which no code can replace**: one run of Mother, then of The Beast, with
-   a Tainted character (or The Forgotten), with a backup of the save before and after. The
-   cell that changes names the base, and the same three facts that pinned 404, 423 and 457
-   have to hold — the achievement, the kill counter rising by one, index 188 naming the row.
-   The backups in `save_backups\` are the series; `samples/` gets the two dated files.
-2. Then the tables in `core-save` take the two bases, `counter_index` stops returning `None`
-   for those rows, and the fixture counts in the spec (408 with 40 unknown) become 408 with
-   0 — the `marks_real.rs` properties have to stay green on the whole series.
+1. **The measurement, which no code can replace**: one run of **The Beast** with a Tainted
+   character (or The Forgotten), with a snapshot of the save before and after. The cell that
+   changes names the base, and the same three facts have to hold — the achievement, the kill
+   counter `[492]` rising by one, index 188 naming the character **by its game id**. The
+   "before" half goes in `samples/windows/`, and the "after" is also a dated point of the
+   series, so it goes in `samples/` under its `YYYYMMDD.` name.
+   **Do not take the symmetry as the answer.** Mother's group says The Forgotten sits at the
+   front of its 20, which would put The Beast's at 471 and the 19 from 472 — exact tiling on
+   both sides, no slack. It is still one worked example and not a window on this half, and
+   the tables keep `None` rather than carry a derived index that reads like a measured one.
+2. Then the tables in `core-save` take the last two entries, `counter_index` stops returning
+   `None` for those rows, and the fixture counts (408 with 20 unknown, as of 2026-09-20)
+   become 408 with 0 — the `marks_real.rs` properties have to stay green on the whole series.
+   The Mother half of this step landed on 2026-09-20 and is the shape the rest follows.
 3. Then the UI drops what only those cells needed: the legend row "non leggibile" and the
    "non leggibili" KPI, whose count would be permanently zero. `MarkCell`'s `unknown` visual
    and the `nothingReadable` message **stay**: they are the degrade-never-fail path for a
