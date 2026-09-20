@@ -34,7 +34,10 @@ import RoomSymbol from './RoomSymbol.vue'
 // one gesture with two values, and a separate eraser would let the screen be in a state where
 // neither is chosen.
 
-const props = defineProps<{ brush: RoomKindView | null }>()
+const props = defineProps<{
+  brush: RoomKindView | null
+  icons: Map<RoomKindView, string>
+}>()
 const emit = defineEmits<{ pick: [brush: RoomKindView | null] }>()
 const { t } = useMessages()
 
@@ -70,7 +73,7 @@ useShortcut((event) => {
             :aria-label="t(`floor.room.${kind}`)"
             @click="emit('pick', kind)"
           >
-            <RoomSymbol :kind="kind" />
+            <RoomSymbol :kind="kind" :url="icons.get(kind) ?? null" />
             <span class="absolute right-0 bottom-0 text-micro">{{
               paletteKey[kind]
             }}</span>

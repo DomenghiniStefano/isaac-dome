@@ -129,6 +129,7 @@ pub fn run() {
             runs::runs,
             runs::live,
             floor::floor_candidates,
+            floor::room_icons,
             update::update_status,
             update::check_update,
             update::install_update

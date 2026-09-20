@@ -27,6 +27,8 @@ const { t } = useMessages()
 
 // The grid answers from the moment it opens: an empty floor is a diagnostic, not a blank.
 void store.solve()
+// The pictures are asked once, beside the first answer: they do not change with the drawing.
+void store.loadIcons()
 
 const solutions = computed(() => store.view?.solutions ?? [])
 
@@ -70,9 +72,14 @@ const placeOf = (cell: number): string => {
     <div class="flex flex-col items-start gap-4 lg:flex-row">
       <Card class="w-full lg:w-fit lg:shrink-0">
         <CardContent class="flex flex-col gap-3">
-          <FloorPalette :brush="store.brush" @pick="store.brush = $event" />
+          <FloorPalette
+            :brush="store.brush"
+            :icons="store.icons"
+            @pick="store.brush = $event"
+          />
           <FloorGrid
             :cells="store.cells"
+            :icons="store.icons"
             :solutions="solutions"
             :shown="store.shown"
             @stroke="store.stroke($event)"
