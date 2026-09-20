@@ -342,6 +342,17 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
             **The Start Room's membership is unstated and stays that way.** The wiki's `Rooms`
             page files it under neither `Normal` nor `Special`, so `SPECIAL_KINDS` does not
             carry it and a dead end hanging off the start room is not silently decided.
+            **One of the nine was wrong, and it was wrong in the quietest way there is** →
+            **B68**, found on 2026-09-20 by putting the screen beside
+            `tboisecretroomfinder.com`. The Ultra Secret target had a single rule, `Unmodelled`,
+            so it answered **0 on every grid there is** — and a target that answers nothing is
+            indistinguishable from one answering correctly that there is nowhere. The report's
+            reasoning ("red rooms are created during a run and are not painted here") is true
+            about red rooms and false about the rule, which is about the **sides where one could
+            open**: an empty cell. Five rules replace the one, three new constraints with them,
+            and only the sentences about room **shapes** are still unmodelled. §6 of
+            `docs/superpowers/reports/2026-09-15-secret-room-rules.md` is the correction, kept
+            beside the wrong reasoning rather than instead of it.
             **The first window opened on this screen was the owner's, on 2026-09-18, and it found
             it unreadable** → **B64**. Fourteen room kinds paint the same grey square, so the grid
             cannot show what you drew on it; the start room is marked for a screen reader and for
@@ -794,10 +805,12 @@ own**: B12 and B65 are a design-system list and a keyboard defect, and the group
 the entry that reported the defect said the screen owed one. Four of its lines are the palette's
 keyboard, which is exactly the kind of thing this repo cannot test and only a window can judge.
 
-**80 in fourteen groups on 2026-09-20**, with the Floor grid's eight. That group is the one the
+**81 in fourteen groups on 2026-09-20**, with the Floor grid's nine. That group is the one the
 2026-09-18 paragraph above asked for: the screen whose defect opened B64 had no group here, and
-the branch that redrew it wrote one before closing. Seven of the eight need only a window; the
-eighth needs the game installed, because what it checks is the game's own picture.
+the branch that redrew it wrote one before closing. Eight of the nine need only a window; the
+ninth needs the game installed, because what it checks is the game's own picture. **The ninth
+line arrived the same day, from B68**, and it is the one nobody could have written earlier: the
+Ultra tab had never had a candidate in it to look at.
 
 
 **This is the live list; the reports are the record.** Each line below was written by the
@@ -877,6 +890,12 @@ and not fifteen; what is left needs a real window, a real screen and a real pair
       card. The layout is `lg:flex-row` against a grid that is a fixed 27.5rem: the question is
       what happens at the width the window actually opens at, not at the one a browser was
       resized to.
+- [ ] **The Ultra tab lights cells, and its three levels are told apart** (B68). Until 2026-09-20
+      that tab read 0 on every grid, so nothing in this group had ever seen it with anything in
+      it. Two things to look at: that a floor painted from a real run puts candidates where the
+      reference site puts them, and that the 1-room band — which is the one deliberately *not*
+      suppressed by a better cell — does not flood the map with third-level cells until the grid
+      reads as noise. If it does, the rank is right and the **drawing** is wrong.
 - [ ] **NEEDS GAME — the game's own minimap icons appear, and they are the right ones.** With the
       game installed each room wears its icon instead of our drawing. Two things to look at: that
       the icon is there at all, and that **the Challenge Room wears the crossed swords**. That one
