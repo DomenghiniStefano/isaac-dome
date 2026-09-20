@@ -130,7 +130,14 @@ export const en: MessageSchema = {
     rooms: 'Rooms',
     startRoomMissing: 'About the start room',
     cellCandidate: '{cell} — {target}, place {rank}',
+    move: {
+      left: 'Move everything left',
+      up: 'Move everything up',
+      down: 'Move everything down',
+      right: 'Move everything right',
+    },
     rank: {
+      title: 'What a colour means',
       note: 'The fuller the square, the likelier the place. Past the third the rules say no more.',
     },
     unresolved: 'What the grid cannot judge',

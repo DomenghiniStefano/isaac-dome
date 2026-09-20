@@ -134,7 +134,14 @@ export const it = {
     rooms: 'Stanze',
     startRoomMissing: 'Sulla stanza di partenza',
     cellCandidate: '{cell} — {target}, posto {rank}',
+    move: {
+      left: 'Sposta tutto a sinistra',
+      up: 'Sposta tutto in alto',
+      down: 'Sposta tutto in basso',
+      right: 'Sposta tutto a destra',
+    },
     rank: {
+      title: 'Cosa vuol dire un colore',
       note: 'Più pieno il quadrato, più probabile il posto. Oltre il terzo le regole non dicono altro.',
     },
     unresolved: 'Quello che la griglia non può giudicare',

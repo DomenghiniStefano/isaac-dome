@@ -54,8 +54,22 @@ export const useFloorStore = defineStore(StoreId.Floor, () => {
     }
   }
 
-  const stroke = async (path: number[]): Promise<void> => {
+  // Paint lands at once; the rules are asked afterwards, once. The two are separate because a
+  // drag is many cells and one question: a `solve` per cell the pointer brushes past is a
+  // round trip to Rust for an answer about a corridor that is still being drawn.
+  const paint = (path: number[]): void => {
     cells.value = paintStroke(cells.value, path, brush.value)
+  }
+
+  const settle = async (): Promise<void> => {
+    await solve()
+  }
+
+  // The whole drawing, one cell over — already worked out by `shift`, which is also what
+  // decided the arrow could be pressed at all. The store does not shift it a second time:
+  // asking the same question twice is how the answer and the button end up disagreeing.
+  const move = async (to: PaintedCells): Promise<void> => {
+    cells.value = to
     await solve()
   }
 
@@ -83,7 +97,9 @@ export const useFloorStore = defineStore(StoreId.Floor, () => {
     shown,
     icons,
     loadIcons,
-    stroke,
+    paint,
+    settle,
+    move,
     erase,
     clear,
     solve,
