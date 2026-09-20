@@ -86,6 +86,43 @@ if (!existsSync(sigPath)) {
   )
 }
 
+// **The signature has to carry the version it was signed for**, because `requireSignedVersion`
+// is on in `tauri.conf.json` and an app with that flag rejects a signature without one —
+// `MissingSignedVersion`, which reaches the user as `rejected`. The Tauri CLI writes the field
+// from 2.11.5 onward, and this repository was one version short of that on 2026-09-20: the
+// first signed build came out with `timestamp:` and `file:` and nothing else, which would have
+// been an update every installation refused, discovered only after publishing.
+//
+// A minisign signature file is base64 over four lines; the third is the trusted comment, which
+// the global signature covers, written as tab separated `key:value` pairs.
+const signature = readFileSync(sigPath, 'utf8').trim()
+const trusted = Buffer.from(signature, 'base64')
+  .toString('utf8')
+  .split('\n')
+  .find((l) => l.startsWith('trusted comment:'))
+
+if (!trusted) die('the signature has no trusted comment; it is not a minisign signature')
+
+const signedVersion = trusted
+  .split('\t')
+  .map((f) => f.trim())
+  .find((f) => f.startsWith('version:'))
+  ?.slice('version:'.length)
+
+if (!signedVersion) {
+  die(
+    'the signature does not say which version it was signed for, and `requireSignedVersion` ' +
+      'is on — every installation would refuse this update. The Tauri CLI writes that field ' +
+      'from 2.11.5; check `pnpm tauri --version` and build again. See docs/release.md.',
+  )
+}
+if (signedVersion !== version) {
+  die(
+    `the signature was made for ${signedVersion} and the configured version is ${version}. ` +
+      'Build again; this bundle belongs to another release.',
+  )
+}
+
 const notesPath = process.argv[2]
 if (notesPath && !existsSync(notesPath)) die(`no release notes at ${notesPath}`)
 
@@ -97,7 +134,7 @@ const manifest = {
   pub_date: new Date().toISOString(),
   platforms: {
     [PLATFORM]: {
-      signature: readFileSync(sigPath, 'utf8').trim(),
+      signature,
       // The tag this release is about to be published under. `v` + the version, which is the
       // shape `docs/release.md` asks for and the only part of this file that depends on a step
       // that has not happened yet.
