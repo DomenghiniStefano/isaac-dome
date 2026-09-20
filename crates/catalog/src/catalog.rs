@@ -11,6 +11,7 @@ use crate::ids::{AchievementId, BossId, ChallengeId, CharacterId, ItemId};
 use crate::itempools::{self, Pool, PoolMembership};
 use crate::items::{self, Item, ItemKind};
 use crate::metadata;
+use crate::minimap;
 use crate::players::{self, Character};
 use crate::reward;
 use crate::sprite::SpriteRef;
@@ -19,7 +20,7 @@ use crate::text::{Language, Text};
 use crate::unlock::{self, Unlock};
 
 /// The sources, by logical path. Public: callers and tests know what will be asked for.
-pub const SOURCES: [(&str, Source); 9] = [
+pub const SOURCES: [(&str, Source); 10] = [
     ("items.xml", Source::Items),
     ("items_metadata.xml", Source::Metadata),
     ("stringtable.sta", Source::Strings),
@@ -29,6 +30,7 @@ pub const SOURCES: [(&str, Source); 9] = [
     ("itempools.xml", Source::ItemPools),
     ("challenges.xml", Source::Challenges),
     ("bossportraits.xml", Source::BossPortraits),
+    ("gfx/ui/minimap_icons.anm2", Source::MinimapIcons),
 ];
 
 /// The logical path of a source: `build` goes through here, so SOURCES is the only list.
@@ -47,7 +49,8 @@ fn path_of(source: Source) -> &'static str {
             | Source::Achievements
             | Source::ItemPools
             | Source::Challenges
-            | Source::BossPortraits => "",
+            | Source::BossPortraits
+            | Source::MinimapIcons => "",
         })
 }
 
@@ -61,6 +64,8 @@ pub struct Catalog {
     strings: Option<Strings>,
     diagnostics: Vec<Diagnostic>,
     unlocks: unlock::Index,
+    /// The game's own minimap icons, by the name the game gave each one.
+    minimap: BTreeMap<String, SpriteRef>,
 }
 
 impl Catalog {
@@ -156,6 +161,9 @@ impl Catalog {
                     rect: Some(rect),
                 });
         }
+        let minimap = fetch(Source::MinimapIcons, &mut diagnostics)
+            .map(|b| minimap::parse(&b, &mut diagnostics))
+            .unwrap_or_default();
         assign_rewards(&achievements, &mut challenges, &mut diagnostics);
         let unlocks = build_unlocks(&items, &characters, &bosses, &challenges);
         diagnose_unresolved_keys(&items, &characters, strings.as_ref(), &mut diagnostics);
@@ -169,7 +177,16 @@ impl Catalog {
             strings,
             diagnostics,
             unlocks,
+            minimap,
         }
+    }
+
+    /// One of the game's own minimap icons, by the name the game gave it.
+    ///
+    /// `None` covers both "no such icon" and "the game is not installed": the caller draws
+    /// its own symbol either way, and nothing here invents a crop.
+    pub fn minimap_icon(&self, name: &str) -> Option<&SpriteRef> {
+        self.minimap.get(name)
     }
 
     pub fn item(&self, kind: ItemKind, id: ItemId) -> Option<&Item> {

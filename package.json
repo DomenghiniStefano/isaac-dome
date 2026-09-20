@@ -9,6 +9,8 @@
     "predev": "node scripts/dev-reset.mjs && node scripts/prune-incremental.mjs",
     "dev": "tauri dev --config crates/app/tauri.conf.json",
     "build": "tauri build --config crates/app/tauri.conf.json",
+    "release": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/release-build.ps1",
+    "release:manifest": "node scripts/release-manifest.mjs",
     "ui:dev": "pnpm --filter ui dev",
     "ui:test": "pnpm --filter ui test",
     "lint": "pnpm --filter ui lint",
@@ -21,7 +23,7 @@
     "ipc:types": "cargo run -q -p ipc --bin ipc-types && pnpm --filter ui exec prettier --write src/lib/ipc/types.ts"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^2.11.4"
+    "@tauri-apps/cli": "^2.11.5"
   },
   "engines": {
     "node": ">=22 <23"

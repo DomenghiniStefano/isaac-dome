@@ -7,6 +7,8 @@
 
 use serde::{Deserialize, Serialize};
 
+use crate::icon::IconRef;
+
 /// A room as the screen paints it.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
@@ -227,4 +229,85 @@ pub fn floor_view(cells: Vec<Option<RoomKindView>>) -> FloorView {
         painted,
         diagnostics,
     }
+}
+
+/// Every room kind, once. Written out rather than derived: the match below makes the compiler
+/// refuse a kind that is missing, which is the only way a list like this stays complete.
+pub const ROOM_KINDS: [RoomKindView; 14] = [
+    RoomKindView::Start,
+    RoomKindView::Normal,
+    RoomKindView::Boss,
+    RoomKindView::Treasure,
+    RoomKindView::Shop,
+    RoomKindView::Curse,
+    RoomKindView::Challenge,
+    RoomKindView::Sacrifice,
+    RoomKindView::Arcade,
+    RoomKindView::Library,
+    RoomKindView::Miniboss,
+    RoomKindView::Secret,
+    RoomKindView::SuperSecret,
+    RoomKindView::UltraSecret,
+];
+
+/// The name the **game** gives a room kind's minimap icon, when it has one.
+///
+/// Three kinds answer `None`, and each for a reason of its own:
+///
+/// - **Normal** — the game draws nothing on a normal room, and neither do we.
+/// - **Start** — `minimap_icons.anm2` has no icon for it. The starting room is a normal room
+///   with the player standing in it, and the marker is the player, not the room.
+/// - none of the others.
+///
+/// **Challenge is a reading, and it is the one that could be wrong.** The file has no
+/// `IconChallengeRoom`: it has `IconAmbushRoom` and `IconBossAmbushRoom`, and the wiki has
+/// exactly two Challenge Room icons, the ordinary one and the boss one. Two names, two
+/// pictures, the same relationship — that is structure and not a resemblance, which is why it
+/// is written here instead of being left blank. It is still the line to suspect first if a
+/// screenshot ever shows the wrong symbol.
+pub fn minimap_icon_name(kind: RoomKindView) -> Option<&'static str> {
+    match kind {
+        RoomKindView::Normal | RoomKindView::Start => None,
+        RoomKindView::Boss => Some("IconBoss"),
+        RoomKindView::Miniboss => Some("IconMiniboss"),
+        RoomKindView::Treasure => Some("IconTreasureRoom"),
+        RoomKindView::Shop => Some("IconShop"),
+        RoomKindView::Curse => Some("IconCurseRoom"),
+        RoomKindView::Challenge => Some("IconAmbushRoom"),
+        RoomKindView::Sacrifice => Some("IconSacrificeRoom"),
+        RoomKindView::Arcade => Some("IconArcade"),
+        RoomKindView::Library => Some("IconLibrary"),
+        RoomKindView::Secret => Some("IconSecretRoom"),
+        RoomKindView::SuperSecret => Some("IconSuperSecretRoom"),
+        RoomKindView::UltraSecret => Some("IconUltraSecretRoom"),
+    }
+}
+
+/// A room kind and the game's own picture of it, when the game is there to have one.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub struct RoomIconView {
+    pub kind: RoomKindView,
+    /// `None` means "draw your own symbol": the game is not installed, the icon is not in the
+    /// sheet, or the kind never had one. The screen cannot tell those apart and does not need
+    /// to — all three end in the same drawing.
+    pub icon_url: Option<String>,
+}
+
+/// The fourteen kinds with whatever picture the game has for each.
+///
+/// Answered on its own and not inside `floor_view`: the icons do not depend on what is
+/// painted, and folding them into an answer that is recomputed on every stroke would send the
+/// same fourteen strings back for every cell the pointer crosses.
+pub fn room_icons(mut icon: impl FnMut(&IconRef) -> Option<String>) -> Vec<RoomIconView> {
+    ROOM_KINDS
+        .iter()
+        .map(|&kind| RoomIconView {
+            kind,
+            // `and_then`, never `and`: `and` would evaluate the lookup for the two kinds that
+            // have no icon and then throw the answer away — a request that cannot succeed,
+            // made anyway, once per screen.
+            icon_url: minimap_icon_name(kind).and_then(|_| icon(&IconRef::Room { kind })),
+        })
+        .collect()
 }
