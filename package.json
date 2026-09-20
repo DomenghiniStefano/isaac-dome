@@ -9,6 +9,7 @@
     "predev": "node scripts/dev-reset.mjs && node scripts/prune-incremental.mjs",
     "dev": "tauri dev --config crates/app/tauri.conf.json",
     "build": "tauri build --config crates/app/tauri.conf.json",
+    "release:manifest": "node scripts/release-manifest.mjs",
     "ui:dev": "pnpm --filter ui dev",
     "ui:test": "pnpm --filter ui test",
     "lint": "pnpm --filter ui lint",

@@ -21,8 +21,14 @@ The full project document is in `docs/PROJECT.md`.
 3. **No game assets in the package.** Images are extracted from the user's own copy at
    runtime. Same for datasets derived from the wiki, which ship with their own license and
    attribution.
-4. **No accounts, no backend, no telemetry.** The app works offline; the network is only
-   for optional dataset updates.
+4. **No accounts, no backend, no telemetry.** The app works offline; the network is used for
+   exactly two things, and both are the user's to switch off. **Optional dataset updates**, and
+   since 2026-09-20 **the app's own updates** — one HTTPS request to `github.com` at launch,
+   carrying an IP address and a user agent and nothing of ours. `autoUpdate` in `settings.json`
+   is on by default and **off means the request does not happen**, not that it happens quietly.
+   Everything about it is in [`docs/release.md`](docs/release.md); the design is
+   `docs/superpowers/specs/2026-09-20-app-update-design.md`. A third use is a change to this
+   constraint, and it gets written here.
 5. **Degrade, never fail.** If a section of the save can't be read, the app still starts,
    shows what it knows, and flags what's missing.
 
@@ -39,7 +45,9 @@ The full project document is in `docs/PROJECT.md`.
   faceted values count an array cell as one value, and Unlock's facets are pure functions —
   and is reconsidered for Collection (3.4).
 - **Backend**: Rust inside Tauri 2. Crates: `steamlocate`, `winreg` (fallback),
-  `keyvalues-parser`, `quick-xml`, `notify`, `rusqlite` (bundled), `serde`.
+  `keyvalues-parser`, `quick-xml`, `notify`, `rusqlite` (bundled), `serde`. Tauri plugins:
+  `single-instance`, `notification`, `dialog`, and — **registered in release builds only** —
+  `autostart` and `updater`.
 - **Tooling**: pnpm, Git Flow with `develop` as the integration branch.
 
 **Rust does everything that touches disk. Vue only ever receives resolved JSON**: the
