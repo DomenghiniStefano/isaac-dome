@@ -29,6 +29,7 @@ mod sprite_png;
 mod summary;
 mod target_sprite;
 mod tray;
+mod update;
 mod want;
 mod wiki;
 mod wiki_target;
@@ -105,6 +106,7 @@ pub use sprite_png::{crop_png, decode_rgba};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
 pub use tray::{tray_action, tray_locale, tray_text, TrayAction, TrayLocale, TrayText};
+pub use update::{UpdateFailure, UpdatePhase, UpdateReason, UpdateState, UpdateView};
 pub use want::{want_view, WantDiagnostic, WantRoute, WantState, WantView, WantedView};
 pub use wiki::{
     rfc3339_to_unix, wiki_index, wiki_info, Block, Dlc, Entry, Infobox, Inline, ListItem,

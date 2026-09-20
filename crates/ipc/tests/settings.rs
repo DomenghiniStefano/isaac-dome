@@ -42,9 +42,22 @@ fn the_default_settings_are_the_default_scale() {
             "scale": 100,
             "stayInBackground": true,
             "resumeTabs": true,
-            "backgroundNoticeShown": false
+            "backgroundNoticeShown": false,
+            "autoUpdate": true
         })
     );
+}
+
+#[test]
+fn a_settings_file_written_before_the_updater_asks_for_updates() {
+    // `autoUpdate` arrives after people already have a `settings.json`, and `#[serde(default)]`
+    // decides what those files mean. It has to mean "on", which is the default for a new
+    // install too: the alternative is an app that silently never updates for exactly the people
+    // who have been using it longest.
+    let existing = r#"{"scale":150,"stayInBackground":false,"resumeTabs":true}"#;
+    let settings: Settings = from_str(existing).expect("a file from before the field");
+    assert!(settings.auto_update);
+    assert!(Settings::default().auto_update);
 }
 
 #[test]
