@@ -1,9 +1,10 @@
 import type { CommandArgs } from '../transport'
-import type { FloorView, RoomKindView } from '../types'
+import { RoomKindView } from '../types'
+import type { FloorCandidate, FloorView, RoomIconView } from '../types'
 
 // `?floor=empty` answers an untouched grid; absent, the fixture solves whatever the screen
-// sends, the way the backend does — with one rule, so the development server can draw the
-// screen without a Rust build.
+// sends, the way the backend does — with three made-up rules, so the development server can
+// draw the screen without a Rust build.
 export const FloorScenario = {
   Empty: 'empty',
   Solve: 'solve',
@@ -13,8 +14,40 @@ export type FloorScenario = (typeof FloorScenario)[keyof typeof FloorScenario]
 const WIDTH = 13
 const CELLS = 169
 
+/**
+ * **These are not the game's rules and are not meant to be.** `crates/floor` holds those, each
+ * carrying the sentence it was read from; what a browser needs instead is the *shapes* the
+ * screen has to draw — a cell one target wants, a cell two want, a cell all three want, and
+ * each of the three ranks — because those are the shapes that cannot be judged by reading the
+ * code. The quotes say so out loud, so a fixture answer is never mistaken for an answer.
+ *
+ * One rule each. They overlap on purpose: the whole question this screen had to answer again
+ * is what a cell looks like when more than one target claims it.
+ */
+const RULES = [
+  {
+    target: 'secret',
+    id: 'fixture-secret',
+    // Three neighbours or more is the best place, two is a lesser one.
+    allowed: (n: number) => n >= 2,
+    rank: (n: number) => (n >= 4 ? 0 : n >= 3 ? 1 : 2),
+  },
+  {
+    target: 'superSecret',
+    id: 'fixture-super',
+    allowed: (n: number) => n >= 1 && n <= 3,
+    rank: (n: number) => (n === 1 ? 0 : n === 2 ? 1 : 2),
+  },
+  {
+    target: 'ultraSecret',
+    id: 'fixture-ultra',
+    allowed: (n: number) => n >= 3,
+    rank: (n: number) => (n >= 4 ? 0 : 1),
+  },
+] as const
+
 const QUOTE =
-  'Secret Rooms are equally as likely to be in a valid location with 3 neighbors, as it is with 4 neighbors.'
+  'Development fixture, not a rule of the game: it exists so the screen can be drawn in a browser.'
 const URL = 'https://bindingofisaacrebirth.wiki.gg/wiki/Secret_Room'
 
 const neighbours = (cell: number): number[] => {
@@ -36,24 +69,30 @@ export const floorAnswer = (
   if (scenario === FloorScenario.Empty || painted === 0) {
     return { solutions: [], painted: 0, diagnostics: [{ kind: 'gridEmpty' }] }
   }
-  const candidates = cells
+  const empty = cells
     .map((cell, index) => ({ cell: index, empty: cell === null }))
     .filter((c) => c.empty)
     .map((c) => ({
       cell: c.cell,
       neighbours: neighbours(c.cell).filter((n) => cells[n] !== null).length,
     }))
-    .filter((c) => c.neighbours >= 2)
-    .map((c) => ({
-      cell: c.cell,
-      neighbours: c.neighbours,
-      rank: c.neighbours >= 3 ? 0 : 1,
-      applied: [{ id: 'secret-neighbours', quote: QUOTE, url: URL }],
-    }))
-    .sort((a, b) => a.rank - b.rank || a.cell - b.cell)
-  return {
-    solutions: [{ target: 'secret', candidates, unresolved: [] }],
-    painted,
-    diagnostics: [],
-  }
+  const solutions = RULES.map((rule) => {
+    const candidates: FloorCandidate[] = empty
+      .filter((c) => rule.allowed(c.neighbours))
+      .map((c) => ({
+        cell: c.cell,
+        neighbours: c.neighbours,
+        rank: rule.rank(c.neighbours),
+        applied: [{ id: rule.id, quote: QUOTE, url: URL }],
+      }))
+      .sort((a, b) => a.rank - b.rank || a.cell - b.cell)
+    return { target: rule.target, candidates, unresolved: [] }
+  })
+  return { solutions, painted, diagnostics: [] }
 }
+
+// The fourteen kinds with no picture at all. A browser has no game to crop one from, and that
+// is the case worth having in front of us by default: it is what a machine without the game
+// shows, and the screen has to be complete without a single icon.
+export const roomIconsAnswer = (): RoomIconView[] =>
+  Object.values(RoomKindView).map((kind) => ({ kind, iconUrl: null }))

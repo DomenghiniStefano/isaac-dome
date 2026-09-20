@@ -90,6 +90,11 @@ pub fn solve(grid: &Grid, rules: &Rules, target: Target) -> Solution {
             Constraint::NeighbourCount { allowed, rank } => {
                 propose(&mut candidates, grid, allowed, *rank, &rule.id)
             }
+            Constraint::RedRoomConnections {
+                at_least,
+                at_most,
+                rank,
+            } => propose_reached(&mut candidates, grid, *at_least, *at_most, *rank, &rule.id),
             // Proposed here like any count rule, so that the narrowing rules below apply to its
             // cells too; whether it survives is decided after the pass, by `resolve_fallbacks`.
             Constraint::NeighbourCountFallback {
@@ -115,6 +120,21 @@ pub fn solve(grid: &Grid, rules: &Rules, target: Target) -> Solution {
             }
             Constraint::NeighbourNotSpecial => {
                 candidates.retain(|c| !grid.neighbour_kinds(c.cell).into_iter().any(is_special));
+                note_applied(&mut candidates, &rule.id);
+            }
+            Constraint::NoPaintedNeighbour => {
+                candidates.retain(|c| grid.neighbour_kinds(c.cell).is_empty());
+                note_applied(&mut candidates, &rule.id);
+            }
+            Constraint::RedRoomForbiddenNeighbour { kinds } => {
+                candidates.retain(|c| {
+                    red_rooms(grid, c.cell).into_iter().all(|red| {
+                        !grid
+                            .neighbour_kinds(red)
+                            .into_iter()
+                            .any(|k| kinds.contains(&k))
+                    })
+                });
                 note_applied(&mut candidates, &rule.id);
             }
             Constraint::DeadEndDistanceRank { rank } => {
@@ -167,6 +187,66 @@ fn propose(candidates: &mut Vec<Candidate>, grid: &Grid, allowed: &[u8], rank: u
                 applied: vec![id.to_string()],
             });
         }
+    }
+}
+
+/// The sides of `cell` where a red room could open: its empty neighbours. A painted neighbour
+/// is not one — the room is already there — and a side outside the grid is not one either,
+/// which is the border the wiki allows rather than a side that fails.
+fn red_rooms(grid: &Grid, cell: u16) -> Vec<u16> {
+    neighbours(cell)
+        .into_iter()
+        .filter(|n| matches!(grid.at(*n), Cell::Empty))
+        .collect()
+}
+
+/// How many distinct painted rooms `cell` reaches through those red rooms.
+///
+/// **Distinct**, because two red rooms beside the same room are one way in and not two, and
+/// the wiki counts rooms reached rather than doors. The cell itself is never counted: it is
+/// empty, and it is the thing being placed.
+///
+/// Nothing on this grid is a red room, so "non-red rooms" is every painted room it reaches.
+/// The ceiling is twelve — four sides, three rooms each — which is why a `u8` is enough.
+fn reached_rooms(grid: &Grid, cell: u16) -> u8 {
+    let mut seen: Vec<u16> = Vec::new();
+    for red in red_rooms(grid, cell) {
+        for n in neighbours(red) {
+            if n == cell || matches!(grid.at(n), Cell::Empty) || seen.contains(&n) {
+                continue;
+            }
+            seen.push(n);
+        }
+    }
+    seen.len() as u8
+}
+
+/// Every empty cell reaching between `at_least` and `at_most` rooms through its red rooms.
+fn propose_reached(
+    candidates: &mut Vec<Candidate>,
+    grid: &Grid,
+    at_least: u8,
+    at_most: Option<u8>,
+    rank: u8,
+    id: &str,
+) {
+    for cell in 0..CELLS as u16 {
+        if !matches!(grid.at(cell), Cell::Empty) {
+            continue;
+        }
+        let reached = reached_rooms(grid, cell);
+        if reached < at_least || at_most.is_some_and(|m| reached > m) {
+            continue;
+        }
+        candidates.push(Candidate {
+            cell,
+            // The rooms *touching* the cell, as for any other candidate — zero, once
+            // `ultra-secret-not-connected` has had its say. The count that earned this one is
+            // two cells out and is not the same measurement, so it does not go in this field.
+            neighbours: grid.neighbour_kinds(cell).len() as u8,
+            rank,
+            applied: vec![id.to_string()],
+        });
     }
 }
 

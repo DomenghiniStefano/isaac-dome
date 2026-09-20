@@ -27,3 +27,8 @@ ui/.ipc-types-check/
 # server stdio porta le credenziali in chiaro. Questo repo è pubblico, e la riga sta qui e non
 # solo nel gitignore globale di una macchina perché quello non protegge chi clona.
 .mcp.json
+
+# The updater's signing key. It lives in `~/.tauri/` and has no business in here: this
+# repository is public, and a key that reaches it can sign an installer every IsaacDome
+# install accepts and runs. Nothing in the tree matches this today — it is a net, not a fix.
+*.key

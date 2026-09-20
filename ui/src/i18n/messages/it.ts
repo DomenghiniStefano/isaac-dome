@@ -55,6 +55,7 @@ export const it = {
     appearance: 'Aspetto',
     background: 'Background',
     tabsSettings: 'Tab',
+    updates: 'Aggiornamenti',
     about: 'Informazioni',
   },
   wikiCategories: {
@@ -118,12 +119,31 @@ export const it = {
   },
   floor: {
     intro:
-      'Disegna la mappa del piano come la vedi sulla minimappa: le celle vuote si accendono dove le regole del gioco permettono una stanza segreta. Ogni cella accesa dice quale regola l’ha accesa e da dove è stata letta.',
-    erase: 'Cancella',
+      'Disegna la mappa del piano come la vedi sulla minimappa: le celle vuote si accendono dove le regole del gioco permettono una stanza segreta, super segreta o ultra segreta.',
     clear: 'Svuota la griglia',
-    painted: 'stanze disegnate',
+    clearConfirm: {
+      title: 'Svuotare la griglia?',
+      body: 'Il piano che hai disegnato sparisce e non si può recuperare.',
+      cancel: 'Annulla',
+      confirm: 'Svuota',
+    },
     neighbours: 'stanze adiacenti',
-    source: 'Fonte',
+    empty: 'vuota',
+    cell: 'Riga {row}, colonna {column}: {room}',
+    at: 'Riga {row}, colonna {column}',
+    rooms: 'Stanze',
+    startRoomMissing: 'Sulla stanza di partenza',
+    cellCandidate: '{cell} — {target}, posto {rank}',
+    move: {
+      left: 'Sposta tutto a sinistra',
+      up: 'Sposta tutto in alto',
+      down: 'Sposta tutto in basso',
+      right: 'Sposta tutto a destra',
+    },
+    rank: {
+      title: 'Cosa vuol dire un colore',
+      note: 'Più pieno il quadrato, più probabile il posto. Oltre il terzo le regole non dicono altro.',
+    },
     unresolved: 'Quello che la griglia non può giudicare',
     none: 'Nessuna cella permessa dalle regole, con quello che hai disegnato finora.',
     failed:
@@ -132,6 +152,11 @@ export const it = {
       secret: 'Stanza segreta',
       superSecret: 'Super segreta',
       ultraSecret: 'Ultra segreta',
+    },
+    targetShort: {
+      secret: 'Segreta',
+      superSecret: 'Super',
+      ultraSecret: 'Ultra',
     },
     room: {
       start: 'Partenza',
@@ -541,6 +566,40 @@ export const it = {
     stayTitle: 'Resta aperta in background',
     stayHint:
       "Chiudendo l'ultima finestra l'app resta accanto all'orologio, nell'area di notifica: un clic sull'icona riapre la finestra. Spenta, chiudere l'ultima finestra chiude l'app.",
+    saveFailedTitle: "L'impostazione non è stata salvata",
+    saveFailed:
+      "L'app si comporta già così, ma non siamo riusciti a scriverlo: al prossimo avvio torna com'era.",
+  },
+  updates: {
+    intro:
+      "Che versione hai, e se ne è uscita una nuova. L'app scarica l'aggiornamento mentre continui a usarla e lo installa quando lo dici tu.",
+    currentVersion: 'Versione installata: {version}',
+    autoTitle: 'Aggiorna automaticamente',
+    autoHint:
+      "Accesa, a ogni avvio l'app chiede a GitHub se c'è una versione più nuova e, se c'è, la scarica. Spenta non parte nessuna richiesta: niente esce da questo computer se non premi «Controlla ora».",
+    unsupported: 'Questa build non si aggiorna da sola.',
+    unsupportedHint:
+      'Non disponibile in questa build. Un installer lanciato da qui sostituirebbe in silenzio la build di sviluppo con una di release, e nessuno se ne accorgerebbe.',
+    idle: 'Non abbiamo ancora controllato in questo avvio.',
+    checking: 'Sto controllando…',
+    upToDate: 'Hai la versione più recente.',
+    downloading: 'Sto scaricando la {version}…',
+    ready: 'La {version} è pronta da installare.',
+    // Non è sfortuna come le altre: quello che è arrivato non è quello che dice di essere.
+    failedRejected:
+      "L'aggiornamento è stato rifiutato: la firma non corrisponde. Non è stato installato niente. Scarica l'installer dalla pagina delle release invece di riprovare da qui.",
+    failedOffline:
+      'Non siamo riusciti a raggiungere GitHub. Riprova quando la connessione torna.',
+    failedNotPublished: 'Non c’è nessuna versione pubblicata da scaricare.',
+    failedInstall:
+      "L'aggiornamento è stato scaricato e l'installazione non è partita. Il file è ancora qui: puoi riprovare.",
+    failedUnknown: "L'aggiornamento non è riuscito.",
+    failedTitle: 'Non è stato possibile installare',
+    notesTitle: 'Cosa cambia',
+    check: 'Controlla ora',
+    install: 'Riavvia e installa',
+    installHint:
+      "L'app si chiude, l'installer va avanti da solo e l'app si riapre da sé.",
     saveFailedTitle: "L'impostazione non è stata salvata",
     saveFailed:
       "L'app si comporta già così, ma non siamo riusciti a scriverlo: al prossimo avvio torna com'era.",
@@ -1035,6 +1094,7 @@ export const it = {
       'La sessione delle tab è troppo grande per essere salvata.',
     autostartNotWritable:
       "Windows non ha accettato la voce di avvio all'accesso.",
+    updateNotReady: "Non c'è nessun aggiornamento scaricato da installare.",
   },
 }
 

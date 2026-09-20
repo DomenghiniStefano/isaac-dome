@@ -342,6 +342,17 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
             **The Start Room's membership is unstated and stays that way.** The wiki's `Rooms`
             page files it under neither `Normal` nor `Special`, so `SPECIAL_KINDS` does not
             carry it and a dead end hanging off the start room is not silently decided.
+            **One of the nine was wrong, and it was wrong in the quietest way there is** →
+            **B68**, found on 2026-09-20 by putting the screen beside
+            `tboisecretroomfinder.com`. The Ultra Secret target had a single rule, `Unmodelled`,
+            so it answered **0 on every grid there is** — and a target that answers nothing is
+            indistinguishable from one answering correctly that there is nowhere. The report's
+            reasoning ("red rooms are created during a run and are not painted here") is true
+            about red rooms and false about the rule, which is about the **sides where one could
+            open**: an empty cell. Five rules replace the one, three new constraints with them,
+            and only the sentences about room **shapes** are still unmodelled. §6 of
+            `docs/superpowers/reports/2026-09-15-secret-room-rules.md` is the correction, kept
+            beside the wrong reasoning rather than instead of it.
             **The first window opened on this screen was the owner's, on 2026-09-18, and it found
             it unreadable** → **B64**. Fourteen room kinds paint the same grey square, so the grid
             cannot show what you drew on it; the start room is marked for a screen reader and for
@@ -721,14 +732,17 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       floor, secret rooms included, count them, and read the line for that `Level::Init`. One
       floor answers it; a second on the alternative path would say whether the rule holds there
       too.
-- [ ] **The 40 unknown cells in the completion matrix** — Mother and The Beast for The
-      Forgotten and the 19. One run of Mother with a Tainted character closes the whole
-      20 × 2 block, because the base indices are already pinned and only the evidence that
-      those cells move is missing.
-      **Measured on 2026-09-12, and the absence is now a finding rather than an assumption**:
+- [ ] **The 20 unknown cells in the completion matrix** — The Beast for The Forgotten and the
+      19. It was 40, and **half of it closed on 2026-09-20**: T. Eden beat Mother on hard,
+      `[449]` was the only cell to move in all of 423–490, and that put the 19-block at 438
+      with The Forgotten's cell at 437. The three facts all held exactly — achievement 567
+      (*Mother* + *Tainted Eden* in the rules), `[491] 6 → 7`, index 188 at `1 << 30`.
+      **Measured on 2026-09-12, and the absence is a finding rather than an assumption**:
       a walk of the whole dated series looking for *any* completion of Mother or The Beast by
-      those 20 characters found none. The blocker is real, the series cannot close it, and it
-      is what keeps 40 nodes of the unlock graph `Partial` instead of answered.
+      those 20 characters found none. That is still why the remaining half needs a run rather
+      than a re-read, and it keeps 20 nodes of the unlock graph `Partial` instead of answered.
+      The symmetry with Mother's group says where each of the 20 sits; the tables keep `None`
+      anyway, because one worked example is not a window on this half.
 - [x] **A save of the 642 / 523 era in `samples/`** — **already there, and this line asked for
       the wrong era.** `each_era_declares_its_own_counts` reads that row from
       `20260905.rep+persistentgamedata1.dat`, which has been in `samples/` for ten days; the row
@@ -794,6 +808,14 @@ own**: B12 and B65 are a design-system list and a keyboard defect, and the group
 the entry that reported the defect said the screen owed one. Four of its lines are the palette's
 keyboard, which is exactly the kind of thing this repo cannot test and only a window can judge.
 
+**81 in fourteen groups on 2026-09-20**, with the Floor grid's nine. That group is the one the
+2026-09-18 paragraph above asked for: the screen whose defect opened B64 had no group here, and
+the branch that redrew it wrote one before closing. Eight of the nine need only a window; the
+ninth needs the game installed, because what it checks is the game's own picture. **The ninth
+line arrived the same day, from B68**, and it is the one nobody could have written earlier: the
+Ultra tab had never had a candidate in it to look at.
+
+
 **This is the live list; the reports are the record.** Each line below was written by the
 sub-project that produced it and is unticked *there* too, but a report is true on its day and is
 never re-checked — so ticking a line **here** is what closes it, and the report stays as it was
@@ -840,6 +862,48 @@ in `crates/app/tauri.conf.json`).
       back holding the same runs it held, and the totals must not move. If a run is missing after
       that, the fold lost it — and the cache that would have hidden the loss is exactly what the
       version bump threw away.
+
+### The Floor grid (B64, redrawn 2026-09-20) — fourteen colours and three corners
+
+The screen said one thing per cell and now says two: what you painted, and what the rules make of
+it. **Everything left in it is a judgment a browser cannot make** — whether fourteen hues are told
+apart at 2rem, whether three pips in three corners of a 32px square read as three answers or as
+noise. A browser drew all of it while it was being written, which is why the list is eight lines
+and not fifteen; what is left needs a real window, a real screen and a real pair of eyes.
+
+- [ ] **The fourteen room colours are told apart at 2rem**, on the grid and on the palette. They
+      are the game's own minimap colours, so the test is not "are they pretty" but "does a player
+      who knows the game read them without stopping". The three greys — Secret, Super Secret,
+      Ultra Secret — are the ones to look at first: they are the closest together by design.
+- [ ] **Three pips in three corners of one cell still read as three answers.** A cell lit by all
+      three targets carries top-left, top-right and bottom-left at once, each with a digit at
+      `text-micro`. If that reads as a smudge rather than as three, the fixed-corner idea is wrong
+      and the filters are load-bearing instead of convenient.
+- [ ] **The rank digit is legible inside the pip.** 0.8125rem of square with a 0.625rem numeral on
+      it, over nine different fills. The third step is the darkest and the one to check.
+- [ ] **Painting a corridor by dragging does what the hand expects**, and the right button rubs out
+      without changing the brush. Both were written against a browser's pointer events; a webview
+      is not obliged to agree.
+- [ ] **The number keys pick a brush** — `1` to `0`, then `Q W E R`, and `Backspace` for the eraser
+      — with the window focused and nothing else claiming them. They are single keys with no
+      modifier, which is the kind of shortcut that collides silently.
+- [ ] **Clearing asks first, and the red reads as a warning** rather than as decoration. It is the
+      only irreversible thing on the screen and the only red button in the app.
+- [ ] **The two columns hold at the window's real width**, and the grid never wraps inside its own
+      card. The layout is `lg:flex-row` against a grid that is a fixed 27.5rem: the question is
+      what happens at the width the window actually opens at, not at the one a browser was
+      resized to.
+- [ ] **The Ultra tab lights cells, and its three levels are told apart** (B68). Until 2026-09-20
+      that tab read 0 on every grid, so nothing in this group had ever seen it with anything in
+      it. Two things to look at: that a floor painted from a real run puts candidates where the
+      reference site puts them, and that the 1-room band — which is the one deliberately *not*
+      suppressed by a better cell — does not flood the map with third-level cells until the grid
+      reads as noise. If it does, the rank is right and the **drawing** is wrong.
+- [ ] **NEEDS GAME — the game's own minimap icons appear, and they are the right ones.** With the
+      game installed each room wears its icon instead of our drawing. Two things to look at: that
+      the icon is there at all, and that **the Challenge Room wears the crossed swords**. That one
+      is a reading — the file has no `IconChallengeRoom`, only `IconAmbushRoom` — and a wrong
+      symbol there is the only way to find out it was wrong.
 
 ### The small follow-ups (B12 and B65) — a keyboard nobody can test, and three colours
 

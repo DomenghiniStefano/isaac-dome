@@ -145,8 +145,25 @@ structural half of that reading, and it is pinned by
 in `crates/ipc/tests/marks_real.rs`. The two **levels** are the unmeasured half **except in
 one column**: in **Greed**, bit 1 is **Ultra Greedier**, measured on 2026-09-12 on three days
 with three different characters (Keeper, Judas, Magdalene), each time the right character's
-cell. What bit 1 means in the other eleven is still unmeasured, and `graph::rules::MarkLevel`
-is therefore named `Base` / `Second` after the bits and not `Hard` after a meaning. The
+cell.
+
+**Outside Greed there is now exactly one observation, and it says "hard".** On 2026-09-20
+Mother was beaten with T. Eden **on hard**, on a virgin cell, and `[449]` went **0 → 3** — bits
+0 and 1 together, in one event. That is what `ipc` already bet on: B22 counts `hard` as a
+*subset* of `normal` (`bits & 2` inside `bits & 3`), on the reasoning that a mark taken on hard
+was taken at all. The bet is now corroborated instead of merely allowed.
+
+It also dissolves the apparent tension with Greed, where the same bit was seen *replacing*
+rather than adding (`1 → 2`, B58). A **mode** is alternative to the mode below it, so Greedier
+overwrites Greed; a **difficulty** is not alternative to the run, so hard lights both. Bit 1 is
+"the second level of that column", and what that level *is* differs per column.
+
+**One observation does not name a bit**, so `graph::rules::MarkLevel` stays `Base` / `Second`
+after the bits and not `Hard` after a meaning. What closes it is the opposite discriminator:
+**a win on normal, on a cell still at zero**. A `1` there confirms the reading; a `3` refutes it
+and sends the search elsewhere. The difficulty is **not in the log** — checked on
+2026-09-20 across the whole file, the game never writes it, not even in the seed line — so it
+has to be asked of the player while the run is fresh, or it is lost. The
 property is kept by `winning_greedier_sets_the_second_bit_of_that_characters_greed_cell` in
 `crates/ipc/tests/progress_real.rs`. Still **don't compute completion percentages**: what
 forbids them now is B22/B23, not an unread bit.
@@ -171,6 +188,25 @@ three independent facts on the day a cell changed: an achievement whose wiki req
 that boss, the kill counter rising by exactly as many as the new marks, and index **188** —
 a bitmask of the characters that won the run, which names the row. Two properties in
 `crates/ipc/tests/marks_real.rs` keep the tables answerable to the series.
+
+**Index 188 is indexed by the game's character id, not by our row order**, measured
+2026-09-20 and not knowable before. The 34-row order in `ipc::marks::CHARACTERS` puts T. Eden
+at row **26**; the bit that lit when T. Eden won was **30**, which is what
+`crates/graph/rules/requirements.json` calls that character (`{"kind":"character","id":30}`).
+The two readings were indistinguishable while every measured window was an *original*
+character, because there rows and ids coincide — Magdalene is row 1 and id 1. It took a
+Tainted character to separate them, and any future use of 188 has to map through the id.
+
+**Mother's group of 34 closed on 2026-09-20**, on the window this section had been asking for:
+T. Eden beat Mother and `[449]` was the **only** cell to move in all of 423..=490. Row 26 is
+`+11` into the 19-block, so the block starts at **438** and the single cell left over in
+437..=456 is The Forgotten's, at **437**. All three facts hold and none of them is loose:
+achievement **567**, whose requirement in the rules file is literally *Mother* + *Tainted
+Eden*; `[491] 6 → 7`, up by exactly the one new mark; and 188 as above. One character was
+enough where Delirium needed four, because this block is bracketed on **both** sides by
+measured bases — 423..=436 below, 457 above — with no slack for it to sit anywhere else.
+`mothers_group_of_34_tiles_from_its_own_base_to_the_beasts` in
+`crates/core-save/tests/marks_layout.rs` is that arithmetic, and it needs no sample.
 
 **Those bases hold in the 638 era too, measured 2026-09-17** (B58), and that is what says
 they hold in the 641 era nobody can walk. Section 2 is **496** cells in the 638 era, **521**
@@ -220,10 +256,13 @@ So the first loss *breaks* the positive streak without opening the negative one,
 opens it. Both predictions made before the second run — that 22 and 188 would stay at 0 — held,
 which is what licenses reading 113's move as the new fact rather than as one of theirs.
 
-Still open: documented names reach 284; **40 cells** (Mother and The Beast for The Forgotten
-and the 19) sit inside 423–490 by spacing but are zero in every save collected, so they stay
-`Unknown` rather than pointing at a guess — one run of Mother with a Tainted character
-closes them. Index 385 is a counter on its own, 386–403 are eighteen cells never seen
+Still open: documented names reach 284; **20 cells** — The Beast for The Forgotten and the
+19, at 471–490 by spacing — are zero in every save collected, so they stay `Unknown` rather
+than pointing at a guess. **It was 40 until 2026-09-20**, when a window on T. Eden beating
+Mother closed the other half; what closes this one is the same run against The Beast. The
+symmetry with Mother's group says where each of the 20 sits, but an inference from one worked
+example is not a window, and a derived index must not be told from a measured one only by
+reading the git log. Index 385 is a counter on its own, 386–403 are eighteen cells never seen
 moving, and 493–522 is a family of counters that move several per session.
 
 ### The bestiary (section 10)
