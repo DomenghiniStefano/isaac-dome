@@ -23,6 +23,10 @@ const keepsPx: Record<string, string> = {
   '--radius-input': 'the same',
   '--container-tab-narrow':
     'a container query is compared against a used width, and the number is a fact about the drawn tab',
+  '--container-compact':
+    'the same: a threshold is compared against a used width, and this one is measured at scale 100 (spec 3.13a §5)',
+  '--container-regular': 'the same',
+  '--container-wide': 'the same',
 }
 
 describe('the size tokens', () => {
