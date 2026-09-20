@@ -56,7 +56,7 @@ const choose = (value: unknown): void => {
     <ToggleGroupItem
       v-for="target in TARGET_ORDER"
       :key="target"
-      class="flex-1 gap-2"
+      class="min-w-0 flex-1 gap-2"
       :value="target"
     >
       <span
@@ -64,7 +64,10 @@ const choose = (value: unknown): void => {
         class="size-3 shrink-0 rounded-cell"
         :class="targetFill[target]"
       />
-      <span>{{ t(`floor.target.${target}`) }}</span>
+      <!-- The short name, because three of these share the grid's 27.5rem and "Stanza segreta"
+           three times over does not fit in it. The full name is on the rules below, where
+           there is a line to write it on. -->
+      <span class="truncate">{{ t(`floor.targetShort.${target}`) }}</span>
       <span class="tabular-nums">{{ countOf.get(target) ?? 0 }}</span>
     </ToggleGroupItem>
   </ToggleGroup>

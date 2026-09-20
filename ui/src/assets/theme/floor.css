@@ -11,6 +11,15 @@
   --spacing-floor-cell: 2rem;
   --spacing-floor-gap: 0.125rem;
 
+  /* The grid's own width, 27.5rem, derived rather than written: thirteen cells and the twelve
+     hairlines between them. It exists because everything stacked with the grid has to be that
+     wide and no wider — the card is sized to its content, so one long line under the grid (the
+     legend's sentence) widened the whole card and took the right-hand column's room with it.
+     A number typed here instead of the calc would be a number to keep in step with two others. */
+  --spacing-floor-grid: calc(
+    13 * var(--spacing-floor-cell) + 12 * var(--spacing-floor-gap)
+  );
+
   /* Our own drawing inside a cell, when the game is not here to lend its own. A fraction of
      the cell above, and it moves with it. */
   --spacing-floor-symbol: 1.0625rem;
@@ -110,6 +119,22 @@
   --shadow-floor-glow-secret: inset 0 0 0.5rem #3f8fd6cc;
   --shadow-floor-glow-super: inset 0 0 0.5rem #4fa538cc;
   --shadow-floor-glow-ultra: inset 0 0 0.5rem #c2569bcc;
+
+  /* The place in the order, printed in the middle of the cell — and the halo that is what
+     makes printing it possible at all.
+
+     **One ink cannot read on this cell**, which is why the two earlier designs put the number
+     somewhere small and dark instead. The digit sits at the cell's centre and what is behind
+     it depends on the answer: the bright fill for the best place, the dark veil for the third,
+     and the fill's own edge crossing the glyph for the second. A pale ink disappears on the
+     first, a dark one on the third, and there is no third colour that survives both.
+
+     A dark halo around a pale digit does. It is the same trick a game HUD uses over a moving
+     background and for the same reason: the contrast travels with the glyph instead of being
+     borrowed from whatever it lands on. Two shadows rather than one, because a single blur
+     wide enough to cover is too faint at the glyph's own edge. */
+  --color-floor-rank-foreground: #f6f2ea;
+  --text-shadow-floor-rank: 0 0 0.1875rem #000000e6, 0 0 0.375rem #000000cc;
 
   /* How much of the cell the answer fills: full for the best place the rules allow, less for
      each step after it. It replaces the rank printed inside the square — a 2rem cell is not
