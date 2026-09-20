@@ -38,3 +38,10 @@ pub fn unlock_view_of(nodes: Vec<crate::UnlockNode>) -> crate::UnlockView {
         diagnostics: vec![],
     }
 }
+
+/// A state resting at a phase. The app only ever starts at `Idle` and moves through the
+/// calls on `UpdateState`, so this exists for the tests that have to enter the machine
+/// somewhere else — "a check is allowed from here", "a late chunk changes nothing there".
+pub fn update_at(phase: crate::UpdatePhase) -> crate::UpdateState {
+    crate::UpdateState::at(phase)
+}

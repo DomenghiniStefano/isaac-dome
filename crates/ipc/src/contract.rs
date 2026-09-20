@@ -238,6 +238,10 @@ pub fn render() -> String {
     decl::<crate::AutostartReason>(&cfg, &mut out);
     decl::<crate::AutostartFailure>(&cfg, &mut out);
     decl::<crate::AutostartView>(&cfg, &mut out);
+    decl::<crate::UpdateReason>(&cfg, &mut out);
+    decl::<crate::UpdateFailure>(&cfg, &mut out);
+    decl::<crate::UpdatePhase>(&cfg, &mut out);
+    decl::<crate::UpdateView>(&cfg, &mut out);
 
     to_const_enums(out.trim_end()) + "\n"
 }

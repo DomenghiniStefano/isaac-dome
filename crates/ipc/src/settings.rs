@@ -45,6 +45,17 @@ pub struct Settings {
     /// Whether the one-time "it's still running" notice has been shown. Written by the app,
     /// never shown to the user.
     pub background_notice_shown: bool,
+    /// Whether the app asks GitHub for a newer version when it starts.
+    ///
+    /// **On by default, and that costs one HTTPS request per launch** — an IP address and a
+    /// user agent, nothing of ours and nothing about the save. Off means *nothing leaves the
+    /// machine*: the startup check does not run, and only the button on the Updates screen
+    /// reaches the network. A switch that still checked would be a switch about a notice, and
+    /// this one is about the request.
+    ///
+    /// Unlike starting with Windows, nothing outside the app holds this, so the file is the
+    /// only source of truth and there is nothing to go stale.
+    pub auto_update: bool,
 }
 
 impl Default for Settings {
@@ -55,6 +66,7 @@ impl Default for Settings {
             stay_in_background: true,
             resume_tabs: true,
             background_notice_shown: false,
+            auto_update: true,
         }
     }
 }
