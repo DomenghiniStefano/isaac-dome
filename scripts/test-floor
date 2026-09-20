@@ -24,17 +24,41 @@
 # two hundred tests and later deleting fifty stays quiet. Closing that needs a per-commit
 # comparison, which is CI, and there is none here by decision.
 #
-# **Lowered on 2026-09-20**, and this is the deliberate line the paragraph above asks for.
-# Rust 1130 → 1115: the fifteen tests of `crates/design-export` went with the crate. UI
-# 688 → 684: four tests whose subject stopped existing — the Collection fixture's "pack or
-# synthetic" source, which has only one answer now; the wiki index asked for art a second
-# time; and the two that guarded `packIconUrl` against the game's sprites coming back. That
-# last guard is not lost, it moved and got wider: `scripts/check-no-game-assets.mjs` fails on
-# any tracked picture, not just on one the design pack would have carried.
 #
-# **Raised on 2026-09-20**, Rust 1115 → 1117: the window on T. Eden beating Mother closed half
-# of B20's block, and the two new tests are what it bought — where those cells are, and that
-# Mother's group of 34 tiles end to end without a hole. Both are sample-free arithmetic, so
-# they count the same on a machine without the game.
-RUST_TESTS=1117
-UI_TESTS=684
+# **Lowered on 2026-09-20**, and this is the deliberate line the paragraph above asks for.
+# Rust −15: the fifteen tests of `crates/design-export` went with the crate. UI −4: four tests
+# whose subject stopped existing — the Collection fixture's "pack or synthetic" source, which
+# has only one answer now; the wiki index asked for art a second time; and the two that
+# guarded `packIconUrl` against the game's sprites coming back. That last guard is not lost,
+# it moved and got wider: `scripts/check-no-game-assets.mjs` fails on any tracked picture, not
+# just on one the design pack would have carried.
+#
+# **Raised on 2026-09-20**, Rust +2: the window on T. Eden beating Mother closed half of B20's
+# block, and the two new tests are what it bought — where those cells are, and that Mother's
+# group of 34 tiles end to end without a hole. Both are sample-free arithmetic, so they count
+# the same on a machine without the game.
+#
+# **Lowered on 2026-09-20**, UI −5. Five tests whose subject stopped existing when the Floor
+# screen went from three answers at once to one at a time: `toggled` and its four (there is
+# nothing to toggle in a choice of one), and one of the colour map's (a target has one colour
+# now instead of three steps with an ink each, because the rank is how full the square is and
+# there is no digit left to make readable).
+#
+# **Raised on 2026-09-20**, UI +8: the eight tests of `shift`, the arrows that move the whole
+# drawing one cell under the grid. Seven of them are about the one thing that function has to
+# get right — refusing rather than dropping a room over the edge — because there is no undo on
+# that screen.
+#
+# **Raised on 2026-09-20**, Rust +8: the eight tests of B68, which gave the Ultra Secret target
+# something to answer. Seven are in `crates/floor/tests/solve.rs` and one in `rules.rs`; all
+# eight were written after the code, so all eight were shown red by mutating the three new
+# constraints in turn — the dedup in `reached_rooms`, `noPaintedNeighbour` and
+# `redRoomForbiddenNeighbour` — rather than by being written first.
+#
+# **The five entries above are one day's worth, and they are written as deltas rather than as
+# `1150 → 1158`.** They landed on two branches at once and were merged here: an absolute number
+# on each side is a number measured against a different base, and the pair of them conflicted in
+# this file for exactly that reason. A delta survives a merge; an arrow between two totals does
+# not. The totals below are the ones `scripts/check` counted on the merge itself.
+RUST_TESTS=1160
+UI_TESTS=741

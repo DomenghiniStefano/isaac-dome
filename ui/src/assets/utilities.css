@@ -3,6 +3,15 @@
   image-rendering: pixelated;
 }
 
+/* A sprite drawn at exactly twice its own pixels, whatever those are.
+   `zoom` rather than a width: the Floor's room icons are served trimmed to their drawing
+   (`ipc::trim_opaque`), so each one arrives a different size and there is no width to write
+   down. It has to be `zoom` and not `transform: scale()` — the layout box has to grow with the
+   picture, or the box that centres it centres the untransformed size. */
+@utility pixel-2x {
+  zoom: 2;
+}
+
 /* A tab is a size container (@container), and inline-size containment makes its content
    count as zero width: a strip sized by its tabs would shrink every tab to the minimum.
    The intrinsic width stands in for the content, so tabs start at tab-max and shrink only
