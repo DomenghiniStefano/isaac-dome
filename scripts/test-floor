@@ -32,4 +32,10 @@
 # it moved and got wider: `scripts/check-no-game-assets.mjs` fails on any tracked picture, not
 # just on one the design pack would have carried.
 RUST_TESTS=1150
-UI_TESTS=738
+UI_TESTS=733
+#
+# **Lowered again on 2026-09-20**, UI 738 → 733, and this is the deliberate line for it. Five
+# tests whose subject stopped existing when the Floor screen went from three answers at once to
+# one at a time: `toggled` and its four (there is nothing to toggle in a choice of one), and one
+# of the colour map's (a target has one colour now instead of three steps with an ink each,
+# because the rank is how full the square is and there is no digit left to make readable).

@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, shallowRef } from 'vue'
 import { floorCandidates, roomIcons } from '@/lib/ipc/floor'
-import { toggled } from '@/lib/floor/cellView'
 import {
   emptyCells,
   paintStroke,
@@ -39,13 +38,11 @@ export const useFloorStore = defineStore(StoreId.Floor, () => {
     }
   }
 
-  // All three on to begin with: the fixed corners are what lets them be read together, and a
-  // screen that opens with two of them hidden would teach that they cannot be.
-  const shown = ref<TargetView[]>([
-    TargetView.Secret,
-    TargetView.SuperSecret,
-    TargetView.UltraSecret,
-  ])
+  // One target at a time, and never none: three answers laid over one 2rem cell could only be
+  // drawn too small to read, and a screen showing no answer at all would hide nothing of the
+  // drawing — a candidate only ever sits on a cell nobody painted. It opens on the Secret
+  // Room, the one a player looks for on every floor.
+  const shown = ref<TargetView>(TargetView.Secret)
 
   const solve = async (): Promise<void> => {
     try {
@@ -74,8 +71,8 @@ export const useFloorStore = defineStore(StoreId.Floor, () => {
     await solve()
   }
 
-  const toggle = (target: TargetView): void => {
-    shown.value = toggled(shown.value, target)
+  const show = (target: TargetView): void => {
+    shown.value = target
   }
 
   return {
@@ -90,6 +87,6 @@ export const useFloorStore = defineStore(StoreId.Floor, () => {
     erase,
     clear,
     solve,
-    toggle,
+    show,
   }
 })
