@@ -71,26 +71,34 @@ choosing a password was for: the key file alone stops being useless to whoever g
 need the steps by hand anyway:
 
 ```powershell
-$env:TAURI_SIGNING_PRIVATE_KEY_PATH = "$HOME\.tauri\isaacdome.key"
+$env:TAURI_SIGNING_PRIVATE_KEY = (Get-Content "$HOME\.tauri\isaacdome.key" -Raw).Trim()
 $env:TAURI_SIGNING_PRIVATE_KEY_PASSWORD = "<the password>"
 pnpm build
 ```
 
-**`_PATH`, not `TAURI_SIGNING_PRIVATE_KEY`.** The CLI's own help distinguishes the two:
-`TAURI_SIGNING_PRIVATE_KEY` is *"String of your private key"* — its contents — and
-`TAURI_SIGNING_PRIVATE_KEY_PATH` is the path to the file. The documentation page says the first
-accepts either, which is true and is exactly why naming the right one costs nothing and removes
-the question.
+**The contents, through `TAURI_SIGNING_PRIVATE_KEY`.** The documentation says that variable takes
+a path *or* the key itself; the contents are what its own name describes, and after the mistake
+recorded below there is nothing to gain from taking the ambiguous half of that sentence twice.
 
 `bundle.createUpdaterArtifacts` is on, so the NSIS setup comes out with a `.sig` beside it under
 `target/release/bundle/nsis/`.
 
-**What a build without those variables does is not yet known here.** Tauri is expected to refuse
-outright — a public key configured and no private key to match it — rather than quietly produce
-an unsigned bundle. That has not been observed on this machine, because `pnpm build` has never
-been run to the end since the key existed, so it is written as the open question it is and the
-first release settles it. Either way step 3 catches it: a bundle with no `.sig` beside it cannot
-be published.
+**What a build without the private key does — measured on 2026-09-20, not guessed.** It builds
+**both installers to the end**, then fails on the signing step with exit code 1 and this message:
+
+```
+A public key has been found, but no private key.
+Make sure to set `TAURI_SIGNING_PRIVATE_KEY` environment variable.
+```
+
+So the bundles exist and the `.sig` does not. Two things follow, and the second one cost a build:
+
+- **A failed release still leaves installers on disk.** `target/release/bundle/` is not evidence
+  that anything was signed, and step 3 is what tells the difference.
+- **The bundler reads `TAURI_SIGNING_PRIVATE_KEY`, not `TAURI_SIGNING_PRIVATE_KEY_PATH`.** The
+  `_PATH` name comes from the `signer generate` subcommand's own help and is not a substitute
+  here. This document said `_PATH` for a few hours on that reasoning, and that is exactly the
+  error the message above reports.
 
 ### 3. Write the manifest
 

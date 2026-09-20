@@ -82,7 +82,7 @@ const sigPath = join(nsisDir, `${setup}.sig`)
 if (!existsSync(sigPath)) {
   die(
     `no signature beside the installer (${setup}.sig). The build ran without ` +
-      'TAURI_SIGNING_PRIVATE_KEY_PATH, so this bundle cannot be published. See docs/release.md.',
+      'TAURI_SIGNING_PRIVATE_KEY, so this bundle cannot be published. See docs/release.md.',
   )
 }
 
