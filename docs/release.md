@@ -58,6 +58,19 @@ config names one, so there is nothing to keep in step.
 ### 2. Build, signed
 
 ```powershell
+pnpm release
+```
+
+That is `scripts/release-build.ps1`: it asks for the key's password, sets the two variables for
+that one process, runs `pnpm build` and then step 3, and clears the password on the way out —
+on a failed build and on Ctrl-C as well.
+
+**Do not set those two variables permanently.** A password in the user environment lives in the
+registry in plain text, readable by anything running as that user, which gives back most of what
+choosing a password was for: the key file alone stops being useless to whoever grabs it. If you
+need the steps by hand anyway:
+
+```powershell
 $env:TAURI_SIGNING_PRIVATE_KEY_PATH = "$HOME\.tauri\isaacdome.key"
 $env:TAURI_SIGNING_PRIVATE_KEY_PASSWORD = "<the password>"
 pnpm build
@@ -84,6 +97,9 @@ be published.
 ```powershell
 pnpm release:manifest                    # or: pnpm release:manifest notes.md
 ```
+
+`pnpm release` already ran this for you; run it on its own when the build was fine and you want
+to write the manifest again, or to attach release notes.
 
 It reads the version, the endpoint and the public key out of `tauri.conf.json` — the same file
 Tauri reads, so the manifest cannot disagree with the app that will be asked to install it — and
