@@ -132,10 +132,15 @@ const rub = (cell: number): void => {
         :kind="cells[i]!"
         :url="icons.get(cells[i]!) ?? null"
       />
-      <!-- Two layers, and they answer two different questions. The glow covers the cell and
-           says it is in play at all; the level is anchored to the cell's floor and says how
-           good a place it is. Both rise from the bottom, because a level hanging from the top
-           would be read as something draining. -->
+      <!-- Three layers, and they answer three different questions. The veil and its lit edge
+           cover the cell and say it is in play at all; the level is anchored to the cell's
+           floor and says how good a place it is — rising, because one hanging from the top
+           would be read as something draining; the number says exactly which place, for
+           whoever wants the answer rather than the impression of it.
+
+           The digit carries its own halo instead of an ink chosen for what is under it: the
+           middle of the cell is the bright fill at the first step and the dark veil at the
+           third, and no single colour reads on both. -->
       <span
         v-if="candidates[i]"
         aria-hidden="true"
@@ -147,6 +152,10 @@ const rub = (cell: number): void => {
           :class="targetFill[shown]"
           :style="{ height: levelHeight[candidates[i]!.step] }"
         />
+        <span
+          class="absolute inset-0 grid place-items-center text-floor-rank-foreground tabular-nums text-shadow-floor-rank"
+          >{{ candidates[i]!.rank }}</span
+        >
       </span>
     </Button>
   </div>

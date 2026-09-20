@@ -90,6 +90,10 @@ const placeOf = (cell: number): string => {
          now, across the full width, where a quotation has a line to live on. -->
     <div class="flex flex-col items-start gap-4 lg:flex-row">
       <Card class="w-full lg:w-fit lg:shrink-0">
+        <!-- The card is sized to its content and the grid is the widest thing in it, which is
+             what decides this column's width. **The cap belongs on the prose, not here**: a
+             width on this box is its border box, so the padding comes out of it and the grid
+             spills over the card's own edge by exactly `p-3` — measured, 12px. -->
         <CardContent class="flex flex-col gap-3">
           <div class="flex items-center gap-2">
             <FloorTargets
@@ -101,19 +105,28 @@ const placeOf = (cell: number): string => {
               t('floor.diagnostic.noStartRoom')
             }}</HelpTip>
           </div>
-          <FloorGrid
-            :cells="store.cells"
-            :icons="store.icons"
-            :solutions="solutions"
-            :shown="store.shown"
-            @stroke="store.stroke($event)"
-            @erase="store.erase($event)"
-          />
-          <!-- The legend under what it explains, and the button that empties the grid under
-               what it empties. Beside the switch that one read as one more thing you could do
-               to the answer. -->
-          <div class="flex items-center justify-between gap-3">
-            <FloorLegend :shown="store.shown" />
+          <!-- The grid is 27.5rem and cannot be anything else: thirteen cells of pixel art do
+               not have a smaller size that is still pixel art. The window has no minimum
+               width, so below about 620px it was wider than its own card and simply drew
+               over the edge of it — measured, 101px out at 620. It scrolls now, which keeps
+               the whole floor reachable instead of hiding the right of it behind a border.
+               At any width that fits, this box is exactly the grid and no scrollbar exists. -->
+          <div class="min-w-0 overflow-x-auto">
+            <FloorGrid
+              :cells="store.cells"
+              :icons="store.icons"
+              :solutions="solutions"
+              :shown="store.shown"
+              @stroke="store.stroke($event)"
+              @erase="store.erase($event)"
+            />
+          </div>
+          <!-- The legend under what it explains, on a line of its own: sharing one with the
+               button put a sentence and a control in the same 27.5rem and left the sentence
+               about five words. The button that empties the grid goes under what it empties;
+               beside the switch it read as one more thing you could do to the answer. -->
+          <FloorLegend :shown="store.shown" />
+          <div class="flex justify-end">
             <FloorClear @clear="store.clear()" />
           </div>
         </CardContent>

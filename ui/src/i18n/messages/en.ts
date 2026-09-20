@@ -141,6 +141,11 @@ export const en: MessageSchema = {
       superSecret: 'Super Secret Room',
       ultraSecret: 'Ultra Secret Room',
     },
+    targetShort: {
+      secret: 'Secret',
+      superSecret: 'Super',
+      ultraSecret: 'Ultra',
+    },
     room: {
       start: 'Start',
       normal: 'Normal',
