@@ -87,34 +87,29 @@ export const roomSymbol: Record<RoomKindView, string> = {
 }
 
 /**
- * The palette, three rows of swatches rather than fourteen rows of list: the kinds that shape
- * a floor first, then the special rooms a placement rule actually names, then the rest.
+ * The palette, one row of fourteen swatches. It is the order the keys run in, so reading left
+ * to right is reading 1 to 9 — and a kind keeps its seat whether or not the game is installed,
+ * only the drawing on it changes, so a palette learned on one machine is the same on another.
  *
- * The rows are fixed, and they are the order the keys run in — reading left to right is
- * reading 1 to 9. A kind keeps its seat whether or not the game is installed, only the drawing
- * on it changes, so a palette learned on one machine is the same palette on another.
+ * There is no eraser on it. Rubbing out is the right button on the grid, which is where the
+ * mistake is; a fifteenth swatch would be a brush that paints nothing, sitting in the row of
+ * the ones that do.
  */
-export const paletteRows: readonly (readonly RoomKindView[])[] = [
-  [
-    RoomKindView.Normal,
-    RoomKindView.Start,
-    RoomKindView.Boss,
-    RoomKindView.Miniboss,
-    RoomKindView.Treasure,
-  ],
-  [
-    RoomKindView.Shop,
-    RoomKindView.Arcade,
-    RoomKindView.Library,
-    RoomKindView.Curse,
-    RoomKindView.Challenge,
-  ],
-  [
-    RoomKindView.Sacrifice,
-    RoomKindView.Secret,
-    RoomKindView.SuperSecret,
-    RoomKindView.UltraSecret,
-  ],
+export const paletteOrder: readonly RoomKindView[] = [
+  RoomKindView.Normal,
+  RoomKindView.Start,
+  RoomKindView.Boss,
+  RoomKindView.Miniboss,
+  RoomKindView.Treasure,
+  RoomKindView.Shop,
+  RoomKindView.Arcade,
+  RoomKindView.Library,
+  RoomKindView.Curse,
+  RoomKindView.Challenge,
+  RoomKindView.Sacrifice,
+  RoomKindView.Secret,
+  RoomKindView.SuperSecret,
+  RoomKindView.UltraSecret,
 ]
 
 /**
@@ -139,22 +134,14 @@ export const paletteKey: Record<RoomKindView, string> = {
   [RoomKindView.UltraSecret]: 'R',
 }
 
-/** The key that picks no kind at all, which is how the brush becomes an eraser. */
-export const ERASE_KEY = 'Backspace'
-
 /**
- * What a key press means to the palette: a kind, `null` for the eraser, or `undefined` for a
- * key that is none of ours.
+ * The kind a key press picks, or nothing at all for a key that is none of ours.
  *
- * The three answers are not two. A handler that folded "not ours" into "erase" would rub out a
- * room every time somebody typed into a field on this screen, and the day that field arrives
+ * "Not ours" is its own answer and not a fallback. A handler that folded it into anything else
+ * would act on every letter typed into a field on this screen, and the day that field arrives
  * nothing here would fail.
  */
-export const brushFor = (key: string): RoomKindView | null | undefined => {
-  if (key === ERASE_KEY) return null
+export const brushFor = (key: string): RoomKindView | undefined => {
   const upper = key.toUpperCase()
-  const found = Object.keys(paletteKey).find(
-    (kind) => paletteKey[kind as RoomKindView] === upper,
-  )
-  return found === undefined ? undefined : (found as RoomKindView)
+  return paletteOrder.find((kind) => paletteKey[kind] === upper)
 }

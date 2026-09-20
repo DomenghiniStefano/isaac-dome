@@ -116,7 +116,6 @@ export const en: MessageSchema = {
   floor: {
     intro:
       'Draw the floor the way you see it on the minimap: empty cells light up where the game’s own rules allow a Secret, Super Secret or Ultra Secret Room.',
-    erase: 'Eraser',
     clear: 'Clear the grid',
     clearConfirm: {
       title: 'Clear the grid?',
