@@ -115,7 +115,7 @@ export const en: MessageSchema = {
   },
   floor: {
     intro:
-      'Draw the floor the way you see it on the minimap: empty cells light up where the game’s own rules allow a secret room. Every lit cell says which rule lit it and where that rule was read.',
+      'Draw the floor the way you see it on the minimap: empty cells light up where the game’s own rules allow a Secret, Super Secret or Ultra Secret Room.',
     erase: 'Eraser',
     clear: 'Clear the grid',
     clearConfirm: {
@@ -129,8 +129,6 @@ export const en: MessageSchema = {
     cell: 'Row {row}, column {column}: {room}',
     at: 'Row {row}, column {column}',
     brush: 'Chosen room',
-    wiki: 'Wiki',
-    source: 'Source',
     unresolved: 'What the grid cannot judge',
     none: 'No cell the rules allow, with what you have drawn so far.',
     failed: 'The candidates could not be computed. What you drew stays.',

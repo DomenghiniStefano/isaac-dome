@@ -3,11 +3,16 @@ import { Grid3x3Icon } from '@lucide/vue'
 import { computed } from 'vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Card,
+  CardCollapsible,
+  CardCollapsibleContent,
+  CardCollapsibleTrigger,
+  CardContent,
+} from '@/components/ui/card'
 import { useMessages } from '@/i18n'
 import { floorEntries } from '@/lib/diagnostics/floor'
 import { cellPosition } from '@/lib/floor/cellView'
-import { targetPage } from '@/lib/floor/targets'
 import { useFloorStore } from '@/stores/floor'
 import { TargetView } from '@/lib/ipc/types'
 import type { FloorSolutionView } from '@/lib/ipc/types'
@@ -88,22 +93,28 @@ const placeOf = (cell: number): string => {
           @toggle="store.toggle($event)"
         />
 
-        <Card v-for="target in order" :key="target">
-          <CardHeader class="flex-col items-start gap-0.5">
-            <CardTitle>{{ t(`floor.target.${target}`) }}</CardTitle>
-            <!-- The page that explains the room itself. The rules below were all read from
-                 the Secret Room's page, so without this the other two rooms are judged here
-                 and explained nowhere. -->
-            <span class="text-caption text-faint-foreground"
-              >{{ t('floor.wiki') }}: {{ targetPage[target] }}</span
-            >
-          </CardHeader>
-          <CardContent class="flex flex-col gap-3">
+        <!-- Closed by default, and each one opens on its own. What the rules say is
+             the tool's reasoning rather than its answer — the answer is on the grid — so it
+             is there for whoever wants to check it and out of the way of whoever does not.
+
+             No source line, on purpose: the wiki's attribution is carried once, in
+             Information, where a licence belongs, and not repeated on every row of every
+             screen. -->
+        <CardCollapsible
+          v-for="target in order"
+          :key="target"
+          :default-open="false"
+        >
+          <CardCollapsibleTrigger>
+            {{ t(`floor.target.${target}`) }}
+            <template #summary>
+              <span class="text-caption text-subtle-foreground tabular-nums">{{
+                solutionFor(target)?.candidates.length ?? 0
+              }}</span>
+            </template>
+          </CardCollapsibleTrigger>
+          <CardCollapsibleContent class="flex flex-col gap-3">
             <template v-if="(solutionFor(target)?.candidates.length ?? 0) > 0">
-              <!-- Every row carries the sentence that lit it and the page it came from. That
-                   is the CC BY-SA attribution reaching the person reading the screen, not a
-                   layout detail: the rules are quotations, and a quotation without its source
-                   is not one. -->
               <div
                 v-for="candidate in solutionFor(target)?.candidates ?? []"
                 :key="candidate.cell"
@@ -118,18 +129,12 @@ const placeOf = (cell: number): string => {
                     {{ t('floor.neighbours') }}</span
                   >
                 </div>
-                <div
+                <span
                   v-for="rule in candidate.applied"
                   :key="rule.id"
-                  class="flex flex-col"
+                  class="text-caption text-foreground-soft"
+                  >{{ rule.quote }}</span
                 >
-                  <span class="text-caption text-foreground-soft">{{
-                    rule.quote
-                  }}</span>
-                  <span class="text-caption text-faint-foreground"
-                    >{{ t('floor.source') }}: {{ rule.url }}</span
-                  >
-                </div>
               </div>
             </template>
             <EmptyCategory v-else>{{ t('floor.none') }}</EmptyCategory>
@@ -151,13 +156,10 @@ const placeOf = (cell: number): string => {
                 <span class="text-caption text-faint-foreground">{{
                   item.note
                 }}</span>
-                <span class="text-caption text-faint-foreground"
-                  >{{ t('floor.source') }}: {{ item.url }}</span
-                >
               </div>
             </template>
-          </CardContent>
-        </Card>
+          </CardCollapsibleContent>
+        </CardCollapsible>
       </div>
     </div>
   </div>
