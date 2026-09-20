@@ -18,7 +18,7 @@ import {
 // different tool — and never taken from this module's output. The four that the brief and
 // the Kit page already printed (368 readable, 166 with a level, 40 unreadable, 408 cells)
 // come out of that count unchanged, which is what says the count is right.
-const reference = completionMatrix(false)
+const reference = completionMatrix()
 
 const row = (name: string) => {
   const found = reference.characters.find((r) => r.character === name)

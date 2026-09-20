@@ -1,10 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { CollectionItem } from '../types'
-import {
-  CollectionSource,
-  collectionAnswer,
-  collectionSource,
-} from './collection'
+import { collectionAnswer } from './collection'
 
 interface IndexEntry {
   family: string
@@ -13,10 +9,10 @@ interface IndexEntry {
   name?: string
 }
 const indexes = import.meta.glob<IndexEntry[]>(
-  '../../../../../design-export/isaacdome-design-pack/images/INDEX.json',
+  '../../../../fixtures/index.json',
   { eager: true, import: 'default' },
 )
-const packCollectibles = (Object.values(indexes)[0] ?? []).filter(
+const collectibles = (Object.values(indexes)[0] ?? []).filter(
   (e) => e.family === 'item' && e.kind !== 'trinket',
 )
 const byId = (items: CollectionItem[], id: number) =>
@@ -24,17 +20,12 @@ const byId = (items: CollectionItem[], id: number) =>
 
 describe('the Collection fixture', () => {
   const view = collectionAnswer({
-    withArt: false,
     withCatalog: true,
     collectionRead: true,
   })
 
-  it('declares its source: synthetic until the pack carries collection.json', () => {
-    expect(collectionSource()).toBe(CollectionSource.Synthetic)
-  })
-
-  it("lists the pack's collectibles by id, with their names and kinds", () => {
-    expect(view.items).toHaveLength(packCollectibles.length)
+  it("lists the fixtures' collectibles by id, with their names and kinds", () => {
+    expect(view.items).toHaveLength(collectibles.length)
     expect(view.items.every((i) => i.kind !== 'trinket')).toBe(true)
     expect(byId(view.items, 1)).toMatchObject({
       name: 'The Sad Onion',
@@ -75,7 +66,6 @@ describe('the Collection fixture', () => {
 
   it('answers an unread collection as null, and says so', () => {
     const unread = collectionAnswer({
-      withArt: false,
       withCatalog: true,
       collectionRead: false,
     })
@@ -85,7 +75,6 @@ describe('the Collection fixture', () => {
 
   it('answers without a catalog with totals only', () => {
     const none = collectionAnswer({
-      withArt: false,
       withCatalog: false,
       collectionRead: true,
     })

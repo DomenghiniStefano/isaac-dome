@@ -514,7 +514,7 @@ fn thirty_nine_challenges_have_a_reward_achievement_and_six_have_none() {
 ///
 /// The name comes from Repentance+'s **online lobby**, whose `.anm2` draws the marks on
 /// every player's card and is the only file in the game that names all twelve —
-/// `Completion_Delirium` included. `design-export` reads Delirium's symbol from there, so
+/// `Completion_Delirium` included. The app reads Delirium's symbol from there, so
 /// this test guards both halves: the layer must exist, and the widget's gap must stay a
 /// gap rather than quietly turning into a twelfth layer that would then disagree.
 #[test]
@@ -558,7 +558,7 @@ fn only_the_online_lobby_names_all_twelve_marks() {
         .map(|f| f.layer.as_str())
         .collect();
     assert_eq!(marks.len(), 12, "twelve marks were expected, got {marks:?}");
-    // The one the whole detour was about, at the size and place `design-export` cuts.
+    // The one the whole detour was about, at the size and place the symbol is cut from.
     let delirium: Vec<(u32, u32)> = lobby
         .iter()
         .filter(|f| f.layer == "Completion_Delirium" && f.animation == "Background")

@@ -73,7 +73,7 @@ describe('the state row on the reference profile', () => {
   // 3.10: the screens' own tally is gone, and these numbers are the fixture's shape rather than
   // that function's, so they are pinned where they are now read.
   it('counts the four states of the committed payload', () => {
-    const { unlock } = graphAnswers({ withArt: false, withCatalog: true })
+    const { unlock } = graphAnswers({ withCatalog: true })
     expect(
       stateRowCounts(
         unlockFaceting,

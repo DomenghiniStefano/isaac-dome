@@ -1,2 +1,6 @@
 dist
 pnpm-lock.yaml
+
+# Recorded data, not source: reformatting it would rewrite files nothing in the repository
+# can regenerate, and `index.json` alone is 1.4 MB on one line. Their README is formatted.
+fixtures/**/*.json

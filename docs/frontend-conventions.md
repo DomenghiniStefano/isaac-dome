@@ -382,15 +382,18 @@ so the shell can be looked at without the backend. `?fixture=none|pick|active` p
 scenario (no saves, a choice to make, an active profile); a command with no fixture throws
 `no fixture answers <command>` rather than returning something plausible. The fixtures are
 imported dynamically behind `import.meta.env.DEV`: the production build carries none of
-them. Their data comes from the design pack's committed payloads — the real 720 items and
-642 achievements — globbed once per family.
-**Their images no longer do.** The pack's 6065 sprites left the repository on 2026-09-15
-with `pnpm design:export`, so `fixtures/art.ts` and `graphArt.ts` glob nothing and every
-image URL is `null`. That was already the documented fallback: it is what every user sees
-before the game's sprites are there, and what a clone without the pack always got. It is now
-the only case, which makes `?art=none` a switch with one reachable value — kept because the
-screens' fallback is still worth exercising by name, and because a `?art=` that answered
-differently would mean the images had come back. The window works the same way: `src/lib/window/appWindow.ts` is the only module that
+them. Their data comes from the committed payloads under `ui/fixtures/` — the real 720 items
+and 642 achievements — globbed once per family, from outside `src/` so that no file of data
+joins the TypeScript project. `ui/fixtures/README.md` says what each file is.
+**No drawing is among them.** The 6065 sprites the design pack carried left the working tree
+on 2026-09-15 and the history on 2026-09-20, with the pack and the exporter that wrote it: a
+commercial game's art, on a public repository, against the third promise in `CLAUDE.md`.
+Every image URL the fixtures answer is `null`, and that was already the documented fallback —
+what every user sees before the game's sprites are there. It is now the only case, so the
+modules that served art (`fixtures/art.ts`, `fixtures/graphArt.ts`, `kit/markArt.ts`) and the
+`?art=none` switch went with them: an option with one reachable value reads like a choice and
+is not one. `scripts/check-no-game-assets.mjs` fails the run if a picture is ever tracked
+again. The window works the same way: `src/lib/window/appWindow.ts` is the only module that
 imports `@tauri-apps/api/window`, and outside Tauri its controls do nothing.
 
 A note on serde, which is the twin trap on the Rust side: every struct that crosses the

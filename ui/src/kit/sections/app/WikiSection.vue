@@ -4,7 +4,6 @@ import WikiInline from '@/components/wiki/WikiInline.vue'
 import type { Block, Inline, Target } from '@/lib/ipc/types'
 import { Dlc, Style } from '@/lib/ipc/types'
 import KitSection from '../../KitSection.vue'
-import { kitMarkArt } from '../../markArt'
 
 const d6: Target = { kind: 'item', id: 105 }
 const plain = (text: string): Inline => ({
@@ -72,10 +71,9 @@ const blocks: Block[] = [
   },
 ]
 
-// A stand-in for cycle 3's icon protocol: items get a sprite, everything else none, so a
-// reference with an icon and one without sit side by side.
-const iconFor = (target: Target): string | null =>
-  target.kind === 'item' ? (kitMarkArt.heart?.normal ?? null) : null
+// No reference carries a sprite here: the app cuts them from the user's own copy of the game
+// at runtime, and the Kit page has no copy to cut from.
+const iconFor = (): string | null => null
 
 // Which references lead to a page: items do, a concept has no id to open one with.
 const canOpen = (target: Target): boolean => target.kind !== 'concept'
