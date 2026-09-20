@@ -12,13 +12,13 @@ import type {
   WantView,
   WantedView,
 } from '../types'
-import { packIconUrl } from './graphArt'
 
-// Development only: the design pack's committed payloads, the reference profile on 2026-09-08
-// (contracts/payload/unlock.json and next_steps.json), read through a glob so that no file
-// outside src/ joins the TypeScript project.
+// Development only: the committed payloads under ui/fixtures/, the reference profile as it
+// stood on 2026-09-08, read through a glob so that no file outside src/ joins the TypeScript
+// project. They are a frozen snapshot: the tool that wrote them is gone, so where they
+// predate a field the fixture fills it in below rather than waiting for a newer export.
 const payloads = import.meta.glob<unknown>(
-  '../../../../../design-export/isaacdome-design-pack/contracts/payload/{unlock,next_steps}.json',
+  '../../../../fixtures/payload/{unlock,next_steps}.json',
   { eager: true, import: 'default' },
 )
 
@@ -28,16 +28,17 @@ const payload = <T>(name: string): T => {
   const found = Object.entries(payloads).find(([path]) =>
     path.endsWith(`/${name}.json`),
   )
-  if (!found) throw new Error(`the design pack has no ${name}.json`)
+  if (!found) throw new Error(`the fixtures carry no ${name}.json`)
   return found[1] as T
 }
 
-type IconOf = (url: string | null) => string | null
+// Every icon is null here. The app cuts its sprites from the user's own copy of the game at
+// runtime; the development server has no copy, so the payload's `isaac://` links resolve to
+// nothing — the same answer a machine without the game gets.
+const targetWithoutIcon = (target: UnlockTarget): UnlockTarget =>
+  target.kind === 'item' ? { ...target, iconUrl: null } : target
 
-const targetWithIcon = (target: UnlockTarget, icon: IconOf): UnlockTarget =>
-  target.kind === 'item' ? { ...target, iconUrl: icon(target.iconUrl) } : target
-
-// The same story as `withPage` below, on the other half of the row (B35): a pack exported
+// The same story as `withPage` below, on the other half of the row (B35): a payload written
 // before a target carried its page has none, and an absent key would read in a template
 // exactly like "the dataset has no page". Filled with `null` — which is that sentence, said
 // on purpose — and declared once in the console. All four variants, because all four carry it.
@@ -47,16 +48,15 @@ const targetWithPage = (target: UnlockTarget): UnlockTarget => {
   if (!warnedAboutTargetPages) {
     warnedAboutTargetPages = true
     console.warn(
-      "graph fixture: the design pack's unlock.json predates the page a target links to; nothing a node unlocks links until the next pnpm design:export on a machine with the game",
+      'graph fixture: unlock.json predates the page a target links to; nothing a node unlocks links on the development server',
     )
   }
   return { ...target, page: null }
 }
 
-// The pack's payload was written before a character carried its form (`docs/BACKLOG.md`
-// B28), so the field is absent there: absent reads as the base form, which is right for
-// every base character and wrong for the Tainted ones. Declared once in the console, and it
-// goes with the next `pnpm design:export` on a machine with the game.
+// The payload was written before a character carried its form (`docs/BACKLOG.md` B28), so
+// the field is absent there: absent reads as the base form, which is right for every base
+// character and wrong for the Tainted ones. Declared once in the console.
 let warnedAboutForms = false
 const withForm = <T extends { kind: string; tainted?: boolean }>(
   value: T,
@@ -66,16 +66,16 @@ const withForm = <T extends { kind: string; tainted?: boolean }>(
   if (!warnedAboutForms) {
     warnedAboutForms = true
     console.warn(
-      "graph fixture: the design pack's unlock.json predates the character's tainted flag; every character reads as its base form",
+      "graph fixture: unlock.json predates the character's tainted flag; every character reads as its base form",
     )
   }
   return { ...value, tainted: false }
 }
 
-// Same story for the page a requirement links to (spec 3.5d): a pack exported before the
+// Same story for the page a requirement links to (spec 3.5d): a payload written before the
 // field has none, and an absent key would read in a template exactly like "the dataset has no
 // page". It is filled with `null` — which is that sentence, said on purpose — and declared
-// once, until the next `pnpm design:export` on a machine with the game.
+// once on the console.
 let warnedAboutPages = false
 const withPage = (requirement: RequirementView): RequirementView => {
   switch (requirement.kind) {
@@ -84,8 +84,8 @@ const withPage = (requirement: RequirementView): RequirementView => {
     case 'counter':
     case 'unknown':
       return requirement
-    // A pack exported before the transformations has no threshold in it at all, so there is
-    // nothing to fill in: what arrives already carries its own page.
+    // A payload written before the transformations has no threshold in it at all, so there
+    // is nothing to fill in: what arrives already carries its own page.
     case 'threshold':
       return requirement
     case 'character':
@@ -96,7 +96,7 @@ const withPage = (requirement: RequirementView): RequirementView => {
       if (!warnedAboutPages) {
         warnedAboutPages = true
         console.warn(
-          "graph fixture: the design pack's unlock.json predates the requirement's page; nothing links until the next pnpm design:export on a machine with the game",
+          "graph fixture: unlock.json predates the requirement's page; nothing links on the development server",
         )
       }
       return { ...requirement, page: null }
@@ -105,7 +105,7 @@ const withPage = (requirement: RequirementView): RequirementView => {
   }
 }
 
-// The pack's payload predates the resolved condition: it carries the game file's `hint`, and
+// The payload predates the resolved condition: it carries the game file's `hint`, and
 // the wiki's requirement is filled in by Rust, which the fixtures do not run. So the old key
 // becomes the new one where it has something to say — and where the file was silent the line
 // is `null`, which is a real state of the card, only far more common here than in the app:
@@ -118,24 +118,21 @@ const withCondition = (
   if (!warnedAboutConditions) {
     warnedAboutConditions = true
     console.warn(
-      "graph fixture: the design pack's payloads predate the resolved condition; only the achievements the game file itself describes show one, where the app shows all of them",
+      'graph fixture: the payloads predate the resolved condition; only the achievements the game file itself describes show one, where the app shows all of them',
     )
   }
   const { hint } = a as unknown as { hint: string | null | undefined }
   return { ...a, condition: hint ?? null }
 }
 
-const nodeWithIcons = (node: UnlockNode, icon: IconOf): UnlockNode => ({
+const nodeResolved = (node: UnlockNode): UnlockNode => ({
   ...node,
   achievement:
     node.achievement.kind === 'known'
-      ? withCondition({
-          ...node.achievement,
-          iconUrl: icon(node.achievement.iconUrl),
-        })
+      ? withCondition({ ...node.achievement, iconUrl: null })
       : node.achievement,
   unlocks: node.unlocks.map((t) =>
-    targetWithPage(withForm(targetWithIcon(t, icon))),
+    targetWithPage(withForm(targetWithoutIcon(t))),
   ),
   missing: node.missing.map((r) => withPage(withForm(r))),
 })
@@ -167,7 +164,6 @@ const withoutCatalog = (view: UnlockView): UnlockView => ({
 })
 
 export interface GraphAnswerOptions {
-  withArt: boolean
   withCatalog: boolean
 }
 
@@ -176,9 +172,8 @@ export interface GraphAnswers {
   steps: NextSteps
 }
 
-// The pack's payload predates the sections: it is one flat list and the basis that made it.
-// That shape *is* one section — the one it always was — so it is read as such and declared
-// once, until the next `pnpm design:export` on a machine with the game.
+// The payload predates the sections: it is one flat list and the basis that made it. That
+// shape *is* one section — the one it always was — so it is read as such and declared once.
 interface FlatNextSteps {
   steps: UnlockNode[]
   basis: StepsBasis
@@ -189,7 +184,7 @@ const sectionsOf = (value: NextSteps | FlatNextSteps): StepsSection[] => {
   if (!warnedAboutSections) {
     warnedAboutSections = true
     console.warn(
-      "graph fixture: the design pack's next_steps.json predates the steps' sections; the whole list reads as its one basis",
+      "graph fixture: next_steps.json predates the steps' sections; the whole list reads as its one basis",
     )
   }
   // Never a heading over nothing: an empty list is no section, exactly as in Rust.
@@ -199,7 +194,6 @@ const sectionsOf = (value: NextSteps | FlatNextSteps): StepsSection[] => {
 }
 
 export const graphAnswers = ({
-  withArt,
   withCatalog,
 }: GraphAnswerOptions): GraphAnswers => {
   const unlock = payload<UnlockView>('unlock')
@@ -207,16 +201,15 @@ export const graphAnswers = ({
   // No catalog, nothing to recommend: no sections at all, which is what Rust answers too.
   if (!withCatalog)
     return { unlock: withoutCatalog(unlock), steps: { sections: [] } }
-  const icon: IconOf = (url) => (withArt ? packIconUrl(url) : null)
   return {
     unlock: {
       ...unlock,
-      nodes: unlock.nodes.map((n) => nodeWithIcons(n, icon)),
+      nodes: unlock.nodes.map(nodeResolved),
     },
     steps: {
       sections: sections.map((s) => ({
         ...s,
-        steps: s.steps.map((n) => nodeWithIcons(n, icon)),
+        steps: s.steps.map(nodeResolved),
       })),
     },
   }
@@ -251,7 +244,7 @@ const namesTarget = (node: UnlockNode, target: Target): boolean => {
 }
 
 export const wantAnswer = (
-  { withArt, withCatalog }: GraphAnswerOptions,
+  { withCatalog }: GraphAnswerOptions,
   target: Target,
 ): WantView => {
   if (!withCatalog)
@@ -260,10 +253,7 @@ export const wantAnswer = (
       routes: [],
       diagnostics: [{ kind: 'noCatalog' }],
     }
-  const icon: IconOf = (url) => (withArt ? packIconUrl(url) : null)
-  const nodes = payload<UnlockView>('unlock').nodes.map((n) =>
-    nodeWithIcons(n, icon),
-  )
+  const nodes = payload<UnlockView>('unlock').nodes.map(nodeResolved)
   const node = nodes.find((n) => namesTarget(n, target))
   if (node === undefined)
     return {

@@ -11,7 +11,7 @@ import {
   resetQueue,
 } from './queue'
 
-const nodes = graphAnswers({ withArt: false, withCatalog: true }).unlock.nodes
+const nodes = graphAnswers({ withCatalog: true }).unlock.nodes
 const options = (
   scenario: QueueScenario = QueueScenario.Rows,
   withCatalog = true,

@@ -11,7 +11,7 @@ import type {
   SectionKind,
   Target,
 } from '../types'
-import { iconOf, packConditions, packPages, samplePages } from './wiki'
+import { samplePages, wikiConditions, wikiPages } from './wiki'
 
 // Development only, and **synthetic**: the ranking that counts is Rust's
 // (`crates/ipc/src/search.rs`). This exists so the palette and the Search screen can be looked
@@ -160,7 +160,6 @@ const sectionText = (section: Section): string =>
     .join(' ')
 
 export interface SearchAnswerOptions {
-  withArt: boolean
   withCatalog: boolean
   withWiki: boolean
 }
@@ -168,7 +167,7 @@ export interface SearchAnswerOptions {
 let warned = false
 
 export const searchAnswer = (
-  { withArt, withCatalog, withWiki }: SearchAnswerOptions,
+  { withCatalog, withWiki }: SearchAnswerOptions,
   query: string,
   limit: number,
 ): SearchView => {
@@ -178,17 +177,17 @@ export const searchAnswer = (
       'search fixture: the ranking is synthetic; the real one lives in crates/ipc',
     )
   }
-  const conditions = packConditions()
+  const conditions = wikiConditions()
   const diagnostics: SearchDiagnostic[] = [
     ...(withCatalog ? [] : (['noCatalog'] as const)),
     ...(withWiki ? [] : (['noWiki'] as const)),
     // The fixture never has a save behind it, whatever profile the scenario shows.
     'noProfile' as const,
   ]
-  // The pack's names are the **catalog's**, so they answer even with no dataset: what a
-  // missing dataset takes away is the text of the sections and the page to open, exactly as
-  // the backend degrades (spec 3.5, Decision 9).
-  const docs: FixtureDoc[] = packPages().map((page) => {
+  // These names are the **catalog's**, so they answer even with no dataset: what a missing
+  // dataset takes away is the text of the sections and the page to open, exactly as the
+  // backend degrades (spec 3.5, Decision 9).
+  const docs: FixtureDoc[] = wikiPages().map((page) => {
     const key = pageKey(page.target)
     const sample = withWiki && key !== null ? samplePages.get(key) : undefined
     return {
@@ -203,7 +202,9 @@ export const searchAnswer = (
         text: sectionText(s),
       })),
       hasPage: withWiki,
-      iconUrl: withArt && withCatalog ? iconOf(page.target, page.bossId) : null,
+      // Null, like every drawing in the fixtures: the app cuts its sprites from the user's
+      // own copy of the game at runtime, and the development server has no copy.
+      iconUrl: null,
     }
   })
   return rankFixture(docs, query, limit, diagnostics)

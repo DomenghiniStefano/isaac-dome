@@ -7,9 +7,9 @@ that takes, what the screens are, and what it takes to build and check the thing
 > its own header — it says so in its first paragraph — so a diagram of *today* could not live
 > there without breaking that promise. Drawn on 2026-09-18 against `20f04a5`; redrawn on
 > 2026-09-20 on `feature/app-update`, which added the seventeenth route, four commands, the
-> sixth event and the one arrow that leaves the machine, and again the same day on
+> sixth event and the one arrow that leaves the machine, again the same day on
 > `feature/floor-grid`, which gave the Floor screen the game's own minimap icons and the
-> command that fetches them.
+> command that fetches them, and once more when `design-export` left the repository.
 >
 > **What keeps it true, and what does not.** Every path named here is checked by
 > `scripts/check-doc-refs.mjs`, which is why the nodes carry real paths instead of pretty
@@ -23,7 +23,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 > just below are the tripwire — if one of them is wrong, so is the drawing.
 
 Counted at that commit, and every number below is derived from the code, not from prose:
-**17 crates**, **41 Tauri commands**, **6 events**, **17 routes**, **6 store migrations**.
+**16 crates**, **41 Tauri commands**, **6 events**, **17 routes**, **6 store migrations**.
 
 ---
 
@@ -178,7 +178,6 @@ flowchart TD
 
   subgraph aside["Tools and dev-only"]
     wikisnap["wiki-snapshot<br/>the only crate that talks to the network"]
-    designexport["design-export<br/>retired 2026-09-15"]
     testsupport["test-support<br/>dev-dependency only"]
   end
 

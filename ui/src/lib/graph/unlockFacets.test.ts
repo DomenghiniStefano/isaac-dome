@@ -62,8 +62,7 @@ const character = (name: string): UnlockTarget => ({
   page: null,
 })
 
-const reference = graphAnswers({ withArt: false, withCatalog: true }).unlock
-  .nodes
+const reference = graphAnswers({ withCatalog: true }).unlock.nodes
 
 describe('facetValues', () => {
   it('reads what a node unlocks by kind, once each', () => {

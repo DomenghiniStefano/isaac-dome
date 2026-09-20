@@ -1,0 +1,173 @@
+{
+  "steps": [
+    {
+      "achievement": {
+        "kind": "known",
+        "id": 484,
+        "text": "You unlocked \"The Lost\"",
+        "hint": null,
+        "iconUrl": "isaac://achievement/484"
+      },
+      "done": false,
+      "unlocks": [
+        {
+          "kind": "character",
+          "id": 31,
+          "name": "The Lost"
+        }
+      ],
+      "origin": null,
+      "missing": [
+        {
+          "kind": "character",
+          "id": 31,
+          "name": "The Lost"
+        }
+      ],
+      "graph": {
+        "kind": "computed",
+        "availableNow": true,
+        "blockedBy": 0,
+        "fanOut": 23,
+        "stepsMissing": 0
+      }
+    },
+    {
+      "achievement": {
+        "kind": "known",
+        "id": 488,
+        "text": "You unlocked \"The Forgotten\"",
+        "hint": null,
+        "iconUrl": "isaac://achievement/488"
+      },
+      "done": false,
+      "unlocks": [
+        {
+          "kind": "character",
+          "id": 35,
+          "name": "The Forgotten"
+        },
+        {
+          "kind": "challenge",
+          "id": 42,
+          "name": "Hot Potato",
+          "rewards": [
+            531
+          ]
+        }
+      ],
+      "origin": null,
+      "missing": [
+        {
+          "kind": "character",
+          "id": 35,
+          "name": "The Forgotten"
+        }
+      ],
+      "graph": {
+        "kind": "computed",
+        "availableNow": true,
+        "blockedBy": 0,
+        "fanOut": 23,
+        "stepsMissing": 0
+      }
+    },
+    {
+      "achievement": {
+        "kind": "known",
+        "id": 489,
+        "text": "You unlocked \"Bethany\"",
+        "hint": null,
+        "iconUrl": "isaac://achievement/489"
+      },
+      "done": false,
+      "unlocks": [
+        {
+          "kind": "character",
+          "id": 36,
+          "name": "Bethany"
+        }
+      ],
+      "origin": null,
+      "missing": [
+        {
+          "kind": "character",
+          "id": 36,
+          "name": "Bethany"
+        }
+      ],
+      "graph": {
+        "kind": "computed",
+        "availableNow": true,
+        "blockedBy": 0,
+        "fanOut": 23,
+        "stepsMissing": 0
+      }
+    },
+    {
+      "achievement": {
+        "kind": "known",
+        "id": 479,
+        "text": "You unlocked \"Eve\"",
+        "hint": null,
+        "iconUrl": "isaac://achievement/479"
+      },
+      "done": false,
+      "unlocks": [
+        {
+          "kind": "character",
+          "id": 26,
+          "name": "Eve"
+        }
+      ],
+      "origin": null,
+      "missing": [
+        {
+          "kind": "character",
+          "id": 26,
+          "name": "Eve"
+        }
+      ],
+      "graph": {
+        "kind": "computed",
+        "availableNow": true,
+        "blockedBy": 0,
+        "fanOut": 22,
+        "stepsMissing": 0
+      }
+    },
+    {
+      "achievement": {
+        "kind": "known",
+        "id": 480,
+        "text": "You unlocked \"Samson\"",
+        "hint": null,
+        "iconUrl": "isaac://achievement/480"
+      },
+      "done": false,
+      "unlocks": [
+        {
+          "kind": "character",
+          "id": 27,
+          "name": "Samson"
+        }
+      ],
+      "origin": null,
+      "missing": [
+        {
+          "kind": "character",
+          "id": 27,
+          "name": "Samson"
+        }
+      ],
+      "graph": {
+        "kind": "computed",
+        "availableNow": true,
+        "blockedBy": 0,
+        "fanOut": 21,
+        "stepsMissing": 0
+      }
+    }
+  ],
+  "basis": "fanOut"
+}

@@ -1,0 +1,345 @@
+{
+  "title": "Tonsil",
+  "revid": 266715,
+  "infobox": {
+    "kind": "trinket"
+  },
+  "sections": [
+    {
+      "kind": "effects",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "After taking ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " 12-20 / ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "edition",
+                      "only": [
+                        "repentancePlus"
+                      ],
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": " 6-12 hits a removed tonsil ",
+                          "style": "plain"
+                        },
+                        {
+                          "kind": "concept",
+                          "page": "familiar",
+                          "label": "familiar"
+                        },
+                        {
+                          "kind": "text",
+                          "text": " starts following Isaac, blocking enemy shots.",
+                          "style": "plain"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "The effect can happen twice, after which the trinket will be destroyed.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "The familiar does not deal damage to enemies.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "notes",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "When the familiar is generated, Isaac will gain the familiar permanently as a passive item. This allows Isaac to drop the trinket while keeping the familiar.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " The passive Tonsil item does not exist in any item pool; thus, this is the only way to find it and make it appear in the ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "concept",
+                              "page": "Collection Page (Afterbirth †)",
+                              "label": "Collection Page"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " aside from starting with it as ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "character",
+                                "id": 9
+                              },
+                              "label": "Eden"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ".",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": " If Eden starts with the passive tonsil item and picks up the trinket, the trinket will spawn only one familiar before being consumed.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Sources of self-inflicted damage, like ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 135
+                  },
+                  "label": "IV Bag"
+                },
+                {
+                  "kind": "text",
+                  "text": " or Blood Donation Machines, can spawn a familiar.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Damage that is blocked by ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 313
+                  },
+                  "label": "Holy Mantle"
+                },
+                {
+                  "kind": "text",
+                  "text": " or the ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "pickup",
+                    "name": "Holy Card"
+                  },
+                  "label": "Holy Card"
+                },
+                {
+                  "kind": "text",
+                  "text": " does not count to the number of hits that are needed for the tonsil familiar to spawn.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [
+                    "repentance"
+                  ],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "concept",
+                      "page": "Familiar",
+                      "label": "Familiar"
+                    },
+                    {
+                      "kind": "text",
+                      "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Tonsil having the lowest priority at 6th and thus being farther from Isaac than familiars of different priorities.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "synergies",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [
+                    "repentancePlus"
+                  ],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "achievement",
+                        "id": 617
+                      },
+                      "label": "n"
+                    },
+                    {
+                      "kind": "text",
+                      "text": " / ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "item",
+                        "id": 439
+                      },
+                      "label": "Mom's Box"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ": Having either can generate a 3rd tonsil before destroying the trinket. Having both can generate a 4th tonsil before destroying it.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "interactions",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 284
+                  },
+                  "label": "nr"
+                },
+                {
+                  "kind": "text",
+                  "text": ": If a passive Tonsil item is given, this item can't be rerolled by the D4 or other items that reroll passive items.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

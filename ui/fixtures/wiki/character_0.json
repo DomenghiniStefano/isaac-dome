@@ -1,0 +1,194 @@
+{
+  "title": "Isaac",
+  "revid": 266789,
+  "infobox": {
+    "kind": "character",
+    "health": [],
+    "damage": "",
+    "range": "",
+    "speed": "",
+    "luck": "",
+    "shotSpeed": "",
+    "pickups": [
+      {
+        "kind": "text",
+        "text": "1 ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "entity",
+          "id": 5,
+          "variant": 40,
+          "subtype": 1
+        },
+        "label": "bomb"
+      }
+    ],
+    "collectibles": [
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 105
+        },
+        "label": "The D6"
+      }
+    ],
+    "unlockedBy": null
+  },
+  "sections": [
+    {
+      "kind": "notes",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Isaac is the basic character, with average stats. Unlocking ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 105
+                  },
+                  "label": "The D6"
+                },
+                {
+                  "kind": "text",
+                  "text": " is invaluable for him as it allows him to see many more items. See The D6's article for detailed tips.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "item",
+                        "id": 105
+                      },
+                      "label": "The D6"
+                    },
+                    {
+                      "kind": "text",
+                      "text": " that Isaac can start with does not increase the ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "concept",
+                      "page": "special item",
+                      "label": "special item"
+                    },
+                    {
+                      "kind": "text",
+                      "text": " counter.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "interactions",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 619
+                  },
+                  "label": "Birthright"
+                },
+                {
+                  "kind": "text",
+                  "text": ": All new item pedestals cycle between two options. Previously seen items are unaffected.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "unlockable",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Isaac's Head, Lost Baby, Mom's Knife, Isaac's Tears, Missing Poster, The D20, Lil' Chest, D1, Fart Baby, Cry Baby, D infinity, Meat Cleaver, Options?, The Broken, Buddy Baby",
+              "style": "plain"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "unlockable",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "The D6 - Start with ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 105
+                  },
+                  "label": "The D6"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

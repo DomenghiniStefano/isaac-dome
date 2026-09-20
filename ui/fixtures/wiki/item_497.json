@@ -1,0 +1,1016 @@
+{
+  "title": "Camo Undies",
+  "revid": 268181,
+  "infobox": {
+    "kind": "item"
+  },
+  "sections": [
+    {
+      "kind": "effects",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Upon entering a new room, Isaac will become camouflaged and all enemies become ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "concept",
+                  "page": "confusion",
+                  "label": "confused"
+                },
+                {
+                  "kind": "text",
+                  "text": ". The effect will last until Isaac presses a fire button.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Bosses will not be confused when Isaac is camouflaged.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    },
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " While camouflaged, Isaac gains +0.5 ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "concept",
+                              "page": "Speed",
+                              "label": "Speed"
+                            },
+                            {
+                              "kind": "text",
+                              "text": ". When the camouflage is dropped, enemies in a short radius around Isaac take 15 damage, and he gains a temporary +10.5 ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "concept",
+                              "page": "Damage",
+                              "label": "Damage"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " and +7.5 ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "concept",
+                              "page": "Tears",
+                              "label": "Tears"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " up which both rapidly scale down to 0. The tears up ignores the soft tears cap.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "text",
+                                  "text": "If Isaac is firing tears while walking into a room, the camouflage and stat boost will not apply.",
+                                  "style": "plain"
+                                }
+                              ],
+                              "children": [
+                                {
+                                  "kind": "list",
+                                  "ordered": false,
+                                  "items": [
+                                    {
+                                      "inline": [
+                                        {
+                                          "kind": "text",
+                                          "text": "This also applies when pressing a fire button to skip boss transition cutscenes.",
+                                          "style": "plain"
+                                        }
+                                      ],
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "notes",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "List of enemies that are completely unaffected by this item:",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "header": [
+            [
+              {
+                "kind": "text",
+                "text": "Name",
+                "style": "plain"
+              }
+            ],
+            [
+              {
+                "kind": "text",
+                "text": "ID",
+                "style": "plain"
+              }
+            ]
+          ],
+          "rows": []
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "List of enemies partially affected by this item, all of which visually appear confused but react to Isaac's presence in some way nonetheless:",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "header": [
+            [
+              {
+                "kind": "text",
+                "text": "Name",
+                "style": "plain"
+              }
+            ],
+            [
+              {
+                "kind": "text",
+                "text": "ID",
+                "style": "plain"
+              }
+            ],
+            [
+              {
+                "kind": "text",
+                "text": "Details",
+                "style": "plain"
+              }
+            ]
+          ],
+          "rows": []
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 33,
+                    "variant": 1,
+                    "subtype": 0
+                  },
+                  "label": "Red Fire Place"
+                },
+                {
+                  "kind": "text",
+                  "text": "s & ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "entity",
+                    "id": 33,
+                    "variant": 3,
+                    "subtype": 0
+                  },
+                  "label": "Purple Fire Place"
+                },
+                {
+                  "kind": "text",
+                  "text": "s are not affected by this item.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "While bosses are not confused, monsters spawned during boss fights are confused, as long as the effect lasts.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "The item's effect can potentially cause FPS drops.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "Champion enemies become tinted the same color as regular enemies, making it difficult to distinguish them.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "text",
+                  "text": "A co-op baby firing will also end the camouflage effect.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [
+                    "repentance"
+                  ],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "entity",
+                        "id": 17,
+                        "variant": 0,
+                        "subtype": 0
+                      },
+                      "label": "Shopkeeper"
+                    },
+                    {
+                      "kind": "text",
+                      "text": "s can be destroyed by the area effect when firing tears for the first time in a room.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " This item does almost nothing in ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "concept",
+                      "page": "Greed mode",
+                      "label": "Greed mode"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ", despite being able to be obtained from the ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "concept",
+                      "page": "Treasure Room (Greed Mode Item Pool)",
+                      "label": "Greed mode Treasure Room"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ".",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [
+                            "repentance"
+                          ],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": "Due to its ability to destroy ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "entity",
+                                "id": 17,
+                                "variant": 0,
+                                "subtype": 0
+                              },
+                              "label": "Shopkeeper"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "s, Camo Undies can net you some extra ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "entity",
+                                "id": 5,
+                                "variant": 20,
+                                "subtype": 1
+                              },
+                              "label": "Pennies"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " or ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "ref",
+                              "target": {
+                                "kind": "entity",
+                                "id": 5,
+                                "variant": 20,
+                                "subtype": 2
+                              },
+                              "label": "Nickel"
+                            },
+                            {
+                              "kind": "text",
+                              "text": "s from shops and ",
+                              "style": "plain"
+                            },
+                            {
+                              "kind": "concept",
+                              "page": "The Shop",
+                              "label": "The Shop"
+                            },
+                            {
+                              "kind": "text",
+                              "text": " floor, should a Shopkeeper wave appear there.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "synergies",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "concept",
+                  "page": "activated collectible",
+                  "label": "Active"
+                },
+                {
+                  "kind": "text",
+                  "text": " items: May be used to deal damage without canceling the effect.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "concept",
+                  "page": "Chasing familiar",
+                  "label": "Chasing familiar"
+                },
+                {
+                  "kind": "text",
+                  "text": "s: Familiars like these can chase and damage enemies with little risk. Best ones for the task are ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 526
+                  },
+                  "label": "7 Seals"
+                },
+                {
+                  "kind": "text",
+                  "text": " and ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 170
+                  },
+                  "label": "Daddy Longlegs"
+                },
+                {
+                  "kind": "text",
+                  "text": ", since they have long aggro range.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "concept",
+                  "page": "Orbital familiar",
+                  "label": "Orbital familiar"
+                },
+                {
+                  "kind": "text",
+                  "text": "s: Enemies can be damaged with little risk, as the camo effect allows Isaac to get close enough for the orbital to deal damage with low risk of taking damage in return.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 559
+                  },
+                  "label": "120 Volt"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 594
+                  },
+                  "label": "n"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 574
+                  },
+                  "label": "n"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 696
+                  },
+                  "label": "n"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Great sources of passive damage without disrupting camo.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 300
+                  },
+                  "label": "r"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Isaac can run into enemies without disrupting the camouflage.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 565
+                  },
+                  "label": "Blood Puppy"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Like most enemies, a hostile Blood Puppy will not target Isaac while the camo effect is active, but it will still target and attack other enemies.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 705
+                  },
+                  "label": "Dark Arts"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The stealth mode given by Camo Undies won't be removed by activating Dark Arts. However, Dark Arts only gives +0.5 speed while Camo Undies is active.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 593
+                  },
+                  "label": "Mars"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Can be used to deal damage without cancelling the effect.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 114
+                  },
+                  "label": "Mom's Knife"
+                },
+                {
+                  "kind": "text",
+                  "text": ": As long as it's not being charged, the knife can deal damage passively.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "text",
+                          "text": "Will not break camouflage while using mouse controls to aim.",
+                          "style": "plain"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 597
+                  },
+                  "label": "Neptunus"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The passive charge of Neptunus does not disrupt Camo, and the initial burst of damage is enhanced by Neptunus.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 562
+                  },
+                  "label": "Rock Bottom"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Temporary tears and damage up do not go away, causing a permanent boost for the rest of the run.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "edition",
+                  "only": [
+                    "repentance"
+                  ],
+                  "inline": [
+                    {
+                      "kind": "text",
+                      "text": " ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "character",
+                        "id": 24
+                      },
+                      "label": "Tainted Judas"
+                    },
+                    {
+                      "kind": "text",
+                      "text": ": Gets a lot of use out of Camo Undies due to his in-built ",
+                      "style": "plain"
+                    },
+                    {
+                      "kind": "ref",
+                      "target": {
+                        "kind": "item",
+                        "id": 705
+                      },
+                      "label": "Dark Arts"
+                    },
+                    {
+                      "kind": "text",
+                      "text": " not disrupting camo.",
+                      "style": "plain"
+                    }
+                  ]
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 591
+                  },
+                  "label": "Venus"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Charm effect activates while in stealth.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "interactions",
+      "blocks": [
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 118
+                  },
+                  "label": "Brimstone"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 69
+                  },
+                  "label": "Chocolate Milk"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 316
+                  },
+                  "label": "Cursed Eye"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 229
+                  },
+                  "label": "Monstro's Lung"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 579
+                  },
+                  "label": "Spirit Sword"
+                },
+                {
+                  "kind": "text",
+                  "text": " / ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 395
+                  },
+                  "label": "Tech X"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Charging ends the camo effect, and the effect doesn't happen when entering a room with a full charge.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "item",
+                    "id": 329
+                  },
+                  "label": "The Ludovico Technique"
+                },
+                {
+                  "kind": "text",
+                  "text": ": Camo Undies will remain active until the tear is moved by pressing a button.",
+                  "style": "plain"
+                }
+              ],
+              "children": [
+                {
+                  "kind": "list",
+                  "ordered": false,
+                  "items": [
+                    {
+                      "inline": [
+                        {
+                          "kind": "edition",
+                          "only": [],
+                          "inline": [
+                            {
+                              "kind": "text",
+                              "text": " Since the tear follows Isaac, he can run around and use the tear to kill enemies.",
+                              "style": "plain"
+                            }
+                          ]
+                        }
+                      ],
+                      "children": [
+                        {
+                          "kind": "list",
+                          "ordered": false,
+                          "items": [
+                            {
+                              "inline": [
+                                {
+                                  "kind": "edition",
+                                  "only": [
+                                    "repentance"
+                                  ],
+                                  "inline": [
+                                    {
+                                      "kind": "text",
+                                      "text": " Tear no longer follows Isaac, but will still not remove Camo effect until moved.",
+                                      "style": "plain"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "inline": [
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 35
+                  },
+                  "label": "Tainted Forgotten"
+                },
+                {
+                  "kind": "text",
+                  "text": ": The item does not affect ",
+                  "style": "plain"
+                },
+                {
+                  "kind": "ref",
+                  "target": {
+                    "kind": "character",
+                    "id": 40
+                  },
+                  "label": "Tainted Soul"
+                },
+                {
+                  "kind": "text",
+                  "text": ", making it useless.",
+                  "style": "plain"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "bugs",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Shooting with mouse control enabled will not break the camouflage effect, permanently causing confusion effect on enemies, but without granting the stat bonuses. Triggering Dark Arts while ",
+              "style": "plain"
+            },
+            {
+              "kind": "ref",
+              "target": {
+                "kind": "item",
+                "id": 497
+              },
+              "label": "Camo Undies"
+            },
+            {
+              "kind": "text",
+              "text": " are still active will deactivate Camo Undies for the duration of Dark Arts, after which Camo Undies will reactivate.",
+              "style": "plain"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

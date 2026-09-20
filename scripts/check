@@ -69,6 +69,12 @@ run 'pnpm lint' pnpm lint
 run 'pnpm format:check' pnpm format:check
 run 'pnpm scan' pnpm scan
 
+# **A gate, unlike the document report below.** No picture, sound or game archive is tracked
+# outside the app's own icons: CLAUDE.md's third promise is that the images come from the
+# user's own copy at runtime, and for two weeks that promise was false without anything
+# noticing. See the comment at the top of the script.
+run 'no game assets' node scripts/check-no-game-assets.mjs
+
 # The contract is generated (N7, B2 in docs/IMPROVEMENTS.md): this is what makes a Rust type
 # and its TypeScript disagree loudly instead of silently. It regenerates into a scratch copy
 # and compares — it never writes the real file, because a check that repairs what it is

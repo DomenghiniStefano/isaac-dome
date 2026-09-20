@@ -230,9 +230,8 @@ pub fn queue_view(
 ///
 /// A node the graph can't compute has an empty chain, so it is never dragged and never
 /// walls — the spec's "rows the graph can't compute carry no constraints", expressed once,
-/// here. It lives in this crate rather than in the Tauri one because the design package
-/// builds its sample queue the same way the app does, and two copies of this rule would be
-/// a package showing an order the app doesn't produce.
+/// here. It lives in this crate rather than in the Tauri one because it is a rule with a
+/// return value worth checking, and the Tauri crate is wiring and isn't tested.
 pub struct GraphDeps {
     chains: std::collections::BTreeMap<u32, std::collections::BTreeSet<u32>>,
 }

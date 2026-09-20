@@ -11,22 +11,6 @@ __pycache__/
 # Schemi ACL rigenerati da tauri-build a ogni compilazione
 crates/app/gen/schemas/
 
-# Uscita di `pnpm design:export`, ora **congelata**: dal 2026-09-15 il design si decide a
-# runtime sulle schermate vere, non su un pacchetto esportato, e quel comando non si esegue
-# più. Quello che resta committato non è un pacchetto di design: è il **corpus di fixture**
-# che `pnpm ui:dev` legge per girare senza backend — i payload veri di 720 oggetti e 642
-# achievement, gli indici e le pagine wiki di esempio.
-#
-# I 6065 PNG estratti dal gioco sono usciti dal repo con quella decisione: erano 46 MB di
-# sprite di un gioco commerciale, li produceva un comando che non si esegue più, e la prima
-# promessa di CLAUDE.md è che le immagini si estraggono dalla copia dell'utente a runtime.
-# Restano nella storia di git se servissero.
-/design-export/*
-!/design-export/isaacdome-design-pack/
-/design-export/isaacdome-design-pack/images/*
-!/design-export/isaacdome-design-pack/images/INDEX.json
-!/design-export/isaacdome-design-pack/images/heads.json
-
 # Playwright MCP writes its snapshots and console logs here while a screen is being
 # looked at: working material, never the repository's.
 .playwright-mcp/
