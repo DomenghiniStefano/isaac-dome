@@ -64,17 +64,20 @@ if (!existsSync(nsisDir)) {
   die(`no NSIS bundle at ${nsisDir}. Run \`pnpm build\` first.`)
 }
 
-const files = readdirSync(nsisDir)
-const setup = files.find((f) => f.endsWith('-setup.exe'))
-if (!setup) die(`no *-setup.exe in ${nsisDir}`)
-
-// **The version has to be in the file name.** A manifest saying 0.3.0 beside an installer built
-// from 0.2.0 is the exact shape of a release that installs the wrong thing and then reports
-// itself as up to date for ever after, because the plugin compares against what is running.
-if (!setup.includes(version)) {
+// **The installer is chosen by the version, never by "the first one there".** `target/` is not
+// emptied between builds, so every release a machine has ever built is still sitting in these
+// folders, and `find` picks whichever sorts first — on 2026-09-20 that was the 0.1.0 setup
+// while 0.1.1 was being released, which the name check below caught. It is the same bug on the
+// publishing side that mattered more: `gh release create` would have uploaded the old
+// installers beside a manifest announcing the new version.
+const setups = readdirSync(nsisDir).filter((f) => f.endsWith('-setup.exe'))
+const setup = setups.find((f) => f.includes(version))
+if (!setup) {
   die(
-    `the installer is "${setup}" and the configured version is ${version}. ` +
-      'Bump the version and build again, or delete the stale bundle.',
+    `no installer for ${version} in ${nsisDir}` +
+      (setups.length
+        ? `. What is there: ${setups.join(', ')} — build again, this version was never built.`
+        : '. Run `pnpm build` first.'),
   )
 }
 

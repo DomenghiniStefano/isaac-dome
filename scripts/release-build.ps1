@@ -127,8 +127,21 @@ if (-not $Publish) {
     exit 0
 }
 
-$setup = Get-ChildItem (Join-Path $root 'target\release\bundle\nsis') -Filter '*-setup.exe' | Select-Object -First 1
-$msi = Get-ChildItem (Join-Path $root 'target\release\bundle\msi') -Filter '*.msi' | Select-Object -First 1
+# **Chosen by version, never "the first one there".** `target/` keeps every installer this
+# machine has ever built, so picking the first match uploads whichever sorts first — the 0.1.0
+# setup beside a 0.1.1 manifest, which is a release that installs the wrong build and then reads
+# as up to date for ever, because the plugin compares against what is running. `-Filter` also
+# matches `.msi.sig` through the legacy wildcard, so the extension is checked exactly.
+$setup = Get-ChildItem (Join-Path $root 'target\release\bundle\nsis') |
+    Where-Object { $_.Name -like "*$version*" -and $_.Name.EndsWith('-setup.exe') } |
+    Select-Object -First 1
+$msi = Get-ChildItem (Join-Path $root 'target\release\bundle\msi') |
+    Where-Object { $_.Name -like "*$version*" -and $_.Name.EndsWith('.msi') } |
+    Select-Object -First 1
+if (-not $setup -or -not $msi) {
+    Write-Host "No installer for $version in target/release/bundle. Build again." -ForegroundColor Red
+    exit 1
+}
 $manifest = Join-Path $root 'target\release\latest.json'
 $assets = @($setup.FullName, $msi.FullName, $manifest)
 
