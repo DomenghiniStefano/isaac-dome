@@ -209,6 +209,13 @@ export interface CompletionKpis {
   readable: number
   completeCharacters: number
   characters: number
+  // The column's half of the pair, added with card #58. A column is complete under the same
+  // rule a row is — every readable cell on hard — so the two numbers read the matrix along
+  // its two axes and neither is a percentage (B23). It is also what the band's emblem
+  // draws: Rust decides a column's symbol with the same reading (`ipc::marks::column_fill`),
+  // so the picture and this number cannot disagree without one of them being a bug.
+  completeColumns: number
+  columns: number
 }
 
 export const completionKpis = (matrix: MarksMatrix): CompletionKpis => {
@@ -220,5 +227,7 @@ export const completionKpis = (matrix: MarksMatrix): CompletionKpis => {
     completeCharacters: matrix.characters.filter((r) => rowTally(r).complete)
       .length,
     characters: matrix.characters.length,
+    completeColumns: columnTallies(matrix).filter((t) => t.complete).length,
+    columns: matrix.bosses.length,
   }
 }
