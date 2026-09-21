@@ -10,10 +10,19 @@
 
 use catalog::{Anm2Frame, SpriteRef};
 
-use crate::icon::MarkTier;
+use crate::icon::{MarkFill, MarkTier};
+use crate::marks::BOSSES;
 
 pub const WIDGET_ANM2: &str = "gfx/ui/completion_widget.anm2";
 pub const LOBBY_ANM2: &str = "gfx/ui/main menu/onlinelobby.anm2";
+
+/// The sheet the widget lays every one of its marks on, layer 0 of the same file.
+///
+/// **There is one, not one per mark.** Measured on the installed game on 2026-09-21: the
+/// eleven symbol layers are placed *inside* this one — `Heart` at `22,7`, `Greed` at
+/// `64,16`, `DadsNote` at `41,54` — so the paper is the picture's ground and never a cell's
+/// background. Backlog B19 was written the other way round, and the file disagrees with it.
+const PAPER_LAYER: &str = "Paper";
 
 #[derive(Debug, Clone, Copy)]
 enum Source {
@@ -66,10 +75,16 @@ pub struct MarkFrames {
     pub lobby: Vec<Anm2Frame>,
 }
 
-/// A tier is a frame of its layer: the rectangles cut into `heart_00.png` and
-/// `heart_02.png`, drawn as the two levels on the Kit page. Frame 0 is declared hidden (the
-/// "not taken" state); whether frame 1 repeats its rectangle waits for a machine with the
-/// game, and if it doesn't, `Normal` becomes frame 1 here and nowhere else.
+/// A tier is a frame of its layer, and the **same** frame for the paper as for a symbol:
+/// one rule, two layers, so the sheet under a mark can never say a different level from the
+/// mark on it.
+///
+/// Frame 0 is declared hidden — the "not taken" state. Whether frame 1 repeats its
+/// rectangle waited for a machine with the game: **it does**, measured 2026-09-21 on the
+/// installed copy. Every symbol layer declares frame 0 and frame 1 at the identical
+/// rectangle (`Heart` both at `64,112`, `DadsNote` both at `176,112`), so reading `Normal`
+/// as frame 0 takes the drawing frame 1 would have taken. The doubt is closed and the
+/// mapping stays.
 fn frame_index(tier: MarkTier) -> usize {
     match tier {
         MarkTier::Normal => 0,
@@ -85,20 +100,106 @@ fn sheet_path(anm2: &str, sheet: &str) -> String {
     }
 }
 
+/// The frame a layer declares at `index`, inside one of the two files' frame lists.
+fn frame_at<'a>(
+    list: &'a [Anm2Frame],
+    layer: &str,
+    animation: Option<&str>,
+    index: usize,
+) -> Option<&'a Anm2Frame> {
+    list.iter().find(|f| {
+        f.layer == layer && animation.is_none_or(|a| f.animation == a) && f.index == index
+    })
+}
+
+fn sprite_of(anm2: &str, f: &Anm2Frame) -> SpriteRef {
+    SpriteRef {
+        path: sheet_path(anm2, &f.sheet),
+        rect: Some(f.rect),
+    }
+}
+
+/// The frames of `column`'s layer, and which file they came from.
+fn column_frames(
+    column: usize,
+    frames: &MarkFrames,
+) -> Option<(&'static MarkLayer, &'static str, &[Anm2Frame])> {
+    let m = MARK_LAYERS.get(column)?;
+    Some(match m.source {
+        Source::Widget => (m, WIDGET_ANM2, &frames.widget),
+        Source::Lobby => (m, LOBBY_ANM2, &frames.lobby),
+    })
+}
+
 /// The piece that draws `column`'s mark at `tier`. `None` when the layer, the animation or the
 /// frame isn't there: never a neighbour's picture.
 pub fn mark_source(column: usize, tier: MarkTier, frames: &MarkFrames) -> Option<SpriteRef> {
-    let m = MARK_LAYERS.get(column)?;
-    let (anm2, list) = match m.source {
-        Source::Widget => (WIDGET_ANM2, &frames.widget),
-        Source::Lobby => (LOBBY_ANM2, &frames.lobby),
-    };
-    let wanted = frame_index(tier);
-    let f = list.iter().find(|f| {
-        f.layer == m.layer && m.animation.is_none_or(|a| f.animation == a) && f.index == wanted
-    })?;
-    Some(SpriteRef {
-        path: sheet_path(anm2, &f.sheet),
-        rect: Some(f.rect),
+    let (m, anm2, list) = column_frames(column, frames)?;
+    let f = frame_at(list, m.layer, m.animation, frame_index(tier))?;
+    Some(sprite_of(anm2, f))
+}
+
+/// The sheet the marks are laid on, at `tier`. Same file, same frame rule as a symbol.
+pub fn paper_source(tier: MarkTier, frames: &MarkFrames) -> Option<SpriteRef> {
+    let f = frame_at(&frames.widget, PAPER_LAYER, None, frame_index(tier))?;
+    Some(sprite_of(WIDGET_ANM2, f))
+}
+
+/// The game's completion widget, as a list of pieces to lay on one another.
+pub struct WidgetArt {
+    /// The paper, and the whole picture's size: a mark is placed on it, never beyond it.
+    pub paper: SpriteRef,
+    /// Each mark to draw and its top-left **inside the paper**, in the paper's own pixels.
+    pub marks: Vec<(SpriteRef, i32, i32)>,
+}
+
+/// The widget for a profile: the paper, with a symbol on it for every column that has one.
+///
+/// Three things this decides, and each of them is a decision rather than a reading:
+///
+/// - **The paper is the bloodied frame only when all twelve columns are `Hard`.** It is a
+///   picture of the whole matrix, so eleven of twelve is not finished — even though the
+///   twelfth is not drawn on it (below). The sheet carries six frames; the four this never
+///   asks for have a meaning in the game that nobody here has measured, and giving the torn
+///   one the sense of "halfway" would invent a third level the domain does not have.
+/// - **An empty column draws nothing.** That is `MarkFill::None`'s whole point.
+/// - **Delirium is not on this paper.** Its symbol lives in the online lobby's actor, whose
+///   positions are measured in *that* actor's space: there is no offset that would put it
+///   here, and inventing one would place it by eye. The widget the game draws has eleven
+///   marks; the matrix under the band is where all twelve live.
+///
+/// `None` only when the paper is missing — the marks without their ground are pictures
+/// floating on nothing, while the paper without a mark is still the truth about that column.
+pub fn widget_source(fills: &[MarkFill; BOSSES.len()], frames: &MarkFrames) -> Option<WidgetArt> {
+    let complete = fills.iter().all(|&f| f == MarkFill::Hard);
+    let paper_frame = frame_at(
+        &frames.widget,
+        PAPER_LAYER,
+        None,
+        frame_index(if complete {
+            MarkTier::Hard
+        } else {
+            MarkTier::Normal
+        }),
+    )?;
+    let marks = fills
+        .iter()
+        .enumerate()
+        .filter_map(|(column, fill)| {
+            let tier = fill.tier()?;
+            let (m, _, list) = column_frames(column, frames)?;
+            // Only what this actor places. `Source::Lobby` is another actor's space.
+            matches!(m.source, Source::Widget).then_some(())?;
+            let f = frame_at(list, m.layer, m.animation, frame_index(tier))?;
+            Some((
+                sprite_of(WIDGET_ANM2, f),
+                f.origin.x - paper_frame.origin.x,
+                f.origin.y - paper_frame.origin.y,
+            ))
+        })
+        .collect();
+    Some(WidgetArt {
+        paper: sprite_of(WIDGET_ANM2, paper_frame),
+        marks,
     })
 }

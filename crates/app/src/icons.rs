@@ -54,11 +54,20 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
         // The game isn't installed: expected, not an error worth logging.
         return no_icon(404);
     };
-    let sprite = match reference {
+    let trim = reference.trims_to_drawing();
+    let png = match &reference {
+        // The one reference that is a picture of several: the widget's paper with the
+        // symbols the profile has earned laid on it, at the offsets the anm2 declares.
+        ipc::IconRef::Widget { fills } => app
+            .state::<MarkFramesState>()
+            .get(rs)
+            .and_then(|frames| ipc::widget_source(fills, frames))
+            .and_then(|art| widget_bytes(rs, &art)),
         ipc::IconRef::Mark { column, tier } => app
             .state::<MarkFramesState>()
             .get(rs)
-            .and_then(|frames| ipc::mark_source(column, tier, frames)),
+            .and_then(|frames| ipc::mark_source(*column, *tier, frames))
+            .and_then(|sprite| sprite_bytes(rs, &sprite, trim)),
         ipc::IconRef::Achievement { .. }
         | ipc::IconRef::Item { .. }
         | ipc::IconRef::Head { .. }
@@ -66,12 +75,10 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
         | ipc::IconRef::Room { .. } => app
             .state::<CatalogState>()
             .get_or_build(rs)
-            .and_then(|c| ipc::icon_source(c, &reference).cloned()),
+            .and_then(|c| ipc::icon_source(c, &reference).cloned())
+            .and_then(|sprite| sprite_bytes(rs, &sprite, trim)),
     };
-    let Some(sprite) = sprite else {
-        return no_icon(404);
-    };
-    let Some(png) = sprite_bytes(rs, &sprite, reference.trims_to_drawing()) else {
+    let Some(png) = png else {
         return no_icon(404);
     };
     let mut r = tauri::http::Response::new(png);
@@ -97,4 +104,30 @@ fn sprite_bytes(rs: &ResourceSet, sprite: &catalog::SpriteRef, trim: bool) -> Op
         return Some(png);
     }
     Some(ipc::trim_opaque(&png).unwrap_or(png))
+}
+
+/// The widget, drawn: the paper first, then every mark over it.
+///
+/// **A mark that can't be read is left out, and the paper is not.** Losing one symbol costs
+/// one column of the emblem; losing the paper costs the picture, and `ipc::overlay` says the
+/// same thing about its own two arguments. The rest of this file's rule holds too — nothing
+/// here guesses, and every failure is a 404 the band draws as "no picture".
+fn widget_bytes(rs: &ResourceSet, art: &ipc::WidgetArt) -> Option<Vec<u8>> {
+    let paper = sprite_bytes(rs, &art.paper, false)?;
+    let marks: Vec<(Vec<u8>, i32, i32)> = art
+        .marks
+        .iter()
+        .filter_map(|(sprite, x, y)| Some((sprite_bytes(rs, sprite, false)?, *x, *y)))
+        .collect();
+    let pieces: Vec<(&[u8], i32, i32)> = marks
+        .iter()
+        .map(|(png, x, y)| (png.as_slice(), *x, *y))
+        .collect();
+    let composed = ipc::overlay(&paper, &pieces)?;
+    // Centred **after** composing, never before: the marks are already on the paper at the
+    // offsets the anm2 gave, so moving the finished picture moves all twelve pieces together
+    // and none of them relative to another. The game's crop leaves the sheet up against its
+    // own left edge with eleven empty pixels on the right, which in a square frame reads as a
+    // picture nobody centred — see `centre_opaque` for why it is not a trim.
+    Some(ipc::centre_opaque(&composed).unwrap_or(composed))
 }

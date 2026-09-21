@@ -1029,7 +1029,7 @@ and what a person has to judge.
       that wants a sticky heading is a design call nobody has made, and it only shows up on a
       screen shorter than 34 rows
 - [ ] **NEEDS SAVE — the corner square on a mark won online, on a real profile** (B21). The
-      legend names it and the tooltip says *"vinto anche online"*, but the glyph itself has only
+      legend names it and the tooltip says *"online"*, but the glyph itself has only
       ever been seen on the Kit page: it needs a profile of the era that has the bit, and it is
       1.5 units in a corner. Whether it reads as a mark's property or as a rendering artefact is
       the judgement, and only the grid at real density answers it

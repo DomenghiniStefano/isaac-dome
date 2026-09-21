@@ -23,7 +23,7 @@
 //! Hence a single structure: a frame, with the name of the animation and layer that
 //! contain it. It's up to the caller to decide what to do with it.
 
-use crate::sprite::Rect;
+use crate::sprite::{Point, Rect};
 use crate::strings::children_named;
 use crate::xml::{elements, Element};
 
@@ -48,6 +48,16 @@ pub struct Anm2Frame {
     /// exist matters.
     pub visible: bool,
     pub rect: Rect,
+    /// Where the layer puts the crop, as `position - pivot` in the actor's own space.
+    ///
+    /// The rectangle says *what* to cut; this says *where it goes*, and only a picture made
+    /// of several layers needs it — one icon is served on its own and lands wherever the
+    /// interface puts it. The completion widget is the case that needs it: one paper with
+    /// eleven marks laid on it, each at its own place, and the mark's offset inside the
+    /// paper is the difference of the two origins.
+    ///
+    /// A frame that declares no position sits at `0,0`: absent is not a refusal.
+    pub origin: Point,
 }
 
 /// The sheets the file cites, in declaration order.
@@ -99,6 +109,7 @@ pub fn frames(bytes: &[u8]) -> Option<Vec<Anm2Frame>> {
                 index,
                 visible: f.attr("Visible") != Some("false"),
                 rect,
+                origin: origin_of(f),
             });
         }
     }
@@ -142,6 +153,21 @@ fn animation_of(els: &[Element], i: usize) -> Option<String> {
         .map(str::to_string)
 }
 
+/// The frame's top-left, `position - pivot`. Every attribute is optional and a missing one
+/// reads as zero: a file that places nothing places everything at the origin, which is what
+/// `minimap_icons.anm2` does and what the crop-only callers have always assumed.
+fn origin_of(e: &Element) -> Point {
+    let n = |name: &str| {
+        e.attr(name)
+            .and_then(|v| v.parse::<i32>().ok())
+            .unwrap_or(0)
+    };
+    Point {
+        x: n("XPosition") - n("XPivot"),
+        y: n("YPosition") - n("YPivot"),
+    }
+}
+
 fn rect_of(e: &Element) -> Option<Rect> {
     let n = |name: &str| e.attr(name).and_then(|v| v.parse::<u32>().ok());
     Some(Rect {
@@ -167,6 +193,46 @@ mod tests {
 <LayerAnimation LayerId="0"><Frame XCrop="0" YCrop="0" Width="96" Height="96" Visible="true"/></LayerAnimation>
 <LayerAnimation LayerId="1"><Frame XCrop="64" YCrop="112" Width="16" Height="16" Visible="false"/><Frame XCrop="64" YCrop="96" Width="16" Height="16" Visible="true"/></LayerAnimation>
 </LayerAnimations></Animation></Animations></AnimatedActor>"#;
+
+    /// Mirrors the real `completion_widget.anm2`, which places its layers: the paper at
+    /// `0,0` and Mom's Heart at `22,7`, both pivoting on `16,16`. Measured on the installed
+    /// game on 2026-09-21.
+    const PLACED: &[u8] = br#"<AnimatedActor>
+<Content><Spritesheets><Spritesheet Id="0" Path="completion_widget.png"/></Spritesheets>
+<Layers><Layer Id="0" Name="Paper"/><Layer Id="1" Name="Heart"/></Layers></Content>
+<Animations><Animation Name="Idle"><LayerAnimations>
+<LayerAnimation LayerId="0"><Frame XPosition="0" YPosition="0" XPivot="16" YPivot="16" XCrop="0" YCrop="0" Width="96" Height="96" Visible="true"/></LayerAnimation>
+<LayerAnimation LayerId="1"><Frame XPosition="22" YPosition="7" XPivot="16" YPivot="16" XCrop="64" YCrop="112" Width="16" Height="16" Visible="true"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+
+    #[test]
+    fn a_frame_carries_where_the_layer_draws_it_not_only_what_to_cut() {
+        // The game draws a frame at `position - pivot` in the actor's own space. The
+        // subtraction is done here so no caller has to remember to do it — and it goes
+        // negative, which is why the field is signed.
+        let f = frames(PLACED).expect("valid XML");
+        assert_eq!(f[0].origin, Point { x: -16, y: -16 }, "the paper");
+        assert_eq!(f[1].origin, Point { x: 6, y: -9 }, "Mom's Heart");
+    }
+
+    #[test]
+    fn two_layers_of_one_actor_are_placed_by_the_difference_of_their_origins() {
+        // What a composition needs: the mark's top-left inside the paper. The game's own
+        // numbers say 22,7 — the anm2's `XPosition`/`YPosition` for that layer, which only
+        // come out right because both origins carry the pivot.
+        let f = frames(PLACED).expect("valid XML");
+        let (paper, heart) = (f[0].origin, f[1].origin);
+        assert_eq!(heart.x - paper.x, 22);
+        assert_eq!(heart.y - paper.y, 7);
+    }
+
+    #[test]
+    fn a_frame_that_declares_no_placement_sits_at_the_origin() {
+        // `minimap_icons.anm2` and the synthetic fixtures above carry no position at all.
+        // Absent is `0,0` and not a refusal: the crop is still a crop.
+        let f = frames(PER_LAYER).expect("valid XML");
+        assert!(f.iter().all(|f| f.origin == Point { x: 0, y: 0 }));
+    }
 
     /// Mirrors `minimap_icons.anm2`: a single layer, with the name on the animation.
     const PER_ANIMATION: &[u8] = br#"<AnimatedActor>

@@ -131,5 +131,11 @@ export const completionMatrix = (): MarksMatrix => {
       normal: count(hasLevel),
       hard: count(isHard),
     },
+    // Null for the same reason every other drawing here is: the emblem is composed by the
+    // icon protocol out of the game's own sheet, and the development server has no copy to
+    // cut from — which is also what a machine without the game receives. The band then
+    // draws no frame at all and the text takes the width, so this is the shape the browser
+    // can check; the one with the picture is only visible in the app.
+    widgetUrl: null,
   }
 }

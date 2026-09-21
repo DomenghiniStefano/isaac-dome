@@ -25,6 +25,30 @@ pub enum MarkTier {
     Hard,
 }
 
+/// How much of a column a picture of the whole profile shows.
+///
+/// Not a `MarkTier` with an `Option` around it: a column can be absent, and absent is a
+/// third thing the widget draws differently — it draws **nothing**. The game has no greyed
+/// symbol for a mark nobody has, it simply leaves that spot on the paper empty, and a
+/// picture that invented one would be saying something the game never says.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum MarkFill {
+    None,
+    Normal,
+    Hard,
+}
+
+impl MarkFill {
+    /// Which symbol to draw, or `None` when there is nothing to draw at all.
+    pub fn tier(self) -> Option<MarkTier> {
+        match self {
+            MarkFill::None => None,
+            MarkFill::Normal => Some(MarkTier::Normal),
+            MarkFill::Hard => Some(MarkTier::Hard),
+        }
+    }
+}
+
 /// The things the interface draws an icon for. Bosses and challenges aren't here because
 /// `UnlockTarget` carries no image for them: the game has no single picture for a
 /// challenge, and the brief asks for a typographic placeholder instead of a guess.
@@ -44,6 +68,16 @@ pub enum IconRef {
     Mark {
         column: usize,
         tier: MarkTier,
+    },
+    /// The game's completion widget for this profile: one paper with a symbol on it for
+    /// every column that has one, composed by `widget_source` and `overlay`.
+    ///
+    /// **The only reference that carries state instead of identity.** Every other one names
+    /// a thing that is always the same picture; this one names what the profile has done, so
+    /// the twelve columns travel in the path and the URL changes when the save does — which
+    /// is also what makes the webview re-fetch it instead of serving a stale emblem.
+    Widget {
+        fills: [MarkFill; BOSSES.len()],
     },
     /// The co-op menu head of a completion-matrix row, resolved through `character_for`.
     Head {
@@ -121,6 +155,39 @@ fn tier_token(t: MarkTier) -> &'static str {
     }
 }
 
+/// One character per column, so the widget's whole state is one path segment of a fixed
+/// length — and a segment of any other length is refused rather than padded.
+fn fill_token(f: MarkFill) -> char {
+    match f {
+        MarkFill::None => '-',
+        MarkFill::Normal => 'n',
+        MarkFill::Hard => 'h',
+    }
+}
+
+fn fill_from_token(c: char) -> Option<MarkFill> {
+    match c {
+        '-' => Some(MarkFill::None),
+        'n' => Some(MarkFill::Normal),
+        'h' => Some(MarkFill::Hard),
+        // Paired with `fill_token`, which is exhaustive.
+        _ => None,
+    }
+}
+
+/// The twelve columns a `widget/…` segment spells, or `None` for anything else.
+///
+/// Exactly twelve: a shorter string would compose a picture missing a mark and look like a
+/// profile that has not got it, which is a plausible wrong answer and the worst kind.
+fn fills_from_token(s: &str) -> Option<[MarkFill; BOSSES.len()]> {
+    let mut out = [MarkFill::None; BOSSES.len()];
+    let mut chars = s.chars();
+    for slot in out.iter_mut() {
+        *slot = fill_from_token(chars.next()?)?;
+    }
+    chars.next().is_none().then_some(out)
+}
+
 fn tier_from_token(s: &str) -> Option<MarkTier> {
     match s {
         "normal" => Some(MarkTier::Normal),
@@ -138,6 +205,12 @@ impl IconRef {
             IconRef::Achievement { id } => format!("achievement/{id}"),
             IconRef::Item { kind, id } => format!("item/{}/{id}", kind_token(*kind)),
             IconRef::Mark { column, tier } => format!("mark/{column}/{}", tier_token(*tier)),
+            IconRef::Widget { fills } => {
+                format!(
+                    "widget/{}",
+                    fills.iter().map(|&f| fill_token(f)).collect::<String>()
+                )
+            }
             IconRef::Head { row } => format!("head/{row}"),
             IconRef::Room { kind } => format!("room/{}", room_token(*kind)),
             // `page/none` is what a target with no page renders to; `parse` refuses it, so
@@ -169,6 +242,9 @@ impl IconRef {
             ("mark", column, Some(tier)) => IconRef::Mark {
                 column: column.parse::<usize>().ok().filter(|&c| c < BOSSES.len())?,
                 tier: tier_from_token(tier)?,
+            },
+            ("widget", fills, None) => IconRef::Widget {
+                fills: fills_from_token(fills)?,
             },
             ("room", kind, None) => IconRef::Room {
                 kind: room_from_token(kind)?,
@@ -209,6 +285,9 @@ impl IconRef {
             | IconRef::Item { .. }
             | IconRef::Mark { .. }
             | IconRef::Head { .. }
+            // The paper's margin is where the marks are placed: trimming it would move
+            // every one of them, and the offsets are the game's own.
+            | IconRef::Widget { .. }
             | IconRef::Page { .. } => false,
         }
     }
@@ -289,8 +368,9 @@ pub fn icon_source<'a>(c: &'a Catalog, r: &IconRef) -> Option<&'a SpriteRef> {
         // The game's own minimap icon, by the name the game gave it. A kind with no icon and
         // a game that is not installed both answer None, and the screen draws its own symbol.
         IconRef::Room { kind } => minimap_icon_name(*kind).and_then(|n| c.minimap_icon(n)),
-        // Not the catalog's: the symbols are pieces of the widget's sheets, see `mark_source`.
-        IconRef::Mark { .. } => None,
+        // Not the catalog's: the symbols and the paper they sit on are pieces of the
+        // widget's sheets, see `mark_source`, `paper_source` and `widget_source`.
+        IconRef::Mark { .. } | IconRef::Widget { .. } => None,
     }
 }
 
