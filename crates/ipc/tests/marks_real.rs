@@ -272,3 +272,121 @@ fn the_online_bit_never_stands_without_the_first_level_bit() {
         ));
     }
 }
+
+/// The measurement itself, kept reproducible: the run that named the bit.
+///
+/// On 2026-09-12 a matched window was taken either side of **one** online co-op run —
+/// Greed Mode, Cain, won, the whole session inside the window (`samples/logs/
+/// 20260912-greed-online-coop.log.txt` is that session's log). `Greed × Cain` went 2 → 7.
+///
+/// What this pins is not the pair of numbers — it is that the bit landed on **the cell the
+/// run took and on no other**. A table whose base moved would light a neighbour on the same
+/// day and the arithmetic of `no_mark_appears_without_a_kill_of_that_boss` would still work;
+/// an identity does not survive it. It is the same argument as
+/// `the_character_that_won_is_the_character_whose_mark_appeared`, applied to the bit rather
+/// than to the mark.
+///
+/// **What it cannot pin** is the half of the reading that made it "won online" rather than
+/// "won in co-op": that came from the dated series against the 22 folders under
+/// `online_logs\`, and those folders are not in `samples/`. They are the live game's, they
+/// rotate, and a test that read them would pass on one machine and skip on every other. The
+/// series half that a sample *can* still carry is the test below.
+#[test]
+fn the_online_run_lit_the_cell_it_took_and_no_other() {
+    let (Some(before), Some(after)) = (
+        test_support::window_sample("20260912-pre.rep+persistentgamedata1.dat"),
+        test_support::window_sample("20260912-post-online.rep+persistentgamedata1.dat"),
+    ) else {
+        return; // already declared on stderr
+    };
+    let (Some(before), Some(after)) = (counters(&before), counters(&after)) else {
+        return;
+    };
+
+    let gained: Vec<(&str, &str)> = (0..CHARACTERS.len())
+        .flat_map(|row| (0..BOSSES.len()).map(move |column| (row, column)))
+        .filter(|&(row, column)| {
+            counter_index(row, column)
+                .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
+                .is_some_and(|(was, now)| was & 4 == 0 && now & 4 != 0)
+        })
+        .map(|(row, column)| (CHARACTERS[row].0, BOSSES[column]))
+        .collect();
+
+    assert_eq!(
+        gained,
+        vec![("Cain", "Greed")],
+        "the window holds one online Greed run with Cain: the online bit has to appear on \
+         that cell and on nothing else"
+    );
+}
+
+/// The online bit is a property of the **run**, not of the day — and that is what stops
+/// "won online" from being a reading of something else entirely.
+///
+/// The correlation that named the bit (every date that gained one has a session folder of
+/// the same day, 6 of 6) needs `online_logs\`, which no sample carries. What the series
+/// carries on its own is the sharper half: a window in which one cell gained the bit and
+/// another gained a mark **without** it. A day-shaped explanation — a patch, an era, a
+/// setting left on — cannot produce that. 2026-08-31 is the case the entry was written
+/// from: `Satan × Magdalene` 3 → 7 with the bit and `Greed × Magdalene` 0 → 3 without it,
+/// same day and the same character.
+///
+/// Held over the whole series rather than pinned to that date: a fixture of an era belongs
+/// in a file name, and this property holds whatever the profile does next. The series
+/// offering no such window is a statement about `samples/`, so it is **declared** and not
+/// asserted away — the bit only exists from the era the profile first won online.
+#[test]
+fn a_mark_taken_the_same_day_can_lack_the_online_bit() {
+    let (mut lit, mut mixed, mut example) = (0, 0, String::new());
+    for suffix in SERIES {
+        let series = series_of(suffix);
+        for pair in series.windows(2) {
+            let (before_name, before) = &pair[0];
+            let (after_name, after) = &pair[1];
+            let moved = |keep: fn(u32, u32) -> bool| -> Vec<(&str, &str)> {
+                (0..CHARACTERS.len())
+                    .flat_map(|row| (0..BOSSES.len()).map(move |column| (row, column)))
+                    .filter(|&(row, column)| {
+                        counter_index(row, column)
+                            .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
+                            .is_some_and(|(was, now)| keep(was, now))
+                    })
+                    .map(|(row, column)| (CHARACTERS[row].0, BOSSES[column]))
+                    .collect()
+            };
+            // The bit arriving on some cell, and a level arriving on another without it.
+            let with = moved(|was, now| was & 4 == 0 && now & 4 != 0);
+            if with.is_empty() {
+                continue;
+            }
+            lit += 1;
+            let without = moved(|was, now| was & 3 == 0 && now & 3 != 0 && now & 4 == 0);
+            if without.is_empty() {
+                continue;
+            }
+            mixed += 1;
+            if example.is_empty() {
+                example = format!(
+                    "{before_name} → {after_name}: {with:?} with the bit, {without:?} \
+                     without"
+                );
+            }
+        }
+    }
+    if lit == 0 {
+        test_support::skip(&format!(
+            "no window across {} series lights the online bit: nothing here could tell a \
+             property of the run from a property of the day",
+            SERIES.len()
+        ));
+        return;
+    }
+    assert!(
+        mixed > 0,
+        "{lit} window(s) light the online bit and in every one of them **every** new mark \
+         carries it. That is what a property of the *day* looks like — a patch, an era, a \
+         setting left on — and \"won online\" would be the wrong name for it"
+    );
+    eprintln!("online bit is a property of the run: {example}");
+}
