@@ -18,9 +18,10 @@ use crate::sprite::SpriteRef;
 use crate::strings::Strings;
 use crate::text::{Language, Text};
 use crate::unlock::{self, Unlock};
+use crate::versusscreen;
 
 /// The sources, by logical path. Public: callers and tests know what will be asked for.
-pub const SOURCES: [(&str, Source); 10] = [
+pub const SOURCES: [(&str, Source); 13] = [
     ("items.xml", Source::Items),
     ("items_metadata.xml", Source::Metadata),
     ("stringtable.sta", Source::Strings),
@@ -31,6 +32,19 @@ pub const SOURCES: [(&str, Source); 10] = [
     ("challenges.xml", Source::Challenges),
     ("bossportraits.xml", Source::BossPortraits),
     ("gfx/ui/minimap_icons.anm2", Source::MinimapIcons),
+    // The scene `bossportraits.xml` names in its root element, and the two the game puts in
+    // its place for one boss each. Named here rather than looked for per row: the catalog
+    // asks for the paths on this list and no others, and three files is the whole of what
+    // the game has (`versusscreen*.anm2`, measured 2026-09-22).
+    ("gfx/ui/boss/versusscreen.anm2", Source::VersusScreen),
+    (
+        "gfx/ui/boss/versusscreen_mother.anm2",
+        Source::VersusScreenMother,
+    ),
+    (
+        "gfx/ui/boss/versusscreen_dogma.anm2",
+        Source::VersusScreenDogma,
+    ),
 ];
 
 /// The logical path of a source: `build` goes through here, so SOURCES is the only list.
@@ -50,7 +64,10 @@ fn path_of(source: Source) -> &'static str {
             | Source::ItemPools
             | Source::Challenges
             | Source::BossPortraits
-            | Source::MinimapIcons => "",
+            | Source::MinimapIcons
+            | Source::VersusScreen
+            | Source::VersusScreenMother
+            | Source::VersusScreenDogma => "",
         })
 }
 
@@ -147,8 +164,20 @@ impl Catalog {
                 .into_iter()
                 .map(|c| (c.id, c))
                 .collect();
+        // The scenes first: a portrait is a piece of its file, and which piece is the
+        // versus screen's to say (B70). A scene that is not there costs the crop and
+        // nothing else — the row keeps the whole file, the way every build before did.
+        let default_scene = fetch(Source::VersusScreen, &mut diagnostics);
+        let own_scenes: Vec<Vec<u8>> = [Source::VersusScreenMother, Source::VersusScreenDogma]
+            .into_iter()
+            .filter_map(|s| fetch(s, &mut diagnostics))
+            .collect();
+        let crops = versusscreen::crops(
+            default_scene.as_deref(),
+            &own_scenes.iter().map(Vec::as_slice).collect::<Vec<_>>(),
+        );
         let bosses: BTreeMap<BossId, Boss> = fetch(Source::BossPortraits, &mut diagnostics)
-            .map(|b| bossportraits::parse(&b, &mut diagnostics))
+            .map(|b| bossportraits::parse(&b, &crops, &mut diagnostics))
             .unwrap_or_default()
             .into_iter()
             .map(|b| (b.id, b))

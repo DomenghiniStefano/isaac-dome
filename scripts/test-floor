@@ -133,5 +133,17 @@
 # that pushes part of the picture off the edge, which looks like a crop nobody asked for and
 # on this picture means losing a column.
 
-RUST_TESTS=1209
-UI_TESTS=759
+# **Raised on 2026-09-22**, Rust +18 and UI +6, B70 and B69 together — the two ways a row can
+# draw the wrong picture. B70 is Rust only, 15 of the 18: seven on the versus screen, where
+# the crop of a boss portrait is read from the game's own scene rather than guessed, two on a
+# row carrying it, three on the installed game and three on the reference itself. One of the
+# three real-data ones found something on its first run — Dogma's scene asks for 208 pixels of
+# a 192-pixel file — which is why it checks that a crop starts inside its file rather than
+# that it ends inside one. B69 is the other three Rust and all six UI: the stand-in picture,
+# its round trip, the file it names checked against the archives, the state that carries its
+# URL and the one that does not, and six on the order the three layers are drawn in — which is
+# the whole of the bug, since "nothing" and "we could not find it" used to draw the same
+# square.
+
+RUST_TESTS=1227
+UI_TESTS=765

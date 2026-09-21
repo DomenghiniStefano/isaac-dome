@@ -6,6 +6,7 @@ use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::{AchievementId, BossId};
 use crate::items::normalize_root;
 use crate::sprite::SpriteRef;
+use crate::versusscreen::PortraitCrops;
 use crate::xml::{elements, Element};
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -16,7 +17,7 @@ pub struct Boss {
     pub unlocked_by: Option<AchievementId>,
 }
 
-pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Boss> {
+pub fn parse(bytes: &[u8], crops: &PortraitCrops, diagnostics: &mut Vec<Diagnostic>) -> Vec<Boss> {
     let els = match elements(bytes) {
         Ok(els) => els,
         Err(_) => {
@@ -36,11 +37,16 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Boss> {
 
     els.iter()
         .filter(|e| e.name == "boss")
-        .filter_map(|e| boss_from(e, &root, diagnostics))
+        .filter_map(|e| boss_from(e, &root, crops, diagnostics))
         .collect()
 }
 
-fn boss_from(e: &Element, root: &str, d: &mut Vec<Diagnostic>) -> Option<Boss> {
+fn boss_from(
+    e: &Element,
+    root: &str,
+    crops: &PortraitCrops,
+    d: &mut Vec<Diagnostic>,
+) -> Option<Boss> {
     let skip = |id: Option<u32>, reason: SkipReason, d: &mut Vec<Diagnostic>| {
         d.push(Diagnostic::ElementSkipped {
             source: Source::BossPortraits,
@@ -64,7 +70,14 @@ fn boss_from(e: &Element, root: &str, d: &mut Vec<Diagnostic>) -> Option<Boss> {
     Some(Boss {
         id: BossId(id),
         name: name.to_string(),
-        portrait: SpriteRef::whole(format!("{root}/{portrait}")),
+        portrait: {
+            // Not the whole file: six portraits hold the boss and the rubble it climbs out of
+            // side by side, and Mother holds her hands under her (B70). The rectangle is the
+            // one the game's own versus screen cuts, never a size of ours.
+            let path = format!("{root}/{portrait}");
+            let rect = crops.rect_for(&path);
+            SpriteRef { path, rect }
+        },
         unlocked_by: e
             .attr("achievement")
             .and_then(|a| a.parse().ok())
@@ -84,10 +97,47 @@ mod tests {
 \t<boss id=\"7\" name=\"NoPortrait\" />
 </bosses>";
 
+    /// The scene the game ships, reduced to the one layer this module's crop comes from.
+    const SCENE: &[u8] = b"<AnimatedActor><Content>
+\t<Spritesheets><Spritesheet Id=\"4\" Path=\"Portrait_20.0_Monstro.png\" /></Spritesheets>
+\t<Layers><Layer Id=\"4\" Name=\"BossPortrait\" SpritesheetId=\"4\" /></Layers>
+\t</Content><Animations><Animation Name=\"Scene\"><LayerAnimations>
+\t<LayerAnimation LayerId=\"4\" Visible=\"true\">
+\t\t<Frame XCrop=\"0\" YCrop=\"0\" Width=\"192\" Height=\"192\" Visible=\"true\"/>
+\t</LayerAnimation>
+\t</LayerAnimations></Animation></Animations></AnimatedActor>";
+
+    fn scene_crops() -> PortraitCrops {
+        crate::versusscreen::crops(Some(SCENE), &[])
+    }
+
+    #[test]
+    fn a_row_carries_the_crop_its_scene_declares() {
+        let mut d = Vec::new();
+        let b = parse(B, &scene_crops(), &mut d);
+        assert_eq!(
+            b[0].portrait.rect,
+            Some(crate::sprite::Rect {
+                x: 0,
+                y: 0,
+                w: 192,
+                h: 192
+            }),
+            "the portrait is the square the versus screen draws, not the file"
+        );
+    }
+
+    #[test]
+    fn without_a_scene_a_row_carries_the_whole_file_as_before() {
+        let mut d = Vec::new();
+        let b = parse(B, &PortraitCrops::default(), &mut d);
+        assert_eq!(b[0].portrait.rect, None);
+    }
+
     #[test]
     fn portrait_uses_the_declared_root_and_keeps_spaces_in_names() {
         let mut d = Vec::new();
-        let b = parse(B, &mut d);
+        let b = parse(B, &scene_crops(), &mut d);
         assert_eq!(b[0].portrait.path, "gfx/ui/boss/Portrait_20.0_Monstro.png");
         assert_eq!(
             b[2].portrait.path, "gfx/ui/boss/Portrait_The Beast.png",
@@ -101,7 +151,7 @@ mod tests {
     #[test]
     fn malformed_rows_are_skipped() {
         let mut d = Vec::new();
-        let b = parse(B, &mut d);
+        let b = parse(B, &scene_crops(), &mut d);
         assert_eq!(b.len(), 3);
         assert!(d.contains(&Diagnostic::ElementSkipped {
             source: Source::BossPortraits,

@@ -92,11 +92,15 @@ export const setupWith = (active: ActiveProfile): SetupState => ({
   candidates,
   active,
   diagnostics: [],
+  // The Kit runs outside Tauri, where no protocol answers: a URL here would draw a broken
+  // picture in every empty square instead of the empty square itself.
+  unknownIconUrl: null,
 })
 
 export const noneSetup: SetupState = {
   steam: null,
   game: null,
+  unknownIconUrl: null,
   candidates: [],
   active: { kind: 'none', reason: MissingReason.SteamNotFound },
   diagnostics: [{ kind: 'steamNotFound' }],

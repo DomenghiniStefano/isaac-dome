@@ -27,7 +27,12 @@ fn read_save(path: &std::path::Path) -> Option<core_save::Save> {
 fn state_now(app: &AppHandle) -> SetupState {
     let settings = settings_file::load(app);
     let d = discover(&settings_file::options(app));
-    ipc::setup_state(&d, settings.active_profile_id.as_ref(), read_save)
+    ipc::setup_state(
+        &d,
+        settings.active_profile_id.as_ref(),
+        read_save,
+        crate::icons::icon_url,
+    )
 }
 
 #[tauri::command]
@@ -97,6 +102,7 @@ pub fn select_profile(app: AppHandle, id: ProfileId) -> Result<SetupState, IpcEr
         &d,
         settings.active_profile_id.as_ref(),
         read_save,
+        crate::icons::icon_url,
     ))
 }
 

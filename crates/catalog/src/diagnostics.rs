@@ -17,6 +17,12 @@ pub enum Source {
     Challenges,
     BossPortraits,
     MinimapIcons,
+    /// The scene `bossportraits.xml` names, and the two scenes the game swaps in for one
+    /// boss each. They say where to cut a portrait; without them a portrait stays whole,
+    /// which is the picture with the rubble beside it that B70 is about.
+    VersusScreen,
+    VersusScreenMother,
+    VersusScreenDogma,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
