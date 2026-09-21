@@ -141,6 +141,16 @@ export type SetupState = {
   candidates: Array<CandidateView>
   active: ActiveProfile
   diagnostics: Array<SetupDiagnostic>
+  /**
+   * The picture to draw where a row's own icon could not be resolved: the game's red
+   * question mark (B69). It is here, on the state every window reads at startup, because
+   * it belongs to no row — and no `isaac://` URL is ever written outside the Tauri
+   * crate, so the frontend has to be handed this one.
+   *
+   * `None` without the game: there would be nothing to serve it from, and a request per
+   * row that answers 404 draws the same empty square as asking for nothing at all.
+   */
+  unknownIconUrl: string | null
 }
 
 /**

@@ -59,7 +59,9 @@ pub use graph::{
     PlanDiagnostic, PlanExpansion, PlanStep, PlanView, RequirementView, StepsBasis, StepsSection,
     ThresholdItemView, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
-pub use icon::{icon_source, IconRef, MarkFill, MarkTier, ICON_SCHEME};
+pub use icon::{
+    icon_source, unknown_source, IconRef, MarkFill, MarkTier, ICON_SCHEME, UNKNOWN_SPRITE,
+};
 pub use live::{
     live_marks, live_view, LiveAchievement, LiveDiagnostic, LiveGraph, LiveMarkRow, LiveMarks,
     LiveOpen, LiveView,
