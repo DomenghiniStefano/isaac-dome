@@ -4,7 +4,7 @@ use discovery::{
 };
 use ipc::{
     candidates, profile_id, resolve_active, setup_state, ActiveProfile, CandidateSource,
-    ChoiceReason, MissingReason, SetupDiagnostic,
+    ChoiceReason, IconRef, MissingReason, SetupDiagnostic,
 };
 use std::path::{Path, PathBuf};
 use std::time::{Duration, SystemTime};
@@ -422,7 +422,7 @@ fn setup_state_without_steam_reports_the_missing_chain() {
         game_data: None,
         diagnostics: vec![Diagnostic::SteamNotFound],
     };
-    let state = setup_state(&discovery, None, |_: &Path| None);
+    let state = setup_state(&discovery, None, |_: &Path| None, |_| None);
 
     assert!(state.steam.is_none());
     assert!(state.game.is_none());
@@ -452,7 +452,7 @@ fn setup_state_never_leaks_the_steam_account_id_through_diagnostics() {
             kind: std::io::ErrorKind::PermissionDenied,
         }],
     };
-    let state = setup_state(&discovery, None, |_: &Path| None);
+    let state = setup_state(&discovery, None, |_: &Path| None, |_| None);
     let json = serde_json::to_string(&state).unwrap();
 
     assert!(
@@ -503,7 +503,7 @@ fn setup_state_with_two_candidates_needs_a_choice_and_hides_library_paths() {
         game_data: None,
         diagnostics: vec![],
     };
-    let state = setup_state(&discovery, None, |_: &Path| None);
+    let state = setup_state(&discovery, None, |_: &Path| None, |_| None);
 
     assert_eq!(state.candidates.len(), 2);
     match state.active {
@@ -643,7 +643,8 @@ fn setup_state_hides_the_username_in_the_steam_and_game_hints() {
         game_data: None,
         diagnostics: vec![],
     };
-    let json = serde_json::to_string(&setup_state(&discovery, None, |_: &Path| None)).unwrap();
+    let json =
+        serde_json::to_string(&setup_state(&discovery, None, |_: &Path| None, |_| None)).unwrap();
 
     assert!(
         !json.contains("carol"),
@@ -694,7 +695,7 @@ fn every_candidate_carries_what_its_own_file_says() {
         SavePrefix::RepPlus,
         Some(1_000),
     )]);
-    let state = setup_state(&d, None, |_: &Path| Some(a_save()));
+    let state = setup_state(&d, None, |_: &Path| Some(a_save()), |_| None);
     let preview = state.candidates[0].preview.expect("the reader answered");
     assert_eq!(
         preview.achievements,
@@ -710,7 +711,7 @@ fn a_candidate_whose_file_cannot_be_read_still_travels() {
         SavePrefix::RepPlus,
         Some(1_000),
     )]);
-    let state = setup_state(&d, None, |_: &Path| None);
+    let state = setup_state(&d, None, |_: &Path| None, |_| None);
     assert_eq!(state.candidates.len(), 1, "it is still offered");
     assert!(
         state.candidates[0].preview.is_none(),
@@ -736,9 +737,12 @@ fn a_preview_follows_its_own_candidate_and_not_the_row_it_was_sorted_into() {
             Some(1_000),
         ),
     ]);
-    let state = setup_state(&d, None, |p: &Path| {
-        p.ends_with("rep+persistentgamedata2.dat").then(a_save)
-    });
+    let state = setup_state(
+        &d,
+        None,
+        |p: &Path| p.ends_with("rep+persistentgamedata2.dat").then(a_save),
+        |_| None,
+    );
     assert_eq!(state.candidates[0].slot, 1, "the newer one sorts first");
     let by_slot = |slot: u8| {
         state
@@ -772,7 +776,7 @@ fn a_folder_you_pointed_at_that_holds_no_save_is_a_different_sentence() {
         diagnostics: vec![Diagnostic::NoSavesInChosenFolder],
         ..nowhere.clone()
     };
-    let reason = |d: &Discovery| match setup_state(d, None, |_: &Path| None).active {
+    let reason = |d: &Discovery| match setup_state(d, None, |_: &Path| None, |_| None).active {
         ActiveProfile::None { reason } => reason,
         other => panic!("expected None, got {other:?}"),
     };
@@ -799,4 +803,48 @@ fn a_folder_you_pointed_at_that_holds_no_save_is_a_different_sentence() {
         reason(&with_chain(&chosen)),
         MissingReason::NoSavesInChosenFolder
     );
+}
+
+/// The URL the Tauri crate would build for a reference, in the shape the webview sees off
+/// Windows. What matters here is that the state carries *a* URL for the stand-in, and that
+/// it is the one the icon protocol answers.
+fn an_icon(r: &IconRef) -> Option<String> {
+    Some(format!("isaac://localhost/{}", r.to_path()))
+}
+
+fn a_game() -> GameInstall {
+    GameInstall {
+        dir: PathBuf::from("c:/steam/game"),
+        library: PathBuf::from("c:/steam"),
+        manifest: PathBuf::from("c:/steam/appmanifest_250900.acf"),
+        edition: Edition::Repentance,
+        dlcs: vec![],
+        updated_unix: None,
+    }
+}
+
+#[test]
+fn the_state_carries_the_picture_that_stands_in_for_an_icon_we_could_not_resolve() {
+    // B69: a row whose icon did not resolve drew a hole, and a hole reads as "this thing has
+    // no picture". The stand-in is the game's own question mark, and the frontend cannot
+    // build its URL itself — no `isaac://` path is written outside the Tauri crate — so it
+    // travels with the state the app already reads at startup.
+    let d = Discovery {
+        game: Some(a_game()),
+        ..with_saves(vec![])
+    };
+    let state = setup_state(&d, None, |_: &Path| None, an_icon);
+    assert_eq!(
+        state.unknown_icon_url.as_deref(),
+        Some("isaac://localhost/unknown")
+    );
+}
+
+#[test]
+fn without_the_game_there_is_no_stand_in_to_ask_for() {
+    // Nothing to serve it from: every request would be a 404, one per row, and the interface
+    // would end up drawing exactly what it draws today anyway. So it is not offered, and the
+    // absence is the answer rather than a picture that never arrives.
+    let state = setup_state(&with_saves(vec![]), None, |_: &Path| None, an_icon);
+    assert!(state.unknown_icon_url.is_none());
 }

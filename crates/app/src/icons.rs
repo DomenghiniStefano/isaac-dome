@@ -68,6 +68,9 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
             .get(rs)
             .and_then(|frames| ipc::mark_source(*column, *tier, frames))
             .and_then(|sprite| sprite_bytes(rs, &sprite, trim)),
+        // The stand-in for a picture that did not resolve: a file of the game named by the
+        // boundary itself, so there is no catalog row to look it up in (B69).
+        ipc::IconRef::Unknown => sprite_bytes(rs, &ipc::unknown_source(), trim),
         ipc::IconRef::Achievement { .. }
         | ipc::IconRef::Item { .. }
         | ipc::IconRef::Head { .. }
