@@ -250,11 +250,11 @@ fn key_of(c: &Catalog, t: &Target) -> Option<crate::goals::TargetKey> {
         Target::Challenge { number } => c
             .challenge(ChallengeId(*number))
             .map(|ch| TargetKey::Challenge { id: ch.id.0 }),
-        // The boss is found by the same portrait-derived key `wiki_target` writes, never by a
-        // name match: one mapping, read in both directions.
+        // The boss is found by the same key `wiki_target` writes: one mapping, read in both
+        // directions, so a row and its page can never disagree about which is which.
         Target::Entity { .. } => c
             .bosses()
-            .find(|b| crate::wiki_target::boss(b).as_ref() == Some(t))
+            .find(|b| crate::wiki_target::boss(c, b).as_ref() == Some(t))
             .map(|b| TargetKey::Boss { id: b.id.0 }),
         Target::Achievement { .. }
         | Target::Transformation { .. }
