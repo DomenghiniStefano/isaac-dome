@@ -843,9 +843,11 @@ draws every cell unknown and says why.
 
 ---
 
-## B21 — A mark taken in multiplayer says so (`ipc` and `ui`; **two of three measured 2026-09-12**)
+## B21 — A mark taken in multiplayer says so (`ipc` and `ui`) ✅ built on 2026-09-21, **local co-op still unmeasured**
 
-**Needs:** a real save — the bit only exists from the era the profile first won online, so a 642-era save is what makes the tests speak. The third measurement (local co-op) still wants a run.
+**Needs:** a real save — the bit only exists from the era the profile first won online, so a
+642-era save is what makes the tests speak. The third measurement (local co-op) still wants a
+run, and it is the only part of this entry that is open.
 
 Logged 2026-09-12, a product requirement from the owner: the matrix has to show whether a
 mark was taken in multiplayer or alone. Today a cell knows only its level.
@@ -906,8 +908,48 @@ So the name is **"won online"**, narrower than the "multiplayer" this entry assu
 
 The matrix draws "won online" on the cells that carry bit 2, the tooltip and legend stop
 calling it a third level, and the reading is pinned by a test on the series — the structural
-half already is, by `the_online_bit_never_stands_without_the_cleared_bit` in
+half already is, by `the_online_bit_never_stands_without_the_first_level_bit` in
 `crates/ipc/tests/marks_real.rs`.
+
+### What landed, and on which day
+
+**2026-09-20, `14d11a0`** — the wording. Tooltip and legend stopped saying *"terzo livello,
+significato non confermato"* and say **won online** in both languages, and the flag was
+renamed along the whole level it crosses rather than only in the strings: `Third: 4` became
+`Online: 4` in `markVisual.ts` and `completionView.ts`. The cell's own glyph — a corner
+square, not a colour — was already drawn.
+
+**The drift is worth more than the rename.** The meaning was measured on 09-12 and
+`docs/save-format.md` was updated the same day. The screens were not, for eight days — and
+the screen is the one layer where a wrong label is read by somebody with no way to check it.
+
+**2026-09-21, `902bd30`** — the shape that let it drift. `ipc::marks::Cell::Known` grew
+`level` and `online` beside `bits`: the mask is decoded once, in `cell_at`, and the frontend
+reads fields. It used to be decoded at the far end of the boundary and **twice** —
+`markVisual.ts` and `completionView.ts` each held their own `Bit` record and their own tier
+rules, one measurement written down in two files neither of which is where it was measured.
+`bits` stays because the Verify page exists to show what the file holds; the only decoder
+left in the frontend is the fixture that stands in for the backend, and it says so.
+`CellLevel` is a third name for two bits that `graph::MarkLevelView` already calls
+`base`/`second` — the matrix keeps the `normal`/`hard` its own totals have used since B22,
+and the two are one measurement away from becoming one name.
+
+**2026-09-21 — what the series can pin, and what it cannot.** Two tests in
+`crates/ipc/tests/marks_real.rs`, both shown able to fail before being trusted:
+
+- `the_online_run_lit_the_cell_it_took_and_no_other` walks the matched window of 09-12 and
+  asserts the bit appeared on `Greed × Cain` and **on no other cell**. An identity, not an
+  arithmetic: a base off by one lights a neighbour and a count would not notice.
+- `a_mark_taken_the_same_day_can_lack_the_online_bit` is the property over the series. Ten
+  windows light the bit; the test fails if in *every* one of them every new mark carries it,
+  which is what a property of the **day** would look like — a patch, an era, a setting left
+  on. The first witness is 2026-07-05 → 07-06: `T. Cain × Greed` with the bit, five of The
+  Lost's marks without it.
+
+**What no test can carry** is the half that made the name *"won online"* rather than *"won
+in co-op"*: that came from the dated series against the 22 folders under `online_logs\`, and
+those are the live game's, they rotate, and they are not in `samples/`. A test reading them
+would pass on one machine and skip on every other.
 
 ---
 

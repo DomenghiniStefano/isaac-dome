@@ -60,5 +60,15 @@
 # on each side is a number measured against a different base, and the pair of them conflicted in
 # this file for exactly that reason. A delta survives a merge; an arrow between two totals does
 # not. The totals below are the ones `scripts/check` counted on the merge itself.
-RUST_TESTS=1160
-UI_TESTS=741
+#
+# **Raised on 2026-09-21**, Rust +4 and UI +2, all of B21. Rust: two on the new shape of a cell
+# (the reading it carries, and that reading's JSON), two on real data — the matched window of
+# 09-12, and the property over the series that says the online bit belongs to the run and not
+# to the day. The two real-data ones passed the moment they were written, which is what a test
+# of a measurement does, so both were mutated until they failed and the failures were read
+# before they were trusted. UI +2 and not more: eight tests of the bit rules stayed at the same
+# count but changed subject — they used to decode a mask and now check that the reading arrives
+# intact, because the decoding moved to Rust — and the two added are the probe that says no
+# decoder is left there.
+RUST_TESTS=1164
+UI_TESTS=743
