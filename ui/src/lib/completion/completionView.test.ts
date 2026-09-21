@@ -45,7 +45,58 @@ describe('completionKpis on the reference profile', () => {
       readable: 368,
       completeCharacters: 2,
       characters: 34,
+      completeColumns: 0,
+      columns: 12,
     })
+  })
+
+  // The column's half of `completeCharacters`, added with card #58 because the band's
+  // emblem draws exactly it: a column is complete when every character has that boss on
+  // hard, which is the same reading Rust gives `MarkFill::Hard` when it decides whether to
+  // draw the hard symbol on the paper. Two numbers of the same nature read along the two
+  // axes, and neither is a percentage (B23).
+  //
+  // The reference profile has **none**, and that is the measurement rather than a shrug:
+  // counted on the fixture's digit strings with a script of its own, the fullest column is
+  // Mom's Heart at 21 of 34 and the emptiest is Greed at 5. A column asks all 34 characters
+  // for the same boss on hard, so zero is the honest number — and the emblem's paper stays
+  // clean, which is the whole point of the picture.
+  it('finds no complete column on the reference profile, and says so', () => {
+    const tallies = columnTallies(reference)
+    expect(tallies.filter((t) => t.complete)).toHaveLength(0)
+    expect(tallies.map((t) => t.hard)).toEqual([
+      21, 19, 15, 15, 18, 12, 9, 5, 15, 16, 3, 4,
+    ])
+  })
+
+  // The other half, and the one the assertion above cannot make: a `0` passes just as well
+  // when nothing could ever be complete. This says the counter can reach a column at all.
+  it('counts a column whose every readable cell is hard', () => {
+    const done: MarksMatrix = {
+      ...reference,
+      characters: reference.characters.map((r) => ({
+        ...r,
+        cells: r.cells.map((cell, column) =>
+          column === 0 && cell.kind === 'known'
+            ? wire(3, CellLevel.Hard)
+            : cell,
+        ),
+      })),
+    }
+    expect(completionKpis(done).completeColumns).toBe(1)
+  })
+
+  it('does not call a column with nothing readable complete', () => {
+    // `0/0` is the case the tone exists for: an equality alone would count a column the
+    // save says nothing about as finished, and the emblem would draw a symbol for it.
+    const blind: MarksMatrix = {
+      ...reference,
+      characters: reference.characters.map((r) => ({
+        ...r,
+        cells: r.cells.map(() => ({ kind: 'unknown' }) as Cell),
+      })),
+    }
+    expect(completionKpis(blind).completeColumns).toBe(0)
   })
 })
 

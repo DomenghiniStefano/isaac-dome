@@ -111,6 +111,16 @@
 # composes the bare paper and the full one and asserts they differ, so "96×96, fine" is never
 # read off an instrument nobody has shown able to speak. UI does not move in this commit; its
 # half comes with the screen.
+#
+# **Raised on 2026-09-21**, UI +3: card #58's other half, and all three are the fourth KPI —
+# complete *bosses*, the column's reading of what "complete characters" says down a row. One
+# pins it on the reference profile, where the answer is **zero**: counted on the fixture's
+# digit strings with a script of its own, the fullest column is Mom's Heart at 21 of 34. A
+# zero passes for the wrong reasons too, so the second builds a column that *is* complete and
+# the third builds one nothing can be read from — the `0/0` an equality alone would call
+# finished. Nothing else in the band or the grid is logic: the emblem's rule is Rust's, the
+# bars and the pinned columns are CSS, and neither has a test here that would only be
+# restating the template.
 
 RUST_TESTS=1203
-UI_TESTS=756
+UI_TESTS=759
