@@ -761,6 +761,19 @@ B9 and B20 — are entries in the backlog and appear here as the measurement the
       than a re-read, and it keeps 20 nodes of the unlock graph `Partial` instead of answered.
       The symmetry with Mother's group says where each of the 20 sits; the tables keep `None`
       anyway, because one worked example is not a window on this half.
+- [ ] **Whether a local co-op win leaves the same mark an online one does** — B21's third
+      measurement, and the only part of that entry still open now that the reading crosses the
+      IPC and two tests hold it to the series (2026-09-21). Bit 2 is **won online**: that much
+      is measured, on a matched window around one online Greed run and on ten windows of the
+      dated series where a mark taken the same day lacks the bit. What is *not* measured is
+      what a couch co-op win does — set the bit, leave it alone, or something else. The
+      evidence standing in for it is weak and by elimination: no day without an online session
+      has produced a bit 2, and the owner confirms local co-op happened at least once.
+      **The argument that once closed this was wrong**, and it is worth keeping so it is not
+      made again: index 188 naming two characters was read as "two players in one run", but 188
+      **accumulates** — a single win adds its bit and leaves the previous one standing. The
+      instrument is one local co-op win with a snapshot either side, the same protocol as the
+      online one.
 - [x] **A save of the 642 / 523 era in `samples/`** — **already there, and this line asked for
       the wrong era.** `each_era_declares_its_own_counts` reads that row from
       `20260905.rep+persistentgamedata1.dat`, which has been in `samples/` for ten days; the row
@@ -1015,6 +1028,11 @@ and what a person has to judge.
 - [ ] **far down the matrix, nothing says which of the two columns you are reading.** Whether
       that wants a sticky heading is a design call nobody has made, and it only shows up on a
       screen shorter than 34 rows
+- [ ] **NEEDS SAVE — the corner square on a mark won online, on a real profile** (B21). The
+      legend names it and the tooltip says *"vinto anche online"*, but the glyph itself has only
+      ever been seen on the Kit page: it needs a profile of the era that has the bit, and it is
+      1.5 units in a corner. Whether it reads as a mark's property or as a rendering artefact is
+      the judgement, and only the grid at real density answers it
       → `docs/superpowers/reports/2026-09-17-completion-columns-report.md`
 
 ### The welcome flow (3.8, with B14) — the first thing a stranger meets
