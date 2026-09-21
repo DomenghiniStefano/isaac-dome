@@ -188,9 +188,9 @@ pub(crate) fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTree
         );
     }
     for b in c.bosses() {
-        // The portrait's file name carries the entity key; a portrait that doesn't declare
-        // one names no target and is left out.
-        if let Some(target) = wiki_target::boss(b) {
+        // The key is whatever `boss_keys` settles for the row — its page's, or the one its
+        // portrait's file name declares. A row left without one names no target and is out.
+        if let Some(target) = wiki_target::boss(c, b) {
             join(target, b.name.clone(), None);
         }
     }
