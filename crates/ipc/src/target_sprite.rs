@@ -10,7 +10,8 @@
 //! bytes: reading them is I/O, done by the caller, with the same `ResourceSet` as
 //! everything else.
 
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
+use std::sync::OnceLock;
 
 use catalog::{AchievementId, Catalog, ChallengeId, CharacterId, ItemId, ItemKind, SpriteRef};
 use wiki::Target;
@@ -61,7 +62,7 @@ pub fn target_sprite<'a>(c: &'a Catalog, t: &Target) -> TargetSprite<'a> {
                 None => TargetSprite::NoArt,
             },
         },
-        // The boss: type and variant are written into the portrait file's name.
+        // The boss: the portrait of the row `boss_keys` gives this type and variant to.
         Target::Entity { id, variant, .. } => match entity_portraits(c).get(&(*id, *variant)) {
             Some(s) => TargetSprite::Found(s),
             None => TargetSprite::Unknown,
@@ -73,20 +74,147 @@ pub fn target_sprite<'a>(c: &'a Catalog, t: &Target) -> TargetSprite<'a> {
     }
 }
 
-/// The `(type, variant) → portrait` index, derived from the file names in
-/// `bossportraits.xml`: `Portrait_20.0_Monstro.png` is entity 20, variant 0.
-///
-/// This is not a name-based match: the game *writes* the entity's key into the file
-/// name, and it's the same key the wiki uses for its `{{e|…}}`. Portraits that don't
-/// declare it (`Portrait_Cadavra.png`) are left out: they're unreachable from a
-/// `Target::Entity`, and no similarity-based fallback recovers them.
+/// The `(type, variant) → portrait` index, over the keys `boss_keys` settles.
 ///
 /// The subtype takes no part: portraits are declared by type and variant only, and a
 /// different subtype is still the same boss (its champion versions).
 fn entity_portraits(c: &Catalog) -> HashMap<(u32, u32), &SpriteRef> {
+    let keys = boss_keys(c);
     c.bosses()
-        .filter_map(|b| Some((entity_key(&b.portrait.path)?, &b.portrait)))
+        .filter_map(|b| Some((*keys.get(b.name.as_str())?, &b.portrait)))
         .collect()
+}
+
+/// The entity key of every row of `bossportraits.xml`, by the row's name.
+///
+/// Two sources, and **the wiki's own key wins**. The index answers a `Target::Entity`
+/// the wiki wrote, so the wiki's notion of the key is the very thing being asked about;
+/// the file name is what settles the rows the wiki doesn't name. Measured on 2026-09-21,
+/// reading the file name alone left 27 of the dataset's 102 boss pages with no image:
+/// seventeen portraits write no key at all (`Portrait_Dogma.png`), three write one the
+/// wiki doesn't use (Tuff Twins is `19.100` in the file and `19.2` on the wiki), and two
+/// differ from their page by a word (`Turdling` against *Turdlings*).
+///
+/// **A key two rows claim is claimed by neither.** Four are contested — `45.0` by *Mom*
+/// and *Mom (Mausoleum)*, `78.0`, `406.0` and `902.0` likewise — and collecting them into
+/// a map used to let the last row win in silence, which draws a boss with another's face.
+/// A wrong picture is worse than none, because nothing about it looks wrong.
+///
+/// The name match is **equality**, never similarity: case and punctuation are dropped, a
+/// leading `the` with them, and a name has to be claimed by exactly one page and one row.
+/// That is the distinction this module used to miss when it said no fallback recovers
+/// the unkeyed portraits — true of a fuzzy one, false of this.
+pub(crate) fn boss_keys(c: &Catalog) -> HashMap<&str, (u32, u32)> {
+    let rows: Vec<(&str, &str)> = c
+        .bosses()
+        .map(|b| (b.name.as_str(), b.portrait.path.as_str()))
+        .collect();
+    merge_keys(&rows, wiki_boss_keys())
+}
+
+/// The rules, apart from the catalog so they can be read and tested on rows written by
+/// hand. `rows` is `(name, portrait path)`.
+///
+/// Three tiers, weakest evidence last: the page the row's **name** is, the page its
+/// portrait's **file name** is, and the key that file name **declares**. A tier assigns a
+/// key only to a row that has none yet, and only to a key no earlier tier spoke about —
+/// including one it dropped as contested, because a key two rows wanted is not freed by
+/// refusing it to both.
+///
+/// The order is what keeps *Mom (Mausoleum)* off *Mom*'s page: the two share a portrait,
+/// so the file name reaches the same page for both, and only the row's own name tells them
+/// apart.
+fn merge_keys<'a>(
+    rows: &[(&'a str, &'a str)],
+    wiki: &HashMap<String, (u32, u32)>,
+) -> HashMap<&'a str, (u32, u32)> {
+    type Tier<'t> = &'t dyn Fn(&str, &str) -> Option<(u32, u32)>;
+    let page = |s: &str| wiki.get(&normalized(s)).copied();
+    let tiers: [Tier; 3] = [
+        &|name, _| page(name),
+        &|_, path| page(portrait_stem(path)?),
+        &|_, path| entity_key(path),
+    ];
+
+    let mut out: HashMap<&'a str, (u32, u32)> = HashMap::new();
+    let mut spoken: HashSet<(u32, u32)> = HashSet::new();
+    for tier in tiers {
+        let mut claims: HashMap<(u32, u32), Vec<&'a str>> = HashMap::new();
+        for (name, path) in rows {
+            if out.contains_key(name) {
+                continue;
+            }
+            match tier(name, path) {
+                Some(k) if !spoken.contains(&k) => claims.entry(k).or_default().push(name),
+                _ => {}
+            }
+        }
+        for (k, names) in &claims {
+            spoken.insert(*k);
+            if let [only] = names[..] {
+                out.insert(only, *k);
+            }
+        }
+    }
+    out
+}
+
+/// The dataset's boss pages as `normalized title → (type, variant)`. A title two pages
+/// share names neither of them.
+///
+/// Read from the dataset compiled into this binary: no I/O, and the same constant for the
+/// whole process, which is why it is built once. The subtype is dropped here, as it is in
+/// the lookup.
+fn wiki_boss_keys() -> &'static HashMap<String, (u32, u32)> {
+    static KEYS: OnceLock<HashMap<String, (u32, u32)>> = OnceLock::new();
+    KEYS.get_or_init(|| {
+        let Ok(ds) = wiki::Dataset::embedded() else {
+            return HashMap::new();
+        };
+        let mut seen: HashMap<String, Option<(u32, u32)>> = HashMap::new();
+        for (key, entry) in &ds.bosses {
+            let mut parts = key.split('.').map(|n| n.parse::<u32>());
+            let (Some(Ok(id)), Some(Ok(variant))) = (parts.next(), parts.next()) else {
+                continue;
+            };
+            seen.entry(normalized(&entry.title))
+                .and_modify(|v| *v = None)
+                .or_insert(Some((id, variant)));
+        }
+        seen.into_iter()
+            .filter_map(|(t, k)| Some((t, k?)))
+            .collect()
+    })
+}
+
+/// Case, spaces and punctuation dropped, and a leading `the` with them: the wiki writes
+/// *The Horny Boys* where the game writes `Horny Boys`. Nothing else is normalized —
+/// anything looser stops being equality.
+fn normalized(s: &str) -> String {
+    let n: String = s
+        .chars()
+        .filter(char::is_ascii_alphanumeric)
+        .flat_map(char::to_lowercase)
+        .collect();
+    n.strip_prefix("the").map_or(n.clone(), str::to_string)
+}
+
+/// `…/Portrait_902.0_Wormwood.png` → `Wormwood`, `…/Portrait_Shell.png` → `Shell`.
+fn portrait_stem(path: &str) -> Option<&str> {
+    let file = path.rsplit(['/', '\\']).next()?;
+    let rest = file
+        .strip_suffix(".png")
+        .unwrap_or(file)
+        .strip_prefix("Portrait_")?;
+    match rest.split_once('_') {
+        Some((head, tail)) if is_key(head) => Some(tail),
+        _ => Some(rest),
+    }
+}
+
+fn is_key(s: &str) -> bool {
+    s.split_once('.')
+        .is_some_and(|(a, b)| a.parse::<u32>().is_ok() && b.parse::<u32>().is_ok())
 }
 
 /// `…/Portrait_<type>.<variant>_<Name>.png` → `(type, variant)`.
@@ -98,4 +226,134 @@ pub(crate) fn entity_key(path: &str) -> Option<(u32, u32)> {
     let key = rest.split('_').next()?;
     let (kind, variant) = key.split_once('.')?;
     Some((kind.parse().ok()?, variant.parse().ok()?))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn wiki(pairs: &[(&str, (u32, u32))]) -> HashMap<String, (u32, u32)> {
+        pairs
+            .iter()
+            .map(|(t, k)| (normalized(t), *k))
+            .collect::<HashMap<_, _>>()
+    }
+
+    #[test]
+    fn a_portrait_with_no_key_in_its_name_is_reached_through_the_page_title() {
+        let rows = [("Dogma", "gfx/ui/boss/Portrait_Dogma.png")];
+        let keys = merge_keys(&rows, &wiki(&[("Dogma", (950, 0))]));
+        assert_eq!(keys.get("Dogma"), Some(&(950, 0)));
+    }
+
+    #[test]
+    fn the_page_title_beats_the_key_written_in_the_file_name() {
+        // Tuff Twins: `19.100` in the file, `19.2` on the wiki. The lookup answers a
+        // reference the wiki wrote, so the wiki's key is the one to hold.
+        let rows = [("Tuff Twins", "gfx/ui/boss/Portrait_19.100_TuffTwins.png")];
+        let keys = merge_keys(&rows, &wiki(&[("Tuff Twins", (19, 2))]));
+        assert_eq!(keys.get("Tuff Twins"), Some(&(19, 2)));
+    }
+
+    #[test]
+    fn the_portraits_file_name_names_the_page_when_the_row_does_not() {
+        // The row is `Horny Boys`, the page is *The Horny Boys*, the file agrees with
+        // the page. Equality after normalization, on either of the row's two names.
+        let rows = [("Horny Boys", "gfx/ui/boss/Portrait_HornyBoys.png")];
+        let keys = merge_keys(&rows, &wiki(&[("The Horny Boys", (920, 0))]));
+        assert_eq!(keys.get("Horny Boys"), Some(&(920, 0)));
+    }
+
+    #[test]
+    fn a_row_the_wiki_does_not_name_keeps_the_key_from_its_file_name() {
+        let rows = [("Monstro", "gfx/ui/boss/Portrait_20.0_Monstro.png")];
+        let keys = merge_keys(&rows, &wiki(&[]));
+        assert_eq!(keys.get("Monstro"), Some(&(20, 0)));
+    }
+
+    #[test]
+    fn a_key_two_file_names_declare_is_given_to_neither() {
+        // `45.0` is written by both Mom's portrait and Mom (Mausoleum)'s. With no page to
+        // separate them, a map would hand the key to whichever came last: the other boss's
+        // face, with nothing about it looking wrong.
+        let rows = [
+            ("Mom", "gfx/ui/boss/Portrait_45.0_Mom.png"),
+            ("Mom (Mausoleum)", "gfx/ui/boss/Portrait_45.0_Mom.png"),
+        ];
+        let keys = merge_keys(&rows, &wiki(&[]));
+        assert_eq!(keys.get("Mom"), None);
+        assert_eq!(keys.get("Mom (Mausoleum)"), None);
+    }
+
+    #[test]
+    fn the_page_settles_a_key_two_file_names_declare() {
+        let rows = [
+            ("Mom", "gfx/ui/boss/Portrait_45.0_Mom.png"),
+            ("Mom (Mausoleum)", "gfx/ui/boss/Portrait_45.0_Mom.png"),
+        ];
+        let keys = merge_keys(&rows, &wiki(&[("Mom", (45, 0))]));
+        assert_eq!(keys.get("Mom"), Some(&(45, 0)));
+        assert_eq!(
+            keys.get("Mom (Mausoleum)"),
+            None,
+            "the key is Mom's: the other row takes nothing, not the next best thing"
+        );
+    }
+
+    #[test]
+    fn a_row_moved_by_its_page_does_not_keep_the_key_it_declared() {
+        // Wormwood's file says `902.0`, which is The Rainmaker's page. Once the wiki moves
+        // Wormwood to `62.3`, `902.0` has to be free for the row that page names.
+        let rows = [
+            ("Wormwood", "gfx/ui/boss/Portrait_902.0_Wormwood.png"),
+            ("The Rainmaker", "gfx/ui/boss/Portrait_902.0_Rainmaker.png"),
+        ];
+        let keys = merge_keys(
+            &rows,
+            &wiki(&[("Wormwood", (62, 3)), ("The Rainmaker", (902, 0))]),
+        );
+        assert_eq!(keys.get("Wormwood"), Some(&(62, 3)));
+        assert_eq!(keys.get("The Rainmaker"), Some(&(902, 0)));
+    }
+
+    #[test]
+    fn a_title_two_pages_share_names_neither_row() {
+        // Two rows reaching one page is the same ambiguity as two pages under one title,
+        // and gets the same answer: no key, so no picture.
+        let rows = [
+            ("Gemini", "gfx/ui/boss/Portrait_Gemini.png"),
+            ("Gemini", "gfx/ui/boss/Portrait_Gemini2.png"),
+        ];
+        let keys = merge_keys(&rows, &wiki(&[("Gemini", (79, 0))]));
+        assert!(keys.is_empty());
+    }
+
+    #[test]
+    fn the_stem_is_the_name_after_the_key_when_there_is_one() {
+        assert_eq!(
+            portrait_stem("gfx/ui/boss/Portrait_902.0_Wormwood.png"),
+            Some("Wormwood")
+        );
+        assert_eq!(
+            portrait_stem("gfx/ui/boss/Portrait_Shell.png"),
+            Some("Shell")
+        );
+        assert_eq!(
+            portrait_stem("gfx/ui/boss/Portrait_The Beast.png"),
+            Some("The Beast")
+        );
+        assert_eq!(portrait_stem("gfx/ui/boss/other.png"), None);
+    }
+
+    #[test]
+    fn normalization_is_equality_and_nothing_looser() {
+        assert_eq!(normalized("Mom's Heart"), normalized("Moms Heart"));
+        assert_eq!(normalized("The Horny Boys"), normalized("Horny Boys"));
+        assert_ne!(
+            normalized("Turdling"),
+            normalized("Turdlings"),
+            "a plural is a different name: only the file name reaches that page"
+        );
+        assert_ne!(normalized("Mom"), normalized("Mom (Mausoleum)"));
+    }
 }
