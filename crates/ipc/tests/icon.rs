@@ -427,3 +427,32 @@ fn the_widget_is_not_trimmed_to_its_drawing() {
     }
     .trims_to_drawing());
 }
+
+#[test]
+fn the_unknown_sprite_is_a_reference_like_any_other() {
+    // It has to survive the round trip for the same reason every other one does: the URL is
+    // written on one side of the boundary and read on the other, and a reference the handler
+    // refuses is a picture that never appears — which here would mean the app falls silently
+    // back to the hole this reference exists to fill (B69).
+    let r = IconRef::Unknown;
+    assert_eq!(r.to_path(), "unknown");
+    assert_eq!(IconRef::parse("unknown"), Some(IconRef::Unknown));
+    assert_eq!(IconRef::parse("unknown/please"), None);
+}
+
+#[test]
+fn the_unknown_sprite_is_served_whole_like_the_items_it_stands_for() {
+    // It sits in the same box as an item's icon, at the same size, and is fitted to it the
+    // same way: trimming it would make it bigger than the pictures around it.
+    assert!(!IconRef::Unknown.trims_to_drawing());
+}
+
+#[test]
+fn the_unknown_sprite_is_the_question_mark_the_game_draws_for_a_hidden_item() {
+    // The file, not a picture of ours: measured 2026-09-22 in `graphics.a`, 3047 bytes. It
+    // is what Curse of the Blind puts on a pedestal, so the app says "unknown" in the word
+    // its user already reads.
+    let s = ipc::unknown_source();
+    assert_eq!(s.path, "gfx/items/collectibles/questionmark.png");
+    assert_eq!(s.rect, None, "the whole file: it is one picture");
+}

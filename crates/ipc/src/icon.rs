@@ -89,6 +89,16 @@ pub enum IconRef {
     Page {
         target: Target,
     },
+    /// The picture that stands in for one we could not resolve: the game's own red question
+    /// mark, the one Curse of the Blind puts on a pedestal.
+    ///
+    /// **It carries no identity**, which is what makes it the odd one here: every other
+    /// reference names a thing, this one names the absence of one. It exists as a reference
+    /// rather than as a URL the frontend writes because nothing outside the Tauri crate may
+    /// build an `isaac://` path, and because the picture is the user's own file — the
+    /// package ships no game art (constraint 3), so the stand-in can be missing too and the
+    /// interface keeps the empty square it has always drawn (B69).
+    Unknown,
     /// A room kind's minimap icon, the one the **game** draws on its own map.
     ///
     /// Which animation a kind wears is `floor::minimap_icon_name`, and three kinds wear
@@ -213,6 +223,7 @@ impl IconRef {
             }
             IconRef::Head { row } => format!("head/{row}"),
             IconRef::Room { kind } => format!("room/{}", room_token(*kind)),
+            IconRef::Unknown => "unknown".to_string(),
             // `page/none` is what a target with no page renders to; `parse` refuses it, so
             // the handler answers "no image" rather than a guess. The index never builds
             // such a reference (spec 3.5, Decision 2).
@@ -230,6 +241,12 @@ impl IconRef {
     /// the matrix's columns or a head past its rows isn't ours either, so the handler
     /// refuses it before it opens an archive.
     pub fn parse(path: &str) -> Option<IconRef> {
+        // The one reference of a single segment, taken before the rest: it names no thing,
+        // so it has nothing to carry after the first word, and `unknown/anything` is not
+        // ours any more than `wat` is.
+        if path == "unknown" {
+            return Some(IconRef::Unknown);
+        }
         let mut parts = path.split('/');
         let out = match (parts.next()?, parts.next()?, parts.next()) {
             ("achievement", id, None) => IconRef::Achievement {
@@ -288,7 +305,8 @@ impl IconRef {
             // The paper's margin is where the marks are placed: trimming it would move
             // every one of them, and the offsets are the game's own.
             | IconRef::Widget { .. }
-            | IconRef::Page { .. } => false,
+            | IconRef::Page { .. }
+            | IconRef::Unknown => false,
         }
     }
 }
@@ -371,7 +389,24 @@ pub fn icon_source<'a>(c: &'a Catalog, r: &IconRef) -> Option<&'a SpriteRef> {
         // Not the catalog's: the symbols and the paper they sit on are pieces of the
         // widget's sheets, see `mark_source`, `paper_source` and `widget_source`.
         IconRef::Mark { .. } | IconRef::Widget { .. } => None,
+        // Not the catalog's either: it is a file of the game, named here, and `unknown_source`
+        // is the one that answers for it — the borrow this function hands out has to live in
+        // the catalog, and this sprite belongs to no row of it.
+        IconRef::Unknown => None,
     }
+}
+
+/// The game's own picture for an item you are not allowed to see: the red question mark
+/// Curse of the Blind leaves on the pedestal.
+///
+/// Measured on the installed game, 2026-09-22: 3047 bytes, out of `graphics.a`. Named here
+/// rather than in `catalog` because it is no row of any source the catalog reads — it is a
+/// file this boundary asks for by name, the way `heads::SHEET` is.
+pub const UNKNOWN_SPRITE: &str = "gfx/items/collectibles/questionmark.png";
+
+/// Where [`IconRef::Unknown`] reads from. Whole file, no crop: it is one picture.
+pub fn unknown_source() -> SpriteRef {
+    SpriteRef::whole(UNKNOWN_SPRITE.to_string())
 }
 
 /// The URI scheme the app registers for these references.
