@@ -3,7 +3,6 @@ import { InfoIcon } from '@lucide/vue'
 import { computed, watch } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import ProfileBlock from '@/components/graph/ProfileBlock.vue'
-import { Badge } from '@/components/ui/badge'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
 import {
@@ -11,8 +10,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import WikiFigure from '@/components/wiki/WikiFigure.vue'
-import { WikiFigureSize } from '@/components/wiki/figureSize'
 import { useMessages } from '@/i18n'
 import { achievementNode } from '@/lib/graph/achievementNode'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
@@ -26,9 +23,10 @@ import { useQueueStore } from '@/stores/queue'
 import { useTabsStore } from '@/stores/tabs'
 import { useGraphStore } from '@/stores/views'
 import { useWikiStore } from '@/stores/wiki'
+import WikiHero from './WikiHero.vue'
 import WikiInfobox from './WikiInfobox.vue'
+import WikiOutline from './WikiOutline.vue'
 import WikiSections from './WikiSections.vue'
-import { kindText } from './wikiLabels'
 
 const props = defineProps<{
   pageKey: string
@@ -101,88 +99,95 @@ const onOpen = (location: TabLocation, newTab: boolean) => {
 </script>
 
 <template>
-  <div class="flex h-full flex-col gap-5 overflow-y-auto pt-5 pb-15">
-    <header class="flex items-start gap-4">
-      <WikiFigure
-        v-if="target"
-        :target="target"
-        :url="icon"
-        :size="WikiFigureSize.Card"
-      />
-      <div class="flex min-w-0 flex-col gap-2">
-        <h1 class="text-title text-foreground">{{ title }}</h1>
-        <div class="flex flex-wrap items-center gap-2.5">
-          <Badge v-if="category">{{ t(kindText[category]) }}</Badge>
-          <span
-            v-if="entry"
-            class="text-caption text-subtle-foreground tabular-nums"
-            >{{ t('wiki.revision') }} {{ entry.revid }}</span
-          >
-          <span
-            v-if="unknown"
-            class="text-caption text-faint-foreground tabular-nums"
-            >{{ pageKey }}</span
-          >
-        </div>
-        <Tooltip>
-          <TooltipTrigger as-child>
-            <span
-              class="flex w-fit cursor-help items-center gap-1.5 text-caption text-subtle-foreground"
-              tabindex="0"
-              ><InfoIcon class="size-3" />{{
-                t('wiki.provenance.license')
-              }}</span
-            >
-          </TooltipTrigger>
-          <TooltipContent class="max-w-80 text-caption text-foreground">{{
-            t('wiki.provenance.licenseLong')
-          }}</TooltipContent>
-        </Tooltip>
-      </div>
-    </header>
-    <!-- Above the wiki's own answer, and outside it: what the profile knows does not depend
-         on the dataset. A page the dataset has never heard of still has a state, still says
-         what it unlocks, and can still go in the Plan (spec §3). -->
-    <ProfileBlock
-      v-if="node"
-      :node="node"
-      :queued="isQueued(node, queued)"
-      :can-add="canAdd"
-      :busy="queue.busy"
-      @add="queue.add(nodeSlot(node))"
-      @navigate="onOpen"
+  <!-- The scrolling box takes the shell's gutter back and hands it to its children, so the
+       opening band is the full width of the page without overflowing it (`WikiLanding.vue`
+       records what the other way round cost). -->
+  <div class="-mx-5.5 flex h-full flex-col overflow-y-auto pb-15">
+    <WikiHero
+      :target="target"
+      :title="title"
+      :icon="icon"
+      :category="category"
+      :entry="entry"
+      :page-key="pageKey"
+      :icon-for="wiki.iconFor"
+      :can-open="wiki.hasPage"
+      @navigate="onNavigate"
     />
-    <template v-if="unknown">
-      <EmptyCategory
-        >{{ t('wiki.states.unknown') }}
-        {{ t('wiki.states.unknownHint') }}</EmptyCategory
+    <div class="flex flex-col gap-5 px-5.5 pt-5">
+      <!-- Above the wiki's own answer, and outside it: what the profile knows does not depend
+           on the dataset. A page the dataset has never heard of still has a state, still says
+           what it unlocks, and can still go in the Plan (spec §3). -->
+      <ProfileBlock
+        v-if="node"
+        :node="node"
+        :queued="isQueued(node, queued)"
+        :can-add="canAdd"
+        :busy="queue.busy"
+        @add="queue.add(nodeSlot(node))"
+        @navigate="onOpen"
+      />
+      <template v-if="unknown">
+        <EmptyCategory
+          >{{ t('wiki.states.unknown') }}
+          {{ t('wiki.states.unknownHint') }}</EmptyCategory
+        >
+        <Button
+          v-if="category"
+          :variant="ButtonVariant.Outline"
+          class="w-fit"
+          @click="back"
+          >{{ t('wiki.back') }}</Button
+        >
+      </template>
+      <div v-else-if="entry === undefined" class="flex flex-col gap-4">
+        <Skeleton class="h-40 w-full" />
+        <Skeleton class="h-40 w-full" />
+      </div>
+      <!-- The card and the index come first in the document and last on a wide page: stacked,
+           the facts belong above the prose, and side by side they belong beside it. One
+           `flex-row-reverse` says both, where two orders would need two templates. -->
+      <div
+        v-else-if="entry"
+        class="flex flex-col items-start gap-5 @regular/page:flex-row-reverse @regular/page:gap-6"
       >
-      <Button
-        v-if="category"
-        :variant="ButtonVariant.Outline"
-        class="w-fit"
-        @click="back"
-        >{{ t('wiki.back') }}</Button
-      >
-    </template>
-    <div v-else-if="entry === undefined" class="flex flex-col gap-4">
-      <Skeleton class="h-24 w-full" />
-      <Skeleton class="h-40 w-full" />
-      <Skeleton class="h-40 w-full" />
+        <aside
+          class="flex w-full flex-col gap-4 @regular/page:sticky @regular/page:top-0 @regular/page:w-wiki-aside @regular/page:shrink-0"
+        >
+          <WikiInfobox
+            :entry="entry"
+            :icon-for="wiki.iconFor"
+            :can-open="wiki.hasPage"
+            @navigate="onNavigate"
+          />
+          <WikiOutline :sections="entry.sections" />
+          <Tooltip>
+            <TooltipTrigger as-child>
+              <span
+                class="flex w-fit cursor-help items-center gap-1.5 text-caption text-subtle-foreground"
+                tabindex="0"
+                ><InfoIcon class="size-3" />{{
+                  t('wiki.provenance.license')
+                }}</span
+              >
+            </TooltipTrigger>
+            <TooltipContent class="max-w-80 text-caption text-foreground">{{
+              t('wiki.provenance.licenseLong')
+            }}</TooltipContent>
+          </Tooltip>
+        </aside>
+        <!-- A measure, not a width: wiki prose runs to 90 characters a line at the page's
+             full width, which is past what anyone reads comfortably. Capped, the space that
+             is left sits between the text and the column beside it. -->
+        <div class="max-w-200 min-w-0 flex-1">
+          <WikiSections
+            :sections="entry.sections"
+            :icon-for="wiki.iconFor"
+            :can-open="wiki.hasPage"
+            @navigate="onNavigate"
+          />
+        </div>
+      </div>
     </div>
-    <template v-else-if="entry">
-      <WikiInfobox
-        :entry="entry"
-        :icon-for="wiki.iconFor"
-        :can-open="wiki.hasPage"
-        @navigate="onNavigate"
-      />
-      <WikiSections
-        :sections="entry.sections"
-        :icon-for="wiki.iconFor"
-        :can-open="wiki.hasPage"
-        @navigate="onNavigate"
-      />
-    </template>
   </div>
 </template>

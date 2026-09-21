@@ -173,3 +173,38 @@
     justify-content: center;
   }
 }
+
+/* A wiki page's opening band (card #57). The light comes from the corner the figure sits in
+   and falls back into the page, so the band needs no bottom edge drawn across the screen —
+   it simply stops being lit. Three stops of the family already in the palette: no hue enters
+   here that the rest of the app doesn't already use. */
+@utility hero-wash {
+  background-image: radial-gradient(
+    110% 150% at 0% 0%,
+    var(--color-sheet) 0%,
+    var(--color-card) 42%,
+    var(--color-background) 100%
+  );
+}
+
+/* What replaces the shadow the skin doesn't have, over that band and nothing else: one-pixel
+   lines every two pixels, at the grain token's alpha. In px because it is a texture of the
+   drawing and not of the interface — at 125% a scaled line lands on a half pixel and moires
+   against the sprites, which are the one thing on the band that must stay exact. */
+@utility hero-grain {
+  background-image: repeating-linear-gradient(
+    0deg,
+    var(--color-grain) 0 1px,
+    transparent 1px 2px
+  );
+}
+
+/* A category's tile on the landing, and a wiki row's figure frame: the data surface lit from
+   above, so a sprite drawn on it has something to sit on instead of floating on the card. */
+@utility tile-wash {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-sheet) 0%,
+    var(--color-data) 100%
+  );
+}
