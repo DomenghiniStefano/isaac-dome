@@ -111,7 +111,7 @@ fn rust_matrix_agrees_with_the_python_reference() {
             let actual = matrix.characters[c].cells[b];
             match (expected, actual) {
                 // The reference knows the cell: it must match.
-                (Some(&v), Cell::Known { bits }) => {
+                (Some(&v), Cell::Known { bits, .. }) => {
                     assert_eq!(u32::from(bits), v, "{name} × {boss}");
                     true
                 }
