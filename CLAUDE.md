@@ -384,6 +384,20 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   left sitting there.
   Nothing enforces any of this: no hook, no branch protection, by decision, the same way there is
   no CI. It holds because it is read.
+- **No worktree ever holds `develop`. Every worktree sits on a branch of its own.** Git refuses
+  to check out one branch in two worktrees, so a worktree parked on `develop` does not merely
+  look untidy: it takes the integration branch away from **every other session on this machine**.
+  Another agent cannot check it out, cannot move it, cannot merge into it — and the error it gets
+  names a directory, not a reason, so it reads as a broken repository rather than as somebody
+  else's parking. That is work blocked by a checkout nobody meant to leave.
+  **Measured on 2026-09-21**, and by this session: `isaac-dome-online` was switched to `develop`
+  to take a merge and left there. `develop` stayed locked until the worktree was removed, and
+  removing it is the delicate operation two entries below — junctions and all — so the cost of
+  the parking was paid in an operation that can destroy `samples/` if it is done carelessly.
+  **The one transient exception, stated so the rule is not self-contradicting**: integration —
+  the `--no-ff` merge into `develop` and its push — happens in the **main** worktree
+  (`C:\Projects\isaac-dome`), which returns to a detached `HEAD` at `develop` the moment the push
+  lands. Checked out to merge, detached again before the session moves on; never left.
 - **A merged branch is closed in the same breath as the merge**, locally and on the remote —
   unless work continues on it, which is the only exception. A branch that is merged holds nothing
   `develop` does not, *by construction*, so keeping it buys no safety and costs the one thing that
