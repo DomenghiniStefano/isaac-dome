@@ -380,6 +380,18 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   (`git rev-list --count <b> --not --remotes`). The second is the one that catches a branch whose
   commits live only on this machine, and it is the reason the 2026-09-16 sweep could delete
   seventy-odd refs without losing a line.
+- **After a history rewrite, ancestry stops being the test — compare the content.** On 2026-09-20
+  the sprites left the *history* and not only the tree (constraint 3), which gave every commit on
+  `develop` a new hash. A ref that was not rewritten with it keeps the old ones, so
+  `git rev-list --count develop..<b>` reports it as unmerged **for ever**, and the rule above then
+  keeps a branch alive that holds nothing. Measured on 2026-09-21: `feature/app-update` counted 1
+  and `feature/roll` 2, while the only thing those commits added —
+  `docs/superpowers/specs/2026-09-20-app-update-design.md` and
+  `docs/superpowers/specs/2026-09-17-roll-design.md` — sat on `develop` as **byte-identical blobs**,
+  under the same subjects at `2f51ed6d` and `20f7e72c`. So when the count is non-zero after a
+  rewrite, ask what the commits actually *add*: `git rev-parse <commit>:<file>` against
+  `git rev-parse develop:<file>`, equal blob ids meaning the branch carries nothing. All three
+  branches were deleted on the remote that day, and `origin` now holds `develop` and `master` only.
 - **Never** a `Co-Authored-By` trailer or references to Claude, in any commit, PR, or
   issue.
 
@@ -465,6 +477,19 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   parallel by other sessions, and a clean `git status` at the start of a session is no
   promise it's still clean at the end. Stage by explicit path, and say so when the tree
   holds changes that aren't yours.
+- Don't *merge* a clone that predates a history rewrite — **reset it**. A machine whose last pull is
+  older than 2026-09-20 holds the pre-rewrite commits, so a pull sets two histories against each
+  other that share no ancestor for the same work, and every file both sides touched comes back
+  `UU`: on 2026-09-21 that was `CLAUDE.md`, `Cargo.lock`, `scripts/check`, `package.json` and some
+  fifty more, with conflict markers landing **inside `CLAUDE.md` itself** — the session read its own
+  instructions with `<<<<<<<` in them. The resolution for every one of those files was "take the
+  remote", which is a sign it was never a merge. `git fetch origin --prune` then
+  `git reset --hard origin/<branch>` per branch is the whole operation; for a branch that is not
+  checked out, `git branch -f <b> origin/<b>` moves it without disturbing the worktree. `master`
+  was 790 ahead and 940 behind, and those 790 were the purged history, on no remote at all.
+  **`git clean -x` is not part of it, ever**: `samples/` is git-ignored, and `-x` deletes the
+  fourteen months of saves along with `node_modules`. Re-install after the reset (`pnpm install`,
+  `cargo fetch`) — the lockfiles moved with the tree.
 
 ## Test data
 
