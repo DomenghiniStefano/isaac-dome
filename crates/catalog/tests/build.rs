@@ -241,7 +241,7 @@ fn quality_and_tags_come_from_the_metadata_file_and_reach_actives_too() {
 }
 
 #[test]
-fn sources_are_ten_and_each_path_is_asked_exactly_once() {
+fn sources_are_thirteen_and_each_path_is_asked_exactly_once() {
     let mut asked: Vec<String> = Vec::new();
     let _ = Catalog::build(|p| {
         asked.push(p.to_string());
@@ -254,7 +254,9 @@ fn sources_are_ten_and_each_path_is_asked_exactly_once() {
         asked, expected,
         "every source asked for once, no path outside SOURCES"
     );
-    assert_eq!(SOURCES.len(), 10);
+    // Ten until 2026-09-22, then the three versus screens: a boss portrait is a piece of
+    // its file and the scenes are what say which piece (B70).
+    assert_eq!(SOURCES.len(), 13);
 }
 
 #[test]
