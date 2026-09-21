@@ -241,6 +241,48 @@ pub struct MarksMatrix {
     /// was built on.
     pub art: Vec<MarkArtView>,
     pub totals: MarksTotals,
+    /// The game's own completion widget, drawn for this profile: one picture, composed by
+    /// the protocol handler out of the paper and the symbols the columns have earned.
+    ///
+    /// `None` without the game's archives, like every other URL here — the band then simply
+    /// has no picture, which is the one thing that never looks broken.
+    pub widget_url: Option<String>,
+}
+
+/// How much of a column the emblem draws, read off the same cells the footer's two totals
+/// are read off.
+///
+/// **Hard is every readable cell, not one of them** — the same thing `TallyTone::Full`
+/// means on the screen, and the same thing B22 settled for a row: a column is done when
+/// every character has done it on hard. Normal is "at least one has a level", because a
+/// column nobody has touched draws nothing rather than a faint symbol the game does not
+/// have. Cells the save can't be read for stay out of both, the way they stay out of every
+/// denominator.
+fn column_fill(rows: &[CharacterRow], column: usize) -> crate::icon::MarkFill {
+    use crate::icon::MarkFill;
+    let cells = rows.iter().filter_map(|r| r.cells.get(column));
+    let (mut readable, mut levelled, mut hard) = (0usize, 0usize, 0usize);
+    for cell in cells {
+        let Cell::Known { level, .. } = cell else {
+            continue;
+        };
+        readable += 1;
+        match level {
+            CellLevel::Empty => {}
+            CellLevel::Normal => levelled += 1,
+            CellLevel::Hard => {
+                levelled += 1;
+                hard += 1;
+            }
+        }
+    }
+    if readable > 0 && hard == readable {
+        MarkFill::Hard
+    } else if levelled > 0 {
+        MarkFill::Normal
+    } else {
+        MarkFill::None
+    }
 }
 
 /// Builds the matrix from the counters read out of the file. It assumes no fixed
@@ -290,11 +332,19 @@ pub fn marks_matrix(
         .collect();
 
     let totals = totals_of(&rows);
+    let widget_url = catalog.and_then(|_| {
+        let mut fills = [crate::icon::MarkFill::None; BOSSES.len()];
+        for (column, slot) in fills.iter_mut().enumerate() {
+            *slot = column_fill(&rows, column);
+        }
+        icon(&IconRef::Widget { fills })
+    });
     MarksMatrix {
         characters: rows,
         bosses: BOSSES.iter().map(|b| b.to_string()).collect(),
         art,
         totals,
+        widget_url,
     }
 }
 

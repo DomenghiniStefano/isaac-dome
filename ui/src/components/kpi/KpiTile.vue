@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/tooltip'
 import { cn } from '@/lib/cn'
 import { hasKpiBar } from './kpiBar'
+import { KpiSurface } from './kpiSurface'
 import { KpiTone } from './kpiTone'
 
 withDefaults(
@@ -17,8 +18,14 @@ withDefaults(
     unit?: string
     label: string
     tone?: KpiTone
+    surface?: KpiSurface
   }>(),
-  { denominator: null, unit: undefined, tone: KpiTone.Progress },
+  {
+    denominator: null,
+    unit: undefined,
+    tone: KpiTone.Progress,
+    surface: KpiSurface.Panel,
+  },
 )
 const slots = useSlots()
 
@@ -39,7 +46,13 @@ const barTone: Record<KpiTone, ProgressTone> = {
     <TooltipTrigger as-child>
       <div
         :tabindex="slots.explain ? 0 : undefined"
-        class="flex flex-col border border-border bg-sheet px-3.25 pt-2.75 pb-3"
+        :class="
+          cn(
+            'flex flex-col',
+            surface === KpiSurface.Panel &&
+              'border border-border bg-sheet px-3.25 pt-2.75 pb-3',
+          )
+        "
       >
         <div class="flex items-baseline gap-1.25">
           <span
