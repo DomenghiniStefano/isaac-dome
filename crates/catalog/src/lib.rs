@@ -20,6 +20,7 @@ mod sprite;
 mod strings;
 mod text;
 mod unlock;
+mod versusscreen;
 mod xml;
 
 pub use achievements::Achievement;
