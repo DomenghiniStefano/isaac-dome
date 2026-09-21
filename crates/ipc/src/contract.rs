@@ -118,6 +118,7 @@ pub fn render() -> String {
     decl::<crate::GameView>(&cfg, &mut out);
     decl::<crate::SetupState>(&cfg, &mut out);
     decl::<crate::SetupDiagnostic>(&cfg, &mut out);
+    decl::<crate::CellLevel>(&cfg, &mut out);
     decl::<crate::Cell>(&cfg, &mut out);
     decl::<core_save::marks::CharacterGroup>(&cfg, &mut out);
     decl::<crate::CharacterRow>(&cfg, &mut out);
