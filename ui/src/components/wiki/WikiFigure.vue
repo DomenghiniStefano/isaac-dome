@@ -45,33 +45,63 @@ const frame = computed((): Frame => {
 
 const artSize: Record<WikiFigureSize, ArtSize> = {
   [WikiFigureSize.Thumb]: ArtSize.Thumb,
+  [WikiFigureSize.Row]: ArtSize.Thumb,
   [WikiFigureSize.Card]: ArtSize.Card,
+  [WikiFigureSize.Hero]: ArtSize.Hero,
+}
+
+// The box a sprite or a portrait is set in. A thumbnail has none — it sits bare in whatever
+// holds it — and the other three are the same frame at three sizes, so a page's figure is
+// recognisably one thing from a list row to the band that opens the page (card #57).
+const box: Record<WikiFigureSize, string | null> = {
+  [WikiFigureSize.Thumb]: null,
+  [WikiFigureSize.Row]: 'size-wiki-row-figure border-hairline tile-wash',
+  [WikiFigureSize.Card]: 'size-wiki-figure border-hairline bg-data',
+  [WikiFigureSize.Hero]: 'size-wiki-hero border-border tile-wash',
+}
+
+// What the picture is drawn at inside that box. A portrait fills the frame; a sprite keeps
+// the game's whole multiple of 32px — except in a list row, whose 48px frame is smaller than
+// that multiple already is at scale 200. There the sprite stays at its native 32, which is
+// still a whole multiple and still crisp, rather than being cropped by the frame around it.
+const portrait: Record<WikiFigureSize, string> = {
+  [WikiFigureSize.Thumb]: 'size-8',
+  [WikiFigureSize.Row]: 'size-wiki-row-figure',
+  [WikiFigureSize.Card]: 'size-wiki-figure',
+  [WikiFigureSize.Hero]: 'size-wiki-hero',
+}
+const sprite: Record<WikiFigureSize, string> = {
+  [WikiFigureSize.Thumb]: 'size-8',
+  [WikiFigureSize.Row]: 'size-8',
+  [WikiFigureSize.Card]: 'size-sprite',
+  [WikiFigureSize.Hero]: 'size-sprite',
 }
 </script>
 
 <template>
   <!-- One figure per page: a missing one is the hatch placeholder, never a broken image
-       and never another page's picture. A thumbnail sits bare in its row; the card's
-       figure gets the data frame the export draws behind it. -->
+       and never another page's picture. A thumbnail sits bare in its row; every other size
+       gets the frame, which is what makes the same picture read as the same object in a
+       list, in a header and on the page's own band. -->
   <AchievementArt
     v-if="frame === Frame.Painting"
     :url="url"
     :size="artSize[size]"
   />
   <PixelSprite
-    v-else-if="size === WikiFigureSize.Thumb"
+    v-else-if="box[size] === null"
     :url="url"
     placeholder
     class="size-8 shrink-0"
   />
   <span
     v-else
-    class="grid size-wiki-figure shrink-0 place-items-center border border-hairline bg-data"
+    :class="cn('grid shrink-0 place-items-center border', box[size])"
   >
     <PixelSprite
       :url="url"
       placeholder
-      :class="cn(frame === Frame.Sprite ? 'size-sprite' : 'size-wiki-figure')"
+      :class="cn(frame === Frame.Sprite ? sprite[size] : portrait[size])"
     />
   </span>
 </template>

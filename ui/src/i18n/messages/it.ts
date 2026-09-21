@@ -444,6 +444,7 @@ export const it = {
       transformation: 'Trasformazione',
     },
     revision: 'rev.',
+    outline: 'In questa pagina',
     section: {
       effects: 'Effetti',
       notes: 'Note',
@@ -489,6 +490,12 @@ export const it = {
       requires: 'Ne servono',
       contributors: 'Contano',
       target: 'Agisce su',
+      quality: 'Qualità',
+      recharge: 'Ricarica',
+      devilPrice: 'Prezzo dal diavolo',
+      shopPrice: 'Prezzo in negozio',
+      pools: 'Pool',
+      tags: 'Etichette',
       none: 'nessuno',
     },
     states: {

@@ -18,6 +18,7 @@ watch(
 const sizeClass: Record<ArtSize, string> = {
   [ArtSize.Thumb]: 'w-achievement-thumb',
   [ArtSize.Card]: 'w-achievement',
+  [ArtSize.Hero]: 'w-achievement-hero',
 }
 </script>
 

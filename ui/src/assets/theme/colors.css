@@ -57,6 +57,11 @@
   --color-mark-paper: #e9dadf;
   /* The alpha lives here, never in a class. */
   --color-overlay: rgb(12 7 6 / 0.8);
+  /* The grain over a wiki page's opening band (card #57). The skin is flat by decision —
+     `--shadow-*` is `initial` and always will be — so a band that large is given a texture
+     and not a shadow: one-pixel lines, at the only alpha in the app besides the overlay's.
+     Dark rather than light, so it reads as the paper the art sits on and never as a glow. */
+  --color-grain: rgb(9 5 4 / 0.3);
   --color-highlight: #ebd9c4;
   --color-foreground-soft: #d5c8c2;
   --color-subtle-foreground: #a69690;

@@ -2,8 +2,10 @@
 import { computed } from 'vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import QualityPips from '@/screens/collection/QualityPips.vue'
 import { useMessages } from '@/i18n'
 import { assertNever } from '@/lib/assertNever'
+import { CollectibleTemplate } from '@/lib/ipc/types'
 import type { Entry, Inline, Target } from '@/lib/ipc/types'
 import { useWikiStore } from '@/stores/wiki'
 import InfoboxRow from './InfoboxRow.vue'
@@ -35,14 +37,19 @@ const forward = computed(() => ({
 const refOf = (target: Target | null): Inline[] =>
   target === null ? [] : refsOf([target], wiki.titleOf)
 
-// Items and trinkets carry no card: their infobox is the figure and the title. A
-// transformation carries one only where the page filled at least one of its three fields —
-// Adult filled none, and an empty card would say the page has nothing.
+// A transformation carries a card only where the page filled at least one of its three
+// fields — Adult filled none, and an empty card would say the page has nothing.
+//
+// **Items and trinkets carried none at all until card #57**, and that was a hole and not a
+// decision: the type has held their quality, recharge, prices, pools and tags since the
+// dataset was first parsed, and on the 719 item pages — the most visited in the app — not
+// one of those values ever reached the screen. The quote is the exception and stays out: it
+// is the page's opening line and it is drawn on the band (`WikiHero.vue`), not twice.
 const drawn = computed(() => {
   switch (infobox.value.kind) {
     case 'item':
     case 'trinket':
-      return false
+      return true
     case 'transformation':
       return hasCard(infobox.value, props.entry)
     case 'achievement':
@@ -86,7 +93,7 @@ const stats = computed(() => {
     <CardHeader>
       <CardTitle>{{ t('wiki.infobox.title') }}</CardTitle>
     </CardHeader>
-    <CardContent>
+    <CardContent class="flex flex-col gap-3">
       <!-- The three facts every kind declares, drawn once: they live on the entry, not in
            the variant, so repeating them per kind would repeat the same markup four times. -->
       <dl class="flex flex-col gap-2">
@@ -165,11 +172,11 @@ const stats = computed(() => {
           :inline="infobox.curse"
           v-bind="forward"
         />
-        <div class="flex gap-4">
-          <dt class="w-32 shrink-0 text-label text-subtle-foreground">
+        <div class="flex flex-col gap-1.5 border-b border-hairline pb-2">
+          <dt class="text-label text-subtle-foreground">
             {{ t('wiki.infobox.restrictions') }}
           </dt>
-          <dd class="flex min-w-0 flex-1 flex-wrap gap-1.5">
+          <dd class="flex min-w-0 flex-wrap gap-1.5">
             <Badge
               v-for="restriction in restrictions"
               :key="restriction"
@@ -247,6 +254,65 @@ const stats = computed(() => {
           :inline="infobox.target"
           v-bind="forward"
         />
+      </dl>
+      <!-- An item's numbers, and the first time they have been on screen. Recharge belongs
+           to the activated template alone: on a passive the wiki leaves it empty, and an
+           empty row there would read as "it recharges, and nobody wrote how fast". The pools
+           are stated on 45 of 720 pages, so their absence is the wiki's silence and not the
+           item's — the row goes with it rather than declaring none. -->
+      <dl v-else-if="infobox.kind === 'item'" class="flex flex-col gap-2">
+        <div class="flex flex-col gap-0.75 border-b border-hairline pb-2">
+          <dt class="text-label text-subtle-foreground">
+            {{ t('wiki.infobox.quality') }}
+          </dt>
+          <dd class="min-w-0"><QualityPips :quality="infobox.quality" /></dd>
+        </div>
+        <InfoboxRow
+          v-if="infobox.template === CollectibleTemplate.Activated"
+          :label="t('wiki.infobox.recharge')"
+          :inline="infobox.recharge"
+          v-bind="forward"
+        />
+        <InfoboxRow
+          :label="t('wiki.infobox.devilPrice')"
+          :inline="infobox.devilPrice"
+          v-bind="forward"
+        />
+        <InfoboxRow
+          :label="t('wiki.infobox.shopPrice')"
+          :inline="infobox.shopPrice"
+          v-bind="forward"
+        />
+        <InfoboxRow
+          v-if="infobox.pools.length > 0"
+          :label="t('wiki.infobox.pools')"
+          :inline="infobox.pools"
+          v-bind="forward"
+        />
+        <div v-if="infobox.tags.length > 0" class="flex flex-col gap-1.5 pt-1">
+          <dt class="text-label text-subtle-foreground">
+            {{ t('wiki.infobox.tags') }}
+          </dt>
+          <dd class="flex flex-wrap gap-1.5">
+            <Badge v-for="tag in infobox.tags" :key="tag">{{ tag }}</Badge>
+          </dd>
+        </div>
+      </dl>
+      <dl v-else-if="infobox.kind === 'trinket'" class="flex flex-col gap-2">
+        <InfoboxRow
+          v-if="infobox.pools.length > 0"
+          :label="t('wiki.infobox.pools')"
+          :inline="infobox.pools"
+          v-bind="forward"
+        />
+        <div v-if="infobox.tags.length > 0" class="flex flex-col gap-1.5 pt-1">
+          <dt class="text-label text-subtle-foreground">
+            {{ t('wiki.infobox.tags') }}
+          </dt>
+          <dd class="flex flex-wrap gap-1.5">
+            <Badge v-for="tag in infobox.tags" :key="tag">{{ tag }}</Badge>
+          </dd>
+        </div>
       </dl>
     </CardContent>
   </Card>

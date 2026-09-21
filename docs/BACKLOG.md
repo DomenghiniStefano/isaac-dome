@@ -60,9 +60,18 @@ The division of labour:
 - **The board holds what changes.** One card per open entry: the `Needs` line with its reason in
   the description, `### Done when` as a checklist, and what blocks it as labels — `READY`,
   `WAITING`, `NEEDS SAVE`, `NEEDS GAME`, `NEEDS RUN`, `NEEDS STEAM`, `NEEDS WINDOW`, plus `BUG`
-  and `STOPPED`. The lists are `Inbox`, `BACKLOG`, `In Progress`, `UAT` and `Done`, and a card's
-  position inside a list is its priority — the same rule the `plan` crate states for its own
-  queue.
+  and `STOPPED`. The lists are `Inbox`, `BACKLOG`, `In Progress`, `UAT`, `DA RILASCIARE` and
+  `Done`, and a card's position inside a list is its priority — the same rule the `plan` crate
+  states for its own queue.
+
+  **`DA RILASCIARE` exists since 2026-09-21, and it moved what `Done` means.** Between the two
+  there was nowhere to put the thing that is finished, reviewed and merged, and that still only
+  exists on `develop` — where nobody who uses the app can reach it. `master` moves on a release
+  and on the owner's say-so alone (`CLAUDE.md`), so that gap is not an hour, it is however long
+  it is until the next version is cut. A card leaves `UAT` when it has been *looked at* and sits
+  here until that version ships; `Done` now means **in the hands of somebody using the app**,
+  which is the only meaning of done the app's user would recognise. The column is therefore also
+  the next release's shopping list: what is in it is exactly what the release notes have to say.
 - **This file holds what doesn't.** What an entry is, what already exists, what is missing, what
   it would take to believe it, and how it got here. That is prose, it belongs in git beside the
   code, and no card would carry it.
