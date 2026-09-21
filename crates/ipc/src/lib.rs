@@ -104,7 +104,7 @@ pub use search::{
 pub use settings::{
     session_document_fits, snap_percent, Settings, DEFAULT_SCALE, MAX_SESSION_BYTES, SCALE_PERCENTS,
 };
-pub use sprite_png::{crop_png, decode_rgba, overlay, trim_opaque};
+pub use sprite_png::{centre_opaque, crop_png, decode_rgba, overlay, trim_opaque};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
 pub use tray::{tray_action, tray_locale, tray_text, TrayAction, TrayLocale, TrayText};

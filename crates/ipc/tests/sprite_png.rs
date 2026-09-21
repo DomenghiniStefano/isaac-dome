@@ -2,7 +2,7 @@
 //! the mark symbols and the character heads as crops, and a crop that takes the wrong cell is
 //! a picture that looks plausible and is wrong.
 
-use ipc::{crop_png, decode_rgba, overlay, trim_opaque};
+use ipc::{centre_opaque, crop_png, decode_rgba, overlay, trim_opaque};
 
 fn encode(w: u32, h: u32, pixel: &[u8]) -> Vec<u8> {
     let mut out = Vec::new();
@@ -247,4 +247,88 @@ fn a_base_that_is_not_a_png_composes_nothing_and_a_broken_piece_is_skipped() {
     // while refusing the whole widget over it says nothing at all.
     let out = overlay(&base, &[(b"nothing".as_slice(), 0, 0)]).expect("the base survives");
     assert_eq!(pixel_at(&out, 0, 0), [1, 1, 1, 255]);
+}
+
+// `centre_opaque` exists because the game's own crop is not centred on the drawing inside
+// it, and the emblem is shown in a square frame. Measured on the installed game 2026-09-21:
+// the composed widget's paper covers x 0..84, y 3..82 of its 96x96 — 11 empty pixels on the
+// right and 13 at the bottom, none on the left — and the bloodied sheet covers x 0..87,
+// y 1..82, so the two tiers are off by *different* amounts and no single offset fits both.
+//
+// **Why this and not `trim_opaque`.** Trimming gives 85x80 for one tier and 88x82 for the
+// other: the picture would change size the moment a profile completed, and a picture that is
+// not a whole multiple of its own pixels blurs inside a fixed box. Centring keeps the canvas,
+// so every state renders at the same size and at the same exact scale.
+
+#[test]
+fn the_drawing_moves_to_the_middle_and_the_canvas_does_not_move_at_all() {
+    // A 2x2 block in the corner of an 8x8: three pixels of margin each way once centred.
+    let picture = block(8, 8, 0, 0, 2, 2);
+    let out = centre_opaque(&picture).expect("there is a drawing to centre");
+    let (w, h, _) = decode_rgba(&out).expect("the result is a PNG");
+    assert_eq!((w, h), (8, 8), "the canvas is the whole point");
+    assert_eq!(pixel_at(&out, 3, 3), [9, 8, 7, 255]);
+    assert_eq!(pixel_at(&out, 4, 4), [9, 8, 7, 255]);
+    assert_eq!(
+        pixel_at(&out, 0, 0),
+        [0, 0, 0, 0],
+        "the corner it came from"
+    );
+    assert_eq!(pixel_at(&out, 2, 2), [0, 0, 0, 0], "one short of it");
+}
+
+#[test]
+fn a_drawing_already_in_the_middle_stays_where_it_is() {
+    let picture = block(8, 8, 3, 3, 2, 2);
+    let out = centre_opaque(&picture).expect("a drawing");
+    assert_eq!(pixel_at(&out, 3, 3), [9, 8, 7, 255]);
+    assert_eq!(pixel_at(&out, 4, 4), [9, 8, 7, 255]);
+    assert_eq!(pixel_at(&out, 5, 5), [0, 0, 0, 0]);
+}
+
+#[test]
+fn an_odd_margin_leaves_at_most_one_pixel_more_on_one_side() {
+    // 8 minus 3 is 5, which does not halve. The drawing is never split to make it even: it
+    // lands one pixel off centre, which nobody can see, and stays whole, which they could.
+    let picture = block(8, 8, 0, 0, 3, 3);
+    let out = centre_opaque(&picture).expect("a drawing");
+    assert_eq!(pixel_at(&out, 2, 2), [9, 8, 7, 255], "starts at 2, not 2.5");
+    assert_eq!(pixel_at(&out, 4, 4), [9, 8, 7, 255]);
+    assert_eq!(pixel_at(&out, 5, 5), [0, 0, 0, 0]);
+}
+
+#[test]
+fn nothing_of_the_drawing_is_lost_on_the_way() {
+    // The failure this guards is a shift that pushes part of the picture off the canvas —
+    // which is what an offset computed from the wrong edge does, and it looks like a crop
+    // nobody asked for. Eleven marks on a sheet: losing one is losing a column.
+    let picture = block(16, 16, 1, 2, 5, 4);
+    let before = decode_rgba(&picture).unwrap().2;
+    let after = decode_rgba(&centre_opaque(&picture).expect("a drawing"))
+        .unwrap()
+        .2;
+    let opaque = |p: &[u8]| p.chunks_exact(4).filter(|q| q[3] != 0).count();
+    assert_eq!(
+        opaque(&after),
+        opaque(&before),
+        "20 opaque pixels, still 20"
+    );
+}
+
+#[test]
+fn a_picture_that_fills_its_canvas_comes_back_unchanged() {
+    let picture = flat(4, 4, [1, 2, 3, 255]);
+    let out = centre_opaque(&picture).expect("a drawing");
+    assert_eq!(
+        decode_rgba(&out).unwrap().2,
+        decode_rgba(&picture).unwrap().2
+    );
+}
+
+#[test]
+fn a_picture_with_nothing_in_it_centres_to_nothing() {
+    // Same contract as `trim_opaque`: the caller keeps what it had rather than being handed
+    // an empty picture. On a machine without the game nothing reaches here at all.
+    assert!(centre_opaque(&block(8, 8, 0, 0, 0, 0)).is_none());
+    assert!(centre_opaque(b"nothing").is_none());
 }

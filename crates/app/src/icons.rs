@@ -123,5 +123,11 @@ fn widget_bytes(rs: &ResourceSet, art: &ipc::WidgetArt) -> Option<Vec<u8>> {
         .iter()
         .map(|(png, x, y)| (png.as_slice(), *x, *y))
         .collect();
-    ipc::overlay(&paper, &pieces)
+    let composed = ipc::overlay(&paper, &pieces)?;
+    // Centred **after** composing, never before: the marks are already on the paper at the
+    // offsets the anm2 gave, so moving the finished picture moves all twelve pieces together
+    // and none of them relative to another. The game's crop leaves the sheet up against its
+    // own left edge with eleven empty pixels on the right, which in a square frame reads as a
+    // picture nobody centred — see `centre_opaque` for why it is not a trim.
+    Some(ipc::centre_opaque(&composed).unwrap_or(composed))
 }
