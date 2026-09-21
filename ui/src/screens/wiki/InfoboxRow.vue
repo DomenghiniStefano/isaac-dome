@@ -18,9 +18,14 @@ const { t } = useMessages()
 </script>
 
 <template>
-  <div class="flex gap-4">
-    <dt class="w-32 shrink-0 text-label text-subtle-foreground">{{ label }}</dt>
-    <dd class="min-w-0 flex-1 text-row">
+  <!-- The label sits above its value, not beside it (card #57): the card now lives in a
+       column beside the page's text, and a 128px label in a 272px column left the values
+       wrapping every second row. Stacked, the value gets the whole width at every size. -->
+  <div
+    class="flex flex-col gap-0.75 border-b border-hairline pb-2 last:border-b-0 last:pb-0"
+  >
+    <dt class="text-label text-subtle-foreground">{{ label }}</dt>
+    <dd class="min-w-0 text-row">
       <WikiInline
         v-if="inline && inline.length > 0"
         :inline="inline"

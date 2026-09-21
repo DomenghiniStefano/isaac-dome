@@ -437,6 +437,7 @@ export const en: MessageSchema = {
       transformation: 'Transformation',
     },
     revision: 'rev.',
+    outline: 'On this page',
     section: {
       effects: 'Effects',
       notes: 'Notes',
@@ -482,6 +483,12 @@ export const en: MessageSchema = {
       requires: 'Needs',
       contributors: 'Counts',
       target: 'Acts on',
+      quality: 'Quality',
+      recharge: 'Recharge',
+      devilPrice: 'Devil price',
+      shopPrice: 'Shop price',
+      pools: 'Pools',
+      tags: 'Tags',
       none: 'none',
     },
     states: {
