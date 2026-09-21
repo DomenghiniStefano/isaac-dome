@@ -157,11 +157,32 @@ export type SetupDiagnostic =
   | { kind: 'malformedManifest'; name: string }
 
 /**
+ * The level a cell's mark reached. Fieldless, so it crosses as a bare camelCase string
+ * and the TypeScript is a union of values: a tag distinguishes variants that carry
+ * different data, and there is none here (CLAUDE.md, "Enums on the IPC").
+ *
+ * Two levels and not three: bit 2 is not one of them. It says where a mark was taken,
+ * which is why it travels beside this enum and not inside it.
+ *
+ * Not to be confused with `graph::MarkLevelView`, which names the same two bits `base`
+ * and `second`. That one describes a *target* — "go and take this cell at this level" —
+ * and refuses `hard` on purpose, because what bit 1 means outside Greed is unmeasured.
+ * Here the matrix is being drawn and `normal`/`hard` is the vocabulary its own totals
+ * have carried since B22; the two names are one measurement away from becoming one.
+ */
+export const CellLevel = {
+  Empty: 'empty',
+  Normal: 'normal',
+  Hard: 'hard',
+} as const
+export type CellLevel = (typeof CellLevel)[keyof typeof CellLevel]
+
+/**
  * A cell of the matrix. The three variants are the module's reason for existing:
  * "never done", "not readable", and "suspicious value" are three different things.
  */
 export type Cell =
-  | { kind: 'known'; bits: number }
+  | { kind: 'known'; bits: number; level: CellLevel; online: boolean }
   | { kind: 'unknown' }
   | { kind: 'unexpected'; value: number }
 

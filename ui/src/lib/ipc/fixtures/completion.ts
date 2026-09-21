@@ -1,4 +1,9 @@
-import type { Cell, CharacterRow, MarksMatrix } from '../types'
+import {
+  CellLevel,
+  type Cell,
+  type CharacterRow,
+  type MarksMatrix,
+} from '../types'
 
 // The file's three blocks, as CharacterGroup serializes them.
 const Group = {
@@ -70,15 +75,31 @@ const rows: [string, string, Group, boolean][] = [
   ['T. Jacob & Esau', '0000000000??', Group.Later, true],
 ]
 
-const cellOf = (digit: string): Cell =>
-  digit === '?' ? { kind: 'unknown' } : { kind: 'known', bits: Number(digit) }
+// The digits are the raw counter values the export was read from, so this is the one place
+// in the frontend that still turns a mask into a reading — and it does it **because it is
+// standing in for the backend**, not because a screen needs to. It mirrors
+// `ipc::marks::cell_at`: bit 1 decides the level whether or not bit 0 stands with it (a
+// bare 2 is the first level overwritten, B58), and bit 2 is the online win, which is not a
+// level. If the two ever disagree the fixture is the one that is wrong.
+const cellOf = (digit: string): Cell => {
+  if (digit === '?') return { kind: 'unknown' }
+  const bits = Number(digit)
+  const level =
+    (bits & 2) !== 0
+      ? CellLevel.Hard
+      : (bits & 1) !== 0
+        ? CellLevel.Normal
+        : CellLevel.Empty
+  return { kind: 'known', bits, level, online: (bits & 4) !== 0 }
+}
 
-// The two counts as the backend makes them (`ipc::totals_of`): a level is bit 0 or bit 1,
-// and hard is bit 1 — a subset, because a mark taken on hard counts as taken on normal too.
+// The two counts as the backend makes them (`ipc::totals_of`), read off the level the cell
+// now carries: a level is any level reached, and hard is a subset of it, because a mark
+// taken on hard counts as taken on normal too.
 const hasLevel = (cell: Cell): boolean =>
-  cell.kind === 'known' && (cell.bits & 3) !== 0
+  cell.kind === 'known' && cell.level !== CellLevel.Empty
 const isHard = (cell: Cell): boolean =>
-  cell.kind === 'known' && (cell.bits & 2) !== 0
+  cell.kind === 'known' && cell.level === CellLevel.Hard
 
 const noArt = { normalUrl: null, hardUrl: null }
 

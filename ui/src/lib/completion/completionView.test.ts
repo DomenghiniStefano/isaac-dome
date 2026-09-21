@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { completionMatrix } from '@/lib/ipc/fixtures/completion'
-import type { Cell, MarksMatrix } from '@/lib/ipc/types'
+import { CellLevel, type Cell, type MarksMatrix } from '@/lib/ipc/types'
 import {
   CellStatus,
   MatrixGroup,
@@ -18,6 +18,17 @@ import {
 // different tool — and never taken from this module's output. The four that the brief and
 // the Kit page already printed (368 readable, 166 with a level, 40 unreadable, 408 cells)
 // come out of that count unchanged, which is what says the count is right.
+// A cell as the IPC sends it. `bits` is the value a real cell in that state carries and
+// nothing in this module reads it: since B21 the mask is decoded in `ipc::marks::cell_at`,
+// and what it decided is `level` and `online`.
+const wire = (bits: number, level: CellLevel, online = false): Cell => ({
+  kind: 'known',
+  bits,
+  level,
+  online,
+})
+const NEVER = wire(0, CellLevel.Empty)
+
 const reference = completionMatrix()
 
 const row = (name: string) => {
@@ -85,8 +96,8 @@ describe('rowTally', () => {
   it('reads a single hard cell as one on both counts, never as zero and one', () => {
     // B22's own acceptance sentence. A bare 2 is hard, and hard is also normal.
     const cells: Cell[] = [
-      { kind: 'known', bits: 2 },
-      ...Array.from({ length: 11 }, (): Cell => ({ kind: 'known', bits: 0 })),
+      wire(2, CellLevel.Hard),
+      ...Array.from({ length: 11 }, (): Cell => NEVER),
     ]
     expect(rowTally({ ...row('Isaac'), cells })).toEqual({
       normal: 1,
@@ -137,10 +148,9 @@ describe('tallyColumns', () => {
   })
 
   it('counts a bare 2 in both columns', () => {
-    const cells: Cell[] = row('Isaac').cells.map((_, i) => ({
-      kind: 'known' as const,
-      bits: i === 0 ? 2 : 0,
-    }))
+    const cells: Cell[] = row('Isaac').cells.map((_, i) =>
+      i === 0 ? wire(2, CellLevel.Hard) : NEVER,
+    )
     expect(tallyColumns(rowTally({ ...row('Isaac'), cells }))).toEqual({
       normal: { value: 1, readable: 12, tone: TallyTone.Partial },
       hard: { value: 1, readable: 12, tone: TallyTone.Partial },
@@ -241,32 +251,82 @@ describe('matrixGroups', () => {
 })
 
 describe('cellReading', () => {
-  const known = (bits: number) => cellReading({ kind: 'known', bits })
-
   // `Both` is gone (B22): a cell with bit 1 is hard, and hard is also normal, so "normal
-  // and hard" was never a third thing to say — it was the same cell said twice.
-  it('reads a cell with the second level as hard, whatever bit 0 says', () => {
-    expect(known(0)).toEqual({ status: CellStatus.Empty, third: false })
-    expect(known(1)).toEqual({ status: CellStatus.Normal, third: false })
-    expect(known(2)).toEqual({ status: CellStatus.Hard, third: false })
-    expect(known(3)).toEqual({ status: CellStatus.Hard, third: false })
+  // and hard" was never a third thing to say — it was the same cell said twice. Which of
+  // the two a mask means is settled in Rust now (`crates/ipc/tests/marks.rs`); what is
+  // pinned here is that the level arrives intact as a status.
+  it('reads every level the IPC can send as its own status', () => {
+    expect(cellReading(NEVER)).toEqual({
+      status: CellStatus.Empty,
+      online: false,
+    })
+    expect(cellReading(wire(1, CellLevel.Normal))).toEqual({
+      status: CellStatus.Normal,
+      online: false,
+    })
+    expect(cellReading(wire(2, CellLevel.Hard))).toEqual({
+      status: CellStatus.Hard,
+      online: false,
+    })
+    expect(cellReading(wire(3, CellLevel.Hard))).toEqual({
+      status: CellStatus.Hard,
+      online: false,
+    })
   })
 
-  it('carries the unconfirmed bit beside the level, never as one', () => {
-    expect(known(4)).toEqual({ status: CellStatus.Empty, third: true })
-    expect(known(5)).toEqual({ status: CellStatus.Normal, third: true })
-    expect(known(7)).toEqual({ status: CellStatus.Hard, third: true })
+  // The online win is not a level: it says where a mark was taken, not how high it is. It
+  // travelled here as `third` while its meaning was unsettled; the meaning was measured on
+  // 2026-09-12 and the name followed only on 2026-09-20.
+  it('carries the online win beside the level, never as one', () => {
+    expect(cellReading(wire(4, CellLevel.Empty, true))).toEqual({
+      status: CellStatus.Empty,
+      online: true,
+    })
+    expect(cellReading(wire(5, CellLevel.Normal, true))).toEqual({
+      status: CellStatus.Normal,
+      online: true,
+    })
+    expect(cellReading(wire(7, CellLevel.Hard, true))).toEqual({
+      status: CellStatus.Hard,
+      online: true,
+    })
   })
 
   it('keeps what it cannot read, and what it should not see, apart', () => {
-    expect(known(8)).toEqual({ status: CellStatus.Unexpected, third: false })
     expect(cellReading({ kind: 'unknown' })).toEqual({
       status: CellStatus.Unknown,
-      third: false,
+      online: false,
     })
     expect(cellReading({ kind: 'unexpected', value: 49 })).toEqual({
       status: CellStatus.Unexpected,
-      third: false,
+      online: false,
     })
+  })
+})
+
+// B21, the same probe as `markVisual`'s: the status comes from the level the IPC read.
+// The two files each carried their own copy of the bit rules, which is the duplication
+// this entry set out to end.
+describe('cellReading reads the reading and not the mask', () => {
+  it('takes the status from the level', () => {
+    expect(
+      cellReading({
+        kind: 'known',
+        bits: 0,
+        level: CellLevel.Hard,
+        online: false,
+      }),
+    ).toEqual({ status: CellStatus.Hard, online: false })
+  })
+
+  it('takes the online win from its own field', () => {
+    expect(
+      cellReading({
+        kind: 'known',
+        bits: 0,
+        level: CellLevel.Empty,
+        online: true,
+      }),
+    ).toEqual({ status: CellStatus.Empty, online: true })
   })
 })
