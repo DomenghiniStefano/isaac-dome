@@ -2562,7 +2562,7 @@ nodes, and then move the virtualizer to the hit.
 
 ---
 
-## B69 — A missing icon draws nothing, and nothing is not an answer (implementation, `ipc` and `ui`, small)
+## B69 — A missing icon draws nothing, and nothing is not an answer (implementation, `ipc` and `ui`, small) ✅ closed on 2026-09-22
 
 **Needs:** the game — the substitute picture is the game's own and is read out of the user's
 archives — then a window, because the whole entry is about what somebody sees where a picture
@@ -2608,22 +2608,41 @@ The second is the one to try first, and the entry closes with the choice written
 icon for is **not** an unknown item — the Floor grid keeps what it draws. The default belongs to
 the empty slot, not to every caller.
 
+### What landed, 2026-09-22
+
+`5ea7492`, merged as `4d7b337`. **The UI decides**, which is the shape this entry asked for:
+Rust still answers `None` for an icon it cannot resolve, so the payload keeps the one fact
+that could never be recovered once lost. The URL travels on `SetupState` — the only thing
+every window reads at startup, and the only place a URL belonging to no row can live — and
+it is `null` without the game, so a machine that has none stays as quiet as it was.
+
+The order of the three layers is a pure function with six tests, in
+`ui/src/components/sprite/pixelSprite.ts`, rather than three conditions in a template:
+that order *is* the bug, since "nothing here" and "we could not find it" drew the same
+square. The owner closed UAT the same day.
+
+**One thing it does not do**, written down because it is the next question and not this
+one: the payload still cannot tell *the game has no art for this* from *we could not
+resolve it* — `TargetSprite::NoArt` and `Unknown` both arrive as `null`, so a
+transformation's page gets the question mark too. If that reads wrong in use, it is an
+entry of its own.
+
 ### Closes when
 
-- [ ] A row whose icon could not be resolved draws the game's question mark; a row whose icon
+- [x] A row whose icon could not be resolved draws the game's question mark; a row whose icon
       resolves is untouched.
-- [ ] Nothing is committed: `scripts/check-no-game-assets.mjs` stays green and the picture is
+- [x] Nothing is committed: `scripts/check-no-game-assets.mjs` stays green and the picture is
       read from the user's own copy at runtime.
-- [ ] With the game absent the screens still draw, and the placeholder degrades to today's
+- [x] With the game absent the screens still draw, and the placeholder degrades to today's
       behaviour instead of leaving a broken request per row.
-- [ ] The Floor grid still draws its own room symbols.
-- [ ] Which side decides — Rust or the UI — is written down with the reason, because the next
+- [x] The Floor grid still draws its own room symbols.
+- [x] Which side decides — Rust or the UI — is written down with the reason, because the next
       icon that fails to resolve will ask the same question.
-- [ ] Seen in a window: Collection, the palette's results, and the Completion row heads.
+- [x] Seen in a window: Collection, the palette's results, and the Completion row heads.
 
 ---
 
-## B70 — Seven boss portraits are a sheet, not a picture, and the app draws the whole sheet (bug, `ipc`, small)
+## B70 — Seven boss portraits are a sheet, not a picture, and the app draws the whole sheet (bug, `catalog`, small) ✅ closed on 2026-09-22
 
 **Needs:** the game — the finding is a measurement over `gfx/ui/boss/`, and so is the fix's
 check — then a window, because what is wrong is what the row looks like.
@@ -2663,15 +2682,31 @@ well be reading an anm2 instead. "Take the leftmost 192" fits six files and fits
 all, which is exactly the shape of a rule inferred from the majority — the kind this repo pays
 for later. Read it from the game's own data before writing it down.
 
+### What landed, 2026-09-22
+
+`58f0f89`, merged as `4d7b337`. The crop is read from the game: `bossportraits.xml` names
+its scene in the root element, the scene's `BossPortrait` layer carries the rectangle, and
+the second drawing belongs to sibling layers — `BossPortraitGround` at `XCrop=192`,
+`BossPortraitExtra` at `YCrop=220` — which the game draws *behind* the boss, not beside it.
+The two scenes the game swaps in for one boss each are read as sources like any other
+(`SOURCES` goes from ten to thirteen), and a row takes one only when that scene's
+`BossPortrait` names the row's own portrait as its sheet: the game's data agreeing with
+itself, never a name inferred from a boss's.
+
+**Dogma is in the table although he changes nothing**, which is what keeps it one rule
+instead of a rule and an exception for Mother. His file is 192x192 and his scene asks for
+208: the real-data test found that disagreement on its first run, and it is why the
+property checks that a crop *starts* inside its file rather than that it ends inside one.
+
 ### Closes when
 
-- [ ] Where the crop comes from is read from the game's data — the pivot, an anm2, or something
+- [x] Where the crop comes from is read from the game's data — the pivot, an anm2, or something
       else — and written down with the file it was read from.
-- [ ] All seven draw as one creature, and the other 89 are byte-for-byte what they are today.
-- [ ] *Mother* is right too, or the entry says why she is her own case and what she gets.
-- [ ] The two portraits the archives do not hold keep reading as absent, not as a broken crop.
-- [ ] A test pins the sizes, so a patch that reshapes a sheet fails here instead of on a screen.
-- [ ] Seen in a window, wherever a boss portrait is drawn.
+- [x] All seven draw as one creature, and the other 89 are byte-for-byte what they are today.
+- [x] *Mother* is right too, or the entry says why she is her own case and what she gets.
+- [x] The two portraits the archives do not hold keep reading as absent, not as a broken crop.
+- [x] A test pins the sizes, so a patch that reshapes a sheet fails here instead of on a screen.
+- [x] Seen in a window, wherever a boss portrait is drawn.
 
 ---
 
